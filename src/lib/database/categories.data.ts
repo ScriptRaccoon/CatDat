@@ -12,7 +12,7 @@ export type CategoryID = (typeof CATEGORIES_INDEX)[number]['id']
 
 const CATEGORIES_INDEX = [
 	{
-		id: 'Set',
+		id: 'Sets',
 		name: 'category of sets',
 		notation: '$\\mathbf{Set}$',
 		objects: 'sets',
