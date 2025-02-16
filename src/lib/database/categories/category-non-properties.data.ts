@@ -224,11 +224,11 @@ export const CATEGORY_NON_PROPERTIES: Record<CategoryID, PropertyWithReason[]> =
 		{ id: 'sequential limits', reason: '' },
 	],
 	'walking_pair': [
-		{ id: 'initial object', reason: '' },
-		{ id: 'zero morphisms', reason: '' },
-		{ id: 'binary products', reason: '' },
-		{ id: 'equalizers', reason: '' },
-		{ id: 'pullbacks', reason: '' },
+		{ id: 'initial object', reason: '$0$ is not initial since it has two morphisms to $1$, and $1$ has not initial since it has no morphism to $0$.' },
+		{ id: 'zero morphisms', reason: 'Assume that $a : 0 \\to 1$ is the zero morphism from $0$ to $1$, and the other morphism is $b$. The identity of $0$ must be the zero morphism from $0$ to $0$. But then $b = b \\circ \\mathrm{id}_0 = b \\circ 0_{0,0} = 0_{0,1} = a$, a contradiction.' },
+		{ id: 'binary products', reason: 'We cannot have $0 \\times 1 = 1$ since there is no morphism $1 \\to 0$. So assume $0 \\times 1 = 0$, say with projections $\\mathrm{id}_0 : 0 \\to 0$ and $a : 0 \\to 1$. By applying the universal property to  $\\mathrm{id}_0 : 0 \\to 0$ and the other morphism $b : 0 \\to 1$, it immediately follows $a=b$, which is a contradiction.' },
+		{ id: 'equalizers', reason: 'The two morphisms $a,b : 0 \\rightrightarrows 1$ have no equalizer, since it would have to be the identity of $0$, but $a \\neq b$.' },
+		{ id: 'pullbacks', reason: 'The two morphisms $a,b : 0 \\rightrightarrows 1$ have no pullback, since it would to consist of identities $0 \\leftarrow 0 \\rightarrow 0$, but $a \\neq b$.' },
 	],
 	'walking_isomorphism': [{ id: 'skeletal', reason: 'The two objects are isomorphic, but different.' }],
 	'Setne': [
