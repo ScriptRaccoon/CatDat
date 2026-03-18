@@ -54,6 +54,9 @@ You need to have [NodeJS](https://nodejs.org/) and [pnpm](https://pnpm.io/) inst
 ## Similar projects
 
 - **[Catabase](https://catabase.fly.dev)**: A similar project that appears to be abandoned. It is more ambitious in terms of available data types but less complete for basic categories. The UI is not very intuitive, and it lacks an integrated deduction system between properties. See the [nForum announcement](https://nforum.ncatlab.org/discussion/13419/catabase-a-database-of-categories/).
+- **[SmallCategories](https://smallcats.info/)**: A similar project that also appears to be abandoned. A particular emphasis is given to enumerating all finite categories.
 - **[nLab](https://ncatlab.org)**: A wiki for (higher) category theory. _CatDat_ refers to nLab pages for detailed information on its entries.
 - **[Clowder Project](https://clowderproject.com)**: A new online reference for category theory. Unlike _CatDat_, which is data-based, Clowder follows a textbook-based approach.
 - **[Database of Ring Theory](https://ringtheory.herokuapp.com/)**: This database focuses on ring theory and module theory rather than category theory, but is very similar in nature and was a major inspiration for _CatDat_.
+
+**[MathBases](https://mathbases.org/)** lists many other databases for other kinds of mathematical structure.
