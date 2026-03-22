@@ -23,6 +23,11 @@ VALUES
 	),
 	(
 		'Set',
+		'strongly connected',
+		'Every nonempty set is weakly terminal.'
+	),
+	(
+		'Set',
 		'finitary algebraic',
 		'Use the empty algebraic theory.'
 	),
@@ -85,6 +90,11 @@ VALUES
 		'Top',
 		'disjoint coproducts',
 		'This follows easily from the corresponding fact for sets.'
+	),
+	(
+		'Top',
+		'strongly connected',
+		'Every nonempty space is weakly terminal.'
 	),
 	(
 		'Grp',
@@ -357,6 +367,11 @@ VALUES
 		'This follows easily from the corresponding fact for sets, since the coproduct of posets is built using the disjoint union.'
 	),
 	(
+		'Pos',
+		'strongly connected',
+		'Every nonempty preorder is weakly terminal.'
+	),
+	(
 		'M-Set',
 		'locally small',
 		'There is a forgetful functor $M{-}\mathbf{Set} \to \mathbf{Set}$ and $\mathbf{Set}$ is locally small.'
@@ -462,6 +477,11 @@ VALUES
 		'FinSet',
 		'generator',
 		'The one-point set is a generator since it represents the forgetful functor $\mathbf{FinSet} \to \mathbf{Set}$.'
+	),
+	(
+		'FinSet',
+		'strongly connected',
+		'Every nonempty finite set is weakly terminal.'
 	),
 	(
 		'FinSet',
@@ -632,6 +652,11 @@ VALUES
 		'trivial'
 	),
 	(
+		'0',
+		'locally cartesian closed',
+		'This is vacuously true.'
+	),
+	(
 		'1',
 		'trivial',
 		'trivial'
@@ -686,7 +711,11 @@ VALUES
 		'skeletal',
 		'The two objects are not isomorphic'
 	),
-
+	(
+		'walking_morphism',
+		'strongly connected',
+		'trivial'
+	),
 	(
 		'walking_pair',
 		'finite',
@@ -699,7 +728,7 @@ VALUES
 	),
 	(
 		'walking_pair',
-		'connected',
+		'strongly connected',
 		'trivial'
 	),
 	(
@@ -730,6 +759,31 @@ VALUES
 	(
 		'walking_isomorphism',
 		'finite',
+		'trivial'
+	),
+	(
+		'walking_composable_pair',
+		'finite',
+		'trivial'
+	),
+	(
+		'walking_composable_pair',
+		'strongly connected',
+		'trivial'
+	),
+	(
+		'walking_composable_pair',
+		'skeletal',
+		'trivial'
+	),
+	(
+		'walking_composable_pair',
+		'products',
+		'trivial'
+	),
+	(
+		'walking_composable_pair',
+		'self-dual',
 		'trivial'
 	),
 
@@ -1073,6 +1127,11 @@ VALUES
 		'The relation $\leq$ is antisymmetric.'
 	),
 	(
+		'N',
+		'strongly connected',
+		'trivial'
+	),
+	(
 		'On',
 		'thin',
 		'trivial'
@@ -1108,6 +1167,11 @@ VALUES
 		'The relation $\leq$ is antisymmetric'
 	),
 	(
+		'On',
+		'strongly connected',
+		'trivial'
+	),
+	(
 		'real_interval',
 		'small',
 		'trivial'
@@ -1119,8 +1183,8 @@ VALUES
 	),
 	(
 		'real_interval',
-		'cartesian closed',
-		'The exponential $a \Rightarrow b$ (Heyting implication) is $1$ when $a \leq b$ and otherwise $b$.'
+		'strongly connected',
+		'trivial'
 	),
 	(
 		'real_interval',
@@ -1187,6 +1251,11 @@ VALUES
 		'infinitary codistributive',
 		'We need to prove $\max(a, \inf_i b_i) = \inf_i \max(a,b_i)$. The inequality $\leq$ is formal, we need to prove $\geq$. For the empty index set both sides are $\infty$. Otherwise, there is some $i_0$ with $b_{i_0} = \inf_i b_i$. Then $\max(a, \inf_i b_i) = \max(a, b_{i_0}) \geq   \inf_i \max(a,b_i)$.'
 	),
+	(
+		'Noo',
+		'strongly connected',
+		'trivial'
+	),
 
 	-- deloopings
 	(
@@ -1201,7 +1270,7 @@ VALUES
 	),
 	(
 		'BG',
-		'connected',
+		'strongly connected',
 		'trivial'
 	),
 	(
@@ -1226,7 +1295,7 @@ VALUES
 	),
 	(
 		'BGf',
-		'connected',
+		'strongly connected',
 		'trivial'
 	),
 	(
@@ -1246,7 +1315,7 @@ VALUES
 	),
 	(
 		'BN',
-		'connected',
+		'strongly connected',
 		'trivial'
 	),
 	(
@@ -1277,7 +1346,7 @@ VALUES
 
 	(
 		'BOn',
-		'connected',
+		'strongly connected',
 		'trivial'
 	),
 	(
@@ -1411,6 +1480,11 @@ VALUES
 		'Cat',
 		'disjoint coproducts',
 		'This follows easily from the description of a coproduct of categories (based on disjoint unions).'
+	),
+	(
+		'Cat',
+		'strongly connected',
+		'Every nonempty category is weakly terminal.'
 	),
 	(
 		'Fld',

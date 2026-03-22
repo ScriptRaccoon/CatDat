@@ -312,6 +312,11 @@ VALUES
 		'Consider the subposet $\{(a,b) : a \leq b \}$ of $\mathbb{N}^2$.'
 	),
 	(
+		'Pos',
+		'locally cartesian closed',
+		'See §2 of <a href="http://www.tac.mta.ca/tac/volumes/8/n2/8-02abs.html" target="_blank">Niefield 2001</a>.'
+	),
+	(
 		'M-Set',
 		'strict terminal object',
 		'Take any set $X$ with an element $x \in X$, endow $X$ with the trivial $M$-action. Then the morphism $x : 1 \to X$ is only an isomorphism when $X = \{x\}$.'
@@ -1130,6 +1135,11 @@ VALUES
 		'Cat',
 		'Malcev',
 		NULL
+	),
+	(
+		'Cat',
+		'locally cartesian closed',
+		'See Theorem 4.4 of <a href="https://www.numdam.org/item/MSMF_1964__2__R3_0/" target="_blank">Giraud 1964</a>.'
 	),
 	(
 		'Fld',

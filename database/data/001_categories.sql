@@ -284,6 +284,15 @@ VALUES
 		'The name of this category comes from the fact that it consists of two objects and an isomorphism between them, and a functor out of this category is the same as an isomorphism in the target category. The walking isomorphism is actually equivalent to the trivial category.',
 		'https://ncatlab.org/nlab/show/walking+isomorphism'
 	),
+	(
+		'walking_composable_pair',
+		'walking composable pair',
+		'$\{ 0 \to 1 \to 2 \}$',
+		'three objects $0,1,2$',
+		'a single morphism from each natural number to one greater than or equal to it',
+		'The name of this category comes from the fact that a functor out of it is the same as a composable pair of morphisms.',
+		'https://ncatlab.org/nlab/show/composable+pair'
+	),
 
 	-- examples of thin categories
     (

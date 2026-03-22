@@ -80,6 +80,7 @@ VALUES
 	('walking_pair', 'walking_morphism'),
 	('walking_isomorphism', 'walking_morphism'),
 	('walking_isomorphism', '1'),
+	('walking_composable_pair', 'walking_morphism'),
 	('Setne', 'Set'),
 	('B', 'FI'),
 	('B', 'FS'),

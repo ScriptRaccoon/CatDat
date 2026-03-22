@@ -4,6 +4,7 @@ VALUES
 	('locally small', 'locally essentially small'),
 	('locally essentially small', 'locally small'),
 	('cartesian closed', 'finite products'),
+	('locally cartesian closed', 'cartesian closed'),
 	('zero morphisms', 'preadditive'),
 	('zero morphisms', 'pointed'),
 	('preadditive', 'additive'),
@@ -85,4 +86,6 @@ VALUES
 	('wide pushouts', 'pushouts'),
 	('split abelian', 'abelian'),
 	('Cauchy complete', 'finitely complete'),
-	('Malcev', 'finitely complete');
+	('Malcev', 'finitely complete'),
+	('connected', 'strongly connected'),
+	('strongly connected', 'connected');

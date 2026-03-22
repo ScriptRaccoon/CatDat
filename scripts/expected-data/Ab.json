@@ -10,6 +10,7 @@
 	"cogenerator": true,
 	"complete": true,
 	"connected": true,
+	"strongly connected": true,
 	"connected colimits": true,
 	"connected limits": true,
 	"coproducts": true,
@@ -56,6 +57,7 @@
 	"biproducts": true,
 
 	"cartesian closed": false,
+	"locally cartesian closed": false,
 	"discrete": false,
 	"distributive": false,
 	"elementary topos": false,

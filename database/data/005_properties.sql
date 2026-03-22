@@ -33,6 +33,14 @@ VALUES
 		TRUE
 	),
 	(
+		'locally cartesian closed',
+		'is',
+		'A category is <i>locally cartesian closed</i> if each of its slice categories is cartesian closed.',
+		'https://ncatlab.org/nlab/show/locally+cartesian+closed+category',
+		NULL,
+		TRUE
+	),
+	(
 		'pullbacks',
 		'has',
 		'A category $\mathcal{C}$ has <i>pullbacks</i> if every cospan of morphisms $A \rightarrow S \leftarrow B$ has a pullback $A \times_S B$. This is also known as a fiber product. Equivalently, the slice category $\mathcal{C}/S$ has binary products.',
@@ -579,6 +587,14 @@ VALUES
 		'A category is <i>connected</i> if it is inhabited and every two objects can be joined via a zig-zag path of morphisms. Equivalently, $\mathcal{C}$ is connected if $\mathcal{C} \simeq \coprod_{i \in I} \mathcal{C}_i$ implies $\mathcal{C}_i \simeq 0$ for some $i$.',
 		'https://ncatlab.org/nlab/show/connected+category',
 		'connected',
+		TRUE
+	),
+	(
+		'strongly connected',
+		'is',
+		'A category is <i>strongly connected</i> if it is inhabited and every two objects $A,B$ can be joined via a morphism: there is a morphism $A \to B$ or there is a morphism $B \to A$. Notice that this is stronger than being connected, and that posets with this property are precisely the inhabited totally ordered sets.',
+		NULL,
+		'strongly connected',
 		TRUE
 	),
 	(

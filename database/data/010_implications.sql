@@ -278,10 +278,10 @@ VALUES
 		FALSE
 	),
 	(
-		'connected_criterion',
+		'zero_morphisms_mean_strongly_connected',
 		'["zero morphisms", "inhabited"]',
-		'["connected"]',
-		'This is trivial.',
+		'["strongly connected"]',
+		'This holds by definition.',
 		FALSE
 	),
 	(
@@ -404,9 +404,23 @@ VALUES
 		FALSE
 	),
 	(
+		'groupoid_connected',
+		'["groupoid", "connected"]',
+		'["strongly connected"]',
+		'trivial',
+		FALSE
+	),
+	(
 		'connected_consequence',
 		'["connected"]',
 		'["inhabited"]',
+		'This holds by definition.',
+		FALSE
+	),
+	(
+		'strongly_connected_consequence',
+		'["strongly connected"]',
+		'["connected"]',
 		'This holds by definition.',
 		FALSE
 	),
@@ -643,6 +657,34 @@ VALUES
 		'See Prop. 2.2.13. in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>.',
 		FALSE
 	),
+	(
+		'pullbacks_are_local_products',
+		'["locally cartesian closed"]',
+		'["pullbacks"]',
+		'Pullbacks are binary products in slice categories.',
+		FALSE
+	),
+	(
+		'locally_cartesian_closed_with_terminal_is_closed',
+		'["locally cartesian closed", "terminal object"]',
+		'["cartesian closed"]',
+		'The slice over the terminal object is the category itself.',
+		FALSE
+	),
+	(
+		'discrete_is_locally_cartesian_closed',
+		'["discrete"]',
+		'["locally cartesian closed"]',
+		'Each slice of a discrete category is terminal.',
+		FALSE
+	),
+	(
+		'sequential_implies_lcc',
+		'["thin", "strongly connected"]',
+		'["locally cartesian closed"]',
+		'Each slice is thin, strongly connected, and has a terminal object. Every such category is cartesian closed, where the exponential $a \Rightarrow b$ (Heyting implication) is $1$ when $a \leq b$ and otherwise $b$.',
+		FALSE
+	),
 
 	-- non-trivial implications
 	(
@@ -720,6 +762,13 @@ VALUES
 		'["Grothendieck abelian", "self-dual"]',
 		'["trivial"]',
 		'This follows since the dual of a non-trivial Grothendieck abelian category cannot be Grothendieck abelian. See Peter Freyd, <i>Abelian categories</i>, p. 116.',
+		FALSE
+	),
+	(
+		'topos_is_locally_cartesian_closed',
+		'["elementary topos"]',
+		'["locally cartesian closed"]',
+		'See <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, Cor. A2.3.4.',
 		FALSE
 	);
 
