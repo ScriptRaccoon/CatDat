@@ -30,4 +30,20 @@ VALUES
 	'https://ncatlab.org/nlab/show/locally+presentable+category',
 	NULL,
 	TRUE
+),
+(
+	'locally strongly finitely presentable',
+	'is a',
+	'A category is a <i>locally strongly finitely presentable</i> if it is cocomplete and there is a set $G$ of strongly finitely presentable objects such that every object is a sifted colimit of objects from $G$.
+	There are several equivalent conditions:
+	<ul style="list-style-type: circle;">
+		<li>It is equivalent to the category of models of a many-sorted finitary equational theory.</li>
+		<li>It is equivalent to the category of finite-product-preserving functors to $\mathbf{Set}$ from a small category with finite products (=Lawvere theory).</li>
+		<li>It is equivalent to the Eilenberg&ndash;Moore category of a finitary (=filtered-colimit-preserving) monad on $\mathbf{Set}^S$ for some set $S$.</li>
+		<li>It is equivalent to the Eilenberg&ndash;Moore category of a sifted-colimit-preserving monad on $\mathbf{Set}^S$ for some set $S$. (cf. [<a href="https://doi.org/10.2168/LMCS-8(3:14)2012">KR12</a>, Proposition 3.3])</li>
+	</ul>
+	A category satisfying this property is simply called a <i>variety</i> (of algebras) by some authors, although one should be aware that this term is sometimes used only for the one-sorted case.',
+	'https://ncatlab.org/nlab/show/locally+strongly+finitely+presentable+category',
+	NULL,
+	TRUE
 );
