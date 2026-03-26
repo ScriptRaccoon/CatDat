@@ -19,9 +19,9 @@ VALUES
 ),
 (
 	'sSet',
-	'locally finitely presentable',
+	'locally strongly finitely presentable',
 	TRUE,
-	'This follows from the fact that the free cocompletion of a small category is locally finitely presentable.'
+	'This follows from the fact that every category of presheaves over a small category is locally strongly finitely presentable.'
 ),
 (
 	'sSet',
