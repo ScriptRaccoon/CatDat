@@ -54,4 +54,11 @@ VALUES
 	'["locally presentable"]',
 	'See <a href="https://arxiv.org/abs/1409.7051" target="_blank">Deriving Auslander''s formula</a>, Cor. 5.2, or <a href="https://arxiv.org/abs/math/0102087" target="_blank">Sheafifiable homotopy model categories</a>, Prop. 3.10.',
 	FALSE
+),
+(
+	'locally_strongly_finitely_presentable_raise',
+	'["locally strongly finitely presentable"]',
+	'["locally finitely presentable"]',
+	'See <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>, Cor. 3.7.',
+	FALSE
 );
