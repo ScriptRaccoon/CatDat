@@ -9,8 +9,8 @@ VALUES
 (
 	'finitary_algebraic_consequence',
 	'["finitary algebraic"]',
-	'["locally finitely presentable"]',
-	'See <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>, Cor. 3.7.',
+	'["locally strongly finitely presentable"]',
+	'This is trivial because a locally strongly finitely presentable category is a variety of many-sorted finitary algebras.',
 	FALSE
 ),
 (
@@ -91,10 +91,10 @@ VALUES
 	FALSE
 ),
 (
-	'algebraic_implies_regular',
-	'["finitary algebraic"]',
+	'many_sorted_algebraic_implies_regular',
+	'["locally strongly finitely presentable"]',
 	'["regular"]',
-	'The regular epimorphisms are precisely the surjective algebra homomorphisms, which are clearly stable under pullbacks.',
+	'The regular epimorphisms are precisely the sort-wise surjective homomorphisms, which are clearly stable under pullbacks.',
 	FALSE
 ),
 (
