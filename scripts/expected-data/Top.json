@@ -92,5 +92,6 @@
 	"infinitary coextensive": false,
 	"co-Malcev": false,
 	"unital": false,
-	"counital": false
+	"counital": false,
+	"locally strongly finitely presentable": false
 }
