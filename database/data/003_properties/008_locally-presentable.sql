@@ -33,7 +33,7 @@ VALUES
 ),
 (
 	'locally strongly finitely presentable',
-	'is a',
+	'is',
 	'A category is a <i>locally strongly finitely presentable</i> if it is cocomplete and there is a set $G$ of strongly finitely presentable objects such that every object is a sifted colimit of objects from $G$.
 	There are several equivalent conditions:
 	<ul style="list-style-type: circle;">
