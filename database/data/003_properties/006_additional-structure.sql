@@ -10,7 +10,7 @@ VALUES
 (
 	'finitary algebraic',
 	'is',
-	'A category is <i>finitary algebraic</i> if it is equivalent to the category of models of a finitary algebraic theory. This is also known as a variety of finitary algebras.',
+	'A category is <i>finitary algebraic</i> if it is equivalent to the category of models of a one-sorted finitary equational theory. This is also known as a variety of one-sorted finitary algebras.',
 	'https://ncatlab.org/nlab/show/algebraic+category',
 	NULL,
 	TRUE
