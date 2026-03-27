@@ -7,7 +7,7 @@ INSERT INTO category_property_assignments (
 VALUES
 (
 	'Set_op',
-	'finitary algebraic',
+	'locally presentable',
 	FALSE,
-	NULL
+	'This follows from the fact that the opposite category of a complete accessible large category is never accessible. See <a href="https://bookstore.ams.org/conm-104" target="_blank">Makkai-Pare</a>, Thm. 3.4.3.'
 );

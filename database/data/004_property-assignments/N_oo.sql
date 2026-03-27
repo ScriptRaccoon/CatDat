@@ -31,9 +31,9 @@ VALUES
 ),
 (
 	'N_oo',
-	'locally finitely presentable',
+	'locally strongly finitely presentable',
 	TRUE,
-	'Every natural number is finitely presentable, and $\infty$ is the colimit of all $n < \infty$.'
+	'Every natural number is strongly finitely presentable, and $\infty$ is the colimit of all $n < \infty$.'
 ),
 (
 	'N_oo',
