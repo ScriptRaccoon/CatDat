@@ -33,7 +33,7 @@ for (const folder of subfolders) {
 		.sort()
 
 	for (const file of files) {
-		const base = file.split('/').at(-1)
+		const base = path.basename(file)
 		const is_valid = base?.match(/^[A-Za-z0-9_.,\-()]+$/)
 		if (!is_valid) {
 			throw new Error(`Invalid file name: ${base}`)
