@@ -1,20 +1,20 @@
 import { type Client } from '@libsql/client'
-import { are_equal_sets } from './utils'
+import { are_equal_sets } from './shared'
 import dotenv from 'dotenv'
 
 dotenv.config({ quiet: true })
 
-export async function deduce_implications(db: Client) {
-	await clear_deduced_implications(db)
-	await create_dualized_implications(db)
-	await create_self_dual_implications(db)
+export async function deduce_category_implications(db: Client) {
+	await clear_deduced_category_implications(db)
+	await create_dualized_category_implications(db)
+	await create_self_dual_category_implications(db)
 }
 
-async function clear_deduced_implications(db: Client) {
+async function clear_deduced_category_implications(db: Client) {
 	await db.execute(`DELETE FROM implications WHERE is_deduced = TRUE`)
 }
 
-async function create_dualized_implications(db: Client) {
+async function create_dualized_category_implications(db: Client) {
 	const res = await db.execute(`
         SELECT
             v.id,
@@ -88,10 +88,10 @@ async function create_dualized_implications(db: Client) {
 		'write',
 	)
 
-	console.info(`Dualized ${dualizable_implications.length} implications`)
+	console.info(`Dualized ${dualizable_implications.length} category implications`)
 }
 
-async function create_self_dual_implications(db: Client) {
+async function create_self_dual_category_implications(db: Client) {
 	const { rows } = await db.execute(`
         INSERT INTO implication_input (
             id,
@@ -118,5 +118,5 @@ async function create_self_dual_implications(db: Client) {
         RETURNING id
     `)
 
-	console.info(`Created ${rows.length} self-dual implications`)
+	console.info(`Created ${rows.length} self-dual category implications`)
 }

@@ -3,9 +3,9 @@ import dotenv from 'dotenv'
 import {
 	get_assumption_string,
 	get_conclusion_string,
-	get_normalized_implications,
-	NormalizedImplication,
-} from './implication.utils'
+	is_subset,
+	NormalizedCategoryImplication,
+} from './shared'
 
 dotenv.config({ quiet: true })
 
@@ -15,23 +15,22 @@ type CategoryMeta = {
 	dual_category_id: string | null
 }
 
-export async function deduce_all_properties(db: Client) {
+export async function deduce_category_properties(db: Client) {
 	const tx = await db.transaction()
 
 	try {
-		const implications = await get_normalized_implications(tx)
-		if (!implications) return
+		const implications = await get_normalized_category_implications(tx)
 
 		const categories = await get_categories(tx)
 
 		for (const category of categories) {
-			await delete_deduced_properties(tx, category.id)
-			await deduce_satisfied_properties(tx, category.id, implications)
-			await deduce_unsatisfied_properties(tx, category.id, implications)
+			await delete_deduced_category_properties(tx, category.id)
+			await deduce_satisfied_category_properties(tx, category.id, implications)
+			await deduce_unsatisfied_category_properties(tx, category.id, implications)
 		}
 
 		for (const category of categories) {
-			await deduce_dual_properties(tx, category)
+			await deduce_dual_category_properties(tx, category)
 		}
 
 		await tx.commit()
@@ -42,6 +41,66 @@ export async function deduce_all_properties(db: Client) {
 	}
 }
 
+async function get_normalized_category_implications(
+	tx: Transaction,
+): Promise<NormalizedCategoryImplication[]> {
+	const res = await tx.execute(`
+        SELECT
+			v.id,
+            v.assumptions,
+            v.conclusions,
+            v.is_equivalence,
+            (
+                SELECT json_group_object(p.id, p.relation)
+                FROM properties p
+                WHERE p.id IN (
+                    SELECT value FROM json_each(v.assumptions)
+                    UNION
+                    SELECT value FROM json_each(v.conclusions)
+                )
+            ) AS relations
+        FROM implications_view v
+    `)
+
+	const all_implications_db = res.rows as unknown as {
+		id: string
+		assumptions: string
+		conclusions: string
+		is_equivalence: number
+		relations: string
+	}[]
+
+	const implications: NormalizedCategoryImplication[] = []
+
+	for (const impl of all_implications_db) {
+		const assumptions: string[] = JSON.parse(impl.assumptions)
+		const conclusions: string[] = JSON.parse(impl.conclusions)
+		const relations: Record<string, string> = JSON.parse(impl.relations)
+
+		for (const conclusion of conclusions) {
+			implications.push({
+				id: impl.id,
+				assumptions: new Set(assumptions),
+				conclusion,
+				relations,
+			})
+		}
+
+		if (impl.is_equivalence) {
+			for (const assumption of assumptions) {
+				implications.push({
+					id: impl.id,
+					assumptions: new Set(conclusions),
+					conclusion: assumption,
+					relations,
+				})
+			}
+		}
+	}
+
+	return implications
+}
+
 async function get_categories(tx: Transaction) {
 	const res = await tx.execute(`
 		SELECT id, name, dual_category_id
@@ -50,7 +109,7 @@ async function get_categories(tx: Transaction) {
 	return res.rows as unknown as CategoryMeta[]
 }
 
-async function delete_deduced_properties(tx: Transaction, category_id: string) {
+async function delete_deduced_category_properties(tx: Transaction, category_id: string) {
 	await tx.execute({
 		sql: `
 			DELETE FROM category_property_assignments
@@ -60,46 +119,10 @@ async function delete_deduced_properties(tx: Transaction, category_id: string) {
 	})
 }
 
-async function deduce_dual_properties(tx: Transaction, category: CategoryMeta) {
-	const allowed =
-		category.dual_category_id !== null &&
-		category.name.toLowerCase().startsWith('dual') // prevent circular deduction
-
-	if (!allowed) return
-
-	const res = await tx.execute({
-		sql: `
-			INSERT OR REPLACE INTO category_property_assignments
-				(category_id, property_id, is_satisfied, reason, is_deduced)
-			SELECT
-				?,
-				p.dual_property_id,
-				a.is_satisfied,
-				CASE
-					WHEN a.is_satisfied THEN
-					'Its dual category ' || r.relation || ' ' || a.property_id || '.'
-					ELSE
-					'Its dual category ' || r.negation || ' ' || a.property_id || '.'
-				END,
-				TRUE
-			FROM category_property_assignments a
-			INNER JOIN properties p ON p.id = a.property_id
-			INNER JOIN relations r ON r.relation= p.relation
-			WHERE a.category_id = ? AND p.dual_property_id IS NOT NULL
-			ORDER BY lower(p.dual_property_id)
-		`,
-		args: [category.id, category.dual_category_id],
-	})
-
-	console.info(
-		`Added ${res.rowsAffected} (un-)satisfied properties for ${category.id} to the database by using its dual ${category.dual_category_id}`,
-	)
-}
-
-async function deduce_satisfied_properties(
+async function deduce_satisfied_category_properties(
 	tx: Transaction,
 	category_id: string,
-	implications: NormalizedImplication[],
+	implications: NormalizedCategoryImplication[],
 ) {
 	const satisfied_res = await tx.execute({
 		sql: `
@@ -123,7 +146,7 @@ async function deduce_satisfied_properties(
 	while (true) {
 		const implication = implications.find(
 			({ assumptions, conclusion }) =>
-				[...assumptions].every((p) => satisfied_props.has(p)) &&
+				is_subset(assumptions, satisfied_props) &&
 				!satisfied_props.has(conclusion),
 		)
 		if (!implication) break
@@ -164,14 +187,14 @@ async function deduce_satisfied_properties(
 	}
 
 	console.info(
-		`Added ${deduced_satisfied_props.length} satisfied properties for ${category_id} to the database`,
+		`Added ${deduced_satisfied_props.length} satisfied properties for category ${category_id} to the database`,
 	)
 }
 
-async function deduce_unsatisfied_properties(
+async function deduce_unsatisfied_category_properties(
 	tx: Transaction,
 	category_id: string,
-	implications: NormalizedImplication[],
+	implications: NormalizedCategoryImplication[],
 ) {
 	const satisfied_res = await tx.execute({
 		sql: `
@@ -211,9 +234,7 @@ async function deduce_unsatisfied_properties(
 			for (const p of implication.assumptions) {
 				const is_valid =
 					!unsatisfied_props.has(p) &&
-					[...implication.assumptions].every(
-						(q) => q === p || satisfied_props.has(q),
-					)
+					is_subset(implication.assumptions, satisfied_props, p)
 				if (is_valid) return { implication, property: p }
 			}
 		}
@@ -268,6 +289,42 @@ async function deduce_unsatisfied_properties(
 	}
 
 	console.info(
-		`Added ${deduced_unsatisfied_props.length} unsatisfied properties for ${category_id} to the database`,
+		`Added ${deduced_unsatisfied_props.length} unsatisfied properties for category ${category_id} to the database`,
+	)
+}
+
+async function deduce_dual_category_properties(tx: Transaction, category: CategoryMeta) {
+	const allowed =
+		category.dual_category_id !== null &&
+		category.name.toLowerCase().startsWith('dual') // prevent circular deduction
+
+	if (!allowed) return
+
+	const res = await tx.execute({
+		sql: `
+			INSERT OR REPLACE INTO category_property_assignments
+				(category_id, property_id, is_satisfied, reason, is_deduced)
+			SELECT
+				?,
+				p.dual_property_id,
+				a.is_satisfied,
+				CASE
+					WHEN a.is_satisfied THEN
+					'Its dual category ' || r.relation || ' ' || a.property_id || '.'
+					ELSE
+					'Its dual category ' || r.negation || ' ' || a.property_id || '.'
+				END,
+				TRUE
+			FROM category_property_assignments a
+			INNER JOIN properties p ON p.id = a.property_id
+			INNER JOIN relations r ON r.relation= p.relation
+			WHERE a.category_id = ? AND p.dual_property_id IS NOT NULL
+			ORDER BY lower(p.dual_property_id)
+		`,
+		args: [category.id, category.dual_category_id],
+	})
+
+	console.info(
+		`Added ${res.rowsAffected} (un-)satisfied properties for category ${category.id} to the database by using its dual ${category.dual_category_id}`,
 	)
 }
