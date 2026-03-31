@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state'
+	import type { Structure } from '$lib/commons/types'
 	import {
 		faArrowsSplitUpAndLeft,
 		faChartBar,
@@ -11,11 +12,18 @@
 	} from '@fortawesome/free-solid-svg-icons'
 	import Fa from 'svelte-fa'
 
+	type Props = {
+		structure: Structure
+	}
+
+	let { structure }: Props = $props()
+
 	type Link = {
 		href: string
 		text: string
 		nested?: string
 		icon: IconDefinition
+		structure?: Structure
 	}
 
 	const links: Link[] = [
@@ -29,36 +37,72 @@
 			text: 'Categories',
 			nested: '/category/',
 			icon: faDatabase,
+			structure: 'categories',
 		},
 		{
 			href: '/category-properties',
 			text: 'Properties',
 			nested: '/category-property/',
 			icon: faList,
+			structure: 'categories',
 		},
 		{
 			href: '/category-implications',
 			text: 'Implications',
 			nested: '/category-implication',
 			icon: faArrowsSplitUpAndLeft,
+			structure: 'categories',
 		},
 		{
 			href: '/category-comparison',
 			text: 'Compare',
-			nested: '/category-comparison',
 			icon: faChartBar,
+			nested: '/category-comparison',
+			structure: 'categories',
 		},
 		{
 			href: '/category-search',
 			text: 'Search',
 			icon: faSearch,
+			structure: 'categories',
+		},
+		{
+			href: '/functors',
+			text: 'Functors',
+			nested: '/functor/',
+			icon: faDatabase,
+			structure: 'functors',
+		},
+		{
+			href: '/functor-properties',
+			text: 'Properties',
+			nested: '/functor-property',
+			icon: faList,
+			structure: 'functors',
+		},
+		{
+			href: '/functor-implications',
+			text: 'Implications',
+			nested: '/functor-implication',
+			icon: faArrowsSplitUpAndLeft,
+			structure: 'functors',
+		},
+		{
+			href: '/functor-search',
+			text: 'Search',
+			icon: faSearch,
+			structure: 'functors',
 		},
 	]
+
+	let displayed_links = $derived(
+		links.filter((link) => !link.structure || link.structure === structure),
+	)
 </script>
 
 <nav>
 	<ul>
-		{#each links as { nested, href, text, icon }}
+		{#each displayed_links as { nested, href, text, icon }}
 			<li
 				class:current={page.url.pathname === href ||
 					(nested && page.url.pathname.startsWith(nested))}
@@ -82,9 +126,8 @@
 		padding: 0;
 		list-style-type: none;
 		display: flex;
-		justify-content: center;
 		flex-wrap: wrap;
-		gap: 0.25rem 1.25rem;
+		gap: 0.25rem 1.5rem;
 	}
 
 	a {

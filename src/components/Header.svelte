@@ -1,12 +1,15 @@
 <script lang="ts">
 	import { faBars } from '@fortawesome/free-solid-svg-icons'
 	import Fa from 'svelte-fa'
+	import StructureSelector from './StructureSelector.svelte'
+	import type { Structure } from '$lib/commons/types'
 
 	type Props = {
 		open_mobile_nav: () => void
+		structure: Structure
 	}
 
-	let { open_mobile_nav }: Props = $props()
+	let { open_mobile_nav, structure }: Props = $props()
 </script>
 
 <header>
@@ -29,6 +32,10 @@
 		</svg>
 	</h1>
 
+	<div class="structure_selector_container">
+		<StructureSelector {structure} />
+	</div>
+
 	<button
 		class="button nav-button"
 		onclick={open_mobile_nav}
@@ -40,21 +47,38 @@
 
 <style>
 	header {
-		text-align: center;
-		padding-block: 2rem;
+		padding-block: 2rem 1.5rem;
+		display: grid;
+		align-items: start;
+		grid-template-columns: 1fr auto;
+		gap: 1rem;
+	}
 
-		@media (width <= 600px) {
-			text-align: initial;
-			padding-block: 2rem 0.5rem;
-			display: flex;
-			justify-content: space-between;
-			align-items: start;
+	.nav-button {
+		display: none;
+	}
+
+	@media (width <= 600px) {
+		header {
+			padding-block: 2rem 1rem;
+			grid-template-columns: 1fr auto auto;
+		}
+
+		.nav-button {
+			display: initial;
 		}
 	}
 
-	@media (width > 600px) {
-		.nav-button {
-			display: none;
+	@media (width <= 400px) {
+		header {
+			padding-block: 1rem 1rem;
+			grid-template-columns: 1fr auto;
+		}
+
+		.structure_selector_container {
+			grid-row: 1;
+			grid-column: 1 / span 2;
+			justify-self: end;
 		}
 	}
 

@@ -123,7 +123,8 @@ ul li::marker {
 }
 
 button,
-input {
+input,
+select {
 	font: inherit;
 	background: none;
 	border: none;
@@ -131,7 +132,8 @@ input {
 }
 
 input[type='text'],
-input[type='search'] {
+input[type='search'],
+select {
 	padding: 0.25rem 0.75rem;
 	border-radius: 0.4rem;
 	outline: none;

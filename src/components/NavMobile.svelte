@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { Structure } from '$lib/commons/types'
 	import {
 		faArrowsSplitUpAndLeft,
 		faChartBar,
@@ -12,9 +13,10 @@
 
 	type Props = {
 		close: () => void
+		structure: Structure
 	}
 
-	let { close }: Props = $props()
+	let { close, structure }: Props = $props()
 </script>
 
 <nav>
@@ -29,39 +31,68 @@
 				<Fa icon={faHome} />
 			</a>
 		</li>
-		<li>
-			<a href="/categories">
-				Categories
-				<Fa icon={faDatabase} />
-			</a>
-		</li>
-		<li>
-			<a href="/category-properties">
-				Properties
-				<Fa icon={faList} />
-			</a>
-		</li>
 
-		<li>
-			<a href="/category-implications">
-				Implications
-				<Fa icon={faArrowsSplitUpAndLeft} />
-			</a>
-		</li>
+		{#if structure === 'categories'}
+			<li>
+				<a href="/categories">
+					Categories
+					<Fa icon={faDatabase} />
+				</a>
+			</li>
+			<li>
+				<a href="/category-properties">
+					Properties
+					<Fa icon={faList} />
+				</a>
+			</li>
 
-		<li>
-			<a href="/category-comparison">
-				Compare
-				<Fa icon={faChartBar} />
-			</a>
-		</li>
+			<li>
+				<a href="/category-implications">
+					Implications
+					<Fa icon={faArrowsSplitUpAndLeft} />
+				</a>
+			</li>
 
-		<li>
-			<a href="/category-search">
-				Search
-				<Fa icon={faSearch} />
-			</a>
-		</li>
+			<li>
+				<a href="/category-comparison">
+					Compare
+					<Fa icon={faChartBar} />
+				</a>
+			</li>
+
+			<li>
+				<a href="/category-search">
+					Search
+					<Fa icon={faSearch} />
+				</a>
+			</li>
+		{:else if structure === 'functors'}
+			<li>
+				<a href="/functors">
+					Functors <Fa icon={faDatabase} />
+				</a>
+			</li>
+			<li>
+				<a href="/functor-properties">
+					Properties
+					<Fa icon={faList} />
+				</a>
+			</li>
+
+			<li>
+				<a href="/functor-implications">
+					Implications
+					<Fa icon={faArrowsSplitUpAndLeft} />
+				</a>
+			</li>
+
+			<li>
+				<a href="/functor-search">
+					Search
+					<Fa icon={faSearch} />
+				</a>
+			</li>
+		{/if}
 	</ul>
 
 	<ul class="secondary-list">
@@ -88,7 +119,7 @@
 		position: fixed;
 		z-index: 10;
 		inset: 0;
-		padding-top: 2rem;
+		padding-top: 1rem;
 		padding-inline: 0.75rem;
 		background-color: var(--bg-color);
 		text-align: right;

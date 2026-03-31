@@ -1,11 +1,13 @@
 <script lang="ts">
 	import { afterNavigate } from '$app/navigation'
+	import { page } from '$app/state'
 	import Footer from '$components/Footer.svelte'
-	import Heading from '$components/Heading.svelte'
+	import Header from '$components/Header.svelte'
 	import Nav from '$components/Nav.svelte'
 	import NavMobile from '$components/NavMobile.svelte'
 	import Popup from '$components/Popup.svelte'
 	import { track_visit } from '$lib/client/track'
+	import type { Structure } from '$lib/commons/types'
 	import { tracking } from '$lib/states/tracking.svelte'
 	import './app.css'
 
@@ -28,6 +30,21 @@
 	})
 
 	let nav_dialog = $state<HTMLDialogElement | null>(null)
+
+	let structure = $state<Structure>(
+		page.url.pathname.startsWith('/functor') ? 'functors' : 'categories',
+	)
+
+	$effect(() => {
+		if (page.url.pathname.startsWith('/functor')) {
+			structure = 'functors'
+		} else if (
+			page.url.pathname.startsWith('/category') ||
+			page.url.pathname.startsWith('/categories')
+		) {
+			structure = 'categories'
+		}
+	})
 </script>
 
 <svelte:head>
@@ -55,8 +72,8 @@
 </svelte:head>
 
 <div class="container">
-	<Heading {open_mobile_nav} />
-	<Nav />
+	<Header {open_mobile_nav} {structure} />
+	<Nav {structure} />
 
 	<main>
 		{@render children()}
@@ -68,21 +85,20 @@
 <Popup />
 
 <dialog bind:this={nav_dialog} id="nav_dialog">
-	<NavMobile close={close_mobile_nav} />
+	<NavMobile close={close_mobile_nav} {structure} />
 </dialog>
 
 <style>
-	main {
-		width: 100%;
+	.container {
 		max-width: 800px;
 		margin: 0 auto;
-		margin-block: 0.5rem 1.5rem;
-	}
-
-	.container {
 		min-height: 100dvh;
 		display: grid;
 		grid-template-rows: auto auto 1fr auto;
 		padding-inline: 0.75rem;
+	}
+
+	main {
+		margin-bottom: 1.5rem;
 	}
 </style>

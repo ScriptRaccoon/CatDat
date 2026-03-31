@@ -85,3 +85,5 @@ export type SpecialMorphism = {
 	description: string | null
 	reason: string | null
 }
+
+export type Structure = 'categories' | 'functors'
