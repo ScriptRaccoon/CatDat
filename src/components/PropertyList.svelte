@@ -8,9 +8,10 @@
 			relation: string
 			reason?: string | null
 		}[]
+		type?: 'category' | 'functor'
 	}
 
-	let { properties }: Props = $props()
+	let { properties, type = 'category' }: Props = $props()
 </script>
 
 {#if properties.length}
@@ -19,7 +20,7 @@
 			<li>
 				<TextWithReason {reason}>
 					{relation}
-					<a href={get_property_url(id)}>{id}</a>
+					<a href={get_property_url(id, type)}>{id}</a>
 				</TextWithReason>
 			</li>
 		{/each}

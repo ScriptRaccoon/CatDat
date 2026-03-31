@@ -2,12 +2,12 @@
 	import { goto } from '$app/navigation'
 	import { fade } from 'svelte/transition'
 	import { browser } from '$app/environment'
-	import CategoryList from '$components/CategoryList.svelte'
 	import Selection from '$components/Selection.svelte'
 	import { encode_property_ID } from '$lib/commons/property.url'
 	import MetaData from '$components/MetaData.svelte'
 	import { SEARCH_SEPARATOR } from '$lib/commons/search.config'
 	import { pluralize } from '$lib/client/utils'
+	import FunctorList from '$components/FunctorList.svelte'
 
 	let { data } = $props()
 
@@ -25,7 +25,7 @@
 			.map(encode_property_ID)
 			.join(SEARCH_SEPARATOR)
 
-		const url = new URL('/category-search', window.location.origin)
+		const url = new URL('/functor-search', window.location.origin)
 
 		if (satisfied_query) url.searchParams.set('satisfied', satisfied_query)
 		if (unsatisfied_query) url.searchParams.set('unsatisfied', unsatisfied_query)
@@ -44,7 +44,7 @@
 			.map(encode_property_ID)
 			.join(SEARCH_SEPARATOR)
 
-		const url = new URL('/category-search', window.location.origin)
+		const url = new URL('/functor-search', window.location.origin)
 
 		if (satisfied_query) url.searchParams.set('satisfied', satisfied_query)
 		if (unsatisfied_query) url.searchParams.set('unsatisfied', unsatisfied_query)
@@ -52,25 +52,25 @@
 		return decodeURIComponent(url.toString())
 	}
 
-	const sample_search_url = `/category-search?satisfied=finitely_complete${SEARCH_SEPARATOR}pointed&unsatisfied=complete`
+	const sample_search_url = `/functor-search?satisfied=continuous&unsatisfied=cocontinuous`
 </script>
 
 <MetaData
 	title="Property combo search"
-	description="Search for categories that satisfy a specific set of properties while simultaneously not satisfying another set of properties. "
+	description="Search for functors that satisfy a specific set of properties while simultaneously not satisfying another set of properties. "
 />
 
 <h2>Property combo search</h2>
 
 <p class="hint">
-	Search for categories with certain properties while excluding others. For example, you
+	Search for functors with certain properties while excluding others. For example, you
 	can <a href={sample_search_url} data-sveltekit-reload="true">look</a>
-	for categories that are finitely complete and pointed but not complete.
+	for functors that are continuous but not cocontinuous.
 </p>
 
 <div class="form">
 	<Selection
-		title="Looking for categories with these properties:"
+		title="Looking for functors with these properties:"
 		bind:selected_items={satisfied_properties}
 		allowed_items={data.all_properties}
 		section_label="Satisfied properties"
@@ -92,17 +92,13 @@
 	<section transition:fade={{ duration: 150 }}>
 		<h2>Results</h2>
 
-		{#if data.is_consistent}
-			<p class="hint">
-				{pluralize(data.found_categories.length, {
-					one: 'Found {count} category',
-					other: 'Found {count} categories',
-				})}
-			</p>
-			<CategoryList categories={data.found_categories ?? []} />
-		{:else}
-			<p>No categories found because the requirements are inconsistent.</p>
-		{/if}
+		<p class="hint">
+			{pluralize(data.found_functors.length, {
+				one: 'Found {count} functor',
+				other: 'Found {count} functors',
+			})}
+		</p>
+		<FunctorList functors={data.found_functors ?? []} />
 
 		{#if data.dual_search_available}
 			<p class="hint">

@@ -87,3 +87,71 @@ export type SpecialMorphism = {
 }
 
 export type Structure = 'categories' | 'functors'
+
+export type FunctorShort = {
+	id: string
+	name: string
+}
+
+export type FunctorDB = {
+	id: string
+	name: string
+	source: string
+	target: string
+	source_name: string
+	target_name: string
+	description: string
+	nlab_link: string | null
+}
+
+export type FunctorPropertyDB = {
+	id: string
+	relation: string
+	description: string
+	nlab_link: string | null
+	invariant_under_equivalences: number
+	dual_property_id: string | null
+}
+
+export type FunctorPropertyShort = Pick<FunctorPropertyDB, 'id' | 'relation'>
+
+export type FunctorProperty = Replace<
+	FunctorPropertyDB,
+	{
+		invariant_under_equivalences: boolean
+	}
+>
+
+export type FunctorImplicationDB = {
+	id: string
+	is_equivalence: number
+	reason: string
+	assumptions: string
+	conclusions: string
+	source_assumptions: string
+	target_assumptions: string
+	dualized_from?: string | null
+}
+
+export type FunctorImplicationDisplay = Replace<
+	FunctorImplicationDB,
+	{
+		is_equivalence: boolean
+		assumptions: string[]
+		conclusions: string[]
+		source_assumptions: string[]
+		target_assumptions: string[]
+	}
+>
+
+export type FunctorPropertyAssignmentDB = {
+	id: string
+	reason: string | null
+	relation: string
+	is_deduced: number
+}
+
+export type FunctorPropertyAssignment = Replace<
+	FunctorPropertyAssignmentDB,
+	{ is_deduced: boolean }
+>

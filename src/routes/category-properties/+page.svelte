@@ -17,9 +17,12 @@
 	)
 </script>
 
-<MetaData title="List of properties" description="All categorical properties" />
+<MetaData
+	title="List of properties of categories"
+	description="All categorical properties"
+/>
 
-<h2>List of properties</h2>
+<h2>List of properties of categories</h2>
 
 <SearchFilter bind:search />
 
