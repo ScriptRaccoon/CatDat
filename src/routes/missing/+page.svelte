@@ -1,5 +1,6 @@
 <script lang="ts">
 	import CategoryList from '$components/CategoryList.svelte'
+	import FunctorList from '$components/FunctorList.svelte'
 	import MetaData from '$components/MetaData.svelte'
 	import { get_property_url } from '$lib/commons/property.url'
 
@@ -106,6 +107,17 @@
 	{:else}
 		<p>Missing combinations could not be loaded</p>
 	{/if}
+</section>
+
+<section>
+	<h3>Functors with unknown properties</h3>
+
+	<p class="hint">
+		There are {data.functors_with_unknown_properties.length} categories that have some unknown
+		properties.
+	</p>
+
+	<FunctorList functors={data.functors_with_unknown_properties} />
 </section>
 
 <style>

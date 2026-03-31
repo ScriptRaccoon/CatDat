@@ -1,6 +1,6 @@
 import { batch } from '$lib/server/db'
 import sql from 'sql-template-tag'
-import type { CategoryShort } from '$lib/commons/types'
+import type { CategoryShort, FunctorShort } from '$lib/commons/types'
 import { error } from '@sveltejs/kit'
 import { get_missing_combinations } from '$lib/server/consistency'
 
@@ -13,6 +13,7 @@ export const load = async () => {
 			CategoryShort & { count: number },
 			CategoryShort & { count: number },
 			CategoryPairShort,
+			FunctorShort & { count: number },
 		]
 	>([
 		// missing special morphisms
@@ -69,6 +70,18 @@ export const load = async () => {
 			END
 			) = 0;
 		`,
+		// functors with unknown properties
+		sql`
+			SELECT f.id, f.name, COUNT(*) AS count
+			FROM functors f
+			INNER JOIN functor_properties p
+			LEFT JOIN functor_property_assignments fp
+				ON fp.functor_id = f.id
+				AND fp.property_id = p.id
+			WHERE fp.property_id IS NULL
+			GROUP BY f.id
+			ORDER BY lower(f.name);
+		`,
 	])
 
 	if (err) error(500, 'Failed to load data')
@@ -78,6 +91,7 @@ export const load = async () => {
 		categories_with_unknown_properties,
 		categories_with_unreasoned_properties,
 		undistinguishable_category_pairs,
+		functors_with_unknown_properties,
 	] = results
 
 	const missing_combinations = await get_missing_combinations()
@@ -87,6 +101,7 @@ export const load = async () => {
 		categories_with_missing_morphisms,
 		categories_with_unreasoned_properties,
 		undistinguishable_category_pairs,
+		functors_with_unknown_properties,
 		missing_combinations,
 	}
 }

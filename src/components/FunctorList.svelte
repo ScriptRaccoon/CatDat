@@ -4,7 +4,7 @@
 	import type { FunctorShort } from '$lib/commons/types'
 
 	type Props = {
-		functors: FunctorShort[]
+		functors: (FunctorShort & { count?: number })[]
 	}
 
 	let { functors }: Props = $props()
@@ -17,6 +17,9 @@
 				<a href="/functor/{functor.id}">
 					{functor.name}
 				</a>
+				{#if functor.count !== undefined}
+					<span class="count">({functor.count})</span>
+				{/if}
 			</li>
 		{/each}
 	</ul>
@@ -27,5 +30,9 @@
 <style>
 	ul {
 		margin-block: 1rem;
+	}
+
+	.count {
+		color: var(--secondary-text-color);
 	}
 </style>
