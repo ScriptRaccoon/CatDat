@@ -4,6 +4,7 @@
 	import {
 		faChartBar,
 		faChartDiagram,
+		faProjectDiagram,
 		faSearch,
 		faUsers,
 	} from '@fortawesome/free-solid-svg-icons'
@@ -16,8 +17,9 @@
 
 <p>
 	<i>CatDat</i> provides a growing collection of
-	<a class="accent" href="/categories">categories</a>, each with detailed descriptions
-	and properties. Built by and for those who love
+	<a class="accent" href="/categories">categories</a> and
+	<a class="accent" href="/functors">functors</a>, each with detailed descriptions and
+	properties. Built by and for those who love
 	<a href="https://en.wikipedia.org/wiki/Category_theory" target="_blank">
 		category theory
 	</a>.
@@ -40,14 +42,30 @@
 	<article class="feature-card">
 		<h3>
 			<Fa icon={faChartDiagram} />
-			Deduction System
+			Category Deductions
 		</h3>
 
 		<p>
 			A list of <a class="accent" href="/category-implications">implications</a>
 			between
-			<a class="accent" href="/category-properties">properties</a> allows for automatic
-			deduction of satisfied and unsatisfied properties from more basic ones.
+			<a class="accent" href="/category-properties">properties of categories</a>
+			allows for automatic deduction of satisfied and unsatisfied properties from more
+			basic ones.
+		</p>
+	</article>
+
+	<article class="feature-card">
+		<h3>
+			<Fa icon={faProjectDiagram} />
+			Functor Deductions
+		</h3>
+
+		<p>
+			There is also a list of <a class="accent" href="/functor-implications"
+				>implications</a
+			>
+			between <a class="accent" href="/functor-properties">functor properties</a>,
+			enabling automatic reasoning about functors.
 		</p>
 	</article>
 
@@ -58,7 +76,9 @@
 		<p>
 			You can easily <a class="accent" href="/category-search"
 				>search for categories</a
-			> that satisfy specific properties while not satisfying others.
+			>
+			and <a class="accent" href="/functor-search">search for functors</a>
+			that satisfy specific properties while not satisfying others.
 		</p>
 	</article>
 
@@ -72,7 +92,7 @@
 		</p>
 	</article>
 
-	<article class="feature-card">
+	<article class="feature-card centered">
 		<h3>
 			<Fa icon={faUsers} /> Community-driven
 		</h3>
@@ -104,6 +124,12 @@
 
 		@media (min-width: 600px) {
 			grid-template-columns: repeat(2, 1fr);
+
+			.centered {
+				width: 50%;
+				margin-inline: auto;
+				grid-column: 1 / -1;
+			}
 		}
 	}
 
