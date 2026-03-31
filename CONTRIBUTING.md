@@ -67,13 +67,13 @@ If the local database is broken, just delete the `local.db` file and recreate it
 
 ### Guidelines for Adding New Data
 
-When contributing new data (categories, properties, implications), please follow these guidelines:
+When contributing new data (categories, functors, properties, implications), please follow these guidelines:
 
 - **Consistency**: Stick to the format indicated by the existing data. This is enforced by the database definition.
 
-- **Reduce Unknowns**: Try to reduce the number of unknown properties of categories, in particular when adding a new category. Use the category detail page to see its unknown properties. Use the [page with missing data](https://catdat.app/missing) to identify categories with unknown properties.
+- **Reduce Unknowns**: Try to reduce the number of unknown properties of categories, in particular when adding a new category. Use the category detail page to see its unknown properties. Use the [page with missing data](https://catdat.app/missing) to identify categories with unknown properties. The same remarks apply to functors.
 
-- **Atomic Properties**: Only assign properties to a category that cannot be deduced from other properties (satisfied or not). For example, if a category is complete, add the property "complete", but do not add "terminal object". The application infers this property automatically.
+- **Atomic Properties**: Only assign properties to a category or functor that cannot be deduced from other properties (satisfied or not). For example, if a category is complete, add the property "complete", but do not add "terminal object". The application infers this property automatically.
 
 - **No dual categories**: Instead of adding the dual of a category already in the database, consider adding properties to the original category (use the corresponding dual properties).
 
@@ -81,25 +81,25 @@ When contributing new data (categories, properties, implications), please follow
 
 - **Special Objects and Morphisms**: For each new category, try to specify its special objects (terminal object, initial object, etc.) in the corresponding table. Also try to specify its special morphisms (isomorphisms, monomorphisms, epimorphisms).
 
-- **Proofs for New Properties**: For every new property, for each existing category, try to find a proof for whether it has this property or not, in case this has not already been deduced automatically. Use the property detail page to check unknown categories.
+- **Proofs for New Properties**: For every new property, for each existing category or functor, try to find a proof for whether it has this property or not, in case this has not already been deduced automatically. Use the property detail page to check unknown categories.
 
-- **Assign Properties to Core Categories**: For all new properties, you must assign them to the "core categories" (currently: $\mathbf{Set}$, $\mathbf{Top}$, $\mathbf{Ab}$), specifying whether they are satisfied or not. This decision should also be recorded in the JSON files located in [/scripts/expected-data](/scripts/expected-data/).
+- **Assign Properties to Core Categories**: For all new properties of categories, you must assign them to the "core categories" (currently: $\mathbf{Set}$, $\mathbf{Top}$, $\mathbf{Ab}$), specifying whether they are satisfied or not. This decision should also be recorded in the JSON files located in [/scripts/expected-data](/scripts/expected-data/).
 
-- **Counterexamples**: Ensure that at least one category does not satisfy any new property that is added. If no existing category fits, add a new category that does not have the new property.
+- **Counterexamples**: Ensure that at least one category does not satisfy any new property of categories that is added. If no existing category fits, add a new category that does not have the new property. The same remarks apply to properties of functors.
 
-- **Positive Properties**: Do not add negated properties to the database. For example, do not add "large" as the negation of "small". Instead, add "small" to the list of unsatisfied properties for a category. As a rule of thumb, every registered property should be satisfied at least by the trivial category.
+- **Positive Properties**: Do not add negated properties to the database. For example, do not add "large" as the negation of "small". Instead, add "small" to the list of unsatisfied properties for a category. As a rule of thumb, every registered property of categories should be satisfied at least by the trivial category. Similarly, every property of functors should be satisfied at least by the identity functor.
 
 - **Proofs for Claims**: Provide proofs for all new claims (satisfied properties, unsatisfied properties, implications, special morphisms). (We are currently working on filling in the existing ones.)
 
 - **Atomic Implications**: Do not add implications that can be deduced from others. For example, do not add "complete => finite products" since it can be deduced from "complete => finitely complete" and "finitely complete => finite products". These are deduced automatically.
 
-- **No dual implications**: Implications are dualized automatically when applicable. For this reason, adding "finitely cocomplete => pushouts" is not necessary when "finitely complete => pullbacks" has already been added.
+- **No dual implications**: Implications are dualized automatically when applicable. For this reason, adding the category implication "finitely cocomplete => pushouts" is not necessary when "finitely complete => pullbacks" has already been added. Similarly, the functor implication "comonadic => left adjoint" is automatically dualized from "monadic => right adjoint".
 
-- **Relevant implications**: When adding a new property, include implications involving this property and existing properties. For example, when adding "countable products", also add "countable products => finite products". Refactor existing implications if necessary. Ensure that for most categories, it will be inferred if the property holds or not.
+- **Relevant implications**: When adding a new property, include implications involving this property and existing properties. For example, when adding the property of categories of having "countable products", also add the implication "countable products => finite products". Refactor existing implications if necessary. Ensure that for most categories and functors, it will be inferred if the property holds or not.
 
 - **Simplify Implications**: When adding a new implication, check if it simplifies existing implications and if it deduces some previously non-deduced properties for categories.
 
-- **New Combinations**: Add new categories that satisfy combinations of satisfied properties and unsatisfied properties and not yet in the database. For example, you may add a category that is abelian but neither cocomplete nor essentially small (if it is not already present). The [page with missing data](https://catdat.app/missing) lists consistent combinations of the form $p \land \neg q$ that are not yet witnessed by a category in the database.
+- **New Combinations**: Add new categories that satisfy combinations of satisfied properties and unsatisfied properties and not yet in the database. For example, you may add a category that is abelian but neither cocomplete nor essentially small (if it is not already present). The [page with missing data](https://catdat.app/missing) lists consistent combinations of the form $p \land \neg q$ that are not yet witnessed by a category in the database. The same remarks apply to functors.
 
 ## Option 3: Create an Issue
 
