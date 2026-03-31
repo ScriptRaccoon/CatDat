@@ -21,6 +21,17 @@ DELETE FROM tags;
 
 DELETE FROM related_properties;
 DELETE FROM properties;
+
+DELETE FROM functor_property_assignments;
+DELETE FROM functor_properties;
+DELETE FROM functors;
+
 DELETE FROM relations;
+
+DELETE FROM functor_implication_assumptions;
+DELETE FROM functor_implication_conclusions;
+DELETE FROM functor_implication_source_assumptions;
+DELETE FROM functor_implication_target_assumptions;
+DELETE FROM functor_implications;
 
 PRAGMA foreign_keys = ON;
