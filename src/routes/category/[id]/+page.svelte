@@ -6,6 +6,9 @@
 	import { category_detail_level } from '$lib/states/detail_level.svelte'
 	import TextWithReason from '$components/TextWithReason.svelte'
 	import { filter_by_tag } from '$lib/client/utils'
+	import CategoryList from '$components/CategoryList.svelte'
+	import { faQuestion, faQuestionCircle } from '@fortawesome/free-solid-svg-icons'
+	import Fa from 'svelte-fa'
 
 	let { data } = $props()
 
@@ -160,20 +163,34 @@
 <section>
 	<h3>Special morphisms</h3>
 
-	{#if data.special_morphisms.length}
-		<ul class="with-margins">
-			{#each data.special_morphisms as obj}
-				<li>
-					<TextWithReason reason={obj.reason}>
+	<ul class="with-margins">
+		{#each data.special_morphisms as obj}
+			<li>
+				<TextWithReason reason={obj.reason}>
+					{#if obj.description}
 						{obj.type}: {@html obj.description}
-					</TextWithReason>
-				</li>
-			{/each}
-		</ul>
-	{:else}
-		<p>&mdash;</p>
-	{/if}
+					{:else}
+						{obj.type}: <Fa icon={faQuestion} scale={0.825} />
+					{/if}
+				</TextWithReason>
+			</li>
+		{/each}
+	</ul>
 </section>
+
+{#if data.undistinguishable_categories.length}
+	<section>
+		<h3>Undistinguishable categories</h3>
+
+		<p class="hint">
+			These categories in the database currently have exactly the same properties as
+			the {data.category.name}. This indicates that the data may be incomplete or
+			that a distinguishing property may be missing from the database.
+		</p>
+
+		<CategoryList categories={data.undistinguishable_categories} />
+	</section>
+{/if}
 
 {#if data.comments.length}
 	<section>

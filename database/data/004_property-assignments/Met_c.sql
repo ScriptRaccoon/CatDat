@@ -19,9 +19,15 @@ VALUES
 ),
 (
 	'Met_c',
+	'coproducts',
+	TRUE,
+	'See <a href="https://math.stackexchange.com/questions/5004389" target="_blank">MSE/5004389</a>.'
+),
+(
+	'Met_c',
 	'infinitary extensive',
 	TRUE,
-	'This follows immediately from the fact that $\mathbf{Top}$ is infinitary extensive.'
+	'This follows from the existence of coproducts and from the fact that $\mathbf{Top}$ is infinitary extensive.'
 ),
 (
 	'Met_c',
@@ -100,4 +106,10 @@ VALUES
 	'Malcev',
 	FALSE,
 	'Consider the metric subspace $\{(a,b) \in \mathbb{R}^2 : a \leq b\}$ of $\mathbb{R}^2$.'
+),
+(
+	'Met_c',
+	'regular subobject classifier',
+	FALSE,
+	'We recycle the proof from the <a href="/category/Haus">category of Hausdorff spaces</a>: Assume that there is a regular subobject classifier $\Omega$. By the classification of regular monomorphisms, we would have an isomorphism between $\mathrm{Hom}(X,\Omega)$ and the set of closed subsets of $X$ for any metric space $X$. If we take $X = 1$ we see that $\Omega$ has two points. Since $\Omega$ is Hausdorff, $\Omega \cong 1 + 1$ must be discrete. But then $\mathrm{Hom}(X,\Omega)$ is isomorphic to the set of all clopen subsets of $X$, of which there are usually far fewer than closed subsets (consider $X = [0,1]$).'
 );

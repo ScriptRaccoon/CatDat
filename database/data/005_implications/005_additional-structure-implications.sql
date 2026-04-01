@@ -35,10 +35,10 @@ VALUES
 	TRUE
 ),
 (
-	'additive_consequence',
+	'additive_biproducts',
 	'["additive"]',
-	'["disjoint finite coproducts"]',
-	'If $f : T \to A + B$ is a morphism that factors through $A$ and $B$, then $p_B f = 0$ and $p_A f = 0$, so $f = 0$.',
+	'["biproducts"]',
+	'This is standard, see e.g. Prop. 2.1 on the <a href="https://ncatlab.org/nlab/show/additive+category" target="_blank">nLab</a>.',
 	FALSE
 ),
 (
@@ -74,13 +74,6 @@ VALUES
 	'["preadditive", "finite coproducts"]',
 	'["finite products"]',
 	'See <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, VIII.2., Theorem 2.',
-	FALSE
-),
-(
-	'additive_trivial_condition',
-	'["additive", "pullbacks", "subobject classifier"]',
-	'["trivial"]',
-	'See <a href="https://math.stackexchange.com/questions/4086192" target="_blank">MSE/4086192</a>.',
 	FALSE
 ),
 (

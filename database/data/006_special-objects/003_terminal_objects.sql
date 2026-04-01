@@ -30,6 +30,7 @@ VALUES
 ('Mon', 'trivial monoid'),
 ('N_oo', '$\infty$'),
 ('Pos', 'singleton poset'),
+('Prost', 'singleton proset'),
 ('R-Mod', 'zero module'),
 ('R-Mod_div', 'zero module'),
 ('real_interval', '$1$'),

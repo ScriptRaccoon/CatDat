@@ -21,7 +21,7 @@ Since deployment requires running `pnpm db:update`, which temporarily clears all
 
 Follow these steps to deploy to production:
 
-1. **Preview Deployment.** On [GitHub's actions page](https://github.com/ScriptRaccoon/CatDat/actions), manually trigger the preview pipeline [preview-deploy.yaml](.github/workflows/preview-deploy.yaml).
+1. **Preview Deployment.** On [GitHub's actions page](https://github.com/ScriptRaccoon/CatDat/actions), manually trigger the preview pipeline [deploy-preview.yaml](.github/workflows/deploy-preview.yaml).
 
 It updates the remote preview database (`catdat-preview`) via `pnpm db:update`, builds the application, and creates a [deployment preview](https://docs.netlify.com/deploy/deploy-types/deploy-previews/) on Netlify. The production database and application remain unchanged in this step.
 
@@ -29,9 +29,11 @@ It updates the remote preview database (`catdat-preview`) via `pnpm db:update`, 
 
 The updated application goes live and uses the preview database.
 
-3. **Production Deployment.** On [GitHub's actions page](https://github.com/ScriptRaccoon/CatDat/actions), manually trigger the pipeline [deploy.yaml](.github/workflows/deploy.yaml).
+3. **Production Deployment.** On [GitHub's actions page](https://github.com/ScriptRaccoon/CatDat/actions), manually trigger the pipeline [deploy-prod.yaml](.github/workflows/deploy-prod.yaml).
 
 This pipeline updates the remote production database (`catdat`) via `pnpm db:update` (hence, consolidates it with the preview database `catdat-preview`), builds the application, and deploys it on Netlify. The previous deployment preview is no longer live.
+
+In case only the application, not the database has been updated since the last production deployment, the pipeline [deploy-prod-skip-db](.github/workflows/deploy-prod-skip-db.yaml) can be used. The preview deployment is not required.
 
 ## Backups
 

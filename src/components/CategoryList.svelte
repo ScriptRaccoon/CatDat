@@ -2,7 +2,7 @@
 	import type { CategoryShort } from '$lib/commons/types'
 
 	type Props = {
-		categories: CategoryShort[]
+		categories: (CategoryShort & { count?: number })[]
 	}
 
 	let { categories }: Props = $props()
@@ -15,6 +15,9 @@
 				<a href="/category/{item.id}">
 					{item.name}
 				</a>
+				{#if item.count !== undefined}
+					<span class="count">({item.count})</span>
+				{/if}
 			</li>
 		{/each}
 	</ul>
@@ -25,5 +28,9 @@
 <style>
 	ul {
 		margin-block: 1rem;
+	}
+
+	.count {
+		color: var(--secondary-text-color);
 	}
 </style>

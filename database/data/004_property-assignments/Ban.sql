@@ -76,4 +76,10 @@ VALUES
 	'co-Malcev',
 	FALSE,
 	'See the comments to <a href="https://mathoverflow.net/a/509555/2841" target="_blank">MO/509552</a>.'
+),
+(
+	'Ban',
+	'regular subobject classifier',
+	FALSE,
+	'If $\Omega$ is a regular subobject classifier, then by the classification of regular monomorphisms, $\mathrm{Hom}(X,\Omega)$ is isomorphic to the set of closed subspaces of $X$ for any Banach space $X$. For $X = \mathbb{C}$ this implies that there are exactly two vectors in $\Omega$ with norm $\leq 1$, which is absurd. (For $\Omega = 0$ there is just one, and for $\Omega \neq 0$ there are infinitely many.)'
 );

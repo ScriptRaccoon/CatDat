@@ -3,6 +3,9 @@
 		"svelte.svelte-vscode",
 		"fivethree.vscode-svelte-snippets",
 		"esbenp.prettier-vscode",
-		"streetsidesoftware.code-spell-checker"
+		"streetsidesoftware.code-spell-checker",
+		"bierner.markdown-preview-github-styles",
+		"irongeek.vscode-env",
+		"forbeslindesay.vscode-sql-template-literal"
 	]
 }

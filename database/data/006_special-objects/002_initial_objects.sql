@@ -33,6 +33,7 @@ VALUES
 ('N_oo', '$0$'),
 ('On', '$0$'),
 ('Pos', 'empty poset'),
+('Prost', 'empty proset'),
 ('R-Mod', 'trivial module'),
 ('R-Mod_div', 'trivial module'),
 ('real_interval', '$0$'),

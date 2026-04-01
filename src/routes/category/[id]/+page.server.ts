@@ -6,6 +6,7 @@ import type {
 	CategoryDisplay,
 	CategoryProperty,
 	CategoryPropertyDB,
+	CategoryShort,
 	CommentObject,
 	PropertyShort,
 	RelatedCategory,
@@ -26,6 +27,7 @@ export const load = async (event) => {
 			PropertyShort,
 			SpecialObject,
 			SpecialMorphism,
+			CategoryShort,
 			CommentObject,
 		]
 	>([
@@ -104,11 +106,29 @@ export const load = async (event) => {
 		`,
 		// special morphisms
 		sql`
-			SELECT s.type, s.description, s.reason
-			FROM special_morphisms s
-			INNER JOIN special_morphism_types t ON t.type = s.type
-			WHERE s.category_id = ${id}
+			SELECT t.type, s.description, s.reason
+			FROM special_morphism_types t
+			LEFT JOIN special_morphisms s
+				ON s.type = t.type AND s.category_id = ${id}
 			ORDER BY t.position
+		`,
+		// undistinguishable categories
+		sql`
+			SELECT u.id, u.name
+			FROM categories u
+			JOIN properties p
+			LEFT JOIN category_property_assignments cp
+				ON cp.category_id = ${id} AND cp.property_id = p.id
+			LEFT JOIN category_property_assignments up
+				ON up.category_id = u.id AND up.property_id = p.id
+			WHERE u.id != ${id}
+			GROUP BY u.id, u.name
+			HAVING SUM(
+				CASE
+					WHEN cp.is_satisfied IS up.is_satisfied THEN 0
+					ELSE 1
+				END
+			) = 0;
 		`,
 		// comments
 		sql`
@@ -127,6 +147,7 @@ export const load = async (event) => {
 		unknown_properties,
 		special_objects,
 		special_morphisms,
+		undistinguishable_categories,
 		comments,
 	] = results
 
@@ -162,6 +183,7 @@ export const load = async (event) => {
 		unknown_properties,
 		special_objects,
 		special_morphisms,
+		undistinguishable_categories,
 		comments,
 	})
 }

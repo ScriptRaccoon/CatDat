@@ -1,4 +1,4 @@
-name: production deployment
+name: production deployment (without db update)
 
 on:
     workflow_dispatch:
@@ -17,7 +17,7 @@ jobs:
                   fetch-depth: 0
 
             - name: Install pnpm
-              uses: pnpm/action-setup@v4
+              uses: pnpm/action-setup@v5
               with:
                   version: 10
 
@@ -32,12 +32,6 @@ jobs:
 
             - name: Generate SvelteKit config
               run: pnpm svelte-kit sync
-
-            - name: Update database
-              env:
-                  DB_URL: ${{ secrets.DB_URL }}
-                  DB_AUTH_TOKEN: ${{ secrets.DB_AUTH_TOKEN }}
-              run: pnpm db:update
 
             - name: Build app
               env:

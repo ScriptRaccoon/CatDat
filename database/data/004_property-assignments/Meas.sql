@@ -61,6 +61,12 @@ VALUES
 ),
 (
 	'Meas',
+	'regular subobject classifier',
+	TRUE,
+	'The set $\{0,1\}$ with the trivial $\sigma$-algebra is a regular subobject classifier since measurable maps $X \to \{0,1\}$ correspond to subsets of $X$.'
+),
+(
+	'Meas',
 	'cartesian closed',
 	FALSE,
 	NULL

@@ -25,7 +25,7 @@
 			.map(encode_property_ID)
 			.join(SEARCH_SEPARATOR)
 
-		const url = new URL('/search', window.location.origin)
+		const url = new URL('/category-search', window.location.origin)
 
 		if (satisfied_query) url.searchParams.set('satisfied', satisfied_query)
 		if (unsatisfied_query) url.searchParams.set('unsatisfied', unsatisfied_query)
@@ -44,7 +44,7 @@
 			.map(encode_property_ID)
 			.join(SEARCH_SEPARATOR)
 
-		const url = new URL('/search', window.location.origin)
+		const url = new URL('/category-search', window.location.origin)
 
 		if (satisfied_query) url.searchParams.set('satisfied', satisfied_query)
 		if (unsatisfied_query) url.searchParams.set('unsatisfied', unsatisfied_query)
@@ -52,7 +52,7 @@
 		return decodeURIComponent(url.toString())
 	}
 
-	const sample_search_url = `/search?satisfied=finitely_complete${SEARCH_SEPARATOR}pointed&unsatisfied=complete`
+	const sample_search_url = `/category-search?satisfied=finitely_complete${SEARCH_SEPARATOR}pointed&unsatisfied=complete`
 </script>
 
 <MetaData

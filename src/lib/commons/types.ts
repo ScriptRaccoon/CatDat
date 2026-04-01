@@ -82,6 +82,6 @@ export type SpecialObject = {
 
 export type SpecialMorphism = {
 	type: string
-	description: string
-	reason: string
+	description: string | null
+	reason: string | null
 }

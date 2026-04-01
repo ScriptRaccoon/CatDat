@@ -6,21 +6,21 @@ export const CATEGORY_DETAIL_LEVELS = {
 	basic: 'Show only those properties for a category that are in the database. Deduced properties are not shown.',
 } as const
 
-export type CategoryDetailLevel = keyof typeof CATEGORY_DETAIL_LEVELS
+type CategoryDetailLevel = keyof typeof CATEGORY_DETAIL_LEVELS
 
-export function is_valid_category_detail_level(
+function is_valid_category_detail_level(
 	level: string | null,
 ): level is CategoryDetailLevel {
 	return level != null && Object.keys(CATEGORY_DETAIL_LEVELS).includes(level)
 }
 
-export const DEFAULT_CATEGORY_DETAIL_LEVEL: CategoryDetailLevel = 'all'
+const DEFAULT_CATEGORY_DETAIL_LEVEL: CategoryDetailLevel = 'all'
 
 export const category_detail_level = $state<{ value: CategoryDetailLevel }>({
 	value: get_saved_category_detail_level(),
 })
 
-export function get_saved_category_detail_level(): CategoryDetailLevel {
+function get_saved_category_detail_level(): CategoryDetailLevel {
 	if (!browser) return DEFAULT_CATEGORY_DETAIL_LEVEL
 	const saved_category_detail_level = localStorage.getItem('category_detail_level')
 

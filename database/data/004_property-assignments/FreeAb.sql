@@ -84,4 +84,10 @@ VALUES
 	'skeletal',
 	FALSE,
 	'This is trivial.'
+),
+(
+	'FreeAb',
+	'sequential colimits',
+	FALSE,
+	'See <a href="https://mathoverflow.net/questions/509715" target="_blank">MO/509715</a>.'
 );

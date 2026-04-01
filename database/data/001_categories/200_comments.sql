@@ -33,10 +33,6 @@ VALUES
     'Epimorphisms are discussed at <a href="https://mathoverflow.net/questions/56564" target="_blank">MO/56564</a>. Probably they cannot be classified.'
 ),
 (
-    'FreeAb',
-    'Sequential colimits are discussed at <a href="https://math.stackexchange.com/questions/5035594" target="_blank">5035594</a>. It is likely that they do not exist.'
-),
-(
     'Sh(X)',
     'It is likely that neither of the currently remaining unknown properties (finitary algebraic, locally ℵ₁-presentable, exact filtered colimits) are satisfied for a <i>generic</i> space $X$, but we need to make this precise by adding additional requirements to $X$.'
 ),
@@ -46,5 +42,5 @@ VALUES
 ),
 (
     'M-Set',
-    'If this category is strongly connected depends on the choice of $M$. For $M = 1$ it is, for $M = \mathbb{Z}$ it is not. In general, if $G$ is a group, then $G{-}\mathbf{Set}$ is strongly connected if and only if for all subgroups $H,K \subseteq G$, $H$ is subconjugated to $K$ or $K$ is subconjugated to $H$. If $G$ is abelian, this means that the partial order of subgroups is linear, in which case $G$ is either isomorphic to $\mathbb{Z}/p^n$ or to $\mathbb{Z}/p^{\infty}$ for a prime $p$. See also <a href="https://math.stackexchange.com/questions/5129804" target="_blank">MSE/5129804</a>.'
+    'If this category is strongly connected depends on the choice of $M$. For $M = 1$ it is, for $M = \mathbb{Z}$ it is not. In general, if $G$ is a group, then $G{-}\mathbf{Set}$ is strongly connected if and only if for all subgroups $H,K \subseteq G$, $H$ is subconjugated to $K$ or $K$ is subconjugated to $H$. If $G$ is abelian, this means that the poset of subgroups is linear, in which case $G$ is either isomorphic to $\mathbb{Z}/p^n$ or to $\mathbb{Z}/p^{\infty}$ for a prime $p$. See also <a href="https://math.stackexchange.com/questions/5129804" target="_blank">MSE/5129804</a>.'
 );

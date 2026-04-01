@@ -79,6 +79,11 @@ export const load = async (event) => {
 
 	const comparison_table = comparison_objects.map((obj) => Object.values(obj))
 
+	event.setHeaders({
+		// shared cache for 30min
+		'cache-control': 'public, max-age=0, s-maxage=1800',
+	})
+
 	return {
 		categories: render_nested_formulas(categories),
 		comparison_table,

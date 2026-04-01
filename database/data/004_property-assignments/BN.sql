@@ -51,7 +51,7 @@ VALUES
 	'BN',
 	'locally cartesian closed',
 	TRUE,
-	'The slice category $B\mathbb{N} / *$ is isomorphic to the partial order $(\mathbb{N},\geq)$ (not to $(\mathbb{N},\leq)$). This category is thin and and strongly connected, <a href="/implication/sequential_implies_lcc">hence</a> cartesian closed.'
+	'The slice category $B\mathbb{N} / *$ is isomorphic to the poset $(\mathbb{N},\geq)$ (not to $(\mathbb{N},\leq)$). This category is thin and and strongly connected, <a href="/category-implication/sequential_implies_lcc">hence</a> cartesian closed.'
 ),
 (
 	'BN',

@@ -18,65 +18,95 @@
 	<a href="/contribute">contributing</a> to this project.
 </p>
 
-<h3>Categories with unknown properties</h3>
+<section>
+	<h3>Categories with unknown properties</h3>
 
-<p class="hint">
-	There are {data.categories_with_unknown_properties.length} categories that have some unknown
-	properties.
-</p>
-
-<CategoryList categories={data.categories_with_unknown_properties} />
-
-<p class="hint">
-	In total, there are {data.total_number_unknown_pairs} unknown (category, property)-pairs.
-</p>
-
-<h3>Categories with properties without recorded reason</h3>
-
-<p class="hint">
-	There are {data.categories_with_unreasoned_properties.length} categories with properties
-	(satisfied or unsatisfied) that have no reason specified.
-</p>
-
-<CategoryList categories={data.categories_with_unreasoned_properties} />
-
-<h3>Categories with unknown special morphisms</h3>
-
-<p class="hint">
-	There are {data.categories_with_missing_morphisms.length} categories whose iso-, epi-, or
-	monomorphisms are unknown.
-</p>
-
-<CategoryList categories={data.categories_with_missing_morphisms} />
-
-<h3>Missing combinations</h3>
-
-{#if data.missing_combinations}
 	<p class="hint">
-		Among the consistent combinations of the form p &and; &not;q, the following are
-		not yet witnessed by a category in the database. If some of these combinations <i
-			>are</i
-		>
-		inconsistent, this indicates that some
-		<a href="/implications">implication</a> is missing.
+		There are {data.categories_with_unknown_properties.length} categories that have some
+		unknown properties.
 	</p>
 
-	<details>
-		<summary>Show all {data.missing_combinations.length} combinations</summary>
+	<CategoryList categories={data.categories_with_unknown_properties} />
+</section>
 
-		<ul class="combinations">
-			{#each data.missing_combinations as [p, q]}
-				<li class="combination">
-					<a href={get_property_url(p)}>{p}</a> &and; &not;<a
-						href={get_property_url(q)}>{q}</a
-					>
+<section>
+	<h3>Categories with properties without recorded reason</h3>
+
+	<p class="hint">
+		There are {data.categories_with_unreasoned_properties.length} categories with properties
+		(satisfied or unsatisfied) that have no reason specified.
+	</p>
+
+	<CategoryList categories={data.categories_with_unreasoned_properties} />
+</section>
+
+<section>
+	<h3>Categories with unknown special morphisms</h3>
+
+	<p class="hint">
+		There are {data.categories_with_missing_morphisms.length} categories where at least
+		one type of special morphism is unknown.
+	</p>
+
+	<CategoryList categories={data.categories_with_missing_morphisms} />
+</section>
+
+{#if data.undistinguishable_category_pairs.length > 0}
+	<section>
+		<h3>Undistinguishable category pairs</h3>
+
+		<p class="hint">
+			There are {data.undistinguishable_category_pairs.length} pairs of categories that
+			cannot be distinguished by the properties currently recorded in the database. This
+			indicates that the data may be incomplete or that a distinguishing property may
+			be missing.
+		</p>
+
+		<ul>
+			{#each data.undistinguishable_category_pairs as pair}
+				<li>
+					<a href="/category/{pair.id1}">
+						{pair.name1}
+					</a>
+					&approx;
+					<a href="/category/{pair.id2}">
+						{pair.name2}
+					</a>
 				</li>
 			{/each}
 		</ul>
-	</details>
-{:else}
-	<p>Missing combinations could not be loaded</p>
+	</section>
 {/if}
+
+<section>
+	<h3>Missing combinations</h3>
+
+	{#if data.missing_combinations}
+		<p class="hint">
+			Among the consistent combinations of the form p &and; &not;q, the following
+			are not yet witnessed by a category in the database. If some of these
+			combinations <i>are</i>
+			inconsistent, this indicates that some
+			<a href="/category-implications">implication</a> is missing.
+		</p>
+
+		<details>
+			<summary>Show all {data.missing_combinations.length} combinations</summary>
+
+			<ul class="combinations">
+				{#each data.missing_combinations as [p, q]}
+					<li class="combination">
+						<a href={get_property_url(p)}>{p}</a> &and; &not;<a
+							href={get_property_url(q)}>{q}</a
+						>
+					</li>
+				{/each}
+			</ul>
+		</details>
+	{:else}
+		<p>Missing combinations could not be loaded</p>
+	{/if}
+</section>
 
 <style>
 	.combinations {

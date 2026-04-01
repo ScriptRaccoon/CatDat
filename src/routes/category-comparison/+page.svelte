@@ -28,7 +28,7 @@
 	function compare_categories() {
 		if (!is_valid_comparison) return
 		const path = chosen_categories.map((category) => category.id).join('/')
-		goto(`/compare/${path}`)
+		goto(`/category-comparison/${path}`)
 	}
 </script>
 

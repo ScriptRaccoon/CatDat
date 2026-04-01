@@ -43,21 +43,15 @@ VALUES
 ),
 (
 	'Cat',
-	'finitary algebraic',
-	FALSE,
-	NULL
-),
-(
-	'Cat',
 	'balanced',
 	FALSE,
-	NULL
+	'Since we know that the <a href="/category/Mon">category of monoids</a> is not balanced, there is a monoid map $M \to N$ which is a monomorphism and an epimorphism which is not an isomorphism. Then $B(M) \to B(N)$ has the corresponding properties.'
 ),
 (
 	'Cat',
 	'cogenerator',
 	FALSE,
-	NULL
+	'If $\mathcal{C}$ was a cogenerator in $\mathbf{Cat}$, one can easily deduce that the coproduct of monoids (aka free product) $\coprod_{X \in \mathcal{C}} \mathrm{End}(X)$ would be a cogenerator in the <a href="/category/Mon">the category of monoids</a>, which we know does not exist.'
 ),
 (
 	'Cat',
@@ -73,12 +67,6 @@ VALUES
 ),
 (
 	'Cat',
-	'locally cartesian closed',
-	FALSE,
-	'See Theorem 4.4 of <a href="https://www.numdam.org/item/MSMF_1964__2__R3_0/" target="_blank">Giraud 1964</a>.'
-),
-(
-	'Cat',
 	'regular',
 	FALSE,
 	'See Example 3.14 at the <a href="https://ncatlab.org/nlab/show/regular+category" target="_blank">nLab</a>.'
@@ -88,5 +76,10 @@ VALUES
 	'co-Malcev',
 	FALSE,
 	'We can adapt the proof from <a href="/category/Mon">$\mathbf{Mon}$</a> as follows: Consider the functor $U : \mathbf{Cat} \to \mathbf{Set}^+$ sending a category $\mathcal{C}$ to the (large) set $\{(x,u) : x \in \mathrm{Ob}(\mathcal{C}) ,\, u \in \mathrm{End}(x) \}$. It is represented by $B \mathbb{N}$, the one-object category associated to the free monoid in one generator. Consider the relation $R \subseteq U^2$ consisting of those pairs $((x,u),(y,v))$ where $x = y$ and $uv = u^2$. This also representable, namely be the one-object category associated to the monoid with the presentation $\langle u,v : uv = u^2 \rangle$. Clearly, $R$ is reflexive, but not symmetric.'
+),
+(
+	'Cat',
+	'coregular',
+	FALSE,
+	'We already know that the <a href="/category/Mon">category of monoids</a> is not coregular, in fact there is a regular monomorphism $M \to N$ of monoids and a morphism $M \to K$ such that $K \to K \sqcup_M N$ is not a monomorphism. The delooping functor $B : \mathbf{Mon} \to \mathbf{Cat}$ has a left adjoint (<a href="https://math.stackexchange.com/questions/574745" target="_blank">MSE/574745</a>), hence it preserves regular monomorphisms. It also preserves pushouts (<a href="https://math.stackexchange.com/questions/5130854" target="_blank">MSE/5130854</a>), and it reflects monomorphisms since it is faithful. Therefore, $B(M) \to B(N)$ provides the desired counterexample of a non-stable regular monomorphism of categories.'
 );
-

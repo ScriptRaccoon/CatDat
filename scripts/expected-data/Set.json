@@ -62,6 +62,7 @@
 	"co-Malcev": true,
 	"lextensive": true,
 	"locally strongly finitely presentable": true,
+	"regular subobject classifier": true,
 
 	"Grothendieck abelian": false,
 	"Malcev": false,

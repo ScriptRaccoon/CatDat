@@ -139,7 +139,7 @@ VALUES
     'On',
     'same as isomorphisms',
     'This is because the category is left-cancellative.'
-),    
+),
 (
     'R-Mod',
     'surjective homomorphisms',

@@ -73,7 +73,7 @@ VALUES
 	'cocomplete_thin_criterion',
 	'["essentially small", "thin", "complete"]',
 	'["cocomplete"]',
-	'The supremum of a subset in a (small) partial order is the infimum of the set of upper bounds.',
+	'The supremum of a subset in a (small) proset is the infimum of the set of upper bounds.',
 	FALSE
 ),
 (

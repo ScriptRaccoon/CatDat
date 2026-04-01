@@ -27,7 +27,7 @@ VALUES
 	'FinOrd',
 	'cogenerator',
 	TRUE,
-	'The order $\{0 < 1\}$ is a cogenerator, even for <a href="/category/Pos">the category of partial orders</a>, see there for a proof.'
+	'The order $\{0 < 1\}$ is a cogenerator, even for <a href="/category/Pos">the category of posets</a>, see there for a proof.'
 ),
 (
 	'FinOrd',

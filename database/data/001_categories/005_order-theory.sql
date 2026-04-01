@@ -13,10 +13,20 @@ VALUES
 	'Pos',
 	'category of posets',
 	'$\mathbf{Pos}$',
-	'posets (i.e., partial orders)',
+	'partially ordered sets (aka posets), i.e. sets equipped with a reflexive, transitive, antisymmetric relation',
 	'order-preserving functions',
-	NULL,
+	'Even though there are many similarities with $\mathbf{Prost}$, the main difference is that the forgetful functor $\mathbf{Pos} \to \mathbf{Set}$ has no right adjoint.',
 	'https://ncatlab.org/nlab/show/Pos',
+	NULL
+),
+(
+	'Prost',
+	'category of prosets',
+	'$\mathbf{Prost}$',
+	'preordered sets (aka prosets), i.e. sets equipped with a reflexive, transitive relation',
+	'order-preserving functions',
+	'Even though there are many similarities with $\mathbf{Pos}$, the main difference is that the forgetful functor $\mathbf{Prost} \to \mathbf{Set}$ has a right adjoint, mapping $X$ to $(X , X \times X)$ (chaotic preorder).',
+	'https://ncatlab.org/nlab/show/Prost',
 	NULL
 ),
 (

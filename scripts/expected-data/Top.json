@@ -46,6 +46,7 @@
 	"extensive": true,
 	"infinitary extensive": true,
 	"lextensive": true,
+	"regular subobject classifier": true,
 
 	"abelian": false,
 	"additive": false,

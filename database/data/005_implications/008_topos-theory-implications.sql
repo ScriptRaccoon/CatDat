@@ -56,6 +56,48 @@ VALUES
 	FALSE
 ),
 (
+	'additive_trivial_condition',
+	'["regular subobject classifier", "additive"]',
+	'["trivial"]',
+	'See <a href="https://math.stackexchange.com/questions/4086192" target="_blank">MSE/4086192</a> (the proof works with these assumptions).',
+	FALSE
+),
+(
+	'regular_subobjects_trivial',
+	'["right cancellative", "finitely complete"]',
+	'["regular subobject classifier"]',
+	'In a right cancellative category, every regular monomorphism is an isomorphism, so that a terminal object is a regular subobject classifier.',
+	FALSE
+),
+(
+	'regular_subobject_weaker',
+	'["subobject classifier"]',
+	'["regular subobject classifier"]',
+	'This is obvious.',
+	FALSE
+),
+(
+	'regular_subobject_assumption',
+	'["regular subobject classifier"]',
+	'["finitely complete"]',
+	'This holds by definition.',
+	FALSE
+),
+(
+	'regular_subobjects_suffice',
+	'["regular subobject classifier", "mono-regular"]',
+	'["subobject classifier"]',
+	'This is obvious.',
+	FALSE
+),
+(
+	'regular_subobject_classifier_strict',
+	'["regular subobject classifier", "strict terminal object"]',
+	'["thin"]',
+	'Let $\Omega$ be a regular subobject classifier. Since $1$ is a strict terminal object, $\top : 1 \to \Omega$ is an isomorphism. This implies that every regular monomorphism is an isomorphism. Hence, by taking the equalizer of two parallel morphisms, we see that the category is thin.',
+	FALSE
+),
+(
 	'pullbacks_are_local_products',
 	'["locally cartesian closed"]',
 	'["pullbacks"]',

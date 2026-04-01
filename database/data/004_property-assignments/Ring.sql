@@ -70,4 +70,10 @@ VALUES
 	'strongly connected',
 	FALSE,
 	'There is no homomorphism between $\mathbb{F}_2$ and $\mathbb{F}_3$.'
+),
+(
+	'Ring',
+	'co-Malcev',
+	FALSE,
+	'See <a href="https://mathoverflow.net/questions/509552">MO/509552</a>: Consider the forgetful functor $U : \mathbf{Ring} \to \mathbf{Set}$ and the relation $R \subseteq U^2$ defined by $R(A) := \{(a,b) \in U(A)^2 : ab = a^2\}$. Both are representable: $U$ by $\mathbb{Z}[X]$ and $S$ by $\mathbb{Z} \langle X,Y \rangle / \langle XY-X^2 \rangle$. It is clear that $R$ is reflexive, but not symmetric.'
 );

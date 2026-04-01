@@ -25,6 +25,7 @@ VALUES
 ('Mon', 'direct products with pointwise operations'),
 ('N_oo', 'infimum'),
 ('Pos', 'direct products with the evident partial order'),
+('Prost', 'direct products with the evident preorder'),
 ('R-Mod', 'direct products with pointwise operations'),
 ('R-Mod_div', 'direct products with pointwise operations'),
 ('real_interval', 'infimum'),

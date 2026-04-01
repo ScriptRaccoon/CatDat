@@ -28,6 +28,7 @@ VALUES
 ('N_oo', 'supremum'),
 ('On', 'supremum'),
 ('Pos', 'disjoint union with the obvious partial order that leaves the distinct summands incomparable'),
+('Prost', 'disjoint union with the obvious preorder that leaves the distinct summands incomparable'),
 ('R-Mod', 'direct sums'),
 ('R-Mod_div', 'direct sums'),
 ('real_interval', 'supremum'),

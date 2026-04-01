@@ -161,6 +161,11 @@ VALUES
 	'The same proof as for $\mathbf{Set}$ can be used.'
 ),
 (
+	'CAlg(R)',
+	'injective homomorphisms',
+	'This holds in every finitary algebraic category: the forgetful functor to $\mathbf{Set}$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
+),
+(
 	'Mon',
 	'injective homomorphisms',
 	'This holds in every finitary algebraic category: the forgetful functor to $\mathbf{Set}$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
@@ -182,6 +187,11 @@ VALUES
 ),
 (
 	'Pos',
+	'injective order-preserving functions',
+	'The same proof as for $\mathbf{Set}$ can be used.'
+),
+(
+	'Prost',
 	'injective order-preserving functions',
 	'The same proof as for $\mathbf{Set}$ can be used.'
 ),

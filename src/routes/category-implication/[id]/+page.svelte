@@ -42,7 +42,7 @@
 {#if data.implication.dualized_from}
 	<p>
 		This implication has been dualized from <a
-			href="/implication/{data.implication.dualized_from}"
+			href="/category-implication/{data.implication.dualized_from}"
 		>
 			this implication
 		</a>.

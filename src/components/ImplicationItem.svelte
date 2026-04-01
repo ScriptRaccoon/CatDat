@@ -14,7 +14,7 @@
 	let { implication, highlighted_property }: Props = $props()
 </script>
 
-<a href="/implication/{implication.id}" aria-label="details">
+<a href="/category-implication/{implication.id}" aria-label="details">
 	<Fa icon={faInfoCircle} color="var(--secondary-text-color)" />
 </a>
 

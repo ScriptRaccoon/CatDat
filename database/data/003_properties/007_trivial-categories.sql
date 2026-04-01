@@ -18,7 +18,7 @@ VALUES
 (
 	'thin',
 	'is',
-	'A category is <i>thin</i> when between any pair of objects there is at most one morphism. Such categories correspond to (possibly large) preorders.',
+	'A category is <i>thin</i> when between any pair of objects there is at most one morphism. Such categories correspond to preordered collections.',
 	'https://ncatlab.org/nlab/show/thin+category',
 	'thin',
 	TRUE

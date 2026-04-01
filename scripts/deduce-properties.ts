@@ -136,7 +136,7 @@ async function deduce_satisfied_properties(
 		const assumption_string = get_assumption_string(implication)
 		const conclusion_string = get_conclusion_string(implication)
 
-		const ref = `(see <a href="/implication/${implication_id}">here</a>)`
+		const ref = `(see <a href="/category-implication/${implication_id}">here</a>)`
 		const reason = `Since it ${assumption_string}, it ${conclusion_string} ${ref}.`
 
 		reasons[conclusion] = reason
@@ -238,7 +238,7 @@ async function deduce_unsatisfied_properties(
 		const assumption_string = get_assumption_string(implication)
 		const conclusion_string = get_conclusion_string(implication)
 
-		const ref = `(see <a href="/implication/${implication_id}">here</a>)`
+		const ref = `(see <a href="/category-implication/${implication_id}">here</a>)`
 
 		const reason =
 			`Assume that it ${relations[property]} ${property}. ` +

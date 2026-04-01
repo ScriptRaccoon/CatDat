@@ -25,5 +25,5 @@ export function decode_property_ID(str: string): string {
 }
 
 export function get_property_url(id: string) {
-	return `/property/${encode_property_ID(id)}`
+	return `/category-property/${encode_property_ID(id)}`
 }

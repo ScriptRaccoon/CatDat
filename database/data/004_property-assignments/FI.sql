@@ -63,7 +63,7 @@ VALUES
 	'FI',
 	'locally cartesian closed',
 	TRUE,
-	'IF $X$ is a finite set, the slice category $\mathbf{FI} / X$ is equivalent to the partial order of subsets of $X$. This is cartesian closed because $A \cap B \subseteq C$ holds if and only if $B \subseteq (X \setminus A) \cup C$, where $A,B,C \subseteq X$.'
+	'IF $X$ is a finite set, the slice category $\mathbf{FI} / X$ is equivalent to the poset of subsets of $X$. This is cartesian closed because $A \cap B \subseteq C$ holds if and only if $B \subseteq (X \setminus A) \cup C$, where $A,B,C \subseteq X$.'
 ),
 (
 	'FI',

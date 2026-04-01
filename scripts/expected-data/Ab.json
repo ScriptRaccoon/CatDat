@@ -93,5 +93,6 @@
 	"infinitary extensive": false,
 	"coextensive": false,
 	"infinitary coextensive": false,
-	"lextensive": false
+	"lextensive": false,
+	"regular subobject classifier": false
 }

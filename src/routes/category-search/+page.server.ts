@@ -71,6 +71,11 @@ export const load = async (event) => {
 	if (!check) error(500, 'Search failed')
 
 	if (!check.consistent) {
+		event.setHeaders({
+			// shared cache for 30min
+			'cache-control': 'public, max-age=0, s-maxage=1800',
+		})
+
 		return {
 			is_search: true,
 			is_consistent: false,
@@ -120,6 +125,11 @@ export const load = async (event) => {
 	})
 
 	if (err) error(500, 'Search failed')
+
+	event.setHeaders({
+		// shared cache for 30min
+		'cache-control': 'public, max-age=0, s-maxage=1800',
+	})
 
 	return {
 		is_search: true,

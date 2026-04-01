@@ -61,6 +61,12 @@ VALUES
 ),
 (
 	'Top',
+	'regular subobject classifier',
+	TRUE,
+	'The indiscrete two-point space $\{0,1\}$ is a regular subobject classifier since continuous maps $X \to \{0,1\}$ correspond to subsets of $X$.'
+),
+(
+	'Top',
 	'coregular',
 	TRUE,
 	'The category has all limits and colimits, and the regular monomorphisms are the subspace inclusions. Thus, it suffices to prove that subspace inclusions are stable under pushouts. For a proof see e.g. Lemma 3.6 at the <a href="https://ncatlab.org/nlab/show/subspace+topology#pushout" target="_blank">nLab</a>.'

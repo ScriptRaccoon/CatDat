@@ -36,28 +36,28 @@
 			</a>
 		</li>
 		<li>
-			<a href="/properties">
+			<a href="/category-properties">
 				Properties
 				<Fa icon={faList} />
 			</a>
 		</li>
 
 		<li>
-			<a href="/implications">
+			<a href="/category-implications">
 				Implications
 				<Fa icon={faArrowsSplitUpAndLeft} />
 			</a>
 		</li>
 
 		<li>
-			<a href="/compare">
+			<a href="/category-comparison">
 				Compare
 				<Fa icon={faChartBar} />
 			</a>
 		</li>
 
 		<li>
-			<a href="/search">
+			<a href="/category-search">
 				Search
 				<Fa icon={faSearch} />
 			</a>

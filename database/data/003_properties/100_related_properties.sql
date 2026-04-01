@@ -98,6 +98,7 @@ VALUES
 ('pushouts', 'binary coproducts'),
 ('subobject classifier', 'elementary topos'),
 ('subobject classifier', 'finitely complete'),
+('subobject classifier', 'regular subobject classifier'),
 ('infinitary distributive', 'distributive'),
 ('infinitary distributive', 'finite products'),
 ('infinitary distributive', 'coproducts'),
@@ -166,4 +167,6 @@ VALUES
 ('unital', 'Malcev'),
 ('counital', 'finitely cocomplete'),
 ('counital', 'pointed'),
-('counital', 'co-Malcev');
+('counital', 'co-Malcev'),
+('regular subobject classifier', 'subobject classifier'),
+('regular subobject classifier', 'finitely complete');

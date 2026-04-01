@@ -47,7 +47,7 @@
 <p class="hint" bind:this={paragraph_element}>
 	Selected:
 	{compared_categories.map((c) => c.name).join(', ')}.
-	<a href="/compare">Choose different categories</a>.
+	<a href="/category-comparison">Choose different categories</a>.
 </p>
 
 <table>

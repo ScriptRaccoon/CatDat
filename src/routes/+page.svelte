@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { dev } from '$app/environment'
 	import MetaData from '$components/MetaData.svelte'
 	import {
 		faChartBar,
@@ -22,16 +23,18 @@
 	</a>.
 </p>
 
-<div class="video-container">
-	<iframe
-		src="https://www.youtube.com/embed/dQXbPxk__qA"
-		title="YouTube video player"
-		frameborder="0"
-		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-		referrerpolicy="strict-origin-when-cross-origin"
-		allowfullscreen
-	></iframe>
-</div>
+{#if !dev}
+	<div class="video-container">
+		<iframe
+			src="https://www.youtube.com/embed/dQXbPxk__qA"
+			title="YouTube video player"
+			frameborder="0"
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+			referrerpolicy="strict-origin-when-cross-origin"
+			allowfullscreen
+		></iframe>
+	</div>
+{/if}
 
 <div class="features">
 	<article class="feature-card">
@@ -41,9 +44,10 @@
 		</h3>
 
 		<p>
-			A list of <a class="accent" href="/implications">implications</a> between
-			<a class="accent" href="/properties">properties</a> allows for automatic deduction
-			of satisfied and unsatisfied properties from more basic ones.
+			A list of <a class="accent" href="/category-implications">implications</a>
+			between
+			<a class="accent" href="/category-properties">properties</a> allows for automatic
+			deduction of satisfied and unsatisfied properties from more basic ones.
 		</p>
 	</article>
 
@@ -52,8 +56,9 @@
 			<Fa icon={faSearch} /> Search by properties
 		</h3>
 		<p>
-			You can easily <a class="accent" href="/search">search for categories</a> that satisfy
-			specific properties while not satisfying others.
+			You can easily <a class="accent" href="/category-search"
+				>search for categories</a
+			> that satisfy specific properties while not satisfying others.
 		</p>
 	</article>
 
@@ -62,8 +67,8 @@
 			<Fa icon={faChartBar} /> Compare categories
 		</h3>
 		<p>
-			You can <a class="accent" href="/compare">compare categories</a> to see how their
-			properties align or differ.
+			You can <a class="accent" href="/category-comparison">compare categories</a> to
+			see how their properties align or differ.
 		</p>
 	</article>
 
