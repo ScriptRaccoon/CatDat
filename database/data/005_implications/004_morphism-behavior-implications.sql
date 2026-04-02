@@ -35,6 +35,13 @@ VALUES
 	FALSE
 ),
 (
+	'reflexive_pair_trivial',
+	'["left cancellative"]',
+	'["reflexive coequalizers", "coreflexive equalizers"]',
+	'Any parallel pair of morphisms with a common section (or retraction) must be a pair of the identities.',
+	FALSE
+),
+(
 	'groupoid_consequence',
 	'["groupoid"]',
 	'["self-dual", "mono-regular", "pullbacks", "directed limits", "left cancellative", "well-powered"]',

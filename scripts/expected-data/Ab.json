@@ -65,6 +65,10 @@
 	"co-Malcev": true,
 	"unital": true,
 	"counital": true,
+	"coreflexive equalizers": true,
+	"reflexive coequalizers": true,
+	"cosifted limits": true,
+	"sifted colimits": true,
 
 	"cartesian closed": false,
 	"locally cartesian closed": false,

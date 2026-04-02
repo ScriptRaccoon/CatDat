@@ -49,6 +49,10 @@
 	"infinitary extensive": true,
 	"lextensive": true,
 	"regular subobject classifier": true,
+	"coreflexive equalizers": true,
+	"reflexive coequalizers": true,
+	"cosifted limits": true,
+	"sifted colimits": true,
 
 	"abelian": false,
 	"additive": false,

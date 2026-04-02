@@ -230,4 +230,36 @@ VALUES
 	'https://ncatlab.org/nlab/show/wide+pushout',
 	'wide pullbacks',
 	TRUE
+),
+(
+	'coreflexive equalizers',
+	'has',
+	'A <i>coreflexive equalizer</i> is a limit of a diagram consisting of a parallel pair of morphisms with a common retraction, which is the same concept as an equalizer of such a parallel pair. This property refers to the existence of coreflexive equalizers.',
+	'https://ncatlab.org/nlab/show/reflexive+coequalizer',
+	'reflexive coequalizers',
+	TRUE
+),
+(
+	'reflexive coequalizers',
+	'has',
+	'A <i>reflexive coequalizer</i> is a colimit of a diagram consisting of a parallel pair of morphisms with a common section, which is the same concept as a coequalizer of such a parallel pair. This property refers to the existence of reflexive coequalizers.',
+	'https://ncatlab.org/nlab/show/reflexive+coequalizer',
+	'coreflexive equalizers',
+	TRUE
+),
+(
+	'cosifted limits',
+	'has',
+	'A category has <i>cosifted limits</i> if it has limits of diagrams indexed by cosifted small categories.',
+	'https://ncatlab.org/nlab/show/sifted+colimit',
+	'sifted colimits',
+	TRUE
+),
+(
+	'sifted colimits',
+	'has',
+	'A category has <i>sifted colimits</i> if it has colimits of diagrams indexed by sifted small categories.',
+	'https://ncatlab.org/nlab/show/sifted+colimit',
+	'cosifted limits',
+	TRUE
 );

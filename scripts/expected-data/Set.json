@@ -65,6 +65,10 @@
 	"lextensive": true,
 	"locally strongly finitely presentable": true,
 	"regular subobject classifier": true,
+	"coreflexive equalizers": true,
+	"reflexive coequalizers": true,
+	"cosifted limits": true,
+	"sifted colimits": true,
 
 	"Grothendieck abelian": false,
 	"Malcev": false,

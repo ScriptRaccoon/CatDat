@@ -28,13 +28,6 @@ VALUES
 	FALSE
 ),
 (
-	'equalizers_consequence',
-	'["equalizers"]',
-	'["Cauchy complete"]',
-	'If $e : X \to X$ is an idempotent, then the equalizer of $e, \mathrm{id}_X : X \rightrightarrows X$ provides a splitting of $e$.',
-	FALSE
-),
-(
 	'pointed_characterization',
 	'["pointed"]',
 	'["zero morphisms", "initial object"]',

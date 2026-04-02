@@ -9,7 +9,35 @@ VALUES
 (
 	'complete_consequence',
 	'["complete"]',
-	'["finitely complete", "cofiltered limits", "wide pullbacks", "connected limits"]',
+	'["finitely complete", "connected limits"]',
+	'This is trivial.',
+	FALSE
+),
+(
+	'sifted_categories_are_connected',
+	'["connected colimits"]',
+	'["sifted colimits"]',
+	'This is trivial.',
+	FALSE
+),
+(
+	'sifted_colimits_consequence',
+	'["sifted colimits"]',
+	'["filtered colimits", "reflexive coequalizers"]',
+	'This is trivial.',
+	FALSE
+),
+(
+	'sifted_colimits_criterion',
+	'["pullbacks", "reflexive coequalizers", "filtered colimits"]',
+	'["sifted colimits"]',
+	'See Cor. 5.2. in <a href="http://www.tac.mta.ca/tac/volumes/37/35/37-35abs.html" target="_blank">Chen&apos;s paper</a>.',
+	FALSE
+),
+(
+	'reflexive_coequalizers_are_coequalizers',
+	'["coequalizers"]',
+	'["reflexive coequalizers"]',
 	'This is trivial.',
 	FALSE
 ),
@@ -96,6 +124,20 @@ VALUES
 	'["binary products", "pullbacks"]',
 	'["equalizers"]',
 	'The equalizer of $f,g : X \rightrightarrows Y$ is the pullback of $(f,g) : X \to Y \times Y$ with the diagonal $Y \to Y \times Y$.',
+	FALSE
+),
+(
+	'equalizers_consequence',
+	'["equalizers"]',
+	'["Cauchy complete"]',
+	'If $e : X \to X$ is an idempotent, then the equalizer of $e, \mathrm{id}_X : X \rightrightarrows X$ provides a splitting of $e$.',
+	FALSE
+),
+(
+	'filtered_colimits_consequence',
+	'["filtered colimits"]',
+	'["Cauchy complete"]',
+	'This follows from the fact that the walking idempotent is filtered (cf. <a href="https://ncatlab.org/nlab/show/filtered+category#examples" target="_blank">nlab</a>).',
 	FALSE
 ),
 (
