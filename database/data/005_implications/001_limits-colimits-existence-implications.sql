@@ -17,21 +17,21 @@ VALUES
 	'sifted_categories_are_connected',
 	'["connected colimits"]',
 	'["sifted colimits"]',
-	'This is trivial.',
+	'This is because every sifted category is connected.',
 	FALSE
 ),
 (
 	'sifted_colimits_consequence',
 	'["sifted colimits"]',
 	'["filtered colimits", "reflexive coequalizers"]',
-	'This is trivial.',
+	'This is because filtered categories are sifted and because the index category for a reflexive coequalizer is sifted.',
 	FALSE
 ),
 (
 	'sifted_colimits_criterion',
 	'["pullbacks", "reflexive coequalizers", "filtered colimits"]',
 	'["sifted colimits"]',
-	'See Cor. 5.2. in <a href="http://www.tac.mta.ca/tac/volumes/37/35/37-35abs.html" target="_blank">Chen&apos;s paper</a>.',
+	'See Cor. 5.2 in <a href="http://www.tac.mta.ca/tac/volumes/37/35/37-35abs.html" target="_blank">Chen''s paper</a>.',
 	FALSE
 ),
 (
@@ -137,7 +137,7 @@ VALUES
 	'filtered_colimits_consequence',
 	'["filtered colimits"]',
 	'["Cauchy complete"]',
-	'This follows from the fact that the walking idempotent is filtered (cf. <a href="https://ncatlab.org/nlab/show/filtered+category#examples" target="_blank">nlab</a>).',
+	'This follows from the fact that the walking idempotent is filtered (cf. <a href="https://ncatlab.org/nlab/show/filtered+category#examples" target="_blank">nLab</a>).',
 	FALSE
 ),
 (

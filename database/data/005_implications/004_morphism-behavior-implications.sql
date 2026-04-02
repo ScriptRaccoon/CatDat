@@ -38,7 +38,7 @@ VALUES
 	'reflexive_pair_trivial',
 	'["left cancellative"]',
 	'["reflexive coequalizers", "coreflexive equalizers"]',
-	'Any parallel pair of morphisms with a common section (or retraction) must be a pair of the identities.',
+	'Any parallel pair of morphisms with a common section (or retraction) must be a pair of equal isomorphisms.',
 	FALSE
 ),
 (
