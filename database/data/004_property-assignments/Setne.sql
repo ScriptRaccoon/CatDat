@@ -109,6 +109,12 @@ VALUES
 ),
 (
 	'Setne',
+	'coreflexive equalizers',
+	FALSE,
+	'The two distinct functions $1\rightrightarrows \{0,1\}$ have a (unique) common retraction, but they cannot extend to a fork.'
+),
+(
+	'Setne',
 	'skeletal',
 	FALSE,
 	'This is trivial.'
