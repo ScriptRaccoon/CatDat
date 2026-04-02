@@ -74,7 +74,7 @@ VALUES
 (
 	'products',
 	'has',
-	'Given a family of objects $(A_i)_{i \in I}$, a <i>product</i> $\prod_{i \in I} A_i$ is defined as an object with morphisms $p_i : \prod_{i \in I} A_i \to A_i$ satisfying the following universal property: For every object $T$ and every family of morphisms $(f_i : T \to A_i)_{i \in I}$ there is a unique morphism $f : T \to \prod_{i \in I} A_i$ such that $p_i \circ f = f_i$ for all $i \in I$. This property refers to the existence of products.',
+	'Given a family of objects $(A_i)_{i \in I}$, a <i>product</i> $\prod_{i \in I} A_i$ is defined as an object with morphisms $p_i : \prod_{i \in I} A_i \to A_i$ satisfying the following universal property: For every object $T$ and every family of morphisms $(f_i : T \to A_i)_{i \in I}$ there is a unique morphism $f : T \to \prod_{i \in I} A_i$ such that $p_i \circ f = f_i$ for all $i \in I$. This property refers to the existence of <i>small products</i>, i.e., products of small families of objects.',
 	'https://ncatlab.org/nlab/show/cartesian+product',
 	'coproducts',
 	TRUE
@@ -82,7 +82,7 @@ VALUES
 (
 	'coproducts',
 	'has',
-	'Given a family of objects $(A_i)_{i \in I}$, a <i>coproduct</i> $\coprod_{i \in I} A_i$ is defined as an object with morphisms $i_i : A_i \to \coprod_{i \in I} A_i$ satisfying the following universal property: For every object $T$ and every family of morphisms $(f_i : A_i \to T)_{i \in I}$ there is a unique morphism $f : \coprod_{i \in I} A_i \to T$ such that $f \circ i_i = f_i$ for all $i \in I$. This property refers to the existence of coproducts.',
+	'Given a family of objects $(A_i)_{i \in I}$, a <i>coproduct</i> $\coprod_{i \in I} A_i$ is defined as an object with morphisms $i_i : A_i \to \coprod_{i \in I} A_i$ satisfying the following universal property: For every object $T$ and every family of morphisms $(f_i : A_i \to T)_{i \in I}$ there is a unique morphism $f : \coprod_{i \in I} A_i \to T$ such that $f \circ i_i = f_i$ for all $i \in I$. This property refers to the existence of <i>small coproducts</i>, i.e., coproducts of small families of objects.',
 	'https://ncatlab.org/nlab/show/coproduct',
 	'products',
 	TRUE
@@ -154,7 +154,7 @@ VALUES
 (
 	'cofiltered limits',
 	'has',
-	'A category has <i>cofiltered limits</i> if it has limits of diagrams indexed by cofiltered categories. This is actually equivalent to having directed limits.',
+	'A category has <i>cofiltered limits</i> if it has limits of diagrams indexed by cofiltered small categories. This is actually equivalent to having directed limits.',
 	'https://ncatlab.org/nlab/show/filtered+limit',
 	'filtered colimits',
 	TRUE
@@ -162,7 +162,7 @@ VALUES
 (
 	'filtered colimits',
 	'has',
-	'A category has <i>filtered colimits</i> if it has colimits of diagrams indexed by filtered categories. This is actually equivalent to having directed colimits.',
+	'A category has <i>filtered colimits</i> if it has colimits of diagrams indexed by filtered small categories. This is actually equivalent to having directed colimits.',
 	'https://ncatlab.org/nlab/show/filtered+colimit',
 	'cofiltered limits',
 	TRUE
@@ -170,7 +170,7 @@ VALUES
 (
 	'directed limits',
 	'has',
-	'A category has <i>directed limits</i> if it has limits of diagrams indexed by codirected posets. This is actually equivalent to having cofiltered limits.',
+	'A category has <i>directed limits</i> if it has limits of diagrams indexed by codirected (small) posets. This is actually equivalent to having cofiltered limits.',
 	'https://ncatlab.org/nlab/show/directed+limit',
 	'directed colimits',
 	TRUE
@@ -178,7 +178,7 @@ VALUES
 (
 	'directed colimits',
 	'has',
-	'A category has <i>directed colimits</i> if it has colimits of diagrams indexed by directed posets. This is actually equivalent to having filtered colimits. Directed colimits are (somewhat confusingly) also known as <i>inverse limits</i>.',
+	'A category has <i>directed colimits</i> if it has colimits of diagrams indexed by directed (small) posets. This is actually equivalent to having filtered colimits. Directed colimits are (somewhat confusingly) also known as <i>inverse limits</i>.',
 	'https://ncatlab.org/nlab/show/directed+colimit',
 	'directed limits',
 	TRUE
@@ -202,7 +202,7 @@ VALUES
 (
 	'connected limits',
 	'has',
-	'A category has <i>connected limits</i> if it has limits of diagrams indexed by connected categories.',
+	'A category has <i>connected limits</i> if it has limits of diagrams indexed by connected small categories.',
 	'https://ncatlab.org/nlab/show/connected+limit',
 	'connected colimits',
 	TRUE
@@ -210,7 +210,7 @@ VALUES
 (
 	'connected colimits',
 	'has',
-	'A category has <i>connected colimits</i> if it has colimits of diagrams indexed by connected categories.',
+	'A category has <i>connected colimits</i> if it has colimits of diagrams indexed by connected small categories.',
 	'https://ncatlab.org/nlab/show/connected+colimit',
 	'connected limits',
 	TRUE
@@ -218,7 +218,7 @@ VALUES
 (
 	'wide pullbacks',
 	'has',
-	'A category $\mathcal{C}$ has <i>wide pullbacks</i> if for every object $S$ the slice category $\mathcal{C}/S$ has arbitrary products.',
+	'A category $\mathcal{C}$ has <i>wide pullbacks</i> if for every object $S$ the slice category $\mathcal{C}/S$ has arbitrary small products.',
 	'https://ncatlab.org/nlab/show/wide+pullback',
 	'wide pushouts',
 	TRUE
@@ -226,7 +226,7 @@ VALUES
 (
 	'wide pushouts',
 	'has',
-	'A category $\mathcal{C}$ has <i>wide pushouts</i> if for every object $S$ the coslice category $S/\mathcal{C}$ has arbitrary coproducts.',
+	'A category $\mathcal{C}$ has <i>wide pushouts</i> if for every object $S$ the coslice category $S/\mathcal{C}$ has arbitrary small coproducts.',
 	'https://ncatlab.org/nlab/show/wide+pushout',
 	'wide pullbacks',
 	TRUE
