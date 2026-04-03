@@ -69,5 +69,5 @@ VALUES
 	'walking_pair',
 	'pullbacks',
 	FALSE,
-	'The two morphisms $a,b : 0 \rightrightarrows 1$ have no pullback, since it would to consist of identities $0 \leftarrow 0 \rightarrow 0$, but $a \neq b$.'
+	'The two morphisms $a,b : 0 \rightrightarrows 1$ have no pullback, since it would have to consist of identities $0 \leftarrow 0 \rightarrow 0$, but $a \neq b$.'
 );
