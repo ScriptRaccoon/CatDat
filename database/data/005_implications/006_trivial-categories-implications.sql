@@ -96,4 +96,11 @@ VALUES
 	'["regular"]',
 	'In a thin category, regular epimorphisms are isomorphisms, and the rest is clear as well.',
 	FALSE
+),
+(
+	'thin_zero_trivial',
+	'["thin", "zero morphisms", "inhabited"]',
+	'["trivial"]',
+	'This is easy.',
+	FALSE
 );
