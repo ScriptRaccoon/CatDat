@@ -69,7 +69,7 @@ VALUES
 	'Meas',
 	'cartesian closed',
 	FALSE,
-	NULL
+	'The functors $X \times -$ do not preserve filtered colimits by <a href="https://math.stackexchange.com/questions/5027218" target="_blank">MSE/5027218</a>, hence cannot be left adjoints.'
 ),
 (
 	'Meas',
