@@ -27,31 +27,31 @@ VALUES
 	'FS',
 	'cogenerator',
 	TRUE,
-	NULL
+	'We prove that $\{0,1\}$ is a cogenerator: The surjective maps $X \to \{0,1\}$ correspond to the non-empty proper subsets of $X$. If $a,b \in X$ are elements that have the same image under each surjective map $X \to \{0,1\}$, it therefore means that they lie in the same non-empty proper subsets of $X$. This implies $a=b$: If $X = \{a\}$, this is trivial. Otherwise, use the subset $\{a\}$.'
 ),
 (
 	'FS',
 	'wide pushouts',
 	TRUE,
-	NULL
+	'We construct wide pushouts as in $\mathbf{Set}$ and observe that the universal property still holds when we restrict to surjective maps. If $f_i : S \to X_i$ are surjective maps and $P$ is their wide pushout, then each $X_i \to P$ is surjective, so that in particular $P$ is finite.'
 ),
 (
 	'FS',
 	'coequalizers',
 	TRUE,
-	NULL
+	'We construct coequalizers as in $\mathbf{FinSet}$ (or $\mathbf{Set}$) and observe that the universal property still holds when we restrict to surjective maps.'
 ),
 (
 	'FS',
 	'mono-regular',
 	TRUE,
-	NULL
+	'Every monomorphism is an isomorphism (see below), hence regular.'
 ),
 (
 	'FS',
 	'epi-regular',
 	TRUE,
-	NULL
+	'If $f : X \to Y$ is a surjective map of finite sets, it is the coequalizer of the two projections $p_1, p_2 : X \times_Y X \rightrightarrows X$ in $\mathbf{FinSet}$, but also in $\mathbf{FS}$. Notice that $p_1,p_2$ are surjective. Even though $X \times_Y X$ is not a pullback in $\mathbf{FS}$, we can use this finite set here.'
 ),
 (
 	'FS',
@@ -63,7 +63,7 @@ VALUES
 	'FS',
 	'connected',
 	FALSE,
-	'If $f : \emptyset \to X$ is surjective, then $X = \emptyset$, and if $f : X \to \emptyset$ is any map, then also $X = \emptyset$. This shows that $\{ \emptyset \}$ is a connected component in this category.'
+	'If $f : \emptyset \to X$ is surjective, then $X = \emptyset$, and if $f : X \to \emptyset$ is any map, then also $X = \emptyset$. This shows that $\{ \emptyset \}$ is a connected component in this category. (The other connected component consists of all non-empty finite sets.)'
 ),
 (
 	'FS',
