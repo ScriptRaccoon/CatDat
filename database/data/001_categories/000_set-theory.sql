@@ -52,7 +52,7 @@ VALUES
 (
 	'Setne',
 	'category of non-empty sets',
-	'$\mathbf{Set}_{\neq \emptyset}$',
+	'$\mathbf{Set}_{\neq \varnothing}$',
 	'non-empty sets',
 	'maps',
 	'This entry demonstrates that removing an object (the empty set) can drastically change the properties of a category. In particular, this category is neither complete nor cocomplete.',

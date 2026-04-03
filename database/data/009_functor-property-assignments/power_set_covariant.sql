@@ -33,7 +33,7 @@ VALUES
     'power_set_covariant',
     'full',
     FALSE,
-    'Take any map $P(X) \to P(X)$ that does not preserve the empty set, say the constant map with value $X$ (for $X \neq \emptyset$).'
+    'Take any map $P(X) \to P(X)$ that does not preserve the empty set, say the constant map with value $X$ (for $X \neq \varnothing$).'
 ),
 (
     'power_set_covariant',

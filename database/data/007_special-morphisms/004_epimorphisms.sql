@@ -198,7 +198,7 @@ VALUES
 (
 	'Set',
 	'surjective maps',
-	'For the non-trivial direction, if $f : X \to Y$ is an epimorphism of sets, then in particular $f^* : \hom(Y,2) \to \hom(X,2)$ is injective, which identifies with $f^* : P(Y) \to P(X)$. Then for all $y \in Y$ we have $f^*(\{y\}) \neq f^*(\emptyset) = \emptyset$, so that $y$ has a preimage.'
+	'For the non-trivial direction, if $f : X \to Y$ is an epimorphism of sets, then in particular $f^* : \hom(Y,2) \to \hom(X,2)$ is injective, which identifies with $f^* : P(Y) \to P(X)$. Then for all $y \in Y$ we have $f^*(\{y\}) \neq f^*(\varnothing) = \varnothing$, so that $y$ has a preimage.'
 ),
 (
 	'Set*',

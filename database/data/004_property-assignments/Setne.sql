@@ -9,7 +9,7 @@ VALUES
 	'Setne',
 	'locally small',
 	TRUE,
-	'There is a forgetful functor $\mathbf{Set}_{\neq \emptyset} \to \mathbf{Set}$ and $\mathbf{Set}$ is locally small.'
+	'There is a forgetful functor $\mathbf{Set}_{\neq \varnothing} \to \mathbf{Set}$ and $\mathbf{Set}$ is locally small.'
 ),
 (
 	'Setne',

@@ -57,5 +57,5 @@ VALUES
 	'Sp',
 	'strongly connected',
 	FALSE,
-	'For $n \geq 0$ let $E_n$ be the combinatorial species of $n$-sets: $E_n(A) = \{A\}$ when $A$ has cardinality $n$, otherwise $E_n(A) = \emptyset$. Then there is no morphism between $E_n$ and $E_m$ unless $n = m$.'
+	'For $n \geq 0$ let $E_n$ be the combinatorial species of $n$-sets: $E_n(A) = \{A\}$ when $A$ has cardinality $n$, otherwise $E_n(A) = \varnothing$. Then there is no morphism between $E_n$ and $E_m$ unless $n = m$.'
 );

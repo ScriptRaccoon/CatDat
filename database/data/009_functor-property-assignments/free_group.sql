@@ -15,7 +15,7 @@ VALUES
     'free_group',
     'monomorphism-preserving',
     TRUE,
-    'This can be deduced from the description of the elements of a free group, but here is an abstract argument: Split monomorphisms are preserved by any functor. The only injective maps in $\mathbf{Set}$ that are not split are $\emptyset \hookrightarrow X$ (for non-empty $X$), and $F(\emptyset) \to F(X)$ is injective since $F(\emptyset)$ is the trivial group.'
+    'This can be deduced from the description of the elements of a free group, but here is an abstract argument: Split monomorphisms are preserved by any functor. The only injective maps in $\mathbf{Set}$ that are not split are $\varnothing \hookrightarrow X$ (for non-empty $X$), and $F(\varnothing) \to F(X)$ is injective since $F(\varnothing)$ is the trivial group.'
 ),
 (
     'free_group',
@@ -27,7 +27,7 @@ VALUES
     'free_group',
     'conservative',
     TRUE,
-    'Let $f : X \to Y$ be a map of sets such that $F(f) : F(X) \to F(Y)$ is an isomorphism of groups. We know that $F$ is faithful, so that it reflects monomorphisms. Thus, $f$ is injective. Choose a complement $U \subseteq Y$ of $f(X) \subseteq Y$. Then $F(X) \to F(Y) = F(X) \sqcup F(U)$ is an isomorphism. This implies $F(U)=1$ and hence $U = \emptyset$.'
+    'Let $f : X \to Y$ be a map of sets such that $F(f) : F(X) \to F(Y)$ is an isomorphism of groups. We know that $F$ is faithful, so that it reflects monomorphisms. Thus, $f$ is injective. Choose a complement $U \subseteq Y$ of $f(X) \subseteq Y$. Then $F(X) \to F(Y) = F(X) \sqcup F(U)$ is an isomorphism. This implies $F(U)=1$ and hence $U = \varnothing$.'
 ),
 (
     'free_group',

@@ -63,7 +63,7 @@ VALUES
 	'FS',
 	'connected',
 	FALSE,
-	'If $f : \emptyset \to X$ is surjective, then $X = \emptyset$, and if $f : X \to \emptyset$ is any map, then also $X = \emptyset$. This shows that $\{ \emptyset \}$ is a connected component in this category. (The other connected component consists of all non-empty finite sets.)'
+	'If $f : \varnothing \to X$ is surjective, then $X = \varnothing$, and if $f : X \to \varnothing$ is any map, then also $X = \varnothing$. This shows that $\{ \varnothing \}$ is a connected component in this category. (The other connected component consists of all non-empty finite sets.)'
 ),
 (
 	'FS',

@@ -44,10 +44,10 @@ VALUES
 ('Set', 'empty set'),
 ('Set*', 'singleton pointed set'),
 ('SetxSet', '$(0,0)$'),
-('Sh(X)', 'constant sheaf with value $\emptyset$, sending all non-empty open sets to $\emptyset$ and the empty set to a singleton'),
+('Sh(X)', 'constant sheaf with value $\varnothing$, sending all non-empty open sets to $\varnothing$ and the empty set to a singleton'),
 ('Sh(X,Ab)', 'trivial abelian sheaf'),
-('Sp', 'species $X$ with $X_n = \emptyset$'),
-('sSet', 'simplicial set $X$ with $X_n = \emptyset$'),
+('Sp', 'species $X$ with $X_n = \varnothing$'),
+('sSet', 'simplicial set $X$ with $X_n = \varnothing$'),
 ('Top', 'empty space'),
 ('Top*', 'singleton space with the unique base point'),
 ('Vect', 'trivial vector space'),
@@ -56,7 +56,7 @@ VALUES
 ('walking_fork', '$0$'),
 ('walking_morphism', '$0$'),
 ('walking_span', '$0$'),
-('Z', 'constant functor with value $\emptyset$'),
+('Z', 'constant functor with value $\varnothing$'),
 ('Z_div', '$1$'),
 ('walking_composable_pair', '$0$');
 

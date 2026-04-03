@@ -51,7 +51,7 @@ VALUES
 	'Meas',
 	'cogenerator',
 	TRUE,
-	'Take the two-element set $2$ endowed with the trivial $\sigma$-algebra (where only $\emptyset$ and $2$ are measurable), and use that $2$ is a cogenerator for $\mathbf{Set}$.'
+	'Take the two-element set $2$ endowed with the trivial $\sigma$-algebra (where only $\varnothing$ and $2$ are measurable), and use that $2$ is a cogenerator for $\mathbf{Set}$.'
 ),
 (
 	'Meas',
@@ -87,7 +87,7 @@ VALUES
 	'Meas',
 	'balanced',
 	FALSE,
-	'Take a set $X$ with two different $\sigma$-algebras $\mathcal{A} \subset \mathcal{B}$ (for example, $\mathcal{A} = \{\emptyset,X\}$ and $\mathcal{B} = P(X)$ when $X$ has at least $2$ elements), then the identity map $(X,\mathcal{B}) \to (X,\mathcal{A})$ provides a counterexample.'
+	'Take a set $X$ with two different $\sigma$-algebras $\mathcal{A} \subset \mathcal{B}$ (for example, $\mathcal{A} = \{\varnothing,X\}$ and $\mathcal{B} = P(X)$ when $X$ has at least $2$ elements), then the identity map $(X,\mathcal{B}) \to (X,\mathcal{A})$ provides a counterexample.'
 ),
 (
 	'Meas',
