@@ -211,6 +211,11 @@ VALUES
     'Regular epimorphisms are surjective quotient maps by the explicit construction of coequalizers. Conversely, if $q : X \to Y$ is a surjective quotient map, then one checks that $q$ is the coequalizer of its kernel pair $X \times_Y X \rightrightarrows X$: This is true for the underlying sets, and continuity of the induced morphism follows since $q$ is a quotient map.' 
 ),
 (
+    'Top*',
+    'surjective pointed quotient maps',
+    'Regular epimorphisms are surjective pointed quotient maps by the explicit construction of coequalizers. Conversely, if $q : X \to Y$ is a surjective pointed quotient map, then one checks that $q$ is the coequalizer of its kernel pair $X \times_Y X \rightrightarrows X$: This is true for the underlying pointed sets, and continuity of the induced morphism follows since $q$ is a quotient map.' 
+),
+(
     'Vect',
     'surjective homomorphisms',
     'This holds in every finitary algebraic category.'

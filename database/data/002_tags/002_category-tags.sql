@@ -135,6 +135,8 @@ VALUES
 ('sSet', 'well-behaved'),
 ('Top', 'topology'),
 ('Top', 'well-behaved'),
+('Top*', 'topology'),
+('Top*', 'well-behaved'),
 ('Vect', 'algebra'),
 ('Vect', 'well-behaved'),
 ('walking_commutative_square', 'tiny'),

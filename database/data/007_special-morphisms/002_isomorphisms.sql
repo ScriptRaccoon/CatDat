@@ -276,6 +276,11 @@ VALUES
 	'This is easy.'
 ),
 (
+	'Top*',
+	'pointed homeomorphisms',
+	'This is easy.'
+),
+(
 	'Vect',
 	'bijective linear maps',
 	'This characterization holds in every algebraic category.'

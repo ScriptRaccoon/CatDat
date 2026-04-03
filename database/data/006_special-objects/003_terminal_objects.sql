@@ -47,6 +47,7 @@ VALUES
 ('Sp', 'species $X$ with $X_n = 1$'),
 ('sSet', 'simplicial set $X$ with $X_n = 1$'),
 ('Top', 'singleton space'),
+('Top*', 'singleton space with the unique base point'),
 ('Vect', 'trivial vector space'),
 ('walking_commutative_square', '$d$'),
 ('walking_isomorphism', 'both objects'),

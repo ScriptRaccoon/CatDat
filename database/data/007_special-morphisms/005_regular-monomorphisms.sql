@@ -196,6 +196,11 @@ VALUES
     'Equalizers are embeddings by their construction. Conversely, if $f : X \to Y$ is an embedding, then $f$ is the equalizer of the two characteristic maps $\chi_Y, \chi_{f(X)} : Y \to \{0,1\}$, where $\{0,1\}$ carries the indiscrete topology.'
 ),
 (
+    'Top*',
+    'embeddings',
+    'Equalizers are embeddings by their construction. Conversely, if $f : X \to Y$ is an embedding, then $f$ is the equalizer of the two characteristic maps $\chi_Y, \chi_{f(X)} : Y \to \{0,1\}$, where $\{0,1\}$ carries the indiscrete topology and $1$ is the base point.'
+),
+(
     'Vect',
     'same as monomorphisms',
     'This is because the category is mono-regular.'

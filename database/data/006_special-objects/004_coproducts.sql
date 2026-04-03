@@ -43,6 +43,7 @@ VALUES
 ('Sh(X,Ab)', 'associated sheaf to the section-wise direct sum'),
 ('sSet', 'pointwise disjoint union'),
 ('Top', 'disjoint union with the disjoint union topology'),
+('Top*', 'wedge sum, aka one-point union'),
 ('Vect', 'direct sums'),
 ('walking_commutative_square', '$b \sqcup c = d$, $a \sqcup x = x$, $d \sqcup x = d$, $x \sqcup x = x$'),
 ('walking_isomorphism', '$0 \sqcup 0 = 0$'),

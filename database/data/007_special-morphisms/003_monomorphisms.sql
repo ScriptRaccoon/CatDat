@@ -266,6 +266,11 @@ VALUES
 	'The same proof as for $\mathbf{Set}$ can be used.'
 ),
 (
+	'Top*',
+	'injective pointed continuous maps',
+	'For the non-trivial direction: The forgetful functor $\mathbf{Top}_* \to \mathbf{Set}$ is representable (take the discrete two-point space) and hence preserves monomorphisms.'
+),
+(
 	'Vect',
 	'injective linear maps',
 	'This holds in every finitary algebraic category: the forgetful functor to $\mathbf{Set}$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'

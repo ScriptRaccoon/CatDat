@@ -20,6 +20,16 @@ VALUES
 	NULL
 ),
 (
+	'Top*',
+	'category of pointed topological spaces',
+	'$\mathbf{Top}_*$',
+	'pointed topological spaces',
+	'pointed continuous functions',
+	'This category plays an important role in algebraic topology and homotopy theory. Although it may appear similar to $\mathbf{Top}$, adding a base point drastically changes its categorical properties. In particular, it introduces a zero object.',
+	'https://ncatlab.org/nlab/show/pointed+topological+space',
+	NULL
+),
+(
 	'Haus',
 	'category of Hausdorff spaces',
 	'$\mathbf{Haus}$',

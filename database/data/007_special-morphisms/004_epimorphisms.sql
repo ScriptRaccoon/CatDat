@@ -241,6 +241,11 @@ VALUES
 	'The proof works exactly as for the category of sets, where we endow $2$ with the indiscrete topology.'
 ),
 (
+	'Top*',
+	'surjective pointed continuous maps',
+	'For the non-trivial direction: The forgetful functor $\mathbf{Top}_* \to \mathbf{Top}$ preserves pushouts and hence also epimorphisms, and we already know the epimorphisms in $\mathbf{Top}$.'
+),
+(
 	'Vect',
 	'surjective linear maps',
 	'The forgetful functor to abelian groups is faithful and preserves colimits, hence reflects and preserves epimorphisms. Alternatively, just use the same proof as for abelian groups.'
