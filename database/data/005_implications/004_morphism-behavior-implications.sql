@@ -159,4 +159,11 @@ VALUES
 	'["sequential limits"]',
 	'Assume that $\cdots \to A_2 \to A_1 \to A_0$ is a sequence of morphisms. We will prove that almost all of them are identities, so that the sequence is eventually constant and the limit exists. Assume the opposite, i.e. that there are infinitely many $A_k \to A_{k-1}$ which are not the identity. Pick some $n_1$ such that $A_{n_1} \to A_{n_1 - 1}$ is not the identity, and let $n_0 := n_1 - 1$. If $A_{n_i} \to A_{n_{i-1}}$ has been constructed, there is some $n_{i+1} > n_i$ such that the composite $A_{n_{i+1}} \to A_{n_i}$ is not the identity, because otherwise it would follow inductively that all $A_{k+1} \to A_k$, $k \geq n_i$ would be identities, which would contradict our infiniteness assumption. This way we construct an infinite sequence of non-identity morphisms $A_{n_{i+1}} \to A_{n_i}$, a contradiction.',
 	FALSE
+),
+(
+	'one-way_reflexive',
+	'["one-way"]',
+	'["reflexive coequalizers"]',
+	'Every reflexive pair is equal: If $f s = g s = \mathrm{id}$, then since $s f  = \mathrm{id}$ (one-way), we must have $f = s^{-1}$, and likewise $g = s^{-1}$.',
+	FALSE
 );

@@ -97,7 +97,6 @@ VALUES
 	'This is trivial.',
 	FALSE
 ),
-
 (
 	'complete_characterization',
 	'["complete"]',
