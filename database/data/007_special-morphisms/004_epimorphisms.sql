@@ -266,6 +266,11 @@ VALUES
 	'This is easily checked.'
 ),
 (
+	'walking_idempotent',
+	'the identity',
+	'This is trivial.'
+),
+(
 	'walking_isomorphism',
 	'every morphism',
 	'This holds because it is a groupoid.'

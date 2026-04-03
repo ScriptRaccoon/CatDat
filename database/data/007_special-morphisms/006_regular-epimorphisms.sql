@@ -236,6 +236,11 @@ VALUES
     'This is because the category is left cancellative.'
 ),
 (
+	'walking_idempotent',
+	'the identity',
+	'This is trivial.'
+),
+(
     'walking_isomorphism',
     'same as isomorphisms',
     'This is because the category is left cancellative.'

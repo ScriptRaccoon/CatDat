@@ -110,4 +110,14 @@ VALUES
 	'The name of this category comes from the fact that a functor out of it is the same as a <a href="https://ncatlab.org/nlab/show/span" target="_blank">span</a> in the target category. It is isomorphic to the partial order of proper positive divisors of $6$.',
 	'https://ncatlab.org/nlab/show/span#the_walking_span',
 	NULL
+),
+(
+	'walking_idempotent',
+	'walking idempotent',
+	'$\mathrm{Idem}$',
+	'a single object $0$',
+	'two morphisms $\mathrm{id}_0,e : 0 \to 0$ with $e^2=e$',
+	'The name of this category comes from the fact that a functor out of it is the same as an <a href="https://ncatlab.org/nlab/show/idempotent" target="_blank">idempotent morphism</a> in the target category. It can also be seen as the delooping of the monoid $\{1,e\}$ in which $e^2=e$.',
+	NULL,
+	NULL
 );
