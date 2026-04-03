@@ -32,7 +32,7 @@ VALUES
 (
 	'FI',
 	'category of finite sets and injections',
-	'$\mathrm{FI}$',
+	'$\mathbf{FI}$',
 	'finite sets',
 	'injective maps',
 	'This category is badly-behaved in itself, but plays an important role in representation theory.',
@@ -42,7 +42,7 @@ VALUES
 (
 	'FS',
 	'category of finite sets and surjections',
-	'$\mathrm{FS}$',
+	'$\mathbf{FS}$',
 	'finite sets',
 	'surjective maps',
 	'This category is badly-behaved in itself, but it appears in representation theory. It has two connected components, consisting of the empty set and the non-empty finite sets.',
