@@ -61,12 +61,6 @@ VALUES
 ),
 (
 	'Grp',
-	'biproducts',
-	FALSE,
-	'If $\sqcup$ denotes the coproduct, the canonical homomorphism $\mathbb{Z} \sqcup \mathbb{Z} \to \mathbb{Z} \times \mathbb{Z}$ is not an isomorphism, since $\mathbb{Z} \sqcup \mathbb{Z}$ is the free group on two generators and therefore not commutative.'
-),
-(
-	'Grp',
 	'skeletal',
 	FALSE,
 	'This is trivial.'

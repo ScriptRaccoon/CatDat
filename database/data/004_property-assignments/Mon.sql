@@ -61,12 +61,6 @@ VALUES
 ),
 (
 	'Mon',
-	'biproducts',
-	FALSE,
-	'If $\sqcup$ denotes the coproduct, the canonical homomorphism $\mathbb{N} \sqcup \mathbb{N} \to \mathbb{N} \times \mathbb{N}$ is not an isomorphism, since $\mathbb{N} \sqcup \mathbb{N}$ is the free monoid on two generators and therefore not commutative.'
-),
-(
-	'Mon',
 	'counital',
 	FALSE,
 	'The canonical morphism $\mathbb{N} \sqcup \mathbb{N} \to \mathbb{N} \times \mathbb{N}$ is not a monomorphism since $\mathbb{N} \sqcup \mathbb{N}$ is not commutative.'

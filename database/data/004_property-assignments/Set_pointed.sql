@@ -67,12 +67,6 @@ VALUES
 ),
 (
 	'Set*',
-	'biproducts',
-	FALSE,
-	'Binary coproducts are wedge sums $\vee$, so the canonical map $X \vee Y \to X \times Y$ is injective, but in most cases not surjective.'
-),
-(
-	'Set*',
 	'unital',
 	FALSE,
 	'The joint image of $X \to X \times Y \leftarrow Y$ is just $\{(x,0) : x \in X\} \cup \{(0,y) : y \in Y\}$ (where $0$ denotes the base point), which is clearly a proper subset of $X \times Y$ when both $X,Y$ are non-trivial.'

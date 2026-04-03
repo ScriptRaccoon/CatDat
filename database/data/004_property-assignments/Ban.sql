@@ -43,12 +43,6 @@ VALUES
 ),
 (
 	'Ban',
-	'biproducts',
-	FALSE,
-	'If $\oplus$ denotes the coproduct, the canonical morphism $\mathbb{C} \oplus \mathbb{C} \to \mathbb{C} \times \mathbb{C}$ is bijective, but not an isomorphism in this category since the coproduct carries the $1$-norm, while the product carries the $\sup$-norm.'
-),
-(
-	'Ban',
 	'balanced',
 	FALSE,
 	'The canonical morphism $\mathbb{C} \oplus \mathbb{C} \to \mathbb{C} \times \mathbb{C}$ is a counterexample; here the direct sum (coproduct) carries the $1$-norm and the direct product the $\sup$-norm.'
