@@ -101,8 +101,8 @@ VALUES
 (
 	'complete_characterization',
 	'["complete"]',
-	'["products", "equalizers"]',
-	'See <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, V.2, Cor. 2.',
+	'["products", "coreflexive equalizers"]',
+	'See <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, V.2, Thm. 2. Note that the equalizer appearing the theorem is in fact coreflexive.',
 	TRUE
 ),
 (
