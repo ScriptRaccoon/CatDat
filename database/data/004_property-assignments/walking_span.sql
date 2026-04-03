@@ -43,12 +43,6 @@ VALUES
 ),
 (
 	'walking_span',
-	'directed colimits',
-	TRUE,
-	'Every directed diagram can be reduced to a trivial one, for example $0 \to 1$ has colimit $1$.'
-),
-(
-	'walking_span',
 	'binary coproducts',
 	FALSE,
 	'Clearly $1$ and $2$ have no coproduct.'

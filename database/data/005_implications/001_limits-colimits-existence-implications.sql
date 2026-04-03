@@ -140,6 +140,13 @@ VALUES
 	FALSE
 ),
 (
+	'finite_filtered_colimits',
+	'["finite", "Cauchy complete"]',
+	'["filtered colimits"]',
+	'See <a href="https://mathoverflow.net/questions/509853" target="_blank">MO/509853</a>.',
+	FALSE
+),
+(
 	'directed_colimits_suffice',
 	'["directed colimits"]',
 	'["filtered colimits"]',

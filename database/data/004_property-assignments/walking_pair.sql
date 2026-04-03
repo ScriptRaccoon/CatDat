@@ -31,12 +31,6 @@ VALUES
 ),
 (
 	'walking_pair',
-	'directed colimits',
-	TRUE,
-	'Every directed diagram can be reduced to one of the three trivial diagrams $0 \to 0$, $0 \to 1$, $1 \to 1$, which have colimits $0$, $1$, resp. $1$.'
-),
-(
-	'walking_pair',
 	'left cancellative',
 	TRUE,
 	'The two morphisms $0 \to 1$ are clearly monomorphisms.'

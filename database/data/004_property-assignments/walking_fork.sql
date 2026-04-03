@@ -31,12 +31,6 @@ VALUES
 ),
 (
 	'walking_fork',
-	'directed colimits',
-	TRUE,
-	'Every directed diagram can be reduced to one of very few trivial diagrams, for example $0 \xrightarrow{i} 1 \xrightarrow{f} 2$ has colimit $2$.'
-),
-(
-	'walking_fork',
 	'generator',
 	TRUE,
 	'It is easy to check that $1$ is a generator.'
