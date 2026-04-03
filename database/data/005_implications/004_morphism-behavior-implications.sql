@@ -145,4 +145,18 @@ VALUES
 	'["thin"]',
 	'If $f,g : A \rightrightarrows B$ are two morphisms, then $f^{-1} \circ g : A \to A$ must be the identity, so that $f = g$.',
 	FALSE
+),
+(
+	'discrete_implies_direct',
+	'["discrete"]',
+	'["direct"]',
+	'This is trivial.',
+	FALSE
+),
+(
+	'direct_implies_sequential_limits',
+	'["direct"]',
+	'["sequential limits"]',
+	'Assume that $\cdots \to A_2 \to A_1 \to A_0$ is a sequence of morphisms. We will prove that almost all of them are identities, so that the sequence is eventually constant and the limit exists. Assume the opposite, i.e. that there are infinitely many $A_k \to A_{k-1}$ which are not the identity. Pick some $n_1$ such that $A_{n_1} \to A_{n_1 - 1}$ is not the identity, and let $n_0 := n_1 - 1$. If $A_{n_i} \to A_{n_{i-1}}$ has been constructed, there is some $n_{i+1} > n_i$ such that the composite $A_{n_{i+1}} \to A_{n_i}$ is not the identity, because otherwise it would follow inductively that all $A_{k+1} \to A_k$, $k \geq n_i$ would be identities, which would contradict our infiniteness assumption. This way we construct an infinite sequence of non-identity morphisms $A_{n_{i+1}} \to A_{n_i}$, a contradiction.',
+	FALSE
 );
