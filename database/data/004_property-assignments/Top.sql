@@ -105,7 +105,7 @@ VALUES
 	'Top',
 	'exact filtered colimits',
 	FALSE,
-	NULL
+	'See <a href="https://math.stackexchange.com/questions/1255678" target="_blank">MSE/1255678</a>.'
 ),
 (
 	'Top',
