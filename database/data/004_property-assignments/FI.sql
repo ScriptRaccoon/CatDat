@@ -37,21 +37,27 @@ VALUES
 ),
 (
 	'FI',
-	'connected limits',
+	'equalizers',
 	TRUE,
-	NULL
+	'We construct equalizers just like in $\mathbf{FinSet}$ and observe that the universal property still holds.'
+),
+(
+	'FI',
+	'wide pullbacks',
+	TRUE,
+	'We construct wide pullbacks just like in $\mathbf{Set}$, i.e., for a w.l.o.g. non-empty family of injective maps $f_i : X_i \to S$ we consider the subset $P \subseteq \prod_{i \in I} X_i$ of those tuples $x$ where $f_i(x_i) = f_j(x_j)$. Each projection $P \to X_i$ is injective, so in particular $P$ is finite, and $P \to X_i$ becomes a morphism in $\mathbf{FI}$. It is easy to check that the universal property still holds in $\mathbf{FI}$.'
 ),
 (
 	'FI',
 	'mono-regular',
 	TRUE,
-	NULL
+	'If $f : X \to Y$ is an injective map of finite sets, it is the equalizer of the two injective maps $i_1,i_2 : Y \rightrightarrows Y \sqcup_X Y$, and $Y \sqcup_X Y$ is finite.'
 ),
 (
 	'FI',
 	'epi-regular',
 	TRUE,
-	NULL
+	'This is because every epimorphism is actually an isomorphism (see below).'
 ),
 (
 	'FI',
