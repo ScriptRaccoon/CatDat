@@ -51,7 +51,7 @@ VALUES
 ),
 (
 	'walking_pair',
-	'walking parallel pair of morphisms',
+	'walking parallel pair',
 	'$\{0 \rightrightarrows 1 \}$',
 	'two objects $0$ and $1$',
 	'the two identities and two parallel morphisms from $0$ to $1$',
