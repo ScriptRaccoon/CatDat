@@ -62,4 +62,31 @@ VALUES
 	'https://ncatlab.org/nlab/show/balanced+category',
 	'balanced',
 	TRUE
+),
+(
+	'direct',
+	'is',
+	'A category is <i>direct</i> if it contains no infinite sequence of non-identity morphisms of the form
+	<p>$\cdots \to A_2 \to A_1 \to A_0.$</p>
+	For example, a poset is direct iff it is well-founded.',
+	'https://ncatlab.org/nlab/show/direct+category',
+	'inverse',
+	FALSE
+),
+(
+	'inverse',
+	'is',
+	'A category is <i>inverse</i> if its dual is direct, i.e., if it contains no infinite sequence of non-identity morphisms of the form
+	<p>$A_0 \to A_1 \to A_2 \to \cdots.$</p>',
+	'https://ncatlab.org/nlab/show/inverse+category',
+	'direct',
+	FALSE
+),
+(
+	'one-way',
+	'is',
+	'A category is <i>one-way</i> if every endomorphism in it is equal to the identity.',
+	'https://ncatlab.org/nlab/show/one-way+category',
+	'one-way',
+	TRUE
 );

@@ -67,6 +67,12 @@ VALUES
 ),
 (
 	'walking_fork',
+	'one-way',
+	TRUE,
+	'This is trivial.'
+),
+(
+	'walking_fork',
 	'terminal object',
 	FALSE,
 	'$0$ and $1$ are not terminal since there is no morphism from $2$, and $2$ is not terminal since there are two different morphisms $1 \rightrightarrows 2$.'

@@ -100,4 +100,10 @@ VALUES
 	'locally cartesian closed',
 	FALSE,
 	'Assume that $K$ is a field such that $\mathbf{Fld} / K$ is cartesian closed. This slice category is equivalent to the poset of subfields of $K$. This poset is a lattice, and our assumption implies that it is distributive (see <a href="/category-implication/distributive_criterion">here</a>). But this is quite rare: Consider $K = \mathbb{Q}(\sqrt{2}, \sqrt{3})$. By Galois theory, the lattice of subfields is isomorphic to the diamond lattice $M_3$ which is not distributive. Specifically, $(\mathbb{Q}(\sqrt{2}) \wedge \mathbb{Q}(\sqrt{6})) \vee (\mathbb{Q}(\sqrt{3}) \wedge \mathbb{Q}(\sqrt{6})) = \mathbb{Q} \vee \mathbb{Q} = \mathbb{Q}$, while $(\mathbb{Q}(\sqrt{2}) \vee \mathbb{Q}(\sqrt{3})) \wedge \mathbb{Q}(\sqrt{6}) = \mathbb{Q}(\sqrt{2},\sqrt{3}) \wedge \mathbb{Q}(\sqrt{6}) = \mathbb{Q}(\sqrt{6})$.'
+),
+(
+	'Fld',
+	'one-way',
+	FALSE,
+	'Consider the endomorphism $\mathbb{Q}(X) \to \mathbb{Q}(X)$, $X \mapsto X^2$.'
 );

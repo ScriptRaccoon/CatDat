@@ -100,5 +100,8 @@
 	"co-Malcev": false,
 	"unital": false,
 	"counital": false,
-	"locally strongly finitely presentable": false
+	"locally strongly finitely presentable": false,
+	"direct": false,
+	"inverse": false,
+	"one-way": false
 }

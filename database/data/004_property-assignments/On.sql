@@ -55,6 +55,12 @@ VALUES
 ),
 (
 	'On',
+	'direct',
+	TRUE,
+	'This is because the ordinal numbers with respect to $<$ are well-founded (by definition).'
+),
+(
+	'On',
 	'terminal object',
 	FALSE,
 	'There is no largest ordinal $\alpha$ since $\alpha + 1$ will always be larger.'
@@ -64,4 +70,10 @@ VALUES
 	'well-copowered',
 	FALSE,
 	'The "quotients" of $0$ are all ordinals.'
+),
+(
+	'On',
+	'inverse',
+	FALSE,
+	'Consider the strictly increasing sequence $0 < 1 < 2 < \cdots$.'
 );

@@ -118,4 +118,10 @@ VALUES
 	'essentially finite',
 	FALSE,
 	'This is trivial.'
+),
+(
+	'FinOrd',
+	'one-way',
+	FALSE,
+	'There are three different order-preserving maps $\{0 < 1\} \to \{0 < 1\}$.'
 );

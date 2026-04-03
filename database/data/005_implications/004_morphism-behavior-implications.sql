@@ -103,4 +103,46 @@ VALUES
 	'["balanced"]',
 	'Any regular monomorphism that is an epimorphism must be an isomorphism.',
 	FALSE
+),
+(
+	'direct_implies_one-way',
+	'["direct"]',
+	'["one-way", "skeletal"]',
+	'The category is one-way since any non-identity endomorphism yields an infinite sequence of equal non-identity morphisms. The category is skeletal since any non-identity isomorphism $f : A \to B$ yields the infinite sequence $\dotsc,f^{-1},f,f^{-1},f$.',
+	FALSE
+),
+(
+	'thin_implies_one-way',
+	'["thin"]',
+	'["one-way"]',
+	'This is trivial.',
+	FALSE
+),
+(
+	'one-way_zero',
+	'["zero morphisms", "one-way"]',
+	'["thin"]',
+	'If $f,g : A \rightrightarrows B$ are two morphisms, then since $0_{B,B} = \mathrm{id}_B$ we have $f = 0_{B,B} \circ f = 0_{A,B} = 0_{B,B} \circ g = g$.',
+	FALSE
+),
+(
+	'direct_criterion',
+	'["skeletal", "one-way", "finite"]',
+	'["direct"]',
+	'See the <a href="https://ncatlab.org/nlab/show/direct+category#direct_versus_oneway_categories" target="_blank">nLab</a> for a proof.',
+	FALSE
+),
+(
+	'one-way_products_thin',
+	'["one-way", "binary products"]',
+	'["thin"]',
+	'Let $X$ be any object. The swap $\tau : X \times X \to X \times X$ is equal to the identity. It follows that the projections $p_1,p_2 : X \times X \rightrightarrows X$ are the same. And this means that all morphisms $Y \rightrightarrows X$ are the same.',
+	FALSE
+),
+(
+	'one-way_groupoids',
+	'["one-way", "groupoid"]',
+	'["thin"]',
+	'If $f,g : A \rightrightarrows B$ are two morphisms, then $f^{-1} \circ g : A \to A$ must be the identity, so that $f = g$.',
+	FALSE
 );

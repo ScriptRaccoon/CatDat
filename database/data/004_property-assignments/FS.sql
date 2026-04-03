@@ -94,4 +94,11 @@ VALUES
 	'skeletal',
 	FALSE,
 	'This is trivial.'
+),
+(
+	'FS',
+	'one-way',
+	FALSE,
+	'Already the full subcategory of <a href="/category/B">finite sets and bijections</a> is not one-way.'
 );
+

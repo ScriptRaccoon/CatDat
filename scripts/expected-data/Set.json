@@ -100,5 +100,8 @@
 	"coextensive": false,
 	"infinitary coextensive": false,
 	"unital": false,
-	"counital": false
+	"counital": false,
+	"direct": false,
+	"inverse": false,
+	"one-way": false
 }

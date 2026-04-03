@@ -70,4 +70,10 @@ VALUES
 	'sequential limits',
 	FALSE,
 	'Assume that the sequence $\cdots \xrightarrow{1}  \bullet \xrightarrow{1} \bullet \xrightarrow{1} \bullet$ has a limit. This is a (universal) sequence of natural numbers $n_0,n_1,\dotsc$ satisfying $n_i = n_{i+1} + 1$. But then $n_i = n_0 - i$, and in particular $n_{n_0 + 1} = - 1$, a contradiction.'
+),
+(
+	'BN',
+	'one-way',
+	FALSE,
+	'This is trivial.'
 );

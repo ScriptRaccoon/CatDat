@@ -46,4 +46,16 @@ VALUES
 	'locally finitely presentable',
 	FALSE,
 	'It suffices to prove that $0$ (the initial object) is the only finitely presentable object. If $s > 0$, then $s = \sup_{n \in \mathbb{N}, \, s \geq 1/n } (s - 1/n)$, but there is no $n$ with $s \leq s - 1/n$.'
+),
+(
+	'real_interval',
+	'direct',
+	FALSE,
+	'Consider the strictly decreasing sequence $1/2^n$ for $n \geq 0$.'
+),
+(
+	'real_interval',
+	'inverse',
+	FALSE,
+	'Consider the strictly increasing sequence $1 - 1/2^n$ for $n \geq 0$.'
 );

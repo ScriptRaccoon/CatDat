@@ -187,4 +187,10 @@ VALUES
 ('coreflexive equalizers', 'equalizers'),
 ('coreflexive equalizers', 'cosifted limits'),
 ('reflexive coequalizers', 'coequalizers'),
-('reflexive coequalizers', 'sifted colimits');
+('reflexive coequalizers', 'sifted colimits'),
+('direct', 'one-way'),
+('direct', 'skeletal'),
+('inverse', 'one-way'),
+('inverse', 'skeletal'),
+('one-way', 'direct'),
+('one-way', 'inverse');

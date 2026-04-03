@@ -118,4 +118,10 @@ VALUES
 	'pushouts',
 	FALSE,
 	'Assume that $1,\omega$ have a pushout. This is a (universal) pair of ordinals $\alpha,\beta$ with $\alpha + 1 = \beta + \omega$. But $\beta + \omega$ is a limit ordinal, while $\alpha + 1$ is not.'
+),
+(
+	'BOn',
+	'one-way',
+	FALSE,
+	'This is trivial.'
 );

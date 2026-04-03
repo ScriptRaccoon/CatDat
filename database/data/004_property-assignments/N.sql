@@ -49,6 +49,12 @@ VALUES
 ),
 (
 	'N',
+	'direct',
+	TRUE,
+	'This is because the natural numbers with respect to $<$ are well-founded.'
+),
+(
+	'N',
 	'countable coproducts',
 	FALSE,
 	'The numbers $0,1,2,\dotsc$ have no supremum, i.e. no coproduct.'
@@ -58,4 +64,10 @@ VALUES
 	'essentially finite',
 	FALSE,
 	'This is trivial.'
+),
+(
+	'N',
+	'inverse',
+	FALSE,
+	'Consider the strictly increasing sequence $0 < 1 < 2 < \cdots$.'
 );

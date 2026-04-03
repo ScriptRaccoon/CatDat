@@ -49,6 +49,12 @@ VALUES
 ),
 (
 	'walking_pair',
+	'one-way',
+	TRUE,
+	'This is trivial.'
+),
+(
+	'walking_pair',
 	'initial object',
 	FALSE,
 	'$0$ is not initial since it has two morphisms to $1$, and $1$ has not initial since it has no morphism to $0$.'
