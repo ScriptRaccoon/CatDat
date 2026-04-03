@@ -31,9 +31,15 @@ VALUES
 ),
 (
 	'sSet',
+	'strongly connected',
+	TRUE,
+	'Let $X,Y$ be two simplicial sets. Assume that $X_0$ is empty. Then $X_n$ is empty for all $n$ since there is a morphism $[0] \to [n]$, hence a map $X_n \to X_0$. So there is a morphism $X \to Y$ for trivial reasons. If $X_0$ is non-empty, pick an element. By the Yoneda Lemma it corresponds to a morphism $\Delta^0 \to X$. Since $\Delta^0 = 1$ is terminal, there is a morphism $Y \to \Delta^0$, and these compose to a morphism $Y \to X$.'
+),
+(
+	'sSet',
 	'strict terminal object',
 	FALSE,
-	NULL
+	'The terminal object is $\Delta^0$ and there are maps $\Delta^0 \to \Delta^1$.'
 ),
 (
 	'sSet',
@@ -46,4 +52,10 @@ VALUES
 	'Malcev',
 	FALSE,
 	'Any counterexample for $\mathbf{Set}$ (i.e., any non-symmetric reflexive relation) yields one for this category by taking constant simplicial sets.'
+),
+(
+	'sSet',
+	'finitary algebraic',
+	FALSE,
+	'A one-sorted finitary algebraic category has an object $F$ (the free algebra on one generator) such that $F$ is finitely presentable and every object $X$ admits an epimorphism $\coprod_{s \in S} F \to X$ for some index set $S$. Assume that such a simplicial set $F$ exists.  By using the sequence of $n$-skeletons of $F$, we see that there is some $n$ such that every $n$-simplex in $F$ is degenerate. Now take $X = \Delta^n$, which has a non-degenerate $n$-simplex. Then there cannot be an epimorphism $\coprod_{s \in S} F \to X$.'
 );
