@@ -73,6 +73,12 @@ VALUES
 ),
 (
 	'Meas',
+	'exact filtered colimits',
+	FALSE,
+	'See <a href="https://math.stackexchange.com/questions/5027218" target="_blank">MSE/5027218</a>.'
+),
+(
+	'Meas',
 	'strict terminal object',
 	FALSE,
 	'This is trivial.'
