@@ -57,7 +57,7 @@ VALUES
 	'Met_oo',
 	'cartesian closed',
 	FALSE,
-	NULL
+	'This is proven in <a href="https://math.stackexchange.com/questions/5131457" target="_blank">MSE/5131457</a>.'
 ),
 (
 	'Met_oo',

@@ -39,7 +39,7 @@ VALUES
 	'Met',
 	'coequalizers',
 	TRUE,
-	NULL
+	'See <a href="https://mathoverflow.net/questions/123739" target="_blank">MO/123739</a>.'
 ),
 (
 	'Met',
@@ -79,15 +79,15 @@ VALUES
 ),
 (
 	'Met',
-	'sequential limits',
+	'countable powers',
 	FALSE,
-	NULL
+	'Assume that the power $P = \mathbb{R}^{\mathbb{N}}$ exists, where $\mathbb{R}$ has the usual metric. Since the forgetful functor $\mathbf{Met} \to \mathbf{Set}$ is representable, it preserves limits, powers in particular. Thus, we may assume that $P$ is the set of sequences of numbers and that the projections $p_n : P \to \mathbb{R}$ are given by $p_n(x) = x_n$. Now consider the sequences $x = (n)_n$ and $y = (0)_n$. Since each $p_n$ is non-expansive, we get $d(x,y) \geq d(p_n(x),p_n(y)) = d(n,0) = n$. But then $d(x,y) = \infty$, a contradiction.'
 ),
 (
 	'Met',
-	'finite coproducts',
+	'binary copowers',
 	FALSE,
-	'See <a href="https://math.stackexchange.com/questions/1778408" target="_blank">MSE/1778408</a>. We only get coproducts when allowing $\infty$ as a distance, as in $\mathbf{Met}_{\infty}$.'
+	'The coproduct of two non-empty metric spaces does not exist, see <a href="https://math.stackexchange.com/questions/1778408" target="_blank">MSE/1778408</a>. For example, the copower $\mathbb{R} \sqcup \mathbb{R}$ does not exist. We only get coproducts when allowing $\infty$ as a distance, as in $\mathbf{Met}_{\infty}$.'
 ),
 (
 	'Met',
@@ -105,7 +105,7 @@ VALUES
 	'Met',
 	'cartesian closed',
 	FALSE,
-	NULL
+	'This is proven in <a href="https://math.stackexchange.com/questions/5131457" target="_blank">MSE/5131457</a>.'
 ),
 (
 	'Met',

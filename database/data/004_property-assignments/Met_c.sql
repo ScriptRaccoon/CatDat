@@ -51,7 +51,7 @@ VALUES
 	'Met_c',
 	'countable products',
 	TRUE,
-		'For finite products, we take the cartesian product with, say, the sup-metric. The product of countably many metric spaces $(X_i,d_i)_{i \geq 0}$ is given by the cartesian product $\prod_{i \geq 0} X_i$ with the metric $d(x,y) := \sum_{i \geq 0} d_i(x_i,y_i)/(1 + d_i(x_i,y_i))$. See Engelking''s book <i>General Topology</i>.'
+	'For finite products, we take the cartesian product with, say, the sup-metric. The product of countably many metric spaces $(X_i,d_i)_{i \geq 0}$ is given by the cartesian product $\prod_{i \geq 0} X_i$ with the metric $d(x,y) := \sum_{i \geq 0} d_i(x_i,y_i)/(1 + d_i(x_i,y_i))$. See Engelking''s book <i>General Topology</i>.'
 ),
 (
 	'Met_c',
@@ -70,6 +70,7 @@ VALUES
 	'co-Malcev',
 	TRUE,
 	'See <a href="https://mathoverflow.net/a/509582/2841" target="_blank">MO/509548</a>.'
+	-- FIXME: add proof that coequalizers exist
 ),
 (
 	'Met_c',

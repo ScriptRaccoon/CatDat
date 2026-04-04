@@ -15,7 +15,7 @@ VALUES
 	'$\mathbf{Ban}$',
 	'Banach spaces over $\mathbb{C}$',
 	'linear contractions, i.e. linear maps of norm $\leq 1$',
-	'The choice of morphisms is similar to that of $\mathbf{Met}$ which yields the best categorical properties.',
+	'The choice of morphisms is similar to that of $\mathbf{Met}$ which yields better categorical properties.',
 	'https://ncatlab.org/nlab/show/Banach+space',
 	NULL
 ),
@@ -35,7 +35,7 @@ VALUES
 	'$\mathbf{Met}$',
 	'metric spaces',
 	'non-expansive maps $f$, meaning $d(f(x),f(y)) \leq d(x,y)$ for all $x,y$',
-	NULL,
+	'In contrast to continuous maps, which only refer to the induced topology, non-expansive maps are closer related to the metrics themselves. This category is badly-behaved, though, especially when compared with $\mathbf{Met}_{\infty}$.',
 	'https://ncatlab.org/nlab/show/Met',
 	NULL
 ),
@@ -45,7 +45,7 @@ VALUES
 	'$\mathbf{Met}_{\infty}$',
 	'metric spaces, where the metric is allowed to assume the value $\infty$',
 	'non-expansive maps $f$, meaning $d(f(x),f(y)) \leq d(x,y)$ for all $x,y$',
-	'The fact that we allow $\infty$ means that universal constructions work much better.',
+	'The fact that we allow $\infty$ means that universal constructions work much better when compared to $\mathbf{Met}$.',
 	'https://ncatlab.org/nlab/show/Met',
 	NULL
 ),
@@ -55,7 +55,7 @@ VALUES
 	'$\mathbf{Met}_c$',
 	'metric spaces',
 	'continuous maps',
-	'This category is equivalent to the subcategory of $\mathbf{Top}$ (or $\mathbf{Haus}$) that consists of metrizable topological spaces.',
-	NULL,
+	'This category is equivalent to the subcategory of $\mathbf{Top}$ (or $\mathbf{Haus}$) that consists of metrizable topological spaces. Hence, the metrics only play a secondary role here.',
+	'https://ncatlab.org/nlab/show/metrisable+topological+space',
 	NULL
 );
