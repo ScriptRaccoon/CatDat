@@ -51,7 +51,7 @@ VALUES
 	'Man',
 	'countable coproducts',
 	TRUE,
-	'Take the usual disjoint union, which is clearly a smooth manifold, still second-countable. (Without that condition, all coproducts would exist.)'
+	'Take the usual disjoint union, which is clearly locally Euclidean and Hausdorff, and it is second countable since we are using only countable many spaces. (Without that condition, all coproducts would exist.)'
 ),
 (
 	'Man',
@@ -68,38 +68,39 @@ VALUES
 (
 	'Man',
 	'essentially small',
-	FALSE,
-	NULL
+	TRUE,
+	'This is a consequence of the <a href="https://en.wikipedia.org/wiki/Whitney_embedding_theorem" target="_blank">Whitney embedding theorem</a>. But there is also a more direct proof: Since a manifold is second-countable, it is Lindelöf (<a href="https://topospaces.subwiki.org/wiki/Second-countable_implies_Lindelof" target="_blank">proof</a>). In particular, there is a countable atlas. It is then completely determined by countable many open subsets of Euclidean spaces and the transition maps.'
 ),
 (
 	'Man',
-	'countable products',
+	'small',
 	FALSE,
-	NULL
+	'Even the collection of all singletons is not a set.'
 ),
 (
 	'Man',
-	'coproducts',
+	'countable powers',
 	FALSE,
-	NULL
+	'The power $\mathbb{R}^{\mathbb{N}}$ does not exist. More generally, let $(M_n)_{n \geq 0}$ be a sequence of smooth manifolds of positive dimension whose product $(\pi_n : P \to M_n)_{n \geq 0}$ exists. This product cone in $\mathbf{Man}$ yields a product cone in $\mathbf{Set}$ since the forgetful functor $\mathbf{Man} \to \mathbf{Set}$ is representable, hence preserves all limits. Choose points $x_n \in M_n$ with $T_{x_n}(M_n) \neq 0$. Choose the point $x \in P$ with $\pi_n(x) = x_n$. Consider the linear map $T_x(P) \to \prod_{n \geq 0} T_{x_n}(M_n)$ induced by the derivatives $d_x(\pi_n) : T_x(P) \to T_{x_n}(M_n)$. Since $T_x(P)$ is finite-dimensional and $\prod_{n \geq 0} T_{x_n}(M_n)$ is not, it cannot be surjective. But actually, it is: Choose tangent vectors $v_n \in T_{x_n}(M_n)$. Choose smooth curves $\gamma_n : \mathbb{R} \to M_n$ with $\gamma_n(0)=x_n$ and ${\gamma_n}''(0) = v_n$. By the universal property there is a unique smooth curve $\gamma : \mathbb{R} \to P$ with $\pi_n \gamma = \gamma_n$. In particular, $\gamma(0) = x$. The chain rule now implies that $\gamma''(0) \in T_x(P)$ is a preimage of $(v_n)$ – a contradiction.'
 ),
 (
 	'Man',
-	'cartesian closed',
+	'copowers',
 	FALSE,
-	NULL
+	'If $I$ is uncountable, then the copower $I \otimes \mathbb{R}$ does not exist. More generally, if $(X_i)_{i \in I}$ is a family of non-empty manifolds whose coproduct $M$ exists, then using maps $M \to \{0,1\}$ we find that the $M_i$ map to disjoint connected components of $M$. Since $M$ only has countably many components, $I$ must be countable.
+	See also the answer at <a href="https://math.stackexchange.com/questions/5083641">MSE/5083641</a>.'
 ),
 (
 	'Man',
-	'coequalizers',
+	'pushouts',
 	FALSE,
-	NULL
+	'The pushout of $\mathbb{R} \leftarrow \{0\} \rightarrow \mathbb{R}$ does not exist, see <a href="https://mathoverflow.net/questions/19116">MO/19116</a>.'
 ),
 (
 	'Man',
 	'pullbacks',
 	FALSE,
-	'See <a href="https://math.stackexchange.com/questions/5129579/" target="_blank">MSE/5129579</a>.'
+	'See <a href="https://math.stackexchange.com/questions/5129579/" target="_blank">MSE/5129579</a> or <a href="https://math.stackexchange.com/questions/322485" target="_blank">MSE/322485</a>.'
 ),
 (
 	'Man',
@@ -118,4 +119,10 @@ VALUES
 	'skeletal',
 	FALSE,
 	'This is trivial.'
+),
+(
+	'Man',
+	'sequential colimits',
+	FALSE,
+	'Assume that the sequence of inclusions $i_n : \mathbb{R}^n \hookrightarrow \mathbb{R}^{n+1}$, $(x_1,\dotsc,x_n) \mapsto (x_1,\dotsc,x_n,0)$ (for $n \geq 1$) has a colimit $M$ in $\mathbf{Man}$. Let $0 \in M$ denote the image of $0 \in \mathbb{R}^1$. Let $k \geq 1$. We define smooth maps $f_n : \mathbb{R}^n \to \mathbb{R}^k$ as follows: For $n \leq k$ it is the inclusion $(x_1,\dotsc,x_n) \mapsto (x_1,\dotsc,x_n,0,\dotsc,0)$. For $n \geq k$ it is the projection $(x_1,\dotsc,x_n) \mapsto (x_1,\dotsc,x_k)$. These maps are compatible with the inclusions $i_n$, hence extend to a smooth map $M \to \mathbb{R}^k$. By construction, $\mathbb{R}^k \to M \to \mathbb{R}^k$ is the identity. Hence, for the tangent spaces also $T_0(\mathbb{R}^k) \to T_0(M) \to T_0(\mathbb{R}^k)$ is the identity, showing that $\dim T_0(M) \geq k$. Since this holds for all $k$, but $T_0(M)$ is finite-dimensional, we have a contradiction.'
 );

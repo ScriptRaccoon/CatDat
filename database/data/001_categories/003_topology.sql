@@ -55,7 +55,7 @@ VALUES
 	'$\mathbf{Man}$',
 	'smooth manifolds',
 	'smooth maps',
-	'Here, a smooth manifold is assumed to be finite-dimensional, Hausdorff, and second-countable.',
+	'Here, a smooth manifold is assumed to be finite-dimensional, Hausdorff, second-countable, and without boundary.',
 	'https://ncatlab.org/nlab/show/Diff',
 	NULL
 );
