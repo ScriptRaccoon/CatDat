@@ -80,7 +80,7 @@ VALUES
 	'cartesian_closed_thin_criterion',
 	'["essentially small", "thin", "complete", "infinitary distributive"]',
 	'["cartesian closed"]',
-	'This is an application of the adjoint functor theorem. Specifically, if $P$ is a complete lattice in which $\sup_i \inf(t,x_i) = \inf(t, \sup_i y_i)$ always holds, then the functor $\int(t,-)$ is a left adjoint because it preserves all suprema.',
+	'This is an application of the adjoint functor theorem. Specifically, if $P$ is a complete lattice in which $\sup_i \inf(t,x_i) = \inf(t, \sup_i y_i)$ always holds, then the functor $\inf(t,-)$ is a left adjoint because it preserves all suprema.',
 	FALSE
 ),
 (

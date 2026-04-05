@@ -73,14 +73,14 @@ VALUES
 	'terminal_consequence',
 	'["terminal object"]',
 	'["connected"]',
-	'If $1$ denotes the terminal object, then for any two objects $A,B$ we have the zig-zag $A \to 1 \leftarrow B$.',
+	'If $1$ denotes the terminal object, then for any two objects $A,B$ we have the zig-zag $A \rightarrow 1 \leftarrow B$.',
 	FALSE
 ),
 (
 	'binary_products_consequence',
 	'["binary products", "inhabited"]',
 	'["connected"]',
-	'For any two objects $A,B$ we have the zig-zag $A \to A \times B \to B$.',
+	'For any two objects $A,B$ we have the zig-zag $A \leftarrow A \times B \rightarrow B$.',
 	FALSE
 ),
 (

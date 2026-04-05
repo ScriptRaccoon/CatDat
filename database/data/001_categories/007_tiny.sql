@@ -85,7 +85,7 @@ VALUES
 	'$\{0 \to 1 \rightrightarrows 2\}$',
 	'three objects $0,1,2$',
 	'one morphism $i : 0 \to 1$, two morphisms $f,g : 1 \rightrightarrows 2$, one morphism $0 \to 2$ (namely, $f \circ i = g \circ i$), and the identities',
-	'The name of this category comes from the fact that a functor out of it is the same as <a href="https://ncatlab.org/nlab/show/fork" target="_blank">fork</a>.',
+	'The name of this category comes from the fact that a functor out of it is the same as a <a href="https://ncatlab.org/nlab/show/fork" target="_blank">fork</a>.',
 	NULL,
 	NULL
 ),
