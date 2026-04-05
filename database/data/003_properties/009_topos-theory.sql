@@ -10,7 +10,7 @@ VALUES
 (
 	'cartesian closed',
 	'is',
-	'A category is <i>cartesian closed</i> if all finite products and exponentials exist.',
+	'A category is <i>cartesian closed</i> if all finite products and exponentials $[X,Y]$ exist, defined by the adjunction $\mathrm{Hom}(T,[X,Y]) \cong \mathrm{Hom}(T \times X,Y)$.',
 	'https://ncatlab.org/nlab/show/cartesian+closed+category',
 	NULL,
 	TRUE
