@@ -208,4 +208,22 @@ VALUES
 	'["extensive", "finitely complete"]',
 	'This holds by definition.',
 	TRUE
+),
+(
+	'power_construction',
+	'["copowers", "cartesian closed"]',
+	'["powers"]',
+	'The power $X^I$ can be constructed as $[I \otimes 1, X]$ because
+	<p>$\mathrm{Hom}(T,[I \otimes 1, X]) \cong \mathrm{Hom}(T \times (I \otimes 1),X)$</p>
+	<p>$\cong \mathrm{Hom}(I \otimes (T \times 1),X) \cong \mathrm{Hom}(I \otimes T,X)$</p>
+	<p>$ \cong \mathrm{Hom}(T,X)^I.$</p>
+	<p>In the second isomorphism we have used that $T \times -$ preserves copowers, which is true because it is a left adjoint.',
+	FALSE
+),
+(
+	'countable_power_construction',
+	'["countable copowers", "cartesian closed"]',
+	'["countable powers"]',
+	'We can recycle <a href="/category-implication/power_construction">this proof</a>.',
+	FALSE
 );

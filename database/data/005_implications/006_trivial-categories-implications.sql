@@ -103,4 +103,18 @@ VALUES
 	'["trivial"]',
 	'This is easy.',
 	FALSE
+),
+(
+	'thin_power',
+	'["thin", "terminal object"]',
+	'["powers"]',
+	'This is because for non-empty set $I$ the power $X^I$ is just $X$.',
+	FALSE
+),
+(
+	'thin_binary_power',
+	'["thin"]',
+	'["binary powers"]',
+	'This is because $X \times X = X$.',
+	FALSE
 );

@@ -97,7 +97,7 @@ VALUES
 ),
 (
 	'BOn',
-	'binary products',
+	'binary powers',
 	FALSE,
 	'Assume that the unique object has a product with itself. This amounts to a pair of ordinals $\pi_1,\pi_2$ such that for every pair of ordinals $\alpha_1,\alpha_2$ there is a unique ordinal $\tau$ with $\pi_i + \tau = \alpha_i$ for $i = 1,2$. Applying this to $\alpha_i = 0$ we get $\pi_i = 0$. Now we get a contradiction for any distinct $\alpha_1,\alpha_2$.'
 ),

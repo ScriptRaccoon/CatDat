@@ -55,9 +55,9 @@ VALUES
 ),
 (
 	'FinAb',
-	'countable products',
+	'countable powers',
 	FALSE,
-	'Assume that the product $P := \mathbb{Z}/2 \times \mathbb{Z}/2 \times \cdots$ exists. Since products are associative, we conclude $P \cong \mathbb{Z}/2 \times P$. By induction, we get $P \cong (\mathbb{Z}/2)^n \times P$ for all $n$. But then $P$ has at least $2^n$ elements, which contradicts finiteness of $P$.'
+	'Assume that the power $P := (\mathbb{Z}/2)^{\mathbb{N}}$ exists. Since products are associative and finite products exist, we conclude $P \cong \mathbb{Z}/2 \times P$. If $P$ has $n$ elements, this means $n = 2n$, i.e. $n = 0$, a contradiction.'
 ),
 (
 	'FinAb',

@@ -79,15 +79,15 @@ VALUES
 ),
 (
 	'FinOrd',
-	'binary products',
+	'binary powers',
 	FALSE,
-	'The forgetful functor to $\mathbf{Set}$ is representable, hence preserves all limits. Thus, if the product $\{0 < 1\} \times \{0 < 1\}$ exists in $\mathbf{FinOrd}$, we may assume its underlying set is the cartesian product and the projection morphisms are the usual projection maps. Moreover, these maps are order-preserving. Since the result must be a total order, we have $(0,1) \leq (1,0)$ or $(1,0) \leq (0,1)$. In the first case, apply $p_2$ to get $1 \leq 0$, a contradiction. In the second case, use $p_1$ to get a contradiction.'
+	'The forgetful functor to $\mathbf{Set}$ is representable, hence preserves all limits. Thus, if the power $\{0 < 1\} \times \{0 < 1\}$ exists in $\mathbf{FinOrd}$, we may assume its underlying set is the cartesian product and the projection morphisms are the usual projection maps. Moreover, these maps are order-preserving. Since the result must be a total order, we have $(0,1) \leq (1,0)$ or $(1,0) \leq (0,1)$. In the first case, apply $p_2$ to get $1 \leq 0$, a contradiction. In the second case, use $p_1$ to get a contradiction.'
 ),
 (
 	'FinOrd',
-	'binary coproducts',
+	'binary copowers',
 	FALSE,
-	'Assume that the coproduct of two terminal objects exists, denoted $\{x\}$ and $\{y\}$. If $x \leq y$ holds in the coproduct, then the universal property would imply this relation for all pairs of elements in any finite order, which is absurd. Otherwise, $y \leq x$ holds in the coproduct, which yields the same contradiction.'
+	'Assume that the copower $1+1$, i.e. the coproduct of two terminal objects exists, denoted $\{x\}$ and $\{y\}$. If $x \leq y$ holds in the coproduct, then the universal property would imply this relation for all pairs of elements in any finite order, which is absurd. Otherwise, $y \leq x$ holds in the coproduct, which yields the same contradiction.'
 ),
 (
 	'FinOrd',

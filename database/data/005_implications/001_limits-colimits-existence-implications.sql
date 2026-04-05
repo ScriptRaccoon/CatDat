@@ -194,4 +194,74 @@ VALUES
 	'["countable products"]',
 	'If $X_1,X_2,\dotsc$ is an infinite sequence of objects, then their product is the limit of the sequence $\cdots \to X_2 \times X_1 \to X_1$.',
 	FALSE
+),
+(
+	'products_include_powers',
+	'["products"]',
+	'["powers"]',
+	'This is trivial.',
+	FALSE
+),
+(
+	'countable_products_include_countable_powers',
+	'["countable products"]',
+	'["countable powers"]',
+	'This is trivial.',
+	FALSE
+),
+(
+	'finite_products_include_finite_powers',
+	'["finite products"]',
+	'["finite powers"]',
+	'This is trivial.',
+	FALSE
+),
+(
+	'binary_products_include_binary_powers',
+	'["binary products"]',
+	'["binary powers"]',
+	'This is trivial.',
+	FALSE
+),
+(
+	'empty_power',
+	'["finite powers"]',
+	'["terminal object"]',
+	'The empty power is a terminal object.',
+	FALSE
+),
+(
+	'powers_include_countable_powers',
+	'["powers"]',
+	'["countable powers"]',
+	'This is trivial.',
+	FALSE
+),
+(
+	'countable_powers_include_finite_powers',
+	'["countable powers"]',
+	'["finite powers"]',
+	'This is trivial.',
+	FALSE
+),
+(
+	'finite_powers_include_binary_powers',
+	'["finite powers"]',
+	'["binary powers"]',
+	'This is trivial.',
+	FALSE
+),
+(
+	'countable_powers_criterion',
+	'["finite powers", "sequential limits"]',
+	'["countable powers"]',
+	'We can write $X^{\mathbb{N}}$ as the limit of the sequence $\cdots \to X^3 \to X^2 \to X \to 1$ with transition morphisms $f_n : X^{n+1} \to X^n$, $(x_1,\dotsc,x_{n+1}) \mapsto (x_1,\dotsc,x_n)$, i.e., $p_i f_n = p_i$ for $1 \leq i \leq n$.',
+	FALSE
+),
+(
+	'powers_criterion',
+	'["finite powers", "cofiltered limits"]',
+	'["powers"]',
+	'The product $X^I$ is the cofiltered limit of the finite powers $X^E$, where $E$ ranges over the finite subsets of $I$.',
+	FALSE
 );

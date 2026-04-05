@@ -55,15 +55,15 @@ VALUES
 ),
 (
 	'FinSet',
-	'sequential colimits',
+	'countable copowers',
 	FALSE,
-	'Let $[n] := \{1,\dotsc,n\}$. Assume the sequence of inclusion maps $[1] \to [2] \to \cdots$ has a colimit $X$ in $\mathbf{FinSet}$ with maps $f_n : [n] \to X$. Let $n_0 \geq 1$ be fixed. I claim that $f_{n_0}$ is injective, which will then yield a contradiction by taking $n_0 > \mathrm{card}(X)$. For $n \geq 1$ define $g_n : [n] \to [n_0]$ as follows. For $n \leq n_0$ it is the inclusion, and for $n \geq n_0$ it is the surjection which keeps all elements of $[n_0]$ and maps all other elements to $n_0$. Observe that $g_{n+1} |_{[n]} = g_n$. Hence, there is a unique map $g : X \to [n_0]$ with $g \circ f_n = g_n$ for all $n$. For $n = n_0$ this shows $g \circ f_{n_0} = \mathrm{id}_{[n_0]}$, and $f_{n_0}$ is injective.'
+	'Assume that the copower $C := \mathbb{N} \otimes 1$ exists. Since coproducts are associative and finite coproducts exist, we get $C \cong 1 \sqcup C$. It $C$ has $m \in \mathbb{N}$ elements, this implies $m = 1 + m$, which is a contradiction.'
 ),
 (
 	'FinSet',
-	'sequential limits',
+	'countable powers',
 	FALSE,
-	'Let $[n] := \{1,\dotsc,n\}$. We define the projection $p_n : [n+1] \to [n]$ by extending the identity of $[n]$ with $p_n(n+1) := n$. Assume the sequence of projections $\cdots \to [2] \to [1]$ has a limit $X$ in $\mathbf{FinSet}$ with maps $f_n : X \to [n]$. Let $n_0 \geq 1$ be fixed. I claim that $f_{n_0}$ is surjective, which will then yield a contradiction by taking $n_0 > \mathrm{card}(X)$. For $n \geq 1$ define $g_n : [n_0] \to [n]$ as follows. For $n \leq n_0$ it is the projection, and for $n \geq n_0$ it is the inclusion. Observe that $p_n \circ g_{n+1} = g_n$. Hence, there is a unique map $g : [n_0] \to X$ with $f_n \circ g = g_n$ for all $n$. For $n = n_0$ this shows $f_{n_0} \circ g = \mathrm{id}_{[n_0]}$, and $f_{n_0}$ is surjective.'
+	'Assume that the power $P := \{0,1\}^{\mathbb{N}}$ exists. Since products are associative and finite products exists, we get $P \cong \{0,1\} \times P$. If $P$ has $m \in \mathbb{N}$ elements, this implies $m = 2m$ and hence $m = 0$, i.e. $P = \varnothing$. But there is a diagonal morphism $\{0,1\} \to P$, making $P = \varnothing$ impossible.'
 ),
 (
 	'FinSet',

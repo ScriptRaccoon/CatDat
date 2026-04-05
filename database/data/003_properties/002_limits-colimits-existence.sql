@@ -136,6 +136,70 @@ VALUES
 	TRUE
 ),
 (
+	'powers',
+	'has',
+	'If $X$ is an object and $I$ is a set, the <i>power</i> is defined as the product $X^I := \prod_{i \in I} X$. This property refers to the existence of powers.',
+	'https://ncatlab.org/nlab/show/powering',
+	'copowers',
+	TRUE
+),
+(
+	'copowers',
+	'has',
+	'If $X$ is an object and $I$ is a set, the <i>copower</i> is defined as the coproduct $I \otimes X := \coprod_{i \in I} X$. This property refers to the existence of copowers.',
+	'https://ncatlab.org/nlab/show/copower',
+	'powers',
+	TRUE
+),
+(
+	'countable powers',
+	'has',
+	'A category has <i>countable powers</i> when for every object $X$ and every countable set $I$ the power $X^I$ exists.',
+	'https://ncatlab.org/nlab/show/powering',
+	'countable copowers',
+	TRUE
+),
+(
+	'countable copowers',
+	'has',
+	'A category has <i>countable copowers</i> when for every object $X$ and every countable set $I$ the copower $I \otimes X$ exists.',
+	'https://ncatlab.org/nlab/show/copower',
+	'countable powers',
+	TRUE
+),
+(
+	'finite powers',
+	'has',
+	'A category has <i>finite powers</i> when for every object $X$ and every finite set $I$ the power $X^I$ exists. Equivalently, for every $n \in \mathbb{N}$ the power $X^n$ exists.',
+	'https://ncatlab.org/nlab/show/powering',
+	'finite copowers',
+	TRUE
+),
+(
+	'finite copowers',
+	'has',
+	'A category has <i>finite copowers</i> when for every object $X$ and every finite set $I$ the copower $I \otimes X$ exists. Equivalently, for every $n \in \mathbb{N}$ the copower $n \otimes X$ exists.',
+	'https://ncatlab.org/nlab/show/copower',
+	'finite powers',
+	TRUE
+),
+(
+	'binary powers',
+	'has',
+	'A category has <i>binary powers</i> when for every object $X$ the product $X \times X$  exists. These objects might also be called <i>squares</i>.',
+	'https://ncatlab.org/nlab/show/powering',
+	'binary copowers',
+	TRUE
+),
+(
+	'binary copowers',
+	'has',
+	'A category has <i>binary copowers</i> when for every object $X$ and every binary set $I$ the coproduct $X \sqcup X$ exists. These objects might also be called <i>doubles</i>.',
+	'https://ncatlab.org/nlab/show/copower',
+	'binary powers',
+	TRUE
+),
+(
 	'equalizers',
 	'has',
 	'An <i>equalizer</i> of a pair of morphisms $f,g : A \to B$ is an object $E$ with a morphism $e : E \to A$ such that $f \circ e = g \circ e$ and which is universal with respect to this property. This property refers to the existence of equalizers.',

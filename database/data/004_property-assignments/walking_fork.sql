@@ -85,7 +85,7 @@ VALUES
 ),
 (
 	'walking_fork',
-	'binary products',
+	'binary powers',
 	FALSE,
-	'Assume that $X := 1 \times 2$ exists. Then $\mathrm{Hom}(1,X) \cong \mathrm{Hom}(1,1) \times \mathrm{Hom}(1,2)$ shows that there are two morphisms $1 \rightrightarrows X$. Hence, $X = 2$. But we also have $\mathrm{Hom}(2,X) \cong \mathrm{Hom}(2,1) \times \mathrm{Hom}(2,2) = \emptyset$, a contradiction.'
+	'Assume that $X := 2 \times 2$ exists. Since there is a diagonal morphism $2 \to X$, we must have $X = 2$, and the two projections $p_1,p_2 : X \rightrightarrows 2$ must be equal to the identity. But $f,g$ induce a morphism $(f,g) : 1 \to X$ with $p_1 (f,g) = f$ and $p_2 (f,g) = g$, so that $f=g$, a contradiction.'
 );

@@ -100,5 +100,10 @@ VALUES
 	'one-way',
 	FALSE,
 	'Already the full subcategory of <a href="/category/B">finite sets and bijections</a> is not one-way.'
+),
+(
+	'FS',
+	'binary copowers',
+	FALSE,
+	'Assume that the copower $X := 2+2$ exists. Since we have a surjective map $2 \to X$, the set $X$ has at most $2$ elements. The codiagonal $X \to 2$ shows that $X$ has at least $2$ elements. Thus, $X \cong 2$. For all finite sets $Y$ we get a bijection $\mathrm{Hom}(2,Y) \cong \mathrm{Hom}(2,Y)^2$, in particular the cardinalities are the same. For $Y=2$ this gives the contradiction $2 = 4$.'
 );
-

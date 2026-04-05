@@ -73,9 +73,9 @@ VALUES
 ),
 (
 	'Met_c',
-	'products',
+	'powers',
 	FALSE,
-	'See <a href="https://math.stackexchange.com/questions/139168" target="_blank">MSE/139168</a> for a proof that uncountable products do not exist.'
+	'See <a href="https://math.stackexchange.com/questions/139168" target="_blank">MSE/139168</a> for a proof that uncountable powers do not exist.'
 ),
 (
 	'Met_c',

@@ -61,9 +61,9 @@ VALUES
 ),
 (
     'walking_idempotent',
-    'binary products',
+    'binary powers',
     FALSE,
-    'If $0 \times 0 = 0$, then $\mathrm{Hom}(0,0) \cong \mathrm{Hom}(0,0)^2$. But the left hand side has $2$ elements, and the right hand has $4$ elements. This is a contradiction.'
+    'If $0 \times 0 = 0$, then $\mathrm{Hom}(0,0) \cong \mathrm{Hom}(0,0)^2$. But the left hand side has $2$ elements, whereas the right hand has $4$ elements. This is a contradiction.'
 ),
 (
     'walking_idempotent',

@@ -106,4 +106,10 @@ VALUES
 	'one-way',
 	FALSE,
 	'Consider the endomorphism $\mathbb{Q}(X) \to \mathbb{Q}(X)$, $X \mapsto X^2$.'
+),
+(
+	'Fld',
+	'binary powers',
+	FALSE,
+	'Assume that the product $P := \mathbb{Q}(\sqrt{2}) \times \mathbb{Q}(\sqrt{2})$ exists. This field is isomorphic to a subfield of $\mathbb{Q}(\sqrt{2})$, hence $P \cong \mathbb{Q}$ or $P \cong \mathbb{Q}(\sqrt{2})$. In the first case, the two projections $P \rightrightarrows \mathbb{Q}(\sqrt{2})$ must be equal, which means that every two homomorphisms $K \rightrightarrows \mathbb{Q}(\sqrt{2})$ are equal, which is absurd (take $K = \mathbb{Q}(\sqrt{2})$ and its two automorphisms). In the second case, the projections induce for every field $K$ a bijection $\mathrm{Hom}(K,\mathbb{Q}(\sqrt{2})) \cong \mathrm{Hom}(K,\mathbb{Q}(\sqrt{2}))^2$, which however fails for $K = \mathbb{Q}(\sqrt{2})$: the left hand side has $2$ elements, the right hand side has $4$ elements. A more general result about products in $\mathbf{Fld}$ can be found at <a href="https://math.stackexchange.com/questions/359352" target="_blank">MSE/359352</a>.'
 );

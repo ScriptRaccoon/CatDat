@@ -49,15 +49,15 @@ VALUES
 ),
 (
 	'Ab_fg',
-	'countable products',
+	'countable powers',
 	FALSE,
-	'For $n \geq 1$ set $A_n = \mathbb{Z}$. Assume that these groups have a product $P$ in this category. Since products are associative, we have $P \cong \mathbb{Z} \times P$. Induction yields $P \cong \mathbb{Z}^n \times P$ for all $n$. But then the rank of $P$ cannot be finite.'
+	'Assume that the power $P := \mathbb{Z}^{\mathbb{N}} = \prod_{n \geq 0} \mathbb{Z}$ exists in this category. Since products are associative and finite products exist, we have $P \cong \mathbb{Z} \times P$. Tensoring with $\mathbb{Q}$ yields an isomorphism of finite-dimensional vector spaces $P_{\mathbb{Q}} \cong \mathbb{Q} \times P_{\mathbb{Q}}$, which is impossible: the dimension $d$ of $P_{\mathbb{Q}}$ (i.e. the rank of $P$) would satisfy $d = 1+d$.'
 ),
 (
 	'Ab_fg',
-	'countable coproducts',
+	'countable copowers',
 	FALSE,
-	'For $n \geq 1$ set $A_n = \mathbb{Z}$. Assume that these groups have a coproduct $C$ in this category. Since coproducts are associative, we have $C \cong \mathbb{Z} \oplus C$. Induction yields $C \cong \mathbb{Z}^{\oplus n} \oplus C$ for all $n$. But then the rank of $C$ cannot be finite.'
+	'Assume that the copower $C := \mathbb{N} \otimes \mathbb{Z} = \coprod_{n \geq 0} \mathbb{Z}$ exists in this category. Since coproducts are associative and finite coproducts exist, we have $C \cong \mathbb{Z} \oplus C$. Tensoring with $\mathbb{Q}$ yields an isomorphism of finite-dimensional vector spaces $C_{\mathbb{Q}} \cong \mathbb{Q} \oplus C_{\mathbb{Q}}$, which is impossible: the dimension $d$ of $C_{\mathbb{Q}}$ (i.e. the rank of $C$) would satisfy $d = 1+d$.'
 ),
 (
 	'Ab_fg',
