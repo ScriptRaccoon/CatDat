@@ -43,12 +43,6 @@ VALUES
 ),
 (
 	'LRS',
-	'cartesian closed',
-	FALSE,
-	NULL
-),
-(
-	'LRS',
 	'strict terminal object',
 	FALSE,
 	'This is because $\mathbf{CRing}$ does not have a strict initial object.'
