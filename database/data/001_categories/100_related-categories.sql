@@ -50,6 +50,7 @@ VALUES
 ('M-Set', 'R-Mod'),
 ('M-Set', 'Set'),
 ('Man', 'Top'),
+('Man', 'Haus'),
 ('Meas', 'Top'),
 ('Met', 'Met_c'),
 ('Met', 'Met_oo'),
