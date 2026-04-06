@@ -35,9 +35,9 @@ VALUES
 	FALSE
 ),
 (
-	'reflexive_coequalizers_are_coequalizers',
-	'["coequalizers"]',
-	'["reflexive coequalizers"]',
+	'coreflexive_equalizers_are_equalizers',
+	'["equalizers"]',
+	'["coreflexive equalizers"]',
 	'This is trivial.',
 	FALSE
 ),
