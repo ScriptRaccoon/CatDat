@@ -24,6 +24,10 @@ on:
                 required: true
             NETLIFY_ACCESS_TOKEN:
                 required: true
+            DB_VISITS_URL:
+                required: true
+            DB_VISITS_AUTH_TOKEN:
+                required: true
 
 jobs:
     build-and-deploy:
@@ -67,6 +71,8 @@ jobs:
                   DB_HTTP_URL: ${{ secrets.DB_HTTP_URL }}
                   DB_AUTH_TOKEN_HTTP: ${{ secrets.DB_AUTH_TOKEN_HTTP }}
                   INTERNAL_API_KEY: ${{ secrets.INTERNAL_API_KEY }}
+                  DB_VISITS_URL: ${{ secrets.DB_VISITS_URL }}
+                  DB_VISITS_AUTH_TOKEN: ${{ secrets.DB_VISITS_AUTH_TOKEN }}
               run: pnpm build
 
             - name: Get latest commit message

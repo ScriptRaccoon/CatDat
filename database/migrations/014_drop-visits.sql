@@ -1,0 +1,1 @@
+DROP TABLE visits; -- will record these in a separate db

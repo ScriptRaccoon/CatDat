@@ -1,4 +1,9 @@
-import { DB_AUTH_TOKEN, DB_URL } from '$env/static/private'
+import {
+	DB_AUTH_TOKEN,
+	DB_URL,
+	DB_VISITS_AUTH_TOKEN,
+	DB_VISITS_URL,
+} from '$env/static/private'
 import { createClient, type LibsqlError } from '@libsql/client'
 import type { Arrayed } from '$lib/commons/types'
 
@@ -41,3 +46,8 @@ export async function batch<T extends any[]>(queries: { sql: string; values: any
 		return { results: null, err: err as LibsqlError }
 	}
 }
+
+export const db_visits = createClient({
+	url: DB_VISITS_URL,
+	authToken: DB_VISITS_AUTH_TOKEN,
+})

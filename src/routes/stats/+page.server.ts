@@ -1,99 +1,100 @@
-import { batch } from '$lib/server/db'
+import { db_visits } from '$lib/server/db'
 import { error } from '@sveltejs/kit'
-import sql from 'sql-template-tag'
 
 export const prerender = false
 
 const COUNTRY_COUNT_THRESHOLD = 10
 
 export const load = async () => {
-	const { results, err } = await batch<
-		[
-			{
-				start: string
-				total: number
-				total_last_day: number
-				total_last_week: number
-				total_last_month: number
-			},
-			{ day: string; count: number },
-			{ country: string; count: number },
-			{ theme: string; count: number },
-			{ device_type: string; count: number },
-		]
-	>([
-		sql`
-			SELECT
+	try {
+		const results = await db_visits.batch([
+			`SELECT
 				COALESCE(MIN(created_at), '') AS start,
 				COUNT(*) AS total,
 				COUNT(CASE WHEN created_at >= datetime('now', '-1 day') THEN 1 END) AS total_last_day,
 				COUNT(CASE WHEN created_at >= datetime('now', '-7 days') THEN 1 END) AS total_last_week,
 				COUNT(CASE WHEN created_at >= datetime('now', '-1 month') THEN 1 END) AS total_last_month
-			FROM visits;
-        `,
-		sql`
-			SELECT
+			FROM visits`,
+			`SELECT
     			date(created_at) AS day,
     			COUNT(*) AS count
 			FROM visits
 			GROUP BY day
-			ORDER BY day;
-		`,
-		sql`
-            SELECT
+			ORDER BY day`,
+			`SELECT
                 country,
                 COUNT(*) as count
             FROM visits
             GROUP BY country
-            ORDER BY count DESC;
-        `,
-		sql`
-            SELECT
+            ORDER BY count DESC`,
+			`SELECT
                 theme,
                 COUNT(*) as count
             FROM visits
             GROUP BY theme
-            ORDER BY theme;
-        `,
-		sql`
-            SELECT
+            ORDER BY theme`,
+			`SELECT
                 device_type,
                 COUNT(*) as count
             FROM visits
             GROUP BY device_type
-            ORDER BY count DESC;
-        `,
-	])
+            ORDER BY count DESC`,
+		])
 
-	if (err) error(500, 'Failed to load data')
+		const summary = results[0].rows[0] as unknown as {
+			start: string
+			total: number
+			total_last_day: number
+			total_last_week: number
+			total_last_month: number
+		}
 
-	const [
-		[{ total, start, total_last_day, total_last_week, total_last_month }],
-		daily_visits,
-		detailed_country_stats,
-		theme_stats,
-		device_stats,
-	] = results
+		const { start, total, total_last_day, total_last_week, total_last_month } =
+			summary
 
-	const country_stats: typeof detailed_country_stats = []
-	let other_count = 0
+		const daily_visits = results[1].rows as unknown as {
+			day: string
+			count: number
+		}[]
 
-	for (const { country, count } of detailed_country_stats) {
-		if (count <= COUNTRY_COUNT_THRESHOLD) other_count += count
-		else country_stats.push({ country, count })
-	}
+		const detailed_country_stats = results[2].rows as unknown as {
+			country: string
+			count: number
+		}[]
 
-	country_stats.push({ country: 'Others', count: other_count })
+		const theme_stats = results[3].rows as unknown as {
+			theme: string
+			count: number
+		}[]
 
-	return {
-		start,
-		total,
-		total_last_day,
-		total_last_week,
-		total_last_month,
-		daily_visits,
-		country_stats,
-		theme_stats,
-		device_stats,
+		const device_stats = results[4].rows as unknown as {
+			device_type: string
+			count: number
+		}[]
+
+		const country_stats: typeof detailed_country_stats = []
+		let other_count = 0
+
+		for (const { country, count } of detailed_country_stats) {
+			if (count <= COUNTRY_COUNT_THRESHOLD) other_count += count
+			else country_stats.push({ country, count })
+		}
+
+		country_stats.push({ country: 'Others', count: other_count })
+
+		return {
+			start,
+			total,
+			total_last_day,
+			total_last_week,
+			total_last_month,
+			daily_visits,
+			country_stats,
+			theme_stats,
+			device_stats,
+		}
+	} catch (err) {
+		console.error(err)
+		error(500, 'Failed to load data')
 	}
 }
