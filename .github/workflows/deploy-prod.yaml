@@ -1,74 +1,20 @@
 name: production deployment
-
 on:
     workflow_dispatch:
 
-permissions:
-    contents: write
-
 jobs:
-    build-and-deploy:
-        runs-on: ubuntu-latest
-
-        steps:
-            - name: Checkout code
-              uses: actions/checkout@v5
-              with:
-                  fetch-depth: 0
-
-            - name: Install pnpm
-              uses: pnpm/action-setup@v5
-              with:
-                  version: 10
-
-            - name: Use Node.js
-              uses: actions/setup-node@v5
-              with:
-                  node-version: 24.14.0
-                  cache: 'pnpm'
-
-            - name: Install Dependencies
-              run: pnpm i
-
-            - name: Generate SvelteKit config
-              run: pnpm svelte-kit sync
-
-            - name: Update database
-              env:
-                  DB_URL: ${{ secrets.DB_URL }}
-                  DB_AUTH_TOKEN: ${{ secrets.DB_AUTH_TOKEN }}
-              run: pnpm db:update
-
-            - name: Build app
-              env:
-                  DB_URL: ${{ secrets.DB_URL }}
-                  DB_AUTH_TOKEN: ${{ secrets.DB_AUTH_TOKEN }}
-                  DB_HTTP_URL: ${{ secrets.DB_HTTP_URL }}
-                  DB_AUTH_TOKEN_HTTP: ${{ secrets.DB_AUTH_TOKEN_HTTP }}
-                  INTERNAL_API_KEY: ${{ secrets.INTERNAL_API_KEY }}
-              run: pnpm build
-
-            - name: Get latest commit message
-              run: |
-                  echo "COMMIT_MESSAGE<<EOF" >> $GITHUB_ENV
-                  git log -1 --pretty=%B >> $GITHUB_ENV
-                  echo "EOF" >> $GITHUB_ENV
-
-            - name: Deploy to Netlify - Production
-              run: |
-                  pnpm --package=netlify-cli dlx netlify deploy --no-build \
-                    --dir build \
-                    --site ${{ secrets.NETLIFY_SITE_ID }} \
-                    --auth ${{ secrets.NETLIFY_ACCESS_TOKEN }} \
-                    --message "${{ env.COMMIT_MESSAGE }}" \
-                    --prod
-
-            - name: Create deployment tag
-              if: success()
-              run: |
-                  TIMESTAMP=$(date -u +'%Y-%m-%d_%H-%M-%S')
-                  TAG="deploy-${TIMESTAMP}-${GITHUB_SHA::7}"
-                  git config user.name "github-actions[bot]"
-                  git config user.email "github-actions[bot]@users.noreply.github.com"
-                  git tag -a "$TAG" -m "Deploy $TAG"
-                  git push --no-verify origin "$TAG"
+    call-deploy:
+        uses: ./.github/workflows/_deploy-reusable.yaml
+        permissions:
+            contents: write
+        with:
+            is_prod: true
+            skip_db: false
+        secrets:
+            DB_URL: ${{ secrets.DB_URL }}
+            DB_AUTH_TOKEN: ${{ secrets.DB_AUTH_TOKEN }}
+            DB_HTTP_URL: ${{ secrets.DB_HTTP_URL }}
+            DB_AUTH_TOKEN_HTTP: ${{ secrets.DB_AUTH_TOKEN_HTTP }}
+            INTERNAL_API_KEY: ${{ secrets.INTERNAL_API_KEY }}
+            NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+            NETLIFY_ACCESS_TOKEN: ${{ secrets.NETLIFY_ACCESS_TOKEN }}

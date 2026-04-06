@@ -1,4 +1,4 @@
-name: production deployment (without db update)
+name: preview deployment (without db update)
 on:
     workflow_dispatch:
 
@@ -8,13 +8,13 @@ jobs:
         permissions:
             contents: write
         with:
-            is_prod: true
+            is_prod: false
             skip_db: true
         secrets:
-            DB_URL: ${{ secrets.DB_URL }}
-            DB_AUTH_TOKEN: ${{ secrets.DB_AUTH_TOKEN }}
-            DB_HTTP_URL: ${{ secrets.DB_HTTP_URL }}
-            DB_AUTH_TOKEN_HTTP: ${{ secrets.DB_AUTH_TOKEN_HTTP }}
+            DB_URL: ${{ secrets.DB_PREVIEW_URL }}
+            DB_AUTH_TOKEN: ${{ secrets.DB_PREVIEW_AUTH_TOKEN }}
+            DB_HTTP_URL: ${{ secrets.DB_PREVIEW_HTTP_URL }}
+            DB_AUTH_TOKEN_HTTP: ${{ secrets.DB_PREVIEW_AUTH_TOKEN_HTTP }}
             INTERNAL_API_KEY: ${{ secrets.INTERNAL_API_KEY }}
             NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
             NETLIFY_ACCESS_TOKEN: ${{ secrets.NETLIFY_ACCESS_TOKEN }}
