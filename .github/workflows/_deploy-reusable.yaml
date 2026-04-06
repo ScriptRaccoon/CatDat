@@ -14,12 +14,6 @@ on:
                 required: true
             DB_AUTH_TOKEN:
                 required: true
-            DB_HTTP_URL:
-                required: true
-            DB_AUTH_TOKEN_HTTP:
-                required: true
-            INTERNAL_API_KEY:
-                required: true
             NETLIFY_SITE_ID:
                 required: true
             NETLIFY_ACCESS_TOKEN:
@@ -68,9 +62,6 @@ jobs:
               env:
                   DB_URL: ${{ secrets.DB_URL }}
                   DB_AUTH_TOKEN: ${{ secrets.DB_AUTH_TOKEN }}
-                  DB_HTTP_URL: ${{ secrets.DB_HTTP_URL }}
-                  DB_AUTH_TOKEN_HTTP: ${{ secrets.DB_AUTH_TOKEN_HTTP }}
-                  INTERNAL_API_KEY: ${{ secrets.INTERNAL_API_KEY }}
                   DB_VISITS_URL: ${{ secrets.DB_VISITS_URL }}
                   DB_VISITS_AUTH_TOKEN: ${{ secrets.DB_VISITS_AUTH_TOKEN }}
               run: pnpm build
