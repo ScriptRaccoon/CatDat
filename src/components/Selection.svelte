@@ -22,6 +22,9 @@
 
 	let item = $state('')
 	let show_suggestions = $state(false)
+	let active_index = $state(0)
+
+	const id = $props.id()
 
 	let suggestions = $derived(
 		selected_items.length >= max ? [] : allowed_items.filter(is_suggestion),
@@ -49,18 +52,14 @@
 		if (!is_valid(item)) return
 		selected_items.push(item.trim())
 		item = ''
+		active_index = 0
 	}
 
 	function select(allowed_item: string) {
 		selected_items.push(allowed_item)
 		item = ''
 		show_suggestions = false
-	}
-
-	function handle_keydown(e: KeyboardEvent) {
-		if (show_suggestions && e.key === 'Escape') {
-			show_suggestions = false
-		}
+		active_index = 0
 	}
 
 	function handle_blur(e: FocusEvent) {
@@ -79,14 +78,45 @@
 		} else {
 			show_suggestions = true
 		}
+
+		active_index = 0
 	}
 
 	function remove_item(item: string) {
 		selected_items = selected_items.filter((_item) => _item !== item)
 	}
-</script>
 
-<svelte:window onkeydown={handle_keydown} />
+	function handle_keydown(e: KeyboardEvent) {
+		const key = e.key
+
+		switch (key) {
+			case 'Escape':
+				if (show_suggestions) show_suggestions = false
+				break
+			case 'Enter':
+				select(suggestions[active_index])
+				break
+			case 'ArrowUp':
+				if (active_index > 0) {
+					active_index--
+					scroll_to_option()
+				}
+				break
+			case 'ArrowDown':
+				if (active_index < suggestions.length - 1) {
+					active_index++
+					scroll_to_option()
+				}
+				break
+		}
+	}
+
+	function scroll_to_option() {
+		document.querySelector(`#${id}-${active_index}`)?.scrollIntoView({
+			block: 'center',
+		})
+	}
+</script>
 
 <section aria-label={section_label}>
 	{#if title}
@@ -102,14 +132,21 @@
 				bind:value={item}
 				onfocus={() => (show_suggestions = true)}
 				oninput={handle_input}
+				onkeydown={handle_keydown}
 				onblur={handle_blur}
 			/>
 		</div>
 
 		{#if show_suggestions && suggestions.length > 0}
-			<div class="suggestions" bind:this={suggestions_element}>
-				{#each suggestions as allowed_item}
-					<button onclick={() => select(allowed_item)}>
+			<div class="suggestions" bind:this={suggestions_element} tabindex="-1">
+				{#each suggestions as allowed_item, i}
+					<button
+						id="{id}-{i}"
+						tabindex="-1"
+						class="option"
+						class:selected={i === active_index}
+						onclick={() => select(allowed_item)}
+					>
 						{allowed_item}
 					</button>
 				{/each}
@@ -159,16 +196,15 @@
 		border-radius: 0.4rem;
 		box-shadow: 0 0 1rem var(--shadow-color);
 		display: grid;
+	}
 
-		button {
-			font-size: 1rem;
-			text-align: left;
-			padding: 0.25rem 1rem;
+	.option {
+		font-size: 1rem;
+		text-align: left;
+		padding: 0.25rem 1rem;
 
-			&:hover,
-			&:focus-visible {
-				background-color: var(--secondary-bg-color);
-			}
+		&.selected {
+			background-color: var(--secondary-bg-color);
 		}
 	}
 </style>
