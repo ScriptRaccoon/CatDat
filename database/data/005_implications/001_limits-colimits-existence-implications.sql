@@ -42,6 +42,13 @@ VALUES
 	FALSE
 ),
 (
+	'equalizers_via_coreflexive_equalizers',
+	'["coreflexive equalizers", "binary products"]',
+	'["equalizers"]',
+	'If $f,g : X \rightrightarrows Y$ are two morphisms, we have a coreflexive pair $(\mathrm{id}_X,f), (\mathrm{id}_X,g) : X \rightrightarrows X \times Y$. A morphism with codomain $X$ equalizes $f$ and $g$ if and only if it equalizes $(\mathrm{id}_X,f)$ and $(\mathrm{id}_X,g)$. Thus, their equalizers agree.',
+	FALSE
+),
+(
 	'products_consequence',
 	'["products"]',
 	'["finite products", "countable products"]',
@@ -100,8 +107,8 @@ VALUES
 (
 	'complete_characterization',
 	'["complete"]',
-	'["products", "coreflexive equalizers"]',
-	'See <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, V.2, Thm. 2. Note that the equalizer appearing the theorem is in fact coreflexive.',
+	'["products", "equalizers"]',
+	'See <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, V.2, Thm. 2.',
 	TRUE
 ),
 (
