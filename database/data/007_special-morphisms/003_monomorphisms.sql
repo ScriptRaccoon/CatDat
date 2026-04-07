@@ -96,6 +96,11 @@ VALUES
 	'Let $f : A \to B$ be a monomorphism of finite abelian groups. Let $a \in A$ be in the kernel of $a$, say of order $n$. Then we may view $a$ as a morphism $a : \mathbb{Z}/n \to A$ with $f \circ a = 0$, and $\mathbb{Z}/n$ is finite. Hence, $a = 0$.'
 ),
 (
+	'FinGrp',
+	'injective homomorphisms',
+	'Let $f : A \to B$ be a monomorphism of finite groups. Let $a \in A$ be in the kernel of $a$, say of order $n$. Then we may view $a$ as a morphism $a : C_n \to A$ with $f \circ a = 1$ (the trivial homomorphism), and $C_n$ is finite. Hence, $a = 1$.'
+),
+(
 	'FinOrd',
 	'injective order-preserving maps',
 	'The same proof as for $\mathbf{Set}$ can be used.'

@@ -89,7 +89,12 @@ VALUES
     'FinAb',
     'same as epimorphisms',
     'This is because the category is epi-regular.'
-),    
+),
+(
+    'FinGrp',
+    'same as epimorphisms',
+    'This is because the category is epi-regular.'
+),     
 (
     'FinOrd',
     'same as epimorphisms',

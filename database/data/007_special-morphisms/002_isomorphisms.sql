@@ -101,6 +101,11 @@ VALUES
 	'This follows exactly as for abelian groups.'
 ),
 (
+	'FinGrp',
+	'bijective homomorphisms',
+	'This follows exactly as for groups.'
+),
+(
 	'FinOrd',
 	'bijective order-preserving maps',
 	'This works as for posets, using that injective order-preserving maps must be order-reflecting.'

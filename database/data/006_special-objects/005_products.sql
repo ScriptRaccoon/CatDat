@@ -54,6 +54,7 @@ VALUES
 ---------------------------------------------------------------
 ('Sp', '[finite case] pointwise defined direct product'),
 ('FinAb', '[finite case] direct products with pointwise operations'),
+('FinGrp', '[finite case] direct products with pointwise operations'),
 ('FinOrd', '[finite case] direct products with the evident order'),
 ('FinSet', '[finite case] direct products'),
 ('Ab_fg', '[finite case] direct products'),

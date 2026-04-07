@@ -81,6 +81,11 @@ VALUES
     'This is because the category is mono-regular.'
 ),
 (
+    'FinGrp',
+    'same as monomorphisms',
+    'This is because the category is mono-regular.'
+),
+(
     'FinOrd',
     'same as monomorphisms',
     'This is because the category is mono-regular.'

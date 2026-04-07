@@ -161,6 +161,16 @@ VALUES
 	NULL
 ),
 (
+	'FinGrp',
+	'category of finite groups',
+	'$\mathbf{FinGrp}$',
+	'finite groups',
+	'group homomorphisms',
+	NULL,
+	'https://ncatlab.org/nlab/show/finite+group',
+	NULL
+),
+(
 	'Ab_fg',
 	'category of finitely generated abelian groups',
 	'$\mathbf{Ab}_{\mathrm{fg}}$',

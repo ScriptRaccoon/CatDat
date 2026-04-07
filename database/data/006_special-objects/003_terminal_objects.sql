@@ -15,6 +15,7 @@ VALUES
 ('CMon', 'trivial monoid'),
 ('CRing', 'zero ring'),
 ('FinAb', 'trivial group'),
+('FinGrp', 'trivial group'),
 ('FinOrd', 'singleton ordered set'),
 ('FinSet', 'singleton set'),
 ('FreeAb', 'trivial group'),

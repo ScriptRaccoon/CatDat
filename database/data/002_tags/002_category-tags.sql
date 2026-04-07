@@ -33,6 +33,7 @@ VALUES
 ('FI', 'combinatorics'),
 ('FI', 'set theory'),
 ('FinAb', 'algebra'),
+('FinGrp', 'algebra'),
 ('FinOrd', 'order theory'),
 ('FinOrd', 'topology'),
 ('FinSet', 'set theory'),

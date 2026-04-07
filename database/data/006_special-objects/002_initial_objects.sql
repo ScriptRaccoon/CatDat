@@ -16,6 +16,7 @@ VALUES
 ('CRing', 'ring of integers'),
 ('FI', 'empty set'),
 ('FinAb', 'trivial group'),
+('FinGrp', 'trivial group'),
 ('FinOrd', 'empty ordered set'),
 ('FinSet', 'empty set'),
 ('FreeAb', 'trivial group'),
