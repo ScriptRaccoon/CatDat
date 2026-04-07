@@ -78,9 +78,11 @@ VALUES
 ('countable coproducts', 'coproducts'),
 ('countable coproducts', 'finite coproducts'),
 ('countable coproducts', 'countable copowers'),
+('cofiltered limits', 'cofiltered'),
 ('cofiltered limits', 'complete'),
 ('cofiltered limits', 'directed limits'),
 ('cofiltered limits', 'cosifted limits'),
+('filtered colimits', 'filtered'),
 ('filtered colimits', 'cocomplete'),
 ('filtered colimits', 'directed colimits'),
 ('filtered colimits', 'sifted colimits'),
@@ -225,4 +227,8 @@ VALUES
 ('binary powers', 'finite powers'),
 ('binary powers', 'finite products'),
 ('binary copowers', 'finite copowers'),
-('binary copowers', 'finite coproducts');
+('binary copowers', 'finite coproducts'),
+('filtered', 'finitely cocomplete'),
+('filtered', 'filtered colimits'),
+('cofiltered', 'finitely complete'),
+('cofiltered', 'cofiltered limits');

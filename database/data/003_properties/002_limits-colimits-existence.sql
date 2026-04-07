@@ -218,7 +218,7 @@ VALUES
 (
 	'cofiltered limits',
 	'has',
-	'A category has <i>cofiltered limits</i> if it has limits of diagrams indexed by cofiltered small categories. This is actually equivalent to having directed limits.',
+	'A category has <i>cofiltered limits</i> if it has limits of diagrams indexed by small <a href="/category-property/cofiltered">cofiltered</a> categories. This is actually equivalent to having directed limits.',
 	'https://ncatlab.org/nlab/show/filtered+limit',
 	'filtered colimits',
 	TRUE
@@ -226,7 +226,7 @@ VALUES
 (
 	'filtered colimits',
 	'has',
-	'A category has <i>filtered colimits</i> if it has colimits of diagrams indexed by filtered small categories. This is actually equivalent to having directed colimits.',
+	'A category has <i>filtered colimits</i> if it has colimits of diagrams indexed by small <a href="/category-property/filtered">filtered</a> categories. This is actually equivalent to having directed colimits.',
 	'https://ncatlab.org/nlab/show/filtered+colimit',
 	'cofiltered limits',
 	TRUE

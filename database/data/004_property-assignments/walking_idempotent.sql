@@ -55,6 +55,12 @@ VALUES
 ),
 (
     'walking_idempotent',
+    'filtered',
+    TRUE,
+    'The pair $\mathrm{id},e$ is coequalized by $e$ (non-universally).'
+),
+(
+    'walking_idempotent',
     'terminal object',
     FALSE,
     'This is obvious.'

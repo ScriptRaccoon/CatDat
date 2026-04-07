@@ -54,4 +54,39 @@ VALUES
 	'["unital"]',
 	'This follows from Corollary 2.2.10 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>. The proof is also written down in <a href="https://math.stackexchange.com/a/5034834/1650" target="_blank">MSE/5033161</a>.',
 	FALSE
+),
+(
+	'filtered_is_connected',
+	'["filtered"]',
+	'["connected"]',
+	'This is obvious.',
+	FALSE
+),
+(
+	'terminal_object_yields_filtered',
+	'["terminal object"]',
+	'["filtered"]',
+	'This is obvious.',
+	FALSE
+),
+(
+	'filtered_criterion',
+	'["finitely cocomplete"]',
+	'["filtered"]',
+	'Every finite diagram even admits a <i>universal</i> cocone.',
+	FALSE
+),
+(
+	'filtered_left_cancellative_implies_thin',
+	'["filtered", "left cancellative"]',
+	'["thin"]',
+	'If $f,g : x \rightrightarrows y$ are coequalized by $h : y \to c$, then we immediately get $f = g$ since $h$ is a monomorphism.',
+	FALSE
+),
+(
+	'filtered_via_equalizers',
+	'["strongly connected", "coequalizers"]',
+	'["filtered"]',
+	'This is obvious.',
+	FALSE
 );

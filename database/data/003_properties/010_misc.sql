@@ -32,6 +32,22 @@ VALUES
 	TRUE
 ),
 (
+	'filtered',
+	'is',
+	'A category is <i>filtered</i> if every finite diagram admits a cocone. Equivalently, it is inhabited, for every two objects $x,y$ there is a cospan $x \rightarrow s \leftarrow y$ (not necessarily universal), and every parallel pair $x \rightrightarrows y$ is coequalized by some morphism $y \to c$ (not necessarily universal).',
+	'https://ncatlab.org/nlab/show/filtered+category',
+	'cofiltered',
+	TRUE
+),
+(
+	'cofiltered',
+	'is',
+	'A category is <i>cofiltered</i> if every finite diagram admits a cone. Equivalently, it is inhabited, for every two objects $x,y$ there is a span $x \leftarrow p \rightarrow y$ (not necessarily universal), and every parallel pair $x \rightrightarrows y$ is equalized by some morphism $e \to x$ (not necessarily universal).',
+	'https://ncatlab.org/nlab/show/cofiltered+category',
+	'filtered',
+	TRUE
+),
+(
 	'Malcev',
 	'is',
 	'A category is <i>Malcev</i> when it has finite limits and every internal reflexive relation is an internal equivalence relation. That is, if $R \subseteq X^2$ is a subobject with $\Delta_X \subseteq R$, then $R$ is symmetric and transitive.',

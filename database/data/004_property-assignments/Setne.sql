@@ -91,12 +91,6 @@ VALUES
 ),
 (
 	'Setne',
-	'initial object',
-	FALSE,
-	'Assume that there is an initial object $X$. In particular, there must be a unique map of sets $X \to \{0,1\}$, so $X$ has a unique subset, which means $X$ is empty; a contradiction.'
-),
-(
-	'Setne',
 	'strict terminal object',
 	FALSE,
 	'This is trivial.'
@@ -112,4 +106,10 @@ VALUES
 	'skeletal',
 	FALSE,
 	'This is trivial.'
+),
+(
+	'Setne',
+	'cofiltered',
+	FALSE,
+	'The two maps $\{0\} \rightrightarrows \{0,1\}$ are equalized by no map $X \to \{0\}$ in this category.'
 );

@@ -43,15 +43,9 @@ VALUES
 ),
 (
 	'walking_span',
-	'binary coproducts',
+	'filtered',
 	FALSE,
-	'Clearly $1$ and $2$ have no coproduct.'
-),
-(
-	'walking_span',
-	'terminal object',
-	FALSE,
-	'$0$ is not terminal since it has no morphism from $1$, and $1$ is not terminal since it has no morphism from $2$, and likewise $2$ is not terminal.'
+	'There is no cospan $1 \rightarrow x \leftarrow 2$.'
 ),
 (
 	'walking_span',

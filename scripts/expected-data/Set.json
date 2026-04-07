@@ -77,6 +77,8 @@
 	"countable copowers": true,
 	"finite copowers": true,
 	"binary copowers": true,
+	"filtered": true,
+	"cofiltered": true,
 
 	"Grothendieck abelian": false,
 	"Malcev": false,

@@ -77,6 +77,8 @@
 	"countable copowers": true,
 	"finite copowers": true,
 	"binary copowers": true,
+	"filtered": true,
+	"cofiltered": true,
 
 	"cartesian closed": false,
 	"locally cartesian closed": false,
