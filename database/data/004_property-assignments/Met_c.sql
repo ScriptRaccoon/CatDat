@@ -67,13 +67,6 @@ VALUES
 ),
 (
 	'Met_c',
-	'co-Malcev',
-	TRUE,
-	'See <a href="https://mathoverflow.net/a/509582/2841" target="_blank">MO/509548</a>.'
-	-- FIXME: add proof that coequalizers exist
-),
-(
-	'Met_c',
 	'powers',
 	FALSE,
 	'See <a href="https://math.stackexchange.com/questions/139168" target="_blank">MSE/139168</a> for a proof that uncountable powers do not exist.'
@@ -89,12 +82,6 @@ VALUES
 	'balanced',
 	FALSE,
 	'The inclusion $\mathbb{Q} \hookrightarrow \mathbb{R}$ provides a counterexample.'
-),
-(
-	'Met_c',
-	'cartesian closed',
-	FALSE,
-	NULL
 ),
 (
 	'Met_c',
