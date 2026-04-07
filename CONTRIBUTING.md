@@ -64,6 +64,7 @@ If the local database is broken, just delete the `local.db` file and recreate it
 - [CMon is not coregular](https://github.com/ScriptRaccoon/CatDat/pull/27/changes)
 - [Add "locally cartesian closed" property](https://github.com/ScriptRaccoon/CatDat/pull/3/changes)
 - [Add "locally strongly finitely presentable" as a property](https://github.com/ScriptRaccoon/CatDat/pull/21/changes)
+- [Add filtered and cofiltered categories](https://github.com/ScriptRaccoon/CatDat/pull/40/changes)
 
 ### Guidelines for Adding New Data
 
