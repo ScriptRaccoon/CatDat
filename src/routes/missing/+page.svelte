@@ -31,17 +31,6 @@
 </section>
 
 <section>
-	<h3>Categories with properties without recorded reason</h3>
-
-	<p class="hint">
-		There are {data.categories_with_unreasoned_properties.length} categories with properties
-		(satisfied or unsatisfied) that have no reason specified.
-	</p>
-
-	<CategoryList categories={data.categories_with_unreasoned_properties} />
-</section>
-
-<section>
 	<h3>Categories with unknown special morphisms</h3>
 
 	<p class="hint">

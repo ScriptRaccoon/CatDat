@@ -11,7 +11,6 @@ export const load = async () => {
 		[
 			CategoryShort & { count: number },
 			CategoryShort & { count: number },
-			CategoryShort & { count: number },
 			CategoryPairShort,
 			FunctorShort & { count: number },
 		]
@@ -36,16 +35,6 @@ export const load = async () => {
 				ON cp.category_id = c.id
 				AND cp.property_id = p.id
 			WHERE cp.property_id IS NULL
-			GROUP BY c.id
-			ORDER BY lower(c.name);
-		`,
-		// missing reasons
-		sql`
-			SELECT c.id, c.name, COUNT(*) AS count
-			FROM categories c
-			JOIN category_property_assignments cp
-				ON cp.category_id = c.id
-			WHERE cp.reason IS NULL
 			GROUP BY c.id
 			ORDER BY lower(c.name);
 		`,
@@ -89,7 +78,6 @@ export const load = async () => {
 	const [
 		categories_with_missing_morphisms,
 		categories_with_unknown_properties,
-		categories_with_unreasoned_properties,
 		undistinguishable_category_pairs,
 		functors_with_unknown_properties,
 	] = results
@@ -99,7 +87,6 @@ export const load = async () => {
 	return {
 		categories_with_unknown_properties,
 		categories_with_missing_morphisms,
-		categories_with_unreasoned_properties,
 		undistinguishable_category_pairs,
 		functors_with_unknown_properties,
 		missing_combinations,
