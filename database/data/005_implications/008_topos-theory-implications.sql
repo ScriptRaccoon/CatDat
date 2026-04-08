@@ -28,6 +28,13 @@ VALUES
 	FALSE
 ),
 (
+	'ccc_no_strict_terminal',
+	'["cartesian closed", "strict terminal object"]',
+	'["thin"]',
+	'If a morphism $X \to Y$ exists, we get a morphism $1 \to [X,Y]$, which forces $[X,Y]$ to be a terminal object by assumption. But then any two morphisms $1 \rightrightarrows [X,Y]$ are equal, so that any two morphisms $X \rightrightarrows Y$ are equal.',
+	FALSE
+),
+(
 	'pointed_ccc_trivial',
 	'["pointed", "cartesian closed"]',
 	'["trivial"]',
