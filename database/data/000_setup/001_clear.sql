@@ -1,5 +1,7 @@
 PRAGMA foreign_keys = OFF;
 
+DELETE FROM lemmas;
+
 DELETE FROM implication_assumptions;
 DELETE FROM implication_conclusions;
 DELETE FROM implications;

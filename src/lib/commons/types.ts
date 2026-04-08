@@ -155,3 +155,9 @@ export type FunctorPropertyAssignment = Replace<
 	FunctorPropertyAssignmentDB,
 	{ is_deduced: boolean }
 >
+
+export type Lemma = {
+	title: string
+	claim: string
+	proof: string
+}
