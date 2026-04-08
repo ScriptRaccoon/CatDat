@@ -51,13 +51,13 @@ VALUES
 	'FinSet',
 	'countable copowers',
 	FALSE,
-	'Assume that the copower $C := \mathbb{N} \otimes 1$ exists. Since coproducts are associative and finite coproducts exist, we get $C \cong 1 \sqcup C$. It $C$ has $m \in \mathbb{N}$ elements, this implies $m = 1 + m$, which is a contradiction.'
+	'If countable copowers exist, then by <a href="/lemma/hilberts_hotel">Hilbert''s Hotel</a> there is some object $C$ with $C \cong 1 \sqcup C$. If $C$ has $m \in \mathbb{N}$ elements, this implies the contradiction $m = 1 + m$.'
 ),
 (
 	'FinSet',
 	'countable powers',
 	FALSE,
-	'Assume that the power $P := \{0,1\}^{\mathbb{N}}$ exists. Since products are associative and finite products exists, we get $P \cong \{0,1\} \times P$. If $P$ has $m \in \mathbb{N}$ elements, this implies $m = 2m$ and hence $m = 0$, i.e. $P = \varnothing$. But there is a diagonal morphism $\{0,1\} \to P$, making $P = \varnothing$ impossible.'
+	'If countable powers exist, then by <a href="/lemma/hilberts_hotel">Hilbert''s Hotel</a> there is an object $P$ with $P \cong \{0,1\} \times P$ and a morphism $\{0,1\} \to P$. If $P$ has $m \in \mathbb{N}$ elements, this implies $m = 2m$ and hence $m = 0$, i.e. $P = \varnothing$. But then there cannot be a map $\{0,1\} \to P$.'
 ),
 (
 	'FinSet',

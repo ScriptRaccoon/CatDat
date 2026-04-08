@@ -93,7 +93,7 @@ VALUES
 	'FinGrp',
 	'countable powers',
 	FALSE,
-	'Assume that the power $P := (C_2)^{\mathbb{N}}$ exists. Since products are associative and finite products exist, we conclude $P \cong C_2 \times P$. If $P$ has $n$ elements, this means $n = 2n$, i.e. $n = 0$, a contradiction.'
+	'If countable powers exist, then by <a href="/lemma/hilberts_hotel">Hilbert''s Hotel</a> there is some object $P$ with $P \cong C_2 \times P$. If $P$ has $n$ elements, this means $n = 2n$, i.e. $n = 0$, a contradiction.'
 ),
 (
 	'FinGrp',

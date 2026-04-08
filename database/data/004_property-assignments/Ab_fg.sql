@@ -51,13 +51,13 @@ VALUES
 	'Ab_fg',
 	'countable powers',
 	FALSE,
-	'Assume that the power $P := \mathbb{Z}^{\mathbb{N}} = \prod_{n \geq 0} \mathbb{Z}$ exists in this category. Since products are associative and finite products exist, we have $P \cong \mathbb{Z} \times P$. Tensoring with $\mathbb{Q}$ yields an isomorphism of finite-dimensional vector spaces $P_{\mathbb{Q}} \cong \mathbb{Q} \times P_{\mathbb{Q}}$, which is impossible: the dimension $d$ of $P_{\mathbb{Q}}$ (i.e. the rank of $P$) would satisfy $d = 1+d$.'
+	'If countable powers exist, then by <a href="/lemma/hilberts_hotel">Hilbert''s Hotel</a> there is some object $P$ with $P \cong \mathbb{Z} \times P$. Tensoring with $\mathbb{Q}$ yields an isomorphism of finite-dimensional vector spaces $P_{\mathbb{Q}} \cong \mathbb{Q} \times P_{\mathbb{Q}}$, which is impossible: the dimension $d$ of $P_{\mathbb{Q}}$ (i.e. the rank of $P$) would satisfy $d = 1+d$.'
 ),
 (
 	'Ab_fg',
 	'countable copowers',
 	FALSE,
-	'Assume that the copower $C := \mathbb{N} \otimes \mathbb{Z} = \coprod_{n \geq 0} \mathbb{Z}$ exists in this category. Since coproducts are associative and finite coproducts exist, we have $C \cong \mathbb{Z} \oplus C$. Tensoring with $\mathbb{Q}$ yields an isomorphism of finite-dimensional vector spaces $C_{\mathbb{Q}} \cong \mathbb{Q} \oplus C_{\mathbb{Q}}$, which is impossible: the dimension $d$ of $C_{\mathbb{Q}}$ (i.e. the rank of $C$) would satisfy $d = 1+d$.'
+	'If countable powers exist, then by <a href="/lemma/hilberts_hotel">Hilbert''s Hotel</a> there is some object $P$ with $P \cong \mathbb{Z} \oplus P$. Tensoring with $\mathbb{Q}$ yields an isomorphism of finite-dimensional vector spaces $C_{\mathbb{Q}} \cong \mathbb{Q} \oplus C_{\mathbb{Q}}$, which is impossible: the dimension $d$ of $C_{\mathbb{Q}}$ (i.e. the rank of $C$) would satisfy $d = 1+d$.'
 ),
 (
 	'Ab_fg',

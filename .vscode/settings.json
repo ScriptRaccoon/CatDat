@@ -15,7 +15,8 @@
 		"infty",
 		"chartjs",
 		"Prost",
-		"SetxSet"
+		"SetxSet",
+		"hilberts"
 	],
 	"cSpell.words": [
 		"abelian",
