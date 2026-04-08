@@ -19,12 +19,6 @@ VALUES
 ),
 (
 	'FinAb',
-	'generating set',
-	TRUE,
-	'The groups $\mathbb{Z}/n$ for $n \geq 1$ provide a generating set, even in the larger category of torsion abelian groups. This is because every torsion element $a \in A$, say of order $n$, yields a homomorphism $\mathbb{Z}/n \to A$ mapping $[1] \mapsto a$.'
-),
-(
-	'FinAb',
 	'abelian',
 	TRUE,
 	'This follows from the fact for abelian groups.'
