@@ -57,7 +57,7 @@ VALUES
 	'Top',
 	'strongly connected',
 	TRUE,
-	'Every nonempty space is weakly terminal (by using constant maps).'
+	'Every non-empty space is weakly terminal (by using constant maps).'
 ),
 (
 	'Top',

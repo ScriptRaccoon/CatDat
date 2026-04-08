@@ -45,7 +45,7 @@ VALUES
 	'Pos',
 	'strongly connected',
 	TRUE,
-	'Every nonempty poset is weakly terminal (by using constant maps).'
+	'Every non-empty poset is weakly terminal (by using constant maps).'
 ),
 (
 	'Pos',

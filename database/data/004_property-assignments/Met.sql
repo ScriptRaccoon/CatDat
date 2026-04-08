@@ -75,7 +75,7 @@ VALUES
 	'Met',
 	'strongly connected',
 	TRUE,
-	'Every nonempty metric space is weakly terminal (by using constant maps).'
+	'Every non-empty metric space is weakly terminal (by using constant maps).'
 ),
 (
 	'Met',

@@ -57,7 +57,7 @@ VALUES
 	'Meas',
 	'strongly connected',
 	TRUE,
-	'Every nonempty measurable space is weakly terminal (by using constant maps).'
+	'Every non-empty measurable space is weakly terminal (by using constant maps).'
 ),
 (
 	'Meas',

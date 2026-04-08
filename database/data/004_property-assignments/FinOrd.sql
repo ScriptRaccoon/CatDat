@@ -57,7 +57,7 @@ VALUES
 	'FinOrd',
 	'strongly connected',
 	TRUE,
-	'Every nonempty totally ordered set is weakly terminal (by using constant maps).'
+	'Every non-empty totally ordered set is weakly terminal (by using constant maps).'
 ),
 (
 	'FinOrd',

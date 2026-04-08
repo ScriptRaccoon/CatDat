@@ -102,9 +102,10 @@ When contributing new data (categories, functors, properties, implications), ple
 
 - **New Combinations**: Add new categories that satisfy combinations of satisfied properties and unsatisfied properties and not yet in the database. For example, you may add a category that is abelian but neither cocomplete nor essentially small (if it is not already present). The [page with missing data](https://catdat.app/missing) lists consistent combinations of the form $p \land \neg q$ that are not yet witnessed by a category in the database. The same remarks apply to functors.
 
-### LaTeX Rules
+### Conventions
 
-1. Use `\varnothing` for the empty set, not `\emptyset`.
+1. Use `\varnothing` to display the empty set, not `\emptyset`.
+2. Write `non-empty`, not `nonempty`. Same for `non-unital`, `non-expansive`, etc.
 
 ## Option 3: Create an Issue
 

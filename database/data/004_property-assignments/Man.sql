@@ -63,7 +63,7 @@ VALUES
 	'Man',
 	'strongly connected',
 	TRUE,
-	'Every nonempty manifold is weakly terminal (by using constant maps).'
+	'Every non-empty manifold is weakly terminal (by using constant maps).'
 ),
 (
 	'Man',
