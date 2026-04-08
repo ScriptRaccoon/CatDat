@@ -81,6 +81,11 @@ VALUES
 	'See <a href="https://stacks.math.columbia.edu/tag/04VM" target="_blank">Stacks Project</a> ,or, for many more results, the seminar <a href="https://www.numdam.org/issues/SAC_1967-1968__2_/">Les épimorphismes d''anneaux</a>. See also <a href="https://mathoverflow.net/questions/109/" target="_blank">MO/109</a> for some results.'
 ),
 (
+	'Delta',
+	'surjective order-preserving maps',
+	'We can use the same <a href="/category/FinOrd">proof as for $\mathbf{FinOrd}$</a> since this has merely used the non-empty ordered set $\{0 < 1\}$.'
+),
+(
 	'FI',
 	'bijective maps',
 	'Take an epimorphism $X \to Y$ in this category, w.l.o.g. the inclusion of a subset $X \subseteq Y$. This means that for two injective maps $f,g : Y \rightrightarrows T$ with $f|_X = g|_X$ we must have $f = g$. Let $T := Y + (Y \setminus X)$ (disjoint union), $f$ be the inclusion into the first summand, $g|_X$ be the inclusion into the first summand, and $g|_{Y \setminus X}$ be the inclusion into the second summand. Then $f$ and $g$ are injective with $f|_X = g|_X$, so that $f = g$. But this means $X = Y$.'

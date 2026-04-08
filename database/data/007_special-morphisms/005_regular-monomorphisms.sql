@@ -66,6 +66,11 @@ VALUES
     'The non-trivial direction follows from the <a href="https://math.stackexchange.com/questions/319867" target="_blank">well-known fact</a> that for every closed subspace of a Banach space its quotient space is again a Banach space.'
 ),
 (
+    'Delta',
+    'same as monomorphisms',
+    'This is because the category is mono-regular.'
+),
+(
     'FI',
     'same as monomorphisms',
     'This is because the category is mono-regular.'

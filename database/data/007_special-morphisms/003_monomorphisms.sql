@@ -86,6 +86,11 @@ VALUES
 	'This holds in every finitary algebraic category: the forgetful functor to $\mathbf{Set}$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
 ),
 (
+	'Delta',
+	'injective order-preserving maps',
+	'The non-trivial direction follows since the forgetful functor $\Delta \to \mathbf{Set}$ is representable (by $[0]$), hence preserves monomorphisms.'
+),
+(
 	'FI',
 	'every morphism',
 	'This is trivial.'

@@ -91,6 +91,11 @@ VALUES
 	'This characterization holds in every algebraic category.'
 ),
 (
+	'Delta',
+	'bijective order-preserving maps',
+	'This is easy. Notice that bijective order-preserving maps automatically also reflect the order (because we work with totally ordered sets).'
+),
+(
 	'FI',
 	'bijective maps',
 	'This follows exactly as for sets.'

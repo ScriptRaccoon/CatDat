@@ -81,6 +81,11 @@ VALUES
     'This holds in every finitary algebraic category.'
 ),    
 (
+    'Delta',
+    'same as epimorphisms',
+    'This is because the category is epi-regular.'
+), 
+(
     'FI',
     'same as epimorphisms',
     'This is because the category is epi-regular.'

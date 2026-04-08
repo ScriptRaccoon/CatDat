@@ -43,7 +43,7 @@ VALUES
 	'sSet',
 	'category of simplicial sets',
 	'$\mathbf{sSet}$',
-	'simplicial sets, i.e. functors $\Delta^{\mathrm{op}} \to \mathbf{Set}$',
+	'simplicial sets, i.e. functors $\Delta^{\mathrm{op}} \to \mathbf{Set}$ where $\Delta$ is the <a href="/category/Delta">simplex category</a>',
 	'natural transformations',
 	NULL,
 	'https://ncatlab.org/nlab/show/SimpSet',
@@ -57,5 +57,15 @@ VALUES
 	'smooth maps',
 	'Here, a smooth manifold is defined as a second-countable Hausdorff space with a smooth atlas. The dimension is locally constant, not necessarily constant.',
 	'https://ncatlab.org/nlab/show/Diff',
+	NULL
+),
+(
+	'Delta',
+	'simplex category',
+	'$\Delta$',
+	'the non-empty ordered sets $[n] := \{0 < \cdots < n\}$ for $n \in \mathbb{N}$',
+	'order-preserving maps',
+	'The simplex category is a skeleton of $\mathbf{FinOrd} \setminus \{\varnothing\}$. It plays an important role in topology and is used to define the <a href="/category/sSet">category of simplicial sets</a>.',
+	'https://ncatlab.org/nlab/show/simplex+category',
 	NULL
 );
