@@ -31,6 +31,12 @@ VALUES
 ),
 (
 	'N_oo',
+	'finitary algebraic',
+	FALSE,
+	'This follows from <a href="/lemma/thin_algebraic_categories">this lemma</a>.'
+),
+(
+	'N_oo',
 	'locally strongly finitely presentable',
 	TRUE,
 	'Every natural number is strongly finitely presentable, and $\infty$ is the colimit of all $n < \infty$.'
