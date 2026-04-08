@@ -100,4 +100,10 @@ VALUES
 	'regular subobject classifier',
 	FALSE,
 	'We recycle the proof from the <a href="/category/Haus">category of Hausdorff spaces</a>: Assume that there is a regular subobject classifier $\Omega$. By the classification of regular monomorphisms, we would have an isomorphism between $\mathrm{Hom}(X,\Omega)$ and the set of closed subsets of $X$ for any metric space $X$. If we take $X = 1$ we see that $\Omega$ has two points. Since $\Omega$ is Hausdorff, $\Omega \cong 1 + 1$ must be discrete. But then $\mathrm{Hom}(X,\Omega)$ is isomorphic to the set of all clopen subsets of $X$, of which there are usually far fewer than closed subsets (consider $X = [0,1]$).'
+),
+(
+	'Met_c',
+	'coequalizers',
+	FALSE,
+	'See <a href="https://mathoverflow.net/a/509582/2841" target="_blank">MO/509548</a>.'
 );
