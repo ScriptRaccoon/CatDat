@@ -25,12 +25,6 @@ VALUES
 ),
 (
 	'SetxSet',
-	'strict terminal object',
-	FALSE,
-	'This is trivial.'
-),
-(
-	'SetxSet',
 	'skeletal',
 	FALSE,
 	'This is trivial.'

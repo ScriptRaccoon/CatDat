@@ -31,12 +31,6 @@ VALUES
 ),
 (
 	'Sp',
-	'strict terminal object',
-	FALSE,
-	'This is trivial.'
-),
-(
-	'Sp',
 	'countable powers',
 	FALSE,
 	'We have the following lemma which is easy to prove: Let $\mathcal{C},\mathcal{D}$ be two categories. Assume that $\mathcal{D}$ has an initial object. If $\mathcal{C} \times \mathcal{D}$ has limits of a given shape, then $\mathcal{C}$ also has limits of this shape. Therefore, if $\mathbf{Sp} \simeq \mathbf{FinSet} \times \prod_{n > 0} \Sigma_n{-}\mathbf{FinSet}$ has countable powers, then $\mathbf{FinSet}$ has countable powers as well, which we already know is false (see <a href="/category/FinSet">here</a>).'

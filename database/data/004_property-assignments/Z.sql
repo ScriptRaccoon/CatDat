@@ -61,12 +61,6 @@ VALUES
 ),
 (
 	'Z',
-	'strict terminal object',
-	FALSE,
-	'This is because $\mathbf{CRing}$ does not have a strict initial object.'
-),
-(
-	'Z',
 	'skeletal',
 	FALSE,
 	'This is trivial.'

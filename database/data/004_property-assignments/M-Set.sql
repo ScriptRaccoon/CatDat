@@ -25,12 +25,6 @@ VALUES
 ),
 (
 	'M-Set',
-	'strict terminal object',
-	FALSE,
-	'Take any set $X$ with an element $x \in X$, endow $X$ with the trivial $M$-action. Then the morphism $x : 1 \to X$ is only an isomorphism when $X = \{x\}$.'
-),
-(
-	'M-Set',
 	'skeletal',
 	FALSE,
 	'This is trivial.'

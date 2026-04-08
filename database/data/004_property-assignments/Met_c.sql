@@ -73,12 +73,6 @@ VALUES
 ),
 (
 	'Met_c',
-	'strict terminal object',
-	FALSE,
-	'This is trivial.'
-),
-(
-	'Met_c',
 	'balanced',
 	FALSE,
 	'The inclusion $\mathbb{Q} \hookrightarrow \mathbb{R}$ provides a counterexample.'

@@ -49,12 +49,6 @@ VALUES
 ),
 (
 	'Sch',
-	'strict terminal object',
-	FALSE,
-	'This is because $\mathbf{CRing}$ does not have a strict initial object.'
-),
-(
-	'Sch',
 	'balanced',
 	FALSE,
 	'The canonical morphism $\mathrm{Spec}(\mathbb{Z}/2 \times \mathbb{Z}[1/2]) \longrightarrow \mathrm{Spec}(\mathbb{Z})$ is a mono- and an epimorphism, but no isomorphism.'

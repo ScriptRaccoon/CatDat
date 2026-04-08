@@ -91,12 +91,6 @@ VALUES
 ),
 (
 	'Top',
-	'strict terminal object',
-	FALSE,
-	'This is trivial.'
-),
-(
-	'Top',
 	'balanced',
 	FALSE,
 	'If $X$ is a set, consider the discrete space $X_d$ on $X$ and the indiscrete space $X_i$ on $X$. The identity map $X \to X$ lifts to a continuous map $X_d \to X_i$, which is bijective and therefore both a mono- and an epimorphism, but it is not an isomorphism unless $X$ has at most one element.'

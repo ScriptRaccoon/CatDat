@@ -31,12 +31,6 @@ VALUES
 ),
 (
 	'Set',
-	'strict terminal object',
-	FALSE,
-	'This is trivial.'
-),
-(
-	'Set',
 	'skeletal',
 	FALSE,
 	'This is trivial.'

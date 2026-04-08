@@ -43,12 +43,6 @@ VALUES
 ),
 (
 	'Cat',
-	'strict terminal object',
-	FALSE,
-	'A functor $1 \to \mathcal{C}$ is just the choice of an object of $\mathcal{C}$, it does not force $\mathcal{C}$ to be trivial.'
-),
-(
-	'Cat',
 	'balanced',
 	FALSE,
 	'Since we know that the <a href="/category/Mon">category of monoids</a> is not balanced, there is a monoid map $M \to N$ which is a monomorphism and an epimorphism which is not an isomorphism. Then $B(M) \to B(N)$ has the corresponding properties.'

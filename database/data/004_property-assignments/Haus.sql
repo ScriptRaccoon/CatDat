@@ -73,12 +73,6 @@ VALUES
 ),
 (
 	'Haus',
-	'strict terminal object',
-	FALSE,
-	'This is trivial.'
-),
-(
-	'Haus',
 	'balanced',
 	FALSE,
 	'The inclusion $\mathbb{Q} \hookrightarrow \mathbb{R}$ is a counterexample; it is an epimorphism since $\mathbb{Q}$ is dense in $\mathbb{R}$.'

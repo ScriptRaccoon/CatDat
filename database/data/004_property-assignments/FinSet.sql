@@ -49,12 +49,6 @@ VALUES
 ),
 (
 	'FinSet',
-	'strict terminal object',
-	FALSE,
-	'This is trivial.'
-),
-(
-	'FinSet',
 	'countable copowers',
 	FALSE,
 	'Assume that the copower $C := \mathbb{N} \otimes 1$ exists. Since coproducts are associative and finite coproducts exist, we get $C \cong 1 \sqcup C$. It $C$ has $m \in \mathbb{N}$ elements, this implies $m = 1 + m$, which is a contradiction.'

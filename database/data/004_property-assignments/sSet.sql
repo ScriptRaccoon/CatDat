@@ -37,12 +37,6 @@ VALUES
 ),
 (
 	'sSet',
-	'strict terminal object',
-	FALSE,
-	'The terminal object is $\Delta^0$ and there are maps $\Delta^0 \to \Delta^1$.'
-),
-(
-	'sSet',
 	'skeletal',
 	FALSE,
 	'This is trivial.'
