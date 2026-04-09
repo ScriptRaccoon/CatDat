@@ -78,7 +78,7 @@ VALUES
 (
 	'FI',
 	'bijective maps',
-	'Take an epimorphism $X \to Y$ in this category, w.l.o.g. the inclusion of a subset $X \subseteq Y$. This means that for two injective maps $f,g : Y \to T$ with $f|_X = g|_X$ we must have $f = g$. Let $T := Y + (Y \setminus X)$ (disjoint union), $f$ be the inclusion into the first summand, $g|_X$ be the inclusion into the first summand, and $g|_{Y \setminus X}$ be the inclusion into the second summand. Then $f$ and $g$ are injective with $f|_X = g|_X$, so that $f = g$. But this means $X = Y$.'
+	'Take an epimorphism $X \to Y$ in this category, w.l.o.g. the inclusion of a subset $X \subseteq Y$. This means that for two injective maps $f,g : Y \rightrightarrows T$ with $f|_X = g|_X$ we must have $f = g$. Let $T := Y + (Y \setminus X)$ (disjoint union), $f$ be the inclusion into the first summand, $g|_X$ be the inclusion into the first summand, and $g|_{Y \setminus X}$ be the inclusion into the second summand. Then $f$ and $g$ are injective with $f|_X = g|_X$, so that $f = g$. But this means $X = Y$.'
 ),
 (
 	'FinAb',

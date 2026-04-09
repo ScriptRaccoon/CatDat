@@ -81,7 +81,7 @@ VALUES
 	'FI',
 	'cogenerator',
 	FALSE,
-	'Let $Q$ be finite set. When $Q$ is empty, it is clearly no cogenerator. Otherwise, $Q + 1$ has at least two elements, so that there are two different morphisms $1 \to Q + 1$. But there is no morphism $Q + 1 \to Q$ at all. Hence, $Q$ is no cogenerator.'
+	'Let $Q$ be finite set. When $Q$ is empty, it is clearly no cogenerator. Otherwise, $Q + 1$ has at least two elements, so that there are two different morphisms $1 \rightrightarrows Q + 1$. But there is no morphism $Q + 1 \to Q$ at all. Hence, $Q$ is no cogenerator.'
 ),
 (
 	'FI',

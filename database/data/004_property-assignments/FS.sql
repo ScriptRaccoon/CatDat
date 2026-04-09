@@ -69,7 +69,7 @@ VALUES
 	'FS',
 	'generator',
 	FALSE,
-	'Let $G$ be a finite set. There are at least two morphisms $G + 2 \to 2$, but there is no morphism $G \to G + 2$ at all. Hence, $G$ is not a generator.'
+	'Let $G$ be a finite set. There are at least two morphisms $G + 2 \rightrightarrows 2$, but there is no morphism $G \to G + 2$ at all. Hence, $G$ is not a generator.'
 ),
 (
 	'FS',
@@ -81,7 +81,7 @@ VALUES
 	'FS',
 	'pullbacks',
 	FALSE,
-	'The connected component of non-empty sets has a terminal object, $1$, and it suffices to prove that it has no products. Let $X$ be a finite set with more than $1$ element. Assume that the product $P$ of $X$ with itself exists. The diagonal $X \to P$ is a split monomorphism, hence injective, but also surjective, i.e. an isomorphism. In other words, the two projections $P \to X$ are equal. The universal property of $P$ now implies that all morphisms $Y \to X$ are equal, which is absurd.'
+	'The connected component of non-empty sets has a terminal object, $1$, and it suffices to prove that it has no products. Let $X$ be a finite set with more than $1$ element. Assume that the product $P$ of $X$ with itself exists. The diagonal $X \to P$ is a split monomorphism, hence injective, but also surjective, i.e. an isomorphism. In other words, the two projections $P \rightrightarrows X$ are equal. The universal property of $P$ now implies that every two morphisms $Y \rightrightarrows X$ are equal, which is absurd.'
 ),
 (
 	'FS',

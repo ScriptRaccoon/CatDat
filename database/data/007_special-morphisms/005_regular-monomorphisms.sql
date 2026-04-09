@@ -118,7 +118,7 @@ VALUES
 (
     'Meas',
     'embeddings',
-    '(This is the same proof as for $\mathbf{Top}$.) Equalizers are embeddings by their construction. Conversely, if $f : X \to Y$ is an embedding, then $f$ is the equalizer of the two characteristic maps $\chi_Y, \chi_{f(X)} : Y \to \{0,1\}$, where $\{0,1\}$ carries the trivial $\sigma$-algebra.'
+    '(This is the same proof as for $\mathbf{Top}$.) Equalizers are embeddings by their construction. Conversely, if $f : X \to Y$ is an embedding, then $f$ is the equalizer of the two characteristic maps $\chi_Y, \chi_{f(X)} : Y \rightrightarrows \{0,1\}$, where $\{0,1\}$ carries the trivial $\sigma$-algebra.'
 ),
 (
     'Met_c',
@@ -143,12 +143,12 @@ VALUES
 (
     'Pos',
     'embeddings',
-    'Every regular monomorphism is an embedding by the explicit construction of equalizers. For the converse, let $i : P \to Q$ be an embedding, which we may assume to be an inclusion. Consider the cokernel pair $C := Q \cup_P Q$. It exists because the category has pushouts, but we can (and need to) describe it more concretely: As a set, $C$ is a disjoint union of $P$ and two copies of $Q \setminus P$. The elements will be denoted by $p,q_1,q_2$. The $i$th inclusion map $Q \to C$ maps $p \in P$ to itself and $q \in Q \setminus P$ to $q_i$. The ordering is directly induced by $Q$: We have $p \leq p''$ in $C$ iff $p \leq p''$ in $P$, we have $p \leq q_i$ iff $p \leq q$ in $Q$, etc. One verifies that this indeed defines a partial order, and by construction the two maps $Q \to C$ are order-preserving and have equalizer $P$.'
+    'Every regular monomorphism is an embedding by the explicit construction of equalizers. For the converse, let $i : P \to Q$ be an embedding, which we may assume to be an inclusion. Consider the cokernel pair $C := Q \cup_P Q$. It exists because the category has pushouts, but we can (and need to) describe it more concretely: As a set, $C$ is a disjoint union of $P$ and two copies of $Q \setminus P$. The elements will be denoted by $p,q_1,q_2$. The $i$th inclusion map $Q \to C$ maps $p \in P$ to itself and $q \in Q \setminus P$ to $q_i$. The ordering is directly induced by $Q$: We have $p \leq p''$ in $C$ iff $p \leq p''$ in $P$, we have $p \leq q_i$ iff $p \leq q$ in $Q$, etc. One verifies that this indeed defines a partial order, and by construction the two maps $Q \rightrightarrows C$ are order-preserving and have equalizer $P$.'
 ),
 (
     'Prost',
     'embeddings',
-    'Every regular monomorphism is an embedding by the explicit construction of equalizers. For the converse, let $i : P \to Q$ be an embedding, which we may assume to be an inclusion. Consider the cokernel pair $C := Q \cup_P Q$. It exists because the category has pushouts, but we can (and need to) describe it more concretely: As a set, $C$ is a disjoint union of $P$ and two copies of $Q \setminus P$. The elements will be denoted by $p,q_1,q_2$. The $i$th inclusion map $Q \to C$ maps $p \in P$ to itself and $q \in Q \setminus P$ to $q_i$. The ordering is directly induced by $Q$: We have $p \leq p''$ in $C$ iff $p \leq p''$ in $P$, we have $p \leq q_i$ iff $p \leq q$ in $Q$, etc. One verifies that this indeed defines a preorder, and by construction the two maps $Q \to C$ are order-preserving and have equalizer $P$.'
+    'Every regular monomorphism is an embedding by the explicit construction of equalizers. For the converse, let $i : P \to Q$ be an embedding, which we may assume to be an inclusion. Consider the cokernel pair $C := Q \cup_P Q$. It exists because the category has pushouts, but we can (and need to) describe it more concretely: As a set, $C$ is a disjoint union of $P$ and two copies of $Q \setminus P$. The elements will be denoted by $p,q_1,q_2$. The $i$th inclusion map $Q \to C$ maps $p \in P$ to itself and $q \in Q \setminus P$ to $q_i$. The ordering is directly induced by $Q$: We have $p \leq p''$ in $C$ iff $p \leq p''$ in $P$, we have $p \leq q_i$ iff $p \leq q$ in $Q$, etc. One verifies that this indeed defines a preorder, and by construction the two maps $Q \rightrightarrows C$ are order-preserving and have equalizer $P$.'
 ),
 (
     'R-Mod',

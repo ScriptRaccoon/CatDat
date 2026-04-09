@@ -33,7 +33,7 @@ VALUES
 	'walking_pair',
 	'left cancellative',
 	TRUE,
-	'The two morphisms $0 \to 1$ are clearly monomorphisms.'
+	'The two morphisms $0 \rightrightarrows 1$ are clearly monomorphisms.'
 ),
 (
 	'walking_pair',

@@ -34,7 +34,7 @@ VALUES
 (
 	'left cancellative',
 	'is',
-	'A category is <i>left cancellative</i> if for every morphism $f : A \to B$ and every parallel pair of morphisms $g,h : B \to C$ with $f \circ g = f \circ h$ we have $g = h$. Equivalently, every morphism is a monomorphism.',
+	'A category is <i>left cancellative</i> if for every morphism $f : A \to B$ and every parallel pair of morphisms $g,h : B \rightrightarrows C$ with $f \circ g = f \circ h$ we have $g = h$. Equivalently, every morphism is a monomorphism.',
 	'https://ncatlab.org/nlab/show/cancellative+category',
 	'right cancellative',
 	TRUE
@@ -42,7 +42,7 @@ VALUES
 (
 	'right cancellative',
 	'is',
-	'A category is <i>right cancellative</i> if for every morphism $f : A \to B$ and every parallel pair of morphisms $g,h : C \to A$ with $g \circ f = h \circ f$ we have $g = h$. Equivalently, every morphism is an epimorphism.',
+	'A category is <i>right cancellative</i> if for every morphism $f : A \to B$ and every parallel pair of morphisms $g,h : C \rightrightarrows A$ with $g \circ f = h \circ f$ we have $g = h$. Equivalently, every morphism is an epimorphism.',
 	'https://ncatlab.org/nlab/show/cancellative+category',
 	'left cancellative',
 	TRUE

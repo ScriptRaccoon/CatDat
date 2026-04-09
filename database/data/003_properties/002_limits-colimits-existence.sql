@@ -202,7 +202,7 @@ VALUES
 (
 	'equalizers',
 	'has',
-	'An <i>equalizer</i> of a pair of morphisms $f,g : A \to B$ is an object $E$ with a morphism $e : E \to A$ such that $f \circ e = g \circ e$ and which is universal with respect to this property. This property refers to the existence of equalizers.',
+	'An <i>equalizer</i> of a pair of morphisms $f,g : A \rightrightarrows B$ is an object $E$ with a morphism $e : E \to A$ such that $f \circ e = g \circ e$ and which is universal with respect to this property. This property refers to the existence of equalizers.',
 	'https://ncatlab.org/nlab/show/equalizer',
 	'coequalizers',
 	TRUE
@@ -210,7 +210,7 @@ VALUES
 (
 	'coequalizers',
 	'has',
-	'A <i>coequalizer</i> of a pair of morphisms $f,g : A \to B$ is an object $C$ with a morphism $c : B \to C$ such that $c \circ f = c \circ g$ and which is universal with respect to this property. This property refers to the existence of coequalizers.',
+	'A <i>coequalizer</i> of a pair of morphisms $f,g : A \rightrightarrows B$ is an object $C$ with a morphism $c : B \to C$ such that $c \circ f = c \circ g$ and which is universal with respect to this property. This property refers to the existence of coequalizers.',
 	'https://ncatlab.org/nlab/show/coequalizer',
 	'equalizers',
 	TRUE

@@ -113,7 +113,7 @@ VALUES
     (
         'equalizer-preserving',
         'is',
-        'A functor $F$ preserves equalizers when for every parallel pair of morphisms $f,g : A \to B$ whose equalizer $i : E \to A$ exists, also $F(i) : F(E) \to F(A)$ is an equalizer of $F(f),F(g) : F(A) \to F(B)$.',
+        'A functor $F$ preserves equalizers when for every parallel pair of morphisms $f,g : A \rightrightarrows B$ whose equalizer $i : E \to A$ exists, also $F(i) : F(E) \to F(A)$ is an equalizer of $F(f),F(g) : F(A) \rightrightarrows F(B)$.',
         NULL,
         TRUE,
         'coequalizer-preserving'
@@ -121,7 +121,7 @@ VALUES
     (
         'coequalizer-preserving',
         'is',
-        'A functor $F$ preserves coequalizers when for every parallel pair of morphisms $f,g : A \to B$ whose coequalizer $p : B \to Q$ exists, also $F(p) : F(B) \to F(Q)$ is an coequalizer of $F(f),F(g) : F(A) \to F(B)$.',
+        'A functor $F$ preserves coequalizers when for every parallel pair of morphisms $f,g : A \rightrightarrows B$ whose coequalizer $p : B \to Q$ exists, also $F(p) : F(B) \to F(Q)$ is an coequalizer of $F(f),F(g) : F(A) \rightrightarrows F(B)$.',
         NULL,
         TRUE,
         'equalizer-preserving'

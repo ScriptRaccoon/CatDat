@@ -51,7 +51,7 @@ VALUES
 	'Ring',
 	'cogenerating set',
 	FALSE,
-	'Assume that there is a cogenerating set $S$. We may assume $0 \notin S$. Take an infinite field $F$ which is larger than all the rings in $S$ and admits a non-trivial automorphism (for example, a field of rational functions). Then there is no ring homomorphism $F \to Q$ for $Q \in S$. Since $S$ cogenerates, this implies that all homomorphisms $F \to F$ are equal, a contradiction.'
+	'Assume that there is a cogenerating set $S$. We may assume $0 \notin S$. Take an infinite field $F$ which is larger than all the rings in $S$ and admits a non-trivial automorphism (for example, a field of rational functions). Then there is no ring homomorphism $F \to Q$ for $Q \in S$. Since $S$ cogenerates, this implies that every two homomorphisms $F \rightrightarrows F$ are equal, a contradiction.'
 ),
 (
 	'Ring',

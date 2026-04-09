@@ -82,7 +82,7 @@ VALUES
 (
 	'generator',
 	'has a',
-	'An object $G$ of a category is called a <i>generator</i> if for every pair of parallel morphisms $f,g : A \to B$, $f = g$ holds if for every morphism $h : G \to A$ we have $f \circ h = g \circ h$. Equivalently, the functor $\mathrm{Hom}(G,-) : \mathcal{C} \to \mathbf{Set}^+$ is faithful. This property refers to the existence of a generator. By definition, $G$ is a generator if and only if $\{G\}$ is a <a href="/category-property/generating_set">generating set</a>.',
+	'An object $G$ of a category is called a <i>generator</i> if for every pair of parallel morphisms $f,g : A \rightrightarrows B$ the equation $f = g$ holds if for every morphism $h : G \to A$ we have $f \circ h = g \circ h$. Equivalently, the functor $\mathrm{Hom}(G,-) : \mathcal{C} \to \mathbf{Set}^+$ is faithful. This property refers to the existence of a generator. By definition, $G$ is a generator if and only if $\{G\}$ is a <a href="/category-property/generating_set">generating set</a>.',
 	'https://ncatlab.org/nlab/show/separator',
 	'cogenerator',
 	TRUE
@@ -90,7 +90,7 @@ VALUES
 (
 	'cogenerator',
 	'has a',
-	'An object $Q$ of a category is called a <i>cogenerator</i> if for every pair of parallel morphisms $f,g : A \to B$, $f = g$ holds if for every morphism $h : B \to Q$ we have $h \circ f = h \circ g$. Equivalently, the functor $\mathrm{Hom}(-,Q) : \mathcal{C}^{\mathrm{op}} \to \mathbf{Set}^+$ is faithful. This property refers to the existence of a cogenerator. By definition, $Q$ is a cogenerator if and only if $\{Q\}$ is a <a href="/category-property/cogenerating_set">cogenerating set</a>.',
+	'An object $Q$ of a category is called a <i>cogenerator</i> if for every pair of parallel morphisms $f,g : A \rightrightarrows B$ the equation $f = g$ holds if for every morphism $h : B \to Q$ we have $h \circ f = h \circ g$. Equivalently, the functor $\mathrm{Hom}(-,Q) : \mathcal{C}^{\mathrm{op}} \to \mathbf{Set}^+$ is faithful. This property refers to the existence of a cogenerator. By definition, $Q$ is a cogenerator if and only if $\{Q\}$ is a <a href="/category-property/cogenerating_set">cogenerating set</a>.',
 	'https://ncatlab.org/nlab/show/cogenerator',
 	'generator',
 	TRUE

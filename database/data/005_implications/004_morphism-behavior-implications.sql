@@ -17,14 +17,14 @@ VALUES
 	'zero-no-mono',
 	'["left cancellative", "zero morphisms"]',
 	'["thin"]',
-	'If $f,g : A \to B$ are two morphisms, then $0_{B,B} \circ f = 0_{A,B} = 0_{B,B} \circ g$, so that $f = g$.',
+	'If $f,g : A \rightrightarrows B$ are two morphisms, then $0_{B,B} \circ f = 0_{A,B} = 0_{B,B} \circ g$, so that $f = g$.',
 	FALSE
 ),
 (
 	'codiagonal-no-mono',
 	'["left cancellative", "binary copowers"]',
 	'["thin"]',
-	'For every object $A$ the codiagonal $A + A \to A$ is a split epimorphism, and by assumption a monomorphism, hence an isomorphism. Hence, the two inclusions $i_1,i_2 : A \to A + A$ coincide. Now, if $f, g : A \to B$ are two morphisms, consider the induced morphism $h : A + A \to B$ and compute $f = h \circ i_1 = h \circ i_2 = g$.',
+	'For every object $A$ the codiagonal $A + A \to A$ is a split epimorphism, and by assumption a monomorphism, hence an isomorphism. Hence, the two inclusions $i_1,i_2 : A \rightrightarrows A + A$ coincide. Now, if $f, g : A \rightrightarrows B$ are two morphisms, consider the induced morphism $h : A + A \to B$ and compute $f = h \circ i_1 = h \circ i_2 = g$.',
 	FALSE
 ),
 (
@@ -136,7 +136,7 @@ VALUES
 	'one-way_products_thin',
 	'["one-way", "binary products"]',
 	'["thin"]',
-	'Let $X$ be any object. The swap $\tau : X \times X \to X \times X$ is equal to the identity. It follows that the projections $p_1,p_2 : X \times X \rightrightarrows X$ are the same. And this means that all morphisms $Y \rightrightarrows X$ are the same.',
+	'Let $X$ be any object. The swap $\tau : X \times X \to X \times X$ is equal to the identity. It follows that the projections $p_1,p_2 : X \times X \rightrightarrows X$ are the same. And this means that every two morphisms $Y \rightrightarrows X$ are the same.',
 	FALSE
 ),
 (
