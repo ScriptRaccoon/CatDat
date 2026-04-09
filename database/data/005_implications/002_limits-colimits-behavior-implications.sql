@@ -91,6 +91,13 @@ VALUES
 	FALSE
 ),
 (
+	'distributive_duality',
+	'["thin", "distributive"]',
+	'["codistributive"]',
+	'This is equivalent to the classical result that the <a href="https://en.wikipedia.org/wiki/Distributive_lattice" target="_blank">distributivity law in a lattice</a> can be defined in two ways, see e.g. Birkhoff, <i>Lattice Theory</i>, Ch. IX, Thm. 1.',
+	FALSE
+),
+(
 	'strict_initial_consequence',
 	'["strict initial object"]',
 	'["initial object"]',
