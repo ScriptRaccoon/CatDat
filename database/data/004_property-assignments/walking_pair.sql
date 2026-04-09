@@ -70,4 +70,10 @@ VALUES
 	'pullbacks',
 	FALSE,
 	'The two morphisms $a,b : 0 \rightrightarrows 1$ have no pullback, since it would have to consist of identities $0 \leftarrow 0 \rightarrow 0$, but $a \neq b$.'
+),
+(
+	'walking_pair',
+	'sifted colimits',
+	TRUE,
+	'A proof can be found <a href="/pdf/walking_parallel_pair_sifted_colimit.pdf" target="_blank">here</a>.'
 );
