@@ -113,5 +113,7 @@
 	"locally strongly finitely presentable": false,
 	"direct": false,
 	"inverse": false,
-	"one-way": false
+	"one-way": false,
+	"cocartesian coclosed": false,
+	"locally cocartesian coclosed": false
 }
