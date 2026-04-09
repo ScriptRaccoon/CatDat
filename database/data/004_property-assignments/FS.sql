@@ -106,4 +106,14 @@ VALUES
 	'binary copowers',
 	FALSE,
 	'Assume that the copower $X := 2+2$ exists. Since we have a surjective map $2 \to X$, the set $X$ has at most $2$ elements. The codiagonal $X \to 2$ shows that $X$ has at least $2$ elements. Thus, $X \cong 2$. For all finite sets $Y$ we get a bijection $\mathrm{Hom}(2,Y) \cong \mathrm{Hom}(2,Y)^2$, in particular the cardinalities are the same. For $Y=2$ this gives the contradiction $2 = 4$.'
+),
+(
+	'FS',
+	'locally cocartesian coclosed',
+	FALSE,
+	'If $X$ is a finite set, the coslice category $X / \mathbf{FS}$ is thin and in fact equivalent to the lattice of equivalence relations on $X$. If $X$ has $\geq 3$ elements, it is not codistributive* and <a href="/category-implication/dual_distributive_criterion">hence</a> not cocartesian coclosed: For simplicity assume $X = \{a,b,c\}$. The bottom element $\bot$ corresponds to the partition $\{\{a\},\{b\},\{c\}\}$, the top element $\top$ to the partition $\{\{a,b,c\}\}$. Now consider the three equivalence relations $E_1,E_2,E_3$ corresponding to the three partitions $\{\{a,b\},\{c\}\}$, $\{\{a,c\},\{b\}\}$, $\{\{b,c\},\{a\}\}$. Then
+	$E_1 \vee (E_2 \wedge E_3) = E_1 \vee \bot = E_1$,
+	but
+	$(E_1 \vee E_2) \wedge (E_1 \vee E_3) = \top \wedge \top = \top$.
+	<p>*For thin categories, the properties codistributive and distributive <a href="/category-implication/distributive_duality">are equivalent</a>.'
 );
