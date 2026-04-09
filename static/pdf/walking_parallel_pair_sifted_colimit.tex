@@ -1,0 +1,112 @@
+\documentclass[a4paper,12pt,reqno]{amsart}
+\usepackage[utf8]{inputenc}
+\usepackage[top=25truemm,bottom=25truemm,left=20truemm,right=20truemm]{geometry}
+
+\usepackage{amsmath, amssymb, amsfonts, mathtools}
+\usepackage{tikz-cd}
+
+\title{The walking parallel pair has sifted colimits}
+\author{Yuto Kawase}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+Let $D\colon\mathcal{C}\to \{u,v\colon 0 \rightrightarrows 1\}$ be a functor from a sifted category.
+If the object $1$ is not contained in the image under $D$, the object $0$ gives a colimit of $D$ because the sifted category $\mathcal{C}$ is connected.
+In what follows, we suppose that there is an object $c_0\in\mathcal{C}$ such that $D(c_0)=1$.
+
+We first claim that for every object $c\in\mathcal{C}$ such that $D(c)=0$, there is a morphism $f\colon c \to x$ with $D(x)=1$; moreover, which of $u$ and $v$ such a morphism is sent to by $D$ is independent of the choice of $f$.
+The existence of $f$ is easy.
+Indeed, since $\mathcal{C}$ is sifted, there is a cospan $c \rightarrow x \leftarrow c_0$, and $D(x)=1$ follows from $D(c_0)=1$.
+
+To show the independence of the value of $D(f)$, suppose that there are morphisms $f\colon c \to x$ and $g\colon c\to y$ such that $D(f)=u$ and $D(g)=v$.
+Since $\mathcal{C}$ is sifted, there is a cospan consisting of $p\colon x \rightarrow z$ and $q\colon z \leftarrow y$.
+Since $\mathcal{C}$ is sifted again, two cospans $(p\circ f, q\circ g)$ and $(\mathrm{id}_c, \mathrm{id}_c)$ are connected to each other, that is, there are a zigzag consisting of $s_i\colon d_{i-1} \rightarrow e_i$ and $t_i\colon e_i \leftarrow d_i$ $(1 \le i \le n)$ and parallel pairs $(l_i,r_i)\colon c \rightrightarrows d_i$ $(0 \le i \le n)$ such that $d_0=z$, $l_0=p\circ f$, $r_0=q\circ g$, $d_n=c$, $l_n=r_n=\mathrm{id}_c$, $s_i \circ l_{i-1} = t_i \circ l_i$, and $s_i \circ r_{i-1} = t_i \circ r_i$ $(1\le i\le n)$.
+\begin{equation*}
+    \begin{tikzcd}[column sep = 1.6em]
+            &[-1.2em]
+                &
+                    &
+                        &
+                            &
+                            c
+                            \ar[dllll,bend right=25,shift right=1,"l_0 = p\circ f"',pos=0.8]
+                            \ar[dllll,bend right=25,shift left=1,"r_0 = q\circ g",pos=0.8]
+                            \ar[dll,bend right=10,shift right=1,"l_1"']
+                            \ar[dll,bend right=10,shift left=1,"r_1"]
+                            \ar[d,shift right=1,"l_2"']
+                            \ar[d,shift left=1,"r_2"]
+                            \ar[drrrr,bend left=25,equal]
+                            \ar[drr,bend left=10,shift right=1,"l_{n-1}"{below left=-2}]
+                            \ar[drr,bend left=10,shift left=1,"r_{n-1}"]
+                                &
+                                    &
+                                        &
+                                            &
+                                                &[-1.2em]
+        \\[30pt]
+        z
+        \ar[r,equal]
+            &
+            d_0
+                &
+                    &
+                    d_1
+                        &
+                            &
+                            d_2
+                                &
+                                \cdots
+                                    &
+                                    d_{n-1}
+                                        &
+                                            &
+                                            d_n
+                                                &
+                                                c
+                                                \ar[l,equal]
+        \\
+            &
+                &
+                e_1
+                \ar[ul,leftarrow,"s_1"]
+                \ar[ur,leftarrow,"t_1"']
+                    &
+                        &
+                        e_2
+                        \ar[ul,leftarrow,"s_2"]
+                        \ar[ur,leftarrow,"t_2"']
+                            &
+                                &
+                                    &
+                                        &
+                                        e_n
+                                        \ar[ul,leftarrow,"s_n"]
+                                        \ar[ur,leftarrow,"t_n"']
+                                            &
+                                                &                                           
+    \end{tikzcd}
+\end{equation*}
+Then, the equality $D(t_1) \circ D(l_1) = D(s_1)\circ D(l_0) = u$ implies that either $D(l_1)=u$ or $D(t_1)=u$ holds, while $D(t_1) \circ D(r_1) = D(s_1)\circ D(r_0) = v$ implies that either $D(r_1)=v$ or $D(t_1)=v$ holds.
+However, the only possible combination is $D(l_1)=u$ together with $D(r_1)=v$, and by repeating this argument, we have $D(l_n)=u$ and $D(r_n)=v$, which is a contradiction.
+
+By the claim, each object $c\in\mathcal{C}$ can be classified exclusively into the following three cases:
+\begin{enumerate}
+    \item
+        $D(c)=1$;
+    \item
+        $D(c)=0$ and there is a morphism from itself sent to $u$ by $D$;
+    \item
+        $D(c)=0$ and there is a morphism from itself sent to $v$ by $D$.
+\end{enumerate}  
+Now, we have a cocone $(\alpha_c\colon D(c) \to 1)_{c\in\mathcal{C}}$ over $D$ by letting $\alpha_c\coloneqq \mathrm{id}_1$ if $c$ is classified into the first case, $\alpha_c\coloneqq u$ for the second case, and $\alpha_c\coloneqq v$ for the third case.
+Moreover, this is a unique cocone over $D$:
+If $\beta$ is another cocone, its vertex should be $1$ by the existence of $c_0$.
+If $c\in\mathcal{C}$ is classified into the first case, $\beta_c$ should be the identity.
+For the second case, taking a morphism $f\colon c\to x$ such that $D(f)=u$, we can obtain $\beta_c = \beta_x \circ D(f) = D(f) = u$.
+Similarly, we have $\beta_c = v$ for the third case.
+This concludes $\beta=\alpha$, and since there is no non-trivial endomorphism on the vertex $1$, $\alpha$ gives a colimit.
+
+
+\end{document}
