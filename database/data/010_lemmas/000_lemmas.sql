@@ -34,4 +34,10 @@ INSERT INTO lemmas (
     and likewise $p_2 \circ \alpha \circ \beta = p_2$. We also have $\beta \circ \alpha = \mathrm{id}_{X \oplus Y}$ with a very similar calculation that shows $\beta \circ \alpha \circ i_1 = i_1$ and $\beta \circ \alpha \circ i_2 = i_2$.
     <p>Therefore, for morphisms $f,g : A \rightrightarrows B$ the composite $A \to B$ in the claim is equal to</p>
     $\begin{aligned} \nabla \circ \beta \circ (f,g) & = \nabla \circ (i_1 \circ p_1  + i_2 \circ p_2) \circ (f,g) \\ & = \nabla \circ i_1 \circ p_1 \circ (f,g) + \nabla \circ i_2 \circ p_2 \circ (f,g) \\ & = p_1 \circ (f,g)  +  p_2 \circ (f,g) \\ & = f + g. \end{aligned}$'
+),
+(
+	'generator_construction',
+    'Construction of Generators',
+    'In a category let $S$ be a generating set which is <a href="/category-property/strongly_connected">strongly connected</a> (between any two objects in $S$ there is a morphism). If the coproduct $U := \coprod_{G \in S} G$ exists, then it is a generator.',
+    'This is a straight forward generalization of <a href="/category-implication/generator_via_coproduct">this result</a>. We remark that the assumption about $S$ implies that each inclusion $G \to U$ has a left inverse. Now let $f,g : A \rightrightarrows B$ be two morphisms with $f h = g h$ for all $h : U \to A$. If $G \in S$, any morphism $G \to A$ extends to $U$ by our preliminary remark. Thus, $fh = gh$ holds for all $h : G \to A$ and $G \in S$. Since $S$ is a generating set, this implies $f = g$.'
 );
