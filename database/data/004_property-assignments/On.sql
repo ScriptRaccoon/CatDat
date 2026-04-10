@@ -49,7 +49,7 @@ VALUES
 ),
 (
 	'On',
-	'strongly connected',
+	'semi-strongly connected',
 	TRUE,
 	'It is well-known that for ordinals $\alpha,\beta$ we have $\alpha \leq \beta$ or $\beta \leq \alpha$.'
 ),

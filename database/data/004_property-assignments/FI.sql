@@ -61,7 +61,7 @@ VALUES
 ),
 (
 	'FI',
-	'strongly connected',
+	'semi-strongly connected',
 	TRUE,
 	'If $X,Y$ are two finite sets, we have $\mathrm{card}(X) \leq \mathrm{card}(Y)$ or $\mathrm{card}(Y) \leq \mathrm{card}(X)$. In the first case there will be an injection $X \to Y$, in the second case there will be an injection $Y \to X$.'
 ),

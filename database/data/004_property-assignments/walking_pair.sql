@@ -19,7 +19,7 @@ VALUES
 ),
 (
 	'walking_pair',
-	'strongly connected',
+	'semi-strongly connected',
 	TRUE,
 	'This is trivial.'
 ),

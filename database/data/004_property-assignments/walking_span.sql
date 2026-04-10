@@ -49,7 +49,7 @@ VALUES
 ),
 (
 	'walking_span',
-	'strongly connected',
+	'semi-strongly connected',
 	FALSE,
 	'There is no morphism between $1$ and $2$.'
 );

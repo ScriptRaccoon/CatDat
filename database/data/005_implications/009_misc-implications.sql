@@ -14,8 +14,8 @@ VALUES
 	FALSE
 ),
 (
-	'strongly_connected_consequence',
-	'["strongly connected"]',
+	'semi-strongly_connected_consequence',
+	'["semi-strongly connected"]',
 	'["connected"]',
 	'This holds by definition.',
 	FALSE
@@ -85,7 +85,7 @@ VALUES
 ),
 (
 	'filtered_via_equalizers',
-	'["strongly connected", "coequalizers"]',
+	'["semi-strongly connected", "coequalizers"]',
 	'["filtered"]',
 	'This is obvious.',
 	FALSE

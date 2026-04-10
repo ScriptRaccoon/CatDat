@@ -43,7 +43,7 @@ VALUES
 ),
 (
 	'walking_commutative_square',
-	'strongly connected',
+	'semi-strongly connected',
 	FALSE,
 	'There is no morphism between $b$ and $c$ (resp., between $(0,1)$ and $(1,0)$).'
 ),

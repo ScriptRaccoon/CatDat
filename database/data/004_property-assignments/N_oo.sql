@@ -37,7 +37,7 @@ VALUES
 ),
 (
 	'N_oo',
-	'strongly connected',
+	'semi-strongly connected',
 	TRUE,
 	'This is trivial.'
 ),

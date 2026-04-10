@@ -37,7 +37,7 @@ VALUES
 ),
 (
 	'Cat',
-	'strongly connected',
+	'semi-strongly connected',
 	TRUE,
 	'Every non-empty category is weakly terminal (by using constant functors).'
 ),

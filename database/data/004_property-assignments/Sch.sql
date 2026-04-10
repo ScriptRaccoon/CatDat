@@ -67,9 +67,9 @@ VALUES
 ),
 (
 	'Sch',
-	'strongly connected',
+	'semi-strongly connected',
 	FALSE,
-	'This is because already the full subcategory of affine schemes is not strongly connected, see <a href="/category/CRing">the entry for $\mathbf{CRing}$</a>. Specifically, there is no morphism between $\mathrm{Spec}(\mathbb{F}_2)$ and $\mathrm{Spec}(\mathbb{F}_3)$.'
+	'This is because already the full subcategory of affine schemes is not semi-strongly connected, see <a href="/category/CRing">the entry for $\mathbf{CRing}$</a>. Specifically, there is no morphism between $\mathrm{Spec}(\mathbb{F}_2)$ and $\mathrm{Spec}(\mathbb{F}_3)$.'
 ),
 (
 	'Sch',

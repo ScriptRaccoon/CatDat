@@ -19,7 +19,7 @@ VALUES
 ),
 (
 	'real_interval',
-	'strongly connected',
+	'semi-strongly connected',
 	TRUE,
 	'This is trivial.'
 ),

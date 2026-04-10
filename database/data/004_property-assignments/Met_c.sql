@@ -61,7 +61,7 @@ VALUES
 ),
 (
 	'Met_c',
-	'strongly connected',
+	'semi-strongly connected',
 	TRUE,
 	'Every non-empty metric space is weakly terminal (by using constant maps).'
 ),

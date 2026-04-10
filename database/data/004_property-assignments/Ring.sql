@@ -67,7 +67,7 @@ VALUES
 ),
 (
 	'Ring',
-	'strongly connected',
+	'semi-strongly connected',
 	FALSE,
 	'There is no homomorphism between $\mathbb{F}_2$ and $\mathbb{F}_3$.'
 ),

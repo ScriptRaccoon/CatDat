@@ -85,9 +85,9 @@ VALUES
 ),
 (
 	'sequential_implies_lcc',
-	'["thin", "strongly connected"]',
+	'["thin", "semi-strongly connected"]',
 	'["locally cartesian closed"]',
-	'Each slice is thin, strongly connected, and has a terminal object. Every such category is cartesian closed, where the exponential $a \Rightarrow b$ (Heyting implication) is $1$ when $a \leq b$ and otherwise $b$.',
+	'Each slice is thin, semi-strongly connected, and has a terminal object. Thus, it corresponds to a linear order with a largest element $1$. Every such category is cartesian closed, where the exponential $a \Rightarrow b$ (Heyting implication) is $1$ when $a \leq b$ and otherwise $b$.',
 	FALSE
 ),
 (

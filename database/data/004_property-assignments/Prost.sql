@@ -43,7 +43,7 @@ VALUES
 ),
 (
 	'Prost',
-	'strongly connected',
+	'semi-strongly connected',
 	TRUE,
 	'Every non-empty proset is weakly terminal (by using constant maps).'
 ),

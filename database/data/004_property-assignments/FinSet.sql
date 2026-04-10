@@ -31,7 +31,7 @@ VALUES
 ),
 (
 	'FinSet',
-	'strongly connected',
+	'semi-strongly connected',
 	TRUE,
 	'Every non-empty finite set is weakly terminal (by using constant maps).'
 ),

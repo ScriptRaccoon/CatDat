@@ -55,7 +55,7 @@ VALUES
 ),
 (
 	'Haus',
-	'strongly connected',
+	'semi-strongly connected',
 	TRUE,
 	'Every non-empty Hausdorff space is weakly terminal (by using constant maps).'
 ),

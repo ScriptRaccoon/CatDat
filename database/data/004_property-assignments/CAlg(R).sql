@@ -67,9 +67,9 @@ VALUES
 ),
 (
 	'CAlg(R)',
-	'strongly connected',
+	'semi-strongly connected',
 	FALSE,
-	'Choose a maximal ideal $\mathfrak{m}$ of $R$, so $K := R/\mathfrak{m}$ is a field. If $\mathbf{CAlg}(R)$ is strongly connected, then also $\mathbf{CAlg}(K)$ is strongly connected. This has been disproven in <a href="https://math.stackexchange.com/questions/5129689" target="_blank">MSE/5129689</a>.'
+	'Choose a maximal ideal $\mathfrak{m}$ of $R$, so $K := R/\mathfrak{m}$ is a field. If $\mathbf{CAlg}(R)$ is semi-strongly connected, then also $\mathbf{CAlg}(K)$ is semi-strongly connected. This has been disproven in <a href="https://math.stackexchange.com/questions/5129689" target="_blank">MSE/5129689</a>.'
 ),
 (
 	'CAlg(R)',

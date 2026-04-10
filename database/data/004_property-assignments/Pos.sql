@@ -43,7 +43,7 @@ VALUES
 ),
 (
 	'Pos',
-	'strongly connected',
+	'semi-strongly connected',
 	TRUE,
 	'Every non-empty poset is weakly terminal (by using constant maps).'
 ),

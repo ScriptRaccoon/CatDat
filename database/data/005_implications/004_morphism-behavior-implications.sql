@@ -86,7 +86,7 @@ VALUES
 (
 	'groupoid_connected',
 	'["groupoid", "connected"]',
-	'["strongly connected"]',
+	'["semi-strongly connected"]',
 	'This is trivial.',
 	FALSE
 ),

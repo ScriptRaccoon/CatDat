@@ -13,7 +13,7 @@ VALUES
 ),
 (
 	'walking_composable_pair',
-	'strongly connected',
+	'semi-strongly connected',
 	TRUE,
 	'This is trivial.'
 ),

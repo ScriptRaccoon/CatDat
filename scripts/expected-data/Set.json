@@ -12,7 +12,7 @@
 	"cogenerating set": true,
 	"complete": true,
 	"connected": true,
-	"strongly connected": true,
+	"semi-strongly connected": true,
 	"connected colimits": true,
 	"connected limits": true,
 	"coproducts": true,

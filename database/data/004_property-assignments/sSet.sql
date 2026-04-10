@@ -31,7 +31,7 @@ VALUES
 ),
 (
 	'sSet',
-	'strongly connected',
+	'semi-strongly connected',
 	TRUE,
 	'Let $X,Y$ be two simplicial sets. Assume that $X_0$ is empty. Then $X_n$ is empty for all $n$ since there is a morphism $[0] \to [n]$, hence a map $X_n \to X_0$. So there is a morphism $X \to Y$ for trivial reasons. If $X_0$ is non-empty, pick an element. By the Yoneda Lemma it corresponds to a morphism $\Delta^0 \to X$. Since $\Delta^0 = 1$ is terminal, there is a morphism $Y \to \Delta^0$, and these compose to a morphism $Y \to X$.'
 ),

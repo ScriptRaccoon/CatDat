@@ -79,9 +79,9 @@ VALUES
 ),
 (
 	'Z',
-	'strongly connected',
+	'semi-strongly connected',
 	FALSE,
-	'This is because already the full subcategory of representable functors is not strongly connected, see <a href="/category/CRing">the entry for $\mathbf{CRing}$</a>. Specifically, there is no morphism between $\mathrm{Hom}(\mathbb{F}_2,-)$ and $\mathrm{Hom}(\mathbb{F}_3,-)$.'
+	'This is because already the full subcategory of representable functors is not semi-strongly connected, see <a href="/category/CRing">the entry for $\mathbf{CRing}$</a>. Specifically, there is no morphism between $\mathrm{Hom}(\mathbb{F}_2,-)$ and $\mathrm{Hom}(\mathbb{F}_3,-)$.'
 ),
 (
 	'Z',

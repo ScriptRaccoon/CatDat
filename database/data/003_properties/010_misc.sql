@@ -24,11 +24,11 @@ VALUES
 	TRUE
 ),
 (
-	'strongly connected',
+	'semi-strongly connected',
 	'is',
-	'A category is <i>strongly connected</i> if it is inhabited and every two objects $A,B$ can be joined via a morphism: there is a morphism $A \to B$ or there is a morphism $B \to A$. Notice that this is stronger than being connected, and that posets with this property are precisely the inhabited totally ordered sets.',
+	'A category is <i>semi-strongly connected</i> if it is inhabited and for every two objects $A,B$ there is a morphism $A \to B$ or there is a morphism $B \to A$. Notice that this is stronger than being connected, and that posets with this property are precisely the inhabited totally ordered sets.',
 	'https://ncatlab.org/nlab/show/strongly+connected+category',
-	'strongly connected',
+	'semi-strongly connected',
 	TRUE
 ),
 (

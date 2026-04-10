@@ -37,7 +37,7 @@ VALUES
 ),
 (
 	'walking_morphism',
-	'strongly connected',
+	'semi-strongly connected',
 	TRUE,
 	'This is trivial.'
 ),

@@ -13,7 +13,7 @@ VALUES
 ),
 (
 	'walking_idempotent',
-	'strongly connected',
+	'semi-strongly connected',
 	TRUE,
 	'This is trivial.'
 ),

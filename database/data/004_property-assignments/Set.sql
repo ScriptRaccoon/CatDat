@@ -19,7 +19,7 @@ VALUES
 ),
 (
 	'Set',
-	'strongly connected',
+	'semi-strongly connected',
 	TRUE,
 	'Every non-empty set is weakly terminal (by using constant maps).'
 ),

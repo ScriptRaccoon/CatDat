@@ -79,7 +79,7 @@ VALUES
 ),
 (
 	'Setne',
-	'strongly connected',
+	'semi-strongly connected',
 	TRUE,
 	'We can use constant maps.'
 ),

@@ -13,7 +13,7 @@ VALUES
 ),
 (
 	'walking_fork',
-	'strongly connected',
+	'semi-strongly connected',
 	TRUE,
 	'This is obvious.'
 ),

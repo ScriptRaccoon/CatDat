@@ -37,7 +37,7 @@ VALUES
 ),
 (
 	'SetxSet',
-	'strongly connected',
+	'semi-strongly connected',
 	FALSE,
 	'When $X$ is non-empty, there is no morphism between $(\varnothing,X)$ and $(X,\varnothing)$.'
 ),
