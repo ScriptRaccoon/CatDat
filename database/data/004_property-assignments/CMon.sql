@@ -25,12 +25,6 @@ VALUES
 ),
 (
 	'CMon',
-	'disjoint coproducts',
-	TRUE,
-	'This follows from the description of the coproduct as a form of direct sum (very similar to $\mathbf{Ab}$).'
-),
-(
-	'CMon',
 	'biproducts',
 	TRUE,
 	'This follows from the explicit construction of coproducts and products.'

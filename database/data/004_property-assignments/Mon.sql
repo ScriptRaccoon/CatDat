@@ -25,12 +25,6 @@ VALUES
 ),
 (
 	'Mon',
-	'disjoint coproducts',
-	TRUE,
-	'It follows from the normal form of the elements of coproducts of monoids that the inclusions $G \to G \sqcup H \leftarrow H$ are injective (hence, monomorphisms) and that their intersection is trivial.'
-),
-(
-	'Mon',
 	'unital',
 	TRUE,
 	'If a submonoid of $X \times Y$ contains $X \times \{1\}$ and $\{1\} \times Y$, then for all $x \in X$ and $y \in Y$ it also contains $(x,1) \cdot (1,y) = (x,y)$.'

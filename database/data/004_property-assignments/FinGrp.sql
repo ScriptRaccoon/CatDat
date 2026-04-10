@@ -55,12 +55,6 @@ VALUES
 ),
 (
 	'FinGrp',
-	'disjoint finite products',
-	TRUE,
-	'This can be deduced from the fact that $\mathbf{Grp}$ has disjoint finite products. But we can also show it directly: Clearly, the projections $A \times B \to A$ are surjective, hence epimorphisms. To show that $A \sqcup_{A \times B} B$ is trivial, let $C$ be a finite group which admits homomorphisms $f : A \to C$, $g : B \to C$ with $f(p_1(a,b))=g(p_2(a,b))$ for all $(a,b) \in A \times B$, i.e. $f(a)=g(b)$. Then $f(a)=g(1)=1$, and likewise $g(b)=1$, so that both $f$ and $g$ are trivial.'
-),
-(
-	'FinGrp',
 	'subobject classifier',
 	FALSE,
 	'If there was a subgroup classifier $\Omega$, every subgroup of any finite group would be the kernel of a homomorphism to $\Omega$. But not every subgroup is normal.'

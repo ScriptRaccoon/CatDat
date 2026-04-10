@@ -85,12 +85,6 @@ VALUES
 ),
 (
 	'Setne',
-	'disjoint finite products',
-	TRUE,
-	'Let $A,B$ be non-empty sets. The set $P := A \sqcup_{A \times B} B$ has elements $i_1(a)$, $i_2(b)$ with $i_1(a)=i_2(b)$ for all $(a,b) \in A \times B$. It clearly follows that all elements are equal, and there is at least one since $A$ is non-empty. Thus, $P \cong 1$.'
-),
-(
-	'Setne',
 	'sequential limits',
 	FALSE,
 	'Assume that the sequence of inclusions $\cdots \to \mathbb{N}_{\geq 2} \to \mathbb{N}_{\geq 1} \to \mathbb{N}_{\geq 0} = \mathbb{N}$ as a limit $X$, consisting of maps $X \to \mathbb{N}_{\geq n}$. Since $X$ is non-empty, there is a map $1 \to X$. This corresponds to a family of compatible maps $ 1 \to \mathbb{N}_{\geq n}$, i.e. to compatible elements in $\mathbb{N}_{\geq n}$. But the set $\bigcap_{n \geq 0} \mathbb{N}_{\geq n}$ is empty.'

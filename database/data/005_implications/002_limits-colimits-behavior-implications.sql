@@ -21,13 +21,6 @@ VALUES
 	FALSE
 ),
 (
-	'biproducts_are_disjoint',
-	'["biproducts"]',
-	'["disjoint finite coproducts"]',
-	'The inclusion $i_A : A \to A + B$ is a split by the projection $p_A$, hence a monomorphism. If $f : T \to A$ and $g : T \to B$ are two morphisms with $i_A \circ f = i_B \circ g$, then $f = p_A \circ i_A \circ f = p_A \circ i_B \circ g = 0$, and likewise $g = 0$.',
-	FALSE
-),
-(
 	'pointed_characterization',
 	'["pointed"]',
 	'["zero morphisms", "initial object"]',

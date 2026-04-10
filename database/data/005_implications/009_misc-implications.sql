@@ -42,6 +42,13 @@ VALUES
 	FALSE
 ),
 (
+	'strongly_connected_disjoint_products',
+	'["strongly connected", "finite products"]',
+	'["disjoint finite products"]',
+	'See <a href="https://math.stackexchange.com/a/5132300/1650" target="_blank">MSE/5130190</a> for a proof.',
+	FALSE
+),
+(
 	'malcev_condition',
 	'["Malcev"]',
 	'["finitely complete"]',

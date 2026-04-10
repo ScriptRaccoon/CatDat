@@ -25,21 +25,9 @@ VALUES
 ),
 (
 	'Ban',
-	'disjoint coproducts',
-	TRUE,
-	'This follows from the corresponding fact for vector spaces, since the coproduct is built from the direct sum of vector spaces (using the $1$-norm).'
-),
-(
-	'Ban',
 	'cogenerator',
 	TRUE,
 	'The Hahn-Banach theorem implies that $\mathbb{C}$ is a cogenerator.'
-),
-(
-	'Ban',
-	'disjoint finite products',
-	TRUE,
-	'The proof works exactly as in the case of pointed finitary algebraic categories: If $A,B$ are Banach spaces, to show that $A \sqcup_{A \times B} B$ is trivial, let $R$ be a Banach space which admits linear maps $f : A \to R$, $g : B \to R$ such that $f(p_1(a,b)) = g(p_2(a,b))$ for all $(a,b) \times A \times B$. This means $f(a) = g(b)$. In particular, $f(a) = g(0) = 0$. Likewise, $g(b) = 0$, and we are done.'
 ),
 (
 	'Ban',

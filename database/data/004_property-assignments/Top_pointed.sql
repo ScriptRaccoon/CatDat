@@ -73,12 +73,6 @@ VALUES
 ),
 (
 	'Top*',
-	'disjoint finite products',
-	TRUE,
-	'The proof works exactly as in the case of pointed finitary algebraic categories: If $X,Y$ are pointed spaces, to show that $X \sqcup_{X \times Y} Y$ is trivial, let $T$ be a pointed space which admits pointed continuous maps $f : X \to T$, $g : Y \to T$ such that $f(p_1(x,y)) = g(p_2(x,y))$ for all $(x,y) \times X \times Y$. This means $f(x) = g(y)$. In particular, $f(x) = g(0) = 0$ (where $0$ denotes the base point). Likewise, $g(y) = 0$, and we are done.'
-),
-(
-	'Top*',
 	'counital',
 	TRUE,
 	'Since embeddings are regular monomorphisms in this category (see below) and hence strong monomorphisms, it suffices to prove that the canonical morphism $X \vee Y \hookrightarrow X \times Y$ is an embedding. For a proof, see <a href="https://math.stackexchange.com/questions/4055988" target="_blank">MSE/4055988</a>.'

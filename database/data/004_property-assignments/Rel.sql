@@ -31,7 +31,7 @@ VALUES
 ),
 (
 	'Rel',
-	'disjoint coproducts',
+	'coproducts',
 	TRUE,
 	'It is an easy exercise to deduce this from the corresponding fact for sets and that sets form a distributive category.'
 ),

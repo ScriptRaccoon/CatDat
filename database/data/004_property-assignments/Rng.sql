@@ -25,12 +25,6 @@ VALUES
 ),
 (
 	'Rng',
-	'disjoint coproducts',
-	TRUE,
-	'The coproduct of two rngs $R,S$ has as underlying additive group $R \oplus S \oplus (R \otimes S) \oplus (S \otimes R) \oplus \cdots$ from which the claim easily follows.'
-),
-(
-	'Rng',
 	'Malcev',
 	TRUE,
 	'This follows in the same way as for groups, see also Example 2.2.5 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>.'

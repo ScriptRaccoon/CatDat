@@ -31,12 +31,6 @@ VALUES
 ),
 (
 	'Grp',
-	'disjoint coproducts',
-	TRUE,
-	'It follows from the normal form of the elements of coproducts of groups that the inclusions $G \to G \sqcup H \leftarrow H$ are injective (hence, monomorphisms) and that their intersection is trivial.'
-),
-(
-	'Grp',
 	'epi-regular',
 	TRUE,
 	'This holds since every epimorphism is surjective, and surjective homomorphism $A \to B$ is the coequalizer of its kernel pair $A \times_B A \rightrightarrows A$.'

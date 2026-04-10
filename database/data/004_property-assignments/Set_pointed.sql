@@ -37,12 +37,6 @@ VALUES
 ),
 (
 	'Set*',
-	'disjoint coproducts',
-	TRUE,
-	'This follows easily from the description of coproducts as wedge sums.'
-),
-(
-	'Set*',
 	'epi-regular',
 	TRUE,
 	'Every epimorphism is surjective for this category, and in an algebraic category every surjective homomorphism is a regular epimorphism.'
