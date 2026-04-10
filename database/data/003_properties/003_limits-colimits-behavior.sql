@@ -13,7 +13,7 @@ VALUES
 	'A category has <i>biproducts</i> when it has zero morphisms, finite products (denoted $\times$), finite coproducts (denoted $\oplus$), and for every finite family of objects $A_1,\dotsc,A_n$ the canonical morphism
 	<p>$\mu : A_1 \oplus \cdots \oplus A_n \to A_1 \times \cdots \times A_n$</p>
 	is an isomorphism. Such a category is also called <i>semi-additive</i>, and it is automatically enriched over commutative monoids: the sum of $f,g : A \rightrightarrows B$ is defined as:
-	<p>$A \xrightarrow{\Delta} A \times A \xrightarrow{f \times g} B \times B \xrightarrow{\mu^{-1}} B \oplus B \xrightarrow{\nabla} B$</p>',
+	<p>$A \xrightarrow{(f,g)} B \times B \xrightarrow{\mu^{-1}} B \oplus B \xrightarrow{\nabla} B$</p>',
 	'https://ncatlab.org/nlab/show/biproduct',
 	'biproducts',
 	TRUE

@@ -57,7 +57,7 @@ VALUES
 	'Rel',
 	'preadditive',
 	FALSE,
-	'In categories with finite products and coproducts, the preadditive structure is <i>unique</i>: If $f,g : A \rightrightarrows B$ are morphisms, their sum $f+g : A \to B$ is the composite of $(f,g) : A \to B \times B$, the inverse of the canonical morphism $B \oplus B \to B \times B$ (which indeed must be an isomorphism), and the codiagonal $B \oplus B \to B$. In the case of $\mathbf{Rel}$, where both products and coproducts are just disjoint unions, this operation is just the set-theoretic union $f+g = f \cup g$ of relations. This clearly has no inverses.'
+	'In categories with finite products and finite coproducts, the preadditive structure <a href="/lemma/preadditive_structure_unique">is unique</a> if it exists. In the case of $\mathbf{Rel}$, where both products and coproducts are just disjoint unions, this operation is just the set-theoretic union $f+g = f \cup g$ of relations. This clearly has no inverses.'
 ),
 (
 	'Rel',

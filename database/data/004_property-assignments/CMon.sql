@@ -33,7 +33,7 @@ VALUES
 	'CMon',
 	'preadditive',
 	FALSE,
-	'In categories with finite products and coproducts, the preadditive structure is <i>unique</i>: If $f,g : A \rightrightarrows B$ are morphisms, their sum $f+g : A \to B$ is the composite of $(f,g) : A \to B \times B$, the inverse of the canonical morphism $B \oplus B \to B \times B$ (which indeed must be an isomorphism), and the codiagonal $B \oplus B \to B$. In the case of $\mathbf{CMon}$, this is just the pointwise addition of maps, and this is indeed an enrichment of $\mathbf{CMon}$ over itself. But not over $\mathbf{Ab}$, since for example $\mathrm{Hom}(\mathbb{N},\mathbb{N}) \cong \mathbb{N}$ (with respect to addition) is not a group.'
+	'In categories with finite products and finite coproducts, the preadditive structure <a href="/lemma/preadditive_structure_unique">is unique</a> if it exists. In the case of $\mathbf{CMon}$, this is just the pointwise addition of maps. This is indeed an enrichment of $\mathbf{CMon}$ over itself, but not over $\mathbf{Ab}$, since for example $\mathrm{Hom}(\mathbb{N},\mathbb{N}) \cong \mathbb{N}$ (with respect to addition) is not a group.'
 ),
 (
 	'CMon',

@@ -34,7 +34,7 @@ VALUES
 (
 	'additive',
 	'is',
-	'A category is <i>additive</i> if it is preadditive and has finite products (equivalently, finite coproducts). Note that in the context of finite products, the preadditive structure <a href="https://mathoverflow.net/questions/502067" target="_blank">is unique</a>.',
+	'A category is <i>additive</i> if it is preadditive and has finite products (equivalently, finite coproducts). Note that in the context of finite products, the preadditive structure <a href="/lemma/preadditive_structure_unique">is unique</a>.',
 	'https://ncatlab.org/nlab/show/additive+category',
 	'additive',
 	TRUE
