@@ -116,6 +116,8 @@ When contributing new data (categories, functors, properties, implications), ple
 
 - **Simplify Implications**: When adding a new implication, check if it simplifies existing implications and if it deduces some previously non-deduced properties for categories.
 
+- **Avoid repetition**: When the same argument is used repeatedly for various categories but cannot be added as an implication, create a lemma and refer to its page where needed.
+
 - **New Combinations**: Add new categories that satisfy combinations of satisfied properties and unsatisfied properties and not yet in the database. For example, you may add a category that is abelian but neither cocomplete nor essentially small (if it is not already present). The [page with missing data](https://catdat.app/missing) lists consistent combinations of the form $p \land \neg q$ that are not yet witnessed by a category in the database. The same remarks apply to functors.
 
 ### Conventions

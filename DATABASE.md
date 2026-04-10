@@ -33,6 +33,7 @@ Further tables are:
 - `special_morphisms`
 - `related_properties`
 - `category_comments`
+- `lemmas` (a flexible variant of implications)
 
 ## Migrations vs. Data
 
@@ -58,6 +59,6 @@ Use `pnpm db:watch` to run this command automatically every time a file in the s
 
 ## Diagram
 
-This is the database schema as of 31.03.2016; changes may occur.
+This is the database schema as of 31.03.2026; changes may occur.
 
 <img alt="database diagram" src="https://github.com/user-attachments/assets/71c5a6f6-2747-4692-8518-d562dbd51a91" />
