@@ -64,4 +64,10 @@ VALUES
 	'regular subobject classifier',
 	FALSE,
 	'Assume that $\mathbf{Rng}$ has a subobject classifier $\Omega$. Since $0$ is a zero object, every regular subobject $R \subseteq S$ would be the kernel of some homomorphism $S \to \Omega$. In particular, it would be an ideal. Now take any pair of homomorphisms $f,g : S \rightrightarrows T$ in $\mathbf{Ring}$. Their equalizer $R \subseteq S$ is also the equalizer in $\mathbf{Rng}$, and it contains $1 \in S$. If it was an ideal, then $R = S$, and hence $f = g$, which is absurd.'
+),
+(
+	'Rng',
+	'coregular',
+	FALSE,
+	'We can copy the proof for the <a href="/category/Ring">category of rings</a>. In short, the inclusion of diagonal matrices $\mathbb{Q}^2 \hookrightarrow M_2(\mathbb{Q})$ is a regular monomorphism, but becomes zero after taking the pushout with $p_1 : \mathbb{Q}^2 \twoheadrightarrow \mathbb{Q}$ because $M_2(\mathbb{Q})$ is simple.'
 );
