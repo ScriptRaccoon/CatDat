@@ -51,7 +51,7 @@ VALUES
 	'Met',
 	'strict initial object',
 	TRUE,
-	'This is because the initial object is the empty metric space.'
+	'The empty metric space is initial and clearly strict.'
 ),
 (
 	'Met',

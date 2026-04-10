@@ -37,12 +37,6 @@ VALUES
 ),
 (
 	'Alg(R)',
-	'strict initial object',
-	FALSE,
-	'The homomorphism $p_1 : R \times R \to R$ is not an isomorphism, and $R$ is initial.'
-),
-(
-	'Alg(R)',
 	'balanced',
 	FALSE,
 	'Take a prime ideal $P \subseteq R$ and consider the $R$-algebra $A := R/P$ (which is an integral domain). Then the inclusion $A \hookrightarrow Q(A)$ is a counterexample.'

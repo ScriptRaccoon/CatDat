@@ -37,12 +37,6 @@ VALUES
 ),
 (
 	'CRing',
-	'strict initial object',
-	FALSE,
-	'The homomorphism $p_1 : \mathbb{Z} \times \mathbb{Z} \to \mathbb{Z}$ is not an isomorphism, and $\mathbb{Z}$ is initial.'
-),
-(
-	'CRing',
 	'balanced',
 	FALSE,
 	'The inclusion $\mathbb{Z} \hookrightarrow \mathbb{Q}$ is a counterexample.'
