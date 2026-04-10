@@ -13,7 +13,7 @@ VALUES
 ),
 (
 	'BN',
-	'semi-strongly connected',
+	'strongly connected',
 	TRUE,
 	'This is trivial.'
 ),

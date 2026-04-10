@@ -16,7 +16,7 @@ VALUES
 (
 	'zero_morphisms_mean_strongly_connected',
 	'["zero morphisms", "inhabited"]',
-	'["semi-strongly connected"]',
+	'["strongly connected"]',
 	'This holds by definition.',
 	FALSE
 ),

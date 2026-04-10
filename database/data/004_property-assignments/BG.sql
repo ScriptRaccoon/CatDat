@@ -19,7 +19,7 @@ VALUES
 ),
 (
 	'BG',
-	'semi-strongly connected',
+	'connected',
 	TRUE,
 	'This is trivial.'
 ),

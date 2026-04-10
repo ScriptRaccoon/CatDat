@@ -7,7 +7,7 @@ INSERT INTO category_property_assignments (
 VALUES
 (
 	'BOn',
-	'semi-strongly connected',
+	'strongly connected',
 	TRUE,
 	'This is trivial.'
 ),

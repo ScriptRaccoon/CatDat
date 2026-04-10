@@ -32,6 +32,14 @@ VALUES
 	TRUE
 ),
 (
+	'strongly connected',
+	'is',
+	'A category is <i>strongly connected</i> if it is inhabited and for every two objects $A,B$ there is a morphism $A \to B$. In other words, each hom-set is inhabited. Notice that when a terminal object $1$ exists, this property means that every object $A$ admits a morphism $1 \to A$.',
+	'https://ncatlab.org/nlab/show/strongly+connected+category',
+	'strongly connected',
+	TRUE
+),
+(
 	'filtered',
 	'is',
 	'A category is <i>filtered</i> if every finite diagram admits a cocone. Equivalently, it is inhabited, for every two objects $x,y$ there is a cospan $x \rightarrow s \leftarrow y$ (not necessarily universal), and every parallel pair $x \rightrightarrows y$ is coequalized by some morphism $y \to c$ (not necessarily universal).',

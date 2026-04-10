@@ -76,4 +76,10 @@ VALUES
 	'sifted colimits',
 	TRUE,
 	'A proof can be found <a href="/pdf/walking_parallel_pair_sifted_colimit.pdf" target="_blank">here</a>.'
+),
+(
+	'walking_pair',
+	'strongly connected',
+	FALSE,
+	'There is no morphism $1 \to 0$.'
 );

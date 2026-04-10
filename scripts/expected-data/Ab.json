@@ -12,6 +12,7 @@
 	"complete": true,
 	"connected": true,
 	"semi-strongly connected": true,
+	"strongly connected": true,
 	"connected colimits": true,
 	"connected limits": true,
 	"coproducts": true,

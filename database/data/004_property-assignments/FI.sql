@@ -112,4 +112,10 @@ VALUES
 	'one-way',
 	FALSE,
 	'Already the full subcategory of <a href="/category/B">finite sets and bijections</a> is not one-way.'
+),
+(
+	'FI',
+	'strongly connected',
+	FALSE,
+	'There is no map from a non-empty set to the empty set.'
 );

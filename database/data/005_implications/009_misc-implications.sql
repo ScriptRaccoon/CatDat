@@ -14,10 +14,31 @@ VALUES
 	FALSE
 ),
 (
+	'strongly_connected_consequence',
+	'["strongly connected"]',
+	'["semi-strongly connected"]',
+	'This is immediate from the definition.',
+	FALSE
+),
+(
 	'semi-strongly_connected_consequence',
 	'["semi-strongly connected"]',
 	'["connected"]',
-	'This holds by definition.',
+	'This is immediate from the definition.',
+	FALSE
+),
+(
+	'thin_not_strongly_connected',
+	'["strongly connected", "thin"]',
+	'["trivial"]',
+	'This is obvious.',
+	FALSE
+),
+(
+	'strongly_connected_pointed_criterion',
+	'["strongly connected", "terminal object", "initial object"]',
+	'["pointed"]',
+	'By assumption there is a morphism $1 \to 0$. There is also a unique morphism $0 \to 1$. They are necessarily inverse to each other.',
 	FALSE
 ),
 (

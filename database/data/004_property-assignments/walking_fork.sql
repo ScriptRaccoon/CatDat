@@ -88,4 +88,10 @@ VALUES
 	'binary powers',
 	FALSE,
 	'Assume that $X := 2 \times 2$ exists. Since there is a diagonal morphism $2 \to X$, we must have $X = 2$, and the two projections $p_1,p_2 : X \rightrightarrows 2$ must be equal to the identity. But $f,g$ induce a morphism $(f,g) : 1 \to X$ with $p_1 (f,g) = f$ and $p_2 (f,g) = g$, so that $f=g$, a contradiction.'
+),
+(
+	'walking_fork',
+	'strongly connected',
+	FALSE,
+	'There is no morphism $1 \to 0$.'
 );
