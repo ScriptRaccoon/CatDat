@@ -33,13 +33,13 @@ VALUES
 	'Sp',
 	'countable powers',
 	FALSE,
-	'We have the following lemma which is easy to prove: Let $\mathcal{C},\mathcal{D}$ be two categories. Assume that $\mathcal{D}$ has an initial object. If $\mathcal{C} \times \mathcal{D}$ has limits of a given shape, then $\mathcal{C}$ also has limits of this shape. Therefore, if $\mathbf{Sp} \simeq \mathbf{FinSet} \times \prod_{n > 0} \Sigma_n{-}\mathbf{FinSet}$ has countable powers, then $\mathbf{FinSet}$ has countable powers as well, which we already know is false (see <a href="/category/FinSet">here</a>).'
+	'If $\mathbf{Sp} \simeq \mathbf{FinSet} \times \prod_{n > 0} \Sigma_n{-}\mathbf{FinSet}$ has countable powers, then $\mathbf{FinSet}$ has countable powers as well by <a href="/lemma/limits_in_factor_categories">this lemma</a>, which we already know is false (see <a href="/category/FinSet">here</a>).'
 ),
 (
 	'Sp',
 	'countable copowers',
 	FALSE,
-	'We have the following lemma which is easy to prove: Let $\mathcal{C},\mathcal{D}$ be two categories. Assume that $\mathcal{D}$ has a terminal object. If $\mathcal{C} \times \mathcal{D}$ has colimits of a given shape, then $\mathcal{C}$ also has colimits of this shape. Therefore, if $\mathbf{Sp} \simeq \mathbf{FinSet} \times \prod_{n > 0} \Sigma_n{-}\mathbf{FinSet}$ has countable copowers, then $\mathbf{FinSet}$ has countable copowers as well, which we already know is false (see <a href="/category/FinSet">here</a>).'
+	'If $\mathbf{Sp} \simeq \mathbf{FinSet} \times \prod_{n > 0} \Sigma_n{-}\mathbf{FinSet}$ has countable copowers, then $\mathbf{FinSet}$ has countable copowers as well by <a href="/lemma/limits_in_factor_categories">this lemma</a> (dualized), which we already know is false (see <a href="/category/FinSet">here</a>).'
 ),	
 (
 	'Sp',

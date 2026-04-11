@@ -40,4 +40,11 @@ INSERT INTO lemmas (
     'Construction of Generators',
     'In a category let $S$ be a generating set which is <a href="/category-property/strongly_connected">strongly connected</a> (between any two objects in $S$ there is a morphism). If the coproduct $U := \coprod_{G \in S} G$ exists, then it is a generator.',
     'This is a straight forward generalization of <a href="/category-implication/generator_via_coproduct">this result</a>. We remark that the assumption about $S$ implies that each inclusion $G \to U$ has a left inverse. Now let $f,g : A \rightrightarrows B$ be two morphisms with $f h = g h$ for all $h : U \to A$. If $G \in S$, any morphism $G \to A$ extends to $U$ by our preliminary remark. Thus, $fh = gh$ holds for all $h : G \to A$ and $G \in S$. Since $S$ is a generating set, this implies $f = g$.'
+),
+(
+    'limits_in_factor_categories',
+    'Limits in factor categories',
+    'Let $\mathcal{C},\mathcal{D}$ be two categories. Assume that $\mathcal{D}$ is inhabited. If $\mathcal{C} \times \mathcal{D}$ has limits of a given shape, then $\mathcal{C}$ also has limits of this shape.',
+    'Let $U \in \mathcal{D}$ be a fixed object. Assume that $X : \mathcal{J} \to \mathcal{C}$ is a diagram. Assume that the diagram $(X,U) : \mathcal{J} \to \mathcal{C} \times \mathcal{D}$ (which is constant in the second variable) has a limit cone $((p_i, u_i) : (L,V) \to (X_i,U))$, thus consisting of morphisms $p_i : L \to X_i$ and $u_i : V \to U$. Clearly, $(p_i : L \to X_i)$ is a cone over $X$. We prove that it is universal:<br>
+    Let $(f_i : T \to X_i)$ be a cone over $X$. Then $((f_i,\mathrm{id}_U) : (T,U) \to (X_i,U))$ is a cone over $(X,U)$. Hence, there is a unique morphism $(f,v) : (T,U) \to (L,V)$, consisting of $f : T \to L$ and $v : U \to V$, such that $(p_i,u_i) \circ (f,v) = (f_i,\mathrm{id}_U)$, i.e. $p_i \circ f = f_i$ and $u_i \circ v = \mathrm{id}_U$. If $g : T \to L$ is another morphism with $p_i \circ g = f_i$, then uniqueness applied to $(g,v)$ shows that $f = g$.'
 );
