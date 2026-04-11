@@ -79,6 +79,8 @@
 	"binary copowers": true,
 	"filtered": true,
 	"cofiltered": true,
+	"sifted": true,
+	"cosifted": true,
 
 	"Grothendieck abelian": false,
 	"Malcev": false,

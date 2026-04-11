@@ -314,7 +314,7 @@ VALUES
 (
 	'cosifted limits',
 	'has',
-	'A category has <i>cosifted limits</i> if it has limits of diagrams indexed by cosifted small categories.',
+	'A category has <i>cosifted limits</i> if it has limits of diagrams indexed by small <a href="/category-property/cosifted">cosifted</a> categories.',
 	'https://ncatlab.org/nlab/show/sifted+colimit',
 	'sifted colimits',
 	TRUE
@@ -322,7 +322,7 @@ VALUES
 (
 	'sifted colimits',
 	'has',
-	'A category has <i>sifted colimits</i> if it has colimits of diagrams indexed by sifted small categories.',
+	'A category has <i>sifted colimits</i> if it has colimits of diagrams indexed by small <a href="/category-property/sifted">sifted</a> categories.',
 	'https://ncatlab.org/nlab/show/sifted+colimit',
 	'cosifted limits',
 	TRUE

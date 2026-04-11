@@ -84,10 +84,24 @@ VALUES
 	FALSE
 ),
 (
-	'filtered_is_connected',
+	'filtered_is_sifted',
 	'["filtered"]',
+	'["sifted"]',
+	'Every filtered category $\mathcal C$ is inhabited and has final diagonal functors $\Delta:\mathcal C\to\mathcal C^J$ for all finite index categories $J$; in particular, it is inhabited and its diagonal $\Delta:\mathcal C\to\mathcal C\times\mathcal C$ is final.',
+	FALSE
+),
+(
+	'sifted_is_connected',
+	'["sifted"]',
 	'["connected"]',
-	'This is obvious.',
+	'Sifted categories are inhabited, and any two objects in a sifted category are joined by a cospan.',
+	FALSE
+),
+(
+	'finite_coproducts_implies_sifted',
+	'["finite coproducts"]',
+	'["sifted"]',
+	'Every category with all finite coproducts is inhabited by its initial object, and for any two objects in it the corresponding coproduct is initial in the corresponding category of cospans.',
 	FALSE
 ),
 (
