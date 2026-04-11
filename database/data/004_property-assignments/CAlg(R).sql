@@ -45,7 +45,7 @@ VALUES
 	'CAlg(R)',
 	'cogenerating set',
 	FALSE,
-	'Assume that there is a cogenerating set $S$. We may assume $0 \notin S$. Take an infinite field $F$ which admits a commutative $R$-algebra structure, is larger than all the algebras in $S$ and admits a non-trivial automorphism (for example, a field of rational functions over some residue field of $R$). Then there is no homomorphism $F \to Q$ for $Q \in S$. Since $S$ cogenerates, this implies that every two homomorphisms $F \rightrightarrows F$ are equal, a contradiction.'
+	'We apply <a href="/lemma/missing_cogenerating_sets">this lemma</a> to the collection of commutative $R$-algebras which are fields: If $F$ is a commutative $R$-algebra that is also a field and $A$ is a non-trivial commutative $R$-algebra, any algebra homomorphism $F \to A$ is injective. For every infinite cardinal $\kappa$ the field of rational functions in $\kappa$ variables over some residue field of $R$ has cardinality $\geq \kappa$ and a non-trivial automorphism (swap two variables).'
 ),
 (
 	'CAlg(R)',

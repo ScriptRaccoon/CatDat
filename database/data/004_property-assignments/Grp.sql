@@ -51,7 +51,7 @@ VALUES
 	'Grp',
 	'cogenerator',
 	FALSE,
-	'Assume there is a group $Q$ that cogenerates. Take an infinite simple group $G$ larger than $Q$ (w.r.t. cardinalities), for example an infinite alternating group. Then every homomorphism $G \to Q$ is trivial. Since $Q$ cogenerates, $G$ is trivial, a contradiction.'
+	'We apply <a href="/lemma/missing_cogenerator">this lemma</a> to the collection of simple groups: Any non-trivial homomorphism from a simple group to a group must be injective, and for every infinite cardinal $\kappa$ there is a simple group of size $\geq \kappa$ (for example, the alternating group on $\kappa$ elements).'
 ),
 (
 	'Grp',

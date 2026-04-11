@@ -63,7 +63,7 @@ VALUES
 	'FinGrp',
 	'cogenerator',
 	FALSE,
-	'Assume there is a finite group $Q$ that cogenerates. Take a simple group $G$ larger than $Q$ (w.r.t. cardinalities), for example an alternating group. Then every homomorphism $G \to Q$ is trivial. Since $Q$ cogenerates, $G$ is trivial, a contradiction.'
+	'We apply <a href="/lemma/missing_cogenerator">this lemma</a> to the collection of finite simple groups: Any non-trivial homomorphism from a finite simple group to a finite group must be injective, and for every $n \in \mathbb{N}$ there is a finite simple group of size $\geq n$ (for example, the alternating group on $n+5$ elements).'
 ),
 (
 	'FinGrp',

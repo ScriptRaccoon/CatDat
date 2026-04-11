@@ -39,7 +39,7 @@ VALUES
 	'Rng',
 	'cogenerator',
 	FALSE,
-	'Assume that there is a rng $Q$ that cogenerates. Clearly, $Q$ is non-zero. Take an infinite field $F$ which is larger than $Q$ and admits a non-trivial automorphism (for example, a field of rational functions). Then every rng homomorphism $f : F \to Q$ is zero: If $e := f(1)$, then $e$ is idempotent and $f$ corestricts to a ring homomorphism $f : F \to eQ$. Since $F$ is a field but $f$ cannot be injective, we must have $eQ = 0$, so that $e = 0$ and $f = 0$. Since $Q$ cogenerates, this implies that every two homomorphisms $F \rightrightarrows F$ are equal, a contradiction.'
+	'We apply <a href="/lemma/missing_cogenerator">this lemma</a> to the collection of fields: Any non-zero rng homomorphism from a field to a rng must be injective, and for every infinite cardinal $\kappa$ the field of rational functions in $\kappa$ variables has cardinality $\geq \kappa$.'
 ),
 (
 	'Rng',

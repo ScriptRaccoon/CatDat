@@ -39,7 +39,7 @@ VALUES
 	'Mon',
 	'cogenerator',
 	FALSE,
-	'Assume there is a monoid $Q$ that cogenerates. Take an infinite simple group $G$ larger than $Q$ (w.r.t. cardinalities), for example an infinite alternating group. Then every monoid homomorphism $G \to Q$ is trivial: it corestricts to a group homomorphism $G \to Q^{\times}$, so its kernel must be all of $G$. Since $Q$ cogenerates, $G$ is trivial, a contradiction.'
+	'We apply <a href="/lemma/missing_cogenerator">this lemma</a> to the collection of simple groups: Any non-trivial homomorphism $G \to M$ from a simple group $G$ to a monoid $M$ must be injective (as it corestricts to a homomorphism of groups $G \to M^{\times}$), and for every infinite cardinal $\kappa$ there is a simple group of size $\geq \kappa$ (for example, the alternating group on $\kappa$ elements).'
 ),
 (
 	'Mon',

@@ -45,7 +45,7 @@ VALUES
 	'Ring',
 	'cogenerating set',
 	FALSE,
-	'Assume that there is a cogenerating set $S$. We may assume $0 \notin S$. Take an infinite field $F$ which is larger than all the rings in $S$ and admits a non-trivial automorphism (for example, a field of rational functions). Then there is no ring homomorphism $F \to Q$ for $Q \in S$. Since $S$ cogenerates, this implies that every two homomorphisms $F \rightrightarrows F$ are equal, a contradiction.'
+	'We apply <a href="/lemma/missing_cogenerating_sets">this lemma</a> to the collection of fields: If $F$ is a field and $R$ is a non-trivial ring, any ring homomorphism $F \to R$ is injective. For every infinite cardinal $\kappa$ the field of rational functions in $\kappa$ variables has cardinality $\geq \kappa$ and a non-trivial automorphism (swap two variables).'
 ),
 (
 	'Ring',

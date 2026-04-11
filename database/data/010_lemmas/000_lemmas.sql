@@ -65,4 +65,26 @@ INSERT INTO lemmas (
     If $m \leq n$ (hence, $m \leq n+1$), both sides are equal to $(x_1,\dotsc,x_m)$. If $m > n$, i.e. $m \geq n+1$, both sides are equal to $(x_1,\dotsc,x_n,a,\dotsc,a)$. This proves the claim.
     <br>Hence, there is a unique morphism $\varphi : C \to X^m$ such that $\varphi \circ i_n = u_n$ for all $n \geq 0$. Since $u_m$ is the identity, $\varphi$ is a split epimorphism.
     <br>If $U$ is a functor with the mentioned properties, $U(\varphi)$ is also a split epimorphism from $U(C)$ to $U(X^m) \cong U(X)^m$, and $U(X)^m$ has $\geq 2^m$ elements. This holds for all $m$, so that $U(C)$ is infinite.'
+),
+(
+    'missing_cogenerating_sets',
+    'Missing cogenerating sets',
+    'Let $\mathcal{C}$ be a category with a faithful functor $U: \mathcal{C} \to \mathbf{Set}$. Assume there exists a collection of objects $\mathcal{F} \subseteq \operatorname{Ob}(\mathcal{C})$ satisfying the following conditions:
+    <ol>
+        <li>For any $X \in \mathcal{F}$ and any non-terminal $Y \in \mathcal{C}$, for every morphism $f: X \to Y$ its underlying map $U(f) : U(X) \to U(Y)$ is injective.</li>
+        <li>For every infinite cardinal number $\kappa$, there exists an object $X \in \mathcal{F}$ such that $\mathrm{card}(U(X)) \geq \kappa$ and such that $X$ has a non-identity endomorphism.</li>
+    </ol>
+    Then $\mathcal{C}$ does not have a cogenerating set.',
+    'Assume that there is a cogenerating set $S$. By assumption (2) there is an object $X \in \mathcal{F}$ such that $U(X)$ is larger than all the $U(Y)$ with $Y \in S$ (w.r.t. cardinalities) and which has a non-identity endomorphism $\sigma : X \to X$. Since $S$ cogenerates, there is a morphism $f : X \to Y$ with $Y \in S$ and $f \sigma \neq f$. For this, $Y$ must be non-terminal. By (1) the map $U(f) : U(X) \to U(Y)$ is injective. This is a contradiction.'
+),
+(
+    'missing_cogenerator',
+    'Missing cogenerator',
+    'Let $\mathcal{C}$ be a pointed category with a faithful functor $U: \mathcal{C} \to \mathbf{Set}$. Assume there exists a collection of non-zero objects $\mathcal{F} \subseteq \operatorname{Ob}(\mathcal{C})$ satisfying the following conditions:
+    <ol>
+        <li>For any $X \in \mathcal{F}$ and any $Y \in \mathcal{C}$, every non-zero morphism $f: X \to Y$ is injective on underlying sets.</li>
+        <li>For every $Y \in \mathcal{C}$ there is some object $X \in \mathcal{F}$ such that $\mathrm{card}(U(X)) > \mathrm{card}(U(Y))$.</li>
+    </ol>
+    Then $\mathcal{C}$ does not have a cogenerator.',
+    'Assume that there is a cogenerator $Y$. By assumption (2) there is an object $X \in \mathcal{F}$ such that $U(X)$ is larger than $U(Y)$ (w.r.t. cardinalities). Since $0,\mathrm{id}_X : X \rightrightarrows X$ are distinct, there is a morphism $f : X \to Y$ with $f \neq 0$. But then $U(f) : U(X) \to U(Y)$ is injective by assumption (1), which contradicts our choice of $X$.'
 );
