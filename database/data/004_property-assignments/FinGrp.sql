@@ -99,5 +99,5 @@ VALUES
 	'FinGrp',
 	'sequential colimits',
 	FALSE,
-	'Let $G$ be a non-trivial finite group. We prove that the sequence of homomorphisms $1 \to G \to G^2 \to G^3 \to \cdots$ defined by $(x_1,\dotsc,x_n) \mapsto (x_1,\dotsc,x_n,1)$ has no colimit. Assume that $(G^n \to C)_{n \in \mathbb{N}}$ is a colimit. If $m \in \mathbb{N}$ is fixed, we have homomorphisms $G^n \to G^m$ for $n \in \mathbb{N}$ defined as the inclusion for $n \leq m$ and as the projection for $n \geq m$. They are compatible, hence yield a homomorphism $C \to G^m$. By construction, $G^m \to C \to G^m$ is the identity. In particular, $C \to G^m$ is surjective. But then $C$ has at least $2^m$ elements, for every $m$, which is a contradiction.'
+	'This follows from <a href="/lemma/special_sequential_colimits">this lemma</a>.'
 );

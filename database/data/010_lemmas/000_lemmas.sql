@@ -53,4 +53,16 @@ INSERT INTO lemmas (
     'Cogenerators in product categories',
     'For a family of categories $(\mathcal{C}_i)_{i \in I}$, each having a cogenerator $Q_i$ which is weakly terminal, the object $(Q_i)_{i \in I}$ is a cogenerator in the product category $\prod_{i \in I} \mathcal{C}_i$.',
     'Let $(f_i: A_i \to B_i)_{i \in I}$ and $(g_i: A_i \to B_i)_{i \in I}$ be two parallel morphisms in the product category which are coequalized by any morphism $(B_i \to Q_i)_{i \in I}$. Let $i_0 \in I$. We claim that $f_{i_0},g_{i_0} : A_{i_0} \rightrightarrows B_{i_0}$ are coequalized by all morphisms $B_{i_0} \to Q_{i_0}$, and hence are equal: Indeed, for all $i \neq i_0$ we may choose some morphism $B_i \to Q_i$ since $Q_i$ is weakly terminal. Thus, the morphism $B_{i_0} \to Q_{i_0}$ extends to a morphism $(B_i \to Q_i)_{i \in I}$ in the product category. By assumption, it coequalizes $(f_i)_{i \in I}$ and $(g_i)_{i \in I}$. By looking at the $i_0$-component are done.'
+),
+(
+    'special_sequential_colimits',
+    'Finite structures usually have no sequential colimits',
+    'Let $\mathcal{C}$ be a category with finite powers, including a terminal object $1$. Let $a : 1 \to X$ be a morphism. Assume that the sequence of morphisms $(X^n,a) : X^n \to X^{n+1}$ for $n \geq 0$ admits a colimit $(i_n : X^n \to C)$. Then for every $m \geq 0$ there is a split epimorphism $C \to X^m$. In particular, if $U : \mathcal{C} \to \mathbf{Set}$ is a functor preserving finite powers and $\mathrm{card}(U(X)) \geq 2$, then $U(C)$ is infinite.',
+    'Let $m \geq 0$ be fixed. For $n \geq 0$ we define a morphism $u_n : X^n \to X^m$ as follows: It is the projection on the first $m$ factors for $m \leq n$, and $(X^n,a^{m-n})$ for $m \geq n$ (for $m=n$ these agree). With generalized elements this says:
+    <p>$u_n(x_1,\dotsc,x_n) = \begin{cases} (x_1,\dotsc,x_m) & m \leq n \\ (x_1,\dotsc,x_n,a,\dotsc,a) & m \geq n \end{cases}$</p>
+    We claim that $u_n = u_{n+1} \circ (X^n,a)$, i.e.
+    <p>$u_n(x_1,\dotsc,x_n) = u_{n+1}(x_1,\dotsc,x_n,a)$.</p>
+    If $m \leq n$ (hence, $m \leq n+1$), both sides are equal to $(x_1,\dotsc,x_m)$. If $m > n$, i.e. $m \geq n+1$, both sides are equal to $(x_1,\dotsc,x_n,a,\dotsc,a)$. This proves the claim.
+    <br>Hence, there is a unique morphism $\varphi : C \to X^m$ such that $\varphi \circ i_n = u_n$ for all $n \geq 0$. Since $u_m$ is the identity, $\varphi$ is a split epimorphism.
+    <br>If $U$ is a functor with the mentioned properties, $U(\varphi)$ is also a split epimorphism from $U(C)$ to $U(X^m) \cong U(X)^m$, and $U(X)^m$ has $\geq 2^m$ elements. This holds for all $m$, so that $U(C)$ is infinite.'
 );

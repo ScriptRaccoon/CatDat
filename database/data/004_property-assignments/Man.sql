@@ -118,5 +118,5 @@ VALUES
 	'Man',
 	'sequential colimits',
 	FALSE,
-	'Assume that the sequence of inclusions $i_n : \mathbb{R}^n \hookrightarrow \mathbb{R}^{n+1}$, $(x_1,\dotsc,x_n) \mapsto (x_1,\dotsc,x_n,0)$ (for $n \geq 1$) has a colimit $M$ in $\mathbf{Man}$. Let $0 \in M$ denote the image of $0 \in \mathbb{R}^1$. Let $k \geq 1$. We define smooth maps $f_n : \mathbb{R}^n \to \mathbb{R}^k$ as follows: For $n \leq k$ it is the inclusion $(x_1,\dotsc,x_n) \mapsto (x_1,\dotsc,x_n,0,\dotsc,0)$. For $n \geq k$ it is the projection $(x_1,\dotsc,x_n) \mapsto (x_1,\dotsc,x_k)$. These maps are compatible with the inclusions $i_n$, hence extend to a smooth map $M \to \mathbb{R}^k$. By construction, $\mathbb{R}^k \to M \to \mathbb{R}^k$ is the identity. Hence, for the tangent spaces also $T_0(\mathbb{R}^k) \to T_0(M) \to T_0(\mathbb{R}^k)$ is the identity, showing that $\dim T_0(M) \geq k$. Since this holds for all $k$, but $T_0(M)$ is finite-dimensional, we have a contradiction.'
+	'If $\mathbf{Man}$ had sequential colimits, then by <a href="/lemma/special_sequential_colimits">this lemma</a> there would be a manifold $M$ that admits a split epimorphism $M \to \mathbb{R}^n$ for every $n$. But then $M$ will have an infinite-dimensional tangent space, which is a contradiction.'
 );
