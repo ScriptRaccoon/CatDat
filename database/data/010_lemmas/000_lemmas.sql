@@ -47,4 +47,10 @@ INSERT INTO lemmas (
     'Let $\mathcal{C},\mathcal{D}$ be two categories. Assume that $\mathcal{D}$ is inhabited. If $\mathcal{C} \times \mathcal{D}$ has limits of a given shape, then $\mathcal{C}$ also has limits of this shape.',
     'Let $U \in \mathcal{D}$ be a fixed object. Assume that $X : \mathcal{J} \to \mathcal{C}$ is a diagram. Assume that the diagram $(X,U) : \mathcal{J} \to \mathcal{C} \times \mathcal{D}$ (which is constant in the second variable) has a limit cone $((p_i, u_i) : (L,V) \to (X_i,U))$, thus consisting of morphisms $p_i : L \to X_i$ and $u_i : V \to U$. Clearly, $(p_i : L \to X_i)$ is a cone over $X$. We prove that it is universal:<br>
     Let $(f_i : T \to X_i)$ be a cone over $X$. Then $((f_i,\mathrm{id}_U) : (T,U) \to (X_i,U))$ is a cone over $(X,U)$. Hence, there is a unique morphism $(f,v) : (T,U) \to (L,V)$, consisting of $f : T \to L$ and $v : U \to V$, such that $(p_i,u_i) \circ (f,v) = (f_i,\mathrm{id}_U)$, i.e. $p_i \circ f = f_i$ and $u_i \circ v = \mathrm{id}_U$. If $g : T \to L$ is another morphism with $p_i \circ g = f_i$, then uniqueness applied to $(g,v)$ shows that $f = g$.'
+),
+(
+    'cogenerators_in_product_categories',
+    'Cogenerators in product categories',
+    'For a family of categories $(\mathcal{C}_i)_{i \in I}$, each having a cogenerator $Q_i$ which is weakly terminal, the object $(Q_i)_{i \in I}$ is a cogenerator in the product category $\prod_{i \in I} \mathcal{C}_i$.',
+    'Let $(f_i: A_i \to B_i)_{i \in I}$ and $(g_i: A_i \to B_i)_{i \in I}$ be two parallel morphisms in the product category which are coequalized by any morphism $(B_i \to Q_i)_{i \in I}$. Let $i_0 \in I$. We claim that $f_{i_0},g_{i_0} : A_{i_0} \rightrightarrows B_{i_0}$ are coequalized by all morphisms $B_{i_0} \to Q_{i_0}$, and hence are equal: Indeed, for all $i \neq i_0$ we may choose some morphism $B_i \to Q_i$ since $Q_i$ is weakly terminal. Thus, the morphism $B_{i_0} \to Q_{i_0}$ extends to a morphism $(B_i \to Q_i)_{i \in I}$ in the product category. By assumption, it coequalizes $(f_i)_{i \in I}$ and $(g_i)_{i \in I}$. By looking at the $i_0$-component are done.'
 );
