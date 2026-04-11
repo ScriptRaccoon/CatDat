@@ -118,4 +118,10 @@ VALUES
 	'strongly connected',
 	FALSE,
 	'There is no map from a non-empty set to the empty set.'
+),
+(
+	'FI',
+	'sifted',
+	FALSE,
+	'For any two finite sets $X,Y$ and elements $x\in X,y\in Y$ morphisms in the category of cospans $X\overset f\to Z\overset g\leftarrow Y$ preserve whether $f(x)=g(y)$, so e.g. the category of cospans between two singleton sets has exactly two connected components, not one.'
 );

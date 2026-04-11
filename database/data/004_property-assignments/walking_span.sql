@@ -52,4 +52,10 @@ VALUES
 	'semi-strongly connected',
 	FALSE,
 	'There is no morphism between $1$ and $2$.'
+),
+(
+	'walking_span',
+	'sifted',
+	FALSE,
+	'There is no cospan between $1$ and $2$.'
 );

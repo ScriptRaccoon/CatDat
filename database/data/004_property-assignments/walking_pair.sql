@@ -82,4 +82,10 @@ VALUES
 	'strongly connected',
 	FALSE,
 	'There is no morphism $1 \to 0$.'
+),
+(
+	'walking_pair',
+	'sifted',
+	FALSE,
+	'The category of cospans from $0$ to $0$ has $3$ connected components, not one.'
 );
