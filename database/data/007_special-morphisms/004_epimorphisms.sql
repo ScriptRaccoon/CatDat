@@ -71,6 +71,11 @@ VALUES
 	'This is an extension of the <a href="https://en.wikipedia.org/wiki/Isbell''s_zigzag_theorem" target="_blank">corresponding theorem for monoids</a> and proven in <a href="https://www.jstor.org/stable/2373286" target="_blank">Epimorphisms and Dominions, III</a> by John R. Isbell.'
 ),
 (
+	'CAlg(R)',
+	'a homomorphism of algebras which is an epimorphism of commutative rings',
+	'The forgetful functor $\mathbf{CAlg}(R) \to \mathbf{Ring}$ is faithful and hence reflects epimorphisms, but it also preserves epimorphisms since it preserves pushouts (since $\mathbf{CAlg}(R) \cong R / \mathbf{Ring}$). For epimorphisms of commutative rings see their <a href="/category/CRing">detail page</a>.'
+),
+(
 	'CRing',
 	'A ring map $f : R \to S$ is an epimorphism iff $S$ equals the <i>dominion</i> of $f(R) \subseteq S$, meaning that for every $s \in S$ there is some matrix factorization $(s) = Y X Z$ with $X \in M_{n \times n}(R)$, $Y \in M_{1 \times n}(S)$, and $Z \in M_{n \times 1}(S)$.',
 	'See <a href="https://stacks.math.columbia.edu/tag/04VM" target="_blank">Stacks Project</a> ,or, for many more results, the seminar <a href="https://www.numdam.org/issues/SAC_1967-1968__2_/">Les épimorphismes d''anneaux</a>. See also <a href="https://mathoverflow.net/questions/109/" target="_blank">MO/109</a> for some results.'
