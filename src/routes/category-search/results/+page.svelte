@@ -52,12 +52,12 @@
 
 {#if data.is_consistent}
 	<p class="hint">
-		{pluralize(data.found_categories.length, {
+		{pluralize(data.found_objects.length, {
 			one: 'Found {count} category',
 			other: 'Found {count} categories',
 		})}
 	</p>
-	<CategoryList categories={data.found_categories ?? []} />
+	<CategoryList categories={data.found_objects ?? []} />
 {:else}
 	<p class="hint">
 		<Fa icon={faWarning} /> No categories found because the requirements are inconsistent.

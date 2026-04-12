@@ -49,13 +49,13 @@
 </ul>
 
 <p class="hint">
-	{pluralize(data.found_functors.length, {
+	{pluralize(data.found_objects.length, {
 		one: 'Found {count} functor',
 		other: 'Found {count} functors',
 	})}
 </p>
 
-<FunctorList functors={data.found_functors ?? []} />
+<FunctorList functors={data.found_objects ?? []} />
 
 <menu>
 	<a class="button" href="/functor-search">Start new search</a>

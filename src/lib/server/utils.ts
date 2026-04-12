@@ -38,10 +38,6 @@ export function display_property(property: PropertyDB): PropertyDisplay {
 	}
 }
 
-export function to_placeholders(arr: string[]): string {
-	return arr.map(() => '?').join(', ')
-}
-
 export function display_functor_property(property: FunctorPropertyDB): FunctorProperty {
 	return {
 		id: property.id,
