@@ -65,9 +65,19 @@ to continuously run this update when a file in the subfolder [/database/data](/d
 
 ### Troubleshooting
 
-If the command `pnpm db:update` throws an error, check the error message to identify the cause. It could be malformed SQL, or it could be a failing test in the script `pnpm db:test`. These tests verify that the data behaves as expected and that every property is assigned at least to the "core categories" (see below).
+- If the local database is corrupted, delete the `local.db` file and recreate it using `pnpm db:update`.
+- If the `pnpm db:update` command fails, examine the error message to determine the cause. It could be due to malformed SQL or a failing test in the `pnpm db:test` script (which also runs as part of the update command), as explained below.
 
-If the local database is broken, just delete the `local.db` file and recreate it using `pnpm db:update`.
+### Tests for Data Quality
+
+The `pnpm db:test` command runs several tests to ensure the data behaves as expected and maintains good quality:
+
+1. Properties and their duals are mutual.
+2. Categories and their duals are mutual.
+3. For a specified list of categories (see [decided-categories.json](/scripts/expected-data/decided-categories.json)), all properties have been decided.
+4. Every property of the "core categories" (currently: `Set`, `Ab`, `Top`) matches precisely the expected properties defined in the [/scripts/expected-data](/scripts/expected-data/) folder.
+
+If any of these tests fail, adjust the data accordingly.
 
 ### Example Commits
 
@@ -98,9 +108,7 @@ When contributing new data (categories, functors, properties, implications), ple
 
 - **Special Objects and Morphisms**: For each new category, try to specify its special objects (terminal object, initial object, etc.) in the corresponding table. Also try to specify its special morphisms (isomorphisms, monomorphisms, epimorphisms).
 
-- **Proofs for New Properties**: For every new property, for each existing category or functor, try to find a proof for whether it has this property or not, in case this has not already been deduced automatically. Use the property detail page to check unknown categories.
-
-- **Assign Properties to Core Categories**: For all new properties of categories, you must assign them to the "core categories" (currently: $\mathbf{Set}$, $\mathbf{Top}$, $\mathbf{Ab}$), specifying whether they are satisfied or not. This decision should also be recorded in the JSON files located in [/scripts/expected-data](/scripts/expected-data/).
+- **Proofs for New Properties**: For every new property, for each existing category or functor, try to find a proof for whether it has this property or not, in case this has not already been deduced automatically via some implication. Use the property detail page to check unknown categories. As mentioned in the section on tests, for a list of selected categories it is actually mandatory to decide their properties.
 
 - **Counterexamples**: Ensure that at least one category does not satisfy any new property of categories that is added. If no existing category fits, add a new category that does not have the new property. The same remarks apply to properties of functors.
 
