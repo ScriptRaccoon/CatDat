@@ -201,6 +201,11 @@ button:focus-visible {
 	background-color: var(--button-color);
 }
 
+a.button {
+	text-decoration: none;
+	display: inline-block;
+}
+
 .visually-hidden {
 	position: absolute;
 	clip: rect(1px, 1px, 1px, 1px);

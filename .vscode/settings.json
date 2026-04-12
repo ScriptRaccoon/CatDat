@@ -16,7 +16,8 @@
 		"chartjs",
 		"Prost",
 		"SetxSet",
-		"hilberts"
+		"hilberts",
+		"maxage"
 	],
 	"cSpell.words": [
 		"abelian",

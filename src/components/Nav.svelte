@@ -64,6 +64,7 @@
 			href: '/category-search',
 			text: 'Search',
 			icon: faSearch,
+			nested: '/category-search/results',
 			structure: 'categories',
 		},
 		{
