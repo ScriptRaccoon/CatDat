@@ -43,12 +43,6 @@ VALUES
 ),
 (
 	'walking_span',
-	'filtered',
-	FALSE,
-	'There is no cospan $1 \rightarrow x \leftarrow 2$.'
-),
-(
-	'walking_span',
 	'semi-strongly connected',
 	FALSE,
 	'There is no morphism between $1$ and $2$.'

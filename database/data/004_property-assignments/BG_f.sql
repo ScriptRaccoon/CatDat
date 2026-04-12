@@ -40,10 +40,4 @@ VALUES
 	'trivial',
 	FALSE,
 	'This is trivial.'
-),
-(
-	'BG_f',
-	'sifted',
-	FALSE,
-	'The category of cospans from $*$ to $*$ in the delooping $BG$ of any group $G$ is equivalent to a discrete category with $|G|$ objects.'
 );

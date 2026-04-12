@@ -105,6 +105,13 @@ VALUES
 	FALSE
 ),
 (
+	'sifted_left_cancellative_implies_thin',
+	'["sifted", "left cancellative"]',
+	'["thin"]',
+	'For any object $X$ in a left-cancellative category, the connected component containing $X\overset{\textrm{id}}\to X\overset{\textrm{id}}\leftarrow X$ in the category of cospans from $X$ to $X$ consists only of cospans $X\overset f\to Y\overset g\leftarrow X$ where $f=g$; hence when the category is also sifted, all cospans must be of this form, and so any two parallel arrows are equal.',
+	FALSE
+),
+(
 	'terminal_object_yields_filtered',
 	'["terminal object"]',
 	'["filtered"]',
@@ -116,13 +123,6 @@ VALUES
 	'["finitely cocomplete"]',
 	'["filtered"]',
 	'Every finite diagram even admits a <i>universal</i> cocone.',
-	FALSE
-),
-(
-	'filtered_left_cancellative_implies_thin',
-	'["filtered", "left cancellative"]',
-	'["thin"]',
-	'If $f,g : x \rightrightarrows y$ are coequalized by $h : y \to c$, then we immediately get $f = g$ since $h$ is a monomorphism.',
 	FALSE
 ),
 (

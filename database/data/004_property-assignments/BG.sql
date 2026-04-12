@@ -46,10 +46,4 @@ VALUES
 	'essentially finite',
 	FALSE,
 	'This is because we choose $G$ to be infinite.'
-),
-(
-	'BG',
-	'sifted',
-	FALSE,
-	'The category of cospans from $*$ to $*$ in the delooping $BG$ of any group $G$ is equivalent to a discrete category with $|G|$ objects.'
 );

@@ -76,10 +76,4 @@ VALUES
 	'one-way',
 	FALSE,
 	'This is trivial.'
-),
-(
-	'BN',
-	'sifted',
-	FALSE,
-	'The category of cospans from $*$ to $*$ in $B\mathbb N$ is equivalent to a countable discrete category.'
 );
