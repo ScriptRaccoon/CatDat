@@ -35,9 +35,25 @@ export const load = async (event) => {
 		? satisfied_query.split(SEARCH_SEPARATOR).map(decode_property_ID)
 		: []
 
+	const invalid_satisfied_property = satisfied_properties.find(
+		(p) => !all_properties.includes(p),
+	)
+
+	if (invalid_satisfied_property) {
+		error(400, `Invalid property: ${invalid_satisfied_property}`)
+	}
+
 	const unsatisfied_properties = unsatisfied_query
 		? unsatisfied_query.split(SEARCH_SEPARATOR).map(decode_property_ID)
 		: []
+
+	const invalid_unsatisfied_property = unsatisfied_properties.find(
+		(p) => !all_properties.includes(p),
+	)
+
+	if (invalid_unsatisfied_property) {
+		error(400, `Invalid property: ${invalid_unsatisfied_property}`)
+	}
 
 	const dual_satisfied_properties = satisfied_properties.map(
 		(p) => dual_properties_dict[p],
