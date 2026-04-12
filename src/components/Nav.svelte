@@ -92,6 +92,7 @@
 			href: '/functor-search',
 			text: 'Search',
 			icon: faSearch,
+			nested: '/functor-search/results',
 			structure: 'functors',
 		},
 	]
