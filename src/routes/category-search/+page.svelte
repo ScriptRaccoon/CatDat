@@ -8,6 +8,7 @@
 	import MetaData from '$components/MetaData.svelte'
 	import { SEARCH_SEPARATOR } from '$lib/commons/search.config'
 	import { pluralize } from '$lib/client/utils'
+	import { navigating } from '$app/state'
 
 	let { data } = $props()
 
@@ -53,6 +54,8 @@
 	}
 
 	const sample_search_url = `/category-search?satisfied=finitely_complete${SEARCH_SEPARATOR}pointed&unsatisfied=complete`
+
+	let is_searching = $derived(navigating.to?.route.id === '/category-search')
 </script>
 
 <MetaData
@@ -85,10 +88,21 @@
 		item_label="Unsatisfied property"
 	/>
 
-	<button type="button" class="button" onclick={request_search_results}>Search</button>
+	<button
+		type="button"
+		class="button"
+		onclick={request_search_results}
+		disabled={is_searching}
+	>
+		{#if is_searching}
+			Searching...
+		{:else}
+			Search
+		{/if}
+	</button>
 </div>
 
-{#if data.is_search}
+{#if data.is_search && !is_searching}
 	<section transition:fade={{ duration: 150 }}>
 		<h2>Results</h2>
 

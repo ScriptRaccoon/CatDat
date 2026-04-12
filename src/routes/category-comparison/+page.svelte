@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation'
+	import { navigating } from '$app/state'
 	import MetaData from '$components/MetaData.svelte'
 	import Selection from '$components/Selection.svelte'
 	import type { CategoryShort } from '$lib/commons/types'
@@ -30,6 +31,10 @@
 		const path = chosen_categories.map((category) => category.id).join('/')
 		goto(`/category-comparison/${path}`)
 	}
+
+	let is_comparing = $derived(
+		navigating.to?.route.id?.startsWith('/category-comparison'),
+	)
 </script>
 
 <MetaData
@@ -55,7 +60,15 @@
 />
 
 <p>
-	<button class="button" onclick={compare_categories} disabled={!is_valid_comparison}>
-		Compare
+	<button
+		class="button"
+		onclick={compare_categories}
+		disabled={!is_valid_comparison || is_comparing}
+	>
+		{#if is_comparing}
+			Comparing...
+		{:else}
+			Compare
+		{/if}
 	</button>
 </p>
