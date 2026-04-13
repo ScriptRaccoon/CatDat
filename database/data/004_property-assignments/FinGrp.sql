@@ -55,9 +55,15 @@ VALUES
 ),
 (
 	'FinGrp',
-	'subobject classifier',
+	'conormal',
+	TRUE,
+	'Since epimorphisms are surjective (see below), this is the first isomorphism theorem for finite groups.'
+),
+(
+	'FinGrp',
+	'normal',
 	FALSE,
-	'If there was a subgroup classifier $\Omega$, every subgroup of any finite group would be the kernel of a homomorphism to $\Omega$. But not every subgroup is normal.'
+	'Every non-normal subgroup of a finite group provides a counterexample.'
 ),
 (
 	'FinGrp',

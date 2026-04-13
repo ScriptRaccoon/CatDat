@@ -76,4 +76,10 @@ VALUES
 	'skeletal',
 	FALSE,
 	'This is trivial.'
+),
+(
+	'Rel',
+	'normal',
+	FALSE,
+	'The construction of equalizers in $\mathbf{Rel}$ shows that they are injective functions, but <a href="https://math.stackexchange.com/questions/350716" target="_blank">MSE/350716</a> shows that monomorphisms in $\mathbf{Rel}$ don''t have to be functions.'
 );
