@@ -140,6 +140,27 @@ VALUES
 	FALSE
 ),
 (
+	'kernels_condition',
+	'["kernels"]',
+	'["zero morphisms"]',
+	'This is part of our definition of having kernels.',
+	FALSE
+),
+(
+	'kernels_criterion',
+	'["zero morphisms", "equalizers"]',
+	'["kernels"]',
+	'This is trivial.',
+	FALSE
+),
+(
+	'equalizers_via_kernels',
+	'["preadditive", "kernels"]',
+	'["equalizers"]',
+	'The equalizer of $f,g$ is the kernel of $f-g$.',
+	FALSE
+),
+(
 	'sequential_colimits_consequence',
 	'["sequential colimits"]',
 	'["Cauchy complete"]',

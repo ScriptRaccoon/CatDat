@@ -82,6 +82,8 @@
 	"cofiltered": true,
 	"sifted": true,
 	"cosifted": true,
+	"kernels": true,
+	"cokernels": true,
 
 	"cartesian closed": false,
 	"locally cartesian closed": false,

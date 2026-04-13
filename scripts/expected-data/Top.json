@@ -120,5 +120,7 @@
 	"locally cocartesian coclosed": false,
 	"strongly connected": false,
 	"quotient object classifier": false,
-	"regular quotient object classifier": false
+	"regular quotient object classifier": false,
+	"kernels": false,
+	"cokernels": false
 }

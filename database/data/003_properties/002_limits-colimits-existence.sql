@@ -216,6 +216,22 @@ VALUES
 	TRUE
 ),
 (
+	'kernels',
+	'has',
+	'A category has <i>kernels</i> if it has zero morphisms and every morphism $f : A \to B$ has a kernel, i.e. an equalizer of $f$ with the zero morphism $0_{A,B} : A \to B$.',
+	'https://ncatlab.org/nlab/show/kernel',
+	'cokernels',
+	TRUE
+),
+(
+	'cokernels',
+	'has',
+	'A category has <i>cokernels</i> if it has zero morphisms and every morphism $f : A \to B$ has a cokernel, i.e. a coequalizer of $f$ with the zero morphism $0_{A,B} : A \to B$.',
+	'https://ncatlab.org/nlab/show/cokernel',
+	'kernels',
+	TRUE
+),
+(
 	'cofiltered limits',
 	'has',
 	'A category has <i>cofiltered limits</i> if it has limits of diagrams indexed by small <a href="/category-property/cofiltered">cofiltered</a> categories. This is actually equivalent to having directed limits.',
