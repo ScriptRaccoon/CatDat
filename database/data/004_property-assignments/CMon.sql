@@ -76,4 +76,10 @@ VALUES
 	'coregular',
 	FALSE,
 	'We can show this analogously to the case of commutative rings <a href="https://math.stackexchange.com/a/3746890" target="_blank">MSE/3746890</a>. Consider the commutative monoid $\mathbb{N}^2$ and its submonoid $U\coloneqq\{(m,n)\mid m\ge n\}$ with the inclusion $i\colon U\hookrightarrow\mathbb{N}^2$. Then, the pushout of $i$ along itself is $\langle x,y,z : x+y=x+z \rangle$, and the equalizer of the cokernel pair of $i$ is $D\coloneqq\{(m,n)\mid m=0 \implies n=0 \}$. If the category $\mathbf{CMon}$ were coregular, the canonical inclusion $j\colon U\hookrightarrow D$ would have to be an epimorphism. However, it is not: let $I\coloneqq\{0,1\}$ be the two-element commutative monoid with $1+1=1$, and let $u,v\colon D \rightrightarrows I$ be the morphisms defined by $u^{-1}(0)=\{(0,0)\}$ and $v^{-1}(0)=\{(0,0),(1,2)\}$; then we have $u\circ j = v\circ j$.'
+),
+(
+	'CMon',
+	'regular quotient object classifier',
+	FALSE,
+	'We can just copy the proof for the <a href="/category/Mon">category of monoids</a>.'
 );
