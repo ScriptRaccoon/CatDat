@@ -13,12 +13,6 @@ VALUES
 ),
 (
 	'Grp',
-	'pointed',
-	TRUE,
-	'The trivial group is a zero object.'
-),
-(
-	'Grp',
 	'finitary algebraic',
 	TRUE,
 	'Take the algebraic theory of a group.'
