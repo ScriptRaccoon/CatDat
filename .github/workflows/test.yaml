@@ -33,7 +33,7 @@ jobs:
             - name: Generate SvelteKit config
               run: pnpm svelte-kit sync
 
-            - name: Update and Test database
+            - name: Create and Test the database
               env:
                   DB_URL: file:database/local.db
                   DB_VISITS_URL: file:database/visits.db
