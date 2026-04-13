@@ -36,3 +36,17 @@ jobs:
                   DB_URL: file:database/local.db
                   DB_VISITS_URL: file:database/visits.db
               run: pnpm db:update
+
+    comment-on-failure:
+        needs: test
+        if: ${{ failure() && github.event_name == 'pull_request' }}
+        runs-on: ubuntu-latest
+        permissions:
+            pull-requests: write
+        steps:
+            - uses: peter-evans/create-or-update-comment@v5
+              with:
+                  token: ${{ secrets.GITHUB_TOKEN }}
+                  issue-number: ${{ github.event.pull_request.number }}
+                  body: |
+                      Automated testing for this pull request has failed. Please examine the run logs to identify the root cause of the error. Additional information regarding these tests can be found in the [contribution guidelines](https://github.com/ScriptRaccoon/CatDat/blob/main/CONTRIBUTING.md).
