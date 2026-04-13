@@ -56,5 +56,6 @@ jobs:
                   issue-number: ${{ github.event.pull_request.number }}
                   edit-mode: replace
                   body: |
-                      **Test Workflow Status**
-                      ${{ job.status == 'success' && 'Tests passed.' || 'Automated testing for this pull request has failed. Please examine the run logs to identify the root cause of the error. Additional information regarding these tests can be found in the [contribution guidelines](https://github.com/ScriptRaccoon/CatDat/blob/main/CONTRIBUTING.md).' }}
+                      ${{ job.status == 'success' && 'Tests have passed ✅'
+                        || '⚠️ Automated testing for this pull request has failed.
+                            Please examine the run logs to identify the root cause of the error. Additional information regarding these tests can be found in the [contribution guidelines](https://github.com/ScriptRaccoon/CatDat/blob/main/CONTRIBUTING.md).' }}
