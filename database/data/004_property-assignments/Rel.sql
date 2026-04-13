@@ -21,7 +21,7 @@ VALUES
 	'Rel',
 	'pointed',
 	TRUE,
-	'The empty set is clearly both initial and terminal.'
+	'The empty set is clearly both initial and terminal. The zero morphisms are the empty relations.'
 ),
 (
 	'Rel',
@@ -52,6 +52,12 @@ VALUES
 	'biproducts',
 	TRUE,
 	'This is a consequence of the description of coproducts and products, both are disjoint unions (even for infinite families).'
+),
+(
+	'Rel',
+	'kernels',
+	TRUE,
+	'Let $R : A \to B$ be a relation. Define $K = \bigl\{a \in A : \neg \exists b \in B ((a,b) \in R) \bigr\}$. We have an inclusion map $I : K \to A$, which can also be regarded as relation, and $R \circ I = \empty$ is the empty relation, i.e. the zero morphism. It is easy to check the universal property.'
 ),
 (
 	'Rel',
