@@ -5,6 +5,7 @@ import { deduce_category_properties } from './deduce-category-properties'
 import { deduce_functor_implications } from './deduce-functor-implications'
 import { deduce_functor_properties } from './deduce-functor-properties'
 import { deduce_special_objects } from './deduce-special-objects'
+import { deduce_special_morphisms } from './deduce-special-morphisms'
 
 dotenv.config({ quiet: true })
 
@@ -24,6 +25,7 @@ await deduce_category_implications(db)
 await deduce_category_properties(db)
 
 await deduce_special_objects(db)
+await deduce_special_morphisms(db)
 
 await deduce_functor_implications(db)
 await deduce_functor_properties(db)
