@@ -122,5 +122,7 @@
 	"quotient object classifier": false,
 	"regular quotient object classifier": false,
 	"kernels": false,
-	"cokernels": false
+	"cokernels": false,
+	"normal": false,
+	"conormal": false
 }

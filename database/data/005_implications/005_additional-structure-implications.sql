@@ -44,7 +44,7 @@ VALUES
 (
 	'abelian_definition',
 	'["abelian"]',
-	'["additive", "equalizers", "coequalizers", "mono-regular", "epi-regular"]',
+	'["additive", "kernels", "cokernels", "normal", "conormal"]',
 	'This holds by definition.',
 	TRUE
 ),

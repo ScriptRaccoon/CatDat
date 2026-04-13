@@ -56,6 +56,13 @@ VALUES
 	FALSE
 ),
 (
+	'subobject_classifier_pointed_case',
+	'["subobject classifier", "pointed"]',
+	'["normal"]',
+	'The universal property of $\top : 0 \to \Omega$ precisely says that every monomorphism $A \to B$ is the kernel of a unique morphism $B \to \Omega$, so it is normal.',
+	FALSE
+),
+(
 	'subobject_classifier_collapse',
 	'["subobject classifier", "strict terminal object"]',
 	'["trivial"]',

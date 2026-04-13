@@ -84,6 +84,8 @@
 	"cosifted": true,
 	"kernels": true,
 	"cokernels": true,
+	"normal": true,
+	"conormal": true,
 
 	"cartesian closed": false,
 	"locally cartesian closed": false,

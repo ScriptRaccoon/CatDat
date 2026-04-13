@@ -18,7 +18,7 @@ VALUES
 (
 	'mono-regular',
 	'is',
-	'A category is <i>mono-regular</i> when every monomorphism is regular, i.e. the equalizer of a pair of morphisms. Notice that this is not standard terminology, <a href="https://math.stackexchange.com/questions/5031588" target="_blank">apparently</a> the literature has no name for this yet. A <i>preadditive</i> category is mono-regular iff every monomorphism is a kernel, and this type of category is commonly known as a <i>normal category</i>. We avoid this terminology here since it only applies to a certain type of categories, but mono-regular applies to all categories.',
+	'A category is <i>mono-regular</i> when every monomorphism is regular, i.e. the equalizer of a pair of morphisms. Notice that this is not standard terminology, <a href="https://math.stackexchange.com/questions/5031588" target="_blank">apparently</a> the literature has no name for this yet. A <i>preadditive</i> category is mono-regular iff it is normal. The notion of a normal category is reserved for categories with zero morphisms, while mono-regular applies to all categories.',
 	'https://ncatlab.org/nlab/show/regular+monomorphism',
 	'epi-regular',
 	TRUE
@@ -26,9 +26,25 @@ VALUES
 (
 	'epi-regular',
 	'is',
-	'A category is <i>epi-regular</i> when every epimorphism is regular, i.e. the coequalizer of a pair of morphisms. Notice that this is not standard terminology, <a href="https://math.stackexchange.com/questions/5031588" target="_blank">apparently</a> the literature has no name for this yet. A <i>preadditive</i> category is epi-regular iff every epimorphism is a cokernel, and this type of category is commonly known as a <i>conormal category</i>. We avoid this terminology here since it only applies to a certain type of categories, but epi-regular applies to all categories.',
+	'A category is <i>epi-regular</i> when every epimorphism is regular, i.e. the coequalizer of a pair of morphisms. Notice that this is not standard terminology, <a href="https://math.stackexchange.com/questions/5031588" target="_blank">apparently</a> the literature has no name for this yet. A <i>preadditive</i> category is epi-regular iff it is conormal. The notion of a conormal category is reserved for categories with zero morphisms, while epi-regular applies to all categories.',
 	'https://ncatlab.org/nlab/show/regular+epimorphism',
 	'mono-regular',
+	TRUE
+),
+(
+	'normal',
+	'is',
+	'A category is <i>normal</i> if it has zero morphisms and every monomorphism is a kernel of some morphism (in which case case it is also called a <i>normal monomorphism</i>). The assumption of having zero morphisms makes it possible to talk about kernels.',
+	'https://ncatlab.org/nlab/show/normal+monomorphism',
+	'conormal',
+	TRUE
+),
+(
+	'conormal',
+	'is',
+	'A category is <i>conormal</i> if it has zero morphisms and every epimorphism is a cokernel of some morphism (in which case case it is also called a <i>normal epimorphism</i>). The assumption of having zero morphisms makes it possible to talk about cokernels.',
+	'https://ncatlab.org/nlab/show/normal+epimorphism',
+	'normal',
 	TRUE
 ),
 (

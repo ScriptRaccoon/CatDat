@@ -105,6 +105,27 @@ VALUES
 	FALSE
 ),
 (
+	'normal_condition',
+	'["normal"]',
+	'["zero morphisms"]',
+	'This is part of our definition of a normal category.',
+	FALSE
+),
+(
+	'mono_regular_via_kernels',
+	'["normal"]',
+	'["mono-regular"]',
+	'This is trivial.',
+	FALSE
+),
+(
+	'normal_criterion',
+	'["mono-regular", "preadditive"]',
+	'["normal"]',
+	'The a monomorphism is the equalizer of $f,g$, it is the kernel of $f-g$.',
+	FALSE
+),
+(
 	'direct_implies_one-way',
 	'["direct"]',
 	'["one-way", "skeletal"]',
