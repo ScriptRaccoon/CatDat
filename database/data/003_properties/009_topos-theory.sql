@@ -47,7 +47,18 @@ VALUES
 	is a pullback diagram. Equivalently, the functor $\mathrm{Sub} : \mathcal{C}^{\mathrm{op}} \to \mathbf{Set}^+$ is representable.<br>
 	*Every morphism $1 \to \Omega$ is a split monomorphism anyway.',
 	'https://ncatlab.org/nlab/show/subobject+classifier',
+	'quotient object classifier',
+	TRUE
+),
+(
+	'quotient object classifier',
+	'has a',
+	'A category $\mathcal{C}$ has a <i>quotient object classifier</i> if its dual has a subobject classifier. This means that it has finite colimits and an epimorphism* $\top : \Psi \to 0$ such that for every epimorphism $e : A \to B$ there is a unique morphism $\psi_e : \Psi \to A$ such that
+	<p>$\begin{array}{ccc} \Psi & \rightarrow & 0 \\ \downarrow && \downarrow \\ A & \rightarrow & B \end{array}$</p>
+	is a pushout diagram. Equivalently, the functor $\mathrm{Quot} : \mathcal{C} \to \mathbf{Set}^+$ is representable.<br>
+	*Every morphism $\Psi \to 0$ is a split epimorphism anyway.',
 	NULL,
+	'subobject classifier',
 	TRUE
 ),
 (
@@ -58,7 +69,18 @@ VALUES
 	is a pullback diagram. Equivalently, the functor $\mathrm{Sub}_{\mathrm{reg}} : \mathcal{C}^{\mathrm{op}} \to \mathbf{Set}^+$ is representable.<br>
 	*Every morphism $1 \to \Omega$ is a split monomorphism and hence regular anyway.',
 	'https://ncatlab.org/nlab/show/subobject+classifier',
+	'regular quotient object classifier',
+	TRUE
+),
+(
+	'regular quotient object classifier',
+	'has a',
+	'A category $\mathcal{C}$ has a <i>regular quotient object classifier</i> if its dual has a regular subobject classifier. This means that it has finite colimits and a regular epimorphism* $\top : \Psi \to 0$ such that for every regular epimorphism $e : A \to B$ there is a unique morphism $\psi_e : \Psi \to A$ such that
+	<p>$\begin{array}{ccc} \Psi & \rightarrow & 0 \\ \downarrow && \downarrow \\ A & \rightarrow & B \end{array}$</p>
+	is a pushout diagram. Equivalently, the functor $\mathrm{Quot}_{\mathrm{reg}} : \mathcal{C} \to \mathbf{Set}^+$ is representable.<br>
+	*Every morphism $\Psi \to 0$ is a split epimorphism anyway.',
 	NULL,
+	'regular subobject classifier',
 	TRUE
 ),
 (
