@@ -124,6 +124,12 @@ VALUES
 	'unital',
 	FALSE,
 	'The joint image of $X \to X \times Y \leftarrow Y$ is just $\{(x,0) : x \in X\} \cup \{(0,y) : y \in Y\}$ (where $0$ denotes the base point), which is clearly a proper subset of $X \times Y$ when both $X,Y$ are non-trivial.'
+),
+(
+	'Top*',
+	'regular quotient object classifier',
+	FALSE,
+	'We can recycle the proof for the <a href="/category/Set*">category of pointed sets</a> using discrete topological spaces.'
 );
 
 
