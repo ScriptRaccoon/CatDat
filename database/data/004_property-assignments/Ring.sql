@@ -76,4 +76,10 @@ VALUES
 	'coregular',
 	FALSE,
 	'Let $B := M_2(\mathbb{Q})$ and $A := \mathbb{Q}^2$. Then $A \to B$, $(x,y) \mapsto \mathrm{diag}(x,y)$ is a regular monomorphism: A direct calculation shows that a matrix is diagonal iff it commutes with $M := \bigl(\begin{smallmatrix} 1 & 0 \\ 0 & 2 \end{smallmatrix}\bigr)$, so that $A \to B$ is the equalizer of the identity $B \to B$ and the conjugation $B \to B$, $X \mapsto M X M^{-1}$. Consider the homomorphism $A \to K$, $(a,b) \mapsto a$. We claim that $K \to K \sqcup_A B$ is not a monomorphism, because in fact, the pushout $K \sqcup_A B$ is zero: Since $A \to K$ is surjective with kernel $0 \times K$, the pushout is $B/\langle 0 \times K \rangle$, which is $0$ because $B$ is simple (<a href="https://math.stackexchange.com/questions/22629" target="_blank">proof</a>) or via a direct calculation with elementary matrices.'
+),
+(
+	'Ring',
+	'regular quotient object classifier',
+	FALSE,
+	'We may copy the proof for the <a href="/category/CRing">category of commutative rings</a> (since the proof there did not use that $P$ is commutative).'
 );
