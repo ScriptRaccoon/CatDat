@@ -118,5 +118,7 @@
 	"one-way": false,
 	"cocartesian coclosed": false,
 	"locally cocartesian coclosed": false,
-	"strongly connected": false
+	"strongly connected": false,
+	"quotient object classifier": false,
+	"regular quotient object classifier": false
 }
