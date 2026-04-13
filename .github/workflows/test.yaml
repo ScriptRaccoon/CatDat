@@ -39,14 +39,22 @@ jobs:
                   DB_VISITS_URL: file:database/visits.db
               run: pnpm db:update
 
-            - name: Comment result on PR
+            - name: Find Comment
+              if: ${{ always() && github.event_name == 'pull_request' }}
+              uses: peter-evans/find-comment@v3
+              id: fc
+              with:
+                  issue-number: ${{ github.event.pull_request.number }}
+                  comment-author: 'github-actions[bot]'
+                  body-includes: Test Workflow Status
+
+            - name: Create or update comment
               if: ${{ always() && github.event_name == 'pull_request' }}
               uses: peter-evans/create-or-update-comment@v5
               with:
-                  token: ${{ secrets.GITHUB_TOKEN }}
+                  comment-id: ${{ steps.fc.outputs.comment-id }}
                   issue-number: ${{ github.event.pull_request.number }}
                   edit-mode: replace
-                  body-includes: '<!-- test-workflow-comment -->'
                   body: |
-                      <!-- test-workflow-comment -->
+                      **Test Workflow Status**
                       ${{ job.status == 'success' && 'Tests passed.' || 'Automated testing for this pull request has failed. Please examine the run logs to identify the root cause of the error. Additional information regarding these tests can be found in the [contribution guidelines](https://github.com/ScriptRaccoon/CatDat/blob/main/CONTRIBUTING.md).' }}
