@@ -66,7 +66,7 @@ VALUES
 	'additive_trivial_condition',
 	'["regular subobject classifier", "additive"]',
 	'["trivial"]',
-	'See <a href="https://math.stackexchange.com/questions/4086192" target="_blank">MSE/4086192</a> (the proof works with these assumptions).',
+	'See <a href="https://math.stackexchange.com/a/5132767/1650" target="_blank">MSE/4086192</a>.',
 	FALSE
 ),
 (
