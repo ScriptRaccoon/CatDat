@@ -87,4 +87,10 @@ INSERT INTO lemmas (
     </ol>
     Then $\mathcal{C}$ does not have a cogenerator.',
     'Assume that there is a cogenerator $Y$. By assumption (2) there is an object $X \in \mathcal{F}$ such that $U(X)$ is larger than $U(Y)$ (w.r.t. cardinalities). Since $0,\mathrm{id}_X : X \rightrightarrows X$ are distinct, there is a morphism $f : X \to Y$ with $f \neq 0$. But then $U(f) : U(X) \to U(Y)$ is injective by assumption (1), which contradicts our choice of $X$.'
+),
+(
+    'subobject_classifiers_coreflection',
+    'Coreflection of subobject classifiers',
+    'Let $\mathcal{D}$ be a category with a (regular) subobject classifier $\Omega$. Assume that $\mathcal{C} \to \mathcal{D}$ is a full subcategory such that (1) any (regular) $\mathcal{D}$-subobject of an object in $\mathcal{C}$ already lies in $\mathcal{C}$, (2) it is coreflective, i.e. there is a functor $R : \mathcal{D} \to \mathcal{C}$ right adjoint to the inclusion. Then $R(\Omega)$ is a (regular) subobject classifier in $\mathcal{C}$.',
+    'If $X \in \mathcal{C}$, then $\mathrm{Hom}(X,R(\Omega)) \cong \mathrm{Hom}(X,\Omega)$ is isomorphic to the collection of $\mathcal{D}$-subobjects of $X$, which by assumption coincide with the $\mathcal{C}$-subobjects of $X$.'
 );

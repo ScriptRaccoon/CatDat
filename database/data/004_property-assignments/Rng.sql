@@ -64,4 +64,10 @@ VALUES
 	'coregular',
 	FALSE,
 	'We can copy the proof for the <a href="/category/Ring">category of rings</a>. In short, the inclusion of diagonal matrices $\mathbb{Q}^2 \hookrightarrow M_2(\mathbb{Q})$ is a regular monomorphism, but becomes zero after taking the pushout with $p_1 : \mathbb{Q}^2 \twoheadrightarrow \mathbb{Q}$ because $M_2(\mathbb{Q})$ is simple.'
+),
+(
+	'Rng',
+	'regular quotient object classifier',
+	FALSE,
+	'Assume that $\mathbf{Rng}$ has a regular quotient object classifier $P$. Consider the functor $N : \mathbf{Ab} \to \mathbf{Rng}$ that equips an abelian group with zero multiplication. It is fully faithful and has a left adjoint mapping a rng $R$ to the abelian group $R/R^2$, the quotient by the ideal $R^2 = \{\sum_i x_i y_i : x_i,y_i \in R\}$. If $R$ is a rng with zero multiplication and $R \to S$ is a surjective homomorphism, then $S$ has zero multiplication. Therefore, the assumptions of <a href="/lemma/subobject_classifiers_coreflection">this lemma</a> (dualized) apply and we conclude that $P/P^2$ is a regular quotient object classifier of $\mathbf{Ab}$. But we already know that <a href="/category/Ab">this category</a> has no such object (in fact, the only additive categories with such an object are trivial by <a href="https://math.stackexchange.com/questions/4086192" target="_blank">MSE/4086192</a>).'
 );
