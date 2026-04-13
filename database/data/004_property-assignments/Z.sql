@@ -88,4 +88,10 @@ VALUES
 	'cartesian closed',
 	FALSE,
 	'There are functors $F,G : \mathbf{CRing} \to \mathbf{Set}$ such that $\mathrm{Hom}(F,G)$ is not essentially small, see <a href="https://mathoverflow.net/questions/390611" target="_blank">MO/390611</a> for example. Now if the exponential $[F,G] : \mathbf{CRing} \to \mathbf{Set}$ exists, we get $[F,G](\mathbb{Z}) \cong \mathrm{Hom}(\mathrm{Hom}(\mathbb{Z},-),[F,G])$ by Yoneda, which simplifies to $\mathrm{Hom}(1,[F,G]) \cong \mathrm{Hom}(1 \times F,G) \cong \mathrm{Hom}(F,G)$, a contradiction.'
+),
+(
+	'Z',
+	'well-powered',
+	FALSE,
+	'Consider the functor $F$ from <a href="https://mathoverflow.net/questions/390611" target="_blank">MO/390611</a> for example. The collection of subobjects of $F$ is not isomorphic to a set: for each infinite cardinal $\kappa$, simply cut off the construction of $F$ at $\kappa$. This yields a different subobject for each $\kappa$.'
 );
