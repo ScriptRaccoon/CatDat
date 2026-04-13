@@ -211,6 +211,11 @@ VALUES
 	'This characterization holds in every algebraic category.'
 ),
 (
+	'R-Mod_div',
+	'bijective $R$-linear maps',
+	'This characterization holds in every algebraic category.'
+),
+(
 	'real_interval',
 	'only the identity morphisms',
 	'This is true for every poset (regarded as a category).'

@@ -206,6 +206,11 @@ VALUES
 	'This holds in every finitary algebraic category: the forgetful functor to $\mathbf{Set}$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
 ),
 (
+	'R-Mod_div',
+	'injective $R$-linear maps',
+	'This holds in every finitary algebraic category: the forgetful functor to $\mathbf{Set}$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
+),
+(
 	'real_interval',
 	'every morphism',
 	'It is a thin category.'

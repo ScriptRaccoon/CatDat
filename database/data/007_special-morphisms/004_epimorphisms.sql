@@ -196,6 +196,11 @@ VALUES
 	'The forgetful functor to abelian groups is faithful and preserves colimits, hence reflects and preserves epimorphisms. Alternatively, use the same proof as for abelian groups.'
 ),
 (
+	'R-Mod_div',
+	'surjective $R$-linear maps',
+	'The forgetful functor to abelian groups is faithful and preserves colimits, hence reflects and preserves epimorphisms. Alternatively, use the same proof as for abelian groups.'
+),
+(
 	'real_interval',
 	'every morphism',
 	'It is a thin category.'
