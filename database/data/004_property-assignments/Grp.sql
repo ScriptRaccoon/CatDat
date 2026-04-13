@@ -7,6 +7,12 @@ INSERT INTO category_property_assignments (
 VALUES
 (
 	'Grp',
+	'locally small',
+	TRUE,
+	'There is a forgetful functor $\mathbf{Grp} \to \mathbf{Set}$ and $\mathbf{Set}$ is locally small.'
+),
+(
+	'Grp',
 	'pointed',
 	TRUE,
 	'The trivial group is a zero object.'
