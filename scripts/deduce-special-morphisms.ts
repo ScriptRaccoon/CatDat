@@ -5,7 +5,7 @@ export async function deduce_special_morphisms(db: Client) {
 }
 
 async function deduce_special_morphisms_of_dual_categories(db: Client) {
-	await db.execute(`
+	const res = await db.execute(`
         INSERT INTO special_morphisms (category_id, type, description, reason)
         SELECT
             c.dual_category_id,
@@ -18,4 +18,6 @@ async function deduce_special_morphisms_of_dual_categories(db: Client) {
         WHERE c.dual_category_id IS NOT NULL
         ON CONFLICT DO NOTHING
     `)
+
+	console.info(`Dualized ${res.rowsAffected} special morphisms`)
 }
