@@ -81,5 +81,5 @@ VALUES
 	'CMon',
 	'regular quotient object classifier',
 	FALSE,
-	'We can just copy the proof for the <a href="/category/Mon">category of monoids</a>.'
+	'If $P \in \mathbf{CMon}$ is a regular quotient object classifier, this means that every surjective homomorphism of commutative monoids $A \to B$ is the cokernel of a unique homomorphism $P \to A$. But there are many surjective homomorphisms which are no cokernels at all: Consider the Boolean monoid $(\{0,1\},\vee)$ with $1 \vee 1 = 1$ and the surjective homomorphism $f : (\mathbb{N},+) \to (\{0,1\},\vee)$ defined by $f(0)=0$ and $f(n)=1$ for $n \geq 1$. It has trivial kernel, but is no isomorphism, so it cannot be a cokernel.'
 );

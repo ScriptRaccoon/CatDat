@@ -81,5 +81,5 @@ VALUES
 	'Ring',
 	'regular quotient object classifier',
 	FALSE,
-	'We may copy the proof for the <a href="/category/CRing">category of commutative rings</a> (since the proof there did not use that $P$ is commutative).'
+	'We may copy the proof for the <a href="/category/CRing">category of commutative rings</a> (since the proof there did not use that $P$ is commutative). Alternatively, any regular quotient object classifier in $\mathbf{Ring}$ would produce one in $\mathbf{CRing}$ by <a href="/lemma/subobject_classifiers_coreflection">this lemma</a> (dualized).'
 );

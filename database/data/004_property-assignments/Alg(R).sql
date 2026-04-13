@@ -81,5 +81,5 @@ VALUES
 	'Alg(R)',
 	'regular quotient object classifier',
 	FALSE,
-	'We may copy the proof for the <a href="/category/CAlg(R)">category of commutative algebras</a> (since the proof there did not use that $P$ is commutative).'
+	'We may copy the proof for the <a href="/category/CAlg(R)">category of commutative algebras</a> (since the proof there did not use that $P$ is commutative). Alternatively, any regular quotient object classifier in $\mathbf{Alg}(R)$ would produce one in $\mathbf{CAlg}(R)$ by <a href="/lemma/subobject_classifiers_coreflection">this lemma</a> (dualized).'
 );
