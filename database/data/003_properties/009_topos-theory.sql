@@ -42,7 +42,9 @@ VALUES
 (
 	'subobject classifier',
 	'has a',
-	'A category $\mathcal{C}$ has a <i>subobject classifier</i> if it has finite limits and a monomorphism* $\top : 1 \to \Omega$ such that for every monomorphism $m : A \to B$ there is a unique morphism $\chi_m : B \to \Omega$ such that $B \leftarrow A \rightarrow 1$ is the pullback of $B \rightarrow \Omega \leftarrow 1$. Equivalently, the functor $\mathrm{Sub} : \mathcal{C}^{\mathrm{op}} \to \mathbf{Set}^+$ is representable.<br>
+	'A category $\mathcal{C}$ has a <i>subobject classifier</i> if it has finite limits and a monomorphism* $\top : 1 \to \Omega$ such that for every monomorphism $m : A \to B$ there is a unique morphism $\chi_m : B \to \Omega$ such that
+	<p>$\begin{array}{ccc} A & \rightarrow & B \\ \downarrow && \downarrow \\ 1 & \rightarrow & \Omega \end{array}$</p>
+	is a pullback diagram. Equivalently, the functor $\mathrm{Sub} : \mathcal{C}^{\mathrm{op}} \to \mathbf{Set}^+$ is representable.<br>
 	*Every morphism $1 \to \Omega$ is a split monomorphism anyway.',
 	'https://ncatlab.org/nlab/show/subobject+classifier',
 	NULL,
@@ -51,7 +53,9 @@ VALUES
 (
 	'regular subobject classifier',
 	'has a',
-	'A category $\mathcal{C}$ has a <i>regular subobject classifier</i> if it has finite limits and a regular monomorphism* $\top : 1 \to \Omega$ such that for every regular monomorphism $m : A \to B$ there is a unique morphism $\chi_m : B \to \Omega$ such that $B \leftarrow A \rightarrow 1$ is the pullback of $B \rightarrow \Omega \leftarrow 1$. Equivalently, the functor $\mathrm{Sub}_{\mathrm{reg}} : \mathcal{C}^{\mathrm{op}} \to \mathbf{Set}^+$ is representable.<br>
+	'A category $\mathcal{C}$ has a <i>regular subobject classifier</i> if it has finite limits and a regular monomorphism* $\top : 1 \to \Omega$ such that for every regular monomorphism $m : A \to B$ there is a unique morphism $\chi_m : B \to \Omega$ such that
+	<p>$\begin{array}{ccc} A & \rightarrow & B \\ \downarrow && \downarrow \\ 1 & \rightarrow & \Omega \end{array}$</p>
+	is a pullback diagram. Equivalently, the functor $\mathrm{Sub}_{\mathrm{reg}} : \mathcal{C}^{\mathrm{op}} \to \mathbf{Set}^+$ is representable.<br>
 	*Every morphism $1 \to \Omega$ is a split monomorphism and hence regular anyway.',
 	'https://ncatlab.org/nlab/show/subobject+classifier',
 	NULL,
