@@ -1,14 +1,47 @@
+<script lang="ts">
+	import {
+		faBook,
+		faCog,
+		faCubes,
+		faPuzzlePiece,
+	} from '@fortawesome/free-solid-svg-icons'
+
+	import { faPenToSquare } from '@fortawesome/free-regular-svg-icons'
+	import Fa from 'svelte-fa'
+</script>
+
 <footer class="hint">
-	<a href="/contribute">Contribute</a>
-	<a href="/settings">Settings</a>
-	<a href="/missing">Missing data</a>
-	<a href="/resources">Resources</a>
-	<a href="/foundations">Foundations</a>
+	<ul>
+		<li>
+			<Fa icon={faPenToSquare} scale={0.875} />
+			<a href="/contribute">Contribute</a>
+		</li>
+		<li>
+			<Fa icon={faCog} scale={0.875} />
+			<a href="/settings">Settings</a>
+		</li>
+		<li>
+			<Fa icon={faPuzzlePiece} scale={0.875} />
+			<a href="/missing">Missing data</a>
+		</li>
+		<li>
+			<Fa icon={faBook} scale={0.875} />
+			<a href="/resources">Resources</a>
+		</li>
+		<li>
+			<Fa icon={faCubes} scale={0.875} />
+			<a href="/foundations">Foundations</a>
+		</li>
+	</ul>
 </footer>
 
 <style>
 	footer {
 		margin-bottom: 1.5rem;
+	}
+
+	ul {
+		list-style-type: none;
 		display: flex;
 		justify-content: center;
 		flex-wrap: wrap;

@@ -1,11 +1,16 @@
 <script lang="ts">
 	import type { Structure } from '$lib/commons/types'
+	import { faPenToSquare } from '@fortawesome/free-regular-svg-icons'
 	import {
 		faArrowsSplitUpAndLeft,
+		faBook,
 		faChartBar,
+		faCog,
+		faCubes,
 		faDatabase,
 		faHome,
 		faList,
+		faPuzzlePiece,
 		faSearch,
 		faXmark,
 	} from '@fortawesome/free-solid-svg-icons'
@@ -98,18 +103,23 @@
 	<ul class="secondary-list">
 		<li>
 			<a href="/contribute">Contribute</a>
+			<Fa icon={faPenToSquare} scale={0.875} />
 		</li>
 		<li>
 			<a href="/settings">Settings</a>
+			<Fa icon={faCog} scale={0.875} />
 		</li>
 		<li>
-			<a href="/missing">Missing Data</a>
+			<a href="/missing">Missing data</a>
+			<Fa icon={faPuzzlePiece} scale={0.875} />
 		</li>
 		<li>
 			<a href="/resources">Resources</a>
+			<Fa icon={faBook} scale={0.875} />
 		</li>
 		<li>
 			<a href="/foundations">Foundations</a>
+			<Fa icon={faCubes} scale={0.875} />
 		</li>
 	</ul>
 </nav>
@@ -151,5 +161,9 @@
 
 	ul.secondary-list {
 		color: var(--secondary-text-color);
+
+		li {
+			margin-bottom: 0.25rem;
+		}
 	}
 </style>
