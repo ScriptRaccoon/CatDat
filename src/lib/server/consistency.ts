@@ -52,7 +52,7 @@ function check_consistency_worker(
 }
 
 async function get_atomic_implications(): Promise<AtomicImplication[] | null> {
-	const { rows: all_implications_db, err: err_imp } = await query<{
+	const { rows: implications, err } = await query<{
 		assumptions: string
 		conclusions: string
 		is_equivalence: number
@@ -61,24 +61,24 @@ async function get_atomic_implications(): Promise<AtomicImplication[] | null> {
         FROM implications_view
     `)
 
-	if (err_imp) return null
+	if (err) return null
 
-	const implications: AtomicImplication[] = []
+	const atomic_implications: AtomicImplication[] = []
 
-	for (const impl of all_implications_db) {
-		const assumptions: string[] = JSON.parse(impl.assumptions)
-		const conclusions: string[] = JSON.parse(impl.conclusions)
+	for (const implication of implications) {
+		const assumptions: string[] = JSON.parse(implication.assumptions)
+		const conclusions: string[] = JSON.parse(implication.conclusions)
 
 		for (const conclusion of conclusions) {
-			implications.push({
+			atomic_implications.push({
 				assumptions: assumptions.slice(),
 				conclusion,
 			})
 		}
 
-		if (impl.is_equivalence) {
+		if (implication.is_equivalence) {
 			for (const assumption of assumptions) {
-				implications.push({
+				atomic_implications.push({
 					assumptions: conclusions.slice(),
 					conclusion: assumption,
 				})
@@ -86,17 +86,17 @@ async function get_atomic_implications(): Promise<AtomicImplication[] | null> {
 		}
 	}
 
-	return implications
+	return atomic_implications
 }
 
 export async function get_missing_combinations() {
 	const implications = await get_atomic_implications()
 	if (!implications) return null
 
-	const { rows: props, err: err_props } = await query<{ id: string }>(
+	const { rows: props, err } = await query<{ id: string }>(
 		sql`SELECT id FROM properties ORDER BY lower(id)`,
 	)
-	if (err_props) return null
+	if (err) return null
 
 	const properties: string[] = props.map(({ id }) => id)
 
