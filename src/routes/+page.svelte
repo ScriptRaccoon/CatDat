@@ -111,11 +111,6 @@
 	</article>
 </div>
 
-<p>
-	Note that this project is still in its early stages. Breaking changes are likely, and
-	the structure of the application and the database may change without notice.
-</p>
-
 <style>
 	.features {
 		margin-block: 2rem;
