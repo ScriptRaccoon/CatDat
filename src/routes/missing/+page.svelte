@@ -24,8 +24,9 @@
 	<h3>Categories with unknown properties</h3>
 
 	<p class="hint">
-		There are {data.categories_with_unknown_properties.length} categories that have some
-		unknown properties.
+		There are {data.categories_with_unknown_properties.length} categories where at least
+		one property is unknown. In total, there are {data.total_unknown_pairs} unknown (category,
+		property)-pairs.
 	</p>
 
 	<CategoryList categories={data.categories_with_unknown_properties} />

@@ -82,6 +82,11 @@ export const load = async () => {
 		functors_with_unknown_properties,
 	] = results
 
+	const total_unknown_pairs = categories_with_unknown_properties.reduce(
+		(total, item) => item.count + total,
+		0,
+	)
+
 	const missing_combinations = await get_missing_combinations()
 
 	if (!missing_combinations) {
@@ -90,6 +95,7 @@ export const load = async () => {
 
 	return {
 		categories_with_unknown_properties,
+		total_unknown_pairs,
 		categories_with_missing_morphisms,
 		undistinguishable_category_pairs,
 		functors_with_unknown_properties,
