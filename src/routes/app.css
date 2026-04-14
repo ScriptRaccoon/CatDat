@@ -1,3 +1,5 @@
+/* global stuff */
+
 @font-face {
 	font-family: 'DM Mono';
 	font-style: normal;
@@ -47,6 +49,8 @@ body[data-theme='dark'] {
 	--card-shadow: #ffffff06;
 }
 
+/* body */
+
 body {
 	font-family:
 		'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode',
@@ -57,12 +61,39 @@ body {
 	line-height: 1.5;
 }
 
+body:has(#nav_dialog[open]) {
+	overflow: hidden;
+}
+
 @media (prefers-reduced-motion: no-preference) {
 	body,
 	html {
 		scroll-behavior: smooth;
 	}
 }
+
+/* headings */
+
+h1,
+h2,
+h3 {
+	line-height: 1.2;
+	font-weight: 500;
+	color: var(--heading-color);
+	font-family: 'DM Mono', monospace;
+}
+
+h2 {
+	font-size: 1.875rem;
+	margin-block: 0.5rem 1rem;
+}
+
+h3 {
+	font-size: 1.45rem;
+	margin-block: 2rem 1rem;
+}
+
+/* various elements */
 
 p {
 	margin-block: 1rem;
@@ -90,30 +121,6 @@ strong {
 	font-weight: 600;
 }
 
-h1,
-h2,
-h3 {
-	line-height: 1.2;
-	font-weight: 500;
-	color: var(--heading-color);
-	font-family: 'DM Mono', monospace;
-}
-
-h2 {
-	font-size: 1.875rem;
-	margin-block: 0.5rem 1rem;
-}
-
-h3 {
-	font-size: 1.45rem;
-	margin-block: 2rem 1rem;
-}
-
-.hint {
-	color: var(--secondary-text-color);
-	font-size: 1rem;
-}
-
 ul {
 	padding-left: 1.5rem;
 
@@ -129,6 +136,27 @@ ol {
 
 	li::marker {
 		content: '(' counter(list-item) ') ';
+	}
+}
+
+dialog {
+	font: inherit;
+	color: inherit;
+	background: none;
+	outline: none;
+	border: none;
+	width: 100%;
+}
+
+/* interactive elements */
+
+summary {
+	cursor: pointer;
+	width: fit-content;
+
+	&:focus-visible {
+		outline: 1px solid var(--text-color);
+		outline-offset: 2px;
 	}
 }
 
@@ -174,12 +202,6 @@ input[type='search']::-ms-clear {
 	display: none;
 }
 
-label {
-	display: block;
-	margin-bottom: 0.1rem;
-	font-size: 1rem;
-}
-
 button:not(:disabled) {
 	cursor: pointer;
 }
@@ -206,6 +228,14 @@ a.button {
 	display: inline-block;
 }
 
+label {
+	display: block;
+	margin-bottom: 0.1rem;
+	font-size: 1rem;
+}
+
+/* utility classes */
+
 .visually-hidden {
 	position: absolute;
 	clip: rect(1px, 1px, 1px, 1px);
@@ -221,25 +251,7 @@ a.button {
 	width: 100%;
 }
 
-summary {
-	cursor: pointer;
-	width: fit-content;
-
-	&:focus-visible {
-		outline: 1px solid var(--text-color);
-		outline-offset: 2px;
-	}
-}
-
-dialog {
-	font: inherit;
-	color: inherit;
-	background: none;
-	outline: none;
-	border: none;
-	width: 100%;
-}
-
-body:has(#nav_dialog[open]) {
-	overflow: hidden;
+.hint {
+	color: var(--secondary-text-color);
+	font-size: 1rem;
 }
