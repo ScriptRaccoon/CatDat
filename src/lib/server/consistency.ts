@@ -92,12 +92,12 @@ export async function get_missing_combinations() {
 	const implications = await get_atomic_implications()
 	if (!implications) return null
 
-	const { rows: props, err } = await query<{ id: string }>(
-		sql`SELECT id FROM properties ORDER BY lower(id)`,
-	)
-	if (err) return null
+	const { rows: properties, err } = await query<{
+		id: string
+		dual_property_id: string | null
+	}>(sql`SELECT id, dual_property_id FROM properties ORDER BY lower(id)`)
 
-	const properties: string[] = props.map(({ id }) => id)
+	if (err) return null
 
 	const { rows: existing, err: err_existing } = await query<{
 		p: string
@@ -112,7 +112,7 @@ export async function get_missing_combinations() {
 
 	if (err_existing) return null
 
-	const existing_pairs = new Set(existing.map(({ p, q }) => `${p}|${q}`))
+	const witnessed_pairs = new Set(existing.map(({ p, q }) => `${p}|${q}`))
 
 	const missing_pairs: [string, string][] = []
 
@@ -120,13 +120,24 @@ export async function get_missing_combinations() {
 		for (let j = i + 1; j < properties.length; j++) {
 			const p = properties[i]
 			const q = properties[j]
-			if (existing_pairs.has(`${p}|${q}`)) continue
+
+			if (witnessed_pairs.has(`${p.id}|${q.id}`)) continue
+
+			if (
+				p.dual_property_id &&
+				q.dual_property_id &&
+				witnessed_pairs.has(`${p.dual_property_id}|${q.dual_property_id}`)
+			) {
+				continue
+			}
+
 			const { consistent } = check_consistency_worker(
-				new Set([p]),
-				new Set([q]),
+				new Set([p.id]),
+				new Set([q.id]),
 				implications,
 			)
-			if (consistent) missing_pairs.push([p, q])
+
+			if (consistent) missing_pairs.push([p.id, q.id])
 		}
 	}
 
