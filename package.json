@@ -28,6 +28,7 @@
 		"@sveltejs/kit": "^2.55.0",
 		"@sveltejs/vite-plugin-svelte": "^7.0.0",
 		"@types/katex": "^0.16.8",
+		"@types/markdown-it": "^14.1.2",
 		"@types/node": "^25.5.0",
 		"chokidar": "^5.0.0",
 		"dotenv": "^17.3.1",
@@ -53,6 +54,7 @@
 		"ioredis": "^5.10.1",
 		"katex": "^0.16.44",
 		"leo-profanity": "^1.9.0",
+		"markdown-it": "^14.1.1",
 		"sql-template-tag": "^5.2.1",
 		"svelte-chartjs": "^4.0.1",
 		"svelte-fa": "^4.0.4"

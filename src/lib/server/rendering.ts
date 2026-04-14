@@ -1,5 +1,6 @@
 import katex from 'katex'
 import { is_object } from './utils'
+import MarkdownIt from 'markdown-it'
 
 function render_formula(formula: string): string {
 	return katex.renderToString(formula, {
@@ -35,4 +36,19 @@ export function render_nested_formulas<T>(obj: T): T {
 	}
 
 	return obj
+}
+
+const md = new MarkdownIt()
+
+const content_dict = import.meta.glob('$lib/content/*.md', {
+	query: '?raw',
+	import: 'default',
+	eager: true,
+}) as Record<string, string>
+
+export function get_rendered_content(file: string) {
+	const key = `/src/lib/content/${file}.md`
+	const txt = content_dict[key]
+	const html = md.render(txt)
+	return render_formulas(html)
 }
