@@ -72,31 +72,27 @@
 <section>
 	<h3>Missing combinations</h3>
 
-	{#if data.missing_combinations}
-		<p class="hint">
-			Among the consistent combinations of the form p &and; &not;q, the following
-			are not yet witnessed by a category in the database or its dual category. If
-			some of these combinations <i>are</i>
-			inconsistent, this indicates that some
-			<a href="/category-implications">implication</a> is missing.
-		</p>
+	<p class="hint">
+		Among the consistent combinations of the form p &and; &not;q, the following are
+		not yet witnessed by a category in the database or its dual category. If some of
+		these combinations <i>are</i>
+		inconsistent, this indicates that some
+		<a href="/category-implications">implication</a> is missing.
+	</p>
 
-		<details>
-			<summary>Show all {data.missing_combinations.length} combinations</summary>
+	<details>
+		<summary>Show all {data.missing_combinations.length} combinations</summary>
 
-			<ul class="combinations">
-				{#each data.missing_combinations as [p, q]}
-					<li class="combination">
-						<a href={get_property_url(p)}>{p}</a> &and; &not;<a
-							href={get_property_url(q)}>{q}</a
-						>
-					</li>
-				{/each}
-			</ul>
-		</details>
-	{:else}
-		<p>Missing combinations could not be loaded</p>
-	{/if}
+		<ul class="combinations">
+			{#each data.missing_combinations as [p, q]}
+				<li class="combination">
+					<a href={get_property_url(p)}>{p}</a> &and; &not;<a
+						href={get_property_url(q)}>{q}</a
+					>
+				</li>
+			{/each}
+		</ul>
+	</details>
 </section>
 
 <section>

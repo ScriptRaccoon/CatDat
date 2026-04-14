@@ -84,6 +84,10 @@ export const load = async () => {
 
 	const missing_combinations = await get_missing_combinations()
 
+	if (!missing_combinations) {
+		error(500, 'Failed to load missing combinations')
+	}
+
 	return {
 		categories_with_unknown_properties,
 		categories_with_missing_morphisms,
