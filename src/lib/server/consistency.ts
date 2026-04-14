@@ -116,10 +116,9 @@ export async function get_missing_combinations() {
 
 	const missing_pairs: [string, string][] = []
 
-	for (let i = 0; i < properties.length; i++) {
-		for (let j = i + 1; j < properties.length; j++) {
-			const p = properties[i]
-			const q = properties[j]
+	for (const p of properties) {
+		for (const q of properties) {
+			if (p.id === q.id) continue
 
 			if (witnessed_pairs.has(`${p.id}|${q.id}`)) continue
 
