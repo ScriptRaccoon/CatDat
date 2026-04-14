@@ -15,17 +15,6 @@ export const load = async () => {
 			FunctorShort & { count: number },
 		]
 	>([
-		// missing special morphisms
-		sql`
-			SELECT c.id, c.name, COUNT(*) AS count
-			FROM categories c
-			JOIN special_morphism_types t
-			LEFT JOIN special_morphisms s
-				ON s.category_id = c.id AND s.type = t.type
-			WHERE s.type IS NULL
-			GROUP BY c.id
-			ORDER BY lower(c.name);
-		`,
 		// categories with unknown properties
 		sql`
 			SELECT c.id, c.name, COUNT(*) AS count
@@ -35,6 +24,17 @@ export const load = async () => {
 				ON cp.category_id = c.id
 				AND cp.property_id = p.id
 			WHERE cp.property_id IS NULL
+			GROUP BY c.id
+			ORDER BY lower(c.name);
+		`,
+		// missing special morphisms
+		sql`
+			SELECT c.id, c.name, COUNT(*) AS count
+			FROM categories c
+			JOIN special_morphism_types t
+			LEFT JOIN special_morphisms s
+				ON s.category_id = c.id AND s.type = t.type
+			WHERE s.type IS NULL
 			GROUP BY c.id
 			ORDER BY lower(c.name);
 		`,
@@ -76,8 +76,8 @@ export const load = async () => {
 	if (err) error(500, 'Failed to load data')
 
 	const [
-		categories_with_missing_morphisms,
 		categories_with_unknown_properties,
+		categories_with_missing_morphisms,
 		undistinguishable_category_pairs,
 		functors_with_unknown_properties,
 	] = results
