@@ -133,10 +133,10 @@ VALUES
 	FALSE
 ),
 (
-	'thin_implies_one-way',
+	'thin_consequences',
 	'["thin"]',
-	'["one-way"]',
-	'This is trivial.',
+	'["one-way", "locally essentially small", "generating set"]',
+	'This is trivial. The empty set is generating.',
 	FALSE
 ),
 (
