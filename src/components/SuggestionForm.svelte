@@ -16,6 +16,10 @@
 	let url = $state('')
 	let sending = $state(false)
 
+	const TITLE_MAX_LENGTH = 50
+	const BODY_MAX_LENGTH = 10000
+	const NAME_MAX_LENGTH = 50
+
 	async function create_issue(e: SubmitEvent) {
 		e.preventDefault()
 
@@ -68,30 +72,47 @@
 
 	<form onsubmit={create_issue}>
 		<div class="form-group">
-			<label for="title">Short summary</label>
+			<label for="title">
+				<span>Short summary</span>
+				<span class="description">max. {TITLE_MAX_LENGTH} characters</span>
+			</label>
 			<input
 				type="text"
 				id="title"
 				class="full-width"
 				bind:value={title}
 				required
+				aria-invalid={title.length > TITLE_MAX_LENGTH}
 			/>
 		</div>
 
 		<div class="form-group">
-			<label for="body">Details</label>
+			<label for="body">
+				<span>Details</span>
+				<span class="description">max. {BODY_MAX_LENGTH} characters</span>
+			</label>
 			<textarea
 				id="body"
 				{@attach resize_textarea}
 				bind:value={body}
 				required
 				class="full-width"
+				aria-invalid={body.length > BODY_MAX_LENGTH}
 			></textarea>
 		</div>
 
 		<div class="form-group">
-			<label for="name">Your name (optional)</label>
-			<input type="text" id="name" bind:value={name} />
+			<label for="name">
+				<span>Your name</span>
+				<span class="description">optional</span>
+			</label>
+			<input
+				type="text"
+				id="name"
+				class="full-width"
+				bind:value={name}
+				aria-invalid={name.length > NAME_MAX_LENGTH}
+			/>
 		</div>
 
 		<button class="button" disabled={sending}>
@@ -132,5 +153,20 @@
 
 	.form-group {
 		margin-bottom: 1rem;
+	}
+
+	textarea {
+		height: 4lh;
+	}
+
+	label {
+		display: flex;
+		justify-content: space-between;
+		align-items: end;
+
+		.description {
+			font-size: 0.875rem;
+			color: var(--secondary-text-color);
+		}
 	}
 </style>
