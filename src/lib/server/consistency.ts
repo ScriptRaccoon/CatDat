@@ -30,13 +30,13 @@ function check_consistency_worker(
 		if (unsatisfied_properties.has(p)) return { consistent: false }
 	}
 
-	const deduced_satisfied_properties = new Set<string>()
+	const all_satisfied_properties = new Set(satisfied_properties)
 
 	while (true) {
 		const implication = implications.find(
 			({ assumptions, conclusion }) =>
-				assumptions.every((p) => satisfied_properties.has(p)) &&
-				!satisfied_properties.has(conclusion),
+				assumptions.every((p) => all_satisfied_properties.has(p)) &&
+				!all_satisfied_properties.has(conclusion),
 		)
 		if (!implication) break
 
@@ -44,8 +44,7 @@ function check_consistency_worker(
 
 		if (unsatisfied_properties.has(conclusion)) return { consistent: false }
 
-		satisfied_properties.add(conclusion)
-		deduced_satisfied_properties.add(conclusion)
+		all_satisfied_properties.add(conclusion)
 	}
 
 	return { consistent: true }
