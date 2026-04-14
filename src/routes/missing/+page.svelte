@@ -75,8 +75,8 @@
 	{#if data.missing_combinations}
 		<p class="hint">
 			Among the consistent combinations of the form p &and; &not;q, the following
-			are not yet witnessed by a category in the database. If some of these
-			combinations <i>are</i>
+			are not yet witnessed by a category in the database or its dual category. If
+			some of these combinations <i>are</i>
 			inconsistent, this indicates that some
 			<a href="/category-implications">implication</a> is missing.
 		</p>
