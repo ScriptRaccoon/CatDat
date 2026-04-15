@@ -70,4 +70,12 @@ VALUES
 	'regular quotient object classifier',
 	FALSE,
 	'Assume that $\mathbf{Rng}$ has a regular quotient object classifier $P$. Consider the functor $N : \mathbf{Ab} \to \mathbf{Rng}$ that equips an abelian group with zero multiplication. It is fully faithful and has a left adjoint mapping a rng $R$ to the abelian group $R/R^2$. If $R$ is a rng with zero multiplication and $R \to S$ is a surjective homomorphism, then $S$ has zero multiplication. Therefore, the assumptions of <a href="/lemma/subobject_classifiers_coreflection">this lemma</a> (dualized) apply and we conclude that $P/P^2$ is a regular quotient object classifier of $\mathbf{Ab}$. But we already know that <a href="/category/Ab">this category</a> has no such object (in fact, the only additive categories with such an object are trivial by <a href="https://math.stackexchange.com/questions/4086192" target="_blank">MSE/4086192</a>).'
+),
+(
+	'Rng',
+	'cocartesian cofiltered limits',
+	FALSE,
+	'Consider the ring $A = \mathbb{Z}[X]$ and the sequence of rings $B_n = \mathbb{Z}[Y]/(Y^{n+1})$ with projections $B_{n+1} \to B_n$, whose limit is $\mathbb{Z}[[Y]]$ (both in $\mathbf{Ring}$ and $\mathbf{Rng}$). Every element in the coproduct of rngs $\mathbb{Z}[X] \sqcup \mathbb{Z}[[Y]]$ has a finite "free product" length. Now consider the elements
+	<br>$w_n = (1 + XY) (1+XY^2) \cdots (1+X Y^n) - 1 \in A \sqcup B_n$.</br>
+	Because of $w_n \equiv w_{n-1} \bmod Y^n$ these form an element $w \in \lim_n (A \sqcup B_n)$. Expanding $w_n$, the longest term is $XY XY^2 \cdots X Y^n$ of "free product" length $2n$, which is unbounded.'
 );
