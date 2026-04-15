@@ -161,6 +161,13 @@ VALUES
 	FALSE
 ),
 (
+	'extensive_cocartesian_cofiltered_limits',
+	'["extensive", "cofiltered limits", "terminal object"]',
+	'["cocartesian cofiltered limits"]',
+	'Let $\mathcal{C}$ be an extensive category with cofiltered limits and a terminal object. Then the coproduct functor $\mathcal{C} \times \mathcal{C} \cong \mathcal{C}/1 \times \mathcal{C}/1 \to \mathcal{C}/(1+1)$ is an equivalence. The forgetful functor $\mathcal{C}/A \to \mathcal{C}$ creates connected limits, and hence preserves cofiltered limits. For every $X \in \mathcal{C}$ the functor $(X,-) : \mathcal{C} \to \mathcal{C} \times \mathcal{C}$ also preserves cofiltered limits. The composition of these functors is $X \sqcup - : \mathcal{C} \to \mathcal{C}$ and therefore also preserves cofiltered limits.',
+	FALSE
+),
+(
 	'distributive_consequence',
 	'["distributive"]',
 	'["strict initial object"]',
