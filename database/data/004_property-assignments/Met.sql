@@ -117,7 +117,7 @@ VALUES
 	'Met',
 	'exact filtered colimits',
 	FALSE,
-	'Remark 2.7 in <a href="https://arxiv.org/abs/2006.01399" target="_blank">this paper</a>'
+	'See Remark 2.7 in <a href="https://arxiv.org/abs/2006.01399" target="_blank">Approximate injectivity and smallness in metric-enriched categories</a> by Adamek-Rosicky.'
 ),
 (
 	'Met',
