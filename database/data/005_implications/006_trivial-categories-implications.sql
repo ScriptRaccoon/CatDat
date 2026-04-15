@@ -117,4 +117,11 @@ VALUES
 	'["binary powers"]',
 	'This is because $X \times X = X$.',
 	FALSE
+),
+(
+	'thin_exact_filtered_colimits',
+	'["thin", "cartesian filtered colimits"]',
+	'["exact filtered colimits"]',
+	'In a thin category, every (finite) limit can be reduced to a (finite) product.',
+	FALSE
 );

@@ -63,6 +63,20 @@ VALUES
 	FALSE
 ),
 (
+	'cartesian_filtered_colimits_condition',
+	'["cartesian filtered colimits"]',
+	'["filtered colimits", "finite products"]',
+	'This holds by definition.',
+	FALSE
+),
+(
+	'exact_includes_cartesian_filtered_colimits',
+	'["exact filtered colimits"]',
+	'["cartesian filtered colimits"]',
+	'If filtered colimits commute with finite limits, they commute with finite products in particular.',
+	FALSE
+),
+(
 	'infinitary_distributive_consequence',
 	'["infinitary distributive"]',
 	'["finite products", "coproducts"]',
@@ -162,7 +176,7 @@ VALUES
 ),
 (
 	'infinite_distributive_filtered_criterion',
-	'["distributive", "exact filtered colimits", "coproducts"]',
+	'["distributive", "cartesian filtered colimits", "coproducts"]',
 	'["infinitary distributive"]',
 	'Each functor $A \times -$ preserves finite coproducts and filtered colimits, hence all coproducts.',
 	FALSE

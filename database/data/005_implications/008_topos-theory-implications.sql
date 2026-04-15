@@ -28,6 +28,13 @@ VALUES
 	FALSE
 ),
 (
+	'ccc_cartesian_filtered_colimits',
+	'["cartesian closed", "filtered colimits"]',
+	'["cartesian filtered colimits"]',
+	'Each functor $X \times -$ is a left adjoint and therefore preserves (filtered) colimits.',
+	FALSE
+),
+(
 	'ccc_no_strict_terminal',
 	'["cartesian closed", "strict terminal object"]',
 	'["thin"]',

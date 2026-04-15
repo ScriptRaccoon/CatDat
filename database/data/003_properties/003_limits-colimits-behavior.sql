@@ -83,6 +83,15 @@ VALUES
 	TRUE
 ),
 (
+	'cartesian filtered colimits',
+	'has',
+	'In a category $\mathcal{C}$, which we assume to have filtered colimits and finite products, we say that <i>filtered colimits are cartesian</i> if for every finite set $I$ the product functor $\prod : \mathcal{C}^I \to \mathcal{C}$ preserves filtered colimits. Equivalently, for every $X \in \mathcal{C}$ the functor $X \times - : \mathcal{C} \to \mathcal{C}$ preserves filtered colimits.<br>
+	This is no standard terminology, it has been suggested in <a href="https://mathoverflow.net/questions/510240" target="_blank">MO/510240</a>. We have added it to the database since it clarifies the relationship between many related properties.',
+	NULL,
+	NULL,
+	TRUE
+),
+(
 	'disjoint finite coproducts',
 	'has',
 	'A category has <i>disjoint finite coproducts</i> if it has finite coproducts, for every pair of objects $A,B$ the coproduct inclusions $A \rightarrow A+B \leftarrow B$ are monomorphisms, and the pullback $A \times_{A + B} B$ exists and is given by the initial object $0$.',
