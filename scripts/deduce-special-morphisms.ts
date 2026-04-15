@@ -1,10 +1,11 @@
-import { Client } from '@libsql/client'
+import type { Client } from '@libsql/client'
+
+// TODO: deduce further morphisms,
+// e.g. isomorphisms = bijective morphisms in algebraic categories,
+// e.g. regular monomorphisms = same as monomorphisms in mono-regular categories
 
 export async function deduce_special_morphisms(db: Client) {
 	await deduce_special_morphisms_of_dual_categories(db)
-	// TODO: deduce further morphisms,
-	// e.g. isomorphisms = bijective morphisms in algebraic categories,
-	// e.g. regular monomorphisms = same as monomorphisms in mono-regular categories,
 }
 
 /**

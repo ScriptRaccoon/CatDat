@@ -1,4 +1,4 @@
-import { Client } from '@libsql/client'
+import type { Client } from '@libsql/client'
 
 export async function deduce_special_objects(db: Client) {
 	await deduce_special_objects_of_dual_categories(db)

@@ -1,3 +1,8 @@
+import { createClient } from '@libsql/client'
+import dotenv from 'dotenv'
+
+dotenv.config({ quiet: true })
+
 export function are_equal_sets<T>(a: Set<T>, b: Set<T>) {
 	return a.size === b.size && [...a].every((el) => b.has(el))
 }
@@ -7,6 +12,15 @@ export function is_subset<T>(a: Set<T>, b: Set<T>, exception?: T) {
 		if (x !== exception && !b.has(x)) return false
 	}
 	return true
+}
+
+export function get_client() {
+	const DB_URL = process.env.DB_URL
+	const DB_AUTH_TOKEN = process.env.DB_AUTH_TOKEN
+
+	if (!DB_URL) throw new Error('No DB_URL found')
+
+	return createClient({ url: DB_URL, authToken: DB_AUTH_TOKEN })
 }
 
 type NormalizedImplication = {

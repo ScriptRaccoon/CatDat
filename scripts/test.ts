@@ -3,26 +3,16 @@
  * It checks that the data behaves as expected.
  * If not, an error is thrown, which must be fixed.
  */
+
 import Set_expected from './expected-data/Set.json'
 import Ab_expected from './expected-data/Ab.json'
 import Top_expected from './expected-data/Top.json'
 import decided_categories from './expected-data/decided-categories.json'
-import { createClient } from '@libsql/client'
-import dotenv from 'dotenv'
+import { get_client } from './shared'
 
-dotenv.config({ quiet: true })
+const db = get_client()
 
-const DB_URL = process.env.DB_URL
-const DB_AUTH_TOKEN = process.env.DB_AUTH_TOKEN
-
-if (!DB_URL) throw new Error('No DB_URL found')
-
-const db = createClient({
-	url: DB_URL,
-	authToken: DB_AUTH_TOKEN,
-})
-
-execute_tests()
+await execute_tests()
 
 /**
  * The main test function verifying that the data behaves as expected.

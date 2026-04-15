@@ -1,8 +1,5 @@
-import { type Client } from '@libsql/client'
+import type { Client } from '@libsql/client'
 import { are_equal_sets } from './shared'
-import dotenv from 'dotenv'
-
-dotenv.config({ quiet: true })
 
 /**
  * Deduces implications from given ones.

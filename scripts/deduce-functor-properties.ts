@@ -1,13 +1,10 @@
 import type { Transaction, Client } from '@libsql/client'
-import dotenv from 'dotenv'
 import {
 	get_assumption_string,
 	get_conclusion_string,
 	is_subset,
 	NormalizedFunctorImplication,
 } from './shared'
-
-dotenv.config({ quiet: true })
 
 type FunctorMeta = {
 	id: string
