@@ -4,6 +4,10 @@ export async function deduce_special_objects(db: Client) {
 	await deduce_special_objects_of_dual_categories(db)
 }
 
+/**
+ * Deduce special objects in dual categories.
+ * For example, initial objects in C describe the terminal objects in C^op.
+ */
 async function deduce_special_objects_of_dual_categories(db: Client) {
 	const res = await db.execute(`
         INSERT INTO special_objects (category_id, type, description)

@@ -21,6 +21,10 @@ type FunctorMeta = {
 // TODO: remove code duplication with category deduction script
 // (not quite the same because we need source and target assumptions)
 
+/**
+ * Deduce properties of functor from given ones
+ * by using the list of functor implications.
+ */
 export async function deduce_functor_properties(db: Client) {
 	const tx = await db.transaction()
 
@@ -43,6 +47,20 @@ export async function deduce_functor_properties(db: Client) {
 	}
 }
 
+/**
+ * Implications have the form:
+ *
+ * P_1 + ... + P_n ----> Q_1 + ... + Q_m
+ *
+ * or
+ *
+ * P_1 + ... + P_n <---> Q_1 + ... + Q_m
+ *
+ * This function decomposes them into normalized implications,
+ * which have the form:
+ *
+ * P_1 + ... + P_n ----> Q
+ */
 async function get_normalized_functor_implications(
 	tx: Transaction,
 ): Promise<NormalizedFunctorImplication[]> {
@@ -113,6 +131,10 @@ async function get_normalized_functor_implications(
 	return implications
 }
 
+/**
+ * Returns the list of functors saved in the database along with
+ * the satisfied properties of their source and target category.
+ */
 async function get_functors(tx: Transaction) {
 	const res = await tx.execute(`
 		SELECT
@@ -148,6 +170,10 @@ async function get_functors(tx: Transaction) {
 	})) as FunctorMeta[]
 }
 
+/**
+ * Clears all the deduced functor properties.
+ * This runs before the deduction starts.
+ */
 async function delete_deduced_functor_properties(tx: Transaction, functor: FunctorMeta) {
 	await tx.execute({
 		sql: `
@@ -158,6 +184,10 @@ async function delete_deduced_functor_properties(tx: Transaction, functor: Funct
 	})
 }
 
+/**
+ * Returns the list of properties that are satisfied or unsatisfied
+ * for a given functor.
+ */
 async function get_decided_functor_properties(
 	tx: Transaction,
 	functor_id: string,
@@ -175,6 +205,10 @@ async function get_decided_functor_properties(
 	return new Set(res.rows.map((row) => row.property_id) as string[])
 }
 
+/**
+ * Deduce satisfied properties for a given functor from given ones
+ * by using the list of normalized implications.
+ */
 async function deduce_satisfied_functor_properties(
 	tx: Transaction,
 	functor: FunctorMeta,
@@ -235,6 +269,10 @@ async function deduce_satisfied_functor_properties(
 	)
 }
 
+/**
+ * Deduce unsatisfied properties for a given functor from given ones
+ * by using the satisfied properties and the list of normalized implications.
+ */
 async function deduce_unsatisfied_functor_properties(
 	tx: Transaction,
 	functor: FunctorMeta,

@@ -6,15 +6,27 @@ dotenv.config({ quiet: true })
 
 // TODO: remove code duplication with category implication deduction script
 
+/**
+ * Deduces functor implications from given ones.
+ */
 export async function deduce_functor_implications(db: Client) {
 	await clear_deduced_functor_implications(db)
 	await create_dualized_functor_implications(db)
 }
 
+/**
+ * Clears all deduced functor implications. This is done as a first step.
+ */
 async function clear_deduced_functor_implications(db: Client) {
 	await db.execute(`DELETE FROM functor_implications WHERE is_deduced = TRUE`)
 }
 
+/**
+ * Dualizes all functor implications by dualizing the involved properties
+ * (in case they have a dual). For example, if P ===> Q holds,
+ * then P^op ===> Q^op holds as well. The assumptions of source and target
+ * categories (if any) need to be dualized as well.
+ */
 async function create_dualized_functor_implications(db: Client) {
 	const res = await db.execute(`
         SELECT

@@ -4,16 +4,27 @@ import dotenv from 'dotenv'
 
 dotenv.config({ quiet: true })
 
+/**
+ * Deduces implications from given ones.
+ */
 export async function deduce_category_implications(db: Client) {
 	await clear_deduced_category_implications(db)
 	await create_dualized_category_implications(db)
 	await create_self_dual_category_implications(db)
 }
 
+/**
+ * Clears all deduced implications. This is done as a first step.
+ */
 async function clear_deduced_category_implications(db: Client) {
 	await db.execute(`DELETE FROM implications WHERE is_deduced = TRUE`)
 }
 
+/**
+ * Dualizes all implications by dualizing the involved properties
+ * (in case they have a dual). For example, if P ===> Q holds,
+ * then P^op ===> Q^op holds as well.
+ */
 async function create_dualized_category_implications(db: Client) {
 	const res = await db.execute(`
         SELECT
@@ -91,6 +102,10 @@ async function create_dualized_category_implications(db: Client) {
 	console.info(`Dualized ${dualizable_implications.length} category implications`)
 }
 
+/**
+ * Creates all trivial implications of the form
+ * self-dual + P ===> P^op
+ */
 async function create_self_dual_category_implications(db: Client) {
 	const { rows } = await db.execute(`
         INSERT INTO implication_input (
