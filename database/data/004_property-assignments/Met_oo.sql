@@ -25,6 +25,12 @@ VALUES
 ),
 (
 	'Met_oo',
+	'cartesian filtered colimits',
+	TRUE,
+	'We can use the same proof as for the <a href="/category/Met">category of metric spaces</a> since the equation $\inf_i \max(r, s_i) = \max(r, \inf_i s_i)$ also holds for for $r, s_i \in \mathbb{R} \cup \{\infty\}$.'
+),
+(
+	'Met_oo',
 	'infinitary extensive',
 	TRUE,
 	'[Sketch] Since $\mathbf{Set}$ is infinitary extensive, a map $f : Y \to \coprod_i X_i =: X$ corresponds to a decomposition $Y = \coprod_i Y_i$ (as sets) with maps $f_i : Y_i \to X_i$. Endow $Y_i$ with the restricted metric. If $f$ is non-expansive, each $f_i$ is non-expansive, and for $x_i \in Y_i$ and $i \neq j$ we have $d_Y(x_i,x_j) \geq d_X(f(x_i),f(x_j)) = \infty$, so that $Y = \coprod_i Y_i$ holds as metric spaces.'

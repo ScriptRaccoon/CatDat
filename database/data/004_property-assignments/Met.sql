@@ -49,6 +49,12 @@ VALUES
 ),
 (
 	'Met',
+	'cartesian filtered colimits',
+	TRUE,
+	'The canonical map $\mathrm{colim}_i  (X \times Y_i) \to X \times \mathrm{colim}_i Y_i$ is an isomorphism for directed diagrams $(Y_i)$: It is surjective by the concrete description of directed colimits. It is isometric because of the elementary observation $\inf_i \max(r, s_i) = \max(r, \inf_i s_i)$ for $r, s_i \in \mathbb{R}$, where $i \leq j \implies s_i \geq s_j$.'
+),
+(
+	'Met',
 	'strict initial object',
 	TRUE,
 	'The empty metric space is initial and clearly strict.'
