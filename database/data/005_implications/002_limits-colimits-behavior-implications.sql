@@ -21,6 +21,13 @@ VALUES
 	FALSE
 ),
 (
+	'biproducts_cartesian_filtered_colimits',
+	'["biproducts", "filtered colimits"]',
+	'["cartesian filtered colimits"]',
+	'If $I$ is a finite set, the product functor $\mathcal{C}^I \to \mathcal{C}$ is isomorphic to the coproduct functor $\mathcal{C}^I \to \mathcal{C}$, hence preserves <i>all</i> colimits that exist in $\mathcal{C}$.',
+	FALSE
+),
+(
 	'pointed_characterization',
 	'["pointed"]',
 	'["zero morphisms", "initial object"]',
