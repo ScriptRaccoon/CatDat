@@ -158,26 +158,29 @@ async function delete_deduced_functor_properties(tx: Transaction, functor: Funct
 	})
 }
 
+async function get_decided_functor_properties(
+	tx: Transaction,
+	functor_id: string,
+	value: boolean,
+) {
+	const res = await tx.execute({
+		sql: `
+			SELECT property_id
+			FROM functor_property_assignments
+			WHERE functor_id = ? AND is_satisfied = ?
+		`,
+		args: [functor_id, value],
+	})
+
+	return new Set(res.rows.map((row) => row.property_id) as string[])
+}
+
 async function deduce_satisfied_functor_properties(
 	tx: Transaction,
 	functor: FunctorMeta,
 	implications: NormalizedFunctorImplication[],
 ) {
-	const satisfied_res = await tx.execute({
-		sql: `
-			SELECT property_id
-			FROM functor_property_assignments
-			WHERE
-				functor_id = ?
-				AND is_satisfied = TRUE
-				AND is_deduced = FALSE
-		`,
-		args: [functor.id],
-	})
-
-	const satisfied_props = new Set(
-		satisfied_res.rows.map((row) => row.property_id) as string[],
-	) as Set<string>
+	const satisfied_props = await get_decided_functor_properties(tx, functor.id, true)
 
 	const deduced_satisfied_props: string[] = []
 	const reasons: Record<string, string> = {}
@@ -237,34 +240,8 @@ async function deduce_unsatisfied_functor_properties(
 	functor: FunctorMeta,
 	implications: NormalizedFunctorImplication[],
 ) {
-	const satisfied_res = await tx.execute({
-		sql: `
-			SELECT property_id
-			FROM functor_property_assignments
-			WHERE functor_id = ? AND is_satisfied = TRUE
-		`,
-		args: [functor.id],
-	})
-
-	const satisfied_props = new Set(
-		satisfied_res.rows.map((row) => row.property_id) as string[],
-	)
-
-	const unsatisfied_res = await tx.execute({
-		sql: `
-			SELECT property_id
-			FROM functor_property_assignments
-			WHERE
-				functor_id = ?
-				AND is_satisfied = FALSE
-				AND is_deduced = FALSE
-		`,
-		args: [functor.id],
-	})
-
-	const unsatisfied_props = new Set(
-		unsatisfied_res.rows.map((row) => row.property_id) as string[],
-	)
+	const satisfied_props = await get_decided_functor_properties(tx, functor.id, true)
+	const unsatisfied_props = await get_decided_functor_properties(tx, functor.id, false)
 
 	const deduced_unsatisfied_props: string[] = []
 	const reasons: Record<string, string> = {}

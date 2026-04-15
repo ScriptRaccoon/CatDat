@@ -131,27 +131,30 @@ async function delete_deduced_category_properties(tx: Transaction, category_id: 
 	})
 }
 
+async function get_decided_properties(
+	tx: Transaction,
+	category_id: string,
+	value: boolean,
+) {
+	const res = await tx.execute({
+		sql: `
+			SELECT property_id
+			FROM category_property_assignments
+			WHERE category_id = ? AND is_satisfied = ?
+		`,
+		args: [category_id, value],
+	})
+
+	return new Set(res.rows.map((row) => row.property_id) as string[])
+}
+
 async function deduce_satisfied_category_properties(
 	tx: Transaction,
 	category_id: string,
 	implications: NormalizedCategoryImplication[],
 	options: { check_conflicts: boolean } = { check_conflicts: true },
 ) {
-	const satisfied_res = await tx.execute({
-		sql: `
-			SELECT property_id
-			FROM category_property_assignments
-			WHERE
-				category_id = ?
-				AND is_satisfied = TRUE
-				AND is_deduced = FALSE
-		`,
-		args: [category_id],
-	})
-
-	const satisfied_props = new Set(
-		satisfied_res.rows.map((row) => row.property_id) as string[],
-	) as Set<string>
+	const satisfied_props = await get_decided_properties(tx, category_id, true)
 
 	const deduced_satisfied_props: string[] = []
 	const reasons: Record<string, string> = {}
@@ -211,33 +214,8 @@ async function deduce_unsatisfied_category_properties(
 	implications: NormalizedCategoryImplication[],
 	options: { check_conflicts: boolean } = { check_conflicts: true },
 ) {
-	const satisfied_res = await tx.execute({
-		sql: `
-			SELECT property_id
-			FROM category_property_assignments
-			WHERE category_id = ? AND is_satisfied = TRUE
-		`,
-		args: [category_id],
-	})
-
-	const satisfied_props = new Set(
-		satisfied_res.rows.map((row) => row.property_id) as string[],
-	)
-
-	const unsatisfied_res = await tx.execute({
-		sql: `
-			SELECT property_id
-			FROM category_property_assignments
-			WHERE
-				category_id = ?
-				AND is_satisfied = FALSE
-		`,
-		args: [category_id],
-	})
-
-	const unsatisfied_props = new Set(
-		unsatisfied_res.rows.map((row) => row.property_id) as string[],
-	)
+	const satisfied_props = await get_decided_properties(tx, category_id, true)
+	const unsatisfied_props = await get_decided_properties(tx, category_id, false)
 
 	const deduced_unsatisfied_props: string[] = []
 	const reasons: Record<string, string> = {}
