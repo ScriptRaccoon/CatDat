@@ -88,7 +88,16 @@ VALUES
 	'In a category $\mathcal{C}$, which we assume to have filtered colimits and finite products, we say that <i>filtered colimits are cartesian</i> if for every finite set $I$ the product functor $\prod : \mathcal{C}^I \to \mathcal{C}$ preserves filtered colimits. Equivalently, for every $X \in \mathcal{C}$ the functor $X \times - : \mathcal{C} \to \mathcal{C}$ preserves filtered colimits.<br>
 	This is no standard terminology, it has been suggested in <a href="https://mathoverflow.net/questions/510240" target="_blank">MO/510240</a>. We have added it to the database since it clarifies the relationship between many related properties.',
 	NULL,
+	'cocartesian cofiltered limits',
+	TRUE
+),
+(
+	'cocartesian cofiltered limits',
+	'has',
+	'In a category $\mathcal{C}$, which we assume to have cofiltered limits and finite coproducts, we say that <i>cofiltered limits are cocartesian</i> if for every finite set $I$ the coproduct functor $\coprod : \mathcal{C}^I \to \mathcal{C}$ preserves cofiltered limits. Equivalently, for every $X \in \mathcal{C}$ the functor $X \sqcup - : \mathcal{C} \to \mathcal{C}$ preserves cofiltered limits.<br>
+	This is no standard terminology, its dual has been suggested in <a href="https://mathoverflow.net/questions/510240" target="_blank">MO/510240</a>. We have added it to the database since it clarifies the relationship between many related properties.',
 	NULL,
+	'cartesian filtered colimits',
 	TRUE
 ),
 (

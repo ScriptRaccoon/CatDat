@@ -155,6 +155,8 @@ VALUES
 ('cartesian filtered colimits', 'filtered colimits'),
 ('cartesian filtered colimits', 'finite products'),
 ('cartesian filtered colimits', 'exact filtered colimits'),
+('cocartesian cofiltered limits', 'cofiltered limits'),
+('cocartesian cofiltered limits', 'finite coproducts'),
 ('generator', 'generating set'),
 ('generating set', 'generator'),
 ('Grothendieck abelian', 'abelian'),
