@@ -37,18 +37,12 @@ export async function deduce_category_properties(db: Client) {
 			if (!allowed) continue
 
 			await deduce_dual_category_properties(tx, category)
-			await deduce_satisfied_category_properties(
-				tx,
-				category.id,
-				implications,
-				true,
-			)
-			await deduce_unsatisfied_category_properties(
-				tx,
-				category.id,
-				implications,
-				true,
-			)
+			await deduce_satisfied_category_properties(tx, category.id, implications, {
+				check_conflicts: false,
+			})
+			await deduce_unsatisfied_category_properties(tx, category.id, implications, {
+				check_conflicts: false,
+			})
 		}
 
 		await tx.commit()
@@ -141,7 +135,7 @@ async function deduce_satisfied_category_properties(
 	tx: Transaction,
 	category_id: string,
 	implications: NormalizedCategoryImplication[],
-	ignore_conflicts = false,
+	options: { check_conflicts: boolean } = { check_conflicts: true },
 ) {
 	const satisfied_res = await tx.execute({
 		sql: `
@@ -194,7 +188,7 @@ async function deduce_satisfied_category_properties(
 			values.push(category_id, id, reasons[id], i + 1)
 		}
 
-		const insert_sql = !ignore_conflicts
+		const insert_sql = options.check_conflicts
 			? `INSERT INTO category_property_assignments
 				(category_id, property_id, is_satisfied, reason, position, is_deduced)
 				VALUES ${value_fragments.join(',\n')}`
@@ -215,7 +209,7 @@ async function deduce_unsatisfied_category_properties(
 	tx: Transaction,
 	category_id: string,
 	implications: NormalizedCategoryImplication[],
-	ignore_conflicts = false,
+	options: { check_conflicts: boolean } = { check_conflicts: true },
 ) {
 	const satisfied_res = await tx.execute({
 		sql: `
@@ -231,16 +225,7 @@ async function deduce_unsatisfied_category_properties(
 	)
 
 	const unsatisfied_res = await tx.execute({
-		sql: !ignore_conflicts
-			? `
-			SELECT property_id
-			FROM category_property_assignments
-			WHERE
-				category_id = ?
-				AND is_satisfied = FALSE
-				AND is_deduced = FALSE
-		`
-			: `
+		sql: `
 			SELECT property_id
 			FROM category_property_assignments
 			WHERE
@@ -307,7 +292,7 @@ async function deduce_unsatisfied_category_properties(
 			values.push(category_id, id, reasons[id], i + 1)
 		}
 
-		const insert_query = !ignore_conflicts
+		const insert_query = options.check_conflicts
 			? `INSERT INTO category_property_assignments
 				(category_id, property_id, is_satisfied, reason, position, is_deduced)
 				VALUES ${value_fragments.join(',\n')}`
