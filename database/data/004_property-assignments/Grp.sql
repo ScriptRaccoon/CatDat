@@ -82,4 +82,14 @@ VALUES
 	'regular quotient object classifier',
 	FALSE,
 	'Assume that $\mathbf{Grp}$ has a (regular) quotient object classifier, i.e. a group $P$ such that every surjective homomorphism $G \to H$ is the cokernel of a unique homomorphism $\varphi : P \to G$. Equivalently, every normal subgroup $N \subseteq G$ is $\langle \langle \varphi(P) \rangle \rangle$ for a unique homomorphism $\varphi : P \to G$, where $\langle \langle - \rangle \rangle$ denotes the normal closure. If $c_g : G \to G$ denotes the conjugation with $g \in G$, then the images of $\varphi$ and $c_g \circ \varphi$ have the same normal closures, so the homomorphisms must be equal. In other words, $\varphi$ factors through the center $Z(G)$. But then every normal subgroup of $G$, in particular $G$ itself, would be contained in $Z(G)$, which is wrong for every non-abelian group $G$.'
+),
+(
+	'Grp',
+	'cocartesian cofiltered limits',
+	FALSE,
+	'For cofiltered diagrams of groups $(H_i)$ and a group $G$ the canonical homomorphism
+	<br>$\alpha : G \sqcup \lim_i H_i \to \lim_i (G \sqcup H_i)$<br>
+	is injective, but often fails to be surjective because the components of an element in the image have bounded <i>free product length</i> (the number of factors appearing in the reduced form). Specifically, consider the free groups $G = \langle y \rangle$ and $H_n = \langle x_1,\dotsc,x_n \rangle$ for $n \in \mathbb{N}$ with the truncation maps $H_{n+1} \to H_n$, $x_{n+1} \mapsto 1$. Define
+	<br>$p_n := x_1 \, y \, x_2 \, y \, \cdots \, x_{n-1} \, y \, x_n \, y^{-(n-1)} \in G \sqcup H_n$.<br>
+	If we substitute $x_{n+1}=1$ in $p_{n+1}$, we get $p_n$. Thus, we have $p = (p_n) \in \lim_n (G \sqcup H_n)$. This element does not lie in the image of $\alpha$ since the free product length of $p_n$ (which is well-defined) is $2n$, which is unbounded.'
 );
