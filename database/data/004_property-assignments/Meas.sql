@@ -67,13 +67,7 @@ VALUES
 ),
 (
 	'Meas',
-	'cartesian closed',
-	FALSE,
-	'The functors $X \times -$ do not preserve filtered colimits by <a href="https://math.stackexchange.com/questions/5027218" target="_blank">MSE/5027218</a>, hence cannot be left adjoints.'
-),
-(
-	'Meas',
-	'exact filtered colimits',
+	'cartesian filtered colimits',
 	FALSE,
 	'See <a href="https://math.stackexchange.com/questions/5027218" target="_blank">MSE/5027218</a>.'
 ),

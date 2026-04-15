@@ -73,9 +73,9 @@ VALUES
 ),
 (
 	'Top',
-	'cartesian closed',
+	'cartesian filtered colimits',
 	FALSE,
-	'The functor $\mathbb{Q} \times - : \mathbf{Top} \to \mathbf{Top}$ does not preserve colimits, hence has no right adjoint. See <a href="https://math.stackexchange.com/questions/2969372" target="_blank">MSE/2969372</a> for a proof.'
+	'The functor $\mathbb{Q} \times - : \mathbf{Top} \to \mathbf{Top}$ does not preserve colimits, see <a href="https://math.stackexchange.com/questions/2969372" target="_blank">MSE/2969372</a>.'
 ),
 (
 	'Top',
@@ -94,12 +94,6 @@ VALUES
 	'balanced',
 	FALSE,
 	'If $X$ is a set, consider the discrete space $X_d$ on $X$ and the indiscrete space $X_i$ on $X$. The identity map $X \to X$ lifts to a continuous map $X_d \to X_i$, which is bijective and therefore both a mono- and an epimorphism, but it is not an isomorphism unless $X$ has at most one element.'
-),
-(
-	'Top',
-	'exact filtered colimits',
-	FALSE,
-	'See <a href="https://math.stackexchange.com/questions/1255678" target="_blank">MSE/1255678</a>.'
 ),
 (
 	'Top',

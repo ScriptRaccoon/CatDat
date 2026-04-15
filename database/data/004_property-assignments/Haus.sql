@@ -67,7 +67,7 @@ VALUES
 ),
 (
 	'Haus',
-	'cartesian closed',
+	'cartesian filtered colimits',
 	FALSE,
 	'It is shown in <a href="https://math.stackexchange.com/questions/1255678">MSE/1255678</a> that $\mathbb{Q} \times - : \mathbf{Top} \to \mathbf{Top}$ does not preserve sequential colimits (so that it cannot be a left adjoint). The same example also works in $\mathbf{Haus}$: Surely $\mathbb{Q}$ is Hausdorff, $X_n$ is Hausdorff, as is their colimit $X$, and the colimit (taken in $\mathbf{Top}$) of the $X_n \times \mathbb{Q}$ admits a bijective continuous map to a Hausdorff space, therefore is also Hausdorff, meaning it is also the colimit taken in $\mathbf{Haus}$.'
 ),
