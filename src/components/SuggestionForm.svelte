@@ -61,88 +61,104 @@
 	}
 
 	let section = $state<HTMLElement | null>(null)
+
+	let hide_form = $state(true)
+
+	async function show_form() {
+		hide_form = false
+		await tick()
+		section?.scrollIntoView({
+			block: 'start',
+			behavior: 'smooth',
+		})
+	}
 </script>
 
 <section bind:this={section}>
-	<h2>Suggestion Form</h2>
+	{#if hide_form}
+		<button class="button" onclick={show_form}>Make a suggestion</button>
+	{:else}
+		<h2>Suggestion Form</h2>
 
-	<p class="hint">
-		Use the form below to report missing data, submit an issue, or make a suggestion.
-	</p>
-
-	<form onsubmit={create_issue}>
-		<div class="form-group">
-			<label for="title">
-				<span>Short summary</span>
-				<span class="description">max. {TITLE_MAX_LENGTH} characters</span>
-			</label>
-			<input
-				type="text"
-				id="title"
-				class="full-width"
-				bind:value={title}
-				required
-				aria-invalid={title.length > TITLE_MAX_LENGTH}
-			/>
-		</div>
-
-		<div class="form-group">
-			<label for="body">
-				<span>Details</span>
-				<span class="description">max. {BODY_MAX_LENGTH} characters</span>
-			</label>
-			<textarea
-				id="body"
-				{@attach resize_textarea}
-				bind:value={body}
-				required
-				class="full-width"
-				aria-invalid={body.length > BODY_MAX_LENGTH}
-			></textarea>
-		</div>
-
-		<div class="form-group">
-			<label for="name">
-				<span>Your name</span>
-				<span class="description">optional</span>
-			</label>
-			<input
-				type="text"
-				id="name"
-				class="full-width"
-				bind:value={name}
-				aria-invalid={name.length > NAME_MAX_LENGTH}
-			/>
-		</div>
-
-		<button class="button" disabled={sending}>
-			{#if sending}
-				Submitting...
-			{:else}
-				Submit
-			{/if}
-		</button>
-	</form>
-
-	{#if error}
-		<p class="error">
-			<Fa icon={faWarning} />
-			Error: {error}
+		<p class="hint">
+			Use the form below to report missing data, submit an issue, or make a
+			suggestion.
 		</p>
-	{/if}
 
-	{#if url}
-		<p>
-			<Fa icon={faCheckCircle} />
-			Your suggestion has been created as a
-			<a href={url} target="_blank">GitHub issue</a>. We will review it shortly.
-		</p>
+		<form onsubmit={create_issue}>
+			<div class="form-group">
+				<label for="title">
+					<span>Short summary</span>
+					<span class="description">max. {TITLE_MAX_LENGTH} characters</span>
+				</label>
+				<input
+					type="text"
+					id="title"
+					class="full-width"
+					bind:value={title}
+					required
+					aria-invalid={title.length > TITLE_MAX_LENGTH}
+				/>
+			</div>
+
+			<div class="form-group">
+				<label for="body">
+					<span>Details</span>
+					<span class="description">max. {BODY_MAX_LENGTH} characters</span>
+				</label>
+				<textarea
+					id="body"
+					{@attach resize_textarea}
+					bind:value={body}
+					required
+					class="full-width"
+					aria-invalid={body.length > BODY_MAX_LENGTH}
+				></textarea>
+			</div>
+
+			<div class="form-group">
+				<label for="name">
+					<span>Your name</span>
+					<span class="description">optional</span>
+				</label>
+				<input
+					type="text"
+					id="name"
+					class="full-width"
+					bind:value={name}
+					aria-invalid={name.length > NAME_MAX_LENGTH}
+				/>
+			</div>
+
+			<button class="button" disabled={sending}>
+				{#if sending}
+					Submitting...
+				{:else}
+					Submit
+				{/if}
+			</button>
+		</form>
+
+		{#if error}
+			<p class="error">
+				<Fa icon={faWarning} />
+				Error: {error}
+			</p>
+		{/if}
+
+		{#if url}
+			<p>
+				<Fa icon={faCheckCircle} />
+				Your suggestion has been created as a
+				<a href={url} target="_blank">GitHub issue</a>. We will review it shortly.
+			</p>
+		{/if}
 	{/if}
 </section>
 
 <style>
 	section {
-		margin-top: 4rem;
+		margin-top: 2rem;
 		padding-bottom: 1rem;
 		margin-bottom: -1rem;
 	}
