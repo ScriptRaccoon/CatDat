@@ -30,7 +30,25 @@ export async function deduce_category_properties(db: Client) {
 		}
 
 		for (const category of categories) {
+			const allowed =
+				category.dual_category_id !== null &&
+				category.name.toLowerCase().startsWith('dual') // prevent circular deduction
+
+			if (!allowed) continue
+
 			await deduce_dual_category_properties(tx, category)
+			await deduce_satisfied_category_properties(
+				tx,
+				category.id,
+				implications,
+				true,
+			)
+			await deduce_unsatisfied_category_properties(
+				tx,
+				category.id,
+				implications,
+				true,
+			)
 		}
 
 		await tx.commit()
@@ -123,6 +141,7 @@ async function deduce_satisfied_category_properties(
 	tx: Transaction,
 	category_id: string,
 	implications: NormalizedCategoryImplication[],
+	ignore_conflicts = false,
 ) {
 	const satisfied_res = await tx.execute({
 		sql: `
@@ -175,13 +194,14 @@ async function deduce_satisfied_category_properties(
 			values.push(category_id, id, reasons[id], i + 1)
 		}
 
-		const insert_sql = `
-			INSERT INTO category_property_assignments (
-				category_id, property_id, is_satisfied, reason, position, is_deduced
-			)
-			VALUES
-			${value_fragments.join(',\n')}
-		`
+		const insert_sql = !ignore_conflicts
+			? `INSERT INTO category_property_assignments
+				(category_id, property_id, is_satisfied, reason, position, is_deduced)
+				VALUES ${value_fragments.join(',\n')}`
+			: `INSERT INTO category_property_assignments
+				(category_id, property_id, is_satisfied, reason, position, is_deduced)
+				VALUES ${value_fragments.join(',\n')}
+				ON CONFLICT (category_id, property_id) DO NOTHING`
 
 		await tx.execute({ sql: insert_sql, args: values })
 	}
@@ -195,6 +215,7 @@ async function deduce_unsatisfied_category_properties(
 	tx: Transaction,
 	category_id: string,
 	implications: NormalizedCategoryImplication[],
+	ignore_conflicts = false,
 ) {
 	const satisfied_res = await tx.execute({
 		sql: `
@@ -210,13 +231,21 @@ async function deduce_unsatisfied_category_properties(
 	)
 
 	const unsatisfied_res = await tx.execute({
-		sql: `
+		sql: !ignore_conflicts
+			? `
 			SELECT property_id
 			FROM category_property_assignments
 			WHERE
 				category_id = ?
 				AND is_satisfied = FALSE
 				AND is_deduced = FALSE
+		`
+			: `
+			SELECT property_id
+			FROM category_property_assignments
+			WHERE
+				category_id = ?
+				AND is_satisfied = FALSE
 		`,
 		args: [category_id],
 	})
@@ -278,12 +307,14 @@ async function deduce_unsatisfied_category_properties(
 			values.push(category_id, id, reasons[id], i + 1)
 		}
 
-		const insert_query = `
-			INSERT INTO category_property_assignments (
-				category_id, property_id, is_satisfied, reason, position, is_deduced
-			)
-			VALUES
-			${value_fragments.join(',\n')}`
+		const insert_query = !ignore_conflicts
+			? `INSERT INTO category_property_assignments
+				(category_id, property_id, is_satisfied, reason, position, is_deduced)
+				VALUES ${value_fragments.join(',\n')}`
+			: `INSERT INTO category_property_assignments
+				(category_id, property_id, is_satisfied, reason, position, is_deduced)
+				VALUES ${value_fragments.join(',\n')}
+				ON CONFLICT (category_id, property_id) DO NOTHING`
 
 		await tx.execute({ sql: insert_query, args: values })
 	}
@@ -294,12 +325,6 @@ async function deduce_unsatisfied_category_properties(
 }
 
 async function deduce_dual_category_properties(tx: Transaction, category: CategoryMeta) {
-	const allowed =
-		category.dual_category_id !== null &&
-		category.name.toLowerCase().startsWith('dual') // prevent circular deduction
-
-	if (!allowed) return
-
 	const res = await tx.execute({
 		sql: `
 			INSERT OR REPLACE INTO category_property_assignments
@@ -318,7 +343,9 @@ async function deduce_dual_category_properties(tx: Transaction, category: Catego
 			FROM category_property_assignments a
 			INNER JOIN properties p ON p.id = a.property_id
 			INNER JOIN relations r ON r.relation= p.relation
-			WHERE a.category_id = ? AND p.dual_property_id IS NOT NULL
+			WHERE
+				a.category_id = ?
+				AND p.dual_property_id IS NOT NULL				
 			ORDER BY lower(p.dual_property_id)
 		`,
 		args: [category.id, category.dual_category_id],
