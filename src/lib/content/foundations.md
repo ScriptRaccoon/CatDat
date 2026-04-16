@@ -63,6 +63,14 @@ defined as usual, but notice that it takes values in the hypercategory of all co
 
 We may define _adjunctions_ as usual: we require natural isomorphisms $\mathrm{Hom}(F(A),B) \cong \mathrm{Hom}(A,G(B))$ of functors valued in $\mathbf{Set}^+$. We do not need to assume the categories to be locally small. They can also be defined by morphisms of functors $\mathrm{id} \to G \circ F$ and $F \circ G \to \mathrm{id}$ satisfying the triangle identities.
 
+### Limits and Colimits
+
+Let $\mathcal{C}$ be a category. If $D : \mathcal{I} \to \mathcal{C}$ is a functor, also called a _diagram_ in this context, a _cone_ over $D$ is an object $X \in \mathcal{C}$ equipped with morphisms $p_i : X \to D(i)$ for all $i \in \mathcal{I}$ such that for every morphism $i \to j$ the evident triangle commutes. Cones form a category, and a terminal object in the category of cones is called a _limit_ of $D$. The dual notion is called a _colimit_.
+
+Unless otherwise specified, we only consider small diagrams and hence also only small limits (and small colimits), i.e. where $\mathcal{I}$ is a small category (or merely essentially small, that does not make any difference). (This is because large limits almost never exist and it is tedious to write "small" everywhere.)
+
+There are special types of limits, such as equalizers, products, cofiltered limits, and their dual notions, such as coequalizers, coproducts, and filtered colimits. By our convention, products and coproducts in a category are indexed by a set, not a collection (unless we say otherwise). Filtered colimits are indexed by a small filtered category (unless we say otherwise).
+
 ### Well-powered categories
 
 If $A$ is an object of a category, the collection of all monomorphisms $B \to A$ does not need to be a set. But if (for every choice of $A$) there is a set of such monomorphisms such that every monomorphism $B \to A$ is isomorphic over $A$ to one in the set, then the category is called _well-powered_. The dual notion of being _well-copowered_ is defined in the same way by using epimorphisms $A \to B$. Every small category is well-powered, but there are many well-powered categories that are not small, not even equivalent to a small category.
