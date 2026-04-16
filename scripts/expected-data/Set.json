@@ -81,6 +81,18 @@
 	"cofiltered": true,
 	"sifted": true,
 	"cosifted": true,
+	"accessible": true,
+	"finitely accessible": true,
+	"ℵ₁-accessible": true,
+	"generalized variety": true,
+	"locally finitely multi-presentable": true,
+	"locally multi-presentable": true,
+	"locally poly-presentable": true,
+	"multi-algebraic": true,
+	"multi-complete": true,
+	"multi-cocomplete": true,
+	"multi-terminal object": true,
+	"multi-initial object": true,
 	"cartesian filtered colimits": true,
 	"cocartesian cofiltered limits": true,
 
@@ -126,5 +138,9 @@
 	"kernels": false,
 	"cokernels": false,
 	"normal": false,
-	"conormal": false
+	"conormal": false,
+	"locally copresentable": false,
+	"coaccessible": false,
+	"countable": false,
+	"essentially countable": false
 }
