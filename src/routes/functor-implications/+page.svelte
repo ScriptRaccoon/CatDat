@@ -7,12 +7,9 @@
 	let { data } = $props()
 </script>
 
-<MetaData
-	title="List of implications of functors"
-	description="Implications of functorial properties"
-/>
+<MetaData title="Implications of functors" />
 
-<h2>List of implications of functors</h2>
+<h2>Implications of functors</h2>
 
 <!-- TODO: add search feature if the list grows in the future -->
 <!-- TODO: add dualized-toggle if the list grows in the future -->

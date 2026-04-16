@@ -7,10 +7,7 @@
 	let { data } = $props()
 </script>
 
-<MetaData
-	title="List of properties of functors"
-	description="All functorial properties"
-/>
+<MetaData title="Properties of functors" />
 
 <h2>Properties of Functors</h2>
 

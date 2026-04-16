@@ -38,12 +38,9 @@
 	)
 </script>
 
-<MetaData
-	title="List of implications"
-	description="Implications of categorical properties"
-/>
+<MetaData title="Implications of categories" />
 
-<h2>List of implications</h2>
+<h2>Implications of categories</h2>
 
 <SearchFilter bind:search />
 

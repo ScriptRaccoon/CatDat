@@ -20,7 +20,7 @@
 	)
 </script>
 
-<MetaData title="List of categories" description="All available categories" />
+<MetaData title="List of categories" />
 
 <section>
 	<h2>List of categories</h2>

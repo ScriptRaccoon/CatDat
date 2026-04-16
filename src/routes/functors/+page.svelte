@@ -9,7 +9,7 @@
 	let { data } = $props()
 </script>
 
-<MetaData title="List of functors" description="All available functors" />
+<MetaData title="List of functors" />
 
 <h2>List of functors</h2>
 
