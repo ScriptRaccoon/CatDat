@@ -12,6 +12,8 @@ VALUES
 ('Ab', 'direct products with pointwise operations'),
 ('Alg(R)', 'direct products with pointwise operations'),
 ('Ban', 'direct products with the $\sup$-norm'),
+('BanAlg_nu', 'direct products with the $\sup$-norm'),
+('BanAlg_u', 'direct products with the $\sup$-norm'),
 ('CAlg(R)', 'direct products with pointwise operations'),
 ('Cat', 'direct products with pointwise operations'),
 ('CMon', 'direct products with pointwise operations'),

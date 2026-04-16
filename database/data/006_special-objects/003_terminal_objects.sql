@@ -10,6 +10,8 @@ VALUES
 ('Ab_fg', 'trivial group'),
 ('Alg(R)', 'trivial algebra'),
 ('Ban', 'trivial Banach space'),
+('BanAlg_nu', 'zero algebra'),
+('BanAlg_u', 'zero algebra'),
 ('CAlg(R)', 'trivial algebra'),
 ('Cat', '<a href="/category/1">trivial category</a>'),
 ('CMon', 'trivial monoid'),

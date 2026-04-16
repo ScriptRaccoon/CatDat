@@ -11,12 +11,32 @@ INSERT INTO categories (
 VALUES
 (
 	'Ban',
-	'category of Banach spaces with linear contractions',
+	'category of Banach spaces',
 	'$\mathbf{Ban}$',
 	'Banach spaces over $\mathbb{C}$',
 	'linear contractions, i.e. linear maps of norm $\leq 1$',
 	'The choice of morphisms is similar to that of $\mathbf{Met}$ which yields better categorical properties.',
 	'https://ncatlab.org/nlab/show/Banach+space',
+	NULL
+),
+(
+	'BanAlg_nu',
+	'category of non-unital Banach algebras',
+	'$\mathbf{BanAlg}_{nu}$',
+	'non-unital Banach algebras over $\mathbb{C}$',
+	'non-unital algebra homomorphisms of norm $\leq 1$',
+	'With "non-unital" we mean "not necessarily unital". This category is the category of semigroup objects in the cocomplete monoidal category $(\mathbf{Ban},\otimes_p)$.',
+	'https://ncatlab.org/nlab/show/Banach+algebra',
+	NULL
+),
+(
+	'BanAlg_u',
+	'category of unital Banach algebras',
+	'$\mathbf{BanAlg}_u$',
+	'unital Banach algebras over $\mathbb{C}$',
+	'unital algebra homomorphisms of norm $\leq 1$',
+	'This category is the category of monoid objects in the cocomplete monoidal category $(\mathbf{Ban},\otimes_p)$.',
+	'https://ncatlab.org/nlab/show/Banach+algebra',
 	NULL
 ),
 (

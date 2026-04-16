@@ -51,6 +51,16 @@ VALUES
 	'This is easy.'
 ),
 (
+	'BanAlg_nu',
+	'isometric bijective algebra homomorphisms',
+	'This is easy.'
+),
+(
+	'BanAlg_u',
+	'isometric bijective algebra homomorphisms',
+	'This is easy.'
+),
+(
 	'BG',
 	'every morphism',
 	'It is a groupoid.'
