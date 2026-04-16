@@ -13,6 +13,12 @@ VALUES
 ),
 (
     'Delta',
+    'countable',
+    TRUE,
+    'This is obvious.'
+),
+(
+    'Delta',
     'small',
     TRUE,
     'This is trivial.'
