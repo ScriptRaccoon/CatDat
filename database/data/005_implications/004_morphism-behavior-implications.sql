@@ -8,9 +8,9 @@ INSERT INTO implication_input (
 VALUES
 (
 	'cancellative_consequence',
-	'["left cancellative", "coequalizers"]',
+	'["right cancellative", "equalizers"]',
 	'["thin"]',
-	'If $f,g$ are two parallel morphisms, then their coequalizer is a regular epimorphism, but also a monomorphism by assumption, so it must be an isomorphism. But this means that $f = g$.',
+	'If $f,g$ are two parallel morphisms, then their equalizer is a regular monomorphism, but also an epimorphism by assumption, so it must be an isomorphism. But this means that $f = g$.',
 	FALSE
 ),
 (
