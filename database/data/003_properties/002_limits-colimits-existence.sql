@@ -314,7 +314,7 @@ VALUES
 (
 	'coreflexive equalizers',
 	'has',
-	'A <i>coreflexive equalizer</i> is a limit of a diagram consisting of a parallel pair of morphisms with a common retraction, which is the same concept as an equalizer of such a parallel pair. This property refers to the existence of coreflexive equalizers.',
+	'A <i>coreflexive equalizer</i> is a limit of a diagram consisting of a parallel pair of morphisms with a common retraction (left inverse), which is the same concept as an equalizer of such a parallel pair. This property refers to the existence of coreflexive equalizers.',
 	'https://ncatlab.org/nlab/show/reflexive+coequalizer',
 	'reflexive coequalizers',
 	TRUE
@@ -322,7 +322,7 @@ VALUES
 (
 	'reflexive coequalizers',
 	'has',
-	'A <i>reflexive coequalizer</i> is a colimit of a diagram consisting of a parallel pair of morphisms with a common section, which is the same concept as a coequalizer of such a parallel pair. This property refers to the existence of reflexive coequalizers.',
+	'A <i>reflexive coequalizer</i> is a colimit of a diagram consisting of a parallel pair of morphisms with a common section (right inverse), which is the same concept as a coequalizer of such a parallel pair. This property refers to the existence of reflexive coequalizers.',
 	'https://ncatlab.org/nlab/show/reflexive+coequalizer',
 	'coreflexive equalizers',
 	TRUE
