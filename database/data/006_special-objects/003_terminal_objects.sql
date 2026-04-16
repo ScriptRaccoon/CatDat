@@ -14,6 +14,7 @@ VALUES
 ('Cat', '<a href="/category/1">trivial category</a>'),
 ('CMon', 'trivial monoid'),
 ('CRing', 'zero ring'),
+('CVNA', 'zero algebra'),
 ('FinAb', 'trivial group'),
 ('FinGrp', 'trivial group'),
 ('FinOrd', 'singleton ordered set'),

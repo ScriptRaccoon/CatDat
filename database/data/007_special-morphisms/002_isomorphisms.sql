@@ -91,6 +91,11 @@ VALUES
 	'This characterization holds in every algebraic category.'
 ),
 (
+	'CVNA',
+	'bijective isometric $*$-homomorphisms',
+	'This is trivial.'
+),
+(
 	'FI',
 	'bijective maps',
 	'This follows exactly as for sets.'

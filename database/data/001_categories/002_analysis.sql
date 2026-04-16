@@ -58,4 +58,14 @@ VALUES
 	'This category is equivalent to the subcategory of $\mathbf{Top}$ (or $\mathbf{Haus}$) that consists of metrizable topological spaces. Hence, the metrics only play a secondary role here.',
 	'https://ncatlab.org/nlab/show/metrisable+topological+space',
 	NULL
+),
+(
+	'CVNA',
+	'category of commutative von Neumann algebras',
+	'$\mathbf{CVNA}$',
+	'commutative von Neumann algebras, i.e. commutative unital $C^*$-algebras that have a predual',
+	'normal unital $C^*$-morphisms',
+	'Von Neumann algebras are also called $W^*$-algebras. In Kornell''s paper <a href="https://arxiv.org/abs/1202.2994v2" target="_blank">Quantum Collections</a> this category is denoted $\mathbf{cW}^*$.',
+	'https://ncatlab.org/nlab/show/von+Neumann+algebra',
+	NULL
 );

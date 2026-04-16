@@ -14,6 +14,7 @@ VALUES
 ('Cat', 'empty category'),
 ('CMon', 'trivial monoid'),
 ('CRing', 'ring of integers'),
+('CVNA', '$\mathbb{C}$'),
 ('FI', 'empty set'),
 ('FinAb', 'trivial group'),
 ('FinGrp', 'trivial group'),
