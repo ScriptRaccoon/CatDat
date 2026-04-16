@@ -342,4 +342,36 @@ VALUES
 	'https://ncatlab.org/nlab/show/sifted+colimit',
 	'cosifted limits',
 	TRUE
+),
+(
+	'multi-complete',
+	'is',
+	'A <i>multi-limit</i> of a diagram $D\colon \mathcal{S} \to \mathcal{C}$ is a set $I$ of cones over $D$ such that every cone over $D$ uniquely factors through a unique cone belonging to $I$. This property refers to the existence of multi-limits of small diagrams. Note that any diagram with no cone admits a multi-limit, which is the empty set of cones.',
+	'https://ncatlab.org/nlab/show/multilimit',
+	'multi-cocomplete',
+	TRUE
+),
+(
+	'multi-cocomplete',
+	'is',
+	'A <i>multi-colimit</i> of a diagram $D\colon \mathcal{S} \to \mathcal{C}$ is a set $I$ of cocones under $D$ such that every cocone under $D$ uniquely factors through a unique cocone belonging to $I$. This property refers to the existence of multi-colimits of small diagrams. Note that any diagram with no cocone admits a multi-colimit, which is the empty set of cocones.',
+	'https://ncatlab.org/nlab/show/multilimit',
+	'multi-complete',
+	TRUE
+),
+(
+	'multi-terminal object',
+	'has a',
+	'This property refers to the existence of a multi-limit of the empty diagram. A category has a multi-terminal object if and only if each connected component has a terminal object.',
+	'https://ncatlab.org/nlab/show/multilimit',
+	'multi-initial object',
+	TRUE
+),
+(
+	'multi-initial object',
+	'has a',
+	'This property refers to the existence of a multi-colimit of the empty diagram. A category has a multi-initial object if and only if each connected component has a initial object.',
+	'https://ncatlab.org/nlab/show/multilimit',
+	'multi-terminal object',
+	TRUE
 );
