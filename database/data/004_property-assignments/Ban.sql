@@ -25,6 +25,12 @@ VALUES
 ),
 (
 	'Ban',
+	'cartesian filtered colimits',
+	TRUE,
+	'If $X$ is a Banach space and $(Y_i)$ is a filtered diagram of Banach spaces, the canonical map $\mathrm{colim}_i (X \times Y_i) \to X \times \mathrm{colim}_i Y_i$ is the completion of the canonical map in the category of normed vector spaces with non-expansive linear maps. Now the claim follows directly from the <a href="/category/Met">category of metric spaces</a> with non-expansive maps.'
+),
+(
+	'Ban',
 	'cogenerator',
 	TRUE,
 	'The Hahn-Banach theorem implies that $\mathbb{C}$ is a cogenerator.'
