@@ -20,6 +20,8 @@ The levels are not defined by cardinality alone. For example, $\{ \mathrm{Set} \
 
 In our framework, there is no way to group all hypercollections into a single mathematical object; for this, one would need a third Grothendieck universe $\mathrm{Set}^{++}$, but such a grouping is usually not required.
 
+A family $(X_i)_{i \in I}$ of collections is called _small_ when its index collection is a set.
+
 ### Categories
 
 A _category_ $\mathcal{C}$ consists of a pair of collections $O, M$, whose elements are called _objects_ and _morphisms_, respectively, together with maps
@@ -73,7 +75,7 @@ There are special types of limits, such as equalizers, products, and cofiltered 
 
 ### Well-powered categories
 
-If $A$ is an object of a category, the collection of all monomorphisms $B \to A$ need not be a set. If, for every $A$, there exists a set of such monomorphisms such that every monomorphism $B \to A$ is isomorphic over $A$ to one in the set, then the category is called _well-powered_. The dual notion of being _well-copowered_ is defined using epimorphisms $A \to B$. Every small category is well-powered, but there are many well-powered categories that are not small and not even equivalent to a small category.
+If $A$ is an object of a category, the collection of all monomorphisms $B \to A$ need not be a set. If, for every $A$, there exists a small family of such monomorphisms such that every monomorphism $B \to A$ is isomorphic over $A$ to one in the family, then the category is called _well-powered_. The dual notion of being _well-copowered_ is defined using epimorphisms $A \to B$. Every small category is well-powered, but there are many well-powered categories that are not small and not even equivalent to a small category.
 
 ### Conclusion
 
