@@ -5,9 +5,9 @@
 	import Chip from '$components/Chip.svelte'
 	import { category_detail_level } from '$lib/states/detail_level.svelte'
 	import TextWithReason from '$components/TextWithReason.svelte'
-	import { filter_by_tag, pluralize } from '$lib/client/utils'
+	import { filter_by_tag, pluralize, strip_html_tags } from '$lib/client/utils'
 	import CategoryList from '$components/CategoryList.svelte'
-	import { faQuestion, faQuestionCircle } from '@fortawesome/free-solid-svg-icons'
+	import { faQuestion } from '@fortawesome/free-solid-svg-icons'
 	import Fa from 'svelte-fa'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
 
@@ -16,9 +16,12 @@
 	let category = $derived(data.category)
 </script>
 
-<MetaData title={category.name} description="Discover the properties of this category" />
+<MetaData
+	title={strip_html_tags(category.name)}
+	description="Discover the properties of this category"
+/>
 
-<h2>{category.name}</h2>
+<h2>{@html category.name}</h2>
 
 <ChipGroup>
 	{#each data.tags as tag}

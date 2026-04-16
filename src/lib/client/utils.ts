@@ -44,3 +44,7 @@ export const resize_textarea: Attachment = (textarea) => {
 		textarea.removeEventListener('input', adjust)
 	}
 }
+
+export function strip_html_tags(input: string): string {
+	return input.replace(/<[^>]*>/g, '')
+}
