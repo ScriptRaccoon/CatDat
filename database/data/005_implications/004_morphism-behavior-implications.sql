@@ -56,34 +56,6 @@ VALUES
 	FALSE
 ),
 (
-	'groupoid_thin',
-	'["groupoid", "equalizers"]',
-	'["thin"]',
-	'The equalizer of any parallel pair $f,g$ must be an isomorphism, so $f=g$.',
-	FALSE
-),
-(
-	'groupoid_products',
-	'["groupoid", "binary products", "inhabited"]',
-	'["trivial"]',
-	'Let $\mathcal{C}$ be an inhabited groupoid with binary products. Then it is connected, so we may assume $\mathcal{C}=BG$ for a group $G$ with unique object $*$. But then $* \times * = *$, so there are $p,q \in G$ such that $G \to G \times G$, $x \mapsto (px,qx)$ is bijective. From here it is an easy exercise to deduce $G=1$.',
-	FALSE
-),
-(
-	'groupoid_initial',
-	'["groupoid", "initial object"]',
-	'["trivial"]',
-	'This is easy.',
-	FALSE
-),
-(
-	'groupoid_zero',
-	'["groupoid", "zero morphisms", "inhabited"]',
-	'["trivial"]',
-	'This is easy.',
-	FALSE
-),
-(
 	'groupoid_connected',
 	'["groupoid", "connected"]',
 	'["strongly connected"]',

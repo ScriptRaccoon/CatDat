@@ -42,13 +42,6 @@ VALUES
 	FALSE
 ),
 (
-	'pointed_ccc_trivial',
-	'["pointed", "cartesian closed"]',
-	'["trivial"]',
-	'We have $X \cong X \times 1 \cong X \times 0 \cong 0$ for every object $X$.',
-	FALSE
-),
-(
 	'topos_definition',
 	'["elementary topos"]',
 	'["cartesian closed", "finitely complete", "subobject classifier"]',
@@ -67,13 +60,6 @@ VALUES
 	'["subobject classifier", "pointed"]',
 	'["normal"]',
 	'The universal property of $\top : 0 \to \Omega$ precisely says that every monomorphism $A \to B$ is the kernel of a unique morphism $B \to \Omega$, so it is normal.',
-	FALSE
-),
-(
-	'subobject_classifier_collapse',
-	'["subobject classifier", "strict terminal object"]',
-	'["trivial"]',
-	'Since $1 \to \Omega$ is an isomorphism, every monomorphism must be an isomorphism. Applying this to the equalizer of a pair of morphisms, we see that the category is thin. But in a thin category, every morphism is a monomorphism. So every object $X$ has a unique isomorphism $X \to 1$.',
 	FALSE
 ),
 (
