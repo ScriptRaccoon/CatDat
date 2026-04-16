@@ -4,21 +4,21 @@ In _CatDat_, we work with the following convenient set-theoretic foundation for 
 
 ### Sets, collections, and hypercollections
 
-We work with [ZFC](https://en.wikipedia.org/wiki/Zermelo%E2%80%93Fraenkel_set_theory) and two [Grothendieck universes](https://en.wikipedia.org/wiki/Grothendieck_universe) $U \in U^+$. So in principle everything is a set, but we will rename them as follows to introduce three "levels of size":
+We work with [ZFC](https://en.wikipedia.org/wiki/Zermelo%E2%80%93Fraenkel_set_theory) and two [Grothendieck universes](https://en.wikipedia.org/wiki/Grothendieck_universe) which we name $\mathrm{Set} \in \mathrm{Set}^+$. So in principle everything is a set, but we will rename them as follows to introduce three "levels of size":
 
-- The sets in $U$ are renamed to _sets_ (sometimes for clarity: _small sets_).
-- The sets in $U^+$ are renamed to _collections_ (sometimes also called _large sets_).
-- All available sets are renamed to _hypercollections_ (which may or may not lie in $U^+$).
+- The sets in $\mathrm{Set}$ are renamed to _sets_ (sometimes also _small sets_).
+- The sets in $\mathrm{Set}^+$ are renamed to _collections_ (sometimes also called _large sets_).
+- All available sets are renamed to _hypercollections_ (which may or may not lie in $\mathrm{Set}^+$).
 
-For example, $\mathbb{R}$ is a set, $U$ is a collection, and $U^+$ is a hypercollection. The collection $U$ consists of all sets, and the hypercollection $U^+$ consists of all collections. Every set is also a collection, and every collection is also a hypercollection.
+For example, $\mathbb{R}$ is a set, $\mathrm{Set}$ is a collection, and $\mathrm{Set}^+$ is a hypercollection. The collection $\mathrm{Set}$ consists of all sets, and the hypercollection $\mathrm{Set}^+$ consists of all collections. Every set is also a collection, and every collection is also a hypercollection.
 
 Note that sets, collections, and hypercollections all satisfy the ZFC axioms. In this sense, (hyper-)collections behave in the same way as sets. This is crucial for category theory. For example, we can form the collection of all maps between two collections. This basic property is not satisfied by [classes](<https://en.wikipedia.org/wiki/Class_(set_theory)>), which are not adequate for category theory.
 
 Just imagine three copies of ZFC included into each other, each representing a "level of size". Grothendieck universes are just an implementation detail, which we can _and will_ drop from now on. Sets are on level 1, collections on level 2, and hypercollections on level 3. You can imagine concrete mathematical objects like numbers or functions as being on level 0 (even though they are usually modeled as sets in ZFC).
 
-The levels are not defined by cardinality alone, though. For example, $\\{ U \\}$ is a collection which has just one element, but it is not a set (since otherwise $U$ would be a set). In particular, not every finite collection is a set. But of course, every finite collection is isomorphic to (has a bijection to) a set.
+The levels are not defined by cardinality alone, though. For example, $\\{ \mathrm{Set} \\}$ is a collection which has just one element, but it is not a set (since otherwise $\mathrm{Set}$ would be a set). In particular, not every finite collection is a set. But of course, every finite collection is isomorphic to (has a bijection to) a set.
 
-In our framework, we have no way to group all hypercollections into a single mathematical object; for this we would need a third Grothendieck universe, but usually this grouping is not required anyway.
+In our framework, we have no way to group all hypercollections into a single mathematical object; for this we would need a third Grothendieck universe $\mathrm{Set}^{++}$, but usually this grouping is not required anyway.
 
 ### Categories
 
@@ -39,7 +39,7 @@ When $f \in \mathrm{Mor}(\mathcal{C})$ is a morphism and $s(f) = X$, $t(f) = Y$,
 
 A _small category_ is defined as above, just by using _sets_ $O$ and $M$ (instead of collections). A _hypercategory_ is also defined in the same way, but by using _hypercollections_ $O$ and $M$ (instead of collections). Every small category is also a category, and every category is also a hypercategory.
 
-For example, the category of sets $\mathbf{Set}$ is defined by using the collection of all sets as objects (aka small sets). The category of groups $\mathbf{Grp}$ uses the collection of all groups (aka small groups). Other typical categories (topological spaces, graphs, metric spaces, etc.) can be constructed as usual. All these examples are locally small. Collections are the objects of a hypercategory $\mathbf{Set}^+$.
+For example, the category of sets $\mathbf{Set}$ has the collection of objects $\mathrm{Ob}(\mathbf{Set}) = \mathrm{Set}$, containing all sets. The category of groups $\mathbf{Grp}$ uses the collection of all groups (aka small groups). Other typical categories (topological spaces, graphs, metric spaces, etc.) can be constructed as usual. All these examples are locally small. Collections are the objects of a hypercategory $\mathbf{Set}^+$.
 
 ### Functors
 
