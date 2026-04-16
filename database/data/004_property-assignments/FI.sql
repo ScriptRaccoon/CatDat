@@ -25,7 +25,7 @@ VALUES
 ),
 (
 	'FI',
-	'essentially small',
+	'essentially countable',
 	TRUE,
 	'Every finite set is isomorphic to some $\{1,\dotsc,n\}$ for some $n \in \mathbb{N}$.'
 ),
@@ -118,4 +118,10 @@ VALUES
 	'strongly connected',
 	FALSE,
 	'There is no map from a non-empty set to the empty set.'
+),
+(
+	'FI',
+	'countable',
+	FALSE,
+	'This is trivial.'
 );

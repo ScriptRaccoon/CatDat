@@ -19,6 +19,12 @@ VALUES
 ),
 (
 	'walking_isomorphism',
+	'small',
+	TRUE,
+	'This is trivial.'
+),
+(
+	'walking_isomorphism',
 	'skeletal',
 	FALSE,
 	'The two objects are isomorphic, but different.'

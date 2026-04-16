@@ -119,4 +119,10 @@ VALUES
 	'sequential colimits',
 	FALSE,
 	'If $\mathbf{Man}$ had sequential colimits, then by <a href="/lemma/special_sequential_colimits">this lemma</a> there would be a manifold $M$ that admits a split epimorphism $M \to \mathbb{R}^n$ for every $n$. But then $M$ will have an infinite-dimensional tangent space, which is a contradiction.'
+),
+(
+	'Man',
+	'countable',
+	FALSE,
+	'This is trivial.'
 );

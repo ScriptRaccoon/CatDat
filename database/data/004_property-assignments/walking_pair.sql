@@ -13,6 +13,12 @@ VALUES
 ),
 (
 	'walking_pair',
+	'small',
+	TRUE,
+	'This is trivial.'
+),
+(
+	'walking_pair',
 	'self-dual',
 	TRUE,
 	'This is trivial.'

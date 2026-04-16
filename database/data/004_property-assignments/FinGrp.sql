@@ -19,7 +19,7 @@ VALUES
 ),
 (
 	'FinGrp',
-	'essentially small',
+	'essentially countable',
 	TRUE,
 	'The underlying set of a finite structure can be chosen to be a subset of $\mathbb{N}$.'
 ),
@@ -106,4 +106,10 @@ VALUES
 	'sequential colimits',
 	FALSE,
 	'This follows from <a href="/lemma/special_sequential_colimits">this lemma</a>.'
+),
+(
+	'FinGrp',
+	'countable',
+	FALSE,
+	'This is trivial.'
 );

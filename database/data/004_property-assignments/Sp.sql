@@ -64,4 +64,10 @@ VALUES
 	'generator',
 	FALSE,
 	'Assume that a generator $G$ exists. For $n \geq 0$ let $F_n$ be the combinatorial species of sets of cardinality $\neq n$: $F_n(A) = \varnothing$ when $A$ has cardinality $n$, otherwise $F_n(A) = \{A\}$. There are two different morphisms $F_n \rightrightarrows F_n \sqcup F_n$. Hence, there must be at least one morphism $G \to F_n$. If $A$ has cardinality $n$, this implies $G(A) = \varnothing$. Since this holds for all $n$, $G$ is the initial object. But this is clearly no generator (it would mean that the category is thin).'
+),
+(
+	'Sp',
+	'essentially countable',
+	FALSE,
+	'Any function $f\colon\mathbb{N} \to \mathbb{N}$ can be regarded as a combinatorial species with trivial actions, and distinct functions yield non-isomorphic species.'
 );

@@ -55,6 +55,12 @@ VALUES
 ),
 (
 	'N',
+	'countable',
+	TRUE,
+	'This is trivial.'
+),
+(
+	'N',
 	'countable coproducts',
 	FALSE,
 	'The numbers $0,1,2,\dotsc$ have no supremum, i.e. no coproduct.'

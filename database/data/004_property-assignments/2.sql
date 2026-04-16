@@ -19,6 +19,12 @@ VALUES
 ),
 (
 	'2',
+	'small',
+	TRUE,
+	'This is trivial.'
+),
+(
+	'2',
 	'inhabited',
 	TRUE,
 	'This is trivial.'

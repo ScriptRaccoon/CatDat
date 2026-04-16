@@ -46,7 +46,7 @@ VALUES
     'This is because the category is epi-regular.'
 ),    
 (
-    'BG',
+    'BG_c',
     'same as isomorphisms',
     'This is because the category is left cancellative.'
 ),    

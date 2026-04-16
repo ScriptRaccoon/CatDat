@@ -19,6 +19,12 @@ VALUES
 ),
 (
 	'walking_commutative_square',
+	'small',
+	TRUE,
+	'This is trivial.'
+),
+(
+	'walking_commutative_square',
 	'infinitary distributive',
 	TRUE,
 	'This is because the <a href="/category/walking_morphism">walking morphism</a> has this property.'

@@ -13,6 +13,12 @@ VALUES
 ),
 (
 	'BG_f',
+	'small',
+	TRUE,
+	'This is trivial.'
+),
+(
+	'BG_f',
 	'groupoid',
 	TRUE,
 	'This is trivial.'

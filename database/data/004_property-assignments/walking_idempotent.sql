@@ -13,6 +13,12 @@ VALUES
 ),
 (
 	'walking_idempotent',
+	'small',
+	TRUE,
+	'This is trivial.'
+),
+(
+	'walking_idempotent',
 	'generator',
 	TRUE,
 	'The unique object is a generator for trivial reasons.'

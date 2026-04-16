@@ -13,7 +13,7 @@ VALUES
 ),
 (
 	'FS',
-	'essentially small',
+	'essentially countable',
 	TRUE,
 	'Every finite set is isomorphic to some $\{1,\dotsc,n\}$ for some $n \in \mathbb{N}$.'
 ),
@@ -116,4 +116,10 @@ VALUES
 	but
 	$(E_1 \vee E_2) \wedge (E_1 \vee E_3) = \top \wedge \top = \top$.
 	<p>*For thin categories, the properties codistributive and distributive <a href="/category-implication/distributive_duality">are equivalent</a>.'
+),
+(
+	'FS',
+	'countable',
+	FALSE,
+	'This is trivial.'
 );

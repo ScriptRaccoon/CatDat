@@ -31,6 +31,12 @@ VALUES
 ),
 (
 	'0',
+	'small',
+	TRUE,
+	'This is trivial.'
+),
+(
+	'0',
 	'inhabited',
 	FALSE,
 	'This is trivial.'

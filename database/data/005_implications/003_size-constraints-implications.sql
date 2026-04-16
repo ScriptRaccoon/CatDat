@@ -23,13 +23,27 @@ VALUES
 (
 	'finite_consequence',
 	'["finite"]',
-	'["small", "essentially finite"]',
+	'["countable", "essentially finite"]',
 	'This is trivial.',
 	FALSE
 ),
 (
-	'essentially_finite_consequence',
+	'essentially_finite_raise',
 	'["essentially finite"]',
+	'["essentially countable"]',
+	'This is trivial.',
+	FALSE
+),
+(
+	'countable_consequence',
+	'["countable"]',
+	'["essentially countable"]',
+	'This is trivial.',
+	FALSE
+),
+(
+	'essentially_countable_consequence',
+	'["essentially countable"]',
 	'["essentially small"]',
 	'This is trivial.',
 	FALSE

@@ -13,6 +13,12 @@ VALUES
 ),
 (
 	'BN',
+	'countable',
+	TRUE,
+	'This is trivial.'
+),
+(
+	'BN',
 	'strongly connected',
 	TRUE,
 	'This is trivial.'

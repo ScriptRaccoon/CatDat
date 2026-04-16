@@ -25,6 +25,12 @@ VALUES
 ),
 (
 	'walking_morphism',
+	'small',
+	TRUE,
+	'This is trivial.'
+),
+(
+	'walking_morphism',
 	'infinitary distributive',
 	TRUE,
 	'Clearly, this category is (co)complete. Also, the functors $X \mapsto X \times 1 = X$ and $X \mapsto X \times 0 = 0$ are clearly cocontinuous.'

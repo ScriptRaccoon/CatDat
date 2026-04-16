@@ -13,7 +13,7 @@ VALUES
 ),
 (
 	'B',
-	'essentially small',
+	'essentially countable',
 	TRUE,
 	'Every finite set is isomorphic to some $\{1,\dotsc,n\}$ for some $n \in \mathbb{N}$.'
 ),
@@ -56,6 +56,12 @@ VALUES
 (
 	'B',
 	'skeletal',
+	FALSE,
+	'This is trivial.'
+),
+(
+	'B',
+	'countable',
 	FALSE,
 	'This is trivial.'
 );

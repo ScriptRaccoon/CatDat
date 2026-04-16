@@ -13,6 +13,12 @@ VALUES
 ),
 (
 	'N_oo',
+	'countable',
+	TRUE,
+	'This is trivial.'
+),
+(
+	'N_oo',
 	'coproducts',
 	TRUE,
 	'Take the supremum.'

@@ -13,6 +13,12 @@ VALUES
 ),
 (
 	'walking_fork',
+	'small',
+	TRUE,
+	'This is trivial.'
+),
+(
+	'walking_fork',
 	'semi-strongly connected',
 	TRUE,
 	'This is obvious.'

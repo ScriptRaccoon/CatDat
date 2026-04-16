@@ -13,7 +13,7 @@ VALUES
 ),
 (
 	'FinSet',
-	'essentially small',
+	'essentially countable',
 	TRUE,
 	'Every finite set is isomorphic to some $\{1,\dotsc,n\}$ for some $n \in \mathbb{N}$.'
 ),
@@ -70,4 +70,10 @@ VALUES
 	'Malcev',
 	FALSE,
 	'There are lots of non-symmetric reflexive relations.'
+),
+(
+	'FinSet',
+	'countable',
+	FALSE,
+	'This is trivial.'
 );

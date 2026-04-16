@@ -63,6 +63,13 @@ VALUES
 	FALSE
 ),
 (
+	'freyd_countable',
+	'["essentially countable", "countable products"]',
+	'["thin", "products"]',
+	'To see that the category is thin, use <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, V.2, Prop. 3. The proof can easily be adapted to this case. So the category is equivalent to a countable preordered set. But then products are just infima, so that repetitions of objects do not matter, and every product can be reduced to a countable one.',
+	FALSE
+),
+(
 	'freyd_finite',
 	'["essentially finite", "finite products"]',
 	'["thin", "products"]',

@@ -13,6 +13,12 @@ VALUES
 ),
 (
 	'walking_span',
+	'small',
+	TRUE,
+	'This is trivial.'
+),
+(
+	'walking_span',
 	'skeletal',
 	TRUE,
 	'The three objects are not isomorphic.'

@@ -46,7 +46,7 @@ VALUES
 	'Let $f : X \to Y$ be an epimorphism of Banach spaces. The subspace $U := \overline{f(X)} \subseteq Y$ is closed. It is well-known that the quotient $Y/U$ is also a Banach space with a projection $p : Y \to Y/U$. Since $p \circ f = 0 = 0 \circ f$, we infer $p = 0$, so that $U = Y$.'
 ),
 (
-	'BG',
+	'BG_c',
 	'every morphism',
 	'This holds because it is a groupoid.'
 ),

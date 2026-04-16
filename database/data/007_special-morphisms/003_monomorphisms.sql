@@ -51,7 +51,7 @@ VALUES
 	'The unit ball functor $U : \mathbf{Ban} \to \mathbf{Set}$ is faithful and representable (by $\mathbb{C}$), hence reflects and preserves monomorphisms.'
 ),
 (
-	'BG',
+	'BG_c',
 	'every morphism',
 	'This is trivial.'
 ),

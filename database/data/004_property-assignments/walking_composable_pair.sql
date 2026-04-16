@@ -13,6 +13,12 @@ VALUES
 ),
 (
 	'walking_composable_pair',
+	'small',
+	TRUE,
+	'This is trivial.'
+),
+(
+	'walking_composable_pair',
 	'semi-strongly connected',
 	TRUE,
 	'This is trivial.'

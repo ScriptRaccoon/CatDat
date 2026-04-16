@@ -6,43 +6,43 @@ INSERT INTO category_property_assignments (
 )
 VALUES
 (
-	'BG',
+	'BG_c',
+	'countable',
+	TRUE,
+	'This is because $G$ is countable.'
+),
+(
+	'BG_c',
 	'small',
 	TRUE,
 	'This is trivial.'
 ),
 (
-	'BG',
+	'BG_c',
 	'groupoid',
 	TRUE,
 	'This is trivial.'
 ),
 (
-	'BG',
+	'BG_c',
 	'connected',
 	TRUE,
 	'This is trivial.'
 ),
 (
-	'BG',
+	'BG_c',
 	'generator',
 	TRUE,
 	'The unique object is a generator for trivial reasons.'
 ),
 (
-	'BG',
+	'BG_c',
 	'skeletal',
 	TRUE,
 	'There is just one object.'
 ),
 (
-	'BG',
-	'trivial',
-	FALSE,
-	'This is trivial.'
-),
-(
-	'BG',
+	'BG_c',
 	'essentially finite',
 	FALSE,
 	'This is because we choose $G$ to be infinite.'

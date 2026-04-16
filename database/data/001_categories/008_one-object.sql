@@ -10,12 +10,12 @@ INSERT INTO categories (
 )
 VALUES
 (
-	'BG',
-	'delooping of an infinite group',
+	'BG_c',
+	'delooping of an infinite countable group',
 	'$BG$',
 	'a single object',
-	'the elements of an infinite group $G$',
-	'Every group $G$ yields a groupoid $BG$ with a single object $*$, morphisms given by the elements of $G$, and composition given by the group operation. In this example, we consider the case of an infinite group $G$.',
+	'the elements of an infinite countable group $G$',
+	'Every group $G$ yields a groupoid $BG$ with a single object $*$, morphisms given by the elements of $G$, and composition given by the group operation. In this example, we consider the case of an infinite countable group $G$ (such as $G = \mathbb{Z}$).',
 	'https://ncatlab.org/nlab/show/delooping',
 	NULL
 ),

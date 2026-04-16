@@ -64,6 +64,22 @@ VALUES
 	TRUE
 ),
 (
+	'countable',
+	'is',
+	'A category is <i>countable</i> if it has countably many objects and morphisms.',
+	NULL,
+	'countable',
+	FALSE
+),
+(
+	'essentially countable',
+	'is',
+	'A category is <i>essentially countable</i> if it is equivalent to a countable category.',
+	NULL,
+	'essentially countable',
+	TRUE
+),
+(
 	'well-powered',
 	'is',
 	'A category is <i>well-powered</i> if the collection of subobjects of any object is isomorphic to a set.',

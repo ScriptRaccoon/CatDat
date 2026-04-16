@@ -13,7 +13,7 @@ VALUES
 ),
 (
 	'FinAb',
-	'essentially small',
+	'essentially countable',
 	TRUE,
 	'The underlying set of a finite structure can be chosen to be a subset of $\mathbb{N}$.'
 ),
@@ -58,4 +58,10 @@ VALUES
 	'skeletal',
 	FALSE,
 	'There are many trivial and hence isomorphic groups which are not equal.'
+),
+(
+	'FinAb',
+	'countable',
+	FALSE,
+	'This is trivial.'
 );

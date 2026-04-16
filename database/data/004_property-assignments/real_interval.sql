@@ -37,7 +37,7 @@ VALUES
 ),
 (
 	'real_interval',
-	'essentially finite',
+	'essentially countable',
 	FALSE,
 	'This is trivial.'
 ),

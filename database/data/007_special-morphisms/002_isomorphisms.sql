@@ -51,7 +51,7 @@ VALUES
 	'This is easy.'
 ),
 (
-	'BG',
+	'BG_c',
 	'every morphism',
 	'It is a groupoid.'
 ),

@@ -61,7 +61,7 @@ VALUES
 ),
 (
 	'FinOrd',
-	'essentially small',
+	'essentially countable',
 	TRUE,
 	'Every finite ordered set is isomorphic to $\{0 < \cdots < n-1 \}$ for some $n \in \mathbb{N}$.'
 ),
@@ -124,4 +124,10 @@ VALUES
 	'one-way',
 	FALSE,
 	'There are three different order-preserving maps $\{0 < 1\} \to \{0 < 1\}$.'
+),
+(
+	'FinOrd',
+	'countable',
+	FALSE,
+	'This is trivial.'
 );

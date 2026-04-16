@@ -13,6 +13,12 @@ VALUES
 ),
 (
 	'Z_div',
+	'countable',
+	TRUE,
+	'This is trivial.'
+),
+(
+	'Z_div',
 	'products',
 	TRUE,
 	'Take the $\gcd$ of a subset. This also works for infinite sets, for example the $\gcd$ of all primes is $0$.'
