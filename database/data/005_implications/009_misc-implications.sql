@@ -98,10 +98,10 @@ VALUES
 	FALSE
 ),
 (
-	'finite_coproducts_implies_sifted',
-	'["finite coproducts"]',
+	'coproducts_implies_sifted',
+	'["inhabited", "binary coproducts"]',
 	'["sifted"]',
-	'Every category with all finite coproducts is inhabited by its initial object, and for any two objects in it the corresponding coproduct is initial in the corresponding category of cospans.',
+	'The category is inhabited by assumption, and the coproduct of two objects is initial in the corresponding category of cospans.',
 	FALSE
 ),
 (
