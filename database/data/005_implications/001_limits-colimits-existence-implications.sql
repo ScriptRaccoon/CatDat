@@ -292,4 +292,32 @@ VALUES
 	'["powers"]',
 	'The product $X^I$ is the cofiltered limit of the finite powers $X^E$, where $E$ ranges over the finite subsets of $I$.',
 	FALSE
+),
+(
+	'multi-complete_generalize_limits',
+	'["complete"]',
+	'["multi-complete"]',
+	'Limits are precisely multi-limits such that the set of cones is singleton.',
+	FALSE
+),
+(
+	'multi-terminal_special_case',
+	'["multi-complete"]',
+	'["multi-terminal object"]',
+	'This is trivial.',
+	FALSE
+),
+(
+	'multi-terminal_with_connected',
+	'["connected","multi-terminal object"]',
+	'["terminal object"]',
+	'Let $(T_i)_{i\in I}$ be a multi-terminal object in a connected category $\mathcal{C}$. By definition of multi-terminal objects, for each object $C$, there are a unique index $i_C\in I$ and a unique morphism $C \to T_{i_C}$. Since the index $i_C$ is invariant under connected components, $I$ must be a singleton. The converse is trivial.',
+	TRUE
+),
+(
+	'multi-complete_with_finite_coproducts',
+	'["multi-complete", "finite coproducts"]',
+	'["complete"]',
+	'Let $D\colon \mathcal{S} \to \mathcal{C}$ be a small diagram in a category $\mathcal{C}$. Since $\mathcal{C}$ has finite coproducts, the category $\mathbf{Cone}(D)$ of cones over $D$ has finite coproducts. In particular, $\mathbf{Cone}(D)$ is connected, hence a multi-terminal object in it automatically becomes a terminal object.',
+	FALSE
 );
