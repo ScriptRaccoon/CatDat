@@ -97,7 +97,7 @@ VALUES
 ),
 (
 	'Met_c',
-	'coequalizers',
+	'sequential colimits',
 	FALSE,
-	'See <a href="https://mathoverflow.net/a/509582/2841" target="_blank">MO/509548</a>.'
+	'See <a href="https://mathoverflow.net/questions/510316" target="_blank">MO/510316</a>.'
 );
