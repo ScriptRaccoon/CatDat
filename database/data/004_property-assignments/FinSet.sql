@@ -43,6 +43,12 @@ VALUES
 ),
 (
 	'FinSet',
+	'ℵ₁-accessible',
+	TRUE,
+	'The inclusion $\mathbf{FinSet} \hookrightarrow \mathbf{Set}$ is closed under ℵ₁-filtered colimits, that is, any ℵ₁-filtered colimit of finite sets is again finite. Since every finite set is ℵ₁-presentable in $\mathbf{Set}$, it is still ℵ₁-presentable in $\mathbf{FinSet}$. Therefore, $\mathbf{FinSet}$ is ℵ₁-accessible, where every object is ℵ₁-presentable.'
+),
+(
+	'FinSet',
 	'small',
 	FALSE,
 	'Even the collection of all singletons is not a set.'

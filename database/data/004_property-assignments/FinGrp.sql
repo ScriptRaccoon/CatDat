@@ -61,6 +61,12 @@ VALUES
 ),
 (
 	'FinGrp',
+	'ℵ₁-accessible',
+	TRUE,
+	'The proof works exactly as for the <a href="/category/FinSet">category of finite sets</a>.'
+),
+(
+	'FinGrp',
 	'normal',
 	FALSE,
 	'Every non-normal subgroup of a finite group provides a counterexample.'

@@ -31,6 +31,12 @@ VALUES
 ),
 (
 	'FinAb',
+	'ℵ₁-accessible',
+	TRUE,
+	'The proof works exactly as for the <a href="/category/FinSet">category of finite sets</a>.'
+),
+(
+	'FinAb',
 	'small',
 	FALSE,
 	'Even the collection of trivial groups is not small.'
