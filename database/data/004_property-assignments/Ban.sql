@@ -31,6 +31,12 @@ VALUES
 ),
 (
 	'Ban',
+	'cocartesian cofiltered limits',
+	TRUE,
+	'If $X$ is a Banach space and $(Y_i)$ is a cofiltered diagram of Banach spaces, the canonical map $X \oplus \lim_i Y_i \to \lim_i (X \oplus Y_i)$ is an isomorphism: Since the forgetful functor $\mathbf{Ban} \to \mathbf{Vect}$ preserves finite coproducts and all limits, and $\mathbf{Vect}$ has the claimed property (see <a href="/category-implication/biproducts_cartesian_filtered_colimits">here</a>), the canonical map is bijective. It remains to show that it is isometric. For $(x,y) \in X \oplus \lim_i Y_i$ the norm in the domain is $|x| + \sup_i |y_i|$, and the norm in the codomain is $\sup_i (|x| + |y_i|)$, and these clearly agree.'
+),
+(
+	'Ban',
 	'cogenerator',
 	TRUE,
 	'The Hahn-Banach theorem implies that $\mathbb{C}$ is a cogenerator.'
