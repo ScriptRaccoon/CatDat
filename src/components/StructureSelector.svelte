@@ -10,10 +10,8 @@
 	let { structure }: Props = $props()
 
 	function handle_change() {
-		goto(`/${value}`)
+		goto(`/${structure}`)
 	}
-
-	let value = $derived(structure)
 </script>
 
 <label for="structure_selector">Structure</label>
