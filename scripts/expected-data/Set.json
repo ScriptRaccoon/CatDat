@@ -81,6 +81,8 @@
 	"cofiltered": true,
 	"sifted": true,
 	"cosifted": true,
+	"cartesian filtered colimits": true,
+	"cocartesian cofiltered limits": true,
 
 	"Grothendieck abelian": false,
 	"Malcev": false,

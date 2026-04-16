@@ -86,6 +86,8 @@
 	"cokernels": true,
 	"normal": true,
 	"conormal": true,
+	"cartesian filtered colimits": true,
+	"cocartesian cofiltered limits": true,
 
 	"cartesian closed": false,
 	"locally cartesian closed": false,
