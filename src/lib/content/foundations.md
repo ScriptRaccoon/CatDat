@@ -16,6 +16,8 @@ Note that sets, collections, and hypercollections all satisfy the ZFC axioms. In
 
 Just imagine three copies of ZFC embedded into each other, each representing a "level of size". Grothendieck universes are merely an implementation detail, which we can _and will_ drop from now on. Sets are on level 1, collections on level 2, and hypercollections on level 3. Concrete mathematical objects such as numbers or functions can be thought of as living on level 0 (even though they are usually modeled as sets in ZFC).
 
+![visualization of three levels of size](/img/three-levels-of-size.webp)
+
 The levels are not defined by cardinality alone. For example, $\{ \mathrm{Set} \}$ is a collection with just one element, but it is not a set (since otherwise $\mathrm{Set}$ would be a set). In particular, not every finite collection is a set. However, every finite collection is isomorphic to a set.
 
 In our framework, there is no way to group all hypercollections into a single mathematical object; for this, one would need a third Grothendieck universe $\mathrm{Set}^{++}$, but such a grouping is usually not required.

@@ -9,3 +9,11 @@
 />
 
 {@html data.content}
+
+<style>
+	:global(img) {
+		width: min(100%, 30rem);
+		margin-inline: auto;
+		border-radius: 1rem;
+	}
+</style>
