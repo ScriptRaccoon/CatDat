@@ -206,7 +206,7 @@ VALUES
 	'wide_pullbacks_finite',
 	'["pullbacks", "essentially finite"]',
 	'["wide pullbacks"]',
-	'Each slice category has finite products and is essentially finite, <a href="/category-implication/freyd_finite">hence</a> has all products.',
+	'Each slice category has finite products and is essentially finite, hence has all products by <a href="/category-implication/freyd_finite">this result</a> followed by <a href="/category-implication/thin_finite_product_reduction">this result</a>.',
 	FALSE
 ),
 (

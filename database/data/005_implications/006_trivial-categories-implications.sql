@@ -64,23 +64,37 @@ VALUES
 ),
 (
 	'freyd_small',
-	'["essentially small", "products"]',
+	'["essentially small", "powers"]',
 	'["thin"]',
-	'See <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, V.2, Prop. 3. The proof works for any category with products.',
+	'See <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, V.2, Prop. 3. The proof works for any category with powers.',
 	FALSE
 ),
 (
 	'freyd_countable',
-	'["essentially countable", "countable products"]',
-	'["thin", "products"]',
-	'To see that the category is thin, use <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, V.2, Prop. 3. The proof can easily be adapted to this case. So the category is equivalent to a countable preordered set. But then products are just infima, so that repetitions of objects do not matter, and every product can be reduced to a countable one.',
+	'["essentially countable", "countable powers"]',
+	'["thin"]',
+	'Adjust the proof of <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, V.2, Prop. 3.',
 	FALSE
 ),
 (
 	'freyd_finite',
-	'["essentially finite", "finite products"]',
-	'["thin", "products"]',
-	'To see that the category is thin, use <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, V.2, Prop. 3. The proof can easily be adapted to this case. So the category is equivalent to a finite preordered set. But then products are just infima, so that repetitions of objects do not matter, and every product can be reduced to a finite one.',
+	'["essentially finite", "finite powers"]',
+	'["thin"]',
+	'Adjust the proof of <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, V.2, Prop. 3.',
+	FALSE
+),
+(
+	'thin_finite_product_reduction',
+	'["thin", "essentially finite", "finite products"]',
+	'["products"]',
+	'The category is equivalent to a finite preordered set. But then products are just infima, so that repetitions of objects do not matter, and every product can be reduced to a finite one.',
+	FALSE
+),
+(
+	'thin_countable_product_reduction',
+	'["thin", "essentially countable", "countable products"]',
+	'["products"]',
+	'The category is equivalent to a countable preordered set. But then products are just infima, so that repetitions of objects do not matter, and every product can be reduced to a countable one.',
 	FALSE
 ),
 (
