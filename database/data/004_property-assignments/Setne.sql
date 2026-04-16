@@ -91,6 +91,19 @@ VALUES
 ),
 (
 	'Setne',
+	'generalized variety',
+	TRUE,
+	'Since the inclusion $\mathbf{Set}_{\neq \varnothing} \hookrightarrow \mathbf{Set}$ is closed under non-empty colimits, it is also closed under sifted colimits. Therefore, non-empty finite sets are still strongly finitely presentable in $\mathbf{Set}_{\neq \varnothing}$, and every non-empty set is written as a sifted colimit of them.'
+),
+
+(
+	'Setne',
+	'multi-complete',
+	TRUE,
+	'Let $D$ be a diagram in $\mathbf{Set}_{\neq \varnothing}$, and let $L$ be a limit of $D$ in $\mathbf{Set}$. If $L$ is non-empty, it gives a limit in $\mathbf{Set}_{\neq \varnothing}$ as well. If $L$ is the empty set, there is no cone over $D$ in $\mathbf{Set}_{\neq \varnothing}$; hence the empty set of cones gives a multi-limit of $D$ in $\mathbf{Set}_{\neq \varnothing}$.'
+),
+(
+	'Setne',
 	'sequential limits',
 	FALSE,
 	'Assume that the sequence of inclusions $\cdots \to \mathbb{N}_{\geq 2} \to \mathbb{N}_{\geq 1} \to \mathbb{N}_{\geq 0} = \mathbb{N}$ as a limit $X$, consisting of maps $X \to \mathbb{N}_{\geq n}$. Since $X$ is non-empty, there is a map $1 \to X$. This corresponds to a family of compatible maps $ 1 \to \mathbb{N}_{\geq n}$, i.e. to compatible elements in $\mathbb{N}_{\geq n}$. But the set $\bigcap_{n \geq 0} \mathbb{N}_{\geq n}$ is empty.'

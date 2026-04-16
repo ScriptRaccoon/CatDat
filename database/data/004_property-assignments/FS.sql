@@ -55,6 +55,12 @@ VALUES
 ),
 (
 	'FS',
+	'multi-terminal object',
+	TRUE,
+	'The empty set and a singleton give a multi-terminal object.'
+),
+(
+	'FS',
 	'small',
 	FALSE,
 	'Even the collection of all singletons is not small.'
@@ -116,6 +122,12 @@ VALUES
 	but
 	$(E_1 \vee E_2) \wedge (E_1 \vee E_3) = \top \wedge \top = \top$.
 	<p>*For thin categories, the properties codistributive and distributive <a href="/category-implication/distributive_duality">are equivalent</a>.'
+),
+(
+	'FS',
+	'multi-initial object',
+	FALSE,
+	'If a multi-initial object exists, then the connected component consisting of non-empty finite sets has an initial object $X$. Then, any non-empty finite set cannot have a cardinality strictly greater than $X$,  which is a contradiction.'
 ),
 (
 	'FS',
