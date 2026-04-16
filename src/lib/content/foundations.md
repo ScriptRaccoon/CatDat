@@ -10,9 +10,9 @@ We work with [ZFC](https://en.wikipedia.org/wiki/Zermelo%E2%80%93Fraenkel_set_th
 - The sets in $\mathrm{Set}^+$ are renamed to _collections_ (sometimes also _large sets_).
 - All available sets are renamed to _hypercollections_ (which may or may not lie in $\mathrm{Set}^+$).
 
-For example, $\mathbb{R}$ is a set, $\mathrm{Set}$ is a collection, and $\mathrm{Set}^+$ is a hypercollection. The collection $\mathrm{Set}$ consists of all sets, and the hypercollection $\mathrm{Set}^+$ consists of all collections. Every set is also a collection, and every collection is also a hypercollection.
+For example, $\mathbb{R}$ is a set, $\mathrm{Set}$ is a collection, and $\mathrm{Set}^+$ is a hypercollection. The collection $\mathrm{Set}$ consists of all sets, and the hypercollection $\mathrm{Set}^+$ consists of all collections. Every set is also a collection, and every collection is also a hypercollection. There is a collection $\mathrm{Grp}$ that consists of all groups, a collection $\mathrm{Top}$ of all topological spaces, etc.
 
-Note that sets, collections, and hypercollections all satisfy the ZFC axioms. In this sense, (hyper)collections behave in the same way as sets. This is crucial for category theory. For example, we can form the collection of all maps between two collections. This basic property is not satisfied by [classes](<https://en.wikipedia.org/wiki/Class_(set_theory)>), which are not adequate for category theory.
+Note that sets, collections, and hypercollections all satisfy the ZFC axioms. In this sense, (hyper)collections behave in the same way as sets. This is crucial for category theory. For example, we can form the collection of all maps between two collections. This basic property is not satisfied by [classes](<https://en.wikipedia.org/wiki/Class_(set_theory)>), which are not adequate for category theory. For example, there is a collection $[\mathrm{Set},\mathrm{Set}]$ that consists of all maps $\mathrm{Set} \to \mathrm{Set}$.
 
 Just imagine three copies of ZFC embedded into each other, each representing a "level of size". Grothendieck universes are merely an implementation detail, which we can _and will_ drop from now on. Sets are on level 1, collections on level 2, and hypercollections on level 3. Concrete mathematical objects such as numbers or functions can be thought of as living on level 0 (even though they are usually modeled as sets in ZFC).
 
@@ -41,9 +41,11 @@ of collections (and hence a collection itself). We write $\mathrm{Ob}(\mathcal{C
 
 When $f \in \mathrm{Mor}(\mathcal{C})$ is a morphism with $s(f) = X$ and $t(f) = Y$, we write $f : X \to Y$. We write $\mathrm{Hom}(X,Y)$ or $\mathrm{Mor}(X,Y)$ for the collection of such morphisms. This collection need not be a set. If it is a set for all $X,Y$, the category is called _locally small_.
 
-A _small category_ is defined as above, but using _sets_ $O$ and $M$ (instead of collections). A _hypercategory_ is defined similarly using _hypercollections_ $O$ and $M$. Every small category is a category, and every category is a hypercategory.
+A _small category_ is defined as above, but using _sets_ $O$ and $M$ (instead of collections). A _hypercategory_ is defined similarly using _hypercollections_ $O$ and $M$. Every small category is a category, and every category is a hypercategory. Notice that there is a collection of all small categories $\mathrm{Cat}$, and likewise a hypercollection of all categories $\mathrm{Cat}^+$.
 
-For example, the category of sets $\mathbf{Set}$ has $\mathrm{Ob}(\mathbf{Set}) = \mathrm{Set}$, the collection of all sets. The category of groups $\mathbf{Grp}$ uses the collection of all groups. Other typical categories (topological spaces, graphs, metric spaces, etc.) are constructed as usual. All these examples are locally small. Collections are the objects of a hypercategory $\mathbf{Set}^+$.
+For example, the category of sets $\mathbf{Set}$ has $\mathrm{Ob}(\mathbf{Set}) = \mathrm{Set}$, the collection of all sets. The category of groups $\mathbf{Grp}$ has $\mathrm{Ob}(\mathbf{Grp}) = \mathrm{Grp}$, the collection of all groups. Other typical categories (topological spaces, graphs, metric spaces, etc.) are constructed as usual. All these examples are locally small.
+
+Collections are the objects of a hypercategory $\mathbf{Set}^+$.
 
 ### Functors
 
