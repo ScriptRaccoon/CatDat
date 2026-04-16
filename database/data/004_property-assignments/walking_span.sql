@@ -49,6 +49,12 @@ VALUES
 ),
 (
 	'walking_span',
+	'multi-algebraic',
+	TRUE,
+	'We first remark that for a set $X$, the identity span $(\mathrm{id},\mathrm{id})\colon X \leftarrow X \rightarrow X$ exhibits a product if and only if $X$ is either a singleton or the empty set. Therefore, there is a (finite product, coproduct)-sketch whose $\mathbf{Set}$-model is precisely a pair $(X,Y)$ of sets such that each of $X$ and $Y$ is either a singleton or the empty set and the product $X \times Y$ is the empty set. Any $\mathbf{Set}$-model of such a sketch is isomorphic to either $(\varnothing, \varnothing)$, $(\varnothing, 1)$, or $(1, \varnothing)$; hence the category of models is equivalent to the walking span.'
+),
+(
+	'walking_span',
 	'sifted',
 	FALSE,
 	'There is no cospan between $1$ and $2$.'

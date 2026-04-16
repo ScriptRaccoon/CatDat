@@ -13,18 +13,6 @@ VALUES
 ),
 (
 	'Fld',
-	'directed colimits',
-	TRUE,
-	'Consider a directed diagram $(F_i)$ of fields and take the colimit $F$ in the category of commutative rings. Now one checks that $F$ is a field as well, and the universal property remains true for fields.'
-),
-(
-	'Fld',
-	'connected limits',
-	TRUE,
-	'Consider a connected diagram $(F_i)$ of fields and take the limit $F$ in the category of commutative rings. Now one checks that $F$ is a field as well, and the universal property remains true for fields. Namely, $1 = 0$ in $F$ would imply that $1 = 0$ in each $F_i$ and hence, since the diagram is connected, in some $F_i$, which is a contradiction. And if $x \in F$ is non-zero, then all components $x_i$ are non-zero and hence invertible: Choose some $j$ such that $x_j$ is non-zero. Since there is a zig zag path of morphisms between $i$ and $j$ in the index category, which get mapped to field homomorphisms which are injective, it follows that $x_i$ is non-zero.'
-),
-(
-	'Fld',
 	'inhabited',
 	TRUE,
 	'This is trivial.'
@@ -37,21 +25,15 @@ VALUES
 ),
 (
 	'Fld',
-	'well-powered',
-	TRUE,
-	'The subfields of a given field form a set.'
-),
-(
-	'Fld',
 	'well-copowered',
 	TRUE,
 	'Epimorphisms are the purely inseparable field extensions. If $K \to L$ is purely inseparable, then for all $x \in L$ there is some $n \in \mathbb{N}$ with $x^n \in L$. An element of $K$ has at most $n$ $n$th-roots. So we can bound the size of $L$.'
 ),
 (
 	'Fld',
-	'generating set',
+	'multi-algebraic',
 	TRUE,
-	'The fields $Q(\mathbb{Z}[X]/\mathfrak{p})$, where $\mathfrak{p}$ runs through all prime ideals of the polynomial ring, provide a generating set. This is because for every element $a \in K$ of a field $K$ there is a prime ideal $\mathfrak{p}$ with a homomorphism $Q(\mathbb{Z}[X]/\mathfrak{p}) \to K$ mapping $[X]$ to $a$: There is a homomorphism $\mathbb{Z}[X] \to K$ mapping $X \mapsto a$. Let $\mathfrak{p}$ be its kernel. Then it extends to a field homomorphism as desired.'
+	'See Eg. 4.3(1) in <a href="http://www.tac.mta.ca/tac/volumes/8/n3/8-03abs.html" target="_blank">[AR01]</a>.'
 ),
 (
 	'Fld',
@@ -85,12 +67,6 @@ VALUES
 ),
 (
 	'Fld',
-	'essentially small',
-	FALSE,
-	'Consider function fields in any number of variables.'
-),
-(
-	'Fld',
 	'skeletal',
 	FALSE,
 	'This is trivial.'
@@ -112,4 +88,10 @@ VALUES
 	'binary powers',
 	FALSE,
 	'Assume that the product $P := \mathbb{Q}(\sqrt{2}) \times \mathbb{Q}(\sqrt{2})$ exists. This field is isomorphic to a subfield of $\mathbb{Q}(\sqrt{2})$, hence $P \cong \mathbb{Q}$ or $P \cong \mathbb{Q}(\sqrt{2})$. In the first case, the two projections $P \rightrightarrows \mathbb{Q}(\sqrt{2})$ must be equal, which means that every two homomorphisms $K \rightrightarrows \mathbb{Q}(\sqrt{2})$ are equal, which is absurd (take $K = \mathbb{Q}(\sqrt{2})$ and its two automorphisms). In the second case, the projections induce for every field $K$ a bijection $\mathrm{Hom}(K,\mathbb{Q}(\sqrt{2})) \cong \mathrm{Hom}(K,\mathbb{Q}(\sqrt{2}))^2$, which however fails for $K = \mathbb{Q}(\sqrt{2})$: the left hand side has $2$ elements, the right hand side has $4$ elements. A more general result about products in $\mathbf{Fld}$ can be found at <a href="https://math.stackexchange.com/questions/359352" target="_blank">MSE/359352</a>.'
+),
+(
+	'Fld',
+	'multi-terminal object',
+	FALSE,
+	'Every field has a non-trivial extension, for instance, the rational function field over itself in one variable. Hence, a multi-terminal object never exists.'
 );
