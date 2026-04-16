@@ -18,7 +18,7 @@ Just imagine three copies of ZFC embedded into each other, each representing a "
 
 ![visualization of three levels of size](/img/three-levels-of-size.webp)
 
-The levels are not defined by cardinality alone. For example, $\{ \mathrm{Set} \}$ is a collection with just one element, but it is not a set (since otherwise $\mathrm{Set}$ would be a set). In particular, not every finite collection is a set. However, every finite collection is isomorphic to a set.
+The levels are not defined by cardinality alone. For example, $\\{ \mathrm{Set} \\}$ is a collection with just one element, but it is not a set (since otherwise $\mathrm{Set}$ would be a set). In particular, not every finite collection is a set. However, every finite collection is isomorphic to a set.
 
 In our framework, there is no way to group all hypercollections into a single mathematical object; for this, one would need a third Grothendieck universe $\mathrm{Set}^{++}$, but such a grouping is usually not required.
 
