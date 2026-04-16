@@ -2,9 +2,9 @@
 	import MetaData from '$components/MetaData.svelte'
 </script>
 
-<MetaData title="Resources" description="Resources on category theory" />
+<MetaData title="Resources on Category Theory" />
 
-<h2>Resources</h2>
+<h2>Resources on Category Theory</h2>
 
 <p>This is an (incomplete) list of resources on category theory.</p>
 

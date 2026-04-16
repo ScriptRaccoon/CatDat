@@ -6,10 +6,7 @@
 	let { data } = $props()
 </script>
 
-<MetaData
-	title="List of categories tagged with '{data.tag}'"
-	description="Categories tagged with '{data.tag}'"
-/>
+<MetaData title="List of categories tagged with '{data.tag}'" />
 
 <h2>List of categories tagged with '{data.tag}'</h2>
 

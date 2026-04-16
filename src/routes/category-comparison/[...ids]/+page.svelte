@@ -37,10 +37,7 @@
 	})
 </script>
 
-<MetaData
-	title="Comparison of categories"
-	description={compared_categories.map((c) => c.name).join(', ')}
-/>
+<MetaData title="Comparison of categories" />
 
 <h2>Comparison of categories</h2>
 

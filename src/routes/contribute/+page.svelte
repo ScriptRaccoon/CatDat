@@ -3,7 +3,7 @@
 	import SuggestionForm from '$components/SuggestionForm.svelte'
 </script>
 
-<MetaData title="How to contribute" description="Options to contribute to CatDat" />
+<MetaData title="How to contribute to CatDat" />
 
 <h2>How to contribute</h2>
 

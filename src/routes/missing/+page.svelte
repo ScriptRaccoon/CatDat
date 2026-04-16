@@ -10,7 +10,7 @@
 
 <MetaData
 	title="Missing data in CatDat"
-	description="Missing properties, missing special morphisms, and more."
+	description="Missing properties, missing special morphisms, missing combinations, and more."
 />
 
 <h2>Missing data</h2>
