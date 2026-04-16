@@ -55,6 +55,14 @@ VALUES
 ),
 (
 	'Set*',
+	'cocartesian cofiltered limits',
+	TRUE,
+	'Let $X$ be a pointed set and $(Y_i)$ be a filtered diagram of pointed sets. Base points will be denoted by $0$. The canonical map $X \vee \lim_i Y_i \to \lim_i (X \vee Y_i)$ is injective since the wedge sum naturally embeds into the product and the natural map $X \vee \prod_i Y_i \to \prod_i (X \times Y_i)$ is injective. Now let $z = (z_i) \in \lim_i (X \vee Y_i)$.
+	<br>Case 1: There is some index $i$ with $z_i \in X \setminus \{0\}$. We claim $z_j \in X$ for any index $j$ and $z_j = z_i$ in $X$, so that $z$ has a preimage in $X$. To see this, choose an index $k \geq i,j$. Since $X \vee Y_i \to X \vee Y_k$ maps $z_i \mapsto z_k$ and is the identity on $X$, we see that $z_k \in X$ and $z_k = z_i$ in $X$. Since $X \vee Y_j \to X \vee Y_k$ maps $z_j \mapsto z_k$, we see that $z_j \notin Y_j$, since otherwise $z_k \in Y_k \cap X = \{0\}$. Hence, $z_j \in X \setminus \{0\}$, and then $z_j = z_k = z_i$.
+	<br>Case 2: We have $z_i \in Y_i$ for all $i$. Then clearly $(z_i) \in \lim_i Y_i$ is a preimage.'
+),
+(
+	'Set*',
 	'skeletal',
 	FALSE,
 	'This is trivial.'
