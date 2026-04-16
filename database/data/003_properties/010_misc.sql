@@ -58,7 +58,9 @@ VALUES
 (
 	'sifted',
 	'is',
-	'A category $\mathcal C$ is <i>sifted</i> if it is inhabited and the diagonal functor $\Delta:\mathcal C\to\mathcal C\times\mathcal C$ is final, i.e. if it is non-empty and for any two objects $c,d\in\mathcal C$ the category of cospans $c\to e\leftarrow d$ is connected. Equivalently, a small category $\mathcal C$ is sifted if $\textrm{colim}:\textbf{Set}^{\mathcal C}\to\textbf{Set}$ preserves finite products. This property is a weaker notion than being filtered.',
+	'A category $\mathcal{C}$ is <i>sifted</i> if it is inhabited and the diagonal functor $\Delta : \mathcal{C} \to \mathcal{C} \times \mathcal{C}$ is final, i.e. if it is non-empty and for any two objects $X,Y \in \mathcal{C}$ the category of cospans
+	<p>$X \rightarrow Z \leftarrow Y$</p>
+	is connected. Equivalently, a small category $\mathcal{C}$ is sifted if $\mathrm{colim} : \mathbf{Set}^{\mathcal{C}} \to \mathbf{Set}$ preserves finite products. This property is a weaker notion than being filtered.',
 	'https://ncatlab.org/nlab/show/sifted+category',
 	'cosifted',
 	TRUE
@@ -66,7 +68,9 @@ VALUES
 (
 	'cosifted',
 	'is',
-	'A category $\mathcal C$ is <i>cosifted</i> if it is inhabited and the diagonal functor $\Delta:\mathcal C\to\mathcal C\times\mathcal C$ is initial, i.e. if it is non-empty and for any two objects $c,d\in\mathcal C$ the category of spans $c\leftarrow e\to d$ is connected. Equivalently, a small category $\mathcal C$ is cosifted if $\textrm{colim}:\textbf{Set}^{{\mathcal C}^\textrm{op}}\to\textbf{Set}$ preserves finite products. This property is a weaker notion than being cofiltered.',
+	'A category $\mathcal{C}$ is <i>cosifted</i> if it is inhabited and the diagonal functor $\Delta : \mathcal{C} \to \mathcal{C} \times \mathcal{C}$ is initial, i.e. if it is non-empty and for any two objects $X,Y \in \mathcal{C}$ the category of spans
+	<p>$X \leftarrow Z \rightarrow Y$</p>
+	is connected. Equivalently, a small category $\mathcal{C}$ is cosifted if $\mathrm{colim} : \mathbf{Set}^{{\mathcal{C}}^\mathrm{op}} \to \mathbf{Set}$ preserves finite products. This property is a weaker notion than being cofiltered.',
 	'https://ncatlab.org/nlab/show/sifted+category',
 	'sifted',
 	TRUE
