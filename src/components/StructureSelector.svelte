@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation'
+	import { page } from '$app/state'
 	import { STRUCTURES } from '$lib/client/config'
 	import type { Structure } from '$lib/commons/types'
 
@@ -10,7 +11,18 @@
 	let { structure }: Props = $props()
 
 	function handle_change() {
-		goto(`/${structure}`)
+		const path = page.url.pathname
+		const singular = structure === 'categories' ? 'category' : 'functor'
+
+		if (path.endsWith('-implications')) {
+			goto(`/${singular}-implications`)
+		} else if (path.endsWith('-properties')) {
+			goto(`/${singular}-properties`)
+		} else if (path.endsWith('-search')) {
+			goto(`/${singular}-search`)
+		} else {
+			goto(`/${structure}`)
+		}
 	}
 </script>
 
