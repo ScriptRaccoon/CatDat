@@ -40,6 +40,26 @@ VALUES
 	NULL
 ),
 (
+	'C*Alg_nu',
+	'category of non-unital C<sup>*</sup>-algebras',
+	'$\mathbf{C^*Alg}_{nu}$',
+	'non-unital C<sup>*</sup>-algebras',
+	'non-unital $*$-algebra homomorphisms',
+	'With "non-unital" we mean "not necessarily unital".',
+	'https://ncatlab.org/nlab/show/C-star-algebra',
+	NULL
+),
+(
+	'C*Alg_u',
+	'category of unital C<sup>*</sup>-algebras',
+	'$\mathbf{C^*Alg}_{u}$',
+	'unital C<sup>*</sup>-algebras',
+	'unital $*$-algebra homomorphisms',
+	NULL,
+	'https://ncatlab.org/nlab/show/C-star-algebra',
+	NULL
+),
+(
 	'Meas',
 	'category of measurable spaces',
 	'$\mathbf{Meas}$',
