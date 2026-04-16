@@ -27,7 +27,7 @@ VALUES
 	'FI',
 	'essentially small',
 	TRUE,
-	'Every finite set is isomorphic to some $[n] = \{1,\dotsc,n\}$ for some $n \in \mathbb{N}$.'
+	'Every finite set is isomorphic to some $\{1,\dotsc,n\}$ for some $n \in \mathbb{N}$.'
 ),
 (
 	'FI',
@@ -93,7 +93,7 @@ VALUES
 	'FI',
 	'sequential colimits',
 	FALSE,
-	'Let $[n] := \{1,\dotsc,n\}$. Assume the sequence of inclusion maps $[1] \to [2] \to \cdots$ has a colimit $X$ in this category with maps $f_n : [n] \to X$. But $f_n$ must be an injective map, so that $\mathrm{card}(X) \geq n$ for all $n$. Since $X$ is finite, this is a contradiction.'
+	'Let $X_n := \{1,\dotsc,n\}$. Assume the sequence of inclusion maps $X_n \hookrightarrow X_{n+1}$ has a colimit $(f_n : X_n \to X)$ in this category. But $f_n$ must be an injective map, so that $\mathrm{card}(X) \geq n$ for all $n$. Since $X$ is finite, this is a contradiction.'
 ),
 (
 	'FI',
