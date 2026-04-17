@@ -231,13 +231,6 @@ VALUES
 	FALSE
 ),
 (
-	'lextensive_def',
-	'["lextensive"]',
-	'["extensive", "finitely complete"]',
-	'This holds by definition.',
-	TRUE
-),
-(
 	'power_construction',
 	'["copowers", "cartesian closed"]',
 	'["powers"]',

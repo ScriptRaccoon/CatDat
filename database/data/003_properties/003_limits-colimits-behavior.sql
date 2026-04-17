@@ -165,14 +165,6 @@ VALUES
 	TRUE
 ),
 (
-	'lextensive',
-	'is',
-	'A category $\mathcal{C}$ is <i>lextensive</i> when it is extensive and has finite limits.',
-	'https://ncatlab.org/nlab/show/extensive+category',
-	NULL,
-	TRUE
-),
-(
 	'infinitary extensive',
 	'is',
 	'A category $\mathcal{C}$ is <i>infinitary extensive</i> when it has coproducts and for all families of objects $(A_i)_{i \in I}$ the coproduct functor $\prod_{i \in I} \mathcal{C}/A_i \to \mathcal{C}/(\coprod_{i \in I} A_i)$ is an equivalence of categories. Equivalently, pullbacks of coproduct inclusions along arbitrary morphisms exist and coproducts are disjoint and stable under pullback.',

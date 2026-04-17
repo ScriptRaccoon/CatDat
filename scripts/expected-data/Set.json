@@ -62,7 +62,6 @@
 	"extensive": true,
 	"infinitary extensive": true,
 	"co-Malcev": true,
-	"lextensive": true,
 	"locally strongly finitely presentable": true,
 	"regular subobject classifier": true,
 	"coreflexive equalizers": true,
