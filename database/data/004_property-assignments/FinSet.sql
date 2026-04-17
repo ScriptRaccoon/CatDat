@@ -82,4 +82,12 @@ VALUES
 	'countable',
 	FALSE,
 	'This is trivial.'
+),
+(
+	'FinSet',
+	'natural numbers object',
+	FALSE,
+	'If $(N,z,s)$ is a natural numbers object, then
+	<p>$1 \xrightarrow{z} N \xleftarrow{s} N$</p>
+	is a coproduct cocone by <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, Part A, Lemma 2.5.5. But there is no finite set $N$ with $N \cong 1 + N$.'
 );

@@ -136,4 +136,12 @@ VALUES
 	'Malcev',
 	FALSE,
 	'Consider the metric subspace $\{(a,b) \in \mathbb{R}^2 : a \leq b\}$ of $\mathbb{R}^2$.'
+),
+(
+	'Met',
+	'natural numbers object',
+	FALSE,
+	'If $(N,z,s)$ is a natural numbers object in $\mathbf{Met}$, then
+	<p>$1 \xrightarrow{z} N \xleftarrow{s} N$</p>
+	is a coproduct cocone by <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, Part A, Lemma 2.5.5. Since there is a map $1 \to N$, we have $N \neq \varnothing$. However, the coproduct of two non-empty metric spaces does not exist, see <a href="https://math.stackexchange.com/questions/1778408" target="_blank">MSE/1778408</a>.'
 );

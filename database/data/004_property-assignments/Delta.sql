@@ -127,5 +127,5 @@ VALUES
     'Delta',
     'pushouts',
     FALSE,
-    'Assume that the two inclusions $\{0 < 1\} \leftarrow \{0\} \rightarrow \{0 < 2\}$ have a pushout in $\mathbf{FinOrd} \setminus \{\emptyset\}$. This would be a universal non-empty finite ordered set $X$ with three elements $0,1,2$ satisfying $0 \leq 1$ and $0 \leq 2$. Assume w.l.o.g. $1 \leq 2$ (the case $2 \leq 1$ is similar). The universal property yields an order-preserving map $X \to \{a < b < c\}$ with $0 \mapsto a$, $1 \mapsto c$, $2 \mapsto b$. But then $c \leq b$, which is a contradiction.'
+    'Assume that the two inclusions $\{0 < 1\} \leftarrow \{0\} \rightarrow \{0 < 2\}$ have a pushout in $\mathbf{FinOrd} \setminus \{\varnothing\}$. This would be a universal non-empty finite ordered set $X$ with three elements $0,1,2$ satisfying $0 \leq 1$ and $0 \leq 2$. Assume w.l.o.g. $1 \leq 2$ (the case $2 \leq 1$ is similar). The universal property yields an order-preserving map $X \to \{a < b < c\}$ with $0 \mapsto a$, $1 \mapsto c$, $2 \mapsto b$. But then $c \leq b$, which is a contradiction.'
 );
