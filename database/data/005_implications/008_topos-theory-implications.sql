@@ -208,4 +208,11 @@ VALUES
 	'["trivial"]',
 	'Let $(N,z,s)$ be a natural numbers object in a category with a zero object, denoted $0$. The morphism $z : 0 \to N$ must be zero. The universal property applied to $A=1$ implies that $s : N \to N$ is an initial object in the category of endomorphisms. This exists, it is given by the identity $0 \to 0$. Therefore, $N = 0$. The general universal property now becomes: For all $f : A \to X$, $g : X \to X$ there is a unique $\Phi : A \to X$ such that $\Phi(a) = f(a)$ and $\Phi(a)=g(\Phi(a))$. Apply this to $g = 0$ to conclude $f = 0$.',
 	FALSE
+),
+(
+	'nno_terminal',
+	'["natural numbers object", "strict terminal object"]',
+	'["one-way"]',
+	'By assumption, $z : 1 \to N$ is an isomorphism. Therefore, the terminal object $1$ is a NNO with $z = \mathrm{id}_1$ and $s = \mathrm{id}_1$. This precisely means that for all $f : A \to X$ and $g : X \to X$ there is a unique $\Phi : A \to X$ with $\Phi = f$ and $\Phi = g \circ \Phi$. In other words, we have $f = g \circ f$, and therefore $g = \mathrm{id}_X$ (take $f = \mathrm{id}_X$), which proves the claim. (From here one can <a href="/category-implication/one-way_products_thin">further deduce</a> that the category is thin.)',
+	FALSE
 );
