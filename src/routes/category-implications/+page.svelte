@@ -60,6 +60,12 @@
 </p>
 
 <p class="hint">
+	Implications can be combined to yield longer, non-obvious deductions that are not
+	explicitly listed above. For example, the listed implications imply that every
+	inhabited groupoid with binary products is trivial.
+</p>
+
+<p class="hint">
 	Moreover, implications are automatically dualized when the corresponding dual
 	properties exist. For example, the statement that finitely complete categories with
 	cofiltered limits are complete automatically implies that finitely cocomplete
