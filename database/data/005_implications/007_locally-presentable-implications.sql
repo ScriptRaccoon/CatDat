@@ -42,7 +42,7 @@ VALUES
 	FALSE
 ),
 (
-	'accessible_wellcopowered',
+	'accessible_well-copowered',
 	'["accessible", "pushouts"]',
 	'["well-copowered"]',
 	'See Thm. 2.49 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a> or Prop. 6.1.3 in <a href="https://bookstore.ams.org/conm-104" target="_blank">Makkai-Pare</a>.',
