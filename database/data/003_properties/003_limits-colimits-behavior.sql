@@ -59,6 +59,22 @@ VALUES
 	TRUE
 ),
 (
+	'countably distributive',
+	'is',
+	'A category is <i>countably distributive</i> if it has finite products, countable coproducts, and for every object $A$ the functor $A \times -$ preserves countable coproducts. Concretely, for every countable family of objects $(B_i)$ the canonical morphism $\coprod_i (A \times B_i) \to A \times \coprod_i B_i$ must be an isomorphism.',
+	NULL,
+	'countably codistributive',
+	TRUE
+),
+(
+	'countably codistributive',
+	'is',
+	'A category is <i>countably codistributive</i> if it has finite coproducts, countable products, and for every object $A$ the functor $A \sqcup -$ preserves countable products. Concretely, for every countable family of objects $(B_i)$ the canonical morphism $A \sqcup \prod_i B_i \to \prod_i (A \sqcup B_i)$ must be an isomorphism.',
+	NUll,
+	'countably distributive',
+	TRUE
+),
+(
 	'codistributive',
 	'is',
 	'A category is <i>codistributive</i> if it has finite coproducts, finite products, and for every object $A$ the functor $- \sqcup A$ preserves finite products. Concretely, for every finite family of objects $(B_i)$ the canonical morphism $A \sqcup \prod_i B_i \to \prod_i (A \sqcup B_i)$ must be an isomorphism.',

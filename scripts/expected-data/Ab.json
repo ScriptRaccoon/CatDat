@@ -142,5 +142,7 @@
 	"coaccessible": false,
 	"countable": false,
 	"essentially countable": false,
-	"natural numbers object": false
+	"natural numbers object": false,
+	"countably distributive": false,
+	"countably codistributive": false
 }

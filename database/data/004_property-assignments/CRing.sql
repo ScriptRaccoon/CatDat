@@ -55,7 +55,7 @@ VALUES
 ),
 (
 	'CRing',
-	'infinitary codistributive',
+	'countably codistributive',
 	FALSE,
 	'The canonical homomorphism $\mathbb{Q} \otimes \mathbb{Z}^{\mathbb{N}} \to (\mathbb{Q} \otimes \mathbb{Z})^{\mathbb{N}} = \mathbb{Q}^{\mathbb{N}}$ is not an isomorphism: its image consists of those sequences of rational numbers whose denominators can be bounded.'
 ),

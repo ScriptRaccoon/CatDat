@@ -48,10 +48,11 @@ VALUES
 	'[Sketch] Since $\mathbf{Top}$ is infinitary extensive, a continuous map $f : M \to \coprod_i N_i$ corresponds to a decomposition $M = \coprod_i M_i$ (as topological spaces) with continuous maps $f_i : M_i \to N_i$. Endow the open subset $M_i \subseteq M$ with the smooth structure inherited from $M$. Now remark that $f$ is smooth iff each $f_i$ is smooth.'
 ),
 (
+	-- TODO: maybe add "countably extensive" to make this more conceptual
 	'Man',
-	'countable coproducts',
+	'countably distributive',
 	TRUE,
-	'Take the usual disjoint union, which is clearly locally Euclidean and Hausdorff, and it is second countable since we are using only countable many spaces. (Without that condition, all coproducts would exist.)'
+	'To construct countable coproducts, take the usual disjoint union of spaces, which is clearly locally Euclidean and Hausdorff, and it is second countable since we are using only countable many spaces. (Without that condition, all coproducts would exist.) Now we need to check that the canonical smooth map $\coprod_i X \times Y_i \to X \times \coprod_i Y_i$ is a diffeomorphism (for countable families). It is a homeomorphism since $\mathbf{Top}$ is infinitary distributive. The inverse $X \times \coprod_i Y_i \to \coprod_i X \times Y_i$ is smooth since the domain is covered by the open subsets $X \times Y_i$ on which the map is clearly smooth.'
 ),
 (
 	'Man',

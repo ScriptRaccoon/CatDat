@@ -84,24 +84,38 @@ VALUES
 	FALSE
 ),
 (
-	'infinitary_distributive_consequence',
+	'infinitary_distributive_assumption',
 	'["infinitary distributive"]',
 	'["finite products", "coproducts"]',
 	'This holds by definition.',
 	FALSE
 ),
 (
-	'infinitary_distributive_condition',
-	'["infinitary distributive"]',
+	'countably_distributive_assumption',
+	'["countably distributive"]',
+	'["finite products", "countable coproducts"]',
+	'This holds by definition.',
+	FALSE
+),
+(
+	'distributive_assumption',
 	'["distributive"]',
+	'["finite products", "finite coproducts"]',
+	'This holds by definition.',
+	FALSE
+),
+(
+	'infinitary_distributive_trivial',
+	'["infinitary distributive"]',
+	'["countably distributive"]',
 	'This is trivial.',
 	FALSE
 ),
 (
-	'distributive_condition',
+	'countably_distributive_trivial',
+	'["countably distributive"]',
 	'["distributive"]',
-	'["finite products", "finite coproducts"]',
-	'This holds by definition.',
+	'This is trivial.',
 	FALSE
 ),
 (
@@ -182,6 +196,13 @@ VALUES
 	FALSE
 ),
 (
+	'countably_distributive_criterion',
+	'["cartesian closed", "countable coproducts"]',
+	'["countably distributive"]',
+	'Each functor $A \times -$ is left adjoint and hence preserves countable coproducts (in fact, all colimits).',
+	FALSE
+),
+(
 	'infinitary_distributive_criterion',
 	'["cartesian closed", "coproducts"]',
 	'["infinitary distributive"]',
@@ -193,6 +214,13 @@ VALUES
 	'["distributive", "cartesian filtered colimits", "coproducts"]',
 	'["infinitary distributive"]',
 	'Each functor $A \times -$ preserves finite coproducts and filtered colimits, hence all coproducts.',
+	FALSE
+),
+(
+	'countably_distributive_filtered_criterion',
+	'["distributive", "cartesian filtered colimits", "countable coproducts"]',
+	'["countably distributive"]',
+	'Each functor $A \times -$ preserves finite coproducts and filtered colimits, hence all countable coproducts.',
 	FALSE
 ),
 (

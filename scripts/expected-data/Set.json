@@ -94,6 +94,8 @@
 	"multi-initial object": true,
 	"cartesian filtered colimits": true,
 	"cocartesian cofiltered limits": true,
+	"natural numbers object": true,
+	"countably distributive": true,
 
 	"Grothendieck abelian": false,
 	"Malcev": false,
@@ -142,5 +144,5 @@
 	"coaccessible": false,
 	"countable": false,
 	"essentially countable": false,
-	"natural numbers object": true
+	"countably codistributive": false
 }

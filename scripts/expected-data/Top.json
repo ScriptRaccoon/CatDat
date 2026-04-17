@@ -69,6 +69,8 @@
 	"multi-terminal object": true,
 	"multi-initial object": true,
 	"cocartesian cofiltered limits": true,
+	"countably distributive": true,
+	"natural numbers object": true,
 
 	"abelian": false,
 	"additive": false,
@@ -142,5 +144,5 @@
 	"countable": false,
 	"essentially countable": false,
 	"cartesian filtered colimits": false,
-	"natural numbers object": true
+	"countably codistributive": false
 }

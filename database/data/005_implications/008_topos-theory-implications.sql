@@ -197,9 +197,9 @@ VALUES
 ),
 (
 	'nno_criterion',
-	'["infinitary distributive"]',
+	'["countably distributive"]',
 	'["natural numbers object"]',
-	'Consider the copower $N := \coprod_{n \in \mathbb{N}} 1$ with inclusions $i_n : 1 \to N$ for $n \in \mathbb{N}$. We define $z := i_1 : 1 \to N$ and $s : N \to N$ by $s \circ i_n = i_{n+1}$. Since the category is infinitary distributive, we have $A \times N \cong \coprod_{n \in \mathbb{N}} A$ for every object $A$. Given morphisms $f : A \to X$, $g : X \to X$, a morphism $\Phi : A \times N \to X$ therefore corresponds to a family of morphisms $\phi_n : A \to X$ for $n \in \mathbb{N}$. The condition $\Phi(a,z)=f(a)$ becomes $\phi_0 = f$. The condition $\Phi(a,s(n)) = g(\Phi(a,n))$ becomes $\phi_{n+1} = g \circ \phi_n$. This recursively defines the morphisms $\phi_n$. (We are basically using that $\mathbb{N}$ is a natural numbers object in $\mathbf{Set}$.) Concretely, $\phi_n = g^n \circ f$.',
+	'Consider the copower $N := \coprod_{n \in \mathbb{N}} 1$ with inclusions $i_n : 1 \to N$ for $n \in \mathbb{N}$. We define $z := i_1 : 1 \to N$ and $s : N \to N$ by $s \circ i_n = i_{n+1}$. Since the category is countably distributive, we have $A \times N \cong \coprod_{n \in \mathbb{N}} A$ for every object $A$. Given morphisms $f : A \to X$, $g : X \to X$, a morphism $\Phi : A \times N \to X$ therefore corresponds to a family of morphisms $\phi_n : A \to X$ for $n \in \mathbb{N}$. The condition $\Phi(a,z)=f(a)$ becomes $\phi_0 = f$. The condition $\Phi(a,s(n)) = g(\Phi(a,n))$ becomes $\phi_{n+1} = g \circ \phi_n$. This recursively defines the morphisms $\phi_n$. (We are basically using that $\mathbb{N}$ is a natural numbers object in $\mathbf{Set}$.) Concretely, $\phi_n = g^n \circ f$.',
 	FALSE
 ),
 (

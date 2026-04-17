@@ -61,13 +61,13 @@ VALUES
 ),
 (
 	'Z_div',
-	'infinitary distributive',
+	'countably distributive',
 	FALSE,
 	'We have $2 \times \coprod_n 3^n = \gcd(2,\mathrm{lcm}_n(3^n)) = \gcd(2,0) = 2$, but $\coprod_n (2 \times 3^n) = \mathrm{lcm}_n \gcd(2,3^n) = \mathrm{lcm}_n 1  = 1$.'
 ),
 (
 	'Z_div',
-	'infinitary codistributive',
+	'countably codistributive',
 	FALSE,
 	'If $p$ runs through all odd primes, we have $2 \sqcup \prod_p p = \mathrm{lcm}(2,\mathrm{gcd}_p p) = \mathrm{lcm}(2,0) = 0$, but $\prod_p (2 \sqcup p) = \gcd_p (\mathrm{lcm}(2,p)) = \gcd_p (2 \cdot p) = 2$.'
 );
