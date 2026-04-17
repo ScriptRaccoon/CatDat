@@ -7,9 +7,9 @@ INSERT INTO implication_input (
 )
 VALUES
 (
-	'discrete_consequence',
+	'discrete_consequences',
 	'["discrete"]',
-	'["essentially discrete", "locally small", "skeletal"]',
+	'["essentially discrete", "locally small", "skeletal", "direct"]',
 	'This is trivial.',
 	FALSE
 ),

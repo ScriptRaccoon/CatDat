@@ -140,13 +140,6 @@ VALUES
 	FALSE
 ),
 (
-	'discrete_implies_direct',
-	'["discrete"]',
-	'["direct"]',
-	'This is trivial.',
-	FALSE
-),
-(
 	'direct_implies_sequential_limits',
 	'["direct"]',
 	'["sequential limits"]',

@@ -196,17 +196,10 @@ VALUES
 	FALSE
 ),
 (
-	'extensive_strict',
+	'extensive_consequences',
 	'["extensive"]',
-	'["strict initial object"]',
-	'This is Prop. 2.8 in <a href="https://doi.org/10.1016/0022-4049(93)90035-R" target="_blank">Introduction to extensive and distributive categories</a>.',
-	FALSE
-),
-(
-	'extensive_consequence',
-	'["extensive"]',
-	'["disjoint finite coproducts"]',
-	'This is Prop. 2.6 in <a href="https://doi.org/10.1016/0022-4049(93)90035-R" target="_blank">Introduction to extensive and distributive categories</a>.',
+	'["disjoint finite coproducts", "strict initial object"]',
+	'These are Prop. 2.6 and 2.8 in <a href="https://doi.org/10.1016/0022-4049(93)90035-R" target="_blank">Introduction to extensive and distributive categories</a>.',
 	FALSE
 ),
 (

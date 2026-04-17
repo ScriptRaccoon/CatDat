@@ -142,8 +142,8 @@ VALUES
 (
 	'grothendieck_topos_consequence',
 	'["Grothendieck topos"]',
-	'["locally presentable", "cogenerator"]',
-	'For "locally presentable" see Prop. 3.4.16 in <a href="https://www.cambridge.org/core/books/handbook-of-categorical-algebra/5033A02442342401E7BCC26A042DAB94" target="_blank">Handbook of Categorical Algebra Vol. 3</a>. For "cogenerator" see the <a href="https://ncatlab.org/nlab/show/cogenerator" target="_blank">nLab</a>.',
+	'["locally presentable", "cogenerator", "infinitary extensive"]',
+	'A Grothendieck topos is locally presentable by Prop. 3.4.16 in <a href="https://www.cambridge.org/core/books/handbook-of-categorical-algebra/5033A02442342401E7BCC26A042DAB94" target="_blank">Handbook of Categorical Algebra Vol. 3</a>, has a cogenerator (see <a href="https://ncatlab.org/nlab/show/cogenerator" target="_blank">nLab</a>) and is infinitary extensive by <a href="https://ncatlab.org/nlab/show/Giraud%27s+theorem" target="_blank">Giraud''s Theorem</a>.',
 	FALSE
 ),
 (
@@ -179,13 +179,6 @@ VALUES
 	'["locally cartesian closed", "cocomplete", "extensive"]',
 	'["infinitary extensive"]',
 	'The pullback functor preserves coproducts because it has a right adjoint. See also Remark 2.6 at the <a href="https://ncatlab.org/nlab/show/extensive+category" target="_blank">nLab</a>.',
-	FALSE
-),
-(
-	'Grothendieck_extensive',
-	'["Grothendieck topos"]',
-	'["infinitary extensive"]',
-	'This is a part of <a href="https://ncatlab.org/nlab/show/Giraud%27s+theorem" target="_blank">Giraud''s Theorem</a>.',
 	FALSE
 ),
 (

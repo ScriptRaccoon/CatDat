@@ -14,9 +14,9 @@ VALUES
 	FALSE
 ),
 (
-	'essentially_small_consequence',
+	'essentially_small_consequences',
 	'["essentially small"]',
-	'["well-powered", "well-copowered", "locally essentially small"]',
+	'["well-powered", "well-copowered", "locally essentially small", "generating set"]',
 	'This is trivial.',
 	FALSE
 ),
@@ -67,13 +67,6 @@ VALUES
 	'["generating set", "coproducts", "zero morphisms"]',
 	'["generator"]',
 	'If $S$ is a generating set, we claim that $U := \coprod_{G \in S} G$ is a generator. Let $f,g : A \rightrightarrows B$ be two morphisms with $f h = g h$ for all $h : U \to A$. If $G \in S$, any morphism $G \to A$ extends to $U$ by using zero morphisms outside of $G$. Thus, $fh = gh$ holds for all $h : G \to A$ and $G \in S$. Since $S$ is a generating set, this implies $f = g$.',
-	FALSE
-),
-(
-	'generating_set_small_categories',
-	'["essentially small"]',
-	'["generating set"]',
-	'In a small category, the set of all objects is clearly a generating set.',
 	FALSE
 ),
 (

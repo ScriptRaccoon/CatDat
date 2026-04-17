@@ -49,9 +49,9 @@ VALUES
 	FALSE
 ),
 (
-	'products_consequence',
+	'products_consequences',
 	'["products"]',
-	'["finite products", "countable products"]',
+	'["finite products", "countable products", "powers"]',
 	'This is trivial.',
 	FALSE
 ),
@@ -79,7 +79,7 @@ VALUES
 (
 	'countable_products_consequence',
 	'["countable products"]',
-	'["finite products"]',
+	'["finite products", "countable powers"]',
 	'This is trivial.',
 	FALSE
 ),
@@ -210,20 +210,6 @@ VALUES
 	FALSE
 ),
 (
-	'products_include_powers',
-	'["products"]',
-	'["powers"]',
-	'This is trivial.',
-	FALSE
-),
-(
-	'countable_products_include_countable_powers',
-	'["countable products"]',
-	'["countable powers"]',
-	'This is trivial.',
-	FALSE
-),
-(
 	'finite_products_include_finite_powers',
 	'["finite products"]',
 	'["finite powers"]',
@@ -235,13 +221,6 @@ VALUES
 	'["binary products"]',
 	'["binary powers"]',
 	'This is trivial.',
-	FALSE
-),
-(
-	'empty_power',
-	'["finite powers"]',
-	'["terminal object"]',
-	'The empty power is a terminal object.',
 	FALSE
 ),
 (
@@ -259,9 +238,9 @@ VALUES
 	FALSE
 ),
 (
-	'finite_powers_include_binary_powers',
+	'finite_powers_consequences',
 	'["finite powers"]',
-	'["binary powers"]',
+	'["binary powers", "terminal object"]',
 	'This is trivial.',
 	FALSE
 ),
