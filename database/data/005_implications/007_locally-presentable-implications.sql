@@ -23,8 +23,15 @@ VALUES
 (
 	'accessible_trivial_consequence',
 	'["accessible"]',
-	'["well-powered", "generating set"]',
-	'For well-poweredness, see <a href="https://ncatlab.org/nlab/show/accessible+category#wellpoweredness_and_wellcopoweredness" target="_blank">nLab</a>. For a $\kappa$-accessible category, the set $G$ appearing in the definition gives a small dense full subcategory, which is in particular a generating set.',
+	'["generating set"]',
+	'For a $\kappa$-accessible category, the set $G$ appearing in the definition gives a small dense full subcategory, which is in particular a generating set.',
+	FALSE
+),
+(
+	'accessible_well-powered',
+	'["accessible"]',
+	'["well-powered"]',
+	'See <a href="https://ncatlab.org/nlab/show/accessible+category#wellpoweredness_and_wellcopoweredness" target="_blank">nLab</a>.',
 	FALSE
 ),
 (
