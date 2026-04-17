@@ -21,6 +21,7 @@ async function execute_tests() {
 	await test_mutual_category_duals()
 	await test_mutual_property_duals()
 	await test_decided_categories()
+	await test_properties_of_trivial_category()
 	await test_properties_of_core_categories()
 }
 
@@ -112,6 +113,24 @@ async function test_decided_category(category_id: string) {
 	}
 
 	console.info(`✅ All properties have been decided for ${category_id}`)
+}
+
+/**
+ * Tests that the trivial category has no unsatisfied property.
+ * This enforces that all properties in the database are "positive".
+ */
+async function test_properties_of_trivial_category() {
+	const res = await db.execute(`
+		SELECT property_id FROM category_property_assignments
+		WHERE category_id = '1' AND is_satisfied = FALSE
+	`)
+	if (res.rows.length > 0) {
+		throw new Error(
+			`❌ The trivial category has ${res.rows.length} unsatisfied properties, but it should have 0.`,
+		)
+	}
+
+	console.info(`✅ The trivial category has no unsatisfied properties`)
 }
 
 /**
