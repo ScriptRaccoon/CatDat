@@ -12,10 +12,10 @@ VALUES
 (
 	'0',
 	'empty category',
-	'$0$',
+	'$\mathbf{0}$',
 	'no objects',
 	'no morphisms',
-	'This is the category with no objects and no morphisms. It is the initial object in the category of (small) categories.',
+	'This is the category with no objects and no morphisms. It is the initial object in the category of small categories.',
 	'https://ncatlab.org/nlab/show/empty+category',
 	NULL
 ),
@@ -25,7 +25,7 @@ VALUES
 	'$\mathbf{1}$',
 	'a single object $0$',
 	'only the identity morphism',
-	'This is the simplest category, consisting of a single object $0$ and its identity morphism $0 \to 0$. It is the terminal object in the category of small categories.',
+	'This is the simplest category, consisting of a single object $0$ and its identity morphism $0 \to 0$. A concrete representation is the full subcategory of $\mathbf{Set}$ consisting of the empty set. It is the terminal object in the category of small categories.',
 	'https://ncatlab.org/nlab/show/terminal+category',
 	NULL
 ),
@@ -33,9 +33,9 @@ VALUES
 	'2',
 	'discrete category on two objects',
 	'$\mathbf{2}$',
-	'two objects',
+	'two objects $0$ and $1$',
 	'only the two identity morphisms',
-	'For a more concrete representation, this is the subcategory of $\mathbf{CRing}$ of the two fields $\mathbb{F}_2$ and $\mathbb{F}_3$.',
+	'A concrete representation is the full subcategory of $\mathbf{CRing}$ consisting of the two fields $\mathbb{F}_2$ and $\mathbb{F}_3$.',
 	NULL,
 	NULL
 ),

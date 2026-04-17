@@ -1,5 +1,7 @@
 INSERT INTO related_categories (category_id, related_category_id)
 VALUES
+('0', '1'),
+('1', '0'),
 ('1', '2'),
 ('2', '1'),
 ('Ab', 'CMon'),
