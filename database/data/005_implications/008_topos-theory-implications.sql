@@ -187,4 +187,25 @@ VALUES
 	'["co-Malcev"]',
 	'This is Example 2.2.18 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>. An alternative proof is given later in A.5.17.',
 	FALSE
+),
+(
+	'nno_assumption',
+	'["natural numbers object"]',
+	'["finite products"]',
+	'This holds by definition.',
+	FALSE
+),
+(
+	'nno_criterion',
+	'["infinitary distributive"]',
+	'["natural numbers object"]',
+	'Consider the copower $N := \coprod_{n \in \mathbb{N}} 1$ with inclusions $i_n : 1 \to N$ for $n \in \mathbb{N}$. We define $z := i_1 : 1 \to N$ and $s : N \to N$ by $s \circ i_n = i_{n+1}$. Since the category is infinitary distributive, we have $A \times N \cong \coprod_{n \in \mathbb{N}} A$ for every object $A$. Given morphisms $f : A \to X$, $g : X \to X$, a morphism $\Phi : A \times N \to X$ therefore corresponds to a family of morphisms $\phi_n : A \to X$ for $n \in \mathbb{N}$. The condition $\Phi(a,z)=f(a)$ becomes $\phi_0 = f$. The condition $\Phi(a,s(n)) = g(\Phi(a,n))$ becomes $\phi_{n+1} = g \circ \phi_n$. This recursively defines the morphisms $\phi_n$. (We are basically using that $\mathbb{N}$ is a natural numbers object in $\mathbf{Set}$.) Concretely, $\phi_n = g^n \circ f$.',
+	FALSE
+),
+(
+	'nno_additive_case',	
+	'["natural numbers object", "additive"]',
+	'["trivial"]',
+	'Let $(N,z,s)$ be a natural numbers object in an additive category. The morphism $z : 0 \to N$ must be the zero morphism. The universal property applied to $A=1$ implies that $s : N \to N$ is an initial object in the category of endomorphisms. This exists, it is given by the identity $0 \to 0$. Therefore, $N = 0$. The general universal property now becomes: For all $f : A \to X$, $g : X \to X$ there is a unique $\Phi : A \to X$ such that $\Phi(a) = f(a)$ and $\Phi(a)=g(\Phi(a))$. Apply this to $g = 0$ to conclude $f = 0$ for all $f$.',
+	FALSE
 );

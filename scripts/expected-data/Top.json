@@ -141,5 +141,6 @@
 	"coaccessible": false,
 	"countable": false,
 	"essentially countable": false,
-	"cartesian filtered colimits": false
+	"cartesian filtered colimits": false,
+	"natural numbers object": true
 }

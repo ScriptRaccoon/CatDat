@@ -141,5 +141,6 @@
 	"locally copresentable": false,
 	"coaccessible": false,
 	"countable": false,
-	"essentially countable": false
+	"essentially countable": false,
+	"natural numbers object": false
 }
