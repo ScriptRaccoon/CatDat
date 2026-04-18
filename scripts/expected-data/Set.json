@@ -96,6 +96,10 @@
 	"cocartesian cofiltered limits": true,
 	"natural numbers object": true,
 	"countably distributive": true,
+	"Barr-coexact": true,
+	"Barr-exact": true,
+	"monadically concrete": true,
+	"pretopos": true,
 
 	"Grothendieck abelian": false,
 	"Malcev": false,

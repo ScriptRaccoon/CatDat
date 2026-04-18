@@ -100,6 +100,9 @@
 	"multi-initial object": true,
 	"cartesian filtered colimits": true,
 	"cocartesian cofiltered limits": true,
+	"Barr-coexact": true,
+	"Barr-exact": true,
+	"monadically concrete": true,
 
 	"cartesian closed": false,
 	"locally cartesian closed": false,
@@ -144,5 +147,6 @@
 	"essentially countable": false,
 	"natural numbers object": false,
 	"countably distributive": false,
-	"countably codistributive": false
+	"countably codistributive": false,
+	"pretopos": false
 }
