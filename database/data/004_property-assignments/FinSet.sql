@@ -49,6 +49,12 @@ VALUES
 ),
 (
 	'FinSet',
+	'Barr-coexact',
+	TRUE,
+	'If an equivalence corelation is a cokernel pair of $f, g : Y \to X$, then we can replace $Y$ with the appropriate equalizer which is finite.'
+),
+(
+	'FinSet',
 	'small',
 	FALSE,
 	'Even the collection of all singletons is not a set.'

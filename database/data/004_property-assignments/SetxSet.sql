@@ -25,6 +25,12 @@ VALUES
 ),
 (
 	'SetxSet',
+	'Barr-coexact',
+	TRUE,
+	'$(\mathbf{Set} \times \mathbf{Set})^{\operatorname{op}}$ is monadic over $\mathbf{Set} \times \mathbf{Set}$.'
+),
+(
+	'SetxSet',
 	'skeletal',
 	FALSE,
 	'This is trivial.'
