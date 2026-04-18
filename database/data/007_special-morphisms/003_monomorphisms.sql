@@ -88,7 +88,7 @@ VALUES
 (
 	'Delta',
 	'injective order-preserving maps',
-	'The non-trivial direction follows since the forgetful functor $\Delta \to \mathbf{Set}$ is representable (by $[0]$), hence preserves monomorphisms.'
+	'For the non-trivial direction, the forgetful functor to $\mathbf{Set}$ is representable (by the terminal object), hence preserves monomorphisms.'
 ),
 (
 	'FI',
@@ -108,12 +108,12 @@ VALUES
 (
 	'FinOrd',
 	'injective order-preserving maps',
-	'The same proof as for $\mathbf{Set}$ can be used.'
+	'For the non-trivial direction, the forgetful functor to $\mathbf{Set}$ is representable (by the terminal object), hence preserves monomorphisms.'
 ),
 (
 	'FinSet',
 	'injective maps',
-	'The same proof as for $\mathbf{Set}$ can be used.'
+	'For the non-trivial direction, the forgetful functor to $\mathbf{Set}$ is representable (by the terminal object), hence preserves monomorphisms.'
 ),
 (
 	'Fld',
@@ -138,7 +138,7 @@ VALUES
 (
 	'Haus',
 	'injective continuous maps',
-	'The same proof as for $\mathbf{Set}$ can be used.'
+	'For the non-trivial direction, the forgetful functor to $\mathbf{Set}$ is representable (by the terminal object), hence preserves monomorphisms.'
 ),
 (
 	'M-Set',
@@ -148,27 +148,27 @@ VALUES
 (
 	'Man',
 	'injective smooth maps',
-	'The same proof as for $\mathbf{Set}$ can be used.'
+	'For the non-trivial direction, the forgetful functor to $\mathbf{Set}$ is representable (by the terminal object), hence preserves monomorphisms.'
 ),
 (
 	'Meas',
 	'injective measurable maps',
-	'The same proof as for $\mathbf{Set}$ can be used.'
+	'For the non-trivial direction, the forgetful functor to $\mathbf{Set}$ is representable (by the terminal object), hence preserves monomorphisms.'
 ),
 (
 	'Met',
 	'injective non-expansive maps',
-	'The same proof as for $\mathbf{Set}$ can be used.'
+	'For the non-trivial direction, the forgetful functor to $\mathbf{Set}$ is representable (by the terminal object), hence preserves monomorphisms.'
 ),
 (
 	'Met_c',
 	'injective continuous maps',
-	'The same proof as for $\mathbf{Set}$ can be used.'
+	'For the non-trivial direction, the forgetful functor to $\mathbf{Set}$ is representable (by the terminal object), hence preserves monomorphisms.'
 ),
 (
 	'Met_oo',
 	'injective non-expansive maps',
-	'The same proof as for $\mathbf{Set}$ can be used.'
+	'For the non-trivial direction, the forgetful functor to $\mathbf{Set}$ is representable (by the terminal object), hence preserves monomorphisms.'
 ),
 (
 	'CAlg(R)',
@@ -248,7 +248,7 @@ VALUES
 (
 	'Setne',
 	'injective maps',
-	'The same proof as for $\mathbf{Set}$ can be used.'
+	'For the non-trivial direction, the forgetful functor to $\mathbf{Set}$ is representable (by the terminal object), hence preserves monomorphisms.'
 ),
 (
 	'SetxSet',
@@ -278,12 +278,12 @@ VALUES
 (
 	'Top',
 	'injective continuous maps',
-	'The same proof as for $\mathbf{Set}$ can be used.'
+	'For the non-trivial direction, the forgetful functor to $\mathbf{Set}$ is representable (by the terminal object), hence preserves monomorphisms.'
 ),
 (
 	'Top*',
 	'injective pointed continuous maps',
-	'For the non-trivial direction: The forgetful functor $\mathbf{Top}_* \to \mathbf{Set}$ is representable (take the discrete two-point space) and hence preserves monomorphisms.'
+	'For the non-trivial direction, the forgetful functor to $\mathbf{Set}$ is representable (by the discrete two-point space), hence preserves monomorphisms.'
 ),
 (
 	'Vect',
