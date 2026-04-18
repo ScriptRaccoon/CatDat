@@ -16,8 +16,8 @@ VALUES
 (
 	'monadically_concrete_consequences',
 	'["monadically concrete"]',
-	'["complete", "cocomplete", "Barr-exact"]',
-	'It is complete because a monadic functor creates limits.  For cocompleteness, see for example Handbook of Categorial Algebra Vol. 2, Thm. 4.3.5.  For Barr-exactness, see <a href="https://ncatlab.org/nlab/show/colimits+in+categories+of+algebras#exact">here</a>.',
+	'["complete", "cocomplete", "Barr-exact", "locally essentially small"]',
+	'It is complete because a monadic functor creates limits.  For cocompleteness, see for example Handbook of Categorial Algebra Vol. 2, Thm. 4.3.5.  For Barr-exactness, see <a href="https://ncatlab.org/nlab/show/colimits+in+categories+of+algebras#exact">here</a>.  The local smallness condition is easy from the fact that the monadic functor must be faithful.',
 	FALSE
 ),
 (
