@@ -119,10 +119,10 @@ VALUES
 	FALSE
 ),
 (
-	'thin_implies_regular',
+	'thin_implies_barr_exact',
 	'["thin", "finitely complete"]',
-	'["regular"]',
-	'In a thin category, regular epimorphisms are isomorphisms, and the rest is clear as well.',
+	'["Barr-exact"]',
+	'In a thin category, regular epimorphisms are isomorphisms, and the rest of regularity is clear as well.  For exactness, any internal equivalence relation (in fact any reflexive relation) is the full relation i.e. an isomorphism, and is therefore the kernel pair of the identity map.',
 	FALSE
 ),
 (

@@ -197,6 +197,22 @@ VALUES
 	TRUE
 ),
 (
+	'Barr-exact',
+	'is',
+	'A category is <i>Barr-exact</i> if it is regular, and in addition, every internal equivalence relation is a kernel pair.',
+	'https://ncatlab.org/nlab/show/exact',
+	'Barr-coexact',
+	TRUE
+),
+(
+	'Barr-coexact',
+	'is',
+	'A category is <i>Barr-coexact</i> if its dual is Barr-exact, i.e. it is coregular, and in addition, every internal equivalence corelation is a cokernel pair.',
+	NULL,
+	'Barr-exact',
+	TRUE
+),
+(
 	'unital',
 	'is',
 	'A category is <i>unital</i> if it has a zero object, finite limits, and for all objects $X,Y$ the two morphisms $(\mathrm{id}_X,0) : X \hookrightarrow X \times Y$ and $(0,\mathrm{id}_Y) : Y \hookrightarrow X \times Y$ are jointly strongly epimorphic. This means: there is no proper subobject of $X \times Y$ that contains $X$ and $Y$. When coproducts exist, the canonical morphism $X \sqcup Y \to X \times Y$ therefore must be a strong epimorphism.',

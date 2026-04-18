@@ -252,6 +252,13 @@ VALUES
 	FALSE
 ),
 (
+	'barr_exact_def',
+	'["Barr-exact"]',
+	'["regular"]',
+	'By definition',
+	FALSE
+),
+(
 	'power_construction',
 	'["copowers", "cartesian closed"]',
 	'["powers"]',

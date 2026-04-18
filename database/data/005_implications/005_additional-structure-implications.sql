@@ -7,10 +7,17 @@ INSERT INTO implication_input (
 )
 VALUES
 (
-	'finitary_algebraic_consequence',
+	'finitary_algebraic_consequences',
 	'["finitary algebraic"]',
-	'["locally strongly finitely presentable"]',
-	'This is trivial because a locally strongly finitely presentable category is a variety of many-sorted finitary algebras.',
+	'["locally strongly finitely presentable", "monadically concrete"]',
+	'The first is trivial because a locally strongly finitely presentable category is a variety of many-sorted finitary algebras. For the second, the forgetful functor to Set is monadic because the corresponding monad on Set takes a set to the collection of formal expressions in those variables modulo provable equality, and so it is easy to see an equivalence between an algebra over that monad and a model of the algebraic theory.',
+	FALSE
+),
+(
+	'monadically_concrete_consequences',
+	'["monadically concrete"]',
+	'["complete", "Barr-exact"]',
+	'It is complete because a monadic functor creates limits.  It is Barr-exact because any Eilenberg-Moore category of a functor on Set is Barr-exact.',
 	FALSE
 ),
 (
@@ -49,10 +56,10 @@ VALUES
 	TRUE
 ),
 (
-	'abelian_implies_regular',
+	'abelian_implies_exact',
 	'["abelian"]',
-	'["regular"]',
-	'In an abelian category, every epimorphism is regular, and epimorphisms are pullback-stable, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. VIII.',
+	'["Barr-exact"]',
+	'In an abelian category, every epimorphism is regular, and epimorphisms are pullback-stable, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. VIII.  This shows the category is regular.  For exactness, strict quotients of internal equivalence relations can be constructed as cokernels.',
 	FALSE
 ),
 (

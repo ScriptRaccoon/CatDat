@@ -84,6 +84,14 @@ VALUES
 	TRUE
 ),
 (
+	'pretopos',
+	'is a',
+	'A <i>pretopos</i> is a category which is both Barr-exact and extensive.',
+	'https://ncatlab.org/nlab/show/pretopos',
+	NULL,
+	TRUE
+),
+(
 	'elementary topos',
 	'is an',
 	'An <i>elementary topos</i> is a cartesian closed category with finite limits and a subobject classifier.',

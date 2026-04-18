@@ -62,4 +62,12 @@ VALUES
 	'https://ncatlab.org/nlab/show/Grothendieck+category',
 	NULL,
 	TRUE
+),
+(
+	'monadically concrete',
+	'is',
+	'A category is <i>monadically concrete</i> if there exists a monadic functor to Set. Note this is not standard terminology, but is used in the CatDat system for its numerous implications.',
+	NULL,
+	NULL,
+	TRUE
 );

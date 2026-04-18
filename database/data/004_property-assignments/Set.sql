@@ -40,4 +40,10 @@ VALUES
 	'Malcev',
 	FALSE,
 	'There are lots of non-symmetric reflexive relations, for example $\leq$ on $\mathbb{N}$.'
+),
+(
+	'Set_op',
+	'monadically concrete',
+	TRUE,
+	'The contravariant powerset functor $\mathsf{Set}^{\operatorname{op}} \to \mathsf{Set}$ is monadic.'
 );
