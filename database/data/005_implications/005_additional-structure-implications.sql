@@ -16,8 +16,8 @@ VALUES
 (
 	'monadically_concrete_consequences',
 	'["monadically concrete"]',
-	'["complete", "Barr-exact"]',
-	'It is complete because a monadic functor creates limits.  It is Barr-exact because any Eilenberg-Moore category of a functor on Set is Barr-exact.',
+	'["complete", "cocomplete", "Barr-exact"]',
+	'It is complete because a monadic functor creates limits.  For cocompleteness, see for example Handbook of Categorial Algebra Vol. 2, Thm. 4.3.5.  For Barr-exactness, see <a href="https://ncatlab.org/nlab/show/colimits+in+categories+of+algebras#exact">here</a>.',
 	FALSE
 ),
 (
