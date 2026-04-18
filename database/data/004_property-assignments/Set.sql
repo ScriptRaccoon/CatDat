@@ -31,6 +31,12 @@ VALUES
 ),
 (
 	'Set',
+	'Barr-coexact',
+	TRUE,
+	'$\mathbf{Set}^{\operatorname{op}}$ is monadic over $\mathbf{Set}$.'
+),
+(
+	'Set',
 	'skeletal',
 	FALSE,
 	'This is trivial.'
