@@ -94,4 +94,10 @@ VALUES
 	'co-Malcev',
 	FALSE,
 	'See <a href="https://mathoverflow.net/questions/509552">MO/509552</a>: Consider the forgetful functor $U : \mathbf{Prost} \to \mathbf{Set}$ and the relation $R \subseteq U^2$ defined by $R(A) := \{(a,b) \in U(A)^2 : a \leq b\}$. Both are representable: $U$ by the singleton preordered set and $R$ by $\{0 \leq 1 \}$. It is clear that $R$ is reflexive, but not symmetric.'
+),
+(
+	'Prost',
+	'Barr-coexact',
+	FALSE,
+	'Consider the space $X$ with one point, and the corelation $R$ with two points and the full relation.  Then for any $Y$, the morphisms $R \to Y$ correspond to pairs of points $(y_1, y_2) \in Y \times Y$ such that $y_1 \le y_2$ and $y_2 \le y_1$, which induces an equivalence relation on pairs of maps $X \to Y$.  It follows that $R$ is an equivalence corelation.  However, the equalizer of the two maps $X \to R$ is empty, and the cokernel pair of the map $\emptyset \to X$ is the proset with two elements and the equality relation.'
 );
