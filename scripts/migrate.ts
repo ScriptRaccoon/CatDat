@@ -1,4 +1,4 @@
-import { type Client, createClient } from '@libsql/client'
+import { type Client } from '@libsql/client'
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import dotenv from 'dotenv'
@@ -12,39 +12,10 @@ await migrate()
  * Creates the tables, indexes, triggers, and views.
  */
 async function migrate() {
-	await create_visits_table()
-
 	const db = get_client()
 	await db.execute('PRAGMA foreign_keys = ON')
 	await create_migrations_table(db)
 	await apply_migrations(db)
-}
-
-/**
- * Creates the visits table. It is stored in a separate database.
- */
-async function create_visits_table() {
-	const DB_VISITS_URL = process.env.DB_VISITS_URL
-	const DB_VISITS_AUTH_TOKEN = process.env.DB_VISITS_AUTH_TOKEN
-
-	if (!DB_VISITS_URL) throw new Error('No DB_VISITS_URL found')
-
-	const db_visits = createClient({
-		url: DB_VISITS_URL,
-		authToken: DB_VISITS_AUTH_TOKEN,
-	})
-
-	await db_visits.execute(`
-	CREATE TABLE IF NOT EXISTS visits (
-		id INTEGER PRIMARY KEY,
-		created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
-		theme TEXT NOT NULL CHECK (theme in ('dark', 'light')),
-		device_type TEXT NOT NULL CHECK (device_type in ('mobile', 'tablet', 'desktop')),
-		country TEXT
-	)
-`)
-
-	console.info('Created visits table')
 }
 
 /**
