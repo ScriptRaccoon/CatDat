@@ -13,8 +13,8 @@
 	let name = $state(saved_name)
 
 	let error = $state('')
-	let url = $state('')
 	let sending = $state(false)
+	let message = $state('')
 
 	const TITLE_MAX_LENGTH = 50
 	const BODY_MAX_LENGTH = 10000
@@ -25,7 +25,7 @@
 
 		sending = true
 		error = ''
-		url = ''
+		message = ''
 
 		if (name) {
 			window.localStorage.setItem('name', name)
@@ -34,7 +34,7 @@
 		}
 
 		try {
-			const res = await fetch('/api/issue', {
+			const res = await fetch('/api/submissions', {
 				method: 'POST',
 				body: JSON.stringify({ title, body, url: page.url.href, name }),
 				headers: { 'Content-Type': 'application/json' },
@@ -45,7 +45,7 @@
 			if ('error' in res_json) {
 				error = res_json.error
 			} else {
-				url = res_json.url
+				message = res_json.message
 			}
 		} catch (err) {
 			console.error(err)
@@ -146,11 +146,14 @@
 			</p>
 		{/if}
 
-		{#if url}
+		{#if message}
 			<p>
 				<Fa icon={faCheckCircle} />
-				Your suggestion has been created as a
-				<a href={url} target="_blank">GitHub issue</a>. We will review it shortly.
+				Thank you for your submission! We will review it shortly. Once approved, it
+				will be created as a
+				<a href="https://github.com/ScriptRaccoon/CatDat/issues" target="_blank">
+					GitHub issue
+				</a>.
 			</p>
 		{/if}
 	{/if}
