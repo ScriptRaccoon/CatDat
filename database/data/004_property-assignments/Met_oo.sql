@@ -51,7 +51,7 @@ VALUES
 	'Met_oo',
 	'balanced',
 	FALSE,
-	'The inclusion $\mathbb{Q} \hookrightarrow \mathbb{R}$ provides a counterexample.'
+	'The inclusion $\mathbb{Q} \hookrightarrow \mathbb{R}$ provides a counterexample. Alternatively, consider the identity map $(X,2d) \to (X,d)$ for any non-trivial metric space $(X,d)$.'
 ),
 (
 	'Met_oo',
