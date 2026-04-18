@@ -199,7 +199,7 @@ VALUES
 (
 	'Barr-exact',
 	'is',
-	'A category is <i>Barr-exact</i> if it is regular, and in addition, every internal equivalence relation is a kernel pair.',
+	'A category is <i>Barr-exact</i> if it is regular, and in addition, every internal equivalence relation is a kernel pair.  (Note that because of the regularity condition, that is equivalent to being the kernel pair of a coequalizer of the two projections.)',
 	'https://ncatlab.org/nlab/show/exact',
 	'Barr-coexact',
 	TRUE
@@ -207,7 +207,7 @@ VALUES
 (
 	'Barr-coexact',
 	'is',
-	'A category is <i>Barr-coexact</i> if its dual is Barr-exact, i.e. it is coregular, and in addition, every internal equivalence corelation is a cokernel pair.',
+	'A category is <i>Barr-coexact</i> if its dual is Barr-exact, i.e. it is coregular, and in addition, every internal equivalence corelation is a cokernel pair.  (Note that because of the coregularity condition, that is equivalent to being the cokernel pair of an equalizer of the two coprojections.)',
 	NULL,
 	'Barr-exact',
 	TRUE
