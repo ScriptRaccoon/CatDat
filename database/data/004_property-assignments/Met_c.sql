@@ -100,4 +100,10 @@ VALUES
 	'sequential colimits',
 	FALSE,
 	'See <a href="https://mathoverflow.net/questions/510316" target="_blank">MO/510316</a>.'
+),
+(
+	'Met_c',
+	'Barr-exact',
+	FALSE,
+	'Any kernel pair of maps $f, g : X \to Y$ is closed in $X \times X$, but there are plenty of equivalence relations which are not closed, such as $(\mathbb{Q} \times \mathbb{Q}) \cup \Delta \subseteq \mathbb{R} \times \mathbb{R}$.'
 );

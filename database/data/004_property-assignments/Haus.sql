@@ -94,4 +94,11 @@ VALUES
 	'regular subobject classifier',
 	FALSE,
 	'Assume that there is a regular subobject classifier $\Omega$. By the classification of regular monomorphisms, we would have an isomorphism between $\mathrm{Hom}(X,\Omega)$ and the set of closed subsets of $X$ for any Hausdorff space $X$. If we take $X = 1$ we see that $\Omega$ has two points. Since $\Omega$ is Hausdorff, $\Omega \cong 1 + 1$ must be discrete. But then $\mathrm{Hom}(X,\Omega)$ is isomorphic to the set of all clopen subsets of $X$, of which there are usually far fewer than closed subsets (consider $X = [0,1]$).'
+),
+(
+	'Haus',
+	'Barr-exact',
+	FALSE,
+	'Any kernel pair of maps $f, g : X \to Y$ is closed in $X \times X$, but there are plenty of equivalence relations which are not closed, such as $(\mathbb{Q} \times \mathbb{Q}) \cup \Delta \subseteq \mathbb{R} \times \mathbb{R}$.'
 );
+

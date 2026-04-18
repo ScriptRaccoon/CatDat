@@ -82,4 +82,10 @@ VALUES
 	'co-Malcev',
 	FALSE,
 	'See <a href="https://mathoverflow.net/questions/509552">MO/509552</a>: Consider the forgetful functor $U : \mathbf{Met}_{\infty} \to \mathbf{Set}$ and the relation $R \subseteq U^2$ defined by $R(X) := \{(a,b) \in U(X)^2 : d(x,y) \leq 1 \}$. Both are representable: $U$ by the singleton metric space and $R$ by the metric space $\{ 0,1 \}$ where $d(0,1) := 1$. It is clear that $R$ is reflexive, but not transitive.'
+),
+(
+	'Met_oo',
+	'Barr-exact',
+	FALSE,
+	'Any kernel pair of maps $f, g : X \to Y$ is closed in $X \times X$, but there are plenty of equivalence relations which are not closed, such as $(\mathbb{Q} \times \mathbb{Q}) \cup \Delta \subseteq \mathbb{R} \times \mathbb{R}$.'
 );

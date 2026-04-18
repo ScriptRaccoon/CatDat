@@ -49,9 +49,9 @@ VALUES
 ),
 (
 	'FinGrp',
-	'regular', 
+	'Barr-exact', 
 	TRUE,
-	'The category is Malcev and hence finitely complete, and it has all coequalizers. The regular epimorphisms coincide with the surjective group homomorphisms (see below), hence are clearly stable under pullbacks.'
+	'The category is Malcev and hence finitely complete, and it has all coequalizers. The regular epimorphisms coincide with the surjective group homomorphisms (see below), hence are clearly stable under pullbacks. This shows the category is regular. For exactness, quotients of equivalence relations are inherited from Group, with a quotient of a finite group clearly being finite as well.'
 ),
 (
 	'FinGrp',

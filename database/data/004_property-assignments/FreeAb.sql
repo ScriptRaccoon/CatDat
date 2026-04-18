@@ -84,4 +84,10 @@ VALUES
 	'sequential colimits',
 	FALSE,
 	'See <a href="https://mathoverflow.net/questions/509715" target="_blank">MO/509715</a>.'
+),
+(
+	'FreeAb',
+	'Barr-exact',
+	FALSE,
+	'Any kernel pair $E$ of a pair of morphisms to a free Abelian group satisfies that $nx \in E \rightarrow x \in E$ for $n > 0$.  However, for example the equivalence relation $\{ (x, y) \in \mathbb{Z}^2 \mid x \equiv y \pmod{2} \}$ does not satisfy this property.'
 );
