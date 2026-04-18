@@ -1,8 +1,9 @@
 <script lang="ts">
 	import { enhance } from '$app/forms'
 	import MetaData from '$components/MetaData.svelte'
+	import type { PageProps } from './$types'
 
-	let { data } = $props()
+	let { data, form }: PageProps = $props()
 </script>
 
 <MetaData
@@ -15,6 +16,10 @@
 <p class="hint">
 	Approve submissions sent by the suggestion form to convert them to GitHub issues.
 </p>
+
+{#if form?.error}
+	<p class="error">{form.error}</p>
+{/if}
 
 {#if data.submissions.length}
 	{#each data.submissions as submission (submission.id)}
@@ -43,6 +48,7 @@
 			</ul>
 
 			<form class="actions" method="POST" use:enhance>
+				<input type="hidden" name="id" value={submission.id} />
 				{#if !submission.approved_at}
 					<button class="button" formaction="?/approve"> Approve</button>
 				{/if}

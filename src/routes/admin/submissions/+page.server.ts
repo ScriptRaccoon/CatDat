@@ -1,4 +1,4 @@
-import { error, redirect } from '@sveltejs/kit'
+import { error, fail, redirect } from '@sveltejs/kit'
 import { has_session } from '../sessions'
 import { query_visits } from '$lib/server/db.visits'
 import sql from 'sql-template-tag'
@@ -27,4 +27,40 @@ export const load = async (event) => {
 	}
 
 	return { submissions }
+}
+
+export const actions = {
+	delete: async (event) => {
+		if (!has_session(event)) redirect(307, '/admin/login')
+
+		const form = await event.request.formData()
+		const submission_id = form.get('id')
+		if (!submission_id) return fail(400, { error: 'Submission ID required' })
+
+		const { err } = await query_visits(
+			sql`DELETE FROM submissions WHERE id = ${submission_id}`,
+		)
+
+		if (err) return fail(500, { error: 'Failed to delete submission' })
+	},
+
+	approve: async (event) => {
+		if (!has_session(event)) redirect(307, '/admin/login')
+
+		const form = await event.request.formData()
+		const submission_id = form.get('id')
+		if (!submission_id) return fail(400, { error: 'Submission ID required' })
+
+		const { err } = await query_visits(
+			sql`
+				UPDATE submissions
+				SET approved_at = CURRENT_TIMESTAMP
+				WHERE id = ${submission_id}
+			`,
+		)
+
+		if (err) return fail(500, { error: 'Failed to approve submission' })
+
+		// TODO: create GitHub issue here
+	},
 }
