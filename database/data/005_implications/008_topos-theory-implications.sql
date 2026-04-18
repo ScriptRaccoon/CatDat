@@ -135,8 +135,8 @@ VALUES
 (
 	'topos_consequence',
 	'["elementary topos"]',
-	'["finitely cocomplete", "disjoint finite coproducts", "epi-regular", "Barr-coexact"]',
-	'See <a href="https://ncatlab.org/nlab/show/Sheaves+in+Geometry+and+Logic" target="_blank">Mac Lane & Moerdijk</a>, Cor. IV.5.4, Cor. IV.10.5, Thm. 4.7.8.  To see it is Barr-coexact, use that the contravariant power object functor is monadic and the topos itself is Barr-exact.',
+	'["finitely cocomplete", "disjoint finite coproducts", "epi-regular"]',
+	'See <a href="https://ncatlab.org/nlab/show/Sheaves+in+Geometry+and+Logic" target="_blank">Mac Lane & Moerdijk</a>, Cor. IV.5.4, Cor. IV.10.5, Thm. 4.7.8.',
 	FALSE
 ),
 (
