@@ -52,7 +52,6 @@
 				{#if submission.name}
 					<li>
 						<Fa icon={faUser} />
-
 						{submission.name}
 					</li>
 				{/if}
@@ -64,9 +63,8 @@
 
 				{#if submission.approved_at}
 					<li>
-						Approved: {new Date(submission.approved_at).toLocaleDateString(
-							'en-CA',
-						)}
+						<Fa icon={faCircleCheck} />
+						{new Date(submission.approved_at).toLocaleString()}
 					</li>
 				{/if}
 
