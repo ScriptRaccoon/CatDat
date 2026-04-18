@@ -28,3 +28,4 @@ thoughts.txt
 
 # Local databases
 database/*.db
+database/*.db-wal
