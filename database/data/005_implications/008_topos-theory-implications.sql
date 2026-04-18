@@ -49,6 +49,13 @@ VALUES
 	TRUE
 ),
 (
+	'pretopos_consequence',
+	'["pretopos"]',
+	'["balanced"]',
+	'See <a href="https://ncatlab.org/nlab/show/balanced+category">NLab, Example 2.2</a> with a citation of Peter Johnstone, Cor. 1.22 in: Topos theory, London Math. Soc. Monographs 10, Acad. Press (1977), Dover (2014).',
+	FALSE
+),
+(
 	'topos_definition',
 	'["elementary topos"]',
 	'["cartesian closed", "finitely complete", "subobject classifier"]',
