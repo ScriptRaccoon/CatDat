@@ -1,10 +1,14 @@
 import { batch_visits } from '$lib/server/db.visits'
 import { error } from '@sveltejs/kit'
 import sql from 'sql-template-tag'
+import { has_session } from '../sessions'
+import { redirect } from '@sveltejs/kit'
 
 export const prerender = false
 
-export const load = async () => {
+export const load = async (event) => {
+	if (!has_session(event)) redirect(307, '/admin/login')
+
 	const { err, results } = await batch_visits<
 		[
 			{

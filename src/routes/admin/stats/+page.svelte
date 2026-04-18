@@ -9,6 +9,8 @@
 	description="How many times and from where CatDat has been visited"
 />
 
+<p><a href="/admin">Back to the Admin Page</a></p>
+
 <h2>Stats</h2>
 
 <i>CatDat</i> has been visited <strong>{data.total}</strong> times since its launch on

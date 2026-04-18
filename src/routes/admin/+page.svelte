@@ -8,3 +8,9 @@
 <MetaData title="Admin Page" />
 
 <h2>Admin Page</h2>
+
+<ul>
+	<li>
+		<a href="/admin/stats">Stats</a>
+	</li>
+</ul>
