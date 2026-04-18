@@ -5,13 +5,13 @@
 </script>
 
 <MetaData
-	title="CatDat Stats"
+	title="CatDat Statistics"
 	description="How many times and from where CatDat has been visited"
 />
 
 <p><a href="/admin">Back to the Admin Page</a></p>
 
-<h2>Stats</h2>
+<h2>Statistics</h2>
 
 <i>CatDat</i> has been visited <strong>{data.total}</strong> times since its launch on
 {data.start.substring(0, 10)}. There has been <strong>{data.total_last_day}</strong>

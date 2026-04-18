@@ -11,6 +11,6 @@
 
 <ul>
 	<li>
-		<a href="/admin/stats">Stats</a>
+		<a href="/admin/statistics">Statistics</a>
 	</li>
 </ul>
