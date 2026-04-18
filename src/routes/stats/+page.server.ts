@@ -3,8 +3,6 @@ import { error } from '@sveltejs/kit'
 
 export const prerender = false
 
-const COUNTRY_COUNT_THRESHOLD = 10
-
 export const load = async () => {
 	try {
 		const results = await db_visits.batch([
@@ -19,23 +17,29 @@ export const load = async () => {
     			date(created_at) AS day,
     			COUNT(*) AS count
 			FROM visits
+			WHERE created_at >= datetime('now', '-14 days')
 			GROUP BY day
-			ORDER BY day`,
+			ORDER BY day DESC
+			`,
 			`SELECT
                 country,
                 COUNT(*) as count
             FROM visits
             GROUP BY country
-            ORDER BY count DESC`,
+            ORDER BY count DESC
+			LIMIT 10
+			`,
 			`SELECT
                 theme,
-                COUNT(*) as count
+                COUNT(*) as count,
+				 ROUND(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER (), 1) AS percentage
             FROM visits
             GROUP BY theme
             ORDER BY theme`,
 			`SELECT
                 device_type,
-                COUNT(*) as count
+                COUNT(*) as count,
+				ROUND(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER (), 1) AS percentage
             FROM visits
             GROUP BY device_type
             ORDER BY count DESC`,
@@ -57,30 +61,22 @@ export const load = async () => {
 			count: number
 		}[]
 
-		const detailed_country_stats = results[2].rows as unknown as {
-			country: string
+		const country_stats = results[2].rows as unknown as {
+			country: string | null
 			count: number
 		}[]
 
 		const theme_stats = results[3].rows as unknown as {
 			theme: string
 			count: number
+			percentage: number
 		}[]
 
 		const device_stats = results[4].rows as unknown as {
 			device_type: string
 			count: number
+			percentage: number
 		}[]
-
-		const country_stats: typeof detailed_country_stats = []
-		let other_count = 0
-
-		for (const { country, count } of detailed_country_stats) {
-			if (count <= COUNTRY_COUNT_THRESHOLD) other_count += count
-			else country_stats.push({ country, count })
-		}
-
-		country_stats.push({ country: 'Others', count: other_count })
 
 		return {
 			start,

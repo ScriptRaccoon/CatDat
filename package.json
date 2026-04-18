@@ -49,14 +49,12 @@
 		"@fortawesome/free-solid-svg-icons": "^7.2.0",
 		"@libsql/client": "^0.17.2",
 		"@octokit/app": "^16.1.2",
-		"chart.js": "^4.5.1",
 		"es6-crawler-detect": "^4.0.2",
 		"ioredis": "^5.10.1",
 		"katex": "^0.16.44",
 		"leo-profanity": "^1.9.0",
 		"markdown-it": "^14.1.1",
 		"sql-template-tag": "^5.2.1",
-		"svelte-chartjs": "^4.0.1",
 		"svelte-fa": "^4.0.4"
 	}
 }
