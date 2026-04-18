@@ -26,6 +26,8 @@ on:
                 required: true
             REDIS_URL:
                 required: true
+            ADMIN_PAGE_PASSWORD:
+                required: true
 
 jobs:
     build-and-deploy:
@@ -72,6 +74,7 @@ jobs:
                   DB_VISITS_AUTH_TOKEN: ${{ secrets.DB_VISITS_AUTH_TOKEN }}
                   GITHUB_PRIVATE_KEY: ${{ secrets._GITHUB_PRIVATE_KEY }}
                   REDIS_URL: ${{ secrets.REDIS_URL }}
+                  ADMIN_PAGE_PASSWORD: ${{ secrets.ADMIN_PAGE_PASSWORD }}
               run: pnpm build
 
             - name: Get latest commit message

@@ -19,3 +19,4 @@ jobs:
             DB_VISITS_AUTH_TOKEN: ${{ secrets.DB_VISITS_AUTH_TOKEN }}
             _GITHUB_PRIVATE_KEY: ${{ secrets._GITHUB_PRIVATE_KEY }}
             REDIS_URL: ${{ secrets.REDIS_URL }}
+            ADMIN_PAGE_PASSWORD: ${{ secrets.ADMIN_PAGE_PASSWORD }}

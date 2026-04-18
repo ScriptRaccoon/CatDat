@@ -163,14 +163,6 @@
 		margin-bottom: -1rem;
 	}
 
-	.error {
-		color: var(--error-color);
-	}
-
-	.form-group {
-		margin-bottom: 1rem;
-	}
-
 	textarea {
 		height: 4lh;
 	}
