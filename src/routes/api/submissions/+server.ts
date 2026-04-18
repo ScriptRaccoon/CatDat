@@ -1,12 +1,25 @@
 import { json } from '@sveltejs/kit'
 import { query_visits } from '$lib/server/db.visits'
 import sql from 'sql-template-tag'
+import { redis } from '$lib/server/redis'
 
 const TITLE_MAX_LENGTH = 50
 const BODY_MAX_LENGTH = 10000
 const NAME_MAX_LENGTH = 50
 
 export const POST = async (event) => {
+	const ip = event.getClientAddress()
+	const key = `rate_limit_submissions:ip:${ip}`
+	const count = await redis.incr(key)
+	if (count === 1) await redis.expire(key, 60 * 30)
+
+	if (count > 5) {
+		return json(
+			{ error: 'Too many submissions. Please try again later.' },
+			{ status: 429 },
+		)
+	}
+
 	const data = await parse_data(event.request)
 
 	if ('error' in data) return json({ error: data.error }, { status: 400 })
