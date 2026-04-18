@@ -50,7 +50,7 @@ export const POST = async (event) => {
 		to: APPROVAL_EMAIL,
 	})
 
-	return json({ message: 'Submission has been added to the database' })
+	return json({ message: 'Submission successful' })
 }
 
 async function parse_data(request: Request): Promise<

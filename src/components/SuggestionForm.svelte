@@ -14,7 +14,7 @@
 
 	let error = $state('')
 	let sending = $state(false)
-	let message = $state('')
+	let success = $state(false)
 
 	const TITLE_MAX_LENGTH = 50
 	const BODY_MAX_LENGTH = 10000
@@ -25,7 +25,7 @@
 
 		sending = true
 		error = ''
-		message = ''
+		success = false
 
 		if (name) {
 			window.localStorage.setItem('name', name)
@@ -45,7 +45,7 @@
 			if ('error' in res_json) {
 				error = res_json.error
 			} else {
-				message = res_json.message
+				success = true
 			}
 		} catch (err) {
 			console.error(err)
@@ -146,7 +146,7 @@
 			</p>
 		{/if}
 
-		{#if message}
+		{#if success}
 			<p>
 				<Fa icon={faCheckCircle} />
 				Thank you for your submission! We will review it shortly. Once approved, it
