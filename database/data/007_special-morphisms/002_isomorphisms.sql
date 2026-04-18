@@ -201,6 +201,11 @@ VALUES
 	'This is true for every poset (regarded as a category).'
 ),
 (
+	'PMet',
+	'bijective isometries',
+	'This is easy.'
+),
+(
 	'Pos',
 	'bijective functions that are order-preserving and order-reflecting',
 	'This is easy.'

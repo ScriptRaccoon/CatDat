@@ -33,6 +33,7 @@ VALUES
 ('N', '$0$'),
 ('N_oo', '$0$'),
 ('On', '$0$'),
+('PMet', 'empty pseudo-metric space'),
 ('Pos', 'empty poset'),
 ('Prost', 'empty proset'),
 ('R-Mod', 'trivial module'),

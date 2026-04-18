@@ -40,6 +40,16 @@ VALUES
 	NULL
 ),
 (
+	'PMet',
+	'category of pseudo-metric spaces with non-expansive maps',
+	'$\mathbf{PMet}$',
+	'pseudo-metric spaces',
+	'non-expansive maps $f$, meaning $d(f(x),f(y)) \leq d(x,y)$ for all $x,y$',
+	'In contrast to metric spaces, we do not demand $d(x,y)=0 \implies x=y$ here.',
+	NULL,
+	NULL
+),
+(
 	'Met_oo',
 	'category of metric spaces with ∞ allowed',
 	'$\mathbf{Met}_{\infty}$',

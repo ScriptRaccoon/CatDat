@@ -30,6 +30,7 @@ VALUES
 ('Met_oo', 'singleton space'),
 ('Mon', 'trivial monoid'),
 ('N_oo', '$\infty$'),
+('PMet', 'singleton space'),
 ('Pos', 'singleton poset'),
 ('Prost', 'singleton proset'),
 ('R-Mod', 'zero module'),

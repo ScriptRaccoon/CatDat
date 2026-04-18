@@ -196,6 +196,11 @@ VALUES
 	'It is a thin category.'
 ),
 (
+	'PMet',
+	'injective non-expansive maps',
+	'For the non-trivial direction, the forgetful functor to $\mathbf{Set}$ is representable (by the terminal object), hence preserves monomorphisms.'
+),
+(
 	'Pos',
 	'injective order-preserving functions',
 	'The same proof as for $\mathbf{Set}$ can be used.'

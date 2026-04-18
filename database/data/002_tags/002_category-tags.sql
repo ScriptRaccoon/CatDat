@@ -61,6 +61,7 @@ VALUES
 ('N_oo', 'thin'),
 ('On', 'set theory'),
 ('On', 'thin'),
+('PMet', 'analysis'),
 ('Pos', 'order theory'),
 ('Prost', 'order theory'),
 ('R-Mod', 'algebra'),

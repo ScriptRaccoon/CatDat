@@ -181,6 +181,11 @@ VALUES
 	'It is a thin category.'
 ),
 (
+	'PMet',
+	'surjective non-expansive maps',
+	'Let $f : X \to Y$ be a non-expansive map that is not surjective. Choose $y_0 \in Y \setminus f(X)$. We extend the pseudo-metric from $Y$ to $Z := Y \sqcup \{y''_0\}$ via $d(y,y''_0) := d(y,y_0)$, i.e., we make $y_0,y''_0$ indistinguishable. Let $g : Y \to Z$ be the inclusion and $h : Y \to Z$ be the map that composes $g$ with the swap between $y_0$ and $y''_0$. Both are isometric and satisfy $g \circ f = h \circ f$. Therefore, $f$ is not an epimorphism.'
+),
+(
 	'On',
 	'every morphism',
 	'It is a thin category.'
