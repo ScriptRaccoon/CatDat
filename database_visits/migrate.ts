@@ -20,10 +20,11 @@ migrate()
  */
 async function migrate() {
 	await create_visits_table()
+	await create_submissions_table()
 }
 
 /**
- * Creates the visits table.
+ * Creates the page visits table.
  */
 async function create_visits_table() {
 	await db_visits.execute(`
@@ -37,4 +38,26 @@ async function create_visits_table() {
     `)
 
 	console.info('Created visits table')
+}
+
+// TODO: because of this new feature, we should rename
+// "db_visits" everywhere - not urgent though
+
+/**
+ * Creates the table of submissions marked for approval.
+ */
+async function create_submissions_table() {
+	await db_visits.execute(`
+        CREATE TABLE IF NOT EXISTS submissions (
+            id INTEGER PRIMARY KEY,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            title TEXT NOT NULL,
+            body TEXT NOT NULL,
+            name TEXT,
+            url TEXT NOT NULL,
+            approved_at TEXT
+        )
+    `)
+
+	console.info('Created submissions table')
 }
