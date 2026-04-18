@@ -1,8 +1,7 @@
 <script lang="ts">
 	import MetaData from '$components/MetaData.svelte'
-	import PropertyList from '$components/PropertyList.svelte'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
-	import { pluralize } from '$lib/client/utils'
+	import { get_property_url } from '$lib/commons/property.url'
 
 	let { data } = $props()
 </script>
@@ -12,14 +11,24 @@
 <h2>Properties of Functors</h2>
 
 <!-- TODO: add search feature if the list grows in the future -->
+<!-- TODO: remove code duplication with category properties list page -->
 
 <p class="hint">
-	{pluralize(data.properties.length, {
-		one: 'Found {count} property',
-		other: 'Found {count} properties',
-	})}
+	Found {data.total} properties ({data.grouped_total} grouped)
 </p>
 
-<PropertyList properties={data.properties} type="functor" />
+<ul>
+	{#each data.grouped_properties as { id, relation, dual_property_id }}
+		<li>
+			{relation}
+			<a href={get_property_url(id, 'functor')}>{id}</a>
+			{#if dual_property_id && id !== dual_property_id}
+				/ <a href={get_property_url(dual_property_id, 'functor')}>
+					{dual_property_id}
+				</a>
+			{/if}
+		</li>
+	{/each}
+</ul>
 
 <SuggestionForm />
