@@ -2,6 +2,8 @@ import { json } from '@sveltejs/kit'
 import { query_visits } from '$lib/server/db.visits'
 import sql from 'sql-template-tag'
 import { redis } from '$lib/server/redis'
+import { send_email } from '$lib/server/email'
+import { APPROVAL_EMAIL } from '$env/static/private'
 
 const TITLE_MAX_LENGTH = 50
 const BODY_MAX_LENGTH = 10000
@@ -34,6 +36,19 @@ export const POST = async (event) => {
 	if (err) {
 		return json({ error: 'Internal Server Error' }, { status: 500 })
 	}
+
+	const approve_url = `${event.url.origin}/admin/submissions`
+
+	const email_text =
+		`The suggestion form has been submitted.\n\n` +
+		`Title: ${title}\n\n` +
+		`Approve it here: ${approve_url}`
+
+	await send_email({
+		subject: 'CatDat – New submission',
+		text: email_text,
+		to: APPROVAL_EMAIL,
+	})
 
 	return json({ message: 'Submission has been added to the database' })
 }

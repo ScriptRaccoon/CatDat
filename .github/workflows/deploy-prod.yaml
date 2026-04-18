@@ -20,3 +20,7 @@ jobs:
             _GITHUB_PRIVATE_KEY: ${{ secrets._GITHUB_PRIVATE_KEY }}
             REDIS_URL: ${{ secrets.REDIS_URL }}
             ADMIN_PAGE_PASSWORD: ${{ secrets.ADMIN_PAGE_PASSWORD }}
+            EMAIL_ADDRESS: ${{ secrets.EMAIL_ADDRESS }}
+            EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+            ENABLE_EMAILS: ${{ secrets.ENABLE_EMAILS }}
+            APPROVAL_EMAIL: ${{ secrets.APPROVAL_EMAIL }}
