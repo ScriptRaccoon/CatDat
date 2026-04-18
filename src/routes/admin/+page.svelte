@@ -1,8 +1,5 @@
 <script lang="ts">
 	import MetaData from '$components/MetaData.svelte'
-	import type { PageProps } from './$types'
-
-	let { data }: PageProps = $props()
 </script>
 
 <MetaData title="Admin Page" />
@@ -12,5 +9,8 @@
 <ul>
 	<li>
 		<a href="/admin/statistics">Statistics</a>
+	</li>
+	<li>
+		<a href="/admin/submissions">Submissions</a>
 	</li>
 </ul>
