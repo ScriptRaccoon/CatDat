@@ -53,7 +53,6 @@
 		"es6-crawler-detect": "^4.0.2",
 		"ioredis": "^5.10.1",
 		"katex": "^0.16.44",
-		"leo-profanity": "^1.9.0",
 		"markdown-it": "^14.1.1",
 		"nodemailer": "^8.0.5",
 		"sql-template-tag": "^5.2.1",
