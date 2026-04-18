@@ -143,7 +143,10 @@ VALUES
 	'coaccessible',
 	FALSE,
 	'We can adjust the proof for $\mathbf{Top}$ as follows: Assume $\mathbf{Top}_*$ is coaccessible. Let $S_0=\{x,*\}$ be the pointed topological space such that $\{*\}$ is the only non-trivial open set, and let $S_1=\{x,*\}$ be the pointed space such that $\{x\}$ is the only non-trivial open set. Let $p_i\colon S_i \to \{x,*\}$ be the identity function to the two-element indiscrete pointed space. Then, a pointed topological space is discrete if and only if it is projective to the morphisms $p_0$ and $p_1$. This implies that the full subcategory spanned by all discrete pointed spaces, which is equivalent to $\mathbf{Set}_*$, is coaccessible by Prop. 4.7 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>. However, since $\mathbf{Set}_*$ is not coaccessible, this is a contradiction.'
+),
+(
+	'Top*',
+	'Barr-coexact',
+	FALSE,
+	'Consider the two-point discrete space $X$, and $R$ is the corelation with three points $\{ *, a, b \}$ and topology $\{ \emptyset, \{ * \}, \{ a, b \}, \{ *, a, b \}$.  Then for any space $Y$, the continuous functions $R \to Y$ correspond to the pairs of points which are indistinguishable in $Y$, which induces an equivalence relation on the pairs of maps $X \to Y$; this implies that $R$ is an equivalence corelation on $X$.  However, the equalizer of the two maps $X \to R$ is just the base point, and the map $\{ * \} \to X$ has cokernel pair given by the three-point discrete space.'
 );
-
-
-

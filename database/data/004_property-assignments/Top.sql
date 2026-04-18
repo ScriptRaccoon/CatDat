@@ -118,4 +118,10 @@ VALUES
 	'coaccessible',
 	FALSE,
 	'Assume $\mathbf{Top}$ is coaccessible. Let $p\colon S \to I$ be the identity map from the Sierpinski space to the two-element indiscrete space. Then, a topological space is discrete if and only if it is projective to the morphism $p$. This implies that the full subcategory spanned by all discrete spaces, which is equivalent to $\mathbf{Set}$, is coaccessible by Prop. 4.7 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>. However, since $\mathbf{Set}$ is not coaccessible, this is a contradiction.'
+),
+(
+	'Top',
+	'Barr-coexact',
+	FALSE,
+	'Consider the one-point space $X$, and $R$ is the corelation with two points and the indiscrete topology.  Then for any space $Y$, the continuous functions $R \to Y$ correspond to the pairs of points which are indistinguishable in $Y$, which induces an equivalence relation on the pairs of maps $X \to Y$; this implies that $R$ is an equivalence corelation on $X$.  However, the equalizer of the two maps $X \to R$ is empty, and the map $\emptyset \to X$ has cokernel pair given by the two-point discrete space.'
 );
