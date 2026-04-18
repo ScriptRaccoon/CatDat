@@ -51,7 +51,7 @@ VALUES
 	'FinSet',
 	'Barr-coexact',
 	TRUE,
-	'If an equivalence corelation is a cokernel pair of $f, g : Y \to X$, then we can replace $Y$ with the appropriate equalizer which is finite.'
+	'If an equivalence corelation is a cokernel pair of $f : Y \to X$ where $Y$ is gotten from Barr-coexactness of $\mathbf{Set}$, then we can replace $Y$ with the appropriate equalizer which is finite.'
 ),
 (
 	'FinSet',

@@ -89,5 +89,5 @@ VALUES
 	'FreeAb',
 	'Barr-exact',
 	FALSE,
-	'Any kernel pair $E$ of a pair of morphisms to a free Abelian group satisfies that $nx \in E \rightarrow x \in E$ for $n > 0$.  However, for example the equivalence relation $\{ (x, y) \in \mathbb{Z}^2 \mid x \equiv y \pmod{2} \}$ does not satisfy this property.'
+	'Any kernel pair $E$ of a morphism to a free Abelian group satisfies that $nx \in E \rightarrow x \in E$ for $n > 0$.  However, for example the equivalence relation $\{ (x, y) \in \mathbb{Z}^2 \mid x \equiv y \pmod{2} \}$ does not satisfy this property.'
 );

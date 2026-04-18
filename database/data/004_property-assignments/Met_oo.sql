@@ -87,5 +87,5 @@ VALUES
 	'Met_oo',
 	'Barr-exact',
 	FALSE,
-	'Any kernel pair of maps $f, g : X \to Y$ is closed in $X \times X$, but there are plenty of equivalence relations which are not closed, such as $(\mathbb{Q} \times \mathbb{Q}) \cup \Delta \subseteq \mathbb{R} \times \mathbb{R}$.'
+	'Any kernel pair of a map $f : X \to Y$ is closed in $X \times X$, but there are plenty of equivalence relations which are not closed, such as $(\mathbb{Q} \times \mathbb{Q}) \cup \Delta \subseteq \mathbb{R} \times \mathbb{R}$.'
 );
