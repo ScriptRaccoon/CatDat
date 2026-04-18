@@ -39,19 +39,19 @@ VALUES
 	'Met',
 	'coequalizers',
 	TRUE,
-	'See <a href="https://mathoverflow.net/questions/123739" target="_blank">MO/123739</a>.'
+	'This is because the <a href="/category/PMet">category of pseudo-metric spaces</a> has coequalizers and $\mathbf{Met} \hookrightarrow \mathbf{PMet}$ has a left adjoint, mapping a pseudo-metric space $X$ to $X /{\sim}$ where $x \sim y \iff d(x,y)=0$. Concretely, we take the coequalizer in the category of pseudo-metric spaces and then identify points with distance zero.' 
 ),
 (
 	'Met',
 	'directed colimits',
 	TRUE,
-	'Given a directed diagram $(X_i)$ of metric spaces, take the directed colimit $X$ of the underlying sets with the following metric: If $x,y \in X$, let $d(x,y)$ be infimum of all $d(x_i,y_i)$, where $x_i,y_i \in X_i$ are some preimages of $x,y$ in some $X_i$. This is only a pseudo-metric, so finally take the associated metric space (Kolmogorov quotient). The definition ensures that each $X_i \to X$ is non-expansive, and the universal property is easy to check.' 
+	'This is because the <a href="/category/PMet">category of pseudo-metric spaces</a> has directed colimits and $\mathbf{Met} \hookrightarrow \mathbf{PMet}$ has a left adjoint, mapping a pseudo-metric space $X$ to $X /{\sim}$ where $x \sim y \iff d(x,y)=0$. Concretely, we take the directed colimit in the category of pseudo-metric spaces and then identify points with distance zero.' 
 ),
 (
 	'Met',
 	'cartesian filtered colimits',
 	TRUE,
-	'The canonical map $\mathrm{colim}_i  (X \times Y_i) \to X \times \mathrm{colim}_i Y_i$ is an isomorphism for directed diagrams $(Y_i)$: It is surjective by the concrete description of directed colimits. It is isometric because of the elementary observation $\inf_i \max(r, s_i) = \max(r, \inf_i s_i)$ for $r, s_i \in \mathbb{R}$, where $i \leq j \implies s_i \geq s_j$.'
+	'The canonical map $\mathrm{colim}_i (X \times Y_i) \to X \times \mathrm{colim}_i Y_i$ is an isomorphism for directed diagrams $(Y_i)$: It is surjective by the concrete description of directed colimits. It is isometric because of the elementary observation $\inf_i \max(r, s_i) = \max(r, \inf_i s_i)$ for $r, s_i \in \mathbb{R}$, where $i \leq j \implies s_i \geq s_j$.'
 ),
 (
 	'Met',
