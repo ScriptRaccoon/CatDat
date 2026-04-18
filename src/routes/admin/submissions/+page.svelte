@@ -3,7 +3,12 @@
 	import MetaData from '$components/MetaData.svelte'
 	import Fa from 'svelte-fa'
 	import type { PageProps } from './$types'
-	import { faClock, faLink, faUser } from '@fortawesome/free-solid-svg-icons'
+	import {
+		faCheckCircle,
+		faClock,
+		faLink,
+		faUser,
+	} from '@fortawesome/free-solid-svg-icons'
 
 	import { faCircle, faCircleCheck } from '@fortawesome/free-regular-svg-icons'
 
@@ -23,6 +28,11 @@
 
 {#if form?.error}
 	<p class="error">{form.error}</p>
+{:else if form?.issue_url}
+	<p>
+		<Fa icon={faCheckCircle} />
+		The <a href={form.issue_url} target="_blank">GitHub issue</a> has been created.
+	</p>
 {/if}
 
 {#if data.submissions.length}
