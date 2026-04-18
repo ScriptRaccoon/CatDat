@@ -43,9 +43,9 @@ VALUES
 ),
 (
 	'Set*',
-	'coregular',
+	'Barr-coexact',
 	TRUE,
-	'From the other properties we know that (co-)limits exist and that monomorphisms coincide with injective pointed maps. So it suffices to prove that these maps are stable under pushouts. This follows from the corresponding fact for the <a href="/category/Set">category of sets</a> and the observation that the forgetful functor $\mathbf{Set}_* \to \mathbf{Set}$ preserves pushouts.'
+	'According to <a href="https://ncatlab.org/nlab/show/exact+category">nLab</a> with a citation to <a href="http://www.springer.com/us/book/9781402019616">Borceux and Bourn</a>, Appendix A, any slice or co-slice of a Barr-exact category is also Barr-exact.  It follows that any slice or co-slice of a Barr-coexact category is also Barr-coexact, and $\mathbf{Set}_*$ is a coslice category of $\mathbf{Set}$, which is Barr-coexact since $\mathbf{Set}^{\operatorname{op}}$ is monadic over $\mathbf{Set}$.'
 ),
 (
 	'Set*',
