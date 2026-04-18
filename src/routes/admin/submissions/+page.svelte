@@ -1,7 +1,11 @@
 <script lang="ts">
 	import { enhance } from '$app/forms'
 	import MetaData from '$components/MetaData.svelte'
+	import Fa from 'svelte-fa'
 	import type { PageProps } from './$types'
+	import { faClock, faLink, faUser } from '@fortawesome/free-solid-svg-icons'
+
+	import { faCircle, faCircleCheck } from '@fortawesome/free-regular-svg-icons'
 
 	let { data, form }: PageProps = $props()
 </script>
@@ -24,16 +28,28 @@
 {#if data.submissions.length}
 	{#each data.submissions as submission (submission.id)}
 		<article class="submission">
-			<h3 class="title">#{submission.id}: {submission.title}</h3>
+			<h3 class="title">
+				<Fa
+					icon={submission.approved_at ? faCircleCheck : faCircle}
+					scale={0.875}
+				/>
+
+				{submission.title}
+			</h3>
 			<div class="body">{submission.body}</div>
 
 			<ul class="summary">
 				{#if submission.name}
-					<li>Submission by: {submission.name}</li>
+					<li>
+						<Fa icon={faUser} />
+
+						{submission.name}
+					</li>
 				{/if}
 
 				<li>
-					Created: {new Date(submission.created_at).toLocaleDateString('en-CA')}
+					<Fa icon={faClock} />
+					{new Date(submission.created_at).toLocaleString()}
 				</li>
 
 				{#if submission.approved_at}
@@ -44,7 +60,10 @@
 					</li>
 				{/if}
 
-				<li>URL: {submission.url}</li>
+				<li>
+					<Fa icon={faLink} />
+					{submission.url}
+				</li>
 			</ul>
 
 			<form class="actions" method="POST" use:enhance>
@@ -65,8 +84,15 @@
 		border-bottom: 1px solid var(--secondary-bg-color);
 		padding-bottom: 1rem;
 
+		&:first-of-type {
+			margin-top: 2rem;
+		}
+
 		.title {
 			margin-block: 1rem;
+			display: flex;
+			align-items: center;
+			gap: 0.5rem;
 		}
 
 		.body,
