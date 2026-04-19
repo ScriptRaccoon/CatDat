@@ -24,4 +24,16 @@
 
 <CategoryList categories={data.categories} />
 
+{#if data.implications.length}
+	<p class="hint">It is referenced in the following implications:</p>
+	<!-- TODO: make this display more pretty -->
+	<ul>
+		{#each data.implications as { id } (id)}
+			<li>
+				<a href="/category-implication/{id}">{id}</a>
+			</li>
+		{/each}
+	</ul>
+{/if}
+
 <SuggestionForm />
