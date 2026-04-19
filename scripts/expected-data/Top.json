@@ -72,6 +72,8 @@
 	"countably distributive": true,
 	"natural numbers object": true,
 	"filtered-colimit-stable monomorphisms": true,
+	"quotients of congruences": true,
+	"coquotients of cocongruences": true,
 
 	"abelian": false,
 	"additive": false,

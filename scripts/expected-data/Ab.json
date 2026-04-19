@@ -102,6 +102,8 @@
 	"cocartesian cofiltered limits": true,
 	"CIP": true,
 	"filtered-colimit-stable monomorphisms": true,
+	"quotients of congruences": true,
+	"coquotients of cocongruences": true,
 
 	"cartesian closed": false,
 	"locally cartesian closed": false,

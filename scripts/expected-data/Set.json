@@ -97,6 +97,8 @@
 	"natural numbers object": true,
 	"countably distributive": true,
 	"filtered-colimit-stable monomorphisms": true,
+	"quotients of congruences": true,
+	"coquotients of cocongruences": true,
 
 	"Grothendieck abelian": false,
 	"Malcev": false,
