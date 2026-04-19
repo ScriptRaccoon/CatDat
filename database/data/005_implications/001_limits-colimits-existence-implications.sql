@@ -49,6 +49,27 @@ VALUES
 	FALSE
 ),
 (
+	'congruence_quotients_precondition',
+	'["quotients of congruences"]',
+	'["finitely complete"]',
+	'This is part of the definition.',
+	FALSE
+),
+(
+	'congruence_quotients_are_reflexive_coequalizers',
+	'["reflexive coequalizers"]',
+	'["quotients of congruences"]',
+	'For a congruence $E$ on an object $X$, the two maps $\pi_1 \circ i$ and $\pi_2 \circ i$ have a common retraction given by the reflexivity morphism $X \to E$.',
+	FALSE
+),
+(
+	'reflexive_coequalizers_via_congruence_quotients',
+	'["quotients of congruences", "Malcev", "regular"]',
+	'["reflexive coequalizers"]',
+	'Given a parallel pair $f, g : X \to Y$ with a common retraction $r$, we can form the image of the morphism $\langle f, g \rangle : X \to Y \times Y$.  This is reflexive using $r$, and is therefore a congruence since the category is Malcev.  The quotient of this congruence is then the coequalizer of $f$ and $g$.',
+	FALSE
+),
+(
 	'products_consequences',
 	'["products"]',
 	'["finite products", "countable products", "powers"]',
