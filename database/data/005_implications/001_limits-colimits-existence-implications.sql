@@ -57,7 +57,7 @@ VALUES
 ),
 (
 	'congruence_quotients_are_reflexive_coequalizers',
-	'["reflexive coequalizers"]',
+	'["reflexive coequalizers", "finitely complete"]',
 	'["quotients of congruences"]',
 	'For a congruence $E$ on an object $X$, the two maps $\pi_1 \circ i$ and $\pi_2 \circ i$ have a common retraction given by the reflexivity morphism $X \to E$.',
 	FALSE
