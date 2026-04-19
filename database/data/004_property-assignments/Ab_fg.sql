@@ -31,6 +31,12 @@ VALUES
 ),
 (
 	'Ab_fg',
+	'ℵ₁-accessible',
+	TRUE,
+	'The inclusion $\mathbf{Ab}_{\mathrm{fg}} \hookrightarrow \mathbf{Ab}$ is closed under $\aleph_1$-filtered colimits by <a href="https://mathoverflow.net/questions/400763/">MO/400763</a>. In particular, $\mathbf{Ab}_{\mathrm{fg}}$ has $\aleph_1$-filtered colimits. Since $\mathbf{Ab}_{\mathrm{fg}}$ is essentially small, there is a set $G$ such that every f.g. abelian group is isomorphic to one in $G$. So trivially it is also a $\aleph_1$-filtered colimit of such objects (take the constant diagram). Finally, every object is $\mathbf{Ab}_{\mathrm{fg}} = \mathbf{Ab}_{\mathrm{fp}}$ is finitely presentable in $\mathbf{Ab}$ and hence also in $\mathbf{Ab}_{\mathrm{fg}}$, a fortiori $\aleph_1$-presentable.'
+),
+(
+	'Ab_fg',
 	'small',
 	FALSE,
 	'Even the collection of trivial groups is not small.'
