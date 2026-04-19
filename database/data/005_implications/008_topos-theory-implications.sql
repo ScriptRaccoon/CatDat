@@ -142,8 +142,8 @@ VALUES
 (
 	'grothendieck_topos_consequence',
 	'["Grothendieck topos"]',
-	'["locally presentable", "cogenerator", "infinitary extensive"]',
-	'A Grothendieck topos is locally presentable by Prop. 3.4.16 in <a href="https://www.cambridge.org/core/books/handbook-of-categorical-algebra/5033A02442342401E7BCC26A042DAB94" target="_blank">Handbook of Categorical Algebra Vol. 3</a>, has a cogenerator (see <a href="https://ncatlab.org/nlab/show/cogenerator" target="_blank">nLab</a>) and is infinitary extensive by <a href="https://ncatlab.org/nlab/show/Giraud%27s+theorem" target="_blank">Giraud''s Theorem</a>.',
+	'["locally presentable", "cogenerator", "infinitary extensive", "exact filtered colimits"]',
+	'A Grothendieck topos is locally presentable by Prop. 3.4.16 in <a href="https://www.cambridge.org/core/books/handbook-of-categorical-algebra/5033A02442342401E7BCC26A042DAB94" target="_blank">Handbook of Categorical Algebra Vol. 3</a>, has a cogenerator (see <a href="https://ncatlab.org/nlab/show/cogenerator" target="_blank">nLab</a>) and is infinitary extensive by <a href="https://ncatlab.org/nlab/show/Giraud%27s+theorem" target="_blank">Giraud''s Theorem</a>. To show that it has exact filtered colimits, first observe that this is clearly true in every presheaf topos (since $\mathbf{Set}$ has the property). Every Grothendieck topos is a full reflective subcategory of a presheaf topos such that the reflector preserves finite limits (<a href="https://ncatlab.org/nlab/show/sheaf+toposes+are+equivalently+the+left+exact+reflective+subcategories+of+presheaf+toposes" target="_blank">nLab</a>), so we conclude with <a href="/lemma/exact_filtered_colimits_descend">this lemma</a>.',
 	FALSE
 ),
 (
