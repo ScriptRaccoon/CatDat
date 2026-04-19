@@ -64,9 +64,9 @@ VALUES
 ),
 (
 	'reflexive_coequalizers_via_congruence_quotients',
-	'["quotients of congruences", "Malcev", "regular"]',
+	'["quotients of congruences", "Malcev"]',
 	'["reflexive coequalizers"]',
-	'Given a parallel pair $f, g : X \to Y$ with a common retraction $r$, we can form the image of the morphism $\langle f, g \rangle : X \to Y \times Y$.  This is reflexive using $r$, and is therefore a congruence since the category is Malcev.  The quotient of this congruence is then the coequalizer of $f$ and $g$.',
+	'Given a parallel pair $f, g : X \to Y$ with a common retraction $r$, then $f$ and $g$ are split monic so together they define a relation $\langle f, g \rangle : X \hookrightarrow Y \times Y$.  This relation is reflexive using $r$, and is therefore a congruence since the category is Malcev.  The quotient of this congruence is then the coequalizer of $f$ and $g$.',
 	FALSE
 ),
 (
