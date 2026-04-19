@@ -93,4 +93,16 @@ INSERT INTO lemmas (
     'Coreflection of subobject classifiers',
     'Let $\mathcal{D}$ be a category with a (regular) subobject classifier $\Omega$. Assume that $\mathcal{C} \to \mathcal{D}$ is a full subcategory such that (1) any (regular) $\mathcal{D}$-subobject of an object in $\mathcal{C}$ already lies in $\mathcal{C}$, (2) it is coreflective, i.e. there is a functor $R : \mathcal{D} \to \mathcal{C}$ right adjoint to the inclusion. Then $R(\Omega)$ is a (regular) subobject classifier in $\mathcal{C}$.',
     'If $X \in \mathcal{C}$, then $\mathrm{Hom}(X,R(\Omega)) \cong \mathrm{Hom}(X,\Omega)$ is isomorphic to the collection of $\mathcal{D}$-subobjects of $X$, which by assumption coincide with the $\mathcal{C}$-subobjects of $X$.'
+),
+(
+    'exact_filtered_colimits_descend',
+    'Exact filtered colimits descend to nice subcategories',
+    'Let $G : \mathcal{C} \to \mathcal{D}$ be a fully faithful functor with a left adjoint $F : \mathcal{D} \to \mathcal{C}$ that preserves finite limits. Assume that $\mathcal{D}$ has exact filtered colimits and that $\mathcal{C}$ has finite limits. Then $\mathcal{C}$ has exact filtered colimits as well.',
+    'It is well-known (and easy to prove) that the colimit of a diagram $(X_j)$ in $\mathcal{C}$ is constructed as $F(\mathrm{colim}_j G(X_j))$, provided that colimit in $\mathcal{D}$ exists. In particular, $\mathcal{C}$ has filtered colimits. By assumption, it also has finite limits, and $G$ preserves these since it is a right adjoint. Now let $X : \mathcal{I} \times \mathcal{J} \to \mathcal{C}$ be a diagram, where $\mathcal{I}$ is finite and $\mathcal{J}$ is filtered. We compute:
+    <p>$\phantom{\cong} \mathrm{colim}_j \lim_i X(i,j)$</p>
+    <p>$\cong F(\mathrm{colim}_j G(\lim_i X(i,j)))$</p>
+    <p>$\cong F(\mathrm{colim}_j \lim_i G(X(i,j)))$</p>
+    <p>$\cong F(\lim_i \mathrm{colim}_j G(X(i,j)))$</p>
+    <p>$\cong \lim_i F(\mathrm{colim}_j G(X(i,j)))$</p>
+    <p>$\cong \lim_i \mathrm{colim}_j X(i,j)$</p>'
 );

@@ -24,6 +24,8 @@ In our framework, there is no way to group all hypercollections into a single ma
 
 A family $(X_i)_{i \in I}$ of collections is called _small_ when its index collection is a set.
 
+A collection is called _countable_ if it admits a surjective map from $\mathbb{N}$. In particular, every finite collection is countable.
+
 ### Categories
 
 A _category_ $\mathcal{C}$ consists of a pair of collections $O, M$, whose elements are called _objects_ and _morphisms_, respectively, together with maps

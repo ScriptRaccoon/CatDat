@@ -181,6 +181,7 @@ textarea {
 
 input[type='text'],
 input[type='search'],
+input[type='password'],
 textarea,
 select {
 	padding: 0.25rem 0.75rem;
@@ -259,4 +260,12 @@ label {
 .hint {
 	color: var(--secondary-text-color);
 	font-size: 1rem;
+}
+
+.form-group {
+	margin-bottom: 1rem;
+}
+
+.error {
+	color: var(--error-color);
 }

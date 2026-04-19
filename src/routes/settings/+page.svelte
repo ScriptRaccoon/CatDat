@@ -81,11 +81,10 @@
 <section>
 	<h3>Track visits</h3>
 	<p class="hint">
-		To measure how this application is used, we collect anonymous <a href="/stats">
-			page visit data
-		</a>: time, device type (mobile, tablet, desktop), theme (light/dark), and
-		country. We do not collect data that directly identifies you. Here you can disable
-		this tracking.
+		To measure how this application is used, we collect anonymous page visit data:
+		time, device type (mobile, tablet, desktop), theme (light/dark), and country. We
+		do not collect data that directly identifies you. Here you can disable this
+		tracking.
 	</p>
 
 	<ChipGroup>

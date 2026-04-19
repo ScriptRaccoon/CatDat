@@ -14,7 +14,7 @@ export const entries: EntryGenerator = async () => {
 export const load = async (event) => {
 	const id = event.params.id
 
-	const { results, err } = await batch<[Lemma, CategoryShort]>([
+	const { results, err } = await batch<[Lemma, CategoryShort, { id: string }]>([
 		sql`
         	SELECT title, claim, proof FROM lemmas WHERE id = ${id}
     	`,
@@ -29,15 +29,19 @@ export const load = async (event) => {
 				AND cp.reason LIKE '%/lemma/' || ${id} || '%'
 			);
 		`,
+		sql`
+			SELECT id FROM implications
+			WHERE reason LIKE '%/lemma/' || ${id} || '%'
+		`,
 	])
 
 	if (err) error(500, 'Could not load lemma')
 
-	const [lemmas, categories] = results
+	const [lemmas, categories, implications] = results
 
 	if (!lemmas.length) error(404, 'Lemma not found')
 
 	const lemma = lemmas[0]
 
-	return render_nested_formulas({ lemma, categories })
+	return render_nested_formulas({ lemma, categories, implications })
 }

@@ -1,7 +1,8 @@
 import { is_object } from '$lib/server/utils'
 import { json } from '@sveltejs/kit'
 import { get_geo_data, is_allowed } from './track.utils'
-import { db_visits } from '$lib/server/db'
+import { query_visits } from '$lib/server/db.visits'
+import sql from 'sql-template-tag'
 
 type ValidBody = { device_type: string; theme: string }
 
@@ -29,15 +30,12 @@ export const POST = async (event) => {
 
 	const { country } = get_geo_data(event.request)
 
-	try {
-		await db_visits.execute(
-			`INSERT INTO visits (theme, device_type, country) VALUES (?, ?, ?)`,
-			[theme, device_type, country],
-		)
-	} catch (err) {
-		console.error(err)
-		return json({ error: 'Database error' }, { status: 500 })
-	}
+	const { err } = await query_visits(sql`
+		INSERT INTO visits (theme, device_type, country)
+		VALUES (${theme}, ${device_type}, ${country})
+	`)
+
+	if (err) return json({ error: 'Database error' }, { status: 500 })
 
 	return json({ message: 'Visit has been tracked' })
 }

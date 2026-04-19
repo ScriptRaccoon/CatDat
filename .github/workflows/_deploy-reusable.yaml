@@ -26,6 +26,16 @@ on:
                 required: true
             REDIS_URL:
                 required: true
+            ADMIN_PAGE_PASSWORD:
+                required: true
+            EMAIL_ADDRESS:
+                required: true
+            EMAIL_PASSWORD:
+                required: true
+            ENABLE_EMAILS:
+                required: true
+            APPROVAL_EMAIL:
+                required: true
 
 jobs:
     build-and-deploy:
@@ -72,6 +82,11 @@ jobs:
                   DB_VISITS_AUTH_TOKEN: ${{ secrets.DB_VISITS_AUTH_TOKEN }}
                   GITHUB_PRIVATE_KEY: ${{ secrets._GITHUB_PRIVATE_KEY }}
                   REDIS_URL: ${{ secrets.REDIS_URL }}
+                  ADMIN_PAGE_PASSWORD: ${{ secrets.ADMIN_PAGE_PASSWORD }}
+                  EMAIL_ADDRESS: ${{ secrets.EMAIL_ADDRESS }}
+                  EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+                  ENABLE_EMAILS: ${{ secrets.ENABLE_EMAILS }}
+                  APPROVAL_EMAIL: ${{ secrets.APPROVAL_EMAIL }}
               run: pnpm build
 
             - name: Get latest commit message

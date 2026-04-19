@@ -126,4 +126,11 @@ VALUES
 	'countable',
 	FALSE,
 	'This is trivial.'
+),
+(
+	'Man',
+	'ℵ₁-accessible',
+	FALSE,
+	'In fact, $\mathbf{Man}$ does not have $\aleph_1$-filtered colimits: The functor $\pi_0: \mathbf{Man} \to \mathbf{Set}_{<\aleph_1}$ to the category of countable sets is well-defined (because manifolds are second-countable), and it admits a fully faithful right adjoint (regarding a countable set as a discrete manifold). So it suffices to show that $\mathbf{Set}_{<\aleph_1}$ does not have $\aleph_1$-filtered colimits.<br>
+	To this end, fix an uncountable set $X$, let $P_{<\aleph_1}(X)$ be the poset of countable subsets of $X$, which is $\aleph_1$-filtered, and consider the functor $P_{<\aleph_1}(X) \to \mathbf{Set}_{<\aleph_1}$ taking a subset $Y \subseteq X$ to $Y$. The colimit of this diagram in $\mathbf{Set}$ is given by $X$ itself, so if $X_c$ were a colimit in $\mathbf{Set}_{<\aleph_1}$, then $\mathrm{Hom}(X_c, \{0,1\}) \cong \mathrm{Hom}(X, \{0,1\})$. But the former has cardinality at most $2^{\aleph_0}$ and the latter has cardinality $2^{\mathrm{card}(X)}$, so we have obtained a contradiction if we pick $X$ large enough (e.g. $\mathrm{card}(X)=2^{\aleph_0}$).'
 );
