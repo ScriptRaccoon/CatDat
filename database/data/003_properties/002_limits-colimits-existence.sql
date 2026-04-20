@@ -330,7 +330,7 @@ VALUES
 (
 	'quotients of congruences',
 	'has',
-	'A <i>congruence</i> (or internal equivalence relation) on an object $X$ of a finitely complete category is a subobject $i : E \hookrightarrow X \times X$ with reflexivity, symmetry, and transitivity morphisms.  The category has quotients of congruences if for each such congruence, there exists a coequalizer of $\pi_1 \circ i$ and $\pi_2 \circ i$.',
+	'A <i>congruence</i> (or internal equivalence relation) on an object $X$ of a finitely complete category is a subobject $i : E \hookrightarrow X \times X$ with reflexivity, symmetry, and transitivity morphisms. The category has <i>quotients of congruences</i> if for each such congruence, there exists a coequalizer of $p_1 \circ i$ and $p_2 \circ i$.',
 	'https://ncatlab.org/nlab/show/congruence',
 	'coquotients of cocongruences',
 	TRUE
@@ -338,7 +338,7 @@ VALUES
 (
 	'coquotients of cocongruences',
 	'has',
-	'A <i>cocongruence</i> (or internal equivalence corelation) on an object $X$ of a finitely cocomplete category is an epimorphism $p : X \sqcup X \twoheadrightarrow E$ with coreflexivity, cosymmetry, and cotransitivity morphisms.  The category has coquotients of cocongruences if for each such cocongruence, there exists an equalizer of $p \circ i_1$ and $p \circ i_2$.',
+	'A <i>cocongruence</i> (or internal equivalence corelation) on an object $X$ of a finitely cocomplete category is an epimorphism $p : X \sqcup X \twoheadrightarrow E$ with coreflexivity, cosymmetry, and cotransitivity morphisms. The category has <i>coquotients of cocongruences</i> if for each such cocongruence, there exists an equalizer of $p \circ i_1$ and $p \circ i_2$.',
 	NULL,
 	'quotients of congruences',
 	TRUE
