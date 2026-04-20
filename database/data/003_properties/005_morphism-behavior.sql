@@ -105,4 +105,20 @@ VALUES
 	'https://ncatlab.org/nlab/show/one-way+category',
 	'one-way',
 	TRUE
+),
+(
+	'filtered-colimit-stable monomorphisms',
+	'has',
+	'A category has <i>filtered-colimit-stable monomorphisms</i> if it has filtered colimits and for every filtered diagram of monomorphisms $(X_i \to Y_i)$ also their colimit $\mathrm{colim}_i X_i \to \mathrm{colim}_i Y_i$ is a monomorphism.',
+	NULL,
+	'cofiltered-limit-stable epimorphisms',
+	TRUE 
+),
+(
+	'cofiltered-limit-stable epimorphisms',
+	'has',
+	'A category has <i>cofiltered-limit-stable epimorphisms</i> if it has cofiltered limits and for every cofiltered diagram of epimorphisms $(X_i \to Y_i)$ also their limit $\lim_i X_i \to \lim_i Y_i$ is an epimorphism.',
+	NULL,
+	'filtered-colimit-stable monomorphisms',
+	TRUE 
 );

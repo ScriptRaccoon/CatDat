@@ -93,9 +93,27 @@ VALUES
 (
 	'exact filtered colimits',
 	'has',
-	'In a category $\mathcal{C}$, which we assume to have filtered colimits and finite limits, we say that <i>filtered colimits are exact</i> if for every finite category $\mathcal{I}$ the functor $\lim : [\mathcal{I}, \mathcal{C}] \to \mathcal{C}$ preserves filtered colimits. Equivalently, for every diagram $X : \mathcal{I} \times \mathcal{J} \to \mathcal{C}$, where $\mathcal{I}$ is finite and $\mathcal{J}$ is filtered, the canonical morphism $\mathrm{colim}_{j} \lim_{i} X(i,j) \to \lim_{i} \mathrm{colim}_j X(i,j)$ is an isomorphism.',
+	'In a category $\mathcal{C}$, which we assume to have filtered colimits and finite limits, we say that <i>filtered colimits are exact</i> if the following equivalent conditions are satisfied:
+	<ol>
+		<li>For every finite category $\mathcal{I}$ the functor $\lim : [\mathcal{I}, \mathcal{C}] \to \mathcal{C}$ preserves filtered colimits.</li>
+		<li>For every small filtered category $\mathcal{J}$ the functor $\mathrm{colim} : [\mathcal{J},\mathcal{C}] \to \mathcal{C}$ preserves finite limits.</li>
+		<li>For every diagram $X : \mathcal{I} \times \mathcal{J} \to \mathcal{C}$, where $\mathcal{I}$ is finite and $\mathcal{J}$ is small filtered, the canonical morphism $\mathrm{colim}_j \lim_i X(i,j) \to \lim_i \mathrm{colim}_j X(i,j)$ is an isomorphism.</li>
+	</ol>',
 	'https://ncatlab.org/nlab/show/commutativity+of+limits+and+colimits',
-	NULL,
+	'exact cofiltered limits',
+	TRUE
+),
+(
+	'exact cofiltered limits',
+	'has',
+	'In a category $\mathcal{C}$, which we assume to have cofiltered limits and finite colimits, we say that <i>cofiltered limits are exact</i> if the following equivalent conditions are satisfied:
+	<ol>
+		<li>For every finite category $\mathcal{I}$ the functor $\mathrm{colim} : [\mathcal{I}, \mathcal{C}] \to \mathcal{C}$ preserves cofiltered limits.</li>
+		<li>For every small cofiltered category $\mathcal{J}$ the functor $\lim : [\mathcal{J},\mathcal{C}] \to \mathcal{C}$ preserves finite colimits.</li>
+		<li>For every diagram $X : \mathcal{I} \times \mathcal{J} \to \mathcal{C}$, where $\mathcal{I}$ is finite and $\mathcal{J}$ is small cofiltered, the canonical morphism $\mathrm{colim}_i \lim_j X(i,j) \to \lim_j \mathrm{colim}_i X(i,j)$ is an isomorphism.</li>
+	</ol>',
+	'https://ncatlab.org/nlab/show/commutativity+of+limits+and+colimits',
+	'exact filtered colimits',
 	TRUE
 ),
 (
@@ -210,5 +228,25 @@ VALUES
 	'A category is <i>counital</i> if its dual is unital, i.e., it has a zero object, finite colimits, and for all objects $X,Y$ the two morphisms $(\mathrm{id}_X;0) : X \sqcup Y \twoheadrightarrow X$ and $(0;\mathrm{id}_Y) : X \sqcup Y \twoheadrightarrow Y$ are jointly strongly monomorphic. When products exist, the canonical morphism $X \sqcup Y \to X \times Y$ therefore must be a strong monomorphism.',
 	NULL,
 	'unital',
+	TRUE
+),
+(
+	'CIP',
+	'satisfies',
+	'A category satisfies <i>CIP</i> ("coproducts inject into products") if it has zero morphisms, products, coproducts, and for every family of objects $(X_i)_{i \in I}$ the canonical morphism
+	<p>$\alpha : \coprod_i X_i \to \prod_{i \in I} X_i$</p>
+	defined by $p_j \circ \alpha \circ \iota_i = \delta_{i,j}$ is a monomorphism. This is no standard terminology. This property has been added to clarify relationships between other properties, in particular those concerning the commutation between limits and colimits.',
+	NULL,
+	'CSP',
+	TRUE
+),
+(
+	'CSP',
+	'satisfies',
+	'A category satisfies <i>CSP</i> ("coproducts surject onto products") if it has zero morphisms, products, coproducts, and for every family of objects $(X_i)_{i \in I}$ the canonical morphism
+	<p>$\alpha : \coprod_i X_i \to \prod_{i \in I} X_i$</p>
+	defined by $p_j \circ \alpha \circ \iota_i = \delta_{i,j}$ is an epimorphism. This is no standard terminology. This property has been added to clarify relationships between other properties, in particular those concerning the commutation between limits and colimits.',
+	NULL,
+	'CIP',
 	TRUE
 );
