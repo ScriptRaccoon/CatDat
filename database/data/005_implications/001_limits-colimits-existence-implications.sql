@@ -49,17 +49,10 @@ VALUES
 	FALSE
 ),
 (
-	'congruence_quotients_precondition',
+	'congruence_quotients_are_reflexive_coequalizers',
+	'["reflexive coequalizers"]',
 	'["quotients of congruences"]',
-	'["finitely complete"]',
-	'This is part of the definition.',
-	FALSE
-),
-(
-	'congruence_quotients_are_coequalizers',
-	'["coequalizers", "finitely complete"]',
-	'["quotients of congruences"]',
-	'This is trivial.',
+	'A congruence $E \rightrightarrows X$ has a common section $X \to E$ given by the reflexivity morphism.',
 	FALSE
 ),
 (

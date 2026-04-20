@@ -330,7 +330,7 @@ VALUES
 (
 	'quotients of congruences',
 	'has',
-	'A <i>congruence</i> (or internal equivalence relation) on an object $X$ of a finitely complete category is a subobject $i : E \hookrightarrow X \times X$ with reflexivity, symmetry, and transitivity morphisms. The category has <i>quotients of congruences</i> if for each such congruence, there exists a coequalizer of $p_1 \circ i$ and $p_2 \circ i$.',
+	'A <i>congruence</i> (or internal equivalence relation) on an object $X$ of a category is a parallel pair $p_1, p_2 : E \rightrightarrows X$ which is jointly monomorphic, and such that for every object $T$, the image of $(p_1 \circ {-}, p_2 \circ {-}) : \operatorname{Hom}(T, E) \to \operatorname{Hom}(T, X)^2$ is an equivalence relation. The category has <i>quotients of congruences</i> if for each such congruence, there exists a coequalizer of $p_1$ and $p_2$. Note that in the case of a category with binary powers, the corresponding subobjects of $X \times X$ are also commonly referred to as congruences, or as internal equivalence relations.',
 	'https://ncatlab.org/nlab/show/congruence',
 	'coquotients of cocongruences',
 	TRUE
@@ -338,7 +338,7 @@ VALUES
 (
 	'coquotients of cocongruences',
 	'has',
-	'A <i>cocongruence</i> (or internal equivalence corelation) on an object $X$ of a finitely cocomplete category is an epimorphism $p : X \sqcup X \twoheadrightarrow E$ with coreflexivity, cosymmetry, and cotransitivity morphisms. The category has <i>coquotients of cocongruences</i> if for each such cocongruence, there exists an equalizer of $p \circ i_1$ and $p \circ i_2$.',
+	'A <i>cocongruence</i> (or internal equivalence corelation) on an object $X$ of a category is a paralle pair $i_1, i_2 : X \rightrightarrows E$ which is jointly epimorphic, and such that for every object $T$, the image of $({-} \circ i_1, {-} \circ i_2) : \operatorname{Hom}(E, T) \to \operatorname{Hom}(X, T)^2$ is an equivalence relation. The category has <i>coquotients of cocongruences</i> if for each such cocongruence, there exists an equalizer of $i_1$ and $i_2$. Note that in the case of a category with binary copowers, the corresponding quotients of $X + X$ are also commonly referred to as cocongruences, or as internal equivalence corelations.',
 	NULL,
 	'quotients of congruences',
 	TRUE
