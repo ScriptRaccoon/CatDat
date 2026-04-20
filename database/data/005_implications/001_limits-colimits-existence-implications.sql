@@ -63,6 +63,20 @@ VALUES
 	FALSE
 ),
 (
+	'cokernels_via_congruence_quotients',
+	'["preadditive", "regular", "quotients of congruences"]',
+	'["cokernels"]',
+	'By the regularity assumption, it suffices to consider cokernels of subobjects. Given a subobject $Y$ of $X$, we have the congruence on $X$ given by the pullback of ${-} : X \times X \to X$ and $Y$. The quotient of this congruence is a cokernel of $Y \hookrightarrow X$.',
+	FALSE
+),
+(
+	'congruence_quotients_via_cokernels',
+	'["preadditive", "finitely complete", "cokernels"]',
+	'["quotients of congruences"]',
+	'Any congruence $E$ on an object $X$ of a preadditive category must be of the form of a pullback of ${-} : X \times X \to X$ and the subobject $Y$ of $X$ given by the pullback of $E$ and $(\operatorname{id}, 0) : X \to X \times X$.  The cokernel of $Y \hookrightarrow X$ is then a quotient of $E$.',
+	FALSE
+),
+(
 	'products_consequences',
 	'["products"]',
 	'["finite products", "countable products", "powers"]',
