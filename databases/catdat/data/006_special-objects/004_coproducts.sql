@@ -61,7 +61,8 @@ VALUES
 ('Ab_fg', '[finite case] direct sum'),
 ('Man', '[countable case] disjoint union with the disjoint union topology and the obvious charts'),
 ('N', '[finite case] supremum'),
-('Set_c', '[countable case] disjoint union');
+('Set_c', '[countable case] disjoint union'),
+('Set_f', '[finite case] disjoint union');
 
 INSERT INTO special_objects
 	(category_id, description, type)

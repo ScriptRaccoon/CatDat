@@ -246,6 +246,11 @@ VALUES
 	'For the non-trivial direction, the forgetful functor to $\mathbf{Set}$ is representable (by the terminal object), hence preserves monomorphisms.'
 ),
 (
+	'Set_f',
+	'injective maps',
+	'For the non-trivial direction, the forgetful functor to $\mathbf{Set}$ is representable (by the singleton), hence preserves monomorphisms.'
+),
+(
 	'Set',
 	'injective maps',
 	'For the non-trivial direction, if $f : X \to Y$ is a monomorphism of sets and $a,b \in X$ satisfy $f(a) = f(b)$, then $f \circ a = f \circ b$ when we regard $a,b$ as morphisms $a,b : 1 \to X$. Hence, $a = b$. More generally, if $\mathcal{C}$ is a category that admits a faithful and representable functor $U : \mathcal{C} \to \mathbf{Set}$, then the monomorphisms in $\mathcal{C}$ are precisely the morphisms whose $U$-image is injective.'

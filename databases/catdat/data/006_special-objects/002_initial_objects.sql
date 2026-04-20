@@ -44,6 +44,7 @@ VALUES
 ('Rng', 'trivial ring'),
 ('Sch', 'empty scheme'),
 ('Set_c', 'empty set'),
+('Set_f', 'empty set'),
 ('Set', 'empty set'),
 ('Set*', 'singleton pointed set'),
 ('SetxSet', '$(0,0)$'),
