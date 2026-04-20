@@ -100,6 +100,8 @@
 	"multi-initial object": true,
 	"cartesian filtered colimits": true,
 	"cocartesian cofiltered limits": true,
+	"CIP": true,
+	"filtered-colimit-stable monomorphisms": true,
 
 	"cartesian closed": false,
 	"locally cartesian closed": false,
@@ -144,5 +146,8 @@
 	"essentially countable": false,
 	"natural numbers object": false,
 	"countably distributive": false,
-	"countably codistributive": false
+	"countably codistributive": false,
+	"CSP": false,
+	"cofiltered-limit-stable epimorphisms": false,
+	"exact cofiltered limits": false
 }

@@ -96,6 +96,7 @@
 	"cocartesian cofiltered limits": true,
 	"natural numbers object": true,
 	"countably distributive": true,
+	"filtered-colimit-stable monomorphisms": true,
 
 	"Grothendieck abelian": false,
 	"Malcev": false,
@@ -144,5 +145,9 @@
 	"coaccessible": false,
 	"countable": false,
 	"essentially countable": false,
-	"countably codistributive": false
+	"countably codistributive": false,
+	"CIP": false,
+	"CSP": false,
+	"cofiltered-limit-stable epimorphisms": false,
+	"exact cofiltered limits": false
 }

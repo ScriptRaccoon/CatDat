@@ -71,6 +71,7 @@
 	"cocartesian cofiltered limits": true,
 	"countably distributive": true,
 	"natural numbers object": true,
+	"filtered-colimit-stable monomorphisms": true,
 
 	"abelian": false,
 	"additive": false,
@@ -144,5 +145,9 @@
 	"countable": false,
 	"essentially countable": false,
 	"cartesian filtered colimits": false,
-	"countably codistributive": false
+	"countably codistributive": false,
+	"CIP": false,
+	"CSP": false,
+	"cofiltered-limit-stable epimorphisms": false,
+	"exact cofiltered limits": false
 }
