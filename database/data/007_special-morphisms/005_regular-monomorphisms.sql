@@ -166,6 +166,11 @@ VALUES
     'This is because the category is mono-regular.'
 ),
 (
+    'Set_c',
+    'same as monomorphisms',
+    'This is because the category is mono-regular.'
+),
+(
     'Set',
     'same as monomorphisms',
     'This is because the category is mono-regular.'

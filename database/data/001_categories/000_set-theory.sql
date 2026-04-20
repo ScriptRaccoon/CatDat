@@ -68,4 +68,14 @@ VALUES
 	'This category is self-dual as it can be: There is an isomorphism $\mathbf{Rel} \cong \mathbf{Rel}^{\mathrm{op}}$ that is the identity on objects and maps a relation to its opposite relation. It is the prototype of a dagger-category.',
 	'https://ncatlab.org/nlab/show/Rel',
 	NULL
+),
+(
+	'Set_c',
+	'category of countable sets',
+	'$\mathbf{Set}_\mathrm{c}$',
+	'countable sets',
+	'maps',
+	'A set is countable if it admits a surjection from $\mathbb{N}$. In particular, every finite set is countable.',
+	NULL,
+	NULL
 );

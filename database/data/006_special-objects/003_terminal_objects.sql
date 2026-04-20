@@ -40,6 +40,7 @@ VALUES
 ('Ring', 'zero ring'),
 ('Rng', 'zero ring'),
 ('Sch', '$\mathrm{Spec}(\mathbb{Z})$'),
+('Set_c', 'singleton set'),
 ('Set', 'singleton set'),
 ('Set*', 'singleton pointed set'),
 ('Setne', 'singleton set'),

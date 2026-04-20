@@ -59,6 +59,7 @@ VALUES
 ('FinSet', '[finite case] direct products'),
 ('Ab_fg', '[finite case] direct products'),
 ('FreeAb', '[finite case] direct sums'),
+('Set_c', '[finite case] direct products'),
 ('Met_c', '[countable case] In the finite case, take direct products with the metric $d(x,y) = \sup_i d_i(x_i,y_i)$, but other metrics such as $d(x,y) = \sum_i d_i(x_i,y_i)$ also work. In the countable case, one can assume $d_i \leq 1$ and then define $d(x,y) = \sum_i d_i(x,y) / 2^i$.'),
 ('Met', '[finite case] direct products with the metric $d(x,y) = \sup_i d_i(x_i,y_i)$'),
 ('PMet', '[finite case] direct products with the pseudo-metric $d(x,y) = \sup_i d_i(x_i,y_i)$'),

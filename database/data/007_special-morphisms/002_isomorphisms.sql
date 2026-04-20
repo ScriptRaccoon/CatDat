@@ -251,6 +251,11 @@ VALUES
 	'This is easy.'
 ),
 (
+	'Set_c',
+	'bijective maps',
+	'This is easy.'
+),
+(
 	'Set',
 	'bijective maps',
 	'This is easy.'

@@ -241,6 +241,11 @@ VALUES
 	'This holds in every finitary algebraic category: the forgetful functor to $\mathbf{Set}$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
 ),
 (
+	'Set_c',
+	'injective maps',
+	'For the non-trivial direction, the forgetful functor to $\mathbf{Set}$ is representable (by the terminal object), hence preserves monomorphisms.'
+),
+(
 	'Set',
 	'injective maps',
 	'For the non-trivial direction, if $f : X \to Y$ is a monomorphism of sets and $a,b \in X$ satisfy $f(a) = f(b)$, then $f \circ a = f \circ b$ when we regard $a,b$ as morphisms $a,b : 1 \to X$. Hence, $a = b$. More generally, if $\mathcal{C}$ is a category that admits a faithful and representable functor $U : \mathcal{C} \to \mathbf{Set}$, then the monomorphisms in $\mathcal{C}$ are precisely the morphisms whose $U$-image is injective.'

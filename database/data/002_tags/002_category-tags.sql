@@ -72,6 +72,7 @@ VALUES
 ('Ring', 'algebra'),
 ('Rng', 'algebra'),
 ('Sch', 'algebraic geometry'),
+('Set_c', 'set theory'),
 ('Set', 'set theory'),
 ('Set*', 'set theory'),
 ('Set_op', 'set theory'),

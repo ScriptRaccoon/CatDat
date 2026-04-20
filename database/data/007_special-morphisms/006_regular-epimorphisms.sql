@@ -176,6 +176,11 @@ VALUES
     'This holds in every finitary algebraic category.'
 ), 
 (
+    'Set_c',
+    'same as epimorphisms',
+    'This is because the category is epi-regular.'
+), 
+(
     'Set',
     'surjective homomorphisms',
     'This holds in every finitary algebraic category.'
