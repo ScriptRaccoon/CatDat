@@ -63,6 +63,12 @@ VALUES
 ),
 (
 	'Set*',
+	'CIP',
+	TRUE,
+	'The coproduct (wedge sum) of a family of pointed sets $(X_i)_{i \in I}$ can be realized as the subset of $\prod_{i \in I} X_i$ consisting of those tuples $x$ such that $x_i = 0$ for all but (at most) one index.'
+),
+(
+	'Set*',
 	'skeletal',
 	FALSE,
 	'This is trivial.'

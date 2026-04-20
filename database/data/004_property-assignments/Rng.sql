@@ -55,6 +55,12 @@ VALUES
 ),
 (
 	'Rng',
+	'CIP', -- TODO: remove code duplication with "counital" proof
+	FALSE,
+	'If $\mathbb{Z}\langle X_1,\dotsc,X_n \rangle_0$ denotes the free rng on $n$ generators (non-commutative polynomials without constant term), then the canonical homomorphism $\mathbb{Z}\langle X,Y \rangle_0 = \mathbb{Z}\langle X \rangle_0 \sqcup \mathbb{Z}\langle Y \rangle_0 \to \mathbb{Z}\langle X \rangle_0 \times \mathbb{Z}\langle Y \rangle_0$ is not a monomorphism since $\mathbb{Z}\langle X,Y \rangle_0$ is not commutative.'
+),
+(
+	'Rng',
 	'regular subobject classifier',
 	FALSE,
 	'Assume that $\mathbf{Rng}$ has a subobject classifier $\Omega$. Since $0$ is a zero object, every regular subobject $R \subseteq S$ would be the kernel of some homomorphism $S \to \Omega$. In particular, it would be an ideal. Now take any pair of homomorphisms $f,g : S \rightrightarrows T$ in $\mathbf{Ring}$. Their equalizer $R \subseteq S$ is also the equalizer in $\mathbf{Rng}$, and it contains $1 \in S$. If it was an ideal, then $R = S$, and hence $f = g$, which is absurd.'

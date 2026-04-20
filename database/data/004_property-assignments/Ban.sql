@@ -37,6 +37,12 @@ VALUES
 ),
 (
 	'Ban',
+	'CIP',
+	TRUE,
+	'This is immediate from the concrete description of coproducts and products.'
+),
+(
+	'Ban',
 	'cogenerator',
 	TRUE,
 	'The Hahn-Banach theorem implies that $\mathbb{C}$ is a cogenerator.'

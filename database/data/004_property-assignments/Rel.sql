@@ -55,6 +55,12 @@ VALUES
 ),
 (
 	'Rel',
+	'CIP',
+	TRUE,
+	'The canonical morphism from the coproduct to the product is the identity.'
+),
+(
+	'Rel',
 	'kernels',
 	TRUE,
 	'Let $R : A \to B$ be a relation. Define $K = \bigl\{a \in A : \neg \exists b \in B ((a,b) \in R) \bigr\}$. We have an inclusion map $I : K \to A$, which can also be regarded as relation, and $R \circ I = \empty$ is the empty relation, i.e. the zero morphism. It is easy to check the universal property.'

@@ -79,6 +79,12 @@ VALUES
 ),
 (
 	'Top*',
+	'CIP',
+	TRUE,
+	'This follows since $\mathbf{Set}_*$ has this property and the forgetful functor preserves products and coproducts.'
+),
+(
+	'Top*',
 	'cocartesian cofiltered limits',
 	TRUE,
 	'We continue the proof for <a href="/category/Set*">$\mathbf{Set}_*$</a> by showing that the natural bijective map <br>$\alpha : X \vee \lim_i Y_i \to \lim_i (X \vee Y_i)$<br>
