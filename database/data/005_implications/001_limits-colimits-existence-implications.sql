@@ -56,17 +56,10 @@ VALUES
 	FALSE
 ),
 (
-	'congruence_quotients_are_reflexive_coequalizers',
-	'["reflexive coequalizers", "finitely complete"]',
+	'congruence_quotients_are_coequalizers',
+	'["coequalizers", "finitely complete"]',
 	'["quotients of congruences"]',
-	'For a congruence $i : E \hookrightarrow X \times X$, the two morphisms $p_1 \circ i$ and $p_2 \circ i$ have a common section given by the reflexivity morphism $X \to E$.',
-	FALSE
-),
-(
-	'reflexive_coequalizers_via_congruence_quotients',
-	'["quotients of congruences", "Malcev"]',
-	'["reflexive coequalizers"]',
-	'Given a parallel pair $f, g : X \to Y$ with a common retraction $r$, then $f$ and $g$ are split monic so together they define a relation $\langle f, g \rangle : X \hookrightarrow Y \times Y$.  This relation is reflexive using $r$, and is therefore a congruence since the category is Malcev.  The quotient of this congruence is then the coequalizer of $f$ and $g$.',
+	'This is trivial.',
 	FALSE
 ),
 (
