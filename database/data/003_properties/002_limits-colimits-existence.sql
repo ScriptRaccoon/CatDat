@@ -338,7 +338,7 @@ VALUES
 (
 	'coquotients of cocongruences',
 	'has',
-	'A <i>cocongruence</i> (or internal equivalence corelation) on an object $X$ of a category is a paralle pair $i_1, i_2 : X \rightrightarrows E$ which is jointly epimorphic, and such that for every object $T$, the image of $({-} \circ i_1, {-} \circ i_2) : \operatorname{Hom}(E, T) \to \operatorname{Hom}(X, T)^2$ is an equivalence relation. The category has <i>coquotients of cocongruences</i> if for each such cocongruence, there exists an equalizer of $i_1$ and $i_2$. Note that in the case of a category with binary copowers, the corresponding quotients of $X + X$ are also commonly referred to as cocongruences, or as internal equivalence corelations.',
+	'A <i>cocongruence</i> (or internal equivalence corelation) on an object $X$ of a category is a parallel pair $i_1, i_2 : X \rightrightarrows E$ which is jointly epimorphic, and such that for every object $T$, the image of $({-} \circ i_1, {-} \circ i_2) : \operatorname{Hom}(E, T) \to \operatorname{Hom}(X, T)^2$ is an equivalence relation. The category has <i>coquotients of cocongruences</i> if for each such cocongruence, there exists an equalizer of $i_1$ and $i_2$. Note that in the case of a category with binary copowers, the corresponding quotients of $X + X$ are also commonly referred to as cocongruences, or as internal equivalence corelations.',
 	NULL,
 	'quotients of congruences',
 	TRUE
