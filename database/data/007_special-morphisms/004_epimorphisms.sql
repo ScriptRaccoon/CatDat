@@ -71,6 +71,12 @@ VALUES
 	'This is an extension of the <a href="https://en.wikipedia.org/wiki/Isbell''s_zigzag_theorem" target="_blank">corresponding theorem for monoids</a> and proven in <a href="https://www.jstor.org/stable/2373286" target="_blank">Epimorphisms and Dominions, III</a> by John R. Isbell.'
 ),
 (
+	'CMon',
+	'A morphism in $\mathbf{CMon}$ is an epimorphism iff it is an epimorphism in $\mathbf{Mon}$, which in turn can be characterized by <a href="https://en.wikipedia.org/wiki/Isbell''s_zigzag_theorem" target="_blank">Isbell''s zigzag theorem</a>.',
+	'If $f : M \to N$ is a homomorphism of commutative monoids which is an epimorphism in $\mathbf{Mon}$, then it is trivially also an epimorphism in $\mathbf{CMon}$. The converse requires a proof, which can be found at <a href="https://math.stackexchange.com/a/5133596/1650">MSE/5133488</a>.
+	'
+),
+(
 	'CAlg(R)',
 	'a homomorphism of algebras which is an epimorphism of commutative rings',
 	'The forgetful functor $\mathbf{CAlg}(R) \to \mathbf{Ring}$ is faithful and hence reflects epimorphisms, but it also preserves epimorphisms since it preserves pushouts (since $\mathbf{CAlg}(R) \cong R / \mathbf{Ring}$). For epimorphisms of commutative rings see their <a href="/category/CRing">detail page</a>.'

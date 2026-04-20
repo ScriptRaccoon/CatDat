@@ -25,13 +25,13 @@ VALUES
 ),
 (
 	'Vect',
-	'trivial',
+	'skeletal',
 	FALSE,
 	'This is trivial.'
 ),
 (
 	'Vect',
-	'skeletal',
+	'CSP',
 	FALSE,
-	'This is trivial.'
+	'The canonical homomorphism $\bigoplus_{n \geq 0} K \to \prod_{n \geq 0} K$ is not surjective, hence no epimorphism.'
 );

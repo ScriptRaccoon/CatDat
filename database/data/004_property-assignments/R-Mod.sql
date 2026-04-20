@@ -34,4 +34,10 @@ VALUES
 	'skeletal',
 	FALSE,
 	'This is trivial.'
+),
+(
+	'R-Mod',
+	'CSP',
+	FALSE,
+	'The canonical homomorphism $\bigoplus_{n \geq 0} R \to \prod_{n \geq 0} R$ is not surjective, hence no epimorphism.'
 );

@@ -11,7 +11,7 @@ VALUES
 ('1', '$0 \sqcup 0 = 0$'),
 ('Ab', 'direct sums'),
 ('Alg(R)', 'see <a href="https://math.stackexchange.com/questions/625874" target="_blank">MSE/625874</a>'),
-('Ban', 'cocompletion of the direct sum with the $1$-norm'),
+('Ban', 'The coproduct of a family of Banach spaces $(B_i)$ is the subspace $\bigl\{x \in \prod_i B_i : \sum_i |x_i| < \infty\bigr\}$ equipped with the $1$-norm $|x| := \sum_i |x_i|$.'),
 ('CAlg(R)', 'tensor products over $R$'),
 ('Cat', 'disjoint unions'),
 ('CMon', 'direct sums'),

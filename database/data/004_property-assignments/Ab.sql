@@ -34,4 +34,10 @@ VALUES
 	'skeletal',
 	FALSE,
 	'This is trivial.'
+),
+(
+	'Ab',
+	'CSP',
+	FALSE,
+	'The canonical homomorphism $\bigoplus_{n \geq 0} \mathbb{Z} \to \prod_{n \geq 0} \mathbb{Z}$ is not surjective, hence no epimorphism.'
 );

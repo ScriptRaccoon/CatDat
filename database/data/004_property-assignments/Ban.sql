@@ -76,4 +76,10 @@ VALUES
 	'regular subobject classifier',
 	FALSE,
 	'If $\Omega$ is a regular subobject classifier, then by the classification of regular monomorphisms, $\mathrm{Hom}(X,\Omega)$ is isomorphic to the set of closed subspaces of $X$ for any Banach space $X$. For $X = \mathbb{C}$ this implies that there are exactly two vectors in $\Omega$ with norm $\leq 1$, which is absurd. (For $\Omega = 0$ there is just one, and for $\Omega \neq 0$ there are infinitely many.)'
+),
+(
+	'Ban',
+	'CSP',
+	FALSE,
+	'By using the concrete description of products and coproducts, for the constant family $X_n = \mathbb{C}$ the canonical morphism $\coprod_n X_n \to \prod_n X_n$ becomes the canonical inclusion map $\ell^1 \hookrightarrow \ell^\infty$. This is not an epimorphism (i.e., has no dense image) since the closure of the image is precisely $c_0$. So for example, $(1,1,\dotsc)$ is not contained in the closure of the image.'
 );

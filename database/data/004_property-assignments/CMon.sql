@@ -82,4 +82,10 @@ VALUES
 	'regular quotient object classifier',
 	FALSE,
 	'If $P \in \mathbf{CMon}$ is a regular quotient object classifier, this means that every surjective homomorphism of commutative monoids $A \to B$ is the cokernel of a unique homomorphism $P \to A$. But there are many surjective homomorphisms which are no cokernels at all: Consider the Boolean monoid $(\{0,1\},\vee)$ with $1 \vee 1 = 1$ and the surjective homomorphism $f : (\mathbb{N},+) \to (\{0,1\},\vee)$ defined by $f(0)=0$ and $f(n)=1$ for $n \geq 1$. It has trivial kernel, but is no isomorphism, so it cannot be a cokernel.'
+),
+(
+	'CMon',
+	'CSP',
+	FALSE,
+	'First of all, epimorphisms in $\mathbf{CMon}$ are preserved and reflected by the forgetful functor to $\mathbf{Mon}$ (see below). Furthermore, if $M \to N$ is an epimorphism in $\mathbf{Mon}$ and $M$ is infinite, then $\mathrm{card}(N) \leq \mathrm{card}(M)$ (see <a href="https://mathoverflow.net/questions/510431/" target="_blank">MO/510431</a>). This implies that in $\mathbf{CMon}$ the canonical homomorphism $\bigoplus_{n \geq 0} \mathbb{N} \to \prod_{n \geq 0} \mathbb{N}$ is not an epimorphism because its domain is countable and its codomain is uncountable.'
 );

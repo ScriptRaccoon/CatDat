@@ -78,4 +78,10 @@ VALUES
 	'Consider the ring $A = \mathbb{Z}[X]$ and the sequence of rings $B_n = \mathbb{Z}[Y]/(Y^{n+1})$ with projections $B_{n+1} \to B_n$, whose limit is $\mathbb{Z}[[Y]]$ (both in $\mathbf{Ring}$ and $\mathbf{Rng}$). Every element in the coproduct of rngs $\mathbb{Z}[X] \sqcup \mathbb{Z}[[Y]]$ has a finite "free product" length. Now consider the elements
 	<br>$w_n = (1 + XY) (1+XY^2) \cdots (1+X Y^n) - 1 \in A \sqcup B_n$.</br>
 	Because of $w_n \equiv w_{n-1} \bmod Y^n$ these form an element $w \in \lim_n (A \sqcup B_n)$. Expanding $w_n$, the longest term is $XY XY^2 \cdots X Y^n$ of "free product" length $2n$, which is unbounded.'
+),
+(
+	'Rng',
+	'CSP',
+	FALSE,
+	'Assume that $\coprod_n \mathbb{Z} \to \prod_n \mathbb{Z}$ is an epimorphism in $\mathbf{Rng}$. Then $((\coprod_n \mathbb{Z})^+)^{\mathrm{ab}} \to \prod_n \mathbb{Z}$ would be an epimorphism in $\mathbf{CRing}$, where $(-)^+$ denotes the unitalization and $(-)^{\mathrm{ab}}$ the abelianization. But if $R \to S$ is an epimorphism of commutative rings, then $\mathrm{card}(S) \leq \mathrm{card}(R)$ by <a href="https://stacks.math.columbia.edu/tag/04W0" target="_blank">SP/04W0</a>. Since $((\coprod_n \mathbb{Z})^+)^{\mathrm{ab}}$ is countable and $\prod_n \mathbb{Z}$ is not, we get a contradiction.'
 );

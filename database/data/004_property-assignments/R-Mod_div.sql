@@ -31,7 +31,7 @@ VALUES
 ),
 (
 	'R-Mod_div',
-	'trivial',
+	'CSP',
 	FALSE,
-	'This is trivial.'
+	'The canonical homomorphism $\bigoplus_{n \geq 0} R \to \prod_{n \geq 0} R$ is not surjective, hence no epimorphism.'
 );

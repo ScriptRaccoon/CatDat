@@ -82,5 +82,11 @@ VALUES
 	'cocartesian cofiltered limits',
 	FALSE,
 	'We know that the <a href="/category/Grp">category of groups</a> fails to satisfy this property. The same counterexample works here since the inclusion $\mathbf{Grp} \hookrightarrow \mathbf{Mon}$ preserves limits and colimits (it has a left and a right adjoint) and is conservative. A similar counterexample is given by the free monoids $N_n = \langle x_1,\dotsc,x_n \rangle$ and the Boolean monoid $M = \langle e : e^2=e \rangle$ with the maps $N_{n+1} \to N_n$, $x_{n+1} \mapsto 1$. Then the element $(x_1 e \cdots x_n e) \in \lim_n (M \sqcup N_n)$ does not come from $M \sqcup \lim_n N_n$ because its components have unbounded free product length.'
+),
+(
+	'Mon',
+	'CSP',
+	FALSE,
+	'If $M \to N$ is an epimorphism in $\mathbf{Mon}$ and $M$ is infinite, then $\mathrm{card}(N) \leq \mathrm{card}(M)$ (see <a href="https://mathoverflow.net/questions/510431/" target="_blank">MO/510431</a>). This implies that in $\mathbf{Mon}$ the canonical homomorphism $\coprod_{n \geq 0} \mathbb{N} \to \prod_{n \geq 0} \mathbb{N}$ is not an epimorphism because its domain is countable and its codomain is uncountable.'
 );
 

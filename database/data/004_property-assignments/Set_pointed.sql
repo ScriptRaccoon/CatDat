@@ -75,6 +75,12 @@ VALUES
 ),
 (
 	'Set*',
+	'CSP', -- TODO: remove duplication with unital proof
+	FALSE,
+	'The image of $X \vee Y$ in $X \times Y$ is just $\{(x,0) : x \in X\} \cup \{(0,y) : y \in Y\}$ (where $0$ denotes the base point), which is clearly a proper subset when both $X,Y$ are non-trivial.'
+),
+(
+	'Set*',
 	'conormal',
 	FALSE,
 	'Every cokernel is "injective away from the base point". Formally, if $p : A \to B$ is a cokernel in $\mathbf{Set}_*$, it has the property that $p(x)=p(y) \neq 0$ implies $x=y$ (where $0$ denotes the base point). Clearly this is not satisfied for every surjective pointed map, consider $(\mathbb{N},0) \to (\{0,1\},0)$ defined by $0 \mapsto 0$ and $x \mapsto 1$ for $x > 0$.'

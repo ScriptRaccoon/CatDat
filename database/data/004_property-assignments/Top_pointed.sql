@@ -143,6 +143,12 @@ VALUES
 	'coaccessible',
 	FALSE,
 	'We can adjust the proof for $\mathbf{Top}$ as follows: Assume $\mathbf{Top}_*$ is coaccessible. Let $S_0=\{x,*\}$ be the pointed topological space such that $\{*\}$ is the only non-trivial open set, and let $S_1=\{x,*\}$ be the pointed space such that $\{x\}$ is the only non-trivial open set. Let $p_i\colon S_i \to \{x,*\}$ be the identity function to the two-element indiscrete pointed space. Then, a pointed topological space is discrete if and only if it is projective to the morphisms $p_0$ and $p_1$. This implies that the full subcategory spanned by all discrete pointed spaces, which is equivalent to $\mathbf{Set}_*$, is coaccessible by Prop. 4.7 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>. However, since $\mathbf{Set}_*$ is not coaccessible, this is a contradiction.'
+),
+(
+	'Top*',
+	'CSP', -- TODO: remove duplication with unital proof
+	FALSE,
+	'The image of $X \vee Y$ in $X \times Y$ is just $\{(x,0) : x \in X\} \cup \{(0,y) : y \in Y\}$ (where $0$ denotes the base point), which is clearly a proper subset when both $X,Y$ are non-trivial.'
 );
 
 
