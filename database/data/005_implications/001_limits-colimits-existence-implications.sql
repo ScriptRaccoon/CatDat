@@ -64,9 +64,9 @@ VALUES
 ),
 (
 	'congruence_quotients_via_cokernels',
-	'["preadditive", "finitely complete", "cokernels"]',
+	'["preadditive", "kernels", "cokernels"]',
 	'["quotients of congruences"]',
-	'Any congruence $E$ on an object $X$ of a preadditive category must be of the form of a pullback of ${-} : X \times X \to X$ and the subobject $Y$ of $X$ given by the pullback of $E$ and $(\operatorname{id}, 0) : X \to X \times X$.  The cokernel of $Y \hookrightarrow X$ is then a quotient of $E$.',
+	'For any congruence $E$ on an object $X$ of a preadditive category, let $E_0$ be the kernel of $p_2 : E \to X$.  The restriction of $p_1$ to $E_0$ is a monomorphism.  We can then see that $E$ must be the pullback of $p_1 - p_2 : E \to X$ and $E_0 \hookrightarrow X$.  Then the cokernel of $E_0 \hookrightarrow X$ is a quotient of $E$.',
 	FALSE
 ),
 (
