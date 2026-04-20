@@ -73,6 +73,13 @@ VALUES
 ),
 (
 	'Set_f',
+	'ℵ₁-accessible',
+	TRUE,
+	'We first show that $\aleph_1$-directed colimits exist and are preserved by the forgetful functor to $\mathbf{Set}$. Let $(X_i)_{i \in I}$ be a diagram in $\mathbf{Set}_\mathrm{f}$ indexed by a $\aleph_1$-directed poset $I$. Let $(u_i : X_i \to X)$ be the colimit in $\mathbf{Set}$. Each map $u_i$ is finite-to-one: Otherwise, some fiber $u_i^*(\{x\}) \subseteq X_i$ contains infinitely many elements $a_1,a_2,\dotsc$. For every $n \geq 1$ we find $i_n \geq i$ such that $a_1,a_n$ have the same image in $X_{i_n}$. Let $i_\infty \in I$ be an upper bound of all $i_n$. Then all $a_n$ have the same image in $X_{i_\infty}$. This is a contradiction since $X_i \to X_{i_\infty}$ is finite-to-one. Now if $f : X \to Y$ is a map such that each $f \circ u_i$ is finite-to-one, then $f$ is finite-to-one as well: If a fiber $f^*(\{y\})$ contains infinitely many distinct elements $x_1,x_2,\dotsc$, there is some index $i$ such that all have a preimage in $X_i$, but then $(f \circ u_i)^*(\{y\})$ would be infinite. This concludes the proof that $\aleph_1$-directed colimits exist.<br>
+	In $\mathbf{Set}$, every set $X$ is the $\aleph_1$-directed colimit of its countable subsets. This remains true in $\mathbf{Set}_\mathrm{f}$ because a map $X \to Y$ is finite-to-one as long as each restriction to a countable subset of $X$ is finite-to-one. Moreover, every countable set is $\aleph_1$-presentable in $\mathbf{Set}$, but also in $\mathbf{Set}_\mathrm{f}$.'
+),
+(
+	'Set_f',
 	'skeletal',
 	FALSE,
 	'This is trivial.'
