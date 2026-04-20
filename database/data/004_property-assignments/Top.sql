@@ -73,6 +73,12 @@ VALUES
 ),
 (
 	'Top',
+	'filtered-colimit-stable monomorphisms',
+	TRUE,
+	'This follows from <a href="/lemma/filtered-monos">this lemma</a> applied to the forgetful functor to $\mathbf{Set}$.'
+),
+(
+	'Top',
 	'cartesian filtered colimits',
 	FALSE,
 	'The functor $\mathbb{Q} \times - : \mathbf{Top} \to \mathbf{Top}$ does not preserve colimits, see <a href="https://math.stackexchange.com/questions/2969372" target="_blank">MSE/2969372</a>.'

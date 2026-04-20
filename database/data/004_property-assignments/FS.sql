@@ -55,6 +55,12 @@ VALUES
 ),
 (
 	'FS',
+	'filtered-colimit-stable monomorphisms',
+	TRUE,
+	'This is because every monomorphism is an isomorphism in this category (see below), and isomorphisms are always stable under any type of colimit.'
+),
+(
+	'FS',
 	'multi-terminal object',
 	TRUE,
 	'The empty set and a singleton give a multi-terminal object.'

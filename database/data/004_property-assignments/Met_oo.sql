@@ -61,9 +61,9 @@ VALUES
 ),
 (
 	'Met_oo',
-	'exact filtered colimits',
+	'filtered-colimit-stable monomorphisms',
 	FALSE,
-	'See Remark 2.7 in <a href="https://arxiv.org/abs/2006.01399" target="_blank">Approximate injectivity and smallness in metric-enriched categories</a> by Adamek-Rosicky.'
+	'We can copy the proof from the <a href="/category/Met">category of metric spaces</a>.'
 ),
 (
 	'Met_oo',

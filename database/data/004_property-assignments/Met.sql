@@ -121,9 +121,9 @@ VALUES
 ),
 (
 	'Met',
-	'exact filtered colimits',
+	'filtered-colimit-stable monomorphisms',
 	FALSE,
-	'See Remark 2.7 in <a href="https://arxiv.org/abs/2006.01399" target="_blank">Approximate injectivity and smallness in metric-enriched categories</a> by Adamek-Rosicky.'
+	'The following example is taken from Remark 2.7 in <a href="https://arxiv.org/abs/2006.01399" target="_blank">Approximate injectivity and smallness in metric-enriched categories</a> by Adamek-Rosicky: For $n \geq 1$ let $X_n$ denote the metric space with underlying set $\{0,1\}$ in which $0,1$ have distance $1/n$. We have bijective non-expansive maps $X_n \to X_{n+1}$, $x \mapsto x$. The colimit of this sequence in $\mathbf{PMet}$ is $\{0,1\}$ where $0,1$ have distance $0$, so the colimit in $\mathbf{Met}$ collapses to $\{0\}$. Therefore, the colimit of the monomorphisms $X_0 \to X_n$, $x \mapsto x$ is the non-injective map $X_0 \to \{0\}$.'
 ),
 (
 	'Met',

@@ -73,6 +73,12 @@ VALUES
 ),
 (
 	'Haus',
+	'filtered-colimit-stable monomorphisms',
+	FALSE,
+	'The proof is similar to <a href="/category/Met">$\mathbf{Met}$</a>. For $n \geq 1$ let $X_n$ be the pushout of $[-1/n,+1/n] \hookrightarrow \mathbb{R}$ with itself. That is, $X_n$ is the union of two lines $\mathbb{R} \times \{1\}$ and $\mathbb{R} \times \{2\}$ where we identify $(x,1) \equiv (x,2)$ when $|x| \leq 1/n$. Then $X_n$ is Hausdorff, and there is a canonical surjective continuous map $X_n \to X_{n+1}$. The colimit in $\mathbf{Top}$ is the union of two lines where we identify $(x,1) \equiv (x,2)$ when $|x| \leq 1/n$ for some $n$, i.e. when $x \neq 0$. This is the line with the double origin, which is not Hausdorff. Its Hausdorff reflection is the line $\mathbb{R}$ where all points of both lines are identified, and it provides the colimit in $\mathbf{Haus}$. Now, the injective continuous maps $\{1,2\} \to X_n$, $i \mapsto (0,i)$ (where $\{1,2\}$ is discrete) become the constant map $0 : \{1,2\} \to \mathbb{R}$ in the colimit, which is no monomorphism.'
+),
+(
+	'Haus',
 	'balanced',
 	FALSE,
 	'The inclusion $\mathbb{Q} \hookrightarrow \mathbb{R}$ is a counterexample; it is an epimorphism since $\mathbb{Q}$ is dense in $\mathbb{R}$.'

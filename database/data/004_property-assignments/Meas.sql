@@ -55,6 +55,12 @@ VALUES
 ),
 (
 	'Meas',
+	'filtered-colimit-stable monomorphisms',
+	TRUE,
+	'This follows from <a href="/lemma/filtered-monos">this lemma</a> applied to the forgetful functor to $\mathbf{Set}$.'
+),
+(
+	'Meas',
 	'semi-strongly connected',
 	TRUE,
 	'Every non-empty measurable space is weakly terminal (by using constant maps).'

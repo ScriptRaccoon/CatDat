@@ -92,6 +92,12 @@ VALUES
 ),
 (
 	'Top*',
+	'filtered-colimit-stable monomorphisms',
+	TRUE,
+	'This follows from <a href="/lemma/filtered-monos">this lemma</a> applied to the forgetful functor to $\mathbf{Set}$.'
+),
+(
+	'Top*',
 	'coregular',
 	TRUE,
 	'Regular monomorphisms coincide with the embeddings (see below). Since $\mathbf{Top}$ is coregular, they are stable under pushouts, and pushouts in $\mathbf{Top}_*$ are the same.'
