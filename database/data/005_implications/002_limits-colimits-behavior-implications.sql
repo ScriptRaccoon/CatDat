@@ -70,6 +70,15 @@ VALUES
 	FALSE
 ),
 (
+	'exact_filtered_colimits_monos',
+	'["exact filtered colimits"]',
+	'["filtered-colimit-stable monomorphisms"]',
+	'This is because $X \to Y$ is a monomorphism iff the diagram
+	<p>$\begin{array}{ccc} X & \rightarrow & X \\ \downarrow && \downarrow \\ X & \rightarrow & Y \end{array}$</p>
+	is a pullback, and if a functor preserves finite limits, it preserves pullbacks in particular.',
+	FALSE
+),
+(
 	'cartesian_filtered_colimits_condition',
 	'["cartesian filtered colimits"]',
 	'["filtered colimits", "finite products"]',
@@ -267,5 +276,19 @@ VALUES
 	'["countable copowers", "cartesian closed"]',
 	'["countable powers"]',
 	'We can recycle <a href="/category-implication/power_construction">this proof</a>.',
+	FALSE
+),
+(
+	'CIP_assumption',
+	'["CIP"]',
+	'["zero morphisms", "products", "coproducts"]',
+	'This is true by definition.',
+	FALSE
+),
+(
+	'CIP_criterion',
+	'["biproducts", "products", "filtered colimits", "filtered-colimit-stable monomorphisms"]',
+	'["CIP"]',
+	'Let $(X_i)_{i \in I}$ be a family of objects. For every finite subset $E \subseteq I$ the canonical morphism $\coprod_{i \in E} X_i = \prod_{i \in E} X_i \to \prod_{i \in I} X_i$ is a (split) monomorphism. Hence, their colimit is also a monomorphism, which is the canonical morphism $\coprod_{i \in I} X_i \to \prod_{i \in I} X_i$.',
 	FALSE
 );

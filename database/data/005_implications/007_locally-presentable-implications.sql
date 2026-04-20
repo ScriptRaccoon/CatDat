@@ -222,4 +222,11 @@ VALUES
 	'["generalized variety", "multi-cocomplete"]',
 	'This follows from one of equivalent formulations of multi-algebraic categories.',
 	TRUE
+),
+(
+	'locally-finitely-multi-presentable_stable-monos',
+	'["locally finitely multi-presentable"]',
+	'["filtered-colimit-stable monomorphisms"]',
+	'Every locally finitely multi-presentable category is a multi-reflective full subcategory of a presheaf category closed under filtered colimits (<a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>, 4.30). Since multi-reflective full subcategories are in general closed under connected limits (<a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>, Thm. 4.26), in particular, we can calculate not only filtered colimits but also kernel pairs as well as in a presheaf category.',
+	FALSE
 );

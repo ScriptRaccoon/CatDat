@@ -152,4 +152,18 @@ VALUES
 	'["reflexive coequalizers"]',
 	'Every reflexive pair is equal: If $f s = g s = \mathrm{id}$, then since $s f  = \mathrm{id}$ (one-way), we must have $f = s^{-1}$, and likewise $g = s^{-1}$.',
 	FALSE
+),
+(
+	'filtered_monos_assumption',
+	'["filtered-colimit-stable monomorphisms"]',
+	'["filtered colimits"]',
+	'This holds by definition.',
+	FALSE
+),
+(
+	'filtered_monos_trivial',
+	'["left cancellative", "filtered colimits"]',
+	'["filtered-colimit-stable monomorphisms"]',
+	'This is trivial.',
+	FALSE
 );

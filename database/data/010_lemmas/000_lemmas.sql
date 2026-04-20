@@ -105,4 +105,13 @@ INSERT INTO lemmas (
     <p>$\cong F(\lim_i \mathrm{colim}_j G(X(i,j)))$</p>
     <p>$\cong \lim_i F(\mathrm{colim}_j G(X(i,j)))$</p>
     <p>$\cong \lim_i \mathrm{colim}_j X(i,j)$</p>'
+),
+(
+    'filtered-monos',
+    'Detection of filtered-colimit-stable monomorphisms',
+    'Let $\mathcal{C}$ be a category with filtered colimits. Assume that $U : \mathcal{C} \to \mathcal{D}$ is faithful functor which preserves monomorphisms and filtered colimits. If monomorphisms in $\mathcal{D}$ are stable under filtered colimits, then the same is true for $\mathcal{C}$.
+    <br><br>
+    For the record, here is the dual statement: Let $\mathcal{C}$ be a category with cofiltered limits. Assume that $U : \mathcal{C} \to \mathcal{D}$ is faithful functor which preserves epimorphisms and cofiltered limits. If epimorphisms in $\mathcal{D}$ are stable under cofiltered limits, then the same is true for $\mathcal{C}$.
+    ',
+    'Since $U$ is faithful, it reflects monomorphisms. From here the proof is straight forward.'
 );
