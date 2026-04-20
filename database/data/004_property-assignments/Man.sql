@@ -132,4 +132,10 @@ VALUES
 	'ℵ₁-accessible',
 	FALSE,
 	'We already know that the <a href="/category/Set_c">category of countable sets</a> $\mathbf{Set}_\mathrm{c}$ does not have $\aleph_1$-filtered colimits. The functor $\pi_0: \mathbf{Man} \to \mathbf{Set}_\mathrm{c}$ is well-defined (because manifolds are second-countable), and it admits a fully faithful right adjoint (regarding a countable set as a discrete manifold). Therefore, $\mathbf{Man}$ does not have $\aleph_1$-filtered colimits.'
+),
+(
+	'Man',
+	'quotients of congruences',
+	FALSE,
+	'If $\mathbf{Man}$ had quotients of congruences, then by <a href="/lemma/pushouts-of-monos-via-congruence-quotients">this lemma</a>, it would have a pushout of $\mathbb{R} \leftarrow \{ 0 \} \rightarrow \mathbb{R}$.  This contradicts <a href="https://mathoverflow.net/questions/19116">MO/19916</a>.'
 );
