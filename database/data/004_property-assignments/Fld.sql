@@ -94,4 +94,12 @@ VALUES
 	'multi-terminal object',
 	FALSE,
 	'Every field has a non-trivial extension, for instance, the rational function field over itself in one variable. Hence, a multi-terminal object never exists.'
+),
+(
+	'Fld',
+	'cofiltered-limit-stable epimorphisms',
+	FALSE,
+	'Inside of $\mathbb{F}_p(X)$ consider the descending sequence of subfields
+	<p>$\mathbb{F}_p(X) \supseteq \mathbb{F}_p(X^p) \supseteq \mathbb{F}_p(X^{p^2}) \supseteq \cdots,$</p>
+	whose intersection is $\mathbb{F}_p$. Each $\mathbb{F}_p(X^{p^n}) \hookrightarrow \mathbb{F}_p(X)$ is purely inseparable, hence an epimorphism, but in the limit we get $\mathbb{F}_p \hookrightarrow \mathbb{F}_p(X)$, which is not even algebraic.'
 );

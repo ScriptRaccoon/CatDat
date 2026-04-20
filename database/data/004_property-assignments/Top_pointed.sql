@@ -161,6 +161,12 @@ VALUES
 	'CSP', -- TODO: remove duplication with unital proof
 	FALSE,
 	'The image of $X \vee Y$ in $X \times Y$ is just $\{(x,0) : x \in X\} \cup \{(0,y) : y \in Y\}$ (where $0$ denotes the base point), which is clearly a proper subset when both $X,Y$ are non-trivial.'
+),
+(
+	'Top*',
+	'cofiltered-limit-stable epimorphisms',
+	FALSE,
+	'We already know that $\mathbf{Set}_*$ does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the functor $\mathbf{Set}_* \to \mathbf{Top}_*$ that equips a pointed set with the indiscrete topology.'
 );
 
 

@@ -90,4 +90,10 @@ VALUES
 	'CSP',
 	FALSE,
 	'Assume that $\coprod_n \mathbb{Z} \to \prod_n \mathbb{Z}$ is an epimorphism in $\mathbf{Rng}$. Then $((\coprod_n \mathbb{Z})^+)^{\mathrm{ab}} \to \prod_n \mathbb{Z}$ would be an epimorphism in $\mathbf{CRing}$, where $(-)^+$ denotes the unitalization and $(-)^{\mathrm{ab}}$ the abelianization. But if $R \to S$ is an epimorphism of commutative rings, then $\mathrm{card}(S) \leq \mathrm{card}(R)$ by <a href="https://stacks.math.columbia.edu/tag/04W0" target="_blank">SP/04W0</a>. Since $((\coprod_n \mathbb{Z})^+)^{\mathrm{ab}}$ is countable and $\prod_n \mathbb{Z}$ is not, we get a contradiction.'
+),
+(
+	'Rng',
+	'cofiltered-limit-stable epimorphisms',
+	FALSE,
+	'We know that $\mathbf{Ring}$ does not have this property. Now use the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> applied to the forgetful functor $\mathbf{Ring} \to \mathbf{Rng}$. We only need to verify that it preserves epimorphisms: Let $f : R \to S$ be an epimorphism in $\mathbf{Ring}$ and let $g,h : S \rightrightarrows T$ be two homomorphisms of rngs with $gf = hf$. The element $e = g(1) = h(1) \in T$ is idempotent, and $g,h$ become homomorphisms of rings $S \rightrightarrows eTe$. Hence, $g=h$.'
 );

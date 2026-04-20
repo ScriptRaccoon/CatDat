@@ -90,4 +90,10 @@ VALUES
 	'Consider the ring $A = R[X]$ and the sequence of rings $B_n = R[Y]/(Y^{n+1})$ with projections $B_{n+1} \to B_n$, whose limit is $R[[Y]]$. Every element in the coproduct of rings $R[X] \sqcup R[[Y]]$ has a finite "free product" length. Now consider the elements
 	<br>$w_n = (1 + XY) (1+XY^2) \cdots (1+X Y^n) \in A \sqcup B_n$.</br>
 	Because of $w_n \equiv w_{n-1} \bmod Y^n$ these form an element $w \in \lim_n (A \sqcup B_n)$. Expanding $w_n$, the longest term is $XY XY^2 \cdots X Y^n$ of "free product" length $2n$, which is unbounded.'
+),
+(
+	'Alg(R)',
+	'cofiltered-limit-stable epimorphisms',
+	FALSE,
+	'We already know that $\mathbf{CAlg}(R)$ does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the forgetful functor $\mathbf{CAlg}(R) \to \mathbf{Alg}(R)$. It preserves epimorphisms by <a href="https://math.stackexchange.com/questions/5133488" target="_blank">MSE/5133488</a>.'
 );

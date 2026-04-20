@@ -124,4 +124,10 @@ VALUES
 	'one-way',
 	FALSE,
 	'This is trivial.'
+),
+(
+	'BOn',
+	'cofiltered-limit-stable epimorphisms',
+	FALSE,
+	'The epimorphisms are the finite ordinals (see below), but the limit of the sequential diagram $\cdots \xrightarrow{1} * \xrightarrow{1} *$ is the ordinal $\omega$ by <a href="https://math.stackexchange.com/questions/5129138">MSE/5129138</a>.'
 );

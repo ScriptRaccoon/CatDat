@@ -124,4 +124,10 @@ VALUES
 	'coaccessible',
 	FALSE,
 	'Assume $\mathbf{Top}$ is coaccessible. Let $p\colon S \to I$ be the identity map from the Sierpinski space to the two-element indiscrete space. Then, a topological space is discrete if and only if it is projective to the morphism $p$. This implies that the full subcategory spanned by all discrete spaces, which is equivalent to $\mathbf{Set}$, is coaccessible by Prop. 4.7 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>. However, since $\mathbf{Set}$ is not coaccessible, this is a contradiction.'
+),
+(
+	'Top',
+	'cofiltered-limit-stable epimorphisms',
+	FALSE,
+	'We already know that $\mathbf{Set}$ does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the functor $\mathbf{Set} \to \mathbf{Top}$ which equips a set with the indiscrete topology.'
 );

@@ -90,4 +90,10 @@ VALUES
 	'conormal',
 	FALSE,
 	'Every cokernel is "injective away from the base point". Formally, if $p : A \to B$ is a cokernel in $\mathbf{Set}_*$, it has the property that $p(x)=p(y) \neq 0$ implies $x=y$ (where $0$ denotes the base point). Clearly this is not satisfied for every surjective pointed map, consider $(\mathbb{N},0) \to (\{0,1\},0)$ defined by $0 \mapsto 0$ and $x \mapsto 1$ for $x > 0$.'
+),
+(
+	'Set*',
+	'cofiltered-limit-stable epimorphisms',
+	FALSE,
+	'We already know that $\mathbf{Set}$ does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the functor $\mathbf{Set} \to \mathbf{Set}_*$ that freely adds a base point.'
 );

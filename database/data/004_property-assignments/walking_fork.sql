@@ -73,6 +73,12 @@ VALUES
 ),
 (
 	'walking_fork',
+	'cofiltered-limit-stable epimorphisms',
+	TRUE,
+	'Let $(X_p)$ and $(Y_p)$ be diagrams in the walking fork indexed by a cofiltered poset $P$. Let $(X_p \to Y_p)_{p \in P}$ be compatible epimorphisms, we need to show that $\lim_p X_p \to \lim_p Y_p$ is an epimorphism as well. Assume it is not. The only non-epimorphism is $i : 0 \to 1$. Hence, $\lim_p X_p = 0$ and $\lim_p Y_p = 1$. So for every $p$ there is a morphism $1 \to Y_p$, meaning $Y_p \in \{1,2\}$. If $Y_p = 2$ for all $p$, the transition morphisms between them must be identities, so that $\lim_p Y_p = 2$, a contradiction. Choose $p$ with $Y_p = 1$. Then for all $q \leq p$ the morphism $Y_q \to Y_p$ shows that $Y_q = 1$ as well. Since $X_q \to Y_q = 1$ is an epimorphism by assumption, it cannot be $i : 0 \to 1$, and we see that $X_q = 1$. Then the transitions between the $X_q$ are identities, and we get the contradiction $\lim_p X_p = \lim_q X_q = 1$.'
+),
+(
+	'walking_fork',
 	'terminal object',
 	FALSE,
 	'$0$ and $1$ are not terminal since there is no morphism from $2$, and $2$ is not terminal since there are two different morphisms $1 \rightrightarrows 2$.'

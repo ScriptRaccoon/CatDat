@@ -88,4 +88,10 @@ VALUES
 	'regular subobject classifier',
 	FALSE,
 	'Assume that there is a regular subobject classifier $\Omega$, so that (by the classification of regular monomorphisms) $\mathrm{Hom}(P,\Omega)$ is isomorphic to the set of subsets of $P$. By taking $P = \{0\}$ we see that $\Omega$ has $2$ elements, so that either $\Omega \cong \{0,1\}$ (discrete) or $\Omega \cong \{0 < 1\}$. By taking $P = \{0 < 1\}$ we see that $\Omega$ has four pairs $(x,y)$ with $x \leq y$. But $\{0,1\}$ has only two and $\{0 < 1\}$ has only three such pairs.'	
+),
+(
+	'Pos',
+	'cofiltered-limit-stable epimorphisms',
+	FALSE,
+	'Pick any poset $X$ which has a decreasing sequence of non-empty sets $X = X_0 \supseteq X_1 \supseteq \cdots$ with empty intersection, such as $X_n = \mathbb{N}_{\geq n}$ with the natural ordering. The unique map $X_n \to 1$ is surjective, but their limit $\varnothing \to 1$ is not surjective.'
 );

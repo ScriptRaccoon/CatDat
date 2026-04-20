@@ -82,4 +82,10 @@ VALUES
 	'co-Malcev',
 	FALSE,
 	'See <a href="https://mathoverflow.net/questions/509552">MO/509552</a>: Consider the forgetful functor $U : \mathbf{Met}_{\infty} \to \mathbf{Set}$ and the relation $R \subseteq U^2$ defined by $R(X) := \{(a,b) \in U(X)^2 : d(x,y) \leq 1 \}$. Both are representable: $U$ by the singleton metric space and $R$ by the metric space $\{ 0,1 \}$ where $d(0,1) := 1$. It is clear that $R$ is reflexive, but not transitive.'
+),
+(
+	'Met_oo',
+	'cofiltered-limit-stable epimorphisms',
+	FALSE,
+	'We already know that $\mathbf{Set}$ does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the functor $\mathbf{Set} \to \mathbf{Met}_{\infty}$ that equips a set with the discrete topology.'
 );

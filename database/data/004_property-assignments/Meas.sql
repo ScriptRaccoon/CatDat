@@ -94,4 +94,10 @@ VALUES
 	'Malcev',
 	FALSE,
 	'Use that $\mathbf{Set}$ is not Malcev and endow sets with the trivial $\sigma$-algebra.'
+),
+(
+	'Meas',
+	'cofiltered-limit-stable epimorphisms',
+	FALSE,
+	'We already know that $\mathbf{Set}$ does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the functor $\mathbf{Set} \to \mathbf{Meas}$ which equips a set with the trivial $\sigma$-algebra.'
 );

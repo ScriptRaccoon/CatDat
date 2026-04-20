@@ -100,4 +100,10 @@ VALUES
 	'regular subobject classifier',
 	FALSE,
 	'Assume that there is a regular subobject classifier $\Omega$. By the classification of regular monomorphisms, we would have an isomorphism between $\mathrm{Hom}(X,\Omega)$ and the set of closed subsets of $X$ for any Hausdorff space $X$. If we take $X = 1$ we see that $\Omega$ has two points. Since $\Omega$ is Hausdorff, $\Omega \cong 1 + 1$ must be discrete. But then $\mathrm{Hom}(X,\Omega)$ is isomorphic to the set of all clopen subsets of $X$, of which there are usually far fewer than closed subsets (consider $X = [0,1]$).'
+),
+(
+	'Haus',
+	'cofiltered-limit-stable epimorphisms',
+	FALSE,
+	'Our <a href="/category/Set">counterexample for $\mathbf{Set}$</a> (using infinite intersections) also works in $\mathbf{Haus}$ by using discrete topologies. We could also apply a variant of (the dual of) <a href="/lemma/filtered-monos">this lemma</a> to the discrete topology functor $\mathbf{Set} \to \mathbf{Haus}$, which does not preserve all cofiltered limits, but does preserve intersections.'
 );

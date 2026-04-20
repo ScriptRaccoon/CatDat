@@ -73,6 +73,12 @@ VALUES
 ),
 (
 	'FI',
+	'cofiltered-limit-stable epimorphisms',
+	TRUE,
+	'This is because every epimorphism is an isomorphism in this category (see below), and isomorphisms are always stable under any type of limit.'
+),
+(
+	'FI',
 	'small',
 	FALSE,
 	'Even the collection of all singletons is not small.'

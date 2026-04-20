@@ -104,4 +104,10 @@ VALUES
 	'CSP',
 	FALSE,
 	'The canonical homomorphism $\coprod_{n \geq 0} \mathbb{Z} \to \prod_{n \geq 0} \mathbb{Z}$ is not surjective because its domain is countable and its codomain is uncountable. Hence it is no epimorphism.'
+),
+(
+	'Grp',
+	'cofiltered-limit-stable epimorphisms',
+	FALSE,
+	'We already know that $\mathbf{Ab}$ does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the forgetful functor $\mathbf{Ab} \to \mathbf{Grp}$ which indeed preserves epimorphisms.'
 );

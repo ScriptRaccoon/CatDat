@@ -94,4 +94,10 @@ VALUES
 	'co-Malcev',
 	FALSE,
 	'See <a href="https://mathoverflow.net/questions/509552">MO/509552</a>: Consider the forgetful functor $U : \mathbf{Prost} \to \mathbf{Set}$ and the relation $R \subseteq U^2$ defined by $R(A) := \{(a,b) \in U(A)^2 : a \leq b\}$. Both are representable: $U$ by the singleton preordered set and $R$ by $\{0 \leq 1 \}$. It is clear that $R$ is reflexive, but not symmetric.'
+),
+(
+	'Prost',
+	'cofiltered-limit-stable epimorphisms',
+	FALSE,
+	'We know that $\mathbf{Set}$ does not have this property. Now use the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> applied to the functor $\mathbf{Set} \to \mathbf{Prost}$ that equips a set with the chaotic preorder.'
 );

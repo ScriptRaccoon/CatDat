@@ -46,4 +46,10 @@ VALUES
 	'generator',
 	FALSE,
 	'Assume that $(A,B)$ is a generator. Of course, $A$ and $B$ cannot be both empty. Assume w.l.o.g. that $A$ is non-empty. Then there is no morphism $(A,B) \to (0,1)$, but there are two different morphisms $(0,1) \rightrightarrows (0,2)$.'
+),
+(
+	'SetxSet',
+	'cofiltered-limit-stable epimorphisms',
+	FALSE,
+	'We already know that $\mathbf{Set}$ does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the diagonal functor $\mathbf{Set} \to \mathbf{Set} \times \mathbf{Set}$.'
 );

@@ -88,4 +88,10 @@ VALUES
 	'CSP',
 	FALSE,
 	'By using the concrete description of products and coproducts, for the constant family $X_n = \mathbb{C}$ the canonical morphism $\coprod_n X_n \to \prod_n X_n$ becomes the canonical inclusion map $\ell^1 \hookrightarrow \ell^\infty$. This is not an epimorphism (i.e., has no dense image) since the closure of the image is precisely $c_0$. So for example, $(1,1,\dotsc)$ is not contained in the closure of the image.'
+),
+(
+	'Ban',
+	'cofiltered-limit-stable epimorphisms',
+	FALSE,
+	'We show that epimorphisms are not stable under sequential limits. Let $X_n = Y_n = \mathbb{C}$ for all $n \geq 0$. The transition morphism $Y_{n+1} \to Y_n$ is the identity, and the transition morphism $X_{n+1} \to X_n$ is $x \mapsto x/2$. The morphisms $X_n \to Y_n$, $x \mapsto x/2^n$ are compatible with the transitions, and they are surjective, hence epimorphisms. Now we check $\lim_n X_n = 0$: An element $(x_n) \in \lim_n X_n$ is a family of complex numbers satisfying $x_n = x_{n+1}/2$ <i>and</i> $\sup_n |x_n| < \infty$. But then $x_n = 2^n x_0$ and this can only be bounded when $x_0=0$. Hence, $0 = \lim_n X_n \to \lim_n Y_n = \mathbb{C}$ is no epimorphism.'
 );

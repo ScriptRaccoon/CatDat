@@ -52,4 +52,10 @@ VALUES
 	'finitary algebraic',
 	FALSE,
 	'A one-sorted finitary algebraic category has an object $F$ (the free algebra on one generator) such that $F$ is finitely presentable and every object $X$ admits an epimorphism $\coprod_{s \in S} F \to X$ for some index set $S$. Assume that such a simplicial set $F$ exists.  By using the sequence of $n$-skeletons of $F$, we see that there is some $n$ such that every $n$-simplex in $F$ is degenerate. Now take $X = \Delta^n$, which has a non-degenerate $n$-simplex. Then there cannot be an epimorphism $\coprod_{s \in S} F \to X$.'
+),
+(
+	'sSet',
+	'cofiltered-limit-stable epimorphisms',
+	FALSE,
+	'We show that epimorphisms are not stable under sequential limits, intersections to be precise. Let $X_n \in \mathbf{sSet}$ be the nerve of the poset $\mathbb{N}_{\geq n}$. This means that a $k$-simplex in $X_n$ is a chain of natural numbers $n \leq x_0 \leq \cdots \leq x_k$. Then $X_{n+1} \subseteq X_n$ and $\lim_n X_n = \bigcap_n X_n = 0$ (the initial simplicial set). Each $X_n \to 1$ is an epimorphism, but $\lim_n X_n \to 1$ is not.'
 );
