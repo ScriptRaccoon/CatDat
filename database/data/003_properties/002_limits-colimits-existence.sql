@@ -362,7 +362,7 @@ VALUES
 (
 	'multi-terminal object',
 	'has a',
-	'This property refers to the existence of a multi-limit of the empty diagram. A category has a multi-terminal object if and only if each connected component has a terminal object.',
+	'This property refers to the existence of a multi-limit of the empty diagram. A category has a multi-terminal object if and only if the collection of all connected components is isomorphic to a set, and each connected component has a terminal object.',
 	'https://ncatlab.org/nlab/show/multilimit',
 	'multi-initial object',
 	TRUE
@@ -370,7 +370,7 @@ VALUES
 (
 	'multi-initial object',
 	'has a',
-	'This property refers to the existence of a multi-colimit of the empty diagram. A category has a multi-initial object if and only if each connected component has a initial object.',
+	'This property refers to the existence of a multi-colimit of the empty diagram. A category has a multi-initial object if and only if the collection of all connected components is isomorphic to a set, and each connected component has a initial object.',
 	'https://ncatlab.org/nlab/show/multilimit',
 	'multi-terminal object',
 	TRUE
