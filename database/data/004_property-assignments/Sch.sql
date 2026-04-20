@@ -76,4 +76,10 @@ VALUES
 	'generating set',
 	FALSE,
 	'If $S$ is a generating set of schemes, then the set of affine open subsets of the schemes in $S$ would also be a generating set. This is then also a generating set in the category of affine schemes, corresponding to a cogenerating set in the <a href="/category/CRing">category of commutative rings</a>, which we know does not exist (see there for the proof).'
+),
+(
+	'Sch',
+	'quotients of congruences',
+	FALSE,
+	'If $\mathbf{Sch}$ had quotients of congruences, then by <a href="/lemma/pushouts-of-monos-via-congruence-quotients">this lemma</a> it would also have pushouts of monomorphisms, contradicting the fact that the span $\mathbb{A}^1 \leftarrow \mathrm{Spec}(k(t)) \rightarrow \mathbb{A}^1$ has no pushout - see <a href="https://mathoverflow.net/questions/9961" target="_blank">MO/9961</a>.'
 );

@@ -114,4 +114,10 @@ INSERT INTO lemmas (
     For the record, here is the dual statement: Let $\mathcal{C}$ be a category with cofiltered limits. Assume that $U : \mathcal{C} \to \mathcal{D}$ is faithful functor which preserves epimorphisms and cofiltered limits. If epimorphisms in $\mathcal{D}$ are stable under cofiltered limits, then the same is true for $\mathcal{C}$.
     ',
     'Since $U$ is faithful, it reflects monomorphisms. From here the proof is straight forward.'
+),
+(
+    'pushouts-of-monos-via-congruence-quotients',
+    'Construction of a pushout of monomorphisms as a quotient of a congruence',
+    'Let $\mathcal{C}$ be an extensive, finitely complete category with quotients of congruences.  Then $\mathcal{C}$ has pushouts of monomorphisms.',
+    'Let $f : S \to X$, $g : S \to Y$ be monomorphisms.  We construct a congruence on $X+Y$ via the map $E := X + Y + S + S \to (X+Y)^2$ which acts as $(i_1, i_1)$ on $X$, $(i_2, i_2)$ on $Y$, $(i_1 \circ f, i_2 \circ g)$ on the first copy of $S$, and $(i_2 \circ g, i_1 \circ f)$ on the second copy of $S$.  To show this is a monomorphism, and again in proving transitivity of $E$, we use extensivity to split the domain of the generalized elements of $E$ so that without loss of generality we may assume each factors through one of the coproduct inclusions.  Now a quotient of $E$ must be a pushout of $f$ and $g$.'
 );
