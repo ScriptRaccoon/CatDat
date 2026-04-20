@@ -73,6 +73,7 @@ VALUES
 ('Rng', 'algebra'),
 ('Sch', 'algebraic geometry'),
 ('Set_c', 'set theory'),
+('Set_f', 'set theory'),
 ('Set', 'set theory'),
 ('Set*', 'set theory'),
 ('Set_op', 'set theory'),

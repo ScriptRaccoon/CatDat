@@ -78,4 +78,14 @@ VALUES
 	'A set is countable if it admits a surjection from $\mathbb{N}$. In particular, every finite set is countable.',
 	NULL,
 	NULL
+),
+(
+	'Set_f',
+	'category of sets with finite-to-one maps',
+	'$\mathbf{Set}_\mathrm{f}$',
+	'sets',
+	'maps $f : X \to Y$ with the property that for every $y \in Y$ the fiber $f^*(\{y\})$ is a finite set',
+	'In this variant of $\mathbf{Set}$ we only consider maps with finite fibers, which are commonly called <i>finite-to-one</i>. Equivalently, every preimage of a finite set is again finite, and this description makes it obvious that composition is well-defined.',
+	NULL,
+	NULL
 );
