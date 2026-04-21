@@ -24,7 +24,7 @@ async function execute_tests() {
 		await test_mutual_property_duals()
 		await test_decided_categories()
 		await test_properties_of_trivial_category()
-		await test_properties_of_core_categories()
+		await test_properties_of_selected_categories()
 	} catch (err) {
 		if (err instanceof Error) {
 			console.error(err.message)
@@ -144,11 +144,11 @@ async function test_properties_of_trivial_category() {
 }
 
 /**
- * Tests if the "core categories" (currently: Set, Ab, Top) behave as expected:
+ * Tests if selected categories behave as expected:
  * All of their properties in the database have to match those in the
  * respective JSON files in the subfolder "expected-data".
  */
-async function test_properties_of_core_categories() {
+async function test_properties_of_selected_categories() {
 	const expected = {
 		Set: Set_expected,
 		Ab: Ab_expected,
@@ -156,14 +156,14 @@ async function test_properties_of_core_categories() {
 	} as Record<string, Record<string, boolean>>
 
 	for (const cat in expected) {
-		await test_core_category(cat, expected[cat])
+		await test_selected_category(cat, expected[cat])
 	}
 }
 
 /**
- * Tests if a "core category" has the expected properties.
+ * Tests if a selected category has the expected properties.
  */
-async function test_core_category(
+async function test_selected_category(
 	category_id: string,
 	expected: Record<string, boolean>,
 ) {
