@@ -21,11 +21,11 @@ export async function deduce_category_properties(db: Client) {
 
 	try {
 		const implications = await get_normalized_category_implications(tx)
-
 		const categories = await get_categories(tx)
 
+		await delete_deduced_category_properties(tx)
+
 		for (const category of categories) {
-			await delete_deduced_category_properties(tx, category.id)
 			await deduce_satisfied_category_properties(tx, category.id, implications)
 			await deduce_unsatisfied_category_properties(tx, category.id, implications)
 		}
@@ -143,14 +143,11 @@ async function get_categories(tx: Transaction) {
  * Clears all the deduced properties.
  * This runs before the deduction starts.
  */
-async function delete_deduced_category_properties(tx: Transaction, category_id: string) {
-	await tx.execute({
-		sql: `
-			DELETE FROM category_property_assignments
-			WHERE category_id = ? AND is_deduced = TRUE
-		`,
-		args: [category_id],
-	})
+async function delete_deduced_category_properties(tx: Transaction) {
+	await tx.execute(`
+		DELETE FROM category_property_assignments
+		WHERE is_deduced = TRUE
+	`)
 }
 
 /**
