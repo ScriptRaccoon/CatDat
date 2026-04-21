@@ -131,4 +131,10 @@ VALUES
 	'cofiltered',
 	FALSE,
 	'The two maps $\{0\} \rightrightarrows \{0,1\}$ are equalized by no map $X \to \{0\}$ in this category.'
-);
+),
+(
+	'Setne',
+	'coquotients of cocongruences',
+	FALSE,
+	'The two maps $\{0\} \rightrightarrows \{0,1\}$ form a cocongruence on $\{0\}$ -- namely the cofull cocongruence on $\{0\}$ -- but they do not have an equalizer.'
+)
