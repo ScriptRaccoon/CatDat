@@ -1,4 +1,4 @@
-import type { Transaction, Client } from '@libsql/client'
+import { type Transaction, type Client, LibsqlError } from '@libsql/client'
 import {
 	get_assumption_string,
 	get_conclusion_string,
@@ -90,7 +90,7 @@ export async function deduce_category_properties(db: Client) {
 	} catch (err) {
 		console.error(err)
 		await tx.rollback()
-		throw err
+		process.exit(1)
 	}
 }
 
@@ -300,7 +300,21 @@ async function deduce_satisfied_category_properties(
 				VALUES ${value_fragments.join(',\n')}
 				ON CONFLICT (category_id, property_id) DO NOTHING`
 
-		await tx.execute({ sql: insert_sql, args: values })
+		try {
+			await tx.execute({ sql: insert_sql, args: values })
+		} catch (err) {
+			if (err instanceof LibsqlError) {
+				if (err.code.startsWith('SQLITE_CONSTRAINT')) {
+					console.error(
+						`❌ Failed to complete deduction of satisfied properties for ${category_id} because of a conflict. The likely cause is a contradiction between its assigned properties.`,
+					)
+				}
+				console.error(err.message)
+			} else {
+				console.error(err)
+			}
+			process.exit(1)
+		}
 	}
 
 	console.info(
@@ -382,7 +396,21 @@ async function deduce_unsatisfied_category_properties(
 				VALUES ${value_fragments.join(',\n')}
 				ON CONFLICT (category_id, property_id) DO NOTHING`
 
-		await tx.execute({ sql: insert_query, args: values })
+		try {
+			await tx.execute({ sql: insert_query, args: values })
+		} catch (err) {
+			if (err instanceof LibsqlError) {
+				if (err.code.startsWith('SQLITE_CONSTRAINT')) {
+					console.error(
+						`❌ Failed to complete deduction of unsatisfied properties for ${category_id} because of a conflict. The likely cause is a contradiction between its assigned properties.`,
+					)
+				}
+				console.error(err.message)
+			} else {
+				console.error(err)
+			}
+			process.exit(1)
+		}
 	}
 
 	console.info(

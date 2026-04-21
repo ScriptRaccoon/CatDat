@@ -41,7 +41,7 @@ export async function deduce_functor_properties(db: Client) {
 	} catch (err) {
 		console.error(err)
 		await tx.rollback()
-		throw err
+		process.exit(1)
 	}
 }
 
