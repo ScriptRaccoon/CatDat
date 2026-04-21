@@ -12,6 +12,11 @@ type CategoryMeta = {
 	dual_category_id: string | null
 }
 
+type PropertyMeta = {
+	id: string
+	dual_property_id: string | null
+}
+
 /**
  * Deduce properties of categories from given ones
  * by using the list of implications.
@@ -22,28 +27,61 @@ export async function deduce_category_properties(db: Client) {
 	try {
 		const implications = await get_normalized_category_implications(tx)
 		const categories = await get_categories(tx)
+		const properties_dict = await get_properties_dict(tx)
 
 		await delete_deduced_category_properties(tx)
 
+		const decided_properties = await get_all_decided_properties(tx, categories)
+
 		for (const category of categories) {
-			await deduce_satisfied_category_properties(tx, category.id, implications)
-			await deduce_unsatisfied_category_properties(tx, category.id, implications)
+			await deduce_satisfied_category_properties(
+				tx,
+				category.id,
+				implications,
+				decided_properties[category.id].satisfied,
+			)
+			await deduce_unsatisfied_category_properties(
+				tx,
+				category.id,
+				implications,
+				decided_properties[category.id].satisfied,
+				decided_properties[category.id].unsatisfied,
+			)
 		}
 
 		for (const category of categories) {
-			const allowed =
-				category.dual_category_id !== null &&
-				category.name.toLowerCase().startsWith('dual') // prevent circular deduction
+			if (
+				!category.dual_category_id ||
+				!category.name.toLowerCase().startsWith('dual')
+			) {
+				continue
+			}
 
-			if (!allowed) continue
+			await deduce_dual_category_properties(
+				tx,
+				category,
+				decided_properties[category.id].satisfied,
+				decided_properties[category.id].unsatisfied,
+				decided_properties[category.dual_category_id].satisfied,
+				decided_properties[category.dual_category_id].unsatisfied,
+				properties_dict,
+			)
 
-			await deduce_dual_category_properties(tx, category)
-			await deduce_satisfied_category_properties(tx, category.id, implications, {
-				check_conflicts: false,
-			})
-			await deduce_unsatisfied_category_properties(tx, category.id, implications, {
-				check_conflicts: false,
-			})
+			await deduce_satisfied_category_properties(
+				tx,
+				category.id,
+				implications,
+				decided_properties[category.id].satisfied,
+				{ check_conflicts: false },
+			)
+			await deduce_unsatisfied_category_properties(
+				tx,
+				category.id,
+				implications,
+				decided_properties[category.id].satisfied,
+				decided_properties[category.id].unsatisfied,
+				{ check_conflicts: false },
+			)
 		}
 
 		await tx.commit()
@@ -140,6 +178,26 @@ async function get_categories(tx: Transaction) {
 }
 
 /**
+ * Returns a dictionary of properties saved in the database.
+ */
+async function get_properties_dict(tx: Transaction) {
+	const res = await tx.execute(`
+		SELECT p.id, p.dual_property_id
+		FROM properties p
+		ORDER BY lower(p.id)
+	`)
+	const rows = res.rows as unknown as PropertyMeta[]
+
+	const dict: Record<string, PropertyMeta> = {}
+
+	for (const p of rows) {
+		dict[p.id] = p
+	}
+
+	return dict
+}
+
+/**
  * Clears all the deduced properties.
  * This runs before the deduction starts.
  */
@@ -151,24 +209,38 @@ async function delete_deduced_category_properties(tx: Transaction) {
 }
 
 /**
- * Returns the list of properties that are satisfied or unsatisfied
- * for a given category.
+ * Returns a dictionary with all properties that are satisfied or unsatisfied,
+ * grouped by category and value.
  */
-async function get_decided_properties(
-	tx: Transaction,
-	category_id: string,
-	value: boolean,
-) {
-	const res = await tx.execute({
-		sql: `
-			SELECT property_id
-			FROM category_property_assignments
-			WHERE category_id = ? AND is_satisfied = ?
-		`,
-		args: [category_id, value],
-	})
+async function get_all_decided_properties(tx: Transaction, categories: { id: string }[]) {
+	const res = await tx.execute(`
+		SELECT property_id, category_id, is_satisfied
+		FROM category_property_assignments
+	`)
 
-	return new Set(res.rows.map((row) => row.property_id) as string[])
+	const rows = res.rows as unknown as {
+		property_id: string
+		category_id: string
+		is_satisfied: boolean
+	}[]
+
+	const grouped: Record<string, { satisfied: Set<string>; unsatisfied: Set<string> }> =
+		{}
+
+	for (const category of categories) {
+		grouped[category.id] = { satisfied: new Set(), unsatisfied: new Set() }
+	}
+
+	for (const row of rows) {
+		const { property_id, category_id, is_satisfied } = row
+		if (is_satisfied) {
+			grouped[category_id].satisfied.add(property_id)
+		} else {
+			grouped[category_id].unsatisfied.add(property_id)
+		}
+	}
+
+	return grouped
 }
 
 /**
@@ -179,24 +251,23 @@ async function deduce_satisfied_category_properties(
 	tx: Transaction,
 	category_id: string,
 	implications: NormalizedCategoryImplication[],
+	satisfied_properties: Set<string>,
 	options: { check_conflicts: boolean } = { check_conflicts: true },
 ) {
-	const satisfied_props = await get_decided_properties(tx, category_id, true)
-
 	const deduced_satisfied_props: string[] = []
 	const reasons: Record<string, string> = {}
 
 	while (true) {
 		const implication = implications.find(
 			({ assumptions, conclusion }) =>
-				is_subset(assumptions, satisfied_props) &&
-				!satisfied_props.has(conclusion),
+				is_subset(assumptions, satisfied_properties) &&
+				!satisfied_properties.has(conclusion),
 		)
 		if (!implication) break
 
 		const { id: implication_id, conclusion } = implication
 
-		satisfied_props.add(conclusion)
+		satisfied_properties.add(conclusion)
 		deduced_satisfied_props.push(conclusion)
 
 		const assumption_string = get_assumption_string(implication)
@@ -243,21 +314,20 @@ async function deduce_unsatisfied_category_properties(
 	tx: Transaction,
 	category_id: string,
 	implications: NormalizedCategoryImplication[],
+	satisfied_properties: Set<string>,
+	unsatisfied_properties: Set<string>,
 	options: { check_conflicts: boolean } = { check_conflicts: true },
 ) {
-	const satisfied_props = await get_decided_properties(tx, category_id, true)
-	const unsatisfied_props = await get_decided_properties(tx, category_id, false)
-
 	const deduced_unsatisfied_props: string[] = []
 	const reasons: Record<string, string> = {}
 
 	function get_next_implication() {
 		for (const implication of implications) {
-			if (!unsatisfied_props.has(implication.conclusion)) continue
+			if (!unsatisfied_properties.has(implication.conclusion)) continue
 			for (const p of implication.assumptions) {
 				const is_valid =
-					!unsatisfied_props.has(p) &&
-					is_subset(implication.assumptions, satisfied_props, p)
+					!unsatisfied_properties.has(p) &&
+					is_subset(implication.assumptions, satisfied_properties, p)
 				if (is_valid) return { implication, property: p }
 			}
 		}
@@ -272,11 +342,11 @@ async function deduce_unsatisfied_category_properties(
 		const { implication, property } = next
 		const { id: implication_id, relations } = implication
 
-		if (satisfied_props.has(property)) {
+		if (satisfied_properties.has(property)) {
 			throw new Error(`Contradiction has been found for: ${property}`)
 		}
 
-		unsatisfied_props.add(property)
+		unsatisfied_properties.add(property)
 		deduced_unsatisfied_props.push(property)
 
 		const assumption_string = get_assumption_string(implication)
@@ -322,34 +392,76 @@ async function deduce_unsatisfied_category_properties(
  * Assign dual properties to dual categories:
  * If C has property P, then C^op has property P^op (if defined).
  */
-async function deduce_dual_category_properties(tx: Transaction, category: CategoryMeta) {
-	const res = await tx.execute({
-		sql: `
-			INSERT OR REPLACE INTO category_property_assignments
-				(category_id, property_id, is_satisfied, reason, is_deduced)
-			SELECT
-				?,
-				p.dual_property_id,
-				a.is_satisfied,
-				CASE
-					WHEN a.is_satisfied THEN
-					'Its dual category ' || r.relation || ' ' || a.property_id || '.'
-					ELSE
-					'Its dual category ' || r.negation || ' ' || a.property_id || '.'
-				END,
-				TRUE
-			FROM category_property_assignments a
-			INNER JOIN properties p ON p.id = a.property_id
-			INNER JOIN relations r ON r.relation= p.relation
-			WHERE
-				a.category_id = ?
-				AND p.dual_property_id IS NOT NULL				
-			ORDER BY lower(p.dual_property_id)
-		`,
-		args: [category.id, category.dual_category_id],
-	})
+async function deduce_dual_category_properties(
+	tx: Transaction,
+	category: CategoryMeta,
+	satisfied: Set<string>,
+	unsatisfied: Set<string>,
+	dual_satisfied: Set<string>,
+	dual_unsatisfied: Set<string>,
+	properties_dict: Record<string, PropertyMeta>,
+) {
+	const new_satisfied = new Set<string>()
 
-	console.info(
-		`Added ${res.rowsAffected} (un-)satisfied properties for category ${category.id} to the database by using its dual ${category.dual_category_id}`,
-	)
+	for (const p of dual_satisfied) {
+		const p_dual = properties_dict[p].dual_property_id
+		if (!p_dual || satisfied.has(p_dual)) continue
+		new_satisfied.add(p_dual)
+		satisfied.add(p_dual)
+	}
+
+	const new_unsatisfied = new Set<string>()
+
+	for (const p of dual_unsatisfied) {
+		const p_dual = properties_dict[p].dual_property_id
+		if (!p_dual || unsatisfied.has(p_dual)) continue
+		new_unsatisfied.add(p_dual)
+		unsatisfied.add(p_dual)
+	}
+
+	if (new_satisfied.size > 0) {
+		const value_fragments: string[] = []
+		const values: (string | number)[] = []
+
+		for (const p of new_satisfied) {
+			value_fragments.push('(?, ?, TRUE, ?, TRUE)')
+			values.push(category.id, p, 'Its dual category satisfies the dual property.')
+		}
+
+		const insert_query = `
+		INSERT INTO category_property_assignments
+			(category_id, property_id, is_satisfied, reason, is_deduced)
+		VALUES ${value_fragments.join(',\n')}`
+
+		await tx.execute({ sql: insert_query, args: values })
+
+		console.info(
+			`Deduced ${new_satisfied.size} satisfied properties by duality for category ${category.id}`,
+		)
+	}
+
+	if (new_unsatisfied.size > 0) {
+		const value_fragments: string[] = []
+		const values: (string | number)[] = []
+
+		for (const p of new_unsatisfied) {
+			value_fragments.push('(?, ?, FALSE, ?, TRUE)')
+			values.push(
+				category.id,
+				p,
+				'Its dual category does not satisfy the dual property.',
+			)
+		}
+
+		const insert_query = `
+		INSERT INTO category_property_assignments
+			(category_id, property_id, is_satisfied, reason, is_deduced)
+		VALUES ${value_fragments.join(',\n')}`
+
+		await tx.execute({ sql: insert_query, args: values })
+
+		console.info(
+			`Deduced ${new_unsatisfied.size} unsatisfied properties by duality for category ${category.id}`,
+		)
+	}
 }
