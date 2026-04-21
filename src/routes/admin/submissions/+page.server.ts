@@ -54,6 +54,8 @@ export const actions = {
 	approve: async (event) => {
 		if (!has_session(event)) redirect(307, '/admin/login')
 
+		if (!GITHUB_PRIVATE_KEY) return fail(401, { error: 'Unauthorized' })
+
 		const form = await event.request.formData()
 		const submission_id = form.get('id')
 		if (!submission_id) return fail(400, { error: 'Submission ID required' })

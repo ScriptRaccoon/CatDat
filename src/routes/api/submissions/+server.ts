@@ -44,11 +44,15 @@ export const POST = async (event) => {
 		`Title: ${title}\n\n` +
 		`Approve it here: ${approve_url}`
 
-	await send_email({
-		subject: 'CatDat – New submission',
-		text: email_text,
-		to: APPROVAL_EMAIL,
-	})
+	try {
+		await send_email({
+			subject: 'CatDat – New submission',
+			text: email_text,
+			to: APPROVAL_EMAIL,
+		})
+	} catch (err) {
+		console.error(err)
+	}
 
 	return json({ message: 'Submission successful' })
 }
