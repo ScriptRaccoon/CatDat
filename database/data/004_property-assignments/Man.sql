@@ -74,6 +74,12 @@ VALUES
 ),
 (
 	'Man',
+	'coquotients of cocongruences',
+	TRUE,
+	'Consider the sequence of smooth maps $X + X \overset{p}{\to} E \overset{r}{\to} X$. Since the pushforward maps of tangent spaces compose to the identity, we see that $p$ must be a local immersion and $r$ must be a submersion.  Also, since the fibers of $r$ have one or two points each, we see that the dimension of $E$ must locally be the same as the dimension of $X$.  This implies that in fact $p$ and $r$ are local diffeomorphisms.  Therefore, the cardinality of the fiber of $r$ is locally constant.  Thus, if $U$ is the subset of $X$ where $r$ has fiber of a single point, with the subspace topology, then $U$ is a clopen submanifold of $X$ which serves as the equalizer of $p \circ i_1$ and $p \circ i_2$.'
+),
+(
+	'Man',
 	'small',
 	FALSE,
 	'Even the collection of all singletons is not a set.'
