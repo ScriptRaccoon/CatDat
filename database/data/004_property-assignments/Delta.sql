@@ -77,6 +77,12 @@ VALUES
 ),
 (
     'Delta',
+    'coquotients of cocongruences',
+    TRUE,
+    'Given a jointly epimorphic pair of maps $f, g : [m] \to [n]$, that means the union of the images is all of $[n]$.  Also, given the coreflexivity map $r : [n] \to [m]$ with $r \circ f = r \circ g = \operatorname{id}$, we must have that $f(i)$ and $g(i)$ map to adjacent or equal elements for each $i \in [m]$.  Taking into consideration that the cosymmetry map $s : [n] \to [n]$ would have to swap the elements in the adjacent case, giving a contradiction to $s$ being nondecreasing, we see that in fact $f = g$.  Therefore, $[m]$ is the equalizer of $f$ and $g$.'
+),
+(
+    'Delta',
     'strict terminal object',
     FALSE,
     'This is trivial.'
