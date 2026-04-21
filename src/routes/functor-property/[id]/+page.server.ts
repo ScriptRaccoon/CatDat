@@ -5,7 +5,7 @@ import type {
 	FunctorPropertyDB,
 	FunctorShort,
 } from '$lib/commons/types'
-import { batch } from '$lib/server/db'
+import { batch } from '$lib/server/db.catdat'
 import { render_nested_formulas } from '$lib/server/rendering'
 import { display_functor_implication, display_functor_property } from '$lib/server/utils'
 import { error } from '@sveltejs/kit'

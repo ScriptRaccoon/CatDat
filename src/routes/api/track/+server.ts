@@ -1,7 +1,7 @@
 import { is_object } from '$lib/server/utils'
 import { json } from '@sveltejs/kit'
 import { get_geo_data, is_allowed } from './track.utils'
-import { query_visits } from '$lib/server/db.visits'
+import { query_app } from '$lib/server/db.app'
 import sql from 'sql-template-tag'
 
 type ValidBody = { device_type: string; theme: string }
@@ -30,7 +30,7 @@ export const POST = async (event) => {
 
 	const { country } = get_geo_data(event.request)
 
-	const { err } = await query_visits(sql`
+	const { err } = await query_app(sql`
 		INSERT INTO visits (theme, device_type, country)
 		VALUES (${theme}, ${device_type}, ${country})
 	`)

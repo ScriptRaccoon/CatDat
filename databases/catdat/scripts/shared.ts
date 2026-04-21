@@ -15,12 +15,12 @@ export function is_subset<T>(a: Set<T>, b: Set<T>, exception?: T) {
 }
 
 export function get_client() {
-	const DB_URL = process.env.DB_URL
-	const DB_AUTH_TOKEN = process.env.DB_AUTH_TOKEN
+	const CATDAT_DB_URL = process.env.CATDAT_DB_URL
+	const CATDAT_DB_AUTH_TOKEN = process.env.CATDAT_DB_AUTH_TOKEN
 
-	if (!DB_URL) throw new Error('No DB_URL found')
+	if (!CATDAT_DB_URL) throw new Error('No CATDAT_DB_URL found')
 
-	return createClient({ url: DB_URL, authToken: DB_AUTH_TOKEN })
+	return createClient({ url: CATDAT_DB_URL, authToken: CATDAT_DB_AUTH_TOKEN })
 }
 
 type NormalizedImplication = {

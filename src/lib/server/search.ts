@@ -1,6 +1,6 @@
 import type { RequestEvent } from '@sveltejs/kit'
 import { decode_property_ID } from '$lib/commons/property.url'
-import { query } from '$lib/server/db'
+import { query } from '$lib/server/db.catdat'
 import { error } from '@sveltejs/kit'
 import sql from 'sql-template-tag'
 import { SEARCH_SEPARATOR } from '$lib/commons/search.config'

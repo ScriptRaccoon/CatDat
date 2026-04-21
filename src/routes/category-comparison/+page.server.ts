@@ -1,6 +1,6 @@
 import type { CategoryShort } from '$lib/commons/types'
 import sql from 'sql-template-tag'
-import { query } from '$lib/server/db'
+import { query } from '$lib/server/db.catdat'
 import { error } from '@sveltejs/kit'
 
 export const load = async () => {

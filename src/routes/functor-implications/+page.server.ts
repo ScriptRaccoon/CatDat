@@ -1,5 +1,5 @@
 import { render_nested_formulas } from '$lib/server/rendering'
-import { query } from '$lib/server/db'
+import { query } from '$lib/server/db.catdat'
 import sql from 'sql-template-tag'
 import { error } from '@sveltejs/kit'
 import type { FunctorImplicationDB, FunctorImplicationDisplay } from '$lib/commons/types'

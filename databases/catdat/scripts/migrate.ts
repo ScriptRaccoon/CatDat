@@ -12,6 +12,7 @@ await migrate()
  * Creates the tables, indexes, triggers, and views.
  */
 async function migrate() {
+	console.info('\n--- Migrate CatDat database ---')
 	const db = get_client()
 	await db.execute('PRAGMA foreign_keys = ON')
 	await create_migrations_table(db)
@@ -38,7 +39,12 @@ async function apply_migrations(db: Client) {
 	const { rows } = await db.execute('SELECT file FROM migrations')
 	const applied_migrations = new Set<string>(rows.map((row) => row.file) as string[])
 
-	const migrations_folder = path.join(process.cwd(), 'database', 'migrations')
+	const migrations_folder = path.join(
+		process.cwd(),
+		'databases',
+		'catdat',
+		'migrations',
+	)
 	const unsorted_files = await fs.readdir(migrations_folder, 'utf8')
 	const files = unsorted_files.filter((f) => f.endsWith('.sql')).sort()
 

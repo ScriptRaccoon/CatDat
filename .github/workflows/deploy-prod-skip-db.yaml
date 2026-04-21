@@ -11,12 +11,12 @@ jobs:
             is_prod: true
             skip_db: true
         secrets:
-            DB_URL: ${{ secrets.DB_URL }}
-            DB_AUTH_TOKEN: ${{ secrets.DB_AUTH_TOKEN }}
+            CATDAT_DB_URL: ${{ secrets.CATDAT_DB_URL }}
+            CATDAT_DB_AUTH_TOKEN: ${{ secrets.CATDAT_DB_AUTH_TOKEN }}
             NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
             NETLIFY_ACCESS_TOKEN: ${{ secrets.NETLIFY_ACCESS_TOKEN }}
-            DB_VISITS_URL: ${{ secrets.DB_VISITS_URL }}
-            DB_VISITS_AUTH_TOKEN: ${{ secrets.DB_VISITS_AUTH_TOKEN }}
+            APP_DB_URL: ${{ secrets.APP_DB_URL }}
+            APP_DB_AUTH_TOKEN: ${{ secrets.APP_DB_AUTH_TOKEN }}
             _GITHUB_PRIVATE_KEY: ${{ secrets._GITHUB_PRIVATE_KEY }}
             REDIS_URL: ${{ secrets.REDIS_URL }}
             ADMIN_PAGE_PASSWORD: ${{ secrets.ADMIN_PAGE_PASSWORD }}

@@ -1,5 +1,5 @@
 import type { CategoryShort, TagObject } from '$lib/commons/types'
-import { batch } from '$lib/server/db'
+import { batch } from '$lib/server/db.catdat'
 import { error } from '@sveltejs/kit'
 import sql from 'sql-template-tag'
 

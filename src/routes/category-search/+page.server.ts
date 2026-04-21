@@ -1,4 +1,4 @@
-import { query } from '$lib/server/db'
+import { query } from '$lib/server/db.catdat'
 import { error } from '@sveltejs/kit'
 import sql from 'sql-template-tag'
 
