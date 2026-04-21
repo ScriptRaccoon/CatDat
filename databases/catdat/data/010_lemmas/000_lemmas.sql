@@ -120,4 +120,10 @@ INSERT INTO lemmas (
     'Construction of a pushout of monomorphisms as a quotient of a congruence',
     'Let $\mathcal{C}$ be an extensive category with quotients of congruences.  Then $\mathcal{C}$ has pushouts of monomorphisms.',
     'Let $f : S \to X$, $g : S \to Y$ be monomorphisms.  We construct a congruence on $X+Y$ via the maps $p_1, p_2 : X + Y + S + S \to X+Y$ which act as $i_1, i_1$ on $X$, $i_2, i_2$ on $Y$, $i_1 \circ f, i_2 \circ g$ on the first copy of $S$, and $i_2 \circ g, i_1 \circ f$ on the second copy of $S$, respectively.  To show that $p_1, p_2$ are jointly monomorphic, and again in proving transitivity of the congruence, we use extensivity to split the domain of the generalized elements of $X+Y+S+S$ so that without loss of generality we may assume each factors through one of the coproduct inclusions.  Now a quotient of the congruence must be a pushout of $f$ and $g$.'
+),
+(
+    'monic-sequential-colimits-via-congruence-quotients',
+    'Construction of a colimit of a sequence of monomorphisms as a quotient of a congruence',
+    'Let $\mathcal{C}$ be a countably extensive, finitely complete category with quotients of congruences. Then $\mathcal{C}$ has colimits of sequences of monomorphisms.',
+    'Suppose we have a sequence $X_1 \to X_2 \to \cdots$ with corresponding monomorphisms $f_{m,n} : X_m \to X_n$ for $m \le n$. Now for each $m\le n$, define $E_{m,n}$ to be the pullback of $X_m \overset{f_{m,n}}{\longrightarrow} X_n \overset{\operatorname{id}}{\longleftarrow} X_n$, and similarly for $m \ge n$. Then the coproduct of all $E_{m,n}$, with the natural morphisms to $\sum_{n=1}^\infty X_n$, forms a congruence. Here to prove the maps are jointly monomorphic, and again in proving transitivity, we use extensivity to split the domain of the generalized elements of $\sum_{m,n=1}^\infty E_{m,n}$ so that without loss of generality we may assume each factors through one of the coproduct inclusions. Now a quotient of this congruence must be a colimit of the sequence.'
 );
