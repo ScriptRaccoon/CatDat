@@ -38,8 +38,7 @@ async function seed() {
 				await tx.executeMultiple(sql)
 				await tx.commit()
 
-				const operation = file.includes('clear') ? 'Clear data' : 'Insert data'
-				console.info(`${operation}: ${base}`)
+				console.info(`Seed: ${base}`)
 			} catch (err) {
 				console.error(`Failed to seed ${file}`, err)
 				await tx.rollback()
@@ -48,7 +47,7 @@ async function seed() {
 		}
 	}
 
-	console.info('Inserted all data')
+	console.info('Seeded all data')
 }
 
 await seed()

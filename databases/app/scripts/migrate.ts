@@ -16,7 +16,7 @@ const db = createClient({
 migrate()
 
 /**
- * Creates the visits database and its tables.
+ * Creates the tables in the app database.
  */
 async function migrate() {
 	await create_visits_table()
@@ -37,11 +37,11 @@ async function create_visits_table() {
         )
     `)
 
-	console.info('Created visits table')
+	console.info('Visits table ready')
 }
 
 /**
- * Creates the table of submissions marked for approval.
+ * Creates the table of submissions.
  */
 async function create_submissions_table() {
 	await db.execute(`
@@ -56,5 +56,5 @@ async function create_submissions_table() {
         )
     `)
 
-	console.info('Created submissions table')
+	console.info('Submissions table ready')
 }
