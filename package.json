@@ -25,7 +25,7 @@
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-netlify": "^6.0.4",
-		"@sveltejs/kit": "^2.55.0",
+		"@sveltejs/kit": "^2.57.1",
 		"@sveltejs/vite-plugin-svelte": "^7.0.0",
 		"@types/katex": "^0.16.8",
 		"@types/markdown-it": "^14.1.2",
