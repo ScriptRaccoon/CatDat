@@ -47,19 +47,24 @@ export type NormalizedFunctorImplication = NormalizedImplication & {
 export function get_assumption_string(
 	implication: NormalizedImplication,
 	properties_dict: Record<string, PropertyMeta>,
+	conditional = false,
 ): string {
 	const { assumptions } = implication
 
 	return Array.from(assumptions)
-		.map((assumption) => `${properties_dict[assumption].relation} ${assumption}`)
+		.map(
+			(assumption) =>
+				`${properties_dict[assumption][conditional ? 'conditional' : 'relation']} ${assumption}`,
+		)
 		.join(' and ')
 }
 
 export function get_conclusion_string(
 	implication: NormalizedImplication,
 	properties_dict: Record<string, PropertyMeta>,
+	conditional = false,
 ): string {
 	const { conclusion } = implication
 
-	return `${properties_dict[conclusion].relation} ${conclusion}`
+	return `${properties_dict[conclusion][conditional ? 'conditional' : 'relation']} ${conclusion}`
 }

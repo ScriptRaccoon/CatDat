@@ -362,14 +362,26 @@ async function deduce_unsatisfied_category_properties(
 		unsatisfied_properties.add(property)
 		deduced_unsatisfied_props.push(property)
 
-		const assumption_string = get_assumption_string(implication, properties_dict)
-		const conclusion_string = get_conclusion_string(implication, properties_dict)
+		const assumption_string = get_assumption_string(
+			implication,
+			properties_dict,
+			true,
+		)
+		const conclusion_string = get_conclusion_string(
+			implication,
+			properties_dict,
+			true,
+		)
+
+		const has_multiple_assumptions = implication.assumptions.size > 1
 
 		const ref = `(see <a href="/category-implication/${implication_id}">here</a>)`
 
-		const reason =
-			`Assume that it ${properties_dict[property].relation} ${property}. ` +
-			`But since it ${assumption_string}, it ${conclusion_string} ${ref} – contradiction.`
+		const contra = `Assume for contradiction that it ${properties_dict[property].relation} ${property}`
+
+		const reason = has_multiple_assumptions
+			? `${contra}. Then it ${assumption_string}, so it ${conclusion_string} ${ref} – contradiction.`
+			: `${contra}. Then it ${conclusion_string} ${ref} – contradiction.`
 
 		reasons[property] = reason
 	}
