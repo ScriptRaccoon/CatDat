@@ -27,7 +27,14 @@ type NormalizedImplication = {
 	id: string
 	assumptions: Set<string>
 	conclusion: string
-	relations: Record<string, string>
+}
+
+type PropertyMeta = {
+	id: string
+	dual_property_id: string | null
+	relation: string
+	negation: string
+	conditional: string
 }
 
 export type NormalizedCategoryImplication = NormalizedImplication
@@ -37,14 +44,22 @@ export type NormalizedFunctorImplication = NormalizedImplication & {
 	target_assumptions: Set<string>
 }
 
-export function get_assumption_string(implication: NormalizedImplication): string {
-	const { assumptions, relations } = implication
+export function get_assumption_string(
+	implication: NormalizedImplication,
+	properties_dict: Record<string, PropertyMeta>,
+): string {
+	const { assumptions } = implication
+
 	return Array.from(assumptions)
-		.map((assumption) => `${relations[assumption]} ${assumption}`)
+		.map((assumption) => `${properties_dict[assumption].relation} ${assumption}`)
 		.join(' and ')
 }
 
-export function get_conclusion_string(implication: NormalizedImplication): string {
-	const { conclusion, relations } = implication
-	return `${relations[conclusion]} ${conclusion}`
+export function get_conclusion_string(
+	implication: NormalizedImplication,
+	properties_dict: Record<string, PropertyMeta>,
+): string {
+	const { conclusion } = implication
+
+	return `${properties_dict[conclusion].relation} ${conclusion}`
 }

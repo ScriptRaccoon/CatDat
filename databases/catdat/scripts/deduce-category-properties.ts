@@ -12,9 +12,12 @@ type CategoryMeta = {
 	dual_category_id: string | null
 }
 
-type PropertyMeta = {
+type CategoryPropertyMeta = {
 	id: string
 	dual_property_id: string | null
+	relation: string
+	negation: string
+	conditional: string
 }
 
 /**
@@ -41,6 +44,7 @@ export async function deduce_category_properties(db: Client) {
 				category.id,
 				implications,
 				decided_properties[category.id].satisfied,
+				properties_dict,
 			)
 			await deduce_unsatisfied_category_properties(
 				tx,
@@ -48,6 +52,7 @@ export async function deduce_category_properties(db: Client) {
 				implications,
 				decided_properties[category.id].satisfied,
 				decided_properties[category.id].unsatisfied,
+				properties_dict,
 			)
 		}
 
@@ -74,6 +79,7 @@ export async function deduce_category_properties(db: Client) {
 				category.id,
 				implications,
 				decided_properties[category.id].satisfied,
+				properties_dict,
 				{ check_conflicts: false },
 			)
 			await deduce_unsatisfied_category_properties(
@@ -82,6 +88,7 @@ export async function deduce_category_properties(db: Client) {
 				implications,
 				decided_properties[category.id].satisfied,
 				decided_properties[category.id].unsatisfied,
+				properties_dict,
 				{ check_conflicts: false },
 			)
 		}
@@ -116,16 +123,7 @@ async function get_normalized_category_implications(
 			v.id,
             v.assumptions,
             v.conclusions,
-            v.is_equivalence,
-            (
-                SELECT json_group_object(p.id, p.relation)
-                FROM properties p
-                WHERE p.id IN (
-                    SELECT value FROM json_each(v.assumptions)
-                    UNION
-                    SELECT value FROM json_each(v.conclusions)
-                )
-            ) AS relations
+            v.is_equivalence
         FROM implications_view v
     `)
 
@@ -134,7 +132,6 @@ async function get_normalized_category_implications(
 		assumptions: string
 		conclusions: string
 		is_equivalence: number
-		relations: string
 	}[]
 
 	const implications: NormalizedCategoryImplication[] = []
@@ -142,14 +139,12 @@ async function get_normalized_category_implications(
 	for (const impl of all_implications_db) {
 		const assumptions: string[] = JSON.parse(impl.assumptions)
 		const conclusions: string[] = JSON.parse(impl.conclusions)
-		const relations: Record<string, string> = JSON.parse(impl.relations)
 
 		for (const conclusion of conclusions) {
 			implications.push({
 				id: impl.id,
 				assumptions: new Set(assumptions),
 				conclusion,
-				relations,
 			})
 		}
 
@@ -159,7 +154,6 @@ async function get_normalized_category_implications(
 					id: impl.id,
 					assumptions: new Set(conclusions),
 					conclusion: assumption,
-					relations,
 				})
 			}
 		}
@@ -184,17 +178,18 @@ async function get_categories(tx: Transaction) {
  */
 async function get_properties_dict(tx: Transaction) {
 	const res = await tx.execute(`
-		SELECT p.id, p.dual_property_id
+		SELECT
+			p.id, p.dual_property_id, p.relation,
+			r.negation, r.conditional
 		FROM properties p
+		INNER JOIN relations r ON r.relation = p.relation
 		ORDER BY lower(p.id)
 	`)
-	const rows = res.rows as unknown as PropertyMeta[]
+	const rows = res.rows as unknown as CategoryPropertyMeta[]
 
-	const dict: Record<string, PropertyMeta> = {}
+	const dict: Record<string, CategoryPropertyMeta> = {}
 
-	for (const p of rows) {
-		dict[p.id] = p
-	}
+	for (const p of rows) dict[p.id] = p
 
 	return dict
 }
@@ -254,6 +249,7 @@ async function deduce_satisfied_category_properties(
 	category_id: string,
 	implications: NormalizedCategoryImplication[],
 	satisfied_properties: Set<string>,
+	properties_dict: Record<string, CategoryPropertyMeta>,
 	options: { check_conflicts: boolean } = { check_conflicts: true },
 ) {
 	const deduced_satisfied_props: string[] = []
@@ -272,8 +268,8 @@ async function deduce_satisfied_category_properties(
 		satisfied_properties.add(conclusion)
 		deduced_satisfied_props.push(conclusion)
 
-		const assumption_string = get_assumption_string(implication)
-		const conclusion_string = get_conclusion_string(implication)
+		const assumption_string = get_assumption_string(implication, properties_dict)
+		const conclusion_string = get_conclusion_string(implication, properties_dict)
 
 		const ref = `(see <a href="/category-implication/${implication_id}">here</a>)`
 		const reason = `Since it ${assumption_string}, it ${conclusion_string} ${ref}.`
@@ -332,6 +328,7 @@ async function deduce_unsatisfied_category_properties(
 	implications: NormalizedCategoryImplication[],
 	satisfied_properties: Set<string>,
 	unsatisfied_properties: Set<string>,
+	properties_dict: Record<string, CategoryPropertyMeta>,
 	options: { check_conflicts: boolean } = { check_conflicts: true },
 ) {
 	const deduced_unsatisfied_props: string[] = []
@@ -356,7 +353,7 @@ async function deduce_unsatisfied_category_properties(
 		if (!next) break
 
 		const { implication, property } = next
-		const { id: implication_id, relations } = implication
+		const { id: implication_id } = implication
 
 		if (satisfied_properties.has(property)) {
 			throw new Error(`Contradiction has been found for: ${property}`)
@@ -365,13 +362,13 @@ async function deduce_unsatisfied_category_properties(
 		unsatisfied_properties.add(property)
 		deduced_unsatisfied_props.push(property)
 
-		const assumption_string = get_assumption_string(implication)
-		const conclusion_string = get_conclusion_string(implication)
+		const assumption_string = get_assumption_string(implication, properties_dict)
+		const conclusion_string = get_conclusion_string(implication, properties_dict)
 
 		const ref = `(see <a href="/category-implication/${implication_id}">here</a>)`
 
 		const reason =
-			`Assume that it ${relations[property]} ${property}. ` +
+			`Assume that it ${properties_dict[property].relation} ${property}. ` +
 			`But since it ${assumption_string}, it ${conclusion_string} ${ref} – contradiction.`
 
 		reasons[property] = reason
@@ -429,7 +426,7 @@ async function deduce_dual_category_properties(
 	unsatisfied: Set<string>,
 	dual_satisfied: Set<string>,
 	dual_unsatisfied: Set<string>,
-	properties_dict: Record<string, PropertyMeta>,
+	properties_dict: Record<string, CategoryPropertyMeta>,
 ) {
 	const new_satisfied = new Set<string>()
 

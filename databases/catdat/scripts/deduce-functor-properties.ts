@@ -15,6 +15,14 @@ type FunctorMeta = {
 	target_props: Set<string>
 }
 
+type FunctorPropertyMeta = {
+	id: string
+	dual_property_id: string | null
+	relation: string
+	negation: string
+	conditional: string
+}
+
 // TODO: remove code duplication with category deduction script
 // (not quite the same because we need source and target assumptions)
 
@@ -30,11 +38,22 @@ export async function deduce_functor_properties(db: Client) {
 		const implications = await get_normalized_functor_implications(tx)
 
 		const functors = await get_functors(tx)
+		const properties_dict = await get_functor_properties_dict(tx)
 
 		for (const functor of functors) {
-			await delete_deduced_functor_properties(tx, functor)
-			await deduce_satisfied_functor_properties(tx, functor, implications)
-			await deduce_unsatisfied_functor_properties(tx, functor, implications)
+			await delete_deduced_functor_properties(tx, functor) // TODO: do this at once for all
+			await deduce_satisfied_functor_properties(
+				tx,
+				functor,
+				implications,
+				properties_dict,
+			)
+			await deduce_unsatisfied_functor_properties(
+				tx,
+				functor,
+				implications,
+				properties_dict,
+			)
 		}
 
 		await tx.commit()
@@ -69,16 +88,7 @@ async function get_normalized_functor_implications(
 			v.source_assumptions,
 			v.target_assumptions,
             v.conclusions,
-            v.is_equivalence,
-            (
-                SELECT json_group_object(p.id, p.relation)
-                FROM functor_properties p
-                WHERE p.id IN (
-                    SELECT value FROM json_each(v.assumptions)
-                    UNION
-                    SELECT value FROM json_each(v.conclusions)
-                )
-            ) AS relations
+            v.is_equivalence
         FROM functor_implications_view v
     `)
 
@@ -89,7 +99,6 @@ async function get_normalized_functor_implications(
 		target_assumptions: string
 		conclusions: string
 		is_equivalence: number
-		relations: string
 	}[]
 
 	const implications: NormalizedFunctorImplication[] = []
@@ -99,7 +108,6 @@ async function get_normalized_functor_implications(
 		const conclusions: string[] = JSON.parse(impl.conclusions)
 		const source_assumptions: string[] = JSON.parse(impl.source_assumptions)
 		const target_assumptions: string[] = JSON.parse(impl.target_assumptions)
-		const relations: Record<string, string> = JSON.parse(impl.relations)
 
 		for (const conclusion of conclusions) {
 			implications.push({
@@ -108,7 +116,6 @@ async function get_normalized_functor_implications(
 				source_assumptions: new Set(source_assumptions),
 				target_assumptions: new Set(target_assumptions),
 				conclusion,
-				relations,
 			})
 		}
 
@@ -120,7 +127,6 @@ async function get_normalized_functor_implications(
 					source_assumptions: new Set(source_assumptions),
 					target_assumptions: new Set(target_assumptions),
 					conclusion: assumption,
-					relations,
 				})
 			}
 		}
@@ -169,6 +175,27 @@ async function get_functors(tx: Transaction) {
 }
 
 /**
+ * Returns a dictionary of functor properties saved in the database.
+ */
+async function get_functor_properties_dict(tx: Transaction) {
+	const res = await tx.execute(`
+		SELECT
+			p.id, p.dual_property_id, p.relation,
+			r.negation, r.conditional
+		FROM functor_properties p
+		INNER JOIN relations r ON r.relation = p.relation
+		ORDER BY lower(p.id)
+	`)
+	const rows = res.rows as unknown as FunctorPropertyMeta[]
+
+	const dict: Record<string, FunctorPropertyMeta> = {}
+
+	for (const p of rows) dict[p.id] = p
+
+	return dict
+}
+
+/**
  * Clears all the deduced functor properties.
  * This runs before the deduction starts.
  */
@@ -211,6 +238,7 @@ async function deduce_satisfied_functor_properties(
 	tx: Transaction,
 	functor: FunctorMeta,
 	implications: NormalizedFunctorImplication[],
+	properties_dict: Record<string, FunctorPropertyMeta>,
 ) {
 	const satisfied_props = await get_decided_functor_properties(tx, functor.id, true)
 
@@ -232,8 +260,8 @@ async function deduce_satisfied_functor_properties(
 		satisfied_props.add(conclusion)
 		deduced_satisfied_props.push(conclusion)
 
-		const assumption_string = get_assumption_string(implication)
-		const conclusion_string = get_conclusion_string(implication)
+		const assumption_string = get_assumption_string(implication, properties_dict)
+		const conclusion_string = get_conclusion_string(implication, properties_dict)
 
 		const ref = `(see <a href="/functor-implication/${implication_id}">here</a>)`
 		const reason = `Since it ${assumption_string}, it ${conclusion_string} ${ref}.`
@@ -275,6 +303,7 @@ async function deduce_unsatisfied_functor_properties(
 	tx: Transaction,
 	functor: FunctorMeta,
 	implications: NormalizedFunctorImplication[],
+	properties_dict: Record<string, FunctorPropertyMeta>,
 ) {
 	const satisfied_props = await get_decided_functor_properties(tx, functor.id, true)
 	const unsatisfied_props = await get_decided_functor_properties(tx, functor.id, false)
@@ -304,7 +333,7 @@ async function deduce_unsatisfied_functor_properties(
 		if (!next) break
 
 		const { implication, property } = next
-		const { id: implication_id, relations } = implication
+		const { id: implication_id } = implication
 
 		if (satisfied_props.has(property)) {
 			throw new Error(`Contradiction has been found for: ${property}`)
@@ -313,13 +342,13 @@ async function deduce_unsatisfied_functor_properties(
 		unsatisfied_props.add(property)
 		deduced_unsatisfied_props.push(property)
 
-		const assumption_string = get_assumption_string(implication)
-		const conclusion_string = get_conclusion_string(implication)
+		const assumption_string = get_assumption_string(implication, properties_dict)
+		const conclusion_string = get_conclusion_string(implication, properties_dict)
 
 		const ref = `(see <a href="/functor-implication/${implication_id}">here</a>)`
 
 		const reason =
-			`Assume that it ${relations[property]} ${property}. ` +
+			`Assume that it ${properties_dict[property].relation} ${property}. ` +
 			`But since it ${assumption_string}, it ${conclusion_string} ${ref} – contradiction.`
 
 		reasons[property] = reason
