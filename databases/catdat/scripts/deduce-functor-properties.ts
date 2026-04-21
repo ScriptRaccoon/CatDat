@@ -263,8 +263,8 @@ async function deduce_satisfied_functor_properties(
 		const assumption_string = get_assumption_string(implication, properties_dict)
 		const conclusion_string = get_conclusion_string(implication, properties_dict)
 
-		const ref = `(see <a href="/functor-implication/${implication_id}">here</a>)`
-		const reason = `Since it ${assumption_string}, it ${conclusion_string} ${ref}.`
+		const ref = `by <a href="/functor-implication/${implication_id}">this result</a>`
+		const reason = `Since it ${assumption_string}, it ${conclusion_string} (${ref}).`
 
 		reasons[conclusion] = reason
 	}
@@ -347,13 +347,13 @@ async function deduce_unsatisfied_functor_properties(
 
 		const has_multiple_assumptions = implication.assumptions.size > 1
 
-		const ref = `(see <a href="/functor-implication/${implication_id}">here</a>)`
+		const ref = `by <a href="/functor-implication/${implication_id}">this result</a>`
 
 		const contra = `Assume for contradiction that it ${properties_dict[property].relation} ${property}`
 
 		const reason = has_multiple_assumptions
-			? `${contra}. Then it ${assumption_string}, so it ${conclusion_string} ${ref} – contradiction.`
-			: `${contra}. Then it ${conclusion_string} ${ref} – contradiction.`
+			? `${contra}. Then it ${assumption_string}, so it ${conclusion_string} (${ref}) – contradiction.`
+			: `${contra}. Then it ${conclusion_string} (${ref}) – contradiction.`
 
 		reasons[property] = reason
 	}
