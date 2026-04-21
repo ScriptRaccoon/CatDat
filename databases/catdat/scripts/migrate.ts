@@ -12,6 +12,7 @@ await migrate()
  * Creates the tables, indexes, triggers, and views.
  */
 async function migrate() {
+	console.info('\n--- Migrate CatDat database ---')
 	const db = get_client()
 	await db.execute('PRAGMA foreign_keys = ON')
 	await create_migrations_table(db)

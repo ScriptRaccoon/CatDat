@@ -22,6 +22,8 @@ type PropertyMeta = {
  * by using the list of implications.
  */
 export async function deduce_category_properties(db: Client) {
+	console.info('\n--- Deduce category properties ---')
+
 	const tx = await db.transaction()
 
 	try {
@@ -302,7 +304,7 @@ async function deduce_satisfied_category_properties(
 	}
 
 	console.info(
-		`Added ${deduced_satisfied_props.length} satisfied properties for category ${category_id} to the database`,
+		`Deduced ${deduced_satisfied_props.length} satisfied properties for ${category_id}`,
 	)
 }
 
@@ -384,7 +386,7 @@ async function deduce_unsatisfied_category_properties(
 	}
 
 	console.info(
-		`Added ${deduced_unsatisfied_props.length} unsatisfied properties for category ${category_id} to the database`,
+		`Deduced ${deduced_unsatisfied_props.length} unsatisfied properties for ${category_id}`,
 	)
 }
 
@@ -436,7 +438,7 @@ async function deduce_dual_category_properties(
 		await tx.execute({ sql: insert_query, args: values })
 
 		console.info(
-			`Deduced ${new_satisfied.size} satisfied properties by duality for category ${category.id}`,
+			`Deduced ${new_satisfied.size} satisfied properties by duality for ${category.id}`,
 		)
 	}
 
@@ -461,7 +463,7 @@ async function deduce_dual_category_properties(
 		await tx.execute({ sql: insert_query, args: values })
 
 		console.info(
-			`Deduced ${new_unsatisfied.size} unsatisfied properties by duality for category ${category.id}`,
+			`Deduced ${new_unsatisfied.size} unsatisfied properties by duality for ${category.id}`,
 		)
 	}
 }

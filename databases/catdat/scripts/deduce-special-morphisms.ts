@@ -5,6 +5,7 @@ import type { Client } from '@libsql/client'
 // e.g. regular monomorphisms = same as monomorphisms in mono-regular categories
 
 export async function deduce_special_morphisms(db: Client) {
+	console.info('\n--- Deduce special morphisms ---')
 	await deduce_special_morphisms_of_dual_categories(db)
 }
 
@@ -27,5 +28,5 @@ async function deduce_special_morphisms_of_dual_categories(db: Client) {
         ON CONFLICT DO NOTHING
     `)
 
-	console.info(`Dualized ${res.rowsAffected} special morphisms`)
+	console.info(`Deduced ${res.rowsAffected} special morphisms by duality`)
 }

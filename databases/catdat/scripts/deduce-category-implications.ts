@@ -5,6 +5,7 @@ import { are_equal_sets } from './shared'
  * Deduces implications from given ones.
  */
 export async function deduce_category_implications(db: Client) {
+	console.info('\n--- Deduce category implications ---')
 	await clear_deduced_category_implications(db)
 	await create_dualized_category_implications(db)
 	await create_self_dual_category_implications(db)
@@ -96,7 +97,7 @@ async function create_dualized_category_implications(db: Client) {
 		'write',
 	)
 
-	console.info(`Dualized ${dualizable_implications.length} category implications`)
+	console.info(`Deduced ${dualizable_implications.length} implications by duality`)
 }
 
 /**
@@ -130,5 +131,5 @@ async function create_self_dual_category_implications(db: Client) {
         RETURNING id
     `)
 
-	console.info(`Created ${rows.length} self-dual category implications`)
+	console.info(`Deduced ${rows.length} implications by self-duality`)
 }

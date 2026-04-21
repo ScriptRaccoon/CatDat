@@ -18,11 +18,21 @@ await execute_tests()
  * The main test function verifying that the data behaves as expected.
  */
 async function execute_tests() {
-	await test_mutual_category_duals()
-	await test_mutual_property_duals()
-	await test_decided_categories()
-	await test_properties_of_trivial_category()
-	await test_properties_of_core_categories()
+	console.info('\n--- Test database ---')
+	try {
+		await test_mutual_category_duals()
+		await test_mutual_property_duals()
+		await test_decided_categories()
+		await test_properties_of_trivial_category()
+		await test_properties_of_core_categories()
+	} catch (err) {
+		if (err instanceof Error) {
+			console.error(err.message)
+		} else {
+			console.error(err)
+		}
+		process.exit(1)
+	}
 }
 
 /**

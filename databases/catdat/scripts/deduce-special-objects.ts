@@ -1,6 +1,7 @@
 import type { Client } from '@libsql/client'
 
 export async function deduce_special_objects(db: Client) {
+	console.info('\n--- Deduce special objects ---')
 	await deduce_special_objects_of_dual_categories(db)
 }
 
@@ -22,5 +23,5 @@ async function deduce_special_objects_of_dual_categories(db: Client) {
         ON CONFLICT DO NOTHING
     `)
 
-	console.info(`Dualized ${res.rowsAffected} special objects`)
+	console.info(`Deduced ${res.rowsAffected} special objects by duality`)
 }

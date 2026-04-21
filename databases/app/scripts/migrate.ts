@@ -19,6 +19,7 @@ migrate()
  * Creates the tables in the app database.
  */
 async function migrate() {
+	console.info('\n--- Migrate App database ---')
 	await create_visits_table()
 	await create_submissions_table()
 }

@@ -6,6 +6,7 @@ import { get_client } from './shared'
  * Seeds the data recorded in SQL files into the database.
  */
 async function seed() {
+	console.info('\n--- Seed CatDat database ---')
 	const db = get_client()
 	const data_folder = path.join(process.cwd(), 'databases', 'catdat', 'data')
 
@@ -50,8 +51,6 @@ async function seed() {
 		console.error(err)
 		process.exit(1)
 	}
-
-	console.info('Seeded all data')
 }
 
 await seed()

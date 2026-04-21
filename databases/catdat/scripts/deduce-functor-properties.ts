@@ -23,6 +23,7 @@ type FunctorMeta = {
  * by using the list of functor implications.
  */
 export async function deduce_functor_properties(db: Client) {
+	console.info('\n--- Deduce functor properties ---')
 	const tx = await db.transaction()
 
 	try {
@@ -262,7 +263,7 @@ async function deduce_satisfied_functor_properties(
 	}
 
 	console.info(
-		`Added ${deduced_satisfied_props.length} satisfied properties for functor ${functor.id} to the database`,
+		`Deduced ${deduced_satisfied_props.length} satisfied properties for ${functor.id}`,
 	)
 }
 
@@ -345,6 +346,6 @@ async function deduce_unsatisfied_functor_properties(
 	}
 
 	console.info(
-		`Added ${deduced_unsatisfied_props.length} unsatisfied properties for functor ${functor.id} to the database`,
+		`Deduced ${deduced_unsatisfied_props.length} unsatisfied properties for ${functor.id}`,
 	)
 }

@@ -7,6 +7,7 @@ import { are_equal_sets } from './shared'
  * Deduces functor implications from given ones.
  */
 export async function deduce_functor_implications(db: Client) {
+	console.info('\n--- Deduce functor implications ---')
 	await clear_deduced_functor_implications(db)
 	await create_dualized_functor_implications(db)
 }
@@ -116,5 +117,5 @@ async function create_dualized_functor_implications(db: Client) {
 		'write',
 	)
 
-	console.info(`Dualized ${dualizable_implications.length} functor implications`)
+	console.info(`Deduced ${dualizable_implications.length} implications by duality`)
 }
