@@ -26,8 +26,10 @@ type FunctorPropertyMeta = {
 // TODO: remove code duplication with category deduction script
 // (not quite the same because we need source and target assumptions)
 
+// TODO: apply the same refactoring here that has been done for categories
+
 /**
- * Deduce properties of functor from given ones
+ * Deduce properties of functors from given ones
  * by using the list of functor implications.
  */
 export async function deduce_functor_properties(db: Client) {
@@ -40,8 +42,9 @@ export async function deduce_functor_properties(db: Client) {
 		const functors = await get_functors(tx)
 		const properties_dict = await get_functor_properties_dict(tx)
 
+		await delete_deduced_functor_properties(tx)
+
 		for (const functor of functors) {
-			await delete_deduced_functor_properties(tx, functor) // TODO: do this at once for all
 			await deduce_satisfied_functor_properties(
 				tx,
 				functor,
@@ -199,14 +202,8 @@ async function get_functor_properties_dict(tx: Transaction) {
  * Clears all the deduced functor properties.
  * This runs before the deduction starts.
  */
-async function delete_deduced_functor_properties(tx: Transaction, functor: FunctorMeta) {
-	await tx.execute({
-		sql: `
-			DELETE FROM functor_property_assignments
-			WHERE functor_id = ? AND is_deduced = TRUE
-		`,
-		args: [functor.id],
-	})
+async function delete_deduced_functor_properties(tx: Transaction) {
+	await tx.execute('DELETE FROM functor_property_assignments WHERE is_deduced = TRUE')
 }
 
 /**
