@@ -4,7 +4,7 @@
 
 _CatDat_ is based on a [SQLite database](https://sqlite.org/). During runtime of the application, it is read-only.
 
-The local copy of the database is located at `/database/local.db`. It has three main tables:
+The local copy of the database is located at `/databases/catdat/catdat.db`. It has three main tables:
 
 - `categories`
 - `properties`
@@ -37,9 +37,9 @@ Further tables are:
 
 ## Migrations vs. Data
 
-Migrations update the database structure: tables, views, indexes, and triggers. They are defined in SQL files located in the subfolder [/database/migrations](/database/migrations/). The command `pnpm db:migrate` applies any new migrations.
+Migrations update the database structure: tables, views, indexes, and triggers. They are defined in SQL files located in the subfolder [/databases/catdat/migrations](/databases/catdat/migrations/). The command `pnpm db:migrate` applies any new migrations.
 
-Database entries (categories, properties, implications, etc.) are defined via SQL files in the subfolder [/database/data](/database/data). The command `pnpm db:seed` replaces the current database by clearing all existing data and inserting the entries defined in these SQL files.
+Database entries (categories, properties, implications, etc.) are defined via SQL files in the subfolder [/databases/catdat/data](/databases/catdat/data). The command `pnpm db:seed` replaces the current database by clearing all existing data and inserting the entries defined in these SQL files.
 
 ## Derived Data
 
@@ -55,10 +55,14 @@ The command `pnpm db:test` executes some tests and verifies that the data behave
 
 Use `pnpm db:update` to run all the commands in sequence: `pnpm db:migrate`, `pnpm db:seed`,`pnpm db:deduce`, and `pnpm db:test`.
 
-Use `pnpm db:watch` to run this command automatically every time a file in the subfolder [/database/data](/database/data) changes. This is useful in particular during development.
+Use `pnpm db:watch` to run this command automatically every time a file in the subfolder [/databases/catdat/data](/databases/catdat/data) changes. This is useful in particular during development.
 
 ## Diagram
 
 This is the database schema as of 21.04.2026; changes may occur.
 
 <img alt="database diagram" src="https://github.com/user-attachments/assets/719358dc-a3bb-4da2-a1f7-e555203e61e3" />
+
+## Application Database
+
+The application itself uses another database to store user submissions and page visits. The local copy of this database is at `/databases/app/app.db`.

@@ -34,6 +34,6 @@ jobs:
 
             - name: Update and Test database
               env:
-                  DB_URL: file:database/local.db
-                  DB_VISITS_URL: file:database/visits.db
+                  CATDAT_DB_URL: file:databases/catdat/catdat.db
+                  APP_DB_URL: file:databases/app/app.db
               run: pnpm db:update

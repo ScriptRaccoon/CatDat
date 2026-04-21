@@ -1,5 +1,5 @@
 import sql from 'sql-template-tag'
-import { query } from '$lib/server/db'
+import { query } from '$lib/server/db.catdat'
 
 type AtomicImplication = { assumptions: string[]; conclusion: string }
 

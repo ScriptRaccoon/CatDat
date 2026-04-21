@@ -27,9 +27,6 @@ todo.txt
 thoughts.txt
 
 # Local databases
-database/*.db
-database/*.db-wal
-database/*.db-shm
-database_visits/*.db
-database_visits/*.db-wal
-database_visits/*.db-shm
+databases/**/*.db
+databases/**/*.db-wal
+databases/**/*.db-shm

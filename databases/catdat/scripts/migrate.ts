@@ -38,7 +38,12 @@ async function apply_migrations(db: Client) {
 	const { rows } = await db.execute('SELECT file FROM migrations')
 	const applied_migrations = new Set<string>(rows.map((row) => row.file) as string[])
 
-	const migrations_folder = path.join(process.cwd(), 'database', 'migrations')
+	const migrations_folder = path.join(
+		process.cwd(),
+		'databases',
+		'catdat',
+		'migrations',
+	)
 	const unsorted_files = await fs.readdir(migrations_folder, 'utf8')
 	const files = unsorted_files.filter((f) => f.endsWith('.sql')).sort()
 

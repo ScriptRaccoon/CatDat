@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit'
-import { query } from '$lib/server/db'
+import { query } from '$lib/server/db.catdat'
 import { render_nested_formulas } from '$lib/server/rendering'
 import { MAX_CATEGORIES_COMPARE } from '../compare.config'
 

@@ -14,14 +14,14 @@
 		"format": "prettier --write .",
 		"lint": "prettier --check .",
 		"prepare": "husky",
-		"db:shell": "sqlite3 database/local.db",
-		"db:kill": "rm -rf database/local.db",
-		"db:migrate": "tsx scripts/migrate.ts && tsx database_visits/migrate.ts",
-		"db:seed": "tsx scripts/seed.ts",
-		"db:deduce": "tsx scripts/deduce.ts",
-		"db:test": "tsx scripts/test.ts",
+		"db:shell": "sqlite3 databases/catdat/catdat.db",
+		"db:kill": "rm -rf databases/catdat/catdat.db",
+		"db:migrate": "tsx databases/catdat/scripts/migrate.ts && tsx databases/app/scripts/migrate.ts",
+		"db:seed": "tsx databases/catdat/scripts/seed.ts",
+		"db:deduce": "tsx databases/catdat/scripts/deduce.ts",
+		"db:test": "tsx databases/catdat/scripts/test.ts",
 		"db:update": "pnpm db:migrate && pnpm db:seed && pnpm db:deduce && pnpm db:test",
-		"db:watch": "tsx scripts/watch.ts"
+		"db:watch": "tsx databases/catdat/scripts/watch.ts"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-netlify": "^6.0.4",

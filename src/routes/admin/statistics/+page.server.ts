@@ -1,4 +1,4 @@
-import { batch_visits } from '$lib/server/db.visits'
+import { batch_app } from '$lib/server/db.app'
 import { error } from '@sveltejs/kit'
 import sql from 'sql-template-tag'
 import { has_session } from '../sessions'
@@ -9,7 +9,7 @@ export const prerender = false
 export const load = async (event) => {
 	if (!has_session(event)) redirect(307, '/admin/login')
 
-	const { err, results } = await batch_visits<
+	const { err, results } = await batch_app<
 		[
 			{
 				start: string

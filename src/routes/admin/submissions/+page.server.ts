@@ -1,6 +1,6 @@
 import { error, fail, redirect } from '@sveltejs/kit'
 import { has_session } from '../sessions'
-import { query_visits } from '$lib/server/db.visits'
+import { query_app } from '$lib/server/db.app'
 import sql from 'sql-template-tag'
 import { App } from '@octokit/app'
 import { GITHUB_PRIVATE_KEY } from '$env/static/private'
@@ -15,7 +15,7 @@ const GITHUB_REPO = 'CatDat'
 export const load = async (event) => {
 	if (!has_session(event)) redirect(307, '/admin/login')
 
-	const { rows: submissions, err } = await query_visits<{
+	const { rows: submissions, err } = await query_app<{
 		id: number
 		title: string
 		body: string
@@ -44,7 +44,7 @@ export const actions = {
 		const submission_id = form.get('id')
 		if (!submission_id) return fail(400, { error: 'Submission ID required' })
 
-		const { err } = await query_visits(
+		const { err } = await query_app(
 			sql`DELETE FROM submissions WHERE id = ${submission_id}`,
 		)
 
@@ -60,7 +60,7 @@ export const actions = {
 		const submission_id = form.get('id')
 		if (!submission_id) return fail(400, { error: 'Submission ID required' })
 
-		const { rows, err } = await query_visits<{
+		const { rows, err } = await query_app<{
 			title: string
 			body: string
 			name: string | null

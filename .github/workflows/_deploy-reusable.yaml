@@ -10,17 +10,17 @@ on:
                 required: true
                 type: boolean
         secrets:
-            DB_URL:
+            CATDAT_DB_URL:
                 required: true
-            DB_AUTH_TOKEN:
+            CATDAT_DB_AUTH_TOKEN:
+                required: true
+            APP_DB_URL:
+                required: true
+            APP_DB_AUTH_TOKEN:
                 required: true
             NETLIFY_SITE_ID:
                 required: true
             NETLIFY_ACCESS_TOKEN:
-                required: true
-            DB_VISITS_URL:
-                required: true
-            DB_VISITS_AUTH_TOKEN:
                 required: true
             _GITHUB_PRIVATE_KEY:
                 required: true
@@ -68,18 +68,18 @@ jobs:
             - name: Update database
               if: ${{ !inputs.skip_db }}
               env:
-                  DB_URL: ${{ secrets.DB_URL }}
-                  DB_AUTH_TOKEN: ${{ secrets.DB_AUTH_TOKEN }}
-                  DB_VISITS_URL: ${{ secrets.DB_VISITS_URL }}
-                  DB_VISITS_AUTH_TOKEN: ${{ secrets.DB_VISITS_AUTH_TOKEN }}
+                  CATDAT_DB_URL: ${{ secrets.CATDAT_DB_URL }}
+                  CATDAT_DB_AUTH_TOKEN: ${{ secrets.CATDAT_DB_AUTH_TOKEN }}
+                  APP_DB_URL: ${{ secrets.APP_DB_URL }}
+                  APP_DB_AUTH_TOKEN: ${{ secrets.APP_DB_AUTH_TOKEN }}
               run: pnpm db:update
 
             - name: Build app
               env:
-                  DB_URL: ${{ secrets.DB_URL }}
-                  DB_AUTH_TOKEN: ${{ secrets.DB_AUTH_TOKEN }}
-                  DB_VISITS_URL: ${{ secrets.DB_VISITS_URL }}
-                  DB_VISITS_AUTH_TOKEN: ${{ secrets.DB_VISITS_AUTH_TOKEN }}
+                  CATDAT_DB_URL: ${{ secrets.CATDAT_DB_URL }}
+                  CATDAT_DB_AUTH_TOKEN: ${{ secrets.CATDAT_DB_AUTH_TOKEN }}
+                  APP_DB_URL: ${{ secrets.APP_DB_URL }}
+                  APP_DB_AUTH_TOKEN: ${{ secrets.APP_DB_AUTH_TOKEN }}
                   GITHUB_PRIVATE_KEY: ${{ secrets._GITHUB_PRIVATE_KEY }}
                   REDIS_URL: ${{ secrets.REDIS_URL }}
                   ADMIN_PAGE_PASSWORD: ${{ secrets.ADMIN_PAGE_PASSWORD }}

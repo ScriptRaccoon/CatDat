@@ -4,7 +4,7 @@ import type {
 	FunctorPropertyAssignmentDB,
 	FunctorPropertyShort,
 } from '$lib/commons/types'
-import { batch } from '$lib/server/db'
+import { batch } from '$lib/server/db.catdat'
 import { render_nested_formulas } from '$lib/server/rendering'
 import { error } from '@sveltejs/kit'
 import sql from 'sql-template-tag'

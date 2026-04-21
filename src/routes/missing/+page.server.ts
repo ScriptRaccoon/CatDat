@@ -1,4 +1,4 @@
-import { batch } from '$lib/server/db'
+import { batch } from '$lib/server/db.catdat'
 import sql from 'sql-template-tag'
 import type { CategoryShort, FunctorShort } from '$lib/commons/types'
 import { error } from '@sveltejs/kit'

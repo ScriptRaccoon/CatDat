@@ -1,9 +1,9 @@
 import { json } from '@sveltejs/kit'
-import { query_visits } from '$lib/server/db.visits'
 import sql from 'sql-template-tag'
 import { redis } from '$lib/server/redis'
 import { send_email } from '$lib/server/email'
 import { APPROVAL_EMAIL } from '$env/static/private'
+import { query_app } from '$lib/server/db.app'
 
 const TITLE_MAX_LENGTH = 50
 const BODY_MAX_LENGTH = 10000
@@ -28,7 +28,7 @@ export const POST = async (event) => {
 
 	const { title, body, url, name } = data
 
-	const { err } = await query_visits(sql`
+	const { err } = await query_app(sql`
 		INSERT INTO submissions (title, body, url, name)
 		VALUES (${title}, ${body}, ${url}, ${name})	
 	`)

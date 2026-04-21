@@ -2,7 +2,7 @@ import chokidar from 'chokidar'
 import path from 'path'
 import { exec } from 'node:child_process'
 
-const data_folder = path.join(process.cwd(), 'database', 'data')
+const data_folder = path.join(process.cwd(), 'databases', 'catdat', 'data')
 
 function onchange(file: string) {
 	console.info(`File changed: ${file}`)

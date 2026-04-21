@@ -49,7 +49,7 @@ You need to have [Git](https://git-scm.com/), [NodeJS](https://nodejs.org/) and 
 
 ### Updating the Database
 
-All updates to the database are made by updating the SQL files in the folder [/database](database/) (see also [DATABASE.md](/DATABASE.md)).
+All updates to the database are made by updating the SQL files in the folder [/databases/catdat](databases/catdat) (see also [DATABASE.md](/DATABASE.md)).
 
 Apply the updates using:
 
@@ -63,11 +63,11 @@ You can also use
 pnpm db:watch
 ```
 
-to continuously run this update when a file in the subfolder [/database/data](/database/data) changes.
+to continuously run this update when a file in the subfolder [/databases/catdat/data](/databases/catdat/data) changes.
 
 ### Troubleshooting
 
-- If the local database is corrupted, delete the `local.db` file and recreate it using `pnpm db:update`.
+- If the local database is corrupted, delete the `catdat.db` file and recreate it using `pnpm db:update`.
 - If the `pnpm db:update` command fails, examine the error message to determine the cause. It could be due to malformed SQL or a failing test in the `pnpm db:test` script (which also runs as part of the update command), as explained below.
 
 ### Tests for Data Quality
@@ -76,8 +76,8 @@ The `pnpm db:test` command runs several tests to ensure the data behaves as expe
 
 1. Properties and their duals are mutual.
 2. Categories and their duals are mutual.
-3. For a specified list of categories (see [decided-categories.json](/scripts/expected-data/decided-categories.json)), all properties have been decided.
-4. Every property of the "core categories" (currently: `Set`, `Ab`, `Top`) matches precisely the expected properties defined in the [/scripts/expected-data](/scripts/expected-data/) folder.
+3. For a specified list of categories (see [decided-categories.json](/databases/catdat/scripts/expected-data/decided-categories.json)), all properties have been decided.
+4. Every property of the "core categories" (currently: `Set`, `Ab`, `Top`) matches precisely the expected properties defined in the [/databases/catdat/scripts/expected-data](/databases/catdat/scripts/expected-data/) folder.
 
 If any of these tests fail, adjust the data accordingly.
 

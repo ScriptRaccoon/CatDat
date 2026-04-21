@@ -1,5 +1,5 @@
 import type { CategoryShort, TagObject } from '$lib/commons/types'
-import { query } from '$lib/server/db'
+import { query } from '$lib/server/db.catdat'
 import { error } from '@sveltejs/kit'
 import sql from 'sql-template-tag'
 import type { EntryGenerator } from './$types'

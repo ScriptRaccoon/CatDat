@@ -3,14 +3,14 @@ import { createClient } from '@libsql/client'
 
 dotenv.config({ quiet: true })
 
-const DB_VISITS_URL = process.env.DB_VISITS_URL
-const DB_VISITS_AUTH_TOKEN = process.env.DB_VISITS_AUTH_TOKEN
+const APP_DB_URL = process.env.APP_DB_URL
+const APP_DB_AUTH_TOKEN = process.env.APP_DB_AUTH_TOKEN
 
-if (!DB_VISITS_URL) throw new Error('No DB_VISITS_URL found')
+if (!APP_DB_URL) throw new Error('No APP_DB_URL found')
 
-const db_visits = createClient({
-	url: DB_VISITS_URL,
-	authToken: DB_VISITS_AUTH_TOKEN,
+const db = createClient({
+	url: APP_DB_URL,
+	authToken: APP_DB_AUTH_TOKEN,
 })
 
 migrate()
@@ -27,7 +27,7 @@ async function migrate() {
  * Creates the page visits table.
  */
 async function create_visits_table() {
-	await db_visits.execute(`
+	await db.execute(`
         CREATE TABLE IF NOT EXISTS visits (
             id INTEGER PRIMARY KEY,
             created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -40,14 +40,11 @@ async function create_visits_table() {
 	console.info('Created visits table')
 }
 
-// TODO: because of this new feature, we should rename
-// "db_visits" everywhere - not urgent though
-
 /**
  * Creates the table of submissions marked for approval.
  */
 async function create_submissions_table() {
-	await db_visits.execute(`
+	await db.execute(`
         CREATE TABLE IF NOT EXISTS submissions (
             id INTEGER PRIMARY KEY,
             created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,

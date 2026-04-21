@@ -7,7 +7,7 @@ import { get_client } from './shared'
  */
 async function seed() {
 	const db = get_client()
-	const data_folder = path.join(process.cwd(), 'database', 'data')
+	const data_folder = path.join(process.cwd(), 'databases', 'catdat', 'data')
 
 	const subfolders = (await fs.readdir(data_folder, { withFileTypes: true }))
 		.filter((f) => f.isDirectory())
