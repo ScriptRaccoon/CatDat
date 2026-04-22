@@ -2,7 +2,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[top=25truemm,bottom=25truemm,left=20truemm,right=20truemm]{geometry}
 
-\usepackage{amsmath, amssymb, amsfonts, amscd, mathtools}
+\usepackage{amsmath, amssymb, amsfonts, amscd, amsthm, mathtools}
+\newtheorem{lemma}{Lemma}
 
 \title{A classification of congruences in the category of sets and relations}
 \author{Daniel Schepler}
@@ -33,14 +34,22 @@ In fact, if we let $E'$ be the set pushout $X +_A X$ with inclusion maps $i_1, i
 
 We can now show that $A$ is a quotient for the congruence, with quotient morphism $\Delta_A \subseteq A \times A \subseteq X \times A$.  In fact, we can define a morphism $\Delta_A^\circ : A \to X$ as the inverse relation to $\Delta_A$, and a morphism $X \to E$ as the graph of $i_1$.  It is then straightforward to verify that these maps together make $A$ a split coequalizer of $p_1 \circ i$ and $p_2 \circ i$.
 
-We can also show that $E$ is the kernel pair of this quotient, i.e. we have a cartesian square
-$$
-\begin{CD}
-	E @> p_1 \circ i >> X \\
-	@V p_2 \circ i VV @V \Delta_A VV \\
-	X @> \Delta_A >> A.
-\end{CD}
-$$
-To see this, suppose we have morphisms $f, g : U \to X$ such that $\Delta_A \circ f = \Delta_A \circ g$.  That means that for each $u\in U$, $f_*(\{ u \}) \cap A = g_*(\{ u \}) \cap A$, so $(f_*(\{ u \}), g_*(\{ u \}))$ is in the image of $i_*$.  If we define a relation on $U\times E$ to be the set of $(u, e)$ such that $e$ is in the unique preimage of $(f_*(\{ u \}), g_*(\{ u \}))$, we can then see that we get the required commutative triangles from the corresponding morphism $U \to E$ in $\mathbf{Rel}$.
+We can also conclude that $E$ is the kernel pair of this quotient, by the general result below.
+
+\begin{lemma}
+	Suppose we have a congruence $f, g : E \rightrightarrows X$ with a contractible coequalizer
+	$$ E \overset{f}{\underset{g}{\rightrightarrows}} X \overset{e}{\rightarrow} Q $$
+	with maps in the reverse direction $s : Q \to X$ and $t : X \to E$.  Then $E$ is the kernel pair of this quotient, i.e.~ we have a cartesian square
+    $$
+    \begin{CD}
+	    E @> f >> X \\
+	    @V g VV @V e VV \\
+	    X @> e >> A.
+    \end{CD}
+    $$
+    \begin{proof}
+    	Suppose we have generalized elements $x_1, x_2 : U \to X$ with $e x_1 = e x_2$.  Then $f t x_1 = x_1$ and $g t x_1 = s e x_1$, so the pair $x_1, s e x_1$ factors through $E$.  Similarly, the pair $x_2, s e x_2$ factors through $E$.  However, by the assumption, we also have $s e x_1 = s e x_2$.  Therefore, since $E$ is a congruence, we conclude $x_1, x_2$ factors through $E$.
+    \end{proof}
+\end{lemma}
 
 \end{document}
