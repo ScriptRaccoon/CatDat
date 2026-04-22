@@ -43,9 +43,9 @@ VALUES
 ),
 (
 	'BOn',
-	'skeletal',
+	'gaunt',
 	TRUE,
-	'There is just one object.'
+	'This is because $0$ is the only ordinal number with an additive inverse.'
 ),
 (
 	'BOn',

@@ -49,9 +49,9 @@ VALUES
 ),
 (
 	'BN',
-	'skeletal',
+	'gaunt',
 	TRUE,
-	'There is just one object.'
+	'This is because $0$ is the only natural number with an additive inverse.'
 ),
 (
 	'BN',

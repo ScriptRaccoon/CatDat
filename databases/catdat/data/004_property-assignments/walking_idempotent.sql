@@ -25,9 +25,9 @@ VALUES
 ),
 (
 	'walking_idempotent',
-	'skeletal',
+	'gaunt',
 	TRUE,
-	'There is just one object.'
+	'This is obvious.'
 ),
 (
     'walking_idempotent',

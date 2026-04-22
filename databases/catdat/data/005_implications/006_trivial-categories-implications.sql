@@ -152,4 +152,25 @@ VALUES
 	'["exact filtered colimits"]',
 	'In a thin category, every (finite) limit can be reduced to a (finite) product.',
 	FALSE
+),
+(
+	'gaunt_implies_skeletal',
+	'["gaunt"]',
+	'["skeletal"]',
+	'This is trivial.',
+	FALSE
+),
+(
+	'gaunt_criterion',
+	'["one-way", "skeletal"]',
+	'["gaunt"]',
+	'Let $f : A \to B$ be an isomorphism. Since the category is skeletal, we have $A = B$. Thus, $f : A \to A$ is an endomorphism. Now $f = \mathrm{id}_A$ follows since the category is one-way.',
+	FALSE
+),
+(
+	'gaunt_groupoids',
+	'["groupoid", "gaunt"]',
+	'["thin"]',
+	'This is trivial.',
+	FALSE
 );

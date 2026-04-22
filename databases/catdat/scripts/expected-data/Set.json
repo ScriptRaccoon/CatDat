@@ -151,5 +151,6 @@
 	"CIP": false,
 	"CSP": false,
 	"cofiltered-limit-stable epimorphisms": false,
-	"exact cofiltered limits": false
+	"exact cofiltered limits": false,
+	"gaunt": false
 }

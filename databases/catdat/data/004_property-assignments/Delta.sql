@@ -7,12 +7,6 @@ INSERT INTO category_property_assignments (
 VALUES
 (
     'Delta',
-    'skeletal',
-    TRUE,
-    'If $[n] \to [m]$ is a bijection, then $n+1 = m+1$ by comparing the sizes, hence $n=m$.'
-),
-(
-    'Delta',
     'countable',
     TRUE,
     'This is obvious.'
@@ -52,6 +46,12 @@ VALUES
     'generator',
     TRUE,
     'The ordered set $[0] = \{0\}$ is a generator.'
+),
+(
+    'Delta',
+    'gaunt',
+    TRUE,
+    'Let $f : [n] \to [m]$ be an isomorphism. In particular, $n = m$ (by comparing the cardinalities), and $f$ is bijective. If $f(0) > 0$, then $0$ would have no preimage. Thus, $f(0)=0$. Then $f(1) \geq 1$, and in the same way we see that $f(1) > 1$ is impossible. By continuing this way, we conclude that $f$ is the identity.'
 ),
 (
     'Delta',
