@@ -213,7 +213,7 @@ VALUES
 	'nno_terminal',
 	'["natural numbers object", "strict terminal object"]',
 	'["one-way"]',
-	'By assumption, $z : 1 \to N$ is an isomorphism. Therefore, the terminal object $1$ is a NNO with $z = \mathrm{id}_1$ and $s = \mathrm{id}_1$. This precisely means that for all $f : A \to X$ and $g : X \to X$ there is a unique $\Phi : A \to X$ with $\Phi = f$ and $\Phi = g \circ \Phi$. In other words, we have $f = g \circ f$, and therefore $g = \mathrm{id}_X$ (take $f = \mathrm{id}_X$), which proves the claim. (From here one can <a href="/category-implication/one-way_products_thin">further deduce</a> that the category is thin.)',
+	'By assumption, $z : 1 \to N$ is an isomorphism. Therefore, the terminal object $1$ is a NNO with $z = \mathrm{id}_1$ and $s = \mathrm{id}_1$. This precisely means that for all $f : A \to X$ and $g : X \to X$ there is a unique $\Phi : A \to X$ with $\Phi = f$ and $\Phi = g \circ \Phi$. In other words, we have $f = g \circ f$, and therefore $g = \mathrm{id}_X$ (take $f = \mathrm{id}_X$), which proves the claim. (From here one can further deduce that the category is thin.)',
 	FALSE
 ),
 (

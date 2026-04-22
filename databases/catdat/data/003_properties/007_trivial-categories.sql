@@ -46,12 +46,4 @@ VALUES
 	'https://ncatlab.org/nlab/show/skeleton',
 	'skeletal',
 	FALSE
-),
-(
-	'gaunt',
-	'is',
-	'A category is <i>gaunt</i> when every isomorphism $f : A \to B$ must be the identity (in particular, $A = B$).',
-	'https://ncatlab.org/nlab/show/gaunt+category',
-	'gaunt',
-	FALSE
 );

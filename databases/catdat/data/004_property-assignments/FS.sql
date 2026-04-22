@@ -109,9 +109,9 @@ VALUES
 ),
 (
 	'FS',
-	'one-way',
+	'core-thin',
 	FALSE,
-	'Already the full subcategory of <a href="/category/B">finite sets and bijections</a> is not one-way.'
+	'Its core is the <a href="/category/B">category of finite sets and bijections</a>, which we know is not thin.'
 ),
 (
 	'FS',

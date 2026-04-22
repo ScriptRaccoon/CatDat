@@ -126,17 +126,17 @@ VALUES
 	FALSE
 ),
 (
-	'one-way_products_thin',
-	'["one-way", "binary products"]',
-	'["thin"]',
-	'Let $X$ be any object. The swap $\tau : X \times X \to X \times X$ is equal to the identity. It follows that the projections $p_1,p_2 : X \times X \rightrightarrows X$ are the same. And this means that every two morphisms $Y \rightrightarrows X$ are the same.',
+	'one-way_implies_core-thin',
+	'["one-way"]',
+	'["core-thin"]',
+	'This is trivial.',
 	FALSE
 ),
 (
-	'one-way_groupoids',
-	'["one-way", "groupoid"]',
+	'core-thin_products_thin',
+	'["core-thin", "binary powers"]',
 	'["thin"]',
-	'If $f,g : A \rightrightarrows B$ are two morphisms, then $f^{-1} \circ g : A \to A$ must be the identity, so that $f = g$.',
+	'Let $X$ be any object. The swap $\tau : X \times X \to X \times X$ is an automorphism, hence equal to the identity. It follows that the projections $p_1,p_2 : X \times X \rightrightarrows X$ are the same. And this means that every two morphisms $Y \rightrightarrows X$ are the same.',
 	FALSE
 ),
 (
@@ -166,4 +166,25 @@ VALUES
 	'["filtered-colimit-stable monomorphisms"]',
 	'This is trivial.',
 	FALSE
+),
+(
+	'thin_groupoids',
+	'["groupoid", "core-thin"]',
+	'["thin"]',
+	'This is trivial.',
+	FALSE
+),
+(
+	'core-hin_quotients',
+	'["core-thin"]',
+	'["quotients of congruences"]',
+	'If $p_1, p_2 : E \rightrightarrows X$ is a congruence, the symmetry morphism $s : E \to E$ is an automorphism of $E$, hence equal to $\mathrm{id}_E$ by assumption. But then $p_1 = p_2 \circ s = p_2$, and simply $\mathrm{id}_X$ is a coequalizer.',
+	FALSE
+),
+(
+	'gaunt_characterization',
+	'["gaunt"]',
+	'["skeletal", "core-thin"]',
+	'This is trivial.',
+	TRUE
 );

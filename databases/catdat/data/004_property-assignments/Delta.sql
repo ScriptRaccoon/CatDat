@@ -49,9 +49,15 @@ VALUES
 ),
 (
     'Delta',
-    'gaunt',
+    'skeletal',
     TRUE,
-    'Let $f : [n] \to [m]$ be an isomorphism. In particular, $n = m$ (by comparing the cardinalities), and $f$ is bijective. If $f(0) > 0$, then $0$ would have no preimage. Thus, $f(0)=0$. Then $f(1) \geq 1$, and in the same way we see that $f(1) > 1$ is impossible. By continuing this way, we conclude that $f$ is the identity.'
+    'If $f : [n] \to [m]$ is an isomorphism, then $n + 1 = m + 1$ by comparing the cardinalities, hence $n = m$.'
+),
+(
+    'Delta',
+    'core-thin',
+    TRUE,
+    'The category $\mathbf{FinOrd} \setminus \{\varnothing\}$ is core-thin because already $\mathbf{FinOrd}$ is core-thin (see its <a href="/category/FinOrd">category page</a>).'
 ),
 (
     'Delta',

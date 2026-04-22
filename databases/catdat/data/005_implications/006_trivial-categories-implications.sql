@@ -152,32 +152,4 @@ VALUES
 	'["exact filtered colimits"]',
 	'In a thin category, every (finite) limit can be reduced to a (finite) product.',
 	FALSE
-),
-(
-	'gaunt_implies_skeletal',
-	'["gaunt"]',
-	'["skeletal"]',
-	'This is trivial.',
-	FALSE
-),
-(
-	'gaunt_criterion',
-	'["one-way", "skeletal"]',
-	'["gaunt"]',
-	'Let $f : A \to B$ be an isomorphism. Since the category is skeletal, we have $A = B$. Thus, $f : A \to A$ is an endomorphism. Now $f = \mathrm{id}_A$ follows since the category is one-way.',
-	FALSE
-),
-(
-	'gaunt_groupoids',
-	'["groupoid", "gaunt"]',
-	'["thin"]',
-	'This is trivial.',
-	FALSE
-),
-(
-	'gaunt_quotients',
-	'["gaunt"]',
-	'["quotients of congruences"]',
-	'If $p_1, p_2 : E \rightrightarrows X$ is a congruence, the symmetry morphism $s : E \to E$ is an isomorphism, hence equal to $\mathrm{id}_E$ by assumption. But then $p_1 = p_2 s = p_2$ and simply $\mathrm{id}_X$ is a coequalizer.',
-	FALSE
 );

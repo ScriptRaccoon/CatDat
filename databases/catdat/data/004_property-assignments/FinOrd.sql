@@ -73,6 +73,12 @@ VALUES
 ),
 (
 	'FinOrd',
+	'core-thin',
+	TRUE,
+	'Let $f : \{1 < \cdots < n \} \to \{1 < \cdots < n \}$ be an automorphism. Then $f(i)$ is the smallest element not contained in $\{f(j) : j < i\}$. From this one can deduce $f(i)=i$ by induction.'
+),
+(
+	'FinOrd',
 	'small',
 	FALSE,
 	'Even the collection of all singleton orders is not small.'

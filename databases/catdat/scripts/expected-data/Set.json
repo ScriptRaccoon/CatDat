@@ -152,5 +152,6 @@
 	"CSP": false,
 	"cofiltered-limit-stable epimorphisms": false,
 	"exact cofiltered limits": false,
-	"gaunt": false
+	"gaunt": false,
+	"core-thin": false
 }

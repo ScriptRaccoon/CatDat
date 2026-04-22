@@ -79,9 +79,9 @@ VALUES
 ),
 (
 	'Fld',
-	'one-way',
+	'core-thin',
 	FALSE,
-	'Consider the endomorphism $\mathbb{Q}(X) \to \mathbb{Q}(X)$, $X \mapsto X^2$.'
+	'If this category was core-thin, Galois theory would not exist. Specifically, the conjugation $\mathbb{C} \to \mathbb{C}$, $z \mapsto \overline{z}$ is a non-trivial automorphism.'
 ),
 (
 	'Fld',

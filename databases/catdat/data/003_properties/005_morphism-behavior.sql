@@ -121,4 +121,25 @@ VALUES
 	NULL,
 	'filtered-colimit-stable monomorphisms',
 	TRUE 
+),
+(
+	'core-thin',
+	'is',
+	'A category is <i>core-thin</i> if it satisfies the following equivalent conditions:
+	<ol>
+		<li>Its <a href="https://ncatlab.org/nlab/show/core+groupoid" target="_blank">core</a> is thin.</li>
+		<li>Parallel isomorphisms are equal.</li>
+		<li>Every automorphism is the identity.</li>
+	</ol>',
+	'https://ncatlab.org/nlab/show/gaunt+category',
+	'core-thin',
+	TRUE
+),
+(
+	'gaunt',
+	'is',
+	'A category is <i>gaunt</i> when every isomorphism $f : A \to B$ must be the identity (in particular, $A = B$). This is the "skeletal variant" of being core-thin.',
+	'https://ncatlab.org/nlab/show/gaunt+category',
+	'gaunt',
+	FALSE
 );
