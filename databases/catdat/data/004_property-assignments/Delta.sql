@@ -77,12 +77,6 @@ VALUES
 ),
 (
     'Delta',
-    'coquotients of cocongruences',
-    TRUE,
-    'The simplex category has the special property that every isomorphism $[n] \to [n]$ is the identity. Thus, every cosymmetric corelation $f, g : [m] \rightrightarrows [n]$ must satisfy $f = g$. Then the identity provides an equalizer.'
-),
-(
-    'Delta',
     'strict terminal object',
     FALSE,
     'This is trivial.'

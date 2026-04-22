@@ -173,4 +173,11 @@ VALUES
 	'["thin"]',
 	'This is trivial.',
 	FALSE
+),
+(
+	'gaunt_quotients',
+	'["gaunt"]',
+	'["quotients of congruences"]',
+	'If $p_1, p_2 : E \rightrightarrows X$ is a congruence, the symmetry morphism $s : E \to E$ is an isomorphism, hence equal to $\mathrm{id}_E$ by assumption. But then $p_1 = p_2 s = p_2$ and simply $\mathrm{id}_X$ is a coequalizer.',
+	FALSE
 );
