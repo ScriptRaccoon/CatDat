@@ -37,6 +37,12 @@ VALUES
 ),
 (
 	'Set_f',
+	'quotients of congruences',
+	TRUE,
+	'A congruence on a set $X$ in $\mathbf{Set}_\mathrm{f}$ is the same as an equivalence relation $R$ on $X$ whose equivalence classes are finite. In that case, the usual quotient map $p : X \to X/R$ is finite-to-one. Moreover, if $h : X/R \to Y$ is a map such that $h \circ p : X \to Y$ is finite-to-one, then $h$ is finite-to-one as well because $h^*(\{y\}) \subseteq p^*((h \circ p)^*(\{y\}))$ for all $y \in Y$. Therefore, $p$ is also the quotient in $\mathbf{Set}_\mathrm{f}$.'
+),
+(
+	'Set_f',
 	'locally cartesian closed',
 	TRUE,
 	'If $X$ is a set, the equivalence $\mathbf{Set}/X \simeq \mathbf{Set}^X$, $f \mapsto (f^*(\{x\}))_{x \in X}$ restricts to an equivalence $\mathbf{Set}_\mathrm{f} / X \simeq \mathbf{FinSet}^X$. This category is cartesian closed since <a href="/category/FinSet">the category $\mathbf{FinSet}$</a> is cartesian closed and products of cartesian closed categories are cartesian closed.'
