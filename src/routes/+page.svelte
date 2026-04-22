@@ -139,17 +139,4 @@
 			margin-block: 1rem;
 		}
 	}
-
-	.video-container {
-		margin-block: 2rem;
-		display: flex;
-		justify-content: center;
-
-		iframe {
-			max-width: 600px;
-			aspect-ratio: 16/9;
-			border: 1px solid var(--secondary-outline-color);
-			border-radius: 0.5rem;
-		}
-	}
 </style>
