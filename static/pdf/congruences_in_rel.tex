@@ -34,7 +34,7 @@ If we did have $\{ x \} \sim \varnothing$, then there would have to be some subs
 
 To show this, let $e\in E$, and suppose that $i_*(\{ e \}) = (S, T)$.  Then $i_*(\{ s_0(e) \}) = (T, S)$, so $i_*(\{ e, s_0(e) \}) = (S \cup T, S\cup T) = i_*(\bigcup_{x\in S\cup T} r_*(\{ x \}))$.  It follows that $\bigcup_{x\in S\cup T} r_*(\{ x \}) = \{ e, s_0(e) \}$.  Therefore, $e \in r_*(\{ x \})$ for some $x \in X$, and by claims 2 and 3, we get the desired conclusion.
 
-{\bf Claim 5:} For any $S, T \in P(X)$, $S \sim T$ if and only if $S\cap A = T\cap A$, where $A$ is the set of $x\in X$ such that $r_*(\{ x \})$ is a singleton.
+{\bf Claim 5:} For any $S, T \in P(X)$, $S \sim T$ if and only if $S\cap A = T\cap A$, where $A$ is the set of $x\in X$ such that $\{ x \} \not\sim \varnothing$.
 
 For the forward direction, suppose $(S, T) = i_*(U)$ for $U \subseteq E$.  Then $(S, T) = \bigcup_{e\in U} i_*(\{ e \})$; $i_*(\{ e \})$ satisfies the relation of having equal intersections with $A$ for each $e\in E$ in any case from claim 4; and this relation respects unions.  For the reverse implication, whenever $x\notin A$, we have $\{ x \} \sim \varnothing$.  Therefore, since $S = (S \cap A) \cup \bigcup_{x\in S \setminus A} \{ x \}$, we must have $S \sim (S \cap A) \cup \bigcup_{x\in S \setminus A} \varnothing = S \cap A$.  Similarly, $T \sim T \cap A$, so if $S\cap A = T\cap A$, then $S \sim T$.
 
