@@ -1,5 +1,7 @@
 # How to Contribute
 
+[Watch the YouTube video](https://youtu.be/NoZWdMFfQfg)
+
 There are three ways to contribute:
 
 - [Use the Suggestion Form](#option-1-use-the-suggestion-form)
