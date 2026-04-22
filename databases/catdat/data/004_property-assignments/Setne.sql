@@ -136,5 +136,5 @@ VALUES
 	'Setne',
 	'coquotients of cocongruences',
 	FALSE,
-	'The two maps $\{0\} \rightrightarrows \{0,1\}$ form a cocongruence on $\{0\}$ -- namely the cofull cocongruence on $\{0\}$ -- but they do not have an equalizer.'
+	'The two maps $\{0\} \rightrightarrows \{0,1\}$ form a cocongruence on $\{0\}$ &mdash; namely the cofull cocongruence on $\{0\}$ &mdash; but they do not have an equalizer.'
 )
