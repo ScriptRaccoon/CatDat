@@ -1,0 +1,27 @@
+\documentclass[a4paper,12pt,reqno]{amsart}
+\usepackage[utf8]{inputenc}
+\usepackage[top=25truemm,bottom=25truemm,left=20truemm,right=20truemm]{geometry}
+
+\usepackage{amsmath, amssymb, amsfonts, mathtools}
+
+\title{The category of sets and relations has quotients of congruences}
+\author{Daniel Schepler}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+Let $i : E \hookrightarrow X \times X$ be a congruence.  Then:
+\begin{itemize}
+\item The corresponding function $i_* : P(E) \to P(X) \times P(X)$ must be injective, preserve arbitrary unions and in particular be inclusion-preserving, and have image equal to an equivalence relation $\sim$ on $P(X)$.  Note also that the fact that $i_*$ preserves arbitrary unions implies that $\sim$ respects arbitrary unions.
+\item Since the symmetry morphism $s : E \to E$ satisfies $s^2 = \operatorname{id}$, it must be the graph of an involution $s_0$ on $E$.
+\item For the reflexivity morphism $r : X \to E$, we must have $r_*$ of each singleton $\{ x \}$ must be either a singleton or a pair.  To see this, $r_*(\{ x \})$ certainly cannot be empty, or its image under $i_*$ would be $(\emptyset, \emptyset)$, contradicting that $i_* \circ r_*$ is the diagonal map.  If $r_*(\{ x \})$ had more than two elements, then choose a chain of subsets with four elements.  That must map under $i_*$ to a chain of subsets of $(\{ x \}, \{ x \})$ with each image distinct, giving a contradiction.
+\item Similarly, if $r_*(\{ x \})$ is a pair, then one element of the pair must map under $i_*$ to $(\emptyset, \{ x \})$ and the other must map to $(\{ x \}, \emptyset)$.  Since $s \circ r = r$ and $i \circ s = (p_2, p_1) \circ i$, we must have that $s_0$ maps each element to the other.  Otherwise, if $r_*(\{ x \})$ is a singleton, then the element of that singleton is a fixed point of $s_0$.
+\item Suppose that under the equivalence relation on $P(X)$, we have $S \sim \emptyset$.  Then for any $x \in S$, we have $\{ x \} = \{ x \} \cup \emptyset \sim \{ x \} \cup S = S \sim \emptyset$.  Using the fact that $i_*$ preserves unions for the inverse direction, this shows that $S \sim \emptyset$ if and only if $\{ x \} \sim \emptyset$ for every $x \in S$.
+\item Suppose that $r_*(\{ x \}) = \{ e \}$.  We then claim that $\{ x \} \not\sim \emptyset$.  If so, then there would have to be some subset of $E$ which maps to $(\emptyset, \{ x \})$, and similarly to previous steps, this implies that this subset of $E$ would have to be a singleton $\{ f_1 \}$.  Similarly, $(\{ x \}, \emptyset)$ would have to be the image of a singleton $\{ f_2 \}$.  But then $i_*(\{ f_1, f_2 \}) = (\{ x \}, \{ x \}) = i_*(\{ e \})$, contradicting the injectivity of $i_*$.
+\item Now suppose that $i_*(\{ e \}) = (S, T)$ for $e \in E$.  Then $i_*(\{ s_0(e) \}) = (T, S)$, so $i_*(\{ e, s_0(e) \}) = (S \cup T, S\cup T) = i_*(\bigcup_{x\in S\cup T} r_*(\{ x \})$.  It follows that $\bigcup_{x\in S\cup T} r_*(\{ x \}) = \{ e, s_0(e) \}$.  Therefore, $E$ is covered by all the sets $r_*(\{ x \})$.
+\item In summary, we can conclude that the equivalence relation on $P(X)$ is that $S\sim T$ if and only if $S\cap A = T\cap A$ where $A$ is the set of $x\in X$ such that $r_*(\{ x \})$ is a singleton.  This implies that $A$ is a quotient for the congruence, with quotient morphism $X \to A$ given by the relation $\Delta_A \subseteq A \times A \subseteq X\times A$.  (This last point might be easiest to see using the equivalence of $\mathbf{Rel}$ with the Kleisli category of the covariant powerset monad on $\mathbf{Set}$.  This can also be viewed as the category of {\em free} complete $\vee$-semilattices, i.e.~those complete $\vee$-semilattices of the form $P(X)$ for some set $X$.)
+\end{itemize}
+
+
+\end{document}
