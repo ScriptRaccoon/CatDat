@@ -2,7 +2,10 @@ import katex from 'katex'
 import { is_object } from './utils'
 import MarkdownIt from 'markdown-it'
 
-function render_formula(formula: string): string {
+function render_formula(
+	formula: string,
+	options: { displayMode: boolean } = { displayMode: false },
+): string {
 	if (formula.includes('\\emptyset')) {
 		console.warn(
 			`Warning: Use \\varnothing instead of \\emptyset.\nFormula: ${formula}`,
@@ -11,14 +14,19 @@ function render_formula(formula: string): string {
 
 	return katex.renderToString(formula, {
 		throwOnError: true,
+		...options,
 	})
 }
 
-const math_regex = /\$(.*?)\$/g
+const math_regex = /\$\$(.*?)\$\$|\$(.*?)\$/gs
 
 export function render_formulas(txt: string): string {
-	return txt.replace(math_regex, (_, formula) => {
-		return render_formula(formula)
+	return txt.replace(math_regex, (_, display_formula, inline_formula) => {
+		if (display_formula !== undefined) {
+			return render_formula(display_formula, { displayMode: true })
+		}
+
+		return render_formula(inline_formula, { displayMode: false })
 	})
 }
 

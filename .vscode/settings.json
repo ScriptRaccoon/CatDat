@@ -239,5 +239,5 @@
 		".netlify",
 		"build"
 	],
-	"cSpell.ignoreRegExpList": ["\\$[^$]*\\$"]
+	"cSpell.ignoreRegExpList": ["\\$[^$]*\\$", "\\$\\$[^$]*\\$\\$"]
 }
