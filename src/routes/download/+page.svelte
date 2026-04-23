@@ -1,7 +1,5 @@
 <script lang="ts">
 	import MetaData from '$components/MetaData.svelte'
-	import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
-	import Fa from 'svelte-fa'
 </script>
 
 <MetaData title="Download" description="Download CatDat's SQLite database" />
@@ -56,12 +54,39 @@ SELECT category_id FROM category_property_assignments
 WHERE property_id = 'generating set' AND is_satisfied = FALSE;
 </pre>
 
+<pre>-- Abelian categories that are not cocomplete
+SELECT a.category_id
+FROM category_property_assignments a
+CROSS JOIN category_property_assignments b
+WHERE a.category_id = b.category_id
+AND a.property_id = 'abelian' AND a.is_satisfied = TRUE
+AND b.property_id = 'cocomplete' AND b.is_satisfied = FALSE;
+</pre>
+
+<pre>-- Number of categories per tag
+SELECT tag, count(category_id) AS tagged_categories
+FROM category_tags
+GROUP BY tag
+ORDER BY tagged_categories DESC;
+</pre>
+
 <pre>-- Properties without a dual
 SELECT id FROM properties WHERE dual_property_id IS NULL;
 </pre>
 
+<pre>-- Self-dual properties
+SELECT id FROM properties WHERE id = dual_property_id;
+</pre>
+
 <pre>-- Properties not invariant under equivalences
 SELECT id FROM properties WHERE invariant_under_equivalences = FALSE;
+</pre>
+
+<pre>-- Properties without related properties
+SELECT p.id FROM properties p
+LEFT JOIN related_properties r
+ON r.property_id = p.id
+WHERE r.related_property_id IS NULL;
 </pre>
 
 <pre>-- Equivalences
@@ -87,14 +112,11 @@ ORDER BY length(reason) DESC LIMIT 10;
 </pre>
 
 <pre>-- Top 10 properties with the most undecided categories
-SELECT
-	p.id AS property_id,
-	COUNT(c.id) AS undecided_categories
+SELECT p.id AS property_id, COUNT(c.id) AS undecided_categories
 FROM properties p
 CROSS JOIN categories c
 LEFT JOIN category_property_assignments cp
-	ON cp.category_id = c.id
-	AND cp.property_id = p.id
+ON cp.category_id = c.id AND cp.property_id = p.id
 WHERE cp.property_id IS NULL
 GROUP BY p.id
 ORDER BY undecided_categories DESC LIMIT 10;
