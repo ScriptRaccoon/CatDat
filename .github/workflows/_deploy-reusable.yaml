@@ -65,14 +65,13 @@ jobs:
             - name: Generate SvelteKit config
               run: pnpm svelte-kit sync
 
-            - name: Create local database as static asset
+            - name: Create snapshot of local database as static asset
               env:
                   CATDAT_DB_URL: file:databases/catdat/catdat.db
                   APP_DB_URL: file:databases/app/app.db
               run: |
                   pnpm db:update
-                  mkdir -p static/databases
-                  cp databases/catdat/catdat.db static/databases/catdat-snapshot.db
+                  pnpm db:snapshot
 
             - name: Update production database
               if: ${{ !inputs.skip_db }}

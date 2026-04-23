@@ -31,4 +31,3 @@ databases/**/*.db
 databases/**/*.db-wal
 databases/**/*.db-shm
 databases/**/*.db-journal
-static/databases

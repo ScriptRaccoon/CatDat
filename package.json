@@ -21,7 +21,8 @@
 		"db:deduce": "tsx databases/catdat/scripts/deduce.ts",
 		"db:test": "tsx databases/catdat/scripts/test.ts",
 		"db:update": "pnpm db:migrate && pnpm db:seed && pnpm db:deduce && pnpm db:test",
-		"db:watch": "tsx databases/catdat/scripts/watch.ts"
+		"db:watch": "tsx databases/catdat/scripts/watch.ts",
+		"db:snapshot": "cp databases/catdat/catdat.db static/databases/catdat-snapshot.db"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-netlify": "^6.0.4",
