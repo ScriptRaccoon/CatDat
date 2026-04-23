@@ -76,9 +76,9 @@ VALUES
     'cosifted',
     TRUE,
     'Let $X,Y \in \Delta$. We may pick $x \in X$, $y \in Y$. Then there is a "point span" $X \xleftarrow{x} [0] \xrightarrow{y} Y$. Every span $X \xleftarrow{f} Z \xrightarrow{g} Y$ is connected to such a point span: Pick $z \in Z$. This defines a morphism of spans:
-    <p>$\begin{array}{ccccc} X & \xleftarrow{f(z)} & [0] & \xrightarrow{g(z)} & Y \\ \parallel & & \phantom{{\footnotesize z}} \downarrow {\footnotesize z} && \parallel \\ X & \xleftarrow{f} & Z & \xrightarrow{g} & Z \end{array}$</p>
+    $$\begin{CD} X @<{f(z)}<< [0] @>{g(z)}>> Y \\ @| @VV{z}V @| \\ X @<<{f}< Z @>>{g}> Y \end{CD}$$
     It remains to show that all point spans are connected to each other. Assume $x_0,x_1 \in X$ and $y \in Y$, w.l.o.g. $x_0 \leq x_1$. Define the map $f : [1] \to X$ by $f(0) = x_0$, $f(1) = x_1$, and the map $g : [1] \to Y$ by $g(0)=g(1)=y$. They are order-preserving and fit into a zig-zag of spans:
-    <p>$\begin{array}{ccccc} X & \xleftarrow{x_0} & [0] & \xrightarrow{y} & Y \\ \parallel && \phantom{ {\footnotesize 0}} \downarrow {\footnotesize 0} && \parallel \\ X & \xleftarrow{f} & [1] & \xrightarrow{g} & Y \\ \parallel && \phantom{ {\footnotesize 1}} \uparrow  {\footnotesize 1} && \parallel \\ X & \xleftarrow{x_1} & [0] & \xrightarrow{y} & Y \end{array}$</p>
+    $$\begin{CD} X @<{x_0}<< [0] @>{y}>> Y \\ @| @V{0}VV @| \\ X @<{f}<< [1] @>{g}>> Y \\ @| @A{1}AA @| \\ X @<{x_1}<< [0] @>{y}>> Y \end{CD}$$
     This shows that the choice of $x \in X$ does not matter, and for $y \in Y$ the proof is the same.'
 ),
 (

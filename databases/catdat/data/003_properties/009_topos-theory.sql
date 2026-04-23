@@ -42,8 +42,8 @@ VALUES
 (
 	'subobject classifier',
 	'has a',
-	'A category $\mathcal{C}$ has a <i>subobject classifier</i> if it has finite limits and a monomorphism* $\top : 1 \to \Omega$ such that for every monomorphism $m : A \to B$ there is a unique morphism $\chi_m : B \to \Omega$ such that
-	<p>$\begin{array}{ccc} A & \rightarrow & B \\ \downarrow && \downarrow \\ 1 & \rightarrow & \Omega \end{array}$</p>
+	'A category $\mathcal{C}$ has a <i>subobject classifier</i> if it has finite limits and a monomorphism* $\top : 1 \hookrightarrow \Omega$ such that for every monomorphism $m : A \hookrightarrow B$ there is a unique morphism $\chi_m : B \to \Omega$ such that
+	$$\begin{CD} A @>{m}>> B \\ @V{!}VV @VV{\chi_m}V \\ 1 @>>{\top}> \Omega \end{CD}$$
 	is a pullback diagram. Equivalently, the functor $\mathrm{Sub} : \mathcal{C}^{\mathrm{op}} \to \mathbf{Set}^+$ is representable.<br>
 	*Every morphism $1 \to \Omega$ is a split monomorphism anyway.',
 	'https://ncatlab.org/nlab/show/subobject+classifier',
@@ -53,8 +53,8 @@ VALUES
 (
 	'quotient object classifier',
 	'has a',
-	'A category $\mathcal{C}$ has a <i>quotient object classifier</i> if its dual has a subobject classifier. This means that it has finite colimits and an epimorphism* $\top : \Psi \to 0$ such that for every epimorphism $e : A \to B$ there is a unique morphism $\psi_e : \Psi \to A$ such that
-	<p>$\begin{array}{ccc} \Psi & \rightarrow & 0 \\ \downarrow && \downarrow \\ A & \rightarrow & B \end{array}$</p>
+	'A category $\mathcal{C}$ has a <i>quotient object classifier</i> if its dual has a subobject classifier. This means that it has finite colimits and an epimorphism* $\top : \Psi \twoheadrightarrow 0$ such that for every epimorphism $e : A \twoheadrightarrow B$ there is a unique morphism $\psi_e : \Psi \to A$ such that
+	$$\begin{CD} \Psi @>{\top}>> 0 \\ @V{\psi_e}VV @VV{!}V \\ A @>>{e}> B \end{CD}$$
 	is a pushout diagram. Equivalently, the functor $\mathrm{Quot} : \mathcal{C} \to \mathbf{Set}^+$ is representable.<br>
 	*Every morphism $\Psi \to 0$ is a split epimorphism anyway.',
 	NULL,
@@ -64,8 +64,8 @@ VALUES
 (
 	'regular subobject classifier',
 	'has a',
-	'A category $\mathcal{C}$ has a <i>regular subobject classifier</i> if it has finite limits and a regular monomorphism* $\top : 1 \to \Omega$ such that for every regular monomorphism $m : A \to B$ there is a unique morphism $\chi_m : B \to \Omega$ such that
-	<p>$\begin{array}{ccc} A & \rightarrow & B \\ \downarrow && \downarrow \\ 1 & \rightarrow & \Omega \end{array}$</p>
+	'A category $\mathcal{C}$ has a <i>regular subobject classifier</i> if it has finite limits and a regular monomorphism* $\top : 1 \hookrightarrow \Omega$ such that for every regular monomorphism $m : A \hookrightarrow B$ there is a unique morphism $\chi_m : B \to \Omega$ such that
+	$$\begin{CD} A @>{m}>> B \\ @V{!}VV @VV{\chi_m}V \\ 1 @>>{\top}> \Omega \end{CD}$$
 	is a pullback diagram. Equivalently, the functor $\mathrm{Sub}_{\mathrm{reg}} : \mathcal{C}^{\mathrm{op}} \to \mathbf{Set}^+$ is representable.<br>
 	*Every morphism $1 \to \Omega$ is a split monomorphism and hence regular anyway.',
 	'https://ncatlab.org/nlab/show/subobject+classifier',
@@ -75,8 +75,8 @@ VALUES
 (
 	'regular quotient object classifier',
 	'has a',
-	'A category $\mathcal{C}$ has a <i>regular quotient object classifier</i> if its dual has a regular subobject classifier. This means that it has finite colimits and a regular epimorphism* $\top : \Psi \to 0$ such that for every regular epimorphism $e : A \to B$ there is a unique morphism $\psi_e : \Psi \to A$ such that
-	<p>$\begin{array}{ccc} \Psi & \rightarrow & 0 \\ \downarrow && \downarrow \\ A & \rightarrow & B \end{array}$</p>
+	'A category $\mathcal{C}$ has a <i>regular quotient object classifier</i> if its dual has a regular subobject classifier. This means that it has finite colimits and a regular epimorphism* $\top : \Psi \twoheadrightarrow 0$ such that for every regular epimorphism $e : A \twoheadrightarrow B$ there is a unique morphism $\psi_e : \Psi \to A$ such that
+	$$\begin{CD} \Psi @>{\top}>> 0 \\ @V{\psi_e}VV @VV{!}V \\ A @>>{e}> B \end{CD}$$
 	is a pushout diagram. Equivalently, the functor $\mathrm{Quot}_{\mathrm{reg}} : \mathcal{C} \to \mathbf{Set}^+$ is representable.<br>
 	*Every morphism $\Psi \to 0$ is a split epimorphism anyway.',
 	NULL,

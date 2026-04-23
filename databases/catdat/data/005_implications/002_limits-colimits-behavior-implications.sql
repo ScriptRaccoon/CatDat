@@ -73,8 +73,8 @@ VALUES
 	'exact_filtered_colimits_monos',
 	'["exact filtered colimits"]',
 	'["filtered-colimit-stable monomorphisms"]',
-	'This is because $X \to Y$ is a monomorphism iff the diagram
-	<p>$\begin{array}{ccc} X & \rightarrow & X \\ \downarrow && \downarrow \\ X & \rightarrow & Y \end{array}$</p>
+	'This is because $f : X \longrightarrow Y$ is a monomorphism iff the diagram
+	$$\begin{CD} X @>{\mathrm{id}}>> X \\ @V{\mathrm{id}}VV @VV{f}V \\ X @>>{f}> Y \end{CD}$$
 	is a pullback, and if a functor preserves finite limits, it preserves pullbacks in particular.',
 	FALSE
 ),
