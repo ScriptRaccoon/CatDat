@@ -108,7 +108,11 @@ VALUES
 	'sifted_left_cancellative_implies_thin',
 	'["sifted", "left cancellative"]',
 	'["thin"]',
-	'For any object $X$ in a left-cancellative category, the connected component containing $X \xrightarrow{\mathrm{id}} X \xleftarrow{\mathrm{id}} X$ in the category of cospans from $X$ to $X$ consists only of cospans $X \xrightarrow{f} Y \xleftarrow{g} X$ where $f=g$; hence when the category is also sifted, all cospans must be of this form, and so any two parallel morphisms are equal.',
+	'For any object $X$ in a left-cancellative category, the connected component containing
+	$$X \xrightarrow{\mathrm{id}} X \xleftarrow{\mathrm{id}} X$$
+	in the category of cospans from $X$ to $X$ consists only of cospans
+	$$X \xrightarrow{f} Y \xleftarrow{g} X$$
+	where $f=g$; hence when the category is also sifted, all cospans must be of this form, and so any two parallel morphisms are equal.',
 	FALSE
 ),
 (

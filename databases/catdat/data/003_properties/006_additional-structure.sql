@@ -26,7 +26,8 @@ VALUES
 (
 	'preadditive',
 	'is',
-	'A category is <i>preadditive</i> when it is locally essentially small* and each hom-set carries the structure of an abelian group such that the composition is bilinear. Notice that "preadditive" is an extra structure. The property here just says that some preadditive structure exists.<br>*We demand this instead of the more common "locally small" to ensure that preadditive categories are invariant under equivalences of categories.',
+	'A category is <i>preadditive</i> when it is locally essentially small* and each hom-set carries the structure of an abelian group such that the composition is bilinear. Notice that "preadditive" is an extra structure. The property here just says that some preadditive structure exists.<br>
+	*We demand this instead of the more common "locally small" to ensure that preadditive categories are invariant under equivalences of categories.',
 	'https://ncatlab.org/nlab/show/Ab-enriched+category',
 	'preadditive',
 	TRUE

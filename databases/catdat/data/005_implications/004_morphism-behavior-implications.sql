@@ -115,7 +115,8 @@ VALUES
 	'one-way_zero',
 	'["zero morphisms", "one-way"]',
 	'["thin"]',
-	'If $f,g : A \rightrightarrows B$ are two morphisms, then since $0_{B,B} = \mathrm{id}_B$ we have $f = 0_{B,B} \circ f = 0_{A,B} = 0_{B,B} \circ g = g$.',
+	'If $f,g : A \rightrightarrows B$ are two morphisms, then since $0_{B,B} = \mathrm{id}_B$ we have
+	$$f = 0_{B,B} \circ f = 0_{A,B} = 0_{B,B} \circ g = g.$$',
 	FALSE
 ),
 (

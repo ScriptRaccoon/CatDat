@@ -103,7 +103,7 @@ VALUES
 	'natural numbers object',
 	'has a',
 	'A <i>natural numbers object</i> (NNO) in a category with finite products is a triple
-	<p>$(N,\, z : 1 \to N,\, s : N \to N)$</p>
+	$$(N,\, z : 1 \to N,\, s : N \to N)$$
 	satisfying the following universal property: for all $f : A \to X$,  $g : X \to X$ there is a unique $\Phi : A \times N \to X$ such that $\Phi(a,z)=f(a)$ and $\Phi(a,s(n)) = g(\Phi(a,n))$ in element notation.
 	<br>This concept is an abstraction of the set of natural numbers, which indeed provide a NNO for the category of sets. We have used the parametrized definition here which is more natural (sic!) for categories that are not cartesian closed (cf. <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, Part A, Remark 2.5.3).',
 	'https://ncatlab.org/nlab/show/natural+numbers+object',

@@ -171,7 +171,12 @@ VALUES
 	'sequential_colimits_consequence',
 	'["sequential colimits"]',
 	'["Cauchy complete"]',
-	'Assume that $e : X \to X$ is an idempotent morphism. Consider the sequence $X \xrightarrow{e} X \xrightarrow{e} X \to \cdots$. A cocone under this sequence is a family of morphisms $f_n : X \to Y$ satisfying $f_n = f_{n+1} e$. Then $f_n = f_{n+1} e = f_{n+2} e^2 = f_{n+2} e = f_{n+1}$ shows that all the morphisms are equal. Thus, a cocone is the same as a morphism $f_0 : X \to Y$ with $f_0 = f_0 e$, meaning it coequalizes $\mathrm{id}_X,e : X \rightrightarrows X$. Hence, if a colimit exists, $e$ splits.',
+	'Assume that $e : X \to X$ is an idempotent morphism. Consider the sequence
+	$$X \xrightarrow{e} X \xrightarrow{e} X \to \cdots.$$
+	A cocone under this sequence is a family of morphisms $f_n : X \to Y$ satisfying $$f_n = f_{n+1} e.$$
+	Then
+	$$f_n = f_{n+1} e = f_{n+2} e^2 = f_{n+2} e = f_{n+1}$$
+	shows that all the morphisms are equal. Thus, a cocone is the same as a morphism $f_0 : X \to Y$ with $f_0 = f_0 e$, meaning it coequalizes $\mathrm{id}_X,e : X \rightrightarrows X$. Hence, if a colimit exists, $e$ splits.',
 	FALSE
 ),
 (

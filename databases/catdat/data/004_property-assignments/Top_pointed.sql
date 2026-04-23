@@ -87,7 +87,8 @@ VALUES
 	'Top*',
 	'cocartesian cofiltered limits',
 	TRUE,
-	'We continue the proof for <a href="/category/Set*">$\mathbf{Set}_*$</a> by showing that the natural bijective map <br>$\alpha : X \vee \lim_i Y_i \to \lim_i (X \vee Y_i)$<br>
+	'We continue the proof for <a href="/category/Set*">$\mathbf{Set}_*$</a> by showing that the natural bijective map
+	$$\textstyle \alpha : X \vee \lim_i Y_i \to \lim_i (X \vee Y_i)$$
 	is open. It suffices to consider open sets of two types: (1) If $U \subseteq X$ is open, the $\alpha$-image of $U \vee \lim_i Y_i$ is $p_{i_0}^{-1}(U \vee Y_{i_0})$ for any chosen index $i_0$, hence open. (2) If $i$ is an index and $V_i \subseteq Y_i$ is open, then the $\alpha$-image of $X \vee (p_i^{-1}(V_i) \cap \lim_i Y_i)$ is $p_i^{-1}(X \vee V_i)$, hence open.'
 ),
 (

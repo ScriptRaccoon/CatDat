@@ -94,9 +94,9 @@ VALUES
 	'cocartesian cofiltered limits',
 	FALSE,
 	'For cofiltered diagrams of groups $(H_i)$ and a group $G$ the canonical homomorphism
-	<br>$\alpha : G \sqcup \lim_i H_i \to \lim_i (G \sqcup H_i)$<br>
+	$$\textstyle \alpha : G \sqcup \lim_i H_i \to \lim_i (G \sqcup H_i)$$
 	is injective, but often fails to be surjective because the components of an element in the image have bounded <i>free product length</i> (the number of factors appearing in the reduced form). Specifically, consider the free groups $G = \langle y \rangle$ and $H_n = \langle x_1,\dotsc,x_n \rangle$ for $n \in \mathbb{N}$ with the truncation maps $H_{n+1} \to H_n$, $x_{n+1} \mapsto 1$. Define
-	<br>$p_n := x_1 \, y \, x_2 \, y \, \cdots \, x_{n-1} \, y \, x_n \, y^{-(n-1)} \in G \sqcup H_n$.<br>
+	$$p_n := x_1 \, y \, x_2 \, y \, \cdots \, x_{n-1} \, y \, x_n \, y^{-(n-1)} \in G \sqcup H_n.$$
 	If we substitute $x_{n+1}=1$ in $p_{n+1}$, we get $p_n$. Thus, we have $p = (p_n) \in \lim_n (G \sqcup H_n)$. This element does not lie in the image of $\alpha$ since the free product length of $p_n$ (which is well-defined) is $2n$, which is unbounded.'
 ),
 (

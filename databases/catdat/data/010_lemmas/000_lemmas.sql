@@ -20,20 +20,24 @@ INSERT INTO lemmas (
     'preadditive_structure_unique',
     'Uniqueness of preadditive structures',
     'Let $\mathcal{C}$ be a preadditive category (or more generally, a category enriched in commutative monoids) with finite products and finite coproducts. Then for all objects $X,Y$ the canonical morphism
-    <p>$\alpha : X \oplus Y \to X \times Y$</p>
+    $$\alpha : X \oplus Y \to X \times Y$$
     is an isomorphism. Moreover, the preadditive structure is <i>unique</i>: If $f,g : A \rightrightarrows B$ are morphisms, their sum
-    <p>$f+g : A \to B$</p>
+    $$f+g : A \to B$$
     is the composite of $(f,g) : A \to B \times B$, the inverse $\alpha^{-1} : B \oplus B \to B \times B$, and the codiagonal $\nabla : B \oplus B \to B$.',
     'The morphism $\alpha : X \oplus Y \to X \times Y$ is defined by the equations
-    <p>$p_1 \circ \alpha \circ i_1 = \mathrm{id}_X, \quad p_2 \circ \alpha \circ i_2 = \mathrm{id}_Y$</p>
-    <p>$p_2 \circ \alpha \circ i_1 = 0,\quad p_1 \circ \alpha \circ i_2 = 0$.</p>
+    $$p_1 \circ \alpha \circ i_1 = \mathrm{id}_X, \quad p_2 \circ \alpha \circ i_2 = \mathrm{id}_Y,$$
+    $$p_2 \circ \alpha \circ i_1 = 0,\quad p_1 \circ \alpha \circ i_2 = 0.$$
     It does not depend on the choice of preadditive structure since zero morphisms are unique. It is an isomorphism: Define
-    <p>$\beta := i_1 \circ p_1  + i_2 \circ p_2 : X \times Y \to X \oplus Y$.</p>
+    $$\beta := i_1 \circ p_1  + i_2 \circ p_2 : X \times Y \to X \oplus Y.$$
     Then $\alpha \circ \beta = \mathrm{id}_{X \times Y}$ because
-    <p>$p_1 \circ \alpha \circ \beta = p_1 \circ \alpha \circ i_1 \circ p_1 + p_1 \circ \alpha \circ i_2 \circ p_2 = \mathrm{id}_1 \circ p_1 + 0 \circ p_2 = p_1$</p>
-    and likewise $p_2 \circ \alpha \circ \beta = p_2$. We also have $\beta \circ \alpha = \mathrm{id}_{X \oplus Y}$ with a very similar calculation that shows $\beta \circ \alpha \circ i_1 = i_1$ and $\beta \circ \alpha \circ i_2 = i_2$.
-    <p>Therefore, for morphisms $f,g : A \rightrightarrows B$ the composite $A \to B$ in the claim is equal to</p>
-    $\begin{aligned} \nabla \circ \beta \circ (f,g) & = \nabla \circ (i_1 \circ p_1  + i_2 \circ p_2) \circ (f,g) \\ & = \nabla \circ i_1 \circ p_1 \circ (f,g) + \nabla \circ i_2 \circ p_2 \circ (f,g) \\ & = p_1 \circ (f,g)  +  p_2 \circ (f,g) \\ & = f + g. \end{aligned}$'
+    $$p_1 \circ \alpha \circ \beta = p_1 \circ \alpha \circ i_1 \circ p_1 + p_1 \circ \alpha \circ i_2 \circ p_2 = \mathrm{id}_1 \circ p_1 + 0 \circ p_2 = p_1$$
+    and likewise $p_2 \circ \alpha \circ \beta = p_2$. We also have $\beta \circ \alpha = \mathrm{id}_{X \oplus Y}$ with a very similar calculation that shows $\beta \circ \alpha \circ i_1 = i_1$ and $\beta \circ \alpha \circ i_2 = i_2$. Therefore, for morphisms $f,g : A \rightrightarrows B$ the composite $A \to B$ in the claim is equal to
+    $$\begin{align*}
+    \nabla \circ \beta \circ (f,g) & = \nabla \circ (i_1 \circ p_1  + i_2 \circ p_2) \circ (f,g) \\
+    & = \nabla \circ i_1 \circ p_1 \circ (f,g) + \nabla \circ i_2 \circ p_2 \circ (f,g) \\
+    & = p_1 \circ (f,g) + p_2 \circ (f,g) \\
+    & = f + g.
+    \end{align*}$$'
 ),
 (
 	'generator_construction',
@@ -59,9 +63,9 @@ INSERT INTO lemmas (
     'Finite structures usually have no sequential colimits',
     'Let $\mathcal{C}$ be a category with finite powers, including a terminal object $1$. Let $a : 1 \to X$ be a morphism. Assume that the sequence of morphisms $(X^n,a) : X^n \to X^{n+1}$ for $n \geq 0$ admits a colimit $(i_n : X^n \to C)$. Then for every $m \geq 0$ there is a split epimorphism $C \to X^m$. In particular, if $U : \mathcal{C} \to \mathbf{Set}$ is a functor preserving finite powers and $\mathrm{card}(U(X)) \geq 2$, then $U(C)$ is infinite.',
     'Let $m \geq 0$ be fixed. For $n \geq 0$ we define a morphism $u_n : X^n \to X^m$ as follows: It is the projection on the first $m$ factors for $m \leq n$, and $(X^n,a^{m-n})$ for $m \geq n$ (for $m=n$ these agree). With generalized elements this says:
-    <p>$u_n(x_1,\dotsc,x_n) = \begin{cases} (x_1,\dotsc,x_m) & m \leq n \\ (x_1,\dotsc,x_n,a,\dotsc,a) & m \geq n \end{cases}$</p>
+    $$u_n(x_1,\dotsc,x_n) = \begin{cases} (x_1,\dotsc,x_m) & m \leq n \\ (x_1,\dotsc,x_n,a,\dotsc,a) & m \geq n \end{cases}$$
     We claim that $u_n = u_{n+1} \circ (X^n,a)$, i.e.
-    <p>$u_n(x_1,\dotsc,x_n) = u_{n+1}(x_1,\dotsc,x_n,a)$.</p>
+    $$u_n(x_1,\dotsc,x_n) = u_{n+1}(x_1,\dotsc,x_n,a).$$
     If $m \leq n$ (hence, $m \leq n+1$), both sides are equal to $(x_1,\dotsc,x_m)$. If $m > n$, i.e. $m \geq n+1$, both sides are equal to $(x_1,\dotsc,x_n,a,\dotsc,a)$. This proves the claim.
     <br>Hence, there is a unique morphism $\varphi : C \to X^m$ such that $\varphi \circ i_n = u_n$ for all $n \geq 0$. Since $u_m$ is the identity, $\varphi$ is a split epimorphism.
     <br>If $U$ is a functor with the mentioned properties, $U(\varphi)$ is also a split epimorphism from $U(C)$ to $U(X^m) \cong U(X)^m$, and $U(X)^m$ has $\geq 2^m$ elements. This holds for all $m$, so that $U(C)$ is infinite.'
@@ -99,18 +103,17 @@ INSERT INTO lemmas (
     'Exact filtered colimits descend to nice subcategories',
     'Let $G : \mathcal{C} \to \mathcal{D}$ be a fully faithful functor with a left adjoint $F : \mathcal{D} \to \mathcal{C}$ that preserves finite limits. Assume that $\mathcal{D}$ has exact filtered colimits and that $\mathcal{C}$ has finite limits. Then $\mathcal{C}$ has exact filtered colimits as well.',
     'It is well-known (and easy to prove) that the colimit of a diagram $(X_j)$ in $\mathcal{C}$ is constructed as $F(\mathrm{colim}_j G(X_j))$, provided that colimit in $\mathcal{D}$ exists. In particular, $\mathcal{C}$ has filtered colimits. By assumption, it also has finite limits, and $G$ preserves these since it is a right adjoint. Now let $X : \mathcal{I} \times \mathcal{J} \to \mathcal{C}$ be a diagram, where $\mathcal{I}$ is finite and $\mathcal{J}$ is filtered. We compute:
-    <p>$\phantom{\cong} \mathrm{colim}_j \lim_i X(i,j)$</p>
-    <p>$\cong F(\mathrm{colim}_j G(\lim_i X(i,j)))$</p>
-    <p>$\cong F(\mathrm{colim}_j \lim_i G(X(i,j)))$</p>
-    <p>$\cong F(\lim_i \mathrm{colim}_j G(X(i,j)))$</p>
-    <p>$\cong \lim_i F(\mathrm{colim}_j G(X(i,j)))$</p>
-    <p>$\cong \lim_i \mathrm{colim}_j X(i,j)$</p>'
+    $$\begin{align*} \mathrm{colim}_j {\lim}_i X(i,j) & \cong F(\mathrm{colim}_j G({\lim}_i X(i,j))) \\
+    & \cong F(\mathrm{colim}_j {\lim}_i G(X(i,j))) \\
+    & \cong F({\lim}_i \mathrm{colim}_j G(X(i,j))) \\
+    & \cong {\lim}_i F(\mathrm{colim}_j G(X(i,j))) \\
+    & \cong {\lim}_i \mathrm{colim}_j X(i,j)
+    \end{align*}$$'
 ),
 (
     'filtered-monos',
     'Detection of filtered-colimit-stable monomorphisms',
-    'Let $\mathcal{C}$ be a category with filtered colimits. Assume that $U : \mathcal{C} \to \mathcal{D}$ is faithful functor which preserves monomorphisms and filtered colimits. If monomorphisms in $\mathcal{D}$ are stable under filtered colimits, then the same is true for $\mathcal{C}$.
-    <br><br>
+    'Let $\mathcal{C}$ be a category with filtered colimits. Assume that $U : \mathcal{C} \to \mathcal{D}$ is faithful functor which preserves monomorphisms and filtered colimits. If monomorphisms in $\mathcal{D}$ are stable under filtered colimits, then the same is true for $\mathcal{C}$.<br><br>
     For the record, here is the dual statement: Let $\mathcal{C}$ be a category with cofiltered limits. Assume that $U : \mathcal{C} \to \mathcal{D}$ is faithful functor which preserves epimorphisms and cofiltered limits. If epimorphisms in $\mathcal{D}$ are stable under cofiltered limits, then the same is true for $\mathcal{C}$.
     ',
     'Since $U$ is faithful, it reflects monomorphisms. From here the proof is straight forward.'

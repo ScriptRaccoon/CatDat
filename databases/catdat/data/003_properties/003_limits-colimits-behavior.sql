@@ -11,9 +11,9 @@ VALUES
 	'biproducts',
 	'has',
 	'A category has <i>biproducts</i> when it has zero morphisms, finite products (denoted $\times$), finite coproducts (denoted $\oplus$), and for every finite family of objects $A_1,\dotsc,A_n$ the canonical morphism
-	<p>$\mu : A_1 \oplus \cdots \oplus A_n \to A_1 \times \cdots \times A_n$</p>
+	$$\mu : A_1 \oplus \cdots \oplus A_n \to A_1 \times \cdots \times A_n$$
 	is an isomorphism. Such a category is also called <i>semi-additive</i>, and it is automatically enriched over commutative monoids: the sum of $f,g : A \rightrightarrows B$ is defined as:
-	<p>$A \xrightarrow{(f,g)} B \times B \xrightarrow{\mu^{-1}} B \oplus B \xrightarrow{\nabla} B$</p>',
+	$$A \xrightarrow{(f,g)} B \times B \xrightarrow{\mu^{-1}} B \oplus B \xrightarrow{\nabla} B$$',
 	'https://ncatlab.org/nlab/show/biproduct',
 	'biproducts',
 	TRUE
@@ -153,7 +153,8 @@ VALUES
 (
 	'disjoint finite products',
 	'has',
-	'A category has <i>disjoint finite products</i> if it has finite products, for every pair of objects $A,B$ the product projections $A \leftarrow A \times B \rightarrow B$ are epimorphisms, and the pushout $A \sqcup_{A \times B} B$ exists and is given by the terminal object $1$.<br>This terminology does not seem to be common, but we have added it as a dual for the more commonly known property of having disjoint finite coproducts.',
+	'A category has <i>disjoint finite products</i> if it has finite products, for every pair of objects $A,B$ the product projections $A \leftarrow A \times B \rightarrow B$ are epimorphisms, and the pushout $A \sqcup_{A \times B} B$ exists and is given by the terminal object $1$.<br>
+	This terminology does not seem to be common, but we have added it as a dual for the more commonly known property of having disjoint finite coproducts.',
 	NULL,
 	'disjoint finite coproducts',
 	TRUE
@@ -161,7 +162,8 @@ VALUES
 (
 	'disjoint products',
 	'has',
-	'A category has <i>disjoint products</i> if it has products, the product projections $\prod_{i \in I} A_i \to A_i$ are epimorphisms, and the pushout of the projections $\prod_{i \in I} A_i \to A_i$ and $\prod_{i \in I} A_i \to A_j$ for $i \neq j$ exists and is given by the terminal object $1$.<br>This terminology does not seem to be common, but we have added it as a dual for the more commonly known property of having disjoint coproducts.',
+	'A category has <i>disjoint products</i> if it has products, the product projections $\prod_{i \in I} A_i \to A_i$ are epimorphisms, and the pushout of the projections $\prod_{i \in I} A_i \to A_i$ and $\prod_{i \in I} A_i \to A_j$ for $i \neq j$ exists and is given by the terminal object $1$.<br>
+	This terminology does not seem to be common, but we have added it as a dual for the more commonly known property of having disjoint coproducts.',
 	NULL,
 	'disjoint coproducts',
 	TRUE
@@ -209,7 +211,8 @@ VALUES
 (
 	'infinitary coextensive',
 	'is',
-	'A category $\mathcal{C}$ is <i>infinitary coextensive</i> when it has products and for all families of objects $(A_i)_{i \in I}$ the product functor $\prod_{i \in I} A_i / \mathcal{C}/A_i \to \prod_{i \in I} A_i / \mathcal{C}$ is an equivalence of categories. <br>This terminology does not seem to be common, but we have added it as a dual for the more commonly known property of being infinitary extensive.',
+	'A category $\mathcal{C}$ is <i>infinitary coextensive</i> when it has products and for all families of objects $(A_i)_{i \in I}$ the product functor $\prod_{i \in I} A_i / \mathcal{C}/A_i \to \prod_{i \in I} A_i / \mathcal{C}$ is an equivalence of categories. <br>
+	This terminology does not seem to be common, but we have added it as a dual for the more commonly known property of being infinitary extensive.',
 	NULL,
 	'infinitary extensive',
 	TRUE
@@ -234,7 +237,7 @@ VALUES
 	'CIP',
 	'satisfies',
 	'A category satisfies <i>CIP</i> ("coproducts inject into products") if it has zero morphisms, products, coproducts, and for every family of objects $(X_i)_{i \in I}$ the canonical morphism
-	<p>$\alpha : \coprod_i X_i \to \prod_{i \in I} X_i$</p>
+	$$\textstyle \alpha : \coprod_i X_i \to \prod_{i \in I} X_i$$
 	defined by $p_j \circ \alpha \circ \iota_i = \delta_{i,j}$ is a monomorphism. This is no standard terminology. This property has been added to clarify relationships between other properties, in particular those concerning the commutation between limits and colimits.',
 	NULL,
 	'CSP',
@@ -244,7 +247,7 @@ VALUES
 	'CSP',
 	'satisfies',
 	'A category satisfies <i>CSP</i> ("coproducts surject onto products") if it has zero morphisms, products, coproducts, and for every family of objects $(X_i)_{i \in I}$ the canonical morphism
-	<p>$\alpha : \coprod_i X_i \to \prod_{i \in I} X_i$</p>
+	$$\textstyle \alpha : \coprod_i X_i \to \prod_{i \in I} X_i$$
 	defined by $p_j \circ \alpha \circ \iota_i = \delta_{i,j}$ is an epimorphism. This is no standard terminology. This property has been added to clarify relationships between other properties, in particular those concerning the commutation between limits and colimits.',
 	NULL,
 	'CIP',

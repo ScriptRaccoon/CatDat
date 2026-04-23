@@ -4,7 +4,9 @@ In _CatDat_, we work with the following convenient set-theoretic foundation for 
 
 ### Sets, collections, and hypercollections
 
-We work with [ZFC](https://en.wikipedia.org/wiki/Zermelo%E2%80%93Fraenkel_set_theory) and two [Grothendieck universes](https://en.wikipedia.org/wiki/Grothendieck_universe), which we denote by $\mathrm{Set} \in \mathrm{Set}^+$. Thus, in principle everything is a set, but we rename them as follows to introduce three "levels of size":
+We work with [ZFC](https://en.wikipedia.org/wiki/Zermelo%E2%80%93Fraenkel_set_theory) and two [Grothendieck universes](https://en.wikipedia.org/wiki/Grothendieck_universe), which we denote by
+$$\mathrm{Set} \in \mathrm{Set}^+.$$
+Thus, in principle everything is a set, but we rename them as follows to introduce three "levels of size":
 
 - The sets in $\mathrm{Set}$ are renamed to _sets_ (sometimes also _small sets_).
 - The sets in $\mathrm{Set}^+$ are renamed to _collections_ (sometimes also _large sets_).
@@ -12,7 +14,9 @@ We work with [ZFC](https://en.wikipedia.org/wiki/Zermelo%E2%80%93Fraenkel_set_th
 
 For example, $\mathbb{R}$ is a set, $\mathrm{Set}$ is a collection, and $\mathrm{Set}^+$ is a hypercollection. The collection $\mathrm{Set}$ consists of all sets, and the hypercollection $\mathrm{Set}^+$ consists of all collections. Every set is also a collection, and every collection is also a hypercollection. There is a collection $\mathrm{Grp}$ that consists of all groups, a collection $\mathrm{Top}$ of all topological spaces, etc.
 
-Note that sets, collections, and hypercollections all satisfy the ZFC axioms. In this sense, (hyper)collections behave in the same way as sets. This is crucial for category theory. For example, we can form the collection of all maps between two collections. This basic property is not satisfied by [classes](<https://en.wikipedia.org/wiki/Class_(set_theory)>), which are not adequate for category theory. For example, there is a collection $[\mathrm{Set},\mathrm{Set}]$ that consists of all maps $\mathrm{Set} \to \mathrm{Set}$.
+Note that sets, collections, and hypercollections all satisfy the ZFC axioms. In this sense, (hyper)collections behave in the same way as sets. This is crucial for category theory. For example, we can form the collection of all maps between two collections. This basic property is not satisfied by [classes](<https://en.wikipedia.org/wiki/Class_(set_theory)>), which are not adequate for category theory.
+
+For example, there is a collection $[\mathrm{Set},\mathrm{Set}]$ that consists of all maps $\mathrm{Set} \to \mathrm{Set}$.
 
 Just imagine three copies of ZFC embedded into each other, each representing a "level of size". Grothendieck universes are merely an implementation detail, which we can _and will_ drop from now on. Sets are on level 1, collections on level 2, and hypercollections on level 3. Concrete mathematical objects such as numbers or functions can be thought of as living on level 0 (even though they are usually modeled as sets in ZFC).
 
@@ -37,11 +41,13 @@ A _category_ $\mathcal{C}$ consists of a pair of collections $O, M$, whose eleme
 
 such that the usual [axioms of a category](<https://en.wikipedia.org/wiki/Category_(mathematics)>) are satisfied. The domain of $c$ consists of all pairs of morphisms $(f,g)$ with $s(f) = t(g)$, and we write $f \circ g := c(f,g)$ for their composition. Instead of $i(X)$ one usually writes $\mathrm{id}_X$ for the identity morphism of $X$. Formally, a category is a tuple
 
-$\mathcal{C} = (O,M,i,s,t,c)$
+$$\mathcal{C} = (O,M,i,s,t,c)$$
 
 of collections (and hence a collection itself). We write $\mathrm{Ob}(\mathcal{C}) := O$ and $\mathrm{Mor}(\mathcal{C}) := M$. Instead of $X \in \mathrm{Ob}(\mathcal{C})$, we often write $X \in \mathcal{C}$.
 
-When $f \in \mathrm{Mor}(\mathcal{C})$ is a morphism with $s(f) = X$ and $t(f) = Y$, we write $f : X \to Y$. We write $\mathrm{Hom}(X,Y)$ or $\mathrm{Mor}(X,Y)$ for the collection of such morphisms. This collection need not be a set. If it is a set for all $X,Y$, the category is called _locally small_.
+When $f \in \mathrm{Mor}(\mathcal{C})$ is a morphism with $s(f) = X$ and $t(f) = Y$, we write
+$$f : X \to Y.$$
+We write $\mathrm{Hom}(X,Y)$ or $\mathrm{Mor}(X,Y)$ for the collection of such morphisms. This collection need not be a set. If it is a set for all $X,Y$, the category is called _locally small_.
 
 A _small category_ is defined as above, but using _sets_ $O$ and $M$ (instead of collections). A _hypercategory_ is defined similarly using _hypercollections_ $O$ and $M$. Every small category is a category, and every category is a hypercategory. Notice that there is a collection of all small categories $\mathrm{Cat}$, and likewise a hypercollection of all categories $\mathrm{Cat}^+$.
 
@@ -51,7 +57,10 @@ Collections are the objects of a hypercategory $\mathbf{Set}^+$.
 
 ### Functors
 
-A _functor_ $F : \mathcal{C} \to \mathcal{D}$ between two categories (or small categories, or hypercategories) is defined as usual; it consists of maps $\mathrm{Ob}(F) : \mathrm{Ob}(\mathcal{C}) \to \mathrm{Ob}(\mathcal{D})$ and $\mathrm{Mor}(F) : \mathrm{Mor}(\mathcal{C}) \to \mathrm{Mor}(\mathcal{D})$ satisfying the [functor axioms](https://en.wikipedia.org/wiki/Functor). Between two categories there is a collection of all functors, just as between two small categories there is a set of all functors.
+A _functor_ $F : \mathcal{C} \to \mathcal{D}$ between two categories (or small categories, or hypercategories) is defined as usual; it consists of maps
+$$\mathrm{Ob}(F) : \mathrm{Ob}(\mathcal{C}) \to \mathrm{Ob}(\mathcal{D}),$$
+$$\mathrm{Mor}(F) : \mathrm{Mor}(\mathcal{C}) \to \mathrm{Mor}(\mathcal{D})$$
+satisfying the [functor axioms](https://en.wikipedia.org/wiki/Functor). Between two categories there is a collection of all functors, just as between two small categories there is a set of all functors.
 
 Small categories and functors form the category $\mathbf{Cat}$ of small categories, which is locally small. There is also a hypercategory $\mathbf{Cat}^+$ consisting of all categories. For instance, $\mathbf{Set}$ is an object of $\mathbf{Cat}^+$, but not of $\mathbf{Cat}$.
 
@@ -65,11 +74,13 @@ It is better to state explicitly when the assumption of being locally small is n
 
 If $\mathcal{C}$ is any category and $A \in \mathcal{C}$, we have the Hom-functor
 
-$\mathrm{Hom}(A,-) : \mathcal{C} \to \mathbf{Set}^+$
+$$\mathrm{Hom}(A,-) : \mathcal{C} \to \mathbf{Set}^+$$
 
 defined as usual, but taking values in the hypercategory of all collections. The Yoneda lemma and its corollaries can be proved without assuming that $\mathcal{C}$ is locally small. If $\mathcal{C}$ is locally small, then $\mathrm{Hom}(A,-)$ takes values in $\mathbf{Set}$.
 
-Adjunctions are defined as usual via natural isomorphisms $\mathrm{Hom}(F(A),B) \cong \mathrm{Hom}(A,G(B))$ of functors valued in $\mathbf{Set}^+$. No local smallness assumption is required. Equivalently, they can be defined via morphisms of functors $\mathrm{id} \to G \circ F$ and $F \circ G \to \mathrm{id}$ satisfying the triangle identities.
+Adjunctions are defined as usual via natural isomorphisms
+$$\mathrm{Hom}(F(A),B) \cong \mathrm{Hom}(A,G(B))$$
+of functors valued in $\mathbf{Set}^+$. No local smallness assumption is required. Equivalently, they can be defined via morphisms of functors $\mathrm{id} \to G \circ F$ and $F \circ G \to \mathrm{id}$ satisfying the triangle identities.
 
 ### Limits and Colimits
 

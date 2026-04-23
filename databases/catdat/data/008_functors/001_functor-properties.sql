@@ -217,7 +217,8 @@ VALUES
     (
         'monomorphism-preserving',
         'is',
-        'A functor $F : \mathcal{C} \to \mathcal{D}$ preserves monomorphisms if every monomorphism in $\mathcal{C}$ is mapped to a monomorphism in $\mathcal{D}$.<br>This property is useful to rule out some adjunctions.',
+        'A functor $F : \mathcal{C} \to \mathcal{D}$ preserves monomorphisms if every monomorphism in $\mathcal{C}$ is mapped to a monomorphism in $\mathcal{D}$.<br>
+        This property is useful to rule out some adjunctions.',
         'https://ncatlab.org/nlab/show/monomorphism',
         TRUE,
         'epimorphism-preserving'
@@ -225,7 +226,8 @@ VALUES
     (
         'epimorphism-preserving',
         'is',
-        'A functor $F : \mathcal{C} \to \mathcal{D}$ preserves epimorphisms if every epimorphism in $\mathcal{C}$ is mapped to an epimorphism in $\mathcal{D}$.<br>This property is useful to rule out some adjunctions.',
+        'A functor $F : \mathcal{C} \to \mathcal{D}$ preserves epimorphisms if every epimorphism in $\mathcal{C}$ is mapped to an epimorphism in $\mathcal{D}$.<br>
+        This property is useful to rule out some adjunctions.',
         'https://ncatlab.org/nlab/show/epimorphism',
         TRUE,
         'monomorphism-preserving'

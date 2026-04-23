@@ -100,6 +100,6 @@ VALUES
 	'cofiltered-limit-stable epimorphisms',
 	FALSE,
 	'Inside of $\mathbb{F}_p(X)$ consider the descending sequence of subfields
-	<p>$\mathbb{F}_p(X) \supseteq \mathbb{F}_p(X^p) \supseteq \mathbb{F}_p(X^{p^2}) \supseteq \cdots,$</p>
+	$$\mathbb{F}_p(X) \supseteq \mathbb{F}_p(X^p) \supseteq \mathbb{F}_p(X^{p^2}) \supseteq \cdots,$$
 	whose intersection is $\mathbb{F}_p$. Each $\mathbb{F}_p(X^{p^n}) \hookrightarrow \mathbb{F}_p(X)$ is purely inseparable, hence an epimorphism, but in the limit we get $\mathbb{F}_p \hookrightarrow \mathbb{F}_p(X)$, which is not even algebraic.'
 );
