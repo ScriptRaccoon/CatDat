@@ -232,6 +232,11 @@ VALUES
 	'See <a href="https://math.stackexchange.com/questions/350716/" target="_blank">MSE/350716</a>.'
 ),
 (
+	'SemiNormVect',
+	'surjective linear contractions',
+	'For the non-trivial direction, use that the forgetful functor $\SemiNormVect \to \Vect$ has a right adjoint, hence preserves all colimits, and therefore preserves epimorphisms.'
+),
+(
 	'Set_c',
 	'surjective maps',
 	'For the non-trivial direction, if $f : X \to Y$ is an epimorphism of countable sets, then in particular $f^* : \Hom(Y,2) \to \Hom(X,2)$ is injective, which identifies with $f^* : P(Y) \to P(X)$. Then for all $y \in Y$ we have $f^*(\{y\}) \neq f^*(\varnothing) = \varnothing$, so that $y$ has a preimage.'
