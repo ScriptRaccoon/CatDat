@@ -96,4 +96,6 @@ export const MACROS = {
 	'\\RS': '\\mathbf{RS}',
 	'\\CoAlg': '\\mathbf{CoAlg}',
 	'\\Cone': '\\mathbf{Cone}',
+	'\\NormVect': '\\mathbf{NormVect}',
+	'\\SemiNormVect': '\\mathbf{SemiNormVect}',
 }

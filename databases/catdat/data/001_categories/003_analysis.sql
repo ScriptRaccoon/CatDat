@@ -15,8 +15,28 @@ VALUES
 	'$\Ban$',
 	'Banach spaces over $\IC$',
 	'linear contractions, i.e. linear maps of norm $\leq 1$',
-	'The choice of morphisms is similar to that of $\Met$ which yields better categorical properties.',
+	'The choice of morphisms is similar to that of $\Met$ which yields better categorical properties than continuous linear maps.',
 	'https://ncatlab.org/nlab/show/Banach+space',
+	NULL
+),
+(
+	'SemiNormVect',
+	'category of semi-normed vector spaces with linear contractions',
+	'$\SemiNormVect$',
+	'semi-normed vector spaces over $\IC$',
+	'linear contractions, i.e. linear maps $f$ with $|f(x)| \leq |x|$',
+	'In contrast to a norm, a semi-norm does not necessarily satisfy $|x|=0 \implies x=0$. The choice of morphisms is similar to that of $\PMet$ which yields better categorical properties than continuous linear maps.',
+	NULL,
+	NULL
+),
+(
+	'NormVect',
+	'category of normed vector spaces with linear contractions',
+	'$\NormVect$',
+	'normed vector spaces over $\IC$',
+	'linear contractions, i.e. linear maps $f$ with $|f(x)| \leq |x|$',
+	'The choice of morphisms is similar to that of $\Met$ which yields better categorical properties than continuous linear maps.',
+	NULL,
 	NULL
 ),
 (
