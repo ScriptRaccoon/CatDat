@@ -25,9 +25,3 @@ vite.config.ts.timestamp-*
 # Notes for developer
 todo.txt
 thoughts.txt
-
-# Local databases
-databases/**/*.db
-databases/**/*.db-wal
-databases/**/*.db-shm
-databases/**/*.db-journal
