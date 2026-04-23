@@ -25,7 +25,7 @@ VALUES
 	'$\SemiNormVect$',
 	'semi-normed vector spaces over $\IC$',
 	'linear contractions, i.e. linear maps $f$ with $|f(x)| \leq |x|$',
-	'In contrast to a norm, a semi-norm does not necessarily satisfy $|x|=0 \implies x=0$. The choice of morphisms is similar to that of $\PMet$ which yields better categorical properties than continuous linear maps.',
+	'In contrast to a norm, a semi-norm does not necessarily satisfy $|x|=0 \implies x=0$. In particular, every vector space $V$ yields a trivial semi-normed vector space $(V,0)$. The choice of morphisms is similar to that of $\PMet$ which yields better categorical properties than continuous linear maps.',
 	NULL,
 	NULL
 ),

@@ -37,6 +37,7 @@ VALUES
 ('Ring', 'see <a href="https://math.stackexchange.com/questions/625874" target="_blank">MSE/625874</a>'),
 ('Rng', 'see <a href="https://math.stackexchange.com/questions/4975797" target="_blank">MSE/4975797</a>'),
 ('Sch', 'disjoint union with the product sheaf'),
+('SemiNormVect', 'The coproduct of a family of semi-normed spaces $(V_i,|{-}|)$ is the direct sum $\bigoplus_i V_i$ equipped with the semi-norm $|v| := \sum_i |v_i|$.'),
 ('Set', 'disjoint union'),
 ('Set*', 'wedge sum, aka one-point union'),
 ('SetxSet', 'component-wise disjoint union'),

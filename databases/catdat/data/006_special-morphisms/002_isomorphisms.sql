@@ -251,6 +251,11 @@ VALUES
 	'This characterization holds in every algebraic category.'
 ),
 (
+	'SemiNormVect',
+	'bijective linear isometries',
+	'This is easy.'
+),
+(
 	'Sch',
 	'pairs $(f,f^{\sharp})$ consisting of a homeomorphism $f$ and an isomorphism of sheaves $f^{\sharp}$',
 	'This is easy.'

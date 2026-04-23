@@ -246,6 +246,11 @@ VALUES
 	'This holds in every finitary algebraic category: the forgetful functor to $\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
 ),
 (
+	'SemiNormVect',
+	'injective linear contractions',
+	'For the non-trivial direction, let $f : (V,|{-}|) \to (W,|{-}|)$ be a monomorphism. Assume that $f(v)=0$. If $|v|=0$, then $v$ corresponds to a morphism $\rho_v : (\IC,0) \to (V,|{-}|)$, $1 \mapsto v$. Since $f \circ \rho_v = 0$, we deduce $\rho_v = 0$, and hence $v = 0$. Now assume that $|v| \neq 0$. We may then replace $v$ with $1/|v| \cdot v$ and assume that $|v| \leq 1$. Then $v$ corresponds to a morphism $\lambda_v : (\IC,|{-}|) \to (V,|{-}|)$, $1 \mapsto v$. Since $f \circ \lambda_v = 0$, we deduce $\lambda_v = 0$, and hence $v = 0$.'
+),
+(
 	'Set_c',
 	'injective maps',
 	'For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.'

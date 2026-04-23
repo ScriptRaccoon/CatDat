@@ -13,12 +13,6 @@ VALUES
 ),
 (
 	'Ban',
-	'pointed',
-	TRUE,
-	'The trivial Banach space $\{0\}$ is a zero object.'
-),
-(
-	'Ban',
 	'locally ℵ₁-presentable',
 	TRUE,
 	'Example 1.48 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>.'
@@ -69,7 +63,7 @@ VALUES
 	'Ban',
 	'unital',
 	FALSE,
-	'See <a href="https://math.stackexchange.com/questions/5033161" target="_blank">MSE/5033161</a>.'
+	'The canonical morphism $(V,|{-}|) \oplus (W,|{-}|) \to (V,|{-}|) \times (W,|{-}|)$ is given by the monomorphism $(V \times W, |{-}|_1) \hookrightarrow (V \times W, |{-}|_{\sup})$, which is proper since $|{-}|_{\sup} < |{-}|_1$ in general, hence is no strong epimorphism.'
 ),
 (
 	'Ban',
