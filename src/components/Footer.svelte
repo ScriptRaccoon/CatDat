@@ -3,6 +3,7 @@
 		faBook,
 		faCog,
 		faCubes,
+		faDownload,
 		faPuzzlePiece,
 	} from '@fortawesome/free-solid-svg-icons'
 
@@ -31,6 +32,10 @@
 		<li>
 			<Fa icon={faCubes} scale={0.875} />
 			<a href="/foundations">Foundations</a>
+		</li>
+		<li>
+			<Fa icon={faDownload} scale={0.875} />
+			<a href="/download">Download</a>
 		</li>
 	</ul>
 </footer>

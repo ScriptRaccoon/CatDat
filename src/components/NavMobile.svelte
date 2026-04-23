@@ -8,6 +8,7 @@
 		faCog,
 		faCubes,
 		faDatabase,
+		faDownload,
 		faHome,
 		faList,
 		faPuzzlePiece,
@@ -120,6 +121,10 @@
 		<li>
 			<a href="/foundations">Foundations</a>
 			<Fa icon={faCubes} scale={0.875} />
+		</li>
+		<li>
+			<a href="/download">Download</a>
+			<Fa icon={faDownload} scale={0.875} />
 		</li>
 	</ul>
 </nav>
