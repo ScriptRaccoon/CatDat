@@ -54,6 +54,12 @@ VALUES
    'The object $(\IC,0)$ is a cogenerator since $\IC$ is a cogenerator in $\Vect$.'
 ),
 (
+    'SemiNormVect',
+    'CSP',
+    FALSE,
+    'This is immediate from the description of coproducts, products, and epimorphisms.'
+),
+(
 	'SemiNormVect',
 	'balanced',
 	FALSE,
