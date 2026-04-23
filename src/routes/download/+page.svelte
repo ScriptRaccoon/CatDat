@@ -24,3 +24,91 @@
 	This is intended for advanced users. Use it if you want to inspect the data beyond what
 	the web application provides.
 </p>
+
+<h3>Example Queries</h3>
+
+<pre>-- List of tables
+.tables
+</pre>
+
+<pre>-- Schema of categories table
+.schema categories
+</pre>
+
+<pre>-- Number of categories
+SELECT COUNT(*) FROM categories;
+</pre>
+
+<pre>-- List of categories without nLab link
+SELECT id, name FROM categories WHERE nlab_link IS NULL;
+</pre>
+
+<pre>-- List of categories that involve rings
+SELECT id, name FROM categories WHERE name LIKE '%ring%';
+</pre>
+
+<pre>-- List of finite categories
+SELECT category_id FROM category_property_assignments
+WHERE property_id = 'finite' AND is_satisfied = TRUE;
+</pre>
+
+<pre>-- List of categories without a generating set
+SELECT category_id FROM category_property_assignments
+WHERE property_id = 'generating set' AND is_satisfied = FALSE;
+</pre>
+
+<pre>-- List of properties without a dual
+SELECT id FROM properties WHERE dual_property_id IS NULL;
+</pre>
+
+<pre>-- List of properties that are not invariant under equivalences
+SELECT id FROM properties WHERE invariant_under_equivalences = FALSE;
+</pre>
+
+<pre>-- List of equivalences
+SELECT assumptions, conclusions FROM implications_view
+WHERE is_equivalence = TRUE;
+</pre>
+
+<pre>-- Top 5 implications with the most assumptions
+SELECT assumptions, conclusions FROM implications_view
+ORDER BY json_array_length(assumptions) DESC LIMIT 5;
+</pre>
+
+<pre>-- List of literally trivial proofs
+SELECT category_id, property_id, is_satisfied, reason
+FROM category_property_assignments
+WHERE reason = 'This is trivial.';
+</pre>
+
+<pre>-- Top 10 longest proofs
+SELECT category_id, property_id, is_satisfied, reason
+FROM category_property_assignments
+ORDER BY length(reason) DESC LIMIT 10;
+</pre>
+
+<pre>-- Top 10 properties with the most undecided categories
+SELECT
+	p.id AS property_id,
+	COUNT(c.id) AS undecided_categories
+FROM properties p
+CROSS JOIN categories c
+LEFT JOIN category_property_assignments cp
+	ON cp.category_id = c.id
+	AND cp.property_id = p.id
+WHERE cp.property_id IS NULL
+GROUP BY p.id
+ORDER BY undecided_categories DESC LIMIT 10;
+</pre>
+
+<style>
+	pre {
+		font-size: 0.875rem;
+		white-space: pre-wrap;
+		margin-bottom: 1rem;
+	}
+
+	pre::first-line {
+		color: var(--accent-color);
+	}
+</style>
