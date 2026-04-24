@@ -227,6 +227,7 @@ button:focus-visible {
 	padding: 0.2rem 0.8rem;
 	color: var(--button-text-color);
 	background-color: var(--button-color);
+	white-space: nowrap;
 }
 
 a.button {
