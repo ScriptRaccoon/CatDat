@@ -62,6 +62,12 @@
 		goto(url)
 	}
 
+	function reset() {
+		if (browser) window.sessionStorage.removeItem('functor-search')
+		satisfied_properties = []
+		unsatisfied_properties = []
+	}
+
 	const sample_search_url = `/functor-search/results?satisfied=continuous&unsatisfied=cocontinuous`
 
 	let is_searching = $derived(navigating.to?.route.id === '/functor-search/results')
@@ -96,15 +102,26 @@
 	item_label="Unsatisfied property"
 />
 
-<button
-	type="button"
-	class="button"
-	onclick={request_search_results}
-	disabled={is_searching || !is_valid_search}
->
-	{#if is_searching}
-		Searching...
-	{:else}
-		Search
-	{/if}
-</button>
+<menu>
+	<button
+		type="button"
+		class="button"
+		onclick={request_search_results}
+		disabled={is_searching || !is_valid_search}
+	>
+		{#if is_searching}
+			Searching...
+		{:else}
+			Search
+		{/if}
+	</button>
+
+	<button class="button" onclick={reset} disabled={is_searching}>Reset</button>
+</menu>
+
+<style>
+	menu {
+		display: flex;
+		gap: 1rem;
+	}
+</style>

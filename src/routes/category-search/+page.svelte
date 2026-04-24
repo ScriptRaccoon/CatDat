@@ -62,6 +62,12 @@
 		goto(url)
 	}
 
+	function reset() {
+		if (browser) window.sessionStorage.removeItem('category-search')
+		satisfied_properties = []
+		unsatisfied_properties = []
+	}
+
 	const sample_search_url = `/category-search/results?satisfied=finitely_complete${SEARCH_SEPARATOR}pointed&unsatisfied=complete`
 
 	let is_searching = $derived(navigating.to?.route.id === '/category-search/results')
@@ -96,15 +102,25 @@
 	item_label="Unsatisfied property"
 />
 
-<button
-	type="button"
-	class="button"
-	onclick={request_search_results}
-	disabled={is_searching || !is_valid_search}
->
-	{#if is_searching}
-		Searching...
-	{:else}
-		Search
-	{/if}
-</button>
+<menu>
+	<button
+		class="button"
+		onclick={request_search_results}
+		disabled={is_searching || !is_valid_search}
+	>
+		{#if is_searching}
+			Searching...
+		{:else}
+			Search
+		{/if}
+	</button>
+
+	<button class="button" onclick={reset} disabled={is_searching}>Reset</button>
+</menu>
+
+<style>
+	menu {
+		display: flex;
+		gap: 1rem;
+	}
+</style>
