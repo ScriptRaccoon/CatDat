@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { browser } from '$app/environment'
-	import { encode_property_ID } from '$lib/commons/property.url'
+	import { encode_property_ID, get_property_url } from '$lib/commons/property.url'
 	import MetaData from '$components/MetaData.svelte'
 	import { SEARCH_SEPARATOR } from '$lib/commons/search.config'
 	import { pluralize } from '$lib/client/utils'
@@ -35,18 +35,31 @@
 
 <h2>Search results</h2>
 
-<ul>
-	{#if data.satisfied_properties.length > 0}
-		<li>
-			Satisfied properties: {data.satisfied_properties.join(', ')}
-		</li>
-	{/if}
-	{#if data.unsatisfied_properties.length > 0}
-		<li>
-			Unsatisfied properties: {data.unsatisfied_properties.join(', ')}
-		</li>
-	{/if}
-</ul>
+{#if data.satisfied_properties.length > 0}
+	<div>
+		<span>Satisfied properties:</span>
+
+		{#each data.satisfied_properties as property, index}
+			<a href={get_property_url(property, 'functor')}>{property}</a
+			>{#if index < data.satisfied_properties.length - 1}
+				,&nbsp;
+			{/if}
+		{/each}
+	</div>
+{/if}
+
+{#if data.unsatisfied_properties.length > 0}
+	<div>
+		<span>Unsatisfied properties:</span>
+
+		{#each data.unsatisfied_properties as property, index}
+			<a href={get_property_url(property, 'functor')}>{property}</a
+			>{#if index < data.unsatisfied_properties.length - 1}
+				,&nbsp;
+			{/if}
+		{/each}
+	</div>
+{/if}
 
 <p class="hint">
 	{pluralize(data.found_objects.length, {
