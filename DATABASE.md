@@ -35,6 +35,13 @@ Further tables are:
 - `category_comments`
 - `lemmas` (a flexible variant of implications)
 
+For functors there are similar tables, such as:
+
+- `functors`
+- `functor_properties`
+- `functor_implications`
+- `functor_property_assignments`
+
 ## Migrations vs. Data
 
 Migrations update the database structure: tables, views, indexes, and triggers. They are defined in SQL files located in the subfolder [/databases/catdat/migrations](/databases/catdat/migrations/). The command `pnpm db:migrate` applies any new migrations.
