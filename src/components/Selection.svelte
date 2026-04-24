@@ -127,6 +127,7 @@
 		<div class="input-wrapper">
 			<input
 				aria-label={item_label}
+				name={item_label}
 				aria-invalid={item.trim().length > 0 && !is_valid(item)}
 				type="text"
 				bind:value={item}
