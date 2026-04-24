@@ -5,6 +5,7 @@
 	import MetaData from '$components/MetaData.svelte'
 	import { SEARCH_SEPARATOR } from '$lib/commons/search.config'
 	import { navigating } from '$app/state'
+	import { browser } from '$app/environment'
 
 	let { data } = $props()
 
@@ -14,6 +15,26 @@
 	let is_valid_search = $derived(
 		satisfied_properties.length > 0 || unsatisfied_properties.length > 0,
 	)
+
+	$effect(() => {
+		preload_search_config()
+	})
+
+	function preload_search_config() {
+		if (!browser) return
+
+		const saved_search_txt = window.sessionStorage.getItem('functor-search')
+		if (!saved_search_txt) return
+
+		try {
+			const saved_search = JSON.parse(saved_search_txt) as {
+				satisfied_properties: string[]
+				unsatisfied_properties: string[]
+			}
+			satisfied_properties = saved_search.satisfied_properties
+			unsatisfied_properties = saved_search.unsatisfied_properties
+		} catch (_) {}
+	}
 
 	function request_search_results() {
 		if (!is_valid_search) return
@@ -30,6 +51,13 @@
 
 		if (satisfied_query) url.searchParams.set('satisfied', satisfied_query)
 		if (unsatisfied_query) url.searchParams.set('unsatisfied', unsatisfied_query)
+
+		if (browser) {
+			window.sessionStorage.setItem(
+				'functor-search',
+				JSON.stringify({ satisfied_properties, unsatisfied_properties }),
+			)
+		}
 
 		goto(url)
 	}

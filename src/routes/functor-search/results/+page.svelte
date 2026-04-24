@@ -71,7 +71,7 @@
 <FunctorList functors={data.found_objects ?? []} />
 
 <menu>
-	<a class="button" href="/functor-search">Start new search</a>
+	<a class="button" href="/functor-search">Adjust search</a>
 
 	{#if data.dual_search_available}
 		<a class="button" href={get_dual_search_results_link()}>Dualize search</a>
