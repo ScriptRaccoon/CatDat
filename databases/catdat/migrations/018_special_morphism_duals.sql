@@ -1,1 +1,0 @@
-ALTER TABLE special_morphism_types ADD COLUMN dual TEXT REFERENCES special_morphism_types (type);

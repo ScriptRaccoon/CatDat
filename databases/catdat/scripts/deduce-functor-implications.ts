@@ -41,12 +41,12 @@ async function create_dualized_functor_implications(db: Client) {
             (
                 SELECT json_group_array(p.dual_property_id)
                 FROM json_each(v.source_assumptions) sa
-                JOIN properties p ON p.id = sa.value
+                JOIN category_properties p ON p.id = sa.value
             ) AS dual_source_assumptions,
             (
                 SELECT json_group_array(p.dual_property_id)
                 FROM json_each(v.target_assumptions) ta
-                JOIN properties p ON p.id = ta.value
+                JOIN category_properties p ON p.id = ta.value
             ) AS dual_target_assumptions,
             (
                 SELECT json_group_array(p.dual_property_id)
@@ -92,7 +92,7 @@ async function create_dualized_functor_implications(db: Client) {
 	await db.batch(
 		dualizable_implications.map((impl) => ({
 			sql: `
-            INSERT INTO functor_implication_input (
+            INSERT INTO functor_implications_view (
                 id,
                 assumptions,
                 source_assumptions,

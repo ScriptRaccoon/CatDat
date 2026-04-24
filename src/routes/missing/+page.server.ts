@@ -19,7 +19,7 @@ export const load = async () => {
 		sql`
 			SELECT c.id, c.name, COUNT(*) AS count
 			FROM categories c
-			INNER JOIN properties p
+			INNER JOIN category_properties p
 			LEFT JOIN category_property_assignments cp
 				ON cp.category_id = c.id
 				AND cp.property_id = p.id
@@ -46,7 +46,7 @@ export const load = async () => {
 			FROM categories c1
 			JOIN categories c2
 				ON c1.id < c2.id
-			JOIN properties p
+			JOIN category_properties p
 			LEFT JOIN category_property_assignments a1
 				ON a1.category_id = c1.id AND a1.property_id = p.id
 			LEFT JOIN category_property_assignments a2

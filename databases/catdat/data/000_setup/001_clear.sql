@@ -2,9 +2,9 @@ PRAGMA foreign_keys = OFF;
 
 DELETE FROM lemmas;
 
-DELETE FROM implication_assumptions;
-DELETE FROM implication_conclusions;
-DELETE FROM implications;
+DELETE FROM category_implication_assumptions;
+DELETE FROM category_implication_conclusions;
+DELETE FROM category_implications;
 
 DELETE FROM special_morphisms;
 DELETE FROM special_morphism_types;
@@ -16,13 +16,13 @@ DELETE FROM category_property_assignments;
 
 DELETE FROM category_comments;
 DELETE FROM related_categories;
-DELETE FROM category_tags;
+DELETE FROM category_tag_assignments;
 DELETE FROM categories;
 
 DELETE FROM tags;
 
-DELETE FROM related_properties;
-DELETE FROM properties;
+DELETE FROM related_category_properties;
+DELETE FROM category_properties;
 
 DELETE FROM functor_property_assignments;
 DELETE FROM functor_properties;

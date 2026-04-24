@@ -7,7 +7,7 @@ export const load = async () => {
 	const { rows: properties, err } = await query<
 		PropertyShort & { dual_property_id?: string }
 	>(sql`
-		SELECT id, relation, dual_property_id FROM properties
+		SELECT id, relation, dual_property_id FROM category_properties
 		ORDER BY lower(id)
 	`)
 

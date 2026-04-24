@@ -15,7 +15,7 @@ export async function deduce_category_implications(db: Client) {
  * Clears all deduced implications. This is done as a first step.
  */
 async function clear_deduced_category_implications(db: Client) {
-	await db.execute(`DELETE FROM implications WHERE is_deduced = TRUE`)
+	await db.execute(`DELETE FROM category_implications WHERE is_deduced = TRUE`)
 }
 
 /**
@@ -34,14 +34,14 @@ async function create_dualized_category_implications(db: Client) {
             (
                 SELECT json_group_array(p.dual_property_id)
                 FROM json_each(v.assumptions) a
-                JOIN properties p ON p.id = a.value
+                JOIN category_properties p ON p.id = a.value
             ) AS dual_assumptions,
             (
                 SELECT json_group_array(p.dual_property_id)
                 FROM json_each(v.conclusions) c
-                JOIN properties p ON p.id = c.value
+                JOIN category_properties p ON p.id = c.value
             ) AS dual_conclusions
-        FROM implications_view v
+        FROM category_implications_view v
         WHERE v.is_deduced = FALSE
     `)
 
@@ -75,7 +75,7 @@ async function create_dualized_category_implications(db: Client) {
 	await db.batch(
 		dualizable_implications.map((impl) => ({
 			sql: `
-            INSERT INTO implication_input (
+            INSERT INTO category_implications_view (
                 id,
                 assumptions,
                 conclusions,
@@ -106,7 +106,7 @@ async function create_dualized_category_implications(db: Client) {
  */
 async function create_self_dual_category_implications(db: Client) {
 	const { rows } = await db.execute(`
-        INSERT INTO implication_input (
+        INSERT INTO category_implications_view (
             id,
             assumptions,
             conclusions,
@@ -122,7 +122,7 @@ async function create_self_dual_category_implications(db: Client) {
             'This holds by self-duality.',
             TRUE
         FROM
-            properties p
+            category_properties p
         WHERE
             p.dual_property_id IS NOT NULL
             AND p.id != 'self-dual'

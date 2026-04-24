@@ -1,1 +1,0 @@
-ALTER TABLE relations ADD COLUMN conditional TEXT NOT NULL DEFAULT 'would be'; 

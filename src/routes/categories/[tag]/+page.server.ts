@@ -15,7 +15,7 @@ export const load = async (event) => {
 
 	const { rows: categories, err } = await query<CategoryShort>(sql`
 		SELECT c.id, c.name FROM categories c
-		LEFT JOIN category_tags t ON c.id = t.category_id
+		LEFT JOIN category_tag_assignments t ON c.id = t.category_id
 		WHERE t.tag = ${tag}
 		ORDER BY lower(name)
 	`)

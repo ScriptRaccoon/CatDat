@@ -136,7 +136,7 @@ export async function search_handler(event: RequestEvent, type: 'category' | 'fu
 
 function get_property_query(type: 'category' | 'functor') {
 	if (type === 'category') {
-		return sql`SELECT id, dual_property_id FROM properties ORDER BY lower(id)`
+		return sql`SELECT id, dual_property_id FROM category_properties ORDER BY lower(id)`
 	}
 	if (type === 'functor') {
 		return sql`SELECT id, dual_property_id FROM functor_properties ORDER BY lower(id)`

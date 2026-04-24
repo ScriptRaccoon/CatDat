@@ -1,6 +1,8 @@
 CREATE TABLE special_morphism_types (
     type TEXT PRIMARY KEY,
-    position INTEGER NOT NULL DEFAULT 0
+    dual TEXT,
+    position INTEGER NOT NULL DEFAULT 0,
+    FOREIGN KEY (dual) REFERENCES special_morphism_types (type) ON DELETE SET NULL
 );
 
 CREATE TABLE special_morphisms (

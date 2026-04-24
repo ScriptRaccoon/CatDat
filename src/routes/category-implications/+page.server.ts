@@ -14,7 +14,7 @@ export const load = async () => {
 			assumptions,
 			conclusions,
 			is_deduced
-		FROM implications_view
+		FROM category_implications_view
 		ORDER BY lower(assumptions) || ' ' || lower(conclusions)
 	`)
 

@@ -30,7 +30,7 @@ export const load = async (event) => {
 			);
 		`,
 		sql`
-			SELECT id FROM implications
+			SELECT id FROM category_implications
 			WHERE reason LIKE '%/lemma/' || ${id} || '%'
 		`,
 	])

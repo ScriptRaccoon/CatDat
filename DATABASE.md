@@ -7,8 +7,8 @@ _CatDat_ is based on a [SQLite database](https://sqlite.org/). During runtime of
 The local copy of the database is located at `/databases/catdat/catdat.db`. It has three main tables:
 
 - `categories`
-- `properties`
-- `implications`
+- `category_properties`
+- `category_implications`
 
 To associate properties with categories (satisfied or not), there is a table:
 
@@ -16,22 +16,22 @@ To associate properties with categories (satisfied or not), there is a table:
 
 To mark properties as assumptions or conclusions of an implication, there are two tables:
 
-- `implication_assumptions`
-- `implication_conclusions`
+- `category_implication_assumptions`
+- `category_implication_conclusions`
 
-But they are abstracted away by using the view `implications_view`.
+But they are abstracted away by using the view `category_implications_view`.
 
 Further tables are:
 
 - `tags`
-- `category_tags`
+- `category_tag_assignments`
 - `related_categories`
 - `relations`
 - `special_object_types`
 - `special_objects`
 - `special_morphism_types`
 - `special_morphisms`
-- `related_properties`
+- `related_category_properties`
 - `category_comments`
 - `lemmas` (a flexible variant of implications)
 

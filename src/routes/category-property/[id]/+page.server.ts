@@ -24,13 +24,13 @@ export const load = async (event) => {
 			SELECT
 				id, relation, description, dual_property_id,
 				nlab_link, invariant_under_equivalences
-			FROM properties
+			FROM category_properties
 			WHERE id = ${id}
 		`,
 		// related properties
 		sql`
 			SELECT related_property_id AS id
-			FROM related_properties
+			FROM related_category_properties
 			WHERE property_id = ${id}
 			ORDER BY lower(id)
 		`,
@@ -43,7 +43,7 @@ export const load = async (event) => {
 				assumptions,
 				conclusions,
 				is_deduced
-			FROM implications_view
+			FROM category_implications_view
 			WHERE
 				EXISTS (
 					SELECT 1

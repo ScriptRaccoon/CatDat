@@ -124,7 +124,7 @@ async function get_normalized_category_implications(
             v.assumptions,
             v.conclusions,
             v.is_equivalence
-        FROM implications_view v
+        FROM category_implications_view v
     `)
 
 	const all_implications_db = res.rows as unknown as {
@@ -181,7 +181,7 @@ async function get_properties_dict(tx: Transaction) {
 		SELECT
 			p.id, p.dual_property_id, p.relation,
 			r.negation, r.conditional
-		FROM properties p
+		FROM category_properties p
 		INNER JOIN relations r ON r.relation = p.relation
 		ORDER BY lower(p.id)
 	`)

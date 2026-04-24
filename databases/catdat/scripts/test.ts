@@ -39,7 +39,7 @@ async function execute_tests() {
  * Tests for all category properties p,q that if p is dual to q, then q is dual to p.
  */
 async function test_mutual_property_duals() {
-	const res = await db.execute('SELECT id, dual_property_id FROM properties')
+	const res = await db.execute('SELECT id, dual_property_id FROM category_properties')
 	const dict: Record<string, string | null> = {}
 
 	const properties = res.rows as unknown as {
@@ -104,7 +104,7 @@ async function test_decided_categories() {
 async function test_decided_category(category_id: string) {
 	const res = await db.execute(
 		`
-		SELECT p.id FROM properties p
+		SELECT p.id FROM category_properties p
 		WHERE NOT EXISTS
 			(
 				SELECT 1 FROM category_property_assignments

@@ -4,7 +4,7 @@ import sql from 'sql-template-tag'
 
 export const load = async () => {
 	const { rows, err } = await query<{ id: string }>(
-		sql`SELECT id FROM properties ORDER BY lower(id)`,
+		sql`SELECT id FROM category_properties ORDER BY lower(id)`,
 	)
 
 	if (err) error(500, 'Failed to load properties')

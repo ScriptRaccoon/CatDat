@@ -66,7 +66,7 @@ export const load = async (event) => {
 		SELECT
 			p.id AS property_id,
 			${select_columns}
-		FROM properties p
+		FROM category_properties p
 		${join_fragments.join('\n')}
 		ORDER BY lower(p.id)`
 

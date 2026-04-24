@@ -1,1 +1,0 @@
-ALTER TABLE special_object_types ADD COLUMN dual TEXT REFERENCES special_object_types (type);

@@ -17,7 +17,7 @@ export const load = async (event) => {
 			conclusions,
 			is_deduced,
             dualized_from
-		FROM implications_view
+		FROM category_implications_view
         WHERE id = ${id}
 	`)
 

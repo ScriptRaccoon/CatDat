@@ -57,7 +57,7 @@ async function get_atomic_implications(): Promise<AtomicImplication[] | null> {
 		is_equivalence: number
 	}>(sql`
         SELECT assumptions, conclusions, is_equivalence
-        FROM implications_view
+        FROM category_implications_view
     `)
 
 	if (err) return null
@@ -95,7 +95,7 @@ export async function get_missing_combinations() {
 	const { rows: properties, err } = await query<{
 		id: string
 		dual_property_id: string | null
-	}>(sql`SELECT id, dual_property_id FROM properties ORDER BY lower(id)`)
+	}>(sql`SELECT id, dual_property_id FROM category_properties ORDER BY lower(id)`)
 
 	if (err) return null
 

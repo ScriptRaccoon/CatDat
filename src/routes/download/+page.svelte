@@ -65,37 +65,37 @@ AND b.property_id = 'cocomplete' AND b.is_satisfied = FALSE;
 
 <pre>-- Number of categories per tag
 SELECT tag, count(category_id) AS tagged_categories
-FROM category_tags
+FROM category_tag_assignments
 GROUP BY tag
 ORDER BY tagged_categories DESC;
 </pre>
 
 <pre>-- Properties without a dual
-SELECT id FROM properties WHERE dual_property_id IS NULL;
+SELECT id FROM category_properties WHERE dual_property_id IS NULL;
 </pre>
 
 <pre>-- Self-dual properties
-SELECT id FROM properties WHERE id = dual_property_id;
+SELECT id FROM category_properties WHERE id = dual_property_id;
 </pre>
 
 <pre>-- Properties not invariant under equivalences
-SELECT id FROM properties WHERE invariant_under_equivalences = FALSE;
+SELECT id FROM category_properties WHERE invariant_under_equivalences = FALSE;
 </pre>
 
 <pre>-- Properties without related properties
-SELECT p.id FROM properties p
-LEFT JOIN related_properties r
+SELECT p.id FROM category_properties p
+LEFT JOIN related_category_properties r
 ON r.property_id = p.id
 WHERE r.related_property_id IS NULL;
 </pre>
 
 <pre>-- Equivalences
-SELECT assumptions, conclusions FROM implications_view
+SELECT assumptions, conclusions FROM category_implications_view
 WHERE is_equivalence = TRUE;
 </pre>
 
 <pre>-- Top 5 implications with the most assumptions
-SELECT assumptions, conclusions FROM implications_view
+SELECT assumptions, conclusions FROM category_implications_view
 ORDER BY json_array_length(assumptions) DESC LIMIT 5;
 </pre>
 
@@ -113,7 +113,7 @@ ORDER BY length(reason) DESC LIMIT 10;
 
 <pre>-- Top 10 properties with the most undecided categories
 SELECT p.id AS property_id, COUNT(c.id) AS undecided_categories
-FROM properties p
+FROM category_properties p
 CROSS JOIN categories c
 LEFT JOIN category_property_assignments cp
 ON cp.category_id = c.id AND cp.property_id = p.id

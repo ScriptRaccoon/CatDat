@@ -62,7 +62,7 @@ export const load = async (event) => {
 		// tags
 		sql`
 			SELECT ct.tag
-			FROM category_tags ct
+			FROM category_tag_assignments ct
 			INNER JOIN tags t ON t.tag = ct.tag
 			WHERE ct.category_id = ${id}
 			ORDER BY t.position
@@ -79,7 +79,7 @@ export const load = async (event) => {
         			ELSE r.negation
     			END AS relation
 			FROM category_property_assignments cp
-			INNER JOIN properties p ON p.id = cp.property_id
+			INNER JOIN category_properties p ON p.id = cp.property_id
 			INNER JOIN relations r ON r.relation = p.relation
 			WHERE cp.category_id = ${id}
 			ORDER BY cp.position, lower(cp.property_id)
@@ -89,7 +89,7 @@ export const load = async (event) => {
 			SELECT
 				p.id,
 				p.relation
-			FROM properties p
+			FROM category_properties p
 			WHERE NOT EXISTS (
 				SELECT 1 FROM category_property_assignments
 				WHERE category_id = ${id} AND property_id = p.id
@@ -116,7 +116,7 @@ export const load = async (event) => {
 		sql`
 			SELECT u.id, u.name
 			FROM categories u
-			JOIN properties p
+			JOIN category_properties p
 			LEFT JOIN category_property_assignments cp
 				ON cp.category_id = ${id} AND cp.property_id = p.id
 			LEFT JOIN category_property_assignments up
