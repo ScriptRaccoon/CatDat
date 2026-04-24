@@ -59,9 +59,9 @@ Use `pnpm db:watch` to run this command automatically every time a file in the s
 
 ## Diagram
 
-This is the database schema as of 21.04.2026; changes may occur.
+This is the database schema as of 24.04.2026; changes may occur.
 
-<img alt="database diagram" src="https://github.com/user-attachments/assets/719358dc-a3bb-4da2-a1f7-e555203e61e3" />
+<img alt="database diagram" src="https://github.com/user-attachments/assets/f315b67e-1bb1-4e93-970a-1e5288dba60e" />
 
 ## Application Database
 
