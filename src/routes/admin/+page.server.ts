@@ -1,5 +1,5 @@
 import { redirect } from '@sveltejs/kit'
-import { has_session } from './sessions.js'
+import { has_session } from './sessions'
 
 export const prerender = false
 

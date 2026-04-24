@@ -3,7 +3,7 @@
 	import SearchFilter from '$components/SearchFilter.svelte'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
 	import { pluralize } from '$lib/client/utils'
-	import { get_property_url } from '$lib/commons/property.url.js'
+	import { get_property_url } from '$lib/commons/property.url'
 
 	let { data } = $props()
 
