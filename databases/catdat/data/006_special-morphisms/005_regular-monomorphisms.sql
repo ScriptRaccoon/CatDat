@@ -284,6 +284,11 @@ VALUES
     'walking_span',
     'same as isomorphisms',
     'This is because the category is right cancellative.'
+),
+(
+    'walking_splitting',
+    'same as monomorphisms',
+    'This is because the category is mono-regular.'
 );
 
 INSERT INTO special_morphisms

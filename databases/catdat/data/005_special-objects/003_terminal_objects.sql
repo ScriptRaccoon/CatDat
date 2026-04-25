@@ -55,6 +55,7 @@ VALUES
 ('walking_commutative_square', '$d$'),
 ('walking_isomorphism', 'both objects'),
 ('walking_morphism', '$1$'),
+('walking_splitting', '$0$'),
 ('Z', 'constant functor with value $1$'),
 ('Z_div', '$0$'),
 ('walking_composable_pair', '$2$');

@@ -279,7 +279,12 @@ VALUES
     'walking_span',
     'same as isomorphisms',
     'This is because the category is right cancellative.'
-),  
+),
+(
+    'walking_splitting',
+    'same as epimorphisms',
+    'This is because the category is epi-regular.'
+),
 (
     'Z',
     'same as epimorphisms',

@@ -332,6 +332,11 @@ VALUES
 	'It is a thin category.'
 ),
 (
+	'walking_splitting',
+	'the identities and $p$',
+	'The morphism $p$ is even a split monomorphism. The morphism $i$ is not an epimorphism since $\mathrm{id}_1 \circ i = ip \circ i$. The morphism $ip$ is not a epimorphism since it would imply that $i$ is an epimorphism.'
+),
+(
 	'Z',
 	'objectwise surjective natural transformations',
 	'This holds in every functor category $[\mathcal{C},\mathbf{Set}]$, here applied to the case that $\mathcal{C}$ has just one object.'

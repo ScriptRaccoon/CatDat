@@ -356,6 +356,11 @@ VALUES
 	'This is trivial.'
 ),
 (
+	'walking_splitting',
+	'the two identities',
+	'This is obvious.'
+),
+(
 	'Z',
 	'natural isomorphisms',
 	'This is true for all functor categories.'

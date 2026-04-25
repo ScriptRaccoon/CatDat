@@ -111,6 +111,8 @@ VALUES
 ('walking_span', 'finite'),
 ('walking_span', 'category theory'),
 ('walking_span', 'thin'),
+('walking_splitting', 'finite'),
+('walking_splitting', 'category theory'),
 ('Z', 'algebraic geometry'),
 ('Z', 'category theory'),
 ('Z_div', 'number theory'),

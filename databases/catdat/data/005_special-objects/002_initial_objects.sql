@@ -60,6 +60,7 @@ VALUES
 ('walking_fork', '$0$'),
 ('walking_morphism', '$0$'),
 ('walking_span', '$0$'),
+('walking_splitting', '$0$'),
 ('Z', 'constant functor with value $\varnothing$'),
 ('Z_div', '$1$'),
 ('walking_composable_pair', '$0$');

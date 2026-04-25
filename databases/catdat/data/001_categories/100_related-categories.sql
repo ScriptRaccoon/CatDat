@@ -145,6 +145,7 @@ VALUES
 ('walking_idempotent', 'walking_morphism'),
 ('walking_idempotent', 'walking_isomorphism'),
 ('walking_idempotent', 'BG_f'),
+('walking_idempotent', 'walking_splitting'),
 ('walking_isomorphism', '1'),
 ('walking_isomorphism', 'walking_morphism'),
 ('walking_isomorphism', 'walking_idempotent'),
@@ -154,7 +155,10 @@ VALUES
 ('walking_morphism', 'walking_composable_pair'),
 ('walking_morphism', 'walking_span'),
 ('walking_morphism', 'walking_idempotent'),
+('walking_morphism', 'walking_splitting'),
 ('walking_pair', 'walking_morphism'),
 ('walking_pair', 'walking_fork'),
 ('walking_span', 'walking_morphism'),
-('walking_span', 'walking_pair');
+('walking_span', 'walking_pair'),
+('walking_splitting', 'walking_idempotent'),
+('walking_splitting', 'walking_isomorphism');
