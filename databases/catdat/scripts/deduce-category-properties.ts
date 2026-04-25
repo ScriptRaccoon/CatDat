@@ -286,14 +286,16 @@ async function deduce_satisfied_category_properties(
 			values.push(category_id, id, reasons[id])
 		}
 
-		const insert_sql = options.check_conflicts
-			? `INSERT INTO category_property_assignments
+		const conflict_clause = options.check_conflicts
+			? ''
+			: 'ON CONFLICT (category_id, property_id) DO NOTHING'
+
+		const insert_sql = `
+			INSERT INTO category_property_assignments
 				(category_id, property_id, is_satisfied, reason, is_deduced)
-				VALUES ${value_fragments.join(',\n')}`
-			: `INSERT INTO category_property_assignments
-				(category_id, property_id, is_satisfied, reason, is_deduced)
-				VALUES ${value_fragments.join(',\n')}
-				ON CONFLICT (category_id, property_id) DO NOTHING`
+			VALUES ${value_fragments.join(',\n')}
+			${conflict_clause}
+		`
 
 		try {
 			await tx.execute({ sql: insert_sql, args: values })
@@ -394,14 +396,16 @@ async function deduce_unsatisfied_category_properties(
 			values.push(category_id, id, reasons[id])
 		}
 
-		const insert_query = options.check_conflicts
-			? `INSERT INTO category_property_assignments
+		const conflict_clause = options.check_conflicts
+			? ''
+			: 'ON CONFLICT (category_id, property_id) DO NOTHING'
+
+		const insert_query = `
+			INSERT INTO category_property_assignments
 				(category_id, property_id, is_satisfied, reason, is_deduced)
-				VALUES ${value_fragments.join(',\n')}`
-			: `INSERT INTO category_property_assignments
-				(category_id, property_id, is_satisfied, reason, is_deduced)
-				VALUES ${value_fragments.join(',\n')}
-				ON CONFLICT (category_id, property_id) DO NOTHING`
+			VALUES ${value_fragments.join(',\n')}
+			${conflict_clause}
+		`
 
 		try {
 			await tx.execute({ sql: insert_query, args: values })
