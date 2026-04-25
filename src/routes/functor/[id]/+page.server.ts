@@ -51,7 +51,7 @@ export const load = async (event) => {
 			INNER JOIN functor_properties p ON p.id = fp.property_id
 			INNER JOIN relations r ON r.relation = p.relation
 			WHERE fp.functor_id = ${id}
-			ORDER BY fp.position, lower(fp.property_id)
+			ORDER BY fp.id
 		`,
 		// unknown properties
 		sql`

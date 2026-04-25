@@ -281,18 +281,17 @@ async function deduce_satisfied_category_properties(
 		const value_fragments: string[] = []
 		const values: (string | number)[] = []
 
-		for (let i = 0; i < deduced_satisfied_props.length; i++) {
-			const id = deduced_satisfied_props[i]
-			value_fragments.push(`(?, ?, TRUE, ?, ?, TRUE)`)
-			values.push(category_id, id, reasons[id], i + 1)
+		for (const id of deduced_satisfied_props) {
+			value_fragments.push(`(?, ?, TRUE, ?, TRUE)`)
+			values.push(category_id, id, reasons[id])
 		}
 
 		const insert_sql = options.check_conflicts
 			? `INSERT INTO category_property_assignments
-				(category_id, property_id, is_satisfied, reason, position, is_deduced)
+				(category_id, property_id, is_satisfied, reason, is_deduced)
 				VALUES ${value_fragments.join(',\n')}`
 			: `INSERT INTO category_property_assignments
-				(category_id, property_id, is_satisfied, reason, position, is_deduced)
+				(category_id, property_id, is_satisfied, reason, is_deduced)
 				VALUES ${value_fragments.join(',\n')}
 				ON CONFLICT (category_id, property_id) DO NOTHING`
 
@@ -390,18 +389,17 @@ async function deduce_unsatisfied_category_properties(
 		const value_fragments: string[] = []
 		const values: (string | number)[] = []
 
-		for (let i = 0; i < deduced_unsatisfied_props.length; i++) {
-			const id = deduced_unsatisfied_props[i]
-			value_fragments.push('(?, ?, FALSE, ?, ?, TRUE)')
-			values.push(category_id, id, reasons[id], i + 1)
+		for (const id of deduced_unsatisfied_props) {
+			value_fragments.push('(?, ?, FALSE, ?, TRUE)')
+			values.push(category_id, id, reasons[id])
 		}
 
 		const insert_query = options.check_conflicts
 			? `INSERT INTO category_property_assignments
-				(category_id, property_id, is_satisfied, reason, position, is_deduced)
+				(category_id, property_id, is_satisfied, reason, is_deduced)
 				VALUES ${value_fragments.join(',\n')}`
 			: `INSERT INTO category_property_assignments
-				(category_id, property_id, is_satisfied, reason, position, is_deduced)
+				(category_id, property_id, is_satisfied, reason, is_deduced)
 				VALUES ${value_fragments.join(',\n')}
 				ON CONFLICT (category_id, property_id) DO NOTHING`
 

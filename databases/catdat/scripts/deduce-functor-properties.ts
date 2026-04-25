@@ -270,15 +270,14 @@ async function deduce_satisfied_functor_properties(
 		const value_fragments: string[] = []
 		const values: (string | number)[] = []
 
-		for (let i = 0; i < deduced_satisfied_props.length; i++) {
-			const id = deduced_satisfied_props[i]
-			value_fragments.push(`(?, ?, TRUE, ?, ?, TRUE)`)
-			values.push(functor.id, id, reasons[id], i + 1)
+		for (const id of deduced_satisfied_props) {
+			value_fragments.push(`(?, ?, TRUE, ?, TRUE)`)
+			values.push(functor.id, id, reasons[id])
 		}
 
 		const insert_sql = `
 			INSERT INTO functor_property_assignments (
-				functor_id, property_id, is_satisfied, reason, position, is_deduced
+				functor_id, property_id, is_satisfied, reason, is_deduced
 			)
 			VALUES
 			${value_fragments.join(',\n')}
@@ -361,13 +360,13 @@ async function deduce_unsatisfied_functor_properties(
 
 		for (let i = 0; i < deduced_unsatisfied_props.length; i++) {
 			const id = deduced_unsatisfied_props[i]
-			value_fragments.push('(?, ?, FALSE, ?, ?, TRUE)')
-			values.push(functor.id, id, reasons[id], i + 1)
+			value_fragments.push('(?, ?, FALSE, ?, TRUE)')
+			values.push(functor.id, id, reasons[id])
 		}
 
 		const insert_query = `
 			INSERT INTO functor_property_assignments (
-				functor_id, property_id, is_satisfied, reason, position, is_deduced
+				functor_id, property_id, is_satisfied, reason, is_deduced
 			)
 			VALUES
 			${value_fragments.join(',\n')}`

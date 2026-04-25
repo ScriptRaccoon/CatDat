@@ -82,7 +82,7 @@ export const load = async (event) => {
 			INNER JOIN category_properties p ON p.id = cp.property_id
 			INNER JOIN relations r ON r.relation = p.relation
 			WHERE cp.category_id = ${id}
-			ORDER BY cp.position, lower(cp.property_id)
+			ORDER BY cp.id
 		`,
 		// unknown properties
 		sql`
