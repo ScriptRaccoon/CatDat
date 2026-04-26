@@ -341,6 +341,11 @@ VALUES
 	'This is trivial.'
 ),
 (
+	'walking_reflexive_pair',
+	'the identities and $i$',
+	'Since $pi = \mathrm{id}$, but $ip \neq \mathrm{id}$, we conclude that $i$ is a monomorphism, but $p$ is not. Likewise, $q$ is no monomorphism. Then $ip$ and $iq$ cannot be monomorphisms either.'
+),
+(
 	'walking_span',
 	'every morphism',
 	'It is a thin category.'

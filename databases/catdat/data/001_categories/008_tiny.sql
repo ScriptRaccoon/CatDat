@@ -130,4 +130,14 @@ VALUES
 	'This category could also be called the "walking split idempotent" (or "walking section", "walking retraction"), but we chose a name that emphasizes that the splitting belongs to the data. Notice that the $5$ given morphisms are indeed closed under composition. For example, $p \circ ip = p$ and $ip \circ i = i$.<br>The walking splitting can be interpreted as a skeleton of the category of $\mathbb{F}_2$-vector spaces of dimension $\leq 1$.',
 	NULL,
 	NULL
+),
+(
+	'walking_reflexive_pair',
+	'walking reflexive pair',
+	'$\mathrm{Refl}$',
+	'two objects $0$ and $1$',
+	'the identities, morphisms $p,q : 1 \rightrightarrows 0$, a morphism $i : 0 \to 1$ with $p i = q i = \mathrm{id}_0$, and the two idempotent morphisms $ip, iq : 1 \to 1$.',
+	'The mentioned morphisms are indeed closed under composition, for example $ip \circ iq = iq$ and $iq \circ ip = ip$. The name of this category comes from the fact that a functor out of it is the same as an <a href="https://ncatlab.org/nlab/show/reflexive+pair" target="_blank">reflexive pair</a> in the target category. Notice that its dual (the walking coreflexive pair) is just the truncated simplex category $\Delta^{\leq 1}$.',
+	NULL,
+	NULL
 );

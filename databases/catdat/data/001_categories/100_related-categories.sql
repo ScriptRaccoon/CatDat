@@ -158,7 +158,11 @@ VALUES
 ('walking_morphism', 'walking_splitting'),
 ('walking_pair', 'walking_morphism'),
 ('walking_pair', 'walking_fork'),
+('walking_pair', 'walking_reflexive_pair'),
+('walking_reflexive_pair', 'walking_pair'),
+('walking_reflexive_pair', 'walking_splitting'),
 ('walking_span', 'walking_morphism'),
 ('walking_span', 'walking_pair'),
 ('walking_splitting', 'walking_idempotent'),
-('walking_splitting', 'walking_isomorphism');
+('walking_splitting', 'walking_isomorphism'),
+('walking_splitting', 'walking_reflexive_pair');

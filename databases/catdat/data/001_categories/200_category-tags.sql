@@ -108,6 +108,8 @@ VALUES
 ('walking_morphism', 'thin'),
 ('walking_pair', 'finite'),
 ('walking_pair', 'category theory'),
+('walking_reflexive_pair', 'finite'),
+('walking_reflexive_pair', 'category theory'),
 ('walking_span', 'finite'),
 ('walking_span', 'category theory'),
 ('walking_span', 'thin'),

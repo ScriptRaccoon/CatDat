@@ -351,6 +351,11 @@ VALUES
 	'This is trivial.'
 ),
 (
+	'walking_reflexive_pair',
+	'the two identities',
+	'This is obvious.'
+),
+(
 	'walking_span',
 	'the three identities',
 	'This is trivial.'

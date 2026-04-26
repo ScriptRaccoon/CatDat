@@ -327,6 +327,11 @@ VALUES
 	'Each $0 \to 1$ is an epimorphism since the only morphism starting at $1$ is the identity.'
 ),
 (
+	'walking_reflexive_pair',
+	'the identities, $p$, $q$',
+	'Since $pi = \mathrm{id}$, but $ip \neq \mathrm{id}$, we conclude that $p$ is an epimorphism, but $i$ is not. Likewise, $q$ is an epimorphism. Since $i$ is not an epimorphism, $ip$ and $iq$ are no epimorphisms either.'
+),
+(
 	'walking_span',
 	'every morphism',
 	'It is a thin category.'
