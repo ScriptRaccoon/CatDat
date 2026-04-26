@@ -161,6 +161,7 @@ VALUES
 ('walking_pair', 'walking_reflexive_pair'),
 ('walking_reflexive_pair', 'walking_pair'),
 ('walking_reflexive_pair', 'walking_splitting'),
+('walking_reflexive_pair', 'Delta'),
 ('walking_span', 'walking_morphism'),
 ('walking_span', 'walking_pair'),
 ('walking_splitting', 'walking_idempotent'),
