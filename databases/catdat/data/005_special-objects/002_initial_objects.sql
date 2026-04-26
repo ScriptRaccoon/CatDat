@@ -59,6 +59,7 @@ VALUES
 ('walking_isomorphism', 'both objects'),
 ('walking_fork', '$0$'),
 ('walking_morphism', '$0$'),
+('walking_reflexive_pair', '$0$'),
 ('walking_span', '$0$'),
 ('walking_splitting', '$0$'),
 ('Z', 'constant functor with value $\varnothing$'),

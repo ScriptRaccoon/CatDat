@@ -281,6 +281,11 @@ VALUES
     'This is because the category is right cancellative.'
 ),
 (
+    'walking_reflexive_pair',
+    'same as monomorphisms',
+    'This is because the category is mono-regular.'
+),
+(
     'walking_span',
     'same as isomorphisms',
     'This is because the category is right cancellative.'
