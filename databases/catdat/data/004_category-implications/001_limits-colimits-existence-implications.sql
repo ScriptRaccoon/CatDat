@@ -184,8 +184,8 @@ VALUES
 	-- TODO: combine this with "finitely accessible" below
 	-- once its dual is added to the database.
 	'["essentially finite", "Cauchy complete"]',
-	'["filtered colimits"]',
-	'See <a href="https://mathoverflow.net/questions/509853" target="_blank">MO/509853</a>.',
+	'["filtered colimits", "filtered-colimit-stable monomorphisms"]',
+	'We may assume that the category $\mathcal{C}$ is finite and Cauchy complete. The answer at <a href="https://mathoverflow.net/questions/509853" target="_blank">MO/509853</a> shows that every filtered colimit in $\mathcal{C}$ exists, in fact it is a retract of one of the objects in the diagram. Now apply this to the morphism category of $\mathcal{C}$. It follows that for every filtered diagram of morphisms $X_i \to Y_i$ their colimit $X_\infty \to Y_\infty$ exists, which is a retract of one of the $X_i \to Y_i$. Therefore, if every $X_i \to Y_i$ is a monomorphism, also $X_\infty \to Y_\infty$ is a monomorphism.',
 	FALSE
 ),
 (

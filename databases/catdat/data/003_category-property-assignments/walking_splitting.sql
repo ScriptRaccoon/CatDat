@@ -75,12 +75,6 @@ VALUES
 ),
 (
 	'walking_splitting',
-	'filtered-colimit-stable monomorphisms',
-	TRUE,
-	'We saw above that the embedding $\mathbf{Vect}^{\leq 1}_{\mathbb{F}_2} \hookrightarrow \mathbf{Vect}_{\mathbb{F}_2}$ is closed under sifted colimits, hence under filtered colimits. Hence, it preserves filtered colimits. Moreover, it preserves and reflects monomorphisms. Therefore, the claim follows from $\mathbf{Vect}_{\mathbb{F}_2}$.'
-),
-(
-	'walking_splitting',
 	'one-way',
 	FALSE,
 	'The morphism $ip : 1 \to 1$ provides a counterexample.'
