@@ -57,6 +57,18 @@ VALUES
 ),
 (
 	'walking_reflexive_pair',
+	'generator',
+	TRUE,
+	'The object $1$ is a generator: $0$ is the only other object and any two morphisms with domain $0$ are equal.'
+),
+(
+	'walking_reflexive_pair',
+	'cogenerator',
+	TRUE,
+	'The object $1$ is a cogenerator: $0$ is the only other object and the only non-equal pair of morphisms with codomain $0$ is $p,q$, which also satisfies $ip \neq iq$. Remark: Also $0$ is a cogenerator.'
+),
+(
+	'walking_reflexive_pair',
 	'strict initial object',
 	FALSE,
 	'The morphism $p : 1 \to 0$ is a witness.'
