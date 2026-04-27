@@ -139,7 +139,7 @@ VALUES
 	'the identities, a morphism $i : 0 \to 1$, morphisms $p,q : 1 \rightrightarrows 0$ with $p i = q i = \mathrm{id}_0$, and the two idempotent morphisms $ip, iq : 1 \to 1$.',
 	'The mentioned morphisms are indeed closed under composition, for example $ip \circ iq = iq$ and $iq \circ ip = ip$.
 	$$0 \begin{array}{c} \xtwoheadleftarrow{~~p~~} \\ \xhookrightarrow{~~i~~} \\ \xtwoheadleftarrow{~~q~~} \end{array} 1$$
-	The name of this category comes from the fact that a functor out of it is the same as a <a href="https://ncatlab.org/nlab/show/reflexive+pair" target="_blank">reflexive pair</a> in the target category. Notice that its dual (the walking coreflexive pair) is just the truncated simplex category $\Delta^{\leq 1}$.',
+	The name of this category comes from the fact that a functor out of it is the same as a <a href="https://ncatlab.org/nlab/show/reflexive+pair" target="_blank">reflexive pair</a> in the target category. Notice that its dual (the walking coreflexive pair) is isomorphic to the truncated simplex category $\Delta^{\leq 1}$ via $0 \mapsto [0]$ and $1 \mapsto [1]$.',
 	NULL,
 	NULL
 );

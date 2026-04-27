@@ -69,6 +69,12 @@ VALUES
 ),
 (
 	'walking_reflexive_pair',
+	'sifted',
+	TRUE,
+	'The walking reflexive pair is isomorphic to the dual of the truncated simplex category $\Delta^{\leq 1}$ having the objects $[0],[1]$ only. Our proof that the <a href="/category/Delta">simplex category $\Delta$ is cosifted</a> has only used $[0],[1]$ as auxiliary objects and therefore also shows that $\Delta^{\leq 1}$ is cosifted.'
+),
+(
+	'walking_reflexive_pair',
 	'strict initial object',
 	FALSE,
 	'The morphism $p : 1 \to 0$ is a witness.'
