@@ -1,5 +1,6 @@
 onlyBuiltDependencies:
     - better-sqlite3
+    - esbuild
 overrides:
     cookie@<0.7.0: '>=0.7.0'
     vite@>=8.0.0 <=8.0.4: '>=8.0.5'
