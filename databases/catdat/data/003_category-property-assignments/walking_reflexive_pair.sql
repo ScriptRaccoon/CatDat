@@ -90,10 +90,4 @@ VALUES
 	'reflexive coequalizers',
 	FALSE,
 	'The reflexive pair $p,q : 1 \rightrightarrows 0$ has no coequalizer, in fact is not coequalized by any morphism since $\mathrm{id}_0 \, p \neq \mathrm{id}_0 \, q$ and $i p \neq i q$.'
-),
-(
-	'walking_reflexive_pair',
-	'pullbacks',
-	FALSE,
-	'The morphisms $p,q : 1 \rightrightarrows 0$ have no pullback: otherwise, since $0$ is initial, they would be coequalized by some morphism. But this is not the case since $\mathrm{id}_0 \, p \neq \mathrm{id}_0 \, q$ and $i p \neq i q$.'
 );
