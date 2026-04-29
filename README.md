@@ -55,7 +55,7 @@ Built with modern web technologies:
 
 - Language: [TypeScript](https://www.typescriptlang.org)
 - Framework: [SvelteKit](https://svelte.dev/docs/kit/introduction)
-- Database: [SQLite](https://sqlite.org/) / [Turso](https://turso.tech)
+- Database: [SQLite](https://sqlite.org/)
 - Deployment: [Netlify](https://netlify.com)
 - Math Rendering: [katex](https://www.npmjs.com/package/katex)
 
