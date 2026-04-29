@@ -1,4 +1,4 @@
-import type { Transaction, Client } from '@libsql/client'
+import { type Database } from 'better-sqlite3'
 import {
 	get_assumption_string,
 	get_conclusion_string,
@@ -32,39 +32,33 @@ type FunctorPropertyMeta = {
  * Deduce properties of functors from given ones
  * by using the list of functor implications.
  */
-export async function deduce_functor_properties(db: Client) {
+export function deduce_functor_properties(db: Database) {
 	console.info('\n--- Deduce functor properties ---')
-	const tx = await db.transaction()
 
-	try {
-		const implications = await get_normalized_functor_implications(tx)
+	const implications = get_normalized_functor_implications(db)
+	const functors = get_functors(db)
+	const properties_dict = get_functor_properties_dict(db)
 
-		const functors = await get_functors(tx)
-		const properties_dict = await get_functor_properties_dict(tx)
-
-		await delete_deduced_functor_properties(tx)
+	const deduction = db.transaction(() => {
+		delete_deduced_functor_properties(db)
 
 		for (const functor of functors) {
-			await deduce_satisfied_functor_properties(
-				tx,
+			deduce_satisfied_functor_properties(
+				db,
 				functor,
 				implications,
 				properties_dict,
 			)
-			await deduce_unsatisfied_functor_properties(
-				tx,
+			deduce_unsatisfied_functor_properties(
+				db,
 				functor,
 				implications,
 				properties_dict,
 			)
 		}
+	})
 
-		await tx.commit()
-	} catch (err) {
-		console.error(err)
-		await tx.rollback()
-		process.exit(1)
-	}
+	deduction()
 }
 
 /**
@@ -81,21 +75,21 @@ export async function deduce_functor_properties(db: Client) {
  *
  * P_1 + ... + P_n ----> Q
  */
-async function get_normalized_functor_implications(
-	tx: Transaction,
-): Promise<NormalizedFunctorImplication[]> {
-	const res = await tx.execute(`
-        SELECT
-			v.id,
-            v.assumptions,
-			v.source_assumptions,
-			v.target_assumptions,
-            v.conclusions,
-            v.is_equivalence
-        FROM functor_implications_view v
-    `)
-
-	const all_implications_db = res.rows as unknown as {
+function get_normalized_functor_implications(
+	db: Database,
+): NormalizedFunctorImplication[] {
+	const all_implications_db = db
+		.prepare(
+			`SELECT
+				v.id,
+				v.assumptions,
+				v.source_assumptions,
+				v.target_assumptions,
+				v.conclusions,
+				v.is_equivalence
+			FROM functor_implications_view v`,
+		)
+		.all() as {
 		id: string
 		assumptions: string
 		source_assumptions: string
@@ -142,32 +136,38 @@ async function get_normalized_functor_implications(
  * Returns the list of functors saved in the database along with
  * the satisfied properties of their source and target category.
  */
-async function get_functors(tx: Transaction) {
-	const res = await tx.execute(`
-		SELECT
-			id,
-			name,
-			source,
-			target,
-			(
-				SELECT json_group_array(property_id) FROM (
-					SELECT property_id
-					FROM category_property_assignments
-					WHERE category_id = source AND is_satisfied = TRUE
-				)
-			) as source_props,
-			(
-				SELECT json_group_array(property_id) FROM (
-					SELECT property_id
-					FROM category_property_assignments
-					WHERE category_id = target AND is_satisfied = TRUE
-				)
-			) as target_props
-		FROM functors
-		ORDER BY lower(name)
-	`)
+function get_functors(db: Database) {
+	const rows = db
+		.prepare(
+			`SELECT
+				id, name, source, target,
+				(
+					SELECT json_group_array(property_id) FROM (
+						SELECT property_id
+						FROM category_property_assignments
+						WHERE category_id = source AND is_satisfied = TRUE
+					)
+				) as source_props,
+				(
+					SELECT json_group_array(property_id) FROM (
+						SELECT property_id
+						FROM category_property_assignments
+						WHERE category_id = target AND is_satisfied = TRUE
+					)
+				) as target_props
+			FROM functors
+			ORDER BY lower(name)`,
+		)
+		.all() as {
+		id: string
+		name: string
+		source: string
+		target: string
+		source_props: string
+		target_props: string
+	}[]
 
-	return res.rows.map((row) => ({
+	return rows.map((row) => ({
 		id: row.id,
 		name: row.name,
 		source: row.source,
@@ -180,20 +180,21 @@ async function get_functors(tx: Transaction) {
 /**
  * Returns a dictionary of functor properties saved in the database.
  */
-async function get_functor_properties_dict(tx: Transaction) {
-	const res = await tx.execute(`
-		SELECT
-			p.id, p.dual_property_id, p.relation,
-			r.negation, r.conditional
-		FROM functor_properties p
-		INNER JOIN relations r ON r.relation = p.relation
-		ORDER BY lower(p.id)
-	`)
-	const rows = res.rows as unknown as FunctorPropertyMeta[]
+function get_functor_properties_dict(db: Database) {
+	const properties = db
+		.prepare(
+			`SELECT
+				p.id, p.dual_property_id, p.relation,
+				r.negation, r.conditional
+			FROM functor_properties p
+			INNER JOIN relations r ON r.relation = p.relation
+			ORDER BY lower(p.id)`,
+		)
+		.all() as FunctorPropertyMeta[]
 
 	const dict: Record<string, FunctorPropertyMeta> = {}
 
-	for (const p of rows) dict[p.id] = p
+	for (const p of properties) dict[p.id] = p
 
 	return dict
 }
@@ -202,42 +203,41 @@ async function get_functor_properties_dict(tx: Transaction) {
  * Clears all the deduced functor properties.
  * This runs before the deduction starts.
  */
-async function delete_deduced_functor_properties(tx: Transaction) {
-	await tx.execute('DELETE FROM functor_property_assignments WHERE is_deduced = TRUE')
+function delete_deduced_functor_properties(db: Database) {
+	db.exec('DELETE FROM functor_property_assignments WHERE is_deduced = TRUE')
 }
 
 /**
  * Returns the list of properties that are satisfied or unsatisfied
  * for a given functor.
  */
-async function get_decided_functor_properties(
-	tx: Transaction,
+function get_decided_functor_properties(
+	db: Database,
 	functor_id: string,
 	value: boolean,
 ) {
-	const res = await tx.execute({
-		sql: `
-			SELECT property_id
+	const rows = db
+		.prepare(
+			`SELECT property_id
 			FROM functor_property_assignments
-			WHERE functor_id = ? AND is_satisfied = ?
-		`,
-		args: [functor_id, value],
-	})
+			WHERE functor_id = ? AND is_satisfied = ?`,
+		)
+		.all(functor_id, value ? 1 : 0) as { property_id: string }[]
 
-	return new Set(res.rows.map((row) => row.property_id) as string[])
+	return new Set(rows.map((row) => row.property_id) as string[])
 }
 
 /**
  * Deduce satisfied properties for a given functor from given ones
  * by using the list of normalized implications.
  */
-async function deduce_satisfied_functor_properties(
-	tx: Transaction,
+function deduce_satisfied_functor_properties(
+	db: Database,
 	functor: FunctorMeta,
 	implications: NormalizedFunctorImplication[],
 	properties_dict: Record<string, FunctorPropertyMeta>,
 ) {
-	const satisfied_props = await get_decided_functor_properties(tx, functor.id, true)
+	const satisfied_props = get_decided_functor_properties(db, functor.id, true)
 
 	const deduced_satisfied_props: string[] = []
 	const reasons: Record<string, string> = {}
@@ -283,7 +283,7 @@ async function deduce_satisfied_functor_properties(
 			${value_fragments.join(',\n')}
 		`
 
-		await tx.execute({ sql: insert_sql, args: values })
+		db.prepare(insert_sql).run(...values)
 	}
 
 	console.info(
@@ -295,14 +295,14 @@ async function deduce_satisfied_functor_properties(
  * Deduce unsatisfied properties for a given functor from given ones
  * by using the satisfied properties and the list of normalized implications.
  */
-async function deduce_unsatisfied_functor_properties(
-	tx: Transaction,
+function deduce_unsatisfied_functor_properties(
+	db: Database,
 	functor: FunctorMeta,
 	implications: NormalizedFunctorImplication[],
 	properties_dict: Record<string, FunctorPropertyMeta>,
 ) {
-	const satisfied_props = await get_decided_functor_properties(tx, functor.id, true)
-	const unsatisfied_props = await get_decided_functor_properties(tx, functor.id, false)
+	const satisfied_props = get_decided_functor_properties(db, functor.id, true)
+	const unsatisfied_props = get_decided_functor_properties(db, functor.id, false)
 
 	const deduced_unsatisfied_props: string[] = []
 	const reasons: Record<string, string> = {}
@@ -371,7 +371,7 @@ async function deduce_unsatisfied_functor_properties(
 			VALUES
 			${value_fragments.join(',\n')}`
 
-		await tx.execute({ sql: insert_query, args: values })
+		db.prepare(insert_query).run(...values)
 	}
 
 	console.info(

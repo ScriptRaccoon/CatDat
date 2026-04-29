@@ -1,4 +1,4 @@
-import fs from 'node:fs/promises'
+import fs from 'node:fs'
 import path from 'node:path'
 import { get_client } from './shared'
 
@@ -10,7 +10,8 @@ async function seed() {
 	const db = get_client()
 	const data_folder = path.join(process.cwd(), 'databases', 'catdat', 'data')
 
-	const subfolders = (await fs.readdir(data_folder, { withFileTypes: true }))
+	const subfolders = fs
+		.readdirSync(data_folder, { withFileTypes: true })
 		.filter((f) => f.isDirectory())
 		.map((f) => f.name)
 		.sort()
@@ -18,12 +19,11 @@ async function seed() {
 	const invalid_folder = subfolders.find((f) => !f.match(/^\d{3}_/))
 	if (invalid_folder) throw new Error(`Invalid folder name: ${invalid_folder}`)
 
-	const tx = await db.transaction()
-
-	try {
+	const process_files = db.transaction(() => {
 		for (const folder of subfolders) {
 			const folder_path = path.join(data_folder, folder)
-			const files = (await fs.readdir(folder_path, { withFileTypes: true }))
+			const files = fs
+				.readdirSync(folder_path, { withFileTypes: true })
 				.filter((f) => f.isFile() && f.name.endsWith('.sql'))
 				.map((f) => path.join(folder_path, f.name))
 				.sort()
@@ -38,16 +38,18 @@ async function seed() {
 				console.info(`Seed: ${base}`)
 
 				try {
-					const sql = await fs.readFile(file, 'utf8')
-					await tx.executeMultiple(sql)
+					const sql = fs.readFileSync(file, 'utf8')
+					db.exec(sql)
 				} catch (err) {
 					throw new Error(`Seed failed in ${base}: ${String(err)}`)
 				}
 			}
 		}
-		await tx.commit()
+	})
+
+	try {
+		process_files()
 	} catch (err) {
-		await tx.rollback()
 		console.error(err)
 		process.exit(1)
 	}

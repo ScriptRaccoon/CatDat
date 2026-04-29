@@ -1,4 +1,5 @@
-import type { Client } from '@libsql/client'
+import { type Database } from 'better-sqlite3'
+
 import { are_equal_sets } from './shared'
 
 // TODO: remove code duplication with category implication deduction script
@@ -6,17 +7,17 @@ import { are_equal_sets } from './shared'
 /**
  * Deduces functor implications from given ones.
  */
-export async function deduce_functor_implications(db: Client) {
+export function deduce_functor_implications(db: Database) {
 	console.info('\n--- Deduce functor implications ---')
-	await clear_deduced_functor_implications(db)
-	await create_dualized_functor_implications(db)
+	clear_deduced_functor_implications(db)
+	create_dualized_functor_implications(db)
 }
 
 /**
  * Clears all deduced functor implications. This is done as a first step.
  */
-async function clear_deduced_functor_implications(db: Client) {
-	await db.execute(`DELETE FROM functor_implications WHERE is_deduced = TRUE`)
+function clear_deduced_functor_implications(db: Database) {
+	db.exec(`DELETE FROM functor_implications WHERE is_deduced = TRUE`)
 }
 
 /**
@@ -25,39 +26,8 @@ async function clear_deduced_functor_implications(db: Client) {
  * then P^op ===> Q^op holds as well. The assumptions of source and target
  * categories (if any) need to be dualized as well.
  */
-async function create_dualized_functor_implications(db: Client) {
-	const res = await db.execute(`
-        SELECT
-            v.id,
-            v.assumptions,
-            v.conclusions,
-            v.is_equivalence,
-            v.reason,
-            (
-                SELECT json_group_array(p.dual_property_id)
-                FROM json_each(v.assumptions) a
-                JOIN functor_properties p ON p.id = a.value
-            ) AS dual_assumptions,
-            (
-                SELECT json_group_array(p.dual_property_id)
-                FROM json_each(v.source_assumptions) sa
-                JOIN category_properties p ON p.id = sa.value
-            ) AS dual_source_assumptions,
-            (
-                SELECT json_group_array(p.dual_property_id)
-                FROM json_each(v.target_assumptions) ta
-                JOIN category_properties p ON p.id = ta.value
-            ) AS dual_target_assumptions,
-            (
-                SELECT json_group_array(p.dual_property_id)
-                FROM json_each(v.conclusions) c
-                JOIN functor_properties p ON p.id = c.value
-            ) AS dual_conclusions
-        FROM functor_implications_view v
-        WHERE v.is_deduced = FALSE
-    `)
-
-	const implications = res.rows as unknown as {
+function create_dualized_functor_implications(db: Database) {
+	type FullImplication = {
 		id: string
 		assumptions: string
 		conclusions: string
@@ -67,7 +37,40 @@ async function create_dualized_functor_implications(db: Client) {
 		dual_conclusions: string
 		is_equivalence: number
 		reason: string
-	}[]
+	}
+
+	const implications = db
+		.prepare(
+			`SELECT
+				v.id,
+				v.assumptions,
+				v.conclusions,
+				v.is_equivalence,
+				v.reason,
+				(
+					SELECT json_group_array(p.dual_property_id)
+					FROM json_each(v.assumptions) a
+					JOIN functor_properties p ON p.id = a.value
+				) AS dual_assumptions,
+				(
+					SELECT json_group_array(p.dual_property_id)
+					FROM json_each(v.source_assumptions) sa
+					JOIN category_properties p ON p.id = sa.value
+				) AS dual_source_assumptions,
+				(
+					SELECT json_group_array(p.dual_property_id)
+					FROM json_each(v.target_assumptions) ta
+					JOIN category_properties p ON p.id = ta.value
+				) AS dual_target_assumptions,
+				(
+					SELECT json_group_array(p.dual_property_id)
+					FROM json_each(v.conclusions) c
+					JOIN functor_properties p ON p.id = c.value
+				) AS dual_conclusions
+			FROM functor_implications_view v
+			WHERE v.is_deduced = FALSE`,
+		)
+		.all() as FullImplication[]
 
 	const dualizable_implications = implications.filter((impl) => {
 		const has_null =
@@ -89,21 +92,21 @@ async function create_dualized_functor_implications(db: Client) {
 		)
 	})
 
-	await db.batch(
-		dualizable_implications.map((impl) => ({
-			sql: `
-            INSERT INTO functor_implications_view (
-                id,
-                assumptions,
-                source_assumptions,
-                target_assumptions,
-                conclusions,
-                is_equivalence,
-                reason,
-                dualized_from,
-				is_deduced
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, TRUE)`,
-			args: [
+	const insert_duals = db.transaction(() => {
+		for (const impl of dualizable_implications) {
+			db.prepare(
+				`INSERT INTO functor_implications_view (
+					id,
+					assumptions,
+					source_assumptions,
+					target_assumptions,
+					conclusions,
+					is_equivalence,
+					reason,
+					dualized_from,
+					is_deduced
+				) VALUES (?, ?, ?, ?, ?, ?, ?, ?, TRUE)`,
+			).run(
 				`dual_${impl.id}`,
 				impl.dual_assumptions,
 				impl.dual_source_assumptions,
@@ -112,10 +115,10 @@ async function create_dualized_functor_implications(db: Client) {
 				impl.is_equivalence,
 				'This follows from the dual implication.',
 				impl.id,
-			],
-		})),
-		'write',
-	)
+			)
+		}
+	})
 
+	insert_duals()
 	console.info(`Deduced ${dualizable_implications.length} implications by duality`)
 }

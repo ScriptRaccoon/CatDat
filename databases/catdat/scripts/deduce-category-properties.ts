@@ -1,4 +1,4 @@
-import { type Transaction, type Client, LibsqlError } from '@libsql/client'
+import { SqliteError, type Database } from 'better-sqlite3'
 import {
 	get_assumption_string,
 	get_conclusion_string,
@@ -24,30 +24,28 @@ type CategoryPropertyMeta = {
  * Deduce properties of categories from given ones
  * by using the list of implications.
  */
-export async function deduce_category_properties(db: Client) {
+export function deduce_category_properties(db: Database) {
 	console.info('\n--- Deduce category properties ---')
 
-	const tx = await db.transaction()
+	const implications = get_normalized_category_implications(db)
+	const categories = get_categories(db)
+	const properties_dict = get_properties_dict(db)
 
-	try {
-		const implications = await get_normalized_category_implications(tx)
-		const categories = await get_categories(tx)
-		const properties_dict = await get_properties_dict(tx)
+	const deduction = db.transaction(() => {
+		delete_deduced_category_properties(db)
 
-		await delete_deduced_category_properties(tx)
-
-		const decided_properties = await get_all_decided_properties(tx, categories)
+		const decided_properties = get_all_decided_properties(db, categories)
 
 		for (const category of categories) {
-			await deduce_satisfied_category_properties(
-				tx,
+			deduce_satisfied_category_properties(
+				db,
 				category.id,
 				implications,
 				decided_properties[category.id].satisfied,
 				properties_dict,
 			)
-			await deduce_unsatisfied_category_properties(
-				tx,
+			deduce_unsatisfied_category_properties(
+				db,
 				category.id,
 				implications,
 				decided_properties[category.id].satisfied,
@@ -64,8 +62,8 @@ export async function deduce_category_properties(db: Client) {
 				continue
 			}
 
-			await deduce_dual_category_properties(
-				tx,
+			deduce_dual_category_properties(
+				db,
 				category,
 				decided_properties[category.id].satisfied,
 				decided_properties[category.id].unsatisfied,
@@ -74,16 +72,16 @@ export async function deduce_category_properties(db: Client) {
 				properties_dict,
 			)
 
-			await deduce_satisfied_category_properties(
-				tx,
+			deduce_satisfied_category_properties(
+				db,
 				category.id,
 				implications,
 				decided_properties[category.id].satisfied,
 				properties_dict,
 				{ check_conflicts: false },
 			)
-			await deduce_unsatisfied_category_properties(
-				tx,
+			deduce_unsatisfied_category_properties(
+				db,
 				category.id,
 				implications,
 				decided_properties[category.id].satisfied,
@@ -92,13 +90,9 @@ export async function deduce_category_properties(db: Client) {
 				{ check_conflicts: false },
 			)
 		}
+	})
 
-		await tx.commit()
-	} catch (err) {
-		console.error(err)
-		await tx.rollback()
-		process.exit(1)
-	}
+	deduction()
 }
 
 /**
@@ -115,19 +109,19 @@ export async function deduce_category_properties(db: Client) {
  *
  * P_1 + ... + P_n ----> Q
  */
-async function get_normalized_category_implications(
-	tx: Transaction,
-): Promise<NormalizedCategoryImplication[]> {
-	const res = await tx.execute(`
-        SELECT
-			v.id,
-            v.assumptions,
-            v.conclusions,
-            v.is_equivalence
-        FROM category_implications_view v
-    `)
-
-	const all_implications_db = res.rows as unknown as {
+function get_normalized_category_implications(
+	db: Database,
+): NormalizedCategoryImplication[] {
+	const all_implications_db = db
+		.prepare(
+			`SELECT
+				v.id,
+				v.assumptions,
+				v.conclusions,
+				v.is_equivalence
+			FROM category_implications_view v`,
+		)
+		.all() as {
 		id: string
 		assumptions: string
 		conclusions: string
@@ -165,31 +159,33 @@ async function get_normalized_category_implications(
 /**
  * Returns the list of categories saved in the database.
  */
-async function get_categories(tx: Transaction) {
-	const res = await tx.execute(`
-		SELECT id, name, dual_category_id
-		FROM categories ORDER BY lower(name)
-	`)
-	return res.rows as unknown as CategoryMeta[]
+function get_categories(db: Database) {
+	return db
+		.prepare(
+			`SELECT id, name, dual_category_id
+			FROM categories ORDER BY lower(name)`,
+		)
+		.all() as CategoryMeta[]
 }
 
 /**
  * Returns a dictionary of properties saved in the database.
  */
-async function get_properties_dict(tx: Transaction) {
-	const res = await tx.execute(`
-		SELECT
-			p.id, p.dual_property_id, p.relation,
-			r.negation, r.conditional
-		FROM category_properties p
-		INNER JOIN relations r ON r.relation = p.relation
-		ORDER BY lower(p.id)
-	`)
-	const rows = res.rows as unknown as CategoryPropertyMeta[]
+function get_properties_dict(db: Database) {
+	const properties = db
+		.prepare(
+			`SELECT
+				p.id, p.dual_property_id, p.relation,
+				r.negation, r.conditional
+			FROM category_properties p
+			INNER JOIN relations r ON r.relation = p.relation
+			ORDER BY lower(p.id)`,
+		)
+		.all() as CategoryPropertyMeta[]
 
 	const dict: Record<string, CategoryPropertyMeta> = {}
 
-	for (const p of rows) dict[p.id] = p
+	for (const p of properties) dict[p.id] = p
 
 	return dict
 }
@@ -198,24 +194,23 @@ async function get_properties_dict(tx: Transaction) {
  * Clears all the deduced properties.
  * This runs before the deduction starts.
  */
-async function delete_deduced_category_properties(tx: Transaction) {
-	await tx.execute(`
+function delete_deduced_category_properties(db: Database) {
+	db.exec(`
 		DELETE FROM category_property_assignments
-		WHERE is_deduced = TRUE
-	`)
+		WHERE is_deduced = TRUE`)
 }
 
 /**
  * Returns a dictionary with all properties that are satisfied or unsatisfied,
  * grouped by category and value.
  */
-async function get_all_decided_properties(tx: Transaction, categories: { id: string }[]) {
-	const res = await tx.execute(`
-		SELECT property_id, category_id, is_satisfied
-		FROM category_property_assignments
-	`)
-
-	const rows = res.rows as unknown as {
+function get_all_decided_properties(db: Database, categories: { id: string }[]) {
+	const rows = db
+		.prepare(
+			`SELECT property_id, category_id, is_satisfied
+			FROM category_property_assignments`,
+		)
+		.all() as unknown as {
 		property_id: string
 		category_id: string
 		is_satisfied: boolean
@@ -244,8 +239,8 @@ async function get_all_decided_properties(tx: Transaction, categories: { id: str
  * Deduce satisfied properties for a given category from given ones
  * by using the list of normalized implications.
  */
-async function deduce_satisfied_category_properties(
-	tx: Transaction,
+function deduce_satisfied_category_properties(
+	db: Database,
 	category_id: string,
 	implications: NormalizedCategoryImplication[],
 	satisfied_properties: Set<string>,
@@ -298,9 +293,9 @@ async function deduce_satisfied_category_properties(
 		`
 
 		try {
-			await tx.execute({ sql: insert_sql, args: values })
+			db.prepare(insert_sql).run(...values)
 		} catch (err) {
-			if (err instanceof LibsqlError) {
+			if (err instanceof SqliteError) {
 				if (err.code.startsWith('SQLITE_CONSTRAINT')) {
 					console.error(
 						`❌ Failed to complete deduction of satisfied properties for ${category_id} because of a conflict. The likely cause is a contradiction between its assigned properties.`,
@@ -323,8 +318,8 @@ async function deduce_satisfied_category_properties(
  * Deduce unsatisfied properties for a given category from given ones
  * by using the satisfied properties and the list of normalized implications.
  */
-async function deduce_unsatisfied_category_properties(
-	tx: Transaction,
+function deduce_unsatisfied_category_properties(
+	db: Database,
 	category_id: string,
 	implications: NormalizedCategoryImplication[],
 	satisfied_properties: Set<string>,
@@ -408,9 +403,9 @@ async function deduce_unsatisfied_category_properties(
 		`
 
 		try {
-			await tx.execute({ sql: insert_query, args: values })
+			db.prepare(insert_query).run(...values)
 		} catch (err) {
-			if (err instanceof LibsqlError) {
+			if (err instanceof SqliteError) {
 				if (err.code.startsWith('SQLITE_CONSTRAINT')) {
 					console.error(
 						`❌ Failed to complete deduction of unsatisfied properties for ${category_id} because of a conflict. The likely cause is a contradiction between its assigned properties.`,
@@ -433,8 +428,8 @@ async function deduce_unsatisfied_category_properties(
  * Assign dual properties to dual categories:
  * If C has property P, then C^op has property P^op (if defined).
  */
-async function deduce_dual_category_properties(
-	tx: Transaction,
+function deduce_dual_category_properties(
+	db: Database,
 	category: CategoryMeta,
 	satisfied: Set<string>,
 	unsatisfied: Set<string>,
@@ -474,7 +469,7 @@ async function deduce_dual_category_properties(
 			(category_id, property_id, is_satisfied, reason, is_deduced)
 		VALUES ${value_fragments.join(',\n')}`
 
-		await tx.execute({ sql: insert_query, args: values })
+		db.prepare(insert_query).run(...values)
 
 		console.info(
 			`Deduced ${new_satisfied.size} satisfied properties by duality for ${category.id}`,
@@ -499,7 +494,7 @@ async function deduce_dual_category_properties(
 			(category_id, property_id, is_satisfied, reason, is_deduced)
 		VALUES ${value_fragments.join(',\n')}`
 
-		await tx.execute({ sql: insert_query, args: values })
+		db.prepare(insert_query).run(...values)
 
 		console.info(
 			`Deduced ${new_unsatisfied.size} unsatisfied properties by duality for ${category.id}`,

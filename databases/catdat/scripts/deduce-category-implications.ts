@@ -1,21 +1,21 @@
-import type { Client } from '@libsql/client'
 import { are_equal_sets } from './shared'
+import { type Database } from 'better-sqlite3'
 
 /**
  * Deduces implications from given ones.
  */
-export async function deduce_category_implications(db: Client) {
+export function deduce_category_implications(db: Database) {
 	console.info('\n--- Deduce category implications ---')
-	await clear_deduced_category_implications(db)
-	await create_dualized_category_implications(db)
-	await create_self_dual_category_implications(db)
+	clear_deduced_category_implications(db)
+	create_dualized_category_implications(db)
+	create_self_dual_category_implications(db)
 }
 
 /**
  * Clears all deduced implications. This is done as a first step.
  */
-async function clear_deduced_category_implications(db: Client) {
-	await db.execute(`DELETE FROM category_implications WHERE is_deduced = TRUE`)
+function clear_deduced_category_implications(db: Database) {
+	db.exec(`DELETE FROM category_implications WHERE is_deduced = TRUE`)
 }
 
 /**
@@ -23,29 +23,8 @@ async function clear_deduced_category_implications(db: Client) {
  * (in case they have a dual). For example, if P ===> Q holds,
  * then P^op ===> Q^op holds as well.
  */
-async function create_dualized_category_implications(db: Client) {
-	const res = await db.execute(`
-        SELECT
-            v.id,
-            v.assumptions,
-            v.conclusions,
-            v.is_equivalence,
-            v.reason,
-            (
-                SELECT json_group_array(p.dual_property_id)
-                FROM json_each(v.assumptions) a
-                JOIN category_properties p ON p.id = a.value
-            ) AS dual_assumptions,
-            (
-                SELECT json_group_array(p.dual_property_id)
-                FROM json_each(v.conclusions) c
-                JOIN category_properties p ON p.id = c.value
-            ) AS dual_conclusions
-        FROM category_implications_view v
-        WHERE v.is_deduced = FALSE
-    `)
-
-	const implications = res.rows as unknown as {
+function create_dualized_category_implications(db: Database) {
+	type FullImplication = {
 		id: string
 		assumptions: string
 		conclusions: string
@@ -53,7 +32,30 @@ async function create_dualized_category_implications(db: Client) {
 		dual_conclusions: string
 		is_equivalence: number
 		reason: string
-	}[]
+	}
+
+	const implications = db
+		.prepare(
+			`SELECT
+                v.id,
+                v.assumptions,
+                v.conclusions,
+                v.is_equivalence,
+                v.reason,
+                (
+                    SELECT json_group_array(p.dual_property_id)
+                    FROM json_each(v.assumptions) a
+                    JOIN category_properties p ON p.id = a.value
+                ) AS dual_assumptions,
+                (
+                    SELECT json_group_array(p.dual_property_id)
+                    FROM json_each(v.conclusions) c
+                    JOIN category_properties p ON p.id = c.value
+                ) AS dual_conclusions
+            FROM category_implications_view v
+            WHERE v.is_deduced = FALSE`,
+		)
+		.all() as FullImplication[]
 
 	const dualizable_implications = implications.filter((impl) => {
 		const has_null =
@@ -72,10 +74,10 @@ async function create_dualized_category_implications(db: Client) {
 		)
 	})
 
-	await db.batch(
-		dualizable_implications.map((impl) => ({
-			sql: `
-            INSERT INTO category_implications_view (
+	const insert_duals = db.transaction(() => {
+		for (const impl of dualizable_implications) {
+			db.prepare(
+				`INSERT INTO category_implications_view (
                 id,
                 assumptions,
                 conclusions,
@@ -83,20 +85,19 @@ async function create_dualized_category_implications(db: Client) {
                 reason,
                 is_deduced,
                 dualized_from
-            ) VALUES (?, ?, ?, ?, ?, ?, ?)`,
-			args: [
+            ) VALUES (?, ?, ?, ?, ?, TRUE, ?)`,
+			).run(
 				`dual_${impl.id}`,
 				impl.dual_assumptions,
 				impl.dual_conclusions,
 				impl.is_equivalence,
 				'This follows from the dual implication.',
-				true,
 				impl.id,
-			],
-		})),
-		'write',
-	)
+			)
+		}
+	})
 
+	insert_duals()
 	console.info(`Deduced ${dualizable_implications.length} implications by duality`)
 }
 
@@ -104,32 +105,34 @@ async function create_dualized_category_implications(db: Client) {
  * Creates all trivial implications of the form
  * self-dual + P ===> P^op
  */
-async function create_self_dual_category_implications(db: Client) {
-	const { rows } = await db.execute(`
-        INSERT INTO category_implications_view (
-            id,
-            assumptions,
-            conclusions,
-            is_equivalence,
-            reason,
-            is_deduced
-        )
-        SELECT
-            'self-dual_' || p.id,
-            json_array('self-dual', p.id),
-            json_array(p.dual_property_id),
-            FALSE,
-            'This holds by self-duality.',
-            TRUE
-        FROM
-            category_properties p
-        WHERE
-            p.dual_property_id IS NOT NULL
-            AND p.id != 'self-dual'
-            AND p.id != p.dual_property_id
-            AND p.invariant_under_equivalences = TRUE
-        RETURNING id
-    `)
+function create_self_dual_category_implications(db: Database) {
+	const rows = db
+		.prepare(
+			`INSERT INTO category_implications_view (
+                id,
+                assumptions,
+                conclusions,
+                is_equivalence,
+                reason,
+                is_deduced
+            )
+            SELECT
+                'self-dual_' || p.id,
+                json_array('self-dual', p.id),
+                json_array(p.dual_property_id),
+                FALSE,
+                'This holds by self-duality.',
+                TRUE
+            FROM
+                category_properties p
+            WHERE
+                p.dual_property_id IS NOT NULL
+                AND p.id != 'self-dual'
+                AND p.id != p.dual_property_id
+                AND p.invariant_under_equivalences = TRUE
+            RETURNING id`,
+		)
+		.all()
 
 	console.info(`Deduced ${rows.length} implications by self-duality`)
 }

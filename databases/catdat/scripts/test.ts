@@ -12,19 +12,19 @@ import { get_client } from './shared'
 
 const db = get_client()
 
-await execute_tests()
+execute_tests()
 
 /**
  * The main test function verifying that the data behaves as expected.
  */
-async function execute_tests() {
+function execute_tests() {
 	console.info('\n--- Test database ---')
 	try {
-		await test_mutual_category_duals()
-		await test_mutual_property_duals()
-		await test_decided_categories()
-		await test_properties_of_trivial_category()
-		await test_properties_of_selected_categories()
+		test_mutual_category_duals()
+		test_mutual_property_duals()
+		test_decided_categories()
+		test_properties_of_trivial_category()
+		test_properties_of_selected_categories()
 	} catch (err) {
 		if (err instanceof Error) {
 			console.error(err.message)
@@ -38,14 +38,12 @@ async function execute_tests() {
 /**
  * Tests for all category properties p,q that if p is dual to q, then q is dual to p.
  */
-async function test_mutual_property_duals() {
-	const res = await db.execute('SELECT id, dual_property_id FROM category_properties')
+function test_mutual_property_duals() {
 	const dict: Record<string, string | null> = {}
 
-	const properties = res.rows as unknown as {
-		id: string
-		dual_property_id: string | null
-	}[]
+	const properties = db
+		.prepare('SELECT id, dual_property_id FROM category_properties')
+		.all() as { id: string; dual_property_id: string | null }[]
 
 	for (const { id, dual_property_id } of properties) {
 		dict[id] = dual_property_id
@@ -64,14 +62,12 @@ async function test_mutual_property_duals() {
 /**
  * Tests for all categories C,D that if C is dual to D, then D is dual to C.
  */
-async function test_mutual_category_duals() {
-	const res = await db.execute('SELECT id, dual_category_id FROM categories')
+function test_mutual_category_duals() {
 	const dict: Record<string, string | null> = {}
 
-	const categories = res.rows as unknown as {
-		id: string
-		dual_category_id: string | null
-	}[]
+	const categories = db
+		.prepare('SELECT id, dual_category_id FROM categories')
+		.all() as { id: string; dual_category_id: string | null }[]
 
 	for (const { id, dual_category_id } of categories) {
 		dict[id] = dual_category_id
@@ -91,9 +87,9 @@ async function test_mutual_category_duals() {
  * Tests if for a specified list of categories all properties have been decided.
  * If this test fails, property assignments or implications are missing.
  */
-async function test_decided_categories() {
+function test_decided_categories() {
 	for (const category_id of decided_categories) {
-		await test_decided_category(category_id)
+		test_decided_category(category_id)
 	}
 }
 
@@ -101,20 +97,18 @@ async function test_decided_categories() {
  * Tests for a given category if all properties have been decided,
  * i.e. are either satisfied or unsatisfied.
  */
-async function test_decided_category(category_id: string) {
-	const res = await db.execute(
-		`
-		SELECT p.id FROM category_properties p
-		WHERE NOT EXISTS
+function test_decided_category(category_id: string) {
+	const res = db
+		.prepare(
+			`SELECT p.id FROM category_properties p WHERE NOT EXISTS
 			(
 				SELECT 1 FROM category_property_assignments
 				WHERE category_id = ? AND property_id = p.id
-			)
-		`,
-		[category_id],
-	)
+			)`,
+		)
+		.all(category_id) as { id: string }[]
 
-	const unknown_properties = res.rows.map((row) => row.id)
+	const unknown_properties = res.map((row) => row.id)
 
 	if (unknown_properties.length > 0) {
 		throw new Error(
@@ -129,14 +123,17 @@ async function test_decided_category(category_id: string) {
  * Tests that the trivial category has no unsatisfied property.
  * This enforces that all properties in the database are "positive".
  */
-async function test_properties_of_trivial_category() {
-	const res = await db.execute(`
-		SELECT property_id FROM category_property_assignments
-		WHERE category_id = '1' AND is_satisfied = FALSE
-	`)
-	if (res.rows.length > 0) {
+function test_properties_of_trivial_category() {
+	const rows = db
+		.prepare(
+			`SELECT property_id FROM category_property_assignments
+			WHERE category_id = '1' AND is_satisfied = FALSE`,
+		)
+		.all()
+
+	if (rows.length > 0) {
 		throw new Error(
-			`❌ The trivial category has ${res.rows.length} unsatisfied properties, but it should have 0.`,
+			`❌ The trivial category has ${rows.length} unsatisfied properties, but it should have 0.`,
 		)
 	}
 
@@ -148,7 +145,7 @@ async function test_properties_of_trivial_category() {
  * All of their properties in the database have to match those in the
  * respective JSON files in the subfolder "expected-data".
  */
-async function test_properties_of_selected_categories() {
+function test_properties_of_selected_categories() {
 	const expected = {
 		Set: Set_expected,
 		Ab: Ab_expected,
@@ -156,26 +153,21 @@ async function test_properties_of_selected_categories() {
 	} as Record<string, Record<string, boolean>>
 
 	for (const cat in expected) {
-		await test_selected_category(cat, expected[cat])
+		test_selected_category(cat, expected[cat])
 	}
 }
 
 /**
  * Tests if a selected category has the expected properties.
  */
-async function test_selected_category(
-	category_id: string,
-	expected: Record<string, boolean>,
-) {
-	const res = await db.execute(
-		`
-		SELECT property_id AS id, is_satisfied
-		FROM category_property_assignments
-		WHERE category_id = ?`,
-		[category_id],
-	)
-
-	const properties = res.rows as unknown as { id: string; is_satisfied: number }[]
+function test_selected_category(category_id: string, expected: Record<string, boolean>) {
+	const properties = db
+		.prepare(
+			`SELECT property_id AS id, is_satisfied
+			FROM category_property_assignments
+			WHERE category_id = ?`,
+		)
+		.all(category_id) as { id: string; is_satisfied: number }[]
 
 	for (const { id, is_satisfied } of properties) {
 		const ok = Boolean(is_satisfied) === expected[id]

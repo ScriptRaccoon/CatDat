@@ -1,7 +1,5 @@
-import { createClient } from '@libsql/client'
-import dotenv from 'dotenv'
-
-dotenv.config({ quiet: true })
+import Database from 'better-sqlite3'
+import { join } from 'node:path'
 
 export function are_equal_sets<T>(a: Set<T>, b: Set<T>) {
 	return a.size === b.size && [...a].every((el) => b.has(el))
@@ -15,12 +13,8 @@ export function is_subset<T>(a: Set<T>, b: Set<T>, exception?: T) {
 }
 
 export function get_client() {
-	const CATDAT_DB_URL = process.env.CATDAT_DB_URL
-	const CATDAT_DB_AUTH_TOKEN = process.env.CATDAT_DB_AUTH_TOKEN
-
-	if (!CATDAT_DB_URL) throw new Error('No CATDAT_DB_URL found')
-
-	return createClient({ url: CATDAT_DB_URL, authToken: CATDAT_DB_AUTH_TOKEN })
+	const db_path = join(process.cwd(), 'databases', 'catdat', 'catdat.db')
+	return new Database(db_path, { readonly: false })
 }
 
 type NormalizedImplication = {

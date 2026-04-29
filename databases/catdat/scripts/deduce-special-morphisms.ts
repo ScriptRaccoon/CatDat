@@ -1,20 +1,22 @@
-import type { Client } from '@libsql/client'
+import { type Database } from 'better-sqlite3'
 
 // TODO: deduce further morphisms,
 // e.g. isomorphisms = bijective morphisms in algebraic categories,
 // e.g. regular monomorphisms = same as monomorphisms in mono-regular categories
 
-export async function deduce_special_morphisms(db: Client) {
+export function deduce_special_morphisms(db: Database) {
 	console.info('\n--- Deduce special morphisms ---')
-	await deduce_special_morphisms_of_dual_categories(db)
+	deduce_special_morphisms_of_dual_categories(db)
 }
 
 /**
  * Deduce special morphisms in dual categories.
  * For example, monomorphisms in C describe epimorphisms in C^op.
  */
-async function deduce_special_morphisms_of_dual_categories(db: Client) {
-	const res = await db.execute(`
+function deduce_special_morphisms_of_dual_categories(db: Database) {
+	const res = db
+		.prepare(
+			`
         INSERT INTO special_morphisms (category_id, type, description, reason)
         SELECT
             c.dual_category_id,
@@ -26,7 +28,9 @@ async function deduce_special_morphisms_of_dual_categories(db: Client) {
         INNER JOIN special_morphism_types t ON t.type = m.type
         WHERE c.dual_category_id IS NOT NULL
         ON CONFLICT DO NOTHING
-    `)
+    `,
+		)
+		.run()
 
-	console.info(`Deduced ${res.rowsAffected} special morphisms by duality`)
+	console.info(`Deduced ${res.changes} special morphisms by duality`)
 }
