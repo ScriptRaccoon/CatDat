@@ -210,11 +210,7 @@ function get_all_decided_properties(db: Database, categories: { id: string }[]) 
 			`SELECT property_id, category_id, is_satisfied
 			FROM category_property_assignments`,
 		)
-		.all() as unknown as {
-		property_id: string
-		category_id: string
-		is_satisfied: boolean
-	}[]
+		.all() as { property_id: string; category_id: string; is_satisfied: boolean }[]
 
 	const grouped: Record<string, { satisfied: Set<string>; unsatisfied: Set<string> }> =
 		{}
@@ -225,11 +221,7 @@ function get_all_decided_properties(db: Database, categories: { id: string }[]) 
 
 	for (const row of rows) {
 		const { property_id, category_id, is_satisfied } = row
-		if (is_satisfied) {
-			grouped[category_id].satisfied.add(property_id)
-		} else {
-			grouped[category_id].unsatisfied.add(property_id)
-		}
+		grouped[category_id][is_satisfied ? 'satisfied' : 'unsatisfied'].add(property_id)
 	}
 
 	return grouped
