@@ -3,7 +3,7 @@ import { error } from '@sveltejs/kit'
 import sql from 'sql-template-tag'
 
 export const load = async (event) => {
-	const { rows, err } = await query<{ id: string }>(sql`
+	const { rows, err } = query<{ id: string }>(sql`
 		SELECT id FROM functor_properties ORDER BY lower(id)
 	`)
 

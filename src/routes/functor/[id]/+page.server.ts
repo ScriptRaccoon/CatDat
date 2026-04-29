@@ -14,7 +14,7 @@ import sql from 'sql-template-tag'
 export const load = async (event) => {
 	const id = event.params.id
 
-	const { results, err } = await batch<
+	const { results, err } = batch<
 		[
 			FunctorDB,
 			FunctorPropertyAssignmentDB & { is_satisfied: number },

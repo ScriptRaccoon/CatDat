@@ -6,7 +6,7 @@ import sql from 'sql-template-tag'
 // TODO: remove code duplication with category properties list page
 
 export const load = async () => {
-	const { rows: properties, err } = await query<
+	const { rows: properties, err } = query<
 		PropertyShort & { dual_property_id?: string }
 	>(sql`
         SELECT id, relation, dual_property_id FROM functor_properties

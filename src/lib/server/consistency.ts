@@ -3,15 +3,15 @@ import { query } from '$lib/server/db.catdat'
 
 type AtomicImplication = { assumptions: string[]; conclusion: string }
 
-export async function check_consistency(
+export function check_consistency(
 	satisfied_properties: Set<string>,
 	unsatisfied_properties: Set<string>,
-): Promise<{ consistent: boolean } | null> {
+): { consistent: boolean } | null {
 	for (const p of satisfied_properties) {
 		if (unsatisfied_properties.has(p)) return { consistent: false }
 	}
 
-	const implications = await get_atomic_implications()
+	const implications = get_atomic_implications()
 	if (!implications) return null
 
 	return check_consistency_worker(
@@ -50,8 +50,8 @@ function check_consistency_worker(
 	return { consistent: true }
 }
 
-async function get_atomic_implications(): Promise<AtomicImplication[] | null> {
-	const { rows: implications, err } = await query<{
+function get_atomic_implications(): AtomicImplication[] | null {
+	const { rows: implications, err } = query<{
 		assumptions: string
 		conclusions: string
 		is_equivalence: number
@@ -88,18 +88,18 @@ async function get_atomic_implications(): Promise<AtomicImplication[] | null> {
 	return atomic_implications
 }
 
-export async function get_missing_combinations() {
-	const implications = await get_atomic_implications()
+export function get_missing_combinations() {
+	const implications = get_atomic_implications()
 	if (!implications) return null
 
-	const { rows: properties, err } = await query<{
+	const { rows: properties, err } = query<{
 		id: string
 		dual_property_id: string | null
 	}>(sql`SELECT id, dual_property_id FROM category_properties ORDER BY lower(id)`)
 
 	if (err) return null
 
-	const { rows: existing, err: err_existing } = await query<{
+	const { rows: existing, err: err_existing } = query<{
 		p: string
 		q: string
 	}>(sql`

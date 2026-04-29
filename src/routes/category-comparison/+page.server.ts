@@ -4,7 +4,7 @@ import { query } from '$lib/server/db.catdat'
 import { error } from '@sveltejs/kit'
 
 export const load = async () => {
-	const { rows: categories, err } = await query<CategoryShort>(sql`
+	const { rows: categories, err } = query<CategoryShort>(sql`
 		SELECT id, name FROM categories ORDER BY lower(name)
 	`)
 

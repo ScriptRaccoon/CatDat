@@ -6,7 +6,7 @@ import type { ImplicationDB, ImplicationDisplay } from '$lib/commons/types'
 import { display_implication } from '$lib/server/utils'
 
 export const load = async () => {
-	const { rows, err } = await query<ImplicationDB>(sql`
+	const { rows, err } = query<ImplicationDB>(sql`
 		SELECT
 			id,
 			is_equivalence,

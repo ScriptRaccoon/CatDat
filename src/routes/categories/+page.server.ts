@@ -4,7 +4,7 @@ import { error } from '@sveltejs/kit'
 import sql from 'sql-template-tag'
 
 export const load = async () => {
-	const { results, err } = await batch<[CategoryShort, TagObject]>([
+	const { results, err } = batch<[CategoryShort, TagObject]>([
 		sql`SELECT id, name FROM categories ORDER BY lower(name)`,
 		sql`SELECT tag FROM tags ORDER BY position`,
 	])

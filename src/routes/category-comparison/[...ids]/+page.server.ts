@@ -19,7 +19,7 @@ export const load = async (event) => {
 
 	const placeholders = compared_ids.map(() => '?').join(', ')
 
-	const { rows, err: err_cat } = await query<{
+	const { rows, err: err_cat } = query<{
 		id: string
 		name: string
 		notation: string
@@ -70,7 +70,7 @@ export const load = async (event) => {
 		${join_fragments.join('\n')}
 		ORDER BY lower(p.id)`
 
-	const { rows: comparison_objects, err } = await query<Record<string, string>>({
+	const { rows: comparison_objects, err } = query<Record<string, string>>({
 		sql: stmt,
 		values,
 	})

@@ -6,7 +6,7 @@ import sql from 'sql-template-tag'
 import type { EntryGenerator } from './$types'
 
 export const entries: EntryGenerator = async () => {
-	const { rows, err } = await query<{ id: string }>(sql`SELECT id FROM lemmas`)
+	const { rows, err } = query<{ id: string }>(sql`SELECT id FROM lemmas`)
 	if (err) throw new Error('Database error: Failed to load tags')
 	return rows
 }
@@ -14,7 +14,7 @@ export const entries: EntryGenerator = async () => {
 export const load = async (event) => {
 	const id = event.params.id
 
-	const { results, err } = await batch<[Lemma, CategoryShort, { id: string }]>([
+	const { results, err } = batch<[Lemma, CategoryShort, { id: string }]>([
 		sql`
         	SELECT title, claim, proof FROM lemmas WHERE id = ${id}
     	`,

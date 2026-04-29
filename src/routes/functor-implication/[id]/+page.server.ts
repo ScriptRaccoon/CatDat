@@ -10,7 +10,7 @@ export const prerender = true
 export const load = async (event) => {
 	const id = event.params.id
 
-	const { rows, err } = await query<FunctorImplicationDB>(sql`
+	const { rows, err } = query<FunctorImplicationDB>(sql`
         SELECT
             id,
             is_equivalence,

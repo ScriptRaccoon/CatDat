@@ -18,7 +18,7 @@ import type {
 export const load = async (event) => {
 	const id = event.params.id
 
-	const { results, err } = await batch<
+	const { results, err } = batch<
 		[
 			CategoryDisplay,
 			RelatedCategory,

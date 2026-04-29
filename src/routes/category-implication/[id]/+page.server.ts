@@ -8,7 +8,7 @@ import sql from 'sql-template-tag'
 export const load = async (event) => {
 	const id = event.params.id
 
-	const { rows, err } = await query<ImplicationDB>(sql`
+	const { rows, err } = query<ImplicationDB>(sql`
 		SELECT
 			id,
 			is_equivalence,

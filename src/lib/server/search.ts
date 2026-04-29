@@ -11,7 +11,7 @@ type NamedObject = {
 	name: string
 }
 
-export async function search_handler(event: RequestEvent, type: 'category' | 'functor') {
+export function search_handler(event: RequestEvent, type: 'category' | 'functor') {
 	const satisfied_query = event.url.searchParams.get('satisfied')
 	const unsatisfied_query = event.url.searchParams.get('unsatisfied')
 
@@ -19,7 +19,7 @@ export async function search_handler(event: RequestEvent, type: 'category' | 'fu
 		error(400, 'No properties selected')
 	}
 
-	const { rows: all_properties_objects, err: err_all } = await query<{
+	const { rows: all_properties_objects, err: err_all } = query<{
 		id: string
 		dual_property_id: string | null
 	}>(get_property_query(type))
@@ -71,7 +71,7 @@ export async function search_handler(event: RequestEvent, type: 'category' | 'fu
 
 	// TODO: implement this for functors as well
 	if (type === 'category') {
-		const check = await check_consistency(
+		const check = check_consistency(
 			new Set(satisfied_properties),
 			new Set(unsatisfied_properties),
 		)
@@ -106,7 +106,7 @@ export async function search_handler(event: RequestEvent, type: 'category' | 'fu
 		type,
 	)
 
-	const { rows: found_objects, err } = await query<NamedObject>({
+	const { rows: found_objects, err } = query<NamedObject>({
 		sql: search_query,
 		values: [
 			...all_selected_properties,

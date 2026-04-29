@@ -4,7 +4,7 @@ import { error } from '@sveltejs/kit'
 import sql from 'sql-template-tag'
 
 export const load = async () => {
-	const { rows: properties, err } = await query<
+	const { rows: properties, err } = query<
 		PropertyShort & { dual_property_id?: string }
 	>(sql`
 		SELECT id, relation, dual_property_id FROM category_properties

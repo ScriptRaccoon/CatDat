@@ -1,43 +1,48 @@
-import { createClient, type LibsqlError } from '@libsql/client'
 import type { Arrayed } from '$lib/commons/types'
-import { CATDAT_DB_AUTH_TOKEN, CATDAT_DB_URL } from '$env/static/private'
+import Database, { SqliteError } from 'better-sqlite3'
+import { join } from 'node:path'
 
-const db = createClient({
-	url: CATDAT_DB_URL,
-	authToken: CATDAT_DB_AUTH_TOKEN,
-})
+const db_path = join(process.cwd(), 'databases', 'catdat', 'catdat.db')
 
-db.execute('PRAGMA foreign_keys = ON')
+const db = new Database(db_path, { readonly: true })
+
+db.exec('PRAGMA foreign_keys = ON')
 
 /**
- * Small wrapper around db.execute to handle errors,
+ * Small wrapper around db.prepare.all to handle errors,
  * use sql templates, and specify the type of the result.
  */
-export async function query<T>(stmt: { sql: string; values: any[] }) {
+export function query<T>(stmt: { sql: string; values: any[] }) {
 	try {
-		const { rows } = await db.execute(stmt.sql, stmt.values)
+		const rows = db.prepare(stmt.sql).all(...stmt.values)
 		return { rows: rows as T[], err: null }
 	} catch (err) {
 		console.error(err)
-		return { rows: null, err: err as LibsqlError }
+		return { rows: null, err: err as SqliteError }
 	}
 }
 
 /**
- * Small wrapper around db.batch to handle errors
+ * Small wrapper around db.transaction to handle errors
  * use sql templates, and specify the type of the result.
  */
-export async function batch<T extends any[]>(queries: { sql: string; values: any[] }[]) {
+export function batch<T extends any[]>(queries: { sql: string; values: any[] }[]) {
 	try {
-		const results = await db.batch(
-			queries.map((query) => ({
-				sql: query.sql,
-				args: query.values,
-			})),
-		)
-		return { results: results.map(({ rows }) => rows) as Arrayed<T>, err: null }
+		const run_batch = db.transaction(() => {
+			const results = []
+
+			for (const query of queries) {
+				const result = db.prepare(query.sql).all(...query.values)
+				results.push(result)
+			}
+
+			return results
+		})
+
+		const results = run_batch() as Arrayed<T>
+		return { results, err: null }
 	} catch (err) {
 		console.error(err)
-		return { results: null, err: err as LibsqlError }
+		return { rows: null, err: err as SqliteError }
 	}
 }

@@ -7,7 +7,7 @@ import { get_missing_combinations } from '$lib/server/consistency'
 type CategoryPairShort = { id1: string; name1: string; id2: string; name2: string }
 
 export const load = async () => {
-	const { results, err } = await batch<
+	const { results, err } = batch<
 		[
 			CategoryShort & { count: number },
 			CategoryShort & { count: number },
@@ -87,7 +87,7 @@ export const load = async () => {
 		0,
 	)
 
-	const missing_combinations = await get_missing_combinations()
+	const missing_combinations = get_missing_combinations()
 
 	if (!missing_combinations) {
 		error(500, 'Failed to load missing combinations')

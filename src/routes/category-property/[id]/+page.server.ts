@@ -10,7 +10,7 @@ import { display_implication, display_property } from '$lib/server/utils'
 export const load = async (event) => {
 	const id = decode_property_ID(event.params.id)
 
-	const { results, err } = await batch<
+	const { results, err } = batch<
 		[
 			PropertyDB,
 			{ id: string },

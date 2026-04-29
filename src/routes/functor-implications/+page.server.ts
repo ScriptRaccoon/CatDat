@@ -8,7 +8,7 @@ import { display_functor_implication } from '$lib/server/utils'
 export const prerender = true
 
 export const load = async () => {
-	const { rows, err } = await query<FunctorImplicationDB>(sql`
+	const { rows, err } = query<FunctorImplicationDB>(sql`
         SELECT
             id,
             is_equivalence,

@@ -6,7 +6,7 @@ import sql from 'sql-template-tag'
 export const prerender = true
 
 export const load = async () => {
-	const { rows: functors, err } = await query<FunctorShort>(
+	const { rows: functors, err } = query<FunctorShort>(
 		sql`SELECT id, name FROM functors ORDER BY lower(name)`,
 	)
 
