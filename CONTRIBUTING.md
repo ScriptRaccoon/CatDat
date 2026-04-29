@@ -73,7 +73,7 @@ to continuously run this update when a file in the subfolder [/databases/catdat/
 
 ### Troubleshooting
 
-- If the local database is corrupted, delete the `catdat.db` file and recreate it using `pnpm db:update`.
+- If the local database is corrupted, recreate it using `pnpm db:update`.
 - If the `pnpm db:update` command fails, examine the error message to determine the cause. It could be due to malformed SQL, a contradictory property, or a failing test in the `pnpm db:test` script (which also runs as part of the update command), as explained below.
 
 ### Tests for Data Quality

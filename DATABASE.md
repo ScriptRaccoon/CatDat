@@ -42,11 +42,11 @@ For functors there are similar tables, such as:
 - `functor_implications`
 - `functor_property_assignments`
 
-## Migrations vs. Data
+## Schema vs. Data
 
-Migrations update the database structure: tables, views, indexes, and triggers. They are defined in SQL files located in the subfolder [/databases/catdat/migrations](/databases/catdat/migrations/). The command `pnpm db:migrate` applies any new migrations.
+The schema defines the structure of the database: tables, views, indexes, and triggers. It is specified in several SQL files located in the subfolder [/databases/catdat/schema](/databases/catdat/schema/). The command `pnpm db:setup` deletes the old database file (if it exists) and creates a new one using this schema.
 
-Database entries (categories, properties, implications, etc.) are defined via SQL files in the subfolder [/databases/catdat/data](/databases/catdat/data). The command `pnpm db:seed` replaces the current database by clearing all existing data and inserting the entries defined in these SQL files.
+Database entries (categories, properties, implications, etc.) are defined in SQL files located in the subfolder [/databases/catdat/data](/databases/catdat/data/). The command `pnpm db:seed` replaces the current contents of the database by clearing all existing data and inserting the entries defined in these SQL files.
 
 ## Derived Data
 
@@ -60,7 +60,7 @@ The command `pnpm db:test` executes some tests and verifies that the data behave
 
 ## One command for everything
 
-Use `pnpm db:update` to run all the commands in sequence: `pnpm db:migrate`, `pnpm db:seed`,`pnpm db:deduce`, and `pnpm db:test`.
+Use `pnpm db:update` to run all the commands in sequence: `pnpm db:setup`, `pnpm db:seed`,`pnpm db:deduce`, and `pnpm db:test`.
 
 Use `pnpm db:watch` to run this command automatically every time a file in the subfolder [/databases/catdat/data](/databases/catdat/data) changes. This is useful in particular during development.
 

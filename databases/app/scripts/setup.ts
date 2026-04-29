@@ -13,13 +13,13 @@ const db = createClient({
 	authToken: APP_DB_AUTH_TOKEN,
 })
 
-migrate()
+setup()
 
 /**
  * Creates the tables in the app database.
  */
-async function migrate() {
-	console.info('\n--- Migrate App database ---')
+async function setup() {
+	console.info('\n--- Setup App database ---')
 	await create_visits_table()
 	await create_submissions_table()
 }

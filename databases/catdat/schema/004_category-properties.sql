@@ -20,6 +20,7 @@ CREATE TABLE related_category_properties (
 );
 
 CREATE TABLE category_property_assignments (
+    id INTEGER PRIMARY KEY,
     category_id TEXT NOT NULL,
     property_id TEXT NOT NULL,
     is_satisfied INTEGER NOT NULL
@@ -27,8 +28,7 @@ CREATE TABLE category_property_assignments (
     reason TEXT NOT NULL CHECK (length(reason) > 0),
     is_deduced INTEGER NOT NULL DEFAULT FALSE
         CHECK (is_deduced in (TRUE, FALSE)),
-    position INTEGER NOT NULL DEFAULT 0,
-    PRIMARY KEY (category_id, property_id),
+    UNIQUE (category_id, property_id),
     FOREIGN KEY (category_id) REFERENCES categories (id) ON DELETE CASCADE,
     FOREIGN KEY (property_id) REFERENCES category_properties (id) ON DELETE CASCADE
 );
