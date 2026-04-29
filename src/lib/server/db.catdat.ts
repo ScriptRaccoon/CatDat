@@ -6,8 +6,6 @@ const db_path = join(process.cwd(), 'databases', 'catdat', 'catdat.db')
 
 const db = new Database(db_path, { readonly: true })
 
-db.exec('PRAGMA foreign_keys = ON')
-
 /**
  * Small wrapper around db.prepare.all to handle errors,
  * use sql templates, and specify the type of the result.
