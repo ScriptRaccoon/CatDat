@@ -4,6 +4,9 @@ import { join } from 'node:path'
 
 const db_path = join(process.cwd(), 'databases', 'catdat', 'catdat.db')
 
+/**
+ * Database client for the CatDat database holding all mathematical knowledge
+ */
 const db = new Database(db_path, { readonly: true })
 
 /**
