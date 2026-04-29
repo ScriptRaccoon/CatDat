@@ -34,6 +34,5 @@ jobs:
 
             - name: Update and Test database
               env:
-                  CATDAT_DB_URL: file:databases/catdat/catdat.db
-                  APP_DB_URL: file:databases/app/app.db
+                  APP_DB_URL: file:databases/app/app.db # TODO: remove this from here
               run: pnpm db:update

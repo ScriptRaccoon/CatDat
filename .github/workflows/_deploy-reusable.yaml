@@ -6,14 +6,7 @@ on:
             is_prod:
                 required: true
                 type: boolean
-            skip_db:
-                required: true
-                type: boolean
         secrets:
-            CATDAT_DB_URL:
-                required: true
-            CATDAT_DB_AUTH_TOKEN:
-                required: true
             APP_DB_URL:
                 required: true
             APP_DB_AUTH_TOKEN:
@@ -65,27 +58,15 @@ jobs:
             - name: Generate SvelteKit config
               run: pnpm svelte-kit sync
 
-            - name: Create snapshot of local database as static asset
+            - name: Build database
               env:
-                  CATDAT_DB_URL: file:databases/catdat/catdat.db
                   APP_DB_URL: file:databases/app/app.db
               run: |
                   pnpm db:update
                   pnpm db:snapshot
 
-            - name: Update production database
-              if: ${{ !inputs.skip_db }}
-              env:
-                  CATDAT_DB_URL: ${{ secrets.CATDAT_DB_URL }}
-                  CATDAT_DB_AUTH_TOKEN: ${{ secrets.CATDAT_DB_AUTH_TOKEN }}
-                  APP_DB_URL: ${{ secrets.APP_DB_URL }}
-                  APP_DB_AUTH_TOKEN: ${{ secrets.APP_DB_AUTH_TOKEN }}
-              run: pnpm db:update
-
             - name: Build app
               env:
-                  CATDAT_DB_URL: ${{ secrets.CATDAT_DB_URL }}
-                  CATDAT_DB_AUTH_TOKEN: ${{ secrets.CATDAT_DB_AUTH_TOKEN }}
                   APP_DB_URL: ${{ secrets.APP_DB_URL }}
                   APP_DB_AUTH_TOKEN: ${{ secrets.APP_DB_AUTH_TOKEN }}
                   GITHUB_PRIVATE_KEY: ${{ secrets._GITHUB_PRIVATE_KEY }}
