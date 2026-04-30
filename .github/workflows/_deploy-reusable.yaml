@@ -55,9 +55,6 @@ jobs:
             - name: Install Dependencies
               run: pnpm i
 
-            - name: Generate SvelteKit config
-              run: pnpm svelte-kit sync
-
             - name: Build database
               env:
                   APP_DB_URL: file:databases/app/app.db
