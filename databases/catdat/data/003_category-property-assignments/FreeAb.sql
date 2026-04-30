@@ -85,3 +85,11 @@ VALUES
 	FALSE,
 	'See <a href="https://mathoverflow.net/questions/509715" target="_blank">MO/509715</a>.'
 );
+
+INSERT INTO category_property_comments (category_id, property_id, comment)
+VALUES
+(
+    'FreeAb',
+    'accessible',
+    'The question if this category is accessible is undecidable in ZFC. See <a href="https://math.stackexchange.com/questions/720885" target="_blank">MSE/720885</a>.'
+);

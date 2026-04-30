@@ -36,4 +36,6 @@ DELETE FROM functor_implication_source_assumptions;
 DELETE FROM functor_implication_target_assumptions;
 DELETE FROM functor_implications;
 
+DELETE FROM category_property_comments;
+
 PRAGMA foreign_keys = ON;
