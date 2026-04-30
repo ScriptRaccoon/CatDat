@@ -316,6 +316,11 @@ VALUES
 	'It is a thin category.'
 ),
 (
+	'walking_coreflexive_pair',
+	'the identities and $i$, $j$',
+	'Since $pi = \mathrm{id}$, but $ip \neq \mathrm{id}$, we conclude that $i$ is a monomorphism, but $p$ is not. Likewise, $j$ is a monomorphism. Since $p$ is not a monomorphism, $ip$ and $jp$ are also no monomorphisms.'
+),
+(
 	'walking_fork',
 	'every morphism',
 	'This is easily checked.'

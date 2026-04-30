@@ -53,6 +53,7 @@ VALUES
 ('Top*', 'singleton space with the unique base point'),
 ('Vect', 'trivial vector space'),
 ('walking_commutative_square', '$d$'),
+('walking_coreflexive_pair', '$[1]$'),
 ('walking_isomorphism', 'both objects'),
 ('walking_morphism', '$1$'),
 ('walking_splitting', '$0$'),

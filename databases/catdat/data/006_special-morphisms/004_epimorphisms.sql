@@ -302,6 +302,11 @@ VALUES
 	'It is a thin category.'
 ),
 (
+	'walking_coreflexive_pair',
+	'the identities and $p$',
+	'Since $pi = \mathrm{id}$, but $ip \neq \mathrm{id}$, we conclude that $p$ is an epimorphism, but $i$ is not. Hence, also $ip$ is not an epimorphism. Likewise, $j$ and $jp$ are no epimorphisms.'
+),
+(
 	'walking_fork',
 	'the identities and $f,g$',
 	'This is easily checked.'

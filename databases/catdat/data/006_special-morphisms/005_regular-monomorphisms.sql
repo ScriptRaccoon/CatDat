@@ -261,6 +261,11 @@ VALUES
     'This is because the category is right cancellative.'
 ),
 (
+    'walking_coreflexive_pair',
+    'same as monomorphisms',
+    'This is because the category is mono-regular.'
+),
+(
 	'walking_idempotent',
 	'the identity',
 	'This is trivial.'

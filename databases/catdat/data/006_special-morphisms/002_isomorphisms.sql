@@ -326,6 +326,11 @@ VALUES
 	'This is trivial.'
 ),
 (
+	'walking_coreflexive_pair',
+	'the two identities',
+	'This is obvious.'
+),
+(
 	'walking_fork',
 	'the three identities',
 	'This is trivial.'

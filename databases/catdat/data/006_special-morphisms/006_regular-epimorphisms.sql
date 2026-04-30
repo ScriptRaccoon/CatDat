@@ -251,6 +251,11 @@ VALUES
     'This is because the category is left cancellative.'
 ),    
 (
+    'walking_coreflexive_pair',
+    'same as epimorphisms',
+    'This is because the category is epi-regular.'
+),
+(
     'walking_fork',
     'same as isomorphisms',
     'This is because the category is left cancellative.'
