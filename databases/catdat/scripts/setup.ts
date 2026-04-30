@@ -15,8 +15,10 @@ function setup() {
 
 	const schema_folder = path.join(process.cwd(), 'databases', 'catdat', 'schema')
 
-	const unsorted_files = fs.readdirSync(schema_folder, 'utf8')
-	const files = unsorted_files.filter((f) => f.endsWith('.sql')).sort()
+	const files = fs
+		.readdirSync(schema_folder, 'utf8')
+		.filter((file) => file.endsWith('.sql'))
+		.sort()
 
 	const invalid_file = files.find((file) => !file.match(/^\d{3}_/))
 	if (invalid_file) throw new Error(`Invalid file name: ${invalid_file}`)
@@ -24,15 +26,12 @@ function setup() {
 	for (const file of files) {
 		const sql = fs.readFileSync(path.join(schema_folder, file), 'utf8')
 
-		const process_file = db.transaction(() => {
-			console.info(`Apply: ${file}`)
-			db.exec(sql)
-		})
+		console.info(`Apply: ${file}`)
 
 		try {
-			process_file()
+			db.exec(sql)
 		} catch (err) {
-			console.error(`Failed to apply file: ${file}`, err)
+			console.error(`Failed to apply file: ${file}`, String(err))
 			process.exit(1)
 		}
 	}

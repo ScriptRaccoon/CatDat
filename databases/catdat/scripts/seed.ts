@@ -5,7 +5,7 @@ import { get_client } from './shared'
 /**
  * Seeds the data recorded in SQL files into the database.
  */
-async function seed() {
+function seed() {
 	console.info('\n--- Seed CatDat database ---')
 	const db = get_client()
 	const data_folder = path.join(process.cwd(), 'databases', 'catdat', 'data')
@@ -22,26 +22,25 @@ async function seed() {
 	const process_files = db.transaction(() => {
 		for (const folder of subfolders) {
 			const folder_path = path.join(data_folder, folder)
+
 			const files = fs
-				.readdirSync(folder_path, { withFileTypes: true })
-				.filter((f) => f.isFile() && f.name.endsWith('.sql'))
-				.map((f) => path.join(folder_path, f.name))
+				.readdirSync(folder_path, 'utf8')
+				.filter((file) => file.endsWith('.sql'))
 				.sort()
 
-			for (const file of files) {
-				const base = path.basename(file)
-				const is_valid = base?.match(/^[A-Za-z0-9_.,\-()]+$/)
-				if (!is_valid) {
-					throw new Error(`Invalid file name: ${base}`)
-				}
+			const invalid_file = files.find(
+				(file) => !file.match(/^[A-Za-z0-9_.,\-()]+$/),
+			)
+			if (invalid_file) throw new Error(`Invalid file name: ${invalid_file}`)
 
-				console.info(`Seed: ${base}`)
+			for (const file of files) {
+				console.info(`Seed: ${file}`)
 
 				try {
-					const sql = fs.readFileSync(file, 'utf8')
+					const sql = fs.readFileSync(path.join(folder_path, file), 'utf8')
 					db.exec(sql)
 				} catch (err) {
-					throw new Error(`Seed failed in ${base}: ${String(err)}`)
+					throw new Error(`Seed failed in ${file}: ${String(err)}`)
 				}
 			}
 		}
@@ -55,4 +54,4 @@ async function seed() {
 	}
 }
 
-await seed()
+seed()
