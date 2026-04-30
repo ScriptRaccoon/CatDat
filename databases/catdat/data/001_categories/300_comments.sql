@@ -47,4 +47,8 @@ VALUES
 (
     'Meas',
     'The thread <a href="https://math.stackexchange.com/questions/5024471/">MSE/5024471</a> asks for the finitely presentable objects of this category.'
+),
+(
+    'FreeAb',
+    'The question if this category is accessible is undecidable in ZFC. See <a href="https://math.stackexchange.com/questions/720885" target="_blank">MSE/720885</a>.'
 );
