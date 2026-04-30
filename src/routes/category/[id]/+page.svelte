@@ -149,7 +149,7 @@
 		</p>
 	{/if}
 
-	<PropertyList properties={data.unknown_properties} />
+	<PropertyList properties={data.unknown_properties} reason_heading="Comment" />
 </section>
 
 <section>
