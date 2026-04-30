@@ -88,8 +88,11 @@ export const load = async (event) => {
 		sql`
 			SELECT
 				p.id,
-				p.relation
+				p.relation,
+				c.comment as reason
 			FROM category_properties p
+			LEFT JOIN category_property_comments c
+			ON c.category_id = ${id} AND c.property_id = p.id
 			WHERE NOT EXISTS (
 				SELECT 1 FROM category_property_assignments
 				WHERE category_id = ${id} AND property_id = p.id
