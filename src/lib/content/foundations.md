@@ -49,6 +49,8 @@ When $f \in \mathrm{Mor}(\mathcal{C})$ is a morphism with $s(f) = X$ and $t(f) =
 $$f : X \to Y.$$
 We write $\mathrm{Hom}(X,Y)$ or $\mathrm{Mor}(X,Y)$ for the collection of such morphisms. This collection need not be a set. If it is a set for all $X,Y$, the category is called _locally small_.
 
+When a morphism $f : X \to Y$ happens to be uniquely determined, it will be written as $!_{X,Y}$ or even just $!$.
+
 A _small category_ is defined as above, but using _sets_ $O$ and $M$ (instead of collections). A _hypercategory_ is defined similarly using _hypercollections_ $O$ and $M$. Every small category is a category, and every category is a hypercategory. Notice that there is a collection of all small categories $\mathrm{Cat}$, and likewise a hypercollection of all categories $\mathrm{Cat}^+$.
 
 For example, the category of sets $\mathbf{Set}$ has $\mathrm{Ob}(\mathbf{Set}) = \mathrm{Set}$, the collection of all sets. The category of groups $\mathbf{Grp}$ has $\mathrm{Ob}(\mathbf{Grp}) = \mathrm{Grp}$, the collection of all groups. Other typical categories (topological spaces, graphs, metric spaces, etc.) are constructed as usual. All these examples are locally small.
