@@ -229,4 +229,11 @@ VALUES
 	'["natural numbers object"]',
 	'The triple $(1, \mathrm{id}_1, \mathrm{id}_1)$ is clearly a NNO.',
 	FALSE
+),
+(
+	'topos_no_stable_epis',
+	'["elementary topos", "countable coproducts", "cofiltered-limit-stable epimorphisms"]',
+	'["trivial"]',
+	'Let $N := \coprod_{m \in \mathbb{N}} 1$ and consider for every $n \in \mathbb{N}$ the subobject $N_{\geq n} = \coprod_{m \geq n} 1$ of $N$. For $n \leq n''$ we have $N_{\geq n''} \subseteq N_{\geq n}$. There is a (unique, split) epimorphism $N_{\geq n} \to 1$ for every $n$. By assumption, their limit $\lim_n N_{\geq n} \to 1$ is also an epimorphism. But $\lim_n N_{\geq n} = \bigcap_{n} N_{\geq n} = 0$. Thus, $0 \to 1$ is an epimorphism. It must be a regular epimorphism, but $0$ is strict initial, so that $0 \to 1$ is an isomorphism. Hence, $X \cong X \times 1 \cong X \times 0 \cong 0$ for all $X$.',
+	FALSE
 );

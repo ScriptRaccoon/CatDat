@@ -25,7 +25,7 @@ VALUES
 ),
 (
 	'Sh(X)',
-	'cofiltered-limit-stable epimorphisms',
+	'trivial',
 	FALSE,
-	'Our <a href="/category/Set">counterexample for $\mathbf{Set}$</a> (using infinite intersections) also works in $\mathbf{Sh}(X)$ by using constant sheaves. We could also apply a variant of (the dual of) <a href="/lemma/filtered-monos">this lemma</a> to the constant sheaf functor $\mathbf{Set} \to \mathbf{Sh}(X)$, which does not preserve all cofiltered limits, but does preserve intersections.'
+	'This is because $X$ is assumed to be non-empty.'
 );

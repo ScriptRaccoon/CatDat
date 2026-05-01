@@ -105,5 +105,5 @@ VALUES
 	'Haus',
 	'cofiltered-limit-stable epimorphisms',
 	FALSE,
-	'Our <a href="/category/Set">counterexample for $\mathbf{Set}$</a> (using infinite intersections) also works in $\mathbf{Haus}$ by using discrete topologies. We could also apply a variant of (the dual of) <a href="/lemma/filtered-monos">this lemma</a> to the discrete topology functor $\mathbf{Set} \to \mathbf{Haus}$, which does not preserve all cofiltered limits, but does preserve intersections.'
+	'Recall the counterexample for sets: The unique maps $\mathbb{N}_{\geq n} \to 1$ are surjective, but their limit $0 = \bigcap_{n \geq 0} \mathbb{N}_{\geq n} \to 1$ is not. This also works in $\mathbf{Haus}$ by using discrete topologies. We could also apply a variant of (the dual of) <a href="/lemma/filtered-monos">this lemma</a> to the discrete topology functor $\mathbf{Set} \to \mathbf{Haus}$, which does not preserve all cofiltered limits, but does preserve intersections.'
 );

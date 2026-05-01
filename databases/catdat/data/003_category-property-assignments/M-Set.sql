@@ -31,9 +31,9 @@ VALUES
 ),
 (
 	'M-Set',
-	'cofiltered-limit-stable epimorphisms',
+	'trivial',
 	FALSE,
-	'We know that $\mathbf{Set}$ does not have this property. Now use the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> applied to the functor $\mathbf{Set} \to M{-}\mathbf{Set}$ that equips a set with the trivial $M$-action.'
+	'This is trivial.'
 );
 
 INSERT INTO category_property_comments (category_id, property_id, comment)

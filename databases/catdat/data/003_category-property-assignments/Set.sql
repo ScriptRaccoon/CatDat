@@ -37,7 +37,7 @@ VALUES
 ),
 (
 	'Set',
-	'cofiltered-limit-stable epimorphisms',
+	'trivial',
 	FALSE,
-	'Pick any decreasing sequence of non-empty sets $X_0 \supseteq X_1 \supseteq \cdots$ with empty intersection, such as $X_n = \mathbb{N}_{\geq n}$. The unique map $X_n \to 1$ is surjective, but their limit $\varnothing \to 1$ is not surjective.'
+	'This is trivial.'
 );
