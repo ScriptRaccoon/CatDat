@@ -88,6 +88,7 @@ VALUES
 ('sSet', 'category theory'),
 ('Top', 'topology'),
 ('Top*', 'topology'),
+('TorsFreeAb', 'algebra'),
 ('Vect', 'algebra'),
 ('walking_commutative_square', 'finite'),
 ('walking_commutative_square', 'category theory'),

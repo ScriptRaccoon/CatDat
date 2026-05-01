@@ -191,6 +191,16 @@ VALUES
 	NULL
 ),
 (
+	'TorsFreeAb',
+	'category of torsion-free abelian groups',
+	'$\mathbf{TorsFreeAb}$',
+	'torsion-free abelian groups',
+	'group homomorphisms',
+	'This is a typical example of a well-behaved additive category which is <i>not</i> abelian.',
+	'https://ncatlab.org/nlab/show/torsion-free+module',
+	NULL
+),
+(
 	'Cat',
 	'category of small categories',
 	'$\mathbf{Cat}$',
