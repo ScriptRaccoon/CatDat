@@ -90,7 +90,7 @@ VALUES
 (
 	'finitely accessible',
 	'is',
-	'A category is <i>finitely accessible</i> if it has filtered colimits and there is a (small) set $G$ of finitely presentable objects such that every object is a filtered colimit of objects in $S$.',
+	'A category is <i>finitely accessible</i> if it has filtered colimits and there is a (small) set $G$ of finitely presentable objects such that every object is a filtered colimit of objects in $G$.',
 	'https://ncatlab.org/nlab/show/accessible+category',
 	NULL,
 	TRUE
