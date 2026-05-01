@@ -311,6 +311,11 @@ VALUES
 	'This is easy.'
 ),
 (
+	'TorsFreeAb',
+	'bijective group homomorphisms',
+	'This is easy.'
+),
+(
 	'Vect',
 	'bijective linear maps',
 	'This characterization holds in every algebraic category.'

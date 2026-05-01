@@ -287,6 +287,11 @@ VALUES
 	'For the non-trivial direction: The forgetful functor $\mathbf{Top}_* \to \mathbf{Top}$ preserves pushouts and hence also epimorphisms, and we already know the epimorphisms in $\mathbf{Top}$.'
 ),
 (
+	'TorsFreeAb',
+	'homomorphisms $f : A \to B$ such that $B/f(A)$ is a torsion group',
+	'The homomorphism $f$ is an epimorphism iff its cokernel in $\mathbf{TorsFreeAb}$ is trivial. As with all types of colimits, the cokernel is the torsion-free reflection of the cokernel in $\mathbf{Ab}$, which is $B/f(A)$. This is trivial iff $B/f(A)$ is torsion.'
+),
+(
 	'Vect',
 	'surjective linear maps',
 	'The forgetful functor to abelian groups is faithful and preserves colimits, hence reflects and preserves epimorphisms. Alternatively, just use the same proof as for abelian groups.'

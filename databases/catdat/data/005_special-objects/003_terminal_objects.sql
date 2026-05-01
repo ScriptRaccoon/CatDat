@@ -51,6 +51,7 @@ VALUES
 ('sSet', 'simplicial set $X$ with $X_n = 1$'),
 ('Top', 'singleton space'),
 ('Top*', 'singleton space with the unique base point'),
+('TorsFreeAb', 'trivial group'),
 ('Vect', 'trivial vector space'),
 ('walking_commutative_square', '$d$'),
 ('walking_coreflexive_pair', '$[1]$'),

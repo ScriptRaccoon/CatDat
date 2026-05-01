@@ -236,6 +236,11 @@ VALUES
     'Regular epimorphisms are surjective pointed quotient maps by the explicit construction of coequalizers. Conversely, if $q : X \to Y$ is a surjective pointed quotient map, then one checks that $q$ is the coequalizer of its kernel pair $X \times_Y X \rightrightarrows X$: This is true for the underlying pointed sets, and continuity of the induced morphism follows since $q$ is a quotient map.' 
 ),
 (
+	'TorsFreeAb',
+	'surjective group homomorphisms',
+	'By the construction of the coequalizer in $\mathbf{TorsFreeAb}$ as the torsion-free reflection of the coequalizer in $\mathbf{Ab}$, every regular epimorphism is surjective. Conversely, if $f : A \to B$ is a surjective homomorphism of torsion-free abelian groups, in $\mathbf{Ab}$ it is the coequalizer of the two projections $A \times_B A \rightrightarrows A$, and $A \times_B A$ is also torsion-free. Hence, it is also the coequalizer of these projections in $\mathbf{TorsFreeAb}$.'
+),
+(
     'Vect',
     'surjective homomorphisms',
     'This holds in every finitary algebraic category.'

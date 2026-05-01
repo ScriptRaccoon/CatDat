@@ -301,6 +301,11 @@ VALUES
 	'For the non-trivial direction, the forgetful functor to $\mathbf{Set}$ is representable (by the discrete two-point space), hence preserves monomorphisms.'
 ),
 (
+	'TorsFreeAb',
+	'injective group homomorphisms',
+	'For the non-trivial direction, the forgetful functor to $\mathbf{Set}$ is representable (by the group $\mathbb{Z}$), hence preserves monomorphisms.'
+),
+(
 	'Vect',
 	'injective linear maps',
 	'This holds in every finitary algebraic category: the forgetful functor to $\mathbf{Set}$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'

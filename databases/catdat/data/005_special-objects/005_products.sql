@@ -41,6 +41,7 @@ VALUES
 ('sSet', 'pointwise defined direct product'),
 ('Top', 'direct product with the <a href="https://en.wikipedia.org/wiki/Product_topology" target="_blank">product topology</a>'),
 ('Top*', 'direct product with the <a href="https://en.wikipedia.org/wiki/Product_topology" target="_blank">product topology</a> and the obvious base point'),
+('TorsFreeAb', 'direct products'),
 ('Vect', 'direct products with pointwise operations'),
 ('walking_commutative_square', '$b \times c = a$, $x \times x = x$, $a \times x = a$, $d \times x = x$'),
 ('walking_isomorphism', '$0 \times 0 = 0$'),
