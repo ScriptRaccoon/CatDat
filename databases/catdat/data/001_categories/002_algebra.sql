@@ -209,4 +209,14 @@ VALUES
 	'This is the category of small categories and functors between them. It is the prototype of a 2-category, but here we only treat it as a 1-category.',
 	'https://ncatlab.org/nlab/show/Cat',
 	NULL
+),
+(
+	'J2',
+	'category of Jónsson-Tarski algebras',
+	'$\mathcal{J}_2$',
+	'pairs $(X,\alpha)$, where $X$ is a set and $\alpha : X \to X \times X$ is an isomorphism',
+	'A morphism $(X,\alpha) \to (Y,\beta)$ is a map $f : X \to Y$ satisfying $$(f \times f) \circ \alpha = \beta \circ f.$$',
+	'This is interesting example of a category in the intersection of topos theory and algebra.',
+	'https://ncatlab.org/nlab/show/J%C3%B3nsson-Tarski+algebra',
+	NULL
 );

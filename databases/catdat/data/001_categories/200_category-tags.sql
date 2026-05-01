@@ -46,6 +46,8 @@ VALUES
 ('FS', 'set theory'),
 ('Grp', 'algebra'),
 ('Haus', 'topology'),
+('J2', 'algebra'),
+('J2', 'set theory'),
 ('LRS', 'algebraic geometry'),
 ('M-Set', 'algebra'),
 ('Man', 'topology'),
