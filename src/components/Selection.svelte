@@ -1,7 +1,7 @@
 <script lang="ts">
 	import ChipGroup from './ChipGroup.svelte'
 	import Chip from './Chip.svelte'
-	import { normalize_text } from '$lib/client/utils'
+	import { get_comparison_score, normalize_text } from '$lib/client/utils'
 
 	type Props = {
 		title?: string
@@ -27,18 +27,17 @@
 
 	const id = $props.id()
 
-	let suggestions = $derived(
-		selected_items.length >= max ? [] : allowed_items.filter(is_suggestion),
-	)
-
-	let suggestions_element = $state<HTMLDivElement | null>(null)
-
-	function is_suggestion(allowed_item: string) {
-		return (
-			!selected_items.includes(allowed_item) &&
-			normalize_text(allowed_item).includes(normalize_text(item.trim()))
-		)
-	}
+	let suggestions = $derived.by(() => {
+		if (selected_items.length >= max) return []
+		const q = item.trim()
+		if (!q) return []
+		return allowed_items
+			.filter((a) => !selected_items.includes(a))
+			.map((a) => ({ a, r: get_comparison_score(a, q) }))
+			.filter((x) => x.r > 0)
+			.sort((x, y) => y.r - x.r || x.a.localeCompare(y.a))
+			.map((x) => x.a)
+	})
 
 	function is_valid(item: string) {
 		return (
@@ -62,6 +61,8 @@
 		show_suggestions = false
 		active_index = 0
 	}
+
+	let suggestions_element = $state<HTMLDivElement | null>(null)
 
 	function handle_blur(e: FocusEvent) {
 		const is_suggestion_click = suggestions_element?.contains(e.relatedTarget as Node)

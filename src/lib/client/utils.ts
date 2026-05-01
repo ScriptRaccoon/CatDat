@@ -27,6 +27,16 @@ export function normalize_text(txt: string) {
 		.replace(/\p{Diacritic}/gu, '')
 }
 
+export function get_comparison_score(value: string, query: string) {
+	if (!query) return -1
+	const v = normalize_text(value)
+	const q = normalize_text(query)
+	if (v === q) return 3
+	if (v.startsWith(q)) return 2
+	if (v.includes(q)) return 1
+	return 0
+}
+
 export const resize_textarea: Attachment = (textarea) => {
 	if (!(textarea instanceof HTMLTextAreaElement)) return
 
