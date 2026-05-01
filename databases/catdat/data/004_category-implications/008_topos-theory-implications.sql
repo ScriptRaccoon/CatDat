@@ -189,6 +189,13 @@ VALUES
 	FALSE
 ),
 (
+	'topos_is_never_malcev',
+	'["elementary topos", "Malcev"]',
+	'["trivial"]',
+	'The subobject classifier $\Omega$ is an internal Heyting algebra and hence an internal poset (see <a href="https://ncatlab.org/nlab/show/Sheaves+in+Geometry+and+Logic" target="_blank">Mac Lane & Moerdijk</a>, IV.8). The relation $\leq$ on $\Omega$ is reflexive, hence symmetric by assumption. But then $\bot \leq \top$ in $\Omega$ implies $\top \leq \bot$, and hence $\bot = \top$. This means $1 \cong 0$ and hence $X \cong X \times 1 \cong X \times 0 \cong 0$ for all $X$.',
+	FALSE
+),
+(
 	'nno_assumption',
 	'["natural numbers object"]',
 	'["finite products"]',

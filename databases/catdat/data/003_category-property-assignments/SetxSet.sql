@@ -31,12 +31,6 @@ VALUES
 ),
 (
 	'SetxSet',
-	'Malcev',
-	FALSE,
-	'There are lots of pairs of non-symmetric reflexive relations.'
-),
-(
-	'SetxSet',
 	'semi-strongly connected',
 	FALSE,
 	'When $X$ is non-empty, there is no morphism between $(\varnothing,X)$ and $(X,\varnothing)$.'

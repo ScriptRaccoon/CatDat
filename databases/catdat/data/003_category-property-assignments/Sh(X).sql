@@ -19,12 +19,6 @@ VALUES
 ),
 (
 	'Sh(X)',
-	'Malcev',
-	FALSE,
-	'Consider the subsheaf of $\underline{\mathbb{N}} \times \underline{\mathbb{N}}$ consisting of locally constant functions $(f,g) : X \to \mathbb{N} \times \mathbb{N}$ with $f \leq g$ pointwise. This is reflexive, but not symmetric.'
-),
-(
-	'Sh(X)',
 	'skeletal',
 	FALSE,
 	'Consider constant sheaves for isomorphic but non-equal sets.'

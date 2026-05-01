@@ -73,12 +73,6 @@ VALUES
 ),
 (
 	'FinSet',
-	'Malcev',
-	FALSE,
-	'There are lots of non-symmetric reflexive relations.'
-),
-(
-	'FinSet',
 	'countable',
 	FALSE,
 	'This is trivial.'

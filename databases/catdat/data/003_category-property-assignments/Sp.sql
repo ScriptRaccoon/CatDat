@@ -49,12 +49,6 @@ VALUES
 ),
 (
 	'Sp',
-	'Malcev',
-	FALSE,
-	'Since $\mathbf{FinSet}$ is not Malcev, there is some finite set $X$ with a non-symmetric reflexive relation $R \subseteq X^2$. Now consider these as constant functors $\mathbb{B} \to \mathbf{FinSet}$.'
-),
-(
-	'Sp',
 	'semi-strongly connected',
 	FALSE,
 	'For $n \geq 0$ let $E_n$ be the combinatorial species of $n$-sets: $E_n(A) = \{A\}$ when $A$ has cardinality $n$, otherwise $E_n(A) = \varnothing$. Then there is no morphism between $E_n$ and $E_m$ unless $n = m$.'
