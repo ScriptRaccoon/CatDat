@@ -1,6 +1,7 @@
 <script lang="ts">
 	import ChipGroup from './ChipGroup.svelte'
 	import Chip from './Chip.svelte'
+	import { normalize_text } from '$lib/client/utils'
 
 	type Props = {
 		title?: string
@@ -35,7 +36,7 @@
 	function is_suggestion(allowed_item: string) {
 		return (
 			!selected_items.includes(allowed_item) &&
-			allowed_item.toLowerCase().includes(item.trim().toLowerCase())
+			normalize_text(allowed_item).includes(normalize_text(item.trim()))
 		)
 	}
 

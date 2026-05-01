@@ -4,7 +4,7 @@
 	import MetaData from '$components/MetaData.svelte'
 	import SearchFilter from '$components/SearchFilter.svelte'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
-	import { pluralize } from '$lib/client/utils'
+	import { normalize_text, pluralize } from '$lib/client/utils'
 
 	let { data } = $props()
 
@@ -25,14 +25,10 @@
 
 	let filtered_implications = $derived(
 		search
-			? displayed_implications.filter(
-					(implication) =>
-						implication.assumptions.some((prop) =>
-							prop.toLowerCase().includes(search.toLowerCase()),
-						) ||
-						implication.conclusions.some((prop) =>
-							prop.toLowerCase().includes(search.toLowerCase()),
-						),
+			? displayed_implications.filter((implication) =>
+					[...implication.assumptions, ...implication.conclusions].some(
+						(prop) => normalize_text(prop).includes(normalize_text(search)),
+					),
 				)
 			: displayed_implications,
 	)

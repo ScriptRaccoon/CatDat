@@ -17,6 +17,16 @@ export function pluralize(count: number, forms: { one: string; other: string }) 
 	return word.replace('{count}', String(count))
 }
 
+/**
+ * Removes accents from letters and transforms to lowercase
+ */
+export function normalize_text(txt: string) {
+	return txt
+		.toLowerCase()
+		.normalize('NFD')
+		.replace(/\p{Diacritic}/gu, '')
+}
+
 export const resize_textarea: Attachment = (textarea) => {
 	if (!(textarea instanceof HTMLTextAreaElement)) return
 

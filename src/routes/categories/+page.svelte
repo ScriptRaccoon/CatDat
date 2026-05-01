@@ -5,7 +5,7 @@
 	import MetaData from '$components/MetaData.svelte'
 	import SearchFilter from '$components/SearchFilter.svelte'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
-	import { filter_by_tag, pluralize } from '$lib/client/utils'
+	import { filter_by_tag, normalize_text, pluralize } from '$lib/client/utils'
 
 	let { data } = $props()
 
@@ -14,7 +14,7 @@
 	let searched_categories = $derived(
 		search
 			? data.categories.filter((category) =>
-					category.name.toLowerCase().includes(search.toLowerCase()),
+					normalize_text(category.name).includes(normalize_text(search)),
 				)
 			: data.categories,
 	)

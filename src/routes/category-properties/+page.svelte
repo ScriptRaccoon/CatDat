@@ -2,7 +2,7 @@
 	import MetaData from '$components/MetaData.svelte'
 	import SearchFilter from '$components/SearchFilter.svelte'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
-	import { pluralize } from '$lib/client/utils'
+	import { normalize_text, pluralize } from '$lib/client/utils'
 	import { get_property_url } from '$lib/commons/property.url'
 
 	let { data } = $props()
@@ -13,10 +13,11 @@
 		search
 			? data.grouped_properties.filter(
 					(property) =>
-						property.id.toLowerCase().includes(search.toLowerCase()) ||
-						property.dual_property_id
-							?.toLowerCase()
-							.includes(search.toLowerCase()),
+						normalize_text(property.id).includes(normalize_text(search)) ||
+						(!!property.dual_property_id &&
+							normalize_text(property.dual_property_id).includes(
+								normalize_text(search),
+							)),
 				)
 			: data.grouped_properties,
 	)
