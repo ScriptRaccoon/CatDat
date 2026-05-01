@@ -142,6 +142,11 @@ VALUES
 	'It is clear that continuous maps with dense image are epimorphism, but the other direction is non-trivial. See <a href="https://math.stackexchange.com/questions/214045" target="_blank">MSE/214045</a> for a proof.'
 ),
 (
+	'J2',
+	'surjective morphisms',
+	'For the non-trivial direction: The category is epi-regular (since it is an elementary topos), and every regular epimorphism is surjective (this holds in any algebraic category).'
+),
+(
 	'M-Set',
 	'surjective $M$-maps',
 	'This holds in every functor category $[\mathcal{C},\mathbf{Set}]$, here applied to the case that $\mathcal{C}$ has just one object.'

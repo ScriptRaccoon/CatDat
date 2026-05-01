@@ -19,6 +19,7 @@ VALUES
 ('FreeAb', 'direct sums'),
 ('Grp', 'free products'),
 ('Haus', 'disjoint union with the disjoint union topology'),
+('J2', 'See <a href="https://matheplanet.de/matheplanet/nuke/html/article.php?sid=1713" target="_blank">here</a> for a description'),
 ('LRS', 'disjoint union with the product sheaf'),
 ('M-Set', 'disjoint union with obvious $M$-action'),
 ('Meas', 'disjoint union with the obvious $\sigma$-algebra'),

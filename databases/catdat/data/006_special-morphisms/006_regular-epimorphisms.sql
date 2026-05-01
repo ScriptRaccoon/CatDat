@@ -126,6 +126,11 @@ VALUES
     'This holds in every finitary algebraic category.'
 ),
 (
+    'J2',
+    'same as epimorphisms',
+    'This is because the category is epi-regular.'
+),  
+(
     'M-Set',
     'surjective homomorphisms',
     'This holds in every finitary algebraic category.'

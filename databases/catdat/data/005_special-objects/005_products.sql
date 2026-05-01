@@ -18,6 +18,7 @@ VALUES
 ('CRing', 'direct products with pointwise operations'),
 ('Grp', 'direct products with pointwise operations'),
 ('Haus', 'direct product with the <a href="https://en.wikipedia.org/wiki/Product_topology" target="_blank">product topology</a>'),
+('J2', 'direct products with pointwise operations'),
 ('LRS', 'See <a href="https://arxiv.org/abs/1103.2139" target="_blank">Localization of ringed spaces</a> by W. Gillam. See also <a href="https://math.stackexchange.com/questions/1033675" target="_blank">MSE/1033675</a>.'),
 ('M-Set', 'direct products with the evident $M$-action'),
 ('Meas', 'direct products with the <a href="https://de.wikipedia.org/wiki/Produkt-%CF%83-Algebra" target="_blank">product $\sigma$-algebra</a>'),

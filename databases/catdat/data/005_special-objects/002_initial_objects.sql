@@ -22,6 +22,7 @@ VALUES
 ('FreeAb', 'trivial group'),
 ('Grp', 'trivial group'),
 ('Haus', 'empty space'),
+('J2', '$(\varnothing,!)$'),
 ('LRS', 'empty space'),
 ('M-Set', 'empty set with the unique action'),
 ('Man', 'empty manifold'),

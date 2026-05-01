@@ -21,6 +21,7 @@ VALUES
 ('FreeAb', 'trivial group'),
 ('Grp', 'trivial group'),
 ('Haus', 'singleton space'),
+('J2', '$(\{\ast\},!)$'),
 ('LRS', '$\mathrm{Spec}(\mathbb{Z})$'),
 ('M-Set', 'singleton set with the unique action'),
 ('Man', 'singleton manifold of dimension $0$'),

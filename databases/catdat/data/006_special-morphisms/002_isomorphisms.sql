@@ -146,6 +146,11 @@ VALUES
 	'This is easy.'
 ),
 (
+	'J2',
+	'bijective morphisms',
+	'This characterization holds in every algebraic category.'
+),
+(
 	'LRS',
 	'pairs $(f,f^{\sharp})$ consisting of a homeomorphism $f$ and an isomorphism of sheaves $f^{\sharp}$',
 	'This is easy.'
