@@ -30,6 +30,4 @@ jobs:
               run: pnpm i
 
             - name: Update and Test database
-              env:
-                  APP_DB_URL: file:databases/app/app.db # TODO: remove this from here
-              run: pnpm db:update
+              run: pnpm db:update:catdat
