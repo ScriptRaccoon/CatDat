@@ -91,12 +91,6 @@ VALUES
 ),
 (
 	'Set_c',
-	'Malcev',
-	FALSE,
-	'There are lots of non-symmetric reflexive relations, for example $\leq$ on $\mathbb{N}$.'
-),
-(
-	'Set_c',
 	'regular',
 	TRUE,
 	'From the other properties we know that the category is finitely complete and that it has coequalizers. The regular epimorphisms are stable under pullback since this holds in $\mathbf{Set}$ and both regular epimorphisms (they are surjective maps) and pullbacks coincide.'
