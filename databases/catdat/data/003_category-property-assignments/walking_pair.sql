@@ -61,18 +61,6 @@ VALUES
 ),
 (
 	'walking_pair',
-	'binary products',
-	FALSE,
-	'We cannot have $0 \times 1 = 1$ since there is no morphism $1 \to 0$. So assume $0 \times 1 = 0$, say with projections $\mathrm{id}_0 : 0 \to 0$ and $a : 0 \to 1$. By applying the universal property to  $\mathrm{id}_0 : 0 \to 0$ and the other morphism $b : 0 \to 1$, it immediately follows $a=b$, which is a contradiction.'
-),
-(
-	'walking_pair',
-	'equalizers',
-	FALSE,
-	'The two morphisms $a,b : 0 \rightrightarrows 1$ have no equalizer, since it would have to be the identity of $0$, but $a \neq b$.'
-),
-(
-	'walking_pair',
 	'pullbacks',
 	FALSE,
 	'The two morphisms $a,b : 0 \rightrightarrows 1$ have no pullback, since it would have to consist of identities $0 \leftarrow 0 \rightarrow 0$, but $a \neq b$.'
