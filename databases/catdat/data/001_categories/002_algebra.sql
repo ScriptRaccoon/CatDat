@@ -196,8 +196,18 @@ VALUES
 	'$\TorsFreeAb$',
 	'torsion-free abelian groups',
 	'group homomorphisms',
-	'This is a typical example of a well-behaved additive category which is <i>not</i> abelian.',
+	'This is a typical example of a well-behaved additive category which is <i>not</i> abelian. It contains the category of free abelian groups.',
 	'https://ncatlab.org/nlab/show/torsion-free+module',
+	NULL
+),
+(
+	'TorsAb',
+	'category of torsion abelian groups',
+	'$\mathbf{TorsAb}$',
+	'torsion abelian groups',
+	'group homomorphisms',
+	'This is a Grothendieck abelian category containing all finite abelian groups.',
+	'https://ncatlab.org/nlab/show/torsion+subgroup',
 	NULL
 ),
 (

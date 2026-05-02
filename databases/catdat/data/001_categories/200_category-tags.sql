@@ -91,6 +91,7 @@ VALUES
 ('Top', 'topology'),
 ('Top*', 'topology'),
 ('TorsFreeAb', 'algebra'),
+('TorsAb', 'algebra'),
 ('Vect', 'algebra'),
 ('walking_commutative_square', 'finite'),
 ('walking_commutative_square', 'category theory'),
