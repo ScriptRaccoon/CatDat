@@ -306,6 +306,11 @@ VALUES
 	'For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the discrete two-point space), hence preserves monomorphisms.'
 ),
 (
+	'TorsAb',
+	'injective group homomorphisms',
+	'For the non-trivial direction, assume $f : A \to B$ is a monomorphism and $a \in A$ satisfies $f(a)=0$. Choose $n \geq 1$ with $n a = 0$. Then $a$ corresponds to a homomorphism of torsion abelian groups $\tilde{a} : \mathbb{Z}/n \to A$ satisfying $f \circ \tilde{a} = 0$. Hence, $\tilde{a} = 0$, which means $a = 0$.'
+),
+(
 	'TorsFreeAb',
 	'injective group homomorphisms',
 	'For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the group $\IZ$), hence preserves monomorphisms.'

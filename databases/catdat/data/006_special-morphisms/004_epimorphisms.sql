@@ -292,6 +292,11 @@ VALUES
 	'For the non-trivial direction: The forgetful functor $\Top_* \to \Top$ preserves pushouts and hence also epimorphisms, and we already know the epimorphisms in $\Top$.'
 ),
 (
+	'TorsAb',
+	'surjective homomorphisms',
+	'Clearly, surjective homomorphisms are epimorphisms. The converse follows since the forgetful functor $\mathbf{TorsAb} \to \mathbf{Ab}$ has a right adjoint, hence preserves epimorphisms.'
+),
+(
 	'TorsFreeAb',
 	'homomorphisms $f : A \to B$ such that $B/f(A)$ is a torsion group',
 	'The homomorphism $f$ is an epimorphism iff its cokernel in $\TorsFreeAb$ is trivial. As with all types of colimits, the cokernel is the torsion-free reflection of the cokernel in $\Ab$, which is $B/f(A)$. This is trivial iff $B/f(A)$ is torsion.'

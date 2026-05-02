@@ -45,6 +45,7 @@ VALUES
 ('sSet', 'pointwise disjoint union'),
 ('Top', 'disjoint union with the disjoint union topology'),
 ('Top*', 'wedge sum, aka one-point union'),
+('TorsAb', 'direct sums'),
 ('TorsFreeAb', 'direct sums'),
 ('Vect', 'direct sums'),
 ('walking_commutative_square', '$b \sqcup c = d$, $a \sqcup x = x$, $d \sqcup x = d$, $x \sqcup x = x$'),

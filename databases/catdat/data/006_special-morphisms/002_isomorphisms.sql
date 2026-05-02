@@ -316,6 +316,11 @@ VALUES
 	'This is easy.'
 ),
 (
+	'TorsAb',
+	'bijective group homomorphisms',
+	'This is easy.'
+),
+(
 	'TorsFreeAb',
 	'bijective group homomorphisms',
 	'This is easy.'
