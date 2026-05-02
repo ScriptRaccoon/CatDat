@@ -57,7 +57,8 @@ jobs:
 
             - name: Build database
               env:
-                  APP_DB_URL: file:databases/app/app.db
+                  APP_DB_URL: ${{ secrets.APP_DB_URL }}
+                  APP_DB_AUTH_TOKEN: ${{ secrets.APP_DB_AUTH_TOKEN }}
               run: |
                   pnpm db:update
                   pnpm db:snapshot
