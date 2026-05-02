@@ -156,3 +156,16 @@ As a practical guideline, avoid introducing more than four properties (or four c
 
 1. Use `\varnothing` to display the empty set, not `\emptyset`.
 2. Write `non-empty`, not `nonempty`. Same for `non-unital`, `non-expansive`, etc.
+
+### Responsible Use of AI
+
+AI tools may be used to assist with development in this repository, but not to replace the act of programming.
+
+- Use AI to support your workflow (e.g. by asking questions, getting suggestions, or creating snippets), not to generate complete features or large portions of code without your active involvement.
+- AI agents that autonomously generate or modify code are not allowed. Pull requests that are mainly written by AI agents will be closed.
+- AI can also be used to find proofs for properties of categories, but they must be checked thoroughly and written in your own words.
+- AI may also be used to improve English writing (e.g. grammar, clarity, phrasing), particularly if you are not a native speaker.
+- Every line of code in a pull request must be understood by the developer submitting it.
+- Pull request descriptions and commit messages must be written manually. AI-generated summaries are often superficial, meaningless, and do not tell the whole story.
+
+In summary, treat AI as a productivity tool, not as a substitute for understanding or authorship.
