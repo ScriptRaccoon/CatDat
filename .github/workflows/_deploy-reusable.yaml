@@ -59,9 +59,7 @@ jobs:
               env:
                   APP_DB_URL: ${{ secrets.APP_DB_URL }}
                   APP_DB_AUTH_TOKEN: ${{ secrets.APP_DB_AUTH_TOKEN }}
-              run: |
-                  pnpm db:update
-                  pnpm db:snapshot
+              run: pnpm db:update
 
             - name: Build app
               env:
