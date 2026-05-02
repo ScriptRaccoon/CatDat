@@ -48,7 +48,7 @@
 		"vite": "^8.0.3"
 	},
 	"engines": {
-		"node": ">=22.13.0"
+		"node": ">=24.14.0"
 	},
 	"dependencies": {
 		"@fortawesome/free-regular-svg-icons": "^7.2.0",
