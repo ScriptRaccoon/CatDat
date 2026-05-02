@@ -153,5 +153,7 @@
 	"cofiltered-limit-stable epimorphisms": false,
 	"exact cofiltered limits": false,
 	"gaunt": false,
-	"core-thin": false
+	"core-thin": false,
+	"subobject-trivial": false,
+	"quotient-trivial": false
 }

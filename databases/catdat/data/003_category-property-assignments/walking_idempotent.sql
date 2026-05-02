@@ -37,7 +37,7 @@ VALUES
 ),
 (
 	'walking_idempotent',
-	'mono-regular',
+	'subobject-trivial',
     TRUE,
 	'This is because the identity is the only monomorphism.'
 ),

@@ -142,4 +142,20 @@ VALUES
 	'https://ncatlab.org/nlab/show/gaunt+category',
 	'gaunt',
 	FALSE
+),
+(
+	'subobject-trivial',
+	'is',
+	'A category is <i>subobject-trivial</i> if every monomorphism is an isomorphism. Equivalently, the poset of subobjects of any object is trivial. This is no standard terminology. We have added it to the database since it clarifies the relationship between several related properties.',
+	NULL,
+	'quotient-trivial',
+	TRUE
+),
+(
+	'quotient-trivial',
+	'is',
+	'A category is <i>quotient-trivial</i> if every epimorphism is an isomorphism. Equivalently, the poset of quotients of any object is trivial. This is no standard terminology. We have added it to the database since it clarifies the relationship between several related properties.',
+	NULL,
+	'subobject-trivial',
+	TRUE
 );

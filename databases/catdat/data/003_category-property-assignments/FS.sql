@@ -43,21 +43,9 @@ VALUES
 ),
 (
 	'FS',
-	'mono-regular',
-	TRUE,
-	'Every monomorphism is an isomorphism (see below), hence regular.'
-),
-(
-	'FS',
 	'epi-regular',
 	TRUE,
 	'If $f : X \to Y$ is a surjective map of finite sets, it is the coequalizer of the two projections $p_1, p_2 : X \times_Y X \rightrightarrows X$ in $\mathbf{FinSet}$, but also in $\mathbf{FS}$. Notice that $p_1,p_2$ are surjective. Even though $X \times_Y X$ is not a pullback in $\mathbf{FS}$, we can use this finite set here.'
-),
-(
-	'FS',
-	'filtered-colimit-stable monomorphisms',
-	TRUE,
-	'This is because every monomorphism is an isomorphism in this category (see below), and isomorphisms are always stable under any type of colimit.'
 ),
 (
 	'FS',

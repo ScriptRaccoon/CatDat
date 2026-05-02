@@ -55,12 +55,6 @@ VALUES
 ),
 (
 	'FI',
-	'epi-regular',
-	TRUE,
-	'This is because every epimorphism is actually an isomorphism (see below).'
-),
-(
-	'FI',
 	'semi-strongly connected',
 	TRUE,
 	'If $X,Y$ are two finite sets, we have $\mathrm{card}(X) \leq \mathrm{card}(Y)$ or $\mathrm{card}(Y) \leq \mathrm{card}(X)$. In the first case there will be an injection $X \to Y$, in the second case there will be an injection $Y \to X$.'
@@ -70,12 +64,6 @@ VALUES
 	'locally cartesian closed',
 	TRUE,
 	'IF $X$ is a finite set, the slice category $\mathbf{FI} / X$ is equivalent to the poset of subsets of $X$. This is cartesian closed because $A \cap B \subseteq C$ holds if and only if $B \subseteq (X \setminus A) \cup C$, where $A,B,C \subseteq X$.'
-),
-(
-	'FI',
-	'cofiltered-limit-stable epimorphisms',
-	TRUE,
-	'This is because every epimorphism is an isomorphism in this category (see below), and isomorphisms are always stable under any type of limit.'
 ),
 (
 	'FI',

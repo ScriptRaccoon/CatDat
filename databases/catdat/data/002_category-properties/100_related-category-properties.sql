@@ -231,6 +231,8 @@ VALUES
 ('right cancellative', 'groupoid'),
 ('groupoid', 'left cancellative'),
 ('groupoid', 'right cancellative'),
+('groupoid', 'subobject-trivial'),
+('groupoid', 'quotient-trivial'),
 ('wide pullbacks', 'pullbacks'),
 ('wide pushouts', 'pushouts'),
 ('split abelian', 'abelian'),
@@ -339,7 +341,9 @@ VALUES
 ('cofiltered', 'finitely complete'),
 ('cofiltered', 'cofiltered limits'),
 ('mono-regular', 'normal'),
+('mono-regular', 'subobject-trivial'),
 ('epi-regular', 'conormal'),
+('epi-regular', 'quotient-trivial'),
 ('normal', 'zero morphisms'),
 ('normal', 'mono-regular'),
 ('normal', 'kernels'),
@@ -403,4 +407,8 @@ VALUES
 ('CSP', 'zero morphisms'),
 ('CSP', 'unital'),
 ('CSP', 'cofiltered-limit-stable epimorphisms'),
-('finitary algebraic', 'locally strongly finitely presentable');
+('finitary algebraic', 'locally strongly finitely presentable'),
+('subobject-trivial', 'mono-regular'),
+('subobject-trivial', 'groupoid'),
+('quotient-trivial', 'epi-regular'),
+('quotient-trivial', 'groupoid');

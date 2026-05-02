@@ -42,6 +42,13 @@ VALUES
 	FALSE
 ),
 (
+	'reflexive_pair_trivial_2',
+	'["subobject-trivial"]',
+	'["reflexive coequalizers", "coreflexive equalizers"]',
+	'Any parallel pair of morphisms with a common section (or retraction) must be a pair of equal isomorphisms.',
+	FALSE
+),
+(
 	'groupoid_consequence',
 	'["groupoid"]',
 	'["self-dual", "mono-regular", "pullbacks", "directed limits", "left cancellative", "well-powered"]',
@@ -169,6 +176,13 @@ VALUES
 	FALSE
 ),
 (
+	'filtered_monos_iso',
+	'["subobject-trivial", "filtered colimits"]',
+	'["filtered-colimit-stable monomorphisms"]',
+	'This is trivial.',
+	FALSE
+),
+(
 	'thin_groupoids',
 	'["groupoid", "core-thin"]',
 	'["thin"]',
@@ -188,4 +202,32 @@ VALUES
 	'["skeletal", "core-thin"]',
 	'This is trivial.',
 	TRUE
+),
+(
+	'thin_subobject-trivial',
+	'["subobject-trivial", "equalizers"]',
+	'["thin"]',
+	'If $f,g : X \rightrightarrows Y$ are morphisms, their equalizer is a monomorphism $E \hookrightarrow X$, hence an isomorphism. But this means $f = g$.',
+	FALSE
+),
+(
+	'subobject-trivial_consequence',
+	'["subobject-trivial"]',
+	'["mono-regular"]',
+	'This is trivial.',
+	FALSE
+),
+(
+	'subobject-trivial_groupoids',
+	'["groupoid"]',
+	'["subobject-trivial"]',
+	'This is trivial.',
+	FALSE
+),
+(
+	'subobject-trivial_criterion',
+	'["right cancellative", "epi-regular"]',
+	'["subobject-trivial"]',
+	'This is because a monomorphism which is also a regular epimorphism is an isomorphism.',
+	FALSE
 );
