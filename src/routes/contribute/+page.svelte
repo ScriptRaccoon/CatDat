@@ -49,7 +49,19 @@
 	to everyone. It also does not require following any guidelines for adding new data.
 </p>
 
-<h3>Option 2: Create a Pull Request</h3>
+<h3>Option 2: Create an Issue</h3>
+
+<p>
+	Create an
+	<a
+		class="accent"
+		href="https://github.com/ScriptRaccoon/CatDat/issues/new"
+		target="_blank">issue</a
+	>
+	on GitHub. You will need a GitHub account.
+</p>
+
+<h3>Option 3: Create a Pull Request</h3>
 
 <p>
 	Create a
@@ -63,18 +75,6 @@
 		href="https://github.com/ScriptRaccoon/CatDat/blob/main/CONTRIBUTING.md"
 		target="_blank">contribution guidelines</a
 	>.
-</p>
-
-<h3>Option 3: Create an Issue</h3>
-
-<p>
-	Create an
-	<a
-		class="accent"
-		href="https://github.com/ScriptRaccoon/CatDat/issues/new"
-		target="_blank">issue</a
-	>
-	on GitHub. You will need a GitHub account.
 </p>
 
 <SuggestionForm />

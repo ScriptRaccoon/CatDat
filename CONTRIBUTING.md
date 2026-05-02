@@ -5,8 +5,8 @@
 There are three ways to contribute:
 
 - [Use the Suggestion Form](#option-1-use-the-suggestion-form)
-- [Create a Pull Request](#option-2-create-a-pull-request)
-- [Create an Issue](#option-3-create-an-issue)
+- [Create an Issue](#option-2-create-an-issue)
+- [Create a Pull Request](#option-3-create-a-pull-request)
 
 ## Option 1: Use the Suggestion Form
 
@@ -14,7 +14,11 @@ On most pages of CatDat, you will find a suggestion form at the bottom. Use it t
 
 This option does not require any knowledge of GitHub or coding, making it accessible to everyone. It also does not require following any guidelines for adding new data (see below).
 
-## Option 2: Create a Pull Request
+## Option 2: Create an Issue
+
+If you want to report a bug or submit a feature request, you can [**create an issue**](https://github.com/ScriptRaccoon/CatDat/issues/new). You will need a GitHub account for this.
+
+## Option 3: Create a Pull Request
 
 Create a [**pull request**](https://github.com/ScriptRaccoon/CatDat/pulls). You will need a GitHub account.
 
@@ -152,7 +156,3 @@ As a practical guideline, avoid introducing more than four properties (or four c
 
 1. Use `\varnothing` to display the empty set, not `\emptyset`.
 2. Write `non-empty`, not `nonempty`. Same for `non-unital`, `non-expansive`, etc.
-
-## Option 3: Create an Issue
-
-If you want to report a bug or submit a feature request, you can [**create an issue**](https://github.com/ScriptRaccoon/CatDat/issues/new). You will need a GitHub account for this.
