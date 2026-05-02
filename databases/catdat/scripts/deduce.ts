@@ -12,7 +12,7 @@ import { get_client } from './shared'
 function deduce() {
 	const db = get_client()
 
-	db.exec('PRAGMA foreign_keys = ON')
+	db.pragma('foreign_keys = ON')
 
 	deduce_category_implications(db)
 	deduce_category_properties(db)

@@ -195,9 +195,7 @@ function get_properties_dict(db: Database) {
  * This runs before the deduction starts.
  */
 function delete_deduced_category_properties(db: Database) {
-	db.exec(`
-		DELETE FROM category_property_assignments
-		WHERE is_deduced = TRUE`)
+	db.prepare(`DELETE FROM category_property_assignments WHERE is_deduced = TRUE`).run()
 }
 
 /**
@@ -285,7 +283,7 @@ function deduce_satisfied_category_properties(
 		`
 
 		try {
-			db.prepare(insert_sql).run(...values)
+			db.prepare(insert_sql).run(values)
 		} catch (err) {
 			if (err instanceof SqliteError) {
 				if (err.code.startsWith('SQLITE_CONSTRAINT')) {
@@ -395,7 +393,7 @@ function deduce_unsatisfied_category_properties(
 		`
 
 		try {
-			db.prepare(insert_query).run(...values)
+			db.prepare(insert_query).run(values)
 		} catch (err) {
 			if (err instanceof SqliteError) {
 				if (err.code.startsWith('SQLITE_CONSTRAINT')) {
@@ -461,7 +459,7 @@ function deduce_dual_category_properties(
 			(category_id, property_id, is_satisfied, reason, is_deduced)
 		VALUES ${value_fragments.join(',\n')}`
 
-		db.prepare(insert_query).run(...values)
+		db.prepare(insert_query).run(values)
 
 		console.info(
 			`Deduced ${new_satisfied.size} satisfied properties by duality for ${category.id}`,
@@ -486,7 +484,7 @@ function deduce_dual_category_properties(
 			(category_id, property_id, is_satisfied, reason, is_deduced)
 		VALUES ${value_fragments.join(',\n')}`
 
-		db.prepare(insert_query).run(...values)
+		db.prepare(insert_query).run(values)
 
 		console.info(
 			`Deduced ${new_unsatisfied.size} unsatisfied properties by duality for ${category.id}`,

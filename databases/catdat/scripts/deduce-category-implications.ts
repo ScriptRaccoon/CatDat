@@ -15,7 +15,7 @@ export function deduce_category_implications(db: Database) {
  * Clears all deduced implications. This is done as a first step.
  */
 function clear_deduced_category_implications(db: Database) {
-	db.exec(`DELETE FROM category_implications WHERE is_deduced = TRUE`)
+	db.prepare(`DELETE FROM category_implications WHERE is_deduced = TRUE`).run()
 }
 
 /**

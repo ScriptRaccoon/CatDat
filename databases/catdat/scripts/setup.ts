@@ -11,7 +11,7 @@ function setup() {
 	console.info('\n--- Setup CatDat database ---')
 
 	const db = get_client()
-	db.exec('PRAGMA foreign_keys = ON')
+	db.pragma('foreign_keys = ON')
 
 	const schema_folder = path.join(process.cwd(), 'databases', 'catdat', 'schema')
 

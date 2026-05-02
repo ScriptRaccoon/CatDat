@@ -204,7 +204,7 @@ function get_functor_properties_dict(db: Database) {
  * This runs before the deduction starts.
  */
 function delete_deduced_functor_properties(db: Database) {
-	db.exec('DELETE FROM functor_property_assignments WHERE is_deduced = TRUE')
+	db.prepare('DELETE FROM functor_property_assignments WHERE is_deduced = TRUE').run()
 }
 
 /**
@@ -283,7 +283,7 @@ function deduce_satisfied_functor_properties(
 			${value_fragments.join(',\n')}
 		`
 
-		db.prepare(insert_sql).run(...values)
+		db.prepare(insert_sql).run(values)
 	}
 
 	console.info(
@@ -371,7 +371,7 @@ function deduce_unsatisfied_functor_properties(
 			VALUES
 			${value_fragments.join(',\n')}`
 
-		db.prepare(insert_query).run(...values)
+		db.prepare(insert_query).run(values)
 	}
 
 	console.info(

@@ -7,7 +7,7 @@ const db_path = join(process.cwd(), 'databases', 'catdat', 'catdat.db')
 /**
  * Database client for the CatDat database holding all mathematical knowledge
  */
-const db = new Database(db_path, { readonly: true })
+const db = new Database(db_path, { readonly: true, fileMustExist: true })
 
 /**
  * Small wrapper around db.prepare.all to handle errors,

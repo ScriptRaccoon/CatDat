@@ -17,7 +17,7 @@ export function deduce_functor_implications(db: Database) {
  * Clears all deduced functor implications. This is done as a first step.
  */
 function clear_deduced_functor_implications(db: Database) {
-	db.exec(`DELETE FROM functor_implications WHERE is_deduced = TRUE`)
+	db.prepare(`DELETE FROM functor_implications WHERE is_deduced = TRUE`).run()
 }
 
 /**
