@@ -72,7 +72,7 @@ VALUES
 (
 	'Set_c',
 	'category of countable sets',
-	'$\mathbf{Set}_\mathrm{c}$',
+	'$\mathbf{Set}_\c$',
 	'countable sets',
 	'maps',
 	'A set is countable if it admits a surjection from $\IN$. In particular, every finite set is countable.',

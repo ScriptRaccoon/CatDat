@@ -27,7 +27,7 @@ VALUES
 	'Set_c',
 	'cogenerator',
 	TRUE,
-	'The two-point set is a cogenerator in $\mathbf{Set}$, hence also in $\mathbf{Set}_\mathrm{c}$.'
+	'The two-point set is a cogenerator in $\mathbf{Set}$, hence also in $\mathbf{Set}_\c$.'
 ),
 (
 	'Set_c',
@@ -51,19 +51,19 @@ VALUES
 	'Set_c',
 	'countably distributive',
 	TRUE,
-	'By elementary set theory, a countable (disjoint) union of countable sets is again countable, and a finite direct product of countable sets is countable. Hence, countable coproducts and finite products exists in $\mathbf{Set}_\mathrm{c}$. The distributivity morphism is an isomorphism since this is the case in $\mathbf{Set}$ and the forgetful functor $\mathbf{Set}_\mathrm{c} \to \mathbf{Set}$ preserves finite products and countable coproducts.'
+	'By elementary set theory, a countable (disjoint) union of countable sets is again countable, and a finite direct product of countable sets is countable. Hence, countable coproducts and finite products exists in $\mathbf{Set}_\c$. The distributivity morphism is an isomorphism since this is the case in $\mathbf{Set}$ and the forgetful functor $\mathbf{Set}_\c \to \mathbf{Set}$ preserves finite products and countable coproducts.'
 ),
 (
 	'Set_c',
 	'mono-regular',
 	TRUE,
-	'If $f : X \to Y$ is a monomorphism, i.e. an injective map, it is an equalizer of the maps $\chi_Y, \chi_{f(X)} : Y \to \{0,1\}$ in $\mathbf{Set}$ and hence also in $\mathbf{Set}_\mathrm{c}$.'
+	'If $f : X \to Y$ is a monomorphism, i.e. an injective map, it is an equalizer of the maps $\chi_Y, \chi_{f(X)} : Y \to \{0,1\}$ in $\mathbf{Set}$ and hence also in $\mathbf{Set}_\c$.'
 ),
 (
 	'Set_c',
 	'epi-regular',
 	TRUE,
-	'If $X \to Y$ is an epimorphism in $\mathbf{Set}_\mathrm{c}$, i.e. a surjective map, it is coequalizer of the two maps $X \times_Y X \rightrightarrows X$ in $\mathbf{Set}$ and hence also in $\mathbf{Set}_\mathrm{c}$.'
+	'If $X \to Y$ is an epimorphism in $\mathbf{Set}_\c$, i.e. a surjective map, it is coequalizer of the two maps $X \times_Y X \rightrightarrows X$ in $\mathbf{Set}$ and hence also in $\mathbf{Set}_\c$.'
 ),
 (
 	'Set_c',
@@ -105,12 +105,12 @@ VALUES
 	'Set_c',
 	'countable powers',
 	FALSE,
-	'Since the forgetful functor $\mathbf{Set}_\mathrm{c} \to \mathbf{Set}$ is representable, it preserves (countable) products. Therefore, if the power $\{0,1\}^{\IN}$ exists in $\mathbf{Set}_\mathrm{c}$, it must be the ordinary cartesian product, which however is uncountable.'
+	'Since the forgetful functor $\mathbf{Set}_\c \to \mathbf{Set}$ is representable, it preserves (countable) products. Therefore, if the power $\{0,1\}^{\IN}$ exists in $\mathbf{Set}_\c$, it must be the ordinary cartesian product, which however is uncountable.'
 ),
 (
 	'Set_c',
 	'ℵ₁-accessible',
 	FALSE,
-	'In fact, $\mathbf{Set}_\mathrm{c}$ does not have $\aleph_1$-filtered colimits: Fix an uncountable set $X$, let $P_\mathrm{c}(X)$ be the poset of countable subsets of $X$, which is $\aleph_1$-filtered, and consider the functor $P_\mathrm{c}(X) \to \mathbf{Set}_\mathrm{c}$ taking a subset $Y \subseteq X$ to $Y$. The colimit of this diagram in $\mathbf{Set}$ is given by $X$ itself, so if $X_c$ were a colimit in $\mathbf{Set}_\mathrm{c}$, then $\Hom(X_c, \{0,1\}) \cong \Hom(X, \{0,1\})$. But the former has cardinality at most $2^{\aleph_0}$ and the latter has cardinality $2^{\card(X)}$, so we have obtained a contradiction if we pick $X$ large enough (e.g. $\card(X)=2^{\aleph_0}$).'
+	'In fact, $\mathbf{Set}_\c$ does not have $\aleph_1$-filtered colimits: Fix an uncountable set $X$, let $P_\c(X)$ be the poset of countable subsets of $X$, which is $\aleph_1$-filtered, and consider the functor $P_\c(X) \to \mathbf{Set}_\c$ taking a subset $Y \subseteq X$ to $Y$. The colimit of this diagram in $\mathbf{Set}$ is given by $X$ itself, so if $X_c$ were a colimit in $\mathbf{Set}_\c$, then $\Hom(X_c, \{0,1\}) \cong \Hom(X, \{0,1\})$. But the former has cardinality at most $2^{\aleph_0}$ and the latter has cardinality $2^{\card(X)}$, so we have obtained a contradiction if we pick $X$ large enough (e.g. $\card(X)=2^{\aleph_0}$).'
 );
 

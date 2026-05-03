@@ -139,7 +139,7 @@ VALUES
 	'Man',
 	'ℵ₁-accessible',
 	FALSE,
-	'We already know that the <a href="/category/Set_c">category of countable sets</a> $\mathbf{Set}_\mathrm{c}$ does not have $\aleph_1$-filtered colimits. The functor $\pi_0: \mathbf{Man} \to \mathbf{Set}_\mathrm{c}$ is well-defined (because manifolds are second-countable), and it admits a fully faithful right adjoint (regarding a countable set as a discrete manifold). Therefore, $\mathbf{Man}$ does not have $\aleph_1$-filtered colimits.'
+	'We already know that the <a href="/category/Set_c">category of countable sets</a> $\mathbf{Set}_\c$ does not have $\aleph_1$-filtered colimits. The functor $\pi_0: \mathbf{Man} \to \mathbf{Set}_\c$ is well-defined (because manifolds are second-countable), and it admits a fully faithful right adjoint (regarding a countable set as a discrete manifold). Therefore, $\mathbf{Man}$ does not have $\aleph_1$-filtered colimits.'
 ),
 (
 	'Man',
