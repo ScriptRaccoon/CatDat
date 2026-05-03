@@ -9,13 +9,13 @@ VALUES
     'power_set_covariant',
     'monomorphism-preserving',
     TRUE,
-    'If $f : X \to Y$ is injective, then $f^* \circ f_* = \mathrm{id}_{P(X)}$, so that $f_*$ is injective.'
+    'If $f : X \to Y$ is injective, then $f^* \circ f_* = \id_{P(X)}$, so that $f_*$ is injective.'
 ),
 (
     'power_set_covariant',
     'epimorphism-preserving',
     TRUE,
-    'If $f : X \to Y$ is surjective, then $f_* \circ f^* = \mathrm{id}_{P(Y)}$, so that $f^*$ is surjective.'
+    'If $f : X \to Y$ is surjective, then $f_* \circ f^* = \id_{P(Y)}$, so that $f^*$ is surjective.'
 ),
 (
     'power_set_covariant',

@@ -45,7 +45,7 @@ VALUES
 	'equalizers_via_coreflexive_equalizers',
 	'["coreflexive equalizers", "binary products"]',
 	'["equalizers"]',
-	'If $f,g : X \rightrightarrows Y$ are two morphisms, we have a coreflexive pair $(\mathrm{id}_X,f), (\mathrm{id}_X,g) : X \rightrightarrows X \times Y$. A morphism with codomain $X$ equalizes $f$ and $g$ if and only if it equalizes $(\mathrm{id}_X,f)$ and $(\mathrm{id}_X,g)$. Thus, their equalizers agree.',
+	'If $f,g : X \rightrightarrows Y$ are two morphisms, we have a coreflexive pair $(\id_X,f), (\id_X,g) : X \rightrightarrows X \times Y$. A morphism with codomain $X$ equalizes $f$ and $g$ if and only if it equalizes $(\id_X,f)$ and $(\id_X,g)$. Thus, their equalizers agree.',
 	FALSE
 ),
 (
@@ -143,7 +143,7 @@ VALUES
 	'equalizers_consequence',
 	'["equalizers"]',
 	'["Cauchy complete"]',
-	'If $e : X \to X$ is an idempotent, then the equalizer of $e, \mathrm{id}_X : X \rightrightarrows X$ provides a splitting of $e$.',
+	'If $e : X \to X$ is an idempotent, then the equalizer of $e, \id_X : X \rightrightarrows X$ provides a splitting of $e$.',
 	FALSE
 ),
 (
@@ -176,7 +176,7 @@ VALUES
 	A cocone under this sequence is a family of morphisms $f_n : X \to Y$ satisfying $$f_n = f_{n+1} e.$$
 	Then
 	$$f_n = f_{n+1} e = f_{n+2} e^2 = f_{n+2} e = f_{n+1}$$
-	shows that all the morphisms are equal. Thus, a cocone is the same as a morphism $f_0 : X \to Y$ with $f_0 = f_0 e$, meaning it coequalizes $\mathrm{id}_X,e : X \rightrightarrows X$. Hence, if a colimit exists, $e$ splits.',
+	shows that all the morphisms are equal. Thus, a cocone is the same as a morphism $f_0 : X \to Y$ with $f_0 = f_0 e$, meaning it coequalizes $\id_X,e : X \rightrightarrows X$. Hence, if a colimit exists, $e$ splits.',
 	FALSE
 ),
 (

@@ -122,7 +122,7 @@ VALUES
 	'one-way_zero',
 	'["zero morphisms", "one-way"]',
 	'["thin"]',
-	'If $f,g : A \rightrightarrows B$ are two morphisms, then since $0_{B,B} = \mathrm{id}_B$ we have
+	'If $f,g : A \rightrightarrows B$ are two morphisms, then since $0_{B,B} = \id_B$ we have
 	$$f = 0_{B,B} \circ f = 0_{A,B} = 0_{B,B} \circ g = g.$$',
 	FALSE
 ),
@@ -158,7 +158,7 @@ VALUES
 	'one-way_reflexive',
 	'["one-way"]',
 	'["reflexive coequalizers"]',
-	'Every reflexive pair is equal: If $f s = g s = \mathrm{id}$, then since $s f  = \mathrm{id}$ (one-way), we must have $f = s^{-1}$, and likewise $g = s^{-1}$.',
+	'Every reflexive pair is equal: If $f s = g s = \id$, then since $s f  = \id$ (one-way), we must have $f = s^{-1}$, and likewise $g = s^{-1}$.',
 	FALSE
 ),
 (
@@ -193,7 +193,7 @@ VALUES
 	'core-hin_quotients',
 	'["core-thin"]',
 	'["quotients of congruences"]',
-	'If $p_1, p_2 : E \rightrightarrows X$ is a congruence, the symmetry morphism $s : E \to E$ is an automorphism of $E$, hence equal to $\mathrm{id}_E$ by assumption. But then $p_1 = p_2 \circ s = p_2$, and simply $\mathrm{id}_X$ is a coequalizer.',
+	'If $p_1, p_2 : E \rightrightarrows X$ is a congruence, the symmetry morphism $s : E \to E$ is an automorphism of $E$, hence equal to $\id_E$ by assumption. But then $p_1 = p_2 \circ s = p_2$, and simply $\id_X$ is a coequalizer.',
 	FALSE
 ),
 (

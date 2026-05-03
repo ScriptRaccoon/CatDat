@@ -314,7 +314,7 @@ VALUES
 (
 	'walking_coreflexive_pair',
 	'the identities and $p$',
-	'Since $pi = \mathrm{id}$, but $ip \neq \mathrm{id}$, we conclude that $p$ is an epimorphism, but $i$ is not. Hence, also $ip$ is not an epimorphism. Likewise, $j$ and $jp$ are no epimorphisms.'
+	'Since $pi = \id$, but $ip \neq \id$, we conclude that $p$ is an epimorphism, but $i$ is not. Hence, also $ip$ is not an epimorphism. Likewise, $j$ and $jp$ are no epimorphisms.'
 ),
 (
 	'walking_fork',
@@ -349,7 +349,7 @@ VALUES
 (
 	'walking_splitting',
 	'the identities and $p$',
-	'The morphism $p$ is even a split monomorphism. The morphism $i$ is not an epimorphism since $\mathrm{id}_1 \circ i = ip \circ i$. The morphism $ip$ is not a epimorphism since it would imply that $i$ is an epimorphism.'
+	'The morphism $p$ is even a split monomorphism. The morphism $i$ is not an epimorphism since $\id_1 \circ i = ip \circ i$. The morphism $ip$ is not a epimorphism since it would imply that $i$ is an epimorphism.'
 ),
 (
 	'Z',

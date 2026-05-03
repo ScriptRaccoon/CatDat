@@ -220,7 +220,7 @@ VALUES
 (
 	'unital',
 	'is',
-	'A category is <i>unital</i> if it has a zero object, finite limits, and for all objects $X,Y$ the two morphisms $(\mathrm{id}_X,0) : X \hookrightarrow X \times Y$ and $(0,\mathrm{id}_Y) : Y \hookrightarrow X \times Y$ are jointly strongly epimorphic. This means: there is no proper subobject of $X \times Y$ that contains $X$ and $Y$. When coproducts exist, the canonical morphism $X \sqcup Y \to X \times Y$ therefore must be a strong epimorphism.',
+	'A category is <i>unital</i> if it has a zero object, finite limits, and for all objects $X,Y$ the two morphisms $(\id_X,0) : X \hookrightarrow X \times Y$ and $(0,\id_Y) : Y \hookrightarrow X \times Y$ are jointly strongly epimorphic. This means: there is no proper subobject of $X \times Y$ that contains $X$ and $Y$. When coproducts exist, the canonical morphism $X \sqcup Y \to X \times Y$ therefore must be a strong epimorphism.',
 	'https://ncatlab.org/nlab/show/unital+category',
 	'counital',
 	TRUE
@@ -228,7 +228,7 @@ VALUES
 (
 	'counital',
 	'is',
-	'A category is <i>counital</i> if its dual is unital, i.e., it has a zero object, finite colimits, and for all objects $X,Y$ the two morphisms $(\mathrm{id}_X;0) : X \sqcup Y \twoheadrightarrow X$ and $(0;\mathrm{id}_Y) : X \sqcup Y \twoheadrightarrow Y$ are jointly strongly monomorphic. When products exist, the canonical morphism $X \sqcup Y \to X \times Y$ therefore must be a strong monomorphism.',
+	'A category is <i>counital</i> if its dual is unital, i.e., it has a zero object, finite colimits, and for all objects $X,Y$ the two morphisms $(\id_X;0) : X \sqcup Y \twoheadrightarrow X$ and $(0;\id_Y) : X \sqcup Y \twoheadrightarrow Y$ are jointly strongly monomorphic. When products exist, the canonical morphism $X \sqcup Y \to X \times Y$ therefore must be a strong monomorphism.',
 	NULL,
 	'unital',
 	TRUE

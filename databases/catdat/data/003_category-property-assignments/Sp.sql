@@ -27,7 +27,7 @@ VALUES
 	'Sp',
 	'locally small',
 	FALSE,
-	'Disclaimer: This result and its proof are not relevant for category theory and are also depending on the concrete model of set theory. That this category is locally essentially small is only what matters. Now, consider the terminal species $F=G=1$. Then $\Hom(F,G)$ has just a single element, namely the natural transformation $\alpha$ that sends every finite set $X$ to the unique map $\alpha_X : 1 \to 1$. Formally, $\alpha$ is a map, modelled as a set of ordered pairs $(X,\mathrm{id}_1)$, where $X$ is a finite set. Hence, $\alpha$ is not a set (since finite sets do not form a set), and therefore $\Hom(F,G) = \{\alpha\}$ is also not a set.'
+	'Disclaimer: This result and its proof are not relevant for category theory and are also depending on the concrete model of set theory. That this category is locally essentially small is only what matters. Now, consider the terminal species $F=G=1$. Then $\Hom(F,G)$ has just a single element, namely the natural transformation $\alpha$ that sends every finite set $X$ to the unique map $\alpha_X : 1 \to 1$. Formally, $\alpha$ is a map, modelled as a set of ordered pairs $(X,\id_1)$, where $X$ is a finite set. Hence, $\alpha$ is not a set (since finite sets do not form a set), and therefore $\Hom(F,G) = \{\alpha\}$ is also not a set.'
 ),
 (
 	'Sp',

@@ -45,13 +45,13 @@ VALUES
 	'FinOrd',
 	'mono-regular',
 	TRUE,
-	'Let $i : A \to B$ be a monomorphism of finite ordered sets. If $A$ is empty, then $i$ is clearly regular, so assume it is not. The map $i$ is injective (see below), hence order-reflecting. Define maps $u,v  : B \to A$ by $u(b) := \max \{a \in A : i(a) \leq b \}$ and $v(b) := \min \{a \in A : b \leq i(a) \}$. These are order-preserving and satisfy $u \circ i = v \circ i$, both sides are $\mathrm{id}_A$. Conversely, if $b \in B$ satisfies $u(b) = v(b) =: a$, then $i(a) \leq b$ and $b \leq i(a)$, hence $b = i(a)$. This shows that $i$ is the equalizer of $u,v$.'
+	'Let $i : A \to B$ be a monomorphism of finite ordered sets. If $A$ is empty, then $i$ is clearly regular, so assume it is not. The map $i$ is injective (see below), hence order-reflecting. Define maps $u,v  : B \to A$ by $u(b) := \max \{a \in A : i(a) \leq b \}$ and $v(b) := \min \{a \in A : b \leq i(a) \}$. These are order-preserving and satisfy $u \circ i = v \circ i$, both sides are $\id_A$. Conversely, if $b \in B$ satisfies $u(b) = v(b) =: a$, then $i(a) \leq b$ and $b \leq i(a)$, hence $b = i(a)$. This shows that $i$ is the equalizer of $u,v$.'
 ),
 (
 	'FinOrd',
 	'epi-regular',
 	TRUE,
-	'Let $f : A \to B$ be an epimorphism of finite ordered sets. It is surjective (see below). Define $u,v : B \to A$ by $u(b) := \min(f^{-1}(b))$ and $v(b) := \max(f^{-1}(b))$. One can easily check that $u,v$ are order-preserving maps with $f \circ u = f \circ v$ (both sides are $\mathrm{id}_B$). Let $h : A \to T$ be an order-preserving map with $h \circ u = h \circ v$. Then $h(a)$ only depends on $b := f(a)$: We have $u(b) \leq a \leq v(b)$, hence $h(u(b)) \leq h(a) \leq h(v(b)) = h(u(b))$. Therefore, there is a unique map $\tilde{h} : B \to T$ with $\tilde{h}(f(a)) = h(a)$, and one easily checks that it is order-preserving. This shows that $f$ is the coequalizer of $u,v$.'
+	'Let $f : A \to B$ be an epimorphism of finite ordered sets. It is surjective (see below). Define $u,v : B \to A$ by $u(b) := \min(f^{-1}(b))$ and $v(b) := \max(f^{-1}(b))$. One can easily check that $u,v$ are order-preserving maps with $f \circ u = f \circ v$ (both sides are $\id_B$). Let $h : A \to T$ be an order-preserving map with $h \circ u = h \circ v$. Then $h(a)$ only depends on $b := f(a)$: We have $u(b) \leq a \leq v(b)$, hence $h(u(b)) \leq h(a) \leq h(v(b)) = h(u(b))$. Therefore, there is a unique map $\tilde{h} : B \to T$ with $\tilde{h}(f(a)) = h(a)$, and one easily checks that it is order-preserving. This shows that $f$ is the coequalizer of $u,v$.'
 ),
 (
 	'FinOrd',
@@ -111,7 +111,7 @@ VALUES
 	'FinOrd',
 	'sequential colimits',
 	FALSE,
-	'Consider the (non-empty) ordered set $[n] := \{0 < \cdots < n\}$ for $n \in \IN$. Assume the sequence of inclusion maps $[0] \hookrightarrow [1] \hookrightarrow [2] \hookrightarrow \cdots$ has a colimit $(f_n : [n] \to X)$ in $\mathbf{FinOrd}$. Let $n_0 \geq 0$ be fixed. I claim that $f_{n_0}$ is injective, which will then yield a contradiction by taking $n_0 \geq \card(X)$. For $n \geq 0$ define $g_n : [n] \to [n_0]$ as follows. For $n \leq n_0$ it is the inclusion, and for $n \geq n_0$ it is the surjection which keeps all elements of $[n_0]$ and maps all other elements to $n_0$. Observe that $g_n$ preserves the order and $g_{n+1} |_{[n]} = g_n$. Hence, there is a unique order-preserving map $g : X \to [n_0]$ with $g \circ f_n = g_n$ for all $n$. For $n = n_0$ this shows $g \circ f_{n_0} = \mathrm{id}_{[n_0]}$, and $f_{n_0}$ is injective.'
+	'Consider the (non-empty) ordered set $[n] := \{0 < \cdots < n\}$ for $n \in \IN$. Assume the sequence of inclusion maps $[0] \hookrightarrow [1] \hookrightarrow [2] \hookrightarrow \cdots$ has a colimit $(f_n : [n] \to X)$ in $\mathbf{FinOrd}$. Let $n_0 \geq 0$ be fixed. I claim that $f_{n_0}$ is injective, which will then yield a contradiction by taking $n_0 \geq \card(X)$. For $n \geq 0$ define $g_n : [n] \to [n_0]$ as follows. For $n \leq n_0$ it is the inclusion, and for $n \geq n_0$ it is the surjection which keeps all elements of $[n_0]$ and maps all other elements to $n_0$. Observe that $g_n$ preserves the order and $g_{n+1} |_{[n]} = g_n$. Hence, there is a unique order-preserving map $g : X \to [n_0]$ with $g \circ f_n = g_n$ for all $n$. For $n = n_0$ this shows $g \circ f_{n_0} = \id_{[n_0]}$, and $f_{n_0}$ is injective.'
 ),
 (
 	'FinOrd',

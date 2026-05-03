@@ -77,7 +77,7 @@ VALUES
 	'coquotients of cocongruences',
 	TRUE,
 	'Let $p : X + X \twoheadrightarrow E$ be a cocongruence with coreflexivity morphism $r : E \to X$, so that $r \circ p : X + X \to X$ is the codiagonal. Since $p$ is an epimorphism, it has dense image (see below). We first claim that in fact $p$ also has closed image and therefore is surjective.
-	Because $r \circ (p \circ i_1) : X \to X$ is the identity, the image of $p \circ i_1$ is the equalizer of $\mathrm{id}_E$ and $(p \circ i_1) \circ r$, hence closed. Likewise, the image of $p \circ i_2$ is closed. Thus, the image of $p$, which is the union of these images, is closed.<br>
+	Because $r \circ (p \circ i_1) : X \to X$ is the identity, the image of $p \circ i_1$ is the equalizer of $\id_E$ and $(p \circ i_1) \circ r$, hence closed. Likewise, the image of $p \circ i_2$ is closed. Thus, the image of $p$, which is the union of these images, is closed.<br>
 	Now, since the pushforward maps of tangent spaces compose to the identity, we see that $p$ must be a local immersion and $r$ must be a submersion.  Also, since the fibers of $r$ have one or two points each, we see that the dimension of $E$ must locally be the same as the dimension of $X$.  This implies that in fact $p$ and $r$ are local diffeomorphisms.  Therefore, the cardinality of the fiber of $r$ is locally constant.  Thus, if $U$ is the subset of $X$ where $r$ has fiber of a single point, with the subspace topology, then $U$ is a clopen submanifold of $X$ which serves as the equalizer of $p \circ i_1$ and $p \circ i_2$.'
 ),
 (

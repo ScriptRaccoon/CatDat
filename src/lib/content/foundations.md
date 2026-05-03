@@ -39,7 +39,7 @@ A _category_ $\C$ consists of a pair of collections $O, M$, whose elements are c
 - $t : M \to O$ (_target_),
 - $c : M \times_O M \to M$ (_composition_),
 
-such that the usual [axioms of a category](<https://en.wikipedia.org/wiki/Category_(mathematics)>) are satisfied. The domain of $c$ consists of all pairs of morphisms $(f,g)$ with $s(f) = t(g)$, and we write $f \circ g := c(f,g)$ for their composition. Instead of $i(X)$ one usually writes $\mathrm{id}_X$ for the identity morphism of $X$. Formally, a category is a tuple
+such that the usual [axioms of a category](<https://en.wikipedia.org/wiki/Category_(mathematics)>) are satisfied. The domain of $c$ consists of all pairs of morphisms $(f,g)$ with $s(f) = t(g)$, and we write $f \circ g := c(f,g)$ for their composition. Instead of $i(X)$ one usually writes $\id_X$ for the identity morphism of $X$. Formally, a category is a tuple
 
 $$\C = (O,M,i,s,t,c)$$
 
@@ -82,7 +82,7 @@ defined as usual, but taking values in the hypercategory of all collections. The
 
 Adjunctions are defined as usual via natural isomorphisms
 $$\Hom(F(A),B) \cong \Hom(A,G(B))$$
-of functors valued in $\mathbf{Set}^+$. No local smallness assumption is required. Equivalently, they can be defined via morphisms of functors $\mathrm{id} \to G \circ F$ and $F \circ G \to \mathrm{id}$ satisfying the triangle identities.
+of functors valued in $\mathbf{Set}^+$. No local smallness assumption is required. Equivalently, they can be defined via morphisms of functors $\id \to G \circ F$ and $F \circ G \to \id$ satisfying the triangle identities.
 
 ### Limits and Colimits
 

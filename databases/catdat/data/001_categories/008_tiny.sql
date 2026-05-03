@@ -116,7 +116,7 @@ VALUES
 	'walking idempotent',
 	'$\mathrm{Idem}$',
 	'a single object $0$',
-	'two morphisms $\mathrm{id}_0,e : 0 \to 0$ with $e^2=e$',
+	'two morphisms $\id_0,e : 0 \to 0$ with $e^2=e$',
 	'The name of this category comes from the fact that a functor out of it is the same as an <a href="https://ncatlab.org/nlab/show/idempotent" target="_blank">idempotent morphism</a> in the target category. It can also be seen as the delooping of the monoid $\{1,e\}$ in which $e^2=e$.',
 	NULL,
 	NULL
@@ -126,7 +126,7 @@ VALUES
 	'walking splitting',
 	'$\mathrm{Split}$',
 	'two objects $0$ and $1$',
-	'the identities, morphisms $i : 0 \to 1$, $p : 1 \to 0$ satisfying $pi = \mathrm{id}_0$, and the idempotent $ip : 1 \to 1$.',
+	'the identities, morphisms $i : 0 \to 1$, $p : 1 \to 0$ satisfying $pi = \id_0$, and the idempotent $ip : 1 \to 1$.',
 	'This category could also be called the "walking split idempotent" (or "walking section", "walking retraction"), but we chose a name that emphasizes that the splitting belongs to the data. Notice that the $5$ given morphisms are indeed closed under composition. For example, $p \circ ip = p$ and $ip \circ i = i$.<br>The walking splitting can be interpreted as a skeleton of the category of $\IF_2$-vector spaces of dimension $\leq 1$.',
 	NULL,
 	NULL
@@ -136,7 +136,7 @@ VALUES
 	'walking coreflexive pair',
 	'$\Delta^{\leq 1}$',
 	'two objects $[0]$ and $[1]$',
-	'the identities, two morphisms $i,j : [0] \rightrightarrows [1]$, a morphism $p : [1] \to [0]$ with $p i = p j = \mathrm{id}_{[0]}$, and the two idempotent morphisms $ip, jp : [1] \to [1]$.',
+	'the identities, two morphisms $i,j : [0] \rightrightarrows [1]$, a morphism $p : [1] \to [0]$ with $p i = p j = \id_{[0]}$, and the two idempotent morphisms $ip, jp : [1] \to [1]$.',
 	'This category is equal to the truncated simplex category $\Delta^{\leq 1}$, i.e. the full subcategory of $\Delta$ spanned by $[0] = \{0\}$ and $[1] = \{0 < 1\}$; this also explains our notation of the category and its objects.
 	$$[0] \begin{array}{c} \xhookrightarrow{~~i~~} \\ \xtwoheadleftarrow{~~p~~} \\ \xhookrightarrow{~~j~~} \end{array} [1]$$
 	The morphisms $i,j$ are the two inclusions, $p$ is their unique retraction, and $ip,jp : [1] \to [1]$ are the two constant maps. The name of this category comes from the fact that a functor out of it is the same as a <a href="https://ncatlab.org/nlab/show/reflexive+pair" target="_blank">coreflexive pair</a> in the target category. Its dual is therefore the walking reflexive pair.',

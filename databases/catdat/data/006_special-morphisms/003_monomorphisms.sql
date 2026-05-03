@@ -128,7 +128,7 @@ VALUES
 (
 	'FS',
 	'bijective maps',
-	'Assume that $f : X \to Y$ is a monomorphism in this category. If $a,b \in X$ are such that $a \neq b$ but $f(a) = f(b)$, let $h : X \to X$ be the transposition that swaps $a$, $b$. Then $f \circ \mathrm{id}_X = f = f \circ h$, so by assumption $\mathrm{id}_X = h$, a contradiction. This shows that $f$ is bijective.'
+	'Assume that $f : X \to Y$ is a monomorphism in this category. If $a,b \in X$ are such that $a \neq b$ but $f(a) = f(b)$, let $h : X \to X$ be the transposition that swaps $a$, $b$. Then $f \circ \id_X = f = f \circ h$, so by assumption $\id_X = h$, a contradiction. This shows that $f$ is bijective.'
 ),
 (
 	'Grp',
@@ -328,7 +328,7 @@ VALUES
 (
 	'walking_coreflexive_pair',
 	'the identities and $i$, $j$',
-	'Since $pi = \mathrm{id}$, but $ip \neq \mathrm{id}$, we conclude that $i$ is a monomorphism, but $p$ is not. Likewise, $j$ is a monomorphism. Since $p$ is not a monomorphism, $ip$ and $jp$ are also no monomorphisms.'
+	'Since $pi = \id$, but $ip \neq \id$, we conclude that $i$ is a monomorphism, but $p$ is not. Likewise, $j$ is a monomorphism. Since $p$ is not a monomorphism, $ip$ and $jp$ are also no monomorphisms.'
 ),
 (
 	'walking_fork',
@@ -363,7 +363,7 @@ VALUES
 (
 	'walking_splitting',
 	'the identities and $i$',
-	'The morphism $i$ is even a split monomorphism. The morphism $p$ is not a monomorphism since $p \circ \mathrm{id}_1 = p \circ ip$. The morphism $ip$ is not a monomorphism since it would imply that $p$ is a monomorphism.'
+	'The morphism $i$ is even a split monomorphism. The morphism $p$ is not a monomorphism since $p \circ \id_1 = p \circ ip$. The morphism $ip$ is not a monomorphism since it would imply that $p$ is a monomorphism.'
 ),
 (
 	'Z',

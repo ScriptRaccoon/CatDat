@@ -66,7 +66,7 @@ VALUES
 (
 	'Cauchy complete',
 	'is',
-	'A category is <i>Cauchy complete</i> if every idempotent splits. That is, every endomorphism $e : X \to X$ with $e^2 = e$ may be written as $e = i \circ p$ for some morphisms $p : X \to Y$ and $i : Y \to X$ with $p \circ i = \mathrm{id}_Y$. Equivalently, the pair $e,\mathrm{id}_X : X \rightrightarrows X$ has an equalizer (or an coequalizer).',
+	'A category is <i>Cauchy complete</i> if every idempotent splits. That is, every endomorphism $e : X \to X$ with $e^2 = e$ may be written as $e = i \circ p$ for some morphisms $p : X \to Y$ and $i : Y \to X$ with $p \circ i = \id_Y$. Equivalently, the pair $e,\id_X : X \rightrightarrows X$ has an equalizer (or an coequalizer).',
 	'https://ncatlab.org/nlab/show/Cauchy+complete+category',
 	'Cauchy complete',
 	TRUE

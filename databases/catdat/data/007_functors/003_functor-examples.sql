@@ -12,7 +12,7 @@ VALUES
         'identity functor on the category of sets',
         'Set',
         'Set',
-        'Every category $\C$ has an identity functor $\mathrm{id}_{\C}$. Here, we specify that it is for the category of sets.',
+        'Every category $\C$ has an identity functor $\id_{\C}$. Here, we specify that it is for the category of sets.',
         'https://ncatlab.org/nlab/show/identity+functor'
     ),
     (

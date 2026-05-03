@@ -238,7 +238,7 @@ VALUES
 (
 	'Rel',
 	'bijective functions',
-	'For the non-trivial direction, assume that $R : A \to B$ is a relation which has an inverse relation $S : B \to A$. For every $a \in A$ we have $(a,a) \in \mathrm{id}_A = S \circ R$, so there is some $b \in B$ with $(a,b) \in R$ (and $(b,a) \in S$). This shows that $R$ is left-total, and for right-total the argument is similar. By symmetry, this also holds for $S$. To show that $R$ is a function, assume $(a,b_1), (a,b_2) \in R$. Choose some $b_3 \in B$ with $(b_3,a) \in S$. It follows $(b_3,b_1) \in S \circ R = \mathrm{id}_A$, so $b_3 = b_1$. Similarly, $(b_3,b_2) \in S \circ R = \mathrm{id}_A$, so $b_3 = b_2$. This shows that $R$ is a function, i.e. left-unique. That $R$ is injective, i.e. right-unique, follows by symmetry. Finally, $R$ is surjective since it is right-total.'
+	'For the non-trivial direction, assume that $R : A \to B$ is a relation which has an inverse relation $S : B \to A$. For every $a \in A$ we have $(a,a) \in \id_A = S \circ R$, so there is some $b \in B$ with $(a,b) \in R$ (and $(b,a) \in S$). This shows that $R$ is left-total, and for right-total the argument is similar. By symmetry, this also holds for $S$. To show that $R$ is a function, assume $(a,b_1), (a,b_2) \in R$. Choose some $b_3 \in B$ with $(b_3,a) \in S$. It follows $(b_3,b_1) \in S \circ R = \id_A$, so $b_3 = b_1$. Similarly, $(b_3,b_2) \in S \circ R = \id_A$, so $b_3 = b_2$. This shows that $R$ is a function, i.e. left-unique. That $R$ is injective, i.e. right-unique, follows by symmetry. Finally, $R$ is surjective since it is right-total.'
 ),
 (
 	'Ring',

@@ -25,13 +25,13 @@ INSERT INTO lemmas (
     $$f+g : A \to B$$
     is the composite of $(f,g) : A \to B \times B$, the inverse $\alpha^{-1} : B \oplus B \to B \times B$, and the codiagonal $\nabla : B \oplus B \to B$.',
     'The morphism $\alpha : X \oplus Y \to X \times Y$ is defined by the equations
-    $$p_1 \circ \alpha \circ i_1 = \mathrm{id}_X, \quad p_2 \circ \alpha \circ i_2 = \mathrm{id}_Y,$$
+    $$p_1 \circ \alpha \circ i_1 = \id_X, \quad p_2 \circ \alpha \circ i_2 = \id_Y,$$
     $$p_2 \circ \alpha \circ i_1 = 0,\quad p_1 \circ \alpha \circ i_2 = 0.$$
     It does not depend on the choice of preadditive structure since zero morphisms are unique. It is an isomorphism: Define
     $$\beta := i_1 \circ p_1  + i_2 \circ p_2 : X \times Y \to X \oplus Y.$$
-    Then $\alpha \circ \beta = \mathrm{id}_{X \times Y}$ because
-    $$p_1 \circ \alpha \circ \beta = p_1 \circ \alpha \circ i_1 \circ p_1 + p_1 \circ \alpha \circ i_2 \circ p_2 = \mathrm{id}_1 \circ p_1 + 0 \circ p_2 = p_1$$
-    and likewise $p_2 \circ \alpha \circ \beta = p_2$. We also have $\beta \circ \alpha = \mathrm{id}_{X \oplus Y}$ with a very similar calculation that shows $\beta \circ \alpha \circ i_1 = i_1$ and $\beta \circ \alpha \circ i_2 = i_2$. Therefore, for morphisms $f,g : A \rightrightarrows B$ the composite $A \to B$ in the claim is equal to
+    Then $\alpha \circ \beta = \id_{X \times Y}$ because
+    $$p_1 \circ \alpha \circ \beta = p_1 \circ \alpha \circ i_1 \circ p_1 + p_1 \circ \alpha \circ i_2 \circ p_2 = \id_1 \circ p_1 + 0 \circ p_2 = p_1$$
+    and likewise $p_2 \circ \alpha \circ \beta = p_2$. We also have $\beta \circ \alpha = \id_{X \oplus Y}$ with a very similar calculation that shows $\beta \circ \alpha \circ i_1 = i_1$ and $\beta \circ \alpha \circ i_2 = i_2$. Therefore, for morphisms $f,g : A \rightrightarrows B$ the composite $A \to B$ in the claim is equal to
     $$\begin{align*}
     \nabla \circ \beta \circ (f,g) & = \nabla \circ (i_1 \circ p_1  + i_2 \circ p_2) \circ (f,g) \\
     & = \nabla \circ i_1 \circ p_1 \circ (f,g) + \nabla \circ i_2 \circ p_2 \circ (f,g) \\
@@ -50,7 +50,7 @@ INSERT INTO lemmas (
     'Limits in factor categories',
     'Let $\C,\D$ be two categories. Assume that $\D$ is inhabited. If $\C \times \D$ has limits of a given shape, then $\C$ also has limits of this shape.',
     'Let $U \in \D$ be a fixed object. Assume that $X : \J \to \C$ is a diagram. Assume that the diagram $(X,U) : \J \to \C \times \D$ (which is constant in the second variable) has a limit cone $((p_i, u_i) : (L,V) \to (X_i,U))$, thus consisting of morphisms $p_i : L \to X_i$ and $u_i : V \to U$. Clearly, $(p_i : L \to X_i)$ is a cone over $X$. We prove that it is universal:<br>
-    Let $(f_i : T \to X_i)$ be a cone over $X$. Then $((f_i,\mathrm{id}_U) : (T,U) \to (X_i,U))$ is a cone over $(X,U)$. Hence, there is a unique morphism $(f,v) : (T,U) \to (L,V)$, consisting of $f : T \to L$ and $v : U \to V$, such that $(p_i,u_i) \circ (f,v) = (f_i,\mathrm{id}_U)$, i.e. $p_i \circ f = f_i$ and $u_i \circ v = \mathrm{id}_U$. If $g : T \to L$ is another morphism with $p_i \circ g = f_i$, then uniqueness applied to $(g,v)$ shows that $f = g$.'
+    Let $(f_i : T \to X_i)$ be a cone over $X$. Then $((f_i,\id_U) : (T,U) \to (X_i,U))$ is a cone over $(X,U)$. Hence, there is a unique morphism $(f,v) : (T,U) \to (L,V)$, consisting of $f : T \to L$ and $v : U \to V$, such that $(p_i,u_i) \circ (f,v) = (f_i,\id_U)$, i.e. $p_i \circ f = f_i$ and $u_i \circ v = \id_U$. If $g : T \to L$ is another morphism with $p_i \circ g = f_i$, then uniqueness applied to $(g,v)$ shows that $f = g$.'
 ),
 (
     'cogenerators_in_product_categories',
@@ -90,7 +90,7 @@ INSERT INTO lemmas (
         <li>For every $Y \in \C$ there is some object $X \in \F$ such that $\card(U(X)) > \card(U(Y))$.</li>
     </ol>
     Then $\C$ does not have a cogenerator.',
-    'Assume that there is a cogenerator $Y$. By assumption (2) there is an object $X \in \F$ such that $U(X)$ is larger than $U(Y)$ (w.r.t. cardinalities). Since $0,\mathrm{id}_X : X \rightrightarrows X$ are distinct, there is a morphism $f : X \to Y$ with $f \neq 0$. But then $U(f) : U(X) \to U(Y)$ is injective by assumption (1), which contradicts our choice of $X$.'
+    'Assume that there is a cogenerator $Y$. By assumption (2) there is an object $X \in \F$ such that $U(X)$ is larger than $U(Y)$ (w.r.t. cardinalities). Since $0,\id_X : X \rightrightarrows X$ are distinct, there is a morphism $f : X \to Y$ with $f \neq 0$. But then $U(f) : U(X) \to U(Y)$ is injective by assumption (1), which contradicts our choice of $X$.'
 ),
 (
     'subobject_classifiers_coreflection',

@@ -74,7 +74,7 @@ VALUES
 	'["exact filtered colimits"]',
 	'["filtered-colimit-stable monomorphisms"]',
 	'This is because $f : X \longrightarrow Y$ is a monomorphism iff the diagram
-	$$\begin{CD} X @>{\mathrm{id}}>> X \\ @V{\mathrm{id}}VV @VV{f}V \\ X @>>{f}> Y \end{CD}$$
+	$$\begin{CD} X @>{\id}>> X \\ @V{\id}VV @VV{f}V \\ X @>>{f}> Y \end{CD}$$
 	is a pullback, and if a functor preserves finite limits, it preserves pullbacks in particular.',
 	FALSE
 ),
@@ -152,14 +152,14 @@ VALUES
 	'strict_initial_left_criterion',
 	'["left cancellative", "initial object"]',
 	'["strict initial object"]',
-	'It suffices to prove that in general any monomorphism $f : A \to 0$ into an initial object is an isomorphism. If $g : 0 \to A$ is the unique morphism, then $f \circ g = \mathrm{id}_0$ since $0$ is initial. But then $f$ is a split epimorphism and a monomorphism, hence an isomorphism.',
+	'It suffices to prove that in general any monomorphism $f : A \to 0$ into an initial object is an isomorphism. If $g : 0 \to A$ is the unique morphism, then $f \circ g = \id_0$ since $0$ is initial. But then $f$ is a split epimorphism and a monomorphism, hence an isomorphism.',
 	FALSE
 ),
 (
 	'strict_initial_right_criterion',
 	'["right cancellative", "initial object"]',
 	'["strict initial object"]',
-	'Let $f : A \to 0$ be a morphism. Let $g : 0 \to A$ be the unique morphism. It is an epimorphism by assumption. Also, $f \circ g = \mathrm{id}_0$ since $0$ is initial. But then $g$ is a split monomorphism and an epimorphism, hence an isomorphism.',
+	'Let $f : A \to 0$ be a morphism. Let $g : 0 \to A$ be the unique morphism. It is an epimorphism by assumption. Also, $f \circ g = \id_0$ since $0$ is initial. But then $g$ is a split monomorphism and an epimorphism, hence an isomorphism.',
 	FALSE
 ),
 (

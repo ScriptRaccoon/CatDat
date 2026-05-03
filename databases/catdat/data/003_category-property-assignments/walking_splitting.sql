@@ -27,13 +27,13 @@ VALUES
 	'walking_splitting',
 	'pointed',
 	TRUE,
-	'The object $0$ is initial and terminal. This also means that $\mathrm{id}_0, i, p, ip$ are zero morphisms. The only non-zero morphism is $\mathrm{id}_1$.'
+	'The object $0$ is initial and terminal. This also means that $\id_0, i, p, ip$ are zero morphisms. The only non-zero morphism is $\id_1$.'
 ),
 (
 	'walking_splitting',
 	'equalizers',
 	TRUE,
-	'The only parallel pair of non-equal morphisms is $\mathrm{id}_1, ip : 1 \rightrightarrows 1$, and their equalizer is $i$.'
+	'The only parallel pair of non-equal morphisms is $\id_1, ip : 1 \rightrightarrows 1$, and their equalizer is $i$.'
 ),
 (
 	'walking_splitting',
@@ -45,19 +45,19 @@ VALUES
 	'walking_splitting',
 	'normal',
 	TRUE,
-	'The only non-identity monomorphism is $i : 0 \to 1$, which is the kernel of $\mathrm{id}_1$.'
+	'The only non-identity monomorphism is $i : 0 \to 1$, which is the kernel of $\id_1$.'
 ),
 (
 	'walking_splitting',
 	'generator',
 	TRUE,
-	'The object $1$ a generator, since the only parallel pair of non-equal morphisms is $\mathrm{id}_1, ip : 1 \rightrightarrows 1$ with domain $1$.'
+	'The object $1$ a generator, since the only parallel pair of non-equal morphisms is $\id_1, ip : 1 \rightrightarrows 1$ with domain $1$.'
 ),
 (
 	'walking_splitting',
 	'preadditive',
 	TRUE,
-	'We can define $\mathrm{id}_1 + \mathrm{id}_1 := ip$ (and it is clear how to add zero morphisms) and then verify that the axioms of a preadditive category hold. Alternatively, it suffices to find a preadditive category which is isomorphic to the walking splitting: Consider the full subcategory of $\mathbf{Vect}_{\IF_2}$ that consists only of the trivial vector space $\{0\}$ and $\IF_2$. Since $\mathbf{Vect}_{\IF_2}$ is preadditive, it is preadditive as well. It has two objects, two identities, the morphisms $i : \{0\} \to \IF_2$, $p : \IF_2 \to \{0\}$, and the zero morphism $ip : \IF_2 \to \IF_2$. Clearly, $pi$ is the identity.'
+	'We can define $\id_1 + \id_1 := ip$ (and it is clear how to add zero morphisms) and then verify that the axioms of a preadditive category hold. Alternatively, it suffices to find a preadditive category which is isomorphic to the walking splitting: Consider the full subcategory of $\mathbf{Vect}_{\IF_2}$ that consists only of the trivial vector space $\{0\}$ and $\IF_2$. Since $\mathbf{Vect}_{\IF_2}$ is preadditive, it is preadditive as well. It has two objects, two identities, the morphisms $i : \{0\} \to \IF_2$, $p : \IF_2 \to \{0\}$, and the zero morphism $ip : \IF_2 \to \IF_2$. Clearly, $pi$ is the identity.'
 ),
 (
 	'walking_splitting',

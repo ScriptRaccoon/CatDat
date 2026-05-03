@@ -27,7 +27,7 @@ VALUES
 	'Cat',
 	'generator',
 	TRUE,
-	'The interval category $\{0 \to 1\}$ is a generator: Assume that $F,G : \C \rightrightarrows \D$ are functors that agree when being precomposed with any functor from $\{0 \to 1\}$. This means that $F(f) = G(f)$ for all morphisms $f : X \to Y$ in $\C$. By comparing the domains and applying this to $f = \mathrm{id}_X$, we see that $F(X) = G(X)$ for all objects $X$. And we just saw that $F,G$ also agree on morphisms.'
+	'The interval category $\{0 \to 1\}$ is a generator: Assume that $F,G : \C \rightrightarrows \D$ are functors that agree when being precomposed with any functor from $\{0 \to 1\}$. This means that $F(f) = G(f)$ for all morphisms $f : X \to Y$ in $\C$. By comparing the domains and applying this to $f = \id_X$, we see that $F(X) = G(X)$ for all objects $X$. And we just saw that $F,G$ also agree on morphisms.'
 ),
 (
 	'Cat',
