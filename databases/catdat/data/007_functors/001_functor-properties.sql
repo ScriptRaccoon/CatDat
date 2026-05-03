@@ -129,7 +129,7 @@ VALUES
     (
         'left adjoint',
         'is a',
-        'A functor $F : \C \to \D$ is a left adjoint when there is a functor $G : \D \to \C$ such that there are natural bijections $\hom(F(A),B) \cong \hom(A,G(B))$.',
+        'A functor $F : \C \to \D$ is a left adjoint when there is a functor $G : \D \to \C$ such that there are natural bijections $\Hom(F(A),B) \cong \Hom(A,G(B))$.',
         'https://ncatlab.org/nlab/show/left+adjoint',
         TRUE,
         'right adjoint'
@@ -137,7 +137,7 @@ VALUES
     (
         'right adjoint',
         'is a',
-        'A functor $F : \C \to \D$ is a right adjoint when there is a functor $G : \D \to \C$ such that there are natural bijections $\hom(G(A),B) \cong \hom(A,F(B))$.',
+        'A functor $F : \C \to \D$ is a right adjoint when there is a functor $G : \D \to \C$ such that there are natural bijections $\Hom(G(A),B) \cong \Hom(A,F(B))$.',
         'https://ncatlab.org/nlab/show/right+adjoint',
         TRUE,
         'left adjoint'

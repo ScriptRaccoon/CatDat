@@ -81,7 +81,7 @@ VALUES
 	'FI',
 	'binary powers',
 	FALSE,
-	'Assume that two finite sets $X,Y$ have a product $P$ in this category. Elements of $P$ are the same as maps $1 \to P$, and they are automatically injective. Therefore, $P \cong \hom(1,P) \times \hom(1,X) \times \hom(1,Y) \cong X \times Y$, and the projections must agree as well. But they are usually not injective. In particular, the product $X \times X$ never exists when $X$ has $>1$ elements.' 
+	'Assume that two finite sets $X,Y$ have a product $P$ in this category. Elements of $P$ are the same as maps $1 \to P$, and they are automatically injective. Therefore, $P \cong \Hom(1,P) \times \Hom(1,X) \times \Hom(1,Y) \cong X \times Y$, and the projections must agree as well. But they are usually not injective. In particular, the product $X \times X$ never exists when $X$ has $>1$ elements.' 
 ),
 (
 	'FI',

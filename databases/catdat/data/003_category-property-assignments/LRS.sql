@@ -9,7 +9,7 @@ VALUES
 	'LRS',
 	'locally small',
 	TRUE,
-	'For two ringed spaces $(X,O_X), (Y,O_Y)$, the collection of morphisms $X \to Y$ of ringed spaces is the collection $\prod_{f \in \hom(X,Y)} \hom(O_Y,f_* O_X)$, which is a set since $\hom(X,Y)$ is a set and each $\hom(O_Y,f_* O_X)$ is a set.'
+	'For two ringed spaces $(X,O_X), (Y,O_Y)$, the collection of morphisms $X \to Y$ of ringed spaces is the collection $\prod_{f \in \Hom(X,Y)} \Hom(O_Y,f_* O_X)$, which is a set since $\Hom(X,Y)$ is a set and each $\Hom(O_Y,f_* O_X)$ is a set.'
 ),
 (
 	'LRS',

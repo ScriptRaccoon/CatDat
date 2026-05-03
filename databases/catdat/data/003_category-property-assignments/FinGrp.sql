@@ -99,7 +99,7 @@ VALUES
 	'FinGrp',
 	'generator',
 	FALSE,
-	'If $A,B$ are finite groups whose orders are coprime, then we know that $\hom(A,B)$ is trivial. But a generator would admit a non-trivial homomorphism to any other non-trivial finite group.'
+	'If $A,B$ are finite groups whose orders are coprime, then we know that $\Hom(A,B)$ is trivial. But a generator would admit a non-trivial homomorphism to any other non-trivial finite group.'
 ),
 (
 	'FinGrp',

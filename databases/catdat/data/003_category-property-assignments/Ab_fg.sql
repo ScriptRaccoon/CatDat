@@ -45,7 +45,7 @@ VALUES
 	'Ab_fg',
 	'cogenerator',
 	FALSE,
-	'Let $Q$ be a finitely generated abelian group. By their well-known classification, we have $Q = F \oplus T$ for a free abelian group $F$ and a finite abelian group $T$. Let $p$ be a prime number which does not divide the order of $T$. Then $\hom(\IZ/p, Q) = 0$, but $\IZ/p \neq 0$. Therefore, $Q$ is no cogenerator.'
+	'Let $Q$ be a finitely generated abelian group. By their well-known classification, we have $Q = F \oplus T$ for a free abelian group $F$ and a finite abelian group $T$. Let $p$ be a prime number which does not divide the order of $T$. Then $\Hom(\IZ/p, Q) = 0$, but $\IZ/p \neq 0$. Therefore, $Q$ is no cogenerator.'
 ),
 (
 	'Ab_fg',

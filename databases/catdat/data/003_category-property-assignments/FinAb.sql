@@ -27,7 +27,7 @@ VALUES
 	'FinAb',
 	'self-dual',
 	TRUE,
-	'This is a simple special case of Pontryagin duality: The functor $\hom(-,\IQ/\IZ)$ provides the equivalence.'
+	'This is a simple special case of Pontryagin duality: The functor $\Hom(-,\IQ/\IZ)$ provides the equivalence.'
 ),
 (
 	'FinAb',
@@ -45,7 +45,7 @@ VALUES
 	'FinAb',
 	'generator',
 	FALSE,
-	'If $A,B$ are finite abelian groups whose orders are coprime, then we know that $\hom(A,B)$ is trivial. But a generator would admit a non-trivial homomorphism to any other non-trivial finite abelian group.'
+	'If $A,B$ are finite abelian groups whose orders are coprime, then we know that $\Hom(A,B)$ is trivial. But a generator would admit a non-trivial homomorphism to any other non-trivial finite abelian group.'
 ),
 (
 	'FinAb',

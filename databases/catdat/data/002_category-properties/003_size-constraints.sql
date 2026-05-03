@@ -114,7 +114,7 @@ VALUES
 (
 	'generating set',
 	'has a',
-	'A set of objects $S$ is called a <i>generating set</i> if for every pair of parallel morphisms $f,g : A \rightrightarrows B$, $f = g$ holds if and only if for every morphism $h : G \to A$ with $G \in S$ we have $f \circ h = g \circ h$. Equivalently, the functor $(\hom(G,-))_{G \in S} : \C \to (\mathbf{Set}^+)^S$ is faithful. This property refers to the existence of a generating set.',
+	'A set of objects $S$ is called a <i>generating set</i> if for every pair of parallel morphisms $f,g : A \rightrightarrows B$, $f = g$ holds if and only if for every morphism $h : G \to A$ with $G \in S$ we have $f \circ h = g \circ h$. Equivalently, the functor $(\Hom(G,-))_{G \in S} : \C \to (\mathbf{Set}^+)^S$ is faithful. This property refers to the existence of a generating set.',
 	'https://ncatlab.org/nlab/show/separator',
 	'cogenerating set',
 	TRUE
@@ -122,7 +122,7 @@ VALUES
 (
 	'cogenerating set',
 	'has a',
-	'A set of objects $S$ is called a <i>cogenerating set</i> if for every pair of parallel morphisms $f,g : A \rightrightarrows B$, $f = g$ holds if and only if for every morphism $h : B \to G$ with $G \in S$ we have $h \circ f = h \circ g$. Equivalently, the functor $(\hom(-,G))_{G \in S} : \C^{\op} \to (\mathbf{Set}^+)^S$ is faithful. This property refers to the existence of a cogenerating set.',
+	'A set of objects $S$ is called a <i>cogenerating set</i> if for every pair of parallel morphisms $f,g : A \rightrightarrows B$, $f = g$ holds if and only if for every morphism $h : B \to G$ with $G \in S$ we have $h \circ f = h \circ g$. Equivalently, the functor $(\Hom(-,G))_{G \in S} : \C^{\op} \to (\mathbf{Set}^+)^S$ is faithful. This property refers to the existence of a cogenerating set.',
 	'https://ncatlab.org/nlab/show/cogenerator',
 	'generating set',
 	TRUE
