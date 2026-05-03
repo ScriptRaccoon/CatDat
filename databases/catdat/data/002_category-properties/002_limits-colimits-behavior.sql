@@ -93,11 +93,11 @@ VALUES
 (
 	'exact filtered colimits',
 	'has',
-	'In a category $\mathcal{C}$, which we assume to have filtered colimits and finite limits, we say that <i>filtered colimits are exact</i> if the following equivalent conditions are satisfied:
+	'In a category $\C$, which we assume to have filtered colimits and finite limits, we say that <i>filtered colimits are exact</i> if the following equivalent conditions are satisfied:
 	<ol>
-		<li>For every finite category $\mathcal{I}$ the functor $\lim : [\mathcal{I}, \mathcal{C}] \to \mathcal{C}$ preserves filtered colimits.</li>
-		<li>For every small filtered category $\mathcal{J}$ the functor $\mathrm{colim} : [\mathcal{J},\mathcal{C}] \to \mathcal{C}$ preserves finite limits.</li>
-		<li>For every diagram $X : \mathcal{I} \times \mathcal{J} \to \mathcal{C}$, where $\mathcal{I}$ is finite and $\mathcal{J}$ is small filtered, the canonical morphism $\mathrm{colim}_j \lim_i X(i,j) \to \lim_i \mathrm{colim}_j X(i,j)$ is an isomorphism.</li>
+		<li>For every finite category $\I$ the functor $\lim : [\I, \C] \to \C$ preserves filtered colimits.</li>
+		<li>For every small filtered category $\J$ the functor $\mathrm{colim} : [\J,\C] \to \C$ preserves finite limits.</li>
+		<li>For every diagram $X : \I \times \J \to \C$, where $\I$ is finite and $\J$ is small filtered, the canonical morphism $\mathrm{colim}_j \lim_i X(i,j) \to \lim_i \mathrm{colim}_j X(i,j)$ is an isomorphism.</li>
 	</ol>',
 	'https://ncatlab.org/nlab/show/commutativity+of+limits+and+colimits',
 	'exact cofiltered limits',
@@ -106,11 +106,11 @@ VALUES
 (
 	'exact cofiltered limits',
 	'has',
-	'In a category $\mathcal{C}$, which we assume to have cofiltered limits and finite colimits, we say that <i>cofiltered limits are exact</i> if the following equivalent conditions are satisfied:
+	'In a category $\C$, which we assume to have cofiltered limits and finite colimits, we say that <i>cofiltered limits are exact</i> if the following equivalent conditions are satisfied:
 	<ol>
-		<li>For every finite category $\mathcal{I}$ the functor $\mathrm{colim} : [\mathcal{I}, \mathcal{C}] \to \mathcal{C}$ preserves cofiltered limits.</li>
-		<li>For every small cofiltered category $\mathcal{J}$ the functor $\lim : [\mathcal{J},\mathcal{C}] \to \mathcal{C}$ preserves finite colimits.</li>
-		<li>For every diagram $X : \mathcal{I} \times \mathcal{J} \to \mathcal{C}$, where $\mathcal{I}$ is finite and $\mathcal{J}$ is small cofiltered, the canonical morphism $\mathrm{colim}_i \lim_j X(i,j) \to \lim_j \mathrm{colim}_i X(i,j)$ is an isomorphism.</li>
+		<li>For every finite category $\I$ the functor $\mathrm{colim} : [\I, \C] \to \C$ preserves cofiltered limits.</li>
+		<li>For every small cofiltered category $\J$ the functor $\lim : [\J,\C] \to \C$ preserves finite colimits.</li>
+		<li>For every diagram $X : \I \times \J \to \C$, where $\I$ is finite and $\J$ is small cofiltered, the canonical morphism $\mathrm{colim}_i \lim_j X(i,j) \to \lim_j \mathrm{colim}_i X(i,j)$ is an isomorphism.</li>
 	</ol>',
 	'https://ncatlab.org/nlab/show/commutativity+of+limits+and+colimits',
 	'exact filtered colimits',
@@ -119,7 +119,7 @@ VALUES
 (
 	'cartesian filtered colimits',
 	'has',
-	'In a category $\mathcal{C}$, which we assume to have filtered colimits and finite products, we say that <i>filtered colimits are cartesian</i> if for every finite set $I$ the product functor $\prod : \mathcal{C}^I \to \mathcal{C}$ preserves filtered colimits. Equivalently, for every $X \in \mathcal{C}$ the functor $X \times - : \mathcal{C} \to \mathcal{C}$ preserves filtered colimits.<br>
+	'In a category $\C$, which we assume to have filtered colimits and finite products, we say that <i>filtered colimits are cartesian</i> if for every finite set $I$ the product functor $\prod : \C^I \to \C$ preserves filtered colimits. Equivalently, for every $X \in \C$ the functor $X \times - : \C \to \C$ preserves filtered colimits.<br>
 	This is no standard terminology, it has been suggested in <a href="https://mathoverflow.net/questions/510240" target="_blank">MO/510240</a>. We have added it to the database since it clarifies the relationship between many related properties.',
 	NULL,
 	'cocartesian cofiltered limits',
@@ -128,7 +128,7 @@ VALUES
 (
 	'cocartesian cofiltered limits',
 	'has',
-	'In a category $\mathcal{C}$, which we assume to have cofiltered limits and finite coproducts, we say that <i>cofiltered limits are cocartesian</i> if for every finite set $I$ the coproduct functor $\coprod : \mathcal{C}^I \to \mathcal{C}$ preserves cofiltered limits. Equivalently, for every $X \in \mathcal{C}$ the functor $X \sqcup - : \mathcal{C} \to \mathcal{C}$ preserves cofiltered limits.<br>
+	'In a category $\C$, which we assume to have cofiltered limits and finite coproducts, we say that <i>cofiltered limits are cocartesian</i> if for every finite set $I$ the coproduct functor $\coprod : \C^I \to \C$ preserves cofiltered limits. Equivalently, for every $X \in \C$ the functor $X \sqcup - : \C \to \C$ preserves cofiltered limits.<br>
 	This is no standard terminology, its dual has been suggested in <a href="https://mathoverflow.net/questions/510240" target="_blank">MO/510240</a>. We have added it to the database since it clarifies the relationship between many related properties.',
 	NULL,
 	'cartesian filtered colimits',
@@ -187,7 +187,7 @@ VALUES
 (
 	'extensive',
 	'is',
-	'A category $\mathcal{C}$ is <i>extensive</i> when it has finite coproducts and for all objects $A,B \in \mathcal{C}$ the coproduct functor $\mathcal{C}/A \times \mathcal{C}/B \to \mathcal{C}/(A+B)$ is an equivalence of categories. Equivalently, pullbacks of finite coproduct inclusions along arbitrary morphisms exist and finite coproducts are disjoint and stable under pullback.',
+	'A category $\C$ is <i>extensive</i> when it has finite coproducts and for all objects $A,B \in \C$ the coproduct functor $\C/A \times \C/B \to \C/(A+B)$ is an equivalence of categories. Equivalently, pullbacks of finite coproduct inclusions along arbitrary morphisms exist and finite coproducts are disjoint and stable under pullback.',
 	'https://ncatlab.org/nlab/show/extensive+category',
 	'coextensive',
 	TRUE
@@ -195,7 +195,7 @@ VALUES
 (
 	'coextensive',
 	'is',
-	'A category $\mathcal{C}$ is <i>coextensive</i> when it has finite products and for all objects $A,B \in \mathcal{C}$ the product functor $A/\mathcal{C} \times B/\mathcal{C} \to (A \times B)/\mathcal{C}$ is an equivalence of categories. The prototypical example is the category of commutative rings.',
+	'A category $\C$ is <i>coextensive</i> when it has finite products and for all objects $A,B \in \C$ the product functor $A/\C \times B/\C \to (A \times B)/\C$ is an equivalence of categories. The prototypical example is the category of commutative rings.',
 	NULL,
 	'extensive',
 	TRUE
@@ -203,7 +203,7 @@ VALUES
 (
 	'infinitary extensive',
 	'is',
-	'A category $\mathcal{C}$ is <i>infinitary extensive</i> when it has coproducts and for all families of objects $(A_i)_{i \in I}$ the coproduct functor $\prod_{i \in I} \mathcal{C}/A_i \to \mathcal{C}/(\coprod_{i \in I} A_i)$ is an equivalence of categories. Equivalently, pullbacks of coproduct inclusions along arbitrary morphisms exist and coproducts are disjoint and stable under pullback.',
+	'A category $\C$ is <i>infinitary extensive</i> when it has coproducts and for all families of objects $(A_i)_{i \in I}$ the coproduct functor $\prod_{i \in I} \C/A_i \to \C/(\coprod_{i \in I} A_i)$ is an equivalence of categories. Equivalently, pullbacks of coproduct inclusions along arbitrary morphisms exist and coproducts are disjoint and stable under pullback.',
 	'https://ncatlab.org/nlab/show/extensive+category',
 	'infinitary coextensive',
 	TRUE
@@ -211,7 +211,7 @@ VALUES
 (
 	'infinitary coextensive',
 	'is',
-	'A category $\mathcal{C}$ is <i>infinitary coextensive</i> when it has products and for all families of objects $(A_i)_{i \in I}$ the product functor $\prod_{i \in I} A_i / \mathcal{C}/A_i \to \prod_{i \in I} A_i / \mathcal{C}$ is an equivalence of categories. <br>
+	'A category $\C$ is <i>infinitary coextensive</i> when it has products and for all families of objects $(A_i)_{i \in I}$ the product functor $\prod_{i \in I} A_i / \C/A_i \to \prod_{i \in I} A_i / \C$ is an equivalence of categories. <br>
 	This terminology does not seem to be common, but we have added it as a dual for the more commonly known property of being infinitary extensive.',
 	NULL,
 	'infinitary extensive',

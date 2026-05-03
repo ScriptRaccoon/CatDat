@@ -45,7 +45,7 @@ VALUES
 	'$\{0 \to 1\}$',
 	'$0$, $1$',
 	'the two identities and a single morphism from $0$ to $1$',
-	'This is also known as the interval category. It has the property that functors $\{0 \to 1\} \to \mathcal{C}$ are the same as morphisms in $\mathcal{C}$.',
+	'This is also known as the interval category. It has the property that functors $\{0 \to 1\} \to \C$ are the same as morphisms in $\C$.',
 	'https://ncatlab.org/nlab/show/interval+category',
 	NULL
 ),

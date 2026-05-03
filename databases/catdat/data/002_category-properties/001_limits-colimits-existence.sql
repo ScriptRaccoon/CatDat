@@ -26,7 +26,7 @@ VALUES
 (
 	'pullbacks',
 	'has',
-	'A category $\mathcal{C}$ has <i>pullbacks</i> if every cospan of morphisms $X \rightarrow S \leftarrow Y$ has a pullback $X \times_S Y$. This is also known as a fiber product. Equivalently, the slice category $\mathcal{C}/S$ has binary products.',
+	'A category $\C$ has <i>pullbacks</i> if every cospan of morphisms $X \rightarrow S \leftarrow Y$ has a pullback $X \times_S Y$. This is also known as a fiber product. Equivalently, the slice category $\C/S$ has binary products.',
 	'https://ncatlab.org/nlab/show/pullback',
 	'pushouts',
 	TRUE
@@ -34,7 +34,7 @@ VALUES
 (
 	'pushouts',
 	'has',
-	'A category $\mathcal{C}$ has <i>pushouts</i> if every span of morphisms $X \leftarrow S \rightarrow Y$ has a pushout $X \sqcup_S Y$. This is also known as a fiber coproduct. Equivalently, the coslice category $S/\mathcal{C}$ has binary coproducts.',
+	'A category $\C$ has <i>pushouts</i> if every span of morphisms $X \leftarrow S \rightarrow Y$ has a pushout $X \sqcup_S Y$. This is also known as a fiber coproduct. Equivalently, the coslice category $S/\C$ has binary coproducts.',
 	'https://ncatlab.org/nlab/show/pushout',
 	'pullbacks',
 	TRUE
@@ -298,7 +298,7 @@ VALUES
 (
 	'wide pullbacks',
 	'has',
-	'A category $\mathcal{C}$ has <i>wide pullbacks</i> if for every object $S$ the slice category $\mathcal{C}/S$ has arbitrary small products.',
+	'A category $\C$ has <i>wide pullbacks</i> if for every object $S$ the slice category $\C/S$ has arbitrary small products.',
 	'https://ncatlab.org/nlab/show/wide+pullback',
 	'wide pushouts',
 	TRUE
@@ -306,7 +306,7 @@ VALUES
 (
 	'wide pushouts',
 	'has',
-	'A category $\mathcal{C}$ has <i>wide pushouts</i> if for every object $S$ the coslice category $S/\mathcal{C}$ has arbitrary small coproducts.',
+	'A category $\C$ has <i>wide pushouts</i> if for every object $S$ the coslice category $S/\C$ has arbitrary small coproducts.',
 	'https://ncatlab.org/nlab/show/wide+pushout',
 	'wide pullbacks',
 	TRUE
@@ -362,7 +362,7 @@ VALUES
 (
 	'multi-complete',
 	'is',
-	'A <i>multi-limit</i> of a diagram $D\colon \mathcal{S} \to \mathcal{C}$ is a set $I$ of cones over $D$ such that every cone over $D$ uniquely factors through a unique cone belonging to $I$. This property refers to the existence of multi-limits of small diagrams. Note that any diagram with no cone admits a multi-limit, which is the empty set of cones.',
+	'A <i>multi-limit</i> of a diagram $D\colon \S \to \C$ is a set $I$ of cones over $D$ such that every cone over $D$ uniquely factors through a unique cone belonging to $I$. This property refers to the existence of multi-limits of small diagrams. Note that any diagram with no cone admits a multi-limit, which is the empty set of cones.',
 	'https://ncatlab.org/nlab/show/multilimit',
 	'multi-cocomplete',
 	TRUE
@@ -370,7 +370,7 @@ VALUES
 (
 	'multi-cocomplete',
 	'is',
-	'A <i>multi-colimit</i> of a diagram $D\colon \mathcal{S} \to \mathcal{C}$ is a set $I$ of cocones under $D$ such that every cocone under $D$ uniquely factors through a unique cocone belonging to $I$. This property refers to the existence of multi-colimits of small diagrams. Note that any diagram with no cocone admits a multi-colimit, which is the empty set of cocones.',
+	'A <i>multi-colimit</i> of a diagram $D\colon \S \to \C$ is a set $I$ of cocones under $D$ such that every cocone under $D$ uniquely factors through a unique cocone belonging to $I$. This property refers to the existence of multi-colimits of small diagrams. Note that any diagram with no cocone admits a multi-colimit, which is the empty set of cocones.',
 	'https://ncatlab.org/nlab/show/multilimit',
 	'multi-complete',
 	TRUE

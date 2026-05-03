@@ -98,7 +98,7 @@ VALUES
 (
 	'generator',
 	'has a',
-	'An object $G$ of a category is called a <i>generator</i> if for every pair of parallel morphisms $f,g : A \rightrightarrows B$ the equation $f = g$ holds if for every morphism $h : G \to A$ we have $f \circ h = g \circ h$. Equivalently, the functor $\Hom(G,-) : \mathcal{C} \to \mathbf{Set}^+$ is faithful. This property refers to the existence of a generator. By definition, $G$ is a generator if and only if $\{G\}$ is a <a href="/category-property/generating_set">generating set</a>.',
+	'An object $G$ of a category is called a <i>generator</i> if for every pair of parallel morphisms $f,g : A \rightrightarrows B$ the equation $f = g$ holds if for every morphism $h : G \to A$ we have $f \circ h = g \circ h$. Equivalently, the functor $\Hom(G,-) : \C \to \mathbf{Set}^+$ is faithful. This property refers to the existence of a generator. By definition, $G$ is a generator if and only if $\{G\}$ is a <a href="/category-property/generating_set">generating set</a>.',
 	'https://ncatlab.org/nlab/show/separator',
 	'cogenerator',
 	TRUE
@@ -106,7 +106,7 @@ VALUES
 (
 	'cogenerator',
 	'has a',
-	'An object $Q$ of a category is called a <i>cogenerator</i> if for every pair of parallel morphisms $f,g : A \rightrightarrows B$ the equation $f = g$ holds if for every morphism $h : B \to Q$ we have $h \circ f = h \circ g$. Equivalently, the functor $\Hom(-,Q) : \mathcal{C}^{\mathrm{op}} \to \mathbf{Set}^+$ is faithful. This property refers to the existence of a cogenerator. By definition, $Q$ is a cogenerator if and only if $\{Q\}$ is a <a href="/category-property/cogenerating_set">cogenerating set</a>.',
+	'An object $Q$ of a category is called a <i>cogenerator</i> if for every pair of parallel morphisms $f,g : A \rightrightarrows B$ the equation $f = g$ holds if for every morphism $h : B \to Q$ we have $h \circ f = h \circ g$. Equivalently, the functor $\Hom(-,Q) : \C^{\mathrm{op}} \to \mathbf{Set}^+$ is faithful. This property refers to the existence of a cogenerator. By definition, $Q$ is a cogenerator if and only if $\{Q\}$ is a <a href="/category-property/cogenerating_set">cogenerating set</a>.',
 	'https://ncatlab.org/nlab/show/cogenerator',
 	'generator',
 	TRUE
@@ -114,7 +114,7 @@ VALUES
 (
 	'generating set',
 	'has a',
-	'A set of objects $S$ is called a <i>generating set</i> if for every pair of parallel morphisms $f,g : A \rightrightarrows B$, $f = g$ holds if and only if for every morphism $h : G \to A$ with $G \in S$ we have $f \circ h = g \circ h$. Equivalently, the functor $(\hom(G,-))_{G \in S} : \mathcal{C} \to (\mathbf{Set}^+)^S$ is faithful. This property refers to the existence of a generating set.',
+	'A set of objects $S$ is called a <i>generating set</i> if for every pair of parallel morphisms $f,g : A \rightrightarrows B$, $f = g$ holds if and only if for every morphism $h : G \to A$ with $G \in S$ we have $f \circ h = g \circ h$. Equivalently, the functor $(\hom(G,-))_{G \in S} : \C \to (\mathbf{Set}^+)^S$ is faithful. This property refers to the existence of a generating set.',
 	'https://ncatlab.org/nlab/show/separator',
 	'cogenerating set',
 	TRUE
@@ -122,7 +122,7 @@ VALUES
 (
 	'cogenerating set',
 	'has a',
-	'A set of objects $S$ is called a <i>cogenerating set</i> if for every pair of parallel morphisms $f,g : A \rightrightarrows B$, $f = g$ holds if and only if for every morphism $h : B \to G$ with $G \in S$ we have $h \circ f = h \circ g$. Equivalently, the functor $(\hom(-,G))_{G \in S} : \mathcal{C}^{\mathrm{op}} \to (\mathbf{Set}^+)^S$ is faithful. This property refers to the existence of a cogenerating set.',
+	'A set of objects $S$ is called a <i>cogenerating set</i> if for every pair of parallel morphisms $f,g : A \rightrightarrows B$, $f = g$ holds if and only if for every morphism $h : B \to G$ with $G \in S$ we have $h \circ f = h \circ g$. Equivalently, the functor $(\hom(-,G))_{G \in S} : \C^{\mathrm{op}} \to (\mathbf{Set}^+)^S$ is faithful. This property refers to the existence of a cogenerating set.',
 	'https://ncatlab.org/nlab/show/cogenerator',
 	'generating set',
 	TRUE

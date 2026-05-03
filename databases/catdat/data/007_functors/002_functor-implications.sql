@@ -167,6 +167,6 @@ VALUES
         '[]',
         '[]',
         '["equivalence"]',
-        'Assume that $T$ is a monad on $\mathcal{C}$ such that the forgetful functor $U : \mathbf{Alg}(T) \to \mathcal{C}$ is full. Then by general facts about adjunctions (see <a href="https://math.stackexchange.com/questions/1994963" target="_blank">MSE/1994963</a>) the unit $\eta : \mathrm{id}_{\mathcal{C}} \to T$ is an isomorphism of functors. Then it is an isomorphism of monads, so that $U$ is an equivalence.',
+        'Assume that $T$ is a monad on $\C$ such that the forgetful functor $U : \mathbf{Alg}(T) \to \C$ is full. Then by general facts about adjunctions (see <a href="https://math.stackexchange.com/questions/1994963" target="_blank">MSE/1994963</a>) the unit $\eta : \mathrm{id}_{\C} \to T$ is an isomorphism of functors. Then it is an isomorphism of monads, so that $U$ is an equivalence.',
         FALSE
     );

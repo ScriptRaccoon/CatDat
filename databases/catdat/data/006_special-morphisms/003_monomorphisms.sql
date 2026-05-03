@@ -73,7 +73,7 @@ VALUES
 (
 	'Cat',
 	'faithful functors that are injective on objects',
-	'Faithful functors that are injective on objects are clearly monomorphisms. For the converse, assume that $F : \mathcal{C} \to \mathcal{D}$ is a monomorphic functor. Two objects $A,B \in \mathcal{C}$ with $F(A) = F(B)$ can be regarded as functors $A,B : 1 \to \mathcal{C}$ from the trivial category satisfying $F \circ A = F \circ B$, so that $A = B$. Now assume that $f,g : A \to B$ are morphisms in $\mathcal{C}$ with $F(f) = F(g)$. These can be regarded as functors $f,g : \{ 0 \to 1 \} \to \mathcal{C}$ from the walking morphism category satisfying $F \circ f = F \circ g$, so that $f = g$.'
+	'Faithful functors that are injective on objects are clearly monomorphisms. For the converse, assume that $F : \C \to \D$ is a monomorphic functor. Two objects $A,B \in \C$ with $F(A) = F(B)$ can be regarded as functors $A,B : 1 \to \C$ from the trivial category satisfying $F \circ A = F \circ B$, so that $A = B$. Now assume that $f,g : A \to B$ are morphisms in $\C$ with $F(f) = F(g)$. These can be regarded as functors $f,g : \{ 0 \to 1 \} \to \C$ from the walking morphism category satisfying $F \circ f = F \circ g$, so that $f = g$.'
 ),
 (
 	'CMon',
@@ -258,7 +258,7 @@ VALUES
 (
 	'Set',
 	'injective maps',
-	'For the non-trivial direction, if $f : X \to Y$ is a monomorphism of sets and $a,b \in X$ satisfy $f(a) = f(b)$, then $f \circ a = f \circ b$ when we regard $a,b$ as morphisms $a,b : 1 \to X$. Hence, $a = b$. More generally, if $\mathcal{C}$ is a category that admits a faithful and representable functor $U : \mathcal{C} \to \mathbf{Set}$, then the monomorphisms in $\mathcal{C}$ are precisely the morphisms whose $U$-image is injective.'
+	'For the non-trivial direction, if $f : X \to Y$ is a monomorphism of sets and $a,b \in X$ satisfy $f(a) = f(b)$, then $f \circ a = f \circ b$ when we regard $a,b$ as morphisms $a,b : 1 \to X$. Hence, $a = b$. More generally, if $\C$ is a category that admits a faithful and representable functor $U : \C \to \mathbf{Set}$, then the monomorphisms in $\C$ are precisely the morphisms whose $U$-image is injective.'
 ),
 (
 	'Set*',

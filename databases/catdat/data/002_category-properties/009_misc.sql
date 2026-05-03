@@ -18,7 +18,7 @@ VALUES
 (
 	'connected',
 	'is',
-	'A category is <i>connected</i> if it is inhabited and every two objects can be joined via a zig-zag path of morphisms. Equivalently, $\mathcal{C}$ is connected if $\mathcal{C} \simeq \coprod_{i \in I} \mathcal{C}_i$ implies $\mathcal{C}_i \simeq 0$ for some $i$.',
+	'A category is <i>connected</i> if it is inhabited and every two objects can be joined via a zig-zag path of morphisms. Equivalently, $\C$ is connected if $\C \simeq \coprod_{i \in I} \C_i$ implies $\C_i \simeq 0$ for some $i$.',
 	'https://ncatlab.org/nlab/show/connected+category',
 	'connected',
 	TRUE
@@ -58,9 +58,9 @@ VALUES
 (
 	'sifted',
 	'is',
-	'A category $\mathcal{C}$ is <i>sifted</i> if it is inhabited and the diagonal functor $\Delta : \mathcal{C} \to \mathcal{C} \times \mathcal{C}$ is final, i.e. if it is non-empty and for any two objects $X,Y \in \mathcal{C}$ the category of cospans
+	'A category $\C$ is <i>sifted</i> if it is inhabited and the diagonal functor $\Delta : \C \to \C \times \C$ is final, i.e. if it is non-empty and for any two objects $X,Y \in \C$ the category of cospans
 	$$X \rightarrow Z \leftarrow Y$$
-	is connected. Equivalently, a small category $\mathcal{C}$ is sifted if $\mathrm{colim} : \mathbf{Set}^{\mathcal{C}} \to \mathbf{Set}$ preserves finite products. This property is a weaker notion than being filtered.',
+	is connected. Equivalently, a small category $\C$ is sifted if $\mathrm{colim} : \mathbf{Set}^{\C} \to \mathbf{Set}$ preserves finite products. This property is a weaker notion than being filtered.',
 	'https://ncatlab.org/nlab/show/sifted+category',
 	'cosifted',
 	TRUE
@@ -68,9 +68,9 @@ VALUES
 (
 	'cosifted',
 	'is',
-	'A category $\mathcal{C}$ is <i>cosifted</i> if it is inhabited and the diagonal functor $\Delta : \mathcal{C} \to \mathcal{C} \times \mathcal{C}$ is initial, i.e. if it is non-empty and for any two objects $X,Y \in \mathcal{C}$ the category of spans
+	'A category $\C$ is <i>cosifted</i> if it is inhabited and the diagonal functor $\Delta : \C \to \C \times \C$ is initial, i.e. if it is non-empty and for any two objects $X,Y \in \C$ the category of spans
 	$$X \leftarrow Z \rightarrow Y$$
-	is connected. Equivalently, a small category $\mathcal{C}$ is cosifted if $\mathrm{colim} : \mathbf{Set}^{{\mathcal{C}}^\mathrm{op}} \to \mathbf{Set}$ preserves finite products. This property is a weaker notion than being cofiltered.',
+	is connected. Equivalently, a small category $\C$ is cosifted if $\mathrm{colim} : \mathbf{Set}^{{\C}^\mathrm{op}} \to \mathbf{Set}$ preserves finite products. This property is a weaker notion than being cofiltered.',
 	'https://ncatlab.org/nlab/show/sifted+category',
 	'sifted',
 	TRUE
@@ -88,7 +88,7 @@ VALUES
 	'is',
 	'A category is <i>co-Malcev</i> when its dual is Malcev, i.e., it has finite colimits and if $X \sqcup X \twoheadrightarrow R$ is a coreflexive corelation, then it is cosymmetric and cotransitive.<br>
 	This terminology is not standard, but we have added it to properly formulate the interesting theorem that the dual of an elementary topos is Malcev, i.e., that every elementary topos is co-Malcev.<br>
-	To settle this property, we often use that $\mathcal{C}$ is co-Malcev if and only if the category of representable functors $\mathcal{C} \to \mathbf{Set}^+$ is Malcev.',
+	To settle this property, we often use that $\C$ is co-Malcev if and only if the category of representable functors $\C \to \mathbf{Set}^+$ is Malcev.',
 	NULL,
 	'Malcev',
 	TRUE

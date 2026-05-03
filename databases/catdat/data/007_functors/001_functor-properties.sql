@@ -26,7 +26,7 @@ VALUES
     (
         'essentially surjective',
         'is',
-        'A functor $F : \mathcal{C} \to \mathcal{D}$ is essentially surjective when every object $Y \in \mathcal{D}$ is isomorphic to $F(X)$ for some $X \in \mathcal{C}$.',
+        'A functor $F : \C \to \D$ is essentially surjective when every object $Y \in \D$ is isomorphic to $F(X)$ for some $X \in \C$.',
         'https://ncatlab.org/nlab/show/essentially+surjective+functor',
         TRUE,
         'essentially surjective'
@@ -129,7 +129,7 @@ VALUES
     (
         'left adjoint',
         'is a',
-        'A functor $F : \mathcal{C} \to \mathcal{D}$ is a left adjoint when there is a functor $G : \mathcal{D} \to \mathcal{C}$ such that there are natural bijections $\hom(F(A),B) \cong \hom(A,G(B))$.',
+        'A functor $F : \C \to \D$ is a left adjoint when there is a functor $G : \D \to \C$ such that there are natural bijections $\hom(F(A),B) \cong \hom(A,G(B))$.',
         'https://ncatlab.org/nlab/show/left+adjoint',
         TRUE,
         'right adjoint'
@@ -137,7 +137,7 @@ VALUES
     (
         'right adjoint',
         'is a',
-        'A functor $F : \mathcal{C} \to \mathcal{D}$ is a right adjoint when there is a functor $G : \mathcal{D} \to \mathcal{C}$ such that there are natural bijections $\hom(G(A),B) \cong \hom(A,F(B))$.',
+        'A functor $F : \C \to \D$ is a right adjoint when there is a functor $G : \D \to \C$ such that there are natural bijections $\hom(G(A),B) \cong \hom(A,F(B))$.',
         'https://ncatlab.org/nlab/show/right+adjoint',
         TRUE,
         'left adjoint'
@@ -145,7 +145,7 @@ VALUES
     (
         'monadic',
         'is',
-        'A functor $F : \mathcal{C} \to \mathcal{D}$ is monadic when there is a monad $T$ on $\mathcal{D}$ such that $F$ is equivalent to the forgetful functor $U^T : \mathbf{Alg}(T) \to \mathcal{D}$.',
+        'A functor $F : \C \to \D$ is monadic when there is a monad $T$ on $\D$ such that $F$ is equivalent to the forgetful functor $U^T : \mathbf{Alg}(T) \to \D$.',
         'https://ncatlab.org/nlab/show/monadic+functor',
         TRUE,
         'comonadic'
@@ -153,7 +153,7 @@ VALUES
     (
         'comonadic',
         'is',
-        'A functor $F : \mathcal{C} \to \mathcal{D}$ is comonadic when there is a comonad $T$ on $\mathcal{D}$ such that $F$ is equivalent to the forgetful functor $U^T : \mathbf{CoAlg}(T) \to \mathcal{D}$.',
+        'A functor $F : \C \to \D$ is comonadic when there is a comonad $T$ on $\D$ such that $F$ is equivalent to the forgetful functor $U^T : \mathbf{CoAlg}(T) \to \D$.',
         'https://ncatlab.org/nlab/show/comonadic+functor',
         TRUE,
         'monadic'
@@ -161,7 +161,7 @@ VALUES
     (
         'conservative',
         'is',
-        'A functor $F : \mathcal{C} \to \mathcal{D}$ is conservative when it is isomorphic-reflecting: If $f$ is a morphism in $\mathcal{C}$ such that $F(f)$ is an isomorphism, then $f$ is an isomorphism.',
+        'A functor $F : \C \to \D$ is conservative when it is isomorphic-reflecting: If $f$ is a morphism in $\C$ such that $F(f)$ is an isomorphism, then $f$ is an isomorphism.',
         'https://ncatlab.org/nlab/show/conservative+functor',
         TRUE,
         'conservative'
@@ -209,7 +209,7 @@ VALUES
     (
         'representable',
         'is',
-        'A functor $F : \mathcal{C} \to \mathcal{D}$ is representable if $\mathcal{C}$ is locally small, $\mathcal{D} = \mathbf{Set}$, and there is an object $A \in \mathcal{C}$ with $F \cong \Hom(A,-)$.',
+        'A functor $F : \C \to \D$ is representable if $\C$ is locally small, $\D = \mathbf{Set}$, and there is an object $A \in \C$ with $F \cong \Hom(A,-)$.',
         'https://ncatlab.org/nlab/show/representable+functor',
         TRUE,
         NULL
@@ -217,7 +217,7 @@ VALUES
     (
         'monomorphism-preserving',
         'is',
-        'A functor $F : \mathcal{C} \to \mathcal{D}$ preserves monomorphisms if every monomorphism in $\mathcal{C}$ is mapped to a monomorphism in $\mathcal{D}$.<br>
+        'A functor $F : \C \to \D$ preserves monomorphisms if every monomorphism in $\C$ is mapped to a monomorphism in $\D$.<br>
         This property is useful to rule out some adjunctions.',
         'https://ncatlab.org/nlab/show/monomorphism',
         TRUE,
@@ -226,7 +226,7 @@ VALUES
     (
         'epimorphism-preserving',
         'is',
-        'A functor $F : \mathcal{C} \to \mathcal{D}$ preserves epimorphisms if every epimorphism in $\mathcal{C}$ is mapped to an epimorphism in $\mathcal{D}$.<br>
+        'A functor $F : \C \to \D$ preserves epimorphisms if every epimorphism in $\C$ is mapped to an epimorphism in $\D$.<br>
         This property is useful to rule out some adjunctions.',
         'https://ncatlab.org/nlab/show/epimorphism',
         TRUE,

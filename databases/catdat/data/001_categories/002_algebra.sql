@@ -213,7 +213,7 @@ VALUES
 (
 	'J2',
 	'category of Jónsson-Tarski algebras',
-	'$\mathcal{J}_2$',
+	'$\J_2$',
 	'pairs $(X,\alpha)$, where $X$ is a set and $\alpha : X \to X \times X$ is an isomorphism',
 	'A morphism $(X,\alpha) \to (Y,\beta)$ is a map $f : X \to Y$ satisfying $$(f \times f) \circ \alpha = \beta \circ f.$$',
 	'This is interesting example of a category in the intersection of topos theory and algebra.',

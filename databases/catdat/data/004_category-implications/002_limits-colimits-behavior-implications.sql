@@ -24,7 +24,7 @@ VALUES
 	'biproducts_cartesian_filtered_colimits',
 	'["biproducts", "filtered colimits"]',
 	'["cartesian filtered colimits"]',
-	'If $I$ is a finite set, the product functor $\mathcal{C}^I \to \mathcal{C}$ is isomorphic to the coproduct functor $\mathcal{C}^I \to \mathcal{C}$, hence preserves <i>all</i> colimits that exist in $\mathcal{C}$.',
+	'If $I$ is a finite set, the product functor $\C^I \to \C$ is isomorphic to the coproduct functor $\C^I \to \C$, hence preserves <i>all</i> colimits that exist in $\C$.',
 	FALSE
 ),
 (
@@ -187,7 +187,7 @@ VALUES
 	'extensive_cocartesian_cofiltered_limits',
 	'["extensive", "cofiltered limits", "terminal object"]',
 	'["cocartesian cofiltered limits"]',
-	'Let $\mathcal{C}$ be an extensive category with cofiltered limits and a terminal object. Then the coproduct functor $\mathcal{C} \times \mathcal{C} \cong \mathcal{C}/1 \times \mathcal{C}/1 \to \mathcal{C}/(1+1)$ is an equivalence. The forgetful functor $\mathcal{C}/A \to \mathcal{C}$ creates connected limits, and hence preserves cofiltered limits. For every $X \in \mathcal{C}$ the functor $(X,-) : \mathcal{C} \to \mathcal{C} \times \mathcal{C}$ also preserves cofiltered limits. The composition of these functors is $X \sqcup - : \mathcal{C} \to \mathcal{C}$ and therefore also preserves cofiltered limits.',
+	'Let $\C$ be an extensive category with cofiltered limits and a terminal object. Then the coproduct functor $\C \times \C \cong \C/1 \times \C/1 \to \C/(1+1)$ is an equivalence. The forgetful functor $\C/A \to \C$ creates connected limits, and hence preserves cofiltered limits. For every $X \in \C$ the functor $(X,-) : \C \to \C \times \C$ also preserves cofiltered limits. The composition of these functors is $X \sqcup - : \C \to \C$ and therefore also preserves cofiltered limits.',
 	FALSE
 ),
 (

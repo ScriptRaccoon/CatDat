@@ -9,7 +9,7 @@ VALUES
 	'sSet',
 	'locally small',
 	TRUE,
-	'This follows from the general fact that $[\mathcal{C},\mathcal{D}]$ is locally small when $\mathcal{C}$ is small and $\mathcal{D}$ is locally small, here applied to $\mathcal{C} = \Delta^{\mathrm{op}}$ and $\mathcal{D} = \mathbf{Set}$.'
+	'This follows from the general fact that $[\C,\D]$ is locally small when $\C$ is small and $\D$ is locally small, here applied to $\C = \Delta^{\mathrm{op}}$ and $\D = \mathbf{Set}$.'
 ),
 (
 	'sSet',

@@ -32,7 +32,7 @@ A collection is called _countable_ if it admits a surjective map from $\IN$. In 
 
 ### Categories
 
-A _category_ $\mathcal{C}$ consists of a pair of collections $O, M$, whose elements are called _objects_ and _morphisms_, respectively, together with maps
+A _category_ $\C$ consists of a pair of collections $O, M$, whose elements are called _objects_ and _morphisms_, respectively, together with maps
 
 - $i : O \to M$ (_identity_),
 - $s : M \to O$ (_source_),
@@ -41,11 +41,11 @@ A _category_ $\mathcal{C}$ consists of a pair of collections $O, M$, whose eleme
 
 such that the usual [axioms of a category](<https://en.wikipedia.org/wiki/Category_(mathematics)>) are satisfied. The domain of $c$ consists of all pairs of morphisms $(f,g)$ with $s(f) = t(g)$, and we write $f \circ g := c(f,g)$ for their composition. Instead of $i(X)$ one usually writes $\mathrm{id}_X$ for the identity morphism of $X$. Formally, a category is a tuple
 
-$$\mathcal{C} = (O,M,i,s,t,c)$$
+$$\C = (O,M,i,s,t,c)$$
 
-of collections (and hence a collection itself). We write $\mathrm{Ob}(\mathcal{C}) := O$ and $\Mor(\mathcal{C}) := M$. Instead of $X \in \mathrm{Ob}(\mathcal{C})$, we often write $X \in \mathcal{C}$.
+of collections (and hence a collection itself). We write $\mathrm{Ob}(\C) := O$ and $\Mor(\C) := M$. Instead of $X \in \mathrm{Ob}(\C)$, we often write $X \in \C$.
 
-When $f \in \Mor(\mathcal{C})$ is a morphism with $s(f) = X$ and $t(f) = Y$, we write
+When $f \in \Mor(\C)$ is a morphism with $s(f) = X$ and $t(f) = Y$, we write
 $$f : X \to Y.$$
 We write $\Hom(X,Y)$ or $\Mor(X,Y)$ for the collection of such morphisms. This collection need not be a set. If it is a set for all $X,Y$, the category is called _locally small_.
 
@@ -59,26 +59,26 @@ Collections are the objects of a hypercategory $\mathbf{Set}^+$.
 
 ### Functors
 
-A _functor_ $F : \mathcal{C} \to \mathcal{D}$ between two categories (or small categories, or hypercategories) is defined as usual; it consists of maps
-$$\mathrm{Ob}(F) : \mathrm{Ob}(\mathcal{C}) \to \mathrm{Ob}(\mathcal{D}),$$
-$$\Mor(F) : \Mor(\mathcal{C}) \to \Mor(\mathcal{D})$$
+A _functor_ $F : \C \to \D$ between two categories (or small categories, or hypercategories) is defined as usual; it consists of maps
+$$\mathrm{Ob}(F) : \mathrm{Ob}(\C) \to \mathrm{Ob}(\D),$$
+$$\Mor(F) : \Mor(\C) \to \Mor(\D)$$
 satisfying the [functor axioms](https://en.wikipedia.org/wiki/Functor). Between two categories there is a collection of all functors, just as between two small categories there is a set of all functors.
 
 Small categories and functors form the category $\mathbf{Cat}$ of small categories, which is locally small. There is also a hypercategory $\mathbf{Cat}^+$ consisting of all categories. For instance, $\mathbf{Set}$ is an object of $\mathbf{Cat}^+$, but not of $\mathbf{Cat}$.
 
-If $F,G : \mathcal{C} \rightrightarrows \mathcal{D}$ are two functors, a morphism $F \to G$ (a _natural transformation_) is defined as a map $\mathrm{Ob}(\mathcal{C}) \to \Mor(\mathcal{D})$ satisfying the usual naturality condition. These morphisms form a collection $\Hom(F,G)$.
+If $F,G : \C \rightrightarrows \D$ are two functors, a morphism $F \to G$ (a _natural transformation_) is defined as a map $\mathrm{Ob}(\C) \to \Mor(\D)$ satisfying the usual naturality condition. These morphisms form a collection $\Hom(F,G)$.
 
-If $\mathcal{C}, \mathcal{D}$ are categories, we can construct the functor category $[\mathcal{C}, \mathcal{D}]$ as usual. There is no set-theoretic issue, since collections behave like sets. If $\mathcal{C}$ is small and $\mathcal{D}$ is locally small, then $[\mathcal{C}, \mathcal{D}]$ is locally small. This extra assumption on $\mathcal{C}$ is one of many indications that categories should not be assumed locally small by default. For example, one could not even form the category of endofunctors of a general category under such a restriction, and hence no category of monads.
+If $\C, \D$ are categories, we can construct the functor category $[\C, \D]$ as usual. There is no set-theoretic issue, since collections behave like sets. If $\C$ is small and $\D$ is locally small, then $[\C, \D]$ is locally small. This extra assumption on $\C$ is one of many indications that categories should not be assumed locally small by default. For example, one could not even form the category of endofunctors of a general category under such a restriction, and hence no category of monads.
 
 It is better to state explicitly when the assumption of being locally small is needed.
 
 ### Representable Functors
 
-If $\mathcal{C}$ is any category and $A \in \mathcal{C}$, we have the Hom-functor
+If $\C$ is any category and $A \in \C$, we have the Hom-functor
 
-$$\Hom(A,-) : \mathcal{C} \to \mathbf{Set}^+$$
+$$\Hom(A,-) : \C \to \mathbf{Set}^+$$
 
-defined as usual, but taking values in the hypercategory of all collections. The Yoneda lemma and its corollaries can be proved without assuming that $\mathcal{C}$ is locally small. If $\mathcal{C}$ is locally small, then $\Hom(A,-)$ takes values in $\mathbf{Set}$.
+defined as usual, but taking values in the hypercategory of all collections. The Yoneda lemma and its corollaries can be proved without assuming that $\C$ is locally small. If $\C$ is locally small, then $\Hom(A,-)$ takes values in $\mathbf{Set}$.
 
 Adjunctions are defined as usual via natural isomorphisms
 $$\Hom(F(A),B) \cong \Hom(A,G(B))$$
@@ -86,9 +86,9 @@ of functors valued in $\mathbf{Set}^+$. No local smallness assumption is require
 
 ### Limits and Colimits
 
-Let $\mathcal{C}$ be a category. If $D : \mathcal{I} \to \mathcal{C}$ is a functor (in this context called a _diagram_), a _cone_ over $D$ is an object $X \in \mathcal{C}$ equipped with morphisms $p_i : X \to D(i)$ for all $i \in \mathcal{I}$ such that for every morphism $i \to j$ the evident triangle commutes. Cones form a category, and a terminal object in this category is called a _limit_ of $D$. The dual notion is a _colimit_.
+Let $\C$ be a category. If $D : \I \to \C$ is a functor (in this context called a _diagram_), a _cone_ over $D$ is an object $X \in \C$ equipped with morphisms $p_i : X \to D(i)$ for all $i \in \I$ such that for every morphism $i \to j$ the evident triangle commutes. Cones form a category, and a terminal object in this category is called a _limit_ of $D$. The dual notion is a _colimit_.
 
-Unless stated otherwise, we consider only small diagrams and hence small limits and colimits, i.e. those where $\mathcal{I}$ is a small (or essentially small) category. This is because large limits rarely exist and it is cumbersome to specify "small" each time.
+Unless stated otherwise, we consider only small diagrams and hence small limits and colimits, i.e. those where $\I$ is a small (or essentially small) category. This is because large limits rarely exist and it is cumbersome to specify "small" each time.
 
 There are special types of limits, such as equalizers, products, and cofiltered limits, and their duals, such as coequalizers, coproducts, and filtered colimits. By convention, products and coproducts are indexed by a set, not a collection (unless stated otherwise). Filtered colimits are indexed by a small filtered category (unless stated otherwise).
 

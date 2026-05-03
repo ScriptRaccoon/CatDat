@@ -67,7 +67,7 @@ VALUES
 ),
 (
 	'Cat',
-	'A functor $F : \mathcal{C} \to \mathcal{D}$ is an epimorphism iff $F$ is surjective on objects and for every morphism $s$ in $\mathcal{D}$ there is a zigzag over $U := F(\mathcal{C})$, meaning morphisms $u_1,\dotsc,u_{m+1} \in U$, $v_1,\dotsc,v_m \in U$, $x_1,\dotsc,x_m \in \mathcal{D}$ and $y_1,\dotsc,y_m \in \mathcal{D}$ such that $s = x_1 u_1$, $u_1 = v_1 y_1$, $x_{i-1} v_{i-1} = x_i u_i$, $u_i y_{i-1} = v_i y_i$, $x_m v_m = u_{m+1}$ and $u_{m+1} y_m = s$.',
+	'A functor $F : \C \to \D$ is an epimorphism iff $F$ is surjective on objects and for every morphism $s$ in $\D$ there is a zigzag over $U := F(\C)$, meaning morphisms $u_1,\dotsc,u_{m+1} \in U$, $v_1,\dotsc,v_m \in U$, $x_1,\dotsc,x_m \in \D$ and $y_1,\dotsc,y_m \in \D$ such that $s = x_1 u_1$, $u_1 = v_1 y_1$, $x_{i-1} v_{i-1} = x_i u_i$, $u_i y_{i-1} = v_i y_i$, $x_m v_m = u_{m+1}$ and $u_{m+1} y_m = s$.',
 	'This is an extension of the <a href="https://en.wikipedia.org/wiki/Isbell''s_zigzag_theorem" target="_blank">corresponding theorem for monoids</a> and proven in <a href="https://www.jstor.org/stable/2373286" target="_blank">Epimorphisms and Dominions, III</a> by John R. Isbell.'
 ),
 (
@@ -149,7 +149,7 @@ VALUES
 (
 	'M-Set',
 	'surjective $M$-maps',
-	'This holds in every functor category $[\mathcal{C},\mathbf{Set}]$, here applied to the case that $\mathcal{C}$ has just one object.'
+	'This holds in every functor category $[\C,\mathbf{Set}]$, here applied to the case that $\C$ has just one object.'
 ),
 (
 	'Man',
@@ -274,12 +274,12 @@ VALUES
 (
 	'Sp',
 	'pointwise surjective natural transformations',
-	'This holds in every functor category $[\mathcal{C},\mathbf{Set}]$.'
+	'This holds in every functor category $[\C,\mathbf{Set}]$.'
 ),
 (
 	'sSet',
 	'pointwise surjective transformations',
-	'This holds in every functor category $[\mathcal{C},\mathbf{Set}]$.'
+	'This holds in every functor category $[\C,\mathbf{Set}]$.'
 ),
 (
 	'Top',
@@ -354,7 +354,7 @@ VALUES
 (
 	'Z',
 	'objectwise surjective natural transformations',
-	'This holds in every functor category $[\mathcal{C},\mathbf{Set}]$, here applied to the case that $\mathcal{C}$ has just one object.'
+	'This holds in every functor category $[\C,\mathbf{Set}]$, here applied to the case that $\C$ has just one object.'
 ),
 (
 	'Z_div',

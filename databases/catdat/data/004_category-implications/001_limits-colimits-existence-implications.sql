@@ -185,7 +185,7 @@ VALUES
 	-- once its dual is added to the database.
 	'["essentially finite", "Cauchy complete"]',
 	'["filtered colimits", "filtered-colimit-stable monomorphisms"]',
-	'We may assume that the category $\mathcal{C}$ is finite and Cauchy complete. The answer at <a href="https://mathoverflow.net/questions/509853" target="_blank">MO/509853</a> shows that every filtered colimit in $\mathcal{C}$ exists, in fact it is a retract of one of the objects in the diagram. Now apply this to the morphism category of $\mathcal{C}$. It follows that for every filtered diagram of morphisms $X_i \to Y_i$ their colimit $X_\infty \to Y_\infty$ exists, which is a retract of one of the $X_i \to Y_i$. Therefore, if every $X_i \to Y_i$ is a monomorphism, also $X_\infty \to Y_\infty$ is a monomorphism.',
+	'We may assume that the category $\C$ is finite and Cauchy complete. The answer at <a href="https://mathoverflow.net/questions/509853" target="_blank">MO/509853</a> shows that every filtered colimit in $\C$ exists, in fact it is a retract of one of the objects in the diagram. Now apply this to the morphism category of $\C$. It follows that for every filtered diagram of morphisms $X_i \to Y_i$ their colimit $X_\infty \to Y_\infty$ exists, which is a retract of one of the $X_i \to Y_i$. Therefore, if every $X_i \to Y_i$ is a monomorphism, also $X_\infty \to Y_\infty$ is a monomorphism.',
 	FALSE
 ),
 (
@@ -220,7 +220,7 @@ VALUES
 	'wide_pullbacks_criterion',
 	'["wide pullbacks"]',
 	'["pullbacks", "cofiltered limits"]',
-	'To prove $\Leftarrow$, a wide pullback can be constructed as a cofiltered limit of finite pullbacks, and finite pullbacks can be reduced to binary pullbacks (the empty-indexed pullback always exists). Conversely, assume that wide pullbacks exist in $\mathcal{C}$. For every object $A$ then the slice category $\mathcal{C} / A$ has wide pullbacks and a terminal object, hence is complete. Since a cofiltered limit can be finally reduced to such a slice, we are done.',
+	'To prove $\Leftarrow$, a wide pullback can be constructed as a cofiltered limit of finite pullbacks, and finite pullbacks can be reduced to binary pullbacks (the empty-indexed pullback always exists). Conversely, assume that wide pullbacks exist in $\C$. For every object $A$ then the slice category $\C / A$ has wide pullbacks and a terminal object, hence is complete. Since a cofiltered limit can be finally reduced to such a slice, we are done.',
 	TRUE
 ),
 (
@@ -311,13 +311,13 @@ VALUES
 	'multi-terminal_with_connected',
 	'["connected","multi-terminal object"]',
 	'["terminal object"]',
-	'Let $(T_i)_{i\in I}$ be a multi-terminal object in a connected category $\mathcal{C}$. By definition of multi-terminal objects, for each object $C$, there are a unique index $i_C\in I$ and a unique morphism $C \to T_{i_C}$. Since the index $i_C$ is invariant under connected components, $I$ must be a singleton. The converse is trivial.',
+	'Let $(T_i)_{i\in I}$ be a multi-terminal object in a connected category $\C$. By definition of multi-terminal objects, for each object $C$, there are a unique index $i_C\in I$ and a unique morphism $C \to T_{i_C}$. Since the index $i_C$ is invariant under connected components, $I$ must be a singleton. The converse is trivial.',
 	TRUE
 ),
 (
 	'multi-complete_with_finite_coproducts',
 	'["multi-complete", "finite coproducts"]',
 	'["complete"]',
-	'Let $D\colon \mathcal{S} \to \mathcal{C}$ be a small diagram in a category $\mathcal{C}$. Since $\mathcal{C}$ has finite coproducts, the category $\mathbf{Cone}(D)$ of cones over $D$ has finite coproducts. In particular, $\mathbf{Cone}(D)$ is connected, hence a multi-terminal object in it automatically becomes a terminal object.',
+	'Let $D\colon \S \to \C$ be a small diagram in a category $\C$. Since $\C$ has finite coproducts, the category $\mathbf{Cone}(D)$ of cones over $D$ has finite coproducts. In particular, $\mathbf{Cone}(D)$ is connected, hence a multi-terminal object in it automatically becomes a terminal object.',
 	FALSE
 );

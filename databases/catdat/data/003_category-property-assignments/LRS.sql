@@ -69,5 +69,5 @@ VALUES
 	'LRS',
 	'co-Malcev',
 	FALSE,
-	'We can adjust the proof for <a href="/category/Top">$\mathbf{Top}$</a> (see <a href="https://mathoverflow.net/questions/509548" target="_blank">MO/509548</a>) as follows: Let $k$ be a field, $X$ be a singleton and $Y = \{u,v\}$ be the Sierpinski space where $\{u\}$ is open, but $\{v\}$ is not. Endow both with the sheaf of locally constant functions to $k$. Thus, $\mathcal{O}_X(X) = k$, $\mathcal{O}_Y(Y) = \mathcal{O}_Y(\{u\}) = k$. There is a canonical morphism $p : X + X \to Y$. It is a coreflexive corelation that is not cosymmetric.'
+	'We can adjust the proof for <a href="/category/Top">$\mathbf{Top}$</a> (see <a href="https://mathoverflow.net/questions/509548" target="_blank">MO/509548</a>) as follows: Let $k$ be a field, $X$ be a singleton and $Y = \{u,v\}$ be the Sierpinski space where $\{u\}$ is open, but $\{v\}$ is not. Endow both with the sheaf of locally constant functions to $k$. Thus, $\O_X(X) = k$, $\O_Y(Y) = \O_Y(\{u\}) = k$. There is a canonical morphism $p : X + X \to Y$. It is a coreflexive corelation that is not cosymmetric.'
 );

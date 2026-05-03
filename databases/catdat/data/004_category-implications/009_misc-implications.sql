@@ -87,7 +87,7 @@ VALUES
 	'filtered_is_sifted',
 	'["filtered"]',
 	'["sifted"]',
-	'Every filtered category $\mathcal C$ is inhabited and has final diagonal functors $\Delta:\mathcal C\to\mathcal C^J$ for all finite index categories $J$; in particular, it is inhabited and its diagonal $\Delta:\mathcal C\to\mathcal C\times\mathcal C$ is final.',
+	'Every filtered category $\C$ is inhabited and has final diagonal functors $\Delta : \C \to \C^J$ for all finite index categories $J$; in particular, it is inhabited and its diagonal $\Delta: \C \to \C \times \C$ is final.',
 	FALSE
 ),
 (

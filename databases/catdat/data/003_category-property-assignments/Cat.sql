@@ -9,7 +9,7 @@ VALUES
 	'Cat',
 	'locally small',
 	TRUE,
-	'There is a forgetful functor $\mathbf{Cat} \to \mathbf{Set} \times \mathbf{Set}$, $\mathcal{C} \mapsto (\mathrm{Ob}(\mathcal{C}),\Mor(\mathcal{C}))$, and $\mathbf{Set} \times \mathbf{Set}$ is locally small.'
+	'There is a forgetful functor $\mathbf{Cat} \to \mathbf{Set} \times \mathbf{Set}$, $\C \mapsto (\mathrm{Ob}(\C),\Mor(\C))$, and $\mathbf{Set} \times \mathbf{Set}$ is locally small.'
 ),
 (
 	'Cat',
@@ -27,13 +27,13 @@ VALUES
 	'Cat',
 	'generator',
 	TRUE,
-	'The interval category $\{0 \to 1\}$ is a generator: Assume that $F,G : \mathcal{C} \rightrightarrows \mathcal{D}$ are functors that agree when being precomposed with any functor from $\{0 \to 1\}$. This means that $F(f) = G(f)$ for all morphisms $f : X \to Y$ in $\mathcal{C}$. By comparing the domains and applying this to $f = \mathrm{id}_X$, we see that $F(X) = G(X)$ for all objects $X$. And we just saw that $F,G$ also agree on morphisms.'
+	'The interval category $\{0 \to 1\}$ is a generator: Assume that $F,G : \C \rightrightarrows \D$ are functors that agree when being precomposed with any functor from $\{0 \to 1\}$. This means that $F(f) = G(f)$ for all morphisms $f : X \to Y$ in $\C$. By comparing the domains and applying this to $f = \mathrm{id}_X$, we see that $F(X) = G(X)$ for all objects $X$. And we just saw that $F,G$ also agree on morphisms.'
 ),
 (
 	'Cat',
 	'infinitary extensive',
 	TRUE,
-	'[Sketch] This is straight forward from the fact that $\mathbf{Set}$ is infinitary extensive: A functor $\mathcal{C} \to \coprod_i \mathcal{D}_i$ yields full subcategories $\mathcal{C}_i \subseteq \mathcal{C}$ (the preimages of $\mathcal{D}_i)$ with $\mathcal{C} = \coprod_i \mathcal{C}_i$.'
+	'[Sketch] This is straight forward from the fact that $\mathbf{Set}$ is infinitary extensive: A functor $\C \to \coprod_i \D_i$ yields full subcategories $\C_i \subseteq \C$ (the preimages of $\D_i)$ with $\C = \coprod_i \C_i$.'
 ),
 (
 	'Cat',
@@ -51,7 +51,7 @@ VALUES
 	'Cat',
 	'cogenerating set',
 	FALSE,
-	'Assume that $S$ is a cogenerating set in $\mathbf{Cat}$. Then one checks that the set of monoids $\{\mathrm{End}(X) : X \in \mathcal{C} \in S\}$ is a cogenerating set in the <a href="/category/Mon">category of monoids</a>, which we know does not exist.'
+	'Assume that $S$ is a cogenerating set in $\mathbf{Cat}$. Then one checks that the set of monoids $\{\mathrm{End}(X) : X \in \C \in S\}$ is a cogenerating set in the <a href="/category/Mon">category of monoids</a>, which we know does not exist.'
 ),
 (
 	'Cat',
@@ -75,7 +75,7 @@ VALUES
 	'Cat',
 	'co-Malcev',
 	FALSE,
-	'We can adapt the proof from <a href="/category/Mon">$\mathbf{Mon}$</a> as follows: Consider the functor $U : \mathbf{Cat} \to \mathbf{Set}^+$ sending a category $\mathcal{C}$ to the (large) set $\{(x,u) : x \in \mathrm{Ob}(\mathcal{C}) ,\, u \in \mathrm{End}(x) \}$. It is represented by $B \IN$, the one-object category associated to the free monoid in one generator. Consider the relation $R \subseteq U^2$ consisting of those pairs $((x,u),(y,v))$ where $x = y$ and $uv = u^2$. This also representable, namely be the one-object category associated to the monoid with the presentation $\langle u,v : uv = u^2 \rangle$. Clearly, $R$ is reflexive, but not symmetric.'
+	'We can adapt the proof from <a href="/category/Mon">$\mathbf{Mon}$</a> as follows: Consider the functor $U : \mathbf{Cat} \to \mathbf{Set}^+$ sending a category $\C$ to the (large) set $\{(x,u) : x \in \mathrm{Ob}(\C) ,\, u \in \mathrm{End}(x) \}$. It is represented by $B \IN$, the one-object category associated to the free monoid in one generator. Consider the relation $R \subseteq U^2$ consisting of those pairs $((x,u),(y,v))$ where $x = y$ and $uv = u^2$. This also representable, namely be the one-object category associated to the monoid with the presentation $\langle u,v : uv = u^2 \rangle$. Clearly, $R$ is reflexive, but not symmetric.'
 ),
 (
 	'Cat',

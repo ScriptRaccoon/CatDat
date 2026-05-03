@@ -81,7 +81,7 @@ VALUES
 	'Meas',
 	'balanced',
 	FALSE,
-	'Take a set $X$ with two different $\sigma$-algebras $\mathcal{A} \subset \mathcal{B}$ (for example, $\mathcal{A} = \{\varnothing,X\}$ and $\mathcal{B} = P(X)$ when $X$ has at least $2$ elements), then the identity map $(X,\mathcal{B}) \to (X,\mathcal{A})$ provides a counterexample.'
+	'Take a set $X$ with two different $\sigma$-algebras $\A \subset \B$ (for example, $\A = \{\varnothing,X\}$ and $\B = P(X)$ when $X$ has at least $2$ elements), then the identity map $(X,\B) \to (X,\A)$ provides a counterexample.'
 ),
 (
 	'Meas',
