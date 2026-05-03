@@ -106,7 +106,7 @@ VALUES
 (
 	'cogenerator',
 	'has a',
-	'An object $Q$ of a category is called a <i>cogenerator</i> if for every pair of parallel morphisms $f,g : A \rightrightarrows B$ the equation $f = g$ holds if for every morphism $h : B \to Q$ we have $h \circ f = h \circ g$. Equivalently, the functor $\Hom(-,Q) : \C^{\mathrm{op}} \to \mathbf{Set}^+$ is faithful. This property refers to the existence of a cogenerator. By definition, $Q$ is a cogenerator if and only if $\{Q\}$ is a <a href="/category-property/cogenerating_set">cogenerating set</a>.',
+	'An object $Q$ of a category is called a <i>cogenerator</i> if for every pair of parallel morphisms $f,g : A \rightrightarrows B$ the equation $f = g$ holds if for every morphism $h : B \to Q$ we have $h \circ f = h \circ g$. Equivalently, the functor $\Hom(-,Q) : \C^{\op} \to \mathbf{Set}^+$ is faithful. This property refers to the existence of a cogenerator. By definition, $Q$ is a cogenerator if and only if $\{Q\}$ is a <a href="/category-property/cogenerating_set">cogenerating set</a>.',
 	'https://ncatlab.org/nlab/show/cogenerator',
 	'generator',
 	TRUE
@@ -122,7 +122,7 @@ VALUES
 (
 	'cogenerating set',
 	'has a',
-	'A set of objects $S$ is called a <i>cogenerating set</i> if for every pair of parallel morphisms $f,g : A \rightrightarrows B$, $f = g$ holds if and only if for every morphism $h : B \to G$ with $G \in S$ we have $h \circ f = h \circ g$. Equivalently, the functor $(\hom(-,G))_{G \in S} : \C^{\mathrm{op}} \to (\mathbf{Set}^+)^S$ is faithful. This property refers to the existence of a cogenerating set.',
+	'A set of objects $S$ is called a <i>cogenerating set</i> if for every pair of parallel morphisms $f,g : A \rightrightarrows B$, $f = g$ holds if and only if for every morphism $h : B \to G$ with $G \in S$ we have $h \circ f = h \circ g$. Equivalently, the functor $(\hom(-,G))_{G \in S} : \C^{\op} \to (\mathbf{Set}^+)^S$ is faithful. This property refers to the existence of a cogenerating set.',
 	'https://ncatlab.org/nlab/show/cogenerator',
 	'generating set',
 	TRUE

@@ -44,7 +44,7 @@ VALUES
 	'has a',
 	'A category $\C$ has a <i>subobject classifier</i> if it has finite limits and a monomorphism* $\top : 1 \hookrightarrow \Omega$ such that for every monomorphism $m : A \hookrightarrow B$ there is a unique morphism $\chi_m : B \to \Omega$ such that
 	$$\begin{CD} A @>{m}>> B \\ @V{!}VV @VV{\chi_m}V \\ 1 @>>{\top}> \Omega \end{CD}$$
-	is a pullback diagram. Equivalently, the functor $\mathrm{Sub} : \C^{\mathrm{op}} \to \mathbf{Set}^+$ is representable.<br>
+	is a pullback diagram. Equivalently, the functor $\mathrm{Sub} : \C^{\op} \to \mathbf{Set}^+$ is representable.<br>
 	*Every morphism $1 \to \Omega$ is a split monomorphism anyway.',
 	'https://ncatlab.org/nlab/show/subobject+classifier',
 	'quotient object classifier',
@@ -66,7 +66,7 @@ VALUES
 	'has a',
 	'A category $\C$ has a <i>regular subobject classifier</i> if it has finite limits and a regular monomorphism* $\top : 1 \hookrightarrow \Omega$ such that for every regular monomorphism $m : A \hookrightarrow B$ there is a unique morphism $\chi_m : B \to \Omega$ such that
 	$$\begin{CD} A @>{m}>> B \\ @V{!}VV @VV{\chi_m}V \\ 1 @>>{\top}> \Omega \end{CD}$$
-	is a pullback diagram. Equivalently, the functor $\mathrm{Sub}_{\mathrm{reg}} : \C^{\mathrm{op}} \to \mathbf{Set}^+$ is representable.<br>
+	is a pullback diagram. Equivalently, the functor $\mathrm{Sub}_{\mathrm{reg}} : \C^{\op} \to \mathbf{Set}^+$ is representable.<br>
 	*Every morphism $1 \to \Omega$ is a split monomorphism and hence regular anyway.',
 	'https://ncatlab.org/nlab/show/subobject+classifier',
 	'regular quotient object classifier',

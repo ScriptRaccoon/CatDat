@@ -43,7 +43,7 @@ VALUES
 	'sSet',
 	'category of simplicial sets',
 	'$\mathbf{sSet}$',
-	'simplicial sets, i.e. functors $\Delta^{\mathrm{op}} \to \mathbf{Set}$ where $\Delta$ is the <a href="/category/Delta">simplex category</a>',
+	'simplicial sets, i.e. functors $\Delta^{\op} \to \mathbf{Set}$ where $\Delta$ is the <a href="/category/Delta">simplex category</a>',
 	'natural transformations',
 	NULL,
 	'https://ncatlab.org/nlab/show/SimpSet',

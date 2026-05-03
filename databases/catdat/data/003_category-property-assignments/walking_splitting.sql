@@ -39,7 +39,7 @@ VALUES
 	'walking_splitting',
 	'self-dual',
 	TRUE,
-	'There is an isomorphism $\mathrm{Split}^\mathrm{op} \to \mathrm{Split}$ defined by $0 \mapsto 0$, $1 \mapsto 1$, $i \mapsto p$, $p \mapsto i$.'
+	'There is an isomorphism $\mathrm{Split}^\op \to \mathrm{Split}$ defined by $0 \mapsto 0$, $1 \mapsto 1$, $i \mapsto p$, $p \mapsto i$.'
 ),
 (
 	'walking_splitting',

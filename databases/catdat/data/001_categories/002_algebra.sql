@@ -125,7 +125,7 @@ VALUES
 	'$R{-}\mathbf{Mod}$',
 	'left $R$-modules',
 	'$R$-linear maps',
-	'This is the prototype of an abelian category. The category of right modules is the same with the opposite ring $R^{\mathrm{op}}$, hence not listed here.<br>
+	'This is the prototype of an abelian category. The category of right modules is the same with the opposite ring $R^{\op}$, hence not listed here.<br>
 	To settle the unsatisfied properties, we make the assumption that $R$ is <i>not</i> semisimple: If $R$ is semisimple, then by the Artin-Wedderburn theorem, the category is equivalent to a finite direct product of categories $D{-}\mathbf{Mod}$ for division rings $D$, and the case of division rings is in a separate entry. In particular, $R \neq 0$ and $R$ is not a field.',
 	'https://ncatlab.org/nlab/show/module',
 	NULL

@@ -15,7 +15,7 @@ VALUES
 	'Rel',
 	'self-dual',
 	TRUE,
-	'There is an isomorphism $\mathbf{Rel} \to \mathbf{Rel}^{\mathrm{op}}$ that is the identity on objects (sets) and maps a relation $R \subseteq X \times Y$ to the opposite relation $R^o \subseteq Y \times X$ defined by $R^o := \{(y,x) : (x,y) \in R \}$.'
+	'There is an isomorphism $\mathbf{Rel} \to \mathbf{Rel}^{\op}$ that is the identity on objects (sets) and maps a relation $R \subseteq X \times Y$ to the opposite relation $R^o \subseteq Y \times X$ defined by $R^o := \{(y,x) : (x,y) \in R \}$.'
 ),
 (
 	'Rel',
