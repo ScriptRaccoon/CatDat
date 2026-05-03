@@ -68,6 +68,13 @@ VALUES
 	'The coproduct (wedge sum) of a family of pointed sets $(X_i)_{i \in I}$ can be realized as the subset of $\prod_{i \in I} X_i$ consisting of those tuples $x$ such that $x_i = 0$ for all but (at most) one index.'
 ),
 (
+	-- TODO: rework this when Barr-exact is added
+	'Set*',
+	'effective cocongruences',
+	TRUE,
+	'We have that $\mathbf{Set}_*^{\mathrm{op}}$ is a slice category of $\mathbf{Set}^{\mathrm{op}}$, which in turn is monadic over $\mathbf{Set}$. Therefore, by combining results from <a href="http://www.springer.com/us/book/9781402019616" target="_blank">Borceux and Bourn</a> Appendix A and <a href="https://ncatlab.org/nlab/show/colimits+in+categories+of+algebras#exact" target="_blank">nLab</a>, $\mathbf{Set}_*^{\mathrm{op}}$ is Barr-exact, and in particular it has effective congruences.'
+),
+(
 	'Set*',
 	'skeletal',
 	FALSE,

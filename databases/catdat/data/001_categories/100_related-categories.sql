@@ -85,6 +85,7 @@ VALUES
 ('Met_oo', 'Met_c'),
 ('Mon', 'CMon'),
 ('Mon', 'Grp'),
+('Mon', 'Cat'),
 ('N', 'N_oo'),
 ('N', 'On'),
 ('N', 'Z_div'),

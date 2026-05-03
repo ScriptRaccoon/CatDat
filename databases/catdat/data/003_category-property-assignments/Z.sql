@@ -55,6 +55,18 @@ VALUES
 ),
 (
 	'Z',
+	'effective congruences',
+	TRUE,
+	'If we have a congruence $E \rightrightarrows X$ in $[\mathbf{CRing}, \mathbf{Set}]$, then evaluating at any commutative ring gives a congruence in $\mathbf{Set}$. Defining $Y$ pointwise to be the quotient of this congruence, we get a morphism of functors $h : X \to Y$, and by <a href="/lemma/effective-congruence-quotients">this result</a> applied pointwise, the kernel pair of $h$ is $E$.'
+),
+(
+	'Z',
+	'effective cocongruences',
+	TRUE,
+	'If we have a cocongruence $X\rightrightarrows E$ in $[\mathbf{CRing}, \mathbf{Set}]$, then evaluating at any commutative gives a cocongruence in $\mathbf{Set}$. Defining $Y$ pointwise to be the equalizer of the pair, we get a morphism of functors $h : Y \to X$, and by the dual of <a href="/lemma/effective-congruence-quotients">this result</a> applied pointwise, the cokernel pair of $h$ is $E$.'
+),
+(
+	'Z',
 	'locally essentially small',
 	FALSE,
 	'See <a href="https://mathoverflow.net/questions/390611" target="_blank">MO/390611</a> for example.'

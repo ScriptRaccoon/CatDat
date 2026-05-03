@@ -96,4 +96,16 @@ VALUES
 	'cofiltered-limit-stable epimorphisms',
 	FALSE,
 	'We know that $\Ring$ does not have this property. Now use the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> applied to the forgetful functor $\Ring \to \Rng$. We only need to verify that it preserves epimorphisms: Let $f : R \to S$ be an epimorphism in $\Ring$ and let $g,h : S \rightrightarrows T$ be two homomorphisms of rngs with $gf = hf$. The element $e = g(1) = h(1) \in T$ is idempotent, and $g,h$ become homomorphisms of rings $S \rightrightarrows eTe$. Hence, $g=h$.'
+),
+(
+	'Rng',
+	'effective cocongruences',
+	FALSE,
+	'The counterexample is similar to the one at <a href="https://mathoverflow.net/a/510809" target="_blank">MO/510744</a> for $\mathbf{Ring}$: in this case,
+	$$X := \langle p \mid p^2 = p \rangle_{\mathbf{Rng}} \cong \mathbb{Z}$$
+	and
+	$$E := \langle p, q \mid p^2 = p, q^2 = q, pq = q, qp = p \rangle_{\mathbf{Rng}}  \cong \begin{pmatrix} \mathbb{Z} & \mathbb{Z} \\ 0 & 0 \end{pmatrix}$$
+	via
+	$$p \mapsto \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix}, \quad q \mapsto \begin{pmatrix} 1 & 1 \\ 0 & 0 \end{pmatrix}.$$
+	From here, the rest of the proof is similar to the one for $\mathbf{Ring}$.'
 );

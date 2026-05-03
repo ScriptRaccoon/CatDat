@@ -99,6 +99,8 @@
 	"filtered-colimit-stable monomorphisms": true,
 	"quotients of congruences": true,
 	"coquotients of cocongruences": true,
+	"effective congruences": true,
+	"effective cocongruences": true,
 
 	"Grothendieck abelian": false,
 	"Malcev": false,

@@ -73,6 +73,12 @@ VALUES
 ),
 (
 	'Rel',
+	'effective congruences',
+	TRUE,
+	'A proof can be found <a href="/pdf/congruences_in_rel.pdf">here</a>.'
+),
+(
+	'Rel',
 	'preadditive',
 	FALSE,
 	'In categories with finite products and finite coproducts, the preadditive structure <a href="/lemma/preadditive_structure_unique">is unique</a> if it exists. In the case of $\Rel$, where both products and coproducts are just disjoint unions, this operation is just the set-theoretic union $f+g = f \cup g$ of relations. This clearly has no inverses.'

@@ -67,6 +67,12 @@ VALUES
 ),
 (
 	'Haus',
+	'effective cocongruences',
+	TRUE,
+	'As the proof at <a href="https://mathoverflow.net/a/509582/2841" target="_blank">MO/509548</a> shows, in fact any coreflexive corelation on $X$ in $\mathbf{Haus}$ is of the form $X +_S X$ for a closed subset $S$ of $X$. Such a cocongruence is clearly effective.'
+),
+(
+	'Haus',
 	'cartesian filtered colimits',
 	FALSE,
 	'It is shown in <a href="https://math.stackexchange.com/questions/1255678">MSE/1255678</a> that $\IQ \times - : \Top \to \Top$ does not preserve sequential colimits (so that it cannot be a left adjoint). The same example also works in $\Haus$: Surely $\IQ$ is Hausdorff, $X_n$ is Hausdorff, as is their colimit $X$, and the colimit (taken in $\Top$) of the $X_n \times \IQ$ admits a bijective continuous map to a Hausdorff space, therefore is also Hausdorff, meaning it is also the colimit taken in $\Haus$.'

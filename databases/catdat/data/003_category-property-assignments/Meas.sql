@@ -100,4 +100,10 @@ VALUES
 	'cofiltered-limit-stable epimorphisms',
 	FALSE,
 	'We already know that $\Set$ does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the functor $\Set \to \Meas$ which equips a set with the trivial $\sigma$-algebra.'
+),
+(
+	'Meas',
+	'effective cocongruences',
+	FALSE,
+	'The proof is similar to the one for <a href="/category/Top">$\mathbf{Top}$</a>: Use the trivial $\sigma$-algebra on a two-point set.'
 );

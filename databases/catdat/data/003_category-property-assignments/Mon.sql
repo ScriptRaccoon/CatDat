@@ -100,5 +100,16 @@ VALUES
 	'CSP',
 	FALSE,
 	'If $M \to N$ is an epimorphism in $\Mon$ and $M$ is infinite, then $\card(N) \leq \card(M)$ (see <a href="https://mathoverflow.net/questions/510431/" target="_blank">MO/510431</a>). This implies that in $\Mon$ the canonical homomorphism $\coprod_{n \geq 0} \IN \to \prod_{n \geq 0} \IN$ is not an epimorphism because its domain is countable and its codomain is uncountable.'
+),
+(
+	'Mon',
+	'effective cocongruences',
+	FALSE,
+	'We adapt the counterexample from <a href="https://mathoverflow.net/a/510809" target="_blank">MO/510744</a> for $\mathbf{Ring}$. Namely, consider the monoids
+	$$\begin{align*} X & := \langle p \mid p^2 = p \rangle \cong (\{ 0, 1 \}, \cdot),\\
+	E & := \langle p, q \mid p^2 = p,\, q^2 = q,\, pq = q,\, qp = p \rangle. \end{align*}$$
+	Then $X$ represents the functor sending a monoid $M$ to its idempotents, and $E$ represents the relation on idempotents $a, b$ of $M$ that $ab = b$, $ba = a$. The equations are equivalent to $aM = bM$, showing that the relation is indeed an equivalence relation.<br>
+	On the other hand, using the multiplicative map
+	$$E \to M_{2\times 2}(\mathbb{Z}), \quad p \mapsto \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix},\quad q \mapsto \begin{pmatrix} 1 & 1 \\ 0 & 0 \end{pmatrix},$$
+	we can see that $p \ne q$ in $E$, so the equalizer of the two maps $X \rightrightarrows E$ is the trivial submonoid $\{ 1 \}$. Therefore, if $E$ were effective, it would be isomorphic to the coproduct $X \sqcup X$, whose underlying set consists of words in $p,q$ with $p,q$ strictly alternating. In particular, in this coproduct, $pq \ne q$.'
 );
-

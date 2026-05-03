@@ -72,11 +72,4 @@ VALUES
 	'CSP',
 	FALSE,
 	'The canonical homomorphism $\bigoplus_{n \geq 0} \IZ \to \prod_{n \geq 0} \IZ$ is injective, but not an epimorphism, since the quotient $\prod_{n \geq 0} \IZ / \bigoplus_{n \geq 0} \IZ$ is not torsion. In fact, it is torsion-free and non-zero.'
-),
-(
-	-- TODO: rework this when effective congruences are added to the database
-	'TorsFreeAb',
-	'multi-algebraic',
-	FALSE,
-	'Every multi-algebraic category has effective congruences, but the congruence $E = \{(x,y) \in \IZ^2 : 2 \mid x-y \}$ on $\IZ$ is not effective in $\TorsFreeAb$: Otherwise, the inclusion $E \hookrightarrow \IZ^2$ would be a regular monomorphism. By their classification below, $\IZ^2 / E$ would be torsion-free. But $(1,0) \notin E$ and $2 (1,0) \in E$.'
 );

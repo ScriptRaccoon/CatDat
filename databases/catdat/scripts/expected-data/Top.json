@@ -155,5 +155,7 @@
 	"gaunt": false,
 	"core-thin": false,
 	"subobject-trivial": false,
-	"quotient-trivial": false
+	"quotient-trivial": false,
+	"effective congruences": false,
+	"effective cocongruences": false
 }

@@ -94,4 +94,11 @@ VALUES
 	'cofiltered-limit-stable epimorphisms',
 	FALSE,
 	'Pick any poset $X$ which has a decreasing sequence of non-empty sets $X = X_0 \supseteq X_1 \supseteq \cdots$ with empty intersection, such as $X_n = \IN_{\geq n}$ with the natural ordering. The unique map $X_n \to 1$ is surjective, but their limit $\varnothing \to 1$ is not surjective.'
+),
+(
+	'Pos',
+	'effective cocongruences',
+	FALSE,
+	'Let $X$ be $\mathbb{R}$ with the standard (total) order, and let $E$ be the poset with underlying set $\mathbb{R} \times \{ 0, 1 \}$ and partial order such that $(x, m) \le (y, n)$ if and only if $x < y$ or $(x, m) = (y, n)$. The two maps $\mathbb{R} \rightrightarrows E$ will be $x \mapsto (x, 0)$ and $x \mapsto (x, 1)$ respectively. For any partial order $(\mathbb{P}, \le)$, the induced equivalence relation on the set of order-preserving functions $\mathbb{R} \to \mathbb{P}$ is that $f \sim g$ if and only if $f(x) \le g(y)$ and $g(x) \le f(y)$ whenever $x < y$. This relation is clearly reflexive and symmetric; for transitivity, if $f \sim g$ and $g \sim h$, then whenever $x < y$, we have $f(x) \le g(\frac{x+y}{2}) \le h(y)$ and similarly $h(x) \le g(\frac{x+y}{2}) \le f(y)$, showing that $f \sim h$.<br>
+	On the other hand, if this cocongruence on $\mathbb{R}$ were effective, then by the dual of <a href="/lemma/effective-congruence-quotients">this result</a>, $E$ would be the cokernel pair of the equalizer of the two maps $\mathbb{R} \rightrightarrows E$. However, that equalizer is the empty poset, so $E$ would have to be the coproduct poset $\mathbb{R} + \mathbb{R}$, giving a contradiction.'
 );

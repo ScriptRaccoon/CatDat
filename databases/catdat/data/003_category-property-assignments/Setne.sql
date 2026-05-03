@@ -116,6 +116,12 @@ VALUES
 ),
 (
 	'Setne',
+	'effective congruences',
+	TRUE,
+	'If a congruence $E \rightrightarrows X$ is the kernel pair of $h : X \to Z$, with both $E$ and $X$ non-empty, then certainly $Z$ must also be non-empty.'
+),
+(
+	'Setne',
 	'sequential limits',
 	FALSE,
 	'Assume that the sequence of inclusions $\cdots \to \IN_{\geq 2} \to \IN_{\geq 1} \to \IN_{\geq 0} = \IN$ as a limit $X$, consisting of maps $X \to \IN_{\geq n}$. Since $X$ is non-empty, there is a map $1 \to X$. This corresponds to a family of compatible maps $ 1 \to \IN_{\geq n}$, i.e. to compatible elements in $\IN_{\geq n}$. But the set $\bigcap_{n \geq 0} \IN_{\geq n}$ is empty.'
@@ -137,4 +143,11 @@ VALUES
 	'coquotients of cocongruences',
 	FALSE,
 	'The two maps $\{0\} \rightrightarrows \{0,1\}$ form a cocongruence on $\{0\}$ &mdash; namely the cofull cocongruence on $\{0\}$ &mdash; but they do not have an equalizer.'
-)
+),
+(
+	'Setne',
+	'effective cocongruences',
+	FALSE,
+	'The two maps $\{0\} \rightrightarrows \{0,1\}$ form a cocongruence on $\{0\}$ &mdash; namely the cofull cocongruence on $\{0\}$ &mdash; but there is no map $Z \to \{0\}$ making the required commutative diagram, much less a cocartesian square.'
+);
+

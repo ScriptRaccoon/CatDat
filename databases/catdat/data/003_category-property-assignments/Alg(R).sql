@@ -96,4 +96,10 @@ VALUES
 	'cofiltered-limit-stable epimorphisms',
 	FALSE,
 	'We already know that $\CAlg(R)$ does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the forgetful functor $\CAlg(R) \to \Alg(R)$. It preserves epimorphisms by <a href="https://math.stackexchange.com/questions/5133488" target="_blank">MSE/5133488</a>.'
+),
+(
+	'Alg(R)',
+	'effective cocongruences',
+	FALSE,
+	'The counterexample is similar to the one for <a href="/category/Ring">$\mathbf{Ring}$</a>: Let $X := R[p] / (p^2-p)$ with cocongruence $E := R \langle p, q \rangle / (p^2-p, q^2-q, pq-q, qp-p)$.'
 );

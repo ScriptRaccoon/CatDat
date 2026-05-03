@@ -100,4 +100,10 @@ VALUES
 	'cofiltered-limit-stable epimorphisms',
 	FALSE,
 	'We know that $\Set$ does not have this property. Now use the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> applied to the functor $\Set \to \Prost$ that equips a set with the chaotic preorder.'
+),
+(
+	'Prost',
+	'effective cocongruences',
+	FALSE,
+	'Consider the proset $E := \{ a, b \}$ with the chaotic preorder. This represents the functor which sends a proset to the pairs of elements $x,y$ with $x \le y$ and $y \le x$. Therefore, it defines a cocongruence $1 \rightrightarrows E$, where the maps are the two possible functions. However, this cannot be effective: for any map $h : Z \to 1$ which equalizes the two functions, $Z$ must be empty. But that means the cokernel pair of $h$ is the two-element proset with the trivial preorder.'
 );

@@ -138,4 +138,10 @@ VALUES
 	'If $(N,z,s)$ is a natural numbers object in $\PMet$, then
 	$$1 \xrightarrow{z} N \xleftarrow{s} N$$
 	is a coproduct cocone by <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, Part A, Lemma 2.5.5. Since there is a map $1 \to N$, we have $N \neq \varnothing$. However, the coproduct of two non-empty pseudo-metric spaces does not exist, see <a href="https://math.stackexchange.com/questions/1778408" target="_blank">MSE/1778408</a>.'
+),
+(
+	'PMet',
+	'effective cocongruences',
+	FALSE,
+	'The proof is similar to the one for <a href="/category/Top">$\mathbf{Top}$</a>: Equip a two-point set with the zero metric; this pseudo-metric space represents the functor taking a pseudo-metric space to the pairs of points with $d(x,y) = 0$. In this case, once you conclude $Z = \varnothing$, the map $h : Z \to 1$ does not have any cokernel pair, since that would have to be a coproduct $1+1$, which does not exist.'
 );

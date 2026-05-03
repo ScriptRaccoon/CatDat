@@ -96,4 +96,10 @@ VALUES
 	'cofiltered-limit-stable epimorphisms',
 	FALSE,
 	'We know that $\CRing$ does not have this property. Now use the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> applied to the forgetful functor $\CRing \to \Ring$. It preserves epimorphisms by <a href="https://math.stackexchange.com/questions/5133488" target="_blank">MSE/5133488</a>.'
+),
+(
+	'Ring',
+	'effective cocongruences',
+	FALSE,
+	'See <a href="https://mathoverflow.net/a/510809" target="_blank">MO/510744</a>.'
 );
