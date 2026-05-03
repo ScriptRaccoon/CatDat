@@ -47,5 +47,5 @@ export const MACROS = {
 	'\\diag': '\\operatorname{diag}',
 	'\\Sub': '\\operatorname{Sub}',
 	'\\Quot': '\\operatorname{Quot}',
-	'\\supp': '\\operatorname{}',
+	'\\supp': '\\operatorname{supp}',
 }
