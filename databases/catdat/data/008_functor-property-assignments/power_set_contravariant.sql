@@ -39,7 +39,7 @@ VALUES
     'power_set_contravariant',
     'finitary',
     FALSE,
-    'Consider the sequence of projections $\cdots \twoheadrightarrow \{0,1\}^2 \twoheadrightarrow \{0,1\}^1$. Its limit in $\mathbf{Set}$ (i.e. colimit in $\mathbf{Set}^{\mathrm{op}}$) is $\{0,1\}^{\mathbb{N}}$, which is uncountable, so that $P(\{0,1\}^{\mathbb{N}})$ is also uncountable. But the colimit of the induced diagram $P(\{0,1\}^1) \hookrightarrow P(\{0,1\}^2) \hookrightarrow \cdots$ is countable since each $P(\{0,1\}^n)$ is finite.'
+    'Consider the sequence of projections $\cdots \twoheadrightarrow \{0,1\}^2 \twoheadrightarrow \{0,1\}^1$. Its limit in $\mathbf{Set}$ (i.e. colimit in $\mathbf{Set}^{\mathrm{op}}$) is $\{0,1\}^{\IN}$, which is uncountable, so that $P(\{0,1\}^{\IN})$ is also uncountable. But the colimit of the induced diagram $P(\{0,1\}^1) \hookrightarrow P(\{0,1\}^2) \hookrightarrow \cdots$ is countable since each $P(\{0,1\}^n)$ is finite.'
 ),
 (
     'power_set_contravariant',

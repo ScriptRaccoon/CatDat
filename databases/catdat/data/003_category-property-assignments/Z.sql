@@ -81,13 +81,13 @@ VALUES
 	'Z',
 	'semi-strongly connected',
 	FALSE,
-	'This is because already the full subcategory of representable functors is not semi-strongly connected, see <a href="/category/CRing">the entry for $\mathbf{CRing}$</a>. Specifically, there is no morphism between $\mathrm{Hom}(\mathbb{F}_2,-)$ and $\mathrm{Hom}(\mathbb{F}_3,-)$.'
+	'This is because already the full subcategory of representable functors is not semi-strongly connected, see <a href="/category/CRing">the entry for $\mathbf{CRing}$</a>. Specifically, there is no morphism between $\mathrm{Hom}(\IF_2,-)$ and $\mathrm{Hom}(\IF_3,-)$.'
 ),
 (
 	'Z',
 	'cartesian closed',
 	FALSE,
-	'There are functors $F,G : \mathbf{CRing} \to \mathbf{Set}$ such that $\mathrm{Hom}(F,G)$ is not essentially small, see <a href="https://mathoverflow.net/questions/390611" target="_blank">MO/390611</a> for example. Now if the exponential $[F,G] : \mathbf{CRing} \to \mathbf{Set}$ exists, we get $[F,G](\mathbb{Z}) \cong \mathrm{Hom}(\mathrm{Hom}(\mathbb{Z},-),[F,G])$ by Yoneda, which simplifies to $\mathrm{Hom}(1,[F,G]) \cong \mathrm{Hom}(1 \times F,G) \cong \mathrm{Hom}(F,G)$, a contradiction.'
+	'There are functors $F,G : \mathbf{CRing} \to \mathbf{Set}$ such that $\mathrm{Hom}(F,G)$ is not essentially small, see <a href="https://mathoverflow.net/questions/390611" target="_blank">MO/390611</a> for example. Now if the exponential $[F,G] : \mathbf{CRing} \to \mathbf{Set}$ exists, we get $[F,G](\IZ) \cong \mathrm{Hom}(\mathrm{Hom}(\IZ,-),[F,G])$ by Yoneda, which simplifies to $\mathrm{Hom}(1,[F,G]) \cong \mathrm{Hom}(1 \times F,G) \cong \mathrm{Hom}(F,G)$, a contradiction.'
 ),
 (
 	'Z',

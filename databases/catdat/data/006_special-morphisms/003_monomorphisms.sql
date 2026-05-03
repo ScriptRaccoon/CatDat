@@ -33,7 +33,7 @@ VALUES
 (
 	'Ab_fg',
 	'injective homomorphisms',
-	'Let $f : A \to B$ be a monomorphism of finitely generated abelian groups. Let $a \in A$ be in the kernel of $a$. Then we may view $a$ as a morphism $a : \mathbb{Z} \to A$ with $f \circ a = 0$, and $\mathbb{Z}$ is finitely generated. Hence, $a = 0$.'
+	'Let $f : A \to B$ be a monomorphism of finitely generated abelian groups. Let $a \in A$ be in the kernel of $a$. Then we may view $a$ as a morphism $a : \IZ \to A$ with $f \circ a = 0$, and $\IZ$ is finitely generated. Hence, $a = 0$.'
 ),
 (
 	'Alg(R)',
@@ -48,7 +48,7 @@ VALUES
 (
 	'Ban',
 	'injective linear contractions',
-	'The unit ball functor $U : \mathbf{Ban} \to \mathbf{Set}$ is faithful and representable (by $\mathbb{C}$), hence reflects and preserves monomorphisms.'
+	'The unit ball functor $U : \mathbf{Ban} \to \mathbf{Set}$ is faithful and representable (by $\IC$), hence reflects and preserves monomorphisms.'
 ),
 (
 	'BG_c',
@@ -98,7 +98,7 @@ VALUES
 (
 	'FinAb',
 	'injective homomorphisms',
-	'Let $f : A \to B$ be a monomorphism of finite abelian groups. Let $a \in A$ be in the kernel of $a$, say of order $n$. Then we may view $a$ as a morphism $a : \mathbb{Z}/n \to A$ with $f \circ a = 0$, and $\mathbb{Z}/n$ is finite. Hence, $a = 0$.'
+	'Let $f : A \to B$ be a monomorphism of finite abelian groups. Let $a \in A$ be in the kernel of $a$, say of order $n$. Then we may view $a$ as a morphism $a : \IZ/n \to A$ with $f \circ a = 0$, and $\IZ/n$ is finite. Hence, $a = 0$.'
 ),
 (
 	'FinGrp',
@@ -123,7 +123,7 @@ VALUES
 (
 	'FreeAb',
 	'injective homomorphisms',
-	'Let $f : A \to B$ be a monomorphism of free abelian groups. Let $a \in A$ be in the kernel of $a$. Then we may view $a$ as a morphism $a : \mathbb{Z} \to A$ with $f \circ a = 0$, and $\mathbb{Z}$ is free. Hence, $a = 0$.'
+	'Let $f : A \to B$ be a monomorphism of free abelian groups. Let $a \in A$ be in the kernel of $a$. Then we may view $a$ as a morphism $a : \IZ \to A$ with $f \circ a = 0$, and $\IZ$ is free. Hence, $a = 0$.'
 ),
 (
 	'FS',
@@ -308,7 +308,7 @@ VALUES
 (
 	'TorsFreeAb',
 	'injective group homomorphisms',
-	'For the non-trivial direction, the forgetful functor to $\mathbf{Set}$ is representable (by the group $\mathbb{Z}$), hence preserves monomorphisms.'
+	'For the non-trivial direction, the forgetful functor to $\mathbf{Set}$ is representable (by the group $\IZ$), hence preserves monomorphisms.'
 ),
 (
 	'Vect',

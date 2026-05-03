@@ -22,7 +22,7 @@ VALUES
 (
 	'B',
 	'category of finite sets and bijections',
-	'$\mathbb{B}$',
+	'$\IB$',
 	'finite sets',
 	'bijective maps',
 	'This category is also known as the permutation groupoid. It appears in the definition of a combinatorial species.',
@@ -53,7 +53,7 @@ VALUES
 	'Sp',
 	'category of combinatorial species',
 	'$\mathbf{Sp}$',
-	'combinatorial species, defined as functors $\mathbb{B} \to \mathbf{FinSet}$, where $\mathbb{B}$ is the category of finite sets and bijections',
+	'combinatorial species, defined as functors $\IB \to \mathbf{FinSet}$, where $\IB$ is the category of finite sets and bijections',
 	'natural transformations',
 	'Most categorical properties are immediately inferred from $\mathbf{FinSet}$. Notice that this category is not locally small; it is just equivalent to a locally small category.',
 	'https://ncatlab.org/nlab/show/species',

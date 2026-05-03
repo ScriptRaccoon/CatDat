@@ -15,7 +15,7 @@ VALUES
 	'Man',
 	'finite products',
 	TRUE,
-	'In short, this follows from the corresponding statement for topological spaces and $\mathbb{R}^n \times \mathbb{R}^m \cong \mathbb{R}^{n+m}$.'
+	'In short, this follows from the corresponding statement for topological spaces and $\IR^n \times \IR^m \cong \IR^{n+m}$.'
 ),
 (
 	'Man',
@@ -39,7 +39,7 @@ VALUES
 	'Man',
 	'cogenerator',
 	TRUE,
-	'The manifold $\mathbb{R}$ is a cogenerator, since for every smooth manifold $M$ and points $p \neq q$ in $M$ there is a smooth function $f : M \to \mathbb{R}$ with $f(p) = 1$ and $f(q) = 0$ (John Lee, Introduction to Smooth Manifolds, Prop. 2.25).'
+	'The manifold $\IR$ is a cogenerator, since for every smooth manifold $M$ and points $p \neq q$ in $M$ there is a smooth function $f : M \to \IR$ with $f(p) = 1$ and $f(q) = 0$ (John Lee, Introduction to Smooth Manifolds, Prop. 2.25).'
 ),
 (
 	'Man',
@@ -90,20 +90,20 @@ VALUES
 	'Man',
 	'countable powers',
 	FALSE,
-	'The power $\mathbb{R}^{\mathbb{N}}$ does not exist. More generally, let $(M_n)_{n \geq 0}$ be a sequence of smooth manifolds of positive dimension whose product $(\pi_n : P \to M_n)_{n \geq 0}$ exists. This product cone in $\mathbf{Man}$ yields a product cone in $\mathbf{Set}$ since the forgetful functor $\mathbf{Man} \to \mathbf{Set}$ is representable, hence preserves all limits. Choose points $x_n \in M_n$ with $T_{x_n}(M_n) \neq 0$. Choose the point $x \in P$ with $\pi_n(x) = x_n$. Consider the linear map $T_x(P) \to \prod_{n \geq 0} T_{x_n}(M_n)$ induced by the derivatives $d_x(\pi_n) : T_x(P) \to T_{x_n}(M_n)$. Since $T_x(P)$ is finite-dimensional and $\prod_{n \geq 0} T_{x_n}(M_n)$ is not, it cannot be surjective. But actually, it is: Choose tangent vectors $v_n \in T_{x_n}(M_n)$. Choose smooth curves $\gamma_n : \mathbb{R} \to M_n$ with $\gamma_n(0)=x_n$ and ${\gamma_n}''(0) = v_n$. By the universal property there is a unique smooth curve $\gamma : \mathbb{R} \to P$ with $\pi_n \gamma = \gamma_n$. In particular, $\gamma(0) = x$. The chain rule now implies that $\gamma''(0) \in T_x(P)$ is a preimage of $(v_n)$ – a contradiction.'
+	'The power $\IR^{\IN}$ does not exist. More generally, let $(M_n)_{n \geq 0}$ be a sequence of smooth manifolds of positive dimension whose product $(\pi_n : P \to M_n)_{n \geq 0}$ exists. This product cone in $\mathbf{Man}$ yields a product cone in $\mathbf{Set}$ since the forgetful functor $\mathbf{Man} \to \mathbf{Set}$ is representable, hence preserves all limits. Choose points $x_n \in M_n$ with $T_{x_n}(M_n) \neq 0$. Choose the point $x \in P$ with $\pi_n(x) = x_n$. Consider the linear map $T_x(P) \to \prod_{n \geq 0} T_{x_n}(M_n)$ induced by the derivatives $d_x(\pi_n) : T_x(P) \to T_{x_n}(M_n)$. Since $T_x(P)$ is finite-dimensional and $\prod_{n \geq 0} T_{x_n}(M_n)$ is not, it cannot be surjective. But actually, it is: Choose tangent vectors $v_n \in T_{x_n}(M_n)$. Choose smooth curves $\gamma_n : \IR \to M_n$ with $\gamma_n(0)=x_n$ and ${\gamma_n}''(0) = v_n$. By the universal property there is a unique smooth curve $\gamma : \IR \to P$ with $\pi_n \gamma = \gamma_n$. In particular, $\gamma(0) = x$. The chain rule now implies that $\gamma''(0) \in T_x(P)$ is a preimage of $(v_n)$ – a contradiction.'
 ),
 (
 	'Man',
 	'copowers',
 	FALSE,
-	'If $I$ is uncountable, then the copower $I \otimes \mathbb{R}$ does not exist. More generally, if $(X_i)_{i \in I}$ is a family of non-empty manifolds whose coproduct $M$ exists, then using maps $M \to \{0,1\}$ we find that the $M_i$ map to disjoint connected components of $M$. Since $M$ only has countably many components, $I$ must be countable.
+	'If $I$ is uncountable, then the copower $I \otimes \IR$ does not exist. More generally, if $(X_i)_{i \in I}$ is a family of non-empty manifolds whose coproduct $M$ exists, then using maps $M \to \{0,1\}$ we find that the $M_i$ map to disjoint connected components of $M$. Since $M$ only has countably many components, $I$ must be countable.
 	See also the answer at <a href="https://math.stackexchange.com/questions/5083641">MSE/5083641</a>.'
 ),
 (
 	'Man',
 	'pushouts',
 	FALSE,
-	'The pushout of $\mathbb{R} \leftarrow \{0\} \rightarrow \mathbb{R}$ does not exist, see <a href="https://mathoverflow.net/questions/19116">MO/19116</a>.'
+	'The pushout of $\IR \leftarrow \{0\} \rightarrow \IR$ does not exist, see <a href="https://mathoverflow.net/questions/19116">MO/19116</a>.'
 ),
 (
 	'Man',
@@ -115,7 +115,7 @@ VALUES
 	'Man',
 	'balanced',
 	FALSE,
-	'The irrational winding of a torus $\mathbb{R} \to S^1 \times S^1$, $t \mapsto (e^{i t}, \, e^{i \alpha t})$, where $\alpha \in \mathbb{R} \setminus \mathbb{Q}$, provides a counterexample. It is injective and has a dense image. Hence, it is a mono- and an epimorphism. But it is not surjective, hence no isomorphism.'
+	'The irrational winding of a torus $\IR \to S^1 \times S^1$, $t \mapsto (e^{i t}, \, e^{i \alpha t})$, where $\alpha \in \IR \setminus \IQ$, provides a counterexample. It is injective and has a dense image. Hence, it is a mono- and an epimorphism. But it is not surjective, hence no isomorphism.'
 ),
 (
 	'Man',
@@ -127,7 +127,7 @@ VALUES
 	'Man',
 	'sequential colimits',
 	FALSE,
-	'If $\mathbf{Man}$ had sequential colimits, then by <a href="/lemma/special_sequential_colimits">this lemma</a> there would be a manifold $M$ that admits a split epimorphism $M \to \mathbb{R}^n$ for every $n$. But then $M$ will have an infinite-dimensional tangent space, which is a contradiction.'
+	'If $\mathbf{Man}$ had sequential colimits, then by <a href="/lemma/special_sequential_colimits">this lemma</a> there would be a manifold $M$ that admits a split epimorphism $M \to \IR^n$ for every $n$. But then $M$ will have an infinite-dimensional tangent space, which is a contradiction.'
 ),
 (
 	'Man',
@@ -145,5 +145,5 @@ VALUES
 	'Man',
 	'quotients of congruences',
 	FALSE,
-	'If $\mathbf{Man}$ had quotients of congruences, then by <a href="/lemma/pushouts-of-monos-via-congruence-quotients">this lemma</a>, it would have a pushout of $\mathbb{R} \leftarrow \{ 0 \} \rightarrow \mathbb{R}$.  This contradicts <a href="https://mathoverflow.net/questions/19116">MO/19916</a>.'
+	'If $\mathbf{Man}$ had quotients of congruences, then by <a href="/lemma/pushouts-of-monos-via-congruence-quotients">this lemma</a>, it would have a pushout of $\IR \leftarrow \{ 0 \} \rightarrow \IR$.  This contradicts <a href="https://mathoverflow.net/questions/19116">MO/19916</a>.'
 );

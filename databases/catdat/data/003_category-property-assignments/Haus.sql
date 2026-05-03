@@ -69,19 +69,19 @@ VALUES
 	'Haus',
 	'cartesian filtered colimits',
 	FALSE,
-	'It is shown in <a href="https://math.stackexchange.com/questions/1255678">MSE/1255678</a> that $\mathbb{Q} \times - : \mathbf{Top} \to \mathbf{Top}$ does not preserve sequential colimits (so that it cannot be a left adjoint). The same example also works in $\mathbf{Haus}$: Surely $\mathbb{Q}$ is Hausdorff, $X_n$ is Hausdorff, as is their colimit $X$, and the colimit (taken in $\mathbf{Top}$) of the $X_n \times \mathbb{Q}$ admits a bijective continuous map to a Hausdorff space, therefore is also Hausdorff, meaning it is also the colimit taken in $\mathbf{Haus}$.'
+	'It is shown in <a href="https://math.stackexchange.com/questions/1255678">MSE/1255678</a> that $\IQ \times - : \mathbf{Top} \to \mathbf{Top}$ does not preserve sequential colimits (so that it cannot be a left adjoint). The same example also works in $\mathbf{Haus}$: Surely $\IQ$ is Hausdorff, $X_n$ is Hausdorff, as is their colimit $X$, and the colimit (taken in $\mathbf{Top}$) of the $X_n \times \IQ$ admits a bijective continuous map to a Hausdorff space, therefore is also Hausdorff, meaning it is also the colimit taken in $\mathbf{Haus}$.'
 ),
 (
 	'Haus',
 	'filtered-colimit-stable monomorphisms',
 	FALSE,
-	'The proof is similar to <a href="/category/Met">$\mathbf{Met}$</a>. For $n \geq 1$ let $X_n$ be the pushout of $[-1/n,+1/n] \hookrightarrow \mathbb{R}$ with itself. That is, $X_n$ is the union of two lines $\mathbb{R} \times \{1\}$ and $\mathbb{R} \times \{2\}$ where we identify $(x,1) \equiv (x,2)$ when $|x| \leq 1/n$. Then $X_n$ is Hausdorff, and there is a canonical surjective continuous map $X_n \to X_{n+1}$. The colimit in $\mathbf{Top}$ is the union of two lines where we identify $(x,1) \equiv (x,2)$ when $|x| \leq 1/n$ for some $n$, i.e. when $x \neq 0$. This is the line with the double origin, which is not Hausdorff. Its Hausdorff reflection is the line $\mathbb{R}$ where all points of both lines are identified, and it provides the colimit in $\mathbf{Haus}$. Now, the injective continuous maps $\{1,2\} \to X_n$, $i \mapsto (0,i)$ (where $\{1,2\}$ is discrete) become the constant map $0 : \{1,2\} \to \mathbb{R}$ in the colimit, which is no monomorphism.'
+	'The proof is similar to <a href="/category/Met">$\mathbf{Met}$</a>. For $n \geq 1$ let $X_n$ be the pushout of $[-1/n,+1/n] \hookrightarrow \IR$ with itself. That is, $X_n$ is the union of two lines $\IR \times \{1\}$ and $\IR \times \{2\}$ where we identify $(x,1) \equiv (x,2)$ when $|x| \leq 1/n$. Then $X_n$ is Hausdorff, and there is a canonical surjective continuous map $X_n \to X_{n+1}$. The colimit in $\mathbf{Top}$ is the union of two lines where we identify $(x,1) \equiv (x,2)$ when $|x| \leq 1/n$ for some $n$, i.e. when $x \neq 0$. This is the line with the double origin, which is not Hausdorff. Its Hausdorff reflection is the line $\IR$ where all points of both lines are identified, and it provides the colimit in $\mathbf{Haus}$. Now, the injective continuous maps $\{1,2\} \to X_n$, $i \mapsto (0,i)$ (where $\{1,2\}$ is discrete) become the constant map $0 : \{1,2\} \to \IR$ in the colimit, which is no monomorphism.'
 ),
 (
 	'Haus',
 	'balanced',
 	FALSE,
-	'The inclusion $\mathbb{Q} \hookrightarrow \mathbb{R}$ is a counterexample; it is an epimorphism since $\mathbb{Q}$ is dense in $\mathbb{R}$.'
+	'The inclusion $\IQ \hookrightarrow \IR$ is a counterexample; it is an epimorphism since $\IQ$ is dense in $\IR$.'
 ),
 (
 	'Haus',
@@ -105,5 +105,5 @@ VALUES
 	'Haus',
 	'cofiltered-limit-stable epimorphisms',
 	FALSE,
-	'Recall the counterexample for sets: The unique maps $\mathbb{N}_{\geq n} \to 1$ are surjective, but their limit $0 = \bigcap_{n \geq 0} \mathbb{N}_{\geq n} \to 1$ is not. This also works in $\mathbf{Haus}$ by using discrete topologies. We could also apply a variant of (the dual of) <a href="/lemma/filtered-monos">this lemma</a> to the discrete topology functor $\mathbf{Set} \to \mathbf{Haus}$, which does not preserve all cofiltered limits, but does preserve intersections.'
+	'Recall the counterexample for sets: The unique maps $\IN_{\geq n} \to 1$ are surjective, but their limit $0 = \bigcap_{n \geq 0} \IN_{\geq n} \to 1$ is not. This also works in $\mathbf{Haus}$ by using discrete topologies. We could also apply a variant of (the dual of) <a href="/lemma/filtered-monos">this lemma</a> to the discrete topology functor $\mathbf{Set} \to \mathbf{Haus}$, which does not preserve all cofiltered limits, but does preserve intersections.'
 );

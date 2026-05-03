@@ -27,7 +27,7 @@ VALUES
 	'Ab',
 	'split abelian',
 	FALSE,
-	'The short exact sequence $0 \xrightarrow{} \mathbb{Z} \xrightarrow{p} \mathbb{Z} \xrightarrow{} \mathbb{Z}/p \xrightarrow{} 0$ does not split. '
+	'The short exact sequence $0 \xrightarrow{} \IZ \xrightarrow{p} \IZ \xrightarrow{} \IZ/p \xrightarrow{} 0$ does not split. '
 ),
 (
 	'Ab',
@@ -39,5 +39,5 @@ VALUES
 	'Ab',
 	'CSP',
 	FALSE,
-	'The canonical homomorphism $\bigoplus_{n \geq 0} \mathbb{Z} \to \prod_{n \geq 0} \mathbb{Z}$ is not surjective, hence no epimorphism.'
+	'The canonical homomorphism $\bigoplus_{n \geq 0} \IZ \to \prod_{n \geq 0} \IZ$ is not surjective, hence no epimorphism.'
 );

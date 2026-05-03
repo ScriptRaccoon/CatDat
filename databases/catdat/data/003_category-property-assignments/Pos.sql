@@ -75,7 +75,7 @@ VALUES
 	'Pos',
 	'Malcev',
 	FALSE,
-	'Consider the subposet $\{(a,b) : a \leq b \}$ of $\mathbb{N}^2$.'
+	'Consider the subposet $\{(a,b) : a \leq b \}$ of $\IN^2$.'
 ),
 (
 	'Pos',
@@ -93,5 +93,5 @@ VALUES
 	'Pos',
 	'cofiltered-limit-stable epimorphisms',
 	FALSE,
-	'Pick any poset $X$ which has a decreasing sequence of non-empty sets $X = X_0 \supseteq X_1 \supseteq \cdots$ with empty intersection, such as $X_n = \mathbb{N}_{\geq n}$ with the natural ordering. The unique map $X_n \to 1$ is surjective, but their limit $\varnothing \to 1$ is not surjective.'
+	'Pick any poset $X$ which has a decreasing sequence of non-empty sets $X = X_0 \supseteq X_1 \supseteq \cdots$ with empty intersection, such as $X_n = \IN_{\geq n}$ with the natural ordering. The unique map $X_n \to 1$ is surjective, but their limit $\varnothing \to 1$ is not surjective.'
 );

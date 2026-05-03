@@ -382,7 +382,7 @@ VALUES
 ),
 (
 	'Z_div',
-	'the identities $(a,a) : a \to a$ and the isomorphisms $(a,-a) : a \to -a$ for $a \in \mathbb{Z}$',
+	'the identities $(a,a) : a \to a$ and the isomorphisms $(a,-a) : a \to -a$ for $a \in \IZ$',
 	'This is trivial.'
 );
 

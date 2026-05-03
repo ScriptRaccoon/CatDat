@@ -283,7 +283,7 @@ VALUES
 	'countable_powers_criterion',
 	'["finite powers", "sequential limits"]',
 	'["countable powers"]',
-	'We can write $X^{\mathbb{N}}$ as the limit of the sequence $\cdots \to X^3 \to X^2 \to X \to 1$ with transition morphisms $f_n : X^{n+1} \to X^n$, $(x_1,\dotsc,x_{n+1}) \mapsto (x_1,\dotsc,x_n)$, i.e., $p_i f_n = p_i$ for $1 \leq i \leq n$.',
+	'We can write $X^{\IN}$ as the limit of the sequence $\cdots \to X^3 \to X^2 \to X \to 1$ with transition morphisms $f_n : X^{n+1} \to X^n$, $(x_1,\dotsc,x_{n+1}) \mapsto (x_1,\dotsc,x_n)$, i.e., $p_i f_n = p_i$ for $1 \leq i \leq n$.',
 	FALSE
 ),
 (

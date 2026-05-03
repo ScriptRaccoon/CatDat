@@ -33,7 +33,7 @@ VALUES
 	'Mon',
 	'balanced',
 	FALSE,
-	'The inclusion of additive monoids $\mathbb{N} \hookrightarrow \mathbb{Z}$ is a counterexample.'
+	'The inclusion of additive monoids $\IN \hookrightarrow \IZ$ is a counterexample.'
 ),
 (
 	'Mon',
@@ -51,25 +51,25 @@ VALUES
 	'Mon',
 	'Malcev',
 	FALSE,
-	'Consider the submonoid $\{(a,b) : a \leq b \}$ of $\mathbb{N}^2$.'
+	'Consider the submonoid $\{(a,b) : a \leq b \}$ of $\IN^2$.'
 ),
 (
 	'Mon',
 	'counital',
 	FALSE,
-	'The canonical morphism $\mathbb{N} \sqcup \mathbb{N} \to \mathbb{N} \times \mathbb{N}$ is not a monomorphism since $\mathbb{N} \sqcup \mathbb{N}$ is not commutative.'
+	'The canonical morphism $\IN \sqcup \IN \to \IN \times \IN$ is not a monomorphism since $\IN \sqcup \IN$ is not commutative.'
 ),
 (
 	'Mon',
 	'CIP',  -- TODO: remove code duplication with "counital" proof
 	FALSE,
-	'The canonical morphism $\mathbb{N} \sqcup \mathbb{N} \to \mathbb{N} \times \mathbb{N}$ is not a monomorphism since $\mathbb{N} \sqcup \mathbb{N}$ is not commutative.'
+	'The canonical morphism $\IN \sqcup \IN \to \IN \times \IN$ is not a monomorphism since $\IN \sqcup \IN$ is not commutative.'
 ),
 (
 	'Mon',
 	'coregular',
 	FALSE,
-	'Consider the monoid $M := \langle x_0, x_1, s : x_0 s = x_1 s = 1 \rangle$. Notice that every element in $M$ has a unique expression as $s^k \cdot u$ with $k \in \mathbb{N}$ and $u \in \langle x_0,x_1 \rangle_M$. Moreover, the canonical homomorphism $\iota : \langle x_0, x_1 \rangle \to M$ (from the free monoid) is injective. We will prove that it is a regular monomorphism, which however is not pushout-stable. Consider $N := \langle x_0, x_1, s_0, s_1 : x_i s_j = 1 \rangle$ and define $f_i : M \to N$ for $i=0,1$ by $f_i(x_j) = x_j$ and $f_i(s) = s_i$. Then $\iota$ is the equalizer of $f_0,f_1$. Now consider $g : \langle x_0,x_1 \rangle \to \langle y_0 \rangle$ defined by $g(x_0) = y_0$, $g(x_1) = 1$. The pushout of $\iota$ with $g$ is given by $\langle x_0, x_1, s, y_0 : x_0 s = x_1 s = 1 , \, x_0 = y_0, \, x_1 = 1 \rangle$, which simplifies to $\langle x_0, s : x_0 s = s = 1 \rangle$, which is trivial.'
+	'Consider the monoid $M := \langle x_0, x_1, s : x_0 s = x_1 s = 1 \rangle$. Notice that every element in $M$ has a unique expression as $s^k \cdot u$ with $k \in \IN$ and $u \in \langle x_0,x_1 \rangle_M$. Moreover, the canonical homomorphism $\iota : \langle x_0, x_1 \rangle \to M$ (from the free monoid) is injective. We will prove that it is a regular monomorphism, which however is not pushout-stable. Consider $N := \langle x_0, x_1, s_0, s_1 : x_i s_j = 1 \rangle$ and define $f_i : M \to N$ for $i=0,1$ by $f_i(x_j) = x_j$ and $f_i(s) = s_i$. Then $\iota$ is the equalizer of $f_0,f_1$. Now consider $g : \langle x_0,x_1 \rangle \to \langle y_0 \rangle$ defined by $g(x_0) = y_0$, $g(x_1) = 1$. The pushout of $\iota$ with $g$ is given by $\langle x_0, x_1, s, y_0 : x_0 s = x_1 s = 1 , \, x_0 = y_0, \, x_1 = 1 \rangle$, which simplifies to $\langle x_0, s : x_0 s = s = 1 \rangle$, which is trivial.'
 ),
 (
 	'Mon',
@@ -99,6 +99,6 @@ VALUES
 	'Mon',
 	'CSP',
 	FALSE,
-	'If $M \to N$ is an epimorphism in $\mathbf{Mon}$ and $M$ is infinite, then $\mathrm{card}(N) \leq \mathrm{card}(M)$ (see <a href="https://mathoverflow.net/questions/510431/" target="_blank">MO/510431</a>). This implies that in $\mathbf{Mon}$ the canonical homomorphism $\coprod_{n \geq 0} \mathbb{N} \to \prod_{n \geq 0} \mathbb{N}$ is not an epimorphism because its domain is countable and its codomain is uncountable.'
+	'If $M \to N$ is an epimorphism in $\mathbf{Mon}$ and $M$ is infinite, then $\mathrm{card}(N) \leq \mathrm{card}(M)$ (see <a href="https://mathoverflow.net/questions/510431/" target="_blank">MO/510431</a>). This implies that in $\mathbf{Mon}$ the canonical homomorphism $\coprod_{n \geq 0} \IN \to \prod_{n \geq 0} \IN$ is not an epimorphism because its domain is countable and its codomain is uncountable.'
 );
 

@@ -39,19 +39,19 @@ VALUES
 	'Sch',
 	'pushouts',
 	FALSE,
-	'The span $\mathbb{A}^1 \leftarrow \mathrm{Spec}(k(t)) \rightarrow \mathbb{A}^1$ has no pushout, see <a href="https://mathoverflow.net/questions/9961" target="_blank">MO/9961</a>.'
+	'The span $\IA^1 \leftarrow \mathrm{Spec}(k(t)) \rightarrow \IA^1$ has no pushout, see <a href="https://mathoverflow.net/questions/9961" target="_blank">MO/9961</a>.'
 ),
 (
 	'Sch',
 	'countable powers',
 	FALSE,
-	'While all diagrams of affine schemes have a limit in the category of schemes, one can show that an infinite product of quasi-compact non-empty schemes only exists when almost all of them are affine, see <a href="https://mathoverflow.net/questions/65506" target="_blank">MO/65506</a>. Thus, for example the power $(\mathbb{P}^1)^{\mathbb{N}}$ does not exist in $\mathbf{Sch}$.'
+	'While all diagrams of affine schemes have a limit in the category of schemes, one can show that an infinite product of quasi-compact non-empty schemes only exists when almost all of them are affine, see <a href="https://mathoverflow.net/questions/65506" target="_blank">MO/65506</a>. Thus, for example the power $(\IP^1)^{\IN}$ does not exist in $\mathbf{Sch}$.'
 ),
 (
 	'Sch',
 	'balanced',
 	FALSE,
-	'The canonical morphism $\mathrm{Spec}(\mathbb{Z}/2 \times \mathbb{Z}[1/2]) \longrightarrow \mathrm{Spec}(\mathbb{Z})$ is a mono- and an epimorphism, but no isomorphism.'
+	'The canonical morphism $\mathrm{Spec}(\IZ/2 \times \IZ[1/2]) \longrightarrow \mathrm{Spec}(\IZ)$ is a mono- and an epimorphism, but no isomorphism.'
 ),
 (
 	'Sch',
@@ -63,13 +63,13 @@ VALUES
 	'Sch',
 	'Malcev',
 	FALSE,
-	'Consider the subscheme $V(x-y) \cup V(y) \subseteq \mathbb{A}^2$. It contains the diagonal but it is not symmetric.'
+	'Consider the subscheme $V(x-y) \cup V(y) \subseteq \IA^2$. It contains the diagonal but it is not symmetric.'
 ),
 (
 	'Sch',
 	'semi-strongly connected',
 	FALSE,
-	'This is because already the full subcategory of affine schemes is not semi-strongly connected, see <a href="/category/CRing">the entry for $\mathbf{CRing}$</a>. Specifically, there is no morphism between $\mathrm{Spec}(\mathbb{F}_2)$ and $\mathrm{Spec}(\mathbb{F}_3)$.'
+	'This is because already the full subcategory of affine schemes is not semi-strongly connected, see <a href="/category/CRing">the entry for $\mathbf{CRing}$</a>. Specifically, there is no morphism between $\mathrm{Spec}(\IF_2)$ and $\mathrm{Spec}(\IF_3)$.'
 ),
 (
 	'Sch',
@@ -81,5 +81,5 @@ VALUES
 	'Sch',
 	'quotients of congruences',
 	FALSE,
-	'If $\mathbf{Sch}$ had quotients of congruences, then by <a href="/lemma/pushouts-of-monos-via-congruence-quotients">this lemma</a> it would also have pushouts of monomorphisms, contradicting the fact that the span $\mathbb{A}^1 \leftarrow \mathrm{Spec}(k(t)) \rightarrow \mathbb{A}^1$ has no pushout - see <a href="https://mathoverflow.net/questions/9961" target="_blank">MO/9961</a>.'
+	'If $\mathbf{Sch}$ had quotients of congruences, then by <a href="/lemma/pushouts-of-monos-via-congruence-quotients">this lemma</a> it would also have pushouts of monomorphisms, contradicting the fact that the span $\IA^1 \leftarrow \mathrm{Spec}(k(t)) \rightarrow \IA^1$ has no pushout - see <a href="https://mathoverflow.net/questions/9961" target="_blank">MO/9961</a>.'
 );

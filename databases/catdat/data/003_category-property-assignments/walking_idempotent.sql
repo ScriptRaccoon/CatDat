@@ -45,7 +45,7 @@ VALUES
     'walking_idempotent',
     'preadditive',
     TRUE,
-    'The monoid $\{1,e\}$ with $e^2=e$ is the underlying multiplicative monoid of the ring $\mathbb{Z}/2$, where $e=0$. Thus, the (unique) preadditive structure is given by $1 + e = e + 1 = 1$, $e + e = e$ and $1 + 1 = e$.'
+    'The monoid $\{1,e\}$ with $e^2=e$ is the underlying multiplicative monoid of the ring $\IZ/2$, where $e=0$. Thus, the (unique) preadditive structure is given by $1 + e = e + 1 = 1$, $e + e = e$ and $1 + 1 = e$.'
 ),
 (
     'walking_idempotent',

@@ -87,7 +87,7 @@ VALUES
 	'Prost',
 	'Malcev',
 	FALSE,
-	'Consider the subproset $\{(a,b) : a \leq b \}$ of $\mathbb{N}^2$.'
+	'Consider the subproset $\{(a,b) : a \leq b \}$ of $\IN^2$.'
 ),
 (
 	'Prost',

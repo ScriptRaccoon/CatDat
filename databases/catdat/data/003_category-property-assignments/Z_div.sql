@@ -27,13 +27,13 @@ VALUES
 	'Z_div',
 	'distributive',
 	TRUE,
-	'We need to prove $\mathrm{lcm}_i \gcd(a, b_i) \cong \gcd(a, \mathrm{lcm}_i b_i)$ for finite families. If $x$ denotes the LHS and $y$ denotes the RHS, the relation $x \mid y$ is formal. If $v_p(-) : \mathbb{Z} \to \mathbb{N}_{\infty}$  denotes the multiplicity of a prime $p$, then $v_p(x)$ equals $\max_i \min(v_p(a),v_p(b_i))$, and $v_p(y)$ equals $\min(v_p(a), \max_i v_p(b_i))$. Since our family is finite, there is some $i_0$ with $\max_i v_p(b_i) = v_p(b_{i_0})$. Then $v_p(x) \geq \min(v_p(a),v_p(b_{i_0})) = v_p(y)$. This proves $y \mid x$.'
+	'We need to prove $\mathrm{lcm}_i \gcd(a, b_i) \cong \gcd(a, \mathrm{lcm}_i b_i)$ for finite families. If $x$ denotes the LHS and $y$ denotes the RHS, the relation $x \mid y$ is formal. If $v_p(-) : \IZ \to \IN_{\infty}$  denotes the multiplicity of a prime $p$, then $v_p(x)$ equals $\max_i \min(v_p(a),v_p(b_i))$, and $v_p(y)$ equals $\min(v_p(a), \max_i v_p(b_i))$. Since our family is finite, there is some $i_0$ with $\max_i v_p(b_i) = v_p(b_{i_0})$. Then $v_p(x) \geq \min(v_p(a),v_p(b_{i_0})) = v_p(y)$. This proves $y \mid x$.'
 ),
 (
 	'Z_div',
 	'codistributive',
 	TRUE,
-	'We need to prove $\mathrm{lcm}(a, \gcd_i b_i) \cong \gcd_i \mathrm{lcm}(a,b_i)$ for finite families. This is clear for the empty family (both sides are $0$ then), so assume it is non-empty. If $x$ denotes the LHS and $y$ denotes the RHS, the relation $x \mid y$ is formal. If $v_p(-) : \mathbb{Z} \to \mathbb{N}_{\infty}$ denotes the multiplicity of a prime $p$, then $v_p(x)$ equals $\max(v_p(a), \min_i v_p(b_i))$, and $v_p(y)$ equals $\min_i \max(v_p(a), v_p(b_i))$. Choose some $i_0$ with $\min_i v_p(b_i) = v_p(b_{i_0})$. Then $v_p(x) = \max(v_p(a), v_p(b_{i_0})) \geq v_p(y)$.'
+	'We need to prove $\mathrm{lcm}(a, \gcd_i b_i) \cong \gcd_i \mathrm{lcm}(a,b_i)$ for finite families. This is clear for the empty family (both sides are $0$ then), so assume it is non-empty. If $x$ denotes the LHS and $y$ denotes the RHS, the relation $x \mid y$ is formal. If $v_p(-) : \IZ \to \IN_{\infty}$ denotes the multiplicity of a prime $p$, then $v_p(x)$ equals $\max(v_p(a), \min_i v_p(b_i))$, and $v_p(y)$ equals $\min_i \max(v_p(a), v_p(b_i))$. Choose some $i_0$ with $\min_i v_p(b_i) = v_p(b_{i_0})$. Then $v_p(x) = \max(v_p(a), v_p(b_{i_0})) \geq v_p(y)$.'
 ),
 (
 	'Z_div',

@@ -27,7 +27,7 @@ VALUES
 	'Met_oo',
 	'cartesian filtered colimits',
 	TRUE,
-	'We can use the same proof as for the <a href="/category/Met">category of metric spaces</a> since the equation $\inf_i \max(r, s_i) = \max(r, \inf_i s_i)$ also holds for for $r, s_i \in \mathbb{R} \cup \{\infty\}$.'
+	'We can use the same proof as for the <a href="/category/Met">category of metric spaces</a> since the equation $\inf_i \max(r, s_i) = \max(r, \inf_i s_i)$ also holds for for $r, s_i \in \IR \cup \{\infty\}$.'
 ),
 (
 	'Met_oo',
@@ -39,7 +39,7 @@ VALUES
 	'Met_oo',
 	'cogenerator',
 	TRUE,
-	'The proof is similar to $\mathbf{Met}$, a cogenerator is given by $\mathbb{R} \cup \{\infty\}$ with the metric in which $d(a,\infty)=\infty$ for $a \in \mathbb{R}$. Then one checks that the maps $d(a,-) : X \to \mathbb{R} \cup \{\infty\}$ are non-expansive and finishes as for $\mathbf{Met}$.'
+	'The proof is similar to $\mathbf{Met}$, a cogenerator is given by $\IR \cup \{\infty\}$ with the metric in which $d(a,\infty)=\infty$ for $a \in \IR$. Then one checks that the maps $d(a,-) : X \to \IR \cup \{\infty\}$ are non-expansive and finishes as for $\mathbf{Met}$.'
 ),
 (
 	'Met_oo',
@@ -51,7 +51,7 @@ VALUES
 	'Met_oo',
 	'balanced',
 	FALSE,
-	'The inclusion $\mathbb{Q} \hookrightarrow \mathbb{R}$ provides a counterexample. Alternatively, consider the identity map $(X,2d) \to (X,d)$ for any non-trivial metric space $(X,d)$.'
+	'The inclusion $\IQ \hookrightarrow \IR$ provides a counterexample. Alternatively, consider the identity map $(X,2d) \to (X,d)$ for any non-trivial metric space $(X,d)$.'
 ),
 (
 	'Met_oo',
@@ -75,7 +75,7 @@ VALUES
 	'Met_oo',
 	'Malcev',
 	FALSE,
-	'Consider the metric subspace $\{(a,b) \in \mathbb{R}^2 : a \leq b\}$ of $\mathbb{R}^2$.'
+	'Consider the metric subspace $\{(a,b) \in \IR^2 : a \leq b\}$ of $\IR^2$.'
 ),
 (
 	'Met_oo',

@@ -12,7 +12,7 @@ Thus, in principle everything is a set, but we rename them as follows to introdu
 - The sets in $\mathrm{Set}^+$ are renamed to _collections_ (sometimes also _large sets_).
 - All available sets are renamed to _hypercollections_ (which may or may not lie in $\mathrm{Set}^+$).
 
-For example, $\mathbb{R}$ is a set, $\mathrm{Set}$ is a collection, and $\mathrm{Set}^+$ is a hypercollection. The collection $\mathrm{Set}$ consists of all sets, and the hypercollection $\mathrm{Set}^+$ consists of all collections. Every set is also a collection, and every collection is also a hypercollection. There is a collection $\mathrm{Grp}$ that consists of all groups, a collection $\mathrm{Top}$ of all topological spaces, etc.
+For example, $\IR$ is a set, $\mathrm{Set}$ is a collection, and $\mathrm{Set}^+$ is a hypercollection. The collection $\mathrm{Set}$ consists of all sets, and the hypercollection $\mathrm{Set}^+$ consists of all collections. Every set is also a collection, and every collection is also a hypercollection. There is a collection $\mathrm{Grp}$ that consists of all groups, a collection $\mathrm{Top}$ of all topological spaces, etc.
 
 Note that sets, collections, and hypercollections all satisfy the ZFC axioms. In this sense, (hyper)collections behave in the same way as sets. This is crucial for category theory. For example, we can form the collection of all maps between two collections. This basic property is not satisfied by [classes](<https://en.wikipedia.org/wiki/Class_(set_theory)>), which are not adequate for category theory.
 
@@ -28,7 +28,7 @@ In our framework, there is no way to group all hypercollections into a single ma
 
 A family $(X_i)_{i \in I}$ of collections is called _small_ when its index collection is a set.
 
-A collection is called _countable_ if it admits a surjective map from $\mathbb{N}$. In particular, every finite collection is countable.
+A collection is called _countable_ if it admits a surjective map from $\IN$. In particular, every finite collection is countable.
 
 ### Categories
 

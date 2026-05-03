@@ -27,7 +27,7 @@ VALUES
 	'FI',
 	'essentially countable',
 	TRUE,
-	'Every finite set is isomorphic to some $\{1,\dotsc,n\}$ for some $n \in \mathbb{N}$.'
+	'Every finite set is isomorphic to some $\{1,\dotsc,n\}$ for some $n \in \IN$.'
 ),
 (
 	'FI',

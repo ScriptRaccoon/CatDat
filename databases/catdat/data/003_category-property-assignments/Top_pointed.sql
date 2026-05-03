@@ -125,7 +125,7 @@ VALUES
 	'Top*',
 	'cartesian filtered colimits',
 	FALSE,
-	'The functor $\mathbb{Q} \times - : \mathbf{Top}_* \to \mathbf{Top}_*$ does not preserve colimits, see <a href="https://math.stackexchange.com/questions/2969372" target="_blank">MSE/2969372</a>. The counterexample also works for pointed spaces.'
+	'The functor $\IQ \times - : \mathbf{Top}_* \to \mathbf{Top}_*$ does not preserve colimits, see <a href="https://math.stackexchange.com/questions/2969372" target="_blank">MSE/2969372</a>. The counterexample also works for pointed spaces.'
 ),
 (
 	'Top*',

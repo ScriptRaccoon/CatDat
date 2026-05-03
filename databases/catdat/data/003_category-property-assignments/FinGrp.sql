@@ -21,7 +21,7 @@ VALUES
 	'FinGrp',
 	'essentially countable',
 	TRUE,
-	'The underlying set of a finite structure can be chosen to be a subset of $\mathbb{N}$.'
+	'The underlying set of a finite structure can be chosen to be a subset of $\IN$.'
 ),
 (
 	'FinGrp',
@@ -75,7 +75,7 @@ VALUES
 	'FinGrp',
 	'cogenerator',
 	FALSE,
-	'We apply <a href="/lemma/missing_cogenerator">this lemma</a> to the collection of finite simple groups: Any non-trivial homomorphism from a finite simple group to a finite group must be injective, and for every $n \in \mathbb{N}$ there is a finite simple group of size $\geq n$ (for example, the alternating group on $n+5$ elements).'
+	'We apply <a href="/lemma/missing_cogenerator">this lemma</a> to the collection of finite simple groups: Any non-trivial homomorphism from a finite simple group to a finite group must be injective, and for every $n \in \IN$ there is a finite simple group of size $\geq n$ (for example, the alternating group on $n+5$ elements).'
 ),
 (
 	'FinGrp',

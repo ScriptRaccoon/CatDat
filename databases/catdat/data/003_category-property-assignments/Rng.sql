@@ -33,7 +33,7 @@ VALUES
 	'Rng',
 	'balanced',
 	FALSE,
-	'The inclusion $\mathbb{Z} \hookrightarrow \mathbb{Q}$ is a counterexample. (The proof can be reduced to the unital case.)'
+	'The inclusion $\IZ \hookrightarrow \IQ$ is a counterexample. (The proof can be reduced to the unital case.)'
 ),
 (
 	'Rng',
@@ -51,13 +51,13 @@ VALUES
 	'Rng',
 	'counital',
 	FALSE,
-	'If $\mathbb{Z}\langle X_1,\dotsc,X_n \rangle_0$ denotes the free rng on $n$ generators (non-commutative polynomials without constant term), then the canonical homomorphism $\mathbb{Z}\langle X,Y \rangle_0 = \mathbb{Z}\langle X \rangle_0 \sqcup \mathbb{Z}\langle Y \rangle_0 \to \mathbb{Z}\langle X \rangle_0 \times \mathbb{Z}\langle Y \rangle_0$ is not a monomorphism since $\mathbb{Z}\langle X,Y \rangle_0$ is not commutative.'
+	'If $\IZ\langle X_1,\dotsc,X_n \rangle_0$ denotes the free rng on $n$ generators (non-commutative polynomials without constant term), then the canonical homomorphism $\IZ\langle X,Y \rangle_0 = \IZ\langle X \rangle_0 \sqcup \IZ\langle Y \rangle_0 \to \IZ\langle X \rangle_0 \times \IZ\langle Y \rangle_0$ is not a monomorphism since $\IZ\langle X,Y \rangle_0$ is not commutative.'
 ),
 (
 	'Rng',
 	'CIP', -- TODO: remove code duplication with "counital" proof
 	FALSE,
-	'If $\mathbb{Z}\langle X_1,\dotsc,X_n \rangle_0$ denotes the free rng on $n$ generators (non-commutative polynomials without constant term), then the canonical homomorphism $\mathbb{Z}\langle X,Y \rangle_0 = \mathbb{Z}\langle X \rangle_0 \sqcup \mathbb{Z}\langle Y \rangle_0 \to \mathbb{Z}\langle X \rangle_0 \times \mathbb{Z}\langle Y \rangle_0$ is not a monomorphism since $\mathbb{Z}\langle X,Y \rangle_0$ is not commutative.'
+	'If $\IZ\langle X_1,\dotsc,X_n \rangle_0$ denotes the free rng on $n$ generators (non-commutative polynomials without constant term), then the canonical homomorphism $\IZ\langle X,Y \rangle_0 = \IZ\langle X \rangle_0 \sqcup \IZ\langle Y \rangle_0 \to \IZ\langle X \rangle_0 \times \IZ\langle Y \rangle_0$ is not a monomorphism since $\IZ\langle X,Y \rangle_0$ is not commutative.'
 ),
 (
 	'Rng',
@@ -69,7 +69,7 @@ VALUES
 	'Rng',
 	'coregular',
 	FALSE,
-	'We can copy the proof for the <a href="/category/Ring">category of rings</a>. In short, the inclusion of diagonal matrices $\mathbb{Q}^2 \hookrightarrow M_2(\mathbb{Q})$ is a regular monomorphism, but becomes zero after taking the pushout with $p_1 : \mathbb{Q}^2 \twoheadrightarrow \mathbb{Q}$ because $M_2(\mathbb{Q})$ is simple.'
+	'We can copy the proof for the <a href="/category/Ring">category of rings</a>. In short, the inclusion of diagonal matrices $\IQ^2 \hookrightarrow M_2(\IQ)$ is a regular monomorphism, but becomes zero after taking the pushout with $p_1 : \IQ^2 \twoheadrightarrow \IQ$ because $M_2(\IQ)$ is simple.'
 ),
 (
 	'Rng',
@@ -81,7 +81,7 @@ VALUES
 	'Rng',
 	'cocartesian cofiltered limits',
 	FALSE,
-	'Consider the ring $A = \mathbb{Z}[X]$ and the sequence of rings $B_n = \mathbb{Z}[Y]/(Y^{n+1})$ with projections $B_{n+1} \to B_n$, whose limit is $\mathbb{Z}[[Y]]$ (both in $\mathbf{Ring}$ and $\mathbf{Rng}$). Every element in the coproduct of rngs $\mathbb{Z}[X] \sqcup \mathbb{Z}[[Y]]$ has a finite "free product" length. Now consider the elements
+	'Consider the ring $A = \IZ[X]$ and the sequence of rings $B_n = \IZ[Y]/(Y^{n+1})$ with projections $B_{n+1} \to B_n$, whose limit is $\IZ[[Y]]$ (both in $\mathbf{Ring}$ and $\mathbf{Rng}$). Every element in the coproduct of rngs $\IZ[X] \sqcup \IZ[[Y]]$ has a finite "free product" length. Now consider the elements
 	$$w_n = (1 + XY) (1+XY^2) \cdots (1+X Y^n) - 1 \in A \sqcup B_n.$$
 	Because of $w_n \equiv w_{n-1} \bmod Y^n$ these form an element $w \in \lim_n (A \sqcup B_n)$. Expanding $w_n$, the longest term is $XY XY^2 \cdots X Y^n$ of "free product" length $2n$, which is unbounded.'
 ),
@@ -89,7 +89,7 @@ VALUES
 	'Rng',
 	'CSP',
 	FALSE,
-	'Assume that $\coprod_n \mathbb{Z} \to \prod_n \mathbb{Z}$ is an epimorphism in $\mathbf{Rng}$. Then $((\coprod_n \mathbb{Z})^+)^{\mathrm{ab}} \to \prod_n \mathbb{Z}$ would be an epimorphism in $\mathbf{CRing}$, where $(-)^+$ denotes the unitalization and $(-)^{\mathrm{ab}}$ the abelianization. But if $R \to S$ is an epimorphism of commutative rings, then $\mathrm{card}(S) \leq \mathrm{card}(R)$ by <a href="https://stacks.math.columbia.edu/tag/04W0" target="_blank">SP/04W0</a>. Since $((\coprod_n \mathbb{Z})^+)^{\mathrm{ab}}$ is countable and $\prod_n \mathbb{Z}$ is not, we get a contradiction.'
+	'Assume that $\coprod_n \IZ \to \prod_n \IZ$ is an epimorphism in $\mathbf{Rng}$. Then $((\coprod_n \IZ)^+)^{\mathrm{ab}} \to \prod_n \IZ$ would be an epimorphism in $\mathbf{CRing}$, where $(-)^+$ denotes the unitalization and $(-)^{\mathrm{ab}}$ the abelianization. But if $R \to S$ is an epimorphism of commutative rings, then $\mathrm{card}(S) \leq \mathrm{card}(R)$ by <a href="https://stacks.math.columbia.edu/tag/04W0" target="_blank">SP/04W0</a>. Since $((\coprod_n \IZ)^+)^{\mathrm{ab}}$ is countable and $\prod_n \IZ$ is not, we get a contradiction.'
 ),
 (
 	'Rng',

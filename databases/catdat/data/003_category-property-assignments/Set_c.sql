@@ -15,7 +15,7 @@ VALUES
 	'Set_c',
 	'essentially small',
 	TRUE,
-	'Every countable set is isomorphic to a subset of $\mathbb{N}$.'
+	'Every countable set is isomorphic to a subset of $\IN$.'
 ),
 (
 	'Set_c',
@@ -105,7 +105,7 @@ VALUES
 	'Set_c',
 	'countable powers',
 	FALSE,
-	'Since the forgetful functor $\mathbf{Set}_\mathrm{c} \to \mathbf{Set}$ is representable, it preserves (countable) products. Therefore, if the power $\{0,1\}^{\mathbb{N}}$ exists in $\mathbf{Set}_\mathrm{c}$, it must be the ordinary cartesian product, which however is uncountable.'
+	'Since the forgetful functor $\mathbf{Set}_\mathrm{c} \to \mathbf{Set}$ is representable, it preserves (countable) products. Therefore, if the power $\{0,1\}^{\IN}$ exists in $\mathbf{Set}_\mathrm{c}$, it must be the ordinary cartesian product, which however is uncountable.'
 ),
 (
 	'Set_c',

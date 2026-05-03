@@ -14,7 +14,7 @@ INSERT INTO lemmas (
     'hilberts_hotel',
     'Hilbert''s Hotel',
     'Let $\mathcal{C}$ be a category with countable powers. Then for every object $X \in \mathcal{C}$ there is an object $P \in \mathcal{C}$ with $P \cong X \times P$ and which has a morphism $X \to P$.',
-    'Take $P := X^{\mathbb{N}}$. Since $\mathbb{N} \cong 1 + \mathbb{N}$ as sets, we have $P \cong X \times P$. The diagonal provides a morphism $X \to P$.'
+    'Take $P := X^{\IN}$. Since $\IN \cong 1 + \IN$ as sets, we have $P \cong X \times P$. The diagonal provides a morphism $X \to P$.'
 ),
 (
     'preadditive_structure_unique',

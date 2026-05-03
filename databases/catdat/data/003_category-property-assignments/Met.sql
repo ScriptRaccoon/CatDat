@@ -51,7 +51,7 @@ VALUES
 	'Met',
 	'cartesian filtered colimits',
 	TRUE,
-	'The canonical map $\mathrm{colim}_i (X \times Y_i) \to X \times \mathrm{colim}_i Y_i$ is an isomorphism for directed diagrams $(Y_i)$: It is surjective by the concrete description of directed colimits. It is isometric because of the elementary observation $\inf_i \max(r, s_i) = \max(r, \inf_i s_i)$ for $r, s_i \in \mathbb{R}$, where $i \leq j \implies s_i \geq s_j$.'
+	'The canonical map $\mathrm{colim}_i (X \times Y_i) \to X \times \mathrm{colim}_i Y_i$ is an isomorphism for directed diagrams $(Y_i)$: It is surjective by the concrete description of directed colimits. It is isometric because of the elementary observation $\inf_i \max(r, s_i) = \max(r, \inf_i s_i)$ for $r, s_i \in \IR$, where $i \leq j \implies s_i \geq s_j$.'
 ),
 (
 	'Met',
@@ -69,13 +69,13 @@ VALUES
 	'Met',
 	'cogenerator',
 	TRUE,
-	'We claim that $\mathbb{R}$ with the usual metric is a cogenerator. Let $a,b \in X$ be two points of a metric space such that $f(a)=f(b)$ for all non-expansive maps $f : X \to \mathbb{R}$. This applies in particular to $f(x) := d(a,x)$ and shows that $0=d(a,a)=d(a,b)$, so that $a=b$.' 
+	'We claim that $\IR$ with the usual metric is a cogenerator. Let $a,b \in X$ be two points of a metric space such that $f(a)=f(b)$ for all non-expansive maps $f : X \to \IR$. This applies in particular to $f(x) := d(a,x)$ and shows that $0=d(a,a)=d(a,b)$, so that $a=b$.' 
 ),
 (
 	'Met',
 	'well-copowered',
 	TRUE,
-	'If $f : X \to Y$ is an epimorphism, then $f(X)$ is dense in $Y$ (see below). Hence, there is an injective map $Y \to X^{\mathbb{N}}$, which bounds the size of $Y$.'
+	'If $f : X \to Y$ is an epimorphism, then $f(X)$ is dense in $Y$ (see below). Hence, there is an injective map $Y \to X^{\IN}$, which bounds the size of $Y$.'
 ),
 (
 	'Met',
@@ -87,13 +87,13 @@ VALUES
 	'Met',
 	'countable powers',
 	FALSE,
-	'Assume that the power $P = \mathbb{R}^{\mathbb{N}}$ exists, where $\mathbb{R}$ has the usual metric. Since the forgetful functor $\mathbf{Met} \to \mathbf{Set}$ is representable, it preserves limits, powers in particular. Thus, we may assume that $P$ is the set of sequences of numbers and that the projections $p_n : P \to \mathbb{R}$ are given by $p_n(x) = x_n$. Now consider the sequences $x = (n)_n$ and $y = (0)_n$. Since each $p_n$ is non-expansive, we get $d(x,y) \geq d(p_n(x),p_n(y)) = d(n,0) = n$. But then $d(x,y) = \infty$, a contradiction.'
+	'Assume that the power $P = \IR^{\IN}$ exists, where $\IR$ has the usual metric. Since the forgetful functor $\mathbf{Met} \to \mathbf{Set}$ is representable, it preserves limits, powers in particular. Thus, we may assume that $P$ is the set of sequences of numbers and that the projections $p_n : P \to \IR$ are given by $p_n(x) = x_n$. Now consider the sequences $x = (n)_n$ and $y = (0)_n$. Since each $p_n$ is non-expansive, we get $d(x,y) \geq d(p_n(x),p_n(y)) = d(n,0) = n$. But then $d(x,y) = \infty$, a contradiction.'
 ),
 (
 	'Met',
 	'binary copowers',
 	FALSE,
-	'The coproduct of two non-empty metric spaces does not exist, see <a href="https://math.stackexchange.com/questions/1778408" target="_blank">MSE/1778408</a>. For example, the copower $\mathbb{R} \sqcup \mathbb{R}$ does not exist. We only get coproducts when allowing $\infty$ as a distance, as in $\mathbf{Met}_{\infty}$.'
+	'The coproduct of two non-empty metric spaces does not exist, see <a href="https://math.stackexchange.com/questions/1778408" target="_blank">MSE/1778408</a>. For example, the copower $\IR \sqcup \IR$ does not exist. We only get coproducts when allowing $\infty$ as a distance, as in $\mathbf{Met}_{\infty}$.'
 ),
 (
 	'Met',
@@ -105,7 +105,7 @@ VALUES
 	'Met',
 	'balanced',
 	FALSE,
-	'The inclusion $\mathbb{Q} \hookrightarrow \mathbb{R}$ is a counterexample; it is an epimorphism since $\mathbb{Q}$ is dense in $\mathbb{R}$. Alternatively, consider the identity map $(X,2d) \to (X,d)$ for any non-trivial metric space $(X,d)$.'
+	'The inclusion $\IQ \hookrightarrow \IR$ is a counterexample; it is an epimorphism since $\IQ$ is dense in $\IR$. Alternatively, consider the identity map $(X,2d) \to (X,d)$ for any non-trivial metric space $(X,d)$.'
 ),
 (
 	'Met',
@@ -135,7 +135,7 @@ VALUES
 	'Met',
 	'Malcev',
 	FALSE,
-	'Consider the metric subspace $\{(a,b) \in \mathbb{R}^2 : a \leq b\}$ of $\mathbb{R}^2$.'
+	'Consider the metric subspace $\{(a,b) \in \IR^2 : a \leq b\}$ of $\IR^2$.'
 ),
 (
 	'Met',

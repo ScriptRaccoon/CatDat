@@ -170,7 +170,7 @@ VALUES
 (
 	'finite powers',
 	'has',
-	'A category has <i>finite powers</i> when for every object $X$ and every finite set $I$ the power $X^I$ exists. Equivalently, for every $n \in \mathbb{N}$ the power $X^n$ exists.',
+	'A category has <i>finite powers</i> when for every object $X$ and every finite set $I$ the power $X^I$ exists. Equivalently, for every $n \in \IN$ the power $X^n$ exists.',
 	'https://ncatlab.org/nlab/show/powering',
 	'finite copowers',
 	TRUE
@@ -178,7 +178,7 @@ VALUES
 (
 	'finite copowers',
 	'has',
-	'A category has <i>finite copowers</i> when for every object $X$ and every finite set $I$ the copower $I \otimes X$ exists. Equivalently, for every $n \in \mathbb{N}$ the copower $n \otimes X$ exists.',
+	'A category has <i>finite copowers</i> when for every object $X$ and every finite set $I$ the copower $I \otimes X$ exists. Equivalently, for every $n \in \IN$ the copower $n \otimes X$ exists.',
 	'https://ncatlab.org/nlab/show/copower',
 	'finite powers',
 	TRUE

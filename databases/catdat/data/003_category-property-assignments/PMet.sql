@@ -45,7 +45,7 @@ VALUES
 	'PMet',
 	'exact filtered colimits',
 	TRUE,
-	'Let $\mathcal{I}$ be a finite category and $\mathcal{J}$ be a small filtered category, w.l.o.g. a directed poset. Let $X : \mathcal{I} \times \mathcal{J} \to \mathbf{PMet}$ be a diagram. We need to show that the canonical map $\mathrm{colim}_{j \in \mathcal{J}} \lim_{i \in \mathcal{I}} X(i,j) \to \lim_{i \in \mathcal{I}} \mathrm{colim}_{j \in \mathcal{J}}  X(i,j)$ is an isomorphism. It is bijective since the forgetful functor to $\mathbf{Set}$ preserves finite limits and filtered colimits and since $\mathbf{Set}$ has exact filtered colimits. That the map is isometric can easily be reduced to the following lemma: If $d_{i,j} \in \mathbb{R}_{\geq 0}$ are numbers for $i \in \mathcal{I}$, $j \in \mathcal{J}$ with $j \leq k \implies d_{i,k} \leq d_{i,j}$, then $\inf_j \sup_i d_{i,j} = \sup_i \inf_j d_{i,j}$. This can be proven directly. Alternatively, use that the thin category $(\mathbb{R}_{\geq 0} \cup \{\infty\},\leq)$ is isomorphic to $([0,1],\leq)$, and we already know that <a href="/category/real_interval">it has exact filtered colimits</a>.'
+	'Let $\mathcal{I}$ be a finite category and $\mathcal{J}$ be a small filtered category, w.l.o.g. a directed poset. Let $X : \mathcal{I} \times \mathcal{J} \to \mathbf{PMet}$ be a diagram. We need to show that the canonical map $\mathrm{colim}_{j \in \mathcal{J}} \lim_{i \in \mathcal{I}} X(i,j) \to \lim_{i \in \mathcal{I}} \mathrm{colim}_{j \in \mathcal{J}}  X(i,j)$ is an isomorphism. It is bijective since the forgetful functor to $\mathbf{Set}$ preserves finite limits and filtered colimits and since $\mathbf{Set}$ has exact filtered colimits. That the map is isometric can easily be reduced to the following lemma: If $d_{i,j} \in \IR_{\geq 0}$ are numbers for $i \in \mathcal{I}$, $j \in \mathcal{J}$ with $j \leq k \implies d_{i,k} \leq d_{i,j}$, then $\inf_j \sup_i d_{i,j} = \sup_i \inf_j d_{i,j}$. This can be proven directly. Alternatively, use that the thin category $(\IR_{\geq 0} \cup \{\infty\},\leq)$ is isomorphic to $([0,1],\leq)$, and we already know that <a href="/category/real_interval">it has exact filtered colimits</a>.'
 ),
 (
 	'PMet',
@@ -87,7 +87,7 @@ VALUES
 	'PMet',
 	'balanced',
 	FALSE,
-	'Let $d : \mathbb{R} \times \mathbb{R} \to \mathbb{R}_{\geq 0}$ be the usual Euclidean metric on $\mathbb{R}$ and $0 : \mathbb{R} \times \mathbb{R} \to \mathbb{R}_{\geq 0}$ be the zero pseudo-metric. Then the identity map $(\mathbb{R},d) \to (\mathbb{R},0)$ provides a counterexample.'
+	'Let $d : \IR \times \IR \to \IR_{\geq 0}$ be the usual Euclidean metric on $\IR$ and $0 : \IR \times \IR \to \IR_{\geq 0}$ be the zero pseudo-metric. Then the identity map $(\IR,d) \to (\IR,0)$ provides a counterexample.'
 ),
 (
 	'PMet',
@@ -99,13 +99,13 @@ VALUES
 	'PMet',
 	'countable powers',
 	FALSE,
-	'Assume that the power $P = \mathbb{R}^{\mathbb{N}}$ exists, where $\mathbb{R}$ has the usual (pseudo-)metric. Since the forgetful functor $\mathbf{PMet} \to \mathbf{Set}$ is representable, it preserves limits, powers in particular. Thus, we may assume that $P$ is the set of sequences of numbers and that the projections $p_n : P \to \mathbb{R}$ are given by $p_n(x) = x_n$. Now consider the sequences $x = (n)_n$ and $y = (0)_n$. Since each $p_n$ is non-expansive, we get $d(x,y) \geq d(p_n(x),p_n(y)) = d(n,0) = n$. But then $d(x,y) = \infty$, a contradiction.'
+	'Assume that the power $P = \IR^{\IN}$ exists, where $\IR$ has the usual (pseudo-)metric. Since the forgetful functor $\mathbf{PMet} \to \mathbf{Set}$ is representable, it preserves limits, powers in particular. Thus, we may assume that $P$ is the set of sequences of numbers and that the projections $p_n : P \to \IR$ are given by $p_n(x) = x_n$. Now consider the sequences $x = (n)_n$ and $y = (0)_n$. Since each $p_n$ is non-expansive, we get $d(x,y) \geq d(p_n(x),p_n(y)) = d(n,0) = n$. But then $d(x,y) = \infty$, a contradiction.'
 ),
 (
 	'PMet',
 	'binary copowers',
 	FALSE,
-	'The coproduct of two non-empty pseudo-metric spaces does not exist, see <a href="https://math.stackexchange.com/questions/1778408" target="_blank">MSE/1778408</a> (the proof also works for pseudo-metric spaces). For example, the copower $\mathbb{R} \sqcup \mathbb{R}$ does not exist. We only get coproducts when allowing $\infty$ as a distance.'
+	'The coproduct of two non-empty pseudo-metric spaces does not exist, see <a href="https://math.stackexchange.com/questions/1778408" target="_blank">MSE/1778408</a> (the proof also works for pseudo-metric spaces). For example, the copower $\IR \sqcup \IR$ does not exist. We only get coproducts when allowing $\infty$ as a distance.'
 ),
 (
 	'PMet',

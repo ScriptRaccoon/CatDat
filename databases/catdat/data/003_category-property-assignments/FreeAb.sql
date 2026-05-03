@@ -45,13 +45,13 @@ VALUES
 	'FreeAb',
 	'generator',
 	TRUE,
-	'As for $\mathbf{Ab}$, the group $\mathbb{Z}$ is a generator.'
+	'As for $\mathbf{Ab}$, the group $\IZ$ is a generator.'
 ),
 (
 	'FreeAb',
 	'cogenerator',
 	TRUE,
-	'It is easy to check that $\mathbb{Z}$ is a cogenerator for free abelian groups.'
+	'It is easy to check that $\IZ$ is a cogenerator for free abelian groups.'
 ),
 (
 	'FreeAb',
@@ -65,13 +65,13 @@ VALUES
 	'FreeAb',
 	'countable powers',
 	FALSE,
-	'Assume that the power $P = \prod_{n \geq 0} \mathbb{Z}$ exists in this category. The projections $P \to \mathbb{Z}$ induce an isomorphism of abelian groups $\mathrm{Hom}(\mathbb{Z}, P) \to \prod_n \mathrm{Hom}(\mathbb{Z}, \mathbb{Z})$, hence $P \cong \mathbb{Z}^{\mathbb{N}}$. But it is <a href="https://groupprops.subwiki.org/wiki/Baer-Specker_group_is_not_free_abelian" target="_blank">well-known</a> that $\mathbb{Z}^{\mathbb{N}}$ is not free abelian.'
+	'Assume that the power $P = \prod_{n \geq 0} \IZ$ exists in this category. The projections $P \to \IZ$ induce an isomorphism of abelian groups $\mathrm{Hom}(\IZ, P) \to \prod_n \mathrm{Hom}(\IZ, \IZ)$, hence $P \cong \IZ^{\IN}$. But it is <a href="https://groupprops.subwiki.org/wiki/Baer-Specker_group_is_not_free_abelian" target="_blank">well-known</a> that $\IZ^{\IN}$ is not free abelian.'
 ),
 (
 	'FreeAb',
 	'balanced',
 	FALSE,
-	'The homomorphism $2 : \mathbb{Z} \to \mathbb{Z}$ is a counterexample.'
+	'The homomorphism $2 : \IZ \to \IZ$ is a counterexample.'
 ),
 (
 	'FreeAb',

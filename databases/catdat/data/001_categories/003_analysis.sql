@@ -13,7 +13,7 @@ VALUES
 	'Ban',
 	'category of Banach spaces with linear contractions',
 	'$\mathbf{Ban}$',
-	'Banach spaces over $\mathbb{C}$',
+	'Banach spaces over $\IC$',
 	'linear contractions, i.e. linear maps of norm $\leq 1$',
 	'The choice of morphisms is similar to that of $\mathbf{Met}$ which yields better categorical properties.',
 	'https://ncatlab.org/nlab/show/Banach+space',

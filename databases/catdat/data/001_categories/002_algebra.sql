@@ -55,7 +55,7 @@ VALUES
 	'$\mathbf{Alg}(R)$',
 	'algebras over a commutative ring $R \neq 0$',
 	'maps preserving the ring and module structure',
-	'This is a generalization of the category of rings, which we get for $R = \mathbb{Z}$. We assume our rings (and algebras) to be unital. For $R = 0$ we would get the trivial category, which is why we exclude this here.',
+	'This is a generalization of the category of rings, which we get for $R = \IZ$. We assume our rings (and algebras) to be unital. For $R = 0$ we would get the trivial category, which is why we exclude this here.',
 	'https://ncatlab.org/nlab/show/Alg',
 	NULL
 ),
@@ -75,7 +75,7 @@ VALUES
 	'$\mathbf{CAlg}(R)$',
 	'commutative algebras over a commutative ring $R \neq 0$',
 	'maps preserving the ring and module structure',
-	'This is a generalization of the category of commutative rings, which we get for $R = \mathbb{Z}$. In general, $\mathbf{CAlg}(R) \cong R \,/\, \mathbf{CRing}$. We assume our rings (and algebras) to be unital. For $R = 0$ we would get the trivial category, which is why we exclude this here.',
+	'This is a generalization of the category of commutative rings, which we get for $R = \IZ$. In general, $\mathbf{CAlg}(R) \cong R \,/\, \mathbf{CRing}$. We assume our rings (and algebras) to be unital. For $R = 0$ we would get the trivial category, which is why we exclude this here.',
 	'https://ncatlab.org/nlab/show/CommAlg',
 	NULL
 ),

@@ -57,7 +57,7 @@ VALUES
     'power_set_covariant',
     'finitary',
     FALSE,
-    'The filtered colimit $\mathbb{N} = \bigcup_{n \geq 0} \mathbb{N}_{\leq n}$ is not preserved by $P$, since $\bigcup_{n \geq 0} P(\mathbb{N}_{\leq n})$ just consists of the <i>finite</i> subsets of $\mathbb{N}$.'
+    'The filtered colimit $\IN = \bigcup_{n \geq 0} \IN_{\leq n}$ is not preserved by $P$, since $\bigcup_{n \geq 0} P(\IN_{\leq n})$ just consists of the <i>finite</i> subsets of $\IN$.'
 ),
 (
     'power_set_covariant',

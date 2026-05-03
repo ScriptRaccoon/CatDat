@@ -35,7 +35,7 @@ VALUES
 	'$\mathbf{FinOrd}$',
 	'finite (totally) ordered sets',
 	'order-preserving maps',
-	'The finite ordered sets of the form $\{1 < \dotsc < n\}$ for $n \in \mathbb{N}$ provide a skeleton (including the empty set for $n = 0$), the augmented simplex category.',
+	'The finite ordered sets of the form $\{1 < \dotsc < n\}$ for $n \in \IN$ provide a skeleton (including the empty set for $n = 0$), the augmented simplex category.',
 	'https://ncatlab.org/nlab/show/total+order',
 	NULL
 );

@@ -57,7 +57,7 @@ VALUES
 	'CAlg(R)',
 	'countably codistributive',
 	FALSE,
-	'The canonical homomorphism $A \otimes_R R^{\mathbb{N}} \to A^{\mathbb{N}}$ is given by $a \otimes (r_n)_n \mapsto (r_n a)_n$ and does not have to be surjective: Since $R \neq 0$, there is a commutative $R$-algebra $K$ which is a field. Now take $A := K[X]$ and consider the sequence $(X^n)_{n} \in A^{\mathbb{N}}$.'
+	'The canonical homomorphism $A \otimes_R R^{\IN} \to A^{\IN}$ is given by $a \otimes (r_n)_n \mapsto (r_n a)_n$ and does not have to be surjective: Since $R \neq 0$, there is a commutative $R$-algebra $K$ which is a field. Now take $A := K[X]$ and consider the sequence $(X^n)_{n} \in A^{\IN}$.'
 ),
 (
 	'CAlg(R)',

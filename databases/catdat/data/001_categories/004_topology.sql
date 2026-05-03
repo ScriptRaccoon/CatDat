@@ -63,7 +63,7 @@ VALUES
 	'Delta',
 	'simplex category',
 	'$\Delta$',
-	'the non-empty ordered sets $[n] := \{0 < \cdots < n\}$ for $n \in \mathbb{N}$',
+	'the non-empty ordered sets $[n] := \{0 < \cdots < n\}$ for $n \in \IN$',
 	'order-preserving maps',
 	'The simplex category is a skeleton of $\mathbf{FinOrd} \setminus \{\varnothing\}$. It plays an important role in topology and is used to define the <a href="/category/sSet">category of simplicial sets</a>.',
 	'https://ncatlab.org/nlab/show/simplex+category',

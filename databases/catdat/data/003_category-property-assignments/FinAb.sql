@@ -15,7 +15,7 @@ VALUES
 	'FinAb',
 	'essentially countable',
 	TRUE,
-	'The underlying set of a finite structure can be chosen to be a subset of $\mathbb{N}$.'
+	'The underlying set of a finite structure can be chosen to be a subset of $\IN$.'
 ),
 (
 	'FinAb',
@@ -27,7 +27,7 @@ VALUES
 	'FinAb',
 	'self-dual',
 	TRUE,
-	'This is a simple special case of Pontryagin duality: The functor $\hom(-,\mathbb{Q}/\mathbb{Z})$ provides the equivalence.'
+	'This is a simple special case of Pontryagin duality: The functor $\hom(-,\IQ/\IZ)$ provides the equivalence.'
 ),
 (
 	'FinAb',
@@ -51,13 +51,13 @@ VALUES
 	'FinAb',
 	'split abelian',
 	FALSE,
-	'The sequence $0 \to \mathbb{Z}/2 \to \mathbb{Z}/4 \to \mathbb{Z}/2 \to 0$ does not split.'
+	'The sequence $0 \to \IZ/2 \to \IZ/4 \to \IZ/2 \to 0$ does not split.'
 ),
 (
 	'FinAb',
 	'countable powers',
 	FALSE,
-	'If countable powers exist, then by <a href="/lemma/hilberts_hotel">Hilbert''s Hotel</a> there is some object $P$ with $P \cong \mathbb{Z}/2 \times P$. If $P$ has $n$ elements, this means $n = 2n$, i.e. $n = 0$, a contradiction.'
+	'If countable powers exist, then by <a href="/lemma/hilberts_hotel">Hilbert''s Hotel</a> there is some object $P$ with $P \cong \IZ/2 \times P$. If $P$ has $n$ elements, this means $n = 2n$, i.e. $n = 0$, a contradiction.'
 ),
 (
 	'FinAb',

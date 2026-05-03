@@ -45,7 +45,7 @@ VALUES
 	'Met_c',
 	'cogenerator',
 	TRUE,
-	'The same proof as for $\mathbf{Met}$ shows that $\mathbb{R}$ with the usual metric is a cogenerator.'
+	'The same proof as for $\mathbf{Met}$ shows that $\IR$ with the usual metric is a cogenerator.'
 ),
 (
 	'Met_c',
@@ -57,7 +57,7 @@ VALUES
 	'Met_c',
 	'well-copowered',
 	TRUE,
-	'If $f : X \to Y$ is an epimorphism, then $f(X)$ is dense in $Y$ (see below). Hence, there is an injective map $Y \to X^{\mathbb{N}}$, which bounds the size of $Y$.'
+	'If $f : X \to Y$ is an epimorphism, then $f(X)$ is dense in $Y$ (see below). Hence, there is an injective map $Y \to X^{\IN}$, which bounds the size of $Y$.'
 ),
 (
 	'Met_c',
@@ -75,7 +75,7 @@ VALUES
 	'Met_c',
 	'balanced',
 	FALSE,
-	'The inclusion $\mathbb{Q} \hookrightarrow \mathbb{R}$ provides a counterexample.'
+	'The inclusion $\IQ \hookrightarrow \IR$ provides a counterexample.'
 ),
 (
 	'Met_c',
@@ -87,7 +87,7 @@ VALUES
 	'Met_c',
 	'Malcev',
 	FALSE,
-	'Consider the metric subspace $\{(a,b) \in \mathbb{R}^2 : a \leq b\}$ of $\mathbb{R}^2$.'
+	'Consider the metric subspace $\{(a,b) \in \IR^2 : a \leq b\}$ of $\IR^2$.'
 ),
 (
 	'Met_c',

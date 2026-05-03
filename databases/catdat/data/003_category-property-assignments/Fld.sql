@@ -27,7 +27,7 @@ VALUES
 	'Fld',
 	'well-copowered',
 	TRUE,
-	'Epimorphisms are the purely inseparable field extensions. If $K \to L$ is purely inseparable, then for all $x \in L$ there is some $n \in \mathbb{N}$ with $x^n \in L$. An element of $K$ has at most $n$ $n$th-roots. So we can bound the size of $L$.'
+	'Epimorphisms are the purely inseparable field extensions. If $K \to L$ is purely inseparable, then for all $x \in L$ there is some $n \in \IN$ with $x^n \in L$. An element of $K$ has at most $n$ $n$th-roots. So we can bound the size of $L$.'
 ),
 (
 	'Fld',
@@ -51,7 +51,7 @@ VALUES
 	'Fld',
 	'balanced',
 	FALSE,
-	'Every non-trivial purely inseparable field extension, such as $\mathbb{F}_p(X^p) \to \mathbb{F}_p(X)$, provides a counterexample by the descriptions of special morphisms below.'
+	'Every non-trivial purely inseparable field extension, such as $\IF_p(X^p) \to \IF_p(X)$, provides a counterexample by the descriptions of special morphisms below.'
 ),
 (
 	'Fld',
@@ -75,19 +75,19 @@ VALUES
 	'Fld',
 	'locally cartesian closed',
 	FALSE,
-	'Assume that $K$ is a field such that $\mathbf{Fld} / K$ is cartesian closed. This slice category is equivalent to the poset of subfields of $K$. This poset is a lattice, and our assumption implies that it is distributive (see <a href="/category-implication/distributive_criterion">here</a>). But this is quite rare: Consider $K = \mathbb{Q}(\sqrt{2}, \sqrt{3})$. By Galois theory, the lattice of subfields is isomorphic to the diamond lattice $M_3$ which is not distributive. Specifically, $(\mathbb{Q}(\sqrt{2}) \wedge \mathbb{Q}(\sqrt{6})) \vee (\mathbb{Q}(\sqrt{3}) \wedge \mathbb{Q}(\sqrt{6})) = \mathbb{Q} \vee \mathbb{Q} = \mathbb{Q}$, while $(\mathbb{Q}(\sqrt{2}) \vee \mathbb{Q}(\sqrt{3})) \wedge \mathbb{Q}(\sqrt{6}) = \mathbb{Q}(\sqrt{2},\sqrt{3}) \wedge \mathbb{Q}(\sqrt{6}) = \mathbb{Q}(\sqrt{6})$.'
+	'Assume that $K$ is a field such that $\mathbf{Fld} / K$ is cartesian closed. This slice category is equivalent to the poset of subfields of $K$. This poset is a lattice, and our assumption implies that it is distributive (see <a href="/category-implication/distributive_criterion">here</a>). But this is quite rare: Consider $K = \IQ(\sqrt{2}, \sqrt{3})$. By Galois theory, the lattice of subfields is isomorphic to the diamond lattice $M_3$ which is not distributive. Specifically, $(\IQ(\sqrt{2}) \wedge \IQ(\sqrt{6})) \vee (\IQ(\sqrt{3}) \wedge \IQ(\sqrt{6})) = \IQ \vee \IQ = \IQ$, while $(\IQ(\sqrt{2}) \vee \IQ(\sqrt{3})) \wedge \IQ(\sqrt{6}) = \IQ(\sqrt{2},\sqrt{3}) \wedge \IQ(\sqrt{6}) = \IQ(\sqrt{6})$.'
 ),
 (
 	'Fld',
 	'core-thin',
 	FALSE,
-	'If this category was core-thin, Galois theory would not exist. Specifically, the conjugation $\mathbb{C} \to \mathbb{C}$, $z \mapsto \overline{z}$ is a non-trivial automorphism.'
+	'If this category was core-thin, Galois theory would not exist. Specifically, the conjugation $\IC \to \IC$, $z \mapsto \overline{z}$ is a non-trivial automorphism.'
 ),
 (
 	'Fld',
 	'binary powers',
 	FALSE,
-	'Assume that the product $P := \mathbb{Q}(\sqrt{2}) \times \mathbb{Q}(\sqrt{2})$ exists. This field is isomorphic to a subfield of $\mathbb{Q}(\sqrt{2})$, hence $P \cong \mathbb{Q}$ or $P \cong \mathbb{Q}(\sqrt{2})$. In the first case, the two projections $P \rightrightarrows \mathbb{Q}(\sqrt{2})$ must be equal, which means that every two homomorphisms $K \rightrightarrows \mathbb{Q}(\sqrt{2})$ are equal, which is absurd (take $K = \mathbb{Q}(\sqrt{2})$ and its two automorphisms). In the second case, the projections induce for every field $K$ a bijection $\mathrm{Hom}(K,\mathbb{Q}(\sqrt{2})) \cong \mathrm{Hom}(K,\mathbb{Q}(\sqrt{2}))^2$, which however fails for $K = \mathbb{Q}(\sqrt{2})$: the left hand side has $2$ elements, the right hand side has $4$ elements. A more general result about products in $\mathbf{Fld}$ can be found at <a href="https://math.stackexchange.com/questions/359352" target="_blank">MSE/359352</a>.'
+	'Assume that the product $P := \IQ(\sqrt{2}) \times \IQ(\sqrt{2})$ exists. This field is isomorphic to a subfield of $\IQ(\sqrt{2})$, hence $P \cong \IQ$ or $P \cong \IQ(\sqrt{2})$. In the first case, the two projections $P \rightrightarrows \IQ(\sqrt{2})$ must be equal, which means that every two homomorphisms $K \rightrightarrows \IQ(\sqrt{2})$ are equal, which is absurd (take $K = \IQ(\sqrt{2})$ and its two automorphisms). In the second case, the projections induce for every field $K$ a bijection $\mathrm{Hom}(K,\IQ(\sqrt{2})) \cong \mathrm{Hom}(K,\IQ(\sqrt{2}))^2$, which however fails for $K = \IQ(\sqrt{2})$: the left hand side has $2$ elements, the right hand side has $4$ elements. A more general result about products in $\mathbf{Fld}$ can be found at <a href="https://math.stackexchange.com/questions/359352" target="_blank">MSE/359352</a>.'
 ),
 (
 	'Fld',
@@ -99,7 +99,7 @@ VALUES
 	'Fld',
 	'cofiltered-limit-stable epimorphisms',
 	FALSE,
-	'Inside of $\mathbb{F}_p(X)$ consider the descending sequence of subfields
-	$$\mathbb{F}_p(X) \supseteq \mathbb{F}_p(X^p) \supseteq \mathbb{F}_p(X^{p^2}) \supseteq \cdots,$$
-	whose intersection is $\mathbb{F}_p$. Each $\mathbb{F}_p(X^{p^n}) \hookrightarrow \mathbb{F}_p(X)$ is purely inseparable, hence an epimorphism, but in the limit we get $\mathbb{F}_p \hookrightarrow \mathbb{F}_p(X)$, which is not even algebraic.'
+	'Inside of $\IF_p(X)$ consider the descending sequence of subfields
+	$$\IF_p(X) \supseteq \IF_p(X^p) \supseteq \IF_p(X^{p^2}) \supseteq \cdots,$$
+	whose intersection is $\IF_p$. Each $\IF_p(X^{p^n}) \hookrightarrow \IF_p(X)$ is purely inseparable, hence an epimorphism, but in the limit we get $\IF_p \hookrightarrow \IF_p(X)$, which is not even algebraic.'
 );

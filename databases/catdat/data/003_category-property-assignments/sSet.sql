@@ -51,5 +51,5 @@ VALUES
 	'sSet',
 	'cofiltered-limit-stable epimorphisms',
 	FALSE,
-	'We show that epimorphisms are not stable under sequential limits, intersections to be precise. Let $X_n \in \mathbf{sSet}$ be the nerve of the poset $\mathbb{N}_{\geq n}$. This means that a $k$-simplex in $X_n$ is a chain of natural numbers $n \leq x_0 \leq \cdots \leq x_k$. Then $X_{n+1} \subseteq X_n$ and $\lim_n X_n = \bigcap_n X_n = 0$ (the initial simplicial set). Each $X_n \to 1$ is an epimorphism, but $\lim_n X_n \to 1$ is not.'
+	'We show that epimorphisms are not stable under sequential limits, intersections to be precise. Let $X_n \in \mathbf{sSet}$ be the nerve of the poset $\IN_{\geq n}$. This means that a $k$-simplex in $X_n$ is a chain of natural numbers $n \leq x_0 \leq \cdots \leq x_k$. Then $X_{n+1} \subseteq X_n$ and $\lim_n X_n = \bigcap_n X_n = 0$ (the initial simplicial set). Each $X_n \to 1$ is an epimorphism, but $\lim_n X_n \to 1$ is not.'
 );

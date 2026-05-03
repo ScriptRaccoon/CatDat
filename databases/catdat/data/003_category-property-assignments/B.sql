@@ -9,13 +9,13 @@ VALUES
 	'B',
 	'locally small',
 	TRUE,
-	'There is a forgetful functor $\mathbb{B} \to \mathbf{Set}$ and $\mathbf{Set}$ is locally small.'
+	'There is a forgetful functor $\IB \to \mathbf{Set}$ and $\mathbf{Set}$ is locally small.'
 ),
 (
 	'B',
 	'essentially countable',
 	TRUE,
-	'Every finite set is isomorphic to some $\{1,\dotsc,n\}$ for some $n \in \mathbb{N}$.'
+	'Every finite set is isomorphic to some $\{1,\dotsc,n\}$ for some $n \in \IN$.'
 ),
 (
 	'B',

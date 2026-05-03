@@ -39,7 +39,7 @@ VALUES
 	'Ring',
 	'balanced',
 	FALSE,
-	'The inclusion $\mathbb{Z} \hookrightarrow \mathbb{Q}$ is a counterexample.'
+	'The inclusion $\IZ \hookrightarrow \IQ$ is a counterexample.'
 ),
 (
 	'Ring',
@@ -57,25 +57,25 @@ VALUES
 	'Ring',
 	'codistributive',
 	FALSE,
-	'If $\sqcup$ denotes the coproduct of rings (see <a href="https://math.stackexchange.com/questions/625874" target="_blank">MSE/625874</a> for their description) and $R$ is a ring, the canonical morphism $R \sqcup \mathbb{Z}^2 \to (R \sqcup \mathbb{Z})^2 = R^2$ is usually no isomorphism. For example, for $R = \mathbb{Z}[X]$ the coproduct on the LHS is not commutative, it has the ring presentation $\langle X,E : E^2=E \rangle$.'
+	'If $\sqcup$ denotes the coproduct of rings (see <a href="https://math.stackexchange.com/questions/625874" target="_blank">MSE/625874</a> for their description) and $R$ is a ring, the canonical morphism $R \sqcup \IZ^2 \to (R \sqcup \IZ)^2 = R^2$ is usually no isomorphism. For example, for $R = \IZ[X]$ the coproduct on the LHS is not commutative, it has the ring presentation $\langle X,E : E^2=E \rangle$.'
 ),
 (
 	'Ring',
 	'semi-strongly connected',
 	FALSE,
-	'There is no homomorphism between $\mathbb{F}_2$ and $\mathbb{F}_3$.'
+	'There is no homomorphism between $\IF_2$ and $\IF_3$.'
 ),
 (
 	'Ring',
 	'co-Malcev',
 	FALSE,
-	'See <a href="https://mathoverflow.net/questions/509552">MO/509552</a>: Consider the forgetful functor $U : \mathbf{Ring} \to \mathbf{Set}$ and the relation $R \subseteq U^2$ defined by $R(A) := \{(a,b) \in U(A)^2 : ab = a^2\}$. Both are representable: $U$ by $\mathbb{Z}[X]$ and $S$ by $\mathbb{Z} \langle X,Y \rangle / \langle XY-X^2 \rangle$. It is clear that $R$ is reflexive, but not symmetric.'
+	'See <a href="https://mathoverflow.net/questions/509552">MO/509552</a>: Consider the forgetful functor $U : \mathbf{Ring} \to \mathbf{Set}$ and the relation $R \subseteq U^2$ defined by $R(A) := \{(a,b) \in U(A)^2 : ab = a^2\}$. Both are representable: $U$ by $\IZ[X]$ and $S$ by $\IZ \langle X,Y \rangle / \langle XY-X^2 \rangle$. It is clear that $R$ is reflexive, but not symmetric.'
 ),
 (
 	'Ring',
 	'coregular',
 	FALSE,
-	'Let $B := M_2(\mathbb{Q})$ and $A := \mathbb{Q}^2$. Then $A \to B$, $(x,y) \mapsto \mathrm{diag}(x,y)$ is a regular monomorphism: A direct calculation shows that a matrix is diagonal iff it commutes with $M := \bigl(\begin{smallmatrix} 1 & 0 \\ 0 & 2 \end{smallmatrix}\bigr)$, so that $A \to B$ is the equalizer of the identity $B \to B$ and the conjugation $B \to B$, $X \mapsto M X M^{-1}$. Consider the homomorphism $A \to K$, $(a,b) \mapsto a$. We claim that $K \to K \sqcup_A B$ is not a monomorphism, because in fact, the pushout $K \sqcup_A B$ is zero: Since $A \to K$ is surjective with kernel $0 \times K$, the pushout is $B/\langle 0 \times K \rangle$, which is $0$ because $B$ is simple (<a href="https://math.stackexchange.com/questions/22629" target="_blank">proof</a>) or via a direct calculation with elementary matrices.'
+	'Let $B := M_2(\IQ)$ and $A := \IQ^2$. Then $A \to B$, $(x,y) \mapsto \mathrm{diag}(x,y)$ is a regular monomorphism: A direct calculation shows that a matrix is diagonal iff it commutes with $M := \bigl(\begin{smallmatrix} 1 & 0 \\ 0 & 2 \end{smallmatrix}\bigr)$, so that $A \to B$ is the equalizer of the identity $B \to B$ and the conjugation $B \to B$, $X \mapsto M X M^{-1}$. Consider the homomorphism $A \to K$, $(a,b) \mapsto a$. We claim that $K \to K \sqcup_A B$ is not a monomorphism, because in fact, the pushout $K \sqcup_A B$ is zero: Since $A \to K$ is surjective with kernel $0 \times K$, the pushout is $B/\langle 0 \times K \rangle$, which is $0$ because $B$ is simple (<a href="https://math.stackexchange.com/questions/22629" target="_blank">proof</a>) or via a direct calculation with elementary matrices.'
 ),
 (
 	'Ring',
@@ -87,7 +87,7 @@ VALUES
 	'Ring',
 	'cocartesian cofiltered limits',
 	FALSE,
-	'Consider the ring $A = \mathbb{Z}[X]$ and the sequence of rings $B_n = \mathbb{Z}[Y]/(Y^{n+1})$ with projections $B_{n+1} \to B_n$, whose limit is $\mathbb{Z}[[Y]]$. Every element in the coproduct of rings $\mathbb{Z}[X] \sqcup \mathbb{Z}[[Y]]$ has a finite "free product" length. Now consider the elements
+	'Consider the ring $A = \IZ[X]$ and the sequence of rings $B_n = \IZ[Y]/(Y^{n+1})$ with projections $B_{n+1} \to B_n$, whose limit is $\IZ[[Y]]$. Every element in the coproduct of rings $\IZ[X] \sqcup \IZ[[Y]]$ has a finite "free product" length. Now consider the elements
 	$$w_n = (1 + XY) (1+XY^2) \cdots (1+X Y^n) \in A \sqcup B_n.$$
 	Because of $w_n \equiv w_{n-1} \bmod Y^n$ these form an element $w \in \lim_n (A \sqcup B_n)$. Expanding $w_n$, the longest term is $XY XY^2 \cdots X Y^n$ of "free product" length $2n$, which is unbounded.'
 ),

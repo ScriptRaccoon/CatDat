@@ -100,7 +100,7 @@ VALUES
 	'Set_f',
 	'countable copowers',
 	FALSE,
-	'Assume that the copower $X := \mathbb{N} \otimes 1$ exists, where $1$ is the singleton set. This is a set with a map $i : \mathbb{N} \to X$ (not necessarily finite-to-one) such that for every other such map $j : \mathbb{N} \to Y$ there is a unique finite-to-one map $f : X \to Y$ with $f \circ i = j$. Applying this to $j : \mathbb{N} \to 1$, we see that $X$ is finite. Applying the universal property to maps $j : \mathbb{N} \to \{0,1\}$, we see that for every subset $E \subseteq \mathbb{N}$ there is a unique finite subset $F \subseteq X$ with $i^*(F) = E$. But finiteness of $F$ is automatic, so $i^* : P(X) \to P(\mathbb{N})$ is bijective. But then $P(\mathbb{N})$ is finite, which is absurd.'
+	'Assume that the copower $X := \IN \otimes 1$ exists, where $1$ is the singleton set. This is a set with a map $i : \IN \to X$ (not necessarily finite-to-one) such that for every other such map $j : \IN \to Y$ there is a unique finite-to-one map $f : X \to Y$ with $f \circ i = j$. Applying this to $j : \IN \to 1$, we see that $X$ is finite. Applying the universal property to maps $j : \IN \to \{0,1\}$, we see that for every subset $E \subseteq \IN$ there is a unique finite subset $F \subseteq X$ with $i^*(F) = E$. But finiteness of $F$ is automatic, so $i^* : P(X) \to P(\IN)$ is bijective. But then $P(\IN)$ is finite, which is absurd.'
 ),
 (
 	'Set_f',
@@ -118,18 +118,18 @@ VALUES
 	'Set_f',
 	'filtered',
 	FALSE,
-	'Consider the maps $f,g : \mathbb{N} \rightrightarrows \mathbb{N}$ defined by $f(x)=x$ and $g(x)=2x$. They are injective, hence finite-to-one. If a map $h : \mathbb{N} \to X$ coequalizes them, we have $h(x)=h(2x)$, in particular $h(1)=h(2^n)$ for all $n \in \mathbb{N}$. Thus, $h$ is not finite-to-one.'
+	'Consider the maps $f,g : \IN \rightrightarrows \IN$ defined by $f(x)=x$ and $g(x)=2x$. They are injective, hence finite-to-one. If a map $h : \IN \to X$ coequalizes them, we have $h(x)=h(2x)$, in particular $h(1)=h(2^n)$ for all $n \in \IN$. Thus, $h$ is not finite-to-one.'
 ),
 (
 	'Set_f',
 	'sequential limits',
 	FALSE,
-	'Consider the set $[n] := \{0,\dotsc,n\}$ for $n \in \mathbb{N}$. The forgetful functor to $\mathbf{Set}$ is representable (by the singleton set), hence preserves all limits. Thus, if the diagram of truncation maps $\cdots \twoheadrightarrow [2] \twoheadrightarrow [1] \twoheadrightarrow [0]$ has a limit in $\mathbf{Set}_\mathrm{f}$, its underlying set is isomorphic to the limit taken in $\mathbf{Set}$, which is $\mathbb{N} \cup \{\infty\}$. But there is no finite-to-one map $\mathbb{N} \cup \{\infty\} \to [0]$.'
+	'Consider the set $[n] := \{0,\dotsc,n\}$ for $n \in \IN$. The forgetful functor to $\mathbf{Set}$ is representable (by the singleton set), hence preserves all limits. Thus, if the diagram of truncation maps $\cdots \twoheadrightarrow [2] \twoheadrightarrow [1] \twoheadrightarrow [0]$ has a limit in $\mathbf{Set}_\mathrm{f}$, its underlying set is isomorphic to the limit taken in $\mathbf{Set}$, which is $\IN \cup \{\infty\}$. But there is no finite-to-one map $\IN \cup \{\infty\} \to [0]$.'
 ),
 (
 	'Set_f',
 	'multi-cocomplete',
 	FALSE,
-	'We will prove that the family of singleton sets $(1)_{n \in \mathbb{N}}$ has no multi-coproduct, generalizing the proof that the family does not have a coproduct given above. A cocone is just a map of sets $f : \mathbb{N} \to X$. A morphism from $f : \mathbb{N} \to X$ to $g : \mathbb{N} \to Y$ is a finite-to-one map $h : X \to Y$ with $g = h \circ f$. This describes the category of cocones, and we need to show that it has no multi-initial object. To this end, we claim that the connected component of the unique map $! : \mathbb{N} \to 1$ consists precisely of the maps $f : \mathbb{N} \to X$ with finite image. Once that is established, we can recycle the proof for missing coproducts since there we have only used finite codomains.<br>
-	Let $g = h \circ f$ be as above. If $\mathrm{im}(f)$ is finite, then $\mathrm{im}(g) = h_*(\mathrm{im}(f))$ is finite as well. Conversely, if $\mathrm{im}(g)$ is finite, then $\mathrm{im}(f) \subseteq \bigcup_{y \in \mathrm{im}(g)} h^*(\{y\})$ is finite as well. This shows that the connected component of $!$ is contained in the collection of maps with finite image. Conversely, if $f$ has finite image, then there is a morphism from the corestriction $f'' : \mathbb{N} \to \mathrm{im}(f)$ to $f$, and also a morphism from $f''$ to $!$. This proves the remaining inclusion.'
+	'We will prove that the family of singleton sets $(1)_{n \in \IN}$ has no multi-coproduct, generalizing the proof that the family does not have a coproduct given above. A cocone is just a map of sets $f : \IN \to X$. A morphism from $f : \IN \to X$ to $g : \IN \to Y$ is a finite-to-one map $h : X \to Y$ with $g = h \circ f$. This describes the category of cocones, and we need to show that it has no multi-initial object. To this end, we claim that the connected component of the unique map $! : \IN \to 1$ consists precisely of the maps $f : \IN \to X$ with finite image. Once that is established, we can recycle the proof for missing coproducts since there we have only used finite codomains.<br>
+	Let $g = h \circ f$ be as above. If $\mathrm{im}(f)$ is finite, then $\mathrm{im}(g) = h_*(\mathrm{im}(f))$ is finite as well. Conversely, if $\mathrm{im}(g)$ is finite, then $\mathrm{im}(f) \subseteq \bigcup_{y \in \mathrm{im}(g)} h^*(\{y\})$ is finite as well. This shows that the connected component of $!$ is contained in the collection of maps with finite image. Conversely, if $f$ has finite image, then there is a morphism from the corestriction $f'' : \IN \to \mathrm{im}(f)$ to $f$, and also a morphism from $f''$ to $!$. This proves the remaining inclusion.'
 );

@@ -33,13 +33,13 @@ VALUES
 	'CMon',
 	'preadditive',
 	FALSE,
-	'In categories with finite products and finite coproducts, the preadditive structure <a href="/lemma/preadditive_structure_unique">is unique</a> if it exists. In the case of $\mathbf{CMon}$, this is just the pointwise addition of maps. This is indeed an enrichment of $\mathbf{CMon}$ over itself, but not over $\mathbf{Ab}$, since for example $\mathrm{Hom}(\mathbb{N},\mathbb{N}) \cong \mathbb{N}$ (with respect to addition) is not a group.'
+	'In categories with finite products and finite coproducts, the preadditive structure <a href="/lemma/preadditive_structure_unique">is unique</a> if it exists. In the case of $\mathbf{CMon}$, this is just the pointwise addition of maps. This is indeed an enrichment of $\mathbf{CMon}$ over itself, but not over $\mathbf{Ab}$, since for example $\mathrm{Hom}(\IN,\IN) \cong \IN$ (with respect to addition) is not a group.'
 ),
 (
 	'CMon',
 	'balanced',
 	FALSE,
-	'The inclusion of additive monoids $\mathbb{N} \hookrightarrow \mathbb{Z}$ is a counterexample.'
+	'The inclusion of additive monoids $\IN \hookrightarrow \IZ$ is a counterexample.'
 ),
 (
 	'CMon',
@@ -51,7 +51,7 @@ VALUES
 	'CMon',
 	'Malcev',
 	FALSE,
-	'Consider the submonoid $\{(a,b) : a \leq b \}$ of $\mathbb{N}^2$.'
+	'Consider the submonoid $\{(a,b) : a \leq b \}$ of $\IN^2$.'
 ),
 (
 	'CMon',
@@ -75,17 +75,17 @@ VALUES
 	'CMon',
 	'coregular',
 	FALSE,
-	'We can show this analogously to the case of commutative rings <a href="https://math.stackexchange.com/a/3746890" target="_blank">MSE/3746890</a>. Consider the commutative monoid $\mathbb{N}^2$ and its submonoid $U\coloneqq\{(m,n)\mid m\ge n\}$ with the inclusion $i\colon U\hookrightarrow\mathbb{N}^2$. Then, the pushout of $i$ along itself is $\langle x,y,z : x+y=x+z \rangle$, and the equalizer of the cokernel pair of $i$ is $D\coloneqq\{(m,n)\mid m=0 \implies n=0 \}$. If the category $\mathbf{CMon}$ were coregular, the canonical inclusion $j\colon U\hookrightarrow D$ would have to be an epimorphism. However, it is not: let $I\coloneqq\{0,1\}$ be the two-element commutative monoid with $1+1=1$, and let $u,v\colon D \rightrightarrows I$ be the morphisms defined by $u^{-1}(0)=\{(0,0)\}$ and $v^{-1}(0)=\{(0,0),(1,2)\}$; then we have $u\circ j = v\circ j$.'
+	'We can show this analogously to the case of commutative rings <a href="https://math.stackexchange.com/a/3746890" target="_blank">MSE/3746890</a>. Consider the commutative monoid $\IN^2$ and its submonoid $U\coloneqq\{(m,n)\mid m\ge n\}$ with the inclusion $i\colon U\hookrightarrow\IN^2$. Then, the pushout of $i$ along itself is $\langle x,y,z : x+y=x+z \rangle$, and the equalizer of the cokernel pair of $i$ is $D\coloneqq\{(m,n)\mid m=0 \implies n=0 \}$. If the category $\mathbf{CMon}$ were coregular, the canonical inclusion $j\colon U\hookrightarrow D$ would have to be an epimorphism. However, it is not: let $I\coloneqq\{0,1\}$ be the two-element commutative monoid with $1+1=1$, and let $u,v\colon D \rightrightarrows I$ be the morphisms defined by $u^{-1}(0)=\{(0,0)\}$ and $v^{-1}(0)=\{(0,0),(1,2)\}$; then we have $u\circ j = v\circ j$.'
 ),
 (
 	'CMon',
 	'regular quotient object classifier',
 	FALSE,
-	'If $P \in \mathbf{CMon}$ is a regular quotient object classifier, this means that every surjective homomorphism of commutative monoids $A \to B$ is the cokernel of a unique homomorphism $P \to A$. But there are many surjective homomorphisms which are no cokernels at all: Consider the Boolean monoid $(\{0,1\},\vee)$ with $1 \vee 1 = 1$ and the surjective homomorphism $f : (\mathbb{N},+) \to (\{0,1\},\vee)$ defined by $f(0)=0$ and $f(n)=1$ for $n \geq 1$. It has trivial kernel, but is no isomorphism, so it cannot be a cokernel.'
+	'If $P \in \mathbf{CMon}$ is a regular quotient object classifier, this means that every surjective homomorphism of commutative monoids $A \to B$ is the cokernel of a unique homomorphism $P \to A$. But there are many surjective homomorphisms which are no cokernels at all: Consider the Boolean monoid $(\{0,1\},\vee)$ with $1 \vee 1 = 1$ and the surjective homomorphism $f : (\IN,+) \to (\{0,1\},\vee)$ defined by $f(0)=0$ and $f(n)=1$ for $n \geq 1$. It has trivial kernel, but is no isomorphism, so it cannot be a cokernel.'
 ),
 (
 	'CMon',
 	'CSP',
 	FALSE,
-	'First of all, epimorphisms in $\mathbf{CMon}$ are preserved and reflected by the forgetful functor to $\mathbf{Mon}$ (see below). Furthermore, if $M \to N$ is an epimorphism in $\mathbf{Mon}$ and $M$ is infinite, then $\mathrm{card}(N) \leq \mathrm{card}(M)$ (see <a href="https://mathoverflow.net/questions/510431/" target="_blank">MO/510431</a>). This implies that in $\mathbf{CMon}$ the canonical homomorphism $\bigoplus_{n \geq 0} \mathbb{N} \to \prod_{n \geq 0} \mathbb{N}$ is not an epimorphism because its domain is countable and its codomain is uncountable.'
+	'First of all, epimorphisms in $\mathbf{CMon}$ are preserved and reflected by the forgetful functor to $\mathbf{Mon}$ (see below). Furthermore, if $M \to N$ is an epimorphism in $\mathbf{Mon}$ and $M$ is infinite, then $\mathrm{card}(N) \leq \mathrm{card}(M)$ (see <a href="https://mathoverflow.net/questions/510431/" target="_blank">MO/510431</a>). This implies that in $\mathbf{CMon}$ the canonical homomorphism $\bigoplus_{n \geq 0} \IN \to \prod_{n \geq 0} \IN$ is not an epimorphism because its domain is countable and its codomain is uncountable.'
 );

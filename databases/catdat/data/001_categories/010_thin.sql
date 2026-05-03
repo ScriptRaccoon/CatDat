@@ -12,7 +12,7 @@ VALUES
 (
 	'N',
 	'poset of natural numbers',
-	'$(\mathbb{N},\leq)$',
+	'$(\IN,\leq)$',
 	'natural numbers $0, 1, 2, \dotsc$',
 	'a unique morphism $(n,m) : n \to m$ if $n \leq m$',
 	'This can also be seen as the path category of the infinite linear graph $\bullet \to \bullet \to \bullet \to \cdots$.',
@@ -32,17 +32,17 @@ VALUES
 (
 	'Z_div',
 	'proset of integers w.r.t. divisibility',
-	'$(\mathbb{Z},\mid)$',
+	'$(\IZ,\mid)$',
 	'integers',
 	'a unique morphism $(a,b) : a \to b$ if $a$ divides $b$',
-	'This is a proset, not a poset, because $a$ and $-a$ divide each other, but are not equal for $a \neq 0$. Notice that this category is equivalent (but not isomorphic) to $(\mathbb{N},\mid)$.',
+	'This is a proset, not a poset, because $a$ and $-a$ divide each other, but are not equal for $a \neq 0$. Notice that this category is equivalent (but not isomorphic) to $(\IN,\mid)$.',
 	NULL,
 	NULL
 ),
 (
 	'N_oo',
 	'poset of extended natural numbers',
-	'$(\mathbb{N}_\infty, \leq)$',
+	'$(\IN_\infty, \leq)$',
 	'natural numbers and $\infty$',
 	'a unique morphism $(n, m) : n \to m$ if $n \leq m$, where of course $n \leq \infty$ for all $n$',
 	NULL,

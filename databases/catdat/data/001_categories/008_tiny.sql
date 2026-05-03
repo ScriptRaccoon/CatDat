@@ -35,7 +35,7 @@ VALUES
 	'$\mathbf{2}$',
 	'two objects $0$ and $1$',
 	'only the two identity morphisms',
-	'A concrete representation is the full subcategory of $\mathbf{CRing}$ consisting of the two fields $\mathbb{F}_2$ and $\mathbb{F}_3$.',
+	'A concrete representation is the full subcategory of $\mathbf{CRing}$ consisting of the two fields $\IF_2$ and $\IF_3$.',
 	NULL,
 	NULL
 ),
@@ -127,7 +127,7 @@ VALUES
 	'$\mathrm{Split}$',
 	'two objects $0$ and $1$',
 	'the identities, morphisms $i : 0 \to 1$, $p : 1 \to 0$ satisfying $pi = \mathrm{id}_0$, and the idempotent $ip : 1 \to 1$.',
-	'This category could also be called the "walking split idempotent" (or "walking section", "walking retraction"), but we chose a name that emphasizes that the splitting belongs to the data. Notice that the $5$ given morphisms are indeed closed under composition. For example, $p \circ ip = p$ and $ip \circ i = i$.<br>The walking splitting can be interpreted as a skeleton of the category of $\mathbb{F}_2$-vector spaces of dimension $\leq 1$.',
+	'This category could also be called the "walking split idempotent" (or "walking section", "walking retraction"), but we chose a name that emphasizes that the splitting belongs to the data. Notice that the $5$ given morphisms are indeed closed under composition. For example, $p \circ ip = p$ and $ip \circ i = i$.<br>The walking splitting can be interpreted as a skeleton of the category of $\IF_2$-vector spaces of dimension $\leq 1$.',
 	NULL,
 	NULL
 ),

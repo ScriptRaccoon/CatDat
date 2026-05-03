@@ -206,7 +206,7 @@ VALUES
 	'nno_criterion',
 	'["countably distributive"]',
 	'["natural numbers object"]',
-	'Consider the copower $N := \coprod_{n \in \mathbb{N}} 1$ with inclusions $i_n : 1 \to N$ for $n \in \mathbb{N}$. We define $z := i_1 : 1 \to N$ and $s : N \to N$ by $s \circ i_n = i_{n+1}$. Since the category is countably distributive, we have $A \times N \cong \coprod_{n \in \mathbb{N}} A$ for every object $A$. Given morphisms $f : A \to X$, $g : X \to X$, a morphism $\Phi : A \times N \to X$ therefore corresponds to a family of morphisms $\phi_n : A \to X$ for $n \in \mathbb{N}$. The condition $\Phi(a,z)=f(a)$ becomes $\phi_0 = f$. The condition $\Phi(a,s(n)) = g(\Phi(a,n))$ becomes $\phi_{n+1} = g \circ \phi_n$. This recursively defines the morphisms $\phi_n$. (We are basically using that $\mathbb{N}$ is a natural numbers object in $\mathbf{Set}$.) Concretely, $\phi_n = g^n \circ f$.',
+	'Consider the copower $N := \coprod_{n \in \IN} 1$ with inclusions $i_n : 1 \to N$ for $n \in \IN$. We define $z := i_1 : 1 \to N$ and $s : N \to N$ by $s \circ i_n = i_{n+1}$. Since the category is countably distributive, we have $A \times N \cong \coprod_{n \in \IN} A$ for every object $A$. Given morphisms $f : A \to X$, $g : X \to X$, a morphism $\Phi : A \times N \to X$ therefore corresponds to a family of morphisms $\phi_n : A \to X$ for $n \in \IN$. The condition $\Phi(a,z)=f(a)$ becomes $\phi_0 = f$. The condition $\Phi(a,s(n)) = g(\Phi(a,n))$ becomes $\phi_{n+1} = g \circ \phi_n$. This recursively defines the morphisms $\phi_n$. (We are basically using that $\IN$ is a natural numbers object in $\mathbf{Set}$.) Concretely, $\phi_n = g^n \circ f$.',
 	FALSE
 ),
 (
@@ -234,6 +234,6 @@ VALUES
 	'topos_no_stable_epis',
 	'["elementary topos", "countable coproducts", "cofiltered-limit-stable epimorphisms"]',
 	'["trivial"]',
-	'Let $N := \coprod_{m \in \mathbb{N}} 1$ and consider for every $n \in \mathbb{N}$ the subobject $N_{\geq n} = \coprod_{m \geq n} 1$ of $N$. For $n \leq n''$ we have $N_{\geq n''} \subseteq N_{\geq n}$. There is a (unique, split) epimorphism $N_{\geq n} \to 1$ for every $n$. By assumption, their limit $\lim_n N_{\geq n} \to 1$ is also an epimorphism. But $\lim_n N_{\geq n} = \bigcap_{n} N_{\geq n} = 0$. Thus, $0 \to 1$ is an epimorphism. It must be a regular epimorphism, but $0$ is strict initial, so that $0 \to 1$ is an isomorphism. Hence, $X \cong X \times 1 \cong X \times 0 \cong 0$ for all $X$.',
+	'Let $N := \coprod_{m \in \IN} 1$ and consider for every $n \in \IN$ the subobject $N_{\geq n} = \coprod_{m \geq n} 1$ of $N$. For $n \leq n''$ we have $N_{\geq n''} \subseteq N_{\geq n}$. There is a (unique, split) epimorphism $N_{\geq n} \to 1$ for every $n$. By assumption, their limit $\lim_n N_{\geq n} \to 1$ is also an epimorphism. But $\lim_n N_{\geq n} = \bigcap_{n} N_{\geq n} = 0$. Thus, $0 \to 1$ is an epimorphism. It must be a regular epimorphism, but $0$ is strict initial, so that $0 \to 1$ is an isomorphism. Hence, $X \cong X \times 1 \cong X \times 0 \cong 0$ for all $X$.',
 	FALSE
 );

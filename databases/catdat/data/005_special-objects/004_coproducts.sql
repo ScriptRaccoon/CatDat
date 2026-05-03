@@ -15,7 +15,7 @@ VALUES
 ('CAlg(R)', 'tensor products over $R$'),
 ('Cat', 'disjoint unions'),
 ('CMon', 'direct sums'),
-('CRing', 'tensor products over $\mathbb{Z}$'),
+('CRing', 'tensor products over $\IZ$'),
 ('FreeAb', 'direct sums'),
 ('Grp', 'free products'),
 ('Haus', 'disjoint union with the disjoint union topology'),

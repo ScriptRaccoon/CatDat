@@ -127,7 +127,7 @@ VALUES
     'Delta',
     'essentially finite',
     FALSE,
-    'The set $\mathbb{N}$ is not finite.'
+    'The set $\IN$ is not finite.'
 ),
 (
     'Delta',

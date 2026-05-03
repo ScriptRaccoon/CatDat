@@ -9,7 +9,7 @@ VALUES
 	'Sp',
 	'essentially small',
 	TRUE,
-	'This holds because $\mathbf{FinSet}$ and $\mathbb{B}$ are essentially small.'
+	'This holds because $\mathbf{FinSet}$ and $\IB$ are essentially small.'
 ),
 (
 	'Sp',
@@ -63,7 +63,7 @@ VALUES
 	'Sp',
 	'essentially countable',
 	FALSE,
-	'Any function $f\colon\mathbb{N} \to \mathbb{N}$ can be regarded as a combinatorial species with trivial actions, and distinct functions yield non-isomorphic species.'
+	'Any function $f\colon\IN \to \IN$ can be regarded as a combinatorial species with trivial actions, and distinct functions yield non-isomorphic species.'
 ),
 (
 	'Sp',

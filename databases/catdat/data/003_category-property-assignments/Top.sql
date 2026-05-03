@@ -81,7 +81,7 @@ VALUES
 	'Top',
 	'cartesian filtered colimits',
 	FALSE,
-	'The functor $\mathbb{Q} \times - : \mathbf{Top} \to \mathbf{Top}$ does not preserve colimits, see <a href="https://math.stackexchange.com/questions/2969372" target="_blank">MSE/2969372</a>.'
+	'The functor $\IQ \times - : \mathbf{Top} \to \mathbf{Top}$ does not preserve colimits, see <a href="https://math.stackexchange.com/questions/2969372" target="_blank">MSE/2969372</a>.'
 ),
 (
 	'Top',

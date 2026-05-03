@@ -21,7 +21,7 @@ VALUES
     'abelianization',
     'product-preserving',
     FALSE,
-    'If $G$ is a group, the canonical homomorphism $(G^{\mathbb{N}})^{\mathrm{ab}} \to (G^{\mathrm{ab}})^{\mathbb{N}}$ is surjective, but does not need to be an isomorphism: otherwise, the inclusion $[G^{\mathbb{N}}, G^{\mathbb{N}}] \subseteq [G,G]^{\mathbb{N}}$ would be an equality. But this requires the commutator width of $G$ to be finite, which fails for $G = F_2$ for instance. See also <a href="https://arxiv.org/abs/1608.02220">The abelianization of inverse limits of groups</a>, Remark 0.0.7.'
+    'If $G$ is a group, the canonical homomorphism $(G^{\IN})^{\mathrm{ab}} \to (G^{\mathrm{ab}})^{\IN}$ is surjective, but does not need to be an isomorphism: otherwise, the inclusion $[G^{\IN}, G^{\IN}] \subseteq [G,G]^{\IN}$ would be an equality. But this requires the commutator width of $G$ to be finite, which fails for $G = F_2$ for instance. See also <a href="https://arxiv.org/abs/1608.02220">The abelianization of inverse limits of groups</a>, Remark 0.0.7.'
 ),
 (
     'abelianization',

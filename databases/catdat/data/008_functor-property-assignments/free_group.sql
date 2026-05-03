@@ -21,7 +21,7 @@ VALUES
     'free_group',
     'faithful',
     TRUE,
-    'A left adjoint is faithful if and only if its unit consists of monomorphisms. So we only need to check that every set <i>embeds</i> into (the underlying set of) its free group. But this is clear since $X$ already embeds into the free abelian group $\mathbb{Z}^{\oplus X}$, which is a quotient of the free group.'
+    'A left adjoint is faithful if and only if its unit consists of monomorphisms. So we only need to check that every set <i>embeds</i> into (the underlying set of) its free group. But this is clear since $X$ already embeds into the free abelian group $\IZ^{\oplus X}$, which is a quotient of the free group.'
 ),
 (
     'free_group',
@@ -33,7 +33,7 @@ VALUES
     'free_group',
     'essentially surjective',
     FALSE,
-    'Not every group is free (consider $\mathbb{Z}/2$).'
+    'Not every group is free (consider $\IZ/2$).'
 ),
 (
     'free_group',
@@ -45,7 +45,7 @@ VALUES
     'free_group',
     'full',
     FALSE,
-    'The map $1 = \mathrm{Hom}(1,1) \to \mathrm{Hom}(F(1),F(1)) = \mathrm{Hom}(\mathbb{Z},\mathbb{Z}) = \mathbb{Z}$ is not surjective.'
+    'The map $1 = \mathrm{Hom}(1,1) \to \mathrm{Hom}(F(1),F(1)) = \mathrm{Hom}(\IZ,\IZ) = \IZ$ is not surjective.'
 ),
 (
     'free_group',

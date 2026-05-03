@@ -33,7 +33,7 @@ VALUES
 	'LRS',
 	'well-copowered',
 	TRUE,
-	'It is enough to prove that every epimorphism of locally ringed spaces is surjective. The forgetful functor $\mathbf{LRS} \to \mathbf{RS}$ has a right adjoint (see <a href="https://arxiv.org/abs/1103.2139" target="_blank">Localization of ringed spaces</a> by W. Gillam), so it preserves epimorphisms. The forgetful functor $\mathbf{RS} \to \mathbf{Top}$ also has a right adjoint, namely $X \mapsto (X,\underline{\mathbb{Z}})$, so it also preserves epimorphisms.'
+	'It is enough to prove that every epimorphism of locally ringed spaces is surjective. The forgetful functor $\mathbf{LRS} \to \mathbf{RS}$ has a right adjoint (see <a href="https://arxiv.org/abs/1103.2139" target="_blank">Localization of ringed spaces</a> by W. Gillam), so it preserves epimorphisms. The forgetful functor $\mathbf{RS} \to \mathbf{Top}$ also has a right adjoint, namely $X \mapsto (X,\underline{\IZ})$, so it also preserves epimorphisms.'
 ),
 (
 	'LRS',
@@ -45,7 +45,7 @@ VALUES
 	'LRS',
 	'balanced',
 	FALSE,
-	'The canonical morphism $\mathrm{Spec}(\mathbb{Z}/2 \times \mathbb{Z}[1/2]) \longrightarrow \mathrm{Spec}(\mathbb{Z})$ is a mono- and an epimorphism, but no isomorphism.'
+	'The canonical morphism $\mathrm{Spec}(\IZ/2 \times \IZ[1/2]) \longrightarrow \mathrm{Spec}(\IZ)$ is a mono- and an epimorphism, but no isomorphism.'
 ),
 (
 	'LRS',
@@ -63,7 +63,7 @@ VALUES
 	'LRS',
 	'semi-strongly connected',
 	FALSE,
-	'This is because already the full subcategory of affine schemes is not semi-strongly connected, see <a href="/category/CRing">the entry for $\mathbf{CRing}$</a>. Specifically, there is no morphism between $\mathrm{Spec}(\mathbb{F}_2)$ and $\mathrm{Spec}(\mathbb{F}_3)$.'
+	'This is because already the full subcategory of affine schemes is not semi-strongly connected, see <a href="/category/CRing">the entry for $\mathbf{CRing}$</a>. Specifically, there is no morphism between $\mathrm{Spec}(\IF_2)$ and $\mathrm{Spec}(\IF_3)$.'
 ),
 (
 	'LRS',

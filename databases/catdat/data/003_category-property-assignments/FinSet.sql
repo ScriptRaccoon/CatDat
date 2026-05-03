@@ -15,7 +15,7 @@ VALUES
 	'FinSet',
 	'essentially countable',
 	TRUE,
-	'Every finite set is isomorphic to some $\{1,\dotsc,n\}$ for some $n \in \mathbb{N}$.'
+	'Every finite set is isomorphic to some $\{1,\dotsc,n\}$ for some $n \in \IN$.'
 ),
 (
 	'FinSet',
@@ -57,13 +57,13 @@ VALUES
 	'FinSet',
 	'countable copowers',
 	FALSE,
-	'If countable copowers exist, then by <a href="/lemma/hilberts_hotel">Hilbert''s Hotel</a> there is some object $C$ with $C \cong 1 \sqcup C$. If $C$ has $m \in \mathbb{N}$ elements, this implies the contradiction $m = 1 + m$.'
+	'If countable copowers exist, then by <a href="/lemma/hilberts_hotel">Hilbert''s Hotel</a> there is some object $C$ with $C \cong 1 \sqcup C$. If $C$ has $m \in \IN$ elements, this implies the contradiction $m = 1 + m$.'
 ),
 (
 	'FinSet',
 	'countable powers',
 	FALSE,
-	'If countable powers exist, then by <a href="/lemma/hilberts_hotel">Hilbert''s Hotel</a> there is an object $P$ with $P \cong \{0,1\} \times P$ and a morphism $\{0,1\} \to P$. If $P$ has $m \in \mathbb{N}$ elements, this implies $m = 2m$ and hence $m = 0$, i.e. $P = \varnothing$. But then there cannot be a map $\{0,1\} \to P$.'
+	'If countable powers exist, then by <a href="/lemma/hilberts_hotel">Hilbert''s Hotel</a> there is an object $P$ with $P \cong \{0,1\} \times P$ and a morphism $\{0,1\} \to P$. If $P$ has $m \in \IN$ elements, this implies $m = 2m$ and hence $m = 0$, i.e. $P = \varnothing$. But then there cannot be a map $\{0,1\} \to P$.'
 ),
 (
 	'FinSet',

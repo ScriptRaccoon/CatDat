@@ -15,7 +15,7 @@ VALUES
 	'$BG$',
 	'a single object',
 	'the elements of an infinite countable group $G$',
-	'Every group $G$ yields a groupoid $BG$ with a single object $*$, morphisms given by the elements of $G$, and composition given by the group operation. In this example, we consider the case of an infinite countable group $G$ (such as $G = \mathbb{Z}$).',
+	'Every group $G$ yields a groupoid $BG$ with a single object $*$, morphisms given by the elements of $G$, and composition given by the group operation. In this example, we consider the case of an infinite countable group $G$ (such as $G = \IZ$).',
 	'https://ncatlab.org/nlab/show/delooping',
 	NULL
 ),
@@ -32,10 +32,10 @@ VALUES
 (
 	'BN',
 	'delooping of the additive monoid of natural numbers',
-	'$B\mathbb{N}$',
+	'$B\IN$',
 	'a single object',
 	'the natural numbers, with addition serving as composition',
-	'Every monoid $M$ induces a category $BM$ with a single object $*$, morphisms given by the elements of $M$, and composition given by the monoid operation. Some of the properties of this category depend on the specific monoid. In this example, we take the commutative monoid $M = (\mathbb{N},+,0)$, so composition is $n \circ m = n + m$.',
+	'Every monoid $M$ induces a category $BM$ with a single object $*$, morphisms given by the elements of $M$, and composition given by the monoid operation. Some of the properties of this category depend on the specific monoid. In this example, we take the commutative monoid $M = (\IN,+,0)$, so composition is $n \circ m = n + m$.',
 	NULL,
 	NULL
 ),

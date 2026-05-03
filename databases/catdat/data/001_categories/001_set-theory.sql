@@ -75,7 +75,7 @@ VALUES
 	'$\mathbf{Set}_\mathrm{c}$',
 	'countable sets',
 	'maps',
-	'A set is countable if it admits a surjection from $\mathbb{N}$. In particular, every finite set is countable.',
+	'A set is countable if it admits a surjection from $\IN$. In particular, every finite set is countable.',
 	NULL,
 	NULL
 ),
