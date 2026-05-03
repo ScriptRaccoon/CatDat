@@ -10,10 +10,18 @@ const db = get_client()
 
 check_redundancies()
 
+/**
+ * Checks for redundancies in the database.
+ */
 function check_redundancies() {
 	check_redundant_category_property_assignments()
 }
 
+/**
+ * Checks for redundant (category, property)-assignments and logs
+ * one per category if any are found (satisfied or unsatisfied).
+ * No error is thrown intentionally.
+ */
 function check_redundant_category_property_assignments() {
 	console.info('\n--- Check redundant category property assignments ---')
 
@@ -62,6 +70,11 @@ function check_redundant_category_property_assignments() {
 	}
 }
 
+/**
+ * Returns the set of properties that can be deduced from a set of properties
+ * based on a list of normalized implications. This function is very similar
+ * to the corresponding function in `deduce-category-properties.ts`.
+ */
 function get_deduced_satisfied_properties(
 	satisfied_properties: Set<string>,
 	implications: NormalizedCategoryImplication[],
@@ -87,6 +100,12 @@ function get_deduced_satisfied_properties(
 	return deduced_properties
 }
 
+/**
+ * From a given set of properties, returns a property that can be
+ * deduced from the other properties in this set, based on a list
+ * of normalized implications.
+ * If no such property exists, null is returned.
+ */
 function get_redundant_satisfied_property(
 	satisfied_properties: Set<string>,
 	implications: NormalizedCategoryImplication[],
@@ -102,6 +121,12 @@ function get_redundant_satisfied_property(
 	return null
 }
 
+/**
+ * Returns the set of unsatisfied properties that can be deduced from
+ * a set of satisfied properties and a set of unsatisfied properties,
+ * based on a list of normalized implications. This function is very similar
+ * to the corresponding function in `deduce-category-properties.ts`.
+ */
 function get_deduced_unsatisfied_properties(
 	satisfied_properties: Set<string>,
 	unsatisfied_properties: Set<string>,
@@ -140,6 +165,12 @@ function get_deduced_unsatisfied_properties(
 	return deduced_unsatisfied_properties
 }
 
+/**
+ * From a given set of satisfied and unsatisfied properties,
+ * returns a unsatisfied property that can be deduced from these,
+ * based on a list of normalized implications.
+ * If no such property exists, null is returned.
+ */
 function get_redundant_unsatisfied_property(
 	satisfied_properties: Set<string>,
 	unsatisfied_properties: Set<string>,
