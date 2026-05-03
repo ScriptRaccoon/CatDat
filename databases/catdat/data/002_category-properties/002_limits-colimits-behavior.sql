@@ -96,8 +96,8 @@ VALUES
 	'In a category $\C$, which we assume to have filtered colimits and finite limits, we say that <i>filtered colimits are exact</i> if the following equivalent conditions are satisfied:
 	<ol>
 		<li>For every finite category $\I$ the functor $\lim : [\I, \C] \to \C$ preserves filtered colimits.</li>
-		<li>For every small filtered category $\J$ the functor $\mathrm{colim} : [\J,\C] \to \C$ preserves finite limits.</li>
-		<li>For every diagram $X : \I \times \J \to \C$, where $\I$ is finite and $\J$ is small filtered, the canonical morphism $\mathrm{colim}_j \lim_i X(i,j) \to \lim_i \mathrm{colim}_j X(i,j)$ is an isomorphism.</li>
+		<li>For every small filtered category $\J$ the functor $\colim : [\J,\C] \to \C$ preserves finite limits.</li>
+		<li>For every diagram $X : \I \times \J \to \C$, where $\I$ is finite and $\J$ is small filtered, the canonical morphism $\colim_j \lim_i X(i,j) \to \lim_i \colim_j X(i,j)$ is an isomorphism.</li>
 	</ol>',
 	'https://ncatlab.org/nlab/show/commutativity+of+limits+and+colimits',
 	'exact cofiltered limits',
@@ -108,9 +108,9 @@ VALUES
 	'has',
 	'In a category $\C$, which we assume to have cofiltered limits and finite colimits, we say that <i>cofiltered limits are exact</i> if the following equivalent conditions are satisfied:
 	<ol>
-		<li>For every finite category $\I$ the functor $\mathrm{colim} : [\I, \C] \to \C$ preserves cofiltered limits.</li>
+		<li>For every finite category $\I$ the functor $\colim : [\I, \C] \to \C$ preserves cofiltered limits.</li>
 		<li>For every small cofiltered category $\J$ the functor $\lim : [\J,\C] \to \C$ preserves finite colimits.</li>
-		<li>For every diagram $X : \I \times \J \to \C$, where $\I$ is finite and $\J$ is small cofiltered, the canonical morphism $\mathrm{colim}_i \lim_j X(i,j) \to \lim_j \mathrm{colim}_i X(i,j)$ is an isomorphism.</li>
+		<li>For every diagram $X : \I \times \J \to \C$, where $\I$ is finite and $\J$ is small cofiltered, the canonical morphism $\colim_i \lim_j X(i,j) \to \lim_j \colim_i X(i,j)$ is an isomorphism.</li>
 	</ol>',
 	'https://ncatlab.org/nlab/show/commutativity+of+limits+and+colimits',
 	'exact filtered colimits',

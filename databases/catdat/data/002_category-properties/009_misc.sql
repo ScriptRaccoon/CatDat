@@ -60,7 +60,7 @@ VALUES
 	'is',
 	'A category $\C$ is <i>sifted</i> if it is inhabited and the diagonal functor $\Delta : \C \to \C \times \C$ is final, i.e. if it is non-empty and for any two objects $X,Y \in \C$ the category of cospans
 	$$X \rightarrow Z \leftarrow Y$$
-	is connected. Equivalently, a small category $\C$ is sifted if $\mathrm{colim} : \mathbf{Set}^{\C} \to \mathbf{Set}$ preserves finite products. This property is a weaker notion than being filtered.',
+	is connected. Equivalently, a small category $\C$ is sifted if $\colim : \mathbf{Set}^{\C} \to \mathbf{Set}$ preserves finite products. This property is a weaker notion than being filtered.',
 	'https://ncatlab.org/nlab/show/sifted+category',
 	'cosifted',
 	TRUE
@@ -70,7 +70,7 @@ VALUES
 	'is',
 	'A category $\C$ is <i>cosifted</i> if it is inhabited and the diagonal functor $\Delta : \C \to \C \times \C$ is initial, i.e. if it is non-empty and for any two objects $X,Y \in \C$ the category of spans
 	$$X \leftarrow Z \rightarrow Y$$
-	is connected. Equivalently, a small category $\C$ is cosifted if $\mathrm{colim} : \mathbf{Set}^{{\C}^\op} \to \mathbf{Set}$ preserves finite products. This property is a weaker notion than being cofiltered.',
+	is connected. Equivalently, a small category $\C$ is cosifted if $\colim : \mathbf{Set}^{{\C}^\op} \to \mathbf{Set}$ preserves finite products. This property is a weaker notion than being cofiltered.',
 	'https://ncatlab.org/nlab/show/sifted+category',
 	'sifted',
 	TRUE

@@ -30,4 +30,5 @@ export const MACROS = {
 	'\\f': '\\mathrm{f}',
 	'\\fg': '\\mathrm{fg}',
 	'\\card': '\\operatorname{card}',
+	'\\colim': '\\operatorname{colim}',
 }
