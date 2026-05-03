@@ -48,6 +48,7 @@ export const MACROS = {
 	'\\Sub': '\\operatorname{Sub}',
 	'\\Quot': '\\operatorname{Quot}',
 	'\\supp': '\\operatorname{supp}',
+	'\\Coexp': '\\operatorname{Coexp}',
 	// categories
 	'\\Set': '\\mathbf{Set}',
 	'\\Rel': '\\mathbf{Rel}',

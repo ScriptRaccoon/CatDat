@@ -18,7 +18,7 @@ VALUES
 (
 	'cocartesian coclosed',
 	'is',
-	'A category is <i>cocartesian coclosed</i> if its dual category is cartesian closed, i.e. if all finite coproducts and coexponentials $\mathrm{Coexp}(X,Y)$ exist, defined by the adjunction $\Hom(\mathrm{Coexp}[X,Y],T) \cong \Hom(Y,T \sqcup X)$.',
+	'A category is <i>cocartesian coclosed</i> if its dual category is cartesian closed, i.e. if all finite coproducts and coexponentials $\Coexp(X,Y)$ exist, defined by the adjunction $\Hom(\Coexp[X,Y],T) \cong \Hom(Y,T \sqcup X)$.',
 	'https://ncatlab.org/nlab/show/cocartesian+coclosed+category',
 	'cartesian closed',
 	TRUE
