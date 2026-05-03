@@ -51,7 +51,7 @@ VALUES
 	'Cat',
 	'cogenerating set',
 	FALSE,
-	'Assume that $S$ is a cogenerating set in $\mathbf{Cat}$. Then one checks that the set of monoids $\{\mathrm{End}(X) : X \in \C \in S\}$ is a cogenerating set in the <a href="/category/Mon">category of monoids</a>, which we know does not exist.'
+	'Assume that $S$ is a cogenerating set in $\mathbf{Cat}$. Then one checks that the set of monoids $\{\End(X) : X \in \C \in S\}$ is a cogenerating set in the <a href="/category/Mon">category of monoids</a>, which we know does not exist.'
 ),
 (
 	'Cat',
@@ -75,7 +75,7 @@ VALUES
 	'Cat',
 	'co-Malcev',
 	FALSE,
-	'We can adapt the proof from <a href="/category/Mon">$\mathbf{Mon}$</a> as follows: Consider the functor $U : \mathbf{Cat} \to \mathbf{Set}^+$ sending a category $\C$ to the (large) set $\{(x,u) : x \in \Ob(\C) ,\, u \in \mathrm{End}(x) \}$. It is represented by $B \IN$, the one-object category associated to the free monoid in one generator. Consider the relation $R \subseteq U^2$ consisting of those pairs $((x,u),(y,v))$ where $x = y$ and $uv = u^2$. This also representable, namely be the one-object category associated to the monoid with the presentation $\langle u,v : uv = u^2 \rangle$. Clearly, $R$ is reflexive, but not symmetric.'
+	'We can adapt the proof from <a href="/category/Mon">$\mathbf{Mon}$</a> as follows: Consider the functor $U : \mathbf{Cat} \to \mathbf{Set}^+$ sending a category $\C$ to the (large) set $\{(x,u) : x \in \Ob(\C) ,\, u \in \End(x) \}$. It is represented by $B \IN$, the one-object category associated to the free monoid in one generator. Consider the relation $R \subseteq U^2$ consisting of those pairs $((x,u),(y,v))$ where $x = y$ and $uv = u^2$. This also representable, namely be the one-object category associated to the monoid with the presentation $\langle u,v : uv = u^2 \rangle$. Clearly, $R$ is reflexive, but not symmetric.'
 ),
 (
 	'Cat',
