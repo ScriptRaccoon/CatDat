@@ -89,4 +89,6 @@ export const MACROS = {
 	'\\1': '\\mathbf{1}',
 	'\\2': '\\mathbf{2}',
 	'\\On': '\\mathbf{On}',
+	'\\Idem': '\\mathbf{Idem}',
+	'\\Split': '\\mathbf{Split}',
 }
