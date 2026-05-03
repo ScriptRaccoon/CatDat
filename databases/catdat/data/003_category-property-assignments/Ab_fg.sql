@@ -33,7 +33,7 @@ VALUES
 	'Ab_fg',
 	'ℵ₁-accessible',
 	TRUE,
-	'The inclusion $\mathbf{Ab}_{\fg} \hookrightarrow \mathbf{Ab}$ is closed under $\aleph_1$-filtered colimits by <a href="https://mathoverflow.net/questions/400763/">MO/400763</a>. In particular, $\mathbf{Ab}_{\fg}$ has $\aleph_1$-filtered colimits. Since $\mathbf{Ab}_{\fg}$ is essentially small, there is a set $G$ such that every f.g. abelian group is isomorphic to one in $G$. So trivially it is also a $\aleph_1$-filtered colimit of such objects (take the constant diagram). Finally, every object is $\mathbf{Ab}_{\fg} = \mathbf{Ab}_{\mathrm{fp}}$ is finitely presentable in $\mathbf{Ab}$ and hence also in $\mathbf{Ab}_{\fg}$, a fortiori $\aleph_1$-presentable.'
+	'The inclusion $\mathbf{Ab}_{\fg} \hookrightarrow \mathbf{Ab}$ is closed under $\aleph_1$-filtered colimits by <a href="https://mathoverflow.net/questions/400763/">MO/400763</a>. In particular, $\mathbf{Ab}_{\fg}$ has $\aleph_1$-filtered colimits. Since $\mathbf{Ab}_{\fg}$ is essentially small, there is a set $G$ such that every f.g. abelian group is isomorphic to one in $G$. So trivially it is also a $\aleph_1$-filtered colimit of such objects (take the constant diagram). Finally, every object is $\mathbf{Ab}_{\fg} = \mathbf{Ab}_{\fp}$ is finitely presentable in $\mathbf{Ab}$ and hence also in $\mathbf{Ab}_{\fg}$, a fortiori $\aleph_1$-presentable.'
 ),
 (
 	'Ab_fg',

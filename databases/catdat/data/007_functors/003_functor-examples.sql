@@ -20,7 +20,7 @@ VALUES
         'abelianization functor for groups',
         'Grp',
         'Ab',
-        'This functor maps a group $G$ to its abelianization $G^{\mathrm{ab}} := G/[G,G]$.',
+        'This functor maps a group $G$ to its abelianization $G^{\ab} := G/[G,G]$.',
         'https://ncatlab.org/nlab/show/abelianization'
     ),
     (

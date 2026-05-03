@@ -29,6 +29,9 @@ export const MACROS = {
 	'\\c': '\\mathrm{c}',
 	'\\f': '\\mathrm{f}',
 	'\\fg': '\\mathrm{fg}',
+	'\\fp': '\\mathrm{fp}',
+	'\\ab': '\\mathrm{ab}',
+	'\\reg': '\\mathrm{reg}',
 	'\\card': '\\operatorname{card}',
 	'\\colim': '\\operatorname{colim}',
 }
