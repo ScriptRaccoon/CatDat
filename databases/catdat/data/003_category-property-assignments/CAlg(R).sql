@@ -9,7 +9,7 @@ VALUES
 	'CAlg(R)',
 	'locally small',
 	TRUE,
-	'There is a forgetful functor $\mathbf{CAlg(R)} \to \Set$ and $\Set$ is locally small.'
+	'There is a forgetful functor $\CAlg(R) \to \Set$ and $\Set$ is locally small.'
 ),
 (
 	'CAlg(R)',

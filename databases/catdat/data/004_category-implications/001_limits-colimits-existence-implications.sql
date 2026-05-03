@@ -318,6 +318,6 @@ VALUES
 	'multi-complete_with_finite_coproducts',
 	'["multi-complete", "finite coproducts"]',
 	'["complete"]',
-	'Let $D\colon \S \to \C$ be a small diagram in a category $\C$. Since $\C$ has finite coproducts, the category $\mathbf{Cone}(D)$ of cones over $D$ has finite coproducts. In particular, $\mathbf{Cone}(D)$ is connected, hence a multi-terminal object in it automatically becomes a terminal object.',
+	'Let $D\colon \S \to \C$ be a small diagram in a category $\C$. Since $\C$ has finite coproducts, the category $\Cone(D)$ of cones over $D$ has finite coproducts. In particular, $\Cone(D)$ is connected, hence a multi-terminal object in it automatically becomes a terminal object.',
 	FALSE
 );

@@ -92,4 +92,7 @@ export const MACROS = {
 	'\\On': '\\mathbf{On}',
 	'\\Idem': '\\mathbf{Idem}',
 	'\\Split': '\\mathbf{Split}',
+	'\\RS': '\\mathbf{RS}',
+	'\\CoAlg': '\\mathbf{CoAlg}',
+	'\\Cone': '\\mathbf{Cone}',
 }

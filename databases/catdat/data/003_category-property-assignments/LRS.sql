@@ -33,7 +33,7 @@ VALUES
 	'LRS',
 	'well-copowered',
 	TRUE,
-	'It is enough to prove that every epimorphism of locally ringed spaces is surjective. The forgetful functor $\LRS \to \mathbf{RS}$ has a right adjoint (see <a href="https://arxiv.org/abs/1103.2139" target="_blank">Localization of ringed spaces</a> by W. Gillam), so it preserves epimorphisms. The forgetful functor $\mathbf{RS} \to \Top$ also has a right adjoint, namely $X \mapsto (X,\underline{\IZ})$, so it also preserves epimorphisms.'
+	'It is enough to prove that every epimorphism of locally ringed spaces is surjective. The forgetful functor $\LRS \to \RS$ has a right adjoint (see <a href="https://arxiv.org/abs/1103.2139" target="_blank">Localization of ringed spaces</a> by W. Gillam), so it preserves epimorphisms. The forgetful functor $\RS \to \Top$ also has a right adjoint, namely $X \mapsto (X,\underline{\IZ})$, so it also preserves epimorphisms.'
 ),
 (
 	'LRS',

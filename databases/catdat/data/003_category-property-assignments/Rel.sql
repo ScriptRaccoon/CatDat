@@ -15,7 +15,7 @@ VALUES
 	'Rel',
 	'self-dual',
 	TRUE,
-	'There is an isomorphism $\mathbf{Rel} \to \mathbf{Rel}^{\op}$ that is the identity on objects (sets) and maps a relation $R \subseteq X \times Y$ to the opposite relation $R^o \subseteq Y \times X$ defined by $R^o := \{(y,x) : (x,y) \in R \}$.'
+	'There is an isomorphism $\Rel \to \Rel^{\op}$ that is the identity on objects (sets) and maps a relation $R \subseteq X \times Y$ to the opposite relation $R^o \subseteq Y \times X$ defined by $R^o := \{(y,x) : (x,y) \in R \}$.'
 ),
 (
 	'Rel',
@@ -75,7 +75,7 @@ VALUES
 	'Rel',
 	'preadditive',
 	FALSE,
-	'In categories with finite products and finite coproducts, the preadditive structure <a href="/lemma/preadditive_structure_unique">is unique</a> if it exists. In the case of $\mathbf{Rel}$, where both products and coproducts are just disjoint unions, this operation is just the set-theoretic union $f+g = f \cup g$ of relations. This clearly has no inverses.'
+	'In categories with finite products and finite coproducts, the preadditive structure <a href="/lemma/preadditive_structure_unique">is unique</a> if it exists. In the case of $\Rel$, where both products and coproducts are just disjoint unions, this operation is just the set-theoretic union $f+g = f \cup g$ of relations. This clearly has no inverses.'
 ),
 (
 	'Rel',
@@ -93,5 +93,5 @@ VALUES
 	'Rel',
 	'normal',
 	FALSE,
-	'The construction of equalizers in $\mathbf{Rel}$ shows that they are injective functions, but <a href="https://math.stackexchange.com/questions/350716" target="_blank">MSE/350716</a> shows that monomorphisms in $\mathbf{Rel}$ don''t have to be functions.'
+	'The construction of equalizers in $\Rel$ shows that they are injective functions, but <a href="https://math.stackexchange.com/questions/350716" target="_blank">MSE/350716</a> shows that monomorphisms in $\Rel$ don''t have to be functions.'
 );

@@ -52,7 +52,7 @@ VALUES
 (
 	'Alg(R)',
 	'category of algebras',
-	'$\mathbf{Alg}(R)$',
+	'$\Alg(R)$',
 	'algebras over a commutative ring $R \neq 0$',
 	'maps preserving the ring and module structure',
 	'This is a generalization of the category of rings, which we get for $R = \IZ$. We assume our rings (and algebras) to be unital. For $R = 0$ we would get the trivial category, which is why we exclude this here.',
@@ -102,7 +102,7 @@ VALUES
 (
 	'CMon',
 	'category of commutative monoids',
-	'$\mathbf{CMon}$',
+	'$\CMon$',
 	'commutative monoids',
 	'monoid homomorphisms',
 	NULL,

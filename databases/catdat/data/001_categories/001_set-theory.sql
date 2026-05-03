@@ -62,10 +62,10 @@ VALUES
 (
 	'Rel',
 	'category of sets and relations',
-	'$\mathbf{Rel}$',
+	'$\Rel$',
 	'sets',
 	'A morphism from $A$ to $B$ is a relation, i.e. a subset of $A \times B$.',
-	'This category is self-dual as it can be: There is an isomorphism $\mathbf{Rel} \cong \mathbf{Rel}^{\op}$ that is the identity on objects and maps a relation to its opposite relation. It is the prototype of a dagger-category.',
+	'This category is self-dual as it can be: There is an isomorphism $\Rel \cong \Rel^{\op}$ that is the identity on objects and maps a relation to its opposite relation. It is the prototype of a dagger-category.',
 	'https://ncatlab.org/nlab/show/Rel',
 	NULL
 ),

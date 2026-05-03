@@ -9,7 +9,7 @@ VALUES
 	'Alg(R)',
 	'locally small',
 	TRUE,
-	'There is a forgetful functor $\mathbf{Alg}(R) \to \Set$ and $\Set$ is locally small.'
+	'There is a forgetful functor $\Alg(R) \to \Set$ and $\Set$ is locally small.'
 ),
 (
 	'Alg(R)',
@@ -69,7 +69,7 @@ VALUES
 	'Alg(R)',
 	'co-Malcev',
 	FALSE,
-	'See <a href="https://mathoverflow.net/questions/509552">MO/509552</a>: Consider the forgetful functor $U : \mathbf{Alg}(R) \to \Set$ and the relation $S \subseteq U^2$ defined by $S(A) := \{(a,b) \in U(A)^2 : ab = a^2\}$. Both are representable: $U$ by $R[X]$ and $S$ by $R \langle X,Y \rangle / \langle XY-X^2 \rangle$. It is clear that $S$ is reflexive, but not symmetric.'
+	'See <a href="https://mathoverflow.net/questions/509552">MO/509552</a>: Consider the forgetful functor $U : \Alg(R) \to \Set$ and the relation $S \subseteq U^2$ defined by $S(A) := \{(a,b) \in U(A)^2 : ab = a^2\}$. Both are representable: $U$ by $R[X]$ and $S$ by $R \langle X,Y \rangle / \langle XY-X^2 \rangle$. It is clear that $S$ is reflexive, but not symmetric.'
 ),
 (
 	'Alg(R)',
@@ -81,7 +81,7 @@ VALUES
 	'Alg(R)',
 	'regular quotient object classifier',
 	FALSE,
-	'We may copy the proof for the <a href="/category/CAlg(R)">category of commutative algebras</a> (since the proof there did not use that $P$ is commutative). Alternatively, any regular quotient object classifier in $\mathbf{Alg}(R)$ would produce one in $\CAlg(R)$ by <a href="/lemma/subobject_classifiers_coreflection">this lemma</a> (dualized).'
+	'We may copy the proof for the <a href="/category/CAlg(R)">category of commutative algebras</a> (since the proof there did not use that $P$ is commutative). Alternatively, any regular quotient object classifier in $\Alg(R)$ would produce one in $\CAlg(R)$ by <a href="/lemma/subobject_classifiers_coreflection">this lemma</a> (dualized).'
 ),
 (
 	'Alg(R)',
@@ -95,5 +95,5 @@ VALUES
 	'Alg(R)',
 	'cofiltered-limit-stable epimorphisms',
 	FALSE,
-	'We already know that $\CAlg(R)$ does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the forgetful functor $\CAlg(R) \to \mathbf{Alg}(R)$. It preserves epimorphisms by <a href="https://math.stackexchange.com/questions/5133488" target="_blank">MSE/5133488</a>.'
+	'We already know that $\CAlg(R)$ does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the forgetful functor $\CAlg(R) \to \Alg(R)$. It preserves epimorphisms by <a href="https://math.stackexchange.com/questions/5133488" target="_blank">MSE/5133488</a>.'
 );

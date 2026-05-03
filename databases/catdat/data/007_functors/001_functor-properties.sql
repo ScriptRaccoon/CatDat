@@ -145,7 +145,7 @@ VALUES
     (
         'monadic',
         'is',
-        'A functor $F : \C \to \D$ is monadic when there is a monad $T$ on $\D$ such that $F$ is equivalent to the forgetful functor $U^T : \mathbf{Alg}(T) \to \D$.',
+        'A functor $F : \C \to \D$ is monadic when there is a monad $T$ on $\D$ such that $F$ is equivalent to the forgetful functor $U^T : \Alg(T) \to \D$.',
         'https://ncatlab.org/nlab/show/monadic+functor',
         TRUE,
         'comonadic'
@@ -153,7 +153,7 @@ VALUES
     (
         'comonadic',
         'is',
-        'A functor $F : \C \to \D$ is comonadic when there is a comonad $T$ on $\D$ such that $F$ is equivalent to the forgetful functor $U^T : \mathbf{CoAlg}(T) \to \D$.',
+        'A functor $F : \C \to \D$ is comonadic when there is a comonad $T$ on $\D$ such that $F$ is equivalent to the forgetful functor $U^T : \CoAlg(T) \to \D$.',
         'https://ncatlab.org/nlab/show/comonadic+functor',
         TRUE,
         'monadic'

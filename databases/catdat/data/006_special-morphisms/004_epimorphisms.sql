@@ -72,8 +72,8 @@ VALUES
 ),
 (
 	'CMon',
-	'A morphism in $\mathbf{CMon}$ is an epimorphism iff it is an epimorphism in $\Mon$, which in turn can be characterized by <a href="https://en.wikipedia.org/wiki/Isbell''s_zigzag_theorem" target="_blank">Isbell''s zigzag theorem</a>.',
-	'If $f : M \to N$ is a homomorphism of commutative monoids which is an epimorphism in $\Mon$, then it is trivially also an epimorphism in $\mathbf{CMon}$. The converse requires a proof, which can be found at <a href="https://math.stackexchange.com/a/5133596/1650">MSE/5133488</a>.
+	'A morphism in $\CMon$ is an epimorphism iff it is an epimorphism in $\Mon$, which in turn can be characterized by <a href="https://en.wikipedia.org/wiki/Isbell''s_zigzag_theorem" target="_blank">Isbell''s zigzag theorem</a>.',
+	'If $f : M \to N$ is a homomorphism of commutative monoids which is an epimorphism in $\Mon$, then it is trivially also an epimorphism in $\CMon$. The converse requires a proof, which can be found at <a href="https://math.stackexchange.com/a/5133596/1650">MSE/5133488</a>.
 	'
 ),
 (
