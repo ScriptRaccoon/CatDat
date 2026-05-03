@@ -63,7 +63,7 @@ VALUES
 	'Alg(R)',
 	'semi-strongly connected',
 	FALSE,
-	'This is because already the full subcategory $\mathrm{CAlg}(R)$ of commutative algebras is not semi-strongly connected, see <a href="/category/CAlg(R)">its category page</a> for details.'
+	'This is because already the full subcategory $\mathbf{CAlg}(R)$ of commutative algebras is not semi-strongly connected, see <a href="/category/CAlg(R)">its category page</a> for details.'
 ),
 (
 	'Alg(R)',
