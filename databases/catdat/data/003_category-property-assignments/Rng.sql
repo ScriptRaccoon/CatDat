@@ -89,7 +89,7 @@ VALUES
 	'Rng',
 	'CSP',
 	FALSE,
-	'Assume that $\coprod_n \IZ \to \prod_n \IZ$ is an epimorphism in $\mathbf{Rng}$. Then $((\coprod_n \IZ)^+)^{\mathrm{ab}} \to \prod_n \IZ$ would be an epimorphism in $\mathbf{CRing}$, where $(-)^+$ denotes the unitalization and $(-)^{\mathrm{ab}}$ the abelianization. But if $R \to S$ is an epimorphism of commutative rings, then $\mathrm{card}(S) \leq \mathrm{card}(R)$ by <a href="https://stacks.math.columbia.edu/tag/04W0" target="_blank">SP/04W0</a>. Since $((\coprod_n \IZ)^+)^{\mathrm{ab}}$ is countable and $\prod_n \IZ$ is not, we get a contradiction.'
+	'Assume that $\coprod_n \IZ \to \prod_n \IZ$ is an epimorphism in $\mathbf{Rng}$. Then $((\coprod_n \IZ)^+)^{\mathrm{ab}} \to \prod_n \IZ$ would be an epimorphism in $\mathbf{CRing}$, where $(-)^+$ denotes the unitalization and $(-)^{\mathrm{ab}}$ the abelianization. But if $R \to S$ is an epimorphism of commutative rings, then $\card(S) \leq \card(R)$ by <a href="https://stacks.math.columbia.edu/tag/04W0" target="_blank">SP/04W0</a>. Since $((\coprod_n \IZ)^+)^{\mathrm{ab}}$ is countable and $\prod_n \IZ$ is not, we get a contradiction.'
 ),
 (
 	'Rng',

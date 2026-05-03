@@ -87,5 +87,5 @@ VALUES
 	'CMon',
 	'CSP',
 	FALSE,
-	'First of all, epimorphisms in $\mathbf{CMon}$ are preserved and reflected by the forgetful functor to $\mathbf{Mon}$ (see below). Furthermore, if $M \to N$ is an epimorphism in $\mathbf{Mon}$ and $M$ is infinite, then $\mathrm{card}(N) \leq \mathrm{card}(M)$ (see <a href="https://mathoverflow.net/questions/510431/" target="_blank">MO/510431</a>). This implies that in $\mathbf{CMon}$ the canonical homomorphism $\bigoplus_{n \geq 0} \IN \to \prod_{n \geq 0} \IN$ is not an epimorphism because its domain is countable and its codomain is uncountable.'
+	'First of all, epimorphisms in $\mathbf{CMon}$ are preserved and reflected by the forgetful functor to $\mathbf{Mon}$ (see below). Furthermore, if $M \to N$ is an epimorphism in $\mathbf{Mon}$ and $M$ is infinite, then $\card(N) \leq \card(M)$ (see <a href="https://mathoverflow.net/questions/510431/" target="_blank">MO/510431</a>). This implies that in $\mathbf{CMon}$ the canonical homomorphism $\bigoplus_{n \geq 0} \IN \to \prod_{n \geq 0} \IN$ is not an epimorphism because its domain is countable and its codomain is uncountable.'
 );

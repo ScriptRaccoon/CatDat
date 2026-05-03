@@ -57,7 +57,7 @@ VALUES
 	'FI',
 	'semi-strongly connected',
 	TRUE,
-	'If $X,Y$ are two finite sets, we have $\mathrm{card}(X) \leq \mathrm{card}(Y)$ or $\mathrm{card}(Y) \leq \mathrm{card}(X)$. In the first case there will be an injection $X \to Y$, in the second case there will be an injection $Y \to X$.'
+	'If $X,Y$ are two finite sets, we have $\card(X) \leq \card(Y)$ or $\card(Y) \leq \card(X)$. In the first case there will be an injection $X \to Y$, in the second case there will be an injection $Y \to X$.'
 ),
 (
 	'FI',
@@ -87,7 +87,7 @@ VALUES
 	'FI',
 	'sequential colimits',
 	FALSE,
-	'Let $X_n := \{1,\dotsc,n\}$. Assume the sequence of inclusion maps $X_n \hookrightarrow X_{n+1}$ has a colimit $(f_n : X_n \to X)$ in this category. But $f_n$ must be an injective map, so that $\mathrm{card}(X) \geq n$ for all $n$. Since $X$ is finite, this is a contradiction.'
+	'Let $X_n := \{1,\dotsc,n\}$. Assume the sequence of inclusion maps $X_n \hookrightarrow X_{n+1}$ has a colimit $(f_n : X_n \to X)$ in this category. But $f_n$ must be an injective map, so that $\card(X) \geq n$ for all $n$. Since $X$ is finite, this is a contradiction.'
 ),
 (
 	'FI',

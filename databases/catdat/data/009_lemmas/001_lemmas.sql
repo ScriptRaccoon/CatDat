@@ -61,7 +61,7 @@ INSERT INTO lemmas (
 (
     'special_sequential_colimits',
     'Finite structures usually have no sequential colimits',
-    'Let $\C$ be a category with finite powers, including a terminal object $1$. Let $a : 1 \to X$ be a morphism. Assume that the sequence of morphisms $(X^n,a) : X^n \to X^{n+1}$ for $n \geq 0$ admits a colimit $(i_n : X^n \to C)$. Then for every $m \geq 0$ there is a split epimorphism $C \to X^m$. In particular, if $U : \C \to \mathbf{Set}$ is a functor preserving finite powers and $\mathrm{card}(U(X)) \geq 2$, then $U(C)$ is infinite.',
+    'Let $\C$ be a category with finite powers, including a terminal object $1$. Let $a : 1 \to X$ be a morphism. Assume that the sequence of morphisms $(X^n,a) : X^n \to X^{n+1}$ for $n \geq 0$ admits a colimit $(i_n : X^n \to C)$. Then for every $m \geq 0$ there is a split epimorphism $C \to X^m$. In particular, if $U : \C \to \mathbf{Set}$ is a functor preserving finite powers and $\card(U(X)) \geq 2$, then $U(C)$ is infinite.',
     'Let $m \geq 0$ be fixed. For $n \geq 0$ we define a morphism $u_n : X^n \to X^m$ as follows: It is the projection on the first $m$ factors for $m \leq n$, and $(X^n,a^{m-n})$ for $m \geq n$ (for $m=n$ these agree). With generalized elements this says:
     $$u_n(x_1,\dotsc,x_n) = \begin{cases} (x_1,\dotsc,x_m) & m \leq n \\ (x_1,\dotsc,x_n,a,\dotsc,a) & m \geq n \end{cases}$$
     We claim that $u_n = u_{n+1} \circ (X^n,a)$, i.e.
@@ -76,7 +76,7 @@ INSERT INTO lemmas (
     'Let $\C$ be a category with a faithful functor $U: \C \to \mathbf{Set}$. Assume there exists a collection of objects $\F \subseteq \Ob(\C)$ satisfying the following conditions:
     <ol>
         <li>For any $X \in \F$ and any non-terminal $Y \in \C$, for every morphism $f: X \to Y$ its underlying map $U(f) : U(X) \to U(Y)$ is injective.</li>
-        <li>For every infinite cardinal number $\kappa$, there exists an object $X \in \F$ such that $\mathrm{card}(U(X)) \geq \kappa$ and such that $X$ has a non-identity endomorphism.</li>
+        <li>For every infinite cardinal number $\kappa$, there exists an object $X \in \F$ such that $\card(U(X)) \geq \kappa$ and such that $X$ has a non-identity endomorphism.</li>
     </ol>
     Then $\C$ does not have a cogenerating set.',
     'Assume that there is a cogenerating set $S$. By assumption (2) there is an object $X \in \F$ such that $U(X)$ is larger than all the $U(Y)$ with $Y \in S$ (w.r.t. cardinalities) and which has a non-identity endomorphism $\sigma : X \to X$. Since $S$ cogenerates, there is a morphism $f : X \to Y$ with $Y \in S$ and $f \sigma \neq f$. For this, $Y$ must be non-terminal. By (1) the map $U(f) : U(X) \to U(Y)$ is injective. This is a contradiction.'
@@ -87,7 +87,7 @@ INSERT INTO lemmas (
     'Let $\C$ be a pointed category with a faithful functor $U: \C \to \mathbf{Set}$. Assume there exists a collection of non-zero objects $\F \subseteq \Ob(\C)$ satisfying the following conditions:
     <ol>
         <li>For any $X \in \F$ and any $Y \in \C$, every non-zero morphism $f: X \to Y$ is injective on underlying sets.</li>
-        <li>For every $Y \in \C$ there is some object $X \in \F$ such that $\mathrm{card}(U(X)) > \mathrm{card}(U(Y))$.</li>
+        <li>For every $Y \in \C$ there is some object $X \in \F$ such that $\card(U(X)) > \card(U(Y))$.</li>
     </ol>
     Then $\C$ does not have a cogenerator.',
     'Assume that there is a cogenerator $Y$. By assumption (2) there is an object $X \in \F$ such that $U(X)$ is larger than $U(Y)$ (w.r.t. cardinalities). Since $0,\mathrm{id}_X : X \rightrightarrows X$ are distinct, there is a morphism $f : X \to Y$ with $f \neq 0$. But then $U(f) : U(X) \to U(Y)$ is injective by assumption (1), which contradicts our choice of $X$.'

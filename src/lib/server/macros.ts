@@ -25,4 +25,5 @@ export const MACROS = {
 	'\\O': '\\mathcal{O}',
 	'\\S': '\\mathcal{S}',
 	'\\op': '\\mathrm{op}',
+	'\\card': '\\operatorname{card}',
 }
