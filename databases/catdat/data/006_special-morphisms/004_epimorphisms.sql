@@ -294,7 +294,7 @@ VALUES
 (
 	'TorsAb',
 	'surjective homomorphisms',
-	'Clearly, surjective homomorphisms are epimorphisms. The converse follows since the forgetful functor $\mathbf{TorsAb} \to \mathbf{Ab}$ has a right adjoint, hence preserves epimorphisms.'
+	'Clearly, surjective homomorphisms are epimorphisms. The converse follows since the forgetful functor $\TorsAb \to \Ab$ has a right adjoint, hence preserves epimorphisms.'
 ),
 (
 	'TorsFreeAb',

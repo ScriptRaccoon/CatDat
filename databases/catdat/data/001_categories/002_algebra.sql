@@ -203,7 +203,7 @@ VALUES
 (
 	'TorsAb',
 	'category of torsion abelian groups',
-	'$\mathbf{TorsAb}$',
+	'$\TorsAb$',
 	'torsion abelian groups',
 	'group homomorphisms',
 	'This is a Grothendieck abelian category containing all finite abelian groups.',

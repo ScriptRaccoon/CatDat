@@ -68,6 +68,7 @@ export const MACROS = {
 	'\\FinGrp': '\\mathbf{FinGrp}',
 	'\\FreeAb': '\\mathbf{FreeAb}',
 	'\\TorsFreeAb': '\\mathbf{TorsFreeAb}',
+	'\\TorsAb': '\\mathbf{TorsAb}',
 	'\\Cat': '\\mathbf{Cat}',
 	'\\Ban': '\\mathbf{Ban}',
 	'\\Meas': '\\mathbf{Meas}',
