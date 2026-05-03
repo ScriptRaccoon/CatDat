@@ -2,6 +2,7 @@
  * Dictionary of LaTeX macros
  */
 export const MACROS = {
+	// blackboard bold letters
 	'\\IN': '\\mathbb{N}',
 	'\\IZ': '\\mathbb{Z}',
 	'\\IQ': '\\mathbb{Q}',
@@ -11,11 +12,7 @@ export const MACROS = {
 	'\\IB': '\\mathbb{B}',
 	'\\IA': '\\mathbb{A}',
 	'\\IP': '\\mathbb{P}',
-	'\\Mor': '\\operatorname{Mor}',
-	'\\Hom': '\\operatorname{Hom}',
-	'\\End': '\\operatorname{End}',
-	'\\Ob': '\\operatorname{Ob}',
-	'\\id': '\\operatorname{id}',
+	// calligraphic letters
 	'\\A': '\\mathcal{A}',
 	'\\B': '\\mathcal{B}',
 	'\\C': '\\mathcal{C}',
@@ -26,6 +23,7 @@ export const MACROS = {
 	'\\J': '\\mathcal{J}',
 	'\\O': '\\mathcal{O}',
 	'\\S': '\\mathcal{S}',
+	// abbreviations
 	'\\op': '\\mathrm{op}',
 	'\\c': '\\mathrm{c}',
 	'\\f': '\\mathrm{f}',
@@ -33,6 +31,12 @@ export const MACROS = {
 	'\\fp': '\\mathrm{fp}',
 	'\\ab': '\\mathrm{ab}',
 	'\\reg': '\\mathrm{reg}',
+	// operators
+	'\\Mor': '\\operatorname{Mor}',
+	'\\Hom': '\\operatorname{Hom}',
+	'\\End': '\\operatorname{End}',
+	'\\Ob': '\\operatorname{Ob}',
+	'\\id': '\\operatorname{id}',
 	'\\card': '\\operatorname{card}',
 	'\\colim': '\\operatorname{colim}',
 	'\\im': '\\operatorname{im}',
@@ -43,5 +47,5 @@ export const MACROS = {
 	'\\diag': '\\operatorname{diag}',
 	'\\Sub': '\\operatorname{Sub}',
 	'\\Quot': '\\operatorname{Quot}',
-	'\\supp': '\\operatorname{supp}',
+	'\\supp': '\\operatorname{}',
 }
