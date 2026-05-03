@@ -34,4 +34,6 @@ export const MACROS = {
 	'\\reg': '\\mathrm{reg}',
 	'\\card': '\\operatorname{card}',
 	'\\colim': '\\operatorname{colim}',
+	'\\im': '\\operatorname{im}',
+	'\\lcm': '\\operatorname{lcm}',
 }
