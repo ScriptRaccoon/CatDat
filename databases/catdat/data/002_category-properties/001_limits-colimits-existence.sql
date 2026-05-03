@@ -344,6 +344,38 @@ VALUES
 	TRUE
 ),
 (
+	'effective congruences',
+	'has',
+	'A congruence $f, g : E \rightrightarrows X$ (see definition <a href="/category-property/quotients_of_congruences">here</a>) is <i>effective</i> if it is the kernel pair of some morphism, i.e. if there is a morphism $h : X \to Y$ such that we have a cartesian square
+	$$
+	\begin{CD}
+	E @> f >> X \\
+	@V g VV @VV h V \\
+	X @>> h > Y.
+	\end{CD}
+	$$
+	A category <i>has effective congruences</i> if every congruence in the category is effective.',
+	'https://ncatlab.org/nlab/show/congruence',
+	'effective cocongruences',
+	TRUE
+),
+(
+	'effective cocongruences',
+	'has',
+	'A cocongruence $f, g : X \rightrightarrows E$ (see definition <a href="/category-property/coquotients_of_cocongruences">here</a>) is <i>effective</i> if it is the cokernel pair of some morphism, i.e. if there is a morphism $h : Y \to X$ such that we have a cocartesian square
+	$$
+	\begin{CD}
+	Y @> h >> X \\
+	@V h VV @VV f V \\
+	X @>> g > E.
+	\end{CD}
+	$$
+	A category <i>has effective cocongruences</i> if every cocongruence in the category is effective.',
+	NULL,
+	'effective congruences',
+	TRUE
+),
+(
 	'cosifted limits',
 	'has',
 	'A category has <i>cosifted limits</i> if it has limits of diagrams indexed by small <a href="/category-property/cosifted">cosifted</a> categories.',
