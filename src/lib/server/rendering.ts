@@ -1,6 +1,7 @@
 import katex from 'katex'
 import { is_object } from './utils'
 import MarkdownIt from 'markdown-it'
+import { MACROS } from './macros'
 
 function render_formula(
 	formula: string,
@@ -14,6 +15,7 @@ function render_formula(
 
 	return katex.renderToString(formula, {
 		throwOnError: true,
+		macros: MACROS,
 		...options,
 	})
 }
