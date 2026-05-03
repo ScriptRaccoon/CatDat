@@ -1,10 +1,5 @@
 import { type Database } from 'better-sqlite3'
-import {
-	get_assumption_string,
-	get_conclusion_string,
-	is_subset,
-	NormalizedFunctorImplication,
-} from './shared'
+import { get_assumption_string, get_conclusion_string, is_subset } from './shared'
 
 type FunctorMeta = {
 	id: string
@@ -13,6 +8,14 @@ type FunctorMeta = {
 	source_props: Set<string>
 	target: string
 	target_props: Set<string>
+}
+
+type NormalizedFunctorImplication = {
+	id: string
+	assumptions: Set<string>
+	conclusion: string
+	source_assumptions: Set<string>
+	target_assumptions: Set<string>
 }
 
 type FunctorPropertyMeta = {

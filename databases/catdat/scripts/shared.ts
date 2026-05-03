@@ -31,13 +31,6 @@ type PropertyMeta = {
 	conditional: string
 }
 
-export type NormalizedCategoryImplication = NormalizedImplication
-
-export type NormalizedFunctorImplication = NormalizedImplication & {
-	source_assumptions: Set<string>
-	target_assumptions: Set<string>
-}
-
 export function get_assumption_string(
 	implication: NormalizedImplication,
 	properties_dict: Record<string, PropertyMeta>,
