@@ -53,9 +53,9 @@ When a morphism $f : X \to Y$ happens to be uniquely determined, it will be writ
 
 A _small category_ is defined as above, but using _sets_ $O$ and $M$ (instead of collections). A _hypercategory_ is defined similarly using _hypercollections_ $O$ and $M$. Every small category is a category, and every category is a hypercategory. Notice that there is a collection of all small categories $\mathrm{Cat}$, and likewise a hypercollection of all categories $\mathrm{Cat}^+$.
 
-For example, the category of sets $\mathbf{Set}$ has $\Ob(\mathbf{Set}) = \mathrm{Set}$, the collection of all sets. The category of groups $\mathbf{Grp}$ has $\Ob(\mathbf{Grp}) = \mathrm{Grp}$, the collection of all groups. Other typical categories (topological spaces, graphs, metric spaces, etc.) are constructed as usual. All these examples are locally small.
+For example, the category of sets $\Set$ has $\Ob(\Set) = \mathrm{Set}$, the collection of all sets. The category of groups $\Grp$ has $\Ob(\Grp) = \mathrm{Grp}$, the collection of all groups. Other typical categories (topological spaces, graphs, metric spaces, etc.) are constructed as usual. All these examples are locally small.
 
-Collections are the objects of a hypercategory $\mathbf{Set}^+$.
+Collections are the objects of a hypercategory $\Set^+$.
 
 ### Functors
 
@@ -64,7 +64,7 @@ $$\Ob(F) : \Ob(\C) \to \Ob(\D),$$
 $$\Mor(F) : \Mor(\C) \to \Mor(\D)$$
 satisfying the [functor axioms](https://en.wikipedia.org/wiki/Functor). Between two categories there is a collection of all functors, just as between two small categories there is a set of all functors.
 
-Small categories and functors form the category $\mathbf{Cat}$ of small categories, which is locally small. There is also a hypercategory $\mathbf{Cat}^+$ consisting of all categories. For instance, $\mathbf{Set}$ is an object of $\mathbf{Cat}^+$, but not of $\mathbf{Cat}$.
+Small categories and functors form the category $\Cat$ of small categories, which is locally small. There is also a hypercategory $\Cat^+$ consisting of all categories. For instance, $\Set$ is an object of $\Cat^+$, but not of $\Cat$.
 
 If $F,G : \C \rightrightarrows \D$ are two functors, a morphism $F \to G$ (a _natural transformation_) is defined as a map $\Ob(\C) \to \Mor(\D)$ satisfying the usual naturality condition. These morphisms form a collection $\Hom(F,G)$.
 
@@ -76,13 +76,13 @@ It is better to state explicitly when the assumption of being locally small is n
 
 If $\C$ is any category and $A \in \C$, we have the Hom-functor
 
-$$\Hom(A,-) : \C \to \mathbf{Set}^+$$
+$$\Hom(A,-) : \C \to \Set^+$$
 
-defined as usual, but taking values in the hypercategory of all collections. The Yoneda lemma and its corollaries can be proved without assuming that $\C$ is locally small. If $\C$ is locally small, then $\Hom(A,-)$ takes values in $\mathbf{Set}$.
+defined as usual, but taking values in the hypercategory of all collections. The Yoneda lemma and its corollaries can be proved without assuming that $\C$ is locally small. If $\C$ is locally small, then $\Hom(A,-)$ takes values in $\Set$.
 
 Adjunctions are defined as usual via natural isomorphisms
 $$\Hom(F(A),B) \cong \Hom(A,G(B))$$
-of functors valued in $\mathbf{Set}^+$. No local smallness assumption is required. Equivalently, they can be defined via morphisms of functors $\id \to G \circ F$ and $F \circ G \to \id$ satisfying the triangle identities.
+of functors valued in $\Set^+$. No local smallness assumption is required. Equivalently, they can be defined via morphisms of functors $\id \to G \circ F$ and $F \circ G \to \id$ satisfying the triangle identities.
 
 ### Limits and Colimits
 

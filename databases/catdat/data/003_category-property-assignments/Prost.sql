@@ -9,13 +9,13 @@ VALUES
 	'Prost',
 	'locally small',
 	TRUE,
-	'There is a forgetful functor $\mathbf{Pos} \to \mathbf{Set}$ and $\mathbf{Set}$ is locally small.'
+	'There is a forgetful functor $\Pos \to \Set$ and $\Set$ is locally small.'
 ),
 (
 	'Prost',
 	'locally finitely presentable',
 	TRUE,
-	'The same proof as for $\mathbf{Pos}$ works, cf. <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>, Example 1.10.'
+	'The same proof as for $\Pos$ works, cf. <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>, Example 1.10.'
 ),
 (
 	'Prost',
@@ -33,13 +33,13 @@ VALUES
 	'Prost',
 	'cogenerator',
 	TRUE,
-	'Endow the set $\{ 0,1 \}$ with the preorder $0 \leq 1$, $1 \leq 0$ (which is not a partial order). Then every map $P \to \{0,1\}$ is order-preserving. Now the claim follows since the set $\{ 0,1 \}$ is a cogenerator in $\mathbf{Set}$.'
+	'Endow the set $\{ 0,1 \}$ with the preorder $0 \leq 1$, $1 \leq 0$ (which is not a partial order). Then every map $P \to \{0,1\}$ is order-preserving. Now the claim follows since the set $\{ 0,1 \}$ is a cogenerator in $\Set$.'
 ),
 (
 	'Prost',
 	'infinitary extensive',
 	TRUE,
-	'[Sketch] Since $\mathbf{Set}$ is infinitary extensive, a map $f : P \to \coprod_i Q_i$ corresponds to a decomposition $P = \coprod_i P_i$ (as sets) with maps $f_i : P_i \to Q_i$. Endow $P_i$ with the induced order. If $f$ is order-preserving, the elements in different $P_i$ cannot be comparable (since their $f$-images are not comparable), so that $P = \coprod_i P_i$ as prosets, and each $f_i$ is order-preserving.'
+	'[Sketch] Since $\Set$ is infinitary extensive, a map $f : P \to \coprod_i Q_i$ corresponds to a decomposition $P = \coprod_i P_i$ (as sets) with maps $f_i : P_i \to Q_i$. Endow $P_i$ with the induced order. If $f$ is order-preserving, the elements in different $P_i$ cannot be comparable (since their $f$-images are not comparable), so that $P = \coprod_i P_i$ as prosets, and each $f_i$ is order-preserving.'
 ),
 (
 	'Prost',
@@ -93,11 +93,11 @@ VALUES
 	'Prost',
 	'co-Malcev',
 	FALSE,
-	'See <a href="https://mathoverflow.net/questions/509552">MO/509552</a>: Consider the forgetful functor $U : \mathbf{Prost} \to \mathbf{Set}$ and the relation $R \subseteq U^2$ defined by $R(A) := \{(a,b) \in U(A)^2 : a \leq b\}$. Both are representable: $U$ by the singleton preordered set and $R$ by $\{0 \leq 1 \}$. It is clear that $R$ is reflexive, but not symmetric.'
+	'See <a href="https://mathoverflow.net/questions/509552">MO/509552</a>: Consider the forgetful functor $U : \Prost \to \Set$ and the relation $R \subseteq U^2$ defined by $R(A) := \{(a,b) \in U(A)^2 : a \leq b\}$. Both are representable: $U$ by the singleton preordered set and $R$ by $\{0 \leq 1 \}$. It is clear that $R$ is reflexive, but not symmetric.'
 ),
 (
 	'Prost',
 	'cofiltered-limit-stable epimorphisms',
 	FALSE,
-	'We know that $\mathbf{Set}$ does not have this property. Now use the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> applied to the functor $\mathbf{Set} \to \mathbf{Prost}$ that equips a set with the chaotic preorder.'
+	'We know that $\Set$ does not have this property. Now use the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> applied to the functor $\Set \to \Prost$ that equips a set with the chaotic preorder.'
 );

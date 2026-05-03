@@ -9,7 +9,7 @@ VALUES
 	'Vect',
 	'locally small',
 	TRUE,
-	'There is a forgetful functor $\mathbf{Vect} \to \mathbf{Set}$ and $\mathbf{Set}$ is locally small.'
+	'There is a forgetful functor $\Vect \to \Set$ and $\Set$ is locally small.'
 ),
 (
 	'Vect',

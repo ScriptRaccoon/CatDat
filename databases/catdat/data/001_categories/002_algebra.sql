@@ -12,7 +12,7 @@ VALUES
 (
 	'Ab',
 	'category of abelian groups',
-	'$\mathbf{Ab}$',
+	'$\Ab$',
 	'abelian groups',
 	'group homomorphisms',
 	'This is the prototype of an abelian category.',
@@ -22,7 +22,7 @@ VALUES
 (
 	'Grp',
 	'category of groups',
-	'$\mathbf{Grp}$',
+	'$\Grp$',
 	'groups',
 	'group homomorphisms',
 	'This is the prototype of a finitary algebraic category.',
@@ -32,7 +32,7 @@ VALUES
 (
 	'Vect',
 	'category of vector spaces',
-	'$\mathbf{Vect}_K$',
+	'$\Vect_K$',
 	'vector spaces over a field $K$',
 	'linear maps',
 	'This is a special case of the category of modules over a ring, where the ring is a field. It is the prototype of a split abelian category.',
@@ -42,7 +42,7 @@ VALUES
 (
 	'Ring',
 	'category of rings',
-	'$\mathbf{Ring}$',
+	'$\Ring$',
 	'rings',
 	'ring homomorphisms',
 	'Here, rings always have a unit, and homomorphisms preserve them.',
@@ -62,7 +62,7 @@ VALUES
 (
 	'CRing',
 	'category of commutative rings',
-	'$\mathbf{CRing}$',
+	'$\CRing$',
 	'commutative rings',
 	'ring homomorphisms',
 	NULL,
@@ -72,17 +72,17 @@ VALUES
 (
 	'CAlg(R)',
 	'category of commutative algebras',
-	'$\mathbf{CAlg}(R)$',
+	'$\CAlg(R)$',
 	'commutative algebras over a commutative ring $R \neq 0$',
 	'maps preserving the ring and module structure',
-	'This is a generalization of the category of commutative rings, which we get for $R = \IZ$. In general, $\mathbf{CAlg}(R) \cong R \,/\, \mathbf{CRing}$. We assume our rings (and algebras) to be unital. For $R = 0$ we would get the trivial category, which is why we exclude this here.',
+	'This is a generalization of the category of commutative rings, which we get for $R = \IZ$. In general, $\CAlg(R) \cong R \,/\, \CRing$. We assume our rings (and algebras) to be unital. For $R = 0$ we would get the trivial category, which is why we exclude this here.',
 	'https://ncatlab.org/nlab/show/CommAlg',
 	NULL
 ),
 (
 	'Rng',
 	'category of rngs',
-	'$\mathbf{Rng}$',
+	'$\Rng$',
 	'rngs, that is, non-unital rings',
 	'maps that preserve addition and multiplication',
 	NULL,
@@ -92,7 +92,7 @@ VALUES
 (
 	'Mon',
 	'category of monoids',
-	'$\mathbf{Mon}$',
+	'$\Mon$',
 	'monoids',
 	'monoid homomorphisms',
 	NULL,
@@ -112,7 +112,7 @@ VALUES
 (
 	'M-Set',
 	'category of M-sets',
-	'$M{-}\mathbf{Set}$',
+	'$M{-}\Set$',
 	'sets with a left action of a monoid $M$',
 	'maps that are compatible with the $M$-action, meaning $f(m \cdot x)=m \cdot f(x)$, also called $M$-maps',
 	'Here, $M$ can be any monoid. But the most important special case is that of a group. To settle (future) non-properties, we assume that $M$ is non-trivial, since otherwise we just get the <a href="/category/Set">category of sets</a>.',
@@ -122,18 +122,18 @@ VALUES
 (
 	'R-Mod',
 	'category of left modules over a ring',
-	'$R{-}\mathbf{Mod}$',
+	'$R{-}\Mod$',
 	'left $R$-modules',
 	'$R$-linear maps',
 	'This is the prototype of an abelian category. The category of right modules is the same with the opposite ring $R^{\op}$, hence not listed here.<br>
-	To settle the unsatisfied properties, we make the assumption that $R$ is <i>not</i> semisimple: If $R$ is semisimple, then by the Artin-Wedderburn theorem, the category is equivalent to a finite direct product of categories $D{-}\mathbf{Mod}$ for division rings $D$, and the case of division rings is in a separate entry. In particular, $R \neq 0$ and $R$ is not a field.',
+	To settle the unsatisfied properties, we make the assumption that $R$ is <i>not</i> semisimple: If $R$ is semisimple, then by the Artin-Wedderburn theorem, the category is equivalent to a finite direct product of categories $D{-}\Mod$ for division rings $D$, and the case of division rings is in a separate entry. In particular, $R \neq 0$ and $R$ is not a field.',
 	'https://ncatlab.org/nlab/show/module',
 	NULL
 ),
 (
 	'R-Mod_div',
 	'category of left modules over a division ring',
-	'$R{-}\mathbf{Mod}$',
+	'$R{-}\Mod$',
 	'left $R$-modules',
 	'$R$-linear maps',
 	'Here, we assume that $R$ is a non-commutative division ring, i.e. a skew-field which is not a field. The category of modules behaves mostly the same as in the commutative case.',
@@ -143,7 +143,7 @@ VALUES
 (
 	'Fld',
 	'category of fields',
-	'$\mathbf{Fld}$',
+	'$\Fld$',
 	'fields',
 	'field homomorphisms (i.e., ring homomorphisms)',
 	'This is a typical example of a bad category of good objects.',
@@ -153,7 +153,7 @@ VALUES
 (
 	'FinAb',
 	'category of finite abelian groups',
-	'$\mathbf{FinAb}$',
+	'$\FinAb$',
 	'finite abelian groups',
 	'group homomorphisms',
 	NULL,
@@ -163,7 +163,7 @@ VALUES
 (
 	'FinGrp',
 	'category of finite groups',
-	'$\mathbf{FinGrp}$',
+	'$\FinGrp$',
 	'finite groups',
 	'group homomorphisms',
 	NULL,
@@ -173,7 +173,7 @@ VALUES
 (
 	'Ab_fg',
 	'category of finitely generated abelian groups',
-	'$\mathbf{Ab}_{\fg}$',
+	'$\Ab_{\fg}$',
 	'finitely generated abelian groups',
 	'group homomorphisms',
 	NULL,
@@ -183,7 +183,7 @@ VALUES
 (
 	'FreeAb',
 	'category of free abelian groups',
-	'$\mathbf{FreeAb}$',
+	'$\FreeAb$',
 	'free abelian groups',
 	'group homomorphisms',
 	NULL,
@@ -193,7 +193,7 @@ VALUES
 (
 	'TorsFreeAb',
 	'category of torsion-free abelian groups',
-	'$\mathbf{TorsFreeAb}$',
+	'$\TorsFreeAb$',
 	'torsion-free abelian groups',
 	'group homomorphisms',
 	'This is a typical example of a well-behaved additive category which is <i>not</i> abelian.',
@@ -203,7 +203,7 @@ VALUES
 (
 	'Cat',
 	'category of small categories',
-	'$\mathbf{Cat}$',
+	'$\Cat$',
 	'small categories',
 	'functors',
 	'This is the category of small categories and functors between them. It is the prototype of a 2-category, but here we only treat it as a 1-category.',

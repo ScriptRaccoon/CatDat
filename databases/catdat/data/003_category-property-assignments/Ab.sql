@@ -9,7 +9,7 @@ VALUES
 	'Ab',
 	'locally small',
 	TRUE,
-	'There is a forgetful functor $\mathbf{Ab} \to \mathbf{Set}$ and $\mathbf{Set}$ is locally small.'
+	'There is a forgetful functor $\Ab \to \Set$ and $\Set$ is locally small.'
 ),
 (
 	'Ab',

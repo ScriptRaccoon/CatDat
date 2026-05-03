@@ -12,27 +12,27 @@ VALUES
 (
 	'Pos',
 	'category of posets',
-	'$\mathbf{Pos}$',
+	'$\Pos$',
 	'partially ordered sets (aka posets), i.e. sets equipped with a reflexive, transitive, antisymmetric relation',
 	'order-preserving functions',
-	'Even though there are many similarities with $\mathbf{Prost}$, the main difference is that the forgetful functor $\mathbf{Pos} \to \mathbf{Set}$ has no right adjoint.',
+	'Even though there are many similarities with $\Prost$, the main difference is that the forgetful functor $\Pos \to \Set$ has no right adjoint.',
 	'https://ncatlab.org/nlab/show/Pos',
 	NULL
 ),
 (
 	'Prost',
 	'category of prosets',
-	'$\mathbf{Prost}$',
+	'$\Prost$',
 	'preordered sets (aka prosets), i.e. sets equipped with a reflexive, transitive relation',
 	'order-preserving functions',
-	'Even though there are many similarities with $\mathbf{Pos}$, the main difference is that the forgetful functor $\mathbf{Prost} \to \mathbf{Set}$ has a right adjoint, mapping $X$ to $(X , X \times X)$ (chaotic preorder).',
+	'Even though there are many similarities with $\Pos$, the main difference is that the forgetful functor $\Prost \to \Set$ has a right adjoint, mapping $X$ to $(X , X \times X)$ (chaotic preorder).',
 	'https://ncatlab.org/nlab/show/Prost',
 	NULL
 ),
 (
 	'FinOrd',
 	'category of finite ordered sets',
-	'$\mathbf{FinOrd}$',
+	'$\FinOrd$',
 	'finite (totally) ordered sets',
 	'order-preserving maps',
 	'The finite ordered sets of the form $\{1 < \dotsc < n\}$ for $n \in \IN$ provide a skeleton (including the empty set for $n = 0$), the augmented simplex category.',

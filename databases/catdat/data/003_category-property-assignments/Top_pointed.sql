@@ -9,25 +9,25 @@ VALUES
 	'Top*',
 	'locally small',
 	TRUE,
-	'There is a forgetful functor $\mathbf{Top}_* \to \mathbf{Set}_*$ and $\mathbf{Set}_*$ is locally small.'
+	'There is a forgetful functor $\Top_* \to \Set_*$ and $\Set_*$ is locally small.'
 ),
 (
 	'Top*',
 	'complete',
 	TRUE,
-	'This follows from $\mathbf{Top}_* \cong 1 / \mathbf{Top}$ and the fact that $\mathbf{Top}$ is complete.'
+	'This follows from $\Top_* \cong 1 / \Top$ and the fact that $\Top$ is complete.'
 ),
 (
 	'Top*',
 	'coequalizers',
 	TRUE,
-	'This follows immediately from the fact that $\mathbf{Top}$ has coequalizers.'
+	'This follows immediately from the fact that $\Top$ has coequalizers.'
 ),
 (
 	'Top*',
 	'coproducts',
 	TRUE,
-	'This follows from $\mathbf{Top}_* \cong 1 / \mathbf{Top}$ and the fact that $\mathbf{Top}$ has wide pushouts.'
+	'This follows from $\Top_* \cong 1 / \Top$ and the fact that $\Top$ has wide pushouts.'
 ),
 (
 	'Top*',
@@ -51,13 +51,13 @@ VALUES
 	'Top*',
 	'generator',
 	TRUE,
-	'The discrete space $\{0,1\}$ with base point $0$ is a generator since it represents the forgetful functor $\mathbf{Top}_* \to \mathbf{Set}$.'
+	'The discrete space $\{0,1\}$ with base point $0$ is a generator since it represents the forgetful functor $\Top_* \to \Set$.'
 ),
 (
 	'Top*',
 	'disjoint finite coproducts',
 	TRUE,
-	'This follows from the corresponding fact for $\mathbf{Set}_*$.'
+	'This follows from the corresponding fact for $\Set_*$.'
 ),
 (
 	'Top*',
@@ -81,13 +81,13 @@ VALUES
 	'Top*',
 	'CIP',
 	TRUE,
-	'This follows since $\mathbf{Set}_*$ has this property and the forgetful functor preserves products and coproducts.'
+	'This follows since $\Set_*$ has this property and the forgetful functor preserves products and coproducts.'
 ),
 (
 	'Top*',
 	'cocartesian cofiltered limits',
 	TRUE,
-	'We continue the proof for <a href="/category/Set*">$\mathbf{Set}_*$</a> by showing that the natural bijective map
+	'We continue the proof for <a href="/category/Set*">$\Set_*$</a> by showing that the natural bijective map
 	$$\textstyle \alpha : X \vee \lim_i Y_i \to \lim_i (X \vee Y_i)$$
 	is open. It suffices to consider open sets of two types: (1) If $U \subseteq X$ is open, the $\alpha$-image of $U \vee \lim_i Y_i$ is $p_{i_0}^{-1}(U \vee Y_{i_0})$ for any chosen index $i_0$, hence open. (2) If $i$ is an index and $V_i \subseteq Y_i$ is open, then the $\alpha$-image of $X \vee (p_i^{-1}(V_i) \cap \lim_i Y_i)$ is $p_i^{-1}(X \vee V_i)$, hence open.'
 ),
@@ -95,13 +95,13 @@ VALUES
 	'Top*',
 	'filtered-colimit-stable monomorphisms',
 	TRUE,
-	'This follows from <a href="/lemma/filtered-monos">this lemma</a> applied to the forgetful functor to $\mathbf{Set}$.'
+	'This follows from <a href="/lemma/filtered-monos">this lemma</a> applied to the forgetful functor to $\Set$.'
 ),
 (
 	'Top*',
 	'coregular',
 	TRUE,
-	'Regular monomorphisms coincide with the embeddings (see below). Since $\mathbf{Top}$ is coregular, they are stable under pushouts, and pushouts in $\mathbf{Top}_*$ are the same.'
+	'Regular monomorphisms coincide with the embeddings (see below). Since $\Top$ is coregular, they are stable under pushouts, and pushouts in $\Top_*$ are the same.'
 ),
 (
 	'Top*',
@@ -125,7 +125,7 @@ VALUES
 	'Top*',
 	'cartesian filtered colimits',
 	FALSE,
-	'The functor $\IQ \times - : \mathbf{Top}_* \to \mathbf{Top}_*$ does not preserve colimits, see <a href="https://math.stackexchange.com/questions/2969372" target="_blank">MSE/2969372</a>. The counterexample also works for pointed spaces.'
+	'The functor $\IQ \times - : \Top_* \to \Top_*$ does not preserve colimits, see <a href="https://math.stackexchange.com/questions/2969372" target="_blank">MSE/2969372</a>. The counterexample also works for pointed spaces.'
 ),
 (
 	'Top*',
@@ -137,7 +137,7 @@ VALUES
 	'Top*',
 	'co-Malcev',
 	FALSE,
-	'We can adjust the proof for $\mathbf{Top}$ as follows: Consider the forgetful functor $U : \mathbf{Top}_* \to \mathbf{Set}$ and the relation $R \subseteq U^2$ defined by $R(X) := \{(x,y) \in U(X)^2 : x \in \overline{\{y\}} \}$. Both are representable: $U$ by the discrete space $\{0,1\}$ with base point $0$ and $R$ by the Sierpinski space with an isolated base point added. It is clear that $R$ is reflexive, but not symmetric.'
+	'We can adjust the proof for $\Top$ as follows: Consider the forgetful functor $U : \Top_* \to \Set$ and the relation $R \subseteq U^2$ defined by $R(X) := \{(x,y) \in U(X)^2 : x \in \overline{\{y\}} \}$. Both are representable: $U$ by the discrete space $\{0,1\}$ with base point $0$ and $R$ by the Sierpinski space with an isolated base point added. It is clear that $R$ is reflexive, but not symmetric.'
 ),
 (
 	'Top*',
@@ -155,7 +155,7 @@ VALUES
 	'Top*',
 	'coaccessible',
 	FALSE,
-	'We can adjust the proof for $\mathbf{Top}$ as follows: Assume $\mathbf{Top}_*$ is coaccessible. Let $S_0=\{x,*\}$ be the pointed topological space such that $\{*\}$ is the only non-trivial open set, and let $S_1=\{x,*\}$ be the pointed space such that $\{x\}$ is the only non-trivial open set. Let $p_i\colon S_i \to \{x,*\}$ be the identity function to the two-element indiscrete pointed space. Then, a pointed topological space is discrete if and only if it is projective to the morphisms $p_0$ and $p_1$. This implies that the full subcategory spanned by all discrete pointed spaces, which is equivalent to $\mathbf{Set}_*$, is coaccessible by Prop. 4.7 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>. However, since $\mathbf{Set}_*$ is not coaccessible, this is a contradiction.'
+	'We can adjust the proof for $\Top$ as follows: Assume $\Top_*$ is coaccessible. Let $S_0=\{x,*\}$ be the pointed topological space such that $\{*\}$ is the only non-trivial open set, and let $S_1=\{x,*\}$ be the pointed space such that $\{x\}$ is the only non-trivial open set. Let $p_i\colon S_i \to \{x,*\}$ be the identity function to the two-element indiscrete pointed space. Then, a pointed topological space is discrete if and only if it is projective to the morphisms $p_0$ and $p_1$. This implies that the full subcategory spanned by all discrete pointed spaces, which is equivalent to $\Set_*$, is coaccessible by Prop. 4.7 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>. However, since $\Set_*$ is not coaccessible, this is a contradiction.'
 ),
 (
 	'Top*',
@@ -167,7 +167,7 @@ VALUES
 	'Top*',
 	'cofiltered-limit-stable epimorphisms',
 	FALSE,
-	'We already know that $\mathbf{Set}_*$ does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the functor $\mathbf{Set}_* \to \mathbf{Top}_*$ that equips a pointed set with the indiscrete topology.'
+	'We already know that $\Set_*$ does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the functor $\Set_* \to \Top_*$ that equips a pointed set with the indiscrete topology.'
 );
 
 

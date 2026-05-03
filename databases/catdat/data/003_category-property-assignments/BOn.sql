@@ -63,13 +63,13 @@ VALUES
 	'BOn',
 	'locally cartesian closed',
 	TRUE,
-	'The slice category $B\mathbf{On} / *$ is isomorphic to the poset $(\mathbf{On},\geq)$ (not to $(\mathbf{On},\leq)$). This category is thin and and semi-strongly connected, <a href="/category-implication/sequential_implies_lcc">hence</a> cartesian closed.'
+	'The slice category $B\On / *$ is isomorphic to the poset $(\On,\geq)$ (not to $(\On,\leq)$). This category is thin and and semi-strongly connected, <a href="/category-implication/sequential_implies_lcc">hence</a> cartesian closed.'
 ),
 (
 	'BOn',
 	'locally essentially small',
 	FALSE,
-	'This is because $\mathbf{On}$ is large.'
+	'This is because $\On$ is large.'
 ),
 (
 	'BOn',

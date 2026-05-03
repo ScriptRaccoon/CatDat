@@ -9,7 +9,7 @@ VALUES
 	'Met_oo',
 	'locally small',
 	TRUE,
-	'There is a forgetful functor $\mathbf{Met}_{\infty} \to \mathbf{Set}$ and $\mathbf{Set}$ is locally small.'
+	'There is a forgetful functor $\Met_{\infty} \to \Set$ and $\Set$ is locally small.'
 ),
 (
 	'Met_oo',
@@ -33,13 +33,13 @@ VALUES
 	'Met_oo',
 	'infinitary extensive',
 	TRUE,
-	'[Sketch] Since $\mathbf{Set}$ is infinitary extensive, a map $f : Y \to \coprod_i X_i =: X$ corresponds to a decomposition $Y = \coprod_i Y_i$ (as sets) with maps $f_i : Y_i \to X_i$. Endow $Y_i$ with the restricted metric. If $f$ is non-expansive, each $f_i$ is non-expansive, and for $x_i \in Y_i$ and $i \neq j$ we have $d_Y(x_i,x_j) \geq d_X(f(x_i),f(x_j)) = \infty$, so that $Y = \coprod_i Y_i$ holds as metric spaces.'
+	'[Sketch] Since $\Set$ is infinitary extensive, a map $f : Y \to \coprod_i X_i =: X$ corresponds to a decomposition $Y = \coprod_i Y_i$ (as sets) with maps $f_i : Y_i \to X_i$. Endow $Y_i$ with the restricted metric. If $f$ is non-expansive, each $f_i$ is non-expansive, and for $x_i \in Y_i$ and $i \neq j$ we have $d_Y(x_i,x_j) \geq d_X(f(x_i),f(x_j)) = \infty$, so that $Y = \coprod_i Y_i$ holds as metric spaces.'
 ),
 (
 	'Met_oo',
 	'cogenerator',
 	TRUE,
-	'The proof is similar to $\mathbf{Met}$, a cogenerator is given by $\IR \cup \{\infty\}$ with the metric in which $d(a,\infty)=\infty$ for $a \in \IR$. Then one checks that the maps $d(a,-) : X \to \IR \cup \{\infty\}$ are non-expansive and finishes as for $\mathbf{Met}$.'
+	'The proof is similar to $\Met$, a cogenerator is given by $\IR \cup \{\infty\}$ with the metric in which $d(a,\infty)=\infty$ for $a \in \IR$. Then one checks that the maps $d(a,-) : X \to \IR \cup \{\infty\}$ are non-expansive and finishes as for $\Met$.'
 ),
 (
 	'Met_oo',
@@ -81,11 +81,11 @@ VALUES
 	'Met_oo',
 	'co-Malcev',
 	FALSE,
-	'See <a href="https://mathoverflow.net/questions/509552">MO/509552</a>: Consider the forgetful functor $U : \mathbf{Met}_{\infty} \to \mathbf{Set}$ and the relation $R \subseteq U^2$ defined by $R(X) := \{(a,b) \in U(X)^2 : d(x,y) \leq 1 \}$. Both are representable: $U$ by the singleton metric space and $R$ by the metric space $\{ 0,1 \}$ where $d(0,1) := 1$. It is clear that $R$ is reflexive, but not transitive.'
+	'See <a href="https://mathoverflow.net/questions/509552">MO/509552</a>: Consider the forgetful functor $U : \Met_{\infty} \to \Set$ and the relation $R \subseteq U^2$ defined by $R(X) := \{(a,b) \in U(X)^2 : d(x,y) \leq 1 \}$. Both are representable: $U$ by the singleton metric space and $R$ by the metric space $\{ 0,1 \}$ where $d(0,1) := 1$. It is clear that $R$ is reflexive, but not transitive.'
 ),
 (
 	'Met_oo',
 	'cofiltered-limit-stable epimorphisms',
 	FALSE,
-	'We already know that $\mathbf{Set}$ does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the functor $\mathbf{Set} \to \mathbf{Met}_{\infty}$ that equips a set with the discrete topology.'
+	'We already know that $\Set$ does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the functor $\Set \to \Met_{\infty}$ that equips a set with the discrete topology.'
 );

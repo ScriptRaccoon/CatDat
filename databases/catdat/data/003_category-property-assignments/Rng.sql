@@ -9,7 +9,7 @@ VALUES
 	'Rng',
 	'locally small',
 	TRUE,
-	'There is a forgetful functor $\mathbf{Rng} \to \mathbf{Set}$ and $\mathbf{Set}$ is locally small.'
+	'There is a forgetful functor $\Rng \to \Set$ and $\Set$ is locally small.'
 ),
 (
 	'Rng',
@@ -63,7 +63,7 @@ VALUES
 	'Rng',
 	'regular subobject classifier',
 	FALSE,
-	'Assume that $\mathbf{Rng}$ has a subobject classifier $\Omega$. Since $0$ is a zero object, every regular subobject $R \subseteq S$ would be the kernel of some homomorphism $S \to \Omega$. In particular, it would be an ideal. Now take any pair of homomorphisms $f,g : S \rightrightarrows T$ in $\mathbf{Ring}$. Their equalizer $R \subseteq S$ is also the equalizer in $\mathbf{Rng}$, and it contains $1 \in S$. If it was an ideal, then $R = S$, and hence $f = g$, which is absurd.'
+	'Assume that $\Rng$ has a subobject classifier $\Omega$. Since $0$ is a zero object, every regular subobject $R \subseteq S$ would be the kernel of some homomorphism $S \to \Omega$. In particular, it would be an ideal. Now take any pair of homomorphisms $f,g : S \rightrightarrows T$ in $\Ring$. Their equalizer $R \subseteq S$ is also the equalizer in $\Rng$, and it contains $1 \in S$. If it was an ideal, then $R = S$, and hence $f = g$, which is absurd.'
 ),
 (
 	'Rng',
@@ -75,13 +75,13 @@ VALUES
 	'Rng',
 	'regular quotient object classifier',
 	FALSE,
-	'Assume that $\mathbf{Rng}$ has a regular quotient object classifier $P$. Consider the functor $N : \mathbf{Ab} \to \mathbf{Rng}$ that equips an abelian group with zero multiplication. It is fully faithful and has a left adjoint mapping a rng $R$ to the abelian group $R/R^2$. If $R$ is a rng with zero multiplication and $R \to S$ is a surjective homomorphism, then $S$ has zero multiplication. Therefore, the assumptions of <a href="/lemma/subobject_classifiers_coreflection">this lemma</a> (dualized) apply and we conclude that $P/P^2$ is a regular quotient object classifier of $\mathbf{Ab}$. But we already know that <a href="/category/Ab">this category</a> has no such object (in fact, the only additive categories with such an object are trivial by <a href="https://math.stackexchange.com/questions/4086192" target="_blank">MSE/4086192</a>).'
+	'Assume that $\Rng$ has a regular quotient object classifier $P$. Consider the functor $N : \Ab \to \Rng$ that equips an abelian group with zero multiplication. It is fully faithful and has a left adjoint mapping a rng $R$ to the abelian group $R/R^2$. If $R$ is a rng with zero multiplication and $R \to S$ is a surjective homomorphism, then $S$ has zero multiplication. Therefore, the assumptions of <a href="/lemma/subobject_classifiers_coreflection">this lemma</a> (dualized) apply and we conclude that $P/P^2$ is a regular quotient object classifier of $\Ab$. But we already know that <a href="/category/Ab">this category</a> has no such object (in fact, the only additive categories with such an object are trivial by <a href="https://math.stackexchange.com/questions/4086192" target="_blank">MSE/4086192</a>).'
 ),
 (
 	'Rng',
 	'cocartesian cofiltered limits',
 	FALSE,
-	'Consider the ring $A = \IZ[X]$ and the sequence of rings $B_n = \IZ[Y]/(Y^{n+1})$ with projections $B_{n+1} \to B_n$, whose limit is $\IZ[[Y]]$ (both in $\mathbf{Ring}$ and $\mathbf{Rng}$). Every element in the coproduct of rngs $\IZ[X] \sqcup \IZ[[Y]]$ has a finite "free product" length. Now consider the elements
+	'Consider the ring $A = \IZ[X]$ and the sequence of rings $B_n = \IZ[Y]/(Y^{n+1})$ with projections $B_{n+1} \to B_n$, whose limit is $\IZ[[Y]]$ (both in $\Ring$ and $\Rng$). Every element in the coproduct of rngs $\IZ[X] \sqcup \IZ[[Y]]$ has a finite "free product" length. Now consider the elements
 	$$w_n = (1 + XY) (1+XY^2) \cdots (1+X Y^n) - 1 \in A \sqcup B_n.$$
 	Because of $w_n \equiv w_{n-1} \bmod Y^n$ these form an element $w \in \lim_n (A \sqcup B_n)$. Expanding $w_n$, the longest term is $XY XY^2 \cdots X Y^n$ of "free product" length $2n$, which is unbounded.'
 ),
@@ -89,11 +89,11 @@ VALUES
 	'Rng',
 	'CSP',
 	FALSE,
-	'Assume that $\coprod_n \IZ \to \prod_n \IZ$ is an epimorphism in $\mathbf{Rng}$. Then $((\coprod_n \IZ)^+)^{\ab} \to \prod_n \IZ$ would be an epimorphism in $\mathbf{CRing}$, where $(-)^+$ denotes the unitalization and $(-)^{\ab}$ the abelianization. But if $R \to S$ is an epimorphism of commutative rings, then $\card(S) \leq \card(R)$ by <a href="https://stacks.math.columbia.edu/tag/04W0" target="_blank">SP/04W0</a>. Since $((\coprod_n \IZ)^+)^{\ab}$ is countable and $\prod_n \IZ$ is not, we get a contradiction.'
+	'Assume that $\coprod_n \IZ \to \prod_n \IZ$ is an epimorphism in $\Rng$. Then $((\coprod_n \IZ)^+)^{\ab} \to \prod_n \IZ$ would be an epimorphism in $\CRing$, where $(-)^+$ denotes the unitalization and $(-)^{\ab}$ the abelianization. But if $R \to S$ is an epimorphism of commutative rings, then $\card(S) \leq \card(R)$ by <a href="https://stacks.math.columbia.edu/tag/04W0" target="_blank">SP/04W0</a>. Since $((\coprod_n \IZ)^+)^{\ab}$ is countable and $\prod_n \IZ$ is not, we get a contradiction.'
 ),
 (
 	'Rng',
 	'cofiltered-limit-stable epimorphisms',
 	FALSE,
-	'We know that $\mathbf{Ring}$ does not have this property. Now use the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> applied to the forgetful functor $\mathbf{Ring} \to \mathbf{Rng}$. We only need to verify that it preserves epimorphisms: Let $f : R \to S$ be an epimorphism in $\mathbf{Ring}$ and let $g,h : S \rightrightarrows T$ be two homomorphisms of rngs with $gf = hf$. The element $e = g(1) = h(1) \in T$ is idempotent, and $g,h$ become homomorphisms of rings $S \rightrightarrows eTe$. Hence, $g=h$.'
+	'We know that $\Ring$ does not have this property. Now use the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> applied to the forgetful functor $\Ring \to \Rng$. We only need to verify that it preserves epimorphisms: Let $f : R \to S$ be an epimorphism in $\Ring$ and let $g,h : S \rightrightarrows T$ be two homomorphisms of rngs with $gf = hf$. The element $e = g(1) = h(1) \in T$ is idempotent, and $g,h$ become homomorphisms of rings $S \rightrightarrows eTe$. Hence, $g=h$.'
 );

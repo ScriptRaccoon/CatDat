@@ -33,7 +33,7 @@ VALUES
 	'2',
 	'multi-algebraic',
 	TRUE,
-	'There is an FPC-sketch whose $\mathbf{Set}$-model is precisely a pair $(X,Y)$ of sets such that the coproduct $X+Y$ is a singleton. Any $\mathbf{Set}$-model of such a sketch is isomorphic to either $(\varnothing, 1)$ or $(1, \varnothing)$, hence the category of models is equivalent to $\mathbf{2}$.'
+	'There is an FPC-sketch whose $\Set$-model is precisely a pair $(X,Y)$ of sets such that the coproduct $X+Y$ is a singleton. Any $\Set$-model of such a sketch is isomorphic to either $(\varnothing, 1)$ or $(1, \varnothing)$, hence the category of models is equivalent to $\2$.'
 ),
 (
 	'2',

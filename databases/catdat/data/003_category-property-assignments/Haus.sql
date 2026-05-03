@@ -9,31 +9,31 @@ VALUES
 	'Haus',
 	'locally small',
 	TRUE,
-	'It is a full subcategory of $\mathbf{Top}$, which is locally small.'
+	'It is a full subcategory of $\Top$, which is locally small.'
 ),
 (
     'Haus',
     'equalizers',
     TRUE,
-    'This follows from the corresponding fact for $\mathbf{Top}$ since subspaces of Hausdorff spaces are again Hausdorff.'
+    'This follows from the corresponding fact for $\Top$ since subspaces of Hausdorff spaces are again Hausdorff.'
 ),
 (
     'Haus',
     'products',
     TRUE,
-    'This follows from the corresponding fact for $\mathbf{Top}$ since products of Hausdorff spaces are again Hausdorff.'
+    'This follows from the corresponding fact for $\Top$ since products of Hausdorff spaces are again Hausdorff.'
 ),
 (
     'Haus',
     'cocomplete',
     TRUE,
-    'This follows since $\mathbf{Haus}$ is a reflective subcategory of $\mathbf{Top}$, which is cocomplete. For the reflector, see e.g. the <a href="https://ncatlab.org/nlab/show/Hausdorff+space#HausdorffReflection" target="_blank">nLab</a>. Explicitly, we construct the colimit of Hausdorff spaces by applying the reflector to the colimit of the underlying topological spaces.'
+    'This follows since $\Haus$ is a reflective subcategory of $\Top$, which is cocomplete. For the reflector, see e.g. the <a href="https://ncatlab.org/nlab/show/Hausdorff+space#HausdorffReflection" target="_blank">nLab</a>. Explicitly, we construct the colimit of Hausdorff spaces by applying the reflector to the colimit of the underlying topological spaces.'
 ),
 (
     'Haus',
     'infinitary extensive',
     TRUE,
-    'This follows exactly as for $\mathbf{Top}$ since Hausdorff spaces are closed under taking subspaces and coproducts in $\mathbf{Top}$.'
+    'This follows exactly as for $\Top$ since Hausdorff spaces are closed under taking subspaces and coproducts in $\Top$.'
 ),
 (
 	'Haus',
@@ -51,7 +51,7 @@ VALUES
 	'Haus',
 	'generator',
 	TRUE,
-	'The one-point space is a generator since it represents the forgetful functor $\mathbf{Haus} \to \mathbf{Set}$.'
+	'The one-point space is a generator since it represents the forgetful functor $\Haus \to \Set$.'
 ),
 (
 	'Haus',
@@ -69,13 +69,13 @@ VALUES
 	'Haus',
 	'cartesian filtered colimits',
 	FALSE,
-	'It is shown in <a href="https://math.stackexchange.com/questions/1255678">MSE/1255678</a> that $\IQ \times - : \mathbf{Top} \to \mathbf{Top}$ does not preserve sequential colimits (so that it cannot be a left adjoint). The same example also works in $\mathbf{Haus}$: Surely $\IQ$ is Hausdorff, $X_n$ is Hausdorff, as is their colimit $X$, and the colimit (taken in $\mathbf{Top}$) of the $X_n \times \IQ$ admits a bijective continuous map to a Hausdorff space, therefore is also Hausdorff, meaning it is also the colimit taken in $\mathbf{Haus}$.'
+	'It is shown in <a href="https://math.stackexchange.com/questions/1255678">MSE/1255678</a> that $\IQ \times - : \Top \to \Top$ does not preserve sequential colimits (so that it cannot be a left adjoint). The same example also works in $\Haus$: Surely $\IQ$ is Hausdorff, $X_n$ is Hausdorff, as is their colimit $X$, and the colimit (taken in $\Top$) of the $X_n \times \IQ$ admits a bijective continuous map to a Hausdorff space, therefore is also Hausdorff, meaning it is also the colimit taken in $\Haus$.'
 ),
 (
 	'Haus',
 	'filtered-colimit-stable monomorphisms',
 	FALSE,
-	'The proof is similar to <a href="/category/Met">$\mathbf{Met}$</a>. For $n \geq 1$ let $X_n$ be the pushout of $[-1/n,+1/n] \hookrightarrow \IR$ with itself. That is, $X_n$ is the union of two lines $\IR \times \{1\}$ and $\IR \times \{2\}$ where we identify $(x,1) \equiv (x,2)$ when $|x| \leq 1/n$. Then $X_n$ is Hausdorff, and there is a canonical surjective continuous map $X_n \to X_{n+1}$. The colimit in $\mathbf{Top}$ is the union of two lines where we identify $(x,1) \equiv (x,2)$ when $|x| \leq 1/n$ for some $n$, i.e. when $x \neq 0$. This is the line with the double origin, which is not Hausdorff. Its Hausdorff reflection is the line $\IR$ where all points of both lines are identified, and it provides the colimit in $\mathbf{Haus}$. Now, the injective continuous maps $\{1,2\} \to X_n$, $i \mapsto (0,i)$ (where $\{1,2\}$ is discrete) become the constant map $0 : \{1,2\} \to \IR$ in the colimit, which is no monomorphism.'
+	'The proof is similar to <a href="/category/Met">$\Met$</a>. For $n \geq 1$ let $X_n$ be the pushout of $[-1/n,+1/n] \hookrightarrow \IR$ with itself. That is, $X_n$ is the union of two lines $\IR \times \{1\}$ and $\IR \times \{2\}$ where we identify $(x,1) \equiv (x,2)$ when $|x| \leq 1/n$. Then $X_n$ is Hausdorff, and there is a canonical surjective continuous map $X_n \to X_{n+1}$. The colimit in $\Top$ is the union of two lines where we identify $(x,1) \equiv (x,2)$ when $|x| \leq 1/n$ for some $n$, i.e. when $x \neq 0$. This is the line with the double origin, which is not Hausdorff. Its Hausdorff reflection is the line $\IR$ where all points of both lines are identified, and it provides the colimit in $\Haus$. Now, the injective continuous maps $\{1,2\} \to X_n$, $i \mapsto (0,i)$ (where $\{1,2\}$ is discrete) become the constant map $0 : \{1,2\} \to \IR$ in the colimit, which is no monomorphism.'
 ),
 (
 	'Haus',
@@ -93,7 +93,7 @@ VALUES
 	'Haus',
 	'Malcev',
 	FALSE,
-	'This is clear since $\mathbf{Set}$ is not Malcev and can be interpreted as the subcategory of discrete spaces (which are Hausdorff).'
+	'This is clear since $\Set$ is not Malcev and can be interpreted as the subcategory of discrete spaces (which are Hausdorff).'
 ),
 (
 	'Haus',
@@ -105,5 +105,5 @@ VALUES
 	'Haus',
 	'cofiltered-limit-stable epimorphisms',
 	FALSE,
-	'Recall the counterexample for sets: The unique maps $\IN_{\geq n} \to 1$ are surjective, but their limit $0 = \bigcap_{n \geq 0} \IN_{\geq n} \to 1$ is not. This also works in $\mathbf{Haus}$ by using discrete topologies. We could also apply a variant of (the dual of) <a href="/lemma/filtered-monos">this lemma</a> to the discrete topology functor $\mathbf{Set} \to \mathbf{Haus}$, which does not preserve all cofiltered limits, but does preserve intersections.'
+	'Recall the counterexample for sets: The unique maps $\IN_{\geq n} \to 1$ are surjective, but their limit $0 = \bigcap_{n \geq 0} \IN_{\geq n} \to 1$ is not. This also works in $\Haus$ by using discrete topologies. We could also apply a variant of (the dual of) <a href="/lemma/filtered-monos">this lemma</a> to the discrete topology functor $\Set \to \Haus$, which does not preserve all cofiltered limits, but does preserve intersections.'
 );

@@ -9,19 +9,19 @@ VALUES
 	'Sp',
 	'essentially small',
 	TRUE,
-	'This holds because $\mathbf{FinSet}$ and $\IB$ are essentially small.'
+	'This holds because $\FinSet$ and $\IB$ are essentially small.'
 ),
 (
 	'Sp',
 	'elementary topos',
 	TRUE,
-	'The category is equivalent to $\prod_{n \geq 0} \Sigma_n{-}\mathbf{FinSet}$ (where $\Sigma_n$ denotes the symmetric group of order $n$), and each $\Sigma_n{-}\mathbf{FinSet}$ is an elementary topos since $\mathbf{FinSet}$ is and $\Sigma_n$ is a finite group, cf. <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, Part B, Corollary 2.3.18.'
+	'The category is equivalent to $\prod_{n \geq 0} \Sigma_n{-}\FinSet$ (where $\Sigma_n$ denotes the symmetric group of order $n$), and each $\Sigma_n{-}\FinSet$ is an elementary topos since $\FinSet$ is and $\Sigma_n$ is a finite group, cf. <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, Part B, Corollary 2.3.18.'
 ),
 (
 	'Sp',
 	'cogenerator',
 	TRUE,
-	'This follows from $\mathbf{Sp} \simeq \prod_{n \geq 0} \Sigma_n{-}\mathbf{FinSet}$, <a href="/lemma/cogenerators_in_product_categories">this lemma</a>, and the fact that if $G$ is a (finite) group, the power set $P(G)$ with the evident $G$-action is a weakly terminal cogenerator in $G{-}\mathbf{Set}$ (resp. $G{-}\mathbf{FinSet}$). For the proof, notice that $\varnothing,G \in P(G)$ are fixed points, yielding two $G$-maps $1 \rightrightarrows P(G)$. In particular, $P(G)$ is weakly terminal. If $X$ is a $G$-set with distinct points $x,y$, we construct a $G$-map $f : X \to P(G)$ that separates $x,y$: First, $X$ is a coproduct of orbits. If $x,y$ lie in different orbits, let $f|_{Gx}$ be constant $\varnothing$, $f|_{Gy}$ be constant $G$, and, say, $f$ be constant $\varnothing$ on all other orbits. If $x,y$ lie in the same orbit, say $y = g_0 x$, define $f|_{Gx} : Gx \to P(G)$ by $f(x) = G_x$ (stabilizer), which is well-defined, and choose $f$ to be $\varnothing$ on all other orbits. Then $f(y) = g_0 G_x \neq G_x = f(x)$.'
+	'This follows from $\Sp \simeq \prod_{n \geq 0} \Sigma_n{-}\FinSet$, <a href="/lemma/cogenerators_in_product_categories">this lemma</a>, and the fact that if $G$ is a (finite) group, the power set $P(G)$ with the evident $G$-action is a weakly terminal cogenerator in $G{-}\Set$ (resp. $G{-}\FinSet$). For the proof, notice that $\varnothing,G \in P(G)$ are fixed points, yielding two $G$-maps $1 \rightrightarrows P(G)$. In particular, $P(G)$ is weakly terminal. If $X$ is a $G$-set with distinct points $x,y$, we construct a $G$-map $f : X \to P(G)$ that separates $x,y$: First, $X$ is a coproduct of orbits. If $x,y$ lie in different orbits, let $f|_{Gx}$ be constant $\varnothing$, $f|_{Gy}$ be constant $G$, and, say, $f$ be constant $\varnothing$ on all other orbits. If $x,y$ lie in the same orbit, say $y = g_0 x$, define $f|_{Gx} : Gx \to P(G)$ by $f(x) = G_x$ (stabilizer), which is well-defined, and choose $f$ to be $\varnothing$ on all other orbits. Then $f(y) = g_0 G_x \neq G_x = f(x)$.'
 ),
 (
 	'Sp',
@@ -33,13 +33,13 @@ VALUES
 	'Sp',
 	'countable powers',
 	FALSE,
-	'If $\mathbf{Sp} \simeq \mathbf{FinSet} \times \prod_{n > 0} \Sigma_n{-}\mathbf{FinSet}$ has countable powers, then $\mathbf{FinSet}$ has countable powers as well by <a href="/lemma/limits_in_factor_categories">this lemma</a>, which we already know is false (see <a href="/category/FinSet">here</a>).'
+	'If $\Sp \simeq \FinSet \times \prod_{n > 0} \Sigma_n{-}\FinSet$ has countable powers, then $\FinSet$ has countable powers as well by <a href="/lemma/limits_in_factor_categories">this lemma</a>, which we already know is false (see <a href="/category/FinSet">here</a>).'
 ),
 (
 	'Sp',
 	'countable copowers',
 	FALSE,
-	'If $\mathbf{Sp} \simeq \mathbf{FinSet} \times \prod_{n > 0} \Sigma_n{-}\mathbf{FinSet}$ has countable copowers, then $\mathbf{FinSet}$ has countable copowers as well by <a href="/lemma/limits_in_factor_categories">this lemma</a> (dualized), which we already know is false (see <a href="/category/FinSet">here</a>).'
+	'If $\Sp \simeq \FinSet \times \prod_{n > 0} \Sigma_n{-}\FinSet$ has countable copowers, then $\FinSet$ has countable copowers as well by <a href="/lemma/limits_in_factor_categories">this lemma</a> (dualized), which we already know is false (see <a href="/category/FinSet">here</a>).'
 ),	
 (
 	'Sp',

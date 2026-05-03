@@ -9,7 +9,7 @@ VALUES
 	'Grp',
 	'locally small',
 	TRUE,
-	'There is a forgetful functor $\mathbf{Grp} \to \mathbf{Set}$ and $\mathbf{Set}$ is locally small.'
+	'There is a forgetful functor $\Grp \to \Set$ and $\Set$ is locally small.'
 ),
 (
 	'Grp',
@@ -87,7 +87,7 @@ VALUES
 	'Grp',
 	'regular quotient object classifier',
 	FALSE,
-	'Assume that $\mathbf{Grp}$ has a (regular) quotient object classifier, i.e. a group $P$ such that every surjective homomorphism $G \to H$ is the cokernel of a unique homomorphism $\varphi : P \to G$. Equivalently, every normal subgroup $N \subseteq G$ is $\langle \langle \varphi(P) \rangle \rangle$ for a unique homomorphism $\varphi : P \to G$, where $\langle \langle - \rangle \rangle$ denotes the normal closure. If $c_g : G \to G$ denotes the conjugation with $g \in G$, then the images of $\varphi$ and $c_g \circ \varphi$ have the same normal closures, so the homomorphisms must be equal. In other words, $\varphi$ factors through the center $Z(G)$. But then every normal subgroup of $G$, in particular $G$ itself, would be contained in $Z(G)$, which is wrong for every non-abelian group $G$.'
+	'Assume that $\Grp$ has a (regular) quotient object classifier, i.e. a group $P$ such that every surjective homomorphism $G \to H$ is the cokernel of a unique homomorphism $\varphi : P \to G$. Equivalently, every normal subgroup $N \subseteq G$ is $\langle \langle \varphi(P) \rangle \rangle$ for a unique homomorphism $\varphi : P \to G$, where $\langle \langle - \rangle \rangle$ denotes the normal closure. If $c_g : G \to G$ denotes the conjugation with $g \in G$, then the images of $\varphi$ and $c_g \circ \varphi$ have the same normal closures, so the homomorphisms must be equal. In other words, $\varphi$ factors through the center $Z(G)$. But then every normal subgroup of $G$, in particular $G$ itself, would be contained in $Z(G)$, which is wrong for every non-abelian group $G$.'
 ),
 (
 	'Grp',
@@ -109,5 +109,5 @@ VALUES
 	'Grp',
 	'cofiltered-limit-stable epimorphisms',
 	FALSE,
-	'We already know that $\mathbf{Ab}$ does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the forgetful functor $\mathbf{Ab} \to \mathbf{Grp}$ which indeed preserves epimorphisms.'
+	'We already know that $\Ab$ does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the forgetful functor $\Ab \to \Grp$ which indeed preserves epimorphisms.'
 );

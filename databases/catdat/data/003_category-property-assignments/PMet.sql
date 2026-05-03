@@ -9,7 +9,7 @@ VALUES
 	'PMet',
 	'locally small',
 	TRUE,
-	'There is a forgetful functor $\mathbf{PMet} \to \mathbf{Set}$ and $\mathbf{Set}$ is locally small.'
+	'There is a forgetful functor $\PMet \to \Set$ and $\Set$ is locally small.'
 ),
 (
 	'PMet',
@@ -45,7 +45,7 @@ VALUES
 	'PMet',
 	'exact filtered colimits',
 	TRUE,
-	'Let $\I$ be a finite category and $\J$ be a small filtered category, w.l.o.g. a directed poset. Let $X : \I \times \J \to \mathbf{PMet}$ be a diagram. We need to show that the canonical map $\colim_{j \in \J} \lim_{i \in \I} X(i,j) \to \lim_{i \in \I} \colim_{j \in \J}  X(i,j)$ is an isomorphism. It is bijective since the forgetful functor to $\mathbf{Set}$ preserves finite limits and filtered colimits and since $\mathbf{Set}$ has exact filtered colimits. That the map is isometric can easily be reduced to the following lemma: If $d_{i,j} \in \IR_{\geq 0}$ are numbers for $i \in \I$, $j \in \J$ with $j \leq k \implies d_{i,k} \leq d_{i,j}$, then $\inf_j \sup_i d_{i,j} = \sup_i \inf_j d_{i,j}$. This can be proven directly. Alternatively, use that the thin category $(\IR_{\geq 0} \cup \{\infty\},\leq)$ is isomorphic to $([0,1],\leq)$, and we already know that <a href="/category/real_interval">it has exact filtered colimits</a>.'
+	'Let $\I$ be a finite category and $\J$ be a small filtered category, w.l.o.g. a directed poset. Let $X : \I \times \J \to \PMet$ be a diagram. We need to show that the canonical map $\colim_{j \in \J} \lim_{i \in \I} X(i,j) \to \lim_{i \in \I} \colim_{j \in \J}  X(i,j)$ is an isomorphism. It is bijective since the forgetful functor to $\Set$ preserves finite limits and filtered colimits and since $\Set$ has exact filtered colimits. That the map is isometric can easily be reduced to the following lemma: If $d_{i,j} \in \IR_{\geq 0}$ are numbers for $i \in \I$, $j \in \J$ with $j \leq k \implies d_{i,k} \leq d_{i,j}$, then $\inf_j \sup_i d_{i,j} = \sup_i \inf_j d_{i,j}$. This can be proven directly. Alternatively, use that the thin category $(\IR_{\geq 0} \cup \{\infty\},\leq)$ is isomorphic to $([0,1],\leq)$, and we already know that <a href="/category/real_interval">it has exact filtered colimits</a>.'
 ),
 (
 	'PMet',
@@ -57,13 +57,13 @@ VALUES
 	'PMet',
 	'generator',
 	TRUE,
-	'The one-point (pseudo-)metric space is a generator since it represents the forgetful functor $\mathbf{PMet} \to \mathbf{Set}$.'
+	'The one-point (pseudo-)metric space is a generator since it represents the forgetful functor $\PMet \to \Set$.'
 ),
 (
 	'PMet',
 	'cogenerator',
 	TRUE,
-	'The set $\{0,1\}$ equipped with the pseudo-metric $d(0,1)=0$ is a cogenerator since every map into is automatically non-expansive and since $\{0,1\}$ is a cogenerator in $\mathbf{Set}$.' 
+	'The set $\{0,1\}$ equipped with the pseudo-metric $d(0,1)=0$ is a cogenerator since every map into is automatically non-expansive and since $\{0,1\}$ is a cogenerator in $\Set$.' 
 ),
 (
 	'PMet',
@@ -99,7 +99,7 @@ VALUES
 	'PMet',
 	'countable powers',
 	FALSE,
-	'Assume that the power $P = \IR^{\IN}$ exists, where $\IR$ has the usual (pseudo-)metric. Since the forgetful functor $\mathbf{PMet} \to \mathbf{Set}$ is representable, it preserves limits, powers in particular. Thus, we may assume that $P$ is the set of sequences of numbers and that the projections $p_n : P \to \IR$ are given by $p_n(x) = x_n$. Now consider the sequences $x = (n)_n$ and $y = (0)_n$. Since each $p_n$ is non-expansive, we get $d(x,y) \geq d(p_n(x),p_n(y)) = d(n,0) = n$. But then $d(x,y) = \infty$, a contradiction.'
+	'Assume that the power $P = \IR^{\IN}$ exists, where $\IR$ has the usual (pseudo-)metric. Since the forgetful functor $\PMet \to \Set$ is representable, it preserves limits, powers in particular. Thus, we may assume that $P$ is the set of sequences of numbers and that the projections $p_n : P \to \IR$ are given by $p_n(x) = x_n$. Now consider the sequences $x = (n)_n$ and $y = (0)_n$. Since each $p_n$ is non-expansive, we get $d(x,y) \geq d(p_n(x),p_n(y)) = d(n,0) = n$. But then $d(x,y) = \infty$, a contradiction.'
 ),
 (
 	'PMet',
@@ -129,13 +129,13 @@ VALUES
 	'PMet',
 	'Malcev',
 	FALSE,
-	'Take any counterexample in $\mathbf{Set}$ and equip it with the zero pseudo-metric.'
+	'Take any counterexample in $\Set$ and equip it with the zero pseudo-metric.'
 ),
 (
 	'PMet',
 	'natural numbers object',
 	FALSE,
-	'If $(N,z,s)$ is a natural numbers object in $\mathbf{PMet}$, then
+	'If $(N,z,s)$ is a natural numbers object in $\PMet$, then
 	$$1 \xrightarrow{z} N \xleftarrow{s} N$$
 	is a coproduct cocone by <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, Part A, Lemma 2.5.5. Since there is a map $1 \to N$, we have $N \neq \varnothing$. However, the coproduct of two non-empty pseudo-metric spaces does not exist, see <a href="https://math.stackexchange.com/questions/1778408" target="_blank">MSE/1778408</a>.'
 );

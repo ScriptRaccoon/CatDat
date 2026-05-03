@@ -9,31 +9,31 @@ VALUES
 	'TorsFreeAb',
 	'locally small',
 	TRUE,
-	'There is a forgetful functor $\mathbf{TorsFreeAb} \to \mathbf{Ab}$ and $\mathbf{Ab}$ is locally small.'
+	'There is a forgetful functor $\TorsFreeAb \to \Ab$ and $\Ab$ is locally small.'
 ),
 (
 	'TorsFreeAb',
 	'complete',
 	TRUE,
-	'The embedding $\mathbf{TorsFreeAb} \hookrightarrow \mathbf{Ab}$ is closed under limits and $\mathbf{Ab}$ is complete.'
+	'The embedding $\TorsFreeAb \hookrightarrow \Ab$ is closed under limits and $\Ab$ is complete.'
 ),
 (
 	'TorsFreeAb',
 	'cocomplete',
 	TRUE,
-	'The embedding $\mathbf{TorsFreeAb} \hookrightarrow \mathbf{Ab}$ has a left adjoint, sending an abelian group $A$ to its torsion-free reflection $A/T(A)$, where $T(A)$ is the torsion subgroup of $A$. Since $\mathbf{Ab}$ is cocomplete, $\mathbf{TorsFreeAb}$ is cocomplete as well. The colimit of a diagram of torsion-free abelian groups is the torsion-free reflection of the colimit of the underlying abelian groups. Notice that the reflection is not required in the case of coproducts: the direct sum of torsion-free abelian groups is again torsion-free. It is also not required for filtered colimits.'
+	'The embedding $\TorsFreeAb \hookrightarrow \Ab$ has a left adjoint, sending an abelian group $A$ to its torsion-free reflection $A/T(A)$, where $T(A)$ is the torsion subgroup of $A$. Since $\Ab$ is cocomplete, $\TorsFreeAb$ is cocomplete as well. The colimit of a diagram of torsion-free abelian groups is the torsion-free reflection of the colimit of the underlying abelian groups. Notice that the reflection is not required in the case of coproducts: the direct sum of torsion-free abelian groups is again torsion-free. It is also not required for filtered colimits.'
 ),
 (
 	'TorsFreeAb',
 	'finitely accessible',
 	TRUE,
-	'We already saw that filtered colimits exist and are preserved by the forgetful functor to $\mathbf{Ab}$. Every torsion-free abelian group is the filtered colimit of its finitely generated subgroups, which are in fact free. Finitely generated free abelian groups are finitely presentable in $\mathbf{Ab}$ and therefore also in $\mathbf{TorsFreeAb}$.'
+	'We already saw that filtered colimits exist and are preserved by the forgetful functor to $\Ab$. Every torsion-free abelian group is the filtered colimit of its finitely generated subgroups, which are in fact free. Finitely generated free abelian groups are finitely presentable in $\Ab$ and therefore also in $\TorsFreeAb$.'
 ),
 (
 	'TorsFreeAb',
 	'preadditive',
 	TRUE,
-	'It is a full subcategory of the preadditive category $\mathbf{Ab}$.'
+	'It is a full subcategory of the preadditive category $\Ab$.'
 ),
 (
 	'TorsFreeAb',
@@ -51,9 +51,9 @@ VALUES
 	'TorsFreeAb',
 	'coregular',
 	TRUE,
-	'It suffices to prove that regular monomorphisms (which are classified below) are stable under pushouts. Let $i : A \to B$ be a regular monomorphism in $\mathbf{TorsFreeAb}$, i.e. $i$ is injective and its $\mathbf{Ab}$-cokernel $B/i(A)$ is torsion-free, and let $f : B \to C$ be any morphism in $\mathbf{TorsFreeAb}$. Their $\mathbf{Ab}$-pushout is
+	'It suffices to prove that regular monomorphisms (which are classified below) are stable under pushouts. Let $i : A \to B$ be a regular monomorphism in $\TorsFreeAb$, i.e. $i$ is injective and its $\Ab$-cokernel $B/i(A)$ is torsion-free, and let $f : B \to C$ be any morphism in $\TorsFreeAb$. Their $\Ab$-pushout is
 	$$P = (B \times C)/\{(i(a),-f(a)): a \in A\}.$$
-	It is torsion-free: If $n \in \IZ \setminus \{0\}$ and $n (b,c) = (i(a),-f(a))$, there is some $a'' \in A$ with $b = i(a'')$ since $B/i(A)$ is torsion-free. It follows $n a'' = a$, and then $c = -f(a'')$ since $C$ is torsion-free. Thus, $(b,c) = (i(a''),-f(a''))$, which proves our claim. Therefore, $P$ is also the pushout in $\mathbf{TorsFreeAb}$. The homomorphism $j : C \to P$, $j(c) = [0,c]$ is injective (since $\mathbf{Ab}$ is coregular, but a direct proof is also easy), and by the universal property of $P$ its $\mathbf{Ab}$-cokernel is isomorphic to the $\mathbf{Ab}$-cokernel of $i$, which is torsion-free.'
+	It is torsion-free: If $n \in \IZ \setminus \{0\}$ and $n (b,c) = (i(a),-f(a))$, there is some $a'' \in A$ with $b = i(a'')$ since $B/i(A)$ is torsion-free. It follows $n a'' = a$, and then $c = -f(a'')$ since $C$ is torsion-free. Thus, $(b,c) = (i(a''),-f(a''))$, which proves our claim. Therefore, $P$ is also the pushout in $\TorsFreeAb$. The homomorphism $j : C \to P$, $j(c) = [0,c]$ is injective (since $\Ab$ is coregular, but a direct proof is also easy), and by the universal property of $P$ its $\Ab$-cokernel is isomorphic to the $\Ab$-cokernel of $i$, which is torsion-free.'
 ),
 (
 	'TorsFreeAb',
@@ -78,5 +78,5 @@ VALUES
 	'TorsFreeAb',
 	'multi-algebraic',
 	FALSE,
-	'Every multi-algebraic category has effective congruences, but the congruence $E = \{(x,y) \in \IZ^2 : 2 \mid x-y \}$ on $\IZ$ is not effective in $\mathbf{TorsFreeAb}$: Otherwise, the inclusion $E \hookrightarrow \IZ^2$ would be a regular monomorphism. By their classification below, $\IZ^2 / E$ would be torsion-free. But $(1,0) \notin E$ and $2 (1,0) \in E$.'
+	'Every multi-algebraic category has effective congruences, but the congruence $E = \{(x,y) \in \IZ^2 : 2 \mid x-y \}$ on $\IZ$ is not effective in $\TorsFreeAb$: Otherwise, the inclusion $E \hookrightarrow \IZ^2$ would be a regular monomorphism. By their classification below, $\IZ^2 / E$ would be torsion-free. But $(1,0) \notin E$ and $2 (1,0) \in E$.'
 );

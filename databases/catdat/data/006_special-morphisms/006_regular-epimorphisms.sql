@@ -243,7 +243,7 @@ VALUES
 (
 	'TorsFreeAb',
 	'surjective group homomorphisms',
-	'By the construction of the coequalizer in $\mathbf{TorsFreeAb}$ as the torsion-free reflection of the coequalizer in $\mathbf{Ab}$, every regular epimorphism is surjective. Conversely, if $f : A \to B$ is a surjective homomorphism of torsion-free abelian groups, in $\mathbf{Ab}$ it is the coequalizer of the two projections $A \times_B A \rightrightarrows A$, and $A \times_B A$ is also torsion-free. Hence, it is also the coequalizer of these projections in $\mathbf{TorsFreeAb}$.'
+	'By the construction of the coequalizer in $\TorsFreeAb$ as the torsion-free reflection of the coequalizer in $\Ab$, every regular epimorphism is surjective. Conversely, if $f : A \to B$ is a surjective homomorphism of torsion-free abelian groups, in $\Ab$ it is the coequalizer of the two projections $A \times_B A \rightrightarrows A$, and $A \times_B A$ is also torsion-free. Hence, it is also the coequalizer of these projections in $\TorsFreeAb$.'
 ),
 (
     'Vect',

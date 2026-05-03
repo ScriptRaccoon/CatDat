@@ -9,7 +9,7 @@ VALUES
 	'CMon',
 	'locally small',
 	TRUE,
-	'There is a forgetful functor $\mathbf{CMon} \to \mathbf{Set}$ and $\mathbf{Set}$ is locally small.'
+	'There is a forgetful functor $\mathbf{CMon} \to \Set$ and $\Set$ is locally small.'
 ),
 (
 	'CMon',
@@ -33,7 +33,7 @@ VALUES
 	'CMon',
 	'preadditive',
 	FALSE,
-	'In categories with finite products and finite coproducts, the preadditive structure <a href="/lemma/preadditive_structure_unique">is unique</a> if it exists. In the case of $\mathbf{CMon}$, this is just the pointwise addition of maps. This is indeed an enrichment of $\mathbf{CMon}$ over itself, but not over $\mathbf{Ab}$, since for example $\Hom(\IN,\IN) \cong \IN$ (with respect to addition) is not a group.'
+	'In categories with finite products and finite coproducts, the preadditive structure <a href="/lemma/preadditive_structure_unique">is unique</a> if it exists. In the case of $\mathbf{CMon}$, this is just the pointwise addition of maps. This is indeed an enrichment of $\mathbf{CMon}$ over itself, but not over $\Ab$, since for example $\Hom(\IN,\IN) \cong \IN$ (with respect to addition) is not a group.'
 ),
 (
 	'CMon',
@@ -63,7 +63,7 @@ VALUES
 	'CMon',
 	'co-Malcev',
 	FALSE,
-	'See <a href="https://mathoverflow.net/questions/509552">MO/509552</a>: Consider the forgetful functor $U : \mathbf{CMon} \to \mathbf{Set}$ and the relation $R \subseteq U^2$ defined by $R(A) := \{(a,b) \in U(A)^2 : ab = a^2\}$. Both are representable: $U$ by the free monoid on a single generator and $R$ by the free commutative monoid on two generators $x,y$ subject to the relation $xy=x^2$. It is clear that $R$ is reflexive, but not symmetric.'
+	'See <a href="https://mathoverflow.net/questions/509552">MO/509552</a>: Consider the forgetful functor $U : \mathbf{CMon} \to \Set$ and the relation $R \subseteq U^2$ defined by $R(A) := \{(a,b) \in U(A)^2 : ab = a^2\}$. Both are representable: $U$ by the free monoid on a single generator and $R$ by the free commutative monoid on two generators $x,y$ subject to the relation $xy=x^2$. It is clear that $R$ is reflexive, but not symmetric.'
 ),
 (
 	'CMon',
@@ -87,5 +87,5 @@ VALUES
 	'CMon',
 	'CSP',
 	FALSE,
-	'First of all, epimorphisms in $\mathbf{CMon}$ are preserved and reflected by the forgetful functor to $\mathbf{Mon}$ (see below). Furthermore, if $M \to N$ is an epimorphism in $\mathbf{Mon}$ and $M$ is infinite, then $\card(N) \leq \card(M)$ (see <a href="https://mathoverflow.net/questions/510431/" target="_blank">MO/510431</a>). This implies that in $\mathbf{CMon}$ the canonical homomorphism $\bigoplus_{n \geq 0} \IN \to \prod_{n \geq 0} \IN$ is not an epimorphism because its domain is countable and its codomain is uncountable.'
+	'First of all, epimorphisms in $\mathbf{CMon}$ are preserved and reflected by the forgetful functor to $\Mon$ (see below). Furthermore, if $M \to N$ is an epimorphism in $\Mon$ and $M$ is infinite, then $\card(N) \leq \card(M)$ (see <a href="https://mathoverflow.net/questions/510431/" target="_blank">MO/510431</a>). This implies that in $\mathbf{CMon}$ the canonical homomorphism $\bigoplus_{n \geq 0} \IN \to \prod_{n \geq 0} \IN$ is not an epimorphism because its domain is countable and its codomain is uncountable.'
 );

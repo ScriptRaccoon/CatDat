@@ -9,49 +9,49 @@ VALUES
 	'Z',
 	'complete',
 	TRUE,
-	'This follows immediately from the fact for $\mathbf{Set}$.'
+	'This follows immediately from the fact for $\Set$.'
 ),
 (
 	'Z',
 	'cocomplete',
 	TRUE,
-	'This follows immediately from the fact for $\mathbf{Set}$.'
+	'This follows immediately from the fact for $\Set$.'
 ),
 (
 	'Z',
 	'infinitary extensive',
 	TRUE,
-	'This follows immediately from the fact for $\mathbf{Set}$.'
+	'This follows immediately from the fact for $\Set$.'
 ),
 (
 	'Z',
 	'exact filtered colimits',
 	TRUE,
-	'This follows immediately from the fact for $\mathbf{Set}$.'
+	'This follows immediately from the fact for $\Set$.'
 ),
 (
 	'Z',
 	'mono-regular',
 	TRUE,
-	'This follows immediately from the fact for $\mathbf{Set}$.'
+	'This follows immediately from the fact for $\Set$.'
 ),
 (
 	'Z',
 	'epi-regular',
 	TRUE,
-	'This follows immediately from the fact for $\mathbf{Set}$.'
+	'This follows immediately from the fact for $\Set$.'
 ),
 (
 	'Z',
 	'regular',
 	TRUE,
-	'This follows immediately from the fact for $\mathbf{Set}$.'
+	'This follows immediately from the fact for $\Set$.'
 ),
 (
 	'Z',
 	'coregular',
 	TRUE,
-	'This follows immediately from the fact for $\mathbf{Set}$.'
+	'This follows immediately from the fact for $\Set$.'
 ),
 (
 	'Z',
@@ -69,7 +69,7 @@ VALUES
 	'Z',
 	'Malcev',
 	FALSE,
-	'Any counterexample for $\mathbf{Set}$ (i.e., any non-symmetric reflexive relation) yields one for this category by taking constant functors.'
+	'Any counterexample for $\Set$ (i.e., any non-symmetric reflexive relation) yields one for this category by taking constant functors.'
 ),
 (
 	'Z',
@@ -81,13 +81,13 @@ VALUES
 	'Z',
 	'semi-strongly connected',
 	FALSE,
-	'This is because already the full subcategory of representable functors is not semi-strongly connected, see <a href="/category/CRing">the entry for $\mathbf{CRing}$</a>. Specifically, there is no morphism between $\Hom(\IF_2,-)$ and $\Hom(\IF_3,-)$.'
+	'This is because already the full subcategory of representable functors is not semi-strongly connected, see <a href="/category/CRing">the entry for $\CRing$</a>. Specifically, there is no morphism between $\Hom(\IF_2,-)$ and $\Hom(\IF_3,-)$.'
 ),
 (
 	'Z',
 	'cartesian closed',
 	FALSE,
-	'There are functors $F,G : \mathbf{CRing} \to \mathbf{Set}$ such that $\Hom(F,G)$ is not essentially small, see <a href="https://mathoverflow.net/questions/390611" target="_blank">MO/390611</a> for example. Now if the exponential $[F,G] : \mathbf{CRing} \to \mathbf{Set}$ exists, we get $[F,G](\IZ) \cong \Hom(\Hom(\IZ,-),[F,G])$ by Yoneda, which simplifies to $\Hom(1,[F,G]) \cong \Hom(1 \times F,G) \cong \Hom(F,G)$, a contradiction.'
+	'There are functors $F,G : \CRing \to \Set$ such that $\Hom(F,G)$ is not essentially small, see <a href="https://mathoverflow.net/questions/390611" target="_blank">MO/390611</a> for example. Now if the exponential $[F,G] : \CRing \to \Set$ exists, we get $[F,G](\IZ) \cong \Hom(\Hom(\IZ,-),[F,G])$ by Yoneda, which simplifies to $\Hom(1,[F,G]) \cong \Hom(1 \times F,G) \cong \Hom(F,G)$, a contradiction.'
 ),
 (
 	'Z',
@@ -99,5 +99,5 @@ VALUES
 	'Z',
 	'cofiltered-limit-stable epimorphisms',
 	FALSE,
-	'We already know that $\mathbf{Set}$ does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the functor $\mathbf{Set} \to [\mathbf{CRing}, \mathbf{Set}]$ that maps a set to its constant functor.'
+	'We already know that $\Set$ does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the functor $\Set \to [\CRing, \Set]$ that maps a set to its constant functor.'
 );

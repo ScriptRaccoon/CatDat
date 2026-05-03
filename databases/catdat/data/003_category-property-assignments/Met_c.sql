@@ -9,7 +9,7 @@ VALUES
 	'Met_c',
 	'locally small',
 	TRUE,
-	'There is a forgetful functor $\mathbf{Met}_c \to \mathbf{Set}$ and $\mathbf{Set}$ is locally small.'
+	'There is a forgetful functor $\Met_c \to \Set$ and $\Set$ is locally small.'
 ),
 (
 	'Met_c',
@@ -27,7 +27,7 @@ VALUES
 	'Met_c',
 	'infinitary extensive',
 	TRUE,
-	'This follows from the existence of coproducts and from the fact that $\mathbf{Top}$ is infinitary extensive.'
+	'This follows from the existence of coproducts and from the fact that $\Top$ is infinitary extensive.'
 ),
 (
 	'Met_c',
@@ -39,13 +39,13 @@ VALUES
 	'Met_c',
 	'generator',
 	TRUE,
-	'The one-point metric space is a generator since it represents the forgetful functor $\mathbf{Met}_c \to \mathbf{Set}$.'
+	'The one-point metric space is a generator since it represents the forgetful functor $\Met_c \to \Set$.'
 ),
 (
 	'Met_c',
 	'cogenerator',
 	TRUE,
-	'The same proof as for $\mathbf{Met}$ shows that $\IR$ with the usual metric is a cogenerator.'
+	'The same proof as for $\Met$ shows that $\IR$ with the usual metric is a cogenerator.'
 ),
 (
 	'Met_c',
@@ -105,5 +105,5 @@ VALUES
 	'Met_c',
 	'quotients of congruences',
 	FALSE,
-	'If $\mathbf{Met}_c$ had quotients of congruences, then by <a href="/lemma/monic-sequential-colimits-via-congruence-quotients">this lemma</a> it would have sequential colimits of sequences of monomorphisms. This contradicts <a href="https://mathoverflow.net/questions/510316" target="_blank">MO/510316</a>.'
+	'If $\Met_c$ had quotients of congruences, then by <a href="/lemma/monic-sequential-colimits-via-congruence-quotients">this lemma</a> it would have sequential colimits of sequences of monomorphisms. This contradicts <a href="https://mathoverflow.net/questions/510316" target="_blank">MO/510316</a>.'
 );

@@ -28,7 +28,7 @@ VALUES
 (
 	'Ab',
 	'injective homomorphisms',
-	'This holds in every finitary algebraic category: the forgetful functor to $\mathbf{Set}$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
+	'This holds in every finitary algebraic category: the forgetful functor to $\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
 ),
 (
 	'Ab_fg',
@@ -38,7 +38,7 @@ VALUES
 (
 	'Alg(R)',
 	'injective ring homomorphisms',
-	'This holds in every finitary algebraic category: the forgetful functor to $\mathbf{Set}$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
+	'This holds in every finitary algebraic category: the forgetful functor to $\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
 ),
 (
 	'B',
@@ -48,7 +48,7 @@ VALUES
 (
 	'Ban',
 	'injective linear contractions',
-	'The unit ball functor $U : \mathbf{Ban} \to \mathbf{Set}$ is faithful and representable (by $\IC$), hence reflects and preserves monomorphisms.'
+	'The unit ball functor $U : \Ban \to \Set$ is faithful and representable (by $\IC$), hence reflects and preserves monomorphisms.'
 ),
 (
 	'BG_c',
@@ -78,17 +78,17 @@ VALUES
 (
 	'CMon',
 	'injective homomorphisms',
-	'This holds in every finitary algebraic category: the forgetful functor to $\mathbf{Set}$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
+	'This holds in every finitary algebraic category: the forgetful functor to $\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
 ),
 (
 	'CRing',
 	'injective ring homomorphisms',
-	'This holds in every finitary algebraic category: the forgetful functor to $\mathbf{Set}$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
+	'This holds in every finitary algebraic category: the forgetful functor to $\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
 ),
 (
 	'Delta',
 	'injective order-preserving maps',
-	'For the non-trivial direction, the forgetful functor to $\mathbf{Set}$ is representable (by the terminal object), hence preserves monomorphisms.'
+	'For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.'
 ),
 (
 	'FI',
@@ -108,12 +108,12 @@ VALUES
 (
 	'FinOrd',
 	'injective order-preserving maps',
-	'For the non-trivial direction, the forgetful functor to $\mathbf{Set}$ is representable (by the terminal object), hence preserves monomorphisms.'
+	'For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.'
 ),
 (
 	'FinSet',
 	'injective maps',
-	'For the non-trivial direction, the forgetful functor to $\mathbf{Set}$ is representable (by the terminal object), hence preserves monomorphisms.'
+	'For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.'
 ),
 (
 	'Fld',
@@ -133,57 +133,57 @@ VALUES
 (
 	'Grp',
 	'injective homomorphisms',
-	'This holds in every finitary algebraic category: the forgetful functor to $\mathbf{Set}$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
+	'This holds in every finitary algebraic category: the forgetful functor to $\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
 ),
 (
 	'Haus',
 	'injective continuous maps',
-	'For the non-trivial direction, the forgetful functor to $\mathbf{Set}$ is representable (by the terminal object), hence preserves monomorphisms.'
+	'For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.'
 ),
 (
 	'J2',
 	'injective morphisms',
-	'This holds in every finitary algebraic category: the forgetful functor to $\mathbf{Set}$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
+	'This holds in every finitary algebraic category: the forgetful functor to $\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
 ),
 (
 	'M-Set',
 	'injective $M$-maps',
-	'This holds in every finitary algebraic category: the forgetful functor to $\mathbf{Set}$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
+	'This holds in every finitary algebraic category: the forgetful functor to $\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
 ),
 (
 	'Man',
 	'injective smooth maps',
-	'For the non-trivial direction, the forgetful functor to $\mathbf{Set}$ is representable (by the terminal object), hence preserves monomorphisms.'
+	'For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.'
 ),
 (
 	'Meas',
 	'injective measurable maps',
-	'For the non-trivial direction, the forgetful functor to $\mathbf{Set}$ is representable (by the terminal object), hence preserves monomorphisms.'
+	'For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.'
 ),
 (
 	'Met',
 	'injective non-expansive maps',
-	'For the non-trivial direction, the forgetful functor to $\mathbf{Set}$ is representable (by the terminal object), hence preserves monomorphisms.'
+	'For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.'
 ),
 (
 	'Met_c',
 	'injective continuous maps',
-	'For the non-trivial direction, the forgetful functor to $\mathbf{Set}$ is representable (by the terminal object), hence preserves monomorphisms.'
+	'For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.'
 ),
 (
 	'Met_oo',
 	'injective non-expansive maps',
-	'For the non-trivial direction, the forgetful functor to $\mathbf{Set}$ is representable (by the terminal object), hence preserves monomorphisms.'
+	'For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.'
 ),
 (
 	'CAlg(R)',
 	'injective homomorphisms',
-	'This holds in every finitary algebraic category: the forgetful functor to $\mathbf{Set}$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
+	'This holds in every finitary algebraic category: the forgetful functor to $\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
 ),
 (
 	'Mon',
 	'injective homomorphisms',
-	'This holds in every finitary algebraic category: the forgetful functor to $\mathbf{Set}$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
+	'This holds in every finitary algebraic category: the forgetful functor to $\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
 ),
 (
 	'N',
@@ -203,27 +203,27 @@ VALUES
 (
 	'PMet',
 	'injective non-expansive maps',
-	'For the non-trivial direction, the forgetful functor to $\mathbf{Set}$ is representable (by the terminal object), hence preserves monomorphisms.'
+	'For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.'
 ),
 (
 	'Pos',
 	'injective order-preserving functions',
-	'The same proof as for $\mathbf{Set}$ can be used.'
+	'The same proof as for $\Set$ can be used.'
 ),
 (
 	'Prost',
 	'injective order-preserving functions',
-	'The same proof as for $\mathbf{Set}$ can be used.'
+	'The same proof as for $\Set$ can be used.'
 ),
 (
 	'R-Mod',
 	'injective $R$-linear maps',
-	'This holds in every finitary algebraic category: the forgetful functor to $\mathbf{Set}$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
+	'This holds in every finitary algebraic category: the forgetful functor to $\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
 ),
 (
 	'R-Mod_div',
 	'injective $R$-linear maps',
-	'This holds in every finitary algebraic category: the forgetful functor to $\mathbf{Set}$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
+	'This holds in every finitary algebraic category: the forgetful functor to $\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
 ),
 (
 	'real_interval',
@@ -238,37 +238,37 @@ VALUES
 (
 	'Ring',
 	'injective ring homomorphisms',
-	'This holds in every finitary algebraic category: the forgetful functor to $\mathbf{Set}$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
+	'This holds in every finitary algebraic category: the forgetful functor to $\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
 ),
 (
 	'Rng',
 	'injective rng homomorphisms',
-	'This holds in every finitary algebraic category: the forgetful functor to $\mathbf{Set}$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
+	'This holds in every finitary algebraic category: the forgetful functor to $\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
 ),
 (
 	'Set_c',
 	'injective maps',
-	'For the non-trivial direction, the forgetful functor to $\mathbf{Set}$ is representable (by the terminal object), hence preserves monomorphisms.'
+	'For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.'
 ),
 (
 	'Set_f',
 	'injective maps',
-	'For the non-trivial direction, the forgetful functor to $\mathbf{Set}$ is representable (by the singleton), hence preserves monomorphisms.'
+	'For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the singleton), hence preserves monomorphisms.'
 ),
 (
 	'Set',
 	'injective maps',
-	'For the non-trivial direction, if $f : X \to Y$ is a monomorphism of sets and $a,b \in X$ satisfy $f(a) = f(b)$, then $f \circ a = f \circ b$ when we regard $a,b$ as morphisms $a,b : 1 \to X$. Hence, $a = b$. More generally, if $\C$ is a category that admits a faithful and representable functor $U : \C \to \mathbf{Set}$, then the monomorphisms in $\C$ are precisely the morphisms whose $U$-image is injective.'
+	'For the non-trivial direction, if $f : X \to Y$ is a monomorphism of sets and $a,b \in X$ satisfy $f(a) = f(b)$, then $f \circ a = f \circ b$ when we regard $a,b$ as morphisms $a,b : 1 \to X$. Hence, $a = b$. More generally, if $\C$ is a category that admits a faithful and representable functor $U : \C \to \Set$, then the monomorphisms in $\C$ are precisely the morphisms whose $U$-image is injective.'
 ),
 (
 	'Set*',
 	'injective pointed maps',
-	'This holds in every finitary algebraic category: the forgetful functor to $\mathbf{Set}$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
+	'This holds in every finitary algebraic category: the forgetful functor to $\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
 ),
 (
 	'Setne',
 	'injective maps',
-	'For the non-trivial direction, the forgetful functor to $\mathbf{Set}$ is representable (by the terminal object), hence preserves monomorphisms.'
+	'For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.'
 ),
 (
 	'SetxSet',
@@ -298,22 +298,22 @@ VALUES
 (
 	'Top',
 	'injective continuous maps',
-	'For the non-trivial direction, the forgetful functor to $\mathbf{Set}$ is representable (by the terminal object), hence preserves monomorphisms.'
+	'For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.'
 ),
 (
 	'Top*',
 	'injective pointed continuous maps',
-	'For the non-trivial direction, the forgetful functor to $\mathbf{Set}$ is representable (by the discrete two-point space), hence preserves monomorphisms.'
+	'For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the discrete two-point space), hence preserves monomorphisms.'
 ),
 (
 	'TorsFreeAb',
 	'injective group homomorphisms',
-	'For the non-trivial direction, the forgetful functor to $\mathbf{Set}$ is representable (by the group $\IZ$), hence preserves monomorphisms.'
+	'For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the group $\IZ$), hence preserves monomorphisms.'
 ),
 (
 	'Vect',
 	'injective linear maps',
-	'This holds in every finitary algebraic category: the forgetful functor to $\mathbf{Set}$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
+	'This holds in every finitary algebraic category: the forgetful functor to $\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
 ),
 (
 	'walking_commutative_square',

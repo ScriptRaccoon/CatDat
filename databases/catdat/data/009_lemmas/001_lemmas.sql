@@ -8,7 +8,7 @@ INSERT INTO lemmas (
     'thin_algebraic_categories',
     'Algebraic categories are "never" thin',
     'Let $\C$ be a <a href="/category-property/thin">thin</a> and <a href="/category-property/finitary_algebraic">finitary algebraic</a> category. Then $\C \simeq 1$ or $\C \simeq \{0 < 1\}$.',
-    'Let $F : \mathbf{Set} \to \C$ denote the free algebra functor. Every object $A \in \C$ admits a regular epimorphism $F(X) \twoheadrightarrow A$ for some set $X$. But since $\C$ is thin, every regular epimorphism must be an isomorphism. Also, $F(X)$ is a coproduct of copies of $F(1)$, which means it is either the initial object $0$ or $F(1)$ itself (since $\C$ is thin). If $F(1) \cong 0$, then every object is isomorphic to the initial object $0$, and hence $\C$ is trivial. If not, then $\C$ has exactly two objects up to isomorphism, $0$ and $F(1)$, there is a morphism $0 \to F(1)$, but no morphism $F(1) \to 0$. Since $\C$ is thin, we conclude $\C \simeq \{0 \to 1\}$.'
+    'Let $F : \Set \to \C$ denote the free algebra functor. Every object $A \in \C$ admits a regular epimorphism $F(X) \twoheadrightarrow A$ for some set $X$. But since $\C$ is thin, every regular epimorphism must be an isomorphism. Also, $F(X)$ is a coproduct of copies of $F(1)$, which means it is either the initial object $0$ or $F(1)$ itself (since $\C$ is thin). If $F(1) \cong 0$, then every object is isomorphic to the initial object $0$, and hence $\C$ is trivial. If not, then $\C$ has exactly two objects up to isomorphism, $0$ and $F(1)$, there is a morphism $0 \to F(1)$, but no morphism $F(1) \to 0$. Since $\C$ is thin, we conclude $\C \simeq \{0 \to 1\}$.'
 ),
 (
     'hilberts_hotel',
@@ -61,7 +61,7 @@ INSERT INTO lemmas (
 (
     'special_sequential_colimits',
     'Finite structures usually have no sequential colimits',
-    'Let $\C$ be a category with finite powers, including a terminal object $1$. Let $a : 1 \to X$ be a morphism. Assume that the sequence of morphisms $(X^n,a) : X^n \to X^{n+1}$ for $n \geq 0$ admits a colimit $(i_n : X^n \to C)$. Then for every $m \geq 0$ there is a split epimorphism $C \to X^m$. In particular, if $U : \C \to \mathbf{Set}$ is a functor preserving finite powers and $\card(U(X)) \geq 2$, then $U(C)$ is infinite.',
+    'Let $\C$ be a category with finite powers, including a terminal object $1$. Let $a : 1 \to X$ be a morphism. Assume that the sequence of morphisms $(X^n,a) : X^n \to X^{n+1}$ for $n \geq 0$ admits a colimit $(i_n : X^n \to C)$. Then for every $m \geq 0$ there is a split epimorphism $C \to X^m$. In particular, if $U : \C \to \Set$ is a functor preserving finite powers and $\card(U(X)) \geq 2$, then $U(C)$ is infinite.',
     'Let $m \geq 0$ be fixed. For $n \geq 0$ we define a morphism $u_n : X^n \to X^m$ as follows: It is the projection on the first $m$ factors for $m \leq n$, and $(X^n,a^{m-n})$ for $m \geq n$ (for $m=n$ these agree). With generalized elements this says:
     $$u_n(x_1,\dotsc,x_n) = \begin{cases} (x_1,\dotsc,x_m) & m \leq n \\ (x_1,\dotsc,x_n,a,\dotsc,a) & m \geq n \end{cases}$$
     We claim that $u_n = u_{n+1} \circ (X^n,a)$, i.e.
@@ -73,7 +73,7 @@ INSERT INTO lemmas (
 (
     'missing_cogenerating_sets',
     'Missing cogenerating sets',
-    'Let $\C$ be a category with a faithful functor $U: \C \to \mathbf{Set}$. Assume there exists a collection of objects $\F \subseteq \Ob(\C)$ satisfying the following conditions:
+    'Let $\C$ be a category with a faithful functor $U: \C \to \Set$. Assume there exists a collection of objects $\F \subseteq \Ob(\C)$ satisfying the following conditions:
     <ol>
         <li>For any $X \in \F$ and any non-terminal $Y \in \C$, for every morphism $f: X \to Y$ its underlying map $U(f) : U(X) \to U(Y)$ is injective.</li>
         <li>For every infinite cardinal number $\kappa$, there exists an object $X \in \F$ such that $\card(U(X)) \geq \kappa$ and such that $X$ has a non-identity endomorphism.</li>
@@ -84,7 +84,7 @@ INSERT INTO lemmas (
 (
     'missing_cogenerator',
     'Missing cogenerator',
-    'Let $\C$ be a pointed category with a faithful functor $U: \C \to \mathbf{Set}$. Assume there exists a collection of non-zero objects $\F \subseteq \Ob(\C)$ satisfying the following conditions:
+    'Let $\C$ be a pointed category with a faithful functor $U: \C \to \Set$. Assume there exists a collection of non-zero objects $\F \subseteq \Ob(\C)$ satisfying the following conditions:
     <ol>
         <li>For any $X \in \F$ and any $Y \in \C$, every non-zero morphism $f: X \to Y$ is injective on underlying sets.</li>
         <li>For every $Y \in \C$ there is some object $X \in \F$ such that $\card(U(X)) > \card(U(Y))$.</li>

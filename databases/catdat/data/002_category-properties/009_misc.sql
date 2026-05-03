@@ -60,7 +60,7 @@ VALUES
 	'is',
 	'A category $\C$ is <i>sifted</i> if it is inhabited and the diagonal functor $\Delta : \C \to \C \times \C$ is final, i.e. if it is non-empty and for any two objects $X,Y \in \C$ the category of cospans
 	$$X \rightarrow Z \leftarrow Y$$
-	is connected. Equivalently, a small category $\C$ is sifted if $\colim : \mathbf{Set}^{\C} \to \mathbf{Set}$ preserves finite products. This property is a weaker notion than being filtered.',
+	is connected. Equivalently, a small category $\C$ is sifted if $\colim : \Set^{\C} \to \Set$ preserves finite products. This property is a weaker notion than being filtered.',
 	'https://ncatlab.org/nlab/show/sifted+category',
 	'cosifted',
 	TRUE
@@ -70,7 +70,7 @@ VALUES
 	'is',
 	'A category $\C$ is <i>cosifted</i> if it is inhabited and the diagonal functor $\Delta : \C \to \C \times \C$ is initial, i.e. if it is non-empty and for any two objects $X,Y \in \C$ the category of spans
 	$$X \leftarrow Z \rightarrow Y$$
-	is connected. Equivalently, a small category $\C$ is cosifted if $\colim : \mathbf{Set}^{{\C}^\op} \to \mathbf{Set}$ preserves finite products. This property is a weaker notion than being cofiltered.',
+	is connected. Equivalently, a small category $\C$ is cosifted if $\colim : \Set^{{\C}^\op} \to \Set$ preserves finite products. This property is a weaker notion than being cofiltered.',
 	'https://ncatlab.org/nlab/show/sifted+category',
 	'sifted',
 	TRUE
@@ -88,7 +88,7 @@ VALUES
 	'is',
 	'A category is <i>co-Malcev</i> when its dual is Malcev, i.e., it has finite colimits and if $X \sqcup X \twoheadrightarrow R$ is a coreflexive corelation, then it is cosymmetric and cotransitive.<br>
 	This terminology is not standard, but we have added it to properly formulate the interesting theorem that the dual of an elementary topos is Malcev, i.e., that every elementary topos is co-Malcev.<br>
-	To settle this property, we often use that $\C$ is co-Malcev if and only if the category of representable functors $\C \to \mathbf{Set}^+$ is Malcev.',
+	To settle this property, we often use that $\C$ is co-Malcev if and only if the category of representable functors $\C \to \Set^+$ is Malcev.',
 	NULL,
 	'Malcev',
 	TRUE

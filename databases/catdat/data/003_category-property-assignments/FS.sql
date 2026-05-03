@@ -9,7 +9,7 @@ VALUES
 	'FS',
 	'locally small',
 	TRUE,
-	'There is a forgetful functor $\mathbf{FS} \to \mathbf{Set}$ and $\mathbf{Set}$ is locally small.'
+	'There is a forgetful functor $\FS \to \Set$ and $\Set$ is locally small.'
 ),
 (
 	'FS',
@@ -33,19 +33,19 @@ VALUES
 	'FS',
 	'wide pushouts',
 	TRUE,
-	'We construct wide pushouts as in $\mathbf{Set}$ and observe that the universal property still holds when we restrict to surjective maps. If $f_i : S \to X_i$ are surjective maps and $P$ is their wide pushout, then each $X_i \to P$ is surjective, so that in particular $P$ is finite.'
+	'We construct wide pushouts as in $\Set$ and observe that the universal property still holds when we restrict to surjective maps. If $f_i : S \to X_i$ are surjective maps and $P$ is their wide pushout, then each $X_i \to P$ is surjective, so that in particular $P$ is finite.'
 ),
 (
 	'FS',
 	'coequalizers',
 	TRUE,
-	'We construct coequalizers as in $\mathbf{FinSet}$ (or $\mathbf{Set}$) and observe that the universal property still holds when we restrict to surjective maps.'
+	'We construct coequalizers as in $\FinSet$ (or $\Set$) and observe that the universal property still holds when we restrict to surjective maps.'
 ),
 (
 	'FS',
 	'epi-regular',
 	TRUE,
-	'If $f : X \to Y$ is a surjective map of finite sets, it is the coequalizer of the two projections $p_1, p_2 : X \times_Y X \rightrightarrows X$ in $\mathbf{FinSet}$, but also in $\mathbf{FS}$. Notice that $p_1,p_2$ are surjective. Even though $X \times_Y X$ is not a pullback in $\mathbf{FS}$, we can use this finite set here.'
+	'If $f : X \to Y$ is a surjective map of finite sets, it is the coequalizer of the two projections $p_1, p_2 : X \times_Y X \rightrightarrows X$ in $\FinSet$, but also in $\FS$. Notice that $p_1,p_2$ are surjective. Even though $X \times_Y X$ is not a pullback in $\FS$, we can use this finite set here.'
 ),
 (
 	'FS',
@@ -111,7 +111,7 @@ VALUES
 	'FS',
 	'locally cocartesian coclosed',
 	FALSE,
-	'If $X$ is a finite set, the coslice category $X / \mathbf{FS}$ is thin and in fact equivalent to the lattice of equivalence relations on $X$. If $X$ has $\geq 3$ elements, it is not codistributive* and <a href="/category-implication/dual_distributive_criterion">hence</a> not cocartesian coclosed: For simplicity assume $X = \{a,b,c\}$. The bottom element $\bot$ corresponds to the partition $\{\{a\},\{b\},\{c\}\}$, the top element $\top$ to the partition $\{\{a,b,c\}\}$. Now consider the three equivalence relations $E_1,E_2,E_3$ corresponding to the three partitions
+	'If $X$ is a finite set, the coslice category $X / \FS$ is thin and in fact equivalent to the lattice of equivalence relations on $X$. If $X$ has $\geq 3$ elements, it is not codistributive* and <a href="/category-implication/dual_distributive_criterion">hence</a> not cocartesian coclosed: For simplicity assume $X = \{a,b,c\}$. The bottom element $\bot$ corresponds to the partition $\{\{a\},\{b\},\{c\}\}$, the top element $\top$ to the partition $\{\{a,b,c\}\}$. Now consider the three equivalence relations $E_1,E_2,E_3$ corresponding to the three partitions
 	$$\{\{a,b\},\{c\}\}, \, \{\{a,c\},\{b\}\}, \, \{\{b,c\},\{a\}\}.$$
 	Then
 	$$E_1 \vee (E_2 \wedge E_3) = E_1 \vee \bot = E_1,$$

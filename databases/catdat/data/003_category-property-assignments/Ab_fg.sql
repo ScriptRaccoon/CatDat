@@ -9,13 +9,13 @@ VALUES
 	'Ab_fg',
 	'locally small',
 	TRUE,
-	'There is a forgetful functor $\mathbf{FinAb} \to \mathbf{Set}$ and $\mathbf{Set}$ is locally small.'
+	'There is a forgetful functor $\FinAb \to \Set$ and $\Set$ is locally small.'
 ),
 (
 	'Ab_fg',
 	'essentially countable',
 	TRUE,
-	'Every finitely generated abelian group is isomorphic to a group of the form $\IZ^n / U$, where $n \in \IN$ and $U$ is a subgroup of $\IZ^n$. Since $\IZ^n$ is Noetherian as a $\IZ$-module, $U$ is finitely generated, hence the category $\mathbf{Ab}_\fg$ has only countably many objects up to isomorphism. Furthermore, for any objects $A \cong \IZ^n / U$ and $B \cong \IZ^m / T$, the hom-set $\Hom(A,B)$ is countable. Indeed, precomposition with the quotient map yields an injection $\Hom(A,B) \hookrightarrow \Hom(\IZ^n, B) \cong B^n$, and $B^n$ is countable.'
+	'Every finitely generated abelian group is isomorphic to a group of the form $\IZ^n / U$, where $n \in \IN$ and $U$ is a subgroup of $\IZ^n$. Since $\IZ^n$ is Noetherian as a $\IZ$-module, $U$ is finitely generated, hence the category $\Ab_\fg$ has only countably many objects up to isomorphism. Furthermore, for any objects $A \cong \IZ^n / U$ and $B \cong \IZ^m / T$, the hom-set $\Hom(A,B)$ is countable. Indeed, precomposition with the quotient map yields an injection $\Hom(A,B) \hookrightarrow \Hom(\IZ^n, B) \cong B^n$, and $B^n$ is countable.'
 ),
 (
 	'Ab_fg',
@@ -27,13 +27,13 @@ VALUES
 	'Ab_fg',
 	'generator',
 	TRUE,
-	'The group $\IZ$ is a generator since it represents the forgetful functor to $\mathbf{Set}$.'
+	'The group $\IZ$ is a generator since it represents the forgetful functor to $\Set$.'
 ),
 (
 	'Ab_fg',
 	'ℵ₁-accessible',
 	TRUE,
-	'The inclusion $\mathbf{Ab}_{\fg} \hookrightarrow \mathbf{Ab}$ is closed under $\aleph_1$-filtered colimits by <a href="https://mathoverflow.net/questions/400763/">MO/400763</a>. In particular, $\mathbf{Ab}_{\fg}$ has $\aleph_1$-filtered colimits. Since $\mathbf{Ab}_{\fg}$ is essentially small, there is a set $G$ such that every f.g. abelian group is isomorphic to one in $G$. So trivially it is also a $\aleph_1$-filtered colimit of such objects (take the constant diagram). Finally, every object is $\mathbf{Ab}_{\fg} = \mathbf{Ab}_{\fp}$ is finitely presentable in $\mathbf{Ab}$ and hence also in $\mathbf{Ab}_{\fg}$, a fortiori $\aleph_1$-presentable.'
+	'The inclusion $\Ab_{\fg} \hookrightarrow \Ab$ is closed under $\aleph_1$-filtered colimits by <a href="https://mathoverflow.net/questions/400763/">MO/400763</a>. In particular, $\Ab_{\fg}$ has $\aleph_1$-filtered colimits. Since $\Ab_{\fg}$ is essentially small, there is a set $G$ such that every f.g. abelian group is isomorphic to one in $G$. So trivially it is also a $\aleph_1$-filtered colimit of such objects (take the constant diagram). Finally, every object is $\Ab_{\fg} = \Ab_{\fp}$ is finitely presentable in $\Ab$ and hence also in $\Ab_{\fg}$, a fortiori $\aleph_1$-presentable.'
 ),
 (
 	'Ab_fg',

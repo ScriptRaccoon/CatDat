@@ -209,7 +209,7 @@ VALUES
     (
         'representable',
         'is',
-        'A functor $F : \C \to \D$ is representable if $\C$ is locally small, $\D = \mathbf{Set}$, and there is an object $A \in \C$ with $F \cong \Hom(A,-)$.',
+        'A functor $F : \C \to \D$ is representable if $\C$ is locally small, $\D = \Set$, and there is an object $A \in \C$ with $F \cong \Hom(A,-)$.',
         'https://ncatlab.org/nlab/show/representable+functor',
         TRUE,
         NULL

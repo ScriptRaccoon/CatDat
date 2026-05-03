@@ -9,7 +9,7 @@ VALUES
 	'Meas',
 	'locally small',
 	TRUE,
-	'There is a forgetful functor $\mathbf{Meas} \to \mathbf{Set}$ and $\mathbf{Set}$ is locally small.'
+	'There is a forgetful functor $\Meas \to \Set$ and $\Set$ is locally small.'
 ),
 (
 	'Meas',
@@ -39,25 +39,25 @@ VALUES
 	'Meas',
 	'infinitary extensive',
 	TRUE,
-	'[Sketch] Since $\mathbf{Set}$ is infinitary extensive, a map $f : Y \to \coprod_i X_i =: X$ corresponds to a decomposition $Y = \coprod_i Y_i$ (as sets) with maps $f_i : Y_i \to X_i$. Endow the measurable subset $Y_i \subseteq Y$ with the restricted $\sigma$-algebra. If $f$ is measurable, each $f_i$ is measurable, and $Y = \coprod_i Y_i$ holds as measurable spaces.'
+	'[Sketch] Since $\Set$ is infinitary extensive, a map $f : Y \to \coprod_i X_i =: X$ corresponds to a decomposition $Y = \coprod_i Y_i$ (as sets) with maps $f_i : Y_i \to X_i$. Endow the measurable subset $Y_i \subseteq Y$ with the restricted $\sigma$-algebra. If $f$ is measurable, each $f_i$ is measurable, and $Y = \coprod_i Y_i$ holds as measurable spaces.'
 ),
 (
 	'Meas',
 	'generator',
 	TRUE,
-	'The one-point measurable space (with the unique $\sigma$-algebra) is a generator since it represents the forgetful functor $\mathbf{Meas} \to \mathbf{Set}$.'
+	'The one-point measurable space (with the unique $\sigma$-algebra) is a generator since it represents the forgetful functor $\Meas \to \Set$.'
 ),
 (
 	'Meas',
 	'cogenerator',
 	TRUE,
-	'Take the two-element set $2$ endowed with the trivial $\sigma$-algebra (where only $\varnothing$ and $2$ are measurable), and use that $2$ is a cogenerator for $\mathbf{Set}$.'
+	'Take the two-element set $2$ endowed with the trivial $\sigma$-algebra (where only $\varnothing$ and $2$ are measurable), and use that $2$ is a cogenerator for $\Set$.'
 ),
 (
 	'Meas',
 	'filtered-colimit-stable monomorphisms',
 	TRUE,
-	'This follows from <a href="/lemma/filtered-monos">this lemma</a> applied to the forgetful functor to $\mathbf{Set}$.'
+	'This follows from <a href="/lemma/filtered-monos">this lemma</a> applied to the forgetful functor to $\Set$.'
 ),
 (
 	'Meas',
@@ -93,11 +93,11 @@ VALUES
 	'Meas',
 	'Malcev',
 	FALSE,
-	'Use that $\mathbf{Set}$ is not Malcev and endow sets with the trivial $\sigma$-algebra.'
+	'Use that $\Set$ is not Malcev and endow sets with the trivial $\sigma$-algebra.'
 ),
 (
 	'Meas',
 	'cofiltered-limit-stable epimorphisms',
 	FALSE,
-	'We already know that $\mathbf{Set}$ does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the functor $\mathbf{Set} \to \mathbf{Meas}$ which equips a set with the trivial $\sigma$-algebra.'
+	'We already know that $\Set$ does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the functor $\Set \to \Meas$ which equips a set with the trivial $\sigma$-algebra.'
 );

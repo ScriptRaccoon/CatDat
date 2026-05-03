@@ -9,7 +9,7 @@ VALUES
 	'sSet',
 	'locally small',
 	TRUE,
-	'This follows from the general fact that $[\C,\D]$ is locally small when $\C$ is small and $\D$ is locally small, here applied to $\C = \Delta^{\op}$ and $\D = \mathbf{Set}$.'
+	'This follows from the general fact that $[\C,\D]$ is locally small when $\C$ is small and $\D$ is locally small, here applied to $\C = \Delta^{\op}$ and $\D = \Set$.'
 ),
 (
 	'sSet',
@@ -21,7 +21,7 @@ VALUES
 	'sSet',
 	'generator',
 	TRUE,
-	'Let $\Delta^n := \Hom([n],-)$ be the standard $n$-simplex for $n \geq 0$. The set $\{\Delta^n : n \geq 0\}$ is a <a href="/category-property/generating_set">generating set</a> by the Yoneda Lemma. For all $n,m$ there is a morphism $[n] \to [m]$ in $\Delta$ and hence a morphism $\Delta^m \to \Delta^n$ in $\mathbf{sSet}$. Then by <a href="/lemma/generator_construction">this lemma</a> the coproduct $\coprod_{n \geq 0} \Delta^n$ is a generator in $\mathbf{sSet}$.'
+	'Let $\Delta^n := \Hom([n],-)$ be the standard $n$-simplex for $n \geq 0$. The set $\{\Delta^n : n \geq 0\}$ is a <a href="/category-property/generating_set">generating set</a> by the Yoneda Lemma. For all $n,m$ there is a morphism $[n] \to [m]$ in $\Delta$ and hence a morphism $\Delta^m \to \Delta^n$ in $\sSet$. Then by <a href="/lemma/generator_construction">this lemma</a> the coproduct $\coprod_{n \geq 0} \Delta^n$ is a generator in $\sSet$.'
 ),
 (
 	'sSet',
@@ -51,5 +51,5 @@ VALUES
 	'sSet',
 	'cofiltered-limit-stable epimorphisms',
 	FALSE,
-	'We show that epimorphisms are not stable under sequential limits, intersections to be precise. Let $X_n \in \mathbf{sSet}$ be the nerve of the poset $\IN_{\geq n}$. This means that a $k$-simplex in $X_n$ is a chain of natural numbers $n \leq x_0 \leq \cdots \leq x_k$. Then $X_{n+1} \subseteq X_n$ and $\lim_n X_n = \bigcap_n X_n = 0$ (the initial simplicial set). Each $X_n \to 1$ is an epimorphism, but $\lim_n X_n \to 1$ is not.'
+	'We show that epimorphisms are not stable under sequential limits, intersections to be precise. Let $X_n \in \sSet$ be the nerve of the poset $\IN_{\geq n}$. This means that a $k$-simplex in $X_n$ is a chain of natural numbers $n \leq x_0 \leq \cdots \leq x_k$. Then $X_{n+1} \subseteq X_n$ and $\lim_n X_n = \bigcap_n X_n = 0$ (the initial simplicial set). Each $X_n \to 1$ is an epimorphism, but $\lim_n X_n \to 1$ is not.'
 );

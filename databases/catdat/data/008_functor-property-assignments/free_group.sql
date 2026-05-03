@@ -15,7 +15,7 @@ VALUES
     'free_group',
     'monomorphism-preserving',
     TRUE,
-    'This can be deduced from the description of the elements of a free group, but here is an abstract argument: Split monomorphisms are preserved by any functor. The only injective maps in $\mathbf{Set}$ that are not split are $\varnothing \hookrightarrow X$ (for non-empty $X$), and $F(\varnothing) \to F(X)$ is injective since $F(\varnothing)$ is the trivial group.'
+    'This can be deduced from the description of the elements of a free group, but here is an abstract argument: Split monomorphisms are preserved by any functor. The only injective maps in $\Set$ that are not split are $\varnothing \hookrightarrow X$ (for non-empty $X$), and $F(\varnothing) \to F(X)$ is injective since $F(\varnothing)$ is the trivial group.'
 ),
 (
     'free_group',

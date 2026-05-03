@@ -9,7 +9,7 @@ VALUES
 	'Mon',
 	'locally small',
 	TRUE,
-	'There is a forgetful functor $\mathbf{Mon} \to \mathbf{Set}$ and $\mathbf{Set}$ is locally small.'
+	'There is a forgetful functor $\Mon \to \Set$ and $\Set$ is locally small.'
 ),
 (
 	'Mon',
@@ -87,18 +87,18 @@ VALUES
 	'Mon',
 	'cofiltered-limit-stable epimorphisms',
 	FALSE,
-	'We already know that $\mathbf{Grp}$ does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the forgetful functor $\mathbf{Grp} \to \mathbf{Mon}$. It preserves epimorphisms since it has a right adjoint, the unit group functor.'
+	'We already know that $\Grp$ does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the forgetful functor $\Grp \to \Mon$. It preserves epimorphisms since it has a right adjoint, the unit group functor.'
 ),
 (
 	'Mon',
 	'cocartesian cofiltered limits',
 	FALSE,
-	'We know that the <a href="/category/Grp">category of groups</a> fails to satisfy this property. The same counterexample works here since the inclusion $\mathbf{Grp} \hookrightarrow \mathbf{Mon}$ preserves limits and colimits (it has a left and a right adjoint) and is conservative. A similar counterexample is given by the free monoids $N_n = \langle x_1,\dotsc,x_n \rangle$ and the Boolean monoid $M = \langle e : e^2=e \rangle$ with the maps $N_{n+1} \to N_n$, $x_{n+1} \mapsto 1$. Then the element $(x_1 e \cdots x_n e) \in \lim_n (M \sqcup N_n)$ does not come from $M \sqcup \lim_n N_n$ because its components have unbounded free product length.'
+	'We know that the <a href="/category/Grp">category of groups</a> fails to satisfy this property. The same counterexample works here since the inclusion $\Grp \hookrightarrow \Mon$ preserves limits and colimits (it has a left and a right adjoint) and is conservative. A similar counterexample is given by the free monoids $N_n = \langle x_1,\dotsc,x_n \rangle$ and the Boolean monoid $M = \langle e : e^2=e \rangle$ with the maps $N_{n+1} \to N_n$, $x_{n+1} \mapsto 1$. Then the element $(x_1 e \cdots x_n e) \in \lim_n (M \sqcup N_n)$ does not come from $M \sqcup \lim_n N_n$ because its components have unbounded free product length.'
 ),
 (
 	'Mon',
 	'CSP',
 	FALSE,
-	'If $M \to N$ is an epimorphism in $\mathbf{Mon}$ and $M$ is infinite, then $\card(N) \leq \card(M)$ (see <a href="https://mathoverflow.net/questions/510431/" target="_blank">MO/510431</a>). This implies that in $\mathbf{Mon}$ the canonical homomorphism $\coprod_{n \geq 0} \IN \to \prod_{n \geq 0} \IN$ is not an epimorphism because its domain is countable and its codomain is uncountable.'
+	'If $M \to N$ is an epimorphism in $\Mon$ and $M$ is infinite, then $\card(N) \leq \card(M)$ (see <a href="https://mathoverflow.net/questions/510431/" target="_blank">MO/510431</a>). This implies that in $\Mon$ the canonical homomorphism $\coprod_{n \geq 0} \IN \to \prod_{n \geq 0} \IN$ is not an epimorphism because its domain is countable and its codomain is uncountable.'
 );
 

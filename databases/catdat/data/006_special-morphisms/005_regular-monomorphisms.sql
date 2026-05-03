@@ -128,7 +128,7 @@ VALUES
 (
     'Meas',
     'embeddings',
-    '(This is the same proof as for $\mathbf{Top}$.) Equalizers are embeddings by their construction. Conversely, if $f : X \to Y$ is an embedding, then $f$ is the equalizer of the two characteristic maps $\chi_Y, \chi_{f(X)} : Y \rightrightarrows \{0,1\}$, where $\{0,1\}$ carries the trivial $\sigma$-algebra.'
+    '(This is the same proof as for $\Top$.) Equalizers are embeddings by their construction. Conversely, if $f : X \to Y$ is an embedding, then $f$ is the equalizer of the two characteristic maps $\chi_Y, \chi_{f(X)} : Y \rightrightarrows \{0,1\}$, where $\{0,1\}$ carries the trivial $\sigma$-algebra.'
 ),
 (
     'Met_c',
@@ -228,7 +228,7 @@ VALUES
 (
 	'TorsFreeAb',
 	'injective group homomorphisms $i : A \to B$ such that $B/i(A)$ is torsion-free, i.e., $i$ is the inclusion of a <i>saturated subgroup</i>',
-	'If $i : A \to B$ is the kernel of $f : B \to C$ in $\mathbf{TorsFreeAb}$, it is also the kernel of $f$ in $\mathbf{Ab}$, so we know that $i$ is injective with $i(A) = \{b \in B : f(b) = 0\}$. If $n \in \IZ \setminus \{0\}$ and $b \in B$ satisfy $f(n b) = 0$, then also $f(b)=0$ since $C$ is torsion-free. This shows that $B/i(A)$ is torsion-free. Conversely, if $i$ is injective and $B/i(A)$ is torsion-free, then $i$ is the kernel of the natural homomorphism $B \to B/i(A)$.'
+	'If $i : A \to B$ is the kernel of $f : B \to C$ in $\TorsFreeAb$, it is also the kernel of $f$ in $\Ab$, so we know that $i$ is injective with $i(A) = \{b \in B : f(b) = 0\}$. If $n \in \IZ \setminus \{0\}$ and $b \in B$ satisfy $f(n b) = 0$, then also $f(b)=0$ since $C$ is torsion-free. This shows that $B/i(A)$ is torsion-free. Conversely, if $i$ is injective and $B/i(A)$ is torsion-free, then $i$ is the kernel of the natural homomorphism $B \to B/i(A)$.'
 ),
 (
     'Vect',

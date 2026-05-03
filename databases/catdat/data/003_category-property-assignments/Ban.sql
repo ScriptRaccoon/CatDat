@@ -9,7 +9,7 @@ VALUES
 	'Ban',
 	'locally small',
 	TRUE,
-	'There is a forgetful functor $\mathbf{Ban} \to \mathbf{Set}$ and $\mathbf{Set}$ is locally small.' 
+	'There is a forgetful functor $\Ban \to \Set$ and $\Set$ is locally small.' 
 ),
 (
 	'Ban',
@@ -33,7 +33,7 @@ VALUES
 	'Ban',
 	'cocartesian cofiltered limits',
 	TRUE,
-	'If $X$ is a Banach space and $(Y_i)$ is a cofiltered diagram of Banach spaces, the canonical map $X \oplus \lim_i Y_i \to \lim_i (X \oplus Y_i)$ is an isomorphism: Since the forgetful functor $\mathbf{Ban} \to \mathbf{Vect}$ preserves finite coproducts and all limits, and $\mathbf{Vect}$ has the claimed property (see <a href="/category-implication/biproducts_cartesian_filtered_colimits">here</a>), the canonical map is bijective. It remains to show that it is isometric. For $(x,y) \in X \oplus \lim_i Y_i$ the norm in the domain is $|x| + \sup_i |y_i|$, and the norm in the codomain is $\sup_i (|x| + |y_i|)$, and these clearly agree.'
+	'If $X$ is a Banach space and $(Y_i)$ is a cofiltered diagram of Banach spaces, the canonical map $X \oplus \lim_i Y_i \to \lim_i (X \oplus Y_i)$ is an isomorphism: Since the forgetful functor $\Ban \to \Vect$ preserves finite coproducts and all limits, and $\Vect$ has the claimed property (see <a href="/category-implication/biproducts_cartesian_filtered_colimits">here</a>), the canonical map is bijective. It remains to show that it is isometric. For $(x,y) \in X \oplus \lim_i Y_i$ the norm in the domain is $|x| + \sup_i |y_i|$, and the norm in the codomain is $\sup_i (|x| + |y_i|)$, and these clearly agree.'
 ),
 (
 	'Ban',
@@ -57,7 +57,7 @@ VALUES
 	'Ban',
 	'filtered-colimit-stable monomorphisms',
 	FALSE,
-	'The proof is similar to <a href="/category/Met">$\mathbf{Met}$</a>. For $n \geq 1$ let $V_n$ be the Banach space with underlying vector space $\IC$ and the norm $|x|_n := \frac{1}{n} |x|$. For $n \leq m$ the identity map provides a morphism $V_n \to V_m$, which is clearly a monomorphism (also an epimorphism by the way, but an isomorphism iff $n=m$). Let $V$ be the colimit of all $V_n$ in the category of semi-normed vector spaces. It is constructed as the colimit in the category of vector spaces with the semi-norm $|x| := \inf \{|x|_m : n \leq m \}$ for $x \in V_n$. So clearly, the semi-norm is zero. Hence, the colimit in the category of normed vector spaces is $0$. The colimit in the category of Banach spaces is its completion, also $0$. Thus, the monomorphisms $V_1 \to V_n$ become $V_1 \to 0$ in the colimit.'
+	'The proof is similar to <a href="/category/Met">$\Met$</a>. For $n \geq 1$ let $V_n$ be the Banach space with underlying vector space $\IC$ and the norm $|x|_n := \frac{1}{n} |x|$. For $n \leq m$ the identity map provides a morphism $V_n \to V_m$, which is clearly a monomorphism (also an epimorphism by the way, but an isomorphism iff $n=m$). Let $V$ be the colimit of all $V_n$ in the category of semi-normed vector spaces. It is constructed as the colimit in the category of vector spaces with the semi-norm $|x| := \inf \{|x|_m : n \leq m \}$ for $x \in V_n$. So clearly, the semi-norm is zero. Hence, the colimit in the category of normed vector spaces is $0$. The colimit in the category of Banach spaces is its completion, also $0$. Thus, the monomorphisms $V_1 \to V_n$ become $V_1 \to 0$ in the colimit.'
 ),
 (
 	'Ban',

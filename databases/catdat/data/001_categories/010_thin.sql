@@ -52,7 +52,7 @@ VALUES
 (
 	'On',
 	'poset of ordinal numbers',
-	'$(\mathbf{On},\leq)$',
+	'$(\On,\leq)$',
 	'ordinal numbers',
 	'a unique morphism $(\alpha,\beta): \alpha \to \beta$ if $\alpha \leq \beta$',
 	'This is a large variant of the poset of natural numbers.',

@@ -9,7 +9,7 @@ VALUES
 	'FinSet',
 	'locally small',
 	TRUE,
-	'There is a forgetful functor $\mathbf{FinSet} \to \mathbf{Set}$ and $\mathbf{Set}$ is locally small.'
+	'There is a forgetful functor $\FinSet \to \Set$ and $\Set$ is locally small.'
 ),
 (
 	'FinSet',
@@ -27,7 +27,7 @@ VALUES
 	'FinSet',
 	'generator',
 	TRUE,
-	'The one-point set is a generator since it represents the forgetful functor $\mathbf{FinSet} \to \mathbf{Set}$.'
+	'The one-point set is a generator since it represents the forgetful functor $\FinSet \to \Set$.'
 ),
 (
 	'FinSet',
@@ -45,7 +45,7 @@ VALUES
 	'FinSet',
 	'ℵ₁-accessible',
 	TRUE,
-	'The inclusion $\mathbf{FinSet} \hookrightarrow \mathbf{Set}$ is closed under ℵ₁-filtered colimits, that is, any ℵ₁-filtered colimit of finite sets is again finite. Since every finite set is ℵ₁-presentable in $\mathbf{Set}$, it is still ℵ₁-presentable in $\mathbf{FinSet}$. Therefore, $\mathbf{FinSet}$ is ℵ₁-accessible, where every object is ℵ₁-presentable.'
+	'The inclusion $\FinSet \hookrightarrow \Set$ is closed under ℵ₁-filtered colimits, that is, any ℵ₁-filtered colimit of finite sets is again finite. Since every finite set is ℵ₁-presentable in $\Set$, it is still ℵ₁-presentable in $\FinSet$. Therefore, $\FinSet$ is ℵ₁-accessible, where every object is ℵ₁-presentable.'
 ),
 (
 	'FinSet',

@@ -9,7 +9,7 @@ VALUES
 	'Alg(R)',
 	'locally small',
 	TRUE,
-	'There is a forgetful functor $\mathbf{Alg}(R) \to \mathbf{Set}$ and $\mathbf{Set}$ is locally small.'
+	'There is a forgetful functor $\mathbf{Alg}(R) \to \Set$ and $\Set$ is locally small.'
 ),
 (
 	'Alg(R)',
@@ -33,7 +33,7 @@ VALUES
 	'Alg(R)',
 	'disjoint finite products',
 	TRUE,
-	'One can take the same proof as for $\mathbf{Ring}$.'
+	'One can take the same proof as for $\Ring$.'
 ),
 (
 	'Alg(R)',
@@ -63,25 +63,25 @@ VALUES
 	'Alg(R)',
 	'semi-strongly connected',
 	FALSE,
-	'This is because already the full subcategory $\mathbf{CAlg}(R)$ of commutative algebras is not semi-strongly connected, see <a href="/category/CAlg(R)">its category page</a> for details.'
+	'This is because already the full subcategory $\CAlg(R)$ of commutative algebras is not semi-strongly connected, see <a href="/category/CAlg(R)">its category page</a> for details.'
 ),
 (
 	'Alg(R)',
 	'co-Malcev',
 	FALSE,
-	'See <a href="https://mathoverflow.net/questions/509552">MO/509552</a>: Consider the forgetful functor $U : \mathbf{Alg}(R) \to \mathbf{Set}$ and the relation $S \subseteq U^2$ defined by $S(A) := \{(a,b) \in U(A)^2 : ab = a^2\}$. Both are representable: $U$ by $R[X]$ and $S$ by $R \langle X,Y \rangle / \langle XY-X^2 \rangle$. It is clear that $S$ is reflexive, but not symmetric.'
+	'See <a href="https://mathoverflow.net/questions/509552">MO/509552</a>: Consider the forgetful functor $U : \mathbf{Alg}(R) \to \Set$ and the relation $S \subseteq U^2$ defined by $S(A) := \{(a,b) \in U(A)^2 : ab = a^2\}$. Both are representable: $U$ by $R[X]$ and $S$ by $R \langle X,Y \rangle / \langle XY-X^2 \rangle$. It is clear that $S$ is reflexive, but not symmetric.'
 ),
 (
 	'Alg(R)',
 	'coregular',
 	FALSE,
-	'We just need to tweak the proof for $\mathbf{Ring}$. Since $R \neq 0$, there is an infinite field $K$ with a homomorphism $R \to K$. Since $K$ is infinite, we may choose some $\lambda \in K \setminus \{0,1\}$. Let $B := M_2(K)$ and $A := K \times K$. Then $A \to B$, $(x,y) \mapsto \diag(x,y)$ is a regular monomorphism: A direct calculation shows that a matrix is diagonal iff it commutes with $M := \bigl(\begin{smallmatrix} 1 & 0 \\ 0 & \lambda \end{smallmatrix}\bigr)$, so that $A \to B$ is the equalizer of the identity $B \to B$ and the conjugation $B \to B$, $X \mapsto M X M^{-1}$. Consider the homomorphism $A \to K$, $(a,b) \mapsto a$. We claim that $K \to K \sqcup_A B$ is not a monomorphism, because in fact, the pushout $K \sqcup_A B$ is zero: Since $A \to K$ is surjective with kernel $0 \times K$, the pushout is $B/\langle 0 \times K \rangle$, which is $0$ because $B$ is simple (<a href="https://math.stackexchange.com/questions/22629" target="_blank">proof</a>) or via a direct calculation with elementary matrices.'
+	'We just need to tweak the proof for $\Ring$. Since $R \neq 0$, there is an infinite field $K$ with a homomorphism $R \to K$. Since $K$ is infinite, we may choose some $\lambda \in K \setminus \{0,1\}$. Let $B := M_2(K)$ and $A := K \times K$. Then $A \to B$, $(x,y) \mapsto \diag(x,y)$ is a regular monomorphism: A direct calculation shows that a matrix is diagonal iff it commutes with $M := \bigl(\begin{smallmatrix} 1 & 0 \\ 0 & \lambda \end{smallmatrix}\bigr)$, so that $A \to B$ is the equalizer of the identity $B \to B$ and the conjugation $B \to B$, $X \mapsto M X M^{-1}$. Consider the homomorphism $A \to K$, $(a,b) \mapsto a$. We claim that $K \to K \sqcup_A B$ is not a monomorphism, because in fact, the pushout $K \sqcup_A B$ is zero: Since $A \to K$ is surjective with kernel $0 \times K$, the pushout is $B/\langle 0 \times K \rangle$, which is $0$ because $B$ is simple (<a href="https://math.stackexchange.com/questions/22629" target="_blank">proof</a>) or via a direct calculation with elementary matrices.'
 ),
 (
 	'Alg(R)',
 	'regular quotient object classifier',
 	FALSE,
-	'We may copy the proof for the <a href="/category/CAlg(R)">category of commutative algebras</a> (since the proof there did not use that $P$ is commutative). Alternatively, any regular quotient object classifier in $\mathbf{Alg}(R)$ would produce one in $\mathbf{CAlg}(R)$ by <a href="/lemma/subobject_classifiers_coreflection">this lemma</a> (dualized).'
+	'We may copy the proof for the <a href="/category/CAlg(R)">category of commutative algebras</a> (since the proof there did not use that $P$ is commutative). Alternatively, any regular quotient object classifier in $\mathbf{Alg}(R)$ would produce one in $\CAlg(R)$ by <a href="/lemma/subobject_classifiers_coreflection">this lemma</a> (dualized).'
 ),
 (
 	'Alg(R)',
@@ -95,5 +95,5 @@ VALUES
 	'Alg(R)',
 	'cofiltered-limit-stable epimorphisms',
 	FALSE,
-	'We already know that $\mathbf{CAlg}(R)$ does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the forgetful functor $\mathbf{CAlg}(R) \to \mathbf{Alg}(R)$. It preserves epimorphisms by <a href="https://math.stackexchange.com/questions/5133488" target="_blank">MSE/5133488</a>.'
+	'We already know that $\CAlg(R)$ does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the forgetful functor $\CAlg(R) \to \mathbf{Alg}(R)$. It preserves epimorphisms by <a href="https://math.stackexchange.com/questions/5133488" target="_blank">MSE/5133488</a>.'
 );

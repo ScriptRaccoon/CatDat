@@ -39,7 +39,7 @@ VALUES
     'Delta',
     'coequalizers',
     TRUE,
-    'Assume that $X \rightrightarrows Y$ are morphisms in $\mathbf{FinOrd} \setminus \{\varnothing\}$. Since <a href="/category/FinOrd">$\mathbf{FinOrd}$ has coequalizers</a>, we have a coequalizer $Y \to Q$. Since $Y$ is non-empty, $Q$ is non-empty as well, and clearly $Y \to Q$ is then also the coequalizer in $\mathbf{FinOrd} \setminus \{\varnothing\}$.'
+    'Assume that $X \rightrightarrows Y$ are morphisms in $\FinOrd \setminus \{\varnothing\}$. Since <a href="/category/FinOrd">$\FinOrd$ has coequalizers</a>, we have a coequalizer $Y \to Q$. Since $Y$ is non-empty, $Q$ is non-empty as well, and clearly $Y \to Q$ is then also the coequalizer in $\FinOrd \setminus \{\varnothing\}$.'
 ),
 (
     'Delta',
@@ -57,19 +57,19 @@ VALUES
     'Delta',
     'core-thin',
     TRUE,
-    'The category $\mathbf{FinOrd} \setminus \{\varnothing\}$ is core-thin because already $\mathbf{FinOrd}$ is core-thin (see its <a href="/category/FinOrd">category page</a>).'
+    'The category $\FinOrd \setminus \{\varnothing\}$ is core-thin because already $\FinOrd$ is core-thin (see its <a href="/category/FinOrd">category page</a>).'
 ),
 (
     'Delta',
     'mono-regular',
     TRUE,
-    'The <a href="/category/FinOrd">proof for $\mathbf{FinOrd}$</a> also works for $\mathbf{FinSet} \setminus \{\varnothing\}$.'
+    'The <a href="/category/FinOrd">proof for $\FinOrd$</a> also works for $\FinSet \setminus \{\varnothing\}$.'
 ),
 (
     'Delta',
     'epi-regular',
     TRUE,
-    'The <a href="/category/FinOrd">proof for $\mathbf{FinOrd}$</a> also works for $\mathbf{FinSet} \setminus \{\varnothing\}$.'
+    'The <a href="/category/FinOrd">proof for $\FinOrd$</a> also works for $\FinSet \setminus \{\varnothing\}$.'
 ),
 (
     'Delta',
@@ -103,25 +103,25 @@ VALUES
 	'Delta',
 	'binary powers',
 	FALSE,
-	'The <a href="/category/FinOrd">proof for $\mathbf{FinOrd}$</a> also works for $\mathbf{FinSet} \setminus \{\varnothing\}$: The forgetful functor to $\mathbf{Set}$ is representable, hence preserves all limits. Thus, if the power $\{0 < 1\} \times \{0 < 1\}$ exists in $\mathbf{FinOrd} \setminus \{\varnothing\}$, we may assume its underlying set is the cartesian product and the projection morphisms are the usual projection maps. Moreover, these maps are order-preserving. Since the result must be a total order, we have $(0,1) \leq (1,0)$ or $(1,0) \leq (0,1)$. In the first case, apply $p_2$ to get $1 \leq 0$, a contradiction. In the second case, use $p_1$ to get a contradiction.'
+	'The <a href="/category/FinOrd">proof for $\FinOrd$</a> also works for $\FinSet \setminus \{\varnothing\}$: The forgetful functor to $\Set$ is representable, hence preserves all limits. Thus, if the power $\{0 < 1\} \times \{0 < 1\}$ exists in $\FinOrd \setminus \{\varnothing\}$, we may assume its underlying set is the cartesian product and the projection morphisms are the usual projection maps. Moreover, these maps are order-preserving. Since the result must be a total order, we have $(0,1) \leq (1,0)$ or $(1,0) \leq (0,1)$. In the first case, apply $p_2$ to get $1 \leq 0$, a contradiction. In the second case, use $p_1$ to get a contradiction.'
 ),
 (
 	'Delta',
 	'binary copowers',
 	FALSE,
-	'The <a href="/category/FinOrd">proof for $\mathbf{FinOrd}$</a> also works for $\mathbf{FinSet} \setminus \{\varnothing\}$: Assume that the copower $1+1$, i.e. the coproduct of two terminal objects exists, denoted $\{x\}$ and $\{y\}$. If $x \leq y$ holds in the coproduct, then the universal property would imply this relation for all pairs of elements in any non-empty finite order, which is absurd. Otherwise, $y \leq x$ holds in the coproduct, which yields the same contradiction.'
+	'The <a href="/category/FinOrd">proof for $\FinOrd$</a> also works for $\FinSet \setminus \{\varnothing\}$: Assume that the copower $1+1$, i.e. the coproduct of two terminal objects exists, denoted $\{x\}$ and $\{y\}$. If $x \leq y$ holds in the coproduct, then the universal property would imply this relation for all pairs of elements in any non-empty finite order, which is absurd. Otherwise, $y \leq x$ holds in the coproduct, which yields the same contradiction.'
 ),
 (
     'Delta',
     'sequential colimits',
     FALSE,
-    'We can just copy the <a href="/category/FinOrd">proof for $\mathbf{FinOrd}$</a> to show that the sequence of inclusions $[0] \hookrightarrow [1] \hookrightarrow [2] \hookrightarrow \cdots$ has no colimit.'
+    'We can just copy the <a href="/category/FinOrd">proof for $\FinOrd$</a> to show that the sequence of inclusions $[0] \hookrightarrow [1] \hookrightarrow [2] \hookrightarrow \cdots$ has no colimit.'
 ),
 (
     'Delta',
     'sequential limits',
     FALSE,
-    'We can just copy the <a href="/category/FinOrd">proof for $\mathbf{FinOrd}$</a> to show that the sequence of truncations $\cdots \twoheadrightarrow [2] \twoheadrightarrow [1] \twoheadrightarrow [0]$ has no limit.'
+    'We can just copy the <a href="/category/FinOrd">proof for $\FinOrd$</a> to show that the sequence of truncations $\cdots \twoheadrightarrow [2] \twoheadrightarrow [1] \twoheadrightarrow [0]$ has no limit.'
 ),
 (
     'Delta',
@@ -133,5 +133,5 @@ VALUES
     'Delta',
     'pushouts',
     FALSE,
-    'Assume that the two inclusions $\{0 < 1\} \leftarrow \{0\} \rightarrow \{0 < 2\}$ have a pushout in $\mathbf{FinOrd} \setminus \{\varnothing\}$. This would be a universal non-empty finite ordered set $X$ with three elements $0,1,2$ satisfying $0 \leq 1$ and $0 \leq 2$. Assume w.l.o.g. $1 \leq 2$ (the case $2 \leq 1$ is similar). The universal property yields an order-preserving map $X \to \{a < b < c\}$ with $0 \mapsto a$, $1 \mapsto c$, $2 \mapsto b$. But then $c \leq b$, which is a contradiction.'
+    'Assume that the two inclusions $\{0 < 1\} \leftarrow \{0\} \rightarrow \{0 < 2\}$ have a pushout in $\FinOrd \setminus \{\varnothing\}$. This would be a universal non-empty finite ordered set $X$ with three elements $0,1,2$ satisfying $0 \leq 1$ and $0 \leq 2$. Assume w.l.o.g. $1 \leq 2$ (the case $2 \leq 1$ is similar). The universal property yields an order-preserving map $X \to \{a < b < c\}$ with $0 \mapsto a$, $1 \mapsto c$, $2 \mapsto b$. But then $c \leq b$, which is a contradiction.'
 );

@@ -9,7 +9,7 @@ VALUES
 	'Cat',
 	'locally small',
 	TRUE,
-	'There is a forgetful functor $\mathbf{Cat} \to \mathbf{Set} \times \mathbf{Set}$, $\C \mapsto (\Ob(\C),\Mor(\C))$, and $\mathbf{Set} \times \mathbf{Set}$ is locally small.'
+	'There is a forgetful functor $\Cat \to \Set \times \Set$, $\C \mapsto (\Ob(\C),\Mor(\C))$, and $\Set \times \Set$ is locally small.'
 ),
 (
 	'Cat',
@@ -33,7 +33,7 @@ VALUES
 	'Cat',
 	'infinitary extensive',
 	TRUE,
-	'[Sketch] This is straight forward from the fact that $\mathbf{Set}$ is infinitary extensive: A functor $\C \to \coprod_i \D_i$ yields full subcategories $\C_i \subseteq \C$ (the preimages of $\D_i)$ with $\C = \coprod_i \C_i$.'
+	'[Sketch] This is straight forward from the fact that $\Set$ is infinitary extensive: A functor $\C \to \coprod_i \D_i$ yields full subcategories $\C_i \subseteq \C$ (the preimages of $\D_i)$ with $\C = \coprod_i \C_i$.'
 ),
 (
 	'Cat',
@@ -51,7 +51,7 @@ VALUES
 	'Cat',
 	'cogenerating set',
 	FALSE,
-	'Assume that $S$ is a cogenerating set in $\mathbf{Cat}$. Then one checks that the set of monoids $\{\End(X) : X \in \C \in S\}$ is a cogenerating set in the <a href="/category/Mon">category of monoids</a>, which we know does not exist.'
+	'Assume that $S$ is a cogenerating set in $\Cat$. Then one checks that the set of monoids $\{\End(X) : X \in \C \in S\}$ is a cogenerating set in the <a href="/category/Mon">category of monoids</a>, which we know does not exist.'
 ),
 (
 	'Cat',
@@ -63,7 +63,7 @@ VALUES
 	'Cat',
 	'Malcev',
 	FALSE,
-	'Use that $\mathbf{Set}$ is not Malcev and consider sets as discrete categories.'
+	'Use that $\Set$ is not Malcev and consider sets as discrete categories.'
 ),
 (
 	'Cat',
@@ -75,17 +75,17 @@ VALUES
 	'Cat',
 	'co-Malcev',
 	FALSE,
-	'We can adapt the proof from <a href="/category/Mon">$\mathbf{Mon}$</a> as follows: Consider the functor $U : \mathbf{Cat} \to \mathbf{Set}^+$ sending a category $\C$ to the (large) set $\{(x,u) : x \in \Ob(\C) ,\, u \in \End(x) \}$. It is represented by $B \IN$, the one-object category associated to the free monoid in one generator. Consider the relation $R \subseteq U^2$ consisting of those pairs $((x,u),(y,v))$ where $x = y$ and $uv = u^2$. This also representable, namely be the one-object category associated to the monoid with the presentation $\langle u,v : uv = u^2 \rangle$. Clearly, $R$ is reflexive, but not symmetric.'
+	'We can adapt the proof from <a href="/category/Mon">$\Mon$</a> as follows: Consider the functor $U : \Cat \to \Set^+$ sending a category $\C$ to the (large) set $\{(x,u) : x \in \Ob(\C) ,\, u \in \End(x) \}$. It is represented by $B \IN$, the one-object category associated to the free monoid in one generator. Consider the relation $R \subseteq U^2$ consisting of those pairs $((x,u),(y,v))$ where $x = y$ and $uv = u^2$. This also representable, namely be the one-object category associated to the monoid with the presentation $\langle u,v : uv = u^2 \rangle$. Clearly, $R$ is reflexive, but not symmetric.'
 ),
 (
 	'Cat',
 	'coregular',
 	FALSE,
-	'We already know that the <a href="/category/Mon">category of monoids</a> is not coregular, in fact there is a regular monomorphism $M \to N$ of monoids and a morphism $M \to K$ such that $K \to K \sqcup_M N$ is not a monomorphism. The delooping functor $B : \mathbf{Mon} \to \mathbf{Cat}$ has a left adjoint (<a href="https://math.stackexchange.com/questions/574745" target="_blank">MSE/574745</a>), hence it preserves regular monomorphisms. It also preserves pushouts (<a href="https://math.stackexchange.com/questions/5130854" target="_blank">MSE/5130854</a>), and it reflects monomorphisms since it is faithful. Therefore, $B(M) \to B(N)$ provides the desired counterexample of a non-stable regular monomorphism of categories.'
+	'We already know that the <a href="/category/Mon">category of monoids</a> is not coregular, in fact there is a regular monomorphism $M \to N$ of monoids and a morphism $M \to K$ such that $K \to K \sqcup_M N$ is not a monomorphism. The delooping functor $B : \Mon \to \Cat$ has a left adjoint (<a href="https://math.stackexchange.com/questions/574745" target="_blank">MSE/574745</a>), hence it preserves regular monomorphisms. It also preserves pushouts (<a href="https://math.stackexchange.com/questions/5130854" target="_blank">MSE/5130854</a>), and it reflects monomorphisms since it is faithful. Therefore, $B(M) \to B(N)$ provides the desired counterexample of a non-stable regular monomorphism of categories.'
 ),
 (
 	'Cat',
 	'cofiltered-limit-stable epimorphisms',
 	FALSE,
-	'We already know that $\mathbf{Set}$ does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the functor $\mathbf{Set} \to \mathbf{Cat}$ that maps a set to its discrete category.'
+	'We already know that $\Set$ does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the functor $\Set \to \Cat$ that maps a set to its discrete category.'
 );

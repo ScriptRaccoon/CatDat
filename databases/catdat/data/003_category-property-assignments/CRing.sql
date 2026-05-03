@@ -9,7 +9,7 @@ VALUES
 	'CRing',
 	'locally small',
 	TRUE,
-	'There is a forgetful functor $\mathbf{CRing} \to \mathbf{Set}$ and $\mathbf{Set}$ is locally small.'
+	'There is a forgetful functor $\CRing \to \Set$ and $\Set$ is locally small.'
 ),
 (
 	'CRing',
@@ -75,7 +75,7 @@ VALUES
 	'CRing',
 	'co-Malcev',
 	FALSE,
-	'See <a href="https://mathoverflow.net/questions/509552">MO/509552</a>: Consider the forgetful functor $U : \mathbf{CRing} \to \mathbf{Set}$ and the relation $R \subseteq U^2$ defined by $R(A) := \{(a,b) \in U(A)^2 : ab = a^2\}$. Both are representable: $U$ by $\IZ[X]$ and $R$ by $\IZ[X,Y] / \langle XY-X^2 \rangle$. It is clear that $R$ is reflexive, but not symmetric.'
+	'See <a href="https://mathoverflow.net/questions/509552">MO/509552</a>: Consider the forgetful functor $U : \CRing \to \Set$ and the relation $R \subseteq U^2$ defined by $R(A) := \{(a,b) \in U(A)^2 : ab = a^2\}$. Both are representable: $U$ by $\IZ[X]$ and $R$ by $\IZ[X,Y] / \langle XY-X^2 \rangle$. It is clear that $R$ is reflexive, but not symmetric.'
 ),
 (
 	'CRing',
@@ -87,5 +87,5 @@ VALUES
 	'CRing',
 	'cofiltered-limit-stable epimorphisms',
 	FALSE,
-	'For a prime $p$ consider the sequence of projections $\cdots \to \IZ/p^2 \to \IZ/p$ and the constant sequence $\cdots \to \IZ \to \IZ$. The surjective homomorphisms $\IZ \to \IZ/p^n$ induce the homomorphism $\IZ \to \IZ_p$ in the limit, where $\IZ_p$ is the ring of $p$-adic integers. It is not surjective since $\IZ_p$ is uncountable, but this is not sufficient (at least, for this category): We need to use <a href="https://stacks.math.columbia.edu/tag/04W0" target="_blank">SP/04W0</a> to conclude that it is no epimorphism in $\mathbf{CRing}$.'
+	'For a prime $p$ consider the sequence of projections $\cdots \to \IZ/p^2 \to \IZ/p$ and the constant sequence $\cdots \to \IZ \to \IZ$. The surjective homomorphisms $\IZ \to \IZ/p^n$ induce the homomorphism $\IZ \to \IZ_p$ in the limit, where $\IZ_p$ is the ring of $p$-adic integers. It is not surjective since $\IZ_p$ is uncountable, but this is not sufficient (at least, for this category): We need to use <a href="https://stacks.math.columbia.edu/tag/04W0" target="_blank">SP/04W0</a> to conclude that it is no epimorphism in $\CRing$.'
 );

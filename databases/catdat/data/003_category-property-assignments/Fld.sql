@@ -9,7 +9,7 @@ VALUES
 	'Fld',
 	'locally small',
 	TRUE,
-	'There is a forgetful functor $\mathbf{Fld} \to \mathbf{Set}$ and $\mathbf{Set}$ is locally small.'
+	'There is a forgetful functor $\Fld \to \Set$ and $\Set$ is locally small.'
 ),
 (
 	'Fld',
@@ -39,7 +39,7 @@ VALUES
 	'Fld',
 	'connected',
 	FALSE,
-	'A field of characteristic $0$ cannot be connected with a field of characteristic $p > 0$. in fact, the connected components of $\mathbf{Fld}$ are the subcategories $\mathbf{Fld}_p$ of fields of characteristic $p$, where $p$ is a prime or $0$.'
+	'A field of characteristic $0$ cannot be connected with a field of characteristic $p > 0$. in fact, the connected components of $\Fld$ are the subcategories $\Fld_p$ of fields of characteristic $p$, where $p$ is a prime or $0$.'
 ),
 (
 	'Fld',
@@ -75,7 +75,7 @@ VALUES
 	'Fld',
 	'locally cartesian closed',
 	FALSE,
-	'Assume that $K$ is a field such that $\mathbf{Fld} / K$ is cartesian closed. This slice category is equivalent to the poset of subfields of $K$. This poset is a lattice, and our assumption implies that it is distributive (see <a href="/category-implication/distributive_criterion">here</a>). But this is quite rare: Consider $K = \IQ(\sqrt{2}, \sqrt{3})$. By Galois theory, the lattice of subfields is isomorphic to the diamond lattice $M_3$ which is not distributive. Specifically, $(\IQ(\sqrt{2}) \wedge \IQ(\sqrt{6})) \vee (\IQ(\sqrt{3}) \wedge \IQ(\sqrt{6})) = \IQ \vee \IQ = \IQ$, while $(\IQ(\sqrt{2}) \vee \IQ(\sqrt{3})) \wedge \IQ(\sqrt{6}) = \IQ(\sqrt{2},\sqrt{3}) \wedge \IQ(\sqrt{6}) = \IQ(\sqrt{6})$.'
+	'Assume that $K$ is a field such that $\Fld / K$ is cartesian closed. This slice category is equivalent to the poset of subfields of $K$. This poset is a lattice, and our assumption implies that it is distributive (see <a href="/category-implication/distributive_criterion">here</a>). But this is quite rare: Consider $K = \IQ(\sqrt{2}, \sqrt{3})$. By Galois theory, the lattice of subfields is isomorphic to the diamond lattice $M_3$ which is not distributive. Specifically, $(\IQ(\sqrt{2}) \wedge \IQ(\sqrt{6})) \vee (\IQ(\sqrt{3}) \wedge \IQ(\sqrt{6})) = \IQ \vee \IQ = \IQ$, while $(\IQ(\sqrt{2}) \vee \IQ(\sqrt{3})) \wedge \IQ(\sqrt{6}) = \IQ(\sqrt{2},\sqrt{3}) \wedge \IQ(\sqrt{6}) = \IQ(\sqrt{6})$.'
 ),
 (
 	'Fld',
@@ -87,7 +87,7 @@ VALUES
 	'Fld',
 	'binary powers',
 	FALSE,
-	'Assume that the product $P := \IQ(\sqrt{2}) \times \IQ(\sqrt{2})$ exists. This field is isomorphic to a subfield of $\IQ(\sqrt{2})$, hence $P \cong \IQ$ or $P \cong \IQ(\sqrt{2})$. In the first case, the two projections $P \rightrightarrows \IQ(\sqrt{2})$ must be equal, which means that every two homomorphisms $K \rightrightarrows \IQ(\sqrt{2})$ are equal, which is absurd (take $K = \IQ(\sqrt{2})$ and its two automorphisms). In the second case, the projections induce for every field $K$ a bijection $\Hom(K,\IQ(\sqrt{2})) \cong \Hom(K,\IQ(\sqrt{2}))^2$, which however fails for $K = \IQ(\sqrt{2})$: the left hand side has $2$ elements, the right hand side has $4$ elements. A more general result about products in $\mathbf{Fld}$ can be found at <a href="https://math.stackexchange.com/questions/359352" target="_blank">MSE/359352</a>.'
+	'Assume that the product $P := \IQ(\sqrt{2}) \times \IQ(\sqrt{2})$ exists. This field is isomorphic to a subfield of $\IQ(\sqrt{2})$, hence $P \cong \IQ$ or $P \cong \IQ(\sqrt{2})$. In the first case, the two projections $P \rightrightarrows \IQ(\sqrt{2})$ must be equal, which means that every two homomorphisms $K \rightrightarrows \IQ(\sqrt{2})$ are equal, which is absurd (take $K = \IQ(\sqrt{2})$ and its two automorphisms). In the second case, the projections induce for every field $K$ a bijection $\Hom(K,\IQ(\sqrt{2})) \cong \Hom(K,\IQ(\sqrt{2}))^2$, which however fails for $K = \IQ(\sqrt{2})$: the left hand side has $2$ elements, the right hand side has $4$ elements. A more general result about products in $\Fld$ can be found at <a href="https://math.stackexchange.com/questions/359352" target="_blank">MSE/359352</a>.'
 ),
 (
 	'Fld',

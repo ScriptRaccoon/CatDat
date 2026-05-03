@@ -9,7 +9,7 @@ VALUES
 	'Pos',
 	'locally small',
 	TRUE,
-	'There is a forgetful functor $\mathbf{Pos} \to \mathbf{Set}$ and $\mathbf{Set}$ is locally small.'
+	'There is a forgetful functor $\Pos \to \Set$ and $\Set$ is locally small.'
 ),
 (
 	'Pos',
@@ -39,7 +39,7 @@ VALUES
 	'Pos',
 	'infinitary extensive',
 	TRUE,
-	'[Sketch] Since $\mathbf{Set}$ is infinitary extensive, a map $f : P \to \coprod_i Q_i$ corresponds to a decomposition $P = \coprod_i P_i$ (as sets) with maps $f_i : P_i \to Q_i$. Endow $P_i$ with the induced order. If $f$ is order-preserving, the elements in different $P_i$ cannot be comparable (since their $f$-images are not comparable), so that $P = \coprod_i P_i$ as posets, and each $f_i$ is order-preserving.'
+	'[Sketch] Since $\Set$ is infinitary extensive, a map $f : P \to \coprod_i Q_i$ corresponds to a decomposition $P = \coprod_i P_i$ (as sets) with maps $f_i : P_i \to Q_i$. Endow $P_i$ with the induced order. If $f$ is order-preserving, the elements in different $P_i$ cannot be comparable (since their $f$-images are not comparable), so that $P = \coprod_i P_i$ as posets, and each $f_i$ is order-preserving.'
 ),
 (
 	'Pos',
@@ -81,7 +81,7 @@ VALUES
 	'Pos',
 	'co-Malcev',
 	FALSE,
-	'See <a href="https://mathoverflow.net/questions/509552">MO/509552</a>: Consider the forgetful functor $U : \mathbf{Pos} \to \mathbf{Set}$ and the relation $R \subseteq U^2$ defined by $R(A) := \{(a,b) \in U(A)^2 : a \leq b\}$. Both are representable: $U$ by the singleton poset and $R$ by $\{0 \leq 1 \}$. It is clear that $R$ is reflexive, but not symmetric.'
+	'See <a href="https://mathoverflow.net/questions/509552">MO/509552</a>: Consider the forgetful functor $U : \Pos \to \Set$ and the relation $R \subseteq U^2$ defined by $R(A) := \{(a,b) \in U(A)^2 : a \leq b\}$. Both are representable: $U$ by the singleton poset and $R$ by $\{0 \leq 1 \}$. It is clear that $R$ is reflexive, but not symmetric.'
 ),
 (
 	'Pos',

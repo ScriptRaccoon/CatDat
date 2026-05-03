@@ -2,7 +2,7 @@ INSERT INTO category_comments (category_id, comment)
 VALUES
 (
     'FinSet',
-    'For the non-existence of sequential (co-)limits it is <i>not</i> sufficient to take a diagram of finite sets whose (co-)limit in $\mathbf{Set}$ is not contained in $\mathbf{FinSet}$.'
+    'For the non-existence of sequential (co-)limits it is <i>not</i> sufficient to take a diagram of finite sets whose (co-)limit in $\Set$ is not contained in $\FinSet$.'
 ),
 (
     'Ring',

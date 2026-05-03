@@ -72,14 +72,14 @@ VALUES
 ),
 (
 	'CMon',
-	'A morphism in $\mathbf{CMon}$ is an epimorphism iff it is an epimorphism in $\mathbf{Mon}$, which in turn can be characterized by <a href="https://en.wikipedia.org/wiki/Isbell''s_zigzag_theorem" target="_blank">Isbell''s zigzag theorem</a>.',
-	'If $f : M \to N$ is a homomorphism of commutative monoids which is an epimorphism in $\mathbf{Mon}$, then it is trivially also an epimorphism in $\mathbf{CMon}$. The converse requires a proof, which can be found at <a href="https://math.stackexchange.com/a/5133596/1650">MSE/5133488</a>.
+	'A morphism in $\mathbf{CMon}$ is an epimorphism iff it is an epimorphism in $\Mon$, which in turn can be characterized by <a href="https://en.wikipedia.org/wiki/Isbell''s_zigzag_theorem" target="_blank">Isbell''s zigzag theorem</a>.',
+	'If $f : M \to N$ is a homomorphism of commutative monoids which is an epimorphism in $\Mon$, then it is trivially also an epimorphism in $\mathbf{CMon}$. The converse requires a proof, which can be found at <a href="https://math.stackexchange.com/a/5133596/1650">MSE/5133488</a>.
 	'
 ),
 (
 	'CAlg(R)',
 	'a homomorphism of algebras which is an epimorphism of commutative rings',
-	'The forgetful functor $\mathbf{CAlg}(R) \to \mathbf{Ring}$ is faithful and hence reflects epimorphisms, but it also preserves epimorphisms since it preserves pushouts (since $\mathbf{CAlg}(R) \cong R / \mathbf{Ring}$). For epimorphisms of commutative rings see their <a href="/category/CRing">detail page</a>.'
+	'The forgetful functor $\CAlg(R) \to \Ring$ is faithful and hence reflects epimorphisms, but it also preserves epimorphisms since it preserves pushouts (since $\CAlg(R) \cong R / \Ring$). For epimorphisms of commutative rings see their <a href="/category/CRing">detail page</a>.'
 ),
 (
 	'CRing',
@@ -89,7 +89,7 @@ VALUES
 (
 	'Delta',
 	'surjective order-preserving maps',
-	'We can use the same <a href="/category/FinOrd">proof as for $\mathbf{FinOrd}$</a> since this has merely used the non-empty ordered set $\{0 < 1\}$.'
+	'We can use the same <a href="/category/FinOrd">proof as for $\FinOrd$</a> since this has merely used the non-empty ordered set $\{0 < 1\}$.'
 ),
 (
 	'FI',
@@ -109,7 +109,7 @@ VALUES
 (
 	'FinOrd',
 	'surjective order-preserving maps',
-	'The proof is similar to the one for $\mathbf{Set}$: If $f : X \to Y$ is an epimorphism of (finite) orders, in particular for all morphisms $g,h : Y \to \{0 < 1\}$ with $g \circ f = h \circ f$ we have $g = h$. This means for all upper sets $A,B \subseteq Y$ with $f^*(A) = f^*(B)$ we have $A = B$. If $y \in Y$, apply this to the intervals $A = Y_{\geq y}$ and $B = Y_{> y}$, which are different. Hence, there is some $x \in f^*(A) \setminus f^*(B)$, which means $f(x) \geq y$ but not $f(x) > y$, so that $f(x) = y$.'
+	'The proof is similar to the one for $\Set$: If $f : X \to Y$ is an epimorphism of (finite) orders, in particular for all morphisms $g,h : Y \to \{0 < 1\}$ with $g \circ f = h \circ f$ we have $g = h$. This means for all upper sets $A,B \subseteq Y$ with $f^*(A) = f^*(B)$ we have $A = B$. If $y \in Y$, apply this to the intervals $A = Y_{\geq y}$ and $B = Y_{> y}$, which are different. Hence, there is some $x \in f^*(A) \setminus f^*(B)$, which means $f(x) \geq y$ but not $f(x) > y$, so that $f(x) = y$.'
 ),
 (
 	'FinSet',
@@ -149,7 +149,7 @@ VALUES
 (
 	'M-Set',
 	'surjective $M$-maps',
-	'This holds in every functor category $[\C,\mathbf{Set}]$, here applied to the case that $\C$ has just one object.'
+	'This holds in every functor category $[\C,\Set]$, here applied to the case that $\C$ has just one object.'
 ),
 (
 	'Man',
@@ -209,7 +209,7 @@ VALUES
 (
 	'Prost',
 	'surjective order-preserving functions',
-	'Clearly, surjective maps are epimorphisms. The converse follows since, as mentioned, the forgetful functor $\mathbf{Prost} \to \mathbf{Set}$ has a right adjoint hence preserves epimorphisms.'
+	'Clearly, surjective maps are epimorphisms. The converse follows since, as mentioned, the forgetful functor $\Prost \to \Set$ has a right adjoint hence preserves epimorphisms.'
 ),
 (
 	'R-Mod',
@@ -264,22 +264,22 @@ VALUES
 (
 	'Sh(X)',
 	'morphisms of sheaves $f : F \to G$ that are "locally surjective": for every local section $g \in G(U)$ there is an open covering $U = \bigcup_{i \in I} U_i$ such that each $g|_{U_i} \in G(U_i)$ is contained in the image of $f(U_i) : F(U_i) \to G(U_i)$.',
-	'The one direction is easy. For the other one, assume that $f : F \to G$ is an epimorphism of sheaves. For every $x \in X$ the map on stalks $f_x : F_x \to G_x$ is an epimorphism because the stalk functor $\Sh(X) \to \mathbf{Set}$ admits a right adjoint: take skyscraper sheaves. For $x \in U$ then $g_x \in G_x$ has a preimage in $F_x$, say represented by some $f \in F(V_x)$ for some $x \in V_x \subseteq U$. By construction of the stalk $G_x$, there is some $x \in U_x \subseteq V_x$ with $f(U_x)(f|_{U_x}) = g|_{U_x}$. Hence, the sets $(U_x)$ provide the open covering.'
+	'The one direction is easy. For the other one, assume that $f : F \to G$ is an epimorphism of sheaves. For every $x \in X$ the map on stalks $f_x : F_x \to G_x$ is an epimorphism because the stalk functor $\Sh(X) \to \Set$ admits a right adjoint: take skyscraper sheaves. For $x \in U$ then $g_x \in G_x$ has a preimage in $F_x$, say represented by some $f \in F(V_x)$ for some $x \in V_x \subseteq U$. By construction of the stalk $G_x$, there is some $x \in U_x \subseteq V_x$ with $f(U_x)(f|_{U_x}) = g|_{U_x}$. Hence, the sets $(U_x)$ provide the open covering.'
 ),
 (
 	'Sh(X,Ab)',
 	'morphisms of abelian sheaves $f : F \to G$ that are "locally surjective": for every local section $g \in G(U)$ there is an open covering $U = \bigcup_{i \in I} U_i$ such that each $g|_{U_i} \in G(U_i)$ is contained in the image of $f(U_i) : F(U_i) \to G(U_i)$.',
-	'The one direction is easy. For the other one, assume that $f : F \to G$ is an epimorphism of abelian sheaves. For every $x \in X$ the homomorphism on stalks $f_x : F_x \to G_x$ is an epimorphism because the stalk functor  $\Sh(X,\mathbf{Ab}) \to \mathbf{Ab}$ admits a right adjoint: take skyscraper sheaves. For $x \in U$ then $g_x \in G_x$ has a preimage in $F_x$, say represented by some $f \in F(V_x)$ for some $x \in V_x \subseteq U$. By construction of the stalk $G_x$, there is some $x \in U_x \subseteq V_x$ with $f(U_x)(f|_{U_x}) = g|_{U_x}$. Hence, the sets $(U_x)$ provide the open covering.'
+	'The one direction is easy. For the other one, assume that $f : F \to G$ is an epimorphism of abelian sheaves. For every $x \in X$ the homomorphism on stalks $f_x : F_x \to G_x$ is an epimorphism because the stalk functor  $\Sh(X,\Ab) \to \Ab$ admits a right adjoint: take skyscraper sheaves. For $x \in U$ then $g_x \in G_x$ has a preimage in $F_x$, say represented by some $f \in F(V_x)$ for some $x \in V_x \subseteq U$. By construction of the stalk $G_x$, there is some $x \in U_x \subseteq V_x$ with $f(U_x)(f|_{U_x}) = g|_{U_x}$. Hence, the sets $(U_x)$ provide the open covering.'
 ),
 (
 	'Sp',
 	'pointwise surjective natural transformations',
-	'This holds in every functor category $[\C,\mathbf{Set}]$.'
+	'This holds in every functor category $[\C,\Set]$.'
 ),
 (
 	'sSet',
 	'pointwise surjective transformations',
-	'This holds in every functor category $[\C,\mathbf{Set}]$.'
+	'This holds in every functor category $[\C,\Set]$.'
 ),
 (
 	'Top',
@@ -289,12 +289,12 @@ VALUES
 (
 	'Top*',
 	'surjective pointed continuous maps',
-	'For the non-trivial direction: The forgetful functor $\mathbf{Top}_* \to \mathbf{Top}$ preserves pushouts and hence also epimorphisms, and we already know the epimorphisms in $\mathbf{Top}$.'
+	'For the non-trivial direction: The forgetful functor $\Top_* \to \Top$ preserves pushouts and hence also epimorphisms, and we already know the epimorphisms in $\Top$.'
 ),
 (
 	'TorsFreeAb',
 	'homomorphisms $f : A \to B$ such that $B/f(A)$ is a torsion group',
-	'The homomorphism $f$ is an epimorphism iff its cokernel in $\mathbf{TorsFreeAb}$ is trivial. As with all types of colimits, the cokernel is the torsion-free reflection of the cokernel in $\mathbf{Ab}$, which is $B/f(A)$. This is trivial iff $B/f(A)$ is torsion.'
+	'The homomorphism $f$ is an epimorphism iff its cokernel in $\TorsFreeAb$ is trivial. As with all types of colimits, the cokernel is the torsion-free reflection of the cokernel in $\Ab$, which is $B/f(A)$. This is trivial iff $B/f(A)$ is torsion.'
 ),
 (
 	'Vect',
@@ -354,7 +354,7 @@ VALUES
 (
 	'Z',
 	'objectwise surjective natural transformations',
-	'This holds in every functor category $[\C,\mathbf{Set}]$, here applied to the case that $\C$ has just one object.'
+	'This holds in every functor category $[\C,\Set]$, here applied to the case that $\C$ has just one object.'
 ),
 (
 	'Z_div',

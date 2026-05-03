@@ -9,7 +9,7 @@ VALUES
 	'FI',
 	'locally small',
 	TRUE,
-	'There is a forgetful functor $\mathbf{FI} \to \mathbf{Set}$ and $\mathbf{Set}$ is locally small.'
+	'There is a forgetful functor $\FI \to \Set$ and $\Set$ is locally small.'
 ),
 (
 	'FI',
@@ -33,19 +33,19 @@ VALUES
 	'FI',
 	'generator',
 	TRUE,
-	'The one-point set is a generator since it represents the forgetful functor $\mathbf{FI} \to \mathbf{Set}$.'
+	'The one-point set is a generator since it represents the forgetful functor $\FI \to \Set$.'
 ),
 (
 	'FI',
 	'equalizers',
 	TRUE,
-	'We construct equalizers just like in $\mathbf{FinSet}$ and observe that the universal property still holds.'
+	'We construct equalizers just like in $\FinSet$ and observe that the universal property still holds.'
 ),
 (
 	'FI',
 	'wide pullbacks',
 	TRUE,
-	'We construct wide pullbacks just like in $\mathbf{Set}$, i.e., for a w.l.o.g. non-empty family of injective maps $f_i : X_i \to S$ we consider the subset $P \subseteq \prod_{i \in I} X_i$ of those tuples $x$ where $f_i(x_i) = f_j(x_j)$. Each projection $P \to X_i$ is injective, so in particular $P$ is finite, and $P \to X_i$ becomes a morphism in $\mathbf{FI}$. It is easy to check that the universal property still holds in $\mathbf{FI}$.'
+	'We construct wide pullbacks just like in $\Set$, i.e., for a w.l.o.g. non-empty family of injective maps $f_i : X_i \to S$ we consider the subset $P \subseteq \prod_{i \in I} X_i$ of those tuples $x$ where $f_i(x_i) = f_j(x_j)$. Each projection $P \to X_i$ is injective, so in particular $P$ is finite, and $P \to X_i$ becomes a morphism in $\FI$. It is easy to check that the universal property still holds in $\FI$.'
 ),
 (
 	'FI',
@@ -63,7 +63,7 @@ VALUES
 	'FI',
 	'locally cartesian closed',
 	TRUE,
-	'IF $X$ is a finite set, the slice category $\mathbf{FI} / X$ is equivalent to the poset of subsets of $X$. This is cartesian closed because $A \cap B \subseteq C$ holds if and only if $B \subseteq (X \setminus A) \cup C$, where $A,B,C \subseteq X$.'
+	'IF $X$ is a finite set, the slice category $\FI / X$ is equivalent to the poset of subsets of $X$. This is cartesian closed because $A \cap B \subseteq C$ holds if and only if $B \subseteq (X \setminus A) \cup C$, where $A,B,C \subseteq X$.'
 ),
 (
 	'FI',

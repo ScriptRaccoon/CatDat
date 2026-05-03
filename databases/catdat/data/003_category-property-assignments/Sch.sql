@@ -9,7 +9,7 @@ VALUES
 	'Sch',
 	'locally small',
 	TRUE,
-	'There is a forgetful functor $\mathbf{Sch} \to \mathbf{LRS}$ and $\mathbf{LRS}$ is locally small.'
+	'There is a forgetful functor $\Sch \to \LRS$ and $\LRS$ is locally small.'
 ),
 (
 	'Sch',
@@ -45,7 +45,7 @@ VALUES
 	'Sch',
 	'countable powers',
 	FALSE,
-	'While all diagrams of affine schemes have a limit in the category of schemes, one can show that an infinite product of quasi-compact non-empty schemes only exists when almost all of them are affine, see <a href="https://mathoverflow.net/questions/65506" target="_blank">MO/65506</a>. Thus, for example the power $(\IP^1)^{\IN}$ does not exist in $\mathbf{Sch}$.'
+	'While all diagrams of affine schemes have a limit in the category of schemes, one can show that an infinite product of quasi-compact non-empty schemes only exists when almost all of them are affine, see <a href="https://mathoverflow.net/questions/65506" target="_blank">MO/65506</a>. Thus, for example the power $(\IP^1)^{\IN}$ does not exist in $\Sch$.'
 ),
 (
 	'Sch',
@@ -69,7 +69,7 @@ VALUES
 	'Sch',
 	'semi-strongly connected',
 	FALSE,
-	'This is because already the full subcategory of affine schemes is not semi-strongly connected, see <a href="/category/CRing">the entry for $\mathbf{CRing}$</a>. Specifically, there is no morphism between $\Spec(\IF_2)$ and $\Spec(\IF_3)$.'
+	'This is because already the full subcategory of affine schemes is not semi-strongly connected, see <a href="/category/CRing">the entry for $\CRing$</a>. Specifically, there is no morphism between $\Spec(\IF_2)$ and $\Spec(\IF_3)$.'
 ),
 (
 	'Sch',
@@ -81,5 +81,5 @@ VALUES
 	'Sch',
 	'quotients of congruences',
 	FALSE,
-	'If $\mathbf{Sch}$ had quotients of congruences, then by <a href="/lemma/pushouts-of-monos-via-congruence-quotients">this lemma</a> it would also have pushouts of monomorphisms, contradicting the fact that the span $\IA^1 \leftarrow \Spec(k(t)) \rightarrow \IA^1$ has no pushout - see <a href="https://mathoverflow.net/questions/9961" target="_blank">MO/9961</a>.'
+	'If $\Sch$ had quotients of congruences, then by <a href="/lemma/pushouts-of-monos-via-congruence-quotients">this lemma</a> it would also have pushouts of monomorphisms, contradicting the fact that the span $\IA^1 \leftarrow \Spec(k(t)) \rightarrow \IA^1$ has no pushout - see <a href="https://mathoverflow.net/questions/9961" target="_blank">MO/9961</a>.'
 );

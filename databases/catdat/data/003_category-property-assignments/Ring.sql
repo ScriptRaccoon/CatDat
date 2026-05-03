@@ -9,7 +9,7 @@ VALUES
 	'Ring',
 	'locally small',
 	TRUE,
-	'There is a forgetful functor $\mathbf{Ring} \to \mathbf{Set}$ and $\mathbf{Set}$ is locally small.'
+	'There is a forgetful functor $\Ring \to \Set$ and $\Set$ is locally small.'
 ),
 (
 	'Ring',
@@ -69,7 +69,7 @@ VALUES
 	'Ring',
 	'co-Malcev',
 	FALSE,
-	'See <a href="https://mathoverflow.net/questions/509552">MO/509552</a>: Consider the forgetful functor $U : \mathbf{Ring} \to \mathbf{Set}$ and the relation $R \subseteq U^2$ defined by $R(A) := \{(a,b) \in U(A)^2 : ab = a^2\}$. Both are representable: $U$ by $\IZ[X]$ and $S$ by $\IZ \langle X,Y \rangle / \langle XY-X^2 \rangle$. It is clear that $R$ is reflexive, but not symmetric.'
+	'See <a href="https://mathoverflow.net/questions/509552">MO/509552</a>: Consider the forgetful functor $U : \Ring \to \Set$ and the relation $R \subseteq U^2$ defined by $R(A) := \{(a,b) \in U(A)^2 : ab = a^2\}$. Both are representable: $U$ by $\IZ[X]$ and $S$ by $\IZ \langle X,Y \rangle / \langle XY-X^2 \rangle$. It is clear that $R$ is reflexive, but not symmetric.'
 ),
 (
 	'Ring',
@@ -81,7 +81,7 @@ VALUES
 	'Ring',
 	'regular quotient object classifier',
 	FALSE,
-	'We may copy the proof for the <a href="/category/CRing">category of commutative rings</a> (since the proof there did not use that $P$ is commutative). Alternatively, any regular quotient object classifier in $\mathbf{Ring}$ would produce one in $\mathbf{CRing}$ by <a href="/lemma/subobject_classifiers_coreflection">this lemma</a> (dualized).'
+	'We may copy the proof for the <a href="/category/CRing">category of commutative rings</a> (since the proof there did not use that $P$ is commutative). Alternatively, any regular quotient object classifier in $\Ring$ would produce one in $\CRing$ by <a href="/lemma/subobject_classifiers_coreflection">this lemma</a> (dualized).'
 ),
 (
 	'Ring',
@@ -95,5 +95,5 @@ VALUES
 	'Ring',
 	'cofiltered-limit-stable epimorphisms',
 	FALSE,
-	'We know that $\mathbf{CRing}$ does not have this property. Now use the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> applied to the forgetful functor $\mathbf{CRing} \to \mathbf{Ring}$. It preserves epimorphisms by <a href="https://math.stackexchange.com/questions/5133488" target="_blank">MSE/5133488</a>.'
+	'We know that $\CRing$ does not have this property. Now use the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> applied to the forgetful functor $\CRing \to \Ring$. It preserves epimorphisms by <a href="https://math.stackexchange.com/questions/5133488" target="_blank">MSE/5133488</a>.'
 );

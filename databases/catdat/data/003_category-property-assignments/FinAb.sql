@@ -9,7 +9,7 @@ VALUES
 	'FinAb',
 	'locally small',
 	TRUE,
-	'There is a forgetful functor $\mathbf{FinAb} \to \mathbf{Set}$ and $\mathbf{Set}$ is locally small.'
+	'There is a forgetful functor $\FinAb \to \Set$ and $\Set$ is locally small.'
 ),
 (
 	'FinAb',

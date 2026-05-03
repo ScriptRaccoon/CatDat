@@ -9,7 +9,7 @@ VALUES
 	'FreeAb',
 	'locally small',
 	TRUE,
-	'There is a forgetful functor $\mathbf{FreeAb} \to \mathbf{Set}$ and $\mathbf{Set}$ is locally small.'
+	'There is a forgetful functor $\FreeAb \to \Set$ and $\Set$ is locally small.'
 ),
 (
 	'FreeAb',
@@ -45,7 +45,7 @@ VALUES
 	'FreeAb',
 	'generator',
 	TRUE,
-	'As for $\mathbf{Ab}$, the group $\IZ$ is a generator.'
+	'As for $\Ab$, the group $\IZ$ is a generator.'
 ),
 (
 	'FreeAb',
@@ -57,9 +57,9 @@ VALUES
 	'FreeAb',
 	'regular',
 	TRUE,
-	'This follows formally from the fact that $\mathbf{Ab}$ is regular and $\mathbf{FreeAb}$ is closed under subobjects and finite products: By Prop. 2.5 in the <a href="https://ncatlab.org/nlab/show/regular+category">nlab</a> it suffices to prove that there are pullback-stable (reg epi, mono)-factorizations. Every homomorphism $f  : A \to B$ in $\mathbf{FreeAb}$ factors as $f = i \circ p : A \twoheadrightarrow C \hookrightarrow B$, where $C$ is a subgroup, hence free, and $A \to C$ is surjective. Clearly, surjective homomorphisms are pullback-stable. It remains to show that they coincide with the regular epimorphisms.<br>
-	(1) If $f : A \to B$ is surjective, it is the coequalizer of $A \times_B A \rightrightarrows A$ in $\mathbf{Ab}$. Since $A \times_B A$ is free abelian, $f$ is also an coequalizer in $\mathbf{FreeAb}$.<br>
-	(2) If $f : A \to B$ is a regular epimorphism in $\mathbf{FreeAb}$, consider the factorization $f = i \circ p$ as above. Since $f$ is an extremal epimorphism, $i$ must be an isomorphism, so that $f$ is surjective.'
+	'This follows formally from the fact that $\Ab$ is regular and $\FreeAb$ is closed under subobjects and finite products: By Prop. 2.5 in the <a href="https://ncatlab.org/nlab/show/regular+category">nlab</a> it suffices to prove that there are pullback-stable (reg epi, mono)-factorizations. Every homomorphism $f  : A \to B$ in $\FreeAb$ factors as $f = i \circ p : A \twoheadrightarrow C \hookrightarrow B$, where $C$ is a subgroup, hence free, and $A \to C$ is surjective. Clearly, surjective homomorphisms are pullback-stable. It remains to show that they coincide with the regular epimorphisms.<br>
+	(1) If $f : A \to B$ is surjective, it is the coequalizer of $A \times_B A \rightrightarrows A$ in $\Ab$. Since $A \times_B A$ is free abelian, $f$ is also an coequalizer in $\FreeAb$.<br>
+	(2) If $f : A \to B$ is a regular epimorphism in $\FreeAb$, consider the factorization $f = i \circ p$ as above. Since $f$ is an extremal epimorphism, $i$ must be an isomorphism, so that $f$ is surjective.'
 ),
 (
 	'FreeAb',

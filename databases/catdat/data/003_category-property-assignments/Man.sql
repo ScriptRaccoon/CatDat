@@ -9,7 +9,7 @@ VALUES
 	'Man',
 	'locally small',
 	TRUE,
-	'There is a forgetful functor $\mathbf{Man} \to \mathbf{Set}$ and $\mathbf{Set}$ is locally small.'
+	'There is a forgetful functor $\Man \to \Set$ and $\Set$ is locally small.'
 ),
 (
 	'Man',
@@ -33,7 +33,7 @@ VALUES
 	'Man',
 	'generator',
 	TRUE,
-	'The $0$-dimensional one-point manifold is a generator since it represents the forgetful functor $\mathbf{Top} \to \mathbf{Set}$.'
+	'The $0$-dimensional one-point manifold is a generator since it represents the forgetful functor $\Top \to \Set$.'
 ),
 (
 	'Man',
@@ -45,14 +45,14 @@ VALUES
 	'Man',
 	'extensive',
 	TRUE,
-	'[Sketch] Since $\mathbf{Top}$ is infinitary extensive, a continuous map $f : M \to \coprod_i N_i$ corresponds to a decomposition $M = \coprod_i M_i$ (as topological spaces) with continuous maps $f_i : M_i \to N_i$. Endow the open subset $M_i \subseteq M$ with the smooth structure inherited from $M$. Now remark that $f$ is smooth iff each $f_i$ is smooth.'
+	'[Sketch] Since $\Top$ is infinitary extensive, a continuous map $f : M \to \coprod_i N_i$ corresponds to a decomposition $M = \coprod_i M_i$ (as topological spaces) with continuous maps $f_i : M_i \to N_i$. Endow the open subset $M_i \subseteq M$ with the smooth structure inherited from $M$. Now remark that $f$ is smooth iff each $f_i$ is smooth.'
 ),
 (
 	-- TODO: maybe add "countably extensive" to make this more conceptual
 	'Man',
 	'countably distributive',
 	TRUE,
-	'To construct countable coproducts, take the usual disjoint union of spaces, which is clearly locally Euclidean and Hausdorff, and it is second countable since we are using only countable many spaces. (Without that condition, all coproducts would exist.) Now we need to check that the canonical smooth map $\coprod_i X \times Y_i \to X \times \coprod_i Y_i$ is a diffeomorphism (for countable families). It is a homeomorphism since $\mathbf{Top}$ is infinitary distributive. The inverse $X \times \coprod_i Y_i \to \coprod_i X \times Y_i$ is smooth since the domain is covered by the open subsets $X \times Y_i$ on which the map is clearly smooth.'
+	'To construct countable coproducts, take the usual disjoint union of spaces, which is clearly locally Euclidean and Hausdorff, and it is second countable since we are using only countable many spaces. (Without that condition, all coproducts would exist.) Now we need to check that the canonical smooth map $\coprod_i X \times Y_i \to X \times \coprod_i Y_i$ is a diffeomorphism (for countable families). It is a homeomorphism since $\Top$ is infinitary distributive. The inverse $X \times \coprod_i Y_i \to \coprod_i X \times Y_i$ is smooth since the domain is covered by the open subsets $X \times Y_i$ on which the map is clearly smooth.'
 ),
 (
 	'Man',
@@ -90,7 +90,7 @@ VALUES
 	'Man',
 	'countable powers',
 	FALSE,
-	'The power $\IR^{\IN}$ does not exist. More generally, let $(M_n)_{n \geq 0}$ be a sequence of smooth manifolds of positive dimension whose product $(\pi_n : P \to M_n)_{n \geq 0}$ exists. This product cone in $\mathbf{Man}$ yields a product cone in $\mathbf{Set}$ since the forgetful functor $\mathbf{Man} \to \mathbf{Set}$ is representable, hence preserves all limits. Choose points $x_n \in M_n$ with $T_{x_n}(M_n) \neq 0$. Choose the point $x \in P$ with $\pi_n(x) = x_n$. Consider the linear map $T_x(P) \to \prod_{n \geq 0} T_{x_n}(M_n)$ induced by the derivatives $d_x(\pi_n) : T_x(P) \to T_{x_n}(M_n)$. Since $T_x(P)$ is finite-dimensional and $\prod_{n \geq 0} T_{x_n}(M_n)$ is not, it cannot be surjective. But actually, it is: Choose tangent vectors $v_n \in T_{x_n}(M_n)$. Choose smooth curves $\gamma_n : \IR \to M_n$ with $\gamma_n(0)=x_n$ and ${\gamma_n}''(0) = v_n$. By the universal property there is a unique smooth curve $\gamma : \IR \to P$ with $\pi_n \gamma = \gamma_n$. In particular, $\gamma(0) = x$. The chain rule now implies that $\gamma''(0) \in T_x(P)$ is a preimage of $(v_n)$ – a contradiction.'
+	'The power $\IR^{\IN}$ does not exist. More generally, let $(M_n)_{n \geq 0}$ be a sequence of smooth manifolds of positive dimension whose product $(\pi_n : P \to M_n)_{n \geq 0}$ exists. This product cone in $\Man$ yields a product cone in $\Set$ since the forgetful functor $\Man \to \Set$ is representable, hence preserves all limits. Choose points $x_n \in M_n$ with $T_{x_n}(M_n) \neq 0$. Choose the point $x \in P$ with $\pi_n(x) = x_n$. Consider the linear map $T_x(P) \to \prod_{n \geq 0} T_{x_n}(M_n)$ induced by the derivatives $d_x(\pi_n) : T_x(P) \to T_{x_n}(M_n)$. Since $T_x(P)$ is finite-dimensional and $\prod_{n \geq 0} T_{x_n}(M_n)$ is not, it cannot be surjective. But actually, it is: Choose tangent vectors $v_n \in T_{x_n}(M_n)$. Choose smooth curves $\gamma_n : \IR \to M_n$ with $\gamma_n(0)=x_n$ and ${\gamma_n}''(0) = v_n$. By the universal property there is a unique smooth curve $\gamma : \IR \to P$ with $\pi_n \gamma = \gamma_n$. In particular, $\gamma(0) = x$. The chain rule now implies that $\gamma''(0) \in T_x(P)$ is a preimage of $(v_n)$ – a contradiction.'
 ),
 (
 	'Man',
@@ -127,7 +127,7 @@ VALUES
 	'Man',
 	'sequential colimits',
 	FALSE,
-	'If $\mathbf{Man}$ had sequential colimits, then by <a href="/lemma/special_sequential_colimits">this lemma</a> there would be a manifold $M$ that admits a split epimorphism $M \to \IR^n$ for every $n$. But then $M$ will have an infinite-dimensional tangent space, which is a contradiction.'
+	'If $\Man$ had sequential colimits, then by <a href="/lemma/special_sequential_colimits">this lemma</a> there would be a manifold $M$ that admits a split epimorphism $M \to \IR^n$ for every $n$. But then $M$ will have an infinite-dimensional tangent space, which is a contradiction.'
 ),
 (
 	'Man',
@@ -139,11 +139,11 @@ VALUES
 	'Man',
 	'ℵ₁-accessible',
 	FALSE,
-	'We already know that the <a href="/category/Set_c">category of countable sets</a> $\mathbf{Set}_\c$ does not have $\aleph_1$-filtered colimits. The functor $\pi_0: \mathbf{Man} \to \mathbf{Set}_\c$ is well-defined (because manifolds are second-countable), and it admits a fully faithful right adjoint (regarding a countable set as a discrete manifold). Therefore, $\mathbf{Man}$ does not have $\aleph_1$-filtered colimits.'
+	'We already know that the <a href="/category/Set_c">category of countable sets</a> $\Set_\c$ does not have $\aleph_1$-filtered colimits. The functor $\pi_0: \Man \to \Set_\c$ is well-defined (because manifolds are second-countable), and it admits a fully faithful right adjoint (regarding a countable set as a discrete manifold). Therefore, $\Man$ does not have $\aleph_1$-filtered colimits.'
 ),
 (
 	'Man',
 	'quotients of congruences',
 	FALSE,
-	'If $\mathbf{Man}$ had quotients of congruences, then by <a href="/lemma/pushouts-of-monos-via-congruence-quotients">this lemma</a>, it would have a pushout of $\IR \leftarrow \{ 0 \} \rightarrow \IR$.  This contradicts <a href="https://mathoverflow.net/questions/19116">MO/19916</a>.'
+	'If $\Man$ had quotients of congruences, then by <a href="/lemma/pushouts-of-monos-via-congruence-quotients">this lemma</a>, it would have a pushout of $\IR \leftarrow \{ 0 \} \rightarrow \IR$.  This contradicts <a href="https://mathoverflow.net/questions/19116">MO/19916</a>.'
 );

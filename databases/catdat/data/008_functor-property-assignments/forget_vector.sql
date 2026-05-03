@@ -51,5 +51,5 @@ VALUES
     'forget_vector',
     'coequalizer-preserving',
     FALSE,
-    'The coequalizer of $0,i_1 : K \to K^2$ in $\mathbf{Vect}$ is $p_2 : K^2 \to K$, but the coequalizer in $\mathbf{Set}$ is $(K \times K^*) \cup \{(0,0)\}$.'
+    'The coequalizer of $0,i_1 : K \to K^2$ in $\Vect$ is $p_2 : K^2 \to K$, but the coequalizer in $\Set$ is $(K \times K^*) \cup \{(0,0)\}$.'
 );

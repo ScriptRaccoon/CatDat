@@ -9,7 +9,7 @@ VALUES
 	'Top',
 	'locally small',
 	TRUE,
-	'There is a forgetful functor $\mathbf{Top} \to \mathbf{Set}$ and $\mathbf{Set}$ is locally small.'
+	'There is a forgetful functor $\Top \to \Set$ and $\Set$ is locally small.'
 ),
 (
 	'Top',
@@ -39,13 +39,13 @@ VALUES
 	'Top',
 	'infinitary extensive',
 	TRUE,
-	'[Sketch] Since $\mathbf{Set}$ is infinitary extensive, a map $f : Y \to \coprod_i X_i$ corresponds to a decomposition $Y = \coprod_i Y_i$ (as sets) with maps $f_i : Y_i \to X_i$. Endow $Y_i$ with the subspace topology. If $f$ is continuous, each $Y_i = f^{-1}(X_i)$ is open in $Y$, so that $Y = \coprod_i Y_i$ holds as topological spaces, and each $f_i$ is continuous.'
+	'[Sketch] Since $\Set$ is infinitary extensive, a map $f : Y \to \coprod_i X_i$ corresponds to a decomposition $Y = \coprod_i Y_i$ (as sets) with maps $f_i : Y_i \to X_i$. Endow $Y_i$ with the subspace topology. If $f$ is continuous, each $Y_i = f^{-1}(X_i)$ is open in $Y$, so that $Y = \coprod_i Y_i$ holds as topological spaces, and each $f_i$ is continuous.'
 ),
 (
 	'Top',
 	'generator',
 	TRUE,
-	'The one-point space is a generator since it represents the forgetful functor $\mathbf{Top} \to \mathbf{Set}$.'
+	'The one-point space is a generator since it represents the forgetful functor $\Top \to \Set$.'
 ),
 (
 	'Top',
@@ -75,13 +75,13 @@ VALUES
 	'Top',
 	'filtered-colimit-stable monomorphisms',
 	TRUE,
-	'This follows from <a href="/lemma/filtered-monos">this lemma</a> applied to the forgetful functor to $\mathbf{Set}$.'
+	'This follows from <a href="/lemma/filtered-monos">this lemma</a> applied to the forgetful functor to $\Set$.'
 ),
 (
 	'Top',
 	'cartesian filtered colimits',
 	FALSE,
-	'The functor $\IQ \times - : \mathbf{Top} \to \mathbf{Top}$ does not preserve colimits, see <a href="https://math.stackexchange.com/questions/2969372" target="_blank">MSE/2969372</a>.'
+	'The functor $\IQ \times - : \Top \to \Top$ does not preserve colimits, see <a href="https://math.stackexchange.com/questions/2969372" target="_blank">MSE/2969372</a>.'
 ),
 (
 	'Top',
@@ -111,23 +111,23 @@ VALUES
 	'Top',
 	'Malcev',
 	FALSE,
-	'This is clear since $\mathbf{Set}$ is not Malcev and can be interpreted as the subcategory of discrete spaces.'
+	'This is clear since $\Set$ is not Malcev and can be interpreted as the subcategory of discrete spaces.'
 ),
 (
 	'Top',
 	'co-Malcev',
 	FALSE,
-	'See <a href="https://mathoverflow.net/questions/509548" target="_blank">MO/509548</a>. We can also phrase the proof as follows: Consider the forgetful functor $U : \mathbf{Top} \to \mathbf{Set}$ and the relation $R \subseteq U^2$ defined by $R(X) := \{(x,y) \in U(X)^2 : x \in \overline{\{y\}} \}$. Both are representable: $U$ by the singleton and $R$ by the Sierpinski space. It is clear that $R$ is reflexive, but not symmetric.'
+	'See <a href="https://mathoverflow.net/questions/509548" target="_blank">MO/509548</a>. We can also phrase the proof as follows: Consider the forgetful functor $U : \Top \to \Set$ and the relation $R \subseteq U^2$ defined by $R(X) := \{(x,y) \in U(X)^2 : x \in \overline{\{y\}} \}$. Both are representable: $U$ by the singleton and $R$ by the Sierpinski space. It is clear that $R$ is reflexive, but not symmetric.'
 ),
 (
 	'Top',
 	'coaccessible',
 	FALSE,
-	'Assume $\mathbf{Top}$ is coaccessible. Let $p\colon S \to I$ be the identity map from the Sierpinski space to the two-element indiscrete space. Then, a topological space is discrete if and only if it is projective to the morphism $p$. This implies that the full subcategory spanned by all discrete spaces, which is equivalent to $\mathbf{Set}$, is coaccessible by Prop. 4.7 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>. However, since $\mathbf{Set}$ is not coaccessible, this is a contradiction.'
+	'Assume $\Top$ is coaccessible. Let $p\colon S \to I$ be the identity map from the Sierpinski space to the two-element indiscrete space. Then, a topological space is discrete if and only if it is projective to the morphism $p$. This implies that the full subcategory spanned by all discrete spaces, which is equivalent to $\Set$, is coaccessible by Prop. 4.7 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>. However, since $\Set$ is not coaccessible, this is a contradiction.'
 ),
 (
 	'Top',
 	'cofiltered-limit-stable epimorphisms',
 	FALSE,
-	'We already know that $\mathbf{Set}$ does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the functor $\mathbf{Set} \to \mathbf{Top}$ which equips a set with the indiscrete topology.'
+	'We already know that $\Set$ does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the functor $\Set \to \Top$ which equips a set with the indiscrete topology.'
 );

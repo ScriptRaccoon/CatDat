@@ -12,7 +12,7 @@ VALUES
 (
 	'FinSet',
 	'category of finite sets',
-	'$\mathbf{FinSet}$',
+	'$\FinSet$',
 	'finite sets',
 	'maps',
 	NULL,
@@ -32,7 +32,7 @@ VALUES
 (
 	'FI',
 	'category of finite sets and injections',
-	'$\mathbf{FI}$',
+	'$\FI$',
 	'finite sets',
 	'injective maps',
 	'This category is badly-behaved in itself, but plays an important role in representation theory.',
@@ -42,7 +42,7 @@ VALUES
 (
 	'FS',
 	'category of finite sets and surjections',
-	'$\mathbf{FS}$',
+	'$\FS$',
 	'finite sets',
 	'surjective maps',
 	'This category is badly-behaved in itself, but it appears in representation theory. It has two connected components, consisting of the empty set and the non-empty finite sets.',
@@ -52,10 +52,10 @@ VALUES
 (
 	'Sp',
 	'category of combinatorial species',
-	'$\mathbf{Sp}$',
-	'combinatorial species, defined as functors $\IB \to \mathbf{FinSet}$, where $\IB$ is the category of finite sets and bijections',
+	'$\Sp$',
+	'combinatorial species, defined as functors $\IB \to \FinSet$, where $\IB$ is the category of finite sets and bijections',
 	'natural transformations',
-	'Most categorical properties are immediately inferred from $\mathbf{FinSet}$. Notice that this category is not locally small; it is just equivalent to a locally small category.',
+	'Most categorical properties are immediately inferred from $\FinSet$. Notice that this category is not locally small; it is just equivalent to a locally small category.',
 	'https://ncatlab.org/nlab/show/species',
 	NULL
 );

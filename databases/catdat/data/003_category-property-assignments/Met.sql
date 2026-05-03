@@ -9,7 +9,7 @@ VALUES
 	'Met',
 	'locally small',
 	TRUE,
-	'There is a forgetful functor $\mathbf{Met} \to \mathbf{Set}$ and $\mathbf{Set}$ is locally small.'
+	'There is a forgetful functor $\Met \to \Set$ and $\Set$ is locally small.'
 ),
 (
 	'Met',
@@ -39,13 +39,13 @@ VALUES
 	'Met',
 	'coequalizers',
 	TRUE,
-	'This is because the <a href="/category/PMet">category of pseudo-metric spaces</a> has coequalizers and $\mathbf{Met} \hookrightarrow \mathbf{PMet}$ has a left adjoint, mapping a pseudo-metric space $X$ to $X /{\sim}$ where $x \sim y \iff d(x,y)=0$. Concretely, we take the coequalizer in the category of pseudo-metric spaces and then identify points with distance zero.' 
+	'This is because the <a href="/category/PMet">category of pseudo-metric spaces</a> has coequalizers and $\Met \hookrightarrow \PMet$ has a left adjoint, mapping a pseudo-metric space $X$ to $X /{\sim}$ where $x \sim y \iff d(x,y)=0$. Concretely, we take the coequalizer in the category of pseudo-metric spaces and then identify points with distance zero.' 
 ),
 (
 	'Met',
 	'directed colimits',
 	TRUE,
-	'This is because the <a href="/category/PMet">category of pseudo-metric spaces</a> has directed colimits and $\mathbf{Met} \hookrightarrow \mathbf{PMet}$ has a left adjoint, mapping a pseudo-metric space $X$ to $X /{\sim}$ where $x \sim y \iff d(x,y)=0$. Concretely, we take the directed colimit in the category of pseudo-metric spaces and then identify points with distance zero.' 
+	'This is because the <a href="/category/PMet">category of pseudo-metric spaces</a> has directed colimits and $\Met \hookrightarrow \PMet$ has a left adjoint, mapping a pseudo-metric space $X$ to $X /{\sim}$ where $x \sim y \iff d(x,y)=0$. Concretely, we take the directed colimit in the category of pseudo-metric spaces and then identify points with distance zero.' 
 ),
 (
 	'Met',
@@ -63,7 +63,7 @@ VALUES
 	'Met',
 	'generator',
 	TRUE,
-	'The one-point metric space is a generator since it represents the forgetful functor $\mathbf{Met} \to \mathbf{Set}$.'
+	'The one-point metric space is a generator since it represents the forgetful functor $\Met \to \Set$.'
 ),
 (
 	'Met',
@@ -87,13 +87,13 @@ VALUES
 	'Met',
 	'countable powers',
 	FALSE,
-	'Assume that the power $P = \IR^{\IN}$ exists, where $\IR$ has the usual metric. Since the forgetful functor $\mathbf{Met} \to \mathbf{Set}$ is representable, it preserves limits, powers in particular. Thus, we may assume that $P$ is the set of sequences of numbers and that the projections $p_n : P \to \IR$ are given by $p_n(x) = x_n$. Now consider the sequences $x = (n)_n$ and $y = (0)_n$. Since each $p_n$ is non-expansive, we get $d(x,y) \geq d(p_n(x),p_n(y)) = d(n,0) = n$. But then $d(x,y) = \infty$, a contradiction.'
+	'Assume that the power $P = \IR^{\IN}$ exists, where $\IR$ has the usual metric. Since the forgetful functor $\Met \to \Set$ is representable, it preserves limits, powers in particular. Thus, we may assume that $P$ is the set of sequences of numbers and that the projections $p_n : P \to \IR$ are given by $p_n(x) = x_n$. Now consider the sequences $x = (n)_n$ and $y = (0)_n$. Since each $p_n$ is non-expansive, we get $d(x,y) \geq d(p_n(x),p_n(y)) = d(n,0) = n$. But then $d(x,y) = \infty$, a contradiction.'
 ),
 (
 	'Met',
 	'binary copowers',
 	FALSE,
-	'The coproduct of two non-empty metric spaces does not exist, see <a href="https://math.stackexchange.com/questions/1778408" target="_blank">MSE/1778408</a>. For example, the copower $\IR \sqcup \IR$ does not exist. We only get coproducts when allowing $\infty$ as a distance, as in $\mathbf{Met}_{\infty}$.'
+	'The coproduct of two non-empty metric spaces does not exist, see <a href="https://math.stackexchange.com/questions/1778408" target="_blank">MSE/1778408</a>. For example, the copower $\IR \sqcup \IR$ does not exist. We only get coproducts when allowing $\infty$ as a distance, as in $\Met_{\infty}$.'
 ),
 (
 	'Met',
@@ -123,7 +123,7 @@ VALUES
 	'Met',
 	'filtered-colimit-stable monomorphisms',
 	FALSE,
-	'The following example is taken from Remark 2.7 in <a href="https://arxiv.org/abs/2006.01399" target="_blank">Approximate injectivity and smallness in metric-enriched categories</a> by Adamek-Rosicky: For $n \geq 1$ let $X_n$ denote the metric space with underlying set $\{0,1\}$ in which $0,1$ have distance $1/n$. We have bijective non-expansive maps $X_n \to X_{n+1}$, $x \mapsto x$. The colimit of this sequence in $\mathbf{PMet}$ is $\{0,1\}$ where $0,1$ have distance $0$, so the colimit in $\mathbf{Met}$ collapses to $\{0\}$. Therefore, the colimit of the monomorphisms $X_0 \to X_n$, $x \mapsto x$ is the non-injective map $X_0 \to \{0\}$.'
+	'The following example is taken from Remark 2.7 in <a href="https://arxiv.org/abs/2006.01399" target="_blank">Approximate injectivity and smallness in metric-enriched categories</a> by Adamek-Rosicky: For $n \geq 1$ let $X_n$ denote the metric space with underlying set $\{0,1\}$ in which $0,1$ have distance $1/n$. We have bijective non-expansive maps $X_n \to X_{n+1}$, $x \mapsto x$. The colimit of this sequence in $\PMet$ is $\{0,1\}$ where $0,1$ have distance $0$, so the colimit in $\Met$ collapses to $\{0\}$. Therefore, the colimit of the monomorphisms $X_0 \to X_n$, $x \mapsto x$ is the non-injective map $X_0 \to \{0\}$.'
 ),
 (
 	'Met',
@@ -141,7 +141,7 @@ VALUES
 	'Met',
 	'natural numbers object',
 	FALSE,
-	'If $(N,z,s)$ is a natural numbers object in $\mathbf{Met}$, then
+	'If $(N,z,s)$ is a natural numbers object in $\Met$, then
 	$$1 \xrightarrow{z} N \xleftarrow{s} N$$
 	is a coproduct cocone by <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, Part A, Lemma 2.5.5. Since there is a map $1 \to N$, we have $N \neq \varnothing$. However, the coproduct of two non-empty metric spaces does not exist, see <a href="https://math.stackexchange.com/questions/1778408" target="_blank">MSE/1778408</a>.'
 );

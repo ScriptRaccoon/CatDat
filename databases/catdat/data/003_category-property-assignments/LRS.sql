@@ -33,13 +33,13 @@ VALUES
 	'LRS',
 	'well-copowered',
 	TRUE,
-	'It is enough to prove that every epimorphism of locally ringed spaces is surjective. The forgetful functor $\mathbf{LRS} \to \mathbf{RS}$ has a right adjoint (see <a href="https://arxiv.org/abs/1103.2139" target="_blank">Localization of ringed spaces</a> by W. Gillam), so it preserves epimorphisms. The forgetful functor $\mathbf{RS} \to \mathbf{Top}$ also has a right adjoint, namely $X \mapsto (X,\underline{\IZ})$, so it also preserves epimorphisms.'
+	'It is enough to prove that every epimorphism of locally ringed spaces is surjective. The forgetful functor $\LRS \to \mathbf{RS}$ has a right adjoint (see <a href="https://arxiv.org/abs/1103.2139" target="_blank">Localization of ringed spaces</a> by W. Gillam), so it preserves epimorphisms. The forgetful functor $\mathbf{RS} \to \Top$ also has a right adjoint, namely $X \mapsto (X,\underline{\IZ})$, so it also preserves epimorphisms.'
 ),
 (
 	'LRS',
 	'infinitary extensive',
 	TRUE,
-	'[Sketch] Since $\mathbf{Top}$ is infinitary extensive, a morphism $f : Y \to \coprod_i X_i =: X$ yields a decomposition $Y = \coprod_i Y_i$ (as topological spaces) with continuous maps $f_i : Y_i \to X_i$. Endow the open subset $Y_i \subseteq Y$ with the restricted sheaf. Then each $f_i$ becomes a morphism of locally ringed spaces, and $Y = \coprod_i Y_i$ holds as locally ringed spaces.'
+	'[Sketch] Since $\Top$ is infinitary extensive, a morphism $f : Y \to \coprod_i X_i =: X$ yields a decomposition $Y = \coprod_i Y_i$ (as topological spaces) with continuous maps $f_i : Y_i \to X_i$. Endow the open subset $Y_i \subseteq Y$ with the restricted sheaf. Then each $f_i$ becomes a morphism of locally ringed spaces, and $Y = \coprod_i Y_i$ holds as locally ringed spaces.'
 ),
 (
 	'LRS',
@@ -63,11 +63,11 @@ VALUES
 	'LRS',
 	'semi-strongly connected',
 	FALSE,
-	'This is because already the full subcategory of affine schemes is not semi-strongly connected, see <a href="/category/CRing">the entry for $\mathbf{CRing}$</a>. Specifically, there is no morphism between $\Spec(\IF_2)$ and $\Spec(\IF_3)$.'
+	'This is because already the full subcategory of affine schemes is not semi-strongly connected, see <a href="/category/CRing">the entry for $\CRing$</a>. Specifically, there is no morphism between $\Spec(\IF_2)$ and $\Spec(\IF_3)$.'
 ),
 (
 	'LRS',
 	'co-Malcev',
 	FALSE,
-	'We can adjust the proof for <a href="/category/Top">$\mathbf{Top}$</a> (see <a href="https://mathoverflow.net/questions/509548" target="_blank">MO/509548</a>) as follows: Let $k$ be a field, $X$ be a singleton and $Y = \{u,v\}$ be the Sierpinski space where $\{u\}$ is open, but $\{v\}$ is not. Endow both with the sheaf of locally constant functions to $k$. Thus, $\O_X(X) = k$, $\O_Y(Y) = \O_Y(\{u\}) = k$. There is a canonical morphism $p : X + X \to Y$. It is a coreflexive corelation that is not cosymmetric.'
+	'We can adjust the proof for <a href="/category/Top">$\Top$</a> (see <a href="https://mathoverflow.net/questions/509548" target="_blank">MO/509548</a>) as follows: Let $k$ be a field, $X$ be a singleton and $Y = \{u,v\}$ be the Sierpinski space where $\{u\}$ is open, but $\{v\}$ is not. Endow both with the sheaf of locally constant functions to $k$. Thus, $\O_X(X) = k$, $\O_Y(Y) = \O_Y(\{u\}) = k$. There is a canonical morphism $p : X + X \to Y$. It is a coreflexive corelation that is not cosymmetric.'
 );

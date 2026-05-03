@@ -9,7 +9,7 @@ VALUES
 	'R-Mod',
 	'locally small',
 	TRUE,
-	'There is a forgetful functor $R{-}\mathbf{Mod} \to \mathbf{Set}$ and $\mathbf{Set}$ is locally small.'
+	'There is a forgetful functor $R{-}\Mod \to \Set$ and $\Set$ is locally small.'
 ),
 (
 	'R-Mod',

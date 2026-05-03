@@ -9,7 +9,7 @@ VALUES
 	'Set*',
 	'locally small',
 	TRUE,
-	'There is a forgetful functor $\mathbf{Set}_* \to \mathbf{Set}$ and $\mathbf{Set}$ is locally small.'
+	'There is a forgetful functor $\Set_* \to \Set$ and $\Set$ is locally small.'
 ),
 (
 	'Set*',
@@ -45,13 +45,13 @@ VALUES
 	'Set*',
 	'coregular',
 	TRUE,
-	'From the other properties we know that (co-)limits exist and that monomorphisms coincide with injective pointed maps. So it suffices to prove that these maps are stable under pushouts. This follows from the corresponding fact for the <a href="/category/Set">category of sets</a> and the observation that the forgetful functor $\mathbf{Set}_* \to \mathbf{Set}$ preserves pushouts.'
+	'From the other properties we know that (co-)limits exist and that monomorphisms coincide with injective pointed maps. So it suffices to prove that these maps are stable under pushouts. This follows from the corresponding fact for the <a href="/category/Set">category of sets</a> and the observation that the forgetful functor $\Set_* \to \Set$ preserves pushouts.'
 ),
 (
 	'Set*',
 	'co-Malcev',
 	TRUE,
-	'Malcev categories are closed under slice categories by Prop. 2.2.14 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>. It follows that co-Malcev categories are closed under coslice categories, and $\mathbf{Set}_*$ is a coslice category of $\mathbf{Set}$, which is co-Malcev since every elementary topos is co-Malcev.'
+	'Malcev categories are closed under slice categories by Prop. 2.2.14 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>. It follows that co-Malcev categories are closed under coslice categories, and $\Set_*$ is a coslice category of $\Set$, which is co-Malcev since every elementary topos is co-Malcev.'
 ),
 (
 	'Set*',
@@ -89,11 +89,11 @@ VALUES
 	'Set*',
 	'conormal',
 	FALSE,
-	'Every cokernel is "injective away from the base point". Formally, if $p : A \to B$ is a cokernel in $\mathbf{Set}_*$, it has the property that $p(x)=p(y) \neq 0$ implies $x=y$ (where $0$ denotes the base point). Clearly this is not satisfied for every surjective pointed map, consider $(\IN,0) \to (\{0,1\},0)$ defined by $0 \mapsto 0$ and $x \mapsto 1$ for $x > 0$.'
+	'Every cokernel is "injective away from the base point". Formally, if $p : A \to B$ is a cokernel in $\Set_*$, it has the property that $p(x)=p(y) \neq 0$ implies $x=y$ (where $0$ denotes the base point). Clearly this is not satisfied for every surjective pointed map, consider $(\IN,0) \to (\{0,1\},0)$ defined by $0 \mapsto 0$ and $x \mapsto 1$ for $x > 0$.'
 ),
 (
 	'Set*',
 	'cofiltered-limit-stable epimorphisms',
 	FALSE,
-	'We already know that $\mathbf{Set}$ does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the functor $\mathbf{Set} \to \mathbf{Set}_*$ that freely adds a base point.'
+	'We already know that $\Set$ does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the functor $\Set \to \Set_*$ that freely adds a base point.'
 );

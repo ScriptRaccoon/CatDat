@@ -42,7 +42,7 @@ VALUES
 (
 	'BOn',
 	'delooping of the additive monoid of ordinal numbers',
-	'$B\mathbf{On}$',
+	'$B\On$',
 	'a single object',
 	'ordinal numbers, with addition as composition',
 	'Every monoid $M$ induces a category $BM$ with a single object $*$. This also works when $M$ is large, in which case $BM$ is not locally small. In this example, we apply this construction to the large monoid of ordinal numbers with respect to addition, so composition is $\alpha \circ \beta = \alpha + \beta$.',

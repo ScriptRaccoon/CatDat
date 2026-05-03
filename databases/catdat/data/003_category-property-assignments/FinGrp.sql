@@ -9,7 +9,7 @@ VALUES
 	'FinGrp',
 	'locally small',
 	TRUE,
-	'It is a full subcategory of $\mathbf{Grp}$, which is locally small.'
+	'It is a full subcategory of $\Grp$, which is locally small.'
 ),
 (
 	'FinGrp',
@@ -45,7 +45,7 @@ VALUES
 	'FinGrp',
 	'Malcev',
 	TRUE,
-	'A direct argument is possible, but this can also be derived from the observation that $\mathbf{FinGrp}$ is the category of group objects in $(\mathbf{FinSet},\times)$ and Example 2.2.16 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>.'
+	'A direct argument is possible, but this can also be derived from the observation that $\FinGrp$ is the category of group objects in $(\FinSet,\times)$ and Example 2.2.16 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>.'
 ),
 (
 	'FinGrp',
