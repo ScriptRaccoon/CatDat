@@ -96,7 +96,7 @@ INSERT INTO lemmas (
     'subobject_classifiers_coreflection',
     'Coreflection of subobject classifiers',
     'Let $\mathcal{D}$ be a category with a (regular) subobject classifier $\Omega$. Assume that $\mathcal{C} \to \mathcal{D}$ is a full subcategory such that (1) any (regular) $\mathcal{D}$-subobject of an object in $\mathcal{C}$ already lies in $\mathcal{C}$, (2) it is coreflective, i.e. there is a functor $R : \mathcal{D} \to \mathcal{C}$ right adjoint to the inclusion. Then $R(\Omega)$ is a (regular) subobject classifier in $\mathcal{C}$.',
-    'If $X \in \mathcal{C}$, then $\mathrm{Hom}(X,R(\Omega)) \cong \mathrm{Hom}(X,\Omega)$ is isomorphic to the collection of $\mathcal{D}$-subobjects of $X$, which by assumption coincide with the $\mathcal{C}$-subobjects of $X$.'
+    'If $X \in \mathcal{C}$, then $\Hom(X,R(\Omega)) \cong \Hom(X,\Omega)$ is isomorphic to the collection of $\mathcal{D}$-subobjects of $X$, which by assumption coincide with the $\mathcal{C}$-subobjects of $X$.'
 ),
 (
     'exact_filtered_colimits_descend',

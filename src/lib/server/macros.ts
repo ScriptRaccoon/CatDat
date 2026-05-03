@@ -11,4 +11,6 @@ export const MACROS = {
 	'\\IB': '\\mathbb{B}',
 	'\\IA': '\\mathbb{A}',
 	'\\IP': '\\mathbb{P}',
+	'\\Mor': '\\operatorname{Mor}',
+	'\\Hom': '\\operatorname{Hom}',
 }

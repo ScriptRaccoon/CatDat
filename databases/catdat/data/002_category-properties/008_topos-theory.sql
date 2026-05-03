@@ -10,7 +10,7 @@ VALUES
 (
 	'cartesian closed',
 	'is',
-	'A category is <i>cartesian closed</i> if all finite products and exponentials $[X,Y]$ exist, defined by the adjunction $\mathrm{Hom}(T,[X,Y]) \cong \mathrm{Hom}(T \times X,Y)$.',
+	'A category is <i>cartesian closed</i> if all finite products and exponentials $[X,Y]$ exist, defined by the adjunction $\Hom(T,[X,Y]) \cong \Hom(T \times X,Y)$.',
 	'https://ncatlab.org/nlab/show/cartesian+closed+category',
 	'cocartesian coclosed',
 	TRUE
@@ -18,7 +18,7 @@ VALUES
 (
 	'cocartesian coclosed',
 	'is',
-	'A category is <i>cocartesian coclosed</i> if its dual category is cartesian closed, i.e. if all finite coproducts and coexponentials $\mathrm{Coexp}(X,Y)$ exist, defined by the adjunction $\mathrm{Hom}(\mathrm{Coexp}[X,Y],T) \cong \mathrm{Hom}(Y,T \sqcup X)$.',
+	'A category is <i>cocartesian coclosed</i> if its dual category is cartesian closed, i.e. if all finite coproducts and coexponentials $\mathrm{Coexp}(X,Y)$ exist, defined by the adjunction $\Hom(\mathrm{Coexp}[X,Y],T) \cong \Hom(Y,T \sqcup X)$.',
 	'https://ncatlab.org/nlab/show/cocartesian+coclosed+category',
 	'cartesian closed',
 	TRUE

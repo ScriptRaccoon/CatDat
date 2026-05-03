@@ -45,7 +45,7 @@ VALUES
     'free_group',
     'full',
     FALSE,
-    'The map $1 = \mathrm{Hom}(1,1) \to \mathrm{Hom}(F(1),F(1)) = \mathrm{Hom}(\IZ,\IZ) = \IZ$ is not surjective.'
+    'The map $1 = \Hom(1,1) \to \Hom(F(1),F(1)) = \Hom(\IZ,\IZ) = \IZ$ is not surjective.'
 ),
 (
     'free_group',

@@ -43,11 +43,11 @@ such that the usual [axioms of a category](<https://en.wikipedia.org/wiki/Catego
 
 $$\mathcal{C} = (O,M,i,s,t,c)$$
 
-of collections (and hence a collection itself). We write $\mathrm{Ob}(\mathcal{C}) := O$ and $\mathrm{Mor}(\mathcal{C}) := M$. Instead of $X \in \mathrm{Ob}(\mathcal{C})$, we often write $X \in \mathcal{C}$.
+of collections (and hence a collection itself). We write $\mathrm{Ob}(\mathcal{C}) := O$ and $\Mor(\mathcal{C}) := M$. Instead of $X \in \mathrm{Ob}(\mathcal{C})$, we often write $X \in \mathcal{C}$.
 
-When $f \in \mathrm{Mor}(\mathcal{C})$ is a morphism with $s(f) = X$ and $t(f) = Y$, we write
+When $f \in \Mor(\mathcal{C})$ is a morphism with $s(f) = X$ and $t(f) = Y$, we write
 $$f : X \to Y.$$
-We write $\mathrm{Hom}(X,Y)$ or $\mathrm{Mor}(X,Y)$ for the collection of such morphisms. This collection need not be a set. If it is a set for all $X,Y$, the category is called _locally small_.
+We write $\Hom(X,Y)$ or $\Mor(X,Y)$ for the collection of such morphisms. This collection need not be a set. If it is a set for all $X,Y$, the category is called _locally small_.
 
 When a morphism $f : X \to Y$ happens to be uniquely determined, it will be written as $!_{X,Y}$ or even just $!$.
 
@@ -61,12 +61,12 @@ Collections are the objects of a hypercategory $\mathbf{Set}^+$.
 
 A _functor_ $F : \mathcal{C} \to \mathcal{D}$ between two categories (or small categories, or hypercategories) is defined as usual; it consists of maps
 $$\mathrm{Ob}(F) : \mathrm{Ob}(\mathcal{C}) \to \mathrm{Ob}(\mathcal{D}),$$
-$$\mathrm{Mor}(F) : \mathrm{Mor}(\mathcal{C}) \to \mathrm{Mor}(\mathcal{D})$$
+$$\Mor(F) : \Mor(\mathcal{C}) \to \Mor(\mathcal{D})$$
 satisfying the [functor axioms](https://en.wikipedia.org/wiki/Functor). Between two categories there is a collection of all functors, just as between two small categories there is a set of all functors.
 
 Small categories and functors form the category $\mathbf{Cat}$ of small categories, which is locally small. There is also a hypercategory $\mathbf{Cat}^+$ consisting of all categories. For instance, $\mathbf{Set}$ is an object of $\mathbf{Cat}^+$, but not of $\mathbf{Cat}$.
 
-If $F,G : \mathcal{C} \rightrightarrows \mathcal{D}$ are two functors, a morphism $F \to G$ (a _natural transformation_) is defined as a map $\mathrm{Ob}(\mathcal{C}) \to \mathrm{Mor}(\mathcal{D})$ satisfying the usual naturality condition. These morphisms form a collection $\mathrm{Hom}(F,G)$.
+If $F,G : \mathcal{C} \rightrightarrows \mathcal{D}$ are two functors, a morphism $F \to G$ (a _natural transformation_) is defined as a map $\mathrm{Ob}(\mathcal{C}) \to \Mor(\mathcal{D})$ satisfying the usual naturality condition. These morphisms form a collection $\Hom(F,G)$.
 
 If $\mathcal{C}, \mathcal{D}$ are categories, we can construct the functor category $[\mathcal{C}, \mathcal{D}]$ as usual. There is no set-theoretic issue, since collections behave like sets. If $\mathcal{C}$ is small and $\mathcal{D}$ is locally small, then $[\mathcal{C}, \mathcal{D}]$ is locally small. This extra assumption on $\mathcal{C}$ is one of many indications that categories should not be assumed locally small by default. For example, one could not even form the category of endofunctors of a general category under such a restriction, and hence no category of monads.
 
@@ -76,12 +76,12 @@ It is better to state explicitly when the assumption of being locally small is n
 
 If $\mathcal{C}$ is any category and $A \in \mathcal{C}$, we have the Hom-functor
 
-$$\mathrm{Hom}(A,-) : \mathcal{C} \to \mathbf{Set}^+$$
+$$\Hom(A,-) : \mathcal{C} \to \mathbf{Set}^+$$
 
-defined as usual, but taking values in the hypercategory of all collections. The Yoneda lemma and its corollaries can be proved without assuming that $\mathcal{C}$ is locally small. If $\mathcal{C}$ is locally small, then $\mathrm{Hom}(A,-)$ takes values in $\mathbf{Set}$.
+defined as usual, but taking values in the hypercategory of all collections. The Yoneda lemma and its corollaries can be proved without assuming that $\mathcal{C}$ is locally small. If $\mathcal{C}$ is locally small, then $\Hom(A,-)$ takes values in $\mathbf{Set}$.
 
 Adjunctions are defined as usual via natural isomorphisms
-$$\mathrm{Hom}(F(A),B) \cong \mathrm{Hom}(A,G(B))$$
+$$\Hom(F(A),B) \cong \Hom(A,G(B))$$
 of functors valued in $\mathbf{Set}^+$. No local smallness assumption is required. Equivalently, they can be defined via morphisms of functors $\mathrm{id} \to G \circ F$ and $F \circ G \to \mathrm{id}$ satisfying the triangle identities.
 
 ### Limits and Colimits

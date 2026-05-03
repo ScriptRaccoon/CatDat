@@ -87,7 +87,7 @@ VALUES
 	'Pos',
 	'regular subobject classifier',
 	FALSE,
-	'Assume that there is a regular subobject classifier $\Omega$, so that (by the classification of regular monomorphisms) $\mathrm{Hom}(P,\Omega)$ is isomorphic to the set of subsets of $P$. By taking $P = \{0\}$ we see that $\Omega$ has $2$ elements, so that either $\Omega \cong \{0,1\}$ (discrete) or $\Omega \cong \{0 < 1\}$. By taking $P = \{0 < 1\}$ we see that $\Omega$ has four pairs $(x,y)$ with $x \leq y$. But $\{0,1\}$ has only two and $\{0 < 1\}$ has only three such pairs.'	
+	'Assume that there is a regular subobject classifier $\Omega$, so that (by the classification of regular monomorphisms) $\Hom(P,\Omega)$ is isomorphic to the set of subsets of $P$. By taking $P = \{0\}$ we see that $\Omega$ has $2$ elements, so that either $\Omega \cong \{0,1\}$ (discrete) or $\Omega \cong \{0 < 1\}$. By taking $P = \{0 < 1\}$ we see that $\Omega$ has four pairs $(x,y)$ with $x \leq y$. But $\{0,1\}$ has only two and $\{0 < 1\}$ has only three such pairs.'	
 ),
 (
 	'Pos',

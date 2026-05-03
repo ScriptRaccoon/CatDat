@@ -111,6 +111,6 @@ VALUES
 	'Set_c',
 	'ℵ₁-accessible',
 	FALSE,
-	'In fact, $\mathbf{Set}_\mathrm{c}$ does not have $\aleph_1$-filtered colimits: Fix an uncountable set $X$, let $P_\mathrm{c}(X)$ be the poset of countable subsets of $X$, which is $\aleph_1$-filtered, and consider the functor $P_\mathrm{c}(X) \to \mathbf{Set}_\mathrm{c}$ taking a subset $Y \subseteq X$ to $Y$. The colimit of this diagram in $\mathbf{Set}$ is given by $X$ itself, so if $X_c$ were a colimit in $\mathbf{Set}_\mathrm{c}$, then $\mathrm{Hom}(X_c, \{0,1\}) \cong \mathrm{Hom}(X, \{0,1\})$. But the former has cardinality at most $2^{\aleph_0}$ and the latter has cardinality $2^{\mathrm{card}(X)}$, so we have obtained a contradiction if we pick $X$ large enough (e.g. $\mathrm{card}(X)=2^{\aleph_0}$).'
+	'In fact, $\mathbf{Set}_\mathrm{c}$ does not have $\aleph_1$-filtered colimits: Fix an uncountable set $X$, let $P_\mathrm{c}(X)$ be the poset of countable subsets of $X$, which is $\aleph_1$-filtered, and consider the functor $P_\mathrm{c}(X) \to \mathbf{Set}_\mathrm{c}$ taking a subset $Y \subseteq X$ to $Y$. The colimit of this diagram in $\mathbf{Set}$ is given by $X$ itself, so if $X_c$ were a colimit in $\mathbf{Set}_\mathrm{c}$, then $\Hom(X_c, \{0,1\}) \cong \Hom(X, \{0,1\})$. But the former has cardinality at most $2^{\aleph_0}$ and the latter has cardinality $2^{\mathrm{card}(X)}$, so we have obtained a contradiction if we pick $X$ large enough (e.g. $\mathrm{card}(X)=2^{\aleph_0}$).'
 );
 

@@ -9,7 +9,7 @@ VALUES
     'power_set_contravariant',
     'representable',
     TRUE,
-    'This is because there are natural bijections $P(X) \cong \mathrm{Hom}(X,2)$, sending a subset to its characteristic function.'
+    'This is because there are natural bijections $P(X) \cong \Hom(X,2)$, sending a subset to its characteristic function.'
 ),
 (
     'power_set_contravariant',

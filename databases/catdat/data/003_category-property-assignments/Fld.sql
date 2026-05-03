@@ -87,7 +87,7 @@ VALUES
 	'Fld',
 	'binary powers',
 	FALSE,
-	'Assume that the product $P := \IQ(\sqrt{2}) \times \IQ(\sqrt{2})$ exists. This field is isomorphic to a subfield of $\IQ(\sqrt{2})$, hence $P \cong \IQ$ or $P \cong \IQ(\sqrt{2})$. In the first case, the two projections $P \rightrightarrows \IQ(\sqrt{2})$ must be equal, which means that every two homomorphisms $K \rightrightarrows \IQ(\sqrt{2})$ are equal, which is absurd (take $K = \IQ(\sqrt{2})$ and its two automorphisms). In the second case, the projections induce for every field $K$ a bijection $\mathrm{Hom}(K,\IQ(\sqrt{2})) \cong \mathrm{Hom}(K,\IQ(\sqrt{2}))^2$, which however fails for $K = \IQ(\sqrt{2})$: the left hand side has $2$ elements, the right hand side has $4$ elements. A more general result about products in $\mathbf{Fld}$ can be found at <a href="https://math.stackexchange.com/questions/359352" target="_blank">MSE/359352</a>.'
+	'Assume that the product $P := \IQ(\sqrt{2}) \times \IQ(\sqrt{2})$ exists. This field is isomorphic to a subfield of $\IQ(\sqrt{2})$, hence $P \cong \IQ$ or $P \cong \IQ(\sqrt{2})$. In the first case, the two projections $P \rightrightarrows \IQ(\sqrt{2})$ must be equal, which means that every two homomorphisms $K \rightrightarrows \IQ(\sqrt{2})$ are equal, which is absurd (take $K = \IQ(\sqrt{2})$ and its two automorphisms). In the second case, the projections induce for every field $K$ a bijection $\Hom(K,\IQ(\sqrt{2})) \cong \Hom(K,\IQ(\sqrt{2}))^2$, which however fails for $K = \IQ(\sqrt{2})$: the left hand side has $2$ elements, the right hand side has $4$ elements. A more general result about products in $\mathbf{Fld}$ can be found at <a href="https://math.stackexchange.com/questions/359352" target="_blank">MSE/359352</a>.'
 ),
 (
 	'Fld',

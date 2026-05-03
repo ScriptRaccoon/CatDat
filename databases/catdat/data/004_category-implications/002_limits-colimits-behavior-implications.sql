@@ -266,10 +266,10 @@ VALUES
 	'["powers"]',
 	'The power $X^I$ can be constructed as $[I \otimes 1, X]$ because
 	$$\begin{align*}
-	\mathrm{Hom}(T,[I \otimes 1, X]) & \cong \mathrm{Hom}(T \times (I \otimes 1),X) \\
-	& \cong \mathrm{Hom}(I \otimes (T \times 1),X) \\
-	& \cong \mathrm{Hom}(I \otimes T,X) \\
-	& \cong \mathrm{Hom}(T,X)^I.
+	\Hom(T,[I \otimes 1, X]) & \cong \Hom(T \times (I \otimes 1),X) \\
+	& \cong \Hom(I \otimes (T \times 1),X) \\
+	& \cong \Hom(I \otimes T,X) \\
+	& \cong \Hom(T,X)^I.
 	\end{align*}$$
 	In the second isomorphism we have used that $T \times -$ preserves copowers, which is true because it is a left adjoint.',
 	FALSE

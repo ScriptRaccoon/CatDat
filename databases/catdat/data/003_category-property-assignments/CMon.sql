@@ -33,7 +33,7 @@ VALUES
 	'CMon',
 	'preadditive',
 	FALSE,
-	'In categories with finite products and finite coproducts, the preadditive structure <a href="/lemma/preadditive_structure_unique">is unique</a> if it exists. In the case of $\mathbf{CMon}$, this is just the pointwise addition of maps. This is indeed an enrichment of $\mathbf{CMon}$ over itself, but not over $\mathbf{Ab}$, since for example $\mathrm{Hom}(\IN,\IN) \cong \IN$ (with respect to addition) is not a group.'
+	'In categories with finite products and finite coproducts, the preadditive structure <a href="/lemma/preadditive_structure_unique">is unique</a> if it exists. In the case of $\mathbf{CMon}$, this is just the pointwise addition of maps. This is indeed an enrichment of $\mathbf{CMon}$ over itself, but not over $\mathbf{Ab}$, since for example $\Hom(\IN,\IN) \cong \IN$ (with respect to addition) is not a group.'
 ),
 (
 	'CMon',

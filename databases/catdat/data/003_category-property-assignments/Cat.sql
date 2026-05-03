@@ -9,7 +9,7 @@ VALUES
 	'Cat',
 	'locally small',
 	TRUE,
-	'There is a forgetful functor $\mathbf{Cat} \to \mathbf{Set} \times \mathbf{Set}$, $\mathcal{C} \mapsto (\mathrm{Ob}(\mathcal{C}),\mathrm{Mor}(\mathcal{C}))$, and $\mathbf{Set} \times \mathbf{Set}$ is locally small.'
+	'There is a forgetful functor $\mathbf{Cat} \to \mathbf{Set} \times \mathbf{Set}$, $\mathcal{C} \mapsto (\mathrm{Ob}(\mathcal{C}),\Mor(\mathcal{C}))$, and $\mathbf{Set} \times \mathbf{Set}$ is locally small.'
 ),
 (
 	'Cat',
