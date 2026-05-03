@@ -31,7 +31,7 @@ function check_redundant_category_property_assignments() {
 
 		if (redundant_satisfied_property) {
 			console.warn(
-				`🟠 Redundant assignment for ${category.id}: "${redundant_satisfied_property}" is deducible from other satisfied properties.`,
+				`🟠 Redundant satisfied property for ${category.id}: "${redundant_satisfied_property}" is implied by others.`,
 			)
 
 			redundancy_count++
@@ -48,7 +48,7 @@ function check_redundant_category_property_assignments() {
 
 		if (redundant_unsatisfied_property) {
 			console.warn(
-				`🟡 Redundant assignment for ${category.id}: "${redundant_unsatisfied_property}" is deducible from other unsatisfied properties.`,
+				`🟡 Redundant unsatisfied property for ${category.id}: "${redundant_unsatisfied_property}" is implied by others.`,
 			)
 
 			redundancy_count++
