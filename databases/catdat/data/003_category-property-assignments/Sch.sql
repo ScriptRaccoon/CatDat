@@ -15,7 +15,7 @@ VALUES
 	'Sch',
 	'terminal object',
 	TRUE,
-	'The scheme $\Spec(\mathbf{Z})$ is terminal.'
+	'The scheme $\Spec(\IZ)$ is terminal.'
 ),
 (
 	'Sch',

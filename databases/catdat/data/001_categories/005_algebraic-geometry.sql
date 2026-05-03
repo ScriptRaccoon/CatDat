@@ -55,7 +55,7 @@ VALUES
 	'$[\mathbf{CRing}, \mathbf{Set}]$',
 	'Z-functors, i.e. functors from commutative rings to sets',
 	'natural transformations',
-	'This category is used in functorial algebraic geometry. It also provides a typical example of a functor category that is not locally small, but nevertheless relevant. Most of its properties are directly derived from the category of sets, so other functor categories $[\mathbf{C}, \mathbf{Set}]$ for large categories $\mathbf{C}$ will be similar.',
+	'This category is used in functorial algebraic geometry. It also provides a typical example of a functor category that is not locally small, but nevertheless relevant. Most of its properties are directly derived from the category of sets, so other functor categories $[\C, \mathbf{Set}]$ for large categories $\C$ will be similar.',
 	NULL,
 	NULL
 );
