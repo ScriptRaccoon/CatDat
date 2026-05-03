@@ -15,7 +15,7 @@ VALUES
 	'Sch',
 	'terminal object',
 	TRUE,
-	'The scheme $\mathrm{Spec}(\mathbf{Z})$ is terminal.'
+	'The scheme $\Spec(\mathbf{Z})$ is terminal.'
 ),
 (
 	'Sch',
@@ -39,7 +39,7 @@ VALUES
 	'Sch',
 	'pushouts',
 	FALSE,
-	'The span $\IA^1 \leftarrow \mathrm{Spec}(k(t)) \rightarrow \IA^1$ has no pushout, see <a href="https://mathoverflow.net/questions/9961" target="_blank">MO/9961</a>.'
+	'The span $\IA^1 \leftarrow \Spec(k(t)) \rightarrow \IA^1$ has no pushout, see <a href="https://mathoverflow.net/questions/9961" target="_blank">MO/9961</a>.'
 ),
 (
 	'Sch',
@@ -51,7 +51,7 @@ VALUES
 	'Sch',
 	'balanced',
 	FALSE,
-	'The canonical morphism $\mathrm{Spec}(\IZ/2 \times \IZ[1/2]) \longrightarrow \mathrm{Spec}(\IZ)$ is a mono- and an epimorphism, but no isomorphism.'
+	'The canonical morphism $\Spec(\IZ/2 \times \IZ[1/2]) \longrightarrow \Spec(\IZ)$ is a mono- and an epimorphism, but no isomorphism.'
 ),
 (
 	'Sch',
@@ -69,7 +69,7 @@ VALUES
 	'Sch',
 	'semi-strongly connected',
 	FALSE,
-	'This is because already the full subcategory of affine schemes is not semi-strongly connected, see <a href="/category/CRing">the entry for $\mathbf{CRing}$</a>. Specifically, there is no morphism between $\mathrm{Spec}(\IF_2)$ and $\mathrm{Spec}(\IF_3)$.'
+	'This is because already the full subcategory of affine schemes is not semi-strongly connected, see <a href="/category/CRing">the entry for $\mathbf{CRing}$</a>. Specifically, there is no morphism between $\Spec(\IF_2)$ and $\Spec(\IF_3)$.'
 ),
 (
 	'Sch',
@@ -81,5 +81,5 @@ VALUES
 	'Sch',
 	'quotients of congruences',
 	FALSE,
-	'If $\mathbf{Sch}$ had quotients of congruences, then by <a href="/lemma/pushouts-of-monos-via-congruence-quotients">this lemma</a> it would also have pushouts of monomorphisms, contradicting the fact that the span $\IA^1 \leftarrow \mathrm{Spec}(k(t)) \rightarrow \IA^1$ has no pushout - see <a href="https://mathoverflow.net/questions/9961" target="_blank">MO/9961</a>.'
+	'If $\mathbf{Sch}$ had quotients of congruences, then by <a href="/lemma/pushouts-of-monos-via-congruence-quotients">this lemma</a> it would also have pushouts of monomorphisms, contradicting the fact that the span $\IA^1 \leftarrow \Spec(k(t)) \rightarrow \IA^1$ has no pushout - see <a href="https://mathoverflow.net/questions/9961" target="_blank">MO/9961</a>.'
 );

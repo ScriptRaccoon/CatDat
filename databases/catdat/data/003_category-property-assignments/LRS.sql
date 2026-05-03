@@ -45,7 +45,7 @@ VALUES
 	'LRS',
 	'balanced',
 	FALSE,
-	'The canonical morphism $\mathrm{Spec}(\IZ/2 \times \IZ[1/2]) \longrightarrow \mathrm{Spec}(\IZ)$ is a mono- and an epimorphism, but no isomorphism.'
+	'The canonical morphism $\Spec(\IZ/2 \times \IZ[1/2]) \longrightarrow \Spec(\IZ)$ is a mono- and an epimorphism, but no isomorphism.'
 ),
 (
 	'LRS',
@@ -63,7 +63,7 @@ VALUES
 	'LRS',
 	'semi-strongly connected',
 	FALSE,
-	'This is because already the full subcategory of affine schemes is not semi-strongly connected, see <a href="/category/CRing">the entry for $\mathbf{CRing}$</a>. Specifically, there is no morphism between $\mathrm{Spec}(\IF_2)$ and $\mathrm{Spec}(\IF_3)$.'
+	'This is because already the full subcategory of affine schemes is not semi-strongly connected, see <a href="/category/CRing">the entry for $\mathbf{CRing}$</a>. Specifically, there is no morphism between $\Spec(\IF_2)$ and $\Spec(\IF_3)$.'
 ),
 (
 	'LRS',

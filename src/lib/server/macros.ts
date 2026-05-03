@@ -37,4 +37,5 @@ export const MACROS = {
 	'\\colim': '\\operatorname{colim}',
 	'\\im': '\\operatorname{im}',
 	'\\lcm': '\\operatorname{lcm}',
+	'\\Spec': '\\operatorname{Spec}',
 }
