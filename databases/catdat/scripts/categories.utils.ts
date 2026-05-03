@@ -125,7 +125,7 @@ export function get_all_decided_properties(db: Database, categories: { id: strin
 			`SELECT property_id, category_id, is_satisfied
 			FROM category_property_assignments`,
 		)
-		.all() as { property_id: string; category_id: string; is_satisfied: boolean }[]
+		.all() as { property_id: string; category_id: string; is_satisfied: number }[]
 
 	const grouped: Record<string, { satisfied: Set<string>; unsatisfied: Set<string> }> =
 		{}
@@ -137,6 +137,55 @@ export function get_all_decided_properties(db: Database, categories: { id: strin
 	for (const row of rows) {
 		const { property_id, category_id, is_satisfied } = row
 		grouped[category_id][is_satisfied ? 'satisfied' : 'unsatisfied'].add(property_id)
+	}
+
+	return grouped
+}
+
+/**
+ * Returns a dictionary with all assigned properties to categories,
+ * grouped by category, value, and deduced flag.
+ * This function is very similar to `get_all_decided_properties`.
+ */
+export function get_all_assignments(db: Database, categories: { id: string }[]) {
+	const rows = db
+		.prepare(
+			`SELECT property_id, category_id, is_satisfied, is_deduced
+			FROM category_property_assignments`,
+		)
+		.all() as {
+		property_id: string
+		category_id: string
+		is_satisfied: number
+		is_deduced: number
+	}[]
+
+	const grouped: Record<
+		string,
+		{
+			satisfied: {
+				non_deduced: Set<string>
+				deduced: Set<string>
+			}
+			unsatisfied: {
+				non_deduced: Set<string>
+				deduced: Set<string>
+			}
+		}
+	> = {}
+
+	for (const category of categories) {
+		grouped[category.id] = {
+			satisfied: { non_deduced: new Set(), deduced: new Set() },
+			unsatisfied: { non_deduced: new Set(), deduced: new Set() },
+		}
+	}
+
+	for (const row of rows) {
+		const { property_id, category_id, is_satisfied, is_deduced } = row
+		grouped[category_id][is_satisfied ? 'satisfied' : 'unsatisfied'][
+			is_deduced ? 'deduced' : 'non_deduced'
+		].add(property_id)
 	}
 
 	return grouped

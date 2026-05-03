@@ -1,0 +1,85 @@
+import { get_client, is_subset } from './shared'
+import {
+	get_all_assignments,
+	get_categories,
+	get_normalized_category_implications,
+	NormalizedCategoryImplication,
+} from './categories.utils'
+
+const db = get_client()
+
+check_redundancies()
+
+function check_redundancies() {
+	check_redundant_category_property_assignments()
+}
+
+function check_redundant_category_property_assignments() {
+	console.info('\n--- Check redundant category property assignments ---')
+
+	const implications = get_normalized_category_implications(db)
+	const categories = get_categories(db)
+	const assignments = get_all_assignments(db, categories)
+
+	let redundancy_count = 0
+
+	for (const category of categories) {
+		const redundant_satisfied_property = get_redundant_satisfied_property(
+			assignments[category.id].satisfied.non_deduced,
+			implications,
+		)
+		if (redundant_satisfied_property) {
+			console.warn(
+				`🟠 Redundant assignment for ${category.id}: "${redundant_satisfied_property}" is deducible from others.`,
+			)
+
+			redundancy_count++
+		}
+	}
+
+	if (redundancy_count === 0) {
+		console.info('✅ No redundant assignments found')
+	}
+
+	// TODO: also check redundancies for unsatisfied properties
+}
+
+function get_deduced_satisfied_properties(
+	satisfied_properties: Set<string>,
+	implications: NormalizedCategoryImplication[],
+	options?: { stop_when_found: string },
+) {
+	const deduced_properties = new Set(satisfied_properties)
+
+	while (true) {
+		const implication = implications.find(
+			({ assumptions, conclusion }) =>
+				is_subset(assumptions, deduced_properties) &&
+				!deduced_properties.has(conclusion),
+		)
+		if (!implication) break
+
+		deduced_properties.add(implication.conclusion)
+
+		if (options?.stop_when_found === implication.conclusion) {
+			return deduced_properties
+		}
+	}
+
+	return deduced_properties
+}
+
+function get_redundant_satisfied_property(
+	satisfied_properties: Set<string>,
+	implications: NormalizedCategoryImplication[],
+) {
+	for (const p of satisfied_properties) {
+		const copy = new Set(satisfied_properties)
+		copy.delete(p)
+		const deduced_properties = get_deduced_satisfied_properties(copy, implications, {
+			stop_when_found: p,
+		})
+		if (deduced_properties.has(p)) return p
+	}
+	return null
+}
