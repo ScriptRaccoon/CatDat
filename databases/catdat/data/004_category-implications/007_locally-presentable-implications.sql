@@ -224,6 +224,13 @@ VALUES
 	TRUE
 ),
 (
+	'multi-algebraic_implies_effective_congruences',
+	'["multi-algebraic"]',
+	'["effective congruences"]',
+	'This is Thm. 4.0 in <a href="https://doi.org/10.1007/BF01224953" target="_blank">Yves Diers, Catégories Multialgébriques</a> or <a href="https://translations.thosgood.net/ADM-34-1980-193.pdf" target="_blank">its English translation</a>.',
+	FALSE
+),
+(
 	'locally-finitely-multi-presentable_stable-monos',
 	'["locally finitely multi-presentable"]',
 	'["filtered-colimit-stable monomorphisms"]',

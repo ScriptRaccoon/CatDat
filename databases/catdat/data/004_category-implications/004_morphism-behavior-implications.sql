@@ -37,8 +37,8 @@ VALUES
 (
 	'reflexive_pair_trivial',
 	'["left cancellative"]',
-	'["reflexive coequalizers", "coreflexive equalizers"]',
-	'Any parallel pair of morphisms with a common section (or retraction) must be a pair of equal isomorphisms.',
+	'["reflexive coequalizers", "coreflexive equalizers", "effective congruences", "effective cocongruences"]',
+	'Any parallel pair of morphisms with a common section (or retraction) must be a pair of equal isomorphisms. In particular, they are the kernel pair of the identity morphism on the target, and the cokernel pair of the identity morphism on the source.',
 	FALSE
 ),
 (
@@ -192,8 +192,8 @@ VALUES
 (
 	'core-hin_quotients',
 	'["core-thin"]',
-	'["quotients of congruences"]',
-	'If $p_1, p_2 : E \rightrightarrows X$ is a congruence, the symmetry morphism $s : E \to E$ is an automorphism of $E$, hence equal to $\id_E$ by assumption. But then $p_1 = p_2 \circ s = p_2$, and simply $\id_X$ is a coequalizer.',
+	'["quotients of congruences", "effective congruences"]',
+	'If $p_1, p_2 : E \rightrightarrows X$ is a congruence, the symmetry morphism $s : E \to E$ is an automorphism of $E$, hence equal to $\id_E$ by assumption. But then $p_1 = p_2 \circ s = p_2$, and simply $\id_X$ is a coequalizer. Also, for the reflexivity morphism $r : X \to E$, we have $p_1 \circ r = \id$. For the reverse composition, $p_1 \circ r \circ p_1 = p_1 \circ \id$ and $p_2 \circ r \circ p_1 = p_2 \circ \id$, so since $p_1, p_2$ are jointly monomorphic, we get $r \circ p_1 = \id$. Therefore, $p_1 = p_2$ is an isomorphism, so $E$ is the kernel pair of $\id_X$.',
 	FALSE
 ),
 (

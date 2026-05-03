@@ -28,6 +28,30 @@ VALUES
 	FALSE
 ),
 (
+	'preadditive_kernels_normal_imply_effective_congruences',
+	'["preadditive", "kernels", "normal"]',
+	'["effective congruences"]',
+	'Let $f, g : E \rightrightarrows X$ be a congruence. Then let $E_0$ be the kernel of $g$. We see that $f|_{E_0} : E_0 \to X$ is a monomorphism. Let $f|_{E_0}$ be the kernel of a morphism $h : X \to Y$. We claim that $E$ is also the kernel pair of $h$.<br>
+	To see this, suppose we have a pair of generalized elements $x_1, x_2 \in X(T)$. Then we have
+	$$\begin{align*}
+	(x_1,x_2) \in E & \iff (x_1 - x_2,0) \in E \\
+	& \iff x_1 - x_2 \in E_0 \\
+	& \iff h(x_1 - x_2) = 0 \\
+	& \iff h(x_1) = h(x_2).
+	\end{align*}$$
+	In particular, applying the forward implications in the case $T := E$, $x_1 := f$, $x_2 := g$, we conclude that $h \circ f = h \circ g$, so we get the required commutative diagram. From there, the reverse implications show this diagram is a cartesian square.',
+	FALSE
+),
+(
+	'additive_effective_congruences_imply_normal',
+	'["additive", "finitely complete", "effective congruences"]',
+	'["normal"]',
+	'Let $i : Y \hookrightarrow X$ be a monomorphism. Then the pullback $E$ of
+	$$X \times X \xrightarrow{p_1 - p_2} X \xhookleftarrow{~~~i~~~} Y$$
+	is a congruence on $X$. This is because for generalized elements $x_1, x_2 \in X(T)$, $(x_1, x_2)$ factors through $E$ if and only if $x_1 - x_2$ factors through $Y$. In other words, the relation on $X(T)$ is exactly $x_1 \equiv x_2 \pmod{Y(T)}$, which is an equivalence relation on $X(T)$ (and in fact a congruence in $\mathbf{Ab}$). Now by assumption, $E$ is the kernel pair of some morphism $h : X \to Z$; in other words, $(x_1, x_2)$ factors through $E$ if and only if $h(x_1) = h(x_2)$. In particular, for $x \in X(T)$, $x$ factors through $Y$ if and only if $(x, 0)$ factors through $E$, which is equivalent to $h(x) = h(0) = 0$. We have thus shown that $Y$ is the kernel of $h$.',
+	FALSE
+),
+(
 	'additive_definition',
 	'["additive"]',
 	'["preadditive", "finite products"]',
