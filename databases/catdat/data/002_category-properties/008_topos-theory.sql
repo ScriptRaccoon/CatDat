@@ -44,7 +44,7 @@ VALUES
 	'has a',
 	'A category $\C$ has a <i>subobject classifier</i> if it has finite limits and a monomorphism* $\top : 1 \hookrightarrow \Omega$ such that for every monomorphism $m : A \hookrightarrow B$ there is a unique morphism $\chi_m : B \to \Omega$ such that
 	$$\begin{CD} A @>{m}>> B \\ @V{!}VV @VV{\chi_m}V \\ 1 @>>{\top}> \Omega \end{CD}$$
-	is a pullback diagram. Equivalently, the functor $\mathrm{Sub} : \C^{\op} \to \mathbf{Set}^+$ is representable.<br>
+	is a pullback diagram. Equivalently, the functor $\Sub : \C^{\op} \to \mathbf{Set}^+$ is representable.<br>
 	*Every morphism $1 \to \Omega$ is a split monomorphism anyway.',
 	'https://ncatlab.org/nlab/show/subobject+classifier',
 	'quotient object classifier',
@@ -55,7 +55,7 @@ VALUES
 	'has a',
 	'A category $\C$ has a <i>quotient object classifier</i> if its dual has a subobject classifier. This means that it has finite colimits and an epimorphism* $\top : \Psi \twoheadrightarrow 0$ such that for every epimorphism $e : A \twoheadrightarrow B$ there is a unique morphism $\psi_e : \Psi \to A$ such that
 	$$\begin{CD} \Psi @>{\top}>> 0 \\ @V{\psi_e}VV @VV{!}V \\ A @>>{e}> B \end{CD}$$
-	is a pushout diagram. Equivalently, the functor $\mathrm{Quot} : \C \to \mathbf{Set}^+$ is representable.<br>
+	is a pushout diagram. Equivalently, the functor $\Quot : \C \to \mathbf{Set}^+$ is representable.<br>
 	*Every morphism $\Psi \to 0$ is a split epimorphism anyway.',
 	NULL,
 	'subobject classifier',
@@ -66,7 +66,7 @@ VALUES
 	'has a',
 	'A category $\C$ has a <i>regular subobject classifier</i> if it has finite limits and a regular monomorphism* $\top : 1 \hookrightarrow \Omega$ such that for every regular monomorphism $m : A \hookrightarrow B$ there is a unique morphism $\chi_m : B \to \Omega$ such that
 	$$\begin{CD} A @>{m}>> B \\ @V{!}VV @VV{\chi_m}V \\ 1 @>>{\top}> \Omega \end{CD}$$
-	is a pullback diagram. Equivalently, the functor $\mathrm{Sub}_{\reg} : \C^{\op} \to \mathbf{Set}^+$ is representable.<br>
+	is a pullback diagram. Equivalently, the functor $\Sub_{\reg} : \C^{\op} \to \mathbf{Set}^+$ is representable.<br>
 	*Every morphism $1 \to \Omega$ is a split monomorphism and hence regular anyway.',
 	'https://ncatlab.org/nlab/show/subobject+classifier',
 	'regular quotient object classifier',
@@ -77,7 +77,7 @@ VALUES
 	'has a',
 	'A category $\C$ has a <i>regular quotient object classifier</i> if its dual has a regular subobject classifier. This means that it has finite colimits and a regular epimorphism* $\top : \Psi \twoheadrightarrow 0$ such that for every regular epimorphism $e : A \twoheadrightarrow B$ there is a unique morphism $\psi_e : \Psi \to A$ such that
 	$$\begin{CD} \Psi @>{\top}>> 0 \\ @V{\psi_e}VV @VV{!}V \\ A @>>{e}> B \end{CD}$$
-	is a pushout diagram. Equivalently, the functor $\mathrm{Quot}_{\reg} : \C \to \mathbf{Set}^+$ is representable.<br>
+	is a pushout diagram. Equivalently, the functor $\Quot_{\reg} : \C \to \mathbf{Set}^+$ is representable.<br>
 	*Every morphism $\Psi \to 0$ is a split epimorphism anyway.',
 	NULL,
 	'regular subobject classifier',

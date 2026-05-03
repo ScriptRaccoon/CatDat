@@ -154,7 +154,7 @@ VALUES
 (
 	'Man',
 	'smooth maps with dense image',
-	'Let $f : X \to Y$ be a smooth map which is not dense. Choose some non-empty open subset $U \subseteq Y$ that is disjoint from $f(X)$. Take any $p \in U$. There is a smooth <i>bump function</i> $g : Y \to \IR$ with $g(p) = 1$ and $\mathrm{supp}(g) \subseteq U$ (John Lee, Introduction to Smooth Manifolds, Prop. 2.25). Hence, $g \neq 0$ and $g \circ f = 0 = 0 \circ f$. Thus, $f$ is not an epimorphism.'
+	'Let $f : X \to Y$ be a smooth map which is not dense. Choose some non-empty open subset $U \subseteq Y$ that is disjoint from $f(X)$. Take any $p \in U$. There is a smooth <i>bump function</i> $g : Y \to \IR$ with $g(p) = 1$ and $\supp(g) \subseteq U$ (John Lee, Introduction to Smooth Manifolds, Prop. 2.25). Hence, $g \neq 0$ and $g \circ f = 0 = 0 \circ f$. Thus, $f$ is not an epimorphism.'
 ),
 (
 	'Meas',
@@ -264,12 +264,12 @@ VALUES
 (
 	'Sh(X)',
 	'morphisms of sheaves $f : F \to G$ that are "locally surjective": for every local section $g \in G(U)$ there is an open covering $U = \bigcup_{i \in I} U_i$ such that each $g|_{U_i} \in G(U_i)$ is contained in the image of $f(U_i) : F(U_i) \to G(U_i)$.',
-	'The one direction is easy. For the other one, assume that $f : F \to G$ is an epimorphism of sheaves. For every $x \in X$ the map on stalks $f_x : F_x \to G_x$ is an epimorphism because the stalk functor $\mathrm{Sh}(X) \to \mathbf{Set}$ admits a right adjoint: take skyscraper sheaves. For $x \in U$ then $g_x \in G_x$ has a preimage in $F_x$, say represented by some $f \in F(V_x)$ for some $x \in V_x \subseteq U$. By construction of the stalk $G_x$, there is some $x \in U_x \subseteq V_x$ with $f(U_x)(f|_{U_x}) = g|_{U_x}$. Hence, the sets $(U_x)$ provide the open covering.'
+	'The one direction is easy. For the other one, assume that $f : F \to G$ is an epimorphism of sheaves. For every $x \in X$ the map on stalks $f_x : F_x \to G_x$ is an epimorphism because the stalk functor $\Sh(X) \to \mathbf{Set}$ admits a right adjoint: take skyscraper sheaves. For $x \in U$ then $g_x \in G_x$ has a preimage in $F_x$, say represented by some $f \in F(V_x)$ for some $x \in V_x \subseteq U$. By construction of the stalk $G_x$, there is some $x \in U_x \subseteq V_x$ with $f(U_x)(f|_{U_x}) = g|_{U_x}$. Hence, the sets $(U_x)$ provide the open covering.'
 ),
 (
 	'Sh(X,Ab)',
 	'morphisms of abelian sheaves $f : F \to G$ that are "locally surjective": for every local section $g \in G(U)$ there is an open covering $U = \bigcup_{i \in I} U_i$ such that each $g|_{U_i} \in G(U_i)$ is contained in the image of $f(U_i) : F(U_i) \to G(U_i)$.',
-	'The one direction is easy. For the other one, assume that $f : F \to G$ is an epimorphism of abelian sheaves. For every $x \in X$ the homomorphism on stalks $f_x : F_x \to G_x$ is an epimorphism because the stalk functor  $\mathrm{Sh}(X,\mathbf{Ab}) \to \mathbf{Ab}$ admits a right adjoint: take skyscraper sheaves. For $x \in U$ then $g_x \in G_x$ has a preimage in $F_x$, say represented by some $f \in F(V_x)$ for some $x \in V_x \subseteq U$. By construction of the stalk $G_x$, there is some $x \in U_x \subseteq V_x$ with $f(U_x)(f|_{U_x}) = g|_{U_x}$. Hence, the sets $(U_x)$ provide the open covering.'
+	'The one direction is easy. For the other one, assume that $f : F \to G$ is an epimorphism of abelian sheaves. For every $x \in X$ the homomorphism on stalks $f_x : F_x \to G_x$ is an epimorphism because the stalk functor  $\Sh(X,\mathbf{Ab}) \to \mathbf{Ab}$ admits a right adjoint: take skyscraper sheaves. For $x \in U$ then $g_x \in G_x$ has a preimage in $F_x$, say represented by some $f \in F(V_x)$ for some $x \in V_x \subseteq U$. By construction of the stalk $G_x$, there is some $x \in U_x \subseteq V_x$ with $f(U_x)(f|_{U_x}) = g|_{U_x}$. Hence, the sets $(U_x)$ provide the open covering.'
 ),
 (
 	'Sp',

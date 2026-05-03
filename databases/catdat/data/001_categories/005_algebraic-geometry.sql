@@ -12,17 +12,17 @@ VALUES
 (
 	'Sh(X)',
 	'category of sheaves',
-	'$\mathrm{Sh}(X)$',
+	'$\Sh(X)$',
 	'sheaves of sets on a topological space $X$',
 	'morphisms of sheaves',
-	'Here, we assume that the topological space $X$ is neither discrete nor indiscrete, since otherwise this category is just a product of copies of $\mathbf{Set}$. Another valid notation is $\mathrm{Sh}(X,\mathbf{Set})$.',
+	'Here, we assume that the topological space $X$ is neither discrete nor indiscrete, since otherwise this category is just a product of copies of $\mathbf{Set}$. Another valid notation is $\Sh(X,\mathbf{Set})$.',
 	'https://ncatlab.org/nlab/show/category+of+sheaves',
 	NULL
 ),
 (
 	'Sh(X,Ab)',
 	'category of abelian sheaves',
-	'$\mathrm{Sh}(X,\mathbf{Ab})$',
+	'$\Sh(X,\mathbf{Ab})$',
 	'sheaves of abelian groups on a topological space $X$',
 	'morphisms of sheaves',
 	'Here, we assume that the topological space $X$ is neither discrete nor indiscrete, since otherwise this category is just a product of copies of $\mathbf{Ab}$.',

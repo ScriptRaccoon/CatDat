@@ -38,4 +38,10 @@ export const MACROS = {
 	'\\im': '\\operatorname{im}',
 	'\\lcm': '\\operatorname{lcm}',
 	'\\Spec': '\\operatorname{Spec}',
+	'\\Sh': '\\operatorname{Sh}',
+	'\\ord': '\\operatorname{ord}',
+	'\\diag': '\\operatorname{diag}',
+	'\\Sub': '\\operatorname{Sub}',
+	'\\Quot': '\\operatorname{Quot}',
+	'\\supp': '\\operatorname{supp}',
 }
