@@ -173,7 +173,7 @@ VALUES
 (
 	'Ab_fg',
 	'category of finitely generated abelian groups',
-	'$\mathbf{Ab}_{\mathrm{fg}}$',
+	'$\mathbf{Ab}_{\fg}$',
 	'finitely generated abelian groups',
 	'group homomorphisms',
 	NULL,
