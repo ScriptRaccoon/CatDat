@@ -9,7 +9,7 @@ VALUES
 	'Cat',
 	'locally small',
 	TRUE,
-	'There is a forgetful functor $\mathbf{Cat} \to \mathbf{Set} \times \mathbf{Set}$, $\C \mapsto (\mathrm{Ob}(\C),\Mor(\C))$, and $\mathbf{Set} \times \mathbf{Set}$ is locally small.'
+	'There is a forgetful functor $\mathbf{Cat} \to \mathbf{Set} \times \mathbf{Set}$, $\C \mapsto (\Ob(\C),\Mor(\C))$, and $\mathbf{Set} \times \mathbf{Set}$ is locally small.'
 ),
 (
 	'Cat',
@@ -75,7 +75,7 @@ VALUES
 	'Cat',
 	'co-Malcev',
 	FALSE,
-	'We can adapt the proof from <a href="/category/Mon">$\mathbf{Mon}$</a> as follows: Consider the functor $U : \mathbf{Cat} \to \mathbf{Set}^+$ sending a category $\C$ to the (large) set $\{(x,u) : x \in \mathrm{Ob}(\C) ,\, u \in \mathrm{End}(x) \}$. It is represented by $B \IN$, the one-object category associated to the free monoid in one generator. Consider the relation $R \subseteq U^2$ consisting of those pairs $((x,u),(y,v))$ where $x = y$ and $uv = u^2$. This also representable, namely be the one-object category associated to the monoid with the presentation $\langle u,v : uv = u^2 \rangle$. Clearly, $R$ is reflexive, but not symmetric.'
+	'We can adapt the proof from <a href="/category/Mon">$\mathbf{Mon}$</a> as follows: Consider the functor $U : \mathbf{Cat} \to \mathbf{Set}^+$ sending a category $\C$ to the (large) set $\{(x,u) : x \in \Ob(\C) ,\, u \in \mathrm{End}(x) \}$. It is represented by $B \IN$, the one-object category associated to the free monoid in one generator. Consider the relation $R \subseteq U^2$ consisting of those pairs $((x,u),(y,v))$ where $x = y$ and $uv = u^2$. This also representable, namely be the one-object category associated to the monoid with the presentation $\langle u,v : uv = u^2 \rangle$. Clearly, $R$ is reflexive, but not symmetric.'
 ),
 (
 	'Cat',

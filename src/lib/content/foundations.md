@@ -43,7 +43,7 @@ such that the usual [axioms of a category](<https://en.wikipedia.org/wiki/Catego
 
 $$\C = (O,M,i,s,t,c)$$
 
-of collections (and hence a collection itself). We write $\mathrm{Ob}(\C) := O$ and $\Mor(\C) := M$. Instead of $X \in \mathrm{Ob}(\C)$, we often write $X \in \C$.
+of collections (and hence a collection itself). We write $\Ob(\C) := O$ and $\Mor(\C) := M$. Instead of $X \in \Ob(\C)$, we often write $X \in \C$.
 
 When $f \in \Mor(\C)$ is a morphism with $s(f) = X$ and $t(f) = Y$, we write
 $$f : X \to Y.$$
@@ -53,20 +53,20 @@ When a morphism $f : X \to Y$ happens to be uniquely determined, it will be writ
 
 A _small category_ is defined as above, but using _sets_ $O$ and $M$ (instead of collections). A _hypercategory_ is defined similarly using _hypercollections_ $O$ and $M$. Every small category is a category, and every category is a hypercategory. Notice that there is a collection of all small categories $\mathrm{Cat}$, and likewise a hypercollection of all categories $\mathrm{Cat}^+$.
 
-For example, the category of sets $\mathbf{Set}$ has $\mathrm{Ob}(\mathbf{Set}) = \mathrm{Set}$, the collection of all sets. The category of groups $\mathbf{Grp}$ has $\mathrm{Ob}(\mathbf{Grp}) = \mathrm{Grp}$, the collection of all groups. Other typical categories (topological spaces, graphs, metric spaces, etc.) are constructed as usual. All these examples are locally small.
+For example, the category of sets $\mathbf{Set}$ has $\Ob(\mathbf{Set}) = \mathrm{Set}$, the collection of all sets. The category of groups $\mathbf{Grp}$ has $\Ob(\mathbf{Grp}) = \mathrm{Grp}$, the collection of all groups. Other typical categories (topological spaces, graphs, metric spaces, etc.) are constructed as usual. All these examples are locally small.
 
 Collections are the objects of a hypercategory $\mathbf{Set}^+$.
 
 ### Functors
 
 A _functor_ $F : \C \to \D$ between two categories (or small categories, or hypercategories) is defined as usual; it consists of maps
-$$\mathrm{Ob}(F) : \mathrm{Ob}(\C) \to \mathrm{Ob}(\D),$$
+$$\Ob(F) : \Ob(\C) \to \Ob(\D),$$
 $$\Mor(F) : \Mor(\C) \to \Mor(\D)$$
 satisfying the [functor axioms](https://en.wikipedia.org/wiki/Functor). Between two categories there is a collection of all functors, just as between two small categories there is a set of all functors.
 
 Small categories and functors form the category $\mathbf{Cat}$ of small categories, which is locally small. There is also a hypercategory $\mathbf{Cat}^+$ consisting of all categories. For instance, $\mathbf{Set}$ is an object of $\mathbf{Cat}^+$, but not of $\mathbf{Cat}$.
 
-If $F,G : \C \rightrightarrows \D$ are two functors, a morphism $F \to G$ (a _natural transformation_) is defined as a map $\mathrm{Ob}(\C) \to \Mor(\D)$ satisfying the usual naturality condition. These morphisms form a collection $\Hom(F,G)$.
+If $F,G : \C \rightrightarrows \D$ are two functors, a morphism $F \to G$ (a _natural transformation_) is defined as a map $\Ob(\C) \to \Mor(\D)$ satisfying the usual naturality condition. These morphisms form a collection $\Hom(F,G)$.
 
 If $\C, \D$ are categories, we can construct the functor category $[\C, \D]$ as usual. There is no set-theoretic issue, since collections behave like sets. If $\C$ is small and $\D$ is locally small, then $[\C, \D]$ is locally small. This extra assumption on $\C$ is one of many indications that categories should not be assumed locally small by default. For example, one could not even form the category of endofunctors of a general category under such a restriction, and hence no category of monads.
 

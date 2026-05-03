@@ -13,6 +13,7 @@ export const MACROS = {
 	'\\IP': '\\mathbb{P}',
 	'\\Mor': '\\operatorname{Mor}',
 	'\\Hom': '\\operatorname{Hom}',
+	'\\Ob': '\\operatorname{Ob}',
 	'\\A': '\\mathcal{A}',
 	'\\B': '\\mathcal{B}',
 	'\\C': '\\mathcal{C}',

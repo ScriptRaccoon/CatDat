@@ -73,7 +73,7 @@ INSERT INTO lemmas (
 (
     'missing_cogenerating_sets',
     'Missing cogenerating sets',
-    'Let $\C$ be a category with a faithful functor $U: \C \to \mathbf{Set}$. Assume there exists a collection of objects $\F \subseteq \operatorname{Ob}(\C)$ satisfying the following conditions:
+    'Let $\C$ be a category with a faithful functor $U: \C \to \mathbf{Set}$. Assume there exists a collection of objects $\F \subseteq \Ob(\C)$ satisfying the following conditions:
     <ol>
         <li>For any $X \in \F$ and any non-terminal $Y \in \C$, for every morphism $f: X \to Y$ its underlying map $U(f) : U(X) \to U(Y)$ is injective.</li>
         <li>For every infinite cardinal number $\kappa$, there exists an object $X \in \F$ such that $\mathrm{card}(U(X)) \geq \kappa$ and such that $X$ has a non-identity endomorphism.</li>
@@ -84,7 +84,7 @@ INSERT INTO lemmas (
 (
     'missing_cogenerator',
     'Missing cogenerator',
-    'Let $\C$ be a pointed category with a faithful functor $U: \C \to \mathbf{Set}$. Assume there exists a collection of non-zero objects $\F \subseteq \operatorname{Ob}(\C)$ satisfying the following conditions:
+    'Let $\C$ be a pointed category with a faithful functor $U: \C \to \mathbf{Set}$. Assume there exists a collection of non-zero objects $\F \subseteq \Ob(\C)$ satisfying the following conditions:
     <ol>
         <li>For any $X \in \F$ and any $Y \in \C$, every non-zero morphism $f: X \to Y$ is injective on underlying sets.</li>
         <li>For every $Y \in \C$ there is some object $X \in \F$ such that $\mathrm{card}(U(X)) > \mathrm{card}(U(Y))$.</li>
