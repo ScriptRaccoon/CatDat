@@ -81,7 +81,7 @@ VALUES
 	'Set_c',
 	'effective congruences',
 	TRUE,
-	'Let $f, g : E \rightrightarrows X$ be a congruence in $\mathbf{Set}_\mathrm{c}$. Then using $1$ as a test object, we see that this induces an equivalence relation on $X$. We already know that $\mathbf{Set}$ has effective congruences (as does every topos). Using <a href="/lemma/effective-congruence-quotients">this result</a>, we see that $E$ is the kernel pair of $X \to (X/E)_{\mathbf{Set}}$ in $\mathbf{Set}$. Also, the quotient $(X/E)_{\mathbf{Set}}$ is countable; and the forgetful functor $\mathbf{Set}_\mathrm{c} \to \mathbf{Set}$ is fully faithful <a href="https://ncatlab.org/nlab/show/reflected+limit#FullSubcategoryInclusionReflectCoLimits" target="_blank">and therefore reflects limits</a>. Thus, we conclude that $E$ is the kernel pair of $X \to (X/E)_{\mathbf{Set}}$ in $\mathbf{Set}_\mathrm{c}$ as well.'
+	'Let $f, g : E \rightrightarrows X$ be a congruence in $\Set_\c$. Then using $1$ as a test object, we see that this induces an equivalence relation on $X$. We already know that $\Set$ has effective congruences (as does every topos). Using <a href="/lemma/effective-congruence-quotients">this result</a>, we see that $E$ is the kernel pair of $X \to (X/E)_{\Set}$ in $\Set$. Also, the quotient $(X/E)_{\Set}$ is countable; and the forgetful functor $\Set_\c \to \Set$ is fully faithful <a href="https://ncatlab.org/nlab/show/reflected+limit#FullSubcategoryInclusionReflectCoLimits" target="_blank">and therefore reflects limits</a>. Thus, we conclude that $E$ is the kernel pair of $X \to (X/E)_{\Set}$ in $\Set_\c$ as well.'
 ),
 (
 	'Set_c',

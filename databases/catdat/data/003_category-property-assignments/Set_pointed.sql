@@ -72,7 +72,7 @@ VALUES
 	'Set*',
 	'effective cocongruences',
 	TRUE,
-	'We have that $\mathbf{Set}_*^{\mathrm{op}}$ is a slice category of $\mathbf{Set}^{\mathrm{op}}$, which in turn is monadic over $\mathbf{Set}$. Therefore, by combining results from <a href="http://www.springer.com/us/book/9781402019616" target="_blank">Borceux and Bourn</a> Appendix A and <a href="https://ncatlab.org/nlab/show/colimits+in+categories+of+algebras#exact" target="_blank">nLab</a>, $\mathbf{Set}_*^{\mathrm{op}}$ is Barr-exact, and in particular it has effective congruences.'
+	'We have that $\Set_*^{\op}$ is a slice category of $\Set^{\op}$, which in turn is monadic over $\Set$. Therefore, by combining results from <a href="http://www.springer.com/us/book/9781402019616" target="_blank">Borceux and Bourn</a> Appendix A and <a href="https://ncatlab.org/nlab/show/colimits+in+categories+of+algebras#exact" target="_blank">nLab</a>, $\Set_*^{\op}$ is Barr-exact, and in particular it has effective congruences.'
 ),
 (
 	'Set*',

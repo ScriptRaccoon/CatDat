@@ -105,5 +105,5 @@ VALUES
 	'Meas',
 	'effective cocongruences',
 	FALSE,
-	'The proof is similar to the one for <a href="/category/Top">$\mathbf{Top}$</a>: Use the trivial $\sigma$-algebra on a two-point set.'
+	'The proof is similar to the one for <a href="/category/Top">$\Top$</a>: Use the trivial $\sigma$-algebra on a two-point set.'
 );

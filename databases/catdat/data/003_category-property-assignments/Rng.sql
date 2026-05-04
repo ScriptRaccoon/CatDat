@@ -101,11 +101,11 @@ VALUES
 	'Rng',
 	'effective cocongruences',
 	FALSE,
-	'The counterexample is similar to the one at <a href="https://mathoverflow.net/a/510809" target="_blank">MO/510744</a> for $\mathbf{Ring}$: in this case,
-	$$X := \langle p \mid p^2 = p \rangle_{\mathbf{Rng}} \cong \mathbb{Z}$$
+	'The counterexample is similar to the one at <a href="https://mathoverflow.net/a/510809" target="_blank">MO/510744</a> for $\Ring$: in this case,
+	$$X := \langle p \mid p^2 = p \rangle_{\Rng} \cong \IZ$$
 	and
-	$$E := \langle p, q \mid p^2 = p, q^2 = q, pq = q, qp = p \rangle_{\mathbf{Rng}}  \cong \begin{pmatrix} \mathbb{Z} & \mathbb{Z} \\ 0 & 0 \end{pmatrix}$$
+	$$E := \langle p, q \mid p^2 = p, q^2 = q, pq = q, qp = p \rangle_{\Rng}  \cong \begin{pmatrix} \IZ & \IZ \\ 0 & 0 \end{pmatrix}$$
 	via
 	$$p \mapsto \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix}, \quad q \mapsto \begin{pmatrix} 1 & 1 \\ 0 & 0 \end{pmatrix}.$$
-	From here, the rest of the proof is similar to the one for $\mathbf{Ring}$.'
+	From here, the rest of the proof is similar to the one for $\Ring$.'
 );

@@ -69,7 +69,7 @@ VALUES
 	'Met_c',
 	'effective cocongruences',
 	TRUE,
-	'Suppose we have a cocongruence $f, g : X \rightrightarrows E$ in $\mathbf{Met}_\mathrm{c}$. Then the image in $\mathbf{Haus}$ is a coreflexive corelation (since epimorphisms in both categories are continuous maps with dense image). By <a href="https://mathoverflow.net/a/509582/2841" target="_blank">MO/509548</a>, that implies that image is of the form $X +_S X$ for a closed subset $S$ of $X$. Since $S$ is metrizable, and the functor $\mathbf{Met}_\mathrm{c} \to \mathbf{Haus}$ is fully faithful <a href="https://ncatlab.org/nlab/show/reflected+limit#FullSubcategoryInclusionReflectCoLimits" target="_blank">and therefore reflects colimits</a>, we conclude that $E$ is effective in $\mathbf{Met}_\mathrm{c}$.'
+	'Suppose we have a cocongruence $f, g : X \rightrightarrows E$ in $\Met_\c$. Then the image in $\Haus$ is a coreflexive corelation (since epimorphisms in both categories are continuous maps with dense image). By <a href="https://mathoverflow.net/a/509582/2841" target="_blank">MO/509548</a>, that implies that image is of the form $X +_S X$ for a closed subset $S$ of $X$. Since $S$ is metrizable, and the functor $\Met_\c \to \Haus$ is fully faithful <a href="https://ncatlab.org/nlab/show/reflected+limit#FullSubcategoryInclusionReflectCoLimits" target="_blank">and therefore reflects colimits</a>, we conclude that $E$ is effective in $\Met_\c$.'
 ),
 (
 	'Met_c',

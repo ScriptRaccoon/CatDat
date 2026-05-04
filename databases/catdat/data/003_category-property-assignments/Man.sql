@@ -84,7 +84,7 @@ VALUES
 	'Man',
 	'effective cocongruences',
 	TRUE,
-	'From the proof that $\mathbf{Man}$ has coquotients of cocongruences, we know that for any cocongruence $X \rightrightarrows E$, there is a clopen submanifold $U$ of $X$ such that the fibers of $r : E \twoheadrightarrow X$ have one point on $U$, and two points on $X \setminus U$. Therefore, $E$ is the cokernel pair of the inclusion map $U \hookrightarrow X$.'
+	'From the proof that $\Man$ has coquotients of cocongruences, we know that for any cocongruence $X \rightrightarrows E$, there is a clopen submanifold $U$ of $X$ such that the fibers of $r : E \twoheadrightarrow X$ have one point on $U$, and two points on $X \setminus U$. Therefore, $E$ is the cokernel pair of the inclusion map $U \hookrightarrow X$.'
 ),
 (
 	'Man',

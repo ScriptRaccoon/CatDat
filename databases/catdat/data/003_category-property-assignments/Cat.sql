@@ -93,7 +93,7 @@ VALUES
 	'Cat',
 	'effective cocongruences',
 	FALSE,
-	'The counterexample is similar to the one for <a href="/category/Mon">$\mathbf{Mon}$</a>: Let $X$ be the <a href="/category/walking_idempotent">walking idempotent</a>, and let $E$ be the delooping of the monoid with presentation
+	'The counterexample is similar to the one for <a href="/category/Mon">$\Mon$</a>: Let $X$ be the <a href="/category/walking_idempotent">walking idempotent</a>, and let $E$ be the delooping of the monoid with presentation
 	$$\langle p, q \mid p^2=p,\, q^2=q,\, pq=q,\, qp=p \rangle.$$
-	The induced relation on functors in $[X, \mathcal{C}]$ is that $F \sim G$ if and only if $F$ and $G$ send the object of $X$ to the same object of $\mathcal{C}$, and they send the idempotent of $X$ to idempotent morphisms $a, b$ in $\mathcal{C}$ satisfying $ab=b$, $ba=a$. From here, the proof that this gives a cocongruence on $\mathbf{Cat}$ which is not effective is similar to the one in $\mathbf{Mon}$.'
+	The induced relation on functors in $[X, \C]$ is that $F \sim G$ if and only if $F$ and $G$ send the object of $X$ to the same object of $\C$, and they send the idempotent of $X$ to idempotent morphisms $a, b$ in $\C$ satisfying $ab=b$, $ba=a$. From here, the proof that this gives a cocongruence on $\Cat$ which is not effective is similar to the one in $\Mon$.'
 );

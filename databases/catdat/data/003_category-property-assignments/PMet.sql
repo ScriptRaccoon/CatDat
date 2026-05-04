@@ -143,5 +143,5 @@ VALUES
 	'PMet',
 	'effective cocongruences',
 	FALSE,
-	'The proof is similar to the one for <a href="/category/Top">$\mathbf{Top}$</a>: Equip a two-point set with the zero metric; this pseudo-metric space represents the functor taking a pseudo-metric space to the pairs of points with $d(x,y) = 0$. In this case, once you conclude $Z = \varnothing$, the map $h : Z \to 1$ does not have any cokernel pair, since that would have to be a coproduct $1+1$, which does not exist.'
+	'The proof is similar to the one for <a href="/category/Top">$\Top$</a>: Equip a two-point set with the zero metric; this pseudo-metric space represents the functor taking a pseudo-metric space to the pairs of points with $d(x,y) = 0$. In this case, once you conclude $Z = \varnothing$, the map $h : Z \to 1$ does not have any cokernel pair, since that would have to be a coproduct $1+1$, which does not exist.'
 );

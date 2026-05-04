@@ -101,5 +101,5 @@ VALUES
 	'Alg(R)',
 	'effective cocongruences',
 	FALSE,
-	'The counterexample is similar to the one for <a href="/category/Ring">$\mathbf{Ring}$</a>: Let $X := R[p] / (p^2-p)$ with cocongruence $E := R \langle p, q \rangle / (p^2-p, q^2-q, pq-q, qp-p)$.'
+	'The counterexample is similar to the one for <a href="/category/Ring">$\Ring$</a>: Let $X := R[p] / (p^2-p)$ with cocongruence $E := R \langle p, q \rangle / (p^2-p, q^2-q, pq-q, qp-p)$.'
 );

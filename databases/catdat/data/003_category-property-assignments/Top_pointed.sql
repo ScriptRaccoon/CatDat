@@ -173,11 +173,11 @@ VALUES
 	'Top*',
 	'effective congruences',
 	FALSE,
-	'Suppose that $\mathbf{Top}_*$ had effective congruences. Then by <a href="/lemma/coslice-effective-congruences">this result</a>, $\mathbf{Top}$ would also have effective congruences, which we know is not the case (see <a href="/category/Top">here</a>).'
+	'Suppose that $\Top_*$ had effective congruences. Then by <a href="/lemma/coslice-effective-congruences">this result</a>, $\Top$ would also have effective congruences, which we know is not the case (see <a href="/category/Top">here</a>).'
 ),
 (
 	'Top*',
 	'effective cocongruences',
 	FALSE,
-	'This counterexample is adapted from the <a href="/category/Top">counterexample for $\mathbf{Top}$</a>. Consider the pointed topological space $I := \{ *, a, b \}$ with topology $\{ \varnothing, \{ * \}, \{ a, b \}, \{ *, a, b \} \}$. This represents the functor which sends a pointed topological space $X$ to the pairs of indistinguishable points of $X$. Therefore, we get a cocongruence $\{ *, a \} \rightrightarrows I$ on the discrete space $\{ *, a \}$, where the maps are $*\mapsto *, a\mapsto a$ and $*\mapsto *, a\mapsto b$ respectively. However, this cannot be effective: if we have $h : Z \to \{ *, a \}$ which equalizes the cocongruence, then $h$ must be the constant function with value $*$. But that means the cokernel pair of $h$ is the discrete space on $\{ *, a, b \}$.'
+	'This counterexample is adapted from the <a href="/category/Top">counterexample for $\Top$</a>. Consider the pointed topological space $I := \{ *, a, b \}$ with topology $\{ \varnothing, \{ * \}, \{ a, b \}, \{ *, a, b \} \}$. This represents the functor which sends a pointed topological space $X$ to the pairs of indistinguishable points of $X$. Therefore, we get a cocongruence $\{ *, a \} \rightrightarrows I$ on the discrete space $\{ *, a \}$, where the maps are $*\mapsto *, a\mapsto a$ and $*\mapsto *, a\mapsto b$ respectively. However, this cannot be effective: if we have $h : Z \to \{ *, a \}$ which equalizes the cocongruence, then $h$ must be the constant function with value $*$. But that means the cokernel pair of $h$ is the discrete space on $\{ *, a, b \}$.'
 );

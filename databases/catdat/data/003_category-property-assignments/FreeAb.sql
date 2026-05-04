@@ -89,8 +89,8 @@ VALUES
 	'FreeAb',
 	'effective cocongruences',
 	FALSE,
-	'We will let $E$ be the abelian group with presentation $\langle a, b, c \mid a - b = 2c \rangle$, with two morphisms $\mathbb{Z} \rightrightarrows E$ given by $1\mapsto a$, $1\mapsto b$. Note that $E$ is free with basis $\{ b, c \}$. Then $\operatorname{Hom}(E, G) \cong \{ (x, y, z) \in G^3 \mid x - y = 2z \}$. Observe that since $G$ is torsion-free, the projection onto the first two coordinates is injective; and $(x, y)$ is in the image precisely when $x \equiv y \pmod{2G}$, which gives an equivalence relation. Therefore, $E$ gives a cocongruence on $\mathbb{Z}$.<br>
-	On the other hand, if $E$ were the cokernel pair of $h : H \to \mathbb{Z}$, that would mean that for $x, y : \mathbb{Z} \to G$, $x \equiv y \pmod{2G}$ if and only if $x \circ h = y \circ h$. In particular, from the case $G := \mathbb{Z}$, $x := 2 \operatorname{id}$, $y := 0$, we would have $2h = 0$. That implies $h = 0$, but then that would give $\operatorname{id}_{\mathbb{Z}} \equiv 0 \pmod{2}$, resulting in a contradiction.'
+	'We will let $E$ be the abelian group with presentation $\langle a, b, c \mid a - b = 2c \rangle$, with two morphisms $\IZ \rightrightarrows E$ given by $1\mapsto a$, $1\mapsto b$. Note that $E$ is free with basis $\{ b, c \}$. Then $\Hom(E, G) \cong \{ (x, y, z) \in G^3 \mid x - y = 2z \}$. Observe that since $G$ is torsion-free, the projection onto the first two coordinates is injective; and $(x, y)$ is in the image precisely when $x \equiv y \pmod{2G}$, which gives an equivalence relation. Therefore, $E$ gives a cocongruence on $\IZ$.<br>
+	On the other hand, if $E$ were the cokernel pair of $h : H \to \IZ$, that would mean that for $x, y : \IZ \to G$, $x \equiv y \pmod{2G}$ if and only if $x \circ h = y \circ h$. In particular, from the case $G := \IZ$, $x := 2 \id$, $y := 0$, we would have $2h = 0$. That implies $h = 0$, but then that would give $\id_{\IZ} \equiv 0 \pmod{2}$, resulting in a contradiction.'
 );
 
 INSERT INTO category_property_comments (category_id, property_id, comment)

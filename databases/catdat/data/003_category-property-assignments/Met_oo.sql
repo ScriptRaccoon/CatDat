@@ -93,5 +93,5 @@ VALUES
 	'Met_oo',
 	'effective cocongruences',
 	FALSE,
-	'The same counterexample as for <a href="/category/Met">$\mathbf{Met}$</a> works here. The difference in this case is that a binary copower of two copies of $(0,1)$ does exist in $\mathbf{Met}_\infty$. However, this would assign a distance of $\infty$ between points in $(-1,0)$ and points in $(0,1)$, which does not agree with the chosen subspace metric on $(-1,0) \cup (0,1)$.'
+	'The same counterexample as for <a href="/category/Met">$\Met$</a> works here. The difference in this case is that a binary copower of two copies of $(0,1)$ does exist in $\Met_\infty$. However, this would assign a distance of $\infty$ between points in $(-1,0)$ and points in $(0,1)$, which does not agree with the chosen subspace metric on $(-1,0) \cup (0,1)$.'
 );

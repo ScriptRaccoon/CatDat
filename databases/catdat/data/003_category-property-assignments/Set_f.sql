@@ -45,13 +45,13 @@ VALUES
 	'Set_f',
 	'effective congruences',
 	TRUE,
-	'Let $f, g : E \rightrightarrows X$ be a congruence in $\mathbf{Set}_\mathrm{f}$. From the proof on quotients of congruences in $\mathbf{Set}_\mathrm{f}$, we have a quotient map $p : X \to X/E$ in $\mathbf{Set}_\mathrm{f}$, and $E$ is the kernel pair of $p$ in $\mathbf{Set}$. It remains to see that $E$ is also the kernel pair of $p$ in $\mathbf{Set}_f$. Thus, suppose we have $x_1, x_2 : T \rightrightarrows X$ with $p \circ x_1 = p \circ x_2$. Then there is a unique $e : T \to E$ in $\mathbf{Set}$ with $x_1 = f\circ e$ and $x_2 = g\circ e$. Since $f\circ e$ is finite-to-one, we must have $e$ is finite-to-one as well.'
+	'Let $f, g : E \rightrightarrows X$ be a congruence in $\Set_\f$. From the proof on quotients of congruences in $\Set_\f$, we have a quotient map $p : X \to X/E$ in $\Set_\f$, and $E$ is the kernel pair of $p$ in $\Set$. It remains to see that $E$ is also the kernel pair of $p$ in $\Set_f$. Thus, suppose we have $x_1, x_2 : T \rightrightarrows X$ with $p \circ x_1 = p \circ x_2$. Then there is a unique $e : T \to E$ in $\Set$ with $x_1 = f\circ e$ and $x_2 = g\circ e$. Since $f\circ e$ is finite-to-one, we must have $e$ is finite-to-one as well.'
 ),
 (
 	'Set_f',
 	'effective cocongruences',
 	TRUE,
-	'Suppose we have a cocongruence $f, g : X \rightrightarrows E$ in $\mathbf{Set}_f$. Then it is a coreflexive corelation in $\mathbf{Set}$. Since $\mathbf{Set}$ is co-Malcev and has effective cocongruences, that implies $E$ is the cokernel pair of some function $h : Z \to X$ in $\mathbf{Set}$. By the dual of <a href="/lemma/effective-congruence-quotients">this result</a>, if $\mathrm{inc}_Y : Y \hookrightarrow X$ is the equalizer of $f$ and $g$, then $E$ is also the cokernel pair of $\mathrm{inc}_Y$ in $\mathbf{Set}$. It remains to see that $E$ is the cokernel pair of $\mathrm{inc}_Y$ in $\mathbf{Set}_\mathrm{f}$ as well. Thus, suppose $a, b : X \rightrightarrows T$ are such that $a |_Y = b |_Y$. Then there is a unique $c : E\to T$ in $\mathbf{Set}$ with $a = c\circ f$ and $b = c\circ g$. Since $(f;g) : X + X \to E$ is surjective and $c \circ (f;g) = (a;b)$ is finite-to-one, we see $c$ is finite-to-one as well.'
+	'Suppose we have a cocongruence $f, g : X \rightrightarrows E$ in $\Set_f$. Then it is a coreflexive corelation in $\Set$. Since $\Set$ is co-Malcev and has effective cocongruences, that implies $E$ is the cokernel pair of some function $h : Z \to X$ in $\Set$. By the dual of <a href="/lemma/effective-congruence-quotients">this result</a>, if $\inc_Y : Y \hookrightarrow X$ is the equalizer of $f$ and $g$, then $E$ is also the cokernel pair of $\inc_Y$ in $\Set$. It remains to see that $E$ is the cokernel pair of $\inc_Y$ in $\Set_\f$ as well. Thus, suppose $a, b : X \rightrightarrows T$ are such that $a |_Y = b |_Y$. Then there is a unique $c : E\to T$ in $\Set$ with $a = c\circ f$ and $b = c\circ g$. Since $(f;g) : X + X \to E$ is surjective and $c \circ (f;g) = (a;b)$ is finite-to-one, we see $c$ is finite-to-one as well.'
 ),
 (
 	'Set_f',

@@ -69,7 +69,7 @@ VALUES
 	'FinGrp',
 	'effective congruences',
 	TRUE,
-	'Suppose we have a congruence $f, g : E \rightrightarrows X$ in $\mathbf{FinGrp}$. Since the embedding $\mathbf{FinGrp} \hookrightarrow \mathbf{Grp}$ preserves finite limits, it is also a congruence in $\mathbf{Grp}$. We already know that $\mathbf{Grp}$ has effective congruences since it is algebraic. Using <a href="/lemma/effective-congruence-quotients">this result</a>, we see that $E$ is the kernel pair of $X \to (X/E)_{\mathbf{Grp}}$ in $\mathbf{Grp}$. Also, the quotient $(X/E)_{\mathbf{Grp}}$ is finite; and the forgetful functor $\mathbf{FinGrp} \to \mathbf{Grp}$ is fully faithful <a href="https://ncatlab.org/nlab/show/reflected+limit#FullSubcategoryInclusionReflectCoLimits" target="_blank">and therefore reflects limits</a>. Thus, we conclude that $E$ is the kernel pair of $X \to (X/E)_{\mathbf{Grp}}$ in $\mathbf{FinGrp}$ as well.'
+	'Suppose we have a congruence $f, g : E \rightrightarrows X$ in $\FinGrp$. Since the embedding $\FinGrp \hookrightarrow \Grp$ preserves finite limits, it is also a congruence in $\Grp$. We already know that $\Grp$ has effective congruences since it is algebraic. Using <a href="/lemma/effective-congruence-quotients">this result</a>, we see that $E$ is the kernel pair of $X \to (X/E)_{\Grp}$ in $\Grp$. Also, the quotient $(X/E)_{\Grp}$ is finite; and the forgetful functor $\FinGrp \to \Grp$ is fully faithful <a href="https://ncatlab.org/nlab/show/reflected+limit#FullSubcategoryInclusionReflectCoLimits" target="_blank">and therefore reflects limits</a>. Thus, we conclude that $E$ is the kernel pair of $X \to (X/E)_{\Grp}$ in $\FinGrp$ as well.'
 ),
 (
 	'FinGrp',

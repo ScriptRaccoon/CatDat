@@ -149,17 +149,17 @@ VALUES
 	'Met',
 	'effective congruences',
 	FALSE,
-	'Any kernel pair of $h : X \to Z$ in $\mathbf{Met}$ corresponds to a closed subset of $X\times X$. However, there are plenty of non-closed congruences, such as $\Delta \cup (\mathbb{Q} \times \mathbb{Q}) \subseteq \mathbb{R} \times \mathbb{R}$ with the subspace metric.'
+	'Any kernel pair of $h : X \to Z$ in $\Met$ corresponds to a closed subset of $X\times X$. However, there are plenty of non-closed congruences, such as $\Delta \cup (\IQ \times \IQ) \subseteq \IR \times \IR$ with the subspace metric.'
 ),
 (
 	'Met',
 	'effective cocongruences',
 	FALSE,
-	'We will define a cocongruence on the interval $(0,1) \subseteq \mathbb{R}$ where $E := (-1, 0) \cup (0, 1) \subseteq \mathbb{R}$, and the two maps $(0, 1) \rightrightarrows E$ are the inclusion map and $x \mapsto -x$. Then for any metric space $X$, the induced relation on non-expansive maps $(0, 1) \to X$ is that $f \sim g$ if and only if
+	'We will define a cocongruence on the interval $(0,1) \subseteq \IR$ where $E := (-1, 0) \cup (0, 1) \subseteq \IR$, and the two maps $(0, 1) \rightrightarrows E$ are the inclusion map and $x \mapsto -x$. Then for any metric space $X$, the induced relation on non-expansive maps $(0, 1) \to X$ is that $f \sim g$ if and only if
 	$$d(f(x), g(y)) \le x+y$$
 	for each $x, y \in (0, 1)$. This is reflexive since $d(f(x), f(y)) \le |x-y| < x+y$, and it is clearly symmetric. For transitivity, suppose $f\sim g$ and $g\sim h$.  Then for any $\varepsilon > 0$, we have
 	$$d(f(x), h(y)) \le d(f(x), g(\varepsilon)) + d(g(\varepsilon), h(y)) \le (x + \varepsilon) + (y + \varepsilon).$$
 	Since this holds for every $\varepsilon > 0$, we conclude $d(f(x), h(y)) \le x+y$.<br>
-	On the other hand, if this cocongruence were effective, then by the dual of <a href="/lemma/effective-congruence-quotients">this result</a>, it would be the cokernel pair of the equalizer of the two inclusion maps. However, that equalizer is empty, so $E$ would have to be a binary copower of $(0,1)$, which does not exist in $\mathbf{Met}$.'
+	On the other hand, if this cocongruence were effective, then by the dual of <a href="/lemma/effective-congruence-quotients">this result</a>, it would be the cokernel pair of the equalizer of the two inclusion maps. However, that equalizer is empty, so $E$ would have to be a binary copower of $(0,1)$, which does not exist in $\Met$.'
 );
 

@@ -69,7 +69,7 @@ VALUES
 	'Haus',
 	'effective cocongruences',
 	TRUE,
-	'As the proof at <a href="https://mathoverflow.net/a/509582/2841" target="_blank">MO/509548</a> shows, in fact any coreflexive corelation on $X$ in $\mathbf{Haus}$ is of the form $X +_S X$ for a closed subset $S$ of $X$. Such a cocongruence is clearly effective.'
+	'As the proof at <a href="https://mathoverflow.net/a/509582/2841" target="_blank">MO/509548</a> shows, in fact any coreflexive corelation on $X$ in $\Haus$ is of the form $X +_S X$ for a closed subset $S$ of $X$. Such a cocongruence is clearly effective.'
 ),
 (
 	'Haus',
