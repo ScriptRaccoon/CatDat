@@ -1,9 +1,11 @@
-import { get_client, is_subset } from './shared'
+import { get_client } from './shared'
 import {
 	get_all_assignments,
 	get_categories,
+	get_next_implication,
+	get_next_implication_for_contradiction,
 	get_normalized_category_implications,
-	NormalizedCategoryImplication,
+	type NormalizedCategoryImplication,
 } from './categories.utils'
 
 const db = get_client()
@@ -72,11 +74,6 @@ function check_redundant_category_property_assignments() {
 	}
 }
 
-/**
- * Returns the set of properties that can be deduced from a set of properties
- * based on a list of normalized implications. This function is very similar
- * to the corresponding function in `deduce-category-properties.ts`.
- */
 function get_deduced_satisfied_properties(
 	satisfied_properties: Set<string>,
 	implications: NormalizedCategoryImplication[],
@@ -84,28 +81,13 @@ function get_deduced_satisfied_properties(
 ) {
 	const deduced_properties = new Set(satisfied_properties)
 
-	/**
-	 * Finds a satisfied property as follows: If an implication has the form
-	 * P1 + P2 + ... ===> Q,
-	 * where P1, P2, ... are satisfied, then P is satisfied as well.
-	 */
-	function get_next_satisfied_property() {
-		for (const { assumptions, conclusion } of implications) {
-			const is_valid =
-				is_subset(assumptions, deduced_properties) &&
-				!deduced_properties.has(conclusion)
-			if (is_valid) return conclusion
-		}
-		return null
-	}
-
 	while (true) {
-		const property = get_next_satisfied_property()
-		if (!property) break
+		const implication = get_next_implication(implications, deduced_properties)
+		if (!implication) break
 
-		deduced_properties.add(property)
+		deduced_properties.add(implication.conclusion)
 
-		if (options?.stop_when_found === property) {
+		if (options?.stop_when_found === implication.conclusion) {
 			return deduced_properties
 		}
 	}
@@ -150,33 +132,18 @@ function get_deduced_unsatisfied_properties(
 ) {
 	const deduced_unsatisfied_properties = new Set(unsatisfied_properties)
 
-	/**
-	 * Finds an unsatisfied property as follows: If an implication has the form
-	 * P + Q1 + Q2 + ... ===> R,
-	 * where R is unsatisfied, but Q1, Q2, ... are satisfied, then
-	 * P must be unsatisfied: this is a proof by contradiction.
-	 */
-	function get_next_unsatisfied_property() {
-		for (const { assumptions, conclusion } of implications) {
-			if (!deduced_unsatisfied_properties.has(conclusion)) continue
-			for (const p of assumptions) {
-				const is_valid =
-					!deduced_unsatisfied_properties.has(p) &&
-					is_subset(assumptions, satisfied_properties, p)
-				if (is_valid) return p
-			}
-		}
-
-		return null
-	}
-
 	while (true) {
-		const property = get_next_unsatisfied_property()
-		if (!property) break
+		const next = get_next_implication_for_contradiction(
+			implications,
+			satisfied_properties,
+			deduced_unsatisfied_properties,
+		)
 
-		deduced_unsatisfied_properties.add(property)
+		if (!next) break
 
-		if (options?.stop_when_found === property) {
+		deduced_unsatisfied_properties.add(next.property)
+
+		if (options?.stop_when_found === next.property) {
 			return deduced_unsatisfied_properties
 		}
 	}

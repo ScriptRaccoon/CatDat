@@ -1,13 +1,15 @@
 import { SqliteError, type Database } from 'better-sqlite3'
-import { get_assumption_string, get_conclusion_string, is_subset } from './shared'
+import { get_assumption_string, get_conclusion_string } from './shared'
 import {
 	CategoryMeta,
 	CategoryPropertyMeta,
 	get_all_decided_properties,
 	get_categories,
+	get_next_implication,
+	get_next_implication_for_contradiction,
 	get_normalized_category_implications,
 	get_properties_dict,
-	NormalizedCategoryImplication,
+	type NormalizedCategoryImplication,
 } from './categories.utils'
 
 /**
@@ -111,22 +113,8 @@ function deduce_satisfied_category_properties(
 	const found = new Set<string>()
 	const reasons: Record<string, string> = {}
 
-	/**
-	 * Returns the next implication yielding a satisfied property:
-	 * When all of its assumptions are satisfied, its conclusion is satisfied.
-	 */
-	function get_next_implication() {
-		for (const implication of implications) {
-			const is_valid =
-				is_subset(implication.assumptions, satisfied_properties) &&
-				!satisfied_properties.has(implication.conclusion)
-			if (is_valid) return implication
-		}
-		return null
-	}
-
 	while (true) {
-		const implication = get_next_implication()
+		const implication = get_next_implication(implications, satisfied_properties)
 		if (!implication) break
 
 		satisfied_properties.add(implication.conclusion)
@@ -198,27 +186,12 @@ function deduce_unsatisfied_category_properties(
 	const found = new Set<string>()
 	const reasons: Record<string, string> = {}
 
-	/**
-	 * Returns the next implication together with an unsatisfied property:
-	 * If the implication has the form P + Q1 + Q2 + ... ===> R and
-	 * Q1, Q2, ... are satisfied, but R is not, then P is not satisfied.
-	 * This is a proof by contradiction.
-	 */
-	function get_next_implication() {
-		for (const implication of implications) {
-			if (!unsatisfied_properties.has(implication.conclusion)) continue
-			for (const p of implication.assumptions) {
-				const is_valid =
-					!unsatisfied_properties.has(p) &&
-					is_subset(implication.assumptions, satisfied_properties, p)
-				if (is_valid) return { implication, property: p }
-			}
-		}
-		return null
-	}
-
 	while (true) {
-		const next = get_next_implication()
+		const next = get_next_implication_for_contradiction(
+			implications,
+			satisfied_properties,
+			unsatisfied_properties,
+		)
 		if (!next) break
 
 		const { implication, property } = next
