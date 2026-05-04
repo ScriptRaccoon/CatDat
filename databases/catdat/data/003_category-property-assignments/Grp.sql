@@ -49,6 +49,12 @@ VALUES
 ),
 (
 	'Grp',
+	'effective cocongruences',
+	TRUE,
+	'A proof can be found <a href="/pdf/cocongruences_of_groups.pdf">here</a>.'
+),
+(
+	'Grp',
 	'normal',
 	FALSE,
 	'Every non-normal subgroup provides a counterexample.'
