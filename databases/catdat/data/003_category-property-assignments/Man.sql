@@ -100,19 +100,6 @@ VALUES
 ),
 (
 	'Man',
-	'copowers',
-	FALSE,
-	'If $I$ is uncountable, then the copower $I \otimes \IR$ does not exist. More generally, if $(X_i)_{i \in I}$ is a family of non-empty manifolds whose coproduct $M$ exists, then using maps $M \to \{0,1\}$ we find that the $M_i$ map to disjoint connected components of $M$. Since $M$ only has countably many components, $I$ must be countable.
-	See also the answer at <a href="https://math.stackexchange.com/questions/5083641">MSE/5083641</a>.'
-),
-(
-	'Man',
-	'pushouts',
-	FALSE,
-	'The pushout of $\IR \leftarrow \{0\} \rightarrow \IR$ does not exist, see <a href="https://mathoverflow.net/questions/19116">MO/19116</a>.'
-),
-(
-	'Man',
 	'pullbacks',
 	FALSE,
 	'See <a href="https://math.stackexchange.com/questions/5129579/" target="_blank">MSE/5129579</a> or <a href="https://math.stackexchange.com/questions/322485" target="_blank">MSE/322485</a>.'
@@ -134,12 +121,6 @@ VALUES
 	'sequential colimits',
 	FALSE,
 	'If $\Man$ had sequential colimits, then by <a href="/lemma/special_sequential_colimits">this lemma</a> there would be a manifold $M$ that admits a split epimorphism $M \to \IR^n$ for every $n$. But then $M$ will have an infinite-dimensional tangent space, which is a contradiction.'
-),
-(
-	'Man',
-	'countable',
-	FALSE,
-	'This is trivial.'
 ),
 (
 	'Man',

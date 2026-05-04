@@ -79,12 +79,6 @@ VALUES
 ),
 (
 	'Rel',
-	'preadditive',
-	FALSE,
-	'In categories with finite products and finite coproducts, the preadditive structure <a href="/lemma/preadditive_structure_unique">is unique</a> if it exists. In the case of $\Rel$, where both products and coproducts are just disjoint unions, this operation is just the set-theoretic union $f+g = f \cup g$ of relations. This clearly has no inverses.'
-),
-(
-	'Rel',
 	'Cauchy complete',
 	FALSE,
 	'See <a href="https://math.stackexchange.com/a/5030380/1650" target="_blank">MSE/1931577</a>.'

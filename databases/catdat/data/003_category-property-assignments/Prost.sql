@@ -61,12 +61,6 @@ VALUES
 ),
 (
 	'Prost',
-	'strict terminal object',
-	FALSE,
-	'This is trivial.'
-),
-(
-	'Prost',
 	'regular',
 	FALSE,
 	'See Example 3.14 at the <a href="https://ncatlab.org/nlab/show/regular+category" target="_blank">nLab</a>.'

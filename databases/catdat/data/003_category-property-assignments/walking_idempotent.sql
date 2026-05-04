@@ -67,18 +67,6 @@ VALUES
 ),
 (
     'walking_idempotent',
-    'binary powers',
-    FALSE,
-    'If $0 \times 0 = 0$, then $\Hom(0,0) \cong \Hom(0,0)^2$. But the left hand side has $2$ elements, whereas the right hand has $4$ elements. This is a contradiction.'
-),
-(
-    'walking_idempotent',
-    'one-way',
-    FALSE,
-    'This is obvious.'
-),
-(
-    'walking_idempotent',
     'Cauchy complete',
     FALSE,
     'The idempotent $e$ does not split.'

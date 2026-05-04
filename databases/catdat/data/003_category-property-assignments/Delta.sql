@@ -100,18 +100,6 @@ VALUES
     'The two maps $d^0,d^1 : [0] \rightrightarrows [1]$ have a common left inverse, the unique map $s^0 : [1] \to [0]$, but are not equalized by any morphism.'
 ),
 (
-	'Delta',
-	'binary powers',
-	FALSE,
-	'The <a href="/category/FinOrd">proof for $\FinOrd$</a> also works for $\FinSet \setminus \{\varnothing\}$: The forgetful functor to $\Set$ is representable, hence preserves all limits. Thus, if the power $\{0 < 1\} \times \{0 < 1\}$ exists in $\FinOrd \setminus \{\varnothing\}$, we may assume its underlying set is the cartesian product and the projection morphisms are the usual projection maps. Moreover, these maps are order-preserving. Since the result must be a total order, we have $(0,1) \leq (1,0)$ or $(1,0) \leq (0,1)$. In the first case, apply $p_2$ to get $1 \leq 0$, a contradiction. In the second case, use $p_1$ to get a contradiction.'
-),
-(
-	'Delta',
-	'binary copowers',
-	FALSE,
-	'The <a href="/category/FinOrd">proof for $\FinOrd$</a> also works for $\FinSet \setminus \{\varnothing\}$: Assume that the copower $1+1$, i.e. the coproduct of two terminal objects exists, denoted $\{x\}$ and $\{y\}$. If $x \leq y$ holds in the coproduct, then the universal property would imply this relation for all pairs of elements in any non-empty finite order, which is absurd. Otherwise, $y \leq x$ holds in the coproduct, which yields the same contradiction.'
-),
-(
     'Delta',
     'sequential colimits',
     FALSE,
@@ -122,12 +110,6 @@ VALUES
     'sequential limits',
     FALSE,
     'We can just copy the <a href="/category/FinOrd">proof for $\FinOrd$</a> to show that the sequence of truncations $\cdots \twoheadrightarrow [2] \twoheadrightarrow [1] \twoheadrightarrow [0]$ has no limit.'
-),
-(
-    'Delta',
-    'essentially finite',
-    FALSE,
-    'The set $\IN$ is not finite.'
 ),
 (
     'Delta',

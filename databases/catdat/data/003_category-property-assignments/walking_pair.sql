@@ -55,12 +55,6 @@ VALUES
 ),
 (
 	'walking_pair',
-	'initial object',
-	FALSE,
-	'$0$ is not initial since it has two morphisms to $1$, and $1$ has not initial since it has no morphism to $0$.'
-),
-(
-	'walking_pair',
 	'pullbacks',
 	FALSE,
 	'The two morphisms $a,b : 0 \rightrightarrows 1$ have no pullback, since it would have to consist of identities $0 \leftarrow 0 \rightarrow 0$, but $a \neq b$.'

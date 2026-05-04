@@ -109,12 +109,6 @@ VALUES
 ),
 (
 	'FinGrp',
-	'countable powers',
-	FALSE,
-	'If countable powers exist, then by <a href="/lemma/hilberts_hotel">Hilbert''s Hotel</a> there is some object $P$ with $P \cong C_2 \times P$. If $P$ has $n$ elements, this means $n = 2n$, i.e. $n = 0$, a contradiction.'
-),
-(
-	'FinGrp',
 	'sequential colimits',
 	FALSE,
 	'This follows from <a href="/lemma/special_sequential_colimits">this lemma</a>.'

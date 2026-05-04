@@ -55,12 +55,6 @@ VALUES
 ),
 (
 	'walking_commutative_square',
-	'trivial',
-	FALSE,
-	'This is trivial.'
-),
-(
-	'walking_commutative_square',
 	'finitary algebraic',
 	FALSE,
 	'This follows from <a href="/lemma/thin_algebraic_categories">this lemma</a>.'

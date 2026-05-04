@@ -55,18 +55,6 @@ VALUES
 ),
 (
 	'Ab_fg',
-	'countable powers',
-	FALSE,
-	'If countable powers exist, then by <a href="/lemma/hilberts_hotel">Hilbert''s Hotel</a> there is some object $P$ with $P \cong \IZ \times P$. Tensoring with $\IQ$ yields an isomorphism of finite-dimensional vector spaces $P_{\IQ} \cong \IQ \times P_{\IQ}$, which is impossible: the dimension $d$ of $P_{\IQ}$ (i.e. the rank of $P$) would satisfy $d = 1+d$.'
-),
-(
-	'Ab_fg',
-	'countable copowers',
-	FALSE,
-	'If countable powers exist, then by <a href="/lemma/hilberts_hotel">Hilbert''s Hotel</a> there is some object $P$ with $P \cong \IZ \oplus P$. Tensoring with $\IQ$ yields an isomorphism of finite-dimensional vector spaces $C_{\IQ} \cong \IQ \oplus C_{\IQ}$, which is impossible: the dimension $d$ of $C_{\IQ}$ (i.e. the rank of $C$) would satisfy $d = 1+d$.'
-),
-(
-	'Ab_fg',
 	'skeletal',
 	FALSE,
 	'This is trivial.'

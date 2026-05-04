@@ -91,12 +91,6 @@ VALUES
 ),
 (
 	'FI',
-	'essentially finite',
-	FALSE,
-	'This is trivial.'
-),
-(
-	'FI',
 	'skeletal',
 	FALSE,
 	'This is trivial.'

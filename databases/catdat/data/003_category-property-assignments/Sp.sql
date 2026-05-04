@@ -37,12 +37,6 @@ VALUES
 ),
 (
 	'Sp',
-	'countable copowers',
-	FALSE,
-	'If $\Sp \simeq \FinSet \times \prod_{n > 0} \Sigma_n{-}\FinSet$ has countable copowers, then $\FinSet$ has countable copowers as well by <a href="/lemma/limits_in_factor_categories">this lemma</a> (dualized), which we already know is false (see <a href="/category/FinSet">here</a>).'
-),	
-(
-	'Sp',
 	'skeletal',
 	FALSE,
 	'This is trivial.'

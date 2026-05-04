@@ -55,12 +55,6 @@ VALUES
 ),
 (
 	'FinAb',
-	'countable powers',
-	FALSE,
-	'If countable powers exist, then by <a href="/lemma/hilberts_hotel">Hilbert''s Hotel</a> there is some object $P$ with $P \cong \IZ/2 \times P$. If $P$ has $n$ elements, this means $n = 2n$, i.e. $n = 0$, a contradiction.'
-),
-(
-	'FinAb',
 	'skeletal',
 	FALSE,
 	'There are many trivial and hence isomorphic groups which are not equal.'

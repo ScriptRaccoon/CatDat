@@ -43,12 +43,6 @@ VALUES
 ),
 (
 	'Z_div',
-	'essentially finite',
-	FALSE,
-	'The non-negative integers are pairwise non-isomorphic in this category.'
-),
-(
-	'Z_div',
 	'skeletal',
 	FALSE,
 	'The integers $+1$ and $-1$ are isomorphic, but not equal.'

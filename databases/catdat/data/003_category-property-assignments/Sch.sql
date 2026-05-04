@@ -37,12 +37,6 @@ VALUES
 ),
 (
 	'Sch',
-	'pushouts',
-	FALSE,
-	'The span $\IA^1 \leftarrow \Spec(k(t)) \rightarrow \IA^1$ has no pushout, see <a href="https://mathoverflow.net/questions/9961" target="_blank">MO/9961</a>.'
-),
-(
-	'Sch',
 	'countable powers',
 	FALSE,
 	'While all diagrams of affine schemes have a limit in the category of schemes, one can show that an infinite product of quasi-compact non-empty schemes only exists when almost all of them are affine, see <a href="https://mathoverflow.net/questions/65506" target="_blank">MO/65506</a>. Thus, for example the power $(\IP^1)^{\IN}$ does not exist in $\Sch$.'

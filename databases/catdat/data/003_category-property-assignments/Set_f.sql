@@ -137,11 +137,4 @@ VALUES
 	'sequential limits',
 	FALSE,
 	'Consider the set $[n] := \{0,\dotsc,n\}$ for $n \in \IN$. The forgetful functor to $\Set$ is representable (by the singleton set), hence preserves all limits. Thus, if the diagram of truncation maps $\cdots \twoheadrightarrow [2] \twoheadrightarrow [1] \twoheadrightarrow [0]$ has a limit in $\Set_\f$, its underlying set is isomorphic to the limit taken in $\Set$, which is $\IN \cup \{\infty\}$. But there is no finite-to-one map $\IN \cup \{\infty\} \to [0]$.'
-),
-(
-	'Set_f',
-	'multi-cocomplete',
-	FALSE,
-	'We will prove that the family of singleton sets $(1)_{n \in \IN}$ has no multi-coproduct, generalizing the proof that the family does not have a coproduct given above. A cocone is just a map of sets $f : \IN \to X$. A morphism from $f : \IN \to X$ to $g : \IN \to Y$ is a finite-to-one map $h : X \to Y$ with $g = h \circ f$. This describes the category of cocones, and we need to show that it has no multi-initial object. To this end, we claim that the connected component of the unique map $! : \IN \to 1$ consists precisely of the maps $f : \IN \to X$ with finite image. Once that is established, we can recycle the proof for missing coproducts since there we have only used finite codomains.<br>
-	Let $g = h \circ f$ be as above. If $\im(f)$ is finite, then $\im(g) = h_*(\im(f))$ is finite as well. Conversely, if $\im(g)$ is finite, then $\im(f) \subseteq \bigcup_{y \in \im(g)} h^*(\{y\})$ is finite as well. This shows that the connected component of $!$ is contained in the collection of maps with finite image. Conversely, if $f$ has finite image, then there is a morphism from the corestriction $f'' : \IN \to \im(f)$ to $f$, and also a morphism from $f''$ to $!$. This proves the remaining inclusion.'
 );

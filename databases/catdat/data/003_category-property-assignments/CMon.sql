@@ -31,12 +31,6 @@ VALUES
 ),
 (
 	'CMon',
-	'preadditive',
-	FALSE,
-	'In categories with finite products and finite coproducts, the preadditive structure <a href="/lemma/preadditive_structure_unique">is unique</a> if it exists. In the case of $\CMon$, this is just the pointwise addition of maps. This is indeed an enrichment of $\CMon$ over itself, but not over $\Ab$, since for example $\Hom(\IN,\IN) \cong \IN$ (with respect to addition) is not a group.'
-),
-(
-	'CMon',
 	'balanced',
 	FALSE,
 	'The inclusion of additive monoids $\IN \hookrightarrow \IZ$ is a counterexample.'

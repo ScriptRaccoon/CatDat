@@ -73,18 +73,6 @@ VALUES
 ),
 (
 	'walking_fork',
-	'terminal object',
-	FALSE,
-	'$0$ and $1$ are not terminal since there is no morphism from $2$, and $2$ is not terminal since there are two different morphisms $1 \rightrightarrows 2$.'
-),
-(
-	'walking_fork',
-	'right cancellative',
-	FALSE,
-	'By construction, $i$ is not an epimorphism: $f \circ i = g \circ i$ and $f \neq g$.'
-),
-(
-	'walking_fork',
 	'balanced',
 	FALSE,
 	'Both $f$ and $g$ are monomorphisms and epimorphisms.'

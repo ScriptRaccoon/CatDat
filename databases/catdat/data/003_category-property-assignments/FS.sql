@@ -85,12 +85,6 @@ VALUES
 ),
 (
 	'FS',
-	'essentially finite',
-	FALSE,
-	'This is trivial.'
-),
-(
-	'FS',
 	'skeletal',
 	FALSE,
 	'This is trivial.'
