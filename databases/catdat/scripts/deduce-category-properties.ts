@@ -34,6 +34,7 @@ export function deduce_category_properties(db: Database) {
 				decided_properties[category.id].satisfied,
 				properties_dict,
 			)
+
 			deduce_unsatisfied_category_properties(
 				db,
 				category.id,
@@ -70,6 +71,7 @@ export function deduce_category_properties(db: Database) {
 				properties_dict,
 				{ check_conflicts: false },
 			)
+
 			deduce_unsatisfied_category_properties(
 				db,
 				category.id,
@@ -96,6 +98,7 @@ function delete_deduced_category_properties(db: Database) {
 /**
  * Deduce satisfied properties for a given category from given ones
  * by using the list of normalized implications.
+ * Warning: This function mutates the set of satisfied properties.
  */
 function deduce_satisfied_category_properties(
 	db: Database,
@@ -105,36 +108,44 @@ function deduce_satisfied_category_properties(
 	properties_dict: Record<string, CategoryPropertyMeta>,
 	options: { check_conflicts: boolean } = { check_conflicts: true },
 ) {
-	const deduced_satisfied_props: string[] = []
+	const found = new Set<string>()
 	const reasons: Record<string, string> = {}
 
+	/**
+	 * Returns the next implication yielding a satisfied property:
+	 * When all of its assumptions are satisfied, its conclusion is satisfied.
+	 */
+	function get_next_implication() {
+		for (const implication of implications) {
+			const is_valid =
+				is_subset(implication.assumptions, satisfied_properties) &&
+				!satisfied_properties.has(implication.conclusion)
+			if (is_valid) return implication
+		}
+		return null
+	}
+
 	while (true) {
-		const implication = implications.find(
-			({ assumptions, conclusion }) =>
-				is_subset(assumptions, satisfied_properties) &&
-				!satisfied_properties.has(conclusion),
-		)
+		const implication = get_next_implication()
 		if (!implication) break
 
-		const { id: implication_id, conclusion } = implication
-
-		satisfied_properties.add(conclusion)
-		deduced_satisfied_props.push(conclusion)
+		satisfied_properties.add(implication.conclusion)
+		found.add(implication.conclusion)
 
 		const assumption_string = get_assumption_string(implication, properties_dict)
 		const conclusion_string = get_conclusion_string(implication, properties_dict)
 
-		const ref = `by <a href="/category-implication/${implication_id}">this result</a>`
+		const ref = `by <a href="/category-implication/${implication.id}">this result</a>`
 		const reason = `Since it ${assumption_string}, it ${conclusion_string} (${ref}).`
 
-		reasons[conclusion] = reason
+		reasons[implication.conclusion] = reason
 	}
 
-	if (deduced_satisfied_props.length > 0) {
+	if (found.size > 0) {
 		const value_fragments: string[] = []
 		const values: (string | number)[] = []
 
-		for (const id of deduced_satisfied_props) {
+		for (const id of found) {
 			value_fragments.push(`(?, ?, TRUE, ?, TRUE)`)
 			values.push(category_id, id, reasons[id])
 		}
@@ -167,14 +178,13 @@ function deduce_satisfied_category_properties(
 		}
 	}
 
-	console.info(
-		`Deduced ${deduced_satisfied_props.length} satisfied properties for ${category_id}`,
-	)
+	console.info(`Deduced ${found.size} satisfied properties for ${category_id}`)
 }
 
 /**
  * Deduce unsatisfied properties for a given category from given ones
  * by using the satisfied properties and the list of normalized implications.
+ * Warning: This function mutates the set of unsatisfied properties.
  */
 function deduce_unsatisfied_category_properties(
 	db: Database,
@@ -185,9 +195,15 @@ function deduce_unsatisfied_category_properties(
 	properties_dict: Record<string, CategoryPropertyMeta>,
 	options: { check_conflicts: boolean } = { check_conflicts: true },
 ) {
-	const deduced_unsatisfied_props: string[] = []
+	const found = new Set<string>()
 	const reasons: Record<string, string> = {}
 
+	/**
+	 * Returns the next implication together with an unsatisfied property:
+	 * If the implication has the form P + Q1 + Q2 + ... ===> R and
+	 * Q1, Q2, ... are satisfied, but R is not, then P is not satisfied.
+	 * This is a proof by contradiction.
+	 */
 	function get_next_implication() {
 		for (const implication of implications) {
 			if (!unsatisfied_properties.has(implication.conclusion)) continue
@@ -198,7 +214,6 @@ function deduce_unsatisfied_category_properties(
 				if (is_valid) return { implication, property: p }
 			}
 		}
-
 		return null
 	}
 
@@ -207,14 +222,13 @@ function deduce_unsatisfied_category_properties(
 		if (!next) break
 
 		const { implication, property } = next
-		const { id: implication_id } = implication
 
 		if (satisfied_properties.has(property)) {
 			throw new Error(`Contradiction has been found for: ${property}`)
 		}
 
 		unsatisfied_properties.add(property)
-		deduced_unsatisfied_props.push(property)
+		found.add(property)
 
 		const assumption_string = get_assumption_string(
 			implication,
@@ -229,7 +243,7 @@ function deduce_unsatisfied_category_properties(
 
 		const has_multiple_assumptions = implication.assumptions.size > 1
 
-		const ref = `by <a href="/category-implication/${implication_id}">this result</a>`
+		const ref = `by <a href="/category-implication/${implication.id}">this result</a>`
 
 		const contra = `Assume for contradiction that it ${properties_dict[property].relation} ${property}`
 
@@ -240,11 +254,11 @@ function deduce_unsatisfied_category_properties(
 		reasons[property] = reason
 	}
 
-	if (deduced_unsatisfied_props.length > 0) {
+	if (found.size > 0) {
 		const value_fragments: string[] = []
 		const values: (string | number)[] = []
 
-		for (const id of deduced_unsatisfied_props) {
+		for (const id of found) {
 			value_fragments.push('(?, ?, FALSE, ?, TRUE)')
 			values.push(category_id, id, reasons[id])
 		}
@@ -277,9 +291,7 @@ function deduce_unsatisfied_category_properties(
 		}
 	}
 
-	console.info(
-		`Deduced ${deduced_unsatisfied_props.length} unsatisfied properties for ${category_id}`,
-	)
+	console.info(`Deduced ${found.size} unsatisfied properties for ${category_id}`)
 }
 
 /**
