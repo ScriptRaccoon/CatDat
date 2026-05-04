@@ -45,11 +45,13 @@ function check_redundant_category_property_assignments() {
 			redundancy_count++
 		}
 
+		const all_satisfied_properties = new Set([
+			...assignments[category.id].satisfied.non_deduced,
+			...assignments[category.id].satisfied.deduced,
+		])
+
 		const redundant_unsatisfied_property = get_redundant_unsatisfied_property(
-			new Set([
-				...assignments[category.id].satisfied.non_deduced,
-				...assignments[category.id].satisfied.deduced,
-			]),
+			all_satisfied_properties,
 			assignments[category.id].unsatisfied.non_deduced,
 			implications,
 		)
@@ -110,13 +112,15 @@ function get_redundant_satisfied_property(
 	satisfied_properties: Set<string>,
 	implications: NormalizedCategoryImplication[],
 ) {
-	for (const p of satisfied_properties) {
-		const copy = new Set(satisfied_properties)
-		copy.delete(p)
-		const deduced_properties = get_deduced_satisfied_properties(copy, implications, {
-			stop_when_found: p,
-		})
+	for (const p of [...satisfied_properties]) {
+		satisfied_properties.delete(p)
+		const deduced_properties = get_deduced_satisfied_properties(
+			satisfied_properties,
+			implications,
+			{ stop_when_found: p },
+		)
 		if (deduced_properties.has(p)) return p
+		satisfied_properties.add(p)
 	}
 	return null
 }
@@ -176,16 +180,16 @@ function get_redundant_unsatisfied_property(
 	unsatisfied_properties: Set<string>,
 	implications: NormalizedCategoryImplication[],
 ) {
-	for (const p of unsatisfied_properties) {
-		const copy = new Set(unsatisfied_properties)
-		copy.delete(p)
+	for (const p of [...unsatisfied_properties]) {
+		unsatisfied_properties.delete(p)
 		const deduced_properties = get_deduced_unsatisfied_properties(
 			satisfied_properties,
-			copy,
+			unsatisfied_properties,
 			implications,
 			{ stop_when_found: p },
 		)
 		if (deduced_properties.has(p)) return p
+		unsatisfied_properties.add(p)
 	}
 	return null
 }
