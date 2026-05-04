@@ -76,7 +76,7 @@ export function search_handler(event: RequestEvent, type: 'category' | 'functor'
 			new Set(unsatisfied_properties),
 		)
 
-		if (!check) error(500, 'Search failed')
+		if (!check) error(500, 'Consistency check failed')
 
 		if (!check.consistent) {
 			event.setHeaders({

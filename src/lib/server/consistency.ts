@@ -1,7 +1,14 @@
 import sql from 'sql-template-tag'
 import { query } from '$lib/server/db.catdat'
+import { is_subset } from './utils'
 
-type AtomicImplication = { assumptions: string[]; conclusion: string }
+// TODO: If possible, remove the code duplication with deduction and redundancy scripts.
+
+type NormalizedCategoryImplication = {
+	id: string
+	assumptions: Set<string>
+	conclusion: string
+}
 
 export function check_consistency(
 	satisfied_properties: Set<string>,
@@ -11,7 +18,7 @@ export function check_consistency(
 		if (unsatisfied_properties.has(p)) return { consistent: false }
 	}
 
-	const implications = get_atomic_implications()
+	const implications = get_normalized_category_implications()
 	if (!implications) return null
 
 	return check_consistency_worker(
@@ -24,72 +31,82 @@ export function check_consistency(
 function check_consistency_worker(
 	satisfied_properties: Set<string>,
 	unsatisfied_properties: Set<string>,
-	implications: AtomicImplication[],
+	implications: NormalizedCategoryImplication[],
 ): { consistent: boolean } {
 	for (const p of satisfied_properties) {
 		if (unsatisfied_properties.has(p)) return { consistent: false }
 	}
 
-	const all_satisfied_properties = new Set(satisfied_properties)
+	const deduced_satisfied_properties = new Set(satisfied_properties)
+
+	function get_next_implication() {
+		for (const implication of implications) {
+			const is_valid =
+				is_subset(implication.assumptions, deduced_satisfied_properties) &&
+				!deduced_satisfied_properties.has(implication.conclusion)
+			if (is_valid) return implication
+		}
+		return null
+	}
 
 	while (true) {
-		const implication = implications.find(
-			({ assumptions, conclusion }) =>
-				assumptions.every((p) => all_satisfied_properties.has(p)) &&
-				!all_satisfied_properties.has(conclusion),
-		)
+		const implication = get_next_implication()
 		if (!implication) break
 
-		const { conclusion } = implication
+		if (unsatisfied_properties.has(implication.conclusion)) {
+			return { consistent: false }
+		}
 
-		if (unsatisfied_properties.has(conclusion)) return { consistent: false }
-
-		all_satisfied_properties.add(conclusion)
+		deduced_satisfied_properties.add(implication.conclusion)
 	}
 
 	return { consistent: true }
 }
 
-function get_atomic_implications(): AtomicImplication[] | null {
-	const { rows: implications, err } = query<{
+export function get_normalized_category_implications():
+	| NormalizedCategoryImplication[]
+	| null {
+	const { rows, err } = query<{
+		id: string
 		assumptions: string
 		conclusions: string
 		is_equivalence: number
-	}>(sql`
-        SELECT assumptions, conclusions, is_equivalence
-        FROM category_implications_view
-    `)
+	}>(
+		sql`SELECT id, assumptions, conclusions, is_equivalence FROM category_implications_view`,
+	)
 
 	if (err) return null
 
-	const atomic_implications: AtomicImplication[] = []
+	const implications: NormalizedCategoryImplication[] = []
 
-	for (const implication of implications) {
-		const assumptions: string[] = JSON.parse(implication.assumptions)
-		const conclusions: string[] = JSON.parse(implication.conclusions)
+	for (const impl of rows) {
+		const assumptions: string[] = JSON.parse(impl.assumptions)
+		const conclusions: string[] = JSON.parse(impl.conclusions)
 
 		for (const conclusion of conclusions) {
-			atomic_implications.push({
-				assumptions: assumptions.slice(),
+			implications.push({
+				id: impl.id,
+				assumptions: new Set(assumptions),
 				conclusion,
 			})
 		}
 
-		if (implication.is_equivalence) {
+		if (impl.is_equivalence) {
 			for (const assumption of assumptions) {
-				atomic_implications.push({
-					assumptions: conclusions.slice(),
+				implications.push({
+					id: impl.id,
+					assumptions: new Set(conclusions),
 					conclusion: assumption,
 				})
 			}
 		}
 	}
 
-	return atomic_implications
+	return implications
 }
 
 export function get_missing_combinations() {
-	const implications = get_atomic_implications()
+	const implications = get_normalized_category_implications()
 	if (!implications) return null
 
 	const { rows: properties, err } = query<{
