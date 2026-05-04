@@ -84,17 +84,28 @@ function get_deduced_satisfied_properties(
 ) {
 	const deduced_properties = new Set(satisfied_properties)
 
-	while (true) {
-		const implication = implications.find(
-			({ assumptions, conclusion }) =>
+	/**
+	 * Finds a satisfied property as follows: If an implication has the form
+	 * P1 + P2 + ... ===> Q,
+	 * where P1, P2, ... are satisfied, then P is satisfied as well.
+	 */
+	function get_next_satisfied_property() {
+		for (const { assumptions, conclusion } of implications) {
+			const is_valid =
 				is_subset(assumptions, deduced_properties) &&
-				!deduced_properties.has(conclusion),
-		)
-		if (!implication) break
+				!deduced_properties.has(conclusion)
+			if (is_valid) return conclusion
+		}
+		return null
+	}
 
-		deduced_properties.add(implication.conclusion)
+	while (true) {
+		const property = get_next_satisfied_property()
+		if (!property) break
 
-		if (options?.stop_when_found === implication.conclusion) {
+		deduced_properties.add(property)
+
+		if (options?.stop_when_found === property) {
 			return deduced_properties
 		}
 	}
@@ -139,14 +150,20 @@ function get_deduced_unsatisfied_properties(
 ) {
 	const deduced_unsatisfied_properties = new Set(unsatisfied_properties)
 
-	function get_next_implication() {
-		for (const implication of implications) {
-			if (!deduced_unsatisfied_properties.has(implication.conclusion)) continue
-			for (const p of implication.assumptions) {
+	/**
+	 * Finds an unsatisfied property as follows: If an implication has the form
+	 * P + Q1 + Q2 + ... ===> R,
+	 * where R is unsatisfied, but Q1, Q2, ... are satisfied, then
+	 * P must be unsatisfied: this is a proof by contradiction.
+	 */
+	function get_next_unsatisfied_property() {
+		for (const { assumptions, conclusion } of implications) {
+			if (!deduced_unsatisfied_properties.has(conclusion)) continue
+			for (const p of assumptions) {
 				const is_valid =
 					!deduced_unsatisfied_properties.has(p) &&
-					is_subset(implication.assumptions, satisfied_properties, p)
-				if (is_valid) return { implication, property: p }
+					is_subset(assumptions, satisfied_properties, p)
+				if (is_valid) return p
 			}
 		}
 
@@ -154,10 +171,8 @@ function get_deduced_unsatisfied_properties(
 	}
 
 	while (true) {
-		const next = get_next_implication()
-		if (!next) break
-
-		const { property } = next
+		const property = get_next_unsatisfied_property()
+		if (!property) break
 
 		deduced_unsatisfied_properties.add(property)
 
