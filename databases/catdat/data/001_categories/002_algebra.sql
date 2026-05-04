@@ -5,8 +5,7 @@ INSERT INTO categories (
 	objects,
 	morphisms,
 	description,
-	nlab_link,
-	dual_category_id
+	nlab_link
 )
 VALUES
 (
@@ -16,8 +15,7 @@ VALUES
 	'abelian groups',
 	'group homomorphisms',
 	'This is the prototype of an abelian category.',
-	'https://ncatlab.org/nlab/show/Ab',
-	NULL
+	'https://ncatlab.org/nlab/show/Ab'
 ),
 (
 	'Grp',
@@ -26,8 +24,7 @@ VALUES
 	'groups',
 	'group homomorphisms',
 	'This is the prototype of a finitary algebraic category.',
-	'https://ncatlab.org/nlab/show/Grp',
-	NULL
+	'https://ncatlab.org/nlab/show/Grp'
 ),
 (
 	'Vect',
@@ -36,8 +33,7 @@ VALUES
 	'vector spaces over a field $K$',
 	'linear maps',
 	'This is a special case of the category of modules over a ring, where the ring is a field. It is the prototype of a split abelian category.',
-	'https://ncatlab.org/nlab/show/Vect',
-	NULL
+	'https://ncatlab.org/nlab/show/Vect'
 ),
 (
 	'Ring',
@@ -46,8 +42,7 @@ VALUES
 	'rings',
 	'ring homomorphisms',
 	'Here, rings always have a unit, and homomorphisms preserve them.',
-	'https://ncatlab.org/nlab/show/Ring',
-	NULL
+	'https://ncatlab.org/nlab/show/Ring'
 ),
 (
 	'Alg(R)',
@@ -56,8 +51,7 @@ VALUES
 	'algebras over a commutative ring $R \neq 0$',
 	'maps preserving the ring and module structure',
 	'This is a generalization of the category of rings, which we get for $R = \IZ$. We assume our rings (and algebras) to be unital. For $R = 0$ we would get the trivial category, which is why we exclude this here.',
-	'https://ncatlab.org/nlab/show/Alg',
-	NULL
+	'https://ncatlab.org/nlab/show/Alg'
 ),
 (
 	'CRing',
@@ -66,8 +60,7 @@ VALUES
 	'commutative rings',
 	'ring homomorphisms',
 	NULL,
-	'https://ncatlab.org/nlab/show/CRing',
-	NULL
+	'https://ncatlab.org/nlab/show/CRing'
 ),
 (
 	'CAlg(R)',
@@ -76,8 +69,7 @@ VALUES
 	'commutative algebras over a commutative ring $R \neq 0$',
 	'maps preserving the ring and module structure',
 	'This is a generalization of the category of commutative rings, which we get for $R = \IZ$. In general, $\CAlg(R) \cong R \,/\, \CRing$. We assume our rings (and algebras) to be unital. For $R = 0$ we would get the trivial category, which is why we exclude this here.',
-	'https://ncatlab.org/nlab/show/CommAlg',
-	NULL
+	'https://ncatlab.org/nlab/show/CommAlg'
 ),
 (
 	'Rng',
@@ -86,8 +78,7 @@ VALUES
 	'rngs, that is, non-unital rings',
 	'maps that preserve addition and multiplication',
 	NULL,
-	'https://ncatlab.org/nlab/show/Rng',
-	NULL
+	'https://ncatlab.org/nlab/show/Rng'
 ),
 (
 	'Mon',
@@ -96,8 +87,7 @@ VALUES
 	'monoids',
 	'monoid homomorphisms',
 	NULL,
-	'https://ncatlab.org/nlab/show/category+of+monoids',
-	NULL
+	'https://ncatlab.org/nlab/show/category+of+monoids'
 ),
 (
 	'CMon',
@@ -106,8 +96,7 @@ VALUES
 	'commutative monoids',
 	'monoid homomorphisms',
 	NULL,
-	'https://ncatlab.org/nlab/show/category+of+monoids',
-	NULL
+	'https://ncatlab.org/nlab/show/category+of+monoids'
 ),
 (
 	'M-Set',
@@ -116,8 +105,7 @@ VALUES
 	'sets with a left action of a monoid $M$',
 	'maps that are compatible with the $M$-action, meaning $f(m \cdot x)=m \cdot f(x)$, also called $M$-maps',
 	'Here, $M$ can be any monoid. But the most important special case is that of a group. To settle (future) non-properties, we assume that $M$ is non-trivial, since otherwise we just get the <a href="/category/Set">category of sets</a>.',
-	'https://ncatlab.org/nlab/show/MSet',
-	NULL
+	'https://ncatlab.org/nlab/show/MSet'
 ),
 (
 	'R-Mod',
@@ -127,8 +115,7 @@ VALUES
 	'$R$-linear maps',
 	'This is the prototype of an abelian category. The category of right modules is the same with the opposite ring $R^{\op}$, hence not listed here.<br>
 	To settle the unsatisfied properties, we make the assumption that $R$ is <i>not</i> semisimple: If $R$ is semisimple, then by the Artin-Wedderburn theorem, the category is equivalent to a finite direct product of categories $D{-}\Mod$ for division rings $D$, and the case of division rings is in a separate entry. In particular, $R \neq 0$ and $R$ is not a field.',
-	'https://ncatlab.org/nlab/show/module',
-	NULL
+	'https://ncatlab.org/nlab/show/module'
 ),
 (
 	'R-Mod_div',
@@ -137,8 +124,7 @@ VALUES
 	'left $R$-modules',
 	'$R$-linear maps',
 	'Here, we assume that $R$ is a non-commutative division ring, i.e. a skew-field which is not a field. The category of modules behaves mostly the same as in the commutative case.',
-	'https://ncatlab.org/nlab/show/module',
-	NULL
+	'https://ncatlab.org/nlab/show/module'
 ),
 (
 	'Fld',
@@ -147,8 +133,7 @@ VALUES
 	'fields',
 	'field homomorphisms (i.e., ring homomorphisms)',
 	'This is a typical example of a bad category of good objects.',
-	'https://ncatlab.org/nlab/show/Field',
-	NULL
+	'https://ncatlab.org/nlab/show/Field'
 ),
 (
 	'FinAb',
@@ -157,8 +142,7 @@ VALUES
 	'finite abelian groups',
 	'group homomorphisms',
 	NULL,
-	'https://ncatlab.org/nlab/show/finite+abelian+group',
-	NULL
+	'https://ncatlab.org/nlab/show/finite+abelian+group'
 ),
 (
 	'FinGrp',
@@ -167,8 +151,7 @@ VALUES
 	'finite groups',
 	'group homomorphisms',
 	NULL,
-	'https://ncatlab.org/nlab/show/finite+group',
-	NULL
+	'https://ncatlab.org/nlab/show/finite+group'
 ),
 (
 	'Ab_fg',
@@ -177,8 +160,7 @@ VALUES
 	'finitely generated abelian groups',
 	'group homomorphisms',
 	NULL,
-	'https://ncatlab.org/nlab/show/finitely+generated+module',
-	NULL
+	'https://ncatlab.org/nlab/show/finitely+generated+module'
 ),
 (
 	'FreeAb',
@@ -186,7 +168,6 @@ VALUES
 	'$\FreeAb$',
 	'free abelian groups',
 	'group homomorphisms',
-	NULL,
 	NULL,
 	NULL
 ),
@@ -197,8 +178,7 @@ VALUES
 	'torsion-free abelian groups',
 	'group homomorphisms',
 	'This is a typical example of a well-behaved additive category which is <i>not</i> abelian. It contains the category of free abelian groups.',
-	'https://ncatlab.org/nlab/show/torsion-free+module',
-	NULL
+	'https://ncatlab.org/nlab/show/torsion-free+module'
 ),
 (
 	'TorsAb',
@@ -207,8 +187,7 @@ VALUES
 	'torsion abelian groups',
 	'group homomorphisms',
 	'This is a Grothendieck abelian category containing all finite abelian groups.',
-	'https://ncatlab.org/nlab/show/torsion+subgroup',
-	NULL
+	'https://ncatlab.org/nlab/show/torsion+subgroup'
 ),
 (
 	'Cat',
@@ -217,8 +196,7 @@ VALUES
 	'small categories',
 	'functors',
 	'This is the category of small categories and functors between them. It is the prototype of a 2-category, but here we only treat it as a 1-category.',
-	'https://ncatlab.org/nlab/show/Cat',
-	NULL
+	'https://ncatlab.org/nlab/show/Cat'
 ),
 (
 	'J2',
@@ -227,6 +205,5 @@ VALUES
 	'pairs $(X,\alpha)$, where $X$ is a set and $\alpha : X \to X \times X$ is an isomorphism',
 	'A morphism $(X,\alpha) \to (Y,\beta)$ is a map $f : X \to Y$ satisfying $$(f \times f) \circ \alpha = \beta \circ f.$$',
 	'This is interesting example of a category in the intersection of topos theory and algebra.',
-	'https://ncatlab.org/nlab/show/J%C3%B3nsson-Tarski+algebra',
-	NULL
+	'https://ncatlab.org/nlab/show/J%C3%B3nsson-Tarski+algebra'
 );

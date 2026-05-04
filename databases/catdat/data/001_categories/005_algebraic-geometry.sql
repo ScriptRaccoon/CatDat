@@ -5,8 +5,7 @@ INSERT INTO categories (
 	objects,
 	morphisms,
 	description,
-	nlab_link,
-	dual_category_id
+	nlab_link
 )
 VALUES
 (
@@ -16,8 +15,7 @@ VALUES
 	'sheaves of sets on a topological space $X$',
 	'morphisms of sheaves',
 	'Here, we assume that the topological space $X$ is neither discrete nor indiscrete, since otherwise this category is just a product of copies of $\Set$. Another valid notation is $\Sh(X,\Set)$.',
-	'https://ncatlab.org/nlab/show/category+of+sheaves',
-	NULL
+	'https://ncatlab.org/nlab/show/category+of+sheaves'
 ),
 (
 	'Sh(X,Ab)',
@@ -26,8 +24,7 @@ VALUES
 	'sheaves of abelian groups on a topological space $X$',
 	'morphisms of sheaves',
 	'Here, we assume that the topological space $X$ is neither discrete nor indiscrete, since otherwise this category is just a product of copies of $\Ab$.',
-	'https://ncatlab.org/nlab/show/sheaf+of+abelian+groups',
-	NULL
+	'https://ncatlab.org/nlab/show/sheaf+of+abelian+groups'
 ),
 (
 	'LRS',
@@ -36,8 +33,7 @@ VALUES
 	'locally ringed spaces',
 	'morphisms of locally ringed spaces, thus consisting of a continuous map and a homomorphism of sheaves that induces local ring homomorphisms in the stalks',
 	NULL,
-	'https://ncatlab.org/nlab/show/locally+ringed+topological+space',
-	NULL
+	'https://ncatlab.org/nlab/show/locally+ringed+topological+space'
 ),
 (
 	'Sch',
@@ -46,8 +42,7 @@ VALUES
 	'schemes',
 	'morphisms of locally ringed spaces',
 	NULL,
-	'https://ncatlab.org/nlab/show/scheme',
-	NULL
+	'https://ncatlab.org/nlab/show/scheme'
 ),
 (
 	'Z',
@@ -56,6 +51,5 @@ VALUES
 	'Z-functors, i.e. functors from commutative rings to sets',
 	'natural transformations',
 	'This category is used in functorial algebraic geometry. It also provides a typical example of a functor category that is not locally small, but nevertheless relevant. Most of its properties are directly derived from the category of sets, so other functor categories $[\C, \Set]$ for large categories $\C$ will be similar.',
-	NULL,
 	NULL
 );

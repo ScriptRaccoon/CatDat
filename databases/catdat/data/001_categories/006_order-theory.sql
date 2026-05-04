@@ -5,8 +5,7 @@ INSERT INTO categories (
 	objects,
 	morphisms,
 	description,
-	nlab_link,
-	dual_category_id
+	nlab_link
 )
 VALUES
 (
@@ -16,8 +15,7 @@ VALUES
 	'partially ordered sets (aka posets), i.e. sets equipped with a reflexive, transitive, antisymmetric relation',
 	'order-preserving functions',
 	'Even though there are many similarities with $\Prost$, the main difference is that the forgetful functor $\Pos \to \Set$ has no right adjoint.',
-	'https://ncatlab.org/nlab/show/Pos',
-	NULL
+	'https://ncatlab.org/nlab/show/Pos'
 ),
 (
 	'Prost',
@@ -26,8 +24,7 @@ VALUES
 	'preordered sets (aka prosets), i.e. sets equipped with a reflexive, transitive relation',
 	'order-preserving functions',
 	'Even though there are many similarities with $\Pos$, the main difference is that the forgetful functor $\Prost \to \Set$ has a right adjoint, mapping $X$ to $(X , X \times X)$ (chaotic preorder).',
-	'https://ncatlab.org/nlab/show/Prost',
-	NULL
+	'https://ncatlab.org/nlab/show/Prost'
 ),
 (
 	'FinOrd',
@@ -36,6 +33,5 @@ VALUES
 	'finite (totally) ordered sets',
 	'order-preserving maps',
 	'The finite ordered sets of the form $\{1 < \dotsc < n\}$ for $n \in \IN$ provide a skeleton (including the empty set for $n = 0$), the augmented simplex category.',
-	'https://ncatlab.org/nlab/show/total+order',
-	NULL
+	'https://ncatlab.org/nlab/show/total+order'
 );

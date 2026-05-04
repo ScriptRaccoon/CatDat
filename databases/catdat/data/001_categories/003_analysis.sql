@@ -5,8 +5,7 @@ INSERT INTO categories (
 	objects,
 	morphisms,
 	description,
-	nlab_link,
-	dual_category_id
+	nlab_link
 )
 VALUES
 (
@@ -16,8 +15,7 @@ VALUES
 	'Banach spaces over $\IC$',
 	'linear contractions, i.e. linear maps of norm $\leq 1$',
 	'The choice of morphisms is similar to that of $\Met$ which yields better categorical properties.',
-	'https://ncatlab.org/nlab/show/Banach+space',
-	NULL
+	'https://ncatlab.org/nlab/show/Banach+space'
 ),
 (
 	'Meas',
@@ -26,8 +24,7 @@ VALUES
 	'measurable spaces',
 	'measurable maps',
 	'This is very similar to the category of topological spaces. Accordingly, limits and colimits can be constructed in the same way.',
-	'https://ncatlab.org/nlab/show/Meas',
-	NULL
+	'https://ncatlab.org/nlab/show/Meas'
 ),
 (
 	'Met',
@@ -36,8 +33,7 @@ VALUES
 	'metric spaces',
 	'non-expansive maps $f$, meaning $d(f(x),f(y)) \leq d(x,y)$ for all $x,y$',
 	'In contrast to continuous maps, which only refer to the induced topology, non-expansive maps are closer related to the metrics themselves. This category is badly-behaved, though, especially when compared with $\Met_{\infty}$.',
-	'https://ncatlab.org/nlab/show/Met',
-	NULL
+	'https://ncatlab.org/nlab/show/Met'
 ),
 (
 	'PMet',
@@ -46,7 +42,6 @@ VALUES
 	'pseudo-metric spaces',
 	'non-expansive maps $f$, meaning $d(f(x),f(y)) \leq d(x,y)$ for all $x,y$',
 	'In contrast to metric spaces, we do not demand $d(x,y)=0 \implies x=y$ here.',
-	NULL,
 	NULL
 ),
 (
@@ -56,8 +51,7 @@ VALUES
 	'metric spaces, where the metric is allowed to assume the value $\infty$',
 	'non-expansive maps $f$, meaning $d(f(x),f(y)) \leq d(x,y)$ for all $x,y$',
 	'The fact that we allow $\infty$ means that universal constructions work much better when compared to $\Met$.',
-	'https://ncatlab.org/nlab/show/Met',
-	NULL
+	'https://ncatlab.org/nlab/show/Met'
 ),
 (
 	'Met_c',
@@ -66,6 +60,5 @@ VALUES
 	'metric spaces',
 	'continuous maps',
 	'This category is equivalent to the subcategory of $\Top$ (or $\Haus$) that consists of metrizable topological spaces. Hence, the metrics only play a secondary role here.',
-	'https://ncatlab.org/nlab/show/metrisable+topological+space',
-	NULL
+	'https://ncatlab.org/nlab/show/metrisable+topological+space'
 );

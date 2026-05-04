@@ -5,8 +5,7 @@ INSERT INTO categories (
 	objects,
 	morphisms,
 	description,
-	nlab_link,
-	dual_category_id
+	nlab_link
 )
 VALUES
 (
@@ -16,8 +15,7 @@ VALUES
 	'topological spaces',
 	'continuous functions',
 	'This is the most basic category of geometric objects.',
-	'https://ncatlab.org/nlab/show/Top',
-	NULL
+	'https://ncatlab.org/nlab/show/Top'
 ),
 (
 	'Top*',
@@ -26,8 +24,7 @@ VALUES
 	'pointed topological spaces',
 	'pointed continuous functions',
 	'This category plays an important role in algebraic topology and homotopy theory. Although it may appear similar to $\Top$, adding a base point drastically changes its categorical properties. In particular, it introduces a zero object.',
-	'https://ncatlab.org/nlab/show/pointed+topological+space',
-	NULL
+	'https://ncatlab.org/nlab/show/pointed+topological+space'
 ),
 (
 	'Haus',
@@ -36,8 +33,7 @@ VALUES
 	'Hausdorff spaces',
 	'continuous functions',
 	'This is the full subcategory of $\Top$ consisting of those spaces that are <a href="https://en.wikipedia.org/wiki/Hausdorff_space" target="_blank">Hausdorff</a>.',
-	'https://ncatlab.org/nlab/show/Hausdorff+space',
-	NULL
+	'https://ncatlab.org/nlab/show/Hausdorff+space'
 ),
 (
 	'sSet',
@@ -46,8 +42,7 @@ VALUES
 	'simplicial sets, i.e. functors $\Delta^{\op} \to \Set$ where $\Delta$ is the <a href="/category/Delta">simplex category</a>',
 	'natural transformations',
 	NULL,
-	'https://ncatlab.org/nlab/show/SimpSet',
-	NULL
+	'https://ncatlab.org/nlab/show/SimpSet'
 ),
 (
 	'Man',
@@ -56,8 +51,7 @@ VALUES
 	'smooth manifolds',
 	'smooth maps',
 	'Here, a smooth manifold is defined as a second-countable Hausdorff space with a smooth atlas. The dimension is locally constant, not necessarily constant.',
-	'https://ncatlab.org/nlab/show/Diff',
-	NULL
+	'https://ncatlab.org/nlab/show/Diff'
 ),
 (
 	'Delta',
@@ -66,6 +60,5 @@ VALUES
 	'the non-empty ordered sets $[n] := \{0 < \cdots < n\}$ for $n \in \IN$',
 	'order-preserving maps',
 	'The simplex category is a skeleton of $\FinOrd \setminus \{\varnothing\}$. It plays an important role in topology and is used to define the <a href="/category/sSet">category of simplicial sets</a>.',
-	'https://ncatlab.org/nlab/show/simplex+category',
-	NULL
+	'https://ncatlab.org/nlab/show/simplex+category'
 );
