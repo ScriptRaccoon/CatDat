@@ -1,0 +1,125 @@
+id: CompHaus
+name: category of compact Hausdorff spaces
+notation: $\CompHaus$
+objects: compact Hausdorff spaces
+morphisms: continuous functions
+description: This is the full subcategory of $\Top$ consisting of those spaces that are <a href="https://en.wikipedia.org/wiki/Compact_space" target="_blank">compact</a> and <a href="https://en.wikipedia.org/wiki/Hausdorff_space" target="_blank">Hausdorff</a>.
+nlab_link: https://ncatlab.org/nlab/show/compact+Hausdorff+space
+
+tags:
+  - topology
+
+related_categories:
+  - Haus
+  - Top
+
+satisfied_properties:
+  - property_id: locally small
+    reason: It is a full subcategory of $\Top$, which is locally small.
+
+  - property_id: semi-strongly connected
+    reason: This is already true for <a href="/category/Top">$\Top$</a>.
+
+  - property_id: products
+    reason: By the Tychonoff product theorem, a product in <a href="/category/Top">$\Top$</a> of compact Hausdorff spaces is compact; it is also clearly Hausdorff. Since the forgetful functor from $\CompHaus$ to $\Top$ is fully faithful, this limit is reflected in $\CompHaus$ as well.
+    check_redundancy: false
+
+  - property_id: equalizers
+    reason: 'The equalizer in <a href="/category/Top">$\Top$</a> of two continuous functions $f, g : X \rightrightarrows Y$ between compact Hausdorff spaces is a closed subspace of $X$, and therefore it is also compact Hausdorff. Since the forgetful functor from $\CompHaus$ to $\Top$ is fully faithful, this limit is reflected in $\CompHaus$ as well.'
+    check_redundancy: false
+
+  - property_id: cocomplete
+    reason: $\CompHaus$ is a reflective subcategory of $\Top$, with the reflector being the Stone-Čech compactification functor. See <a href="https://ncatlab.org/nlab/show/compact+Hausdorff+space#StoneCechCompactification" target="_blank">nLab</a> for example. Therefore, as usual, we can form colimits in $\CompHaus$ by forming colimits in <a href="/category/Top">$\Top$</a> and then applying Stone-Čech compactification.
+
+  - property_id: generator
+    reason: The one-point space is a generator because it represents the forgetful functor to $\Set$, which is faithful.
+
+  - property_id: cogenerator
+    reason: 'The unit interval $[0, 1]$ is a cogenerator: Suppose we have $f, g : X \rightrightarrows Y$ with $f \ne g$. Choose $x\in X$ such that $f(x) \ne g(x)$. Then by Urysohn''s lemma, there is a continuous function $h : Y \to [0, 1]$ such that $h(f(x)) = 0$ and $h(g(x)) = 1$. Therefore, $h\circ f \ne h\circ g$.'
+
+  - property_id: effective congruences
+    # TODO: rework this when Barr-exact is added
+    reason: The forgetful functor from $\CompHaus$ to $\Set$ is monadic; see for example <a href="https://ncatlab.org/nlab/show/compact+Hausdorff+space#compact_hausdorff_spaces_are_monadic_over_sets">nLab</a>. Therefore, by <a href="https://ncatlab.org/nlab/show/colimits+in+categories+of+algebras#exact">this result</a>, $\CompHaus$ is Barr-exact, and in particular it has effective congruences.
+
+  - property_id: regular
+    # TODO: rework this when Barr-exact is added
+    reason: The forgetful functor from $\CompHaus$ to $\Set$ is monadic; see for example <a href="https://ncatlab.org/nlab/show/compact+Hausdorff+space#compact_hausdorff_spaces_are_monadic_over_sets">nLab</a>. Therefore, by <a href="https://ncatlab.org/nlab/show/colimits+in+categories+of+algebras#exact">this result</a>, $\CompHaus$ is Barr-exact and in particular is regular.
+
+  - property_id: coregular
+    reason:
+      'It suffices to show that pushouts preserve (regular) monomorphisms in $\CompHaus$. Thus, suppose we have a pushout square
+      $$\begin{CD}
+      A @> i >> B \\
+      @V f VV @VV g V \\
+      C @>> j > D,
+      \end{CD}$$
+      with $i : A \hookrightarrow B$ a monomorphism. Then for any pair of distinct elements $c, c'' \in C$, by Urysohn''s lemma there exists $\gamma : C \to [0, 1]$ with $\gamma(c) = 0$ and $\gamma(c'') = 1$. Also, by Tietze''s extension theorem, there exists $\beta : B \to [0, 1]$ such that $\beta \circ i = \gamma \circ f$. By the pushout property, there is a unique $\delta : D \to [0, 1]$ such that $\delta \circ g = \beta$ and $\delta \circ j = \gamma$. Since $\delta(j(c)) \ne \delta(j(c''))$, we conclude that $j(c) \ne j(c'')$. This shows that $j$ is injective, so it is a regular monomorphism.'
+
+  - property_id: extensive
+    reason: This follows as for <a href="/category/Top">$\Top$</a> or <a href="/category/Haus">$\Haus$</a> since finite coproducts in $\CompHaus$ are formed as disjoint union spaces with the disjoint union topology.
+
+  - property_id: epi-regular
+    reason: |-
+      First, any epimorphism $f : X \to Y$ is surjective: if not, its image would be a proper subset of $Y$, which is compact and hence closed. Then by Urysohn's lemma, there would be a non-zero continuous function $g : Y \to [0, 1]$ which is $0$ on the image; but then $g \circ f = 0 \circ f$, giving a contradiction.
+      Now the identity morphism from $Y$, with the quotient topology of $f$, to $Y$ with its given topology is a bijective continuous function between compact Hausdorff spaces, so it is a homeomorphism. In other words, $f$ is a quotient map. Therefore, we see that if $g, h : E \rightrightarrows X$ is the kernel pair of $f$, and $U : \CompHaus \to \Top$ is the forgetful functor, then $U(f)$ is the coequalizer of $U(g)$ and $U(h)$. Since $U$ is fully faithful, that implies $f$ is the coequalizer of $g$ and $h$.
+
+  - property_id: cofiltered-limit-stable epimorphisms
+    reason: 'Suppose we have a cofiltered diagram of epimorphisms $(f_i : X_i \to Y_i)$, and $y = (y_i) \in \lim_i Y_i$. Then by lemma 1 <a href="/pdf/comphaus_copresentable.pdf">here</a>, the limit of $f_i^{-1}(\{ y_i \})$ is non-empty. If $x$ is in this limit, that implies that $(\lim_i f_i)(x) = y$.'
+
+  - property_id: locally copresentable
+    reason: A proof can be found <a href="/pdf/comphaus_copresentable.pdf">here</a>.
+
+unsatisfied_properties:
+  - property_id: skeletal
+    reason: This is trivial.
+
+  - property_id: Malcev
+    reason: This is clear since <a href="/category/FinSet">$\FinSet$</a> is not Malcev and can be interpreted as the subcategory of finite discrete spaces.
+
+  - property_id: regular subobject classifier
+    reason: The proof is almost identical to the one for <a href="/category/Haus">$\Haus$</a>.
+
+  - property_id: natural numbers object
+    reason: >-
+      Let $I := [0, 1]$. If a natural numbers object $(N, z : 1 \to N, s : N \to N)$ existed, then we could iterate the initial conditions $I\to I\times I$, $x \mapsto (x, x)$ and the recursive step function $I\times I \to I \times I$, $(x, y) \mapsto (x, xy)$ to get a continuous function $N \times I \to I \times I$ such that $(s^n(z), x) \mapsto (x, x^n)$ for $x\in I$, $n \in \IN$. The sequence $(s^n(z)) \in N$ has a convergent subnet $(s^{n_\lambda}(z))_{\lambda \in \Lambda}$, say with limit $y$. Thus, for any $x\in I$ and $\lambda \in \Lambda$, we have $(s^{n_\lambda}(z), x) \mapsto (x, x^{n_\lambda})$. Taking limits, we see $(y, x) \mapsto (x, 0)$ if $x \ne 1$ or $(y, x) \mapsto (x, 1)$ if $x = 1$. In other words, $(y, x) \mapsto (x, \delta_{x, 1})$ for all $x\in I$. However, that contradicts the fact that the composition
+      $$\begin{align*}
+      I & \overset{y \times \id}\longrightarrow N\times I \to I\times I \overset{p_2}\longrightarrow I, \\
+      x & \mapsto (y, x) \mapsto (x, \delta_{x,1}) \mapsto \delta_{x,1},
+      \end{align*}$$
+      would have to be continuous.
+
+  - property_id: filtered-colimit-stable monomorphisms
+    reason: 'The proof is similar to <a href="/category/Haus">$\Haus$</a>. For $n \geq 1$ let $X_n$ be the pushout of $[1/n, 1] \hookrightarrow [0, 1]$ with itself. That is, $X_n$ is the union of two unit intervals $[0, 1] \times \{ 1 \}$ and $[0, 1] \times \{ 2 \}$ where we identify $(x,1) \equiv (x,2)$ when $x \geq 1/n$. As in the construction for $\Haus$, we see that the colimit in $\Haus$ is $[0, 1]$ where all corresponding points of both unit intervals are identified. Since this is compact Hausdorff, it also provides the colimit in $\CompHaus$. Again, the injective continuous maps $\{1,2\} \to X_n$, $i \mapsto (0,i)$ (where $\{1,2\}$ is discrete) become the constant map $0 : \{1,2\} \to [0,1]$ in the colimit, which is not a monomorphism.'
+
+  - property_id: exact cofiltered limits
+    reason: |-
+      Consider the $\IN$-codirected systems $X_n := [0, 1] \times [0, 1/n]$ with the maps $X_{n+1} \to X_n$ being inclusion maps, and $Y_n := [0, 1+1/n]$ with the maps $Y_{n+1} \to Y_n$ also being inclusion maps. We define $f_n : X_n \to Y_n$, $(x, y) \mapsto x$ and $g_n : X_n \to Y_n$, $(x, y) \mapsto x+y$. It is straightforward to check these give morphisms of $\IN$-codirected systems in $\CompHaus$.
+      Now for each $n$, we claim the coequalizer of $f_n$ and $g_n$ is a singleton space. To see this, we prove the more general result that for $r, s > 0$ the coequalizer of $f, g : [0, r] \times [0, s] \rightrightarrows [0, r+s]$, $f(x,y) = x$, $g(x,y) = x+y$ is a singleton. We must show that for any $h : [0, r+s] \to T$ with $h\circ f = h\circ g$, then $h$ is constant. To this end, we show by induction on $n$ that whenever $x \in [0, r+s]$ and $x \le ns$, we have $h(x) = h(0)$. The base case $n=0$ is trivial. For the inductive step, if $x \le s$, then $f(0,x) = 0$ and $g(0,x) = x$, so $h(0) = h(x)$. Otherwise, we have $x-s \in [0,r]$ and $x-s \le (n-1)s$, so by inductive hypothesis $h(x-s) = h(0)$. Also, $f(x-s, s) = x-s$ and $g(x-s, s) = x$, so $h(x-s) = h(x)$, completing the induction. With this established, the desired result follows from the case $n := \lceil r/s \rceil + 1$.
+      On the other hand, $\lim X_n \simeq [0, 1] \times \{ 0 \}$; $\lim Y_n \simeq [0, 1]$; and $\lim f_n = \lim g_n$, $(x, 0) \mapsto x$. Thus, the coequalizer of $\lim f_n$ and $\lim g_n$ is $[0, 1]$, showing that the limit does not preserve this coequalizer.
+
+special_objects:
+  initial object:
+    description: empty space
+  terminal object:
+    description: singleton space
+  coproducts:
+    description: Stone-Čech compactification of the disjoint union with the disjoint union topology (in the finite case, the disjoint union is already compact Hausdorff so Stone-Čech compactification is not necessary)
+  products:
+    description: direct product with the <a href="https://en.wikipedia.org/wiki/Product_topology" target="_blank">product topology</a> (which is compact by the Tychonoff product theorem)
+
+special_morphisms:
+  isomorphisms:
+    description: homeomorphisms
+    reason: This is easy.
+  monomorphisms:
+    description: injective continuous maps (which are automatically closed embeddings)
+    reason: 'For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms. To prove the parenthetical remark, given an injective continuous function $f : X \to Y$ between compact Hausdorff spaces, the image of $f$ is a closed subset. Also, the induced map from $X$ to $\im(f)$ with the subspace topology is a bijective continuous map between compact Hausdorff spaces, so it is a homeomorphism.'
+  epimorphisms:
+    description: surjective continuous maps (which are automatically quotient maps)
+    reason: For the non-trivial direction, and for a proof of the parenthetical remark, see the proof above that $\CompHaus$ is epi-regular.
+  regular monomorphisms:
+    description: same as monomorphisms
+    reason: This is because the category is mono-regular.
+  regular epimorphisms:
+    description: same as epimorphisms
+    reason: This is because the category is epi-regular.

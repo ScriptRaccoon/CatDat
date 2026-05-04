@@ -1,5 +1,7 @@
 # Files from Latex Workshop
 *.aux
+*.bbl
+*.blg
 *.fdb_latexmk
 *.fls
 *.log
