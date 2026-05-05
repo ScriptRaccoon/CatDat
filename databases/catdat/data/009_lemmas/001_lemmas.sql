@@ -11,12 +11,6 @@ INSERT INTO lemmas (
     'Let $F : \Set \to \C$ denote the free algebra functor. Every object $A \in \C$ admits a regular epimorphism $F(X) \twoheadrightarrow A$ for some set $X$. But since $\C$ is thin, every regular epimorphism must be an isomorphism. Also, $F(X)$ is a coproduct of copies of $F(1)$, which means it is either the initial object $0$ or $F(1)$ itself (since $\C$ is thin). If $F(1) \cong 0$, then every object is isomorphic to the initial object $0$, and hence $\C$ is trivial. If not, then $\C$ has exactly two objects up to isomorphism, $0$ and $F(1)$, there is a morphism $0 \to F(1)$, but no morphism $F(1) \to 0$. Since $\C$ is thin, we conclude $\C \simeq \{0 \to 1\}$.'
 ),
 (
-    'hilberts_hotel',
-    'Hilbert''s Hotel',
-    'Let $\C$ be a category with countable powers. Then for every object $X \in \C$ there is an object $P \in \C$ with $P \cong X \times P$ and which has a morphism $X \to P$.',
-    'Take $P := X^{\IN}$. Since $\IN \cong 1 + \IN$ as sets, we have $P \cong X \times P$. The diagonal provides a morphism $X \to P$.'
-),
-(
     'preadditive_structure_unique',
     'Uniqueness of preadditive structures',
     'Let $\C$ be a preadditive category (or more generally, a category enriched in commutative monoids) with finite products and finite coproducts. Then for all objects $X,Y$ the canonical morphism
