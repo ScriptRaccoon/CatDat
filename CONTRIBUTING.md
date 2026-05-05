@@ -48,8 +48,9 @@ You need to have [Git](https://git-scm.com/), [NodeJS](https://nodejs.org/) and 
 3. Change into the directory with `cd CatDat`.
 4. Install dependencies with `pnpm install`.
 5. Create a local `.env` file from `.env.example`.
-6. Create the local database with `pnpm db:update`.
-7. Start the local development server with `pnpm dev`.
+6. Create the local database with `pnpm db:setup`.
+7. Update the local database with `pnpm db:update`.
+8. Start the local development server with `pnpm dev`.
 
 **For Maintainers:** Redis is required for admin features and submissions. Start a local instance on port 6379 via `redis-server --port 6379`.
 
@@ -73,7 +74,7 @@ to continuously run this update when a file in the subfolder [/databases/catdat/
 
 ### Troubleshooting
 
-- If the local database is corrupted, recreate it using `pnpm db:update`.
+- If the local database is corrupted, or its schema has changed, recreate it using `pnpm db:setup`.
 - If the `pnpm db:update` command fails, examine the error message to determine the cause. It could be due to malformed SQL, a contradictory property, or a failing test in the `pnpm db:test` script (which also runs as part of the update command), as explained below.
 
 ### Tests for Data Quality

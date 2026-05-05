@@ -44,8 +44,9 @@ You need to have [Git](https://git-scm.com/), [NodeJS](https://nodejs.org/) and 
 3. Change into the directory with `cd CatDat`.
 4. Install dependencies with `pnpm install`.
 5. Create a local `.env` file from `.env.example`.
-6. Create the local database with `pnpm db:update`.
-7. Start the local development server with `pnpm dev`.
+6. Create the local database with `pnpm db:setup`.
+7. Update the local database with `pnpm db:update`.
+8. Start the local development server with `pnpm dev`.
 
 **For Maintainers:** Redis is required for admin features and submissions. Start a local instance on port 6379 via `redis-server --port 6379`.
 

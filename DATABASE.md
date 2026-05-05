@@ -44,7 +44,7 @@ For functors there are similar tables, such as:
 
 ## Schema vs. Data
 
-The schema defines the structure of the database: tables, views, indexes, and triggers. It is specified in several SQL files located in the subfolder [/databases/catdat/schema](/databases/catdat/schema/). The command `pnpm db:setup` deletes the old database file (if it exists) and creates a new one using this schema.
+The schema defines the structure of the database: tables, views, indexes, and triggers. It is specified in several SQL files located in the subfolder [/databases/catdat/schema](/databases/catdat/schema/). The command `pnpm db:setup` deletes the old database file (if it exists) and creates a new one using this schema. This is required when the schema changes, so it is recommended to run it periodically.
 
 Database entries (categories, properties, implications, etc.) are defined in SQL files located in the subfolder [/databases/catdat/data](/databases/catdat/data/). The command `pnpm db:seed` replaces the current contents of the database by clearing all existing data and inserting the entries defined in these SQL files.
 
@@ -60,7 +60,7 @@ The command `pnpm db:test` executes some tests and verifies that the data behave
 
 ## One command for everything
 
-Use `pnpm db:update` to run all the commands in sequence: `pnpm db:setup`, `pnpm db:seed`,`pnpm db:deduce`, and `pnpm db:test`.
+Use `pnpm db:update` to run all the commands in sequence: `pnpm db:seed`,`pnpm db:deduce`, and `pnpm db:test`.
 
 Use `pnpm db:watch` to run this command automatically every time a file in the subfolder [/databases/catdat/data](/databases/catdat/data) changes. This is useful in particular during development.
 
