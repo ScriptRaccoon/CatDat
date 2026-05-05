@@ -29,5 +29,7 @@ jobs:
             - name: Install Dependencies
               run: pnpm i
 
-            - name: Update and Test database
-              run: pnpm db:update:catdat
+            - name: Test database
+              run: |
+                  pnpm db:setup:catdat
+                  pnpm db:update
