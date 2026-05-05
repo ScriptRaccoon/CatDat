@@ -8,6 +8,16 @@
   reason: This holds by definition of a regular category.
   is_equivalence: false
 
+- id: regular_well-powered_well-copowered
+  assumptions:
+    - regular
+    - epi-regular
+    - well-powered
+  conclusions:
+    - well-copowered
+  reason: The regularity condition gives a bijection between the collection of quotients of $X$ and the collection of effective congruences on $X$, where the latter is a subcollection of the collection of subobjects of $X\times X$.
+  is_equivalence: false
+
 - id: congruence_quotients_are_reflexive_coequalizers
   assumptions:
     - reflexive coequalizers
