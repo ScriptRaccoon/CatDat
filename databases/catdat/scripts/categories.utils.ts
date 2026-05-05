@@ -230,3 +230,27 @@ export function get_next_implication_for_contradiction(
 	}
 	return null
 }
+
+/**
+ * Returns a dictionary mapping a category to the set of its assigned
+ * properties (satisfied or unsatisfied) that should not be checked
+ * by the redundancy check script.
+ */
+export function get_ignored_redundant_properties(db: Database) {
+	const rows = db
+		.prepare(
+			`SELECT category_id, property_id
+			FROM category_property_assignments
+			WHERE check_redundancy = FALSE`,
+		)
+		.all() as { category_id: string; property_id: string }[]
+
+	const grouped: Record<string, Set<string>> = {}
+
+	for (const row of rows) {
+		grouped[row.category_id] ??= new Set()
+		grouped[row.category_id].add(row.property_id)
+	}
+
+	return grouped
+}

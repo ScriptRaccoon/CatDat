@@ -28,6 +28,8 @@ CREATE TABLE category_property_assignments (
     reason TEXT NOT NULL CHECK (length(reason) > 0),
     is_deduced INTEGER NOT NULL DEFAULT FALSE
         CHECK (is_deduced in (TRUE, FALSE)),
+    check_redundancy INTEGER NOT NULL DEFAULT TRUE
+        CHECK (check_redundancy in (TRUE, FALSE)),
     UNIQUE (category_id, property_id),
     FOREIGN KEY (category_id) REFERENCES categories (id) ON DELETE CASCADE,
     FOREIGN KEY (property_id) REFERENCES category_properties (id) ON DELETE CASCADE

@@ -2,6 +2,7 @@ import { get_client } from './shared'
 import {
 	get_all_assignments,
 	get_categories,
+	get_ignored_redundant_properties,
 	get_next_implication,
 	get_next_implication_for_contradiction,
 	get_normalized_category_implications,
@@ -30,6 +31,7 @@ function check_redundant_category_property_assignments() {
 	const implications = get_normalized_category_implications(db)
 	const categories = get_categories(db)
 	const assignments = get_all_assignments(db, categories)
+	const ignore_dict = get_ignored_redundant_properties(db)
 
 	let redundancy_count = 0
 
@@ -37,6 +39,7 @@ function check_redundant_category_property_assignments() {
 		const redundant_satisfied_property = get_redundant_satisfied_property(
 			assignments[category.id].satisfied.non_deduced,
 			implications,
+			ignore_dict[category.id],
 		)
 
 		if (redundant_satisfied_property) {
@@ -56,6 +59,7 @@ function check_redundant_category_property_assignments() {
 			all_satisfied_properties,
 			assignments[category.id].unsatisfied.non_deduced,
 			implications,
+			ignore_dict[category.id],
 		)
 
 		if (redundant_unsatisfied_property) {
@@ -104,8 +108,10 @@ function get_deduced_satisfied_properties(
 function get_redundant_satisfied_property(
 	satisfied_properties: Set<string>,
 	implications: NormalizedCategoryImplication[],
+	ignored: Set<string> = new Set(),
 ) {
 	for (const p of [...satisfied_properties]) {
+		if (ignored.has(p)) continue
 		satisfied_properties.delete(p)
 		const deduced_properties = get_deduced_satisfied_properties(
 			satisfied_properties,
@@ -161,8 +167,10 @@ function get_redundant_unsatisfied_property(
 	satisfied_properties: Set<string>,
 	unsatisfied_properties: Set<string>,
 	implications: NormalizedCategoryImplication[],
+	ignored: Set<string> = new Set(),
 ) {
 	for (const p of [...unsatisfied_properties]) {
+		if (ignored.has(p)) continue
 		unsatisfied_properties.delete(p)
 		const deduced_properties = get_deduced_unsatisfied_properties(
 			satisfied_properties,
