@@ -1,12 +1,23 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { get_client } from './shared'
+import { create_schema_hash, get_saved_schema_hash } from './schema.utils'
+
+seed()
 
 /**
  * Seeds the data recorded in SQL files into the database.
  */
 function seed() {
 	console.info('\n--- Seed CatDat database ---')
+
+	const schema_hash = get_saved_schema_hash()
+	const actual_hash = create_schema_hash()
+	if (schema_hash !== actual_hash) {
+		console.error(`❌ Your schema is outdated. Run first pnpm db:setup.`)
+		process.exit(1)
+	}
+
 	const db = get_client()
 	const data_folder = path.join(process.cwd(), 'databases', 'catdat', 'data')
 
@@ -53,5 +64,3 @@ function seed() {
 		process.exit(1)
 	}
 }
-
-seed()

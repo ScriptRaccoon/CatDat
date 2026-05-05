@@ -2,3 +2,4 @@
 **/*.db-wal
 **/*.db-shm
 **/*.db-journal
+**/schema.json
