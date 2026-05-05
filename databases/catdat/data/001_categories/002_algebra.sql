@@ -27,6 +27,15 @@ VALUES
 	'https://ncatlab.org/nlab/show/Grp'
 ),
 (
+	'SemiGrp',
+	'category of semigroups',
+	'$\SemiGrp$',
+	'semigroups, i.e. sets equipped with an associative binary operation',
+	'maps preserving the binary operation',
+	'In contrast to monoids, semigroups do not need to have a neutral element, and in fact, they can be empty. This small difference has a huge impact on the categorical properties. For example, we do not have a zero object anymore.',
+	'https://ncatlab.org/nlab/show/semigroup'
+),
+(
 	'Vect',
 	'category of vector spaces',
 	'$\Vect_K$',

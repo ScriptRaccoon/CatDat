@@ -37,6 +37,7 @@ VALUES
 ('Ring', 'see <a href="https://math.stackexchange.com/questions/625874" target="_blank">MSE/625874</a>'),
 ('Rng', 'see <a href="https://math.stackexchange.com/questions/4975797" target="_blank">MSE/4975797</a>'),
 ('Sch', 'disjoint union with the product sheaf'),
+('SemiGrp', 'similar to free products of monoids, but where the empty word is not allowed, and of course we do (and can) not demand that the factors are $\neq 1$'),
 ('Set', 'disjoint union'),
 ('Set*', 'wedge sum, aka one-point union'),
 ('SetxSet', 'component-wise disjoint union'),

@@ -33,6 +33,7 @@ VALUES
 ('Rel', 'disjoint unions (!)'),
 ('Ring', 'direct products with pointwise operations'),
 ('Rng', 'direct products with pointwise operations'),
+('SemiGrp', 'direct products with pointwise operations'),
 ('Set', 'direct products with pointwise operations'),
 ('Set*', 'direct products with pointwise operations'),
 ('Setne', 'direct products'),

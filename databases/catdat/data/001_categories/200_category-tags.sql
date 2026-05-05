@@ -74,6 +74,7 @@ VALUES
 ('Ring', 'algebra'),
 ('Rng', 'algebra'),
 ('Sch', 'algebraic geometry'),
+('SemiGrp', 'algebra'),
 ('Set_c', 'set theory'),
 ('Set_f', 'set theory'),
 ('Set', 'set theory'),

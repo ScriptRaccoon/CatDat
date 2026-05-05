@@ -41,6 +41,7 @@ VALUES
 ('Ring', 'zero ring'),
 ('Rng', 'zero ring'),
 ('Sch', '$\Spec(\IZ)$'),
+('SemiGrp', 'trivial semigroup'),
 ('Set_c', 'singleton set'),
 ('Set', 'singleton set'),
 ('Set*', 'singleton pointed set'),

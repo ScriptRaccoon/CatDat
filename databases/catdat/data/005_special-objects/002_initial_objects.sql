@@ -44,6 +44,7 @@ VALUES
 ('Ring', 'ring of integers'),
 ('Rng', 'trivial ring'),
 ('Sch', 'empty scheme'),
+('SemiGrp', 'empty semigroup'),
 ('Set_c', 'empty set'),
 ('Set_f', 'empty set'),
 ('Set', 'empty set'),

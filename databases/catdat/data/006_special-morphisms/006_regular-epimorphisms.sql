@@ -181,6 +181,11 @@ VALUES
     'This holds in every finitary algebraic category.'
 ), 
 (
+    'SemiGrp',
+    'surjective homomorphisms',
+    'This holds in every finitary algebraic category.'
+),  
+(
     'Set_c',
     'same as epimorphisms',
     'This is because the category is epi-regular.'

@@ -246,6 +246,11 @@ VALUES
 	'This holds in every finitary algebraic category: the forgetful functor to $\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
 ),
 (
+	'SemiGrp',
+	'injective semigroup homomorphisms',
+	'This holds in every finitary algebraic category: the forgetful functor to $\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
+),
+(
 	'Set_c',
 	'injective maps',
 	'For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.'

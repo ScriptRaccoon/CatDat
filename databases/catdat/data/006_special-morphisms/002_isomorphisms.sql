@@ -256,6 +256,11 @@ VALUES
 	'This is easy.'
 ),
 (
+	'SemiGrp',
+	'bijective ring homomorphisms',
+	'This characterization holds in every algebraic category.'
+),
+(
 	'Set_c',
 	'bijective maps',
 	'This is easy.'
