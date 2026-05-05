@@ -73,3 +73,9 @@ VALUES
 	FALSE,
 	'The canonical homomorphism $\bigoplus_{n \geq 0} \IZ \to \prod_{n \geq 0} \IZ$ is injective, but not an epimorphism, since the quotient $\prod_{n \geq 0} \IZ / \bigoplus_{n \geq 0} \IZ$ is not torsion. In fact, it is torsion-free and non-zero.'
 );
+
+-- properties that should be ignored by the redundancy check script
+UPDATE category_property_assignments
+SET check_redundancy = FALSE
+WHERE category_id = 'TorsFreeAb'
+AND property_id IN ('complete', 'cocomplete');

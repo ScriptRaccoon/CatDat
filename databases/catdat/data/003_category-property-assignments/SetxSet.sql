@@ -25,12 +25,6 @@ VALUES
 ),
 (
 	'SetxSet',
-	'effective cocongruences',
-	TRUE,
-	'Suppose we have a cocongruence $X \rightrightarrows E$ in $\Set \times \Set$. Then each component is a cocongruence, so they are the kernel pairs of some maps $Z_1\to X_1$, $Z_2 \to X_2$. Then $E$ is the cokernel pair of $(Z_1, Z_2) \to (X_1, X_2)$.'
-),
-(
-	'SetxSet',
 	'skeletal',
 	FALSE,
 	'This is trivial.'

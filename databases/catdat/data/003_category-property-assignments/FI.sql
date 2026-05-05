@@ -13,12 +13,6 @@ VALUES
 ),
 (
 	'FI',
-	'initial object',
-	TRUE,
-	'Take the empty set.'
-),
-(
-	'FI',
 	'left cancellative',
 	TRUE,
 	'This is trivial.'

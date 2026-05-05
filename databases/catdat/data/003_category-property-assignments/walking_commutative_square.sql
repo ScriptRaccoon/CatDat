@@ -25,12 +25,6 @@ VALUES
 ),
 (
 	'walking_commutative_square',
-	'infinitary distributive',
-	TRUE,
-	'This is because the <a href="/category/walking_morphism">walking morphism</a> has this property.'
-),
-(
-	'walking_commutative_square',
 	'skeletal',
 	TRUE,
 	'The four objects are not isomorphic.'

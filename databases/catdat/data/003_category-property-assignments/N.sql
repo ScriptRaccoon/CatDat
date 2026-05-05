@@ -37,12 +37,6 @@ VALUES
 ),
 (
 	'N',
-	'skeletal',
-	TRUE,
-	'The relation $\leq$ is antisymmetric.'
-),
-(
-	'N',
 	'semi-strongly connected',
 	TRUE,
 	'This is trivial.'
@@ -65,3 +59,9 @@ VALUES
 	FALSE,
 	'The numbers $0,1,2,\dotsc$ have no supremum, i.e. no coproduct.'
 );
+
+-- properties that should be ignored by the redundancy check script
+UPDATE category_property_assignments
+SET check_redundancy = FALSE
+WHERE category_id = 'N'
+AND property_id IN ('thin', 'finitely cocomplete');

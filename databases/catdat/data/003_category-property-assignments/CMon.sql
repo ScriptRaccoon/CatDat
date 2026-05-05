@@ -83,3 +83,9 @@ VALUES
 	FALSE,
 	'First of all, epimorphisms in $\CMon$ are preserved and reflected by the forgetful functor to $\Mon$ (see below). Furthermore, if $M \to N$ is an epimorphism in $\Mon$ and $M$ is infinite, then $\card(N) \leq \card(M)$ (see <a href="https://mathoverflow.net/questions/510431/" target="_blank">MO/510431</a>). This implies that in $\CMon$ the canonical homomorphism $\bigoplus_{n \geq 0} \IN \to \prod_{n \geq 0} \IN$ is not an epimorphism because its domain is countable and its codomain is uncountable.'
 );
+
+-- properties that should be ignored by the redundancy check script
+UPDATE category_property_assignments
+SET check_redundancy = FALSE
+WHERE category_id = 'CMon'
+AND property_id IN ('pointed');

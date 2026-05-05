@@ -19,18 +19,6 @@ VALUES
 ),
 (
 	'Man',
-	'well-powered',
-	TRUE,
-	'This follows from the fact that monomorphisms are injective here.'
-),
-(
-	'Man',
-	'well-copowered',
-	TRUE,
-	'This follows from the fact that epimorphisms have dense image (see below), which bounds the size of the codomain.'
-),
-(
-	'Man',
 	'generator',
 	TRUE,
 	'The $0$-dimensional one-point manifold is a generator since it represents the forgetful functor $\Top \to \Set$.'
@@ -134,3 +122,9 @@ VALUES
 	FALSE,
 	'If $\Man$ had quotients of congruences, then by <a href="/lemma/pushouts-of-monos-via-congruence-quotients">this lemma</a>, it would have a pushout of $\IR \leftarrow \{ 0 \} \rightarrow \IR$.  This contradicts <a href="https://mathoverflow.net/questions/19116">MO/19916</a>.'
 );
+
+-- properties that should be ignored by the redundancy check script
+UPDATE category_property_assignments
+SET check_redundancy = FALSE
+WHERE category_id = 'Man'
+AND property_id IN ('finite products');

@@ -104,3 +104,9 @@ VALUES
 	FALSE,
 	'We already know that $\Set$ does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the functor $\Set \to \Set_*$ that freely adds a base point.'
 );
+
+-- properties that should be ignored by the redundancy check script
+UPDATE category_property_assignments
+SET check_redundancy = FALSE
+WHERE category_id = 'Set*'
+AND property_id IN ('pointed');

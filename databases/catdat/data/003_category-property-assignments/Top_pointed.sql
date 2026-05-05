@@ -13,9 +13,15 @@ VALUES
 ),
 (
 	'Top*',
+	'pointed',
+	TRUE,
+	'The singleton space $\{0\}$ with base point $0$ is a zero object.'
+),
+(
+	'Top*',
 	'complete',
 	TRUE,
-	'This follows from $\Top_* \cong 1 / \Top$ and the fact that $\Top$ is complete.'
+	'This follows from $\Top_* \cong 1 / \Top$ and the fact that $\Top$ is complete. Concretely, the limit of pointed spaces $(X_i,x_i)$ is the limit of the underlying spaces $X_i$ equipped with the base point that projects down to each $x_i$.'
 ),
 (
 	'Top*',
@@ -43,21 +49,9 @@ VALUES
 ),
 (
 	'Top*',
-	'pointed',
-	TRUE,
-	'The singleton space $\{0\}$ with base point $0$ is a zero object.'
-),
-(
-	'Top*',
 	'generator',
 	TRUE,
 	'The discrete space $\{0,1\}$ with base point $0$ is a generator since it represents the forgetful functor $\Top_* \to \Set$.'
-),
-(
-	'Top*',
-	'disjoint finite coproducts',
-	TRUE,
-	'This follows from the corresponding fact for $\Set_*$.'
 ),
 (
 	'Top*',
@@ -181,3 +175,9 @@ VALUES
 	FALSE,
 	'This counterexample is adapted from the <a href="/category/Top">counterexample for $\Top$</a>. Consider the pointed topological space $I := \{ *, a, b \}$ with topology $\{ \varnothing, \{ * \}, \{ a, b \}, \{ *, a, b \} \}$. This represents the functor which sends a pointed topological space $X$ to the pairs of indistinguishable points of $X$. Therefore, we get a cocongruence $\{ *, a \} \rightrightarrows I$ on the discrete space $\{ *, a \}$, where the maps are $*\mapsto *, a\mapsto a$ and $*\mapsto *, a\mapsto b$ respectively. However, this cannot be effective: if we have $h : Z \to \{ *, a \}$ which equalizes the cocongruence, then $h$ must be the constant function with value $*$. But that means the cokernel pair of $h$ is the discrete space on $\{ *, a, b \}$.'
 );
+
+-- properties that should be ignored by the redundancy check script
+UPDATE category_property_assignments
+SET check_redundancy = FALSE
+WHERE category_id = 'Top*'
+AND property_id IN ('complete', 'coequalizers', 'coproducts', 'pointed');

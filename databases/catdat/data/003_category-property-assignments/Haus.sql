@@ -113,3 +113,9 @@ VALUES
 	FALSE,
 	'Recall the counterexample for sets: The unique maps $\IN_{\geq n} \to 1$ are surjective, but their limit $0 = \bigcap_{n \geq 0} \IN_{\geq n} \to 1$ is not. This also works in $\Haus$ by using discrete topologies. We could also apply a variant of (the dual of) <a href="/lemma/filtered-monos">this lemma</a> to the discrete topology functor $\Set \to \Haus$, which does not preserve all cofiltered limits, but does preserve intersections.'
 );
+
+-- properties that should be ignored by the redundancy check script
+UPDATE category_property_assignments
+SET check_redundancy = FALSE
+WHERE category_id = 'Haus'
+AND property_id IN ('cocomplete');

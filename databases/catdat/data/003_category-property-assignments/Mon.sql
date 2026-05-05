@@ -113,3 +113,9 @@ VALUES
 	$$E \to M_{2\times 2}(\IZ), \quad p \mapsto \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix},\quad q \mapsto \begin{pmatrix} 1 & 1 \\ 0 & 0 \end{pmatrix},$$
 	we can see that $p \ne q$ in $E$, so the equalizer of the two maps $X \rightrightarrows E$ is the trivial submonoid $\{ 1 \}$. Therefore, if $E$ were effective, it would be isomorphic to the coproduct $X \sqcup X$, whose underlying set consists of words in $p,q$ with $p,q$ strictly alternating. In particular, in this coproduct, $pq \ne q$.'
 );
+
+-- properties that should be ignored by the redundancy check script
+UPDATE category_property_assignments
+SET check_redundancy = FALSE
+WHERE category_id = 'Mon'
+AND property_id IN ('pointed');

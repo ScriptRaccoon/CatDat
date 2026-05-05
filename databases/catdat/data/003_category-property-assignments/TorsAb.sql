@@ -73,3 +73,9 @@ VALUES
 	$$0 \to \IZ/p \to \IZ/p^{k+1} \to \IZ/p^k \to 0$$
 	does not split.'
 );
+
+-- properties that should be ignored by the redundancy check script
+UPDATE category_property_assignments
+SET check_redundancy = FALSE
+WHERE category_id = 'TorsAb'
+AND property_id IN ('complete', 'cocomplete');

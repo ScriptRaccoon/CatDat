@@ -95,3 +95,9 @@ VALUES
 	FALSE,
 	'The construction of equalizers in $\Rel$ shows that they are injective functions, but <a href="https://math.stackexchange.com/questions/350716" target="_blank">MSE/350716</a> shows that monomorphisms in $\Rel$ don''t have to be functions.'
 );
+
+-- properties that should be ignored by the redundancy check script
+UPDATE category_property_assignments
+SET check_redundancy = FALSE
+WHERE category_id = 'Rel'
+AND property_id IN ('pointed', 'coproducts');

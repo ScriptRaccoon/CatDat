@@ -25,12 +25,6 @@ VALUES
 ),
 (
 	'FinGrp',
-	'epi-regular',
-	TRUE,
-	'This holds since every epimorphism is surjective (see below), and a surjective homomorphism $A \to B$ is the coequalizer of its kernel pair $A \times_B A \rightrightarrows A$.'
-),
-(
-	'FinGrp',
 	'mono-regular',
 	TRUE,
 	'See Prop. 4.2 at the <a href="https://ncatlab.org/nlab/show/regular+monomorphism#Examples" target="_blank">nLab</a>. The proof also works for finite groups.'
@@ -119,3 +113,9 @@ VALUES
 	FALSE,
 	'This is trivial.'
 );
+
+-- properties that should be ignored by the redundancy check script
+UPDATE category_property_assignments
+SET check_redundancy = FALSE
+WHERE category_id = 'FinGrp'
+AND property_id IN ('pointed');

@@ -95,3 +95,9 @@ VALUES
 	FALSE,
 	'We show that epimorphisms are not stable under sequential limits. Let $X_n = Y_n = \IC$ for all $n \geq 0$. The transition morphism $Y_{n+1} \to Y_n$ is the identity, and the transition morphism $X_{n+1} \to X_n$ is $x \mapsto x/2$. The morphisms $X_n \to Y_n$, $x \mapsto x/2^n$ are compatible with the transitions, and they are surjective, hence epimorphisms. Now we check $\lim_n X_n = 0$: An element $(x_n) \in \lim_n X_n$ is a family of complex numbers satisfying $x_n = x_{n+1}/2$ <i>and</i> $\sup_n |x_n| < \infty$. But then $x_n = 2^n x_0$ and this can only be bounded when $x_0=0$. Hence, $0 = \lim_n X_n \to \lim_n Y_n = \IC$ is no epimorphism.'
 );
+
+-- properties that should be ignored by the redundancy check script
+UPDATE category_property_assignments
+SET check_redundancy = FALSE
+WHERE category_id = 'Ban'
+AND property_id IN ('pointed');

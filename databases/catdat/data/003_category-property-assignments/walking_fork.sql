@@ -31,12 +31,6 @@ VALUES
 ),
 (
 	'walking_fork',
-	'initial object',
-	TRUE,
-	'$0$ is an initial object by construction.'
-),
-(
-	'walking_fork',
 	'generator',
 	TRUE,
 	'It is easy to check that $1$ is a generator.'

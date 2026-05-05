@@ -37,12 +37,6 @@ VALUES
 ),
 (
 	'FreeAb',
-	'equalizers',
-	TRUE,
-	'Subgroups of free abelian groups are free abelian.'
-),
-(
-	'FreeAb',
 	'generator',
 	TRUE,
 	'As for $\Ab$, the group $\IZ$ is a generator.'

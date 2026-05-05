@@ -31,12 +31,6 @@ VALUES
 ),
 (
 	'Grp',
-	'epi-regular',
-	TRUE,
-	'This holds since every epimorphism is surjective, and a surjective homomorphism $A \to B$ is the coequalizer of its kernel pair $A \times_B A \rightrightarrows A$.'
-),
-(
-	'Grp',
 	'Malcev',
 	TRUE,
 	'See Example 2.2.4 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>.'
@@ -117,3 +111,9 @@ VALUES
 	FALSE,
 	'We already know that $\Ab$ does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the forgetful functor $\Ab \to \Grp$ which indeed preserves epimorphisms.'
 );
+
+-- properties that should be ignored by the redundancy check script
+UPDATE category_property_assignments
+SET check_redundancy = FALSE
+WHERE category_id = 'Grp'
+AND property_id IN ('pointed');

@@ -113,3 +113,9 @@ VALUES
 	FALSE,
 	'We already know that $\Set$ does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the functor $\Set \to [\CRing, \Set]$ that maps a set to its constant functor.'
 );
+
+-- properties that should be ignored by the redundancy check script
+UPDATE category_property_assignments
+SET check_redundancy = FALSE
+WHERE category_id = 'Z'
+AND property_id IN ('cocomplete', 'mono-regular', 'effective cocongruences', 'co-Malcev');

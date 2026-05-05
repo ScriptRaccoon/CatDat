@@ -89,3 +89,9 @@ VALUES
 	FALSE,
 	'Let $K$ be a field over $R$. Consider the sequence of projections $\cdots \to K[X]/\langle X^2 \rangle \to K[X]/\langle X \rangle$ and the constant sequence $\cdots \to K[X] \to K[X]$. The surjective homomorphisms $K[X] \to K[X]/\langle X^n \rangle$ induce the inclusion $K[X] \hookrightarrow K[[X]]$ in the limit, where $K[[X]]$ is the algebra of formal power series. It is clearly not surjective, but this is not sufficient, we need to argue that it is not an epimorphism in $\CAlg(R)$, or equivalently, in $\CRing$. For a proof, see <a href="https://math.stackexchange.com/questions/2391187" target="_blank">MSE/2391187</a>.'
 );
+
+-- properties that should be ignored by the redundancy check script
+UPDATE category_property_assignments
+SET check_redundancy = FALSE
+WHERE category_id = 'CAlg(R)'
+AND property_id IN ('strict terminal object');

@@ -89,3 +89,9 @@ VALUES
 	FALSE,
 	'For a prime $p$ consider the sequence of projections $\cdots \to \IZ/p^2 \to \IZ/p$ and the constant sequence $\cdots \to \IZ \to \IZ$. The surjective homomorphisms $\IZ \to \IZ/p^n$ induce the homomorphism $\IZ \to \IZ_p$ in the limit, where $\IZ_p$ is the ring of $p$-adic integers. It is not surjective since $\IZ_p$ is uncountable, but this is not sufficient (at least, for this category): We need to use <a href="https://stacks.math.columbia.edu/tag/04W0" target="_blank">SP/04W0</a> to conclude that it is no epimorphism in $\CRing$.'
 );
+
+-- properties that should be ignored by the redundancy check script
+UPDATE category_property_assignments
+SET check_redundancy = FALSE
+WHERE category_id = 'CRing'
+AND property_id IN ('strict terminal object');

@@ -137,3 +137,9 @@ VALUES
 	FALSE,
 	'Consider the indiscrete topological space $I$ on two points. This represents the functor which takes a topological space $X$ to the pairs of indistinguishable points of $X$. Therefore, we get a cocongruence $1 \rightrightarrows I$, where the maps are the two possible functions. However, this cannot be effective: if we have $h : Z\to 1$ which equalizes the two maps, then $Z$ must be empty. But that means the cokernel pair of $h$ is the discrete space on two points.'
 );
+
+-- properties that should be ignored by the redundancy check script
+UPDATE category_property_assignments
+SET check_redundancy = FALSE
+WHERE category_id = 'Top'
+AND property_id IN ('cocomplete');

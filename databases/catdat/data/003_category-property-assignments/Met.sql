@@ -43,15 +43,17 @@ VALUES
 ),
 (
 	'Met',
-	'directed colimits',
+	'filtered colimits',
 	TRUE,
-	'This is because the <a href="/category/PMet">category of pseudo-metric spaces</a> has directed colimits and $\Met \hookrightarrow \PMet$ has a left adjoint, mapping a pseudo-metric space $X$ to $X /{\sim}$ where $x \sim y \iff d(x,y)=0$. Concretely, we take the directed colimit in the category of pseudo-metric spaces and then identify points with distance zero.' 
+	'This is because the <a href="/category/PMet">category of pseudo-metric spaces</a> has filtered colimits and $\Met \hookrightarrow \PMet$ has a left adjoint, mapping a pseudo-metric space $X$ to $X /{\sim}$ where $x \sim y \iff d(x,y)=0$. Concretely, we take the filtered colimit in the category of pseudo-metric spaces and then identify points with distance zero.' 
 ),
 (
 	'Met',
 	'cartesian filtered colimits',
 	TRUE,
-	'The canonical map $\colim_i (X \times Y_i) \to X \times \colim_i Y_i$ is an isomorphism for directed diagrams $(Y_i)$: It is surjective by the concrete description of directed colimits. It is isometric because of the elementary observation $\inf_i \max(r, s_i) = \max(r, \inf_i s_i)$ for $r, s_i \in \IR$, where $i \leq j \implies s_i \geq s_j$.'
+	'We already saw that filtered colimits and finite products exist. The canonical map $\colim_i (X \times Y_i) \to X \times \colim_i Y_i$ is an isomorphism for filtered diagrams $(Y_i)$: It is surjective by the concrete description of filtered colimits. It is isometric because of the elementary observation
+	$$\textstyle\inf_i \max(r, s_i) = \max(r, \inf_i s_i)$$
+	for $r, s_i \in \IR$, where $i \leq j \implies s_i \geq s_j$.'
 ),
 (
 	'Met',
@@ -163,3 +165,8 @@ VALUES
 	On the other hand, if this cocongruence were effective, then by the dual of <a href="/lemma/effective-congruence-quotients">this result</a>, it would be the cokernel pair of the equalizer of the two inclusion maps. However, that equalizer is empty, so $E$ would have to be a binary copower of $(0,1)$, which does not exist in $\Met$.'
 );
 
+-- properties that should be ignored by the redundancy check script
+UPDATE category_property_assignments
+SET check_redundancy = FALSE
+WHERE category_id = 'Met'
+AND property_id IN ('terminal object', 'binary products', 'filtered colimits');

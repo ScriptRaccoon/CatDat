@@ -49,12 +49,6 @@ VALUES
 ),
 (
     'walking_idempotent',
-    'reflexive coequalizers',
-    TRUE,
-    'The pair $e,\id_0$ is not reflexive, and the pairs $e,e$ and $\id_0,\id_0$ have a coequalizer for trivial reasons.'
-),
-(
-    'walking_idempotent',
     'filtered',
     TRUE,
     'The pair $\id,e$ is coequalized by $e$ (non-universally).'

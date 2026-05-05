@@ -37,15 +37,15 @@ VALUES
 ),
 (
 	'PMet',
-	'directed colimits',
+	'filtered colimits',
 	TRUE,
-	'Given a directed diagram $(X_i)$ of pseudo-metric spaces, take the directed colimit $X$ of the underlying sets with the following pseudo-metric: If $x,y \in X$, let $d(x,y)$ be infimum of all $d(x_i,y_i)$, where $x_i,y_i \in X_i$ are some preimages of $x,y$ in some $X_i$. The definition ensures that each $X_i \to X$ is non-expansive, and the universal property is easy to check.' 
+	'Given a filtered diagram $(X_i)$ of pseudo-metric spaces, take the filtered colimit $X$ of the underlying sets with the following pseudo-metric: If $x,y \in X$, let $d(x,y)$ be infimum of all $d(x_i,y_i)$, where $x_i,y_i \in X_i$ are some preimages of $x,y$ in some $X_i$. The definition ensures that each $X_i \to X$ is non-expansive, and the universal property is easy to check.' 
 ),
 (
 	'PMet',
 	'exact filtered colimits',
 	TRUE,
-	'Let $\I$ be a finite category and $\J$ be a small filtered category, w.l.o.g. a directed poset. Let $X : \I \times \J \to \PMet$ be a diagram. We need to show that the canonical map $\colim_{j \in \J} \lim_{i \in \I} X(i,j) \to \lim_{i \in \I} \colim_{j \in \J}  X(i,j)$ is an isomorphism. It is bijective since the forgetful functor to $\Set$ preserves finite limits and filtered colimits and since $\Set$ has exact filtered colimits. That the map is isometric can easily be reduced to the following lemma: If $d_{i,j} \in \IR_{\geq 0}$ are numbers for $i \in \I$, $j \in \J$ with $j \leq k \implies d_{i,k} \leq d_{i,j}$, then $\inf_j \sup_i d_{i,j} = \sup_i \inf_j d_{i,j}$. This can be proven directly. Alternatively, use that the thin category $(\IR_{\geq 0} \cup \{\infty\},\leq)$ is isomorphic to $([0,1],\leq)$, and we already know that <a href="/category/real_interval">it has exact filtered colimits</a>.'
+	'We already saw that finite limits and filtered colimits exist. Now let $\I$ be a finite category and $\J$ be a small filtered category, w.l.o.g. a directed poset. Let $X : \I \times \J \to \PMet$ be a diagram. We need to show that the canonical map $\colim_{j \in \J} \lim_{i \in \I} X(i,j) \to \lim_{i \in \I} \colim_{j \in \J}  X(i,j)$ is an isomorphism. It is bijective since the forgetful functor to $\Set$ preserves finite limits and filtered colimits and since $\Set$ has exact filtered colimits. That the map is isometric can easily be reduced to the following lemma: If $d_{i,j} \in \IR_{\geq 0}$ are numbers for $i \in \I$, $j \in \J$ with $j \leq k \implies d_{i,k} \leq d_{i,j}$, then $\inf_j \sup_i d_{i,j} = \sup_i \inf_j d_{i,j}$. This can be proven directly. Alternatively, use that the thin category $(\IR_{\geq 0} \cup \{\infty\},\leq)$ is isomorphic to $([0,1],\leq)$, and we already know that <a href="/category/real_interval">it has exact filtered colimits</a>.'
 ),
 (
 	'PMet',
@@ -145,3 +145,9 @@ VALUES
 	FALSE,
 	'The proof is similar to the one for <a href="/category/Top">$\Top$</a>: Equip a two-point set with the zero metric; this pseudo-metric space represents the functor taking a pseudo-metric space to the pairs of points with $d(x,y) = 0$. In this case, once you conclude $Z = \varnothing$, the map $h : Z \to 1$ does not have any cokernel pair, since that would have to be a coproduct $1+1$, which does not exist.'
 );
+
+-- properties that should be ignored by the redundancy check script
+UPDATE category_property_assignments
+SET check_redundancy = FALSE
+WHERE category_id = 'PMet'
+AND property_id IN ('equalizers', 'binary products', 'terminal object', 'filtered colimits');

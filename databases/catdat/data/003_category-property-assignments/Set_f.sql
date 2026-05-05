@@ -61,12 +61,6 @@ VALUES
 ),
 (
 	'Set_f',
-	'mono-regular',
-	TRUE,
-	'If $f : X \to Y$ is a monomorphism, i.e. an injective map, it is an equalizer of the two maps $i_1, i_2 : Y \rightrightarrows Y \sqcup_X Y$ in $\Set$. But $i_1,i_2$ are injective, hence finite-to-one, so that $f$ is also an equalizer in $\Set_\f$.'
-),
-(
-	'Set_f',
 	'epi-regular',
 	TRUE,
 	'If $f : X \to Y$ is an epimorphism in $\Set_\f$, i.e. a surjective finite-to-one map, it is a coequalizer of the two maps $p_1, p_2 : X \times_Y Y \rightrightarrows Y$ in $\Set$. These maps are finite-to-one since $p_i^*(\{y\}) \cong f^*(\{y\})$ for $i=1,2$, and their coequalizer is also $f$ in $\Set_\f$: It suffices to observe that if $h : Y \to T$ is a map such that $h \circ f$ is finite-to-one, then $h$ is finite-to-one as well. In fact, surjectivity of $f$ implies $h^*(\{t\}) = f_*((h \circ f)^*(\{t\}))$ for $t \in T$.' 
@@ -76,12 +70,6 @@ VALUES
 	'semi-strongly connected',
 	TRUE,
 	'From set theory it is known that for all sets $X,Y$ there is an injective map $X \to Y$ or an injective map $Y \to X$, and injective maps are finite-to-one.'
-),
-(
-	'Set_f',
-	'well-powered',
-	TRUE,
-	'This is clear since the monomorphisms are injective.'
 ),
 (
 	'Set_f',

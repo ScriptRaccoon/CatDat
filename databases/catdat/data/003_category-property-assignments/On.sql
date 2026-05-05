@@ -43,12 +43,6 @@ VALUES
 ),
 (
 	'On',
-	'skeletal',
-	TRUE,
-	'The relation $\leq$ is antisymmetric.'
-),
-(
-	'On',
 	'semi-strongly connected',
 	TRUE,
 	'It is well-known that for ordinals $\alpha,\beta$ we have $\alpha \leq \beta$ or $\beta \leq \alpha$.'
@@ -77,3 +71,9 @@ VALUES
 	FALSE,
 	'Consider the strictly increasing sequence $0 < 1 < 2 < \cdots$.'
 );
+
+-- properties that should be ignored by the redundancy check script
+UPDATE category_property_assignments
+SET check_redundancy = FALSE
+WHERE category_id = 'On'
+AND property_id IN ('thin');

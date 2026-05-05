@@ -37,12 +37,6 @@ VALUES
 ),
 (
 	'BN',
-	'pullbacks',
-	TRUE,
-	'For natural numbers $n,m$ we need to find a universal pair $p,q$ of natural numbers satisfying $n + p = m + q$. We may assume w.l.o.g. $n \leq m$. Then take $p = m-n$, $q = 0$.'
-),
-(
-	'BN',
 	'left cancellative',
 	TRUE,
 	'This is because addition of natural numbers is cancellative.'

@@ -19,6 +19,12 @@ VALUES
 ),
 (
 	'Met_c',
+	'countable products',
+	TRUE,
+	'For finite products, we take the cartesian product with, say, the sup-metric. The product of countably many metric spaces $(X_i,d_i)_{i \geq 0}$ is given by the cartesian product $\prod_{i \geq 0} X_i$ with the metric $d(x,y) := \sum_{i \geq 0} d_i(x_i,y_i)/(1 + d_i(x_i,y_i))$. See Engelking''s book <i>General Topology</i>.'
+),
+(
+	'Met_c',
 	'coproducts',
 	TRUE,
 	'See <a href="https://math.stackexchange.com/questions/5004389" target="_blank">MSE/5004389</a>.'
@@ -27,7 +33,7 @@ VALUES
 	'Met_c',
 	'infinitary extensive',
 	TRUE,
-	'This follows from the existence of coproducts and from the fact that $\Top$ is infinitary extensive.'
+	'This follows from the existence of coproducts and finite products, and from the fact that $\Top$ is infinitary extensive.'
 ),
 (
 	'Met_c',
@@ -46,12 +52,6 @@ VALUES
 	'cogenerator',
 	TRUE,
 	'The same proof as for $\Met$ shows that $\IR$ with the usual metric is a cogenerator.'
-),
-(
-	'Met_c',
-	'countable products',
-	TRUE,
-	'For finite products, we take the cartesian product with, say, the sup-metric. The product of countably many metric spaces $(X_i,d_i)_{i \geq 0}$ is given by the cartesian product $\prod_{i \geq 0} X_i$ with the metric $d(x,y) := \sum_{i \geq 0} d_i(x_i,y_i)/(1 + d_i(x_i,y_i))$. See Engelking''s book <i>General Topology</i>.'
 ),
 (
 	'Met_c',
@@ -113,3 +113,9 @@ VALUES
 	FALSE,
 	'If $\Met_c$ had quotients of congruences, then by <a href="/lemma/monic-sequential-colimits-via-congruence-quotients">this lemma</a> it would have sequential colimits of sequences of monomorphisms. This contradicts <a href="https://mathoverflow.net/questions/510316" target="_blank">MO/510316</a>.'
 );
+
+-- properties that should be ignored by the redundancy check script
+UPDATE category_property_assignments
+SET check_redundancy = FALSE
+WHERE category_id = 'Met_c'
+AND property_id IN ('coproducts');

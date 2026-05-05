@@ -25,18 +25,6 @@ VALUES
 ),
 (
 	'Setne',
-	'well-powered',
-	TRUE,
-	'This follows from the description of monomorphisms as injective functions.'
-),
-(
-	'Setne',
-	'well-copowered',
-	TRUE,
-	'This follows from the description of epimorphisms as surjective functions.'
-),
-(
-	'Setne',
 	'products',
 	TRUE,
 	'Take the product of non-empty sets inside of $\Set$ and observe that it is non-empty by the axiom of choice.'
@@ -46,18 +34,6 @@ VALUES
 	'binary coproducts',
 	TRUE,
 	'The disjoint union of two non-empty sets is non-empty.'
-),
-(
-	'Setne',
-	'wide pushouts',
-	TRUE,
-	'The wide pushout taken in $\Set$ is clearly non-empty, and it still satisfies the universal property.'
-),
-(
-	'Setne',
-	'coequalizers',
-	TRUE,
-	'The coequalizer taken in $\Set$ is clearly non-empty, and it still satisfies the universal property.'
 ),
 (
 	'Setne',

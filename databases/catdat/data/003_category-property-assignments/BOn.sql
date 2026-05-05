@@ -49,12 +49,6 @@ VALUES
 ),
 (
 	'BOn',
-	'pullbacks',
-	TRUE,
-	'If $\alpha,\beta$ are ordinals, w.l.o.g. $\alpha \leq \beta$, choose $\delta$ with $\beta = \alpha + \delta$. Then the pair $\delta,0$ is a pullback of $\alpha,\beta$: We have $\alpha + \delta = \beta + 0$, and if $\epsilon_1,\,\epsilon_2$ is a pair of ordinals with $\alpha + \epsilon_1 = \beta + \epsilon_2$, we may cancel $\alpha$ to get $\epsilon_1 = \delta + \epsilon_2$, so that the pair factors as $\delta + \epsilon_2,\, 0 + \epsilon_2$.'
-),
-(
-	'BOn',
 	'cofiltered limits',
 	TRUE,
 	'See <a href="https://math.stackexchange.com/questions/5129138/" target="_blank">MSE/5129138</a>.'

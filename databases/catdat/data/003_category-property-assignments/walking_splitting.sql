@@ -79,3 +79,9 @@ VALUES
 	FALSE,
 	'The morphism $ip : 1 \to 1$ provides a counterexample.'
 );
+
+-- properties that should be ignored by the redundancy check script
+UPDATE category_property_assignments
+SET check_redundancy = FALSE
+WHERE category_id = 'walking_splitting'
+AND property_id IN ('sifted colimits');
