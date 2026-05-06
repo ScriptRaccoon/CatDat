@@ -33,6 +33,7 @@ Further tables are:
 - `special_morphisms`
 - `related_category_properties`
 - `category_comments`
+- `category_property_comments`
 - `lemmas` (a flexible variant of implications)
 
 For functors there are similar tables, such as:
@@ -63,6 +64,10 @@ The command `pnpm db:test` executes some tests and verifies that the data behave
 Use `pnpm db:update` to run all the commands in sequence: `pnpm db:seed`,`pnpm db:deduce`, and `pnpm db:test`.
 
 Use `pnpm db:watch` to run this command automatically every time a file in the subfolder [/databases/catdat/data](/databases/catdat/data) changes. This is useful in particular during development.
+
+## Redundancies
+
+There is another script that intentionally does not run with each update: `pnpm db:redundancies` checks for redundant assignments of properties to categories.
 
 ## Diagram
 
