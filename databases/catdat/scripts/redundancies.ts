@@ -33,6 +33,15 @@ function check_redundant_category_property_assignments() {
 	const assignments = get_all_assignments(db, categories)
 	const ignore_dict = get_ignored_redundant_properties(db)
 
+	const ignore_count = Object.keys(ignore_dict).reduce(
+		(count, id) => count + ignore_dict[id].size,
+		0,
+	)
+
+	if (ignore_count > 0) {
+		console.info(`Ignore ${ignore_count} assignments`)
+	}
+
 	let redundancy_count = 0
 
 	for (const category of categories) {
