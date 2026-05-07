@@ -19,6 +19,7 @@
 		"db:setup:catdat": "pnpm db:kill && tsx databases/catdat/scripts/setup.ts",
 		"db:setup": "pnpm db:kill && tsx databases/catdat/scripts/setup.ts && tsx databases/app/scripts/setup.ts",
 		"db:seed": "tsx databases/catdat/scripts/seed.ts",
+		"db:seed:yaml": "tsx databases/catdat/scripts/seed.yaml.ts",
 		"db:deduce": "tsx databases/catdat/scripts/deduce.ts",
 		"db:test": "tsx databases/catdat/scripts/test.ts",
 		"db:snapshot": "cp databases/catdat/catdat.db static/databases/catdat-snapshot.db",

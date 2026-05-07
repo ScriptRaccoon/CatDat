@@ -1,0 +1,58 @@
+tags:
+  - algebra
+  - algebraic geometry
+  - analysis
+  - category theory
+  - combinatorics
+  - number theory
+  - order theory
+  - set theory
+  - topology
+  - finite
+  - thin
+  - single object
+
+relations:
+  - relation: is
+    negation: is not
+    conditional: would be
+  - relation: is a
+    negation: is not a
+    conditional: would be a
+  - relation: is an
+    negation: is not an
+    conditional: would be an
+  - relation: has
+    negation: does not have
+    conditional: would have
+  - relation: has a
+    negation: does not have a
+    conditional: would have a
+  - relation: has an
+    negation: does not have an
+    conditional: would have an
+  - relation: satisfies
+    negation: does not satisfy
+    conditional: would satisfy
+
+special_object_types:
+  - type: terminal object
+    dual: initial object
+  - type: initial object
+    dual: terminal object
+  - type: products
+    dual: coproducts
+  - type: coproducts
+    dual: products
+
+special_morphism_types:
+  - type: isomorphisms
+    dual: isomorphisms
+  - type: monomorphisms
+    dual: epimorphisms
+  - type: epimorphisms
+    dual: monomorphisms
+  - type: regular monomorphisms
+    dual: regular epimorphisms
+  - type: regular epimorphisms
+    dual: regular monomorphisms
