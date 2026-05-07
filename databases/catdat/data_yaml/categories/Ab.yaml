@@ -1,0 +1,66 @@
+id: Ab
+name: category of abelian groups
+notation: $\Ab$
+objects: abelian groups
+morphisms: group homomorphisms
+description: This is the prototype of an abelian category.
+nlab_link: https://ncatlab.org/nlab/show/Ab
+
+tags:
+  - algebra
+
+related_categories:
+  - CMon
+  - FinAb
+  - FreeAb
+  - Grp
+  - R-Mod
+  - TorsAb
+  - TorsFreeAb
+
+satisfied_properties:
+  - property_id: locally small
+    reason: There is a forgetful functor $\Ab \to \Set$ and $\Set$ is locally small.
+
+  - property_id: abelian
+    reason: This is standard, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. VIII.
+
+  - property_id: finitary algebraic
+    reason: Take the algebraic theory of a commutative group.
+
+unsatisfied_properties:
+  - property_id: split abelian
+    reason: "The short exact sequence $0 \\xrightarrow{} \\IZ \\xrightarrow{p} \\IZ \\xrightarrow{} \\IZ/p \\xrightarrow{} 0$ does not split. "
+
+  - property_id: skeletal
+    reason: This is trivial.
+
+  - property_id: CSP
+    reason: The canonical homomorphism $\bigoplus_{n \geq 0} \IZ \to \prod_{n \geq 0} \IZ$ is not surjective, hence no epimorphism.
+
+special_objects:
+  initial object:
+    description: trivial group
+  terminal object:
+    description: trivial group
+  coproducts:
+    description: direct sums
+  products:
+    description: direct products with pointwise operations
+
+special_morphisms:
+  isomorphisms:
+    description: bijective homomorphisms
+    reason: This characterization holds in every algebraic category.
+  monomorphisms:
+    description: injective homomorphisms
+    reason: "This holds in every finitary algebraic category: the forgetful functor to $\\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms."
+  epimorphisms:
+    description: surjective homomorphisms
+    reason: "For the non-trivial direction, if $f : A \\to B$ is an epimorphism, then $p \\circ f = 0$ for the projection  $p : B \\to B/f(A)$ implies that $p = 0$, so that $B = f(A)$."
+  regular monomorphisms:
+    description: same as monomorphisms
+    reason: This is because the category is mono-regular.
+  regular epimorphisms:
+    description: same as epimorphisms
+    reason: This is because the category is epi-regular.

@@ -1,0 +1,87 @@
+id: Prost
+name: category of prosets
+notation: $\Prost$
+objects: preordered sets (aka prosets), i.e. sets equipped with a reflexive, transitive relation
+morphisms: order-preserving functions
+description: Even though there are many similarities with $\Pos$, the main difference is that the forgetful functor $\Prost \to \Set$ has a right adjoint, mapping $X$ to $(X , X \times X)$ (chaotic preorder).
+nlab_link: https://ncatlab.org/nlab/show/Prost
+
+tags:
+  - order theory
+
+related_categories:
+  - Pos
+
+satisfied_properties:
+  - property_id: locally small
+    reason: There is a forgetful functor $\Pos \to \Set$ and $\Set$ is locally small.
+
+  - property_id: locally finitely presentable
+    reason: The same proof as for $\Pos$ works, cf. <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>, Example 1.10.
+
+  - property_id: generator
+    reason: The singleton proset $1$ is a generator, since morphisms $1 \to P$ correspond to the elements of $P$.
+
+  - property_id: cartesian closed
+    reason: For prosets $P,Q$ we endow $\Hom(P,Q)$ with the preorder in which $f \leq g$ holds iff $f(p) \leq g(p)$ for all $p \in P$. The universal evaluation map is $\Hom(P,Q) \times P \to Q$, $(f,p) \mapsto f(p)$, it is order-preserving, and it satisfies the universal property.
+
+  - property_id: cogenerator
+    reason: Endow the set $\{ 0,1 \}$ with the preorder $0 \leq 1$, $1 \leq 0$ (which is not a partial order). Then every map $P \to \{0,1\}$ is order-preserving. Now the claim follows since the set $\{ 0,1 \}$ is a cogenerator in $\Set$.
+
+  - property_id: infinitary extensive
+    reason: "[Sketch] Since $\\Set$ is infinitary extensive, a map $f : P \\to \\coprod_i Q_i$ corresponds to a decomposition $P = \\coprod_i P_i$ (as sets) with maps $f_i : P_i \\to Q_i$. Endow $P_i$ with the induced order. If $f$ is order-preserving, the elements in different $P_i$ cannot be comparable (since their $f$-images are not comparable), so that $P = \\coprod_i P_i$ as prosets, and each $f_i$ is order-preserving."
+
+  - property_id: semi-strongly connected
+    reason: Every non-empty proset is weakly terminal (by using constant maps).
+
+  - property_id: coregular
+    reason: See <a href="https://math.stackexchange.com/questions/5130295" target="_blank">MSE/5130295</a>.
+
+  - property_id: regular subobject classifier
+    reason: The set $\{0,1\}$ with the chaotic preorder $(0 \leq 1$, $1 \leq 0)$ is a regular subobject classifier since order-preserving maps $P \to \{0,1\}$ correspond to subsets of $P$.
+
+unsatisfied_properties:
+  - property_id: regular
+    reason: See Example 3.14 at the <a href="https://ncatlab.org/nlab/show/regular+category" target="_blank">nLab</a>.
+
+  - property_id: balanced
+    reason: The inclusion $\{0,1\} \to \{0 < 1\}$ provides a counterexample (where in the domain there is no relation between $0$ and $1$).
+
+  - property_id: skeletal
+    reason: This is trivial.
+
+  - property_id: Malcev
+    reason: "Consider the subproset $\\{(a,b) : a \\leq b \\}$ of $\\IN^2$."
+
+  - property_id: co-Malcev
+    reason: 'See <a href="https://mathoverflow.net/questions/509552">MO/509552</a>: Consider the forgetful functor $U : \Prost \to \Set$ and the relation $R \subseteq U^2$ defined by $R(A) := \{(a,b) \in U(A)^2 : a \leq b\}$. Both are representable: $U$ by the singleton preordered set and $R$ by $\{0 \leq 1 \}$. It is clear that $R$ is reflexive, but not symmetric.'
+
+  - property_id: cofiltered-limit-stable epimorphisms
+    reason: We know that $\Set$ does not have this property. Now use the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> applied to the functor $\Set \to \Prost$ that equips a set with the chaotic preorder.
+
+  - property_id: effective cocongruences
+    reason: "Consider the proset $E := \\{ a, b \\}$ with the chaotic preorder. This represents the functor which sends a proset to the pairs of elements $x,y$ with $x \\le y$ and $y \\le x$. Therefore, it defines a cocongruence $1 \\rightrightarrows E$, where the maps are the two possible functions. However, this cannot be effective: for any map $h : Z \\to 1$ which equalizes the two functions, $Z$ must be empty. But that means the cokernel pair of $h$ is the two-element proset with the trivial preorder."
+
+special_objects:
+  initial object:
+    description: empty proset
+  terminal object:
+    description: singleton proset
+  coproducts:
+    description: disjoint union with the obvious preorder that leaves the distinct summands incomparable
+  products:
+    description: direct products with the evident preorder
+
+special_morphisms:
+  isomorphisms:
+    description: bijective functions that are order-preserving and order-reflecting
+    reason: This is easy.
+  monomorphisms:
+    description: injective order-preserving functions
+    reason: The same proof as for $\Set$ can be used.
+  epimorphisms:
+    description: surjective order-preserving functions
+    reason: Clearly, surjective maps are epimorphisms. The converse follows since, as mentioned, the forgetful functor $\Prost \to \Set$ has a right adjoint hence preserves epimorphisms.
+  regular monomorphisms:
+    description: embeddings
+    reason: "Every regular monomorphism is an embedding by the explicit construction of equalizers. For the converse, let $i : P \\to Q$ be an embedding, which we may assume to be an inclusion. Consider the cokernel pair $C := Q \\cup_P Q$. It exists because the category has pushouts, but we can (and need to) describe it more concretely: As a set, $C$ is a disjoint union of $P$ and two copies of $Q \\setminus P$. The elements will be denoted by $p,q_1,q_2$. The $i$th inclusion map $Q \\to C$ maps $p \\in P$ to itself and $q \\in Q \\setminus P$ to $q_i$. The ordering is directly induced by $Q$: We have $p \\leq p'$ in $C$ iff $p \\leq p'$ in $P$, we have $p \\leq q_i$ iff $p \\leq q$ in $Q$, etc. One verifies that this indeed defines a preorder, and by construction the two maps $Q \\rightrightarrows C$ are order-preserving and have equalizer $P$."

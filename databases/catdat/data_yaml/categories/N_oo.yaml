@@ -1,0 +1,73 @@
+id: N_oo
+name: poset of extended natural numbers
+notation: $(\IN_\infty, \leq)$
+objects: natural numbers and $\infty$
+morphisms: "a unique morphism $(n, m) : n \\to m$ if $n \\leq m$, where of course $n \\leq \\infty$ for all $n$"
+
+tags:
+  - number theory
+  - thin
+
+related_categories:
+  - N
+  - On
+
+satisfied_properties:
+  - property_id: small
+    reason: This is trivial.
+
+  - property_id: countable
+    reason: This is trivial.
+
+  - property_id: coproducts
+    reason: Take the supremum.
+    check_redundancy: false
+
+  - property_id: direct
+    reason: This is because the natural numbers with $\infty$ with respect to $<$ are well-founded.
+
+  - property_id: locally strongly finitely presentable
+    reason: We already saw that coproducts, and therefore colimits exist. Every natural number is strongly finitely presentable, and $\infty$ is the colimit of all $n < \infty$.
+
+  - property_id: semi-strongly connected
+    reason: This is trivial.
+
+unsatisfied_properties:
+  - property_id: essentially finite
+    reason: This is trivial.
+
+  - property_id: finitary algebraic
+    reason: This follows from <a href="/lemma/thin_algebraic_categories">this lemma</a>.
+
+  - property_id: self-dual
+    reason: This is because every upper set is infinite, but every lower set is finite.
+
+  - property_id: inverse
+    reason: Consider the strictly increasing sequence $0 < 1 < 2 < \cdots$.
+
+special_objects:
+  initial object:
+    description: $0$
+  terminal object:
+    description: $\infty$
+  coproducts:
+    description: supremum
+  products:
+    description: infimum
+
+special_morphisms:
+  isomorphisms:
+    description: only the identity morphisms
+    reason: This is true for every poset (regarded as a category).
+  monomorphisms:
+    description: every morphism
+    reason: It is a thin category.
+  epimorphisms:
+    description: every morphism
+    reason: It is a thin category.
+  regular monomorphisms:
+    description: same as isomorphisms
+    reason: This is because the category is right cancellative.
+  regular epimorphisms:
+    description: same as isomorphisms
+    reason: This is because the category is left cancellative.

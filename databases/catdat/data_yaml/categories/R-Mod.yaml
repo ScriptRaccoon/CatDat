@@ -1,0 +1,64 @@
+id: R-Mod
+name: category of left modules over a ring
+notation: $R{-}\Mod$
+objects: left $R$-modules
+morphisms: $R$-linear maps
+description: |-
+  This is the prototype of an abelian category. The category of right modules is the same with the opposite ring $R^{\op}$, hence not listed here.<br>
+  	To settle the unsatisfied properties, we make the assumption that $R$ is <i>not</i> semisimple: If $R$ is semisimple, then by the Artin-Wedderburn theorem, the category is equivalent to a finite direct product of categories $D{-}\Mod$ for division rings $D$, and the case of division rings is in a separate entry. In particular, $R \neq 0$ and $R$ is not a field.
+nlab_link: https://ncatlab.org/nlab/show/module
+tags:
+  - algebra
+
+related_categories:
+  - Ab
+  - M-Set
+  - R-Mod_div
+  - Vect
+
+satisfied_properties:
+  - property_id: locally small
+    reason: There is a forgetful functor $R{-}\Mod \to \Set$ and $\Set$ is locally small.
+
+  - property_id: abelian
+    reason: This is standard, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. VIII.
+
+  - property_id: finitary algebraic
+    reason: Take the algebraic theory of an $R$-module (given by the algebraic theory of an abelian group and for each $r \in R$ a unary operation).
+
+unsatisfied_properties:
+  - property_id: split abelian
+    reason: By assumption, $R$ is not semisimple, so that there is a non-projective $R$-module, which yields a non-split sequence.
+
+  - property_id: skeletal
+    reason: This is trivial.
+
+  - property_id: CSP
+    reason: The canonical homomorphism $\bigoplus_{n \geq 0} R \to \prod_{n \geq 0} R$ is not surjective, hence no epimorphism.
+
+special_objects:
+  initial object:
+    description: trivial module
+  terminal object:
+    description: zero module
+  coproducts:
+    description: direct sums
+  products:
+    description: direct products with pointwise operations
+
+special_morphisms:
+  isomorphisms:
+    description: bijective $R$-linear maps
+    reason: This characterization holds in every algebraic category.
+  monomorphisms:
+    description: injective $R$-linear maps
+    reason: "This holds in every finitary algebraic category: the forgetful functor to $\\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms."
+  epimorphisms:
+    description: surjective $R$-linear maps
+    reason: The forgetful functor to abelian groups is faithful and preserves colimits, hence reflects and preserves epimorphisms. Alternatively, use the same proof as for abelian groups.
+  regular monomorphisms:
+    description: same as monomorphisms
+    reason: This is because the category is mono-regular.
+  regular epimorphisms:
+    description: surjective homomorphisms
+    reason: This holds in every finitary algebraic category.

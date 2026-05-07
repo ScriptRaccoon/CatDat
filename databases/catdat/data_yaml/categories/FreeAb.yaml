@@ -1,0 +1,83 @@
+id: FreeAb
+name: category of free abelian groups
+notation: $\FreeAb$
+objects: free abelian groups
+morphisms: group homomorphisms
+
+tags:
+  - algebra
+
+related_categories:
+  - Ab
+  - TorsFreeAb
+
+satisfied_properties:
+  - property_id: locally small
+    reason: There is a forgetful functor $\FreeAb \to \Set$ and $\Set$ is locally small.
+
+  - property_id: additive
+    reason: This follows easily from the fact for abelian groups.
+
+  - property_id: coproducts
+    reason: This is is because free abelian groups are closed under direct sums of abelian groups.
+
+  - property_id: well-powered
+    reason: This is clear since the monomorphisms are injective.
+
+  - property_id: well-copowered
+    reason: See <a href="https://math.stackexchange.com/questions/5025660" target="_blank">MSE/5025660</a>.
+
+  - property_id: generator
+    reason: As for $\Ab$, the group $\IZ$ is a generator.
+
+  - property_id: cogenerator
+    reason: It is easy to check that $\IZ$ is a cogenerator for free abelian groups.
+
+  - property_id: regular
+    reason: |-
+      This follows formally from the fact that $\Ab$ is regular and $\FreeAb$ is closed under subobjects and finite products: By Prop. 2.5 in the <a href="https://ncatlab.org/nlab/show/regular+category">nlab</a> it suffices to prove that there are pullback-stable (reg epi, mono)-factorizations. Every homomorphism $f  : A \to B$ in $\FreeAb$ factors as $f = i \circ p : A \twoheadrightarrow C \hookrightarrow B$, where $C$ is a subgroup, hence free, and $A \to C$ is surjective. Clearly, surjective homomorphisms are pullback-stable. It remains to show that they coincide with the regular epimorphisms.<br>
+      	(1) If $f : A \to B$ is surjective, it is the coequalizer of $A \times_B A \rightrightarrows A$ in $\Ab$. Since $A \times_B A$ is free abelian, $f$ is also an coequalizer in $\FreeAb$.<br>
+      	(2) If $f : A \to B$ is a regular epimorphism in $\FreeAb$, consider the factorization $f = i \circ p$ as above. Since $f$ is an extremal epimorphism, $i$ must be an isomorphism, so that $f$ is surjective.
+
+unsatisfied_properties:
+  - property_id: countable powers
+    reason: Assume that the power $P = \prod_{n \geq 0} \IZ$ exists in this category. The projections $P \to \IZ$ induce an isomorphism of abelian groups $\Hom(\IZ, P) \to \prod_n \Hom(\IZ, \IZ)$, hence $P \cong \IZ^{\IN}$. But it is <a href="https://groupprops.subwiki.org/wiki/Baer-Specker_group_is_not_free_abelian" target="_blank">well-known</a> that $\IZ^{\IN}$ is not free abelian.
+
+  - property_id: balanced
+    reason: "The homomorphism $2 : \\IZ \\to \\IZ$ is a counterexample."
+
+  - property_id: skeletal
+    reason: This is trivial.
+
+  - property_id: sequential colimits
+    reason: See <a href="https://mathoverflow.net/questions/509715" target="_blank">MO/509715</a>.
+
+  - property_id: effective cocongruences
+    reason: |-
+      We will let $E$ be the abelian group with presentation $\langle a, b, c \mid a - b = 2c \rangle$, with two morphisms $\IZ \rightrightarrows E$ given by $1\mapsto a$, $1\mapsto b$. Note that $E$ is free with basis $\{ b, c \}$. Then $\Hom(E, G) \cong \{ (x, y, z) \in G^3 \mid x - y = 2z \}$. Observe that since $G$ is torsion-free, the projection onto the first two coordinates is injective; and $(x, y)$ is in the image precisely when $x \equiv y \pmod{2G}$, which gives an equivalence relation. Therefore, $E$ gives a cocongruence on $\IZ$.<br>
+      	On the other hand, if $E$ were the cokernel pair of $h : H \to \IZ$, that would mean that for $x, y : \IZ \to G$, $x \equiv y \pmod{2G}$ if and only if $x \circ h = y \circ h$. In particular, from the case $G := \IZ$, $x := 2 \id$, $y := 0$, we would have $2h = 0$. That implies $h = 0$, but then that would give $\id_{\IZ} \equiv 0 \pmod{2}$, resulting in a contradiction.
+
+category_property_comments:
+  - property_id: accessible
+    comment: The question if this category is accessible is undecidable in ZFC. See <a href="https://math.stackexchange.com/questions/720885" target="_blank">MSE/720885</a>.
+
+special_objects:
+  initial object:
+    description: trivial group
+  terminal object:
+    description: trivial group
+  coproducts:
+    description: direct sums
+  products:
+    description: '[finite case] direct sums'
+
+special_morphisms:
+  isomorphisms:
+    description: bijective homomorphisms
+    reason: This follows exactly as for abelian groups.
+  monomorphisms:
+    description: injective homomorphisms
+    reason: "Let $f : A \\to B$ be a monomorphism of free abelian groups. Let $a \\in A$ be in the kernel of $a$. Then we may view $a$ as a morphism $a : \\IZ \\to A$ with $f \\circ a = 0$, and $\\IZ$ is free. Hence, $a = 0$."
+  epimorphisms:
+    description: "homomorphisms $f : A \\to B$ with the property that $f(A)$ is not contained in a proper direct summand of $B$."
+    reason: "Let $f : A \\to B$ be a morphism of free abelian groups such that $f(A)$ is not contained in a proper direct summand of $B$. Then $f$ is an epimorphism: If $t : B \\to C$ is a morphism with $t \\circ f = 0$, we want to show $t = 0$. Since the image of $t$ is free abelian (as a subgroup of $B$), we may assume that $t$ is surjective. Since $C$ is free, $t$ splits, so its kernel $K$ is a direct summand of $B$ (Splitting Lemma). It contains $f(A)$ because of $t \\circ f = 0$. By assumption, $K = B$, so that $t = 0$. Conversely, assume that $f : A \\to B$ is an epimorphism, and that $f(A)$ is contained in a direct summand $K$ of $B$. Let $L$ be a complement of $B$ (which is free abelian) and let $p : B \\to L$ be the projection. Then $t \\circ f = 0$, so $t = 0$. But then $L = 0$, which means $K = B$."

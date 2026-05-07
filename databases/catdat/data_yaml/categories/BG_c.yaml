@@ -1,0 +1,58 @@
+id: BG_c
+name: delooping of an infinite countable group
+notation: $BG$
+objects: a single object
+morphisms: the elements of an infinite countable group $G$
+description: Every group $G$ yields a groupoid $BG$ with a single object $*$, morphisms given by the elements of $G$, and composition given by the group operation. In this example, we consider the case of an infinite countable group $G$ (such as $G = \IZ$).
+nlab_link: https://ncatlab.org/nlab/show/delooping
+
+tags:
+  - algebra
+  - category theory
+  - single object
+
+related_categories:
+  - BG_f
+  - BN
+
+satisfied_properties:
+  - property_id: countable
+    reason: This is because $G$ is countable.
+
+  - property_id: small
+    reason: This is trivial.
+
+  - property_id: groupoid
+    reason: This is trivial.
+
+  - property_id: connected
+    reason: This is trivial.
+
+  - property_id: generator
+    reason: The unique object is a generator for trivial reasons.
+
+  - property_id: skeletal
+    reason: There is just one object.
+
+unsatisfied_properties:
+  - property_id: essentially finite
+    reason: This is because we choose $G$ to be infinite.
+
+special_objects: {}
+
+special_morphisms:
+  isomorphisms:
+    description: every morphism
+    reason: It is a groupoid.
+  monomorphisms:
+    description: every morphism
+    reason: This is trivial.
+  epimorphisms:
+    description: every morphism
+    reason: This holds because it is a groupoid.
+  regular monomorphisms:
+    description: same as monomorphisms
+    reason: This is because the category is mono-regular.
+  regular epimorphisms:
+    description: same as isomorphisms
+    reason: This is because the category is left cancellative.

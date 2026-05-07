@@ -1,0 +1,72 @@
+id: On
+name: poset of ordinal numbers
+notation: $(\On,\leq)$
+objects: ordinal numbers
+morphisms: "a unique morphism $(\\alpha,\\beta): \\alpha \\to \\beta$ if $\\alpha \\leq \\beta$"
+description: This is a large variant of the poset of natural numbers.
+
+tags:
+  - set theory
+  - thin
+
+related_categories:
+  - N
+
+satisfied_properties:
+  - property_id: thin
+    reason: This is trivial.
+    check_redundancy: false
+
+  - property_id: locally small
+    reason: This is trivial.
+
+  - property_id: cocomplete
+    reason: Every set of ordinal numbers has a supremum.
+
+  - property_id: binary products
+    reason: For ordinal numbers $\alpha,\beta$ their minimum exists, it is $\alpha$ when $\alpha \leq \beta$ and $\beta$ otherwise.
+
+  - property_id: connected limits
+    reason: Every non-empty set of ordinal numbers has a minimum.
+
+  - property_id: well-powered
+    reason: This is because for every ordinal $\alpha$ the collection of ordinals $\leq \alpha$ is a set (namely, $\alpha + 1$).
+
+  - property_id: semi-strongly connected
+    reason: It is well-known that for ordinals $\alpha,\beta$ we have $\alpha \leq \beta$ or $\beta \leq \alpha$.
+
+  - property_id: direct
+    reason: This is because the ordinal numbers with respect to $<$ are well-founded (by definition).
+
+unsatisfied_properties:
+  - property_id: terminal object
+    reason: There is no largest ordinal $\alpha$ since $\alpha + 1$ will always be larger.
+
+  - property_id: well-copowered
+    reason: The "quotients" of $0$ are all ordinals.
+
+  - property_id: inverse
+    reason: Consider the strictly increasing sequence $0 < 1 < 2 < \cdots$.
+
+special_objects:
+  initial object:
+    description: $0$
+  coproducts:
+    description: supremum
+
+special_morphisms:
+  isomorphisms:
+    description: only the identities
+    reason: This is true for every poset (regarded as a category).
+  monomorphisms:
+    description: every morphism
+    reason: It is a thin category.
+  epimorphisms:
+    description: every morphism
+    reason: It is a thin category.
+  regular monomorphisms:
+    description: same as isomorphisms
+    reason: This is because the category is right cancellative.
+  regular epimorphisms:
+    description: same as isomorphisms
+    reason: This is because the category is left cancellative.

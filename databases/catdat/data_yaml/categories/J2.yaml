@@ -1,0 +1,64 @@
+id: J2
+name: category of Jónsson-Tarski algebras
+notation: $\J_2$
+objects: "pairs $(X,\\alpha)$, where $X$ is a set and $\\alpha : X \\to X \\times X$ is an isomorphism"
+morphisms: "A morphism $(X,\\alpha) \\to (Y,\\beta)$ is a map $f : X \\to Y$ satisfying $$(f \\times f) \\circ \\alpha = \\beta \\circ f.$$"
+description: This is interesting example of a category in the intersection of topos theory and algebra.
+nlab_link: https://ncatlab.org/nlab/show/J%C3%B3nsson-Tarski+algebra
+
+tags:
+  - algebra
+  - set theory
+
+related_categories:
+  - M-Set
+
+satisfied_properties:
+  - property_id: locally small
+    reason: This is trivial.
+
+  - property_id: finitary algebraic
+    reason: "The structure of a Jónsson-Tarski algebra on a set $X$ is equivalent to one binary operation $\\mu : X^2 \\to X$ and two unary operations $\\lambda, \\rho : X \\rightrightarrows X$ such that $\\mu(\\lambda(x),\\rho(x)) = x$, $\\lambda(\\mu(x,y))=x$, and $\\rho(\\mu(x,y))=y$."
+
+  - property_id: Grothendieck topos
+    reason: See the <a href="https://ncatlab.org/nlab/show/J%C3%B3nsson-Tarski+topos" target="_blank">nLab</a>.
+
+unsatisfied_properties:
+  - property_id: skeletal
+    reason: This is trivial.
+
+  - property_id: semi-strongly connected
+    reason: |-
+      There is a bijection $\alpha = (\lambda,\rho) : \IN \to \IN \times \IN$ such that $\lambda$ has a fixed point, but $\rho$ does not (see below). Then the isomorphism $\beta := (\rho,\lambda)$ has the opposite property. There cannot be any morphism $(\IN,\alpha) \to (\IN,\beta)$, as it would map the fixed point of $\lambda$ to a fixed point of $\rho$, and likewise there is no morphism $(\IN,\beta) \to (\IN,\alpha)$.<br>
+      	To construct $\alpha$ or rather $\alpha^{-1} : \IN \times \IN \to \IN$, we can alter the standard bijection $(n,m) \mapsto 2^n (2m+1) - 1$ as follows:
+      	$$\alpha^{-1}(n,m) = \begin{cases} 2 & (n,m) = (0,0) \\ 0 & (n,m) = (0,1) \\ 2^n (2m+1) - 1 & \text{otherwise} \end{cases}$$
+      	Then $\alpha(0)=(0,1)$, i.e. $\lambda(0)=0$. The function $\rho$ has no fixed point, i.e. $\alpha^{-1}(n,m) \neq m$ for all $n,m$. Namely, if $(n,m)=(0,0)$, then $\alpha^{-1}(n,m)=2 \neq m$. If $(n,m)=(0,1)$, then $\alpha^{-1}(n,m)=0 \neq m$. Otherwise,
+      	$$\alpha^{-1}(n,m) = 2^n (2m+1) - 1 \geq (2m+1)-1 = 2m \geq m,$$
+      	and equality can only hold if $m=0$ and $n=0$, which we already excluded.
+
+special_objects:
+  initial object:
+    description: $(\varnothing,!)$
+  terminal object:
+    description: $(\{\ast\},!)$
+  coproducts:
+    description: See <a href="https://matheplanet.de/matheplanet/nuke/html/article.php?sid=1713" target="_blank">here</a> for a description
+  products:
+    description: direct products with pointwise operations
+
+special_morphisms:
+  isomorphisms:
+    description: bijective morphisms
+    reason: This characterization holds in every algebraic category.
+  monomorphisms:
+    description: injective morphisms
+    reason: "This holds in every finitary algebraic category: the forgetful functor to $\\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms."
+  epimorphisms:
+    description: surjective morphisms
+    reason: 'For the non-trivial direction: The category is epi-regular (since it is an elementary topos), and every regular epimorphism is surjective (this holds in any algebraic category).'
+  regular monomorphisms:
+    description: same as monomorphisms
+    reason: This is because the category is mono-regular.
+  regular epimorphisms:
+    description: same as epimorphisms
+    reason: This is because the category is epi-regular.

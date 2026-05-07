@@ -1,0 +1,92 @@
+id: walking_coreflexive_pair
+name: walking coreflexive pair
+notation: $\Delta^{\leq 1}$
+objects: two objects $[0]$ and $[1]$
+morphisms: "the identities, two morphisms $i,j : [0] \\rightrightarrows [1]$, a morphism $p : [1] \\to [0]$ with $p i = p j = \\id_{[0]}$, and the two idempotent morphisms $ip, jp : [1] \\to [1]$."
+description: |-
+  This category is equal to the truncated simplex category $\Delta^{\leq 1}$, i.e. the full subcategory of $\Delta$ spanned by $[0] = \{0\}$ and $[1] = \{0 < 1\}$; this also explains our notation of the category and its objects.
+  	$$[0] \begin{array}{c} \xhookrightarrow{~~i~~} \\ \xtwoheadleftarrow{~~p~~} \\ \xhookrightarrow{~~j~~} \end{array} [1]$$
+  	The morphisms $i,j$ are the two inclusions, $p$ is their unique retraction, and $ip,jp : [1] \to [1]$ are the two constant maps. The name of this category comes from the fact that a functor out of it is the same as a <a href="https://ncatlab.org/nlab/show/reflexive+pair" target="_blank">coreflexive pair</a> in the target category. Its dual is therefore the walking reflexive pair.
+
+tags:
+  - category theory
+  - finite
+
+related_categories:
+  - Delta
+  - walking_pair
+  - walking_splitting
+
+satisfied_properties:
+  - property_id: finite
+    reason: This is trivial.
+
+  - property_id: small
+    reason: This is trivial.
+
+  - property_id: strongly connected
+    reason: This is trivial.
+
+  - property_id: gaunt
+    reason: This is obvious.
+
+  - property_id: terminal object
+    reason: The object $[0]$ is terminal since it is already terminal in $\Delta$.
+
+  - property_id: epi-regular
+    reason: "The only non-identity epimorphism is $p$, which is the coequalizer of $\\id, ip : [1] \\rightrightarrows [1]$ (since $pi = \\id$)."
+
+  - property_id: mono-regular
+    reason: "The only non-identity monomorphisms are $i$ and $j$. The morphism $i$ is the equalizer of $\\id, ip : [1] \\rightrightarrows [1]$ (since $pi = \\id$), and for $j$ it is the same argument."
+
+  - property_id: coequalizers
+    reason: 'We already know that the <a href="/category/Delta">simplex category $\Delta$ has coequalizers</a>, and the proof has shown that the cardinality does not increase, so we are done. But a direct proof is also possible: There are four non-equal parallel pairs: $(i,j)$, $(ip,jp)$, $(\id,ip)$, and $(\id,jp)$. The first two have the same coequalizer (if it exists) since $p$ is an epimorphism, the last two are symmetric, and we already remarked that $p$ is a coequalizer of $(\id,ip)$. So it suffices to check that $p$ is a coequalizer of $i,j$, which is easy.'
+
+  - property_id: generator
+    reason: The object $[0]$ is generator since this is already true in $\Delta$. A direct proof is also possible.
+
+  - property_id: cogenerator
+    reason: The object $[1]$ is cogenerator since this is already true in $\Delta$. A direct proof is also possible.
+
+  - property_id: cosifted
+    reason: Our proof that the <a href="/category/Delta">simplex category $\Delta$ is cosifted</a> has only used $[0],[1]$ as auxiliary objects and therefore also shows that $\Delta^{\leq 1}$ is cosifted.
+
+  - property_id: generalized variety
+    reason: This actually holds for every truncated simplex category $\Delta^{\leq n}$. See <a href="https://mathoverflow.net/questions/510760" target="_blank">MO/510760</a> for a proof that sifted colimits exist. See <a href="https://mathoverflow.net/questions/510827" target="_blank">MO/510827</a> for a proof that every object is strongly finitely presentable.
+
+unsatisfied_properties:
+  - property_id: strict terminal object
+    reason: "The morphism $i : [0] \\to [1]$ from the terminal object $[0]$ is a witness."
+
+  - property_id: cofiltered
+    reason: "The morphisms $i,j : [0] \\rightrightarrows [1]$ are not equalized by any morphism."
+
+  - property_id: coreflexive equalizers
+    reason: "The coreflexive pair $i,j : [0] \\rightrightarrows [1]$ has no equalizer, in fact is not equalized by any morphism."
+
+  - property_id: pushouts
+    reason: Assume that $[1] \xleftarrow{i} [0] \xrightarrow{i} [1]$ has a pushout in $\Delta^{\leq 1}$, where $i(0)=0$. This amounts to a universal totally ordered set of cardinality $\leq 2$ with elements $a,b,c$ satisfying $a \leq b$, $a \leq c$. Since a finite totally ordered set has trivial automorphism group, the automorphism defined by $a \mapsto a$, $b \mapsto c$, $c \mapsto b$ must be the identity, i.e., we have $b = c$. However, in $[1]$ the equations $0 \leq 0$, $0 \leq 1$ then show that the universal property fails.
+
+  - property_id: multi-complete
+    reason: 'This follows directly from existing results: If its dual, the walking reflexive pair, was multi-cocomplete, then since it is also accessible, it would be <a href="/category-property/locally_multi-presentable">locally multi-presentable</a>. But then it would have connected limits, in particular pullbacks.'
+
+special_objects:
+  terminal object:
+    description: $[1]$
+
+special_morphisms:
+  isomorphisms:
+    description: the two identities
+    reason: This is obvious.
+  monomorphisms:
+    description: the identities and $i$, $j$
+    reason: Since $pi = \id$, but $ip \neq \id$, we conclude that $i$ is a monomorphism, but $p$ is not. Likewise, $j$ is a monomorphism. Since $p$ is not a monomorphism, $ip$ and $jp$ are also no monomorphisms.
+  epimorphisms:
+    description: the identities and $p$
+    reason: Since $pi = \id$, but $ip \neq \id$, we conclude that $p$ is an epimorphism, but $i$ is not. Hence, also $ip$ is not an epimorphism. Likewise, $j$ and $jp$ are no epimorphisms.
+  regular monomorphisms:
+    description: same as monomorphisms
+    reason: This is because the category is mono-regular.
+  regular epimorphisms:
+    description: same as epimorphisms
+    reason: This is because the category is epi-regular.

@@ -1,0 +1,66 @@
+id: B
+name: category of finite sets and bijections
+notation: $\IB$
+objects: finite sets
+morphisms: bijective maps
+description: This category is also known as the permutation groupoid. It appears in the definition of a combinatorial species.
+nlab_link: https://ncatlab.org/nlab/show/permutation+groupoid
+
+tags:
+  - combinatorics
+  - set theory
+
+related_categories:
+  - FI
+  - FS
+
+satisfied_properties:
+  - property_id: locally small
+    reason: There is a forgetful functor $\IB \to \Set$ and $\Set$ is locally small.
+
+  - property_id: essentially countable
+    reason: Every finite set is isomorphic to some $\{1,\dotsc,n\}$ for some $n \in \IN$.
+
+  - property_id: groupoid
+    reason: This is trivial.
+
+  - property_id: inhabited
+    reason: This is trivial.
+
+unsatisfied_properties:
+  - property_id: small
+    reason: Even the collection of singletons is not small.
+
+  - property_id: connected
+    reason: For every $n \geq 0$ there is a connected component of sets of size $n$.
+
+  - property_id: generator
+    reason: This is trivial.
+
+  - property_id: essentially finite
+    reason: This is trivial.
+
+  - property_id: skeletal
+    reason: This is trivial.
+
+  - property_id: countable
+    reason: This is trivial.
+
+special_objects: {}
+
+special_morphisms:
+  isomorphisms:
+    description: every morphism
+    reason: It is a groupoid by construction.
+  monomorphisms:
+    description: every morphism
+    reason: This is trivial.
+  epimorphisms:
+    description: every morphism
+    reason: This is trivial.
+  regular monomorphisms:
+    description: same as monomorphisms
+    reason: This is because the category is mono-regular.
+  regular epimorphisms:
+    description: same as epimorphisms
+    reason: This is because the category is epi-regular.

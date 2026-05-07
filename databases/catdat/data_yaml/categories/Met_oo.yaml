@@ -1,0 +1,82 @@
+id: Met_oo
+name: category of metric spaces with ∞ allowed
+notation: $\Met_{\infty}$
+objects: metric spaces, where the metric is allowed to assume the value $\infty$
+morphisms: non-expansive maps $f$, meaning $d(f(x),f(y)) \leq d(x,y)$ for all $x,y$
+description: The fact that we allow $\infty$ means that universal constructions work much better when compared to $\Met$.
+nlab_link: https://ncatlab.org/nlab/show/Met
+
+tags:
+  - analysis
+
+related_categories:
+  - Met
+  - Met_c
+
+satisfied_properties:
+  - property_id: locally small
+    reason: There is a forgetful functor $\Met_{\infty} \to \Set$ and $\Set$ is locally small.
+
+  - property_id: generator
+    reason: The singleton metric space $1$ is a generator, since morphisms $1 \to X$ correspond to the elements of $X$.
+
+  - property_id: locally ℵ₁-presentable
+    reason: Example 4.5 in <a href="https://arxiv.org/abs/1504.02660" target="_blank">this preprint</a>
+
+  - property_id: cartesian filtered colimits
+    reason: We can use the same proof as for the <a href="/category/Met">category of metric spaces</a> since the equation $\inf_i \max(r, s_i) = \max(r, \inf_i s_i)$ also holds for for $r, s_i \in \IR \cup \{\infty\}$.
+
+  - property_id: infinitary extensive
+    reason: "[Sketch] Since $\\Set$ is infinitary extensive, a map $f : Y \\to \\coprod_i X_i =: X$ corresponds to a decomposition $Y = \\coprod_i Y_i$ (as sets) with maps $f_i : Y_i \\to X_i$. Endow $Y_i$ with the restricted metric. If $f$ is non-expansive, each $f_i$ is non-expansive, and for $x_i \\in Y_i$ and $i \\neq j$ we have $d_Y(x_i,x_j) \\geq d_X(f(x_i),f(x_j)) = \\infty$, so that $Y = \\coprod_i Y_i$ holds as metric spaces."
+
+  - property_id: cogenerator
+    reason: "The proof is similar to $\\Met$, a cogenerator is given by $\\IR \\cup \\{\\infty\\}$ with the metric in which $d(a,\\infty)=\\infty$ for $a \\in \\IR$. Then one checks that the maps $d(a,-) : X \\to \\IR \\cup \\{\\infty\\}$ are non-expansive and finishes as for $\\Met$."
+
+  - property_id: semi-strongly connected
+    reason: Every non-empty metric space is weakly terminal (by using constant maps).
+
+unsatisfied_properties:
+  - property_id: balanced
+    reason: The inclusion $\IQ \hookrightarrow \IR$ provides a counterexample. Alternatively, consider the identity map $(X,2d) \to (X,d)$ for any non-trivial metric space $(X,d)$.
+
+  - property_id: cartesian closed
+    reason: This is proven in <a href="https://math.stackexchange.com/questions/5131457" target="_blank">MSE/5131457</a>.
+
+  - property_id: filtered-colimit-stable monomorphisms
+    reason: We can copy the proof from the <a href="/category/Met">category of metric spaces</a>.
+
+  - property_id: skeletal
+    reason: This is trivial.
+
+  - property_id: Malcev
+    reason: "Consider the metric subspace $\\{(a,b) \\in \\IR^2 : a \\leq b\\}$ of $\\IR^2$."
+
+  - property_id: co-Malcev
+    reason: 'See <a href="https://mathoverflow.net/questions/509552">MO/509552</a>: Consider the forgetful functor $U : \Met_{\infty} \to \Set$ and the relation $R \subseteq U^2$ defined by $R(X) := \{(a,b) \in U(X)^2 : d(x,y) \leq 1 \}$. Both are representable: $U$ by the singleton metric space and $R$ by the metric space $\{ 0,1 \}$ where $d(0,1) := 1$. It is clear that $R$ is reflexive, but not transitive.'
+
+  - property_id: cofiltered-limit-stable epimorphisms
+    reason: We already know that $\Set$ does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the functor $\Set \to \Met_{\infty}$ that equips a set with the discrete topology.
+
+  - property_id: effective cocongruences
+    reason: The same counterexample as for <a href="/category/Met">$\Met$</a> works here. The difference in this case is that a binary copower of two copies of $(0,1)$ does exist in $\Met_\infty$. However, this would assign a distance of $\infty$ between points in $(-1,0)$ and points in $(0,1)$, which does not agree with the chosen subspace metric on $(-1,0) \cup (0,1)$.
+
+special_objects:
+  initial object:
+    description: empty metric space
+  terminal object:
+    description: singleton space
+  coproducts:
+    description: disjoint union with the metric that extends the given ones and gives points in different spaces the distance $\infty$
+  products:
+    description: direct products with the metric $d(x,y) = \sup_i d_i(x_i,y_i)$
+
+special_morphisms:
+  isomorphisms:
+    description: bijective isometries
+    reason: This is easy.
+  monomorphisms:
+    description: injective non-expansive maps
+    reason: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
+  epimorphisms:
+    description: non-expansive maps with dense image
+    reason: See <a href="https://math.stackexchange.com/questions/937387" target="_blank">MSE/937387</a>.

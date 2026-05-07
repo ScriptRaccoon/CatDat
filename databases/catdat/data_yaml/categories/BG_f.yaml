@@ -1,0 +1,59 @@
+id: BG_f
+name: delooping of a non-trivial finite group
+notation: $BG$
+objects: a single object
+morphisms: the elements of a non-trivial finite group $G$
+description: Every group $G$ yields a groupoid $BG$ with a single object $*$, morphisms given by the elements of $G$, and composition given by the group operation. In this example, we consider the case of a non-trivial finite group $G$ (such as $G = C_2$).
+nlab_link: https://ncatlab.org/nlab/show/delooping
+
+tags:
+  - algebra
+  - category theory
+  - finite
+  - single object
+
+related_categories:
+  - BG_c
+  - BN
+
+satisfied_properties:
+  - property_id: finite
+    reason: This is trivial.
+
+  - property_id: small
+    reason: This is trivial.
+
+  - property_id: groupoid
+    reason: This is trivial.
+
+  - property_id: connected
+    reason: This is trivial.
+
+  - property_id: generator
+    reason: The unique object is a generator for trivial reasons.
+
+  - property_id: skeletal
+    reason: There is just one object.
+
+unsatisfied_properties:
+  - property_id: trivial
+    reason: This is trivial.
+
+special_objects: {}
+
+special_morphisms:
+  isomorphisms:
+    description: every morphism
+    reason: It is a groupoid.
+  monomorphisms:
+    description: every morphism
+    reason: This is trivial.
+  epimorphisms:
+    description: every morphism
+    reason: This holds because it is a groupoid.
+  regular monomorphisms:
+    description: same as monomorphisms
+    reason: This is because the category is mono-regular.
+  regular epimorphisms:
+    description: same as isomorphisms
+    reason: This is because the category is left cancellative.

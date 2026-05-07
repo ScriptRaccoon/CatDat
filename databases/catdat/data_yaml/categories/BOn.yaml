@@ -1,0 +1,85 @@
+id: BOn
+name: delooping of the additive monoid of ordinal numbers
+notation: $B\On$
+objects: a single object
+morphisms: ordinal numbers, with addition as composition
+description: Every monoid $M$ induces a category $BM$ with a single object $*$. This also works when $M$ is large, in which case $BM$ is not locally small. In this example, we apply this construction to the large monoid of ordinal numbers with respect to addition, so composition is $\alpha \circ \beta = \alpha + \beta$.
+
+tags:
+  - set theory
+  - single object
+
+related_categories:
+  - BN
+
+satisfied_properties:
+  - property_id: strongly connected
+    reason: This is trivial.
+
+  - property_id: generator
+    reason: There is just one object.
+
+  - property_id: cogenerator
+    reason: There is just one object.
+
+  - property_id: left cancellative
+    reason: It is well-known that ordinal addition satisfies $\alpha + \beta = \alpha + \gamma \implies \beta = \gamma$.
+
+  - property_id: well-copowered
+    reason: This follows from the description of epimorphisms as finite ordinals, see <a href="https://math.stackexchange.com/questions/5029605" target="_blank">MO/5029605</a>.
+
+  - property_id: equalizers
+    reason: See <a href="https://math.stackexchange.com/questions/5029668/" target="_blank">MSE/5029668</a>.
+
+  - property_id: gaunt
+    reason: This is because $0$ is the only ordinal number with an additive inverse.
+
+  - property_id: cofiltered limits
+    reason: See <a href="https://math.stackexchange.com/questions/5129138/" target="_blank">MSE/5129138</a>.
+
+  - property_id: locally cartesian closed
+    reason: The slice category $B\On / *$ is isomorphic to the poset $(\On,\geq)$ (not to $(\On,\leq)$). This category is thin and and semi-strongly connected, <a href="/category-implication/sequential_implies_lcc">hence</a> cartesian closed.
+
+unsatisfied_properties:
+  - property_id: locally essentially small
+    reason: This is because $\On$ is large.
+
+  - property_id: initial object
+    reason: This is trivial.
+
+  - property_id: balanced
+    reason: Every finite ordinal is both a mono- and an epimorphism (see below), but only $0$ is an isomorphism.
+
+  - property_id: well-powered
+    reason: This is because all ordinals are monomorphisms (see below) and they do not form a set.
+
+  - property_id: sequential colimits
+    reason: Assume that the sequence $\bullet \xrightarrow{1} \bullet \xrightarrow{1} \cdots$ has a colimit. This mounts to a (universal) sequence of ordinals $\alpha_n$ with $\alpha_n = \alpha_{n+1} + 1$. But then $\alpha_{n+1} < \alpha_n$, contradicting the fact that $\alpha_0$ is well-ordered.
+
+  - property_id: pushouts
+    reason: Assume that $1,\omega$ have a pushout. This is a (universal) pair of ordinals $\alpha,\beta$ with $\alpha + 1 = \beta + \omega$. But $\beta + \omega$ is a limit ordinal, while $\alpha + 1$ is not.
+
+  - property_id: one-way
+    reason: This is trivial.
+
+  - property_id: cofiltered-limit-stable epimorphisms
+    reason: The epimorphisms are the finite ordinals (see below), but the limit of the sequential diagram $\cdots \xrightarrow{1} * \xrightarrow{1} *$ is the ordinal $\omega$ by <a href="https://math.stackexchange.com/questions/5129138">MSE/5129138</a>.
+
+special_objects: {}
+
+special_morphisms:
+  isomorphisms:
+    description: only the ordinal $0$
+    reason: The $0$ is the only ordinal which has an additive inverse, since for $\alpha > 0$ we have $\alpha + \beta > 0$ for all $\beta$.
+  monomorphisms:
+    description: every ordinal number
+    reason: This is because ordinal addition is left cancellative.
+  epimorphisms:
+    description: finite ordinal numbers
+    reason: See <a href="https://math.stackexchange.com/questions/5029605" target="_blank">MSE/5029605</a>.
+  regular monomorphisms:
+    description: ordinals of the form $\alpha \cdot \omega$, where $\alpha$ is any ordinal
+    reason: This results from the proof that equalizers exist, see <a href="https://math.stackexchange.com/questions/5029668" target="_blank">MSE/5029668</a>.
+  regular epimorphisms:
+    description: same as isomorphisms
+    reason: This is because the category is left cancellative.

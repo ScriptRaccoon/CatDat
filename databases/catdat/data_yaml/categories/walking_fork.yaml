@@ -1,0 +1,77 @@
+id: walking_fork
+name: walking fork
+notation: $\{0 \to 1 \rightrightarrows 2\}$
+objects: three objects $0,1,2$
+morphisms: "one morphism $i : 0 \\to 1$, two morphisms $f,g : 1 \\rightrightarrows 2$, one morphism $0 \\to 2$ (namely, $f \\circ i = g \\circ i$), and the identities"
+description: The name of this category comes from the fact that a functor out of it is the same as a <a href="https://ncatlab.org/nlab/show/fork" target="_blank">fork</a>.
+
+tags:
+  - category theory
+  - finite
+
+related_categories:
+  - walking_commutative_square
+  - walking_composable_pair
+  - walking_pair
+
+satisfied_properties:
+  - property_id: finite
+    reason: This is trivial.
+
+  - property_id: small
+    reason: This is trivial.
+
+  - property_id: semi-strongly connected
+    reason: This is obvious.
+
+  - property_id: skeletal
+    reason: The three objects are clearly not isomorphic.
+
+  - property_id: generator
+    reason: It is easy to check that $1$ is a generator.
+
+  - property_id: cogenerator
+    reason: It is easy to check that $2$ is a cogenerator.
+
+  - property_id: left cancellative
+    reason: It is easy to check that $i,f,g$ are monomorphisms.
+
+  - property_id: equalizers
+    reason: The only pair of distinct parallel morphisms is $f,g$, and their equalizer is $i$.
+
+  - property_id: locally cartesian closed
+    reason: We need to check that every slice category is cartesian closed. The slice category over $0$ is the <a href="/category/1">trivial category</a>. The slice category over $1$ is the <a href="/category/walking_morphism">walking morphism</a>. Finally, the slice category over $2$ ist the <a href="/category/walking_commutative_square">walking commutative square</a>. All of these are cartesian closed, see their pages for details.
+
+  - property_id: one-way
+    reason: This is trivial.
+
+unsatisfied_properties:
+  - property_id: balanced
+    reason: Both $f$ and $g$ are monomorphisms and epimorphisms.
+
+  - property_id: binary powers
+    reason: "Assume that $X := 2 \\times 2$ exists. Since there is a diagonal morphism $2 \\to X$, we must have $X = 2$, and the two projections $p_1,p_2 : X \\rightrightarrows 2$ must be equal to the identity. But $f,g$ induce a morphism $(f,g) : 1 \\to X$ with $p_1 (f,g) = f$ and $p_2 (f,g) = g$, so that $f=g$, a contradiction."
+
+  - property_id: strongly connected
+    reason: There is no morphism $1 \to 0$.
+
+special_objects:
+  initial object:
+    description: $0$
+
+special_morphisms:
+  isomorphisms:
+    description: the three identities
+    reason: This is trivial.
+  monomorphisms:
+    description: every morphism
+    reason: This is easily checked.
+  epimorphisms:
+    description: the identities and $f,g$
+    reason: This is easily checked.
+  regular monomorphisms:
+    description: the identities and $i$
+    reason: First, $i$ is the equalizer of $f,g$. The morphism $f$ is an epimorphism (and a monomorphism), but no isomorphism, hence cannot be a regular monomorphism. The same holds for $g$.
+  regular epimorphisms:
+    description: same as isomorphisms
+    reason: This is because the category is left cancellative.

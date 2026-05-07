@@ -1,0 +1,97 @@
+id: Met_c
+name: category of metric spaces with continuous maps
+notation: $\Met_c$
+objects: metric spaces
+morphisms: continuous maps
+description: This category is equivalent to the subcategory of $\Top$ (or $\Haus$) that consists of metrizable topological spaces. Hence, the metrics only play a secondary role here.
+nlab_link: https://ncatlab.org/nlab/show/metrisable+topological+space
+
+tags:
+  - analysis
+
+related_categories:
+  - Haus
+  - Met
+  - Met_oo
+  - Top
+
+satisfied_properties:
+  - property_id: locally small
+    reason: There is a forgetful functor $\Met_c \to \Set$ and $\Set$ is locally small.
+
+  - property_id: equalizers
+    reason: Just restrict the metric to the equalizer built from the sets.
+
+  - property_id: countable products
+    reason: For finite products, we take the cartesian product with, say, the sup-metric. The product of countably many metric spaces $(X_i,d_i)_{i \geq 0}$ is given by the cartesian product $\prod_{i \geq 0} X_i$ with the metric $d(x,y) := \sum_{i \geq 0} d_i(x_i,y_i)/(1 + d_i(x_i,y_i))$. See Engelking's book <i>General Topology</i>.
+
+  - property_id: coproducts
+    reason: See <a href="https://math.stackexchange.com/questions/5004389" target="_blank">MSE/5004389</a>.
+    check_redundancy: false
+
+  - property_id: infinitary extensive
+    reason: This follows from the existence of coproducts and finite products, and from the fact that $\Top$ is infinitary extensive.
+
+  - property_id: well-powered
+    reason: This follows easily from the fact that monomorphisms are injective in this category.
+
+  - property_id: generator
+    reason: The one-point metric space is a generator since it represents the forgetful functor $\Met_c \to \Set$.
+
+  - property_id: cogenerator
+    reason: The same proof as for $\Met$ shows that $\IR$ with the usual metric is a cogenerator.
+
+  - property_id: well-copowered
+    reason: "If $f : X \\to Y$ is an epimorphism, then $f(X)$ is dense in $Y$ (see below). Hence, there is an injective map $Y \\to X^{\\IN}$, which bounds the size of $Y$."
+
+  - property_id: semi-strongly connected
+    reason: Every non-empty metric space is weakly terminal (by using constant maps).
+
+  - property_id: effective cocongruences
+    reason: 'Suppose we have a cocongruence $f, g : X \rightrightarrows E$ in $\Met_\c$. Then the image in $\Haus$ is a coreflexive corelation (since epimorphisms in both categories are continuous maps with dense image). By <a href="https://mathoverflow.net/a/509582/2841" target="_blank">MO/509548</a>, that implies that image is of the form $X +_S X$ for a closed subset $S$ of $X$. Since $S$ is metrizable, and the functor $\Met_\c \to \Haus$ is fully faithful <a href="https://ncatlab.org/nlab/show/reflected+limit#FullSubcategoryInclusionReflectCoLimits" target="_blank">and therefore reflects colimits</a>, we conclude that $E$ is effective in $\Met_\c$.'
+
+unsatisfied_properties:
+  - property_id: powers
+    reason: See <a href="https://math.stackexchange.com/questions/139168" target="_blank">MSE/139168</a> for a proof that uncountable powers do not exist.
+
+  - property_id: balanced
+    reason: The inclusion $\IQ \hookrightarrow \IR$ provides a counterexample.
+
+  - property_id: skeletal
+    reason: This is trivial.
+
+  - property_id: Malcev
+    reason: "Consider the metric subspace $\\{(a,b) \\in \\IR^2 : a \\leq b\\}$ of $\\IR^2$."
+
+  - property_id: regular subobject classifier
+    reason: 'We recycle the proof from the <a href="/category/Haus">category of Hausdorff spaces</a>: Assume that there is a regular subobject classifier $\Omega$. By the classification of regular monomorphisms, we would have an isomorphism between $\Hom(X,\Omega)$ and the set of closed subsets of $X$ for any metric space $X$. If we take $X = 1$ we see that $\Omega$ has two points. Since $\Omega$ is Hausdorff, $\Omega \cong 1 + 1$ must be discrete. But then $\Hom(X,\Omega)$ is isomorphic to the set of all clopen subsets of $X$, of which there are usually far fewer than closed subsets (consider $X = [0,1]$).'
+
+  - property_id: sequential colimits
+    reason: See <a href="https://mathoverflow.net/questions/510316" target="_blank">MO/510316</a>.
+
+  - property_id: quotients of congruences
+    reason: If $\Met_c$ had quotients of congruences, then by <a href="/lemma/monic-sequential-colimits-via-congruence-quotients">this lemma</a> it would have sequential colimits of sequences of monomorphisms. This contradicts <a href="https://mathoverflow.net/questions/510316" target="_blank">MO/510316</a>.
+
+special_objects:
+  initial object:
+    description: empty metric space
+  terminal object:
+    description: singleton space
+  coproducts:
+    description: Given metric spaces $(X_i,d_i)$ with $d_i \leq 1$ w.l.o.g, we endow the disjoint union $\coprod_i X_i$ with the metric $d$ that extends the metrics $d_i$ and satisfies $d(x,y) = 1$ when $x,y$ are in different $X_i$.
+  products:
+    description: "[countable case] In the finite case, take direct products with the metric $d(x,y) = \\sup_i d_i(x_i,y_i)$, but other metrics such as $d(x,y) = \\sum_i d_i(x_i,y_i)$ also work. In the countable case, one can assume $d_i \\leq 1$ and then define $d(x,y) = \\sum_i d_i(x,y) / 2^i$."
+
+special_morphisms:
+  isomorphisms:
+    description: homeomorphisms
+    reason: This works as for topological spaces.
+  monomorphisms:
+    description: injective continuous maps
+    reason: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
+  epimorphisms:
+    description: continuous maps with dense image
+    reason: See <a href="https://math.stackexchange.com/questions/937387" target="_blank">MSE/937387</a>.
+  regular monomorphisms:
+    description: embeddings of closed subspaces
+    reason: A reference is Example 7.58 (3) in <a href="https://ncatlab.org/nlab/show/Abstract+and+Concrete+Categories" target="_blank">Joy of Cats</a>, but a proof is missing there.

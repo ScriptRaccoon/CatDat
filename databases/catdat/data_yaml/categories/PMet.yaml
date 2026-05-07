@@ -1,0 +1,109 @@
+id: PMet
+name: category of pseudo-metric spaces with non-expansive maps
+notation: $\PMet$
+objects: pseudo-metric spaces
+morphisms: non-expansive maps $f$, meaning $d(f(x),f(y)) \leq d(x,y)$ for all $x,y$
+description: In contrast to metric spaces, we do not demand $d(x,y)=0 \implies x=y$ here.
+
+tags:
+  - analysis
+
+related_categories:
+  - Met
+
+satisfied_properties:
+  - property_id: locally small
+    reason: There is a forgetful functor $\PMet \to \Set$ and $\Set$ is locally small.
+
+  - property_id: equalizers
+    reason: Just restrict the pseudo-metric to the equalizer built from the sets.
+    check_redundancy: false
+
+  - property_id: binary products
+    reason: The product of two pseudo-metric spaces $(X,d)$, $(Y,d)$ is $(X \times Y,d)$ with $d((x_1,y_1),(x_2,x_2)) := \sup(d(x_1,x_2),d(y_1,y_2))$.
+    check_redundancy: false
+
+  - property_id: terminal object
+    reason: The one-point (pseudo-)metric space is terminal.
+    check_redundancy: false
+
+  - property_id: coequalizers
+    reason: See <a href="https://mathoverflow.net/questions/123739" target="_blank">MO/123739</a>.
+
+  - property_id: filtered colimits
+    reason: "Given a filtered diagram $(X_i)$ of pseudo-metric spaces, take the filtered colimit $X$ of the underlying sets with the following pseudo-metric: If $x,y \\in X$, let $d(x,y)$ be infimum of all $d(x_i,y_i)$, where $x_i,y_i \\in X_i$ are some preimages of $x,y$ in some $X_i$. The definition ensures that each $X_i \\to X$ is non-expansive, and the universal property is easy to check."
+    check_redundancy: false
+
+  - property_id: exact filtered colimits
+    reason: 'We already saw that finite limits and filtered colimits exist. Now let $\I$ be a finite category and $\J$ be a small filtered category, w.l.o.g. a directed poset. Let $X : \I \times \J \to \PMet$ be a diagram. We need to show that the canonical map $\colim_{j \in \J} \lim_{i \in \I} X(i,j) \to \lim_{i \in \I} \colim_{j \in \J}  X(i,j)$ is an isomorphism. It is bijective since the forgetful functor to $\Set$ preserves finite limits and filtered colimits and since $\Set$ has exact filtered colimits. That the map is isometric can easily be reduced to the following lemma: If $d_{i,j} \in \IR_{\geq 0}$ are numbers for $i \in \I$, $j \in \J$ with $j \leq k \implies d_{i,k} \leq d_{i,j}$, then $\inf_j \sup_i d_{i,j} = \sup_i \inf_j d_{i,j}$. This can be proven directly. Alternatively, use that the thin category $(\IR_{\geq 0} \cup \{\infty\},\leq)$ is isomorphic to $([0,1],\leq)$, and we already know that <a href="/category/real_interval">it has exact filtered colimits</a>.'
+
+  - property_id: strict initial object
+    reason: The empty (pseudo-)metric space is initial and clearly strict.
+
+  - property_id: generator
+    reason: The one-point (pseudo-)metric space is a generator since it represents the forgetful functor $\PMet \to \Set$.
+
+  - property_id: cogenerator
+    reason: The set $\{0,1\}$ equipped with the pseudo-metric $d(0,1)=0$ is a cogenerator since every map into is automatically non-expansive and since $\{0,1\}$ is a cogenerator in $\Set$.
+
+  - property_id: semi-strongly connected
+    reason: Every non-empty pseudo-metric space is weakly terminal (by using constant maps).
+
+  - property_id: well-powered
+    reason: This follows since monomorphisms are injective (see below).
+
+  - property_id: well-copowered
+    reason: This follows since epimorphisms are surjective (see below).
+
+unsatisfied_properties:
+  - property_id: balanced
+    reason: "Let $d : \\IR \\times \\IR \\to \\IR_{\\geq 0}$ be the usual Euclidean metric on $\\IR$ and $0 : \\IR \\times \\IR \\to \\IR_{\\geq 0}$ be the zero pseudo-metric. Then the identity map $(\\IR,d) \\to (\\IR,0)$ provides a counterexample."
+
+  - property_id: cartesian closed
+    reason: This is proven in <a href="https://math.stackexchange.com/questions/5131457" target="_blank">MSE/5131457</a>.
+
+  - property_id: countable powers
+    reason: "Assume that the power $P = \\IR^{\\IN}$ exists, where $\\IR$ has the usual (pseudo-)metric. Since the forgetful functor $\\PMet \\to \\Set$ is representable, it preserves limits, powers in particular. Thus, we may assume that $P$ is the set of sequences of numbers and that the projections $p_n : P \\to \\IR$ are given by $p_n(x) = x_n$. Now consider the sequences $x = (n)_n$ and $y = (0)_n$. Since each $p_n$ is non-expansive, we get $d(x,y) \\geq d(p_n(x),p_n(y)) = d(n,0) = n$. But then $d(x,y) = \\infty$, a contradiction."
+
+  - property_id: binary copowers
+    reason: The coproduct of two non-empty pseudo-metric spaces does not exist, see <a href="https://math.stackexchange.com/questions/1778408" target="_blank">MSE/1778408</a> (the proof also works for pseudo-metric spaces). For example, the copower $\IR \sqcup \IR$ does not exist. We only get coproducts when allowing $\infty$ as a distance.
+
+  - property_id: strict terminal object
+    reason: This is trivial.
+
+  - property_id: essentially small
+    reason: This is trivial.
+
+  - property_id: skeletal
+    reason: This is trivial.
+
+  - property_id: Malcev
+    reason: Take any counterexample in $\Set$ and equip it with the zero pseudo-metric.
+
+  - property_id: natural numbers object
+    reason: |-
+      If $(N,z,s)$ is a natural numbers object in $\PMet$, then
+      	$$1 \xrightarrow{z} N \xleftarrow{s} N$$
+      	is a coproduct cocone by <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, Part A, Lemma 2.5.5. Since there is a map $1 \to N$, we have $N \neq \varnothing$. However, the coproduct of two non-empty pseudo-metric spaces does not exist, see <a href="https://math.stackexchange.com/questions/1778408" target="_blank">MSE/1778408</a>.
+
+  - property_id: effective cocongruences
+    reason: 'The proof is similar to the one for <a href="/category/Top">$\Top$</a>: Equip a two-point set with the zero metric; this pseudo-metric space represents the functor taking a pseudo-metric space to the pairs of points with $d(x,y) = 0$. In this case, once you conclude $Z = \varnothing$, the map $h : Z \to 1$ does not have any cokernel pair, since that would have to be a coproduct $1+1$, which does not exist.'
+
+special_objects:
+  initial object:
+    description: empty pseudo-metric space
+  terminal object:
+    description: singleton space
+  products:
+    description: "[finite case] direct products with the pseudo-metric $d(x,y) = \\sup_i d_i(x_i,y_i)$"
+
+special_morphisms:
+  isomorphisms:
+    description: bijective isometries
+    reason: This is easy.
+  monomorphisms:
+    description: injective non-expansive maps
+    reason: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
+  epimorphisms:
+    description: surjective non-expansive maps
+    reason: "Let $f : X \\to Y$ be a non-expansive map that is not surjective. Choose $y_0 \\in Y \\setminus f(X)$. We extend the pseudo-metric from $Y$ to $Z := Y \\sqcup \\{y'_0\\}$ via $d(y,y'_0) := d(y,y_0)$, i.e., we make $y_0,y'_0$ indistinguishable. Let $g : Y \\to Z$ be the inclusion and $h : Y \\to Z$ be the map that composes $g$ with the swap between $y_0$ and $y'_0$. Both are isometric and satisfy $g \\circ f = h \\circ f$. Therefore, $f$ is not an epimorphism."

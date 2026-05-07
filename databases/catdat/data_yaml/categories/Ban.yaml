@@ -1,0 +1,85 @@
+id: Ban
+name: category of Banach spaces with linear contractions
+notation: $\Ban$
+objects: Banach spaces over $\IC$
+morphisms: linear contractions, i.e. linear maps of norm $\leq 1$
+description: The choice of morphisms is similar to that of $\Met$ which yields better categorical properties.
+nlab_link: https://ncatlab.org/nlab/show/Banach+space
+
+tags:
+  - analysis
+
+related_categories:
+  - Met
+
+satisfied_properties:
+  - property_id: locally small
+    reason: There is a forgetful functor $\Ban \to \Set$ and $\Set$ is locally small.
+
+  - property_id: pointed
+    reason: The trivial Banach space $\{0\}$ is a zero object.
+    check_redundancy: false
+
+  - property_id: locally ℵ₁-presentable
+    reason: Example 1.48 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>.
+
+  - property_id: cartesian filtered colimits
+    reason: If $X$ is a Banach space and $(Y_i)$ is a filtered diagram of Banach spaces, the canonical map $\colim_i (X \times Y_i) \to X \times \colim_i Y_i$ is the completion of the canonical map in the category of normed vector spaces with non-expansive linear maps. Now the claim follows directly from the <a href="/category/Met">category of metric spaces</a> with non-expansive maps.
+
+  - property_id: cocartesian cofiltered limits
+    reason: 'If $X$ is a Banach space and $(Y_i)$ is a cofiltered diagram of Banach spaces, the canonical map $X \oplus \lim_i Y_i \to \lim_i (X \oplus Y_i)$ is an isomorphism: Since the forgetful functor $\Ban \to \Vect$ preserves finite coproducts and all limits, and $\Vect$ has the claimed property (see <a href="/category-implication/biproducts_cartesian_filtered_colimits">here</a>), the canonical map is bijective. It remains to show that it is isometric. For $(x,y) \in X \oplus \lim_i Y_i$ the norm in the domain is $|x| + \sup_i |y_i|$, and the norm in the codomain is $\sup_i (|x| + |y_i|)$, and these clearly agree.'
+
+  - property_id: CIP
+    reason: This is immediate from the concrete description of coproducts and products.
+
+  - property_id: cogenerator
+    reason: The Hahn-Banach theorem implies that $\IC$ is a cogenerator.
+
+unsatisfied_properties:
+  - property_id: balanced
+    reason: The linear map $\IC \to \IC$, $x \mapsto x/2$ is a counterexample. It is bijective, hence a mono- and epimorphism, but not isometric and therefore no isomorphism.
+
+  - property_id: filtered-colimit-stable monomorphisms
+    reason: 'The proof is similar to <a href="/category/Met">$\Met$</a>. For $n \geq 1$ let $V_n$ be the Banach space with underlying vector space $\IC$ and the norm $|x|_n := \frac{1}{n} |x|$. For $n \leq m$ the identity map provides a morphism $V_n \to V_m$, which is clearly a monomorphism (also an epimorphism by the way, but an isomorphism iff $n=m$). Let $V$ be the colimit of all $V_n$ in the category of semi-normed vector spaces. It is constructed as the colimit in the category of vector spaces with the semi-norm $|x| := \inf \{|x|_m : n \leq m \}$ for $x \in V_n$. So clearly, the semi-norm is zero. Hence, the colimit in the category of normed vector spaces is $0$. The colimit in the category of Banach spaces is its completion, also $0$. Thus, the monomorphisms $V_1 \to V_n$ become $V_1 \to 0$ in the colimit.'
+
+  - property_id: skeletal
+    reason: This is trivial.
+
+  - property_id: unital
+    reason: See <a href="https://math.stackexchange.com/questions/5033161" target="_blank">MSE/5033161</a>.
+
+  - property_id: co-Malcev
+    reason: See the comments to <a href="https://mathoverflow.net/a/509555/2841" target="_blank">MO/509552</a>.
+
+  - property_id: regular subobject classifier
+    reason: If $\Omega$ is a regular subobject classifier, then by the classification of regular monomorphisms, $\Hom(X,\Omega)$ is isomorphic to the set of closed subspaces of $X$ for any Banach space $X$. For $X = \IC$ this implies that there are exactly two vectors in $\Omega$ with norm $\leq 1$, which is absurd. (For $\Omega = 0$ there is just one, and for $\Omega \neq 0$ there are infinitely many.)
+
+  - property_id: CSP
+    reason: By using the concrete description of products and coproducts, for the constant family $X_n = \IC$ the canonical morphism $\coprod_n X_n \to \prod_n X_n$ becomes the canonical inclusion map $\ell^1 \hookrightarrow \ell^\infty$. This is not an epimorphism (i.e., has no dense image) since the closure of the image is precisely $c_0$. So for example, $(1,1,\dotsc)$ is not contained in the closure of the image.
+
+  - property_id: cofiltered-limit-stable epimorphisms
+    reason: "We show that epimorphisms are not stable under sequential limits. Let $X_n = Y_n = \\IC$ for all $n \\geq 0$. The transition morphism $Y_{n+1} \\to Y_n$ is the identity, and the transition morphism $X_{n+1} \\to X_n$ is $x \\mapsto x/2$. The morphisms $X_n \\to Y_n$, $x \\mapsto x/2^n$ are compatible with the transitions, and they are surjective, hence epimorphisms. Now we check $\\lim_n X_n = 0$: An element $(x_n) \\in \\lim_n X_n$ is a family of complex numbers satisfying $x_n = x_{n+1}/2$ <i>and</i> $\\sup_n |x_n| < \\infty$. But then $x_n = 2^n x_0$ and this can only be bounded when $x_0=0$. Hence, $0 = \\lim_n X_n \\to \\lim_n Y_n = \\IC$ is no epimorphism."
+
+special_objects:
+  initial object:
+    description: trivial Banach space
+  terminal object:
+    description: trivial Banach space
+  coproducts:
+    description: "The coproduct of a family of Banach spaces $(B_i)$ is the subspace $\\bigl\\{x \\in \\prod_i B_i : \\sum_i |x_i| < \\infty\\bigr\\}$ equipped with the $1$-norm $|x| := \\sum_i |x_i|$."
+  products:
+    description: direct products with the $\sup$-norm
+
+special_morphisms:
+  isomorphisms:
+    description: bijective linear isometries
+    reason: This is easy.
+  monomorphisms:
+    description: injective linear contractions
+    reason: "The unit ball functor $U : \\Ban \\to \\Set$ is faithful and representable (by $\\IC$), hence reflects and preserves monomorphisms."
+  epimorphisms:
+    description: linear contractions with dense image
+    reason: "Let $f : X \\to Y$ be an epimorphism of Banach spaces. The subspace $U := \\overline{f(X)} \\subseteq Y$ is closed. It is well-known that the quotient $Y/U$ is also a Banach space with a projection $p : Y \\to Y/U$. Since $p \\circ f = 0 = 0 \\circ f$, we infer $p = 0$, so that $U = Y$."
+  regular monomorphisms:
+    description: closed embeddings
+    reason: The non-trivial direction follows from the <a href="https://math.stackexchange.com/questions/319867" target="_blank">well-known fact</a> that for every closed subspace of a Banach space its quotient space is again a Banach space.

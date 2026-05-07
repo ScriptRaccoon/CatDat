@@ -1,0 +1,60 @@
+id: SetxSet
+name: category of pairs of sets
+notation: $\Set \times \Set$
+objects: pairs $(A,B)$ of sets $A$ and $B$
+morphisms: A morphism $(A,B) \to (C,D)$ consists of a map $A \to C$ and a map $B \to D$.
+description: This is an example of the <a href="https://ncatlab.org/nlab/show/product+category" target="_blank">product of categories</a>. It inherits most (but not all) properties from $\Set$. It can also be seen as the category $\Sh(1+1)$ of sheaves on a discrete space with two points, and also as the slice category $\Set/(1+1)$.
+
+tags:
+  - set theory
+
+related_categories:
+  - Set
+  - Sh(X)
+
+satisfied_properties:
+  - property_id: locally small
+    reason: This is obvious.
+
+  - property_id: Grothendieck topos
+    reason: It is equivalent to the category of sheaves on a discrete space with two points.
+
+  - property_id: locally strongly finitely presentable
+    reason: Take the two-sorted algebraic theory with no operations and no equations.
+
+unsatisfied_properties:
+  - property_id: skeletal
+    reason: This is trivial.
+
+  - property_id: semi-strongly connected
+    reason: When $X$ is non-empty, there is no morphism between $(\varnothing,X)$ and $(X,\varnothing)$.
+
+  - property_id: generator
+    reason: Assume that $(A,B)$ is a generator. Of course, $A$ and $B$ cannot be both empty. Assume w.l.o.g. that $A$ is non-empty. Then there is no morphism $(A,B) \to (0,1)$, but there are two different morphisms $(0,1) \rightrightarrows (0,2)$.
+
+special_objects:
+  initial object:
+    description: $(0,0)$
+  terminal object:
+    description: $(1,1)$
+  coproducts:
+    description: component-wise disjoint union
+  products:
+    description: component-wise direct product
+
+special_morphisms:
+  isomorphisms:
+    description: pairs of bijective maps
+    reason: This is easy.
+  monomorphisms:
+    description: pairs of injective maps
+    reason: This follows from the fact for the category of sets.
+  epimorphisms:
+    description: pairs of surjective maps
+    reason: This follows from the fact for the category of sets.
+  regular monomorphisms:
+    description: same as monomorphisms
+    reason: This is because the category is mono-regular.
+  regular epimorphisms:
+    description: same as epimorphisms
+    reason: This is because the category is epi-regular.

@@ -1,0 +1,93 @@
+id: Meas
+name: category of measurable spaces
+notation: $\Meas$
+objects: measurable spaces
+morphisms: measurable maps
+description: This is very similar to the category of topological spaces. Accordingly, limits and colimits can be constructed in the same way.
+nlab_link: https://ncatlab.org/nlab/show/Meas
+
+tags:
+  - analysis
+
+related_categories:
+  - Top
+
+comments:
+  - The thread <a href="https://math.stackexchange.com/questions/5024471/">MSE/5024471</a> asks for the finitely presentable objects of this category.
+
+satisfied_properties:
+  - property_id: locally small
+    reason: There is a forgetful functor $\Meas \to \Set$ and $\Set$ is locally small.
+
+  - property_id: well-powered
+    reason: This follows from the fact that monomorphisms are injective in this category.
+
+  - property_id: well-copowered
+    reason: This follows from the fact that epimorphisms are surjective in this category.
+
+  - property_id: complete
+    reason: Take the limit of the underlying sets and take the smallest $\sigma$-algebra making all projections measurable.
+
+  - property_id: cocomplete
+    reason: Take the colimit of the underlying sets and take the largest $\sigma$-algebra making all inclusions measurable. That is, a set is measurable iff its preimage under each inclusion is measurable.
+
+  - property_id: infinitary extensive
+    reason: "[Sketch] Since $\\Set$ is infinitary extensive, a map $f : Y \\to \\coprod_i X_i =: X$ corresponds to a decomposition $Y = \\coprod_i Y_i$ (as sets) with maps $f_i : Y_i \\to X_i$. Endow the measurable subset $Y_i \\subseteq Y$ with the restricted $\\sigma$-algebra. If $f$ is measurable, each $f_i$ is measurable, and $Y = \\coprod_i Y_i$ holds as measurable spaces."
+
+  - property_id: generator
+    reason: The one-point measurable space (with the unique $\sigma$-algebra) is a generator since it represents the forgetful functor $\Meas \to \Set$.
+
+  - property_id: cogenerator
+    reason: Take the two-element set $2$ endowed with the trivial $\sigma$-algebra (where only $\varnothing$ and $2$ are measurable), and use that $2$ is a cogenerator for $\Set$.
+
+  - property_id: filtered-colimit-stable monomorphisms
+    reason: This follows from <a href="/lemma/filtered-monos">this lemma</a> applied to the forgetful functor to $\Set$.
+
+  - property_id: semi-strongly connected
+    reason: Every non-empty measurable space is weakly terminal (by using constant maps).
+
+  - property_id: regular subobject classifier
+    reason: The set $\{0,1\}$ with the trivial $\sigma$-algebra is a regular subobject classifier since measurable maps $X \to \{0,1\}$ correspond to subsets of $X$.
+
+unsatisfied_properties:
+  - property_id: cartesian filtered colimits
+    reason: See <a href="https://math.stackexchange.com/questions/5027218" target="_blank">MSE/5027218</a>.
+
+  - property_id: balanced
+    reason: Take a set $X$ with two different $\sigma$-algebras $\A \subset \B$ (for example, $\A = \{\varnothing,X\}$ and $\B = P(X)$ when $X$ has at least $2$ elements), then the identity map $(X,\B) \to (X,\A)$ provides a counterexample.
+
+  - property_id: skeletal
+    reason: This is trivial.
+
+  - property_id: Malcev
+    reason: Use that $\Set$ is not Malcev and endow sets with the trivial $\sigma$-algebra.
+
+  - property_id: cofiltered-limit-stable epimorphisms
+    reason: We already know that $\Set$ does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the functor $\Set \to \Meas$ which equips a set with the trivial $\sigma$-algebra.
+
+  - property_id: effective cocongruences
+    reason: 'The proof is similar to the one for <a href="/category/Top">$\Top$</a>: Use the trivial $\sigma$-algebra on a two-point set.'
+
+special_objects:
+  initial object:
+    description: empty set with the unique $\sigma$-algebra
+  terminal object:
+    description: singleton set with the unique $\sigma$-algebra
+  coproducts:
+    description: disjoint union with the obvious $\sigma$-algebra
+  products:
+    description: direct products with the <a href="https://de.wikipedia.org/wiki/Produkt-%CF%83-Algebra" target="_blank">product $\sigma$-algebra</a>
+
+special_morphisms:
+  isomorphisms:
+    description: bijective measurable maps that map measurable sets to measurable sets
+    reason: This is easy.
+  monomorphisms:
+    description: injective measurable maps
+    reason: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
+  epimorphisms:
+    description: surjective measurable maps
+    reason: Use the same proof as for sets, where $2 = \{0,1\}$ is endowed with the trivial $\sigma$-algebra.
+  regular monomorphisms:
+    description: embeddings
+    reason: "(This is the same proof as for $\\Top$.) Equalizers are embeddings by their construction. Conversely, if $f : X \\to Y$ is an embedding, then $f$ is the equalizer of the two characteristic maps $\\chi_Y, \\chi_{f(X)} : Y \\rightrightarrows \\{0,1\\}$, where $\\{0,1\\}$ carries the trivial $\\sigma$-algebra."

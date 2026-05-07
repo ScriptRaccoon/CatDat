@@ -1,0 +1,74 @@
+id: FinAb
+name: category of finite abelian groups
+notation: $\FinAb$
+objects: finite abelian groups
+morphisms: group homomorphisms
+nlab_link: https://ncatlab.org/nlab/show/finite+abelian+group
+
+tags:
+  - algebra
+
+related_categories:
+  - Ab
+  - Ab_fg
+  - FinGrp
+  - TorsAb
+
+satisfied_properties:
+  - property_id: locally small
+    reason: There is a forgetful functor $\FinAb \to \Set$ and $\Set$ is locally small.
+
+  - property_id: essentially countable
+    reason: The underlying set of a finite structure can be chosen to be a subset of $\IN$.
+
+  - property_id: abelian
+    reason: This follows from the fact for abelian groups.
+
+  - property_id: self-dual
+    reason: "This is a simple special case of Pontryagin duality: The functor $\\Hom(-,\\IQ/\\IZ)$ provides the equivalence."
+
+  - property_id: ℵ₁-accessible
+    reason: The proof works exactly as for the <a href="/category/FinSet">category of finite sets</a>.
+
+unsatisfied_properties:
+  - property_id: small
+    reason: Even the collection of trivial groups is not small.
+
+  - property_id: generator
+    reason: If $A,B$ are finite abelian groups whose orders are coprime, then we know that $\Hom(A,B)$ is trivial. But a generator would admit a non-trivial homomorphism to any other non-trivial finite abelian group.
+
+  - property_id: split abelian
+    reason: The sequence $0 \to \IZ/2 \to \IZ/4 \to \IZ/2 \to 0$ does not split.
+
+  - property_id: skeletal
+    reason: There are many trivial and hence isomorphic groups which are not equal.
+
+  - property_id: countable
+    reason: This is trivial.
+
+special_objects:
+  initial object:
+    description: trivial group
+  terminal object:
+    description: trivial group
+  coproducts:
+    description: '[finite case] direct sum'
+  products:
+    description: '[finite case] direct products with pointwise operations'
+
+special_morphisms:
+  isomorphisms:
+    description: bijective homomorphisms
+    reason: This follows exactly as for abelian groups.
+  monomorphisms:
+    description: injective homomorphisms
+    reason: "Let $f : A \\to B$ be a monomorphism of finite abelian groups. Let $a \\in A$ be in the kernel of $a$, say of order $n$. Then we may view $a$ as a morphism $a : \\IZ/n \\to A$ with $f \\circ a = 0$, and $\\IZ/n$ is finite. Hence, $a = 0$."
+  epimorphisms:
+    description: surjective homomorphisms
+    reason: Use the same proof as for abelian groups.
+  regular monomorphisms:
+    description: same as monomorphisms
+    reason: This is because the category is mono-regular.
+  regular epimorphisms:
+    description: same as epimorphisms
+    reason: This is because the category is epi-regular.

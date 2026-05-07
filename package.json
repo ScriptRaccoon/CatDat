@@ -61,6 +61,7 @@
 		"markdown-it": "^14.1.1",
 		"nodemailer": "^8.0.5",
 		"sql-template-tag": "^5.2.1",
-		"svelte-fa": "^4.0.4"
+		"svelte-fa": "^4.0.4",
+		"yaml": "^2.8.4"
 	}
 }

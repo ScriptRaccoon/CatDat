@@ -1,0 +1,68 @@
+id: walking_composable_pair
+name: walking composable pair
+notation: $\{ 0 \to 1 \to 2 \}$
+objects: three objects $0,1,2$
+morphisms: a single morphism from each natural number to one greater than or equal to it
+description: The name of this category comes from the fact that a functor out of it is the same as a composable pair of morphisms.
+nlab_link: https://ncatlab.org/nlab/show/composable+pair
+
+tags:
+  - category theory
+  - finite
+  - thin
+
+related_categories:
+  - walking_fork
+  - walking_morphism
+
+satisfied_properties:
+  - property_id: finite
+    reason: This is trivial.
+
+  - property_id: small
+    reason: This is trivial.
+
+  - property_id: semi-strongly connected
+    reason: This is trivial.
+
+  - property_id: skeletal
+    reason: This is trivial.
+
+  - property_id: self-dual
+    reason: This is trivial.
+
+  - property_id: locally strongly finitely presentable
+    reason: |-
+      Take the two-sorted (finitary) algebraic theory with exactly one unary operation between them and the equation $x=y$ for each sort. There are exactly three algebras for this theory up to isomorphism: the identities on the empty set and the singleton, the morphism from the empty set to the singleton.
+      	Hence we get the equivalence to $\{0 \to  1 \to 2\}$.
+
+unsatisfied_properties:
+  - property_id: finitary algebraic
+    reason: This follows from <a href="/lemma/thin_algebraic_categories">this lemma</a>.
+
+special_objects:
+  initial object:
+    description: $0$
+  terminal object:
+    description: $2$
+  coproducts:
+    description: supremum taken in $\{0 < 1 < 2\}$
+  products:
+    description: infimum taken in $\{0 < 1 < 2\}$
+
+special_morphisms:
+  isomorphisms:
+    description: the three identities
+    reason: This is trivial.
+  monomorphisms:
+    description: every morphism
+    reason: It is a thin category.
+  epimorphisms:
+    description: every morphism
+    reason: It is a thin category.
+  regular monomorphisms:
+    description: same as isomorphisms
+    reason: This is because the category is right cancellative.
+  regular epimorphisms:
+    description: same as isomorphisms
+    reason: This is because the category is left cancellative.

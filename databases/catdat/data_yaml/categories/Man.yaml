@@ -1,0 +1,99 @@
+id: Man
+name: category of smooth manifolds
+notation: $\Man$
+objects: smooth manifolds
+morphisms: smooth maps
+description: Here, a smooth manifold is defined as a second-countable Hausdorff space with a smooth atlas. The dimension is locally constant, not necessarily constant.
+nlab_link: https://ncatlab.org/nlab/show/Diff
+
+tags:
+  - analysis
+  - topology
+
+related_categories:
+  - Haus
+  - Top
+
+satisfied_properties:
+  - property_id: locally small
+    reason: There is a forgetful functor $\Man \to \Set$ and $\Set$ is locally small.
+
+  - property_id: finite products
+    reason: In short, this follows from the corresponding statement for topological spaces and $\IR^n \times \IR^m \cong \IR^{n+m}$.
+    check_redundancy: false
+
+  - property_id: generator
+    reason: The $0$-dimensional one-point manifold is a generator since it represents the forgetful functor $\Top \to \Set$.
+
+  - property_id: cogenerator
+    reason: "The manifold $\\IR$ is a cogenerator, since for every smooth manifold $M$ and points $p \\neq q$ in $M$ there is a smooth function $f : M \\to \\IR$ with $f(p) = 1$ and $f(q) = 0$ (John Lee, Introduction to Smooth Manifolds, Prop. 2.25)."
+
+  - property_id: extensive
+    reason: "[Sketch] Since $\\Top$ is infinitary extensive, a continuous map $f : M \\to \\coprod_i N_i$ corresponds to a decomposition $M = \\coprod_i M_i$ (as topological spaces) with continuous maps $f_i : M_i \\to N_i$. Endow the open subset $M_i \\subseteq M$ with the smooth structure inherited from $M$. Now remark that $f$ is smooth iff each $f_i$ is smooth."
+
+  - property_id: countably distributive
+    reason: To construct countable coproducts, take the usual disjoint union of spaces, which is clearly locally Euclidean and Hausdorff, and it is second countable since we are using only countable many spaces. (Without that condition, all coproducts would exist.) Now we need to check that the canonical smooth map $\coprod_i X \times Y_i \to X \times \coprod_i Y_i$ is a diffeomorphism (for countable families). It is a homeomorphism since $\Top$ is infinitary distributive. The inverse $X \times \coprod_i Y_i \to \coprod_i X \times Y_i$ is smooth since the domain is covered by the open subsets $X \times Y_i$ on which the map is clearly smooth.
+
+  - property_id: Cauchy complete
+    reason: See Theorem 2.1 at the <a href="https://ncatlab.org/nlab/show/smooth+manifold" target="_blank">nLab</a>.
+
+  - property_id: semi-strongly connected
+    reason: Every non-empty manifold is weakly terminal (by using constant maps).
+
+  - property_id: essentially small
+    reason: 'This is a consequence of the <a href="https://en.wikipedia.org/wiki/Whitney_embedding_theorem" target="_blank">Whitney embedding theorem</a>. But there is also a more direct proof: Since a manifold is second-countable, it is Lindelöf (<a href="https://topospaces.subwiki.org/wiki/Second-countable_implies_Lindelof" target="_blank">proof</a>). In particular, there is a countable atlas. It is then completely determined by countable many open subsets of Euclidean spaces and the transition maps.'
+
+  - property_id: coquotients of cocongruences
+    reason: |-
+      Let $p : X + X \twoheadrightarrow E$ be a cocongruence with coreflexivity morphism $r : E \to X$, so that $r \circ p : X + X \to X$ is the codiagonal. Since $p$ is an epimorphism, it has dense image (see below). We first claim that in fact $p$ also has closed image and therefore is surjective.
+      	Because $r \circ (p \circ i_1) : X \to X$ is the identity, the image of $p \circ i_1$ is the equalizer of $\id_E$ and $(p \circ i_1) \circ r$, hence closed. Likewise, the image of $p \circ i_2$ is closed. Thus, the image of $p$, which is the union of these images, is closed.<br>
+      	Now, since the pushforward maps of tangent spaces compose to the identity, we see that $p$ must be a local immersion and $r$ must be a submersion.  Also, since the fibers of $r$ have one or two points each, we see that the dimension of $E$ must locally be the same as the dimension of $X$.  This implies that in fact $p$ and $r$ are local diffeomorphisms.  Therefore, the cardinality of the fiber of $r$ is locally constant.  Thus, if $U$ is the subset of $X$ where $r$ has fiber of a single point, with the subspace topology, then $U$ is a clopen submanifold of $X$ which serves as the equalizer of $p \circ i_1$ and $p \circ i_2$.
+
+  - property_id: effective cocongruences
+    reason: "From the proof that $\\Man$ has coquotients of cocongruences, we know that for any cocongruence $X \\rightrightarrows E$, there is a clopen submanifold $U$ of $X$ such that the fibers of $r : E \\twoheadrightarrow X$ have one point on $U$, and two points on $X \\setminus U$. Therefore, $E$ is the cokernel pair of the inclusion map $U \\hookrightarrow X$."
+
+unsatisfied_properties:
+  - property_id: small
+    reason: Even the collection of all singletons is not a set.
+
+  - property_id: countable powers
+    reason: "The power $\\IR^{\\IN}$ does not exist. More generally, let $(M_n)_{n \\geq 0}$ be a sequence of smooth manifolds of positive dimension whose product $(\\pi_n : P \\to M_n)_{n \\geq 0}$ exists. This product cone in $\\Man$ yields a product cone in $\\Set$ since the forgetful functor $\\Man \\to \\Set$ is representable, hence preserves all limits. Choose points $x_n \\in M_n$ with $T_{x_n}(M_n) \\neq 0$. Choose the point $x \\in P$ with $\\pi_n(x) = x_n$. Consider the linear map $T_x(P) \\to \\prod_{n \\geq 0} T_{x_n}(M_n)$ induced by the derivatives $d_x(\\pi_n) : T_x(P) \\to T_{x_n}(M_n)$. Since $T_x(P)$ is finite-dimensional and $\\prod_{n \\geq 0} T_{x_n}(M_n)$ is not, it cannot be surjective. But actually, it is: Choose tangent vectors $v_n \\in T_{x_n}(M_n)$. Choose smooth curves $\\gamma_n : \\IR \\to M_n$ with $\\gamma_n(0)=x_n$ and ${\\gamma_n}'(0) = v_n$. By the universal property there is a unique smooth curve $\\gamma : \\IR \\to P$ with $\\pi_n \\gamma = \\gamma_n$. In particular, $\\gamma(0) = x$. The chain rule now implies that $\\gamma'(0) \\in T_x(P)$ is a preimage of $(v_n)$ – a contradiction."
+
+  - property_id: pullbacks
+    reason: See <a href="https://math.stackexchange.com/questions/5129579/" target="_blank">MSE/5129579</a> or <a href="https://math.stackexchange.com/questions/322485" target="_blank">MSE/322485</a>.
+
+  - property_id: balanced
+    reason: The irrational winding of a torus $\IR \to S^1 \times S^1$, $t \mapsto (e^{i t}, \, e^{i \alpha t})$, where $\alpha \in \IR \setminus \IQ$, provides a counterexample. It is injective and has a dense image. Hence, it is a mono- and an epimorphism. But it is not surjective, hence no isomorphism.
+
+  - property_id: skeletal
+    reason: This is trivial.
+
+  - property_id: sequential colimits
+    reason: If $\Man$ had sequential colimits, then by <a href="/lemma/special_sequential_colimits">this lemma</a> there would be a manifold $M$ that admits a split epimorphism $M \to \IR^n$ for every $n$. But then $M$ will have an infinite-dimensional tangent space, which is a contradiction.
+
+  - property_id: ℵ₁-accessible
+    reason: 'We already know that the <a href="/category/Set_c">category of countable sets</a> $\Set_\c$ does not have $\aleph_1$-filtered colimits. The functor $\pi_0: \Man \to \Set_\c$ is well-defined (because manifolds are second-countable), and it admits a fully faithful right adjoint (regarding a countable set as a discrete manifold). Therefore, $\Man$ does not have $\aleph_1$-filtered colimits.'
+
+  - property_id: quotients of congruences
+    reason: If $\Man$ had quotients of congruences, then by <a href="/lemma/pushouts-of-monos-via-congruence-quotients">this lemma</a>, it would have a pushout of $\IR \leftarrow \{ 0 \} \rightarrow \IR$.  This contradicts <a href="https://mathoverflow.net/questions/19116">MO/19916</a>.
+
+special_objects:
+  initial object:
+    description: empty manifold
+  terminal object:
+    description: singleton manifold of dimension $0$
+  coproducts:
+    description: '[countable case] disjoint union with the disjoint union topology and the obvious charts'
+  products:
+    description: "[finite case] direct products $X \\times Y$ with the product topology and the charts $\\IR^{n + m} = \\IR^n \\times \\IR^m \\cong U \\times V \\hookrightarrow X \\times Y$ for charts $\\IR^n \\cong U \\hookrightarrow X$ and $\\IR^m \\cong V \\hookrightarrow Y$"
+
+special_morphisms:
+  isomorphisms:
+    description: diffeomorphisms
+    reason: This holds by definition.
+  monomorphisms:
+    description: injective smooth maps
+    reason: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
+  epimorphisms:
+    description: smooth maps with dense image
+    reason: "Let $f : X \\to Y$ be a smooth map which is not dense. Choose some non-empty open subset $U \\subseteq Y$ that is disjoint from $f(X)$. Take any $p \\in U$. There is a smooth <i>bump function</i> $g : Y \\to \\IR$ with $g(p) = 1$ and $\\supp(g) \\subseteq U$ (John Lee, Introduction to Smooth Manifolds, Prop. 2.25). Hence, $g \\neq 0$ and $g \\circ f = 0 = 0 \\circ f$. Thus, $f$ is not an epimorphism."

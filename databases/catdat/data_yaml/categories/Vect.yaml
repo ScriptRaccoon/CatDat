@@ -1,0 +1,58 @@
+id: Vect
+name: category of vector spaces
+notation: $\Vect_K$
+objects: vector spaces over a field $K$
+morphisms: linear maps
+description: This is a special case of the category of modules over a ring, where the ring is a field. It is the prototype of a split abelian category.
+nlab_link: https://ncatlab.org/nlab/show/Vect
+
+tags:
+  - algebra
+
+related_categories:
+  - R-Mod
+  - R-Mod_div
+
+satisfied_properties:
+  - property_id: locally small
+    reason: There is a forgetful functor $\Vect \to \Set$ and $\Set$ is locally small.
+
+  - property_id: split abelian
+    reason: It is a fact from linear algebra that every subspace has a complement.
+
+  - property_id: finitary algebraic
+    reason: Take the algebraic theory of a vector space.
+
+unsatisfied_properties:
+  - property_id: skeletal
+    reason: This is trivial.
+
+  - property_id: CSP
+    reason: The canonical homomorphism $\bigoplus_{n \geq 0} K \to \prod_{n \geq 0} K$ is not surjective, hence no epimorphism.
+
+special_objects:
+  initial object:
+    description: trivial vector space
+  terminal object:
+    description: trivial vector space
+  coproducts:
+    description: direct sums
+  products:
+    description: direct products with pointwise operations
+
+special_morphisms:
+  isomorphisms:
+    description: bijective linear maps
+    reason: This characterization holds in every algebraic category.
+  monomorphisms:
+    description: injective linear maps
+    reason: "This holds in every finitary algebraic category: the forgetful functor to $\\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms."
+  epimorphisms:
+    description: surjective linear maps
+    reason: The forgetful functor to abelian groups is faithful and preserves colimits, hence reflects and preserves epimorphisms. Alternatively, just use the same proof as for abelian groups.
+  regular monomorphisms:
+    description: same as monomorphisms
+    reason: This is because the category is mono-regular.
+  regular epimorphisms:
+    description: surjective homomorphisms
+    reason: This holds in every finitary algebraic category.

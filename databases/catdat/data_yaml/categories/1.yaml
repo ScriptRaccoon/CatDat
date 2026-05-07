@@ -1,0 +1,58 @@
+id: '1'
+name: trivial category
+notation: $\1$
+objects: a single object $0$
+morphisms: only the identity morphism
+description: This is the simplest category, consisting of a single object $0$ and its identity morphism $0 \to 0$. A concrete representation is the full subcategory of $\Set$ consisting of the empty set. It is the terminal object in the category of small categories.
+nlab_link: https://ncatlab.org/nlab/show/terminal+category
+
+tags:
+  - finite
+  - single object
+  - thin
+
+related_categories:
+  - '0'
+  - '2'
+
+satisfied_properties:
+  - property_id: trivial
+    reason: This is trivial.
+
+  - property_id: finite
+    reason: This is trivial.
+
+  - property_id: small
+    reason: This is trivial.
+
+  - property_id: discrete
+    reason: This is trivial.
+
+unsatisfied_properties: []
+
+special_objects:
+  initial object:
+    description: the unique object
+  terminal object:
+    description: the unique object
+  coproducts:
+    description: $0 \sqcup 0 = 0$
+  products:
+    description: $0 \times 0$
+
+special_morphisms:
+  isomorphisms:
+    description: every morphism
+    reason: This is trivial.
+  monomorphisms:
+    description: every morphism
+    reason: This is trivial.
+  epimorphisms:
+    description: every morphism
+    reason: This is clear since it is discrete.
+  regular monomorphisms:
+    description: same as monomorphisms
+    reason: This is because the category is mono-regular.
+  regular epimorphisms:
+    description: same as epimorphisms
+    reason: This is because the category is epi-regular.

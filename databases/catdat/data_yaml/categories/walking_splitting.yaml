@@ -1,0 +1,80 @@
+id: walking_splitting
+name: walking splitting
+notation: $\Split$
+objects: two objects $0$ and $1$
+morphisms: "the identities, morphisms $i : 0 \\to 1$, $p : 1 \\to 0$ satisfying $pi = \\id_0$, and the idempotent $ip : 1 \\to 1$."
+description: This category could also be called the "walking split idempotent" (or "walking section", "walking retraction"), but we chose a name that emphasizes that the splitting belongs to the data. Notice that the $5$ given morphisms are indeed closed under composition. For example, $p \circ ip = p$ and $ip \circ i = i$.<br>The walking splitting can be interpreted as a skeleton of the category of $\IF_2$-vector spaces of dimension $\leq 1$.
+
+tags:
+  - category theory
+  - finite
+
+related_categories:
+  - walking_coreflexive_pair
+  - walking_idempotent
+  - walking_isomorphism
+
+satisfied_properties:
+  - property_id: finite
+    reason: This is trivial.
+
+  - property_id: small
+    reason: This is trivial.
+
+  - property_id: gaunt
+    reason: This is obvious.
+
+  - property_id: pointed
+    reason: The object $0$ is initial and terminal. This also means that $\id_0, i, p, ip$ are zero morphisms. The only non-zero morphism is $\id_1$.
+
+  - property_id: equalizers
+    reason: "The only parallel pair of non-equal morphisms is $\\id_1, ip : 1 \\rightrightarrows 1$, and their equalizer is $i$."
+
+  - property_id: self-dual
+    reason: There is an isomorphism $\Split^\op \to \Split$ defined by $0 \mapsto 0$, $1 \mapsto 1$, $i \mapsto p$, $p \mapsto i$.
+
+  - property_id: normal
+    reason: "The only non-identity monomorphism is $i : 0 \\to 1$, which is the kernel of $\\id_1$."
+
+  - property_id: generator
+    reason: "The object $1$ a generator, since the only parallel pair of non-equal morphisms is $\\id_1, ip : 1 \\rightrightarrows 1$ with domain $1$."
+
+  - property_id: preadditive
+    reason: "We can define $\\id_1 + \\id_1 := ip$ (and it is clear how to add zero morphisms) and then verify that the axioms of a preadditive category hold. Alternatively, it suffices to find a preadditive category which is isomorphic to the walking splitting: Consider the full subcategory of $\\Vect_{\\IF_2}$ that consists only of the trivial vector space $\\{0\\}$ and $\\IF_2$. Since $\\Vect_{\\IF_2}$ is preadditive, it is preadditive as well. It has two objects, two identities, the morphisms $i : \\{0\\} \\to \\IF_2$, $p : \\IF_2 \\to \\{0\\}$, and the zero morphism $ip : \\IF_2 \\to \\IF_2$. Clearly, $pi$ is the identity."
+
+  - property_id: sifted colimits
+    reason: |-
+      We work with the representation of the category as $\Vect^{\leq 1}_{\IF_2}$, the category of vector spaces over $\IF_2$ of dimension $\leq 1$. It suffices to show that it is closed under sifted colimits in $\Vect_{\IF_2}$. More generally, we show this for $\Vect^{\leq d}_K \subseteq \Vect_K$, where $d \in \IN$ and $K$ is a field. So let  $X : \I \to \Vect_K$ be a sifted diagram with colimit $(u_i : X_i \to X_\infty)_{i \in \I}$. Since $\I$ is sifted, for finitely many objects $i_1,\dotsc,i_n \in \I$ there is an object $k$ that admits morphisms $i_1 \to k, \dotsc, i_n \to k$; this is all we need to know about $\I$. Assume that each $X_i$ is of dimension $\leq d$, we need to show this for $X_\infty$ as well.<br>
+      	Every element in $X_\infty$ is a finite sum of elements of the form $u_i(x_i)$ with $x_i \in X_i$. Choose an object $k$ with morphisms $i \to k$ for every occurring $i$. If $y_i \in X_k$ denotes the image of $x_i$, we get $\sum_i u_i(x_i) = \sum_i u_k(y_i) = u_k(\sum_i y_i)$. Therefore, every element of $X_\infty$ has the form $u_i(x_i)$ for some $i \in \I$ and $x_i \in X_i$. Moreover, for finitely many elements in $X_\infty$ the index $i$ may be chosen uniformly.<br>
+      	Now, if $X_\infty$ has dimension $> d$, it would have linearly independent vectors $v_0,\dotsc,v_d$, all of which have a preimage in $X_i$ for some $i \in \I$. But then these preimages would be linearly independent as well, which contradicts $\dim(X_i) \leq d$.
+    check_redundancy: false
+
+  - property_id: generalized variety
+    reason: Again we work with $\Vect^{\leq 1}_{\IF_2}$. We already know that it has sifted colimits and that the embedding to $\Vect_{\IF_2}$ preserves them. The object $0$ is initial and hence strongly finitely presentable. The object $\IF_2$ is strongly finitely presentable in $\Vect^{\leq 1}_{\IF_2}$ since its hom-functor is the composition of the embedding and the forgetful functor $\Vect_{\IF_2} \to \Set$, and the latter preserves sifted colimits by <a href="http://www.tac.mta.ca/tac/volumes/8/n3/8-03abs.html" target="_blank">[AR01, Lemma 3.3]</a> applied to $\IF_2 \in \Vect_{\IF_2}$.
+
+unsatisfied_properties:
+  - property_id: one-way
+    reason: "The morphism $ip : 1 \\to 1$ provides a counterexample."
+
+special_objects:
+  initial object:
+    description: $0$
+  terminal object:
+    description: $0$
+
+special_morphisms:
+  isomorphisms:
+    description: the two identities
+    reason: This is obvious.
+  monomorphisms:
+    description: the identities and $i$
+    reason: The morphism $i$ is even a split monomorphism. The morphism $p$ is not a monomorphism since $p \circ \id_1 = p \circ ip$. The morphism $ip$ is not a monomorphism since it would imply that $p$ is a monomorphism.
+  epimorphisms:
+    description: the identities and $p$
+    reason: The morphism $p$ is even a split monomorphism. The morphism $i$ is not an epimorphism since $\id_1 \circ i = ip \circ i$. The morphism $ip$ is not a epimorphism since it would imply that $i$ is an epimorphism.
+  regular monomorphisms:
+    description: same as monomorphisms
+    reason: This is because the category is mono-regular.
+  regular epimorphisms:
+    description: same as epimorphisms
+    reason: This is because the category is epi-regular.

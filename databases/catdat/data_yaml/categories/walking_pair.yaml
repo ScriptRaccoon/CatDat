@@ -1,0 +1,70 @@
+id: walking_pair
+name: walking parallel pair
+notation: $\{0 \rightrightarrows 1 \}$
+objects: two objects $0$ and $1$
+morphisms: the two identities and two parallel morphisms from $0$ to $1$
+description: The name of this category comes from the fact that it consists of two parallel morphisms, and a functor out of this category is the same as a parallel pair of morphisms in the target category.
+nlab_link: https://ncatlab.org/nlab/show/walking+structure
+
+tags:
+  - category theory
+  - finite
+
+related_categories:
+  - walking_coreflexive_pair
+  - walking_fork
+  - walking_morphism
+
+satisfied_properties:
+  - property_id: finite
+    reason: This is trivial.
+
+  - property_id: small
+    reason: This is trivial.
+
+  - property_id: self-dual
+    reason: This is trivial.
+
+  - property_id: semi-strongly connected
+    reason: This is trivial.
+
+  - property_id: generator
+    reason: It is easy to check that $0$ is a generator.
+
+  - property_id: left cancellative
+    reason: The two morphisms $0 \rightrightarrows 1$ are clearly monomorphisms.
+
+  - property_id: skeletal
+    reason: The two objects are not isomorphic.
+
+  - property_id: one-way
+    reason: This is trivial.
+
+  - property_id: sifted colimits
+    reason: A proof can be found <a href="/pdf/walking_parallel_pair_sifted_colimit.pdf" target="_blank">here</a>.
+
+unsatisfied_properties:
+  - property_id: pullbacks
+    reason: "The two morphisms $a,b : 0 \\rightrightarrows 1$ have no pullback, since it would have to consist of identities $0 \\leftarrow 0 \\rightarrow 0$, but $a \\neq b$."
+
+  - property_id: strongly connected
+    reason: There is no morphism $1 \to 0$.
+
+special_objects: {}
+
+special_morphisms:
+  isomorphisms:
+    description: the two identities
+    reason: This is trivial.
+  monomorphisms:
+    description: every morphism
+    reason: This is trivial.
+  epimorphisms:
+    description: every morphism
+    reason: Each $0 \to 1$ is an epimorphism since the only morphism starting at $1$ is the identity.
+  regular monomorphisms:
+    description: same as isomorphisms
+    reason: This is because the category is right cancellative.
+  regular epimorphisms:
+    description: same as isomorphisms
+    reason: This is because the category is left cancellative.

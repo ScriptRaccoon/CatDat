@@ -1,0 +1,98 @@
+id: Set_c
+name: category of countable sets
+notation: $\Set_\c$
+objects: countable sets
+morphisms: maps
+description: A set is countable if it admits a surjection from $\IN$. In particular, every finite set is countable.
+
+tags:
+  - set theory
+
+related_categories:
+  - FinSet
+  - Set
+
+satisfied_properties:
+  - property_id: locally small
+    reason: The collection of maps between two (countable) sets $X,Y$ is a subset of $X \times Y$ and therefore a set.
+
+  - property_id: essentially small
+    reason: Every countable set is isomorphic to a subset of $\IN$.
+
+  - property_id: finitely complete
+    reason: The embedding $\Set_\c \hookrightarrow \Set$ is closed under finite products and equalizers, hence under finite limits.
+    check_redundancy: false
+
+  - property_id: finitely cocomplete
+    reason: The embedding $\Set_\c \hookrightarrow \Set$ is closed under finite coproducts and coequalizers, hence under finite colimits.
+    check_redundancy: false
+
+  - property_id: generator
+    reason: The one-point set is clearly a generator.
+
+  - property_id: cogenerator
+    reason: The two-point set is a cogenerator in $\Set$, hence also in $\Set_\c$.
+
+  - property_id: semi-strongly connected
+    reason: This is because the larger category $\Set$ has this property.
+
+  - property_id: extensive
+    reason: The same proof as for $\Set$ applies. Actually, the category is "countably extensive".
+
+  - property_id: countably distributive
+    reason: By elementary set theory, a countable (disjoint) union of countable sets is again countable. Hence, countable coproducts exist in $\Set_\c$, and we already saw that finite products exist. The distributivity morphism is an isomorphism since this is the case in $\Set$ and the forgetful functor $\Set_\c \to \Set$ preserves finite products and countable coproducts.
+
+  - property_id: epi-regular
+    reason: If $X \to Y$ is an epimorphism in $\Set_\c$, i.e. a surjective map, it is coequalizer of the two maps $X \times_Y X \rightrightarrows X$ in $\Set$ and hence also in $\Set_\c$.
+
+  - property_id: subobject classifier
+    reason: This is because $\{0,1\}$ is a subobject classifier in $\Set$, which is countable, and the monomorphisms coincide.
+
+  - property_id: effective congruences
+    reason: 'Let $f, g : E \rightrightarrows X$ be a congruence in $\Set_\c$. Then using $1$ as a test object, we see that this induces an equivalence relation on $X$. We already know that $\Set$ has effective congruences (as does every topos). Using <a href="/lemma/effective-congruence-quotients">this result</a>, we see that $E$ is the kernel pair of $X \to (X/E)_{\Set}$ in $\Set$. Also, the quotient $(X/E)_{\Set}$ is countable; and the forgetful functor $\Set_\c \to \Set$ is fully faithful <a href="https://ncatlab.org/nlab/show/reflected+limit#FullSubcategoryInclusionReflectCoLimits" target="_blank">and therefore reflects limits</a>. Thus, we conclude that $E$ is the kernel pair of $X \to (X/E)_{\Set}$ in $\Set_\c$ as well.'
+
+  - property_id: regular
+    reason: From the other properties we know that the category is finitely complete and that it has coequalizers. The regular epimorphisms are stable under pullback since this holds in $\Set$ and both regular epimorphisms (they are surjective maps) and pullbacks coincide.
+
+  - property_id: coregular
+    reason: From the other properties we know that the category is finitely cocomplete and that it has equalizers. The regular monomorphisms are stable under pushout since this holds in $\Set$ and both regular monomorphisms (they are injective maps) and pushouts coincide.
+
+unsatisfied_properties:
+  - property_id: small
+    reason: Even the collection of all singletons is not a set.
+
+  - property_id: skeletal
+    reason: This is trivial.
+
+  - property_id: countable powers
+    reason: Since the forgetful functor $\Set_\c \to \Set$ is representable, it preserves (countable) products. Therefore, if the power $\{0,1\}^{\IN}$ exists in $\Set_\c$, it must be the ordinary cartesian product, which however is uncountable.
+
+  - property_id: ℵ₁-accessible
+    reason: "In fact, $\\Set_\\c$ does not have $\\aleph_1$-filtered colimits: Fix an uncountable set $X$, let $P_\\c(X)$ be the poset of countable subsets of $X$, which is $\\aleph_1$-filtered, and consider the functor $P_\\c(X) \\to \\Set_\\c$ taking a subset $Y \\subseteq X$ to $Y$. The colimit of this diagram in $\\Set$ is given by $X$ itself, so if $X_c$ were a colimit in $\\Set_\\c$, then $\\Hom(X_c, \\{0,1\\}) \\cong \\Hom(X, \\{0,1\\})$. But the former has cardinality at most $2^{\\aleph_0}$ and the latter has cardinality $2^{\\card(X)}$, so we have obtained a contradiction if we pick $X$ large enough (e.g. $\\card(X)=2^{\\aleph_0}$)."
+
+special_objects:
+  initial object:
+    description: empty set
+  terminal object:
+    description: singleton set
+  coproducts:
+    description: '[countable case] disjoint union'
+  products:
+    description: '[finite case] direct products'
+
+special_morphisms:
+  isomorphisms:
+    description: bijective maps
+    reason: This is easy.
+  monomorphisms:
+    description: injective maps
+    reason: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
+  epimorphisms:
+    description: surjective maps
+    reason: "For the non-trivial direction, if $f : X \\to Y$ is an epimorphism of countable sets, then in particular $f^* : \\Hom(Y,2) \\to \\Hom(X,2)$ is injective, which identifies with $f^* : P(Y) \\to P(X)$. Then for all $y \\in Y$ we have $f^*(\\{y\\}) \\neq f^*(\\varnothing) = \\varnothing$, so that $y$ has a preimage."
+  regular monomorphisms:
+    description: same as monomorphisms
+    reason: This is because the category is mono-regular.
+  regular epimorphisms:
+    description: same as epimorphisms
+    reason: This is because the category is epi-regular.

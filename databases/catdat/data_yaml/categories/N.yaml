@@ -1,0 +1,69 @@
+id: N
+name: poset of natural numbers
+notation: $(\IN,\leq)$
+objects: natural numbers $0, 1, 2, \dotsc$
+morphisms: "a unique morphism $(n,m) : n \\to m$ if $n \\leq m$"
+description: This can also be seen as the path category of the infinite linear graph $\bullet \to \bullet \to \bullet \to \cdots$.
+
+tags:
+  - number theory
+  - thin
+
+related_categories:
+  - N_oo
+  - On
+  - Z_div
+
+satisfied_properties:
+  - property_id: small
+    reason: This is trivial.
+
+  - property_id: thin
+    reason: This is trivial.
+    check_redundancy: false
+
+  - property_id: finitely cocomplete
+    reason: Finitely many natural numbers have a supremum natural number.
+    check_redundancy: false
+
+  - property_id: binary products
+    reason: Two natural numbers have a minimum.
+
+  - property_id: connected limits
+    reason: Every non-empty set of natural numbers has a minimum.
+
+  - property_id: semi-strongly connected
+    reason: This is trivial.
+
+  - property_id: direct
+    reason: This is because the natural numbers with respect to $<$ are well-founded.
+
+  - property_id: countable
+    reason: This is trivial.
+
+unsatisfied_properties:
+  - property_id: countable coproducts
+    reason: The numbers $0,1,2,\dotsc$ have no supremum, i.e. no coproduct.
+
+special_objects:
+  initial object:
+    description: $0$
+  coproducts:
+    description: '[finite case] supremum'
+
+special_morphisms:
+  isomorphisms:
+    description: only the identity morphisms
+    reason: This is true for every poset (regarded as a category).
+  monomorphisms:
+    description: every morphism
+    reason: It is a thin category.
+  epimorphisms:
+    description: every morphism
+    reason: It is a thin category.
+  regular monomorphisms:
+    description: same as isomorphisms
+    reason: This is because the category is right cancellative.
+  regular epimorphisms:
+    description: same as isomorphisms
+    reason: This is because the category is left cancellative.

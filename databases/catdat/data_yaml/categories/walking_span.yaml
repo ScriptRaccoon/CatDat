@@ -1,0 +1,68 @@
+id: walking_span
+name: walking span
+notation: $\{1 \leftarrow 0 \rightarrow 2\}$
+objects: $0,1,2$
+morphisms: $0 \to 1$, $0 \to 2$, and the identities
+description: The name of this category comes from the fact that a functor out of it is the same as a <a href="https://ncatlab.org/nlab/show/span" target="_blank">span</a> in the target category. It is isomorphic to the partial order of proper positive divisors of $6$.
+nlab_link: https://ncatlab.org/nlab/show/span#the_walking_span
+
+tags:
+  - category theory
+  - finite
+  - thin
+
+related_categories:
+  - walking_morphism
+  - walking_pair
+
+satisfied_properties:
+  - property_id: finite
+    reason: This is trivial.
+
+  - property_id: small
+    reason: This is trivial.
+
+  - property_id: skeletal
+    reason: The three objects are not isomorphic.
+
+  - property_id: initial object
+    reason: $0$ is an initial object.
+
+  - property_id: thin
+    reason: This is trivial.
+
+  - property_id: binary products
+    reason: We have $0 \times x = 0$ for all $x$, $x \times x = x$, and $1 \times 2 = 0$.
+
+  - property_id: locally cartesian closed
+    reason: The slice category over $0$ is the <a href="/category/1">trivial category</a>, and the slice category over $1$ is the <a href="/category/walking_morphism">interval category</a>, which is cartesian closed (see there). The same holds for $2$ by symmetry.
+
+  - property_id: multi-algebraic
+    reason: We first remark that for a set $X$, the identity span $(\id,\id)\colon X \leftarrow X \rightarrow X$ exhibits a product if and only if $X$ is either a singleton or the empty set. Therefore, there is a (finite product, coproduct)-sketch whose $\Set$-model is precisely a pair $(X,Y)$ of sets such that each of $X$ and $Y$ is either a singleton or the empty set and the product $X \times Y$ is the empty set. Any $\Set$-model of such a sketch is isomorphic to either $(\varnothing, \varnothing)$, $(\varnothing, 1)$, or $(1, \varnothing)$; hence the category of models is equivalent to the walking span.
+
+unsatisfied_properties:
+  - property_id: sifted
+    reason: There is no cospan between $1$ and $2$.
+
+special_objects:
+  initial object:
+    description: $0$
+  products:
+    description: "[binary case] $1 \\times 2 = 0$, $x \\times x = x$, $0 \\times x = 0$"
+
+special_morphisms:
+  isomorphisms:
+    description: the three identities
+    reason: This is trivial.
+  monomorphisms:
+    description: every morphism
+    reason: It is a thin category.
+  epimorphisms:
+    description: every morphism
+    reason: It is a thin category.
+  regular monomorphisms:
+    description: same as isomorphisms
+    reason: This is because the category is right cancellative.
+  regular epimorphisms:
+    description: same as isomorphisms
+    reason: This is because the category is right cancellative.

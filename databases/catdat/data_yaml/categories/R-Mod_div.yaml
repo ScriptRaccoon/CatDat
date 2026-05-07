@@ -1,0 +1,58 @@
+id: R-Mod_div
+name: category of left modules over a division ring
+notation: $R{-}\Mod$
+objects: left $R$-modules
+morphisms: $R$-linear maps
+description: Here, we assume that $R$ is a non-commutative division ring, i.e. a skew-field which is not a field. The category of modules behaves mostly the same as in the commutative case.
+nlab_link: https://ncatlab.org/nlab/show/module
+
+tags:
+  - algebra
+
+related_categories:
+  - R-Mod
+  - Vect
+
+satisfied_properties:
+  - property_id: locally small
+    reason: There is a forgetful functor $R{-}\Mod \to \Set$ and $\Set$ is locally small.
+
+  - property_id: split abelian
+    reason: It is a standard fact that the category of $R$-modules is abelian for any ring $R$. If $R$ is a division ring, then by linear algebra every $R$-module has a basis, hence is projective, so that every short exact sequence splits.
+
+  - property_id: finitary algebraic
+    reason: Take the algebraic theory of an $R$-module (given by the algebraic theory of an abelian group and for each $r \in R$ a unary operation).
+
+unsatisfied_properties:
+  - property_id: skeletal
+    reason: This is trivial.
+
+  - property_id: CSP
+    reason: The canonical homomorphism $\bigoplus_{n \geq 0} R \to \prod_{n \geq 0} R$ is not surjective, hence no epimorphism.
+
+special_objects:
+  initial object:
+    description: trivial module
+  terminal object:
+    description: zero module
+  coproducts:
+    description: direct sums
+  products:
+    description: direct products with pointwise operations
+
+special_morphisms:
+  isomorphisms:
+    description: bijective $R$-linear maps
+    reason: This characterization holds in every algebraic category.
+  monomorphisms:
+    description: injective $R$-linear maps
+    reason: "This holds in every finitary algebraic category: the forgetful functor to $\\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms."
+  epimorphisms:
+    description: surjective $R$-linear maps
+    reason: The forgetful functor to abelian groups is faithful and preserves colimits, hence reflects and preserves epimorphisms. Alternatively, use the same proof as for abelian groups.
+  regular monomorphisms:
+    description: same as monomorphisms
+    reason: This is because the category is mono-regular.
+  regular epimorphisms:
+    description: surjective homomorphisms
+    reason: This holds in every finitary algebraic category.

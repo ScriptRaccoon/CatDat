@@ -1,0 +1,58 @@
+id: walking_isomorphism
+name: walking isomorphism
+notation: $\{0 \rightleftarrows 1\}$
+objects: two objects $0$ and $1$
+morphisms: identities, and two morphisms $0 \to 1$ and $1 \to 0$ that are mutually inverse
+description: The name of this category comes from the fact that it consists of two objects and an isomorphism between them, and a functor out of this category is the same as an isomorphism in the target category. The walking isomorphism is actually equivalent to the trivial category.
+nlab_link: https://ncatlab.org/nlab/show/walking+isomorphism
+
+tags:
+  - category theory
+  - finite
+  - thin
+
+related_categories:
+  - '1'
+  - walking_idempotent
+  - walking_morphism
+
+satisfied_properties:
+  - property_id: trivial
+    reason: The inclusion $\{0\} \hookrightarrow \{0 \to 1\}$ is clearly an equivalence.
+
+  - property_id: finite
+    reason: This is trivial.
+
+  - property_id: small
+    reason: This is trivial.
+
+unsatisfied_properties:
+  - property_id: skeletal
+    reason: The two objects are isomorphic, but different.
+
+special_objects:
+  initial object:
+    description: both objects
+  terminal object:
+    description: both objects
+  coproducts:
+    description: $0 \sqcup 0 = 0$
+  products:
+    description: $0 \times 0 = 0$
+
+special_morphisms:
+  isomorphisms:
+    description: every morphism
+    reason: This is trivial.
+  monomorphisms:
+    description: every morphism
+    reason: This is trivial.
+  epimorphisms:
+    description: every morphism
+    reason: This holds because it is a groupoid.
+  regular monomorphisms:
+    description: same as isomorphisms
+    reason: This is because the category is right cancellative.
+  regular epimorphisms:
+    description: same as isomorphisms
+    reason: This is because the category is left cancellative.

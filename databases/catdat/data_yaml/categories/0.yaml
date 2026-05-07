@@ -1,0 +1,56 @@
+id: '0'
+name: empty category
+notation: $\0$
+objects: no objects
+morphisms: no morphisms
+description: This is the category with no objects and no morphisms. It is the initial object in the category of small categories.
+nlab_link: https://ncatlab.org/nlab/show/empty+category
+
+tags:
+  - finite
+  - thin
+
+related_categories:
+  - '1'
+
+satisfied_properties:
+  - property_id: preadditive
+    reason: This is vacuously true.
+
+  - property_id: discrete
+    reason: This is trivial.
+
+  - property_id: binary products
+    reason: This is vacuously true.
+
+  - property_id: finite
+    reason: This is trivial.
+
+  - property_id: small
+    reason: This is trivial.
+
+  - property_id: multi-algebraic
+    reason: The terminal category $\1$ becomes an FPC-sketch by selecting the unique empty cone and cocone. Then, a $\Set$-valued model of this sketch is a functor $\1 \to \Set$ sending the unique object to a terminal and initial object, which never exists. Hence, $\0$ is the category of models of this FPC-sketch.
+
+unsatisfied_properties:
+  - property_id: inhabited
+    reason: This is trivial.
+
+special_objects: {}
+
+special_morphisms:
+  isomorphisms:
+    description: none
+    reason: This is trivial.
+  monomorphisms:
+    description: none
+    reason: This is trivial.
+  epimorphisms:
+    description: none
+    reason: This is trivial.
+  regular monomorphisms:
+    description: same as monomorphisms
+    reason: This is because the category is mono-regular.
+  regular epimorphisms:
+    description: same as epimorphisms
+    reason: This is because the category is epi-regular.

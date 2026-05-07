@@ -1,0 +1,84 @@
+id: FinSet
+name: category of finite sets
+notation: $\FinSet$
+objects: finite sets
+morphisms: maps
+nlab_link: https://ncatlab.org/nlab/show/FinSet
+
+tags:
+  - set theory
+
+related_categories:
+  - FI
+  - FS
+  - Set
+  - Set_c
+  - Set_f
+
+comments:
+  - For the non-existence of sequential (co-)limits it is <i>not</i> sufficient to take a diagram of finite sets whose (co-)limit in $\Set$ is not contained in $\FinSet$.
+
+satisfied_properties:
+  - property_id: locally small
+    reason: There is a forgetful functor $\FinSet \to \Set$ and $\Set$ is locally small.
+
+  - property_id: essentially countable
+    reason: Every finite set is isomorphic to some $\{1,\dotsc,n\}$ for some $n \in \IN$.
+
+  - property_id: elementary topos
+    reason: This follows easily from the fact that sets form an elementary topos.
+
+  - property_id: generator
+    reason: The one-point set is a generator since it represents the forgetful functor $\FinSet \to \Set$.
+
+  - property_id: semi-strongly connected
+    reason: Every non-empty finite set is weakly terminal (by using constant maps).
+
+  - property_id: cogenerator
+    reason: The two-element set is a cogenerator.
+
+  - property_id: ℵ₁-accessible
+    reason: The inclusion $\FinSet \hookrightarrow \Set$ is closed under ℵ₁-filtered colimits, that is, any ℵ₁-filtered colimit of finite sets is again finite. Since every finite set is ℵ₁-presentable in $\Set$, it is still ℵ₁-presentable in $\FinSet$. Therefore, $\FinSet$ is ℵ₁-accessible, where every object is ℵ₁-presentable.
+
+unsatisfied_properties:
+  - property_id: small
+    reason: Even the collection of all singletons is not a set.
+
+  - property_id: skeletal
+    reason: This is trivial.
+
+  - property_id: countable
+    reason: This is trivial.
+
+  - property_id: natural numbers object
+    reason: |-
+      If $(N,z,s)$ is a natural numbers object, then
+      	$$1 \xrightarrow{z} N \xleftarrow{s} N$$
+      	is a coproduct cocone by <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, Part A, Lemma 2.5.5. But there is no finite set $N$ with $N \cong 1 + N$.
+
+special_objects:
+  initial object:
+    description: empty set
+  terminal object:
+    description: singleton set
+  coproducts:
+    description: '[finite case] disjoint union'
+  products:
+    description: '[finite case] direct products'
+
+special_morphisms:
+  isomorphisms:
+    description: bijective maps
+    reason: This follows exactly as for sets.
+  monomorphisms:
+    description: injective maps
+    reason: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
+  epimorphisms:
+    description: surjective maps
+    reason: Use the same proof as for sets.
+  regular monomorphisms:
+    description: same as monomorphisms
+    reason: This is because the category is mono-regular.
+  regular epimorphisms:
+    description: same as epimorphisms
+    reason: This is because the category is epi-regular.

@@ -1,0 +1,66 @@
+id: BN
+name: delooping of the additive monoid of natural numbers
+notation: $B\IN$
+objects: a single object
+morphisms: the natural numbers, with addition serving as composition
+description: Every monoid $M$ induces a category $BM$ with a single object $*$, morphisms given by the elements of $M$, and composition given by the monoid operation. Some of the properties of this category depend on the specific monoid. In this example, we take the commutative monoid $M = (\IN,+,0)$, so composition is $n \circ m = n + m$.
+
+tags:
+  - category theory
+  - number theory
+  - single object
+
+related_categories:
+  - BG_c
+  - BOn
+
+satisfied_properties:
+  - property_id: small
+    reason: This is trivial.
+
+  - property_id: countable
+    reason: This is trivial.
+
+  - property_id: strongly connected
+    reason: This is trivial.
+
+  - property_id: self-dual
+    reason: The identity is a self-duality since the addition is commutative.
+
+  - property_id: generator
+    reason: The unique object is a generator for trivial reasons.
+
+  - property_id: left cancellative
+    reason: This is because addition of natural numbers is cancellative.
+
+  - property_id: gaunt
+    reason: This is because $0$ is the only natural number with an additive inverse.
+
+  - property_id: locally cartesian closed
+    reason: The slice category $B\IN / *$ is isomorphic to the poset $(\IN,\geq)$ (not to $(\IN,\leq)$). This category is thin and and semi-strongly connected, <a href="/category-implication/sequential_implies_lcc">hence</a> cartesian closed.
+
+unsatisfied_properties:
+  - property_id: sequential limits
+    reason: Assume that the sequence $\cdots \xrightarrow{1}  \bullet \xrightarrow{1} \bullet \xrightarrow{1} \bullet$ has a limit. This is a (universal) sequence of natural numbers $n_0,n_1,\dotsc$ satisfying $n_i = n_{i+1} + 1$. But then $n_i = n_0 - i$, and in particular $n_{n_0 + 1} = - 1$, a contradiction.
+
+  - property_id: one-way
+    reason: This is trivial.
+
+special_objects: {}
+
+special_morphisms:
+  isomorphisms:
+    description: only the number $0$
+    reason: The $0$ is the only natural number which has an additive inverse, since for $n > 0$ we have $n + m > 0$ for all $m$.
+  monomorphisms:
+    description: every morphism
+    reason: This is because addition of natural numbers is cancellative.
+  epimorphisms:
+    description: every morphism
+    reason: Addition of natural numbers is cancellative.
+  regular monomorphisms:
+    description: same as isomorphisms
+    reason: This is because the category is right cancellative.
+  regular epimorphisms:
+    description: same as isomorphisms
+    reason: This is because the category is left cancellative.

@@ -1,0 +1,59 @@
+id: Sh(X,Ab)
+name: category of abelian sheaves
+notation: $\Sh(X,\Ab)$
+objects: sheaves of abelian groups on a topological space $X$
+morphisms: morphisms of sheaves
+description: Here, we assume that the topological space $X$ is neither discrete nor indiscrete, since otherwise this category is just a product of copies of $\Ab$.
+nlab_link: https://ncatlab.org/nlab/show/sheaf+of+abelian+groups
+
+tags:
+  - algebraic geometry
+  - topology
+
+related_categories:
+  - Ab
+  - Sh(X)
+
+comments:
+  - It is likely that neither of the currently remaining unknown properties (finitary algebraic, locally ℵ₁-presentable, CSP, etc.) are satisfied for a <i>generic</i> space $X$, but we need to make this precise by adding additional requirements to $X$. Maybe we need to create separate entries for specific spaces $X$.
+
+satisfied_properties:
+  - property_id: locally small
+    reason: This is easy.
+
+  - property_id: Grothendieck abelian
+    reason: This is standard, see for example Theorem 18.1.6. in <a href="https://ncatlab.org/nlab/show/Categories+and+Sheaves" target="_blank">Kashiwara-Schapira</a>.
+
+unsatisfied_properties:
+  - property_id: skeletal
+    reason: Consider constant sheaves for isomorphic but non-equal abelian groups.
+
+  - property_id: split abelian
+    reason: 'Choose a point $x \in X$. The functor $x_* : \Ab \to \Sh(X,\Ab)$ (skyscraper sheaf) is exact, and its left adjoint $x^* : \Sh(X,\Ab) \to \Ab$ (stalk) satisfies $x^* x_* \cong \id_{\Ab}$. Now, since $\Ab$ is not split abelian (see <a href="/category/Ab">here</a>), there is a short exact sequence of abelian groups $0 \to A \to B \to C \to 0$ that does not split. Then $0 \to x_* A \to x_* B \to x_* C \to 0$ is also exact, but it does not split: Otherwise it would also be split after applying $x^*$, which however gives the original sequence in $\Ab$.'
+
+special_objects:
+  initial object:
+    description: trivial abelian sheaf
+  terminal object:
+    description: trivial abelian sheaf
+  coproducts:
+    description: associated sheaf to the section-wise direct sum
+  products:
+    description: section-wise defined direct product
+
+special_morphisms:
+  isomorphisms:
+    description: morphisms of abelian sheaves that are bijective on every open set
+    reason: This is easy.
+  monomorphisms:
+    description: morphisms of abelian sheaves that are injective on every open subset
+    reason: "For the non-trivial direction, assume that $f : F \\to G$ is a monomorphism of abelian sheaves on $X$. Then the diagonal $F \\to F \\times_G F$ is an isomorphism. Since pullbacks of abelian sheaves are constructed section-wise, it follows that the diagonal $F(U) \\to F(U) \\times_{G(U)} F(U)$ is an isomorphism for every open set $U \\subseteq X$. But this means that $f(U) : F(U) \\to G(U)$ is injective."
+  epimorphisms:
+    description: 'morphisms of abelian sheaves $f : F \to G$ that are "locally surjective": for every local section $g \in G(U)$ there is an open covering $U = \bigcup_{i \in I} U_i$ such that each $g|_{U_i} \in G(U_i)$ is contained in the image of $f(U_i) : F(U_i) \to G(U_i)$.'
+    reason: "The one direction is easy. For the other one, assume that $f : F \\to G$ is an epimorphism of abelian sheaves. For every $x \\in X$ the homomorphism on stalks $f_x : F_x \\to G_x$ is an epimorphism because the stalk functor  $\\Sh(X,\\Ab) \\to \\Ab$ admits a right adjoint: take skyscraper sheaves. For $x \\in U$ then $g_x \\in G_x$ has a preimage in $F_x$, say represented by some $f \\in F(V_x)$ for some $x \\in V_x \\subseteq U$. By construction of the stalk $G_x$, there is some $x \\in U_x \\subseteq V_x$ with $f(U_x)(f|_{U_x}) = g|_{U_x}$. Hence, the sets $(U_x)$ provide the open covering."
+  regular monomorphisms:
+    description: same as monomorphisms
+    reason: This is because the category is mono-regular.
+  regular epimorphisms:
+    description: same as epimorphisms
+    reason: This is because the category is epi-regular.

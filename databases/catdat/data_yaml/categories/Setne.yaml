@@ -1,0 +1,98 @@
+id: Setne
+name: category of non-empty sets
+notation: $\Set_{\neq \varnothing}$
+objects: non-empty sets
+morphisms: maps
+description: This entry demonstrates that removing an object (the empty set) can drastically change the properties of a category. In particular, this category is neither complete nor cocomplete.
+nlab_link: https://ncatlab.org/nlab/show/inhabited+set
+
+tags:
+  - set theory
+
+related_categories:
+  - Set
+
+satisfied_properties:
+  - property_id: locally small
+    reason: There is a forgetful functor $\Set_{\neq \varnothing} \to \Set$ and $\Set$ is locally small.
+
+  - property_id: generator
+    reason: The one-point set is clearly a generator.
+
+  - property_id: cogenerator
+    reason: The two-point set is a cogenerator, this follows as for $\Set$.
+
+  - property_id: products
+    reason: Take the product of non-empty sets inside of $\Set$ and observe that it is non-empty by the axiom of choice.
+
+  - property_id: binary coproducts
+    reason: The disjoint union of two non-empty sets is non-empty.
+
+  - property_id: cartesian closed
+    reason: This follows as for $\Set$, since for non-empty sets $X,Y$ there is at least one function $X \to Y$.
+
+  - property_id: mono-regular
+    reason: This follows as for $\Set$.
+
+  - property_id: epi-regular
+    reason: This follows as for $\Set$.
+
+  - property_id: strongly connected
+    reason: Use constant maps.
+
+  - property_id: finitely accessible
+    reason: Since the inclusion $\Set_{\neq \varnothing} \hookrightarrow \Set$ is closed under non-empty colimits, it is also closed under filtered colimits. Therefore, non-empty finite sets are still finitely presentable in $\Set_{\neq \varnothing}$, and every non-empty set is written as a filtered colimit of them.
+
+  - property_id: generalized variety
+    reason: Since the inclusion $\Set_{\neq \varnothing} \hookrightarrow \Set$ is closed under non-empty colimits, it is also closed under sifted colimits. Therefore, non-empty finite sets are still strongly finitely presentable in $\Set_{\neq \varnothing}$, and every non-empty set is written as a sifted colimit of them.
+
+  - property_id: multi-complete
+    reason: Let $D$ be a diagram in $\Set_{\neq \varnothing}$, and let $L$ be a limit of $D$ in $\Set$. If $L$ is non-empty, it gives a limit in $\Set_{\neq \varnothing}$ as well. If $L$ is the empty set, there is no cone over $D$ in $\Set_{\neq \varnothing}$; hence the empty set of cones gives a multi-limit of $D$ in $\Set_{\neq \varnothing}$.
+
+  - property_id: natural numbers object
+    reason: Any natural numbers object in $\Set$, such as $(\IN,0,n \mapsto n+1)$, is clearly also one in $\Set_{\neq \varnothing}$.
+
+  - property_id: filtered-colimit-stable monomorphisms
+    reason: This follows from <a href="/lemma/filtered-monos">this lemma</a> applied to the forgetful functor to $\Set$.
+
+  - property_id: effective congruences
+    reason: "If a congruence $E \\rightrightarrows X$ is the kernel pair of $h : X \\to Z$, with both $E$ and $X$ non-empty, then certainly $Z$ must also be non-empty."
+
+unsatisfied_properties:
+  - property_id: sequential limits
+    reason: Assume that the sequence of inclusions $\cdots \to \IN_{\geq 2} \to \IN_{\geq 1} \to \IN_{\geq 0} = \IN$ as a limit $X$, consisting of maps $X \to \IN_{\geq n}$. Since $X$ is non-empty, there is a map $1 \to X$. This corresponds to a family of compatible maps $ 1 \to \IN_{\geq n}$, i.e. to compatible elements in $\IN_{\geq n}$. But the set $\bigcap_{n \geq 0} \IN_{\geq n}$ is empty.
+
+  - property_id: skeletal
+    reason: This is trivial.
+
+  - property_id: cofiltered
+    reason: The two maps $\{0\} \rightrightarrows \{0,1\}$ are equalized by no map $X \to \{0\}$ in this category.
+
+  - property_id: coquotients of cocongruences
+    reason: The two maps $\{0\} \rightrightarrows \{0,1\}$ form a cocongruence on $\{0\}$ &mdash; namely the cofull cocongruence on $\{0\}$ &mdash; but they do not have an equalizer.
+
+  - property_id: effective cocongruences
+    reason: The two maps $\{0\} \rightrightarrows \{0,1\}$ form a cocongruence on $\{0\}$ &mdash; namely the cofull cocongruence on $\{0\}$ &mdash; but there is no map $Z \to \{0\}$ making the required commutative diagram, much less a cocartesian square.
+
+special_objects:
+  terminal object:
+    description: singleton set
+  products:
+    description: direct products
+
+special_morphisms:
+  isomorphisms:
+    description: bijective maps
+    reason: This follows exactly as for sets.
+  monomorphisms:
+    description: injective maps
+    reason: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
+  epimorphisms:
+    description: surjective maps
+    reason: "For the non-trivial direction, let $f : X \\to Y$ be an epimorphism of non-empty sets. Then the inclusion $f(X) \\hookrightarrow Y$ is an epimorphism as well, but also a split monomorphism (we can just map everything in $Y \\setminus f(X)$ to a fixed element of $f(X)$). As such, it must be an isomorphism."
+  regular monomorphisms:
+    description: same as monomorphisms
+    reason: This is because the category is mono-regular.
+  regular epimorphisms:
+    description: same as epimorphisms
+    reason: This is because the category is epi-regular.

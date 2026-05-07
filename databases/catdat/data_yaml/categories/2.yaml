@@ -1,0 +1,52 @@
+id: '2'
+name: discrete category on two objects
+notation: $\2$
+objects: two objects $0$ and $1$
+morphisms: only the two identity morphisms
+description: A concrete representation is the full subcategory of $\CRing$ consisting of the two fields $\IF_2$ and $\IF_3$.
+
+tags:
+  - finite
+  - thin
+
+related_categories:
+  - '1'
+
+satisfied_properties:
+  - property_id: discrete
+    reason: This is trivial.
+
+  - property_id: finite
+    reason: This is trivial.
+
+  - property_id: small
+    reason: This is trivial.
+
+  - property_id: inhabited
+    reason: This is trivial.
+
+  - property_id: multi-algebraic
+    reason: There is an FPC-sketch whose $\Set$-model is precisely a pair $(X,Y)$ of sets such that the coproduct $X+Y$ is a singleton. Any $\Set$-model of such a sketch is isomorphic to either $(\varnothing, 1)$ or $(1, \varnothing)$, hence the category of models is equivalent to $\2$.
+
+unsatisfied_properties:
+  - property_id: connected
+    reason: The objects $0$, $1$ have no zig-zag path between them.
+
+special_objects: {}
+
+special_morphisms:
+  isomorphisms:
+    description: every morphism
+    reason: This is trivial.
+  monomorphisms:
+    description: every morphism
+    reason: This is trivial.
+  epimorphisms:
+    description: every morphism
+    reason: This is clear since it is discrete.
+  regular monomorphisms:
+    description: same as monomorphisms
+    reason: This is because the category is mono-regular.
+  regular epimorphisms:
+    description: same as epimorphisms
+    reason: This is because the category is epi-regular.

@@ -1,0 +1,71 @@
+id: walking_commutative_square
+name: walking commutative square
+notation: $\{0 \to 1\}^2$
+objects: four objects $a,b,c,d$
+morphisms: morphisms $a \to b$, $b \to d$, $a \to c$, $c \to d$, identities, and one morphism $a \to d$
+description: |-
+  This category consists of a commutative square:
+  	$$\begin{CD} a @>>> b \\ @VVV @VVV \\ c @>>> d \end{CD}$$
+  	Its name comes from the fact that a functor out of it is the same as a <a href="https://ncatlab.org/nlab/show/commutative+square" target="_blank">commutative square</a> in the target category. Notice that the category is isomorphic to the product category $\{0 \to 1\} \times \{0 \to 1\}$ of the <a href="/category/walking_morphism">walking morphism</a> with itself. Hence, most (but not all) properties are inherited from it. It is also isomorphic to the partial order of positive divisors of $6$.
+nlab_link: https://ncatlab.org/nlab/show/commutative+square
+tags:
+  - category theory
+  - finite
+  - thin
+
+related_categories:
+  - walking_fork
+  - walking_morphism
+
+satisfied_properties:
+  - property_id: self-dual
+    reason: This is trivial.
+
+  - property_id: finite
+    reason: This is trivial.
+
+  - property_id: small
+    reason: This is trivial.
+
+  - property_id: skeletal
+    reason: The four objects are not isomorphic.
+
+  - property_id: locally cartesian closed
+    reason: This is because the <a href="/category/walking_morphism">walking morphism</a> has this property.
+
+  - property_id: locally strongly finitely presentable
+    reason: This is because the <a href="/category/walking_morphism">walking morphism</a> has this property. Alternatively, we may represent this category as the category of algebras for the finitary algebraic theory with two sorts $S_1,S_2$, the equation $x=y$ for $x,y \in S_1$, and the equation $x=y$ for $x,y \in S_2$.
+
+unsatisfied_properties:
+  - property_id: semi-strongly connected
+    reason: There is no morphism between $b$ and $c$ (resp., between $(0,1)$ and $(1,0)$).
+
+  - property_id: finitary algebraic
+    reason: This follows from <a href="/lemma/thin_algebraic_categories">this lemma</a>.
+
+special_objects:
+  initial object:
+    description: $a$
+  terminal object:
+    description: $d$
+  coproducts:
+    description: $b \sqcup c = d$, $a \sqcup x = x$, $d \sqcup x = d$, $x \sqcup x = x$
+  products:
+    description: $b \times c = a$, $x \times x = x$, $a \times x = a$, $d \times x = x$
+
+special_morphisms:
+  isomorphisms:
+    description: the four identities
+    reason: This is trivial.
+  monomorphisms:
+    description: every morphism
+    reason: It is a thin category.
+  epimorphisms:
+    description: every morphism
+    reason: It is a thin category.
+  regular monomorphisms:
+    description: same as isomorphisms
+    reason: This is because the category is right cancellative.
+  regular epimorphisms:
+    description: same as isomorphisms
+    reason: This is because the category is left cancellative.

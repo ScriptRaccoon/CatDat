@@ -1,0 +1,83 @@
+id: Rel
+name: category of sets and relations
+notation: $\Rel$
+objects: sets
+morphisms: A morphism from $A$ to $B$ is a relation, i.e. a subset of $A \times B$.
+description: "This category is self-dual as it can be: There is an isomorphism $\\Rel \\cong \\Rel^{\\op}$ that is the identity on objects and maps a relation to its opposite relation. It is the prototype of a dagger-category."
+nlab_link: https://ncatlab.org/nlab/show/Rel
+
+tags:
+  - set theory
+
+related_categories:
+  - Set
+
+satisfied_properties:
+  - property_id: locally small
+    reason: The set of morphisms $X \to Y$ is the set $P(X \times Y)$.
+
+  - property_id: self-dual
+    reason: "There is an isomorphism $\\Rel \\to \\Rel^{\\op}$ that is the identity on objects (sets) and maps a relation $R \\subseteq X \\times Y$ to the opposite relation $R^o \\subseteq Y \\times X$ defined by $R^o := \\{(y,x) : (x,y) \\in R \\}$."
+
+  - property_id: pointed
+    reason: The empty set is clearly both initial and terminal. The zero morphisms are the empty relations.
+    check_redundancy: false
+
+  - property_id: generator
+    reason: One checks that the the one-point set is a generator.
+
+  - property_id: coproducts
+    reason: It is an easy exercise to deduce this from the corresponding fact for sets and that sets form a distributive category.
+    check_redundancy: false
+
+  - property_id: well-powered
+    reason: "Any relation $R : A \\to B$ induces an injective map $P(A) \\to P(B)$, so that in particular there is an injective map $A \\to P(B)$."
+
+  - property_id: balanced
+    reason: See <a href="https://math.stackexchange.com/questions/5030393" target="_blank">MSE/5030393</a>.
+
+  - property_id: biproducts
+    reason: This is a consequence of the description of coproducts and products, both are disjoint unions (even for infinite families).
+
+  - property_id: CIP
+    reason: The canonical morphism from the coproduct to the product is the identity.
+
+  - property_id: kernels
+    reason: "Let $R : A \\to B$ be a relation. Define $K = \\bigl\\{a \\in A : \\neg \\exists b \\in B ((a,b) \\in R) \\bigr\\}$. We have an inclusion map $I : K \\to A$, which can also be regarded as relation, and $R \\circ I = \\empty$ is the empty relation, i.e. the zero morphism. It is easy to check the universal property."
+
+  - property_id: quotients of congruences
+    reason: A proof can be found <a href="/pdf/congruences_in_rel.pdf">here</a>.
+
+  - property_id: effective congruences
+    reason: A proof can be found <a href="/pdf/congruences_in_rel.pdf">here</a>.
+
+unsatisfied_properties:
+  - property_id: Cauchy complete
+    reason: See <a href="https://math.stackexchange.com/a/5030380/1650" target="_blank">MSE/1931577</a>.
+
+  - property_id: skeletal
+    reason: This is trivial.
+
+  - property_id: normal
+    reason: The construction of equalizers in $\Rel$ shows that they are injective functions, but <a href="https://math.stackexchange.com/questions/350716" target="_blank">MSE/350716</a> shows that monomorphisms in $\Rel$ don't have to be functions.
+
+special_objects:
+  initial object:
+    description: empty set
+  terminal object:
+    description: empty set
+  coproducts:
+    description: disjoint union
+  products:
+    description: disjoint unions (!)
+
+special_morphisms:
+  isomorphisms:
+    description: bijective functions
+    reason: "For the non-trivial direction, assume that $R : A \\to B$ is a relation which has an inverse relation $S : B \\to A$. For every $a \\in A$ we have $(a,a) \\in \\id_A = S \\circ R$, so there is some $b \\in B$ with $(a,b) \\in R$ (and $(b,a) \\in S$). This shows that $R$ is left-total, and for right-total the argument is similar. By symmetry, this also holds for $S$. To show that $R$ is a function, assume $(a,b_1), (a,b_2) \\in R$. Choose some $b_3 \\in B$ with $(b_3,a) \\in S$. It follows $(b_3,b_1) \\in S \\circ R = \\id_A$, so $b_3 = b_1$. Similarly, $(b_3,b_2) \\in S \\circ R = \\id_A$, so $b_3 = b_2$. This shows that $R$ is a function, i.e. left-unique. That $R$ is injective, i.e. right-unique, follows by symmetry. Finally, $R$ is surjective since it is right-total."
+  monomorphisms:
+    description: "A relation $R : A \\to B$ is a monomorphism iff the map $R_* : P(A) \\to P(B)$ defined by $T \\mapsto \\{b \\in B : \\exists \\, a \\in T: (a,b) \\in R \\}$ is injective."
+    reason: See <a href="https://math.stackexchange.com/questions/350716/" target="_blank">MSE/350716</a>.
+  epimorphisms:
+    description: "A relation $R : A \\to B$ is an epimorphism iff the map $R^* : P(B) \\to P(A)$ defined by $S \\mapsto \\{a \\in A : \\exists \\, b \\in S: (a,b) \\in R \\}$ is injective."
+    reason: See <a href="https://math.stackexchange.com/questions/350716/" target="_blank">MSE/350716</a>.

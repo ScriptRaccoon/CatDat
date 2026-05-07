@@ -1,0 +1,71 @@
+id: walking_morphism
+name: walking morphism
+notation: $\{0 \to 1\}$
+objects: $0$, $1$
+morphisms: the two identities and a single morphism from $0$ to $1$
+description: This is also known as the interval category. It has the property that functors $\{0 \to 1\} \to \C$ are the same as morphisms in $\C$.
+nlab_link: https://ncatlab.org/nlab/show/interval+category
+
+tags:
+  - category theory
+  - finite
+  - thin
+
+related_categories:
+  - walking_commutative_square
+  - walking_composable_pair
+  - walking_idempotent
+  - walking_isomorphism
+  - walking_pair
+  - walking_span
+  - walking_splitting
+
+satisfied_properties:
+  - property_id: finitary algebraic
+    reason: Take the algebraic theory with no operations but with the equation $x=y$ that is supposed to hold for all elements $x,y$. The algebras for this theory are the empty set and the singleton set, hence we get the equivalence to $\{0 \to 1\}$.
+
+  - property_id: self-dual
+    reason: This is trivial.
+
+  - property_id: finite
+    reason: This is trivial.
+
+  - property_id: small
+    reason: This is trivial.
+
+  - property_id: skeletal
+    reason: The two objects are not isomorphic.
+
+  - property_id: semi-strongly connected
+    reason: This is trivial.
+
+unsatisfied_properties:
+  - property_id: trivial
+    reason: This is trivial.
+
+special_objects:
+  initial object:
+    description: $0$
+  terminal object:
+    description: $1$
+  coproducts:
+    description: $0 \sqcup x = x$, $1 \sqcup x = 1$
+  products:
+    description: $0 \times x = 0$, $1 \times x = x$
+
+special_morphisms:
+  isomorphisms:
+    description: the two identities
+    reason: This is trivial.
+  monomorphisms:
+    description: every morphism
+    reason: It is a thin category.
+  epimorphisms:
+    description: every morphism
+    reason: It is a thin category.
+  regular monomorphisms:
+    description: same as isomorphisms
+    reason: This is because the category is right cancellative.
+  regular epimorphisms:
+    description: same as isomorphisms
+    reason: This is because the category is left cancellative.

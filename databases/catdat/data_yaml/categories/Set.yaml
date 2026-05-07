@@ -1,0 +1,65 @@
+id: Set
+name: category of sets
+notation: $\Set$
+objects: sets
+morphisms: maps
+description: The category of sets plays a fundamental role in category theory. Due to the Yoneda embedding, many results about general categories can be reduced to the category of sets. It is also usually the first example of a category that one encounters.
+nlab_link: https://ncatlab.org/nlab/show/Set
+dual_category_id: Set_op
+
+tags:
+  - set theory
+
+related_categories:
+  - FinSet
+  - Set*
+  - Set_c
+  - Set_f
+  - SetxSet
+
+satisfied_properties:
+  - property_id: locally small
+    reason: The collection of maps between two sets $X,Y$ is a subset of $X \times Y$ and therefore a set.
+
+  - property_id: Grothendieck topos
+    reason: It is equivalent to the category of sheaves on a one-point space.
+
+  - property_id: semi-strongly connected
+    reason: Every non-empty set is weakly terminal (by using constant maps).
+
+  - property_id: finitary algebraic
+    reason: Use the empty algebraic theory.
+
+unsatisfied_properties:
+  - property_id: skeletal
+    reason: This is trivial.
+
+  - property_id: trivial
+    reason: This is trivial.
+
+special_objects:
+  initial object:
+    description: empty set
+  terminal object:
+    description: singleton set
+  coproducts:
+    description: disjoint union
+  products:
+    description: direct products with pointwise operations
+
+special_morphisms:
+  isomorphisms:
+    description: bijective maps
+    reason: This is easy.
+  monomorphisms:
+    description: injective maps
+    reason: "For the non-trivial direction, if $f : X \\to Y$ is a monomorphism of sets and $a,b \\in X$ satisfy $f(a) = f(b)$, then $f \\circ a = f \\circ b$ when we regard $a,b$ as morphisms $a,b : 1 \\to X$. Hence, $a = b$. More generally, if $\\C$ is a category that admits a faithful and representable functor $U : \\C \\to \\Set$, then the monomorphisms in $\\C$ are precisely the morphisms whose $U$-image is injective."
+  epimorphisms:
+    description: surjective maps
+    reason: "For the non-trivial direction, if $f : X \\to Y$ is an epimorphism of sets, then in particular $f^* : \\Hom(Y,2) \\to \\Hom(X,2)$ is injective, which identifies with $f^* : P(Y) \\to P(X)$. Then for all $y \\in Y$ we have $f^*(\\{y\\}) \\neq f^*(\\varnothing) = \\varnothing$, so that $y$ has a preimage."
+  regular monomorphisms:
+    description: same as monomorphisms
+    reason: This is because the category is mono-regular.
+  regular epimorphisms:
+    description: surjective homomorphisms
+    reason: This holds in every finitary algebraic category.
