@@ -6,7 +6,7 @@ import sql from 'sql-template-tag'
 export const load = async () => {
 	const { results, err } = batch<[CategoryShort, TagObject]>([
 		sql`SELECT id, name FROM categories ORDER BY lower(name)`,
-		sql`SELECT tag FROM tags ORDER BY position`,
+		sql`SELECT tag FROM tags ORDER BY id`,
 	])
 
 	if (err) error(500, 'Categories could not be loaded')

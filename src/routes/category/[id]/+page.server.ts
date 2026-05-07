@@ -65,7 +65,7 @@ export const load = async (event) => {
 			FROM category_tag_assignments ct
 			INNER JOIN tags t ON t.tag = ct.tag
 			WHERE ct.category_id = ${id}
-			ORDER BY t.position
+			ORDER BY t.id
 		`,
 		// properties
 		sql`
@@ -105,7 +105,7 @@ export const load = async (event) => {
 			FROM special_objects s
 			INNER JOIN special_object_types t ON t.type = s.type
 			WHERE s.category_id = ${id}
-			ORDER BY t.position
+			ORDER BY t.id
 		`,
 		// special morphisms
 		sql`
@@ -113,7 +113,7 @@ export const load = async (event) => {
 			FROM special_morphism_types t
 			LEFT JOIN special_morphisms s
 				ON s.type = t.type AND s.category_id = ${id}
-			ORDER BY t.position
+			ORDER BY t.id
 		`,
 		// undistinguishable categories
 		sql`

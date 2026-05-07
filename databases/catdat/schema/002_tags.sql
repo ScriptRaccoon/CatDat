@@ -1,6 +1,6 @@
 CREATE TABLE tags (
-    tag TEXT PRIMARY KEY,
-    position INTEGER DEFAULT 0
+    id INTEGER PRIMARY KEY,
+    tag TEXT NOT NULL UNIQUE
 );
 
 CREATE TABLE category_tag_assignments (

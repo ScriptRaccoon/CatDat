@@ -1,6 +1,6 @@
-INSERT INTO special_object_types (type, dual, position)
+INSERT INTO special_object_types (type, dual)
 VALUES
-('terminal object', 'initial object', 0),
-('initial object', 'terminal object', 1),
-('products', 'coproducts', 2),
-('coproducts', 'products', 3);
+    ('terminal object', 'initial object'),
+    ('initial object', 'terminal object'),
+    ('products', 'coproducts'),
+    ('coproducts', 'products');

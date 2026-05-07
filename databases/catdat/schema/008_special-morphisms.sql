@@ -1,7 +1,7 @@
 CREATE TABLE special_morphism_types (
-    type TEXT PRIMARY KEY,
+    id INTEGER PRIMARY KEY,
+    type TEXT NOT NULL UNIQUE,
     dual TEXT,
-    position INTEGER NOT NULL DEFAULT 0,
     FOREIGN KEY (dual) REFERENCES special_morphism_types (type) ON DELETE SET NULL
 );
 

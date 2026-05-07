@@ -1,7 +1,7 @@
-INSERT INTO special_morphism_types (type, dual, position)
+INSERT INTO special_morphism_types (type, dual)
 VALUES
-('isomorphisms', 'isomorphisms', 0),
-('monomorphisms', 'epimorphisms', 1),
-('epimorphisms', 'monomorphisms', 2),
-('regular monomorphisms', 'regular epimorphisms', 3),
-('regular epimorphisms', 'regular monomorphisms', 4);
+    ('isomorphisms', 'isomorphisms'),
+    ('monomorphisms', 'epimorphisms'),
+    ('epimorphisms', 'monomorphisms'),
+    ('regular monomorphisms', 'regular epimorphisms'),
+    ('regular epimorphisms', 'regular monomorphisms');
