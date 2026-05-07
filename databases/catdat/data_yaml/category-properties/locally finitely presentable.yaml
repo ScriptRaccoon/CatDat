@@ -1,0 +1,22 @@
+id: locally finitely presentable
+relation: is
+description: |-
+  A category is <i>locally finitely presentable</i> if it satisfies one of the following equivalent conditions:
+  	<ol>
+  		<li>It is finitely accessible and cocomplete.</li>
+  		<li>It is finitely accessible and complete.</li>
+  		<li>It is equivalent to the category of finite-limit-preserving functors to $\Set$ from a small category with finite limits.</li>
+  		<li>It is equivalent to the category of models of a small finite-limit sketch.</li>
+  	</ol>
+  	For equivalence of conditions above, see Cor. 2.47, Thm. 1.46, and Cor. 1.52 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>. This is the same as being locally $\aleph_0$-presentable.
+nlab_link: https://ncatlab.org/nlab/show/locally+finitely+presentable+category
+invariant_under_equivalences: true
+
+related_properties:
+  - cocomplete
+  - finitary algebraic
+  - finitely accessible
+  - locally finitely multi-presentable
+  - locally presentable
+  - locally strongly finitely presentable
+  - locally ℵ₁-presentable

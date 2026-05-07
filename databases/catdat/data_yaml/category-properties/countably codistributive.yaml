@@ -1,0 +1,11 @@
+id: countably codistributive
+relation: is
+description: A category is <i>countably codistributive</i> if it has finite coproducts, countable products, and for every object $A$ the functor $A \sqcup -$ preserves countable products. Concretely, for every countable family of objects $(B_i)$ the canonical morphism $A \sqcup \prod_i B_i \to \prod_i (A \sqcup B_i)$ must be an isomorphism.
+dual_property_id: countably distributive
+invariant_under_equivalences: true
+
+related_properties:
+  - codistributive
+  - countable products
+  - finite coproducts
+  - infinitary codistributive

@@ -1,0 +1,10 @@
+id: countable coproducts
+relation: has
+description: A category has <i>countable coproducts</i> if it has coproducts for countable families of objects.
+dual_property_id: countable products
+invariant_under_equivalences: true
+
+related_properties:
+  - coproducts
+  - countable copowers
+  - finite coproducts

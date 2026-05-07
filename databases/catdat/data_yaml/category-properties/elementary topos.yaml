@@ -1,0 +1,12 @@
+id: elementary topos
+relation: is an
+description: An <i>elementary topos</i> is a cartesian closed category with finite limits and a subobject classifier.
+nlab_link: https://ncatlab.org/nlab/show/topos
+invariant_under_equivalences: true
+
+related_properties:
+  - Grothendieck topos
+  - cartesian closed
+  - finitely complete
+  - natural numbers object
+  - subobject classifier

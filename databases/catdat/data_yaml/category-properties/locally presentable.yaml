@@ -1,0 +1,23 @@
+id: locally presentable
+relation: is
+description: |-
+  Let $\kappa$ be a regular cardinal. A category is <i>locally $\kappa$-presentable</i> if it satisfies one of the following equivalent conditions:
+  	<ol>
+  		<li>It is $\kappa$-accessible and cocomplete.</li>
+  		<li>It is $\kappa$-accessible and complete.</li>
+  		<li>It is equivalent to the category of $\kappa$-limit-preserving functors to $\Set$ from a small category with $\kappa$-limits.</li>
+  		<li>It is equivalent to the category of models of a small $\kappa$-limit sketch.</li>
+  	</ol>
+  	For equivalence of conditions above, see Cor. 2.47, Thm. 1.46, and Cor. 1.52 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>.
+  	A category is <i>locally presentable</i> if it is locally $\kappa$-presentable for some regular cardinal $\kappa$.
+nlab_link: https://ncatlab.org/nlab/show/locally+presentable+category
+dual_property_id: locally copresentable
+invariant_under_equivalences: true
+
+related_properties:
+  - accessible
+  - cocomplete
+  - locally finitely presentable
+  - locally multi-presentable
+  - locally poly-presentable
+  - locally ℵ₁-presentable

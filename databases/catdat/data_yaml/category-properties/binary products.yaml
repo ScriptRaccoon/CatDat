@@ -1,0 +1,10 @@
+id: binary products
+relation: has
+description: A category has <i>binary products</i> if every pair $A,B$ of objects has a product $A \times B$.
+nlab_link: https://ncatlab.org/nlab/show/binary+product
+dual_property_id: binary coproducts
+invariant_under_equivalences: true
+
+related_properties:
+  - binary powers
+  - finite products

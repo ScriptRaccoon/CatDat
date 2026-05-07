@@ -1,0 +1,10 @@
+id: coreflexive equalizers
+relation: has
+description: A <i>coreflexive equalizer</i> is a limit of a diagram consisting of a parallel pair of morphisms with a common retraction (left inverse), which is the same concept as an equalizer of such a parallel pair. This property refers to the existence of coreflexive equalizers.
+nlab_link: https://ncatlab.org/nlab/show/reflexive+coequalizer
+dual_property_id: reflexive coequalizers
+invariant_under_equivalences: true
+
+related_properties:
+  - cosifted limits
+  - equalizers

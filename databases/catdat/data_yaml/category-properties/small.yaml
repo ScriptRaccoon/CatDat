@@ -1,0 +1,10 @@
+id: small
+relation: is
+description: A category is <i>small</i> when the collection of objects and the collection of morphisms are sets, i.e. small.
+nlab_link: https://ncatlab.org/nlab/show/small+category
+dual_property_id: small
+invariant_under_equivalences: false
+
+related_properties:
+  - essentially small
+  - locally small

@@ -1,0 +1,11 @@
+id: coquotients of cocongruences
+relation: has
+description: "A <i>cocongruence</i> (or internal equivalence corelation) on an object $X$ of a category is a parallel pair $i_1, i_2 : X \\rightrightarrows E$ which is jointly epimorphic, and such that for every object $T$, the image of $({-} \\circ i_1, {-} \\circ i_2) : \\Hom(E, T) \\to \\Hom(X, T)^2$ is an equivalence relation. The category has <i>coquotients of cocongruences</i> if for each such cocongruence, there exists an equalizer of $i_1$ and $i_2$. Note that in the case of a category with binary copowers, the corresponding quotients of $X + X$ are also commonly referred to as cocongruences, or as internal equivalence corelations."
+dual_property_id: quotients of congruences
+invariant_under_equivalences: true
+
+related_properties:
+  - coregular
+  - effective cocongruences
+  - equalizers
+  - kernels

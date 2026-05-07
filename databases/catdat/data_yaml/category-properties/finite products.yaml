@@ -1,0 +1,12 @@
+id: finite products
+relation: has
+description: A category has <i>finite products</i> if it has products for finite families of objects. Equivalently, it has a terminal object and binary products.
+nlab_link: https://ncatlab.org/nlab/show/finite+product
+dual_property_id: finite coproducts
+invariant_under_equivalences: true
+
+related_properties:
+  - binary products
+  - finite powers
+  - products
+  - terminal object

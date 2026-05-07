@@ -1,0 +1,9 @@
+id: strict terminal object
+relation: has a
+description: A <i>strict terminal object</i> is a terminal object $1$ such that every morphism $1 \to A$ is an isomorphism. This property refers to the existence of a strict terminal object.
+nlab_link: https://ncatlab.org/nlab/show/strict+terminal+object
+dual_property_id: strict initial object
+invariant_under_equivalences: true
+
+related_properties:
+  - terminal object

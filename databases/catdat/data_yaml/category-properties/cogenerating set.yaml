@@ -1,0 +1,9 @@
+id: cogenerating set
+relation: has a
+description: "A set of objects $S$ is called a <i>cogenerating set</i> if for every pair of parallel morphisms $f,g : A \\rightrightarrows B$, $f = g$ holds if and only if for every morphism $h : B \\to G$ with $G \\in S$ we have $h \\circ f = h \\circ g$. Equivalently, the functor $(\\Hom(-,G))_{G \\in S} : \\C^{\\op} \\to (\\Set^+)^S$ is faithful. This property refers to the existence of a cogenerating set."
+nlab_link: https://ncatlab.org/nlab/show/cogenerator
+dual_property_id: generating set
+invariant_under_equivalences: true
+
+related_properties:
+  - cogenerator

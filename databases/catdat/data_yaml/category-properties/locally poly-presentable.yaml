@@ -1,0 +1,11 @@
+id: locally poly-presentable
+relation: is
+description: A category is <i>locally poly-presentable</i> if it is accessible and has wide pullbacks.
+nlab_link: https://ncatlab.org/nlab/show/locally+polypresentable+category
+invariant_under_equivalences: true
+
+related_properties:
+  - accessible
+  - locally multi-presentable
+  - locally presentable
+  - wide pullbacks

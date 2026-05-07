@@ -1,0 +1,8 @@
+id: coaccessible
+relation: is
+description: A category is <i>coaccessible</i> if its opposite category is accessible.
+dual_property_id: accessible
+invariant_under_equivalences: true
+
+related_properties:
+  - locally copresentable

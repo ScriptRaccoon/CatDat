@@ -1,0 +1,20 @@
+id: locally finitely multi-presentable
+relation: is
+description: |-
+  A category is <i>locally finitely multi-presentable</i> if it satisfies one of the following equivalent conditions:
+  	<ol>
+  		<li>It is finitely accessible and multi-cocomplete.</li>
+  		<li>It is finitely accessible and has connected limits.</li>
+  		<li>It is equivalent to the category of models of a small (finite limit, coproduct)-sketch.</li>
+  	</ol>
+  	For equivalence of conditions above, see Thm. 4.30, Thm. 4.32, and the remark below in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>.
+nlab_link: https://ncatlab.org/nlab/show/locally+multipresentable+category
+invariant_under_equivalences: true
+
+related_properties:
+  - connected limits
+  - filtered colimits
+  - finitely accessible
+  - locally multi-presentable
+  - multi-algebraic
+  - multi-cocomplete

@@ -1,0 +1,10 @@
+id: ℵ₁-accessible
+relation: is
+description: This is the special case of the notion of $\kappa$-accessible categories, where $\kappa = \aleph_1$ is the first uncountable cardinal.
+nlab_link: https://ncatlab.org/nlab/show/accessible+category
+invariant_under_equivalences: true
+
+related_properties:
+  - accessible
+  - finitely accessible
+  - locally ℵ₁-presentable

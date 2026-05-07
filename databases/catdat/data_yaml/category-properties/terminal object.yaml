@@ -1,0 +1,10 @@
+id: terminal object
+relation: has a
+description: A <i>terminal object</i> (or <i>final object</i>) is an object that has a unique morphism from every object in the category. This property refers to the existence of a terminal object.
+nlab_link: https://ncatlab.org/nlab/show/terminal+object
+dual_property_id: initial object
+invariant_under_equivalences: true
+
+related_properties:
+  - finite products
+  - multi-terminal object

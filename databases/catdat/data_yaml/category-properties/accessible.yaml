@@ -1,0 +1,13 @@
+id: accessible
+relation: is
+description: Let $\kappa$ be a regular cardinal. A category is <i>$\kappa$-accessible</i> if it has $\kappa$-filtered colimits and there is a (small) set $G$ of $\kappa$-presentable objects such that every object is a $\kappa$-filtered colimit of objects in $G$. A category is <i>accessible</i> if it is $\kappa$-accessible for some regular cardinal $\kappa$.
+nlab_link: https://ncatlab.org/nlab/show/accessible+category
+dual_property_id: coaccessible
+invariant_under_equivalences: true
+
+related_properties:
+  - finitely accessible
+  - locally multi-presentable
+  - locally poly-presentable
+  - locally presentable
+  - ℵ₁-accessible

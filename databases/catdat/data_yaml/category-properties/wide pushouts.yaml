@@ -1,0 +1,9 @@
+id: wide pushouts
+relation: has
+description: A category $\C$ has <i>wide pushouts</i> if for every object $S$ the coslice category $S/\C$ has arbitrary small coproducts.
+nlab_link: https://ncatlab.org/nlab/show/wide+pushout
+dual_property_id: wide pullbacks
+invariant_under_equivalences: true
+
+related_properties:
+  - pushouts

@@ -1,0 +1,8 @@
+id: balanced
+relation: is
+description: A category is <i>balanced</i> if every morphism which is a monomorphism and an epimorphism must be an isomorphism.
+nlab_link: https://ncatlab.org/nlab/show/balanced+category
+dual_property_id: balanced
+invariant_under_equivalences: true
+
+related_properties: []

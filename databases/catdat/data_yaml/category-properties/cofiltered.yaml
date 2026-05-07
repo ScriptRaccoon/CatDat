@@ -1,0 +1,10 @@
+id: cofiltered
+relation: is
+description: A category is <i>cofiltered</i> if every finite diagram admits a cone. Equivalently, it is inhabited, for every two objects $x,y$ there is a span $x \leftarrow p \rightarrow y$ (not necessarily universal), and every parallel pair $x \rightrightarrows y$ is equalized by some morphism $e \to x$ (not necessarily universal).
+nlab_link: https://ncatlab.org/nlab/show/cofiltered+category
+dual_property_id: filtered
+invariant_under_equivalences: true
+
+related_properties:
+  - cofiltered limits
+  - finitely complete

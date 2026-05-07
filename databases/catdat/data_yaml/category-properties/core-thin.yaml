@@ -1,0 +1,17 @@
+id: core-thin
+relation: is
+description: |-
+  A category is <i>core-thin</i> if it satisfies the following equivalent conditions:
+  	<ol>
+  		<li>Its <a href="https://ncatlab.org/nlab/show/core+groupoid" target="_blank">core</a> is thin.</li>
+  		<li>Parallel isomorphisms are equal.</li>
+  		<li>Every automorphism is the identity.</li>
+  	</ol>
+nlab_link: https://ncatlab.org/nlab/show/gaunt+category
+dual_property_id: core-thin
+invariant_under_equivalences: true
+
+related_properties:
+  - gaunt
+  - one-way
+  - thin

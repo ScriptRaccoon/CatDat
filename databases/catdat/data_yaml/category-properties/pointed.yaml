@@ -1,0 +1,10 @@
+id: pointed
+relation: is
+description: A category is <i>pointed</i> when it has a zero object, i.e. an object which is both initial and terminal.
+nlab_link: https://ncatlab.org/nlab/show/pointed+category
+dual_property_id: pointed
+invariant_under_equivalences: true
+
+related_properties:
+  - initial object
+  - terminal object

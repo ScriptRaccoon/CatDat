@@ -1,0 +1,8 @@
+id: trivial
+relation: is
+description: A category is <i>trivial</i> if it is equivalent to the <a href="/category/1">trivial category</a>. Equivalently, there is an initial object $0$ such that for every object $A$ the unique morphism $0 \to A$ is an isomorphism. Notice that we do not demand that the category is <i>isomorphic</i> to the trivial category. As a consequence, every inhabited indiscrete category is trivial in our sense.
+nlab_link: https://ncatlab.org/nlab/show/terminal+category
+dual_property_id: trivial
+invariant_under_equivalences: true
+
+related_properties: []

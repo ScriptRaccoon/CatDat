@@ -1,0 +1,9 @@
+id: skeletal
+relation: is
+description: A category is <i>skeletal</i> when isomorphic objects are already equal. Every category is equivalent to a skeletal category (using the axiom of choice).
+nlab_link: https://ncatlab.org/nlab/show/skeleton
+dual_property_id: skeletal
+invariant_under_equivalences: false
+
+related_properties:
+  - gaunt

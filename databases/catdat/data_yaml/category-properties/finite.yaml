@@ -1,0 +1,11 @@
+id: finite
+relation: is
+description: A category is <i>finite</i> if it has finitely many objects and morphisms.
+nlab_link: https://ncatlab.org/nlab/show/finite+category
+dual_property_id: finite
+invariant_under_equivalences: false
+
+related_properties:
+  - countable
+  - essentially finite
+  - small

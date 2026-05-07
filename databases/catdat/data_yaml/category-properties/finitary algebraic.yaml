@@ -1,0 +1,8 @@
+id: finitary algebraic
+relation: is
+description: A category is <i>finitary algebraic</i> if it is equivalent to the category of models of a one-sorted finitary algebraic theory. This is also known as a variety of one-sorted finitary algebras.
+nlab_link: https://ncatlab.org/nlab/show/algebraic+category
+invariant_under_equivalences: true
+
+related_properties:
+  - locally strongly finitely presentable

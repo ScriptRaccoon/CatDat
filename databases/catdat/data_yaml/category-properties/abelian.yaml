@@ -1,0 +1,13 @@
+id: abelian
+relation: is
+description: A category is <i>abelian</i> if it is additive, every morphism has a kernel and a cokernel, and every monomorphism and epimorphism is normal. Equivalently, it is additive, has equalizers and coequalizers, and it is mono-regular and epi-regular. As opposed to other types of categories (such as monoidal categories), being abelian turns out to be a mere property.
+nlab_link: https://ncatlab.org/nlab/show/abelian+category
+dual_property_id: abelian
+invariant_under_equivalences: true
+
+related_properties:
+  - additive
+  - cokernels
+  - conormal
+  - kernels
+  - normal

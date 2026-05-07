@@ -1,0 +1,11 @@
+id: finitely cocomplete
+relation: is
+description: A category is <i>finitely cocomplete</i> when every finite diagram has a colimit.
+nlab_link: https://ncatlab.org/nlab/show/finitely+cocomplete+category
+dual_property_id: finitely complete
+invariant_under_equivalences: true
+
+related_properties:
+  - cocomplete
+  - coequalizers
+  - finite coproducts

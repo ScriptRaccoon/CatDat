@@ -1,0 +1,12 @@
+id: quotients of congruences
+relation: has
+description: "A <i>congruence</i> (or internal equivalence relation) on an object $X$ of a category is a parallel pair $p_1, p_2 : E \\rightrightarrows X$ which is jointly monomorphic, and such that for every object $T$, the image of $(p_1 \\circ {-}, p_2 \\circ {-}) : \\Hom(T, E) \\to \\Hom(T, X)^2$ is an equivalence relation. The category has <i>quotients of congruences</i> if for each such congruence, there exists a coequalizer of $p_1$ and $p_2$. Note that in the case of a category with binary powers, the corresponding subobjects of $X \\times X$ are also commonly referred to as congruences, or as internal equivalence relations."
+nlab_link: https://ncatlab.org/nlab/show/congruence
+dual_property_id: coquotients of cocongruences
+invariant_under_equivalences: true
+
+related_properties:
+  - coequalizers
+  - cokernels
+  - effective congruences
+  - regular

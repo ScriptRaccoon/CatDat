@@ -1,0 +1,9 @@
+id: quotient-trivial
+relation: is
+description: A category is <i>quotient-trivial</i> if every epimorphism is an isomorphism. Equivalently, the poset of quotients of any object is trivial. This is no standard terminology. We have added it to the database since it clarifies the relationship between several related properties.
+dual_property_id: subobject-trivial
+invariant_under_equivalences: true
+
+related_properties:
+  - epi-regular
+  - groupoid

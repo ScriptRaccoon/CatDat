@@ -1,0 +1,9 @@
+id: right cancellative
+relation: is
+description: "A category is <i>right cancellative</i> if for every morphism $f : A \\to B$ and every parallel pair of morphisms $g,h : B \\rightrightarrows T$ with $g \\circ f = h \\circ f$ we have $g = h$. Equivalently, every morphism is an epimorphism."
+nlab_link: https://ncatlab.org/nlab/show/cancellative+category
+dual_property_id: left cancellative
+invariant_under_equivalences: true
+
+related_properties:
+  - groupoid

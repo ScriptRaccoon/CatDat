@@ -1,0 +1,11 @@
+id: complete
+relation: is
+description: A category is <i>complete</i> when every small diagram in the category has a limit.
+nlab_link: https://ncatlab.org/nlab/show/complete+category
+dual_property_id: cocomplete
+invariant_under_equivalences: true
+
+related_properties:
+  - equalizers
+  - multi-complete
+  - products

@@ -1,0 +1,10 @@
+id: binary coproducts
+relation: has
+description: A category has <i>binary coproducts</i> if every pair $A,B$ of objects has a coproduct $A \sqcup B$.
+nlab_link: https://ncatlab.org/nlab/show/coproduct
+dual_property_id: binary products
+invariant_under_equivalences: true
+
+related_properties:
+  - binary copowers
+  - finite coproducts

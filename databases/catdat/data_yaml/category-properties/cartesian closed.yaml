@@ -1,0 +1,10 @@
+id: cartesian closed
+relation: is
+description: A category is <i>cartesian closed</i> if all finite products and exponentials $[X,Y]$ exist, defined by the adjunction $\Hom(T,[X,Y]) \cong \Hom(T \times X,Y)$.
+nlab_link: https://ncatlab.org/nlab/show/cartesian+closed+category
+dual_property_id: cocartesian coclosed
+invariant_under_equivalences: true
+
+related_properties:
+  - finite products
+  - locally cartesian closed

@@ -1,0 +1,11 @@
+id: extensive
+relation: is
+description: A category $\C$ is <i>extensive</i> when it has finite coproducts and for all objects $A,B \in \C$ the coproduct functor $\C/A \times \C/B \to \C/(A+B)$ is an equivalence of categories. Equivalently, pullbacks of finite coproduct inclusions along arbitrary morphisms exist and finite coproducts are disjoint and stable under pullback.
+nlab_link: https://ncatlab.org/nlab/show/extensive+category
+dual_property_id: coextensive
+invariant_under_equivalences: true
+
+related_properties:
+  - disjoint finite coproducts
+  - finite coproducts
+  - infinitary extensive

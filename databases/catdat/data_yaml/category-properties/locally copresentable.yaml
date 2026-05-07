@@ -1,0 +1,9 @@
+id: locally copresentable
+relation: is
+description: A category is <i>locally copresentable</i> if its opposite category is locally presentable.
+dual_property_id: locally presentable
+invariant_under_equivalences: true
+
+related_properties:
+  - coaccessible
+  - complete

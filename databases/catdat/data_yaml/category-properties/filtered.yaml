@@ -1,0 +1,10 @@
+id: filtered
+relation: is
+description: A category is <i>filtered</i> if every finite diagram admits a cocone. Equivalently, it is inhabited, for every two objects $x,y$ there is a cospan $x \rightarrow s \leftarrow y$ (not necessarily universal), and every parallel pair $x \rightrightarrows y$ is coequalized by some morphism $y \to c$ (not necessarily universal).
+nlab_link: https://ncatlab.org/nlab/show/filtered+category
+dual_property_id: cofiltered
+invariant_under_equivalences: true
+
+related_properties:
+  - filtered colimits
+  - finitely cocomplete

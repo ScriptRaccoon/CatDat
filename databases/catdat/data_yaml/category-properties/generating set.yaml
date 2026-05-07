@@ -1,0 +1,9 @@
+id: generating set
+relation: has a
+description: "A set of objects $S$ is called a <i>generating set</i> if for every pair of parallel morphisms $f,g : A \\rightrightarrows B$, $f = g$ holds if and only if for every morphism $h : G \\to A$ with $G \\in S$ we have $f \\circ h = g \\circ h$. Equivalently, the functor $(\\Hom(G,-))_{G \\in S} : \\C \\to (\\Set^+)^S$ is faithful. This property refers to the existence of a generating set."
+nlab_link: https://ncatlab.org/nlab/show/separator
+dual_property_id: cogenerating set
+invariant_under_equivalences: true
+
+related_properties:
+  - generator

@@ -1,0 +1,8 @@
+id: locally essentially small
+relation: is
+description: A category is <i>locally essentially small</i> when for every pair of objects $A,B$ the collection of morphisms $A \to B$ is isomorphic to a set. (Here, we work with a set-theoretic foundation in which there are sets and collections. Categories are based on collections of objects and morphisms.) Equivalently, the category is equivalent to a locally small category. In contrast to being locally small, this condition is invariant under equivalences of categories. This is why we have added it to the database. For instance, every algebraic category is locally essentially small, but not necessarily locally small. This indicates that this is the "right" notion to work with.
+dual_property_id: locally essentially small
+invariant_under_equivalences: true
+
+related_properties:
+  - locally small

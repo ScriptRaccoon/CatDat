@@ -1,0 +1,12 @@
+id: additive
+relation: is
+description: A category is <i>additive</i> if it is preadditive and has finite products (equivalently, finite coproducts). Note that in the context of finite products, the preadditive structure <a href="/lemma/preadditive_structure_unique">is unique</a>.
+nlab_link: https://ncatlab.org/nlab/show/additive+category
+dual_property_id: additive
+invariant_under_equivalences: true
+
+related_properties:
+  - biproducts
+  - finite coproducts
+  - finite products
+  - preadditive

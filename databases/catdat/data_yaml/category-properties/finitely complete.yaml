@@ -1,0 +1,11 @@
+id: finitely complete
+relation: is
+description: A category is <i>finitely complete</i> when every finite diagram has a limit.
+nlab_link: https://ncatlab.org/nlab/show/finitely+complete+category
+dual_property_id: finitely cocomplete
+invariant_under_equivalences: true
+
+related_properties:
+  - complete
+  - equalizers
+  - finite products
