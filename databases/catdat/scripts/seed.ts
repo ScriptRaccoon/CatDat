@@ -48,6 +48,18 @@ function seed() {
 	seed_functors()
 }
 
+function read_yaml_file<T>(...parts: string[]): T {
+	const content = fs.readFileSync(path.join(...parts), 'utf8')
+	return YAML.parse(content) as T
+}
+
+function get_yaml_files(folder: string) {
+	return fs
+		.readdirSync(folder)
+		.filter((file) => file.endsWith('.yaml'))
+		.sort()
+}
+
 function clear_all_data() {
 	console.info(`\nClear all tables ...`)
 	try {
@@ -100,45 +112,38 @@ function clear_all_data() {
 function seed_config() {
 	console.info(`\nSeed config...`)
 
-	const config_file_content = fs.readFileSync(
-		path.join(data_folder, 'config.yaml'),
-		'utf8',
+	const config = read_yaml_file<ConfigYaml>(data_folder, 'config.yaml')
+
+	const tag_insert = db.prepare(`INSERT INTO tags (tag) VALUES (?)`)
+
+	const relation_insert = db.prepare(
+		`INSERT INTO relations (relation, negation, conditional) VALUES (?, ?, ?)`,
 	)
-	const config = YAML.parse(config_file_content) as ConfigYaml
+
+	const object_insert = db.prepare(
+		`INSERT INTO special_object_types (type, dual) VALUES (?, ?)`,
+	)
+
+	const morphism_insert = db.prepare(
+		`INSERT INTO special_morphism_types (type, dual) VALUES (?, ?)`,
+	)
 
 	try {
-		const tag_insert = db.prepare(`INSERT INTO tags (tag) VALUES (?)`)
 		db.transaction(() => {
-			for (const tag of config.tags) tag_insert.run(tag)
-		})()
+			db.pragma('defer_foreign_keys = ON')
 
-		const relation_insert = db.prepare(
-			`INSERT INTO relations (relation, negation, conditional) VALUES (?, ?, ?)`,
-		)
-		db.transaction(() => {
+			for (const tag of config.tags) tag_insert.run(tag)
+
 			for (const { relation, negation, conditional } of config.relations) {
 				relation_insert.run(relation, negation, conditional)
 			}
-		})()
 
-		const object_insert = db.prepare(
-			`INSERT INTO special_object_types (type, dual) VALUES (?, ?)`,
-		)
-
-		db.transaction(() => {
-			db.pragma('defer_foreign_keys = ON')
-			for (const obj of config.special_object_types) {
-				object_insert.run(obj.type, obj.dual)
+			for (const { type, dual } of config.special_object_types) {
+				object_insert.run(type, dual)
 			}
-		})()
 
-		const morphism_insert = db.prepare(
-			`INSERT INTO special_morphism_types (type, dual) VALUES (?, ?)`,
-		)
-		db.transaction(() => {
-			db.pragma('defer_foreign_keys = ON')
-			for (const mor of config.special_morphism_types) {
-				morphism_insert.run(mor.type, mor.dual)
+			for (const { type, dual } of config.special_morphism_types) {
+				morphism_insert.run(type, dual)
 			}
 		})()
 	} catch (err) {
@@ -149,12 +154,9 @@ function seed_config() {
 
 function seed_categories() {
 	console.info(`\nSeed categories ...`)
-	const categories_folder = path.join(data_folder, 'categories')
 
-	const category_files = fs
-		.readdirSync(categories_folder)
-		.filter((file) => file.endsWith('.yaml'))
-		.sort()
+	const folder = path.join(data_folder, 'categories')
+	const files = get_yaml_files(folder)
 
 	const category_insert = db.prepare(
 		`INSERT INTO categories (
@@ -191,88 +193,91 @@ function seed_categories() {
 	)
 
 	const property_comment_insert = db.prepare(`
-		INSERT INTO category_property_comments (category_id, property_id, comment)
-		VALUES (?, ?, ?)`)
+		INSERT INTO category_property_comments (
+			category_id, property_id, comment
+		) VALUES (?, ?, ?)`)
+
+	function insert_category(category: CategoryYaml) {
+		category_insert.run(
+			category.id,
+			category.name,
+			category.notation,
+			category.objects,
+			category.morphisms,
+			category.description || null,
+			category.nlab_link || null,
+			category.dual_category_id || null,
+		)
+
+		for (const tag of category.tags) {
+			tag_insert.run(category.id, tag)
+		}
+
+		for (const comment of category.comments ?? []) {
+			comment_insert.run(category.id, comment)
+		}
+
+		for (const related of category.related_categories) {
+			related_insert.run(category.id, related)
+		}
+
+		for (const [type, entry] of Object.entries(category.special_objects)) {
+			if (!entry) continue
+			special_object_insert.run(category.id, type, entry.description)
+		}
+
+		for (const [type, entry] of Object.entries(category.special_morphisms)) {
+			if (!entry) continue
+			special_morphism_insert.run(
+				category.id,
+				type,
+				entry.description,
+				entry.reason,
+			)
+		}
+
+		for (const entry of category.satisfied_properties) {
+			property_assignment_insert.run(
+				category.id,
+				entry.property_id,
+				1,
+				entry.reason,
+				entry.check_redundancy === false ? 0 : 1,
+			)
+		}
+
+		for (const entry of category.unsatisfied_properties) {
+			property_assignment_insert.run(
+				category.id,
+				entry.property_id,
+				0,
+				entry.reason,
+				entry.check_redundancy === false ? 0 : 1,
+			)
+		}
+
+		for (const comment_obj of category.category_property_comments ?? []) {
+			property_comment_insert.run(
+				category.id,
+				comment_obj.property_id,
+				comment_obj.comment,
+			)
+		}
+	}
+
+	const tx = db.transaction(() => {
+		db.pragma('defer_foreign_keys = ON')
+
+		for (const category_file of files) {
+			console.info(`Seed: ${category_file}`)
+
+			const category = read_yaml_file<CategoryYaml>(folder, category_file)
+			insert_category(category)
+		}
+	})
 
 	try {
-		db.transaction(() => {
-			db.pragma('defer_foreign_keys = ON')
-
-			for (const category_file of category_files) {
-				console.info(`Seed: ${category_file}`)
-				const content = fs.readFileSync(
-					path.join(categories_folder, category_file),
-					'utf8',
-				)
-				const category = YAML.parse(content) as CategoryYaml
-
-				category_insert.run(
-					category.id,
-					category.name,
-					category.notation,
-					category.objects,
-					category.morphisms,
-					category.description || null,
-					category.nlab_link || null,
-					category.dual_category_id || null,
-				)
-
-				for (const tag of category.tags) {
-					tag_insert.run(category.id, tag)
-				}
-
-				for (const comment of category.comments ?? []) {
-					comment_insert.run(category.id, comment)
-				}
-
-				for (const related of category.related_categories) {
-					related_insert.run(category.id, related)
-				}
-
-				for (const [type, entry] of Object.entries(category.special_objects)) {
-					if (!entry) continue
-					special_object_insert.run(category.id, type, entry.description)
-				}
-
-				for (const [type, entry] of Object.entries(category.special_morphisms)) {
-					if (!entry) continue
-					special_morphism_insert.run(
-						category.id,
-						type,
-						entry.description,
-						entry.reason,
-					)
-				}
-
-				for (const entry of category.satisfied_properties) {
-					property_assignment_insert.run(
-						category.id,
-						entry.property_id,
-						1,
-						entry.reason,
-						entry.check_redundancy === false ? 0 : 1,
-					)
-				}
-
-				for (const entry of category.unsatisfied_properties) {
-					property_assignment_insert.run(
-						category.id,
-						entry.property_id,
-						0,
-						entry.reason,
-						entry.check_redundancy === false ? 0 : 1,
-					)
-				}
-
-				for (const comment_obj of category.category_property_comments ?? []) {
-					property_comment_insert.run(
-						category.id,
-						comment_obj.property_id,
-						comment_obj.comment,
-					)
-				}
-			}
-		})()
+		tx()
 	} catch (err) {
 		console.error(`Error seeding categories:`, err)
 		process.exit(1)
@@ -281,12 +286,9 @@ function seed_categories() {
 
 function seed_category_properties() {
 	console.info(`\nSeed category properties ...`)
-	const property_folder = path.join(data_folder, 'category-properties')
 
-	const property_files = fs
-		.readdirSync(property_folder)
-		.filter((file) => file.endsWith('.yaml'))
-		.sort()
+	const folder = path.join(data_folder, 'category-properties')
+	const files = get_yaml_files(folder)
 
 	const property_insert = db.prepare(`
 		INSERT INTO category_properties (
@@ -298,32 +300,34 @@ function seed_category_properties() {
 		`INSERT INTO related_category_properties (property_id, related_property_id) VALUES (?, ?)`,
 	)
 
+	function insert_property(property: CategoryPropertyYaml) {
+		property_insert.run(
+			property.id,
+			property.relation,
+			property.description,
+			property.nlab_link || null,
+			property.dual_property_id || null,
+			Number(property.invariant_under_equivalences),
+		)
+
+		for (const related of property.related_properties) {
+			related_insert.run(property.id, related)
+		}
+	}
+
+	const tx = db.transaction(() => {
+		db.pragma('defer_foreign_keys = ON')
+
+		for (const property_file of files) {
+			console.info(`Seed: ${property_file}`)
+
+			const property = read_yaml_file<CategoryPropertyYaml>(folder, property_file)
+			insert_property(property)
+		}
+	})
+
 	try {
-		db.transaction(() => {
-			db.pragma('defer_foreign_keys = ON')
-
-			for (const property_file of property_files) {
-				console.info(`Seed: ${property_file}`)
-				const content = fs.readFileSync(
-					path.join(property_folder, property_file),
-					'utf8',
-				)
-				const property = YAML.parse(content) as CategoryPropertyYaml
-
-				property_insert.run(
-					property.id,
-					property.relation,
-					property.description,
-					property.nlab_link || null,
-					property.dual_property_id || null,
-					Number(property.invariant_under_equivalences),
-				)
-
-				for (const related of property.related_properties) {
-					related_insert.run(property.id, related)
-				}
-			}
-		})()
+		tx()
 	} catch (err) {
 		console.error(`Error seeding category categories:`, err)
 		process.exit(1)
@@ -332,29 +336,29 @@ function seed_category_properties() {
 
 function seed_lemmas() {
 	console.info(`\nSeed lemmas ...`)
-	const lemma_folder = path.join(data_folder, 'lemmas')
 
-	const lemma_files = fs
-		.readdirSync(lemma_folder)
-		.filter((file) => file.endsWith('.yaml'))
-		.sort()
+	const folder = path.join(data_folder, 'lemmas')
+	const files = get_yaml_files(folder)
 
 	const lemma_insert = db.prepare(
 		`INSERT INTO lemmas (id, title, claim, proof) VALUES (?, ?, ?, ?)`,
 	)
-	try {
-		db.transaction(() => {
-			for (const lemma_file of lemma_files) {
-				console.info(`Seed: ${lemma_file}`)
-				const content = fs.readFileSync(
-					path.join(lemma_folder, lemma_file),
-					'utf8',
-				)
-				const lemma = YAML.parse(content) as LemmaYaml
 
-				lemma_insert.run(lemma.id, lemma.title, lemma.claim, lemma.proof)
-			}
-		})()
+	function insert_lemma(lemma: LemmaYaml) {
+		lemma_insert.run(lemma.id, lemma.title, lemma.claim, lemma.proof)
+	}
+
+	const tx = db.transaction(() => {
+		for (const lemma_file of files) {
+			console.info(`Seed: ${lemma_file}`)
+
+			const lemma = read_yaml_file<LemmaYaml>(folder, lemma_file)
+			insert_lemma(lemma)
+		}
+	})
+
+	try {
+		tx()
 	} catch (err) {
 		console.error(`Error seeding lemmas:`, err)
 		process.exit(1)
@@ -363,12 +367,9 @@ function seed_lemmas() {
 
 function seed_category_implications() {
 	console.info(`\nSeed category implications ...`)
-	const implications_folder = path.join(data_folder, 'category-implications')
 
-	const implication_files = fs
-		.readdirSync(implications_folder)
-		.filter((file) => file.endsWith('.yaml'))
-		.sort()
+	const folder = path.join(data_folder, 'category-implications')
+	const files = get_yaml_files(folder)
 
 	const implication_insert = db.prepare(
 		`INSERT INTO category_implications (
@@ -388,34 +389,35 @@ function seed_category_implications() {
 		) VALUES (?, ?)`,
 	)
 
-	try {
-		db.transaction(() => {
-			for (const implications_file of implication_files) {
-				console.info(`Seed: ${implications_file}`)
+	function insert_implication(impl: CategoryImplicationYaml) {
+		implication_insert.run(impl.id, impl.reason, Number(impl.is_equivalence))
 
-				const content = fs.readFileSync(
-					path.join(implications_folder, implications_file),
-					'utf8',
-				)
-				const implications = YAML.parse(content) as CategoryImplicationYaml[]
+		for (const assumption of impl.assumptions) {
+			assumption_insert.run(impl.id, assumption)
+		}
 
-				for (const implication of implications) {
-					implication_insert.run(
-						implication.id,
-						implication.reason,
-						Number(implication.is_equivalence),
-					)
+		for (const conclusion of impl.conclusions) {
+			conclusion_insert.run(impl.id, conclusion)
+		}
+	}
 
-					for (const assumption of implication.assumptions) {
-						assumption_insert.run(implication.id, assumption)
-					}
+	const tx = db.transaction(() => {
+		for (const implications_file of files) {
+			console.info(`Seed: ${implications_file}`)
 
-					for (const conclusion of implication.conclusions) {
-						conclusion_insert.run(implication.id, conclusion)
-					}
-				}
+			const implications = read_yaml_file<CategoryImplicationYaml[]>(
+				folder,
+				implications_file,
+			)
+
+			for (const impl of implications) {
+				insert_implication(impl)
 			}
-		})()
+		}
+	})
+
+	try {
+		tx()
 	} catch (err) {
 		console.error(`Error seeding category implications:`, err)
 		process.exit(1)
@@ -424,12 +426,9 @@ function seed_category_implications() {
 
 function seed_functor_properties() {
 	console.info(`\nSeed functor properties ...`)
-	const property_folder = path.join(data_folder, 'functor-properties')
 
-	const property_files = fs
-		.readdirSync(property_folder)
-		.filter((file) => file.endsWith('.yaml'))
-		.sort()
+	const folder = path.join(data_folder, 'functor-properties')
+	const files = get_yaml_files(folder)
 
 	const property_insert = db.prepare(`
 		INSERT INTO functor_properties (
@@ -437,28 +436,30 @@ function seed_functor_properties() {
 			dual_property_id, invariant_under_equivalences
 		) VALUES (?, ?, ?, ?, ?, ?)`)
 
+	function insert_property(property: FunctorPropertyYaml) {
+		property_insert.run(
+			property.id,
+			property.relation,
+			property.description,
+			property.nlab_link || null,
+			property.dual_property_id || null,
+			Number(property.invariant_under_equivalences),
+		)
+	}
+
+	const tx = db.transaction(() => {
+		db.pragma('defer_foreign_keys = ON')
+
+		for (const property_file of files) {
+			console.info(`Seed: ${property_file}`)
+
+			const property = read_yaml_file<FunctorPropertyYaml>(folder, property_file)
+			insert_property(property)
+		}
+	})
+
 	try {
-		db.transaction(() => {
-			db.pragma('defer_foreign_keys = ON')
-
-			for (const property_file of property_files) {
-				console.info(`Seed: ${property_file}`)
-				const content = fs.readFileSync(
-					path.join(property_folder, property_file),
-					'utf8',
-				)
-				const property = YAML.parse(content) as FunctorPropertyYaml
-
-				property_insert.run(
-					property.id,
-					property.relation,
-					property.description,
-					property.nlab_link || null,
-					property.dual_property_id || null,
-					Number(property.invariant_under_equivalences),
-				)
-			}
-		})()
+		tx()
 	} catch (err) {
 		console.error(`Error seeding functor properties:`, err)
 		process.exit(1)
@@ -467,12 +468,9 @@ function seed_functor_properties() {
 
 function seed_functor_implications() {
 	console.info(`\nSeed functor implications ...`)
-	const implications_folder = path.join(data_folder, 'functor-implications')
 
-	const implication_files = fs
-		.readdirSync(implications_folder)
-		.filter((file) => file.endsWith('.yaml'))
-		.sort()
+	const folder = path.join(data_folder, 'functor-implications')
+	const files = get_yaml_files(folder)
 
 	const implication_insert = db.prepare(
 		`INSERT INTO functor_implications (
@@ -504,42 +502,43 @@ function seed_functor_implications() {
 		) VALUES (?, ?)`,
 	)
 
-	try {
-		db.transaction(() => {
-			for (const implications_file of implication_files) {
-				console.info(`Seed: ${implications_file}`)
+	function insert_implication(impl: FunctorImplicationYaml) {
+		implication_insert.run(impl.id, impl.reason, Number(impl.is_equivalence))
 
-				const content = fs.readFileSync(
-					path.join(implications_folder, implications_file),
-					'utf8',
-				)
-				const implications = YAML.parse(content) as FunctorImplicationYaml[]
+		for (const assumption of impl.assumptions) {
+			assumption_insert.run(impl.id, assumption)
+		}
 
-				for (const implication of implications) {
-					implication_insert.run(
-						implication.id,
-						implication.reason,
-						Number(implication.is_equivalence),
-					)
+		for (const assumption of impl.source_assumptions) {
+			source_assumption_insert.run(impl.id, assumption)
+		}
 
-					for (const assumption of implication.assumptions) {
-						assumption_insert.run(implication.id, assumption)
-					}
+		for (const assumption of impl.target_assumptions) {
+			target_assumption_insert.run(impl.id, assumption)
+		}
 
-					for (const assumption of implication.source_assumptions) {
-						source_assumption_insert.run(implication.id, assumption)
-					}
+		for (const conclusion of impl.conclusions) {
+			conclusion_insert.run(impl.id, conclusion)
+		}
+	}
 
-					for (const assumption of implication.target_assumptions) {
-						target_assumption_insert.run(implication.id, assumption)
-					}
+	const tx = db.transaction(() => {
+		for (const implications_file of files) {
+			console.info(`Seed: ${implications_file}`)
 
-					for (const conclusion of implication.conclusions) {
-						conclusion_insert.run(implication.id, conclusion)
-					}
-				}
+			const implications = read_yaml_file<FunctorImplicationYaml[]>(
+				folder,
+				implications_file,
+			)
+
+			for (const impl of implications) {
+				insert_implication(impl)
 			}
-		})()
+		}
+	})
+
+	try {
+		tx()
 	} catch (err) {
 		console.error(`Error seeding category implications:`, err)
 		process.exit(1)
@@ -548,12 +547,9 @@ function seed_functor_implications() {
 
 function seed_functors() {
 	console.info(`\nSeed functors ...`)
-	const functors_folder = path.join(data_folder, 'functors')
 
-	const functor_files = fs
-		.readdirSync(functors_folder)
-		.filter((file) => file.endsWith('.yaml'))
-		.sort()
+	const folder = path.join(data_folder, 'functors')
+	const files = get_yaml_files(folder)
 
 	const functor_insert = db.prepare(
 		`INSERT INTO functors (
@@ -567,46 +563,38 @@ function seed_functors() {
 		) VALUES (?, ?, ?, ?)`,
 	)
 
+	function insert_functor(functor: FunctorYaml) {
+		functor_insert.run(
+			functor.id,
+			functor.name,
+			functor.source,
+			functor.target,
+			functor.description || null,
+			functor.nlab_link || null,
+		)
+
+		for (const entry of functor.satisfied_properties) {
+			property_assignment_insert.run(functor.id, entry.property_id, 1, entry.reason)
+		}
+
+		for (const entry of functor.unsatisfied_properties) {
+			property_assignment_insert.run(functor.id, entry.property_id, 0, entry.reason)
+		}
+	}
+
+	const tx = db.transaction(() => {
+		db.pragma('defer_foreign_keys = ON')
+
+		for (const functor_file of files) {
+			console.info(`Seed: ${functor_file}`)
+
+			const functor = read_yaml_file<FunctorYaml>(folder, functor_file)
+			insert_functor(functor)
+		}
+	})
+
 	try {
-		db.transaction(() => {
-			db.pragma('defer_foreign_keys = ON')
-
-			for (const functor_file of functor_files) {
-				console.info(`Seed: ${functor_file}`)
-				const content = fs.readFileSync(
-					path.join(functors_folder, functor_file),
-					'utf8',
-				)
-				const functor = YAML.parse(content) as FunctorYaml
-
-				functor_insert.run(
-					functor.id,
-					functor.name,
-					functor.source,
-					functor.target,
-					functor.description || null,
-					functor.nlab_link || null,
-				)
-
-				for (const entry of functor.satisfied_properties) {
-					property_assignment_insert.run(
-						functor.id,
-						entry.property_id,
-						1,
-						entry.reason,
-					)
-				}
-
-				for (const entry of functor.unsatisfied_properties) {
-					property_assignment_insert.run(
-						functor.id,
-						entry.property_id,
-						0,
-						entry.reason,
-					)
-				}
-			}
-		})()
+		tx()
 	} catch (err) {
 		console.error(`Error seeding functors:`, err)
 		process.exit(1)
