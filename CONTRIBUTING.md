@@ -56,7 +56,7 @@ You need to have [Git](https://git-scm.com/), [NodeJS](https://nodejs.org/) and 
 
 ### Updating the Database
 
-All updates to the database are made by modifying the SQL files in the folder [/databases/catdat](databases/catdat), primarily those in the subfolder [/databases/catdat/data](databases/catdat/data). See [DATABASE.md](/DATABASE.md) for an overview of the database structure.
+All updates to the database are made by modifying the YAML files in the folder [/databases/catdat/data](databases/catdat/data). See [DATABASE.md](/DATABASE.md) for an overview of the database structure.
 
 Apply the updates using:
 
@@ -75,7 +75,7 @@ to continuously run this update when a file in the subfolder [/databases/catdat/
 ### Troubleshooting
 
 - If the local database is corrupted, or its schema has changed, recreate it using `pnpm db:setup`.
-- If the `pnpm db:update` command fails, examine the error message to determine the cause. It could be due to malformed SQL, a contradictory property, or a failing test in the `pnpm db:test` script (which also runs as part of the update command), as explained below.
+- If the `pnpm db:update` command fails, examine the error message to determine the cause. It could be due to malformed YAML, a contradictory property, or a failing test in the `pnpm db:test` script (which also runs as part of the update command), as explained below.
 
 ### Tests for Data Quality
 
@@ -90,11 +90,15 @@ If any of these tests fail, adjust the data accordingly.
 
 ### Example Commits
 
+_These commits refer to an old version of CatDat and will be replaced by more current ones._
+
 - [Add category of Hausdorff spaces](https://github.com/ScriptRaccoon/CatDat/commit/390ed9c7996334138f8bc61c0b3f8e822003248a)
 - [Add two tiny categories](https://github.com/ScriptRaccoon/CatDat/commit/e5781d87bdc084a65cf0ec67c7efc5b3e29c4303)
 - [Add regular and coregular categories](https://github.com/ScriptRaccoon/CatDat/commit/e06f85fa13e5f8eeb42049880b5662be7fc36a50)
 
 ### Example Pull Requests
+
+_These pull requests refer to an old version of CatDat and will be replaced by more current ones._
 
 - [CMon is not coregular](https://github.com/ScriptRaccoon/CatDat/pull/27/changes)
 - [Add "locally cartesian closed" property](https://github.com/ScriptRaccoon/CatDat/pull/3/changes)
@@ -156,7 +160,7 @@ In particular, it often makes sense to **keep** a redundant assignment of a sati
 
 For example, you may first prove that a category has zero morphisms, and then prove that it is normal. Although the database contains the implication "normal => zero morphisms", in practice the latter is used as a prerequisite. Similarly, when proving that a category is extensive, it is often clearer to first show that finite coproducts exist, rather than relying on the implication "extensive => finite coproducts". Also, an explicit description of finite coproducts is useful for deciding other properties involving coproducts.
 
-Every redundant assignment of a satisfied property that is intentionally kept must be explicitly marked to skip the redundancy check. See `N.sql` for an example.
+Every redundant assignment of a satisfied property that is intentionally kept must be explicitly marked to skip the redundancy check. See `N.yaml` for an example.
 
 ### Keep Pull Requests Focused
 
@@ -168,7 +172,7 @@ Examples of appropriate pull requests include:
 
 - adding a single category property and determining it for several categories in the database,
 - adding a single category together with its properties,
-- adding a single missing proof ([Example](https://github.com/ScriptRaccoon/CatDat/pull/27))
+- adding a single missing proof
 - clarifying definitions, explanations, or documentation.
 
 As a practical guideline, avoid introducing more than four properties (or four categories) in a single pull request.
@@ -191,3 +195,13 @@ AI tools may be used to assist with development in this repository, but not to r
 - Pull request descriptions and commit messages must be written manually. AI-generated summaries are often superficial, meaningless, and do not tell the whole story.
 
 In summary, treat AI as a productivity tool, not as a substitute for understanding or authorship.
+
+### Authoring of YAML files
+
+If you are not familiar with YAML, a short beginner-friendly introduction can be found at https://www.youtube.com/watch?v=1uFVr15xDGg. You can also look at the existing files in the data folder to get a feel for how the data is structured.
+
+1. It is recommended to enable word wrap in your editor when working with YAML files.
+2. HTML may be used inside string values, for example for links (`<a>`), italic text (`<i>`), and ordered lists (`<ol>`).
+3. Use single-quoted strings (`'...'`) for values containing `:`. See `Cat.yaml` for an example. Inside single-quoted strings, a literal single quote must be escaped as `''`. See `Man.yaml` for an example.
+4. Use `>-` for multiline text that should be rendered as a single paragraph without line breaks. This is particularly useful for improving readability of longer texts or HTML lists in the YAML file itself. See `core-thin.yaml` for an example.
+5. Use `|-` for multiline text where line breaks should be preserved. These line breaks are automatically converted to `<br>` when rendered. See `FreeAb.yaml` for an example.

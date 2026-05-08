@@ -47,11 +47,11 @@ For functors there are similar tables, such as:
 
 The schema defines the structure of the database: tables, views, indexes, and triggers. It is specified in several SQL files located in the subfolder [/databases/catdat/schema](/databases/catdat/schema/). The command `pnpm db:setup` deletes the old database file (if it exists) and creates a new one using this schema. This is required when the schema changes, so it is recommended to run it periodically.
 
-Database entries (categories, properties, implications, etc.) are defined in SQL files located in the subfolder [/databases/catdat/data](/databases/catdat/data/). The command `pnpm db:seed` replaces the current contents of the database by clearing all existing data and inserting the entries defined in these SQL files.
+Database entries (categories, properties, implications, etc.) are defined in YAML files located in the subfolder [/databases/catdat/data](/databases/catdat/data/). The command `pnpm db:seed` rebuilds the database by clearing all existing data and then parsing and inserting the entries defined in these YAML files.
 
 ## Derived Data
 
-From the defined satisfied properties of a given category, new properties can be automatically deduced using the implications. (For example, when a category has equalizers and products, we can infer that it is complete.) The same applies to unsatisfied properties. Additionally, suitable implications may be dualized, and a category inherits all dualized properties of its dual category, if available. Note that the SQL files mentioned above do _not_ contain any derived data.
+From the defined satisfied properties of a given category, new properties can be automatically deduced using the implications. (For example, when a category has equalizers and products, we can infer that it is complete.) The same applies to unsatisfied properties. Additionally, suitable implications may be dualized, and a category inherits all dualized properties of its dual category, if available. Note that the YAML files mentioned above do _not_ contain any derived data.
 
 The command `pnpm db:deduce` deduces implications, satisfied properties, and unsatisfied properties.
 
