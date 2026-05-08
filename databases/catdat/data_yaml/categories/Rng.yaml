@@ -42,6 +42,7 @@ unsatisfied_properties:
     reason: If $\IZ\langle X_1,\dotsc,X_n \rangle_0$ denotes the free rng on $n$ generators (non-commutative polynomials without constant term), then the canonical homomorphism $\IZ\langle X,Y \rangle_0 = \IZ\langle X \rangle_0 \sqcup \IZ\langle Y \rangle_0 \to \IZ\langle X \rangle_0 \times \IZ\langle Y \rangle_0$ is not a monomorphism since $\IZ\langle X,Y \rangle_0$ is not commutative.
 
   - property_id: CIP
+    # TODO: remove code duplication with "counital" proof
     reason: If $\IZ\langle X_1,\dotsc,X_n \rangle_0$ denotes the free rng on $n$ generators (non-commutative polynomials without constant term), then the canonical homomorphism $\IZ\langle X,Y \rangle_0 = \IZ\langle X \rangle_0 \sqcup \IZ\langle Y \rangle_0 \to \IZ\langle X \rangle_0 \times \IZ\langle Y \rangle_0$ is not a monomorphism since $\IZ\langle X,Y \rangle_0$ is not commutative.
 
   - property_id: regular subobject classifier

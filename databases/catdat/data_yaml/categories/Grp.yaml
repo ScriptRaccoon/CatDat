@@ -55,6 +55,7 @@ unsatisfied_properties:
     reason: The canonical morphism $F_2 = \IZ \sqcup \IZ \to \IZ \times \IZ$ is not a monomorphism since $F_2$ is not abelian.
 
   - property_id: CIP
+    # TODO: remove code duplication with "counital" proof
     reason: The canonical morphism $F_2 = \IZ \sqcup \IZ \to \IZ \times \IZ$ is not a monomorphism since $F_2$ is not abelian.
 
   - property_id: regular quotient object classifier

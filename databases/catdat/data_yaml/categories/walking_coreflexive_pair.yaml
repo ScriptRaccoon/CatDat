@@ -68,6 +68,7 @@ unsatisfied_properties:
     reason: Assume that $[1] \xleftarrow{i} [0] \xrightarrow{i} [1]$ has a pushout in $\Delta^{\leq 1}$, where $i(0)=0$. This amounts to a universal totally ordered set of cardinality $\leq 2$ with elements $a,b,c$ satisfying $a \leq b$, $a \leq c$. Since a finite totally ordered set has trivial automorphism group, the automorphism defined by $a \mapsto a$, $b \mapsto c$, $c \mapsto b$ must be the identity, i.e., we have $b = c$. However, in $[1]$ the equations $0 \leq 0$, $0 \leq 1$ then show that the universal property fails.
 
   - property_id: multi-complete
+    # TODO: remove this manual proof once locally multi-presentable is dualized, cf. #139
     reason: 'This follows directly from existing results: If its dual, the walking reflexive pair, was multi-cocomplete, then since it is also accessible, it would be <a href="/category-property/locally_multi-presentable">locally multi-presentable</a>. But then it would have connected limits, in particular pullbacks.'
 
 special_objects:

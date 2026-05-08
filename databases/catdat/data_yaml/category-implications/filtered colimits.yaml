@@ -49,6 +49,8 @@
   is_equivalence: false
 
 - id: finite_filtered_colimits
+  # TODO: combine this with the implication with ID "finite_accessible"
+  # once its dual is added to the database.
   assumptions:
     - Cauchy complete
     - essentially finite

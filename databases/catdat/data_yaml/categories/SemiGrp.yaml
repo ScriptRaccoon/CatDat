@@ -55,6 +55,8 @@ unsatisfied_properties:
           Let $A$ be the set of positive rational numbers of the form $m/2^n$ (with $m > 0$, $n \geq 0$), and let $B$ be the set of positive rational numbers of the form $m/3^n$ (with $m > 0$, $n \geq 0$). Both are semigroups under addition. The element $1 \in A$ is $2^\infty$-divisible, meaning that for every $n \geq 0$ there is some $a \in A$ with $1 = 2^n \cdot a$. But $B$ has no $2^\infty$-divisible element. Hence, there is no semigroup homomorphism $A \to B$. Likewise, there is no semigroup homomorphism $B \to A$.
 
   - property_id: cogenerating set
+    # TODO: find a variant of the lemma missing_cogenerating_sets
+    # (or missing_cogenerator) which handles this.
     reason: |-
       The proof is similar to the proof for <a href="/category/Grp">$\Grp$</a>. Assume that there is a cogenerating set $S$. There is an infinite simple group $G$ larger than all the semigroups in $S$ (such as an alternating group). Since $\id_G, 1 : G \rightrightarrows G$ are different, there is a semigroup $H \in S$ and a homomorphism of semigroups $f : G \to H$ with $f \neq f \circ 1$. Then
       	$$N := \{g \in G : f(g) = f(1)\}$$

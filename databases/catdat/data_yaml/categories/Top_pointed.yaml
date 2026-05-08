@@ -88,14 +88,15 @@ unsatisfied_properties:
   - property_id: unital
     reason: "The joint image of $X \\to X \\times Y \\leftarrow Y$ is just $\\{(x,0) : x \\in X\\} \\cup \\{(0,y) : y \\in Y\\}$ (where $0$ denotes the base point), which is clearly a proper subset of $X \\times Y$ when both $X,Y$ are non-trivial."
 
+  - property_id: CSP
+    # TODO: remove duplication with unital proof
+    reason: "The image of $X \\vee Y$ in $X \\times Y$ is just $\\{(x,0) : x \\in X\\} \\cup \\{(0,y) : y \\in Y\\}$ (where $0$ denotes the base point), which is clearly a proper subset when both $X,Y$ are non-trivial."
+
   - property_id: regular quotient object classifier
     reason: We can recycle the proof for the <a href="/category/Set*">category of pointed sets</a> using discrete topological spaces.
 
   - property_id: coaccessible
     reason: 'We can adjust the proof for $\Top$ as follows: Assume $\Top_*$ is coaccessible. Let $S_0=\{x,*\}$ be the pointed topological space such that $\{*\}$ is the only non-trivial open set, and let $S_1=\{x,*\}$ be the pointed space such that $\{x\}$ is the only non-trivial open set. Let $p_i\colon S_i \to \{x,*\}$ be the identity function to the two-element indiscrete pointed space. Then, a pointed topological space is discrete if and only if it is projective to the morphisms $p_0$ and $p_1$. This implies that the full subcategory spanned by all discrete pointed spaces, which is equivalent to $\Set_*$, is coaccessible by Prop. 4.7 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>. However, since $\Set_*$ is not coaccessible, this is a contradiction.'
-
-  - property_id: CSP
-    reason: "The image of $X \\vee Y$ in $X \\times Y$ is just $\\{(x,0) : x \\in X\\} \\cup \\{(0,y) : y \\in Y\\}$ (where $0$ denotes the base point), which is clearly a proper subset when both $X,Y$ are non-trivial."
 
   - property_id: cofiltered-limit-stable epimorphisms
     reason: We already know that $\Set_*$ does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the functor $\Set_* \to \Top_*$ that equips a pointed set with the indiscrete topology.

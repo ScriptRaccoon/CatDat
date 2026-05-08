@@ -49,6 +49,7 @@ satisfied_properties:
     reason: The coproduct (wedge sum) of a family of pointed sets $(X_i)_{i \in I}$ can be realized as the subset of $\prod_{i \in I} X_i$ consisting of those tuples $x$ such that $x_i = 0$ for all but (at most) one index.
 
   - property_id: effective cocongruences
+    # TODO: rework this when Barr-exact is added
     reason: We have that $\Set_*^{\op}$ is a slice category of $\Set^{\op}$, which in turn is monadic over $\Set$. Therefore, by combining results from <a href="http://www.springer.com/us/book/9781402019616" target="_blank">Borceux and Bourn</a> Appendix A and <a href="https://ncatlab.org/nlab/show/colimits+in+categories+of+algebras#exact" target="_blank">nLab</a>, $\Set_*^{\op}$ is Barr-exact, and in particular it has effective congruences.
 
 unsatisfied_properties:
@@ -59,6 +60,7 @@ unsatisfied_properties:
     reason: "The joint image of $X \\to X \\times Y \\leftarrow Y$ is just $\\{(x,0) : x \\in X\\} \\cup \\{(0,y) : y \\in Y\\}$ (where $0$ denotes the base point), which is clearly a proper subset of $X \\times Y$ when both $X,Y$ are non-trivial."
 
   - property_id: CSP
+    # TODO: remove duplication with unital proof
     reason: "The image of $X \\vee Y$ in $X \\times Y$ is just $\\{(x,0) : x \\in X\\} \\cup \\{(0,y) : y \\in Y\\}$ (where $0$ denotes the base point), which is clearly a proper subset when both $X,Y$ are non-trivial."
 
   - property_id: conormal
