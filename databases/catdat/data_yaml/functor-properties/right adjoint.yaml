@@ -1,0 +1,6 @@
+id: right adjoint
+relation: is a
+description: "A functor $F : \\C \\to \\D$ is a right adjoint when there is a functor $G : \\D \\to \\C$ such that there are natural bijections $\\Hom(G(A),B) \\cong \\Hom(A,F(B))$."
+nlab_link: https://ncatlab.org/nlab/show/right+adjoint
+invariant_under_equivalences: true
+dual_property_id: left adjoint

@@ -1,0 +1,6 @@
+id: exact
+relation: is
+description: A functor is exact when it is left exact and right exact.
+nlab_link: https://ncatlab.org/nlab/show/exact+functor
+invariant_under_equivalences: true
+dual_property_id: exact

@@ -1,0 +1,26 @@
+id: forget_vector
+name: forgetful functor for vector spaces
+source: Vect
+target: Set
+description: This functor $U$ maps a vector space $V$ (over a fixed field $K$) to its underlying set $U(V)$.
+nlab_link: https://ncatlab.org/nlab/show/forgetful+functor
+
+satisfied_properties:
+  - property_id: conservative
+    reason: It is standard that the inverse of a bijective linear map is also linear.
+  - property_id: epimorphism-preserving
+    reason: This follows from the classifications of epimorphisms in the <a href="/category/Vect">category of vector spaces</a> and in the <a href="/category/Set">category of sets</a>.
+  - property_id: finitary
+    reason: For every algebraic category the forgetful functor to the category of sets preserves filtered colimits.
+  - property_id: monadic
+    reason: For every algebraic category the forgetful functor to the category of sets is monadic.
+  - property_id: representable
+    reason: This functor is represented by any $1$-dimensional vector space.
+
+unsatisfied_properties:
+  - property_id: coequalizer-preserving
+    reason: "The coequalizer of $0,i_1 : K \\to K^2$ in $\\Vect$ is $p_2 : K^2 \\to K$, but the coequalizer in $\\Set$ is $(K \\times K^*) \\cup \\{(0,0)\\}$."
+  - property_id: essentially surjective
+    reason: The empty has has no vector space structure.
+  - property_id: initial-object-preserving
+    reason: The underlying set of a trivial vector space is not empty.

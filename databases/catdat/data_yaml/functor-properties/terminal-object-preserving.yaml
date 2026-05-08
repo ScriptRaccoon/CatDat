@@ -1,0 +1,6 @@
+id: terminal-object-preserving
+relation: is
+description: A functor $F$ preserves terminal objects when it maps every terminal object to a terminal object. It is not assumed that the source category has a terminal object.
+nlab_link: null
+invariant_under_equivalences: true
+dual_property_id: initial-object-preserving

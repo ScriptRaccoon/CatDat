@@ -1,0 +1,6 @@
+id: finitary
+relation: is
+description: A functor is finitary when it preserves filtered colimits.
+nlab_link: https://ncatlab.org/nlab/show/finitary+functor
+invariant_under_equivalences: true
+dual_property_id: cofinitary

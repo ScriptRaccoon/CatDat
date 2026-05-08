@@ -1,0 +1,6 @@
+id: equivalence
+relation: is an
+description: A functor is an equivalence if it has a pseudo-inverse functor.
+nlab_link: https://ncatlab.org/nlab/show/equivalence+of+categories
+invariant_under_equivalences: true
+dual_property_id: equivalence

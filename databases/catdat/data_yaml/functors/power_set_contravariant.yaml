@@ -1,0 +1,26 @@
+id: power_set_contravariant
+name: contravariant power set functor
+source: Set_op
+target: Set
+description: "This functor maps a set $X$ to its power set $P(X)$ and a map of sets $f : X \\to Y$ to the induced preimage operator $f^* : P(Y) \\to P(X)$."
+nlab_link: https://ncatlab.org/nlab/show/power+set
+
+satisfied_properties:
+  - property_id: epimorphism-preserving
+    reason: "If $f : X \\to Y$ is injective, then $f^* : P(Y) \\to P(X)$ is surjective, since for all $A \\subseteq X$ we have $A = f^*(f_*(A))$."
+  - property_id: monadic
+    reason: See <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, Theorem 2.2.7.
+  - property_id: representable
+    reason: This is because there are natural bijections $P(X) \cong \Hom(X,2)$, sending a subset to its characteristic function.
+
+unsatisfied_properties:
+  - property_id: coequalizer-preserving
+    reason: "The power set functor preserves reflexive coequalizers, but not all coequalizers, i.e. there are maps $f,g : Y \\to X$ with equalizer $E \\subseteq Y$ such that $P(Y) \\twoheadrightarrow P(E)$ is not the coequalizer of $f^*,g^* : P(X) \\to P(Y)$: Let $X=\\{0,1\\}$ and $Y=\\{a,b,c\\}$. Define maps $f,g:Y\\to X$ by $f(a)=0$, $f(b)=0$, $f(c)=1$ and $g(a)=0$, $g(b)=1$, $g(c)=0$. Their equalizer is $E = \\{a\\}$, so that $P(E)$ has $2$ elements. For $S=\\{0\\}$ one has $f^*(S)=\\{a,b\\}$, $g^*(S)=\\{a,c\\}$, and for $S=\\{1\\}$ one has $f^*(S)=\\{c\\}$, $g^*(S)=\\{b\\}$. Thus the coequalizer of $f^*,g^*$ is obtained from $P(Y)$ by imposing the two relations $\\{a,b\\} \\sim \\{a,c\\}$ and $\\{c\\} \\sim \\{b\\}$. But then it as $8-2 = 6$ elements."
+  - property_id: essentially surjective
+    reason: The initial object does not lie in the essential image since $P(X) \neq 0$ for all $X$.
+  - property_id: finitary
+    reason: Consider the sequence of projections $\cdots \twoheadrightarrow \{0,1\}^2 \twoheadrightarrow \{0,1\}^1$. Its limit in $\Set$ (i.e. colimit in $\Set^{\op}$) is $\{0,1\}^{\IN}$, which is uncountable, so that $P(\{0,1\}^{\IN})$ is also uncountable. But the colimit of the induced diagram $P(\{0,1\}^1) \hookrightarrow P(\{0,1\}^2) \hookrightarrow \cdots$ is countable since each $P(\{0,1\}^n)$ is finite.
+  - property_id: full
+    reason: "The maps $f^* : P(Y) \\to P(X)$ preserve the empty set, so take the constant map $P(X) \\to P(X)$, $T \\mapsto X$ for instance (where $X$ is non-empty)."
+  - property_id: initial-object-preserving
+    reason: In fact, the initial object does not even lie in the essential image since $P(X) \neq 0$ for all $X$.
