@@ -1,0 +1,28 @@
+# results on generators and generating sets
+
+- id: generator_consequence
+  assumptions:
+    - generator
+  conclusions:
+    - generating set
+    - inhabited
+  reason: This is trivial.
+  is_equivalence: false
+
+- id: generator_via_coproduct
+  assumptions:
+    - coproducts
+    - generating set
+    - zero morphisms
+  conclusions:
+    - generator
+  reason: "If $S$ is a generating set, we claim that $U := \\coprod_{G \\in S} G$ is a generator. Let $f,g : A \\rightrightarrows B$ be two morphisms with $f h = g h$ for all $h : U \\to A$. If $G \\in S$, any morphism $G \\to A$ extends to $U$ by using zero morphisms outside of $G$. Thus, $fh = gh$ holds for all $h : G \\to A$ and $G \\in S$. Since $S$ is a generating set, this implies $f = g$."
+  is_equivalence: false
+
+- id: free-algebra-generates
+  assumptions:
+    - finitary algebraic
+  conclusions:
+    - generator
+  reason: Pick an algebraic theory that represents the category. The free algebra $F(1)$ on one generator is a generator since morphisms $F(1) \to X$ correspond to the elements of (the underlying set of) the algebra $X$.
+  is_equivalence: false

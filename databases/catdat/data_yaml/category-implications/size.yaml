@@ -1,0 +1,62 @@
+# results on small, locally small, finite, countable, etc. categories
+
+- id: small_consequence
+  assumptions:
+    - small
+  conclusions:
+    - essentially small
+    - locally small
+  reason: This is trivial.
+  is_equivalence: false
+
+- id: essentially_small_consequences
+  assumptions:
+    - essentially small
+  conclusions:
+    - generating set
+    - locally essentially small
+    - well-copowered
+    - well-powered
+  reason: This is trivial.
+  is_equivalence: false
+
+- id: finite_consequence
+  assumptions:
+    - finite
+  conclusions:
+    - countable
+    - essentially finite
+  reason: This is trivial.
+  is_equivalence: false
+
+- id: essentially_finite_raise
+  assumptions:
+    - essentially finite
+  conclusions:
+    - essentially countable
+  reason: This is trivial.
+  is_equivalence: false
+
+- id: countable_consequence
+  assumptions:
+    - countable
+  conclusions:
+    - essentially countable
+  reason: This is trivial.
+  is_equivalence: false
+
+- id: essentially_countable_consequence
+  assumptions:
+    - essentially countable
+  conclusions:
+    - essentially small
+  reason: This is trivial.
+  is_equivalence: false
+
+- id: locally_small_consequence
+  assumptions:
+    - locally small
+  conclusions:
+    - locally essentially small
+  reason: This is trivial.
+  is_equivalence: false

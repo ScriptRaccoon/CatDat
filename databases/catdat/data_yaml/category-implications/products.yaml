@@ -1,0 +1,115 @@
+# results on products and powers
+
+- id: products_consequences
+  assumptions:
+    - products
+  conclusions:
+    - countable products
+    - finite products
+    - powers
+  reason: This is trivial.
+  is_equivalence: false
+
+- id: finite_products_characterization
+  assumptions:
+    - finite products
+  conclusions:
+    - binary products
+    - terminal object
+  reason: The non-trivial direction follows since finite products can be constructed recursively via $X_1 \times \cdots \times X_{n+1} = (X_1 \times \cdots \times X_n) \times X_{n+1}$.
+  is_equivalence: true
+
+- id: products_criterion
+  assumptions:
+    - cofiltered limits
+    - finite products
+  conclusions:
+    - products
+  reason: The product $\prod_{i \in I} X_i$ is the cofiltered limit of the finite partial products $\prod_{i \in E} X_i$ where $E$ ranges over the finite subsets of $I$.
+  is_equivalence: false
+
+- id: binary_products_criterion
+  assumptions:
+    - pullbacks
+    - terminal object
+  conclusions:
+    - binary products
+  reason: If $1$ is a terminal object, then $X \times_1 Y = X \times Y$.
+  is_equivalence: false
+
+- id: countable_products_consequence
+  assumptions:
+    - countable products
+  conclusions:
+    - countable powers
+    - finite products
+  reason: This is trivial.
+  is_equivalence: false
+
+- id: countable_products_criterion
+  assumptions:
+    - finite products
+    - sequential limits
+  conclusions:
+    - countable products
+  reason: If $X_1,X_2,\dotsc$ is an infinite sequence of objects, then their product is the limit of the sequence $\cdots \to X_2 \times X_1 \to X_1$.
+  is_equivalence: false
+
+- id: finite_products_include_finite_powers
+  assumptions:
+    - finite products
+  conclusions:
+    - finite powers
+  reason: This is trivial.
+  is_equivalence: false
+
+- id: binary_products_include_binary_powers
+  assumptions:
+    - binary products
+  conclusions:
+    - binary powers
+  reason: This is trivial.
+  is_equivalence: false
+
+- id: powers_include_countable_powers
+  assumptions:
+    - powers
+  conclusions:
+    - countable powers
+  reason: This is trivial.
+  is_equivalence: false
+
+- id: countable_powers_include_finite_powers
+  assumptions:
+    - countable powers
+  conclusions:
+    - finite powers
+  reason: This is trivial.
+  is_equivalence: false
+
+- id: finite_powers_consequences
+  assumptions:
+    - finite powers
+  conclusions:
+    - binary powers
+    - terminal object
+  reason: This is trivial.
+  is_equivalence: false
+
+- id: countable_powers_criterion
+  assumptions:
+    - finite powers
+    - sequential limits
+  conclusions:
+    - countable powers
+  reason: "We can write $X^{\\IN}$ as the limit of the sequence $\\cdots \\to X^3 \\to X^2 \\to X \\to 1$ with transition morphisms $f_n : X^{n+1} \\to X^n$, $(x_1,\\dotsc,x_{n+1}) \\mapsto (x_1,\\dotsc,x_n)$, i.e., $p_i f_n = p_i$ for $1 \\leq i \\leq n$."
+  is_equivalence: false
+
+- id: powers_criterion
+  assumptions:
+    - cofiltered limits
+    - finite powers
+  conclusions:
+    - powers
+  reason: The product $X^I$ is the cofiltered limit of the finite powers $X^E$, where $E$ ranges over the finite subsets of $I$.
+  is_equivalence: false

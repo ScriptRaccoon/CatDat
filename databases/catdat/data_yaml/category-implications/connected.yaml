@@ -1,0 +1,54 @@
+# results on connected, semi-strongly connected and
+# strongly connected categories
+
+- id: connected_consequence
+  assumptions:
+    - connected
+  conclusions:
+    - inhabited
+  reason: This holds by definition.
+  is_equivalence: false
+
+- id: strongly_connected_consequence
+  assumptions:
+    - strongly connected
+  conclusions:
+    - semi-strongly connected
+  reason: This is immediate from the definition.
+  is_equivalence: false
+
+- id: semi-strongly_connected_consequence
+  assumptions:
+    - semi-strongly connected
+  conclusions:
+    - connected
+  reason: This is immediate from the definition.
+  is_equivalence: false
+
+- id: thin_not_strongly_connected
+  assumptions:
+    - strongly connected
+    - thin
+  conclusions:
+    - trivial
+  reason: This is obvious.
+  is_equivalence: false
+
+- id: zero_morphisms_mean_strongly_connected
+  assumptions:
+    - inhabited
+    - zero morphisms
+  conclusions:
+    - strongly connected
+  reason: This holds by definition.
+  is_equivalence: false
+
+- id: strongly_connected_pointed_criterion
+  assumptions:
+    - initial object
+    - strongly connected
+    - terminal object
+  conclusions:
+    - pointed
+  reason: By assumption there is a morphism $1 \to 0$. There is also a unique morphism $0 \to 1$. They are necessarily inverse to each other.
+  is_equivalence: false

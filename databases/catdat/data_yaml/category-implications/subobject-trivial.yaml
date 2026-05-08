@@ -1,0 +1,44 @@
+# results on subobject-trivial categories
+
+- id: thin_subobject-trivial
+  assumptions:
+    - equalizers
+    - subobject-trivial
+  conclusions:
+    - thin
+  reason: "If $f,g : X \\rightrightarrows Y$ are morphisms, their equalizer is a monomorphism $E \\hookrightarrow X$, hence an isomorphism. But this means $f = g$."
+  is_equivalence: false
+
+- id: subobject-trivial_consequence
+  assumptions:
+    - subobject-trivial
+  conclusions:
+    - mono-regular
+  reason: This is trivial.
+  is_equivalence: false
+
+- id: subobject-trivial_groupoids
+  assumptions:
+    - groupoid
+  conclusions:
+    - subobject-trivial
+  reason: This is trivial.
+  is_equivalence: false
+
+- id: subobject-trivial_criterion
+  assumptions:
+    - epi-regular
+    - right cancellative
+  conclusions:
+    - subobject-trivial
+  reason: This is because a monomorphism which is also a regular epimorphism is an isomorphism.
+  is_equivalence: false
+
+- id: subobject_classifier_disallows_malcev
+  assumptions:
+    - Malcev
+    - subobject classifier
+  conclusions:
+    - subobject-trivial
+  reason: 'The subobject classifier $\Omega$ is an internal poset (cf. <a href="https://ncatlab.org/nlab/show/Sheaves+in+Geometry+and+Logic" target="_blank">Mac Lane & Moerdijk</a>, IV.8). Concretely, the intersection of subobjects yields a morphism $\wedge : \Omega \times \Omega \to \Omega$, and the internal relation ${\leq_{\Omega}} \subseteq \Omega \times \Omega$ is the equalizer of $\wedge, p_1 : \Omega \times \Omega \rightrightarrows \Omega$. The relation ${\leq_{\Omega}}$ is reflexive, hence symmetric by assumption. Since it also antisymmetric and has a largest element $\top$, every monomorphism must be an isomorphism. (From here, we can infer that the category is trivial.)'
+  is_equivalence: false

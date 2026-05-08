@@ -1,0 +1,71 @@
+# results on extensive categories
+
+- id: extensive_assumption
+  assumptions:
+    - extensive
+  conclusions:
+    - finite coproducts
+  reason: This holds by definition.
+  is_equivalence: false
+
+- id: infinitary_extensive_assumption
+  assumptions:
+    - infinitary extensive
+  conclusions:
+    - coproducts
+  reason: This holds by definition.
+  is_equivalence: false
+
+- id: infinitary_extensive_finitary
+  assumptions:
+    - infinitary extensive
+  conclusions:
+    - extensive
+  reason: This is obvious.
+  is_equivalence: false
+
+- id: extensive_consequences
+  assumptions:
+    - extensive
+  conclusions:
+    - disjoint finite coproducts
+    - strict initial object
+  reason: These are Prop. 2.6 and 2.8 in <a href="https://doi.org/10.1016/0022-4049(93)90035-R" target="_blank">Introduction to extensive and distributive categories</a>.
+  is_equivalence: false
+
+- id: extensive_distributivity
+  assumptions:
+    - extensive
+    - finite products
+  conclusions:
+    - distributive
+  reason: This is Prop. 4.5 in <a href="https://doi.org/10.1016/0022-4049(93)90035-R" target="_blank">Introduction to extensive and distributive categories</a>.
+  is_equivalence: false
+
+- id: infinitary_extensive_distributivity
+  assumptions:
+    - infinitary extensive
+    - finite products
+  conclusions:
+    - infinitary distributive
+  reason: One can adjust the proof of Prop. 4.5 in <a href="https://doi.org/10.1016/0022-4049(93)90035-R" target="_blank">Introduction to extensive and distributive categories</a> (which deals with the finite case).
+  is_equivalence: false
+
+- id: lcc_implies_extensive
+  assumptions:
+    - disjoint finite coproducts
+    - locally cartesian closed
+  conclusions:
+    - extensive
+  reason: 'The pullback functor preserves finite coproducts because it has a right adjoint. Remark: In combination with other implication, this result implies that every elementary topos is extensive.'
+  is_equivalence: false
+
+- id: lcc_extensive_yields_infinitary
+  assumptions:
+    - cocomplete
+    - extensive
+    - locally cartesian closed
+  conclusions:
+    - infinitary extensive
+  reason: The pullback functor preserves coproducts because it has a right adjoint. See also Remark 2.6 at the <a href="https://ncatlab.org/nlab/show/extensive+category" target="_blank">nLab</a>.
+  is_equivalence: false

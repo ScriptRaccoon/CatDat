@@ -1,0 +1,80 @@
+# results on subobject classifiers and regular subobject classifiers
+
+- id: subobject_classifier_consequence
+  assumptions:
+    - subobject classifier
+  conclusions:
+    - finitely complete
+    - mono-regular
+  reason: "The first part holds by convention, and the second part: any monomorphism $U \\to X$ is the equalizer of $\\chi_U,\\chi_X : X \\rightrightarrows \\Omega$."
+  is_equivalence: false
+
+- id: subobject_classifier_well-powered
+  assumptions:
+    - locally essentially small
+    - subobject classifier
+  conclusions:
+    - well-powered
+  reason: See <a href="https://ncatlab.org/nlab/show/Sheaves+in+Geometry+and+Logic" target="_blank">Mac Lane & Moerdijk</a>, Prop. I.3.1.
+  is_equivalence: false
+
+- id: subobject_classifier_pointed_case
+  assumptions:
+    - pointed
+    - subobject classifier
+  conclusions:
+    - normal
+  reason: "The universal property of $\\top : 0 \\to \\Omega$ precisely says that every monomorphism $A \\to B$ is the kernel of a unique morphism $B \\to \\Omega$, so it is normal."
+  is_equivalence: false
+
+- id: additive_trivial_condition
+  assumptions:
+    - additive
+    - regular subobject classifier
+  conclusions:
+    - trivial
+  reason: See <a href="https://math.stackexchange.com/a/5132767/1650" target="_blank">MSE/4086192</a>.
+  is_equivalence: false
+
+- id: regular_subobjects_trivial
+  assumptions:
+    - finitely complete
+    - right cancellative
+  conclusions:
+    - regular subobject classifier
+  reason: In a right cancellative category, every regular monomorphism is an isomorphism, so that a terminal object is a regular subobject classifier.
+  is_equivalence: false
+
+- id: regular_subobject_weaker
+  assumptions:
+    - subobject classifier
+  conclusions:
+    - regular subobject classifier
+  reason: This is obvious.
+  is_equivalence: false
+
+- id: regular_subobject_assumption
+  assumptions:
+    - regular subobject classifier
+  conclusions:
+    - finitely complete
+  reason: This holds by definition.
+  is_equivalence: false
+
+- id: regular_subobjects_suffice
+  assumptions:
+    - mono-regular
+    - regular subobject classifier
+  conclusions:
+    - subobject classifier
+  reason: This is obvious.
+  is_equivalence: false
+
+- id: regular_subobject_classifier_strict
+  assumptions:
+    - regular subobject classifier
+    - strict terminal object
+  conclusions:
+    - thin
+  reason: "Let $\\Omega$ be a regular subobject classifier. Since $1$ is a strict terminal object, $\\top : 1 \\to \\Omega$ is an isomorphism. This implies that every regular monomorphism is an isomorphism. Hence, by taking the equalizer of two parallel morphisms, we see that the category is thin."
+  is_equivalence: false

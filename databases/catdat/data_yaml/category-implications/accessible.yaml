@@ -1,0 +1,241 @@
+# results on locally presentable categories, accessible categories,
+# and related notions such as locally strongly finitely presentable, etc.
+
+- id: locally_presentable_definition_finite
+  assumptions:
+    - locally finitely presentable
+  conclusions:
+    - cocomplete
+    - finitely accessible
+  reason: This follows from one of equivalent formulations of locally finitely presentable categories.
+  is_equivalence: true
+
+- id: locally_presentable_definition_countable
+  assumptions:
+    - locally ℵ₁-presentable
+  conclusions:
+    - cocomplete
+    - ℵ₁-accessible
+  reason: This follows from one of equivalent formulations of locally ℵ₁-presentable categories.
+  is_equivalence: true
+
+- id: locally_presentable_definition
+  assumptions:
+    - locally presentable
+  conclusions:
+    - accessible
+    - cocomplete
+  reason: This follows from one of equivalent formulations of locally presentable categories.
+  is_equivalence: true
+
+- id: locally_finitely_presentable_consequence
+  assumptions:
+    - locally finitely presentable
+  conclusions:
+    - exact filtered colimits
+  reason: Special case of <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>, Prop. 1.59 with $\lambda = \aleph_0$.
+  is_equivalence: false
+
+- id: locally_finitely_presentable_raise
+  assumptions:
+    - locally finitely presentable
+  conclusions:
+    - locally ℵ₁-presentable
+  reason: This is trivial.
+  is_equivalence: false
+
+- id: locally_countably_presentable_raise
+  assumptions:
+    - locally ℵ₁-presentable
+  conclusions:
+    - locally presentable
+  reason: This is trivial.
+  is_equivalence: false
+
+- id: accessible_trivial_consequence
+  assumptions:
+    - accessible
+  conclusions:
+    - generating set
+  reason: For a $\kappa$-accessible category, the set $G$ appearing in the definition gives a small dense full subcategory, which is in particular a generating set.
+  is_equivalence: false
+
+- id: accessible_well-powered
+  assumptions:
+    - accessible
+  conclusions:
+    - well-powered
+  reason: See <a href="https://ncatlab.org/nlab/show/accessible+category#wellpoweredness_and_wellcopoweredness" target="_blank">nLab</a>.
+  is_equivalence: false
+
+- id: accessible_locally_small
+  assumptions:
+    - accessible
+  conclusions:
+    - locally essentially small
+  reason: See the proof of Prop. 2.1.5 in <a href="https://bookstore.ams.org/conm-104" target="_blank">Makkai-Pare</a>.
+  is_equivalence: false
+
+- id: accessible_well-copowered
+  assumptions:
+    - accessible
+    - pushouts
+  conclusions:
+    - well-copowered
+  reason: See Thm. 2.49 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a> or Prop. 6.1.3 in <a href="https://bookstore.ams.org/conm-104" target="_blank">Makkai-Pare</a>.
+  is_equivalence: false
+
+- id: finite_accessible
+  assumptions:
+    - Cauchy complete
+    - essentially finite
+  conclusions:
+    - finitely accessible
+  reason: See <a href="https://mathoverflow.net/questions/509853" target="_blank">MO/509853</a>, where it is in fact shown that the ind-completion of any finite Cauchy-complete category becomes itself.
+  is_equivalence: false
+
+- id: locally_presentable_essentially_small
+  assumptions:
+    - locally copresentable
+    - locally presentable
+  conclusions:
+    - essentially small
+  reason: This follows from <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>, Thm. 1.64.
+  is_equivalence: false
+
+- id: grothendieck_abelian_presentable
+  assumptions:
+    - Grothendieck abelian
+  conclusions:
+    - locally presentable
+  reason: See <a href="https://arxiv.org/abs/1409.7051" target="_blank">Deriving Auslander's formula</a>, Cor. 5.2, or <a href="https://arxiv.org/abs/math/0102087" target="_blank">Sheafifiable homotopy model categories</a>, Prop. 3.10.
+  is_equivalence: false
+
+- id: locally_strongly_finitely_presentable_raise
+  assumptions:
+    - locally strongly finitely presentable
+  conclusions:
+    - locally finitely presentable
+  reason: See <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>, Cor. 3.7.
+  is_equivalence: false
+
+- id: finitely_accessible_raise
+  assumptions:
+    - finitely accessible
+  conclusions:
+    - ℵ₁-accessible
+  reason: This is because any regular cardinal is strictly smaller than its successor cardinal. See <a href="https://ncatlab.org/nlab/show/sharply+smaller+cardinal" target="_blank">nLab</a>.
+  is_equivalence: false
+
+- id: countably_accessible_special_case
+  assumptions:
+    - ℵ₁-accessible
+  conclusions:
+    - accessible
+  reason: This is trivial.
+  is_equivalence: false
+
+- id: accessible_require_filtered_colimit
+  assumptions:
+    - finitely accessible
+  conclusions:
+    - filtered colimits
+  reason: This holds by definition.
+  is_equivalence: false
+
+- id: accessible_require_Cauchy_complete
+  assumptions:
+    - accessible
+  conclusions:
+    - Cauchy complete
+  reason: This is because the walking idempotent is $\kappa$-filtered for any regular cardinal $\kappa$.
+  is_equivalence: false
+
+- id: small_accessible_characterization
+  assumptions:
+    - Cauchy complete
+    - essentially small
+  conclusions:
+    - accessible
+  reason: See <a href="https://bookstore.ams.org/conm-104" target="_blank">Makkai-Pare</a>, Thm. 2.2.2.
+  is_equivalence: false
+
+- id: countably_accessible_thin
+  assumptions:
+    - essentially countable
+    - thin
+  conclusions:
+    - ℵ₁-accessible
+  reason: In general, every $\kappa$-filtered diagram in a poset whose elements are less than $\kappa$ admits the greatest element. Therefore, all the elements are $\kappa$-presentable, and the poset is $\kappa$-accessible.
+  is_equivalence: false
+
+- id: locally_presentable_another_definition
+  assumptions:
+    - accessible
+    - complete
+  conclusions:
+    - locally presentable
+  reason: This follows from one of equivalent formulations of locally presentable categories.
+  is_equivalence: false
+
+- id: locally_strongly_finitely_presentable_definition
+  assumptions:
+    - locally strongly finitely presentable
+  conclusions:
+    - cocomplete
+    - generalized variety
+  reason: This is trivial.
+  is_equivalence: true
+
+- id: locally_multi-presentable_definition
+  assumptions:
+    - locally multi-presentable
+  conclusions:
+    - accessible
+    - connected limits
+  reason: This follows from one of equivalent formulations of locally multi-presentable categories.
+  is_equivalence: true
+
+- id: locally_multi-presentable_another_definition
+  assumptions:
+    - locally multi-presentable
+  conclusions:
+    - accessible
+    - multi-cocomplete
+  reason: This follows from one of equivalent formulations of locally multi-presentable categories.
+  is_equivalence: true
+
+- id: locally_finitely_multi-presentable_definition
+  assumptions:
+    - locally finitely multi-presentable
+  conclusions:
+    - connected limits
+    - finitely accessible
+  reason: This follows from one of equivalent formulations of locally finitely multi-presentable categories.
+  is_equivalence: true
+
+- id: locally_finitely_multi-presentable_another_definition
+  assumptions:
+    - locally finitely multi-presentable
+  conclusions:
+    - finitely accessible
+    - multi-cocomplete
+  reason: This follows from one of equivalent formulations of locally finitely multi-presentable categories.
+  is_equivalence: true
+
+- id: locally_poly-presentable_definition
+  assumptions:
+    - locally poly-presentable
+  conclusions:
+    - accessible
+    - wide pullbacks
+  reason: This holds by definition.
+  is_equivalence: true
+
+- id: locally-finitely-multi-presentable_stable-monos
+  assumptions:
+    - locally finitely multi-presentable
+  conclusions:
+    - filtered-colimit-stable monomorphisms
+  reason: Every locally finitely multi-presentable category is a multi-reflective full subcategory of a presheaf category closed under filtered colimits (<a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>, 4.30). Since multi-reflective full subcategories are in general closed under connected limits (<a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>, Thm. 4.26), in particular, we can calculate not only filtered colimits but also kernel pairs as well as in a presheaf category.
+  is_equivalence: false

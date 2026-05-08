@@ -1,0 +1,34 @@
+# results on mono-regular and normal categories
+
+- id: mono_regular_consequence
+  assumptions:
+    - mono-regular
+  conclusions:
+    - balanced
+  reason: Any regular monomorphism that is an epimorphism must be an isomorphism.
+  is_equivalence: false
+
+- id: normal_condition
+  assumptions:
+    - normal
+  conclusions:
+    - zero morphisms
+  reason: This is part of our definition of a normal category.
+  is_equivalence: false
+
+- id: mono_regular_via_kernels
+  assumptions:
+    - normal
+  conclusions:
+    - mono-regular
+  reason: This is trivial.
+  is_equivalence: false
+
+- id: normal_criterion
+  assumptions:
+    - mono-regular
+    - preadditive
+  conclusions:
+    - normal
+  reason: The a monomorphism is the equalizer of $f,g$, it is the kernel of $f-g$.
+  is_equivalence: false

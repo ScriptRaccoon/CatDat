@@ -1,0 +1,123 @@
+# results on congruences and regular categories
+
+- id: regular_def
+  assumptions:
+    - regular
+  conclusions:
+    - finitely complete
+  reason: This holds by definition of a regular category.
+  is_equivalence: false
+
+- id: congruence_quotients_are_reflexive_coequalizers
+  assumptions:
+    - reflexive coequalizers
+  conclusions:
+    - quotients of congruences
+  reason: A congruence $E \rightrightarrows X$ has a common section $X \to E$ given by the reflexivity morphism.
+  is_equivalence: false
+
+- id: cokernels_via_congruence_quotients
+  assumptions:
+    - preadditive
+    - quotients of congruences
+    - regular
+  conclusions:
+    - cokernels
+  reason: "By the regularity assumption, it suffices to consider cokernels of subobjects. Given a subobject $Y$ of $X$, we have the congruence on $X$ given by the pullback of ${-} : X \\times X \\to X$ and $Y$. The quotient of this congruence is a cokernel of $Y \\hookrightarrow X$."
+  is_equivalence: false
+
+- id: congruence_quotients_via_cokernels
+  assumptions:
+    - cokernels
+    - kernels
+    - preadditive
+  conclusions:
+    - quotients of congruences
+  reason: "For any congruence $E$ on an object $X$ of a preadditive category, let $E_0$ be the kernel of $p_2 : E \\to X$.  The restriction of $p_1$ to $E_0$ is a monomorphism.  We can then see that $E$ must be the pullback of $p_1 - p_2 : E \\to X$ and $E_0 \\hookrightarrow X$.  Then the cokernel of $E_0 \\hookrightarrow X$ is a quotient of $E$."
+  is_equivalence: false
+
+- id: core-hin_quotients
+  assumptions:
+    - core-thin
+  conclusions:
+    - effective congruences
+    - quotients of congruences
+  reason: "If $p_1, p_2 : E \\rightrightarrows X$ is a congruence, the symmetry morphism $s : E \\to E$ is an automorphism of $E$, hence equal to $\\id_E$ by assumption. But then $p_1 = p_2 \\circ s = p_2$, and simply $\\id_X$ is a coequalizer. Also, for the reflexivity morphism $r : X \\to E$, we have $p_1 \\circ r = \\id$. For the reverse composition, $p_1 \\circ r \\circ p_1 = p_1 \\circ \\id$ and $p_2 \\circ r \\circ p_1 = p_2 \\circ \\id$, so since $p_1, p_2$ are jointly monomorphic, we get $r \\circ p_1 = \\id$. Therefore, $p_1 = p_2$ is an isomorphism, so $E$ is the kernel pair of $\\id_X$."
+  is_equivalence: false
+
+- id: preadditive_kernels_normal_imply_effective_congruences
+  assumptions:
+    - kernels
+    - normal
+    - preadditive
+  conclusions:
+    - effective congruences
+  reason: |-
+    Let $f, g : E \rightrightarrows X$ be a congruence. Then let $E_0$ be the kernel of $g$. We see that $f|_{E_0} : E_0 \to X$ is a monomorphism. Let $f|_{E_0}$ be the kernel of a morphism $h : X \to Y$. We claim that $E$ is also the kernel pair of $h$.<br>
+    	To see this, suppose we have a pair of generalized elements $x_1, x_2 \in X(T)$. Then we have
+    	$$\begin{align*}
+    	(x_1,x_2) \in E & \iff (x_1 - x_2,0) \in E \\
+    	& \iff x_1 - x_2 \in E_0 \\
+    	& \iff h(x_1 - x_2) = 0 \\
+    	& \iff h(x_1) = h(x_2).
+    	\end{align*}$$
+    	In particular, applying the forward implications in the case $T := E$, $x_1 := f$, $x_2 := g$, we conclude that $h \circ f = h \circ g$, so we get the required commutative diagram. From there, the reverse implications show this diagram is a cartesian square.
+  is_equivalence: false
+
+- id: additive_effective_congruences_imply_normal
+  assumptions:
+    - additive
+    - effective congruences
+    - finitely complete
+  conclusions:
+    - normal
+  reason: |-
+    Let $i : Y \hookrightarrow X$ be a monomorphism. Then the pullback $E$ of
+    	$$X \times X \xrightarrow{p_1 - p_2} X \xhookleftarrow{~~~i~~~} Y$$
+    	is a congruence on $X$. This is because for generalized elements $x_1, x_2 \in X(T)$, $(x_1, x_2)$ factors through $E$ if and only if $x_1 - x_2$ factors through $Y$. In other words, the relation on $X(T)$ is exactly $x_1 \equiv x_2 \pmod{Y(T)}$, which is an equivalence relation on $X(T)$ (and in fact a congruence in $\Ab$). Now by assumption, $E$ is the kernel pair of some morphism $h : X \to Z$; in other words, $(x_1, x_2)$ factors through $E$ if and only if $h(x_1) = h(x_2)$. In particular, for $x \in X(T)$, $x$ factors through $Y$ if and only if $(x, 0)$ factors through $E$, which is equivalent to $h(x) = h(0) = 0$. We have thus shown that $Y$ is the kernel of $h$.
+  is_equivalence: false
+
+- id: regular_effective_congruences_implies_quotients
+  assumptions:
+    - effective congruences
+    - regular
+  conclusions:
+    - quotients of congruences
+  reason: We assume that every congruence is effective, and the regularity condition implies that every effective congruence has a quotient.
+  is_equivalence: false
+
+- id: regular_epi-regular_extensive_consequences
+  assumptions:
+    - epi-regular
+    - extensive
+    - regular
+  conclusions:
+    - co-Malcev
+    - effective cocongruences
+  reason: |-
+    Suppose we have a coreflexive corelation
+    	$$X+X' \xtwoheadrightarrow{p} E \xtwoheadrightarrow{r} X$$
+    	on $X$, where we let $X'$ be an isomorphic copy of $X$ for clarity below. Let $Y$ be the equalizer of $p\circ i_1, p\circ i_2 : X \rightrightarrows E$. That means that for a generalized element $x \in X(T)$, $x \in Y(T)$ if and only if $p(x) = p(x')$. Then by the assumptions $p$ is a regular epimorphism. By regularity, $p$ is the coequalizer of its kernel pair, which can be expressed as the equalizer $K$ of
+    	$$p \circ \pi_1,\, p\circ \pi_2 : (X+X') \times (X+X') \rightrightarrows E,$$
+    	where $\pi_1, \pi_2$ are the projections. By distributivity and extensivity, it is sufficient to calculate the equalizer on each "quadrant" of $(X+X') \times (X+X')$, i.e. the four copies of $X \times X$.<br>
+    	On the $X\times X$ quadrant, for generalized elements $x_1, x_2 \in X(T)$, we have $(x_1, x_2) \in K(T)$ if and only if $p(x_1) = p(x_2)$. Since $p\circ i_1$ is a split monomorphism, this is equivalent to $x_1 = x_2$. Thus, the $X\times X$ quadrant of $K$ is the diagonal of $X$. On the $X\times X'$ quadrant, we have $(x_1, x_2')\in K(T)$ if and only if $p(x_1) = p(x_2')$. Since $r(p(x_1)) = x_1$ and $r(p(x_2')) = x_2$, this condition implies $x_1 = x_2$; and then by definition of $Y$, $x_1 = x_2 \in Y(T)$. The converse is straightforward. Thus, the $X\times X'$ quadrant of $K$ is the diagonal of $Y$. Similarly, the $X'\times X$ quadrant of $K$ is the diagonal of $Y$, and the $X'\times X'$ quadrant of $K$ is the diagonal of $X$.<br>
+
+    	Thus, we get that a morphism $h : X+X' \to Z$ factors through $E$ if and only if $h(x) = h(x)$ for every generalized element $x \in X$; $h(y) = h(y')$ for every $y \in Y$; $h(y') = h(y)$ for every $y\in Y$; and $h(x') = h(x')$ for every $x \in X$. Clearly this is equivalent to $h(y) = h(y')$ for every $y\in Y$, so in fact $E$ is the cokernel pair of $i_1 \circ \inc_Y$ and $i_2 \circ \inc_Y$. This means that $E$ is an effective cocongruence.<br><br>
+
+    	Remark: The assumptions are satisfied in particular for every elementary topos. Therefore, every elementary topos has effective cocongruences and is co-Malcev. This special case is Example 2.2.18 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>. An alternative proof of this special case is given later in A.5.17.
+  is_equivalence: false
+
+- id: pretopos_balanced
+  assumptions:
+    - effective congruences
+    - extensive
+  conclusions:
+    - mono-regular
+  reason: |-
+    Let $\alpha : A \hookrightarrow B$ be a monomorphism. Let $B'$ be a copy of $B$, and likewise let $A'$ be a copy of $A$. Consider the congruence on $B + B'$ generated by $y \sim y'$ for $y \in A$. Formally, we define $E := B + B' + A + A'$ and define the two morphisms $f, g : E \rightrightarrows B + B'$ by extending the identity on $B + B'$ and
+    	$$\begin{align*}
+    	f(y) & = \alpha(y), & f(y') & = \alpha(y)', \\
+    	g(y) & = \alpha(y)', & g(y') & = \alpha(y),
+    	\end{align*}$$
+    	on generalized elements. Extensivity can be used to show that $f, g$ are jointly monomorphic. Clearly, the pair $f, g$ is reflexive and symmetric. For transitivity, one once again uses extensivity. By assumption, there is a morphism $h : B + B' \to C$ such that $f, g$ is the kernel pair of $h$, that is, two generalized elements $x, y \in B + B'$ satisfy $h(x) = h(y)$ if and only if $x = f(e)$, $y = g(e)$ for some $e \in E$. In particular, for $x \in B$, we have $h(x) = h(x')$ if and only if $x = f(e)$, $x' = g(e)$ for some $e \in E$. By disjointness of coproducts, we must necessarily have $e \in A$, and $x = \alpha(e)$. This shows that $\alpha$ is the equalizer of $h \circ i_1, h \circ i_2 : B \rightrightarrows C$.
+  is_equivalence: false

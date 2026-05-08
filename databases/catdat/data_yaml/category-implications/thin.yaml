@@ -1,0 +1,187 @@
+# results on thin categories and related notions: one-way, core-thin, direct
+
+- id: thin_consequences
+  assumptions:
+    - thin
+  conclusions:
+    - generating set
+    - locally essentially small
+    - one-way
+  reason: This is trivial. The empty set is generating.
+  is_equivalence: false
+
+- id: thin_consequence
+  assumptions:
+    - thin
+  conclusions:
+    - equalizers
+    - left cancellative
+  reason: Any two parallel morphisms are equal, so their equalizer is the identity, and every morphism is a monomorphism as well.
+  is_equivalence: false
+
+- id: thin_inhabited_consequence
+  assumptions:
+    - inhabited
+    - thin
+  conclusions:
+    - generator
+  reason: Any object will be a generator for trivial reasons.
+  is_equivalence: false
+
+- id: core-thin_products_thin
+  assumptions:
+    - binary powers
+    - core-thin
+  conclusions:
+    - thin
+  reason: "Let $X$ be any object. The swap $\\tau : X \\times X \\to X \\times X$ is an automorphism, hence equal to the identity. It follows that the projections $p_1,p_2 : X \\times X \\rightrightarrows X$ are the same. And this means that every two morphisms $Y \\rightrightarrows X$ are the same."
+  is_equivalence: false
+
+- id: thin_groupoids
+  assumptions:
+    - core-thin
+    - groupoid
+  conclusions:
+    - thin
+  reason: This is trivial.
+  is_equivalence: false
+
+- id: gaunt_characterization
+  assumptions:
+    - gaunt
+  conclusions:
+    - core-thin
+    - skeletal
+  reason: This is trivial.
+  is_equivalence: true
+
+- id: direct_implies_one-way
+  assumptions:
+    - direct
+  conclusions:
+    - one-way
+    - skeletal
+  reason: "The category is one-way since any non-identity endomorphism yields an infinite sequence of equal non-identity morphisms. The category is skeletal since any non-identity isomorphism $f : A \\to B$ yields the infinite sequence $\\dotsc,f^{-1},f,f^{-1},f$."
+  is_equivalence: false
+
+- id: one-way_zero
+  assumptions:
+    - one-way
+    - zero morphisms
+  conclusions:
+    - thin
+  reason: |-
+    If $f,g : A \rightrightarrows B$ are two morphisms, then since $0_{B,B} = \id_B$ we have
+    	$$f = 0_{B,B} \circ f = 0_{A,B} = 0_{B,B} \circ g = g.$$
+  is_equivalence: false
+
+- id: direct_criterion
+  assumptions:
+    - finite
+    - one-way
+    - skeletal
+  conclusions:
+    - direct
+  reason: See the <a href="https://ncatlab.org/nlab/show/direct+category#direct_versus_oneway_categories" target="_blank">nLab</a> for a proof.
+  is_equivalence: false
+
+- id: one-way_implies_core-thin
+  assumptions:
+    - one-way
+  conclusions:
+    - core-thin
+  reason: This is trivial.
+  is_equivalence: false
+
+- id: freyd_small
+  assumptions:
+    - essentially small
+    - powers
+  conclusions:
+    - thin
+  reason: See <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, V.2, Prop. 3. The proof works for any category with powers.
+  is_equivalence: false
+
+- id: freyd_countable
+  assumptions:
+    - countable powers
+    - essentially countable
+  conclusions:
+    - thin
+  reason: Adjust the proof of <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, V.2, Prop. 3.
+  is_equivalence: false
+
+- id: freyd_finite
+  assumptions:
+    - essentially finite
+    - finite powers
+  conclusions:
+    - thin
+  reason: Adjust the proof of <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, V.2, Prop. 3.
+  is_equivalence: false
+
+- id: thin_finite_product_reduction
+  assumptions:
+    - essentially finite
+    - finite products
+    - thin
+  conclusions:
+    - products
+  reason: The category is equivalent to a finite preordered set. But then products are just infima, so that repetitions of objects do not matter, and every product can be reduced to a finite one.
+  is_equivalence: false
+
+- id: thin_countable_product_reduction
+  assumptions:
+    - countable products
+    - essentially countable
+    - thin
+  conclusions:
+    - products
+  reason: The category is equivalent to a countable preordered set. But then products are just infima, so that repetitions of objects do not matter, and every product can be reduced to a countable one.
+  is_equivalence: false
+
+- id: cocomplete_thin_criterion
+  assumptions:
+    - complete
+    - essentially small
+    - thin
+  conclusions:
+    - cocomplete
+  reason: The supremum of a subset in a (small) proset is the infimum of the set of upper bounds.
+  is_equivalence: false
+
+- id: thin_implies_regular
+  assumptions:
+    - finitely complete
+    - thin
+  conclusions:
+    - regular
+  reason: In a thin category, regular epimorphisms are isomorphisms, and the rest is clear as well.
+  is_equivalence: false
+
+- id: thin_zero_trivial
+  assumptions:
+    - inhabited
+    - thin
+    - zero morphisms
+  conclusions:
+    - trivial
+  reason: This is easy.
+  is_equivalence: false
+
+- id: thin_power
+  assumptions:
+    - terminal object
+    - thin
+  conclusions:
+    - powers
+  reason: This is because for non-empty set $I$ the power $X^I$ is just $X$.
+  is_equivalence: false
+
+- id: thin_binary_power
+  assumptions:
+    - thin
+  conclusions:
+    - binary powers
+  reason: This is because $X \times X = X$.
+  is_equivalence: false

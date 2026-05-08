@@ -1,0 +1,79 @@
+# general results on elementary topoi and Grothendieck topoi
+
+- id: topos_definition
+  assumptions:
+    - elementary topos
+  conclusions:
+    - cartesian closed
+    - finitely complete
+    - subobject classifier
+  reason: This holds by definition.
+  is_equivalence: true
+
+- id: topos_consequence
+  assumptions:
+    - elementary topos
+  conclusions:
+    - disjoint finite coproducts
+    - effective congruences
+    - epi-regular
+    - finitely cocomplete
+  reason: See <a href="https://ncatlab.org/nlab/show/Sheaves+in+Geometry+and+Logic" target="_blank">Mac Lane & Moerdijk</a>, Cor. IV.5.4, Cor. IV.10.5, Thm. 4.7.8; and <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, Part A, Proposition 2.4.1.
+  is_equivalence: false
+
+- id: topos_well-copowered_criterion
+  assumptions:
+    - elementary topos
+    - locally essentially small
+  conclusions:
+    - well-copowered
+  reason: This follows from <a href="https://ncatlab.org/nlab/show/Sheaves+in+Geometry+and+Logic" target="_blank">Mac Lane & Moerdijk</a>, Theorem IV.7.8 (and Prop. I.3.1).
+  is_equivalence: false
+
+- id: topos_implies_coregular
+  assumptions:
+    - elementary topos
+  conclusions:
+    - coregular
+  reason: This is proven in <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, A2.6.3 (for every quasitopos).
+  is_equivalence: false
+
+- id: grothendieck_topos_definition
+  assumptions:
+    - Grothendieck topos
+  conclusions:
+    - coproducts
+    - elementary topos
+    - generating set
+    - locally essentially small
+  reason: See <a href="https://ncatlab.org/nlab/show/Sheaves+in+Geometry+and+Logic" target="_blank">Mac Lane & Moerdijk</a>, Appendix, Prop. 4.4.
+  is_equivalence: true
+
+- id: grothendieck_topos_consequence
+  assumptions:
+    - Grothendieck topos
+  conclusions:
+    - cogenerator
+    - exact filtered colimits
+    - infinitary extensive
+    - locally presentable
+  reason: A Grothendieck topos is locally presentable by Prop. 3.4.16 in <a href="https://www.cambridge.org/core/books/handbook-of-categorical-algebra/5033A02442342401E7BCC26A042DAB94" target="_blank">Handbook of Categorical Algebra Vol. 3</a>, has a cogenerator (see <a href="https://ncatlab.org/nlab/show/cogenerator" target="_blank">nLab</a>) and is infinitary extensive by <a href="https://ncatlab.org/nlab/show/Giraud%27s+theorem" target="_blank">Giraud's Theorem</a>. To show that it has exact filtered colimits, first observe that this is clearly true in every presheaf topos (since $\Set$ has the property). Every Grothendieck topos is a full reflective subcategory of a presheaf topos such that the reflector preserves finite limits (<a href="https://ncatlab.org/nlab/show/sheaf+toposes+are+equivalently+the+left+exact+reflective+subcategories+of+presheaf+toposes" target="_blank">nLab</a>), so we conclude with <a href="/lemma/exact_filtered_colimits_descend">this lemma</a>.
+  is_equivalence: false
+
+- id: topos_is_locally_cartesian_closed
+  assumptions:
+    - elementary topos
+  conclusions:
+    - locally cartesian closed
+  reason: See <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, Cor. A2.3.4.
+  is_equivalence: false
+
+- id: topos_no_stable_epis
+  assumptions:
+    - elementary topos
+    - cofiltered-limit-stable epimorphisms
+    - countable coproducts
+  conclusions:
+    - trivial
+  reason: Let $N := \coprod_{m \in \IN} 1$ and consider for every $n \in \IN$ the subobject $N_{\geq n} = \coprod_{m \geq n} 1$ of $N$. For $n \leq n'$ we have $N_{\geq n'} \subseteq N_{\geq n}$. There is a (unique, split) epimorphism $N_{\geq n} \to 1$ for every $n$. By assumption, their limit $\lim_n N_{\geq n} \to 1$ is also an epimorphism. But $\lim_n N_{\geq n} = \bigcap_{n} N_{\geq n} = 0$. Thus, $0 \to 1$ is an epimorphism. It must be a regular epimorphism, but $0$ is strict initial, so that $0 \to 1$ is an isomorphism. Hence, $X \cong X \times 1 \cong X \times 0 \cong 0$ for all $X$.
+  is_equivalence: false

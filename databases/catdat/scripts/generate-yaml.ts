@@ -8,32 +8,39 @@ import path from 'node:path'
 
 const db = get_client()
 
-const lemmas = db
-	.prepare(`SELECT id, title, claim, proof FROM lemmas ORDER BY id`)
+const implications_db = db
+	.prepare(
+		`SELECT id, assumptions, conclusions, reason, is_equivalence FROM category_implications_view`,
+	)
 	.all() as {
 	id: string
-	title: string
-	claim: string
-	proof: string
+	assumptions: string
+	conclusions: string
+	reason: string
+	is_equivalence: number
 }[]
 
-for (const lemma of lemmas) {
-	let file_content = YAML.stringify(lemma, {
-		indent: 2,
-		lineWidth: 2000,
-	})
+const implications = implications_db.map((impl) => ({
+	id: impl.id,
+	assumptions: JSON.parse(impl.assumptions),
+	conclusions: JSON.parse(impl.conclusions),
+	reason: impl.reason,
+	is_equivalence: Boolean(impl.is_equivalence),
+}))
 
-	file_content = file_content.replace('\ntitle:', '\n\ntitle:')
-	file_content = file_content.replace('\nclaim:', '\n\nclaim:')
-	file_content = file_content.replace('\nproof:', '\n\nproof:')
+let file_content = YAML.stringify(implications, {
+	indent: 2,
+	lineWidth: 2000,
+})
 
-	const file_path = path.join(
-		process.cwd(),
-		'databases',
-		'catdat',
-		'data_yaml',
-		'lemmas',
-		`${lemma.id}.yaml`,
-	)
-	fs.writeFileSync(file_path, file_content, 'utf8')
-}
+file_content = file_content.replaceAll('\n- id: ', '\n\n- id: ')
+
+const file_path = path.join(
+	process.cwd(),
+	'databases',
+	'catdat',
+	'data_yaml',
+	'implications',
+	`all.yaml`,
+)
+fs.writeFileSync(file_path, file_content, 'utf8')

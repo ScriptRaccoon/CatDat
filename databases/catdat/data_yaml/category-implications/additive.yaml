@@ -1,0 +1,102 @@
+# results on additive, preadditive, abelian categories, and biproducts
+
+- id: preadditive_consequence
+  assumptions:
+    - preadditive
+  conclusions:
+    - locally essentially small
+    - zero morphisms
+  reason: This is trivial.
+  is_equivalence: false
+
+- id: preadditive_products_criterion
+  assumptions:
+    - finite coproducts
+    - preadditive
+  conclusions:
+    - finite products
+  reason: See <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, VIII.2., Theorem 2.
+  is_equivalence: false
+
+- id: additive_definition
+  assumptions:
+    - additive
+  conclusions:
+    - finite products
+    - preadditive
+  reason: This holds by definition.
+  is_equivalence: true
+
+- id: additive_biproducts
+  assumptions:
+    - additive
+  conclusions:
+    - biproducts
+  reason: This is standard, see e.g. Prop. 2.1 on the <a href="https://ncatlab.org/nlab/show/additive+category" target="_blank">nLab</a>.
+  is_equivalence: false
+
+- id: abelian_definition
+  assumptions:
+    - abelian
+  conclusions:
+    - additive
+    - cokernels
+    - conormal
+    - kernels
+    - normal
+  reason: This holds by definition.
+  is_equivalence: true
+
+- id: abelian_implies_regular
+  assumptions:
+    - abelian
+  conclusions:
+    - regular
+  reason: In an abelian category, every epimorphism is regular, and epimorphisms are pullback-stable, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. VIII.
+  is_equivalence: false
+
+- id: grothendieck_abelian_definition
+  assumptions:
+    - Grothendieck abelian
+  conclusions:
+    - abelian
+    - coproducts
+    - exact filtered colimits
+    - generator
+  reason: This holds by definition.
+  is_equivalence: true
+
+- id: grothendieck_abelian_cogenerator
+  assumptions:
+    - Grothendieck abelian
+  conclusions:
+    - cogenerator
+  reason: See <a href="https://ncatlab.org/nlab/show/Categories+and+Sheaves" target="_blank">Kashiwara-Schapira</a>, Thm. 9.6.3.
+  is_equivalence: false
+
+- id: grothendieck_abelian_self-dual
+  assumptions:
+    - Grothendieck abelian
+    - self-dual
+  conclusions:
+    - trivial
+  reason: This follows since the dual of a non-trivial Grothendieck abelian category cannot be Grothendieck abelian. See Peter Freyd, <i>Abelian categories</i>, p. 116.
+  is_equivalence: false
+
+- id: split_abelian_condition
+  assumptions:
+    - split abelian
+  conclusions:
+    - abelian
+  reason: This holds by definition.
+  is_equivalence: false
+
+- id: biproducts_definition_consequences
+  assumptions:
+    - biproducts
+  conclusions:
+    - finite coproducts
+    - finite products
+    - zero morphisms
+  reason: This holds by definition of biproducts.
+  is_equivalence: false

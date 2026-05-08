@@ -1,0 +1,83 @@
+# results on finitary algebraic categories and related notions
+
+- id: finitary_algebraic_consequence
+  assumptions:
+    - finitary algebraic
+  conclusions:
+    - locally strongly finitely presentable
+  reason: This is trivial because a locally strongly finitely presentable category is a variety of many-sorted finitary algebras.
+  is_equivalence: false
+
+- id: algebraic_well-copowered
+  assumptions:
+    - finitary algebraic
+  conclusions:
+    - well-copowered
+  reason: See <a href="https://mathoverflow.net/questions/486607" target="_blank">MSE/486607</a>. Alternatively, one may combine the facts that finitary algebraic categories are locally (finitely) presentable and that locally presentable categories are well-copowered, both of which are saved in the database. But we include the direct proof here as well, since it makes it easier to deduce the property for finitary algebraic categories appearing in practice.
+  is_equivalence: false
+
+- id: many_sorted_algebraic_implies_regular
+  assumptions:
+    - locally strongly finitely presentable
+  conclusions:
+    - regular
+  reason: The regular epimorphisms are precisely the sort-wise surjective homomorphisms, which are clearly stable under pullbacks.
+  is_equivalence: false
+
+- id: algebras_with_0_disjoint_products
+  assumptions:
+    - finitary algebraic
+    - pointed
+  conclusions:
+    - disjoint products
+  reason: "We have a constant in every algebra, let us denoted it by $0$. Then the projection $A \\times B \\to A$ is clearly surjective, hence an epimorphism. To show that $A \\sqcup_{A \\times B} B$ is trivial, let $R$ be an algebra which admits homomorphisms $f : A \\to R$, $g : B \\to R$ such that $f(p_1(a,b)) = g(p_2(a,b))$ for all $(a,b) \\times A \\times B$. This means $f(a) = g(b)$. In particular, $f(a) = g(0) = 0$. Likewise, $g(b) = 0$, and we are done."
+  is_equivalence: false
+
+- id: generalized_variety_require_sifted_colimit
+  assumptions:
+    - generalized variety
+  conclusions:
+    - sifted colimits
+  reason: This holds by definition.
+  is_equivalence: false
+
+- id: generalized_variety_implies_accessible
+  assumptions:
+    - generalized variety
+  conclusions:
+    - ℵ₁-accessible
+  reason: See <a href="http://www.tac.mta.ca/tac/volumes/8/n3/8-03abs.html" target="_blank">[AR01, Remark 4.8(2)]</a>.
+  is_equivalence: false
+
+- id: multi-algebraic_implies_locally_finitely_multi-presentable
+  assumptions:
+    - multi-algebraic
+  conclusions:
+    - locally finitely multi-presentable
+  reason: This is because that every (finite product, coproduct)-sketch is clearly a (finite limit, coproduct)-sketch.
+  is_equivalence: false
+
+- id: varieties_are_multi-algebraic
+  assumptions:
+    - locally strongly finitely presentable
+  conclusions:
+    - multi-algebraic
+  reason: This is because that every finite-product-sketch is clearly a (finite product, coproduct)-sketch.
+  is_equivalence: false
+
+- id: multi-algebraic_another_definition
+  assumptions:
+    - multi-algebraic
+  conclusions:
+    - generalized variety
+    - multi-cocomplete
+  reason: This follows from one of equivalent formulations of multi-algebraic categories.
+  is_equivalence: true
+
+- id: multi-algebraic_implies_effective_congruences
+  assumptions:
+    - multi-algebraic
+  conclusions:
+    - effective congruences
+  reason: This is Thm. 4.0 in <a href="https://doi.org/10.1007/BF01224953" target="_blank">Yves Diers, Catégories Multialgébriques</a> or <a href="https://translations.thosgood.net/ADM-34-1980-193.pdf" target="_blank">its English translation</a>.
+  is_equivalence: false

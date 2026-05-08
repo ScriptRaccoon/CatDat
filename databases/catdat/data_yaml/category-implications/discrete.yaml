@@ -1,0 +1,52 @@
+# results on trivial and discrete categories
+
+- id: trivial_consequence
+  assumptions:
+    - trivial
+  conclusions:
+    - essentially discrete
+    - essentially finite
+    - finitary algebraic
+    - Grothendieck topos
+    - self-dual
+    - split abelian
+  reason: This is trivial.
+  is_equivalence: false
+
+- id: discrete_consequences
+  assumptions:
+    - discrete
+  conclusions:
+    - direct
+    - essentially discrete
+    - locally small
+    - skeletal
+  reason: This is trivial.
+  is_equivalence: false
+
+- id: essentially_discrete_characterization
+  assumptions:
+    - essentially discrete
+  conclusions:
+    - groupoid
+    - thin
+  reason: This is trivial.
+  is_equivalence: true
+
+- id: essentially_discrete_consequence
+  assumptions:
+    - essentially discrete
+  conclusions:
+    - connected limits
+    - locally essentially small
+  reason: This is trivial.
+  is_equivalence: false
+
+- id: essentially_discrete_trivial
+  assumptions:
+    - connected
+    - essentially discrete
+  conclusions:
+    - trivial
+  reason: This is trivial.
+  is_equivalence: false
