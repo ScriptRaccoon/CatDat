@@ -12,6 +12,7 @@ import type {
 	FunctorPropertyYaml,
 	FunctorYaml,
 } from './yaml.types'
+import { create_schema_hash, get_saved_schema_hash } from './schema.utils'
 
 const db = get_client()
 
@@ -24,6 +25,13 @@ seed()
  */
 function seed() {
 	console.info('\n--- Seed CatDat database ---')
+
+	const schema_hash = get_saved_schema_hash()
+	const actual_hash = create_schema_hash()
+	if (schema_hash !== actual_hash) {
+		console.error(`❌ Your schema is outdated. Run first pnpm db:setup.`)
+		process.exit(1)
+	}
 
 	clear_all_data()
 
