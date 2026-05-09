@@ -1,10 +1,6 @@
 id: regular quotient object classifier
 relation: has a
-description: |-
-  A category $\C$ has a <i>regular quotient object classifier</i> if its dual has a regular subobject classifier. This means that it has finite colimits and a regular epimorphism* $\top : \Psi \twoheadrightarrow 0$ such that for every regular epimorphism $e : A \twoheadrightarrow B$ there is a unique morphism $\psi_e : \Psi \to A$ such that
-  	$$\begin{CD} \Psi @>{\top}>> 0 \\ @V{\psi_e}VV @VV{!}V \\ A @>>{e}> B \end{CD}$$
-  	is a pushout diagram. Equivalently, the functor $\Quot_{\reg} : \C \to \Set^+$ is representable.<br>
-  	*Every morphism $\Psi \to 0$ is a split epimorphism anyway.
+description: 'A category $\C$ has a <i>regular quotient object classifier</i> if its dual has a regular subobject classifier. This means that it has finite colimits and a regular epimorphism* $\top : \Psi \twoheadrightarrow 0$ such that for every regular epimorphism $e : A \twoheadrightarrow B$ there is a unique morphism $\psi_e : \Psi \to A$ such that $$\begin{CD} \Psi @>{\top}>> 0 \\ @V{\psi_e}VV @VV{!}V \\ A @>>{e}> B \end{CD}$$ is a pushout diagram. Equivalently, the functor $\Quot_{\reg} : \C \to \Set^+$ is representable.<br> *Every morphism $\Psi \to 0$ is a split epimorphism anyway.'
 dual_property_id: regular subobject classifier
 invariant_under_equivalences: true
 

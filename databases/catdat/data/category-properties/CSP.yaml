@@ -1,9 +1,6 @@
 id: CSP
 relation: satisfies
-description: |-
-  A category satisfies <i>CSP</i> ("coproducts surject onto products") if it has zero morphisms, products, coproducts, and for every family of objects $(X_i)_{i \in I}$ the canonical morphism
-  	$$\textstyle \alpha : \coprod_i X_i \to \prod_{i \in I} X_i$$
-  	defined by $p_j \circ \alpha \circ \iota_i = \delta_{i,j}$ is an epimorphism. This is no standard terminology. This property has been added to clarify relationships between other properties, in particular those concerning the commutation between limits and colimits.
+description: 'A category satisfies <i>CSP</i> ("coproducts surject onto products") if it has zero morphisms, products, coproducts, and for every family of objects $(X_i)_{i \in I}$ the canonical morphism $$\textstyle \alpha : \coprod_i X_i \to \prod_{i \in I} X_i$$ defined by $p_j \circ \alpha \circ \iota_i = \delta_{i,j}$ is an epimorphism. This is no standard terminology. This property has been added to clarify relationships between other properties, in particular those concerning the commutation between limits and colimits.'
 dual_property_id: CIP
 invariant_under_equivalences: true
 

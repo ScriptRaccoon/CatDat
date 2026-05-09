@@ -59,10 +59,7 @@ unsatisfied_properties:
     reason: We already know that $\Set$ does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the functor $\Set \to \Cat$ that maps a set to its discrete category.
 
   - property_id: effective cocongruences
-    reason: |-
-      The counterexample is similar to the one for <a href="/category/Mon">$\Mon$</a>: Let $X$ be the <a href="/category/walking_idempotent">walking idempotent</a>, and let $E$ be the delooping of the monoid with presentation
-      	$$\langle p, q \mid p^2=p,\, q^2=q,\, pq=q,\, qp=p \rangle.$$
-      	The induced relation on functors in $[X, \C]$ is that $F \sim G$ if and only if $F$ and $G$ send the object of $X$ to the same object of $\C$, and they send the idempotent of $X$ to idempotent morphisms $a, b$ in $\C$ satisfying $ab=b$, $ba=a$. From here, the proof that this gives a cocongruence on $\Cat$ which is not effective is similar to the one in $\Mon$.
+    reason: 'The counterexample is similar to the one for <a href="/category/Mon">$\Mon$</a>: Let $X$ be the <a href="/category/walking_idempotent">walking idempotent</a>, and let $E$ be the delooping of the monoid with presentation $$\langle p, q \mid p^2=p,\, q^2=q,\, pq=q,\, qp=p \rangle.$$ The induced relation on functors in $[X, \C]$ is that $F \sim G$ if and only if $F$ and $G$ send the object of $X$ to the same object of $\C$, and they send the idempotent of $X$ to idempotent morphisms $a, b$ in $\C$ satisfying $ab=b$, $ba=a$. From here, the proof that this gives a cocongruence on $\Cat$ which is not effective is similar to the one in $\Mon$.'
 
 special_objects:
   initial object:

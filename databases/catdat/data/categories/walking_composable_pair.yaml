@@ -32,9 +32,7 @@ satisfied_properties:
     reason: This is trivial.
 
   - property_id: locally strongly finitely presentable
-    reason: |-
-      Take the two-sorted (finitary) algebraic theory with exactly one unary operation between them and the equation $x=y$ for each sort. There are exactly three algebras for this theory up to isomorphism: the identities on the empty set and the singleton, the morphism from the empty set to the singleton.
-      	Hence we get the equivalence to $\{0 \to  1 \to 2\}$.
+    reason: 'Take the two-sorted (finitary) algebraic theory with exactly one unary operation between them and the equation $x=y$ for each sort. There are exactly three algebras for this theory up to isomorphism: the identities on the empty set and the singleton, the morphism from the empty set to the singleton. Hence we get the equivalence to $\{0 \to 1 \to 2\}$.'
 
 unsatisfied_properties:
   - property_id: finitary algebraic

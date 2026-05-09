@@ -1,9 +1,6 @@
 id: direct
 relation: is
-description: |-
-  A category is <i>direct</i> if it contains no infinite sequence of non-identity morphisms of the form
-  	$$\cdots \to A_2 \to A_1 \to A_0.$$
-  	For example, a poset is direct iff it is well-founded.
+description: 'A category is <i>direct</i> if it contains no infinite sequence of non-identity morphisms of the form $$\cdots \to A_2 \to A_1 \to A_0.$$ For example, a poset is direct iff it is well-founded.'
 nlab_link: https://ncatlab.org/nlab/show/direct+category
 dual_property_id: inverse
 invariant_under_equivalences: false

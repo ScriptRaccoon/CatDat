@@ -39,10 +39,7 @@ satisfied_properties:
     reason: The regular epimorphisms are exactly the surjective homomorphisms (see below), and these are clearly stable under pullbacks.
 
   - property_id: coregular
-    reason: |-
-      It suffices to prove that regular monomorphisms (which are classified below) are stable under pushouts. Let $i : A \to B$ be a regular monomorphism in $\TorsFreeAb$, i.e. $i$ is injective and its $\Ab$-cokernel $B/i(A)$ is torsion-free, and let $f : B \to C$ be any morphism in $\TorsFreeAb$. Their $\Ab$-pushout is
-      	$$P = (B \times C)/\{(i(a),-f(a)): a \in A\}.$$
-      	It is torsion-free: If $n \in \IZ \setminus \{0\}$ and $n (b,c) = (i(a),-f(a))$, there is some $a' \in A$ with $b = i(a')$ since $B/i(A)$ is torsion-free. It follows $n a' = a$, and then $c = -f(a')$ since $C$ is torsion-free. Thus, $(b,c) = (i(a'),-f(a'))$, which proves our claim. Therefore, $P$ is also the pushout in $\TorsFreeAb$. The homomorphism $j : C \to P$, $j(c) = [0,c]$ is injective (since $\Ab$ is coregular, but a direct proof is also easy), and by the universal property of $P$ its $\Ab$-cokernel is isomorphic to the $\Ab$-cokernel of $i$, which is torsion-free.
+    reason: 'It suffices to prove that regular monomorphisms (which are classified below) are stable under pushouts. Let $i : A \to B$ be a regular monomorphism in $\TorsFreeAb$, i.e. $i$ is injective and its $\Ab$-cokernel $B/i(A)$ is torsion-free, and let $f : B \to C$ be any morphism in $\TorsFreeAb$. Their $\Ab$-pushout is $$P = (B \times C)/\{(i(a),-f(a)): a \in A\}.$$ It is torsion-free: If $n \in \IZ \setminus \{0\}$ and $n (b,c) = (i(a),-f(a))$, there is some $a'' \in A$ with $b = i(a'')$ since $B/i(A)$ is torsion-free. It follows $n a'' = a$, and then $c = -f(a'')$ since $C$ is torsion-free. Thus, $(b,c) = (i(a''),-f(a''))$, which proves our claim. Therefore, $P$ is also the pushout in $\TorsFreeAb$. The homomorphism $j : C \to P$, $j(c) = [0,c]$ is injective (since $\Ab$ is coregular, but a direct proof is also easy), and by the universal property of $P$ its $\Ab$-cokernel is isomorphic to the $\Ab$-cokernel of $i$, which is torsion-free.'
 
 unsatisfied_properties:
   - property_id: skeletal

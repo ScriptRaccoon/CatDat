@@ -55,10 +55,7 @@ satisfied_properties:
     reason: This follows since $\Set_*$ has this property and the forgetful functor preserves products and coproducts.
 
   - property_id: cocartesian cofiltered limits
-    reason: |-
-      We continue the proof for <a href="/category/Set*">$\Set_*$</a> by showing that the natural bijective map
-      	$$\textstyle \alpha : X \vee \lim_i Y_i \to \lim_i (X \vee Y_i)$$
-      	is open. It suffices to consider open sets of two types: (1) If $U \subseteq X$ is open, the $\alpha$-image of $U \vee \lim_i Y_i$ is $p_{i_0}^{-1}(U \vee Y_{i_0})$ for any chosen index $i_0$, hence open. (2) If $i$ is an index and $V_i \subseteq Y_i$ is open, then the $\alpha$-image of $X \vee (p_i^{-1}(V_i) \cap \lim_i Y_i)$ is $p_i^{-1}(X \vee V_i)$, hence open.
+    reason: 'We continue the proof for <a href="/category/Set*">$\Set_*$</a> by showing that the natural bijective map $$\textstyle \alpha : X \vee \lim_i Y_i \to \lim_i (X \vee Y_i)$$ is open. It suffices to consider open sets of two types: (1) If $U \subseteq X$ is open, the $\alpha$-image of $U \vee \lim_i Y_i$ is $p_{i_0}^{-1}(U \vee Y_{i_0})$ for any chosen index $i_0$, hence open. (2) If $i$ is an index and $V_i \subseteq Y_i$ is open, then the $\alpha$-image of $X \vee (p_i^{-1}(V_i) \cap \lim_i Y_i)$ is $p_i^{-1}(X \vee V_i)$, hence open.'
 
   - property_id: filtered-colimit-stable monomorphisms
     reason: This follows from <a href="/lemma/filtered-monos">this lemma</a> applied to the forgetful functor to $\Set$.

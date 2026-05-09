@@ -63,10 +63,7 @@ unsatisfied_properties:
     reason: Every field has a non-trivial extension, for instance, the rational function field over itself in one variable. Hence, a multi-terminal object never exists.
 
   - property_id: cofiltered-limit-stable epimorphisms
-    reason: |-
-      Inside of $\IF_p(X)$ consider the descending sequence of subfields
-      	$$\IF_p(X) \supseteq \IF_p(X^p) \supseteq \IF_p(X^{p^2}) \supseteq \cdots,$$
-      	whose intersection is $\IF_p$. Each $\IF_p(X^{p^n}) \hookrightarrow \IF_p(X)$ is purely inseparable, hence an epimorphism, but in the limit we get $\IF_p \hookrightarrow \IF_p(X)$, which is not even algebraic.
+    reason: 'Inside of $\IF_p(X)$ consider the descending sequence of subfields $$\IF_p(X) \supseteq \IF_p(X^p) \supseteq \IF_p(X^{p^2}) \supseteq \cdots,$$ whose intersection is $\IF_p$. Each $\IF_p(X^{p^n}) \hookrightarrow \IF_p(X)$ is purely inseparable, hence an epimorphism, but in the limit we get $\IF_p \hookrightarrow \IF_p(X)$, which is not even algebraic.'
 
 special_objects: {}
 
