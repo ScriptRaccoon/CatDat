@@ -70,6 +70,11 @@
 	well.
 </p>
 
+<p class="hint">
+	In some cases, implications are a bit too rigid, which is why we also provide a small
+	collection of <a href="/lemmas">lemmas</a>.
+</p>
+
 <button class="button" onclick={toggle}>
 	{#if show_deduced_implications}
 		Hide deduced implications

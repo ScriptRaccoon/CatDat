@@ -157,6 +157,7 @@ export type FunctorPropertyAssignment = Replace<
 >
 
 export type Lemma = {
+	id: string
 	title: string
 	claim: string
 	proof: string
