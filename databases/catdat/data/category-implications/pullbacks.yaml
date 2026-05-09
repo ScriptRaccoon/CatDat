@@ -6,7 +6,7 @@
     - equalizers
   conclusions:
     - pullbacks
-  reason: "The pullback of $f : X \\to S$ and $g : Y \\to S$ is the equalizer of $p_1 \\circ f, \\, p_2 \\circ g : X \\times Y \\rightrightarrows S$."
+  reason: 'The pullback of $f : X \to S$ and $g : Y \to S$ is the equalizer of $p_1 \circ f, \, p_2 \circ g : X \times Y \rightrightarrows S$.'
   is_equivalence: false
 
 - id: connected_limits_characterization

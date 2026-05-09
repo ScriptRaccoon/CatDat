@@ -2,7 +2,7 @@ id: real_interval
 name: poset [0,1]
 notation: $([0,1],\leq)$
 objects: real numbers between $0$ and $1$
-morphisms: "a unique morphism $(s,t) : s \\to t$ when $s \\leq t$"
+morphisms: 'a unique morphism $(s,t) : s \to t$ when $s \leq t$'
 description: Every poset can be regarded as a small thin category. This is a specific example. This category is locally $\aleph_1$-presentable (in fact, <i>every</i> object is $\aleph_1$-presentable), but not locally finitely presentable (in fact, only $0$ is finitely presentable).
 nlab_link: https://ncatlab.org/nlab/show/interval
 

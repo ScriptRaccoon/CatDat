@@ -2,7 +2,7 @@ id: Z_div
 name: proset of integers w.r.t. divisibility
 notation: $(\IZ,\mid)$
 objects: integers
-morphisms: "a unique morphism $(a,b) : a \\to b$ if $a$ divides $b$"
+morphisms: 'a unique morphism $(a,b) : a \to b$ if $a$ divides $b$'
 description: This is a proset, not a poset, because $a$ and $-a$ divide each other, but are not equal for $a \neq 0$. Notice that this category is equivalent (but not isomorphic) to $(\IN,\mid)$.
 
 tags:
@@ -24,7 +24,7 @@ satisfied_properties:
     check_redundancy: false
 
   - property_id: distributive
-    reason: "We need to prove $\\lcm_i \\gcd(a, b_i) \\cong \\gcd(a, \\lcm_i b_i)$ for finite families. If $x$ denotes the LHS and $y$ denotes the RHS, the relation $x \\mid y$ is formal. If $v_p(-) : \\IZ \\to \\IN_{\\infty}$  denotes the multiplicity of a prime $p$, then $v_p(x)$ equals $\\max_i \\min(v_p(a),v_p(b_i))$, and $v_p(y)$ equals $\\min(v_p(a), \\max_i v_p(b_i))$. Since our family is finite, there is some $i_0$ with $\\max_i v_p(b_i) = v_p(b_{i_0})$. Then $v_p(x) \\geq \\min(v_p(a),v_p(b_{i_0})) = v_p(y)$. This proves $y \\mid x$."
+    reason: 'We need to prove $\lcm_i \gcd(a, b_i) \cong \gcd(a, \lcm_i b_i)$ for finite families. If $x$ denotes the LHS and $y$ denotes the RHS, the relation $x \mid y$ is formal. If $v_p(-) : \IZ \to \IN_{\infty}$  denotes the multiplicity of a prime $p$, then $v_p(x)$ equals $\max_i \min(v_p(a),v_p(b_i))$, and $v_p(y)$ equals $\min(v_p(a), \max_i v_p(b_i))$. Since our family is finite, there is some $i_0$ with $\max_i v_p(b_i) = v_p(b_{i_0})$. Then $v_p(x) \geq \min(v_p(a),v_p(b_{i_0})) = v_p(y)$. This proves $y \mid x$.'
 
   - property_id: locally ℵ₁-presentable
     reason: Every $\aleph_1$-directed diagram is eventually constant.
@@ -54,7 +54,7 @@ special_objects:
 
 special_morphisms:
   isomorphisms:
-    description: "the identities $(a,a) : a \\to a$ and the isomorphisms $(a,-a) : a \\to -a$ for $a \\in \\IZ$"
+    description: 'the identities $(a,a) : a \to a$ and the isomorphisms $(a,-a) : a \to -a$ for $a \in \IZ$'
     reason: This is trivial.
   monomorphisms:
     description: every morphism

@@ -40,7 +40,7 @@ satisfied_properties:
     reason: The ordered set $[0] = \{0\}$ is a generator.
 
   - property_id: skeletal
-    reason: "If $f : [n] \\to [m]$ is an isomorphism, then $n + 1 = m + 1$ by comparing the cardinalities, hence $n = m$."
+    reason: 'If $f : [n] \to [m]$ is an isomorphism, then $n + 1 = m + 1$ by comparing the cardinalities, hence $n = m$.'
 
   - property_id: core-thin
     reason: The category $\FinOrd \setminus \{\varnothing\}$ is core-thin because already $\FinOrd$ is core-thin (see its <a href="/category/FinOrd">category page</a>).
@@ -64,10 +64,10 @@ unsatisfied_properties:
     reason: This is trivial.
 
   - property_id: cofiltered
-    reason: "The two maps $d^0,d^1 : [0] \\rightrightarrows [1]$ are not equalized by any morphism."
+    reason: 'The two maps $d^0,d^1 : [0] \rightrightarrows [1]$ are not equalized by any morphism.'
 
   - property_id: coreflexive equalizers
-    reason: "The two maps $d^0,d^1 : [0] \\rightrightarrows [1]$ have a common left inverse, the unique map $s^0 : [1] \\to [0]$, but are not equalized by any morphism."
+    reason: 'The two maps $d^0,d^1 : [0] \rightrightarrows [1]$ have a common left inverse, the unique map $s^0 : [1] \to [0]$, but are not equalized by any morphism.'
 
   - property_id: sequential colimits
     reason: We can just copy the <a href="/category/FinOrd">proof for $\FinOrd$</a> to show that the sequence of inclusions $[0] \hookrightarrow [1] \hookrightarrow [2] \hookrightarrow \cdots$ has no colimit.

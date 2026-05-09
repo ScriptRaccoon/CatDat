@@ -89,7 +89,7 @@ special_morphisms:
     reason: This is true for all functor categories.
   monomorphisms:
     description: pointwise injective natural transformations
-    reason: "If $a : F \\to G$ is a monomorphism of Z-functors, then the diagonal morphism $F \\to F \\times_G F$ is an isomorphism, so that for every $R$ the diagonal morphism $F(R) \\to F(R) \\times_{G(R)} F(R)$ is an isomorphism, i.e., $a(R) : F(R) \\to G(R)$ is a monomorphism. This argument works for every functor category where the target has fiber products."
+    reason: 'If $a : F \to G$ is a monomorphism of Z-functors, then the diagonal morphism $F \to F \times_G F$ is an isomorphism, so that for every $R$ the diagonal morphism $F(R) \to F(R) \times_{G(R)} F(R)$ is an isomorphism, i.e., $a(R) : F(R) \to G(R)$ is a monomorphism. This argument works for every functor category where the target has fiber products.'
   epimorphisms:
     description: objectwise surjective natural transformations
     reason: This holds in every functor category $[\C,\Set]$, here applied to the case that $\C$ has just one object.

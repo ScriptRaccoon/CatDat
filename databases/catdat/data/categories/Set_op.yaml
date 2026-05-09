@@ -2,7 +2,7 @@ id: Set_op
 name: dual of the category of sets
 notation: $\Set^{\op}$
 objects: sets
-morphisms: "A morphism $f : X \\to Y$ is a map of sets $Y \\to X$."
+morphisms: 'A morphism $f : X \to Y$ is a map of sets $Y \to X$.'
 description: By definition, this category is the dual (or opposite) of <a href="/category/Set">the category of sets</a>.
 nlab_link: https://ncatlab.org/nlab/show/opposite+category
 dual_category_id: Set

@@ -5,7 +5,7 @@
     - filtered
   conclusions:
     - sifted
-  reason: "Every filtered category $\\C$ is inhabited and has final diagonal functors $\\Delta : \\C \\to \\C^J$ for all finite index categories $J$; in particular, it is inhabited and its diagonal $\\Delta: \\C \\to \\C \\times \\C$ is final."
+  reason: 'Every filtered category $\C$ is inhabited and has final diagonal functors $\Delta : \C \to \C^J$ for all finite index categories $J$; in particular, it is inhabited and its diagonal $\Delta: \C \to \C \times \C$ is final.'
   is_equivalence: false
 
 - id: sifted_is_connected

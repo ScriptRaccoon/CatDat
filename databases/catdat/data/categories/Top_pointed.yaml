@@ -83,14 +83,14 @@ unsatisfied_properties:
     reason: This is trivial.
 
   - property_id: co-Malcev
-    reason: "We can adjust the proof for $\\Top$ as follows: Consider the forgetful functor $U : \\Top_* \\to \\Set$ and the relation $R \\subseteq U^2$ defined by $R(X) := \\{(x,y) \\in U(X)^2 : x \\in \\overline{\\{y\\}} \\}$. Both are representable: $U$ by the discrete space $\\{0,1\\}$ with base point $0$ and $R$ by the Sierpinski space with an isolated base point added. It is clear that $R$ is reflexive, but not symmetric."
+    reason: 'We can adjust the proof for $\Top$ as follows: Consider the forgetful functor $U : \Top_* \to \Set$ and the relation $R \subseteq U^2$ defined by $R(X) := \{(x,y) \in U(X)^2 : x \in \overline{\{y\}} \}$. Both are representable: $U$ by the discrete space $\{0,1\}$ with base point $0$ and $R$ by the Sierpinski space with an isolated base point added. It is clear that $R$ is reflexive, but not symmetric.'
 
   - property_id: unital
-    reason: "The joint image of $X \\to X \\times Y \\leftarrow Y$ is just $\\{(x,0) : x \\in X\\} \\cup \\{(0,y) : y \\in Y\\}$ (where $0$ denotes the base point), which is clearly a proper subset of $X \\times Y$ when both $X,Y$ are non-trivial."
+    reason: 'The joint image of $X \to X \times Y \leftarrow Y$ is just $\{(x,0) : x \in X\} \cup \{(0,y) : y \in Y\}$ (where $0$ denotes the base point), which is clearly a proper subset of $X \times Y$ when both $X,Y$ are non-trivial.'
 
   - property_id: CSP
     # TODO: remove duplication with unital proof
-    reason: "The image of $X \\vee Y$ in $X \\times Y$ is just $\\{(x,0) : x \\in X\\} \\cup \\{(0,y) : y \\in Y\\}$ (where $0$ denotes the base point), which is clearly a proper subset when both $X,Y$ are non-trivial."
+    reason: 'The image of $X \vee Y$ in $X \times Y$ is just $\{(x,0) : x \in X\} \cup \{(0,y) : y \in Y\}$ (where $0$ denotes the base point), which is clearly a proper subset when both $X,Y$ are non-trivial.'
 
   - property_id: regular quotient object classifier
     reason: We can recycle the proof for the <a href="/category/Set*">category of pointed sets</a> using discrete topological spaces.
@@ -126,10 +126,10 @@ special_morphisms:
     reason: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the discrete two-point space), hence preserves monomorphisms.
   epimorphisms:
     description: surjective pointed continuous maps
-    reason: "For the non-trivial direction: The forgetful functor $\\Top_* \\to \\Top$ preserves pushouts and hence also epimorphisms, and we already know the epimorphisms in $\\Top$."
+    reason: 'For the non-trivial direction: The forgetful functor $\Top_* \to \Top$ preserves pushouts and hence also epimorphisms, and we already know the epimorphisms in $\Top$.'
   regular monomorphisms:
     description: embeddings
-    reason: "Equalizers are embeddings by their construction. Conversely, if $f : X \\to Y$ is an embedding, then $f$ is the equalizer of the two characteristic maps $\\chi_Y, \\chi_{f(X)} : Y \\to \\{0,1\\}$, where $\\{0,1\\}$ carries the indiscrete topology and $1$ is the base point."
+    reason: 'Equalizers are embeddings by their construction. Conversely, if $f : X \to Y$ is an embedding, then $f$ is the equalizer of the two characteristic maps $\chi_Y, \chi_{f(X)} : Y \to \{0,1\}$, where $\{0,1\}$ carries the indiscrete topology and $1$ is the base point.'
   regular epimorphisms:
     description: surjective pointed quotient maps
-    reason: "Regular epimorphisms are surjective pointed quotient maps by the explicit construction of coequalizers. Conversely, if $q : X \\to Y$ is a surjective pointed quotient map, then one checks that $q$ is the coequalizer of its kernel pair $X \\times_Y X \\rightrightarrows X$: This is true for the underlying pointed sets, and continuity of the induced morphism follows since $q$ is a quotient map."
+    reason: 'Regular epimorphisms are surjective pointed quotient maps by the explicit construction of coequalizers. Conversely, if $q : X \to Y$ is a surjective pointed quotient map, then one checks that $q$ is the coequalizer of its kernel pair $X \times_Y X \rightrightarrows X$: This is true for the underlying pointed sets, and continuity of the induced morphism follows since $q$ is a quotient map.'

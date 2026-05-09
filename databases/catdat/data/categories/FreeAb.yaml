@@ -44,7 +44,7 @@ unsatisfied_properties:
     reason: Assume that the power $P = \prod_{n \geq 0} \IZ$ exists in this category. The projections $P \to \IZ$ induce an isomorphism of abelian groups $\Hom(\IZ, P) \to \prod_n \Hom(\IZ, \IZ)$, hence $P \cong \IZ^{\IN}$. But it is <a href="https://groupprops.subwiki.org/wiki/Baer-Specker_group_is_not_free_abelian" target="_blank">well-known</a> that $\IZ^{\IN}$ is not free abelian.
 
   - property_id: balanced
-    reason: "The homomorphism $2 : \\IZ \\to \\IZ$ is a counterexample."
+    reason: 'The homomorphism $2 : \IZ \to \IZ$ is a counterexample.'
 
   - property_id: skeletal
     reason: This is trivial.
@@ -77,7 +77,7 @@ special_morphisms:
     reason: This follows exactly as for abelian groups.
   monomorphisms:
     description: injective homomorphisms
-    reason: "Let $f : A \\to B$ be a monomorphism of free abelian groups. Let $a \\in A$ be in the kernel of $a$. Then we may view $a$ as a morphism $a : \\IZ \\to A$ with $f \\circ a = 0$, and $\\IZ$ is free. Hence, $a = 0$."
+    reason: 'Let $f : A \to B$ be a monomorphism of free abelian groups. Let $a \in A$ be in the kernel of $a$. Then we may view $a$ as a morphism $a : \IZ \to A$ with $f \circ a = 0$, and $\IZ$ is free. Hence, $a = 0$.'
   epimorphisms:
-    description: "homomorphisms $f : A \\to B$ with the property that $f(A)$ is not contained in a proper direct summand of $B$."
-    reason: "Let $f : A \\to B$ be a morphism of free abelian groups such that $f(A)$ is not contained in a proper direct summand of $B$. Then $f$ is an epimorphism: If $t : B \\to C$ is a morphism with $t \\circ f = 0$, we want to show $t = 0$. Since the image of $t$ is free abelian (as a subgroup of $B$), we may assume that $t$ is surjective. Since $C$ is free, $t$ splits, so its kernel $K$ is a direct summand of $B$ (Splitting Lemma). It contains $f(A)$ because of $t \\circ f = 0$. By assumption, $K = B$, so that $t = 0$. Conversely, assume that $f : A \\to B$ is an epimorphism, and that $f(A)$ is contained in a direct summand $K$ of $B$. Let $L$ be a complement of $B$ (which is free abelian) and let $p : B \\to L$ be the projection. Then $t \\circ f = 0$, so $t = 0$. But then $L = 0$, which means $K = B$."
+    description: 'homomorphisms $f : A \to B$ with the property that $f(A)$ is not contained in a proper direct summand of $B$.'
+    reason: 'Let $f : A \to B$ be a morphism of free abelian groups such that $f(A)$ is not contained in a proper direct summand of $B$. Then $f$ is an epimorphism: If $t : B \to C$ is a morphism with $t \circ f = 0$, we want to show $t = 0$. Since the image of $t$ is free abelian (as a subgroup of $B$), we may assume that $t$ is surjective. Since $C$ is free, $t$ splits, so its kernel $K$ is a direct summand of $B$ (Splitting Lemma). It contains $f(A)$ because of $t \circ f = 0$. By assumption, $K = B$, so that $t = 0$. Conversely, assume that $f : A \to B$ is an epimorphism, and that $f(A)$ is contained in a direct summand $K$ of $B$. Let $L$ be a complement of $B$ (which is free abelian) and let $p : B \to L$ be the projection. Then $t \circ f = 0$, so $t = 0$. But then $L = 0$, which means $K = B$.'

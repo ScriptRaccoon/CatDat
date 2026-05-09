@@ -34,7 +34,7 @@
     - core-thin
   conclusions:
     - thin
-  reason: "Let $X$ be any object. The swap $\\tau : X \\times X \\to X \\times X$ is an automorphism, hence equal to the identity. It follows that the projections $p_1,p_2 : X \\times X \\rightrightarrows X$ are the same. And this means that every two morphisms $Y \\rightrightarrows X$ are the same."
+  reason: 'Let $X$ be any object. The swap $\tau : X \times X \to X \times X$ is an automorphism, hence equal to the identity. It follows that the projections $p_1,p_2 : X \times X \rightrightarrows X$ are the same. And this means that every two morphisms $Y \rightrightarrows X$ are the same.'
   is_equivalence: false
 
 - id: thin_groupoids
@@ -61,7 +61,7 @@
   conclusions:
     - one-way
     - skeletal
-  reason: "The category is one-way since any non-identity endomorphism yields an infinite sequence of equal non-identity morphisms. The category is skeletal since any non-identity isomorphism $f : A \\to B$ yields the infinite sequence $\\dotsc,f^{-1},f,f^{-1},f$."
+  reason: 'The category is one-way since any non-identity endomorphism yields an infinite sequence of equal non-identity morphisms. The category is skeletal since any non-identity isomorphism $f : A \to B$ yields the infinite sequence $\dotsc,f^{-1},f,f^{-1},f$.'
   is_equivalence: false
 
 - id: one-way_zero

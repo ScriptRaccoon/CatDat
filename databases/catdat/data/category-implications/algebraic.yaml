@@ -30,7 +30,7 @@
     - pointed
   conclusions:
     - disjoint products
-  reason: "We have a constant in every algebra, let us denoted it by $0$. Then the projection $A \\times B \\to A$ is clearly surjective, hence an epimorphism. To show that $A \\sqcup_{A \\times B} B$ is trivial, let $R$ be an algebra which admits homomorphisms $f : A \\to R$, $g : B \\to R$ such that $f(p_1(a,b)) = g(p_2(a,b))$ for all $(a,b) \\times A \\times B$. This means $f(a) = g(b)$. In particular, $f(a) = g(0) = 0$. Likewise, $g(b) = 0$, and we are done."
+  reason: 'We have a constant in every algebra, let us denoted it by $0$. Then the projection $A \times B \to A$ is clearly surjective, hence an epimorphism. To show that $A \sqcup_{A \times B} B$ is trivial, let $R$ be an algebra which admits homomorphisms $f : A \to R$, $g : B \to R$ such that $f(p_1(a,b)) = g(p_2(a,b))$ for all $(a,b) \times A \times B$. This means $f(a) = g(b)$. In particular, $f(a) = g(0) = 0$. Likewise, $g(b) = 0$, and we are done.'
   is_equivalence: false
 
 - id: generalized_variety_require_sifted_colimit

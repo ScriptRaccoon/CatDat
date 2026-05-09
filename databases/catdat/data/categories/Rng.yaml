@@ -46,7 +46,7 @@ unsatisfied_properties:
     reason: If $\IZ\langle X_1,\dotsc,X_n \rangle_0$ denotes the free rng on $n$ generators (non-commutative polynomials without constant term), then the canonical homomorphism $\IZ\langle X,Y \rangle_0 = \IZ\langle X \rangle_0 \sqcup \IZ\langle Y \rangle_0 \to \IZ\langle X \rangle_0 \times \IZ\langle Y \rangle_0$ is not a monomorphism since $\IZ\langle X,Y \rangle_0$ is not commutative.
 
   - property_id: regular subobject classifier
-    reason: "Assume that $\\Rng$ has a subobject classifier $\\Omega$. Since $0$ is a zero object, every regular subobject $R \\subseteq S$ would be the kernel of some homomorphism $S \\to \\Omega$. In particular, it would be an ideal. Now take any pair of homomorphisms $f,g : S \\rightrightarrows T$ in $\\Ring$. Their equalizer $R \\subseteq S$ is also the equalizer in $\\Rng$, and it contains $1 \\in S$. If it was an ideal, then $R = S$, and hence $f = g$, which is absurd."
+    reason: 'Assume that $\Rng$ has a subobject classifier $\Omega$. Since $0$ is a zero object, every regular subobject $R \subseteq S$ would be the kernel of some homomorphism $S \to \Omega$. In particular, it would be an ideal. Now take any pair of homomorphisms $f,g : S \rightrightarrows T$ in $\Ring$. Their equalizer $R \subseteq S$ is also the equalizer in $\Rng$, and it contains $1 \in S$. If it was an ideal, then $R = S$, and hence $f = g$, which is absurd.'
 
   - property_id: coregular
     reason: 'We can copy the proof for the <a href="/category/Ring">category of rings</a>. In short, the inclusion of diagonal matrices $\IQ^2 \hookrightarrow M_2(\IQ)$ is a regular monomorphism, but becomes zero after taking the pushout with $p_1 : \IQ^2 \twoheadrightarrow \IQ$ because $M_2(\IQ)$ is simple.'
@@ -92,7 +92,7 @@ special_morphisms:
     reason: This characterization holds in every algebraic category.
   monomorphisms:
     description: injective rng homomorphisms
-    reason: "This holds in every finitary algebraic category: the forgetful functor to $\\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms."
+    reason: 'This holds in every finitary algebraic category: the forgetful functor to $\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
   regular epimorphisms:
     description: surjective homomorphisms
     reason: This holds in every finitary algebraic category.

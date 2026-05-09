@@ -26,10 +26,10 @@ satisfied_properties:
     reason: The $0$-dimensional one-point manifold is a generator since it represents the forgetful functor $\Top \to \Set$.
 
   - property_id: cogenerator
-    reason: "The manifold $\\IR$ is a cogenerator, since for every smooth manifold $M$ and points $p \\neq q$ in $M$ there is a smooth function $f : M \\to \\IR$ with $f(p) = 1$ and $f(q) = 0$ (John Lee, Introduction to Smooth Manifolds, Prop. 2.25)."
+    reason: 'The manifold $\IR$ is a cogenerator, since for every smooth manifold $M$ and points $p \neq q$ in $M$ there is a smooth function $f : M \to \IR$ with $f(p) = 1$ and $f(q) = 0$ (John Lee, Introduction to Smooth Manifolds, Prop. 2.25).'
 
   - property_id: extensive
-    reason: "[Sketch] Since $\\Top$ is infinitary extensive, a continuous map $f : M \\to \\coprod_i N_i$ corresponds to a decomposition $M = \\coprod_i M_i$ (as topological spaces) with continuous maps $f_i : M_i \\to N_i$. Endow the open subset $M_i \\subseteq M$ with the smooth structure inherited from $M$. Now remark that $f$ is smooth iff each $f_i$ is smooth."
+    reason: '[Sketch] Since $\Top$ is infinitary extensive, a continuous map $f : M \to \coprod_i N_i$ corresponds to a decomposition $M = \coprod_i M_i$ (as topological spaces) with continuous maps $f_i : M_i \to N_i$. Endow the open subset $M_i \subseteq M$ with the smooth structure inherited from $M$. Now remark that $f$ is smooth iff each $f_i$ is smooth.'
 
   - property_id: countably distributive
     # TODO: maybe add "countably extensive" to make this more conceptual
@@ -51,14 +51,14 @@ satisfied_properties:
       	Now, since the pushforward maps of tangent spaces compose to the identity, we see that $p$ must be a local immersion and $r$ must be a submersion.  Also, since the fibers of $r$ have one or two points each, we see that the dimension of $E$ must locally be the same as the dimension of $X$.  This implies that in fact $p$ and $r$ are local diffeomorphisms.  Therefore, the cardinality of the fiber of $r$ is locally constant.  Thus, if $U$ is the subset of $X$ where $r$ has fiber of a single point, with the subspace topology, then $U$ is a clopen submanifold of $X$ which serves as the equalizer of $p \circ i_1$ and $p \circ i_2$.
 
   - property_id: effective cocongruences
-    reason: "From the proof that $\\Man$ has coquotients of cocongruences, we know that for any cocongruence $X \\rightrightarrows E$, there is a clopen submanifold $U$ of $X$ such that the fibers of $r : E \\twoheadrightarrow X$ have one point on $U$, and two points on $X \\setminus U$. Therefore, $E$ is the cokernel pair of the inclusion map $U \\hookrightarrow X$."
+    reason: 'From the proof that $\Man$ has coquotients of cocongruences, we know that for any cocongruence $X \rightrightarrows E$, there is a clopen submanifold $U$ of $X$ such that the fibers of $r : E \twoheadrightarrow X$ have one point on $U$, and two points on $X \setminus U$. Therefore, $E$ is the cokernel pair of the inclusion map $U \hookrightarrow X$.'
 
 unsatisfied_properties:
   - property_id: small
     reason: Even the collection of all singletons is not a set.
 
   - property_id: countable powers
-    reason: "The power $\\IR^{\\IN}$ does not exist. More generally, let $(M_n)_{n \\geq 0}$ be a sequence of smooth manifolds of positive dimension whose product $(\\pi_n : P \\to M_n)_{n \\geq 0}$ exists. This product cone in $\\Man$ yields a product cone in $\\Set$ since the forgetful functor $\\Man \\to \\Set$ is representable, hence preserves all limits. Choose points $x_n \\in M_n$ with $T_{x_n}(M_n) \\neq 0$. Choose the point $x \\in P$ with $\\pi_n(x) = x_n$. Consider the linear map $T_x(P) \\to \\prod_{n \\geq 0} T_{x_n}(M_n)$ induced by the derivatives $d_x(\\pi_n) : T_x(P) \\to T_{x_n}(M_n)$. Since $T_x(P)$ is finite-dimensional and $\\prod_{n \\geq 0} T_{x_n}(M_n)$ is not, it cannot be surjective. But actually, it is: Choose tangent vectors $v_n \\in T_{x_n}(M_n)$. Choose smooth curves $\\gamma_n : \\IR \\to M_n$ with $\\gamma_n(0)=x_n$ and ${\\gamma_n}'(0) = v_n$. By the universal property there is a unique smooth curve $\\gamma : \\IR \\to P$ with $\\pi_n \\gamma = \\gamma_n$. In particular, $\\gamma(0) = x$. The chain rule now implies that $\\gamma'(0) \\in T_x(P)$ is a preimage of $(v_n)$ – a contradiction."
+    reason: 'The power $\IR^{\IN}$ does not exist. More generally, let $(M_n)_{n \geq 0}$ be a sequence of smooth manifolds of positive dimension whose product $(\pi_n : P \to M_n)_{n \geq 0}$ exists. This product cone in $\Man$ yields a product cone in $\Set$ since the forgetful functor $\Man \to \Set$ is representable, hence preserves all limits. Choose points $x_n \in M_n$ with $T_{x_n}(M_n) \neq 0$. Choose the point $x \in P$ with $\pi_n(x) = x_n$. Consider the linear map $T_x(P) \to \prod_{n \geq 0} T_{x_n}(M_n)$ induced by the derivatives $d_x(\pi_n) : T_x(P) \to T_{x_n}(M_n)$. Since $T_x(P)$ is finite-dimensional and $\prod_{n \geq 0} T_{x_n}(M_n)$ is not, it cannot be surjective. But actually, it is: Choose tangent vectors $v_n \in T_{x_n}(M_n)$. Choose smooth curves $\gamma_n : \IR \to M_n$ with $\gamma_n(0)=x_n$ and ${\gamma_n}''(0) = v_n$. By the universal property there is a unique smooth curve $\gamma : \IR \to P$ with $\pi_n \gamma = \gamma_n$. In particular, $\gamma(0) = x$. The chain rule now implies that $\gamma''(0) \in T_x(P)$ is a preimage of $(v_n)$ – a contradiction.'
 
   - property_id: pullbacks
     reason: See <a href="https://math.stackexchange.com/questions/5129579/" target="_blank">MSE/5129579</a> or <a href="https://math.stackexchange.com/questions/322485" target="_blank">MSE/322485</a>.
@@ -86,7 +86,7 @@ special_objects:
   coproducts:
     description: '[countable case] disjoint union with the disjoint union topology and the obvious charts'
   products:
-    description: "[finite case] direct products $X \\times Y$ with the product topology and the charts $\\IR^{n + m} = \\IR^n \\times \\IR^m \\cong U \\times V \\hookrightarrow X \\times Y$ for charts $\\IR^n \\cong U \\hookrightarrow X$ and $\\IR^m \\cong V \\hookrightarrow Y$"
+    description: '[finite case] direct products $X \times Y$ with the product topology and the charts $\IR^{n + m} = \IR^n \times \IR^m \cong U \times V \hookrightarrow X \times Y$ for charts $\IR^n \cong U \hookrightarrow X$ and $\IR^m \cong V \hookrightarrow Y$'
 
 special_morphisms:
   isomorphisms:
@@ -97,4 +97,4 @@ special_morphisms:
     reason: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
   epimorphisms:
     description: smooth maps with dense image
-    reason: "Let $f : X \\to Y$ be a smooth map which is not dense. Choose some non-empty open subset $U \\subseteq Y$ that is disjoint from $f(X)$. Take any $p \\in U$. There is a smooth <i>bump function</i> $g : Y \\to \\IR$ with $g(p) = 1$ and $\\supp(g) \\subseteq U$ (John Lee, Introduction to Smooth Manifolds, Prop. 2.25). Hence, $g \\neq 0$ and $g \\circ f = 0 = 0 \\circ f$. Thus, $f$ is not an epimorphism."
+    reason: 'Let $f : X \to Y$ be a smooth map which is not dense. Choose some non-empty open subset $U \subseteq Y$ that is disjoint from $f(X)$. Take any $p \in U$. There is a smooth <i>bump function</i> $g : Y \to \IR$ with $g(p) = 1$ and $\supp(g) \subseteq U$ (John Lee, Introduction to Smooth Manifolds, Prop. 2.25). Hence, $g \neq 0$ and $g \circ f = 0 = 0 \circ f$. Thus, $f$ is not an epimorphism.'

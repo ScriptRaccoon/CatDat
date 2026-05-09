@@ -31,7 +31,7 @@ satisfied_properties:
     reason: See <a href="https://mathoverflow.net/questions/123739" target="_blank">MO/123739</a>.
 
   - property_id: filtered colimits
-    reason: "Given a filtered diagram $(X_i)$ of pseudo-metric spaces, take the filtered colimit $X$ of the underlying sets with the following pseudo-metric: If $x,y \\in X$, let $d(x,y)$ be infimum of all $d(x_i,y_i)$, where $x_i,y_i \\in X_i$ are some preimages of $x,y$ in some $X_i$. The definition ensures that each $X_i \\to X$ is non-expansive, and the universal property is easy to check."
+    reason: 'Given a filtered diagram $(X_i)$ of pseudo-metric spaces, take the filtered colimit $X$ of the underlying sets with the following pseudo-metric: If $x,y \in X$, let $d(x,y)$ be infimum of all $d(x_i,y_i)$, where $x_i,y_i \in X_i$ are some preimages of $x,y$ in some $X_i$. The definition ensures that each $X_i \to X$ is non-expansive, and the universal property is easy to check.'
     check_redundancy: false
 
   - property_id: exact filtered colimits
@@ -57,13 +57,13 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property_id: balanced
-    reason: "Let $d : \\IR \\times \\IR \\to \\IR_{\\geq 0}$ be the usual Euclidean metric on $\\IR$ and $0 : \\IR \\times \\IR \\to \\IR_{\\geq 0}$ be the zero pseudo-metric. Then the identity map $(\\IR,d) \\to (\\IR,0)$ provides a counterexample."
+    reason: 'Let $d : \IR \times \IR \to \IR_{\geq 0}$ be the usual Euclidean metric on $\IR$ and $0 : \IR \times \IR \to \IR_{\geq 0}$ be the zero pseudo-metric. Then the identity map $(\IR,d) \to (\IR,0)$ provides a counterexample.'
 
   - property_id: cartesian closed
     reason: This is proven in <a href="https://math.stackexchange.com/questions/5131457" target="_blank">MSE/5131457</a>.
 
   - property_id: countable powers
-    reason: "Assume that the power $P = \\IR^{\\IN}$ exists, where $\\IR$ has the usual (pseudo-)metric. Since the forgetful functor $\\PMet \\to \\Set$ is representable, it preserves limits, powers in particular. Thus, we may assume that $P$ is the set of sequences of numbers and that the projections $p_n : P \\to \\IR$ are given by $p_n(x) = x_n$. Now consider the sequences $x = (n)_n$ and $y = (0)_n$. Since each $p_n$ is non-expansive, we get $d(x,y) \\geq d(p_n(x),p_n(y)) = d(n,0) = n$. But then $d(x,y) = \\infty$, a contradiction."
+    reason: 'Assume that the power $P = \IR^{\IN}$ exists, where $\IR$ has the usual (pseudo-)metric. Since the forgetful functor $\PMet \to \Set$ is representable, it preserves limits, powers in particular. Thus, we may assume that $P$ is the set of sequences of numbers and that the projections $p_n : P \to \IR$ are given by $p_n(x) = x_n$. Now consider the sequences $x = (n)_n$ and $y = (0)_n$. Since each $p_n$ is non-expansive, we get $d(x,y) \geq d(p_n(x),p_n(y)) = d(n,0) = n$. But then $d(x,y) = \infty$, a contradiction.'
 
   - property_id: binary copowers
     reason: The coproduct of two non-empty pseudo-metric spaces does not exist, see <a href="https://math.stackexchange.com/questions/1778408" target="_blank">MSE/1778408</a> (the proof also works for pseudo-metric spaces). For example, the copower $\IR \sqcup \IR$ does not exist. We only get coproducts when allowing $\infty$ as a distance.
@@ -95,7 +95,7 @@ special_objects:
   terminal object:
     description: singleton space
   products:
-    description: "[finite case] direct products with the pseudo-metric $d(x,y) = \\sup_i d_i(x_i,y_i)$"
+    description: '[finite case] direct products with the pseudo-metric $d(x,y) = \sup_i d_i(x_i,y_i)$'
 
 special_morphisms:
   isomorphisms:
@@ -106,4 +106,4 @@ special_morphisms:
     reason: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
   epimorphisms:
     description: surjective non-expansive maps
-    reason: "Let $f : X \\to Y$ be a non-expansive map that is not surjective. Choose $y_0 \\in Y \\setminus f(X)$. We extend the pseudo-metric from $Y$ to $Z := Y \\sqcup \\{y'_0\\}$ via $d(y,y'_0) := d(y,y_0)$, i.e., we make $y_0,y'_0$ indistinguishable. Let $g : Y \\to Z$ be the inclusion and $h : Y \\to Z$ be the map that composes $g$ with the swap between $y_0$ and $y'_0$. Both are isometric and satisfy $g \\circ f = h \\circ f$. Therefore, $f$ is not an epimorphism."
+    reason: 'Let $f : X \to Y$ be a non-expansive map that is not surjective. Choose $y_0 \in Y \setminus f(X)$. We extend the pseudo-metric from $Y$ to $Z := Y \sqcup \{y''_0\}$ via $d(y,y''_0) := d(y,y_0)$, i.e., we make $y_0,y''_0$ indistinguishable. Let $g : Y \to Z$ be the inclusion and $h : Y \to Z$ be the map that composes $g$ with the swap between $y_0$ and $y''_0$. Both are isometric and satisfy $g \circ f = h \circ f$. Therefore, $f$ is not an epimorphism.'

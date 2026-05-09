@@ -2,7 +2,7 @@ id: walking_fork
 name: walking fork
 notation: $\{0 \to 1 \rightrightarrows 2\}$
 objects: three objects $0,1,2$
-morphisms: "one morphism $i : 0 \\to 1$, two morphisms $f,g : 1 \\rightrightarrows 2$, one morphism $0 \\to 2$ (namely, $f \\circ i = g \\circ i$), and the identities"
+morphisms: 'one morphism $i : 0 \to 1$, two morphisms $f,g : 1 \rightrightarrows 2$, one morphism $0 \to 2$ (namely, $f \circ i = g \circ i$), and the identities'
 description: The name of this category comes from the fact that a functor out of it is the same as a <a href="https://ncatlab.org/nlab/show/fork" target="_blank">fork</a>.
 
 tags:
@@ -50,7 +50,7 @@ unsatisfied_properties:
     reason: Both $f$ and $g$ are monomorphisms and epimorphisms.
 
   - property_id: binary powers
-    reason: "Assume that $X := 2 \\times 2$ exists. Since there is a diagonal morphism $2 \\to X$, we must have $X = 2$, and the two projections $p_1,p_2 : X \\rightrightarrows 2$ must be equal to the identity. But $f,g$ induce a morphism $(f,g) : 1 \\to X$ with $p_1 (f,g) = f$ and $p_2 (f,g) = g$, so that $f=g$, a contradiction."
+    reason: 'Assume that $X := 2 \times 2$ exists. Since there is a diagonal morphism $2 \to X$, we must have $X = 2$, and the two projections $p_1,p_2 : X \rightrightarrows 2$ must be equal to the identity. But $f,g$ induce a morphism $(f,g) : 1 \to X$ with $p_1 (f,g) = f$ and $p_2 (f,g) = g$, so that $f=g$, a contradiction.'
 
   - property_id: strongly connected
     reason: There is no morphism $1 \to 0$.

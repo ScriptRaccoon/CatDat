@@ -25,10 +25,10 @@ satisfied_properties:
     reason: See <a href="https://mathoverflow.net/questions/84460" target="_blank">MO/84460</a>.
 
   - property_id: generator
-    reason: "The interval category $\\{0 \\to 1\\}$ is a generator: Assume that $F,G : \\C \\rightrightarrows \\D$ are functors that agree when being precomposed with any functor from $\\{0 \\to 1\\}$. This means that $F(f) = G(f)$ for all morphisms $f : X \\to Y$ in $\\C$. By comparing the domains and applying this to $f = \\id_X$, we see that $F(X) = G(X)$ for all objects $X$. And we just saw that $F,G$ also agree on morphisms."
+    reason: 'The interval category $\{0 \to 1\}$ is a generator: Assume that $F,G : \C \rightrightarrows \D$ are functors that agree when being precomposed with any functor from $\{0 \to 1\}$. This means that $F(f) = G(f)$ for all morphisms $f : X \to Y$ in $\C$. By comparing the domains and applying this to $f = \id_X$, we see that $F(X) = G(X)$ for all objects $X$. And we just saw that $F,G$ also agree on morphisms.'
 
   - property_id: infinitary extensive
-    reason: "[Sketch] This is straight forward from the fact that $\\Set$ is infinitary extensive: A functor $\\C \\to \\coprod_i \\D_i$ yields full subcategories $\\C_i \\subseteq \\C$ (the preimages of $\\D_i)$ with $\\C = \\coprod_i \\C_i$."
+    reason: '[Sketch] This is straight forward from the fact that $\Set$ is infinitary extensive: A functor $\C \to \coprod_i \D_i$ yields full subcategories $\C_i \subseteq \C$ (the preimages of $\D_i)$ with $\C = \coprod_i \C_i$.'
 
   - property_id: semi-strongly connected
     reason: Every non-empty category is weakly terminal (by using constant functors).
@@ -80,7 +80,7 @@ special_morphisms:
     reason: This is easy.
   monomorphisms:
     description: faithful functors that are injective on objects
-    reason: "Faithful functors that are injective on objects are clearly monomorphisms. For the converse, assume that $F : \\C \\to \\D$ is a monomorphic functor. Two objects $A,B \\in \\C$ with $F(A) = F(B)$ can be regarded as functors $A,B : 1 \\to \\C$ from the trivial category satisfying $F \\circ A = F \\circ B$, so that $A = B$. Now assume that $f,g : A \\to B$ are morphisms in $\\C$ with $F(f) = F(g)$. These can be regarded as functors $f,g : \\{ 0 \\to 1 \\} \\to \\C$ from the walking morphism category satisfying $F \\circ f = F \\circ g$, so that $f = g$."
+    reason: 'Faithful functors that are injective on objects are clearly monomorphisms. For the converse, assume that $F : \C \to \D$ is a monomorphic functor. Two objects $A,B \in \C$ with $F(A) = F(B)$ can be regarded as functors $A,B : 1 \to \C$ from the trivial category satisfying $F \circ A = F \circ B$, so that $A = B$. Now assume that $f,g : A \to B$ are morphisms in $\C$ with $F(f) = F(g)$. These can be regarded as functors $f,g : \{ 0 \to 1 \} \to \C$ from the walking morphism category satisfying $F \circ f = F \circ g$, so that $f = g$.'
   epimorphisms:
-    description: "A functor $F : \\C \\to \\D$ is an epimorphism iff $F$ is surjective on objects and for every morphism $s$ in $\\D$ there is a zigzag over $U := F(\\C)$, meaning morphisms $u_1,\\dotsc,u_{m+1} \\in U$, $v_1,\\dotsc,v_m \\in U$, $x_1,\\dotsc,x_m \\in \\D$ and $y_1,\\dotsc,y_m \\in \\D$ such that $s = x_1 u_1$, $u_1 = v_1 y_1$, $x_{i-1} v_{i-1} = x_i u_i$, $u_i y_{i-1} = v_i y_i$, $x_m v_m = u_{m+1}$ and $u_{m+1} y_m = s$."
+    description: 'A functor $F : \C \to \D$ is an epimorphism iff $F$ is surjective on objects and for every morphism $s$ in $\D$ there is a zigzag over $U := F(\C)$, meaning morphisms $u_1,\dotsc,u_{m+1} \in U$, $v_1,\dotsc,v_m \in U$, $x_1,\dotsc,x_m \in \D$ and $y_1,\dotsc,y_m \in \D$ such that $s = x_1 u_1$, $u_1 = v_1 y_1$, $x_{i-1} v_{i-1} = x_i u_i$, $u_i y_{i-1} = v_i y_i$, $x_m v_m = u_{m+1}$ and $u_{m+1} y_m = s$.'
     reason: This is an extension of the <a href="https://en.wikipedia.org/wiki/Isbell's_zigzag_theorem" target="_blank">corresponding theorem for monoids</a> and proven in <a href="https://www.jstor.org/stable/2373286" target="_blank">Epimorphisms and Dominions, III</a> by John R. Isbell.

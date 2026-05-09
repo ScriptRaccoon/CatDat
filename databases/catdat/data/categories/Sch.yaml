@@ -63,7 +63,7 @@ special_objects:
   coproducts:
     description: disjoint union with the product sheaf
   products:
-    description: "[finite case] The idea is to use $\\Spec(A) \\times \\Spec(B) = \\Spec(A \\otimes B)$ and then to glue affine pieces together. See EGA I, Chap. I, Thm. 3.2.1."
+    description: '[finite case] The idea is to use $\Spec(A) \times \Spec(B) = \Spec(A \otimes B)$ and then to glue affine pieces together. See EGA I, Chap. I, Thm. 3.2.1.'
 
 special_morphisms:
   isomorphisms:

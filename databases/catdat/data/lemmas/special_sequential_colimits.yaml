@@ -2,7 +2,7 @@ id: special_sequential_colimits
 
 title: Finite structures usually have no sequential colimits
 
-claim: "Let $\\C$ be a category with finite powers, including a terminal object $1$. Let $a : 1 \\to X$ be a morphism. Assume that the sequence of morphisms $(X^n,a) : X^n \\to X^{n+1}$ for $n \\geq 0$ admits a colimit $(i_n : X^n \\to C)$. Then for every $m \\geq 0$ there is a split epimorphism $C \\to X^m$. In particular, if $U : \\C \\to \\Set$ is a functor preserving finite powers and $\\card(U(X)) \\geq 2$, then $U(C)$ is infinite."
+claim: 'Let $\C$ be a category with finite powers, including a terminal object $1$. Let $a : 1 \to X$ be a morphism. Assume that the sequence of morphisms $(X^n,a) : X^n \to X^{n+1}$ for $n \geq 0$ admits a colimit $(i_n : X^n \to C)$. Then for every $m \geq 0$ there is a split epimorphism $C \to X^m$. In particular, if $U : \C \to \Set$ is a functor preserving finite powers and $\card(U(X)) \geq 2$, then $U(C)$ is infinite.'
 
 proof: |-
   Let $m \geq 0$ be fixed. For $n \geq 0$ we define a morphism $u_n : X^n \to X^m$ as follows: It is the projection on the first $m$ factors for $m \leq n$, and $(X^n,a^{m-n})$ for $m \geq n$ (for $m=n$ these agree). With generalized elements this says:

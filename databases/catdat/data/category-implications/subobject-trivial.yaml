@@ -6,7 +6,7 @@
     - subobject-trivial
   conclusions:
     - thin
-  reason: "If $f,g : X \\rightrightarrows Y$ are morphisms, their equalizer is a monomorphism $E \\hookrightarrow X$, hence an isomorphism. But this means $f = g$."
+  reason: 'If $f,g : X \rightrightarrows Y$ are morphisms, their equalizer is a monomorphism $E \hookrightarrow X$, hence an isomorphism. But this means $f = g$.'
   is_equivalence: false
 
 - id: subobject-trivial_consequence

@@ -30,10 +30,10 @@ satisfied_properties:
     reason: It is a full subcategory of the preadditive category $\Ab$.
 
   - property_id: normal
-    reason: "If $f : A \\to B$ is a monomorphism, it is injective (see below). In $\\Ab$ it is then the kernel of $B \\to B/f(A)$. Since $B/f(A)$ is torsion, it is also the kernel in $\\TorsAb$."
+    reason: 'If $f : A \to B$ is a monomorphism, it is injective (see below). In $\Ab$ it is then the kernel of $B \to B/f(A)$. Since $B/f(A)$ is torsion, it is also the kernel in $\TorsAb$.'
 
   - property_id: conormal
-    reason: "If $f : A \\to B$ is an epimorphism, it is surjective (see below). In $\\Ab$ it is then the cokernel of its kernel $K \\hookrightarrow A$. Since $K$ is torsion, it is also the cokernel in $\\TorsAb$."
+    reason: 'If $f : A \to B$ is an epimorphism, it is surjective (see below). In $\Ab$ it is then the cokernel of its kernel $K \hookrightarrow A$. Since $K$ is torsion, it is also the cokernel in $\TorsAb$.'
 
   - property_id: finitely accessible
     reason: We already know that (filtered) colimits exist and are preserved by the forgetful functor to $\Ab$. Every torsion abelian group is the filtered colimit of its finitely generated subgroups (which are finite). These are finitely presentable in $\Ab$, hence also in $\TorsAb$.
@@ -70,7 +70,7 @@ special_morphisms:
     reason: This is easy.
   monomorphisms:
     description: injective group homomorphisms
-    reason: "For the non-trivial direction, assume $f : A \\to B$ is a monomorphism and $a \\in A$ satisfies $f(a)=0$. Choose $n \\geq 1$ with $n a = 0$. Then $a$ corresponds to a homomorphism of torsion abelian groups $\\tilde{a} : \\IZ/n \\to A$ satisfying $f \\circ \\tilde{a} = 0$. Hence, $\\tilde{a} = 0$, which means $a = 0$."
+    reason: 'For the non-trivial direction, assume $f : A \to B$ is a monomorphism and $a \in A$ satisfies $f(a)=0$. Choose $n \geq 1$ with $n a = 0$. Then $a$ corresponds to a homomorphism of torsion abelian groups $\tilde{a} : \IZ/n \to A$ satisfying $f \circ \tilde{a} = 0$. Hence, $\tilde{a} = 0$, which means $a = 0$.'
   epimorphisms:
     description: surjective homomorphisms
     reason: Clearly, surjective homomorphisms are epimorphisms. The converse follows since the forgetful functor $\TorsAb \to \Ab$ has a right adjoint, hence preserves epimorphisms.

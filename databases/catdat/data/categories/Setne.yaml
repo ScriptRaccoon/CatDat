@@ -56,7 +56,7 @@ satisfied_properties:
     reason: This follows from <a href="/lemma/filtered-monos">this lemma</a> applied to the forgetful functor to $\Set$.
 
   - property_id: effective congruences
-    reason: "If a congruence $E \\rightrightarrows X$ is the kernel pair of $h : X \\to Z$, with both $E$ and $X$ non-empty, then certainly $Z$ must also be non-empty."
+    reason: 'If a congruence $E \rightrightarrows X$ is the kernel pair of $h : X \to Z$, with both $E$ and $X$ non-empty, then certainly $Z$ must also be non-empty.'
 
 unsatisfied_properties:
   - property_id: sequential limits
@@ -89,7 +89,7 @@ special_morphisms:
     reason: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
   epimorphisms:
     description: surjective maps
-    reason: "For the non-trivial direction, let $f : X \\to Y$ be an epimorphism of non-empty sets. Then the inclusion $f(X) \\hookrightarrow Y$ is an epimorphism as well, but also a split monomorphism (we can just map everything in $Y \\setminus f(X)$ to a fixed element of $f(X)$). As such, it must be an isomorphism."
+    reason: 'For the non-trivial direction, let $f : X \to Y$ be an epimorphism of non-empty sets. Then the inclusion $f(X) \hookrightarrow Y$ is an epimorphism as well, but also a split monomorphism (we can just map everything in $Y \setminus f(X)$ to a fixed element of $f(X)$). As such, it must be an isomorphism.'
   regular monomorphisms:
     description: same as monomorphisms
     reason: This is because the category is mono-regular.

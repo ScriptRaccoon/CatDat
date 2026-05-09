@@ -2,24 +2,24 @@ id: power_set_covariant
 name: covariant power set functor
 source: Set
 target: Set
-description: "This functor maps a set $X$ to its power set $P(X)$ and a map of sets $f : X \\to Y$ to the induced image operator $f_* : P(X) \\to P(Y)$."
+description: 'This functor maps a set $X$ to its power set $P(X)$ and a map of sets $f : X \to Y$ to the induced image operator $f_* : P(X) \to P(Y)$.'
 nlab_link: https://ncatlab.org/nlab/show/power+set
 
 satisfied_properties:
   - property_id: conservative
-    reason: "Assume that $f : X \\to Y$ is a map such that $f_* : P(X) \\to P(Y)$ is an isomorphism. There is some $A \\subseteq X$ with $Y = f_*(A)$, this proves that $f$ is surjective. It is also injective: If $x,y \\in X$ satisfy $f(x) = f(y)$, then $f_*(\\{x\\}) = f_*(\\{y\\})$, and hence $\\{x\\} = \\{y\\}$, i.e. $x = y$."
+    reason: 'Assume that $f : X \to Y$ is a map such that $f_* : P(X) \to P(Y)$ is an isomorphism. There is some $A \subseteq X$ with $Y = f_*(A)$, this proves that $f$ is surjective. It is also injective: If $x,y \in X$ satisfy $f(x) = f(y)$, then $f_*(\{x\}) = f_*(\{y\})$, and hence $\{x\} = \{y\}$, i.e. $x = y$.'
   - property_id: epimorphism-preserving
-    reason: "If $f : X \\to Y$ is surjective, then $f_* \\circ f^* = \\id_{P(Y)}$, so that $f^*$ is surjective."
+    reason: 'If $f : X \to Y$ is surjective, then $f_* \circ f^* = \id_{P(Y)}$, so that $f^*$ is surjective.'
   - property_id: faithful
-    reason: "Let $f,g : X \\rightrightarrows Y$ be two maps with $f_* = g_* : P(X) \\rightrightarrows P(Y)$. Then $\\{f(x)\\} = f_*(\\{x\\}) = g_*(\\{x\\}) = \\{g(x)\\}$ and hence $f(x) = g(x)$ for all $x \\in X$."
+    reason: 'Let $f,g : X \rightrightarrows Y$ be two maps with $f_* = g_* : P(X) \rightrightarrows P(Y)$. Then $\{f(x)\} = f_*(\{x\}) = g_*(\{x\}) = \{g(x)\}$ and hence $f(x) = g(x)$ for all $x \in X$.'
   - property_id: monomorphism-preserving
-    reason: "If $f : X \\to Y$ is injective, then $f^* \\circ f_* = \\id_{P(X)}$, so that $f_*$ is injective."
+    reason: 'If $f : X \to Y$ is injective, then $f^* \circ f_* = \id_{P(X)}$, so that $f_*$ is injective.'
 
 unsatisfied_properties:
   - property_id: coequalizer-preserving
-    reason: "Let $X := \\{x,y\\}$. Consider the two maps $x,y : \\{0\\} \\rightrightarrows X$. Their coequalizer $Q = X / (x = y)$ has just one element, so that $P(Q)$ has two elements. The induced maps $x_*,y_* : P(\\{0\\}) \\rightrightarrows P(X)$ (which already agree on the empty set) have coequalizer $P(X) / (\\{x\\} = \\{y\\})$, which has $3$ elements. So it cannot be $P(Q)$."
+    reason: 'Let $X := \{x,y\}$. Consider the two maps $x,y : \{0\} \rightrightarrows X$. Their coequalizer $Q = X / (x = y)$ has just one element, so that $P(Q)$ has two elements. The induced maps $x_*,y_* : P(\{0\}) \rightrightarrows P(X)$ (which already agree on the empty set) have coequalizer $P(X) / (\{x\} = \{y\})$, which has $3$ elements. So it cannot be $P(Q)$.'
   - property_id: equalizer-preserving
-    reason: "Any pair of distinct surjective maps $f,g : X \\rightrightarrows Y$ provides a counterexample: Their equalizer $E$ is a proper subset of $X$, so that $P(E)$ cannot contain $X$. But $f_*(X) = Y = g_*(X)$ shows that $X$ is contained in the equalizer of $f_*,g_* : P(X) \\rightrightarrows P(Y)$."
+    reason: 'Any pair of distinct surjective maps $f,g : X \rightrightarrows Y$ provides a counterexample: Their equalizer $E$ is a proper subset of $X$, so that $P(E)$ cannot contain $X$. But $f_*(X) = Y = g_*(X)$ shows that $X$ is contained in the equalizer of $f_*,g_* : P(X) \rightrightarrows P(Y)$.'
   - property_id: essentially surjective
     reason: Every power set is non-empty.
   - property_id: finitary

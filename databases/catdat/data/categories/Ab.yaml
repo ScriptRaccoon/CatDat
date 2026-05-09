@@ -30,7 +30,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property_id: split abelian
-    reason: "The short exact sequence $0 \\xrightarrow{} \\IZ \\xrightarrow{p} \\IZ \\xrightarrow{} \\IZ/p \\xrightarrow{} 0$ does not split. "
+    reason: 'The short exact sequence $0 \xrightarrow{} \IZ \xrightarrow{p} \IZ \xrightarrow{} \IZ/p \xrightarrow{} 0$ does not split. '
 
   - property_id: skeletal
     reason: This is trivial.
@@ -54,10 +54,10 @@ special_morphisms:
     reason: This characterization holds in every algebraic category.
   monomorphisms:
     description: injective homomorphisms
-    reason: "This holds in every finitary algebraic category: the forgetful functor to $\\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms."
+    reason: 'This holds in every finitary algebraic category: the forgetful functor to $\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
   epimorphisms:
     description: surjective homomorphisms
-    reason: "For the non-trivial direction, if $f : A \\to B$ is an epimorphism, then $p \\circ f = 0$ for the projection  $p : B \\to B/f(A)$ implies that $p = 0$, so that $B = f(A)$."
+    reason: 'For the non-trivial direction, if $f : A \to B$ is an epimorphism, then $p \circ f = 0$ for the projection  $p : B \to B/f(A)$ implies that $p = 0$, so that $B = f(A)$.'
   regular monomorphisms:
     description: same as monomorphisms
     reason: This is because the category is mono-regular.

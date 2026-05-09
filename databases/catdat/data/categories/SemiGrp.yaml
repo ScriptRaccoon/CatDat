@@ -44,7 +44,7 @@ unsatisfied_properties:
       	Another example can be found in <a href="https://mathoverflow.net/a/510442/2841">MO/510431</a>.
 
   - property_id: Malcev
-    reason: "Consider the subsemigroup $\\{(a,b) : a \\leq b \\}$ of $\\IN^2$ under addition."
+    reason: 'Consider the subsemigroup $\{(a,b) : a \leq b \}$ of $\IN^2$ under addition.'
 
   - property_id: co-Malcev
     reason: 'See <a href="https://mathoverflow.net/questions/509552">MO/509552</a>: Consider the forgetful functor $U : \SemiGrp \to \Set$ and the relation $R \subseteq U^2$ defined by $R(A) := \{(a,b) \in U(A)^2 : ab = a^2\}$. Both are representable: $U$ by the free semigroup on a single generator and $R$ by the free semigroup on two generators $x,y$ subject to the relation $xy=x^2$. It is clear that $R$ is reflexive, but not symmetric.'
@@ -118,9 +118,9 @@ special_morphisms:
     reason: This characterization holds in every algebraic category.
   monomorphisms:
     description: injective semigroup homomorphisms
-    reason: "This holds in every finitary algebraic category: the forgetful functor to $\\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms."
+    reason: 'This holds in every finitary algebraic category: the forgetful functor to $\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
   epimorphisms:
-    description: "A semigroup homomorphism $f : T \\to S$ is an epimorphism iff $S$ equals the <i>dominion</i> of $U := f(T) \\subseteq S$, meaning that for every $s \\in S$ there are $u_1,\\dotsc,u_{m+1} \\in U$, $v_1,\\dotsc,v_m \\in U$, $x_1,\\dotsc,x_m \\in S$ and $y_1,\\dotsc,y_m \\in S$ such that $s = x_1 u_1$, $u_1 = v_1 y_1$, $x_{i-1} v_{i-1} = x_i u_i$, $u_i y_{i-1} = v_i y_i$, $x_m v_m = u_{m+1}$ and $u_{m+1} y_m = s$."
+    description: 'A semigroup homomorphism $f : T \to S$ is an epimorphism iff $S$ equals the <i>dominion</i> of $U := f(T) \subseteq S$, meaning that for every $s \in S$ there are $u_1,\dotsc,u_{m+1} \in U$, $v_1,\dotsc,v_m \in U$, $x_1,\dotsc,x_m \in S$ and $y_1,\dotsc,y_m \in S$ such that $s = x_1 u_1$, $u_1 = v_1 y_1$, $x_{i-1} v_{i-1} = x_i u_i$, $u_i y_{i-1} = v_i y_i$, $x_m v_m = u_{m+1}$ and $u_{m+1} y_m = s$.'
     reason: This is <a href="https://en.wikipedia.org/wiki/Isbell's_zigzag_theorem" target="_blank">Isbell's zigzag Theorem</a>, see references there.
   regular epimorphisms:
     description: surjective homomorphisms

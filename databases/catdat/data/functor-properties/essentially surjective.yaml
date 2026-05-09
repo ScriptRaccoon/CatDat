@@ -1,6 +1,6 @@
 id: essentially surjective
 relation: is
-description: "A functor $F : \\C \\to \\D$ is essentially surjective when every object $Y \\in \\D$ is isomorphic to $F(X)$ for some $X \\in \\C$."
+description: 'A functor $F : \C \to \D$ is essentially surjective when every object $Y \in \D$ is isomorphic to $F(X)$ for some $X \in \C$.'
 nlab_link: https://ncatlab.org/nlab/show/essentially+surjective+functor
 invariant_under_equivalences: true
 dual_property_id: essentially surjective

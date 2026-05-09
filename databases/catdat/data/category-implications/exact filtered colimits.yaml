@@ -63,7 +63,7 @@
     - terminal object
   conclusions:
     - cocartesian cofiltered limits
-  reason: "Let $\\C$ be an extensive category with cofiltered limits and a terminal object. Then the coproduct functor $\\C \\times \\C \\cong \\C/1 \\times \\C/1 \\to \\C/(1+1)$ is an equivalence. The forgetful functor $\\C/A \\to \\C$ creates connected limits, and hence preserves cofiltered limits. For every $X \\in \\C$ the functor $(X,-) : \\C \\to \\C \\times \\C$ also preserves cofiltered limits. The composition of these functors is $X \\sqcup - : \\C \\to \\C$ and therefore also preserves cofiltered limits."
+  reason: 'Let $\C$ be an extensive category with cofiltered limits and a terminal object. Then the coproduct functor $\C \times \C \cong \C/1 \times \C/1 \to \C/(1+1)$ is an equivalence. The forgetful functor $\C/A \to \C$ creates connected limits, and hence preserves cofiltered limits. For every $X \in \C$ the functor $(X,-) : \C \to \C \times \C$ also preserves cofiltered limits. The composition of these functors is $X \sqcup - : \C \to \C$ and therefore also preserves cofiltered limits.'
   is_equivalence: false
 
 - id: filtered_monos_assumption

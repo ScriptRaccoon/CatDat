@@ -1,6 +1,6 @@
 id: comonadic
 relation: is
-description: "A functor $F : \\C \\to \\D$ is comonadic when there is a comonad $T$ on $\\D$ such that $F$ is equivalent to the forgetful functor $U^T : \\CoAlg(T) \\to \\D$."
+description: 'A functor $F : \C \to \D$ is comonadic when there is a comonad $T$ on $\D$ such that $F$ is equivalent to the forgetful functor $U^T : \CoAlg(T) \to \D$.'
 nlab_link: https://ncatlab.org/nlab/show/comonadic+functor
 invariant_under_equivalences: true
 dual_property_id: monadic

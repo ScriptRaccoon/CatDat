@@ -117,5 +117,5 @@
   target_assumptions: []
   conclusions:
     - monomorphism-preserving
-  reason: "This is because $f : X \\to Y$ is a monomorphism if and only the square displaying $\\id_Y \\circ f = \\id_Y \\circ f$ is a pullback square."
+  reason: 'This is because $f : X \to Y$ is a monomorphism if and only the square displaying $\id_Y \circ f = \id_Y \circ f$ is a pullback square.'
   is_equivalence: false

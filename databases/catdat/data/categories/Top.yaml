@@ -32,7 +32,7 @@ satisfied_properties:
     reason: This is clear from the classification of epimorphisms as surjective continuous maps.
 
   - property_id: infinitary extensive
-    reason: "[Sketch] Since $\\Set$ is infinitary extensive, a map $f : Y \\to \\coprod_i X_i$ corresponds to a decomposition $Y = \\coprod_i Y_i$ (as sets) with maps $f_i : Y_i \\to X_i$. Endow $Y_i$ with the subspace topology. If $f$ is continuous, each $Y_i = f^{-1}(X_i)$ is open in $Y$, so that $Y = \\coprod_i Y_i$ holds as topological spaces, and each $f_i$ is continuous."
+    reason: '[Sketch] Since $\Set$ is infinitary extensive, a map $f : Y \to \coprod_i X_i$ corresponds to a decomposition $Y = \coprod_i Y_i$ (as sets) with maps $f_i : Y_i \to X_i$. Endow $Y_i$ with the subspace topology. If $f$ is continuous, each $Y_i = f^{-1}(X_i)$ is open in $Y$, so that $Y = \coprod_i Y_i$ holds as topological spaces, and each $f_i$ is continuous.'
 
   - property_id: generator
     reason: The one-point space is a generator since it represents the forgetful functor $\Top \to \Set$.
@@ -81,7 +81,7 @@ unsatisfied_properties:
     reason: We already know that $\Set$ does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the functor $\Set \to \Top$ which equips a set with the indiscrete topology.
 
   - property_id: effective cocongruences
-    reason: "Consider the indiscrete topological space $I$ on two points. This represents the functor which takes a topological space $X$ to the pairs of indistinguishable points of $X$. Therefore, we get a cocongruence $1 \\rightrightarrows I$, where the maps are the two possible functions. However, this cannot be effective: if we have $h : Z\\to 1$ which equalizes the two maps, then $Z$ must be empty. But that means the cokernel pair of $h$ is the discrete space on two points."
+    reason: 'Consider the indiscrete topological space $I$ on two points. This represents the functor which takes a topological space $X$ to the pairs of indistinguishable points of $X$. Therefore, we get a cocongruence $1 \rightrightarrows I$, where the maps are the two possible functions. However, this cannot be effective: if we have $h : Z\to 1$ which equalizes the two maps, then $Z$ must be empty. But that means the cokernel pair of $h$ is the discrete space on two points.'
 
 special_objects:
   initial object:
@@ -105,7 +105,7 @@ special_morphisms:
     reason: The proof works exactly as for the category of sets, where we endow $2$ with the indiscrete topology.
   regular monomorphisms:
     description: embeddings
-    reason: "Equalizers are embeddings by their construction. Conversely, if $f : X \\to Y$ is an embedding, then $f$ is the equalizer of the two characteristic maps $\\chi_Y, \\chi_{f(X)} : Y \\to \\{0,1\\}$, where $\\{0,1\\}$ carries the indiscrete topology."
+    reason: 'Equalizers are embeddings by their construction. Conversely, if $f : X \to Y$ is an embedding, then $f$ is the equalizer of the two characteristic maps $\chi_Y, \chi_{f(X)} : Y \to \{0,1\}$, where $\{0,1\}$ carries the indiscrete topology.'
   regular epimorphisms:
     description: surjective quotient maps
-    reason: "Regular epimorphisms are surjective quotient maps by the explicit construction of coequalizers. Conversely, if $q : X \\to Y$ is a surjective quotient map, then one checks that $q$ is the coequalizer of its kernel pair $X \\times_Y X \\rightrightarrows X$: This is true for the underlying sets, and continuity of the induced morphism follows since $q$ is a quotient map."
+    reason: 'Regular epimorphisms are surjective quotient maps by the explicit construction of coequalizers. Conversely, if $q : X \to Y$ is a surjective quotient map, then one checks that $q$ is the coequalizer of its kernel pair $X \times_Y X \rightrightarrows X$: This is true for the underlying sets, and continuity of the induced morphism follows since $q$ is a quotient map.'

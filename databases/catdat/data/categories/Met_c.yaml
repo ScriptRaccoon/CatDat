@@ -42,7 +42,7 @@ satisfied_properties:
     reason: The same proof as for $\Met$ shows that $\IR$ with the usual metric is a cogenerator.
 
   - property_id: well-copowered
-    reason: "If $f : X \\to Y$ is an epimorphism, then $f(X)$ is dense in $Y$ (see below). Hence, there is an injective map $Y \\to X^{\\IN}$, which bounds the size of $Y$."
+    reason: 'If $f : X \to Y$ is an epimorphism, then $f(X)$ is dense in $Y$ (see below). Hence, there is an injective map $Y \to X^{\IN}$, which bounds the size of $Y$.'
 
   - property_id: semi-strongly connected
     reason: Every non-empty metric space is weakly terminal (by using constant maps).
@@ -61,7 +61,7 @@ unsatisfied_properties:
     reason: This is trivial.
 
   - property_id: Malcev
-    reason: "Consider the metric subspace $\\{(a,b) \\in \\IR^2 : a \\leq b\\}$ of $\\IR^2$."
+    reason: 'Consider the metric subspace $\{(a,b) \in \IR^2 : a \leq b\}$ of $\IR^2$.'
 
   - property_id: regular subobject classifier
     reason: 'We recycle the proof from the <a href="/category/Haus">category of Hausdorff spaces</a>: Assume that there is a regular subobject classifier $\Omega$. By the classification of regular monomorphisms, we would have an isomorphism between $\Hom(X,\Omega)$ and the set of closed subsets of $X$ for any metric space $X$. If we take $X = 1$ we see that $\Omega$ has two points. Since $\Omega$ is Hausdorff, $\Omega \cong 1 + 1$ must be discrete. But then $\Hom(X,\Omega)$ is isomorphic to the set of all clopen subsets of $X$, of which there are usually far fewer than closed subsets (consider $X = [0,1]$).'
@@ -80,7 +80,7 @@ special_objects:
   coproducts:
     description: Given metric spaces $(X_i,d_i)$ with $d_i \leq 1$ w.l.o.g, we endow the disjoint union $\coprod_i X_i$ with the metric $d$ that extends the metrics $d_i$ and satisfies $d(x,y) = 1$ when $x,y$ are in different $X_i$.
   products:
-    description: "[countable case] In the finite case, take direct products with the metric $d(x,y) = \\sup_i d_i(x_i,y_i)$, but other metrics such as $d(x,y) = \\sum_i d_i(x_i,y_i)$ also work. In the countable case, one can assume $d_i \\leq 1$ and then define $d(x,y) = \\sum_i d_i(x,y) / 2^i$."
+    description: '[countable case] In the finite case, take direct products with the metric $d(x,y) = \sup_i d_i(x_i,y_i)$, but other metrics such as $d(x,y) = \sum_i d_i(x_i,y_i)$ also work. In the countable case, one can assume $d_i \leq 1$ and then define $d(x,y) = \sum_i d_i(x,y) / 2^i$.'
 
 special_morphisms:
   isomorphisms:

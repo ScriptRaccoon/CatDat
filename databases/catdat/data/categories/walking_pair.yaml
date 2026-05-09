@@ -45,7 +45,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property_id: pullbacks
-    reason: "The two morphisms $a,b : 0 \\rightrightarrows 1$ have no pullback, since it would have to consist of identities $0 \\leftarrow 0 \\rightarrow 0$, but $a \\neq b$."
+    reason: 'The two morphisms $a,b : 0 \rightrightarrows 1$ have no pullback, since it would have to consist of identities $0 \leftarrow 0 \rightarrow 0$, but $a \neq b$.'
 
   - property_id: strongly connected
     reason: There is no morphism $1 \to 0$.

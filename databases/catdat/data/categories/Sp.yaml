@@ -25,7 +25,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property_id: locally small
-    reason: "Disclaimer: This result and its proof are not relevant for category theory and are also depending on the concrete model of set theory. That this category is locally essentially small is only what matters. Now, consider the terminal species $F=G=1$. Then $\\Hom(F,G)$ has just a single element, namely the natural transformation $\\alpha$ that sends every finite set $X$ to the unique map $\\alpha_X : 1 \\to 1$. Formally, $\\alpha$ is a map, modelled as a set of ordered pairs $(X,\\id_1)$, where $X$ is a finite set. Hence, $\\alpha$ is not a set (since finite sets do not form a set), and therefore $\\Hom(F,G) = \\{\\alpha\\}$ is also not a set."
+    reason: 'Disclaimer: This result and its proof are not relevant for category theory and are also depending on the concrete model of set theory. That this category is locally essentially small is only what matters. Now, consider the terminal species $F=G=1$. Then $\Hom(F,G)$ has just a single element, namely the natural transformation $\alpha$ that sends every finite set $X$ to the unique map $\alpha_X : 1 \to 1$. Formally, $\alpha$ is a map, modelled as a set of ordered pairs $(X,\id_1)$, where $X$ is a finite set. Hence, $\alpha$ is not a set (since finite sets do not form a set), and therefore $\Hom(F,G) = \{\alpha\}$ is also not a set.'
 
   - property_id: countable powers
     reason: If $\Sp \simeq \FinSet \times \prod_{n > 0} \Sigma_n{-}\FinSet$ has countable powers, then $\FinSet$ has countable powers as well by <a href="/lemma/limits_in_factor_categories">this lemma</a>, which we already know is false (see <a href="/category/FinSet">here</a>).
@@ -34,10 +34,10 @@ unsatisfied_properties:
     reason: This is trivial.
 
   - property_id: semi-strongly connected
-    reason: "For $n \\geq 0$ let $E_n$ be the combinatorial species of $n$-sets: $E_n(A) = \\{A\\}$ when $A$ has cardinality $n$, otherwise $E_n(A) = \\varnothing$. Then there is no morphism between $E_n$ and $E_m$ unless $n = m$."
+    reason: 'For $n \geq 0$ let $E_n$ be the combinatorial species of $n$-sets: $E_n(A) = \{A\}$ when $A$ has cardinality $n$, otherwise $E_n(A) = \varnothing$. Then there is no morphism between $E_n$ and $E_m$ unless $n = m$.'
 
   - property_id: generator
-    reason: "Assume that a generator $G$ exists. For $n \\geq 0$ let $F_n$ be the combinatorial species of sets of cardinality $\\neq n$: $F_n(A) = \\varnothing$ when $A$ has cardinality $n$, otherwise $F_n(A) = \\{A\\}$. There are two different morphisms $F_n \\rightrightarrows F_n \\sqcup F_n$. Hence, there must be at least one morphism $G \\to F_n$. If $A$ has cardinality $n$, this implies $G(A) = \\varnothing$. Since this holds for all $n$, $G$ is the initial object. But this is clearly no generator (it would mean that the category is thin)."
+    reason: 'Assume that a generator $G$ exists. For $n \geq 0$ let $F_n$ be the combinatorial species of sets of cardinality $\neq n$: $F_n(A) = \varnothing$ when $A$ has cardinality $n$, otherwise $F_n(A) = \{A\}$. There are two different morphisms $F_n \rightrightarrows F_n \sqcup F_n$. Hence, there must be at least one morphism $G \to F_n$. If $A$ has cardinality $n$, this implies $G(A) = \varnothing$. Since this holds for all $n$, $G$ is the initial object. But this is clearly no generator (it would mean that the category is thin).'
 
   - property_id: essentially countable
     reason: Any function $f\colon\IN \to \IN$ can be regarded as a combinatorial species with trivial actions, and distinct functions yield non-isomorphic species.
@@ -64,7 +64,7 @@ special_morphisms:
     reason: This is the for every functor category.
   monomorphisms:
     description: pointwise injective natural transformations
-    reason: "If $a : F \\to G$ is a monomorphism of species, then the diagonal morphism $F \\to F \\times_G F$ is an isomorphism, so that for every $x$ the diagonal morphism $F(x) \\to F(x) \\times_{G(x)} F(x)$ is an isomorphism, i.e., $a(x) : F(x) \\to G(x)$ is a monomorphism. This argument works for every functor category where the target has fiber products."
+    reason: 'If $a : F \to G$ is a monomorphism of species, then the diagonal morphism $F \to F \times_G F$ is an isomorphism, so that for every $x$ the diagonal morphism $F(x) \to F(x) \times_{G(x)} F(x)$ is an isomorphism, i.e., $a(x) : F(x) \to G(x)$ is a monomorphism. This argument works for every functor category where the target has fiber products.'
   epimorphisms:
     description: pointwise surjective natural transformations
     reason: This holds in every functor category $[\C,\Set]$.

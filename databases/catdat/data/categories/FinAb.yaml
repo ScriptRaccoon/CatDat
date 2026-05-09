@@ -25,7 +25,7 @@ satisfied_properties:
     reason: This follows from the fact for abelian groups.
 
   - property_id: self-dual
-    reason: "This is a simple special case of Pontryagin duality: The functor $\\Hom(-,\\IQ/\\IZ)$ provides the equivalence."
+    reason: 'This is a simple special case of Pontryagin duality: The functor $\Hom(-,\IQ/\IZ)$ provides the equivalence.'
 
   - property_id: ℵ₁-accessible
     reason: The proof works exactly as for the <a href="/category/FinSet">category of finite sets</a>.
@@ -62,7 +62,7 @@ special_morphisms:
     reason: This follows exactly as for abelian groups.
   monomorphisms:
     description: injective homomorphisms
-    reason: "Let $f : A \\to B$ be a monomorphism of finite abelian groups. Let $a \\in A$ be in the kernel of $a$, say of order $n$. Then we may view $a$ as a morphism $a : \\IZ/n \\to A$ with $f \\circ a = 0$, and $\\IZ/n$ is finite. Hence, $a = 0$."
+    reason: 'Let $f : A \to B$ be a monomorphism of finite abelian groups. Let $a \in A$ be in the kernel of $a$, say of order $n$. Then we may view $a$ as a morphism $a : \IZ/n \to A$ with $f \circ a = 0$, and $\IZ/n$ is finite. Hence, $a = 0$.'
   epimorphisms:
     description: surjective homomorphisms
     reason: Use the same proof as for abelian groups.

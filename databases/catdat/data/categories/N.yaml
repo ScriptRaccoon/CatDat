@@ -2,7 +2,7 @@ id: N
 name: poset of natural numbers
 notation: $(\IN,\leq)$
 objects: natural numbers $0, 1, 2, \dotsc$
-morphisms: "a unique morphism $(n,m) : n \\to m$ if $n \\leq m$"
+morphisms: 'a unique morphism $(n,m) : n \to m$ if $n \leq m$'
 description: This can also be seen as the path category of the infinite linear graph $\bullet \to \bullet \to \bullet \to \cdots$.
 
 tags:

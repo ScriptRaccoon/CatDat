@@ -25,13 +25,13 @@ satisfied_properties:
     reason: Take the algebraic theory of a ring.
 
   - property_id: strict terminal object
-    reason: "If $f : 0 \\to R$ is a homomorphism, then $R$ satisfies $1=f(1)=f(0)=0$, so that $R=0$."
+    reason: 'If $f : 0 \to R$ is a homomorphism, then $R$ satisfies $1=f(1)=f(0)=0$, so that $R=0$.'
 
   - property_id: Malcev
     reason: This follows in the same way as for groups, see also Example 2.2.5 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>.
 
   - property_id: disjoint finite products
-    reason: "To show that $A \\sqcup_{A \\times B} B$ is trivial, let $R$ be a ring which admits homomorphisms $f : A \\to R$, $g : B \\to R$ with $f(p_1(a,b))=g(p_2(a,b))$ for all $(a,b) \\in A \\times B$, i.e. $f(a)=g(b)$. Applying this to $a=0$, $b=1$ yields $1=0$ in $R$."
+    reason: 'To show that $A \sqcup_{A \times B} B$ is trivial, let $R$ be a ring which admits homomorphisms $f : A \to R$, $g : B \to R$ with $f(p_1(a,b))=g(p_2(a,b))$ for all $(a,b) \in A \times B$, i.e. $f(a)=g(b)$. Applying this to $a=0$, $b=1$ yields $1=0$ in $R$.'
 
 unsatisfied_properties:
   - property_id: balanced
@@ -86,7 +86,7 @@ special_morphisms:
     reason: This characterization holds in every algebraic category.
   monomorphisms:
     description: injective ring homomorphisms
-    reason: "This holds in every finitary algebraic category: the forgetful functor to $\\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms."
+    reason: 'This holds in every finitary algebraic category: the forgetful functor to $\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
   regular epimorphisms:
     description: surjective homomorphisms
     reason: This holds in every finitary algebraic category.

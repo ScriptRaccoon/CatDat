@@ -52,7 +52,7 @@ special_morphisms:
     reason: This is true for all functor categories.
   monomorphisms:
     description: pointwise injective transformations
-    reason: "If $a : F \\to G$ is a monomorphism of simplicial sets, then the diagonal morphism $F \\to F \\times_G F$ is an isomorphism, so that for every $n$ the diagonal morphism $F(n) \\to F(n) \\times_{G(n)} F(n)$ is an isomorphism, i.e., $a(n) : F(n) \\to G(n)$ is a monomorphism. This argument works for every functor category where the target has fiber products."
+    reason: 'If $a : F \to G$ is a monomorphism of simplicial sets, then the diagonal morphism $F \to F \times_G F$ is an isomorphism, so that for every $n$ the diagonal morphism $F(n) \to F(n) \times_{G(n)} F(n)$ is an isomorphism, i.e., $a(n) : F(n) \to G(n)$ is a monomorphism. This argument works for every functor category where the target has fiber products.'
   epimorphisms:
     description: pointwise surjective transformations
     reason: This holds in every functor category $[\C,\Set]$.

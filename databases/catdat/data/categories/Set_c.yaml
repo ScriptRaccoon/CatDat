@@ -68,7 +68,7 @@ unsatisfied_properties:
     reason: Since the forgetful functor $\Set_\c \to \Set$ is representable, it preserves (countable) products. Therefore, if the power $\{0,1\}^{\IN}$ exists in $\Set_\c$, it must be the ordinary cartesian product, which however is uncountable.
 
   - property_id: ℵ₁-accessible
-    reason: "In fact, $\\Set_\\c$ does not have $\\aleph_1$-filtered colimits: Fix an uncountable set $X$, let $P_\\c(X)$ be the poset of countable subsets of $X$, which is $\\aleph_1$-filtered, and consider the functor $P_\\c(X) \\to \\Set_\\c$ taking a subset $Y \\subseteq X$ to $Y$. The colimit of this diagram in $\\Set$ is given by $X$ itself, so if $X_c$ were a colimit in $\\Set_\\c$, then $\\Hom(X_c, \\{0,1\\}) \\cong \\Hom(X, \\{0,1\\})$. But the former has cardinality at most $2^{\\aleph_0}$ and the latter has cardinality $2^{\\card(X)}$, so we have obtained a contradiction if we pick $X$ large enough (e.g. $\\card(X)=2^{\\aleph_0}$)."
+    reason: 'In fact, $\Set_\c$ does not have $\aleph_1$-filtered colimits: Fix an uncountable set $X$, let $P_\c(X)$ be the poset of countable subsets of $X$, which is $\aleph_1$-filtered, and consider the functor $P_\c(X) \to \Set_\c$ taking a subset $Y \subseteq X$ to $Y$. The colimit of this diagram in $\Set$ is given by $X$ itself, so if $X_c$ were a colimit in $\Set_\c$, then $\Hom(X_c, \{0,1\}) \cong \Hom(X, \{0,1\})$. But the former has cardinality at most $2^{\aleph_0}$ and the latter has cardinality $2^{\card(X)}$, so we have obtained a contradiction if we pick $X$ large enough (e.g. $\card(X)=2^{\aleph_0}$).'
 
 special_objects:
   initial object:
@@ -89,7 +89,7 @@ special_morphisms:
     reason: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
   epimorphisms:
     description: surjective maps
-    reason: "For the non-trivial direction, if $f : X \\to Y$ is an epimorphism of countable sets, then in particular $f^* : \\Hom(Y,2) \\to \\Hom(X,2)$ is injective, which identifies with $f^* : P(Y) \\to P(X)$. Then for all $y \\in Y$ we have $f^*(\\{y\\}) \\neq f^*(\\varnothing) = \\varnothing$, so that $y$ has a preimage."
+    reason: 'For the non-trivial direction, if $f : X \to Y$ is an epimorphism of countable sets, then in particular $f^* : \Hom(Y,2) \to \Hom(X,2)$ is injective, which identifies with $f^* : P(Y) \to P(X)$. Then for all $y \in Y$ we have $f^*(\{y\}) \neq f^*(\varnothing) = \varnothing$, so that $y$ has a preimage.'
   regular monomorphisms:
     description: same as monomorphisms
     reason: This is because the category is mono-regular.

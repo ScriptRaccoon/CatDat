@@ -57,11 +57,11 @@ unsatisfied_properties:
     reason: This is trivial.
 
   - property_id: unital
-    reason: "The joint image of $X \\to X \\times Y \\leftarrow Y$ is just $\\{(x,0) : x \\in X\\} \\cup \\{(0,y) : y \\in Y\\}$ (where $0$ denotes the base point), which is clearly a proper subset of $X \\times Y$ when both $X,Y$ are non-trivial."
+    reason: 'The joint image of $X \to X \times Y \leftarrow Y$ is just $\{(x,0) : x \in X\} \cup \{(0,y) : y \in Y\}$ (where $0$ denotes the base point), which is clearly a proper subset of $X \times Y$ when both $X,Y$ are non-trivial.'
 
   - property_id: CSP
     # TODO: remove duplication with unital proof
-    reason: "The image of $X \\vee Y$ in $X \\times Y$ is just $\\{(x,0) : x \\in X\\} \\cup \\{(0,y) : y \\in Y\\}$ (where $0$ denotes the base point), which is clearly a proper subset when both $X,Y$ are non-trivial."
+    reason: 'The image of $X \vee Y$ in $X \times Y$ is just $\{(x,0) : x \in X\} \cup \{(0,y) : y \in Y\}$ (where $0$ denotes the base point), which is clearly a proper subset when both $X,Y$ are non-trivial.'
 
   - property_id: conormal
     reason: 'Every cokernel is "injective away from the base point". Formally, if $p : A \to B$ is a cokernel in $\Set_*$, it has the property that $p(x)=p(y) \neq 0$ implies $x=y$ (where $0$ denotes the base point). Clearly this is not satisfied for every surjective pointed map, consider $(\IN,0) \to (\{0,1\},0)$ defined by $0 \mapsto 0$ and $x \mapsto 1$ for $x > 0$.'
@@ -85,10 +85,10 @@ special_morphisms:
     reason: This characterization holds in every algebraic category.
   monomorphisms:
     description: injective pointed maps
-    reason: "This holds in every finitary algebraic category: the forgetful functor to $\\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms."
+    reason: 'This holds in every finitary algebraic category: the forgetful functor to $\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
   epimorphisms:
     description: surjective pointed maps
-    reason: "If $f : X \\to Y$ is an epimorphism of pointed sets, then the inclusion $i : f(X) \\hookrightarrow Y$ is an epimorphism as well. But it is also a split monomorphism (we may map everything in $Y \\setminus f(X)$ to the base point of $f(X)$, and do not touch the rest), hence an isomorphism."
+    reason: 'If $f : X \to Y$ is an epimorphism of pointed sets, then the inclusion $i : f(X) \hookrightarrow Y$ is an epimorphism as well. But it is also a split monomorphism (we may map everything in $Y \setminus f(X)$ to the base point of $f(X)$, and do not touch the rest), hence an isomorphism.'
   regular monomorphisms:
     description: same as monomorphisms
     reason: This is because the category is mono-regular.

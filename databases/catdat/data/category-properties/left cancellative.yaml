@@ -1,6 +1,6 @@
 id: left cancellative
 relation: is
-description: "A category is <i>left cancellative</i> if for every morphism $f : A \\to B$ and every parallel pair of morphisms $g,h : T \\rightrightarrows A$ with $f \\circ g = f \\circ h$ we have $g = h$. Equivalently, every morphism is a monomorphism."
+description: 'A category is <i>left cancellative</i> if for every morphism $f : A \to B$ and every parallel pair of morphisms $g,h : T \rightrightarrows A$ with $f \circ g = f \circ h$ we have $g = h$. Equivalently, every morphism is a monomorphism.'
 nlab_link: https://ncatlab.org/nlab/show/cancellative+category
 dual_property_id: right cancellative
 invariant_under_equivalences: true

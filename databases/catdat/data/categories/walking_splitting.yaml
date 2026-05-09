@@ -2,7 +2,7 @@ id: walking_splitting
 name: walking splitting
 notation: $\Split$
 objects: two objects $0$ and $1$
-morphisms: "the identities, morphisms $i : 0 \\to 1$, $p : 1 \\to 0$ satisfying $pi = \\id_0$, and the idempotent $ip : 1 \\to 1$."
+morphisms: 'the identities, morphisms $i : 0 \to 1$, $p : 1 \to 0$ satisfying $pi = \id_0$, and the idempotent $ip : 1 \to 1$.'
 description: This category could also be called the "walking split idempotent" (or "walking section", "walking retraction"), but we chose a name that emphasizes that the splitting belongs to the data. Notice that the $5$ given morphisms are indeed closed under composition. For example, $p \circ ip = p$ and $ip \circ i = i$.<br>The walking splitting can be interpreted as a skeleton of the category of $\IF_2$-vector spaces of dimension $\leq 1$.
 
 tags:
@@ -28,19 +28,19 @@ satisfied_properties:
     reason: The object $0$ is initial and terminal. This also means that $\id_0, i, p, ip$ are zero morphisms. The only non-zero morphism is $\id_1$.
 
   - property_id: equalizers
-    reason: "The only parallel pair of non-equal morphisms is $\\id_1, ip : 1 \\rightrightarrows 1$, and their equalizer is $i$."
+    reason: 'The only parallel pair of non-equal morphisms is $\id_1, ip : 1 \rightrightarrows 1$, and their equalizer is $i$.'
 
   - property_id: self-dual
     reason: There is an isomorphism $\Split^\op \to \Split$ defined by $0 \mapsto 0$, $1 \mapsto 1$, $i \mapsto p$, $p \mapsto i$.
 
   - property_id: normal
-    reason: "The only non-identity monomorphism is $i : 0 \\to 1$, which is the kernel of $\\id_1$."
+    reason: 'The only non-identity monomorphism is $i : 0 \to 1$, which is the kernel of $\id_1$.'
 
   - property_id: generator
-    reason: "The object $1$ a generator, since the only parallel pair of non-equal morphisms is $\\id_1, ip : 1 \\rightrightarrows 1$ with domain $1$."
+    reason: 'The object $1$ a generator, since the only parallel pair of non-equal morphisms is $\id_1, ip : 1 \rightrightarrows 1$ with domain $1$.'
 
   - property_id: preadditive
-    reason: "We can define $\\id_1 + \\id_1 := ip$ (and it is clear how to add zero morphisms) and then verify that the axioms of a preadditive category hold. Alternatively, it suffices to find a preadditive category which is isomorphic to the walking splitting: Consider the full subcategory of $\\Vect_{\\IF_2}$ that consists only of the trivial vector space $\\{0\\}$ and $\\IF_2$. Since $\\Vect_{\\IF_2}$ is preadditive, it is preadditive as well. It has two objects, two identities, the morphisms $i : \\{0\\} \\to \\IF_2$, $p : \\IF_2 \\to \\{0\\}$, and the zero morphism $ip : \\IF_2 \\to \\IF_2$. Clearly, $pi$ is the identity."
+    reason: 'We can define $\id_1 + \id_1 := ip$ (and it is clear how to add zero morphisms) and then verify that the axioms of a preadditive category hold. Alternatively, it suffices to find a preadditive category which is isomorphic to the walking splitting: Consider the full subcategory of $\Vect_{\IF_2}$ that consists only of the trivial vector space $\{0\}$ and $\IF_2$. Since $\Vect_{\IF_2}$ is preadditive, it is preadditive as well. It has two objects, two identities, the morphisms $i : \{0\} \to \IF_2$, $p : \IF_2 \to \{0\}$, and the zero morphism $ip : \IF_2 \to \IF_2$. Clearly, $pi$ is the identity.'
 
   - property_id: sifted colimits
     reason: |-
@@ -54,7 +54,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property_id: one-way
-    reason: "The morphism $ip : 1 \\to 1$ provides a counterexample."
+    reason: 'The morphism $ip : 1 \to 1$ provides a counterexample.'
 
 special_objects:
   initial object:

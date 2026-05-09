@@ -15,7 +15,7 @@
     - zero morphisms
   conclusions:
     - thin
-  reason: "If $f,g : A \\rightrightarrows B$ are two morphisms, then $0_{B,B} \\circ f = 0_{A,B} = 0_{B,B} \\circ g$, so that $f = g$."
+  reason: 'If $f,g : A \rightrightarrows B$ are two morphisms, then $0_{B,B} \circ f = 0_{A,B} = 0_{B,B} \circ g$, so that $f = g$.'
   is_equivalence: false
 
 - id: codiagonal-no-mono
@@ -24,7 +24,7 @@
     - left cancellative
   conclusions:
     - thin
-  reason: "For every object $A$ the codiagonal $A + A \\to A$ is a split epimorphism, and by assumption a monomorphism, hence an isomorphism. Hence, the two inclusions $i_1,i_2 : A \\rightrightarrows A + A$ coincide. Now, if $f, g : A \\rightrightarrows B$ are two morphisms, consider the induced morphism $h : A + A \\to B$ and compute $f = h \\circ i_1 = h \\circ i_2 = g$."
+  reason: 'For every object $A$ the codiagonal $A + A \to A$ is a split epimorphism, and by assumption a monomorphism, hence an isomorphism. Hence, the two inclusions $i_1,i_2 : A \rightrightarrows A + A$ coincide. Now, if $f, g : A \rightrightarrows B$ are two morphisms, consider the induced morphism $h : A + A \to B$ and compute $f = h \circ i_1 = h \circ i_2 = g$.'
   is_equivalence: false
 
 - id: cauchy_complete_criterion

@@ -6,7 +6,7 @@
   conclusions:
     - finitely complete
     - mono-regular
-  reason: "The first part holds by convention, and the second part: any monomorphism $U \\to X$ is the equalizer of $\\chi_U,\\chi_X : X \\rightrightarrows \\Omega$."
+  reason: 'The first part holds by convention, and the second part: any monomorphism $U \to X$ is the equalizer of $\chi_U,\chi_X : X \rightrightarrows \Omega$.'
   is_equivalence: false
 
 - id: subobject_classifier_well-powered
@@ -24,7 +24,7 @@
     - subobject classifier
   conclusions:
     - normal
-  reason: "The universal property of $\\top : 0 \\to \\Omega$ precisely says that every monomorphism $A \\to B$ is the kernel of a unique morphism $B \\to \\Omega$, so it is normal."
+  reason: 'The universal property of $\top : 0 \to \Omega$ precisely says that every monomorphism $A \to B$ is the kernel of a unique morphism $B \to \Omega$, so it is normal.'
   is_equivalence: false
 
 - id: additive_trivial_condition
@@ -76,5 +76,5 @@
     - strict terminal object
   conclusions:
     - thin
-  reason: "Let $\\Omega$ be a regular subobject classifier. Since $1$ is a strict terminal object, $\\top : 1 \\to \\Omega$ is an isomorphism. This implies that every regular monomorphism is an isomorphism. Hence, by taking the equalizer of two parallel morphisms, we see that the category is thin."
+  reason: 'Let $\Omega$ be a regular subobject classifier. Since $1$ is a strict terminal object, $\top : 1 \to \Omega$ is an isomorphism. This implies that every regular monomorphism is an isomorphism. Hence, by taking the equalizer of two parallel morphisms, we see that the category is thin.'
   is_equivalence: false

@@ -53,17 +53,17 @@ satisfied_properties:
     reason: The one-point metric space is a generator since it represents the forgetful functor $\Met \to \Set$.
 
   - property_id: cogenerator
-    reason: "We claim that $\\IR$ with the usual metric is a cogenerator. Let $a,b \\in X$ be two points of a metric space such that $f(a)=f(b)$ for all non-expansive maps $f : X \\to \\IR$. This applies in particular to $f(x) := d(a,x)$ and shows that $0=d(a,a)=d(a,b)$, so that $a=b$."
+    reason: 'We claim that $\IR$ with the usual metric is a cogenerator. Let $a,b \in X$ be two points of a metric space such that $f(a)=f(b)$ for all non-expansive maps $f : X \to \IR$. This applies in particular to $f(x) := d(a,x)$ and shows that $0=d(a,a)=d(a,b)$, so that $a=b$.'
 
   - property_id: well-copowered
-    reason: "If $f : X \\to Y$ is an epimorphism, then $f(X)$ is dense in $Y$ (see below). Hence, there is an injective map $Y \\to X^{\\IN}$, which bounds the size of $Y$."
+    reason: 'If $f : X \to Y$ is an epimorphism, then $f(X)$ is dense in $Y$ (see below). Hence, there is an injective map $Y \to X^{\IN}$, which bounds the size of $Y$.'
 
   - property_id: semi-strongly connected
     reason: Every non-empty metric space is weakly terminal (by using constant maps).
 
 unsatisfied_properties:
   - property_id: countable powers
-    reason: "Assume that the power $P = \\IR^{\\IN}$ exists, where $\\IR$ has the usual metric. Since the forgetful functor $\\Met \\to \\Set$ is representable, it preserves limits, powers in particular. Thus, we may assume that $P$ is the set of sequences of numbers and that the projections $p_n : P \\to \\IR$ are given by $p_n(x) = x_n$. Now consider the sequences $x = (n)_n$ and $y = (0)_n$. Since each $p_n$ is non-expansive, we get $d(x,y) \\geq d(p_n(x),p_n(y)) = d(n,0) = n$. But then $d(x,y) = \\infty$, a contradiction."
+    reason: 'Assume that the power $P = \IR^{\IN}$ exists, where $\IR$ has the usual metric. Since the forgetful functor $\Met \to \Set$ is representable, it preserves limits, powers in particular. Thus, we may assume that $P$ is the set of sequences of numbers and that the projections $p_n : P \to \IR$ are given by $p_n(x) = x_n$. Now consider the sequences $x = (n)_n$ and $y = (0)_n$. Since each $p_n$ is non-expansive, we get $d(x,y) \geq d(p_n(x),p_n(y)) = d(n,0) = n$. But then $d(x,y) = \infty$, a contradiction.'
 
   - property_id: binary copowers
     reason: The coproduct of two non-empty metric spaces does not exist, see <a href="https://math.stackexchange.com/questions/1778408" target="_blank">MSE/1778408</a>. For example, the copower $\IR \sqcup \IR$ does not exist. We only get coproducts when allowing $\infty$ as a distance, as in $\Met_{\infty}$.
@@ -87,7 +87,7 @@ unsatisfied_properties:
     reason: This is trivial.
 
   - property_id: Malcev
-    reason: "Consider the metric subspace $\\{(a,b) \\in \\IR^2 : a \\leq b\\}$ of $\\IR^2$."
+    reason: 'Consider the metric subspace $\{(a,b) \in \IR^2 : a \leq b\}$ of $\IR^2$.'
 
   - property_id: natural numbers object
     reason: |-
@@ -96,7 +96,7 @@ unsatisfied_properties:
       	is a coproduct cocone by <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, Part A, Lemma 2.5.5. Since there is a map $1 \to N$, we have $N \neq \varnothing$. However, the coproduct of two non-empty metric spaces does not exist, see <a href="https://math.stackexchange.com/questions/1778408" target="_blank">MSE/1778408</a>.
 
   - property_id: effective congruences
-    reason: "Any kernel pair of $h : X \\to Z$ in $\\Met$ corresponds to a closed subset of $X\\times X$. However, there are plenty of non-closed congruences, such as $\\Delta \\cup (\\IQ \\times \\IQ) \\subseteq \\IR \\times \\IR$ with the subspace metric."
+    reason: 'Any kernel pair of $h : X \to Z$ in $\Met$ corresponds to a closed subset of $X\times X$. However, there are plenty of non-closed congruences, such as $\Delta \cup (\IQ \times \IQ) \subseteq \IR \times \IR$ with the subspace metric.'
 
   - property_id: effective cocongruences
     reason: |-
@@ -113,7 +113,7 @@ special_objects:
   terminal object:
     description: singleton space
   products:
-    description: "[finite case] direct products with the metric $d(x,y) = \\sup_i d_i(x_i,y_i)$"
+    description: '[finite case] direct products with the metric $d(x,y) = \sup_i d_i(x_i,y_i)$'
 
 special_morphisms:
   isomorphisms:

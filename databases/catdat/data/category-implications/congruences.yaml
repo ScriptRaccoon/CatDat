@@ -23,7 +23,7 @@
     - regular
   conclusions:
     - cokernels
-  reason: "By the regularity assumption, it suffices to consider cokernels of subobjects. Given a subobject $Y$ of $X$, we have the congruence on $X$ given by the pullback of ${-} : X \\times X \\to X$ and $Y$. The quotient of this congruence is a cokernel of $Y \\hookrightarrow X$."
+  reason: 'By the regularity assumption, it suffices to consider cokernels of subobjects. Given a subobject $Y$ of $X$, we have the congruence on $X$ given by the pullback of ${-} : X \times X \to X$ and $Y$. The quotient of this congruence is a cokernel of $Y \hookrightarrow X$.'
   is_equivalence: false
 
 - id: congruence_quotients_via_cokernels
@@ -33,7 +33,7 @@
     - preadditive
   conclusions:
     - quotients of congruences
-  reason: "For any congruence $E$ on an object $X$ of a preadditive category, let $E_0$ be the kernel of $p_2 : E \\to X$.  The restriction of $p_1$ to $E_0$ is a monomorphism.  We can then see that $E$ must be the pullback of $p_1 - p_2 : E \\to X$ and $E_0 \\hookrightarrow X$.  Then the cokernel of $E_0 \\hookrightarrow X$ is a quotient of $E$."
+  reason: 'For any congruence $E$ on an object $X$ of a preadditive category, let $E_0$ be the kernel of $p_2 : E \to X$.  The restriction of $p_1$ to $E_0$ is a monomorphism.  We can then see that $E$ must be the pullback of $p_1 - p_2 : E \to X$ and $E_0 \hookrightarrow X$.  Then the cokernel of $E_0 \hookrightarrow X$ is a quotient of $E$.'
   is_equivalence: false
 
 - id: core-hin_quotients
@@ -42,7 +42,7 @@
   conclusions:
     - effective congruences
     - quotients of congruences
-  reason: "If $p_1, p_2 : E \\rightrightarrows X$ is a congruence, the symmetry morphism $s : E \\to E$ is an automorphism of $E$, hence equal to $\\id_E$ by assumption. But then $p_1 = p_2 \\circ s = p_2$, and simply $\\id_X$ is a coequalizer. Also, for the reflexivity morphism $r : X \\to E$, we have $p_1 \\circ r = \\id$. For the reverse composition, $p_1 \\circ r \\circ p_1 = p_1 \\circ \\id$ and $p_2 \\circ r \\circ p_1 = p_2 \\circ \\id$, so since $p_1, p_2$ are jointly monomorphic, we get $r \\circ p_1 = \\id$. Therefore, $p_1 = p_2$ is an isomorphism, so $E$ is the kernel pair of $\\id_X$."
+  reason: 'If $p_1, p_2 : E \rightrightarrows X$ is a congruence, the symmetry morphism $s : E \to E$ is an automorphism of $E$, hence equal to $\id_E$ by assumption. But then $p_1 = p_2 \circ s = p_2$, and simply $\id_X$ is a coequalizer. Also, for the reflexivity morphism $r : X \to E$, we have $p_1 \circ r = \id$. For the reverse composition, $p_1 \circ r \circ p_1 = p_1 \circ \id$ and $p_2 \circ r \circ p_1 = p_2 \circ \id$, so since $p_1, p_2$ are jointly monomorphic, we get $r \circ p_1 = \id$. Therefore, $p_1 = p_2$ is an isomorphism, so $E$ is the kernel pair of $\id_X$.'
   is_equivalence: false
 
 - id: preadditive_kernels_normal_imply_effective_congruences

@@ -31,10 +31,10 @@ satisfied_properties:
     reason: We construct equalizers just like in $\FinSet$ and observe that the universal property still holds.
 
   - property_id: wide pullbacks
-    reason: "We construct wide pullbacks just like in $\\Set$, i.e., for a w.l.o.g. non-empty family of injective maps $f_i : X_i \\to S$ we consider the subset $P \\subseteq \\prod_{i \\in I} X_i$ of those tuples $x$ where $f_i(x_i) = f_j(x_j)$. Each projection $P \\to X_i$ is injective, so in particular $P$ is finite, and $P \\to X_i$ becomes a morphism in $\\FI$. It is easy to check that the universal property still holds in $\\FI$."
+    reason: 'We construct wide pullbacks just like in $\Set$, i.e., for a w.l.o.g. non-empty family of injective maps $f_i : X_i \to S$ we consider the subset $P \subseteq \prod_{i \in I} X_i$ of those tuples $x$ where $f_i(x_i) = f_j(x_j)$. Each projection $P \to X_i$ is injective, so in particular $P$ is finite, and $P \to X_i$ becomes a morphism in $\FI$. It is easy to check that the universal property still holds in $\FI$.'
 
   - property_id: mono-regular
-    reason: "If $f : X \\to Y$ is an injective map of finite sets, it is the equalizer of the two injective maps $i_1,i_2 : Y \\rightrightarrows Y \\sqcup_X Y$, and $Y \\sqcup_X Y$ is finite."
+    reason: 'If $f : X \to Y$ is an injective map of finite sets, it is the equalizer of the two injective maps $i_1,i_2 : Y \rightrightarrows Y \sqcup_X Y$, and $Y \sqcup_X Y$ is finite.'
 
   - property_id: semi-strongly connected
     reason: If $X,Y$ are two finite sets, we have $\card(X) \leq \card(Y)$ or $\card(Y) \leq \card(X)$. In the first case there will be an injection $X \to Y$, in the second case there will be an injection $Y \to X$.
@@ -53,7 +53,7 @@ unsatisfied_properties:
     reason: Assume that two finite sets $X,Y$ have a product $P$ in this category. Elements of $P$ are the same as maps $1 \to P$, and they are automatically injective. Therefore, $P \cong \Hom(1,P) \times \Hom(1,X) \times \Hom(1,Y) \cong X \times Y$, and the projections must agree as well. But they are usually not injective. In particular, the product $X \times X$ never exists when $X$ has $>1$ elements.
 
   - property_id: sequential colimits
-    reason: "Let $X_n := \\{1,\\dotsc,n\\}$. Assume the sequence of inclusion maps $X_n \\hookrightarrow X_{n+1}$ has a colimit $(f_n : X_n \\to X)$ in this category. But $f_n$ must be an injective map, so that $\\card(X) \\geq n$ for all $n$. Since $X$ is finite, this is a contradiction."
+    reason: 'Let $X_n := \{1,\dotsc,n\}$. Assume the sequence of inclusion maps $X_n \hookrightarrow X_{n+1}$ has a colimit $(f_n : X_n \to X)$ in this category. But $f_n$ must be an injective map, so that $\card(X) \geq n$ for all $n$. Since $X$ is finite, this is a contradiction.'
 
   - property_id: skeletal
     reason: This is trivial.
@@ -80,7 +80,7 @@ special_morphisms:
     reason: This is trivial.
   epimorphisms:
     description: bijective maps
-    reason: "Take an epimorphism $X \\to Y$ in this category, w.l.o.g. the inclusion of a subset $X \\subseteq Y$. This means that for two injective maps $f,g : Y \\rightrightarrows T$ with $f|_X = g|_X$ we must have $f = g$. Let $T := Y + (Y \\setminus X)$ (disjoint union), $f$ be the inclusion into the first summand, $g|_X$ be the inclusion into the first summand, and $g|_{Y \\setminus X}$ be the inclusion into the second summand. Then $f$ and $g$ are injective with $f|_X = g|_X$, so that $f = g$. But this means $X = Y$."
+    reason: 'Take an epimorphism $X \to Y$ in this category, w.l.o.g. the inclusion of a subset $X \subseteq Y$. This means that for two injective maps $f,g : Y \rightrightarrows T$ with $f|_X = g|_X$ we must have $f = g$. Let $T := Y + (Y \setminus X)$ (disjoint union), $f$ be the inclusion into the first summand, $g|_X$ be the inclusion into the first summand, and $g|_{Y \setminus X}$ be the inclusion into the second summand. Then $f$ and $g$ are injective with $f|_X = g|_X$, so that $f = g$. But this means $X = Y$.'
   regular monomorphisms:
     description: same as monomorphisms
     reason: This is because the category is mono-regular.

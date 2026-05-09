@@ -2,7 +2,7 @@ id: On
 name: poset of ordinal numbers
 notation: $(\On,\leq)$
 objects: ordinal numbers
-morphisms: "a unique morphism $(\\alpha,\\beta): \\alpha \\to \\beta$ if $\\alpha \\leq \\beta$"
+morphisms: 'a unique morphism $(\alpha,\beta): \alpha \to \beta$ if $\alpha \leq \beta$'
 description: This is a large variant of the poset of natural numbers.
 
 tags:

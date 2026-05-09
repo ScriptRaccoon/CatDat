@@ -1,6 +1,6 @@
 id: kernels
 relation: has
-description: "A category has <i>kernels</i> if it has zero morphisms and every morphism $f : A \\to B$ has a kernel, i.e. an equalizer of $f$ with the zero morphism $0_{A,B} : A \\to B$."
+description: 'A category has <i>kernels</i> if it has zero morphisms and every morphism $f : A \to B$ has a kernel, i.e. an equalizer of $f$ with the zero morphism $0_{A,B} : A \to B$.'
 nlab_link: https://ncatlab.org/nlab/show/kernel
 dual_property_id: cokernels
 invariant_under_equivalences: true

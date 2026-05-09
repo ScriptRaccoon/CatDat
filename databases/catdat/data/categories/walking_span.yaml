@@ -48,7 +48,7 @@ special_objects:
   initial object:
     description: $0$
   products:
-    description: "[binary case] $1 \\times 2 = 0$, $x \\times x = x$, $0 \\times x = 0$"
+    description: '[binary case] $1 \times 2 = 0$, $x \times x = x$, $0 \times x = 0$'
 
 special_morphisms:
   isomorphisms:

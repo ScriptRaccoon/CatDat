@@ -1,8 +1,8 @@
 id: J2
 name: category of Jónsson-Tarski algebras
 notation: $\J_2$
-objects: "pairs $(X,\\alpha)$, where $X$ is a set and $\\alpha : X \\to X \\times X$ is an isomorphism"
-morphisms: "A morphism $(X,\\alpha) \\to (Y,\\beta)$ is a map $f : X \\to Y$ satisfying $$(f \\times f) \\circ \\alpha = \\beta \\circ f.$$"
+objects: 'pairs $(X,\alpha)$, where $X$ is a set and $\alpha : X \to X \times X$ is an isomorphism'
+morphisms: 'A morphism $(X,\alpha) \to (Y,\beta)$ is a map $f : X \to Y$ satisfying $$(f \times f) \circ \alpha = \beta \circ f.$$'
 description: This is interesting example of a category in the intersection of topos theory and algebra.
 nlab_link: https://ncatlab.org/nlab/show/J%C3%B3nsson-Tarski+algebra
 
@@ -18,7 +18,7 @@ satisfied_properties:
     reason: This is trivial.
 
   - property_id: finitary algebraic
-    reason: "The structure of a Jónsson-Tarski algebra on a set $X$ is equivalent to one binary operation $\\mu : X^2 \\to X$ and two unary operations $\\lambda, \\rho : X \\rightrightarrows X$ such that $\\mu(\\lambda(x),\\rho(x)) = x$, $\\lambda(\\mu(x,y))=x$, and $\\rho(\\mu(x,y))=y$."
+    reason: 'The structure of a Jónsson-Tarski algebra on a set $X$ is equivalent to one binary operation $\mu : X^2 \to X$ and two unary operations $\lambda, \rho : X \rightrightarrows X$ such that $\mu(\lambda(x),\rho(x)) = x$, $\lambda(\mu(x,y))=x$, and $\rho(\mu(x,y))=y$.'
 
   - property_id: Grothendieck topos
     reason: See the <a href="https://ncatlab.org/nlab/show/J%C3%B3nsson-Tarski+topos" target="_blank">nLab</a>.
@@ -52,7 +52,7 @@ special_morphisms:
     reason: This characterization holds in every algebraic category.
   monomorphisms:
     description: injective morphisms
-    reason: "This holds in every finitary algebraic category: the forgetful functor to $\\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms."
+    reason: 'This holds in every finitary algebraic category: the forgetful functor to $\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
   epimorphisms:
     description: surjective morphisms
     reason: 'For the non-trivial direction: The category is epi-regular (since it is an elementary topos), and every regular epimorphism is surjective (this holds in any algebraic category).'
