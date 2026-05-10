@@ -10,6 +10,7 @@ tags:
   - algebra
 
 related_categories:
+  - Ab_fg
   - CMon
   - FinAb
   - FreeAb
@@ -30,7 +31,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property_id: split abelian
-    reason: 'The short exact sequence $0 \xrightarrow{} \IZ \xrightarrow{p} \IZ \xrightarrow{} \IZ/p \xrightarrow{} 0$ does not split. '
+    reason: The short exact sequence $0 \xrightarrow{} \IZ \xrightarrow{p} \IZ \xrightarrow{} \IZ/p \xrightarrow{} 0$ does not split.
 
   - property_id: skeletal
     reason: This is trivial.
