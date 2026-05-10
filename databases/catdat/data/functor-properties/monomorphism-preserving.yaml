@@ -1,6 +1,8 @@
 id: monomorphism-preserving
 relation: is
-description: 'A functor $F : \C \to \D$ preserves monomorphisms if every monomorphism in $\C$ is mapped to a monomorphism in $\D$.<br> This property is useful to rule out some adjunctions.'
+description: |
+  A functor $F : \C \to \D$ <i>preserves monomorphisms</i> if every monomorphism in $\C$ is mapped to a monomorphism in $\D$.
+  This property is useful to rule out some adjunctions.
 nlab_link: https://ncatlab.org/nlab/show/monomorphism
 invariant_under_equivalences: true
 dual_property_id: epimorphism-preserving

@@ -1,6 +1,6 @@
 id: right exact
 relation: is
-description: A functor is right exact when it preserves finite colimits.
+description: A functor is <i>right exact</i> when it preserves finite colimits.
 nlab_link: https://ncatlab.org/nlab/show/exact+functor
 invariant_under_equivalences: true
 dual_property_id: left exact

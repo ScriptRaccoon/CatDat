@@ -1,6 +1,6 @@
 id: continuous
 relation: is
-description: A functor is continuous when it preserves all small limits.
+description: A functor is <i>continuous</i> when it preserves all small limits.
 nlab_link: https://ncatlab.org/nlab/show/continuous+functor
 invariant_under_equivalences: true
 dual_property_id: cocontinuous

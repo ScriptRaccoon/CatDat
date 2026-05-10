@@ -1,6 +1,6 @@
 id: conservative
 relation: is
-description: 'A functor $F : \C \to \D$ is conservative when it is isomorphic-reflecting: If $f$ is a morphism in $\C$ such that $F(f)$ is an isomorphism, then $f$ is an isomorphism.'
+description: 'A functor $F : \C \to \D$ is <i>conservative</i> when it is isomorphic-reflecting: If $f$ is a morphism in $\C$ such that $F(f)$ is an isomorphism, then $f$ is an isomorphism.'
 nlab_link: https://ncatlab.org/nlab/show/conservative+functor
 invariant_under_equivalences: true
 dual_property_id: conservative

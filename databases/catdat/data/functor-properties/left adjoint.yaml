@@ -1,6 +1,6 @@
 id: left adjoint
 relation: is a
-description: 'A functor $F : \C \to \D$ is a left adjoint when there is a functor $G : \D \to \C$ such that there are natural bijections $\Hom(F(A),B) \cong \Hom(A,G(B))$.'
+description: 'A functor $F : \C \to \D$ is a <i>left adjoint</i> when there is a functor $G : \D \to \C$ such that there are natural bijections $\Hom(F(A),B) \cong \Hom(A,G(B))$.'
 nlab_link: https://ncatlab.org/nlab/show/left+adjoint
 invariant_under_equivalences: true
 dual_property_id: right adjoint
