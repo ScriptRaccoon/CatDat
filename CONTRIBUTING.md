@@ -181,7 +181,7 @@ As a practical guideline, avoid introducing more than four properties (or four c
 
 1. Use `\varnothing` to display the empty set, not `\emptyset`.
 2. Write `non-empty`, not `nonempty`. Same for `non-unital`, `non-expansive`, etc.
-3. For categories which are referenced multiple times, create a [LaTeX macro](/src/lib/server/macros.ts) for their notation.
+3. For LaTeX symbols that are used repeatedly, in particular category-theoretic notation, define a LaTeX macro in [macros.yaml](databases/catdat/data/macros.yaml).
 
 ### Responsible Use of AI
 
