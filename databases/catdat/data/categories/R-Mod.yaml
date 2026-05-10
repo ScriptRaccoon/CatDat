@@ -3,7 +3,9 @@ name: category of left modules over a ring
 notation: $R{-}\Mod$
 objects: left $R$-modules
 morphisms: $R$-linear maps
-description: 'This is the prototype of an abelian category. The category of right modules is the same with the opposite ring $R^{\op}$, hence not listed here.<br> To settle the unsatisfied properties, we make the assumption that $R$ is <i>not</i> semisimple: If $R$ is semisimple, then by the Artin-Wedderburn theorem, the category is equivalent to a finite direct product of categories $D{-}\Mod$ for division rings $D$, and the case of division rings is in a separate entry. In particular, $R \neq 0$ and $R$ is not a field.'
+description: |-
+  This is the prototype of an abelian category. The category of right modules is the same with the opposite ring $R^{\op}$, hence not listed here.
+  To settle the unsatisfied properties, we make the assumption that $R$ is <i>not</i> semisimple: If $R$ is semisimple, then by the Artin-Wedderburn theorem, the category is equivalent to a finite direct product of categories $D{-}\Mod$ for division rings $D$, and the case of division rings is in a separate entry. In particular, $R \neq 0$ and $R$ is not a field.
 nlab_link: https://ncatlab.org/nlab/show/module
 tags:
   - algebra

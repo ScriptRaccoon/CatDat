@@ -34,7 +34,9 @@ unsatisfied_properties:
     reason: This is trivial.
 
   - property_id: balanced
-    reason: 'The inclusion of additive semigroups $\IN \hookrightarrow \IZ$ is a counterexample. Indeed, if $f,g : \IZ \to G$ are semigroup homomorphisms which agree on $\IN$, the element $e := f(0) = g(0)$ provides a neutral element for $eGe$, which therefore becomes a monoid, and $f,g$ corestrict to monoid homomorphisms $f,g : \IZ \to eGe$ which agree on $\IN$. And we already know that $f = g$ in that case (inverses are uniquely determined).<br> Another example can be found in <a href="https://mathoverflow.net/a/510442/2841">MO/510431</a>.'
+    reason: |-
+      The inclusion of additive semigroups $\IN \hookrightarrow \IZ$ is a counterexample. Indeed, if $f,g : \IZ \to G$ are semigroup homomorphisms which agree on $\IN$, the element $e := f(0) = g(0)$ provides a neutral element for $eGe$, which therefore becomes a monoid, and $f,g$ corestrict to monoid homomorphisms $f,g : \IZ \to eGe$ which agree on $\IN$. And we already know that $f = g$ in that case (inverses are uniquely determined).
+      Another example can be found in <a href="https://mathoverflow.net/a/510442/2841">MO/510431</a>.
 
   - property_id: Malcev
     reason: 'Consider the subsemigroup $\{(a,b) : a \leq b \}$ of $\IN^2$ under addition.'
@@ -43,7 +45,9 @@ unsatisfied_properties:
     reason: 'See <a href="https://mathoverflow.net/questions/509552">MO/509552</a>: Consider the forgetful functor $U : \SemiGrp \to \Set$ and the relation $R \subseteq U^2$ defined by $R(A) := \{(a,b) \in U(A)^2 : ab = a^2\}$. Both are representable: $U$ by the free semigroup on a single generator and $R$ by the free semigroup on two generators $x,y$ subject to the relation $xy=x^2$. It is clear that $R$ is reflexive, but not symmetric.'
 
   - property_id: semi-strongly connected
-    reason: 'Let us first remark that every non-empty finite semigroup $A$ has an idempotent element $e$, and then $B \to A$, $x \mapsto e$ does define a semigroup homomorphism for any $B$. Therefore, counterexamples need to be infinite and also without idempotent elements.<br> Let $A$ be the set of positive rational numbers of the form $m/2^n$ (with $m > 0$, $n \geq 0$), and let $B$ be the set of positive rational numbers of the form $m/3^n$ (with $m > 0$, $n \geq 0$). Both are semigroups under addition. The element $1 \in A$ is $2^\infty$-divisible, meaning that for every $n \geq 0$ there is some $a \in A$ with $1 = 2^n \cdot a$. But $B$ has no $2^\infty$-divisible element. Hence, there is no semigroup homomorphism $A \to B$. Likewise, there is no semigroup homomorphism $B \to A$.'
+    reason: |-
+      Let us first remark that every non-empty finite semigroup $A$ has an idempotent element $e$, and then $B \to A$, $x \mapsto e$ does define a semigroup homomorphism for any $B$. Therefore, counterexamples need to be infinite and also without idempotent elements.
+      Let $A$ be the set of positive rational numbers of the form $m/2^n$ (with $m > 0$, $n \geq 0$), and let $B$ be the set of positive rational numbers of the form $m/3^n$ (with $m > 0$, $n \geq 0$). Both are semigroups under addition. The element $1 \in A$ is $2^\infty$-divisible, meaning that for every $n \geq 0$ there is some $a \in A$ with $1 = 2^n \cdot a$. But $B$ has no $2^\infty$-divisible element. Hence, there is no semigroup homomorphism $A \to B$. Likewise, there is no semigroup homomorphism $B \to A$.
 
   - property_id: cogenerating set
     # TODO: find a variant of the lemma missing_cogenerating_sets

@@ -22,7 +22,7 @@ function render_formula(
 
 const math_regex = /\$\$(.*?)\$\$|\$(.*?)\$/gs
 
-export function render_formulas(txt: string): string {
+function render_formulas(txt: string): string {
 	return txt.replace(math_regex, (_, display_formula, inline_formula) => {
 		if (display_formula !== undefined) {
 			return render_formula(display_formula, { displayMode: true })
@@ -36,7 +36,8 @@ export function render_nested_formulas<T>(obj: T): T {
 	if (!obj) return obj
 
 	if (typeof obj === 'string') {
-		return render_formulas(obj) as T
+		const with_line_breaks = obj.replaceAll('\n', '<br>')
+		return render_formulas(with_line_breaks) as T
 	}
 
 	if (Array.isArray(obj)) {
