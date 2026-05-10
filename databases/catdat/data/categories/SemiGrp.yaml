@@ -27,7 +27,12 @@ satisfied_properties:
     reason: This follows easily from the concrete description of coproducts as (a variant of) free products.
 
   - property_id: cocartesian cofiltered limits
-    reason: 'We need to prove that for two cofiltered diagram of semigroups $(B_i)$, $(C_i)$ the canonical map $$\textstyle \alpha : \lim_i B_i + \lim_i C_i \to \lim_i (B_i + C_i)$$ is an isomorphism, i.e. bijective. The underlying set of the coproduct $B_i + C_i$ is identified with the disjoint union of sets of the form $$B_i \times C_i \times B_i \times \cdots \times C_i$$ with any positive product length, starting and ending either with $B_i$ or $C_i$. Moreover, $\lim_i$ commutes with arbitrary coproducts in $\Set$, and of course also with products. This shows that $\alpha$ is bijective.'
+    reason: >-
+      We need to prove that for two cofiltered diagram of semigroups $(B_i)$, $(C_i)$ the canonical map
+      $$\textstyle \alpha : \lim_i B_i + \lim_i C_i \to \lim_i (B_i + C_i)$$
+      is an isomorphism, i.e. bijective. The underlying set of the coproduct $B_i + C_i$ is identified with the disjoint union of sets of the form
+      $$B_i \times C_i \times B_i \times \cdots \times C_i$$
+      with any positive product length, starting and ending either with $B_i$ or $C_i$. Moreover, $\lim_i$ commutes with arbitrary coproducts in $\Set$, and of course also with products. This shows that $\alpha$ is bijective.
 
 unsatisfied_properties:
   - property_id: skeletal
@@ -52,13 +57,19 @@ unsatisfied_properties:
   - property_id: cogenerating set
     # TODO: find a variant of the lemma missing_cogenerating_sets
     # (or missing_cogenerator) which handles this.
-    reason: 'The proof is similar to the proof for <a href="/category/Grp">$\Grp$</a>. Assume that there is a cogenerating set $S$. There is an infinite simple group $G$ larger than all the semigroups in $S$ (such as an alternating group). Since $\id_G, 1 : G \rightrightarrows G$ are different, there is a semigroup $H \in S$ and a homomorphism of semigroups $f : G \to H$ with $f \neq f \circ 1$. Then $$N := \{g \in G : f(g) = f(1)\}$$ is a normal subgroup of $G$. It is proper, and hence trivial. But then $f$ is injective, which is a contradiction.'
+    reason: >-
+      The proof is similar to the proof for <a href="/category/Grp">$\Grp$</a>. Assume that there is a cogenerating set $S$. There is an infinite simple group $G$ larger than all the semigroups in $S$ (such as an alternating group). Since $\id_G, 1 : G \rightrightarrows G$ are different, there is a semigroup $H \in S$ and a homomorphism of semigroups $f : G \to H$ with $f \neq f \circ 1$. Then
+      $$N := \{g \in G : f(g) = f(1)\}$$
+      is a normal subgroup of $G$. It is proper, and hence trivial. But then $f$ is injective, which is a contradiction.
 
   - property_id: cofiltered-limit-stable epimorphisms
     reason: We already know that <a href="/category/Set">$\Set$</a> does not have this property (by <a href="/category-implication/topos_no_stable_epis">this result</a>). Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the functor $\Set \to \SemiGrp$ that equips a set with the multiplication $a \cdot b := a$.
 
   - property_id: effective cocongruences
-    reason: 'The proof is similar to <a href="/category/Mon">$\Mon$</a>, i.e. we adapt the counterexample from <a href="https://mathoverflow.net/a/510809" target="_blank">MO/510744</a>. Namely, consider the semigroups $$\begin{align*} X & := \langle p \mid p^2 = p \rangle,\\ E & := \langle p, q \mid p^2 = p,\, q^2 = q,\, pq = q,\, qp = p \rangle, \end{align*}$$ whose underlying sets are $\{p\}$ and $\{p,q\}$, respectively. Then $X$ represents the functor sending a semigroup $A$ to its idempotents, and $E$ represents the relation on idempotents $a, b$ of $A$ that $ab = b$, $ba = a$. It is easy to check that this defines an equivalence relation (see <a href="https://mathoverflow.net/a/510809" target="_blank">MO/510744</a> for details). Since $p \ne q$ in $E$, the equalizer of the two maps $X \rightrightarrows E$ is the empty semigroup. Therefore, if $E$ were effective, it would be isomorphic to the coproduct $X \sqcup X$, whose underlying set consists of non-empty words in $p,q$ with $p,q$ strictly alternating. In particular, in this coproduct, $pq \ne q$.'
+    reason: >-
+      The proof is similar to <a href="/category/Mon">$\Mon$</a>, i.e. we adapt the counterexample from <a href="https://mathoverflow.net/a/510809" target="_blank">MO/510744</a>. Namely, consider the semigroups
+      $$\begin{align*} X & := \langle p \mid p^2 = p \rangle,\\ E & := \langle p, q \mid p^2 = p,\, q^2 = q,\, pq = q,\, qp = p \rangle, \end{align*}$$
+      whose underlying sets are $\{p\}$ and $\{p,q\}$, respectively. Then $X$ represents the functor sending a semigroup $A$ to its idempotents, and $E$ represents the relation on idempotents $a, b$ of $A$ that $ab = b$, $ba = a$. It is easy to check that this defines an equivalence relation (see <a href="https://mathoverflow.net/a/510809" target="_blank">MO/510744</a> for details). Since $p \ne q$ in $E$, the equalizer of the two maps $X \rightrightarrows E$ is the empty semigroup. Therefore, if $E$ were effective, it would be isomorphic to the coproduct $X \sqcup X$, whose underlying set consists of non-empty words in $p,q$ with $p,q$ strictly alternating. In particular, in this coproduct, $pq \ne q$.
 
   - property_id: natural numbers object
     reason: >-
@@ -73,7 +84,17 @@ unsatisfied_properties:
       showing that $\alpha$ is not injective.
 
   - property_id: coregular
-    reason: 'We will find a regular monomorphism $\iota : F \to M$ of semigroups and a homomorphism $F \to K$ such that $K \to K \sqcup_F M$ is not injective. It is similar to our example for <a href="/category/Mon">$\Mon$</a>. Consider these semigroups defined by generators and relations: $$\begin{align*} F & := \langle a,b,c,d \rangle \\ M & := \langle a,b,c,d,s : as = c, \, bs = d \rangle \cong \langle a,b,s \rangle \\ K & := \langle x,c,d \rangle \\ N & := \langle a,b,c,d,s_0,s_1 : as_i = c, \, bs_i = d \rangle \\ & \cong \langle a,b,s_0,s_1 : a s_0 = a s_1, \, b s_0 = b s_1 \rangle \\ \end{align*}$$ There is a canonical homomorphism $\iota : F \to M$, which is the equalizer of the two canonical homomorphisms $M \rightrightarrows N$ defined by $s \mapsto s_i$. We define $F \to K$ by $a \mapsto x$, $b \mapsto x$, $c \mapsto c$, $d \mapsto d$. Then $$K \sqcup_F M \cong \langle x,c,d,s : x s = c,\, x s = d \rangle$$ shows that $c,d \in K$ have the same image in the pushout.'
+    reason: >-
+      We will find a regular monomorphism $\iota : F \to M$ of semigroups and a homomorphism $F \to K$ such that $K \to K \sqcup_F M$ is not injective. It is similar to our example for <a href="/category/Mon">$\Mon$</a>. Consider these semigroups defined by generators and relations:
+      $$\begin{align*}
+      F & := \langle a,b,c,d \rangle \\
+      M & := \langle a,b,c,d,s : as = c, \, bs = d \rangle \cong \langle a,b,s \rangle \\
+      K & := \langle x,c,d \rangle \\ N & := \langle a,b,c,d,s_0,s_1 : as_i = c, \, bs_i = d \rangle \\
+      & \cong \langle a,b,s_0,s_1 : a s_0 = a s_1, \, b s_0 = b s_1 \rangle
+      \end{align*}$$
+      There is a canonical homomorphism $\iota : F \to M$, which is the equalizer of the two canonical homomorphisms $M \rightrightarrows N$ defined by $s \mapsto s_i$. We define $F \to K$ by $a \mapsto x$, $b \mapsto x$, $c \mapsto c$, $d \mapsto d$. Then
+      $$K \sqcup_F M \cong \langle x,c,d,s : x s = c,\, x s = d \rangle$$
+      shows that $c,d \in K$ have the same image in the pushout.
 
   - property_id: regular subobject classifier
     reason: 'Assume that a regular subobject classifier $\Omega$ exists in $\SemiGrp$. The universal regular monomorphism $\top : 1 \to \Omega$ corresponds to an idempotent element $e \in \Omega$. It follows that $e \Omega e$ is a monoid with neutral element $e$. We claim that it is a regular subobject classifier in <a href="/category/Mon">$\Mon$</a>, which we know does not exist. Indeed, let $\iota : A \to B$ be a regular monomorphism of monoids. Since the forgetful functor $\Mon \to \SemiGrp$ preserves limits, we can also see $\iota$ as a regular monomorphism of semigroups. Hence, there is a unique homomorphism of semigroups $f : B \to \Omega$ with $\iota(A) = \{b \in B : f(b) = e\}$. Since $1 \in \iota(A)$, we have $f(1) = e$. Then $f$ corresponds to a homomorphism of monoids $f : B \to e \Omega e$ with kernel $\iota$, which proves our claim.'

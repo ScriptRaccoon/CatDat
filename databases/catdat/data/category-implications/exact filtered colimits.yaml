@@ -15,7 +15,10 @@
     - exact filtered colimits
   conclusions:
     - filtered-colimit-stable monomorphisms
-  reason: 'This is because $f : X \longrightarrow Y$ is a monomorphism iff the diagram $$\begin{CD} X @>{\id}>> X \\ @V{\id}VV @VV{f}V \\ X @>>{f}> Y \end{CD}$$ is a pullback, and if a functor preserves finite limits, it preserves pullbacks in particular.'
+  reason: >-
+    This is because $f : X \longrightarrow Y$ is a monomorphism iff the diagram
+    $$\begin{CD} X @>{\id}>> X \\ @V{\id}VV @VV{f}V \\ X @>>{f}> Y \end{CD}$$
+    is a pullback, and if a functor preserves finite limits, it preserves pullbacks in particular.
   is_equivalence: false
 
 - id: cartesian_filtered_colimits_condition

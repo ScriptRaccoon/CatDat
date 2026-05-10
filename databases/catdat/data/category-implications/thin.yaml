@@ -70,7 +70,9 @@
     - zero morphisms
   conclusions:
     - thin
-  reason: 'If $f,g : A \rightrightarrows B$ are two morphisms, then since $0_{B,B} = \id_B$ we have $$f = 0_{B,B} \circ f = 0_{A,B} = 0_{B,B} \circ g = g.$$'
+  reason: >-
+    If $f,g : A \rightrightarrows B$ are two morphisms, then since $0_{B,B} = \id_B$ we have 
+    $$f = 0_{B,B} \circ f = 0_{A,B} = 0_{B,B} \circ g = g.$$
   is_equivalence: false
 
 - id: direct_criterion

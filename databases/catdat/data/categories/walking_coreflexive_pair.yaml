@@ -3,7 +3,10 @@ name: walking coreflexive pair
 notation: $\Delta^{\leq 1}$
 objects: two objects $[0]$ and $[1]$
 morphisms: 'the identities, two morphisms $i,j : [0] \rightrightarrows [1]$, a morphism $p : [1] \to [0]$ with $p i = p j = \id_{[0]}$, and the two idempotent morphisms $ip, jp : [1] \to [1]$.'
-description: 'This category is equal to the truncated simplex category $\Delta^{\leq 1}$, i.e. the full subcategory of $\Delta$ spanned by $[0] = \{0\}$ and $[1] = \{0 < 1\}$; this also explains our notation of the category and its objects. $$[0] \begin{array}{c} \xhookrightarrow{~~i~~} \\ \xtwoheadleftarrow{~~p~~} \\ \xhookrightarrow{~~j~~} \end{array} [1]$$ The morphisms $i,j$ are the two inclusions, $p$ is their unique retraction, and $ip,jp : [1] \to [1]$ are the two constant maps. The name of this category comes from the fact that a functor out of it is the same as a <a href="https://ncatlab.org/nlab/show/reflexive+pair" target="_blank">coreflexive pair</a> in the target category. Its dual is therefore the walking reflexive pair.'
+description: >-
+  This category is equal to the truncated simplex category $\Delta^{\leq 1}$, i.e. the full subcategory of $\Delta$ spanned by $[0] = \{0\}$ and $[1] = \{0 < 1\}$; this also explains our notation of the category and its objects.
+  $$[0] \begin{array}{c} \xhookrightarrow{~~i~~} \\ \xtwoheadleftarrow{~~p~~} \\ \xhookrightarrow{~~j~~} \end{array} [1]$$
+  The morphisms $i,j$ are the two inclusions, $p$ is their unique retraction, and $ip,jp : [1] \to [1]$ are the two constant maps. The name of this category comes from the fact that a functor out of it is the same as a <a href="https://ncatlab.org/nlab/show/reflexive+pair" target="_blank">coreflexive pair</a> in the target category. Its dual is therefore the walking reflexive pair.
 
 tags:
   - category theory

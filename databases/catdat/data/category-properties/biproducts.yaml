@@ -1,6 +1,10 @@
 id: biproducts
 relation: has
-description: 'A category has <i>biproducts</i> when it has zero morphisms, finite products (denoted $\times$), finite coproducts (denoted $\oplus$), and for every finite family of objects $A_1,\dotsc,A_n$ the canonical morphism $$\mu : A_1 \oplus \cdots \oplus A_n \to A_1 \times \cdots \times A_n$$ is an isomorphism. Such a category is also called <i>semi-additive</i>, and it is automatically enriched over commutative monoids: the sum of $f,g : A \rightrightarrows B$ is defined as: $$A \xrightarrow{(f,g)} B \times B \xrightarrow{\mu^{-1}} B \oplus B \xrightarrow{\nabla} B$$'
+description: >-
+  A category has <i>biproducts</i> when it has zero morphisms, finite products (denoted $\times$), finite coproducts (denoted $\oplus$), and for every finite family of objects $A_1,\dotsc,A_n$ the canonical morphism
+  $$\mu : A_1 \oplus \cdots \oplus A_n \to A_1 \times \cdots \times A_n$$
+  is an isomorphism. Such a category is also called <i>semi-additive</i>, and it is automatically enriched over commutative monoids: the sum of $f,g : A \rightrightarrows B$ is defined as:
+  $$A \xrightarrow{(f,g)} B \times B \xrightarrow{\mu^{-1}} B \oplus B \xrightarrow{\nabla} B$$
 nlab_link: https://ncatlab.org/nlab/show/biproduct
 dual_property_id: biproducts
 invariant_under_equivalences: true

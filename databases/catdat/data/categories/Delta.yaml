@@ -52,7 +52,12 @@ satisfied_properties:
     reason: The <a href="/category/FinOrd">proof for $\FinOrd$</a> also works for $\FinSet \setminus \{\varnothing\}$.
 
   - property_id: cosifted
-    reason: 'Let $X,Y \in \Delta$. We may pick $x \in X$, $y \in Y$. Then there is a "point span" $X \xleftarrow{x} [0] \xrightarrow{y} Y$. Every span $X \xleftarrow{f} Z \xrightarrow{g} Y$ is connected to such a point span: Pick $z \in Z$. This defines a morphism of spans: $$\begin{CD} X @<{f(z)}<< [0] @>{g(z)}>> Y \\ @| @VV{z}V @| \\ X @<<{f}< Z @>>{g}> Y \end{CD}$$ It remains to show that all point spans are connected to each other. Assume $x_0,x_1 \in X$ and $y \in Y$, w.l.o.g. $x_0 \leq x_1$. Define the map $f : [1] \to X$ by $f(0) = x_0$, $f(1) = x_1$, and the map $g : [1] \to Y$ by $g(0)=g(1)=y$. They are order-preserving and fit into a zig-zag of spans: $$\begin{CD} X @<{x_0}<< [0] @>{y}>> Y \\ @| @V{0}VV @| \\ X @<{f}<< [1] @>{g}>> Y \\ @| @A{1}AA @| \\ X @<{x_1}<< [0] @>{y}>> Y \end{CD}$$ This shows that the choice of $x \in X$ does not matter, and for $y \in Y$ the proof is the same.'
+    reason: >-
+      Let $X,Y \in \Delta$. We may pick $x \in X$, $y \in Y$. Then there is a "point span" $X \xleftarrow{x} [0] \xrightarrow{y} Y$. Every span $X \xleftarrow{f} Z \xrightarrow{g} Y$ is connected to such a point span: Pick $z \in Z$. This defines a morphism of spans: 
+      $$\begin{CD} X @<{f(z)}<< [0] @>{g(z)}>> Y \\ @| @VV{z}V @| \\ X @<<{f}< Z @>>{g}> Y \end{CD}$$
+      It remains to show that all point spans are connected to each other. Assume $x_0,x_1 \in X$ and $y \in Y$, w.l.o.g. $x_0 \leq x_1$. Define the map $f : [1] \to X$ by $f(0) = x_0$, $f(1) = x_1$, and the map $g : [1] \to Y$ by $g(0)=g(1)=y$. They are order-preserving and fit into a zig-zag of spans:
+      $$\begin{CD} X @<{x_0}<< [0] @>{y}>> Y \\ @| @V{0}VV @| \\ X @<{f}<< [1] @>{g}>> Y \\ @| @A{1}AA @| \\ X @<{x_1}<< [0] @>{y}>> Y \end{CD}$$
+      This shows that the choice of $x \in X$ does not matter, and for $y \in Y$ the proof is the same.
 
 unsatisfied_properties:
   - property_id: strict terminal object

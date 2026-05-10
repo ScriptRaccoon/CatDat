@@ -31,7 +31,12 @@
     - sifted
   conclusions:
     - thin
-  reason: 'For any object $X$ in a left-cancellative category, the connected component containing $$X \xrightarrow{\id} X \xleftarrow{\id} X$$ in the category of cospans from $X$ to $X$ consists only of cospans $$X \xrightarrow{f} Y \xleftarrow{g} X$$ where $f=g$; hence when the category is also sifted, all cospans must be of this form, and so any two parallel morphisms are equal.'
+  reason: >-
+    For any object $X$ in a left-cancellative category, the connected component containing
+    $$X \xrightarrow{\id} X \xleftarrow{\id} X$$
+    in the category of cospans from $X$ to $X$ consists only of cospans
+    $$X \xrightarrow{f} Y \xleftarrow{g} X$$
+    where $f=g$; hence when the category is also sifted, all cospans must be of this form, and so any two parallel morphisms are equal.
   is_equivalence: false
 
 - id: terminal_object_yields_filtered
