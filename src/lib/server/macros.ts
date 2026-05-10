@@ -1,3 +1,5 @@
+// cspell:disable
+
 /**
  * Dictionary of LaTeX macros
  */
