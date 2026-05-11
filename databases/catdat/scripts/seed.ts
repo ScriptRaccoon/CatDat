@@ -11,7 +11,7 @@ import type {
 	FunctorImplicationYaml,
 	FunctorPropertyYaml,
 	FunctorYaml,
-} from './yaml.types'
+} from './seed.types'
 import { create_schema_hash, get_saved_schema_hash } from './schema.utils'
 
 const db = get_client()
