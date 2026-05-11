@@ -7,16 +7,9 @@
     - generating set
     - locally essentially small
     - one-way
-  reason: This is trivial. The empty set is generating.
-  is_equivalence: false
-
-- id: thin_consequence
-  assumptions:
-    - thin
-  conclusions:
     - equalizers
     - left cancellative
-  reason: Any two parallel morphisms are equal, so their equalizer is the identity, and every morphism is a monomorphism as well.
+  reason: This is trivial.
   is_equivalence: false
 
 - id: thin_inhabited_consequence
