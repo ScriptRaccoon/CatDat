@@ -4,6 +4,7 @@ notation: $[\CRing, \Set]$
 objects: Z-functors, i.e. functors from commutative rings to sets
 morphisms: natural transformations
 description: This category is used in functorial algebraic geometry. It also provides a typical example of a functor category that is not locally small, but nevertheless relevant. Most of its properties are directly derived from the category of sets, so other functor categories $[\C, \Set]$ for large categories $\C$ will be similar.
+nlab_link: null
 
 tags:
   - algebraic geometry

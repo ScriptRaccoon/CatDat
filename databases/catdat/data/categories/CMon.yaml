@@ -3,6 +3,7 @@ name: category of commutative monoids
 notation: $\CMon$
 objects: commutative monoids
 morphisms: monoid homomorphisms
+description: null
 nlab_link: https://ncatlab.org/nlab/show/category+of+monoids
 
 tags:

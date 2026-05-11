@@ -3,6 +3,7 @@ name: category of simplicial sets
 notation: $\sSet$
 objects: simplicial sets, i.e. functors $\Delta^{\op} \to \Set$ where $\Delta$ is the <a href="/category/Delta">simplex category</a>
 morphisms: natural transformations
+description: null
 nlab_link: https://ncatlab.org/nlab/show/SimpSet
 
 tags:

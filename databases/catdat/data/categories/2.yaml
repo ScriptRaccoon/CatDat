@@ -4,6 +4,7 @@ notation: $\2$
 objects: two objects $0$ and $1$
 morphisms: only the two identity morphisms
 description: A concrete representation is the full subcategory of $\CRing$ consisting of the two fields $\IF_2$ and $\IF_3$.
+nlab_link: null
 
 tags:
   - finite

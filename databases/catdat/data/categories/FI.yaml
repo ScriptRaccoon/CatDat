@@ -4,6 +4,7 @@ notation: $\FI$
 objects: finite sets
 morphisms: injective maps
 description: This category is badly-behaved in itself, but plays an important role in representation theory.
+nlab_link: null
 
 tags:
   - combinatorics

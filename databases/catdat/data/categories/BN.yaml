@@ -4,6 +4,7 @@ notation: $B\IN$
 objects: a single object
 morphisms: the natural numbers, with addition serving as composition
 description: Every monoid $M$ induces a category $BM$ with a single object $*$, morphisms given by the elements of $M$, and composition given by the monoid operation. Some of the properties of this category depend on the specific monoid. In this example, we take the commutative monoid $M = (\IN,+,0)$, so composition is $n \circ m = n + m$.
+nlab_link: null
 
 tags:
   - category theory

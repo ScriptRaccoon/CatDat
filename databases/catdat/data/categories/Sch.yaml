@@ -3,6 +3,7 @@ name: category of schemes
 notation: $\Sch$
 objects: schemes
 morphisms: morphisms of locally ringed spaces
+description: null
 nlab_link: https://ncatlab.org/nlab/show/scheme
 
 tags:

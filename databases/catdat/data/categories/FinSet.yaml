@@ -3,6 +3,7 @@ name: category of finite sets
 notation: $\FinSet$
 objects: finite sets
 morphisms: maps
+description: null
 nlab_link: https://ncatlab.org/nlab/show/FinSet
 
 tags:

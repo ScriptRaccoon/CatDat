@@ -3,6 +3,8 @@ name: category of free abelian groups
 notation: $\FreeAb$
 objects: free abelian groups
 morphisms: group homomorphisms
+description: null
+nlab_link: null
 
 tags:
   - algebra

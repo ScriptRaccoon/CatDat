@@ -4,6 +4,7 @@ notation: $\Set_\c$
 objects: countable sets
 morphisms: maps
 description: A set is countable if it admits a surjection from $\IN$. In particular, every finite set is countable.
+nlab_link: null
 
 tags:
   - set theory

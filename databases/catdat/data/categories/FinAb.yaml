@@ -3,6 +3,7 @@ name: category of finite abelian groups
 notation: $\FinAb$
 objects: finite abelian groups
 morphisms: group homomorphisms
+description: null
 nlab_link: https://ncatlab.org/nlab/show/finite+abelian+group
 
 tags:

@@ -3,6 +3,7 @@ name: category of commutative rings
 notation: $\CRing$
 objects: commutative rings
 morphisms: ring homomorphisms
+description: null
 nlab_link: https://ncatlab.org/nlab/show/CRing
 
 tags:

@@ -3,6 +3,7 @@ name: category of finitely generated abelian groups
 notation: $\Ab_{\fg}$
 objects: finitely generated abelian groups
 morphisms: group homomorphisms
+description: null
 nlab_link: https://ncatlab.org/nlab/show/finitely+generated+module
 
 tags:

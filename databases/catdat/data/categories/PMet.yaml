@@ -4,6 +4,7 @@ notation: $\PMet$
 objects: pseudo-metric spaces
 morphisms: non-expansive maps $f$, meaning $d(f(x),f(y)) \leq d(x,y)$ for all $x,y$
 description: In contrast to metric spaces, we do not demand $d(x,y)=0 \implies x=y$ here.
+nlab_link: null
 
 tags:
   - analysis

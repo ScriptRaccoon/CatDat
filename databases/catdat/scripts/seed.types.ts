@@ -21,8 +21,8 @@ export type CategoryYaml = {
 	notation: string
 	objects: string
 	morphisms: string
-	description?: string | null
-	nlab_link?: string
+	description: string | null
+	nlab_link: string | null
 	dual_category_id?: string | null
 	tags: string[]
 	related_categories: string[]

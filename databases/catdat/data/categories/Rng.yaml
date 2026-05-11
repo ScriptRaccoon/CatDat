@@ -3,6 +3,7 @@ name: category of rngs
 notation: $\Rng$
 objects: rngs, that is, non-unital rings
 morphisms: maps that preserve addition and multiplication
+description: null
 nlab_link: https://ncatlab.org/nlab/show/Rng
 
 tags:

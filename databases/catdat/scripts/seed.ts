@@ -204,8 +204,8 @@ function seed_categories() {
 			category.notation,
 			category.objects,
 			category.morphisms,
-			category.description || null,
-			category.nlab_link || null,
+			category.description,
+			category.nlab_link,
 			category.dual_category_id || null,
 		)
 

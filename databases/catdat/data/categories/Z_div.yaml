@@ -4,6 +4,7 @@ notation: $(\IZ,\mid)$
 objects: integers
 morphisms: 'a unique morphism $(a,b) : a \to b$ if $a$ divides $b$'
 description: This is a proset, not a poset, because $a$ and $-a$ divide each other, but are not equal for $a \neq 0$. Notice that this category is equivalent (but not isomorphic) to $(\IN,\mid)$.
+nlab_link: null
 
 tags:
   - number theory

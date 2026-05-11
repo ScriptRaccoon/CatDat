@@ -4,6 +4,7 @@ notation: $\FS$
 objects: finite sets
 morphisms: surjective maps
 description: This category is badly-behaved in itself, but it appears in representation theory. It has two connected components, consisting of the empty set and the non-empty finite sets.
+nlab_link: null
 
 tags:
   - combinatorics
