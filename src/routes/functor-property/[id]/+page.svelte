@@ -45,14 +45,14 @@
 	</ul>
 {/if}
 
-<h3>Relevant implications</h3>
+<h3 class="sticky-heading">Relevant implications</h3>
 
 <FunctorImplicationList
 	implications={data.relevant_implications}
 	highlighted_property={data.property.id}
 />
 
-<h3>Examples</h3>
+<h3 class="sticky-heading">Examples</h3>
 
 <p class="hint">
 	{pluralize(data.examples.length, {
@@ -63,7 +63,7 @@
 
 <FunctorList functors={data.examples} />
 
-<h3>Counterexamples</h3>
+<h3 class="sticky-heading">Counterexamples</h3>
 
 <p class="hint">
 	{pluralize(data.counterexamples.length, {
@@ -74,7 +74,7 @@
 
 <FunctorList functors={data.counterexamples} />
 
-<h3>Unknown</h3>
+<h3 class="sticky-heading">Unknown</h3>
 
 <p class="hint">
 	{pluralize(data.unknown_functors.length, {

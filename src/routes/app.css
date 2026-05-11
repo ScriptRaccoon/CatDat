@@ -91,6 +91,15 @@ h2 {
 h3 {
 	font-size: 1.45rem;
 	margin-block: 2rem 1rem;
+
+	&.sticky-heading {
+		position: sticky;
+		top: 0;
+		background-color: var(--bg-color);
+		z-index: 1;
+		margin-block: 1rem 0rem;
+		padding-block: 1rem;
+	}
 }
 
 /* various elements */

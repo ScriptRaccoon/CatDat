@@ -94,6 +94,7 @@ an issue when clicking two reasons in a row. So it's a <div> then.
 	.popup {
 		--speed: 120ms;
 		position: fixed;
+		z-index: 5;
 		bottom: 0;
 		left: 0;
 		right: 0;

@@ -38,7 +38,7 @@
 {#key functor.id}
 	<div class="two-columns">
 		<section>
-			<h3>Satisfied Properties</h3>
+			<h3 class="sticky-heading">Satisfied Properties</h3>
 
 			{#if category_detail_level.value === 'all'}
 				<p class="hint">Properties from the database</p>
@@ -66,7 +66,7 @@
 		</section>
 
 		<section>
-			<h3>Unsatisfied Properties</h3>
+			<h3 class="sticky-heading">Unsatisfied Properties</h3>
 
 			{#if category_detail_level.value === 'all'}
 				<p class="hint">Properties from the database</p>
@@ -97,7 +97,7 @@
 	</div>
 
 	<section>
-		<h3>Unknown properties</h3>
+		<h3 class="sticky-heading">Unknown properties</h3>
 
 		{#if data.unknown_properties.length}
 			<p class="hint">
