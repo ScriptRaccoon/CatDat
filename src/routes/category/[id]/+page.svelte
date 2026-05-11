@@ -7,7 +7,7 @@
 	import TextWithReason from '$components/TextWithReason.svelte'
 	import { filter_by_tag, pluralize } from '$lib/client/utils'
 	import CategoryList from '$components/CategoryList.svelte'
-	import { faQuestion, faQuestionCircle } from '@fortawesome/free-solid-svg-icons'
+	import { faQuestion } from '@fortawesome/free-solid-svg-icons'
 	import Fa from 'svelte-fa'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
 

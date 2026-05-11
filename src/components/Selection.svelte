@@ -1,7 +1,7 @@
 <script lang="ts">
 	import ChipGroup from './ChipGroup.svelte'
 	import Chip from './Chip.svelte'
-	import { get_comparison_score, normalize_text } from '$lib/client/utils'
+	import { get_comparison_score } from '$lib/client/utils'
 
 	type Props = {
 		title?: string

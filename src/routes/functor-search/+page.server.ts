@@ -2,7 +2,7 @@ import { query } from '$lib/server/db.catdat'
 import { error } from '@sveltejs/kit'
 import sql from 'sql-template-tag'
 
-export const load = async (event) => {
+export const load = async () => {
 	const { rows, err } = query<{ id: string }>(sql`
 		SELECT id FROM functor_properties ORDER BY lower(id)
 	`)
