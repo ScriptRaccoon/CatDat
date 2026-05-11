@@ -89,6 +89,11 @@ an issue when clicking two reasons in a row. So it's a <div> then.
 	.content {
 		max-width: 800px;
 		margin: 0 auto;
+
+		:global(a:has(.katex)) {
+			text-decoration: none;
+			border-bottom: 1px solid var(--outline-color);
+		}
 	}
 
 	.popup {
