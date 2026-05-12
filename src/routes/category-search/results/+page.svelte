@@ -63,7 +63,7 @@
 	</div>
 {/if}
 
-{#if data.is_consistent}
+{#if !data.contradiction}
 	<p class="hint">
 		{pluralize(data.found_objects.length, {
 			one: 'Found {count} category',
@@ -73,8 +73,14 @@
 	<CategoryList categories={data.found_objects ?? []} />
 {:else}
 	<p class="hint">
-		<Fa icon={faWarning} /> No categories found because the requirements are inconsistent.
+		<Fa icon={faWarning} /> No categories found because the requirements are inconsistent:
 	</p>
+
+	<ol class="hint">
+		{#each data.contradiction as segment}
+			<li>{segment}</li>
+		{/each}
+	</ol>
 {/if}
 
 <menu>

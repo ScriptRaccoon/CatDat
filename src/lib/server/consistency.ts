@@ -10,31 +10,36 @@ type NormalizedCategoryImplication = {
 	conclusion: string
 }
 
-export function check_consistency(
+export function get_contradiction(
 	satisfied_properties: Set<string>,
 	unsatisfied_properties: Set<string>,
-): { consistent: boolean } {
+): string[] | null {
 	for (const p of satisfied_properties) {
-		if (unsatisfied_properties.has(p)) return { consistent: false }
+		if (unsatisfied_properties.has(p))
+			return [`${p} cannot be both satisfied and unsatisfied`]
 	}
 
 	const implications = get_normalized_category_implications()
 
-	return check_consistency_worker(
+	return contradiction_worker(
 		satisfied_properties,
 		unsatisfied_properties,
 		implications,
 	)
 }
 
-function check_consistency_worker(
+function contradiction_worker(
 	satisfied_properties: Set<string>,
 	unsatisfied_properties: Set<string>,
 	implications: NormalizedCategoryImplication[],
-): { consistent: boolean } {
+): string[] | null {
 	for (const p of satisfied_properties) {
-		if (unsatisfied_properties.has(p)) return { consistent: false }
+		if (unsatisfied_properties.has(p)) {
+			return [`${p} cannot be both satisfied and unsatisfied`]
+		}
 	}
+
+	let contradiction: string[] = []
 
 	const deduced_satisfied_properties = new Set(satisfied_properties)
 
@@ -52,14 +57,19 @@ function check_consistency_worker(
 		const implication = get_next_implication()
 		if (!implication) break
 
+		let segment = `${[...implication.assumptions].join(' ∧ ')} ⟹ ${implication.conclusion}`
+
 		if (unsatisfied_properties.has(implication.conclusion)) {
-			return { consistent: false }
+			segment += ` ↯`
+			contradiction.push(segment)
+			return contradiction
 		}
 
+		contradiction.push(segment)
 		deduced_satisfied_properties.add(implication.conclusion)
 	}
 
-	return { consistent: true }
+	return null
 }
 
 function get_normalized_category_implications() {
@@ -143,13 +153,13 @@ export function get_missing_combinations() {
 				continue
 			}
 
-			const { consistent } = check_consistency_worker(
+			const contradiction = contradiction_worker(
 				new Set([p.id]),
 				new Set([q.id]),
 				implications,
 			)
 
-			if (consistent) missing_pairs.push([p.id, q.id])
+			if (!contradiction) missing_pairs.push([p.id, q.id])
 		}
 	}
 

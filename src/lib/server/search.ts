@@ -4,7 +4,7 @@ import { query } from '$lib/server/db.catdat'
 import { error } from '@sveltejs/kit'
 import sql from 'sql-template-tag'
 import { SEARCH_SEPARATOR } from '$lib/commons/search.config'
-import { check_consistency } from '$lib/server/consistency'
+import { get_contradiction } from '$lib/server/consistency'
 
 type NamedObject = {
 	id: string
@@ -72,19 +72,19 @@ export function search_handler(event: RequestEvent, type: 'category' | 'functor'
 	// TODO: implement this for functors as well
 	if (type === 'category') {
 		try {
-			const { consistent } = check_consistency(
+			const contradiction = get_contradiction(
 				new Set(satisfied_properties),
 				new Set(unsatisfied_properties),
 			)
 
-			if (!consistent) {
+			if (contradiction) {
 				event.setHeaders({
 					// shared cache for 30min
 					'cache-control': 'public, max-age=0, s-maxage=1800',
 				})
 
 				return {
-					is_consistent: false,
+					contradiction,
 					all_properties,
 					satisfied_properties,
 					unsatisfied_properties,
@@ -125,7 +125,7 @@ export function search_handler(event: RequestEvent, type: 'category' | 'functor'
 	})
 
 	return {
-		is_consistent: true,
+		contradiction: null,
 		all_properties,
 		satisfied_properties,
 		unsatisfied_properties,
