@@ -32,31 +32,31 @@ satisfied_properties:
     reason: The one-point set is clearly a generator.
 
   - property_id: cogenerator
-    reason: The two-point set is a cogenerator in $\Set$, hence also in $\Set_\c$.
+    reason: The two-point set is a cogenerator in <a href="/category/Set">$\Set$</a>, hence also in $\Set_\c$.
 
   - property_id: semi-strongly connected
-    reason: This is because the larger category $\Set$ has this property.
+    reason: This is because the larger category <a href="/category/Set">$\Set$</a> has this property.
 
   - property_id: extensive
-    reason: The same proof as for $\Set$ applies. Actually, the category is "countably extensive".
+    reason: The same proof as for <a href="/category/Set">$\Set$</a> applies. Actually, the category is "countably extensive".
 
   - property_id: countably distributive
-    reason: By elementary set theory, a countable (disjoint) union of countable sets is again countable. Hence, countable coproducts exist in $\Set_\c$, and we already saw that finite products exist. The distributivity morphism is an isomorphism since this is the case in $\Set$ and the forgetful functor $\Set_\c \to \Set$ preserves finite products and countable coproducts.
+    reason: By elementary set theory, a countable (disjoint) union of countable sets is again countable. Hence, countable coproducts exist in $\Set_\c$, and we already saw that finite products exist. The distributivity morphism is an isomorphism since this is the case in <a href="/category/Set">$\Set$</a> and the forgetful functor $\Set_\c \to \Set$ preserves finite products and countable coproducts.
 
   - property_id: epi-regular
     reason: If $X \to Y$ is an epimorphism in $\Set_\c$, i.e. a surjective map, it is coequalizer of the two maps $X \times_Y X \rightrightarrows X$ in $\Set$ and hence also in $\Set_\c$.
 
   - property_id: subobject classifier
-    reason: This is because $\{0,1\}$ is a subobject classifier in $\Set$, which is countable, and the monomorphisms coincide.
+    reason: This is because $\{0,1\}$ is a subobject classifier in <a href="/category/Set">$\Set$</a>, which is countable, and the monomorphisms coincide.
 
   - property_id: effective congruences
-    reason: 'Let $f, g : E \rightrightarrows X$ be a congruence in $\Set_\c$. Then using $1$ as a test object, we see that this induces an equivalence relation on $X$. We already know that $\Set$ has effective congruences (as does every topos). Using <a href="/lemma/effective-congruence-quotients">this result</a>, we see that $E$ is the kernel pair of $X \to (X/E)_{\Set}$ in $\Set$. Also, the quotient $(X/E)_{\Set}$ is countable; and the forgetful functor $\Set_\c \to \Set$ is fully faithful <a href="https://ncatlab.org/nlab/show/reflected+limit#FullSubcategoryInclusionReflectCoLimits" target="_blank">and therefore reflects limits</a>. Thus, we conclude that $E$ is the kernel pair of $X \to (X/E)_{\Set}$ in $\Set_\c$ as well.'
+    reason: 'Let $f, g : E \rightrightarrows X$ be a congruence in $\Set_\c$. Then using $1$ as a test object, we see that this induces an equivalence relation on $X$. We already know that <a href="/category/Set">$\Set$</a> has effective congruences (as does every topos). Using <a href="/lemma/effective-congruence-quotients">this result</a>, we see that $E$ is the kernel pair of $X \to (X/E)_{\Set}$ in $\Set$. Also, the quotient $(X/E)_{\Set}$ is countable; and the forgetful functor $\Set_\c \to \Set$ is fully faithful <a href="https://ncatlab.org/nlab/show/reflected+limit#FullSubcategoryInclusionReflectCoLimits" target="_blank">and therefore reflects limits</a>. Thus, we conclude that $E$ is the kernel pair of $X \to (X/E)_{\Set}$ in $\Set_\c$ as well.'
 
   - property_id: regular
-    reason: From the other properties we know that the category is finitely complete and that it has coequalizers. The regular epimorphisms are stable under pullback since this holds in $\Set$ and both regular epimorphisms (they are surjective maps) and pullbacks coincide.
+    reason: From the other properties we know that the category is finitely complete and that it has coequalizers. The regular epimorphisms are stable under pullback since this holds in <a href="/category/Set">$\Set$</a> and both regular epimorphisms (they are surjective maps) and pullbacks coincide.
 
   - property_id: coregular
-    reason: From the other properties we know that the category is finitely cocomplete and that it has equalizers. The regular monomorphisms are stable under pushout since this holds in $\Set$ and both regular monomorphisms (they are injective maps) and pushouts coincide.
+    reason: From the other properties we know that the category is finitely cocomplete and that it has equalizers. The regular monomorphisms are stable under pushout since this holds in <a href="/category/Set">$\Set$</a> and both regular monomorphisms (they are injective maps) and pushouts coincide.
 
 unsatisfied_properties:
   - property_id: small

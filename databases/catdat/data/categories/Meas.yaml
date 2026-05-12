@@ -32,7 +32,7 @@ satisfied_properties:
     reason: Take the colimit of the underlying sets and take the largest $\sigma$-algebra making all inclusions measurable. That is, a set is measurable iff its preimage under each inclusion is measurable.
 
   - property_id: infinitary extensive
-    reason: '[Sketch] Since $\Set$ is infinitary extensive, a map $f : Y \to \coprod_i X_i =: X$ corresponds to a decomposition $Y = \coprod_i Y_i$ (as sets) with maps $f_i : Y_i \to X_i$. Endow the measurable subset $Y_i \subseteq Y$ with the restricted $\sigma$-algebra. If $f$ is measurable, each $f_i$ is measurable, and $Y = \coprod_i Y_i$ holds as measurable spaces.'
+    reason: '[Sketch] Since <a href="/category/Set">$\Set$</a> is infinitary extensive, a map $f : Y \to \coprod_i X_i =: X$ corresponds to a decomposition $Y = \coprod_i Y_i$ (as sets) with maps $f_i : Y_i \to X_i$. Endow the measurable subset $Y_i \subseteq Y$ with the restricted $\sigma$-algebra. If $f$ is measurable, each $f_i$ is measurable, and $Y = \coprod_i Y_i$ holds as measurable spaces.'
 
   - property_id: generator
     reason: The one-point measurable space (with the unique $\sigma$-algebra) is a generator since it represents the forgetful functor $\Meas \to \Set$.
@@ -60,10 +60,10 @@ unsatisfied_properties:
     reason: This is trivial.
 
   - property_id: Malcev
-    reason: Use that $\Set$ is not Malcev and endow sets with the trivial $\sigma$-algebra.
+    reason: Use that <a href="/category/Set">$\Set$</a> is not Malcev and endow sets with the trivial $\sigma$-algebra.
 
   - property_id: cofiltered-limit-stable epimorphisms
-    reason: We already know that $\Set$ does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the functor $\Set \to \Meas$ which equips a set with the trivial $\sigma$-algebra.
+    reason: We already know that <a href="/category/Set">$\Set$</a> does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the functor $\Set \to \Meas$ which equips a set with the trivial $\sigma$-algebra.
 
   - property_id: effective cocongruences
     reason: 'The proof is similar to the one for <a href="/category/Top">$\Top$</a>: Use the trivial $\sigma$-algebra on a two-point set.'
@@ -90,4 +90,4 @@ special_morphisms:
     reason: Use the same proof as for sets, where $2 = \{0,1\}$ is endowed with the trivial $\sigma$-algebra.
   regular monomorphisms:
     description: embeddings
-    reason: '(This is the same proof as for $\Top$.) Equalizers are embeddings by their construction. Conversely, if $f : X \to Y$ is an embedding, then $f$ is the equalizer of the two characteristic maps $\chi_Y, \chi_{f(X)} : Y \rightrightarrows \{0,1\}$, where $\{0,1\}$ carries the trivial $\sigma$-algebra.'
+    reason: '(This is the same proof as for <a href="/category/Top">$\Top$</a>.) Equalizers are embeddings by their construction. Conversely, if $f : X \to Y$ is an embedding, then $f$ is the equalizer of the two characteristic maps $\chi_Y, \chi_{f(X)} : Y \rightrightarrows \{0,1\}$, where $\{0,1\}$ carries the trivial $\sigma$-algebra.'

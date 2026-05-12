@@ -31,10 +31,10 @@ satisfied_properties:
     reason: For all $n,m$ there are morphisms $[n] \to [0] \to [m]$.
 
   - property_id: cogenerator
-    reason: The ordered set $[1] = \{0 < 1\}$ is a cogenerator, even for <a href="/category/Pos">the category of posets</a>, see there for a proof.
+    reason: The ordered set $[1] = \{0 < 1\}$ is a cogenerator, even for <a href="/category/Pos">$\Pos$</a>.
 
   - property_id: coequalizers
-    reason: Assume that $X \rightrightarrows Y$ are morphisms in $\FinOrd \setminus \{\varnothing\}$. Since <a href="/category/FinOrd">$\FinOrd$ has coequalizers</a>, we have a coequalizer $Y \to Q$. Since $Y$ is non-empty, $Q$ is non-empty as well, and clearly $Y \to Q$ is then also the coequalizer in $\FinOrd \setminus \{\varnothing\}$.
+    reason: Assume that $X \rightrightarrows Y$ are morphisms in $\FinOrd \setminus \{\varnothing\}$. Since <a href="/category/FinOrd">$\FinOrd$</a> has coequalizers, we have a coequalizer $Y \to Q$. Since $Y$ is non-empty, $Q$ is non-empty as well, and clearly $Y \to Q$ is then also the coequalizer in $\FinOrd \setminus \{\varnothing\}$.
 
   - property_id: generator
     reason: The ordered set $[0] = \{0\}$ is a generator.
@@ -43,13 +43,13 @@ satisfied_properties:
     reason: 'If $f : [n] \to [m]$ is an isomorphism, then $n + 1 = m + 1$ by comparing the cardinalities, hence $n = m$.'
 
   - property_id: core-thin
-    reason: The category $\FinOrd \setminus \{\varnothing\}$ is core-thin because already $\FinOrd$ is core-thin (see its <a href="/category/FinOrd">category page</a>).
+    reason: The category $\FinOrd \setminus \{\varnothing\}$ is core-thin because already <a href="/category/FinOrd">$\FinOrd$</a> is core-thin.
 
   - property_id: mono-regular
-    reason: The <a href="/category/FinOrd">proof for $\FinOrd$</a> also works for $\FinSet \setminus \{\varnothing\}$.
+    reason: The proof for <a href="/category/FinOrd">$\FinOrd$</a> also works for $\FinSet \setminus \{\varnothing\}$.
 
   - property_id: epi-regular
-    reason: The <a href="/category/FinOrd">proof for $\FinOrd$</a> also works for $\FinSet \setminus \{\varnothing\}$.
+    reason: The proof for <a href="/category/FinOrd">$\FinOrd$</a> also works for $\FinSet \setminus \{\varnothing\}$.
 
   - property_id: cosifted
     reason: >-
@@ -70,10 +70,10 @@ unsatisfied_properties:
     reason: 'The two maps $d^0,d^1 : [0] \rightrightarrows [1]$ have a common left inverse, the unique map $s^0 : [1] \to [0]$, but are not equalized by any morphism.'
 
   - property_id: sequential colimits
-    reason: We can just copy the <a href="/category/FinOrd">proof for $\FinOrd$</a> to show that the sequence of inclusions $[0] \hookrightarrow [1] \hookrightarrow [2] \hookrightarrow \cdots$ has no colimit.
+    reason: We can just copy the proof for <a href="/category/FinOrd">$\FinOrd$</a> to show that the sequence of inclusions $[0] \hookrightarrow [1] \hookrightarrow [2] \hookrightarrow \cdots$ has no colimit.
 
   - property_id: sequential limits
-    reason: We can just copy the <a href="/category/FinOrd">proof for $\FinOrd$</a> to show that the sequence of truncations $\cdots \twoheadrightarrow [2] \twoheadrightarrow [1] \twoheadrightarrow [0]$ has no limit.
+    reason: We can just copy the proof for <a href="/category/FinOrd">$\FinOrd$</a> to show that the sequence of truncations $\cdots \twoheadrightarrow [2] \twoheadrightarrow [1] \twoheadrightarrow [0]$ has no limit.
 
   - property_id: pushouts
     reason: Assume that the two inclusions $\{0 < 1\} \leftarrow \{0\} \rightarrow \{0 < 2\}$ have a pushout in $\FinOrd \setminus \{\varnothing\}$. This would be a universal non-empty finite ordered set $X$ with three elements $0,1,2$ satisfying $0 \leq 1$ and $0 \leq 2$. Assume w.l.o.g. $1 \leq 2$ (the case $2 \leq 1$ is similar). The universal property yields an order-preserving map $X \to \{a < b < c\}$ with $0 \mapsto a$, $1 \mapsto c$, $2 \mapsto b$. But then $c \leq b$, which is a contradiction.
@@ -89,7 +89,7 @@ special_morphisms:
     reason: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
   epimorphisms:
     description: surjective order-preserving maps
-    reason: We can use the same <a href="/category/FinOrd">proof as for $\FinOrd$</a> since this has merely used the non-empty ordered set $\{0 < 1\}$.
+    reason: We can use the same proof as for <a href="/category/FinOrd">$\FinOrd$</a> since this has merely used the non-empty ordered set $\{0 < 1\}$.
   regular monomorphisms:
     description: same as monomorphisms
     reason: This is because the category is mono-regular.

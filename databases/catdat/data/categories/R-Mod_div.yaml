@@ -18,7 +18,7 @@ satisfied_properties:
     reason: There is a forgetful functor $R{-}\Mod \to \Set$ and $\Set$ is locally small.
 
   - property_id: split abelian
-    reason: It is a standard fact that the category of $R$-modules is abelian for any ring $R$. If $R$ is a division ring, then by linear algebra every $R$-module has a basis, hence is projective, so that every short exact sequence splits.
+    reason: It is a standard fact that the category of $R$-modules is abelian for any ring $R$, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. VIII. If $R$ is a division ring, then by linear algebra every $R$-module has a basis, hence is projective, so that every short exact sequence splits.
 
   - property_id: finitary algebraic
     reason: Take the algebraic theory of an $R$-module (given by the algebraic theory of an abelian group and for each $r \in R$ a unary operation).

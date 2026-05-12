@@ -3,7 +3,7 @@ name: category of combinatorial species
 notation: $\Sp$
 objects: combinatorial species, defined as functors $\IB \to \FinSet$, where $\IB$ is the category of finite sets and bijections
 morphisms: natural transformations
-description: Most categorical properties are immediately inferred from $\FinSet$. Notice that this category is not locally small; it is just equivalent to a locally small category.
+description: Most categorical properties are immediately inferred from <a href="/category/FinSet">$\FinSet$</a>. Notice that this category is not locally small; it is just equivalent to a locally small category.
 nlab_link: https://ncatlab.org/nlab/show/species
 
 tags:
@@ -15,10 +15,10 @@ related_categories:
 
 satisfied_properties:
   - property_id: essentially small
-    reason: This holds because $\FinSet$ and $\IB$ are essentially small.
+    reason: This holds because <a href="/category/FinSet">$\FinSet$</a> and <a href="/category/B">$\IB$</a> are essentially small.
 
   - property_id: elementary topos
-    reason: The category is equivalent to $\prod_{n \geq 0} \Sigma_n{-}\FinSet$ (where $\Sigma_n$ denotes the symmetric group of order $n$), and each $\Sigma_n{-}\FinSet$ is an elementary topos since $\FinSet$ is and $\Sigma_n$ is a finite group, cf. <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, Part B, Corollary 2.3.18.
+    reason: The category is equivalent to $\prod_{n \geq 0} \Sigma_n{-}\FinSet$ (where $\Sigma_n$ denotes the symmetric group of order $n$), and each $\Sigma_n{-}\FinSet$ is an elementary topos since is <a href="/category/FinSet">$\FinSet$</a> an elementary topos and $\Sigma_n$ is a finite group, cf. <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, Part B, Corollary 2.3.18.
 
   - property_id: cogenerator
     reason: 'This follows from $\Sp \simeq \prod_{n \geq 0} \Sigma_n{-}\FinSet$, <a href="/lemma/cogenerators_in_product_categories">this lemma</a>, and the fact that if $G$ is a (finite) group, the power set $P(G)$ with the evident $G$-action is a weakly terminal cogenerator in $G{-}\Set$ (resp. $G{-}\FinSet$). For the proof, notice that $\varnothing,G \in P(G)$ are fixed points, yielding two $G$-maps $1 \rightrightarrows P(G)$. In particular, $P(G)$ is weakly terminal. If $X$ is a $G$-set with distinct points $x,y$, we construct a $G$-map $f : X \to P(G)$ that separates $x,y$: First, $X$ is a coproduct of orbits. If $x,y$ lie in different orbits, let $f|_{Gx}$ be constant $\varnothing$, $f|_{Gy}$ be constant $G$, and, say, $f$ be constant $\varnothing$ on all other orbits. If $x,y$ lie in the same orbit, say $y = g_0 x$, define $f|_{Gx} : Gx \to P(G)$ by $f(x) = G_x$ (stabilizer), which is well-defined, and choose $f$ to be $\varnothing$ on all other orbits. Then $f(y) = g_0 G_x \neq G_x = f(x)$.'
@@ -28,7 +28,7 @@ unsatisfied_properties:
     reason: 'Disclaimer: This result and its proof are not relevant for category theory and are also depending on the concrete model of set theory. That this category is locally essentially small is only what matters. Now, consider the terminal species $F=G=1$. Then $\Hom(F,G)$ has just a single element, namely the natural transformation $\alpha$ that sends every finite set $X$ to the unique map $\alpha_X : 1 \to 1$. Formally, $\alpha$ is a map, modelled as a set of ordered pairs $(X,\id_1)$, where $X$ is a finite set. Hence, $\alpha$ is not a set (since finite sets do not form a set), and therefore $\Hom(F,G) = \{\alpha\}$ is also not a set.'
 
   - property_id: countable powers
-    reason: If $\Sp \simeq \FinSet \times \prod_{n > 0} \Sigma_n{-}\FinSet$ has countable powers, then $\FinSet$ has countable powers as well by <a href="/lemma/limits_in_factor_categories">this lemma</a>, which we already know is false (see <a href="/category/FinSet">here</a>).
+    reason: If $\Sp \simeq \FinSet \times \prod_{n > 0} \Sigma_n{-}\FinSet$ has countable powers, then <a href="/category/FinSet">$\FinSet$</a> has countable powers as well by <a href="/lemma/limits_in_factor_categories">this lemma</a>, which we already know is false.
 
   - property_id: skeletal
     reason: This is trivial.

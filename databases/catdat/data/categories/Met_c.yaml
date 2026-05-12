@@ -30,7 +30,7 @@ satisfied_properties:
     check_redundancy: false
 
   - property_id: infinitary extensive
-    reason: This follows from the existence of coproducts and finite products, and from the fact that $\Top$ is infinitary extensive.
+    reason: This follows from the existence of coproducts and finite products, and from the fact that <a href="/category/Top">$\Top$</a> is infinitary extensive.
 
   - property_id: well-powered
     reason: This follows easily from the fact that monomorphisms are injective in this category.
@@ -39,7 +39,7 @@ satisfied_properties:
     reason: The one-point metric space is a generator since it represents the forgetful functor $\Met_c \to \Set$.
 
   - property_id: cogenerator
-    reason: The same proof as for $\Met$ shows that $\IR$ with the usual metric is a cogenerator.
+    reason: The same proof as for <a href="/category/Met">$\Met$</a> shows that $\IR$ with the usual metric is a cogenerator.
 
   - property_id: well-copowered
     reason: 'If $f : X \to Y$ is an epimorphism, then $f(X)$ is dense in $Y$ (see below). Hence, there is an injective map $Y \to X^{\IN}$, which bounds the size of $Y$.'
@@ -64,7 +64,7 @@ unsatisfied_properties:
     reason: 'Consider the metric subspace $\{(a,b) \in \IR^2 : a \leq b\}$ of $\IR^2$.'
 
   - property_id: regular subobject classifier
-    reason: 'We recycle the proof from the <a href="/category/Haus">category of Hausdorff spaces</a>: Assume that there is a regular subobject classifier $\Omega$. By the classification of regular monomorphisms, we would have an isomorphism between $\Hom(X,\Omega)$ and the set of closed subsets of $X$ for any metric space $X$. If we take $X = 1$ we see that $\Omega$ has two points. Since $\Omega$ is Hausdorff, $\Omega \cong 1 + 1$ must be discrete. But then $\Hom(X,\Omega)$ is isomorphic to the set of all clopen subsets of $X$, of which there are usually far fewer than closed subsets (consider $X = [0,1]$).'
+    reason: 'We recycle the proof from <a href="/category/Haus">$\Haus$</a>: Assume that there is a regular subobject classifier $\Omega$. By the classification of regular monomorphisms, we would have an isomorphism between $\Hom(X,\Omega)$ and the set of closed subsets of $X$ for any metric space $X$. If we take $X = 1$ we see that $\Omega$ has two points. Since $\Omega$ is Hausdorff, $\Omega \cong 1 + 1$ must be discrete. But then $\Hom(X,\Omega)$ is isomorphic to the set of all clopen subsets of $X$, of which there are usually far fewer than closed subsets (consider $X = [0,1]$).'
 
   - property_id: sequential colimits
     reason: See <a href="https://mathoverflow.net/questions/510316" target="_blank">MO/510316</a>.

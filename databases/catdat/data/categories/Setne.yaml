@@ -20,22 +20,22 @@ satisfied_properties:
     reason: The one-point set is clearly a generator.
 
   - property_id: cogenerator
-    reason: The two-point set is a cogenerator, this follows as for $\Set$.
+    reason: The two-point set is a cogenerator, this follows as for <a href="/category/Set">$\Set$</a>.
 
   - property_id: products
-    reason: Take the product of non-empty sets inside of $\Set$ and observe that it is non-empty by the axiom of choice.
+    reason: Take the product of non-empty sets inside of <a href="/category/Set">$\Set$</a> and observe that it is non-empty by the axiom of choice.
 
   - property_id: binary coproducts
     reason: The disjoint union of two non-empty sets is non-empty.
 
   - property_id: cartesian closed
-    reason: This follows as for $\Set$, since for non-empty sets $X,Y$ there is at least one function $X \to Y$.
+    reason: This follows as for <a href="/category/Set">$\Set$</a>, since for non-empty sets $X,Y$ there is at least one function $X \to Y$.
 
   - property_id: mono-regular
-    reason: This follows as for $\Set$.
+    reason: This follows as for <a href="/category/Set">$\Set$</a>.
 
   - property_id: epi-regular
-    reason: This follows as for $\Set$.
+    reason: This follows as for <a href="/category/Set">$\Set$</a>.
 
   - property_id: strongly connected
     reason: Use constant maps.

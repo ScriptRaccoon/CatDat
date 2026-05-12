@@ -9,7 +9,7 @@ satisfied_properties:
   - property_id: conservative
     reason: It is standard that the inverse of a bijective linear map is also linear.
   - property_id: epimorphism-preserving
-    reason: This follows from the classifications of epimorphisms in the <a href="/category/Vect">category of vector spaces</a> and in the <a href="/category/Set">category of sets</a>.
+    reason: This follows from the classifications of epimorphisms in <a href="/category/Vect">$\Vect$</a> and in <a href="/category/Set">$\Set$</a>.
   - property_id: finitary
     reason: For every algebraic category the forgetful functor to the category of sets preserves filtered colimits.
   - property_id: monadic

@@ -40,10 +40,10 @@ satisfied_properties:
     reason: Since epimorphisms are surjective (see below), this is the first isomorphism theorem for finite groups.
 
   - property_id: ℵ₁-accessible
-    reason: The proof works exactly as for the <a href="/category/FinSet">category of finite sets</a>.
+    reason: The proof works exactly as for <a href="/category/FinSet">$\FinSet$</a>.
 
   - property_id: effective congruences
-    reason: 'Suppose we have a congruence $f, g : E \rightrightarrows X$ in $\FinGrp$. Since the embedding $\FinGrp \hookrightarrow \Grp$ preserves finite limits, it is also a congruence in $\Grp$. We already know that $\Grp$ has effective congruences since it is algebraic. Using <a href="/lemma/effective-congruence-quotients">this result</a>, we see that $E$ is the kernel pair of $X \to (X/E)_{\Grp}$ in $\Grp$. Also, the quotient $(X/E)_{\Grp}$ is finite; and the forgetful functor $\FinGrp \to \Grp$ is fully faithful <a href="https://ncatlab.org/nlab/show/reflected+limit#FullSubcategoryInclusionReflectCoLimits" target="_blank">and therefore reflects limits</a>. Thus, we conclude that $E$ is the kernel pair of $X \to (X/E)_{\Grp}$ in $\FinGrp$ as well.'
+    reason: 'Suppose we have a congruence $f, g : E \rightrightarrows X$ in $\FinGrp$. Since the embedding $\FinGrp \hookrightarrow \Grp$ preserves finite limits, it is also a congruence in $\Grp$. We already know that <a href="/category/Grp">$\Grp$</a> has effective congruences since it is algebraic. Using <a href="/lemma/effective-congruence-quotients">this result</a>, we see that $E$ is the kernel pair of $X \to (X/E)_{\Grp}$ in $\Grp$. Also, the quotient $(X/E)_{\Grp}$ is finite; and the forgetful functor $\FinGrp \to \Grp$ is fully faithful <a href="https://ncatlab.org/nlab/show/reflected+limit#FullSubcategoryInclusionReflectCoLimits" target="_blank">and therefore reflects limits</a>. Thus, we conclude that $E$ is the kernel pair of $X \to (X/E)_{\Grp}$ in $\FinGrp$ as well.'
 
 unsatisfied_properties:
   - property_id: normal
@@ -81,7 +81,7 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: bijective homomorphisms
-    reason: This follows exactly as for groups.
+    reason: This follows exactly as for <a href="/category/Grp">$\Grp$</a>.
   monomorphisms:
     description: injective homomorphisms
     reason: 'Let $f : A \to B$ be a monomorphism of finite groups. Let $a \in A$ be in the kernel of $a$, say of order $n$. Then we may view $a$ as a morphism $a : C_n \to A$ with $f \circ a = 1$ (the trivial homomorphism), and $C_n$ is finite. Hence, $a = 1$.'

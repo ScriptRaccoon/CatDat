@@ -26,7 +26,7 @@ satisfied_properties:
     reason: Take the singleton set with the unique ordering.
 
   - property_id: cogenerator
-    reason: The ordered set $\{0 < 1\}$ is a cogenerator, even for <a href="/category/Pos">the category of posets</a>, see there for a proof.
+    reason: The ordered set $\{0 < 1\}$ is a cogenerator, even for <a href="/category/Pos">$\Pos$</a>.
 
   - property_id: strict initial object
     reason: The empty ordered set is initial and is clearly strict.
@@ -91,7 +91,7 @@ special_morphisms:
     reason: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
   epimorphisms:
     description: surjective order-preserving maps
-    reason: 'The proof is similar to the one for $\Set$: If $f : X \to Y$ is an epimorphism of (finite) orders, in particular for all morphisms $g,h : Y \to \{0 < 1\}$ with $g \circ f = h \circ f$ we have $g = h$. This means for all upper sets $A,B \subseteq Y$ with $f^*(A) = f^*(B)$ we have $A = B$. If $y \in Y$, apply this to the intervals $A = Y_{\geq y}$ and $B = Y_{> y}$, which are different. Hence, there is some $x \in f^*(A) \setminus f^*(B)$, which means $f(x) \geq y$ but not $f(x) > y$, so that $f(x) = y$.'
+    reason: 'The proof is similar to the one for <a href="/category/Set">$\Set$</a>: If $f : X \to Y$ is an epimorphism of (finite) orders, in particular for all morphisms $g,h : Y \to \{0 < 1\}$ with $g \circ f = h \circ f$ we have $g = h$. This means for all upper sets $A,B \subseteq Y$ with $f^*(A) = f^*(B)$ we have $A = B$. If $y \in Y$, apply this to the intervals $A = Y_{\geq y}$ and $B = Y_{> y}$, which are different. Hence, there is some $x \in f^*(A) \setminus f^*(B)$, which means $f(x) \geq y$ but not $f(x) > y$, so that $f(x) = y$.'
   regular monomorphisms:
     description: same as monomorphisms
     reason: This is because the category is mono-regular.

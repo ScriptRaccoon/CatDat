@@ -29,7 +29,7 @@ satisfied_properties:
     check_redundancy: false
 
   - property_id: Malcev
-    reason: This follows in the same way as for groups, see also Example 2.2.5 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>.
+    reason: This follows in the same way as for <a href="/category/Grp">$\Grp$</a>, see also Example 2.2.5 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>.
 
   - property_id: coextensive
     reason: '[Sketch] A ring homomorphism $f : A \times B \to R$ yields the idempotent element $e := f(1,0) \in R$, so that $R \cong eR \times (1-e)R$. Then $f$ decomposes into the ring homomorphisms $f_A : A \to eR$, $f_A(a) := f(a,0)$ and $f_B : B \to (1-e)R$, $f_B(b) := f(0,b)$.'

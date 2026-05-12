@@ -73,7 +73,7 @@ unsatisfied_properties:
     reason: The canonical homomorphism $\coprod_{n \geq 0} \IZ \to \prod_{n \geq 0} \IZ$ is not surjective because its domain is countable and its codomain is uncountable. Hence it is no epimorphism.
 
   - property_id: cofiltered-limit-stable epimorphisms
-    reason: We already know that $\Ab$ does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the forgetful functor $\Ab \to \Grp$ which indeed preserves epimorphisms.
+    reason: We already know that <a href="/category/Ab">$\Ab$</a> does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the forgetful functor $\Ab \to \Grp$ which indeed preserves epimorphisms.
 
 special_objects:
   initial object:

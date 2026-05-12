@@ -29,13 +29,13 @@ satisfied_properties:
     reason: 'We prove that $\{0,1\}$ is a cogenerator: The surjective maps $X \to \{0,1\}$ correspond to the non-empty proper subsets of $X$. If $a,b \in X$ are elements that have the same image under each surjective map $X \to \{0,1\}$, it therefore means that they lie in the same non-empty proper subsets of $X$. This implies $a=b$: If $X = \{a\}$, this is trivial. Otherwise, use the subset $\{a\}$.'
 
   - property_id: wide pushouts
-    reason: 'We construct wide pushouts as in $\Set$ and observe that the universal property still holds when we restrict to surjective maps. If $f_i : S \to X_i$ are surjective maps and $P$ is their wide pushout, then each $X_i \to P$ is surjective, so that in particular $P$ is finite.'
+    reason: 'We construct wide pushouts as in <a href="/category/Set">$\Set$</a> and observe that the universal property still holds when we restrict to surjective maps. If $f_i : S \to X_i$ are surjective maps and $P$ is their wide pushout, then each $X_i \to P$ is surjective, so that in particular $P$ is finite.'
 
   - property_id: coequalizers
-    reason: We construct coequalizers as in $\FinSet$ (or $\Set$) and observe that the universal property still holds when we restrict to surjective maps.
+    reason: We construct coequalizers as in <a href="/category/FinSet">$\FinSet$</a> (or $\Set$) and observe that the universal property still holds when we restrict to surjective maps.
 
   - property_id: epi-regular
-    reason: 'If $f : X \to Y$ is a surjective map of finite sets, it is the coequalizer of the two projections $p_1, p_2 : X \times_Y X \rightrightarrows X$ in $\FinSet$, but also in $\FS$. Notice that $p_1,p_2$ are surjective. Even though $X \times_Y X$ is not a pullback in $\FS$, we can use this finite set here.'
+    reason: 'If $f : X \to Y$ is a surjective map of finite sets, it is the coequalizer of the two projections $p_1, p_2 : X \times_Y X \rightrightarrows X$ in <a href="/category/FinSet">$\FinSet$</a>, but also in $\FS$. Notice that $p_1,p_2$ are surjective. Even though $X \times_Y X$ is not a pullback in $\FS$, we can use this finite set here.'
 
   - property_id: multi-terminal object
     reason: The empty set and a singleton give a multi-terminal object.
@@ -60,7 +60,7 @@ unsatisfied_properties:
     reason: This is trivial.
 
   - property_id: core-thin
-    reason: Its core is the <a href="/category/B">category of finite sets and bijections</a>, which we know is not thin.
+    reason: Its core is <a href="/category/B">$\IB$</a>, which we know is not thin.
 
   - property_id: binary copowers
     reason: Assume that the copower $X := 2+2$ exists. Since we have a surjective map $2 \to X$, the set $X$ has at most $2$ elements. The codiagonal $X \to 2$ shows that $X$ has at least $2$ elements. Thus, $X \cong 2$. For all finite sets $Y$ we get a bijection $\Hom(2,Y) \cong \Hom(2,Y)^2$, in particular the cardinalities are the same. For $Y=2$ this gives the contradiction $2 = 4$.

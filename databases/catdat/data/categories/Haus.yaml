@@ -15,20 +15,20 @@ related_categories:
 
 satisfied_properties:
   - property_id: locally small
-    reason: It is a full subcategory of $\Top$, which is locally small.
+    reason: It is a full subcategory of <a href="/category/Top">$\Top$</a>, which is locally small.
 
   - property_id: equalizers
-    reason: This follows from the corresponding fact for $\Top$ since subspaces of Hausdorff spaces are again Hausdorff.
+    reason: This follows from the corresponding fact for <a href="/category/Top">$\Top$</a> since subspaces of Hausdorff spaces are again Hausdorff.
 
   - property_id: products
-    reason: This follows from the corresponding fact for $\Top$ since products of Hausdorff spaces are again Hausdorff.
+    reason: This follows from the corresponding fact for <a href="/category/Top">$\Top$</a> since products of Hausdorff spaces are again Hausdorff.
 
   - property_id: cocomplete
-    reason: This follows since $\Haus$ is a reflective subcategory of $\Top$, which is cocomplete. For the reflector, see e.g. the <a href="https://ncatlab.org/nlab/show/Hausdorff+space#HausdorffReflection" target="_blank">nLab</a>. Explicitly, we construct the colimit of Hausdorff spaces by applying the reflector to the colimit of the underlying topological spaces.
+    reason: This follows since $\Haus$ is a reflective subcategory of <a href="/category/Top">$\Top$</a>, which is cocomplete. For the reflector, see e.g. the <a href="https://ncatlab.org/nlab/show/Hausdorff+space#HausdorffReflection" target="_blank">nLab</a>. Explicitly, we construct the colimit of Hausdorff spaces by applying the reflector to the colimit of the underlying topological spaces.
     check_redundancy: false
 
   - property_id: infinitary extensive
-    reason: This follows exactly as for $\Top$ since Hausdorff spaces are closed under taking subspaces and coproducts in $\Top$.
+    reason: This follows exactly as for <a href="/category/Top">$\Top$</a> since Hausdorff spaces are closed under taking subspaces and coproducts in $\Top$.
 
   - property_id: well-powered
     reason: This is clear from the classification of monomorphisms as injective continuous maps.
@@ -62,7 +62,7 @@ unsatisfied_properties:
     reason: This is trivial.
 
   - property_id: Malcev
-    reason: This is clear since $\Set$ is not Malcev and can be interpreted as the subcategory of discrete spaces (which are Hausdorff).
+    reason: This is clear since <a href="/category/Set">$\Set$</a> is not Malcev and can be interpreted as the subcategory of discrete spaces (which are Hausdorff).
 
   - property_id: regular subobject classifier
     reason: Assume that there is a regular subobject classifier $\Omega$. By the classification of regular monomorphisms, we would have an isomorphism between $\Hom(X,\Omega)$ and the set of closed subsets of $X$ for any Hausdorff space $X$. If we take $X = 1$ we see that $\Omega$ has two points. Since $\Omega$ is Hausdorff, $\Omega \cong 1 + 1$ must be discrete. But then $\Hom(X,\Omega)$ is isomorphic to the set of all clopen subsets of $X$, of which there are usually far fewer than closed subsets (consider $X = [0,1]$).

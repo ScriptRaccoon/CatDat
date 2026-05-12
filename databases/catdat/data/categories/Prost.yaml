@@ -17,7 +17,7 @@ satisfied_properties:
     reason: There is a forgetful functor $\Pos \to \Set$ and $\Set$ is locally small.
 
   - property_id: locally finitely presentable
-    reason: The same proof as for $\Pos$ works, cf. <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>, Example 1.10.
+    reason: The same proof as for <a href="/category/Pos">$\Pos$</a> works, cf. <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>, Example 1.10.
 
   - property_id: generator
     reason: The singleton proset $1$ is a generator, since morphisms $1 \to P$ correspond to the elements of $P$.
@@ -29,7 +29,7 @@ satisfied_properties:
     reason: Endow the set $\{ 0,1 \}$ with the preorder $0 \leq 1$, $1 \leq 0$ (which is not a partial order). Then every map $P \to \{0,1\}$ is order-preserving. Now the claim follows since the set $\{ 0,1 \}$ is a cogenerator in $\Set$.
 
   - property_id: infinitary extensive
-    reason: '[Sketch] Since $\Set$ is infinitary extensive, a map $f : P \to \coprod_i Q_i$ corresponds to a decomposition $P = \coprod_i P_i$ (as sets) with maps $f_i : P_i \to Q_i$. Endow $P_i$ with the induced order. If $f$ is order-preserving, the elements in different $P_i$ cannot be comparable (since their $f$-images are not comparable), so that $P = \coprod_i P_i$ as prosets, and each $f_i$ is order-preserving.'
+    reason: '[Sketch] Since <a href="/category/Set">$\Set$</a> is infinitary extensive, a map $f : P \to \coprod_i Q_i$ corresponds to a decomposition $P = \coprod_i P_i$ (as sets) with maps $f_i : P_i \to Q_i$. Endow $P_i$ with the induced order. If $f$ is order-preserving, the elements in different $P_i$ cannot be comparable (since their $f$-images are not comparable), so that $P = \coprod_i P_i$ as prosets, and each $f_i$ is order-preserving.'
 
   - property_id: semi-strongly connected
     reason: Every non-empty proset is weakly terminal (by using constant maps).
@@ -57,7 +57,7 @@ unsatisfied_properties:
     reason: 'See <a href="https://mathoverflow.net/questions/509552">MO/509552</a>: Consider the forgetful functor $U : \Prost \to \Set$ and the relation $R \subseteq U^2$ defined by $R(A) := \{(a,b) \in U(A)^2 : a \leq b\}$. Both are representable: $U$ by the singleton preordered set and $R$ by $\{0 \leq 1 \}$. It is clear that $R$ is reflexive, but not symmetric.'
 
   - property_id: cofiltered-limit-stable epimorphisms
-    reason: We know that $\Set$ does not have this property. Now use the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> applied to the functor $\Set \to \Prost$ that equips a set with the chaotic preorder.
+    reason: We know that <a href="/category/Set">$\Set$</a> does not have this property. Now use the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> applied to the functor $\Set \to \Prost$ that equips a set with the chaotic preorder.
 
   - property_id: effective cocongruences
     reason: 'Consider the proset $E := \{ a, b \}$ with the chaotic preorder. This represents the functor which sends a proset to the pairs of elements $x,y$ with $x \le y$ and $y \le x$. Therefore, it defines a cocongruence $1 \rightrightarrows E$, where the maps are the two possible functions. However, this cannot be effective: for any map $h : Z \to 1$ which equalizes the two functions, $Z$ must be empty. But that means the cokernel pair of $h$ is the two-element proset with the trivial preorder.'
@@ -78,7 +78,7 @@ special_morphisms:
     reason: This is easy.
   monomorphisms:
     description: injective order-preserving functions
-    reason: The same proof as for $\Set$ can be used.
+    reason: The same proof as for <a href="/category/Set">$\Set$</a> can be used.
   epimorphisms:
     description: surjective order-preserving functions
     reason: Clearly, surjective maps are epimorphisms. The converse follows since, as mentioned, the forgetful functor $\Prost \to \Set$ has a right adjoint hence preserves epimorphisms.

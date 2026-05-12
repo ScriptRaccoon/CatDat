@@ -22,15 +22,15 @@ satisfied_properties:
     check_redundancy: false
 
   - property_id: complete
-    reason: This follows from $\Top_* \cong 1 / \Top$ and the fact that $\Top$ is complete. Concretely, the limit of pointed spaces $(X_i,x_i)$ is the limit of the underlying spaces $X_i$ equipped with the base point that projects down to each $x_i$.
+    reason: This follows from $\Top_* \cong 1 / \Top$ and the fact that <a href="/category/Top">$\Top$</a> is complete. Concretely, the limit of pointed spaces $(X_i,x_i)$ is the limit of the underlying spaces $X_i$ equipped with the base point that projects down to each $x_i$.
     check_redundancy: false
 
   - property_id: coequalizers
-    reason: This follows immediately from the fact that $\Top$ has coequalizers.
+    reason: This follows immediately from the fact that  <a href="/category/Top">$\Top$</a> has coequalizers.
     check_redundancy: false
 
   - property_id: coproducts
-    reason: This follows from $\Top_* \cong 1 / \Top$ and the fact that $\Top$ has wide pushouts.
+    reason: This follows from $\Top_* \cong 1 / \Top$ and the fact that  <a href="/category/Top">$\Top$</a> has wide pushouts.
     check_redundancy: false
 
   - property_id: well-powered
@@ -52,7 +52,7 @@ satisfied_properties:
     reason: Since embeddings are regular monomorphisms in this category (see below) and hence strong monomorphisms, it suffices to prove that the canonical morphism $X \vee Y \hookrightarrow X \times Y$ is an embedding. For a proof, see <a href="https://math.stackexchange.com/questions/4055988" target="_blank">MSE/4055988</a>.
 
   - property_id: CIP
-    reason: This follows since $\Set_*$ has this property and the forgetful functor preserves products and coproducts.
+    reason: This follows since <a href="/category/Set*">$\Set_*$</a> has this property and the forgetful functor preserves products and coproducts.
 
   - property_id: cocartesian cofiltered limits
     reason: >-
@@ -64,7 +64,7 @@ satisfied_properties:
     reason: This follows from <a href="/lemma/filtered-monos">this lemma</a> applied to the forgetful functor to $\Set$.
 
   - property_id: coregular
-    reason: Regular monomorphisms coincide with the embeddings (see below). Since $\Top$ is coregular, they are stable under pushouts, and pushouts in $\Top_*$ are the same.
+    reason: Regular monomorphisms coincide with the embeddings (see below). Since <a href="/category/Top">$\Top$</a> is coregular, they are stable under pushouts, and pushouts in $\Top_*$ are the same.
 
 unsatisfied_properties:
   - property_id: regular
@@ -83,7 +83,7 @@ unsatisfied_properties:
     reason: This is trivial.
 
   - property_id: co-Malcev
-    reason: 'We can adjust the proof for $\Top$ as follows: Consider the forgetful functor $U : \Top_* \to \Set$ and the relation $R \subseteq U^2$ defined by $R(X) := \{(x,y) \in U(X)^2 : x \in \overline{\{y\}} \}$. Both are representable: $U$ by the discrete space $\{0,1\}$ with base point $0$ and $R$ by the Sierpinski space with an isolated base point added. It is clear that $R$ is reflexive, but not symmetric.'
+    reason: 'We can adjust the proof for <a href="/category/Top">$\Top$</a> as follows: Consider the forgetful functor $U : \Top_* \to \Set$ and the relation $R \subseteq U^2$ defined by $R(X) := \{(x,y) \in U(X)^2 : x \in \overline{\{y\}} \}$. Both are representable: $U$ by the discrete space $\{0,1\}$ with base point $0$ and $R$ by the Sierpinski space with an isolated base point added. It is clear that $R$ is reflexive, but not symmetric.'
 
   - property_id: unital
     reason: 'The joint image of $X \to X \times Y \leftarrow Y$ is just $\{(x,0) : x \in X\} \cup \{(0,y) : y \in Y\}$ (where $0$ denotes the base point), which is clearly a proper subset of $X \times Y$ when both $X,Y$ are non-trivial.'
@@ -93,19 +93,19 @@ unsatisfied_properties:
     reason: 'The image of $X \vee Y$ in $X \times Y$ is just $\{(x,0) : x \in X\} \cup \{(0,y) : y \in Y\}$ (where $0$ denotes the base point), which is clearly a proper subset when both $X,Y$ are non-trivial.'
 
   - property_id: regular quotient object classifier
-    reason: We can recycle the proof for the <a href="/category/Set*">category of pointed sets</a> using discrete topological spaces.
+    reason: We can recycle the proof for <a href="/category/Set*">$\Set_*$</a> using discrete topological spaces.
 
   - property_id: coaccessible
-    reason: 'We can adjust the proof for $\Top$ as follows: Assume $\Top_*$ is coaccessible. Let $S_0=\{x,*\}$ be the pointed topological space such that $\{*\}$ is the only non-trivial open set, and let $S_1=\{x,*\}$ be the pointed space such that $\{x\}$ is the only non-trivial open set. Let $p_i\colon S_i \to \{x,*\}$ be the identity function to the two-element indiscrete pointed space. Then, a pointed topological space is discrete if and only if it is projective to the morphisms $p_0$ and $p_1$. This implies that the full subcategory spanned by all discrete pointed spaces, which is equivalent to $\Set_*$, is coaccessible by Prop. 4.7 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>. However, since $\Set_*$ is not coaccessible, this is a contradiction.'
+    reason: 'We can adjust the proof for <a href="/category/Top">$\Top$</a> as follows: Assume $\Top_*$ is coaccessible. Let $S_0=\{x,*\}$ be the pointed topological space such that $\{*\}$ is the only non-trivial open set, and let $S_1=\{x,*\}$ be the pointed space such that $\{x\}$ is the only non-trivial open set. Let $p_i\colon S_i \to \{x,*\}$ be the identity function to the two-element indiscrete pointed space. Then, a pointed topological space is discrete if and only if it is projective to the morphisms $p_0$ and $p_1$. This implies that the full subcategory spanned by all discrete pointed spaces, which is equivalent to $\Set_*$, is coaccessible by Prop. 4.7 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>. However, since <a href="/category/Set*">$\Set_*$</a> is not coaccessible, this is a contradiction.'
 
   - property_id: cofiltered-limit-stable epimorphisms
-    reason: We already know that $\Set_*$ does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the functor $\Set_* \to \Top_*$ that equips a pointed set with the indiscrete topology.
+    reason: We already know that <a href="/category/Set*">$\Set_*$</a> does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the functor $\Set_* \to \Top_*$ that equips a pointed set with the indiscrete topology.
 
   - property_id: effective congruences
-    reason: Suppose that $\Top_*$ had effective congruences. Then by <a href="/lemma/coslice-effective-congruences">this result</a>, $\Top$ would also have effective congruences, which we know is not the case (see <a href="/category/Top">here</a>).
+    reason: Suppose that $\Top_*$ had effective congruences. Then by <a href="/lemma/coslice-effective-congruences">this result</a>, <a href="/category/Top">$\Top$</a> would also have effective congruences, which we know is not the case.
 
   - property_id: effective cocongruences
-    reason: 'This counterexample is adapted from the <a href="/category/Top">counterexample for $\Top$</a>. Consider the pointed topological space $I := \{ *, a, b \}$ with topology $\{ \varnothing, \{ * \}, \{ a, b \}, \{ *, a, b \} \}$. This represents the functor which sends a pointed topological space $X$ to the pairs of indistinguishable points of $X$. Therefore, we get a cocongruence $\{ *, a \} \rightrightarrows I$ on the discrete space $\{ *, a \}$, where the maps are $*\mapsto *, a\mapsto a$ and $*\mapsto *, a\mapsto b$ respectively. However, this cannot be effective: if we have $h : Z \to \{ *, a \}$ which equalizes the cocongruence, then $h$ must be the constant function with value $*$. But that means the cokernel pair of $h$ is the discrete space on $\{ *, a, b \}$.'
+    reason: 'This counterexample is adapted from the counterexample for <a href="/category/Top">$\Top$</a>. Consider the pointed topological space $I := \{ *, a, b \}$ with topology $\{ \varnothing, \{ * \}, \{ a, b \}, \{ *, a, b \} \}$. This represents the functor which sends a pointed topological space $X$ to the pairs of indistinguishable points of $X$. Therefore, we get a cocongruence $\{ *, a \} \rightrightarrows I$ on the discrete space $\{ *, a \}$, where the maps are $*\mapsto *, a\mapsto a$ and $*\mapsto *, a\mapsto b$ respectively. However, this cannot be effective: if we have $h : Z \to \{ *, a \}$ which equalizes the cocongruence, then $h$ must be the constant function with value $*$. But that means the cokernel pair of $h$ is the discrete space on $\{ *, a, b \}$.'
 
 special_objects:
   initial object:

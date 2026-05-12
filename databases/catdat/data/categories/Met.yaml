@@ -34,10 +34,10 @@ satisfied_properties:
     check_redundancy: false
 
   - property_id: coequalizers
-    reason: This is because the <a href="/category/PMet">category of pseudo-metric spaces</a> has coequalizers and $\Met \hookrightarrow \PMet$ has a left adjoint, mapping a pseudo-metric space $X$ to $X /{\sim}$ where $x \sim y \iff d(x,y)=0$. Concretely, we take the coequalizer in the category of pseudo-metric spaces and then identify points with distance zero.
+    reason: This is because the category of pseudo-metric spaces <a href="/category/PMet">$\PMet$</a> has coequalizers and $\Met \hookrightarrow \PMet$ has a left adjoint, mapping a pseudo-metric space $X$ to $X /{\sim}$ where $x \sim y \iff d(x,y)=0$. Concretely, we take the coequalizer in the category of pseudo-metric spaces and then identify points with distance zero.
 
   - property_id: filtered colimits
-    reason: This is because the <a href="/category/PMet">category of pseudo-metric spaces</a> has filtered colimits and $\Met \hookrightarrow \PMet$ has a left adjoint, mapping a pseudo-metric space $X$ to $X /{\sim}$ where $x \sim y \iff d(x,y)=0$. Concretely, we take the filtered colimit in the category of pseudo-metric spaces and then identify points with distance zero.
+    reason: This is because the category of pseudo-metric spaces <a href="/category/PMet">$\PMet$</a> has filtered colimits and $\Met \hookrightarrow \PMet$ has a left adjoint, mapping a pseudo-metric space $X$ to $X /{\sim}$ where $x \sim y \iff d(x,y)=0$. Concretely, we take the filtered colimit in the category of pseudo-metric spaces and then identify points with distance zero.
     check_redundancy: false
 
   - property_id: cartesian filtered colimits
@@ -66,7 +66,7 @@ unsatisfied_properties:
     reason: 'Assume that the power $P = \IR^{\IN}$ exists, where $\IR$ has the usual metric. Since the forgetful functor $\Met \to \Set$ is representable, it preserves limits, powers in particular. Thus, we may assume that $P$ is the set of sequences of numbers and that the projections $p_n : P \to \IR$ are given by $p_n(x) = x_n$. Now consider the sequences $x = (n)_n$ and $y = (0)_n$. Since each $p_n$ is non-expansive, we get $d(x,y) \geq d(p_n(x),p_n(y)) = d(n,0) = n$. But then $d(x,y) = \infty$, a contradiction.'
 
   - property_id: binary copowers
-    reason: The coproduct of two non-empty metric spaces does not exist, see <a href="https://math.stackexchange.com/questions/1778408" target="_blank">MSE/1778408</a>. For example, the copower $\IR \sqcup \IR$ does not exist. We only get coproducts when allowing $\infty$ as a distance, as in $\Met_{\infty}$.
+    reason: The coproduct of two non-empty metric spaces does not exist, see <a href="https://math.stackexchange.com/questions/1778408" target="_blank">MSE/1778408</a>. For example, the copower $\IR \sqcup \IR$ does not exist. We only get coproducts when allowing $\infty$ as a distance, as in <a href="/category/Met_oo">$\Met_{\infty}$</a>.
 
   - property_id: strict terminal object
     reason: This is trivial.
@@ -81,7 +81,7 @@ unsatisfied_properties:
     reason: This is trivial.
 
   - property_id: filtered-colimit-stable monomorphisms
-    reason: 'The following example is taken from Remark 2.7 in <a href="https://arxiv.org/abs/2006.01399" target="_blank">Approximate injectivity and smallness in metric-enriched categories</a> by Adamek-Rosicky: For $n \geq 1$ let $X_n$ denote the metric space with underlying set $\{0,1\}$ in which $0,1$ have distance $1/n$. We have bijective non-expansive maps $X_n \to X_{n+1}$, $x \mapsto x$. The colimit of this sequence in $\PMet$ is $\{0,1\}$ where $0,1$ have distance $0$, so the colimit in $\Met$ collapses to $\{0\}$. Therefore, the colimit of the monomorphisms $X_0 \to X_n$, $x \mapsto x$ is the non-injective map $X_0 \to \{0\}$.'
+    reason: 'The following example is taken from Remark 2.7 in <a href="https://arxiv.org/abs/2006.01399" target="_blank">Approximate injectivity and smallness in metric-enriched categories</a> by Adamek-Rosicky: For $n \geq 1$ let $X_n$ denote the metric space with underlying set $\{0,1\}$ in which $0,1$ have distance $1/n$. We have bijective non-expansive maps $X_n \to X_{n+1}$, $x \mapsto x$. The colimit of this sequence in <a href="/category/PMet">$\PMet$</a> is $\{0,1\}$ where $0,1$ have distance $0$, so the colimit in $\Met$ collapses to $\{0\}$. Therefore, the colimit of the monomorphisms $X_0 \to X_n$, $x \mapsto x$ is the non-injective map $X_0 \to \{0\}$.'
 
   - property_id: skeletal
     reason: This is trivial.

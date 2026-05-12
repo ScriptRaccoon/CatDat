@@ -16,40 +16,40 @@ related_categories:
 
 satisfied_properties:
   - property_id: complete
-    reason: This follows immediately from the fact for $\Set$.
+    reason: This follows immediately from the fact for <a href="/category/Set">$\Set$</a>.
 
   - property_id: cocomplete
-    reason: This follows immediately from the fact for $\Set$.
+    reason: This follows immediately from the fact for <a href="/category/Set">$\Set$</a>.
     check_redundancy: false
 
   - property_id: infinitary extensive
-    reason: This follows immediately from the fact for $\Set$.
+    reason: This follows immediately from the fact for <a href="/category/Set">$\Set$</a>.
 
   - property_id: exact filtered colimits
-    reason: This follows immediately from the fact for $\Set$.
+    reason: This follows immediately from the fact for <a href="/category/Set">$\Set$</a>.
 
   - property_id: mono-regular
-    reason: This follows immediately from the fact for $\Set$.
+    reason: This follows immediately from the fact for <a href="/category/Set">$\Set$</a>.
     check_redundancy: false
 
   - property_id: epi-regular
-    reason: This follows immediately from the fact for $\Set$.
+    reason: This follows immediately from the fact for <a href="/category/Set">$\Set$</a>.
 
   - property_id: regular
-    reason: This follows immediately from the fact for $\Set$.
+    reason: This follows immediately from the fact for <a href="/category/Set">$\Set$</a>.
 
   - property_id: coregular
-    reason: This follows immediately from the fact for $\Set$.
+    reason: This follows immediately from the fact for <a href="/category/Set">$\Set$</a>.
+
+  - property_id: co-Malcev
+    reason: This follows immediately from the fact for <a href="/category/Set">$\Set$</a>.
+    check_redundancy: false
 
   - property_id: effective congruences
     reason: 'If we have a congruence $E \rightrightarrows X$ in $[\CRing, \Set]$, then evaluating at any commutative ring gives a congruence in $\Set$. Defining $Y$ pointwise to be the quotient of this congruence, we get a morphism of functors $h : X \to Y$, and by <a href="/lemma/effective-congruence-quotients">this result</a> applied pointwise, the kernel pair of $h$ is $E$.'
 
   - property_id: effective cocongruences
     reason: 'If we have a cocongruence $X\rightrightarrows E$ in $[\CRing, \Set]$, then evaluating at any commutative gives a cocongruence in $\Set$. Defining $Y$ pointwise to be the equalizer of the pair, we get a morphism of functors $h : Y \to X$, and by the dual of <a href="/lemma/effective-congruence-quotients">this result</a> applied pointwise, the cokernel pair of $h$ is $E$.'
-    check_redundancy: false
-
-  - property_id: co-Malcev
-    reason: This is true because <a href="/category/Set">the category of sets</a> is co-Malcev.
     check_redundancy: false
 
 unsatisfied_properties:
@@ -60,19 +60,19 @@ unsatisfied_properties:
     reason: This is trivial.
 
   - property_id: Malcev
-    reason: Any counterexample for $\Set$ (i.e., any non-symmetric reflexive relation) yields one for this category by taking constant functors.
+    reason: Any counterexample for <a href="/category/Set">$\Set$</a> (i.e., any non-symmetric reflexive relation) yields one for this category by taking constant functors.
 
   - property_id: semi-strongly connected
-    reason: This is because already the full subcategory of representable functors is not semi-strongly connected, see <a href="/category/CRing">the entry for $\CRing$</a>. Specifically, there is no morphism between $\Hom(\IF_2,-)$ and $\Hom(\IF_3,-)$.
+    reason: This is because already the full subcategory of representable functors is not semi-strongly connected, because <a href="/category/CRing">$\CRing$</a> is not semi-strongly connected. Specifically, there is no morphism between $\Hom(\IF_2,-)$ and $\Hom(\IF_3,-)$.
 
   - property_id: cartesian closed
-    reason: 'There are functors $F,G : \CRing \to \Set$ such that $\Hom(F,G)$ is not essentially small, see <a href="https://mathoverflow.net/questions/390611" target="_blank">MO/390611</a> for example. Now if the exponential $[F,G] : \CRing \to \Set$ exists, we get $[F,G](\IZ) \cong \Hom(\Hom(\IZ,-),[F,G])$ by Yoneda, which simplifies to $\Hom(1,[F,G]) \cong \Hom(1 \times F,G) \cong \Hom(F,G)$, a contradiction.'
+    reason: 'There are functors $F,G : \CRing \rightrightarrows \Set$ such that $\Hom(F,G)$ is not essentially small, see <a href="https://mathoverflow.net/questions/390611" target="_blank">MO/390611</a> for example. Now if the exponential $[F,G] : \CRing \to \Set$ exists, we get $[F,G](\IZ) \cong \Hom(\Hom(\IZ,-),[F,G])$ by Yoneda, which simplifies to $\Hom(1,[F,G]) \cong \Hom(1 \times F,G) \cong \Hom(F,G)$, a contradiction.'
 
   - property_id: well-powered
     reason: 'Consider the functor $F$ from <a href="https://mathoverflow.net/questions/390611" target="_blank">MO/390611</a> for example. The collection of subobjects of $F$ is not isomorphic to a set: for each infinite cardinal $\kappa$, simply cut off the construction of $F$ at $\kappa$. This yields a different subobject for each $\kappa$.'
 
   - property_id: cofiltered-limit-stable epimorphisms
-    reason: We already know that $\Set$ does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the functor $\Set \to [\CRing, \Set]$ that maps a set to its constant functor.
+    reason: We already know that <a href="/category/Set">$\Set$</a> does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the functor $\Set \to [\CRing, \Set]$ that maps a set to its constant functor.
 
 special_objects:
   initial object:

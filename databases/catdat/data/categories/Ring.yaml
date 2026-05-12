@@ -15,7 +15,7 @@ related_categories:
   - Rng
 
 comments:
-  - It is likely that the epimorphisms can be described as in the <a href="/category/CRing">commutative case</a>.
+  - It is likely that the epimorphisms can be described as for <a href="/category/CRing">$\CRing$</a>.
 
 satisfied_properties:
   - property_id: locally small
@@ -28,7 +28,7 @@ satisfied_properties:
     reason: 'If $f : 0 \to R$ is a homomorphism, then $R$ satisfies $1=f(1)=f(0)=0$, so that $R=0$.'
 
   - property_id: Malcev
-    reason: This follows in the same way as for groups, see also Example 2.2.5 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>.
+    reason: This follows in the same way as for <a href="/category/Grp">$\Grp$</a>, see also Example 2.2.5 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>.
 
   - property_id: disjoint finite products
     reason: 'To show that $A \sqcup_{A \times B} B$ is trivial, let $R$ be a ring which admits homomorphisms $f : A \to R$, $g : B \to R$ with $f(p_1(a,b))=g(p_2(a,b))$ for all $(a,b) \in A \times B$, i.e. $f(a)=g(b)$. Applying this to $a=0$, $b=1$ yields $1=0$ in $R$.'
@@ -47,7 +47,7 @@ unsatisfied_properties:
     reason: 'If $\sqcup$ denotes the coproduct of rings (see <a href="https://math.stackexchange.com/questions/625874" target="_blank">MSE/625874</a> for their description) and $R$ is a ring, the canonical morphism $R \sqcup \IZ^2 \to (R \sqcup \IZ)^2 = R^2$ is usually no isomorphism. For example, for $R = \IZ[X]$ the coproduct on the LHS is not commutative, it has the ring presentation $\langle X,E : E^2=E \rangle$.'
 
   - property_id: semi-strongly connected
-    reason: There is no homomorphism between $\IF_2$ and $\IF_3$.
+    reason: This is because already the full subcategory <a href="/category/CRing">$\CRing$</a> does not have this property.
 
   - property_id: co-Malcev
     reason: 'See <a href="https://mathoverflow.net/questions/509552">MO/509552</a>: Consider the forgetful functor $U : \Ring \to \Set$ and the relation $R \subseteq U^2$ defined by $R(A) := \{(a,b) \in U(A)^2 : ab = a^2\}$. Both are representable: $U$ by $\IZ[X]$ and $S$ by $\IZ \langle X,Y \rangle / \langle XY-X^2 \rangle$. It is clear that $R$ is reflexive, but not symmetric.'
@@ -56,7 +56,7 @@ unsatisfied_properties:
     reason: 'Let $B := M_2(\IQ)$ and $A := \IQ^2$. Then $A \to B$, $(x,y) \mapsto \diag(x,y)$ is a regular monomorphism: A direct calculation shows that a matrix is diagonal iff it commutes with $M := \bigl(\begin{smallmatrix} 1 & 0 \\ 0 & 2 \end{smallmatrix}\bigr)$, so that $A \to B$ is the equalizer of the identity $B \to B$ and the conjugation $B \to B$, $X \mapsto M X M^{-1}$. Consider the homomorphism $A \to K$, $(a,b) \mapsto a$. We claim that $K \to K \sqcup_A B$ is not a monomorphism, because in fact, the pushout $K \sqcup_A B$ is zero: Since $A \to K$ is surjective with kernel $0 \times K$, the pushout is $B/\langle 0 \times K \rangle$, which is $0$ because $B$ is simple (<a href="https://math.stackexchange.com/questions/22629" target="_blank">proof</a>) or via a direct calculation with elementary matrices.'
 
   - property_id: regular quotient object classifier
-    reason: We may copy the proof for the <a href="/category/CRing">category of commutative rings</a> (since the proof there did not use that $P$ is commutative). Alternatively, any regular quotient object classifier in $\Ring$ would produce one in $\CRing$ by <a href="/lemma/subobject_classifiers_coreflection">this lemma</a> (dualized).
+    reason: We may copy the proof for <a href="/category/CRing">$\CRing$</a> (since the proof there did not use that $P$ is commutative). Alternatively, any regular quotient object classifier in $\Ring$ would produce one in $\CRing$ by <a href="/lemma/subobject_classifiers_coreflection">this lemma</a> (dualized).
 
   - property_id: cocartesian cofiltered limits
     reason: >-
@@ -65,7 +65,7 @@ unsatisfied_properties:
       Because of $w_n \equiv w_{n-1} \bmod Y^n$ these form an element $w \in \lim_n (A \sqcup B_n)$. Expanding $w_n$, the longest term is $XY XY^2 \cdots X Y^n$ of "free product" length $2n$, which is unbounded.
 
   - property_id: cofiltered-limit-stable epimorphisms
-    reason: We know that $\CRing$ does not have this property. Now use the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> applied to the forgetful functor $\CRing \to \Ring$. It preserves epimorphisms by <a href="https://math.stackexchange.com/questions/5133488" target="_blank">MSE/5133488</a>.
+    reason: We know that <a href="/category/CRing">$\CRing$</a> does not have this property. Now use the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> applied to the forgetful functor $\CRing \to \Ring$. It preserves epimorphisms by <a href="https://math.stackexchange.com/questions/5133488" target="_blank">MSE/5133488</a>.
 
   - property_id: effective cocongruences
     reason: See <a href="https://mathoverflow.net/a/510809" target="_blank">MO/510744</a>.

@@ -3,7 +3,7 @@ name: category of M-sets
 notation: $M{-}\Set$
 objects: sets with a left action of a monoid $M$
 morphisms: maps that are compatible with the $M$-action, meaning $f(m \cdot x)=m \cdot f(x)$, also called $M$-maps
-description: Here, $M$ can be any monoid. But the most important special case is that of a group. To settle (future) non-properties, we assume that $M$ is non-trivial, since otherwise we just get the <a href="/category/Set">category of sets</a>.
+description: Here, $M$ can be any monoid. But the most important special case is that of a group. To settle (future) non-properties, we assume that $M$ is non-trivial, since otherwise we just get the category <a href="/category/Set">$\Set$</a>.
 nlab_link: https://ncatlab.org/nlab/show/MSet
 
 tags:

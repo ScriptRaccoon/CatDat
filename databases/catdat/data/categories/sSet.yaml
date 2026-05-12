@@ -1,7 +1,7 @@
 id: sSet
 name: category of simplicial sets
 notation: $\sSet$
-objects: simplicial sets, i.e. functors $\Delta^{\op} \to \Set$ where $\Delta$ is the <a href="/category/Delta">simplex category</a>
+objects: simplicial sets, i.e. functors $\Delta^{\op} \to \Set$ where <a href="/category/Delta">$\Delta$</a> denotes the simplex category.
 morphisms: natural transformations
 description: null
 nlab_link: https://ncatlab.org/nlab/show/SimpSet

@@ -23,13 +23,13 @@ satisfied_properties:
     reason: The underlying set of a finite structure can be chosen to be a subset of $\IN$.
 
   - property_id: abelian
-    reason: This follows from the fact for abelian groups.
+    reason: This follows from the fact for <a href="/category/Ab">$\Ab$</a>.
 
   - property_id: self-dual
     reason: 'This is a simple special case of Pontryagin duality: The functor $\Hom(-,\IQ/\IZ)$ provides the equivalence.'
 
   - property_id: ℵ₁-accessible
-    reason: The proof works exactly as for the <a href="/category/FinSet">category of finite sets</a>.
+    reason: The proof works exactly as for <a href="/category/FinSet">$\FinSet$</a>.
 
 unsatisfied_properties:
   - property_id: small

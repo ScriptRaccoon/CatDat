@@ -35,7 +35,7 @@ satisfied_properties:
     reason: We have $0 \times x = 0$ for all $x$, $x \times x = x$, and $1 \times 2 = 0$.
 
   - property_id: locally cartesian closed
-    reason: The slice category over $0$ is the <a href="/category/1">trivial category</a>, and the slice category over $1$ is the <a href="/category/walking_morphism">interval category</a>, which is cartesian closed (see there). The same holds for $2$ by symmetry.
+    reason: The slice category over $0$ is the <a href="/category/1">trivial category</a>, and the slice category over $1$ is the <a href="/category/walking_morphism">walking morphism</a>, which is cartesian closed. The same holds for $2$ by symmetry.
 
   - property_id: multi-algebraic
     reason: We first remark that for a set $X$, the identity span $(\id,\id)\colon X \leftarrow X \rightarrow X$ exhibits a product if and only if $X$ is either a singleton or the empty set. Therefore, there is a (finite product, coproduct)-sketch whose $\Set$-model is precisely a pair $(X,Y)$ of sets such that each of $X$ and $Y$ is either a singleton or the empty set and the product $X \times Y$ is the empty set. Any $\Set$-model of such a sketch is isomorphic to either $(\varnothing, \varnothing)$, $(\varnothing, 1)$, or $(1, \varnothing)$; hence the category of models is equivalent to the walking span.
