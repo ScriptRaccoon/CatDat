@@ -39,7 +39,12 @@ function contradiction_worker(
 		}
 	}
 
-	let contradiction: string[] = []
+	let contradictory_property: string | null = null
+
+	const used_implications: {
+		implication: NormalizedCategoryImplication
+		relevant: boolean
+	}[] = []
 
 	const deduced_satisfied_properties = new Set(satisfied_properties)
 
@@ -57,19 +62,47 @@ function contradiction_worker(
 		const implication = get_next_implication()
 		if (!implication) break
 
-		let segment = `${[...implication.assumptions].join(' ∧ ')} ⟹ ${implication.conclusion}`
+		used_implications.push({ implication, relevant: false })
+		deduced_satisfied_properties.add(implication.conclusion)
 
 		if (unsatisfied_properties.has(implication.conclusion)) {
-			segment += ` ↯`
-			contradiction.push(segment)
-			return contradiction
+			contradictory_property = implication.conclusion
+			break
 		}
-
-		contradiction.push(segment)
-		deduced_satisfied_properties.add(implication.conclusion)
 	}
 
-	return null
+	if (!contradictory_property) return null
+
+	// remove irrelevant implications
+
+	const relevant_properties = new Set([contradictory_property])
+
+	for (let i = used_implications.length - 1; i >= 0; i--) {
+		const { implication } = used_implications[i]
+		const is_relevant = relevant_properties.has(implication.conclusion)
+
+		if (is_relevant) {
+			used_implications[i].relevant = is_relevant
+			for (const p of implication.assumptions) {
+				if (!satisfied_properties.has(p)) relevant_properties.add(p)
+			}
+		}
+	}
+
+	const relevant_implications = used_implications
+		.filter((item) => item.relevant)
+		.map((item) => item.implication)
+
+	const contradiction: string[] = []
+
+	for (let i = 0; i < relevant_implications.length; i++) {
+		const implication = relevant_implications[i]
+		let segment = `${[...implication.assumptions].join(' ∧ ')} ⟹ ${implication.conclusion}`
+		if (i === relevant_implications.length - 1) segment += ` ↯`
+		contradiction.push(segment)
+	}
+
+	return contradiction
 }
 
 function get_normalized_category_implications() {
