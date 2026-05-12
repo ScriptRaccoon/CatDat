@@ -69,13 +69,23 @@ function contradiction_worker(
 
 	if (!contradictory_property) return null
 
-	// build minimal contradiction proof
+	return build_shortest_proof(
+		satisfied_properties,
+		deduction_dict,
+		contradictory_property,
+	)
+}
 
-	const contradiction: string[] = []
+function build_shortest_proof(
+	satisfied_properties: Set<string>,
+	deduction_dict: Record<string, NormalizedCategoryImplication>,
+	target_property: string,
+) {
+	const proof: string[] = []
 
 	const visited_properties = new Set<string>()
 
-	function build_proof(property: string) {
+	function derive(property: string) {
 		if (visited_properties.has(property)) return
 		if (satisfied_properties.has(property)) return
 		visited_properties.add(property)
@@ -83,14 +93,14 @@ function contradiction_worker(
 		const implication = deduction_dict[property]
 		if (!implication) throw new Error(`Missing deduction for property: ${property}`)
 
-		for (const p of implication.assumptions) build_proof(p)
+		for (const p of implication.assumptions) derive(p)
 
-		contradiction.push(stringify_implication(implication))
+		proof.push(stringify_implication(implication))
 	}
 
-	build_proof(contradictory_property)
+	derive(target_property)
 
-	return contradiction
+	return proof
 }
 
 function get_normalized_category_implications() {
