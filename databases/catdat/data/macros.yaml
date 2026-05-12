@@ -51,6 +51,7 @@
 \supp: \operatorname{supp}
 \Coexp: \operatorname{Coexp}
 \inc: \operatorname{inc}
+\eq: \operatorname{eq}
 
 # categories
 \Set: \mathbf{Set}

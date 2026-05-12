@@ -10,8 +10,9 @@ tags:
   - algebra
 
 related_categories:
-  - Ab
   - FinGrp
+  - Grp_c
+  - Ab
   - Mon
   - SemiGrp
 

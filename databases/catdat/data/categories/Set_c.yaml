@@ -12,6 +12,7 @@ tags:
 related_categories:
   - FinSet
   - Set
+  - Grp_c
 
 satisfied_properties:
   - property_id: locally small

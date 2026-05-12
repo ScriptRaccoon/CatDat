@@ -12,6 +12,7 @@ tags:
 related_categories:
   - FinAb
   - Grp
+  - Grp_c
 
 satisfied_properties:
   - property_id: locally small
@@ -47,7 +48,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property_id: normal
-    reason: Every non-normal subgroup of a finite group provides a counterexample.
+    reason: Every non-normal subgroup of a finite group (such as $C_2 \hookrightarrow S_3$) provides a counterexample.
 
   - property_id: cogenerator
     reason: 'We apply <a href="/lemma/missing_cogenerator">this lemma</a> to the collection of finite simple groups: Any non-trivial homomorphism from a finite simple group to a finite group must be injective, and for every $n \in \IN$ there is a finite simple group of size $\geq n$ (for example, the alternating group on $n+5$ elements).'
