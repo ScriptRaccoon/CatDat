@@ -122,7 +122,7 @@ When contributing new data (categories, functors, properties, implications), ple
 
 - **Special Objects and Morphisms**: For each new category, try to specify its special objects (terminal object, initial object, etc.) in the corresponding table. Also try to specify its special morphisms (isomorphisms, monomorphisms, epimorphisms).
 
-- **Proofs for New Properties**: For every new property, for each existing category or functor, try to find a proof for whether it has this property or not, in case this has not already been deduced automatically via some implication. Use the property detail page to check unknown categories. As mentioned in the section on tests, for a list of selected categories it is actually mandatory to decide their properties.
+- **Proofs for New Properties**: For every new property, for each existing category or functor, try to find a proof for whether it has this property or not, in case this has not already been deduced automatically via some implication. Use the property detail page to check unknown categories. These proofs may also refer to other categories, in which case you may add links to their corresponding pages. As mentioned in the section on tests, for a list of selected categories it is actually mandatory to decide their properties.
 
 - **Counterexamples**: Ensure that at least one category does not satisfy any new property of categories that is added. If no existing category fits, add a new category that does not have the new property. The same remarks apply to properties of functors.
 
