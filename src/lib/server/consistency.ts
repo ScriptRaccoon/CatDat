@@ -13,13 +13,12 @@ type NormalizedCategoryImplication = {
 export function check_consistency(
 	satisfied_properties: Set<string>,
 	unsatisfied_properties: Set<string>,
-): { consistent: boolean } | null {
+): { consistent: boolean } {
 	for (const p of satisfied_properties) {
 		if (unsatisfied_properties.has(p)) return { consistent: false }
 	}
 
 	const implications = get_normalized_category_implications()
-	if (!implications) return null
 
 	return check_consistency_worker(
 		satisfied_properties,
@@ -63,9 +62,7 @@ function check_consistency_worker(
 	return { consistent: true }
 }
 
-export function get_normalized_category_implications():
-	| NormalizedCategoryImplication[]
-	| null {
+function get_normalized_category_implications() {
 	const { rows, err } = query<{
 		id: string
 		assumptions: string
@@ -75,7 +72,7 @@ export function get_normalized_category_implications():
 		sql`SELECT id, assumptions, conclusions, is_equivalence FROM category_implications_view`,
 	)
 
-	if (err) return null
+	if (err) throw err
 
 	const implications: NormalizedCategoryImplication[] = []
 
@@ -107,14 +104,13 @@ export function get_normalized_category_implications():
 
 export function get_missing_combinations() {
 	const implications = get_normalized_category_implications()
-	if (!implications) return null
 
 	const { rows: properties, err } = query<{
 		id: string
 		dual_property_id: string | null
 	}>(sql`SELECT id, dual_property_id FROM category_properties ORDER BY lower(id)`)
 
-	if (err) return null
+	if (err) throw err
 
 	const { rows: existing, err: err_existing } = query<{
 		p: string
@@ -127,7 +123,7 @@ export function get_missing_combinations() {
 		WHERE cp.is_satisfied = TRUE AND cnp.is_satisfied = FALSE
 	`)
 
-	if (err_existing) return null
+	if (err_existing) throw err_existing
 
 	const witnessed_pairs = new Set(existing.map(({ p, q }) => `${p}|${q}`))
 

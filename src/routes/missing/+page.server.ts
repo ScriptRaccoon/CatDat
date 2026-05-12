@@ -87,18 +87,18 @@ export const load = async () => {
 		0,
 	)
 
-	const missing_combinations = get_missing_combinations()
+	try {
+		const missing_combinations = get_missing_combinations()
 
-	if (!missing_combinations) {
+		return {
+			categories_with_unknown_properties,
+			total_unknown_pairs,
+			categories_with_missing_morphisms,
+			undistinguishable_category_pairs,
+			functors_with_unknown_properties,
+			missing_combinations,
+		}
+	} catch (err) {
 		error(500, 'Failed to load missing combinations')
-	}
-
-	return {
-		categories_with_unknown_properties,
-		total_unknown_pairs,
-		categories_with_missing_morphisms,
-		undistinguishable_category_pairs,
-		functors_with_unknown_properties,
-		missing_combinations,
 	}
 }

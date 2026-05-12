@@ -71,29 +71,31 @@ export function search_handler(event: RequestEvent, type: 'category' | 'functor'
 
 	// TODO: implement this for functors as well
 	if (type === 'category') {
-		const check = check_consistency(
-			new Set(satisfied_properties),
-			new Set(unsatisfied_properties),
-		)
+		try {
+			const { consistent } = check_consistency(
+				new Set(satisfied_properties),
+				new Set(unsatisfied_properties),
+			)
 
-		if (!check) error(500, 'Consistency check failed')
+			if (!consistent) {
+				event.setHeaders({
+					// shared cache for 30min
+					'cache-control': 'public, max-age=0, s-maxage=1800',
+				})
 
-		if (!check.consistent) {
-			event.setHeaders({
-				// shared cache for 30min
-				'cache-control': 'public, max-age=0, s-maxage=1800',
-			})
-
-			return {
-				is_consistent: false,
-				all_properties,
-				satisfied_properties,
-				unsatisfied_properties,
-				found_objects: [],
-				dual_satisfied_properties,
-				dual_unsatisfied_properties,
-				dual_search_available,
+				return {
+					is_consistent: false,
+					all_properties,
+					satisfied_properties,
+					unsatisfied_properties,
+					found_objects: [],
+					dual_satisfied_properties,
+					dual_unsatisfied_properties,
+					dual_search_available,
+				}
 			}
+		} catch (err) {
+			error(500, 'Consistency check failed')
 		}
 	}
 
