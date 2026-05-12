@@ -15,8 +15,7 @@ export function get_contradiction(
 	unsatisfied_properties: Set<string>,
 ): string[] | null {
 	for (const p of satisfied_properties) {
-		if (unsatisfied_properties.has(p))
-			return [`${p} cannot be both satisfied and unsatisfied`]
+		if (unsatisfied_properties.has(p)) return [`${p} ⟹ ${p}`]
 	}
 
 	const implications = get_normalized_category_implications()
@@ -34,73 +33,62 @@ function contradiction_worker(
 	implications: NormalizedCategoryImplication[],
 ): string[] | null {
 	for (const p of satisfied_properties) {
-		if (unsatisfied_properties.has(p)) {
-			return [`${p} cannot be both satisfied and unsatisfied`]
-		}
+		if (unsatisfied_properties.has(p)) return [`${p} ⟹ ${p}`]
 	}
+
+	const deduction_dict: Record<string, NormalizedCategoryImplication> = {}
+	const deduced_satisfied_properties = new Set(satisfied_properties)
+
+	// bfs to find contradiction
 
 	let contradictory_property: string | null = null
 
-	const used_implications: {
-		implication: NormalizedCategoryImplication
-		relevant: boolean
-	}[] = []
+	while (!contradictory_property) {
+		const new_properties = new Set<string>()
 
-	const deduced_satisfied_properties = new Set(satisfied_properties)
-
-	function get_next_implication() {
 		for (const implication of implications) {
 			const is_valid =
 				is_subset(implication.assumptions, deduced_satisfied_properties) &&
-				!deduced_satisfied_properties.has(implication.conclusion)
-			if (is_valid) return implication
+				!deduced_satisfied_properties.has(implication.conclusion) &&
+				!new_properties.has(implication.conclusion)
+			if (!is_valid) continue
+
+			new_properties.add(implication.conclusion)
+			deduction_dict[implication.conclusion] = implication
+
+			if (unsatisfied_properties.has(implication.conclusion)) {
+				contradictory_property = implication.conclusion
+				break
+			}
 		}
-		return null
-	}
 
-	while (true) {
-		const implication = get_next_implication()
-		if (!implication) break
+		if (!new_properties.size) break
 
-		used_implications.push({ implication, relevant: false })
-		deduced_satisfied_properties.add(implication.conclusion)
-
-		if (unsatisfied_properties.has(implication.conclusion)) {
-			contradictory_property = implication.conclusion
-			break
-		}
+		for (const p of new_properties) deduced_satisfied_properties.add(p)
 	}
 
 	if (!contradictory_property) return null
 
-	// remove irrelevant implications
-
-	const relevant_properties = new Set([contradictory_property])
-
-	for (let i = used_implications.length - 1; i >= 0; i--) {
-		const { implication } = used_implications[i]
-		const is_relevant = relevant_properties.has(implication.conclusion)
-
-		if (is_relevant) {
-			used_implications[i].relevant = is_relevant
-			for (const p of implication.assumptions) {
-				if (!satisfied_properties.has(p)) relevant_properties.add(p)
-			}
-		}
-	}
-
-	const relevant_implications = used_implications
-		.filter((item) => item.relevant)
-		.map((item) => item.implication)
+	// build minimal contradiction proof
 
 	const contradiction: string[] = []
 
-	for (let i = 0; i < relevant_implications.length; i++) {
-		const implication = relevant_implications[i]
-		let segment = `${[...implication.assumptions].join(' ∧ ')} ⟹ ${implication.conclusion}`
-		if (i === relevant_implications.length - 1) segment += ` ↯`
-		contradiction.push(segment)
+	const visited_properties = new Set<string>()
+
+	function build_proof(property: string) {
+		if (visited_properties.has(property)) return
+		if (satisfied_properties.has(property)) return
+		visited_properties.add(property)
+
+		const implication = deduction_dict[property]
+		if (!implication) throw new Error(`Missing deduction for property: ${property}`)
+
+		for (const p of implication.assumptions) build_proof(p)
+
+		contradiction.push(stringify_implication(implication))
 	}
+
+	build_proof(contradictory_property)
 
 	return contradiction
 }
@@ -143,6 +131,10 @@ function get_normalized_category_implications() {
 	}
 
 	return implications
+}
+
+function stringify_implication(implication: NormalizedCategoryImplication) {
+	return `${[...implication.assumptions].join(' ∧ ')} ⟹ ${implication.conclusion}`
 }
 
 export function get_missing_combinations() {
