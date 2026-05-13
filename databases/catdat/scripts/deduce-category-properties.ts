@@ -1,11 +1,10 @@
 import { SqliteError, type Database } from 'better-sqlite3'
-import { get_assumption_string, get_conclusion_string } from './shared'
+import { get_assumption_string, get_conclusion_string, is_subset } from './shared'
 import {
 	CategoryMeta,
 	CategoryPropertyMeta,
 	get_all_decided_properties,
 	get_categories,
-	get_next_implication,
 	get_next_implication_for_contradiction,
 	get_normalized_category_implications,
 	get_properties_dict,
@@ -114,19 +113,31 @@ function deduce_satisfied_category_properties(
 	const reasons: Record<string, string> = {}
 
 	while (true) {
-		const implication = get_next_implication(implications, satisfied_properties)
-		if (!implication) break
+		const newly_found = new Set<string>()
 
-		satisfied_properties.add(implication.conclusion)
-		found.add(implication.conclusion)
+		for (const implication of implications) {
+			const is_valid =
+				is_subset(implication.assumptions, satisfied_properties) &&
+				!satisfied_properties.has(implication.conclusion) &&
+				!newly_found.has(implication.conclusion)
 
-		const assumption_string = get_assumption_string(implication, properties_dict)
-		const conclusion_string = get_conclusion_string(implication, properties_dict)
+			if (!is_valid) continue
 
-		const ref = `by <a href="/category-implication/${implication.id}">this result</a>`
-		const reason = `Since it ${assumption_string}, it ${conclusion_string} (${ref}).`
+			newly_found.add(implication.conclusion)
+			found.add(implication.conclusion)
 
-		reasons[implication.conclusion] = reason
+			const assumption_string = get_assumption_string(implication, properties_dict)
+			const conclusion_string = get_conclusion_string(implication, properties_dict)
+
+			const ref = `by <a href="/category-implication/${implication.id}">this result</a>`
+			const reason = `Since it ${assumption_string}, it ${conclusion_string} (${ref}).`
+
+			reasons[implication.conclusion] = reason
+		}
+
+		for (const p of newly_found) satisfied_properties.add(p)
+
+		if (!newly_found.size) break
 	}
 
 	if (found.size > 0) {
