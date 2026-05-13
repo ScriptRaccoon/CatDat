@@ -1,6 +1,7 @@
-import { type Database } from 'better-sqlite3'
-import { is_subset } from './shared'
+import { get_client, is_subset } from './shared'
 import { get_assumption_string, get_conclusion_string } from './deduction.utils'
+
+const db = get_client()
 
 type FunctorMeta = {
 	id: string
@@ -36,29 +37,19 @@ type FunctorPropertyMeta = {
  * Deduce properties of functors from given ones
  * by using the list of functor implications.
  */
-export function deduce_functor_properties(db: Database) {
+export function deduce_functor_properties() {
 	console.info('\n--- Deduce functor properties ---')
 
-	const implications = get_normalized_functor_implications(db)
-	const functors = get_functors(db)
-	const properties_dict = get_functor_properties_dict(db)
+	const implications = get_normalized_functor_implications()
+	const functors = get_functors()
+	const properties_dict = get_functor_properties_dict()
 
 	const deduction = db.transaction(() => {
-		delete_deduced_functor_properties(db)
+		delete_deduced_functor_properties()
 
 		for (const functor of functors) {
-			deduce_satisfied_functor_properties(
-				db,
-				functor,
-				implications,
-				properties_dict,
-			)
-			deduce_unsatisfied_functor_properties(
-				db,
-				functor,
-				implications,
-				properties_dict,
-			)
+			deduce_satisfied_functor_properties(functor, implications, properties_dict)
+			deduce_unsatisfied_functor_properties(functor, implications, properties_dict)
 		}
 	})
 
@@ -79,9 +70,7 @@ export function deduce_functor_properties(db: Database) {
  *
  * P_1 + ... + P_n ----> Q
  */
-function get_normalized_functor_implications(
-	db: Database,
-): NormalizedFunctorImplication[] {
+function get_normalized_functor_implications(): NormalizedFunctorImplication[] {
 	const all_implications_db = db
 		.prepare(
 			`SELECT
@@ -140,7 +129,7 @@ function get_normalized_functor_implications(
  * Returns the list of functors saved in the database along with
  * the satisfied properties of their source and target category.
  */
-function get_functors(db: Database) {
+function get_functors() {
 	const rows = db
 		.prepare(
 			`SELECT
@@ -184,7 +173,7 @@ function get_functors(db: Database) {
 /**
  * Returns a dictionary of functor properties saved in the database.
  */
-function get_functor_properties_dict(db: Database) {
+function get_functor_properties_dict() {
 	const properties = db
 		.prepare(
 			`SELECT
@@ -207,7 +196,7 @@ function get_functor_properties_dict(db: Database) {
  * Clears all the deduced functor properties.
  * This runs before the deduction starts.
  */
-function delete_deduced_functor_properties(db: Database) {
+function delete_deduced_functor_properties() {
 	db.prepare('DELETE FROM functor_property_assignments WHERE is_deduced = TRUE').run()
 }
 
@@ -215,11 +204,7 @@ function delete_deduced_functor_properties(db: Database) {
  * Returns the list of properties that are satisfied or unsatisfied
  * for a given functor.
  */
-function get_decided_functor_properties(
-	db: Database,
-	functor_id: string,
-	value: boolean,
-) {
+function get_decided_functor_properties(functor_id: string, value: boolean) {
 	const rows = db
 		.prepare(
 			`SELECT property_id
@@ -236,12 +221,11 @@ function get_decided_functor_properties(
  * by using the list of normalized implications.
  */
 function deduce_satisfied_functor_properties(
-	db: Database,
 	functor: FunctorMeta,
 	implications: NormalizedFunctorImplication[],
 	properties_dict: Record<string, FunctorPropertyMeta>,
 ) {
-	const satisfied_props = get_decided_functor_properties(db, functor.id, true)
+	const satisfied_props = get_decided_functor_properties(functor.id, true)
 
 	const deduced_satisfied_props: string[] = []
 	const reasons: Record<string, string> = {}
@@ -300,13 +284,12 @@ function deduce_satisfied_functor_properties(
  * by using the satisfied properties and the list of normalized implications.
  */
 function deduce_unsatisfied_functor_properties(
-	db: Database,
 	functor: FunctorMeta,
 	implications: NormalizedFunctorImplication[],
 	properties_dict: Record<string, FunctorPropertyMeta>,
 ) {
-	const satisfied_props = get_decided_functor_properties(db, functor.id, true)
-	const unsatisfied_props = get_decided_functor_properties(db, functor.id, false)
+	const satisfied_props = get_decided_functor_properties(functor.id, true)
+	const unsatisfied_props = get_decided_functor_properties(functor.id, false)
 
 	const deduced_unsatisfied_props: string[] = []
 	const reasons: Record<string, string> = {}

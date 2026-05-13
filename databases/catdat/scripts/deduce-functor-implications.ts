@@ -1,22 +1,22 @@
-import { type Database } from 'better-sqlite3'
-
-import { are_equal_sets } from './shared'
+import { are_equal_sets, get_client } from './shared'
 
 // TODO: remove code duplication with category implication deduction script
+
+const db = get_client()
 
 /**
  * Deduces functor implications from given ones.
  */
-export function deduce_functor_implications(db: Database) {
+export function deduce_functor_implications() {
 	console.info('\n--- Deduce functor implications ---')
-	clear_deduced_functor_implications(db)
-	create_dualized_functor_implications(db)
+	clear_deduced_functor_implications()
+	create_dualized_functor_implications()
 }
 
 /**
  * Clears all deduced functor implications. This is done as a first step.
  */
-function clear_deduced_functor_implications(db: Database) {
+function clear_deduced_functor_implications() {
 	db.prepare(`DELETE FROM functor_implications WHERE is_deduced = TRUE`).run()
 }
 
@@ -26,7 +26,7 @@ function clear_deduced_functor_implications(db: Database) {
  * then P^op ===> Q^op holds as well. The assumptions of source and target
  * categories (if any) need to be dualized as well.
  */
-function create_dualized_functor_implications(db: Database) {
+function create_dualized_functor_implications() {
 	type FullImplication = {
 		id: string
 		assumptions: string

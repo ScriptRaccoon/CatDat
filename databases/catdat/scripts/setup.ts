@@ -14,7 +14,6 @@ function setup() {
 	console.info('\n--- Setup CatDat database ---')
 
 	const db = get_client()
-	db.pragma('foreign_keys = ON')
 
 	const files = fs
 		.readdirSync(schema_folder, 'utf8')

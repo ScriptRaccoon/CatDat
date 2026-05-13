@@ -4,24 +4,19 @@ import { deduce_functor_implications } from './deduce-functor-implications'
 import { deduce_functor_properties } from './deduce-functor-properties'
 import { deduce_special_objects } from './deduce-special-objects'
 import { deduce_special_morphisms } from './deduce-special-morphisms'
-import { get_client } from './shared'
+
+deduce()
 
 /**
  * Makes deductions for categories and functors.
  */
 function deduce() {
-	const db = get_client()
+	deduce_category_implications()
+	deduce_category_properties()
 
-	db.pragma('foreign_keys = ON')
+	deduce_special_objects()
+	deduce_special_morphisms()
 
-	deduce_category_implications(db)
-	deduce_category_properties(db)
-
-	deduce_special_objects(db)
-	deduce_special_morphisms(db)
-
-	deduce_functor_implications(db)
-	deduce_functor_properties(db)
+	deduce_functor_implications()
+	deduce_functor_properties()
 }
-
-deduce()

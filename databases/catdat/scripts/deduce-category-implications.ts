@@ -1,20 +1,21 @@
-import { are_equal_sets } from './shared'
-import { type Database } from 'better-sqlite3'
+import { are_equal_sets, get_client } from './shared'
+
+const db = get_client()
 
 /**
  * Deduces implications from given ones.
  */
-export function deduce_category_implications(db: Database) {
+export function deduce_category_implications() {
 	console.info('\n--- Deduce category implications ---')
-	clear_deduced_category_implications(db)
-	create_dualized_category_implications(db)
-	create_self_dual_category_implications(db)
+	clear_deduced_category_implications()
+	create_dualized_category_implications()
+	create_self_dual_category_implications()
 }
 
 /**
  * Clears all deduced implications. This is done as a first step.
  */
-function clear_deduced_category_implications(db: Database) {
+function clear_deduced_category_implications() {
 	db.prepare(`DELETE FROM category_implications WHERE is_deduced = TRUE`).run()
 }
 
@@ -23,7 +24,7 @@ function clear_deduced_category_implications(db: Database) {
  * (in case they have a dual). For example, if P ===> Q holds,
  * then P^op ===> Q^op holds as well.
  */
-function create_dualized_category_implications(db: Database) {
+function create_dualized_category_implications() {
 	type FullImplication = {
 		id: string
 		assumptions: string
@@ -105,7 +106,7 @@ function create_dualized_category_implications(db: Database) {
  * Creates all trivial implications of the form
  * self-dual + P ===> P^op
  */
-function create_self_dual_category_implications(db: Database) {
+function create_self_dual_category_implications() {
 	const rows = db
 		.prepare(
 			`INSERT INTO category_implications_view (

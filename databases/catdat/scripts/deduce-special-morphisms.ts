@@ -1,19 +1,21 @@
-import { type Database } from 'better-sqlite3'
+import { get_client } from './shared'
+
+const db = get_client()
 
 // TODO: deduce further morphisms,
 // e.g. isomorphisms = bijective morphisms in algebraic categories,
 // e.g. regular monomorphisms = same as monomorphisms in mono-regular categories
 
-export function deduce_special_morphisms(db: Database) {
+export function deduce_special_morphisms() {
 	console.info('\n--- Deduce special morphisms ---')
-	deduce_special_morphisms_of_dual_categories(db)
+	deduce_special_morphisms_of_dual_categories()
 }
 
 /**
  * Deduce special morphisms in dual categories.
  * For example, monomorphisms in C describe epimorphisms in C^op.
  */
-function deduce_special_morphisms_of_dual_categories(db: Database) {
+function deduce_special_morphisms_of_dual_categories() {
 	const res = db
 		.prepare(
 			`

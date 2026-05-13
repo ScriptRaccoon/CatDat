@@ -1,4 +1,4 @@
-import { SqliteError, type Database } from 'better-sqlite3'
+import { SqliteError } from 'better-sqlite3'
 import {
 	CategoryMeta,
 	CategoryPropertyMeta,
@@ -12,12 +12,15 @@ import {
 	get_deduced_satisfied_properties,
 	get_deduced_unsatisfied_properties,
 } from './deduction.utils'
+import { get_client } from './shared'
+
+const db = get_client()
 
 /**
  * Deduce properties of categories from given ones
  * by using the list of implications.
  */
-export function deduce_category_properties(db: Database) {
+export function deduce_category_properties() {
 	console.info('\n--- Deduce category properties ---')
 
 	const implications = get_normalized_category_implications(db)
@@ -25,14 +28,13 @@ export function deduce_category_properties(db: Database) {
 	const properties_dict = get_properties_dict(db)
 
 	const deduction = db.transaction(() => {
-		delete_deduced_category_properties(db)
+		delete_deduced_category_properties()
 
 		const all_decided_properties = get_all_decided_properties(db, categories)
 
 		for (const category of categories) {
 			const decided = all_decided_properties[category.id]
 			deduce_satisfied_category_properties(
-				db,
 				category.id,
 				implications,
 				decided.satisfied,
@@ -40,7 +42,6 @@ export function deduce_category_properties(db: Database) {
 			)
 
 			deduce_unsatisfied_category_properties(
-				db,
 				category.id,
 				implications,
 				decided.satisfied,
@@ -56,7 +57,6 @@ export function deduce_category_properties(db: Database) {
 			const dual_decided = all_decided_properties[category.dual_category_id]
 
 			deduce_dual_category_properties(
-				db,
 				category,
 				decided.satisfied,
 				decided.unsatisfied,
@@ -66,7 +66,6 @@ export function deduce_category_properties(db: Database) {
 			)
 
 			deduce_satisfied_category_properties(
-				db,
 				category.id,
 				implications,
 				decided.satisfied,
@@ -75,7 +74,6 @@ export function deduce_category_properties(db: Database) {
 			)
 
 			deduce_unsatisfied_category_properties(
-				db,
 				category.id,
 				implications,
 				decided.satisfied,
@@ -93,7 +91,7 @@ export function deduce_category_properties(db: Database) {
  * Clears all the deduced properties.
  * This runs before the deduction starts.
  */
-function delete_deduced_category_properties(db: Database) {
+function delete_deduced_category_properties() {
 	db.prepare(`DELETE FROM category_property_assignments WHERE is_deduced = TRUE`).run()
 }
 
@@ -103,7 +101,6 @@ function delete_deduced_category_properties(db: Database) {
  * Warning: This function mutates the set of satisfied properties.
  */
 function deduce_satisfied_category_properties(
-	db: Database,
 	category_id: string,
 	implications: NormalizedCategoryImplication[],
 	satisfied_properties: Set<string>,
@@ -118,7 +115,7 @@ function deduce_satisfied_category_properties(
 
 	for (const p of found) satisfied_properties.add(p)
 
-	save_satisfied_properties(db, category_id, found, reasons, options)
+	save_satisfied_properties(category_id, found, reasons, options)
 
 	console.info(`Deduced ${found.size} satisfied properties for ${category_id}`)
 }
@@ -127,7 +124,6 @@ function deduce_satisfied_category_properties(
  * Saves the deduced satisfied properties to the database
  */
 function save_satisfied_properties(
-	db: Database,
 	category_id: string,
 	found: Set<string>,
 	reasons: Record<string, string>,
@@ -177,7 +173,6 @@ function save_satisfied_properties(
  * Warning: This function mutates the set of unsatisfied properties.
  */
 function deduce_unsatisfied_category_properties(
-	db: Database,
 	category_id: string,
 	implications: NormalizedCategoryImplication[],
 	satisfied_properties: Set<string>,
@@ -194,7 +189,7 @@ function deduce_unsatisfied_category_properties(
 
 	for (const p of found) unsatisfied_properties.add(p)
 
-	save_unsatisfied_properties(db, category_id, found, reasons, options)
+	save_unsatisfied_properties(category_id, found, reasons, options)
 
 	console.info(`Deduced ${found.size} unsatisfied properties for ${category_id}`)
 }
@@ -203,7 +198,6 @@ function deduce_unsatisfied_category_properties(
  * Saves the deduced unsatisfied properties to the database
  */
 function save_unsatisfied_properties(
-	db: Database,
 	category_id: string,
 	found: Set<string>,
 	reasons: Record<string, string>,
@@ -265,7 +259,6 @@ function is_dual_category(
  * If C has property P, then C^op has property P^op (if defined).
  */
 function deduce_dual_category_properties(
-	db: Database,
 	category: CategoryMeta,
 	satisfied: Set<string>,
 	unsatisfied: Set<string>,
