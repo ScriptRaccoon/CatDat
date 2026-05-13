@@ -1,9 +1,9 @@
 import { browser } from '$app/environment'
 
 export const CATEGORY_DETAIL_LEVELS = {
-	all: 'Show all properties for a category. Indicate which properties are in the database and which have been deduced. This is the default.',
-	merged: "Show all properties for a category, but don't indicate which properties are in the database and which have been deduced.",
-	basic: 'Show only those properties for a category that are in the database. Deduced properties are not shown.',
+	all: 'Show all properties for a category. Indicate which properties have been manually assigned and which have been deduced. This is the default.',
+	merged: "Show all properties for a category, but don't indicate which properties are manually assigned and which have been deduced.",
+	basic: 'Show only those properties for a category that have been manually assigned. Deduced properties are not shown.',
 } as const
 
 type CategoryDetailLevel = keyof typeof CATEGORY_DETAIL_LEVELS

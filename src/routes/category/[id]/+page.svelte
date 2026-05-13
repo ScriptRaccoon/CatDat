@@ -85,7 +85,7 @@
 		<h3 class="sticky-heading">Satisfied Properties</h3>
 
 		{#if category_detail_level.value === 'all'}
-			<p class="hint">Properties from the database</p>
+			<p class="hint">Assigned properties</p>
 			<PropertyList
 				properties={data.satisfied_properties.filter((p) => !p.is_deduced)}
 			/>
@@ -97,9 +97,7 @@
 		{:else if category_detail_level.value === 'merged'}
 			<PropertyList properties={data.satisfied_properties} />
 		{:else if category_detail_level.value === 'basic'}
-			<p class="hint">
-				Properties from the database; further properties can be deduced.
-			</p>
+			<p class="hint">Assigned properties; further properties can be deduced.</p>
 			<PropertyList
 				properties={data.satisfied_properties.filter((p) => !p.is_deduced)}
 			/>
@@ -110,7 +108,7 @@
 		<h3 class="sticky-heading">Unsatisfied Properties</h3>
 
 		{#if category_detail_level.value === 'all'}
-			<p class="hint">Properties from the database</p>
+			<p class="hint">Assigned properties</p>
 			<PropertyList
 				properties={data.unsatisfied_properties.filter((p) => !p.is_deduced)}
 			/>
@@ -124,9 +122,7 @@
 		{:else if category_detail_level.value === 'merged'}
 			<PropertyList properties={data.unsatisfied_properties} />
 		{:else if category_detail_level.value === 'basic'}
-			<p class="hint">
-				Properties from the database; further properties can be deduced.
-			</p>
+			<p class="hint">Assigned properties; further properties can be deduced.</p>
 			<PropertyList
 				properties={data.unsatisfied_properties.filter((p) => !p.is_deduced)}
 			/>
