@@ -202,7 +202,9 @@ function deduce_unsatisfied_category_properties(
 				const is_valid =
 					!unsatisfied_properties.has(p) &&
 					!newly_found.has(p) &&
-					is_subset(implication.assumptions, satisfied_properties, p)
+					is_subset(implication.assumptions, satisfied_properties, {
+						exception: p,
+					})
 				if (!is_valid) continue
 
 				if (satisfied_properties.has(p)) {

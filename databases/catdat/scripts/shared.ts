@@ -5,9 +5,9 @@ export function are_equal_sets<T>(a: Set<T>, b: Set<T>) {
 	return a.size === b.size && [...a].every((el) => b.has(el))
 }
 
-export function is_subset<T>(a: Set<T>, b: Set<T>, exception?: T) {
+export function is_subset<T>(a: Set<T>, b: Set<T>, options?: { exception: T }) {
 	for (const x of a) {
-		if (x !== exception && !b.has(x)) return false
+		if (x !== options?.exception && !b.has(x)) return false
 	}
 	return true
 }

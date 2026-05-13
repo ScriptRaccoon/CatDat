@@ -316,7 +316,9 @@ function deduce_unsatisfied_functor_properties(
 			for (const p of implication.assumptions) {
 				const is_valid =
 					!unsatisfied_props.has(p) &&
-					is_subset(implication.assumptions, satisfied_props, p) &&
+					is_subset(implication.assumptions, satisfied_props, {
+						exception: p,
+					}) &&
 					is_subset(implication.source_assumptions, functor.source_props) &&
 					is_subset(implication.target_assumptions, functor.target_props)
 

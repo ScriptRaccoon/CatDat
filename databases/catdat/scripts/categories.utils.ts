@@ -224,7 +224,7 @@ export function get_next_implication_for_contradiction(
 		for (const p of implication.assumptions) {
 			const is_valid =
 				!unsatisfied_properties.has(p) &&
-				is_subset(implication.assumptions, satisfied_properties, p)
+				is_subset(implication.assumptions, satisfied_properties, { exception: p })
 			if (is_valid) return { implication, property: p }
 		}
 	}
