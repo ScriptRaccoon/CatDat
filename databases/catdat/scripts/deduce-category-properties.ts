@@ -5,7 +5,6 @@ import {
 	CategoryPropertyMeta,
 	get_all_decided_properties,
 	get_categories,
-	get_next_implication_for_contradiction,
 	get_normalized_category_implications,
 	get_properties_dict,
 	type NormalizedCategoryImplication,
@@ -195,27 +194,31 @@ function deduce_unsatisfied_category_properties(
 	const reasons: Record<string, string> = {}
 
 	while (true) {
-		const next = get_next_implication_for_contradiction(
-			implications,
-			satisfied_properties,
-			unsatisfied_properties,
-		)
-		if (!next) break
+		const newly_found = new Set<string>()
 
-		const { implication, property } = next
+		for (const implication of implications) {
+			if (!unsatisfied_properties.has(implication.conclusion)) continue
+			for (const p of implication.assumptions) {
+				const is_valid =
+					!unsatisfied_properties.has(p) &&
+					!newly_found.has(p) &&
+					is_subset(implication.assumptions, satisfied_properties, p)
+				if (!is_valid) continue
 
-		if (satisfied_properties.has(property)) {
-			throw new Error(`Contradiction has been found for: ${property}`)
+				if (satisfied_properties.has(p)) {
+					throw new Error(`Contradiction has been found for: ${p}`)
+				}
+
+				newly_found.add(p)
+				found.add(p)
+
+				reasons[p] = get_contradiction_string(implication, properties_dict, p)
+			}
 		}
 
-		unsatisfied_properties.add(property)
-		found.add(property)
+		for (const p of newly_found) unsatisfied_properties.add(p)
 
-		reasons[property] = get_contradiction_string(
-			implication,
-			properties_dict,
-			property,
-		)
+		if (!newly_found.size) break
 	}
 
 	if (found.size > 0) {
