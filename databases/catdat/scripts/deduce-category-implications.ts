@@ -1,4 +1,4 @@
-import { are_equal_sets, get_client } from './shared'
+import { are_equal_sets, get_client } from './utils/helpers'
 
 const db = get_client()
 

@@ -1,18 +1,18 @@
 import { SqliteError } from 'better-sqlite3'
 import {
-	CategoryMeta,
-	CategoryPropertyMeta,
+	type CategoryMeta,
+	type CategoryPropertyMeta,
+	type NormalizedCategoryImplication,
 	get_all_decided_properties,
 	get_categories,
 	get_normalized_category_implications,
 	get_properties_dict,
-	type NormalizedCategoryImplication,
-} from './categories.utils'
+} from './utils/categories'
 import {
 	get_deduced_satisfied_properties,
 	get_deduced_unsatisfied_properties,
-} from './deduction.utils'
-import { get_client } from './shared'
+} from './utils/deduction'
+import { get_client } from './utils/helpers'
 
 const db = get_client()
 

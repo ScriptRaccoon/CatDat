@@ -1,4 +1,4 @@
-import { is_subset } from './shared'
+import { is_subset } from './helpers'
 
 type NormalizedImplication = {
 	id: string

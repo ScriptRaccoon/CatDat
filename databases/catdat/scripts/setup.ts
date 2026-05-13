@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import { get_client } from './shared'
-import { create_schema_hash, write_schema_hash } from './schema.utils'
+import { get_client } from './utils/helpers'
+import { create_schema_hash, write_schema_hash } from './utils/schema'
 
 const schema_folder = path.join(process.cwd(), 'databases', 'catdat', 'schema')
 

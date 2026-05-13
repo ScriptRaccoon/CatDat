@@ -1,5 +1,5 @@
-import { get_client, is_subset } from './shared'
-import { get_assumption_string, get_conclusion_string } from './deduction.utils'
+import { get_client, is_subset } from './utils/helpers'
+import { get_assumption_string, get_conclusion_string } from './utils/deduction'
 
 const db = get_client()
 

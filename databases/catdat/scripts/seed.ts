@@ -1,6 +1,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import { get_client } from './shared'
+import { get_client } from './utils/helpers'
 import YAML from 'yaml'
 import type {
 	CategoryYaml,
@@ -12,7 +12,7 @@ import type {
 	FunctorPropertyYaml,
 	FunctorYaml,
 } from './seed.types'
-import { create_schema_hash, get_saved_schema_hash } from './schema.utils'
+import { create_schema_hash, get_saved_schema_hash } from './utils/schema'
 
 const db = get_client()
 

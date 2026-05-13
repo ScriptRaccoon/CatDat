@@ -1,4 +1,4 @@
-import { are_equal_sets, get_client } from './shared'
+import { are_equal_sets, get_client } from './utils/helpers'
 
 // TODO: remove code duplication with category implication deduction script
 

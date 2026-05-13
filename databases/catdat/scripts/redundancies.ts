@@ -1,15 +1,15 @@
-import { get_client } from './shared'
+import { get_client } from './utils/helpers'
 import {
 	get_all_assignments,
 	get_categories,
 	get_ignored_redundant_properties,
 	get_normalized_category_implications,
 	type NormalizedCategoryImplication,
-} from './categories.utils'
+} from './utils/categories'
 import {
 	get_deduced_satisfied_properties,
 	get_deduced_unsatisfied_properties,
-} from './deduction.utils'
+} from './utils/deduction'
 
 const db = get_client()
 

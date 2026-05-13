@@ -8,7 +8,7 @@ import Set_expected from './expected-data/Set.json'
 import Ab_expected from './expected-data/Ab.json'
 import Top_expected from './expected-data/Top.json'
 import decided_categories from './expected-data/decided-categories.json'
-import { get_client } from './shared'
+import { get_client } from './utils/helpers'
 
 const db = get_client()
 
