@@ -1,5 +1,4 @@
 import { type Database } from 'better-sqlite3'
-import { is_subset } from './shared'
 
 export type CategoryMeta = {
 	id: string
@@ -185,50 +184,6 @@ export function get_all_assignments(db: Database, categories: { id: string }[]) 
 	}
 
 	return grouped
-}
-
-/**
- * Returns the next implication yielding a satisfied property:
- * When all of its assumptions are satisfied, its conclusion is satisfied.
- * We only consider conclusions that have not been marked as satisfied before.
- * If no such implication is found, null is returned.
- */
-export function get_next_implication(
-	implications: NormalizedCategoryImplication[],
-	satisfied_properties: Set<string>,
-) {
-	for (const implication of implications) {
-		const is_valid =
-			is_subset(implication.assumptions, satisfied_properties) &&
-			!satisfied_properties.has(implication.conclusion)
-		if (is_valid) return implication
-	}
-	return null
-}
-
-/**
- * Returns the next implication together with an unsatisfied property:
- * If the implication has the form P + Q1 + Q2 + ... ===> R and
- * Q1, Q2, ... are satisfied, but R is not, then P is not satisfied;
- * this is a proof by contradiction.
- * We only consider properties P that have not been marked as unsatisfied before.
- * If no such implication is found, null is returned.
- */
-export function get_next_implication_for_contradiction(
-	implications: NormalizedCategoryImplication[],
-	satisfied_properties: Set<string>,
-	unsatisfied_properties: Set<string>,
-) {
-	for (const implication of implications) {
-		if (!unsatisfied_properties.has(implication.conclusion)) continue
-		for (const p of implication.assumptions) {
-			const is_valid =
-				!unsatisfied_properties.has(p) &&
-				is_subset(implication.assumptions, satisfied_properties, { exception: p })
-			if (is_valid) return { implication, property: p }
-		}
-	}
-	return null
 }
 
 /**
