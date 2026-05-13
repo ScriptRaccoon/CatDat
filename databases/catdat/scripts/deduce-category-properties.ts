@@ -34,6 +34,7 @@ export function deduce_category_properties() {
 
 		for (const category of categories) {
 			const decided = all_decided_properties[category.id]
+
 			deduce_satisfied_category_properties(
 				category.id,
 				implications,
@@ -133,27 +134,21 @@ function save_satisfied_properties(
 
 	const err_msg = `❌ Failed to complete deduction of satisfied properties for ${category_id} because of a conflict. The likely cause is a contradiction between its assigned properties.`
 
-	const value_fragments: string[] = []
-	const values: (string | number)[] = []
-
-	for (const id of found) {
-		value_fragments.push(`(?, ?, TRUE, ?, TRUE)`)
-		values.push(category_id, id, reasons[id])
-	}
-
 	const conflict_clause = options.check_conflicts
 		? ''
 		: 'ON CONFLICT (category_id, property_id) DO NOTHING'
 
-	const insert_sql = `
+	const property_insert = db.prepare(`
 		INSERT INTO category_property_assignments
 			(category_id, property_id, is_satisfied, reason, is_deduced)
-		VALUES ${value_fragments.join(',\n')}
+		VALUES (?, ?, TRUE, ?, TRUE)
 		${conflict_clause}
-	`
+	`)
 
 	try {
-		db.prepare(insert_sql).run(values)
+		for (const p of found) {
+			property_insert.run(category_id, p, reasons[p])
+		}
 	} catch (err) {
 		if (err instanceof SqliteError) {
 			if (err.code.startsWith('SQLITE_CONSTRAINT')) {
@@ -207,27 +202,21 @@ function save_unsatisfied_properties(
 
 	const err_msg = `❌ Failed to complete deduction of unsatisfied properties for ${category_id} because of a conflict. The likely cause is a contradiction between its assigned properties.`
 
-	const value_fragments: string[] = []
-	const values: (string | number)[] = []
-
-	for (const id of found) {
-		value_fragments.push('(?, ?, FALSE, ?, TRUE)')
-		values.push(category_id, id, reasons[id])
-	}
-
 	const conflict_clause = options.check_conflicts
 		? ''
 		: 'ON CONFLICT (category_id, property_id) DO NOTHING'
 
-	const insert_query = `
+	const property_insert = db.prepare(`
 		INSERT INTO category_property_assignments
 			(category_id, property_id, is_satisfied, reason, is_deduced)
-		VALUES ${value_fragments.join(',\n')}
+		VALUES (?, ?, FALSE, ?, TRUE)
 		${conflict_clause}
-	`
+	`)
 
 	try {
-		db.prepare(insert_query).run(values)
+		for (const p of found) {
+			property_insert.run(category_id, p, reasons[p])
+		}
 	} catch (err) {
 		if (err instanceof SqliteError) {
 			if (err.code.startsWith('SQLITE_CONSTRAINT')) {
@@ -257,6 +246,7 @@ function is_dual_category(
 /**
  * Assign dual properties to dual categories:
  * If C has property P, then C^op has property P^op (if defined).
+ * Warning: This mutates the sets of satisfied and unsatisfied properties.
  */
 function deduce_dual_category_properties(
 	category: CategoryMeta,
@@ -284,49 +274,28 @@ function deduce_dual_category_properties(
 		unsatisfied.add(p_dual)
 	}
 
-	if (new_satisfied.size > 0) {
-		const value_fragments: string[] = []
-		const values: (string | number)[] = []
-
-		for (const p of new_satisfied) {
-			value_fragments.push('(?, ?, TRUE, ?, TRUE)')
-			values.push(category.id, p, 'Its dual category satisfies the dual property.')
-		}
-
-		const insert_query = `
+	const property_insert = db.prepare(`
 		INSERT INTO category_property_assignments
 			(category_id, property_id, is_satisfied, reason, is_deduced)
-		VALUES ${value_fragments.join(',\n')}`
+		VALUES (?, ?, ?, ?, TRUE)
+	`)
 
-		db.prepare(insert_query).run(values)
+	const reason_satisfied = 'Its dual category satisfies the dual property.'
+	const reason_unsatisfied = 'Its dual category does not satisfy the dual property.'
 
-		console.info(
-			`Deduced ${new_satisfied.size} satisfied properties by duality for ${category.id}`,
-		)
+	for (const p of new_satisfied) {
+		property_insert.run(category.id, p, 1, reason_satisfied)
 	}
 
-	if (new_unsatisfied.size > 0) {
-		const value_fragments: string[] = []
-		const values: (string | number)[] = []
+	console.info(
+		`Deduced ${new_satisfied.size} satisfied properties by duality for ${category.id}`,
+	)
 
-		for (const p of new_unsatisfied) {
-			value_fragments.push('(?, ?, FALSE, ?, TRUE)')
-			values.push(
-				category.id,
-				p,
-				'Its dual category does not satisfy the dual property.',
-			)
-		}
-
-		const insert_query = `
-		INSERT INTO category_property_assignments
-			(category_id, property_id, is_satisfied, reason, is_deduced)
-		VALUES ${value_fragments.join(',\n')}`
-
-		db.prepare(insert_query).run(values)
-
-		console.info(
-			`Deduced ${new_unsatisfied.size} unsatisfied properties by duality for ${category.id}`,
-		)
+	for (const q of new_unsatisfied) {
+		property_insert.run(category.id, q, 0, reason_unsatisfied)
 	}
+
+	console.info(
+		`Deduced ${new_unsatisfied.size} unsatisfied properties by duality for ${category.id}`,
+	)
 }
