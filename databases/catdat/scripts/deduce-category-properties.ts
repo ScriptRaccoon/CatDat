@@ -27,14 +27,15 @@ export function deduce_category_properties(db: Database) {
 	const deduction = db.transaction(() => {
 		delete_deduced_category_properties(db)
 
-		const decided_properties = get_all_decided_properties(db, categories)
+		const all_decided_properties = get_all_decided_properties(db, categories)
 
 		for (const category of categories) {
+			const decided = all_decided_properties[category.id]
 			deduce_satisfied_category_properties(
 				db,
 				category.id,
 				implications,
-				decided_properties[category.id].satisfied,
+				decided.satisfied,
 				properties_dict,
 			)
 
@@ -42,27 +43,25 @@ export function deduce_category_properties(db: Database) {
 				db,
 				category.id,
 				implications,
-				decided_properties[category.id].satisfied,
-				decided_properties[category.id].unsatisfied,
+				decided.satisfied,
+				decided.unsatisfied,
 				properties_dict,
 			)
 		}
 
 		for (const category of categories) {
-			if (
-				!category.dual_category_id ||
-				!category.name.toLowerCase().startsWith('dual')
-			) {
-				continue
-			}
+			if (!is_dual_category(category)) continue
+
+			const decided = all_decided_properties[category.id]
+			const dual_decided = all_decided_properties[category.dual_category_id]
 
 			deduce_dual_category_properties(
 				db,
 				category,
-				decided_properties[category.id].satisfied,
-				decided_properties[category.id].unsatisfied,
-				decided_properties[category.dual_category_id].satisfied,
-				decided_properties[category.dual_category_id].unsatisfied,
+				decided.satisfied,
+				decided.unsatisfied,
+				dual_decided.satisfied,
+				dual_decided.unsatisfied,
 				properties_dict,
 			)
 
@@ -70,7 +69,7 @@ export function deduce_category_properties(db: Database) {
 				db,
 				category.id,
 				implications,
-				decided_properties[category.id].satisfied,
+				decided.satisfied,
 				properties_dict,
 				{ check_conflicts: false },
 			)
@@ -79,8 +78,8 @@ export function deduce_category_properties(db: Database) {
 				db,
 				category.id,
 				implications,
-				decided_properties[category.id].satisfied,
-				decided_properties[category.id].unsatisfied,
+				decided.satisfied,
+				decided.unsatisfied,
 				properties_dict,
 				{ check_conflicts: false },
 			)
@@ -246,6 +245,19 @@ function save_unsatisfied_properties(
 		}
 		process.exit(1)
 	}
+}
+
+/**
+ * Checks if a category is a dual category, but not the
+ * original category to prevent circular reasoning.
+ */
+function is_dual_category(
+	category: CategoryMeta,
+): category is CategoryMeta & { dual_category_id: string } {
+	return (
+		category.dual_category_id !== null &&
+		category.name.toLowerCase().startsWith('dual')
+	)
 }
 
 /**
