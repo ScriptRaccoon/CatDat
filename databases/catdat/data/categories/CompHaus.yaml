@@ -30,6 +30,7 @@ satisfied_properties:
 
   - property_id: cocomplete
     reason: $\CompHaus$ is a reflective subcategory of $\Top$, with the reflector being the Stone-Čech compactification functor. See <a href="https://ncatlab.org/nlab/show/compact+Hausdorff+space#StoneCechCompactification" target="_blank">nLab</a> for example. Therefore, as usual, we can form colimits in $\CompHaus$ by forming colimits in <a href="/category/Top">$\Top$</a> and then applying Stone-Čech compactification.
+    check_redundancy: false
 
   - property_id: generator
     reason: The one-point space is a generator because it represents the forgetful functor to $\Set$, which is faithful.
