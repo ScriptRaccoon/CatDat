@@ -1,5 +1,5 @@
 import { SqliteError, type Database } from 'better-sqlite3'
-import { get_assumption_string, get_conclusion_string, is_subset } from './shared'
+import { get_contradiction_string, get_reason_string, is_subset } from './shared'
 import {
 	CategoryMeta,
 	CategoryPropertyMeta,
@@ -126,13 +126,10 @@ function deduce_satisfied_category_properties(
 			newly_found.add(implication.conclusion)
 			found.add(implication.conclusion)
 
-			const assumption_string = get_assumption_string(implication, properties_dict)
-			const conclusion_string = get_conclusion_string(implication, properties_dict)
-
-			const ref = `by <a href="/category-implication/${implication.id}">this result</a>`
-			const reason = `Since it ${assumption_string}, it ${conclusion_string} (${ref}).`
-
-			reasons[implication.conclusion] = reason
+			reasons[implication.conclusion] = get_reason_string(
+				implication,
+				properties_dict,
+			)
 		}
 
 		for (const p of newly_found) satisfied_properties.add(p)
@@ -214,28 +211,11 @@ function deduce_unsatisfied_category_properties(
 		unsatisfied_properties.add(property)
 		found.add(property)
 
-		const assumption_string = get_assumption_string(
+		reasons[property] = get_contradiction_string(
 			implication,
 			properties_dict,
-			true,
+			property,
 		)
-		const conclusion_string = get_conclusion_string(
-			implication,
-			properties_dict,
-			true,
-		)
-
-		const has_multiple_assumptions = implication.assumptions.size > 1
-
-		const ref = `by <a href="/category-implication/${implication.id}">this result</a>`
-
-		const contra = `Assume for contradiction that it ${properties_dict[property].relation} ${property}`
-
-		const reason = has_multiple_assumptions
-			? `${contra}. Then it ${assumption_string}, so it ${conclusion_string} (${ref}) – contradiction.`
-			: `${contra}. Then it ${conclusion_string} (${ref}) – contradiction.`
-
-		reasons[property] = reason
 	}
 
 	if (found.size > 0) {
