@@ -18,21 +18,21 @@ satisfied_properties:
   - property_id: locally small
     reason: There is a forgetful functor $\IB \to \Set$ and $\Set$ is locally small.
 
-  - property_id: essentially countable
-    reason: Every finite set is isomorphic to some $\{1,\dotsc,n\}$ for some $n \in \IN$.
+  - property_id: inhabited
+    reason: This is trivial.
 
   - property_id: groupoid
     reason: This is trivial.
 
-  - property_id: inhabited
-    reason: This is trivial.
+  - property_id: essentially countable
+    reason: Every finite set is isomorphic to some $\{1,\dotsc,n\}$ for some $n \in \IN$.
 
 unsatisfied_properties:
   - property_id: small
     reason: Even the collection of singletons is not small.
 
-  - property_id: connected
-    reason: For every $n \geq 0$ there is a connected component of sets of size $n$.
+  - property_id: skeletal
+    reason: This is trivial.
 
   - property_id: generator
     reason: This is trivial.
@@ -40,11 +40,11 @@ unsatisfied_properties:
   - property_id: essentially finite
     reason: This is trivial.
 
-  - property_id: skeletal
-    reason: This is trivial.
-
   - property_id: countable
     reason: This is trivial.
+
+  - property_id: connected
+    reason: For every $n \geq 0$ there is a connected component of sets of size $n$.
 
 special_objects: {}
 

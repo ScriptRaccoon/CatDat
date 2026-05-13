@@ -18,11 +18,11 @@ related_categories:
   - walking_coreflexive_pair
 
 satisfied_properties:
-  - property_id: countable
-    reason: This is obvious.
-
   - property_id: small
     reason: This is trivial.
+
+  - property_id: countable
+    reason: This is obvious.
 
   - property_id: terminal object
     reason: The ordered set $[0] = \{0\}$ is terminal.
@@ -30,17 +30,17 @@ satisfied_properties:
   - property_id: strongly connected
     reason: For all $n,m$ there are morphisms $[n] \to [0] \to [m]$.
 
-  - property_id: cogenerator
-    reason: The ordered set $[1] = \{0 < 1\}$ is a cogenerator, even for <a href="/category/Pos">$\Pos$</a>.
-
-  - property_id: coequalizers
-    reason: Assume that $X \rightrightarrows Y$ are morphisms in $\FinOrd \setminus \{\varnothing\}$. Since <a href="/category/FinOrd">$\FinOrd$</a> has coequalizers, we have a coequalizer $Y \to Q$. Since $Y$ is non-empty, $Q$ is non-empty as well, and clearly $Y \to Q$ is then also the coequalizer in $\FinOrd \setminus \{\varnothing\}$.
-
   - property_id: generator
     reason: The ordered set $[0] = \{0\}$ is a generator.
 
+  - property_id: cogenerator
+    reason: The ordered set $[1] = \{0 < 1\}$ is a cogenerator, even for <a href="/category/Pos">$\Pos$</a>.
+
   - property_id: skeletal
     reason: 'If $f : [n] \to [m]$ is an isomorphism, then $n + 1 = m + 1$ by comparing the cardinalities, hence $n = m$.'
+
+  - property_id: coequalizers
+    reason: Assume that $X \rightrightarrows Y$ are morphisms in $\FinOrd \setminus \{\varnothing\}$. Since <a href="/category/FinOrd">$\FinOrd$</a> has coequalizers, we have a coequalizer $Y \to Q$. Since $Y$ is non-empty, $Q$ is non-empty as well, and clearly $Y \to Q$ is then also the coequalizer in $\FinOrd \setminus \{\varnothing\}$.
 
   - property_id: core-thin
     reason: The category $\FinOrd \setminus \{\varnothing\}$ is core-thin because already <a href="/category/FinOrd">$\FinOrd$</a> is core-thin.

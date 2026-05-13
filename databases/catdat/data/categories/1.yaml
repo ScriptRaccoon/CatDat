@@ -3,7 +3,7 @@ name: trivial category
 notation: $\1$
 objects: a single object $0$
 morphisms: only the identity morphism
-description: This is the simplest category, consisting of a single object $0$ and its identity morphism $0 \to 0$. A concrete representation is the full subcategory of $\Set$ consisting of the empty set. It is the terminal object in the category of small categories.
+description: 'This is the simplest category, consisting of a single object $0$ and its identity morphism $\id_0 : 0 \to 0$. A concrete representation is the full subcategory of $\Set$ consisting of the empty set. It is the terminal object in the category of small categories.'
 nlab_link: https://ncatlab.org/nlab/show/terminal+category
 
 tags:
@@ -49,10 +49,10 @@ special_morphisms:
     reason: This is trivial.
   epimorphisms:
     description: every morphism
-    reason: This is clear since it is discrete.
+    reason: This is trivial.
   regular monomorphisms:
-    description: same as monomorphisms
-    reason: This is because the category is mono-regular.
+    description: every morphism
+    reason: This is trivial.
   regular epimorphisms:
-    description: same as epimorphisms
-    reason: This is because the category is epi-regular.
+    description: every morphism
+    reason: This is trivial.

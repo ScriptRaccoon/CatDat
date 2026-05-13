@@ -19,6 +19,15 @@ satisfied_properties:
   - property_id: locally small
     reason: There is a forgetful functor $\Meas \to \Set$ and $\Set$ is locally small.
 
+  - property_id: semi-strongly connected
+    reason: Every non-empty measurable space is weakly terminal (by using constant maps).
+
+  - property_id: generator
+    reason: The one-point measurable space (with the unique $\sigma$-algebra) is a generator since it represents the forgetful functor $\Meas \to \Set$.
+
+  - property_id: cogenerator
+    reason: Take the two-element set $2$ endowed with the trivial $\sigma$-algebra (where only $\varnothing$ and $2$ are measurable), and use that $2$ is a cogenerator for $\Set$.
+
   - property_id: well-powered
     reason: This follows from the fact that monomorphisms are injective in this category.
 
@@ -34,33 +43,24 @@ satisfied_properties:
   - property_id: infinitary extensive
     reason: '[Sketch] Since <a href="/category/Set">$\Set$</a> is infinitary extensive, a map $f : Y \to \coprod_i X_i =: X$ corresponds to a decomposition $Y = \coprod_i Y_i$ (as sets) with maps $f_i : Y_i \to X_i$. Endow the measurable subset $Y_i \subseteq Y$ with the restricted $\sigma$-algebra. If $f$ is measurable, each $f_i$ is measurable, and $Y = \coprod_i Y_i$ holds as measurable spaces.'
 
-  - property_id: generator
-    reason: The one-point measurable space (with the unique $\sigma$-algebra) is a generator since it represents the forgetful functor $\Meas \to \Set$.
-
-  - property_id: cogenerator
-    reason: Take the two-element set $2$ endowed with the trivial $\sigma$-algebra (where only $\varnothing$ and $2$ are measurable), and use that $2$ is a cogenerator for $\Set$.
-
   - property_id: filtered-colimit-stable monomorphisms
     reason: This follows from <a href="/lemma/filtered-monos">this lemma</a> applied to the forgetful functor to $\Set$.
-
-  - property_id: semi-strongly connected
-    reason: Every non-empty measurable space is weakly terminal (by using constant maps).
 
   - property_id: regular subobject classifier
     reason: The set $\{0,1\}$ with the trivial $\sigma$-algebra is a regular subobject classifier since measurable maps $X \to \{0,1\}$ correspond to subsets of $X$.
 
 unsatisfied_properties:
-  - property_id: cartesian filtered colimits
-    reason: See <a href="https://math.stackexchange.com/questions/5027218" target="_blank">MSE/5027218</a>.
+  - property_id: skeletal
+    reason: This is trivial.
 
   - property_id: balanced
     reason: Take a set $X$ with two different $\sigma$-algebras $\A \subset \B$ (for example, $\A = \{\varnothing,X\}$ and $\B = P(X)$ when $X$ has at least $2$ elements), then the identity map $(X,\B) \to (X,\A)$ provides a counterexample.
 
-  - property_id: skeletal
-    reason: This is trivial.
-
   - property_id: Malcev
     reason: Use that <a href="/category/Set">$\Set$</a> is not Malcev and endow sets with the trivial $\sigma$-algebra.
+
+  - property_id: cartesian filtered colimits
+    reason: See <a href="https://math.stackexchange.com/questions/5027218" target="_blank">MSE/5027218</a>.
 
   - property_id: cofiltered-limit-stable epimorphisms
     reason: We already know that <a href="/category/Set">$\Set$</a> does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the functor $\Set \to \Meas$ which equips a set with the trivial $\sigma$-algebra.

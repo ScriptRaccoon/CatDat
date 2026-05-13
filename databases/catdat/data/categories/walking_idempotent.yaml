@@ -18,20 +18,20 @@ related_categories:
   - walking_splitting
 
 satisfied_properties:
-  - property_id: finite
-    reason: This is trivial.
-
   - property_id: small
     reason: This is trivial.
 
-  - property_id: generator
-    reason: The unique object is a generator for trivial reasons.
+  - property_id: finite
+    reason: This is trivial.
 
   - property_id: gaunt
     reason: This is obvious.
 
   - property_id: self-dual
     reason: This is obvious.
+
+  - property_id: generator
+    reason: The unique object is a generator for trivial reasons.
 
   - property_id: subobject-trivial
     reason: This is because the identity is the only monomorphism.

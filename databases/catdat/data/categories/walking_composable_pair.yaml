@@ -16,16 +16,16 @@ related_categories:
   - walking_morphism
 
 satisfied_properties:
-  - property_id: finite
-    reason: This is trivial.
-
   - property_id: small
     reason: This is trivial.
 
-  - property_id: semi-strongly connected
+  - property_id: finite
     reason: This is trivial.
 
   - property_id: skeletal
+    reason: This is trivial.
+
+  - property_id: semi-strongly connected
     reason: This is trivial.
 
   - property_id: self-dual

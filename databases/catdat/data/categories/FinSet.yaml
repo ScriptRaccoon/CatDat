@@ -26,17 +26,17 @@ satisfied_properties:
   - property_id: essentially countable
     reason: Every finite set is isomorphic to some $\{1,\dotsc,n\}$ for some $n \in \IN$.
 
-  - property_id: elementary topos
-    reason: This follows easily from the fact that sets form an elementary topos.
-
   - property_id: generator
     reason: The one-point set is a generator since it represents the forgetful functor $\FinSet \to \Set$.
+
+  - property_id: cogenerator
+    reason: The two-element set is a cogenerator.
 
   - property_id: semi-strongly connected
     reason: Every non-empty finite set is weakly terminal (by using constant maps).
 
-  - property_id: cogenerator
-    reason: The two-element set is a cogenerator.
+  - property_id: elementary topos
+    reason: This follows easily from the fact that sets form an elementary topos.
 
   - property_id: ℵ₁-accessible
     reason: The inclusion $\FinSet \hookrightarrow \Set$ is closed under ℵ₁-filtered colimits, that is, any ℵ₁-filtered colimit of finite sets is again finite. Since every finite set is ℵ₁-presentable in $\Set$, it is still ℵ₁-presentable in $\FinSet$. Therefore, $\FinSet$ is ℵ₁-accessible, where every object is ℵ₁-presentable.

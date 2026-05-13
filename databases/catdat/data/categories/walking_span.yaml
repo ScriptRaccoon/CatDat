@@ -16,10 +16,13 @@ related_categories:
   - walking_pair
 
 satisfied_properties:
+  - property_id: small
+    reason: This is trivial.
+
   - property_id: finite
     reason: This is trivial.
 
-  - property_id: small
+  - property_id: thin
     reason: This is trivial.
 
   - property_id: skeletal
@@ -27,9 +30,6 @@ satisfied_properties:
 
   - property_id: initial object
     reason: $0$ is an initial object.
-
-  - property_id: thin
-    reason: This is trivial.
 
   - property_id: binary products
     reason: We have $0 \times x = 0$ for all $x$, $x \times x = x$, and $1 \times 2 = 0$.

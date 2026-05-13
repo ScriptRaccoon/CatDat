@@ -16,6 +16,24 @@ satisfied_properties:
   - property_id: locally small
     reason: There is a forgetful functor $\PMet \to \Set$ and $\Set$ is locally small.
 
+  - property_id: generator
+    reason: The one-point (pseudo-)metric space is a generator since it represents the forgetful functor $\PMet \to \Set$.
+
+  - property_id: cogenerator
+    reason: The set $\{0,1\}$ equipped with the pseudo-metric $d(0,1)=0$ is a cogenerator since every map into is automatically non-expansive and since $\{0,1\}$ is a cogenerator in $\Set$.
+
+  - property_id: strict initial object
+    reason: The empty (pseudo-)metric space is initial and clearly strict.
+
+  - property_id: semi-strongly connected
+    reason: Every non-empty pseudo-metric space is weakly terminal (by using constant maps).
+
+  - property_id: well-powered
+    reason: This follows since monomorphisms are injective (see below).
+
+  - property_id: well-copowered
+    reason: This follows since epimorphisms are surjective (see below).
+
   - property_id: equalizers
     reason: Just restrict the pseudo-metric to the equalizer built from the sets.
     check_redundancy: false
@@ -38,27 +56,21 @@ satisfied_properties:
   - property_id: exact filtered colimits
     reason: 'We already saw that finite limits and filtered colimits exist. Now let $\I$ be a finite category and $\J$ be a small filtered category, w.l.o.g. a directed poset. Let $X : \I \times \J \to \PMet$ be a diagram. We need to show that the canonical map $\colim_{j \in \J} \lim_{i \in \I} X(i,j) \to \lim_{i \in \I} \colim_{j \in \J}  X(i,j)$ is an isomorphism. It is bijective since the forgetful functor to $\Set$ preserves finite limits and filtered colimits and since <a href="/category/Set">$\Set$</a> has exact filtered colimits. That the map is isometric can easily be reduced to the following lemma: If $d_{i,j} \in \IR_{\geq 0}$ are numbers for $i \in \I$, $j \in \J$ with $j \leq k \implies d_{i,k} \leq d_{i,j}$, then $\inf_j \sup_i d_{i,j} = \sup_i \inf_j d_{i,j}$. This can be proven directly. Alternatively, use that the thin category $(\IR_{\geq 0} \cup \{\infty\},\leq)$ is isomorphic to $([0,1],\leq)$, and we already know that <a href="/category/real_interval">it has exact filtered colimits</a>.'
 
-  - property_id: strict initial object
-    reason: The empty (pseudo-)metric space is initial and clearly strict.
-
-  - property_id: generator
-    reason: The one-point (pseudo-)metric space is a generator since it represents the forgetful functor $\PMet \to \Set$.
-
-  - property_id: cogenerator
-    reason: The set $\{0,1\}$ equipped with the pseudo-metric $d(0,1)=0$ is a cogenerator since every map into is automatically non-expansive and since $\{0,1\}$ is a cogenerator in $\Set$.
-
-  - property_id: semi-strongly connected
-    reason: Every non-empty pseudo-metric space is weakly terminal (by using constant maps).
-
-  - property_id: well-powered
-    reason: This follows since monomorphisms are injective (see below).
-
-  - property_id: well-copowered
-    reason: This follows since epimorphisms are surjective (see below).
-
 unsatisfied_properties:
+  - property_id: skeletal
+    reason: This is trivial.
+
+  - property_id: essentially small
+    reason: This is trivial.
+
+  - property_id: strict terminal object
+    reason: This is trivial.
+
   - property_id: balanced
     reason: 'Let $d : \IR \times \IR \to \IR_{\geq 0}$ be the usual Euclidean metric on $\IR$ and $0 : \IR \times \IR \to \IR_{\geq 0}$ be the zero pseudo-metric. Then the identity map $(\IR,d) \to (\IR,0)$ provides a counterexample.'
+
+  - property_id: Malcev
+    reason: Take any counterexample in <a href="/category/Set">$\Set$</a> and equip it with the zero pseudo-metric.
 
   - property_id: cartesian closed
     reason: This is proven in <a href="https://math.stackexchange.com/questions/5131457" target="_blank">MSE/5131457</a>.
@@ -68,18 +80,6 @@ unsatisfied_properties:
 
   - property_id: binary copowers
     reason: The coproduct of two non-empty pseudo-metric spaces does not exist, see <a href="https://math.stackexchange.com/questions/1778408" target="_blank">MSE/1778408</a> (the proof also works for pseudo-metric spaces). For example, the copower $\IR \sqcup \IR$ does not exist. We only get coproducts when allowing $\infty$ as a distance.
-
-  - property_id: strict terminal object
-    reason: This is trivial.
-
-  - property_id: essentially small
-    reason: This is trivial.
-
-  - property_id: skeletal
-    reason: This is trivial.
-
-  - property_id: Malcev
-    reason: Take any counterexample in <a href="/category/Set">$\Set$</a> and equip it with the zero pseudo-metric.
 
   - property_id: natural numbers object
     reason: >-

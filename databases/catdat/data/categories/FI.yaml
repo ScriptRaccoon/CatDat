@@ -22,11 +22,11 @@ satisfied_properties:
   - property_id: left cancellative
     reason: This is trivial.
 
-  - property_id: essentially countable
-    reason: Every finite set is isomorphic to some $\{1,\dotsc,n\}$ for some $n \in \IN$.
-
   - property_id: generator
     reason: The one-point set is a generator since it represents the forgetful functor $\FI \to \Set$.
+
+  - property_id: essentially countable
+    reason: Every finite set is isomorphic to some $\{1,\dotsc,n\}$ for some $n \in \IN$.
 
   - property_id: equalizers
     reason: We construct equalizers just like in <a href="/category/FinSet">$\FinSet$</a> and observe that the universal property still holds.
@@ -47,15 +47,6 @@ unsatisfied_properties:
   - property_id: small
     reason: Even the collection of all singletons is not small.
 
-  - property_id: cogenerator
-    reason: Let $Q$ be finite set. When $Q$ is empty, it is clearly no cogenerator. Otherwise, $Q + 1$ has at least two elements, so that there are two different morphisms $1 \rightrightarrows Q + 1$. But there is no morphism $Q + 1 \to Q$ at all. Hence, $Q$ is no cogenerator.
-
-  - property_id: binary powers
-    reason: Assume that two finite sets $X,Y$ have a product $P$ in this category. Elements of $P$ are the same as maps $1 \to P$, and they are automatically injective. Therefore, $P \cong \Hom(1,P) \times \Hom(1,X) \times \Hom(1,Y) \cong X \times Y$, and the projections must agree as well. But they are usually not injective. In particular, the product $X \times X$ never exists when $X$ has $>1$ elements.
-
-  - property_id: sequential colimits
-    reason: 'Let $X_n := \{1,\dotsc,n\}$. Assume the sequence of inclusion maps $X_n \hookrightarrow X_{n+1}$ has a colimit $(f_n : X_n \to X)$ in this category. But $f_n$ must be an injective map, so that $\card(X) \geq n$ for all $n$. Since $X$ is finite, this is a contradiction.'
-
   - property_id: skeletal
     reason: This is trivial.
 
@@ -67,6 +58,15 @@ unsatisfied_properties:
 
   - property_id: countable
     reason: This is trivial.
+
+  - property_id: cogenerator
+    reason: Let $Q$ be finite set. When $Q$ is empty, it is clearly no cogenerator. Otherwise, $Q + 1$ has at least two elements, so that there are two different morphisms $1 \rightrightarrows Q + 1$. But there is no morphism $Q + 1 \to Q$ at all. Hence, $Q$ is no cogenerator.
+
+  - property_id: binary powers
+    reason: Assume that two finite sets $X,Y$ have a product $P$ in this category. Elements of $P$ are the same as maps $1 \to P$, and they are automatically injective. Therefore, $P \cong \Hom(1,P) \times \Hom(1,X) \times \Hom(1,Y) \cong X \times Y$, and the projections must agree as well. But they are usually not injective. In particular, the product $X \times X$ never exists when $X$ has $>1$ elements.
+
+  - property_id: sequential colimits
+    reason: 'Let $X_n := \{1,\dotsc,n\}$. Assume the sequence of inclusion maps $X_n \hookrightarrow X_{n+1}$ has a colimit $(f_n : X_n \to X)$ in this category. But $f_n$ must be an injective map, so that $\card(X) \geq n$ for all $n$. Since $X$ is finite, this is a contradiction.'
 
 special_objects:
   initial object:

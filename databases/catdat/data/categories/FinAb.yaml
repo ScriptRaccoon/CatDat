@@ -35,17 +35,17 @@ unsatisfied_properties:
   - property_id: small
     reason: Even the collection of trivial groups is not small.
 
-  - property_id: generator
-    reason: If $A,B$ are finite abelian groups whose orders are coprime, then we know that $\Hom(A,B)$ is trivial. But a generator would admit a non-trivial homomorphism to any other non-trivial finite abelian group.
-
-  - property_id: split abelian
-    reason: The sequence $0 \to \IZ/2 \to \IZ/4 \to \IZ/2 \to 0$ does not split.
-
   - property_id: skeletal
     reason: There are many trivial and hence isomorphic groups which are not equal.
 
   - property_id: countable
     reason: This is trivial.
+
+  - property_id: split abelian
+    reason: The sequence $0 \to \IZ/2 \to \IZ/4 \to \IZ/2 \to 0$ does not split.
+
+  - property_id: generator
+    reason: If $A,B$ are finite abelian groups whose orders are coprime, then we know that $\Hom(A,B)$ is trivial. But a generator would admit a non-trivial homomorphism to any other non-trivial finite abelian group.
 
 special_objects:
   initial object:

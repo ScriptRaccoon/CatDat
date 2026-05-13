@@ -28,11 +28,11 @@ satisfied_properties:
   - property_id: cogenerator
     reason: 'We prove that $\{0,1\}$ is a cogenerator: The surjective maps $X \to \{0,1\}$ correspond to the non-empty proper subsets of $X$. If $a,b \in X$ are elements that have the same image under each surjective map $X \to \{0,1\}$, it therefore means that they lie in the same non-empty proper subsets of $X$. This implies $a=b$: If $X = \{a\}$, this is trivial. Otherwise, use the subset $\{a\}$.'
 
-  - property_id: wide pushouts
-    reason: 'We construct wide pushouts as in <a href="/category/Set">$\Set$</a> and observe that the universal property still holds when we restrict to surjective maps. If $f_i : S \to X_i$ are surjective maps and $P$ is their wide pushout, then each $X_i \to P$ is surjective, so that in particular $P$ is finite.'
-
   - property_id: coequalizers
     reason: We construct coequalizers as in <a href="/category/FinSet">$\FinSet$</a> (or $\Set$) and observe that the universal property still holds when we restrict to surjective maps.
+
+  - property_id: wide pushouts
+    reason: 'We construct wide pushouts as in <a href="/category/Set">$\Set$</a> and observe that the universal property still holds when we restrict to surjective maps. If $f_i : S \to X_i$ are surjective maps and $P$ is their wide pushout, then each $X_i \to P$ is surjective, so that in particular $P$ is finite.'
 
   - property_id: epi-regular
     reason: 'If $f : X \to Y$ is a surjective map of finite sets, it is the coequalizer of the two projections $p_1, p_2 : X \times_Y X \rightrightarrows X$ in <a href="/category/FinSet">$\FinSet$</a>, but also in $\FS$. Notice that $p_1,p_2$ are surjective. Even though $X \times_Y X$ is not a pullback in $\FS$, we can use this finite set here.'
@@ -44,23 +44,26 @@ unsatisfied_properties:
   - property_id: small
     reason: Even the collection of all singletons is not small.
 
-  - property_id: connected
-    reason: 'If $f : \varnothing \to X$ is surjective, then $X = \varnothing$, and if $f : X \to \varnothing$ is any map, then also $X = \varnothing$. This shows that $\{ \varnothing \}$ is a connected component in this category. (The other connected component consists of all non-empty finite sets.)'
+  - property_id: skeletal
+    reason: This is trivial.
+
+  - property_id: countable
+    reason: This is trivial.
+
+  - property_id: core-thin
+    reason: Its core is <a href="/category/B">$\IB$</a>, which we know is not thin.
 
   - property_id: generator
     reason: Let $G$ be a finite set. There are at least two morphisms $G + 2 \rightrightarrows 2$, but there is no morphism $G \to G + 2$ at all. Hence, $G$ is not a generator.
+
+  - property_id: connected
+    reason: 'If $f : \varnothing \to X$ is surjective, then $X = \varnothing$, and if $f : X \to \varnothing$ is any map, then also $X = \varnothing$. This shows that $\{ \varnothing \}$ is a connected component in this category. (The other connected component consists of all non-empty finite sets.)'
 
   - property_id: sequential limits
     reason: 'Let $X_n := \{1,\dotsc,n\}$. We define the truncation $p_n : X_{n+1} \to X_n$ by extending the identity of $X_n$ with $p_n(n+1) := n$. Assume the sequence of truncations $\cdots \to X_2 \to X_1$ has a limit $(f_n : X \to X_n)$ in this category. But $f_n$ is surjective, so that $\card(X) \geq n$ for all $n$. Since $X$ is finite, this is a contradiction.'
 
   - property_id: pullbacks
     reason: The connected component of non-empty sets has a terminal object, $1$, and it suffices to prove that it has no products. Let $X$ be a finite set with more than $1$ element. Assume that the product $P$ of $X$ with itself exists. The diagonal $X \to P$ is a split monomorphism, hence injective, but also surjective, i.e. an isomorphism. In other words, the two projections $P \rightrightarrows X$ are equal. The universal property of $P$ now implies that every two morphisms $Y \rightrightarrows X$ are equal, which is absurd.
-
-  - property_id: skeletal
-    reason: This is trivial.
-
-  - property_id: core-thin
-    reason: Its core is <a href="/category/B">$\IB$</a>, which we know is not thin.
 
   - property_id: binary copowers
     reason: Assume that the copower $X := 2+2$ exists. Since we have a surjective map $2 \to X$, the set $X$ has at most $2$ elements. The codiagonal $X \to 2$ shows that $X$ has at least $2$ elements. Thus, $X \cong 2$. For all finite sets $Y$ we get a bijection $\Hom(2,Y) \cong \Hom(2,Y)^2$, in particular the cardinalities are the same. For $Y=2$ this gives the contradiction $2 = 4$.
@@ -77,9 +80,6 @@ unsatisfied_properties:
 
   - property_id: multi-initial object
     reason: If a multi-initial object exists, then the connected component consisting of non-empty finite sets has an initial object $X$. Then, any non-empty finite set cannot have a cardinality strictly greater than $X$,  which is a contradiction.
-
-  - property_id: countable
-    reason: This is trivial.
 
 special_objects: {}
 

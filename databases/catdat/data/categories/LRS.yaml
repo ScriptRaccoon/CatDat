@@ -32,17 +32,17 @@ satisfied_properties:
     reason: '[Sketch] Since <a href="/category/Top">$\Top$</a> is infinitary extensive, a morphism $f : Y \to \coprod_i X_i =: X$ yields a decomposition $Y = \coprod_i Y_i$ (as topological spaces) with continuous maps $f_i : Y_i \to X_i$. Endow the open subset $Y_i \subseteq Y$ with the restricted sheaf. Then each $f_i$ becomes a morphism of locally ringed spaces, and $Y = \coprod_i Y_i$ holds as locally ringed spaces.'
 
 unsatisfied_properties:
-  - property_id: balanced
-    reason: The canonical morphism $\Spec(\IZ/2 \times \IZ[1/2]) \longrightarrow \Spec(\IZ)$ is a mono- and an epimorphism, but no isomorphism.
-
   - property_id: skeletal
     reason: This is trivial.
 
-  - property_id: Malcev
-    reason: This is because already <a href="/category/Sch">$\Sch$</a> is not Malcev.
+  - property_id: balanced
+    reason: The canonical morphism $\Spec(\IZ/2 \times \IZ[1/2]) \longrightarrow \Spec(\IZ)$ is a mono- and an epimorphism, but no isomorphism.
 
   - property_id: semi-strongly connected
     reason: This is because already the full subcategory <a href="/category/Sch">$\Sch$</a> of schemes is not semi-strongly connected.
+
+  - property_id: Malcev
+    reason: This is because already <a href="/category/Sch">$\Sch$</a> is not Malcev.
 
   - property_id: co-Malcev
     reason: 'We can adjust the proof for <a href="/category/Top">$\Top$</a> (see <a href="https://mathoverflow.net/questions/509548" target="_blank">MO/509548</a>) as follows: Let $k$ be a field, $X$ be a singleton and $Y = \{u,v\}$ be the Sierpinski space where $\{u\}$ is open, but $\{v\}$ is not. Endow both with the sheaf of locally constant functions to $k$. Thus, $\O_X(X) = k$, $\O_Y(Y) = \O_Y(\{u\}) = k$. There is a canonical morphism $p : X + X \to Y$. It is a coreflexive corelation that is not cosymmetric.'

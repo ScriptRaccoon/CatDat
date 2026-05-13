@@ -17,23 +17,23 @@ related_categories:
   - walking_isomorphism
 
 satisfied_properties:
-  - property_id: finite
+  - property_id: small
     reason: This is trivial.
 
-  - property_id: small
+  - property_id: finite
     reason: This is trivial.
 
   - property_id: gaunt
     reason: This is obvious.
+
+  - property_id: self-dual
+    reason: There is an isomorphism $\Split^\op \to \Split$ defined by $0 \mapsto 0$, $1 \mapsto 1$, $i \mapsto p$, $p \mapsto i$.
 
   - property_id: pointed
     reason: The object $0$ is initial and terminal. This also means that $\id_0, i, p, ip$ are zero morphisms. The only non-zero morphism is $\id_1$.
 
   - property_id: equalizers
     reason: 'The only parallel pair of non-equal morphisms is $\id_1, ip : 1 \rightrightarrows 1$, and their equalizer is $i$.'
-
-  - property_id: self-dual
-    reason: There is an isomorphism $\Split^\op \to \Split$ defined by $0 \mapsto 0$, $1 \mapsto 1$, $i \mapsto p$, $p \mapsto i$.
 
   - property_id: normal
     reason: 'The only non-identity monomorphism is $i : 0 \to 1$, which is the kernel of $\id_1$.'

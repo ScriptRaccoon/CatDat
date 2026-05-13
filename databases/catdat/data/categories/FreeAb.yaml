@@ -23,17 +23,17 @@ satisfied_properties:
   - property_id: coproducts
     reason: This is is because free abelian groups are closed under direct sums of abelian groups.
 
-  - property_id: well-powered
-    reason: This is clear since the monomorphisms are injective.
-
-  - property_id: well-copowered
-    reason: See <a href="https://math.stackexchange.com/questions/5025660" target="_blank">MSE/5025660</a>.
-
   - property_id: generator
     reason: As for <a href="/category/Ab">$\Ab$</a>, the group $\IZ$ is a generator.
 
   - property_id: cogenerator
     reason: It is easy to check that $\IZ$ is a cogenerator for free abelian groups.
+
+  - property_id: well-powered
+    reason: This is clear since the monomorphisms are injective.
+
+  - property_id: well-copowered
+    reason: See <a href="https://math.stackexchange.com/questions/5025660" target="_blank">MSE/5025660</a>.
 
   - property_id: regular
     reason: |-
@@ -42,14 +42,14 @@ satisfied_properties:
       (2) If $f : A \to B$ is a regular epimorphism in $\FreeAb$, consider the factorization $f = i \circ p$ as above. Since $f$ is an extremal epimorphism, $i$ must be an isomorphism, so that $f$ is surjective.
 
 unsatisfied_properties:
-  - property_id: countable powers
-    reason: Assume that the power $P = \prod_{n \geq 0} \IZ$ exists in this category. The projections $P \to \IZ$ induce an isomorphism of abelian groups $\Hom(\IZ, P) \to \prod_n \Hom(\IZ, \IZ)$, hence $P \cong \IZ^{\IN}$. But it is <a href="https://groupprops.subwiki.org/wiki/Baer-Specker_group_is_not_free_abelian" target="_blank">well-known</a> that $\IZ^{\IN}$ is not free abelian.
-
   - property_id: balanced
     reason: 'The homomorphism $2 : \IZ \to \IZ$ is a counterexample.'
 
   - property_id: skeletal
     reason: This is trivial.
+
+  - property_id: countable powers
+    reason: Assume that the power $P = \prod_{n \geq 0} \IZ$ exists in this category. The projections $P \to \IZ$ induce an isomorphism of abelian groups $\Hom(\IZ, P) \to \prod_n \Hom(\IZ, \IZ)$, hence $P \cong \IZ^{\IN}$. But it is <a href="https://groupprops.subwiki.org/wiki/Baer-Specker_group_is_not_free_abelian" target="_blank">well-known</a> that $\IZ^{\IN}$ is not free abelian.
 
   - property_id: sequential colimits
     reason: See <a href="https://mathoverflow.net/questions/509715" target="_blank">MO/509715</a>.

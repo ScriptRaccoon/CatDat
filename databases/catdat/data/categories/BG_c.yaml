@@ -16,9 +16,6 @@ related_categories:
   - BN
 
 satisfied_properties:
-  - property_id: countable
-    reason: This is because $G$ is countable.
-
   - property_id: small
     reason: This is trivial.
 
@@ -28,11 +25,14 @@ satisfied_properties:
   - property_id: connected
     reason: This is trivial.
 
+  - property_id: skeletal
+    reason: There is just one object.
+
   - property_id: generator
     reason: The unique object is a generator for trivial reasons.
 
-  - property_id: skeletal
-    reason: There is just one object.
+  - property_id: countable
+    reason: This is because $G$ is countable.
 
 unsatisfied_properties:
   - property_id: essentially finite

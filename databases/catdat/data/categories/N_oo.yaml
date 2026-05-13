@@ -25,27 +25,27 @@ satisfied_properties:
     reason: Take the supremum.
     check_redundancy: false
 
+  - property_id: semi-strongly connected
+    reason: This is trivial.
+
   - property_id: direct
     reason: This is because the natural numbers with $\infty$ with respect to $<$ are well-founded.
 
   - property_id: locally strongly finitely presentable
     reason: We already saw that coproducts, and therefore colimits exist. Every natural number is strongly finitely presentable, and $\infty$ is the colimit of all $n < \infty$.
 
-  - property_id: semi-strongly connected
-    reason: This is trivial.
-
 unsatisfied_properties:
   - property_id: essentially finite
     reason: This is trivial.
-
-  - property_id: finitary algebraic
-    reason: This follows from <a href="/lemma/thin_algebraic_categories">this lemma</a>.
 
   - property_id: self-dual
     reason: This is because every upper set is infinite, but every lower set is finite.
 
   - property_id: inverse
     reason: Consider the strictly increasing sequence $0 < 1 < 2 < \cdots$.
+
+  - property_id: finitary algebraic
+    reason: This follows from <a href="/lemma/thin_algebraic_categories">this lemma</a>.
 
 special_objects:
   initial object:

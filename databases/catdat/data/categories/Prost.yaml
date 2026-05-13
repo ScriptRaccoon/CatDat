@@ -19,20 +19,20 @@ satisfied_properties:
   - property_id: locally finitely presentable
     reason: The same proof as for <a href="/category/Pos">$\Pos$</a> works, cf. <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>, Example 1.10.
 
-  - property_id: generator
-    reason: The singleton proset $1$ is a generator, since morphisms $1 \to P$ correspond to the elements of $P$.
-
   - property_id: cartesian closed
     reason: For prosets $P,Q$ we endow $\Hom(P,Q)$ with the preorder in which $f \leq g$ holds iff $f(p) \leq g(p)$ for all $p \in P$. The universal evaluation map is $\Hom(P,Q) \times P \to Q$, $(f,p) \mapsto f(p)$, it is order-preserving, and it satisfies the universal property.
+
+  - property_id: generator
+    reason: The singleton proset $1$ is a generator, since morphisms $1 \to P$ correspond to the elements of $P$.
 
   - property_id: cogenerator
     reason: Endow the set $\{ 0,1 \}$ with the preorder $0 \leq 1$, $1 \leq 0$ (which is not a partial order). Then every map $P \to \{0,1\}$ is order-preserving. Now the claim follows since the set $\{ 0,1 \}$ is a cogenerator in $\Set$.
 
-  - property_id: infinitary extensive
-    reason: '[Sketch] Since <a href="/category/Set">$\Set$</a> is infinitary extensive, a map $f : P \to \coprod_i Q_i$ corresponds to a decomposition $P = \coprod_i P_i$ (as sets) with maps $f_i : P_i \to Q_i$. Endow $P_i$ with the induced order. If $f$ is order-preserving, the elements in different $P_i$ cannot be comparable (since their $f$-images are not comparable), so that $P = \coprod_i P_i$ as prosets, and each $f_i$ is order-preserving.'
-
   - property_id: semi-strongly connected
     reason: Every non-empty proset is weakly terminal (by using constant maps).
+
+  - property_id: infinitary extensive
+    reason: '[Sketch] Since <a href="/category/Set">$\Set$</a> is infinitary extensive, a map $f : P \to \coprod_i Q_i$ corresponds to a decomposition $P = \coprod_i P_i$ (as sets) with maps $f_i : P_i \to Q_i$. Endow $P_i$ with the induced order. If $f$ is order-preserving, the elements in different $P_i$ cannot be comparable (since their $f$-images are not comparable), so that $P = \coprod_i P_i$ as prosets, and each $f_i$ is order-preserving.'
 
   - property_id: coregular
     reason: See <a href="https://math.stackexchange.com/questions/5130295" target="_blank">MSE/5130295</a>.

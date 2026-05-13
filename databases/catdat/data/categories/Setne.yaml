@@ -25,11 +25,11 @@ satisfied_properties:
   - property_id: products
     reason: Take the product of non-empty sets inside of <a href="/category/Set">$\Set$</a> and observe that it is non-empty by the axiom of choice.
 
-  - property_id: binary coproducts
-    reason: The disjoint union of two non-empty sets is non-empty.
-
   - property_id: cartesian closed
     reason: This follows as for <a href="/category/Set">$\Set$</a>, since for non-empty sets $X,Y$ there is at least one function $X \to Y$.
+
+  - property_id: binary coproducts
+    reason: The disjoint union of two non-empty sets is non-empty.
 
   - property_id: mono-regular
     reason: This follows as for <a href="/category/Set">$\Set$</a>.
@@ -46,27 +46,27 @@ satisfied_properties:
   - property_id: generalized variety
     reason: Since the inclusion $\Set_{\neq \varnothing} \hookrightarrow \Set$ is closed under non-empty colimits, it is also closed under sifted colimits. Therefore, non-empty finite sets are still strongly finitely presentable in $\Set_{\neq \varnothing}$, and every non-empty set is written as a sifted colimit of them.
 
-  - property_id: multi-complete
-    reason: Let $D$ be a diagram in $\Set_{\neq \varnothing}$, and let $L$ be a limit of $D$ in $\Set$. If $L$ is non-empty, it gives a limit in $\Set_{\neq \varnothing}$ as well. If $L$ is the empty set, there is no cone over $D$ in $\Set_{\neq \varnothing}$; hence the empty set of cones gives a multi-limit of $D$ in $\Set_{\neq \varnothing}$.
-
   - property_id: natural numbers object
     reason: Any natural numbers object in $\Set$, such as $(\IN,0,n \mapsto n+1)$, is clearly also one in $\Set_{\neq \varnothing}$.
 
   - property_id: filtered-colimit-stable monomorphisms
     reason: This follows from <a href="/lemma/filtered-monos">this lemma</a> applied to the forgetful functor to $\Set$.
 
+  - property_id: multi-complete
+    reason: Let $D$ be a diagram in $\Set_{\neq \varnothing}$, and let $L$ be a limit of $D$ in $\Set$. If $L$ is non-empty, it gives a limit in $\Set_{\neq \varnothing}$ as well. If $L$ is the empty set, there is no cone over $D$ in $\Set_{\neq \varnothing}$; hence the empty set of cones gives a multi-limit of $D$ in $\Set_{\neq \varnothing}$.
+
   - property_id: effective congruences
     reason: 'If a congruence $E \rightrightarrows X$ is the kernel pair of $h : X \to Z$, with both $E$ and $X$ non-empty, then certainly $Z$ must also be non-empty.'
 
 unsatisfied_properties:
-  - property_id: sequential limits
-    reason: Assume that the sequence of inclusions $\cdots \to \IN_{\geq 2} \to \IN_{\geq 1} \to \IN_{\geq 0} = \IN$ as a limit $X$, consisting of maps $X \to \IN_{\geq n}$. Since $X$ is non-empty, there is a map $1 \to X$. This corresponds to a family of compatible maps $ 1 \to \IN_{\geq n}$, i.e. to compatible elements in $\IN_{\geq n}$. But the set $\bigcap_{n \geq 0} \IN_{\geq n}$ is empty.
-
   - property_id: skeletal
     reason: This is trivial.
 
   - property_id: cofiltered
     reason: The two maps $\{0\} \rightrightarrows \{0,1\}$ are equalized by no map $X \to \{0\}$ in this category.
+
+  - property_id: sequential limits
+    reason: Assume that the sequence of inclusions $\cdots \to \IN_{\geq 2} \to \IN_{\geq 1} \to \IN_{\geq 0} = \IN$ as a limit $X$, consisting of maps $X \to \IN_{\geq n}$. Since $X$ is non-empty, there is a map $1 \to X$. This corresponds to a family of compatible maps $ 1 \to \IN_{\geq n}$, i.e. to compatible elements in $\IN_{\geq n}$. But the set $\bigcap_{n \geq 0} \IN_{\geq n}$ is empty.
 
   - property_id: coquotients of cocongruences
     reason: The two maps $\{0\} \rightrightarrows \{0,1\}$ form a cocongruence on $\{0\}$ &mdash; namely the cofull cocongruence on $\{0\}$ &mdash; but they do not have an equalizer.

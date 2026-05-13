@@ -19,6 +19,9 @@ satisfied_properties:
   - property_id: small
     reason: This is trivial.
 
+  - property_id: countable
+    reason: This is trivial.
+
   - property_id: thin
     reason: This is trivial.
     check_redundancy: false
@@ -38,9 +41,6 @@ satisfied_properties:
 
   - property_id: direct
     reason: This is because the natural numbers with respect to $<$ are well-founded.
-
-  - property_id: countable
-    reason: This is trivial.
 
 unsatisfied_properties:
   - property_id: countable coproducts

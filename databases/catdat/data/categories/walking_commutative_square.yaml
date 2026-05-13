@@ -18,17 +18,17 @@ related_categories:
   - walking_morphism
 
 satisfied_properties:
-  - property_id: self-dual
+  - property_id: small
     reason: This is trivial.
 
   - property_id: finite
     reason: This is trivial.
 
-  - property_id: small
-    reason: This is trivial.
-
   - property_id: skeletal
     reason: The four objects are not isomorphic.
+
+  - property_id: self-dual
+    reason: This is trivial.
 
   - property_id: locally cartesian closed
     reason: This is because the <a href="/category/walking_morphism">walking morphism</a> has this property.

@@ -30,24 +30,24 @@ satisfied_properties:
   - property_id: mono-regular
     reason: See Prop. 4.2 at the <a href="https://ncatlab.org/nlab/show/regular+monomorphism#Examples" target="_blank">nLab</a>.
 
-  - property_id: Malcev
-    reason: See Example 2.2.4 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>.
-
   - property_id: conormal
     reason: Since epimorphisms are surjective (see below), this is the first isomorphism theorem for groups.
+
+  - property_id: Malcev
+    reason: See Example 2.2.4 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>.
 
   - property_id: effective cocongruences
     reason: A proof can be found <a href="/pdf/cocongruences_of_groups.pdf">here</a>.
 
 unsatisfied_properties:
+  - property_id: skeletal
+    reason: This is trivial.
+
   - property_id: normal
-    reason: Every non-normal subgroup provides a counterexample.
+    reason: Every non-normal subgroup (such as $C_2 \hookrightarrow S_3$) provides a counterexample.
 
   - property_id: cogenerator
     reason: 'We apply <a href="/lemma/missing_cogenerator">this lemma</a> to the collection of simple groups: Any non-trivial homomorphism from a simple group to a group must be injective, and for every infinite cardinal $\kappa$ there is a simple group of size $\geq \kappa$ (for example, the alternating group on $\kappa$ elements).'
-
-  - property_id: skeletal
-    reason: This is trivial.
 
   - property_id: coregular
     reason: This is because injective group homomorphisms are not stable under pushouts, see e.g. <a href="https://math.stackexchange.com/questions/601463/" target="_blank">MSE/601463</a> or <a href="https://math.stackexchange.com/questions/5088032" target="_blank">MSE/5088032</a>.
@@ -59,8 +59,14 @@ unsatisfied_properties:
     # TODO: remove code duplication with "counital" proof
     reason: The canonical morphism $F_2 = \IZ \sqcup \IZ \to \IZ \times \IZ$ is not a monomorphism since $F_2$ is not abelian.
 
+  - property_id: CSP
+    reason: The canonical homomorphism $\coprod_{n \geq 0} \IZ \to \prod_{n \geq 0} \IZ$ is not surjective because its domain is countable and its codomain is uncountable. Hence it is no epimorphism.
+
   - property_id: regular quotient object classifier
     reason: 'Assume that $\Grp$ has a (regular) quotient object classifier, i.e. a group $P$ such that every surjective homomorphism $G \to H$ is the cokernel of a unique homomorphism $\varphi : P \to G$. Equivalently, every normal subgroup $N \subseteq G$ is $\langle \langle \varphi(P) \rangle \rangle$ for a unique homomorphism $\varphi : P \to G$, where $\langle \langle - \rangle \rangle$ denotes the normal closure. If $c_g : G \to G$ denotes the conjugation with $g \in G$, then the images of $\varphi$ and $c_g \circ \varphi$ have the same normal closures, so the homomorphisms must be equal. In other words, $\varphi$ factors through the center $Z(G)$. But then every normal subgroup of $G$, in particular $G$ itself, would be contained in $Z(G)$, which is wrong for every non-abelian group $G$.'
+
+  - property_id: cofiltered-limit-stable epimorphisms
+    reason: We already know that <a href="/category/Ab">$\Ab$</a> does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the forgetful functor $\Ab \to \Grp$ which indeed preserves epimorphisms.
 
   - property_id: cocartesian cofiltered limits
     reason: >-
@@ -69,12 +75,6 @@ unsatisfied_properties:
       is injective, but often fails to be surjective because the components of an element in the image have bounded <i>free product length</i> (the number of factors appearing in the reduced form). Specifically, consider the free groups $G = \langle y \rangle$ and $H_n = \langle x_1,\dotsc,x_n \rangle$ for $n \in \IN$ with the truncation maps $H_{n+1} \to H_n$, $x_{n+1} \mapsto 1$. Define
       $$p_n := x_1 \, y \, x_2 \, y \, \cdots \, x_{n-1} \, y \, x_n \, y^{-(n-1)} \in G \sqcup H_n.$$
       If we substitute $x_{n+1}=1$ in $p_{n+1}$, we get $p_n$. Thus, we have $p = (p_n) \in \lim_n (G \sqcup H_n)$. This element does not lie in the image of $\alpha$ since the free product length of $p_n$ (which is well-defined) is $2n$, which is unbounded.
-
-  - property_id: CSP
-    reason: The canonical homomorphism $\coprod_{n \geq 0} \IZ \to \prod_{n \geq 0} \IZ$ is not surjective because its domain is countable and its codomain is uncountable. Hence it is no epimorphism.
-
-  - property_id: cofiltered-limit-stable epimorphisms
-    reason: We already know that <a href="/category/Ab">$\Ab$</a> does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the forgetful functor $\Ab \to \Grp$ which indeed preserves epimorphisms.
 
 special_objects:
   initial object:

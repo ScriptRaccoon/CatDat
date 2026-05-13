@@ -35,14 +35,14 @@ satisfied_properties:
     reason: One uses the same proof as for locally ringed spaces, using that open subspaces of schemes are also schemes.
 
 unsatisfied_properties:
-  - property_id: countable powers
-    reason: While all diagrams of affine schemes have a limit in the category of schemes, one can show that an infinite product of quasi-compact non-empty schemes only exists when almost all of them are affine, see <a href="https://mathoverflow.net/questions/65506" target="_blank">MO/65506</a>. Thus, for example the power $(\IP^1)^{\IN}$ does not exist in $\Sch$.
+  - property_id: skeletal
+    reason: This is trivial.
 
   - property_id: balanced
     reason: The canonical morphism $\Spec(\IZ/2 \times \IZ[1/2]) \longrightarrow \Spec(\IZ)$ is a mono- and an epimorphism, but no isomorphism.
 
-  - property_id: skeletal
-    reason: This is trivial.
+  - property_id: countable powers
+    reason: While all diagrams of affine schemes have a limit in the category of schemes, one can show that an infinite product of quasi-compact non-empty schemes only exists when almost all of them are affine, see <a href="https://mathoverflow.net/questions/65506" target="_blank">MO/65506</a>. Thus, for example the power $(\IP^1)^{\IN}$ does not exist in $\Sch$.
 
   - property_id: Malcev
     reason: Consider the subscheme $V(x-y) \cup V(y) \subseteq \IA^2$. It contains the diagonal but it is not symmetric.

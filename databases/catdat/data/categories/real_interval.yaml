@@ -20,27 +20,27 @@ satisfied_properties:
   - property_id: self-dual
     reason: Take $t \mapsto 1-t$.
 
+  - property_id: skeletal
+    reason: The relation $\leq$ is antisymmetric.
+
   - property_id: semi-strongly connected
     reason: This is trivial.
 
   - property_id: locally ℵ₁-presentable
     reason: See <a href="https://math.stackexchange.com/questions/4481902/locally-presentable-vs-compactly-presentable-categories#comment9399784_4482185" target="_blank">MSE/4481902</a>.
 
-  - property_id: skeletal
-    reason: The relation $\leq$ is antisymmetric.
-
 unsatisfied_properties:
   - property_id: essentially countable
     reason: This is trivial.
-
-  - property_id: locally finitely presentable
-    reason: It suffices to prove that $0$ (the initial object) is the only finitely presentable object. If $s > 0$, then $s = \sup_{n \in \IN, \, s \geq 1/n } (s - 1/n)$, but there is no $n$ with $s \leq s - 1/n$.
 
   - property_id: direct
     reason: Consider the strictly decreasing sequence $1/2^n$ for $n \geq 0$.
 
   - property_id: inverse
     reason: Consider the strictly increasing sequence $1 - 1/2^n$ for $n \geq 0$.
+
+  - property_id: locally finitely presentable
+    reason: It suffices to prove that $0$ (the initial object) is the only finitely presentable object. If $s > 0$, then $s = \sup_{n \in \IN, \, s \geq 1/n } (s - 1/n)$, but there is no $n$ with $s \leq s - 1/n$.
 
 special_objects:
   initial object:

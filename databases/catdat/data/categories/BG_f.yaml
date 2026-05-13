@@ -29,11 +29,11 @@ satisfied_properties:
   - property_id: connected
     reason: This is trivial.
 
-  - property_id: generator
-    reason: The unique object is a generator for trivial reasons.
-
   - property_id: skeletal
     reason: There is just one object.
+
+  - property_id: generator
+    reason: The unique object is a generator for trivial reasons.
 
 unsatisfied_properties:
   - property_id: trivial

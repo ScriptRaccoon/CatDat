@@ -17,14 +17,14 @@ related_categories:
   - walking_morphism
 
 satisfied_properties:
-  - property_id: trivial
-    reason: The inclusion $\{0\} \hookrightarrow \{0 \to 1\}$ is clearly an equivalence.
+  - property_id: small
+    reason: This is trivial.
 
   - property_id: finite
     reason: This is trivial.
 
-  - property_id: small
-    reason: This is trivial.
+  - property_id: trivial
+    reason: The inclusion $\{0\} \hookrightarrow \{0 \to 1\}$ is an equivalence.
 
 unsatisfied_properties:
   - property_id: skeletal

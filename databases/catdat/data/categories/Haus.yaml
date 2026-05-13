@@ -17,6 +17,12 @@ satisfied_properties:
   - property_id: locally small
     reason: It is a full subcategory of <a href="/category/Top">$\Top$</a>, which is locally small.
 
+  - property_id: generator
+    reason: The one-point space is a generator since it represents the forgetful functor $\Haus \to \Set$.
+
+  - property_id: semi-strongly connected
+    reason: Every non-empty Hausdorff space is weakly terminal (by using constant maps).
+
   - property_id: equalizers
     reason: This follows from the corresponding fact for <a href="/category/Top">$\Top$</a> since subspaces of Hausdorff spaces are again Hausdorff.
 
@@ -36,12 +42,6 @@ satisfied_properties:
   - property_id: well-copowered
     reason: 'Every epimorphism has dense image, so it suffices to prove that if a Hausdorff space $X$ has a dense subset $D \subseteq X$, we can bound the cardinality of $X$ in terms of the cardinality of $D$. For $x \in X$ let $\alpha(x)$ be the set of all $U \cap D$, where $U$ is an open neighborhood of $x$. This defines a map $\alpha : X \to P(P(D))$, and we claim that it is injective: this is because $\{x\}$ is the intersection of all $\overline{U} = \overline{U \cap D}$, where $U$ runs through the open neighborhoods of $x$.'
 
-  - property_id: generator
-    reason: The one-point space is a generator since it represents the forgetful functor $\Haus \to \Set$.
-
-  - property_id: semi-strongly connected
-    reason: Every non-empty Hausdorff space is weakly terminal (by using constant maps).
-
   - property_id: co-Malcev
     reason: See <a href="https://mathoverflow.net/a/509582/2841" target="_blank">MO/509548</a>.
 
@@ -49,17 +49,11 @@ satisfied_properties:
     reason: As the proof at <a href="https://mathoverflow.net/a/509582/2841" target="_blank">MO/509548</a> shows, in fact any coreflexive corelation on $X$ in $\Haus$ is of the form $X +_S X$ for a closed subset $S$ of $X$. Such a cocongruence is clearly effective.
 
 unsatisfied_properties:
-  - property_id: cartesian filtered colimits
-    reason: 'It is shown in <a href="https://math.stackexchange.com/questions/1255678">MSE/1255678</a> that $\IQ \times - : \Top \to \Top$ does not preserve sequential colimits (so that it cannot be a left adjoint). The same example also works in $\Haus$: Surely $\IQ$ is Hausdorff, $X_n$ is Hausdorff, as is their colimit $X$, and the colimit (taken in $\Top$) of the $X_n \times \IQ$ admits a bijective continuous map to a Hausdorff space, therefore is also Hausdorff, meaning it is also the colimit taken in $\Haus$.'
-
-  - property_id: filtered-colimit-stable monomorphisms
-    reason: 'The proof is similar to <a href="/category/Met">$\Met$</a>. For $n \geq 1$ let $X_n$ be the pushout of $[-1/n,+1/n] \hookrightarrow \IR$ with itself. That is, $X_n$ is the union of two lines $\IR \times \{1\}$ and $\IR \times \{2\}$ where we identify $(x,1) \equiv (x,2)$ when $|x| \leq 1/n$. Then $X_n$ is Hausdorff, and there is a canonical surjective continuous map $X_n \to X_{n+1}$. The colimit in $\Top$ is the union of two lines where we identify $(x,1) \equiv (x,2)$ when $|x| \leq 1/n$ for some $n$, i.e. when $x \neq 0$. This is the line with the double origin, which is not Hausdorff. Its Hausdorff reflection is the line $\IR$ where all points of both lines are identified, and it provides the colimit in $\Haus$. Now, the injective continuous maps $\{1,2\} \to X_n$, $i \mapsto (0,i)$ (where $\{1,2\}$ is discrete) become the constant map $0 : \{1,2\} \to \IR$ in the colimit, which is no monomorphism.'
+  - property_id: skeletal
+    reason: This is trivial.
 
   - property_id: balanced
     reason: The inclusion $\IQ \hookrightarrow \IR$ is a counterexample; it is an epimorphism since $\IQ$ is dense in $\IR$.
-
-  - property_id: skeletal
-    reason: This is trivial.
 
   - property_id: Malcev
     reason: This is clear since <a href="/category/Set">$\Set$</a> is not Malcev and can be interpreted as the subcategory of discrete spaces (which are Hausdorff).
@@ -67,8 +61,14 @@ unsatisfied_properties:
   - property_id: regular subobject classifier
     reason: Assume that there is a regular subobject classifier $\Omega$. By the classification of regular monomorphisms, we would have an isomorphism between $\Hom(X,\Omega)$ and the set of closed subsets of $X$ for any Hausdorff space $X$. If we take $X = 1$ we see that $\Omega$ has two points. Since $\Omega$ is Hausdorff, $\Omega \cong 1 + 1$ must be discrete. But then $\Hom(X,\Omega)$ is isomorphic to the set of all clopen subsets of $X$, of which there are usually far fewer than closed subsets (consider $X = [0,1]$).
 
+  - property_id: cartesian filtered colimits
+    reason: 'It is shown in <a href="https://math.stackexchange.com/questions/1255678">MSE/1255678</a> that $\IQ \times - : \Top \to \Top$ does not preserve sequential colimits (so that it cannot be a left adjoint). The same example also works in $\Haus$: Surely $\IQ$ is Hausdorff, $X_n$ is Hausdorff, as is their colimit $X$, and the colimit (taken in $\Top$) of the $X_n \times \IQ$ admits a bijective continuous map to a Hausdorff space, therefore is also Hausdorff, meaning it is also the colimit taken in $\Haus$.'
+
   - property_id: cofiltered-limit-stable epimorphisms
     reason: 'Recall the counterexample for sets: The unique maps $\IN_{\geq n} \to 1$ are surjective, but their limit $0 = \bigcap_{n \geq 0} \IN_{\geq n} \to 1$ is not. This also works in $\Haus$ by using discrete topologies. We could also apply a variant of (the dual of) <a href="/lemma/filtered-monos">this lemma</a> to the discrete topology functor $\Set \to \Haus$, which does not preserve all cofiltered limits, but does preserve intersections.'
+
+  - property_id: filtered-colimit-stable monomorphisms
+    reason: 'The proof is similar to <a href="/category/Met">$\Met$</a>. For $n \geq 1$ let $X_n$ be the pushout of $[-1/n,+1/n] \hookrightarrow \IR$ with itself. That is, $X_n$ is the union of two lines $\IR \times \{1\}$ and $\IR \times \{2\}$ where we identify $(x,1) \equiv (x,2)$ when $|x| \leq 1/n$. Then $X_n$ is Hausdorff, and there is a canonical surjective continuous map $X_n \to X_{n+1}$. The colimit in $\Top$ is the union of two lines where we identify $(x,1) \equiv (x,2)$ when $|x| \leq 1/n$ for some $n$, i.e. when $x \neq 0$. This is the line with the double origin, which is not Hausdorff. Its Hausdorff reflection is the line $\IR$ where all points of both lines are identified, and it provides the colimit in $\Haus$. Now, the injective continuous maps $\{1,2\} \to X_n$, $i \mapsto (0,i)$ (where $\{1,2\}$ is discrete) become the constant map $0 : \{1,2\} \to \IR$ in the colimit, which is no monomorphism.'
 
 special_objects:
   initial object:
