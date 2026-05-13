@@ -1,5 +1,6 @@
 import { type Database } from 'better-sqlite3'
-import { get_assumption_string, get_conclusion_string, is_subset } from './shared'
+import { is_subset } from './shared'
+import { get_assumption_string, get_conclusion_string } from './deduction.utils'
 
 type FunctorMeta = {
 	id: string

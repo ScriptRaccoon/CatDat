@@ -1,4 +1,4 @@
-import { get_client, is_subset } from './shared'
+import { get_client } from './shared'
 import {
 	get_all_assignments,
 	get_categories,
@@ -6,6 +6,10 @@ import {
 	get_normalized_category_implications,
 	type NormalizedCategoryImplication,
 } from './categories.utils'
+import {
+	get_deduced_satisfied_properties,
+	get_deduced_unsatisfied_properties,
+} from './deduction.utils'
 
 const db = get_client()
 
@@ -86,42 +90,6 @@ function check_redundant_category_property_assignments() {
 }
 
 /**
- * Returns the set of satisfied properties that can be deduced from
- * a set of satisfied properties, based on a list of normalized implications.
- * This function is very similar to the corresponding function in
- * `deduce-category-properties.ts`.
- */
-function get_deduced_satisfied_properties(
-	satisfied_properties: Set<string>,
-	implications: NormalizedCategoryImplication[],
-	options?: { stop_when_found: string },
-) {
-	const deduced_properties = new Set(satisfied_properties)
-
-	let searching = true
-
-	while (searching) {
-		searching = false
-
-		for (const implication of implications) {
-			const is_valid =
-				is_subset(implication.assumptions, deduced_properties) &&
-				!deduced_properties.has(implication.conclusion)
-			if (!is_valid) continue
-
-			deduced_properties.add(implication.conclusion)
-			searching = true
-
-			if (options?.stop_when_found === implication.conclusion) {
-				return deduced_properties
-			}
-		}
-	}
-
-	return deduced_properties
-}
-
-/**
  * From a given set of properties, returns a property that can be
  * deduced from the other properties in this set, based on a list
  * of normalized implications.
@@ -135,57 +103,15 @@ function get_redundant_satisfied_property(
 	for (const p of [...satisfied_properties]) {
 		if (ignored.has(p)) continue
 		satisfied_properties.delete(p)
-		const deduced_properties = get_deduced_satisfied_properties(
+		const { deduced_satisfied_properties } = get_deduced_satisfied_properties(
 			satisfied_properties,
 			implications,
 			{ stop_when_found: p },
 		)
-		if (deduced_properties.has(p)) return p
+		if (deduced_satisfied_properties.has(p)) return p
 		satisfied_properties.add(p)
 	}
 	return null
-}
-
-/**
- * Returns the set of unsatisfied properties that can be deduced from
- * a set of satisfied properties and a set of unsatisfied properties,
- * based on a list of normalized implications. This function is very similar
- * to the corresponding function in `deduce-category-properties.ts`.
- */
-function get_deduced_unsatisfied_properties(
-	satisfied_properties: Set<string>,
-	unsatisfied_properties: Set<string>,
-	implications: NormalizedCategoryImplication[],
-	options?: { stop_when_found: string },
-) {
-	const deduced_unsatisfied_properties = new Set(unsatisfied_properties)
-
-	let searching = true
-
-	while (searching) {
-		searching = false
-
-		for (const implication of implications) {
-			if (!deduced_unsatisfied_properties.has(implication.conclusion)) continue
-			for (const p of implication.assumptions) {
-				const is_valid =
-					!deduced_unsatisfied_properties.has(p) &&
-					is_subset(implication.assumptions, satisfied_properties, {
-						exception: p,
-					})
-				if (!is_valid) continue
-
-				deduced_unsatisfied_properties.add(p)
-				searching = true
-
-				if (options?.stop_when_found === p) {
-					return deduced_unsatisfied_properties
-				}
-			}
-		}
-	}
-
-	return deduced_unsatisfied_properties
 }
 
 /**
@@ -203,13 +129,13 @@ function get_redundant_unsatisfied_property(
 	for (const p of [...unsatisfied_properties]) {
 		if (ignored.has(p)) continue
 		unsatisfied_properties.delete(p)
-		const deduced_properties = get_deduced_unsatisfied_properties(
+		const { deduced_unsatisfied_properties } = get_deduced_unsatisfied_properties(
 			satisfied_properties,
 			unsatisfied_properties,
 			implications,
 			{ stop_when_found: p },
 		)
-		if (deduced_properties.has(p)) return p
+		if (deduced_unsatisfied_properties.has(p)) return p
 		unsatisfied_properties.add(p)
 	}
 	return null

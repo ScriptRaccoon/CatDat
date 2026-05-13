@@ -1,5 +1,4 @@
 import { SqliteError, type Database } from 'better-sqlite3'
-import { get_contradiction_string, get_reason_string, is_subset } from './shared'
 import {
 	CategoryMeta,
 	CategoryPropertyMeta,
@@ -9,6 +8,10 @@ import {
 	get_properties_dict,
 	type NormalizedCategoryImplication,
 } from './categories.utils'
+import {
+	get_deduced_satisfied_properties,
+	get_deduced_unsatisfied_properties,
+} from './deduction.utils'
 
 /**
  * Deduce properties of categories from given ones
@@ -108,72 +111,65 @@ function deduce_satisfied_category_properties(
 	properties_dict: Record<string, CategoryPropertyMeta>,
 	options: { check_conflicts: boolean } = { check_conflicts: true },
 ) {
-	const found = new Set<string>()
-	const reasons: Record<string, string> = {}
+	const { found, reasons } = get_deduced_satisfied_properties(
+		satisfied_properties,
+		implications,
+		{ properties_dict },
+	)
 
-	while (true) {
-		const newly_found = new Set<string>()
+	for (const p of found) satisfied_properties.add(p)
 
-		for (const implication of implications) {
-			const is_valid =
-				is_subset(implication.assumptions, satisfied_properties) &&
-				!satisfied_properties.has(implication.conclusion) &&
-				!newly_found.has(implication.conclusion)
-
-			if (!is_valid) continue
-
-			newly_found.add(implication.conclusion)
-			found.add(implication.conclusion)
-
-			reasons[implication.conclusion] = get_reason_string(
-				implication,
-				properties_dict,
-			)
-		}
-
-		for (const p of newly_found) satisfied_properties.add(p)
-
-		if (!newly_found.size) break
-	}
-
-	if (found.size > 0) {
-		const value_fragments: string[] = []
-		const values: (string | number)[] = []
-
-		for (const id of found) {
-			value_fragments.push(`(?, ?, TRUE, ?, TRUE)`)
-			values.push(category_id, id, reasons[id])
-		}
-
-		const conflict_clause = options.check_conflicts
-			? ''
-			: 'ON CONFLICT (category_id, property_id) DO NOTHING'
-
-		const insert_sql = `
-			INSERT INTO category_property_assignments
-				(category_id, property_id, is_satisfied, reason, is_deduced)
-			VALUES ${value_fragments.join(',\n')}
-			${conflict_clause}
-		`
-
-		try {
-			db.prepare(insert_sql).run(values)
-		} catch (err) {
-			if (err instanceof SqliteError) {
-				if (err.code.startsWith('SQLITE_CONSTRAINT')) {
-					console.error(
-						`❌ Failed to complete deduction of satisfied properties for ${category_id} because of a conflict. The likely cause is a contradiction between its assigned properties.`,
-					)
-				}
-				console.error(err.message)
-			} else {
-				console.error(err)
-			}
-			process.exit(1)
-		}
-	}
+	save_satisfied_properties(db, category_id, found, reasons, options)
 
 	console.info(`Deduced ${found.size} satisfied properties for ${category_id}`)
+}
+
+/**
+ * Saves the deduced satisfied properties to the database
+ */
+function save_satisfied_properties(
+	db: Database,
+	category_id: string,
+	found: Set<string>,
+	reasons: Record<string, string>,
+	options: { check_conflicts: boolean } = { check_conflicts: true },
+) {
+	if (found.size === 0) return
+
+	const err_msg = `❌ Failed to complete deduction of satisfied properties for ${category_id} because of a conflict. The likely cause is a contradiction between its assigned properties.`
+
+	const value_fragments: string[] = []
+	const values: (string | number)[] = []
+
+	for (const id of found) {
+		value_fragments.push(`(?, ?, TRUE, ?, TRUE)`)
+		values.push(category_id, id, reasons[id])
+	}
+
+	const conflict_clause = options.check_conflicts
+		? ''
+		: 'ON CONFLICT (category_id, property_id) DO NOTHING'
+
+	const insert_sql = `
+		INSERT INTO category_property_assignments
+			(category_id, property_id, is_satisfied, reason, is_deduced)
+		VALUES ${value_fragments.join(',\n')}
+		${conflict_clause}
+	`
+
+	try {
+		db.prepare(insert_sql).run(values)
+	} catch (err) {
+		if (err instanceof SqliteError) {
+			if (err.code.startsWith('SQLITE_CONSTRAINT')) {
+				console.error(err_msg)
+			}
+			console.error(err.message)
+		} else {
+			console.error(err)
+		}
+		process.exit(1)
+	}
 }
 
 /**
@@ -190,77 +186,66 @@ function deduce_unsatisfied_category_properties(
 	properties_dict: Record<string, CategoryPropertyMeta>,
 	options: { check_conflicts: boolean } = { check_conflicts: true },
 ) {
-	const found = new Set<string>()
-	const reasons: Record<string, string> = {}
+	const { found, reasons } = get_deduced_unsatisfied_properties(
+		satisfied_properties,
+		unsatisfied_properties,
+		implications,
+		{ properties_dict },
+	)
 
-	while (true) {
-		const newly_found = new Set<string>()
+	for (const p of found) unsatisfied_properties.add(p)
 
-		for (const implication of implications) {
-			if (!unsatisfied_properties.has(implication.conclusion)) continue
-			for (const p of implication.assumptions) {
-				const is_valid =
-					!unsatisfied_properties.has(p) &&
-					!newly_found.has(p) &&
-					is_subset(implication.assumptions, satisfied_properties, {
-						exception: p,
-					})
-				if (!is_valid) continue
-
-				if (satisfied_properties.has(p)) {
-					throw new Error(`Contradiction has been found for: ${p}`)
-				}
-
-				newly_found.add(p)
-				found.add(p)
-
-				reasons[p] = get_contradiction_string(implication, properties_dict, p)
-			}
-		}
-
-		for (const p of newly_found) unsatisfied_properties.add(p)
-
-		if (!newly_found.size) break
-	}
-
-	if (found.size > 0) {
-		const value_fragments: string[] = []
-		const values: (string | number)[] = []
-
-		for (const id of found) {
-			value_fragments.push('(?, ?, FALSE, ?, TRUE)')
-			values.push(category_id, id, reasons[id])
-		}
-
-		const conflict_clause = options.check_conflicts
-			? ''
-			: 'ON CONFLICT (category_id, property_id) DO NOTHING'
-
-		const insert_query = `
-			INSERT INTO category_property_assignments
-				(category_id, property_id, is_satisfied, reason, is_deduced)
-			VALUES ${value_fragments.join(',\n')}
-			${conflict_clause}
-		`
-
-		try {
-			db.prepare(insert_query).run(values)
-		} catch (err) {
-			if (err instanceof SqliteError) {
-				if (err.code.startsWith('SQLITE_CONSTRAINT')) {
-					console.error(
-						`❌ Failed to complete deduction of unsatisfied properties for ${category_id} because of a conflict. The likely cause is a contradiction between its assigned properties.`,
-					)
-				}
-				console.error(err.message)
-			} else {
-				console.error(err)
-			}
-			process.exit(1)
-		}
-	}
+	save_unsatisfied_properties(db, category_id, found, reasons, options)
 
 	console.info(`Deduced ${found.size} unsatisfied properties for ${category_id}`)
+}
+
+/**
+ * Saves the deduced unsatisfied properties to the database
+ */
+function save_unsatisfied_properties(
+	db: Database,
+	category_id: string,
+	found: Set<string>,
+	reasons: Record<string, string>,
+	options: { check_conflicts: boolean } = { check_conflicts: true },
+) {
+	if (found.size === 0) return
+
+	const err_msg = `❌ Failed to complete deduction of unsatisfied properties for ${category_id} because of a conflict. The likely cause is a contradiction between its assigned properties.`
+
+	const value_fragments: string[] = []
+	const values: (string | number)[] = []
+
+	for (const id of found) {
+		value_fragments.push('(?, ?, FALSE, ?, TRUE)')
+		values.push(category_id, id, reasons[id])
+	}
+
+	const conflict_clause = options.check_conflicts
+		? ''
+		: 'ON CONFLICT (category_id, property_id) DO NOTHING'
+
+	const insert_query = `
+		INSERT INTO category_property_assignments
+			(category_id, property_id, is_satisfied, reason, is_deduced)
+		VALUES ${value_fragments.join(',\n')}
+		${conflict_clause}
+	`
+
+	try {
+		db.prepare(insert_query).run(values)
+	} catch (err) {
+		if (err instanceof SqliteError) {
+			if (err.code.startsWith('SQLITE_CONSTRAINT')) {
+				console.error(err_msg)
+			}
+			console.error(err.message)
+		} else {
+			console.error(err)
+		}
+		process.exit(1)
+	}
 }
 
 /**
