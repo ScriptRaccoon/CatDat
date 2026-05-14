@@ -3,7 +3,7 @@ import {
 	type CategoryMeta,
 	type CategoryPropertyMeta,
 	type NormalizedCategoryImplication,
-	get_all_decided_properties,
+	get_property_assignments,
 	get_categories,
 	get_normalized_category_implications,
 	get_properties_dict,
@@ -30,7 +30,7 @@ export function deduce_category_properties() {
 	const deduction = db.transaction(() => {
 		delete_deduced_category_properties()
 
-		const all_decided_properties = get_all_decided_properties(db, categories)
+		const all_decided_properties = get_property_assignments(db, categories)
 
 		for (const category of categories) {
 			const decided = all_decided_properties[category.id]

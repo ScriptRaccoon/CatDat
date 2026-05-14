@@ -1,9 +1,9 @@
 import { get_client } from './utils/helpers'
 import {
-	get_all_assignments,
 	get_categories,
 	get_ignored_redundant_properties,
 	get_normalized_category_implications,
+	get_property_assignments_by_deduction,
 	type NormalizedCategoryImplication,
 } from './utils/categories'
 import {
@@ -32,7 +32,7 @@ function check_redundant_category_property_assignments() {
 
 	const implications = get_normalized_category_implications(db)
 	const categories = get_categories(db)
-	const assignments = get_all_assignments(db, categories)
+	const assignments = get_property_assignments_by_deduction(db, categories)
 	const ignore_dict = get_ignored_redundant_properties(db)
 
 	const ignore_count = Object.keys(ignore_dict).reduce(

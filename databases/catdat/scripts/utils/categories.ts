@@ -44,21 +44,19 @@ export function get_categories(db: Database) {
 export function get_normalized_category_implications(
 	db: Database,
 ): NormalizedCategoryImplication[] {
-	const all_implications_db = db
-		.prepare(
-			`SELECT
-				v.id,
-				v.assumptions,
-				v.conclusions,
-				v.is_equivalence
-			FROM category_implications_view v`,
-		)
-		.all() as {
+	type ImplicationDB = {
 		id: string
 		assumptions: string
 		conclusions: string
 		is_equivalence: number
-	}[]
+	}
+
+	const all_implications_db = db
+		.prepare(
+			`SELECT id, assumptions, conclusions, is_equivalence
+			FROM category_implications_view`,
+		)
+		.all() as ImplicationDB[]
 
 	const implications: NormalizedCategoryImplication[] = []
 
@@ -111,10 +109,10 @@ export function get_properties_dict(db: Database) {
 }
 
 /**
- * Returns a dictionary with all properties that are satisfied or unsatisfied,
- * grouped by category and value.
+ * Returns a dictionary with all assigned properties of categories,
+ * grouped by category and value (satisfied / unsatisfied).
  */
-export function get_all_decided_properties(db: Database, categories: { id: string }[]) {
+export function get_property_assignments(db: Database, categories: { id: string }[]) {
 	const rows = db
 		.prepare(
 			`SELECT property_id, category_id, is_satisfied
@@ -138,11 +136,13 @@ export function get_all_decided_properties(db: Database, categories: { id: strin
 }
 
 /**
- * Returns a dictionary with all assigned properties to categories,
- * grouped by category, value, and deduced flag.
- * This function is very similar to `get_all_decided_properties`.
+ * Returns a dictionary with all assigned properties of categories,
+ * grouped by category, value (satisfied / unsatisfied), and deduced status.
  */
-export function get_all_assignments(db: Database, categories: { id: string }[]) {
+export function get_property_assignments_by_deduction(
+	db: Database,
+	categories: { id: string }[],
+) {
 	const rows = db
 		.prepare(
 			`SELECT property_id, category_id, is_satisfied, is_deduced
@@ -202,9 +202,9 @@ export function get_ignored_redundant_properties(db: Database) {
 
 	const grouped: Record<string, Set<string>> = {}
 
-	for (const row of rows) {
-		grouped[row.category_id] ??= new Set()
-		grouped[row.category_id].add(row.property_id)
+	for (const { category_id, property_id } of rows) {
+		grouped[category_id] ??= new Set()
+		grouped[category_id].add(property_id)
 	}
 
 	return grouped
