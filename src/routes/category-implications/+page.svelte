@@ -1,10 +1,13 @@
 <script lang="ts">
 	import { browser } from '$app/environment'
+	import HelpMessage from '$components/HelpMessage.svelte'
 	import ImplicationList from '$components/ImplicationList.svelte'
 	import MetaData from '$components/MetaData.svelte'
 	import SearchFilter from '$components/SearchFilter.svelte'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
 	import { normalize_text, pluralize } from '$lib/client/utils'
+	import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
+	import Fa from 'svelte-fa'
 
 	let { data } = $props()
 
@@ -46,6 +49,10 @@
 		other: 'Found {count} implications*',
 	})}
 </p>
+
+<HelpMessage id="implication-link">
+	New here? Click any <Fa icon={faInfoCircle} /> icon to view the proof for that implication.
+</HelpMessage>
 
 <ImplicationList implications={filtered_implications} />
 

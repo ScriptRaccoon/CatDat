@@ -7,9 +7,10 @@
 	import TextWithReason from '$components/TextWithReason.svelte'
 	import { filter_by_tag, pluralize } from '$lib/client/utils'
 	import CategoryList from '$components/CategoryList.svelte'
-	import { faQuestion } from '@fortawesome/free-solid-svg-icons'
+	import { faCommentDots, faQuestion } from '@fortawesome/free-solid-svg-icons'
 	import Fa from 'svelte-fa'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
+	import HelpMessage from '$components/HelpMessage.svelte'
 
 	let { data } = $props()
 
@@ -79,6 +80,11 @@
 		<p>{@html category.description}</p>
 	{/if}
 </section>
+
+<HelpMessage id="proof-bubble">
+	New here? Click any <Fa icon={faCommentDots} scale={0.825} /> icon to view the proof for
+	that property.
+</HelpMessage>
 
 <div class="two-columns">
 	<section>

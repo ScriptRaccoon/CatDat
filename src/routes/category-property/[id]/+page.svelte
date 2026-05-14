@@ -1,10 +1,13 @@
 <script lang="ts">
 	import CategoryList from '$components/CategoryList.svelte'
+	import HelpMessage from '$components/HelpMessage.svelte'
 	import ImplicationList from '$components/ImplicationList.svelte'
 	import MetaData from '$components/MetaData.svelte'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
 	import { pluralize } from '$lib/client/utils'
 	import { get_property_url } from '$lib/commons/property.url'
+	import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
+	import Fa from 'svelte-fa'
 
 	let { data } = $props()
 </script>
@@ -55,6 +58,10 @@
 		{/if}
 	</ul>
 {/if}
+
+<HelpMessage id="implication-link">
+	New here? Click any <Fa icon={faInfoCircle} /> icon to view the proof for that implication.
+</HelpMessage>
 
 <h3 class="sticky-heading">Relevant implications</h3>
 
