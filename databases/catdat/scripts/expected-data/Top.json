@@ -61,6 +61,7 @@
 	"finite copowers": true,
 	"binary copowers": true,
 	"filtered": true,
+	"ℵ₁-filtered": true,
 	"cofiltered": true,
 	"sifted": true,
 	"cosifted": true,

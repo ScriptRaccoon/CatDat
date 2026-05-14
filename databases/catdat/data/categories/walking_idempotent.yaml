@@ -39,8 +39,8 @@ satisfied_properties:
   - property: preadditive
     reason: The monoid $\{1,e\}$ with $e^2=e$ is the underlying multiplicative monoid of the ring $\IZ/2$, where $e=0$. Thus, the (unique) preadditive structure is given by $1 + e = e + 1 = 1$, $e + e = e$ and $1 + 1 = e$.
 
-  - property: filtered
-    reason: The pair $\id,e$ is coequalized by $e$ (non-universally).
+  - property: ℵ₁-filtered
+    reason: 'In fact, the walking idempotent is $\kappa$-filtered for every regular infinite cardinal $\kappa$: Every diagram $D : \I \to \Idem$ has the cocone $(e : D(i) \to 0)_{i \in \I}$.'
 
 unsatisfied_properties:
   - property: terminal object

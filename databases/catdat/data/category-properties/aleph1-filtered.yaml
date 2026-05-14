@@ -1,0 +1,11 @@
+id: ℵ₁-filtered
+relation: is
+description: A category is <i>$\aleph_1$-filtered</i> if every countable diagram admits a cocone. This is the special case of the notion of a $\kappa$-filtered category for $\kappa = \aleph_1$, the first uncountable cardinal. An equivalent characterization is given as Theorem 2.2 at the <a href="https://ncatlab.org/nlab/show/filtered+category">nLab</a>.
+nlab_link: https://ncatlab.org/nlab/show/filtered+category
+dual_property: null
+invariant_under_equivalences: true
+
+related_properties:
+  - filtered
+  - ℵ₁-filtered colimits
+  - cocomplete

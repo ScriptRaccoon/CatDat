@@ -39,14 +39,6 @@
     where $f=g$; hence when the category is also sifted, all cospans must be of this form, and so any two parallel morphisms are equal.
   is_equivalence: false
 
-- id: terminal_object_yields_filtered
-  assumptions:
-    - terminal object
-  conclusions:
-    - filtered
-  reason: This is obvious.
-  is_equivalence: false
-
 - id: filtered_criterion
   assumptions:
     - finitely cocomplete
@@ -55,11 +47,56 @@
   reason: Every finite diagram even admits a <i>universal</i> cocone.
   is_equivalence: false
 
-- id: filtered_via_equalizers
+- id: filtered_via_coequalizers
   assumptions:
     - coequalizers
     - semi-strongly connected
   conclusions:
     - filtered
   reason: This is obvious.
+  is_equivalence: false
+
+- id: aleph1-filtered-consequence
+  assumptions:
+    - ℵ₁-filtered
+  conclusions:
+    - filtered
+  reason: This is trivial.
+  is_equivalence: false
+
+- id: aleph1-filtered_criterion
+  assumptions:
+    - coequalizers
+    - countable coproducts
+  conclusions:
+    - ℵ₁-filtered
+  reason: Every countable diagram even admits a <i>universal</i> cocone.
+  is_equivalence: false
+
+- id: terminal_object_yields_kappa_filtered
+  assumptions:
+    - terminal object
+  conclusions:
+    - ℵ₁-filtered
+  reason: This is obvious.
+  is_equivalence: false
+
+- id: filtered-finite-thin
+  assumptions:
+    - thin
+    - filtered
+    - essentially finite
+  conclusions:
+    - terminal object
+  reason: Let $\C$ be a thin, filtered, and w.l.o.g. finite category. The identity diagram $\C \to \C$ admits a cocone. That is, there is an object $T$ with a morphism $A \to T$ for all $A \in \C$. Then $T$ is terminal.
+  is_equivalence: false
+
+- id: aleph1-filtered-countable-thin
+  assumptions:
+    - thin
+    - ℵ₁-filtered
+    - essentially countable
+  conclusions:
+    - terminal object
+  reason: Let $\C$ be a thin, $\aleph_1$-filtered, and w.l.o.g. countable category. The identity diagram $\C \to \C$ admits a cocone. That is, there is an object $T$ with a morphism $A \to T$ for all $A \in \C$. Then $T$ is terminal.
   is_equivalence: false
