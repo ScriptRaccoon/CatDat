@@ -71,7 +71,6 @@ export function deduce_category_properties() {
 				implications,
 				decided.satisfied,
 				properties_dict,
-				{ check_conflicts: false },
 			)
 
 			deduce_unsatisfied_category_properties(
@@ -80,7 +79,6 @@ export function deduce_category_properties() {
 				decided.satisfied,
 				decided.unsatisfied,
 				properties_dict,
-				{ check_conflicts: false },
 			)
 		}
 	})
@@ -106,7 +104,6 @@ function deduce_satisfied_category_properties(
 	implications: NormalizedCategoryImplication[],
 	satisfied_properties: Set<string>,
 	properties_dict: Record<string, CategoryPropertyMeta>,
-	options: { check_conflicts: boolean } = { check_conflicts: true },
 ) {
 	const { found, reasons } = get_deduced_satisfied_properties(
 		satisfied_properties,
@@ -116,7 +113,7 @@ function deduce_satisfied_category_properties(
 
 	for (const p of found) satisfied_properties.add(p)
 
-	save_satisfied_properties(category_id, found, reasons, options)
+	save_satisfied_properties(category_id, found, reasons)
 
 	console.info(`Deduced ${found.size} satisfied properties for ${category_id}`)
 }
@@ -128,21 +125,15 @@ function save_satisfied_properties(
 	category_id: string,
 	found: Set<string>,
 	reasons: Record<string, string>,
-	options: { check_conflicts: boolean } = { check_conflicts: true },
 ) {
 	if (found.size === 0) return
 
 	const err_msg = `❌ Failed to complete deduction of satisfied properties for ${category_id} because of a conflict. The likely cause is a contradiction between its assigned properties.`
 
-	const conflict_clause = options.check_conflicts
-		? ''
-		: 'ON CONFLICT (category_id, property_id) DO NOTHING'
-
 	const property_insert = db.prepare(`
 		INSERT INTO category_property_assignments
 			(category_id, property_id, is_satisfied, reason, is_deduced)
 		VALUES (?, ?, TRUE, ?, TRUE)
-		${conflict_clause}
 	`)
 
 	try {
@@ -173,7 +164,6 @@ function deduce_unsatisfied_category_properties(
 	satisfied_properties: Set<string>,
 	unsatisfied_properties: Set<string>,
 	properties_dict: Record<string, CategoryPropertyMeta>,
-	options: { check_conflicts: boolean } = { check_conflicts: true },
 ) {
 	const { found, reasons } = get_deduced_unsatisfied_properties(
 		satisfied_properties,
@@ -184,7 +174,7 @@ function deduce_unsatisfied_category_properties(
 
 	for (const p of found) unsatisfied_properties.add(p)
 
-	save_unsatisfied_properties(category_id, found, reasons, options)
+	save_unsatisfied_properties(category_id, found, reasons)
 
 	console.info(`Deduced ${found.size} unsatisfied properties for ${category_id}`)
 }
@@ -196,21 +186,15 @@ function save_unsatisfied_properties(
 	category_id: string,
 	found: Set<string>,
 	reasons: Record<string, string>,
-	options: { check_conflicts: boolean } = { check_conflicts: true },
 ) {
 	if (found.size === 0) return
 
 	const err_msg = `❌ Failed to complete deduction of unsatisfied properties for ${category_id} because of a conflict. The likely cause is a contradiction between its assigned properties.`
 
-	const conflict_clause = options.check_conflicts
-		? ''
-		: 'ON CONFLICT (category_id, property_id) DO NOTHING'
-
 	const property_insert = db.prepare(`
 		INSERT INTO category_property_assignments
 			(category_id, property_id, is_satisfied, reason, is_deduced)
 		VALUES (?, ?, FALSE, ?, TRUE)
-		${conflict_clause}
 	`)
 
 	try {
