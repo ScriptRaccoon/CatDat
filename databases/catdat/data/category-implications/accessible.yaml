@@ -132,6 +132,7 @@
     - ℵ₁-accessible
   conclusions:
     - accessible
+    - ℵ₁-filtered colimits
   reason: This is trivial.
   is_equivalence: false
 
@@ -148,7 +149,7 @@
     - accessible
   conclusions:
     - Cauchy complete
-  reason: This is because the walking idempotent is $\kappa$-filtered for any regular cardinal $\kappa$.
+  reason: This is because the walking idempotent is $\kappa$-filtered for any regular cardinal $\kappa$. See also <a href="https://bookstore.ams.org/conm-104" target="_blank">Makkai-Pare</a>, Prop. 2.2.1.
   is_equivalence: false
 
 - id: small_accessible_characterization

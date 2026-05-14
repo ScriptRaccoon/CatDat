@@ -71,7 +71,7 @@ unsatisfied_properties:
   - property: sequential colimits
     reason: If $\Man$ had sequential colimits, then by <a href="/content/special_sequential_colimits">this lemma</a> there would be a manifold $M$ that admits a split epimorphism $M \to \IR^n$ for every $n$. But then $M$ will have an infinite-dimensional tangent space, which is a contradiction.
 
-  - property: ℵ₁-accessible
+  - property: ℵ₁-filtered colimits
     reason: 'We already know that <a href="/category/Set_c">$\Set_\c$</a> does not have $\aleph_1$-filtered colimits. The functor $\pi_0: \Man \to \Set_\c$ is well-defined (because manifolds are second-countable), and it admits a fully faithful right adjoint (regarding a countable set as a discrete manifold). Therefore, $\Man$ does not have $\aleph_1$-filtered colimits.'
 
   - property: quotients of congruences

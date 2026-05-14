@@ -83,6 +83,7 @@
 	"accessible": true,
 	"finitely accessible": true,
 	"ℵ₁-accessible": true,
+	"ℵ₁-filtered colimits": true,
 	"generalized variety": true,
 	"locally finitely multi-presentable": true,
 	"locally multi-presentable": true,

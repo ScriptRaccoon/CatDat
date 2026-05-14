@@ -61,6 +61,22 @@
   reason: We may assume that the category $\C$ is finite and Cauchy complete. The answer at <a href="https://mathoverflow.net/questions/509853" target="_blank">MO/509853</a> shows that every filtered colimit in $\C$ exists, in fact it is a retract of one of the objects in the diagram. Now apply this to the morphism category of $\C$. It follows that for every filtered diagram of morphisms $X_i \to Y_i$ their colimit $X_\infty \to Y_\infty$ exists, which is a retract of one of the $X_i \to Y_i$. Therefore, if every $X_i \to Y_i$ is a monomorphism, also $X_\infty \to Y_\infty$ is a monomorphism.
   is_equivalence: false
 
+- id: aleph1-filtered-colimits-include-filtered-colimits
+  assumptions:
+    - filtered colimits
+  conclusions:
+    - ℵ₁-filtered colimits
+  reason: Every $\aleph_1$-filtered category is also $\aleph_0$-filtered, i.e. filtered. Therefore, every $\aleph_1$-filtered diagram is also a filtered diagram, hence has a colimit by assumption.
+  is_equivalence: false
+
+- id: kappa-filtered-colimits_require_Cauchy_complete
+  assumptions:
+    - ℵ₁-filtered colimits
+  conclusions:
+    - Cauchy complete
+  reason: More generally, if $\kappa$ is any infinite regular cardinal, a category with $\kappa$-filtered colimits must be Cauchy cocomplete. This is because the <a href="/category/walking_idempotent">walking idempotent</a> is $\kappa$-filtered. See also <a href="https://bookstore.ams.org/conm-104" target="_blank">Makkai-Pare</a>, Prop. 2.2.1.
+  is_equivalence: false
+
 - id: sifted_categories_are_connected
   assumptions:
     - connected colimits

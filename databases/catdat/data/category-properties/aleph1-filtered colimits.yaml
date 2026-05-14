@@ -1,0 +1,11 @@
+id: ℵ₁-filtered colimits
+relation: has
+description: A category has <i>$\aleph_1$-filtered colimits</i> if it has colimits of diagrams indexed by small $\aleph_1$-filtered categories. Here, a category is called $\aleph_1$-filtered when every countable diagram has a cocone.
+nlab_link: https://ncatlab.org/nlab/show/filtered+colimit
+dual_property: null
+invariant_under_equivalences: true
+
+related_properties:
+  - cocomplete
+  - filtered colimits
+  - ℵ₁-accessible

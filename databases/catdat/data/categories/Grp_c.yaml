@@ -85,7 +85,7 @@ unsatisfied_properties:
   - property: cogenerator
     reason: 'Assume that a cogenerator $Q$ exists in $\Grp_\c$. There are only countably many finitely generated subgroups of $Q$. But there are continuum many finitely generated simple groups; this follows from Corollary 1.5 in <a href="https://arxiv.org/abs/1807.06478" target="_blank">Finitely generated infinite simple groups of homeomorphisms of the real line</a> by J. Hyde and Y. Lodha. Hence, there is a finitely generated (and hence countable) simple group $H$ which does not embed into $Q$. Since $H$ is simple, any homomorphism $H \to Q$ must be trivial then. But then $\id_H, 1 : H \rightrightarrows H$ are not separated by a homomorphism $H \to Q$.'
 
-  - property: ℵ₁-accessible
+  - property: ℵ₁-filtered colimits
     reason: 'We can almost copy the proof from <a href="/category/Set_c">$\Set_\c$</a> to show that $\Grp_\c$ does not have $\aleph_1$-filtered colimits: Fix an uncountable set $X$, let $P_\c(X)$ be the poset of countable subsets of $X$, which is $\aleph_1$-filtered, and consider the functor $P_\c(X) \to \Grp_\c$ taking a subset $Y \subseteq X$ to the free group $F(Y)$. The colimit of this diagram in $\Grp$ is given by $F(X)$ itself, so if $G$ were a colimit in $\Grp_\c$, then $\Hom(G, C_2) \cong \Hom(F(X),C_2) \cong \{0,1\}^X$. But the former has cardinality at most $2^{\aleph_0}$ and the latter has cardinality $2^{\card(X)}$, so we have obtained a contradiction if we pick $X$ large enough (e.g. $\card(X)=2^{\aleph_0}$).'
 
 special_objects:

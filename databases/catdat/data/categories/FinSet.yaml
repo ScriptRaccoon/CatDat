@@ -42,7 +42,7 @@ satisfied_properties:
     reason: This follows easily from the fact that sets form an elementary topos.
 
   - property: ℵ₁-accessible
-    reason: The inclusion $\FinSet \hookrightarrow \Set$ is closed under ℵ₁-filtered colimits, that is, any ℵ₁-filtered colimit of finite sets is again finite. Since every finite set is ℵ₁-presentable in $\Set$, it is still ℵ₁-presentable in $\FinSet$. Therefore, $\FinSet$ is ℵ₁-accessible, where every object is ℵ₁-presentable.
+    reason: The inclusion $\FinSet \hookrightarrow \Set$ is closed under ℵ₁-filtered colimits, that is, any ℵ₁-filtered colimit of finite sets is again finite (<a href="https://mathoverflow.net/questions/400763" target="_blank">MO/400763</a>). Since every finite set is ℵ₁-presentable in $\Set$, it is still ℵ₁-presentable in $\FinSet$. Therefore, $\FinSet$ is ℵ₁-accessible, where every object is ℵ₁-presentable.
 
 unsatisfied_properties:
   - property: small
