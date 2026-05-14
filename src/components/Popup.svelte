@@ -75,29 +75,7 @@ an issue when clicking two reasons in a row. So it's a <div> then.
 </div>
 
 <style>
-	header {
-		margin-block: 0rem 1rem;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-	}
-
-	h3 {
-		margin: 0;
-	}
-
-	.content {
-		max-width: 800px;
-		margin: 0 auto;
-
-		:global(a:has(.katex)) {
-			text-decoration: none;
-			border-bottom: 1px solid var(--outline-color);
-		}
-	}
-
 	.popup {
-		--speed: 120ms;
 		position: fixed;
 		z-index: 5;
 		bottom: 0;
@@ -117,8 +95,8 @@ an issue when clicking two reasons in a row. So it's a <div> then.
 		pointer-events: none;
 
 		transition:
-			opacity var(--speed) linear,
-			transform var(--speed) ease-out;
+			opacity 120ms linear,
+			transform 120ms ease-out;
 	}
 
 	.popup.open {
@@ -127,7 +105,28 @@ an issue when clicking two reasons in a row. So it's a <div> then.
 		pointer-events: initial;
 	}
 
-	button {
-		padding: 0.2rem 1rem;
+	.content {
+		max-width: 800px;
+		margin: 0 auto;
+
+		:global(a:has(.katex)) {
+			text-decoration: none;
+			border-bottom: 1px solid var(--outline-color);
+		}
+	}
+
+	header {
+		margin-block: 0rem 1rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		h3 {
+			margin: 0;
+		}
+
+		button {
+			padding: 0.2rem 1rem;
+		}
 	}
 </style>
