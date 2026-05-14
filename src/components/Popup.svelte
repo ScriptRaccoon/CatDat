@@ -103,6 +103,8 @@ an issue when clicking two reasons in a row. So it's a <div> then.
 		bottom: 0;
 		left: 0;
 		right: 0;
+		max-height: 100vh;
+		overflow-y: scroll;
 		background-color: var(--bg-color);
 		border-top: 2px solid var(--secondary-outline-color);
 		color: var(--text-color);
