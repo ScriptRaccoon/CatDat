@@ -58,6 +58,22 @@ export function render_nested_formulas<T>(obj: T): T {
 
 const md = new MarkdownIt()
 
+function slugify_heading(text: string): string {
+	return text.trim().replace(/\s+/g, '_').toLowerCase()
+}
+
+md.renderer.rules.heading_open = (tokens, idx, options, _, self) => {
+	const token = tokens[idx + 1]
+	const text =
+		token?.children
+			?.filter((t) => t.type === 'text')
+			.map((t) => t.content)
+			.join('') ?? ''
+	const id = slugify_heading(text)
+	tokens[idx].attrSet('id', id)
+	return self.renderToken(tokens, idx, options)
+}
+
 function render_content<T = Record<string, unknown>>(
 	txt: string,
 ): { meta_data: T; html: string } {
