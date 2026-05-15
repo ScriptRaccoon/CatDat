@@ -74,6 +74,21 @@ md.renderer.rules.heading_open = (tokens, idx, options, _, self) => {
 	return self.renderToken(tokens, idx, options)
 }
 
+md.renderer.rules.link_open = (tokens, idx, options, _, self) => {
+	const token = tokens[idx]
+
+	const href_index = token.attrIndex('href')
+	if (href_index >= 0) {
+		const href = token.attrs?.[href_index]?.[1]
+
+		if (href?.startsWith('https://') || href?.startsWith('http://')) {
+			token.attrSet('target', '_blank')
+		}
+	}
+
+	return self.renderToken(tokens, idx, options)
+}
+
 function render_content<T = Record<string, unknown>>(
 	txt: string,
 ): { meta_data: T; html: string } {
