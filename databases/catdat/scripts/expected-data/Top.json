@@ -157,5 +157,6 @@
 	"subobject-trivial": false,
 	"quotient-trivial": false,
 	"effective congruences": false,
-	"effective cocongruences": false
+	"effective cocongruences": false,
+	"locally finite": false
 }

@@ -5,7 +5,7 @@
     - thin
   conclusions:
     - generating set
-    - locally essentially small
+    - locally finite
     - one-way
     - equalizers
     - left cancellative
@@ -28,6 +28,15 @@
   conclusions:
     - thin
   reason: 'Let $X$ be any object. The swap $\tau : X \times X \to X \times X$ is an automorphism, hence equal to the identity. It follows that the projections $p_1,p_2 : X \times X \rightrightarrows X$ are the same. And this means that every two morphisms $Y \rightrightarrows X$ are the same.'
+  is_equivalence: false
+
+- id: thin_via_locally-finite
+  assumptions:
+    - locally finite
+    - countable powers
+  conclusions:
+    - thin
+  reason: If $A,B$ are objects, we have a bijection $\Hom(A,B)^{\IN} \cong \Hom(A,B^{\IN})$. By assumption, this set is finite. Hence, $\Hom(A,B)$ has at most one element.
   is_equivalence: false
 
 - id: thin_groupoids

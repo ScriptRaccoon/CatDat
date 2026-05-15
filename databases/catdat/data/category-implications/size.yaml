@@ -34,6 +34,7 @@
     - essentially finite
   conclusions:
     - essentially countable
+    - locally finite
   reason: This is trivial.
   is_equivalence: false
 
@@ -56,6 +57,14 @@
 - id: locally_small_consequence
   assumptions:
     - locally small
+  conclusions:
+    - locally essentially small
+  reason: This is trivial.
+  is_equivalence: false
+
+- id: locally_finite_consequence
+  assumptions:
+    - locally finite
   conclusions:
     - locally essentially small
   reason: This is trivial.

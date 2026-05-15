@@ -157,5 +157,6 @@
 	"gaunt": false,
 	"core-thin": false,
 	"subobject-trivial": false,
-	"quotient-trivial": false
+	"quotient-trivial": false,
+	"locally finite": false
 }

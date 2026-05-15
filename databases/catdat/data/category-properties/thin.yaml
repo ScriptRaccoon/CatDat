@@ -8,3 +8,4 @@ invariant_under_equivalences: true
 related_properties:
   - core-thin
   - discrete
+  - locally finite

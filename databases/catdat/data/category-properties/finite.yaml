@@ -8,4 +8,5 @@ invariant_under_equivalences: false
 related_properties:
   - countable
   - essentially finite
+  - locally finite
   - small
