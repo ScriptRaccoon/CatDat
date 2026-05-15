@@ -100,6 +100,12 @@ export const load = async (event) => {
 
 	const relevant_implications = relevant_implications_db.map(display_implication)
 
+	for (const impl of relevant_implications) {
+		if (!impl.is_equivalence && impl.conclusions.includes(id)) {
+			impl.conclusions = [id]
+		}
+	}
+
 	return render_nested_formulas({
 		property,
 		related_properties,
