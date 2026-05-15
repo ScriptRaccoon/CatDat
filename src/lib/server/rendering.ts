@@ -2,6 +2,7 @@ import katex from 'katex'
 import { is_object } from './utils'
 import MarkdownIt from 'markdown-it'
 import { MACROS } from './macros'
+import matter from 'gray-matter'
 
 const MATH_REGEX = /\$\$(.*?)\$\$|\$(.*?)\$/gs
 
@@ -57,9 +58,13 @@ export function render_nested_formulas<T>(obj: T): T {
 
 const md = new MarkdownIt()
 
-function render_content(txt: string): string {
+function render_content<T = Record<string, unknown>>(
+	txt: string,
+): { meta_data: T; html: string } {
+	const { data, content } = matter(txt)
+
 	const formulas: Record<string, string> = {}
-	const with_placeholders = txt.replace(
+	const with_placeholders = content.replace(
 		MATH_REGEX,
 		(_, display_formula, inline_formula) => {
 			const placeholder = `@@MATH-${Object.keys(formulas).length}@@`
@@ -74,7 +79,8 @@ function render_content(txt: string): string {
 	for (const [placeholder, rendered] of Object.entries(formulas)) {
 		html = html.replaceAll(placeholder, rendered)
 	}
-	return html
+
+	return { meta_data: data as T, html }
 }
 
 const content_dict: Record<string, string> = import.meta.glob('$lib/content/*.md', {
@@ -83,9 +89,15 @@ const content_dict: Record<string, string> = import.meta.glob('$lib/content/*.md
 	eager: true,
 })
 
+type ContentMetaData = {
+	title: string
+	description: string
+	author?: string
+}
+
 export function get_rendered_content(file: string) {
 	const key = `/src/lib/content/${file}.md`
 	const txt = content_dict[key]
 	if (!txt) return null
-	return render_content(txt)
+	return render_content<ContentMetaData>(txt)
 }

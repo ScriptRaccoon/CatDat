@@ -2,13 +2,11 @@
 	import MetaData from '$components/MetaData.svelte'
 
 	let { data } = $props()
-
-	// TODO: extract title as metadata
 </script>
 
-<MetaData />
+<MetaData title={data.meta_data.title} description={data.meta_data.description} />
 
-{@html data.content}
+{@html data.html}
 
 <style>
 	:global(img) {

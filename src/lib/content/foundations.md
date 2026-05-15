@@ -1,3 +1,9 @@
+---
+title: Foundations
+description: How to make sense of categories in set theory
+author: Martin Brandenburg
+---
+
 ## Foundations
 
 In _CatDat_, we work with the following convenient set-theoretic foundation for category theory.

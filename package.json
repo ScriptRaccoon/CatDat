@@ -38,6 +38,7 @@
 		"better-sqlite3": "^12.9.0",
 		"chokidar": "^5.0.0",
 		"dotenv": "^17.3.1",
+		"gray-matter": "^4.0.3",
 		"husky": "^9.1.7",
 		"katex": "^0.16.44",
 		"markdown-it": "^14.1.1",
