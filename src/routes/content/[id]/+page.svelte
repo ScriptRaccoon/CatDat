@@ -9,10 +9,15 @@
 {@html data.html}
 
 <style>
-	:global(img) {
+	:global(img:not([src$='.svg'])) {
 		width: min(100%, 30rem);
 		margin-inline: auto;
 		border-radius: 1rem;
+	}
+
+	:global(img[src$='.svg']) {
+		width: 100%;
+		margin-block: 2rem;
 	}
 
 	:global(.theorem) {
