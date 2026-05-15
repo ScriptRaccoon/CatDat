@@ -161,13 +161,60 @@
   reason: See <a href="https://bookstore.ams.org/conm-104" target="_blank">Makkai-Pare</a>, Thm. 2.2.2.
   is_equivalence: false
 
-- id: countably_accessible_thin
+- id: countably_accessible_criterion
+  # TODO: based on this, remove some of the assignments
   assumptions:
     - essentially countable
-    - thin
+    - locally finite
+    - Cauchy complete
   conclusions:
     - ℵ₁-accessible
-  reason: In general, every $\kappa$-filtered diagram in a poset whose elements are less than $\kappa$ admits the greatest element. Therefore, all the elements are $\kappa$-presentable, and the poset is $\kappa$-accessible.
+  reason: >-
+    The proof is similar to Thm. 2.2.2 in <a href="https://bookstore.ams.org/conm-104" target="_blank">Makkai-Pare</a> (which only establishes $\aleph_2$-accessibility) and to <a href="https://mathoverflow.net/questions/509853" target="_blank">MO/509853</a> (which concerns $\aleph_0$-accessibility in the finite case).
+
+
+    Let $\C$ be a category that is locally finite, essentially countable, and Cauchy complete. By replacing $\C$ with an equivalent category if necessary, we may assume that it is countable and that all Hom-sets are finite <i>sets</i>. Let $\I$ be an $\aleph_1$-filtered category and let $D : \I \to \C$ be a diagram. We will prove that the colimit of $D$ exists and is a retract of some $D(i)$, in fact for arbitrarily large $i$. (Note that one cannot in general prove that it is isomorphic to some $D(i)$; this is false.) It follows that $\aleph_1$-filtered colimits exist and that every object of $\C$ is $\aleph_1$-presentable.
+
+
+    Let $X \in \C$ be a fixed object. Then
+    $$F \coloneqq \Hom(X,D(-)) : \I \to \FinSet$$
+    is a diagram of finite sets. Regard it as a diagram in $\Set$ and let $L \in \Set$ be its colimit. Thus, for every $i \in \I$ we have maps $u_i : F(i) \to L$ that are jointly surjective, and two elements in $F(i)$ and $F(j)$ become equal in $L$ iff there exists a cospan $i \to k \leftarrow j$ such that these elements map to the same element in $F(k)$.
+
+
+    We claim that $L$ is finite. Otherwise, there would exist infinitely many pairwise distinct elements $l_1,l_2,\dotsc$ in $L$. Choose objects $i_1,i_2,\dotsc \in \I$ such that $l_n$ has a preimage in $F(i_n)$. Since $\I$ is $\aleph_1$-filtered, there exists a cocone $(i_n \to j)_{n \geq 1}$ in $\I$. We then obtain preimages $a_1,a_2,\dotsc$ in $F(j)$, which must be pairwise distinct because $l_1,l_2,\dotsc$ are pairwise distinct. This contradicts the finiteness of $F(j)$. Therefore, $L$ is finite.
+
+
+    For every element of the finite set $L$, choose a preimage in some $F(i)$. Since $\I$ is filtered, there exists $i \in \I$ that works for all elements simultaneously. Equivalently, the canonical map $F(i) \to L$ is surjective.
+
+
+    Now consider the free cocompletion $Y : \C \hookrightarrow \widehat{\C} = [\C^{\op},\Set]$ and the colimit $D_\infty \in \widehat{\C}$ of the diagram $Y \circ D$. Since colimits in $\widehat{\C}$ are computed objectwise,
+    $$D_\infty(X) = \colim_{i \in \I} \Hom(X,D(i)).$$
+    We have shown above that $D_\infty(X)$ is finite and that there exists some $i_X \in \I$ such that the canonical map
+    $$u_{i_X}(X) : \Hom(X,D(i_X)) \to D_\infty(X)$$
+    is surjective. Since $\C$ is countable and $\I$ is $\aleph_1$-filtered, there exists a cocone $(i_X \to j)_{X \in \C}$ in $\I$. It follows that
+    $$u_j(X) : \Hom(X,D(j)) \to D_\infty(X)$$
+    is surjective for all $X \in \C$. Equivalently, $u_j : Y(D(j)) \to D_\infty$ is an epimorphism in $\widehat{\C}$. For every morphism $j \to j'$, the map $u_{j'}$ is likewise an epimorphism. We will now show that some $u_{j'}$ is in fact a split epimorphism in $\widehat{\C}$.
+
+
+    For every $X \in \C$, since $u_j(X)$ is a surjective map of finite sets, there exists a map
+    $$v(X) : D_\infty(X) \to \Hom(X,D(j))$$
+    such that $u_j(X) \circ v(X) = \id_{D_\infty(X)}$. The issue is that $v$ need not be natural in $X$. To analyze this, let $f : X \to Y$ be a morphism in $\C$. Then we have a diagram of finite sets:
+    $$\begin{CD}
+    D_\infty(Y) @>{v(Y)}>> \Hom(Y,D(j)) @>{u_j(Y)}>> D_\infty(Y) \\
+    @V{f^*}VV @V{f^*}VV @VV{f^*}V \\
+    D_\infty(X) @>>{v(X)}> \Hom(X,D(j)) @>>{u_j(X)}> D_\infty(X)
+    \end{CD}$$
+    The outer rectangle commutes, and the square on the right commutes. Hence, the square on the left commutes after composition with $u_j(X)$. Since $D_\infty(Y)$ is finite, it follows that there exists some morphism $j \to j'$ such that the left square commutes after composition with
+    $$\Hom(X,D(j \to j')) : \Hom(X,D(j)) \to \Hom(X,D(j')).$$
+    A priori, the index $j'$ depends on the morphism $f : X \to Y$. However, since $\I$ is $\aleph_1$-filtered and $\C$ has only countably many morphisms, we may choose $j'$ independently of $f$. Thus, by construction,
+    $$w(X) \coloneqq \Hom(X,D(j \to j')) \circ v(X) : D_\infty(X) \to \Hom(X,D(j'))$$
+    is natural in $X$. Moreover,
+    $$\begin{align*}
+    u_{j'}(X) \circ w(X) & = u_{j'}(X) \circ \Hom(X,D(j \to j')) \circ v(X) \\
+    & = u_j(X) \circ v(X) = \id_{D_\infty(X)}.
+    \end{align*}$$
+    Therefore, $u_{j'}$ is a split epimorphism in $\widehat{\C}$. Since $\C$ is Cauchy complete, it follows that $D_\infty$ is representable, represented by a retract of $D(j')$. Since $Y$ is fully faithful, this object is a colimit of $D$.
+
   is_equivalence: false
 
 - id: locally_presentable_another_definition
