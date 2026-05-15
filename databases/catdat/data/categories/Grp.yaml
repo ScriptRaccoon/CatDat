@@ -37,7 +37,7 @@ satisfied_properties:
     reason: See Example 2.2.4 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>.
 
   - property: effective cocongruences
-    reason: A proof can be found <a href="/pdf/cocongruences_of_groups.pdf">here</a>.
+    reason: A proof can be found <a href="/content/cocongruences_of_groups">here</a>.
 
 unsatisfied_properties:
   - property: skeletal
