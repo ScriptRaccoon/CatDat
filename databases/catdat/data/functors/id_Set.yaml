@@ -6,9 +6,9 @@ description: Every category $\C$ has an identity functor $\id_{\C}$. Here, we sp
 nlab_link: https://ncatlab.org/nlab/show/identity+functor
 
 satisfied_properties:
-  - property_id: equivalence
+  - property: equivalence
     reason: This is trivial.
-  - property_id: representable
+  - property: representable
     reason: This functor is represented by any singleton set.
 
 unsatisfied_properties: []

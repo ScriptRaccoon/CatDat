@@ -3,4 +3,4 @@ relation: is
 description: 'A functor is <i>full</i> when it is surjective on Hom-sets: Every morphism $F(A) \to F(B)$ is induced by a morphism $A \to B$.'
 nlab_link: https://ncatlab.org/nlab/show/full+functor
 invariant_under_equivalences: true
-dual_property_id: full
+dual_property: full

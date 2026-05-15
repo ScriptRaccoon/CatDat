@@ -23,7 +23,7 @@ export type CategoryYaml = {
 	morphisms: string
 	description: string | null
 	nlab_link: string | null
-	dual_category_id?: string | null
+	dual_category?: string | null
 	tags: string[]
 	related_categories: string[]
 	satisfied_properties: PropertyEntry[]
@@ -32,13 +32,13 @@ export type CategoryYaml = {
 	special_morphisms: Record<string, MorphismEntry | undefined>
 	comments?: string[]
 	category_property_comments?: {
-		property_id: string
+		property: string
 		comment: string
 	}[]
 }
 
 type PropertyEntry = {
-	property_id: string
+	property: string
 	reason: string
 	check_redundancy?: boolean
 }
@@ -57,7 +57,7 @@ export type CategoryPropertyYaml = {
 	relation: string
 	description: string
 	nlab_link?: string | null
-	dual_property_id?: string | null
+	dual_property?: string | null
 	invariant_under_equivalences: boolean
 	related_properties: string[]
 }
@@ -92,7 +92,7 @@ export type FunctorPropertyYaml = {
 	relation: string
 	description: string
 	nlab_link?: string | null
-	dual_property_id?: string | null
+	dual_property?: string | null
 	invariant_under_equivalences: boolean
 }
 

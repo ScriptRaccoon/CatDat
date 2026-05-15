@@ -2,7 +2,7 @@ id: essentially discrete
 relation: is
 description: A category is <i>essentially discrete</i> if it is equivalent to a discrete category. Equivalently, it is a thin groupoid. Notice that the nLab calls this property simply "discrete". In contrast to being discrete, this property is invariant under equivalences of categories. An essentially discrete category is the same as a <i>setoid</i> (a set equipped with an equivalence relation).
 nlab_link: https://ncatlab.org/nlab/show/discrete+category
-dual_property_id: essentially discrete
+dual_property: essentially discrete
 invariant_under_equivalences: true
 
 related_properties:

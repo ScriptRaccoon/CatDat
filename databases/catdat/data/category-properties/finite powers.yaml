@@ -2,7 +2,7 @@ id: finite powers
 relation: has
 description: A category has <i>finite powers</i> when for every object $X$ and every finite set $I$ the power $X^I$ exists. Equivalently, for every $n \in \IN$ the power $X^n$ exists.
 nlab_link: https://ncatlab.org/nlab/show/powering
-dual_property_id: finite copowers
+dual_property: finite copowers
 invariant_under_equivalences: true
 
 related_properties:

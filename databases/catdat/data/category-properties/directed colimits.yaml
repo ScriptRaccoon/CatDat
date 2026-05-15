@@ -2,7 +2,7 @@ id: directed colimits
 relation: has
 description: A category has <i>directed colimits</i> if it has colimits of diagrams indexed by directed (small) posets. This is actually equivalent to having filtered colimits. Directed colimits are (somewhat confusingly) also known as <i>inverse limits</i>.
 nlab_link: https://ncatlab.org/nlab/show/directed+colimit
-dual_property_id: directed limits
+dual_property: directed limits
 invariant_under_equivalences: true
 
 related_properties:

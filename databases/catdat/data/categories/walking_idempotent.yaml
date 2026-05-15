@@ -18,35 +18,35 @@ related_categories:
   - walking_splitting
 
 satisfied_properties:
-  - property_id: small
+  - property: small
     reason: This is trivial.
 
-  - property_id: finite
+  - property: finite
     reason: This is trivial.
 
-  - property_id: gaunt
+  - property: gaunt
     reason: This is obvious.
 
-  - property_id: self-dual
+  - property: self-dual
     reason: This is obvious.
 
-  - property_id: generator
+  - property: generator
     reason: The unique object is a generator for trivial reasons.
 
-  - property_id: subobject-trivial
+  - property: subobject-trivial
     reason: This is because the identity is the only monomorphism.
 
-  - property_id: preadditive
+  - property: preadditive
     reason: The monoid $\{1,e\}$ with $e^2=e$ is the underlying multiplicative monoid of the ring $\IZ/2$, where $e=0$. Thus, the (unique) preadditive structure is given by $1 + e = e + 1 = 1$, $e + e = e$ and $1 + 1 = e$.
 
-  - property_id: filtered
+  - property: filtered
     reason: The pair $\id,e$ is coequalized by $e$ (non-universally).
 
 unsatisfied_properties:
-  - property_id: terminal object
+  - property: terminal object
     reason: This is obvious.
 
-  - property_id: Cauchy complete
+  - property: Cauchy complete
     reason: The idempotent $e$ does not split.
 
 special_objects: {}

@@ -4,7 +4,7 @@ description: |-
   A category is <i>preadditive</i> when it is locally essentially small* and each hom-set carries the structure of an abelian group such that the composition is bilinear. Notice that "preadditive" is an extra structure. The property here just says that some preadditive structure exists.
   *We demand this instead of the more common "locally small" to ensure that preadditive categories are invariant under equivalences of categories.
 nlab_link: https://ncatlab.org/nlab/show/Ab-enriched+category
-dual_property_id: preadditive
+dual_property: preadditive
 invariant_under_equivalences: true
 
 related_properties:

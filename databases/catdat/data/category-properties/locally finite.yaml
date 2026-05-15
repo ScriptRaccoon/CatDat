@@ -2,7 +2,7 @@ id: locally finite
 relation: is
 description: A category is <i>locally finite</i> or <i>Hom-finite</i> when for all objects $A,B$ the collection $\Hom(A,B)$ is finite. (We do not assume that this collection is an actual set. Therefore, this property is invariant under equivalences of categories.)
 nlab_link: https://ncatlab.org/nlab/show/locally+finite+category
-dual_property_id: locally finite
+dual_property: locally finite
 invariant_under_equivalences: true
 
 related_properties:

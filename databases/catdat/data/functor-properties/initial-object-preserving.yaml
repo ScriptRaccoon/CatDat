@@ -3,4 +3,4 @@ relation: is
 description: A functor $F$ <i>preserves initial objects</i> when it maps every initial object to an initial object. It is not assumed that the source category has a initial object.
 nlab_link: null
 invariant_under_equivalences: true
-dual_property_id: terminal-object-preserving
+dual_property: terminal-object-preserving

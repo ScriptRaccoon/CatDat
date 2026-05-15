@@ -2,7 +2,7 @@ id: conormal
 relation: is
 description: A category is <i>conormal</i> if it has zero morphisms and every epimorphism is a cokernel of some morphism (in which case case it is also called a <i>normal epimorphism</i>). The assumption of having zero morphisms makes it possible to talk about cokernels.
 nlab_link: https://ncatlab.org/nlab/show/normal+epimorphism
-dual_property_id: normal
+dual_property: normal
 invariant_under_equivalences: true
 
 related_properties:

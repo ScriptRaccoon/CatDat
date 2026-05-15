@@ -2,7 +2,7 @@ id: multi-cocomplete
 relation: is
 description: A <i>multi-colimit</i> of a diagram $D\colon \S \to \C$ is a set $I$ of cocones under $D$ such that every cocone under $D$ uniquely factors through a unique cocone belonging to $I$. This property refers to the existence of multi-colimits of small diagrams. Note that any diagram with no cocone admits a multi-colimit, which is the empty set of cocones.
 nlab_link: https://ncatlab.org/nlab/show/multilimit
-dual_property_id: multi-complete
+dual_property: multi-complete
 invariant_under_equivalences: true
 
 related_properties:

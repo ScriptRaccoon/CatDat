@@ -14,33 +14,33 @@ related_categories:
   - N
 
 satisfied_properties:
-  - property_id: small
+  - property: small
     reason: This is trivial.
 
-  - property_id: countable
+  - property: countable
     reason: This is trivial.
 
-  - property_id: thin
+  - property: thin
     reason: This is trivial.
     check_redundancy: false
 
-  - property_id: distributive
+  - property: distributive
     reason: 'We need to prove $\lcm_i \gcd(a, b_i) \cong \gcd(a, \lcm_i b_i)$ for finite families. If $x$ denotes the LHS and $y$ denotes the RHS, the relation $x \mid y$ is formal. If $v_p(-) : \IZ \to \IN_{\infty}$  denotes the multiplicity of a prime $p$, then $v_p(x)$ equals $\max_i \min(v_p(a),v_p(b_i))$, and $v_p(y)$ equals $\min(v_p(a), \max_i v_p(b_i))$. Since our family is finite, there is some $i_0$ with $\max_i v_p(b_i) = v_p(b_{i_0})$. Then $v_p(x) \geq \min(v_p(a),v_p(b_{i_0})) = v_p(y)$. This proves $y \mid x$.'
 
-  - property_id: locally ℵ₁-presentable
+  - property: locally ℵ₁-presentable
     reason: Every $\aleph_1$-directed diagram is eventually constant.
 
 unsatisfied_properties:
-  - property_id: skeletal
+  - property: skeletal
     reason: The integers $+1$ and $-1$ are isomorphic, but not equal.
 
-  - property_id: self-dual
+  - property: self-dual
     reason: The only integer with infinitely many divisors (up to isomorphism) is $0$. But many integers have infinitely many multiples (up to isomorphism).
 
-  - property_id: countably distributive
+  - property: countably distributive
     reason: We have $2 \times \coprod_n 3^n = \gcd(2,\lcm_n(3^n)) = \gcd(2,0) = 2$, but $\coprod_n (2 \times 3^n) = \lcm_n \gcd(2,3^n) = \lcm_n 1  = 1$.
 
-  - property_id: countably codistributive
+  - property: countably codistributive
     reason: If $p$ runs through all odd primes, we have $2 \sqcup \prod_p p = \lcm(2,\gcd_p p) = \lcm(2,0) = 0$, but $\prod_p (2 \sqcup p) = \gcd_p (\lcm(2,p)) = \gcd_p (2 \cdot p) = 2$.
 
 special_objects:

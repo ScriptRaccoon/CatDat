@@ -1,7 +1,7 @@
 id: coextensive
 relation: is
 description: A category $\C$ is <i>coextensive</i> when it has finite products and for all objects $A,B \in \C$ the product functor $A/\C \times B/\C \to (A \times B)/\C$ is an equivalence of categories. The prototypical example is the category of commutative rings.
-dual_property_id: extensive
+dual_property: extensive
 invariant_under_equivalences: true
 
 related_properties:

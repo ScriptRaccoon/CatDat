@@ -13,65 +13,65 @@ related_categories:
   - Set
 
 satisfied_properties:
-  - property_id: locally small
+  - property: locally small
     reason: There is a forgetful functor $\Setne \to \Set$ and $\Set$ is locally small.
 
-  - property_id: generator
+  - property: generator
     reason: The one-point set is clearly a generator.
 
-  - property_id: cogenerator
+  - property: cogenerator
     reason: The two-point set is a cogenerator, this follows as for <a href="/category/Set">$\Set$</a>.
 
-  - property_id: products
+  - property: products
     reason: Take the product of non-empty sets inside of <a href="/category/Set">$\Set$</a> and observe that it is non-empty by the axiom of choice.
 
-  - property_id: cartesian closed
+  - property: cartesian closed
     reason: This follows as for <a href="/category/Set">$\Set$</a>, since for non-empty sets $X,Y$ there is at least one function $X \to Y$.
 
-  - property_id: binary coproducts
+  - property: binary coproducts
     reason: The disjoint union of two non-empty sets is non-empty.
 
-  - property_id: mono-regular
+  - property: mono-regular
     reason: This follows as for <a href="/category/Set">$\Set$</a>.
 
-  - property_id: epi-regular
+  - property: epi-regular
     reason: This follows as for <a href="/category/Set">$\Set$</a>.
 
-  - property_id: strongly connected
+  - property: strongly connected
     reason: Use constant maps.
 
-  - property_id: finitely accessible
+  - property: finitely accessible
     reason: Since the inclusion $\Setne \hookrightarrow \Set$ is closed under non-empty colimits, it is also closed under filtered colimits. Therefore, non-empty finite sets are still finitely presentable in $\Setne$, and every non-empty set is written as a filtered colimit of them.
 
-  - property_id: generalized variety
+  - property: generalized variety
     reason: Since the inclusion $\Setne \hookrightarrow \Set$ is closed under non-empty colimits, it is also closed under sifted colimits. Therefore, non-empty finite sets are still strongly finitely presentable in $\Setne$, and every non-empty set is written as a sifted colimit of them.
 
-  - property_id: natural numbers object
+  - property: natural numbers object
     reason: Any natural numbers object in $\Set$, such as $(\IN,0,n \mapsto n+1)$, is clearly also one in $\Setne$.
 
-  - property_id: filtered-colimit-stable monomorphisms
+  - property: filtered-colimit-stable monomorphisms
     reason: This follows from <a href="/lemma/filtered-monos">this lemma</a> applied to the forgetful functor to $\Set$.
 
-  - property_id: multi-complete
+  - property: multi-complete
     reason: Let $D$ be a diagram in $\Setne$, and let $L$ be a limit of $D$ in $\Set$. If $L$ is non-empty, it gives a limit in $\Setne$ as well. If $L$ is the empty set, there is no cone over $D$ in $\Setne$; hence the empty set of cones gives a multi-limit of $D$ in $\Setne$.
 
-  - property_id: effective congruences
+  - property: effective congruences
     reason: 'If a congruence $E \rightrightarrows X$ is the kernel pair of $h : X \to Z$, with both $E$ and $X$ non-empty, then certainly $Z$ must also be non-empty.'
 
 unsatisfied_properties:
-  - property_id: skeletal
+  - property: skeletal
     reason: This is trivial.
 
-  - property_id: cofiltered
+  - property: cofiltered
     reason: The two maps $\{0\} \rightrightarrows \{0,1\}$ are equalized by no map $X \to \{0\}$ in this category.
 
-  - property_id: sequential limits
+  - property: sequential limits
     reason: Assume that the sequence of inclusions $\cdots \to \IN_{\geq 2} \to \IN_{\geq 1} \to \IN_{\geq 0} = \IN$ as a limit $X$, consisting of maps $X \to \IN_{\geq n}$. Since $X$ is non-empty, there is a map $1 \to X$. This corresponds to a family of compatible maps $ 1 \to \IN_{\geq n}$, i.e. to compatible elements in $\IN_{\geq n}$. But the set $\bigcap_{n \geq 0} \IN_{\geq n}$ is empty.
 
-  - property_id: coquotients of cocongruences
+  - property: coquotients of cocongruences
     reason: The two maps $\{0\} \rightrightarrows \{0,1\}$ form a cocongruence on $\{0\}$ &mdash; namely the cofull cocongruence on $\{0\}$ &mdash; but they do not have an equalizer.
 
-  - property_id: effective cocongruences
+  - property: effective cocongruences
     reason: The two maps $\{0\} \rightrightarrows \{0,1\}$ form a cocongruence on $\{0\}$ &mdash; namely the cofull cocongruence on $\{0\}$ &mdash; but there is no map $Z \to \{0\}$ making the required commutative diagram, much less a cocartesian square.
 
 special_objects:

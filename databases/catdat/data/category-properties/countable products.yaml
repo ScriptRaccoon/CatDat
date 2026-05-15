@@ -1,7 +1,7 @@
 id: countable products
 relation: has
 description: A category has <i>countable products</i> if it has products for countable families of objects.
-dual_property_id: countable coproducts
+dual_property: countable coproducts
 invariant_under_equivalences: true
 
 related_properties:

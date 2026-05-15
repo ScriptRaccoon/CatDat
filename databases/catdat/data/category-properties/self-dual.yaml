@@ -2,7 +2,7 @@ id: self-dual
 relation: is
 description: A category is <i>self-dual</i> if it is equivalent to its opposite (or dual) category.
 nlab_link: https://ncatlab.org/nlab/show/opposite+category
-dual_property_id: self-dual
+dual_property: self-dual
 invariant_under_equivalences: true
 
 related_properties: []

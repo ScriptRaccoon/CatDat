@@ -5,7 +5,7 @@ objects: sets
 morphisms: maps
 description: The category of sets plays a fundamental role in category theory. Due to the Yoneda embedding, many results about general categories can be reduced to the category of sets. It is also usually the first example of a category that one encounters.
 nlab_link: https://ncatlab.org/nlab/show/Set
-dual_category_id: Set_op
+dual_category: Set_op
 
 tags:
   - set theory
@@ -18,23 +18,23 @@ related_categories:
   - SetxSet
 
 satisfied_properties:
-  - property_id: locally small
+  - property: locally small
     reason: The collection of maps between two sets $X,Y$ is a subset of $X \times Y$ and therefore a set.
 
-  - property_id: finitary algebraic
+  - property: finitary algebraic
     reason: Use the empty algebraic theory.
 
-  - property_id: Grothendieck topos
+  - property: Grothendieck topos
     reason: It is equivalent to the category of sheaves on a one-point space.
 
-  - property_id: semi-strongly connected
+  - property: semi-strongly connected
     reason: Every non-empty set is weakly terminal (by using constant maps).
 
 unsatisfied_properties:
-  - property_id: skeletal
+  - property: skeletal
     reason: This is trivial.
 
-  - property_id: trivial
+  - property: trivial
     reason: This is trivial.
 
 special_objects:

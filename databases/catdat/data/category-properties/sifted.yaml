@@ -5,7 +5,7 @@ description: >-
   $$X \rightarrow Z \leftarrow Y$$
   is connected. Equivalently, a small category $\C$ is sifted if $\colim : \Set^{\C} \to \Set$ preserves finite products. This property is a weaker notion than being filtered.
 nlab_link: https://ncatlab.org/nlab/show/sifted+category
-dual_property_id: cosifted
+dual_property: cosifted
 invariant_under_equivalences: true
 
 related_properties:

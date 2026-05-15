@@ -3,4 +3,4 @@ relation: is
 description: 'A functor $F : \C \to \D$ is <i>monadic</i> when there is a monad $T$ on $\D$ such that $F$ is equivalent to the forgetful functor $U^T : \Alg(T) \to \D$.'
 nlab_link: https://ncatlab.org/nlab/show/monadic+functor
 invariant_under_equivalences: true
-dual_property_id: comonadic
+dual_property: comonadic

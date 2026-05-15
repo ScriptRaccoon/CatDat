@@ -2,7 +2,7 @@ id: one-way
 relation: is
 description: A category is <i>one-way</i> if every endomorphism in it is equal to the identity.
 nlab_link: https://ncatlab.org/nlab/show/one-way+category
-dual_property_id: one-way
+dual_property: one-way
 invariant_under_equivalences: true
 
 related_properties:

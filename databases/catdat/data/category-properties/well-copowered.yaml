@@ -2,7 +2,7 @@ id: well-copowered
 relation: is
 description: A category is <i>well-copowered</i> if the collection of quotients of any object is isomorphic to a set.
 nlab_link: https://ncatlab.org/nlab/show/well-powered+category
-dual_property_id: well-powered
+dual_property: well-powered
 invariant_under_equivalences: true
 
 related_properties:

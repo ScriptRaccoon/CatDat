@@ -17,26 +17,26 @@ related_categories:
   - BN
 
 satisfied_properties:
-  - property_id: finite
+  - property: finite
     reason: This is trivial.
 
-  - property_id: small
+  - property: small
     reason: This is trivial.
 
-  - property_id: groupoid
+  - property: groupoid
     reason: This is trivial.
 
-  - property_id: connected
+  - property: connected
     reason: This is trivial.
 
-  - property_id: skeletal
+  - property: skeletal
     reason: There is just one object.
 
-  - property_id: generator
+  - property: generator
     reason: The unique object is a generator for trivial reasons.
 
 unsatisfied_properties:
-  - property_id: trivial
+  - property: trivial
     reason: This is trivial.
 
 special_objects: {}

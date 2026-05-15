@@ -2,7 +2,7 @@ id: disjoint finite coproducts
 relation: has
 description: A category has <i>disjoint finite coproducts</i> if it has finite coproducts, for every pair of objects $A,B$ the coproduct inclusions $A \rightarrow A+B \leftarrow B$ are monomorphisms, and the pullback $A \times_{A + B} B$ exists and is given by the initial object $0$.
 nlab_link: https://ncatlab.org/nlab/show/disjoint+coproduct
-dual_property_id: disjoint finite products
+dual_property: disjoint finite products
 invariant_under_equivalences: true
 
 related_properties:

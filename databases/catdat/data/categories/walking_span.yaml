@@ -16,32 +16,32 @@ related_categories:
   - walking_pair
 
 satisfied_properties:
-  - property_id: small
+  - property: small
     reason: This is trivial.
 
-  - property_id: finite
+  - property: finite
     reason: This is trivial.
 
-  - property_id: thin
+  - property: thin
     reason: This is trivial.
 
-  - property_id: skeletal
+  - property: skeletal
     reason: The three objects are not isomorphic.
 
-  - property_id: initial object
+  - property: initial object
     reason: $0$ is an initial object.
 
-  - property_id: binary products
+  - property: binary products
     reason: We have $0 \times x = 0$ for all $x$, $x \times x = x$, and $1 \times 2 = 0$.
 
-  - property_id: locally cartesian closed
+  - property: locally cartesian closed
     reason: The slice category over $0$ is the <a href="/category/1">trivial category</a>, and the slice category over $1$ is the <a href="/category/walking_morphism">walking morphism</a>, which is cartesian closed. The same holds for $2$ by symmetry.
 
-  - property_id: multi-algebraic
+  - property: multi-algebraic
     reason: We first remark that for a set $X$, the identity span $(\id,\id)\colon X \leftarrow X \rightarrow X$ exhibits a product if and only if $X$ is either a singleton or the empty set. Therefore, there is a (finite product, coproduct)-sketch whose $\Set$-model is precisely a pair $(X,Y)$ of sets such that each of $X$ and $Y$ is either a singleton or the empty set and the product $X \times Y$ is the empty set. Any $\Set$-model of such a sketch is isomorphic to either $(\varnothing, \varnothing)$, $(\varnothing, 1)$, or $(1, \varnothing)$; hence the category of models is equivalent to the walking span.
 
 unsatisfied_properties:
-  - property_id: sifted
+  - property: sifted
     reason: There is no cospan between $1$ and $2$.
 
 special_objects:

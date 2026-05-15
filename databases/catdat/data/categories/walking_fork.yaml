@@ -16,44 +16,44 @@ related_categories:
   - walking_pair
 
 satisfied_properties:
-  - property_id: small
+  - property: small
     reason: This is trivial.
 
-  - property_id: finite
+  - property: finite
     reason: This is trivial.
 
-  - property_id: semi-strongly connected
+  - property: semi-strongly connected
     reason: This is obvious.
 
-  - property_id: skeletal
+  - property: skeletal
     reason: The three objects are clearly not isomorphic.
 
-  - property_id: one-way
+  - property: one-way
     reason: This is trivial.
 
-  - property_id: generator
+  - property: generator
     reason: It is easy to check that $1$ is a generator.
 
-  - property_id: cogenerator
+  - property: cogenerator
     reason: It is easy to check that $2$ is a cogenerator.
 
-  - property_id: left cancellative
+  - property: left cancellative
     reason: It is easy to check that $i,f,g$ are monomorphisms.
 
-  - property_id: equalizers
+  - property: equalizers
     reason: The only pair of distinct parallel morphisms is $f,g$, and their equalizer is $i$.
 
-  - property_id: locally cartesian closed
+  - property: locally cartesian closed
     reason: We need to check that every slice category is cartesian closed. The slice category over $0$ is the <a href="/category/1">trivial category</a>. The slice category over $1$ is the <a href="/category/walking_morphism">walking morphism</a>. Finally, the slice category over $2$ ist the <a href="/category/walking_commutative_square">walking commutative square</a>. All of these are cartesian closed, see their pages for details.
 
 unsatisfied_properties:
-  - property_id: strongly connected
+  - property: strongly connected
     reason: There is no morphism $1 \to 0$.
 
-  - property_id: balanced
+  - property: balanced
     reason: Both $f$ and $g$ are monomorphisms and epimorphisms.
 
-  - property_id: binary powers
+  - property: binary powers
     reason: 'Assume that $X := 2 \times 2$ exists. Since there is a diagonal morphism $2 \to X$, we must have $X = 2$, and the two projections $p_1,p_2 : X \rightrightarrows 2$ must be equal to the identity. But $f,g$ induce a morphism $(f,g) : 1 \to X$ with $p_1 (f,g) = f$ and $p_2 (f,g) = g$, so that $f=g$, a contradiction.'
 
 special_objects:

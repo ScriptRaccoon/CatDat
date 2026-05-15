@@ -2,7 +2,7 @@ id: disjoint coproducts
 relation: has
 description: A category has <i>disjoint coproducts</i> if it has coproducts, the coproduct inclusions $A_i \to \coprod_{i \in I} A_i$ are monomorphisms, and the pullback of the inclusions $A_i \to \coprod_{i \in I} A_i$ and $A_j \to \coprod_{i \in I} A_i$ for $i \neq j$ exists and is given by the initial object $0$.
 nlab_link: https://ncatlab.org/nlab/show/disjoint+coproduct
-dual_property_id: disjoint products
+dual_property: disjoint products
 invariant_under_equivalences: true
 
 related_properties:

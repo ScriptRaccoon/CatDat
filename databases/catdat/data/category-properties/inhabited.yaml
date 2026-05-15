@@ -2,7 +2,7 @@ id: inhabited
 relation: is
 description: A category is <i>inhabited</i> if it has at least one object. In classical logic, this is equivalent to being <i>non-empty</i> (which is a double negation).
 nlab_link: https://ncatlab.org/nlab/show/inhabited+set
-dual_property_id: inhabited
+dual_property: inhabited
 invariant_under_equivalences: true
 
 related_properties: []

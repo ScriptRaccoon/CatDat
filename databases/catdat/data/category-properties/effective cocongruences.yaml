@@ -4,7 +4,7 @@ description: >-
   A cocongruence $f, g : X \rightrightarrows E$ (see definition <a href="/category-property/coquotients_of_cocongruences">here</a>) is <i>effective</i> if it is the cokernel pair of some morphism, i.e. if there is a morphism $h : Y \to X$ such that we have a cocartesian square
   $$\begin{CD} Y @> h >> X \\ @V h VV @VV f V \\ X @>> g > E. \end{CD}$$
   A category <i>has effective cocongruences</i> if every cocongruence in the category is effective.
-dual_property_id: effective congruences
+dual_property: effective congruences
 invariant_under_equivalences: true
 
 related_properties:

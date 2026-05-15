@@ -2,7 +2,7 @@ id: regular
 relation: is
 description: A category is <i>regular</i> when it is finitely complete, for every morphism $X \to Y$ its kernel pair $X \times_Y X \rightrightarrows X$ has a coequalizer, and regular epimorphisms are stable under pullbacks.
 nlab_link: https://ncatlab.org/nlab/show/regular+category
-dual_property_id: coregular
+dual_property: coregular
 invariant_under_equivalences: true
 
 related_properties:

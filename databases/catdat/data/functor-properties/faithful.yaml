@@ -3,4 +3,4 @@ relation: is
 description: 'A functor is <i>faithful</i> when it is injective on Hom-sets: If $F(f)=F(g)$, then $f=g$.'
 nlab_link: https://ncatlab.org/nlab/show/faithful+functor
 invariant_under_equivalences: true
-dual_property_id: faithful
+dual_property: faithful

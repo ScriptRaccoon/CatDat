@@ -2,7 +2,7 @@ id: strict initial object
 relation: has a
 description: A <i>strict initial object</i> is an initial object $0$ such that every morphism $A \to 0$ is an isomorphism. This property refers to the existence of a strict initial object.
 nlab_link: https://ncatlab.org/nlab/show/strict+initial+object
-dual_property_id: strict terminal object
+dual_property: strict terminal object
 invariant_under_equivalences: true
 
 related_properties:

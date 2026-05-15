@@ -2,7 +2,7 @@ id: powers
 relation: has
 description: If $X$ is an object and $I$ is a set, the <i>power</i> is defined as the product $X^I := \prod_{i \in I} X$. This property refers to the existence of powers.
 nlab_link: https://ncatlab.org/nlab/show/powering
-dual_property_id: copowers
+dual_property: copowers
 invariant_under_equivalences: true
 
 related_properties:

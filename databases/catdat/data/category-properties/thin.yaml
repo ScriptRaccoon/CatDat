@@ -2,7 +2,7 @@ id: thin
 relation: is
 description: A category is <i>thin</i> when between any pair of objects there is at most one morphism. Such categories correspond to preordered collections.
 nlab_link: https://ncatlab.org/nlab/show/thin+category
-dual_property_id: thin
+dual_property: thin
 invariant_under_equivalences: true
 
 related_properties:

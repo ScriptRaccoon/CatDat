@@ -206,7 +206,7 @@ function seed_categories() {
 			category.morphisms,
 			category.description,
 			category.nlab_link,
-			category.dual_category_id || null,
+			category.dual_category || null,
 		)
 
 		for (const tag of category.tags) {
@@ -239,7 +239,7 @@ function seed_categories() {
 		for (const entry of category.satisfied_properties) {
 			property_assignment_insert.run(
 				category.id,
-				entry.property_id,
+				entry.property,
 				1,
 				entry.reason,
 				entry.check_redundancy === false ? 0 : 1,
@@ -249,7 +249,7 @@ function seed_categories() {
 		for (const entry of category.unsatisfied_properties) {
 			property_assignment_insert.run(
 				category.id,
-				entry.property_id,
+				entry.property,
 				0,
 				entry.reason,
 				entry.check_redundancy === false ? 0 : 1,
@@ -259,7 +259,7 @@ function seed_categories() {
 		for (const comment_obj of category.category_property_comments ?? []) {
 			property_comment_insert.run(
 				category.id,
-				comment_obj.property_id,
+				comment_obj.property,
 				comment_obj.comment,
 			)
 		}
@@ -306,7 +306,7 @@ function seed_category_properties() {
 			property.relation,
 			property.description,
 			property.nlab_link || null,
-			property.dual_property_id || null,
+			property.dual_property || null,
 			Number(property.invariant_under_equivalences),
 		)
 
@@ -442,7 +442,7 @@ function seed_functor_properties() {
 			property.relation,
 			property.description,
 			property.nlab_link || null,
-			property.dual_property_id || null,
+			property.dual_property || null,
 			Number(property.invariant_under_equivalences),
 		)
 	}
@@ -574,11 +574,11 @@ function seed_functors() {
 		)
 
 		for (const entry of functor.satisfied_properties) {
-			property_assignment_insert.run(functor.id, entry.property_id, 1, entry.reason)
+			property_assignment_insert.run(functor.id, entry.property, 1, entry.reason)
 		}
 
 		for (const entry of functor.unsatisfied_properties) {
-			property_assignment_insert.run(functor.id, entry.property_id, 0, entry.reason)
+			property_assignment_insert.run(functor.id, entry.property, 0, entry.reason)
 		}
 	}
 

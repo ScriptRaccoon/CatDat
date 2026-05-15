@@ -15,24 +15,24 @@ related_categories:
   - Set
 
 satisfied_properties:
-  - property_id: locally small
+  - property: locally small
     reason: There is a forgetful functor $M{-}\Set \to \Set$ and $\Set$ is locally small.
 
-  - property_id: Grothendieck topos
+  - property: Grothendieck topos
     reason: It is the category of sheaves on the opposite of the one-object category associated to $M$.
 
-  - property_id: finitary algebraic
+  - property: finitary algebraic
     reason: Take the algebraic theory of an $M$-sets (having a unary operation for each $m \in M$).
 
 unsatisfied_properties:
-  - property_id: skeletal
+  - property: skeletal
     reason: This is trivial.
 
-  - property_id: trivial
+  - property: trivial
     reason: This is trivial.
 
 category_property_comments:
-  - property_id: semi-strongly connected
+  - property: semi-strongly connected
     comment: If this category is semi-strongly connected depends on the choice of $M$. For $M = 1$ it is, for $M = \IZ$ it is not. In general, if $G$ is a group, then $G{-}\Set$ is semi-strongly connected if and only if for all subgroups $H,K \subseteq G$, $H$ is subconjugated to $K$ or $K$ is subconjugated to $H$. If $G$ is abelian, this means that the poset of subgroups is linear, in which case $G$ is either isomorphic to $\IZ/p^n$ or to $\IZ/p^{\infty}$ for a prime $p$. See also <a href="https://math.stackexchange.com/questions/5129804" target="_blank">MSE/5129804</a>.
 
 special_objects:

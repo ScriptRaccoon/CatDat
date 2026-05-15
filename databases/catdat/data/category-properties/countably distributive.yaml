@@ -1,7 +1,7 @@
 id: countably distributive
 relation: is
 description: A category is <i>countably distributive</i> if it has finite products, countable coproducts, and for every object $A$ the functor $A \times -$ preserves countable coproducts. Concretely, for every countable family of objects $(B_i)$ the canonical morphism $\coprod_i (A \times B_i) \to A \times \coprod_i B_i$ must be an isomorphism.
-dual_property_id: countably codistributive
+dual_property: countably codistributive
 invariant_under_equivalences: true
 
 related_properties:

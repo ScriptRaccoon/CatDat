@@ -14,20 +14,20 @@ related_categories:
   - R-Mod_div
 
 satisfied_properties:
-  - property_id: locally small
+  - property: locally small
     reason: There is a forgetful functor $\Vect \to \Set$ and $\Set$ is locally small.
 
-  - property_id: split abelian
+  - property: split abelian
     reason: That $\Vect$ is abelian is a standard fact, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. VIII. Furthermore, it is a fact from linear algebra that every subspace has a complement, which is why every short exact sequence splits.
 
-  - property_id: finitary algebraic
+  - property: finitary algebraic
     reason: Take the algebraic theory of a vector space.
 
 unsatisfied_properties:
-  - property_id: skeletal
+  - property: skeletal
     reason: This is trivial.
 
-  - property_id: CSP
+  - property: CSP
     reason: The canonical homomorphism $\bigoplus_{n \geq 0} K \to \prod_{n \geq 0} K$ is not surjective, hence no epimorphism.
 
 special_objects:

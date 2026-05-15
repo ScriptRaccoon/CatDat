@@ -20,23 +20,23 @@ related_categories:
   - TorsFreeAb
 
 satisfied_properties:
-  - property_id: locally small
+  - property: locally small
     reason: There is a forgetful functor $\Ab \to \Set$ and $\Set$ is locally small.
 
-  - property_id: abelian
+  - property: abelian
     reason: This is standard, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. VIII.
 
-  - property_id: finitary algebraic
+  - property: finitary algebraic
     reason: Take the algebraic theory of a commutative group.
 
 unsatisfied_properties:
-  - property_id: skeletal
+  - property: skeletal
     reason: This is trivial.
 
-  - property_id: split abelian
+  - property: split abelian
     reason: The short exact sequence $0 \xrightarrow{} \IZ \xrightarrow{p} \IZ \xrightarrow{} \IZ/p \xrightarrow{} 0$ does not split.
 
-  - property_id: CSP
+  - property: CSP
     reason: The canonical homomorphism $\bigoplus_{n \geq 0} \IZ \to \prod_{n \geq 0} \IZ$ is not surjective, hence no epimorphism.
 
 special_objects:

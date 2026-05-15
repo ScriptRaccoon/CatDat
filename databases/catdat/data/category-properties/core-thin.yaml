@@ -8,7 +8,7 @@ description: >-
   <li>Every automorphism is the identity.</li>
   </ol>
 nlab_link: https://ncatlab.org/nlab/show/gaunt+category
-dual_property_id: core-thin
+dual_property: core-thin
 invariant_under_equivalences: true
 
 related_properties:

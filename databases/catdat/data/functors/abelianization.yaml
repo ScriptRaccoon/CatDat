@@ -6,21 +6,21 @@ description: This functor maps a group $G$ to its abelianization $G^{\ab} := G/[
 nlab_link: https://ncatlab.org/nlab/show/abelianization
 
 satisfied_properties:
-  - property_id: essentially surjective
+  - property: essentially surjective
     reason: For abelian groups $G$ we have $G \cong G^{\ab}$.
-  - property_id: finite-product-preserving
+  - property: finite-product-preserving
     reason: See <a href="https://mathoverflow.net/questions/386144">MO/386144</a>.
-  - property_id: left adjoint
+  - property: left adjoint
     reason: This functor is left adjoint to the forgetful functor.
 
 unsatisfied_properties:
-  - property_id: conservative
+  - property: conservative
     reason: The proper inclusion $S_3 \hookrightarrow S_4$ gets mapped to the trivial homomorphism $1 \to 1$, which is an isomorphism.
-  - property_id: faithful
+  - property: faithful
     reason: Both the inclusion $A_3 \hookrightarrow S_3$ and the trivial homomorphism $A_3 \to S_3$ are mapped to the trivial homomorphism $A_3 \to 1$.
-  - property_id: full
+  - property: full
     reason: See <a href="https://math.stackexchange.com/questions/716686" target="_blank">MSE/716686</a>.
-  - property_id: monomorphism-preserving
+  - property: monomorphism-preserving
     reason: The monomorphism $A_3 \hookrightarrow S_3$ is mapped to $A_3 \to 1$.
-  - property_id: product-preserving
+  - property: product-preserving
     reason: 'If $G$ is a group, the canonical homomorphism $(G^{\IN})^{\ab} \to (G^{\ab})^{\IN}$ is surjective, but does not need to be an isomorphism: otherwise, the inclusion $[G^{\IN}, G^{\IN}] \subseteq [G,G]^{\IN}$ would be an equality. But this requires the commutator width of $G$ to be finite, which fails for $G = F_2$ for instance. See also <a href="https://arxiv.org/abs/1608.02220">The abelianization of inverse limits of groups</a>, Remark 0.0.7.'

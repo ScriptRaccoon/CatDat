@@ -1,7 +1,7 @@
 id: essentially countable
 relation: is
 description: A category is <i>essentially countable</i> if it is equivalent to a countable category.
-dual_property_id: essentially countable
+dual_property: essentially countable
 invariant_under_equivalences: true
 
 related_properties:

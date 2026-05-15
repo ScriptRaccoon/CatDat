@@ -2,7 +2,7 @@ id: binary powers
 relation: has
 description: A category has <i>binary powers</i> when for every object $X$ the product $X \times X$  exists. These objects might also be called <i>squares</i>.
 nlab_link: https://ncatlab.org/nlab/show/powering
-dual_property_id: binary copowers
+dual_property: binary copowers
 invariant_under_equivalences: true
 
 related_properties:

@@ -3,4 +3,4 @@ relation: is
 description: 'A functor $F$ <i>preserves equalizers</i> when for every parallel pair of morphisms $f,g : A \rightrightarrows B$ whose equalizer $i : E \to A$ exists, also $F(i) : F(E) \to F(A)$ is an equalizer of $F(f),F(g) : F(A) \rightrightarrows F(B)$.'
 nlab_link: null
 invariant_under_equivalences: true
-dual_property_id: coequalizer-preserving
+dual_property: coequalizer-preserving

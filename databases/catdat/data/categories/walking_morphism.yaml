@@ -21,26 +21,26 @@ related_categories:
   - walking_splitting
 
 satisfied_properties:
-  - property_id: small
+  - property: small
     reason: This is trivial.
 
-  - property_id: finite
+  - property: finite
     reason: This is trivial.
 
-  - property_id: skeletal
+  - property: skeletal
     reason: The two objects are not isomorphic.
 
-  - property_id: self-dual
+  - property: self-dual
     reason: This is trivial.
 
-  - property_id: semi-strongly connected
+  - property: semi-strongly connected
     reason: This is trivial.
 
-  - property_id: finitary algebraic
+  - property: finitary algebraic
     reason: Take the algebraic theory with no operations but with the equation $x=y$ that is supposed to hold for all elements $x,y$. The algebras for this theory are the empty set and the singleton set, hence we get the equivalence to $\{0 \to 1\}$.
 
 unsatisfied_properties:
-  - property_id: trivial
+  - property: trivial
     reason: This is trivial.
 
 special_objects:

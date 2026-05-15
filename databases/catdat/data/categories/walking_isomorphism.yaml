@@ -17,17 +17,17 @@ related_categories:
   - walking_morphism
 
 satisfied_properties:
-  - property_id: small
+  - property: small
     reason: This is trivial.
 
-  - property_id: finite
+  - property: finite
     reason: This is trivial.
 
-  - property_id: trivial
+  - property: trivial
     reason: The inclusion $\{0\} \hookrightarrow \{0 \to 1\}$ is an equivalence.
 
 unsatisfied_properties:
-  - property_id: skeletal
+  - property: skeletal
     reason: The two objects are isomorphic, but different.
 
 special_objects:

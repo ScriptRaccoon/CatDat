@@ -2,7 +2,7 @@ id: sequential colimits
 relation: has
 description: 'A category has <i>sequential colimits</i> if it has colimits of diagrams of the form: $\bullet \to \bullet \to \bullet \to \cdots$.'
 nlab_link: https://ncatlab.org/nlab/show/sequential+colimit
-dual_property_id: sequential limits
+dual_property: sequential limits
 invariant_under_equivalences: true
 
 related_properties:

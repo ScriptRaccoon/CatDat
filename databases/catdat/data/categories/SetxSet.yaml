@@ -14,23 +14,23 @@ related_categories:
   - Sh(X)
 
 satisfied_properties:
-  - property_id: locally small
+  - property: locally small
     reason: This is obvious.
 
-  - property_id: Grothendieck topos
+  - property: Grothendieck topos
     reason: It is equivalent to the category of sheaves on a discrete space with two points.
 
-  - property_id: locally strongly finitely presentable
+  - property: locally strongly finitely presentable
     reason: Take the two-sorted algebraic theory with no operations and no equations.
 
 unsatisfied_properties:
-  - property_id: skeletal
+  - property: skeletal
     reason: This is trivial.
 
-  - property_id: semi-strongly connected
+  - property: semi-strongly connected
     reason: When $X$ is non-empty, there is no morphism between $(\varnothing,X)$ and $(X,\varnothing)$.
 
-  - property_id: generator
+  - property: generator
     reason: Assume that $(A,B)$ is a generator. Of course, $A$ and $B$ cannot be both empty. Assume w.l.o.g. that $A$ is non-empty. Then there is no morphism $(A,B) \to (0,1)$, but there are two different morphisms $(0,1) \rightrightarrows (0,2)$.
 
 special_objects:

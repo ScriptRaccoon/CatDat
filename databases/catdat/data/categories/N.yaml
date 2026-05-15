@@ -16,34 +16,34 @@ related_categories:
   - Z_div
 
 satisfied_properties:
-  - property_id: small
+  - property: small
     reason: This is trivial.
 
-  - property_id: countable
+  - property: countable
     reason: This is trivial.
 
-  - property_id: thin
+  - property: thin
     reason: This is trivial.
     check_redundancy: false
 
-  - property_id: finitely cocomplete
+  - property: finitely cocomplete
     reason: Finitely many natural numbers have a supremum natural number.
     check_redundancy: false
 
-  - property_id: binary products
+  - property: binary products
     reason: Two natural numbers have a minimum.
 
-  - property_id: connected limits
+  - property: connected limits
     reason: Every non-empty set of natural numbers has a minimum.
 
-  - property_id: semi-strongly connected
+  - property: semi-strongly connected
     reason: This is trivial.
 
-  - property_id: direct
+  - property: direct
     reason: This is because the natural numbers with respect to $<$ are well-founded.
 
 unsatisfied_properties:
-  - property_id: countable coproducts
+  - property: countable coproducts
     reason: The numbers $0,1,2,\dotsc$ have no supremum, i.e. no coproduct.
 
 special_objects:

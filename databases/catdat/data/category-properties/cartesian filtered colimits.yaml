@@ -3,7 +3,7 @@ relation: has
 description: |-
   In a category $\C$, which we assume to have filtered colimits and finite products, we say that <i>filtered colimits are cartesian</i> if for every finite set $I$ the product functor $\prod : \C^I \to \C$ preserves filtered colimits. Equivalently, for every $X \in \C$ the functor $X \times - : \C \to \C$ preserves filtered colimits.
   This is no standard terminology, it has been suggested in <a href="https://mathoverflow.net/questions/510240" target="_blank">MO/510240</a>. We have added it to the database since it clarifies the relationship between many related properties.
-dual_property_id: cocartesian cofiltered limits
+dual_property: cocartesian cofiltered limits
 invariant_under_equivalences: true
 
 related_properties:

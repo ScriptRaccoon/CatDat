@@ -2,7 +2,7 @@ id: directed limits
 relation: has
 description: A category has <i>directed limits</i> if it has limits of diagrams indexed by codirected (small) posets. This is actually equivalent to having cofiltered limits.
 nlab_link: https://ncatlab.org/nlab/show/directed+limit
-dual_property_id: directed colimits
+dual_property: directed colimits
 invariant_under_equivalences: true
 
 related_properties:

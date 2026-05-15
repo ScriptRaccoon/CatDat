@@ -2,7 +2,7 @@ id: binary copowers
 relation: has
 description: A category has <i>binary copowers</i> when for every object $X$ and every binary set $I$ the coproduct $X \sqcup X$ exists. These objects might also be called <i>doubles</i>.
 nlab_link: https://ncatlab.org/nlab/show/copower
-dual_property_id: binary powers
+dual_property: binary powers
 invariant_under_equivalences: true
 
 related_properties:

@@ -5,4 +5,4 @@ description: |-
   This property is useful to rule out some adjunctions.
 nlab_link: https://ncatlab.org/nlab/show/epimorphism
 invariant_under_equivalences: true
-dual_property_id: monomorphism-preserving
+dual_property: monomorphism-preserving

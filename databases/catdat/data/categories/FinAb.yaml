@@ -16,38 +16,38 @@ related_categories:
   - TorsAb
 
 satisfied_properties:
-  - property_id: locally small
+  - property: locally small
     reason: There is a forgetful functor $\FinAb \to \Set$ and $\Set$ is locally small.
 
-  - property_id: locally finite
+  - property: locally finite
     reason: There is a faithful functor $\FinAb \to \FinSet$ and <a href="/category/FinSet">$\FinSet$</a> is locally finite.
 
-  - property_id: essentially countable
+  - property: essentially countable
     reason: The underlying set of a finite structure can be chosen to be a subset of $\IN$.
 
-  - property_id: abelian
+  - property: abelian
     reason: This follows from the fact for <a href="/category/Ab">$\Ab$</a>.
 
-  - property_id: self-dual
+  - property: self-dual
     reason: 'This is a simple special case of Pontryagin duality: The functor $\Hom(-,\IQ/\IZ)$ provides the equivalence.'
 
-  - property_id: ℵ₁-accessible
+  - property: ℵ₁-accessible
     reason: The proof works exactly as for <a href="/category/FinSet">$\FinSet$</a>.
 
 unsatisfied_properties:
-  - property_id: small
+  - property: small
     reason: Even the collection of trivial groups is not small.
 
-  - property_id: skeletal
+  - property: skeletal
     reason: There are many trivial and hence isomorphic groups which are not equal.
 
-  - property_id: countable
+  - property: countable
     reason: This is trivial.
 
-  - property_id: split abelian
+  - property: split abelian
     reason: The sequence $0 \to \IZ/2 \to \IZ/4 \to \IZ/2 \to 0$ does not split.
 
-  - property_id: generator
+  - property: generator
     reason: If $A,B$ are finite abelian groups whose orders are coprime, then we know that $\Hom(A,B)$ is trivial. But a generator would admit a non-trivial homomorphism to any other non-trivial finite abelian group.
 
 special_objects:

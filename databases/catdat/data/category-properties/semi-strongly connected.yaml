@@ -2,7 +2,7 @@ id: semi-strongly connected
 relation: is
 description: A category is <i>semi-strongly connected</i> if it is inhabited and for every two objects $A,B$ there is a morphism $A \to B$ or there is a morphism $B \to A$. Notice that this is stronger than being connected, and that posets with this property are precisely the inhabited totally ordered sets.
 nlab_link: https://ncatlab.org/nlab/show/strongly+connected+category
-dual_property_id: semi-strongly connected
+dual_property: semi-strongly connected
 invariant_under_equivalences: true
 
 related_properties:

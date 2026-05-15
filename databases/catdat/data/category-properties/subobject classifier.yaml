@@ -6,7 +6,7 @@ description: >-
   is a pullback diagram. Equivalently, the functor $\Sub : \C^{\op} \to \Set^+$ is representable.
   *Every morphism $1 \to \Omega$ is a split monomorphism anyway.
 nlab_link: https://ncatlab.org/nlab/show/subobject+classifier
-dual_property_id: quotient object classifier
+dual_property: quotient object classifier
 invariant_under_equivalences: true
 
 related_properties:

@@ -1,7 +1,7 @@
 id: coregular
 relation: is
 description: A category is <i>coregular</i> when its dual is regular, i.e. it is finitely cocomplete, for every morphism $Y \to X$ its cokernel pair $X \rightrightarrows X \sqcup_Y X$ has an equalizer, and regular monomorphisms are stable under pushouts.
-dual_property_id: regular
+dual_property: regular
 invariant_under_equivalences: true
 
 related_properties:

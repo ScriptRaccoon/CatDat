@@ -1,7 +1,7 @@
 id: cofiltered-limit-stable epimorphisms
 relation: has
 description: A category has <i>cofiltered-limit-stable epimorphisms</i> if it has cofiltered limits and for every cofiltered diagram of epimorphisms $(X_i \to Y_i)$ also their limit $\lim_i X_i \to \lim_i Y_i$ is an epimorphism.
-dual_property_id: filtered-colimit-stable monomorphisms
+dual_property: filtered-colimit-stable monomorphisms
 invariant_under_equivalences: true
 
 related_properties:

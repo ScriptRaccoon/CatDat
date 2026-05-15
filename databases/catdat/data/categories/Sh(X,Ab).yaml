@@ -18,17 +18,17 @@ comments:
   - It is likely that neither of the currently remaining unknown properties (finitary algebraic, locally ℵ₁-presentable, CSP, etc.) are satisfied for a <i>generic</i> space $X$, but we need to make this precise by adding additional requirements to $X$. Maybe we need to create separate entries for specific spaces $X$.
 
 satisfied_properties:
-  - property_id: locally small
+  - property: locally small
     reason: This is easy.
 
-  - property_id: Grothendieck abelian
+  - property: Grothendieck abelian
     reason: This is standard, see for example Theorem 18.1.6. in <a href="https://ncatlab.org/nlab/show/Categories+and+Sheaves" target="_blank">Kashiwara-Schapira</a>.
 
 unsatisfied_properties:
-  - property_id: skeletal
+  - property: skeletal
     reason: Consider constant sheaves for isomorphic but non-equal abelian groups.
 
-  - property_id: split abelian
+  - property: split abelian
     reason: 'Choose a point $x \in X$. The functor $x_* : \Ab \to \Sh(X,\Ab)$ (skyscraper sheaf) is exact, and its left adjoint $x^* : \Sh(X,\Ab) \to \Ab$ (stalk) satisfies $x^* x_* \cong \id_{\Ab}$. Now, since <a href="/category/Ab">$\Ab$</a> is not split abelian, there is a short exact sequence of abelian groups $0 \to A \to B \to C \to 0$ that does not split. Then $0 \to x_* A \to x_* B \to x_* C \to 0$ is also exact, but it does not split: Otherwise it would also be split after applying $x^*$, which however gives the original sequence in $\Ab$.'
 
 special_objects:

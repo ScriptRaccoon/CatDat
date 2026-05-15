@@ -2,7 +2,7 @@ id: discrete
 relation: is
 description: A category is <i>discrete</i> when every morphism is an identity morphism. Thus, a discrete category is merely a collection of objects.
 nlab_link: https://ncatlab.org/nlab/show/discrete+category
-dual_property_id: discrete
+dual_property: discrete
 invariant_under_equivalences: false
 
 related_properties:

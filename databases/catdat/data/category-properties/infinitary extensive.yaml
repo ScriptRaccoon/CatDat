@@ -2,7 +2,7 @@ id: infinitary extensive
 relation: is
 description: A category $\C$ is <i>infinitary extensive</i> when it has coproducts and for all families of objects $(A_i)_{i \in I}$ the coproduct functor $\prod_{i \in I} \C/A_i \to \C/(\coprod_{i \in I} A_i)$ is an equivalence of categories. Equivalently, pullbacks of coproduct inclusions along arbitrary morphisms exist and coproducts are disjoint and stable under pullback.
 nlab_link: https://ncatlab.org/nlab/show/extensive+category
-dual_property_id: infinitary coextensive
+dual_property: infinitary coextensive
 invariant_under_equivalences: true
 
 related_properties:

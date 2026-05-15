@@ -16,38 +16,38 @@ related_categories:
   - BOn
 
 satisfied_properties:
-  - property_id: small
+  - property: small
     reason: This is trivial.
 
-  - property_id: countable
+  - property: countable
     reason: This is trivial.
 
-  - property_id: strongly connected
+  - property: strongly connected
     reason: This is trivial.
 
-  - property_id: self-dual
+  - property: self-dual
     reason: The identity is a self-duality since the addition is commutative.
 
-  - property_id: generator
+  - property: generator
     reason: The unique object is a generator for trivial reasons.
 
-  - property_id: left cancellative
+  - property: left cancellative
     reason: This is because addition of natural numbers is cancellative.
 
-  - property_id: gaunt
+  - property: gaunt
     reason: This is because $0$ is the only natural number with an additive inverse.
 
-  - property_id: locally cartesian closed
+  - property: locally cartesian closed
     reason: The slice category $B\IN / *$ is isomorphic to the poset $(\IN,\geq)$ (not to $(\IN,\leq)$). This category is thin and and semi-strongly connected, <a href="/category-implication/sequential_implies_lcc">hence</a> cartesian closed.
 
 unsatisfied_properties:
-  - property_id: one-way
+  - property: one-way
     reason: This is trivial.
 
-  - property_id: locally finite
+  - property: locally finite
     reason: This is trivial.
 
-  - property_id: sequential limits
+  - property: sequential limits
     reason: Assume that the sequence $\cdots \xrightarrow{1}  \bullet \xrightarrow{1} \bullet \xrightarrow{1} \bullet$ has a limit. This is a (universal) sequence of natural numbers $n_0,n_1,\dotsc$ satisfying $n_i = n_{i+1} + 1$. But then $n_i = n_0 - i$, and in particular $n_{n_0 + 1} = - 1$, a contradiction.
 
 special_objects: {}

@@ -3,4 +3,4 @@ relation: is
 description: 'A functor $F : \C \to \D$ is <i>representable</i> if $\C$ is locally small, $\D = \Set$, and there is an object $A \in \C$ with $F \cong \Hom(A,-)$.'
 nlab_link: https://ncatlab.org/nlab/show/representable+functor
 invariant_under_equivalences: true
-dual_property_id: null
+dual_property: null

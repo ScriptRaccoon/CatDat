@@ -5,7 +5,7 @@ description: >-
   $$\begin{CD} E @> f >> X \\ @V g VV @VV h V \\ X @>> h > Y. \end{CD}$$
   A category <i>has effective congruences</i> if every congruence in the category is effective.
 nlab_link: https://ncatlab.org/nlab/show/congruence
-dual_property_id: effective cocongruences
+dual_property: effective cocongruences
 invariant_under_equivalences: true
 
 related_properties:

@@ -2,7 +2,7 @@ id: pullbacks
 relation: has
 description: A category $\C$ has <i>pullbacks</i> if every cospan of morphisms $X \rightarrow S \leftarrow Y$ has a pullback $X \times_S Y$. This is also known as a fiber product. Equivalently, the slice category $\C/S$ has binary products.
 nlab_link: https://ncatlab.org/nlab/show/pullback
-dual_property_id: pushouts
+dual_property: pushouts
 invariant_under_equivalences: true
 
 related_properties:

@@ -3,7 +3,7 @@ relation: has
 description: |-
   In a category $\C$, which we assume to have cofiltered limits and finite coproducts, we say that <i>cofiltered limits are cocartesian</i> if for every finite set $I$ the coproduct functor $\coprod : \C^I \to \C$ preserves cofiltered limits. Equivalently, for every $X \in \C$ the functor $X \sqcup - : \C \to \C$ preserves cofiltered limits.
   This is no standard terminology, its dual has been suggested in <a href="https://mathoverflow.net/questions/510240" target="_blank">MO/510240</a>. We have added it to the database since it clarifies the relationship between many related properties.
-dual_property_id: cartesian filtered colimits
+dual_property: cartesian filtered colimits
 invariant_under_equivalences: true
 
 related_properties:

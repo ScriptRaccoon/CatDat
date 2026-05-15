@@ -2,7 +2,7 @@ id: initial object
 relation: has an
 description: An <i>initial object</i> is an object that has a unique morphism to every object in the category. This property refers to the existence of an initial object.
 nlab_link: https://ncatlab.org/nlab/show/initial+object
-dual_property_id: terminal object
+dual_property: terminal object
 invariant_under_equivalences: true
 
 related_properties:

@@ -8,7 +8,7 @@ description: >-
   <li>For every diagram $X : \I \times \J \to \C$, where $\I$ is finite and $\J$ is small cofiltered, the canonical morphism $\colim_i \lim_j X(i,j) \to \lim_j \colim_i X(i,j)$ is an isomorphism.</li>
   </ol>
 nlab_link: https://ncatlab.org/nlab/show/commutativity+of+limits+and+colimits
-dual_property_id: exact filtered colimits
+dual_property: exact filtered colimits
 invariant_under_equivalences: true
 
 related_properties:

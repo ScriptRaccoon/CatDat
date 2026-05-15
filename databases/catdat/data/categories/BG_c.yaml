@@ -16,26 +16,26 @@ related_categories:
   - BN
 
 satisfied_properties:
-  - property_id: small
+  - property: small
     reason: This is trivial.
 
-  - property_id: groupoid
+  - property: groupoid
     reason: This is trivial.
 
-  - property_id: connected
+  - property: connected
     reason: This is trivial.
 
-  - property_id: skeletal
+  - property: skeletal
     reason: There is just one object.
 
-  - property_id: generator
+  - property: generator
     reason: The unique object is a generator for trivial reasons.
 
-  - property_id: countable
+  - property: countable
     reason: This is because $G$ is countable.
 
 unsatisfied_properties:
-  - property_id: locally finite
+  - property: locally finite
     reason: This is because we choose $G$ to be infinite.
 
 special_objects: {}

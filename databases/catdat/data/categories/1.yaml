@@ -16,16 +16,16 @@ related_categories:
   - '2'
 
 satisfied_properties:
-  - property_id: trivial
+  - property: trivial
     reason: This is trivial.
 
-  - property_id: finite
+  - property: finite
     reason: This is trivial.
 
-  - property_id: small
+  - property: small
     reason: This is trivial.
 
-  - property_id: discrete
+  - property: discrete
     reason: This is trivial.
 
 unsatisfied_properties: []

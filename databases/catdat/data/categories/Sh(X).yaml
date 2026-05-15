@@ -19,17 +19,17 @@ comments:
   - It is likely that neither of the currently remaining unknown properties (finitary algebraic, locally ℵ₁-presentable, exact filtered colimits, etc.) are satisfied for a <i>generic</i> space $X$, but we need to make this precise by adding additional requirements to $X$. Maybe we need to create separate entries for specific spaces $X$.
 
 satisfied_properties:
-  - property_id: locally small
+  - property: locally small
     reason: This is easy.
 
-  - property_id: Grothendieck topos
+  - property: Grothendieck topos
     reason: This holds by definition of a Grothendieck topos.
 
 unsatisfied_properties:
-  - property_id: skeletal
+  - property: skeletal
     reason: Consider constant sheaves for isomorphic but non-equal sets.
 
-  - property_id: trivial
+  - property: trivial
     reason: This is because $X$ is assumed to be non-empty.
 
 special_objects:

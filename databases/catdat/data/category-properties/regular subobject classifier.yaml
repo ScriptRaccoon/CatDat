@@ -6,7 +6,7 @@ description: >-
   is a pullback diagram. Equivalently, the functor $\Sub_{\reg} : \C^{\op} \to \Set^+$ is representable.
   *Every morphism $1 \to \Omega$ is a split monomorphism and hence regular anyway.
 nlab_link: https://ncatlab.org/nlab/show/subobject+classifier
-dual_property_id: regular quotient object classifier
+dual_property: regular quotient object classifier
 invariant_under_equivalences: true
 
 related_properties:

@@ -16,20 +16,20 @@ related_categories:
   - M-Set
 
 satisfied_properties:
-  - property_id: locally small
+  - property: locally small
     reason: This is trivial.
 
-  - property_id: finitary algebraic
+  - property: finitary algebraic
     reason: 'The structure of a Jónsson-Tarski algebra on a set $X$ is equivalent to one binary operation $\mu : X^2 \to X$ and two unary operations $\lambda, \rho : X \rightrightarrows X$ such that $\mu(\lambda(x),\rho(x)) = x$, $\lambda(\mu(x,y))=x$, and $\rho(\mu(x,y))=y$.'
 
-  - property_id: Grothendieck topos
+  - property: Grothendieck topos
     reason: See the <a href="https://ncatlab.org/nlab/show/J%C3%B3nsson-Tarski+topos" target="_blank">nLab</a>.
 
 unsatisfied_properties:
-  - property_id: skeletal
+  - property: skeletal
     reason: This is trivial.
 
-  - property_id: semi-strongly connected
+  - property: semi-strongly connected
     reason: >-
       There is a bijection $\alpha = (\lambda,\rho) : \IN \to \IN \times \IN$ such that $\lambda$ has a fixed point, but $\rho$ does not (see below). Then the isomorphism $\beta := (\rho,\lambda)$ has the opposite property. There cannot be any morphism $(\IN,\alpha) \to (\IN,\beta)$, as it would map the fixed point of $\lambda$ to a fixed point of $\rho$, and likewise there is no morphism $(\IN,\beta) \to (\IN,\alpha)$.
 

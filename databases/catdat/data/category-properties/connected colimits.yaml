@@ -2,7 +2,7 @@ id: connected colimits
 relation: has
 description: A category has <i>connected colimits</i> if it has colimits of diagrams indexed by connected small categories.
 nlab_link: https://ncatlab.org/nlab/show/connected+colimit
-dual_property_id: connected limits
+dual_property: connected limits
 invariant_under_equivalences: true
 
 related_properties:

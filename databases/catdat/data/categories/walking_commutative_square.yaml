@@ -18,29 +18,29 @@ related_categories:
   - walking_morphism
 
 satisfied_properties:
-  - property_id: small
+  - property: small
     reason: This is trivial.
 
-  - property_id: finite
+  - property: finite
     reason: This is trivial.
 
-  - property_id: skeletal
+  - property: skeletal
     reason: The four objects are not isomorphic.
 
-  - property_id: self-dual
+  - property: self-dual
     reason: This is trivial.
 
-  - property_id: locally cartesian closed
+  - property: locally cartesian closed
     reason: This is because the <a href="/category/walking_morphism">walking morphism</a> has this property.
 
-  - property_id: locally strongly finitely presentable
+  - property: locally strongly finitely presentable
     reason: This is because the <a href="/category/walking_morphism">walking morphism</a> has this property. Alternatively, we may represent this category as the category of algebras for the finitary algebraic theory with two sorts $S_1,S_2$, the equation $x=y$ for $x,y \in S_1$, and the equation $x=y$ for $x,y \in S_2$.
 
 unsatisfied_properties:
-  - property_id: semi-strongly connected
+  - property: semi-strongly connected
     reason: There is no morphism between $b$ and $c$ (resp., between $(0,1)$ and $(1,0)$).
 
-  - property_id: finitary algebraic
+  - property: finitary algebraic
     reason: This follows from <a href="/lemma/thin_algebraic_categories">this lemma</a>.
 
 special_objects:

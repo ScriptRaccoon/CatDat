@@ -2,7 +2,7 @@ id: cocomplete
 relation: is
 description: A category is <i>cocomplete</i> when every small diagram in the category has a colimit.
 nlab_link: https://ncatlab.org/nlab/show/cocomplete+category
-dual_property_id: complete
+dual_property: complete
 invariant_under_equivalences: true
 
 related_properties:

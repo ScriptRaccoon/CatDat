@@ -11,7 +11,7 @@ description: >-
   For equivalence of conditions above, see Cor. 2.47, Thm. 1.46, and Cor. 1.52 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>. A category is <i>locally presentable</i> if it is locally $\kappa$-presentable for some regular cardinal $\kappa$.
 
 nlab_link: https://ncatlab.org/nlab/show/locally+presentable+category
-dual_property_id: locally copresentable
+dual_property: locally copresentable
 invariant_under_equivalences: true
 
 related_properties:

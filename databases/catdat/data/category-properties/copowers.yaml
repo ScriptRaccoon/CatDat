@@ -2,7 +2,7 @@ id: copowers
 relation: has
 description: If $X$ is an object and $I$ is a set, the <i>copower</i> is defined as the coproduct $I \otimes X := \coprod_{i \in I} X$. This property refers to the existence of copowers.
 nlab_link: https://ncatlab.org/nlab/show/copower
-dual_property_id: powers
+dual_property: powers
 invariant_under_equivalences: true
 
 related_properties:

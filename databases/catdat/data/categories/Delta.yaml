@@ -18,43 +18,43 @@ related_categories:
   - walking_coreflexive_pair
 
 satisfied_properties:
-  - property_id: small
+  - property: small
     reason: This is trivial.
 
-  - property_id: locally finite
+  - property: locally finite
     reason: There is a faithful functor $\Delta \to \FinSet$ and <a href="/category/FinSet">$\FinSet$</a> is locally finite.
 
-  - property_id: countable
+  - property: countable
     reason: This is obvious.
 
-  - property_id: terminal object
+  - property: terminal object
     reason: The ordered set $[0] = \{0\}$ is terminal.
 
-  - property_id: strongly connected
+  - property: strongly connected
     reason: For all $n,m$ there are morphisms $[n] \to [0] \to [m]$.
 
-  - property_id: generator
+  - property: generator
     reason: The ordered set $[0] = \{0\}$ is a generator.
 
-  - property_id: cogenerator
+  - property: cogenerator
     reason: The ordered set $[1] = \{0 < 1\}$ is a cogenerator, even for <a href="/category/Pos">$\Pos$</a>.
 
-  - property_id: skeletal
+  - property: skeletal
     reason: 'If $f : [n] \to [m]$ is an isomorphism, then $n + 1 = m + 1$ by comparing the cardinalities, hence $n = m$.'
 
-  - property_id: coequalizers
+  - property: coequalizers
     reason: Assume that $X \rightrightarrows Y$ are morphisms in $\FinOrd \setminus \{\varnothing\}$. Since <a href="/category/FinOrd">$\FinOrd$</a> has coequalizers, we have a coequalizer $Y \to Q$. Since $Y$ is non-empty, $Q$ is non-empty as well, and clearly $Y \to Q$ is then also the coequalizer in $\FinOrd \setminus \{\varnothing\}$.
 
-  - property_id: core-thin
+  - property: core-thin
     reason: The category $\FinOrd \setminus \{\varnothing\}$ is core-thin because already <a href="/category/FinOrd">$\FinOrd$</a> is core-thin.
 
-  - property_id: mono-regular
+  - property: mono-regular
     reason: The proof for <a href="/category/FinOrd">$\FinOrd$</a> also works for $\FinSet \setminus \{\varnothing\}$.
 
-  - property_id: epi-regular
+  - property: epi-regular
     reason: The proof for <a href="/category/FinOrd">$\FinOrd$</a> also works for $\FinSet \setminus \{\varnothing\}$.
 
-  - property_id: cosifted
+  - property: cosifted
     reason: >-
       Let $X,Y \in \Delta$. We may pick $x \in X$, $y \in Y$. Then there is a "point span" $X \xleftarrow{x} [0] \xrightarrow{y} Y$. Every span $X \xleftarrow{f} Z \xrightarrow{g} Y$ is connected to such a point span: Pick $z \in Z$. This defines a morphism of spans: 
       $$\begin{CD} X @<{f(z)}<< [0] @>{g(z)}>> Y \\ @| @VV{z}V @| \\ X @<<{f}< Z @>>{g}> Y \end{CD}$$
@@ -63,22 +63,22 @@ satisfied_properties:
       This shows that the choice of $x \in X$ does not matter, and for $y \in Y$ the proof is the same.
 
 unsatisfied_properties:
-  - property_id: strict terminal object
+  - property: strict terminal object
     reason: This is trivial.
 
-  - property_id: cofiltered
+  - property: cofiltered
     reason: 'The two maps $d^0,d^1 : [0] \rightrightarrows [1]$ are not equalized by any morphism.'
 
-  - property_id: coreflexive equalizers
+  - property: coreflexive equalizers
     reason: 'The two maps $d^0,d^1 : [0] \rightrightarrows [1]$ have a common left inverse, the unique map $s^0 : [1] \to [0]$, but are not equalized by any morphism.'
 
-  - property_id: sequential colimits
+  - property: sequential colimits
     reason: We can just copy the proof for <a href="/category/FinOrd">$\FinOrd$</a> to show that the sequence of inclusions $[0] \hookrightarrow [1] \hookrightarrow [2] \hookrightarrow \cdots$ has no colimit.
 
-  - property_id: sequential limits
+  - property: sequential limits
     reason: We can just copy the proof for <a href="/category/FinOrd">$\FinOrd$</a> to show that the sequence of truncations $\cdots \twoheadrightarrow [2] \twoheadrightarrow [1] \twoheadrightarrow [0]$ has no limit.
 
-  - property_id: pushouts
+  - property: pushouts
     reason: Assume that the two inclusions $\{0 < 1\} \leftarrow \{0\} \rightarrow \{0 < 2\}$ have a pushout in $\FinOrd \setminus \{\varnothing\}$. This would be a universal non-empty finite ordered set $X$ with three elements $0,1,2$ satisfying $0 \leq 1$ and $0 \leq 2$. Assume w.l.o.g. $1 \leq 2$ (the case $2 \leq 1$ is similar). The universal property yields an order-preserving map $X \to \{a < b < c\}$ with $0 \mapsto a$, $1 \mapsto c$, $2 \mapsto b$. But then $c \leq b$, which is a contradiction.
 
 special_objects: {}

@@ -14,39 +14,39 @@ related_categories:
   - N
 
 satisfied_properties:
-  - property_id: thin
+  - property: thin
     reason: This is trivial.
     check_redundancy: false
 
-  - property_id: locally small
+  - property: locally small
     reason: This is trivial.
 
-  - property_id: cocomplete
+  - property: cocomplete
     reason: Every set of ordinal numbers has a supremum.
 
-  - property_id: binary products
+  - property: binary products
     reason: For ordinal numbers $\alpha,\beta$ their minimum exists, it is $\alpha$ when $\alpha \leq \beta$ and $\beta$ otherwise.
 
-  - property_id: connected limits
+  - property: connected limits
     reason: Every non-empty set of ordinal numbers has a minimum.
 
-  - property_id: well-powered
+  - property: well-powered
     reason: This is because for every ordinal $\alpha$ the collection of ordinals $\leq \alpha$ is a set (namely, $\alpha + 1$).
 
-  - property_id: semi-strongly connected
+  - property: semi-strongly connected
     reason: It is well-known that for ordinals $\alpha,\beta$ we have $\alpha \leq \beta$ or $\beta \leq \alpha$.
 
-  - property_id: direct
+  - property: direct
     reason: This is because the ordinal numbers with respect to $<$ are well-founded (by definition).
 
 unsatisfied_properties:
-  - property_id: terminal object
+  - property: terminal object
     reason: There is no largest ordinal $\alpha$ since $\alpha + 1$ will always be larger.
 
-  - property_id: well-copowered
+  - property: well-copowered
     reason: The "quotients" of $0$ are all ordinals.
 
-  - property_id: inverse
+  - property: inverse
     reason: Consider the strictly increasing sequence $0 < 1 < 2 < \cdots$.
 
 special_objects:

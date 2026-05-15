@@ -4,7 +4,7 @@ description: |-
   A category is <i>co-Malcev</i> when its dual is Malcev, i.e., it has finite colimits and if $X \sqcup X \twoheadrightarrow R$ is a coreflexive corelation, then it is cosymmetric and cotransitive.
   This terminology is not standard, but we have added it to properly formulate the interesting theorem that the dual of an elementary topos is Malcev, i.e., that every elementary topos is co-Malcev.
   o settle this property, we often use that $\C$ is co-Malcev if and only if the category of representable functors $\C \to \Set^+$ is Malcev.
-dual_property_id: Malcev
+dual_property: Malcev
 invariant_under_equivalences: true
 
 related_properties:

@@ -2,7 +2,7 @@ id: groupoid
 relation: is a
 description: A <i>groupoid</i> is a category in which every morphism is an isomorphism.
 nlab_link: https://ncatlab.org/nlab/show/groupoid
-dual_property_id: groupoid
+dual_property: groupoid
 invariant_under_equivalences: true
 
 related_properties:

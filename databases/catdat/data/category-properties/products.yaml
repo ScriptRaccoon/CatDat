@@ -2,7 +2,7 @@ id: products
 relation: has
 description: 'Given a family of objects $(A_i)_{i \in I}$, a <i>product</i> $\prod_{i \in I} A_i$ is defined as an object with morphisms $p_i : \prod_{i \in I} A_i \to A_i$ satisfying the following universal property: For every object $T$ and every family of morphisms $(f_i : T \to A_i)_{i \in I}$ there is a unique morphism $f : T \to \prod_{i \in I} A_i$ such that $p_i \circ f = f_i$ for all $i \in I$. This property refers to the existence of <i>small products</i>, i.e., products of small families of objects.'
 nlab_link: https://ncatlab.org/nlab/show/cartesian+product
-dual_property_id: coproducts
+dual_property: coproducts
 invariant_under_equivalences: true
 
 related_properties:
