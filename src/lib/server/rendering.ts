@@ -114,11 +114,18 @@ function render_content<T = Record<string, unknown>>(
 	return { meta_data: data as T, html }
 }
 
-const content_dict: Record<string, string> = import.meta.glob('$lib/content/*.md', {
-	query: '?raw',
-	import: 'default',
-	eager: true,
-})
+export const content_ids = Object.keys(import.meta.glob('$lib/content/*.md'))
+	.map((path) => path.split('/').pop()?.replace('.md', '') ?? '')
+	.filter(Boolean)
+
+export const content_dict: Record<string, string> = import.meta.glob(
+	'$lib/content/*.md',
+	{
+		query: '?raw',
+		import: 'default',
+		eager: true,
+	},
+)
 
 type ContentMetaData = {
 	title: string
