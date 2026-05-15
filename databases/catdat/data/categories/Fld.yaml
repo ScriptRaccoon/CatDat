@@ -35,6 +35,9 @@ unsatisfied_properties:
   - property_id: skeletal
     reason: This is trivial.
 
+  - property_id: locally finite
+    reason: There are infinitely many homomorphisms $\IQ(X) \to \IQ(X)$, $X \mapsto X^k$.
+
   - property_id: connected
     reason: A field of characteristic $0$ cannot be connected with a field of characteristic $p > 0$. in fact, the connected components of $\Fld$ are the subcategories $\Fld_p$ of fields of characteristic $p$, where $p$ is a prime or $0$.
 

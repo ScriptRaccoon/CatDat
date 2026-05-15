@@ -19,6 +19,9 @@ satisfied_properties:
   - property_id: locally small
     reason: There is a forgetful functor $\FinAb \to \Set$ and $\Set$ is locally small.
 
+  - property_id: locally finite
+    reason: There is a faithful functor $\FinAb \to \FinSet$ and <a href="/category/FinSet">$\FinSet$</a> is locally finite.
+
   - property_id: essentially countable
     reason: The underlying set of a finite structure can be chosen to be a subset of $\IN$.
 

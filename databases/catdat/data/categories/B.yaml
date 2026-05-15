@@ -18,6 +18,9 @@ satisfied_properties:
   - property_id: locally small
     reason: There is a forgetful functor $\IB \to \Set$ and $\Set$ is locally small.
 
+  - property_id: locally finite
+    reason: There is a faithful functor $\IB \to \FinSet$ and <a href="/category/FinSet">$\FinSet$</a> is locally finite.
+
   - property_id: inhabited
     reason: This is trivial.
 

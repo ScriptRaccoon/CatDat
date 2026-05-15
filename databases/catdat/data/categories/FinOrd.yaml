@@ -19,6 +19,9 @@ satisfied_properties:
   - property_id: locally small
     reason: There is a forgetful functor $\FinOrd \to \Set$ and $\Set$ is locally small.
 
+  - property_id: locally finite
+    reason: There is a faithful functor $\FinOrd \to \FinSet$ and <a href="/category/FinSet">$\FinSet$</a> is locally finite.
+
   - property_id: essentially countable
     reason: Every finite ordered set is isomorphic to $\{0 < \cdots < n-1 \}$ for some $n \in \IN$.
 

@@ -18,6 +18,9 @@ satisfied_properties:
   - property_id: locally small
     reason: It is a full subcategory of $\Grp$, which is locally small.
 
+  - property_id: locally finite
+    reason: There is a faithful functor $\FinGrp \to \FinSet$ and <a href="/category/FinSet">$\FinSet$</a> is locally finite.
+
   - property_id: pointed
     reason: The trivial group is a zero object.
     check_redundancy: false

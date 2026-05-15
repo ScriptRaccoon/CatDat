@@ -60,6 +60,9 @@ unsatisfied_properties:
   - property_id: essentially small
     reason: This is obvious.
 
+  - property_id: locally finite
+    reason: If $X$ is an infinite set, there are infinitely many maps $1 \to X$. They are injective and hence finite-to-one.
+
   - property_id: strongly connected
     reason: Already $\Set$ is not strongly connected.
 

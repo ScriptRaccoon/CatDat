@@ -68,6 +68,9 @@ unsatisfied_properties:
   - property_id: essentially small
     reason: This is trivial.
 
+  - property_id: locally finite
+    reason: This is obvious.
+
   - property_id: strict terminal object
     reason: This is trivial.
 

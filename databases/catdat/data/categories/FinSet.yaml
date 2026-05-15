@@ -23,6 +23,9 @@ satisfied_properties:
   - property_id: locally small
     reason: There is a forgetful functor $\FinSet \to \Set$ and $\Set$ is locally small.
 
+  - property_id: locally finite
+    reason: This is trivial.
+
   - property_id: essentially countable
     reason: Every finite set is isomorphic to some $\{1,\dotsc,n\}$ for some $n \in \IN$.
 

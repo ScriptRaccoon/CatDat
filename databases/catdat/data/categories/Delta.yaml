@@ -21,6 +21,9 @@ satisfied_properties:
   - property_id: small
     reason: This is trivial.
 
+  - property_id: locally finite
+    reason: There is a faithful functor $\Delta \to \FinSet$ and <a href="/category/FinSet">$\FinSet$</a> is locally finite.
+
   - property_id: countable
     reason: This is obvious.
 

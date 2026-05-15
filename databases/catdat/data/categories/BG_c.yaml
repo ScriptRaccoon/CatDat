@@ -35,7 +35,7 @@ satisfied_properties:
     reason: This is because $G$ is countable.
 
 unsatisfied_properties:
-  - property_id: essentially finite
+  - property_id: locally finite
     reason: This is because we choose $G$ to be infinite.
 
 special_objects: {}

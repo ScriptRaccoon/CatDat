@@ -33,6 +33,9 @@ unsatisfied_properties:
   - property_id: small
     reason: Even the collection of trivial groups is not small.
 
+  - property_id: locally finite
+    reason: The group $\Hom(\IZ,\IZ) \cong \IZ$ is not finite.
+
   - property_id: skeletal
     reason: This is trivial.
 
