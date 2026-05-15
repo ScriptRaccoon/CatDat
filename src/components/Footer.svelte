@@ -31,7 +31,7 @@
 		</li>
 		<li>
 			<Fa icon={faCubes} scale={0.875} />
-			<a href="/foundations">Foundations</a>
+			<a href="/content/foundations">Foundations</a>
 		</li>
 		<li>
 			<Fa icon={faDownload} scale={0.875} />

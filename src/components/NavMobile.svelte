@@ -119,7 +119,7 @@
 			<Fa icon={faBook} scale={0.875} />
 		</li>
 		<li>
-			<a href="/foundations">Foundations</a>
+			<a href="/content/foundations">Foundations</a>
 			<Fa icon={faCubes} scale={0.875} />
 		</li>
 		<li>
