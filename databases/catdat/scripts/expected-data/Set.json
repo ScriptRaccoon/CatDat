@@ -101,6 +101,8 @@
 	"coquotients of cocongruences": true,
 	"effective congruences": true,
 	"effective cocongruences": true,
+	"Barr-coexact": true,
+	"Barr-exact": true,
 
 	"Grothendieck abelian": false,
 	"Malcev": false,

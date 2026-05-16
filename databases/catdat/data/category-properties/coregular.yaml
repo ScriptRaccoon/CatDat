@@ -7,3 +7,4 @@ invariant_under_equivalences: true
 related_properties:
   - coquotients of cocongruences
   - finitely cocomplete
+  - Barr-coexact

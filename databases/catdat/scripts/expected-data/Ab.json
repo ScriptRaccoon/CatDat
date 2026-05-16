@@ -106,6 +106,8 @@
 	"coquotients of cocongruences": true,
 	"effective congruences": true,
 	"effective cocongruences": true,
+	"Barr-coexact": true,
+	"Barr-exact": true,
 
 	"cartesian closed": false,
 	"locally cartesian closed": false,

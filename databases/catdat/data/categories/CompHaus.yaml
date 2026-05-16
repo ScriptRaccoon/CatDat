@@ -38,13 +38,8 @@ satisfied_properties:
   - property: cogenerator
     reason: 'The unit interval $[0, 1]$ is a cogenerator: Suppose we have $f, g : X \rightrightarrows Y$ with $f \ne g$. Choose $x\in X$ such that $f(x) \ne g(x)$. Then by Urysohn''s lemma, there is a continuous function $h : Y \to [0, 1]$ such that $h(f(x)) = 0$ and $h(g(x)) = 1$. Therefore, $h\circ f \ne h\circ g$.'
 
-  - property: effective congruences
-    # TODO: rework this when Barr-exact is added
-    reason: The forgetful functor from $\CompHaus$ to $\Set$ is monadic; see for example <a href="https://ncatlab.org/nlab/show/compact+Hausdorff+space#compact_hausdorff_spaces_are_monadic_over_sets">nLab</a>. Therefore, by <a href="https://ncatlab.org/nlab/show/colimits+in+categories+of+algebras#exact">this result</a>, $\CompHaus$ is Barr-exact, and in particular it has effective congruences.
-
-  - property: regular
-    # TODO: rework this when Barr-exact is added
-    reason: The forgetful functor from $\CompHaus$ to $\Set$ is monadic; see for example <a href="https://ncatlab.org/nlab/show/compact+Hausdorff+space#compact_hausdorff_spaces_are_monadic_over_sets">nLab</a>. Therefore, by <a href="https://ncatlab.org/nlab/show/colimits+in+categories+of+algebras#exact">this result</a>, $\CompHaus$ is Barr-exact and in particular is regular.
+  - property: Barr-exact
+    reason: The forgetful functor from $\CompHaus$ to $\Set$ is monadic; see for example <a href="https://ncatlab.org/nlab/show/compact+Hausdorff+space#compact_hausdorff_spaces_are_monadic_over_sets">nLab</a>. Therefore, by <a href="https://ncatlab.org/nlab/show/colimits+in+categories+of+algebras#exact">this result</a>, $\CompHaus$ is Barr-exact.
 
   - property: coregular
     reason:

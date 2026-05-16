@@ -1,0 +1,10 @@
+id: Barr-coexact
+relation: is
+description: A category is <i>Barr-coexact</i> if its dual category is Barr-exact, i.e. if it is coregular and every cocongruence is effective.
+dual_property: Barr-exact
+invariant_under_equivalences: true
+
+related_properties:
+  - coregular
+  - effective cocongruences
+  - coquotients of cocongruences

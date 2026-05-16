@@ -35,6 +35,7 @@ satisfied_properties:
 
   - property: coregular
     reason: From the other properties we know that (co-)limits exist and that monomorphisms coincide with injective pointed maps. So it suffices to prove that these maps are stable under pushouts. This follows from the corresponding fact for <a href="/category/Set">$\Set$</a> and the observation that the forgetful functor $\Set_* \to \Set$ preserves pushouts.
+    check_redundancy: false
 
   - property: co-Malcev
     reason: Malcev categories are closed under slice categories by Prop. 2.2.14 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>. It follows that co-Malcev categories are closed under coslice categories, and $\Set_*$ is a coslice category of <a href="/category/Set">$\Set$</a>, which is co-Malcev since every elementary topos is co-Malcev.
@@ -48,9 +49,8 @@ satisfied_properties:
   - property: CIP
     reason: The coproduct (wedge sum) of a family of pointed sets $(X_i)_{i \in I}$ can be realized as the subset of $\prod_{i \in I} X_i$ consisting of those tuples $x$ such that $x_i = 0$ for all but (at most) one index.
 
-  - property: effective cocongruences
-    # TODO: rework this when Barr-exact is added
-    reason: We have that $\Set_*^{\op}$ is a slice category of $\Set^{\op}$, which in turn is monadic over $\Set$. Therefore, by combining results from <a href="http://www.springer.com/us/book/9781402019616" target="_blank">Borceux and Bourn</a> Appendix A and <a href="https://ncatlab.org/nlab/show/colimits+in+categories+of+algebras#exact" target="_blank">nLab</a>, $\Set_*^{\op}$ is Barr-exact, and in particular it has effective congruences.
+  - property: Barr-coexact
+    reason: We have that $\Set_*^{\op}$ is a slice category of $\Set^{\op}$, which in turn is monadic over $\Set$. Therefore, by combining results from <a href="http://www.springer.com/us/book/9781402019616" target="_blank">Borceux and Bourn</a> Appendix A and <a href="https://ncatlab.org/nlab/show/colimits+in+categories+of+algebras#exact" target="_blank">nLab</a>, $\Set_*^{\op}$ is Barr-exact.
 
 unsatisfied_properties:
   - property: skeletal

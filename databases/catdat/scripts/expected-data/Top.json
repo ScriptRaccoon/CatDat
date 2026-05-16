@@ -158,5 +158,7 @@
 	"quotient-trivial": false,
 	"effective congruences": false,
 	"effective cocongruences": false,
-	"locally finite": false
+	"locally finite": false,
+	"Barr-coexact": false,
+	"Barr-exact": false
 }

@@ -1,0 +1,11 @@
+id: Barr-exact
+relation: is
+description: A category is <i>Barr-exact</i> if it is regular and every congruence is effective.
+nlab_link: https://ncatlab.org/nlab/show/exact+category
+dual_property: Barr-coexact
+invariant_under_equivalences: true
+
+related_properties:
+  - regular
+  - effective congruences
+  - quotients of congruences

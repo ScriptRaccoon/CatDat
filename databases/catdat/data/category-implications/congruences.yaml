@@ -129,3 +129,12 @@
     \end{align*}$$
     on generalized elements. Extensivity can be used to show that $f, g$ are jointly monomorphic. Clearly, the pair $f, g$ is reflexive and symmetric. For transitivity, one once again uses extensivity. By assumption, there is a morphism $h : B + B' \to C$ such that $f, g$ is the kernel pair of $h$, that is, two generalized elements $x, y \in B + B'$ satisfy $h(x) = h(y)$ if and only if $x = f(e)$, $y = g(e)$ for some $e \in E$. In particular, for $x \in B$, we have $h(x) = h(x')$ if and only if $x = f(e)$, $x' = g(e)$ for some $e \in E$. By disjointness of coproducts, we must necessarily have $e \in A$, and $x = \alpha(e)$. This shows that $\alpha$ is the equalizer of $h \circ i_1, h \circ i_2 : B \rightrightarrows C$.
   is_equivalence: false
+
+- id: Barr-exact_definition
+  assumptions:
+    - Barr-exact
+  conclusions:
+    - regular
+    - effective congruences
+  reason: This holds by definition.
+  is_equivalence: true
