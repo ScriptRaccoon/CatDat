@@ -1,6 +1,8 @@
 import MarkdownIt from 'markdown-it'
 import matter from 'gray-matter'
 import { MATH_REGEX, render_formula } from './formulas'
+import path from 'node:path'
+import fs from 'node:fs'
 
 const md = new MarkdownIt()
 
@@ -116,6 +118,20 @@ function postprocess_math(html: string, formulas: Record<string, string>) {
 }
 
 /**
+ * Replaces SVG placeholders with file contents
+ */
+function insert_svg(content: string) {
+	const regex = /@@@SVG:([^@]+)@@@/g
+
+	return content.replace(regex, (_, src: string) => {
+		if (!src.startsWith('/')) return ''
+
+		const svg_path = path.resolve(`static${src}`)
+		return fs.readFileSync(svg_path, 'utf8')
+	})
+}
+
+/**
  * Renders markdown content and formulas of a given string
  */
 function render_content<T = Record<string, unknown>>(
@@ -129,7 +145,9 @@ function render_content<T = Record<string, unknown>>(
 
 	const html_with_formulas = postprocess_math(html, formulas)
 
-	return { meta_data: data as T, html: html_with_formulas }
+	const html_with_svg = insert_svg(html_with_formulas)
+
+	return { meta_data: data as T, html: html_with_svg }
 }
 
 /**

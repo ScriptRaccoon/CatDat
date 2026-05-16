@@ -33,7 +33,7 @@ such that
 - $s_i \circ l_{i-1} = t_i \circ l_i$, and
 - $s_i \circ r_{i-1} = t_i \circ r_i$ $(1 \le i \le n)$.
 
-![diagram for equations above](/img/diagram-sifted-colimit.svg)
+@@@SVG:/img/diagram-sifted-colimit.svg@@@
 
 Then, the equality $D(t_1) \circ D(l_1) = D(s_1) \circ D(l_0) = u$ implies that either $D(l_1)=u$ or $D(t_1)=u$ holds, while $D(t_1) \circ D(r_1) = D(s_1)\circ D(r_0) = v$ implies that either $D(r_1)=v$ or $D(t_1)=v$ holds.
 However, the only possible combination is $D(l_1)=u$ together with $D(r_1)=v$, and by repeating this argument, we have $D(l_n)=u$ and $D(r_n)=v$, which is a contradiction.
