@@ -4,7 +4,7 @@ import { MATH_REGEX, render_formula } from './formulas'
 import path from 'node:path'
 import fs from 'node:fs'
 
-const md = new MarkdownIt()
+const md = new MarkdownIt({ html: true })
 
 // add id attribute to each heading
 md.renderer.rules.heading_open = (tokens, idx, options, _, self) => {

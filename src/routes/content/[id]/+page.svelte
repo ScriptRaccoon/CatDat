@@ -35,5 +35,9 @@
 				margin-right: 0.75rem;
 			}
 		}
+
+		:global(span.qed) {
+			float: right;
+		}
 	}
 </style>

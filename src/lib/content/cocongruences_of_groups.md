@@ -42,7 +42,7 @@ is injective. Indeed, if $b_1,b_2 \in B$ satisfy $A' b_1 = A' b_2$, then $b_1 b_
 
 Therefore, we may extend $S$ to a system of representatives $S' \subseteq B'$ for the right $A'$-cosets in $B'$. Likewise, we may extend $T$ to a system of representatives $T' \subseteq C'$ for the right $A'$-cosets in $C'$.
 
-With respect to these systems, an element $w \in B \sqcup_A C$ written in normal form as above remains in normal form after being mapped to $B' \sqcup_{A'} C'$. This shows that the induced map is injective. $\square$
+With respect to these systems, an element $w \in B \sqcup_A C$ written in normal form as above remains in normal form after being mapped to $B' \sqcup_{A'} C'$. This shows that the induced map is injective. <span class="qed">$\square$</span>
 
 ::: Proposition 2
 Let $\C$ be a balanced category with good pushouts of monomorphisms and equalizers of monomorphisms. Then every cocongruence in $\C$ is effective.
@@ -97,7 +97,7 @@ Since $\C$ has good pushouts of monomorphisms, it suffices to verify that both s
 
 $$a = r \circ i_1 \circ a = r \circ i_2 \circ b = b.$$
 
-Thus, $a$ is simply a morphism equalizing $i_1$ and $i_2$, so it factors uniquely through $E \hookrightarrow X$. $\square$
+Thus, $a$ is simply a morphism equalizing $i_1$ and $i_2$, so it factors uniquely through $E \hookrightarrow X$. <span class="qed">$\square$</span>
 
 ::: Corollary 3
 Every cocongruence in the category $\Grp$ is effective.
