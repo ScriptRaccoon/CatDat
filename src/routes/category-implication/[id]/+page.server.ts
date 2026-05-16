@@ -1,6 +1,6 @@
 import type { ImplicationDB, ImplicationDisplay } from '$lib/commons/types'
 import { query } from '$lib/server/db.catdat'
-import { render_nested_formulas } from '$lib/server/rendering'
+import { render_nested_formulas } from '$lib/server/formulas'
 import { display_implication } from '$lib/server/utils'
 import { error } from '@sveltejs/kit'
 import sql from 'sql-template-tag'

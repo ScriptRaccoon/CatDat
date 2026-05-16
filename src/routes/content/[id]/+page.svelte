@@ -25,6 +25,6 @@
 
 	:global(.theorem-title) {
 		font-weight: 600;
-		margin-right: 0.25rem;
+		margin-right: 0.75rem;
 	}
 </style>

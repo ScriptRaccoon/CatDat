@@ -1,6 +1,6 @@
 import { error } from '@sveltejs/kit'
 import { query } from '$lib/server/db.catdat'
-import { render_nested_formulas } from '$lib/server/rendering'
+import { render_nested_formulas } from '$lib/server/formulas'
 import { MAX_CATEGORIES_COMPARE } from '../compare.config'
 
 export const prerender = false

@@ -1,4 +1,4 @@
-import { content_ids, get_rendered_content } from '$lib/server/rendering'
+import { content_ids, get_rendered_content } from '$lib/server/markdown'
 import { error } from '@sveltejs/kit'
 import type { EntryGenerator } from './$types'
 
