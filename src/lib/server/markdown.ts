@@ -153,18 +153,10 @@ function render_content<T = Record<string, unknown>>(
 /**
  * Names of stored markdown files
  */
-export const content_ids = Object.keys(import.meta.glob('$lib/content/*.md'))
-	.map((path) => path.split('/').pop()?.replace('.md', '') ?? '')
-	.filter(Boolean)
-
-/**
- * Dictionary mapping an id to the text content stored in the respective file
- */
-const content_dict: Record<string, string> = import.meta.glob('$lib/content/*.md', {
-	query: '?raw',
-	import: 'default',
-	eager: true,
-})
+export const content_ids = fs
+	.readdirSync(path.resolve('content'))
+	.filter((file) => file.endsWith('.md'))
+	.map((file) => file.replace(/\.md$/, ''))
 
 type ContentMetaData = {
 	title: string
@@ -176,8 +168,11 @@ type ContentMetaData = {
  * Returns the rendered content of a markdown file
  */
 export function get_rendered_content(id: string) {
-	const key = `/src/lib/content/${id}.md`
-	const txt = content_dict[key]
-	if (!txt) return null
+	const file_path = path.resolve('content', `${id}.md`)
+
+	if (!fs.existsSync(file_path)) return null
+
+	const txt = fs.readFileSync(file_path, 'utf8')
+
 	return render_content<ContentMetaData>(txt)
 }
