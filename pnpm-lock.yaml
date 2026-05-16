@@ -29,12 +29,6 @@ importers:
       ioredis:
         specifier: ^5.10.1
         version: 5.10.1
-      katex:
-        specifier: ^0.16.44
-        version: 0.16.45
-      markdown-it:
-        specifier: ^14.1.1
-        version: 14.1.1
       nodemailer:
         specifier: ^8.0.5
         version: 8.0.7
@@ -84,6 +78,12 @@ importers:
       husky:
         specifier: ^9.1.7
         version: 9.1.7
+      katex:
+        specifier: ^0.16.44
+        version: 0.16.45
+      markdown-it:
+        specifier: ^14.1.1
+        version: 14.1.1
       prettier:
         specifier: ^3.8.1
         version: 3.8.3
