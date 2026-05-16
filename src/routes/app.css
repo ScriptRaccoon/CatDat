@@ -16,6 +16,7 @@
 body {
 	--bg-color: #fff;
 	--secondary-bg-color: #eee;
+	--theorem-bg-color: #eee;
 	--text-color: #111;
 	--secondary-text-color: #555;
 	--outline-color: #666;
@@ -34,6 +35,7 @@ body {
 body[data-theme='dark'] {
 	--bg-color: #121216;
 	--secondary-bg-color: #262626;
+	--theorem-bg-color: #000;
 	--text-color: #fff;
 	--secondary-text-color: #999;
 	--outline-color: #aaa;

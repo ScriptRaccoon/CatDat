@@ -24,7 +24,9 @@ in which each square is a pullback, the induced morphism
 $$B \sqcup_A C \to B' \sqcup_{A'} C'$$
 is also a monomorphism.
 
-**Proposition 1.** The category $\Grp$ has good pushouts of monomorphisms.
+::: Proposition 1
+The category $\Grp$ has good pushouts of monomorphisms.
+:::
 
 _Proof._ Consider a diagram as above. We regard every monomorphism in it as an inclusion. Choose a system of representatives $S \subseteq B$ for the right $A$-cosets in $B$, meaning that the multiplication map $\cdot : A \times S \to B$ is bijective. Likewise, choose $T \subseteq C$ such that the multiplication map $\cdot : A \times T \to C$ is bijective. We may assume that $1 \in S$ and $1 \in T$.
 
@@ -42,7 +44,9 @@ Therefore, we may extend $S$ to a system of representatives $S' \subseteq B'$ fo
 
 With respect to these systems, an element $w \in B \sqcup_A C$ written in normal form as above remains in normal form after being mapped to $B' \sqcup_{A'} C'$. This shows that the induced map is injective. $\square$
 
-**Proposition 2.** Let $\C$ be a balanced category with good pushouts of monomorphisms and equalizers of monomorphisms. Then every cocongruence in $\C$ is effective.
+::: Proposition 2
+Let $\C$ be a balanced category with good pushouts of monomorphisms and equalizers of monomorphisms. Then every cocongruence in $\C$ is effective.
+:::
 
 _Proof._ Let $X \in \C$ be an object, and let $i_1,i_2 : X \rightrightarrows Y$ be a cocongruence. Since it is coreflexive, there exists a morphism $r : Y \to X$ satisfying
 
@@ -95,4 +99,6 @@ $$a = r \circ i_1 \circ a = r \circ i_2 \circ b = b.$$
 
 Thus, $a$ is simply a morphism equalizing $i_1$ and $i_2$, so it factors uniquely through $E \hookrightarrow X$. $\square$
 
-**Corollary 3.** Every cocongruence in the category $\Grp$ is effective.
+::: Corollary 3
+Every cocongruence in the category $\Grp$ is effective.
+:::

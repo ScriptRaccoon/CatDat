@@ -89,6 +89,60 @@ md.renderer.rules.link_open = (tokens, idx, options, _, self) => {
 	return self.renderToken(tokens, idx, options)
 }
 
+md.use((md) => {
+	md.block.ruler.before(
+		'fence',
+		'theorem_block',
+		(state, start_line, end_line, silent) => {
+			const start = state.bMarks[start_line] + state.tShift[start_line]
+			const max = state.eMarks[start_line]
+			const line = state.src.slice(start, max).trim()
+
+			const match = line.match(
+				/^:::\s*(lemma|theorem|proposition|corollary|claim)\s*(\d*)$/i,
+			)
+			if (!match) return false
+
+			const type = match[1]
+			const number = match[2].trim()
+
+			let next_line = start_line + 1
+
+			while (next_line < end_line) {
+				const nStart = state.bMarks[next_line] + state.tShift[next_line]
+				const nEnd = state.eMarks[next_line]
+				const text = state.src.slice(nStart, nEnd).trim()
+
+				if (text === ':::') break
+				next_line++
+			}
+
+			if (silent) return true
+
+			const title = number ? `${type} ${number}` : type
+
+			const body_lines = state.getLines(
+				start_line + 1,
+				next_line,
+				state.blkIndent,
+				true,
+			)
+
+			const body_html = md.renderInline(body_lines.trim())
+
+			const token = state.push('html_block', '', 0)
+			token.content =
+				`<div class="theorem">` +
+				`<span class="theorem-title">${title}. </span>` +
+				`${body_html}` +
+				`</div>`
+
+			state.line = next_line + 1
+			return true
+		},
+	)
+})
+
 function render_content<T = Record<string, unknown>>(
 	txt: string,
 ): { meta_data: T; html: string } {
