@@ -10,8 +10,14 @@
 	{@html data.html}
 </div>
 
+{#if data.meta_data.author}
+	<p class="hint">Author: {data.meta_data.author}</p>
+{/if}
+
 <style>
 	.content {
+		line-height: 1.6;
+
 		:global(img) {
 			width: min(100%, 30rem);
 			margin-inline: auto;
