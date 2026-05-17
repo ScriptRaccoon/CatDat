@@ -1,5 +1,6 @@
 <script lang="ts">
 	import MetaData from '$components/MetaData.svelte'
+	import SuggestionForm from '$components/SuggestionForm.svelte'
 
 	let { data } = $props()
 </script>
@@ -13,6 +14,8 @@
 {#if data.meta_data.author}
 	<p class="hint">Author: {data.meta_data.author}</p>
 {/if}
+
+<SuggestionForm />
 
 <style>
 	.content {
