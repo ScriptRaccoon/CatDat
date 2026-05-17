@@ -8,12 +8,6 @@ export function render_formula(
 	formula: string,
 	options: { displayMode: boolean } = { displayMode: false },
 ): string {
-	if (formula.includes('\\emptyset')) {
-		console.warn(
-			`Warning: Use \\varnothing instead of \\emptyset.\nFormula: ${formula}`,
-		)
-	}
-
 	return katex.renderToString(formula, {
 		throwOnError: true,
 		macros: MACROS,
