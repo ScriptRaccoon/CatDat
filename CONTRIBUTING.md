@@ -128,6 +128,8 @@ When contributing new data (categories, functors, properties, implications), ple
 
 - **Simplify Implications**: When adding a new implication, check if it simplifies existing implications and if it deduces some previously non-deduced properties for categories.
 
+- **Long-form content**: If a proof for a property becomes very long, move it into a markdown-generated content page and link to that page. These files are located in the `/content` folder. For example, `/content/cocongruences_of_groups.md` is rendered at [`/content/cocongruences_of_groups`](https://catdat.app/content/cocongruences_of_groups). Content pages are also used for reusable lemmas that apply to multiple property assignments.
+
 - **New Combinations**: Add new categories that satisfy combinations of satisfied properties and unsatisfied properties and not yet in the database. For example, you may add a category that is abelian but neither cocomplete nor essentially small (if it is not already present). The [page with missing data](https://catdat.app/missing) lists consistent combinations of the form $p \land \neg q$ that are not yet witnessed by a category in the database. The same remarks apply to functors.
 
 ### Redundancy Script
