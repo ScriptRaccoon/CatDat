@@ -111,6 +111,10 @@ p {
 	margin-block: 1rem;
 }
 
+details {
+	margin-block: 1rem;
+}
+
 a {
 	color: inherit;
 	text-underline-offset: 2px;
