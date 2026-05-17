@@ -34,12 +34,3 @@
     - strict initial object
   reason: 'It suffices to prove that in general any monomorphism $f : A \to 0$ into an initial object is an isomorphism. If $g : 0 \to A$ is the unique morphism, then $f \circ g = \id_0$ since $0$ is initial. But then $f$ is a split epimorphism and a monomorphism, hence an isomorphism.'
   is_equivalence: false
-
-- id: strict_initial_right_criterion
-  assumptions:
-    - initial object
-    - right cancellative
-  conclusions:
-    - strict initial object
-  reason: 'Let $f : A \to 0$ be a morphism. Let $g : 0 \to A$ be the unique morphism. It is an epimorphism by assumption. Also, $f \circ g = \id_0$ since $0$ is initial. But then $g$ is a split monomorphism and an epimorphism, hence an isomorphism.'
-  is_equivalence: false
