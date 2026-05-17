@@ -1,5 +1,7 @@
 <script lang="ts">
+	import CategoryList from '$components/CategoryList.svelte'
 	import MetaData from '$components/MetaData.svelte'
+	import PropertyList from '$components/PropertyList.svelte'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
 
 	let { data } = $props()
@@ -13,6 +15,34 @@
 
 {#if data.meta_data.author}
 	<p class="hint">Author: {data.meta_data.author}</p>
+{/if}
+
+{#if data.categories.length > 0 || data.category_properties.length > 0 || data.category_implications.length > 0}
+	<h3>Context</h3>
+
+	{#if data.categories.length > 0}
+		<p class="hint">This page is referenced by the following categories.</p>
+
+		<CategoryList categories={data.categories} />
+	{/if}
+
+	{#if data.category_properties.length > 0}
+		<p class="hint">This page is referenced by the following properties.</p>
+
+		<PropertyList properties={data.category_properties} />
+	{/if}
+
+	{#if data.category_implications.length > 0}
+		<p class="hint">This page is referenced by the following implications.</p>
+
+		<ul>
+			{#each data.category_implications as { id }}
+				<li>
+					<a href="/category-implication/{id}">{id}</a>
+				</li>
+			{/each}
+		</ul>
+	{/if}
 {/if}
 
 <SuggestionForm />
