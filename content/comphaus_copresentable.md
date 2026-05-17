@@ -43,7 +43,7 @@ The functor $\Hom({-}, [0, 1]) : \CompHaus^{\op} \to \Set$ is monadic. (Original
 _Proof._
 We use the crude monadicity theorem (see e.g. [SGL92](#references), Thm. IV.4.2). First, the functor has a left adjoint $S \mapsto [0, 1]^S$ with the evident isomorphism
 
-$$\Hom_{\CompHaus}(X, [0, 1]^S) \simeq \Hom_{\Set}(S, \Hom_{\CompHaus}(X, [0, 1])).$$
+$$\Hom_{\CompHaus}(X, [0, 1]^S) \cong \Hom_{\Set}(S, \Hom_{\CompHaus}(X, [0, 1])).$$
 
 To see the functor is conservative, suppose we have a continuous function $f : X \to Y$ such that $f^* : \Hom(Y, [0, 1]) \to \Hom(X, [0, 1])$ is a bijection. Then for any $x_1, x_2 \in X$ with $x_1 \ne x_2$, there exists $\varphi : X \to [0, 1]$ with $\varphi(x_1) = 0$ and $\varphi(x_2) = 1$ by Urysohn's lemma. Since $f^*$ is surjective, there exists $\psi : Y \to [0, 1]$ with $\varphi = \psi \circ f$; thus, we must have $f(x_1) \ne f(x_2)$. Likewise, we know the image of $f$ is closed. If this image is not all of $Y$, then by Urysohn's lemma there exists nonzero $\varphi : Y \to [0, 1]$ which is zero on the image. But then $\varphi \circ f = 0 \circ f$, contradicting the injectivity of $f^*$. Thus, $f$ is a bijective continuous function, and therefore a homeomorphism.
 
