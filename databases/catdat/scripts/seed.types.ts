@@ -62,13 +62,6 @@ export type CategoryPropertyYaml = {
 	related_properties: string[]
 }
 
-export type LemmaYaml = {
-	id: string
-	title: string
-	claim: string
-	proof: string
-}
-
 export type CategoryImplicationYaml = {
 	id: string
 	assumptions: string[]

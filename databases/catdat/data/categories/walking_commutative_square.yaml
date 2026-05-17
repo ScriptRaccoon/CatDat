@@ -41,7 +41,7 @@ unsatisfied_properties:
     reason: There is no morphism between $b$ and $c$ (resp., between $(0,1)$ and $(1,0)$).
 
   - property: finitary algebraic
-    reason: This follows from <a href="/lemma/thin_algebraic_categories">this lemma</a>.
+    reason: This follows from <a href="/content/thin_algebraic_categories">this lemma</a>.
 
 special_objects:
   initial object:

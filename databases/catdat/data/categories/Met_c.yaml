@@ -70,7 +70,7 @@ unsatisfied_properties:
     reason: See <a href="https://mathoverflow.net/questions/510316" target="_blank">MO/510316</a>.
 
   - property: quotients of congruences
-    reason: If $\Met_c$ had quotients of congruences, then by <a href="/lemma/monic-sequential-colimits-via-congruence-quotients">this lemma</a> it would have sequential colimits of sequences of monomorphisms. This contradicts <a href="https://mathoverflow.net/questions/510316" target="_blank">MO/510316</a>.
+    reason: If $\Met_c$ had quotients of congruences, then by <a href="/content/monic-sequential-colimits-via-congruence-quotients">this lemma</a> it would have sequential colimits of sequences of monomorphisms. This contradicts <a href="https://mathoverflow.net/questions/510316" target="_blank">MO/510316</a>.
 
 special_objects:
   initial object:

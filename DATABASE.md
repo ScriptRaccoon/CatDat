@@ -34,7 +34,6 @@ Further tables are:
 - `related_category_properties`
 - `category_comments`
 - `category_property_comments`
-- `lemmas` (a flexible variant of implications)
 
 For functors there are similar tables, such as:
 

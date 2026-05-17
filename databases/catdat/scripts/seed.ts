@@ -6,7 +6,6 @@ import type {
 	CategoryYaml,
 	ConfigYaml,
 	CategoryPropertyYaml,
-	LemmaYaml,
 	CategoryImplicationYaml,
 	FunctorImplicationYaml,
 	FunctorPropertyYaml,
@@ -37,8 +36,6 @@ function seed() {
 
 	seed_config()
 
-	seed_lemmas()
-
 	seed_category_properties()
 	seed_category_implications()
 	seed_categories()
@@ -65,8 +62,6 @@ function clear_all_data() {
 	try {
 		db.transaction(() => {
 			db.pragma('foreign_keys = OFF')
-
-			db.prepare(`DELETE FROM lemmas`).run()
 
 			db.prepare(`DELETE FROM category_implication_assumptions`).run()
 			db.prepare(`DELETE FROM category_implication_conclusions`).run()
@@ -330,37 +325,6 @@ function seed_category_properties() {
 		tx()
 	} catch (err) {
 		console.error(`Error seeding category categories:`, err)
-		process.exit(1)
-	}
-}
-
-function seed_lemmas() {
-	console.info(`\nSeed lemmas ...`)
-
-	const folder = path.join(data_folder, 'lemmas')
-	const files = get_yaml_files(folder)
-
-	const lemma_insert = db.prepare(
-		`INSERT INTO lemmas (id, title, claim, proof) VALUES (?, ?, ?, ?)`,
-	)
-
-	function insert_lemma(lemma: LemmaYaml) {
-		lemma_insert.run(lemma.id, lemma.title, lemma.claim, lemma.proof)
-	}
-
-	const tx = db.transaction(() => {
-		for (const lemma_file of files) {
-			console.info(`Seed: ${lemma_file}`)
-
-			const lemma = read_yaml_file<LemmaYaml>(folder, lemma_file)
-			insert_lemma(lemma)
-		}
-	})
-
-	try {
-		tx()
-	} catch (err) {
-		console.error(`Error seeding lemmas:`, err)
 		process.exit(1)
 	}
 }

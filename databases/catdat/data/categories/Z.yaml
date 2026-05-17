@@ -46,10 +46,10 @@ satisfied_properties:
     check_redundancy: false
 
   - property: effective congruences
-    reason: 'If we have a congruence $E \rightrightarrows X$ in $[\CRing, \Set]$, then evaluating at any commutative ring gives a congruence in $\Set$. Defining $Y$ pointwise to be the quotient of this congruence, we get a morphism of functors $h : X \to Y$, and by <a href="/lemma/effective-congruence-quotients">this result</a> applied pointwise, the kernel pair of $h$ is $E$.'
+    reason: 'If we have a congruence $E \rightrightarrows X$ in $[\CRing, \Set]$, then evaluating at any commutative ring gives a congruence in $\Set$. Defining $Y$ pointwise to be the quotient of this congruence, we get a morphism of functors $h : X \to Y$, and by <a href="/content/effective-congruence-quotients">this result</a> applied pointwise, the kernel pair of $h$ is $E$.'
 
   - property: effective cocongruences
-    reason: 'If we have a cocongruence $X\rightrightarrows E$ in $[\CRing, \Set]$, then evaluating at any commutative gives a cocongruence in $\Set$. Defining $Y$ pointwise to be the equalizer of the pair, we get a morphism of functors $h : Y \to X$, and by the dual of <a href="/lemma/effective-congruence-quotients">this result</a> applied pointwise, the cokernel pair of $h$ is $E$.'
+    reason: 'If we have a cocongruence $X\rightrightarrows E$ in $[\CRing, \Set]$, then evaluating at any commutative gives a cocongruence in $\Set$. Defining $Y$ pointwise to be the equalizer of the pair, we get a morphism of functors $h : Y \to X$, and by the dual of <a href="/content/effective-congruence-quotients">this result</a> applied pointwise, the cokernel pair of $h$ is $E$.'
     check_redundancy: false
 
 unsatisfied_properties:
@@ -72,7 +72,7 @@ unsatisfied_properties:
     reason: 'Consider the functor $F$ from <a href="https://mathoverflow.net/questions/390611" target="_blank">MO/390611</a> for example. The collection of subobjects of $F$ is not isomorphic to a set: for each infinite cardinal $\kappa$, simply cut off the construction of $F$ at $\kappa$. This yields a different subobject for each $\kappa$.'
 
   - property: cofiltered-limit-stable epimorphisms
-    reason: We already know that <a href="/category/Set">$\Set$</a> does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the functor $\Set \to [\CRing, \Set]$ that maps a set to its constant functor.
+    reason: We already know that <a href="/category/Set">$\Set$</a> does not have this property. Now apply the contrapositive of the dual of <a href="/content/filtered-monos">this lemma</a> to the functor $\Set \to [\CRing, \Set]$ that maps a set to its constant functor.
 
 special_objects:
   initial object:

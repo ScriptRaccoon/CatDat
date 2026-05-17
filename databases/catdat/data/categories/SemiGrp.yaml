@@ -63,7 +63,7 @@ unsatisfied_properties:
       is a normal subgroup of $G$. It is proper, and hence trivial. But then $f$ is injective, which is a contradiction.
 
   - property: cofiltered-limit-stable epimorphisms
-    reason: We already know that <a href="/category/Set">$\Set$</a> does not have this property (by <a href="/category-implication/topos_no_stable_epis">this result</a>). Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the functor $\Set \to \SemiGrp$ that equips a set with the multiplication $a \cdot b \coloneqq a$.
+    reason: We already know that <a href="/category/Set">$\Set$</a> does not have this property (by <a href="/category-implication/topos_no_stable_epis">this result</a>). Now apply the contrapositive of the dual of <a href="/content/filtered-monos">this lemma</a> to the functor $\Set \to \SemiGrp$ that equips a set with the multiplication $a \cdot b \coloneqq a$.
 
   - property: effective cocongruences
     reason: >-
@@ -73,7 +73,7 @@ unsatisfied_properties:
 
   - property: natural numbers object
     reason: >-
-      Assume that a natural numbers object exists. Then by <a href="/lemma/nno_distributive_criterion">this result</a>, for every semigroup $A$ the natural homomorphism
+      Assume that a natural numbers object exists. Then by <a href="/content/nno_distributive_criterion">this result</a>, for every semigroup $A$ the natural homomorphism
       $$\textstyle\alpha : \coprod_{n \geq 0} A \to A \times \coprod_{n \geq 0} 1$$
       is a split monomorphism. But this is not true: For each $n \geq 0$ let $A_n$ denote a copy of $A$. The elements of the coproduct in $\alpha$'s domain have a unique representation as
       $$x_{n_1} * \cdots * x_{n_s}$$

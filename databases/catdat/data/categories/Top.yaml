@@ -50,7 +50,7 @@ satisfied_properties:
     reason: The category has all limits and colimits, and the regular monomorphisms are the subspace inclusions. Thus, it suffices to prove that subspace inclusions are stable under pushouts. For a proof see e.g. Lemma 3.6 at the <a href="https://ncatlab.org/nlab/show/subspace+topology#pushout" target="_blank">nLab</a>.
 
   - property: filtered-colimit-stable monomorphisms
-    reason: This follows from <a href="/lemma/filtered-monos">this lemma</a> applied to the forgetful functor to $\Set$.
+    reason: This follows from <a href="/content/filtered-monos">this lemma</a> applied to the forgetful functor to $\Set$.
 
 unsatisfied_properties:
   - property: skeletal
@@ -78,7 +78,7 @@ unsatisfied_properties:
     reason: 'Assume $\Top$ is coaccessible. Let $p : S \to I$ be the identity map from the Sierpinski space to the two-element indiscrete space. Then, a topological space is discrete if and only if it is projective to the morphism $p$. This implies that the full subcategory spanned by all discrete spaces, which is equivalent to $\Set$, is coaccessible by Prop. 4.7 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>. However, since <a href="/category/Set">$\Set$</a> is not coaccessible, this is a contradiction.'
 
   - property: cofiltered-limit-stable epimorphisms
-    reason: We already know that <a href="/category/Set">$\Set$</a> does not have this property. Now apply the contrapositive of the dual of <a href="/lemma/filtered-monos">this lemma</a> to the functor $\Set \to \Top$ which equips a set with the indiscrete topology.
+    reason: We already know that <a href="/category/Set">$\Set$</a> does not have this property. Now apply the contrapositive of the dual of <a href="/content/filtered-monos">this lemma</a> to the functor $\Set \to \Top$ which equips a set with the indiscrete topology.
 
   - property: effective cocongruences
     reason: 'Consider the indiscrete topological space $I$ on two points. This represents the functor which takes a topological space $X$ to the pairs of indistinguishable points of $X$. Therefore, we get a cocongruence $1 \rightrightarrows I$, where the maps are the two possible functions. However, this cannot be effective: if we have $h : Z\to 1$ which equalizes the two maps, then $Z$ must be empty. But that means the cokernel pair of $h$ is the discrete space on two points.'

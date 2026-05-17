@@ -36,7 +36,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: finitary algebraic
-    reason: This follows from <a href="/lemma/thin_algebraic_categories">this lemma</a>.
+    reason: This follows from <a href="/content/thin_algebraic_categories">this lemma</a>.
 
 special_objects:
   initial object:

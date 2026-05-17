@@ -45,7 +45,7 @@ unsatisfied_properties:
     reason: Consider the strictly increasing sequence $0 < 1 < 2 < \cdots$.
 
   - property: finitary algebraic
-    reason: This follows from <a href="/lemma/thin_algebraic_categories">this lemma</a>.
+    reason: This follows from <a href="/content/thin_algebraic_categories">this lemma</a>.
 
 special_objects:
   initial object:

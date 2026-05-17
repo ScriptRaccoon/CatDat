@@ -1,0 +1,16 @@
+---
+title: Limits in factor categories
+description: Limits descend to factors in a product of categories
+author: Martin Brandenburg
+---
+
+## Limits in factor categories
+
+::: Lemma
+Let $\C,\D$ be two categories. Assume that $\D$ is inhabited. If $\C \times \D$ has limits of a given shape, then $\C$ also has limits of this shape.
+:::
+
+_Proof._
+Let $U \in \D$ be a fixed object. Assume that $X : \J \to \C$ is a diagram. Assume that the diagram $(X,U) : \J \to \C \times \D$ (which is constant in the second variable) has a limit cone $((p_i, u_i) : (L,V) \to (X_i,U))$, thus consisting of morphisms $p_i : L \to X_i$ and $u_i : V \to U$. Clearly, $(p_i : L \to X_i)$ is a cone over $X$. We prove that it is universal:
+
+Let $(f_i : T \to X_i)$ be a cone over $X$. Then $((f_i,\id_U) : (T,U) \to (X_i,U))$ is a cone over $(X,U)$. Hence, there is a unique morphism $(f,v) : (T,U) \to (L,V)$, consisting of $f : T \to L$ and $v : U \to V$, such that $(p_i,u_i) \circ (f,v) = (f_i,\id_U)$, i.e. $p_i \circ f = f_i$ and $u_i \circ v = \id_U$. If $g : T \to L$ is another morphism with $p_i \circ g = f_i$, then uniqueness applied to $(g,v)$ shows that $f = g$. <span class="qed">$\square$</span>

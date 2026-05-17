@@ -108,7 +108,7 @@ unsatisfied_properties:
       for each $x, y \in (0, 1)$. This is reflexive since $d(f(x), f(y)) \le |x-y| < x+y$, and it is clearly symmetric. For transitivity, suppose $f\sim g$ and $g\sim h$. Then for any $\varepsilon > 0$, we have
       $$d(f(x), h(y)) \le d(f(x), g(\varepsilon)) + d(g(\varepsilon), h(y)) \le (x + \varepsilon) + (y + \varepsilon).$$
       Since this holds for every $\varepsilon > 0$, we conclude $d(f(x), h(y)) \le x+y$.
-      On the other hand, if this cocongruence were effective, then by the dual of <a href="/lemma/effective-congruence-quotients">this result</a>, it would be the cokernel pair of the equalizer of the two inclusion maps. However, that equalizer is empty, so $E$ would have to be a binary copower of $(0,1)$, which does not exist in $\Met$.
+      On the other hand, if this cocongruence were effective, then by the dual of <a href="/content/effective-congruence-quotients">this result</a>, it would be the cokernel pair of the equalizer of the two inclusion maps. However, that equalizer is empty, so $E$ would have to be a binary copower of $(0,1)$, which does not exist in $\Met$.
 
 special_objects:
   initial object:

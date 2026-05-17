@@ -1,0 +1,21 @@
+---
+title: Quotients of effective congruences are strict quotients
+description: Quotients by effective congruences are characterized via a pullback
+author: Daniel Schepler
+---
+
+## Quotients of effective congruences are strict quotients
+
+::: Lemma
+Let $f, g : E \rightrightarrows X$ be an effective congruence. If $f, g$ have a coequalizer $p : X \to X/E$, then in fact we have a cartesian square
+$$\begin{CD} E @> f >> X \\ @V g VV @VV p V \\ X @>> p > X/E. \end{CD}$$
+:::
+
+_Proof._
+Suppose we have $h : X \to Z$ so that we have a cartesian square
+$$\begin{CD} E @> f >> X \\ @V g VV @VV h V \\ X @>> h > Z. \end{CD}$$
+Then by the universal property of the coequalizer, there is a unique morphism
+$$\bar h : X/E \to Z$$
+such that $h = \bar h \circ p$. Now suppose we have generalized elements $x_1, x_2 : T \rightrightarrows X$ such that $p \circ x_1 = p \circ x_2$. Then
+$$h \circ x_1 = \bar h \circ p \circ x_1 = \bar h \circ p \circ x_2 = h \circ x_2,$$
+so the pair $x_1, x_2$ factors through $f, g : E \rightrightarrows X$. The uniqueness of the factorization follows from the assumption that $E$ is a congruence, so $f, g$ are jointly monomorphic. <span class="qed">$\square$</span>
