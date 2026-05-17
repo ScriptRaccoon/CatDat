@@ -169,9 +169,11 @@ As a practical guideline, avoid introducing more than four properties (or four c
 
 ### Conventions
 
-1. Use `\varnothing` to display the empty set, not `\emptyset`.
-2. Write `non-empty`, not `nonempty`. Same for `non-unital`, `non-expansive`, etc.
-3. For LaTeX symbols that are used repeatedly, in particular category-theoretic notation, define a LaTeX macro in [macros.yaml](databases/catdat/data/macros.yaml).
+1. Write `non-empty`, not `nonempty`. Same for `non-unital`, `non-expansive`, etc.
+2. Use `\varnothing` to display the empty set, not `\emptyset`.
+3. For declarations of functions or morphisms use `f : X \to Y`, not `f \colon X \to Y`.
+4. For definitions use `\coloneqq` instead of `:=`.
+5. For LaTeX symbols that are used repeatedly, in particular category-theoretic notation, define a LaTeX macro in [macros.yaml](databases/catdat/data/macros.yaml).
 
 ### Responsible Use of AI
 
