@@ -34,7 +34,7 @@ unsatisfied_properties:
     reason: 'Disclaimer: This result and its proof are not relevant for category theory and are also depending on the concrete model of set theory. That this category is locally essentially small is only what matters. Now, consider the terminal species $F=G=1$. Then $\Hom(F,G)$ has just a single element, namely the natural transformation $\alpha$ that sends every finite set $X$ to the unique map $\alpha_X : 1 \to 1$. Formally, $\alpha$ is a map, modelled as a set of ordered pairs $(X,\id_1)$, where $X$ is a finite set. Hence, $\alpha$ is not a set (since finite sets do not form a set), and therefore $\Hom(F,G) = \{\alpha\}$ is also not a set.'
 
   - property: essentially countable
-    reason: Any function $f\colon\IN \to \IN$ can be regarded as a combinatorial species with trivial actions, and distinct functions yield non-isomorphic species.
+    reason: 'Any function $f : \IN \to \IN$ can be regarded as a combinatorial species with trivial actions, and distinct functions yield non-isomorphic species.'
 
   - property: countable powers
     reason: If $\Sp \simeq \FinSet \times \prod_{n > 0} \Sigma_n{-}\FinSet$ has countable powers, then <a href="/category/FinSet">$\FinSet$</a> has countable powers as well by <a href="/lemma/limits_in_factor_categories">this lemma</a>, which we already know is false.

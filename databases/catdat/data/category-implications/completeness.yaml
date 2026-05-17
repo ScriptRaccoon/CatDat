@@ -68,5 +68,5 @@
     - multi-complete
   conclusions:
     - complete
-  reason: Let $D\colon \S \to \C$ be a small diagram in a category $\C$. Since $\C$ has finite coproducts, the category $\Cone(D)$ of cones over $D$ has finite coproducts. In particular, $\Cone(D)$ is connected, hence a multi-terminal object in it automatically becomes a terminal object.
+  reason: 'Let $D : \S \to \C$ be a small diagram in a category $\C$. Since $\C$ has finite coproducts, the category $\Cone(D)$ of cones over $D$ has finite coproducts. In particular, $\Cone(D)$ is connected, hence a multi-terminal object in it automatically becomes a terminal object.'
   is_equivalence: false
