@@ -83,7 +83,7 @@ unsatisfied_properties:
     reason: 'The functor $\IQ \times - : \Top_* \to \Top_*$ does not preserve colimits, see <a href="https://math.stackexchange.com/questions/2969372" target="_blank">MSE/2969372</a>. The counterexample also works for pointed spaces.'
 
   - property: co-Malcev
-    reason: 'We can adjust the proof for <a href="/category/Top">$\Top$</a> as follows: Consider the forgetful functor $U : \Top_* \to \Set$ and the relation $R \subseteq U^2$ defined by $R(X) := \{(x,y) \in U(X)^2 : x \in \overline{\{y\}} \}$. Both are representable: $U$ by the discrete space $\{0,1\}$ with base point $0$ and $R$ by the Sierpinski space with an isolated base point added. It is clear that $R$ is reflexive, but not symmetric.'
+    reason: 'We can adjust the proof for <a href="/category/Top">$\Top$</a> as follows: Consider the forgetful functor $U : \Top_* \to \Set$ and the relation $R \subseteq U^2$ defined by $R(X) \coloneqq \{(x,y) \in U(X)^2 : x \in \overline{\{y\}} \}$. Both are representable: $U$ by the discrete space $\{0,1\}$ with base point $0$ and $R$ by the Sierpinski space with an isolated base point added. It is clear that $R$ is reflexive, but not symmetric.'
 
   - property: unital
     reason: 'The joint image of $X \to X \times Y \leftarrow Y$ is just $\{(x,0) : x \in X\} \cup \{(0,y) : y \in Y\}$ (where $0$ denotes the base point), which is clearly a proper subset of $X \times Y$ when both $X,Y$ are non-trivial.'
@@ -105,7 +105,7 @@ unsatisfied_properties:
     reason: Suppose that $\Top_*$ had effective congruences. Then by <a href="/lemma/coslice-effective-congruences">this result</a>, <a href="/category/Top">$\Top$</a> would also have effective congruences, which we know is not the case.
 
   - property: effective cocongruences
-    reason: 'This counterexample is adapted from the counterexample for <a href="/category/Top">$\Top$</a>. Consider the pointed topological space $I := \{ *, a, b \}$ with topology $\{ \varnothing, \{ * \}, \{ a, b \}, \{ *, a, b \} \}$. This represents the functor which sends a pointed topological space $X$ to the pairs of indistinguishable points of $X$. Therefore, we get a cocongruence $\{ *, a \} \rightrightarrows I$ on the discrete space $\{ *, a \}$, where the maps are $*\mapsto *, a\mapsto a$ and $*\mapsto *, a\mapsto b$ respectively. However, this cannot be effective: if we have $h : Z \to \{ *, a \}$ which equalizes the cocongruence, then $h$ must be the constant function with value $*$. But that means the cokernel pair of $h$ is the discrete space on $\{ *, a, b \}$.'
+    reason: 'This counterexample is adapted from the counterexample for <a href="/category/Top">$\Top$</a>. Consider the pointed topological space $I \coloneqq \{ *, a, b \}$ with topology $\{ \varnothing, \{ * \}, \{ a, b \}, \{ *, a, b \} \}$. This represents the functor which sends a pointed topological space $X$ to the pairs of indistinguishable points of $X$. Therefore, we get a cocongruence $\{ *, a \} \rightrightarrows I$ on the discrete space $\{ *, a \}$, where the maps are $*\mapsto *, a\mapsto a$ and $*\mapsto *, a\mapsto b$ respectively. However, this cannot be effective: if we have $h : Z \to \{ *, a \}$ which equalizes the cocongruence, then $h$ must be the constant function with value $*$. But that means the cokernel pair of $h$ is the discrete space on $\{ *, a, b \}$.'
 
 special_objects:
   initial object:

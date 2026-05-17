@@ -11,16 +11,16 @@ proof: >-
   We will use generalized elements extensively. In particular, for every element $a \in A$ and $n \in \IN$ there is an element $n \otimes a \in \IN \otimes A$, formally defined by the $n$th coproduct inclusion. The morphism $\alpha$ is defined by
   $$\alpha(n \otimes a) = (a , n \otimes 1).$$
   In any category with finite products and arbitrary copowers, we can construct the non-parameterized NNO $\IN \otimes 1$ with the element $0 \otimes 1 \in \IN \otimes 1$ and the map
-  $$s : \IN \otimes 1 \to \IN \otimes 1, \quad s(n \otimes 1) := (n+1) \otimes 1.$$
+  $$s : \IN \otimes 1 \to \IN \otimes 1, \quad s(n \otimes 1) \coloneqq (n+1) \otimes 1.$$
   Its universal property states that it is initial in the category of pairs $1 \xrightarrow{x_0} X \xrightarrow{r} X$. Hence, it is unique up to isomorphism. Since by assumption $1 \xrightarrow{z} N \xrightarrow{s} N$ is a full, parameterized NNO, it is also a non-parameterized NNO and therefore isomorphic to the one described. We will assume w.l.o.g. that it is equal to it and continue to work with $N = \IN \otimes 1$.
 
   Next, we apply the (parameterized) universal property of the NNO to the diagram
   $$A \xrightarrow{f} \IN \otimes A \xrightarrow{g} \IN \otimes A$$
-  defined by $f(a) := 0 \otimes a$ and $g(n \otimes a) := (n+1) \otimes a$. It tells us that there is a map
+  defined by $f(a) \coloneqq 0 \otimes a$ and $g(n \otimes a) \coloneqq (n+1) \otimes a$. It tells us that there is a map
   $$\Phi : A \times N \to \IN \otimes A$$
   with
   $$\Phi(a,0 \otimes 1) = 0 \otimes a, \quad \Phi(a, s(m)) = g(\Phi(a,m)).$$
-  For $m := n \otimes 1 \in N$ (where $n \in \IN$) the second equation reads
+  For $m \coloneqq n \otimes 1 \in N$ (where $n \in \IN$) the second equation reads
   $$\Phi(a, (n+1) \otimes 1) = g(\Phi(a, n \otimes 1)).$$
   By classical induction on $n \in \IN$ it follows that
   $$\Phi(a, n \otimes 1) = n \otimes a,$$

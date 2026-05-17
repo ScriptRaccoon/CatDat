@@ -39,7 +39,7 @@ satisfied_properties:
     check_redundancy: false
 
   - property: binary products
-    reason: The product of two pseudo-metric spaces $(X,d)$, $(Y,d)$ is $(X \times Y,d)$ with $d((x_1,y_1),(x_2,x_2)) := \sup(d(x_1,x_2),d(y_1,y_2))$.
+    reason: The product of two pseudo-metric spaces $(X,d)$, $(Y,d)$ is $(X \times Y,d)$ with $d((x_1,y_1),(x_2,x_2)) \coloneqq \sup(d(x_1,x_2),d(y_1,y_2))$.
     check_redundancy: false
 
   - property: terminal object
@@ -110,4 +110,4 @@ special_morphisms:
     reason: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
   epimorphisms:
     description: surjective non-expansive maps
-    reason: 'Let $f : X \to Y$ be a non-expansive map that is not surjective. Choose $y_0 \in Y \setminus f(X)$. We extend the pseudo-metric from $Y$ to $Z := Y \sqcup \{y''_0\}$ via $d(y,y''_0) := d(y,y_0)$, i.e., we make $y_0,y''_0$ indistinguishable. Let $g : Y \to Z$ be the inclusion and $h : Y \to Z$ be the map that composes $g$ with the swap between $y_0$ and $y''_0$. Both are isometric and satisfy $g \circ f = h \circ f$. Therefore, $f$ is not an epimorphism.'
+    reason: 'Let $f : X \to Y$ be a non-expansive map that is not surjective. Choose $y_0 \in Y \setminus f(X)$. We extend the pseudo-metric from $Y$ to $Z \coloneqq Y \sqcup \{y''_0\}$ via $d(y,y''_0) \coloneqq d(y,y_0)$, i.e., we make $y_0,y''_0$ indistinguishable. Let $g : Y \to Z$ be the inclusion and $h : Y \to Z$ be the map that composes $g$ with the swap between $y_0$ and $y''_0$. Both are isometric and satisfy $g \circ f = h \circ f$. Therefore, $f$ is not an epimorphism.'

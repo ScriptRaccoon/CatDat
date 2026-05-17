@@ -17,7 +17,7 @@ satisfied_properties:
     reason: The set of morphisms $X \to Y$ is the set $P(X \times Y)$.
 
   - property: self-dual
-    reason: 'There is an isomorphism $\Rel \to \Rel^{\op}$ that is the identity on objects (sets) and maps a relation $R \subseteq X \times Y$ to the opposite relation $R^{\op} \subseteq Y \times X$ defined by $R^{\op} := \{(y,x) : (x,y) \in R \}$.'
+    reason: 'There is an isomorphism $\Rel \to \Rel^{\op}$ that is the identity on objects (sets) and maps a relation $R \subseteq X \times Y$ to the opposite relation $R^{\op} \subseteq Y \times X$ defined by $R^{\op} \coloneqq \{(y,x) : (x,y) \in R \}$.'
 
   - property: pointed
     reason: The empty set is clearly both initial and terminal. The zero morphisms are the empty relations.

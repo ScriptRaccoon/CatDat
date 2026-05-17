@@ -31,7 +31,7 @@ unsatisfied_properties:
 
   - property: semi-strongly connected
     reason: >-
-      There is a bijection $\alpha = (\lambda,\rho) : \IN \to \IN \times \IN$ such that $\lambda$ has a fixed point, but $\rho$ does not (see below). Then the isomorphism $\beta := (\rho,\lambda)$ has the opposite property. There cannot be any morphism $(\IN,\alpha) \to (\IN,\beta)$, as it would map the fixed point of $\lambda$ to a fixed point of $\rho$, and likewise there is no morphism $(\IN,\beta) \to (\IN,\alpha)$.
+      There is a bijection $\alpha = (\lambda,\rho) : \IN \to \IN \times \IN$ such that $\lambda$ has a fixed point, but $\rho$ does not (see below). Then the isomorphism $\beta \coloneqq (\rho,\lambda)$ has the opposite property. There cannot be any morphism $(\IN,\alpha) \to (\IN,\beta)$, as it would map the fixed point of $\lambda$ to a fixed point of $\rho$, and likewise there is no morphism $(\IN,\beta) \to (\IN,\alpha)$.
 
       To construct $\alpha$ or rather $\alpha^{-1} : \IN \times \IN \to \IN$, we can alter the standard bijection $(n,m) \mapsto 2^n (2m+1) - 1$ as follows:
       $$\alpha^{-1}(n,m) = \begin{cases} 2 & (n,m) = (0,0) \\ 0 & (n,m) = (0,1) \\ 2^n (2m+1) - 1 & \text{otherwise} \end{cases}$$

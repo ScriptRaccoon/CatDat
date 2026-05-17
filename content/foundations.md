@@ -45,11 +45,11 @@ A _category_ $\C$ consists of a pair of collections $O, M$, whose elements are c
 - $t : M \to O$ (_target_),
 - $c : M \times_O M \to M$ (_composition_),
 
-such that the usual [axioms of a category](<https://en.wikipedia.org/wiki/Category_(mathematics)>) are satisfied. The domain of $c$ consists of all pairs of morphisms $(f,g)$ with $s(f) = t(g)$, and we write $f \circ g := c(f,g)$ for their composition. Instead of $i(X)$ one usually writes $\id_X$ for the identity morphism of $X$. Formally, a category is a tuple
+such that the usual [axioms of a category](<https://en.wikipedia.org/wiki/Category_(mathematics)>) are satisfied. The domain of $c$ consists of all pairs of morphisms $(f,g)$ with $s(f) = t(g)$, and we write $f \circ g \coloneqq c(f,g)$ for their composition. Instead of $i(X)$ one usually writes $\id_X$ for the identity morphism of $X$. Formally, a category is a tuple
 
 $$\C = (O,M,i,s,t,c)$$
 
-of collections (and hence a collection itself). We write $\Ob(\C) := O$ and $\Mor(\C) := M$. Instead of $X \in \Ob(\C)$, we often write $X \in \C$.
+of collections (and hence a collection itself). We write $\Ob(\C) \coloneqq O$ and $\Mor(\C) \coloneqq M$. Instead of $X \in \Ob(\C)$, we often write $X \in \C$.
 
 When $f \in \Mor(\C)$ is a morphism with $s(f) = X$ and $t(f) = Y$, we write
 $$f : X \to Y.$$

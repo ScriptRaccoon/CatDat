@@ -62,7 +62,7 @@ $$c \circ i_1 = u_1 \circ i_1, \quad c \circ i_2 = u_2 \circ i_2,$$
 
 where $u_1,u_2 : Y \rightrightarrows Y \sqcup_{i_2,X,i_1} Y$ are the pushout inclusions satisfying $u_1 i_2 = u_2 i_1$. We will not use the fact that the cocongruence is cosymmetric; this will follow automatically. Define the monomorphism
 
-$$E := \eq(i_1,i_2) \hookrightarrow X.$$
+$$E \coloneqq \eq(i_1,i_2) \hookrightarrow X.$$
 
 Since $i_1$ and $i_2$ agree on $E$, there exists a unique morphism
 
@@ -74,7 +74,7 @@ We must show that $\varphi$ is an isomorphism. It is clearly an epimorphism, sin
 
 We will show that even the morphism
 
-$$\gamma := c \circ \varphi : X \sqcup_E X \to Y \sqcup_{i_2,X,i_1} Y$$
+$$\gamma \coloneqq c \circ \varphi : X \sqcup_E X \to Y \sqcup_{i_2,X,i_1} Y$$
 
 is a monomorphism. It is characterized by
 

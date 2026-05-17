@@ -41,7 +41,7 @@ satisfied_properties:
     reason: Take the colimit of the underlying sets and take the largest $\sigma$-algebra making all inclusions measurable. That is, a set is measurable iff its preimage under each inclusion is measurable.
 
   - property: infinitary extensive
-    reason: '[Sketch] Since <a href="/category/Set">$\Set$</a> is infinitary extensive, a map $f : Y \to \coprod_i X_i =: X$ corresponds to a decomposition $Y = \coprod_i Y_i$ (as sets) with maps $f_i : Y_i \to X_i$. Endow the measurable subset $Y_i \subseteq Y$ with the restricted $\sigma$-algebra. If $f$ is measurable, each $f_i$ is measurable, and $Y = \coprod_i Y_i$ holds as measurable spaces.'
+    reason: '[Sketch] Since <a href="/category/Set">$\Set$</a> is infinitary extensive, a map $f : Y \to \coprod_i X_i \eqqcolon X$ corresponds to a decomposition $Y = \coprod_i Y_i$ (as sets) with maps $f_i : Y_i \to X_i$. Endow the measurable subset $Y_i \subseteq Y$ with the restricted $\sigma$-algebra. If $f$ is measurable, each $f_i$ is measurable, and $Y = \coprod_i Y_i$ holds as measurable spaces.'
 
   - property: filtered-colimit-stable monomorphisms
     reason: This follows from <a href="/lemma/filtered-monos">this lemma</a> applied to the forgetful functor to $\Set$.

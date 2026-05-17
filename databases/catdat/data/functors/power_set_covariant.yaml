@@ -17,7 +17,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: coequalizer-preserving
-    reason: 'Let $X := \{x,y\}$. Consider the two maps $x,y : \{0\} \rightrightarrows X$. Their coequalizer $Q = X / (x = y)$ has just one element, so that $P(Q)$ has two elements. The induced maps $x_*,y_* : P(\{0\}) \rightrightarrows P(X)$ (which already agree on the empty set) have coequalizer $P(X) / (\{x\} = \{y\})$, which has $3$ elements. So it cannot be $P(Q)$.'
+    reason: 'Let $X \coloneqq \{x,y\}$. Consider the two maps $x,y : \{0\} \rightrightarrows X$. Their coequalizer $Q = X / (x = y)$ has just one element, so that $P(Q)$ has two elements. The induced maps $x_*,y_* : P(\{0\}) \rightrightarrows P(X)$ (which already agree on the empty set) have coequalizer $P(X) / (\{x\} = \{y\})$, which has $3$ elements. So it cannot be $P(Q)$.'
   - property: equalizer-preserving
     reason: 'Any pair of distinct surjective maps $f,g : X \rightrightarrows Y$ provides a counterexample: Their equalizer $E$ is a proper subset of $X$, so that $P(E)$ cannot contain $X$. But $f_*(X) = Y = g_*(X)$ shows that $X$ is contained in the equalizer of $f_*,g_* : P(X) \rightrightarrows P(Y)$.'
   - property: essentially surjective

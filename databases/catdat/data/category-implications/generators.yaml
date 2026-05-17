@@ -16,7 +16,7 @@
     - zero morphisms
   conclusions:
     - generator
-  reason: 'If $S$ is a generating set, we claim that $U := \coprod_{G \in S} G$ is a generator. Let $f,g : A \rightrightarrows B$ be two morphisms with $f h = g h$ for all $h : U \to A$. If $G \in S$, any morphism $G \to A$ extends to $U$ by using zero morphisms outside of $G$. Thus, $fh = gh$ holds for all $h : G \to A$ and $G \in S$. Since $S$ is a generating set, this implies $f = g$.'
+  reason: 'If $S$ is a generating set, we claim that $U \coloneqq \coprod_{G \in S} G$ is a generator. Let $f,g : A \rightrightarrows B$ be two morphisms with $f h = g h$ for all $h : U \to A$. If $G \in S$, any morphism $G \to A$ extends to $U$ by using zero morphisms outside of $G$. Thus, $fh = gh$ holds for all $h : G \to A$ and $G \in S$. Since $S$ is a generating set, this implies $f = g$.'
   is_equivalence: false
 
 - id: free-algebra-generates

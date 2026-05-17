@@ -33,7 +33,7 @@ satisfied_properties:
     reason: We can use the same proof as for <a href="/category/Met">$\Met$</a> since the equation $\inf_i \max(r, s_i) = \max(r, \inf_i s_i)$ also holds for for $r, s_i \in \IR \cup \{\infty\}$.
 
   - property: infinitary extensive
-    reason: '[Sketch] Since <a href="/category/Set">$\Set$</a> is infinitary extensive, a map $f : Y \to \coprod_i X_i =: X$ corresponds to a decomposition $Y = \coprod_i Y_i$ (as sets) with maps $f_i : Y_i \to X_i$. Endow $Y_i$ with the restricted metric. If $f$ is non-expansive, each $f_i$ is non-expansive, and for $x_i \in Y_i$ and $i \neq j$ we have $d_Y(x_i,x_j) \geq d_X(f(x_i),f(x_j)) = \infty$, so that $Y = \coprod_i Y_i$ holds as metric spaces.'
+    reason: '[Sketch] Since <a href="/category/Set">$\Set$</a> is infinitary extensive, a map $f : Y \to \coprod_i X_i \eqqcolon X$ corresponds to a decomposition $Y = \coprod_i Y_i$ (as sets) with maps $f_i : Y_i \to X_i$. Endow $Y_i$ with the restricted metric. If $f$ is non-expansive, each $f_i$ is non-expansive, and for $x_i \in Y_i$ and $i \neq j$ we have $d_Y(x_i,x_j) \geq d_X(f(x_i),f(x_j)) = \infty$, so that $Y = \coprod_i Y_i$ holds as metric spaces.'
 
 unsatisfied_properties:
   - property: skeletal
@@ -46,7 +46,7 @@ unsatisfied_properties:
     reason: 'Consider the metric subspace $\{(a,b) \in \IR^2 : a \leq b\}$ of $\IR^2$.'
 
   - property: co-Malcev
-    reason: 'See <a href="https://mathoverflow.net/questions/509552">MO/509552</a>: Consider the forgetful functor $U : \Met_{\infty} \to \Set$ and the relation $R \subseteq U^2$ defined by $R(X) := \{(a,b) \in U(X)^2 : d(x,y) \leq 1 \}$. Both are representable: $U$ by the singleton metric space and $R$ by the metric space $\{ 0,1 \}$ where $d(0,1) := 1$. It is clear that $R$ is reflexive, but not transitive.'
+    reason: 'See <a href="https://mathoverflow.net/questions/509552">MO/509552</a>: Consider the forgetful functor $U : \Met_{\infty} \to \Set$ and the relation $R \subseteq U^2$ defined by $R(X) \coloneqq \{(a,b) \in U(X)^2 : d(x,y) \leq 1 \}$. Both are representable: $U$ by the singleton metric space and $R$ by the metric space $\{ 0,1 \}$ where $d(0,1) \coloneqq 1$. It is clear that $R$ is reflexive, but not transitive.'
 
   - property: cartesian closed
     reason: This is proven in <a href="https://math.stackexchange.com/questions/5131457" target="_blank">MSE/5131457</a>.

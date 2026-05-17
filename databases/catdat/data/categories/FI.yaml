@@ -69,7 +69,7 @@ unsatisfied_properties:
     reason: Assume that two finite sets $X,Y$ have a product $P$ in this category. Elements of $P$ are the same as maps $1 \to P$, and they are automatically injective. Therefore, $P \cong \Hom(1,P) \times \Hom(1,X) \times \Hom(1,Y) \cong X \times Y$, and the projections must agree as well. But they are usually not injective. In particular, the product $X \times X$ never exists when $X$ has $>1$ elements.
 
   - property: sequential colimits
-    reason: 'Let $X_n := \{1,\dotsc,n\}$. Assume the sequence of inclusion maps $X_n \hookrightarrow X_{n+1}$ has a colimit $(f_n : X_n \to X)$ in this category. But $f_n$ must be an injective map, so that $\card(X) \geq n$ for all $n$. Since $X$ is finite, this is a contradiction.'
+    reason: 'Let $X_n \coloneqq \{1,\dotsc,n\}$. Assume the sequence of inclusion maps $X_n \hookrightarrow X_{n+1}$ has a colimit $(f_n : X_n \to X)$ in this category. But $f_n$ must be an injective map, so that $\card(X) \geq n$ for all $n$. Since $X$ is finite, this is a contradiction.'
 
 special_objects:
   initial object:
@@ -84,7 +84,7 @@ special_morphisms:
     reason: This is trivial.
   epimorphisms:
     description: bijective maps
-    reason: 'Take an epimorphism $X \to Y$ in this category, w.l.o.g. the inclusion of a subset $X \subseteq Y$. This means that for two injective maps $f,g : Y \rightrightarrows T$ with $f|_X = g|_X$ we must have $f = g$. Let $T := Y + (Y \setminus X)$ (disjoint union), $f$ be the inclusion into the first summand, $g|_X$ be the inclusion into the first summand, and $g|_{Y \setminus X}$ be the inclusion into the second summand. Then $f$ and $g$ are injective with $f|_X = g|_X$, so that $f = g$. But this means $X = Y$.'
+    reason: 'Take an epimorphism $X \to Y$ in this category, w.l.o.g. the inclusion of a subset $X \subseteq Y$. This means that for two injective maps $f,g : Y \rightrightarrows T$ with $f|_X = g|_X$ we must have $f = g$. Let $T \coloneqq Y + (Y \setminus X)$ (disjoint union), $f$ be the inclusion into the first summand, $g|_X$ be the inclusion into the first summand, and $g|_{Y \setminus X}$ be the inclusion into the second summand. Then $f$ and $g$ are injective with $f|_X = g|_X$, so that $f = g$. But this means $X = Y$.'
   regular monomorphisms:
     description: same as monomorphisms
     reason: This is because the category is mono-regular.

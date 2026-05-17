@@ -63,13 +63,13 @@ unsatisfied_properties:
     reason: 'If $f : \varnothing \to X$ is surjective, then $X = \varnothing$, and if $f : X \to \varnothing$ is any map, then also $X = \varnothing$. This shows that $\{ \varnothing \}$ is a connected component in this category. (The other connected component consists of all non-empty finite sets.)'
 
   - property: sequential limits
-    reason: 'Let $X_n := \{1,\dotsc,n\}$. We define the truncation $p_n : X_{n+1} \to X_n$ by extending the identity of $X_n$ with $p_n(n+1) := n$. Assume the sequence of truncations $\cdots \to X_2 \to X_1$ has a limit $(f_n : X \to X_n)$ in this category. But $f_n$ is surjective, so that $\card(X) \geq n$ for all $n$. Since $X$ is finite, this is a contradiction.'
+    reason: 'Let $X_n \coloneqq \{1,\dotsc,n\}$. We define the truncation $p_n : X_{n+1} \to X_n$ by extending the identity of $X_n$ with $p_n(n+1) \coloneqq n$. Assume the sequence of truncations $\cdots \to X_2 \to X_1$ has a limit $(f_n : X \to X_n)$ in this category. But $f_n$ is surjective, so that $\card(X) \geq n$ for all $n$. Since $X$ is finite, this is a contradiction.'
 
   - property: pullbacks
     reason: The connected component of non-empty sets has a terminal object, $1$, and it suffices to prove that it has no products. Let $X$ be a finite set with more than $1$ element. Assume that the product $P$ of $X$ with itself exists. The diagonal $X \to P$ is a split monomorphism, hence injective, but also surjective, i.e. an isomorphism. In other words, the two projections $P \rightrightarrows X$ are equal. The universal property of $P$ now implies that every two morphisms $Y \rightrightarrows X$ are equal, which is absurd.
 
   - property: binary copowers
-    reason: Assume that the copower $X := 2+2$ exists. Since we have a surjective map $2 \to X$, the set $X$ has at most $2$ elements. The codiagonal $X \to 2$ shows that $X$ has at least $2$ elements. Thus, $X \cong 2$. For all finite sets $Y$ we get a bijection $\Hom(2,Y) \cong \Hom(2,Y)^2$, in particular the cardinalities are the same. For $Y=2$ this gives the contradiction $2 = 4$.
+    reason: Assume that the copower $X \coloneqq 2+2$ exists. Since we have a surjective map $2 \to X$, the set $X$ has at most $2$ elements. The codiagonal $X \to 2$ shows that $X$ has at least $2$ elements. Thus, $X \cong 2$. For all finite sets $Y$ we get a bijection $\Hom(2,Y) \cong \Hom(2,Y)^2$, in particular the cardinalities are the same. For $Y=2$ this gives the contradiction $2 = 4$.
 
   - property: locally cocartesian coclosed
     reason: >-

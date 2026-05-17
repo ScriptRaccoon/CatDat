@@ -14,7 +14,7 @@ proof: >-
   $$p_1 \circ \alpha \circ i_1 = \id_X, \quad p_2 \circ \alpha \circ i_2 = \id_Y,$$
   $$p_2 \circ \alpha \circ i_1 = 0,\quad p_1 \circ \alpha \circ i_2 = 0.$$
   It does not depend on the choice of preadditive structure since zero morphisms are unique. It is an isomorphism: Define
-  $$\beta := i_1 \circ p_1 + i_2 \circ p_2 : X \times Y \to X \oplus Y.$$
+  $$\beta \coloneqq i_1 \circ p_1 + i_2 \circ p_2 : X \times Y \to X \oplus Y.$$
   Then $\alpha \circ \beta = \id_{X \times Y}$ because
   $$p_1 \circ \alpha \circ \beta = p_1 \circ \alpha \circ i_1 \circ p_1 + p_1 \circ \alpha \circ i_2 \circ p_2 = \id_1 \circ p_1 + 0 \circ p_2 = p_1$$
   and likewise $p_2 \circ \alpha \circ \beta = p_2$. We also have $\beta \circ \alpha = \id_{X \oplus Y}$ with a very similar calculation that shows $\beta \circ \alpha \circ i_1 = i_1$ and $\beta \circ \alpha \circ i_2 = i_2$. Therefore, for morphisms $f,g : A \rightrightarrows B$ the composite $A \to B$ in the claim is equal to
