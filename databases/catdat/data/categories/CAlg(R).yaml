@@ -45,7 +45,7 @@ unsatisfied_properties:
     reason: 'The canonical homomorphism $A \otimes_R R^{\IN} \to A^{\IN}$ is given by $a \otimes (r_n)_n \mapsto (r_n a)_n$ and does not have to be surjective: Since $R \neq 0$, there is a commutative $R$-algebra $K$ which is a field. Now take $A \coloneqq K[X]$ and consider the sequence $(X^n)_{n} \in A^{\IN}$.'
 
   - property: semi-strongly connected
-    reason: Choose a maximal ideal $\mathfrak{m}$ of $R$, so $K \coloneqq R/\mathfrak{m}$ is a field. If $\CAlg(R)$ is semi-strongly connected, then also $\CAlg(K)$ is semi-strongly connected. This has been disproven in <a href="https://math.stackexchange.com/questions/5129689" target="_blank">MSE/5129689</a>.
+    reason: Choose a maximal ideal $\m$ of $R$, so $K \coloneqq R/\m$ is a field. If $\CAlg(R)$ is semi-strongly connected, then also $\CAlg(K)$ is semi-strongly connected. This has been disproven in <a href="https://math.stackexchange.com/questions/5129689" target="_blank">MSE/5129689</a>.
 
   - property: coregular
     reason: See <a href="https://math.stackexchange.com/questions/3745302" target="_blank">MSE/3745302</a>.

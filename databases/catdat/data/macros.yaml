@@ -24,6 +24,10 @@
 \S: \mathcal{S}
 \T: \mathcal{T}
 
+# fraktur letters
+\p: \mathfrak{p}
+\m: \mathfrak{m}
+
 # abbreviations
 \op: \mathrm{op}
 \c: \mathrm{c}
