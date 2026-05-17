@@ -62,21 +62,13 @@ md.block.ruler.before(
 
 		if (silent) return true
 
-		const body_lines = state.getLines(
-			start_line + 1,
-			next_line,
-			state.blkIndent,
-			true,
-		)
+		const open = state.push('html_block', '', 0)
+		open.content = `<div class="theorem"><span class="theorem-title">${title}.</span> `
 
-		const body_html = md.renderInline(body_lines.trim())
+		state.md.block.tokenize(state, start_line + 1, next_line)
 
-		const token = state.push('html_block', '', 0)
-		token.content =
-			`<div class="theorem">` +
-			`<span class="theorem-title">${title}.</span>` +
-			`${body_html}` +
-			`</div>`
+		const close = state.push('html_block', '', 0)
+		close.content = `</div>`
 
 		state.line = next_line + 1
 		return true

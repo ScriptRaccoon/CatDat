@@ -38,7 +38,15 @@
 
 			:global(.theorem-title) {
 				font-weight: 600;
-				margin-right: 0.75rem;
+				margin-right: 0.5rem;
+			}
+
+			:global(p:first-of-type) {
+				display: inline;
+			}
+
+			:global(p:last-of-type) {
+				margin-bottom: 0;
 			}
 		}
 
