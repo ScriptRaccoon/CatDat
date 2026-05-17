@@ -1,6 +1,8 @@
 <script lang="ts">
+	import FunctorList from '$components/FunctorList.svelte'
 	import MetaData from '$components/MetaData.svelte'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
+	import { pluralize } from '$lib/client/utils'
 	import { get_property_url } from '$lib/commons/property.url'
 	import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
 	import Fa from 'svelte-fa'
@@ -79,6 +81,18 @@
 		<strong>Reason:</strong>
 		{@html data.implication.reason}
 	</p>
+{/if}
+
+{#if data.functors.length > 0}
+	<details>
+		<summary class="hint">
+			{pluralize(data.functors.length, {
+				one: 'Show {count} functor using this implication',
+				other: 'Show {count} functors using this implication',
+			})}
+		</summary>
+		<FunctorList functors={data.functors} />
+	</details>
 {/if}
 
 <button class="button" onclick={() => window.history.back()}>Go back</button>
