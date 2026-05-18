@@ -1,9 +1,9 @@
 import { type Database } from 'better-sqlite3'
 
-export type CategoryMeta = {
+type CategoryMeta = {
 	id: string
 	name: string
-	dual_category_id: string | null
+	dual: string | null
 }
 
 export type NormalizedCategoryImplication = {
@@ -12,21 +12,13 @@ export type NormalizedCategoryImplication = {
 	conclusion: string
 }
 
-export type CategoryPropertyMeta = {
-	id: string
-	dual_property_id: string | null
-	relation: string
-	negation: string
-	conditional: string
-}
-
 /**
  * Returns the list of categories saved in the database.
  */
 export function get_categories(db: Database) {
 	return db
 		.prepare(
-			`SELECT id, name, dual_category_id
+			`SELECT id, name, dual_category_id as dual
             FROM categories ORDER BY lower(name)`,
 		)
 		.all() as CategoryMeta[]
@@ -84,106 +76,6 @@ export function get_normalized_category_implications(
 	}
 
 	return implications
-}
-
-/**
- * Returns a dictionary of properties saved in the database.
- */
-export function get_properties_dict(db: Database) {
-	const properties = db
-		.prepare(
-			`SELECT
-				p.id, p.dual_property_id, p.relation,
-				r.negation, r.conditional
-			FROM category_properties p
-			INNER JOIN relations r ON r.relation = p.relation
-			ORDER BY lower(p.id)`,
-		)
-		.all() as CategoryPropertyMeta[]
-
-	const dict: Record<string, CategoryPropertyMeta> = {}
-
-	for (const p of properties) dict[p.id] = p
-
-	return dict
-}
-
-/**
- * Returns a dictionary with all assigned properties of categories,
- * grouped by category and value (satisfied / unsatisfied).
- */
-export function get_property_assignments(db: Database, categories: { id: string }[]) {
-	const rows = db
-		.prepare(
-			`SELECT property_id, category_id, is_satisfied
-			FROM category_property_assignments`,
-		)
-		.all() as { property_id: string; category_id: string; is_satisfied: number }[]
-
-	const grouped: Record<string, { satisfied: Set<string>; unsatisfied: Set<string> }> =
-		{}
-
-	for (const category of categories) {
-		grouped[category.id] = { satisfied: new Set(), unsatisfied: new Set() }
-	}
-
-	for (const row of rows) {
-		const { property_id, category_id, is_satisfied } = row
-		grouped[category_id][is_satisfied ? 'satisfied' : 'unsatisfied'].add(property_id)
-	}
-
-	return grouped
-}
-
-/**
- * Returns a dictionary with all assigned properties of categories,
- * grouped by category, value (satisfied / unsatisfied), and deduced status.
- */
-export function get_property_assignments_by_deduction(
-	db: Database,
-	categories: { id: string }[],
-) {
-	const rows = db
-		.prepare(
-			`SELECT property_id, category_id, is_satisfied, is_deduced
-			FROM category_property_assignments`,
-		)
-		.all() as {
-		property_id: string
-		category_id: string
-		is_satisfied: number
-		is_deduced: number
-	}[]
-
-	const grouped: Record<
-		string,
-		{
-			satisfied: {
-				non_deduced: Set<string>
-				deduced: Set<string>
-			}
-			unsatisfied: {
-				non_deduced: Set<string>
-				deduced: Set<string>
-			}
-		}
-	> = {}
-
-	for (const category of categories) {
-		grouped[category.id] = {
-			satisfied: { non_deduced: new Set(), deduced: new Set() },
-			unsatisfied: { non_deduced: new Set(), deduced: new Set() },
-		}
-	}
-
-	for (const row of rows) {
-		const { property_id, category_id, is_satisfied, is_deduced } = row
-		grouped[category_id][is_satisfied ? 'satisfied' : 'unsatisfied'][
-			is_deduced ? 'deduced' : 'non_deduced'
-		].add(property_id)
-	}
-
-	return grouped
 }
 
 /**
