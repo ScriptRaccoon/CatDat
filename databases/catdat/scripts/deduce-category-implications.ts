@@ -1,10 +1,10 @@
-import { are_equal_sets, get_client } from './utils/helpers'
-import { clear_deduced_implications } from './utils/implications'
+import { get_client } from './utils/helpers'
+import { clear_deduced_implications, is_dualizable } from './utils/implications'
 
 const db = get_client()
 
 /**
- * Deduces implications from given ones.
+ * Deduces category implications from given ones.
  */
 export function deduce_category_implications() {
 	console.info('\n--- Deduce category implications ---')
@@ -14,80 +14,65 @@ export function deduce_category_implications() {
 }
 
 /**
- * Dualizes all implications by dualizing the involved properties
+ * Dualizes all implications of categories by dualizing the involved properties
  * (in case they have a dual). For example, if P ===> Q holds,
  * then P^op ===> Q^op holds as well.
  */
 function create_dualized_category_implications() {
-	type FullImplication = {
+	type ImplicationWithDuals = {
 		id: string
 		assumptions: string
 		conclusions: string
 		dual_assumptions: string
 		dual_conclusions: string
 		is_equivalence: number
-		reason: string
 	}
 
-	const implications = db
-		.prepare(
-			`SELECT
-                v.id,
-                v.assumptions,
-                v.conclusions,
-                v.is_equivalence,
-                v.reason,
-                (
-                    SELECT json_group_array(p.dual_property_id)
-                    FROM json_each(v.assumptions) a
-                    JOIN category_properties p ON p.id = a.value
-                ) AS dual_assumptions,
-                (
-                    SELECT json_group_array(p.dual_property_id)
-                    FROM json_each(v.conclusions) c
-                    JOIN category_properties p ON p.id = c.value
-                ) AS dual_conclusions
-            FROM category_implications_view v
-            WHERE v.is_deduced = FALSE`,
-		)
-		.all() as FullImplication[]
+	const implications_query = db.prepare(
+		`SELECT
+			v.id,
+			v.assumptions,
+			v.conclusions,
+			v.is_equivalence,
+			(
+				SELECT json_group_array(p.dual_property_id)
+				FROM json_each(v.assumptions) a
+				JOIN category_properties p ON p.id = a.value
+			) AS dual_assumptions,
+			(
+				SELECT json_group_array(p.dual_property_id)
+				FROM json_each(v.conclusions) c
+				JOIN category_properties p ON p.id = c.value
+			) AS dual_conclusions
+		FROM category_implications_view v
+		WHERE v.is_deduced = FALSE`,
+	)
 
-	const dualizable_implications = implications.filter((impl) => {
-		const has_null =
-			JSON.parse(impl.dual_assumptions).includes(null) ||
-			JSON.parse(impl.dual_conclusions).includes(null)
-		if (has_null) return false
+	const implications = implications_query.all() as ImplicationWithDuals[]
 
-		const assumptions = new Set(JSON.parse(impl.assumptions))
-		const conclusions = new Set(JSON.parse(impl.conclusions))
-		const dual_assumptions = new Set(JSON.parse(impl.dual_assumptions))
-		const dual_conclusions = new Set(JSON.parse(impl.dual_conclusions))
+	const dualizable_implications = implications.filter(is_dualizable)
 
-		return (
-			!are_equal_sets(assumptions, dual_assumptions) ||
-			!are_equal_sets(conclusions, dual_conclusions)
-		)
-	})
+	const insert_query = db.prepare(
+		`INSERT INTO category_implications_view (
+			id,
+			assumptions,
+			conclusions,
+			is_equivalence,
+			is_deduced,
+			dualized_from,
+			reason
+        ) VALUES (?, ?, ?, ?, TRUE, ?, ?)`,
+	)
 
 	const insert_duals = db.transaction(() => {
 		for (const impl of dualizable_implications) {
-			db.prepare(
-				`INSERT INTO category_implications_view (
-                id,
-                assumptions,
-                conclusions,
-                is_equivalence,
-                reason,
-                is_deduced,
-                dualized_from
-            ) VALUES (?, ?, ?, ?, ?, TRUE, ?)`,
-			).run(
+			insert_query.run(
 				`dual_${impl.id}`,
 				impl.dual_assumptions,
 				impl.dual_conclusions,
 				impl.is_equivalence,
-				'This follows from the dual implication.',
 				impl.id,
+				'This follows from the dual implication.',
 			)
 		}
 	})
