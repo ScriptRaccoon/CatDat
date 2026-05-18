@@ -23,7 +23,7 @@ export const load = async (event) => {
 			CategoryDisplay,
 			RelatedCategory,
 			TagObject,
-			CategoryPropertyDB & { is_satisfied: number },
+			CategoryPropertyDB & { is_satisfied: 0 | 1 },
 			PropertyShort,
 			SpecialObject,
 			SpecialMorphism,

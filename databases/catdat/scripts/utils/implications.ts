@@ -1,6 +1,6 @@
 import { type Database } from 'better-sqlite3'
 import type { NormalizedImplication, PropertyMeta } from './deduction'
-import { are_equal_sets } from './helpers'
+import { are_equal_sets, parse_json_set } from './helpers'
 
 function get_assumption_string(
 	implication: NormalizedImplication,
@@ -66,13 +66,6 @@ export function clear_deduced_implications(db: Database, type: 'category' | 'fun
 	db.prepare(`DELETE FROM ${type}_implications WHERE is_deduced = TRUE`).run()
 }
 
-/**
- * Converts a JSON string, representing an array, into a set.
- */
-function parse_json_set(json: string): Set<string | null> {
-	return new Set(JSON.parse(json))
-}
-
 type EntityImplicationWithDualProperties = {
 	assumptions: string
 	conclusions: string
@@ -87,20 +80,24 @@ type EntityImplicationWithDualProperties = {
  * have a dual) and if the dual is different from it.
  */
 export function is_dualizable(impl: EntityImplicationWithDualProperties): boolean {
-	const assumptions = parse_json_set(impl.assumptions)
-	const conclusions = parse_json_set(impl.conclusions)
-	const dual_assumptions = parse_json_set(impl.dual_assumptions)
-	const dual_conclusions = parse_json_set(impl.dual_conclusions)
+	const assumptions = parse_json_set<string>(impl.assumptions)
+	const conclusions = parse_json_set<string>(impl.conclusions)
+	const dual_assumptions = parse_json_set<string | null>(impl.dual_assumptions)
+	const dual_conclusions = parse_json_set<string | null>(impl.dual_conclusions)
 
 	if (dual_assumptions.has(null) || dual_conclusions.has(null)) return false
 
 	if (impl.dual_source_assumptions) {
-		const dual_source_assumptions = parse_json_set(impl.dual_source_assumptions)
+		const dual_source_assumptions = parse_json_set<string | null>(
+			impl.dual_source_assumptions,
+		)
 		if (dual_source_assumptions.has(null)) return false
 	}
 
 	if (impl.dual_target_assumptions) {
-		const dual_target_assumptions = parse_json_set(impl.dual_target_assumptions)
+		const dual_target_assumptions = parse_json_set<string | null>(
+			impl.dual_target_assumptions,
+		)
 		if (dual_target_assumptions.has(null)) return false
 	}
 

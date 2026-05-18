@@ -15,7 +15,7 @@ export const load = async (event) => {
 			PropertyDB,
 			{ id: string },
 			ImplicationDB,
-			CategoryShort & { is_satisfied: number },
+			CategoryShort & { is_satisfied: 0 | 1 },
 			CategoryShort,
 		]
 	>([

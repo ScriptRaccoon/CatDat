@@ -19,15 +19,6 @@ export function deduce_category_implications() {
  * then P^op ===> Q^op holds as well.
  */
 function create_dualized_category_implications() {
-	type ImplicationWithDuals = {
-		id: string
-		assumptions: string
-		conclusions: string
-		dual_assumptions: string
-		dual_conclusions: string
-		is_equivalence: number
-	}
-
 	const implications_query = db.prepare(
 		`SELECT
 			v.id,
@@ -48,7 +39,14 @@ function create_dualized_category_implications() {
 		WHERE v.is_deduced = FALSE`,
 	)
 
-	const implications = implications_query.all() as ImplicationWithDuals[]
+	const implications = implications_query.all() as {
+		id: string
+		assumptions: string
+		conclusions: string
+		dual_assumptions: string
+		dual_conclusions: string
+		is_equivalence: 0 | 1
+	}[]
 
 	const dualizable_implications = implications.filter(is_dualizable)
 

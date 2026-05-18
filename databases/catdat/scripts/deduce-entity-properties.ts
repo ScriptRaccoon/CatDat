@@ -29,9 +29,9 @@ export function get_deduced_satisfied_properties(
 		properties_dict?: Record<string, PropertyMeta>
 		stop_when_found?: string
 	},
+	type: 'category' | 'functor',
 	// used for source and target properties of a functor
 	associated_satisfied_properties?: Record<string, Set<string>>,
-	type: 'category' | 'functor' = 'category',
 ) {
 	const found = new Set<string>()
 	const reasons: Record<string, string> = {}
@@ -99,9 +99,9 @@ export function get_deduced_unsatisfied_properties(
 		properties_dict?: Record<string, PropertyMeta>
 		stop_when_found?: string
 	},
+	type: 'category' | 'functor',
 	// used for source and target properties of a functor
 	associated_satisfied_properties?: Record<string, Set<string>>,
-	type: 'category' | 'functor' = 'category',
 ) {
 	const found = new Set<string>()
 	const reasons: Record<string, string> = {}
@@ -255,8 +255,8 @@ function deduce_satisfied_properties(
 		satisfied_properties,
 		implications,
 		{ properties_dict },
-		entity.associated_satisfied_properties,
 		type,
+		entity.associated_satisfied_properties,
 	)
 
 	for (const p of found) satisfied_properties.add(p)
@@ -285,8 +285,8 @@ function deduce_unsatisfied_properties(
 		unsatisfied_properties,
 		implications,
 		{ properties_dict },
-		entity.associated_satisfied_properties,
 		type,
+		entity.associated_satisfied_properties,
 	)
 
 	for (const p of found) unsatisfied_properties.add(p)
@@ -309,12 +309,12 @@ function deduce_dual_properties(
 	dual_satisfied: Set<string>,
 	dual_unsatisfied: Set<string>,
 	properties_dict: Record<string, PropertyMeta>,
-	type: 'category' | 'functor',
+	type: 'category',
 ) {
 	const new_satisfied = new Set<string>()
 
 	for (const p of dual_satisfied) {
-		const p_dual = properties_dict[p].dual_property_id
+		const p_dual = properties_dict[p].dual
 		if (!p_dual || satisfied.has(p_dual)) continue
 		new_satisfied.add(p_dual)
 		satisfied.add(p_dual)
@@ -323,7 +323,7 @@ function deduce_dual_properties(
 	const new_unsatisfied = new Set<string>()
 
 	for (const p of dual_unsatisfied) {
-		const p_dual = properties_dict[p].dual_property_id
+		const p_dual = properties_dict[p].dual
 		if (!p_dual || unsatisfied.has(p_dual)) continue
 		new_unsatisfied.add(p_dual)
 		unsatisfied.add(p_dual)

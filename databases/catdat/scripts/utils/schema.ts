@@ -14,6 +14,10 @@ export function create_schema_hash(): string {
 	return sha256_hex(schema)
 }
 
+function sha256_hex(input: string): string {
+	return createHash('sha256').update(input).digest('hex')
+}
+
 export function write_schema_hash(hash: string) {
 	fs.writeFileSync(
 		path.join(schema_folder, 'schema.json'),
@@ -30,8 +34,4 @@ export function get_saved_schema_hash() {
 	} catch (_) {
 		return ''
 	}
-}
-
-export function sha256_hex(input: string): string {
-	return createHash('sha256').update(input).digest('hex')
 }

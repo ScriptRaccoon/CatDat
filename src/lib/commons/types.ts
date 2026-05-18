@@ -27,11 +27,11 @@ export type CommentObject = { id: number; comment: string }
 
 export type ImplicationDB = {
 	id: string
-	is_equivalence: number
+	is_equivalence: 0 | 1
 	reason: string
 	assumptions: string
 	conclusions: string
-	is_deduced: number
+	is_deduced: 0 | 1
 	dualized_from?: string | null
 }
 
@@ -51,7 +51,7 @@ export type PropertyDB = {
 	description: string
 	dual_property_id: string | null
 	nlab_link: string | null
-	invariant_under_equivalences: number
+	invariant_under_equivalences: 0 | 1
 }
 
 export type PropertyDisplay = Replace<
@@ -70,7 +70,7 @@ export type CategoryPropertyDB = {
 	id: string
 	reason: string
 	relation: string
-	is_deduced: number
+	is_deduced: 0 | 1
 }
 
 export type CategoryProperty = Replace<CategoryPropertyDB, { is_deduced: boolean }>
@@ -109,7 +109,7 @@ export type FunctorPropertyDB = {
 	relation: string
 	description: string
 	nlab_link: string | null
-	invariant_under_equivalences: number
+	invariant_under_equivalences: 0 | 1
 	dual_property_id: string | null
 }
 
@@ -124,7 +124,7 @@ export type FunctorProperty = Replace<
 
 export type FunctorImplicationDB = {
 	id: string
-	is_equivalence: number
+	is_equivalence: 0 | 1
 	reason: string
 	assumptions: string
 	conclusions: string
@@ -148,7 +148,7 @@ export type FunctorPropertyAssignmentDB = {
 	id: string
 	reason: string
 	relation: string
-	is_deduced: number
+	is_deduced: 0 | 1
 }
 
 export type FunctorPropertyAssignment = Replace<

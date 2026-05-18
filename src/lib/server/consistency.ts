@@ -108,7 +108,7 @@ function get_normalized_category_implications() {
 		id: string
 		assumptions: string
 		conclusions: string
-		is_equivalence: number
+		is_equivalence: 0 | 1
 	}>(
 		sql`SELECT id, assumptions, conclusions, is_equivalence FROM category_implications_view`,
 	)
@@ -118,22 +118,18 @@ function get_normalized_category_implications() {
 	const implications: NormalizedCategoryImplication[] = []
 
 	for (const impl of rows) {
-		const assumptions: string[] = JSON.parse(impl.assumptions)
-		const conclusions: string[] = JSON.parse(impl.conclusions)
+		const assumptions = new Set<string>(JSON.parse(impl.assumptions))
+		const conclusions = new Set<string>(JSON.parse(impl.conclusions))
 
 		for (const conclusion of conclusions) {
-			implications.push({
-				id: impl.id,
-				assumptions: new Set(assumptions),
-				conclusion,
-			})
+			implications.push({ id: impl.id, assumptions, conclusion })
 		}
 
 		if (impl.is_equivalence) {
 			for (const assumption of assumptions) {
 				implications.push({
 					id: impl.id,
-					assumptions: new Set(conclusions),
+					assumptions: conclusions,
 					conclusion: assumption,
 				})
 			}

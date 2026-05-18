@@ -19,17 +19,6 @@ export function deduce_functor_implications() {
  * categories (if any) need to be dualized as well.
  */
 function create_dualized_functor_implications() {
-	type ImplicationWithDualProperties = {
-		id: string
-		assumptions: string
-		conclusions: string
-		dual_assumptions: string
-		dual_source_assumptions: string
-		dual_target_assumptions: string
-		dual_conclusions: string
-		is_equivalence: number
-	}
-
 	const implications_query = db.prepare(
 		`SELECT
 			v.id,
@@ -60,7 +49,16 @@ function create_dualized_functor_implications() {
 		WHERE v.is_deduced = FALSE`,
 	)
 
-	const implications = implications_query.all() as ImplicationWithDualProperties[]
+	const implications = implications_query.all() as {
+		id: string
+		assumptions: string
+		conclusions: string
+		dual_assumptions: string
+		dual_source_assumptions: string
+		dual_target_assumptions: string
+		dual_conclusions: string
+		is_equivalence: 0 | 1
+	}[]
 
 	const dualizable_implications = implications.filter(is_dualizable)
 

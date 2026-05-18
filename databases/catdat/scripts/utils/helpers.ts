@@ -16,6 +16,10 @@ export function capitalize(txt: string) {
 	return txt[0].toUpperCase() + txt.slice(1)
 }
 
+export function parse_json_set<T>(json: string): Set<T> {
+	return new Set(JSON.parse(json))
+}
+
 export function get_client() {
 	const db_path = path.resolve('databases', 'catdat', 'catdat.db')
 	const db = new Database(db_path, { readonly: false })

@@ -23,7 +23,7 @@ export type NormalizedImplication = {
 
 export type PropertyMeta = {
 	id: string
-	dual_property_id: string | null
+	dual: string | null
 	relation: string
 	negation: string
 	conditional: string
@@ -57,7 +57,7 @@ export function get_properties_dict(db: Database, type: 'category' | 'functor') 
 	const properties = db
 		.prepare(
 			`SELECT
-				p.id, p.dual_property_id, p.relation,
+				p.id, p.dual_property_id as dual, p.relation,
 				r.negation, r.conditional
 			FROM ${type}_properties p
 			INNER JOIN relations r ON r.relation = p.relation
@@ -120,8 +120,8 @@ export function get_property_assignments_by_deduction(
 		.all() as {
 		property_id: string
 		entity_id: string
-		is_satisfied: number
-		is_deduced: number
+		is_satisfied: 0 | 1
+		is_deduced: 0 | 1
 	}[]
 
 	const grouped: Record<

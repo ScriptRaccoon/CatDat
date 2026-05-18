@@ -107,6 +107,7 @@ function get_redundant_satisfied_property(
 			satisfied_properties,
 			implications,
 			{ stop_when_found: p },
+			'category',
 		)
 		if (deduced_satisfied_properties.has(p)) return p
 		satisfied_properties.add(p)
@@ -134,6 +135,7 @@ function get_redundant_unsatisfied_property(
 			unsatisfied_properties,
 			implications,
 			{ stop_when_found: p },
+			'category',
 		)
 		if (deduced_unsatisfied_properties.has(p)) return p
 		unsatisfied_properties.add(p)

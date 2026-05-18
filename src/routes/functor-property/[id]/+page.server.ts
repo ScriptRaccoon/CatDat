@@ -18,7 +18,7 @@ export const load = async (event) => {
 		[
 			FunctorPropertyDB,
 			FunctorImplicationDB,
-			FunctorShort & { is_satisfied: number },
+			FunctorShort & { is_satisfied: 0 | 1 },
 			FunctorShort,
 		]
 	>([

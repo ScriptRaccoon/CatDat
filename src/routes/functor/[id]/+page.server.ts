@@ -17,7 +17,7 @@ export const load = async (event) => {
 	const { results, err } = batch<
 		[
 			FunctorDB,
-			FunctorPropertyAssignmentDB & { is_satisfied: number },
+			FunctorPropertyAssignmentDB & { is_satisfied: 0 | 1 },
 			FunctorPropertyShort,
 		]
 	>([

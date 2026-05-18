@@ -1,4 +1,5 @@
 import { type Database } from 'better-sqlite3'
+import { parse_json_set } from './helpers'
 
 type FunctorMeta = {
 	id: string
@@ -24,15 +25,6 @@ type NormalizedFunctorImplication = {
  * the satisfied properties of their source and target category.
  */
 export function get_functors(db: Database): FunctorMeta[] {
-	type FunctorDBFull = {
-		id: string
-		name: string
-		source: string
-		target: string
-		source_props: string
-		target_props: string
-	}
-
 	const rows = db
 		.prepare(
 			`SELECT
@@ -54,14 +46,21 @@ export function get_functors(db: Database): FunctorMeta[] {
 			FROM functors
 			ORDER BY lower(name)`,
 		)
-		.all() as FunctorDBFull[]
+		.all() as {
+		id: string
+		name: string
+		source: string
+		target: string
+		source_props: string
+		target_props: string
+	}[]
 
 	return rows.map((row) => ({
 		id: row.id,
 		name: row.name,
 		associated_satisfied_properties: {
-			source: new Set(JSON.parse(row.source_props)),
-			target: new Set(JSON.parse(row.target_props)),
+			source: parse_json_set<string>(row.source_props),
+			target: parse_json_set<string>(row.target_props),
 		},
 	}))
 }
@@ -78,15 +77,6 @@ export function get_functors(db: Database): FunctorMeta[] {
 export function get_normalized_functor_implications(
 	db: Database,
 ): NormalizedFunctorImplication[] {
-	type ImplicationDB = {
-		id: string
-		assumptions: string
-		source_assumptions: string
-		target_assumptions: string
-		conclusions: string
-		is_equivalence: number
-	}
-
 	const all_implications_db = db
 		.prepare(
 			`SELECT
@@ -94,24 +84,31 @@ export function get_normalized_functor_implications(
 				conclusions, is_equivalence
 			FROM functor_implications_view`,
 		)
-		.all() as ImplicationDB[]
+		.all() as {
+		id: string
+		assumptions: string
+		source_assumptions: string
+		target_assumptions: string
+		conclusions: string
+		is_equivalence: 0 | 1
+	}[]
 
 	const implications: NormalizedFunctorImplication[] = []
 
 	for (const impl of all_implications_db) {
-		const assumptions: string[] = JSON.parse(impl.assumptions)
-		const conclusions: string[] = JSON.parse(impl.conclusions)
-		const source_assumptions: string[] = JSON.parse(impl.source_assumptions)
-		const target_assumptions: string[] = JSON.parse(impl.target_assumptions)
+		const assumptions = parse_json_set<string>(impl.assumptions)
+		const conclusions = parse_json_set<string>(impl.conclusions)
+		const source_assumptions = parse_json_set<string>(impl.source_assumptions)
+		const target_assumptions = parse_json_set<string>(impl.target_assumptions)
 
 		for (const conclusion of conclusions) {
 			implications.push({
 				id: impl.id,
-				assumptions: new Set(assumptions),
+				assumptions,
 				conclusion,
 				associated_assumptions: {
-					source: new Set(source_assumptions),
-					target: new Set(target_assumptions),
+					source: source_assumptions,
+					target: target_assumptions,
 				},
 			})
 		}
@@ -120,11 +117,11 @@ export function get_normalized_functor_implications(
 			for (const assumption of assumptions) {
 				implications.push({
 					id: impl.id,
-					assumptions: new Set(conclusions),
+					assumptions: conclusions,
 					conclusion: assumption,
 					associated_assumptions: {
-						source: new Set(source_assumptions),
-						target: new Set(target_assumptions),
+						source: source_assumptions,
+						target: target_assumptions,
 					},
 				})
 			}

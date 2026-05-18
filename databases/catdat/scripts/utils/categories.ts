@@ -1,4 +1,5 @@
 import { type Database } from 'better-sqlite3'
+import { parse_json_set } from './helpers'
 
 type CategoryMeta = {
 	id: string
@@ -36,39 +37,33 @@ export function get_categories(db: Database) {
 export function get_normalized_category_implications(
 	db: Database,
 ): NormalizedCategoryImplication[] {
-	type ImplicationDB = {
-		id: string
-		assumptions: string
-		conclusions: string
-		is_equivalence: number
-	}
-
 	const all_implications_db = db
 		.prepare(
 			`SELECT id, assumptions, conclusions, is_equivalence
 			FROM category_implications_view`,
 		)
-		.all() as ImplicationDB[]
+		.all() as {
+		id: string
+		assumptions: string
+		conclusions: string
+		is_equivalence: 0 | 1
+	}[]
 
 	const implications: NormalizedCategoryImplication[] = []
 
 	for (const impl of all_implications_db) {
-		const assumptions: string[] = JSON.parse(impl.assumptions)
-		const conclusions: string[] = JSON.parse(impl.conclusions)
+		const assumptions = parse_json_set<string>(impl.assumptions)
+		const conclusions = parse_json_set<string>(impl.conclusions)
 
 		for (const conclusion of conclusions) {
-			implications.push({
-				id: impl.id,
-				assumptions: new Set(assumptions),
-				conclusion,
-			})
+			implications.push({ id: impl.id, assumptions, conclusion })
 		}
 
 		if (impl.is_equivalence) {
 			for (const assumption of assumptions) {
 				implications.push({
 					id: impl.id,
-					assumptions: new Set(conclusions),
+					assumptions: conclusions,
 					conclusion: assumption,
 				})
 			}
