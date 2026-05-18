@@ -100,8 +100,9 @@
 		{#if data.unknown_properties.length}
 			<p class="hint">
 				For these properties the database currently doesn't have an answer if they
-				are satisfied or not. Please help to <a href="/contribute">contribute</a> the
-				data!
+				are satisfied or not. Please help to <a href="/content/contribute">
+					contribute
+				</a> the data!
 			</p>
 		{/if}
 

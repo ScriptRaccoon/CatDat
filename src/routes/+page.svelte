@@ -104,7 +104,7 @@
 			>
 				open-source
 			</a>
-			and welcomes <a class="accent" href="/contribute">contributions</a>
+			and welcomes <a class="accent" href="/content/contribute">contributions</a>
 			to fill in <a class="accent" href="/missing">missing data</a>
 			or observe new combinations of properties.
 		</p>

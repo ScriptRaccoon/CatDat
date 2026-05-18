@@ -15,7 +15,7 @@
 	<ul>
 		<li>
 			<Fa icon={faPenToSquare} scale={0.875} />
-			<a href="/contribute">Contribute</a>
+			<a href="/content/contribute">Contribute</a>
 		</li>
 		<li>
 			<Fa icon={faCog} scale={0.875} />

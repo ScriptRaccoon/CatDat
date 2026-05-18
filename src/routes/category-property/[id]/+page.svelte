@@ -101,7 +101,7 @@
 	})}
 	{#if data.unknown_categories.length > 0}
 		Please help us fill in the gaps by
-		<a href="/contribute">contributing</a> to this project.
+		<a href="/content/contribute">contributing</a> to this project.
 	{/if}
 </p>
 

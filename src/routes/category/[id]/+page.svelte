@@ -153,7 +153,7 @@
 			})}
 
 			Please help to
-			<a href="/contribute">contribute</a> the data!
+			<a href="/content/contribute">contribute</a> the data!
 		</p>
 	{/if}
 

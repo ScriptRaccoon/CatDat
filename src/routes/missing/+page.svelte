@@ -17,7 +17,7 @@
 
 <p>
 	This page lists some missing data in the database. Please help us fill in the gaps by
-	<a href="/contribute">contributing</a> to this project.
+	<a href="/content/contribute">contributing</a> to this project.
 </p>
 
 <section>

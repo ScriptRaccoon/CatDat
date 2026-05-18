@@ -103,7 +103,7 @@
 
 	<ul class="secondary-list">
 		<li>
-			<a href="/contribute">Contribute</a>
+			<a href="/content/contribute">Contribute</a>
 			<Fa icon={faPenToSquare} scale={0.875} />
 		</li>
 		<li>
