@@ -1,4 +1,4 @@
-import type { FunctorShort } from '$lib/commons/types'
+import type { EntityShort } from '$lib/commons/types'
 import { query } from '$lib/server/db.catdat'
 import { error } from '@sveltejs/kit'
 import sql from 'sql-template-tag'
@@ -6,7 +6,7 @@ import sql from 'sql-template-tag'
 export const prerender = true
 
 export const load = async () => {
-	const { rows: functors, err } = query<FunctorShort>(
+	const { rows: functors, err } = query<EntityShort>(
 		sql`SELECT id, name FROM functors ORDER BY lower(name)`,
 	)
 

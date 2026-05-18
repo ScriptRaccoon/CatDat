@@ -1,27 +1,16 @@
-import type {
-	FunctorDB,
-	FunctorPropertyAssignment,
-	FunctorPropertyAssignmentDB,
-	FunctorPropertyShort,
-} from '$lib/commons/types'
+import type { FunctorDB, PropertyAssignmentDB, PropertyShort } from '$lib/commons/types'
 import { batch } from '$lib/server/db.catdat'
 import { render_nested_formulas } from '$lib/server/formulas'
-import { display_functor_property_assignment } from '$lib/server/utils.js'
+import { display_property_assignment } from '$lib/server/utils'
 import { error } from '@sveltejs/kit'
 import sql from 'sql-template-tag'
 
-// remove code duplication with category detail page
+// TODO: remove code duplication with category detail page
 
 export const load = async (event) => {
 	const id = event.params.id
 
-	const { results, err } = batch<
-		[
-			FunctorDB,
-			FunctorPropertyAssignmentDB & { is_satisfied: 0 | 1 | null },
-			FunctorPropertyShort,
-		]
-	>([
+	const { results, err } = batch<[FunctorDB, PropertyAssignmentDB, PropertyShort]>([
 		sql`
             SELECT
                 f.id,
@@ -76,13 +65,13 @@ export const load = async (event) => {
 
 	const [functor] = functors
 
-	const satisfied_properties: FunctorPropertyAssignment[] = properties_db
+	const satisfied_properties = properties_db
 		.filter((obj) => obj.is_satisfied === 1)
-		.map(display_functor_property_assignment)
+		.map(display_property_assignment)
 
-	const unsatisfied_properties: FunctorPropertyAssignment[] = properties_db
+	const unsatisfied_properties = properties_db
 		.filter((obj) => obj.is_satisfied === 0)
-		.map(display_functor_property_assignment)
+		.map(display_property_assignment)
 
 	// TODO: also render undecidable properties in case they come up
 

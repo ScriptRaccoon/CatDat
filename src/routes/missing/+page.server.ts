@@ -1,18 +1,18 @@
 import { batch } from '$lib/server/db.catdat'
 import sql from 'sql-template-tag'
-import type { CategoryShort, FunctorShort } from '$lib/commons/types'
+import type { EntityShort } from '$lib/commons/types'
 import { error } from '@sveltejs/kit'
 import { get_missing_combinations } from '$lib/server/consistency'
 
-type CategoryPairShort = { id1: string; name1: string; id2: string; name2: string }
+type EntityPairShort = { id1: string; name1: string; id2: string; name2: string }
 
 export const load = async () => {
 	const { results, err } = batch<
 		[
-			CategoryShort & { count: number },
-			CategoryShort & { count: number },
-			CategoryPairShort,
-			FunctorShort & { count: number },
+			EntityShort & { count: number },
+			EntityShort & { count: number },
+			EntityPairShort,
+			EntityShort & { count: number },
 		]
 	>([
 		// categories with unknown properties

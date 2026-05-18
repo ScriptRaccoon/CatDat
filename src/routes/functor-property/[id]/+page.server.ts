@@ -1,13 +1,8 @@
 import { decode_property_ID } from '$lib/commons/property.url'
-import type {
-	FunctorImplicationDB,
-	FunctorImplicationDisplay,
-	FunctorPropertyDB,
-	FunctorShort,
-} from '$lib/commons/types'
+import type { FunctorImplicationDB, EntityShort, PropertyDB } from '$lib/commons/types'
 import { batch } from '$lib/server/db.catdat'
 import { render_nested_formulas } from '$lib/server/formulas'
-import { display_functor_implication, display_functor_property } from '$lib/server/utils'
+import { display_functor_implication, display_property } from '$lib/server/utils'
 import { error } from '@sveltejs/kit'
 import sql from 'sql-template-tag'
 
@@ -16,10 +11,10 @@ export const load = async (event) => {
 
 	const { results, err } = batch<
 		[
-			FunctorPropertyDB,
+			PropertyDB,
 			FunctorImplicationDB,
-			FunctorShort & { is_satisfied: 0 | 1 | null },
-			FunctorShort,
+			EntityShort & { is_satisfied: 0 | 1 | null },
+			EntityShort,
 		]
 	>([
 		// basic information
@@ -89,10 +84,11 @@ export const load = async (event) => {
 
 	if (!properties.length) error(404, `There is no property with ID '${id}'`)
 
-	const property = display_functor_property(properties[0])
+	const property = display_property(properties[0])
 
-	const relevant_implications: FunctorImplicationDisplay[] =
-		relevant_implications_db.map(display_functor_implication)
+	const relevant_implications = relevant_implications_db.map(
+		display_functor_implication,
+	)
 
 	const examples = known_functors.filter((f) => f.is_satisfied === 1)
 	const counterexamples = known_functors.filter((f) => f.is_satisfied === 0)

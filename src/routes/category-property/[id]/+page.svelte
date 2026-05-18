@@ -117,7 +117,7 @@
 		})}
 	</p>
 
-	<CategoryList categories={data.undecidable_categories} />
+	<EntityList entities={data.undecidable_categories} type="category" />
 {/if}
 
 <SuggestionForm />

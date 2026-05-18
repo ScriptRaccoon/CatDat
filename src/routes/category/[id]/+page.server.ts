@@ -3,17 +3,17 @@ import { render_nested_formulas } from '$lib/server/formulas'
 import { batch } from '$lib/server/db.catdat'
 import sql from 'sql-template-tag'
 import type {
+	PropertyAssignmentDB,
 	CategoryDisplay,
-	CategoryPropertyDB,
-	CategoryShort,
 	CommentObject,
 	PropertyShort,
 	RelatedCategory,
 	SpecialMorphism,
 	SpecialObject,
 	TagObject,
+	EntityShort,
 } from '$lib/commons/types'
-import { display_category_property_assignment } from '$lib/server/utils'
+import { display_property_assignment } from '$lib/server/utils'
 
 export const load = async (event) => {
 	const id = event.params.id
@@ -23,11 +23,11 @@ export const load = async (event) => {
 			CategoryDisplay,
 			RelatedCategory,
 			TagObject,
-			CategoryPropertyDB & { is_satisfied: 0 | 1 | null },
+			PropertyAssignmentDB,
 			PropertyShort,
 			SpecialObject,
 			SpecialMorphism,
-			CategoryShort,
+			EntityShort,
 			CommentObject,
 		]
 	>([
@@ -156,15 +156,15 @@ export const load = async (event) => {
 
 	const satisfied_properties = properties_db
 		.filter((obj) => obj.is_satisfied === 1)
-		.map(display_category_property_assignment)
+		.map(display_property_assignment)
 
 	const unsatisfied_properties = properties_db
 		.filter((obj) => obj.is_satisfied === 0)
-		.map(display_category_property_assignment)
+		.map(display_property_assignment)
 
 	const undecidable_properties = properties_db
 		.filter((obj) => obj.is_satisfied === null)
-		.map(display_category_property_assignment)
+		.map(display_property_assignment)
 
 	return render_nested_formulas({
 		category,

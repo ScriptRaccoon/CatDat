@@ -3,7 +3,7 @@
 	import { navigating } from '$app/state'
 	import MetaData from '$components/MetaData.svelte'
 	import Selection from '$components/Selection.svelte'
-	import type { CategoryShort } from '$lib/commons/types'
+	import type { EntityShort } from '$lib/commons/types'
 	import { MAX_CATEGORIES_COMPARE } from './compare.config'
 	import { get_compared_categories, save_comparison } from './compare.utils'
 
@@ -15,7 +15,7 @@
 		save_comparison(compared_categories)
 	})
 
-	let chosen_categories: CategoryShort[] = $derived(
+	let chosen_categories: EntityShort[] = $derived(
 		compared_categories
 			.map((name) => data.categories.find((category) => category.name === name))
 			.filter((category) => category !== undefined),

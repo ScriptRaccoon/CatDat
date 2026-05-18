@@ -1,4 +1,4 @@
-import type { CategoryShort, ImplicationDB, ImplicationDisplay } from '$lib/commons/types'
+import type { EntityShort, CategoryImplicationDB } from '$lib/commons/types'
 import { batch } from '$lib/server/db.catdat'
 import { render_nested_formulas } from '$lib/server/formulas'
 import { display_implication } from '$lib/server/utils'
@@ -8,7 +8,7 @@ import sql from 'sql-template-tag'
 export const load = async (event) => {
 	const id = event.params.id
 
-	const { results, err } = batch<[ImplicationDB, CategoryShort]>([
+	const { results, err } = batch<[CategoryImplicationDB, EntityShort]>([
 		sql`
 			SELECT
 				id,
@@ -37,7 +37,7 @@ export const load = async (event) => {
 
 	if (!implications.length) error(404, `Could not find implication with ID '${id}'`)
 
-	const implication: ImplicationDisplay = display_implication(implications[0])
+	const implication = display_implication(implications[0])
 
 	return render_nested_formulas({ implication, categories })
 }

@@ -2,11 +2,7 @@ import { render_nested_formulas } from '$lib/server/formulas'
 import { batch } from '$lib/server/db.catdat'
 import sql from 'sql-template-tag'
 import { error } from '@sveltejs/kit'
-import type {
-	FunctorImplicationDB,
-	FunctorImplicationDisplay,
-	FunctorShort,
-} from '$lib/commons/types'
+import type { FunctorImplicationDB, EntityShort } from '$lib/commons/types'
 import { display_functor_implication } from '$lib/server/utils'
 
 export const prerender = true
@@ -14,7 +10,7 @@ export const prerender = true
 export const load = async (event) => {
 	const id = event.params.id
 
-	const { results, err } = batch<[FunctorImplicationDB, FunctorShort]>([
+	const { results, err } = batch<[FunctorImplicationDB, EntityShort]>([
 		sql`
             SELECT
                 id,
@@ -44,9 +40,7 @@ export const load = async (event) => {
 
 	if (!implications.length) error(404, `Could not find implication with ID '${id}'`)
 
-	const implication: FunctorImplicationDisplay = display_functor_implication(
-		implications[0],
-	)
+	const implication = display_functor_implication(implications[0])
 
 	return render_nested_formulas({ implication, functors })
 }

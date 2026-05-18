@@ -4,6 +4,11 @@ export type Arrayed<T extends readonly unknown[]> = {
 
 type Replace<T, R extends Partial<Record<keyof T, any>>> = Omit<T, keyof R> & R
 
+export type EntityShort = {
+	id: string
+	name: string
+}
+
 export type CategoryDisplay = {
 	id: string
 	name: string
@@ -17,20 +22,13 @@ export type CategoryDisplay = {
 	dual_category_notation: string | null
 }
 
-export type EntityShort = {
-	id: string
-	name: string
-}
-
-export type CategoryShort = Pick<CategoryDisplay, 'id' | 'name'>
-
 export type RelatedCategory = Pick<CategoryDisplay, 'id' | 'name' | 'notation'>
 
 export type TagObject = { tag: string }
 
 export type CommentObject = { id: number; comment: string }
 
-export type ImplicationDB = {
+export type CategoryImplicationDB = {
 	id: string
 	is_equivalence: 0 | 1
 	reason: string
@@ -40,8 +38,8 @@ export type ImplicationDB = {
 	dualized_from?: string | null
 }
 
-export type ImplicationDisplay = Replace<
-	ImplicationDB,
+export type CategoryImplicationDisplay = Replace<
+	CategoryImplicationDB,
 	{
 		is_equivalence: boolean
 		is_deduced: boolean
@@ -50,6 +48,7 @@ export type ImplicationDisplay = Replace<
 	}
 >
 
+// used for both categories and functors
 export type PropertyDB = {
 	id: string
 	relation: string
@@ -66,19 +65,25 @@ export type PropertyDisplay = Replace<
 
 export type PropertyShort = Pick<PropertyDB, 'id' | 'relation'>
 
-export type DescriptionWithReason = {
-	description: string
-	reason: string | null
-}
-
-export type CategoryPropertyDB = {
+export type PropertyAssignmentDB = {
 	id: string
 	reason: string
 	relation: string
 	is_deduced: 0 | 1
+	is_satisfied: 0 | 1 | null
 }
 
-export type CategoryProperty = Replace<CategoryPropertyDB, { is_deduced: boolean }>
+export type PropertyAssignmentDisplay = {
+	id: string
+	reason: string
+	relation: string
+	is_deduced: boolean
+}
+
+export type DescriptionWithReason = {
+	description: string
+	reason: string | null
+}
 
 export type SpecialObject = {
 	type: string
@@ -93,11 +98,6 @@ export type SpecialMorphism = {
 
 export type Structure = 'categories' | 'functors'
 
-export type FunctorShort = {
-	id: string
-	name: string
-}
-
 export type FunctorDB = {
 	id: string
 	name: string
@@ -108,24 +108,6 @@ export type FunctorDB = {
 	description: string
 	nlab_link: string | null
 }
-
-export type FunctorPropertyDB = {
-	id: string
-	relation: string
-	description: string
-	nlab_link: string | null
-	invariant_under_equivalences: 0 | 1
-	dual_property_id: string | null
-}
-
-export type FunctorPropertyShort = Pick<FunctorPropertyDB, 'id' | 'relation'>
-
-export type FunctorProperty = Replace<
-	FunctorPropertyDB,
-	{
-		invariant_under_equivalences: boolean
-	}
->
 
 export type FunctorImplicationDB = {
 	id: string
@@ -147,16 +129,4 @@ export type FunctorImplicationDisplay = Replace<
 		source_assumptions: string[]
 		target_assumptions: string[]
 	}
->
-
-export type FunctorPropertyAssignmentDB = {
-	id: string
-	reason: string
-	relation: string
-	is_deduced: 0 | 1
-}
-
-export type FunctorPropertyAssignment = Replace<
-	FunctorPropertyAssignmentDB,
-	{ is_deduced: boolean }
 >

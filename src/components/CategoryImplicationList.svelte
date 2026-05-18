@@ -1,9 +1,9 @@
 <script lang="ts">
-	import type { ImplicationDisplay } from '$lib/commons/types'
+	import type { CategoryImplicationDisplay } from '$lib/commons/types'
 	import CategoryImplicationItem from './CategoryImplicationItem.svelte'
 
 	type Props = {
-		implications: ImplicationDisplay[]
+		implications: CategoryImplicationDisplay[]
 		highlighted_property?: string
 	}
 

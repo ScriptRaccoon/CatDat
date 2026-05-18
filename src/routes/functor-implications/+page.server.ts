@@ -2,7 +2,7 @@ import { render_nested_formulas } from '$lib/server/formulas'
 import { query } from '$lib/server/db.catdat'
 import sql from 'sql-template-tag'
 import { error } from '@sveltejs/kit'
-import type { FunctorImplicationDB, FunctorImplicationDisplay } from '$lib/commons/types'
+import type { FunctorImplicationDB } from '$lib/commons/types'
 import { display_functor_implication } from '$lib/server/utils'
 
 export const prerender = true
@@ -23,9 +23,7 @@ export const load = async () => {
 
 	if (err) error(500, 'Could not load implications')
 
-	const implications: FunctorImplicationDisplay[] = rows.map(
-		display_functor_implication,
-	)
+	const implications = rows.map(display_functor_implication)
 
 	return render_nested_formulas({ implications })
 }

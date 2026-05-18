@@ -7,9 +7,12 @@
 	} from '@fortawesome/free-solid-svg-icons'
 	import Fa from 'svelte-fa'
 	import { get_property_url } from '$lib/commons/property.url'
-	import type { ImplicationDisplay } from '$lib/commons/types'
+	import type { CategoryImplicationDisplay } from '$lib/commons/types'
 
-	type Props = { implication: ImplicationDisplay; highlighted_property?: string }
+	type Props = {
+		implication: CategoryImplicationDisplay
+		highlighted_property?: string
+	}
 
 	let { implication, highlighted_property }: Props = $props()
 </script>
