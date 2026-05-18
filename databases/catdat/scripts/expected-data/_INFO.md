@@ -1,2 +1,3 @@
 - The JSON file `decided-categories.json` lists various categories whose properties need to be decided. If a new property is added to the database, make sure to decide it _at least_ for these categories.
-- The other JSON files specify precisely which properties are satisfied by a small selection of categories. If a new property is added to the database, make sure to add the value here.
+- Similar remarks apply to `decided-functors.json`.
+- The other JSON files specify precisely which properties are satisfied by a small selection of categories or functors. If a new property is added to the database, make sure to add the value here.

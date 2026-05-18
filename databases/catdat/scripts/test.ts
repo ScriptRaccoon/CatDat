@@ -7,8 +7,11 @@
 import Set_expected from './expected-data/Set.json'
 import Ab_expected from './expected-data/Ab.json'
 import Top_expected from './expected-data/Top.json'
+import forget_vector_expected from './expected-data/forget_vector.json'
+import id_Set_expected from './expected-data/id_Set.json'
 import decided_categories from './expected-data/decided-categories.json'
-import { get_client } from './utils/helpers'
+import decided_functors from './expected-data/decided-functors.json'
+import { capitalize, get_client } from './utils/helpers'
 
 const db = get_client()
 
@@ -18,13 +21,24 @@ execute_tests()
  * The main test function verifying that the data behaves as expected.
  */
 function execute_tests() {
-	console.info('\n--- Test database ---')
 	try {
+		console.info('\n--- Test categories ---')
 		test_mutual_category_duals()
-		test_mutual_property_duals()
-		test_decided_categories()
 		test_properties_of_trivial_category()
-		test_properties_of_selected_categories()
+		test_mutual_property_duals('category')
+		test_decided_entities(decided_categories, 'category')
+		test_properties_of_selected_entities(
+			{ Set: Set_expected, Ab: Ab_expected, Top: Top_expected },
+			'category',
+		)
+
+		console.info('\n--- Test functors ---')
+		test_mutual_property_duals('functor')
+		test_decided_entities(decided_functors, 'functor')
+		test_properties_of_selected_entities(
+			{ forget_vector: forget_vector_expected, id_Set: id_Set_expected },
+			'functor',
+		)
 	} catch (err) {
 		if (err instanceof Error) {
 			console.error(err.message)
@@ -33,30 +47,6 @@ function execute_tests() {
 		}
 		process.exit(1)
 	}
-}
-
-/**
- * Tests for all category properties p,q that if p is dual to q, then q is dual to p.
- */
-function test_mutual_property_duals() {
-	const dict: Record<string, string | null> = {}
-
-	const properties = db
-		.prepare('SELECT id, dual_property_id FROM category_properties')
-		.all() as { id: string; dual_property_id: string | null }[]
-
-	for (const { id, dual_property_id } of properties) {
-		dict[id] = dual_property_id
-	}
-
-	for (const id in dict) {
-		const dual = dict[id]
-		if (dual && dict[dual] !== id) {
-			throw new Error(`❌ Found non-mutual property duality: ${id}, ${dual}`)
-		}
-	}
-
-	console.info(`✅ Properties are mutually dual`)
 }
 
 /**
@@ -84,42 +74,6 @@ function test_mutual_category_duals() {
 }
 
 /**
- * Tests if for a specified list of categories all properties have been decided.
- * If this test fails, property assignments or implications are missing.
- */
-function test_decided_categories() {
-	for (const category_id of decided_categories) {
-		test_decided_category(category_id)
-	}
-}
-
-/**
- * Tests for a given category if all properties have been decided,
- * i.e. are either satisfied or unsatisfied.
- */
-function test_decided_category(category_id: string) {
-	const res = db
-		.prepare(
-			`SELECT p.id FROM category_properties p WHERE NOT EXISTS
-			(
-				SELECT 1 FROM category_property_assignments
-				WHERE category_id = ? AND property_id = p.id
-			)`,
-		)
-		.all(category_id) as { id: string }[]
-
-	const unknown_properties = res.map((row) => row.id)
-
-	if (unknown_properties.length > 0) {
-		throw new Error(
-			`❌ Found unknown properties of ${category_id}:\n${unknown_properties.join(', ')}.\nEvery property needs to be decided for this category.`,
-		)
-	}
-
-	console.info(`✅ All properties have been decided for ${category_id}`)
-}
-
-/**
  * Tests that the trivial category has no unsatisfied property.
  * This enforces that all properties in the database are "positive".
  */
@@ -141,40 +95,83 @@ function test_properties_of_trivial_category() {
 }
 
 /**
- * Tests if selected categories behave as expected:
- * All of their properties in the database have to match those in the
- * respective JSON files in the subfolder "expected-data".
+ * Tests for all properties p,q of categories or functors that
+ * if p is dual to q, then q is dual to p.
  */
-function test_properties_of_selected_categories() {
-	const expected = {
-		Set: Set_expected,
-		Ab: Ab_expected,
-		Top: Top_expected,
-	} as Record<string, Record<string, boolean>>
+function test_mutual_property_duals(type: 'category' | 'functor') {
+	const dict: Record<string, string | null> = {}
 
-	for (const cat in expected) {
-		test_selected_category(cat, expected[cat])
+	const properties = db
+		.prepare(`SELECT id, dual_property_id FROM ${type}_properties`)
+		.all() as { id: string; dual_property_id: string | null }[]
+
+	for (const { id, dual_property_id } of properties) {
+		dict[id] = dual_property_id
+	}
+
+	for (const id in dict) {
+		const dual = dict[id]
+		if (dual && dict[dual] !== id) {
+			throw new Error(`❌ Found non-mutual property duality: ${id}, ${dual}`)
+		}
+	}
+
+	console.info(`✅ ${capitalize(type)} properties are mutually dual`)
+}
+
+/**
+ * Tests that for a specified list of categories or functors all properties have
+ * been decided. If this test fails, property assignments or implications are missing.
+ */
+function test_decided_entities(entities: string[], type: 'category' | 'functor') {
+	const unknown_query = db.prepare(
+		`SELECT p.id FROM ${type}_properties p WHERE NOT EXISTS
+			(SELECT 1 FROM ${type}_property_assignments
+				WHERE ${type}_id = ? AND property_id = p.id
+			)
+		`,
+	)
+
+	for (const entity_id of entities) {
+		const res = unknown_query.all(entity_id) as { id: string }[]
+		const unknown_properties = res.map((row) => row.id)
+
+		if (unknown_properties.length > 0) {
+			throw new Error(
+				`❌ Found unknown properties of ${entity_id}:\n${unknown_properties.join(', ')}.\nEvery property needs to be decided for this ${type}.`,
+			)
+		}
+
+		console.info(`✅ All properties have been decided for ${entity_id}`)
 	}
 }
 
 /**
- * Tests if a selected category has the expected properties.
+ * Tests if selected categories or functors behave as expected:
+ * All of their properties in the database have to match those in the
+ * respective JSON files in the subfolder "expected-data".
  */
-function test_selected_category(category_id: string, expected: Record<string, boolean>) {
-	const properties = db
-		.prepare(
-			`SELECT property_id AS id, is_satisfied
-			FROM category_property_assignments
-			WHERE category_id = ?`,
-		)
-		.all(category_id) as { id: string; is_satisfied: number }[]
+function test_properties_of_selected_entities(
+	expected: Record<string, Record<string, boolean>>,
+	type: 'category' | 'functor',
+) {
+	const property_query = db.prepare(
+		`SELECT property_id, is_satisfied FROM ${type}_property_assignments
+		WHERE ${type}_id = ?`,
+	)
 
-	for (const { id, is_satisfied } of properties) {
-		const ok = Boolean(is_satisfied) === expected[id]
-		if (!ok) {
-			throw new Error(`❌ Incorrect property of ${category_id}: ${id}`)
+	for (const entity_id in expected) {
+		const properties = property_query.all(entity_id) as {
+			property_id: string
+			is_satisfied: 0 | 1
+		}[]
+
+		for (const { property_id, is_satisfied } of properties) {
+			const ok = Boolean(is_satisfied) === expected[entity_id][property_id]
+			if (ok) continue
+			throw new Error(`❌ Incorrect property of ${entity_id}: ${property_id}`)
 		}
-	}
 
-	console.info(`✅ Properties of ${category_id} are correct`)
+		console.info(`✅ Properties of ${entity_id} are correct`)
+	}
 }

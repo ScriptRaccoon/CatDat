@@ -12,6 +12,10 @@ export function is_subset<T>(a: Set<T>, b: Set<T>, options?: { exception: T }) {
 	return true
 }
 
+export function capitalize(txt: string) {
+	return txt[0].toUpperCase() + txt.slice(1)
+}
+
 export function get_client() {
 	const db_path = path.resolve('databases', 'catdat', 'catdat.db')
 	const db = new Database(db_path, { readonly: false })
