@@ -27,9 +27,11 @@
 	{/if}
 
 	{#if data.category_properties.length > 0}
-		<p class="hint">This page is referenced by the following properties.</p>
+		<p class="hint">
+			This page is referenced by the following properties of categories.
+		</p>
 
-		<PropertyList properties={data.category_properties} />
+		<PropertyList properties={data.category_properties} type="category" />
 	{/if}
 
 	{#if data.category_implications.length > 0}

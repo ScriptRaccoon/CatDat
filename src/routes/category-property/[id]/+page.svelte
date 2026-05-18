@@ -1,7 +1,7 @@
 <script lang="ts">
 	import CategoryList from '$components/CategoryList.svelte'
 	import HelpMessage from '$components/HelpMessage.svelte'
-	import ImplicationList from '$components/ImplicationList.svelte'
+	import CategoryImplicationList from '$components/CategoryImplicationList.svelte'
 	import MetaData from '$components/MetaData.svelte'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
 	import { pluralize } from '$lib/client/utils'
@@ -29,7 +29,7 @@
 		{#if data.property.dual_property_id}
 			<li>
 				<strong>Dual property:</strong>
-				<a href={get_property_url(data.property.dual_property_id)}
+				<a href={get_property_url(data.property.dual_property_id, 'category')}
 					>{data.property.dual_property_id}</a
 				>
 				{#if data.property.dual_property_id === data.property.id}
@@ -42,7 +42,7 @@
 			<li>
 				<strong>Related properties:</strong>
 				{#each data.related_properties as related_property, i}
-					<a href={get_property_url(related_property)}>
+					<a href={get_property_url(related_property, 'category')}>
 						{related_property}
 					</a>{#if i < data.related_properties.length - 1}
 						,&nbsp;
@@ -65,7 +65,7 @@
 
 <h3 class="sticky-heading">Relevant implications</h3>
 
-<ImplicationList
+<CategoryImplicationList
 	implications={data.relevant_implications}
 	highlighted_property={data.property.id}
 />

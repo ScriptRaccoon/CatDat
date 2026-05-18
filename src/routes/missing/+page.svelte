@@ -87,8 +87,8 @@
 		<ul class="combinations">
 			{#each data.missing_combinations as [p, q]}
 				<li class="combination">
-					<a href={get_property_url(p)}>{p}</a> &and; &not;<a
-						href={get_property_url(q)}>{q}</a
+					<a href={get_property_url(p, 'category')}>{p}</a> &and; &not;<a
+						href={get_property_url(q, 'category')}>{q}</a
 					>
 				</li>
 			{/each}

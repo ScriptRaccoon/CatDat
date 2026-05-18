@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { ImplicationDisplay } from '$lib/commons/types'
-	import ImplicationItem from './ImplicationItem.svelte'
+	import CategoryImplicationItem from './CategoryImplicationItem.svelte'
 
 	type Props = {
 		implications: ImplicationDisplay[]
@@ -14,7 +14,7 @@
 	<ul>
 		{#each implications as implication}
 			<li>
-				<ImplicationItem {implication} {highlighted_property} />
+				<CategoryImplicationItem {implication} {highlighted_property} />
 			</li>
 		{/each}
 	</ul>

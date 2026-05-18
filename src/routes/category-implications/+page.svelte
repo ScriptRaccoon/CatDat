@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { browser } from '$app/environment'
 	import HelpMessage from '$components/HelpMessage.svelte'
-	import ImplicationList from '$components/ImplicationList.svelte'
+	import CategoryImplicationList from '$components/CategoryImplicationList.svelte'
 	import MetaData from '$components/MetaData.svelte'
 	import SearchFilter from '$components/SearchFilter.svelte'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
@@ -54,7 +54,7 @@
 	New here? Click any <Fa icon={faInfoCircle} /> icon to view the proof for that implication.
 </HelpMessage>
 
-<ImplicationList implications={filtered_implications} />
+<CategoryImplicationList implications={filtered_implications} />
 
 <p class="hint">
 	*Deductions from these implications are automatically incorporated into each category

@@ -8,11 +8,11 @@
 			relation: string
 			reason?: string | null
 		}[]
-		type?: 'category' | 'functor'
+		type: 'category' | 'functor'
 		reason_heading?: string
 	}
 
-	let { properties, type = 'category', reason_heading }: Props = $props()
+	let { properties, type, reason_heading }: Props = $props()
 </script>
 
 {#if properties.length}

@@ -18,7 +18,7 @@
 	<strong>Assumptions:</strong>
 
 	{#each data.implication.assumptions as property, index}
-		<a href={get_property_url(property)}>{property}</a
+		<a href={get_property_url(property, 'category')}>{property}</a
 		>{#if index < data.implication.assumptions.length - 1}
 			,&nbsp;
 		{/if}
@@ -28,7 +28,7 @@
 <p>
 	<strong>Conclusions:</strong>
 	{#each data.implication.conclusions as property, index}
-		<a href={get_property_url(property)}>{property}</a
+		<a href={get_property_url(property, 'category')}>{property}</a
 		>{#if index < data.implication.conclusions.length - 1}
 			,&nbsp;
 		{/if}

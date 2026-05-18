@@ -21,7 +21,7 @@
 {#each implication.assumptions as assumption, i}
 	<a
 		class="property"
-		href={get_property_url(assumption)}
+		href={get_property_url(assumption, 'category')}
 		class:highlighted={assumption === highlighted_property}>{assumption}</a
 	>
 	{#if i < implication.assumptions.length - 1}
@@ -49,7 +49,7 @@
 {#each implication.conclusions as conclusion, i}
 	<a
 		class="property"
-		href={get_property_url(conclusion)}
+		href={get_property_url(conclusion, 'category')}
 		class:highlighted={conclusion === highlighted_property}>{conclusion}</a
 	>
 	{#if i < implication.conclusions.length - 1}

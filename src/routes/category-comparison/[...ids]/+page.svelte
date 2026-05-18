@@ -66,7 +66,7 @@
 			{@const is_different = new Set(values).size > 1}
 			<tr class:highlight={is_different}>
 				<td>
-					<a href={get_property_url(property)}>{property}</a>
+					<a href={get_property_url(property, 'category')}>{property}</a>
 				</td>
 				{#each compared_categories as _, i}
 					{@const value = values[i]}

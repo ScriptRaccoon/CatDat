@@ -94,18 +94,21 @@
 			<p class="hint">Assigned properties</p>
 			<PropertyList
 				properties={data.satisfied_properties.filter((p) => !p.is_deduced)}
+				type="category"
 			/>
 
 			<p class="hint">Deduced properties</p>
 			<PropertyList
 				properties={data.satisfied_properties.filter((p) => p.is_deduced)}
+				type="category"
 			/>
 		{:else if category_detail_level.value === 'merged'}
-			<PropertyList properties={data.satisfied_properties} />
+			<PropertyList properties={data.satisfied_properties} type="category" />
 		{:else if category_detail_level.value === 'basic'}
 			<p class="hint">Assigned properties; further properties can be deduced.</p>
 			<PropertyList
 				properties={data.satisfied_properties.filter((p) => !p.is_deduced)}
+				type="category"
 			/>
 		{/if}
 	</section>
@@ -117,20 +120,23 @@
 			<p class="hint">Assigned properties</p>
 			<PropertyList
 				properties={data.unsatisfied_properties.filter((p) => !p.is_deduced)}
+				type="category"
 			/>
 
 			<p class="hint">Deduced properties*</p>
 			<PropertyList
 				properties={data.unsatisfied_properties.filter((p) => p.is_deduced)}
+				type="category"
 			/>
 
 			<p class="hint">*This also uses the deduced satisfied properties.</p>
 		{:else if category_detail_level.value === 'merged'}
-			<PropertyList properties={data.unsatisfied_properties} />
+			<PropertyList properties={data.unsatisfied_properties} type="category" />
 		{:else if category_detail_level.value === 'basic'}
 			<p class="hint">Assigned properties; further properties can be deduced.</p>
 			<PropertyList
 				properties={data.unsatisfied_properties.filter((p) => !p.is_deduced)}
+				type="category"
 			/>
 		{/if}
 	</section>
@@ -151,7 +157,11 @@
 		</p>
 	{/if}
 
-	<PropertyList properties={data.unknown_properties} reason_heading="Comment" />
+	<PropertyList
+		properties={data.unknown_properties}
+		reason_heading="Comment"
+		type="category"
+	/>
 </section>
 
 <section>
