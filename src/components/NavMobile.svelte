@@ -115,7 +115,7 @@
 			<Fa icon={faPuzzlePiece} scale={0.875} />
 		</li>
 		<li>
-			<a href="/resources">Resources</a>
+			<a href="/content/resources">Resources</a>
 			<Fa icon={faBook} scale={0.875} />
 		</li>
 		<li>

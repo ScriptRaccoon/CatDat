@@ -27,7 +27,7 @@
 		</li>
 		<li>
 			<Fa icon={faBook} scale={0.875} />
-			<a href="/resources">Resources</a>
+			<a href="/content/resources">Resources</a>
 		</li>
 		<li>
 			<Fa icon={faCubes} scale={0.875} />
