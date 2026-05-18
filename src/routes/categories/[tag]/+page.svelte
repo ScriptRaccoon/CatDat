@@ -1,5 +1,5 @@
 <script lang="ts">
-	import CategoryList from '$components/CategoryList.svelte'
+	import EntityList from '$components/EntityList.svelte'
 	import MetaData from '$components/MetaData.svelte'
 	import { pluralize } from '$lib/client/utils'
 
@@ -17,4 +17,4 @@
 	})}
 </p>
 
-<CategoryList categories={data.categories} />
+<EntityList entities={data.categories} type="category" />

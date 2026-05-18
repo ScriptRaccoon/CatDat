@@ -1,11 +1,11 @@
 <script lang="ts">
-	import CategoryList from '$components/CategoryList.svelte'
 	import Chip from '$components/Chip.svelte'
 	import ChipGroup from '$components/ChipGroup.svelte'
 	import MetaData from '$components/MetaData.svelte'
 	import SearchFilter from '$components/SearchFilter.svelte'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
 	import { filter_by_tag, normalize_text, pluralize } from '$lib/client/utils'
+	import EntityList from '$components/EntityList.svelte'
 
 	let { data } = $props()
 
@@ -34,7 +34,7 @@
 		})}
 	</p>
 
-	<CategoryList categories={searched_categories} />
+	<EntityList entities={searched_categories} type="category" />
 </section>
 
 <section>

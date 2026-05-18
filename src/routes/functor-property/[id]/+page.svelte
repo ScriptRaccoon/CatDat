@@ -1,6 +1,6 @@
 <script lang="ts">
 	import FunctorImplicationList from '$components/FunctorImplicationList.svelte'
-	import FunctorList from '$components/FunctorList.svelte'
+	import EntityList from '$components/EntityList.svelte'
 	import MetaData from '$components/MetaData.svelte'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
 	import { pluralize } from '$lib/client/utils'
@@ -61,7 +61,7 @@
 	})}
 </p>
 
-<FunctorList functors={data.examples} />
+<EntityList entities={data.examples} type="functor" />
 
 <h3 class="sticky-heading">Counterexamples</h3>
 
@@ -72,7 +72,7 @@
 	})}
 </p>
 
-<FunctorList functors={data.counterexamples} />
+<EntityList entities={data.counterexamples} type="functor" />
 
 <h3 class="sticky-heading">Unknown</h3>
 
@@ -87,6 +87,6 @@
 	{/if}
 </p>
 
-<FunctorList functors={data.unknown_functors} />
+<EntityList entities={data.unknown_functors} type="functor" />
 
 <SuggestionForm />

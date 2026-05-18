@@ -17,6 +17,11 @@ export type CategoryDisplay = {
 	dual_category_notation: string | null
 }
 
+export type EntityShort = {
+	id: string
+	name: string
+}
+
 export type CategoryShort = Pick<CategoryDisplay, 'id' | 'name'>
 
 export type RelatedCategory = Pick<CategoryDisplay, 'id' | 'name' | 'notation'>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import CategoryList from '$components/CategoryList.svelte'
+	import EntityList from '$components/EntityList.svelte'
 	import MetaData from '$components/MetaData.svelte'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
 	import { pluralize } from '$lib/client/utils'
@@ -65,7 +65,7 @@
 				other: 'Show {count} categories using this implication',
 			})}
 		</summary>
-		<CategoryList categories={data.categories} />
+		<EntityList entities={data.categories} type="category" />
 	</details>
 {/if}
 

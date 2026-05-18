@@ -6,11 +6,11 @@
 	import { category_detail_level } from '$lib/states/detail_level.svelte'
 	import TextWithReason from '$components/TextWithReason.svelte'
 	import { filter_by_tag, pluralize } from '$lib/client/utils'
-	import CategoryList from '$components/CategoryList.svelte'
 	import { faCommentDots, faQuestion } from '@fortawesome/free-solid-svg-icons'
 	import Fa from 'svelte-fa'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
 	import HelpMessage from '$components/HelpMessage.svelte'
+	import EntityList from '$components/EntityList.svelte'
 
 	let { data } = $props()
 
@@ -219,7 +219,7 @@
 			that a distinguishing property may be missing from the database.
 		</p>
 
-		<CategoryList categories={data.undistinguishable_categories} />
+		<EntityList entities={data.undistinguishable_categories} type="category" />
 	</section>
 {/if}
 
