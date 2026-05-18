@@ -8,8 +8,8 @@ import {
 import {
 	get_deduced_satisfied_properties,
 	get_deduced_unsatisfied_properties,
-	get_property_assignments_by_deduction,
-} from './utils/deduction'
+} from './deduce-entity-properties'
+import { get_property_assignments_by_deduction } from './utils/deduction'
 
 const db = get_client()
 
