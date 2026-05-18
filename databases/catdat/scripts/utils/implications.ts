@@ -1,3 +1,4 @@
+import { type Database } from 'better-sqlite3'
 import type { NormalizedImplication, PropertyMeta } from './deduction'
 
 function get_assumption_string(
@@ -55,4 +56,11 @@ export function get_contradiction_string(
 	return has_multiple_assumptions
 		? `${contra}. Then it ${assumption_string}, so it ${conclusion_string} (${ref}) – contradiction.`
 		: `${contra}. Then it ${conclusion_string} (${ref}) – contradiction.`
+}
+
+/**
+ * Clears all deduced implications. This is done before the deduction starts.
+ */
+export function clear_deduced_implications(db: Database, type: 'category' | 'functor') {
+	db.prepare(`DELETE FROM ${type}_implications WHERE is_deduced = TRUE`).run()
 }

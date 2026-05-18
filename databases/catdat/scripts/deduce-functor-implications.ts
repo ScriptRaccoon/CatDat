@@ -1,4 +1,5 @@
 import { are_equal_sets, get_client } from './utils/helpers'
+import { clear_deduced_implications } from './utils/implications'
 
 // TODO: remove code duplication with category implication deduction script
 
@@ -9,15 +10,8 @@ const db = get_client()
  */
 export function deduce_functor_implications() {
 	console.info('\n--- Deduce functor implications ---')
-	clear_deduced_functor_implications()
+	clear_deduced_implications(db, 'functor')
 	create_dualized_functor_implications()
-}
-
-/**
- * Clears all deduced functor implications. This is done as a first step.
- */
-function clear_deduced_functor_implications() {
-	db.prepare(`DELETE FROM functor_implications WHERE is_deduced = TRUE`).run()
 }
 
 /**
@@ -120,5 +114,6 @@ function create_dualized_functor_implications() {
 	})
 
 	insert_duals()
+
 	console.info(`Deduced ${dualizable_implications.length} implications by duality`)
 }

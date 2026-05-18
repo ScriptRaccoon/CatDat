@@ -1,4 +1,5 @@
 import { are_equal_sets, get_client } from './utils/helpers'
+import { clear_deduced_implications } from './utils/implications'
 
 const db = get_client()
 
@@ -7,16 +8,9 @@ const db = get_client()
  */
 export function deduce_category_implications() {
 	console.info('\n--- Deduce category implications ---')
-	clear_deduced_category_implications()
+	clear_deduced_implications(db, 'category')
 	create_dualized_category_implications()
 	create_self_dual_category_implications()
-}
-
-/**
- * Clears all deduced implications. This is done as a first step.
- */
-function clear_deduced_category_implications() {
-	db.prepare(`DELETE FROM category_implications WHERE is_deduced = TRUE`).run()
 }
 
 /**
@@ -99,6 +93,7 @@ function create_dualized_category_implications() {
 	})
 
 	insert_duals()
+
 	console.info(`Deduced ${dualizable_implications.length} implications by duality`)
 }
 
