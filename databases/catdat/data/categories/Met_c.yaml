@@ -67,7 +67,10 @@ unsatisfied_properties:
     reason: 'We recycle the proof from <a href="/category/Haus">$\Haus$</a>: Assume that there is a regular subobject classifier $\Omega$. By the classification of regular monomorphisms, we would have an isomorphism between $\Hom(X,\Omega)$ and the set of closed subsets of $X$ for any metric space $X$. If we take $X = 1$ we see that $\Omega$ has two points. Since $\Omega$ is Hausdorff, $\Omega \cong 1 + 1$ must be discrete. But then $\Hom(X,\Omega)$ is isomorphic to the set of all clopen subsets of $X$, of which there are usually far fewer than closed subsets (consider $X = [0,1]$).'
 
   - property: sequential colimits
-    reason: See <a href="https://mathoverflow.net/questions/510316" target="_blank">MO/510316</a>.
+    reason: See <a href="https://mathoverflow.net/questions/510316" target="_blank">MO/510316</a> for a proof that the diagram $\IN \to \Met_c$, $n \mapsto \IR^n$ does not have a colimit.
+
+  - property: ℵ₁-filtered colimits
+    reason: See <a href="https://mathoverflow.net/questions/511433" target="_blank">MO/511433</a> for a proof that the diagram $\omega_1 \to \Met_c$, $\alpha \mapsto \IR^\alpha$ does not have a colimit.
 
   - property: quotients of congruences
     reason: If $\Met_c$ had quotients of congruences, then by <a href="/content/monic-sequential-colimits-via-congruence-quotients">this lemma</a> it would have sequential colimits of sequences of monomorphisms. This contradicts <a href="https://mathoverflow.net/questions/510316" target="_blank">MO/510316</a>.
