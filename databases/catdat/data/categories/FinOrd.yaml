@@ -55,9 +55,6 @@ satisfied_properties:
   - property: core-thin
     reason: 'Let $f : \{1 < \cdots < n \} \to \{1 < \cdots < n \}$ be an automorphism. Then $f(i)$ is the smallest element not contained in $\{f(j) : j < i\}$. From this one can deduce $f(i)=i$ by induction.'
 
-  - property: ℵ₁-filtered colimits
-    reason: The proof is similar to <a href="/category/FinSet">$\FinSet$</a>.
-
 unsatisfied_properties:
   - property: small
     reason: Even the collection of all singleton orders is not small.

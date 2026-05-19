@@ -54,9 +54,6 @@ satisfied_properties:
   - property: epi-regular
     reason: The proof for <a href="/category/FinOrd">$\FinOrd$</a> also works for $\FinSet \setminus \{\varnothing\}$.
 
-  - property: ℵ₁-filtered colimits
-    reason: This can be deduced from the property for <a href="/category/FinOrd">$\FinOrd$</a>.
-
   - property: cosifted
     reason: >-
       Let $X,Y \in \Delta$. We may pick $x \in X$, $y \in Y$. Then there is a "point span" $X \xleftarrow{x} [0] \xrightarrow{y} Y$. Every span $X \xleftarrow{f} Z \xrightarrow{g} Y$ is connected to such a point span: Pick $z \in Z$. This defines a morphism of spans: 

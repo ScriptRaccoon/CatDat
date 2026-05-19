@@ -46,9 +46,6 @@ satisfied_properties:
   - property: regular
     reason: The category is Malcev and hence finitely complete, and it has all coequalizers. The regular epimorphisms coincide with the surjective group homomorphisms (see below), hence are clearly stable under pullbacks.
 
-  - property: ℵ₁-accessible
-    reason: The proof works exactly as for <a href="/category/FinSet">$\FinSet$</a>.
-
 unsatisfied_properties:
   - property: small
     reason: Even the collection of trivial groups is not small.

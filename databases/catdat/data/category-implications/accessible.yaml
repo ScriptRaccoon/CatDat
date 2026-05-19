@@ -162,7 +162,6 @@
   is_equivalence: false
 
 - id: countably_accessible_criterion
-  # TODO: based on this, remove some of the assignments
   assumptions:
     - essentially countable
     - locally finite

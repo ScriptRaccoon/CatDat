@@ -31,9 +31,6 @@ satisfied_properties:
   - property: self-dual
     reason: 'This is a simple special case of Pontryagin duality: The functor $\Hom(-,\IQ/\IZ)$ provides the equivalence.'
 
-  - property: ℵ₁-accessible
-    reason: The proof works exactly as for <a href="/category/FinSet">$\FinSet$</a>.
-
 unsatisfied_properties:
   - property: small
     reason: Even the collection of trivial groups is not small.
