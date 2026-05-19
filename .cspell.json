@@ -64,6 +64,7 @@
 		"coexponentials",
 		"cofiltered",
 		"cofiltering",
+		"cofinal",
 		"cofinitary",
 		"cofull",
 		"cogenerates",
@@ -125,6 +126,7 @@
 		"extremal",
 		"fieldification",
 		"finitary",
+		"foundedness",
 		"Freyd",
 		"functor",
 		"functorial",
@@ -265,5 +267,8 @@
 		".netlify",
 		"build"
 	],
-	"ignoreRegExpList": ["\\$[^$]*\\$", "\\$\\$[^$]*\\$\\$"]
+	"ignoreRegExpList": [
+		"\\$[^$]*\\$",
+		"\\$\\$[^$]*\\$\\$"
+	]
 }

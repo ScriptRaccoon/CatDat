@@ -41,6 +41,47 @@ satisfied_properties:
   - property: locally cartesian closed
     reason: The slice category $B\On / *$ is isomorphic to the poset $(\On,\geq)$ (not to $(\On,\leq)$). This category is thin and and semi-strongly connected, <a href="/category-implication/sequential_implies_lcc">hence</a> cartesian closed.
 
+  - property: ℵ₁-filtered colimits
+    reason: >-
+      The proof is similar to <a href="/category/BN">$B\IN$</a>. Let $\I$ be an $\aleph_1$-filtered small category and $D : \I \to B\On$ a diagram. A cocone $\lambda = (\lambda_i)_{i \in \I}$ for $D$ is a family of ordinals satisfying $\lambda_i = \lambda_j + D(f)$ for every morphism $f: i \to j$ in $\I$.
+
+
+      We first observe that $D$ factors uniquely through the preorder reflection of $\I$. Indeed, any two parallel morphisms in $\I$ are coequalized by some morphism, and $B\On$ is left cancellative. Thus, we may assume that $\I$ is a preorder. Each inequality $i \leq j$ in $\I$ is mapped to an ordinal number $\alpha_{i,j} \coloneqq D(i \to j)$, and these numbers satisfy
+      $$\alpha_{i,k} = \alpha_{j,k} + \alpha_{i,j}$$
+      for all $i \leq j \leq k$. In particular, $\alpha_{i,j} \leq \alpha_{i,k}$.
+
+
+      For fixed $i \in \I$, the collection $\{\alpha_{i,j} : j \geq i\}$ is a set of ordinals because $\I$ is small, hence bounded above in $\On$. We claim that it has a maximum element. Otherwise, we can find a countable chain $i = j_0 \leq j_1 \leq j_2 \leq \dotsc$ in $\I$ such that $\alpha_{i,j_n} < \alpha_{i,j_{n+1}}$ for all $n \in \IN$. Since $\I$ is $\aleph_1$-filtered, there is an upper bound $j_\infty \in \I$ of $(j_n)_{n \in \IN}$. For each $n \in \IN$, the equation
+      $$\alpha_{i,j_{n+1}} = \alpha_{j_n,j_{n+1}} + \alpha_{i,j_n}$$
+      implies that $\alpha_{j_n,j_{n+1}} > 0$. Hence,
+      $$\alpha_{j_n,j_\infty} = \alpha_{j_{n+1},j_\infty} + \alpha_{j_n,j_{n+1}} > \alpha_{j_{n+1},j_\infty},$$
+      so $(\alpha_{j_n,j_\infty})_{n \in \IN}$ is a strictly decreasing infinite sequence of ordinals, contradicting the well-foundedness of $\On$. Thus, the maximum
+      $$u_i \coloneqq \max \{ \alpha_{i,j} : j \geq i \}$$
+      is a well-defined ordinal number, which we regard as a morphism in $B\On$. The family $(u_i)_{i \in \I}$ forms a cocone for $D$, since for all $i \leq j$ we have
+      $$\begin{align*}
+      u_i & = \max \{ \alpha_{i,k} : k \geq i \} \\
+      & = \max \{ \alpha_{i,k} : k \geq j \} \\
+      & = \max \{ \alpha_{j,k} + \alpha_{i,j} : k \geq j \} \\
+      & = \max \{ \alpha_{j,k} : k \geq j \} + \alpha_{i,j} \\
+      & = u_j + \alpha_{i,j}.
+      \end{align*}$$
+      To establish the universal property, let $(\lambda_i)_{i \in \I}$ be any cocone for $D$, so that $\lambda_i = \lambda_j + \alpha_{i,j}$ for all $i \leq j$. The cocone relation $u_i = u_j + \alpha_{i,j}$ implies that $u_i \geq u_j$ whenever $i \leq j$. By the well-foundedness of $\On$, there exists $i_0 \in \I$ such that $u_j = u_{i_0}$ for all $j \geq i_0$. For such $j$, the relation
+      $$u_{i_0} = u_j + \alpha_{i_0,j} = u_{i_0} + \alpha_{i_0,j}$$
+      forces $\alpha_{i_0,j} = 0$. Consequently,
+      $$u_{i_0} = \max \{ \alpha_{i_0,j} : j \geq i_0 \} = 0.$$
+      Define the mediating morphism to be the ordinal $\kappa \coloneqq \lambda_{i_0}$. We must show that $\lambda_i = \kappa + u_i$ for all $i \in \I$. Choose $j \in \I$ with $j \geq i$ and $j \geq i_0$. Since $j \geq i_0$, we have $u_j = 0$ and $\alpha_{i_0,j} = 0$. The cocone condition for $\lambda$ gives
+      $$\kappa = \lambda_{i_0} = \lambda_j + \alpha_{i_0,j} = \lambda_j.$$
+      Applying the cocone conditions for $u$ and $\lambda$ to $i \leq j$, we obtain
+      $$u_i = u_j + \alpha_{i,j} = 0 + \alpha_{i,j} = \alpha_{i,j}$$
+      and
+      $$\lambda_i = \lambda_j + \alpha_{i,j} = \kappa + \alpha_{i,j} = \kappa + u_i.$$
+      This proves the existence of the mediating morphism.
+
+
+      For uniqueness, suppose $\kappa'$ is any ordinal satisfying $\lambda_i = \kappa' + u_i$ for all $i \in \I$. Evaluating at $i_0$ yields
+      $$\lambda_{i_0} = \kappa' + u_{i_0} = \kappa' + 0 = \kappa',$$
+      hence $\kappa' = \kappa$. Therefore, the cocone $(u_i)_{i \in \I}$ is the colimit of $D$ in $B\On$.
+
 unsatisfied_properties:
   - property: initial object
     reason: This is trivial.
