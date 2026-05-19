@@ -48,7 +48,7 @@ satisfied_properties:
     reason: This follows from the existence of coproducts and finite products, and from the fact that <a href="/category/Top">$\Top$</a> is infinitary extensive.
 
   - property: effective cocongruences
-    reason: 'Suppose we have a cocongruence $f, g : X \rightrightarrows E$ in $\Met_\c$. Then the image in $\Haus$ is a coreflexive corelation (since epimorphisms in both categories are continuous maps with dense image). By <a href="https://mathoverflow.net/a/509582/2841" target="_blank">MO/509548</a>, that implies that image is of the form $X +_S X$ for a closed subset $S$ of $X$. Since $S$ is metrizable, and the functor $\Met_\c \to \Haus$ is fully faithful <a href="https://ncatlab.org/nlab/show/reflected+limit#FullSubcategoryInclusionReflectCoLimits" target="_blank">and therefore reflects colimits</a>, we conclude that $E$ is effective in $\Met_\c$.'
+    reason: 'Suppose we have a cocongruence $f, g : X \rightrightarrows E$ in $\Met_c$. Then the image in $\Haus$ is a coreflexive corelation (since epimorphisms in both categories are continuous maps with dense image). By <a href="https://mathoverflow.net/a/509582/2841" target="_blank">MO/509548</a>, that implies that image is of the form $X +_S X$ for a closed subset $S$ of $X$. Since $S$ is metrizable, and the functor $\Met_c \to \Haus$ is fully faithful <a href="https://ncatlab.org/nlab/show/reflected+limit#FullSubcategoryInclusionReflectCoLimits" target="_blank">and therefore reflects colimits</a>, we conclude that $E$ is effective in $\Met_c$.'
 
 unsatisfied_properties:
   - property: skeletal
