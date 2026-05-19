@@ -23,8 +23,8 @@ satisfied_properties:
   - property: cogenerator
     reason: 'This follows from $\Sp \simeq \prod_{n \geq 0} \Sigma_n{-}\FinSet$, <a href="/content/cogenerators_in_product_categories">this lemma</a>, and the fact that if $G$ is a (finite) group, the power set $P(G)$ with the evident $G$-action is a weakly terminal cogenerator in $G{-}\Set$ (resp. $G{-}\FinSet$). For the proof, notice that $\varnothing,G \in P(G)$ are fixed points, yielding two $G$-maps $1 \rightrightarrows P(G)$. In particular, $P(G)$ is weakly terminal. If $X$ is a $G$-set with distinct points $x,y$, we construct a $G$-map $f : X \to P(G)$ that separates $x,y$: First, $X$ is a coproduct of orbits. If $x,y$ lie in different orbits, let $f|_{Gx}$ be constant $\varnothing$, $f|_{Gy}$ be constant $G$, and, say, $f$ be constant $\varnothing$ on all other orbits. If $x,y$ lie in the same orbit, say $y = g_0 x$, define $f|_{Gx} : Gx \to P(G)$ by $f(x) = G_x$ (stabilizer), which is well-defined, and choose $f$ to be $\varnothing$ on all other orbits. Then $f(y) = g_0 G_x \neq G_x = f(x)$.'
 
-  - property: ℵ₁-filtered colimits
-    reason: This is because <a href="/category/FinSet">$\FinSet$</a> has this property.
+  - property: ℵ₁-accessible
+    reason: We know that <a href="/category/FinSet">$\FinSet$</a> has $\aleph_1$-filtered colimits and that every object is $\aleph_1$-presentable. It follows that for every $n \in \IN$ also $\Sigma_n{-}\FinSet$ has $\aleph_1$-filtered colimits and that every object is $\aleph_1$-presentable. From this it follows formally that $\Sp \simeq \prod_{n \geq 0} \Sigma_n{-}\FinSet$ also has these properties. In particular, $\Sp$ is $\aleph_1$-accessible.
 
 unsatisfied_properties:
   - property: skeletal
