@@ -40,6 +40,16 @@
   reason: See <a href="http://www.tac.mta.ca/tac/volumes/8/n3/8-03abs.html" target="_blank">[AR01, Remark 4.8(2)]</a>.
   is_equivalence: false
 
+- id: groupoids_are_generalized_varieties
+  assumptions:
+    - groupoid
+    - essentially small
+  conclusions:
+    - generalized variety
+    - finitely accessible
+  reason: This is proven <a href="/content/sifted-colimits-in-groupoids">here</a>.
+  is_equivalence: false
+
 - id: multi-algebraic_implies_locally_finitely_multi-presentable
   assumptions:
     - multi-algebraic
