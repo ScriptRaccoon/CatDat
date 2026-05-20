@@ -62,11 +62,11 @@
   reason: Let $(T_i)_{i\in I}$ be a multi-terminal object in a connected category $\C$. By definition of multi-terminal objects, for each object $C$, there are a unique index $i_C\in I$ and a unique morphism $C \to T_{i_C}$. Since the index $i_C$ is invariant under connected components, $I$ must be a singleton. The converse is trivial.
   is_equivalence: true
 
-- id: multi-complete_with_finite_coproducts
+- id: multi-complete_with_initial_object
   assumptions:
-    - finite coproducts
+    - initial object
     - multi-complete
   conclusions:
     - complete
-  reason: 'Let $D : \S \to \C$ be a small diagram in a category $\C$. Since $\C$ has finite coproducts, the category $\Cone(D)$ of cones over $D$ has finite coproducts. In particular, $\Cone(D)$ is connected, hence a multi-terminal object in it automatically becomes a terminal object.'
+  reason: 'Let $\C$ be a category with an initial object, and let $D : \I \to \C$ be a small diagram in $\C$. Since $\C$ has an initial object, the category $\Cone(D)$ of cones over $D$ also has an initial object. In particular, $\Cone(D)$ is connected, hence a multi-terminal object in it automatically becomes a terminal object. In other words, a multi-limit of $D$ is automatically a limit of $D$.'
   is_equivalence: false
