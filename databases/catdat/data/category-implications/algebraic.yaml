@@ -50,6 +50,18 @@
   reason: This is proven <a href="/content/sifted-colimits-in-groupoids">here</a>.
   is_equivalence: false
 
+- id: generalized_variety_left_cancellative
+  assumptions:
+    - left cancellative
+    - finitely accessible
+  conclusions:
+    - generalized variety
+  reason: >-
+    Let $\C$ be a finitely accessible left cancellative category. The proof of <a href="/category-implication/sifted_colimits_left_cancellative">this result</a> shows that every sifted diagram $\I \to \C$ factors through the preorder reflection of $\I$, and hence reduces to a filtered diagram. Since $\C$ has filtered colimits, it therefore also has sifted colimits.
+    It follows that every functor on $\C$ preserving filtered colimits automatically preserves sifted colimits. In particular, for representable functors this means that every finitely presentable object is automatically strongly finitely presentable.
+    Now let $G$ be a set of finitely presentable objects in $\C$ generating all objects via filtered colimits. The claim follows because every filtered colimit is sifted and the objects in $G$ are strongly finitely presentable.
+  is_equivalence: false
+
 - id: multi-algebraic_implies_locally_finitely_multi-presentable
   assumptions:
     - multi-algebraic
