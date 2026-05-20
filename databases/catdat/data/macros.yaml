@@ -57,6 +57,7 @@
 \Coexp: \operatorname{Coexp}
 \inc: \operatorname{inc}
 \eq: \operatorname{eq}
+\cod: \operatorname{cod}
 
 # categories
 \Set: \mathbf{Set}

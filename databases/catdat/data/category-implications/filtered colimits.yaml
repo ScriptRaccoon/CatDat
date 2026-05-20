@@ -103,3 +103,19 @@
     - sifted colimits
   reason: See Cor. 5.2 in <a href="http://www.tac.mta.ca/tac/volumes/37/35/37-35abs.html" target="_blank">Chen's paper</a>.
   is_equivalence: false
+
+- id: sifted_colimits_left_cancellative
+  assumptions:
+    - left cancellative
+    - filtered colimits
+  conclusions:
+    - sifted colimits
+  reason: >-
+    Let $D : \I \to \C$ be a sifted diagram in a left cancellative category with filtered colimits. We claim that $D(f) = D(g)$ whenever $f,g : i \rightrightarrows j$ are parallel morphisms, i.e. for the cospan $i \xrightarrow{f} j \xleftarrow{g} i$.
+
+
+    This is trivially true for the identity cospan. Since $\I$ is sifted, it suffices to prove that $D(f) = D(g) \iff D(f') = D(g')$ whenever there is a morphism of cospans $(f,g) \to (f',g')$. Such a morphism is given by a morphism $h : \cod(f) \to \cod(f')$ satisfying $hf = f'$ and $hg = g'$. The implication $D(f) = D(g) \implies D(f') = D(g')$ is formal, while the converse follows because $D(h)$ is a monomorphism.
+
+
+    It follows that the diagram $D$ factors as $\I \to \I_p \to \C$, where $\I_p$ is the preorder reflection of $\I$ (same objects, with $i \leq j$ whenever there exists a morphism $i \to j$). Since $\I$ is sifted, the preorder $\I_p$ is filtered. Hence, the diagram $\I_p \to \C$ has a colimit, and this colimit is also a colimit of the original diagram $\I \to \C$.
+  is_equivalence: false
