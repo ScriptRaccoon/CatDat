@@ -40,8 +40,11 @@ satisfied_properties:
   - property: epi-regular
     reason: 'If $f : X \to Y$ is a surjective map of finite sets, it is the coequalizer of the two projections $p_1, p_2 : X \times_Y X \rightrightarrows X$ in <a href="/category/FinSet">$\FinSet$</a>, but also in $\FS$. Notice that $p_1,p_2$ are surjective. Even though $X \times_Y X$ is not a pullback in $\FS$, we can use this finite set here.'
 
-  - property: multi-terminal object
-    reason: The empty set and a singleton give a multi-terminal object.
+  - property: multi-complete
+    reason: >-
+      Let $D : \I \to \FS$ be a small diagram. Let $L \subseteq \prod_{i \in \I} D(i)$ be the limit object of the corresponding diagram in $\Set$. Consider the set of all finite subsets $R \subseteq L$ with the property that $p_i(R) = D(i)$ for every $i \in \I$. For each of these, $(R \xrightarrow{p_i|_R} D(i))_{i \in \I}$ is a cone in $\FS$. We claim that the set of these cones is universal:
+      Let $(f_i : T \to D(i))_{i \in \I}$ be any cone in $\FS$. Let $R \subseteq L$ be the image of the induced map of sets $f : T \to \prod_{i \in \I} D(i)$ defined by $p_i f = f_i$. Then $R$ is finite, since $T$ is finite, and we have $p_i(R) = p_i(f(T)) = f_i(T) = D(i)$. Moreover, the map $f$ corestricts to a map $f' : T \to R$ with $p_i|_R  \, f' = f_i$. Therefore, $f'$ is a morphism of cones.
+      Conversely, let $h : T \to R$ be a morphism of cones, i.e. $p_i|_R \, h = f_i$, where $R$ is not known yet. Then $h$ equals the corestriction of the map into the product induced by the $f_i$, and $h$ is surjective as a morphism in $\FS$. This shows that both $R$ and the morphism of cones are unique.
 
 unsatisfied_properties:
   - property: small
