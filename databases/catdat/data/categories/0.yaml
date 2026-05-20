@@ -29,9 +29,6 @@ satisfied_properties:
   - property: preadditive
     reason: This is vacuously true.
 
-  - property: multi-algebraic
-    reason: The terminal category $\1$ becomes an FPC-sketch by selecting the unique empty cone and cocone. Then, a $\Set$-valued model of this sketch is a functor $\1 \to \Set$ sending the unique object to a terminal and initial object, which never exists. Hence, $\0$ is the category of models of this FPC-sketch.
-
 unsatisfied_properties:
   - property: inhabited
     reason: This is trivial.
