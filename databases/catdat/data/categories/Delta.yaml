@@ -81,6 +81,17 @@ unsatisfied_properties:
   - property: pushouts
     reason: Assume that the two inclusions $\{0 < 1\} \leftarrow \{0\} \rightarrow \{0 < 2\}$ have a pushout in $\FinOrd \setminus \{\varnothing\}$. This would be a universal non-empty finite ordered set $X$ with three elements $0,1,2$ satisfying $0 \leq 1$ and $0 \leq 2$. Assume w.l.o.g. $1 \leq 2$ (the case $2 \leq 1$ is similar). The universal property yields an order-preserving map $X \to \{a < b < c\}$ with $0 \mapsto a$, $1 \mapsto c$, $2 \mapsto b$. But then $c \leq b$, which is a contradiction.
 
+  - property: multi-complete
+    reason: >-
+      We will prove that the multi-product of $I \coloneqq \{0 < 1\}$ with itself does not exist in $\FinOrd \setminus \{\varnothing\}$. Assume that it does, i.e. there is a family of spans
+      $$X_s = (I \xleftarrow{a_s} P_s \xrightarrow{b_s} I)$$
+      such that every span admits a unique morphism into exactly one of these. Now consider the following three spans:
+      $$\begin{align*} A & \coloneqq (I \xleftarrow{0} \{0\} \xrightarrow{0} I) \\
+      B & \coloneqq (I \xleftarrow{0} I \xrightarrow{\id} I) \\
+      C & \coloneqq (I \xleftarrow{\id} I \xrightarrow{0} I)
+      \end{align*}$$
+      There are morphisms of spans $0 : A \to B$ and $0 : A \to C$. This shows that  $B,C$ are in the same connected component. Thus, there is some index $s$ such that $B$ and $C$ admit a unique morphism to $X_s$. The morphism $B \to X_s$ maps $1 \in I$ to an element $u \in P_s$ with $a_s(u)=0$, $b_s(u)=1$. Likewise, the morphism $C \to X_s$ maps $1 \in I$ to an element $v \in P_s$ with $a_s(v)=1$, $b_s(v)=0$. But now neither $u \leq v$ nor $v \leq u$ can be true, contradicting that $P_s$ is linearly ordered.
+
 special_objects: {}
 
 special_morphisms:
