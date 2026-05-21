@@ -43,6 +43,15 @@
   reason: The product $\prod_{i \in I} X_i$ is the cofiltered limit of the finite partial products $\prod_{i \in E} X_i$ where $E$ ranges over the finite subsets of $I$.
   is_equivalence: false
 
+- id: products_criterion_countable
+  assumptions:
+    - ℵ₁-cofiltered limits
+    - countable products
+  conclusions:
+    - products
+  reason: The product $\prod_{i \in I} X_i$ is the $\aleph_1$-cofiltered limit of the countable partial products $\prod_{i \in C} X_i$ where $C$ ranges over the countable subsets of $I$.
+  is_equivalence: false
+
 - id: binary_products_criterion
   assumptions:
     - pullbacks
@@ -128,11 +137,20 @@
   reason: 'We can write $X^{\IN}$ as the limit of the sequence $\cdots \to X^3 \to X^2 \to X \to 1$ with transition morphisms $f_n : X^{n+1} \to X^n$, $(x_1,\dotsc,x_{n+1}) \mapsto (x_1,\dotsc,x_n)$, i.e., $p_i f_n = p_i$ for $1 \leq i \leq n$.'
   is_equivalence: false
 
-- id: powers_criterion
+- id: copowers_criterion
   assumptions:
-    - cofiltered limits
-    - finite powers
+    - filtered colimits
+    - finite copowers
   conclusions:
-    - powers
-  reason: The product $X^I$ is the cofiltered limit of the finite powers $X^E$, where $E$ ranges over the finite subsets of $I$.
+    - copowers
+  reason: Let $\C$ be a category with filtered colimits and finite copowers. Let $X \in \C$ be an object and $I$ be a set. The poset $P_{<\aleph_0}(I)$ of finite subsets of $I$ is filtered, and we have a diagram $P_{<\aleph_0}(I) \to \C$, $A \mapsto A \otimes X$. Its colimit is the copower $I \otimes X$.
+  is_equivalence: false
+
+- id: copowers_criterion_countable
+  assumptions:
+    - ℵ₁-filtered colimits
+    - countable copowers
+  conclusions:
+    - copowers
+  reason: Let $\C$ be a category with $\aleph_1$-filtered colimits and countable copowers. Let $X \in \C$ be an object and $I$ be a set. The poset $P_{<\aleph_1}(I)$ of countable subsets of $I$ is $\aleph_1$-filtered, and we have a diagram $P_{<\aleph_1}(I) \to \C$, $A \mapsto A \otimes X$. Its colimit is the copower $I \otimes X$.
   is_equivalence: false
