@@ -57,7 +57,7 @@ unsatisfied_properties:
   - property: balanced
     reason: The inclusion $\IQ \hookrightarrow \IR$ provides a counterexample.
 
-  - property: powers
+  - property: ℵ₂-small powers
     reason: See <a href="https://math.stackexchange.com/questions/139168" target="_blank">MSE/139168</a> for a proof that uncountable powers do not exist.
 
   - property: Malcev
