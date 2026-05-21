@@ -76,6 +76,9 @@ unsatisfied_properties:
   - property: countable powers
     reason: Since the forgetful functor $\Grp_\c \to \Set$ is representable, it preserves products. Therefore, if the power $\IZ^{\IN}$ exists in $\Grp_\c$, its underlying set must be the ordinary cartesian product, which however is uncountable.
 
+  - property: ℵ₂-small copowers
+    reason: 'Assume that the copower $G \coloneqq I \otimes \IZ$ exists in $\Grp_\c$. We will prove that $I$ is countable; in particular, $\aleph_1 \otimes \IZ$ does not exist. The copower is a countable group $G$ with a universal family of elements $(x_i)_{i \in I}$. For every $i \in I$ there is a homomorphism $G \to \IZ$ defined by $x_i \mapsto 1$ and $x_j \mapsto 0$ for $j \neq i$. In particular, $x_i \neq x_j$ whenever $i \neq j$. Thus, $x : I \to G$ is an injective map, which proves that $I$ is countable.'
+
   - property: regular quotient object classifier
     reason: We can copy the proof from <a href="/category/Grp">$\Grp$</a>.
 

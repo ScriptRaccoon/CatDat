@@ -74,6 +74,9 @@ unsatisfied_properties:
   - property: ℵ₁-filtered colimits
     reason: 'We already know that <a href="/category/Set_c">$\Set_\c$</a> does not have $\aleph_1$-filtered colimits. The functor $\pi_0: \Man \to \Set_\c$ is well-defined (because manifolds are second-countable), and it admits a fully faithful right adjoint (regarding a countable set as a discrete manifold). Therefore, $\Man$ does not have $\aleph_1$-filtered colimits.'
 
+  - property: ℵ₂-small copowers
+    reason: A proof can be found at <a href="https://math.stackexchange.com/a/5083683/1650" target="_blank">MSE/5083641</a> (ignore the arguments regarding equal dimension).
+
   - property: quotients of congruences
     reason: If $\Man$ had quotients of congruences, then by <a href="/content/pushouts-of-monos-via-congruence-quotients">this lemma</a>, it would have a pushout of $\IR \leftarrow \{ 0 \} \rightarrow \IR$.  This contradicts <a href="https://mathoverflow.net/questions/19116">MO/19916</a>.
 
