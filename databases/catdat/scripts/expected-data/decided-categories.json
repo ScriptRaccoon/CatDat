@@ -8,6 +8,7 @@
 	"R-Mod",
 	"CRing",
 	"Ring",
+	"FinSet",
 	"Set",
 	"Set_op",
 	"Set*",
