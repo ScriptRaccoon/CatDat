@@ -88,6 +88,15 @@ unsatisfied_properties:
   - property: cogenerator
     reason: 'Assume that a cogenerator $Q$ exists in $\Grp_\c$. There are only countably many finitely generated subgroups of $Q$. But there are continuum many finitely generated simple groups; this follows from Corollary 1.5 in <a href="https://arxiv.org/abs/1807.06478" target="_blank">Finitely generated infinite simple groups of homeomorphisms of the real line</a> by J. Hyde and Y. Lodha. Hence, there is a finitely generated (and hence countable) simple group $H$ which does not embed into $Q$. Since $H$ is simple, any homomorphism $H \to Q$ must be trivial then. But then $\id_H, 1 : H \rightrightarrows H$ are not separated by a homomorphism $H \to Q$.'
 
+  - property: ℵ₁-cofiltered limits
+    reason: >-
+      The proof is similar to <a href="/category/Set_c">$\Set_\c$</a>. Since the forgetful functor $\Grp_\c \to \Set$ is representable, it preserves limits. Moreover, $\Grp \to \Set$ preserves limits. Therefore, it suffices to construct an $\aleph_1$-cofiltered diagram of countable groups whose $\Grp$-limit is not countable.
+      Let $R$ be an uncountable set (such as $\IR$) and consider the poset $P_{<\aleph_1}(R)$ of countable subsets of $R$. It is $\aleph_1$-filtered, so its opposite is $\aleph_1$-cofiltered.
+      Define a diagram $X : P_{<\aleph_1}(R)^{\op} \to \Grp_\c$ by mapping a countable subset $C \subseteq R$ to the free abelian group $F(C)$ on $C$ and an inclusion $C \subseteq D$ to the canonical epimorphism $F(D) \to F(C)$ which sends each element of $C$ to itself and sends all elements of $D \setminus C$ to $0$.
+      For $r \in R$ we define $\varepsilon(r) \in \lim(X)$ by
+      $$\varepsilon(r)_C = \begin{cases} r & r \in C \\ 0 & r \notin C \end{cases}$$
+      It is easily checked that this indeed lies in the limit. Moreover, $\varepsilon(r) = \varepsilon(r')$ implies $r=r'$, since evaluating at $C \coloneqq \{r\}$ yields $r = r'$. Hence, $\lim(X)$ is uncountable.
+
 special_objects:
   initial object:
     description: trivial group

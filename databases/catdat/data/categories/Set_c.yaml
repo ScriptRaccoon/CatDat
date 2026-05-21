@@ -72,6 +72,15 @@ unsatisfied_properties:
   - property: ℵ₂-small copowers
     reason: 'Assume that the copower $X \coloneqq I \otimes 1$ exists in $\Set_\c$. We will prove that $I$ is countable; in particular, $\aleph_1 \otimes 1$ does not exist. The copower is a countable set $X$ with a universal family of elements $(x_i)_{i \in I}$. For every $i \in I$ there is a map $X \to \{0,1\}$ defined by $x_i \mapsto 1$ and $x_j \mapsto 0$ for $j \neq i$. In particular, $x_i \neq x_j$ whenever $i \neq j$. Thus, $x : I \to X$ is an injective map, which proves that $I$ is countable.'
 
+  - property: ℵ₁-cofiltered limits
+    reason: >-
+      Since the forgetful functor $\Set_\c \to \Set$ is representable, it preserves limits. So it suffices to construct an $\aleph_1$-cofiltered diagram of countable sets whose $\Set$-limit is not countable.
+      Let $R$ be an uncountable set (such as $\IR$) and consider the poset $P_{<\aleph_1}(R)$ of countable subsets of $R$. It is $\aleph_1$-filtered, so its opposite is $\aleph_1$-cofiltered.
+      Define a diagram $X : P_{<\aleph_1}(R)^{\op} \to \Set_\c$ by mapping a countable subset $C \subseteq R$ to the pointed countable set $C \sqcup \{\ast\}$ and an inclusion $C \subseteq D$ to the map $D \sqcup \{\ast\} \to C \sqcup \{\ast\}$ which restricts to the identity on $C$ and sends everything else to the base point.
+      For $r \in R$ we define $\varepsilon(r) \in \lim(X)$ by
+      $$\varepsilon(r)_C = \begin{cases} r & r \in C \\ \ast & r \notin C \end{cases}$$
+      It is easily checked that this indeed lies in the limit. Moreover, $\varepsilon(r) = \varepsilon(r')$ implies $r=r'$, since evaluating at $C \coloneqq \{r\}$ yields $r = r'$. Hence, $\lim(X)$ is uncountable.
+
 special_objects:
   initial object:
     description: empty set

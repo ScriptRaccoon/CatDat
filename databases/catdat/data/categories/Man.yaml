@@ -74,6 +74,14 @@ unsatisfied_properties:
   - property: ℵ₂-small copowers
     reason: A proof can be found at <a href="https://math.stackexchange.com/a/5083683/1650" target="_blank">MSE/5083641</a> (ignore the arguments regarding equal dimension).
 
+  - property: ℵ₁-cofiltered limits
+    reason: >-
+      We continue the counterexample from <a href="/category/Set_c">$\Set_c$</a>. There, we started with an arbitrary uncountable set $R$ and constructed a diagram $X : P_{<\aleph_1}(R)^{\op} \to \Set$ by sending a countable subset $C \subseteq R$ to the pointed countable set $C \sqcup \{\ast\}$. Its limit in $\Set$ is uncountable.
+      Now endow each set $C \sqcup \{\ast\}$ with the discrete topology. Each of them becomes a $0$-dimensional smooth manifold.
+      Assume that there exists a limit cone $(\pi_C : M \to C \sqcup \{\ast\})$ in $\Man$. Since the forgetful functor $\Man \to \Set$ is representable, it preserves limits. In particular, the underlying set of $M$ is the limit of the underlying sets and is therefore uncountable.
+      Since the codomain of $\pi_C$ is discrete, the map $\pi_C$ is locally constant. Thus, for every connected component $K \subseteq M$, the map $\pi_C$ is constant on $K$. Since the maps $\pi_C$ are jointly injective, it follows that every connected component of $M$ consists of a single point.
+      Hence, $M$ is totally disconnected. Since $M$ is a smooth manifold, it follows that $M$ has dimension $0$. Since $M$ is also second-countable, it follows that the underlying set of $M$ is countable, contradicting our previous observation.
+
   - property: quotients of congruences
     reason: If $\Man$ had quotients of congruences, then by <a href="/content/pushouts-of-monos-via-congruence-quotients">this lemma</a>, it would have a pushout of $\IR \leftarrow \{ 0 \} \rightarrow \IR$.  This contradicts <a href="https://mathoverflow.net/questions/19116">MO/19916</a>.
 
