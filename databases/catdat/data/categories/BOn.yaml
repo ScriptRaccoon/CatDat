@@ -41,6 +41,9 @@ satisfied_properties:
   - property: locally cartesian closed
     reason: The slice category $B\On / *$ is isomorphic to the poset $(\On,\geq)$ (not to $(\On,\leq)$). This category is thin and and semi-strongly connected, <a href="/category-implication/sequential_implies_lcc">hence</a> cartesian closed.
 
+  - property: ℵ₁-cofiltered
+    reason: In fact, it is $\kappa$-cofiltered for every cardinal $\kappa$. By the dual of Theorem 2.2 at the <a href="https://ncatlab.org/nlab/show/filtered+category">nLab</a> it suffices to prove any set of objects has a cone (which is trivial in a one-object category) and that any set of parallel morphisms is equalized by some morphism. Here, this means that for every set of ordinals $A$ there is some ordinal $\beta$ such that $\alpha + \beta$ for $\alpha \in A$ does not depend on $\alpha$. Take $\beta$ to be any ordinal larger than $\sup(A)$ of the form $\omega^\gamma$. It is well-known that $\omega^\gamma$ has the property that $\alpha + \omega^\gamma = \omega^\gamma$ for all $\alpha < \omega^\gamma$ (Kunen's <i>Set Theory</i>, Exercise I.9.53), from which the claim follows.
+
   - property: ℵ₁-filtered colimits
     reason: >-
       The proof is similar to <a href="/category/BN">$B\IN$</a>. Let $\I$ be an $\aleph_1$-filtered small category and $D : \I \to B\On$ a diagram. A cocone $\lambda = (\lambda_i)_{i \in \I}$ for $D$ is a family of ordinals satisfying $\lambda_i = \lambda_j + D(f)$ for every morphism $f: i \to j$ in $\I$.

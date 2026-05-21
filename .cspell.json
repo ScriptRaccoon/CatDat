@@ -165,6 +165,7 @@
 		"Kategorien",
 		"katex",
 		"Kolmogorov",
+		"Kunen",
 		"Lawvere",
 		"libsql",
 		"Lindelöf",
@@ -293,8 +294,5 @@
 		"todo.txt",
 		"*.svg"
 	],
-	"ignoreRegExpList": [
-		"\\$[^$]*\\$",
-		"\\$\\$[^$]*\\$\\$"
-	]
+	"ignoreRegExpList": ["\\$[^$]*\\$", "\\$\\$[^$]*\\$\\$"]
 }
