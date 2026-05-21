@@ -55,6 +55,9 @@ satisfied_properties:
   - property: core-thin
     reason: 'Let $f : \{1 < \cdots < n \} \to \{1 < \cdots < n \}$ be an automorphism. Then $f(i)$ is the smallest element not contained in $\{f(j) : j < i\}$. From this one can deduce $f(i)=i$ by induction.'
 
+  - property: ℵ₁-cofiltered limits
+    reason: 'Let $D : \I \to \FinOrd$ be an $\aleph_1$-cofiltered diagram. Since <a href="/category/FinSet">$\FinSet$</a> is closed under $\aleph_1$-cofiltered limits in $\Set$, the limit of $D$ taken in $\Set$ is a finite set $L$. We define a partial order on $L$ in the obvious way: $x \leq y$ iff $p_i(x) \leq p_i(y)$ for all $i \in \I$. It remains to prove that this is indeed a total order. So assume that $x,y \in L$ satisfy neither $x \leq y$ nor $y \leq x$. Then there exist $i,j \in \I$ such that $p_i(x) \not\leq p_i(y)$ and $p_j(y) \not\leq p_j(x)$. Choose a span $i \leftarrow k \rightarrow j$. Then $p_k(x) \not\leq p_k(y)$ and $p_k(y) \not\leq p_k(x)$ in $D(k)$, which is impossible.'
+
 unsatisfied_properties:
   - property: small
     reason: Even the collection of all singleton orders is not small.

@@ -58,6 +58,7 @@
 \inc: \operatorname{inc}
 \eq: \operatorname{eq}
 \cod: \operatorname{cod}
+\rank: \operatorname{rank}
 
 # categories
 \Set: \mathbf{Set}

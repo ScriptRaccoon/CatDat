@@ -55,6 +55,13 @@ satisfied_properties:
       $$\textstyle\inf_i \max(r, s_i) = \max(r, \inf_i s_i)$$
       for $r, s_i \in \IR$, where $i \leq j \implies s_i \geq s_j$.
 
+  - property: ℵ₁-cofiltered limits
+    reason: >-
+      Let $D : \I \to \Met$ be an $\aleph_1$-cofiltered diagram. This diagram has a limit in the complete category <a href="/category/Met_oo">$\Met_\infty$</a>, obtained by equipping the limit of the underlying sets with the supremum metric $d(x,y) = \sup_i d(x_i,y_i)$. It remains to show that $d(x,y) < \infty$.
+      Suppose otherwise. Then for every $n \in \IN$ there exists an object $i_n \in \I$ such that $d(x_{i_n},y_{i_n}) \geq n$. Since $\I$ is $\aleph_1$-cofiltered, there exists a cone $(j \to i_n)_{n \in \IN}$. Since the maps $D(j) \to D(i_n)$ are non-expansive, we have
+      $$d(x_j,y_j) \geq d(x_{i_n},y_{i_n}) \geq n$$
+      for every $n \in \IN$. This is impossible since the metric on $D(j)$ takes only finite values.
+
   - property: well-powered
     reason: This follows since monomorphisms are injective.
 

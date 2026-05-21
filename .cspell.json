@@ -261,6 +261,7 @@
 		"surjections",
 		"surjective",
 		"surjectivity",
+		"surjects",
 		"Tarski",
 		"tensoring",
 		"Tietze",
@@ -294,5 +295,8 @@
 		"todo.txt",
 		"*.svg"
 	],
-	"ignoreRegExpList": ["\\$[^$]*\\$", "\\$\\$[^$]*\\$\\$"]
+	"ignoreRegExpList": [
+		"\\$[^$]*\\$",
+		"\\$\\$[^$]*\\$\\$"
+	]
 }

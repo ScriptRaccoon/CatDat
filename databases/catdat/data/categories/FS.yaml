@@ -52,6 +52,15 @@ satisfied_properties:
 
       With this description of filtered colimits, we will prove that <i>every</i> object of $\FS$ is finitely presentable, which implies that $\FS$ is finitely accessible. So let $T$ be any finite set and let $f : T \to L$ be a surjective map, where $L$ is defined as above. Since $T$ is finitely presentable in $\Set$, we find $i \in \I$ and $f_i : T \to D(i)$ such that $f = u_i f_i$. However, $f_i$ does not need to be surjective. For every element $x \in D(i)$, the image $u_i(x) \in L$ is of the form $f(t_x)$ for some $t_x \in T$. Then $u_i(x) = u_i(f_i(t_x))$, so there is a morphism $i \to j$ such that $D(i \to j)(x) = D(i \to j)(f_i(t_x))$. Since $D(i)$ is finite and $\I$ is filtered, the morphism $i \to j$ can be chosen independently of $x$. Now define $f_j \coloneqq D(i \to j) \circ f_i : T \to D(j)$. This map is surjective: since $D(i \to j)$ is surjective, this follows immediately from the equation $D(i \to j)(x) = D(i \to j)(f_i(t_x))$. Moreover, it satisfies $f = u_j f_j$, so the required factorization in $\FS$ has been obtained. It is also essentially unique: if $f'_j : T \to D(j)$ is another map with $u_j f_j = u_j f'_j$, then since $T$ is finite and $\I$ is filtered, there is a morphism $j \to k$ such that $D(j \to k) f_j = D(j \to k) f'_j$. This completes the proof.
 
+  - property: ℵ₁-cofiltered limits
+    reason: >-
+      Let $D : \I \to \FS$ be an $\aleph_1$-cofiltered diagram. We claim that the set
+      $$\bigl\{\card(D(i)) : i \in \I\bigr\} \subseteq \IN$$
+      is bounded. If not, for every $n \in \IN$ there is some $i_n \in \I$ with $\card(D(i_n)) \geq n$. Choose a cone $(j \to i_n)_{j \in \I}$. For every $n \in \IN$ the set $F(j)$ surjects onto $F(i_n)$, so that $\card(F(j)) \geq n$. This contradicts the fact that $F(j)$ is finite. Hence, the maximum
+      $$M \coloneqq \max \bigl\{\card(D(i)) : i \in \I \bigr\} \in \IN$$
+      is well-defined. Let $\J \subseteq \I$ be the full subcategory of those $i \in \I$ with $\card(D(i)) = M$. Then $\J$ is non-empty, and when there is a morphism $i \to j$ with $j \in \J$ we also have $i \in \J$. Since $\I$ is cofiltered, it follows that $\J \subseteq \I$ is initial. Therefore, the limit of $D$ coincides with the limit of $D|_{\J}$.
+      But this diagram is constant: for every $j \to j'$ in $\J$ the map $D(j) \to D(j')$ is a surjective map between finite sets of the same cardinality $M$, hence bijective. This implies that the limit of $D|_{\J}$ exists and is given by any $D(j)$ with $j \in \J$.
+
 unsatisfied_properties:
   - property: small
     reason: Even the collection of all singletons is not small.

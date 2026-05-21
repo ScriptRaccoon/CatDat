@@ -46,6 +46,9 @@ satisfied_properties:
   - property: regular
     reason: The category is Malcev and hence finitely complete, and it has all coequalizers. The regular epimorphisms coincide with the surjective group homomorphisms (see below), hence are clearly stable under pullbacks.
 
+  - property: ℵ₁-cofiltered limits
+    reason: For <a href="/category/FinSet">$\FinSet$</a> know that the embedding $\FinSet \hookrightarrow \Set$ is closed under $\aleph_1$-cofiltered limits. From this and the fact that the forgetful functor $\Grp \to \Set$ preserves limits it follows that $\FinGrp \hookrightarrow \Grp$ is closed under $\aleph_1$-cofiltered limits.
+
 unsatisfied_properties:
   - property: small
     reason: Even the collection of trivial groups is not small.

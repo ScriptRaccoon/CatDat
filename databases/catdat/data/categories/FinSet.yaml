@@ -16,9 +16,6 @@ related_categories:
   - Set_c
   - Set_f
 
-comments:
-  - For the non-existence of sequential (co-)limits it is <i>not</i> sufficient to take a diagram of finite sets whose (co-)limit in $\Set$ is not contained in $\FinSet$.
-
 satisfied_properties:
   - property: locally small
     reason: There is a forgetful functor $\FinSet \to \Set$ and $\Set$ is locally small.
@@ -40,6 +37,9 @@ satisfied_properties:
 
   - property: elementary topos
     reason: This follows easily from the fact that sets form an elementary topos.
+
+  - property: ℵ₁-cofiltered limits
+    reason: 'Let $D : \I \to \FinSet$ be a $\aleph_1$-cofiltered diagram. Let $(p_i : P \to D(i))_{i \in \I}$ be a limit cone of the corresponding diagram in $\Set$. We only need to show that $P$ is finite. If not, then it contains a sequence of pairwise distinct elements $x_1,x_2,\dotsc$. For all $n \neq m$ there is some $i_{n,m} \in I$ with $p_{i_{n,m}}(x_n) \neq p_{i_{n,m}}(x_m)$. Since $\I$ is $\aleph_1$-cofiltered, it contains a cone $(j \to i_{m,n})$. Then $p_j(x_n) \neq p_j(x_m)$ for all $n \neq m$. This is not possible since $D(j)$ is a finite set.'
 
 unsatisfied_properties:
   - property: small

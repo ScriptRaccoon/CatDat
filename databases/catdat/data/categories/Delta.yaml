@@ -62,6 +62,9 @@ satisfied_properties:
       $$\begin{CD} X @<{x_0}<< [0] @>{y}>> Y \\ @| @V{0}VV @| \\ X @<{f}<< [1] @>{g}>> Y \\ @| @A{1}AA @| \\ X @<{x_1}<< [0] @>{y}>> Y \end{CD}$$
       This shows that the choice of $x \in X$ does not matter, and for $y \in Y$ the proof is the same.
 
+  - property: ℵ₁-cofiltered limits
+    reason: We already know that <a href="/category/FinOrd">$\FinOrd$</a> has $\aleph_1$-cofiltered limits and that the forgetful functors to <a href="/category/FinSet">$\FinSet$</a> and <a href="/category/Set">$\Set$</a> preserve them. Therefore, it suffices to prove that a $\aleph_1$-cofiltered limit of non-empty finite sets is also non-empty. While a direct proof is possible, we can conveniently derive this from Lemma 1 <a href="/content/comphaus_copresentable">here</a> by regarding finite sets as discrete compact Hausdorff spaces.
+
 unsatisfied_properties:
   - property: strict terminal object
     reason: This is trivial.

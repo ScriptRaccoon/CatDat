@@ -26,6 +26,9 @@ satisfied_properties:
   - property: ℵ₁-accessible
     reason: We know that <a href="/category/FinSet">$\FinSet$</a> has $\aleph_1$-filtered colimits and that every object is $\aleph_1$-presentable. It follows that for every $n \in \IN$ also $\Sigma_n{-}\FinSet$ has $\aleph_1$-filtered colimits and that every object is $\aleph_1$-presentable. From this it follows formally that $\Sp \simeq \prod_{n \geq 0} \Sigma_n{-}\FinSet$ also has these properties. In particular, $\Sp$ is $\aleph_1$-accessible.
 
+  - property: ℵ₁-cofiltered limits
+    reason: Since <a href="/category/FinSet">$\FinSet$</a> has $\aleph_1$-cofiltered limits, also $\Sigma_n{-}\FinSet$ has $\aleph_1$-cofiltered limits for every $n \geq 0$. Hence, $\Sp \simeq \prod_{n \geq 0} \Sigma_n{-}\FinSet$ has $\aleph_1$-cofiltered limits.
+
 unsatisfied_properties:
   - property: skeletal
     reason: This is trivial.
@@ -38,9 +41,6 @@ unsatisfied_properties:
 
   - property: essentially countable
     reason: 'Any function $f : \IN \to \IN$ can be regarded as a combinatorial species with trivial actions, and distinct functions yield non-isomorphic species.'
-
-  - property: countable powers
-    reason: If $\Sp \simeq \FinSet \times \prod_{n > 0} \Sigma_n{-}\FinSet$ has countable powers, then <a href="/category/FinSet">$\FinSet$</a> has countable powers as well by <a href="/content/limits_in_factor_categories">this lemma</a>, which we already know is false.
 
   - property: semi-strongly connected
     reason: 'For $n \geq 0$ let $E_n$ be the combinatorial species of $n$-sets: $E_n(A) = \{A\}$ when $A$ has cardinality $n$, otherwise $E_n(A) = \varnothing$. Then there is no morphism between $E_n$ and $E_m$ unless $n = m$.'
