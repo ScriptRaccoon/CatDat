@@ -80,6 +80,7 @@
 	"binary copowers": true,
 	"filtered": true,
 	"ℵ₁-filtered": true,
+	"ℵ₁-cofiltered": true,
 	"cofiltered": true,
 	"sifted": true,
 	"cosifted": true,
