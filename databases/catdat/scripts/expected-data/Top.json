@@ -144,6 +144,7 @@
 	"finitely accessible": false,
 	"ℵ₁-accessible": false,
 	"ℵ₁-filtered colimits": true,
+	"ℵ₁-cofiltered limits": true,
 	"generalized variety": false,
 	"locally finitely multi-presentable": false,
 	"locally multi-presentable": false,
