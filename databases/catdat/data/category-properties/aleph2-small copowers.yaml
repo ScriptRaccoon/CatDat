@@ -1,0 +1,14 @@
+id: ℵ₂-small copowers
+relation: has
+description: |-
+  A category has <i>$\aleph_2$-small copowers</i> if for every object $X$ and every set $I$ with cardinality $< \aleph_2$, the copower $I \otimes X$ exists. In particular, this includes copowers of the form $\aleph_1 \otimes X$. Here, $\aleph_1$ denotes the first uncountable cardinal, and $\aleph_2$ the next larger cardinal.
+  Notice that finite copowers are just $\aleph_0$-small copowers, and countable copowers are $\aleph_1$-small copowers.
+nlab_link: https://ncatlab.org/nlab/show/copower
+dual_property: ℵ₂-small powers
+invariant_under_equivalences: true
+
+related_properties:
+  - copowers
+  - countable copowers
+  - finite copowers
+  - ℵ₂-small coproducts

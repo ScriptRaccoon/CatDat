@@ -1,11 +1,27 @@
 # results on products and powers
 
-- id: products_consequences
+- id: products_include_powers
   assumptions:
     - products
   conclusions:
-    - countable products
     - powers
+  reason: This is trivial.
+  is_equivalence: false
+
+- id: products_include_aleph2-small_products
+  assumptions:
+    - products
+  conclusions:
+    - ℵ₂-small products
+  reason: This is trivial.
+  is_equivalence: false
+
+- id: aleph2-small_products_consequences
+  assumptions:
+    - ℵ₂-small products
+  conclusions:
+    - ℵ₂-small powers
+    - countable products
   reason: This is trivial.
   is_equivalence: false
 
@@ -70,9 +86,17 @@
   reason: This is trivial.
   is_equivalence: false
 
-- id: powers_include_countable_powers
+- id: powers_include_aleph2-small_powers
   assumptions:
     - powers
+  conclusions:
+    - ℵ₂-small powers
+  reason: This is trivial.
+  is_equivalence: false
+
+- id: aleph2-small-powers_include_countable_powers
+  assumptions:
+    - ℵ₂-small powers
   conclusions:
     - countable powers
   reason: This is trivial.

@@ -5,6 +5,7 @@ dual_property: countable coproducts
 invariant_under_equivalences: true
 
 related_properties:
-  - countable powers
-  - finite products
   - products
+  - finite products
+  - countable powers
+  - ℵ₂-small products

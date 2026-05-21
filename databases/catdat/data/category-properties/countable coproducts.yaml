@@ -6,5 +6,6 @@ invariant_under_equivalences: true
 
 related_properties:
   - coproducts
-  - countable copowers
   - finite coproducts
+  - countable copowers
+  - ℵ₂-small coproducts

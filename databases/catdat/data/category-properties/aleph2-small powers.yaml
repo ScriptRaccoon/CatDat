@@ -1,0 +1,14 @@
+id: ℵ₂-small powers
+relation: has
+description: |-
+  A category has <i>$\aleph_2$-small powers</i> if for every object $X$ and every set $I$ of cardinality $< \aleph_2$, the power $X^I$ exists. In particular, this includes powers of the form $X^{\aleph_1}$. Here, $\aleph_1$ denotes the first uncountable cardinal, and $\aleph_2$ the next larger cardinal.
+  Notice that finite powers are just $\aleph_0$-small powers, and countable powers are $\aleph_1$-small powers.
+nlab_link: https://ncatlab.org/nlab/show/powering
+dual_property: ℵ₂-small copowers
+invariant_under_equivalences: true
+
+related_properties:
+  - powers
+  - countable powers
+  - finite powers
+  - ℵ₂-small products

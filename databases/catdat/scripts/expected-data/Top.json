@@ -75,6 +75,10 @@
 	"filtered-colimit-stable monomorphisms": true,
 	"quotients of congruences": true,
 	"coquotients of cocongruences": true,
+	"ℵ₂-small products": true,
+	"ℵ₂-small coproducts": true,
+	"ℵ₂-small powers": true,
+	"ℵ₂-small copowers": true,
 
 	"abelian": false,
 	"additive": false,

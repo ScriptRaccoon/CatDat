@@ -110,6 +110,10 @@
 	"effective cocongruences": true,
 	"Barr-coexact": true,
 	"Barr-exact": true,
+	"ℵ₂-small products": true,
+	"ℵ₂-small coproducts": true,
+	"ℵ₂-small powers": true,
+	"ℵ₂-small copowers": true,
 
 	"cartesian closed": false,
 	"locally cartesian closed": false,
