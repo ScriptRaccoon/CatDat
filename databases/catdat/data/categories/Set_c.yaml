@@ -72,9 +72,6 @@ unsatisfied_properties:
   - property: ℵ₂-small copowers
     reason: 'Assume that the copower $X \coloneqq I \otimes 1$ exists in $\Set_\c$. We will prove that $I$ is countable; in particular, $\aleph_1 \otimes 1$ does not exist. The copower is a countable set $X$ with a universal family of elements $(x_i)_{i \in I}$. For every $i \in I$ there is a map $X \to \{0,1\}$ defined by $x_i \mapsto 1$ and $x_j \mapsto 0$ for $j \neq i$. In particular, $x_i \neq x_j$ whenever $i \neq j$. Thus, $x : I \to X$ is an injective map, which proves that $I$ is countable.'
 
-  - property: ℵ₁-filtered colimits
-    reason: 'Fix an uncountable set $X$, let $P_\c(X)$ be the poset of countable subsets of $X$, which is $\aleph_1$-filtered, and consider the functor $P_\c(X) \to \Set_\c$ taking a subset $Y \subseteq X$ to $Y$. The colimit of this diagram in $\Set$ is given by $X$ itself, so if $X_c$ were a colimit in $\Set_\c$, then $\Hom(X_c, \{0,1\}) \cong \Hom(X, \{0,1\})$. But the former has cardinality at most $2^{\aleph_0}$ and the latter has cardinality $2^{\card(X)}$, so we have obtained a contradiction if we pick $X$ large enough (e.g. $\card(X)=2^{\aleph_0}$).'
-
 special_objects:
   initial object:
     description: empty set
