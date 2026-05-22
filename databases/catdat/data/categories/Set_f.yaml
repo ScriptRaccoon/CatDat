@@ -57,9 +57,6 @@ unsatisfied_properties:
   - property: skeletal
     reason: This is trivial.
 
-  - property: essentially small
-    reason: This is obvious.
-
   - property: locally finite
     reason: If $X$ is an infinite set, there are infinitely many maps $1 \to X$. They are injective and hence finite-to-one.
 
@@ -77,6 +74,9 @@ unsatisfied_properties:
 
   - property: sequential limits
     reason: Consider the set $[n] \coloneqq \{0,\dotsc,n\}$ for $n \in \IN$. The forgetful functor to $\Set$ is representable (by the singleton set), hence preserves all limits. Thus, if the diagram of truncation maps $\cdots \twoheadrightarrow [2] \twoheadrightarrow [1] \twoheadrightarrow [0]$ has a limit in $\Set_\f$, its underlying set is isomorphic to the limit taken in $\Set$, which is $\IN \cup \{\infty\}$. But there is no finite-to-one map $\IN \cup \{\infty\} \to [0]$.
+
+  - property: coaccessible
+    reason: 'Assume that $\Set_\f$ is $\lambda$-coaccessible for some regular cardinal. Then there is an infinite cardinal $\kappa$ such that every $X \in \Set_\f$ is a $\lambda$-cofiltered limit of sets of cardinality $\leq \kappa$. In particular, since every $\lambda$-cofiltered category is non-empty, there is some set $Y$ of cardinality $\leq \kappa$ that admits a morphism $f : X \to Y$ in $\Set_f$. Since $f$ has finite fibers, this implies $\card(X) \leq \card(Y) \cdot \aleph_0 \leq \kappa$. Since $X$ was an arbitrary set, this is a contradiction.'
 
 special_objects:
   initial object:
