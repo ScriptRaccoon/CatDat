@@ -16,6 +16,7 @@ related_categories:
   - Set_c
   - Set_f
   - SetxSet
+  - Setne
 
 satisfied_properties:
   - property: locally small
