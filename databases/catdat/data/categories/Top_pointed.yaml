@@ -76,8 +76,8 @@ unsatisfied_properties:
   - property: regular
     reason: See Example 3.14 at the <a href="https://ncatlab.org/nlab/show/regular+category" target="_blank">nLab</a>. The proof also works for pointed spaces (resp. posets) by using the base points $a$ and $0$.
 
-  - property: locally presentable
-    reason: In fact, it does not have any small dense subcategory by <a href="https://math.stackexchange.com/questions/4097315/" target="_blank">MSE/4097315</a>. The proof easily adapts to pointed spaces.
+  - property: accessible
+    reason: In fact, it does not have any small colimit-dense subcategory by <a href="https://math.stackexchange.com/questions/4097315/" target="_blank">MSE/4097315</a>. The proof easily adapts to pointed spaces.
 
   - property: cartesian filtered colimits
     reason: 'The functor $\IQ \times - : \Top_* \to \Top_*$ does not preserve colimits, see <a href="https://math.stackexchange.com/questions/2969372" target="_blank">MSE/2969372</a>. The counterexample also works for pointed spaces.'

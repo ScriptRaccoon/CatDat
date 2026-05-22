@@ -65,8 +65,8 @@ unsatisfied_properties:
   - property: regular
     reason: See Example 3.14 at the <a href="https://ncatlab.org/nlab/show/regular+category" target="_blank">nLab</a>.
 
-  - property: locally presentable
-    reason: In fact, it does not have any small dense subcategory by <a href="https://math.stackexchange.com/questions/4097315/" target="_blank">MSE/4097315</a>. For a related result, see <a href="https://mathoverflow.net/questions/288648" target="_blank">MO/288648</a>.
+  - property: accessible
+    reason: In fact, it does not have any small colimit-dense subcategory by <a href="https://math.stackexchange.com/questions/4097315/" target="_blank">MSE/4097315</a>. For a related result, see <a href="https://mathoverflow.net/questions/288648" target="_blank">MO/288648</a>.
 
   - property: Malcev
     reason: This is clear since <a href="/category/Set">$\Set$</a> is not Malcev and can be interpreted as the subcategory of discrete spaces.

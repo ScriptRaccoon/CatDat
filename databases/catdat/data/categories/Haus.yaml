@@ -74,6 +74,9 @@ unsatisfied_properties:
       $$(-\infty, -1/n] \cup [1/n, \infty) \hookrightarrow \IR$$
       with itself. That is, $X_n$ is the union of two lines $\IR \times \{1\}$ and $\IR \times \{2\}$ where we identify $(x,1) \equiv (x,2)$ when $|x| \geq 1/n$. Then $X_n$ is Hausdorff, and there is a canonical surjective continuous map $X_n \to X_{n+1}$. The colimit in $\Top$ is the union of two lines where we identify $(x,1) \equiv (x,2)$ when $|x| \geq 1/n$ for some $n$, i.e. when $x \neq 0$. This is the line with the double origin, which is not Hausdorff. Its Hausdorff reflection is the line $\IR$ where all points of both lines are identified, and it provides the colimit in $\Haus$. Now, the injective continuous maps $\{1,2\} \to X_n$, $i \mapsto (0,i)$ (where $\{1,2\}$ is discrete) become the constant map $0 : \{1,2\} \to \IR$ in the colimit, which is not a monomorphism.
 
+  - property: accessible
+    reason: In fact, it does not have any small colimit-dense subcategory by <a href="https://math.stackexchange.com/questions/4097315/" target="_blank">MSE/4097315</a>.
+
 special_objects:
   initial object:
     description: empty space
