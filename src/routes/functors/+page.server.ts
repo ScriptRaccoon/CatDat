@@ -3,8 +3,6 @@ import { query } from '$lib/server/db.catdat'
 import { error } from '@sveltejs/kit'
 import sql from 'sql-template-tag'
 
-export const prerender = true
-
 export const load = async () => {
 	const { rows: functors, err } = query<EntityShort>(
 		sql`SELECT id, name FROM functors ORDER BY lower(name)`,

@@ -38,11 +38,11 @@ export function display_implication(
 	return {
 		id: implication.id,
 		is_equivalence: Boolean(implication.is_equivalence),
-		reason: implication.reason,
 		is_deduced: Boolean(implication.is_deduced),
+		dualized_from: implication.dualized_from,
+		reason: implication.reason,
 		assumptions: JSON.parse(implication.assumptions),
 		conclusions: JSON.parse(implication.conclusions),
-		dualized_from: implication.dualized_from,
 	}
 }
 
@@ -52,11 +52,12 @@ export function display_functor_implication(
 	return {
 		id: implication.id,
 		is_equivalence: Boolean(implication.is_equivalence),
+		is_deduced: Boolean(implication.is_deduced),
+		dualized_from: implication.dualized_from,
 		reason: implication.reason,
 		assumptions: JSON.parse(implication.assumptions),
 		source_assumptions: JSON.parse(implication.source_assumptions),
 		target_assumptions: JSON.parse(implication.target_assumptions),
 		conclusions: JSON.parse(implication.conclusions),
-		dualized_from: implication.dualized_from,
 	}
 }

@@ -39,10 +39,11 @@ export const load = async (event) => {
 			SELECT
 				id,
 				is_equivalence,
+				is_deduced,
+				dualized_from,
 				reason,
 				assumptions,
-				conclusions,
-				is_deduced
+				conclusions
 			FROM category_implications_view
 			WHERE
 				EXISTS (

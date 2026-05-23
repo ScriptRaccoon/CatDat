@@ -5,13 +5,13 @@ import { error } from '@sveltejs/kit'
 import type { FunctorImplicationDB } from '$lib/commons/types'
 import { display_functor_implication } from '$lib/server/transforms'
 
-export const prerender = true
-
 export const load = async () => {
 	const { rows, err } = query<FunctorImplicationDB>(sql`
         SELECT
             id,
             is_equivalence,
+            is_deduced,
+            dualized_from,
             reason,
             assumptions,
             conclusions,

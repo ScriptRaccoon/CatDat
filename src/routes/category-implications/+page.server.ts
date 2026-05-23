@@ -10,10 +10,11 @@ export const load = async () => {
 		SELECT
 			id,
 			is_equivalence,
+			is_deduced,
+			dualized_from,
 			reason,
 			assumptions,
-			conclusions,
-			is_deduced
+			conclusions
 		FROM category_implications_view
 		ORDER BY lower(assumptions) || ' ' || lower(conclusions)
 	`)

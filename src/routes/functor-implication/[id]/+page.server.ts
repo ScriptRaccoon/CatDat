@@ -5,8 +5,6 @@ import { error } from '@sveltejs/kit'
 import type { FunctorImplicationDB, EntityShort } from '$lib/commons/types'
 import { display_functor_implication } from '$lib/server/transforms'
 
-export const prerender = true
-
 export const load = async (event) => {
 	const id = event.params.id
 
@@ -15,12 +13,13 @@ export const load = async (event) => {
             SELECT
                 id,
                 is_equivalence,
+                is_deduced,
+                dualized_from,
                 reason,
                 assumptions,
                 conclusions,
                 source_assumptions,
-                target_assumptions,
-                dualized_from
+                target_assumptions
             FROM functor_implications_view
             WHERE id = ${id}
         `,

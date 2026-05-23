@@ -35,12 +35,13 @@ export const load = async (event) => {
             SELECT
                 id,
                 is_equivalence,
+                is_deduced,
+                dualized_from,
                 reason,
                 assumptions,
                 source_assumptions,
                 target_assumptions,
-                conclusions,
-                dualized_from
+                conclusions
             FROM functor_implications_view
             WHERE
                 EXISTS (

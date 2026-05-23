@@ -13,11 +13,11 @@ export const load = async (event) => {
 			SELECT
 				id,
 				is_equivalence,
+				is_deduced,
+				dualized_from,
 				reason,
 				assumptions,
-				conclusions,
-				is_deduced,
-				dualized_from
+				conclusions
 			FROM category_implications_view
 			WHERE id = ${id}
 		`,

@@ -28,26 +28,6 @@ export type TagObject = { tag: string }
 
 export type CommentObject = { id: number; comment: string }
 
-export type CategoryImplicationDB = {
-	id: string
-	is_equivalence: 0 | 1
-	reason: string
-	assumptions: string
-	conclusions: string
-	is_deduced: 0 | 1
-	dualized_from?: string | null
-}
-
-export type CategoryImplicationDisplay = Replace<
-	CategoryImplicationDB,
-	{
-		is_equivalence: boolean
-		is_deduced: boolean
-		assumptions: string[]
-		conclusions: string[]
-	}
->
-
 // used for both categories and functors
 export type PropertyDB = {
 	id: string
@@ -104,24 +84,46 @@ export type FunctorDB = {
 	nlab_link: string | null
 }
 
+export type CategoryImplicationDB = {
+	id: string
+	is_equivalence: 0 | 1
+	is_deduced: 0 | 1
+	dualized_from: string | null
+	reason: string
+	assumptions: string
+	conclusions: string
+}
+
 export type FunctorImplicationDB = {
 	id: string
 	is_equivalence: 0 | 1
+	is_deduced: 0 | 1
+	dualized_from: string | null
 	reason: string
 	assumptions: string
 	conclusions: string
 	source_assumptions: string
 	target_assumptions: string
-	dualized_from?: string | null
 }
 
 export type FunctorImplicationDisplay = Replace<
 	FunctorImplicationDB,
 	{
 		is_equivalence: boolean
+		is_deduced: boolean
 		assumptions: string[]
 		conclusions: string[]
 		source_assumptions: string[]
 		target_assumptions: string[]
+	}
+>
+
+export type CategoryImplicationDisplay = Replace<
+	CategoryImplicationDB,
+	{
+		is_equivalence: boolean
+		is_deduced: boolean
+		assumptions: string[]
+		conclusions: string[]
 	}
 >
