@@ -1,5 +1,5 @@
 <script>
-	import FunctorImplicationList from '$components/FunctorImplicationList.svelte'
+	import ImplicationList from '$components/ImplicationList.svelte'
 	import MetaData from '$components/MetaData.svelte'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
 	import { pluralize } from '$lib/client/utils'
@@ -21,6 +21,6 @@
 	})}
 </p>
 
-<FunctorImplicationList implications={data.implications} />
+<ImplicationList implications={data.implications} type="functor" />
 
 <SuggestionForm />

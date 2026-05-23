@@ -1,5 +1,5 @@
 <script lang="ts">
-	import FunctorImplicationList from '$components/FunctorImplicationList.svelte'
+	import ImplicationList from '$components/ImplicationList.svelte'
 	import EntityList from '$components/EntityList.svelte'
 	import MetaData from '$components/MetaData.svelte'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
@@ -47,9 +47,10 @@
 
 <h3 class="sticky-heading">Relevant implications</h3>
 
-<FunctorImplicationList
+<ImplicationList
 	implications={data.relevant_implications}
 	highlighted_property={data.property.id}
+	type="functor"
 />
 
 <h3 class="sticky-heading">Examples</h3>

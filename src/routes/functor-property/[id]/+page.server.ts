@@ -1,8 +1,8 @@
 import { decode_property_ID } from '$lib/commons/property.url'
-import type { FunctorImplicationDB, EntityShort, PropertyDB } from '$lib/commons/types'
+import type { ImplicationDB, EntityShort, PropertyDB } from '$lib/commons/types'
 import { batch } from '$lib/server/db.catdat'
 import { render_nested_formulas } from '$lib/server/formulas'
-import { display_functor_implication, display_property } from '$lib/server/transforms'
+import { display_implication, display_property } from '$lib/server/transforms'
 import { error } from '@sveltejs/kit'
 import sql from 'sql-template-tag'
 
@@ -12,7 +12,7 @@ export const load = async (event) => {
 	const { results, err } = batch<
 		[
 			PropertyDB,
-			FunctorImplicationDB,
+			ImplicationDB,
 			EntityShort & { is_satisfied: 0 | 1 | null },
 			EntityShort,
 		]
@@ -87,9 +87,7 @@ export const load = async (event) => {
 
 	const property = display_property(properties[0])
 
-	const relevant_implications = relevant_implications_db.map(
-		display_functor_implication,
-	)
+	const relevant_implications = relevant_implications_db.map(display_implication)
 
 	const examples = known_functors.filter((f) => f.is_satisfied === 1)
 	const counterexamples = known_functors.filter((f) => f.is_satisfied === 0)

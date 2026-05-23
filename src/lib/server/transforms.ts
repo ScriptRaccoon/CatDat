@@ -1,15 +1,12 @@
 import type {
-	FunctorImplicationDB,
-	FunctorImplicationDisplay,
-	CategoryImplicationDB,
-	CategoryImplicationDisplay,
 	PropertyDB,
 	PropertyDisplay,
 	PropertyAssignmentDB,
 	PropertyAssignmentDisplay,
+	ImplicationDB,
+	ImplicationDisplay,
 } from '$lib/commons/types'
 
-// this function is used for both categories and functors
 export function display_property(property: PropertyDB): PropertyDisplay {
 	return {
 		id: property.id,
@@ -32,9 +29,7 @@ export function display_property_assignment(
 	}
 }
 
-export function display_implication(
-	implication: CategoryImplicationDB,
-): CategoryImplicationDisplay {
+export function display_implication(implication: ImplicationDB): ImplicationDisplay {
 	return {
 		id: implication.id,
 		is_equivalence: Boolean(implication.is_equivalence),
@@ -42,22 +37,12 @@ export function display_implication(
 		dualized_from: implication.dualized_from,
 		reason: implication.reason,
 		assumptions: JSON.parse(implication.assumptions),
-		conclusions: JSON.parse(implication.conclusions),
-	}
-}
-
-export function display_functor_implication(
-	implication: FunctorImplicationDB,
-): FunctorImplicationDisplay {
-	return {
-		id: implication.id,
-		is_equivalence: Boolean(implication.is_equivalence),
-		is_deduced: Boolean(implication.is_deduced),
-		dualized_from: implication.dualized_from,
-		reason: implication.reason,
-		assumptions: JSON.parse(implication.assumptions),
-		source_assumptions: JSON.parse(implication.source_assumptions),
-		target_assumptions: JSON.parse(implication.target_assumptions),
+		source_assumptions: implication.source_assumptions
+			? JSON.parse(implication.source_assumptions)
+			: undefined,
+		target_assumptions: implication.target_assumptions
+			? JSON.parse(implication.target_assumptions)
+			: undefined,
 		conclusions: JSON.parse(implication.conclusions),
 	}
 }

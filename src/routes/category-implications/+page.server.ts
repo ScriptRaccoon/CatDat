@@ -2,11 +2,11 @@ import { render_nested_formulas } from '$lib/server/formulas'
 import { query } from '$lib/server/db.catdat'
 import sql from 'sql-template-tag'
 import { error } from '@sveltejs/kit'
-import type { CategoryImplicationDB } from '$lib/commons/types'
+import type { ImplicationDB } from '$lib/commons/types'
 import { display_implication } from '$lib/server/transforms'
 
 export const load = async () => {
-	const { rows, err } = query<CategoryImplicationDB>(sql`
+	const { rows, err } = query<ImplicationDB>(sql`
 		SELECT
 			id,
 			is_equivalence,

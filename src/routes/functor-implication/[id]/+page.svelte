@@ -25,7 +25,7 @@
 	{/each}
 </p>
 
-{#if data.implication.source_assumptions.length}
+{#if data.implication.source_assumptions?.length}
 	<p>
 		<strong>Assumptions on source category:</strong>
 
@@ -38,7 +38,7 @@
 	</p>
 {/if}
 
-{#if data.implication.target_assumptions.length}
+{#if data.implication.target_assumptions?.length}
 	<p>
 		<strong>Assumptions on target category:</strong>
 

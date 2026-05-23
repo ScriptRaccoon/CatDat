@@ -1,7 +1,7 @@
 <script lang="ts">
 	import EntityList from '$components/EntityList.svelte'
 	import HelpMessage from '$components/HelpMessage.svelte'
-	import CategoryImplicationList from '$components/CategoryImplicationList.svelte'
+	import ImplicationList from '$components/ImplicationList.svelte'
 	import MetaData from '$components/MetaData.svelte'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
 	import { pluralize } from '$lib/client/utils'
@@ -65,9 +65,10 @@
 
 <h3 class="sticky-heading">Relevant implications</h3>
 
-<CategoryImplicationList
+<ImplicationList
 	implications={data.relevant_implications}
 	highlighted_property={data.property.id}
+	type="category"
 />
 
 <h3 class="sticky-heading">Examples</h3>

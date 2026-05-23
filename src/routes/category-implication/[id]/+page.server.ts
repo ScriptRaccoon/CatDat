@@ -1,4 +1,4 @@
-import type { EntityShort, CategoryImplicationDB } from '$lib/commons/types'
+import type { EntityShort, ImplicationDB } from '$lib/commons/types'
 import { batch } from '$lib/server/db.catdat'
 import { render_nested_formulas } from '$lib/server/formulas'
 import { display_implication } from '$lib/server/transforms'
@@ -8,7 +8,7 @@ import sql from 'sql-template-tag'
 export const load = async (event) => {
 	const id = event.params.id
 
-	const { results, err } = batch<[CategoryImplicationDB, EntityShort]>([
+	const { results, err } = batch<[ImplicationDB, EntityShort]>([
 		sql`
 			SELECT
 				id,
