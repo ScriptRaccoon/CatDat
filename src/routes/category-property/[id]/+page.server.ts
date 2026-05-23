@@ -5,7 +5,7 @@ import { batch } from '$lib/server/db.catdat'
 import sql from 'sql-template-tag'
 import type { EntityShort, PropertyDB } from '$lib/commons/types'
 import type { CategoryImplicationDB } from '$lib/commons/types'
-import { display_implication, display_property } from '$lib/server/utils'
+import { display_implication, display_property } from '$lib/server/transforms'
 
 export const load = async (event) => {
 	const id = decode_property_ID(event.params.id)

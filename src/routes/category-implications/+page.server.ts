@@ -3,7 +3,7 @@ import { query } from '$lib/server/db.catdat'
 import sql from 'sql-template-tag'
 import { error } from '@sveltejs/kit'
 import type { CategoryImplicationDB } from '$lib/commons/types'
-import { display_implication } from '$lib/server/utils'
+import { display_implication } from '$lib/server/transforms'
 
 export const load = async () => {
 	const { rows, err } = query<CategoryImplicationDB>(sql`

@@ -2,7 +2,7 @@ import { decode_property_ID } from '$lib/commons/property.url'
 import type { FunctorImplicationDB, EntityShort, PropertyDB } from '$lib/commons/types'
 import { batch } from '$lib/server/db.catdat'
 import { render_nested_formulas } from '$lib/server/formulas'
-import { display_functor_implication, display_property } from '$lib/server/utils'
+import { display_functor_implication, display_property } from '$lib/server/transforms'
 import { error } from '@sveltejs/kit'
 import sql from 'sql-template-tag'
 

@@ -80,11 +80,6 @@ export type PropertyAssignmentDisplay = {
 	is_deduced: boolean
 }
 
-export type DescriptionWithReason = {
-	description: string
-	reason: string | null
-}
-
 export type SpecialObject = {
 	type: string
 	description: string

@@ -13,7 +13,7 @@ import type {
 	TagObject,
 	EntityShort,
 } from '$lib/commons/types'
-import { display_property_assignment } from '$lib/server/utils'
+import { display_property_assignment } from '$lib/server/transforms'
 
 export const load = async (event) => {
 	const id = event.params.id

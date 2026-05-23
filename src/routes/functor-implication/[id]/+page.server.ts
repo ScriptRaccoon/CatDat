@@ -3,7 +3,7 @@ import { batch } from '$lib/server/db.catdat'
 import sql from 'sql-template-tag'
 import { error } from '@sveltejs/kit'
 import type { FunctorImplicationDB, EntityShort } from '$lib/commons/types'
-import { display_functor_implication } from '$lib/server/utils'
+import { display_functor_implication } from '$lib/server/transforms'
 
 export const prerender = true
 
