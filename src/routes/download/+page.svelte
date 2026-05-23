@@ -122,6 +122,12 @@ GROUP BY p.id
 ORDER BY undecided_categories DESC LIMIT 10;
 </pre>
 
+<pre>-- Properties which cannot be decided for a given category
+SELECT category_id, property_id, reason
+FROM category_property_assignments
+WHERE is_satisfied IS NULL;
+</pre>
+
 <style>
 	pre {
 		font-size: 0.875rem;

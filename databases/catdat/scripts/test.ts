@@ -150,6 +150,7 @@ function test_decided_entities(entities: string[], type: 'category' | 'functor')
  * Tests if selected categories or functors behave as expected:
  * All of their properties in the database have to match those in the
  * respective JSON files in the subfolder "expected-data".
+ * We exclude undecidable properties here.
  */
 function test_properties_of_selected_entities(
 	expected: Record<string, Record<string, boolean>>,
@@ -157,7 +158,7 @@ function test_properties_of_selected_entities(
 ) {
 	const property_query = db.prepare(
 		`SELECT property_id, is_satisfied FROM ${type}_property_assignments
-		WHERE ${type}_id = ?`,
+		WHERE ${type}_id = ? AND is_satisfied IS NOT NULL`,
 	)
 
 	for (const entity_id in expected) {

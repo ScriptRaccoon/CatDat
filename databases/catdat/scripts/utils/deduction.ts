@@ -74,7 +74,8 @@ export function get_properties_dict(db: Database, type: 'category' | 'functor') 
 
 /**
  * Returns a dictionary with all assigned properties of a list of entities
- * (categories or functors), grouped by id and value (satisfied / unsatisfied).
+ * (categories or functors), grouped by id and
+ * value (satisfied / unsatisfied / undecidable).
  */
 export function get_property_assignments(
 	db: Database,
@@ -86,18 +87,32 @@ export function get_property_assignments(
 			`SELECT property_id, ${type}_id as entity_id, is_satisfied
 			FROM ${type}_property_assignments`,
 		)
-		.all() as { property_id: string; entity_id: string; is_satisfied: 0 | 1 }[]
+		.all() as { property_id: string; entity_id: string; is_satisfied: 0 | 1 | null }[]
 
-	const grouped: Record<string, { satisfied: Set<string>; unsatisfied: Set<string> }> =
-		{}
+	const grouped: Record<
+		string,
+		{ satisfied: Set<string>; unsatisfied: Set<string>; undecidable: Set<string> }
+	> = {}
 
 	for (const entity of entities) {
-		grouped[entity.id] = { satisfied: new Set(), unsatisfied: new Set() }
+		grouped[entity.id] = {
+			satisfied: new Set(),
+			unsatisfied: new Set(),
+			undecidable: new Set(),
+		}
 	}
 
 	for (const row of rows) {
 		const { property_id, entity_id, is_satisfied } = row
-		grouped[entity_id][is_satisfied ? 'satisfied' : 'unsatisfied'].add(property_id)
+		let group_key: 'satisfied' | 'unsatisfied' | 'undecidable'
+		if (is_satisfied === 1) {
+			group_key = 'satisfied'
+		} else if (is_satisfied === 0) {
+			group_key = 'unsatisfied'
+		} else {
+			group_key = 'undecidable'
+		}
+		grouped[entity_id][group_key].add(property_id)
 	}
 
 	return grouped
@@ -106,6 +121,7 @@ export function get_property_assignments(
 /**
  * Returns a dictionary with all assigned properties of entities,
  * grouped by entity, value (satisfied / unsatisfied), and deduced status.
+ * We exclude undecidable properties here.
  */
 export function get_property_assignments_by_deduction(
 	db: Database,
@@ -115,7 +131,7 @@ export function get_property_assignments_by_deduction(
 	const rows = db
 		.prepare(
 			`SELECT property_id, ${type}_id as entity_id, is_satisfied, is_deduced
-			FROM ${type}_property_assignments`,
+			FROM ${type}_property_assignments WHERE is_satisfied IS NOT NULL`,
 		)
 		.all() as {
 		property_id: string

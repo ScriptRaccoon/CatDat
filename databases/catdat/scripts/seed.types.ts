@@ -28,13 +28,10 @@ export type CategoryYaml = {
 	related_categories: string[]
 	satisfied_properties: PropertyEntry[]
 	unsatisfied_properties: PropertyEntry[]
+	undecidable_properties?: PropertyEntry[]
 	special_objects: Record<string, ObjectEntry | undefined>
 	special_morphisms: Record<string, MorphismEntry | undefined>
 	comments?: string[]
-	category_property_comments?: {
-		property: string
-		comment: string
-	}[]
 }
 
 type PropertyEntry = {

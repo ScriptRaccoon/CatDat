@@ -1,7 +1,11 @@
 import type {
+	CategoryProperty,
+	CategoryPropertyDB,
 	FunctorImplicationDB,
 	FunctorImplicationDisplay,
 	FunctorProperty,
+	FunctorPropertyAssignment,
+	FunctorPropertyAssignmentDB,
 	FunctorPropertyDB,
 	ImplicationDB,
 	ImplicationDisplay,
@@ -45,6 +49,17 @@ export function display_property(property: PropertyDB): PropertyDisplay {
 	}
 }
 
+export function display_category_property_assignment(
+	property: CategoryPropertyDB,
+): CategoryProperty {
+	return {
+		id: property.id,
+		reason: property.reason,
+		is_deduced: Boolean(property.is_deduced),
+		relation: property.relation,
+	}
+}
+
 export function display_functor_property(property: FunctorPropertyDB): FunctorProperty {
 	return {
 		id: property.id,
@@ -53,6 +68,17 @@ export function display_functor_property(property: FunctorPropertyDB): FunctorPr
 		dual_property_id: property.dual_property_id,
 		nlab_link: property.nlab_link,
 		invariant_under_equivalences: Boolean(property.invariant_under_equivalences),
+	}
+}
+
+export function display_functor_property_assignment(
+	property: FunctorPropertyAssignmentDB,
+): FunctorPropertyAssignment {
+	return {
+		id: property.id,
+		reason: property.reason,
+		is_deduced: Boolean(property.is_deduced),
+		relation: property.relation,
 	}
 }
 

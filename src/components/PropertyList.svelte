@@ -9,17 +9,16 @@
 			reason?: string | null
 		}[]
 		type: 'category' | 'functor'
-		reason_heading?: string
 	}
 
-	let { properties, type, reason_heading }: Props = $props()
+	let { properties, type }: Props = $props()
 </script>
 
 {#if properties.length}
 	<ul>
 		{#each properties as { id, relation, reason }}
 			<li>
-				<TextWithReason {reason} heading={reason_heading}>
+				<TextWithReason {reason}>
 					{relation}
 					<a href={get_property_url(id, type)}>{id}</a>
 				</TextWithReason>

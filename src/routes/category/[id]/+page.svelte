@@ -157,12 +157,25 @@
 		</p>
 	{/if}
 
-	<PropertyList
-		properties={data.unknown_properties}
-		reason_heading="Comment"
-		type="category"
-	/>
+	<PropertyList properties={data.unknown_properties} type="category" />
 </section>
+
+{#if data.undecidable_properties.length > 0}
+	<section>
+		<h3>Undecidable properties</h3>
+
+		{#if data.undecidable_properties.length > 0}
+			<p class="hint">
+				{pluralize(data.undecidable_properties.length, {
+					one: 'There is {count} property for which it cannot be decided if it is satisfied or not.',
+					other: 'There are {count} properties for which it cannot be decided if they are satisfied or not.',
+				})}
+			</p>
+		{/if}
+
+		<PropertyList properties={data.undecidable_properties} type="category" />
+	</section>
+{/if}
 
 <section>
 	<h3>Special objects</h3>

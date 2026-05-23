@@ -7,10 +7,9 @@
 	type Props = {
 		children: Snippet
 		reason?: string | null
-		heading?: string
 	}
 
-	let { children, reason, heading = 'Reason' }: Props = $props()
+	let { children, reason }: Props = $props()
 
 	const id = $props.id()
 
@@ -18,7 +17,7 @@
 		e.stopPropagation()
 		show_popup({
 			id,
-			heading,
+			heading: 'Reason',
 			text: reason!,
 		})
 	}

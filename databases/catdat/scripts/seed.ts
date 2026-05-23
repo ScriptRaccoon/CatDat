@@ -73,7 +73,6 @@ function clear_all_data() {
 			db.prepare(`DELETE FROM special_objects`).run()
 			db.prepare(`DELETE FROM special_object_types`).run()
 
-			db.prepare(`DELETE FROM category_property_comments`).run()
 			db.prepare(`DELETE FROM category_property_assignments`).run()
 
 			db.prepare(`DELETE FROM category_comments`).run()
@@ -187,11 +186,6 @@ function seed_categories() {
 		) VALUES (?, ?, ?, ?, ?)`,
 	)
 
-	const property_comment_insert = db.prepare(`
-		INSERT INTO category_property_comments (
-			category_id, property_id, comment
-		) VALUES (?, ?, ?)`)
-
 	function insert_category(category: CategoryYaml) {
 		category_insert.run(
 			category.id,
@@ -251,11 +245,13 @@ function seed_categories() {
 			)
 		}
 
-		for (const comment_obj of category.category_property_comments ?? []) {
-			property_comment_insert.run(
+		for (const entry of category.undecidable_properties ?? []) {
+			property_assignment_insert.run(
 				category.id,
-				comment_obj.property,
-				comment_obj.comment,
+				entry.property,
+				null,
+				entry.reason,
+				entry.check_redundancy === false ? 0 : 1,
 			)
 		}
 	}

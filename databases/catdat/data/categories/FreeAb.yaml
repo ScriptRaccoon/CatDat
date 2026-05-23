@@ -57,9 +57,9 @@ unsatisfied_properties:
   - property: ℵ₁-filtered colimits
     reason: It is shown in <a href="https://mathoverflow.net/questions/511426" target="_blank">MO/511426</a> that the $\aleph_1$-filtered diagram of countable subgroups of $\IZ^{\IN}$ does not have a colimit in $\FreeAb$.
 
-category_property_comments:
+undecidable_properties:
   - property: accessible
-    comment: The question if this category is accessible is undecidable in ZFC. See <a href="https://math.stackexchange.com/questions/720885" target="_blank">MSE/720885</a>.
+    reason: The question if this category is accessible is undecidable in ZFC. See <a href="https://math.stackexchange.com/questions/720885" target="_blank">MSE/720885</a>.
 
 special_objects:
   initial object:

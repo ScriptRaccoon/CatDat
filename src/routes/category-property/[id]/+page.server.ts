@@ -15,7 +15,7 @@ export const load = async (event) => {
 			PropertyDB,
 			{ id: string },
 			ImplicationDB,
-			CategoryShort & { is_satisfied: 0 | 1 },
+			CategoryShort & { is_satisfied: 0 | 1 | null },
 			CategoryShort,
 		]
 	>([
@@ -95,8 +95,9 @@ export const load = async (event) => {
 
 	const related_properties = related.map(({ id }) => id)
 
-	const examples = known_categories.filter((c) => c.is_satisfied)
-	const counterexamples = known_categories.filter((c) => !c.is_satisfied)
+	const examples = known_categories.filter((c) => c.is_satisfied === 1)
+	const counterexamples = known_categories.filter((c) => c.is_satisfied === 0)
+	const undecidable_categories = known_categories.filter((c) => c.is_satisfied === null)
 
 	const relevant_implications = relevant_implications_db.map(display_implication)
 
@@ -112,6 +113,7 @@ export const load = async (event) => {
 		examples,
 		counterexamples,
 		unknown_categories,
+		undecidable_categories,
 		relevant_implications,
 	})
 }

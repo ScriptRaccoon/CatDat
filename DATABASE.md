@@ -33,7 +33,6 @@ Further tables are:
 - `special_morphisms`
 - `related_category_properties`
 - `category_comments`
-- `category_property_comments`
 
 For functors there are similar tables, such as:
 

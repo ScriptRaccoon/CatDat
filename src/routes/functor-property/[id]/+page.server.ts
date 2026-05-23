@@ -18,7 +18,7 @@ export const load = async (event) => {
 		[
 			FunctorPropertyDB,
 			FunctorImplicationDB,
-			FunctorShort & { is_satisfied: 0 | 1 },
+			FunctorShort & { is_satisfied: 0 | 1 | null },
 			FunctorShort,
 		]
 	>([
@@ -94,8 +94,10 @@ export const load = async (event) => {
 	const relevant_implications: FunctorImplicationDisplay[] =
 		relevant_implications_db.map(display_functor_implication)
 
-	const examples = known_functors.filter((f) => f.is_satisfied)
-	const counterexamples = known_functors.filter((f) => !f.is_satisfied)
+	const examples = known_functors.filter((f) => f.is_satisfied === 1)
+	const counterexamples = known_functors.filter((f) => f.is_satisfied === 0)
+
+	// TODO: also render undecidable functors in case they come up
 
 	return render_nested_formulas({
 		property,

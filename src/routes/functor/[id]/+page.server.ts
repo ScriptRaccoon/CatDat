@@ -6,6 +6,7 @@ import type {
 } from '$lib/commons/types'
 import { batch } from '$lib/server/db.catdat'
 import { render_nested_formulas } from '$lib/server/formulas'
+import { display_functor_property_assignment } from '$lib/server/utils.js'
 import { error } from '@sveltejs/kit'
 import sql from 'sql-template-tag'
 
@@ -17,7 +18,7 @@ export const load = async (event) => {
 	const { results, err } = batch<
 		[
 			FunctorDB,
-			FunctorPropertyAssignmentDB & { is_satisfied: 0 | 1 },
+			FunctorPropertyAssignmentDB & { is_satisfied: 0 | 1 | null },
 			FunctorPropertyShort,
 		]
 	>([
@@ -44,8 +45,8 @@ export const load = async (event) => {
 				fp.reason,
 				fp.is_deduced,
 				CASE
-        			WHEN fp.is_satisfied = TRUE THEN p.relation
-        			ELSE r.negation
+        			WHEN fp.is_satisfied = FALSE THEN r.relation
+        			ELSE p.relation
     			END AS relation
 			FROM functor_property_assignments fp
 			INNER JOIN functor_properties p ON p.id = fp.property_id
@@ -76,22 +77,14 @@ export const load = async (event) => {
 	const [functor] = functors
 
 	const satisfied_properties: FunctorPropertyAssignment[] = properties_db
-		.filter((obj) => obj.is_satisfied)
-		.map((p) => ({
-			id: p.id,
-			reason: p.reason,
-			is_deduced: Boolean(p.is_deduced),
-			relation: p.relation,
-		}))
+		.filter((obj) => obj.is_satisfied === 0)
+		.map(display_functor_property_assignment)
 
 	const unsatisfied_properties: FunctorPropertyAssignment[] = properties_db
-		.filter((obj) => !obj.is_satisfied)
-		.map((p) => ({
-			id: p.id,
-			reason: p.reason,
-			is_deduced: Boolean(p.is_deduced),
-			relation: p.relation,
-		}))
+		.filter((obj) => obj.is_satisfied === 1)
+		.map(display_functor_property_assignment)
+
+	// TODO: also render undecidable properties in case they come up
 
 	return render_nested_formulas({
 		functor,

@@ -299,15 +299,17 @@ function deduce_unsatisfied_properties(
 /**
  * Assign dual properties to dual entities:
  * If C has property P, then C^op has property P^op (if defined).
- * Warning: This mutates the sets of satisfied and unsatisfied properties.
+ * Warning: This mutates the sets of assigned properties.
  */
 function deduce_dual_properties(
 	db: Database,
 	entity: EntityMeta & { dual: string },
 	satisfied: Set<string>,
 	unsatisfied: Set<string>,
+	undecidable: Set<string>,
 	dual_satisfied: Set<string>,
 	dual_unsatisfied: Set<string>,
+	dual_undecidable: Set<string>,
 	properties_dict: Record<string, PropertyMeta>,
 	type: 'category',
 ) {
@@ -329,14 +331,24 @@ function deduce_dual_properties(
 		unsatisfied.add(p_dual)
 	}
 
+	const new_undecidable = new Set<string>()
+
+	for (const p of dual_undecidable) {
+		const p_dual = properties_dict[p].dual
+		if (!p_dual || undecidable.has(p_dual)) continue
+		new_undecidable.add(p_dual)
+		undecidable.add(p_dual)
+	}
+
 	const property_insert = db.prepare(`
 		INSERT INTO ${type}_property_assignments
 			(${type}_id, property_id, is_satisfied, reason, is_deduced)
 		VALUES (?, ?, ?, ?, TRUE)
 	`)
 
-	const reason_satisfied = 'Its dual ${type} satisfies the dual property.'
-	const reason_unsatisfied = 'Its dual ${type} does not satisfy the dual property.'
+	const reason_satisfied = `Its dual ${type} satisfies the dual property.`
+	const reason_unsatisfied = `Its dual ${type} does not satisfy the dual property.`
+	const reason_undecidable = `The dual property is undecidable for its dual ${type}.`
 
 	for (const p of new_satisfied) {
 		property_insert.run(entity.id, p, 1, reason_satisfied)
@@ -352,6 +364,14 @@ function deduce_dual_properties(
 
 	console.info(
 		`Deduced ${new_unsatisfied.size} unsatisfied properties by duality for ${entity.id}`,
+	)
+
+	for (const q of new_undecidable) {
+		property_insert.run(entity.id, q, null, reason_undecidable)
+	}
+
+	console.info(
+		`Deduced ${new_undecidable.size} undecidable properties by duality for ${entity.id}`,
 	)
 }
 
@@ -375,19 +395,19 @@ export function deduce_properties_for_entities(type: 'category' | 'functor') {
 	const implications = get_normalized_implications(db, type)
 	const entities = get_entities(db, type)
 	const properties_dict = get_properties_dict(db, type)
-	const all_decided_properties = get_property_assignments(db, entities, type)
+	const get_assigned_properties = get_property_assignments(db, entities, type)
 
 	const deduction = db.transaction(() => {
 		delete_deduced_properties(db, type)
 
 		for (const entity of entities) {
-			const decided = all_decided_properties[entity.id]
+			const assigned = get_assigned_properties[entity.id]
 
 			deduce_satisfied_properties(
 				db,
 				entity,
 				implications,
-				decided.satisfied,
+				assigned.satisfied,
 				properties_dict,
 				type,
 			)
@@ -396,8 +416,8 @@ export function deduce_properties_for_entities(type: 'category' | 'functor') {
 				db,
 				entity,
 				implications,
-				decided.satisfied,
-				decided.unsatisfied,
+				assigned.satisfied,
+				assigned.unsatisfied,
 				properties_dict,
 				type,
 			)
@@ -413,16 +433,18 @@ export function deduce_properties_for_entities(type: 'category' | 'functor') {
 		for (const entity of entities) {
 			if (!is_dual_entity(entity)) continue
 
-			const decided = all_decided_properties[entity.id]
-			const dual_decided = all_decided_properties[entity.dual]
+			const assigned = get_assigned_properties[entity.id]
+			const dual_assigned = get_assigned_properties[entity.dual]
 
 			deduce_dual_properties(
 				db,
 				entity,
-				decided.satisfied,
-				decided.unsatisfied,
-				dual_decided.satisfied,
-				dual_decided.unsatisfied,
+				assigned.satisfied,
+				assigned.unsatisfied,
+				assigned.undecidable,
+				dual_assigned.satisfied,
+				dual_assigned.unsatisfied,
+				dual_assigned.undecidable,
 				properties_dict,
 				type,
 			)
@@ -431,7 +453,7 @@ export function deduce_properties_for_entities(type: 'category' | 'functor') {
 				db,
 				entity,
 				implications,
-				decided.satisfied,
+				assigned.satisfied,
 				properties_dict,
 				type,
 			)
@@ -440,8 +462,8 @@ export function deduce_properties_for_entities(type: 'category' | 'functor') {
 				db,
 				entity,
 				implications,
-				decided.satisfied,
-				decided.unsatisfied,
+				assigned.satisfied,
+				assigned.unsatisfied,
 				properties_dict,
 				type,
 			)

@@ -4,7 +4,6 @@ import { batch } from '$lib/server/db.catdat'
 import sql from 'sql-template-tag'
 import type {
 	CategoryDisplay,
-	CategoryProperty,
 	CategoryPropertyDB,
 	CategoryShort,
 	CommentObject,
@@ -14,6 +13,7 @@ import type {
 	SpecialObject,
 	TagObject,
 } from '$lib/commons/types'
+import { display_category_property_assignment } from '$lib/server/utils'
 
 export const load = async (event) => {
 	const id = event.params.id
@@ -23,7 +23,7 @@ export const load = async (event) => {
 			CategoryDisplay,
 			RelatedCategory,
 			TagObject,
-			CategoryPropertyDB & { is_satisfied: 0 | 1 },
+			CategoryPropertyDB & { is_satisfied: 0 | 1 | null },
 			PropertyShort,
 			SpecialObject,
 			SpecialMorphism,
@@ -75,8 +75,8 @@ export const load = async (event) => {
 				cp.reason,
 				cp.is_deduced,
 				CASE
-        			WHEN cp.is_satisfied = TRUE THEN p.relation
-        			ELSE r.negation
+        			WHEN cp.is_satisfied = FALSE THEN r.negation
+        			ELSE p.relation
     			END AS relation
 			FROM category_property_assignments cp
 			INNER JOIN category_properties p ON p.id = cp.property_id
@@ -86,13 +86,8 @@ export const load = async (event) => {
 		`,
 		// unknown properties
 		sql`
-			SELECT
-				p.id,
-				p.relation,
-				c.comment as reason
+			SELECT p.id, p.relation
 			FROM category_properties p
-			LEFT JOIN category_property_comments c
-			ON c.category_id = ${id} AND c.property_id = p.id
 			WHERE NOT EXISTS (
 				SELECT 1 FROM category_property_assignments
 				WHERE category_id = ${id} AND property_id = p.id
@@ -159,23 +154,17 @@ export const load = async (event) => {
 	const category = categories[0]
 	const tags = tag_objects.map(({ tag }) => tag)
 
-	const satisfied_properties: CategoryProperty[] = properties_db
-		.filter((obj) => obj.is_satisfied)
-		.map((p) => ({
-			id: p.id,
-			reason: p.reason,
-			is_deduced: Boolean(p.is_deduced),
-			relation: p.relation,
-		}))
+	const satisfied_properties = properties_db
+		.filter((obj) => obj.is_satisfied === 1)
+		.map(display_category_property_assignment)
 
-	const unsatisfied_properties: CategoryProperty[] = properties_db
-		.filter((obj) => !obj.is_satisfied)
-		.map((p) => ({
-			id: p.id,
-			reason: p.reason,
-			is_deduced: Boolean(p.is_deduced),
-			relation: p.relation,
-		}))
+	const unsatisfied_properties = properties_db
+		.filter((obj) => obj.is_satisfied === 0)
+		.map(display_category_property_assignment)
+
+	const undecidable_properties = properties_db
+		.filter((obj) => obj.is_satisfied === null)
+		.map(display_category_property_assignment)
 
 	return render_nested_formulas({
 		category,
@@ -184,6 +173,7 @@ export const load = async (event) => {
 		satisfied_properties,
 		unsatisfied_properties,
 		unknown_properties,
+		undecidable_properties,
 		special_objects,
 		special_morphisms,
 		undistinguishable_categories,

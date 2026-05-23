@@ -23,8 +23,9 @@ CREATE TABLE category_property_assignments (
     id INTEGER PRIMARY KEY,
     category_id TEXT NOT NULL,
     property_id TEXT NOT NULL,
-    is_satisfied INTEGER NOT NULL
-        CHECK (is_satisfied in (TRUE, FALSE)),
+    is_satisfied INTEGER
+        -- we use NULL for undecidable properties
+        CHECK (is_satisfied in (TRUE, FALSE, NULL)),
     reason TEXT NOT NULL CHECK (length(reason) > 0),
     is_deduced INTEGER NOT NULL DEFAULT FALSE
         CHECK (is_deduced in (TRUE, FALSE)),

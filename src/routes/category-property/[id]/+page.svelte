@@ -107,4 +107,17 @@
 
 <CategoryList categories={data.unknown_categories} />
 
+{#if data.undecidable_categories.length}
+	<h3 class="sticky-heading">Undecidable categories</h3>
+
+	<p class="hint">
+		{pluralize(data.undecidable_categories.length, {
+			one: 'There is {count} category for which it cannot be decided if this property is satisfied or not.',
+			other: 'There are {count} categories for which it cannot be decided if this property is satisfied or not.',
+		})}
+	</p>
+
+	<CategoryList categories={data.undecidable_categories} />
+{/if}
+
 <SuggestionForm />
