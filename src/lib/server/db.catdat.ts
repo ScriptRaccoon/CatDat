@@ -1,5 +1,5 @@
 import type { Arrayed } from '$lib/commons/types'
-import Database, { SqliteError } from 'better-sqlite3'
+import Database, { type SqliteError } from 'better-sqlite3'
 import path from 'node:path'
 
 const db_path = path.resolve('databases', 'catdat', 'catdat.db')

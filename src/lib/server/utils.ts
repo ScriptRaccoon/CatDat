@@ -9,4 +9,8 @@ export function is_subset<T>(a: Set<T>, b: Set<T>) {
 	return true
 }
 
+export function to_placeholders(arr: string[]): string {
+	return arr.map(() => '?').join(', ')
+}
+
 export const sleep = (delay: number) => new Promise<void>((res) => setTimeout(res, delay))

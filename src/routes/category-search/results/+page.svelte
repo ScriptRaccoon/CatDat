@@ -65,12 +65,12 @@
 
 {#if !data.contradiction}
 	<p class="hint">
-		{pluralize(data.found_objects.length, {
+		{pluralize(data.found_structures.length, {
 			one: 'Found {count} category',
 			other: 'Found {count} categories',
 		})}
 	</p>
-	<StructureList structures={data.found_objects ?? []} type="category" />
+	<StructureList structures={data.found_structures} type="category" />
 {:else}
 	<p class="hint">
 		<Fa icon={faWarning} /> No categories found because the requirements are inconsistent:

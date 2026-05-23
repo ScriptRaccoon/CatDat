@@ -2,10 +2,21 @@ import type { RequestEvent } from '@sveltejs/kit'
 import { decode_property_ID } from '$lib/commons/property.url'
 import { query } from '$lib/server/db.catdat'
 import { error } from '@sveltejs/kit'
-import sql from 'sql-template-tag'
 import { SEARCH_SEPARATOR } from '$lib/commons/search.config'
 import { get_contradiction } from '$lib/server/consistency'
 import type { StructureShort, StructureType } from '$lib/commons/types'
+import { to_placeholders } from './utils'
+
+function cache_page(event: RequestEvent) {
+	event.setHeaders({
+		'cache-control': 'public, max-age=0, s-maxage=1800', // shared cache for 30min
+	})
+}
+
+const TABLE_NAMES = {
+	category: 'categories',
+	functor: 'functors',
+}
 
 export function search_handler(event: RequestEvent, type: StructureType) {
 	const satisfied_query = event.url.searchParams.get('satisfied')
@@ -18,11 +29,15 @@ export function search_handler(event: RequestEvent, type: StructureType) {
 	const { rows: all_properties_objects, err: err_all } = query<{
 		id: string
 		dual_property_id: string | null
-	}>(get_property_query(type))
+	}>({
+		sql: `SELECT id, dual_property_id FROM ${type}_properties ORDER BY lower(id)`,
+		values: [],
+	})
 
 	if (err_all) error(500, 'Failed to load properties')
 
 	const all_properties = all_properties_objects.map(({ id }) => id)
+	const all_properties_set = new Set(all_properties)
 
 	const dual_properties_dict: Record<string, string | null> = {}
 	for (const row of all_properties_objects) {
@@ -34,7 +49,7 @@ export function search_handler(event: RequestEvent, type: StructureType) {
 		: []
 
 	const invalid_satisfied_property = satisfied_properties.find(
-		(p) => !all_properties.includes(p),
+		(p) => !all_properties_set.has(p),
 	)
 
 	if (invalid_satisfied_property) {
@@ -46,7 +61,7 @@ export function search_handler(event: RequestEvent, type: StructureType) {
 		: []
 
 	const invalid_unsatisfied_property = unsatisfied_properties.find(
-		(p) => !all_properties.includes(p),
+		(p) => !all_properties_set.has(p),
 	)
 
 	if (invalid_unsatisfied_property) {
@@ -67,44 +82,60 @@ export function search_handler(event: RequestEvent, type: StructureType) {
 
 	// TODO: implement this for functors as well
 	if (type === 'category') {
-		try {
-			const contradiction = get_contradiction(
-				new Set(satisfied_properties),
-				new Set(unsatisfied_properties),
-			)
+		const { contradiction, err } = get_contradiction(
+			new Set(satisfied_properties),
+			new Set(unsatisfied_properties),
+		)
 
-			if (contradiction) {
-				event.setHeaders({
-					// shared cache for 30min
-					'cache-control': 'public, max-age=0, s-maxage=1800',
-				})
+		if (err) error(500, 'Consistency check failed')
 
-				return {
-					contradiction,
-					all_properties,
-					satisfied_properties,
-					unsatisfied_properties,
-					found_objects: [],
-					dual_satisfied_properties,
-					dual_unsatisfied_properties,
-					dual_search_available,
-				}
+		if (contradiction) {
+			cache_page(event)
+
+			return {
+				contradiction,
+				all_properties,
+				satisfied_properties,
+				unsatisfied_properties,
+				dual_satisfied_properties,
+				dual_unsatisfied_properties,
+				dual_search_available,
+				found_structures: [],
 			}
-		} catch (err) {
-			error(500, 'Consistency check failed')
 		}
 	}
 
-	const all_selected_properties = satisfied_properties.concat(unsatisfied_properties)
+	const all_selected_properties = [...satisfied_properties, ...unsatisfied_properties]
 
-	const search_query = get_search_query(
-		satisfied_properties,
-		unsatisfied_properties,
-		all_selected_properties,
-		type,
-	)
+	const search_query = `
+		SELECT s.id, s.name FROM ${TABLE_NAMES[type]} s
+		INNER JOIN ${type}_property_assignments a ON a.${type}_id = s.id
+		WHERE property_id IN (${to_placeholders(all_selected_properties)})
+		GROUP BY ${type}_id
+		HAVING
+			SUM (
+				CASE
+					WHEN
+						property_id IN (${to_placeholders(satisfied_properties)})
+						AND is_satisfied = TRUE
+					THEN 1
+					ELSE 0
+				END
+			) = ${satisfied_properties.length}
+			AND
+			SUM(
+				CASE
+					WHEN
+						property_id IN (${to_placeholders(unsatisfied_properties)})
+						AND is_satisfied = FALSE
+					THEN 1
+					ELSE 0
+				END
+			) = ${unsatisfied_properties.length}
+		ORDER BY lower(s.name)
+	`
 
-	const { rows: found_objects, err } = query<StructureShort>({
+	const { rows: found_structures, err } = query<StructureShort>({
 		sql: search_query,
 		values: [
 			...all_selected_properties,
@@ -115,102 +146,16 @@ export function search_handler(event: RequestEvent, type: StructureType) {
 
 	if (err) error(500, 'Search failed')
 
-	event.setHeaders({
-		// shared cache for 30min
-		'cache-control': 'public, max-age=0, s-maxage=1800',
-	})
+	cache_page(event)
 
 	return {
 		contradiction: null,
 		all_properties,
 		satisfied_properties,
 		unsatisfied_properties,
-		found_objects,
 		dual_satisfied_properties,
 		dual_unsatisfied_properties,
 		dual_search_available,
+		found_structures,
 	}
-}
-
-function get_property_query(type: StructureType) {
-	if (type === 'category') {
-		return sql`SELECT id, dual_property_id FROM category_properties ORDER BY lower(id)`
-	}
-	if (type === 'functor') {
-		return sql`SELECT id, dual_property_id FROM functor_properties ORDER BY lower(id)`
-	}
-	throw new Error('Invalid type')
-}
-
-function to_placeholders(arr: string[]): string {
-	return arr.map(() => '?').join(', ')
-}
-
-function get_search_query(
-	satisfied_properties: string[],
-	unsatisfied_properties: string[],
-	all_selected_properties: string[],
-	type: StructureType,
-) {
-	if (type === 'category') {
-		return `
-            SELECT c.id, c.name FROM categories c
-            INNER JOIN category_property_assignments cp ON cp.category_id = c.id
-            WHERE property_id IN (${to_placeholders(all_selected_properties)})
-            GROUP BY category_id
-            HAVING
-                SUM (
-                    CASE
-                        WHEN
-                            property_id IN (${to_placeholders(satisfied_properties)})
-                            AND is_satisfied = TRUE
-                        THEN 1
-                        ELSE 0
-                    END
-                ) = ${satisfied_properties.length}
-                AND
-                SUM(
-                    CASE
-                        WHEN
-                            property_id IN (${to_placeholders(unsatisfied_properties)})
-                            AND is_satisfied = FALSE
-                        THEN 1
-                        ELSE 0
-                    END
-                ) = ${unsatisfied_properties.length}
-            ORDER BY lower(c.name)
-        `
-	}
-
-	if (type === 'functor') {
-		return `
-            SELECT f.id, f.name FROM functors f
-            INNER JOIN functor_property_assignments fp ON fp.functor_id = f.id
-            WHERE property_id IN (${to_placeholders(all_selected_properties)})
-            GROUP BY functor_id
-            HAVING
-                SUM (
-                    CASE
-                        WHEN
-                            property_id IN (${to_placeholders(satisfied_properties)})
-                            AND is_satisfied = TRUE
-                        THEN 1
-                        ELSE 0
-                    END
-                ) = ${satisfied_properties.length}
-                AND
-                SUM(
-                    CASE
-                        WHEN
-                            property_id IN (${to_placeholders(unsatisfied_properties)})
-                            AND is_satisfied = FALSE
-                        THEN 1
-                        ELSE 0
-                    END
-                ) = ${unsatisfied_properties.length}
-            ORDER BY lower(f.name)
-	    `
-	}
-
-	throw new Error('Invalid type')
 }

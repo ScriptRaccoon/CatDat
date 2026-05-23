@@ -1,30 +1,36 @@
 import sql from 'sql-template-tag'
 import { query } from '$lib/server/db.catdat'
 import { is_subset } from './utils'
+import type { SqliteError } from 'better-sqlite3'
+import {
+	get_normalized_category_implications,
+	stringify_implication,
+	type NormalizedCategoryImplication,
+} from './implications'
 
 // TODO: If possible, remove the code duplication with deduction and redundancy scripts.
-
-type NormalizedCategoryImplication = {
-	id: string
-	assumptions: Set<string>
-	conclusion: string
-}
+// TODO: allow functors as well
 
 export function get_contradiction(
 	satisfied_properties: Set<string>,
 	unsatisfied_properties: Set<string>,
-): string[] | null {
+): { contradiction: string[] | null; err: SqliteError | null } {
 	for (const p of satisfied_properties) {
-		if (unsatisfied_properties.has(p)) return [`${p} ⟹ ${p}`]
+		const contradiction = [`${p} ⟹ ${p}`]
+		if (unsatisfied_properties.has(p)) return { contradiction, err: null }
 	}
 
-	const implications = get_normalized_category_implications()
+	const { implications, err } = get_normalized_category_implications()
 
-	return contradiction_worker(
+	if (err) return { contradiction: null, err }
+
+	const contradiction = contradiction_worker(
 		satisfied_properties,
 		unsatisfied_properties,
 		implications,
 	)
+
+	return { contradiction, err: null }
 }
 
 function contradiction_worker(
@@ -103,55 +109,17 @@ function build_shortest_proof(
 	return proof
 }
 
-function get_normalized_category_implications() {
-	const { rows, err } = query<{
-		id: string
-		assumptions: string
-		conclusions: string
-		is_equivalence: 0 | 1
-	}>(
-		sql`SELECT id, assumptions, conclusions, is_equivalence FROM category_implications_view`,
-	)
-
-	if (err) throw err
-
-	const implications: NormalizedCategoryImplication[] = []
-
-	for (const impl of rows) {
-		const assumptions = new Set<string>(JSON.parse(impl.assumptions))
-		const conclusions = new Set<string>(JSON.parse(impl.conclusions))
-
-		for (const conclusion of conclusions) {
-			implications.push({ id: impl.id, assumptions, conclusion })
-		}
-
-		if (impl.is_equivalence) {
-			for (const assumption of assumptions) {
-				implications.push({
-					id: impl.id,
-					assumptions: conclusions,
-					conclusion: assumption,
-				})
-			}
-		}
-	}
-
-	return implications
-}
-
-function stringify_implication(implication: NormalizedCategoryImplication) {
-	return `${[...implication.assumptions].join(' ∧ ')} ⟹ ${implication.conclusion}`
-}
-
 export function get_missing_combinations() {
-	const implications = get_normalized_category_implications()
+	const { implications, err: err_imp } = get_normalized_category_implications()
+
+	if (err_imp) return { err: err_imp, missing_combinations: [] }
 
 	const { rows: properties, err } = query<{
 		id: string
 		dual_property_id: string | null
 	}>(sql`SELECT id, dual_property_id FROM category_properties ORDER BY lower(id)`)
 
-	if (err) throw err
+	if (err) return { err, missing_combinations: [] }
 
 	const { rows: existing, err: err_existing } = query<{
 		p: string
@@ -164,11 +132,11 @@ export function get_missing_combinations() {
 		WHERE cp.is_satisfied = TRUE AND cnp.is_satisfied = FALSE
 	`)
 
-	if (err_existing) throw err_existing
+	if (err_existing) return { err: err_existing, missing_combinations: [] }
 
 	const witnessed_pairs = new Set(existing.map(({ p, q }) => `${p}|${q}`))
 
-	const missing_pairs: [string, string][] = []
+	const missing_combinations: [string, string][] = []
 
 	for (const p of properties) {
 		for (const q of properties) {
@@ -190,9 +158,9 @@ export function get_missing_combinations() {
 				implications,
 			)
 
-			if (!contradiction) missing_pairs.push([p.id, q.id])
+			if (!contradiction) missing_combinations.push([p.id, q.id])
 		}
 	}
 
-	return missing_pairs
+	return { missing_combinations, err: null }
 }

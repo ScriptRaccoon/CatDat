@@ -62,13 +62,13 @@
 {/if}
 
 <p class="hint">
-	{pluralize(data.found_objects.length, {
+	{pluralize(data.found_structures.length, {
 		one: 'Found {count} functor',
 		other: 'Found {count} functors',
 	})}
 </p>
 
-<StructureList structures={data.found_objects ?? []} type="functor" />
+<StructureList structures={data.found_structures} type="functor" />
 
 <menu>
 	<a class="button" href="/functor-search">Adjust search</a>
