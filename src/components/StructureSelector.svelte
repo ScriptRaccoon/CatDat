@@ -25,6 +25,8 @@
 			goto(`/${selected_type}-properties`)
 		} else if (path.endsWith('-search')) {
 			goto(`/${selected_type}-search`)
+		} else if (path.endsWith('-search/results')) {
+			goto(`/${selected_type}-search`)
 		} else {
 			goto(`/${PLURALS[selected_type]}`)
 		}
