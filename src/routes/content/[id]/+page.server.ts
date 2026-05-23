@@ -3,7 +3,7 @@ import { error } from '@sveltejs/kit'
 import type { EntryGenerator } from './$types'
 import { batch } from '$lib/server/db.catdat'
 import sql from 'sql-template-tag'
-import type { EntityShort, PropertyShort } from '$lib/commons/types'
+import type { StructureShort, PropertyShort } from '$lib/commons/types'
 
 export const entries: EntryGenerator = () => {
 	return content_ids.map((id) => ({ id }))
@@ -15,7 +15,7 @@ export const load = async (event) => {
 	if (!content) error(404, 'Not Found')
 
 	const { results, err: err_categories } = batch<
-		[EntityShort, PropertyShort, { id: string }]
+		[StructureShort, PropertyShort, { id: string }]
 	>([
 		sql`
 			SELECT c.id, c.name FROM categories c

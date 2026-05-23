@@ -12,6 +12,7 @@ import id_Set_expected from './expected-data/id_Set.json'
 import decided_categories from './expected-data/decided-categories.json'
 import decided_functors from './expected-data/decided-functors.json'
 import { capitalize, get_client } from './utils/helpers'
+import { StructureType } from './types'
 
 const db = get_client()
 
@@ -26,16 +27,16 @@ function execute_tests() {
 		test_mutual_category_duals()
 		test_properties_of_trivial_category()
 		test_mutual_property_duals('category')
-		test_decided_entities(decided_categories, 'category')
-		test_properties_of_selected_entities(
+		test_decided_structures(decided_categories, 'category')
+		test_properties_of_selected_structures(
 			{ Set: Set_expected, Ab: Ab_expected, Top: Top_expected },
 			'category',
 		)
 
 		console.info('\n--- Test functors ---')
 		test_mutual_property_duals('functor')
-		test_decided_entities(decided_functors, 'functor')
-		test_properties_of_selected_entities(
+		test_decided_structures(decided_functors, 'functor')
+		test_properties_of_selected_structures(
 			{ forget_vector: forget_vector_expected, id_Set: id_Set_expected },
 			'functor',
 		)
@@ -98,7 +99,7 @@ function test_properties_of_trivial_category() {
  * Tests for all properties p,q of categories or functors that
  * if p is dual to q, then q is dual to p.
  */
-function test_mutual_property_duals(type: 'category' | 'functor') {
+function test_mutual_property_duals(type: StructureType) {
 	const dict: Record<string, string | null> = {}
 
 	const properties = db
@@ -123,7 +124,7 @@ function test_mutual_property_duals(type: 'category' | 'functor') {
  * Tests that for a specified list of categories or functors all properties have
  * been decided. If this test fails, property assignments or implications are missing.
  */
-function test_decided_entities(entities: string[], type: 'category' | 'functor') {
+function test_decided_structures(structure_ids: string[], type: StructureType) {
 	const unknown_query = db.prepare(
 		`SELECT p.id FROM ${type}_properties p WHERE NOT EXISTS
 			(SELECT 1 FROM ${type}_property_assignments
@@ -132,17 +133,17 @@ function test_decided_entities(entities: string[], type: 'category' | 'functor')
 		`,
 	)
 
-	for (const entity_id of entities) {
-		const res = unknown_query.all(entity_id) as { id: string }[]
+	for (const structure_id of structure_ids) {
+		const res = unknown_query.all(structure_id) as { id: string }[]
 		const unknown_properties = res.map((row) => row.id)
 
 		if (unknown_properties.length > 0) {
 			throw new Error(
-				`❌ Found unknown properties of ${entity_id}:\n${unknown_properties.join(', ')}.\nEvery property needs to be decided for this ${type}.`,
+				`❌ Found unknown properties of ${structure_id}:\n${unknown_properties.join(', ')}.\nEvery property needs to be decided for this ${type}.`,
 			)
 		}
 
-		console.info(`✅ All properties have been decided for ${entity_id}`)
+		console.info(`✅ All properties have been decided for ${structure_id}`)
 	}
 }
 
@@ -152,27 +153,27 @@ function test_decided_entities(entities: string[], type: 'category' | 'functor')
  * respective JSON files in the subfolder "expected-data".
  * We exclude undecidable properties here.
  */
-function test_properties_of_selected_entities(
+function test_properties_of_selected_structures(
 	expected: Record<string, Record<string, boolean>>,
-	type: 'category' | 'functor',
+	type: StructureType,
 ) {
 	const property_query = db.prepare(
 		`SELECT property_id, is_satisfied FROM ${type}_property_assignments
 		WHERE ${type}_id = ? AND is_satisfied IS NOT NULL`,
 	)
 
-	for (const entity_id in expected) {
-		const properties = property_query.all(entity_id) as {
+	for (const structure_id in expected) {
+		const properties = property_query.all(structure_id) as {
 			property_id: string
 			is_satisfied: 0 | 1
 		}[]
 
 		for (const { property_id, is_satisfied } of properties) {
-			const ok = Boolean(is_satisfied) === expected[entity_id][property_id]
+			const ok = Boolean(is_satisfied) === expected[structure_id][property_id]
 			if (ok) continue
-			throw new Error(`❌ Incorrect property of ${entity_id}: ${property_id}`)
+			throw new Error(`❌ Incorrect property of ${structure_id}: ${property_id}`)
 		}
 
-		console.info(`✅ Properties of ${entity_id} are correct`)
+		console.info(`✅ Properties of ${structure_id} are correct`)
 	}
 }

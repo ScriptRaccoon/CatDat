@@ -2,14 +2,14 @@
 	import { faBars } from '@fortawesome/free-solid-svg-icons'
 	import Fa from 'svelte-fa'
 	import StructureSelector from './StructureSelector.svelte'
-	import type { Structure } from '$lib/commons/types'
+	import type { StructureType } from '$lib/commons/types'
 
 	type Props = {
 		open_mobile_nav: () => void
-		structure: Structure
+		selected_type: StructureType
 	}
 
-	let { open_mobile_nav, structure }: Props = $props()
+	let { open_mobile_nav, selected_type }: Props = $props()
 </script>
 
 <header>
@@ -33,7 +33,7 @@
 	</h1>
 
 	<div class="structure_selector_container">
-		<StructureSelector {structure} />
+		<StructureSelector {selected_type} />
 	</div>
 
 	<button

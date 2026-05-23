@@ -1,5 +1,5 @@
 <script lang="ts">
-	import EntityList from '$components/EntityList.svelte'
+	import StructureList from '$components/StructureList.svelte'
 	import MetaData from '$components/MetaData.svelte'
 	import PropertyList from '$components/PropertyList.svelte'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
@@ -23,7 +23,7 @@
 	{#if data.categories.length > 0}
 		<p class="hint">This page is referenced by the following categories.</p>
 
-		<EntityList entities={data.categories} type="category" />
+		<StructureList structures={data.categories} type="category" />
 	{/if}
 
 	{#if data.category_properties.length > 0}

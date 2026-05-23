@@ -1,10 +1,10 @@
-import type { EntityShort, TagObject } from '$lib/commons/types'
+import type { StructureShort, TagObject } from '$lib/commons/types'
 import { batch } from '$lib/server/db.catdat'
 import { error } from '@sveltejs/kit'
 import sql from 'sql-template-tag'
 
 export const load = async () => {
-	const { results, err } = batch<[EntityShort, TagObject]>([
+	const { results, err } = batch<[StructureShort, TagObject]>([
 		sql`SELECT id, name FROM categories ORDER BY lower(name)`,
 		sql`SELECT tag FROM tags ORDER BY id`,
 	])

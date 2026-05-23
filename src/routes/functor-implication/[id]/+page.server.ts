@@ -2,13 +2,13 @@ import { render_nested_formulas } from '$lib/server/formulas'
 import { batch } from '$lib/server/db.catdat'
 import sql from 'sql-template-tag'
 import { error } from '@sveltejs/kit'
-import type { ImplicationDB, EntityShort } from '$lib/commons/types'
+import type { ImplicationDB, StructureShort } from '$lib/commons/types'
 import { display_implication } from '$lib/server/transforms'
 
 export const load = async (event) => {
 	const id = event.params.id
 
-	const { results, err } = batch<[ImplicationDB, EntityShort]>([
+	const { results, err } = batch<[ImplicationDB, StructureShort]>([
 		sql`
             SELECT
                 id,

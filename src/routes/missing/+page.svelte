@@ -1,5 +1,5 @@
 <script lang="ts">
-	import EntityList from '$components/EntityList.svelte'
+	import StructureList from '$components/StructureList.svelte'
 	import MetaData from '$components/MetaData.svelte'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
 	import { get_property_url } from '$lib/commons/property.url'
@@ -28,7 +28,7 @@
 		property)-pairs.
 	</p>
 
-	<EntityList entities={data.categories_with_unknown_properties} type="category" />
+	<StructureList structures={data.categories_with_unknown_properties} type="category" />
 </section>
 
 <section>
@@ -39,7 +39,7 @@
 		one type of special morphism is unknown.
 	</p>
 
-	<EntityList entities={data.categories_with_missing_morphisms} type="category" />
+	<StructureList structures={data.categories_with_missing_morphisms} type="category" />
 </section>
 
 {#if data.undistinguishable_category_pairs.length > 0}
@@ -103,7 +103,7 @@
 		properties.
 	</p>
 
-	<EntityList entities={data.functors_with_unknown_properties} type="functor" />
+	<StructureList structures={data.functors_with_unknown_properties} type="functor" />
 </section>
 
 <SuggestionForm />

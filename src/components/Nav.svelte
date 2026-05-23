@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state'
-	import type { Structure } from '$lib/commons/types'
+	import type { StructureType } from '$lib/commons/types'
 	import {
 		faArrowsSplitUpAndLeft,
 		faChartBar,
@@ -13,17 +13,17 @@
 	import Fa from 'svelte-fa'
 
 	type Props = {
-		structure: Structure
+		type: StructureType
 	}
 
-	let { structure }: Props = $props()
+	let { type }: Props = $props()
 
 	type Link = {
 		href: string
 		text: string
 		nested?: string
 		icon: IconDefinition
-		structure?: Structure
+		type?: StructureType
 	}
 
 	const links: Link[] = [
@@ -37,68 +37,68 @@
 			text: 'Categories',
 			nested: '/category/',
 			icon: faDatabase,
-			structure: 'categories',
+			type: 'category',
 		},
 		{
 			href: '/category-properties',
 			text: 'Properties',
 			nested: '/category-property/',
 			icon: faList,
-			structure: 'categories',
+			type: 'category',
 		},
 		{
 			href: '/category-implications',
 			text: 'Implications',
 			nested: '/category-implication',
 			icon: faArrowsSplitUpAndLeft,
-			structure: 'categories',
+			type: 'category',
 		},
 		{
 			href: '/category-comparison',
 			text: 'Compare',
 			icon: faChartBar,
 			nested: '/category-comparison',
-			structure: 'categories',
+			type: 'category',
 		},
 		{
 			href: '/category-search',
 			text: 'Search',
 			icon: faSearch,
 			nested: '/category-search/results',
-			structure: 'categories',
+			type: 'category',
 		},
 		{
 			href: '/functors',
 			text: 'Functors',
 			nested: '/functor/',
 			icon: faDatabase,
-			structure: 'functors',
+			type: 'functor',
 		},
 		{
 			href: '/functor-properties',
 			text: 'Properties',
 			nested: '/functor-property',
 			icon: faList,
-			structure: 'functors',
+			type: 'functor',
 		},
 		{
 			href: '/functor-implications',
 			text: 'Implications',
 			nested: '/functor-implication',
 			icon: faArrowsSplitUpAndLeft,
-			structure: 'functors',
+			type: 'functor',
 		},
 		{
 			href: '/functor-search',
 			text: 'Search',
 			icon: faSearch,
 			nested: '/functor-search/results',
-			structure: 'functors',
+			type: 'functor',
 		},
 	]
 
 	let displayed_links = $derived(
-		links.filter((link) => !link.structure || link.structure === structure),
+		links.filter((link) => !link.type || link.type === type),
 	)
 </script>
 

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { browser } from '$app/environment'
-	import EntityList from '$components/EntityList.svelte'
+	import StructureList from '$components/StructureList.svelte'
 	import { encode_property_ID, get_property_url } from '$lib/commons/property.url'
 	import MetaData from '$components/MetaData.svelte'
 	import { SEARCH_SEPARATOR } from '$lib/commons/search.config'
@@ -70,7 +70,7 @@
 			other: 'Found {count} categories',
 		})}
 	</p>
-	<EntityList entities={data.found_objects ?? []} type="category" />
+	<StructureList structures={data.found_objects ?? []} type="category" />
 {:else}
 	<p class="hint">
 		<Fa icon={faWarning} /> No categories found because the requirements are inconsistent:

@@ -1,4 +1,4 @@
-import type { EntityShort, TagObject } from '$lib/commons/types'
+import type { StructureShort, TagObject } from '$lib/commons/types'
 import { query } from '$lib/server/db.catdat'
 import { error } from '@sveltejs/kit'
 import sql from 'sql-template-tag'
@@ -13,7 +13,7 @@ export const entries: EntryGenerator = async () => {
 export const load = async (event) => {
 	const tag = event.params.tag
 
-	const { rows: categories, err } = query<EntityShort>(sql`
+	const { rows: categories, err } = query<StructureShort>(sql`
 		SELECT c.id, c.name FROM categories c
 		LEFT JOIN category_tag_assignments t ON c.id = t.category_id
 		WHERE t.tag = ${tag}

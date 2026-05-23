@@ -4,7 +4,9 @@ export type Arrayed<T extends readonly unknown[]> = {
 
 type Replace<T, R extends Partial<Record<keyof T, any>>> = Omit<T, keyof R> & R
 
-export type EntityShort = {
+export type StructureType = 'category' | 'functor'
+
+export type StructureShort = {
 	id: string
 	name: string
 }
@@ -69,8 +71,6 @@ export type SpecialMorphism = {
 	description: string | null
 	reason: string
 }
-
-export type Structure = 'categories' | 'functors'
 
 export type FunctorDB = {
 	id: string

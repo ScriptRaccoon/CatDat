@@ -7,7 +7,7 @@
 	import NavMobile from '$components/NavMobile.svelte'
 	import Popup from '$components/Popup.svelte'
 	import { track_visit } from '$lib/client/track'
-	import type { Structure } from '$lib/commons/types'
+	import type { StructureType } from '$lib/commons/types'
 	import { tracking } from '$lib/states/tracking.svelte'
 	import './app.css'
 
@@ -31,18 +31,18 @@
 
 	let nav_dialog = $state<HTMLDialogElement | null>(null)
 
-	let structure = $state<Structure>(
-		page.url.pathname.startsWith('/functor') ? 'functors' : 'categories',
+	let selected_type = $state<StructureType>(
+		page.url.pathname.startsWith('/functor') ? 'functor' : 'category',
 	)
 
 	$effect(() => {
 		if (page.url.pathname.startsWith('/functor')) {
-			structure = 'functors'
+			selected_type = 'functor'
 		} else if (
 			page.url.pathname.startsWith('/category') ||
 			page.url.pathname.startsWith('/categories')
 		) {
-			structure = 'categories'
+			selected_type = 'category'
 		}
 	})
 </script>
@@ -72,8 +72,8 @@
 </svelte:head>
 
 <div class="container">
-	<Header {open_mobile_nav} {structure} />
-	<Nav {structure} />
+	<Header {open_mobile_nav} {selected_type} />
+	<Nav type={selected_type} />
 
 	<main>
 		{@render children()}
@@ -85,7 +85,7 @@
 <Popup />
 
 <dialog bind:this={nav_dialog} id="nav_dialog">
-	<NavMobile close={close_mobile_nav} {structure} />
+	<NavMobile close={close_mobile_nav} {selected_type} />
 </dialog>
 
 <style>

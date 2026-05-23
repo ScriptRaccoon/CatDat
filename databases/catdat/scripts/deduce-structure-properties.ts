@@ -6,16 +6,17 @@
 import { type Database, SqliteError } from 'better-sqlite3'
 import { get_client, is_subset } from './utils/helpers'
 import {
-	get_entities,
+	get_structures,
 	get_normalized_implications,
 	get_properties_dict,
 	get_property_assignments,
-	is_dual_entity,
-	type EntityMeta,
+	is_dual_structure,
+	type StructureMeta,
 	type NormalizedImplication,
 	type PropertyMeta,
 } from './utils/deduction'
 import { get_contradiction_string, get_reason_string } from './utils/implications'
+import type { StructureType } from './types'
 
 /**
  * Returns the set of satisfied properties that can be deduced from a set
@@ -29,7 +30,7 @@ export function get_deduced_satisfied_properties(
 		properties_dict?: Record<string, PropertyMeta>
 		stop_when_found?: string
 	},
-	type: 'category' | 'functor',
+	type: StructureType,
 	// used for source and target properties of a functor
 	associated_satisfied_properties?: Record<string, Set<string>>,
 ) {
@@ -99,7 +100,7 @@ export function get_deduced_unsatisfied_properties(
 		properties_dict?: Record<string, PropertyMeta>
 		stop_when_found?: string
 	},
-	type: 'category' | 'functor',
+	type: StructureType,
 	// used for source and target properties of a functor
 	associated_satisfied_properties?: Record<string, Set<string>>,
 ) {
@@ -169,14 +170,14 @@ export function get_deduced_unsatisfied_properties(
  */
 function save_satisfied_properties(
 	db: Database,
-	entity_id: string,
+	structure_id: string,
 	found: Set<string>,
 	reasons: Record<string, string>,
-	type: 'category' | 'functor',
+	type: StructureType,
 ) {
 	if (found.size === 0) return
 
-	const err_msg = `❌ Failed to complete deduction of satisfied properties for ${entity_id} because of a conflict. The likely cause is a contradiction between its assigned properties.`
+	const err_msg = `❌ Failed to complete deduction of satisfied properties for ${structure_id} because of a conflict. The likely cause is a contradiction between its assigned properties.`
 
 	const property_insert = db.prepare(`
 		INSERT INTO ${type}_property_assignments
@@ -186,7 +187,7 @@ function save_satisfied_properties(
 
 	try {
 		for (const p of found) {
-			property_insert.run(entity_id, p, reasons[p])
+			property_insert.run(structure_id, p, reasons[p])
 		}
 	} catch (err) {
 		if (err instanceof SqliteError) {
@@ -206,14 +207,14 @@ function save_satisfied_properties(
  */
 function save_unsatisfied_properties(
 	db: Database,
-	entity_id: string,
+	structure_id: string,
 	found: Set<string>,
 	reasons: Record<string, string>,
-	type: 'category' | 'functor',
+	type: StructureType,
 ) {
 	if (found.size === 0) return
 
-	const err_msg = `❌ Failed to complete deduction of unsatisfied properties for ${entity_id} because of a conflict. The likely cause is a contradiction between its assigned properties.`
+	const err_msg = `❌ Failed to complete deduction of unsatisfied properties for ${structure_id} because of a conflict. The likely cause is a contradiction between its assigned properties.`
 
 	const property_insert = db.prepare(`
 		INSERT INTO ${type}_property_assignments
@@ -223,7 +224,7 @@ function save_unsatisfied_properties(
 
 	try {
 		for (const p of found) {
-			property_insert.run(entity_id, p, reasons[p])
+			property_insert.run(structure_id, p, reasons[p])
 		}
 	} catch (err) {
 		if (err instanceof SqliteError) {
@@ -239,46 +240,46 @@ function save_unsatisfied_properties(
 }
 
 /**
- * Deduce satisfied properties for a given entity from given ones
+ * Deduce satisfied properties for a given structure from given ones
  * by using the list of normalized implications.
  * Warning: This mutates the set of satisfied properties.
  */
 function deduce_satisfied_properties(
 	db: Database,
-	entity: EntityMeta,
+	structure: StructureMeta,
 	implications: NormalizedImplication[],
 	satisfied_properties: Set<string>,
 	properties_dict: Record<string, PropertyMeta>,
-	type: 'category' | 'functor',
+	type: StructureType,
 ) {
 	const { found, reasons } = get_deduced_satisfied_properties(
 		satisfied_properties,
 		implications,
 		{ properties_dict },
 		type,
-		entity.associated_satisfied_properties,
+		structure.associated_satisfied_properties,
 	)
 
 	for (const p of found) satisfied_properties.add(p)
 
-	save_satisfied_properties(db, entity.id, found, reasons, type)
+	save_satisfied_properties(db, structure.id, found, reasons, type)
 
-	console.info(`Deduced ${found.size} satisfied properties for ${entity.id}`)
+	console.info(`Deduced ${found.size} satisfied properties for ${structure.id}`)
 }
 
 /**
- * Deduce unsatisfied properties for a given entity from given ones
+ * Deduce unsatisfied properties for a given structure from given ones
  * by using the satisfied properties and the list of normalized implications.
  * Warning: This mutates the set of unsatisfied properties.
  */
 function deduce_unsatisfied_properties(
 	db: Database,
-	entity: EntityMeta,
+	structure: StructureMeta,
 	implications: NormalizedImplication[],
 	satisfied_properties: Set<string>,
 	unsatisfied_properties: Set<string>,
 	properties_dict: Record<string, PropertyMeta>,
-	type: 'category' | 'functor',
+	type: StructureType,
 ) {
 	const { found, reasons } = get_deduced_unsatisfied_properties(
 		satisfied_properties,
@@ -286,24 +287,24 @@ function deduce_unsatisfied_properties(
 		implications,
 		{ properties_dict },
 		type,
-		entity.associated_satisfied_properties,
+		structure.associated_satisfied_properties,
 	)
 
 	for (const p of found) unsatisfied_properties.add(p)
 
-	save_unsatisfied_properties(db, entity.id, found, reasons, type)
+	save_unsatisfied_properties(db, structure.id, found, reasons, type)
 
-	console.info(`Deduced ${found.size} unsatisfied properties for ${entity.id}`)
+	console.info(`Deduced ${found.size} unsatisfied properties for ${structure.id}`)
 }
 
 /**
- * Assign dual properties to dual entities:
+ * Assign dual properties to dual structures:
  * If C has property P, then C^op has property P^op (if defined).
  * Warning: This mutates the sets of assigned properties.
  */
 function deduce_dual_properties(
 	db: Database,
-	entity: EntityMeta & { dual: string },
+	structure: StructureMeta & { dual: string },
 	satisfied: Set<string>,
 	unsatisfied: Set<string>,
 	undecidable: Set<string>,
@@ -351,61 +352,61 @@ function deduce_dual_properties(
 	const reason_undecidable = `The dual property is undecidable for its dual ${type}.`
 
 	for (const p of new_satisfied) {
-		property_insert.run(entity.id, p, 1, reason_satisfied)
+		property_insert.run(structure.id, p, 1, reason_satisfied)
 	}
 
 	console.info(
-		`Deduced ${new_satisfied.size} satisfied properties by duality for ${entity.id}`,
+		`Deduced ${new_satisfied.size} satisfied properties by duality for ${structure.id}`,
 	)
 
 	for (const q of new_unsatisfied) {
-		property_insert.run(entity.id, q, 0, reason_unsatisfied)
+		property_insert.run(structure.id, q, 0, reason_unsatisfied)
 	}
 
 	console.info(
-		`Deduced ${new_unsatisfied.size} unsatisfied properties by duality for ${entity.id}`,
+		`Deduced ${new_unsatisfied.size} unsatisfied properties by duality for ${structure.id}`,
 	)
 
 	for (const q of new_undecidable) {
-		property_insert.run(entity.id, q, null, reason_undecidable)
+		property_insert.run(structure.id, q, null, reason_undecidable)
 	}
 
 	console.info(
-		`Deduced ${new_undecidable.size} undecidable properties by duality for ${entity.id}`,
+		`Deduced ${new_undecidable.size} undecidable properties by duality for ${structure.id}`,
 	)
 }
 
 /**
  * Clears all the deduced properties. This runs before the deduction starts.
  */
-function delete_deduced_properties(db: Database, type: 'category' | 'functor') {
+function delete_deduced_properties(db: Database, type: StructureType) {
 	db.prepare(`DELETE FROM ${type}_property_assignments WHERE is_deduced = TRUE`).run()
 }
 
 /**
  * --- MAIN FUNCTION ---
- * Deduce properties of entities from given ones
+ * Deduce properties of structures from given ones
  * by using the list of implications.
  */
-export function deduce_properties_for_entities(type: 'category' | 'functor') {
+export function deduce_properties_for_structures(type: StructureType) {
 	console.info(`\n--- Deduce ${type} properties ---`)
 
 	const db = get_client()
 
 	const implications = get_normalized_implications(db, type)
-	const entities = get_entities(db, type)
+	const structures = get_structures(db, type)
 	const properties_dict = get_properties_dict(db, type)
-	const get_assigned_properties = get_property_assignments(db, entities, type)
+	const get_assigned_properties = get_property_assignments(db, structures, type)
 
 	const deduction = db.transaction(() => {
 		delete_deduced_properties(db, type)
 
-		for (const entity of entities) {
-			const assigned = get_assigned_properties[entity.id]
+		for (const structure of structures) {
+			const assigned = get_assigned_properties[structure.id]
 
 			deduce_satisfied_properties(
 				db,
-				entity,
+				structure,
 				implications,
 				assigned.satisfied,
 				properties_dict,
@@ -414,7 +415,7 @@ export function deduce_properties_for_entities(type: 'category' | 'functor') {
 
 			deduce_unsatisfied_properties(
 				db,
-				entity,
+				structure,
 				implications,
 				assigned.satisfied,
 				assigned.unsatisfied,
@@ -430,15 +431,15 @@ export function deduce_properties_for_entities(type: 'category' | 'functor') {
 	if (type !== 'category') return
 
 	const dual_deduction = db.transaction(() => {
-		for (const entity of entities) {
-			if (!is_dual_entity(entity)) continue
+		for (const structure of structures) {
+			if (!is_dual_structure(structure)) continue
 
-			const assigned = get_assigned_properties[entity.id]
-			const dual_assigned = get_assigned_properties[entity.dual]
+			const assigned = get_assigned_properties[structure.id]
+			const dual_assigned = get_assigned_properties[structure.dual]
 
 			deduce_dual_properties(
 				db,
-				entity,
+				structure,
 				assigned.satisfied,
 				assigned.unsatisfied,
 				assigned.undecidable,
@@ -451,7 +452,7 @@ export function deduce_properties_for_entities(type: 'category' | 'functor') {
 
 			deduce_satisfied_properties(
 				db,
-				entity,
+				structure,
 				implications,
 				assigned.satisfied,
 				properties_dict,
@@ -460,7 +461,7 @@ export function deduce_properties_for_entities(type: 'category' | 'functor') {
 
 			deduce_unsatisfied_properties(
 				db,
-				entity,
+				structure,
 				implications,
 				assigned.satisfied,
 				assigned.unsatisfied,

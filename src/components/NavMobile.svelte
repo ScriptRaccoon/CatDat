@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Structure } from '$lib/commons/types'
+	import type { StructureType } from '$lib/commons/types'
 	import { faPenToSquare } from '@fortawesome/free-regular-svg-icons'
 	import {
 		faArrowsSplitUpAndLeft,
@@ -19,10 +19,10 @@
 
 	type Props = {
 		close: () => void
-		structure: Structure
+		selected_type: StructureType
 	}
 
-	let { close, structure }: Props = $props()
+	let { close, selected_type }: Props = $props()
 </script>
 
 <nav>
@@ -38,7 +38,7 @@
 			</a>
 		</li>
 
-		{#if structure === 'categories'}
+		{#if selected_type === 'category'}
 			<li>
 				<a href="/categories">
 					Categories
@@ -72,7 +72,7 @@
 					<Fa icon={faSearch} />
 				</a>
 			</li>
-		{:else if structure === 'functors'}
+		{:else if selected_type === 'functor'}
 			<li>
 				<a href="/functors">
 					Functors <Fa icon={faDatabase} />

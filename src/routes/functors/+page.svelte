@@ -1,5 +1,5 @@
 <script lang="ts">
-	import EntityList from '$components/EntityList.svelte'
+	import StructureList from '$components/StructureList.svelte'
 	import MetaData from '$components/MetaData.svelte'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
 	import { pluralize } from '$lib/client/utils'
@@ -28,6 +28,6 @@
 	})}
 </p>
 
-<EntityList entities={data.functors} type="functor" />
+<StructureList structures={data.functors} type="functor" />
 
 <SuggestionForm />

@@ -10,7 +10,7 @@
 	import Fa from 'svelte-fa'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
 	import HelpMessage from '$components/HelpMessage.svelte'
-	import EntityList from '$components/EntityList.svelte'
+	import StructureList from '$components/StructureList.svelte'
 
 	let { data } = $props()
 
@@ -219,7 +219,7 @@
 			that a distinguishing property may be missing from the database.
 		</p>
 
-		<EntityList entities={data.undistinguishable_categories} type="category" />
+		<StructureList structures={data.undistinguishable_categories} type="category" />
 	</section>
 {/if}
 

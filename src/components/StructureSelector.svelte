@@ -1,27 +1,32 @@
 <script lang="ts">
 	import { goto } from '$app/navigation'
 	import { page } from '$app/state'
-	import { STRUCTURES } from '$lib/client/config'
-	import type { Structure } from '$lib/commons/types'
+	import type { StructureType } from '$lib/commons/types'
 
-	type Props = {
-		structure: Structure
+	const STRUCTURES: StructureType[] = ['category', 'functor']
+
+	const PLURALS = {
+		category: 'categories',
+		functor: 'functors',
 	}
 
-	let { structure }: Props = $props()
+	type Props = {
+		selected_type: StructureType
+	}
+
+	let { selected_type }: Props = $props()
 
 	function handle_change() {
 		const path = page.url.pathname
-		const singular = structure === 'categories' ? 'category' : 'functor'
 
 		if (path.endsWith('-implications')) {
-			goto(`/${singular}-implications`)
+			goto(`/${selected_type}-implications`)
 		} else if (path.endsWith('-properties')) {
-			goto(`/${singular}-properties`)
+			goto(`/${selected_type}-properties`)
 		} else if (path.endsWith('-search')) {
-			goto(`/${singular}-search`)
+			goto(`/${selected_type}-search`)
 		} else {
-			goto(`/${structure}`)
+			goto(`/${PLURALS[selected_type]}`)
 		}
 	}
 </script>
@@ -30,12 +35,12 @@
 
 <select
 	id="structure_selector"
-	bind:value={structure}
+	bind:value={selected_type}
 	onchange={handle_change}
 	aria-label="Structure"
 >
 	{#each STRUCTURES as structure}
-		<option value={structure}>{structure}</option>
+		<option value={structure}>{PLURALS[structure]}</option>
 	{/each}
 </select>
 

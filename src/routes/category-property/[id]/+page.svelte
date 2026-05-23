@@ -1,5 +1,5 @@
 <script lang="ts">
-	import EntityList from '$components/EntityList.svelte'
+	import StructureList from '$components/StructureList.svelte'
 	import HelpMessage from '$components/HelpMessage.svelte'
 	import ImplicationList from '$components/ImplicationList.svelte'
 	import MetaData from '$components/MetaData.svelte'
@@ -80,7 +80,7 @@
 	})}
 </p>
 
-<EntityList entities={data.examples} type="category" />
+<StructureList structures={data.examples} type="category" />
 
 <h3 class="sticky-heading">Counterexamples</h3>
 
@@ -91,7 +91,7 @@
 	})}
 </p>
 
-<EntityList entities={data.counterexamples} type="category" />
+<StructureList structures={data.counterexamples} type="category" />
 
 <h3 class="sticky-heading">Unknown</h3>
 
@@ -106,7 +106,7 @@
 	{/if}
 </p>
 
-<EntityList entities={data.unknown_categories} type="category" />
+<StructureList structures={data.unknown_categories} type="category" />
 
 {#if data.undecidable_categories.length}
 	<h3 class="sticky-heading">Undecidable categories</h3>
@@ -118,7 +118,7 @@
 		})}
 	</p>
 
-	<EntityList entities={data.undecidable_categories} type="category" />
+	<StructureList structures={data.undecidable_categories} type="category" />
 {/if}
 
 <SuggestionForm />

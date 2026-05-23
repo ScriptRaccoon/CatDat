@@ -1,3 +1,5 @@
+import type { StructureType } from './types'
+
 const ENCODE_MAP: Record<string, string> = {
 	' ': '_',
 	'ℵ₀': 'aleph0',
@@ -28,6 +30,6 @@ export function decode_property_ID(str: string): string {
 	return decoded
 }
 
-export function get_property_url(id: string, type: 'category' | 'functor') {
+export function get_property_url(id: string, type: StructureType) {
 	return `/${type}-property/${encode_property_ID(id)}`
 }

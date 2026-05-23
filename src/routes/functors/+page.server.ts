@@ -1,10 +1,10 @@
-import type { EntityShort } from '$lib/commons/types'
+import type { StructureShort } from '$lib/commons/types'
 import { query } from '$lib/server/db.catdat'
 import { error } from '@sveltejs/kit'
 import sql from 'sql-template-tag'
 
 export const load = async () => {
-	const { rows: functors, err } = query<EntityShort>(
+	const { rows: functors, err } = query<StructureShort>(
 		sql`SELECT id, name FROM functors ORDER BY lower(name)`,
 	)
 

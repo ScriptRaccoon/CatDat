@@ -1,6 +1,7 @@
 import { type Database } from 'better-sqlite3'
 import type { NormalizedImplication, PropertyMeta } from './deduction'
 import { are_equal_sets, parse_json_set } from './helpers'
+import { StructureType } from '../types'
 
 function get_assumption_string(
 	implication: NormalizedImplication,
@@ -30,7 +31,7 @@ function get_conclusion_string(
 export function get_reason_string(
 	implication: NormalizedImplication,
 	properties_dict: Record<string, PropertyMeta>,
-	type: 'category' | 'functor',
+	type: StructureType,
 ) {
 	const assumption_string = get_assumption_string(implication, properties_dict)
 	const conclusion_string = get_conclusion_string(implication, properties_dict)
@@ -43,7 +44,7 @@ export function get_contradiction_string(
 	implication: NormalizedImplication,
 	properties_dict: Record<string, PropertyMeta>,
 	property: string,
-	type: 'category' | 'functor',
+	type: StructureType,
 ) {
 	const assumption_string = get_assumption_string(implication, properties_dict, true)
 	const conclusion_string = get_conclusion_string(implication, properties_dict, true)
@@ -62,11 +63,11 @@ export function get_contradiction_string(
 /**
  * Clears all deduced implications. This is done before the deduction starts.
  */
-export function clear_deduced_implications(db: Database, type: 'category' | 'functor') {
+export function clear_deduced_implications(db: Database, type: StructureType) {
 	db.prepare(`DELETE FROM ${type}_implications WHERE is_deduced = TRUE`).run()
 }
 
-type EntityImplicationWithDualProperties = {
+type ImplicationWithDualProperties = {
 	assumptions: string
 	conclusions: string
 	dual_assumptions: string
@@ -79,7 +80,7 @@ type EntityImplicationWithDualProperties = {
  * Checks if an implication can be dualized (i.e. if all the involved properties
  * have a dual) and if the dual is different from it.
  */
-export function is_dualizable(impl: EntityImplicationWithDualProperties): boolean {
+export function is_dualizable(impl: ImplicationWithDualProperties): boolean {
 	const assumptions = parse_json_set<string>(impl.assumptions)
 	const conclusions = parse_json_set<string>(impl.conclusions)
 	const dual_assumptions = parse_json_set<string | null>(impl.dual_assumptions)

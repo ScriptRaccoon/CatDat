@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { get_property_url } from '$lib/commons/property.url'
+	import type { StructureType } from '$lib/commons/types'
 	import TextWithReason from './TextWithReason.svelte'
 
 	type Props = {
@@ -8,7 +9,7 @@
 			relation: string
 			reason?: string | null
 		}[]
-		type: 'category' | 'functor'
+		type: StructureType
 	}
 
 	let { properties, type }: Props = $props()

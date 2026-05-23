@@ -4,7 +4,7 @@
 	import MetaData from '$components/MetaData.svelte'
 	import { SEARCH_SEPARATOR } from '$lib/commons/search.config'
 	import { pluralize } from '$lib/client/utils'
-	import EntityList from '$components/EntityList.svelte'
+	import StructureList from '$components/StructureList.svelte'
 
 	let { data } = $props()
 
@@ -68,7 +68,7 @@
 	})}
 </p>
 
-<EntityList entities={data.found_objects ?? []} type="functor" />
+<StructureList structures={data.found_objects ?? []} type="functor" />
 
 <menu>
 	<a class="button" href="/functor-search">Adjust search</a>

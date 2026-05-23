@@ -5,7 +5,7 @@
 	import SearchFilter from '$components/SearchFilter.svelte'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
 	import { filter_by_tag, normalize_text, pluralize } from '$lib/client/utils'
-	import EntityList from '$components/EntityList.svelte'
+	import StructureList from '$components/StructureList.svelte'
 
 	let { data } = $props()
 
@@ -34,7 +34,7 @@
 		})}
 	</p>
 
-	<EntityList entities={searched_categories} type="category" />
+	<StructureList structures={searched_categories} type="category" />
 </section>
 
 <section>

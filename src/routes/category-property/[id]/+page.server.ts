@@ -3,7 +3,7 @@ import { render_nested_formulas } from '$lib/server/formulas'
 import { decode_property_ID } from '$lib/commons/property.url'
 import { batch } from '$lib/server/db.catdat'
 import sql from 'sql-template-tag'
-import type { EntityShort, PropertyDB } from '$lib/commons/types'
+import type { StructureShort, PropertyDB } from '$lib/commons/types'
 import type { ImplicationDB } from '$lib/commons/types'
 import { display_implication, display_property } from '$lib/server/transforms'
 
@@ -15,8 +15,8 @@ export const load = async (event) => {
 			PropertyDB,
 			{ id: string },
 			ImplicationDB,
-			EntityShort & { is_satisfied: 0 | 1 | null },
-			EntityShort,
+			StructureShort & { is_satisfied: 0 | 1 | null },
+			StructureShort,
 		]
 	>([
 		// basic information

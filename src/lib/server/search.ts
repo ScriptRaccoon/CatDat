@@ -5,13 +5,9 @@ import { error } from '@sveltejs/kit'
 import sql from 'sql-template-tag'
 import { SEARCH_SEPARATOR } from '$lib/commons/search.config'
 import { get_contradiction } from '$lib/server/consistency'
+import type { StructureShort, StructureType } from '$lib/commons/types'
 
-type NamedObject = {
-	id: string
-	name: string
-}
-
-export function search_handler(event: RequestEvent, type: 'category' | 'functor') {
+export function search_handler(event: RequestEvent, type: StructureType) {
 	const satisfied_query = event.url.searchParams.get('satisfied')
 	const unsatisfied_query = event.url.searchParams.get('unsatisfied')
 
@@ -108,7 +104,7 @@ export function search_handler(event: RequestEvent, type: 'category' | 'functor'
 		type,
 	)
 
-	const { rows: found_objects, err } = query<NamedObject>({
+	const { rows: found_objects, err } = query<StructureShort>({
 		sql: search_query,
 		values: [
 			...all_selected_properties,
@@ -136,7 +132,7 @@ export function search_handler(event: RequestEvent, type: 'category' | 'functor'
 	}
 }
 
-function get_property_query(type: 'category' | 'functor') {
+function get_property_query(type: StructureType) {
 	if (type === 'category') {
 		return sql`SELECT id, dual_property_id FROM category_properties ORDER BY lower(id)`
 	}
@@ -154,7 +150,7 @@ function get_search_query(
 	satisfied_properties: string[],
 	unsatisfied_properties: string[],
 	all_selected_properties: string[],
-	type: 'category' | 'functor',
+	type: StructureType,
 ) {
 	if (type === 'category') {
 		return `

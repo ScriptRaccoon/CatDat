@@ -11,7 +11,7 @@ import type {
 	SpecialMorphism,
 	SpecialObject,
 	TagObject,
-	EntityShort,
+	StructureShort,
 } from '$lib/commons/types'
 import { display_property_assignment } from '$lib/server/transforms'
 
@@ -27,7 +27,7 @@ export const load = async (event) => {
 			PropertyShort,
 			SpecialObject,
 			SpecialMorphism,
-			EntityShort,
+			StructureShort,
 			CommentObject,
 		]
 	>([

@@ -1,11 +1,12 @@
 import { type Database } from 'better-sqlite3'
 import { get_categories, get_normalized_category_implications } from './categories'
 import { get_functors, get_normalized_functor_implications } from './functors'
+import { StructureType } from '../types'
 
 /**
- * An entity is a category or a functor.
+ * A structure is a category or a functor.
  */
-export type EntityMeta = {
+export type StructureMeta = {
 	id: string
 	name: string
 	dual?: string | null
@@ -30,9 +31,9 @@ export type PropertyMeta = {
 }
 
 /**
- * Returns the list of entities saved in the database of a given type.
+ * Returns the list of stored categorical structures of a given type.
  */
-export function get_entities(db: Database, type: 'category' | 'functor'): EntityMeta[] {
+export function get_structures(db: Database, type: StructureType): StructureMeta[] {
 	if (type === 'category') return get_categories(db)
 	if (type === 'functor') return get_functors(db)
 	throw new Error('Unsupported type')
@@ -43,7 +44,7 @@ export function get_entities(db: Database, type: 'category' | 'functor'): Entity
  */
 export function get_normalized_implications(
 	db: Database,
-	type: 'category' | 'functor',
+	type: StructureType,
 ): NormalizedImplication[] {
 	if (type === 'category') return get_normalized_category_implications(db)
 	if (type === 'functor') return get_normalized_functor_implications(db)
@@ -53,7 +54,7 @@ export function get_normalized_implications(
 /**
  * Returns a dictionary of properties saved in the database.
  */
-export function get_properties_dict(db: Database, type: 'category' | 'functor') {
+export function get_properties_dict(db: Database, type: StructureType) {
 	const properties = db
 		.prepare(
 			`SELECT
@@ -73,29 +74,33 @@ export function get_properties_dict(db: Database, type: 'category' | 'functor') 
 }
 
 /**
- * Returns a dictionary with all assigned properties of a list of entities
+ * Returns a dictionary with all assigned properties of a list of structures
  * (categories or functors), grouped by id and
  * value (satisfied / unsatisfied / undecidable).
  */
 export function get_property_assignments(
 	db: Database,
-	entities: { id: string }[],
-	type: 'category' | 'functor',
+	structures: { id: string }[],
+	type: StructureType,
 ) {
 	const rows = db
 		.prepare(
-			`SELECT property_id, ${type}_id as entity_id, is_satisfied
+			`SELECT property_id, ${type}_id as structure_id, is_satisfied
 			FROM ${type}_property_assignments`,
 		)
-		.all() as { property_id: string; entity_id: string; is_satisfied: 0 | 1 | null }[]
+		.all() as {
+		property_id: string
+		structure_id: string
+		is_satisfied: 0 | 1 | null
+	}[]
 
 	const grouped: Record<
 		string,
 		{ satisfied: Set<string>; unsatisfied: Set<string>; undecidable: Set<string> }
 	> = {}
 
-	for (const entity of entities) {
-		grouped[entity.id] = {
+	for (const structure of structures) {
+		grouped[structure.id] = {
 			satisfied: new Set(),
 			unsatisfied: new Set(),
 			undecidable: new Set(),
@@ -103,7 +108,7 @@ export function get_property_assignments(
 	}
 
 	for (const row of rows) {
-		const { property_id, entity_id, is_satisfied } = row
+		const { property_id, structure_id, is_satisfied } = row
 		let group_key: 'satisfied' | 'unsatisfied' | 'undecidable'
 		if (is_satisfied === 1) {
 			group_key = 'satisfied'
@@ -112,30 +117,30 @@ export function get_property_assignments(
 		} else {
 			group_key = 'undecidable'
 		}
-		grouped[entity_id][group_key].add(property_id)
+		grouped[structure_id][group_key].add(property_id)
 	}
 
 	return grouped
 }
 
 /**
- * Returns a dictionary with all assigned properties of entities,
- * grouped by entity, value (satisfied / unsatisfied), and deduced status.
+ * Returns a dictionary with all assigned properties of structures,
+ * grouped by structure, value (satisfied / unsatisfied), and deduced status.
  * We exclude undecidable properties here.
  */
 export function get_property_assignments_by_deduction(
 	db: Database,
-	entities: { id: string }[],
-	type: 'category' | 'functor',
+	structures: { id: string }[],
+	type: StructureType,
 ) {
 	const rows = db
 		.prepare(
-			`SELECT property_id, ${type}_id as entity_id, is_satisfied, is_deduced
+			`SELECT property_id, ${type}_id as structure_id, is_satisfied, is_deduced
 			FROM ${type}_property_assignments WHERE is_satisfied IS NOT NULL`,
 		)
 		.all() as {
 		property_id: string
-		entity_id: string
+		structure_id: string
 		is_satisfied: 0 | 1
 		is_deduced: 0 | 1
 	}[]
@@ -148,16 +153,16 @@ export function get_property_assignments_by_deduction(
 		}
 	> = {}
 
-	for (const entity of entities) {
-		grouped[entity.id] = {
+	for (const structure of structures) {
+		grouped[structure.id] = {
 			satisfied: { non_deduced: new Set(), deduced: new Set() },
 			unsatisfied: { non_deduced: new Set(), deduced: new Set() },
 		}
 	}
 
 	for (const row of rows) {
-		const { property_id, entity_id, is_satisfied, is_deduced } = row
-		grouped[entity_id][is_satisfied ? 'satisfied' : 'unsatisfied'][
+		const { property_id, structure_id, is_satisfied, is_deduced } = row
+		grouped[structure_id][is_satisfied ? 'satisfied' : 'unsatisfied'][
 			is_deduced ? 'deduced' : 'non_deduced'
 		].add(property_id)
 	}
@@ -166,11 +171,11 @@ export function get_property_assignments_by_deduction(
 }
 
 /**
- * Checks if an entity is a dual, but not the
- * original entity to prevent circular reasoning.
+ * Checks if an structure is a dual, but not the
+ * original structure to prevent circular reasoning.
  */
-export function is_dual_entity(
-	entity: EntityMeta,
-): entity is EntityMeta & { dual: string } {
-	return Boolean(entity.dual) && entity.name.toLowerCase().startsWith('dual')
+export function is_dual_structure(
+	structure: StructureMeta,
+): structure is StructureMeta & { dual: string } {
+	return Boolean(structure.dual) && structure.name.toLowerCase().startsWith('dual')
 }
