@@ -14,3 +14,7 @@ export function to_placeholders(arr: string[]): string {
 }
 
 export const sleep = (delay: number) => new Promise<void>((res) => setTimeout(res, delay))
+
+export function parse_json_set<T>(json: string): Set<T> {
+	return new Set(JSON.parse(json))
+}

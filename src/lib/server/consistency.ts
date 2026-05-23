@@ -3,24 +3,25 @@ import { query } from '$lib/server/db.catdat'
 import { is_subset } from './utils'
 import type { SqliteError } from 'better-sqlite3'
 import {
-	get_normalized_category_implications,
+	get_normalized_implications,
 	stringify_implication,
-	type NormalizedCategoryImplication,
+	type NormalizedImplication,
 } from './implications'
+import type { StructureType } from '$lib/commons/types'
 
 // TODO: If possible, remove the code duplication with deduction and redundancy scripts.
-// TODO: allow functors as well
 
 export function get_contradiction(
 	satisfied_properties: Set<string>,
 	unsatisfied_properties: Set<string>,
+	type: StructureType,
 ): { contradiction: string[] | null; err: SqliteError | null } {
 	for (const p of satisfied_properties) {
 		const contradiction = [`${p} ⟹ ${p}`]
 		if (unsatisfied_properties.has(p)) return { contradiction, err: null }
 	}
 
-	const { implications, err } = get_normalized_category_implications()
+	const { implications, err } = get_normalized_implications(type)
 
 	if (err) return { contradiction: null, err }
 
@@ -36,13 +37,13 @@ export function get_contradiction(
 function contradiction_worker(
 	satisfied_properties: Set<string>,
 	unsatisfied_properties: Set<string>,
-	implications: NormalizedCategoryImplication[],
+	implications: NormalizedImplication[],
 ): string[] | null {
 	for (const p of satisfied_properties) {
 		if (unsatisfied_properties.has(p)) return [`${p} ⟹ ${p}`]
 	}
 
-	const deduction_dict: Record<string, NormalizedCategoryImplication> = {}
+	const deduction_dict: Record<string, NormalizedImplication> = {}
 	const deduced_satisfied_properties = new Set(satisfied_properties)
 
 	// bfs to find contradiction
@@ -84,7 +85,7 @@ function contradiction_worker(
 
 function build_shortest_proof(
 	satisfied_properties: Set<string>,
-	deduction_dict: Record<string, NormalizedCategoryImplication>,
+	deduction_dict: Record<string, NormalizedImplication>,
 	target_property: string,
 ) {
 	const proof: string[] = []
@@ -110,7 +111,7 @@ function build_shortest_proof(
 }
 
 export function get_missing_combinations() {
-	const { implications, err: err_imp } = get_normalized_category_implications()
+	const { implications, err: err_imp } = get_normalized_implications('category')
 
 	if (err_imp) return { err: err_imp, missing_combinations: [] }
 

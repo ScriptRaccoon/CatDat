@@ -5,6 +5,8 @@
 	import { SEARCH_SEPARATOR } from '$lib/commons/search.config'
 	import { pluralize } from '$lib/client/utils'
 	import StructureList from '$components/StructureList.svelte'
+	import Fa from 'svelte-fa'
+	import { faWarning } from '@fortawesome/free-solid-svg-icons'
 
 	let { data } = $props()
 
@@ -61,14 +63,26 @@
 	</div>
 {/if}
 
-<p class="hint">
-	{pluralize(data.found_structures.length, {
-		one: 'Found {count} functor',
-		other: 'Found {count} functors',
-	})}
-</p>
+{#if !data.contradiction}
+	<p class="hint">
+		{pluralize(data.found_structures.length, {
+			one: 'Found {count} functor',
+			other: 'Found {count} functors',
+		})}
+	</p>
 
-<StructureList structures={data.found_structures} type="functor" />
+	<StructureList structures={data.found_structures} type="functor" />
+{:else}
+	<p class="hint">
+		<Fa icon={faWarning} /> No functors found because the requirements are inconsistent:
+	</p>
+
+	<ol class="hint">
+		{#each data.contradiction as segment}
+			<li>{segment}</li>
+		{/each}
+	</ol>
+{/if}
 
 <menu>
 	<a class="button" href="/functor-search">Adjust search</a>

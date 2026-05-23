@@ -80,28 +80,26 @@ export function search_handler(event: RequestEvent, type: StructureType) {
 		dual_satisfied_properties.every(Boolean) &&
 		dual_unsatisfied_properties.every(Boolean)
 
-	// TODO: implement this for functors as well
-	if (type === 'category') {
-		const { contradiction, err } = get_contradiction(
-			new Set(satisfied_properties),
-			new Set(unsatisfied_properties),
-		)
+	const { contradiction, err: err_con } = get_contradiction(
+		new Set(satisfied_properties),
+		new Set(unsatisfied_properties),
+		type,
+	)
 
-		if (err) error(500, 'Consistency check failed')
+	if (err_con) error(500, 'Consistency check failed')
 
-		if (contradiction) {
-			cache_page(event)
+	if (contradiction) {
+		cache_page(event)
 
-			return {
-				contradiction,
-				all_properties,
-				satisfied_properties,
-				unsatisfied_properties,
-				dual_satisfied_properties,
-				dual_unsatisfied_properties,
-				dual_search_available,
-				found_structures: [],
-			}
+		return {
+			contradiction,
+			all_properties,
+			satisfied_properties,
+			unsatisfied_properties,
+			dual_satisfied_properties,
+			dual_unsatisfied_properties,
+			dual_search_available,
+			found_structures: [],
 		}
 	}
 
