@@ -46,6 +46,11 @@ export type PropertyDisplay = Replace<
 
 export type PropertyShort = Pick<PropertyDB, 'id' | 'relation'>
 
+export type GroupedPropertyShort = Pick<
+	PropertyDB,
+	'id' | 'relation' | 'dual_property_id'
+>
+
 export type PropertyAssignmentDB = {
 	id: string
 	reason: string

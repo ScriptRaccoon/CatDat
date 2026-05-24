@@ -1,4 +1,4 @@
-import type { PropertyShort } from '$lib/commons/types'
+import type { GroupedPropertyShort } from '$lib/commons/types'
 import { query } from '$lib/server/db.catdat'
 import { error } from '@sveltejs/kit'
 import sql from 'sql-template-tag'
@@ -6,9 +6,7 @@ import sql from 'sql-template-tag'
 // TODO: remove code duplication with category properties list page
 
 export const load = async () => {
-	const { rows: properties, err } = query<
-		PropertyShort & { dual_property_id?: string }
-	>(sql`
+	const { rows: properties, err } = query<GroupedPropertyShort>(sql`
         SELECT id, relation, dual_property_id FROM functor_properties
         ORDER BY lower(id)
     `)
