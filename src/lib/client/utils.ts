@@ -1,4 +1,3 @@
-import { goto } from '$app/navigation'
 import type { Attachment } from 'svelte/attachments'
 
 export function get_device_type() {
@@ -6,10 +5,6 @@ export function get_device_type() {
 	if (w < 640) return 'mobile'
 	if (w < 1024) return 'tablet'
 	return 'desktop'
-}
-
-export function filter_by_tag(tag: string) {
-	goto(`/categories/${tag}`)
 }
 
 export function pluralize(count: number, forms: { one: string; other: string }) {

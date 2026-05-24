@@ -5,12 +5,17 @@
 	import Chip from '$components/Chip.svelte'
 	import { category_detail_level } from '$lib/states/detail_level.svelte'
 	import TextWithReason from '$components/TextWithReason.svelte'
-	import { filter_by_tag, pluralize } from '$lib/client/utils'
+	import { pluralize } from '$lib/client/utils'
 	import { faCommentDots, faQuestion } from '@fortawesome/free-solid-svg-icons'
 	import Fa from 'svelte-fa'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
 	import HelpMessage from '$components/HelpMessage.svelte'
 	import StructureList from '$components/StructureList.svelte'
+	import { goto } from '$app/navigation'
+
+	function filter_by_tag(tag: string) {
+		goto(`/categories/${tag}`)
+	}
 
 	let { data } = $props()
 

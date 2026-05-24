@@ -1,19 +1,10 @@
 <script lang="ts">
-	import StructureList from '$components/StructureList.svelte'
-	import MetaData from '$components/MetaData.svelte'
-	import SuggestionForm from '$components/SuggestionForm.svelte'
-	import { pluralize } from '$lib/client/utils'
+	import StructureListPage from '$pages/StructureListPage.svelte'
 	import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
 	import Fa from 'svelte-fa'
 
 	let { data } = $props()
 </script>
-
-<MetaData title="List of functors" />
-
-<h2>List of functors</h2>
-
-<!-- TODO: add search feature if the list grows in the future -->
 
 <p>
 	<!-- TODO: remove this later -->
@@ -21,13 +12,4 @@
 	The functor application is still in its early stages. More functors will be added soon.
 </p>
 
-<p class="hint">
-	{pluralize(data.functors.length, {
-		one: 'Found {count} functor',
-		other: 'Found {count} functors',
-	})}
-</p>
-
-<StructureList structures={data.functors} type="functor" />
-
-<SuggestionForm />
+<StructureListPage type="functor" structures={data.functors} tags={data.tags} />
