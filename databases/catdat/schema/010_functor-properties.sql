@@ -11,6 +11,14 @@ CREATE TABLE functor_properties (
 
 CREATE UNIQUE INDEX functor_properties_lower_id_unique ON functor_properties (lower(id));
 
+CREATE TABLE related_functor_properties (
+    property_id TEXT NOT NULL,
+    related_property_id TEXT NOT NULL,
+    PRIMARY KEY (property_id, related_property_id),
+    FOREIGN KEY (property_id) REFERENCES functor_properties (id) ON DELETE CASCADE,
+    FOREIGN KEY (related_property_id) REFERENCES functor_properties (id) ON DELETE CASCADE
+);
+
 CREATE TABLE functor_property_assignments (
     id INTEGER PRIMARY KEY,
     functor_id TEXT NOT NULL,

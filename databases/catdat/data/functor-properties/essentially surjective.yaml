@@ -4,3 +4,5 @@ description: 'A functor $F : \C \to \D$ is <i>essentially surjective</i> when ev
 nlab_link: https://ncatlab.org/nlab/show/essentially+surjective+functor
 invariant_under_equivalences: true
 dual_property: essentially surjective
+related_properties:
+  - equivalence

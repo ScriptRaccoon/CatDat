@@ -4,3 +4,6 @@ description: A functor is <i>right exact</i> when it preserves finite colimits.
 nlab_link: https://ncatlab.org/nlab/show/exact+functor
 invariant_under_equivalences: true
 dual_property: left exact
+related_properties:
+  - exact
+  - cocontinuous

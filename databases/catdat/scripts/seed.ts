@@ -88,6 +88,7 @@ function clear_all_data() {
 			db.prepare(`DELETE FROM functor_comments`).run()
 			db.prepare(`DELETE FROM related_functors`).run()
 			db.prepare(`DELETE FROM functor_tag_assignments`).run()
+			db.prepare(`DELETE FROM related_functor_properties`).run()
 			db.prepare(`DELETE FROM functor_properties`).run()
 			db.prepare(`DELETE FROM functors`).run()
 
@@ -393,6 +394,10 @@ function seed_functor_properties() {
 			dual_property_id, invariant_under_equivalences
 		) VALUES (?, ?, ?, ?, ?, ?)`)
 
+	const related_insert = db.prepare(
+		`INSERT INTO related_functor_properties (property_id, related_property_id) VALUES (?, ?)`,
+	)
+
 	function insert_property(property: FunctorPropertyYaml) {
 		property_insert.run(
 			property.id,
@@ -402,6 +407,10 @@ function seed_functor_properties() {
 			property.dual_property || null,
 			Number(property.invariant_under_equivalences),
 		)
+
+		for (const related of property.related_properties) {
+			related_insert.run(property.id, related)
+		}
 	}
 
 	const tx = db.transaction(() => {

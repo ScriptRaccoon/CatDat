@@ -4,3 +4,6 @@ description: 'A functor is <i>faithful</i> when it is injective on Hom-sets: If 
 nlab_link: https://ncatlab.org/nlab/show/faithful+functor
 invariant_under_equivalences: true
 dual_property: faithful
+related_properties:
+  - equivalence
+  - full

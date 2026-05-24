@@ -12,6 +12,7 @@ export const load = async (event) => {
 	const { results, err } = batch<
 		[
 			PropertyDB,
+			{ id: string },
 			ImplicationDB,
 			StructureShort & { is_satisfied: 0 | 1 | null },
 			StructureShort,
@@ -29,6 +30,13 @@ export const load = async (event) => {
             FROM
                 functor_properties
             WHERE id = ${id}
+        `,
+		// related properties
+		sql`
+            SELECT related_property_id AS id
+            FROM related_functor_properties
+            WHERE property_id = ${id}
+            ORDER BY lower(id)
         `,
 		// relevant implications
 		sql`
@@ -80,12 +88,19 @@ export const load = async (event) => {
 
 	if (err) error(500, 'Could not load properties')
 
-	const [properties, relevant_implications_db, known_functors, unknown_functors] =
-		results
+	const [
+		properties,
+		related,
+		relevant_implications_db,
+		known_functors,
+		unknown_functors,
+	] = results
 
 	if (!properties.length) error(404, `There is no property with ID '${id}'`)
 
 	const property = display_property(properties[0])
+
+	const related_properties = related.map(({ id }) => id)
 
 	const relevant_implications = relevant_implications_db.map(display_implication)
 
@@ -96,6 +111,7 @@ export const load = async (event) => {
 
 	return render_nested_formulas({
 		property,
+		related_properties,
 		relevant_implications,
 		examples,
 		counterexamples,

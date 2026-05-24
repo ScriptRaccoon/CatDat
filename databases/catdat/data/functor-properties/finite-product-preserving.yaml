@@ -4,3 +4,7 @@ description: A functor $F$ <i>preserves finite products</i> when for every finit
 nlab_link: null
 invariant_under_equivalences: true
 dual_property: finite-coproduct-preserving
+related_properties:
+  - product-preserving
+  - terminal-object-preserving
+  - continuous

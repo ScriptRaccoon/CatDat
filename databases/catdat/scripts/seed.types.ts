@@ -84,6 +84,7 @@ export type FunctorPropertyYaml = {
 	nlab_link?: string | null
 	dual_property?: string | null
 	invariant_under_equivalences: boolean
+	related_properties: string[]
 }
 
 export type FunctorYaml = {

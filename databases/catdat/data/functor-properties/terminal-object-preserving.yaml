@@ -4,3 +4,6 @@ description: A functor $F$ <i>preserves terminal objects</i> when it maps every 
 nlab_link: null
 invariant_under_equivalences: true
 dual_property: initial-object-preserving
+related_properties:
+  - finite-product-preserving
+  - continuous

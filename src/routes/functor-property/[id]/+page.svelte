@@ -23,7 +23,7 @@
 	{/if}
 </p>
 
-{#if property.dual_property_id || property.nlab_link}
+{#if data.property.dual_property_id || data.related_properties.length || data.property.nlab_link}
 	<ul>
 		{#if property.dual_property_id}
 			<li>
@@ -34,6 +34,19 @@
 				{#if property.dual_property_id === property.id}
 					(self-dual)
 				{/if}
+			</li>
+		{/if}
+
+		{#if data.related_properties.length}
+			<li>
+				<strong>Related properties:</strong>
+				{#each data.related_properties as related_property, i}
+					<a href={get_property_url(related_property, 'functor')}>
+						{related_property}
+					</a>{#if i < data.related_properties.length - 1}
+						,&nbsp;
+					{/if}
+				{/each}
 			</li>
 		{/if}
 

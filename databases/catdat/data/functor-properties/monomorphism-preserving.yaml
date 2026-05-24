@@ -6,3 +6,5 @@ description: |-
 nlab_link: https://ncatlab.org/nlab/show/monomorphism
 invariant_under_equivalences: true
 dual_property: epimorphism-preserving
+related_properties:
+  - left exact

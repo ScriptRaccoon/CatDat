@@ -4,3 +4,5 @@ description: 'A functor $F : \C \to \D$ is <i>representable</i> if $\C$ is local
 nlab_link: https://ncatlab.org/nlab/show/representable+functor
 invariant_under_equivalences: true
 dual_property: null
+related_properties:
+  - continuous

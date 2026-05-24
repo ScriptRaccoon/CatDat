@@ -4,3 +4,5 @@ description: A functor is <i>cofinitary</i> when it preserves cofiltered limits.
 nlab_link: null
 invariant_under_equivalences: true
 dual_property: finitary
+related_properties:
+  - continuous

@@ -4,3 +4,6 @@ description: 'A functor is <i>full</i> when it is surjective on Hom-sets: Every 
 nlab_link: https://ncatlab.org/nlab/show/full+functor
 invariant_under_equivalences: true
 dual_property: full
+related_properties:
+  - equivalence
+  - faithful

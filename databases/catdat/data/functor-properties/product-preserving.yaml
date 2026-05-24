@@ -4,6 +4,10 @@ description: A functor $F$ <i>preserves products</i> when for every family of ob
 nlab_link: null
 invariant_under_equivalences: true
 dual_property: coproduct-preserving
+related_properties:
+  - finite-product-preserving
+  - terminal-object-preserving
+  - continuous
 
 # Here is why we do not call this property "preserves products":
 # Either we name the property "preserves products" and choose the

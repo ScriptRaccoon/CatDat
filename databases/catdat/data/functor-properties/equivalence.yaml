@@ -4,3 +4,9 @@ description: A functor is an <i>equivalence</i> if it has a pseudo-inverse funct
 nlab_link: https://ncatlab.org/nlab/show/equivalence+of+categories
 invariant_under_equivalences: true
 dual_property: equivalence
+related_properties:
+  - full
+  - faithful
+  - essentially surjective
+  - continuous
+  - cocontinuous
