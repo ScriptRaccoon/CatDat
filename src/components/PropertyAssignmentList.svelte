@@ -8,7 +8,7 @@
 		PropertyShort,
 		StructureType,
 	} from '$lib/commons/types'
-	import { category_detail_level } from '$lib/states/detail_level.svelte'
+	import { assignment_level } from '$lib/states/assignment_level.svelte'
 	import { pluralize } from '$lib/client/utils'
 
 	type Props = {
@@ -37,7 +37,7 @@
 	<section>
 		<h3 class="sticky-heading">Satisfied Properties</h3>
 
-		{#if category_detail_level.value === 'all'}
+		{#if assignment_level.value === 'all'}
 			<p class="hint">Assigned properties</p>
 			<PropertyList
 				properties={satisfied_properties.filter((p) => !p.is_deduced)}
@@ -49,9 +49,9 @@
 				properties={satisfied_properties.filter((p) => p.is_deduced)}
 				{type}
 			/>
-		{:else if category_detail_level.value === 'merged'}
+		{:else if assignment_level.value === 'merged'}
 			<PropertyList properties={satisfied_properties} {type} />
-		{:else if category_detail_level.value === 'basic'}
+		{:else if assignment_level.value === 'basic'}
 			<p class="hint">Assigned properties; further properties can be deduced.</p>
 			<PropertyList
 				properties={satisfied_properties.filter((p) => !p.is_deduced)}
@@ -63,7 +63,7 @@
 	<section>
 		<h3 class="sticky-heading">Unsatisfied Properties</h3>
 
-		{#if category_detail_level.value === 'all'}
+		{#if assignment_level.value === 'all'}
 			<p class="hint">Assigned properties</p>
 			<PropertyList
 				properties={unsatisfied_properties.filter((p) => !p.is_deduced)}
@@ -77,9 +77,9 @@
 			/>
 
 			<p class="hint">*This also uses the deduced satisfied properties.</p>
-		{:else if category_detail_level.value === 'merged'}
+		{:else if assignment_level.value === 'merged'}
 			<PropertyList properties={unsatisfied_properties} {type} />
-		{:else if category_detail_level.value === 'basic'}
+		{:else if assignment_level.value === 'basic'}
 			<p class="hint">Assigned properties; further properties can be deduced.</p>
 			<PropertyList
 				properties={unsatisfied_properties.filter((p) => !p.is_deduced)}

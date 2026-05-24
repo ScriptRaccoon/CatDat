@@ -5,16 +5,16 @@
 	import Chip from '$components/Chip.svelte'
 	import ChipGroup from '$components/ChipGroup.svelte'
 	import {
-		category_detail_level,
-		CATEGORY_DETAIL_LEVELS,
-		update_category_detail_level,
-	} from '$lib/states/detail_level.svelte'
+		assignment_level,
+		ASSIGNMENT_LEVELS,
+		update_assignment_level,
+	} from '$lib/states/assignment_level.svelte'
 	import { theme, THEMES, update_theme } from '$lib/states/theme.svelte'
 	import MetaData from '$components/MetaData.svelte'
 	import { set_tracking, tracking } from '$lib/states/tracking.svelte'
 
 	$effect(() => update_theme(theme.value))
-	$effect(() => update_category_detail_level(category_detail_level.value))
+	$effect(() => update_assignment_level(assignment_level.value))
 	$effect(() => set_tracking(tracking.allow))
 </script>
 
@@ -49,18 +49,18 @@
 </section>
 
 <section>
-	<h3>Category detail level</h3>
+	<h3>Assignment Level</h3>
 
 	<ChipGroup>
-		{#each Object.keys(CATEGORY_DETAIL_LEVELS) as level}
-			{@const selected = category_detail_level.value === level}
+		{#each Object.keys(ASSIGNMENT_LEVELS) as level}
+			{@const selected = assignment_level.value === level}
 			<label class:selected>
 				<input
 					class="visually-hidden"
 					type="radio"
-					name="category-detail-level"
+					name="assignment-level"
 					value={level}
-					bind:group={category_detail_level.value}
+					bind:group={assignment_level.value}
 				/>
 				<Chip>
 					{level}
@@ -74,7 +74,7 @@
 	</ChipGroup>
 
 	<p class="hint" aria-live="polite">
-		{CATEGORY_DETAIL_LEVELS[category_detail_level.value]}
+		{ASSIGNMENT_LEVELS[assignment_level.value]}
 	</p>
 </section>
 
