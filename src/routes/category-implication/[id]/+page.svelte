@@ -1,74 +1,10 @@
 <script lang="ts">
-	import StructureList from '$components/StructureList.svelte'
-	import MetaData from '$components/MetaData.svelte'
-	import SuggestionForm from '$components/SuggestionForm.svelte'
-	import { pluralize } from '$lib/client/utils'
-	import { get_property_url } from '$lib/commons/property.url'
-	import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
-	import Fa from 'svelte-fa'
-
+	import ImplicationPage from '$pages/ImplicationPage.svelte'
 	let { data } = $props()
 </script>
 
-<MetaData title="Implication Details" />
-
-<h2>Implication Details</h2>
-
-<p>
-	<strong>Assumptions:</strong>
-
-	{#each data.implication.assumptions as property, index}
-		<a href={get_property_url(property, 'category')}>{property}</a
-		>{#if index < data.implication.assumptions.length - 1}
-			,&nbsp;
-		{/if}
-	{/each}
-</p>
-
-<p>
-	<strong>Conclusions:</strong>
-	{#each data.implication.conclusions as property, index}
-		<a href={get_property_url(property, 'category')}>{property}</a
-		>{#if index < data.implication.conclusions.length - 1}
-			,&nbsp;
-		{/if}
-	{/each}
-</p>
-
-{#if data.implication.is_equivalence}
-	<p>
-		<Fa icon={faInfoCircle} />
-		This is an equivalence.
-	</p>
-{/if}
-
-{#if data.implication.dualized_from}
-	<p>
-		This implication has been dualized from <a
-			href="/category-implication/{data.implication.dualized_from}"
-		>
-			this implication
-		</a>.
-	</p>
-{:else}
-	<p>
-		<strong>Reason:</strong>
-		{@html data.implication.reason}
-	</p>
-{/if}
-
-{#if data.categories.length > 0}
-	<details>
-		<summary class="hint">
-			{pluralize(data.categories.length, {
-				one: 'Show {count} category using this implication',
-				other: 'Show {count} categories using this implication',
-			})}
-		</summary>
-		<StructureList structures={data.categories} type="category" />
-	</details>
-{/if}
-
-<button class="button" onclick={() => window.history.back()}>Go back</button>
-
-<SuggestionForm />
+<ImplicationPage
+	type="category"
+	implication={data.implication}
+	structures={data.categories}
+/>

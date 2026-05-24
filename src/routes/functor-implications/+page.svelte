@@ -1,26 +1,21 @@
-<script>
-	import ImplicationList from '$components/ImplicationList.svelte'
-	import MetaData from '$components/MetaData.svelte'
-	import SuggestionForm from '$components/SuggestionForm.svelte'
-	import { pluralize } from '$lib/client/utils'
+<script lang="ts">
+	import ImplicationListPage from '$pages/ImplicationListPage.svelte'
 
 	let { data } = $props()
 </script>
 
-<MetaData title="Implications of functors" />
+<ImplicationListPage implications={data.implications} type="functor">
+	{#snippet hints()}
+		<p class="hint">
+			*Deductions from these implications are automatically incorporated into each
+			functor whenever applicable. For instance, if a functor is identified as
+			monadic, the property of being continuous is automatically inferred and added.
+		</p>
 
-<h2>Implications of functors</h2>
-
-<!-- TODO: add search feature if the list grows in the future -->
-<!-- TODO: add dualized-toggle if the list grows in the future -->
-
-<p class="hint">
-	{pluralize(data.implications.length, {
-		one: 'Found {count} implication',
-		other: 'Found {count} implications',
-	})}
-</p>
-
-<ImplicationList implications={data.implications} type="functor" />
-
-<SuggestionForm />
+		<p class="hint">
+			Moreover, implications are automatically dualized when the corresponding dual
+			properties exist. For example, the statement that a right adjoint is
+			continuous automatically implies that a left adjoint is cocontinuous.
+		</p>
+	{/snippet}
+</ImplicationListPage>

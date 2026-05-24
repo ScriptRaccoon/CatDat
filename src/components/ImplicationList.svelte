@@ -19,12 +19,6 @@
 			</li>
 		{/each}
 	</ul>
-
-	{#if type === 'functor'}
-		<p class="hint">
-			*Those implications also require assumptions on the source or target category.
-		</p>
-	{/if}
 {:else}
 	<p>&mdash;</p>
 {/if}
