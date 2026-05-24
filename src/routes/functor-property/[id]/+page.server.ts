@@ -24,9 +24,9 @@ export const load = async (event) => {
                 id,
                 relation,
                 description,
+                dual_property_id,
                 nlab_link,
-                invariant_under_equivalences,
-                dual_property_id
+                invariant_under_equivalences
             FROM
                 functor_properties
             WHERE id = ${id}
@@ -96,25 +96,31 @@ export const load = async (event) => {
 		unknown_functors,
 	] = results
 
-	if (!properties.length) error(404, `There is no property with ID '${id}'`)
+	if (!properties.length) error(404, 'Property not found')
 
 	const property = display_property(properties[0])
 
 	const related_properties = related.map(({ id }) => id)
 
-	const relevant_implications = relevant_implications_db.map(display_implication)
-
 	const examples = known_functors.filter((f) => f.is_satisfied === 1)
 	const counterexamples = known_functors.filter((f) => f.is_satisfied === 0)
+	const undecidable_functors = known_functors.filter((f) => f.is_satisfied === null)
 
-	// TODO: also render undecidable functors in case they come up
+	const relevant_implications = relevant_implications_db.map(display_implication)
+
+	for (const impl of relevant_implications) {
+		if (!impl.is_equivalence && impl.conclusions.includes(id)) {
+			impl.conclusions = [id]
+		}
+	}
 
 	return render_nested_formulas({
 		property,
 		related_properties,
-		relevant_implications,
 		examples,
 		counterexamples,
 		unknown_functors,
+		undecidable_functors,
+		relevant_implications,
 	})
 }

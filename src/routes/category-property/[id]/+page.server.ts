@@ -22,8 +22,12 @@ export const load = async (event) => {
 		// basic information
 		sql`
 			SELECT
-				id, relation, description, dual_property_id,
-				nlab_link, invariant_under_equivalences
+				id,
+				relation,
+				description,
+				dual_property_id,
+				nlab_link,
+				invariant_under_equivalences
 			FROM category_properties
 			WHERE id = ${id}
 		`,

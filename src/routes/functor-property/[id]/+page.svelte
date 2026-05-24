@@ -1,37 +1,38 @@
 <script lang="ts">
-	import ImplicationList from '$components/ImplicationList.svelte'
 	import StructureList from '$components/StructureList.svelte'
+	import HelpMessage from '$components/HelpMessage.svelte'
+	import ImplicationList from '$components/ImplicationList.svelte'
 	import MetaData from '$components/MetaData.svelte'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
 	import { pluralize } from '$lib/client/utils'
 	import { get_property_url } from '$lib/commons/property.url'
+	import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
+	import Fa from 'svelte-fa'
 
 	let { data } = $props()
-
-	let property = $derived(data.property)
 </script>
 
-<MetaData title={property.id} description="Discover this property of functors" />
+<MetaData title={data.property.id} description="Discover this property of functors" />
 
-<h2>{property.id}</h2>
+<h2>{data.property.id}</h2>
 
 <p>
-	{@html property.description}
+	{@html data.property.description}
 
-	{#if property.invariant_under_equivalences === false}
+	{#if data.property.invariant_under_equivalences === false}
 		Warning: This property is not invariant under equivalences.
 	{/if}
 </p>
 
 {#if data.property.dual_property_id || data.related_properties.length || data.property.nlab_link}
 	<ul>
-		{#if property.dual_property_id}
+		{#if data.property.dual_property_id}
 			<li>
 				<strong>Dual property:</strong>
-				<a href={get_property_url(property.dual_property_id, 'functor')}
-					>{property.dual_property_id}</a
+				<a href={get_property_url(data.property.dual_property_id, 'functor')}
+					>{data.property.dual_property_id}</a
 				>
-				{#if property.dual_property_id === property.id}
+				{#if data.property.dual_property_id === data.property.id}
 					(self-dual)
 				{/if}
 			</li>
@@ -50,13 +51,16 @@
 			</li>
 		{/if}
 
-		{#if property.nlab_link}
+		{#if data.property.nlab_link}
 			<li>
-				<a href={property.nlab_link} target="_blank">nLab Link</a>
+				<a href={data.property.nlab_link} target="_blank">nLab Link</a>
 			</li>
 		{/if}
 	</ul>
 {/if}
+<HelpMessage id="implication-link">
+	New here? Click any <Fa icon={faInfoCircle} /> icon to view the proof for that implication.
+</HelpMessage>
 
 <h3 class="sticky-heading">Relevant implications</h3>
 
@@ -102,5 +106,18 @@
 </p>
 
 <StructureList structures={data.unknown_functors} type="functor" />
+
+{#if data.undecidable_functors.length}
+	<h3 class="sticky-heading">Undecidable functors</h3>
+
+	<p class="hint">
+		{pluralize(data.undecidable_functors.length, {
+			one: 'There is {count} functor for which it cannot be decided if this property is satisfied or not.',
+			other: 'There are {count} functors for which it cannot be decided if this property is satisfied or not.',
+		})}
+	</p>
+
+	<StructureList structures={data.undecidable_functors} type="functor" />
+{/if}
 
 <SuggestionForm />
