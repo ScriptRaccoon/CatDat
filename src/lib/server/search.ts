@@ -4,7 +4,7 @@ import { query } from '$lib/server/db.catdat'
 import { error } from '@sveltejs/kit'
 import { SEARCH_SEPARATOR } from '$lib/commons/search.config'
 import { get_contradiction } from '$lib/server/consistency'
-import type { StructureShort, StructureType } from '$lib/commons/types'
+import type { SearchResults, StructureShort, StructureType } from '$lib/commons/types'
 import { to_placeholders } from './utils'
 
 function cache_page(event: RequestEvent) {
@@ -18,7 +18,7 @@ const TABLE_NAMES = {
 	functor: 'functors',
 }
 
-export function search_handler(event: RequestEvent, type: StructureType) {
+export function search_handler(event: RequestEvent, type: StructureType): SearchResults {
 	const satisfied_query = event.url.searchParams.get('satisfied')
 	const unsatisfied_query = event.url.searchParams.get('unsatisfied')
 
@@ -36,8 +36,7 @@ export function search_handler(event: RequestEvent, type: StructureType) {
 
 	if (err_all) error(500, 'Failed to load properties')
 
-	const all_properties = all_properties_objects.map(({ id }) => id)
-	const all_properties_set = new Set(all_properties)
+	const all_properties = new Set(all_properties_objects.map(({ id }) => id))
 
 	const dual_properties_dict: Record<string, string | null> = {}
 	for (const row of all_properties_objects) {
@@ -49,7 +48,7 @@ export function search_handler(event: RequestEvent, type: StructureType) {
 		: []
 
 	const invalid_satisfied_property = satisfied_properties.find(
-		(p) => !all_properties_set.has(p),
+		(p) => !all_properties.has(p),
 	)
 
 	if (invalid_satisfied_property) {
@@ -61,7 +60,7 @@ export function search_handler(event: RequestEvent, type: StructureType) {
 		: []
 
 	const invalid_unsatisfied_property = unsatisfied_properties.find(
-		(p) => !all_properties_set.has(p),
+		(p) => !all_properties.has(p),
 	)
 
 	if (invalid_unsatisfied_property) {
@@ -92,8 +91,8 @@ export function search_handler(event: RequestEvent, type: StructureType) {
 		cache_page(event)
 
 		return {
+			type,
 			contradiction,
-			all_properties,
 			satisfied_properties,
 			unsatisfied_properties,
 			dual_satisfied_properties,
@@ -147,8 +146,8 @@ export function search_handler(event: RequestEvent, type: StructureType) {
 	cache_page(event)
 
 	return {
+		type,
 		contradiction: null,
-		all_properties,
 		satisfied_properties,
 		unsatisfied_properties,
 		dual_satisfied_properties,

@@ -106,3 +106,14 @@ export type ImplicationDisplay = Replace<
 		target_assumptions?: string[]
 	}
 >
+
+export type SearchResults = {
+	type: StructureType
+	contradiction: string[] | null
+	satisfied_properties: string[]
+	unsatisfied_properties: string[]
+	dual_satisfied_properties: (string | null)[]
+	dual_unsatisfied_properties: (string | null)[]
+	dual_search_available: boolean
+	found_structures: StructureShort[]
+}

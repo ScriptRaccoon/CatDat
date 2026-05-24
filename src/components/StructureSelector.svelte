@@ -1,14 +1,8 @@
 <script lang="ts">
 	import { goto } from '$app/navigation'
 	import { page } from '$app/state'
+	import { PLURALS, STRUCTURES } from '$lib/commons/structures'
 	import type { StructureType } from '$lib/commons/types'
-
-	const STRUCTURES: StructureType[] = ['category', 'functor']
-
-	const PLURALS = {
-		category: 'categories',
-		functor: 'functors',
-	}
 
 	type Props = {
 		selected_type: StructureType
