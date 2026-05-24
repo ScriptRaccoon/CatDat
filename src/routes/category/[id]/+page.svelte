@@ -4,11 +4,11 @@
 	import { faQuestion } from '@fortawesome/free-solid-svg-icons'
 	import Fa from 'svelte-fa'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
-	import StructureList from '$components/StructureList.svelte'
 	import PropertyAssignmentList from '$components/PropertyAssignmentList.svelte'
 	import CommentList from '$components/CommentList.svelte'
 	import TagList from '$components/TagList.svelte'
 	import CategoryDescription from '$components/CategoryDescription.svelte'
+	import UndistinguishableStructures from '$components/UndistinguishableStructures.svelte'
 
 	let { data } = $props()
 </script>
@@ -67,19 +67,11 @@
 	</ul>
 </section>
 
-{#if data.undistinguishable_categories.length}
-	<section>
-		<h3>Undistinguishable categories</h3>
-
-		<p class="hint">
-			These categories in the database currently have exactly the same properties as
-			the {data.category.name}. This indicates that the data may be incomplete or
-			that a distinguishing property may be missing from the database.
-		</p>
-
-		<StructureList structures={data.undistinguishable_categories} type="category" />
-	</section>
-{/if}
+<UndistinguishableStructures
+	type="category"
+	structures={data.undistinguishable_categories}
+	name={data.category.name}
+/>
 
 <CommentList comments={data.comments} />
 

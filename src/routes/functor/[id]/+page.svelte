@@ -5,6 +5,7 @@
 	import PropertyAssignmentList from '$components/PropertyAssignmentList.svelte'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
 	import TagList from '$components/TagList.svelte'
+	import UndistinguishableStructures from '$components/UndistinguishableStructures.svelte'
 
 	let { data } = $props()
 </script>
@@ -26,6 +27,12 @@
 	unsatisfied_properties={data.unsatisfied_properties}
 	unknown_properties={data.unknown_properties}
 	undecidable_properties={data.undecidable_properties}
+/>
+
+<UndistinguishableStructures
+	type="functor"
+	structures={data.undistinguishable_functors}
+	name={data.functor.name}
 />
 
 <CommentList comments={data.comments} />
