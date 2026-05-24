@@ -150,6 +150,10 @@ ul {
 	}
 }
 
+ul.with-margins > li + li {
+	margin-top: 0.25rem;
+}
+
 ol {
 	padding-left: 2.5rem;
 	margin-block: 1rem;

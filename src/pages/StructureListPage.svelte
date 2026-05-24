@@ -1,14 +1,12 @@
 <script lang="ts">
-	import Chip from '$components/Chip.svelte'
-	import ChipGroup from '$components/ChipGroup.svelte'
 	import MetaData from '$components/MetaData.svelte'
 	import SearchFilter from '$components/SearchFilter.svelte'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
 	import { normalize_text, pluralize } from '$lib/client/utils'
 	import StructureList from '$components/StructureList.svelte'
 	import type { StructureShort, StructureType } from '$lib/commons/types'
-	import { goto } from '$app/navigation'
 	import { PLURALS } from '$lib/commons/structures'
+	import TagList from '$components/TagList.svelte'
 
 	type Props = {
 		type: StructureType
@@ -27,10 +25,6 @@
 				)
 			: structures,
 	)
-
-	function filter_by_tag(tag: string) {
-		goto(`/${PLURALS[type]}/${tag}`)
-	}
 </script>
 
 <MetaData title="List of {PLURALS[type]}" />
@@ -53,11 +47,7 @@
 <section>
 	<h2>List of tags</h2>
 
-	<ChipGroup>
-		{#each tags as tag}
-			<Chip size="small" handle_click={() => filter_by_tag(tag)}>{tag}</Chip>
-		{/each}
-	</ChipGroup>
+	<TagList {tags} {type} />
 </section>
 
 <SuggestionForm />

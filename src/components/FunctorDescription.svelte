@@ -1,0 +1,51 @@
+<script lang="ts">
+	import type { FunctorDisplay, StructureShort } from '$lib/commons/types'
+
+	type Props = {
+		functor: FunctorDisplay
+		related_functors: StructureShort[]
+	}
+
+	let { functor, related_functors }: Props = $props()
+</script>
+
+<section aria-label="main info">
+	<ul class="with-margins">
+		<li>
+			<strong>Source:</strong>
+			<a href="/category/{functor.source}">{functor.source_name}</a>
+		</li>
+
+		<li>
+			<strong>Target:</strong>
+			<a href="/category/{functor.target}">{functor.target_name}</a>
+		</li>
+
+		{#if related_functors.length}
+			<li>
+				<strong>Related functors:</strong>
+				{#each related_functors as { id, name }, i}
+					<a href={`/functor/${id}`}>
+						{name}
+					</a>{#if i < related_functors.length - 1}
+						,&nbsp;
+					{/if}
+				{/each}
+			</li>
+		{/if}
+
+		{#if functor.nlab_link}
+			<li>
+				<a href={functor.nlab_link} target="_blank">nLab Link</a>
+			</li>
+		{/if}
+	</ul>
+
+	<p>{@html functor.description}</p>
+</section>
+
+<style>
+	section {
+		margin-top: 1.5rem;
+	}
+</style>
