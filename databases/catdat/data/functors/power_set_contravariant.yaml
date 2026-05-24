@@ -5,6 +5,12 @@ target: Set
 description: 'This functor maps a set $X$ to its power set $P(X)$ and a map of sets $f : X \to Y$ to the induced preimage operator $f^* : P(Y) \to P(X)$.'
 nlab_link: https://ncatlab.org/nlab/show/power+set
 
+tags:
+  - set theory
+
+related_functors:
+  - power_set_covariant
+
 satisfied_properties:
   - property: epimorphism-preserving
     reason: 'If $f : X \to Y$ is injective, then $f^* : P(Y) \to P(X)$ is surjective, since for all $A \subseteq X$ we have $A = f^*(f_*(A))$.'

@@ -63,39 +63,36 @@ function clear_all_data() {
 		db.transaction(() => {
 			db.pragma('foreign_keys = OFF')
 
-			db.prepare(`DELETE FROM category_implication_assumptions`).run()
-			db.prepare(`DELETE FROM category_implication_conclusions`).run()
-			db.prepare(`DELETE FROM category_implications`).run()
-
 			db.prepare(`DELETE FROM special_morphisms`).run()
 			db.prepare(`DELETE FROM special_morphism_types`).run()
-
 			db.prepare(`DELETE FROM special_objects`).run()
 			db.prepare(`DELETE FROM special_object_types`).run()
 
+			db.prepare(`DELETE FROM category_implication_assumptions`).run()
+			db.prepare(`DELETE FROM category_implication_conclusions`).run()
+			db.prepare(`DELETE FROM category_implications`).run()
 			db.prepare(`DELETE FROM category_property_assignments`).run()
-
 			db.prepare(`DELETE FROM category_comments`).run()
 			db.prepare(`DELETE FROM related_categories`).run()
 			db.prepare(`DELETE FROM category_tag_assignments`).run()
-			db.prepare(`DELETE FROM categories`).run()
-
-			db.prepare(`DELETE FROM tags`).run()
-
 			db.prepare(`DELETE FROM related_category_properties`).run()
 			db.prepare(`DELETE FROM category_properties`).run()
-
-			db.prepare(`DELETE FROM functor_property_assignments`).run()
-			db.prepare(`DELETE FROM functor_properties`).run()
-			db.prepare(`DELETE FROM functors`).run()
-
-			db.prepare(`DELETE FROM relations`).run()
+			db.prepare(`DELETE FROM categories`).run()
 
 			db.prepare(`DELETE FROM functor_implication_assumptions`).run()
 			db.prepare(`DELETE FROM functor_implication_conclusions`).run()
 			db.prepare(`DELETE FROM functor_implication_source_assumptions`).run()
 			db.prepare(`DELETE FROM functor_implication_target_assumptions`).run()
 			db.prepare(`DELETE FROM functor_implications`).run()
+			db.prepare(`DELETE FROM functor_property_assignments`).run()
+			db.prepare(`DELETE FROM functor_comments`).run()
+			db.prepare(`DELETE FROM related_functors`).run()
+			db.prepare(`DELETE FROM functor_tag_assignments`).run()
+			db.prepare(`DELETE FROM functor_properties`).run()
+			db.prepare(`DELETE FROM functors`).run()
+
+			db.prepare(`DELETE FROM relations`).run()
+			db.prepare(`DELETE FROM tags`).run()
 		})()
 	} catch (err) {
 		console.error(`Error clearing data:`, err)
@@ -517,6 +514,18 @@ function seed_functors() {
 		) VALUES (?, ?, ?, ?, ?, ?)`,
 	)
 
+	const tag_insert = db.prepare(
+		`INSERT INTO functor_tag_assignments (functor_id, tag) VALUES (?, ?)`,
+	)
+
+	const comment_insert = db.prepare(
+		`INSERT INTO functor_comments (functor_id, comment) VALUES (?, ?)`,
+	)
+
+	const related_insert = db.prepare(
+		`INSERT INTO related_functors (functor_id, related_functor_id) VALUES (?, ?)`,
+	)
+
 	const property_assignment_insert = db.prepare(
 		`INSERT INTO functor_property_assignments (
 			functor_id, property_id, is_satisfied, reason
@@ -533,12 +542,28 @@ function seed_functors() {
 			functor.nlab_link || null,
 		)
 
+		for (const tag of functor.tags) {
+			tag_insert.run(functor.id, tag)
+		}
+
+		for (const comment of functor.comments ?? []) {
+			comment_insert.run(functor.id, comment)
+		}
+
+		for (const related of functor.related_functors) {
+			related_insert.run(functor.id, related)
+		}
+
 		for (const entry of functor.satisfied_properties) {
 			property_assignment_insert.run(functor.id, entry.property, 1, entry.reason)
 		}
 
 		for (const entry of functor.unsatisfied_properties) {
 			property_assignment_insert.run(functor.id, entry.property, 0, entry.reason)
+		}
+
+		for (const entry of functor.undecidable_properties ?? []) {
+			property_assignment_insert.run(functor.id, entry.property, null, entry.reason)
 		}
 	}
 

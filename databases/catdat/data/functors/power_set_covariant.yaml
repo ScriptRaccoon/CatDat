@@ -5,6 +5,12 @@ target: Set
 description: 'This functor maps a set $X$ to its power set $P(X)$ and a map of sets $f : X \to Y$ to the induced image operator $f_* : P(X) \to P(Y)$.'
 nlab_link: https://ncatlab.org/nlab/show/power+set
 
+tags:
+  - set theory
+
+related_functors:
+  - power_set_contravariant
+
 satisfied_properties:
   - property: conservative
     reason: 'Assume that $f : X \to Y$ is a map such that $f_* : P(X) \to P(Y)$ is an isomorphism. There is some $A \subseteq X$ with $Y = f_*(A)$, this proves that $f$ is surjective. It is also injective: If $x,y \in X$ satisfy $f(x) = f(y)$, then $f_*(\{x\}) = f_*(\{y\})$, and hence $\{x\} = \{y\}$, i.e. $x = y$.'

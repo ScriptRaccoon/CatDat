@@ -5,6 +5,11 @@ target: Set
 description: This functor $U$ maps a vector space $V$ (over a fixed field $K$) to its underlying set $U(V)$.
 nlab_link: https://ncatlab.org/nlab/show/forgetful+functor
 
+tags:
+  - algebra
+
+related_functors: []
+
 satisfied_properties:
   - property: conservative
     reason: It is standard that the inverse of a bijective linear map is also linear.

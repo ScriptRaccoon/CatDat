@@ -5,6 +5,11 @@ target: Grp
 description: This functor maps a set $X$ to the free group $F(X)$ on that set.
 nlab_link: https://ncatlab.org/nlab/show/free+functor
 
+tags:
+  - algebra
+
+related_functors: []
+
 satisfied_properties:
   - property: conservative
     reason: 'Let $f : X \to Y$ be a map of sets such that $F(f) : F(X) \to F(Y)$ is an isomorphism of groups. We know that $F$ is faithful, so that it reflects monomorphisms. Thus, $f$ is injective. Choose a complement $U \subseteq Y$ of $f(X) \subseteq Y$. Then $F(X) \to F(Y) = F(X) \sqcup F(U)$ is an isomorphism. This implies $F(U)=1$ and hence $U = \varnothing$.'

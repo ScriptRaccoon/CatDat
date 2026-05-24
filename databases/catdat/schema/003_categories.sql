@@ -11,6 +11,14 @@ CREATE TABLE categories (
 
 CREATE UNIQUE INDEX categories_lower_id_unique ON categories (lower(id));
 
+CREATE TABLE category_tag_assignments (
+    category_id TEXT NOT NULL,
+    tag TEXT NOT NULL,
+    PRIMARY KEY (category_id, tag),
+    FOREIGN KEY (category_id) REFERENCES categories (id) ON DELETE CASCADE,
+    FOREIGN KEY (tag) REFERENCES tags (tag) ON DELETE CASCADE
+);
+
 CREATE TABLE related_categories (
     category_id TEXT NOT NULL,
     related_category_id TEXT NOT NULL,
@@ -27,3 +35,5 @@ CREATE TABLE category_comments (
 );
 
 CREATE INDEX idx_category_comments ON category_comments (category_id);
+
+
