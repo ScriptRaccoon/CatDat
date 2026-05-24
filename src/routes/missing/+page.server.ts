@@ -12,7 +12,6 @@ export const load = async () => {
 			StructureShort & { count: number },
 			StructureShort & { count: number },
 			StructurePair,
-			StructureShort & { count: number },
 		]
 	>([
 		// categories with unknown properties
@@ -59,18 +58,6 @@ export const load = async () => {
 			END
 			) = 0;
 		`,
-		// functors with unknown properties
-		sql`
-			SELECT f.id, f.name, COUNT(*) AS count
-			FROM functors f
-			INNER JOIN functor_properties p
-			LEFT JOIN functor_property_assignments fp
-				ON fp.functor_id = f.id
-				AND fp.property_id = p.id
-			WHERE fp.property_id IS NULL
-			GROUP BY f.id
-			ORDER BY lower(f.name);
-		`,
 	])
 
 	if (err) error(500, 'Failed to load data')
@@ -79,7 +66,6 @@ export const load = async () => {
 		categories_with_unknown_properties,
 		categories_with_missing_morphisms,
 		undistinguishable_category_pairs,
-		functors_with_unknown_properties,
 	] = results
 
 	const total_unknown_pairs = categories_with_unknown_properties.reduce(
@@ -96,7 +82,6 @@ export const load = async () => {
 		total_unknown_pairs,
 		categories_with_missing_morphisms,
 		undistinguishable_category_pairs,
-		functors_with_unknown_properties,
 		missing_combinations,
 	}
 }

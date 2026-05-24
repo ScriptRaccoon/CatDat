@@ -95,17 +95,6 @@
 	</details>
 </section>
 
-<section>
-	<h3>Functors with unknown properties</h3>
-
-	<p class="hint">
-		There are {data.functors_with_unknown_properties.length} categories that have some unknown
-		properties.
-	</p>
-
-	<StructureList structures={data.functors_with_unknown_properties} type="functor" />
-</section>
-
 <SuggestionForm />
 
 <style>
