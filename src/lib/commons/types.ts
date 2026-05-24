@@ -72,7 +72,7 @@ export type SpecialMorphism = {
 	reason: string
 }
 
-export type FunctorDB = {
+export type FunctorDisplay = {
 	id: string
 	name: string
 	source: string
