@@ -21,6 +21,8 @@
 			goto(`/${selected_type}-search`)
 		} else if (path.endsWith('-search/results')) {
 			goto(`/${selected_type}-search`)
+		} else if (path.includes('-comparison')) {
+			goto(`/${selected_type}-comparison`)
 		} else {
 			goto(`/${PLURALS[selected_type]}`)
 		}

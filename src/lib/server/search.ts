@@ -6,16 +6,12 @@ import { SEARCH_SEPARATOR } from '$lib/commons/search.config'
 import { get_contradiction } from '$lib/server/consistency'
 import type { SearchResults, StructureShort, StructureType } from '$lib/commons/types'
 import { to_placeholders } from './utils'
+import { PLURALS } from '$lib/commons/structures'
 
 function cache_page(event: RequestEvent) {
 	event.setHeaders({
 		'cache-control': 'public, max-age=0, s-maxage=1800', // shared cache for 30min
 	})
-}
-
-const TABLE_NAMES = {
-	category: 'categories',
-	functor: 'functors',
 }
 
 export function search_handler(event: RequestEvent, type: StructureType): SearchResults {
@@ -105,7 +101,7 @@ export function search_handler(event: RequestEvent, type: StructureType): Search
 	const all_selected_properties = [...satisfied_properties, ...unsatisfied_properties]
 
 	const search_query = `
-		SELECT s.id, s.name FROM ${TABLE_NAMES[type]} s
+		SELECT s.id, s.name FROM ${PLURALS[type]} s
 		INNER JOIN ${type}_property_assignments a ON a.${type}_id = s.id
 		WHERE property_id IN (${to_placeholders(all_selected_properties)})
 		GROUP BY ${type}_id

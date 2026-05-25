@@ -123,3 +123,9 @@ export type SearchResults = {
 	dual_search_available: boolean
 	found_structures: StructureShort[]
 }
+
+export type ComparisonResult = {
+	type: StructureType
+	structures: RelatedStructure[]
+	comparison_table: string[][]
+}

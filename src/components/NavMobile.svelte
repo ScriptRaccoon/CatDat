@@ -93,6 +93,13 @@
 			</li>
 
 			<li>
+				<a href="/functor-comparison">
+					Compare
+					<Fa icon={faChartBar} />
+				</a>
+			</li>
+
+			<li>
 				<a href="/functor-search">
 					Search
 					<Fa icon={faSearch} />

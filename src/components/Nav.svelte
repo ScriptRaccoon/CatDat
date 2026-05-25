@@ -89,6 +89,13 @@
 			type: 'functor',
 		},
 		{
+			href: '/functor-comparison',
+			text: 'Compare',
+			icon: faChartBar,
+			nested: '/functor-comparison',
+			type: 'functor',
+		},
+		{
 			href: '/functor-search',
 			text: 'Search',
 			icon: faSearch,
