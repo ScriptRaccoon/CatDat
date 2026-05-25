@@ -5,8 +5,8 @@
   target_assumptions: []
   conclusions:
     - cofinitary
-    - equalizer-preserving
     - product-preserving
+    - left exact
   reason: This is trivial.
   is_equivalence: false
 
@@ -84,8 +84,12 @@
   target_assumptions: []
   conclusions:
     - finite-product-preserving
-    - terminal-object-preserving
-  reason: Both finite products and terminal objects are special cases of finite limits.
+    - equalizer-preserving
+    - monomorphism-preserving
+  reason: >-
+    Finite products and equalizers are special cases of finite limits. Moreover, a morphism $f : X \to Y$ is a monomorphism if and only the square
+    $$\begin{CD} X @>{\id_X}>> X \\ @V{\id_X}VV @VV{f}V \\ X @>>{f}> Y \end{CD}$$
+    is a pullback square, and pullbacks are special cases of finite limits.
   is_equivalence: false
 
 - id: left_exact_criterion
@@ -108,14 +112,4 @@
   conclusions:
     - continuous
   reason: This is standard, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. V, Theorem 4.1.
-  is_equivalence: false
-
-- id: left_exact_preserves_mono
-  assumptions:
-    - left exact
-  source_assumptions: []
-  target_assumptions: []
-  conclusions:
-    - monomorphism-preserving
-  reason: 'This is because $f : X \to Y$ is a monomorphism if and only the square displaying $\id_Y \circ f = \id_Y \circ f$ is a pullback square.'
   is_equivalence: false

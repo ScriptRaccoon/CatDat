@@ -16,8 +16,6 @@
   source_assumptions: []
   target_assumptions: []
   conclusions:
-    - continuous
     - monadic
-    - right adjoint
   reason: This is easy.
   is_equivalence: false
