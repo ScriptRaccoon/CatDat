@@ -3,7 +3,7 @@ name: free group functor
 notation: $F_{\Grp}$
 source: Set
 target: Grp
-description: This functor maps a set $X$ to the free group $F_{\Grp}(X)$ on that set. We abbreviate $F \coloneqq F_{\Grp}$.
+description: This functor maps a set $X$ to the free group $F_{\Grp}(X)$ on that set. In the proofs, we abbreviate $F \coloneqq F_{\Grp}$.
 nlab_link: https://ncatlab.org/nlab/show/free+functor
 
 tags:
@@ -13,14 +13,8 @@ tags:
 related_functors: []
 
 satisfied_properties:
-  - property: left adjoint
-    reason: This functor is left adjoint to the forgetful functor.
-
-  - property: faithful
-    reason: A left adjoint is faithful if and only if its unit consists of monomorphisms. So we only need to check that every set <i>embeds</i> into (the underlying set of) its free group. But this is clear since $X$ already embeds into the free abelian group $\IZ^{\oplus X}$, which is a quotient of the free group.
-
-  - property: conservative
-    reason: 'Let $f : X \to Y$ be a map of sets such that $F(f) : F(X) \to F(Y)$ is an isomorphism of groups. We know that $F$ is faithful, so that it reflects monomorphisms. Thus, $f$ is injective. Choose a complement $U \subseteq Y$ of $f(X) \subseteq Y$. Then $F(X) \to F(Y) = F(X) \sqcup F(U)$ is an isomorphism. This implies $F(U)=1$ and hence $U = \varnothing$.'
+  - property: comonadic
+    reason: This follows from Proposition 6.13 in Mesablishvili, <a href="http://www.tac.mta.ca/tac/volumes/16/1/16-01abs.html" target="_blank">Monads of effective descent type and comonadicity</a>.
 
   - property: monomorphism-preserving
     reason: 'This can be deduced from the description of the elements of a free group, but here is an abstract argument: Split monomorphisms are preserved by any functor. The only injective maps in $\Set$ that are not split are $\varnothing \hookrightarrow X$ (for non-empty $X$), and $F(\varnothing) \to F(X)$ is injective since $F(\varnothing)$ is the trivial group.'
@@ -37,3 +31,10 @@ unsatisfied_properties:
 
   - property: equalizer-preserving
     reason: 'Let $f,g : \{a,b\} \rightrightarrows \{c,d\}$ be the two constant maps, $f \equiv c$, $g \equiv d$. Their equalizer is empty, and the free group on that equalizer is trivial. Now consider the induced group homomorphisms $F(f), F(g) : F(\{a,b\}) \rightrightarrows F(\{c,d\})$ and observe that $a \cdot b^{-1}$ lies in the kernel of both homomorphisms, hence in their equalizer.'
+
+  - property: cofinitary
+    reason: >-
+      Consider the sets $X_n \coloneqq \{y,x_1,\dotsc,x_n\}$ for $n \geq 0$ with the canonical truncation maps $X_{n+1} \to X_n$, $x_i \mapsto x_i$, $x_{n+1} \mapsto y$, $y \mapsto y$. The limit $\lim_n X_n$ of this sequence is the set $L \coloneqq \{y,x_1,x_2,\dotsc\}$ with the canonical truncation maps $L \to X_n$.
+      The canonical map $F(L) \to \lim_n F(X_n)$ is not surjective: For $n \geq 0$ define $w_n \in F(X_n)$ by
+      $$w_n \coloneqq x_1 y^{-1} \cdots x_n y^{-1}.$$
+      Since $X_{n+1} \to X_n$ maps $w_{n+1} \mapsto w_n$, these elements yield a unique element $w \in \lim_n F(X_n)$. Notice that the word length of $w_n$ is unbounded in $n$. However, every element in $F(L)$ is contained already in $F(\{y,x_1,\dotsc,x_m\})$ for some $m$ and hence maps to an element with bounded word length. Hence, $w$ is not contained in the image.

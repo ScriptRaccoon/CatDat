@@ -80,6 +80,7 @@
 		"colimits",
 		"comonad",
 		"comonadic",
+		"comonadicity",
 		"compactification",
 		"conormal",
 		"copower",
@@ -174,6 +175,7 @@
 		"Malcev",
 		"Marra",
 		"Mathoverflow",
+		"Mesablishvili",
 		"metrizable",
 		"Moerdijk",
 		"monadicity",
@@ -291,5 +293,8 @@
 		"todo.txt",
 		"*.svg"
 	],
-	"ignoreRegExpList": ["\\$[^$]*\\$", "\\$\\$[^$]*\\$\\$"]
+	"ignoreRegExpList": [
+		"\\$[^$]*\\$",
+		"\\$\\$[^$]*\\$\\$"
+	]
 }
