@@ -5,7 +5,7 @@ import sql from 'sql-template-tag'
 import type { EntryGenerator } from './$types'
 
 export const entries: EntryGenerator = async () => {
-	const { rows, err } = query<TagObject>(sql`SELECT tag FROM tags`)
+	const { rows, err } = query<TagObject>(sql`SELECT tag FROM category_tags`)
 	if (err) throw new Error('Database error: Failed to load tags')
 	return rows
 }

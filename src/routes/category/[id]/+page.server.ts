@@ -63,7 +63,7 @@ export const load = async (event) => {
 		sql`
 			SELECT ct.tag
 			FROM category_tag_assignments ct
-			INNER JOIN tags t ON t.tag = ct.tag
+			INNER JOIN category_tags t ON t.tag = ct.tag
 			WHERE ct.category_id = ${id}
 			ORDER BY t.id
 		`,

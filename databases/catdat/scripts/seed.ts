@@ -78,6 +78,7 @@ function clear_all_data() {
 			db.prepare(`DELETE FROM related_category_properties`).run()
 			db.prepare(`DELETE FROM category_properties`).run()
 			db.prepare(`DELETE FROM categories`).run()
+			db.prepare(`DELETE FROM category_tags`).run()
 
 			db.prepare(`DELETE FROM functor_implication_assumptions`).run()
 			db.prepare(`DELETE FROM functor_implication_conclusions`).run()
@@ -91,9 +92,9 @@ function clear_all_data() {
 			db.prepare(`DELETE FROM related_functor_properties`).run()
 			db.prepare(`DELETE FROM functor_properties`).run()
 			db.prepare(`DELETE FROM functors`).run()
+			db.prepare(`DELETE FROM functor_tags`).run()
 
 			db.prepare(`DELETE FROM relations`).run()
-			db.prepare(`DELETE FROM tags`).run()
 		})()
 	} catch (err) {
 		console.error(`Error clearing data:`, err)
@@ -106,7 +107,8 @@ function seed_config() {
 
 	const config = read_yaml_file<ConfigYaml>(data_folder, 'config.yaml')
 
-	const tag_insert = db.prepare(`INSERT INTO tags (tag) VALUES (?)`)
+	const category_tag_insert = db.prepare(`INSERT INTO category_tags (tag) VALUES (?)`)
+	const functor_tag_insert = db.prepare(`INSERT INTO functor_tags (tag) VALUES (?)`)
 
 	const relation_insert = db.prepare(
 		`INSERT INTO relations (relation, negation, conditional) VALUES (?, ?, ?)`,
@@ -124,7 +126,18 @@ function seed_config() {
 		db.transaction(() => {
 			db.pragma('defer_foreign_keys = ON')
 
-			for (const tag of config.tags) tag_insert.run(tag)
+			for (const tag of config.shared_tags) {
+				category_tag_insert.run(tag)
+				functor_tag_insert.run(tag)
+			}
+
+			for (const tag of config.category_tags) {
+				category_tag_insert.run(tag)
+			}
+
+			for (const tag of config.functor_tags) {
+				functor_tag_insert.run(tag)
+			}
 
 			for (const { relation, negation, conditional } of config.relations) {
 				relation_insert.run(relation, negation, conditional)

@@ -16,7 +16,7 @@ CREATE TABLE category_tag_assignments (
     tag TEXT NOT NULL,
     PRIMARY KEY (category_id, tag),
     FOREIGN KEY (category_id) REFERENCES categories (id) ON DELETE CASCADE,
-    FOREIGN KEY (tag) REFERENCES tags (tag) ON DELETE CASCADE
+    FOREIGN KEY (tag) REFERENCES category_tags (tag) ON DELETE CASCADE
 );
 
 CREATE TABLE related_categories (

@@ -17,7 +17,7 @@ CREATE TABLE functor_tag_assignments (
     tag TEXT NOT NULL,
     PRIMARY KEY (functor_id, tag),
     FOREIGN KEY (functor_id) REFERENCES functors (id) ON DELETE CASCADE,
-    FOREIGN KEY (tag) REFERENCES tags (tag) ON DELETE CASCADE
+    FOREIGN KEY (tag) REFERENCES functor_tags (tag) ON DELETE CASCADE
 );
 
 CREATE TABLE related_functors (

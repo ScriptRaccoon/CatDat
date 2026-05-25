@@ -23,7 +23,7 @@ But they are abstracted away by using the view `category_implications_view`.
 
 Further tables are:
 
-- `tags`
+- `category_tags`
 - `category_tag_assignments`
 - `related_categories`
 - `relations`

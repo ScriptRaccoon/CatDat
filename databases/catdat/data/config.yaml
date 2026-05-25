@@ -1,4 +1,4 @@
-tags:
+shared_tags:
   - algebra
   - algebraic geometry
   - analysis
@@ -8,9 +8,13 @@ tags:
   - order theory
   - set theory
   - topology
+
+category_tags:
   - finite
   - thin
   - single object
+
+functor_tags: []
 
 relations:
   - relation: is

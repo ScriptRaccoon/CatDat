@@ -61,7 +61,7 @@ export const load = async (event) => {
 		sql`
 			SELECT ft.tag
 			FROM functor_tag_assignments ft
-			INNER JOIN tags t ON t.tag = ft.tag
+			INNER JOIN functor_tags t ON t.tag = ft.tag
 			WHERE ft.functor_id = ${id}
 			ORDER BY t.id
 		`,

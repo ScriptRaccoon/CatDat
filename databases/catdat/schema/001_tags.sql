@@ -1,4 +1,9 @@
-CREATE TABLE tags (
+CREATE TABLE category_tags (
+    id INTEGER PRIMARY KEY,
+    tag TEXT NOT NULL UNIQUE
+);
+
+CREATE TABLE functor_tags (
     id INTEGER PRIMARY KEY,
     tag TEXT NOT NULL UNIQUE
 );
