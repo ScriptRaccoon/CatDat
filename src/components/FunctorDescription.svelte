@@ -1,9 +1,9 @@
 <script lang="ts">
-	import type { FunctorDisplay, StructureShort } from '$lib/commons/types'
+	import type { FunctorDisplay, RelatedStructure } from '$lib/commons/types'
 
 	type Props = {
 		functor: FunctorDisplay
-		related_functors: StructureShort[]
+		related_functors: RelatedStructure[]
 	}
 
 	let { functor, related_functors }: Props = $props()
@@ -11,6 +11,11 @@
 
 <section aria-label="main info">
 	<ul class="with-margins">
+		<li>
+			<strong>notation:</strong>
+			{@html functor.notation}
+		</li>
+
 		<li>
 			<strong>Source:</strong>
 			<a href="/category/{functor.source}">{functor.source_name}</a>
@@ -24,9 +29,9 @@
 		{#if related_functors.length}
 			<li>
 				<strong>Related functors:</strong>
-				{#each related_functors as { id, name }, i}
-					<a href={`/functor/${id}`}>
-						{name}
+				{#each related_functors as { id, notation, name }, i}
+					<a href={`/functor/${id}`} aria-label={name}>
+						{@html notation}
 					</a>{#if i < related_functors.length - 1}
 						,&nbsp;
 					{/if}

@@ -519,8 +519,8 @@ function seed_functors() {
 
 	const functor_insert = db.prepare(
 		`INSERT INTO functors (
-	        id, name, source, target, description, nlab_link
-		) VALUES (?, ?, ?, ?, ?, ?)`,
+	        id, name, notation, source, target, description, nlab_link
+		) VALUES (?, ?, ?, ?, ?, ?, ?)`,
 	)
 
 	const tag_insert = db.prepare(
@@ -545,6 +545,7 @@ function seed_functors() {
 		functor_insert.run(
 			functor.id,
 			functor.name,
+			functor.notation,
 			functor.source,
 			functor.target,
 			functor.description || null,

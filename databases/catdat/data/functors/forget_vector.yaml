@@ -1,8 +1,9 @@
 id: forget_vector
 name: forgetful functor for vector spaces
+notation: $U_{\Vect}$
 source: Vect
 target: Set
-description: This functor $U$ maps a vector space $V$ (over a fixed field $K$) to its underlying set $U(V)$.
+description: This functor maps a vector space $V$ (over a fixed field $K$) to its underlying set $U_{\Vect}(V)$.
 nlab_link: https://ncatlab.org/nlab/show/forgetful+functor
 
 tags:

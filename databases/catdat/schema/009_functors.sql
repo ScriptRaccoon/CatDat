@@ -1,6 +1,7 @@
 CREATE TABLE functors (
     id TEXT PRIMARY KEY,
     name TEXT NOT NULL UNIQUE,
+    notation TEXT NOT NULL,
     source TEXT NOT NULL,
     target TEXT NOT NULL,
     description TEXT NOT NULL CHECK (length(description) > 0),

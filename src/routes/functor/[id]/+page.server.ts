@@ -3,6 +3,7 @@ import type {
 	FunctorDisplay,
 	PropertyAssignmentDB,
 	PropertyShort,
+	RelatedStructure,
 	StructureShort,
 	TagObject,
 } from '$lib/commons/types'
@@ -20,7 +21,7 @@ export const load = async (event) => {
 	const { results, err } = batch<
 		[
 			FunctorDisplay,
-			StructureShort,
+			RelatedStructure,
 			TagObject,
 			PropertyAssignmentDB,
 			PropertyShort,
@@ -33,6 +34,7 @@ export const load = async (event) => {
             SELECT
                 f.id,
 				f.name,
+				f.notation,
 				f.source,
 				f.target,
 				f.description,
@@ -48,7 +50,8 @@ export const load = async (event) => {
 		sql`
 			SELECT
 				r.related_functor_id AS id,
-				f.name
+				f.name,
+				f.notation
 			FROM related_functors r
 			INNER JOIN functors f ON f.id = r.related_functor_id
 			WHERE r.functor_id = ${id}

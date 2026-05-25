@@ -1,8 +1,9 @@
 id: power_set_contravariant
 name: contravariant power set functor
+notation: $\Hom(-,2)$
 source: Set_op
 target: Set
-description: 'This functor maps a set $X$ to its power set $P(X)$ and a map of sets $f : X \to Y$ to the induced preimage operator $f^* : P(Y) \to P(X)$.'
+description: 'This functor maps a set $X$ to its power set $P(X)$ and a map of sets $f : X \to Y$ to the induced preimage operator $f^* : P(Y) \to P(X)$. It is isomorphic to the representable functor $\Hom(-,2) : \Set^{\op} \to \Set$.'
 nlab_link: https://ncatlab.org/nlab/show/power+set
 
 tags:

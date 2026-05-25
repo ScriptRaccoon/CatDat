@@ -11,6 +11,8 @@ export type StructureShort = {
 	name: string
 }
 
+export type RelatedStructure = StructureShort & { notation: string }
+
 export type CategoryDisplay = {
 	id: string
 	name: string
@@ -23,8 +25,6 @@ export type CategoryDisplay = {
 	dual_category_name: string | null
 	dual_category_notation: string | null
 }
-
-export type RelatedCategory = Pick<CategoryDisplay, 'id' | 'name' | 'notation'>
 
 export type TagObject = { tag: string }
 
@@ -80,6 +80,7 @@ export type SpecialMorphism = {
 export type FunctorDisplay = {
 	id: string
 	name: string
+	notation: string
 	source: string
 	target: string
 	source_name: string

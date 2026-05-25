@@ -7,7 +7,7 @@ import type {
 	CategoryDisplay,
 	CommentObject,
 	PropertyShort,
-	RelatedCategory,
+	RelatedStructure,
 	SpecialMorphism,
 	SpecialObject,
 	TagObject,
@@ -21,7 +21,7 @@ export const load = async (event) => {
 	const { results, err } = batch<
 		[
 			CategoryDisplay,
-			RelatedCategory,
+			RelatedStructure,
 			TagObject,
 			PropertyAssignmentDB,
 			PropertyShort,

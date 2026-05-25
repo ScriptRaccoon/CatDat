@@ -90,6 +90,7 @@ export type FunctorPropertyYaml = {
 export type FunctorYaml = {
 	id: string
 	name: string
+	notation: string
 	source: string
 	target: string
 	description?: string | null

@@ -1,8 +1,9 @@
 id: free_group
 name: free group functor
+notation: $F_{\Grp}$
 source: Set
 target: Grp
-description: This functor maps a set $X$ to the free group $F(X)$ on that set.
+description: This functor maps a set $X$ to the free group $F_{\Grp}(X)$ on that set. We abbreviate $F \coloneqq F_{\Grp}$.
 nlab_link: https://ncatlab.org/nlab/show/free+functor
 
 tags:

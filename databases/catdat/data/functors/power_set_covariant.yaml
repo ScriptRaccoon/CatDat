@@ -1,5 +1,6 @@
 id: power_set_covariant
 name: covariant power set functor
+notation: $P$
 source: Set
 target: Set
 description: 'This functor maps a set $X$ to its power set $P(X)$ and a map of sets $f : X \to Y$ to the induced image operator $f_* : P(X) \to P(Y)$.'

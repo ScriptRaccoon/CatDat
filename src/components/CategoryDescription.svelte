@@ -1,9 +1,9 @@
 <script lang="ts">
-	import type { CategoryDisplay, RelatedCategory } from '$lib/commons/types'
+	import type { CategoryDisplay, RelatedStructure } from '$lib/commons/types'
 
 	type Props = {
 		category: CategoryDisplay
-		related_categories: RelatedCategory[]
+		related_categories: RelatedStructure[]
 	}
 
 	let { category, related_categories }: Props = $props()
