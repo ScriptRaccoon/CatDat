@@ -1,0 +1,21 @@
+id: Top_op
+name: dual of the category of topological spaces
+notation: $\Top^{\op}$
+objects: topological spaces
+morphisms: a morphism $X \to Y$ is a continuous map $Y \to X$
+description: By definition, this category is the dual (or opposite) of the category <a href="/category/Top">$\Top$</a>.
+nlab_link: https://ncatlab.org/nlab/show/opposite+category
+dual_category: Top
+
+tags:
+  - topology
+
+related_categories: []
+
+satisfied_properties: []
+
+unsatisfied_properties: []
+
+special_objects: {}
+
+special_morphisms: {}

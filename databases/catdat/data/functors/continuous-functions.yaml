@@ -1,0 +1,56 @@
+id: continuous_functions
+name: functor of continuous functions
+notation: $C$
+source: Top_op
+target: CAlg(R) # TODO: specify R := IR
+description: 'This functor maps a topological space $X$ to the commutative $\IR$-algebra $C(X)$ of continuous functions $X \to \IR$. A continuous map $f : X \to Y$ is mapped to the algebra homomorphism $f^* : C(Y) \to C(X)$, $u \mapsto u \circ f$.'
+nlab_link: null
+
+tags:
+  - topology
+
+related_functors: []
+
+satisfied_properties:
+  - property: continuous
+    reason: 'Since the forgetful functor $U : \CAlg(\IR) \to \Set$ is conservative and continuous, it suffices to prove that $U \circ C : \Top^{\op} \to \Set$ is continuous. But this functor is representable.'
+
+  - property: initial-object-preserving
+    reason: The initial object in $\Top^{\op}$ is the singleton space, which is mapped to $\IR$, the initial commutative $\IR$-algebra.
+
+unsatisfied_properties:
+  - property: essentially surjective
+    reason: The algebra $C(X)$ is <a href="https://en.wikipedia.org/wiki/Reduced_ring" target="_blank">reduced</a>, whereas there exist non-reduced algebras such as $\IR[T]/\langle T^2 \rangle$.
+
+  - property: representable
+    # TODO: automate this
+    reason: Its target is not $\Set$.
+
+  - property: finite-coproduct-preserving
+    reason: 'The canonical homomorphism $C(X) \otimes_{\IR} C(Y) \to C(X \times Y)$ need not be surjective. For example, for $X = Y = \IR$ one can show that $(x,y) \mapsto \exp(xy)$ is not contained in its image.'
+
+  - property: conservative
+    reason: 'If $X$ is a non-empty indiscrete space, every continuous map on $X$ is constant. This implies that the unique map $X \to 1$ induces an isomorphism $\IR \cong C(1) \to C(X)$.'
+
+  - property: full
+    reason: >-
+      Every continuous function $\omega_1 \to \IR$ is eventually constant, where $\omega_1$ denotes the first uncountable ordinal equipped with the order topology. We obtain a homomorphism
+      $$\varphi : C(\omega_1) \to \IR \cong C(1)$$
+      mapping each continuous function $\omega_1 \to \IR$ to its eventual value. Assume that it is induced by a continuous map $1 \to \omega_1$. This corresponds to an ordinal $\alpha < \omega_1$ such that $\varphi(u) = u(\alpha)$ for all $u \in C(\omega_1)$. But the continuous function
+      $$u(\beta) \coloneqq \begin{cases} 0 & \beta \leq \alpha \\ 1 & \beta > \alpha \end{cases}$$
+      satisfies $\varphi(u) = u(\alpha + 1) \neq u(\alpha)$.
+
+  - property: faithful
+    reason: 'If $X,Y$ are non-empty indiscrete spaces, there is only one homomorphism of $\IR$-algebras $C(Y) \to C(X)$ (since both are isomorphic to $\IR$), but there can be many maps $X \to Y$.'
+
+  - property: coequalizer-preserving
+    reason: 'A functor that preserves coequalizers also preserves regular epimorphisms. In this situation, this would mean that for every embedding $i : Y \hookrightarrow X$, the induced map $i^* : C(X) \to C(Y)$ is surjective. For a counterexample, consider the embedding $i : \IR \setminus \{0\} \hookrightarrow \IR$ and the continuous map $x \mapsto x^{-1}$.'
+
+  - property: epimorphism-preserving
+    reason: 'If $i : X \to Y$ is an injective continuous map, the induced homomorphism $C(Y) \to C(X)$ need not be surjective (consider the inclusion $i : \IR \setminus \{0\} \hookrightarrow \IR$ and the map $x \mapsto x^{-1}$). However, we need an example where it is not even an epimorphism in $\CAlg(\IR)$. A simple counterexample can again be constructed using (in)discrete spaces. Namely, if $X$ is any finite set with at least two elements, we have a continuous bijection $D(X) \to I(X)$, $x \mapsto x$, where $D(X)$ (resp. $I(X)$) denotes the discrete (resp. indiscrete) space on $X$. It induces the algebra homomorphism $\IR \cong C(I(X)) \to C(D(X)) \cong \IR^X$, which is not an epimorphism since $\IR^X \otimes_\IR \IR^X \not\cong \IR^X$.'
+
+  - property: finitary
+    reason: >-
+      For $n \geq 0$ consider the discrete space $X_n \coloneqq \{0,\dotsc,n\}$. Using the evident truncation maps $X_{n+1} \twoheadrightarrow X_n$, their limit is isomorphic to $\IN \cup \{\infty\}$, the one-point compactification of the discrete space $\IN$. The canonical homomorphism
+      $$\textstyle \colim_n C(X_n) \to C(\lim_n X_n)$$
+      can then be identified with the inclusion of the algebra of eventually constant sequences in $\IR$ into the algebra of convergent sequences in $\IR$. Thus, it is not surjective.
