@@ -12,6 +12,10 @@ export function pluralize(count: number, forms: { one: string; other: string }) 
 	return word.replace('{count}', String(count))
 }
 
+export function capitalize(txt: string) {
+	return txt[0].toUpperCase() + txt.slice(1)
+}
+
 /**
  * Removes accents from letters and transforms to lowercase
  */

@@ -1,20 +1,7 @@
 <script lang="ts">
+	import { get_footer_links, get_navigation_links } from '$lib/client/nav'
 	import type { StructureType } from '$lib/commons/types'
-	import { faPenToSquare } from '@fortawesome/free-regular-svg-icons'
-	import {
-		faArrowsSplitUpAndLeft,
-		faBook,
-		faChartBar,
-		faCog,
-		faCubes,
-		faDatabase,
-		faDownload,
-		faHome,
-		faList,
-		faPuzzlePiece,
-		faSearch,
-		faXmark,
-	} from '@fortawesome/free-solid-svg-icons'
+	import { faXmark } from '@fortawesome/free-solid-svg-icons'
 	import Fa from 'svelte-fa'
 
 	type Props = {
@@ -31,108 +18,23 @@
 	</button>
 
 	<ul class="main-list">
-		<li>
-			<a href="/">
-				Home
-				<Fa icon={faHome} />
-			</a>
-		</li>
-
-		{#if selected_type === 'category'}
+		{#each get_navigation_links(selected_type) as { text, href, icon }}
 			<li>
-				<a href="/categories">
-					Categories
-					<Fa icon={faDatabase} />
+				<a {href}>
+					{text}
+					<Fa {icon} />
 				</a>
 			</li>
-			<li>
-				<a href="/category-properties">
-					Properties
-					<Fa icon={faList} />
-				</a>
-			</li>
-
-			<li>
-				<a href="/category-implications">
-					Implications
-					<Fa icon={faArrowsSplitUpAndLeft} />
-				</a>
-			</li>
-
-			<li>
-				<a href="/category-comparison">
-					Compare
-					<Fa icon={faChartBar} />
-				</a>
-			</li>
-
-			<li>
-				<a href="/category-search">
-					Search
-					<Fa icon={faSearch} />
-				</a>
-			</li>
-		{:else if selected_type === 'functor'}
-			<li>
-				<a href="/functors">
-					Functors <Fa icon={faDatabase} />
-				</a>
-			</li>
-			<li>
-				<a href="/functor-properties">
-					Properties
-					<Fa icon={faList} />
-				</a>
-			</li>
-
-			<li>
-				<a href="/functor-implications">
-					Implications
-					<Fa icon={faArrowsSplitUpAndLeft} />
-				</a>
-			</li>
-
-			<li>
-				<a href="/functor-comparison">
-					Compare
-					<Fa icon={faChartBar} />
-				</a>
-			</li>
-
-			<li>
-				<a href="/functor-search">
-					Search
-					<Fa icon={faSearch} />
-				</a>
-			</li>
-		{/if}
+		{/each}
 	</ul>
 
 	<ul class="secondary-list">
-		<li>
-			<a href="/content/contribute">Contribute</a>
-			<Fa icon={faPenToSquare} scale={0.875} />
-		</li>
-		<li>
-			<a href="/settings">Settings</a>
-			<Fa icon={faCog} scale={0.875} />
-		</li>
-		<li>
-			<a href="/missing">Missing data</a>
-			<Fa icon={faPuzzlePiece} scale={0.875} />
-		</li>
-		<li>
-			<a href="/content/resources">Resources</a>
-			<Fa icon={faBook} scale={0.875} />
-		</li>
-		<li>
-			<a href="/content/foundations">Foundations</a>
-			<Fa icon={faCubes} scale={0.875} />
-		</li>
-		<li>
-			<a href="/download">Download</a>
-			<Fa icon={faDownload} scale={0.875} />
-		</li>
+		{#each get_footer_links() as { text, href, icon }}
+			<li>
+				<a {href}>{text}</a>
+				<Fa {icon} scale={0.875} />
+			</li>
+		{/each}
 	</ul>
 </nav>
 

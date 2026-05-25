@@ -1,42 +1,16 @@
 <script lang="ts">
-	import {
-		faBook,
-		faCog,
-		faCubes,
-		faDownload,
-		faPuzzlePiece,
-	} from '@fortawesome/free-solid-svg-icons'
-
-	import { faPenToSquare } from '@fortawesome/free-regular-svg-icons'
 	import Fa from 'svelte-fa'
+	import { get_footer_links } from '$lib/client/nav'
 </script>
 
 <footer class="hint">
 	<ul>
-		<li>
-			<Fa icon={faPenToSquare} scale={0.875} />
-			<a href="/content/contribute">Contribute</a>
-		</li>
-		<li>
-			<Fa icon={faCog} scale={0.875} />
-			<a href="/settings">Settings</a>
-		</li>
-		<li>
-			<Fa icon={faPuzzlePiece} scale={0.875} />
-			<a href="/missing">Missing data</a>
-		</li>
-		<li>
-			<Fa icon={faBook} scale={0.875} />
-			<a href="/content/resources">Resources</a>
-		</li>
-		<li>
-			<Fa icon={faCubes} scale={0.875} />
-			<a href="/content/foundations">Foundations</a>
-		</li>
-		<li>
-			<Fa icon={faDownload} scale={0.875} />
-			<a href="/download">Download</a>
-		</li>
+		{#each get_footer_links() as { text, href, icon }}
+			<li>
+				<Fa {icon} scale={0.875} />
+				<a {href}>{text}</a>
+			</li>
+		{/each}
 	</ul>
 </footer>
 

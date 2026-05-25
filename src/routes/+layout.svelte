@@ -73,7 +73,7 @@
 
 <div class="container">
 	<Header {open_mobile_nav} {selected_type} />
-	<Nav type={selected_type} />
+	<Nav {selected_type} />
 
 	<main>
 		{@render children()}
