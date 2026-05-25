@@ -46,3 +46,6 @@ unsatisfied_properties:
 
   - property: finitary
     reason: The filtered colimit $\IN = \bigcup_{n \geq 0} \IN_{\leq n}$ is not preserved by $P$, since $\bigcup_{n \geq 0} P(\IN_{\leq n})$ just consists of the <i>finite</i> subsets of $\IN$.
+
+  - property: cofinitary
+    reason: 'The canonical map $P(\lim_i X_i) \to \lim_i P(X_i)$ is typically not injective already for cardinality reasons: Consider for example the sequential diagram $X_n \coloneqq \{0,1\}^n$ with the truncation maps $X_{n+1} \to X_n$. The limit is $\{0,1\}^{\IN}$ with cardinality $c \coloneqq 2^{\aleph_0}$, so that its power set has cardinality $2^c$. However, the limit of the power sets $P(X_n)$ is a subset of a countable product of finite sets, hence has cardinality $\leq c$, which is strictly smaller than $2^c$.'
