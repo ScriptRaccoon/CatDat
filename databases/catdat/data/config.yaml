@@ -14,7 +14,9 @@ category_tags:
   - thin
   - single object
 
-functor_tags: []
+functor_tags:
+  - forgetful
+  - free
 
 relations:
   - relation: is
