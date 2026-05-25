@@ -1,0 +1,41 @@
+id: forget_group
+name: forgetful functor for groups
+notation: $U_{\Grp}$
+source: Grp
+target: Set
+description: This functor maps a group $G$ to its underlying set $U_{\Grp}(G)$.
+nlab_link: https://ncatlab.org/nlab/show/forgetful+functor
+
+tags:
+  - algebra
+  - forgetful
+
+related_functors:
+  - forget_vector
+  - forget_ring
+
+satisfied_properties:
+  - property: representable
+    reason: This functor is represented by the additive group $\IZ$.
+
+  - property: monadic
+    reason: For every algebraic category the forgetful functor to the category of sets is monadic.
+
+  - property: conservative
+    reason: It is standard that the inverse of a bijective homomorphism is also a homomorphism.
+
+  - property: finitary
+    reason: For every algebraic category the forgetful functor to the category of sets preserves filtered colimits.
+
+  - property: epimorphism-preserving
+    reason: This follows from the classifications of epimorphisms in <a href="/category/Grp">$\Grp$</a> and in <a href="/category/Set">$\Set$</a>.
+
+unsatisfied_properties:
+  - property: essentially surjective
+    reason: The empty set has has no group structure.
+
+  - property: initial-object-preserving
+    reason: The underlying set of a trivial group is not empty.
+
+  - property: coequalizer-preserving
+    reason: 'The coequalizer of $1,2 : \IZ \rightrightarrows \IZ$ is the trivial group in $\Grp$, but the coequalizer of these maps in $\Set$ is infinite.'

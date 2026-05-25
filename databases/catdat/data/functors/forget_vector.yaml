@@ -10,7 +10,9 @@ tags:
   - algebra
   - forgetful
 
-related_functors: []
+related_functors:
+  - forget_group
+  - forget_ring
 
 satisfied_properties:
   - property: representable
@@ -30,7 +32,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: essentially surjective
-    reason: The empty has has no vector space structure.
+    reason: The empty set has has no vector space structure.
 
   - property: initial-object-preserving
     reason: The underlying set of a trivial vector space is not empty.

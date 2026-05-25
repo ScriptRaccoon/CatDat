@@ -1,0 +1,33 @@
+id: forget_topology
+name: forgetful functor for topological spaces
+notation: $U_{\Top}$
+source: Top
+target: Set
+description: This functor maps a topological space $X$ to its underlying set $U_{\Top}(X)$.
+nlab_link: https://ncatlab.org/nlab/show/forgetful+functor
+
+tags:
+  - topology
+  - forgetful
+
+related_functors: []
+
+satisfied_properties:
+  - property: faithful
+    reason: This is trivial.
+
+  - property: representable
+    reason: This functor is represented by the singleton space.
+
+  - property: essentially surjective
+    reason: Every set can be equipped with the discrete topology.
+
+  - property: right adjoint
+    reason: 'The discrete topology defines a functor $D : \Set \to \Top$ which is left adjoint to $U_{\Top}$.'
+
+  - property: left adjoint
+    reason: 'The indiscrete topology defines a functor $I : \Set \to \Top$ which is right adjoint to $U_{\Top}$.'
+
+unsatisfied_properties:
+  - property: conservative
+    reason: If $X$ is a set, the map $D(X) \to I(X)$, $x \mapsto x$ is bijective and continuous (where $D(-)$ denotes the discrete topological space and $I()$ the indiscrete topological space), but not an isomorphism (unless $X$ has at most one element).
