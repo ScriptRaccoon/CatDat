@@ -5,7 +5,6 @@ source: Grp
 target: Ab
 description: This functor maps a group $G$ to its abelianization $G^{\ab} \coloneqq G/[G,G]$.
 nlab_link: https://ncatlab.org/nlab/show/abelianization
-right_adjoint: forget_group
 
 tags:
   - algebra

@@ -579,10 +579,6 @@ function seed_functors() {
 			adjoint_insert.run(functor.left_adjoint, functor.id)
 		}
 
-		if (functor.right_adjoint) {
-			adjoint_insert.run(functor.id, functor.right_adjoint)
-		}
-
 		for (const comment of functor.comments ?? []) {
 			comment_insert.run(functor.id, comment)
 		}
