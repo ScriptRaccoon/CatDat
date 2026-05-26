@@ -23,9 +23,6 @@ unsatisfied_properties:
   - property: essentially surjective
     reason: Not every group is free (consider $\IZ/2$).
 
-  - property: full
-    reason: The map $1 = \Hom(1,1) \to \Hom(F(1),F(1)) = \Hom(\IZ,\IZ) = \IZ$ is not surjective.
-
   - property: terminal-object-preserving
     reason: The free group of rank $1$ is not the trivial group.
 

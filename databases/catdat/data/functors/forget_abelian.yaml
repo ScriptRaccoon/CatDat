@@ -37,9 +37,6 @@ satisfied_properties:
     reason: 'Since the forgetful functor $U_{\Grp} : \Grp \to \Set$ is finitary and conservative, it suffices to prove that the composition $U_{\Ab,\Grp} \circ U_{\Grp} : \Ab \to \Set$ is finitary. This is just the forgetful functor $U_{\Ab} : \Ab \to \Set$ and therefore finitary.'
 
 unsatisfied_properties:
-  - property: essentially surjective
-    reason: Not every group is abelian (e.g. $S_3$).
-
   - property: finite-coproduct-preserving
     reason: The coproduct of two non-trivial cyclic groups in $\Ab$ is just their direct sum, which is finite, but the coproduct of these groups in $\Grp$, also called the free product, is an infinite group.
 

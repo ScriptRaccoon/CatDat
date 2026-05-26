@@ -23,9 +23,6 @@ satisfied_properties:
   - property: essentially surjective
     reason: Every set can be equipped with the discrete topology.
 
-  - property: right adjoint
-    reason: 'The discrete topology defines a functor $D : \Set \to \Top$ which is left adjoint to $U_{\Top}$.'
-
   - property: left adjoint
     reason: 'The indiscrete topology defines a functor $I : \Set \to \Top$ which is right adjoint to $U_{\Top}$.'
 

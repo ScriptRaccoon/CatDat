@@ -29,9 +29,6 @@ unsatisfied_properties:
   - property: finite-coproduct-preserving
     reason: 'The canonical homomorphism $C(X) \otimes_{\IR} C(Y) \to C(X \times Y)$ need not be surjective. For example, for $X = Y = \IR$ one can show that $(x,y) \mapsto \exp(xy)$ is not contained in its image.'
 
-  - property: conservative
-    reason: 'If $X$ is a non-empty indiscrete space, every continuous map on $X$ is constant. This implies that the unique map $X \to 1$ induces an isomorphism $\IR \cong C(1) \to C(X)$.'
-
   - property: full
     reason: >-
       Every continuous function $\omega_1 \to \IR$ is eventually constant, where $\omega_1$ denotes the first uncountable ordinal equipped with the order topology. We obtain a homomorphism

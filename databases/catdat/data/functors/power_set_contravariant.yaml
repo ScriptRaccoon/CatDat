@@ -23,9 +23,6 @@ satisfied_properties:
     reason: See <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, Theorem 2.2.7.
 
 unsatisfied_properties:
-  - property: full
-    reason: 'The maps $f^* : P(Y) \to P(X)$ preserve the empty set, so take the constant map $P(X) \to P(X)$, $T \mapsto X$ for instance (where $X$ is non-empty).'
-
   - property: initial-object-preserving
     reason: In fact, the initial object does not even lie in the essential image since $P(X) \neq 0$ for all $X$.
 

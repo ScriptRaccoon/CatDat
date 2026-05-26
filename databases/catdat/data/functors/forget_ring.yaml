@@ -21,9 +21,6 @@ satisfied_properties:
   - property: monadic
     reason: For every algebraic category the forgetful functor to the category of sets is monadic.
 
-  - property: conservative
-    reason: It is standard that the inverse of a bijective homomorphism is also a homomorphism.
-
   - property: finitary
     reason: For every algebraic category the forgetful functor to the category of sets preserves filtered colimits.
 

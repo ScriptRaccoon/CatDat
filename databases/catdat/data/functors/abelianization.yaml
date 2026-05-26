@@ -29,9 +29,6 @@ unsatisfied_properties:
   - property: full
     reason: See <a href="https://math.stackexchange.com/questions/716686" target="_blank">MSE/716686</a>.
 
-  - property: conservative
-    reason: The proper inclusion $S_3 \hookrightarrow S_4$ gets mapped to the trivial homomorphism $1 \to 1$, which is an isomorphism.
-
   - property: monomorphism-preserving
     reason: The monomorphism $A_3 \hookrightarrow S_3$ is mapped to $A_3 \to 1$.
 
