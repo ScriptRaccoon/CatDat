@@ -14,6 +14,7 @@ tags:
 related_functors:
   - forget_vector
   - forget_ring
+  - forget_abelian
 
 satisfied_properties:
   - property: representable
