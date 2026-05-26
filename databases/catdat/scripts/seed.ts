@@ -548,6 +548,12 @@ function seed_functors() {
 		`INSERT INTO related_functors (functor_id, related_functor_id) VALUES (?, ?)`,
 	)
 
+	const adjoint_insert = db.prepare(
+		`INSERT INTO adjoint_functors (left_adjoint, right_adjoint)
+		VALUES (?, ?)
+		ON CONFLICT (left_adjoint, right_adjoint) DO NOTHING`,
+	)
+
 	const property_assignment_insert = db.prepare(
 		`INSERT INTO functor_property_assignments (
 			functor_id, property_id, is_satisfied, reason
@@ -567,6 +573,14 @@ function seed_functors() {
 
 		for (const tag of functor.tags) {
 			tag_insert.run(functor.id, tag)
+		}
+
+		if (functor.left_adjoint) {
+			adjoint_insert.run(functor.left_adjoint, functor.id)
+		}
+
+		if (functor.right_adjoint) {
+			adjoint_insert.run(functor.id, functor.right_adjoint)
 		}
 
 		for (const comment of functor.comments ?? []) {

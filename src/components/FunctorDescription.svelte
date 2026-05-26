@@ -4,9 +4,11 @@
 	type Props = {
 		functor: FunctorDisplay
 		related_functors: RelatedStructure[]
+		left_adjoint?: RelatedStructure
+		right_adjoint?: RelatedStructure
 	}
 
-	let { functor, related_functors }: Props = $props()
+	let { functor, related_functors, left_adjoint, right_adjoint }: Props = $props()
 </script>
 
 <section aria-label="main info">
@@ -26,11 +28,29 @@
 			<a href="/category/{functor.target}">{functor.target_name}</a>
 		</li>
 
+		{#if left_adjoint}
+			<li>
+				<strong>Left adjoint:</strong>
+				<a href="/functor/{left_adjoint.id}" aria-label={left_adjoint.name}>
+					{@html left_adjoint.notation}
+				</a>
+			</li>
+		{/if}
+
+		{#if right_adjoint}
+			<li>
+				<strong>Right adjoint:</strong>
+				<a href="/functor/{right_adjoint.id}" aria-label={right_adjoint.name}>
+					{@html right_adjoint.notation}
+				</a>
+			</li>
+		{/if}
+
 		{#if related_functors.length}
 			<li>
 				<strong>Related functors:</strong>
 				{#each related_functors as { id, notation, name }, i}
-					<a href={`/functor/${id}`} aria-label={name}>
+					<a href="/functor/{id}" aria-label={name}>
 						{@html notation}
 					</a>{#if i < related_functors.length - 1}
 						,&nbsp;

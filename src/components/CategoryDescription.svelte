@@ -30,7 +30,7 @@
 			<li>
 				<strong>Related categories:</strong>
 				{#each related_categories as { id, name, notation }, i}
-					<a href={`/category/${id}`} aria-label={name}>
+					<a href="/category/{id}" aria-label={name}>
 						{@html notation}
 					</a>{#if i < related_categories.length - 1}
 						,&nbsp;

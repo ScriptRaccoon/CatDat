@@ -19,7 +19,12 @@
 
 <TagList tags={data.tags} type="category" />
 
-<FunctorDescription functor={data.functor} related_functors={data.related_functors} />
+<FunctorDescription
+	functor={data.functor}
+	related_functors={data.related_functors}
+	left_adjoint={data.left_adjoint}
+	right_adjoint={data.right_adjoint}
+/>
 
 <PropertyAssignmentList
 	type="functor"

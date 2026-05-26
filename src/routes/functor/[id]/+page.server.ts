@@ -22,6 +22,8 @@ export const load = async (event) => {
 		[
 			FunctorDisplay,
 			RelatedStructure,
+			RelatedStructure,
+			RelatedStructure,
 			TagObject,
 			PropertyAssignmentDB,
 			PropertyShort,
@@ -56,6 +58,20 @@ export const load = async (event) => {
 			INNER JOIN functors f ON f.id = r.related_functor_id
 			WHERE r.functor_id = ${id}
 			ORDER BY lower(f.name)
+		`,
+		// left adjoint functor
+		sql`
+			SELECT f.id, f.name, f.notation
+			FROM adjoint_functors a
+			INNER JOIN functors f ON f.id = a.left_adjoint
+			WHERE a.right_adjoint = ${id}
+		`,
+		// right adjoint functor
+		sql`
+			SELECT f.id, f.name, f.notation
+			FROM adjoint_functors a
+			INNER JOIN functors f ON f.id = a.right_adjoint
+			WHERE a.left_adjoint = ${id}
 		`,
 		// tags
 		sql`
@@ -122,6 +138,8 @@ export const load = async (event) => {
 	const [
 		functors,
 		related_functors,
+		left_adjoints,
+		right_adjoints,
 		tag_objects,
 		properties_db,
 		unknown_properties,
@@ -132,6 +150,10 @@ export const load = async (event) => {
 	if (!functors.length) error(404, `Could not find functor with ID '${id}'`)
 
 	const functor = functors[0]
+
+	const left_adjoint = left_adjoints.at(0)
+	const right_adjoint = right_adjoints.at(0)
+
 	const tags = tag_objects.map(({ tag }) => tag)
 
 	const satisfied_properties = properties_db
@@ -149,6 +171,8 @@ export const load = async (event) => {
 	return render_nested_formulas({
 		functor,
 		related_functors,
+		left_adjoint,
+		right_adjoint,
 		tags,
 		satisfied_properties,
 		unsatisfied_properties,

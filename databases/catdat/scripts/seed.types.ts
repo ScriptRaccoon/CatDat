@@ -97,6 +97,8 @@ export type FunctorYaml = {
 	target: string
 	description?: string | null
 	nlab_link?: string
+	left_adjoint?: string
+	right_adjoint?: string
 	tags: string[]
 	related_functors: string[]
 	satisfied_properties: PropertyEntry[]
