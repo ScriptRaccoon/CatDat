@@ -10,7 +10,7 @@
 </script>
 
 {#if structures.length}
-	<ul>
+	<ul class="with-margins">
 		{#each structures as structure}
 			<li>
 				<a href="/{type}/{structure.id}">

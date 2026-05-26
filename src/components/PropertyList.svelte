@@ -17,7 +17,7 @@
 </script>
 
 {#if properties.length}
-	<ul class:no-bullets={no_bullets}>
+	<ul class:no-bullets={no_bullets} class="with-margins">
 		{#each properties as { id, relation, reason }}
 			<li>
 				<TextWithReason {reason}>

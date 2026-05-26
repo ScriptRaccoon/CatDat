@@ -156,7 +156,7 @@ ul.no-bullets {
 }
 
 ul.with-margins > li + li {
-	margin-top: 0.25rem;
+	margin-top: 0.125rem;
 }
 
 ol {

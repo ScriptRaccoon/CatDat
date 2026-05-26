@@ -49,7 +49,7 @@
 	{/if}
 </p>
 
-<ul>
+<ul class="with-margins">
 	{#each searched_properties as { id, relation, dual_property_id }}
 		<li>
 			{relation}

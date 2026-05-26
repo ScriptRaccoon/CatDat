@@ -53,7 +53,7 @@
 			be missing.
 		</p>
 
-		<ul>
+		<ul class="with-margins">
 			{#each data.undistinguishable_category_pairs as pair}
 				<li>
 					<a href="/category/{pair.id1}">
@@ -83,7 +83,7 @@
 	<details>
 		<summary>Show all {data.missing_combinations.length} combinations</summary>
 
-		<ul class="combinations">
+		<ul class="combinations with-margins">
 			{#each data.missing_combinations as [p, q]}
 				<li class="combination">
 					<a href={get_property_url(p, 'category')}>{p}</a> &and; &not;<a

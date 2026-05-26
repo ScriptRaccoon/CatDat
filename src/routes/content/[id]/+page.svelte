@@ -37,7 +37,7 @@
 	{#if data.category_implications.length > 0}
 		<p class="hint">This page is referenced by the following implications.</p>
 
-		<ul>
+		<ul class="with-margins">
 			{#each data.category_implications as { id }}
 				<li>
 					<a href="/category-implication/{id}">{id}</a>

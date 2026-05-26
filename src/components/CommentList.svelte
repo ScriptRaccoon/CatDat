@@ -12,7 +12,7 @@
 	<section>
 		<h3>Comments</h3>
 
-		<ul>
+		<ul class="with-margins">
 			{#each comments as { id, comment } (id)}
 				<li class="hint">{@html comment}</li>
 			{/each}

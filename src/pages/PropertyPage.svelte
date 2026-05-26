@@ -52,7 +52,7 @@
 </p>
 
 {#if property.dual_property_id || related_properties.length || property.nlab_link}
-	<ul>
+	<ul class="with-margins">
 		{#if property.dual_property_id}
 			<li>
 				<strong>Dual property:</strong>

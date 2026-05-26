@@ -12,7 +12,7 @@
 </script>
 
 {#if implications.length}
-	<ul class="no-bullets">
+	<ul class="no-bullets with-margins">
 		{#each implications as implication}
 			<li>
 				<ImplicationItem {implication} {highlighted_property} {type} />

@@ -6,7 +6,7 @@
 
 <h2>Admin Page</h2>
 
-<ul>
+<ul class="with-margins">
 	<li>
 		<a href="/admin/statistics">Statistics</a>
 	</li>
