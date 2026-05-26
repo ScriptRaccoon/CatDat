@@ -1,0 +1,31 @@
+id: discrete_topology
+name: discrete topology functor
+notation: $D$
+source: Set
+target: Top
+description: This functor maps a set $X$ to the discrete topological space $D(X) \coloneqq (X, P(X))$ in which every subset is open.
+nlab_link: https://ncatlab.org/nlab/show/discrete+and+indiscrete+topology
+right_adjoint: forget_topology
+
+tags:
+  - topology
+  - free
+
+related_functors: []
+
+satisfied_properties:
+  - property: comonadic
+    reason: This follows from Proposition 6.13 in Mesablishvili, <a href="http://www.tac.mta.ca/tac/volumes/16/1/16-01abs.html" target="_blank">Monads of effective descent type and comonadicity</a>.
+
+  - property: finite-product-preserving
+    reason: It is easy to check that a finite product of discrete spaces is again discrete.
+
+  - property: equalizer-preserving
+    reason: This follows since a subspace of a discrete space is again discrete.
+
+unsatisfied_properties:
+  - property: essentially surjective
+    reason: This is trivial.
+
+  - property: product-preserving
+    reason: An infinite product of discrete spaces is usually not discrete, e.g. $\{0,1\}^{\IN}$.
