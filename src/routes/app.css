@@ -150,6 +150,11 @@ ul {
 	}
 }
 
+ul.no-bullets {
+	padding-left: 0;
+	list-style: none;
+}
+
 ul.with-margins > li + li {
 	margin-top: 0.25rem;
 }

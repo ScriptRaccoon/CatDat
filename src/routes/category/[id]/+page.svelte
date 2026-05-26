@@ -52,7 +52,7 @@
 <section>
 	<h3>Special morphisms</h3>
 
-	<ul class="with-margins">
+	<ul class="with-margins no-bullets">
 		{#each data.special_morphisms as obj}
 			<li>
 				<TextWithReason reason={obj.reason}>

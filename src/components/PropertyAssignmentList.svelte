@@ -42,20 +42,23 @@
 			<PropertyList
 				properties={satisfied_properties.filter((p) => !p.is_deduced)}
 				{type}
+				no_bullets={true}
 			/>
 
 			<p class="hint">Deduced properties</p>
 			<PropertyList
 				properties={satisfied_properties.filter((p) => p.is_deduced)}
 				{type}
+				no_bullets={true}
 			/>
 		{:else if assignment_level.value === 'merged'}
-			<PropertyList properties={satisfied_properties} {type} />
+			<PropertyList properties={satisfied_properties} {type} no_bullets={true} />
 		{:else if assignment_level.value === 'basic'}
 			<p class="hint">Assigned properties; further properties can be deduced.</p>
 			<PropertyList
 				properties={satisfied_properties.filter((p) => !p.is_deduced)}
 				{type}
+				no_bullets={true}
 			/>
 		{/if}
 	</section>
@@ -68,22 +71,25 @@
 			<PropertyList
 				properties={unsatisfied_properties.filter((p) => !p.is_deduced)}
 				{type}
+				no_bullets={true}
 			/>
 
 			<p class="hint">Deduced properties*</p>
 			<PropertyList
 				properties={unsatisfied_properties.filter((p) => p.is_deduced)}
 				{type}
+				no_bullets={true}
 			/>
 
 			<p class="hint">*This also uses the deduced satisfied properties.</p>
 		{:else if assignment_level.value === 'merged'}
-			<PropertyList properties={unsatisfied_properties} {type} />
+			<PropertyList properties={unsatisfied_properties} {type} no_bullets={true} />
 		{:else if assignment_level.value === 'basic'}
 			<p class="hint">Assigned properties; further properties can be deduced.</p>
 			<PropertyList
 				properties={unsatisfied_properties.filter((p) => !p.is_deduced)}
 				{type}
+				no_bullets={true}
 			/>
 		{/if}
 	</section>
@@ -119,7 +125,7 @@
 			</p>
 		{/if}
 
-		<PropertyList properties={undecidable_properties} {type} />
+		<PropertyList properties={undecidable_properties} {type} no_bullets={true} />
 	</section>
 {/if}
 

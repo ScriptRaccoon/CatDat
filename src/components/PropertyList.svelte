@@ -10,13 +10,14 @@
 			reason?: string | null
 		}[]
 		type: StructureType
+		no_bullets?: boolean
 	}
 
-	let { properties, type }: Props = $props()
+	let { properties, type, no_bullets = false }: Props = $props()
 </script>
 
 {#if properties.length}
-	<ul>
+	<ul class:no-bullets={no_bullets}>
 		{#each properties as { id, relation, reason }}
 			<li>
 				<TextWithReason {reason}>
@@ -29,9 +30,3 @@
 {:else}
 	<p>&mdash;</p>
 {/if}
-
-<style>
-	li {
-		position: relative;
-	}
-</style>
