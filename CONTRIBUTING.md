@@ -134,9 +134,9 @@ When contributing new data (categories, functors, properties, implications), ple
 
 ### Redundancy Script
 
-As noted above, avoid redundant property assignments to a category. To detect redundancies, run `pnpm db:redundancies`.
+As noted above, avoid redundant property assignments to a category (or functor). To detect redundancies, run `pnpm db:redundancies`.
 
-The script reports at most one redundant assignment per category for each of satisfied and unsatisfied properties, even if multiple exist. After removing an assignment, run the script again to ensure that all remaining redundancies are handled.
+The script reports at most one redundant assignment per category (or functor) for each of satisfied and unsatisfied properties, even if multiple exist. After removing an assignment, run the script again to ensure that all remaining redundancies are handled.
 
 Removing redundant assignments is not required, but it is recommended, especially for all unsatisfied properties. For satisfied properties, removal depends on context: keep them if the proof is meaningful, otherwise consider removing them if it is purely technical or uninformative.
 
