@@ -556,8 +556,8 @@ function seed_functors() {
 
 	const property_assignment_insert = db.prepare(
 		`INSERT INTO functor_property_assignments (
-			functor_id, property_id, is_satisfied, reason
-		) VALUES (?, ?, ?, ?)`,
+			functor_id, property_id, is_satisfied, reason, check_redundancy
+		) VALUES (?, ?, ?, ?, ?)`,
 	)
 
 	function insert_functor(functor: FunctorYaml) {
@@ -588,15 +588,33 @@ function seed_functors() {
 		}
 
 		for (const entry of functor.satisfied_properties) {
-			property_assignment_insert.run(functor.id, entry.property, 1, entry.reason)
+			property_assignment_insert.run(
+				functor.id,
+				entry.property,
+				1,
+				entry.reason,
+				entry.check_redundancy === false ? 0 : 1,
+			)
 		}
 
 		for (const entry of functor.unsatisfied_properties) {
-			property_assignment_insert.run(functor.id, entry.property, 0, entry.reason)
+			property_assignment_insert.run(
+				functor.id,
+				entry.property,
+				0,
+				entry.reason,
+				entry.check_redundancy === false ? 0 : 1,
+			)
 		}
 
 		for (const entry of functor.undecidable_properties ?? []) {
-			property_assignment_insert.run(functor.id, entry.property, null, entry.reason)
+			property_assignment_insert.run(
+				functor.id,
+				entry.property,
+				null,
+				entry.reason,
+				entry.check_redundancy === false ? 0 : 1,
+			)
 		}
 	}
 

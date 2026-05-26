@@ -72,27 +72,3 @@ export function get_normalized_category_implications(
 
 	return implications
 }
-
-/**
- * Returns a dictionary mapping a category to the set of its assigned
- * properties (satisfied or unsatisfied) that should not be checked
- * by the redundancy check script.
- */
-export function get_ignored_redundant_properties(db: Database) {
-	const rows = db
-		.prepare(
-			`SELECT category_id, property_id
-			FROM category_property_assignments
-			WHERE check_redundancy = FALSE`,
-		)
-		.all() as { category_id: string; property_id: string }[]
-
-	const grouped: Record<string, Set<string>> = {}
-
-	for (const { category_id, property_id } of rows) {
-		grouped[category_id] ??= new Set()
-		grouped[category_id].add(property_id)
-	}
-
-	return grouped
-}

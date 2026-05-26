@@ -29,6 +29,8 @@ CREATE TABLE functor_property_assignments (
     reason TEXT NOT NULL CHECK (length(reason) > 0),
     is_deduced INTEGER NOT NULL DEFAULT FALSE
         CHECK (is_deduced in (TRUE, FALSE)),
+    check_redundancy INTEGER NOT NULL DEFAULT TRUE
+        CHECK (check_redundancy in (TRUE, FALSE)),
     UNIQUE (functor_id, property_id),
     FOREIGN KEY (functor_id) REFERENCES functors (id) ON DELETE CASCADE,
     FOREIGN KEY (property_id) REFERENCES functor_properties (id) ON DELETE CASCADE
