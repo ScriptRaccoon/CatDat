@@ -13,6 +13,9 @@ tags:
 related_functors: []
 
 satisfied_properties:
+  - property: full
+    reason: This is trivial. In fact, the functor is fully faithful.
+
   - property: comonadic
     reason: This follows from Proposition 6.13 in Mesablishvili, <a href="http://www.tac.mta.ca/tac/volumes/16/1/16-01abs.html" target="_blank">Monads of effective descent type and comonadicity</a>.
 
@@ -23,8 +26,5 @@ satisfied_properties:
     reason: This follows since a subspace of a discrete space is again discrete.
 
 unsatisfied_properties:
-  - property: essentially surjective
-    reason: This is trivial.
-
   - property: product-preserving
     reason: An infinite product of discrete spaces is usually not discrete, e.g. $\{0,1\}^{\IN}$.

@@ -28,6 +28,9 @@ satisfied_properties:
     reason: This is verified in the proof of <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, Theorem 2.2.7.
 
 unsatisfied_properties:
+  - property: full
+    reason: 'Each map $f^* : P(Y) \to P(X)$ preserves the empty set (in fact, all unions), so the constant map with value $X$ provides a counterexample as long as $X$ is non-empty.'
+
   - property: initial-object-preserving
     reason: In fact, the initial object does not even lie in the essential image since $P(X) \neq 0$ for all $X$.
 

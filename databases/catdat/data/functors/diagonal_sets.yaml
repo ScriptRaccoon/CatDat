@@ -3,7 +3,7 @@ name: binary diagonal functor on the category of sets
 notation: $\Delta$
 source: Set
 target: SetxSet
-description: 'Every category $\C$ has a (binary) diagonal functor $\Delta : \Set \to \Set^2$. Here, we specify that $\C$ is the category of sets.'
+description: 'Every category $\C$ has a (binary) diagonal functor $\Delta : \C \to \C^2$, $X \mapsto (X,X)$. Here, we specify that $\C$ is the category of sets.'
 nlab_link: https://ncatlab.org/nlab/show/diagonal+functor
 left_adjoint: coproduct_sets
 
@@ -31,6 +31,9 @@ satisfied_properties:
       $$\Hom(A + B,Y) \cong \Hom(A,Y) \times \Hom(B,Y) \cong \Hom((A,B),(Y,Y)).$$
 
 unsatisfied_properties:
+  - property: full
+    reason: 'Take two distinct maps $f,g : X \rightrightarrows X$. Then $(f,g) : (X,X) \to (X,X)$ is not induced diagonally via a map $X \to X$.'
+
   - property: representable
     # TODO: automate this
     reason: The codomain is not $\Set$.

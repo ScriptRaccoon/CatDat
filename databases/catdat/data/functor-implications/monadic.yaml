@@ -9,14 +9,3 @@
     - right adjoint
   reason: This is clear since for a monad $T$ the forgetful functor from the category of $T$-algebras has these properties.
   is_equivalence: false
-
-- id: monadic_full_trivial
-  assumptions:
-    - full
-    - monadic
-  source_assumptions: []
-  target_assumptions: []
-  conclusions:
-    - equivalence
-  reason: 'Assume that $T$ is a monad on $\C$ such that the forgetful functor $U : \Alg(T) \to \C$ is full. Then by general facts about adjunctions (see <a href="https://math.stackexchange.com/questions/1994963" target="_blank">MSE/1994963</a>) the unit $\eta : \id_{\C} \to T$ is an isomorphism of functors. Then it is an isomorphism of monads, so that $U$ is an equivalence.'
-  is_equivalence: false

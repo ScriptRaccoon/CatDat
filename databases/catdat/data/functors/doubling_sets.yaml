@@ -28,6 +28,9 @@ satisfied_properties:
     reason: This follows from Proposition 6.13 in Mesablishvili, <a href="http://www.tac.mta.ca/tac/volumes/16/1/16-01abs.html" target="_blank">Monads of effective descent type and comonadicity</a>.
 
 unsatisfied_properties:
+  - property: full
+    reason: If $X$ is non-empty, the swap $2X \to 2X$ is not induced by a map $X \to X$.
+
   - property: terminal-object-preserving
     reason: This is trivial.
 

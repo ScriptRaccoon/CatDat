@@ -29,6 +29,9 @@ satisfied_properties:
     reason: We have $X^{\IN} \cong \Hom(\IN,X)$.
 
 unsatisfied_properties:
+  - property: full
+    reason: There are many counterexamples. For example, take the map $\{0,1\}^\IN  \to \{0,1\}^\IN$ that switches the first two entries. It is not induced by a map $\{0,1\} \to \{0,1\}$.
+
   - property: essentially surjective
     reason: A finite set with at least $2$ elements is not contained in the essential image.
 
