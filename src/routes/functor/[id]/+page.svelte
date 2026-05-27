@@ -17,7 +17,7 @@
 
 <h2>{data.functor.name}</h2>
 
-<TagList tags={data.tags} type="category" />
+<TagList tags={data.tags} type="functor" />
 
 <FunctorDescription
 	functor={data.functor}
