@@ -16,7 +16,7 @@ related_categories:
   - Sh(X,Ab)
 
 comments:
-  - It is likely that neither of the currently remaining unknown properties (finitary algebraic, locally ℵ₁-presentable, exact filtered colimits, etc.) are satisfied for a <i>generic</i> space $X$, but we need to make this precise by adding additional requirements to $X$. Maybe we need to create separate entries for specific spaces $X$.
+  - It is likely that none of the currently remaining unknown properties (locally ℵ₁-presentable, exact filtered colimits, etc.) are satisfied for a <i>generic</i> space $X$, but we need to make this precise by adding additional requirements to $X$. Maybe we need to create separate entries for specific spaces $X$.
 
 satisfied_properties:
   - property: locally small
@@ -29,8 +29,11 @@ unsatisfied_properties:
   - property: skeletal
     reason: Consider constant sheaves for isomorphic but non-equal sets.
 
-  - property: trivial
-    reason: This is because $X$ is assumed to be non-empty.
+  - property: generator
+    reason: >-
+      Suppose $\Sh(X)$ had a generator. Then by <a href="/content/topos-with-generator">this result</a>, every subterminal object would be either initial or terminal. On the other hand, the subterminal objects of $\Sh(X)$ are of the form $y_U \coloneqq \Hom({-}, U)$ for $U$ open. (Alternative descriptions of $y_U$ include:
+      $$y_U(V) = \begin{cases} 1, & V \subseteq U; \\ \varnothing & \mathrm{otherwise} \end{cases}$$
+      with the unique restriction maps; and $y_U$ represents the functor $\Gamma(U, {-})$ of sections over $U$.) Therefore, the lemma implies that every open set of $X$ is either $\varnothing$ or $X$, contradicting our assumption that $X$ does not have the indiscrete topology.
 
 special_objects:
   initial object:
