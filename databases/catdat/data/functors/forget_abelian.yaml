@@ -27,9 +27,6 @@ satisfied_properties:
   - property: initial-object-preserving
     reason: The trivial group is initial in both $\Ab$ and $\Grp$.
 
-  - property: epimorphism-preserving
-    reason: Every epimorphism in $\Ab$ is surjective, and a surjective homomorphism in $\Grp$ is an epimorphism.
-
   - property: coequalizer-preserving
     reason: 'This follows from the concrete construction of coequalizers, but it can also be proven as follows: Assume that $f,g : A \rightrightarrows B$ have coequalizer $p : B \to C$ in $\Ab$. If $G$ is any group and $h : B \to G$ is a homomorphism with $hf = hg$, consider the image factorization $h = i h''$ of $h$. We have $h'' f = h'' g$, and the image $\im(h)$ is abelian. Hence, there is a unique homomorphism $k : C \to \im(h)$ with $kp = h''$. Hence, $ik : C \to G$ satisfies $ikp = h$. Uniqueness follows since we already know that the forgetful functor is epimorphism-preserving.'
 

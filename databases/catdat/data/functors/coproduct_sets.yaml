@@ -20,9 +20,6 @@ satisfied_properties:
   - property: equalizer-preserving
     reason: This can be checked with a straight forward calculation.
 
-  - property: monomorphism-preserving
-    reason: This is easy to check.
-
   - property: conservative
     reason: This is easy to check.
 

@@ -15,9 +15,6 @@ related_functors:
   - doubling_sets
 
 satisfied_properties:
-  - property: monomorphism-preserving
-    reason: This is trivial.
-
   - property: equalizer-preserving
     reason: This is trivial.
 

@@ -135,3 +135,14 @@
     - equalizer-preserving
   reason: This follows easily from <a href="/category-implication/equalizers_via_coreflexive_equalizers">this result</a> about categories.
   is_equivalence: false
+
+- id: mono-preserving_criterion
+  assumptions:
+    - equalizer-preserving
+  source_assumptions:
+    - mono-regular
+  target_assumptions: []
+  conclusions:
+    - monomorphism-preserving
+  reason: Any monomorphism in the domain is a regular monomorphism and is mapped to a regular monomorphism.
+  is_equivalence: false

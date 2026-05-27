@@ -21,9 +21,6 @@ satisfied_properties:
   - property: conservative
     reason: This is easy to check.
 
-  - property: monomorphism-preserving
-    reason: The doubling functor can also be written as $X \mapsto \{1,2\} \times X$, from which the claim follows.
-
   - property: equalizer-preserving
     reason: The doubling functor can also be written as $X \mapsto \{1,2\} \times X$, from which the claim follows.
 
