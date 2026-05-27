@@ -25,13 +25,11 @@
 
 {#if reason}
 	<span class="wrapper" class:expanded={popup_state?.id === id}>
-		<span>
-			<button onclick={show_reason} aria-label="Show reason">
-				<Fa icon={faCommentDots} scale={0.825} />
-			</button>
+		<button onclick={show_reason} aria-label="Show reason">
+			<Fa icon={faCommentDots} scale={0.825} />
+		</button>
 
-			{@render children()}
-		</span>
+		<span>{@render children()}</span>
 	</span>
 {:else}
 	<span>
@@ -41,7 +39,9 @@
 
 <style>
 	.wrapper {
-		display: inline-grid;
+		display: inline-flex;
+		align-items: start;
+		gap: 0.35rem;
 
 		&.expanded {
 			color: var(--accent-color);
