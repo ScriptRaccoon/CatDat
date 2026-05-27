@@ -177,6 +177,7 @@
 		"Marra",
 		"Mathoverflow",
 		"Mesablishvili",
+		"Metayer",
 		"metrizable",
 		"Moerdijk",
 		"monadicity",
@@ -295,8 +296,5 @@
 		"todo.txt",
 		"*.svg"
 	],
-	"ignoreRegExpList": [
-		"\\$[^$]*\\$",
-		"\\$\\$[^$]*\\$\\$"
-	]
+	"ignoreRegExpList": ["\\$[^$]*\\$", "\\$\\$[^$]*\\$\\$"]
 }
