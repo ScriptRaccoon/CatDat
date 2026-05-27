@@ -1,0 +1,33 @@
+id: doubling_sets
+name: doubling functor on sets
+notation: $2(-)$
+source: Set
+target: Set
+description: 'This functor maps a set $X$ to its double $2 X \coloneqq X + X$. It is a simple example of a polynomial functor.'
+nlab_link: null
+
+tags:
+  - set theory
+
+related_functors:
+  - id_Set
+
+satisfied_properties:
+  - property: monomorphism-preserving
+    reason: This is easy to check using the characterization of monomorphisms in $\Set$ as injective maps.
+
+  - property: cofinitary
+    reason: The doubling functor can also be written as $X \mapsto \{1,2\} \times X$, from which the claim follows.
+
+  - property: equalizer-preserving
+    reason: The doubling functor can also be written as $X \mapsto \{1,2\} \times X$, from which the claim follows.
+
+  - property: comonadic
+    reason: This follows from Proposition 6.13 in Mesablishvili, <a href="http://www.tac.mta.ca/tac/volumes/16/1/16-01abs.html" target="_blank">Monads of effective descent type and comonadicity</a>.
+
+unsatisfied_properties:
+  - property: essentially surjective
+    reason: This is trivial.
+
+  - property: terminal-object-preserving
+    reason: This is trivial.
