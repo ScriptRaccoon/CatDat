@@ -1,0 +1,35 @@
+id: countable_copower_sets
+name: countable copower functor on sets
+notation: $\IN \times (-)$
+source: Set
+target: Set
+description: This functor maps a set $X$ to the product $\IN \times X$, which can also be seen as the copower $\IN \otimes X = \coprod_{n \in \IN} X$. It is an example of a polynomial functor.
+nlab_link: null
+
+tags:
+  - set theory
+
+related_functors:
+  - id_Set
+  - coproduct_sets
+  - doubling_sets
+
+satisfied_properties:
+  - property: monomorphism-preserving
+    reason: This is trivial.
+
+  - property: equalizer-preserving
+    reason: This is trivial.
+
+  - property: cofinitary
+    reason: This is trivial.
+
+  - property: comonadic
+    reason: This follows from Proposition 6.13 in Mesablishvili, <a href="http://www.tac.mta.ca/tac/volumes/16/1/16-01abs.html" target="_blank">Monads of effective descent type and comonadicity</a>.
+
+unsatisfied_properties:
+  - property: terminal-object-preserving
+    reason: We have $\IN \times 1 \cong \IN \not\cong 1$.
+
+  - property: essentially surjective
+    reason: A non-empty finite set is not contained in the essential image.

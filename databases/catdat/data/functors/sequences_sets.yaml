@@ -3,9 +3,9 @@ name: sequences functor on sets
 notation: $(-)^{\IN}$
 source: Set
 target: Set
-description: This functor maps a set $X$ to the power $X^{\IN}$, i.e. the set of sequences in $X$.
+description: This functor maps a set $X$ to the countable power $X^{\IN}$, i.e. the set of sequences in $X$. It is an example of a polynomial functor.
 nlab_link: null
-# TODO: add its left adjoint, X -> N x X
+left_adjoint: countable_copower_sets
 
 tags:
   - set theory

@@ -3,7 +3,7 @@ name: identity functor on the category of sets
 notation: $\id_{\Set}$
 source: Set
 target: Set
-description: Every category $\C$ has an identity functor $\id_{\C}$. Here, we specify that it is for the category of sets.
+description: 'Every category $\C$ has an identity functor $\id_{\C} : \C \to \C$. Here, we specify that $\C$ is the category of sets.'
 nlab_link: https://ncatlab.org/nlab/show/identity+functor
 left_adjoint: id_Set
 
