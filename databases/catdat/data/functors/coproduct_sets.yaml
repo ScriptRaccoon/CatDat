@@ -1,0 +1,38 @@
+id: coproduct_sets
+name: binary coproduct functor on sets
+notation: $+$
+source: SetxSet
+target: Set
+description: This functor maps a pair of sets $(X,Y)$ to their coproduct $X + Y$.
+nlab_link: null
+
+tags:
+  - set theory
+
+related_functors:
+  - doubling_sets
+  - product_sets
+
+satisfied_properties:
+  - property: essentially surjective
+    reason: We have $X \cong X + 0$.
+
+  - property: equalizer-preserving
+    reason: This can be checked with a straight forward calculation.
+
+  - property: comonadic
+    # TODO: refactor this once crude monadicity theorem is added as implication
+    reason: >-
+      We prove this using the crude monadicity theorem (see e.g. <a href="https://ncatlab.org/nlab/show/Sheaves+in+Geometry+and+Logic" target="_blank">Mac Lane & Moerdijk</a>, Thm. IV.4.2). It is easy to check that the coproduct functor conservative. It is left adjoint to the diagonal functor since
+      $$\Hom(A + B,X) \cong \Hom(A,X) \times \Hom(B,X) \cong \Hom((A,B),(X,X)).$$
+      Moreover, we already have remarked that equalizers are preserved, which includes coreflexive equalizers in particular.
+
+  - property: monomorphism-preserving
+    reason: This is easy to check.
+
+  - property: cofinitary
+    reason: We already know that <a href="/category/Set">$\Set$</a> has cocartesian cofiltered limits; this is a consequence of <a href="/category-implication/extensive_cocartesian_cofiltered_limits">this result</a>.
+
+unsatisfied_properties:
+  - property: terminal-object-preserving
+    reason: This is obvious.

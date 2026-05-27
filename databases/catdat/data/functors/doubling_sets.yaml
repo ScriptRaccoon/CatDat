@@ -3,7 +3,7 @@ name: doubling functor on sets
 notation: $2(-)$
 source: Set
 target: Set
-description: 'This functor maps a set $X$ to its double $2 X \coloneqq X + X$. It is a simple example of a polynomial functor.'
+description: This functor maps a set $X$ to its double $2 X \coloneqq X + X$. It is a simple example of a polynomial functor.
 nlab_link: null
 
 tags:
@@ -11,6 +11,7 @@ tags:
 
 related_functors:
   - id_Set
+  - coproduct_sets
 
 satisfied_properties:
   - property: monomorphism-preserving

@@ -1,0 +1,45 @@
+id: product_sets
+name: binary product functor on sets
+notation: $\times$
+source: SetxSet
+target: Set
+description: This functor maps a pair of sets $(X,Y)$ to their product $X \times Y$.
+nlab_link: null
+left_adjoint: diagonal_sets
+
+tags:
+  - set theory
+
+related_functors:
+  - squaring_sets
+  - coproduct_sets
+
+satisfied_properties:
+  - property: essentially surjective
+    reason: We have $X \cong X \times 1$.
+
+  - property: initial-object-preserving
+    reason: This is obvious.
+
+  - property: epimorphism-preserving
+    reason: This follows easily from the description of epimorphisms in $\Set$ as surjective maps.
+
+  - property: representable
+    reason: We have $X \times Y \cong \Hom_{\Set \times \Set}((1,1),(X,Y))$.
+
+  - property: finitary
+    # TODO: refactor this once we add "preserves sifted colimits"
+    reason: This is obvious. The functor even preserves all sifted colimits.
+
+unsatisfied_properties:
+  - property: full
+    reason: If $X$ is a non-empty set, the unique map of empty sets $X \times \varnothing \to \varnothing \times X$ is not induced by a map $X \to \varnothing$.
+
+  - property: faithful
+    reason: 'If $f,g : A \rightrightarrows B$ are two maps, we always have $f \times \id_{\varnothing} = g \times \id_{\varnothing} : A \times \varnothing \rightrightarrows B \times \varnothing$.'
+
+  - property: finite-coproduct-preserving
+    reason: 'Since the diagonal functor $\Delta : \Set \to \Set \times \Set$ preserves coproducts (in fact, all colimits), it would follow that the composition $\Set \to \Set$, $X \mapsto X^2$ preserves finite coproducts. But this is the <a href="/functor/squaring_sets">squaring functor</a>, from we already know that it does not preserve finite coproducts.'
+
+  - property: coequalizer-preserving
+    reason: 'Since the diagonal functor $\Delta : \Set \to \Set \times \Set$ preserves coequalizers (in fact, all colimits), it would follow that the composition $\Set \to \Set$, $X \mapsto X^2$ preserves coequalizers. But this is the <a href="/functor/squaring_sets">squaring functor</a>, from we already know that it does not preserve coequalizers.'
