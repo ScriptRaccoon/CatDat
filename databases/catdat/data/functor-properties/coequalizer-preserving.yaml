@@ -1,6 +1,6 @@
 id: coequalizer-preserving
 relation: is
-description: 'A functor $F$ <i>preserves coequalizers</i> when for every parallel pair of morphisms $f,g : A \rightrightarrows B$ whose coequalizer $p : B \to Q$ exists, also $F(p) : F(B) \to F(Q)$ is an coequalizer of $F(f),F(g) : F(A) \rightrightarrows F(B)$.'
+description: 'A functor $F$ <i>preserves coequalizers</i> when for every parallel pair of morphisms $f,g : A \rightrightarrows B$ whose coequalizer $p : B \to Q$ exists, also $F(p) : F(B) \to F(Q)$ is a coequalizer of $F(f),F(g) : F(A) \rightrightarrows F(B)$.'
 nlab_link: https://ncatlab.org/nlab/show/preserved+colimit
 invariant_under_equivalences: true
 dual_property: equalizer-preserving
