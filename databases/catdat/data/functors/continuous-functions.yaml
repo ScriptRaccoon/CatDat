@@ -40,8 +40,8 @@ unsatisfied_properties:
   - property: faithful
     reason: 'If $X,Y$ are non-empty indiscrete spaces, there is only one homomorphism of $\IR$-algebras $C(Y) \to C(X)$ (since both are isomorphic to $\IR$), but there can be many maps $X \to Y$.'
 
-  - property: coequalizer-preserving
-    reason: 'A functor that preserves coequalizers also preserves regular epimorphisms. In this situation, this would mean that for every embedding $i : Y \hookrightarrow X$, the induced map $i^* : C(X) \to C(Y)$ is surjective. For a counterexample, consider the embedding $i : \IR \setminus \{0\} \hookrightarrow \IR$ and the continuous map $x \mapsto x^{-1}$.'
+  - property: reflexive-coequalizer-preserving
+    reason: 'Let $i : U \hookrightarrow X$ be an open embedding such that there exists a continuous function on $U$ that does not extend to $X$; for example, $i : \IR \setminus \{0\} \hookrightarrow \IR$ together with the continuous function $x \mapsto x^{-1}$. Then $i$ is the equalizer of the two inclusions $X \rightrightarrows X +_U X$, which have common retraction $\nabla : X +_U X \to X$. But $i^* : C(X) \to C(U)$ is not a coequalizer in $\CAlg(\IR)$, since it is not surjective.'
 
   - property: epimorphism-preserving
     reason: 'If $i : X \to Y$ is an injective continuous map, the induced homomorphism $C(Y) \to C(X)$ need not be surjective (consider the inclusion $i : \IR \setminus \{0\} \hookrightarrow \IR$ and the map $x \mapsto x^{-1}$). However, we need an example where it is not even an epimorphism in $\CAlg(\IR)$. A simple counterexample can again be constructed using (in)discrete spaces. Namely, if $X$ is any finite set with at least two elements, we have a continuous bijection $D(X) \to I(X)$, $x \mapsto x$, where $D(X)$ (resp. $I(X)$) denotes the discrete (resp. indiscrete) space on $X$. It induces the algebra homomorphism $\IR \cong C(I(X)) \to C(D(X)) \cong \IR^X$, which is not an epimorphism since $\IR^X \otimes_\IR \IR^X \not\cong \IR^X$.'

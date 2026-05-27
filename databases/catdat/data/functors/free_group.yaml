@@ -19,6 +19,9 @@ satisfied_properties:
   - property: monomorphism-preserving
     reason: 'This can be deduced from the description of the elements of a free group, but here is an abstract argument: Split monomorphisms are preserved by any functor. The only injective maps in $\Set$ that are not split are $\varnothing \hookrightarrow X$ (for non-empty $X$), and $F(\varnothing) \to F(X)$ is injective since $F(\varnothing)$ is the trivial group.'
 
+  - property: coreflexive-equalizer-preserving
+    reason: 'More generally, if $f,g : X \rightrightarrows Y$ are two injective maps with equalizer $E \hookrightarrow X$, then $F(E) \to F(X)$ is the equalizer of $F(f),F(g) : F(X) \rightrightarrows F(Y)$. In fact, we already know that $F(E) \to F(X)$ is injective. Now let $w \in F(X)$ be an element, and write it as a reduced word $w = x_1^{k_1} \cdots x_n^{k_n}$, meaning $x_i \in X$, $x_i \neq x_{i+1}$, $k_i \in \IZ \setminus \{0\}$. Since $f$ is injective, also $f(w) = f(x_1)^{k_1} \cdots f(x_n)^{k_n}$ is a reduced word. The same is true for $g(w)$. Hence, $f(w)=g(w)$ implies $f(x_i)=g(x_i)$ for every $i$, i.e. $x_i \in E$.'
+
 unsatisfied_properties:
   - property: essentially surjective
     reason: Not every group is free (consider $\IZ/2$).

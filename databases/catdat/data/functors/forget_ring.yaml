@@ -24,6 +24,9 @@ satisfied_properties:
   - property: finitary
     reason: For every algebraic category the forgetful functor to the category of sets preserves filtered colimits.
 
+  - property: reflexive-coequalizer-preserving
+    reason: This follows from Theorem 2.5 at the <a href="https://ncatlab.org/nlab/show/reflexive+coequalizer" target="_blank">nLab</a>.
+
 unsatisfied_properties:
   - property: essentially surjective
     reason: The empty set has has no ring structure.

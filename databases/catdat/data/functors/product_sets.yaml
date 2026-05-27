@@ -31,15 +31,16 @@ satisfied_properties:
     # TODO: refactor this once we add "preserves sifted colimits"
     reason: This is obvious. The functor even preserves all sifted colimits.
 
+  - property: reflexive-coequalizer-preserving
+    # TODO: refactor this once we add "preserves sifted colimits"
+    reason: See Prop. 2.4 at the <a href="https://ncatlab.org/nlab/show/reflexive+coequalizer" target="_blank">nLab</a>.
+
 unsatisfied_properties:
   - property: full
     reason: If $X$ is a non-empty set, the unique map of empty sets $X \times \varnothing \to \varnothing \times X$ is not induced by a map $X \to \varnothing$.
 
   - property: faithful
     reason: 'If $f,g : A \rightrightarrows B$ are two maps, we always have $f \times \id_{\varnothing} = g \times \id_{\varnothing} : A \times \varnothing \rightrightarrows B \times \varnothing$.'
-
-  - property: finite-coproduct-preserving
-    reason: 'Since the diagonal functor $\Delta : \Set \to \Set \times \Set$ preserves coproducts (in fact, all colimits), it would follow that the composition $\Set \to \Set$, $X \mapsto X^2$ preserves finite coproducts. But this is the <a href="/functor/squaring_sets">squaring functor</a>, from we already know that it does not preserve finite coproducts.'
 
   - property: coequalizer-preserving
     reason: 'Since the diagonal functor $\Delta : \Set \to \Set \times \Set$ preserves coequalizers (in fact, all colimits), it would follow that the composition $\Set \to \Set$, $X \mapsto X^2$ preserves coequalizers. But this is the <a href="/functor/squaring_sets">squaring functor</a>, from we already know that it does not preserve coequalizers.'

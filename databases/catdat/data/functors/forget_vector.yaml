@@ -27,6 +27,9 @@ satisfied_properties:
   - property: epimorphism-preserving
     reason: This follows from the classifications of epimorphisms in <a href="/category/Vect">$\Vect$</a> and in <a href="/category/Set">$\Set$</a>.
 
+  - property: reflexive-coequalizer-preserving
+    reason: This follows from Theorem 2.5 at the <a href="https://ncatlab.org/nlab/show/reflexive+coequalizer" target="_blank">nLab</a>.
+
 unsatisfied_properties:
   - property: essentially surjective
     reason: The empty set has has no vector space structure.
