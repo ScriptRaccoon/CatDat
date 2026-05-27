@@ -11,6 +11,7 @@
 	"initial-object-preserving": false,
 	"left adjoint": false,
 	"right exact": false,
+
 	"cofinitary": true,
 	"conservative": true,
 	"continuous": true,
@@ -25,5 +26,7 @@
 	"product-preserving": true,
 	"representable": true,
 	"right adjoint": true,
-	"terminal-object-preserving": true
+	"terminal-object-preserving": true,
+	"reflexive-coequalizer-preserving": true,
+	"coreflexive-equalizer-preserving": true
 }

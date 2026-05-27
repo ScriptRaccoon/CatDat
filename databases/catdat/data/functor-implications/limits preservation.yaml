@@ -113,3 +113,25 @@
     - continuous
   reason: This is standard, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. V, Theorem 4.1.
   is_equivalence: false
+
+- id: equalizers_include_coreflexive_equalizers
+  assumptions:
+    - equalizer-preserving
+  source_assumptions: []
+  target_assumptions: []
+  conclusions:
+    - coreflexive-equalizer-preserving
+  reason: This is trivial.
+  is_equivalence: false
+
+- id: criterion_coreflexive_equalizers
+  assumptions:
+    - coreflexive-equalizer-preserving
+    - finite-product-preserving # TODO: only need binary products
+  source_assumptions:
+    - binary products
+  target_assumptions: []
+  conclusions:
+    - equalizer-preserving
+  reason: This follows easily from <a href="/category-implication/equalizers_via_coreflexive_equalizers">this result</a> about categories.
+  is_equivalence: false

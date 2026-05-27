@@ -7,3 +7,4 @@ dual_property: coequalizer-preserving
 related_properties:
   - continuous
   - left exact
+  - coreflexive-equalizer-preserving

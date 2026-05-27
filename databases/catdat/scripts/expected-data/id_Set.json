@@ -25,5 +25,7 @@
 	"representable": true,
 	"right adjoint": true,
 	"right exact": true,
-	"terminal-object-preserving": true
+	"terminal-object-preserving": true,
+	"reflexive-coequalizer-preserving": true,
+	"coreflexive-equalizer-preserving": true
 }
