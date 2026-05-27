@@ -68,16 +68,21 @@ unsatisfied_properties:
     reason: >-
       Consider the pushout square
       $$\begin{CD}
-      1 @> 0 \mapsto 1 >> \{ 0 \to 1 \} \\
-      @V 0 \mapsto 1 VV @VV \mathrm{inc} V \\
-      \{ 1 \to 2 \} @>> \mathrm{inc} > \{ 0 \to 1 \to 2 \}.
+      \{1\} @> \inc >> \{ 0 \to 1 \} \\
+      @V \inc VV @VV \inc V \\
+      \{ 1 \to 2 \} @>> \inc > \{ 0 \to 1 \to 2 \}.
       \end{CD}$$
       Here the upper right corner is the walking morphism, the lower left corner is an isomorphic copy of the walking morphism, and the lower right corner is the walking composable pair.
 
-      We will now consider two equalizers on $\{ 0 \to 1 \to 2 \}$. The first will be the equalizer of the two paths in the walking commutative square $\{ 0 \to 1 \}^2$, i.e. the functors will be $0 \mapsto (0,0)$, $1 \mapsto (0,1)$, $2 \mapsto (1,1)$ and $0 \mapsto (0,0)$, $1 \mapsto (1,0)$, $2 \mapsto (1,1)$. This equalizer contains the unique morphism $0 \to 2$. On the other hand, if for the target we instead use the free category on the square diagram, in this case the equalizer does not contain the unique morphism $0 \to 2$. However, in both cases, the pullbacks of these equalizers to $\{ 0 \to 1 \}$ and to $\{ 1 \to 2 \}$ will be the same. Namely, the pullback of each to $\{ 0 \to 1 \}$ will be the subcategory with just the object $0$ and its identity morphism; and the pullback of each to $\{ 1 \to 2 \}$ will be the subcategory with just the object $2$ and its identity morphism.
+      We will now consider two equalizers on $\{ 0 \to 1 \to 2 \}$. The first will be the equalizer of the two paths in the walking commutative square $\{ 0 \to 1 \}^2$, i.e. the functors will be
+      $$\begin{align*}
+      0 \mapsto (0,0),~ 1 \mapsto (0,1),~ 2 \mapsto (1,1); \\
+      0 \mapsto (0,0),~ 1 \mapsto (1,0),~ 2 \mapsto (1,1).
+      \end{align*}$$
+      This equalizer contains the unique morphism $0 \to 2$. On the other hand, if for the target we instead use the free category on the square diagram, in this case the equalizer does not contain the unique morphism $0 \to 2$. However, in both cases, the pullbacks of these equalizers to $\{ 0 \to 1 \}$ and to $\{ 1 \to 2 \}$ will be the same. Namely, the pullback of each to $\{ 0 \to 1 \}$ will be the subcategory with just the object $0$ and its identity morphism; and the pullback of each to $\{ 1 \to 2 \}$ will be the subcategory with just the object $2$ and its identity morphism.
 
       This shows that the comparison function
-      $$\Sub_{\reg}(\{ 0 \to 1 \} +_1 \{ 1 \to 2 \}) \to \Sub_{\reg}(\{ 0 \to 1 \}) \times_{\Sub_{\reg}(1)} \Sub_{\reg}(\{ 1 \to 2 \})$$
+      $$\Sub_{\reg}(\{ 0 \to 1 \to 2 \}) \to \Sub_{\reg}(\{ 0 \to 1 \}) \times_{\Sub_{\reg}(\{1\})} \Sub_{\reg}(\{ 1 \to 2 \})$$
       is not injective. Therefore, $\Sub_{\reg} : \Cat^{\op} \to \Set^+$ does not preserve pullbacks, so it cannot be representable.
 
 special_objects:
