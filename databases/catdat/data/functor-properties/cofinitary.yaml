@@ -1,7 +1,7 @@
 id: cofinitary
 relation: is
 description: A functor is <i>cofinitary</i> when it preserves cofiltered limits.
-nlab_link: null
+nlab_link: https://ncatlab.org/nlab/show/preserved+limit
 invariant_under_equivalences: true
 dual_property: finitary
 related_properties:
