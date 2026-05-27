@@ -19,13 +19,27 @@ satisfied_properties:
   - property: epimorphism-preserving
     reason: 'If $f : X \to Y$ is injective, then $f^* : P(Y) \to P(X)$ is surjective, since for all $A \subseteq X$ we have $A = f^*(f_*(A))$.'
 
-  - property: monadic
-    # TODO: refactor this once crude monadicity is added
-    reason: See <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, Theorem 2.2.7.
+  - property: conservative
+    reason: >-
+      Assume that $f : X \to Y$ is a map such that $f^* : P(Y) \to P(X)$ is bijective. For $y \in Y$ it follows that $f^*(\{y\}) \neq f^*(\varnothing) = \varnothing$, which means that $y$ has an $f$-preimage. That is, $f$ is surjective.
+      Next, if $x,x' \in X$ satisfy $f(x)=f(x')$, choose $T \in P(Y)$ with $f^*(T) = \{x\}$. Then $f(x') = f(x) \in T$, hence $x' \in f^*(T) = \{x\}$. This shows that $f$ is injective.
+
+  - property: right adjoint
+    reason: >-
+      The functor $P : \Set^{\op} \to \Set$ is right adjoint to $P^{\op} : \Set \to \Set^{\op}$ since
+      $$\Hom_{\Set}(X,P(Y)) \cong P(X \times Y) \cong \Hom_{\Set}(Y,P(X)) = \Hom_{\Set^{\op}}(P(X),Y).$$
+    check_redundancy: false
 
   - property: reflexive-coequalizer-preserving
-    # TODO: refactor this once crude monadicity is added
-    reason: This is verified in the proof of <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, Theorem 2.2.7.
+    reason: >-
+      This is contained in the proof of Theorem 2.2.7 (monadicity of $P$ for an elementary topos) in <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, but we include a direct proof here for the sake of completeness, and also since we want to let the system deduce monadicity automatically.
+
+      Let $f,g : X \rightrightarrows Y$ be two maps with a common retraction $r : Y \to X$, i.e. $rf = rg = \id_X$. Let $i : E \hookrightarrow X$ be their equalizer. We need to prove that $i^* : P(X) \to P(E)$ is a coequalizer of $f^*,g^* : P(Y) \rightrightarrows P(X)$. First of all, $i^*$ is surjective since $i$ is injective, which implies that $A = i^*(i_*(A))$ for all $A \subseteq E$. Hence, $i^*$ is the quotient of $P(X)$ by the equivalence relation $\sim_1$ defined by $A \sim_1 B \iff i^*(A) = i^*(B)$, i.e. $A \cap E = B \cap E$. The coequalizer of $f^*,g^*$ is the quotient of $P(X)$ by the smallest equivalence relation $\sim_2$ satisfying $f^*(C) \sim_2 g^*(C)$ for all $C \subseteq Y$. We need to show that these are the same equivalence relations.
+
+      (1) $\sim_2$ is contained in $\sim_1$:  If $C \subseteq Y$, then $f \circ i = g \circ i$ implies $i^*(f^*(C)) = i^*(g^*(C))$, so that $f^*(C) \sim_1 g^*(C)$.
+
+      (2) $\sim_1$ is contained in $\sim_2$: Let $A,B \subseteq X$ be subsets with $i^*(A) = i^*(B)$. We claim that $g^*(f_*(A)) = g^*(f_*(B))$. In fact, if $x \in g^*(f_*(A))$, we have $g(x) = f(a)$ for some $a \in A$. Applying $r : Y \to X$ shows that $x = a$. Thus, $a \in A \cap E = B \cap E$, and we get $x \in g^*(f_*(B))$. The claim now implies
+      $$A = f^*(f_*(A)) \sim_2 g^*(f_*(A)) = g^*(f_*(B)) \sim_2 f^*(f_*(B)) = B.$$
 
 unsatisfied_properties:
   - property: full

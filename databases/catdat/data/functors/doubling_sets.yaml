@@ -15,6 +15,12 @@ related_functors:
   - countable_copower_sets
 
 satisfied_properties:
+  - property: left adjoint
+    reason: We have $\Hom(X+X,Y) \cong \Hom(X,Y)^2 \cong \Hom(X,Y^2)$.
+
+  - property: conservative
+    reason: This is easy to check.
+
   - property: monomorphism-preserving
     reason: The doubling functor can also be written as $X \mapsto \{1,2\} \times X$, from which the claim follows.
 
@@ -23,9 +29,6 @@ satisfied_properties:
 
   - property: cofinitary
     reason: The doubling functor can also be written as $X \mapsto \{1,2\} \times X$, from which the claim follows.
-
-  - property: comonadic
-    reason: This follows from Proposition 6.13 in Mesablishvili, <a href="http://www.tac.mta.ca/tac/volumes/16/1/16-01abs.html" target="_blank">Monads of effective descent type and comonadicity</a>.
 
 unsatisfied_properties:
   - property: full

@@ -13,6 +13,7 @@ tags:
 related_functors:
   - squaring_sets
   - doubling_sets
+  - diagonal_sets
 
 satisfied_properties:
   - property: equivalence

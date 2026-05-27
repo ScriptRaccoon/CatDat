@@ -14,21 +14,18 @@ related_functors:
   - id_Set
 
 satisfied_properties:
-  - property: monadic
-    # TODO: refactor this once crude monadicity theorem is added as implication
+  - property: conservative
+    reason: This is easy to check.
+
+  - property: left adjoint
     reason: >-
-      We prove this using the crude monadicity theorem (see e.g. <a href="https://ncatlab.org/nlab/show/Sheaves+in+Geometry+and+Logic" target="_blank">Mac Lane & Moerdijk</a>, Thm. IV.4.2). It is clear that the diagonal functor is conservative. Also, it has a left adjoint because of 
-      $$\Hom(A + B,X) \cong \Hom(A,X) \times \Hom(B,X) \cong \Hom((A,B),(X,X)).$$
-      Finally, it preserves reflexive coequalizers, in fact all colimits, because it also has a right adjoint:
+      The diagonal functor is left adjoint to the product functor since
       $$\Hom(X, A \times B) \cong \Hom(X,A) \times \Hom(X,B) \cong \Hom((X,X),(A,B)).$$
 
-  - property: comonadic
-    # TODO: refactor this once crude monadicity theorem is added as implication
+  - property: right adjoint
     reason: >-
-      We prove this using the crude monadicity theorem (see e.g. <a href="https://ncatlab.org/nlab/show/Sheaves+in+Geometry+and+Logic" target="_blank">Mac Lane & Moerdijk</a>, Thm. IV.4.2). It is clear that the diagonal functor is conservative. Also, it has a right adjoint because of 
-      $$\Hom(X, A \times B) \cong \Hom(X,A) \times \Hom(X,B) \cong \Hom((X,X),(A,B)).$$
-      Finally, it preserves reflexive equalizers, in fact all limits, because it also has a left adjoint:
-      $$\Hom(A + B,Y) \cong \Hom(A,Y) \times \Hom(B,Y) \cong \Hom((A,B),(Y,Y)).$$
+      The diagonal functor is right adjoint to the coproduct functor since
+      $$\Hom(A + B,X) \cong \Hom(A,X) \times \Hom(B,X) \cong \Hom((A,B),(X,X)).$$
 
 unsatisfied_properties:
   - property: full

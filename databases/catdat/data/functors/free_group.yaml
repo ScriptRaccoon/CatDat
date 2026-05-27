@@ -13,8 +13,11 @@ tags:
 related_functors: []
 
 satisfied_properties:
-  - property: comonadic
-    reason: This follows from Proposition 6.13 in Mesablishvili, <a href="http://www.tac.mta.ca/tac/volumes/16/1/16-01abs.html" target="_blank">Monads of effective descent type and comonadicity</a>.
+  - property: left adjoint
+    reason: 'By definition, this functor is left adjoint to the forgetful functor $U_{\Grp} : \Grp \to \Set$.'
+
+  - property: conservative
+    reason: This can be done with the concrete description of the elements of free groups.
 
   - property: monomorphism-preserving
     reason: 'This can be deduced from the description of the elements of a free group, but here is an abstract argument: Split monomorphisms are preserved by any functor. The only injective maps in $\Set$ that are not split are $\varnothing \hookrightarrow X$ (for non-empty $X$), and $F(\varnothing) \to F(X)$ is injective since $F(\varnothing)$ is the trivial group.'

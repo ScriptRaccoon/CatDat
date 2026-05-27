@@ -9,3 +9,16 @@
     - right adjoint
   reason: This is clear since for a monad $T$ the forgetful functor from the category of $T$-algebras has these properties.
   is_equivalence: false
+
+- id: crude_monadicity_theorem
+  assumptions:
+    - right adjoint
+    - conservative
+    - reflexive-coequalizer-preserving
+  source_assumptions:
+    - reflexive coequalizers
+  target_assumptions: []
+  conclusions:
+    - monadic
+  reason: This is the crude monadicity theorem. A proof can be found in <a href="https://ncatlab.org/nlab/show/Sheaves+in+Geometry+and+Logic" target="_blank">Mac Lane & Moerdijk</a>, Thm. IV.4.2.
+  is_equivalence: false

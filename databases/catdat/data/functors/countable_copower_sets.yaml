@@ -24,8 +24,11 @@ satisfied_properties:
   - property: cofinitary
     reason: This is trivial.
 
-  - property: comonadic
-    reason: This follows from Proposition 6.13 in Mesablishvili, <a href="http://www.tac.mta.ca/tac/volumes/16/1/16-01abs.html" target="_blank">Monads of effective descent type and comonadicity</a>.
+  - property: conservative
+    reason: This is easy to check.
+
+  - property: left adjoint
+    reason: We have $\Hom(\IN \times X,Y) \cong \Hom(X,Y^{\IN})$.
 
 unsatisfied_properties:
   - property: full

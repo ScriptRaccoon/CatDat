@@ -13,11 +13,14 @@ tags:
 related_functors: []
 
 satisfied_properties:
+  - property: left adjoint
+    reason: 'This functor is left adjoint to the forgetful functor $U_{\Top} : \Top \to \Set$.'
+
   - property: full
     reason: This is trivial. In fact, the functor is fully faithful.
 
-  - property: comonadic
-    reason: This follows from Proposition 6.13 in Mesablishvili, <a href="http://www.tac.mta.ca/tac/volumes/16/1/16-01abs.html" target="_blank">Monads of effective descent type and comonadicity</a>.
+  - property: conservative
+    reason: This is trivial.
 
   - property: finite-product-preserving
     reason: It is easy to check that a finite product of discrete spaces is again discrete.
