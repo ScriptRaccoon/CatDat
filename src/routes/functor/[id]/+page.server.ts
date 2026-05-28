@@ -90,13 +90,9 @@ export const load = async (event) => {
 				fp.is_satisfied,
 				fp.reason,
 				fp.is_deduced,
-				CASE
-        			WHEN fp.is_satisfied = FALSE THEN r.negation
-        			ELSE p.relation
-    			END AS relation
+				p.relation
 			FROM functor_property_assignments fp
 			INNER JOIN functor_properties p ON p.id = fp.property_id
-			INNER JOIN relations r ON r.relation = p.relation
 			WHERE fp.functor_id = ${id}
 			ORDER BY fp.id
 		`,

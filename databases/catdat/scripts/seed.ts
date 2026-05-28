@@ -111,7 +111,7 @@ function seed_config() {
 	const functor_tag_insert = db.prepare(`INSERT INTO functor_tags (tag) VALUES (?)`)
 
 	const relation_insert = db.prepare(
-		`INSERT INTO relations (relation, negation, conditional) VALUES (?, ?, ?)`,
+		`INSERT INTO relations (relation, conditional) VALUES (?, ?)`,
 	)
 
 	const object_insert = db.prepare(
@@ -139,8 +139,8 @@ function seed_config() {
 				functor_tag_insert.run(tag)
 			}
 
-			for (const { relation, negation, conditional } of config.relations) {
-				relation_insert.run(relation, negation, conditional)
+			for (const { relation, conditional } of config.relations) {
+				relation_insert.run(relation, conditional)
 			}
 
 			for (const { type, dual } of config.special_object_types) {

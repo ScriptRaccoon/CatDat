@@ -74,13 +74,9 @@ export const load = async (event) => {
 				cp.is_satisfied,
 				cp.reason,
 				cp.is_deduced,
-				CASE
-        			WHEN cp.is_satisfied = FALSE THEN r.negation
-        			ELSE p.relation
-    			END AS relation
+				p.relation
 			FROM category_property_assignments cp
 			INNER JOIN category_properties p ON p.id = cp.property_id
-			INNER JOIN relations r ON r.relation = p.relation
 			WHERE cp.category_id = ${id}
 			ORDER BY cp.id
 		`,

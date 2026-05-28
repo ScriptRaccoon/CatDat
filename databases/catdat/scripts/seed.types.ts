@@ -4,7 +4,6 @@ export type ConfigYaml = {
 	functor_tags: string[]
 	relations: {
 		relation: string
-		negation: string
 		conditional: string
 	}[]
 	special_object_types: {

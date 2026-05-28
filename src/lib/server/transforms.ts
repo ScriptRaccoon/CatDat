@@ -18,6 +18,17 @@ export function display_property(property: PropertyDB): PropertyDisplay {
 	}
 }
 
+const relation_negations: Record<string, string> = {
+	'is': 'is not',
+	'is a': 'is not a',
+	'is an': 'is not an',
+	'has': 'does not have',
+	'has a': 'does not have a',
+	'has an': 'does not have an',
+	'satisfies': 'does not satisfy',
+	'': '',
+}
+
 export function display_property_assignment(
 	property: PropertyAssignmentDB,
 ): PropertyAssignmentDisplay {
@@ -36,6 +47,11 @@ export function display_property_assignment(
 			relation: 'does not',
 		}
 	}
+
+	if (property.is_satisfied === 0) {
+		property.relation = relation_negations[property.relation]
+	}
+
 	return {
 		id: property.id,
 		label: property.id,
