@@ -117,6 +117,9 @@ unsatisfied_properties:
       Since this holds for every $\varepsilon > 0$, we conclude $d(f(x), h(y)) \le x+y$.
       On the other hand, if this cocongruence were effective, then by the dual of <a href="/content/effective-congruence-quotients">this result</a>, it would be the cokernel pair of the equalizer of the two inclusion maps. However, that equalizer is empty, so $E$ would have to be a binary copower of $(0,1)$, which does not exist in $\Met$.
 
+  - property: regular
+    reason: We can take the same counterexample as for <a href="/category/PMet">$\PMet$</a>.
+
 special_objects:
   initial object:
     description: empty metric space
