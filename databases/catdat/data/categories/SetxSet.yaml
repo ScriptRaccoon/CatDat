@@ -31,7 +31,10 @@ unsatisfied_properties:
     reason: When $X$ is non-empty, there is no morphism between $(\varnothing,X)$ and $(X,\varnothing)$.
 
   - property: generator
-    reason: Assume that $(A,B)$ is a generator. Of course, $A$ and $B$ cannot be both empty. Assume w.l.o.g. that $A$ is non-empty. Then there is no morphism $(A,B) \to (0,1)$, but there are two different morphisms $(0,1) \rightrightarrows (0,2)$.
+    reason: >-
+      Assume that $(A,B)$ is a generator. Of course, $A$ and $B$ cannot be both empty. Assume w.l.o.g. that $A$ is non-empty. Then there is no morphism $(A,B) \to (0,1)$, but there are two different morphisms $(0,1) \rightrightarrows (0,2)$.
+
+      Alternatively, the claim follows from <a href="/content/topos-with-generator">this result</a>.
 
 special_objects:
   initial object:

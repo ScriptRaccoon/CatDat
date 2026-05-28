@@ -46,7 +46,10 @@ unsatisfied_properties:
     reason: 'For $n \geq 0$ let $E_n$ be the combinatorial species of $n$-sets: $E_n(A) = \{A\}$ when $A$ has cardinality $n$, otherwise $E_n(A) = \varnothing$. Then there is no morphism between $E_n$ and $E_m$ unless $n = m$.'
 
   - property: generator
-    reason: 'Assume that a generator $G$ exists. For $n \geq 0$ let $F_n$ be the combinatorial species of sets of cardinality $\neq n$: $F_n(A) = \varnothing$ when $A$ has cardinality $n$, otherwise $F_n(A) = \{A\}$. There are two different morphisms $F_n \rightrightarrows F_n \sqcup F_n$. Hence, there must be at least one morphism $G \to F_n$. If $A$ has cardinality $n$, this implies $G(A) = \varnothing$. Since this holds for all $n$, $G$ is the initial object. But this is clearly no generator (it would mean that the category is thin).'
+    reason: >-
+      Assume that a generator $G$ exists. For $n \geq 0$ let $F_n$ be the combinatorial species of sets of cardinality $\neq n$: $F_n(A) = \varnothing$ when $A$ has cardinality $n$, otherwise $F_n(A) = \{A\}$. There are two different morphisms $F_n \rightrightarrows F_n \sqcup F_n$. Hence, there must be at least one morphism $G \to F_n$. If $A$ has cardinality $n$, this implies $G(A) = \varnothing$. Since this holds for all $n$, $G$ is the initial object. But this is clearly no generator (it would mean that the category is thin).
+
+      Alternatively, the claim follows from <a href="/content/topos-with-generator">this result</a>.
 
   - property: natural numbers object
     reason: >-
