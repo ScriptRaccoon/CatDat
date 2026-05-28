@@ -6,6 +6,7 @@
 	type Props = {
 		properties: {
 			id: string
+			label?: string
 			relation: string
 			reason?: string | null
 		}[]
@@ -18,11 +19,11 @@
 
 {#if properties.length}
 	<ul class:no-bullets={no_bullets} class="with-margins">
-		{#each properties as { id, relation, reason }}
+		{#each properties as { id, label, relation, reason }}
 			<li>
 				<TextWithReason {reason}>
 					{relation}
-					<a href={get_property_url(id, type)}>{id}</a>
+					<a href={get_property_url(id, type)}>{label || id}</a>
 				</TextWithReason>
 			</li>
 		{/each}

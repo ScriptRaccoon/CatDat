@@ -61,6 +61,7 @@ export type PropertyAssignmentDB = {
 
 export type PropertyAssignmentDisplay = {
 	id: string
+	label: string
 	reason: string
 	relation: string
 	is_deduced: boolean
