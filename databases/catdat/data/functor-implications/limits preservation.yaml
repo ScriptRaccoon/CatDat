@@ -5,35 +5,35 @@
   target_assumptions: []
   conclusions:
     - cofinitary
-    - product-preserving
+    - preserves products
     - left exact
   reason: This is trivial.
   is_equivalence: false
 
 - id: products_consequences
   assumptions:
-    - product-preserving
+    - preserves products
   source_assumptions: []
   target_assumptions: []
   conclusions:
-    - finite-product-preserving
+    - preserves finite products
   reason: This is trivial.
   is_equivalence: false
 
 - id: finite_products_consequences
   assumptions:
-    - finite-product-preserving
+    - preserves finite products
   source_assumptions: []
   target_assumptions: []
   conclusions:
-    - terminal-object-preserving
+    - preserves terminal objects
   reason: This is trivial.
   is_equivalence: false
 
 - id: continuous_criterion
   assumptions:
-    - equalizer-preserving
-    - product-preserving
+    - preserves equalizers
+    - preserves products
   source_assumptions:
     - products
   target_assumptions: []
@@ -57,12 +57,12 @@
 - id: product_criterion_filtered
   assumptions:
     - cofinitary
-    - finite-product-preserving
+    - preserves finite products
   source_assumptions:
     - finite products
   target_assumptions: []
   conclusions:
-    - product-preserving
+    - preserves products
   reason: This is because every product can be written as a filtered limit of finite products, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. IX, Theorem 1.1.
   is_equivalence: false
 
@@ -83,9 +83,9 @@
   source_assumptions: []
   target_assumptions: []
   conclusions:
-    - finite-product-preserving
-    - equalizer-preserving
-    - monomorphism-preserving
+    - preserves finite products
+    - preserves equalizers
+    - preserves monomorphisms
   reason: >-
     Finite products and equalizers are special cases of finite limits. Moreover, a morphism $f : X \to Y$ is a monomorphism if and only the square
     $$\begin{CD} X @>{\id_X}>> X \\ @V{\id_X}VV @VV{f}V \\ X @>>{f}> Y \end{CD}$$
@@ -94,8 +94,8 @@
 
 - id: left_exact_criterion
   assumptions:
-    - equalizer-preserving
-    - finite-product-preserving
+    - preserves equalizers
+    - preserves finite products
   source_assumptions:
     - finite products
   target_assumptions: []
@@ -116,33 +116,33 @@
 
 - id: equalizers_include_coreflexive_equalizers
   assumptions:
-    - equalizer-preserving
+    - preserves equalizers
   source_assumptions: []
   target_assumptions: []
   conclusions:
-    - coreflexive-equalizer-preserving
+    - preserves coreflexive equalizers
   reason: This is trivial.
   is_equivalence: false
 
 - id: criterion_coreflexive_equalizers
   assumptions:
-    - coreflexive-equalizer-preserving
-    - finite-product-preserving # TODO: only need binary products
+    - preserves coreflexive equalizers
+    - preserves finite products # TODO: only need binary products
   source_assumptions:
     - binary products
   target_assumptions: []
   conclusions:
-    - equalizer-preserving
+    - preserves equalizers
   reason: This follows easily from <a href="/category-implication/equalizers_via_coreflexive_equalizers">this result</a> about categories.
   is_equivalence: false
 
 - id: mono-preserving_criterion
   assumptions:
-    - equalizer-preserving
+    - preserves equalizers
   source_assumptions:
     - mono-regular
   target_assumptions: []
   conclusions:
-    - monomorphism-preserving
+    - preserves monomorphisms
   reason: Any monomorphism in the domain is a regular monomorphism and is mapped to a regular monomorphism.
   is_equivalence: false

@@ -24,17 +24,17 @@ satisfied_properties:
   - property: right adjoint
     reason: The abelianization functor is left adjoint to this forgetful functor.
 
-  - property: initial-object-preserving
+  - property: preserves initial objects
     reason: The trivial group is initial in both $\Ab$ and $\Grp$.
 
-  - property: coequalizer-preserving
-    reason: 'This follows from the concrete construction of coequalizers, but it can also be proven as follows: Assume that $f,g : A \rightrightarrows B$ have coequalizer $p : B \to C$ in $\Ab$. If $G$ is any group and $h : B \to G$ is a homomorphism with $hf = hg$, consider the image factorization $h = i h''$ of $h$. We have $h'' f = h'' g$, and the image $\im(h)$ is abelian. Hence, there is a unique homomorphism $k : C \to \im(h)$ with $kp = h''$. Hence, $ik : C \to G$ satisfies $ikp = h$. Uniqueness follows since we already know that the forgetful functor is epimorphism-preserving.'
+  - property: preserves coequalizers
+    reason: 'This follows from the concrete construction of coequalizers, but it can also be proven as follows: Assume that $f,g : A \rightrightarrows B$ have coequalizer $p : B \to C$ in $\Ab$. If $G$ is any group and $h : B \to G$ is a homomorphism with $hf = hg$, consider the image factorization $h = i h''$ of $h$. We have $h'' f = h'' g$, and the image $\im(h)$ is abelian. Hence, there is a unique homomorphism $k : C \to \im(h)$ with $kp = h''$. Hence, $ik : C \to G$ satisfies $ikp = h$. Uniqueness follows since we already know that the forgetful functor is preserves epimorphisms.'
 
   - property: finitary
     reason: 'Since the forgetful functor $U_{\Grp} : \Grp \to \Set$ is finitary and conservative, it suffices to prove that the composition $U_{\Ab,\Grp} \circ U_{\Grp} : \Ab \to \Set$ is finitary. This is just the forgetful functor $U_{\Ab} : \Ab \to \Set$ and therefore finitary.'
 
 unsatisfied_properties:
-  - property: finite-coproduct-preserving
+  - property: preserves finite coproducts
     reason: The coproduct of two non-trivial cyclic groups in $\Ab$ is just their direct sum, which is finite, but the coproduct of these groups in $\Grp$, also called the free product, is an infinite group.
 
   - property: representable

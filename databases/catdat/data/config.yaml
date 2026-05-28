@@ -40,6 +40,9 @@ relations:
   - relation: satisfies
     negation: does not satisfy
     conditional: would satisfy
+  - relation: ''
+    negation: ''
+    conditional: ''
 
 special_object_types:
   - type: terminal object

@@ -1,9 +1,9 @@
-id: reflexive-coequalizer-preserving
-relation: is
+id: preserves reflexive coequalizers
+relation: ''
 description: 'A functor $F$ <i>preserves reflexive coequalizers</i> when for every reflexive parallel pair of morphisms $f,g : A \rightrightarrows B$ whose coequalizer $p : B \to Q$ exists, also $F(p) : F(B) \to F(Q)$ is a coequalizer of $F(f),F(g) : F(A) \rightrightarrows F(B)$.'
 nlab_link: https://ncatlab.org/nlab/show/reflexive+coequalizer
 invariant_under_equivalences: true
-dual_property: coreflexive-equalizer-preserving
+dual_property: preserves coreflexive equalizers
 related_properties:
   - cocontinuous
-  - coequalizer-preserving
+  - preserves coequalizers

@@ -1,9 +1,9 @@
-id: initial-object-preserving
-relation: is
+id: preserves initial objects
+relation: ''
 description: A functor $F$ <i>preserves initial objects</i> when it maps every initial object to an initial object. It is not assumed that the source category has a initial object.
 nlab_link: https://ncatlab.org/nlab/show/preserved+colimit
 invariant_under_equivalences: true
-dual_property: terminal-object-preserving
+dual_property: preserves terminal objects
 related_properties:
-  - finite-coproduct-preserving
+  - preserves finite coproducts
   - cocontinuous

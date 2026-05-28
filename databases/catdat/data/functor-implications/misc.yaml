@@ -1,7 +1,7 @@
 - id: faithful-via-equalizers
   assumptions:
     - conservative
-    - equalizer-preserving
+    - preserves equalizers
   source_assumptions:
     - equalizers
   target_assumptions: []

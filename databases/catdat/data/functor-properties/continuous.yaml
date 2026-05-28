@@ -5,8 +5,8 @@ nlab_link: https://ncatlab.org/nlab/show/continuous+functor
 invariant_under_equivalences: true
 dual_property: cocontinuous
 related_properties:
-  - product-preserving
+  - preserves products
   - left exact
   - right adjoint
-  - equalizer-preserving
+  - preserves equalizers
   - cofinitary

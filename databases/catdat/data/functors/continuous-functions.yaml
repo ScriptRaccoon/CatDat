@@ -15,7 +15,7 @@ satisfied_properties:
   - property: continuous
     reason: 'Since the forgetful functor $U : \CAlg(\IR) \to \Set$ is conservative and continuous, it suffices to prove that $U \circ C : \Top^{\op} \to \Set$ is continuous. But this functor is representable.'
 
-  - property: initial-object-preserving
+  - property: preserves initial objects
     reason: The initial object in $\Top^{\op}$ is the singleton space, which is mapped to $\IR$, the initial commutative $\IR$-algebra.
 
 unsatisfied_properties:
@@ -26,7 +26,7 @@ unsatisfied_properties:
     # TODO: automate this
     reason: Its target is not $\Set$.
 
-  - property: finite-coproduct-preserving
+  - property: preserves finite coproducts
     reason: 'The canonical homomorphism $C(X) \otimes_{\IR} C(Y) \to C(X \times Y)$ need not be surjective. For example, for $X = Y = \IR$ one can show that $(x,y) \mapsto \exp(xy)$ is not contained in its image.'
 
   - property: full
@@ -40,10 +40,10 @@ unsatisfied_properties:
   - property: faithful
     reason: 'If $X,Y$ are non-empty indiscrete spaces, there is only one homomorphism of $\IR$-algebras $C(Y) \to C(X)$ (since both are isomorphic to $\IR$), but there can be many maps $X \to Y$.'
 
-  - property: reflexive-coequalizer-preserving
+  - property: preserves reflexive coequalizers
     reason: 'Let $i : U \hookrightarrow X$ be an open embedding such that there exists a continuous function on $U$ that does not extend to $X$; for example, $i : \IR \setminus \{0\} \hookrightarrow \IR$ together with the continuous function $x \mapsto x^{-1}$. Then $i$ is the equalizer of the two inclusions $X \rightrightarrows X +_U X$, which have common retraction $\nabla : X +_U X \to X$. But $i^* : C(X) \to C(U)$ is not a coequalizer in $\CAlg(\IR)$, since it is not surjective.'
 
-  - property: epimorphism-preserving
+  - property: preserves epimorphisms
     reason: 'If $i : X \to Y$ is an injective continuous map, the induced homomorphism $C(Y) \to C(X)$ need not be surjective (consider the inclusion $i : \IR \setminus \{0\} \hookrightarrow \IR$ and the map $x \mapsto x^{-1}$). However, we need an example where it is not even an epimorphism in $\CAlg(\IR)$. A simple counterexample can again be constructed using (in)discrete spaces. Namely, if $X$ is any finite set with at least two elements, we have a continuous bijection $D(X) \to I(X)$, $x \mapsto x$, where $D(X)$ (resp. $I(X)$) denotes the discrete (resp. indiscrete) space on $X$. It induces the algebra homomorphism $\IR \cong C(I(X)) \to C(D(X)) \cong \IR^X$, which is not an epimorphism since $\IR^X \otimes_\IR \IR^X \not\cong \IR^X$.'
 
   - property: finitary

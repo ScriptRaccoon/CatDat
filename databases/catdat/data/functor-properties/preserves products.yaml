@@ -1,0 +1,10 @@
+id: preserves products
+relation: ''
+description: A functor $F$ <i>preserves products</i> when for every family of objects $(A_i)$ in the source whose product $\prod_i A_i$ exists, also the product $\prod_i F(A_i)$ exists in the target and such that the canonical morphism $F(\prod_i A_i) \to \prod_i F(A_i)$ is an isomorphism.
+nlab_link: https://ncatlab.org/nlab/show/preserved+limit
+invariant_under_equivalences: true
+dual_property: preserves coproducts
+related_properties:
+  - preserves finite products
+  - preserves terminal objects
+  - continuous

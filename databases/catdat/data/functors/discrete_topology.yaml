@@ -22,12 +22,12 @@ satisfied_properties:
   - property: faithful
     reason: This is trivial.
 
-  - property: finite-product-preserving
+  - property: preserves finite products
     reason: It is easy to check that a finite product of discrete spaces is again discrete.
 
-  - property: equalizer-preserving
+  - property: preserves equalizers
     reason: This follows since a subspace of a discrete space is again discrete.
 
 unsatisfied_properties:
-  - property: product-preserving
+  - property: preserves products
     reason: An infinite product of discrete spaces is usually not discrete, e.g. $\{0,1\}^{\IN}$.

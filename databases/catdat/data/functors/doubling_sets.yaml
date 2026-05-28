@@ -21,7 +21,7 @@ satisfied_properties:
   - property: conservative
     reason: This is easy to check.
 
-  - property: equalizer-preserving
+  - property: preserves equalizers
     reason: The doubling functor can also be written as $X \mapsto \{1,2\} \times X$, from which the claim follows.
 
   - property: cofinitary
@@ -31,7 +31,7 @@ unsatisfied_properties:
   - property: full
     reason: If $X$ is non-empty, the swap $2X \to 2X$ is not induced by a map $X \to X$.
 
-  - property: terminal-object-preserving
+  - property: preserves terminal objects
     reason: This is trivial.
 
   - property: essentially surjective

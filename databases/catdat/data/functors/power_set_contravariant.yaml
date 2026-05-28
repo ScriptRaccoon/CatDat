@@ -16,7 +16,7 @@ satisfied_properties:
   - property: representable
     reason: This is because there are natural bijections $P(X) \cong \Hom(X,2)$, sending a subset to its characteristic function.
 
-  - property: epimorphism-preserving
+  - property: preserves epimorphisms
     reason: 'If $f : X \to Y$ is injective, then $f^* : P(Y) \to P(X)$ is surjective, since for all $A \subseteq X$ we have $A = f^*(f_*(A))$.'
 
   - property: conservative
@@ -30,7 +30,7 @@ satisfied_properties:
       $$\Hom_{\Set}(X,P(Y)) \cong P(X \times Y) \cong \Hom_{\Set}(Y,P(X)) = \Hom_{\Set^{\op}}(P(X),Y).$$
     check_redundancy: false
 
-  - property: reflexive-coequalizer-preserving
+  - property: preserves reflexive coequalizers
     reason: >-
       This is contained in the proof of Theorem 2.2.7 (monadicity of $P$ for an elementary topos) in <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, but we include a direct proof here for the sake of completeness, and also since we want the system to deduce monadicity automatically.
 
@@ -45,13 +45,13 @@ unsatisfied_properties:
   - property: full
     reason: 'Each map $f^* : P(Y) \to P(X)$ preserves the empty set (in fact, all unions), so the constant map with value $X$ provides a counterexample as long as $X$ is non-empty.'
 
-  - property: initial-object-preserving
+  - property: preserves initial objects
     reason: In fact, the initial object does not even lie in the essential image since $P(X) \neq \varnothing$ for all $X$.
 
   - property: essentially surjective
     reason: The empty set does not lie in the essential image since $P(X) \neq \varnothing$ for all $X$.
 
-  - property: coequalizer-preserving
+  - property: preserves coequalizers
     reason: >-
       Let $X = \{0,1\}$ and $Y = \{a,b,c\}$. Define maps $f,g : Y \rightrightarrows X$ by
       $$\begin{align*}

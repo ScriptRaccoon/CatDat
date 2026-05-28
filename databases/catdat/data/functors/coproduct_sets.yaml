@@ -17,7 +17,7 @@ satisfied_properties:
   - property: essentially surjective
     reason: We have $X \cong X + 0$.
 
-  - property: equalizer-preserving
+  - property: preserves equalizers
     reason: This can be checked with a straight forward calculation.
 
   - property: conservative
@@ -32,5 +32,5 @@ satisfied_properties:
     reason: We already know that <a href="/category/Set">$\Set$</a> has cocartesian cofiltered limits; this is a consequence of <a href="/category-implication/extensive_cocartesian_cofiltered_limits">this result</a>.
 
 unsatisfied_properties:
-  - property: terminal-object-preserving
+  - property: preserves terminal objects
     reason: This is obvious.

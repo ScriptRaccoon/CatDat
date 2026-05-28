@@ -14,7 +14,7 @@
   assumptions:
     - right adjoint
     - conservative
-    - reflexive-coequalizer-preserving
+    - preserves reflexive coequalizers
   source_assumptions:
     - reflexive coequalizers
   target_assumptions: []

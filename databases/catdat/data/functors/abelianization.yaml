@@ -19,7 +19,7 @@ satisfied_properties:
   - property: essentially surjective
     reason: For abelian groups $G$ we have $G \cong G^{\ab}$.
 
-  - property: finite-product-preserving
+  - property: preserves finite products
     reason: See <a href="https://mathoverflow.net/questions/386144">MO/386144</a>.
 
 unsatisfied_properties:
@@ -29,8 +29,8 @@ unsatisfied_properties:
   - property: full
     reason: See <a href="https://math.stackexchange.com/questions/716686" target="_blank">MSE/716686</a>.
 
-  - property: monomorphism-preserving
+  - property: preserves monomorphisms
     reason: The monomorphism $A_3 \hookrightarrow S_3$ is mapped to $A_3 \to 1$.
 
-  - property: product-preserving
+  - property: preserves products
     reason: 'If $G$ is a group, the canonical homomorphism $(G^{\IN})^{\ab} \to (G^{\ab})^{\IN}$ is surjective, but does not need to be an isomorphism: otherwise, the inclusion $[G^{\IN}, G^{\IN}] \subseteq [G,G]^{\IN}$ would be an equality. But this requires the commutator width of $G$ to be finite, which fails for $G = F_2$ for instance. See also <a href="https://arxiv.org/abs/1608.02220">The abelianization of inverse limits of groups</a>, Remark 0.0.7.'
