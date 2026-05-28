@@ -40,6 +40,7 @@
 # operators
 \Mor: \operatorname{Mor}
 \Hom: \operatorname{Hom}
+\HomInternal: \underline{\operatorname{Hom}}
 \End: \operatorname{End}
 \Ob: \operatorname{Ob}
 \id: \operatorname{id}

@@ -1,0 +1,45 @@
+id: modulo-p
+name: modulo p functor
+notation: $T^p$
+source: Ab
+target: Ab
+description: This functor maps an abelian group $A$ to the quotient $T^p(A) \coloneqq A/pA$, where $p$ is a fixed prime number. This group can also be represented as $A \otimes \IZ/p$.
+nlab_link: null
+
+tags:
+  - algebra
+  - free
+
+related_functors: []
+
+satisfied_properties:
+  - property: left adjoint
+    reason: 'This functor is left adjoint to the $p$-torsion functor $T_p : \Ab \to \Ab$.'
+
+  - property: preserves products
+    reason: >-
+      For a product of a family of abelian groups $(A_i)_{i \in I}$ it is easy to check that
+      $$\textstyle p \prod_{i \in I} A_i = \prod_{i \in I} p A_i$$
+      as subgroups of $\prod_{i \in I} A_i$. Hence,
+      $$\textstyle \prod_{i \in I} A_i / p \prod_{i \in I} A_i = \prod_{i \in I} A_i / \prod_{i \in I} p A_i \cong \prod_{i \in I} A_i / p A_i.$$
+
+unsatisfied_properties:
+  - property: essentially surjective
+    reason: The essential image consists precisely of the elementary abelian $p$-groups, equivalently, the vector spaces over $\IF_p$. For example, $\IZ$ is not contained in it.
+
+  - property: faithful
+    reason: 'We have $\IQ / p \IQ = 0$, but $\IQ \not\cong 0$. Thus, faithfulness is failing for $0, \id_{\IQ} : \IQ \rightrightarrows \IQ$.'
+
+  - property: full
+    reason: 'Let $\IZ_{(p)}$ denote the additive group of $p$-local numbers, i.e. the localization of $\IZ$ at the prime ideal $\langle p \rangle$. The map from $\Hom(\IZ_{(p)},\IZ)$ to $\Hom(\IZ_{(p)} / p \IZ_{(p)} ,\IZ / p)$ is not surjective: The abelian group $\HomInternal(\IZ_{(p)},\IZ)$ is trivial: For a prime $q \neq p$ every element of $\IZ_{(p)}$ is $q^\infty$-divisible, but $0$ is the only $q^\infty$-divisible integer. However, $\IZ_{(p)} / p \IZ_{(p)} \cong \IZ/p$ shows that $\HomInternal(\IZ_{(p)} / p \IZ_{(p)} ,\IZ / p)$ is isomorphic to $\IZ/p$.'
+
+  - property: preserves monomorphisms
+    reason: 'The monomorphism $p : \IZ \to \IZ$ is mapped to the zero map $0 : \IZ/p \to \IZ/p$.'
+
+  - property: cofinitary
+    reason: >-
+      Let $q$ be be an integer which is $\geq 2$ and coprime to $p$. Consider the sequence
+      $$\cdots \xrightarrow{q} \IZ \xrightarrow{q} \IZ  \xrightarrow{q} \IZ.$$
+      Its limit is $0$ since each entry needs to be $q^\infty$-divisible. However, the sequence modulo $p$
+      $$\cdots \xrightarrow{q} \IZ/p \xrightarrow{q} \IZ/p  \xrightarrow{q} \IZ/p$$
+      consists entirely of isomorphisms, so that its limit is $\IZ/p$.

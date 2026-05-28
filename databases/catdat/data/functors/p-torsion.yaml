@@ -1,0 +1,51 @@
+id: p-torsion
+name: p-torsion functor
+notation: $T_p$
+source: Ab
+target: Ab
+description: >-
+  This functor maps an abelian group $A$ to its $p$-torsion subgroup
+  $$T_p(A) \coloneqq \{a \in A : pa = 0\},$$
+  where $p$ is a fixed prime number. This group can also be represented as $\HomInternal(\IZ/p,A)$.
+nlab_link: null
+left_adjoint: modulo-p
+
+tags:
+  - algebra
+
+related_functors:
+  - torsion
+
+satisfied_properties:
+  - property: right adjoint
+    reason: 'This functor is clearly right adjoint to $A \mapsto A/pA$.'
+
+  - property: preserves coproducts
+    reason: This is easy to check using the description of coproducts as direct sums.
+
+  - property: finitary
+    reason: >-
+      This follows abstractly from the fact that $\IZ/p$ is finitely presentable. We nevertheless give a direct proof. Let $(A_i)$ be a filtered diagram of abelian groups. We need to show that the canonical map
+      $$\colim_i T_p(A_i) \to T_p(\colim_i A_i)$$
+      is an isomorphism.
+
+      Injectivity: Every element of $\colim_i T_p(A_i)$ is induced by an element in some $T_p(A_i)$. Assume it lies in the kernel, i.e. it becomes zero in $\colim_i A_i$. Then there exists some $i \to j$ such that its image in $A_j$ is zero. Hence its image in $T_p(A_j)$ is zero, and we are done.
+
+      Surjectivity: Assume we have a $p$-torsion element in $\colim_i A_i$. It has a preimage in some $A_i$. When we multiply it with $p$, it becomes zero in the colimit. This means that there exists some $i \to j$ such that this multiple becomes zero in $A_j$. Therefore, the image in $A_j$ is a $p$-torsion element. It provides the desired preimage.
+
+unsatisfied_properties:
+  - property: faithful
+    reason: 'We have $T_p(\IZ) = 0$, but $\IZ \not\cong 0$. Thus, faithfulness is failing for $0, \id_{\IZ} : \IZ \rightrightarrows \IZ$.'
+
+  - property: full
+    reason: 'The canonical map from $\Hom(\IZ/p^2,\IZ/p)$ to $\Hom(T_p(\IZ/p^2),T_p(\IZ/p)) = \Hom(p \IZ/p^2, \IZ/p)$ is not surjective: The homomorphism $[p] \mapsto [1]$ is not contained in its image.'
+
+  - property: essentially surjective
+    reason: The essential image consists precisely of the elementary abelian $p$-groups, equivalently, the vector spaces over $\IF_p$. For example, $\IZ$ is not contained in it.
+
+  - property: preserves epimorphisms
+    reason: The surjective homomorphism $\IZ \to \IZ/p$ is mapped to the homomorphism $0 \to \IZ/p$, which is not surjective.
+
+  - property: representable
+    # TODO: automate this
+    reason: Its target is not $\Set$. (However, this functor is representable in the enriched sense.)
