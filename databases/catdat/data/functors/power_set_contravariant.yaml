@@ -32,13 +32,13 @@ satisfied_properties:
 
   - property: reflexive-coequalizer-preserving
     reason: >-
-      This is contained in the proof of Theorem 2.2.7 (monadicity of $P$ for an elementary topos) in <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, but we include a direct proof here for the sake of completeness, and also since we want to let the system deduce monadicity automatically.
+      This is contained in the proof of Theorem 2.2.7 (monadicity of $P$ for an elementary topos) in <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, but we include a direct proof here for the sake of completeness, and also since we want the system to deduce monadicity automatically.
 
-      Let $f,g : X \rightrightarrows Y$ be two maps with a common retraction $r : Y \to X$, i.e. $rf = rg = \id_X$. Let $i : E \hookrightarrow X$ be their equalizer. We need to prove that $i^* : P(X) \to P(E)$ is a coequalizer of $f^*,g^* : P(Y) \rightrightarrows P(X)$. First of all, $i^*$ is surjective since $i$ is injective, which implies that $A = i^*(i_*(A))$ for all $A \subseteq E$. Hence, $i^*$ is the quotient of $P(X)$ by the equivalence relation $\sim_1$ defined by $A \sim_1 B \iff i^*(A) = i^*(B)$, i.e. $A \cap E = B \cap E$. The coequalizer of $f^*,g^*$ is the quotient of $P(X)$ by the smallest equivalence relation $\sim_2$ satisfying $f^*(C) \sim_2 g^*(C)$ for all $C \subseteq Y$. We need to show that these are the same equivalence relations.
+      Let $f,g : X \rightrightarrows Y$ be two maps with a common retraction $r : Y \to X$, i.e. $rf = rg = \id_X$. Let $i : E \hookrightarrow X$ be their equalizer. We need to show that $i^* : P(X) \to P(E)$ is a coequalizer of $f^*,g^* : P(Y) \rightrightarrows P(X)$. First, $i^*$ is surjective since $i$ is injective, which implies that $A = i^*(i_*(A))$ for all $A \subseteq E$. Hence, $i^*$ is the quotient of $P(X)$ by the equivalence relation $\sim_1$ defined by $A \sim_1 B \iff i^*(A) = i^*(B)$, i.e. $A \cap E = B \cap E$. The coequalizer of $f^*,g^*$ is the quotient of $P(X)$ by the smallest equivalence relation $\sim_2$ satisfying $f^*(C) \sim_2 g^*(C)$ for all $C \subseteq Y$. We need to show that these equivalence relations coincide.
 
-      (1) $\sim_2$ is contained in $\sim_1$:  If $C \subseteq Y$, then $f \circ i = g \circ i$ implies $i^*(f^*(C)) = i^*(g^*(C))$, so that $f^*(C) \sim_1 g^*(C)$.
+      (1) $\sim_2$ is contained in $\sim_1$: If $C \subseteq Y$, then $f \circ i = g \circ i$ implies $i^*(f^*(C)) = i^*(g^*(C))$, so that $f^*(C) \sim_1 g^*(C)$.
 
-      (2) $\sim_1$ is contained in $\sim_2$: Let $A,B \subseteq X$ be subsets with $i^*(A) = i^*(B)$. We claim that $g^*(f_*(A)) = g^*(f_*(B))$. In fact, if $x \in g^*(f_*(A))$, we have $g(x) = f(a)$ for some $a \in A$. Applying $r : Y \to X$ shows that $x = a$. Thus, $a \in A \cap E = B \cap E$, and we get $x \in g^*(f_*(B))$. The claim now implies
+      (2) $\sim_1$ is contained in $\sim_2$: Let $A,B \subseteq X$ be subsets with $i^*(A) = i^*(B)$. We claim that $g^*(f_*(A)) = g^*(f_*(B))$. In fact, if $x \in g^*(f_*(A))$, then $g(x) = f(a)$ for some $a \in A$. Applying $r : Y \to X$ shows that $x = a$. Thus, $a \in A \cap E = B \cap E$, and we get $x \in g^*(f_*(B))$. The claim now implies
       $$A = f^*(f_*(A)) \sim_2 g^*(f_*(A)) = g^*(f_*(B)) \sim_2 f^*(f_*(B)) = B.$$
 
 unsatisfied_properties:
@@ -46,13 +46,24 @@ unsatisfied_properties:
     reason: 'Each map $f^* : P(Y) \to P(X)$ preserves the empty set (in fact, all unions), so the constant map with value $X$ provides a counterexample as long as $X$ is non-empty.'
 
   - property: initial-object-preserving
-    reason: In fact, the initial object does not even lie in the essential image since $P(X) \neq 0$ for all $X$.
+    reason: In fact, the initial object does not even lie in the essential image since $P(X) \neq \varnothing$ for all $X$.
 
   - property: essentially surjective
-    reason: The initial object does not lie in the essential image since $P(X) \neq 0$ for all $X$.
+    reason: The empty set does not lie in the essential image since $P(X) \neq \varnothing$ for all $X$.
 
   - property: coequalizer-preserving
-    reason: 'The power set functor preserves reflexive coequalizers, but not all coequalizers, i.e. there are maps $f,g : Y \to X$ with equalizer $E \subseteq Y$ such that $P(Y) \twoheadrightarrow P(E)$ is not the coequalizer of $f^*,g^* : P(X) \to P(Y)$: Let $X=\{0,1\}$ and $Y=\{a,b,c\}$. Define maps $f,g:Y\to X$ by $f(a)=0$, $f(b)=0$, $f(c)=1$ and $g(a)=0$, $g(b)=1$, $g(c)=0$. Their equalizer is $E = \{a\}$, so that $P(E)$ has $2$ elements. For $S=\{0\}$ one has $f^*(S)=\{a,b\}$, $g^*(S)=\{a,c\}$, and for $S=\{1\}$ one has $f^*(S)=\{c\}$, $g^*(S)=\{b\}$. Thus the coequalizer of $f^*,g^*$ is obtained from $P(Y)$ by imposing the two relations $\{a,b\} \sim \{a,c\}$ and $\{c\} \sim \{b\}$. But then it as $8-2 = 6$ elements.'
+    reason: >-
+      Let $X = \{0,1\}$ and $Y = \{a,b,c\}$. Define maps $f,g : Y \rightrightarrows X$ by
+      $$\begin{align*}
+      f(a)=0,\, f(b)=0,\, f(c)=1; \\
+      g(a)=0,\, g(b)=1,\, g(c)=0.
+      \end{align*}$$
+      Their equalizer is $E = \{a\}$, so that $P(E)$ has $2$ elements. We compute
+      $$\begin{align*}
+      f^*(\{0\})=\{a,b\},\quad & g^*(\{0\})=\{a,c\},\\
+      f^*(\{1\})=\{c\},\quad & g^*(\{1\})=\{b\}.
+      \end{align*}$$
+      Thus the coequalizer of $f^*,g^*$ is obtained from $P(Y)$ by imposing the two relations $\{a,b\} \sim \{a,c\}$ and $\{c\} \sim \{b\}$. But then it as $8-2 = 6$ elements.
 
   - property: finitary
-    reason: Consider the sequence of projections $\cdots \twoheadrightarrow \{0,1\}^2 \twoheadrightarrow \{0,1\}^1$. Its limit in $\Set$ (i.e. colimit in $\Set^{\op}$) is $\{0,1\}^{\IN}$, which is uncountable, so that $P(\{0,1\}^{\IN})$ is also uncountable. But the colimit of the induced diagram $P(\{0,1\}^1) \hookrightarrow P(\{0,1\}^2) \hookrightarrow \cdots$ is countable since each $P(\{0,1\}^n)$ is finite.
+    reason: Consider the sequence of truncation maps $\cdots \twoheadrightarrow \{0,1\}^2 \twoheadrightarrow \{0,1\}^1$. Its limit in $\Set$ (i.e. colimit in $\Set^{\op}$) is $\{0,1\}^{\IN}$, which is uncountable, so that $P(\{0,1\}^{\IN})$ is also uncountable. But the colimit of the induced diagram $P(\{0,1\}^1) \hookrightarrow P(\{0,1\}^2) \hookrightarrow \cdots$ is countable since each set $P(\{0,1\}^n)$ is finite.

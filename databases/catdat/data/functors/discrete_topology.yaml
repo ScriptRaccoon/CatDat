@@ -17,9 +17,9 @@ satisfied_properties:
     reason: 'This functor is left adjoint to the forgetful functor $U_{\Top} : \Top \to \Set$.'
 
   - property: full
-    reason: This is trivial. In fact, the functor is fully faithful.
+    reason: This is trivial.
 
-  - property: conservative
+  - property: faithful
     reason: This is trivial.
 
   - property: finite-product-preserving

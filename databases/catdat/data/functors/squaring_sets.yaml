@@ -16,17 +16,21 @@ related_functors:
   - sequences_sets
 
 satisfied_properties:
-  - property: epimorphism-preserving
-    reason: This is obvious.
-
   - property: initial-object-preserving
     reason: This is obvious.
+
+  - property: epimorphism-preserving
+    reason: This follows easily from the fact that epimorphisms in $\Set$ are surjective functions.
 
   - property: representable
     reason: We have $X^2 \cong \Hom(\{1,2\},X)$.
 
+  - property: right adjoint
+    reason: We have $\Hom(X+X,Y) \cong \Hom(X,Y)^2 \cong \Hom(X,Y \times Y)$.
+    check_redundancy: false
+
   - property: conservative
-    reason: 'This is a straight forward calculation. Assume that $f : X \to Y$ is a map such that $f^2 : X^2 \to Y^2$ is bijective. For every $y \in Y$ there is some $(x_1,x_2) \in X^2$ with $(y,y) = (f(x_1),f(x_2))$, so that $y = f(x_1)$. This shows that $f$ is surjective. To show that $f$ is injective, suppose that $x_1,x_2 \in X$ satisfy $f(x_1)=f(x_2)$. Then $f^2(x_1,x_1) = f^2(x_2,x_2)$, so that $(x_1,x_1) = (x_2,x_2)$, which means that $x_1=x_2$.'
+    reason: 'This is a straight forward calculation. Assume that $f : X \to Y$ is a map such that $f^2 : X^2 \to Y^2$ is bijective. For every $y \in Y$ there is some $(x_1,x_2) \in X^2$ with $(y,y) = (f(x_1),f(x_2))$, so that $y = f(x_1)$. This shows that $f$ is surjective. To show that $f$ is injective, suppose that $x_1,x_2 \in X$ satisfy $f(x_1)=f(x_2)$. Then $f^2(x_1,x_1) = f^2(x_2,x_2)$, so that $(x_1,x_1) = (x_2,x_2)$. Hence, $x_1=x_2$.'
 
   - property: finitary
     # TODO: refactor this once we add "preserves sifted colimits"
@@ -35,10 +39,6 @@ satisfied_properties:
   - property: reflexive-coequalizer-preserving
     # TODO: refactor this once we add "preserves sifted colimits"
     reason: See Prop. 2.4 at the <a href="https://ncatlab.org/nlab/show/reflexive+coequalizer" target="_blank">nLab</a>.
-
-  - property: right adjoint
-    reason: We have $\Hom(X+X,Y) \cong \Hom(X,Y)^2 \cong \Hom(X,Y \times Y)$.
-    check_redundancy: false
 
 unsatisfied_properties:
   - property: full

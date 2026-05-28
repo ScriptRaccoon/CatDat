@@ -15,7 +15,7 @@ related_functors:
 
 satisfied_properties:
   - property: conservative
-    reason: This is easy to check.
+    reason: This follows from $p_1 \circ \Delta = \id_\Set$.
 
   - property: left adjoint
     reason: >-
@@ -29,7 +29,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: full
-    reason: 'Take two distinct maps $f,g : X \rightrightarrows X$. Then $(f,g) : (X,X) \to (X,X)$ is not induced diagonally via a map $X \to X$.'
+    reason: 'Take any pair of distinct maps $f,g : X \rightrightarrows Y$. Then $(f,g) : (X,X) \to (Y,Y)$ is not induced diagonally via a map $X \to Y$.'
 
   - property: representable
     # TODO: automate this

@@ -35,4 +35,4 @@ unsatisfied_properties:
     reason: This is trivial.
 
   - property: essentially surjective
-    reason: This is trivial.
+    reason: The singleton set is not contained in the essential image.
