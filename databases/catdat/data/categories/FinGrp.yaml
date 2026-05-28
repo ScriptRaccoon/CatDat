@@ -43,6 +43,9 @@ satisfied_properties:
   - property: effective congruences
     reason: 'Suppose we have a congruence $f, g : E \rightrightarrows X$ in $\FinGrp$. Since the embedding $\FinGrp \hookrightarrow \Grp$ preserves finite limits, it is also a congruence in $\Grp$. We already know that <a href="/category/Grp">$\Grp$</a> has effective congruences since it is algebraic. Using <a href="/content/effective-congruence-quotients">this result</a>, we see that $E$ is the kernel pair of $X \to (X/E)_{\Grp}$ in $\Grp$. Also, the quotient $(X/E)_{\Grp}$ is finite; and the forgetful functor $\FinGrp \to \Grp$ is fully faithful <a href="https://ncatlab.org/nlab/show/reflected+limit#FullSubcategoryInclusionReflectCoLimits" target="_blank">and therefore reflects limits</a>. Thus, we conclude that $E$ is the kernel pair of $X \to (X/E)_{\Grp}$ in $\FinGrp$ as well.'
 
+  - property: effective cocongruences
+    reason: 'A proof can be found in <a href="https://mathoverflow.net/questions/511516" target="_blank">MO/511516</a>. It even shows that every cocongruence in $\FinGrp$ is trivial. In short, the proof goes like this: We know that <a href="/category/Grp">$\Grp$</a> has effective cocongruences. Using the fact that amalgamated sums of finite groups are residually finite, one can can show that every cocongruence in $\FinGrp$ is also a cocongruence in $\Grp$.'
+
   - property: regular
     reason: The category is Malcev and hence finitely complete, and it has all coequalizers. The regular epimorphisms coincide with the surjective group homomorphisms (see below), hence are clearly stable under pullbacks.
 
