@@ -26,7 +26,6 @@ export type PropertyMeta = {
 	id: string
 	dual: string | null
 	relation: string
-	negation: string
 	conditional: string
 }
 
@@ -59,7 +58,7 @@ export function get_properties_dict(db: Database, type: StructureType) {
 		.prepare(
 			`SELECT
 				p.id, p.dual_property_id as dual, p.relation,
-				r.negation, r.conditional
+				r.conditional
 			FROM ${type}_properties p
 			INNER JOIN relations r ON r.relation = p.relation
 			ORDER BY lower(p.id)`,
