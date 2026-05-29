@@ -93,8 +93,8 @@ an issue when clicking two proofs in a row. So it's a <div> then.
 		pointer-events: none;
 
 		transition:
-			opacity 120ms linear,
-			transform 120ms ease-out;
+			opacity 140ms linear,
+			transform 140ms ease-out;
 	}
 
 	.popup.open {
