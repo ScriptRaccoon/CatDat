@@ -40,44 +40,8 @@ satisfied_properties:
   - property: locally cartesian closed
     proof: The slice category $B\IN / *$ is isomorphic to the poset $(\IN,\geq)$ (not to $(\IN,\leq)$). This category is thin and and semi-strongly connected, <a href="/category-implication/sequential_implies_lcc">hence</a> cartesian closed.
 
-  - property: ℵ₁-filtered colimits
-    proof: >-
-      Let $D : \I \to B\IN$ be an $\aleph_1$-filtered diagram. Every two parallel morphisms $i \rightrightarrows j$ are mapped to the same morphism in $B \IN$, because they are coequalized by some morphism and $(\IN,+)$ is cancellative. Hence, $D$ factors through the preorder reflection of $\I$, and we may therefore assume that $\I$ itself is a preorder. Thus, the diagram consists of numbers $D(i,j) \in \IN$ for all $i \leq j$ satisfying
-      $$D(j,k) + D(i,j) = D(i,k)$$
-      for all $i \leq j \leq k$. In particular, $D(i,j) \leq D(i,k)$.
-         
-      Let $i \in \I$. The set of natural numbers $\{D(i,k) : k \geq i\}$ is bounded above. Otherwise, for every $n \in \IN$ we could find $k_n \in \I$ with $k_n \geq i$ and $D(i,k_n) \geq n$. Since $\I$ is $\aleph_1$-filtered, the family $(k_n)_{n \in \IN}$ has an upper bound $k_\infty \in \I$. But then
-      $$D(i, k_\infty) = D(k_n,k_\infty) + D(i, k_n) \geq D(i, k_n) \geq n$$
-      for all $n \in \IN$, contradicting the fact that $D(i,k_\infty) \in \IN$.
-
-      Therefore, the maximum
-      $$u_i \coloneqq \max \{D(i,k) : k \geq i\} \in \IN$$
-      is well-defined, which we regard as a morphism in $B\IN$. For $i \leq j$ we compute
-      $$\begin{align*}
-      u_i & = \max \{D(i,k) : k \geq i\} \\
-      & = \max \{D(i,k) : k \geq j\} \\
-      & = \max \{ D(j,k) + D(i,j) : k \geq j\} \\
-      & = \max \{D(j,k) : k \geq j\}  + D(i,j)\\
-      & = u_j + D(i,j),
-      \end{align*}$$
-      showing that $(u_i)$ defines a cocone. It is universal: let $(v_i)$ be another cocone, i.e. $v_i \in \IN$ and $v_i = v_j + D(i,j)$ for all $i \leq j$. Then $v_i \geq D(i,j)$ for all $i \leq j$, hence $v_i \geq u_i$. Write $v_i = w_i + u_i$ for some uniquely determined $w_i \in \IN$. For $i \leq j$ we compute
-      $$w_j + u_j + D(i,j) = v_j + D(i,j) = v_i = w_i + u_i = w_i + u_j + D(i,j),$$
-      hence $w_j = w_i$. Therefore, the $w_i$ are constant, and the required factorization follows.
-    check_redundancy: false
-
   - property: ℵ₁-accessible
-    proof: >-
-      We continue the proof that $\aleph_1$-filtered colimits exist. It remains to show that the unique object $*$ is $\aleph_1$-presentable, i.e. that for every diagram $D : \I \to B\IN$ as above, the canonical map
-      $$\alpha : \colim_{i \in \I} \Hom(*,D(i)) \to \Hom(*,\colim_{i \in \I} D(i))$$
-      is bijective. On objects, we necessarily have $D(i)=*$ and $\colim_{i \in \I} D(i)=*$. Hence, the codomain of $\alpha$ is simply $\IN$, while the domain consists of equivalence classes $[i,n]$ of pairs $(i,n) \in \I \times \IN$, where $(i,n) \sim (j,m)$ iff there exists some $k \geq i,j$ such that
-      $$D(i,k) + n = D(j,k) + m.$$
-      By the construction of the colimit cocone, we have
-      $$\alpha([i,n]) = u_i + n = \max \{D(i,j) : j \geq i\} + n.$$
-      (1) The map $\alpha$ is surjective: Pick some $i \in \I$. Choose $j \geq i$ such that $u_i = D(i,j)$. For all $k \geq j$ we then have
-      $$u_i \geq D(i,k) = D(j,k) + D(i,j) = D(j,k) + u_i,$$
-      hence $D(j,k)=0$. Therefore, $u_j=0$, and thus $\alpha([j,n]) = n$ for all $n \in \IN$.
-
-      (2) The map $\alpha$ is injective: Assume that $[i,n]$ and $[j,m]$ have the same image. Since $\I$ is filtered, we may assume $i=j$. The condition then becomes $u_i + n = u_i + m$, and therefore $n=m$. This completes the proof.
+    proof: A proof can be found <a href="/content/aleph1-filtered-colimits-in-deloopings">here</a> as Proposition 2.
 
 unsatisfied_properties:
   - property: one-way
