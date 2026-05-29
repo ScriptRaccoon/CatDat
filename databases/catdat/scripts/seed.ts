@@ -403,9 +403,11 @@ function seed_functor_properties() {
 
 	const property_insert = db.prepare(`
 		INSERT INTO functor_properties (
-			id, relation, description, nlab_link,
-			dual_property_id, invariant_under_equivalences
-		) VALUES (?, ?, ?, ?, ?, ?)`)
+			id, relation, description,
+			required_source, required_target,
+			nlab_link, dual_property_id,
+			invariant_under_equivalences
+		) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`)
 
 	const related_insert = db.prepare(
 		`INSERT INTO related_functor_properties (property_id, related_property_id) VALUES (?, ?)`,
@@ -416,6 +418,8 @@ function seed_functor_properties() {
 			property.id,
 			property.relation,
 			property.description,
+			property.required_source || null,
+			property.required_target || null,
 			property.nlab_link || null,
 			property.dual_property || null,
 			Number(property.invariant_under_equivalences),

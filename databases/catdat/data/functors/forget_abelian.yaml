@@ -36,7 +36,3 @@ satisfied_properties:
 unsatisfied_properties:
   - property: preserves finite coproducts
     reason: The coproduct of two non-trivial cyclic groups in $\Ab$ is just their direct sum, which is finite, but the coproduct of these groups in $\Grp$, also called the free product, is an infinite group.
-
-  - property: representable
-    # TODO: automate this
-    reason: The target is not $\Set$.

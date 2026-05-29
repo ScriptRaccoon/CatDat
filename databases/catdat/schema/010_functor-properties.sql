@@ -5,11 +5,23 @@ CREATE TABLE functor_properties (
     nlab_link TEXT CHECK (nlab_link IS NULL OR nlab_link like 'https://%'),
     invariant_under_equivalences INTEGER NOT NULL DEFAULT TRUE,
     dual_property_id TEXT,
+    required_source TEXT,
+    required_target TEXT,
     FOREIGN KEY (relation) REFERENCES relations (relation) ON DELETE RESTRICT,
-    FOREIGN KEY (dual_property_id) REFERENCES functor_properties (id) ON DELETE SET NULL
+    FOREIGN KEY (dual_property_id) REFERENCES functor_properties (id) ON DELETE SET NULL,
+    FOREIGN KEY (required_source) REFERENCES categories (id) ON DELETE SET NULL,
+    FOREIGN KEY (required_target) REFERENCES categories (id) ON DELETE SET NULL
 );
 
 CREATE UNIQUE INDEX functor_properties_lower_id_unique ON functor_properties (lower(id));
+
+CREATE INDEX idx_functor_properties_required_source
+ON functor_properties(required_source)
+WHERE required_source IS NOT NULL;
+
+CREATE INDEX idx_functor_properties_required_target
+ON functor_properties(required_target)
+WHERE required_target IS NOT NULL;
 
 CREATE TABLE related_functor_properties (
     property_id TEXT NOT NULL,

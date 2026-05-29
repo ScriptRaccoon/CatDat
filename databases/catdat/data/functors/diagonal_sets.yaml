@@ -31,9 +31,5 @@ unsatisfied_properties:
   - property: full
     reason: 'Take any pair of distinct maps $f,g : X \rightrightarrows Y$. Then $(f,g) : (X,X) \to (Y,Y)$ is not induced diagonally via a map $X \to Y$.'
 
-  - property: representable
-    # TODO: automate this
-    reason: The codomain is not $\Set$.
-
   - property: essentially surjective
     reason: This is trivial.

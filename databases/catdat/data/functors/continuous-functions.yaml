@@ -22,10 +22,6 @@ unsatisfied_properties:
   - property: essentially surjective
     reason: The algebra $C(X)$ is <a href="https://en.wikipedia.org/wiki/Reduced_ring" target="_blank">reduced</a>, whereas there exist non-reduced algebras such as $\IR[T]/\langle T^2 \rangle$.
 
-  - property: representable
-    # TODO: automate this
-    reason: Its target is not $\Set$.
-
   - property: preserves finite coproducts
     reason: 'The canonical homomorphism $C(X) \otimes_{\IR} C(Y) \to C(X \times Y)$ need not be surjective. For example, for $X = Y = \IR$ one can show that $(x,y) \mapsto \exp(xy)$ is not contained in its image.'
 

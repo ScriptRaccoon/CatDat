@@ -45,7 +45,3 @@ unsatisfied_properties:
 
   - property: preserves epimorphisms
     reason: The surjective homomorphism $\IZ \to \IZ/p$ is mapped to the homomorphism $0 \to \IZ/p$, which is not surjective.
-
-  - property: representable
-    # TODO: automate this
-    reason: Its target is not $\Set$. (However, this functor is representable in the enriched sense.)
