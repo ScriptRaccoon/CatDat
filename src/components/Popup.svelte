@@ -1,9 +1,3 @@
-<!--
-In theory, it is better to use a <dialog> here, but Safari makes many
-problems, Firefox does not display the native animation, and there is
-an issue when clicking two proofs in a row. So it's a <div> then.
--->
-
 <script lang="ts" module>
 	type PopupState = {
 		id?: string
@@ -43,14 +37,13 @@ an issue when clicking two proofs in a row. So it's a <div> then.
 	})
 
 	function handle_keydown(e: KeyboardEvent) {
-		if (e.key === 'Escape' && popup_state.open) {
+		if (popup_state.open && e.key === 'Escape') {
 			close_popup()
 		}
 	}
 
 	function handle_click(e: MouseEvent) {
-		const target = e.target as HTMLElement
-		const clicked_inside = popup?.contains(target)
+		const clicked_inside = popup?.contains(e.target as HTMLElement)
 		if (popup_state.open && !clicked_inside) {
 			close_popup()
 		}
@@ -62,6 +55,11 @@ an issue when clicking two proofs in a row. So it's a <div> then.
 <svelte:document onkeydown={handle_keydown} />
 <svelte:window onclick={handle_click} />
 
+<!--
+In theory, it is better to use a <dialog> here, but Safari makes many
+problems, Firefox does not display the native animation, and there is
+an issue when clicking two proofs in a row. So it's a <div> then.
+-->
 <div class="popup" class:open={popup_state.open} bind:this={popup}>
 	<div class="content">
 		<header>
@@ -81,7 +79,7 @@ an issue when clicking two proofs in a row. So it's a <div> then.
 		bottom: 0;
 		left: 0;
 		right: 0;
-		max-height: 100vh;
+		max-height: 90dvh;
 		overflow-y: scroll;
 		background-color: var(--bg-color);
 		border-top: 2px solid var(--secondary-outline-color);
