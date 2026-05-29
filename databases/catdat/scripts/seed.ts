@@ -10,12 +10,21 @@ import type {
 	FunctorImplicationYaml,
 	FunctorPropertyYaml,
 	FunctorYaml,
+	ProofWarning,
 } from './seed.types'
 import { create_schema_hash, get_saved_schema_hash } from './utils/schema'
 
 const db = get_client()
 
 const data_folder = path.resolve('databases', 'catdat', 'data')
+
+/**
+ * Proofs longer than this value raise a warning
+ * that suggests to use content pages instead.
+ */
+const PROOF_LENGTH_THRESHOLD = 1200
+
+const proof_length_warnings: ProofWarning[] = []
 
 seed()
 
@@ -43,6 +52,8 @@ function seed() {
 	seed_functor_properties()
 	seed_functor_implications()
 	seed_functors()
+
+	print_proof_length_warnings()
 }
 
 function read_yaml_file<T>(...parts: string[]): T {
@@ -239,6 +250,14 @@ function seed_categories() {
 				entry.proof,
 				entry.check_redundancy === false ? 0 : 1,
 			)
+
+			if (entry.proof.length >= PROOF_LENGTH_THRESHOLD) {
+				proof_length_warnings.push({
+					structure_id: category.id,
+					property: entry.property,
+					length: entry.proof.length,
+				})
+			}
 		}
 
 		for (const entry of category.unsatisfied_properties) {
@@ -249,6 +268,14 @@ function seed_categories() {
 				entry.proof,
 				entry.check_redundancy === false ? 0 : 1,
 			)
+
+			if (entry.proof.length >= PROOF_LENGTH_THRESHOLD) {
+				proof_length_warnings.push({
+					structure_id: category.id,
+					property: entry.property,
+					length: entry.proof.length,
+				})
+			}
 		}
 
 		for (const entry of category.undecidable_properties ?? []) {
@@ -259,6 +286,14 @@ function seed_categories() {
 				entry.proof,
 				entry.check_redundancy === false ? 0 : 1,
 			)
+
+			if (entry.proof.length >= PROOF_LENGTH_THRESHOLD) {
+				proof_length_warnings.push({
+					structure_id: category.id,
+					property: entry.property,
+					length: entry.proof.length,
+				})
+			}
 		}
 	}
 
@@ -594,6 +629,14 @@ function seed_functors() {
 				entry.proof,
 				entry.check_redundancy === false ? 0 : 1,
 			)
+
+			if (entry.proof.length >= PROOF_LENGTH_THRESHOLD) {
+				proof_length_warnings.push({
+					structure_id: functor.id,
+					property: entry.property,
+					length: entry.proof.length,
+				})
+			}
 		}
 
 		for (const entry of functor.unsatisfied_properties) {
@@ -604,6 +647,14 @@ function seed_functors() {
 				entry.proof,
 				entry.check_redundancy === false ? 0 : 1,
 			)
+
+			if (entry.proof.length >= PROOF_LENGTH_THRESHOLD) {
+				proof_length_warnings.push({
+					structure_id: functor.id,
+					property: entry.property,
+					length: entry.proof.length,
+				})
+			}
 		}
 
 		for (const entry of functor.undecidable_properties ?? []) {
@@ -614,6 +665,14 @@ function seed_functors() {
 				entry.proof,
 				entry.check_redundancy === false ? 0 : 1,
 			)
+
+			if (entry.proof.length >= PROOF_LENGTH_THRESHOLD) {
+				proof_length_warnings.push({
+					structure_id: functor.id,
+					property: entry.property,
+					length: entry.proof.length,
+				})
+			}
 		}
 	}
 
@@ -633,5 +692,14 @@ function seed_functors() {
 	} catch (err) {
 		console.error(`Error seeding functors:`, err)
 		process.exit(1)
+	}
+}
+
+function print_proof_length_warnings() {
+	proof_length_warnings.sort((a, b) => b.length - a.length)
+	for (const { structure_id, property, length } of proof_length_warnings) {
+		console.warn(
+			`🟡 The proof for (${structure_id}, ${property}) has ${length} characters. Consider moving it to a content page.`,
+		)
 	}
 }
