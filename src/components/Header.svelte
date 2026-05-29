@@ -47,11 +47,10 @@
 
 <style>
 	header {
-		padding-block: 2rem 1.5rem;
-		display: grid;
-		align-items: start;
-		grid-template-columns: 1fr auto;
-		gap: 1rem;
+		padding-block: 1.5rem;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
 	}
 
 	.nav-button {
@@ -59,31 +58,17 @@
 	}
 
 	@media (width <= 600px) {
-		header {
-			padding-block: 2rem 1rem;
-			grid-template-columns: 1fr auto auto;
-		}
-
 		.nav-button {
 			display: initial;
 		}
-	}
-
-	@media (width <= 400px) {
-		header {
-			padding-block: 1rem 1rem;
-			grid-template-columns: 1fr auto;
-		}
 
 		.structure_selector_container {
-			grid-row: 1;
-			grid-column: 1 / span 2;
-			justify-self: end;
+			display: none;
 		}
 	}
 
 	.logo {
-		width: 175px;
-		display: inline-block;
+		width: 180px;
+		display: block;
 	}
 </style>
