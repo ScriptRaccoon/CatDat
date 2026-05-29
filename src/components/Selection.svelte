@@ -56,7 +56,10 @@
 		active_index = 0
 	}
 
-	function select(allowed_item: string) {
+	function select(allowed_item?: string) {
+		if (!allowed_item) return
+		if (selected_items.includes(allowed_item)) return
+
 		selected_items.push(allowed_item)
 		item = ''
 		show_suggestions = false
@@ -90,7 +93,7 @@
 				if (show_suggestions) show_suggestions = false
 				break
 			case 'Enter':
-				select(suggestions[active_index])
+				select(suggestions.at(active_index))
 				break
 			case 'ArrowUp':
 				if (active_index > 0) {
