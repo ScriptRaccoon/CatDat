@@ -15,37 +15,37 @@ related_categories:
 
 satisfied_properties:
   - property: generator
-    reason: There is just one object.
+    proof: There is just one object.
 
   - property: cogenerator
-    reason: There is just one object.
+    proof: There is just one object.
 
   - property: strongly connected
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: gaunt
-    reason: This is because $0$ is the only ordinal number with an additive inverse.
+    proof: This is because $0$ is the only ordinal number with an additive inverse.
 
   - property: left cancellative
-    reason: It is well-known that ordinal addition satisfies $\alpha + \beta = \alpha + \gamma \implies \beta = \gamma$.
+    proof: It is well-known that ordinal addition satisfies $\alpha + \beta = \alpha + \gamma \implies \beta = \gamma$.
 
   - property: well-copowered
-    reason: This follows from the description of epimorphisms as finite ordinals, see <a href="https://math.stackexchange.com/questions/5029605" target="_blank">MO/5029605</a>.
+    proof: This follows from the description of epimorphisms as finite ordinals, see <a href="https://math.stackexchange.com/questions/5029605" target="_blank">MO/5029605</a>.
 
   - property: equalizers
-    reason: See <a href="https://math.stackexchange.com/questions/5029668/" target="_blank">MSE/5029668</a>.
+    proof: See <a href="https://math.stackexchange.com/questions/5029668/" target="_blank">MSE/5029668</a>.
 
   - property: cofiltered limits
-    reason: See <a href="https://math.stackexchange.com/questions/5129138/" target="_blank">MSE/5129138</a>.
+    proof: See <a href="https://math.stackexchange.com/questions/5129138/" target="_blank">MSE/5129138</a>.
 
   - property: locally cartesian closed
-    reason: The slice category $B\On / *$ is isomorphic to the poset $(\On,\geq)$ (not to $(\On,\leq)$). This category is thin and and semi-strongly connected, <a href="/category-implication/sequential_implies_lcc">hence</a> cartesian closed.
+    proof: The slice category $B\On / *$ is isomorphic to the poset $(\On,\geq)$ (not to $(\On,\leq)$). This category is thin and and semi-strongly connected, <a href="/category-implication/sequential_implies_lcc">hence</a> cartesian closed.
 
   - property: ℵ₁-cofiltered
-    reason: In fact, it is $\kappa$-cofiltered for every cardinal $\kappa$. By the dual of Theorem 2.2 at the <a href="https://ncatlab.org/nlab/show/filtered+category">nLab</a> it suffices to prove any set of objects has a cone (which is trivial in a one-object category) and that any set of parallel morphisms is equalized by some morphism. Here, this means that for every set of ordinals $A$ there is some ordinal $\beta$ such that $\alpha + \beta$ for $\alpha \in A$ does not depend on $\alpha$. Take $\beta$ to be any ordinal larger than $\sup(A)$ of the form $\omega^\gamma$. It is well-known that $\omega^\gamma$ has the property that $\alpha + \omega^\gamma = \omega^\gamma$ for all $\alpha < \omega^\gamma$ (Kunen's <i>Set Theory</i>, Exercise I.9.53), from which the claim follows.
+    proof: In fact, it is $\kappa$-cofiltered for every cardinal $\kappa$. By the dual of Theorem 2.2 at the <a href="https://ncatlab.org/nlab/show/filtered+category">nLab</a> it suffices to prove any set of objects has a cone (which is trivial in a one-object category) and that any set of parallel morphisms is equalized by some morphism. Here, this means that for every set of ordinals $A$ there is some ordinal $\beta$ such that $\alpha + \beta$ for $\alpha \in A$ does not depend on $\alpha$. Take $\beta$ to be any ordinal larger than $\sup(A)$ of the form $\omega^\gamma$. It is well-known that $\omega^\gamma$ has the property that $\alpha + \omega^\gamma = \omega^\gamma$ for all $\alpha < \omega^\gamma$ (Kunen's <i>Set Theory</i>, Exercise I.9.53), from which the claim follows.
 
   - property: ℵ₁-filtered colimits
-    reason: >-
+    proof: >-
       The proof is similar to <a href="/category/BN">$B\IN$</a>. Let $\I$ be an $\aleph_1$-filtered small category and $D : \I \to B\On$ a diagram. A cocone $\lambda = (\lambda_i)_{i \in \I}$ for $D$ is a family of ordinals satisfying $\lambda_i = \lambda_j + D(f)$ for every morphism $f: i \to j$ in $\I$.
 
 
@@ -87,44 +87,44 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: initial object
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: one-way
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: locally essentially small
-    reason: This is because $\On$ is large.
+    proof: This is because $\On$ is large.
 
   - property: balanced
-    reason: Every finite ordinal is both a mono- and an epimorphism (see below), but only $0$ is an isomorphism.
+    proof: Every finite ordinal is both a mono- and an epimorphism (see below), but only $0$ is an isomorphism.
 
   - property: well-powered
-    reason: This is because all ordinals are monomorphisms (see below) and they do not form a set.
+    proof: This is because all ordinals are monomorphisms (see below) and they do not form a set.
 
   - property: sequential colimits
-    reason: Assume that the sequence $\bullet \xrightarrow{1} \bullet \xrightarrow{1} \cdots$ has a colimit. This mounts to a (universal) sequence of ordinals $\alpha_n$ with $\alpha_n = \alpha_{n+1} + 1$. But then $\alpha_{n+1} < \alpha_n$, contradicting the fact that $\alpha_0$ is well-ordered.
+    proof: Assume that the sequence $\bullet \xrightarrow{1} \bullet \xrightarrow{1} \cdots$ has a colimit. This mounts to a (universal) sequence of ordinals $\alpha_n$ with $\alpha_n = \alpha_{n+1} + 1$. But then $\alpha_{n+1} < \alpha_n$, contradicting the fact that $\alpha_0$ is well-ordered.
 
   - property: pushouts
-    reason: Assume that $1,\omega$ have a pushout. This is a (universal) pair of ordinals $\alpha,\beta$ with $\alpha + 1 = \beta + \omega$. But $\beta + \omega$ is a limit ordinal, while $\alpha + 1$ is not.
+    proof: Assume that $1,\omega$ have a pushout. This is a (universal) pair of ordinals $\alpha,\beta$ with $\alpha + 1 = \beta + \omega$. But $\beta + \omega$ is a limit ordinal, while $\alpha + 1$ is not.
 
   - property: cofiltered-limit-stable epimorphisms
-    reason: The epimorphisms are the finite ordinals (see below), but the limit of the sequential diagram $\cdots \xrightarrow{1} * \xrightarrow{1} *$ is the ordinal $\omega$ by <a href="https://math.stackexchange.com/questions/5129138">MSE/5129138</a>.
+    proof: The epimorphisms are the finite ordinals (see below), but the limit of the sequential diagram $\cdots \xrightarrow{1} * \xrightarrow{1} *$ is the ordinal $\omega$ by <a href="https://math.stackexchange.com/questions/5129138">MSE/5129138</a>.
 
 special_objects: {}
 
 special_morphisms:
   isomorphisms:
     description: only the ordinal $0$
-    reason: The $0$ is the only ordinal which has an additive inverse, since for $\alpha > 0$ we have $\alpha + \beta > 0$ for all $\beta$.
+    proof: The $0$ is the only ordinal which has an additive inverse, since for $\alpha > 0$ we have $\alpha + \beta > 0$ for all $\beta$.
   monomorphisms:
     description: every ordinal number
-    reason: This is because ordinal addition is left cancellative.
+    proof: This is because ordinal addition is left cancellative.
   epimorphisms:
     description: finite ordinal numbers
-    reason: See <a href="https://math.stackexchange.com/questions/5029605" target="_blank">MSE/5029605</a>.
+    proof: See <a href="https://math.stackexchange.com/questions/5029605" target="_blank">MSE/5029605</a>.
   regular monomorphisms:
     description: ordinals of the form $\alpha \cdot \omega$, where $\alpha$ is any ordinal
-    reason: This results from the proof that equalizers exist, see <a href="https://math.stackexchange.com/questions/5029668" target="_blank">MSE/5029668</a>.
+    proof: This results from the proof that equalizers exist, see <a href="https://math.stackexchange.com/questions/5029668" target="_blank">MSE/5029668</a>.
   regular epimorphisms:
     description: same as isomorphisms
-    reason: This is because the category is left cancellative.
+    proof: This is because the category is left cancellative.

@@ -45,7 +45,7 @@ export const load = async (event) => {
 				is_equivalence,
 				is_deduced,
 				dualized_from,
-				reason,
+				proof,
 				assumptions,
 				conclusions
 			FROM category_implications_view

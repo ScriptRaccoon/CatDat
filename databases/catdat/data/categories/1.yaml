@@ -17,16 +17,16 @@ related_categories:
 
 satisfied_properties:
   - property: trivial
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: finite
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: small
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: discrete
-    reason: This is trivial.
+    proof: This is trivial.
 
 unsatisfied_properties: []
 
@@ -43,16 +43,16 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: every morphism
-    reason: This is trivial.
+    proof: This is trivial.
   monomorphisms:
     description: every morphism
-    reason: This is trivial.
+    proof: This is trivial.
   epimorphisms:
     description: every morphism
-    reason: This is trivial.
+    proof: This is trivial.
   regular monomorphisms:
     description: every morphism
-    reason: This is trivial.
+    proof: This is trivial.
   regular epimorphisms:
     description: every morphism
-    reason: This is trivial.
+    proof: This is trivial.

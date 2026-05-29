@@ -14,52 +14,52 @@ related_categories:
 
 satisfied_properties:
   - property: locally small
-    reason: The set of morphisms $X \to Y$ is the set $P(X \times Y)$.
+    proof: The set of morphisms $X \to Y$ is the set $P(X \times Y)$.
 
   - property: self-dual
-    reason: 'There is an isomorphism $\Rel \to \Rel^{\op}$ that is the identity on objects (sets) and maps a relation $R \subseteq X \times Y$ to the opposite relation $R^{\op} \subseteq Y \times X$ defined by $R^{\op} \coloneqq \{(y,x) : (x,y) \in R \}$.'
+    proof: 'There is an isomorphism $\Rel \to \Rel^{\op}$ that is the identity on objects (sets) and maps a relation $R \subseteq X \times Y$ to the opposite relation $R^{\op} \subseteq Y \times X$ defined by $R^{\op} \coloneqq \{(y,x) : (x,y) \in R \}$.'
 
   - property: pointed
-    reason: The empty set is clearly both initial and terminal. The zero morphisms are the empty relations.
+    proof: The empty set is clearly both initial and terminal. The zero morphisms are the empty relations.
     check_redundancy: false
 
   - property: generator
-    reason: One checks that the the one-point set is a generator.
+    proof: One checks that the the one-point set is a generator.
 
   - property: coproducts
-    reason: It is an easy exercise to deduce this from the corresponding fact for sets and that sets form a distributive category.
+    proof: It is an easy exercise to deduce this from the corresponding fact for sets and that sets form a distributive category.
     check_redundancy: false
 
   - property: biproducts
-    reason: This is a consequence of the description of coproducts and products, both are disjoint unions (even for infinite families).
+    proof: This is a consequence of the description of coproducts and products, both are disjoint unions (even for infinite families).
 
   - property: CIP
-    reason: The canonical morphism from the coproduct to the product is the identity.
+    proof: The canonical morphism from the coproduct to the product is the identity.
 
   - property: well-powered
-    reason: 'Any relation $R : A \to B$ induces an injective map $P(A) \to P(B)$, so that in particular there is an injective map $A \to P(B)$.'
+    proof: 'Any relation $R : A \to B$ induces an injective map $P(A) \to P(B)$, so that in particular there is an injective map $A \to P(B)$.'
 
   - property: kernels
-    reason: 'Let $R : A \to B$ be a relation. Define $K = \bigl\{a \in A : \neg \exists b \in B ((a,b) \in R) \bigr\}$. We have an inclusion map $I : K \to A$, which can also be regarded as relation, and $R \circ I = \empty$ is the empty relation, i.e. the zero morphism. It is easy to check the universal property.'
+    proof: 'Let $R : A \to B$ be a relation. Define $K = \bigl\{a \in A : \neg \exists b \in B ((a,b) \in R) \bigr\}$. We have an inclusion map $I : K \to A$, which can also be regarded as relation, and $R \circ I = \empty$ is the empty relation, i.e. the zero morphism. It is easy to check the universal property.'
 
   - property: mono-regular
-    reason: See <a href="https://math.stackexchange.com/questions/5137721" target="_blank">MSE/5137721</a>.
+    proof: See <a href="https://math.stackexchange.com/questions/5137721" target="_blank">MSE/5137721</a>.
 
   - property: quotients of congruences
-    reason: A proof can be found <a href="/content/congruences_in_rel">here</a>.
+    proof: A proof can be found <a href="/content/congruences_in_rel">here</a>.
 
   - property: effective congruences
-    reason: A proof can be found <a href="/content/congruences_in_rel">here</a>.
+    proof: A proof can be found <a href="/content/congruences_in_rel">here</a>.
 
 unsatisfied_properties:
   - property: skeletal
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: Cauchy complete
-    reason: See <a href="https://math.stackexchange.com/a/5030380/1650" target="_blank">MSE/1931577</a>.
+    proof: See <a href="https://math.stackexchange.com/a/5030380/1650" target="_blank">MSE/1931577</a>.
 
   - property: normal
-    reason: The construction of equalizers in $\Rel$ shows that they are injective functions, but <a href="https://math.stackexchange.com/questions/350716" target="_blank">MSE/350716</a> shows that monomorphisms in $\Rel$ don't have to be functions.
+    proof: The construction of equalizers in $\Rel$ shows that they are injective functions, but <a href="https://math.stackexchange.com/questions/350716" target="_blank">MSE/350716</a> shows that monomorphisms in $\Rel$ don't have to be functions.
 
 special_objects:
   initial object:
@@ -74,10 +74,10 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: bijective functions
-    reason: 'For the non-trivial direction, assume that $R : A \to B$ is a relation which has an inverse relation $S : B \to A$. For every $a \in A$ we have $(a,a) \in \id_A = S \circ R$, so there is some $b \in B$ with $(a,b) \in R$ (and $(b,a) \in S$). This shows that $R$ is left-total, and for right-total the argument is similar. By symmetry, this also holds for $S$. To show that $R$ is a function, assume $(a,b_1), (a,b_2) \in R$. Choose some $b_3 \in B$ with $(b_3,a) \in S$. It follows $(b_3,b_1) \in S \circ R = \id_A$, so $b_3 = b_1$. Similarly, $(b_3,b_2) \in S \circ R = \id_A$, so $b_3 = b_2$. This shows that $R$ is a function, i.e. left-unique. That $R$ is injective, i.e. right-unique, follows by symmetry. Finally, $R$ is surjective since it is right-total.'
+    proof: 'For the non-trivial direction, assume that $R : A \to B$ is a relation which has an inverse relation $S : B \to A$. For every $a \in A$ we have $(a,a) \in \id_A = S \circ R$, so there is some $b \in B$ with $(a,b) \in R$ (and $(b,a) \in S$). This shows that $R$ is left-total, and for right-total the argument is similar. By symmetry, this also holds for $S$. To show that $R$ is a function, assume $(a,b_1), (a,b_2) \in R$. Choose some $b_3 \in B$ with $(b_3,a) \in S$. It follows $(b_3,b_1) \in S \circ R = \id_A$, so $b_3 = b_1$. Similarly, $(b_3,b_2) \in S \circ R = \id_A$, so $b_3 = b_2$. This shows that $R$ is a function, i.e. left-unique. That $R$ is injective, i.e. right-unique, follows by symmetry. Finally, $R$ is surjective since it is right-total.'
   monomorphisms:
     description: 'A relation $R : A \to B$ is a monomorphism iff the map $R_* : P(A) \to P(B)$ defined by $T \mapsto \{b \in B : \exists \, a \in T: (a,b) \in R \}$ is injective.'
-    reason: See <a href="https://math.stackexchange.com/questions/350716/" target="_blank">MSE/350716</a>.
+    proof: See <a href="https://math.stackexchange.com/questions/350716/" target="_blank">MSE/350716</a>.
   epimorphisms:
     description: 'A relation $R : A \to B$ is an epimorphism iff the map $R^* : P(B) \to P(A)$ defined by $S \mapsto \{a \in A : \exists \, b \in S: (a,b) \in R \}$ is injective.'
-    reason: See <a href="https://math.stackexchange.com/questions/350716/" target="_blank">MSE/350716</a>.
+    proof: See <a href="https://math.stackexchange.com/questions/350716/" target="_blank">MSE/350716</a>.

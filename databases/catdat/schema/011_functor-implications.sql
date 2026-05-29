@@ -1,6 +1,6 @@
 CREATE TABLE functor_implications (
     id TEXT PRIMARY KEY,
-    reason TEXT NOT NULL CHECK (length(reason) > 0),
+    proof TEXT NOT NULL CHECK (length(proof) > 0),
     is_equivalence INTEGER NOT NULL DEFAULT FALSE,
     is_deduced INTEGER NOT NULL DEFAULT FALSE,
     dualized_from TEXT,

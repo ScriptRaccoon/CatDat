@@ -15,32 +15,32 @@ related_categories:
 
 satisfied_properties:
   - property: small
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: self-dual
-    reason: Take $t \mapsto 1-t$.
+    proof: Take $t \mapsto 1-t$.
 
   - property: skeletal
-    reason: The relation $\leq$ is antisymmetric.
+    proof: The relation $\leq$ is antisymmetric.
 
   - property: semi-strongly connected
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: locally ℵ₁-presentable
-    reason: See <a href="https://math.stackexchange.com/questions/4481902/locally-presentable-vs-compactly-presentable-categories#comment9399784_4482185" target="_blank">MSE/4481902</a>.
+    proof: See <a href="https://math.stackexchange.com/questions/4481902/locally-presentable-vs-compactly-presentable-categories#comment9399784_4482185" target="_blank">MSE/4481902</a>.
 
 unsatisfied_properties:
   - property: essentially countable
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: direct
-    reason: Consider the strictly decreasing sequence $1/2^n$ for $n \geq 0$.
+    proof: Consider the strictly decreasing sequence $1/2^n$ for $n \geq 0$.
 
   - property: inverse
-    reason: Consider the strictly increasing sequence $1 - 1/2^n$ for $n \geq 0$.
+    proof: Consider the strictly increasing sequence $1 - 1/2^n$ for $n \geq 0$.
 
   - property: locally finitely presentable
-    reason: It suffices to prove that $0$ (the initial object) is the only finitely presentable object. If $s > 0$, then $s = \sup_{n \in \IN, \, s \geq 1/n } (s - 1/n)$, but there is no $n$ with $s \leq s - 1/n$.
+    proof: It suffices to prove that $0$ (the initial object) is the only finitely presentable object. If $s > 0$, then $s = \sup_{n \in \IN, \, s \geq 1/n } (s - 1/n)$, but there is no $n$ with $s \leq s - 1/n$.
 
 special_objects:
   initial object:
@@ -55,16 +55,16 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: only the identity morphisms
-    reason: This is true for every poset (regarded as a category).
+    proof: This is true for every poset (regarded as a category).
   monomorphisms:
     description: every morphism
-    reason: It is a thin category.
+    proof: It is a thin category.
   epimorphisms:
     description: every morphism
-    reason: It is a thin category.
+    proof: It is a thin category.
   regular monomorphisms:
     description: same as isomorphisms
-    reason: This is because the category is right cancellative.
+    proof: This is because the category is right cancellative.
   regular epimorphisms:
     description: same as isomorphisms
-    reason: This is because the category is left cancellative.
+    proof: This is because the category is left cancellative.

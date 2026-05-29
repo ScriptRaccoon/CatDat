@@ -16,7 +16,7 @@ export function restrict_functor_properties() {
                     functor_id,
                     property_id,
                     is_satisfied,
-                    reason,
+                    proof,
                     is_deduced
                 )
                 SELECT

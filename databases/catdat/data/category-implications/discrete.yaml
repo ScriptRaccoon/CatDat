@@ -10,7 +10,7 @@
     - Grothendieck topos
     - self-dual
     - split abelian
-  reason: This is trivial.
+  proof: This is trivial.
   is_equivalence: false
 
 - id: discrete_consequences
@@ -21,7 +21,7 @@
     - essentially discrete
     - locally small
     - skeletal
-  reason: This is trivial.
+  proof: This is trivial.
   is_equivalence: false
 
 - id: essentially_discrete_characterization
@@ -30,7 +30,7 @@
   conclusions:
     - groupoid
     - thin
-  reason: This is trivial.
+  proof: This is trivial.
   is_equivalence: true
 
 - id: essentially_discrete_consequence
@@ -39,7 +39,7 @@
   conclusions:
     - connected limits
     - locally essentially small
-  reason: This is trivial.
+  proof: This is trivial.
   is_equivalence: false
 
 - id: essentially_discrete_trivial
@@ -48,5 +48,5 @@
     - essentially discrete
   conclusions:
     - trivial
-  reason: This is trivial.
+  proof: This is trivial.
   is_equivalence: false

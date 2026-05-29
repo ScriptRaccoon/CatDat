@@ -17,51 +17,51 @@ related_categories:
 
 satisfied_properties:
   - property: small
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: finite
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: self-dual
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: semi-strongly connected
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: skeletal
-    reason: The two objects are not isomorphic.
+    proof: The two objects are not isomorphic.
 
   - property: one-way
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: generator
-    reason: It is easy to check that $0$ is a generator.
+    proof: It is easy to check that $0$ is a generator.
 
   - property: left cancellative
-    reason: The two morphisms $0 \rightrightarrows 1$ are clearly monomorphisms.
+    proof: The two morphisms $0 \rightrightarrows 1$ are clearly monomorphisms.
 
 unsatisfied_properties:
   - property: strongly connected
-    reason: There is no morphism $1 \to 0$.
+    proof: There is no morphism $1 \to 0$.
 
   - property: pullbacks
-    reason: 'The two morphisms $a,b : 0 \rightrightarrows 1$ have no pullback, since it would have to consist of identities $0 \leftarrow 0 \rightarrow 0$, but $a \neq b$.'
+    proof: 'The two morphisms $a,b : 0 \rightrightarrows 1$ have no pullback, since it would have to consist of identities $0 \leftarrow 0 \rightarrow 0$, but $a \neq b$.'
 
 special_objects: {}
 
 special_morphisms:
   isomorphisms:
     description: the two identities
-    reason: This is trivial.
+    proof: This is trivial.
   monomorphisms:
     description: every morphism
-    reason: This is trivial.
+    proof: This is trivial.
   epimorphisms:
     description: every morphism
-    reason: Each $0 \to 1$ is an epimorphism since the only morphism starting at $1$ is the identity.
+    proof: Each $0 \to 1$ is an epimorphism since the only morphism starting at $1$ is the identity.
   regular monomorphisms:
     description: same as isomorphisms
-    reason: This is because the category is right cancellative.
+    proof: This is because the category is right cancellative.
   regular epimorphisms:
     description: same as isomorphisms
-    reason: This is because the category is left cancellative.
+    proof: This is because the category is left cancellative.

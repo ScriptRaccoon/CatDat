@@ -16,29 +16,29 @@ related_functors:
 
 satisfied_properties:
   - property: representable
-    reason: This functor is represented by the polynomial ring $\IZ[T]$.
+    proof: This functor is represented by the polynomial ring $\IZ[T]$.
 
   - property: monadic
-    reason: For every algebraic category the forgetful functor to the category of sets is monadic.
+    proof: For every algebraic category the forgetful functor to the category of sets is monadic.
 
   - property: finitary
-    reason: For every algebraic category the forgetful functor to the category of sets preserves filtered colimits.
+    proof: For every algebraic category the forgetful functor to the category of sets preserves filtered colimits.
 
   - property: preserves reflexive coequalizers
-    reason: This follows from Theorem 2.5 at the <a href="https://ncatlab.org/nlab/show/reflexive+coequalizer" target="_blank">nLab</a>.
+    proof: This follows from Theorem 2.5 at the <a href="https://ncatlab.org/nlab/show/reflexive+coequalizer" target="_blank">nLab</a>.
 
 unsatisfied_properties:
   - property: full
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: essentially surjective
-    reason: The empty set has has no ring structure.
+    proof: The empty set has has no ring structure.
 
   - property: preserves epimorphisms
-    reason: This follows from the classifications of epimorphisms in <a href="/category/Ring">$\Ring$</a> and in <a href="/category/Set">$\Set$</a>. Namely, the unique homomorphism $\IZ \to \IQ$ is an epimorphism in $\Ring$, but its underlying map of sets is not surjective, and hence no epimorphism in $\Set$.
+    proof: This follows from the classifications of epimorphisms in <a href="/category/Ring">$\Ring$</a> and in <a href="/category/Set">$\Set$</a>. Namely, the unique homomorphism $\IZ \to \IQ$ is an epimorphism in $\Ring$, but its underlying map of sets is not surjective, and hence no epimorphism in $\Set$.
 
   - property: preserves initial objects
-    reason: The initial object of $\Ring$ is $\IZ$, whose underlying set is not empty.
+    proof: The initial object of $\Ring$ is $\IZ$, whose underlying set is not empty.
 
   - property: preserves coequalizers
-    reason: Consider the two ring homomorphisms $\IZ[X] \rightrightarrows \IZ[X,Y]$ defined by $X \mapsto X$ resp. $X \mapsto 0$. Their coequalizer in $\Ring$ (and also $\CRing$) is $\IZ[Y]$. Every multiple of $X$ becomes zero. However, the $\Set$-coequalizer does not identify $XY$ with $0$. In fact, polynomials in $U(\IZ[X,Y]) \setminus U(\IZ[X])$ are only equivalent to themselves.
+    proof: Consider the two ring homomorphisms $\IZ[X] \rightrightarrows \IZ[X,Y]$ defined by $X \mapsto X$ resp. $X \mapsto 0$. Their coequalizer in $\Ring$ (and also $\CRing$) is $\IZ[Y]$. Every multiple of $X$ becomes zero. However, the $\Set$-coequalizer does not identify $XY$ with $0$. In fact, polynomials in $U(\IZ[X,Y]) \setminus U(\IZ[X])$ are only equivalent to themselves.

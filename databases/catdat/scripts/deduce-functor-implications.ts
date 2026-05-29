@@ -72,7 +72,7 @@ function create_dualized_functor_implications() {
 			is_equivalence,
 			is_deduced,
 			dualized_from,
-			reason
+			proof
 		) VALUES (?, ?, ?, ?, ?, ?, TRUE, ?, ?)`,
 	)
 

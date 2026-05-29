@@ -16,26 +16,26 @@ related_categories:
 
 satisfied_properties:
   - property: locally small
-    reason: This follows from the general fact that $[\C,\D]$ is locally small when $\C$ is small and $\D$ is locally small, here applied to $\C = \Delta^{\op}$ and $\D = \Set$.
+    proof: This follows from the general fact that $[\C,\D]$ is locally small when $\C$ is small and $\D$ is locally small, here applied to $\C = \Delta^{\op}$ and $\D = \Set$.
 
   - property: Grothendieck topos
-    reason: This is clear from the definitions.
+    proof: This is clear from the definitions.
 
   - property: semi-strongly connected
-    reason: Let $X,Y$ be two simplicial sets. Assume that $X_0$ is empty. Then $X_n$ is empty for all $n$ since there is a morphism $[0] \to [n]$, hence a map $X_n \to X_0$. So there is a morphism $X \to Y$ for trivial reasons. If $X_0$ is non-empty, pick an element. By the Yoneda Lemma it corresponds to a morphism $\Delta^0 \to X$. Since $\Delta^0 = 1$ is terminal, there is a morphism $Y \to \Delta^0$, and these compose to a morphism $Y \to X$.
+    proof: Let $X,Y$ be two simplicial sets. Assume that $X_0$ is empty. Then $X_n$ is empty for all $n$ since there is a morphism $[0] \to [n]$, hence a map $X_n \to X_0$. So there is a morphism $X \to Y$ for trivial reasons. If $X_0$ is non-empty, pick an element. By the Yoneda Lemma it corresponds to a morphism $\Delta^0 \to X$. Since $\Delta^0 = 1$ is terminal, there is a morphism $Y \to \Delta^0$, and these compose to a morphism $Y \to X$.
 
   - property: generator
-    reason: 'Let $\Delta^n \coloneqq \Hom([n],-)$ be the standard $n$-simplex for $n \geq 0$. The set $\{\Delta^n : n \geq 0\}$ is a <a href="/category-property/generating_set">generating set</a> by the Yoneda Lemma. For all $n,m$ there is a morphism $[n] \to [m]$ in $\Delta$ and hence a morphism $\Delta^m \to \Delta^n$ in $\sSet$. Then by <a href="/content/generator_construction">this lemma</a> the coproduct $\coprod_{n \geq 0} \Delta^n$ is a generator in $\sSet$.'
+    proof: 'Let $\Delta^n \coloneqq \Hom([n],-)$ be the standard $n$-simplex for $n \geq 0$. The set $\{\Delta^n : n \geq 0\}$ is a <a href="/category-property/generating_set">generating set</a> by the Yoneda Lemma. For all $n,m$ there is a morphism $[n] \to [m]$ in $\Delta$ and hence a morphism $\Delta^m \to \Delta^n$ in $\sSet$. Then by <a href="/content/generator_construction">this lemma</a> the coproduct $\coprod_{n \geq 0} \Delta^n$ is a generator in $\sSet$.'
 
   - property: locally strongly finitely presentable
-    reason: This follows from the fact that every category of presheaves over a small category is locally strongly finitely presentable.
+    proof: This follows from the fact that every category of presheaves over a small category is locally strongly finitely presentable.
 
 unsatisfied_properties:
   - property: skeletal
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: finitary algebraic
-    reason: A one-sorted finitary algebraic category has an object $F$ (the free algebra on one generator) such that $F$ is finitely presentable and every object $X$ admits an epimorphism $\coprod_{s \in S} F \to X$ for some index set $S$. Assume that such a simplicial set $F$ exists. By using the sequence of $n$-skeletons of $F$, we see that there is some $n$ such that every $n$-simplex in $F$ is degenerate. Now take $X = \Delta^n$, which has a non-degenerate $n$-simplex. Then there cannot be an epimorphism $\coprod_{s \in S} F \to X$.
+    proof: A one-sorted finitary algebraic category has an object $F$ (the free algebra on one generator) such that $F$ is finitely presentable and every object $X$ admits an epimorphism $\coprod_{s \in S} F \to X$ for some index set $S$. Assume that such a simplicial set $F$ exists. By using the sequence of $n$-skeletons of $F$, we see that there is some $n$ such that every $n$-simplex in $F$ is degenerate. Now take $X = \Delta^n$, which has a non-degenerate $n$-simplex. Then there cannot be an epimorphism $\coprod_{s \in S} F \to X$.
 
 special_objects:
   initial object:
@@ -50,16 +50,16 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: natural isomorphisms
-    reason: This is true for all functor categories.
+    proof: This is true for all functor categories.
   monomorphisms:
     description: pointwise injective transformations
-    reason: 'If $a : F \to G$ is a monomorphism of simplicial sets, then the diagonal morphism $F \to F \times_G F$ is an isomorphism, so that for every $n$ the diagonal morphism $F(n) \to F(n) \times_{G(n)} F(n)$ is an isomorphism, i.e., $a(n) : F(n) \to G(n)$ is a monomorphism. This argument works for every functor category where the target has fiber products.'
+    proof: 'If $a : F \to G$ is a monomorphism of simplicial sets, then the diagonal morphism $F \to F \times_G F$ is an isomorphism, so that for every $n$ the diagonal morphism $F(n) \to F(n) \times_{G(n)} F(n)$ is an isomorphism, i.e., $a(n) : F(n) \to G(n)$ is a monomorphism. This argument works for every functor category where the target has fiber products.'
   epimorphisms:
     description: pointwise surjective transformations
-    reason: This holds in every functor category $[\C,\Set]$.
+    proof: This holds in every functor category $[\C,\Set]$.
   regular monomorphisms:
     description: same as monomorphisms
-    reason: This is because the category is mono-regular.
+    proof: This is because the category is mono-regular.
   regular epimorphisms:
     description: same as epimorphisms
-    reason: This is because the category is epi-regular.
+    proof: This is because the category is epi-regular.

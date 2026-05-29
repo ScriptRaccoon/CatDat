@@ -16,76 +16,76 @@ related_categories:
 
 satisfied_properties:
   - property: locally small
-    reason: It is a full subcategory of <a href="/category/Top">$\Top$</a>, which is locally small.
+    proof: It is a full subcategory of <a href="/category/Top">$\Top$</a>, which is locally small.
 
   - property: generator
-    reason: The one-point space is a generator since it represents the forgetful functor $\Haus \to \Set$.
+    proof: The one-point space is a generator since it represents the forgetful functor $\Haus \to \Set$.
 
   - property: semi-strongly connected
-    reason: Every non-empty Hausdorff space is weakly terminal (by using constant maps).
+    proof: Every non-empty Hausdorff space is weakly terminal (by using constant maps).
 
   - property: equalizers
-    reason: This follows from the corresponding fact for <a href="/category/Top">$\Top$</a> since subspaces of Hausdorff spaces are again Hausdorff.
+    proof: This follows from the corresponding fact for <a href="/category/Top">$\Top$</a> since subspaces of Hausdorff spaces are again Hausdorff.
 
   - property: products
-    reason: This follows from the corresponding fact for <a href="/category/Top">$\Top$</a> since products of Hausdorff spaces are again Hausdorff.
+    proof: This follows from the corresponding fact for <a href="/category/Top">$\Top$</a> since products of Hausdorff spaces are again Hausdorff.
 
   - property: cocomplete
-    reason: This follows since $\Haus$ is a reflective subcategory of <a href="/category/Top">$\Top$</a>, which is cocomplete. For the reflector, see e.g. the <a href="https://ncatlab.org/nlab/show/Hausdorff+space#HausdorffReflection" target="_blank">nLab</a>. Explicitly, we construct the colimit of Hausdorff spaces by applying the reflector to the colimit of the underlying topological spaces.
+    proof: This follows since $\Haus$ is a reflective subcategory of <a href="/category/Top">$\Top$</a>, which is cocomplete. For the reflector, see e.g. the <a href="https://ncatlab.org/nlab/show/Hausdorff+space#HausdorffReflection" target="_blank">nLab</a>. Explicitly, we construct the colimit of Hausdorff spaces by applying the reflector to the colimit of the underlying topological spaces.
     check_redundancy: false
 
   - property: infinitary extensive
-    reason: This follows exactly as for <a href="/category/Top">$\Top$</a> since Hausdorff spaces are closed under taking subspaces and coproducts in $\Top$.
+    proof: This follows exactly as for <a href="/category/Top">$\Top$</a> since Hausdorff spaces are closed under taking subspaces and coproducts in $\Top$.
 
   - property: well-powered
-    reason: This is clear from the classification of monomorphisms as injective continuous maps.
+    proof: This is clear from the classification of monomorphisms as injective continuous maps.
 
   - property: well-copowered
-    reason: 'Every epimorphism has dense image, so it suffices to prove that if a Hausdorff space $X$ has a dense subset $D \subseteq X$, we can bound the cardinality of $X$ in terms of the cardinality of $D$. For $x \in X$ let $\alpha(x)$ be the set of all $U \cap D$, where $U$ is an open neighborhood of $x$. This defines a map $\alpha : X \to P(P(D))$, and we claim that it is injective: this is because $\{x\}$ is the intersection of all $\overline{U} = \overline{U \cap D}$, where $U$ runs through the open neighborhoods of $x$.'
+    proof: 'Every epimorphism has dense image, so it suffices to prove that if a Hausdorff space $X$ has a dense subset $D \subseteq X$, we can bound the cardinality of $X$ in terms of the cardinality of $D$. For $x \in X$ let $\alpha(x)$ be the set of all $U \cap D$, where $U$ is an open neighborhood of $x$. This defines a map $\alpha : X \to P(P(D))$, and we claim that it is injective: this is because $\{x\}$ is the intersection of all $\overline{U} = \overline{U \cap D}$, where $U$ runs through the open neighborhoods of $x$.'
 
   - property: co-Malcev
-    reason: See <a href="https://mathoverflow.net/a/509582/2841" target="_blank">MO/509548</a>.
+    proof: See <a href="https://mathoverflow.net/a/509582/2841" target="_blank">MO/509548</a>.
 
   - property: effective cocongruences
-    reason: As the proof at <a href="https://mathoverflow.net/a/509582/2841" target="_blank">MO/509548</a> shows, in fact any coreflexive corelation on $X$ in $\Haus$ is of the form $X +_S X$ for a closed subset $S$ of $X$. Such a cocongruence is clearly effective.
+    proof: As the proof at <a href="https://mathoverflow.net/a/509582/2841" target="_blank">MO/509548</a> shows, in fact any coreflexive corelation on $X$ in $\Haus$ is of the form $X +_S X$ for a closed subset $S$ of $X$. Such a cocongruence is clearly effective.
 
 unsatisfied_properties:
   - property: skeletal
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: balanced
-    reason: The inclusion $\IQ \hookrightarrow \IR$ is a counterexample; it is an epimorphism since $\IQ$ is dense in $\IR$.
+    proof: The inclusion $\IQ \hookrightarrow \IR$ is a counterexample; it is an epimorphism since $\IQ$ is dense in $\IR$.
 
   - property: Malcev
-    reason: This is clear since <a href="/category/Set">$\Set$</a> is not Malcev and can be interpreted as the subcategory of discrete spaces (which are Hausdorff).
+    proof: This is clear since <a href="/category/Set">$\Set$</a> is not Malcev and can be interpreted as the subcategory of discrete spaces (which are Hausdorff).
 
   - property: regular subobject classifier
-    reason: Assume that there is a regular subobject classifier $\Omega$. By the classification of regular monomorphisms, we would have an isomorphism between $\Hom(X,\Omega)$ and the set of closed subsets of $X$ for any Hausdorff space $X$. If we take $X = 1$ we see that $\Omega$ has two points. Since $\Omega$ is Hausdorff, $\Omega \cong 1 + 1$ must be discrete. But then $\Hom(X,\Omega)$ is isomorphic to the set of all clopen subsets of $X$, of which there are usually far fewer than closed subsets (consider $X = [0,1]$).
+    proof: Assume that there is a regular subobject classifier $\Omega$. By the classification of regular monomorphisms, we would have an isomorphism between $\Hom(X,\Omega)$ and the set of closed subsets of $X$ for any Hausdorff space $X$. If we take $X = 1$ we see that $\Omega$ has two points. Since $\Omega$ is Hausdorff, $\Omega \cong 1 + 1$ must be discrete. But then $\Hom(X,\Omega)$ is isomorphic to the set of all clopen subsets of $X$, of which there are usually far fewer than closed subsets (consider $X = [0,1]$).
 
   - property: cartesian filtered colimits
-    reason: 'It is shown in <a href="https://math.stackexchange.com/questions/1255678">MSE/1255678</a> that $\IQ \times - : \Top \to \Top$ does not preserve sequential colimits (so that it cannot be a left adjoint). The same example also works in $\Haus$: Surely $\IQ$ is Hausdorff, $X_n$ is Hausdorff, as is their colimit $X$, and the colimit (taken in $\Top$) of the $X_n \times \IQ$ admits a bijective continuous map to a Hausdorff space, therefore is also Hausdorff, meaning it is also the colimit taken in $\Haus$.'
+    proof: 'It is shown in <a href="https://math.stackexchange.com/questions/1255678">MSE/1255678</a> that $\IQ \times - : \Top \to \Top$ does not preserve sequential colimits (so that it cannot be a left adjoint). The same example also works in $\Haus$: Surely $\IQ$ is Hausdorff, $X_n$ is Hausdorff, as is their colimit $X$, and the colimit (taken in $\Top$) of the $X_n \times \IQ$ admits a bijective continuous map to a Hausdorff space, therefore is also Hausdorff, meaning it is also the colimit taken in $\Haus$.'
 
   - property: cofiltered-limit-stable epimorphisms
-    reason: 'Recall the counterexample for sets: The unique maps $\IN_{\geq n} \to 1$ are surjective, but their limit $0 = \bigcap_{n \geq 0} \IN_{\geq n} \to 1$ is not. This also works in $\Haus$ by using discrete topologies. We could also apply a variant of (the dual of) <a href="/content/filtered-monos">this lemma</a> to the discrete topology functor $\Set \to \Haus$, which does not preserve all cofiltered limits, but does preserve intersections.'
+    proof: 'Recall the counterexample for sets: The unique maps $\IN_{\geq n} \to 1$ are surjective, but their limit $0 = \bigcap_{n \geq 0} \IN_{\geq n} \to 1$ is not. This also works in $\Haus$ by using discrete topologies. We could also apply a variant of (the dual of) <a href="/content/filtered-monos">this lemma</a> to the discrete topology functor $\Set \to \Haus$, which does not preserve all cofiltered limits, but does preserve intersections.'
 
   - property: filtered-colimit-stable monomorphisms
-    reason: |-
+    proof: |-
       The proof is similar to <a href="/category/Met">$\Met$</a>. For $n \geq 1$ let $X_n$ be the pushout of
       $$(-\infty, -1/n] \cup [1/n, \infty) \hookrightarrow \IR$$
       with itself. That is, $X_n$ is the union of two lines $\IR \times \{1\}$ and $\IR \times \{2\}$ where we identify $(x,1) \equiv (x,2)$ when $|x| \geq 1/n$. Then $X_n$ is Hausdorff, and there is a canonical surjective continuous map $X_n \to X_{n+1}$. The colimit in $\Top$ is the union of two lines where we identify $(x,1) \equiv (x,2)$ when $|x| \geq 1/n$ for some $n$, i.e. when $x \neq 0$. This is the line with the double origin, which is not Hausdorff. Its Hausdorff reflection is the line $\IR$ where all points of both lines are identified, and it provides the colimit in $\Haus$. Now, the injective continuous maps $\{1,2\} \to X_n$, $i \mapsto (0,i)$ (where $\{1,2\}$ is discrete) become the constant map $0 : \{1,2\} \to \IR$ in the colimit, which is not a monomorphism.
 
   - property: accessible
-    reason: In fact, it does not have any small colimit-dense subcategory by <a href="https://math.stackexchange.com/questions/4097315/" target="_blank">MSE/4097315</a>.
+    proof: In fact, it does not have any small colimit-dense subcategory by <a href="https://math.stackexchange.com/questions/4097315/" target="_blank">MSE/4097315</a>.
 
   - property: cogenerating set
     # cspell: disable-next-line
-    reason: 'If $S$ is a cogenerating set, then it is easy to see that also $S \setminus \{\varnothing\}$ is a cogenerating set. Between two non-empty spaces there is always a constant map. Therefore, by <a href="/content/generator_construction">this lemma</a>, the product of all spaces in $S \setminus \{\varnothing\}$ is a cogenerator $Q$. Since $Q$ is Hausdorff, $Q$ is $T_1$. By a theorem of Herrlich (<i>Wann sind alle stetigen Abbildungen in Y konstant</i>. Math. Z. 90 (1965): 152-154. <a href="http://eudml.org/doc/170472" target="_blank">EUMDL</a>), there is a regular Hausdorff space $X$ with $\geq 2$ points such that every continuous map $X \to Q$ is constant. (The author only states that $X$ is regular, but actually, $X$ is regular and $T_1$, hence Hausdorff.) But since $Q$ is a cogenerator, this implies that all maps $1 \rightrightarrows X$ are equal, i.e. that $X$ has just one point. This is a contradiction.'
+    proof: 'If $S$ is a cogenerating set, then it is easy to see that also $S \setminus \{\varnothing\}$ is a cogenerating set. Between two non-empty spaces there is always a constant map. Therefore, by <a href="/content/generator_construction">this lemma</a>, the product of all spaces in $S \setminus \{\varnothing\}$ is a cogenerator $Q$. Since $Q$ is Hausdorff, $Q$ is $T_1$. By a theorem of Herrlich (<i>Wann sind alle stetigen Abbildungen in Y konstant</i>. Math. Z. 90 (1965): 152-154. <a href="http://eudml.org/doc/170472" target="_blank">EUMDL</a>), there is a regular Hausdorff space $X$ with $\geq 2$ points such that every continuous map $X \to Q$ is constant. (The author only states that $X$ is regular, but actually, $X$ is regular and $T_1$, hence Hausdorff.) But since $Q$ is a cogenerator, this implies that all maps $1 \rightrightarrows X$ are equal, i.e. that $X$ has just one point. This is a contradiction.'
 
   - property: regular
-    reason: 'The regular epimorphisms are precisely the surjective quotient maps of Hausdorff spaces (see below). In a regular category, for every regular epimorphism $X \to Y$ and every object $Z$, the induced morphism $X \times Z \to Y \times Z$ is again a regular epimorphism. This is not the case in $\Haus$ (or $\Top$, for that matter). The standard example is the quotient map $\IR \to \IR / \IZ^+$, for which the induced map $\IR \times \IQ \to \IR/\IZ^+ \times \IQ$ is not a quotient map (<a href="https://math.stackexchange.com/questions/1907972/">MSE/1907972</a>).'
+    proof: 'The regular epimorphisms are precisely the surjective quotient maps of Hausdorff spaces (see below). In a regular category, for every regular epimorphism $X \to Y$ and every object $Z$, the induced morphism $X \times Z \to Y \times Z$ is again a regular epimorphism. This is not the case in $\Haus$ (or $\Top$, for that matter). The standard example is the quotient map $\IR \to \IR / \IZ^+$, for which the induced map $\IR \times \IQ \to \IR/\IZ^+ \times \IQ$ is not a quotient map (<a href="https://math.stackexchange.com/questions/1907972/">MSE/1907972</a>).'
 
   - property: coregular
-    reason: >-
+    proof: >-
       Let $\Gamma$ be the <a href="https://en.wikipedia.org/wiki/Moore_plane" target="_blank">Moore plane</a>. Its underlying set is $\{(x,y) \in \IR^2 : y \geq 0 \}$. The open neighborhoods of points $(x,y)$ with $y > 0$ are those of $\IR^2$ (intersected with $\Gamma$), and the basic open neighborhoods of a point $(x,0)$ are open disks centered at $(x,\varepsilon)$ with radius $\varepsilon$ for some $\varepsilon > 0$. Then $\Gamma$ is Hausdorff, and the $x$-axis $A \coloneqq \{(x,0) : x \in \IR\}$ is a closed discrete subspace of $\Gamma$. In particular, by the classification of regular monomorphisms below, the inclusion map $i : A \to \Gamma$ is a regular monomorphism.
       Consider the two subsets $A_1 \coloneqq \{(x,0) : x \in \IQ \}$ and $A_2 \coloneqq \{(x,0) : x \in \IR \setminus \IQ \}$ of $A$. They are closed in $A$ (since $A$ is closed and discrete), disjoint, but cannot be separated by disjoint open neighborhoods in $\Gamma$; this is part of the proof of the well-known fact that $\Gamma$ is not normal (<a href="https://math.stackexchange.com/questions/2528435" target="_blank">MSE/2528435</a>).
       Let $C \coloneqq \{1,2\}$ be the discrete two-point space. The map $f : A \to C$ defined by $f(a)=1$ for $a \in A_1$ and $f(a)=2$ for $a \in A_2$ is continuous, since $A$ is discrete.
@@ -104,18 +104,18 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: homeomorphisms
-    reason: This is easy.
+    proof: This is easy.
   monomorphisms:
     description: injective continuous maps
-    reason: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
+    proof: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
   epimorphisms:
     description: continuous maps with dense image
-    reason: It is clear that continuous maps with dense image are epimorphism, but the other direction is non-trivial. See <a href="https://math.stackexchange.com/questions/214045" target="_blank">MSE/214045</a> for a proof.
+    proof: It is clear that continuous maps with dense image are epimorphism, but the other direction is non-trivial. See <a href="https://math.stackexchange.com/questions/214045" target="_blank">MSE/214045</a> for a proof.
   regular monomorphisms:
     description: embeddings with closed image
-    reason: The explicit construction of equalizers shows that they are embeddings, and they have a closed image because of the well-known lemma that for a Hausdorff space the diagonal $X \to X \times X$ has closed image. For the other non-trivial direction, see <a href="https://math.stackexchange.com/questions/214045/" target="_blank">MSE/214045</a>.
+    proof: The explicit construction of equalizers shows that they are embeddings, and they have a closed image because of the well-known lemma that for a Hausdorff space the diagonal $X \to X \times X$ has closed image. For the other non-trivial direction, see <a href="https://math.stackexchange.com/questions/214045/" target="_blank">MSE/214045</a>.
   regular epimorphisms:
     description: surjective quotient maps
-    reason: >-
+    proof: >-
       The coequalizer of two continuous maps $f,g : X \rightrightarrows Y$ of Hausdorff spaces is given by $Y \to Q \to Q_H$, where $Y \to Q$ is their coequalizer in $\Top$ and $Q \to Q_H$ is the Hausdorff reflection of $Q$. By the construction of coequalizers in <a href="/category/Top">$\Top$</a>, the map $Y \to Q$ is a surjective quotient map. Moreover, the construction of the Hausdorff reflection (see <a href="https://ncatlab.org/nlab/show/Hausdorff+space#HausdorffReflectionViaHomsIntoAllHausdorffSpaces" target="_blank">nLab</a>) shows that $Q \to Q_H$ is also a surjective quotient map. Hence, $Y \to Q_H$ is a surjective quotient map as well.
       Conversely, if $p : X \to Y$ is a surjective quotient map between Hausdorff spaces, we know from the classification in $\Top$ that $p$ is the coequalizer of its kernel pair $X \times_Y X \rightrightarrows X$ in $\Top$. Since $X \times_Y X$ is Hausdorff, the same universal property remains valid in $\Haus$.

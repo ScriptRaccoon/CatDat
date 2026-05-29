@@ -16,56 +16,56 @@ related_categories:
 
 satisfied_properties:
   - property: locally small
-    reason: There is a forgetful functor $\Cat \to \Set \times \Set$, $\C \mapsto (\Ob(\C),\Mor(\C))$, and $\Set \times \Set$ is locally small.
+    proof: There is a forgetful functor $\Cat \to \Set \times \Set$, $\C \mapsto (\Ob(\C),\Mor(\C))$, and $\Set \times \Set$ is locally small.
 
   - property: cartesian closed
-    reason: See p. 98 in <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>.
+    proof: See p. 98 in <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>.
 
   - property: locally finitely presentable
-    reason: See <a href="https://mathoverflow.net/questions/84460" target="_blank">MO/84460</a>.
+    proof: See <a href="https://mathoverflow.net/questions/84460" target="_blank">MO/84460</a>.
 
   - property: semi-strongly connected
-    reason: Every non-empty category is weakly terminal (by using constant functors).
+    proof: Every non-empty category is weakly terminal (by using constant functors).
 
   - property: generator
-    reason: 'The interval category $\{0 \to 1\}$ is a generator: Assume that $F,G : \C \rightrightarrows \D$ are functors that agree when being precomposed with any functor from $\{0 \to 1\}$. This means that $F(f) = G(f)$ for all morphisms $f : X \to Y$ in $\C$. By comparing the domains and applying this to $f = \id_X$, we see that $F(X) = G(X)$ for all objects $X$. And we just saw that $F,G$ also agree on morphisms.'
+    proof: 'The interval category $\{0 \to 1\}$ is a generator: Assume that $F,G : \C \rightrightarrows \D$ are functors that agree when being precomposed with any functor from $\{0 \to 1\}$. This means that $F(f) = G(f)$ for all morphisms $f : X \to Y$ in $\C$. By comparing the domains and applying this to $f = \id_X$, we see that $F(X) = G(X)$ for all objects $X$. And we just saw that $F,G$ also agree on morphisms.'
 
   - property: infinitary extensive
-    reason: '[Sketch] This is straight forward from the fact that <a href="/category/Set">$\Set$</a> is infinitary extensive: A functor $\C \to \coprod_i \D_i$ yields full subcategories $\C_i \subseteq \C$ (the preimages of $\D_i)$ with $\C = \coprod_i \C_i$.'
+    proof: '[Sketch] This is straight forward from the fact that <a href="/category/Set">$\Set$</a> is infinitary extensive: A functor $\C \to \coprod_i \D_i$ yields full subcategories $\C_i \subseteq \C$ (the preimages of $\D_i)$ with $\C = \coprod_i \C_i$.'
 
 unsatisfied_properties:
   - property: skeletal
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: balanced
-    reason: Since we know that <a href="/category/Mon">$\Mon$</a> is not balanced, there is a monoid map $M \to N$ which is a monomorphism and an epimorphism which is not an isomorphism. Then $B(M) \to B(N)$ has the corresponding properties.
+    proof: Since we know that <a href="/category/Mon">$\Mon$</a> is not balanced, there is a monoid map $M \to N$ which is a monomorphism and an epimorphism which is not an isomorphism. Then $B(M) \to B(N)$ has the corresponding properties.
 
   - property: cogenerating set
-    reason: 'Assume that $S$ is a cogenerating set in $\Cat$. Then one checks that the set of monoids $\{\End(X) : X \in \C \in S\}$ is a cogenerating set in <a href="/category/Mon">$\Mon$</a>, which we know does not exist.'
+    proof: 'Assume that $S$ is a cogenerating set in $\Cat$. Then one checks that the set of monoids $\{\End(X) : X \in \C \in S\}$ is a cogenerating set in <a href="/category/Mon">$\Mon$</a>, which we know does not exist.'
 
   - property: regular
-    reason: See Example 3.14 at the <a href="https://ncatlab.org/nlab/show/regular+category" target="_blank">nLab</a>.
+    proof: See Example 3.14 at the <a href="https://ncatlab.org/nlab/show/regular+category" target="_blank">nLab</a>.
 
   - property: coregular
-    reason: 'We already know that <a href="/category/Mon">$\Mon$</a> is not coregular, in fact there is a regular monomorphism $M \to N$ of monoids and a morphism $M \to K$ such that $K \to K \sqcup_M N$ is not a monomorphism. The delooping functor $B : \Mon \to \Cat$ has a left adjoint (<a href="https://math.stackexchange.com/questions/574745" target="_blank">MSE/574745</a>), hence it preserves regular monomorphisms. It also preserves pushouts (<a href="https://math.stackexchange.com/questions/5130854" target="_blank">MSE/5130854</a>), and it reflects monomorphisms since it is faithful. Therefore, $B(M) \to B(N)$ provides the desired counterexample of a non-stable regular monomorphism of categories.'
+    proof: 'We already know that <a href="/category/Mon">$\Mon$</a> is not coregular, in fact there is a regular monomorphism $M \to N$ of monoids and a morphism $M \to K$ such that $K \to K \sqcup_M N$ is not a monomorphism. The delooping functor $B : \Mon \to \Cat$ has a left adjoint (<a href="https://math.stackexchange.com/questions/574745" target="_blank">MSE/574745</a>), hence it preserves regular monomorphisms. It also preserves pushouts (<a href="https://math.stackexchange.com/questions/5130854" target="_blank">MSE/5130854</a>), and it reflects monomorphisms since it is faithful. Therefore, $B(M) \to B(N)$ provides the desired counterexample of a non-stable regular monomorphism of categories.'
 
   - property: Malcev
-    reason: Use that $\Set$ is not Malcev and consider sets as discrete categories.
+    proof: Use that $\Set$ is not Malcev and consider sets as discrete categories.
 
   - property: co-Malcev
-    reason: 'We can adapt the proof from <a href="/category/Mon">$\Mon$</a> as follows: Consider the functor $U : \Cat \to \Set^+$ sending a category $\C$ to the (large) set $\{(x,u) : x \in \Ob(\C) ,\, u \in \End(x) \}$. It is represented by $B \IN$, the one-object category associated to the free monoid in one generator. Consider the relation $R \subseteq U^2$ consisting of those pairs $((x,u),(y,v))$ where $x = y$ and $uv = u^2$. This also representable, namely be the one-object category associated to the monoid with the presentation $\langle u,v : uv = u^2 \rangle$. Clearly, $R$ is reflexive, but not symmetric.'
+    proof: 'We can adapt the proof from <a href="/category/Mon">$\Mon$</a> as follows: Consider the functor $U : \Cat \to \Set^+$ sending a category $\C$ to the (large) set $\{(x,u) : x \in \Ob(\C) ,\, u \in \End(x) \}$. It is represented by $B \IN$, the one-object category associated to the free monoid in one generator. Consider the relation $R \subseteq U^2$ consisting of those pairs $((x,u),(y,v))$ where $x = y$ and $uv = u^2$. This also representable, namely be the one-object category associated to the monoid with the presentation $\langle u,v : uv = u^2 \rangle$. Clearly, $R$ is reflexive, but not symmetric.'
 
   - property: cofiltered-limit-stable epimorphisms
-    reason: We already know that <a href="/category/Set">$\Set$</a> does not have this property. Now apply the contrapositive of the dual of <a href="/content/filtered-monos">this lemma</a> to the functor $\Set \to \Cat$ that maps a set to its discrete category.
+    proof: We already know that <a href="/category/Set">$\Set$</a> does not have this property. Now apply the contrapositive of the dual of <a href="/content/filtered-monos">this lemma</a> to the functor $\Set \to \Cat$ that maps a set to its discrete category.
 
   - property: effective cocongruences
-    reason: >-
+    proof: >-
       The counterexample is similar to the one for <a href="/category/Mon">$\Mon$</a>: Let $X$ be the <a href="/category/walking_idempotent">walking idempotent</a>, and let $E$ be the delooping of the monoid with presentation
       $$\langle p, q \mid p^2=p,\, q^2=q,\, pq=q,\, qp=p \rangle.$$
       The induced relation on functors in $[X, \C]$ is that $F \sim G$ if and only if $F$ and $G$ send the object of $X$ to the same object of $\C$, and they send the idempotent of $X$ to idempotent morphisms $a, b$ in $\C$ satisfying $ab=b$, $ba=a$. From here, the proof that this gives a cocongruence on $\Cat$ which is not effective is similar to the one in $\Mon$.
 
   - property: regular subobject classifier
-    reason: >-
+    proof: >-
       Consider the pushout square
       $$\begin{CD}
       \{1\} @> \inc >> \{ 0 \to 1 \} \\
@@ -98,10 +98,10 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: functors that are bijective on objects and morphisms
-    reason: This is easy.
+    proof: This is easy.
   monomorphisms:
     description: faithful functors that are injective on objects
-    reason: 'Faithful functors that are injective on objects are clearly monomorphisms. For the converse, assume that $F : \C \to \D$ is a monomorphic functor. Two objects $A,B \in \C$ with $F(A) = F(B)$ can be regarded as functors $A,B : 1 \to \C$ from the trivial category satisfying $F \circ A = F \circ B$, so that $A = B$. Now assume that $f,g : A \to B$ are morphisms in $\C$ with $F(f) = F(g)$. These can be regarded as functors $f,g : \{ 0 \to 1 \} \to \C$ from the walking morphism category satisfying $F \circ f = F \circ g$, so that $f = g$.'
+    proof: 'Faithful functors that are injective on objects are clearly monomorphisms. For the converse, assume that $F : \C \to \D$ is a monomorphic functor. Two objects $A,B \in \C$ with $F(A) = F(B)$ can be regarded as functors $A,B : 1 \to \C$ from the trivial category satisfying $F \circ A = F \circ B$, so that $A = B$. Now assume that $f,g : A \to B$ are morphisms in $\C$ with $F(f) = F(g)$. These can be regarded as functors $f,g : \{ 0 \to 1 \} \to \C$ from the walking morphism category satisfying $F \circ f = F \circ g$, so that $f = g$.'
   epimorphisms:
     description: 'A functor $F : \C \to \D$ is an epimorphism iff $F$ is surjective on objects and for every morphism $s$ in $\D$ there is a zigzag over $U \coloneqq F(\C)$, meaning morphisms $u_1,\dotsc,u_{m+1} \in U$, $v_1,\dotsc,v_m \in U$, $x_1,\dotsc,x_m \in \D$ and $y_1,\dotsc,y_m \in \D$ such that $s = x_1 u_1$, $u_1 = v_1 y_1$, $x_{i-1} v_{i-1} = x_i u_i$, $u_i y_{i-1} = v_i y_i$, $x_m v_m = u_{m+1}$ and $u_{m+1} y_m = s$.'
-    reason: This is an extension of the <a href="https://en.wikipedia.org/wiki/Isbell's_zigzag_theorem" target="_blank">corresponding theorem for monoids</a> and proven in <a href="https://www.jstor.org/stable/2373286" target="_blank">Epimorphisms and Dominions, III</a> by John R. Isbell.
+    proof: This is an extension of the <a href="https://en.wikipedia.org/wiki/Isbell's_zigzag_theorem" target="_blank">corresponding theorem for monoids</a> and proven in <a href="https://www.jstor.org/stable/2373286" target="_blank">Epimorphisms and Dominions, III</a> by John R. Isbell.

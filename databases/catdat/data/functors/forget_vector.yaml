@@ -16,29 +16,29 @@ related_functors:
 
 satisfied_properties:
   - property: representable
-    reason: This functor is represented by any $1$-dimensional vector space.
+    proof: This functor is represented by any $1$-dimensional vector space.
 
   - property: monadic
-    reason: For every algebraic category the forgetful functor to the category of sets is monadic.
+    proof: For every algebraic category the forgetful functor to the category of sets is monadic.
 
   - property: finitary
-    reason: For every algebraic category the forgetful functor to the category of sets preserves filtered colimits.
+    proof: For every algebraic category the forgetful functor to the category of sets preserves filtered colimits.
 
   - property: preserves epimorphisms
-    reason: This follows from the classifications of epimorphisms in <a href="/category/Vect">$\Vect$</a> and in <a href="/category/Set">$\Set$</a>.
+    proof: This follows from the classifications of epimorphisms in <a href="/category/Vect">$\Vect$</a> and in <a href="/category/Set">$\Set$</a>.
 
   - property: preserves reflexive coequalizers
-    reason: This follows from Theorem 2.5 at the <a href="https://ncatlab.org/nlab/show/reflexive+coequalizer" target="_blank">nLab</a>.
+    proof: This follows from Theorem 2.5 at the <a href="https://ncatlab.org/nlab/show/reflexive+coequalizer" target="_blank">nLab</a>.
 
 unsatisfied_properties:
   - property: full
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: essentially surjective
-    reason: The empty set has has no vector space structure.
+    proof: The empty set has has no vector space structure.
 
   - property: preserves initial objects
-    reason: The underlying set of a trivial vector space is not empty.
+    proof: The underlying set of a trivial vector space is not empty.
 
   - property: preserves coequalizers
-    reason: 'The coequalizer of $0,i_1 : K \to K^2$ in $\Vect$ is $p_2 : K^2 \to K$, but the coequalizer in $\Set$ is $(K \times K^*) \cup \{(0,0)\}$.'
+    proof: 'The coequalizer of $0,i_1 : K \to K^2$ in $\Vect$ is $p_2 : K^2 \to K$, but the coequalizer in $\Set$ is $(K \times K^*) \cup \{(0,0)\}$.'

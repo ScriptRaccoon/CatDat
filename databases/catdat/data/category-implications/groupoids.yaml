@@ -10,7 +10,7 @@
     - pullbacks
     - self-dual
     - well-powered
-  reason: This is easy.
+  proof: This is easy.
   is_equivalence: false
 
 - id: groupoid_criterion
@@ -20,7 +20,7 @@
     - right cancellative
   conclusions:
     - groupoid
-  reason: This is trivial.
+  proof: This is trivial.
   is_equivalence: false
 
 - id: groupoid_connected
@@ -29,7 +29,7 @@
     - groupoid
   conclusions:
     - strongly connected
-  reason: This is trivial.
+  proof: This is trivial.
   is_equivalence: false
 
 - id: groupoid_lcc
@@ -37,7 +37,7 @@
     - groupoid
   conclusions:
     - locally cartesian closed
-  reason: Every slice category is a trivial category.
+  proof: Every slice category is a trivial category.
   is_equivalence: false
 
 - id: groupoid_with_multi-terminal
@@ -46,5 +46,5 @@
     - multi-terminal object
   conclusions:
     - thin
-  reason: 'Let $f,g : A \rightrightarrows B$ be a parallel pair of morphisms. Since the category has a multi-terminal object, the connected component containing $A$ and $B$ has a terminal object. But since the category is a groupoid, both $A$ and $B$ are terminal objects in the connected component, hence $f=g$.'
+  proof: 'Let $f,g : A \rightrightarrows B$ be a parallel pair of morphisms. Since the category has a multi-terminal object, the connected component containing $A$ and $B$ has a terminal object. But since the category is a groupoid, both $A$ and $B$ are terminal objects in the connected component, hence $f=g$.'
   is_equivalence: false

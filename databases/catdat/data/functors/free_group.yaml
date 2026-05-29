@@ -14,32 +14,32 @@ related_functors: []
 
 satisfied_properties:
   - property: left adjoint
-    reason: 'By definition, this functor is left adjoint to the forgetful functor $U_{\Grp} : \Grp \to \Set$.'
+    proof: 'By definition, this functor is left adjoint to the forgetful functor $U_{\Grp} : \Grp \to \Set$.'
 
   - property: conservative
-    reason: This can be checked with the concrete description of the elements of free groups.
+    proof: This can be checked with the concrete description of the elements of free groups.
 
   - property: preserves monomorphisms
-    reason: 'This can be deduced from the description of the elements of a free group, but here is an abstract argument: Split monomorphisms are preserved by any functor. The only injective maps in $\Set$ that are not split are $\varnothing \hookrightarrow X$ (for non-empty $X$), and $F(\varnothing) \to F(X)$ is injective since $F(\varnothing)$ is the trivial group.'
+    proof: 'This can be deduced from the description of the elements of a free group, but here is an abstract argument: Split monomorphisms are preserved by any functor. The only injective maps in $\Set$ that are not split are $\varnothing \hookrightarrow X$ (for non-empty $X$), and $F(\varnothing) \to F(X)$ is injective since $F(\varnothing)$ is the trivial group.'
 
   - property: preserves coreflexive equalizers
-    reason: 'More generally, if $f,g : X \rightrightarrows Y$ are two injective maps with equalizer $E \hookrightarrow X$, then $F(E) \to F(X)$ is the equalizer of $F(f),F(g) : F(X) \rightrightarrows F(Y)$. In fact, we already know that $F(E) \to F(X)$ is injective. Now let $w \in F(X)$ be an element, and write it as a reduced word $w = x_1^{k_1} \cdots x_n^{k_n}$, meaning $x_i \in X$, $x_i \neq x_{i+1}$, $k_i \in \IZ \setminus \{0\}$. Since $f$ is injective, also $f(w) = f(x_1)^{k_1} \cdots f(x_n)^{k_n}$ is a reduced word. The same is true for $g(w)$. Hence, $f(w)=g(w)$ implies $f(x_i)=g(x_i)$ for every $i$, i.e. $x_i \in E$. Therefore, $w \in F(E)$.'
+    proof: 'More generally, if $f,g : X \rightrightarrows Y$ are two injective maps with equalizer $E \hookrightarrow X$, then $F(E) \to F(X)$ is the equalizer of $F(f),F(g) : F(X) \rightrightarrows F(Y)$. In fact, we already know that $F(E) \to F(X)$ is injective. Now let $w \in F(X)$ be an element, and write it as a reduced word $w = x_1^{k_1} \cdots x_n^{k_n}$, meaning $x_i \in X$, $x_i \neq x_{i+1}$, $k_i \in \IZ \setminus \{0\}$. Since $f$ is injective, also $f(w) = f(x_1)^{k_1} \cdots f(x_n)^{k_n}$ is a reduced word. The same is true for $g(w)$. Hence, $f(w)=g(w)$ implies $f(x_i)=g(x_i)$ for every $i$, i.e. $x_i \in E$. Therefore, $w \in F(E)$.'
 
 unsatisfied_properties:
   - property: full
-    reason: The homomorphism $F(\{x\}) \to F(\{x\})$, $x \mapsto x^k$ for $k \in \IZ$ provides a counterexample when $k \neq 1$.
+    proof: The homomorphism $F(\{x\}) \to F(\{x\})$, $x \mapsto x^k$ for $k \in \IZ$ provides a counterexample when $k \neq 1$.
 
   - property: essentially surjective
-    reason: Not every group is free (consider $\IZ/2$).
+    proof: Not every group is free (consider $\IZ/2$).
 
   - property: preserves terminal objects
-    reason: The free group of rank $1$ is not the trivial group.
+    proof: The free group of rank $1$ is not the trivial group.
 
   - property: preserves equalizers
-    reason: 'Let $f,g : \{a,b\} \rightrightarrows \{c,d\}$ be the two constant maps, $f \equiv c$, $g \equiv d$. Their equalizer is empty, and the free group on that equalizer is trivial. Now consider the induced group homomorphisms $F(f), F(g) : F(\{a,b\}) \rightrightarrows F(\{c,d\})$ and observe that $a \cdot b^{-1}$ lies in the kernel of both homomorphisms, hence in their equalizer.'
+    proof: 'Let $f,g : \{a,b\} \rightrightarrows \{c,d\}$ be the two constant maps, $f \equiv c$, $g \equiv d$. Their equalizer is empty, and the free group on that equalizer is trivial. Now consider the induced group homomorphisms $F(f), F(g) : F(\{a,b\}) \rightrightarrows F(\{c,d\})$ and observe that $a \cdot b^{-1}$ lies in the kernel of both homomorphisms, hence in their equalizer.'
 
   - property: cofinitary
-    reason: >-
+    proof: >-
       Consider the sets $X_n \coloneqq \{y,x_1,\dotsc,x_n\}$ for $n \geq 0$ with the canonical truncation maps $X_{n+1} \to X_n$, $x_i \mapsto x_i$, $x_{n+1} \mapsto y$, $y \mapsto y$. The limit $\lim_n X_n$ of this sequence is the set $L \coloneqq \{y,x_1,x_2,\dotsc\}$ with the canonical truncation maps $L \to X_n$.
       The canonical map $F(L) \to \lim_n F(X_n)$ is not surjective: For $n \geq 0$ define $w_n \in F(X_n)$ by
       $$w_n \coloneqq x_1 y^{-1} \cdots x_n y^{-1}.$$

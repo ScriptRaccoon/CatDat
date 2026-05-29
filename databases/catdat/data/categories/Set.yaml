@@ -20,23 +20,23 @@ related_categories:
 
 satisfied_properties:
   - property: locally small
-    reason: The collection of maps between two sets $X,Y$ is a subset of $X \times Y$ and therefore a set.
+    proof: The collection of maps between two sets $X,Y$ is a subset of $X \times Y$ and therefore a set.
 
   - property: finitary algebraic
-    reason: Use the empty algebraic theory.
+    proof: Use the empty algebraic theory.
 
   - property: Grothendieck topos
-    reason: It is equivalent to the category of sheaves on a one-point space.
+    proof: It is equivalent to the category of sheaves on a one-point space.
 
   - property: semi-strongly connected
-    reason: Every non-empty set is weakly terminal (by using constant maps).
+    proof: Every non-empty set is weakly terminal (by using constant maps).
 
 unsatisfied_properties:
   - property: skeletal
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: trivial
-    reason: This is trivial.
+    proof: This is trivial.
 
 special_objects:
   initial object:
@@ -51,16 +51,16 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: bijective maps
-    reason: This is easy.
+    proof: This is easy.
   monomorphisms:
     description: injective maps
-    reason: 'For the non-trivial direction, if $f : X \to Y$ is a monomorphism of sets and $a,b \in X$ satisfy $f(a) = f(b)$, then $f \circ a = f \circ b$ when we regard $a,b$ as morphisms $a,b : 1 \to X$. Hence, $a = b$. More generally, if $\C$ is a category that admits a faithful and representable functor $U : \C \to \Set$, then the monomorphisms in $\C$ are precisely the morphisms whose $U$-image is injective.'
+    proof: 'For the non-trivial direction, if $f : X \to Y$ is a monomorphism of sets and $a,b \in X$ satisfy $f(a) = f(b)$, then $f \circ a = f \circ b$ when we regard $a,b$ as morphisms $a,b : 1 \to X$. Hence, $a = b$. More generally, if $\C$ is a category that admits a faithful and representable functor $U : \C \to \Set$, then the monomorphisms in $\C$ are precisely the morphisms whose $U$-image is injective.'
   epimorphisms:
     description: surjective maps
-    reason: 'For the non-trivial direction, if $f : X \to Y$ is an epimorphism of sets, then in particular $f^* : \Hom(Y,2) \to \Hom(X,2)$ is injective, which identifies with $f^* : P(Y) \to P(X)$. Then for all $y \in Y$ we have $f^*(\{y\}) \neq f^*(\varnothing) = \varnothing$, so that $y$ has a preimage.'
+    proof: 'For the non-trivial direction, if $f : X \to Y$ is an epimorphism of sets, then in particular $f^* : \Hom(Y,2) \to \Hom(X,2)$ is injective, which identifies with $f^* : P(Y) \to P(X)$. Then for all $y \in Y$ we have $f^*(\{y\}) \neq f^*(\varnothing) = \varnothing$, so that $y$ has a preimage.'
   regular monomorphisms:
     description: same as monomorphisms
-    reason: This is because the category is mono-regular.
+    proof: This is because the category is mono-regular.
   regular epimorphisms:
     description: surjective homomorphisms
-    reason: This holds in every finitary algebraic category.
+    proof: This holds in every finitary algebraic category.

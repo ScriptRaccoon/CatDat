@@ -17,29 +17,29 @@ related_categories:
 
 satisfied_properties:
   - property: small
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: finite
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: thin
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: skeletal
-    reason: The three objects are not isomorphic.
+    proof: The three objects are not isomorphic.
 
   - property: initial object
-    reason: $0$ is an initial object.
+    proof: $0$ is an initial object.
 
   - property: binary products
-    reason: We have $0 \times x = 0$ for all $x$, $x \times x = x$, and $1 \times 2 = 0$.
+    proof: We have $0 \times x = 0$ for all $x$, $x \times x = x$, and $1 \times 2 = 0$.
 
   - property: locally cartesian closed
-    reason: The slice category over $0$ is the <a href="/category/1">trivial category</a>, and the slice category over $1$ is the <a href="/category/walking_morphism">walking morphism</a>, which is cartesian closed. The same holds for $2$ by symmetry.
+    proof: The slice category over $0$ is the <a href="/category/1">trivial category</a>, and the slice category over $1$ is the <a href="/category/walking_morphism">walking morphism</a>, which is cartesian closed. The same holds for $2$ by symmetry.
 
 unsatisfied_properties:
   - property: sifted
-    reason: There is no cospan between $1$ and $2$.
+    proof: There is no cospan between $1$ and $2$.
 
 special_objects:
   initial object:
@@ -50,16 +50,16 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: the three identities
-    reason: This is trivial.
+    proof: This is trivial.
   monomorphisms:
     description: every morphism
-    reason: It is a thin category.
+    proof: It is a thin category.
   epimorphisms:
     description: every morphism
-    reason: It is a thin category.
+    proof: It is a thin category.
   regular monomorphisms:
     description: same as isomorphisms
-    reason: This is because the category is right cancellative.
+    proof: This is because the category is right cancellative.
   regular epimorphisms:
     description: same as isomorphisms
-    reason: This is because the category is right cancellative.
+    proof: This is because the category is right cancellative.

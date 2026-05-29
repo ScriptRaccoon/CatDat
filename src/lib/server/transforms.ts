@@ -42,7 +42,7 @@ export function display_property_assignment(
 		return {
 			id: property.id,
 			label: property.id.replace(/^preserves/, 'preserve'),
-			reason: property.reason,
+			proof: property.proof,
 			is_deduced: Boolean(property.is_deduced),
 			relation: 'does not',
 		}
@@ -55,7 +55,7 @@ export function display_property_assignment(
 	return {
 		id: property.id,
 		label: property.id,
-		reason: property.reason,
+		proof: property.proof,
 		is_deduced: Boolean(property.is_deduced),
 		relation: property.relation,
 	}
@@ -67,7 +67,7 @@ export function display_implication(implication: ImplicationDB): ImplicationDisp
 		is_equivalence: Boolean(implication.is_equivalence),
 		is_deduced: Boolean(implication.is_deduced),
 		dualized_from: implication.dualized_from,
-		reason: implication.reason,
+		proof: implication.proof,
 		assumptions: JSON.parse(implication.assumptions),
 		source_assumptions: implication.source_assumptions
 			? JSON.parse(implication.source_assumptions)

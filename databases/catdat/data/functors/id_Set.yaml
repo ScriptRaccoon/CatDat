@@ -17,9 +17,9 @@ related_functors:
 
 satisfied_properties:
   - property: equivalence
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: representable
-    reason: This functor is represented by any singleton set.
+    proof: This functor is represented by any singleton set.
 
 unsatisfied_properties: []

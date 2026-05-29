@@ -20,41 +20,41 @@ comments:
 
 satisfied_properties:
   - property: locally small
-    reason: There is a forgetful functor $\Sch \to \LRS$ and $\LRS$ is locally small.
+    proof: There is a forgetful functor $\Sch \to \LRS$ and $\LRS$ is locally small.
 
   - property: terminal object
-    reason: The scheme $\Spec(\IZ)$ is terminal.
+    proof: The scheme $\Spec(\IZ)$ is terminal.
 
   - property: pullbacks
-    reason: This is the well-known construction of the fiber product of schemes, see e.g. EGA I, Chap. I, Thm. 3.2.1.
+    proof: This is the well-known construction of the fiber product of schemes, see e.g. EGA I, Chap. I, Thm. 3.2.1.
 
   - property: well-powered
-    reason: See <a href="https://mathoverflow.net/questions/160681" target="_blank">MO/160681</a>.
+    proof: See <a href="https://mathoverflow.net/questions/160681" target="_blank">MO/160681</a>.
 
   - property: infinitary extensive
-    reason: One uses the same proof as for locally ringed spaces, using that open subspaces of schemes are also schemes.
+    proof: One uses the same proof as for locally ringed spaces, using that open subspaces of schemes are also schemes.
 
 unsatisfied_properties:
   - property: skeletal
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: balanced
-    reason: The canonical morphism $\Spec(\IZ/2 \times \IZ[1/2]) \longrightarrow \Spec(\IZ)$ is a mono- and an epimorphism, but no isomorphism.
+    proof: The canonical morphism $\Spec(\IZ/2 \times \IZ[1/2]) \longrightarrow \Spec(\IZ)$ is a mono- and an epimorphism, but no isomorphism.
 
   - property: countable powers
-    reason: While all diagrams of affine schemes have a limit in the category of schemes, one can show that an infinite product of quasi-compact non-empty schemes only exists when almost all of them are affine, see <a href="https://mathoverflow.net/questions/65506" target="_blank">MO/65506</a>. Thus, for example the power $(\IP^1)^{\IN}$ does not exist in $\Sch$.
+    proof: While all diagrams of affine schemes have a limit in the category of schemes, one can show that an infinite product of quasi-compact non-empty schemes only exists when almost all of them are affine, see <a href="https://mathoverflow.net/questions/65506" target="_blank">MO/65506</a>. Thus, for example the power $(\IP^1)^{\IN}$ does not exist in $\Sch$.
 
   - property: Malcev
-    reason: Consider the subscheme $V(x-y) \cup V(y) \subseteq \IA^2$. It contains the diagonal but it is not symmetric.
+    proof: Consider the subscheme $V(x-y) \cup V(y) \subseteq \IA^2$. It contains the diagonal but it is not symmetric.
 
   - property: semi-strongly connected
-    reason: This is because already the full subcategory of affine schemes is not semi-strongly connected, because <a href="/category/CRing">$\CRing$</a> is not semi-strongly connected. Specifically, there is no morphism between $\Spec(\IF_2)$ and $\Spec(\IF_3)$.
+    proof: This is because already the full subcategory of affine schemes is not semi-strongly connected, because <a href="/category/CRing">$\CRing$</a> is not semi-strongly connected. Specifically, there is no morphism between $\Spec(\IF_2)$ and $\Spec(\IF_3)$.
 
   - property: generating set
-    reason: If $S$ is a generating set of schemes, then the set of affine open subsets of the schemes in $S$ would also be a generating set. This is then also a generating set in the category of affine schemes, corresponding to a cogenerating set in <a href="/category/CRing">$\CRing$</a>, which we know does not exist.
+    proof: If $S$ is a generating set of schemes, then the set of affine open subsets of the schemes in $S$ would also be a generating set. This is then also a generating set in the category of affine schemes, corresponding to a cogenerating set in <a href="/category/CRing">$\CRing$</a>, which we know does not exist.
 
   - property: quotients of congruences
-    reason: If $\Sch$ had quotients of congruences, then by <a href="/content/pushouts-of-monos-via-congruence-quotients">this lemma</a> it would also have pushouts of monomorphisms, contradicting the fact that the span $\IA^1 \leftarrow \Spec(k(t)) \rightarrow \IA^1$ has no pushout - see <a href="https://mathoverflow.net/questions/9961" target="_blank">MO/9961</a>.
+    proof: If $\Sch$ had quotients of congruences, then by <a href="/content/pushouts-of-monos-via-congruence-quotients">this lemma</a> it would also have pushouts of monomorphisms, contradicting the fact that the span $\IA^1 \leftarrow \Spec(k(t)) \rightarrow \IA^1$ has no pushout - see <a href="https://mathoverflow.net/questions/9961" target="_blank">MO/9961</a>.
 
 special_objects:
   initial object:
@@ -69,4 +69,4 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: pairs $(f,f^{\sharp})$ consisting of a homeomorphism $f$ and an isomorphism of sheaves $f^{\sharp}$
-    reason: This is easy.
+    proof: This is easy.

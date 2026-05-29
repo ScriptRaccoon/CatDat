@@ -15,23 +15,23 @@ related_categories:
 
 satisfied_properties:
   - property: locally small
-    reason: This is obvious.
+    proof: This is obvious.
 
   - property: Grothendieck topos
-    reason: It is equivalent to the category of sheaves on a discrete space with two points.
+    proof: It is equivalent to the category of sheaves on a discrete space with two points.
 
   - property: locally strongly finitely presentable
-    reason: Take the two-sorted algebraic theory with no operations and no equations.
+    proof: Take the two-sorted algebraic theory with no operations and no equations.
 
 unsatisfied_properties:
   - property: skeletal
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: semi-strongly connected
-    reason: When $X$ is non-empty, there is no morphism between $(\varnothing,X)$ and $(X,\varnothing)$.
+    proof: When $X$ is non-empty, there is no morphism between $(\varnothing,X)$ and $(X,\varnothing)$.
 
   - property: generator
-    reason: >-
+    proof: >-
       Assume that $(A,B)$ is a generator. Of course, $A$ and $B$ cannot be both empty. Assume w.l.o.g. that $A$ is non-empty. Then there is no morphism $(A,B) \to (0,1)$, but there are two different morphisms $(0,1) \rightrightarrows (0,2)$.
 
       Alternatively, the claim follows from <a href="/content/topos-with-generator">this result</a>.
@@ -49,16 +49,16 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: pairs of bijective maps
-    reason: This is easy.
+    proof: This is easy.
   monomorphisms:
     description: pairs of injective maps
-    reason: This follows from the fact for the category of sets.
+    proof: This follows from the fact for the category of sets.
   epimorphisms:
     description: pairs of surjective maps
-    reason: This follows from the fact for the category of sets.
+    proof: This follows from the fact for the category of sets.
   regular monomorphisms:
     description: same as monomorphisms
-    reason: This is because the category is mono-regular.
+    proof: This is because the category is mono-regular.
   regular epimorphisms:
     description: same as epimorphisms
-    reason: This is because the category is epi-regular.
+    proof: This is because the category is epi-regular.

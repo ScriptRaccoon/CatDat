@@ -14,71 +14,71 @@ related_categories:
 
 satisfied_properties:
   - property: locally small
-    reason: There is a forgetful functor $\Setne \to \Set$ and $\Set$ is locally small.
+    proof: There is a forgetful functor $\Setne \to \Set$ and $\Set$ is locally small.
 
   - property: generator
-    reason: The one-point set is clearly a generator.
+    proof: The one-point set is clearly a generator.
 
   - property: cogenerator
-    reason: The two-point set is a cogenerator, this follows as for <a href="/category/Set">$\Set$</a>.
+    proof: The two-point set is a cogenerator, this follows as for <a href="/category/Set">$\Set$</a>.
 
   - property: products
-    reason: Take the product of non-empty sets inside of <a href="/category/Set">$\Set$</a> and observe that it is non-empty by the axiom of choice.
+    proof: Take the product of non-empty sets inside of <a href="/category/Set">$\Set$</a> and observe that it is non-empty by the axiom of choice.
 
   - property: cartesian closed
-    reason: This follows as for <a href="/category/Set">$\Set$</a>, since for non-empty sets $X,Y$ there is at least one function $X \to Y$.
+    proof: This follows as for <a href="/category/Set">$\Set$</a>, since for non-empty sets $X,Y$ there is at least one function $X \to Y$.
 
   - property: binary coproducts
-    reason: The disjoint union of two non-empty sets is non-empty.
+    proof: The disjoint union of two non-empty sets is non-empty.
 
   - property: mono-regular
-    reason: This follows as for <a href="/category/Set">$\Set$</a>.
+    proof: This follows as for <a href="/category/Set">$\Set$</a>.
 
   - property: epi-regular
-    reason: This follows as for <a href="/category/Set">$\Set$</a>.
+    proof: This follows as for <a href="/category/Set">$\Set$</a>.
 
   - property: strongly connected
-    reason: Use constant maps.
+    proof: Use constant maps.
 
   - property: finitely accessible
-    reason: Since the inclusion $\Setne \hookrightarrow \Set$ is closed under non-empty colimits, it is also closed under filtered colimits. Therefore, non-empty finite sets are still finitely presentable in $\Setne$, and every non-empty set is written as a filtered colimit of them.
+    proof: Since the inclusion $\Setne \hookrightarrow \Set$ is closed under non-empty colimits, it is also closed under filtered colimits. Therefore, non-empty finite sets are still finitely presentable in $\Setne$, and every non-empty set is written as a filtered colimit of them.
 
   - property: generalized variety
-    reason: Since the inclusion $\Setne \hookrightarrow \Set$ is closed under non-empty colimits, it is also closed under sifted colimits. Therefore, non-empty finite sets are still strongly finitely presentable in $\Setne$, and every non-empty set is written as a sifted colimit of them.
+    proof: Since the inclusion $\Setne \hookrightarrow \Set$ is closed under non-empty colimits, it is also closed under sifted colimits. Therefore, non-empty finite sets are still strongly finitely presentable in $\Setne$, and every non-empty set is written as a sifted colimit of them.
 
   - property: natural numbers object
-    reason: Any natural numbers object in $\Set$, such as $(\IN,0,n \mapsto n+1)$, is clearly also one in $\Setne$.
+    proof: Any natural numbers object in $\Set$, such as $(\IN,0,n \mapsto n+1)$, is clearly also one in $\Setne$.
 
   - property: filtered-colimit-stable monomorphisms
-    reason: This follows from <a href="/content/filtered-monos">this lemma</a> applied to the forgetful functor to $\Set$.
+    proof: This follows from <a href="/content/filtered-monos">this lemma</a> applied to the forgetful functor to $\Set$.
 
   - property: multi-complete
-    reason: Let $D$ be a diagram in $\Setne$, and let $L$ be a limit of $D$ in $\Set$. If $L$ is non-empty, it gives a limit in $\Setne$ as well. If $L$ is the empty set, there is no cone over $D$ in $\Setne$; hence the empty set of cones gives a multi-limit of $D$ in $\Setne$.
+    proof: Let $D$ be a diagram in $\Setne$, and let $L$ be a limit of $D$ in $\Set$. If $L$ is non-empty, it gives a limit in $\Setne$ as well. If $L$ is the empty set, there is no cone over $D$ in $\Setne$; hence the empty set of cones gives a multi-limit of $D$ in $\Setne$.
 
   - property: effective congruences
-    reason: 'If a congruence $E \rightrightarrows X$ is the kernel pair of $h : X \to Z$, with both $E$ and $X$ non-empty, then certainly $Z$ must also be non-empty.'
+    proof: 'If a congruence $E \rightrightarrows X$ is the kernel pair of $h : X \to Z$, with both $E$ and $X$ non-empty, then certainly $Z$ must also be non-empty.'
 
 unsatisfied_properties:
   - property: skeletal
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: cofiltered
-    reason: The two maps $\{0\} \rightrightarrows \{0,1\}$ are equalized by no map $X \to \{0\}$ in this category.
+    proof: The two maps $\{0\} \rightrightarrows \{0,1\}$ are equalized by no map $X \to \{0\}$ in this category.
 
   - property: sequential limits
-    reason: Assume that the sequence of inclusions $\cdots \to \IN_{\geq 2} \to \IN_{\geq 1} \to \IN_{\geq 0} = \IN$ as a limit $X$, consisting of maps $X \to \IN_{\geq n}$. Since $X$ is non-empty, there is a map $1 \to X$. This corresponds to a family of compatible maps $ 1 \to \IN_{\geq n}$, i.e. to compatible elements in $\IN_{\geq n}$. But the set $\bigcap_{n \geq 0} \IN_{\geq n}$ is empty.
+    proof: Assume that the sequence of inclusions $\cdots \to \IN_{\geq 2} \to \IN_{\geq 1} \to \IN_{\geq 0} = \IN$ as a limit $X$, consisting of maps $X \to \IN_{\geq n}$. Since $X$ is non-empty, there is a map $1 \to X$. This corresponds to a family of compatible maps $ 1 \to \IN_{\geq n}$, i.e. to compatible elements in $\IN_{\geq n}$. But the set $\bigcap_{n \geq 0} \IN_{\geq n}$ is empty.
 
   - property: ℵ₁-cofiltered limits
-    reason: 'Since the forgetful functor $\Setne \to \Set$ is representable, it preserves limits. Thus it suffices to find an $\aleph_1$-cofiltered diagram of non-empty sets whose limit in $\Set$ is empty. Let $R$ be an uncountable set (such as $\IR$) and consider the poset $P$ of subsets $A \subseteq R$ whose complement $R \setminus A$ is countable; in particular, every such $A$ is non-empty. Then $P$ is $\aleph_1$-cofiltered, since a countable union of countable sets is countable. The limit of the diagram $P \to \Setne$, $A \mapsto A$, in $\Set$ is the intersection $\bigcap_{A \in P} A$ in $R$, which is empty, because for every $r \in R$ we have $r \notin R \setminus \{r\} \in P$.'
+    proof: 'Since the forgetful functor $\Setne \to \Set$ is representable, it preserves limits. Thus it suffices to find an $\aleph_1$-cofiltered diagram of non-empty sets whose limit in $\Set$ is empty. Let $R$ be an uncountable set (such as $\IR$) and consider the poset $P$ of subsets $A \subseteq R$ whose complement $R \setminus A$ is countable; in particular, every such $A$ is non-empty. Then $P$ is $\aleph_1$-cofiltered, since a countable union of countable sets is countable. The limit of the diagram $P \to \Setne$, $A \mapsto A$, in $\Set$ is the intersection $\bigcap_{A \in P} A$ in $R$, which is empty, because for every $r \in R$ we have $r \notin R \setminus \{r\} \in P$.'
 
   - property: coquotients of cocongruences
-    reason: The two maps $\{0\} \rightrightarrows \{0,1\}$ form a cocongruence on $\{0\}$ &mdash; namely the cofull cocongruence on $\{0\}$ &mdash; but they do not have an equalizer.
+    proof: The two maps $\{0\} \rightrightarrows \{0,1\}$ form a cocongruence on $\{0\}$ &mdash; namely the cofull cocongruence on $\{0\}$ &mdash; but they do not have an equalizer.
 
   - property: effective cocongruences
-    reason: The two maps $\{0\} \rightrightarrows \{0,1\}$ form a cocongruence on $\{0\}$ &mdash; namely the cofull cocongruence on $\{0\}$ &mdash; but there is no map $Z \to \{0\}$ making the required commutative diagram, much less a cocartesian square.
+    proof: The two maps $\{0\} \rightrightarrows \{0,1\}$ form a cocongruence on $\{0\}$ &mdash; namely the cofull cocongruence on $\{0\}$ &mdash; but there is no map $Z \to \{0\}$ making the required commutative diagram, much less a cocartesian square.
 
   - property: coaccessible
-    reason: If $\Setne$ is coaccessible, then by the dual of Cor. 2.44 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a> also the coslice category $\{\ast\} / \Setne$ would be coaccessible. But this category is isomorphic to <a href="/category/Set*">$\Set_*$</a>, from which we know that it is not coaccessible (namely, because of Thm. 1.64 in loc. cit.).
+    proof: If $\Setne$ is coaccessible, then by the dual of Cor. 2.44 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a> also the coslice category $\{\ast\} / \Setne$ would be coaccessible. But this category is isomorphic to <a href="/category/Set*">$\Set_*$</a>, from which we know that it is not coaccessible (namely, because of Thm. 1.64 in loc. cit.).
 
 special_objects:
   terminal object:
@@ -89,16 +89,16 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: bijective maps
-    reason: This follows exactly as for sets.
+    proof: This follows exactly as for sets.
   monomorphisms:
     description: injective maps
-    reason: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
+    proof: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
   epimorphisms:
     description: surjective maps
-    reason: 'For the non-trivial direction, let $f : X \to Y$ be an epimorphism of non-empty sets. Then the inclusion $f(X) \hookrightarrow Y$ is an epimorphism as well, but also a split monomorphism (we can just map everything in $Y \setminus f(X)$ to a fixed element of $f(X)$). As such, it must be an isomorphism.'
+    proof: 'For the non-trivial direction, let $f : X \to Y$ be an epimorphism of non-empty sets. Then the inclusion $f(X) \hookrightarrow Y$ is an epimorphism as well, but also a split monomorphism (we can just map everything in $Y \setminus f(X)$ to a fixed element of $f(X)$). As such, it must be an isomorphism.'
   regular monomorphisms:
     description: same as monomorphisms
-    reason: This is because the category is mono-regular.
+    proof: This is because the category is mono-regular.
   regular epimorphisms:
     description: same as epimorphisms
-    reason: This is because the category is epi-regular.
+    proof: This is because the category is epi-regular.

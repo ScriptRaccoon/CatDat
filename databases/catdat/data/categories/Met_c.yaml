@@ -17,63 +17,63 @@ related_categories:
 
 satisfied_properties:
   - property: locally small
-    reason: There is a forgetful functor $\Met_c \to \Set$ and $\Set$ is locally small.
+    proof: There is a forgetful functor $\Met_c \to \Set$ and $\Set$ is locally small.
 
   - property: semi-strongly connected
-    reason: Every non-empty metric space is weakly terminal (by using constant maps).
+    proof: Every non-empty metric space is weakly terminal (by using constant maps).
 
   - property: equalizers
-    reason: Just restrict the metric to the equalizer built from the sets.
+    proof: Just restrict the metric to the equalizer built from the sets.
 
   - property: countable products
-    reason: For finite products, we take the cartesian product with, say, the sup-metric. The product of countably many metric spaces $(X_i,d_i)_{i \geq 0}$ is given by the cartesian product $\prod_{i \geq 0} X_i$ with the metric $d(x,y) \coloneqq \sum_{i \geq 0} d_i(x_i,y_i)/(1 + d_i(x_i,y_i))$. See Engelking's book <i>General Topology</i>.
+    proof: For finite products, we take the cartesian product with, say, the sup-metric. The product of countably many metric spaces $(X_i,d_i)_{i \geq 0}$ is given by the cartesian product $\prod_{i \geq 0} X_i$ with the metric $d(x,y) \coloneqq \sum_{i \geq 0} d_i(x_i,y_i)/(1 + d_i(x_i,y_i))$. See Engelking's book <i>General Topology</i>.
 
   - property: coproducts
-    reason: See <a href="https://math.stackexchange.com/questions/5004389" target="_blank">MSE/5004389</a>.
+    proof: See <a href="https://math.stackexchange.com/questions/5004389" target="_blank">MSE/5004389</a>.
     check_redundancy: false
 
   - property: generator
-    reason: The one-point metric space is a generator since it represents the forgetful functor $\Met_c \to \Set$.
+    proof: The one-point metric space is a generator since it represents the forgetful functor $\Met_c \to \Set$.
 
   - property: cogenerator
-    reason: The same proof as for <a href="/category/Met">$\Met$</a> shows that $\IR$ with the usual metric is a cogenerator.
+    proof: The same proof as for <a href="/category/Met">$\Met$</a> shows that $\IR$ with the usual metric is a cogenerator.
 
   - property: well-powered
-    reason: This follows easily from the fact that monomorphisms are injective in this category.
+    proof: This follows easily from the fact that monomorphisms are injective in this category.
 
   - property: well-copowered
-    reason: 'If $f : X \to Y$ is an epimorphism, then $f(X)$ is dense in $Y$ (see below). Hence, there is an injective map $Y \to X^{\IN}$, which bounds the size of $Y$.'
+    proof: 'If $f : X \to Y$ is an epimorphism, then $f(X)$ is dense in $Y$ (see below). Hence, there is an injective map $Y \to X^{\IN}$, which bounds the size of $Y$.'
 
   - property: infinitary extensive
-    reason: This follows from the existence of coproducts and finite products, and from the fact that <a href="/category/Top">$\Top$</a> is infinitary extensive.
+    proof: This follows from the existence of coproducts and finite products, and from the fact that <a href="/category/Top">$\Top$</a> is infinitary extensive.
 
   - property: effective cocongruences
-    reason: 'Suppose we have a cocongruence $f, g : X \rightrightarrows E$ in $\Met_c$. Then the image in $\Haus$ is a coreflexive corelation (since epimorphisms in both categories are continuous maps with dense image). By <a href="https://mathoverflow.net/a/509582/2841" target="_blank">MO/509548</a>, that implies that image is of the form $X +_S X$ for a closed subset $S$ of $X$. Since $S$ is metrizable, and the functor $\Met_c \to \Haus$ is fully faithful <a href="https://ncatlab.org/nlab/show/reflected+limit#FullSubcategoryInclusionReflectCoLimits" target="_blank">and therefore reflects colimits</a>, we conclude that $E$ is effective in $\Met_c$.'
+    proof: 'Suppose we have a cocongruence $f, g : X \rightrightarrows E$ in $\Met_c$. Then the image in $\Haus$ is a coreflexive corelation (since epimorphisms in both categories are continuous maps with dense image). By <a href="https://mathoverflow.net/a/509582/2841" target="_blank">MO/509548</a>, that implies that image is of the form $X +_S X$ for a closed subset $S$ of $X$. Since $S$ is metrizable, and the functor $\Met_c \to \Haus$ is fully faithful <a href="https://ncatlab.org/nlab/show/reflected+limit#FullSubcategoryInclusionReflectCoLimits" target="_blank">and therefore reflects colimits</a>, we conclude that $E$ is effective in $\Met_c$.'
 
 unsatisfied_properties:
   - property: skeletal
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: balanced
-    reason: The inclusion $\IQ \hookrightarrow \IR$ provides a counterexample.
+    proof: The inclusion $\IQ \hookrightarrow \IR$ provides a counterexample.
 
   - property: ℵ₂-small powers
-    reason: See <a href="https://math.stackexchange.com/questions/139168" target="_blank">MSE/139168</a> for a proof that uncountable powers do not exist.
+    proof: See <a href="https://math.stackexchange.com/questions/139168" target="_blank">MSE/139168</a> for a proof that uncountable powers do not exist.
 
   - property: Malcev
-    reason: 'Consider the metric subspace $\{(a,b) \in \IR^2 : a \leq b\}$ of $\IR^2$.'
+    proof: 'Consider the metric subspace $\{(a,b) \in \IR^2 : a \leq b\}$ of $\IR^2$.'
 
   - property: regular subobject classifier
-    reason: 'We recycle the proof from <a href="/category/Haus">$\Haus$</a>: Assume that there is a regular subobject classifier $\Omega$. By the classification of regular monomorphisms, we would have an isomorphism between $\Hom(X,\Omega)$ and the set of closed subsets of $X$ for any metric space $X$. If we take $X = 1$ we see that $\Omega$ has two points. Since $\Omega$ is Hausdorff, $\Omega \cong 1 + 1$ must be discrete. But then $\Hom(X,\Omega)$ is isomorphic to the set of all clopen subsets of $X$, of which there are usually far fewer than closed subsets (consider $X = [0,1]$).'
+    proof: 'We recycle the proof from <a href="/category/Haus">$\Haus$</a>: Assume that there is a regular subobject classifier $\Omega$. By the classification of regular monomorphisms, we would have an isomorphism between $\Hom(X,\Omega)$ and the set of closed subsets of $X$ for any metric space $X$. If we take $X = 1$ we see that $\Omega$ has two points. Since $\Omega$ is Hausdorff, $\Omega \cong 1 + 1$ must be discrete. But then $\Hom(X,\Omega)$ is isomorphic to the set of all clopen subsets of $X$, of which there are usually far fewer than closed subsets (consider $X = [0,1]$).'
 
   - property: sequential colimits
-    reason: See <a href="https://mathoverflow.net/questions/510316" target="_blank">MO/510316</a> for a proof that the diagram $\IN \to \Met_c$, $n \mapsto \IR^n$ does not have a colimit.
+    proof: See <a href="https://mathoverflow.net/questions/510316" target="_blank">MO/510316</a> for a proof that the diagram $\IN \to \Met_c$, $n \mapsto \IR^n$ does not have a colimit.
 
   - property: ℵ₁-filtered colimits
-    reason: See <a href="https://mathoverflow.net/questions/511433" target="_blank">MO/511433</a> for a proof that the diagram $\omega_1 \to \Met_c$, $\alpha \mapsto \IR^\alpha$ does not have a colimit.
+    proof: See <a href="https://mathoverflow.net/questions/511433" target="_blank">MO/511433</a> for a proof that the diagram $\omega_1 \to \Met_c$, $\alpha \mapsto \IR^\alpha$ does not have a colimit.
 
   - property: quotients of congruences
-    reason: If $\Met_c$ had quotients of congruences, then by <a href="/content/monic-sequential-colimits-via-congruence-quotients">this lemma</a> it would have sequential colimits of sequences of monomorphisms. This contradicts <a href="https://mathoverflow.net/questions/510316" target="_blank">MO/510316</a>.
+    proof: If $\Met_c$ had quotients of congruences, then by <a href="/content/monic-sequential-colimits-via-congruence-quotients">this lemma</a> it would have sequential colimits of sequences of monomorphisms. This contradicts <a href="https://mathoverflow.net/questions/510316" target="_blank">MO/510316</a>.
 
 special_objects:
   initial object:
@@ -88,13 +88,13 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: homeomorphisms
-    reason: This works as for topological spaces.
+    proof: This works as for topological spaces.
   monomorphisms:
     description: injective continuous maps
-    reason: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
+    proof: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
   epimorphisms:
     description: continuous maps with dense image
-    reason: See <a href="https://math.stackexchange.com/questions/937387" target="_blank">MSE/937387</a>.
+    proof: See <a href="https://math.stackexchange.com/questions/937387" target="_blank">MSE/937387</a>.
   regular monomorphisms:
     description: embeddings of closed subspaces
-    reason: A reference is Example 7.58 (3) in <a href="https://ncatlab.org/nlab/show/Abstract+and+Concrete+Categories" target="_blank">Joy of Cats</a>, but a proof is missing there.
+    proof: A reference is Example 7.58 (3) in <a href="https://ncatlab.org/nlab/show/Abstract+and+Concrete+Categories" target="_blank">Joy of Cats</a>, but a proof is missing there.

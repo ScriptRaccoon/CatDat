@@ -17,20 +17,20 @@ related_categories:
 
 satisfied_properties:
   - property: locally small
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: finitary algebraic
-    reason: 'The structure of a Jónsson-Tarski algebra on a set $X$ is equivalent to one binary operation $\mu : X^2 \to X$ and two unary operations $\lambda, \rho : X \rightrightarrows X$ such that $\mu(\lambda(x),\rho(x)) = x$, $\lambda(\mu(x,y))=x$, and $\rho(\mu(x,y))=y$.'
+    proof: 'The structure of a Jónsson-Tarski algebra on a set $X$ is equivalent to one binary operation $\mu : X^2 \to X$ and two unary operations $\lambda, \rho : X \rightrightarrows X$ such that $\mu(\lambda(x),\rho(x)) = x$, $\lambda(\mu(x,y))=x$, and $\rho(\mu(x,y))=y$.'
 
   - property: Grothendieck topos
-    reason: See the <a href="https://ncatlab.org/nlab/show/J%C3%B3nsson-Tarski+topos" target="_blank">nLab</a>.
+    proof: See the <a href="https://ncatlab.org/nlab/show/J%C3%B3nsson-Tarski+topos" target="_blank">nLab</a>.
 
 unsatisfied_properties:
   - property: skeletal
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: semi-strongly connected
-    reason: >-
+    proof: >-
       There is a bijection $\alpha = (\lambda,\rho) : \IN \to \IN \times \IN$ such that $\lambda$ has a fixed point, but $\rho$ does not (see below). Then the isomorphism $\beta \coloneqq (\rho,\lambda)$ has the opposite property. There cannot be any morphism $(\IN,\alpha) \to (\IN,\beta)$, as it would map the fixed point of $\lambda$ to a fixed point of $\rho$, and likewise there is no morphism $(\IN,\beta) \to (\IN,\alpha)$.
 
       To construct $\alpha$ or rather $\alpha^{-1} : \IN \times \IN \to \IN$, we can alter the standard bijection $(n,m) \mapsto 2^n (2m+1) - 1$ as follows:
@@ -52,16 +52,16 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: bijective morphisms
-    reason: This characterization holds in every algebraic category.
+    proof: This characterization holds in every algebraic category.
   monomorphisms:
     description: injective morphisms
-    reason: 'This holds in every finitary algebraic category: the forgetful functor to $\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
+    proof: 'This holds in every finitary algebraic category: the forgetful functor to $\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
   epimorphisms:
     description: surjective morphisms
-    reason: 'For the non-trivial direction: The category is epi-regular (since it is an elementary topos), and every regular epimorphism is surjective (this holds in any algebraic category).'
+    proof: 'For the non-trivial direction: The category is epi-regular (since it is an elementary topos), and every regular epimorphism is surjective (this holds in any algebraic category).'
   regular monomorphisms:
     description: same as monomorphisms
-    reason: This is because the category is mono-regular.
+    proof: This is because the category is mono-regular.
   regular epimorphisms:
     description: same as epimorphisms
-    reason: This is because the category is epi-regular.
+    proof: This is because the category is epi-regular.

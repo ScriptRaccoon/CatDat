@@ -15,36 +15,36 @@ related_categories:
 
 satisfied_properties:
   - property: discrete
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: finite
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: small
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: inhabited
-    reason: This is trivial.
+    proof: This is trivial.
 
 unsatisfied_properties:
   - property: connected
-    reason: The objects $0$, $1$ have no zig-zag path between them.
+    proof: The objects $0$, $1$ have no zig-zag path between them.
 
 special_objects: {}
 
 special_morphisms:
   isomorphisms:
     description: every morphism
-    reason: This is trivial.
+    proof: This is trivial.
   monomorphisms:
     description: every morphism
-    reason: This is trivial.
+    proof: This is trivial.
   epimorphisms:
     description: every morphism
-    reason: This is clear since it is discrete.
+    proof: This is clear since it is discrete.
   regular monomorphisms:
     description: same as monomorphisms
-    reason: This is because the category is mono-regular.
+    proof: This is because the category is mono-regular.
   regular epimorphisms:
     description: same as epimorphisms
-    reason: This is because the category is epi-regular.
+    proof: This is because the category is epi-regular.

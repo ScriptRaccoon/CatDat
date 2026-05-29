@@ -24,7 +24,7 @@ export const load = async (event) => {
 				FROM category_property_assignments cp
 				WHERE
 					cp.category_id = c.id
-					AND cp.reason LIKE '%/content/' || ${id} || '%'
+					AND cp.proof LIKE '%/content/' || ${id} || '%'
 			)
 		`,
 		sql`
@@ -33,7 +33,7 @@ export const load = async (event) => {
 		`,
 		sql`
 			SELECT id FROM category_implications
-			WHERE reason LIKE '%/content/' || ${id} || '%'
+			WHERE proof LIKE '%/content/' || ${id} || '%'
 		`,
 	])
 

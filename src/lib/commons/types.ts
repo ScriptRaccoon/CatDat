@@ -53,7 +53,7 @@ export type GroupedPropertyShort = Pick<
 
 export type PropertyAssignmentDB = {
 	id: string
-	reason: string
+	proof: string
 	relation: string
 	is_deduced: 0 | 1
 	is_satisfied: 0 | 1 | null
@@ -62,7 +62,7 @@ export type PropertyAssignmentDB = {
 export type PropertyAssignmentDisplay = {
 	id: string
 	label: string
-	reason: string
+	proof: string
 	relation: string
 	is_deduced: boolean
 }
@@ -75,7 +75,7 @@ export type SpecialObject = {
 export type SpecialMorphism = {
 	type: string
 	description: string | null
-	reason: string
+	proof: string
 }
 
 export type FunctorDisplay = {
@@ -97,7 +97,7 @@ export type ImplicationDB = {
 	is_equivalence: 0 | 1
 	is_deduced: 0 | 1
 	dualized_from: string | null
-	reason: string
+	proof: string
 	assumptions: string
 	conclusions: string
 	source_assumptions?: string // for functors

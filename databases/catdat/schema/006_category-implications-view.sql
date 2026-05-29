@@ -2,7 +2,7 @@ CREATE VIEW category_implications_view AS
 SELECT
     i.id,
     i.is_equivalence,
-    i.reason,
+    i.proof,
     i.is_deduced,
     i.dualized_from,
     (
@@ -28,11 +28,11 @@ CREATE TRIGGER trg_category_implications_view_insert
 INSTEAD OF INSERT ON category_implications_view
 BEGIN
     INSERT INTO category_implications
-        (id, is_equivalence, reason, is_deduced, dualized_from)
+        (id, is_equivalence, proof, is_deduced, dualized_from)
     VALUES (
         NEW.id,
         COALESCE(NEW.is_equivalence, FALSE),
-        NEW.reason,
+        NEW.proof,
         COALESCE(NEW.is_deduced, FALSE),
         NEW.dualized_from
     );

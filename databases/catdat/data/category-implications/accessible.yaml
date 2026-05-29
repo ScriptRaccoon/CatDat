@@ -7,7 +7,7 @@
   conclusions:
     - cocomplete
     - finitely accessible
-  reason: This follows from one of equivalent formulations of locally finitely presentable categories.
+  proof: This follows from one of equivalent formulations of locally finitely presentable categories.
   is_equivalence: true
 
 - id: locally_presentable_definition_countable
@@ -16,7 +16,7 @@
   conclusions:
     - cocomplete
     - ℵ₁-accessible
-  reason: This follows from one of equivalent formulations of locally ℵ₁-presentable categories.
+  proof: This follows from one of equivalent formulations of locally ℵ₁-presentable categories.
   is_equivalence: true
 
 - id: locally_presentable_definition
@@ -25,7 +25,7 @@
   conclusions:
     - accessible
     - cocomplete
-  reason: This follows from one of equivalent formulations of locally presentable categories.
+  proof: This follows from one of equivalent formulations of locally presentable categories.
   is_equivalence: true
 
 - id: locally_finitely_presentable_consequence
@@ -33,7 +33,7 @@
     - locally finitely presentable
   conclusions:
     - exact filtered colimits
-  reason: Special case of <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>, Prop. 1.59 with $\lambda = \aleph_0$.
+  proof: Special case of <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>, Prop. 1.59 with $\lambda = \aleph_0$.
   is_equivalence: false
 
 - id: locally_finitely_presentable_raise
@@ -41,7 +41,7 @@
     - locally finitely presentable
   conclusions:
     - locally ℵ₁-presentable
-  reason: This is trivial.
+  proof: This is trivial.
   is_equivalence: false
 
 - id: locally_countably_presentable_raise
@@ -49,7 +49,7 @@
     - locally ℵ₁-presentable
   conclusions:
     - locally presentable
-  reason: This is trivial.
+  proof: This is trivial.
   is_equivalence: false
 
 - id: accessible_trivial_consequence
@@ -57,7 +57,7 @@
     - accessible
   conclusions:
     - generating set
-  reason: For a $\kappa$-accessible category, the set $G$ appearing in the definition gives a small dense full subcategory, which is in particular a generating set.
+  proof: For a $\kappa$-accessible category, the set $G$ appearing in the definition gives a small dense full subcategory, which is in particular a generating set.
   is_equivalence: false
 
 - id: accessible_well-powered
@@ -65,7 +65,7 @@
     - accessible
   conclusions:
     - well-powered
-  reason: See <a href="https://ncatlab.org/nlab/show/accessible+category#wellpoweredness_and_wellcopoweredness" target="_blank">nLab</a>.
+  proof: See <a href="https://ncatlab.org/nlab/show/accessible+category#wellpoweredness_and_wellcopoweredness" target="_blank">nLab</a>.
   is_equivalence: false
 
 - id: accessible_locally_small
@@ -73,7 +73,7 @@
     - accessible
   conclusions:
     - locally essentially small
-  reason: See the proof of Prop. 2.1.5 in <a href="https://bookstore.ams.org/conm-104" target="_blank">Makkai-Pare</a>.
+  proof: See the proof of Prop. 2.1.5 in <a href="https://bookstore.ams.org/conm-104" target="_blank">Makkai-Pare</a>.
   is_equivalence: false
 
 - id: accessible_well-copowered
@@ -82,7 +82,7 @@
     - pushouts
   conclusions:
     - well-copowered
-  reason: See Thm. 2.49 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a> or Prop. 6.1.3 in <a href="https://bookstore.ams.org/conm-104" target="_blank">Makkai-Pare</a>.
+  proof: See Thm. 2.49 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a> or Prop. 6.1.3 in <a href="https://bookstore.ams.org/conm-104" target="_blank">Makkai-Pare</a>.
   is_equivalence: false
 
 - id: finite_accessible
@@ -91,7 +91,7 @@
     - essentially finite
   conclusions:
     - finitely accessible
-  reason: See <a href="https://mathoverflow.net/questions/509853" target="_blank">MO/509853</a>, where it is in fact shown that the ind-completion of any finite Cauchy-complete category becomes itself.
+  proof: See <a href="https://mathoverflow.net/questions/509853" target="_blank">MO/509853</a>, where it is in fact shown that the ind-completion of any finite Cauchy-complete category becomes itself.
   is_equivalence: false
 
 - id: locally_presentable_essentially_small
@@ -100,7 +100,7 @@
     - locally presentable
   conclusions:
     - essentially small
-  reason: This follows from <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>, Thm. 1.64.
+  proof: This follows from <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>, Thm. 1.64.
   is_equivalence: false
 
 - id: grothendieck_abelian_presentable
@@ -108,7 +108,7 @@
     - Grothendieck abelian
   conclusions:
     - locally presentable
-  reason: See <a href="https://arxiv.org/abs/1409.7051" target="_blank">Deriving Auslander's formula</a>, Cor. 5.2, or <a href="https://arxiv.org/abs/math/0102087" target="_blank">Sheafifiable homotopy model categories</a>, Prop. 3.10.
+  proof: See <a href="https://arxiv.org/abs/1409.7051" target="_blank">Deriving Auslander's formula</a>, Cor. 5.2, or <a href="https://arxiv.org/abs/math/0102087" target="_blank">Sheafifiable homotopy model categories</a>, Prop. 3.10.
   is_equivalence: false
 
 - id: locally_strongly_finitely_presentable_raise
@@ -116,7 +116,7 @@
     - locally strongly finitely presentable
   conclusions:
     - locally finitely presentable
-  reason: See <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>, Cor. 3.7.
+  proof: See <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>, Cor. 3.7.
   is_equivalence: false
 
 - id: finitely_accessible_raise
@@ -124,7 +124,7 @@
     - finitely accessible
   conclusions:
     - ℵ₁-accessible
-  reason: This is because any regular cardinal is strictly smaller than its successor cardinal. See <a href="https://ncatlab.org/nlab/show/sharply+smaller+cardinal" target="_blank">nLab</a>.
+  proof: This is because any regular cardinal is strictly smaller than its successor cardinal. See <a href="https://ncatlab.org/nlab/show/sharply+smaller+cardinal" target="_blank">nLab</a>.
   is_equivalence: false
 
 - id: countably_accessible_special_case
@@ -133,7 +133,7 @@
   conclusions:
     - accessible
     - ℵ₁-filtered colimits
-  reason: This is trivial.
+  proof: This is trivial.
   is_equivalence: false
 
 - id: accessible_require_filtered_colimit
@@ -141,7 +141,7 @@
     - finitely accessible
   conclusions:
     - filtered colimits
-  reason: This holds by definition.
+  proof: This holds by definition.
   is_equivalence: false
 
 - id: accessible_require_Cauchy_complete
@@ -149,7 +149,7 @@
     - accessible
   conclusions:
     - Cauchy complete
-  reason: This is because the walking idempotent is $\kappa$-filtered for any regular cardinal $\kappa$. See also <a href="https://bookstore.ams.org/conm-104" target="_blank">Makkai-Pare</a>, Prop. 2.2.1.
+  proof: This is because the walking idempotent is $\kappa$-filtered for any regular cardinal $\kappa$. See also <a href="https://bookstore.ams.org/conm-104" target="_blank">Makkai-Pare</a>, Prop. 2.2.1.
   is_equivalence: false
 
 - id: small_accessible_characterization
@@ -158,7 +158,7 @@
     - essentially small
   conclusions:
     - accessible
-  reason: See <a href="https://bookstore.ams.org/conm-104" target="_blank">Makkai-Pare</a>, Thm. 2.2.2.
+  proof: See <a href="https://bookstore.ams.org/conm-104" target="_blank">Makkai-Pare</a>, Thm. 2.2.2.
   is_equivalence: false
 
 - id: countably_accessible_criterion
@@ -168,7 +168,7 @@
     - Cauchy complete
   conclusions:
     - ℵ₁-accessible
-  reason: >-
+  proof: >-
     The proof is similar to Thm. 2.2.2 in <a href="https://bookstore.ams.org/conm-104" target="_blank">Makkai-Pare</a> (which only establishes $\aleph_2$-accessibility) and to <a href="https://mathoverflow.net/questions/509853" target="_blank">MO/509853</a> (which concerns $\aleph_0$-accessibility in the finite case).
 
 
@@ -222,7 +222,7 @@
     - complete
   conclusions:
     - locally presentable
-  reason: This follows from one of equivalent formulations of locally presentable categories.
+  proof: This follows from one of equivalent formulations of locally presentable categories.
   is_equivalence: true
 
 - id: locally_strongly_finitely_presentable_definition
@@ -231,7 +231,7 @@
   conclusions:
     - cocomplete
     - generalized variety
-  reason: This is trivial.
+  proof: This is trivial.
   is_equivalence: true
 
 - id: locally_multi-presentable_definition
@@ -240,7 +240,7 @@
   conclusions:
     - accessible
     - connected limits
-  reason: This follows from one of equivalent formulations of locally multi-presentable categories.
+  proof: This follows from one of equivalent formulations of locally multi-presentable categories.
   is_equivalence: true
 
 - id: locally_multi-presentable_another_definition
@@ -249,7 +249,7 @@
   conclusions:
     - accessible
     - multi-cocomplete
-  reason: This follows from one of equivalent formulations of locally multi-presentable categories.
+  proof: This follows from one of equivalent formulations of locally multi-presentable categories.
   is_equivalence: true
 
 - id: locally_finitely_multi-presentable_definition
@@ -258,7 +258,7 @@
   conclusions:
     - connected limits
     - finitely accessible
-  reason: This follows from one of equivalent formulations of locally finitely multi-presentable categories.
+  proof: This follows from one of equivalent formulations of locally finitely multi-presentable categories.
   is_equivalence: true
 
 - id: locally_finitely_multi-presentable_another_definition
@@ -267,7 +267,7 @@
   conclusions:
     - finitely accessible
     - multi-cocomplete
-  reason: This follows from one of equivalent formulations of locally finitely multi-presentable categories.
+  proof: This follows from one of equivalent formulations of locally finitely multi-presentable categories.
   is_equivalence: true
 
 - id: locally_poly-presentable_definition
@@ -276,7 +276,7 @@
   conclusions:
     - accessible
     - wide pullbacks
-  reason: This holds by definition.
+  proof: This holds by definition.
   is_equivalence: true
 
 - id: locally-finitely-multi-presentable_stable-monos
@@ -284,5 +284,5 @@
     - locally finitely multi-presentable
   conclusions:
     - filtered-colimit-stable monomorphisms
-  reason: Every locally finitely multi-presentable category is a multi-reflective full subcategory of a presheaf category closed under filtered colimits (<a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>, 4.30). Since multi-reflective full subcategories are in general closed under connected limits (<a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>, Thm. 4.26), in particular, we can calculate not only filtered colimits but also kernel pairs as well as in a presheaf category.
+  proof: Every locally finitely multi-presentable category is a multi-reflective full subcategory of a presheaf category closed under filtered colimits (<a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>, 4.30). Since multi-reflective full subcategories are in general closed under connected limits (<a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>, Thm. 4.26), in particular, we can calculate not only filtered colimits but also kernel pairs as well as in a presheaf category.
   is_equivalence: false

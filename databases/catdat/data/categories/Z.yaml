@@ -16,63 +16,63 @@ related_categories:
 
 satisfied_properties:
   - property: complete
-    reason: This follows immediately from the fact for <a href="/category/Set">$\Set$</a>.
+    proof: This follows immediately from the fact for <a href="/category/Set">$\Set$</a>.
 
   - property: cocomplete
-    reason: This follows immediately from the fact for <a href="/category/Set">$\Set$</a>.
+    proof: This follows immediately from the fact for <a href="/category/Set">$\Set$</a>.
     check_redundancy: false
 
   - property: infinitary extensive
-    reason: This follows immediately from the fact for <a href="/category/Set">$\Set$</a>.
+    proof: This follows immediately from the fact for <a href="/category/Set">$\Set$</a>.
 
   - property: exact filtered colimits
-    reason: This follows immediately from the fact for <a href="/category/Set">$\Set$</a>.
+    proof: This follows immediately from the fact for <a href="/category/Set">$\Set$</a>.
 
   - property: mono-regular
-    reason: This follows immediately from the fact for <a href="/category/Set">$\Set$</a>.
+    proof: This follows immediately from the fact for <a href="/category/Set">$\Set$</a>.
     check_redundancy: false
 
   - property: epi-regular
-    reason: This follows immediately from the fact for <a href="/category/Set">$\Set$</a>.
+    proof: This follows immediately from the fact for <a href="/category/Set">$\Set$</a>.
 
   - property: regular
-    reason: This follows immediately from the fact for <a href="/category/Set">$\Set$</a>.
+    proof: This follows immediately from the fact for <a href="/category/Set">$\Set$</a>.
 
   - property: coregular
-    reason: This follows immediately from the fact for <a href="/category/Set">$\Set$</a>.
+    proof: This follows immediately from the fact for <a href="/category/Set">$\Set$</a>.
 
   - property: co-Malcev
-    reason: This follows immediately from the fact for <a href="/category/Set">$\Set$</a>.
+    proof: This follows immediately from the fact for <a href="/category/Set">$\Set$</a>.
     check_redundancy: false
 
   - property: effective congruences
-    reason: 'If we have a congruence $E \rightrightarrows X$ in $[\CRing, \Set]$, then evaluating at any commutative ring gives a congruence in $\Set$. Defining $Y$ pointwise to be the quotient of this congruence, we get a morphism of functors $h : X \to Y$, and by <a href="/content/effective-congruence-quotients">this result</a> applied pointwise, the kernel pair of $h$ is $E$.'
+    proof: 'If we have a congruence $E \rightrightarrows X$ in $[\CRing, \Set]$, then evaluating at any commutative ring gives a congruence in $\Set$. Defining $Y$ pointwise to be the quotient of this congruence, we get a morphism of functors $h : X \to Y$, and by <a href="/content/effective-congruence-quotients">this result</a> applied pointwise, the kernel pair of $h$ is $E$.'
 
   - property: effective cocongruences
-    reason: 'If we have a cocongruence $X\rightrightarrows E$ in $[\CRing, \Set]$, then evaluating at any commutative gives a cocongruence in $\Set$. Defining $Y$ pointwise to be the equalizer of the pair, we get a morphism of functors $h : Y \to X$, and by the dual of <a href="/content/effective-congruence-quotients">this result</a> applied pointwise, the cokernel pair of $h$ is $E$.'
+    proof: 'If we have a cocongruence $X\rightrightarrows E$ in $[\CRing, \Set]$, then evaluating at any commutative gives a cocongruence in $\Set$. Defining $Y$ pointwise to be the equalizer of the pair, we get a morphism of functors $h : Y \to X$, and by the dual of <a href="/content/effective-congruence-quotients">this result</a> applied pointwise, the cokernel pair of $h$ is $E$.'
     check_redundancy: false
 
 unsatisfied_properties:
   - property: skeletal
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: Malcev
-    reason: Any counterexample for <a href="/category/Set">$\Set$</a> (i.e., any non-symmetric reflexive relation) yields one for this category by taking constant functors.
+    proof: Any counterexample for <a href="/category/Set">$\Set$</a> (i.e., any non-symmetric reflexive relation) yields one for this category by taking constant functors.
 
   - property: semi-strongly connected
-    reason: This is because already the full subcategory of representable functors is not semi-strongly connected, because <a href="/category/CRing">$\CRing$</a> is not semi-strongly connected. Specifically, there is no morphism between $\Hom(\IF_2,-)$ and $\Hom(\IF_3,-)$.
+    proof: This is because already the full subcategory of representable functors is not semi-strongly connected, because <a href="/category/CRing">$\CRing$</a> is not semi-strongly connected. Specifically, there is no morphism between $\Hom(\IF_2,-)$ and $\Hom(\IF_3,-)$.
 
   - property: locally essentially small
-    reason: See <a href="https://mathoverflow.net/questions/390611" target="_blank">MO/390611</a> for example.
+    proof: See <a href="https://mathoverflow.net/questions/390611" target="_blank">MO/390611</a> for example.
 
   - property: cartesian closed
-    reason: 'There are functors $F,G : \CRing \rightrightarrows \Set$ such that $\Hom(F,G)$ is not essentially small, see <a href="https://mathoverflow.net/questions/390611" target="_blank">MO/390611</a> for example. Now if the exponential $[F,G] : \CRing \to \Set$ exists, we get $[F,G](\IZ) \cong \Hom(\Hom(\IZ,-),[F,G])$ by Yoneda, which simplifies to $\Hom(1,[F,G]) \cong \Hom(1 \times F,G) \cong \Hom(F,G)$, a contradiction.'
+    proof: 'There are functors $F,G : \CRing \rightrightarrows \Set$ such that $\Hom(F,G)$ is not essentially small, see <a href="https://mathoverflow.net/questions/390611" target="_blank">MO/390611</a> for example. Now if the exponential $[F,G] : \CRing \to \Set$ exists, we get $[F,G](\IZ) \cong \Hom(\Hom(\IZ,-),[F,G])$ by Yoneda, which simplifies to $\Hom(1,[F,G]) \cong \Hom(1 \times F,G) \cong \Hom(F,G)$, a contradiction.'
 
   - property: well-powered
-    reason: 'Consider the functor $F$ from <a href="https://mathoverflow.net/questions/390611" target="_blank">MO/390611</a> for example. The collection of subobjects of $F$ is not isomorphic to a set: for each infinite cardinal $\kappa$, simply cut off the construction of $F$ at $\kappa$. This yields a different subobject for each $\kappa$.'
+    proof: 'Consider the functor $F$ from <a href="https://mathoverflow.net/questions/390611" target="_blank">MO/390611</a> for example. The collection of subobjects of $F$ is not isomorphic to a set: for each infinite cardinal $\kappa$, simply cut off the construction of $F$ at $\kappa$. This yields a different subobject for each $\kappa$.'
 
   - property: cofiltered-limit-stable epimorphisms
-    reason: We already know that <a href="/category/Set">$\Set$</a> does not have this property. Now apply the contrapositive of the dual of <a href="/content/filtered-monos">this lemma</a> to the functor $\Set \to [\CRing, \Set]$ that maps a set to its constant functor.
+    proof: We already know that <a href="/category/Set">$\Set$</a> does not have this property. Now apply the contrapositive of the dual of <a href="/content/filtered-monos">this lemma</a> to the functor $\Set \to [\CRing, \Set]$ that maps a set to its constant functor.
 
 special_objects:
   initial object:
@@ -87,16 +87,16 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: natural isomorphisms
-    reason: This is true for all functor categories.
+    proof: This is true for all functor categories.
   monomorphisms:
     description: pointwise injective natural transformations
-    reason: 'If $a : F \to G$ is a monomorphism of Z-functors, then the diagonal morphism $F \to F \times_G F$ is an isomorphism, so that for every $R$ the diagonal morphism $F(R) \to F(R) \times_{G(R)} F(R)$ is an isomorphism, i.e., $a(R) : F(R) \to G(R)$ is a monomorphism. This argument works for every functor category where the target has fiber products.'
+    proof: 'If $a : F \to G$ is a monomorphism of Z-functors, then the diagonal morphism $F \to F \times_G F$ is an isomorphism, so that for every $R$ the diagonal morphism $F(R) \to F(R) \times_{G(R)} F(R)$ is an isomorphism, i.e., $a(R) : F(R) \to G(R)$ is a monomorphism. This argument works for every functor category where the target has fiber products.'
   epimorphisms:
     description: objectwise surjective natural transformations
-    reason: This holds in every functor category $[\C,\Set]$, here applied to the case that $\C$ has just one object.
+    proof: This holds in every functor category $[\C,\Set]$, here applied to the case that $\C$ has just one object.
   regular monomorphisms:
     description: same as monomorphisms
-    reason: This is because the category is mono-regular.
+    proof: This is because the category is mono-regular.
   regular epimorphisms:
     description: same as epimorphisms
-    reason: This is because the category is epi-regular.
+    proof: This is because the category is epi-regular.

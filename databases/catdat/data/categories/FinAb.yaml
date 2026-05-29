@@ -17,35 +17,35 @@ related_categories:
 
 satisfied_properties:
   - property: locally small
-    reason: There is a forgetful functor $\FinAb \to \Set$ and $\Set$ is locally small.
+    proof: There is a forgetful functor $\FinAb \to \Set$ and $\Set$ is locally small.
 
   - property: locally finite
-    reason: There is a faithful functor $\FinAb \to \FinSet$ and <a href="/category/FinSet">$\FinSet$</a> is locally finite.
+    proof: There is a faithful functor $\FinAb \to \FinSet$ and <a href="/category/FinSet">$\FinSet$</a> is locally finite.
 
   - property: essentially countable
-    reason: The underlying set of a finite structure can be chosen to be a subset of $\IN$.
+    proof: The underlying set of a finite structure can be chosen to be a subset of $\IN$.
 
   - property: abelian
-    reason: This follows from the fact for <a href="/category/Ab">$\Ab$</a>.
+    proof: This follows from the fact for <a href="/category/Ab">$\Ab$</a>.
 
   - property: self-dual
-    reason: 'This is a simple special case of Pontryagin duality: The functor $\Hom(-,\IQ/\IZ)$ provides the equivalence.'
+    proof: 'This is a simple special case of Pontryagin duality: The functor $\Hom(-,\IQ/\IZ)$ provides the equivalence.'
 
 unsatisfied_properties:
   - property: small
-    reason: Even the collection of trivial groups is not small.
+    proof: Even the collection of trivial groups is not small.
 
   - property: skeletal
-    reason: There are many trivial and hence isomorphic groups which are not equal.
+    proof: There are many trivial and hence isomorphic groups which are not equal.
 
   - property: countable
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: split abelian
-    reason: The sequence $0 \to \IZ/2 \to \IZ/4 \to \IZ/2 \to 0$ does not split.
+    proof: The sequence $0 \to \IZ/2 \to \IZ/4 \to \IZ/2 \to 0$ does not split.
 
   - property: generator
-    reason: If $A,B$ are finite abelian groups whose orders are coprime, then we know that $\Hom(A,B)$ is trivial. But a generator would admit a non-trivial homomorphism to any other non-trivial finite abelian group.
+    proof: If $A,B$ are finite abelian groups whose orders are coprime, then we know that $\Hom(A,B)$ is trivial. But a generator would admit a non-trivial homomorphism to any other non-trivial finite abelian group.
 
 special_objects:
   initial object:
@@ -60,16 +60,16 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: bijective homomorphisms
-    reason: This follows exactly as for abelian groups.
+    proof: This follows exactly as for abelian groups.
   monomorphisms:
     description: injective homomorphisms
-    reason: 'Let $f : A \to B$ be a monomorphism of finite abelian groups. Let $a \in A$ be in the kernel of $a$, say of order $n$. Then we may view $a$ as a morphism $a : \IZ/n \to A$ with $f \circ a = 0$, and $\IZ/n$ is finite. Hence, $a = 0$.'
+    proof: 'Let $f : A \to B$ be a monomorphism of finite abelian groups. Let $a \in A$ be in the kernel of $a$, say of order $n$. Then we may view $a$ as a morphism $a : \IZ/n \to A$ with $f \circ a = 0$, and $\IZ/n$ is finite. Hence, $a = 0$.'
   epimorphisms:
     description: surjective homomorphisms
-    reason: Use the same proof as for abelian groups.
+    proof: Use the same proof as for abelian groups.
   regular monomorphisms:
     description: same as monomorphisms
-    reason: This is because the category is mono-regular.
+    proof: This is because the category is mono-regular.
   regular epimorphisms:
     description: same as epimorphisms
-    reason: This is because the category is epi-regular.
+    proof: This is because the category is epi-regular.

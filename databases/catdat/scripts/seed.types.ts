@@ -37,7 +37,7 @@ export type CategoryYaml = {
 
 type PropertyEntry = {
 	property: string
-	reason: string
+	proof: string
 	check_redundancy?: boolean
 }
 
@@ -47,7 +47,7 @@ type ObjectEntry = {
 
 type MorphismEntry = {
 	description: string
-	reason: string
+	proof: string
 }
 
 export type CategoryPropertyYaml = {
@@ -64,7 +64,7 @@ export type CategoryImplicationYaml = {
 	id: string
 	assumptions: string[]
 	conclusions: string[]
-	reason: string
+	proof: string
 	is_equivalence: boolean
 }
 
@@ -74,7 +74,7 @@ export type FunctorImplicationYaml = {
 	source_assumptions: string[]
 	target_assumptions: string[]
 	conclusions: string[]
-	reason: string
+	proof: string
 	is_equivalence: boolean
 }
 

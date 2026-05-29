@@ -15,22 +15,22 @@ related_functors:
 
 satisfied_properties:
   - property: essentially surjective
-    reason: We have $X \cong X + 0$.
+    proof: We have $X \cong X + 0$.
 
   - property: preserves equalizers
-    reason: This can be checked with a straight forward calculation.
+    proof: This can be checked with a straight forward calculation.
 
   - property: conservative
-    reason: This is easy to check.
+    proof: This is easy to check.
 
   - property: left adjoint
-    reason: >-
+    proof: >-
       The coproduct functor is left adjoint to the diagonal functor since
       $$\Hom(A + B,X) \cong \Hom(A,X) \times \Hom(B,X) \cong \Hom((A,B),(X,X)).$$
 
   - property: cofinitary
-    reason: We already know that <a href="/category/Set">$\Set$</a> has cocartesian cofiltered limits; this is a consequence of <a href="/category-implication/extensive_cocartesian_cofiltered_limits">this result</a>.
+    proof: We already know that <a href="/category/Set">$\Set$</a> has cocartesian cofiltered limits; this is a consequence of <a href="/category-implication/extensive_cocartesian_cofiltered_limits">this result</a>.
 
 unsatisfied_properties:
   - property: preserves terminal objects
-    reason: This is obvious.
+    proof: This is obvious.

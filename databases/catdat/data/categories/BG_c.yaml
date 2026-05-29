@@ -17,42 +17,42 @@ related_categories:
 
 satisfied_properties:
   - property: small
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: groupoid
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: connected
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: skeletal
-    reason: There is just one object.
+    proof: There is just one object.
 
   - property: generator
-    reason: The unique object is a generator for trivial reasons.
+    proof: The unique object is a generator for trivial reasons.
 
   - property: countable
-    reason: This is because $G$ is countable.
+    proof: This is because $G$ is countable.
 
 unsatisfied_properties:
   - property: locally finite
-    reason: This is because we choose $G$ to be infinite.
+    proof: This is because we choose $G$ to be infinite.
 
 special_objects: {}
 
 special_morphisms:
   isomorphisms:
     description: every morphism
-    reason: It is a groupoid.
+    proof: It is a groupoid.
   monomorphisms:
     description: every morphism
-    reason: This is trivial.
+    proof: This is trivial.
   epimorphisms:
     description: every morphism
-    reason: This holds because it is a groupoid.
+    proof: This holds because it is a groupoid.
   regular monomorphisms:
     description: same as monomorphisms
-    reason: This is because the category is mono-regular.
+    proof: This is because the category is mono-regular.
   regular epimorphisms:
     description: same as isomorphisms
-    reason: This is because the category is left cancellative.
+    proof: This is because the category is left cancellative.

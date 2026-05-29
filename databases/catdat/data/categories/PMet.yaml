@@ -14,90 +14,90 @@ related_categories:
 
 satisfied_properties:
   - property: locally small
-    reason: There is a forgetful functor $\PMet \to \Set$ and $\Set$ is locally small.
+    proof: There is a forgetful functor $\PMet \to \Set$ and $\Set$ is locally small.
 
   - property: generator
-    reason: The one-point (pseudo-)metric space is a generator since it represents the forgetful functor $\PMet \to \Set$.
+    proof: The one-point (pseudo-)metric space is a generator since it represents the forgetful functor $\PMet \to \Set$.
 
   - property: cogenerator
-    reason: The set $\{0,1\}$ equipped with the pseudo-metric $d(0,1)=0$ is a cogenerator since every map into is automatically non-expansive and since $\{0,1\}$ is a cogenerator in $\Set$.
+    proof: The set $\{0,1\}$ equipped with the pseudo-metric $d(0,1)=0$ is a cogenerator since every map into is automatically non-expansive and since $\{0,1\}$ is a cogenerator in $\Set$.
 
   - property: strict initial object
-    reason: The empty (pseudo-)metric space is initial and clearly strict.
+    proof: The empty (pseudo-)metric space is initial and clearly strict.
 
   - property: semi-strongly connected
-    reason: Every non-empty pseudo-metric space is weakly terminal (by using constant maps).
+    proof: Every non-empty pseudo-metric space is weakly terminal (by using constant maps).
 
   - property: well-powered
-    reason: This follows since monomorphisms are injective (see below).
+    proof: This follows since monomorphisms are injective (see below).
 
   - property: well-copowered
-    reason: This follows since epimorphisms are surjective (see below).
+    proof: This follows since epimorphisms are surjective (see below).
 
   - property: equalizers
-    reason: Just restrict the pseudo-metric to the equalizer built from the sets.
+    proof: Just restrict the pseudo-metric to the equalizer built from the sets.
     check_redundancy: false
 
   - property: binary products
-    reason: The product of two pseudo-metric spaces $(X,d)$, $(Y,d)$ is $(X \times Y,d)$ with $d((x_1,y_1),(x_2,x_2)) \coloneqq \sup(d(x_1,x_2),d(y_1,y_2))$.
+    proof: The product of two pseudo-metric spaces $(X,d)$, $(Y,d)$ is $(X \times Y,d)$ with $d((x_1,y_1),(x_2,x_2)) \coloneqq \sup(d(x_1,x_2),d(y_1,y_2))$.
     check_redundancy: false
 
   - property: terminal object
-    reason: The one-point (pseudo-)metric space is terminal.
+    proof: The one-point (pseudo-)metric space is terminal.
     check_redundancy: false
 
   - property: coequalizers
-    reason: See <a href="https://mathoverflow.net/questions/123739" target="_blank">MO/123739</a>.
+    proof: See <a href="https://mathoverflow.net/questions/123739" target="_blank">MO/123739</a>.
 
   - property: filtered colimits
-    reason: 'Given a filtered diagram $(X_i)$ of pseudo-metric spaces, take the filtered colimit $X$ of the underlying sets with the following pseudo-metric: If $x,y \in X$, let $d(x,y)$ be infimum of all $d(x_i,y_i)$, where $x_i,y_i \in X_i$ are some preimages of $x,y$ in some $X_i$. The definition ensures that each $X_i \to X$ is non-expansive, and the universal property is easy to check.'
+    proof: 'Given a filtered diagram $(X_i)$ of pseudo-metric spaces, take the filtered colimit $X$ of the underlying sets with the following pseudo-metric: If $x,y \in X$, let $d(x,y)$ be infimum of all $d(x_i,y_i)$, where $x_i,y_i \in X_i$ are some preimages of $x,y$ in some $X_i$. The definition ensures that each $X_i \to X$ is non-expansive, and the universal property is easy to check.'
     check_redundancy: false
 
   - property: exact filtered colimits
-    reason: 'We already saw that finite limits and filtered colimits exist. Now let $\I$ be a finite category and $\J$ be a small filtered category, w.l.o.g. a directed poset. Let $X : \I \times \J \to \PMet$ be a diagram. We need to show that the canonical map $\colim_{j \in \J} \lim_{i \in \I} X(i,j) \to \lim_{i \in \I} \colim_{j \in \J}  X(i,j)$ is an isomorphism. It is bijective since the forgetful functor to $\Set$ preserves finite limits and filtered colimits and since <a href="/category/Set">$\Set$</a> has exact filtered colimits. That the map is isometric can easily be reduced to the following lemma: If $d_{i,j} \in \IR_{\geq 0}$ are numbers for $i \in \I$, $j \in \J$ with $j \leq k \implies d_{i,k} \leq d_{i,j}$, then $\inf_j \sup_i d_{i,j} = \sup_i \inf_j d_{i,j}$. This can be proven directly. Alternatively, use that the thin category $(\IR_{\geq 0} \cup \{\infty\},\leq)$ is isomorphic to $([0,1],\leq)$, and we already know that <a href="/category/real_interval">it has exact filtered colimits</a>.'
+    proof: 'We already saw that finite limits and filtered colimits exist. Now let $\I$ be a finite category and $\J$ be a small filtered category, w.l.o.g. a directed poset. Let $X : \I \times \J \to \PMet$ be a diagram. We need to show that the canonical map $\colim_{j \in \J} \lim_{i \in \I} X(i,j) \to \lim_{i \in \I} \colim_{j \in \J}  X(i,j)$ is an isomorphism. It is bijective since the forgetful functor to $\Set$ preserves finite limits and filtered colimits and since <a href="/category/Set">$\Set$</a> has exact filtered colimits. That the map is isometric can easily be reduced to the following lemma: If $d_{i,j} \in \IR_{\geq 0}$ are numbers for $i \in \I$, $j \in \J$ with $j \leq k \implies d_{i,k} \leq d_{i,j}$, then $\inf_j \sup_i d_{i,j} = \sup_i \inf_j d_{i,j}$. This can be proven directly. Alternatively, use that the thin category $(\IR_{\geq 0} \cup \{\infty\},\leq)$ is isomorphic to $([0,1],\leq)$, and we already know that <a href="/category/real_interval">it has exact filtered colimits</a>.'
 
   - property: ℵ₁-cofiltered limits
-    reason: The proof is identical to the one for <a href="/category/Met">$\Met$</a>.
+    proof: The proof is identical to the one for <a href="/category/Met">$\Met$</a>.
 
 unsatisfied_properties:
   - property: skeletal
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: essentially small
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: locally finite
-    reason: This is obvious.
+    proof: This is obvious.
 
   - property: strict terminal object
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: balanced
-    reason: 'Let $d : \IR \times \IR \to \IR_{\geq 0}$ be the usual Euclidean metric on $\IR$ and $0 : \IR \times \IR \to \IR_{\geq 0}$ be the zero pseudo-metric. Then the identity map $(\IR,d) \to (\IR,0)$ provides a counterexample.'
+    proof: 'Let $d : \IR \times \IR \to \IR_{\geq 0}$ be the usual Euclidean metric on $\IR$ and $0 : \IR \times \IR \to \IR_{\geq 0}$ be the zero pseudo-metric. Then the identity map $(\IR,d) \to (\IR,0)$ provides a counterexample.'
 
   - property: Malcev
-    reason: Take any counterexample in <a href="/category/Set">$\Set$</a> and equip it with the zero pseudo-metric.
+    proof: Take any counterexample in <a href="/category/Set">$\Set$</a> and equip it with the zero pseudo-metric.
 
   - property: cartesian closed
-    reason: This is proven in <a href="https://math.stackexchange.com/questions/5131457" target="_blank">MSE/5131457</a>.
+    proof: This is proven in <a href="https://math.stackexchange.com/questions/5131457" target="_blank">MSE/5131457</a>.
 
   - property: countable powers
-    reason: 'Assume that the power $P = \IR^{\IN}$ exists, where $\IR$ has the usual (pseudo-)metric. Since the forgetful functor $\PMet \to \Set$ is representable, it preserves limits, powers in particular. Thus, we may assume that $P$ is the set of sequences of numbers and that the projections $p_n : P \to \IR$ are given by $p_n(x) = x_n$. Now consider the sequences $x = (n)_n$ and $y = (0)_n$. Since each $p_n$ is non-expansive, we get $d(x,y) \geq d(p_n(x),p_n(y)) = d(n,0) = n$. But then $d(x,y) = \infty$, a contradiction.'
+    proof: 'Assume that the power $P = \IR^{\IN}$ exists, where $\IR$ has the usual (pseudo-)metric. Since the forgetful functor $\PMet \to \Set$ is representable, it preserves limits, powers in particular. Thus, we may assume that $P$ is the set of sequences of numbers and that the projections $p_n : P \to \IR$ are given by $p_n(x) = x_n$. Now consider the sequences $x = (n)_n$ and $y = (0)_n$. Since each $p_n$ is non-expansive, we get $d(x,y) \geq d(p_n(x),p_n(y)) = d(n,0) = n$. But then $d(x,y) = \infty$, a contradiction.'
 
   - property: binary copowers
-    reason: The coproduct of two non-empty pseudo-metric spaces does not exist, see <a href="https://math.stackexchange.com/questions/1778408" target="_blank">MSE/1778408</a> (the proof also works for pseudo-metric spaces). For example, the copower $\IR \sqcup \IR$ does not exist. We only get coproducts when allowing $\infty$ as a distance.
+    proof: The coproduct of two non-empty pseudo-metric spaces does not exist, see <a href="https://math.stackexchange.com/questions/1778408" target="_blank">MSE/1778408</a> (the proof also works for pseudo-metric spaces). For example, the copower $\IR \sqcup \IR$ does not exist. We only get coproducts when allowing $\infty$ as a distance.
 
   - property: natural numbers object
-    reason: >-
+    proof: >-
       If $(N,z,s)$ is a natural numbers object in $\PMet$, then
       $$1 \xrightarrow{z} N \xleftarrow{s} N$$
       is a coproduct cocone by <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, Part A, Lemma 2.5.5. Since there is a map $1 \to N$, we have $N \neq \varnothing$. However, the coproduct of two non-empty pseudo-metric spaces does not exist, see <a href="https://math.stackexchange.com/questions/1778408" target="_blank">MSE/1778408</a>.
 
   - property: effective cocongruences
-    reason: 'The proof is similar to the one for <a href="/category/Top">$\Top$</a>: Equip a two-point set with the zero metric; this pseudo-metric space represents the functor taking a pseudo-metric space to the pairs of points with $d(x,y) = 0$. In this case, once you conclude $Z = \varnothing$, the map $h : Z \to 1$ does not have any cokernel pair, since that would have to be a coproduct $1+1$, which does not exist.'
+    proof: 'The proof is similar to the one for <a href="/category/Top">$\Top$</a>: Equip a two-point set with the zero metric; this pseudo-metric space represents the functor taking a pseudo-metric space to the pairs of points with $d(x,y) = 0$. In this case, once you conclude $Z = \varnothing$, the map $h : Z \to 1$ does not have any cokernel pair, since that would have to be a coproduct $1+1$, which does not exist.'
 
   - property: regular
-    reason: 'We can adapt Example 3.14 at the <a href="https://ncatlab.org/nlab/show/regular+category" target="_blank">nLab</a> (which disproves regularity for $\Pos$ and related categories) as follows: Consider the subspaces $X = \{0,1,2,3\}$ and $Y = \{0,1,2\}$ of $\IR$ with the usual metric. Define a surjective map $p : X \to Y$ by $p(0)=0$, $p(1)=p(2)=1$, and $p(3)=2$. Clearly, $p$ is non-expansive. Moreover, one can check that $p$ satisfies the universal property in $\PMet$ of a coequalizer of the two maps $1,2 : \{\ast\} \rightrightarrows X$. Thus, $p$ is a regular epimorphism. Now consider the subspace $Z = \{0,2\}$ of $Y$. As a set, the pullback $X \times_Y Z$ is $p^*(Z) = \{0,3\}$. Using the definition of the product metric, one can verify that $d(0,3) = 3$ in this pullback. The projection $X \times_Y Z \to Z$ identifies with the evident bijective and non-expansive map $\{0,3\} \to \{0,2\}$. It is a monomorphism and not an isomorphism (the distances do not match), hence cannot be a regular epimorphism.'
+    proof: 'We can adapt Example 3.14 at the <a href="https://ncatlab.org/nlab/show/regular+category" target="_blank">nLab</a> (which disproves regularity for $\Pos$ and related categories) as follows: Consider the subspaces $X = \{0,1,2,3\}$ and $Y = \{0,1,2\}$ of $\IR$ with the usual metric. Define a surjective map $p : X \to Y$ by $p(0)=0$, $p(1)=p(2)=1$, and $p(3)=2$. Clearly, $p$ is non-expansive. Moreover, one can check that $p$ satisfies the universal property in $\PMet$ of a coequalizer of the two maps $1,2 : \{\ast\} \rightrightarrows X$. Thus, $p$ is a regular epimorphism. Now consider the subspace $Z = \{0,2\}$ of $Y$. As a set, the pullback $X \times_Y Z$ is $p^*(Z) = \{0,3\}$. Using the definition of the product metric, one can verify that $d(0,3) = 3$ in this pullback. The projection $X \times_Y Z \to Z$ identifies with the evident bijective and non-expansive map $\{0,3\} \to \{0,2\}$. It is a monomorphism and not an isomorphism (the distances do not match), hence cannot be a regular epimorphism.'
 
 special_objects:
   initial object:
@@ -110,13 +110,13 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: bijective isometries
-    reason: This is easy.
+    proof: This is easy.
   monomorphisms:
     description: injective non-expansive maps
-    reason: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
+    proof: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
   epimorphisms:
     description: surjective non-expansive maps
-    reason: 'Let $f : X \to Y$ be a non-expansive map that is not surjective. Choose $y_0 \in Y \setminus f(X)$. We extend the pseudo-metric from $Y$ to $Z \coloneqq Y \sqcup \{y''_0\}$ via $d(y,y''_0) \coloneqq d(y,y_0)$, i.e., we make $y_0,y''_0$ indistinguishable. Let $g : Y \to Z$ be the inclusion and $h : Y \to Z$ be the map that composes $g$ with the swap between $y_0$ and $y''_0$. Both are isometric and satisfy $g \circ f = h \circ f$. Therefore, $f$ is not an epimorphism.'
+    proof: 'Let $f : X \to Y$ be a non-expansive map that is not surjective. Choose $y_0 \in Y \setminus f(X)$. We extend the pseudo-metric from $Y$ to $Z \coloneqq Y \sqcup \{y''_0\}$ via $d(y,y''_0) \coloneqq d(y,y_0)$, i.e., we make $y_0,y''_0$ indistinguishable. Let $g : Y \to Z$ be the inclusion and $h : Y \to Z$ be the map that composes $g$ with the swap between $y_0$ and $y''_0$. Both are isometric and satisfy $g \circ f = h \circ f$. Therefore, $f$ is not an epimorphism.'
   regular epimorphisms:
     description: 'surjective non-expansive maps $f : X \to Y$ with the property that for all $x,x'' \in X$, $d(p(x),p(x''))$ is the infimum of the sums $\sum_{i=0}^{n-1} d(y_i,x_{i+1})$, where $x=x_0$, $x_i \sim y_i$ for $0 \leq i \leq n$, and $y_n = x''$.'
-    reason: This follows from the construction of the quotient pseudo-metric on $X/{\sim}$ in <a href="https://mathoverflow.net/questions/123739" target="_blank">MO/123739</a>.
+    proof: This follows from the construction of the quotient pseudo-metric on $X/{\sim}$ in <a href="https://mathoverflow.net/questions/123739" target="_blank">MO/123739</a>.

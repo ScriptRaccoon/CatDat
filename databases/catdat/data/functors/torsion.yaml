@@ -15,17 +15,17 @@ related_functors:
 
 satisfied_properties:
   - property: preserves coproducts
-    reason: This is easy to check using the description of coproducts as direct sums.
+    proof: This is easy to check using the description of coproducts as direct sums.
 
   - property: preserves finite products
     # TODO: automate this with an implication
-    reason: Finite products coincide with finite direct sums.
+    proof: Finite products coincide with finite direct sums.
 
   - property: preserves equalizers
-    reason: 'Let $E \subseteq A$ be the equalizer of two homomorphisms $f,g : A \rightrightarrows B$. If $a \in T(A)$ is equalized by $T(f),T(g) : T(A) \rightrightarrows T(B)$, then $a \in A$ is equalized by $f,g$, so that $a \in E$. It follows $a \in T(A) \cap E = T(E)$.'
+    proof: 'Let $E \subseteq A$ be the equalizer of two homomorphisms $f,g : A \rightrightarrows B$. If $a \in T(A)$ is equalized by $T(f),T(g) : T(A) \rightrightarrows T(B)$, then $a \in A$ is equalized by $f,g$, so that $a \in E$. It follows $a \in T(A) \cap E = T(E)$.'
 
   - property: finitary
-    reason: >-
+    proof: >-
       Let $(A_i)$ be a filtered diagram of abelian groups. We need to show that the canonical map
       $$\colim_i T(A_i) \to T(\colim_i A_i)$$
       is an isomorphism.
@@ -36,19 +36,19 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: faithful
-    reason: 'We have $T(\IZ) = 0$, but $\IZ \not\cong 0$. Thus, faithfulness is failing for $0, \id_{\IZ} : \IZ \rightrightarrows \IZ$.'
+    proof: 'We have $T(\IZ) = 0$, but $\IZ \not\cong 0$. Thus, faithfulness is failing for $0, \id_{\IZ} : \IZ \rightrightarrows \IZ$.'
 
   - property: full
-    reason: 'Let $p$ be a prime. The canonical map from $\Hom(\IZ/p^2,\IZ/p)$ to $\Hom(T(\IZ/p^2),T(\IZ/p)) = \Hom(p \IZ/p^2, \IZ/p)$ is not surjective: The homomorphism $[p] \mapsto [1]$ is not contained in its image.'
+    proof: 'Let $p$ be a prime. The canonical map from $\Hom(\IZ/p^2,\IZ/p)$ to $\Hom(T(\IZ/p^2),T(\IZ/p)) = \Hom(p \IZ/p^2, \IZ/p)$ is not surjective: The homomorphism $[p] \mapsto [1]$ is not contained in its image.'
 
   - property: essentially surjective
-    reason: The essential image consists precisely of the abelian torsion groups. For example, $\IZ$ is not contained in it.
+    proof: The essential image consists precisely of the abelian torsion groups. For example, $\IZ$ is not contained in it.
 
   - property: preserves epimorphisms
-    reason: Let $p$ be a prime. The surjective homomorphism $\IZ \to \IZ/p$ is mapped to the homomorphism $0 \to \IZ/p$, which is not surjective.
+    proof: Let $p$ be a prime. The surjective homomorphism $\IZ \to \IZ/p$ is mapped to the homomorphism $0 \to \IZ/p$, which is not surjective.
 
   - property: preserves products
-    reason: >-
+    proof: >-
       The canonical homomorphism
       $$\textstyle T(\prod_{n \geq 1} \IZ/n) \to \prod_{n \geq 1} T(\IZ/n) = \prod_{n \geq 1} \IZ/n$$
       is not surjective since $([1],[1],\dotsc)$ is not contained in the image.

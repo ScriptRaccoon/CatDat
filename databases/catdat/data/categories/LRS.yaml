@@ -14,38 +14,38 @@ related_categories:
 
 satisfied_properties:
   - property: locally small
-    reason: For two ringed spaces $(X,O_X), (Y,O_Y)$, the collection of morphisms $X \to Y$ of ringed spaces is the collection $\prod_{f \in \Hom(X,Y)} \Hom(O_Y,f_* O_X)$, which is a set since $\Hom(X,Y)$ is a set and each $\Hom(O_Y,f_* O_X)$ is a set.
+    proof: For two ringed spaces $(X,O_X), (Y,O_Y)$, the collection of morphisms $X \to Y$ of ringed spaces is the collection $\prod_{f \in \Hom(X,Y)} \Hom(O_Y,f_* O_X)$, which is a set since $\Hom(X,Y)$ is a set and each $\Hom(O_Y,f_* O_X)$ is a set.
 
   - property: complete
-    reason: See <a href="https://arxiv.org/abs/1103.2139" target="_blank">Localization of ringed spaces</a> by W. Gillam. See also <a href="https://math.stackexchange.com/questions/1033675" target="_blank">MSE/1033675</a>.
+    proof: See <a href="https://arxiv.org/abs/1103.2139" target="_blank">Localization of ringed spaces</a> by W. Gillam. See also <a href="https://math.stackexchange.com/questions/1033675" target="_blank">MSE/1033675</a>.
 
   - property: cocomplete
-    reason: See Demazure-Gabriel's "Groupes algébriques", I. §1. 1.6. Specifically, the forgetful functor to ringed spaces preserves colimits, and colimits of ringed spaces are built from colimits of topological spaces and limits of commutative rings, see <a href="https://math.stackexchange.com/questions/1646202" target="_blank">MSE/1646202</a>.
+    proof: See Demazure-Gabriel's "Groupes algébriques", I. §1. 1.6. Specifically, the forgetful functor to ringed spaces preserves colimits, and colimits of ringed spaces are built from colimits of topological spaces and limits of commutative rings, see <a href="https://math.stackexchange.com/questions/1646202" target="_blank">MSE/1646202</a>.
 
   - property: well-powered
-    reason: 'Let $f : X \to Y$ be a monomorphism of locally ringed spaces. I claim that $f$ is injective, from which the claim will follow. The diagonal $\Delta : X \to X \times_Y X$ is an isomorphism. By the explicit construction of fiber products, $X \times_Y X$ consists of triples $(x_1,x_2,\p)$ where $x_1,x_2 \in X$, $y \coloneqq f(x_1) = f(x_2)$ and $\p$ is a prime ideal in $k(x_1) \otimes_{k(y)} k(x_2)$. The map $\Delta$ is given by $\Delta(x) = \bigl(x,x,\ker(k(x) \otimes_{k(f(x))} k(x) \to k(x)\bigr)$, and it is bijective. This clearly implies that $f$ is injective (and that each tensor product $k(x) \otimes_{k(f(x))} k(x)$ has a unique prime ideal, namely the kernel mentioned).'
+    proof: 'Let $f : X \to Y$ be a monomorphism of locally ringed spaces. I claim that $f$ is injective, from which the claim will follow. The diagonal $\Delta : X \to X \times_Y X$ is an isomorphism. By the explicit construction of fiber products, $X \times_Y X$ consists of triples $(x_1,x_2,\p)$ where $x_1,x_2 \in X$, $y \coloneqq f(x_1) = f(x_2)$ and $\p$ is a prime ideal in $k(x_1) \otimes_{k(y)} k(x_2)$. The map $\Delta$ is given by $\Delta(x) = \bigl(x,x,\ker(k(x) \otimes_{k(f(x))} k(x) \to k(x)\bigr)$, and it is bijective. This clearly implies that $f$ is injective (and that each tensor product $k(x) \otimes_{k(f(x))} k(x)$ has a unique prime ideal, namely the kernel mentioned).'
 
   - property: well-copowered
-    reason: It is enough to prove that every epimorphism of locally ringed spaces is surjective. The forgetful functor $\LRS \to \RS$ has a right adjoint (see <a href="https://arxiv.org/abs/1103.2139" target="_blank">Localization of ringed spaces</a> by W. Gillam), so it preserves epimorphisms. The forgetful functor $\RS \to \Top$ also has a right adjoint, namely $X \mapsto (X,\underline{\IZ})$, so it also preserves epimorphisms.
+    proof: It is enough to prove that every epimorphism of locally ringed spaces is surjective. The forgetful functor $\LRS \to \RS$ has a right adjoint (see <a href="https://arxiv.org/abs/1103.2139" target="_blank">Localization of ringed spaces</a> by W. Gillam), so it preserves epimorphisms. The forgetful functor $\RS \to \Top$ also has a right adjoint, namely $X \mapsto (X,\underline{\IZ})$, so it also preserves epimorphisms.
 
   - property: infinitary extensive
-    reason: '[Sketch] Since <a href="/category/Top">$\Top$</a> is infinitary extensive, a morphism $f : Y \to \coprod_i X_i \eqqcolon X$ yields a decomposition $Y = \coprod_i Y_i$ (as topological spaces) with continuous maps $f_i : Y_i \to X_i$. Endow the open subset $Y_i \subseteq Y$ with the restricted sheaf. Then each $f_i$ becomes a morphism of locally ringed spaces, and $Y = \coprod_i Y_i$ holds as locally ringed spaces.'
+    proof: '[Sketch] Since <a href="/category/Top">$\Top$</a> is infinitary extensive, a morphism $f : Y \to \coprod_i X_i \eqqcolon X$ yields a decomposition $Y = \coprod_i Y_i$ (as topological spaces) with continuous maps $f_i : Y_i \to X_i$. Endow the open subset $Y_i \subseteq Y$ with the restricted sheaf. Then each $f_i$ becomes a morphism of locally ringed spaces, and $Y = \coprod_i Y_i$ holds as locally ringed spaces.'
 
 unsatisfied_properties:
   - property: skeletal
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: balanced
-    reason: The canonical morphism $\Spec(\IZ/2 \times \IZ[1/2]) \longrightarrow \Spec(\IZ)$ is a mono- and an epimorphism, but no isomorphism.
+    proof: The canonical morphism $\Spec(\IZ/2 \times \IZ[1/2]) \longrightarrow \Spec(\IZ)$ is a mono- and an epimorphism, but no isomorphism.
 
   - property: semi-strongly connected
-    reason: This is because already the full subcategory <a href="/category/Sch">$\Sch$</a> of schemes is not semi-strongly connected.
+    proof: This is because already the full subcategory <a href="/category/Sch">$\Sch$</a> of schemes is not semi-strongly connected.
 
   - property: Malcev
-    reason: This is because already <a href="/category/Sch">$\Sch$</a> is not Malcev.
+    proof: This is because already <a href="/category/Sch">$\Sch$</a> is not Malcev.
 
   - property: co-Malcev
-    reason: 'We can adjust the proof for <a href="/category/Top">$\Top$</a> (see <a href="https://mathoverflow.net/questions/509548" target="_blank">MO/509548</a>) as follows: Let $k$ be a field, $X$ be a singleton and $Y = \{u,v\}$ be the Sierpinski space where $\{u\}$ is open, but $\{v\}$ is not. Endow both with the sheaf of locally constant functions to $k$. Thus, $\O_X(X) = k$, $\O_Y(Y) = \O_Y(\{u\}) = k$. There is a canonical morphism $p : X + X \to Y$. It is a coreflexive corelation that is not cosymmetric.'
+    proof: 'We can adjust the proof for <a href="/category/Top">$\Top$</a> (see <a href="https://mathoverflow.net/questions/509548" target="_blank">MO/509548</a>) as follows: Let $k$ be a field, $X$ be a singleton and $Y = \{u,v\}$ be the Sierpinski space where $\{u\}$ is open, but $\{v\}$ is not. Endow both with the sheaf of locally constant functions to $k$. Thus, $\O_X(X) = k$, $\O_Y(Y) = \O_Y(\{u\}) = k$. There is a canonical morphism $p : X + X \to Y$. It is a coreflexive corelation that is not cosymmetric.'
 
 special_objects:
   initial object:
@@ -60,4 +60,4 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: pairs $(f,f^{\sharp})$ consisting of a homeomorphism $f$ and an isomorphism of sheaves $f^{\sharp}$
-    reason: This is easy.
+    proof: This is easy.

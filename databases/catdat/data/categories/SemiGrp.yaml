@@ -15,19 +15,19 @@ related_categories:
 
 satisfied_properties:
   - property: locally small
-    reason: There is a forgetful functor $\SemiGrp \to \Set$ and $\Set$ is locally small.
+    proof: There is a forgetful functor $\SemiGrp \to \Set$ and $\Set$ is locally small.
 
   - property: finitary algebraic
-    reason: Take the algebraic theory of a semigroup.
+    proof: Take the algebraic theory of a semigroup.
 
   - property: strict initial object
-    reason: This is because the initial object is the empty semigroup, and a non-empty set has no map to an empty set.
+    proof: This is because the initial object is the empty semigroup, and a non-empty set has no map to an empty set.
 
   - property: disjoint coproducts
-    reason: This follows easily from the concrete description of coproducts as (a variant of) free products.
+    proof: This follows easily from the concrete description of coproducts as (a variant of) free products.
 
   - property: cocartesian cofiltered limits
-    reason: >-
+    proof: >-
       We need to prove that for two cofiltered diagram of semigroups $(B_i)$, $(C_i)$ the canonical map
       $$\textstyle \alpha : \lim_i B_i + \lim_i C_i \to \lim_i (B_i + C_i)$$
       is an isomorphism, i.e. bijective. The underlying set of the coproduct $B_i + C_i$ is identified with the disjoint union of sets of the form
@@ -36,43 +36,43 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: balanced
-    reason: |-
+    proof: |-
       The inclusion of additive semigroups $\IN \hookrightarrow \IZ$ is a counterexample. Indeed, if $f,g : \IZ \to G$ are semigroup homomorphisms which agree on $\IN$, the element $e \coloneqq f(0) = g(0)$ provides a neutral element for $eGe$, which therefore becomes a monoid, and $f,g$ corestrict to monoid homomorphisms $f,g : \IZ \to eGe$ which agree on $\IN$. And we already know that $f = g$ in that case (inverses are uniquely determined).
       Another example can be found in <a href="https://mathoverflow.net/a/510442/2841">MO/510431</a>.
 
   - property: Malcev
-    reason: 'Consider the subsemigroup $\{(a,b) : a \leq b \}$ of $\IN^2$ under addition.'
+    proof: 'Consider the subsemigroup $\{(a,b) : a \leq b \}$ of $\IN^2$ under addition.'
 
   - property: co-Malcev
-    reason: 'See <a href="https://mathoverflow.net/questions/509552">MO/509552</a>: Consider the forgetful functor $U : \SemiGrp \to \Set$ and the relation $R \subseteq U^2$ defined by $R(A) \coloneqq \{(a,b) \in U(A)^2 : ab = a^2\}$. Both are representable: $U$ by the free semigroup on a single generator and $R$ by the free semigroup on two generators $x,y$ subject to the relation $xy=x^2$. It is clear that $R$ is reflexive, but not symmetric.'
+    proof: 'See <a href="https://mathoverflow.net/questions/509552">MO/509552</a>: Consider the forgetful functor $U : \SemiGrp \to \Set$ and the relation $R \subseteq U^2$ defined by $R(A) \coloneqq \{(a,b) \in U(A)^2 : ab = a^2\}$. Both are representable: $U$ by the free semigroup on a single generator and $R$ by the free semigroup on two generators $x,y$ subject to the relation $xy=x^2$. It is clear that $R$ is reflexive, but not symmetric.'
 
   - property: semi-strongly connected
-    reason: |-
+    proof: |-
       Let us first remark that every non-empty finite semigroup $A$ has an idempotent element $e$, and then $B \to A$, $x \mapsto e$ does define a semigroup homomorphism for any $B$. Therefore, counterexamples need to be infinite and also without idempotent elements.
       Let $A$ be the set of positive rational numbers of the form $m/2^n$ (with $m > 0$, $n \geq 0$), and let $B$ be the set of positive rational numbers of the form $m/3^n$ (with $m > 0$, $n \geq 0$). Both are semigroups under addition. The element $1 \in A$ is $2^\infty$-divisible, meaning that for every $n \geq 0$ there is some $a \in A$ with $1 = 2^n \cdot a$. But $B$ has no $2^\infty$-divisible element. Hence, there is no semigroup homomorphism $A \to B$. Likewise, there is no semigroup homomorphism $B \to A$.
 
   - property: cogenerating set
     # TODO: find a variant of the lemma missing_cogenerating_sets
     # (or missing_cogenerator) which handles this.
-    reason: >-
+    proof: >-
       The proof is similar to the proof for <a href="/category/Grp">$\Grp$</a>. Assume that there is a cogenerating set $S$. There is an infinite simple group $G$ larger than all the semigroups in $S$ (such as an alternating group). Since $\id_G, 1 : G \rightrightarrows G$ are different, there is a semigroup $H \in S$ and a homomorphism of semigroups $f : G \to H$ with $f \neq f \circ 1$. Then
       $$N \coloneqq \{g \in G : f(g) = f(1)\}$$
       is a normal subgroup of $G$. It is proper, and hence trivial. But then $f$ is injective, which is a contradiction.
 
   - property: cofiltered-limit-stable epimorphisms
-    reason: We already know that <a href="/category/Set">$\Set$</a> does not have this property (by <a href="/category-implication/topos_no_stable_epis">this result</a>). Now apply the contrapositive of the dual of <a href="/content/filtered-monos">this lemma</a> to the functor $\Set \to \SemiGrp$ that equips a set with the multiplication $a \cdot b \coloneqq a$.
+    proof: We already know that <a href="/category/Set">$\Set$</a> does not have this property (by <a href="/category-implication/topos_no_stable_epis">this result</a>). Now apply the contrapositive of the dual of <a href="/content/filtered-monos">this lemma</a> to the functor $\Set \to \SemiGrp$ that equips a set with the multiplication $a \cdot b \coloneqq a$.
 
   - property: effective cocongruences
-    reason: >-
+    proof: >-
       The proof is similar to <a href="/category/Mon">$\Mon$</a>, i.e. we adapt the counterexample from <a href="https://mathoverflow.net/a/510809" target="_blank">MO/510744</a>. Namely, consider the semigroups
       $$\begin{align*} X & \coloneqq \langle p \mid p^2 = p \rangle,\\ E & \coloneqq \langle p, q \mid p^2 = p,\, q^2 = q,\, pq = q,\, qp = p \rangle, \end{align*}$$
       whose underlying sets are $\{p\}$ and $\{p,q\}$, respectively. Then $X$ represents the functor sending a semigroup $A$ to its idempotents, and $E$ represents the relation on idempotents $a, b$ of $A$ that $ab = b$, $ba = a$. It is easy to check that this defines an equivalence relation (see <a href="https://mathoverflow.net/a/510809" target="_blank">MO/510744</a> for details). Since $p \ne q$ in $E$, the equalizer of the two maps $X \rightrightarrows E$ is the empty semigroup. Therefore, if $E$ were effective, it would be isomorphic to the coproduct $X \sqcup X$, whose underlying set consists of non-empty words in $p,q$ with $p,q$ strictly alternating. In particular, in this coproduct, $pq \ne q$.
 
   - property: natural numbers object
-    reason: >-
+    proof: >-
       Assume that a natural numbers object exists. Then by <a href="/content/nno_distributive_criterion">this result</a>, for every semigroup $A$ the natural homomorphism
       $$\textstyle\alpha : \coprod_{n \geq 0} A \to A \times \coprod_{n \geq 0} 1$$
       is a split monomorphism. But this is not true: For each $n \geq 0$ let $A_n$ denote a copy of $A$. The elements of the coproduct in $\alpha$'s domain have a unique representation as
@@ -84,7 +84,7 @@ unsatisfied_properties:
       showing that $\alpha$ is not injective.
 
   - property: coregular
-    reason: >-
+    proof: >-
       We will find a regular monomorphism $\iota : F \to M$ of semigroups and a homomorphism $F \to K$ such that $K \to K \sqcup_F M$ is not injective. It is similar to our example for <a href="/category/Mon">$\Mon$</a>. Consider these semigroups defined by generators and relations:
       $$\begin{align*}
       F & \coloneqq \langle a,b,c,d \rangle \\
@@ -97,7 +97,7 @@ unsatisfied_properties:
       shows that $c,d \in K$ have the same image in the pushout.
 
   - property: regular subobject classifier
-    reason: 'Assume that a regular subobject classifier $\Omega$ exists in $\SemiGrp$. The universal regular monomorphism $\top : 1 \to \Omega$ corresponds to an idempotent element $e \in \Omega$. It follows that $e \Omega e$ is a monoid with neutral element $e$. We claim that it is a regular subobject classifier in <a href="/category/Mon">$\Mon$</a>, which we know does not exist. Indeed, let $\iota : A \to B$ be a regular monomorphism of monoids. Since the forgetful functor $\Mon \to \SemiGrp$ preserves limits, we can also see $\iota$ as a regular monomorphism of semigroups. Hence, there is a unique homomorphism of semigroups $f : B \to \Omega$ with $\iota(A) = \{b \in B : f(b) = e\}$. Since $1 \in \iota(A)$, we have $f(1) = e$. Then $f$ corresponds to a homomorphism of monoids $f : B \to e \Omega e$ with kernel $\iota$, which proves our claim.'
+    proof: 'Assume that a regular subobject classifier $\Omega$ exists in $\SemiGrp$. The universal regular monomorphism $\top : 1 \to \Omega$ corresponds to an idempotent element $e \in \Omega$. It follows that $e \Omega e$ is a monoid with neutral element $e$. We claim that it is a regular subobject classifier in <a href="/category/Mon">$\Mon$</a>, which we know does not exist. Indeed, let $\iota : A \to B$ be a regular monomorphism of monoids. Since the forgetful functor $\Mon \to \SemiGrp$ preserves limits, we can also see $\iota$ as a regular monomorphism of semigroups. Hence, there is a unique homomorphism of semigroups $f : B \to \Omega$ with $\iota(A) = \{b \in B : f(b) = e\}$. Since $1 \in \iota(A)$, we have $f(1) = e$. Then $f$ corresponds to a homomorphism of monoids $f : B \to e \Omega e$ with kernel $\iota$, which proves our claim.'
 
 special_objects:
   initial object:
@@ -112,13 +112,13 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: bijective ring homomorphisms
-    reason: This characterization holds in every algebraic category.
+    proof: This characterization holds in every algebraic category.
   monomorphisms:
     description: injective semigroup homomorphisms
-    reason: 'This holds in every finitary algebraic category: the forgetful functor to $\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
+    proof: 'This holds in every finitary algebraic category: the forgetful functor to $\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
   epimorphisms:
     description: 'A semigroup homomorphism $f : T \to S$ is an epimorphism iff $S$ equals the <i>dominion</i> of $U \coloneqq f(T) \subseteq S$, meaning that for every $s \in S$ there are $u_1,\dotsc,u_{m+1} \in U$, $v_1,\dotsc,v_m \in U$, $x_1,\dotsc,x_m \in S$ and $y_1,\dotsc,y_m \in S$ such that $s = x_1 u_1$, $u_1 = v_1 y_1$, $x_{i-1} v_{i-1} = x_i u_i$, $u_i y_{i-1} = v_i y_i$, $x_m v_m = u_{m+1}$ and $u_{m+1} y_m = s$.'
-    reason: This is <a href="https://en.wikipedia.org/wiki/Isbell's_zigzag_theorem" target="_blank">Isbell's zigzag Theorem</a>, see references there.
+    proof: This is <a href="https://en.wikipedia.org/wiki/Isbell's_zigzag_theorem" target="_blank">Isbell's zigzag Theorem</a>, see references there.
   regular epimorphisms:
     description: surjective homomorphisms
-    reason: This holds in every finitary algebraic category.
+    proof: This holds in every finitary algebraic category.

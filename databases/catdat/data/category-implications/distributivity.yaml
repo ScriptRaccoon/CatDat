@@ -6,7 +6,7 @@
   conclusions:
     - coproducts
     - finite products
-  reason: This holds by definition.
+  proof: This holds by definition.
   is_equivalence: false
 
 - id: countably_distributive_assumption
@@ -15,7 +15,7 @@
   conclusions:
     - countable coproducts
     - finite products
-  reason: This holds by definition.
+  proof: This holds by definition.
   is_equivalence: false
 
 - id: distributive_assumption
@@ -24,7 +24,7 @@
   conclusions:
     - finite coproducts
     - finite products
-  reason: This holds by definition.
+  proof: This holds by definition.
   is_equivalence: false
 
 - id: infinitary_distributive_trivial
@@ -32,7 +32,7 @@
     - infinitary distributive
   conclusions:
     - countably distributive
-  reason: This is trivial.
+  proof: This is trivial.
   is_equivalence: false
 
 - id: countably_distributive_trivial
@@ -40,7 +40,7 @@
     - countably distributive
   conclusions:
     - distributive
-  reason: This is trivial.
+  proof: This is trivial.
   is_equivalence: false
 
 - id: distributive_consequence
@@ -48,7 +48,7 @@
     - distributive
   conclusions:
     - strict initial object
-  reason: See the <a href="https://ncatlab.org/nlab/show/distributive+category" target="_blank">nLab</a> or Prop. 3.4 in <a href="https://doi.org/10.1016/0022-4049(93)90035-R" target="_blank">Introduction to extensive and distributive categories</a>.
+  proof: See the <a href="https://ncatlab.org/nlab/show/distributive+category" target="_blank">nLab</a> or Prop. 3.4 in <a href="https://doi.org/10.1016/0022-4049(93)90035-R" target="_blank">Introduction to extensive and distributive categories</a>.
   is_equivalence: false
 
 - id: distributive_criterion
@@ -57,7 +57,7 @@
     - finite coproducts
   conclusions:
     - distributive
-  reason: Each functor $A \times -$ is left adjoint and hence preserves finite coproducts (in fact, all colimits).
+  proof: Each functor $A \times -$ is left adjoint and hence preserves finite coproducts (in fact, all colimits).
   is_equivalence: false
 
 - id: countably_distributive_criterion
@@ -66,7 +66,7 @@
     - countable coproducts
   conclusions:
     - countably distributive
-  reason: Each functor $A \times -$ is left adjoint and hence preserves countable coproducts (in fact, all colimits).
+  proof: Each functor $A \times -$ is left adjoint and hence preserves countable coproducts (in fact, all colimits).
   is_equivalence: false
 
 - id: infinitary_distributive_criterion
@@ -75,7 +75,7 @@
     - coproducts
   conclusions:
     - infinitary distributive
-  reason: Each functor $A \times -$ is left adjoint and hence preserves coproducts (in fact, all colimits).
+  proof: Each functor $A \times -$ is left adjoint and hence preserves coproducts (in fact, all colimits).
   is_equivalence: false
 
 - id: infinite_distributive_filtered_criterion
@@ -85,7 +85,7 @@
     - distributive
   conclusions:
     - infinitary distributive
-  reason: Each functor $A \times -$ preserves finite coproducts and filtered colimits, hence all coproducts.
+  proof: Each functor $A \times -$ preserves finite coproducts and filtered colimits, hence all coproducts.
   is_equivalence: false
 
 - id: countably_distributive_filtered_criterion
@@ -95,7 +95,7 @@
     - distributive
   conclusions:
     - countably distributive
-  reason: Each functor $A \times -$ preserves finite coproducts and filtered colimits, hence all countable coproducts.
+  proof: Each functor $A \times -$ preserves finite coproducts and filtered colimits, hence all countable coproducts.
   is_equivalence: false
 
 - id: distributive_duality
@@ -104,5 +104,5 @@
     - thin
   conclusions:
     - codistributive
-  reason: This is equivalent to the classical result that the <a href="https://en.wikipedia.org/wiki/Distributive_lattice" target="_blank">distributivity law in a lattice</a> can be defined in two ways, see e.g. Birkhoff, <i>Lattice Theory</i>, Ch. IX, Thm. 1.
+  proof: This is equivalent to the classical result that the <a href="https://en.wikipedia.org/wiki/Distributive_lattice" target="_blank">distributivity law in a lattice</a> can be defined in two ways, see e.g. Birkhoff, <i>Lattice Theory</i>, Ch. IX, Thm. 1.
   is_equivalence: false

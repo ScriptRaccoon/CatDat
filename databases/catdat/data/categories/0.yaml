@@ -15,39 +15,39 @@ related_categories:
 
 satisfied_properties:
   - property: discrete
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: binary products
-    reason: This is vacuously true.
+    proof: This is vacuously true.
 
   - property: finite
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: small
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: preadditive
-    reason: This is vacuously true.
+    proof: This is vacuously true.
 
 unsatisfied_properties:
   - property: inhabited
-    reason: This is trivial.
+    proof: This is trivial.
 
 special_objects: {}
 
 special_morphisms:
   isomorphisms:
     description: none
-    reason: This is trivial.
+    proof: This is trivial.
   monomorphisms:
     description: none
-    reason: This is trivial.
+    proof: This is trivial.
   epimorphisms:
     description: none
-    reason: This is trivial.
+    proof: This is trivial.
   regular monomorphisms:
     description: none
-    reason: This is trivial.
+    proof: This is trivial.
   regular epimorphisms:
     description: none
-    reason: This is trivial.
+    proof: This is trivial.

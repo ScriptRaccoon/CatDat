@@ -6,7 +6,7 @@
     - right cancellative
   conclusions:
     - thin
-  reason: If $f,g$ are two parallel morphisms, then their equalizer is a regular monomorphism, but also an epimorphism by assumption, so it must be an isomorphism. But this means that $f = g$.
+  proof: If $f,g$ are two parallel morphisms, then their equalizer is a regular monomorphism, but also an epimorphism by assumption, so it must be an isomorphism. But this means that $f = g$.
   is_equivalence: false
 
 - id: zero-no-mono
@@ -15,7 +15,7 @@
     - zero morphisms
   conclusions:
     - thin
-  reason: 'If $f,g : A \rightrightarrows B$ are two morphisms, then $0_{B,B} \circ f = 0_{A,B} = 0_{B,B} \circ g$, so that $f = g$.'
+  proof: 'If $f,g : A \rightrightarrows B$ are two morphisms, then $0_{B,B} \circ f = 0_{A,B} = 0_{B,B} \circ g$, so that $f = g$.'
   is_equivalence: false
 
 - id: codiagonal-no-mono
@@ -24,7 +24,7 @@
     - left cancellative
   conclusions:
     - thin
-  reason: 'For every object $A$ the codiagonal $A + A \to A$ is a split epimorphism, and by assumption a monomorphism, hence an isomorphism. Hence, the two inclusions $i_1,i_2 : A \rightrightarrows A + A$ coincide. Now, if $f, g : A \rightrightarrows B$ are two morphisms, consider the induced morphism $h : A + A \to B$ and compute $f = h \circ i_1 = h \circ i_2 = g$.'
+  proof: 'For every object $A$ the codiagonal $A + A \to A$ is a split epimorphism, and by assumption a monomorphism, hence an isomorphism. Hence, the two inclusions $i_1,i_2 : A \rightrightarrows A + A$ coincide. Now, if $f, g : A \rightrightarrows B$ are two morphisms, consider the induced morphism $h : A + A \to B$ and compute $f = h \circ i_1 = h \circ i_2 = g$.'
   is_equivalence: false
 
 - id: cauchy_complete_criterion
@@ -32,7 +32,7 @@
     - left cancellative
   conclusions:
     - Cauchy complete
-  reason: Any idempotent monomorphism must be the identity and therefore splits.
+  proof: Any idempotent monomorphism must be the identity and therefore splits.
   is_equivalence: false
 
 - id: reflexive_pair_trivial
@@ -43,5 +43,5 @@
     - effective cocongruences
     - effective congruences
     - reflexive coequalizers
-  reason: Any parallel pair of morphisms with a common section (or retraction) must be a pair of equal isomorphisms. In particular, they are the kernel pair of the identity morphism on the target, and the cokernel pair of the identity morphism on the source.
+  proof: Any parallel pair of morphisms with a common section (or retraction) must be a pair of equal isomorphisms. In particular, they are the kernel pair of the identity morphism on the target, and the cokernel pair of the identity morphism on the source.
   is_equivalence: false

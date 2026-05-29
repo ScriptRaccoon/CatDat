@@ -28,7 +28,7 @@ function get_conclusion_string(
 	return `${properties_dict[conclusion][conditional ? 'conditional' : 'relation']} ${conclusion}`
 }
 
-export function get_reason_string(
+export function get_proof_string(
 	implication: NormalizedImplication,
 	properties_dict: Record<string, PropertyMeta>,
 	type: StructureType,

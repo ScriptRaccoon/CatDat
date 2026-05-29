@@ -58,7 +58,7 @@ function create_dualized_category_implications() {
 			is_equivalence,
 			is_deduced,
 			dualized_from,
-			reason
+			proof
         ) VALUES (?, ?, ?, ?, TRUE, ?, ?)`,
 	)
 
@@ -92,7 +92,7 @@ function create_self_dual_category_implications() {
                 assumptions,
                 conclusions,
                 is_equivalence,
-                reason,
+                proof,
                 is_deduced
             )
             SELECT

@@ -18,63 +18,63 @@ comments:
 
 satisfied_properties:
   - property: locally small
-    reason: There is a forgetful functor $\Rng \to \Set$ and $\Set$ is locally small.
+    proof: There is a forgetful functor $\Rng \to \Set$ and $\Set$ is locally small.
 
   - property: finitary algebraic
-    reason: Take the algebraic theory of a rng.
+    proof: Take the algebraic theory of a rng.
 
   - property: pointed
-    reason: The zero ring is a zero object.
+    proof: The zero ring is a zero object.
 
   - property: Malcev
-    reason: This follows in the same way as for <a href="/category/Grp">$\Grp$</a>, see also Example 2.2.5 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>.
+    proof: This follows in the same way as for <a href="/category/Grp">$\Grp$</a>, see also Example 2.2.5 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>.
 
 unsatisfied_properties:
   - property: skeletal
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: balanced
-    reason: The inclusion $\IZ \hookrightarrow \IQ$ is a counterexample. (The proof can be reduced to the unital case.)
+    proof: The inclusion $\IZ \hookrightarrow \IQ$ is a counterexample. (The proof can be reduced to the unital case.)
 
   - property: cogenerator
-    reason: 'We apply <a href="/content/missing_cogenerator">this lemma</a> to the collection of fields: Any non-zero rng homomorphism from a field to a rng must be injective, and for every infinite cardinal $\kappa$ the field of rational functions in $\kappa$ variables has cardinality $\geq \kappa$.'
+    proof: 'We apply <a href="/content/missing_cogenerator">this lemma</a> to the collection of fields: Any non-zero rng homomorphism from a field to a rng must be injective, and for every infinite cardinal $\kappa$ the field of rational functions in $\kappa$ variables has cardinality $\geq \kappa$.'
 
   - property: counital
-    reason: >-
+    proof: >-
       If $\IZ\langle X_1,\dotsc,X_n \rangle_0$ denotes the free rng on $n$ generators (non-commutative polynomials without constant term), then the canonical homomorphism
       $$\IZ\langle X,Y \rangle_0 = \IZ\langle X \rangle_0 \sqcup \IZ\langle Y \rangle_0 \to \IZ\langle X \rangle_0 \times \IZ\langle Y \rangle_0$$
       is not a monomorphism since $\IZ\langle X,Y \rangle_0$ is not commutative.
 
   - property: CIP
     # TODO: remove code duplication with "counital" proof
-    reason: >-
+    proof: >-
       If $\IZ\langle X_1,\dotsc,X_n \rangle_0$ denotes the free rng on $n$ generators (non-commutative polynomials without constant term), then the canonical homomorphism
       $$\IZ\langle X,Y \rangle_0 = \IZ\langle X \rangle_0 \sqcup \IZ\langle Y \rangle_0 \to \IZ\langle X \rangle_0 \times \IZ\langle Y \rangle_0$$
       is not a monomorphism since $\IZ\langle X,Y \rangle_0$ is not commutative.
 
   - property: CSP
-    reason: Assume that $\coprod_n \IZ \to \prod_n \IZ$ is an epimorphism in $\Rng$. Then $((\coprod_n \IZ)^+)^{\ab} \to \prod_n \IZ$ would be an epimorphism in $\CRing$, where $(-)^+$ denotes the unitalization and $(-)^{\ab}$ the abelianization. But if $R \to S$ is an epimorphism of commutative rings, then $\card(S) \leq \card(R)$ by <a href="https://stacks.math.columbia.edu/tag/04W0" target="_blank">SP/04W0</a>. Since $((\coprod_n \IZ)^+)^{\ab}$ is countable and $\prod_n \IZ$ is not, we get a contradiction.
+    proof: Assume that $\coprod_n \IZ \to \prod_n \IZ$ is an epimorphism in $\Rng$. Then $((\coprod_n \IZ)^+)^{\ab} \to \prod_n \IZ$ would be an epimorphism in $\CRing$, where $(-)^+$ denotes the unitalization and $(-)^{\ab}$ the abelianization. But if $R \to S$ is an epimorphism of commutative rings, then $\card(S) \leq \card(R)$ by <a href="https://stacks.math.columbia.edu/tag/04W0" target="_blank">SP/04W0</a>. Since $((\coprod_n \IZ)^+)^{\ab}$ is countable and $\prod_n \IZ$ is not, we get a contradiction.
 
   - property: regular subobject classifier
-    reason: 'Assume that $\Rng$ has a subobject classifier $\Omega$. Since $0$ is a zero object, every regular subobject $R \subseteq S$ would be the kernel of some homomorphism $S \to \Omega$. In particular, it would be an ideal. Now take any pair of homomorphisms $f,g : S \rightrightarrows T$ in $\Ring$. Their equalizer $R \subseteq S$ is also the equalizer in $\Rng$, and it contains $1 \in S$. If it was an ideal, then $R = S$, and hence $f = g$, which is absurd.'
+    proof: 'Assume that $\Rng$ has a subobject classifier $\Omega$. Since $0$ is a zero object, every regular subobject $R \subseteq S$ would be the kernel of some homomorphism $S \to \Omega$. In particular, it would be an ideal. Now take any pair of homomorphisms $f,g : S \rightrightarrows T$ in $\Ring$. Their equalizer $R \subseteq S$ is also the equalizer in $\Rng$, and it contains $1 \in S$. If it was an ideal, then $R = S$, and hence $f = g$, which is absurd.'
 
   - property: coregular
-    reason: 'We can copy the proof for <a href="/category/Ring">$\Ring$</a>. In short, the inclusion of diagonal matrices $\IQ^2 \hookrightarrow M_2(\IQ)$ is a regular monomorphism, but becomes zero after taking the pushout with $p_1 : \IQ^2 \twoheadrightarrow \IQ$ because $M_2(\IQ)$ is simple.'
+    proof: 'We can copy the proof for <a href="/category/Ring">$\Ring$</a>. In short, the inclusion of diagonal matrices $\IQ^2 \hookrightarrow M_2(\IQ)$ is a regular monomorphism, but becomes zero after taking the pushout with $p_1 : \IQ^2 \twoheadrightarrow \IQ$ because $M_2(\IQ)$ is simple.'
 
   - property: regular quotient object classifier
-    reason: 'Assume that $\Rng$ has a regular quotient object classifier $P$. Consider the functor $N : \Ab \to \Rng$ that equips an abelian group with zero multiplication. It is fully faithful and has a left adjoint mapping a rng $R$ to the abelian group $R/R^2$. If $R$ is a rng with zero multiplication and $R \to S$ is a surjective homomorphism, then $S$ has zero multiplication. Therefore, the assumptions of <a href="/content/subobject_classifiers_coreflection">this lemma</a> (dualized) apply and we conclude that $P/P^2$ is a regular quotient object classifier of $\Ab$. But we already know that <a href="/category/Ab">$\Ab$</a> has no such object (in fact, the only additive categories with such an object are trivial by <a href="https://math.stackexchange.com/questions/4086192" target="_blank">MSE/4086192</a>).'
+    proof: 'Assume that $\Rng$ has a regular quotient object classifier $P$. Consider the functor $N : \Ab \to \Rng$ that equips an abelian group with zero multiplication. It is fully faithful and has a left adjoint mapping a rng $R$ to the abelian group $R/R^2$. If $R$ is a rng with zero multiplication and $R \to S$ is a surjective homomorphism, then $S$ has zero multiplication. Therefore, the assumptions of <a href="/content/subobject_classifiers_coreflection">this lemma</a> (dualized) apply and we conclude that $P/P^2$ is a regular quotient object classifier of $\Ab$. But we already know that <a href="/category/Ab">$\Ab$</a> has no such object (in fact, the only additive categories with such an object are trivial by <a href="https://math.stackexchange.com/questions/4086192" target="_blank">MSE/4086192</a>).'
 
   - property: cocartesian cofiltered limits
-    reason: >-
+    proof: >-
       Consider the ring $A = \IZ[X]$ and the sequence of rings $B_n = \IZ[Y]/(Y^{n+1})$ with projections $B_{n+1} \to B_n$, whose limit is $\IZ[[Y]]$ (both in $\Ring$ and $\Rng$). Every element in the coproduct of rngs $\IZ[X] \sqcup \IZ[[Y]]$ has a finite "free product" length. Now consider the elements
       $$w_n = (1 + XY) (1+XY^2) \cdots (1+X Y^n) - 1 \in A \sqcup B_n.$$
       Because of $w_n \equiv w_{n-1} \bmod Y^n$ these form an element $w \in \lim_n (A \sqcup B_n)$. Expanding $w_n$, the longest term is $XY XY^2 \cdots X Y^n$ of "free product" length $2n$, which is unbounded.
 
   - property: cofiltered-limit-stable epimorphisms
-    reason: 'We know that <a href="/category/Ring">$\Ring$</a> does not have this property. Now use the contrapositive of the dual of <a href="/content/filtered-monos">this lemma</a> applied to the forgetful functor $\Ring \to \Rng$. We only need to verify that it preserves epimorphisms: Let $f : R \to S$ be an epimorphism in $\Ring$ and let $g,h : S \rightrightarrows T$ be two homomorphisms of rngs with $gf = hf$. The element $e = g(1) = h(1) \in T$ is idempotent, and $g,h$ become homomorphisms of rings $S \rightrightarrows eTe$. Hence, $g=h$.'
+    proof: 'We know that <a href="/category/Ring">$\Ring$</a> does not have this property. Now use the contrapositive of the dual of <a href="/content/filtered-monos">this lemma</a> applied to the forgetful functor $\Ring \to \Rng$. We only need to verify that it preserves epimorphisms: Let $f : R \to S$ be an epimorphism in $\Ring$ and let $g,h : S \rightrightarrows T$ be two homomorphisms of rngs with $gf = hf$. The element $e = g(1) = h(1) \in T$ is idempotent, and $g,h$ become homomorphisms of rings $S \rightrightarrows eTe$. Hence, $g=h$.'
 
   - property: effective cocongruences
-    reason: >-
+    proof: >-
       The counterexample is similar to the one at <a href="https://mathoverflow.net/a/510809" target="_blank">MO/510744</a> for $\Ring$: in this case,
       $$X \coloneqq \langle p \mid p^2 = p \rangle_{\Rng} \cong \IZ$$
       and
@@ -96,10 +96,10 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: bijective rng homomorphisms
-    reason: This characterization holds in every algebraic category.
+    proof: This characterization holds in every algebraic category.
   monomorphisms:
     description: injective rng homomorphisms
-    reason: 'This holds in every finitary algebraic category: the forgetful functor to $\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
+    proof: 'This holds in every finitary algebraic category: the forgetful functor to $\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
   regular epimorphisms:
     description: surjective homomorphisms
-    reason: This holds in every finitary algebraic category.
+    proof: This holds in every finitary algebraic category.

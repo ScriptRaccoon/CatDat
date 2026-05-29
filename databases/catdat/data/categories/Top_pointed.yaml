@@ -15,97 +15,97 @@ related_categories:
 
 satisfied_properties:
   - property: locally small
-    reason: There is a forgetful functor $\Top_* \to \Set_*$ and $\Set_*$ is locally small.
+    proof: There is a forgetful functor $\Top_* \to \Set_*$ and $\Set_*$ is locally small.
 
   - property: pointed
-    reason: The singleton space $\{0\}$ with base point $0$ is a zero object.
+    proof: The singleton space $\{0\}$ with base point $0$ is a zero object.
     check_redundancy: false
 
   - property: complete
-    reason: This follows from $\Top_* \cong 1 / \Top$ and the fact that <a href="/category/Top">$\Top$</a> is complete. Concretely, the limit of pointed spaces $(X_i,x_i)$ is the limit of the underlying spaces $X_i$ equipped with the base point that projects down to each $x_i$.
+    proof: This follows from $\Top_* \cong 1 / \Top$ and the fact that <a href="/category/Top">$\Top$</a> is complete. Concretely, the limit of pointed spaces $(X_i,x_i)$ is the limit of the underlying spaces $X_i$ equipped with the base point that projects down to each $x_i$.
     check_redundancy: false
 
   - property: coequalizers
-    reason: This follows immediately from the fact that <a href="/category/Top">$\Top$</a> has coequalizers.
+    proof: This follows immediately from the fact that <a href="/category/Top">$\Top$</a> has coequalizers.
     check_redundancy: false
 
   - property: coproducts
-    reason: This follows from $\Top_* \cong 1 / \Top$ and the fact that <a href="/category/Top">$\Top$</a> has wide pushouts.
+    proof: This follows from $\Top_* \cong 1 / \Top$ and the fact that <a href="/category/Top">$\Top$</a> has wide pushouts.
     check_redundancy: false
 
   - property: well-powered
-    reason: This is clear from the classification of monomorphisms as injective pointed continuous maps.
+    proof: This is clear from the classification of monomorphisms as injective pointed continuous maps.
 
   - property: well-copowered
-    reason: This is clear from the classification of epimorphisms as surjective pointed continuous maps.
+    proof: This is clear from the classification of epimorphisms as surjective pointed continuous maps.
 
   - property: generator
-    reason: The discrete space $\{0,1\}$ with base point $0$ is a generator since it represents the forgetful functor $\Top_* \to \Set$.
+    proof: The discrete space $\{0,1\}$ with base point $0$ is a generator since it represents the forgetful functor $\Top_* \to \Set$.
 
   - property: cogenerator
-    reason: It is easily checked that the indiscrete two-point space $\{0,1\}$ with base point $1$ is a cogenerator.
+    proof: It is easily checked that the indiscrete two-point space $\{0,1\}$ with base point $1$ is a cogenerator.
 
   - property: regular subobject classifier
-    reason: The indiscrete two-point space $\{0,1\}$ with base point $1$ is a regular subobject classifier since pointed continuous maps $X \to \{0,1\}$ correspond to pointed subsets of $X$ (by taking the fiber of $1$ as usual).
+    proof: The indiscrete two-point space $\{0,1\}$ with base point $1$ is a regular subobject classifier since pointed continuous maps $X \to \{0,1\}$ correspond to pointed subsets of $X$ (by taking the fiber of $1$ as usual).
 
   - property: counital
-    reason: Since embeddings are regular monomorphisms in this category (see below) and hence strong monomorphisms, it suffices to prove that the canonical morphism $X \vee Y \hookrightarrow X \times Y$ is an embedding. For a proof, see <a href="https://math.stackexchange.com/questions/4055988" target="_blank">MSE/4055988</a>.
+    proof: Since embeddings are regular monomorphisms in this category (see below) and hence strong monomorphisms, it suffices to prove that the canonical morphism $X \vee Y \hookrightarrow X \times Y$ is an embedding. For a proof, see <a href="https://math.stackexchange.com/questions/4055988" target="_blank">MSE/4055988</a>.
 
   - property: CIP
-    reason: This follows since <a href="/category/Set*">$\Set_*$</a> has this property and the forgetful functor preserves products and coproducts.
+    proof: This follows since <a href="/category/Set*">$\Set_*$</a> has this property and the forgetful functor preserves products and coproducts.
 
   - property: cocartesian cofiltered limits
-    reason: >-
+    proof: >-
       We continue the proof for <a href="/category/Set*">$\Set_*$</a> by showing that the natural bijective map
       $$\textstyle \alpha : X \vee \lim_i Y_i \to \lim_i (X \vee Y_i)$$
       is open. It suffices to consider open sets of two types: (1) If $U \subseteq X$ is open, the $\alpha$-image of $U \vee \lim_i Y_i$ is $p_{i_0}^{-1}(U \vee Y_{i_0})$ for any chosen index $i_0$, hence open. (2) If $i$ is an index and $V_i \subseteq Y_i$ is open, then the $\alpha$-image of $X \vee (p_i^{-1}(V_i) \cap \lim_i Y_i)$ is $p_i^{-1}(X \vee V_i)$, hence open.
 
   - property: filtered-colimit-stable monomorphisms
-    reason: This follows from <a href="/content/filtered-monos">this lemma</a> applied to the forgetful functor to $\Set$.
+    proof: This follows from <a href="/content/filtered-monos">this lemma</a> applied to the forgetful functor to $\Set$.
 
   - property: coregular
-    reason: Regular monomorphisms coincide with the embeddings (see below). Since <a href="/category/Top">$\Top$</a> is coregular, they are stable under pushouts, and pushouts in $\Top_*$ are the same.
+    proof: Regular monomorphisms coincide with the embeddings (see below). Since <a href="/category/Top">$\Top$</a> is coregular, they are stable under pushouts, and pushouts in $\Top_*$ are the same.
 
 unsatisfied_properties:
   - property: skeletal
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: balanced
-    reason: If $X$ is a set with a base point $x_0$, consider the discrete space $X_d$ on $X$ and the indiscrete space $X_i$ on $X$. The identity map $X \to X$ lifts to a continuous map $X_d \to X_i$ preserving $x_0$, which is bijective and therefore both a mono- and an epimorphism, but it is not an isomorphism unless $X = \{x_0\}$.
+    proof: If $X$ is a set with a base point $x_0$, consider the discrete space $X_d$ on $X$ and the indiscrete space $X_i$ on $X$. The identity map $X \to X$ lifts to a continuous map $X_d \to X_i$ preserving $x_0$, which is bijective and therefore both a mono- and an epimorphism, but it is not an isomorphism unless $X = \{x_0\}$.
 
   - property: regular
-    reason: See Example 3.14 at the <a href="https://ncatlab.org/nlab/show/regular+category" target="_blank">nLab</a>. The proof also works for pointed spaces (resp. posets) by using the base points $a$ and $0$.
+    proof: See Example 3.14 at the <a href="https://ncatlab.org/nlab/show/regular+category" target="_blank">nLab</a>. The proof also works for pointed spaces (resp. posets) by using the base points $a$ and $0$.
 
   - property: accessible
-    reason: In fact, it does not have any small colimit-dense subcategory by <a href="https://math.stackexchange.com/questions/4097315/" target="_blank">MSE/4097315</a>. The proof easily adapts to pointed spaces.
+    proof: In fact, it does not have any small colimit-dense subcategory by <a href="https://math.stackexchange.com/questions/4097315/" target="_blank">MSE/4097315</a>. The proof easily adapts to pointed spaces.
 
   - property: cartesian filtered colimits
-    reason: 'The functor $\IQ \times - : \Top_* \to \Top_*$ does not preserve colimits, see <a href="https://math.stackexchange.com/questions/2969372" target="_blank">MSE/2969372</a>. The counterexample also works for pointed spaces.'
+    proof: 'The functor $\IQ \times - : \Top_* \to \Top_*$ does not preserve colimits, see <a href="https://math.stackexchange.com/questions/2969372" target="_blank">MSE/2969372</a>. The counterexample also works for pointed spaces.'
 
   - property: co-Malcev
-    reason: 'We can adjust the proof for <a href="/category/Top">$\Top$</a> as follows: Consider the forgetful functor $U : \Top_* \to \Set$ and the relation $R \subseteq U^2$ defined by $R(X) \coloneqq \{(x,y) \in U(X)^2 : x \in \overline{\{y\}} \}$. Both are representable: $U$ by the discrete space $\{0,1\}$ with base point $0$ and $R$ by the Sierpinski space with an isolated base point added. It is clear that $R$ is reflexive, but not symmetric.'
+    proof: 'We can adjust the proof for <a href="/category/Top">$\Top$</a> as follows: Consider the forgetful functor $U : \Top_* \to \Set$ and the relation $R \subseteq U^2$ defined by $R(X) \coloneqq \{(x,y) \in U(X)^2 : x \in \overline{\{y\}} \}$. Both are representable: $U$ by the discrete space $\{0,1\}$ with base point $0$ and $R$ by the Sierpinski space with an isolated base point added. It is clear that $R$ is reflexive, but not symmetric.'
 
   - property: unital
-    reason: 'The joint image of $X \to X \times Y \leftarrow Y$ is just $\{(x,0) : x \in X\} \cup \{(0,y) : y \in Y\}$ (where $0$ denotes the base point), which is clearly a proper subset of $X \times Y$ when both $X,Y$ are non-trivial.'
+    proof: 'The joint image of $X \to X \times Y \leftarrow Y$ is just $\{(x,0) : x \in X\} \cup \{(0,y) : y \in Y\}$ (where $0$ denotes the base point), which is clearly a proper subset of $X \times Y$ when both $X,Y$ are non-trivial.'
 
   - property: CSP
     # TODO: remove duplication with unital proof
-    reason: 'The image of $X \vee Y$ in $X \times Y$ is just $\{(x,0) : x \in X\} \cup \{(0,y) : y \in Y\}$ (where $0$ denotes the base point), which is clearly a proper subset when both $X,Y$ are non-trivial.'
+    proof: 'The image of $X \vee Y$ in $X \times Y$ is just $\{(x,0) : x \in X\} \cup \{(0,y) : y \in Y\}$ (where $0$ denotes the base point), which is clearly a proper subset when both $X,Y$ are non-trivial.'
 
   - property: regular quotient object classifier
-    reason: We can recycle the proof for <a href="/category/Set*">$\Set_*$</a> using discrete topological spaces.
+    proof: We can recycle the proof for <a href="/category/Set*">$\Set_*$</a> using discrete topological spaces.
 
   - property: coaccessible
-    reason: 'We can adjust the proof for <a href="/category/Top">$\Top$</a> as follows: Assume $\Top_*$ is coaccessible. Let $S_0=\{x,*\}$ be the pointed topological space such that $\{*\}$ is the only non-trivial open set, and let $S_1=\{x,*\}$ be the pointed space such that $\{x\}$ is the only non-trivial open set. Let $p_i : S_i \to \{x,*\}$ be the identity function to the two-element indiscrete pointed space. Then, a pointed topological space is discrete if and only if it is projective to the morphisms $p_0$ and $p_1$. This implies that the full subcategory spanned by all discrete pointed spaces, which is equivalent to $\Set_*$, is coaccessible by Prop. 4.7 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>. However, since <a href="/category/Set*">$\Set_*$</a> is not coaccessible, this is a contradiction.'
+    proof: 'We can adjust the proof for <a href="/category/Top">$\Top$</a> as follows: Assume $\Top_*$ is coaccessible. Let $S_0=\{x,*\}$ be the pointed topological space such that $\{*\}$ is the only non-trivial open set, and let $S_1=\{x,*\}$ be the pointed space such that $\{x\}$ is the only non-trivial open set. Let $p_i : S_i \to \{x,*\}$ be the identity function to the two-element indiscrete pointed space. Then, a pointed topological space is discrete if and only if it is projective to the morphisms $p_0$ and $p_1$. This implies that the full subcategory spanned by all discrete pointed spaces, which is equivalent to $\Set_*$, is coaccessible by Prop. 4.7 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>. However, since <a href="/category/Set*">$\Set_*$</a> is not coaccessible, this is a contradiction.'
 
   - property: cofiltered-limit-stable epimorphisms
-    reason: We already know that <a href="/category/Set*">$\Set_*$</a> does not have this property. Now apply the contrapositive of the dual of <a href="/content/filtered-monos">this lemma</a> to the functor $\Set_* \to \Top_*$ that equips a pointed set with the indiscrete topology.
+    proof: We already know that <a href="/category/Set*">$\Set_*$</a> does not have this property. Now apply the contrapositive of the dual of <a href="/content/filtered-monos">this lemma</a> to the functor $\Set_* \to \Top_*$ that equips a pointed set with the indiscrete topology.
 
   - property: effective congruences
-    reason: Suppose that $\Top_*$ had effective congruences. Then by <a href="/content/coslice-effective-congruences">this result</a>, <a href="/category/Top">$\Top$</a> would also have effective congruences, which we know is not the case.
+    proof: Suppose that $\Top_*$ had effective congruences. Then by <a href="/content/coslice-effective-congruences">this result</a>, <a href="/category/Top">$\Top$</a> would also have effective congruences, which we know is not the case.
 
   - property: effective cocongruences
-    reason: 'This counterexample is adapted from the counterexample for <a href="/category/Top">$\Top$</a>. Consider the pointed topological space $I \coloneqq \{ *, a, b \}$ with topology $\{ \varnothing, \{ * \}, \{ a, b \}, \{ *, a, b \} \}$. This represents the functor which sends a pointed topological space $X$ to the pairs of indistinguishable points of $X$. Therefore, we get a cocongruence $\{ *, a \} \rightrightarrows I$ on the discrete space $\{ *, a \}$, where the maps are $*\mapsto *, a\mapsto a$ and $*\mapsto *, a\mapsto b$ respectively. However, this cannot be effective: if we have $h : Z \to \{ *, a \}$ which equalizes the cocongruence, then $h$ must be the constant function with value $*$. But that means the cokernel pair of $h$ is the discrete space on $\{ *, a, b \}$.'
+    proof: 'This counterexample is adapted from the counterexample for <a href="/category/Top">$\Top$</a>. Consider the pointed topological space $I \coloneqq \{ *, a, b \}$ with topology $\{ \varnothing, \{ * \}, \{ a, b \}, \{ *, a, b \} \}$. This represents the functor which sends a pointed topological space $X$ to the pairs of indistinguishable points of $X$. Therefore, we get a cocongruence $\{ *, a \} \rightrightarrows I$ on the discrete space $\{ *, a \}$, where the maps are $*\mapsto *, a\mapsto a$ and $*\mapsto *, a\mapsto b$ respectively. However, this cannot be effective: if we have $h : Z \to \{ *, a \}$ which equalizes the cocongruence, then $h$ must be the constant function with value $*$. But that means the cokernel pair of $h$ is the discrete space on $\{ *, a, b \}$.'
 
 special_objects:
   initial object:
@@ -120,16 +120,16 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: pointed homeomorphisms
-    reason: This is easy.
+    proof: This is easy.
   monomorphisms:
     description: injective pointed continuous maps
-    reason: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the discrete two-point space), hence preserves monomorphisms.
+    proof: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the discrete two-point space), hence preserves monomorphisms.
   epimorphisms:
     description: surjective pointed continuous maps
-    reason: 'For the non-trivial direction: The forgetful functor $\Top_* \to \Top$ preserves pushouts and hence also epimorphisms, and we already know the epimorphisms in $\Top$.'
+    proof: 'For the non-trivial direction: The forgetful functor $\Top_* \to \Top$ preserves pushouts and hence also epimorphisms, and we already know the epimorphisms in $\Top$.'
   regular monomorphisms:
     description: embeddings
-    reason: 'Equalizers are embeddings by their construction. Conversely, if $f : X \to Y$ is an embedding, then $f$ is the equalizer of the two characteristic maps $\chi_Y, \chi_{f(X)} : Y \to \{0,1\}$, where $\{0,1\}$ carries the indiscrete topology and $1$ is the base point.'
+    proof: 'Equalizers are embeddings by their construction. Conversely, if $f : X \to Y$ is an embedding, then $f$ is the equalizer of the two characteristic maps $\chi_Y, \chi_{f(X)} : Y \to \{0,1\}$, where $\{0,1\}$ carries the indiscrete topology and $1$ is the base point.'
   regular epimorphisms:
     description: surjective pointed quotient maps
-    reason: 'Regular epimorphisms are surjective pointed quotient maps by the explicit construction of coequalizers. Conversely, if $q : X \to Y$ is a surjective pointed quotient map, then one checks that $q$ is the coequalizer of its kernel pair $X \times_Y X \rightrightarrows X$: This is true for the underlying pointed sets, and continuity of the induced morphism follows since $q$ is a quotient map.'
+    proof: 'Regular epimorphisms are surjective pointed quotient maps by the explicit construction of coequalizers. Conversely, if $q : X \to Y$ is a surjective pointed quotient map, then one checks that $q$ is the coequalizer of its kernel pair $X \times_Y X \rightrightarrows X$: This is true for the underlying pointed sets, and continuity of the induced morphism follows since $q$ is a quotient map.'

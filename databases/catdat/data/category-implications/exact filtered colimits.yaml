@@ -7,7 +7,7 @@
   conclusions:
     - filtered colimits
     - finitely complete
-  reason: This holds by definition.
+  proof: This holds by definition.
   is_equivalence: false
 
 - id: exact_filtered_colimits_monos
@@ -15,7 +15,7 @@
     - exact filtered colimits
   conclusions:
     - filtered-colimit-stable monomorphisms
-  reason: >-
+  proof: >-
     This is because $f : X \longrightarrow Y$ is a monomorphism iff the diagram
     $$\begin{CD} X @>{\id}>> X \\ @V{\id}VV @VV{f}V \\ X @>>{f}> Y \end{CD}$$
     is a pullback, and if a functor preserves finite limits, it preserves pullbacks in particular.
@@ -27,7 +27,7 @@
   conclusions:
     - filtered colimits
     - finite products
-  reason: This holds by definition.
+  proof: This holds by definition.
   is_equivalence: false
 
 - id: exact_includes_cartesian_filtered_colimits
@@ -35,7 +35,7 @@
     - exact filtered colimits
   conclusions:
     - cartesian filtered colimits
-  reason: If filtered colimits commute with finite limits, they commute with finite products in particular.
+  proof: If filtered colimits commute with finite limits, they commute with finite products in particular.
   is_equivalence: false
 
 - id: thin_exact_filtered_colimits
@@ -44,7 +44,7 @@
     - thin
   conclusions:
     - exact filtered colimits
-  reason: In a thin category, every (finite) limit can be reduced to a (finite) product.
+  proof: In a thin category, every (finite) limit can be reduced to a (finite) product.
   is_equivalence: false
 
 - id: biproducts_cartesian_filtered_colimits
@@ -53,7 +53,7 @@
     - filtered colimits
   conclusions:
     - cartesian filtered colimits
-  reason: If $I$ is a finite set, the product functor $\C^I \to \C$ is isomorphic to the coproduct functor $\C^I \to \C$, hence preserves <i>all</i> colimits that exist in $\C$.
+  proof: If $I$ is a finite set, the product functor $\C^I \to \C$ is isomorphic to the coproduct functor $\C^I \to \C$, hence preserves <i>all</i> colimits that exist in $\C$.
   is_equivalence: false
 
 - id: extensive_cocartesian_cofiltered_limits
@@ -63,7 +63,7 @@
     - terminal object
   conclusions:
     - cocartesian cofiltered limits
-  reason: 'Let $\C$ be an extensive category with cofiltered limits and a terminal object. Then the coproduct functor $\C \times \C \cong \C/1 \times \C/1 \to \C/(1+1)$ is an equivalence. The forgetful functor $\C/A \to \C$ creates connected limits, and hence preserves cofiltered limits. For every $X \in \C$ the functor $(X,-) : \C \to \C \times \C$ also preserves cofiltered limits. The composition of these functors is $X \sqcup - : \C \to \C$ and therefore also preserves cofiltered limits.'
+  proof: 'Let $\C$ be an extensive category with cofiltered limits and a terminal object. Then the coproduct functor $\C \times \C \cong \C/1 \times \C/1 \to \C/(1+1)$ is an equivalence. The forgetful functor $\C/A \to \C$ creates connected limits, and hence preserves cofiltered limits. For every $X \in \C$ the functor $(X,-) : \C \to \C \times \C$ also preserves cofiltered limits. The composition of these functors is $X \sqcup - : \C \to \C$ and therefore also preserves cofiltered limits.'
   is_equivalence: false
 
 - id: filtered_monos_assumption
@@ -71,7 +71,7 @@
     - filtered-colimit-stable monomorphisms
   conclusions:
     - filtered colimits
-  reason: This holds by definition.
+  proof: This holds by definition.
   is_equivalence: false
 
 - id: filtered_monos_trivial
@@ -80,7 +80,7 @@
     - left cancellative
   conclusions:
     - filtered-colimit-stable monomorphisms
-  reason: This is trivial.
+  proof: This is trivial.
   is_equivalence: false
 
 - id: filtered_monos_iso
@@ -89,7 +89,7 @@
     - subobject-trivial
   conclusions:
     - filtered-colimit-stable monomorphisms
-  reason: This is trivial.
+  proof: This is trivial.
   is_equivalence: false
 
 - id: CIP_assumption
@@ -99,7 +99,7 @@
     - coproducts
     - products
     - zero morphisms
-  reason: This is true by definition.
+  proof: This is true by definition.
   is_equivalence: false
 
 - id: CIP_criterion
@@ -110,5 +110,5 @@
     - products
   conclusions:
     - CIP
-  reason: Let $(X_i)_{i \in I}$ be a family of objects. For every finite subset $E \subseteq I$ the canonical morphism $\coprod_{i \in E} X_i = \prod_{i \in E} X_i \to \prod_{i \in I} X_i$ is a (split) monomorphism. Hence, their colimit is also a monomorphism, which is the canonical morphism $\coprod_{i \in I} X_i \to \prod_{i \in I} X_i$.
+  proof: Let $(X_i)_{i \in I}$ be a family of objects. For every finite subset $E \subseteq I$ the canonical morphism $\coprod_{i \in E} X_i = \prod_{i \in E} X_i \to \prod_{i \in I} X_i$ is a (split) monomorphism. Hence, their colimit is also a monomorphism, which is the canonical morphism $\coprod_{i \in I} X_i \to \prod_{i \in I} X_i$.
   is_equivalence: false

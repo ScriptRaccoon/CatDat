@@ -91,8 +91,8 @@
 	</p>
 {:else}
 	<p>
-		<strong>Reason:</strong>
-		{@html implication.reason}
+		<strong>Proof:</strong>
+		{@html implication.proof}
 	</p>
 {/if}
 

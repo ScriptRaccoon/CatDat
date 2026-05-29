@@ -16,24 +16,24 @@ related_categories:
 
 satisfied_properties:
   - property: locally small
-    reason: There is a forgetful functor $M{-}\Set \to \Set$ and $\Set$ is locally small.
+    proof: There is a forgetful functor $M{-}\Set \to \Set$ and $\Set$ is locally small.
 
   - property: Grothendieck topos
-    reason: It is the category of sheaves on the opposite of the one-object category associated to $M$.
+    proof: It is the category of sheaves on the opposite of the one-object category associated to $M$.
 
   - property: finitary algebraic
-    reason: Take the algebraic theory of an $M$-sets (having a unary operation for each $m \in M$).
+    proof: Take the algebraic theory of an $M$-sets (having a unary operation for each $m \in M$).
 
 unsatisfied_properties:
   - property: skeletal
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: trivial
-    reason: This is trivial.
+    proof: This is trivial.
 
 undecidable_properties:
   - property: semi-strongly connected
-    reason: If this category is semi-strongly connected depends on the choice of $M$. For $M = 1$ it is, for $M = \IZ$ it is not. In general, if $G$ is a group, then $G{-}\Set$ is semi-strongly connected if and only if for all subgroups $H,K \subseteq G$, $H$ is subconjugated to $K$ or $K$ is subconjugated to $H$. If $G$ is abelian, this means that the poset of subgroups is linear, in which case $G$ is either isomorphic to $\IZ/p^n$ or to $\IZ/p^{\infty}$ for a prime $p$. See also <a href="https://math.stackexchange.com/questions/5129804" target="_blank">MSE/5129804</a>.
+    proof: If this category is semi-strongly connected depends on the choice of $M$. For $M = 1$ it is, for $M = \IZ$ it is not. In general, if $G$ is a group, then $G{-}\Set$ is semi-strongly connected if and only if for all subgroups $H,K \subseteq G$, $H$ is subconjugated to $K$ or $K$ is subconjugated to $H$. If $G$ is abelian, this means that the poset of subgroups is linear, in which case $G$ is either isomorphic to $\IZ/p^n$ or to $\IZ/p^{\infty}$ for a prime $p$. See also <a href="https://math.stackexchange.com/questions/5129804" target="_blank">MSE/5129804</a>.
 
 special_objects:
   initial object:
@@ -48,16 +48,16 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: bijective $M$-maps
-    reason: This characterization holds in every algebraic category.
+    proof: This characterization holds in every algebraic category.
   monomorphisms:
     description: injective $M$-maps
-    reason: 'This holds in every finitary algebraic category: the forgetful functor to $\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
+    proof: 'This holds in every finitary algebraic category: the forgetful functor to $\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
   epimorphisms:
     description: surjective $M$-maps
-    reason: This holds in every functor category $[\C,\Set]$, here applied to the case that $\C$ has just one object.
+    proof: This holds in every functor category $[\C,\Set]$, here applied to the case that $\C$ has just one object.
   regular monomorphisms:
     description: same as monomorphisms
-    reason: This is because the category is mono-regular.
+    proof: This is because the category is mono-regular.
   regular epimorphisms:
     description: surjective homomorphisms
-    reason: This holds in every finitary algebraic category.
+    proof: This holds in every finitary algebraic category.

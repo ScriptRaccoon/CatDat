@@ -17,59 +17,59 @@ comments:
 
 satisfied_properties:
   - property: locally small
-    reason: There is a forgetful functor $\Meas \to \Set$ and $\Set$ is locally small.
+    proof: There is a forgetful functor $\Meas \to \Set$ and $\Set$ is locally small.
 
   - property: semi-strongly connected
-    reason: Every non-empty measurable space is weakly terminal (by using constant maps).
+    proof: Every non-empty measurable space is weakly terminal (by using constant maps).
 
   - property: generator
-    reason: The one-point measurable space (with the unique $\sigma$-algebra) is a generator since it represents the forgetful functor $\Meas \to \Set$.
+    proof: The one-point measurable space (with the unique $\sigma$-algebra) is a generator since it represents the forgetful functor $\Meas \to \Set$.
 
   - property: cogenerator
-    reason: Take the two-element set $2$ endowed with the trivial $\sigma$-algebra (where only $\varnothing$ and $2$ are measurable), and use that $2$ is a cogenerator for $\Set$.
+    proof: Take the two-element set $2$ endowed with the trivial $\sigma$-algebra (where only $\varnothing$ and $2$ are measurable), and use that $2$ is a cogenerator for $\Set$.
 
   - property: well-powered
-    reason: This follows from the fact that monomorphisms are injective in this category.
+    proof: This follows from the fact that monomorphisms are injective in this category.
 
   - property: well-copowered
-    reason: This follows from the fact that epimorphisms are surjective in this category.
+    proof: This follows from the fact that epimorphisms are surjective in this category.
 
   - property: complete
-    reason: Take the limit of the underlying sets and take the smallest $\sigma$-algebra making all projections measurable.
+    proof: Take the limit of the underlying sets and take the smallest $\sigma$-algebra making all projections measurable.
 
   - property: cocomplete
-    reason: Take the colimit of the underlying sets and take the largest $\sigma$-algebra making all inclusions measurable. That is, a set is measurable iff its preimage under each inclusion is measurable.
+    proof: Take the colimit of the underlying sets and take the largest $\sigma$-algebra making all inclusions measurable. That is, a set is measurable iff its preimage under each inclusion is measurable.
 
   - property: infinitary extensive
-    reason: '[Sketch] Since <a href="/category/Set">$\Set$</a> is infinitary extensive, a map $f : Y \to \coprod_i X_i \eqqcolon X$ corresponds to a decomposition $Y = \coprod_i Y_i$ (as sets) with maps $f_i : Y_i \to X_i$. Endow the measurable subset $Y_i \subseteq Y$ with the restricted $\sigma$-algebra. If $f$ is measurable, each $f_i$ is measurable, and $Y = \coprod_i Y_i$ holds as measurable spaces.'
+    proof: '[Sketch] Since <a href="/category/Set">$\Set$</a> is infinitary extensive, a map $f : Y \to \coprod_i X_i \eqqcolon X$ corresponds to a decomposition $Y = \coprod_i Y_i$ (as sets) with maps $f_i : Y_i \to X_i$. Endow the measurable subset $Y_i \subseteq Y$ with the restricted $\sigma$-algebra. If $f$ is measurable, each $f_i$ is measurable, and $Y = \coprod_i Y_i$ holds as measurable spaces.'
 
   - property: filtered-colimit-stable monomorphisms
-    reason: This follows from <a href="/content/filtered-monos">this lemma</a> applied to the forgetful functor to $\Set$.
+    proof: This follows from <a href="/content/filtered-monos">this lemma</a> applied to the forgetful functor to $\Set$.
 
   - property: regular subobject classifier
-    reason: The set $\{0,1\}$ with the trivial $\sigma$-algebra is a regular subobject classifier since measurable maps $X \to \{0,1\}$ correspond to subsets of $X$.
+    proof: The set $\{0,1\}$ with the trivial $\sigma$-algebra is a regular subobject classifier since measurable maps $X \to \{0,1\}$ correspond to subsets of $X$.
 
 unsatisfied_properties:
   - property: skeletal
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: balanced
-    reason: Take a set $X$ with two different $\sigma$-algebras $\A \subset \B$ (for example, $\A = \{\varnothing,X\}$ and $\B = P(X)$ when $X$ has at least $2$ elements), then the identity map $(X,\B) \to (X,\A)$ provides a counterexample.
+    proof: Take a set $X$ with two different $\sigma$-algebras $\A \subset \B$ (for example, $\A = \{\varnothing,X\}$ and $\B = P(X)$ when $X$ has at least $2$ elements), then the identity map $(X,\B) \to (X,\A)$ provides a counterexample.
 
   - property: Malcev
-    reason: Use that <a href="/category/Set">$\Set$</a> is not Malcev and endow sets with the trivial $\sigma$-algebra.
+    proof: Use that <a href="/category/Set">$\Set$</a> is not Malcev and endow sets with the trivial $\sigma$-algebra.
 
   - property: cartesian filtered colimits
-    reason: See <a href="https://math.stackexchange.com/questions/5027218" target="_blank">MSE/5027218</a>.
+    proof: See <a href="https://math.stackexchange.com/questions/5027218" target="_blank">MSE/5027218</a>.
 
   - property: cofiltered-limit-stable epimorphisms
-    reason: We already know that <a href="/category/Set">$\Set$</a> does not have this property. Now apply the contrapositive of the dual of <a href="/content/filtered-monos">this lemma</a> to the functor $\Set \to \Meas$ which equips a set with the trivial $\sigma$-algebra.
+    proof: We already know that <a href="/category/Set">$\Set$</a> does not have this property. Now apply the contrapositive of the dual of <a href="/content/filtered-monos">this lemma</a> to the functor $\Set \to \Meas$ which equips a set with the trivial $\sigma$-algebra.
 
   - property: effective cocongruences
-    reason: 'The proof is similar to the one for <a href="/category/Top">$\Top$</a>: Use the trivial $\sigma$-algebra on a two-point set.'
+    proof: 'The proof is similar to the one for <a href="/category/Top">$\Top$</a>: Use the trivial $\sigma$-algebra on a two-point set.'
 
   - property: regular
-    reason: >-
+    proof: >-
       In a regular category, regular epimorphisms are stable under pullbacks and compositions (see Prop. 3.7 at the <a href="https://ncatlab.org/nlab/show/regular+epimorphism" target="_blank">nLab</a>), which implies that for every regular epimorphism $f : X \to Y$ also $f \times f : X \times X \to Y \times Y$ is a regular epimorphism. We will show that this fails in $\Meas$.
 
 
@@ -104,16 +104,16 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: bijective measurable maps that map measurable sets to measurable sets
-    reason: This is easy.
+    proof: This is easy.
   monomorphisms:
     description: injective measurable maps
-    reason: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
+    proof: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
   epimorphisms:
     description: surjective measurable maps
-    reason: Use the same proof as for sets, where $2 = \{0,1\}$ is endowed with the trivial $\sigma$-algebra.
+    proof: Use the same proof as for sets, where $2 = \{0,1\}$ is endowed with the trivial $\sigma$-algebra.
   regular monomorphisms:
     description: embeddings
-    reason: '(This is the same proof as for <a href="/category/Top">$\Top$</a>.) Equalizers are embeddings by their construction. Conversely, if $f : X \to Y$ is an embedding, then $f$ is the equalizer of the two characteristic maps $\chi_Y, \chi_{f(X)} : Y \rightrightarrows \{0,1\}$, where $\{0,1\}$ carries the trivial $\sigma$-algebra.'
+    proof: '(This is the same proof as for <a href="/category/Top">$\Top$</a>.) Equalizers are embeddings by their construction. Conversely, if $f : X \to Y$ is an embedding, then $f$ is the equalizer of the two characteristic maps $\chi_Y, \chi_{f(X)} : Y \rightrightarrows \{0,1\}$, where $\{0,1\}$ carries the trivial $\sigma$-algebra.'
   regular epimorphisms:
     description: 'A measurable map $f : X \to Y$ is a regular epimorphism iff $f$ is surjective and $f$ is a quotient map, meaning that a subset of $Y$ is measurable when its $f$-preimage is measurable.'
-    reason: 'The proof works the same as for $\Top$ (and can in fact be generalized to topological functors). Regular epimorphisms are surjective quotient maps by the explicit construction of coequalizers. Conversely, if $q : X \to Y$ is a surjective quotient map, then one checks that $q$ is the coequalizer of its kernel pair $X \times_Y X \rightrightarrows X$: This is true for the underlying sets, and measurability of the induced morphism follows since $q$ is a quotient map.'
+    proof: 'The proof works the same as for $\Top$ (and can in fact be generalized to topological functors). Regular epimorphisms are surjective quotient maps by the explicit construction of coequalizers. Conversely, if $q : X \to Y$ is a surjective quotient map, then one checks that $q$ is the coequalizer of its kernel pair $X \times_Y X \rightrightarrows X$: This is true for the underlying sets, and measurability of the induced morphism follows since $q$ is a quotient map.'

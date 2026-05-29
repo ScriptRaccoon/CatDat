@@ -18,58 +18,58 @@ related_categories:
 
 satisfied_properties:
   - property: locally small
-    reason: There is a forgetful functor $\Grp \to \Set$ and $\Set$ is locally small.
+    proof: There is a forgetful functor $\Grp \to \Set$ and $\Set$ is locally small.
 
   - property: pointed
-    reason: The trivial group is a zero object.
+    proof: The trivial group is a zero object.
     check_redundancy: false
 
   - property: finitary algebraic
-    reason: Take the algebraic theory of a group.
+    proof: Take the algebraic theory of a group.
 
   - property: mono-regular
-    reason: See Prop. 4.2 at the <a href="https://ncatlab.org/nlab/show/regular+monomorphism#Examples" target="_blank">nLab</a>.
+    proof: See Prop. 4.2 at the <a href="https://ncatlab.org/nlab/show/regular+monomorphism#Examples" target="_blank">nLab</a>.
 
   - property: conormal
-    reason: Since epimorphisms are surjective (see below), this is the first isomorphism theorem for groups.
+    proof: Since epimorphisms are surjective (see below), this is the first isomorphism theorem for groups.
 
   - property: Malcev
-    reason: See Example 2.2.4 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>.
+    proof: See Example 2.2.4 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>.
 
   - property: effective cocongruences
-    reason: A proof can be found <a href="/content/cocongruences_of_groups">here</a>.
+    proof: A proof can be found <a href="/content/cocongruences_of_groups">here</a>.
 
 unsatisfied_properties:
   - property: skeletal
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: normal
-    reason: Every non-normal subgroup (such as $C_2 \hookrightarrow S_3$) provides a counterexample.
+    proof: Every non-normal subgroup (such as $C_2 \hookrightarrow S_3$) provides a counterexample.
 
   - property: cogenerator
-    reason: 'We apply <a href="/content/missing_cogenerator">this lemma</a> to the collection of simple groups: Any non-trivial homomorphism from a simple group to a group must be injective, and for every infinite cardinal $\kappa$ there is a simple group of size $\geq \kappa$ (for example, the alternating group on $\kappa$ elements).'
+    proof: 'We apply <a href="/content/missing_cogenerator">this lemma</a> to the collection of simple groups: Any non-trivial homomorphism from a simple group to a group must be injective, and for every infinite cardinal $\kappa$ there is a simple group of size $\geq \kappa$ (for example, the alternating group on $\kappa$ elements).'
 
   - property: coregular
-    reason: This is because injective group homomorphisms are not stable under pushouts, see e.g. <a href="https://math.stackexchange.com/questions/601463/" target="_blank">MSE/601463</a> or <a href="https://math.stackexchange.com/questions/5088032" target="_blank">MSE/5088032</a>.
+    proof: This is because injective group homomorphisms are not stable under pushouts, see e.g. <a href="https://math.stackexchange.com/questions/601463/" target="_blank">MSE/601463</a> or <a href="https://math.stackexchange.com/questions/5088032" target="_blank">MSE/5088032</a>.
 
   - property: counital
-    reason: The canonical morphism $F_2 = \IZ \sqcup \IZ \to \IZ \times \IZ$ is not a monomorphism since $F_2$ is not abelian.
+    proof: The canonical morphism $F_2 = \IZ \sqcup \IZ \to \IZ \times \IZ$ is not a monomorphism since $F_2$ is not abelian.
 
   - property: CIP
     # TODO: remove code duplication with "counital" proof
-    reason: The canonical morphism $F_2 = \IZ \sqcup \IZ \to \IZ \times \IZ$ is not a monomorphism since $F_2$ is not abelian.
+    proof: The canonical morphism $F_2 = \IZ \sqcup \IZ \to \IZ \times \IZ$ is not a monomorphism since $F_2$ is not abelian.
 
   - property: CSP
-    reason: The canonical homomorphism $\coprod_{n \geq 0} \IZ \to \prod_{n \geq 0} \IZ$ is not surjective because its domain is countable and its codomain is uncountable. Hence it is no epimorphism.
+    proof: The canonical homomorphism $\coprod_{n \geq 0} \IZ \to \prod_{n \geq 0} \IZ$ is not surjective because its domain is countable and its codomain is uncountable. Hence it is no epimorphism.
 
   - property: regular quotient object classifier
-    reason: 'Assume that $\Grp$ has a (regular) quotient object classifier, i.e. a group $P$ such that every surjective homomorphism $G \to H$ is the cokernel of a unique homomorphism $\varphi : P \to G$. Equivalently, every normal subgroup $N \subseteq G$ is $\langle \langle \varphi(P) \rangle \rangle$ for a unique homomorphism $\varphi : P \to G$, where $\langle \langle - \rangle \rangle$ denotes the normal closure. If $c_g : G \to G$ denotes the conjugation with $g \in G$, then the images of $\varphi$ and $c_g \circ \varphi$ have the same normal closures, so the homomorphisms must be equal. In other words, $\varphi$ factors through the center $Z(G)$. But then every normal subgroup of $G$, in particular $G$ itself, would be contained in $Z(G)$, which is wrong for every non-abelian group $G$.'
+    proof: 'Assume that $\Grp$ has a (regular) quotient object classifier, i.e. a group $P$ such that every surjective homomorphism $G \to H$ is the cokernel of a unique homomorphism $\varphi : P \to G$. Equivalently, every normal subgroup $N \subseteq G$ is $\langle \langle \varphi(P) \rangle \rangle$ for a unique homomorphism $\varphi : P \to G$, where $\langle \langle - \rangle \rangle$ denotes the normal closure. If $c_g : G \to G$ denotes the conjugation with $g \in G$, then the images of $\varphi$ and $c_g \circ \varphi$ have the same normal closures, so the homomorphisms must be equal. In other words, $\varphi$ factors through the center $Z(G)$. But then every normal subgroup of $G$, in particular $G$ itself, would be contained in $Z(G)$, which is wrong for every non-abelian group $G$.'
 
   - property: cofiltered-limit-stable epimorphisms
-    reason: We already know that <a href="/category/Ab">$\Ab$</a> does not have this property. Now apply the contrapositive of the dual of <a href="/content/filtered-monos">this lemma</a> to the forgetful functor $\Ab \to \Grp$ which indeed preserves epimorphisms.
+    proof: We already know that <a href="/category/Ab">$\Ab$</a> does not have this property. Now apply the contrapositive of the dual of <a href="/content/filtered-monos">this lemma</a> to the forgetful functor $\Ab \to \Grp$ which indeed preserves epimorphisms.
 
   - property: cocartesian cofiltered limits
-    reason: >-
+    proof: >-
       For cofiltered diagrams of groups $(H_i)$ and a group $G$ the canonical homomorphism
       $$\textstyle \alpha : G \sqcup \lim_i H_i \to \lim_i (G \sqcup H_i)$$
       is injective, but often fails to be surjective because the components of an element in the image have bounded <i>free product length</i> (the number of factors appearing in the reduced form). Specifically, consider the free groups $G = \langle y \rangle$ and $H_n = \langle x_1,\dotsc,x_n \rangle$ for $n \in \IN$ with the truncation maps $H_{n+1} \to H_n$, $x_{n+1} \mapsto 1$. Define
@@ -89,16 +89,16 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: bijective homomorphisms
-    reason: This characterization holds in every algebraic category.
+    proof: This characterization holds in every algebraic category.
   monomorphisms:
     description: injective homomorphisms
-    reason: 'This holds in every finitary algebraic category: the forgetful functor to $\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
+    proof: 'This holds in every finitary algebraic category: the forgetful functor to $\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
   epimorphisms:
     description: surjective homomorphisms
-    reason: 'For the non-trivial direction, if $f : G \to H$ is an epimorphism, we may factor it as $G \to f(G) \to H$, and $f(G) \to H$ is still an epimorphism, but also an inclusion and hence a monomorphism. Since we already know that the category is balanced, $f(G) \to H$ must be an isomorphism.'
+    proof: 'For the non-trivial direction, if $f : G \to H$ is an epimorphism, we may factor it as $G \to f(G) \to H$, and $f(G) \to H$ is still an epimorphism, but also an inclusion and hence a monomorphism. Since we already know that the category is balanced, $f(G) \to H$ must be an isomorphism.'
   regular monomorphisms:
     description: same as monomorphisms
-    reason: This is because the category is mono-regular.
+    proof: This is because the category is mono-regular.
   regular epimorphisms:
     description: surjective homomorphisms
-    reason: This holds in every finitary algebraic category.
+    proof: This holds in every finitary algebraic category.

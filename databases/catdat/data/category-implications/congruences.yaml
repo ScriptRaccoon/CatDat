@@ -5,7 +5,7 @@
     - regular
   conclusions:
     - finitely complete
-  reason: This holds by definition of a regular category.
+  proof: This holds by definition of a regular category.
   is_equivalence: false
 
 - id: regular_well-powered_well-copowered
@@ -15,7 +15,7 @@
     - well-powered
   conclusions:
     - well-copowered
-  reason: The regularity condition gives a bijection between the collection of quotients of $X$ and the collection of effective congruences on $X$, where the latter is a subcollection of the collection of subobjects of $X\times X$.
+  proof: The regularity condition gives a bijection between the collection of quotients of $X$ and the collection of effective congruences on $X$, where the latter is a subcollection of the collection of subobjects of $X\times X$.
   is_equivalence: false
 
 - id: congruence_quotients_are_reflexive_coequalizers
@@ -23,7 +23,7 @@
     - reflexive coequalizers
   conclusions:
     - quotients of congruences
-  reason: A congruence $E \rightrightarrows X$ has a common section $X \to E$ given by the reflexivity morphism.
+  proof: A congruence $E \rightrightarrows X$ has a common section $X \to E$ given by the reflexivity morphism.
   is_equivalence: false
 
 - id: cokernels_via_congruence_quotients
@@ -33,7 +33,7 @@
     - regular
   conclusions:
     - cokernels
-  reason: 'By the regularity assumption, it suffices to consider cokernels of subobjects. Given a subobject $Y$ of $X$, we have the congruence on $X$ given by the pullback of ${-} : X \times X \to X$ and $Y$. The quotient of this congruence is a cokernel of $Y \hookrightarrow X$.'
+  proof: 'By the regularity assumption, it suffices to consider cokernels of subobjects. Given a subobject $Y$ of $X$, we have the congruence on $X$ given by the pullback of ${-} : X \times X \to X$ and $Y$. The quotient of this congruence is a cokernel of $Y \hookrightarrow X$.'
   is_equivalence: false
 
 - id: congruence_quotients_via_cokernels
@@ -43,7 +43,7 @@
     - preadditive
   conclusions:
     - quotients of congruences
-  reason: 'For any congruence $E$ on an object $X$ of a preadditive category, let $E_0$ be the kernel of $p_2 : E \to X$.  The restriction of $p_1$ to $E_0$ is a monomorphism.  We can then see that $E$ must be the pullback of $p_1 - p_2 : E \to X$ and $E_0 \hookrightarrow X$.  Then the cokernel of $E_0 \hookrightarrow X$ is a quotient of $E$.'
+  proof: 'For any congruence $E$ on an object $X$ of a preadditive category, let $E_0$ be the kernel of $p_2 : E \to X$.  The restriction of $p_1$ to $E_0$ is a monomorphism.  We can then see that $E$ must be the pullback of $p_1 - p_2 : E \to X$ and $E_0 \hookrightarrow X$.  Then the cokernel of $E_0 \hookrightarrow X$ is a quotient of $E$.'
   is_equivalence: false
 
 - id: core-hin_quotients
@@ -52,7 +52,7 @@
   conclusions:
     - effective congruences
     - quotients of congruences
-  reason: 'If $p_1, p_2 : E \rightrightarrows X$ is a congruence, the symmetry morphism $s : E \to E$ is an automorphism of $E$, hence equal to $\id_E$ by assumption. But then $p_1 = p_2 \circ s = p_2$, and simply $\id_X$ is a coequalizer. Also, for the reflexivity morphism $r : X \to E$, we have $p_1 \circ r = \id$. For the reverse composition, $p_1 \circ r \circ p_1 = p_1 \circ \id$ and $p_2 \circ r \circ p_1 = p_2 \circ \id$, so since $p_1, p_2$ are jointly monomorphic, we get $r \circ p_1 = \id$. Therefore, $p_1 = p_2$ is an isomorphism, so $E$ is the kernel pair of $\id_X$.'
+  proof: 'If $p_1, p_2 : E \rightrightarrows X$ is a congruence, the symmetry morphism $s : E \to E$ is an automorphism of $E$, hence equal to $\id_E$ by assumption. But then $p_1 = p_2 \circ s = p_2$, and simply $\id_X$ is a coequalizer. Also, for the reflexivity morphism $r : X \to E$, we have $p_1 \circ r = \id$. For the reverse composition, $p_1 \circ r \circ p_1 = p_1 \circ \id$ and $p_2 \circ r \circ p_1 = p_2 \circ \id$, so since $p_1, p_2$ are jointly monomorphic, we get $r \circ p_1 = \id$. Therefore, $p_1 = p_2$ is an isomorphism, so $E$ is the kernel pair of $\id_X$.'
   is_equivalence: false
 
 - id: preadditive_kernels_normal_imply_effective_congruences
@@ -62,7 +62,7 @@
     - preadditive
   conclusions:
     - effective congruences
-  reason: >-
+  proof: >-
     Let $f, g : E \rightrightarrows X$ be a congruence. Then let $E_0$ be the kernel of $g$. We see that $f|_{E_0} : E_0 \to X$ is a monomorphism. Let $f|_{E_0}$ be the kernel of a morphism $h : X \to Y$. We claim that $E$ is also the kernel pair of $h$.
 
     To see this, suppose we have a pair of generalized elements $x_1, x_2 \in X(T)$. Then we have
@@ -76,7 +76,7 @@
     - effective congruences
   conclusions:
     - normal
-  reason: >-
+  proof: >-
     Let $i : Y \hookrightarrow X$ be a monomorphism. Then we define a relation on $X$ via $E \coloneqq X \times Y$ with maps $f, g : E \rightrightarrows X$ defined by $f : (x, y) \mapsto x+i(y)$ and $g : (x, y) \mapsto x$. It is straightforward to check that $f$ and $g$ are jointly monomorphic. Now $E$ is a congruence because for generalized elements $x_1, x_2 \in X(T)$, $(x_1, x_2)$ factors through $E$ if and only if $x_1 - x_2$ factors through $Y$. In other words, the relation on $X(T)$ is exactly $x_1 \equiv x_2 \pmod{Y(T)}$, which is an equivalence relation on $X(T)$ (and in fact a congruence in $\Ab$). Now by assumption, $E$ is the kernel pair of some morphism $h : X \to Z$; in other words, $(x_1, x_2)$ factors through $E$ if and only if $h(x_1) = h(x_2)$. In particular, for $x \in X(T)$, $x$ factors through $Y$ if and only if $(x, 0)$ factors through $E$, which is equivalent to $h(x) = h(0) = 0$. We have thus shown that $Y$ is the kernel of $h$.
   is_equivalence: false
 
@@ -86,7 +86,7 @@
     - regular
   conclusions:
     - quotients of congruences
-  reason: We assume that every congruence is effective, and the regularity condition implies that every effective congruence has a quotient.
+  proof: We assume that every congruence is effective, and the regularity condition implies that every effective congruence has a quotient.
   is_equivalence: false
 
 - id: regular_epi-regular_extensive_consequences
@@ -97,7 +97,7 @@
   conclusions:
     - co-Malcev
     - effective cocongruences
-  reason: >-
+  proof: >-
     Suppose we have a coreflexive corelation
     $$X+X' \xtwoheadrightarrow{p} E \xtwoheadrightarrow{r} X$$
     on $X$, where we let $X'$ be an isomorphic copy of $X$ for clarity below. Let $Y$ be the equalizer of $p\circ i_1, p\circ i_2 : X \rightrightarrows E$. That means that for a generalized element $x \in X(T)$, $x \in Y(T)$ if and only if $p(x) = p(x')$. Then by the assumptions $p$ is a regular epimorphism. By regularity, $p$ is the coequalizer of its kernel pair, which can be expressed as the equalizer $K$ of
@@ -117,7 +117,7 @@
     - extensive
   conclusions:
     - mono-regular
-  reason: >-
+  proof: >-
     Let $\alpha : A \hookrightarrow B$ be a monomorphism. Let $B'$ be a copy of $B$, and likewise let $A'$ be a copy of $A$. Consider the congruence on $B + B'$ generated by $y \sim y'$ for $y \in A$. Formally, we define
     $$E \coloneqq B + B' + A + A'$$
     and define the two morphisms
@@ -136,5 +136,5 @@
   conclusions:
     - regular
     - effective congruences
-  reason: This holds by definition.
+  proof: This holds by definition.
   is_equivalence: true

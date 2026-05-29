@@ -187,13 +187,13 @@ function seed_categories() {
 	)
 
 	const special_morphism_insert = db.prepare(
-		`INSERT INTO special_morphisms (category_id, type, description, reason)
+		`INSERT INTO special_morphisms (category_id, type, description, proof)
 		VALUES (?, ?, ?, ?)`,
 	)
 
 	const property_assignment_insert = db.prepare(
 		`INSERT INTO category_property_assignments (
-			category_id, property_id, is_satisfied, reason, check_redundancy
+			category_id, property_id, is_satisfied, proof, check_redundancy
 		) VALUES (?, ?, ?, ?, ?)`,
 	)
 
@@ -228,12 +228,7 @@ function seed_categories() {
 
 		for (const [type, entry] of Object.entries(category.special_morphisms)) {
 			if (!entry) continue
-			special_morphism_insert.run(
-				category.id,
-				type,
-				entry.description,
-				entry.reason,
-			)
+			special_morphism_insert.run(category.id, type, entry.description, entry.proof)
 		}
 
 		for (const entry of category.satisfied_properties) {
@@ -241,7 +236,7 @@ function seed_categories() {
 				category.id,
 				entry.property,
 				1,
-				entry.reason,
+				entry.proof,
 				entry.check_redundancy === false ? 0 : 1,
 			)
 		}
@@ -251,7 +246,7 @@ function seed_categories() {
 				category.id,
 				entry.property,
 				0,
-				entry.reason,
+				entry.proof,
 				entry.check_redundancy === false ? 0 : 1,
 			)
 		}
@@ -261,7 +256,7 @@ function seed_categories() {
 				category.id,
 				entry.property,
 				null,
-				entry.reason,
+				entry.proof,
 				entry.check_redundancy === false ? 0 : 1,
 			)
 		}
@@ -344,7 +339,7 @@ function seed_category_implications() {
 
 	const implication_insert = db.prepare(
 		`INSERT INTO category_implications (
-	        id, reason, is_equivalence
+	        id, proof, is_equivalence
 		) VALUES (?, ?, ?)`,
 	)
 
@@ -361,7 +356,7 @@ function seed_category_implications() {
 	)
 
 	function insert_implication(impl: CategoryImplicationYaml) {
-		implication_insert.run(impl.id, impl.reason, Number(impl.is_equivalence))
+		implication_insert.run(impl.id, impl.proof, Number(impl.is_equivalence))
 
 		for (const assumption of impl.assumptions) {
 			assumption_insert.run(impl.id, assumption)
@@ -457,7 +452,7 @@ function seed_functor_implications() {
 
 	const implication_insert = db.prepare(
 		`INSERT INTO functor_implications (
-	        id, reason, is_equivalence
+	        id, proof, is_equivalence
 		) VALUES (?, ?, ?)`,
 	)
 
@@ -486,7 +481,7 @@ function seed_functor_implications() {
 	)
 
 	function insert_implication(impl: FunctorImplicationYaml) {
-		implication_insert.run(impl.id, impl.reason, Number(impl.is_equivalence))
+		implication_insert.run(impl.id, impl.proof, Number(impl.is_equivalence))
 
 		for (const assumption of impl.assumptions) {
 			assumption_insert.run(impl.id, assumption)
@@ -560,7 +555,7 @@ function seed_functors() {
 
 	const property_assignment_insert = db.prepare(
 		`INSERT INTO functor_property_assignments (
-			functor_id, property_id, is_satisfied, reason, check_redundancy
+			functor_id, property_id, is_satisfied, proof, check_redundancy
 		) VALUES (?, ?, ?, ?, ?)`,
 	)
 
@@ -596,7 +591,7 @@ function seed_functors() {
 				functor.id,
 				entry.property,
 				1,
-				entry.reason,
+				entry.proof,
 				entry.check_redundancy === false ? 0 : 1,
 			)
 		}
@@ -606,7 +601,7 @@ function seed_functors() {
 				functor.id,
 				entry.property,
 				0,
-				entry.reason,
+				entry.proof,
 				entry.check_redundancy === false ? 0 : 1,
 			)
 		}
@@ -616,7 +611,7 @@ function seed_functors() {
 				functor.id,
 				entry.property,
 				null,
-				entry.reason,
+				entry.proof,
 				entry.check_redundancy === false ? 0 : 1,
 			)
 		}

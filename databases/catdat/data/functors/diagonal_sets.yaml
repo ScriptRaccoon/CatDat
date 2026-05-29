@@ -15,21 +15,21 @@ related_functors:
 
 satisfied_properties:
   - property: conservative
-    reason: This follows from $p_1 \circ \Delta = \id_\Set$.
+    proof: This follows from $p_1 \circ \Delta = \id_\Set$.
 
   - property: left adjoint
-    reason: >-
+    proof: >-
       The diagonal functor is left adjoint to the product functor since
       $$\Hom(X, A \times B) \cong \Hom(X,A) \times \Hom(X,B) \cong \Hom((X,X),(A,B)).$$
 
   - property: right adjoint
-    reason: >-
+    proof: >-
       The diagonal functor is right adjoint to the coproduct functor since
       $$\Hom(A + B,X) \cong \Hom(A,X) \times \Hom(B,X) \cong \Hom((A,B),(X,X)).$$
 
 unsatisfied_properties:
   - property: full
-    reason: 'Take any pair of distinct maps $f,g : X \rightrightarrows Y$. Then $(f,g) : (X,X) \to (Y,Y)$ is not induced diagonally via a map $X \to Y$.'
+    proof: 'Take any pair of distinct maps $f,g : X \rightrightarrows Y$. Then $(f,g) : (X,X) \to (Y,Y)$ is not induced diagonally via a map $X \to Y$.'
 
   - property: essentially surjective
-    reason: This is trivial.
+    proof: This is trivial.

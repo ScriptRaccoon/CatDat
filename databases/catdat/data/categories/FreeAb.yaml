@@ -15,51 +15,51 @@ related_categories:
 
 satisfied_properties:
   - property: locally small
-    reason: There is a forgetful functor $\FreeAb \to \Set$ and $\Set$ is locally small.
+    proof: There is a forgetful functor $\FreeAb \to \Set$ and $\Set$ is locally small.
 
   - property: additive
-    reason: The embedding $\FreeAb \hookrightarrow \Ab$ is closed under (finite) direct sums, and <a href="/category/Ab">$\Ab$</a> is additive.
+    proof: The embedding $\FreeAb \hookrightarrow \Ab$ is closed under (finite) direct sums, and <a href="/category/Ab">$\Ab$</a> is additive.
 
   - property: coproducts
-    reason: This is is because free abelian groups are closed under direct sums of abelian groups.
+    proof: This is is because free abelian groups are closed under direct sums of abelian groups.
 
   - property: generator
-    reason: As for <a href="/category/Ab">$\Ab$</a>, the group $\IZ$ is a generator.
+    proof: As for <a href="/category/Ab">$\Ab$</a>, the group $\IZ$ is a generator.
 
   - property: cogenerator
-    reason: It is easy to check that $\IZ$ is a cogenerator for free abelian groups.
+    proof: It is easy to check that $\IZ$ is a cogenerator for free abelian groups.
 
   - property: well-powered
-    reason: This is clear since the monomorphisms are injective.
+    proof: This is clear since the monomorphisms are injective.
 
   - property: well-copowered
-    reason: See <a href="https://math.stackexchange.com/questions/5025660" target="_blank">MSE/5025660</a>.
+    proof: See <a href="https://math.stackexchange.com/questions/5025660" target="_blank">MSE/5025660</a>.
 
   - property: regular
-    reason: |-
+    proof: |-
       This follows formally from the fact that <a href="/category/Ab">$\Ab$</a> is regular and $\FreeAb$ is closed under subobjects and finite products: By Prop. 2.5 in the <a href="https://ncatlab.org/nlab/show/regular+category">nLab</a> it suffices to prove that there are pullback-stable (reg epi, mono)-factorizations. Every homomorphism $f : A \to B$ in $\FreeAb$ factors as $f = i \circ p : A \twoheadrightarrow C \hookrightarrow B$, where $C$ is a subgroup, hence free, and $A \to C$ is surjective. Clearly, surjective homomorphisms are pullback-stable. It remains to show that they coincide with the regular epimorphisms.
       (1) If $f : A \to B$ is surjective, it is the coequalizer of $A \times_B A \rightrightarrows A$ in $\Ab$. Since $A \times_B A$ is free abelian, $f$ is also a coequalizer in $\FreeAb$.
       (2) If $f : A \to B$ is a regular epimorphism in $\FreeAb$, consider the factorization $f = i \circ p$ as above. Since $f$ is an extremal epimorphism, $i$ must be an isomorphism, so that $f$ is surjective.
 
 unsatisfied_properties:
   - property: balanced
-    reason: 'The homomorphism $2 : \IZ \to \IZ$ is a counterexample.'
+    proof: 'The homomorphism $2 : \IZ \to \IZ$ is a counterexample.'
 
   - property: skeletal
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: countable powers
-    reason: Assume that the power $P = \prod_{n \geq 0} \IZ$ exists in this category. The projections $P \to \IZ$ induce an isomorphism of abelian groups $\Hom(\IZ, P) \to \prod_n \Hom(\IZ, \IZ)$, hence $P \cong \IZ^{\IN}$. But it is <a href="https://groupprops.subwiki.org/wiki/Baer-Specker_group_is_not_free_abelian" target="_blank">well-known</a> that $\IZ^{\IN}$ is not free abelian.
+    proof: Assume that the power $P = \prod_{n \geq 0} \IZ$ exists in this category. The projections $P \to \IZ$ induce an isomorphism of abelian groups $\Hom(\IZ, P) \to \prod_n \Hom(\IZ, \IZ)$, hence $P \cong \IZ^{\IN}$. But it is <a href="https://groupprops.subwiki.org/wiki/Baer-Specker_group_is_not_free_abelian" target="_blank">well-known</a> that $\IZ^{\IN}$ is not free abelian.
 
   - property: sequential colimits
-    reason: See <a href="https://mathoverflow.net/questions/509715" target="_blank">MO/509715</a>.
+    proof: See <a href="https://mathoverflow.net/questions/509715" target="_blank">MO/509715</a>.
 
   - property: ℵ₁-filtered colimits
-    reason: It is shown in <a href="https://mathoverflow.net/questions/511426" target="_blank">MO/511426</a> that the $\aleph_1$-filtered diagram of countable subgroups of $\IZ^{\IN}$ does not have a colimit in $\FreeAb$.
+    proof: It is shown in <a href="https://mathoverflow.net/questions/511426" target="_blank">MO/511426</a> that the $\aleph_1$-filtered diagram of countable subgroups of $\IZ^{\IN}$ does not have a colimit in $\FreeAb$.
 
 undecidable_properties:
   - property: accessible
-    reason: The question if this category is accessible is undecidable in ZFC. See <a href="https://math.stackexchange.com/questions/720885" target="_blank">MSE/720885</a>.
+    proof: The question if this category is accessible is undecidable in ZFC. See <a href="https://math.stackexchange.com/questions/720885" target="_blank">MSE/720885</a>.
 
 special_objects:
   initial object:
@@ -74,10 +74,10 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: bijective homomorphisms
-    reason: This follows exactly as for abelian groups.
+    proof: This follows exactly as for abelian groups.
   monomorphisms:
     description: injective homomorphisms
-    reason: 'Let $f : A \to B$ be a monomorphism of free abelian groups. Let $a \in A$ be in the kernel of $a$. Then we may view $a$ as a morphism $a : \IZ \to A$ with $f \circ a = 0$, and $\IZ$ is free. Hence, $a = 0$.'
+    proof: 'Let $f : A \to B$ be a monomorphism of free abelian groups. Let $a \in A$ be in the kernel of $a$. Then we may view $a$ as a morphism $a : \IZ \to A$ with $f \circ a = 0$, and $\IZ$ is free. Hence, $a = 0$.'
   epimorphisms:
     description: 'homomorphisms $f : A \to B$ with the property that $f(A)$ is not contained in a proper direct summand of $B$.'
-    reason: 'Let $f : A \to B$ be a morphism of free abelian groups such that $f(A)$ is not contained in a proper direct summand of $B$. Then $f$ is an epimorphism: If $t : B \to C$ is a morphism with $t \circ f = 0$, we want to show $t = 0$. Since the image of $t$ is free abelian (as a subgroup of $B$), we may assume that $t$ is surjective. Since $C$ is free, $t$ splits, so its kernel $K$ is a direct summand of $B$ (Splitting Lemma). It contains $f(A)$ because of $t \circ f = 0$. By assumption, $K = B$, so that $t = 0$. Conversely, assume that $f : A \to B$ is an epimorphism, and that $f(A)$ is contained in a direct summand $K$ of $B$. Let $L$ be a complement of $B$ (which is free abelian) and let $p : B \to L$ be the projection. Then $t \circ f = 0$, so $t = 0$. But then $L = 0$, which means $K = B$.'
+    proof: 'Let $f : A \to B$ be a morphism of free abelian groups such that $f(A)$ is not contained in a proper direct summand of $B$. Then $f$ is an epimorphism: If $t : B \to C$ is a morphism with $t \circ f = 0$, we want to show $t = 0$. Since the image of $t$ is free abelian (as a subgroup of $B$), we may assume that $t$ is surjective. Since $C$ is free, $t$ splits, so its kernel $K$ is a direct summand of $B$ (Splitting Lemma). It contains $f(A)$ because of $t \circ f = 0$. By assumption, $K = B$, so that $t = 0$. Conversely, assume that $f : A \to B$ is an epimorphism, and that $f(A)$ is contained in a direct summand $K$ of $B$. Let $L$ be a complement of $B$ (which is free abelian) and let $p : B \to L$ be the projection. Then $t \circ f = 0$, so $t = 0$. But then $L = 0$, which means $K = B$.'

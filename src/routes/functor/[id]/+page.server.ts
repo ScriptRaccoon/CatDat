@@ -88,7 +88,7 @@ export const load = async (event) => {
 			SELECT
 				fp.property_id AS id,
 				fp.is_satisfied,
-				fp.reason,
+				fp.proof,
 				fp.is_deduced,
 				p.relation
 			FROM functor_property_assignments fp

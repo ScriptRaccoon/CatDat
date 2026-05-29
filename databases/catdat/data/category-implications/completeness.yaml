@@ -7,7 +7,7 @@
   conclusions:
     - connected limits
     - finitely complete
-  reason: This is trivial.
+  proof: This is trivial.
   is_equivalence: false
 
 - id: complete_characterization
@@ -16,7 +16,7 @@
   conclusions:
     - equalizers
     - products
-  reason: See <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, V.2, Thm. 2.
+  proof: See <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, V.2, Thm. 2.
   is_equivalence: true
 
 - id: finitely_complete_characterization
@@ -25,7 +25,7 @@
   conclusions:
     - equalizers
     - finite products
-  reason: See <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, V.2, Cor. 1.
+  proof: See <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, V.2, Cor. 1.
   is_equivalence: true
 
 - id: complete_criterion
@@ -34,7 +34,7 @@
     - wide pullbacks
   conclusions:
     - complete
-  reason: See the <a href="https://ncatlab.org/nlab/show/wide+pullback" target="_blank">nLab</a>.
+  proof: See the <a href="https://ncatlab.org/nlab/show/wide+pullback" target="_blank">nLab</a>.
   is_equivalence: false
 
 - id: multi-complete_generalize_limits
@@ -42,7 +42,7 @@
     - complete
   conclusions:
     - multi-complete
-  reason: Limits are precisely multi-limits such that the set of cones is singleton.
+  proof: Limits are precisely multi-limits such that the set of cones is singleton.
   is_equivalence: false
 
 - id: multi-terminal_special_case
@@ -50,7 +50,7 @@
     - multi-complete
   conclusions:
     - multi-terminal object
-  reason: This is trivial.
+  proof: This is trivial.
   is_equivalence: false
 
 - id: multi-terminal_with_connected
@@ -59,7 +59,7 @@
     - multi-terminal object
   conclusions:
     - terminal object
-  reason: Let $(T_i)_{i\in I}$ be a multi-terminal object in a connected category $\C$. By definition of multi-terminal objects, for each object $C$, there are a unique index $i_C\in I$ and a unique morphism $C \to T_{i_C}$. Since the index $i_C$ is invariant under connected components, $I$ must be a singleton. The converse is trivial.
+  proof: Let $(T_i)_{i\in I}$ be a multi-terminal object in a connected category $\C$. By definition of multi-terminal objects, for each object $C$, there are a unique index $i_C\in I$ and a unique morphism $C \to T_{i_C}$. Since the index $i_C$ is invariant under connected components, $I$ must be a singleton. The converse is trivial.
   is_equivalence: true
 
 - id: multi-complete_with_initial_object
@@ -68,5 +68,5 @@
     - multi-complete
   conclusions:
     - complete
-  reason: 'Let $\C$ be a category with an initial object, and let $D : \I \to \C$ be a small diagram in $\C$. Since $\C$ has an initial object, the category $\Cone(D)$ of cones over $D$ also has an initial object. In particular, $\Cone(D)$ is connected, hence a multi-terminal object in it automatically becomes a terminal object. In other words, a multi-limit of $D$ is automatically a limit of $D$.'
+  proof: 'Let $\C$ be a category with an initial object, and let $D : \I \to \C$ be a small diagram in $\C$. Since $\C$ has an initial object, the category $\Cone(D)$ of cones over $D$ also has an initial object. In particular, $\Cone(D)$ is connected, hence a multi-terminal object in it automatically becomes a terminal object. In other words, a multi-limit of $D$ is automatically a limit of $D$.'
   is_equivalence: false

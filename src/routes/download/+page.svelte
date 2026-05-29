@@ -100,15 +100,15 @@ ORDER BY json_array_length(assumptions) DESC LIMIT 5;
 </pre>
 
 <pre>-- Trivial proofs
-SELECT category_id, property_id, is_satisfied, reason
+SELECT category_id, property_id, is_satisfied, proof
 FROM category_property_assignments
-WHERE reason = 'This is trivial.';
+WHERE proof = 'This is trivial.';
 </pre>
 
 <pre>-- Top 10 longest proofs
-SELECT category_id, property_id, is_satisfied, reason
+SELECT category_id, property_id, is_satisfied, proof
 FROM category_property_assignments
-ORDER BY length(reason) DESC LIMIT 10;
+ORDER BY length(proof) DESC LIMIT 10;
 </pre>
 
 <pre>-- Top 10 properties with the most undecided categories
@@ -123,7 +123,7 @@ ORDER BY undecided_categories DESC LIMIT 10;
 </pre>
 
 <pre>-- Properties which cannot be decided for a given category
-SELECT category_id, property_id, reason
+SELECT category_id, property_id, proof
 FROM category_property_assignments
 WHERE is_satisfied IS NULL;
 </pre>

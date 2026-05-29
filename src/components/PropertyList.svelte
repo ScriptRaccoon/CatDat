@@ -1,14 +1,14 @@
 <script lang="ts">
 	import { get_property_url } from '$lib/commons/property.url'
 	import type { StructureType } from '$lib/commons/types'
-	import TextWithReason from './TextWithReason.svelte'
+	import TextWithProof from './TextWithProof.svelte'
 
 	type Props = {
 		properties: {
 			id: string
 			label?: string
 			relation: string
-			reason?: string | null
+			proof?: string | null
 		}[]
 		type: StructureType
 		no_bullets?: boolean
@@ -19,12 +19,12 @@
 
 {#if properties.length}
 	<ul class:no-bullets={no_bullets} class="with-margins">
-		{#each properties as { id, label, relation, reason }}
+		{#each properties as { id, label, relation, proof }}
 			<li>
-				<TextWithReason {reason}>
+				<TextWithProof {proof}>
 					{relation}
 					<a href={get_property_url(id, type)}>{label || id}</a>
-				</TextWithReason>
+				</TextWithProof>
 			</li>
 		{/each}
 	</ul>

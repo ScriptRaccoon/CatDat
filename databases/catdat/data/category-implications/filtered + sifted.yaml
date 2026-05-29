@@ -5,7 +5,7 @@
     - filtered
   conclusions:
     - sifted
-  reason: 'Every filtered category $\C$ is inhabited and has final diagonal functors $\Delta : \C \to \C^J$ for all finite index categories $J$; in particular, it is inhabited and its diagonal $\Delta: \C \to \C \times \C$ is final.'
+  proof: 'Every filtered category $\C$ is inhabited and has final diagonal functors $\Delta : \C \to \C^J$ for all finite index categories $J$; in particular, it is inhabited and its diagonal $\Delta: \C \to \C \times \C$ is final.'
   is_equivalence: false
 
 - id: sifted_is_connected
@@ -13,7 +13,7 @@
     - sifted
   conclusions:
     - connected
-  reason: Sifted categories are inhabited, and any two objects in a sifted category are joined by a cospan.
+  proof: Sifted categories are inhabited, and any two objects in a sifted category are joined by a cospan.
   is_equivalence: false
 
 - id: coproducts_implies_sifted
@@ -22,7 +22,7 @@
     - inhabited
   conclusions:
     - sifted
-  reason: The category is inhabited by assumption, and the coproduct of two objects is initial in the corresponding category of cospans.
+  proof: The category is inhabited by assumption, and the coproduct of two objects is initial in the corresponding category of cospans.
   is_equivalence: false
 
 - id: sifted_left_cancellative_implies_thin
@@ -31,7 +31,7 @@
     - sifted
   conclusions:
     - thin
-  reason: >-
+  proof: >-
     For any object $X$ in a left-cancellative category, the connected component containing
     $$X \xrightarrow{\id} X \xleftarrow{\id} X$$
     in the category of cospans from $X$ to $X$ consists only of cospans
@@ -44,7 +44,7 @@
     - finitely cocomplete
   conclusions:
     - filtered
-  reason: Every finite diagram even admits a <i>universal</i> cocone.
+  proof: Every finite diagram even admits a <i>universal</i> cocone.
   is_equivalence: false
 
 - id: filtered_via_coequalizers
@@ -53,7 +53,7 @@
     - semi-strongly connected
   conclusions:
     - filtered
-  reason: This is obvious.
+  proof: This is obvious.
   is_equivalence: false
 
 - id: aleph1-filtered-consequence
@@ -61,7 +61,7 @@
     - ℵ₁-filtered
   conclusions:
     - filtered
-  reason: This is trivial.
+  proof: This is trivial.
   is_equivalence: false
 
 - id: aleph1-filtered_criterion
@@ -70,7 +70,7 @@
     - countable coproducts
   conclusions:
     - ℵ₁-filtered
-  reason: Every countable diagram even admits a <i>universal</i> cocone.
+  proof: Every countable diagram even admits a <i>universal</i> cocone.
   is_equivalence: false
 
 - id: terminal_object_yields_kappa_filtered
@@ -78,7 +78,7 @@
     - terminal object
   conclusions:
     - ℵ₁-filtered
-  reason: This is obvious.
+  proof: This is obvious.
   is_equivalence: false
 
 - id: terminal_object_yields_filtered
@@ -88,7 +88,7 @@
     - terminal object
   conclusions:
     - filtered
-  reason: This is obvious.
+  proof: This is obvious.
   is_equivalence: false
 
 - id: filtered-finite-thin
@@ -98,7 +98,7 @@
     - essentially finite
   conclusions:
     - terminal object
-  reason: Let $\C$ be a thin, filtered, and w.l.o.g. finite category. The identity diagram $\C \to \C$ admits a cocone. That is, there is an object $T$ with a morphism $A \to T$ for all $A \in \C$. Then $T$ is terminal.
+  proof: Let $\C$ be a thin, filtered, and w.l.o.g. finite category. The identity diagram $\C \to \C$ admits a cocone. That is, there is an object $T$ with a morphism $A \to T$ for all $A \in \C$. Then $T$ is terminal.
   is_equivalence: false
 
 - id: aleph1-filtered-countable-thin
@@ -108,5 +108,5 @@
     - essentially countable
   conclusions:
     - terminal object
-  reason: Let $\C$ be a thin, $\aleph_1$-filtered, and w.l.o.g. countable category. The identity diagram $\C \to \C$ admits a cocone. That is, there is an object $T$ with a morphism $A \to T$ for all $A \in \C$. Then $T$ is terminal.
+  proof: Let $\C$ be a thin, $\aleph_1$-filtered, and w.l.o.g. countable category. The identity diagram $\C \to \C$ admits a cocone. That is, there is an object $T$ with a morphism $A \to T$ for all $A \in \C$. Then $T$ is terminal.
   is_equivalence: false

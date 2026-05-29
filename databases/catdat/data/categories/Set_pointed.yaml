@@ -15,59 +15,59 @@ related_categories:
 
 satisfied_properties:
   - property: locally small
-    reason: There is a forgetful functor $\Set_* \to \Set$ and $\Set$ is locally small.
+    proof: There is a forgetful functor $\Set_* \to \Set$ and $\Set$ is locally small.
 
   - property: pointed
-    reason: The singleton set is a zero object.
+    proof: The singleton set is a zero object.
     check_redundancy: false
 
   - property: finitary algebraic
-    reason: Take the algebraic theory with just one constant.
+    proof: Take the algebraic theory with just one constant.
 
   - property: subobject classifier
-    reason: The pointed set $(\{0,1\},1)$ is a subobject classifier.
+    proof: The pointed set $(\{0,1\},1)$ is a subobject classifier.
 
   - property: cogenerator
-    reason: The pointed set $(\{0,1\},1)$ is a cogenerator.
+    proof: The pointed set $(\{0,1\},1)$ is a cogenerator.
 
   - property: epi-regular
-    reason: Every epimorphism is surjective for this category, and in an algebraic category every surjective homomorphism is a regular epimorphism.
+    proof: Every epimorphism is surjective for this category, and in an algebraic category every surjective homomorphism is a regular epimorphism.
 
   - property: coregular
-    reason: From the other properties we know that (co-)limits exist and that monomorphisms coincide with injective pointed maps. So it suffices to prove that these maps are stable under pushouts. This follows from the corresponding fact for <a href="/category/Set">$\Set$</a> and the observation that the forgetful functor $\Set_* \to \Set$ preserves pushouts.
+    proof: From the other properties we know that (co-)limits exist and that monomorphisms coincide with injective pointed maps. So it suffices to prove that these maps are stable under pushouts. This follows from the corresponding fact for <a href="/category/Set">$\Set$</a> and the observation that the forgetful functor $\Set_* \to \Set$ preserves pushouts.
     check_redundancy: false
 
   - property: co-Malcev
-    reason: Malcev categories are closed under slice categories by Prop. 2.2.14 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>. It follows that co-Malcev categories are closed under coslice categories, and $\Set_*$ is a coslice category of <a href="/category/Set">$\Set$</a>, which is co-Malcev since every elementary topos is co-Malcev.
+    proof: Malcev categories are closed under slice categories by Prop. 2.2.14 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>. It follows that co-Malcev categories are closed under coslice categories, and $\Set_*$ is a coslice category of <a href="/category/Set">$\Set$</a>, which is co-Malcev since every elementary topos is co-Malcev.
 
   - property: cocartesian cofiltered limits
-    reason: |-
+    proof: |-
       Let $X$ be a pointed set and $(Y_i)$ be a filtered diagram of pointed sets. Base points will be denoted by $0$. The canonical map $X \vee \lim_i Y_i \to \lim_i (X \vee Y_i)$ is injective since the wedge sum naturally embeds into the product and the natural map $X \vee \prod_i Y_i \to \prod_i (X \times Y_i)$ is injective. Now let $z = (z_i) \in \lim_i (X \vee Y_i)$.
       Case 1: There is some index $i$ with $z_i \in X \setminus \{0\}$. We claim $z_j \in X$ for any index $j$ and $z_j = z_i$ in $X$, so that $z$ has a preimage in $X$. To see this, choose an index $k \geq i,j$. Since $X \vee Y_i \to X \vee Y_k$ maps $z_i \mapsto z_k$ and is the identity on $X$, we see that $z_k \in X$ and $z_k = z_i$ in $X$. Since $X \vee Y_j \to X \vee Y_k$ maps $z_j \mapsto z_k$, we see that $z_j \notin Y_j$, since otherwise $z_k \in Y_k \cap X = \{0\}$. Hence, $z_j \in X \setminus \{0\}$, and then $z_j = z_k = z_i$.
       Case 2: We have $z_i \in Y_i$ for all $i$. Then clearly $(z_i) \in \lim_i Y_i$ is a preimage.
 
   - property: CIP
-    reason: The coproduct (wedge sum) of a family of pointed sets $(X_i)_{i \in I}$ can be realized as the subset of $\prod_{i \in I} X_i$ consisting of those tuples $x$ such that $x_i = 0$ for all but (at most) one index.
+    proof: The coproduct (wedge sum) of a family of pointed sets $(X_i)_{i \in I}$ can be realized as the subset of $\prod_{i \in I} X_i$ consisting of those tuples $x$ such that $x_i = 0$ for all but (at most) one index.
 
   - property: Barr-coexact
-    reason: We have that $\Set_*^{\op}$ is a slice category of $\Set^{\op}$, which in turn is monadic over $\Set$. Therefore, by combining results from <a href="http://www.springer.com/us/book/9781402019616" target="_blank">Borceux and Bourn</a> Appendix A and <a href="https://ncatlab.org/nlab/show/colimits+in+categories+of+algebras#exact" target="_blank">nLab</a>, $\Set_*^{\op}$ is Barr-exact.
+    proof: We have that $\Set_*^{\op}$ is a slice category of $\Set^{\op}$, which in turn is monadic over $\Set$. Therefore, by combining results from <a href="http://www.springer.com/us/book/9781402019616" target="_blank">Borceux and Bourn</a> Appendix A and <a href="https://ncatlab.org/nlab/show/colimits+in+categories+of+algebras#exact" target="_blank">nLab</a>, $\Set_*^{\op}$ is Barr-exact.
 
 unsatisfied_properties:
   - property: skeletal
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: unital
-    reason: 'The joint image of $X \to X \times Y \leftarrow Y$ is just $\{(x,0) : x \in X\} \cup \{(0,y) : y \in Y\}$ (where $0$ denotes the base point), which is clearly a proper subset of $X \times Y$ when both $X,Y$ are non-trivial.'
+    proof: 'The joint image of $X \to X \times Y \leftarrow Y$ is just $\{(x,0) : x \in X\} \cup \{(0,y) : y \in Y\}$ (where $0$ denotes the base point), which is clearly a proper subset of $X \times Y$ when both $X,Y$ are non-trivial.'
 
   - property: CSP
     # TODO: remove duplication with unital proof
-    reason: 'The image of $X \vee Y$ in $X \times Y$ is just $\{(x,0) : x \in X\} \cup \{(0,y) : y \in Y\}$ (where $0$ denotes the base point), which is clearly a proper subset when both $X,Y$ are non-trivial.'
+    proof: 'The image of $X \vee Y$ in $X \times Y$ is just $\{(x,0) : x \in X\} \cup \{(0,y) : y \in Y\}$ (where $0$ denotes the base point), which is clearly a proper subset when both $X,Y$ are non-trivial.'
 
   - property: conormal
-    reason: 'Every cokernel is "injective away from the base point". Formally, if $p : A \to B$ is a cokernel in $\Set_*$, it has the property that $p(x)=p(y) \neq 0$ implies $x=y$ (where $0$ denotes the base point). Clearly this is not satisfied for every surjective pointed map, consider $(\IN,0) \to (\{0,1\},0)$ defined by $0 \mapsto 0$ and $x \mapsto 1$ for $x > 0$.'
+    proof: 'Every cokernel is "injective away from the base point". Formally, if $p : A \to B$ is a cokernel in $\Set_*$, it has the property that $p(x)=p(y) \neq 0$ implies $x=y$ (where $0$ denotes the base point). Clearly this is not satisfied for every surjective pointed map, consider $(\IN,0) \to (\{0,1\},0)$ defined by $0 \mapsto 0$ and $x \mapsto 1$ for $x > 0$.'
 
   - property: cofiltered-limit-stable epimorphisms
-    reason: We already know that <a href="/category/Set">$\Set$</a> does not have this property. Now apply the contrapositive of the dual of <a href="/content/filtered-monos">this lemma</a> to the functor $\Set \to \Set_*$ that freely adds a base point.
+    proof: We already know that <a href="/category/Set">$\Set$</a> does not have this property. Now apply the contrapositive of the dual of <a href="/content/filtered-monos">this lemma</a> to the functor $\Set \to \Set_*$ that freely adds a base point.
 
 special_objects:
   initial object:
@@ -82,16 +82,16 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: bijective pointed maps
-    reason: This characterization holds in every algebraic category.
+    proof: This characterization holds in every algebraic category.
   monomorphisms:
     description: injective pointed maps
-    reason: 'This holds in every finitary algebraic category: the forgetful functor to $\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
+    proof: 'This holds in every finitary algebraic category: the forgetful functor to $\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
   epimorphisms:
     description: surjective pointed maps
-    reason: 'If $f : X \to Y$ is an epimorphism of pointed sets, then the inclusion $i : f(X) \hookrightarrow Y$ is an epimorphism as well. But it is also a split monomorphism (we may map everything in $Y \setminus f(X)$ to the base point of $f(X)$, and do not touch the rest), hence an isomorphism.'
+    proof: 'If $f : X \to Y$ is an epimorphism of pointed sets, then the inclusion $i : f(X) \hookrightarrow Y$ is an epimorphism as well. But it is also a split monomorphism (we may map everything in $Y \setminus f(X)$ to the base point of $f(X)$, and do not touch the rest), hence an isomorphism.'
   regular monomorphisms:
     description: same as monomorphisms
-    reason: This is because the category is mono-regular.
+    proof: This is because the category is mono-regular.
   regular epimorphisms:
     description: surjective homomorphisms
-    reason: This holds in every finitary algebraic category.
+    proof: This holds in every finitary algebraic category.

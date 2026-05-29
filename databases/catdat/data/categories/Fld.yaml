@@ -17,56 +17,56 @@ comments:
 
 satisfied_properties:
   - property: locally small
-    reason: There is a forgetful functor $\Fld \to \Set$ and $\Set$ is locally small.
+    proof: There is a forgetful functor $\Fld \to \Set$ and $\Set$ is locally small.
 
   - property: inhabited
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: left cancellative
-    reason: It is well-known that every field homomorphism is injective and hence a monomorphism.
+    proof: It is well-known that every field homomorphism is injective and hence a monomorphism.
 
   - property: well-copowered
-    reason: Epimorphisms are the purely inseparable field extensions. If $K \to L$ is purely inseparable, then for all $x \in L$ there is some $n \in \IN$ with $x^n \in L$. An element of $K$ has at most $n$ $n$th-roots. So we can bound the size of $L$.
+    proof: Epimorphisms are the purely inseparable field extensions. If $K \to L$ is purely inseparable, then for all $x \in L$ there is some $n \in \IN$ with $x^n \in L$. An element of $K$ has at most $n$ $n$th-roots. So we can bound the size of $L$.
 
   - property: multi-algebraic
-    reason: See Eg. 4.3(1) in <a href="http://www.tac.mta.ca/tac/volumes/8/n3/8-03abs.html" target="_blank">[AR01]</a>.
+    proof: See Eg. 4.3(1) in <a href="http://www.tac.mta.ca/tac/volumes/8/n3/8-03abs.html" target="_blank">[AR01]</a>.
 
 unsatisfied_properties:
   - property: skeletal
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: locally finite
-    reason: There are infinitely many homomorphisms $\IQ(X) \to \IQ(X)$, $X \mapsto X^k$.
+    proof: There are infinitely many homomorphisms $\IQ(X) \to \IQ(X)$, $X \mapsto X^k$.
 
   - property: connected
-    reason: A field of characteristic $0$ cannot be connected with a field of characteristic $p > 0$. in fact, the connected components of $\Fld$ are the subcategories $\Fld_p$ of fields of characteristic $p$, where $p$ is a prime or $0$.
+    proof: A field of characteristic $0$ cannot be connected with a field of characteristic $p > 0$. in fact, the connected components of $\Fld$ are the subcategories $\Fld_p$ of fields of characteristic $p$, where $p$ is a prime or $0$.
 
   - property: balanced
-    reason: Every non-trivial purely inseparable field extension, such as $\IF_p(X^p) \to \IF_p(X)$, provides a counterexample by the descriptions of special morphisms below.
+    proof: Every non-trivial purely inseparable field extension, such as $\IF_p(X^p) \to \IF_p(X)$, provides a counterexample by the descriptions of special morphisms below.
 
   - property: core-thin
-    reason: If this category was core-thin, Galois theory would not exist. Specifically, the conjugation $\IC \to \IC$, $z \mapsto \overline{z}$ is a non-trivial automorphism.
+    proof: If this category was core-thin, Galois theory would not exist. Specifically, the conjugation $\IC \to \IC$, $z \mapsto \overline{z}$ is a non-trivial automorphism.
 
   - property: multi-terminal object
-    reason: Every field has a non-trivial extension, for instance, the rational function field over itself in one variable. Hence, a multi-terminal object never exists.
+    proof: Every field has a non-trivial extension, for instance, the rational function field over itself in one variable. Hence, a multi-terminal object never exists.
 
   - property: pushouts
-    reason: 'By <a href="https://math.stackexchange.com/questions/359352/" target="_blank">MSE/359352</a>, the pushout $E \sqcup_K F$ of two field homomorphisms $E \leftarrow K \rightarrow F$ exists if and only if the tensor product $E \otimes_K F$ has a "fieldification": this means that the nilradical is a prime ideal whose quotient ring is a field. This is quite rare: Consider $E = K(X)$, $F = K(Y)$. Then $E \otimes_K F$ is isomorphic to $K[X,Y] (K[X]-\{0\})^{-1} (K[Y]-\{0\})^{-1}$, which is an integral domain but not a field: for example, $X-Y$ has no inverse.'
+    proof: 'By <a href="https://math.stackexchange.com/questions/359352/" target="_blank">MSE/359352</a>, the pushout $E \sqcup_K F$ of two field homomorphisms $E \leftarrow K \rightarrow F$ exists if and only if the tensor product $E \otimes_K F$ has a "fieldification": this means that the nilradical is a prime ideal whose quotient ring is a field. This is quite rare: Consider $E = K(X)$, $F = K(Y)$. Then $E \otimes_K F$ is isomorphic to $K[X,Y] (K[X]-\{0\})^{-1} (K[Y]-\{0\})^{-1}$, which is an integral domain but not a field: for example, $X-Y$ has no inverse.'
 
   - property: generator
-    reason: Assume that $G$ is a generator, say of characteristic $p$. Then for all $q \neq p$ all homomorphisms between two fields of characteristic $q$ would be equal, which is absurd.
+    proof: Assume that $G$ is a generator, say of characteristic $p$. Then for all $q \neq p$ all homomorphisms between two fields of characteristic $q$ would be equal, which is absurd.
 
   - property: cogenerating set
-    reason: 'We apply <a href="/content/missing_cogenerating_sets">this lemma</a> to the collection of fields: Any homomorphism of fields is injective. For every infinite cardinal $\kappa$ the field of rational functions in $\kappa$ variables has cardinality $\geq \kappa$ and a non-trivial automorphism (swap two variables).'
+    proof: 'We apply <a href="/content/missing_cogenerating_sets">this lemma</a> to the collection of fields: Any homomorphism of fields is injective. For every infinite cardinal $\kappa$ the field of rational functions in $\kappa$ variables has cardinality $\geq \kappa$ and a non-trivial automorphism (swap two variables).'
 
   - property: binary powers
-    reason: 'Assume that the product $P \coloneqq \IQ(\sqrt{2}) \times \IQ(\sqrt{2})$ exists. This field is isomorphic to a subfield of $\IQ(\sqrt{2})$, hence $P \cong \IQ$ or $P \cong \IQ(\sqrt{2})$. In the first case, the two projections $P \rightrightarrows \IQ(\sqrt{2})$ must be equal, which means that every two homomorphisms $K \rightrightarrows \IQ(\sqrt{2})$ are equal, which is absurd (take $K = \IQ(\sqrt{2})$ and its two automorphisms). In the second case, the projections induce for every field $K$ a bijection $\Hom(K,\IQ(\sqrt{2})) \cong \Hom(K,\IQ(\sqrt{2}))^2$, which however fails for $K = \IQ(\sqrt{2})$: the left hand side has $2$ elements, the right hand side has $4$ elements. A more general result about products in $\Fld$ can be found at <a href="https://math.stackexchange.com/questions/359352" target="_blank">MSE/359352</a>.'
+    proof: 'Assume that the product $P \coloneqq \IQ(\sqrt{2}) \times \IQ(\sqrt{2})$ exists. This field is isomorphic to a subfield of $\IQ(\sqrt{2})$, hence $P \cong \IQ$ or $P \cong \IQ(\sqrt{2})$. In the first case, the two projections $P \rightrightarrows \IQ(\sqrt{2})$ must be equal, which means that every two homomorphisms $K \rightrightarrows \IQ(\sqrt{2})$ are equal, which is absurd (take $K = \IQ(\sqrt{2})$ and its two automorphisms). In the second case, the projections induce for every field $K$ a bijection $\Hom(K,\IQ(\sqrt{2})) \cong \Hom(K,\IQ(\sqrt{2}))^2$, which however fails for $K = \IQ(\sqrt{2})$: the left hand side has $2$ elements, the right hand side has $4$ elements. A more general result about products in $\Fld$ can be found at <a href="https://math.stackexchange.com/questions/359352" target="_blank">MSE/359352</a>.'
 
   - property: locally cartesian closed
-    reason: 'Assume that $K$ is a field such that $\Fld / K$ is cartesian closed. This slice category is equivalent to the poset of subfields of $K$. This poset is a lattice, and our assumption implies that it is distributive (see <a href="/category-implication/distributive_criterion">here</a>). But this is quite rare: Consider $K = \IQ(\sqrt{2}, \sqrt{3})$. By Galois theory, the lattice of subfields is isomorphic to the diamond lattice $M_3$ which is not distributive. Specifically, $(\IQ(\sqrt{2}) \wedge \IQ(\sqrt{6})) \vee (\IQ(\sqrt{3}) \wedge \IQ(\sqrt{6})) = \IQ \vee \IQ = \IQ$, while $(\IQ(\sqrt{2}) \vee \IQ(\sqrt{3})) \wedge \IQ(\sqrt{6}) = \IQ(\sqrt{2},\sqrt{3}) \wedge \IQ(\sqrt{6}) = \IQ(\sqrt{6})$.'
+    proof: 'Assume that $K$ is a field such that $\Fld / K$ is cartesian closed. This slice category is equivalent to the poset of subfields of $K$. This poset is a lattice, and our assumption implies that it is distributive (see <a href="/category-implication/distributive_criterion">here</a>). But this is quite rare: Consider $K = \IQ(\sqrt{2}, \sqrt{3})$. By Galois theory, the lattice of subfields is isomorphic to the diamond lattice $M_3$ which is not distributive. Specifically, $(\IQ(\sqrt{2}) \wedge \IQ(\sqrt{6})) \vee (\IQ(\sqrt{3}) \wedge \IQ(\sqrt{6})) = \IQ \vee \IQ = \IQ$, while $(\IQ(\sqrt{2}) \vee \IQ(\sqrt{3})) \wedge \IQ(\sqrt{6}) = \IQ(\sqrt{2},\sqrt{3}) \wedge \IQ(\sqrt{6}) = \IQ(\sqrt{6})$.'
 
   - property: cofiltered-limit-stable epimorphisms
-    reason: >-
+    proof: >-
       Inside of $\IF_p(X)$ consider the descending sequence of subfields
       $$\IF_p(X) \supseteq \IF_p(X^p) \supseteq \IF_p(X^{p^2}) \supseteq \cdots,$$
       whose intersection is $\IF_p$. Each $\IF_p(X^{p^n}) \hookrightarrow \IF_p(X)$ is purely inseparable, hence an epimorphism, but in the limit we get $\IF_p \hookrightarrow \IF_p(X)$, which is not even algebraic.
@@ -76,16 +76,16 @@ special_objects: {}
 special_morphisms:
   isomorphisms:
     description: bijective field homomorphisms
-    reason: This is easy.
+    proof: This is easy.
   monomorphisms:
     description: every morphism
-    reason: It is well-known that field homomorphisms are injective.
+    proof: It is well-known that field homomorphisms are injective.
   epimorphisms:
     description: purely inseparable homomorphisms
-    reason: See <a href="https://math.stackexchange.com/questions/687869" target="_blank">MSE/687869</a>.
+    proof: See <a href="https://math.stackexchange.com/questions/687869" target="_blank">MSE/687869</a>.
   regular monomorphisms:
     description: A Galois extension is a regular monomorphism iff it is procyclic, and the general case can be reduced to this situation; see the reference for details.
-    reason: See <a href="https://math.stackexchange.com/questions/5129895" target="_blank">MSE/5129895</a>.
+    proof: See <a href="https://math.stackexchange.com/questions/5129895" target="_blank">MSE/5129895</a>.
   regular epimorphisms:
     description: same as isomorphisms
-    reason: This is because the category is left cancellative.
+    proof: This is because the category is left cancellative.

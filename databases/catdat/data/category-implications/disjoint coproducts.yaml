@@ -6,7 +6,7 @@
   conclusions:
     - coproducts
     - disjoint finite coproducts
-  reason: This is easy.
+  proof: This is easy.
   is_equivalence: true
 
 - id: disjoint_coproducts_consequence
@@ -14,7 +14,7 @@
     - disjoint finite coproducts
   conclusions:
     - finite coproducts
-  reason: This holds by definition.
+  proof: This holds by definition.
   is_equivalence: false
 
 - id: disjoint_coproducts_thin_trivial
@@ -23,7 +23,7 @@
     - thin
   conclusions:
     - trivial
-  reason: For every object $A$ the two inclusions $A \rightrightarrows A + A$ must be equal, so their equalizer is $A$, but also $0$ since the coproduct is disjoint. Hence $A = 0$.
+  proof: For every object $A$ the two inclusions $A \rightrightarrows A + A$ must be equal, so their equalizer is $A$, but also $0$ since the coproduct is disjoint. Hence $A = 0$.
   is_equivalence: false
 
 - id: disjoint_coproducts_strict
@@ -32,7 +32,7 @@
     - strict terminal object
   conclusions:
     - thin
-  reason: 'Let $1$ be the strict terminal object, and let $A$ be any object. Then $1 \to A + 1$ is an isomorphism, since $1$ is strict. Also, $A \to A + 1$ is a monomorphism by assumption. It follows that the unique morphism $u : A \to 1$ is a monomorphism. For all $f,g : B \to A$ we have $uf = ug$ (since $1$ is terminal), hence $f = g$.'
+  proof: 'Let $1$ be the strict terminal object, and let $A$ be any object. Then $1 \to A + 1$ is an isomorphism, since $1$ is strict. Also, $A \to A + 1$ is a monomorphism by assumption. It follows that the unique morphism $u : A \to 1$ is a monomorphism. For all $f,g : B \to A$ we have $uf = ug$ (since $1$ is terminal), hence $f = g$.'
   is_equivalence: false
 
 - id: strongly_connected_disjoint_products
@@ -41,5 +41,5 @@
     - strongly connected
   conclusions:
     - disjoint finite products
-  reason: See <a href="https://math.stackexchange.com/a/5132300/1650" target="_blank">MSE/5130190</a> for a proof.
+  proof: See <a href="https://math.stackexchange.com/a/5132300/1650" target="_blank">MSE/5130190</a> for a proof.
   is_equivalence: false

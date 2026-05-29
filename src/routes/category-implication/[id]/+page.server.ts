@@ -15,7 +15,7 @@ export const load = async (event) => {
 				is_equivalence,
 				is_deduced,
 				dualized_from,
-				reason,
+				proof,
 				assumptions,
 				conclusions
 			FROM category_implications_view
@@ -26,7 +26,7 @@ export const load = async (event) => {
 			WHERE EXISTS (
 				SELECT 1 FROM category_property_assignments cp
 				WHERE cp.category_id = c.id
-				AND cp.reason LIKE '%/category-implication/' || ${id} || '%'
+				AND cp.proof LIKE '%/category-implication/' || ${id} || '%'
 			)
 		`,
 	])

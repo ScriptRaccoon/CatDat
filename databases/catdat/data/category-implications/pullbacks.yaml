@@ -6,7 +6,7 @@
     - equalizers
   conclusions:
     - pullbacks
-  reason: 'The pullback of $f : X \to S$ and $g : Y \to S$ is the equalizer of $p_1 \circ f, \, p_2 \circ g : X \times Y \rightrightarrows S$.'
+  proof: 'The pullback of $f : X \to S$ and $g : Y \to S$ is the equalizer of $p_1 \circ f, \, p_2 \circ g : X \times Y \rightrightarrows S$.'
   is_equivalence: false
 
 - id: connected_limits_characterization
@@ -15,7 +15,7 @@
   conclusions:
     - equalizers
     - wide pullbacks
-  reason: The direction $\Rightarrow$ is trivial. The direction $\Leftarrow$ can be found at the <a href="https://ncatlab.org/nlab/show/connected+limit" target="_blank">nLab</a>.
+  proof: The direction $\Rightarrow$ is trivial. The direction $\Leftarrow$ can be found at the <a href="https://ncatlab.org/nlab/show/connected+limit" target="_blank">nLab</a>.
   is_equivalence: true
 
 - id: wide_pullbacks_criterion
@@ -24,7 +24,7 @@
   conclusions:
     - cofiltered limits
     - pullbacks
-  reason: To prove $\Leftarrow$, a wide pullback can be constructed as a cofiltered limit of finite pullbacks, and finite pullbacks can be reduced to binary pullbacks (the empty-indexed pullback always exists). Conversely, assume that wide pullbacks exist in $\C$. For every object $A$ then the slice category $\C / A$ has wide pullbacks and a terminal object, hence is complete. Since a cofiltered limit can be finally reduced to such a slice, we are done.
+  proof: To prove $\Leftarrow$, a wide pullback can be constructed as a cofiltered limit of finite pullbacks, and finite pullbacks can be reduced to binary pullbacks (the empty-indexed pullback always exists). Conversely, assume that wide pullbacks exist in $\C$. For every object $A$ then the slice category $\C / A$ has wide pullbacks and a terminal object, hence is complete. Since a cofiltered limit can be finally reduced to such a slice, we are done.
   is_equivalence: true
 
 - id: wide_pullbacks_finite
@@ -33,5 +33,5 @@
     - pullbacks
   conclusions:
     - wide pullbacks
-  reason: Each slice category has finite products and is essentially finite, hence has all products by <a href="/category-implication/freyd_finite">this result</a> followed by <a href="/category-implication/thin_finite_product_reduction">this result</a>.
+  proof: Each slice category has finite products and is essentially finite, hence has all products by <a href="/category-implication/freyd_finite">this result</a> followed by <a href="/category-implication/thin_finite_product_reduction">this result</a>.
   is_equivalence: false

@@ -19,43 +19,43 @@ related_categories:
 
 satisfied_properties:
   - property: small
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: locally finite
-    reason: There is a faithful functor $\Delta \to \FinSet$ and <a href="/category/FinSet">$\FinSet$</a> is locally finite.
+    proof: There is a faithful functor $\Delta \to \FinSet$ and <a href="/category/FinSet">$\FinSet$</a> is locally finite.
 
   - property: countable
-    reason: This is obvious.
+    proof: This is obvious.
 
   - property: terminal object
-    reason: The ordered set $[0] = \{0\}$ is terminal.
+    proof: The ordered set $[0] = \{0\}$ is terminal.
 
   - property: strongly connected
-    reason: For all $n,m$ there are morphisms $[n] \to [0] \to [m]$.
+    proof: For all $n,m$ there are morphisms $[n] \to [0] \to [m]$.
 
   - property: generator
-    reason: The ordered set $[0] = \{0\}$ is a generator.
+    proof: The ordered set $[0] = \{0\}$ is a generator.
 
   - property: cogenerator
-    reason: The ordered set $[1] = \{0 < 1\}$ is a cogenerator, even for <a href="/category/Pos">$\Pos$</a>.
+    proof: The ordered set $[1] = \{0 < 1\}$ is a cogenerator, even for <a href="/category/Pos">$\Pos$</a>.
 
   - property: skeletal
-    reason: 'If $f : [n] \to [m]$ is an isomorphism, then $n + 1 = m + 1$ by comparing the cardinalities, hence $n = m$.'
+    proof: 'If $f : [n] \to [m]$ is an isomorphism, then $n + 1 = m + 1$ by comparing the cardinalities, hence $n = m$.'
 
   - property: coequalizers
-    reason: Assume that $X \rightrightarrows Y$ are morphisms in $\FinOrd \setminus \{\varnothing\}$. Since <a href="/category/FinOrd">$\FinOrd$</a> has coequalizers, we have a coequalizer $Y \to Q$. Since $Y$ is non-empty, $Q$ is non-empty as well, and clearly $Y \to Q$ is then also the coequalizer in $\FinOrd \setminus \{\varnothing\}$.
+    proof: Assume that $X \rightrightarrows Y$ are morphisms in $\FinOrd \setminus \{\varnothing\}$. Since <a href="/category/FinOrd">$\FinOrd$</a> has coequalizers, we have a coequalizer $Y \to Q$. Since $Y$ is non-empty, $Q$ is non-empty as well, and clearly $Y \to Q$ is then also the coequalizer in $\FinOrd \setminus \{\varnothing\}$.
 
   - property: core-thin
-    reason: The category $\FinOrd \setminus \{\varnothing\}$ is core-thin because already <a href="/category/FinOrd">$\FinOrd$</a> is core-thin.
+    proof: The category $\FinOrd \setminus \{\varnothing\}$ is core-thin because already <a href="/category/FinOrd">$\FinOrd$</a> is core-thin.
 
   - property: mono-regular
-    reason: The proof for <a href="/category/FinOrd">$\FinOrd$</a> also works for $\FinSet \setminus \{\varnothing\}$.
+    proof: The proof for <a href="/category/FinOrd">$\FinOrd$</a> also works for $\FinSet \setminus \{\varnothing\}$.
 
   - property: epi-regular
-    reason: The proof for <a href="/category/FinOrd">$\FinOrd$</a> also works for $\FinSet \setminus \{\varnothing\}$.
+    proof: The proof for <a href="/category/FinOrd">$\FinOrd$</a> also works for $\FinSet \setminus \{\varnothing\}$.
 
   - property: cosifted
-    reason: >-
+    proof: >-
       Let $X,Y \in \Delta$. We may pick $x \in X$, $y \in Y$. Then there is a "point span" $X \xleftarrow{x} [0] \xrightarrow{y} Y$. Every span $X \xleftarrow{f} Z \xrightarrow{g} Y$ is connected to such a point span: Pick $z \in Z$. This defines a morphism of spans: 
       $$\begin{CD} X @<{f(z)}<< [0] @>{g(z)}>> Y \\ @| @VV{z}V @| \\ X @<<{f}< Z @>>{g}> Y \end{CD}$$
       It remains to show that all point spans are connected to each other. Assume $x_0,x_1 \in X$ and $y \in Y$, w.l.o.g. $x_0 \leq x_1$. Define the map $f : [1] \to X$ by $f(0) = x_0$, $f(1) = x_1$, and the map $g : [1] \to Y$ by $g(0)=g(1)=y$. They are order-preserving and fit into a zig-zag of spans:
@@ -63,29 +63,29 @@ satisfied_properties:
       This shows that the choice of $x \in X$ does not matter, and for $y \in Y$ the proof is the same.
 
   - property: ℵ₁-cofiltered limits
-    reason: We already know that <a href="/category/FinOrd">$\FinOrd$</a> has $\aleph_1$-cofiltered limits and that the forgetful functors to <a href="/category/FinSet">$\FinSet$</a> and <a href="/category/Set">$\Set$</a> preserve them. Therefore, it suffices to prove that a $\aleph_1$-cofiltered limit of non-empty finite sets is also non-empty. While a direct proof is possible, we can conveniently derive this from Lemma 1 <a href="/content/comphaus_copresentable">here</a> by regarding finite sets as discrete compact Hausdorff spaces.
+    proof: We already know that <a href="/category/FinOrd">$\FinOrd$</a> has $\aleph_1$-cofiltered limits and that the forgetful functors to <a href="/category/FinSet">$\FinSet$</a> and <a href="/category/Set">$\Set$</a> preserve them. Therefore, it suffices to prove that a $\aleph_1$-cofiltered limit of non-empty finite sets is also non-empty. While a direct proof is possible, we can conveniently derive this from Lemma 1 <a href="/content/comphaus_copresentable">here</a> by regarding finite sets as discrete compact Hausdorff spaces.
 
 unsatisfied_properties:
   - property: strict terminal object
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: cofiltered
-    reason: 'The two maps $d^0,d^1 : [0] \rightrightarrows [1]$ are not equalized by any morphism.'
+    proof: 'The two maps $d^0,d^1 : [0] \rightrightarrows [1]$ are not equalized by any morphism.'
 
   - property: coreflexive equalizers
-    reason: 'The two maps $d^0,d^1 : [0] \rightrightarrows [1]$ have a common left inverse, the unique map $s^0 : [1] \to [0]$, but are not equalized by any morphism.'
+    proof: 'The two maps $d^0,d^1 : [0] \rightrightarrows [1]$ have a common left inverse, the unique map $s^0 : [1] \to [0]$, but are not equalized by any morphism.'
 
   - property: sequential colimits
-    reason: We can just copy the proof for <a href="/category/FinOrd">$\FinOrd$</a> to show that the sequence of inclusions $[0] \hookrightarrow [1] \hookrightarrow [2] \hookrightarrow \cdots$ has no colimit.
+    proof: We can just copy the proof for <a href="/category/FinOrd">$\FinOrd$</a> to show that the sequence of inclusions $[0] \hookrightarrow [1] \hookrightarrow [2] \hookrightarrow \cdots$ has no colimit.
 
   - property: sequential limits
-    reason: We can just copy the proof for <a href="/category/FinOrd">$\FinOrd$</a> to show that the sequence of truncations $\cdots \twoheadrightarrow [2] \twoheadrightarrow [1] \twoheadrightarrow [0]$ has no limit.
+    proof: We can just copy the proof for <a href="/category/FinOrd">$\FinOrd$</a> to show that the sequence of truncations $\cdots \twoheadrightarrow [2] \twoheadrightarrow [1] \twoheadrightarrow [0]$ has no limit.
 
   - property: pushouts
-    reason: Assume that the two inclusions $\{0 < 1\} \leftarrow \{0\} \rightarrow \{0 < 2\}$ have a pushout in $\FinOrd \setminus \{\varnothing\}$. This would be a universal non-empty finite ordered set $X$ with three elements $0,1,2$ satisfying $0 \leq 1$ and $0 \leq 2$. Assume w.l.o.g. $1 \leq 2$ (the case $2 \leq 1$ is similar). The universal property yields an order-preserving map $X \to \{a < b < c\}$ with $0 \mapsto a$, $1 \mapsto c$, $2 \mapsto b$. But then $c \leq b$, which is a contradiction.
+    proof: Assume that the two inclusions $\{0 < 1\} \leftarrow \{0\} \rightarrow \{0 < 2\}$ have a pushout in $\FinOrd \setminus \{\varnothing\}$. This would be a universal non-empty finite ordered set $X$ with three elements $0,1,2$ satisfying $0 \leq 1$ and $0 \leq 2$. Assume w.l.o.g. $1 \leq 2$ (the case $2 \leq 1$ is similar). The universal property yields an order-preserving map $X \to \{a < b < c\}$ with $0 \mapsto a$, $1 \mapsto c$, $2 \mapsto b$. But then $c \leq b$, which is a contradiction.
 
   - property: multi-complete
-    reason: >-
+    proof: >-
       We will prove that the multi-product of $I \coloneqq \{0 < 1\}$ with itself does not exist in $\FinOrd \setminus \{\varnothing\}$. Assume that it does, i.e. there is a family of spans
       $$X_s = (I \xleftarrow{a_s} P_s \xrightarrow{b_s} I)$$
       such that every span admits a unique morphism into exactly one of these. Now consider the following three spans:
@@ -100,16 +100,16 @@ special_objects: {}
 special_morphisms:
   isomorphisms:
     description: bijective order-preserving maps
-    reason: This is easy. Notice that bijective order-preserving maps automatically also reflect the order (because we work with totally ordered sets).
+    proof: This is easy. Notice that bijective order-preserving maps automatically also reflect the order (because we work with totally ordered sets).
   monomorphisms:
     description: injective order-preserving maps
-    reason: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
+    proof: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
   epimorphisms:
     description: surjective order-preserving maps
-    reason: We can use the same proof as for <a href="/category/FinOrd">$\FinOrd$</a> since this has merely used the non-empty ordered set $\{0 < 1\}$.
+    proof: We can use the same proof as for <a href="/category/FinOrd">$\FinOrd$</a> since this has merely used the non-empty ordered set $\{0 < 1\}$.
   regular monomorphisms:
     description: same as monomorphisms
-    reason: This is because the category is mono-regular.
+    proof: This is because the category is mono-regular.
   regular epimorphisms:
     description: same as epimorphisms
-    reason: This is because the category is epi-regular.
+    proof: This is because the category is epi-regular.

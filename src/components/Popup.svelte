@@ -1,7 +1,7 @@
 <!--
 In theory, it is better to use a <dialog> here, but Safari makes many
 problems, Firefox does not display the native animation, and there is
-an issue when clicking two reasons in a row. So it's a <div> then.
+an issue when clicking two proofs in a row. So it's a <div> then.
 -->
 
 <script lang="ts" module>

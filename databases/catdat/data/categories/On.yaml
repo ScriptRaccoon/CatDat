@@ -15,39 +15,39 @@ related_categories:
 
 satisfied_properties:
   - property: thin
-    reason: This is trivial.
+    proof: This is trivial.
     check_redundancy: false
 
   - property: locally small
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: cocomplete
-    reason: Every set of ordinal numbers has a supremum.
+    proof: Every set of ordinal numbers has a supremum.
 
   - property: binary products
-    reason: For ordinal numbers $\alpha,\beta$ their minimum exists, it is $\alpha$ when $\alpha \leq \beta$ and $\beta$ otherwise.
+    proof: For ordinal numbers $\alpha,\beta$ their minimum exists, it is $\alpha$ when $\alpha \leq \beta$ and $\beta$ otherwise.
 
   - property: connected limits
-    reason: Every non-empty set of ordinal numbers has a minimum.
+    proof: Every non-empty set of ordinal numbers has a minimum.
 
   - property: well-powered
-    reason: This is because for every ordinal $\alpha$ the collection of ordinals $\leq \alpha$ is a set (namely, $\alpha + 1$).
+    proof: This is because for every ordinal $\alpha$ the collection of ordinals $\leq \alpha$ is a set (namely, $\alpha + 1$).
 
   - property: semi-strongly connected
-    reason: It is well-known that for ordinals $\alpha,\beta$ we have $\alpha \leq \beta$ or $\beta \leq \alpha$.
+    proof: It is well-known that for ordinals $\alpha,\beta$ we have $\alpha \leq \beta$ or $\beta \leq \alpha$.
 
   - property: direct
-    reason: This is because the ordinal numbers with respect to $<$ are well-founded (by definition).
+    proof: This is because the ordinal numbers with respect to $<$ are well-founded (by definition).
 
 unsatisfied_properties:
   - property: terminal object
-    reason: There is no largest ordinal $\alpha$ since $\alpha + 1$ will always be larger.
+    proof: There is no largest ordinal $\alpha$ since $\alpha + 1$ will always be larger.
 
   - property: well-copowered
-    reason: The "quotients" of $0$ are all ordinals.
+    proof: The "quotients" of $0$ are all ordinals.
 
   - property: inverse
-    reason: Consider the strictly increasing sequence $0 < 1 < 2 < \cdots$.
+    proof: Consider the strictly increasing sequence $0 < 1 < 2 < \cdots$.
 
 special_objects:
   initial object:
@@ -58,16 +58,16 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: only the identities
-    reason: This is true for every poset (regarded as a category).
+    proof: This is true for every poset (regarded as a category).
   monomorphisms:
     description: every morphism
-    reason: It is a thin category.
+    proof: It is a thin category.
   epimorphisms:
     description: every morphism
-    reason: It is a thin category.
+    proof: It is a thin category.
   regular monomorphisms:
     description: same as isomorphisms
-    reason: This is because the category is right cancellative.
+    proof: This is because the category is right cancellative.
   regular epimorphisms:
     description: same as isomorphisms
-    reason: This is because the category is left cancellative.
+    proof: This is because the category is left cancellative.

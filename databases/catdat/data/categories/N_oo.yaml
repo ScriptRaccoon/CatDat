@@ -16,36 +16,36 @@ related_categories:
 
 satisfied_properties:
   - property: small
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: countable
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: coproducts
-    reason: Take the supremum.
+    proof: Take the supremum.
     check_redundancy: false
 
   - property: semi-strongly connected
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: direct
-    reason: This is because the natural numbers with $\infty$ with respect to $<$ are well-founded.
+    proof: This is because the natural numbers with $\infty$ with respect to $<$ are well-founded.
 
   - property: locally strongly finitely presentable
-    reason: We already saw that coproducts, and therefore colimits exist. Every natural number is strongly finitely presentable, and $\infty$ is the colimit of all $n < \infty$.
+    proof: We already saw that coproducts, and therefore colimits exist. Every natural number is strongly finitely presentable, and $\infty$ is the colimit of all $n < \infty$.
 
 unsatisfied_properties:
   - property: essentially finite
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: self-dual
-    reason: This is because every upper set is infinite, but every lower set is finite.
+    proof: This is because every upper set is infinite, but every lower set is finite.
 
   - property: inverse
-    reason: Consider the strictly increasing sequence $0 < 1 < 2 < \cdots$.
+    proof: Consider the strictly increasing sequence $0 < 1 < 2 < \cdots$.
 
   - property: finitary algebraic
-    reason: This follows from <a href="/content/thin_algebraic_categories">this lemma</a>.
+    proof: This follows from <a href="/content/thin_algebraic_categories">this lemma</a>.
 
 special_objects:
   initial object:
@@ -60,16 +60,16 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: only the identity morphisms
-    reason: This is true for every poset (regarded as a category).
+    proof: This is true for every poset (regarded as a category).
   monomorphisms:
     description: every morphism
-    reason: It is a thin category.
+    proof: It is a thin category.
   epimorphisms:
     description: every morphism
-    reason: It is a thin category.
+    proof: It is a thin category.
   regular monomorphisms:
     description: same as isomorphisms
-    reason: This is because the category is right cancellative.
+    proof: This is because the category is right cancellative.
   regular epimorphisms:
     description: same as isomorphisms
-    reason: This is because the category is left cancellative.
+    proof: This is because the category is left cancellative.

@@ -6,26 +6,26 @@
 
 	type Props = {
 		children: Snippet
-		reason?: string | null
+		proof?: string | null
 	}
 
-	let { children, reason }: Props = $props()
+	let { children, proof }: Props = $props()
 
 	const id = $props.id()
 
-	function show_reason(e: MouseEvent) {
+	function show_proof(e: MouseEvent) {
 		e.stopPropagation()
 		show_popup({
 			id,
-			heading: 'Reason',
-			text: reason!,
+			heading: 'Proof',
+			text: proof!,
 		})
 	}
 </script>
 
-{#if reason}
+{#if proof}
 	<span class="wrapper" class:expanded={popup_state?.id === id}>
-		<button onclick={show_reason} aria-label="Show reason">
+		<button onclick={show_proof} aria-label="Show proof">
 			<Fa icon={faCommentDots} scale={0.825} />
 		</button>
 

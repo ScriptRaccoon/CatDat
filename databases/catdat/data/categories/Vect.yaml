@@ -15,20 +15,20 @@ related_categories:
 
 satisfied_properties:
   - property: locally small
-    reason: There is a forgetful functor $\Vect \to \Set$ and $\Set$ is locally small.
+    proof: There is a forgetful functor $\Vect \to \Set$ and $\Set$ is locally small.
 
   - property: split abelian
-    reason: That $\Vect$ is abelian is a standard fact, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. VIII. Furthermore, it is a fact from linear algebra that every subspace has a complement, which is why every short exact sequence splits.
+    proof: That $\Vect$ is abelian is a standard fact, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. VIII. Furthermore, it is a fact from linear algebra that every subspace has a complement, which is why every short exact sequence splits.
 
   - property: finitary algebraic
-    reason: Take the algebraic theory of a vector space.
+    proof: Take the algebraic theory of a vector space.
 
 unsatisfied_properties:
   - property: skeletal
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: CSP
-    reason: The canonical homomorphism $\bigoplus_{n \geq 0} K \to \prod_{n \geq 0} K$ is not surjective, hence no epimorphism.
+    proof: The canonical homomorphism $\bigoplus_{n \geq 0} K \to \prod_{n \geq 0} K$ is not surjective, hence no epimorphism.
 
 special_objects:
   initial object:
@@ -43,16 +43,16 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: bijective linear maps
-    reason: This characterization holds in every algebraic category.
+    proof: This characterization holds in every algebraic category.
   monomorphisms:
     description: injective linear maps
-    reason: 'This holds in every finitary algebraic category: the forgetful functor to $\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
+    proof: 'This holds in every finitary algebraic category: the forgetful functor to $\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
   epimorphisms:
     description: surjective linear maps
-    reason: The forgetful functor to abelian groups is faithful and preserves colimits, hence reflects and preserves epimorphisms. Alternatively, just use the same proof as for abelian groups.
+    proof: The forgetful functor to abelian groups is faithful and preserves colimits, hence reflects and preserves epimorphisms. Alternatively, just use the same proof as for abelian groups.
   regular monomorphisms:
     description: same as monomorphisms
-    reason: This is because the category is mono-regular.
+    proof: This is because the category is mono-regular.
   regular epimorphisms:
     description: surjective homomorphisms
-    reason: This holds in every finitary algebraic category.
+    proof: This holds in every finitary algebraic category.

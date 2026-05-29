@@ -15,7 +15,7 @@ export const load = async (event) => {
                 is_equivalence,
                 is_deduced,
                 dualized_from,
-                reason,
+                proof,
                 assumptions,
                 conclusions,
                 source_assumptions,
@@ -28,7 +28,7 @@ export const load = async (event) => {
             WHERE EXISTS (
                 SELECT 1 FROM functor_property_assignments fp
                 WHERE fp.functor_id = f.id
-                AND fp.reason LIKE '%/functor-implication/' || ${id} || '%'
+                AND fp.proof LIKE '%/functor-implication/' || ${id} || '%'
             )
         `,
 	])

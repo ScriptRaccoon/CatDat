@@ -19,17 +19,17 @@ comments:
 
 satisfied_properties:
   - property: locally small
-    reason: This is easy.
+    proof: This is easy.
 
   - property: Grothendieck abelian
-    reason: This is standard, see for example Theorem 18.1.6. in <a href="https://ncatlab.org/nlab/show/Categories+and+Sheaves" target="_blank">Kashiwara-Schapira</a>.
+    proof: This is standard, see for example Theorem 18.1.6. in <a href="https://ncatlab.org/nlab/show/Categories+and+Sheaves" target="_blank">Kashiwara-Schapira</a>.
 
 unsatisfied_properties:
   - property: skeletal
-    reason: Consider constant sheaves for isomorphic but non-equal abelian groups.
+    proof: Consider constant sheaves for isomorphic but non-equal abelian groups.
 
   - property: split abelian
-    reason: 'Choose a point $x \in X$. The functor $x_* : \Ab \to \Sh(X,\Ab)$ (skyscraper sheaf) is exact, and its left adjoint $x^* : \Sh(X,\Ab) \to \Ab$ (stalk) satisfies $x^* x_* \cong \id_{\Ab}$. Now, since <a href="/category/Ab">$\Ab$</a> is not split abelian, there is a short exact sequence of abelian groups $0 \to A \to B \to C \to 0$ that does not split. Then $0 \to x_* A \to x_* B \to x_* C \to 0$ is also exact, but it does not split: Otherwise it would also be split after applying $x^*$, which however gives the original sequence in $\Ab$.'
+    proof: 'Choose a point $x \in X$. The functor $x_* : \Ab \to \Sh(X,\Ab)$ (skyscraper sheaf) is exact, and its left adjoint $x^* : \Sh(X,\Ab) \to \Ab$ (stalk) satisfies $x^* x_* \cong \id_{\Ab}$. Now, since <a href="/category/Ab">$\Ab$</a> is not split abelian, there is a short exact sequence of abelian groups $0 \to A \to B \to C \to 0$ that does not split. Then $0 \to x_* A \to x_* B \to x_* C \to 0$ is also exact, but it does not split: Otherwise it would also be split after applying $x^*$, which however gives the original sequence in $\Ab$.'
 
 special_objects:
   initial object:
@@ -44,16 +44,16 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: morphisms of abelian sheaves that are bijective on every open set
-    reason: This is easy.
+    proof: This is easy.
   monomorphisms:
     description: morphisms of abelian sheaves that are injective on every open subset
-    reason: 'For the non-trivial direction, assume that $f : F \to G$ is a monomorphism of abelian sheaves on $X$. Then the diagonal $F \to F \times_G F$ is an isomorphism. Since pullbacks of abelian sheaves are constructed section-wise, it follows that the diagonal $F(U) \to F(U) \times_{G(U)} F(U)$ is an isomorphism for every open set $U \subseteq X$. But this means that $f(U) : F(U) \to G(U)$ is injective.'
+    proof: 'For the non-trivial direction, assume that $f : F \to G$ is a monomorphism of abelian sheaves on $X$. Then the diagonal $F \to F \times_G F$ is an isomorphism. Since pullbacks of abelian sheaves are constructed section-wise, it follows that the diagonal $F(U) \to F(U) \times_{G(U)} F(U)$ is an isomorphism for every open set $U \subseteq X$. But this means that $f(U) : F(U) \to G(U)$ is injective.'
   epimorphisms:
     description: 'morphisms of abelian sheaves $f : F \to G$ that are "locally surjective": for every local section $g \in G(U)$ there is an open covering $U = \bigcup_{i \in I} U_i$ such that each $g|_{U_i} \in G(U_i)$ is contained in the image of $f(U_i) : F(U_i) \to G(U_i)$.'
-    reason: 'The one direction is easy. For the other one, assume that $f : F \to G$ is an epimorphism of abelian sheaves. For every $x \in X$ the homomorphism on stalks $f_x : F_x \to G_x$ is an epimorphism because the stalk functor  $\Sh(X,\Ab) \to \Ab$ admits a right adjoint: take skyscraper sheaves. For $x \in U$ then $g_x \in G_x$ has a preimage in $F_x$, say represented by some $f \in F(V_x)$ for some $x \in V_x \subseteq U$. By construction of the stalk $G_x$, there is some $x \in U_x \subseteq V_x$ with $f(U_x)(f|_{U_x}) = g|_{U_x}$. Hence, the sets $(U_x)$ provide the open covering.'
+    proof: 'The one direction is easy. For the other one, assume that $f : F \to G$ is an epimorphism of abelian sheaves. For every $x \in X$ the homomorphism on stalks $f_x : F_x \to G_x$ is an epimorphism because the stalk functor  $\Sh(X,\Ab) \to \Ab$ admits a right adjoint: take skyscraper sheaves. For $x \in U$ then $g_x \in G_x$ has a preimage in $F_x$, say represented by some $f \in F(V_x)$ for some $x \in V_x \subseteq U$. By construction of the stalk $G_x$, there is some $x \in U_x \subseteq V_x$ with $f(U_x)(f|_{U_x}) = g|_{U_x}$. Hence, the sets $(U_x)$ provide the open covering.'
   regular monomorphisms:
     description: same as monomorphisms
-    reason: This is because the category is mono-regular.
+    proof: This is because the category is mono-regular.
   regular epimorphisms:
     description: same as epimorphisms
-    reason: This is because the category is epi-regular.
+    proof: This is because the category is epi-regular.

@@ -17,44 +17,44 @@ related_categories:
 
 satisfied_properties:
   - property: small
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: finite
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: semi-strongly connected
-    reason: This is obvious.
+    proof: This is obvious.
 
   - property: skeletal
-    reason: The three objects are clearly not isomorphic.
+    proof: The three objects are clearly not isomorphic.
 
   - property: one-way
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: generator
-    reason: It is easy to check that $1$ is a generator.
+    proof: It is easy to check that $1$ is a generator.
 
   - property: cogenerator
-    reason: It is easy to check that $2$ is a cogenerator.
+    proof: It is easy to check that $2$ is a cogenerator.
 
   - property: left cancellative
-    reason: It is easy to check that $i,f,g$ are monomorphisms.
+    proof: It is easy to check that $i,f,g$ are monomorphisms.
 
   - property: equalizers
-    reason: The only pair of distinct parallel morphisms is $f,g$, and their equalizer is $i$.
+    proof: The only pair of distinct parallel morphisms is $f,g$, and their equalizer is $i$.
 
   - property: locally cartesian closed
-    reason: We need to check that every slice category is cartesian closed. The slice category over $0$ is the <a href="/category/1">trivial category</a>. The slice category over $1$ is the <a href="/category/walking_morphism">walking morphism</a>. Finally, the slice category over $2$ ist the <a href="/category/walking_commutative_square">walking commutative square</a>. All of these are cartesian closed, see their pages for details.
+    proof: We need to check that every slice category is cartesian closed. The slice category over $0$ is the <a href="/category/1">trivial category</a>. The slice category over $1$ is the <a href="/category/walking_morphism">walking morphism</a>. Finally, the slice category over $2$ ist the <a href="/category/walking_commutative_square">walking commutative square</a>. All of these are cartesian closed, see their pages for details.
 
 unsatisfied_properties:
   - property: strongly connected
-    reason: There is no morphism $1 \to 0$.
+    proof: There is no morphism $1 \to 0$.
 
   - property: balanced
-    reason: Both $f$ and $g$ are monomorphisms and epimorphisms.
+    proof: Both $f$ and $g$ are monomorphisms and epimorphisms.
 
   - property: binary powers
-    reason: 'Assume that $X \coloneqq 2 \times 2$ exists. Since there is a diagonal morphism $2 \to X$, we must have $X = 2$, and the two projections $p_1,p_2 : X \rightrightarrows 2$ must be equal to the identity. But $f,g$ induce a morphism $(f,g) : 1 \to X$ with $p_1 (f,g) = f$ and $p_2 (f,g) = g$, so that $f=g$, a contradiction.'
+    proof: 'Assume that $X \coloneqq 2 \times 2$ exists. Since there is a diagonal morphism $2 \to X$, we must have $X = 2$, and the two projections $p_1,p_2 : X \rightrightarrows 2$ must be equal to the identity. But $f,g$ induce a morphism $(f,g) : 1 \to X$ with $p_1 (f,g) = f$ and $p_2 (f,g) = g$, so that $f=g$, a contradiction.'
 
 special_objects:
   initial object:
@@ -63,16 +63,16 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: the three identities
-    reason: This is trivial.
+    proof: This is trivial.
   monomorphisms:
     description: every morphism
-    reason: This is easily checked.
+    proof: This is easily checked.
   epimorphisms:
     description: the identities and $f,g$
-    reason: This is easily checked.
+    proof: This is easily checked.
   regular monomorphisms:
     description: the identities and $i$
-    reason: First, $i$ is the equalizer of $f,g$. The morphism $f$ is an epimorphism (and a monomorphism), but no isomorphism, hence cannot be a regular monomorphism. The same holds for $g$.
+    proof: First, $i$ is the equalizer of $f,g$. The morphism $f$ is an epimorphism (and a monomorphism), but no isomorphism, hence cannot be a regular monomorphism. The same holds for $g$.
   regular epimorphisms:
     description: same as isomorphisms
-    reason: This is because the category is left cancellative.
+    proof: This is because the category is left cancellative.

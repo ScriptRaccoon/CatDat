@@ -5,7 +5,7 @@
     - Malcev
   conclusions:
     - finitely complete
-  reason: This holds by definition.
+  proof: This holds by definition.
   is_equivalence: false
 
 - id: malcev_thin_condition
@@ -14,7 +14,7 @@
     - thin
   conclusions:
     - Malcev
-  reason: In a thin category, every subobject of $X^2 = X$ containing $X$ is already $X$.
+  proof: In a thin category, every subobject of $X^2 = X$ containing $X$ is already $X$.
   is_equivalence: false
 
 - id: malcev_additive_criterion
@@ -23,7 +23,7 @@
     - finitely complete
   conclusions:
     - Malcev
-  reason: See Prop. 2.2.13. in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>.
+  proof: See Prop. 2.2.13. in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>.
   is_equivalence: false
 
 - id: malcev_implies_unital
@@ -32,7 +32,7 @@
     - pointed
   conclusions:
     - unital
-  reason: This follows from Corollary 2.2.10 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>. The proof is also written down in <a href="https://math.stackexchange.com/a/5034834/1650" target="_blank">MSE/5033161</a>.
+  proof: This follows from Corollary 2.2.10 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>. The proof is also written down in <a href="https://math.stackexchange.com/a/5034834/1650" target="_blank">MSE/5033161</a>.
   is_equivalence: false
 
 - id: biproducts_unital
@@ -41,7 +41,7 @@
     - finitely complete
   conclusions:
     - unital
-  reason: For all objects $X,Y$ the morphism $X \sqcup Y \to X \times Y$ is an isomorphism, hence a strong epimorphism.
+  proof: For all objects $X,Y$ the morphism $X \sqcup Y \to X \times Y$ is an isomorphism, hence a strong epimorphism.
   is_equivalence: false
 
 - id: unital_assumptions
@@ -50,5 +50,5 @@
   conclusions:
     - finitely complete
     - pointed
-  reason: This holds by definition.
+  proof: This holds by definition.
   is_equivalence: false

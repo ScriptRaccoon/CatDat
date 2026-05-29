@@ -19,7 +19,7 @@ function deduce_special_morphisms_of_dual_categories() {
 	const res = db
 		.prepare(
 			`
-        INSERT INTO special_morphisms (category_id, type, description, reason)
+        INSERT INTO special_morphisms (category_id, type, description, proof)
         SELECT
             c.dual_category_id,
             t.dual,

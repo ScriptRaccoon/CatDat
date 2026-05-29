@@ -6,7 +6,7 @@
   conclusions:
     - locally essentially small
     - zero morphisms
-  reason: This is trivial.
+  proof: This is trivial.
   is_equivalence: false
 
 - id: preadditive_products_criterion
@@ -15,7 +15,7 @@
     - preadditive
   conclusions:
     - finite products
-  reason: See <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, VIII.2., Theorem 2.
+  proof: See <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, VIII.2., Theorem 2.
   is_equivalence: false
 
 - id: additive_definition
@@ -24,7 +24,7 @@
   conclusions:
     - finite products
     - preadditive
-  reason: This holds by definition.
+  proof: This holds by definition.
   is_equivalence: true
 
 - id: additive_biproducts
@@ -32,7 +32,7 @@
     - additive
   conclusions:
     - biproducts
-  reason: This is standard, see e.g. Prop. 2.1 on the <a href="https://ncatlab.org/nlab/show/additive+category" target="_blank">nLab</a>.
+  proof: This is standard, see e.g. Prop. 2.1 on the <a href="https://ncatlab.org/nlab/show/additive+category" target="_blank">nLab</a>.
   is_equivalence: false
 
 - id: abelian_definition
@@ -44,7 +44,7 @@
     - conormal
     - kernels
     - normal
-  reason: This holds by definition.
+  proof: This holds by definition.
   is_equivalence: true
 
 - id: abelian_implies_regular
@@ -52,7 +52,7 @@
     - abelian
   conclusions:
     - regular
-  reason: In an abelian category, every epimorphism is regular, and epimorphisms are pullback-stable, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. VIII.
+  proof: In an abelian category, every epimorphism is regular, and epimorphisms are pullback-stable, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. VIII.
   is_equivalence: false
 
 - id: grothendieck_abelian_definition
@@ -63,7 +63,7 @@
     - coproducts
     - exact filtered colimits
     - generator
-  reason: This holds by definition.
+  proof: This holds by definition.
   is_equivalence: true
 
 - id: grothendieck_abelian_cogenerator
@@ -71,7 +71,7 @@
     - Grothendieck abelian
   conclusions:
     - cogenerator
-  reason: See <a href="https://ncatlab.org/nlab/show/Categories+and+Sheaves" target="_blank">Kashiwara-Schapira</a>, Thm. 9.6.3.
+  proof: See <a href="https://ncatlab.org/nlab/show/Categories+and+Sheaves" target="_blank">Kashiwara-Schapira</a>, Thm. 9.6.3.
   is_equivalence: false
 
 - id: grothendieck_abelian_self-dual
@@ -80,7 +80,7 @@
     - self-dual
   conclusions:
     - trivial
-  reason: This follows since the dual of a non-trivial Grothendieck abelian category cannot be Grothendieck abelian. See Peter Freyd, <i>Abelian categories</i>, p. 116.
+  proof: This follows since the dual of a non-trivial Grothendieck abelian category cannot be Grothendieck abelian. See Peter Freyd, <i>Abelian categories</i>, p. 116.
   is_equivalence: false
 
 - id: split_abelian_condition
@@ -88,7 +88,7 @@
     - split abelian
   conclusions:
     - abelian
-  reason: This holds by definition.
+  proof: This holds by definition.
   is_equivalence: false
 
 - id: biproducts_definition_consequences
@@ -98,5 +98,5 @@
     - finite coproducts
     - finite products
     - zero morphisms
-  reason: This holds by definition of biproducts.
+  proof: This holds by definition of biproducts.
   is_equivalence: false

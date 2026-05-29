@@ -19,29 +19,29 @@ related_categories:
 
 satisfied_properties:
   - property: small
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: finite
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: skeletal
-    reason: The four objects are not isomorphic.
+    proof: The four objects are not isomorphic.
 
   - property: self-dual
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: locally cartesian closed
-    reason: This is because the <a href="/category/walking_morphism">walking morphism</a> has this property.
+    proof: This is because the <a href="/category/walking_morphism">walking morphism</a> has this property.
 
   - property: locally strongly finitely presentable
-    reason: This is because the <a href="/category/walking_morphism">walking morphism</a> has this property. Alternatively, we may represent this category as the category of algebras for the finitary algebraic theory with two sorts $S_1,S_2$, the equation $x=y$ for $x,y \in S_1$, and the equation $x=y$ for $x,y \in S_2$.
+    proof: This is because the <a href="/category/walking_morphism">walking morphism</a> has this property. Alternatively, we may represent this category as the category of algebras for the finitary algebraic theory with two sorts $S_1,S_2$, the equation $x=y$ for $x,y \in S_1$, and the equation $x=y$ for $x,y \in S_2$.
 
 unsatisfied_properties:
   - property: semi-strongly connected
-    reason: There is no morphism between $b$ and $c$ (resp., between $(0,1)$ and $(1,0)$).
+    proof: There is no morphism between $b$ and $c$ (resp., between $(0,1)$ and $(1,0)$).
 
   - property: finitary algebraic
-    reason: This follows from <a href="/content/thin_algebraic_categories">this lemma</a>.
+    proof: This follows from <a href="/content/thin_algebraic_categories">this lemma</a>.
 
 special_objects:
   initial object:
@@ -56,16 +56,16 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: the four identities
-    reason: This is trivial.
+    proof: This is trivial.
   monomorphisms:
     description: every morphism
-    reason: It is a thin category.
+    proof: It is a thin category.
   epimorphisms:
     description: every morphism
-    reason: It is a thin category.
+    proof: It is a thin category.
   regular monomorphisms:
     description: same as isomorphisms
-    reason: This is because the category is right cancellative.
+    proof: This is because the category is right cancellative.
   regular epimorphisms:
     description: same as isomorphisms
-    reason: This is because the category is left cancellative.
+    proof: This is because the category is left cancellative.

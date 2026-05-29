@@ -6,7 +6,7 @@
   conclusions:
     - essentially small
     - locally small
-  reason: This is trivial.
+  proof: This is trivial.
   is_equivalence: false
 
 - id: essentially_small_consequences
@@ -17,7 +17,7 @@
     - locally essentially small
     - well-copowered
     - well-powered
-  reason: This is trivial.
+  proof: This is trivial.
   is_equivalence: false
 
 - id: finite_consequence
@@ -26,7 +26,7 @@
   conclusions:
     - countable
     - essentially finite
-  reason: This is trivial.
+  proof: This is trivial.
   is_equivalence: false
 
 - id: essentially_finite_raise
@@ -35,7 +35,7 @@
   conclusions:
     - essentially countable
     - locally finite
-  reason: This is trivial.
+  proof: This is trivial.
   is_equivalence: false
 
 - id: countable_consequence
@@ -43,7 +43,7 @@
     - countable
   conclusions:
     - essentially countable
-  reason: This is trivial.
+  proof: This is trivial.
   is_equivalence: false
 
 - id: essentially_countable_consequence
@@ -51,7 +51,7 @@
     - essentially countable
   conclusions:
     - essentially small
-  reason: This is trivial.
+  proof: This is trivial.
   is_equivalence: false
 
 - id: locally_small_consequence
@@ -59,7 +59,7 @@
     - locally small
   conclusions:
     - locally essentially small
-  reason: This is trivial.
+  proof: This is trivial.
   is_equivalence: false
 
 - id: locally_finite_consequence
@@ -67,5 +67,5 @@
     - locally finite
   conclusions:
     - locally essentially small
-  reason: This is trivial.
+  proof: This is trivial.
   is_equivalence: false

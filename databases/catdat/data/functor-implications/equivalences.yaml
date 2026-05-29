@@ -7,7 +7,7 @@
   target_assumptions: []
   conclusions:
     - equivalence
-  reason: This is standard, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. IV, Theorem 4.1.
+  proof: This is standard, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. IV, Theorem 4.1.
   is_equivalence: true
 
 - id: equivalence_consequences
@@ -17,5 +17,5 @@
   target_assumptions: []
   conclusions:
     - monadic
-  reason: This is easy.
+  proof: This is easy.
   is_equivalence: false

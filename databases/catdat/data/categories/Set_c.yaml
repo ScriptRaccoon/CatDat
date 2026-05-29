@@ -16,64 +16,64 @@ related_categories:
 
 satisfied_properties:
   - property: locally small
-    reason: The collection of maps between two (countable) sets $X,Y$ is a subset of $X \times Y$ and therefore a set.
+    proof: The collection of maps between two (countable) sets $X,Y$ is a subset of $X \times Y$ and therefore a set.
 
   - property: essentially small
-    reason: Every countable set is isomorphic to a subset of $\IN$.
+    proof: Every countable set is isomorphic to a subset of $\IN$.
 
   - property: finitely complete
-    reason: The embedding $\Set_\c \hookrightarrow \Set$ is closed under finite products and equalizers, hence under finite limits.
+    proof: The embedding $\Set_\c \hookrightarrow \Set$ is closed under finite products and equalizers, hence under finite limits.
     check_redundancy: false
 
   - property: finitely cocomplete
-    reason: The embedding $\Set_\c \hookrightarrow \Set$ is closed under finite coproducts and coequalizers, hence under finite colimits.
+    proof: The embedding $\Set_\c \hookrightarrow \Set$ is closed under finite coproducts and coequalizers, hence under finite colimits.
     check_redundancy: false
 
   - property: subobject classifier
-    reason: This is because $\{0,1\}$ is a subobject classifier in <a href="/category/Set">$\Set$</a>, which is countable, and the monomorphisms coincide.
+    proof: This is because $\{0,1\}$ is a subobject classifier in <a href="/category/Set">$\Set$</a>, which is countable, and the monomorphisms coincide.
 
   - property: epi-regular
-    reason: If $X \to Y$ is an epimorphism in $\Set_\c$, i.e. a surjective map, it is coequalizer of the two maps $X \times_Y X \rightrightarrows X$ in $\Set$ and hence also in $\Set_\c$.
+    proof: If $X \to Y$ is an epimorphism in $\Set_\c$, i.e. a surjective map, it is coequalizer of the two maps $X \times_Y X \rightrightarrows X$ in $\Set$ and hence also in $\Set_\c$.
 
   - property: generator
-    reason: The one-point set is clearly a generator.
+    proof: The one-point set is clearly a generator.
 
   - property: cogenerator
-    reason: The two-point set is a cogenerator in <a href="/category/Set">$\Set$</a>, hence also in $\Set_\c$.
+    proof: The two-point set is a cogenerator in <a href="/category/Set">$\Set$</a>, hence also in $\Set_\c$.
 
   - property: semi-strongly connected
-    reason: This is because the larger category <a href="/category/Set">$\Set$</a> has this property.
+    proof: This is because the larger category <a href="/category/Set">$\Set$</a> has this property.
 
   - property: extensive
-    reason: The same proof as for <a href="/category/Set">$\Set$</a> applies. Actually, the category is "countably extensive".
+    proof: The same proof as for <a href="/category/Set">$\Set$</a> applies. Actually, the category is "countably extensive".
 
   - property: countably distributive
-    reason: By elementary set theory, a countable (disjoint) union of countable sets is again countable. Hence, countable coproducts exist in $\Set_\c$, and we already saw that finite products exist. The distributivity morphism is an isomorphism since this is the case in <a href="/category/Set">$\Set$</a> and the forgetful functor $\Set_\c \to \Set$ preserves finite products and countable coproducts.
+    proof: By elementary set theory, a countable (disjoint) union of countable sets is again countable. Hence, countable coproducts exist in $\Set_\c$, and we already saw that finite products exist. The distributivity morphism is an isomorphism since this is the case in <a href="/category/Set">$\Set$</a> and the forgetful functor $\Set_\c \to \Set$ preserves finite products and countable coproducts.
 
   - property: effective congruences
-    reason: 'Let $f, g : E \rightrightarrows X$ be a congruence in $\Set_\c$. Then using $1$ as a test object, we see that this induces an equivalence relation on $X$. We already know that <a href="/category/Set">$\Set$</a> has effective congruences (as does every topos). Using <a href="/content/effective-congruence-quotients">this result</a>, we see that $E$ is the kernel pair of $X \to (X/E)_{\Set}$ in $\Set$. Also, the quotient $(X/E)_{\Set}$ is countable; and the forgetful functor $\Set_\c \to \Set$ is fully faithful <a href="https://ncatlab.org/nlab/show/reflected+limit#FullSubcategoryInclusionReflectCoLimits" target="_blank">and therefore reflects limits</a>. Thus, we conclude that $E$ is the kernel pair of $X \to (X/E)_{\Set}$ in $\Set_\c$ as well.'
+    proof: 'Let $f, g : E \rightrightarrows X$ be a congruence in $\Set_\c$. Then using $1$ as a test object, we see that this induces an equivalence relation on $X$. We already know that <a href="/category/Set">$\Set$</a> has effective congruences (as does every topos). Using <a href="/content/effective-congruence-quotients">this result</a>, we see that $E$ is the kernel pair of $X \to (X/E)_{\Set}$ in $\Set$. Also, the quotient $(X/E)_{\Set}$ is countable; and the forgetful functor $\Set_\c \to \Set$ is fully faithful <a href="https://ncatlab.org/nlab/show/reflected+limit#FullSubcategoryInclusionReflectCoLimits" target="_blank">and therefore reflects limits</a>. Thus, we conclude that $E$ is the kernel pair of $X \to (X/E)_{\Set}$ in $\Set_\c$ as well.'
 
   - property: regular
-    reason: From the other properties we know that the category is finitely complete and that it has coequalizers. The regular epimorphisms are stable under pullback since this holds in <a href="/category/Set">$\Set$</a> and both regular epimorphisms (they are surjective maps) and pullbacks coincide.
+    proof: From the other properties we know that the category is finitely complete and that it has coequalizers. The regular epimorphisms are stable under pullback since this holds in <a href="/category/Set">$\Set$</a> and both regular epimorphisms (they are surjective maps) and pullbacks coincide.
 
   - property: coregular
-    reason: From the other properties we know that the category is finitely cocomplete and that it has equalizers. The regular monomorphisms are stable under pushout since this holds in <a href="/category/Set">$\Set$</a> and both regular monomorphisms (they are injective maps) and pushouts coincide.
+    proof: From the other properties we know that the category is finitely cocomplete and that it has equalizers. The regular monomorphisms are stable under pushout since this holds in <a href="/category/Set">$\Set$</a> and both regular monomorphisms (they are injective maps) and pushouts coincide.
 
 unsatisfied_properties:
   - property: small
-    reason: Even the collection of all singletons is not a set.
+    proof: Even the collection of all singletons is not a set.
 
   - property: skeletal
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: countable powers
-    reason: Since the forgetful functor $\Set_\c \to \Set$ is representable, it preserves (countable) products. Therefore, if the power $\{0,1\}^{\IN}$ exists in $\Set_\c$, it must be the ordinary cartesian product, which however is uncountable.
+    proof: Since the forgetful functor $\Set_\c \to \Set$ is representable, it preserves (countable) products. Therefore, if the power $\{0,1\}^{\IN}$ exists in $\Set_\c$, it must be the ordinary cartesian product, which however is uncountable.
 
   - property: ℵ₂-small copowers
-    reason: 'Assume that the copower $X \coloneqq I \otimes 1$ exists in $\Set_\c$. We will prove that $I$ is countable; in particular, $\aleph_1 \otimes 1$ does not exist. The copower is a countable set $X$ with a universal family of elements $(x_i)_{i \in I}$. For every $i \in I$ there is a map $X \to \{0,1\}$ defined by $x_i \mapsto 1$ and $x_j \mapsto 0$ for $j \neq i$. In particular, $x_i \neq x_j$ whenever $i \neq j$. Thus, $x : I \to X$ is an injective map, which proves that $I$ is countable.'
+    proof: 'Assume that the copower $X \coloneqq I \otimes 1$ exists in $\Set_\c$. We will prove that $I$ is countable; in particular, $\aleph_1 \otimes 1$ does not exist. The copower is a countable set $X$ with a universal family of elements $(x_i)_{i \in I}$. For every $i \in I$ there is a map $X \to \{0,1\}$ defined by $x_i \mapsto 1$ and $x_j \mapsto 0$ for $j \neq i$. In particular, $x_i \neq x_j$ whenever $i \neq j$. Thus, $x : I \to X$ is an injective map, which proves that $I$ is countable.'
 
   - property: ℵ₁-cofiltered limits
-    reason: >-
+    proof: >-
       Since the forgetful functor $\Set_\c \to \Set$ is representable, it preserves limits. So it suffices to construct an $\aleph_1$-cofiltered diagram of countable sets whose $\Set$-limit is not countable.
       Let $R$ be an uncountable set (such as $\IR$) and consider the poset $P_{<\aleph_1}(R)$ of countable subsets of $R$. It is $\aleph_1$-filtered, so its opposite is $\aleph_1$-cofiltered.
       Define a diagram $X : P_{<\aleph_1}(R)^{\op} \to \Set_\c$ by mapping a countable subset $C \subseteq R$ to the pointed countable set $C \sqcup \{\ast\}$ and an inclusion $C \subseteq D$ to the map $D \sqcup \{\ast\} \to C \sqcup \{\ast\}$ which restricts to the identity on $C$ and sends everything else to the base point.
@@ -94,16 +94,16 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: bijective maps
-    reason: This is easy.
+    proof: This is easy.
   monomorphisms:
     description: injective maps
-    reason: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
+    proof: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
   epimorphisms:
     description: surjective maps
-    reason: 'For the non-trivial direction, if $f : X \to Y$ is an epimorphism of countable sets, then in particular $f^* : \Hom(Y,2) \to \Hom(X,2)$ is injective, which identifies with $f^* : P(Y) \to P(X)$. Then for all $y \in Y$ we have $f^*(\{y\}) \neq f^*(\varnothing) = \varnothing$, so that $y$ has a preimage.'
+    proof: 'For the non-trivial direction, if $f : X \to Y$ is an epimorphism of countable sets, then in particular $f^* : \Hom(Y,2) \to \Hom(X,2)$ is injective, which identifies with $f^* : P(Y) \to P(X)$. Then for all $y \in Y$ we have $f^*(\{y\}) \neq f^*(\varnothing) = \varnothing$, so that $y$ has a preimage.'
   regular monomorphisms:
     description: same as monomorphisms
-    reason: This is because the category is mono-regular.
+    proof: This is because the category is mono-regular.
   regular epimorphisms:
     description: same as epimorphisms
-    reason: This is because the category is epi-regular.
+    proof: This is because the category is epi-regular.

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import MetaData from '$components/MetaData.svelte'
-	import TextWithReason from '$components/TextWithReason.svelte'
+	import TextWithProof from '$components/TextWithProof.svelte'
 	import { faQuestion } from '@fortawesome/free-solid-svg-icons'
 	import Fa from 'svelte-fa'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
@@ -55,13 +55,13 @@
 	<ul class="with-margins no-bullets">
 		{#each data.special_morphisms as obj}
 			<li>
-				<TextWithReason reason={obj.reason}>
+				<TextWithProof proof={obj.proof}>
 					{#if obj.description}
 						{obj.type}: {@html obj.description}
 					{:else}
 						{obj.type}: <Fa icon={faQuestion} scale={0.825} />
 					{/if}
-				</TextWithReason>
+				</TextWithProof>
 			</li>
 		{/each}
 	</ul>

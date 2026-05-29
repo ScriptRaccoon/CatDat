@@ -72,7 +72,7 @@ export const load = async (event) => {
 			SELECT
 				cp.property_id AS id,
 				cp.is_satisfied,
-				cp.reason,
+				cp.proof,
 				cp.is_deduced,
 				p.relation
 			FROM category_property_assignments cp
@@ -100,7 +100,7 @@ export const load = async (event) => {
 		`,
 		// special morphisms
 		sql`
-			SELECT t.type, s.description, s.reason
+			SELECT t.type, s.description, s.proof
 			FROM special_morphism_types t
 			LEFT JOIN special_morphisms s
 				ON s.type = t.type AND s.category_id = ${id}

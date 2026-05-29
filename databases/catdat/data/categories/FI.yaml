@@ -17,59 +17,59 @@ related_categories:
 
 satisfied_properties:
   - property: locally small
-    reason: There is a forgetful functor $\FI \to \Set$ and $\Set$ is locally small.
+    proof: There is a forgetful functor $\FI \to \Set$ and $\Set$ is locally small.
 
   - property: locally finite
-    reason: There is a faithful functor $\FI \to \FinSet$ and <a href="/category/FinSet">$\FinSet$</a> is locally finite.
+    proof: There is a faithful functor $\FI \to \FinSet$ and <a href="/category/FinSet">$\FinSet$</a> is locally finite.
 
   - property: left cancellative
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: generator
-    reason: The one-point set is a generator since it represents the forgetful functor $\FI \to \Set$.
+    proof: The one-point set is a generator since it represents the forgetful functor $\FI \to \Set$.
 
   - property: essentially countable
-    reason: Every finite set is isomorphic to some $\{1,\dotsc,n\}$ for some $n \in \IN$.
+    proof: Every finite set is isomorphic to some $\{1,\dotsc,n\}$ for some $n \in \IN$.
 
   - property: equalizers
-    reason: We construct equalizers just like in <a href="/category/FinSet">$\FinSet$</a> and observe that the universal property still holds.
+    proof: We construct equalizers just like in <a href="/category/FinSet">$\FinSet$</a> and observe that the universal property still holds.
 
   - property: wide pullbacks
-    reason: 'We construct wide pullbacks just like in <a href="/category/Set">$\Set$</a>, i.e., for a w.l.o.g. non-empty family of injective maps $f_i : X_i \to S$ we consider the subset $P \subseteq \prod_{i \in I} X_i$ of those tuples $x$ where $f_i(x_i) = f_j(x_j)$. Each projection $P \to X_i$ is injective, so in particular $P$ is finite, and $P \to X_i$ becomes a morphism in $\FI$. It is easy to check that the universal property still holds in $\FI$.'
+    proof: 'We construct wide pullbacks just like in <a href="/category/Set">$\Set$</a>, i.e., for a w.l.o.g. non-empty family of injective maps $f_i : X_i \to S$ we consider the subset $P \subseteq \prod_{i \in I} X_i$ of those tuples $x$ where $f_i(x_i) = f_j(x_j)$. Each projection $P \to X_i$ is injective, so in particular $P$ is finite, and $P \to X_i$ becomes a morphism in $\FI$. It is easy to check that the universal property still holds in $\FI$.'
 
   - property: mono-regular
-    reason: 'If $f : X \to Y$ is an injective map of finite sets, it is the equalizer of the two injective maps $i_1,i_2 : Y \rightrightarrows Y \sqcup_X Y$, and $Y \sqcup_X Y$ is finite.'
+    proof: 'If $f : X \to Y$ is an injective map of finite sets, it is the equalizer of the two injective maps $i_1,i_2 : Y \rightrightarrows Y \sqcup_X Y$, and $Y \sqcup_X Y$ is finite.'
 
   - property: semi-strongly connected
-    reason: If $X,Y$ are two finite sets, we have $\card(X) \leq \card(Y)$ or $\card(Y) \leq \card(X)$. In the first case there will be an injection $X \to Y$, in the second case there will be an injection $Y \to X$.
+    proof: If $X,Y$ are two finite sets, we have $\card(X) \leq \card(Y)$ or $\card(Y) \leq \card(X)$. In the first case there will be an injection $X \to Y$, in the second case there will be an injection $Y \to X$.
 
   - property: locally cartesian closed
-    reason: IF $X$ is a finite set, the slice category $\FI / X$ is equivalent to the poset of subsets of $X$. This is cartesian closed because $A \cap B \subseteq C$ holds if and only if $B \subseteq (X \setminus A) \cup C$, where $A,B,C \subseteq X$.
+    proof: IF $X$ is a finite set, the slice category $\FI / X$ is equivalent to the poset of subsets of $X$. This is cartesian closed because $A \cap B \subseteq C$ holds if and only if $B \subseteq (X \setminus A) \cup C$, where $A,B,C \subseteq X$.
 
 unsatisfied_properties:
   - property: small
-    reason: Even the collection of all singletons is not small.
+    proof: Even the collection of all singletons is not small.
 
   - property: skeletal
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: core-thin
-    reason: Its core is <a href="/category/B">$\IB$</a>, which we know is not thin.
+    proof: Its core is <a href="/category/B">$\IB$</a>, which we know is not thin.
 
   - property: strongly connected
-    reason: There is no map from a non-empty set to the empty set.
+    proof: There is no map from a non-empty set to the empty set.
 
   - property: countable
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: cogenerator
-    reason: Let $Q$ be finite set. When $Q$ is empty, it is clearly no cogenerator. Otherwise, $Q + 1$ has at least two elements, so that there are two different morphisms $1 \rightrightarrows Q + 1$. But there is no morphism $Q + 1 \to Q$ at all. Hence, $Q$ is no cogenerator.
+    proof: Let $Q$ be finite set. When $Q$ is empty, it is clearly no cogenerator. Otherwise, $Q + 1$ has at least two elements, so that there are two different morphisms $1 \rightrightarrows Q + 1$. But there is no morphism $Q + 1 \to Q$ at all. Hence, $Q$ is no cogenerator.
 
   - property: binary powers
-    reason: Assume that two finite sets $X,Y$ have a product $P$ in this category. Elements of $P$ are the same as maps $1 \to P$, and they are automatically injective. Therefore, $P \cong \Hom(1,P) \times \Hom(1,X) \times \Hom(1,Y) \cong X \times Y$, and the projections must agree as well. But they are usually not injective. In particular, the product $X \times X$ never exists when $X$ has $>1$ elements.
+    proof: Assume that two finite sets $X,Y$ have a product $P$ in this category. Elements of $P$ are the same as maps $1 \to P$, and they are automatically injective. Therefore, $P \cong \Hom(1,P) \times \Hom(1,X) \times \Hom(1,Y) \cong X \times Y$, and the projections must agree as well. But they are usually not injective. In particular, the product $X \times X$ never exists when $X$ has $>1$ elements.
 
   - property: sequential colimits
-    reason: 'Let $X_n \coloneqq \{1,\dotsc,n\}$. Assume the sequence of inclusion maps $X_n \hookrightarrow X_{n+1}$ has a colimit $(f_n : X_n \to X)$ in this category. But $f_n$ must be an injective map, so that $\card(X) \geq n$ for all $n$. Since $X$ is finite, this is a contradiction.'
+    proof: 'Let $X_n \coloneqq \{1,\dotsc,n\}$. Assume the sequence of inclusion maps $X_n \hookrightarrow X_{n+1}$ has a colimit $(f_n : X_n \to X)$ in this category. But $f_n$ must be an injective map, so that $\card(X) \geq n$ for all $n$. Since $X$ is finite, this is a contradiction.'
 
 special_objects:
   initial object:
@@ -78,16 +78,16 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: bijective maps
-    reason: This follows exactly as for sets.
+    proof: This follows exactly as for sets.
   monomorphisms:
     description: every morphism
-    reason: This is trivial.
+    proof: This is trivial.
   epimorphisms:
     description: bijective maps
-    reason: 'Take an epimorphism $X \to Y$ in this category, w.l.o.g. the inclusion of a subset $X \subseteq Y$. This means that for two injective maps $f,g : Y \rightrightarrows T$ with $f|_X = g|_X$ we must have $f = g$. Let $T \coloneqq Y + (Y \setminus X)$ (disjoint union), $f$ be the inclusion into the first summand, $g|_X$ be the inclusion into the first summand, and $g|_{Y \setminus X}$ be the inclusion into the second summand. Then $f$ and $g$ are injective with $f|_X = g|_X$, so that $f = g$. But this means $X = Y$.'
+    proof: 'Take an epimorphism $X \to Y$ in this category, w.l.o.g. the inclusion of a subset $X \subseteq Y$. This means that for two injective maps $f,g : Y \rightrightarrows T$ with $f|_X = g|_X$ we must have $f = g$. Let $T \coloneqq Y + (Y \setminus X)$ (disjoint union), $f$ be the inclusion into the first summand, $g|_X$ be the inclusion into the first summand, and $g|_{Y \setminus X}$ be the inclusion into the second summand. Then $f$ and $g$ are injective with $f|_X = g|_X$, so that $f = g$. But this means $X = Y$.'
   regular monomorphisms:
     description: same as monomorphisms
-    reason: This is because the category is mono-regular.
+    proof: This is because the category is mono-regular.
   regular epimorphisms:
     description: same as epimorphisms
-    reason: This is because the category is epi-regular.
+    proof: This is because the category is epi-regular.

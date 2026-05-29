@@ -16,23 +16,23 @@ related_functors:
 
 satisfied_properties:
   - property: preserves equalizers
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: cofinitary
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: conservative
-    reason: This is easy to check.
+    proof: This is easy to check.
 
   - property: left adjoint
-    reason: We have $\Hom(\IN \times X,Y) \cong \Hom(X,Y^{\IN})$.
+    proof: We have $\Hom(\IN \times X,Y) \cong \Hom(X,Y^{\IN})$.
 
 unsatisfied_properties:
   - property: full
-    reason: If $X$ is non-empty, the map $\IN \times X \to \IN \times X$, $(n,x) \mapsto (n+1,x)$ is not induced by a map $X \to X$.
+    proof: If $X$ is non-empty, the map $\IN \times X \to \IN \times X$, $(n,x) \mapsto (n+1,x)$ is not induced by a map $X \to X$.
 
   - property: preserves terminal objects
-    reason: We have $\IN \times 1 \cong \IN \not\cong 1$.
+    proof: We have $\IN \times 1 \cong \IN \not\cong 1$.
 
   - property: essentially surjective
-    reason: A non-empty finite set is not contained in the essential image.
+    proof: A non-empty finite set is not contained in the essential image.

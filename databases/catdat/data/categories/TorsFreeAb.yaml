@@ -16,43 +16,43 @@ related_categories:
 
 satisfied_properties:
   - property: locally small
-    reason: There is a forgetful functor $\TorsFreeAb \to \Ab$ and $\Ab$ is locally small.
+    proof: There is a forgetful functor $\TorsFreeAb \to \Ab$ and $\Ab$ is locally small.
 
   - property: complete
-    reason: The embedding $\TorsFreeAb \hookrightarrow \Ab$ is closed under limits and <a href="/category/Ab">$\Ab$</a> is complete.
+    proof: The embedding $\TorsFreeAb \hookrightarrow \Ab$ is closed under limits and <a href="/category/Ab">$\Ab$</a> is complete.
     check_redundancy: false
 
   - property: cocomplete
-    reason: 'The embedding $\TorsFreeAb \hookrightarrow \Ab$ has a left adjoint, sending an abelian group $A$ to its torsion-free reflection $A/T(A)$, where $T(A)$ is the torsion subgroup of $A$. Since <a href="/category/Ab">$\Ab$</a> is cocomplete, $\TorsFreeAb$ is cocomplete as well. The colimit of a diagram of torsion-free abelian groups is the torsion-free reflection of the colimit of the underlying abelian groups. Notice that the reflection is not required in the case of coproducts: the direct sum of torsion-free abelian groups is again torsion-free. It is also not required for filtered colimits.'
+    proof: 'The embedding $\TorsFreeAb \hookrightarrow \Ab$ has a left adjoint, sending an abelian group $A$ to its torsion-free reflection $A/T(A)$, where $T(A)$ is the torsion subgroup of $A$. Since <a href="/category/Ab">$\Ab$</a> is cocomplete, $\TorsFreeAb$ is cocomplete as well. The colimit of a diagram of torsion-free abelian groups is the torsion-free reflection of the colimit of the underlying abelian groups. Notice that the reflection is not required in the case of coproducts: the direct sum of torsion-free abelian groups is again torsion-free. It is also not required for filtered colimits.'
     check_redundancy: false
 
   - property: finitely accessible
-    reason: We already saw that filtered colimits exist and are preserved by the forgetful functor to $\Ab$. Every torsion-free abelian group is the filtered colimit of its finitely generated subgroups, which are in fact free. Finitely generated free abelian groups are finitely presentable in $\Ab$ and therefore also in $\TorsFreeAb$.
+    proof: We already saw that filtered colimits exist and are preserved by the forgetful functor to $\Ab$. Every torsion-free abelian group is the filtered colimit of its finitely generated subgroups, which are in fact free. Finitely generated free abelian groups are finitely presentable in $\Ab$ and therefore also in $\TorsFreeAb$.
 
   - property: preadditive
-    reason: It is a full subcategory of the preadditive category <a href="/category/Ab">$\Ab$</a>.
+    proof: It is a full subcategory of the preadditive category <a href="/category/Ab">$\Ab$</a>.
 
   - property: cogenerator
-    reason: The additive group $\IQ$ is a cogenerator since every torsion-free abelian group $A$ embeds into $A \otimes \IQ$, which is a vector space over $\IQ$, and by linear algebra $K$ is a cogenerator in the category of vector spaces over $K$.
+    proof: The additive group $\IQ$ is a cogenerator since every torsion-free abelian group $A$ embeds into $A \otimes \IQ$, which is a vector space over $\IQ$, and by linear algebra $K$ is a cogenerator in the category of vector spaces over $K$.
 
   - property: regular
-    reason: The regular epimorphisms are exactly the surjective homomorphisms (see below), and these are clearly stable under pullbacks.
+    proof: The regular epimorphisms are exactly the surjective homomorphisms (see below), and these are clearly stable under pullbacks.
 
   - property: coregular
-    reason: >-
+    proof: >-
       It suffices to prove that regular monomorphisms (which are classified below) are stable under pushouts. Let $i : A \to B$ be a regular monomorphism in $\TorsFreeAb$, i.e. $i$ is injective and its $\Ab$-cokernel $B/i(A)$ is torsion-free, and let $f : B \to C$ be any morphism in $\TorsFreeAb$. Their $\Ab$-pushout is
       $$P = (B \times C)/\{(i(a),-f(a)): a \in A\}.$$
       It is torsion-free: If $n \in \IZ \setminus \{0\}$ and $n (b,c) = (i(a),-f(a))$, there is some $a' \in A$ with $b = i(a')$ since $B/i(A)$ is torsion-free. It follows $n a' = a$, and then $c = -f(a')$ since $C$ is torsion-free. Thus, $(b,c) = (i(a'),-f(a'))$, which proves our claim. Therefore, $P$ is also the pushout in $\TorsFreeAb$. The homomorphism $j : C \to P$, $j(c) = [0,c]$ is injective (since <a href="/category/Ab">$\Ab$</a> is coregular, but a direct proof is also easy), and by the universal property of $P$ its $\Ab$-cokernel is isomorphic to the $\Ab$-cokernel of $i$, which is torsion-free.
 
 unsatisfied_properties:
   - property: skeletal
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: balanced
-    reason: 'It can be checked directly that $2 : \IZ \to \IZ$ is both a monomorphism and an epimorphism, but no isomorphism. This also follows from the general classification of mono- and epimorphisms below.'
+    proof: 'It can be checked directly that $2 : \IZ \to \IZ$ is both a monomorphism and an epimorphism, but no isomorphism. This also follows from the general classification of mono- and epimorphisms below.'
 
   - property: CSP
-    reason: The canonical homomorphism $\bigoplus_{n \geq 0} \IZ \to \prod_{n \geq 0} \IZ$ is injective, but not an epimorphism, since the quotient $\prod_{n \geq 0} \IZ / \bigoplus_{n \geq 0} \IZ$ is not torsion. In fact, it is torsion-free and non-zero.
+    proof: The canonical homomorphism $\bigoplus_{n \geq 0} \IZ \to \prod_{n \geq 0} \IZ$ is injective, but not an epimorphism, since the quotient $\prod_{n \geq 0} \IZ / \bigoplus_{n \geq 0} \IZ$ is not torsion. In fact, it is torsion-free and non-zero.
 
 special_objects:
   initial object:
@@ -67,16 +67,16 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: bijective group homomorphisms
-    reason: This is easy.
+    proof: This is easy.
   monomorphisms:
     description: injective group homomorphisms
-    reason: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the group $\IZ$), hence preserves monomorphisms.
+    proof: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the group $\IZ$), hence preserves monomorphisms.
   epimorphisms:
     description: 'homomorphisms $f : A \to B$ such that $B/f(A)$ is a torsion group'
-    reason: The homomorphism $f$ is an epimorphism iff its cokernel in $\TorsFreeAb$ is trivial. As with all types of colimits, the cokernel is the torsion-free reflection of the cokernel in $\Ab$, which is $B/f(A)$. This is trivial iff $B/f(A)$ is torsion.
+    proof: The homomorphism $f$ is an epimorphism iff its cokernel in $\TorsFreeAb$ is trivial. As with all types of colimits, the cokernel is the torsion-free reflection of the cokernel in $\Ab$, which is $B/f(A)$. This is trivial iff $B/f(A)$ is torsion.
   regular monomorphisms:
     description: 'injective group homomorphisms $i : A \to B$ such that $B/i(A)$ is torsion-free, i.e., $i$ is the inclusion of a <i>saturated subgroup</i>'
-    reason: 'If $i : A \to B$ is the kernel of $f : B \to C$ in $\TorsFreeAb$, it is also the kernel of $f$ in $\Ab$, so we know that $i$ is injective with $i(A) = \{b \in B : f(b) = 0\}$. If $n \in \IZ \setminus \{0\}$ and $b \in B$ satisfy $f(n b) = 0$, then also $f(b)=0$ since $C$ is torsion-free. This shows that $B/i(A)$ is torsion-free. Conversely, if $i$ is injective and $B/i(A)$ is torsion-free, then $i$ is the kernel of the natural homomorphism $B \to B/i(A)$.'
+    proof: 'If $i : A \to B$ is the kernel of $f : B \to C$ in $\TorsFreeAb$, it is also the kernel of $f$ in $\Ab$, so we know that $i$ is injective with $i(A) = \{b \in B : f(b) = 0\}$. If $n \in \IZ \setminus \{0\}$ and $b \in B$ satisfy $f(n b) = 0$, then also $f(b)=0$ since $C$ is torsion-free. This shows that $B/i(A)$ is torsion-free. Conversely, if $i$ is injective and $B/i(A)$ is torsion-free, then $i$ is the kernel of the natural homomorphism $B \to B/i(A)$.'
   regular epimorphisms:
     description: surjective group homomorphisms
-    reason: 'By the construction of the coequalizer in $\TorsFreeAb$ as the torsion-free reflection of the coequalizer in $\Ab$, every regular epimorphism is surjective. Conversely, if $f : A \to B$ is a surjective homomorphism of torsion-free abelian groups, in $\Ab$ it is the coequalizer of the two projections $A \times_B A \rightrightarrows A$, and $A \times_B A$ is also torsion-free. Hence, it is also the coequalizer of these projections in $\TorsFreeAb$.'
+    proof: 'By the construction of the coequalizer in $\TorsFreeAb$ as the torsion-free reflection of the coequalizer in $\Ab$, every regular epimorphism is surjective. Conversely, if $f : A \to B$ is a surjective homomorphism of torsion-free abelian groups, in $\Ab$ it is the coequalizer of the two projections $A \times_B A \rightrightarrows A$, and $A \times_B A$ is also torsion-free. Hence, it is also the coequalizer of these projections in $\TorsFreeAb$.'

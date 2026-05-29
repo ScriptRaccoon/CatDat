@@ -16,66 +16,66 @@ related_categories:
 
 satisfied_properties:
   - property: locally small
-    reason: It is a full subcategory of $\Grp$, which is locally small.
+    proof: It is a full subcategory of $\Grp$, which is locally small.
 
   - property: locally finite
-    reason: There is a faithful functor $\FinGrp \to \FinSet$ and <a href="/category/FinSet">$\FinSet$</a> is locally finite.
+    proof: There is a faithful functor $\FinGrp \to \FinSet$ and <a href="/category/FinSet">$\FinSet$</a> is locally finite.
 
   - property: pointed
-    reason: The trivial group is a zero object.
+    proof: The trivial group is a zero object.
     check_redundancy: false
 
   - property: essentially countable
-    reason: The underlying set of a finite structure can be chosen to be a subset of $\IN$.
+    proof: The underlying set of a finite structure can be chosen to be a subset of $\IN$.
 
   - property: coequalizers
-    reason: The quotient group of a finite group is still finite.
+    proof: The quotient group of a finite group is still finite.
 
   - property: mono-regular
-    reason: See Prop. 4.2 at the <a href="https://ncatlab.org/nlab/show/regular+monomorphism#Examples" target="_blank">nLab</a>. The proof also works for finite groups.
+    proof: See Prop. 4.2 at the <a href="https://ncatlab.org/nlab/show/regular+monomorphism#Examples" target="_blank">nLab</a>. The proof also works for finite groups.
 
   - property: conormal
-    reason: Since epimorphisms are surjective (see below), this is the first isomorphism theorem for finite groups.
+    proof: Since epimorphisms are surjective (see below), this is the first isomorphism theorem for finite groups.
 
   - property: Malcev
-    reason: A direct argument is possible, but this can also be derived from the observation that $\FinGrp$ is the category of group objects in $(\FinSet,\times)$ and Example 2.2.16 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>.
+    proof: A direct argument is possible, but this can also be derived from the observation that $\FinGrp$ is the category of group objects in $(\FinSet,\times)$ and Example 2.2.16 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>.
 
   - property: effective congruences
-    reason: 'Suppose we have a congruence $f, g : E \rightrightarrows X$ in $\FinGrp$. Since the embedding $\FinGrp \hookrightarrow \Grp$ preserves finite limits, it is also a congruence in $\Grp$. We already know that <a href="/category/Grp">$\Grp$</a> has effective congruences since it is algebraic. Using <a href="/content/effective-congruence-quotients">this result</a>, we see that $E$ is the kernel pair of $X \to (X/E)_{\Grp}$ in $\Grp$. Also, the quotient $(X/E)_{\Grp}$ is finite; and the forgetful functor $\FinGrp \to \Grp$ is fully faithful <a href="https://ncatlab.org/nlab/show/reflected+limit#FullSubcategoryInclusionReflectCoLimits" target="_blank">and therefore reflects limits</a>. Thus, we conclude that $E$ is the kernel pair of $X \to (X/E)_{\Grp}$ in $\FinGrp$ as well.'
+    proof: 'Suppose we have a congruence $f, g : E \rightrightarrows X$ in $\FinGrp$. Since the embedding $\FinGrp \hookrightarrow \Grp$ preserves finite limits, it is also a congruence in $\Grp$. We already know that <a href="/category/Grp">$\Grp$</a> has effective congruences since it is algebraic. Using <a href="/content/effective-congruence-quotients">this result</a>, we see that $E$ is the kernel pair of $X \to (X/E)_{\Grp}$ in $\Grp$. Also, the quotient $(X/E)_{\Grp}$ is finite; and the forgetful functor $\FinGrp \to \Grp$ is fully faithful <a href="https://ncatlab.org/nlab/show/reflected+limit#FullSubcategoryInclusionReflectCoLimits" target="_blank">and therefore reflects limits</a>. Thus, we conclude that $E$ is the kernel pair of $X \to (X/E)_{\Grp}$ in $\FinGrp$ as well.'
 
   - property: effective cocongruences
-    reason: 'A proof can be found in <a href="https://mathoverflow.net/questions/511516" target="_blank">MO/511516</a>. It even shows that every cocongruence in $\FinGrp$ is trivial. In short, the proof goes like this: We know that <a href="/category/Grp">$\Grp$</a> has effective cocongruences. Using the fact that amalgamated sums of finite groups are residually finite, one can can show that every cocongruence in $\FinGrp$ is also a cocongruence in $\Grp$.'
+    proof: 'A proof can be found in <a href="https://mathoverflow.net/questions/511516" target="_blank">MO/511516</a>. It even shows that every cocongruence in $\FinGrp$ is trivial. In short, the proof goes like this: We know that <a href="/category/Grp">$\Grp$</a> has effective cocongruences. Using the fact that amalgamated sums of finite groups are residually finite, one can can show that every cocongruence in $\FinGrp$ is also a cocongruence in $\Grp$.'
 
   - property: regular
-    reason: The category is Malcev and hence finitely complete, and it has all coequalizers. The regular epimorphisms coincide with the surjective group homomorphisms (see below), hence are clearly stable under pullbacks.
+    proof: The category is Malcev and hence finitely complete, and it has all coequalizers. The regular epimorphisms coincide with the surjective group homomorphisms (see below), hence are clearly stable under pullbacks.
 
   - property: ℵ₁-cofiltered limits
-    reason: For <a href="/category/FinSet">$\FinSet$</a> know that the embedding $\FinSet \hookrightarrow \Set$ is closed under $\aleph_1$-cofiltered limits. From this and the fact that the forgetful functor $\Grp \to \Set$ preserves limits it follows that $\FinGrp \hookrightarrow \Grp$ is closed under $\aleph_1$-cofiltered limits.
+    proof: For <a href="/category/FinSet">$\FinSet$</a> know that the embedding $\FinSet \hookrightarrow \Set$ is closed under $\aleph_1$-cofiltered limits. From this and the fact that the forgetful functor $\Grp \to \Set$ preserves limits it follows that $\FinGrp \hookrightarrow \Grp$ is closed under $\aleph_1$-cofiltered limits.
 
 unsatisfied_properties:
   - property: small
-    reason: Even the collection of trivial groups is not small.
+    proof: Even the collection of trivial groups is not small.
 
   - property: skeletal
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: countable
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: normal
-    reason: Every non-normal subgroup of a finite group (such as $C_2 \hookrightarrow S_3$) provides a counterexample.
+    proof: Every non-normal subgroup of a finite group (such as $C_2 \hookrightarrow S_3$) provides a counterexample.
 
   - property: binary copowers
-    reason: 'Assume that $C_2 \sqcup C_2$ exists. This is a finite group, say of order $N$, with two involutions $u,v$ such that for every finite group $G$ with two involutions $a,b$ there is a unique homomorphism $\varphi : C_2 \sqcup C_2 \to G$ with $\varphi(u)=a$ and $\varphi(v)=2$. In particular, when $G$ is generated by $a,b$, then $\ord(G) \leq N$. But then the dihedral group $G \coloneqq D_N$ of order $2N$ yields a contradiction.'
+    proof: 'Assume that $C_2 \sqcup C_2$ exists. This is a finite group, say of order $N$, with two involutions $u,v$ such that for every finite group $G$ with two involutions $a,b$ there is a unique homomorphism $\varphi : C_2 \sqcup C_2 \to G$ with $\varphi(u)=a$ and $\varphi(v)=2$. In particular, when $G$ is generated by $a,b$, then $\ord(G) \leq N$. But then the dihedral group $G \coloneqq D_N$ of order $2N$ yields a contradiction.'
 
   - property: sequential colimits
-    reason: This follows from <a href="/content/special_sequential_colimits">this lemma</a>.
+    proof: This follows from <a href="/content/special_sequential_colimits">this lemma</a>.
 
   - property: generator
-    reason: If $A,B$ are finite groups whose orders are coprime, then we know that $\Hom(A,B)$ is trivial. But a generator would admit a non-trivial homomorphism to any other non-trivial finite group.
+    proof: If $A,B$ are finite groups whose orders are coprime, then we know that $\Hom(A,B)$ is trivial. But a generator would admit a non-trivial homomorphism to any other non-trivial finite group.
 
   - property: cogenerator
-    reason: 'We apply <a href="/content/missing_cogenerator">this lemma</a> to the collection of finite simple groups: Any non-trivial homomorphism from a finite simple group to a finite group must be injective, and for every $n \in \IN$ there is a finite simple group of size $\geq n$ (for example, the alternating group on $n+5$ elements).'
+    proof: 'We apply <a href="/content/missing_cogenerator">this lemma</a> to the collection of finite simple groups: Any non-trivial homomorphism from a finite simple group to a finite group must be injective, and for every $n \in \IN$ there is a finite simple group of size $\geq n$ (for example, the alternating group on $n+5$ elements).'
 
 special_objects:
   initial object:
@@ -88,16 +88,16 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: bijective homomorphisms
-    reason: This follows exactly as for <a href="/category/Grp">$\Grp$</a>.
+    proof: This follows exactly as for <a href="/category/Grp">$\Grp$</a>.
   monomorphisms:
     description: injective homomorphisms
-    reason: 'Let $f : A \to B$ be a monomorphism of finite groups. Let $a \in A$ be in the kernel of $a$, say of order $n$. Then we may view $a$ as a morphism $a : C_n \to A$ with $f \circ a = 1$ (the trivial homomorphism), and $C_n$ is finite. Hence, $a = 1$.'
+    proof: 'Let $f : A \to B$ be a monomorphism of finite groups. Let $a \in A$ be in the kernel of $a$, say of order $n$. Then we may view $a$ as a morphism $a : C_n \to A$ with $f \circ a = 1$ (the trivial homomorphism), and $C_n$ is finite. Hence, $a = 1$.'
   epimorphisms:
     description: surjective homomorphisms
-    reason: 'For the non-trivial direction, if $f : G \to H$ is an epimorphism, we may factor it as $G \to f(G) \to H$, and $f(G) \to H$ is still an epimorphism, but also an inclusion and hence a monomorphism. Since we already know that the category is mono-regular, $f(G) \to H$ must be an isomorphism.'
+    proof: 'For the non-trivial direction, if $f : G \to H$ is an epimorphism, we may factor it as $G \to f(G) \to H$, and $f(G) \to H$ is still an epimorphism, but also an inclusion and hence a monomorphism. Since we already know that the category is mono-regular, $f(G) \to H$ must be an isomorphism.'
   regular monomorphisms:
     description: same as monomorphisms
-    reason: This is because the category is mono-regular.
+    proof: This is because the category is mono-regular.
   regular epimorphisms:
     description: same as epimorphisms
-    reason: This is because the category is epi-regular.
+    proof: This is because the category is epi-regular.

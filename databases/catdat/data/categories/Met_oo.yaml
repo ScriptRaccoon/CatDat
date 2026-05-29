@@ -15,53 +15,53 @@ related_categories:
 
 satisfied_properties:
   - property: locally small
-    reason: There is a forgetful functor $\Met_{\infty} \to \Set$ and $\Set$ is locally small.
+    proof: There is a forgetful functor $\Met_{\infty} \to \Set$ and $\Set$ is locally small.
 
   - property: generator
-    reason: The singleton metric space $1$ is a generator, since morphisms $1 \to X$ correspond to the elements of $X$.
+    proof: The singleton metric space $1$ is a generator, since morphisms $1 \to X$ correspond to the elements of $X$.
 
   - property: cogenerator
-    reason: 'The proof is similar to $\Met$, a cogenerator is given by $\IR \cup \{\infty\}$ with the metric in which $d(a,\infty)=\infty$ for $a \in \IR$. Then one checks that the maps $d(a,-) : X \to \IR \cup \{\infty\}$ are non-expansive and finishes as for <a href="/category/Met">$\Met$</a>.'
+    proof: 'The proof is similar to $\Met$, a cogenerator is given by $\IR \cup \{\infty\}$ with the metric in which $d(a,\infty)=\infty$ for $a \in \IR$. Then one checks that the maps $d(a,-) : X \to \IR \cup \{\infty\}$ are non-expansive and finishes as for <a href="/category/Met">$\Met$</a>.'
 
   - property: semi-strongly connected
-    reason: Every non-empty metric space is weakly terminal (by using constant maps).
+    proof: Every non-empty metric space is weakly terminal (by using constant maps).
 
   - property: locally ℵ₁-presentable
-    reason: This is Example 4.5 in <a href="https://arxiv.org/abs/1504.02660" target="_blank">Metric abstract elementary classes as accessible categories</a>.
+    proof: This is Example 4.5 in <a href="https://arxiv.org/abs/1504.02660" target="_blank">Metric abstract elementary classes as accessible categories</a>.
 
   - property: cartesian filtered colimits
-    reason: We can use the same proof as for <a href="/category/Met">$\Met$</a> since the equation $\inf_i \max(r, s_i) = \max(r, \inf_i s_i)$ also holds for for $r, s_i \in \IR \cup \{\infty\}$.
+    proof: We can use the same proof as for <a href="/category/Met">$\Met$</a> since the equation $\inf_i \max(r, s_i) = \max(r, \inf_i s_i)$ also holds for for $r, s_i \in \IR \cup \{\infty\}$.
 
   - property: infinitary extensive
-    reason: '[Sketch] Since <a href="/category/Set">$\Set$</a> is infinitary extensive, a map $f : Y \to \coprod_i X_i \eqqcolon X$ corresponds to a decomposition $Y = \coprod_i Y_i$ (as sets) with maps $f_i : Y_i \to X_i$. Endow $Y_i$ with the restricted metric. If $f$ is non-expansive, each $f_i$ is non-expansive, and for $x_i \in Y_i$ and $i \neq j$ we have $d_Y(x_i,x_j) \geq d_X(f(x_i),f(x_j)) = \infty$, so that $Y = \coprod_i Y_i$ holds as metric spaces.'
+    proof: '[Sketch] Since <a href="/category/Set">$\Set$</a> is infinitary extensive, a map $f : Y \to \coprod_i X_i \eqqcolon X$ corresponds to a decomposition $Y = \coprod_i Y_i$ (as sets) with maps $f_i : Y_i \to X_i$. Endow $Y_i$ with the restricted metric. If $f$ is non-expansive, each $f_i$ is non-expansive, and for $x_i \in Y_i$ and $i \neq j$ we have $d_Y(x_i,x_j) \geq d_X(f(x_i),f(x_j)) = \infty$, so that $Y = \coprod_i Y_i$ holds as metric spaces.'
 
 unsatisfied_properties:
   - property: skeletal
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: balanced
-    reason: The inclusion $\IQ \hookrightarrow \IR$ provides a counterexample. Alternatively, consider the identity map $(X,2d) \to (X,d)$ for any non-trivial metric space $(X,d)$.
+    proof: The inclusion $\IQ \hookrightarrow \IR$ provides a counterexample. Alternatively, consider the identity map $(X,2d) \to (X,d)$ for any non-trivial metric space $(X,d)$.
 
   - property: Malcev
-    reason: 'Consider the metric subspace $\{(a,b) \in \IR^2 : a \leq b\}$ of $\IR^2$.'
+    proof: 'Consider the metric subspace $\{(a,b) \in \IR^2 : a \leq b\}$ of $\IR^2$.'
 
   - property: co-Malcev
-    reason: 'See <a href="https://mathoverflow.net/questions/509552">MO/509552</a>: Consider the forgetful functor $U : \Met_{\infty} \to \Set$ and the relation $R \subseteq U^2$ defined by $R(X) \coloneqq \{(a,b) \in U(X)^2 : d(x,y) \leq 1 \}$. Both are representable: $U$ by the singleton metric space and $R$ by the metric space $\{ 0,1 \}$ where $d(0,1) \coloneqq 1$. It is clear that $R$ is reflexive, but not transitive.'
+    proof: 'See <a href="https://mathoverflow.net/questions/509552">MO/509552</a>: Consider the forgetful functor $U : \Met_{\infty} \to \Set$ and the relation $R \subseteq U^2$ defined by $R(X) \coloneqq \{(a,b) \in U(X)^2 : d(x,y) \leq 1 \}$. Both are representable: $U$ by the singleton metric space and $R$ by the metric space $\{ 0,1 \}$ where $d(0,1) \coloneqq 1$. It is clear that $R$ is reflexive, but not transitive.'
 
   - property: cartesian closed
-    reason: This is proven in <a href="https://math.stackexchange.com/questions/5131457" target="_blank">MSE/5131457</a>.
+    proof: This is proven in <a href="https://math.stackexchange.com/questions/5131457" target="_blank">MSE/5131457</a>.
 
   - property: filtered-colimit-stable monomorphisms
-    reason: We can copy the proof from <a href="/category/Met">$\Met$</a>.
+    proof: We can copy the proof from <a href="/category/Met">$\Met$</a>.
 
   - property: cofiltered-limit-stable epimorphisms
-    reason: We already know that <a href="/category/Set">$\Set$</a> does not have this property. Now apply the contrapositive of the dual of <a href="/content/filtered-monos">this lemma</a> to the functor $\Set \to \Met_{\infty}$ that equips a set with the discrete topology.
+    proof: We already know that <a href="/category/Set">$\Set$</a> does not have this property. Now apply the contrapositive of the dual of <a href="/content/filtered-monos">this lemma</a> to the functor $\Set \to \Met_{\infty}$ that equips a set with the discrete topology.
 
   - property: effective cocongruences
-    reason: The same counterexample as for <a href="/category/Met">$\Met$</a> works here. The difference in this case is that a binary copower of two copies of $(0,1)$ does exist in $\Met_\infty$. However, this would assign a distance of $\infty$ between points in $(-1,0)$ and points in $(0,1)$, which does not agree with the chosen subspace metric on $(-1,0) \cup (0,1)$.
+    proof: The same counterexample as for <a href="/category/Met">$\Met$</a> works here. The difference in this case is that a binary copower of two copies of $(0,1)$ does exist in $\Met_\infty$. However, this would assign a distance of $\infty$ between points in $(-1,0)$ and points in $(0,1)$, which does not agree with the chosen subspace metric on $(-1,0) \cup (0,1)$.
 
   - property: regular
-    reason: We can take the same counterexample as for <a href="/category/PMet">$\PMet$</a>.
+    proof: We can take the same counterexample as for <a href="/category/PMet">$\PMet$</a>.
 
 special_objects:
   initial object:
@@ -76,10 +76,10 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: bijective isometries
-    reason: This is easy.
+    proof: This is easy.
   monomorphisms:
     description: injective non-expansive maps
-    reason: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
+    proof: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
   epimorphisms:
     description: non-expansive maps with dense image
-    reason: See <a href="https://math.stackexchange.com/questions/937387" target="_blank">MSE/937387</a>.
+    proof: See <a href="https://math.stackexchange.com/questions/937387" target="_blank">MSE/937387</a>.

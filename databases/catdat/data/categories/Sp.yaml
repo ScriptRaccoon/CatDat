@@ -15,44 +15,44 @@ related_categories:
 
 satisfied_properties:
   - property: essentially small
-    reason: This holds because <a href="/category/FinSet">$\FinSet$</a> and <a href="/category/B">$\IB$</a> are essentially small.
+    proof: This holds because <a href="/category/FinSet">$\FinSet$</a> and <a href="/category/B">$\IB$</a> are essentially small.
 
   - property: elementary topos
-    reason: The category is equivalent to $\prod_{n \geq 0} \Sigma_n{-}\FinSet$ (where $\Sigma_n$ denotes the symmetric group of order $n$), and each $\Sigma_n{-}\FinSet$ is an elementary topos since is <a href="/category/FinSet">$\FinSet$</a> an elementary topos and $\Sigma_n$ is a finite group, cf. <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, Part B, Corollary 2.3.18.
+    proof: The category is equivalent to $\prod_{n \geq 0} \Sigma_n{-}\FinSet$ (where $\Sigma_n$ denotes the symmetric group of order $n$), and each $\Sigma_n{-}\FinSet$ is an elementary topos since is <a href="/category/FinSet">$\FinSet$</a> an elementary topos and $\Sigma_n$ is a finite group, cf. <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, Part B, Corollary 2.3.18.
 
   - property: cogenerator
-    reason: 'This follows from $\Sp \simeq \prod_{n \geq 0} \Sigma_n{-}\FinSet$, <a href="/content/cogenerators_in_product_categories">this lemma</a>, and the fact that if $G$ is a (finite) group, the power set $P(G)$ with the evident $G$-action is a weakly terminal cogenerator in $G{-}\Set$ (resp. $G{-}\FinSet$). For the proof, notice that $\varnothing,G \in P(G)$ are fixed points, yielding two $G$-maps $1 \rightrightarrows P(G)$. In particular, $P(G)$ is weakly terminal. If $X$ is a $G$-set with distinct points $x,y$, we construct a $G$-map $f : X \to P(G)$ that separates $x,y$: First, $X$ is a coproduct of orbits. If $x,y$ lie in different orbits, let $f|_{Gx}$ be constant $\varnothing$, $f|_{Gy}$ be constant $G$, and, say, $f$ be constant $\varnothing$ on all other orbits. If $x,y$ lie in the same orbit, say $y = g_0 x$, define $f|_{Gx} : Gx \to P(G)$ by $f(x) = G_x$ (stabilizer), which is well-defined, and choose $f$ to be $\varnothing$ on all other orbits. Then $f(y) = g_0 G_x \neq G_x = f(x)$.'
+    proof: 'This follows from $\Sp \simeq \prod_{n \geq 0} \Sigma_n{-}\FinSet$, <a href="/content/cogenerators_in_product_categories">this lemma</a>, and the fact that if $G$ is a (finite) group, the power set $P(G)$ with the evident $G$-action is a weakly terminal cogenerator in $G{-}\Set$ (resp. $G{-}\FinSet$). For the proof, notice that $\varnothing,G \in P(G)$ are fixed points, yielding two $G$-maps $1 \rightrightarrows P(G)$. In particular, $P(G)$ is weakly terminal. If $X$ is a $G$-set with distinct points $x,y$, we construct a $G$-map $f : X \to P(G)$ that separates $x,y$: First, $X$ is a coproduct of orbits. If $x,y$ lie in different orbits, let $f|_{Gx}$ be constant $\varnothing$, $f|_{Gy}$ be constant $G$, and, say, $f$ be constant $\varnothing$ on all other orbits. If $x,y$ lie in the same orbit, say $y = g_0 x$, define $f|_{Gx} : Gx \to P(G)$ by $f(x) = G_x$ (stabilizer), which is well-defined, and choose $f$ to be $\varnothing$ on all other orbits. Then $f(y) = g_0 G_x \neq G_x = f(x)$.'
 
   - property: ℵ₁-accessible
-    reason: We know that <a href="/category/FinSet">$\FinSet$</a> has $\aleph_1$-filtered colimits and that every object is $\aleph_1$-presentable. It follows that for every $n \in \IN$ also $\Sigma_n{-}\FinSet$ has $\aleph_1$-filtered colimits and that every object is $\aleph_1$-presentable. From this it follows formally that $\Sp \simeq \prod_{n \geq 0} \Sigma_n{-}\FinSet$ also has these properties. In particular, $\Sp$ is $\aleph_1$-accessible.
+    proof: We know that <a href="/category/FinSet">$\FinSet$</a> has $\aleph_1$-filtered colimits and that every object is $\aleph_1$-presentable. It follows that for every $n \in \IN$ also $\Sigma_n{-}\FinSet$ has $\aleph_1$-filtered colimits and that every object is $\aleph_1$-presentable. From this it follows formally that $\Sp \simeq \prod_{n \geq 0} \Sigma_n{-}\FinSet$ also has these properties. In particular, $\Sp$ is $\aleph_1$-accessible.
 
   - property: ℵ₁-cofiltered limits
-    reason: Since <a href="/category/FinSet">$\FinSet$</a> has $\aleph_1$-cofiltered limits, also $\Sigma_n{-}\FinSet$ has $\aleph_1$-cofiltered limits for every $n \geq 0$. Hence, $\Sp \simeq \prod_{n \geq 0} \Sigma_n{-}\FinSet$ has $\aleph_1$-cofiltered limits.
+    proof: Since <a href="/category/FinSet">$\FinSet$</a> has $\aleph_1$-cofiltered limits, also $\Sigma_n{-}\FinSet$ has $\aleph_1$-cofiltered limits for every $n \geq 0$. Hence, $\Sp \simeq \prod_{n \geq 0} \Sigma_n{-}\FinSet$ has $\aleph_1$-cofiltered limits.
 
 unsatisfied_properties:
   - property: skeletal
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: locally finite
-    reason: If $1$ denotes the terminal species, there are infinitely many morphisms $1 \to 1 \sqcup 1$ since they correspond to functions $\IN \to \{1,2\}$.
+    proof: If $1$ denotes the terminal species, there are infinitely many morphisms $1 \to 1 \sqcup 1$ since they correspond to functions $\IN \to \{1,2\}$.
 
   - property: locally small
-    reason: 'Disclaimer: This result and its proof are not relevant for category theory and are also depending on the concrete model of set theory. That this category is locally essentially small is only what matters. Now, consider the terminal species $F=G=1$. Then $\Hom(F,G)$ has just a single element, namely the natural transformation $\alpha$ that sends every finite set $X$ to the unique map $\alpha_X : 1 \to 1$. Formally, $\alpha$ is a map, modelled as a set of ordered pairs $(X,\id_1)$, where $X$ is a finite set. Hence, $\alpha$ is not a set (since finite sets do not form a set), and therefore $\Hom(F,G) = \{\alpha\}$ is also not a set.'
+    proof: 'Disclaimer: This result and its proof are not relevant for category theory and are also depending on the concrete model of set theory. That this category is locally essentially small is only what matters. Now, consider the terminal species $F=G=1$. Then $\Hom(F,G)$ has just a single element, namely the natural transformation $\alpha$ that sends every finite set $X$ to the unique map $\alpha_X : 1 \to 1$. Formally, $\alpha$ is a map, modelled as a set of ordered pairs $(X,\id_1)$, where $X$ is a finite set. Hence, $\alpha$ is not a set (since finite sets do not form a set), and therefore $\Hom(F,G) = \{\alpha\}$ is also not a set.'
 
   - property: essentially countable
-    reason: 'Any function $f : \IN \to \IN$ can be regarded as a combinatorial species with trivial actions, and distinct functions yield non-isomorphic species.'
+    proof: 'Any function $f : \IN \to \IN$ can be regarded as a combinatorial species with trivial actions, and distinct functions yield non-isomorphic species.'
 
   - property: semi-strongly connected
-    reason: 'For $n \geq 0$ let $E_n$ be the combinatorial species of $n$-sets: $E_n(A) = \{A\}$ when $A$ has cardinality $n$, otherwise $E_n(A) = \varnothing$. Then there is no morphism between $E_n$ and $E_m$ unless $n = m$.'
+    proof: 'For $n \geq 0$ let $E_n$ be the combinatorial species of $n$-sets: $E_n(A) = \{A\}$ when $A$ has cardinality $n$, otherwise $E_n(A) = \varnothing$. Then there is no morphism between $E_n$ and $E_m$ unless $n = m$.'
 
   - property: generator
-    reason: >-
+    proof: >-
       Assume that a generator $G$ exists. For $n \geq 0$ let $F_n$ be the combinatorial species of sets of cardinality $\neq n$: $F_n(A) = \varnothing$ when $A$ has cardinality $n$, otherwise $F_n(A) = \{A\}$. There are two different morphisms $F_n \rightrightarrows F_n \sqcup F_n$. Hence, there must be at least one morphism $G \to F_n$. If $A$ has cardinality $n$, this implies $G(A) = \varnothing$. Since this holds for all $n$, $G$ is the initial object. But this is clearly no generator (it would mean that the category is thin).
 
       Alternatively, the claim follows from <a href="/content/topos-with-generator">this result</a>.
 
   - property: natural numbers object
-    reason: >-
+    proof: >-
       If $(N,z,s)$ is a natural numbers object, then
       $$1 \xrightarrow{z} N \xleftarrow{s} N$$
       is a coproduct cocone by <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, Part A, Lemma 2.5.5. But there is no combinatorial species $N$ with $N \cong 1 + N$, since evaluating this at, say, $\varnothing$, would yield a finite set $N$ with this property.
@@ -70,16 +70,16 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: natural isomorphisms
-    reason: This is the for every functor category.
+    proof: This is the for every functor category.
   monomorphisms:
     description: pointwise injective natural transformations
-    reason: 'If $a : F \to G$ is a monomorphism of species, then the diagonal morphism $F \to F \times_G F$ is an isomorphism, so that for every $x$ the diagonal morphism $F(x) \to F(x) \times_{G(x)} F(x)$ is an isomorphism, i.e., $a(x) : F(x) \to G(x)$ is a monomorphism. This argument works for every functor category where the target has fiber products.'
+    proof: 'If $a : F \to G$ is a monomorphism of species, then the diagonal morphism $F \to F \times_G F$ is an isomorphism, so that for every $x$ the diagonal morphism $F(x) \to F(x) \times_{G(x)} F(x)$ is an isomorphism, i.e., $a(x) : F(x) \to G(x)$ is a monomorphism. This argument works for every functor category where the target has fiber products.'
   epimorphisms:
     description: pointwise surjective natural transformations
-    reason: This holds in every functor category $[\C,\Set]$.
+    proof: This holds in every functor category $[\C,\Set]$.
   regular monomorphisms:
     description: same as monomorphisms
-    reason: This is because the category is mono-regular.
+    proof: This is because the category is mono-regular.
   regular epimorphisms:
     description: same as epimorphisms
-    reason: This is because the category is epi-regular.
+    proof: This is because the category is epi-regular.

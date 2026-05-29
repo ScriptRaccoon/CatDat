@@ -15,17 +15,17 @@ related_functors: []
 
 satisfied_properties:
   - property: faithful
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: representable
-    reason: This functor is represented by the singleton space.
+    proof: This functor is represented by the singleton space.
 
   - property: essentially surjective
-    reason: Every set can be equipped with the discrete topology.
+    proof: Every set can be equipped with the discrete topology.
 
   - property: left adjoint
-    reason: 'The indiscrete topology defines a functor $I : \Set \to \Top$ which is right adjoint to $U_{\Top}$.'
+    proof: 'The indiscrete topology defines a functor $I : \Set \to \Top$ which is right adjoint to $U_{\Top}$.'
 
 unsatisfied_properties:
   - property: conservative
-    reason: If $X$ is a set, the map $D(X) \to I(X)$, $x \mapsto x$ is bijective and continuous (where $D(-)$ denotes the discrete topological space and $I()$ the indiscrete topological space), but not an isomorphism (unless $X$ has at most one element).
+    proof: If $X$ is a set, the map $D(X) \to I(X)$, $x \mapsto x$ is bijective and continuous (where $D(-)$ denotes the discrete topological space and $I()$ the indiscrete topological space), but not an isomorphism (unless $X$ has at most one element).

@@ -15,13 +15,13 @@ import {
 	type NormalizedImplication,
 	type PropertyMeta,
 } from './utils/deduction'
-import { get_contradiction_string, get_reason_string } from './utils/implications'
+import { get_contradiction_string, get_proof_string } from './utils/implications'
 import type { StructureType } from './types'
 
 /**
  * Returns the set of satisfied properties that can be deduced from a set
  * of satisfied properties, based on a list of normalized implications. If a
- * property dictionary is provided, human-readable reasons are generated as well.
+ * property dictionary is provided, human-readable proofs are generated as well.
  */
 export function get_deduced_satisfied_properties(
 	satisfied_properties: Set<string>,
@@ -35,7 +35,7 @@ export function get_deduced_satisfied_properties(
 	associated_satisfied_properties?: Record<string, Set<string>>,
 ) {
 	const found = new Set<string>()
-	const reasons: Record<string, string> = {}
+	const proofs: Record<string, string> = {}
 	const deduced_satisfied_properties = new Set(satisfied_properties)
 
 	while (true) {
@@ -66,11 +66,11 @@ export function get_deduced_satisfied_properties(
 
 			if (options?.stop_when_found === implication.conclusion) {
 				deduced_satisfied_properties.add(implication.conclusion)
-				return { deduced_satisfied_properties, found, reasons }
+				return { deduced_satisfied_properties, found, proofs }
 			}
 
 			if (options.properties_dict) {
-				reasons[implication.conclusion] = get_reason_string(
+				proofs[implication.conclusion] = get_proof_string(
 					implication,
 					options.properties_dict,
 					type,
@@ -83,14 +83,14 @@ export function get_deduced_satisfied_properties(
 		if (!newly_found.size) break
 	}
 
-	return { deduced_satisfied_properties, found, reasons }
+	return { deduced_satisfied_properties, found, proofs }
 }
 
 /**
  * Returns the set of unsatisfied properties that can be deduced from
  * a set of satisfied properties and a set of unsatisfied properties,
  * based on a list of normalized implications. If a property dictionary
- * is provided, human-readable reasons are generated as well.
+ * is provided, human-readable proofs are generated as well.
  */
 export function get_deduced_unsatisfied_properties(
 	satisfied_properties: Set<string>,
@@ -105,7 +105,7 @@ export function get_deduced_unsatisfied_properties(
 	associated_satisfied_properties?: Record<string, Set<string>>,
 ) {
 	const found = new Set<string>()
-	const reasons: Record<string, string> = {}
+	const proofs: Record<string, string> = {}
 	const deduced_unsatisfied_properties = new Set(unsatisfied_properties)
 
 	while (true) {
@@ -140,14 +140,14 @@ export function get_deduced_unsatisfied_properties(
 
 				if (options?.stop_when_found === p) {
 					deduced_unsatisfied_properties.add(p)
-					return { deduced_unsatisfied_properties, found, reasons }
+					return { deduced_unsatisfied_properties, found, proofs }
 				}
 
 				newly_found.add(p)
 				found.add(p)
 
 				if (options.properties_dict) {
-					reasons[p] = get_contradiction_string(
+					proofs[p] = get_contradiction_string(
 						implication,
 						options.properties_dict,
 						p,
@@ -162,7 +162,7 @@ export function get_deduced_unsatisfied_properties(
 		if (!newly_found.size) break
 	}
 
-	return { deduced_unsatisfied_properties, found, reasons }
+	return { deduced_unsatisfied_properties, found, proofs }
 }
 
 /**
@@ -172,7 +172,7 @@ function save_satisfied_properties(
 	db: Database,
 	structure_id: string,
 	found: Set<string>,
-	reasons: Record<string, string>,
+	proofs: Record<string, string>,
 	type: StructureType,
 ) {
 	if (found.size === 0) return
@@ -181,13 +181,13 @@ function save_satisfied_properties(
 
 	const property_insert = db.prepare(`
 		INSERT INTO ${type}_property_assignments
-			(${type}_id, property_id, is_satisfied, reason, is_deduced)
+			(${type}_id, property_id, is_satisfied, proof, is_deduced)
 		VALUES (?, ?, TRUE, ?, TRUE)
 	`)
 
 	try {
 		for (const p of found) {
-			property_insert.run(structure_id, p, reasons[p])
+			property_insert.run(structure_id, p, proofs[p])
 		}
 	} catch (err) {
 		if (err instanceof SqliteError) {
@@ -209,7 +209,7 @@ function save_unsatisfied_properties(
 	db: Database,
 	structure_id: string,
 	found: Set<string>,
-	reasons: Record<string, string>,
+	proofs: Record<string, string>,
 	type: StructureType,
 ) {
 	if (found.size === 0) return
@@ -218,13 +218,13 @@ function save_unsatisfied_properties(
 
 	const property_insert = db.prepare(`
 		INSERT INTO ${type}_property_assignments
-			(${type}_id, property_id, is_satisfied, reason, is_deduced)
+			(${type}_id, property_id, is_satisfied, proof, is_deduced)
 		VALUES (?, ?, FALSE, ?, TRUE)
 	`)
 
 	try {
 		for (const p of found) {
-			property_insert.run(structure_id, p, reasons[p])
+			property_insert.run(structure_id, p, proofs[p])
 		}
 	} catch (err) {
 		if (err instanceof SqliteError) {
@@ -252,7 +252,7 @@ function deduce_satisfied_properties(
 	properties_dict: Record<string, PropertyMeta>,
 	type: StructureType,
 ) {
-	const { found, reasons } = get_deduced_satisfied_properties(
+	const { found, proofs } = get_deduced_satisfied_properties(
 		satisfied_properties,
 		implications,
 		{ properties_dict },
@@ -262,7 +262,7 @@ function deduce_satisfied_properties(
 
 	for (const p of found) satisfied_properties.add(p)
 
-	save_satisfied_properties(db, structure.id, found, reasons, type)
+	save_satisfied_properties(db, structure.id, found, proofs, type)
 
 	console.info(`Deduced ${found.size} satisfied properties for ${structure.id}`)
 }
@@ -281,7 +281,7 @@ function deduce_unsatisfied_properties(
 	properties_dict: Record<string, PropertyMeta>,
 	type: StructureType,
 ) {
-	const { found, reasons } = get_deduced_unsatisfied_properties(
+	const { found, proofs } = get_deduced_unsatisfied_properties(
 		satisfied_properties,
 		unsatisfied_properties,
 		implications,
@@ -292,7 +292,7 @@ function deduce_unsatisfied_properties(
 
 	for (const p of found) unsatisfied_properties.add(p)
 
-	save_unsatisfied_properties(db, structure.id, found, reasons, type)
+	save_unsatisfied_properties(db, structure.id, found, proofs, type)
 
 	console.info(`Deduced ${found.size} unsatisfied properties for ${structure.id}`)
 }
@@ -343,16 +343,16 @@ function deduce_dual_properties(
 
 	const property_insert = db.prepare(`
 		INSERT INTO ${type}_property_assignments
-			(${type}_id, property_id, is_satisfied, reason, is_deduced)
+			(${type}_id, property_id, is_satisfied, proof, is_deduced)
 		VALUES (?, ?, ?, ?, TRUE)
 	`)
 
-	const reason_satisfied = `Its dual ${type} satisfies the dual property.`
-	const reason_unsatisfied = `Its dual ${type} does not satisfy the dual property.`
-	const reason_undecidable = `The dual property is undecidable for its dual ${type}.`
+	const proof_satisfied = `Its dual ${type} satisfies the dual property.`
+	const proof_unsatisfied = `Its dual ${type} does not satisfy the dual property.`
+	const proof_undecidable = `The dual property is undecidable for its dual ${type}.`
 
 	for (const p of new_satisfied) {
-		property_insert.run(structure.id, p, 1, reason_satisfied)
+		property_insert.run(structure.id, p, 1, proof_satisfied)
 	}
 
 	console.info(
@@ -360,7 +360,7 @@ function deduce_dual_properties(
 	)
 
 	for (const q of new_unsatisfied) {
-		property_insert.run(structure.id, q, 0, reason_unsatisfied)
+		property_insert.run(structure.id, q, 0, proof_unsatisfied)
 	}
 
 	console.info(
@@ -368,7 +368,7 @@ function deduce_dual_properties(
 	)
 
 	for (const q of new_undecidable) {
-		property_insert.run(structure.id, q, null, reason_undecidable)
+		property_insert.run(structure.id, q, null, proof_undecidable)
 	}
 
 	console.info(

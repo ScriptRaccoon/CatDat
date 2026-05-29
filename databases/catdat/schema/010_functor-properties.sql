@@ -38,7 +38,7 @@ CREATE TABLE functor_property_assignments (
     is_satisfied INTEGER
         -- we use NULL for undecidable properties
         CHECK (is_satisfied in (TRUE, FALSE, NULL)),
-    reason TEXT NOT NULL CHECK (length(reason) > 0),
+    proof TEXT NOT NULL CHECK (length(proof) > 0),
     is_deduced INTEGER NOT NULL DEFAULT FALSE
         CHECK (is_deduced in (TRUE, FALSE)),
     check_redundancy INTEGER NOT NULL DEFAULT TRUE

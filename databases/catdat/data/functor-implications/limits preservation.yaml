@@ -7,7 +7,7 @@
     - cofinitary
     - preserves products
     - left exact
-  reason: This is trivial.
+  proof: This is trivial.
   is_equivalence: false
 
 - id: products_consequences
@@ -17,7 +17,7 @@
   target_assumptions: []
   conclusions:
     - preserves finite products
-  reason: This is trivial.
+  proof: This is trivial.
   is_equivalence: false
 
 - id: finite_products_consequences
@@ -27,7 +27,7 @@
   target_assumptions: []
   conclusions:
     - preserves terminal objects
-  reason: This is trivial.
+  proof: This is trivial.
   is_equivalence: false
 
 - id: continuous_criterion
@@ -39,7 +39,7 @@
   target_assumptions: []
   conclusions:
     - continuous
-  reason: This follows from the construction of limits via equalizers and products, see  <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. V, Theorem 2.2.
+  proof: This follows from the construction of limits via equalizers and products, see  <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. V, Theorem 2.2.
   is_equivalence: false
 
 - id: continuous_criterion_filtered
@@ -51,7 +51,7 @@
   target_assumptions: []
   conclusions:
     - continuous
-  reason: This is because every limit can be written as a filtered limit of finite limits, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. IX, Theorem 1.1.
+  proof: This is because every limit can be written as a filtered limit of finite limits, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. IX, Theorem 1.1.
   is_equivalence: false
 
 - id: product_criterion_filtered
@@ -63,7 +63,7 @@
   target_assumptions: []
   conclusions:
     - preserves products
-  reason: This is because every product can be written as a filtered limit of finite products, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. IX, Theorem 1.1.
+  proof: This is because every product can be written as a filtered limit of finite products, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. IX, Theorem 1.1.
   is_equivalence: false
 
 - id: exact_definition
@@ -74,7 +74,7 @@
   conclusions:
     - left exact
     - right exact
-  reason: This holds by definition.
+  proof: This holds by definition.
   is_equivalence: true
 
 - id: left_exact_consequences
@@ -86,7 +86,7 @@
     - preserves finite products
     - preserves equalizers
     - preserves monomorphisms
-  reason: >-
+  proof: >-
     Finite products and equalizers are special cases of finite limits. Moreover, a morphism $f : X \to Y$ is a monomorphism if and only the square
     $$\begin{CD} X @>{\id_X}>> X \\ @V{\id_X}VV @VV{f}V \\ X @>>{f}> Y \end{CD}$$
     is a pullback square, and pullbacks are special cases of finite limits.
@@ -101,7 +101,7 @@
   target_assumptions: []
   conclusions:
     - left exact
-  reason: This follows from the construction of finite limits via equalizers and finite products, see  <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. V, Theorem 2.2.
+  proof: This follows from the construction of finite limits via equalizers and finite products, see  <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. V, Theorem 2.2.
   is_equivalence: false
 
 - id: representable_is_continuous
@@ -111,7 +111,7 @@
   target_assumptions: []
   conclusions:
     - continuous
-  reason: This is standard, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. V, Theorem 4.1.
+  proof: This is standard, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. V, Theorem 4.1.
   is_equivalence: false
 
 - id: equalizers_include_coreflexive_equalizers
@@ -121,7 +121,7 @@
   target_assumptions: []
   conclusions:
     - preserves coreflexive equalizers
-  reason: This is trivial.
+  proof: This is trivial.
   is_equivalence: false
 
 - id: criterion_coreflexive_equalizers
@@ -133,7 +133,7 @@
   target_assumptions: []
   conclusions:
     - preserves equalizers
-  reason: This follows easily from <a href="/category-implication/equalizers_via_coreflexive_equalizers">this result</a> about categories.
+  proof: This follows easily from <a href="/category-implication/equalizers_via_coreflexive_equalizers">this result</a> about categories.
   is_equivalence: false
 
 - id: mono-preserving_criterion
@@ -144,5 +144,5 @@
   target_assumptions: []
   conclusions:
     - preserves monomorphisms
-  reason: Any monomorphism in the domain is a regular monomorphism and is mapped to a regular monomorphism.
+  proof: Any monomorphism in the domain is a regular monomorphism and is mapped to a regular monomorphism.
   is_equivalence: false

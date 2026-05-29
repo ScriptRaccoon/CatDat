@@ -12,7 +12,7 @@ export const load = async () => {
             is_equivalence,
             is_deduced,
             dualized_from,
-            reason,
+            proof,
             assumptions,
             conclusions,
             source_assumptions,

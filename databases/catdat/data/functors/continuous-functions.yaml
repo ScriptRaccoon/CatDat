@@ -13,20 +13,20 @@ related_functors: []
 
 satisfied_properties:
   - property: continuous
-    reason: 'Since the forgetful functor $U : \CAlg(\IR) \to \Set$ is conservative and continuous, it suffices to prove that $U \circ C : \Top^{\op} \to \Set$ is continuous. But this functor is representable.'
+    proof: 'Since the forgetful functor $U : \CAlg(\IR) \to \Set$ is conservative and continuous, it suffices to prove that $U \circ C : \Top^{\op} \to \Set$ is continuous. But this functor is representable.'
 
   - property: preserves initial objects
-    reason: The initial object in $\Top^{\op}$ is the singleton space, which is mapped to $\IR$, the initial commutative $\IR$-algebra.
+    proof: The initial object in $\Top^{\op}$ is the singleton space, which is mapped to $\IR$, the initial commutative $\IR$-algebra.
 
 unsatisfied_properties:
   - property: essentially surjective
-    reason: The algebra $C(X)$ is <a href="https://en.wikipedia.org/wiki/Reduced_ring" target="_blank">reduced</a>, whereas there exist non-reduced algebras such as $\IR[T]/\langle T^2 \rangle$.
+    proof: The algebra $C(X)$ is <a href="https://en.wikipedia.org/wiki/Reduced_ring" target="_blank">reduced</a>, whereas there exist non-reduced algebras such as $\IR[T]/\langle T^2 \rangle$.
 
   - property: preserves finite coproducts
-    reason: 'The canonical homomorphism $C(X) \otimes_{\IR} C(Y) \to C(X \times Y)$ need not be surjective. For example, for $X = Y = \IR$ one can show that $(x,y) \mapsto \exp(xy)$ is not contained in its image.'
+    proof: 'The canonical homomorphism $C(X) \otimes_{\IR} C(Y) \to C(X \times Y)$ need not be surjective. For example, for $X = Y = \IR$ one can show that $(x,y) \mapsto \exp(xy)$ is not contained in its image.'
 
   - property: full
-    reason: >-
+    proof: >-
       Every continuous function $\omega_1 \to \IR$ is eventually constant, where $\omega_1$ denotes the first uncountable ordinal equipped with the order topology. We obtain a homomorphism
       $$\varphi : C(\omega_1) \to \IR \cong C(1)$$
       mapping each continuous function $\omega_1 \to \IR$ to its eventual value. Assume that it is induced by a continuous map $1 \to \omega_1$. This corresponds to an ordinal $\alpha < \omega_1$ such that $\varphi(u) = u(\alpha)$ for all $u \in C(\omega_1)$. But the continuous function
@@ -34,16 +34,16 @@ unsatisfied_properties:
       satisfies $\varphi(u) = u(\alpha + 1) \neq u(\alpha)$.
 
   - property: faithful
-    reason: 'If $X,Y$ are non-empty indiscrete spaces, there is only one homomorphism of $\IR$-algebras $C(Y) \to C(X)$ (since both are isomorphic to $\IR$), but there can be many maps $X \to Y$.'
+    proof: 'If $X,Y$ are non-empty indiscrete spaces, there is only one homomorphism of $\IR$-algebras $C(Y) \to C(X)$ (since both are isomorphic to $\IR$), but there can be many maps $X \to Y$.'
 
   - property: preserves reflexive coequalizers
-    reason: 'Let $i : U \hookrightarrow X$ be an open embedding such that there exists a continuous function on $U$ that does not extend to $X$; for example, $i : \IR \setminus \{0\} \hookrightarrow \IR$ together with the continuous function $x \mapsto x^{-1}$. Then $i$ is the equalizer of the two inclusions $X \rightrightarrows X +_U X$, which have common retraction $\nabla : X +_U X \to X$. But $i^* : C(X) \to C(U)$ is not a coequalizer in $\CAlg(\IR)$, since it is not surjective.'
+    proof: 'Let $i : U \hookrightarrow X$ be an open embedding such that there exists a continuous function on $U$ that does not extend to $X$; for example, $i : \IR \setminus \{0\} \hookrightarrow \IR$ together with the continuous function $x \mapsto x^{-1}$. Then $i$ is the equalizer of the two inclusions $X \rightrightarrows X +_U X$, which have common retraction $\nabla : X +_U X \to X$. But $i^* : C(X) \to C(U)$ is not a coequalizer in $\CAlg(\IR)$, since it is not surjective.'
 
   - property: preserves epimorphisms
-    reason: 'If $i : X \to Y$ is an injective continuous map, the induced homomorphism $C(Y) \to C(X)$ need not be surjective (consider the inclusion $i : \IR \setminus \{0\} \hookrightarrow \IR$ and the map $x \mapsto x^{-1}$). However, we need an example where it is not even an epimorphism in $\CAlg(\IR)$. A simple counterexample can again be constructed using (in)discrete spaces. Namely, if $X$ is any finite set with at least two elements, we have a continuous bijection $D(X) \to I(X)$, $x \mapsto x$, where $D(X)$ (resp. $I(X)$) denotes the discrete (resp. indiscrete) space on $X$. It induces the algebra homomorphism $\IR \cong C(I(X)) \to C(D(X)) \cong \IR^X$, which is not an epimorphism since $\IR^X \otimes_\IR \IR^X \not\cong \IR^X$.'
+    proof: 'If $i : X \to Y$ is an injective continuous map, the induced homomorphism $C(Y) \to C(X)$ need not be surjective (consider the inclusion $i : \IR \setminus \{0\} \hookrightarrow \IR$ and the map $x \mapsto x^{-1}$). However, we need an example where it is not even an epimorphism in $\CAlg(\IR)$. A simple counterexample can again be constructed using (in)discrete spaces. Namely, if $X$ is any finite set with at least two elements, we have a continuous bijection $D(X) \to I(X)$, $x \mapsto x$, where $D(X)$ (resp. $I(X)$) denotes the discrete (resp. indiscrete) space on $X$. It induces the algebra homomorphism $\IR \cong C(I(X)) \to C(D(X)) \cong \IR^X$, which is not an epimorphism since $\IR^X \otimes_\IR \IR^X \not\cong \IR^X$.'
 
   - property: finitary
-    reason: >-
+    proof: >-
       For $n \geq 0$ consider the discrete space $X_n \coloneqq \{0,\dotsc,n\}$. Using the evident truncation maps $X_{n+1} \twoheadrightarrow X_n$, their limit is isomorphic to $\IN \cup \{\infty\}$, the one-point compactification of the discrete space $\IN$. The canonical homomorphism
       $$\textstyle \colim_n C(X_n) \to C(\lim_n X_n)$$
       can then be identified with the inclusion of the algebra of eventually constant sequences in $\IR$ into the algebra of convergent sequences in $\IR$. Thus, it is not surjective.

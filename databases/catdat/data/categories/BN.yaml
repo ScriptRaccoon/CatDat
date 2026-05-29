@@ -17,31 +17,31 @@ related_categories:
 
 satisfied_properties:
   - property: small
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: countable
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: strongly connected
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: self-dual
-    reason: The identity is a self-duality since the addition is commutative.
+    proof: The identity is a self-duality since the addition is commutative.
 
   - property: generator
-    reason: The unique object is a generator for trivial reasons.
+    proof: The unique object is a generator for trivial reasons.
 
   - property: left cancellative
-    reason: This is because addition of natural numbers is cancellative.
+    proof: This is because addition of natural numbers is cancellative.
 
   - property: gaunt
-    reason: This is because $0$ is the only natural number with an additive inverse.
+    proof: This is because $0$ is the only natural number with an additive inverse.
 
   - property: locally cartesian closed
-    reason: The slice category $B\IN / *$ is isomorphic to the poset $(\IN,\geq)$ (not to $(\IN,\leq)$). This category is thin and and semi-strongly connected, <a href="/category-implication/sequential_implies_lcc">hence</a> cartesian closed.
+    proof: The slice category $B\IN / *$ is isomorphic to the poset $(\IN,\geq)$ (not to $(\IN,\leq)$). This category is thin and and semi-strongly connected, <a href="/category-implication/sequential_implies_lcc">hence</a> cartesian closed.
 
   - property: ℵ₁-filtered colimits
-    reason: >-
+    proof: >-
       Let $D : \I \to B\IN$ be an $\aleph_1$-filtered diagram. Every two parallel morphisms $i \rightrightarrows j$ are mapped to the same morphism in $B \IN$, because they are coequalized by some morphism and $(\IN,+)$ is cancellative. Hence, $D$ factors through the preorder reflection of $\I$, and we may therefore assume that $\I$ itself is a preorder. Thus, the diagram consists of numbers $D(i,j) \in \IN$ for all $i \leq j$ satisfying
       $$D(j,k) + D(i,j) = D(i,k)$$
       for all $i \leq j \leq k$. In particular, $D(i,j) \leq D(i,k)$.
@@ -66,7 +66,7 @@ satisfied_properties:
     check_redundancy: false
 
   - property: ℵ₁-accessible
-    reason: >-
+    proof: >-
       We continue the proof that $\aleph_1$-filtered colimits exist. It remains to show that the unique object $*$ is $\aleph_1$-presentable, i.e. that for every diagram $D : \I \to B\IN$ as above, the canonical map
       $$\alpha : \colim_{i \in \I} \Hom(*,D(i)) \to \Hom(*,\colim_{i \in \I} D(i))$$
       is bijective. On objects, we necessarily have $D(i)=*$ and $\colim_{i \in \I} D(i)=*$. Hence, the codomain of $\alpha$ is simply $\IN$, while the domain consists of equivalence classes $[i,n]$ of pairs $(i,n) \in \I \times \IN$, where $(i,n) \sim (j,m)$ iff there exists some $k \geq i,j$ such that
@@ -81,29 +81,29 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: one-way
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: locally finite
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: sequential limits
-    reason: Assume that the sequence $\cdots \xrightarrow{1}  \bullet \xrightarrow{1} \bullet \xrightarrow{1} \bullet$ has a limit. This is a (universal) sequence of natural numbers $n_0,n_1,\dotsc$ satisfying $n_i = n_{i+1} + 1$. But then $n_i = n_0 - i$, and in particular $n_{n_0 + 1} = - 1$, a contradiction.
+    proof: Assume that the sequence $\cdots \xrightarrow{1}  \bullet \xrightarrow{1} \bullet \xrightarrow{1} \bullet$ has a limit. This is a (universal) sequence of natural numbers $n_0,n_1,\dotsc$ satisfying $n_i = n_{i+1} + 1$. But then $n_i = n_0 - i$, and in particular $n_{n_0 + 1} = - 1$, a contradiction.
 
 special_objects: {}
 
 special_morphisms:
   isomorphisms:
     description: only the number $0$
-    reason: The $0$ is the only natural number which has an additive inverse, since for $n > 0$ we have $n + m > 0$ for all $m$.
+    proof: The $0$ is the only natural number which has an additive inverse, since for $n > 0$ we have $n + m > 0$ for all $m$.
   monomorphisms:
     description: every morphism
-    reason: This is because addition of natural numbers is cancellative.
+    proof: This is because addition of natural numbers is cancellative.
   epimorphisms:
     description: every morphism
-    reason: Addition of natural numbers is cancellative.
+    proof: Addition of natural numbers is cancellative.
   regular monomorphisms:
     description: same as isomorphisms
-    reason: This is because the category is right cancellative.
+    proof: This is because the category is right cancellative.
   regular epimorphisms:
     description: same as isomorphisms
-    reason: This is because the category is left cancellative.
+    proof: This is because the category is left cancellative.

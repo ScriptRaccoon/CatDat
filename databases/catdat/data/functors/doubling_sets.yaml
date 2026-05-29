@@ -16,23 +16,23 @@ related_functors:
 
 satisfied_properties:
   - property: left adjoint
-    reason: We have $\Hom(X+X,Y) \cong \Hom(X,Y)^2 \cong \Hom(X,Y^2)$.
+    proof: We have $\Hom(X+X,Y) \cong \Hom(X,Y)^2 \cong \Hom(X,Y^2)$.
 
   - property: conservative
-    reason: This is easy to check.
+    proof: This is easy to check.
 
   - property: preserves equalizers
-    reason: The doubling functor can also be written as $X \mapsto \{1,2\} \times X$, from which the claim follows.
+    proof: The doubling functor can also be written as $X \mapsto \{1,2\} \times X$, from which the claim follows.
 
   - property: cofinitary
-    reason: The doubling functor can also be written as $X \mapsto \{1,2\} \times X$, from which the claim follows.
+    proof: The doubling functor can also be written as $X \mapsto \{1,2\} \times X$, from which the claim follows.
 
 unsatisfied_properties:
   - property: full
-    reason: If $X$ is non-empty, the swap $2X \to 2X$ is not induced by a map $X \to X$.
+    proof: If $X$ is non-empty, the swap $2X \to 2X$ is not induced by a map $X \to X$.
 
   - property: preserves terminal objects
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: essentially surjective
-    reason: The singleton set is not contained in the essential image.
+    proof: The singleton set is not contained in the essential image.

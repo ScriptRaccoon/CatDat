@@ -18,17 +18,17 @@ related_categories:
 
 satisfied_properties:
   - property: small
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: finite
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: trivial
-    reason: The inclusion $\{0\} \hookrightarrow \{0 \to 1\}$ is an equivalence.
+    proof: The inclusion $\{0\} \hookrightarrow \{0 \to 1\}$ is an equivalence.
 
 unsatisfied_properties:
   - property: skeletal
-    reason: The two objects are isomorphic, but different.
+    proof: The two objects are isomorphic, but different.
 
 special_objects:
   initial object:
@@ -43,16 +43,16 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: every morphism
-    reason: This is trivial.
+    proof: This is trivial.
   monomorphisms:
     description: every morphism
-    reason: This is trivial.
+    proof: This is trivial.
   epimorphisms:
     description: every morphism
-    reason: This holds because it is a groupoid.
+    proof: This holds because it is a groupoid.
   regular monomorphisms:
     description: same as isomorphisms
-    reason: This is because the category is right cancellative.
+    proof: This is because the category is right cancellative.
   regular epimorphisms:
     description: same as isomorphisms
-    reason: This is because the category is left cancellative.
+    proof: This is because the category is left cancellative.

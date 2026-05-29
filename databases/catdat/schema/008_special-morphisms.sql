@@ -9,7 +9,7 @@ CREATE TABLE special_morphisms (
     category_id TEXT NOT NULL,
     type TEXT NOT NULL,
     description TEXT NOT NULL,
-    reason TEXT NOT NULL,
+    proof TEXT NOT NULL,
     PRIMARY KEY (category_id, type),
     FOREIGN KEY (type) REFERENCES special_morphism_types (type) ON DELETE RESTRICT,
     FOREIGN KEY (category_id) REFERENCES categories (id) ON DELETE CASCADE

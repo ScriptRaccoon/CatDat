@@ -18,13 +18,13 @@ related_functors:
 
 satisfied_properties:
   - property: right adjoint
-    reason: 'This functor is clearly right adjoint to $A \mapsto A/pA$.'
+    proof: 'This functor is clearly right adjoint to $A \mapsto A/pA$.'
 
   - property: preserves coproducts
-    reason: This is easy to check using the description of coproducts as direct sums.
+    proof: This is easy to check using the description of coproducts as direct sums.
 
   - property: finitary
-    reason: >-
+    proof: >-
       This follows abstractly from the fact that $\IZ/p$ is finitely presentable. We nevertheless give a direct proof. Let $(A_i)$ be a filtered diagram of abelian groups. We need to show that the canonical map
       $$\colim_i T_p(A_i) \to T_p(\colim_i A_i)$$
       is an isomorphism.
@@ -35,13 +35,13 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: faithful
-    reason: 'We have $T_p(\IZ) = 0$, but $\IZ \not\cong 0$. Thus, faithfulness is failing for $0, \id_{\IZ} : \IZ \rightrightarrows \IZ$.'
+    proof: 'We have $T_p(\IZ) = 0$, but $\IZ \not\cong 0$. Thus, faithfulness is failing for $0, \id_{\IZ} : \IZ \rightrightarrows \IZ$.'
 
   - property: full
-    reason: 'The canonical map from $\Hom(\IZ/p^2,\IZ/p)$ to $\Hom(T_p(\IZ/p^2),T_p(\IZ/p)) = \Hom(p \IZ/p^2, \IZ/p)$ is not surjective: The homomorphism $[p] \mapsto [1]$ is not contained in its image.'
+    proof: 'The canonical map from $\Hom(\IZ/p^2,\IZ/p)$ to $\Hom(T_p(\IZ/p^2),T_p(\IZ/p)) = \Hom(p \IZ/p^2, \IZ/p)$ is not surjective: The homomorphism $[p] \mapsto [1]$ is not contained in its image.'
 
   - property: essentially surjective
-    reason: The essential image consists precisely of the elementary abelian $p$-groups, equivalently, the vector spaces over $\IF_p$. For example, $\IZ$ is not contained in it.
+    proof: The essential image consists precisely of the elementary abelian $p$-groups, equivalently, the vector spaces over $\IF_p$. For example, $\IZ$ is not contained in it.
 
   - property: preserves epimorphisms
-    reason: The surjective homomorphism $\IZ \to \IZ/p$ is mapped to the homomorphism $0 \to \IZ/p$, which is not surjective.
+    proof: The surjective homomorphism $\IZ \to \IZ/p$ is mapped to the homomorphism $0 \to \IZ/p$, which is not surjective.

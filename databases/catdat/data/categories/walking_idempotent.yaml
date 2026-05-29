@@ -19,51 +19,51 @@ related_categories:
 
 satisfied_properties:
   - property: small
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: finite
-    reason: This is trivial.
+    proof: This is trivial.
 
   - property: gaunt
-    reason: This is obvious.
+    proof: This is obvious.
 
   - property: self-dual
-    reason: This is obvious.
+    proof: This is obvious.
 
   - property: generator
-    reason: The unique object is a generator for trivial reasons.
+    proof: The unique object is a generator for trivial reasons.
 
   - property: subobject-trivial
-    reason: This is because the identity is the only monomorphism.
+    proof: This is because the identity is the only monomorphism.
 
   - property: preadditive
-    reason: The monoid $\{1,e\}$ with $e^2=e$ is the underlying multiplicative monoid of the ring $\IZ/2$, where $e=0$. Thus, the (unique) preadditive structure is given by $1 + e = e + 1 = 1$, $e + e = e$ and $1 + 1 = e$.
+    proof: The monoid $\{1,e\}$ with $e^2=e$ is the underlying multiplicative monoid of the ring $\IZ/2$, where $e=0$. Thus, the (unique) preadditive structure is given by $1 + e = e + 1 = 1$, $e + e = e$ and $1 + 1 = e$.
 
   - property: ℵ₁-filtered
-    reason: 'In fact, the walking idempotent is $\kappa$-filtered for every regular infinite cardinal $\kappa$: Every diagram $D : \I \to \Idem$ has the cocone $(e : D(i) \to 0)_{i \in \I}$.'
+    proof: 'In fact, the walking idempotent is $\kappa$-filtered for every regular infinite cardinal $\kappa$: Every diagram $D : \I \to \Idem$ has the cocone $(e : D(i) \to 0)_{i \in \I}$.'
 
 unsatisfied_properties:
   - property: terminal object
-    reason: This is obvious.
+    proof: This is obvious.
 
   - property: Cauchy complete
-    reason: The idempotent $e$ does not split.
+    proof: The idempotent $e$ does not split.
 
 special_objects: {}
 
 special_morphisms:
   isomorphisms:
     description: the identity
-    reason: This is trivial.
+    proof: This is trivial.
   monomorphisms:
     description: the identity
-    reason: This is trivial.
+    proof: This is trivial.
   epimorphisms:
     description: the identity
-    reason: This is trivial.
+    proof: This is trivial.
   regular monomorphisms:
     description: the identity
-    reason: This is trivial.
+    proof: This is trivial.
   regular epimorphisms:
     description: the identity
-    reason: This is trivial.
+    proof: This is trivial.

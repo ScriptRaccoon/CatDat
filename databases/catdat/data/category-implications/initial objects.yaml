@@ -6,7 +6,7 @@
   conclusions:
     - initial object
     - zero morphisms
-  reason: This is easy.
+  proof: This is easy.
   is_equivalence: true
 
 - id: strict_initial_consequence
@@ -14,7 +14,7 @@
     - strict initial object
   conclusions:
     - initial object
-  reason: This holds by definition.
+  proof: This holds by definition.
   is_equivalence: false
 
 - id: strict_initial_trivial
@@ -23,7 +23,7 @@
     - strict initial object
   conclusions:
     - trivial
-  reason: If $0$ is the zero object, then for every object $A$ the unique morphism $A \to 0$ is an isomorphism by assumption.
+  proof: If $0$ is the zero object, then for every object $A$ the unique morphism $A \to 0$ is an isomorphism by assumption.
   is_equivalence: false
 
 - id: strict_initial_left_criterion
@@ -32,5 +32,5 @@
     - left cancellative
   conclusions:
     - strict initial object
-  reason: 'It suffices to prove that in general any monomorphism $f : A \to 0$ into an initial object is an isomorphism. If $g : 0 \to A$ is the unique morphism, then $f \circ g = \id_0$ since $0$ is initial. But then $f$ is a split epimorphism and a monomorphism, hence an isomorphism.'
+  proof: 'It suffices to prove that in general any monomorphism $f : A \to 0$ into an initial object is an isomorphism. If $g : 0 \to A$ is the unique morphism, then $f \circ g = \id_0$ since $0$ is initial. But then $f$ is a split epimorphism and a monomorphism, hence an isomorphism.'
   is_equivalence: false

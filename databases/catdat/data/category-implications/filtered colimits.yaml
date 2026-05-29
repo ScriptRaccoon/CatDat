@@ -6,7 +6,7 @@
     - directed colimits
   conclusions:
     - filtered colimits
-  reason: This is Theorem 1.5. in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>.
+  proof: This is Theorem 1.5. in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>.
   is_equivalence: true
 
 - id: sequential_colimits_consequence
@@ -14,7 +14,7 @@
     - sequential colimits
   conclusions:
     - Cauchy complete
-  reason: >-
+  proof: >-
     Assume that $e : X \to X$ is an idempotent morphism. Consider the sequence
     $$X \xrightarrow{e} X \xrightarrow{e} X \to \cdots.$$
     A cocone under this sequence is a family of morphisms $f_n : X \to Y$ satisfying
@@ -29,7 +29,7 @@
     - directed limits
   conclusions:
     - sequential limits
-  reason: This is trivial.
+  proof: This is trivial.
   is_equivalence: false
 
 - id: sequential_limits_criterion
@@ -38,7 +38,7 @@
     - equalizers
   conclusions:
     - sequential limits
-  reason: See <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, V.2, Prop. 3. The proof can easily be adapted to this case. Namely, the limit of $\cdots \to X_2 \to X_1 \to X_0$ is the equalizer of two suitable endomorphisms of $\prod_{n \geq 0} X_n$.
+  proof: See <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, V.2, Prop. 3. The proof can easily be adapted to this case. Namely, the limit of $\cdots \to X_2 \to X_1 \to X_0$ is the equalizer of two suitable endomorphisms of $\prod_{n \geq 0} X_n$.
   is_equivalence: false
 
 - id: direct_implies_sequential_limits
@@ -46,7 +46,7 @@
     - direct
   conclusions:
     - sequential limits
-  reason: Assume that $\cdots \to A_2 \to A_1 \to A_0$ is a sequence of morphisms. We will prove that almost all of them are identities, so that the sequence is eventually constant and the limit exists. Assume the opposite, i.e. that there are infinitely many $A_k \to A_{k-1}$ which are not the identity. Pick some $n_1$ such that $A_{n_1} \to A_{n_1 - 1}$ is not the identity, and let $n_0 \coloneqq n_1 - 1$. If $A_{n_i} \to A_{n_{i-1}}$ has been constructed, there is some $n_{i+1} > n_i$ such that the composite $A_{n_{i+1}} \to A_{n_i}$ is not the identity, because otherwise it would follow inductively that all $A_{k+1} \to A_k$, $k \geq n_i$ would be identities, which would contradict our infiniteness assumption. This way we construct an infinite sequence of non-identity morphisms $A_{n_{i+1}} \to A_{n_i}$, a contradiction.
+  proof: Assume that $\cdots \to A_2 \to A_1 \to A_0$ is a sequence of morphisms. We will prove that almost all of them are identities, so that the sequence is eventually constant and the limit exists. Assume the opposite, i.e. that there are infinitely many $A_k \to A_{k-1}$ which are not the identity. Pick some $n_1$ such that $A_{n_1} \to A_{n_1 - 1}$ is not the identity, and let $n_0 \coloneqq n_1 - 1$. If $A_{n_i} \to A_{n_{i-1}}$ has been constructed, there is some $n_{i+1} > n_i$ such that the composite $A_{n_{i+1}} \to A_{n_i}$ is not the identity, because otherwise it would follow inductively that all $A_{k+1} \to A_k$, $k \geq n_i$ would be identities, which would contradict our infiniteness assumption. This way we construct an infinite sequence of non-identity morphisms $A_{n_{i+1}} \to A_{n_i}$, a contradiction.
   is_equivalence: false
 
 - id: finite_filtered_colimits
@@ -58,7 +58,7 @@
   conclusions:
     - filtered colimits
     - filtered-colimit-stable monomorphisms
-  reason: We may assume that the category $\C$ is finite and Cauchy complete. The answer at <a href="https://mathoverflow.net/questions/509853" target="_blank">MO/509853</a> shows that every filtered colimit in $\C$ exists, in fact it is a retract of one of the objects in the diagram. Now apply this to the morphism category of $\C$. It follows that for every filtered diagram of morphisms $X_i \to Y_i$ their colimit $X_\infty \to Y_\infty$ exists, which is a retract of one of the $X_i \to Y_i$. Therefore, if every $X_i \to Y_i$ is a monomorphism, also $X_\infty \to Y_\infty$ is a monomorphism.
+  proof: We may assume that the category $\C$ is finite and Cauchy complete. The answer at <a href="https://mathoverflow.net/questions/509853" target="_blank">MO/509853</a> shows that every filtered colimit in $\C$ exists, in fact it is a retract of one of the objects in the diagram. Now apply this to the morphism category of $\C$. It follows that for every filtered diagram of morphisms $X_i \to Y_i$ their colimit $X_\infty \to Y_\infty$ exists, which is a retract of one of the $X_i \to Y_i$. Therefore, if every $X_i \to Y_i$ is a monomorphism, also $X_\infty \to Y_\infty$ is a monomorphism.
   is_equivalence: false
 
 - id: aleph1-filtered-colimits-include-filtered-colimits
@@ -66,7 +66,7 @@
     - filtered colimits
   conclusions:
     - ℵ₁-filtered colimits
-  reason: Every $\aleph_1$-filtered category is also $\aleph_0$-filtered, i.e. filtered. Therefore, every $\aleph_1$-filtered diagram is also a filtered diagram, hence has a colimit by assumption.
+  proof: Every $\aleph_1$-filtered category is also $\aleph_0$-filtered, i.e. filtered. Therefore, every $\aleph_1$-filtered diagram is also a filtered diagram, hence has a colimit by assumption.
   is_equivalence: false
 
 - id: kappa-filtered-colimits_require_Cauchy_complete
@@ -74,7 +74,7 @@
     - ℵ₁-filtered colimits
   conclusions:
     - Cauchy complete
-  reason: More generally, if $\kappa$ is any infinite regular cardinal, a category with $\kappa$-filtered colimits must be Cauchy cocomplete. This is because the <a href="/category/walking_idempotent">walking idempotent</a> is $\kappa$-filtered. See also <a href="https://bookstore.ams.org/conm-104" target="_blank">Makkai-Pare</a>, Prop. 2.2.1.
+  proof: More generally, if $\kappa$ is any infinite regular cardinal, a category with $\kappa$-filtered colimits must be Cauchy cocomplete. This is because the <a href="/category/walking_idempotent">walking idempotent</a> is $\kappa$-filtered. See also <a href="https://bookstore.ams.org/conm-104" target="_blank">Makkai-Pare</a>, Prop. 2.2.1.
   is_equivalence: false
 
 - id: sifted_categories_are_connected
@@ -82,7 +82,7 @@
     - connected colimits
   conclusions:
     - sifted colimits
-  reason: This is because every sifted category is connected.
+  proof: This is because every sifted category is connected.
   is_equivalence: false
 
 - id: sifted_colimits_consequence
@@ -91,7 +91,7 @@
   conclusions:
     - filtered colimits
     - reflexive coequalizers
-  reason: This is because filtered categories are sifted and because the index category for a reflexive coequalizer is sifted.
+  proof: This is because filtered categories are sifted and because the index category for a reflexive coequalizer is sifted.
   is_equivalence: false
 
 - id: sifted_colimits_criterion
@@ -101,7 +101,7 @@
     - reflexive coequalizers
   conclusions:
     - sifted colimits
-  reason: See Cor. 5.2 in <a href="http://www.tac.mta.ca/tac/volumes/37/35/37-35abs.html" target="_blank">Chen's paper</a>.
+  proof: See Cor. 5.2 in <a href="http://www.tac.mta.ca/tac/volumes/37/35/37-35abs.html" target="_blank">Chen's paper</a>.
   is_equivalence: false
 
 - id: sifted_colimits_left_cancellative
@@ -110,7 +110,7 @@
     - filtered colimits
   conclusions:
     - sifted colimits
-  reason: >-
+  proof: >-
     Let $D : \I \to \C$ be a sifted diagram in a left cancellative category with filtered colimits. We claim that $D(f) = D(g)$ whenever $f,g : i \rightrightarrows j$ are parallel morphisms, i.e. for the cospan $i \xrightarrow{f} j \xleftarrow{g} i$.
 
 

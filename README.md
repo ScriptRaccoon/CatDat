@@ -17,7 +17,7 @@ and properties. Built by and for those who love [category theory](https://en.wik
 - **Category Detail Pages**: Explore a category's definition, its satisfied and unsatisfied properties, and related categories.
 - **Functor Detail Pages**: Explore a functors's definition along with its satisfied and unsatisfied properties.
 - **Property Detail Pages**: Explore the definition of a property and view categories or functors that satisfy it and those that don't.
-- **Reasons and References**: Each property and implication includes a reason or reference, forming a data-driven knowledge base for category theory.
+- **Proofs and References**: Each property and implication includes a proof or reference, forming a data-driven knowledge base for category theory.
 - **Deduction System**: Automatically infers properties from existing ones using a database of implications, both for categories and functors.
 - **Automatic Dualization**: Automatically dualizes implications and property assignments.
 - **Searchable Database**: Find categories and functors based on satisfied properties and unsatisfied properties.
