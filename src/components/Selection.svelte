@@ -31,7 +31,7 @@
 	let suggestions = $derived.by(() => {
 		if (selected_items.length >= max) return []
 		const q = item.trim()
-		if (!q) return []
+		if (!q) return allowed_items
 		return allowed_items
 			.filter((a) => !selected_items.includes(a))
 			.map((a) => ({ a, r: get_comparison_score(a, q) }))
@@ -61,13 +61,6 @@
 		item = ''
 		show_suggestions = false
 		active_index = 0
-	}
-
-	let suggestions_element = $state<HTMLDivElement | null>(null)
-
-	function handle_blur(e: FocusEvent) {
-		const is_suggestion_click = suggestions_element?.contains(e.relatedTarget as Node)
-		if (!is_suggestion_click) show_suggestions = false
 	}
 
 	function handle_input() {
@@ -119,6 +112,13 @@
 			block: 'center',
 		})
 	}
+
+	let suggestions_element = $state<HTMLDivElement | null>(null)
+
+	function handle_blur(e: FocusEvent) {
+		const is_suggestion_click = suggestions_element?.contains(e.relatedTarget as Node)
+		if (!is_suggestion_click) show_suggestions = false
+	}
 </script>
 
 <section aria-label={section_label}>
@@ -133,14 +133,14 @@
 				type="text"
 				bind:value={item}
 				onfocus={() => (show_suggestions = true)}
+				onblur={handle_blur}
 				oninput={handle_input}
 				onkeydown={handle_keydown}
-				onblur={handle_blur}
 			/>
 		</div>
 
 		{#if show_suggestions && suggestions.length > 0}
-			<div class="suggestions" bind:this={suggestions_element} tabindex="-1">
+			<div class="suggestions" tabindex="-1" bind:this={suggestions_element}>
 				{#each suggestions as allowed_item, i}
 					<button
 						id="{id}-{i}"
