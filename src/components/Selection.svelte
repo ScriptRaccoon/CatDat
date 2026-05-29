@@ -2,23 +2,24 @@
 	import ChipGroup from './ChipGroup.svelte'
 	import Chip from './Chip.svelte'
 	import { get_comparison_score } from '$lib/client/utils'
+	import type { Snippet } from 'svelte'
 
 	type Props = {
-		title?: string
 		allowed_items: readonly string[]
 		selected_items: string[]
 		section_label: string
 		item_label: string
 		max?: number
+		children?: Snippet
 	}
 
 	let {
-		title,
 		allowed_items,
 		selected_items = $bindable(),
 		section_label,
 		item_label,
 		max = Infinity,
+		children,
 	}: Props = $props()
 
 	let item = $state('')
@@ -121,9 +122,7 @@
 </script>
 
 <section aria-label={section_label}>
-	{#if title}
-		<p>{@html title}</p>
-	{/if}
+	{@render children?.()}
 
 	<form onsubmit={handle_submit}>
 		<div class="input-wrapper">

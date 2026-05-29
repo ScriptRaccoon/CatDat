@@ -94,20 +94,22 @@
 </p>
 
 <Selection
-	title="Looking for {PLURALS[type]} with these properties:"
 	bind:selected_items={satisfied_properties}
 	allowed_items={all_properties}
 	section_label="Satisfied properties"
 	item_label="Satisfied property"
-/>
+>
+	<p>Looking for {PLURALS[type]} with these properties:</p>
+</Selection>
 
 <Selection
-	title="... and <i>not</i> with these properties:"
 	bind:selected_items={unsatisfied_properties}
 	allowed_items={all_properties}
 	section_label="Unsatisfied properties"
 	item_label="Unsatisfied property"
-/>
+>
+	<p>... and <i>not</i> with these properties:</p>
+</Selection>
 
 <menu>
 	<button
