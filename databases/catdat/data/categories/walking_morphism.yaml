@@ -1,11 +1,13 @@
 id: walking_morphism
 name: walking morphism
-notation: $\{0 \to 1\}$
+notation: $I$
 objects: $0$, $1$
 morphisms: the two identities and a single morphism from $0$ to $1$
-description: This is also known as the interval category. It has the property that functors $\{0 \to 1\} \to \C$ are the same as morphisms in $\C$.
+description: >-
+  This is also known as the interval category and can be pictured as:
+  $$\{0 \to 1\}$$
+  It has the property that functors $I \to \C$ are the same as morphisms in $\C$, which explains its name.
 nlab_link: https://ncatlab.org/nlab/show/interval+category
-
 tags:
   - category theory
   - finite
@@ -37,7 +39,7 @@ satisfied_properties:
     proof: This is trivial.
 
   - property: finitary algebraic
-    proof: Take the algebraic theory with no operations but with the equation $x=y$ that is supposed to hold for all elements $x,y$. The algebras for this theory are the empty set and the singleton set, hence we get the equivalence to $\{0 \to 1\}$.
+    proof: Take the algebraic theory with no operations but with the equation $x=y$ that is supposed to hold for all elements $x,y$. The algebras for this theory are the empty set and the singleton set, hence we get the equivalence to $I$.
 
 unsatisfied_properties:
   - property: trivial

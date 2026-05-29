@@ -28,7 +28,7 @@ satisfied_properties:
     proof: Every non-empty category is weakly terminal (by using constant functors).
 
   - property: generator
-    proof: 'The interval category $\{0 \to 1\}$ is a generator: Assume that $F,G : \C \rightrightarrows \D$ are functors that agree when being precomposed with any functor from $\{0 \to 1\}$. This means that $F(f) = G(f)$ for all morphisms $f : X \to Y$ in $\C$. By comparing the domains and applying this to $f = \id_X$, we see that $F(X) = G(X)$ for all objects $X$. And we just saw that $F,G$ also agree on morphisms.'
+    proof: 'The <a href="/category/walking_morphism">walking morphism</a> $I$ is a generator: Assume that $F,G : \C \rightrightarrows \D$ are functors that agree when being precomposed with any functor from $I$. This means that $F(f) = G(f)$ for all morphisms $f : X \to Y$ in $\C$. By comparing the domains and applying this to $f = \id_X$, we see that $F(X) = G(X)$ for all objects $X$. And we just saw that $F,G$ also agree on morphisms.'
 
   - property: infinitary extensive
     proof: '[Sketch] This is straight forward from the fact that <a href="/category/Set">$\Set$</a> is infinitary extensive: A functor $\C \to \coprod_i \D_i$ yields full subcategories $\C_i \subseteq \C$ (the preimages of $\D_i)$ with $\C = \coprod_i \C_i$.'

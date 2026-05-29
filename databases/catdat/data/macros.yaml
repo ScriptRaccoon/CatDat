@@ -111,3 +111,9 @@
 \CoAlg: \mathbf{CoAlg}
 \Cone: \mathbf{Cone}
 \SemiGrp: \mathbf{SemiGrp}
+\Square: \mathbf{Square}
+\Comp: \mathbf{Comp}
+\Fork: \mathbf{Fork}
+\Isom: \mathbf{Isom}
+\Pair: \mathbf{Pair}
+\Span: \mathbf{Span}

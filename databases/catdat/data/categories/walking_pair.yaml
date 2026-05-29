@@ -1,11 +1,13 @@
 id: walking_pair
 name: walking parallel pair
-notation: $\{0 \rightrightarrows 1 \}$
+notation: $\Pair$
 objects: two objects $0$ and $1$
 morphisms: the two identities and two parallel morphisms from $0$ to $1$
-description: The name of this category comes from the fact that it consists of two parallel morphisms, and a functor out of this category is the same as a parallel pair of morphisms in the target category.
+description: >-
+  This category can be pictured as:
+  $$\{0 \rightrightarrows 1 \}$$
+  Its name comes from the fact that a functor $\Pair \to \C$ is the same as a parallel pair of morphisms in $\C$.
 nlab_link: https://ncatlab.org/nlab/show/walking+structure
-
 tags:
   - category theory
   - finite
