@@ -1,0 +1,54 @@
+id: enveloping_group
+name: enveloping group functor
+notation: $F_{\Mon,\Grp}$
+source: Mon
+target: Grp
+description: 'This functor maps a monoid $M$ to the group $F(M)$ that is equipped with a universal homomorphism $i_M : M \to F(M)$. It is called the (universal) enveloping group or the group completion of $M$; in the commutative case, it is known as the Grothendieck group of $M$. As a possible construction of $F(M)$, take the free group on generators $\underline{m}$ for $m \in M$ subject to the relations $\underline{1} = 1$ and $\underline{m \cdot n} = \underline{m} \cdot \underline{n}$.'
+nlab_link: https://ncatlab.org/nlab/show/free+functor
+
+tags:
+  - algebra
+  - free
+
+related_functors:
+  - free_group
+
+satisfied_properties:
+  - property: left adjoint
+    proof: 'By definition, this functor is left adjoint to the forgetful functor $U_{\Grp,\Mon} : \Grp \to \Mon$.'
+
+  - property: essentially surjective
+    proof: 'In fact, the counit of the adjunction $F \circ U_{\Grp,\Mon} \to \id_{\Grp}$ is an isomorphism since the right adjoint $U_{\Grp,\Mon}$ is fully faithful (Prop. 3.4 at the <a href="https://ncatlab.org/nlab/show/adjoint+functor#FullyFaithfulAndInvertibleAdjoints" target="_blank">nLab</a>).'
+
+  - property: preserves finite products
+    proof: >-
+      Since $F(1)=1$, we only need to consider binary products. The canonical homomorphism
+      $$\alpha : F(M \times N) \to F(M) \times F(N)$$
+      is defined by $p_i \alpha = F(p_i)$ and satisfies
+      $$\alpha(i_{M \times N}(m,n)) = (i_M(m),i_N(n)).$$
+      We construct an inverse homomorphism
+      $$\beta : F(M) \times F(N) \to F(M \times N)$$
+      as follows.
+      The two canonical homomorphisms $M \rightarrow M \times N \leftarrow N$ induce homomorphisms $F(M) \rightarrow F(M \times N) \leftarrow F(N)$. We claim that for every pair of elements $x \in F(M)$, $y \in F(N)$, their images in $F(M \times N)$ commute. Notice that $x$ is a product of elements of the form $i_M(m)$ or $i_M(m)^{-1}$ for $m \in M$, and likewise $y$ is a product of elements of the form $i_N(n)$ or $i_N(n)^{-1}$ for $n \in N$. Thus, by standard arguments from group theory, it suffices to prove that the images of $i_M(m)$ and $i_N(n)$ commute in $F(M \times N)$. This follows since the images of $m$ and $n$ in $M \times N$ commute.
+      Therefore, the two homomorphisms induce a homomorphism $\beta : F(M) \times F(N) \to F(M \times N)$. It is characterized by
+      $$\beta(i_M(m),1) = i_{M \times N}(m,1),\quad \beta(1,i_N(n)) = i_{M \times N}(1,n).$$
+      It is straightforward to check that it is inverse to $\alpha$ by arguing with the generators in both groups.
+
+unsatisfied_properties:
+  - property: faithful
+    proof: 'Take any non-trivial monoid $M$ with an absorbing element, such as $(\IN,\cdot,1)$. Its enveloping group is trivial. Hence, $\id_M,1 : M \rightrightarrows M$ provide a counterexample.'
+
+  - property: full
+    proof: 'We have $F(\IN) = \IZ$ (w.r.t. addition). The homomorphism $\IZ \to \IZ$, $x \mapsto -x$ is not induced by a homomorphism $\IN \to \IN$.'
+
+  - property: preserves monomorphisms
+    proof: 'Consider the monoid $N = \langle a,b,c : ab = ac \rangle_{\Mon}$ and the free monoid $M = \langle b,c \rangle_{\Mon}$. The canonical homomorphism $M \to N$ is injective. However, $F(M) = \langle b,c \rangle_{\Grp}$ (free group), and $b,c$ become identified in $F(N) \cong \langle a,b,c : b = c \rangle_{\Grp}$ since we may cancel $a$, so that $F(M) \to F(N)$ is not injective.'
+
+  - property: preserves products
+    proof: >-
+      We will find a family of monoids $(M_n)_{n \in \IN}$ such that the canonical homomorphism
+      $$\textstyle \alpha : F(\prod_{n \in \IN} M_n) \to \prod_{n \in \IN} F(M_n)$$
+      is not an isomorphism. We first remark that this <i>is</i> true for commutative monoids, so a counterexample must be non-commutative.
+      For $n \in \IN$ let $M_n$ be the free monoid on two generators $a,b$. Then $F(M_n)$ is the free group on these generators. Define $g = (g_n)_{n \in \IN} \in \prod_{n \in \IN} F(M_n)$ by $g_n \coloneqq (a b^{-1})^n$. Assume that $g$ has a preimage under $\alpha$. It is a finite product $X_1 \cdots X_L$, where either $X_i \in \prod_{i \in \IN} M_n$ or $X_i^{-1} \in \prod_{i \in \IN} M_n$, and $L \in \IN$ is a fixed length. For sufficiently large $n \in \IN$ let $x_i \coloneqq \pi_n(X_i) \in M_n \cup M_n^{-1}$, so that
+      $$(a b^{-1})^n = x_1 \cdots x_L.$$
+      Each $x_i$ is either a "completely positive" word (such as $a^2 b^3 a$) in $a,b$ or a "completely negative" word in $a,b$ (such as $b^{-1} a^{-1} b^{-2}$). The normal form of $x_1 \cdots x_L$ can therefore have at most $L$ alternations between positive and negative letters. But $(a b^{-1})^n = a b^{-1} \cdots a b^{-1}$ is in normal form and has $2n$ such alternations. It follows that $2n \leq L$. Since $n$ was arbitrary, this is a contradiction.

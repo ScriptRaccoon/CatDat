@@ -13,6 +13,7 @@ tags:
 
 related_functors:
   - forget_group
+  - forget_inverses
 
 satisfied_properties:
   - property: full

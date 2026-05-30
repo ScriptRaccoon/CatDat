@@ -1,0 +1,56 @@
+id: group_units
+name: group of units functor
+notation: $(-)^{\times}$
+source: Mon
+target: Grp
+description: This functor maps a monoid $M$ to its group of units $M^{\times}$, consisting of pairs $(a,b) \in M^2$ satisfying $ab=ba=1$. Equivalently, it takes the submonoid of invertible elements of $M$, equipped with the inverse operation.
+nlab_link: https://ncatlab.org/nlab/show/group+of+units
+left_adjoint: forget_inverses
+
+tags:
+  - algebra
+
+related_functors: []
+
+satisfied_properties:
+  - property: essentially surjective
+    proof: If $G$ is a group, then $G$ is isomorphic to its group of units.
+
+  - property: right adjoint
+    proof: This functor is right adjoint to the forgetful functor $\Grp \to \Mon$.
+
+  - property: finitary
+    proof: 'There is a direct way to prove this, but here is an abstract argument: Since the forgetful functor $\Grp \to \Set$ is conservative and finitary, it suffices to prove that the composition $\Mon \to \Set$, which maps a monoid to its set of units, is finitary. This functor is represented by the monoid $\langle x,y : xy = yx = 1 \rangle \cong \IZ$. It has a finite presentation and hence is finitely presentable in the categorical sense (Corollary 3.13 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>).'
+
+  - property: preserves coproducts
+    proof: >-
+      We need to prove that for every family of monoids $(M_i)_{i \in I}$ the canonical map
+      $$\textstyle \coprod_{i \in I} M_i^{\times} \to \bigl(\coprod_{i \in I} M_i\bigr)^{\times}$$
+      is an isomorphism. Notice that coproducts of monoids and groups have the same element structure; they are free products. From this, it follows immediately that the map is injective. For surjectivity, assume that $x = x_1 \cdots x_n$ and $y = y_1 \cdots y_m$ are reduced words in $\coprod_{i \in I} M_i$ with $xy = 1$ and $yx = 1$. We will prove by induction on $n$ that $n = m$ and that each $x_j$ is a unit in the corresponding monoid $M_{i_j}$.
+
+      If $n = 0$, i.e. $x = 1$, then we have $y = 1$, so $m = 0$, and the claim is true.
+
+      Let $n \geq 1$. The product $xy= x_1 \cdots x_n y_1 \cdots y_m$ would be in reduced form if $x_n$ and $y_1$ belong to different monoids; likewise, if they belong to the same monoid but $x_n y_1 \neq 1$. In that case, its free product length would be $n + m \geq 1$, so it could not evaluate to $1$. Thus, $x_n$ and $y_1$ necessarily belong to the same monoid, say $M_k$, and satisfy $x_n y_1 = 1$ in $M_k$. In particular, this implies that $m \geq 1$.
+
+      Next, consider the shorter elements $\tilde{x} \coloneqq x_1 \cdots x_{n-1}$ and $\tilde{y} \coloneqq y_2 \cdots y_m$, which are still in reduced form. Since $x_n y_1 = 1$, it follows that $1 = xy = \tilde{x} \tilde{y}$. On the other hand,
+      $$\tilde{y}\tilde{x} = (x_n y_1) \tilde{y} \tilde{x} (x_n y_1)  = x_n (y x) y_1 = x_n y_1 = 1.$$
+      Thus, by the induction hypothesis applied to the pair $(\tilde{x},\tilde{y})$, all $x_1,\dotsc,x_{n-1}$ are units and $n-1 = m-1$, hence $n = m$. Moreover,
+      $$1 = y x = y_1 (\tilde{y} \tilde{x}) x_n = y_1 x_n,$$
+      which shows that $1 = y_1 x_n$ in $M_k$. Combined with $x_n y_1 = 1$, this shows that $x_n$ is a unit as well.
+
+unsatisfied_properties:
+  - property: conservative
+    proof: If $M$ is the free monoid on one generator (i.e. $\IN$ w.r.t. addition), then $M^{\times}$ is trivial, but $M$ is not. Hence, the unique homomorphism $1 \to M$ provides a counterexample.
+
+  - property: faithful
+    proof: If $M$ is the free monoid on one generator (i.e. $\IN$ w.r.t. addition), then $M^{\times}$ is trivial, but $M$ is not. Hence, the identity $M \to M$ and the trivial homomorphism $M \to M$ have the same image under the functor, but they are not equal.
+
+  - property: full
+    proof: Let $M$ be a monoid and $G \subseteq M$ be its group of units. Then the identity $M^{\times} \to G^{\times} = G$ is in the image of the functor iff there is a homomorphism $M \to G$ that extends the identity on $G$, i.e. a retraction of $G \subseteq M$. If $M$ has an absorbing element, then its image in $G$ would be an absorbing element, forcing $G$ to be trivial. However, the monoid $(\IZ,\cdot,1)$, for example, has an absorbing element and a non-trivial group of units $\{\pm 1\}$.
+
+  - property: preserves coequalizers
+    proof: >-
+      Let $M$ be the free monoid on two generators $x,y$. Consider the homomorphism $\varphi : M \to M$ defined by $\varphi(x)=xy$, $\varphi(y)=yx$. Also consider the trivial homomorphism $\psi : M \to M$, $m \mapsto 1$. The coequalizer of these in $\Mon$ is $\langle x,y : xy=yx=1 \rangle \cong \IZ$, whose group of units is again $\IZ$. However, since $M^{\times}$ is trivial, the coequalizer of $\varphi^{\times},\psi^{\times} : M^{\times} \rightrightarrows M^{\times}$ in $\Grp$ is the trivial group.
+
+  - property: preserves epimorphisms
+    proof: The inclusion $\IN \hookrightarrow \IZ$ is an epimorphism of monoids. It is mapped to the trivial homomorphism $\{0\} \hookrightarrow \IZ$, which is not an epimorphism of groups.

@@ -1,0 +1,32 @@
+id: forget_inverses
+name: forgetful functor from groups to monoids
+notation: $U_{\Grp,\Mon}$
+source: Grp
+target: Mon
+description: This functor maps a group to its underlying monoid. We view groups as structured sets $(X,m,e,i)$ (consisting of a set, a multiplication, a neutral element, and an inverse operation), and monoids as structured sets $(X,m,e)$. This forgetful functor precisely maps $(X,m,e,i)$ to $(X,m,e)$. From this point of view, it does <i>not</i> merely forget a property; it forgets an operation. This perspective is useful in contexts where the inverse operation is no longer reducible to a property, for example, the forgetful functor from topological groups to topological monoids.
+nlab_link: https://ncatlab.org/nlab/show/forgetful+functor
+left_adjoint: enveloping_group
+
+tags:
+  - algebra
+  - forgetful
+
+related_functors:
+  - forget_abelian
+
+satisfied_properties:
+  - property: faithful
+    proof: This is trivial.
+
+  - property: full
+    proof: It is a standard fact from group theory that a multiplicative map already preserves inverses.
+
+  - property: right adjoint
+    proof: Every forgetful functor between algebraic categories is a right adjoint. This functor is right adjoint to the enveloping group functor $\Mon \to \Grp$.
+
+  - property: left adjoint
+    proof: 'This functor is left adjoint to the functor $(-)^{\times} : \Mon \to \Grp$ that sends a monoid $M$ to its group of units $M^{\times} \coloneqq \{(a,b) \in M^2 : ab = ba = 1 \}$. In fact, if $M$ is a monoid and $G$ is a group, there is a bijection $\Hom(U_{\Grp,\Mon}(G),M) \to \Hom(G,M^{\times})$ given by mapping $\varphi$ to $g \mapsto (\varphi(g),\varphi(g^{-1}))$.'
+
+unsatisfied_properties:
+  - property: essentially surjective
+    proof: This is trivial.
