@@ -1,7 +1,7 @@
 import { type Database } from 'better-sqlite3'
 import { get_categories, get_normalized_category_implications } from './categories'
 import { get_functors, get_normalized_functor_implications } from './functors'
-import { StructureType } from '../types'
+import { StructureType } from '../config'
 
 /**
  * A structure is a category or a functor.

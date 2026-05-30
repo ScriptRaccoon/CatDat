@@ -35,7 +35,7 @@ export type CategoryYaml = {
 	comments?: string[]
 }
 
-type PropertyEntry = {
+export type PropertyEntry = {
 	property: string
 	proof: string
 	check_redundancy?: boolean
