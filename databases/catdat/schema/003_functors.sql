@@ -1,3 +1,30 @@
+CREATE TABLE functors (
+    id TEXT PRIMARY KEY,
+    source TEXT NOT NULL,
+    target TEXT NOT NULL,
+    FOREIGN KEY (source) REFERENCES categories (id) ON DELETE CASCADE,
+    FOREIGN KEY (target) REFERENCES categories (id) ON DELETE CASCADE,
+    FOREIGN KEY (id) REFERENCES structures (id) ON DELETE CASCADE
+);
+
+CREATE TRIGGER functors_type_check
+BEFORE INSERT ON functors
+FOR EACH ROW
+BEGIN
+    SELECT CASE
+        WHEN (SELECT type FROM structures WHERE id = NEW.id) != 'functor'
+        THEN RAISE(ABORT, 'invalid functor id')
+    END;
+END;
+
+CREATE VIEW functors_view AS
+    SELECT
+        s.id, s.name, s.notation, s.description, s.nlab_link,
+        f.source, f.target
+    FROM functors f
+    INNER JOIN structures s
+    ON s.id = f.id;
+
 CREATE TABLE adjoint_functors (
     left_adjoint TEXT NOT NULL,
     right_adjoint TEXT NOT NULL,
