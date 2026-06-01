@@ -2,6 +2,7 @@ import Database, { type Database as DatabaseType } from 'better-sqlite3'
 import path from 'node:path'
 import fs from 'node:fs'
 import YAML from 'yaml'
+import { StructureType } from '../config'
 
 export function are_equal_sets<T>(a: Set<T>, b: Set<T>) {
 	return a.size === b.size && [...a].every((el) => b.has(el))
@@ -20,6 +21,12 @@ export function capitalize(txt: string) {
 
 export function parse_json_set<T>(json: string): Set<T> {
 	return new Set(JSON.parse(json))
+}
+
+export const pluralize = (type: StructureType) => {
+	if (type == 'category') return 'categories'
+	if (type === 'functor') return 'functors'
+	throw new Error('Invalid type:', type)
 }
 
 export function get_client() {
