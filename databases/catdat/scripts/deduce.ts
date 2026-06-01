@@ -11,13 +11,13 @@ deduce()
  * Makes deductions for categories and functors.
  */
 function deduce() {
-	deduce_category_implications()
-	deduce_properties_for_structures('category')
+	// deduce_category_implications()
+	// deduce_properties_for_structures('category')
 
 	deduce_special_objects()
 	deduce_special_morphisms()
 
-	restrict_functor_properties()
-	deduce_functor_implications()
-	deduce_properties_for_structures('functor')
+	// restrict_functor_properties()
+	// deduce_functor_implications()
+	// deduce_properties_for_structures('functor')
 }

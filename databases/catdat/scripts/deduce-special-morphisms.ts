@@ -18,19 +18,17 @@ export function deduce_special_morphisms() {
 function deduce_special_morphisms_of_dual_categories() {
 	const res = db
 		.prepare(
-			`
-        INSERT INTO special_morphisms (category_id, type, description, proof)
-        SELECT
-            c.dual_category_id,
-            t.dual,
-            m.description,
-            'This is deduced from its dual category.'
-        FROM categories c
-        INNER JOIN special_morphisms m ON m.category_id = c.id
-        INNER JOIN special_morphism_types t ON t.type = m.type
-        WHERE c.dual_category_id IS NOT NULL
-        ON CONFLICT DO NOTHING
-    `,
+			`INSERT INTO special_morphisms (category_id, type, description, proof)
+            SELECT
+                d.dual_structure_id,
+                t.dual,
+                m.description,
+                'This is deduced from its dual category.'
+            FROM dual_structures d
+            INNER JOIN special_morphisms m ON m.category_id = d.structure_id
+            INNER JOIN special_morphism_types t ON t.type = m.type
+            WHERE d.type = 'category'
+            ON CONFLICT DO NOTHING`,
 		)
 		.run()
 
