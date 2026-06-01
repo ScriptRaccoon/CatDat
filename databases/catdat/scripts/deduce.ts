@@ -17,7 +17,7 @@ function deduce() {
 	deduce_special_objects()
 	deduce_special_morphisms()
 
-	// restrict_functor_properties()
+	restrict_functor_properties()
 	// deduce_functor_implications()
 	// deduce_properties_for_structures('functor')
 }

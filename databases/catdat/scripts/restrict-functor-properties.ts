@@ -4,38 +4,40 @@ const db = get_client()
 
 /**
  * Ensures that selected properties of functors are restricted
- * to specified source and target categories.
+ * to specified target categories.
+ * This can be extended to source categories if required.
  */
 export function restrict_functor_properties() {
 	console.info('\n--- Restrict functor properties ---')
 
-	for (const domain of ['source', 'target']) {
-		const res = db
-			.prepare(
-				`INSERT INTO functor_property_assignments (
-                    functor_id,
-                    property_id,
-                    is_satisfied,
-                    proof,
-                    is_deduced,
-                    check_redundancy
-                )
-                SELECT
-                    f.id,
-                    p.id,
-                    FALSE,
-                    'The ${domain} category is not ' || c.notation || '.',
-                    FALSE,
-                    FALSE
-                FROM functor_properties p
-                INNER JOIN categories c ON c.id = p.required_${domain}
-                JOIN functors f
-                WHERE f.${domain} <> p.required_${domain}`,
-			)
-			.run()
-
-		console.info(
-			`Restricted ${res.changes} functor properties based on their required ${domain}`,
+	const res = db
+		.prepare(
+			`INSERT INTO property_assignments (
+                type,
+                structure_id,
+                property_id,
+                is_satisfied,
+                proof,
+                is_deduced,
+                check_redundancy
+            )
+            SELECT
+                'functor',
+                f.id,
+                r.functor_property_id,
+                FALSE,
+                'The target category is not ' || c.notation || '.',
+                FALSE,
+                FALSE
+            FROM required_target_categories r
+            INNER JOIN categories_view c ON c.id = r.category_id
+            JOIN functors f
+            WHERE f.target <> r.category_id
+            ON CONFLICT DO NOTHING`,
 		)
-	}
+		.run()
+
+	console.info(
+		`Restricted ${res.changes} functor properties based on their required target`,
+	)
 }

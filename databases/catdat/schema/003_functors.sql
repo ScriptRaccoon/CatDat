@@ -51,3 +51,21 @@ BEGIN
             THEN RAISE(ABORT, 'Adjoint functors must have reversed source/target')
         END;
 END;
+
+CREATE TABLE required_target_categories (
+    functor_property_id TEXT NOT NULL,
+    category_id TEXT NOT NULL,
+    FOREIGN KEY (functor_property_id) REFERENCES properties (id) ON DELETE CASCADE,
+    FOREIGN KEY (category_id) REFERENCES categories (id) ON DELETE CASCADE
+);
+
+CREATE TRIGGER trg_required_target_categories_functor_property
+BEFORE INSERT ON required_target_categories
+BEGIN
+    SELECT CASE
+        WHEN (
+            SELECT type FROM properties WHERE id = NEW.functor_property_id
+        ) != 'functor'
+        THEN RAISE(ABORT, 'property with required target must be a functor property')
+    END;
+END;

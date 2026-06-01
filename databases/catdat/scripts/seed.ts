@@ -62,6 +62,8 @@ function clear_all_tables() {
 		db.prepare(`DELETE FROM special_objects`).run()
 		db.prepare(`DELETE FROM special_object_types`).run()
 
+		db.prepare(`DELETE FROM required_target_categories`).run()
+
 		db.prepare(`DELETE FROM implication_properties`).run()
 		db.prepare(`DELETE FROM implications`).run()
 
@@ -158,6 +160,11 @@ function seed_properties(type: StructureType) {
 		VALUES (?, ?, ?)`,
 	)
 
+	const required_target_insert = db.prepare(
+		`INSERT INTO required_target_categories (functor_property_id, category_id)
+		VALUES (?, ?)`,
+	)
+
 	function insert_property(property: PropertyYaml) {
 		property_insert.run(
 			type,
@@ -174,6 +181,10 @@ function seed_properties(type: StructureType) {
 
 		if (property.dual_property) {
 			dual_insert.run(type, property.id, property.dual_property)
+		}
+
+		if (type === 'functor' && property.required_target) {
+			required_target_insert.run(property.id, property.required_target)
 		}
 	}
 
