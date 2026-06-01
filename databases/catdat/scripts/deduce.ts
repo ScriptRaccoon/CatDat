@@ -1,9 +1,8 @@
-import { deduce_category_implications } from './deduce-category-implications'
-import { deduce_functor_implications } from './deduce-functor-implications'
 import { deduce_special_objects } from './deduce-special-objects'
 import { deduce_special_morphisms } from './deduce-special-morphisms'
 import { deduce_properties_for_structures } from './deduce-structure-properties'
 import { restrict_functor_properties } from './restrict-functor-properties'
+import { deduce_implications } from './deduce-implications'
 
 deduce()
 
@@ -11,13 +10,13 @@ deduce()
  * Makes deductions for categories and functors.
  */
 function deduce() {
-	// deduce_category_implications()
+	deduce_implications()
+
 	// deduce_properties_for_structures('category')
 
 	deduce_special_objects()
 	deduce_special_morphisms()
 
 	restrict_functor_properties()
-	// deduce_functor_implications()
 	// deduce_properties_for_structures('functor')
 }
