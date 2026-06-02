@@ -48,7 +48,10 @@ unsatisfied_properties:
     proof: 'We can adjust the proof for <a href="/category/Top">$\Top$</a> (see <a href="https://mathoverflow.net/questions/509548" target="_blank">MO/509548</a>) as follows: Let $k$ be a field, $X$ be a singleton and $Y = \{u,v\}$ be the Sierpinski space where $\{u\}$ is open, but $\{v\}$ is not. Endow both with the sheaf of locally constant functions to $k$. Thus, $\O_X(X) = k$, $\O_Y(Y) = \O_Y(\{u\}) = k$. There is a canonical morphism $p : X + X \to Y$. It is a coreflexive corelation that is not cosymmetric.'
 
   - property: generating set
-    proof: Out of any small set $S$ of locally ringed spaces, there is only a small set of residue fields. Therefore, if $k$ is a field of characteristic $\ne 2$ with a strictly larger cardinality than any of these residue fields, then the only possible morphism from an element of $S$ to $\Spec k(t)$ is one with an empty domain. However, that makes it impossible for $S$ to distinguish the two morphisms $\Spec k(t) \to \Spec k(t)$ corresponding to the two automorphisms in $\Gal(k(t) / k(t^2))$ (i.e. the identity automorphism and the automorphism which sends a rational function $f(t) \mapsto f(-t)$).
+    proof: >-
+      Out of any small set $S$ of locally ringed spaces, there is only a small set of residue fields at their points. Therefore, if $k$ is a field of characteristic $\ne 2$ with a strictly larger cardinality than any of these residue fields, then the only possible morphism from an element of $S$ to $\Spec k(t)$ is one with an empty domain. However, that makes it impossible for $S$ to distinguish the two morphisms $\Spec k(t) \rightrightarrows \Spec k(t)$ induced by $t \mapsto \pm t$.
+
+      Alternatively, using the usual adjunction between affine schemes and locally ringed spaces (<a href="https://en.wikipedia.org/wiki/%C3%89l%C3%A9ments_de_g%C3%A9om%C3%A9trie_alg%C3%A9brique" target="_blank">EGA I</a> (1971), Ch. 1, Prop. 1.6.3), a generating set in $\LRS$ would induce a generating set in the category of affine schemes, which contradicts the fact that <a href="/category/CRing">$\CRing$</a> does not have a cogenerating set.
 
 special_objects:
   initial object:
