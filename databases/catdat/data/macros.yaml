@@ -60,6 +60,7 @@
 \eq: \operatorname{eq}
 \cod: \operatorname{cod}
 \rank: \operatorname{rank}
+\Gal: \operatorname{Gal}
 
 # categories
 \Set: \mathbf{Set}
