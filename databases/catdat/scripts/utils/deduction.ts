@@ -55,15 +55,17 @@ export function get_normalized_implications(
  */
 export function get_properties_dict(db: Database, type: StructureType) {
 	const properties = db
-		.prepare(
+		.prepare<[string], PropertyMeta>(
 			`SELECT
-				p.id, p.dual_property_id as dual, p.relation,
-				r.conditional
-			FROM ${type}_properties p
+				p.id, d.dual_property_id as dual,
+				p.relation, r.conditional
+			FROM properties p
+			LEFT JOIN dual_properties d ON d.property_id = p.id
 			INNER JOIN relations r ON r.relation = p.relation
+			WHERE p.type = ?
 			ORDER BY lower(p.id)`,
 		)
-		.all() as PropertyMeta[]
+		.all(type)
 
 	const dict: Record<string, PropertyMeta> = {}
 
@@ -83,19 +85,30 @@ export function get_property_assignments(
 	type: StructureType,
 ) {
 	const rows = db
-		.prepare(
-			`SELECT property_id, ${type}_id as structure_id, is_satisfied
-			FROM ${type}_property_assignments`,
+		.prepare<
+			[string],
+			{
+				property_id: string
+				structure_id: string
+				is_satisfied: 0 | 1 | null
+			}
+		>(
+			`SELECT
+				property_id,
+				structure_id,
+				is_satisfied
+			FROM property_assignments
+			WHERE type = ?`,
 		)
-		.all() as {
-		property_id: string
-		structure_id: string
-		is_satisfied: 0 | 1 | null
-	}[]
+		.all(type)
 
 	const grouped: Record<
 		string,
-		{ satisfied: Set<string>; unsatisfied: Set<string>; undecidable: Set<string> }
+		{
+			satisfied: Set<string>
+			unsatisfied: Set<string>
+			undecidable: Set<string>
+		}
 	> = {}
 
 	for (const structure of structures) {
@@ -133,16 +146,24 @@ export function get_property_assignments_by_deduction(
 	type: StructureType,
 ) {
 	const rows = db
-		.prepare(
-			`SELECT property_id, ${type}_id as structure_id, is_satisfied, is_deduced
-			FROM ${type}_property_assignments WHERE is_satisfied IS NOT NULL`,
+		.prepare<
+			[string],
+			{
+				property_id: string
+				structure_id: string
+				is_satisfied: 0 | 1
+				is_deduced: 0 | 1
+			}
+		>(
+			`SELECT
+				property_id,
+				structure_id,
+				is_satisfied,
+				is_deduced
+			FROM property_assignments
+			WHERE is_satisfied IS NOT NULL AND type = ?`,
 		)
-		.all() as {
-		property_id: string
-		structure_id: string
-		is_satisfied: 0 | 1
-		is_deduced: 0 | 1
-	}[]
+		.all(type)
 
 	const grouped: Record<
 		string,
