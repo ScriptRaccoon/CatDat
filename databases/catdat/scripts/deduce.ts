@@ -12,11 +12,10 @@ deduce()
 function deduce() {
 	deduce_implications()
 
-	// deduce_properties_for_structures('category')
-
 	deduce_special_objects()
 	deduce_special_morphisms()
+	deduce_properties_for_structures('category')
 
 	restrict_functor_properties()
-	// deduce_properties_for_structures('functor')
+	deduce_properties_for_structures('functor')
 }
