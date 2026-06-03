@@ -13,7 +13,7 @@ import {
 	type StructureMeta,
 } from './utils/deduction'
 import { get_functors, get_normalized_functor_implications } from './utils/functors'
-import { StructureType } from './config'
+import type { StructureType } from './config'
 
 const db = get_client()
 
@@ -45,7 +45,7 @@ function check_redundant_property_assignments(type: StructureType) {
 	const structures: StructureMeta[] =
 		type === 'category' ? get_categories(db) : get_functors(db)
 
-	const assignments = get_property_assignments_by_deduction(db, structures, type)
+	const assignments = get_property_assignments_by_deduction(db, type)
 	const ignore_dict = get_ignored_redundant_assignments(type)
 
 	const ignore_count = Object.keys(ignore_dict).reduce(

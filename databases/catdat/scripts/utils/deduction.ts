@@ -140,11 +140,7 @@ export function get_property_assignments(
  * grouped by structure, value (satisfied / unsatisfied), and deduced status.
  * We exclude undecidable properties here.
  */
-export function get_property_assignments_by_deduction(
-	db: Database,
-	structures: { id: string }[],
-	type: StructureType,
-) {
+export function get_property_assignments_by_deduction(db: Database, type: StructureType) {
 	const rows = db
 		.prepare<
 			[string],
@@ -173,15 +169,14 @@ export function get_property_assignments_by_deduction(
 		}
 	> = {}
 
-	for (const structure of structures) {
-		grouped[structure.id] = {
+	for (const row of rows) {
+		const { property_id, structure_id, is_satisfied, is_deduced } = row
+
+		grouped[structure_id] ??= {
 			satisfied: { non_deduced: new Set(), deduced: new Set() },
 			unsatisfied: { non_deduced: new Set(), deduced: new Set() },
 		}
-	}
 
-	for (const row of rows) {
-		const { property_id, structure_id, is_satisfied, is_deduced } = row
 		grouped[structure_id][is_satisfied ? 'satisfied' : 'unsatisfied'][
 			is_deduced ? 'deduced' : 'non_deduced'
 		].add(property_id)
