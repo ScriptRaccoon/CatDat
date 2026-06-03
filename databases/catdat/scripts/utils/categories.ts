@@ -18,11 +18,11 @@ export type NormalizedCategoryImplication = {
  */
 export function get_categories(db: Database) {
 	return db
-		.prepare(
+		.prepare<never[], CategoryMeta>(
 			`SELECT id, name, dual_category_id as dual
-            FROM categories ORDER BY lower(name)`,
+            FROM categories_view ORDER BY lower(name)`,
 		)
-		.all() as CategoryMeta[]
+		.all()
 }
 
 /**
@@ -37,17 +37,40 @@ export function get_categories(db: Database) {
 export function get_normalized_category_implications(
 	db: Database,
 ): NormalizedCategoryImplication[] {
+	// TODO: This needs to be unified with the functor case.
+
 	const all_implications_db = db
-		.prepare(
-			`SELECT id, assumptions, conclusions, is_equivalence
-			FROM category_implications_view`,
+		.prepare<
+			never[],
+			{
+				id: string
+				is_equivalence: 0 | 1
+				assumptions: string
+				conclusions: string
+			}
+		>(
+			`SELECT
+				i.id,
+				i.is_equivalence,
+				(
+					SELECT json_group_array(property_id)
+					FROM implication_properties ip
+					WHERE ip.implication_id  = i.id
+					AND ip.structure = 'self'
+					AND ip.kind = 'assumption'
+				) as assumptions,
+				(
+					SELECT json_group_array(property_id)
+					FROM implication_properties ip
+					WHERE ip.implication_id  = i.id
+					AND ip.structure = 'self'
+					AND ip.kind = 'conclusion'
+				) as conclusions
+			FROM implications i
+			WHERE i.type = 'category'
+			GROUP BY i.id`,
 		)
-		.all() as {
-		id: string
-		assumptions: string
-		conclusions: string
-		is_equivalence: 0 | 1
-	}[]
+		.all()
 
 	const implications: NormalizedCategoryImplication[] = []
 
