@@ -1,30 +1,12 @@
 import { type Database } from 'better-sqlite3'
 import { parse_json_set } from './helpers'
-
-type FunctorMeta = {
-	id: string
-	name: string
-	associated_satisfied_properties: {
-		source: Set<string>
-		target: Set<string>
-	}
-}
-
-type NormalizedFunctorImplication = {
-	id: string
-	assumptions: Set<string>
-	conclusion: string
-	associated_assumptions: {
-		source: Set<string>
-		target: Set<string>
-	}
-}
+import type { StructureMeta } from './deduction'
 
 /**
  * Returns the list of functors saved in the database along with
  * the satisfied properties of their source and target category.
  */
-export function get_functors(db: Database): FunctorMeta[] {
+export function get_functors(db: Database): StructureMeta[] {
 	const rows = db
 		.prepare<
 			never[],
@@ -57,110 +39,7 @@ export function get_functors(db: Database): FunctorMeta[] {
 	return rows.map((row) => ({
 		id: row.id,
 		name: row.name,
-		associated_satisfied_properties: {
-			source: parse_json_set<string>(row.source_props),
-			target: parse_json_set<string>(row.target_props),
-		},
+		source_props: parse_json_set<string>(row.source_props),
+		target_props: parse_json_set<string>(row.target_props),
 	}))
-}
-
-/**
- * Implications have the form
- * P_1 + ... + P_n ===> Q_1 + ... + Q_m
- * or
- * P_1 + ... + P_n <===> Q_1 + ... + Q_m.
- * This function decomposes them into normalized implications,
- * which have the form
- * P_1 + ... + P_n ===> Q.
- */
-export function get_normalized_functor_implications(
-	db: Database,
-): NormalizedFunctorImplication[] {
-	// TODO: This needs to be unified with the category case.
-
-	const all_implications_db = db
-		.prepare<
-			never[],
-			{
-				id: string
-				is_equivalence: 0 | 1
-				assumptions: string
-				source_assumptions: string
-				target_assumptions: string
-				conclusions: string
-			}
-		>(
-			`SELECT
-				i.id,
-				i.is_equivalence,
-				(
-					SELECT json_group_array(property_id)
-					FROM implication_properties ip
-					WHERE ip.implication_id  = i.id
-					AND ip.structure = 'self'
-					AND ip.kind = 'assumption'
-				) as assumptions,
-				(
-					SELECT json_group_array(property_id)
-					FROM implication_properties ip
-					WHERE ip.implication_id  = i.id
-					AND ip.structure = 'source'
-					AND ip.kind = 'assumption'
-				) as source_assumptions,
-				(
-					SELECT json_group_array(property_id)
-					FROM implication_properties ip
-					WHERE ip.implication_id  = i.id
-					AND ip.structure = 'target'
-					AND ip.kind = 'assumption'
-				) as target_assumptions,
-				(
-					SELECT json_group_array(property_id)
-					FROM implication_properties ip
-					WHERE ip.implication_id  = i.id
-					AND ip.structure = 'self'
-					AND ip.kind = 'conclusion'
-				) as conclusions
-			FROM implications i
-			WHERE i.type = 'functor'
-			GROUP BY i.id`,
-		)
-		.all()
-
-	const implications: NormalizedFunctorImplication[] = []
-
-	for (const impl of all_implications_db) {
-		const assumptions = parse_json_set<string>(impl.assumptions)
-		const conclusions = parse_json_set<string>(impl.conclusions)
-		const source_assumptions = parse_json_set<string>(impl.source_assumptions)
-		const target_assumptions = parse_json_set<string>(impl.target_assumptions)
-
-		for (const conclusion of conclusions) {
-			implications.push({
-				id: impl.id,
-				assumptions,
-				conclusion,
-				associated_assumptions: {
-					source: source_assumptions,
-					target: target_assumptions,
-				},
-			})
-		}
-
-		if (impl.is_equivalence) {
-			for (const assumption of assumptions) {
-				implications.push({
-					id: impl.id,
-					assumptions: conclusions,
-					conclusion: assumption,
-					associated_assumptions: {
-						source: source_assumptions,
-						target: target_assumptions,
-					},
-				})
-			}
-		}
-	}
-
-	return implications
 }

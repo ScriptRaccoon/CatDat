@@ -7,15 +7,18 @@ import { type Database, SqliteError } from 'better-sqlite3'
 import { get_client, is_subset } from './utils/helpers'
 import {
 	get_structures,
-	get_normalized_implications,
 	get_properties_dict,
 	get_property_assignments,
 	is_dual_structure,
 	type StructureMeta,
-	type NormalizedImplication,
 	type PropertyMeta,
 } from './utils/deduction'
-import { get_contradiction_string, get_proof_string } from './utils/implications'
+import {
+	get_contradiction_string,
+	get_normalized_functor_implications,
+	get_proof_string,
+	type NormalizedImplication,
+} from './utils/implications'
 import type { StructureType } from './config'
 
 /**
@@ -31,8 +34,8 @@ export function get_deduced_satisfied_properties(
 		stop_when_found?: string
 	},
 	type: StructureType,
-	// used for source and target properties of a functor
-	associated_satisfied_properties?: Record<string, Set<string>>,
+	source_props?: Set<string>,
+	target_props?: Set<string>,
 ) {
 	const found = new Set<string>()
 	const proofs: Record<string, string> = {}
@@ -49,15 +52,21 @@ export function get_deduced_satisfied_properties(
 
 			if (!is_valid) continue
 
-			if (implication.associated_assumptions) {
-				const is_applicable = Object.keys(
-					implication.associated_assumptions,
-				).every((key) => {
-					return is_subset(
-						implication.associated_assumptions?.[key] ?? new Set(),
-						associated_satisfied_properties?.[key] ?? new Set(),
-					)
-				})
+			if (implication.source_assumptions) {
+				const is_applicable = is_subset(
+					implication.source_assumptions,
+					source_props ?? new Set(),
+				)
+
+				if (!is_applicable) continue
+			}
+
+			if (implication.target_assumptions) {
+				const is_applicable = is_subset(
+					implication.target_assumptions,
+					target_props ?? new Set(),
+				)
+
 				if (!is_applicable) continue
 			}
 
@@ -101,8 +110,8 @@ export function get_deduced_unsatisfied_properties(
 		stop_when_found?: string
 	},
 	type: StructureType,
-	// used for source and target properties of a functor
-	associated_satisfied_properties?: Record<string, Set<string>>,
+	source_props?: Set<string>,
+	target_props?: Set<string>,
 ) {
 	const found = new Set<string>()
 	const proofs: Record<string, string> = {}
@@ -122,15 +131,19 @@ export function get_deduced_unsatisfied_properties(
 					})
 				if (!is_valid) continue
 
-				if (implication.associated_assumptions) {
-					const is_applicable = Object.keys(
-						implication.associated_assumptions,
-					).every((key) => {
-						return is_subset(
-							implication.associated_assumptions?.[key] ?? new Set(),
-							associated_satisfied_properties?.[key] ?? new Set(),
-						)
-					})
+				if (implication.source_assumptions) {
+					const is_applicable = is_subset(
+						implication.source_assumptions,
+						source_props ?? new Set(),
+					)
+					if (!is_applicable) continue
+				}
+
+				if (implication.target_assumptions) {
+					const is_applicable = is_subset(
+						implication.target_assumptions,
+						target_props ?? new Set(),
+					)
 					if (!is_applicable) continue
 				}
 
@@ -257,7 +270,8 @@ function deduce_satisfied_properties(
 		implications,
 		{ properties_dict },
 		type,
-		structure.associated_satisfied_properties,
+		structure.source_props,
+		structure.target_props,
 	)
 
 	for (const p of found) satisfied_properties.add(p)
@@ -287,7 +301,8 @@ function deduce_unsatisfied_properties(
 		implications,
 		{ properties_dict },
 		type,
-		structure.associated_satisfied_properties,
+		structure.source_props,
+		structure.target_props,
 	)
 
 	for (const p of found) unsatisfied_properties.add(p)
@@ -398,8 +413,9 @@ export function deduce_properties_for_structures(type: StructureType) {
 
 	delete_deduced_properties(db, type)
 
-	const implications = get_normalized_implications(db, type)
+	const implications = get_normalized_functor_implications(db, type)
 	const structures = get_structures(db, type)
+
 	const properties_dict = get_properties_dict(db, type)
 	const get_assigned_properties = get_property_assignments(db, structures, type)
 
