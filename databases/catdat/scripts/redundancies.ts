@@ -8,7 +8,10 @@ import {
 	get_deduced_satisfied_properties,
 	get_deduced_unsatisfied_properties,
 } from './deduce-structure-properties'
-import { get_property_assignments_by_deduction, StructureMeta } from './utils/deduction'
+import {
+	get_property_assignments_by_deduction,
+	type StructureMeta,
+} from './utils/deduction'
 import { get_functors, get_normalized_functor_implications } from './utils/functors'
 import { StructureType } from './config'
 
@@ -166,12 +169,12 @@ function get_redundant_unsatisfied_property(
  */
 function get_ignored_redundant_assignments(type: StructureType) {
 	const rows = db
-		.prepare(
-			`SELECT ${type}_id as structure_id, property_id
-			FROM ${type}_property_assignments
-			WHERE check_redundancy = FALSE`,
+		.prepare<[string], { structure_id: string; property_id: string }>(
+			`SELECT structure_id, property_id
+			FROM property_assignments
+			WHERE type = ? AND check_redundancy = FALSE`,
 		)
-		.all() as { structure_id: string; property_id: string }[]
+		.all(type)
 
 	const grouped: Record<string, Set<string>> = {}
 

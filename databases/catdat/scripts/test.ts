@@ -24,22 +24,23 @@ execute_tests()
 function execute_tests() {
 	try {
 		console.info('\n--- Test categories ---')
-		test_mutual_category_duals()
+		test_mutual_structure_duals('category')
 		test_properties_of_trivial_category()
 		test_mutual_property_duals('category')
 		test_decided_structures(decided_categories, 'category')
-		test_properties_of_selected_structures(
-			{ Set: Set_expected, Ab: Ab_expected, Top: Top_expected },
-			'category',
-		)
+		test_properties_of_selected_structures({
+			Set: Set_expected,
+			Ab: Ab_expected,
+			Top: Top_expected,
+		})
 
 		console.info('\n--- Test functors ---')
 		test_mutual_property_duals('functor')
 		test_decided_structures(decided_functors, 'functor')
-		test_properties_of_selected_structures(
-			{ forget_vector: forget_vector_expected, id_Set: id_Set_expected },
-			'functor',
-		)
+		test_properties_of_selected_structures({
+			forget_vector: forget_vector_expected,
+			id_Set: id_Set_expected,
+		})
 	} catch (err) {
 		if (err instanceof Error) {
 			console.error(err.message)
@@ -51,27 +52,30 @@ function execute_tests() {
 }
 
 /**
- * Tests for all categories C,D that if C is dual to D, then D is dual to C.
+ * Tests for all structures C,D that if C is dual to D, then D is dual to C.
  */
-function test_mutual_category_duals() {
+function test_mutual_structure_duals(type: StructureType) {
 	const dict: Record<string, string | null> = {}
 
-	const categories = db
-		.prepare('SELECT id, dual_category_id FROM categories')
-		.all() as { id: string; dual_category_id: string | null }[]
+	const structures = db
+		.prepare<[string], { id: string; dual_structure_id: string | null }>(
+			`SELECT structure_id as id, dual_structure_id
+			FROM dual_structures WHERE type = ?`,
+		)
+		.all(type)
 
-	for (const { id, dual_category_id } of categories) {
-		dict[id] = dual_category_id
+	for (const { id, dual_structure_id } of structures) {
+		dict[id] = dual_structure_id
 	}
 
 	for (const id in dict) {
 		const dual = dict[id]
 		if (dual && dict[dual] !== id) {
-			throw new Error(`❌ Found non-mutual category duality: ${id}, ${dual}`)
+			throw new Error(`❌ Found non-mutual structure duality: ${id}, ${dual}`)
 		}
 	}
 
-	console.info(`✅ Categories are mutually dual`)
+	console.info(`✅ Structures of type ${type} are mutually dual`)
 }
 
 /**
@@ -81,8 +85,10 @@ function test_mutual_category_duals() {
 function test_properties_of_trivial_category() {
 	const rows = db
 		.prepare(
-			`SELECT property_id FROM category_property_assignments
-			WHERE category_id = '1' AND is_satisfied = FALSE`,
+			`SELECT property_id FROM property_assignments
+			WHERE
+				type = 'category' AND structure_id = '1'
+				AND is_satisfied = FALSE`,
 		)
 		.all()
 
@@ -100,11 +106,14 @@ function test_properties_of_trivial_category() {
  * if p is dual to q, then q is dual to p.
  */
 function test_mutual_property_duals(type: StructureType) {
-	const dict: Record<string, string | null> = {}
+	const dict: Record<string, string> = {}
 
 	const properties = db
-		.prepare(`SELECT id, dual_property_id FROM ${type}_properties`)
-		.all() as { id: string; dual_property_id: string | null }[]
+		.prepare<[string], { id: string; dual_property_id: string }>(
+			`SELECT property_id AS id, dual_property_id
+			FROM dual_properties WHERE type = ?`,
+		)
+		.all(type)
 
 	for (const { id, dual_property_id } of properties) {
 		dict[id] = dual_property_id
@@ -112,7 +121,7 @@ function test_mutual_property_duals(type: StructureType) {
 
 	for (const id in dict) {
 		const dual = dict[id]
-		if (dual && dict[dual] !== id) {
+		if (dict[dual] !== id) {
 			throw new Error(`❌ Found non-mutual property duality: ${id}, ${dual}`)
 		}
 	}
@@ -125,17 +134,18 @@ function test_mutual_property_duals(type: StructureType) {
  * been decided. If this test fails, property assignments or implications are missing.
  */
 function test_decided_structures(structure_ids: string[], type: StructureType) {
-	const unknown_query = db.prepare(
-		`SELECT p.id FROM ${type}_properties p WHERE NOT EXISTS
-			(SELECT 1 FROM ${type}_property_assignments
-				WHERE ${type}_id = ? AND property_id = p.id
+	const unknown_query = db.prepare<[string, string], { id: string }>(
+		`SELECT p.id FROM properties p WHERE type = ? AND NOT EXISTS
+			(SELECT 1 FROM property_assignments
+				WHERE structure_id = ? AND property_id = p.id
 			)
 		`,
 	)
 
 	for (const structure_id of structure_ids) {
-		const res = unknown_query.all(structure_id) as { id: string }[]
-		const unknown_properties = res.map((row) => row.id)
+		const unknown_properties = unknown_query
+			.all(type, structure_id)
+			.map((row) => row.id)
 
 		if (unknown_properties.length > 0) {
 			throw new Error(
@@ -155,18 +165,17 @@ function test_decided_structures(structure_ids: string[], type: StructureType) {
  */
 function test_properties_of_selected_structures(
 	expected: Record<string, Record<string, boolean>>,
-	type: StructureType,
 ) {
-	const property_query = db.prepare(
-		`SELECT property_id, is_satisfied FROM ${type}_property_assignments
-		WHERE ${type}_id = ? AND is_satisfied IS NOT NULL`,
+	const property_query = db.prepare<
+		[string],
+		{ property_id: string; is_satisfied: 0 | 1 }
+	>(
+		`SELECT property_id, is_satisfied FROM property_assignments
+		WHERE structure_id = ? AND is_satisfied IS NOT NULL`,
 	)
 
 	for (const structure_id in expected) {
-		const properties = property_query.all(structure_id) as {
-			property_id: string
-			is_satisfied: 0 | 1
-		}[]
+		const properties = property_query.all(structure_id)
 
 		for (const { property_id, is_satisfied } of properties) {
 			const ok = Boolean(is_satisfied) === expected[structure_id][property_id]
