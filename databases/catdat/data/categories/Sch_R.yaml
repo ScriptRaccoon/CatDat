@@ -56,6 +56,9 @@ unsatisfied_properties:
   - property: quotients of congruences
     proof: If $\Sch_R$ had quotients of congruences, then by <a href="/content/pushouts-of-monos-via-congruence-quotients">this lemma</a> it would also have pushouts of monomorphisms, contradicting the fact that the span $\IA^1_K \leftarrow \Spec(K(t)) \rightarrow \IA^1_K$ has no pushout where $K$ is a residue field of $R$; see <a href="https://mathoverflow.net/questions/9961" target="_blank">MO/9961</a>.
 
+  - property: sequential colimits
+    proof: It is shown in <a href="https://mathoverflow.net/questions/511944" target="_blank">MO/511944</a> that the diagram $$\IA^1_R \hookrightarrow \IA^2_R \hookrightarrow \IA^3_R \hookrightarrow \cdots$$ has no colimit.
+
 special_objects:
   initial object:
     description: empty scheme
