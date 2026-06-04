@@ -1,0 +1,72 @@
+id: Sch_R
+name: category of schemes
+notation: $\Sch_R$
+objects: schemes over $R \neq 0$, i.e. locally ringed spaces over $R$ that have an open covering by affine schemes over $R$
+morphisms: morphisms of locally ringed spaces over $R$
+description: Here, $R$ is a fixed non-trivial commutative ring. The general properties of this category will not depend on the choice of $R$. For $R = \IZ$ we obtain the category $\Sch$ of schemes.
+nlab_link: https://ncatlab.org/nlab/show/scheme
+
+tags:
+  - algebraic geometry
+
+related_categories:
+  - LRS_R
+  - Z
+
+comments:
+  - Monomorphisms are discussed at <a href="https://mathoverflow.net/questions/56591" target="_blank">MO/56591</a>. At least the case of morphisms of locally finite type is understood.
+  - Regular monomorphisms are discussed at <a href="https://mathoverflow.net/questions/66279" target="_blank">MO/66279</a>.
+  - Epimorphisms are discussed at <a href="https://mathoverflow.net/questions/56564" target="_blank">MO/56564</a>. Probably they cannot be classified.
+
+satisfied_properties:
+  - property: locally small
+    proof: There is a forgetful functor $\Sch_R \to \LRS_R$ and $\LRS_R$ is locally small.
+
+  - property: terminal object
+    proof: The scheme $\Spec(R)$ is terminal.
+
+  - property: pullbacks
+    proof: This is the well-known construction of the fiber product of schemes, see e.g. EGA I, Chap. I, Thm. 3.2.1.
+
+  - property: well-powered
+    proof: See <a href="https://mathoverflow.net/questions/160681" target="_blank">MO/160681</a>.
+
+  - property: infinitary extensive
+    proof: One uses the same proof as for locally ringed spaces, using that open subspaces of schemes are also schemes.
+
+unsatisfied_properties:
+  - property: skeletal
+    proof: This is trivial.
+
+  - property: balanced
+    proof: Choose a residue field $K$ of $R$. The canonical morphism $$\Spec(K[X]/X \times K[X,X^{-1}]) \longrightarrow \Spec(K[X])$$ is a mono- and an epimorphism, but no isomorphism.
+
+  - property: countable powers
+    proof: While all diagrams of affine schemes have a limit in the category of schemes, one can show that an infinite product of quasi-compact non-empty schemes only exists when almost all of them are affine, see <a href="https://mathoverflow.net/questions/65506" target="_blank">MO/65506</a>. Thus, for example the power $(\IP^1_R)^{\IN}$ does not exist.
+
+  - property: Malcev
+    proof: Consider the subscheme $V(x-y) \cup V(y) \subseteq \IA^2_R$. It contains the diagonal but it is not symmetric.
+
+  - property: semi-strongly connected
+    proof: This is because already the full subcategory of affine $R$-schemes is not semi-strongly connected, because its dual <a href="/category/CAlg(R)">$\CAlg(R)$</a> is not semi-strongly connected.
+
+  - property: generating set
+    proof: If $S$ is a generating set of $R$-schemes, then the set of affine open subsets of the schemes in $S$ would also be a generating set. This is then also a generating set in the category of affine $R$-schemes, corresponding to a cogenerating set in <a href="/category/CAlg(R)">$\CAlg(R)$</a>, which we know does not exist.
+
+  - property: quotients of congruences
+    proof: If $\Sch_R$ had quotients of congruences, then by <a href="/content/pushouts-of-monos-via-congruence-quotients">this lemma</a> it would also have pushouts of monomorphisms, contradicting the fact that the span $\IA^1_K \leftarrow \Spec(K(t)) \rightarrow \IA^1_K$ has no pushout where $K$ is a residue field of $R$; see <a href="https://mathoverflow.net/questions/9961" target="_blank">MO/9961</a>.
+
+special_objects:
+  initial object:
+    description: empty scheme
+  terminal object:
+    description: $\Spec(R)$
+  coproducts:
+    description: disjoint union with the product sheaf
+  products:
+    description: '[finite case] The idea is to use $\Spec(A) \times \Spec(B) = \Spec(A \otimes_R B)$ and then to glue affine pieces together. See EGA I, Chap. I, Thm. 3.2.1.'
+
+special_morphisms:
+  isomorphisms:
+    description: pairs $(f,f^{\sharp})$ consisting of a homeomorphism $f$ and an isomorphism of sheaves $f^{\sharp}$ of $R$-algebras
+    proof: This is easy.
