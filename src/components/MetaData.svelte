@@ -6,7 +6,7 @@
 
 	const default_title = 'CatDat'
 	const default_description =
-		'A comprehensive and searchable database of categories and their properties'
+		'A comprehensive and searchable database of categorical structures and their properties'
 
 	let { title = default_title, description = default_description }: Props = $props()
 </script>

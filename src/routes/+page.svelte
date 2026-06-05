@@ -4,7 +4,8 @@
 	import {
 		faChartBar,
 		faChartDiagram,
-		faProjectDiagram,
+		faDatabase,
+		faList,
 		faSearch,
 		faUsers,
 	} from '@fortawesome/free-solid-svg-icons'
@@ -13,13 +14,14 @@
 
 <MetaData />
 
-<h2>A comprehensive and searchable database of categories and their properties</h2>
+<h2>
+	A comprehensive and searchable database of categorical structures and their properties
+</h2>
 
 <p>
 	<i>CatDat</i> provides a growing collection of
 	<a class="accent" href="/categories">categories</a> and
-	<a class="accent" href="/functors">functors</a>, each with detailed descriptions and
-	properties. Built by and for those who love
+	<a class="accent" href="/functors">functors</a>. Built by and for those who love
 	<a href="https://en.wikipedia.org/wiki/Category_theory" target="_blank">
 		category theory
 	</a>.
@@ -41,31 +43,43 @@
 <div class="features">
 	<article class="feature-card">
 		<h3>
-			<Fa icon={faChartDiagram} />
-			Category Deductions
+			<Fa icon={faDatabase} /> Structures
 		</h3>
 
 		<p>
-			A list of <a class="accent" href="/category-implications">implications</a>
-			between
-			<a class="accent" href="/category-properties">properties of categories</a>
-			allows for automatic deduction of satisfied and unsatisfied properties from more
-			basic ones.
+			Browse a comprehensive collection of <a class="accent" href="/categories"
+				>categories</a
+			>
+			and <a class="accent" href="/functors">functors</a>, each with detailed
+			descriptions, proofs of their properties, and related structures.
+		</p>
+	</article>
+	<article class="feature-card">
+		<h3>
+			<Fa icon={faList} /> Properties
+		</h3>
+
+		<p>
+			Browse a collection of <a href="/category-properties" class="accent"
+				>properties of categories</a
+			>
+			and <a href="/functor-properties" class="accent">properties of functors</a>,
+			each with relevant results, structures satisfying or not satisfying this
+			property, and related properties.
 		</p>
 	</article>
 
 	<article class="feature-card">
 		<h3>
-			<Fa icon={faProjectDiagram} />
-			Functor Deductions
+			<Fa icon={faChartDiagram} />
+			Deduction System
 		</h3>
 
 		<p>
-			There is also a list of <a class="accent" href="/functor-implications"
-				>implications</a
-			>
-			between <a class="accent" href="/functor-properties">functor properties</a>,
-			enabling automatic reasoning about functors.
+			<a class="accent" href="/category-implications">Category implications</a>
+			and <a class="accent" href="/functor-implications">functor implications</a> leverage
+			a deduction system that automatically deduces satisfied and unsatisfied properties
+			from given ones.
 		</p>
 	</article>
 
@@ -74,37 +88,36 @@
 			<Fa icon={faSearch} /> Search by properties
 		</h3>
 		<p>
-			You can easily <a class="accent" href="/category-search"
-				>search for categories</a
-			>
-			and <a class="accent" href="/functor-search">search for functors</a>
-			that satisfy specific properties while not satisfying others.
+			Search for <a class="accent" href="/category-search"> categories </a>
+			and <a class="accent" href="/functor-search">functors</a> that satisfy specific
+			properties while not satisfying others. Inconsistent property combinations are detected.
 		</p>
 	</article>
 
 	<article class="feature-card">
 		<h3>
-			<Fa icon={faChartBar} /> Compare categories
+			<Fa icon={faChartBar} /> Compare structures
 		</h3>
 		<p>
-			You can <a class="accent" href="/category-comparison">compare categories</a> to
-			see how their properties align or differ.
+			Compare <a class="accent" href="/category-comparison">categories</a>
+			and <a class="accent" href="/functor-comparison">functors</a> directly to identify
+			structural similarities and differences in their properties.
 		</p>
 	</article>
 
-	<article class="feature-card centered">
+	<article class="feature-card">
 		<h3>
 			<Fa icon={faUsers} /> Community-driven
 		</h3>
 		<p>
-			This project is <a
+			This <a
 				class="accent"
 				href="https://github.com/ScriptRaccoon/catdat"
 				target="_blank"
 			>
-				open-source
+				open-source project
 			</a>
-			and welcomes <a class="accent" href="/content/contribute">contributions</a>
+			welcomes <a class="accent" href="/content/contribute">contributions</a>
 			to fill in <a class="accent" href="/missing">missing data</a>
 			or observe new combinations of properties.
 		</p>
@@ -119,12 +132,6 @@
 
 		@media (min-width: 600px) {
 			grid-template-columns: repeat(2, 1fr);
-
-			.centered {
-				width: 50%;
-				margin-inline: auto;
-				grid-column: 1 / -1;
-			}
 		}
 	}
 
