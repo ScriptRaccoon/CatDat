@@ -43,3 +43,12 @@
     - disjoint finite products
   proof: See <a href="https://math.stackexchange.com/a/5132300/1650" target="_blank">MSE/5130190</a> for a proof.
   is_equivalence: false
+
+- id: disjoint_coproduct_cogenerator
+  assumptions:
+    - disjoint coproducts
+    - cogenerating set
+  conclusions:
+    - cogenerator
+  proof: 'Assume that $S$ is a cogenerating set and let $Q \coloneqq \coprod_{X \in S} X$. For $X \in S$ we have a monomorphism $i_X : X \to Q$. If $f,g : A \rightrightarrows B$ are two distinct morphisms, there is some $X \in S$ and a morphism $h : B \to X$ with $hf \neq hg$. Hence, $i_X h f \neq i_X h g$. This proves that $Q$ is a cogenerator.'
+  is_equivalence: false

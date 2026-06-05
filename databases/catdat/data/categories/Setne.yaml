@@ -18,6 +18,7 @@ satisfied_properties:
 
   - property: generator
     proof: The one-point set is clearly a generator.
+    check_redundancy: false
 
   - property: cogenerator
     proof: The two-point set is a cogenerator, this follows as for <a href="/category/Set">$\Set$</a>.
