@@ -142,14 +142,6 @@ function render_content<T = Record<string, unknown>>(
 	return { meta_data: data as T, html: html_with_svg }
 }
 
-/**
- * Names of stored markdown files
- */
-export const content_ids = fs
-	.readdirSync(path.resolve('content'))
-	.filter((file) => file.endsWith('.md'))
-	.map((file) => file.replace(/\.md$/, ''))
-
 type ContentMetaData = {
 	title: string
 	description: string
@@ -167,4 +159,20 @@ export function get_rendered_content(id: string) {
 	const txt = fs.readFileSync(file_path, 'utf8')
 
 	return render_content<ContentMetaData>(txt)
+}
+
+/**
+ * Returns the list of metadata of content pages
+ */
+export function get_content_pages() {
+	return fs
+		.readdirSync(path.resolve('content'))
+		.filter((file) => file.endsWith('.md'))
+		.map((file) => {
+			const id = path.basename(file, '.md')
+			const txt = fs.readFileSync(path.resolve('content', file), 'utf8')
+			const data = matter(txt).data as ContentMetaData
+			return { ...data, id }
+		})
+		.sort((p, q) => p.title.localeCompare(q.title, 'en', { sensitivity: 'base' }))
 }

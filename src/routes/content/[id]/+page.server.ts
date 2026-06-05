@@ -1,13 +1,8 @@
-import { content_ids, get_rendered_content } from '$lib/server/markdown'
+import { get_rendered_content } from '$lib/server/markdown'
 import { error } from '@sveltejs/kit'
-import type { EntryGenerator } from './$types'
 import { batch } from '$lib/server/db.catdat'
 import sql from 'sql-template-tag'
 import type { StructureShort, PropertyShort } from '$lib/commons/types'
-
-export const entries: EntryGenerator = () => {
-	return content_ids.map((id) => ({ id }))
-}
 
 export const load = async (event) => {
 	const id = event.params.id

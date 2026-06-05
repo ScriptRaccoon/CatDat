@@ -27,5 +27,10 @@
 			category is self-dual and, for example, complete, it is automatically inferred
 			to be cocomplete as well.
 		</p>
+
+		<p class="hint">
+			For results that do not quite fit the implication model,
+			<a href="/content">content pages</a> are used instead.
+		</p>
 	{/snippet}
 </ImplicationListPage>
