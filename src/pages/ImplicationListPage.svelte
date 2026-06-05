@@ -5,8 +5,7 @@
 	import MetaData from '$components/MetaData.svelte'
 	import SearchFilter from '$components/SearchFilter.svelte'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
-	import { normalize_text, pluralize } from '$lib/client/utils'
-	import { PLURALS } from '$lib/commons/structures'
+	import { capitalize, normalize_text, pluralize } from '$lib/client/utils'
 	import type { ImplicationDisplay, StructureType } from '$lib/commons/types'
 	import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
 	import type { Snippet } from 'svelte'
@@ -46,9 +45,9 @@
 	)
 </script>
 
-<MetaData title="Implications of {PLURALS[type]}" />
+<MetaData title="{capitalize(type)} implications" />
 
-<h2>Implications of {PLURALS[type]}</h2>
+<h2>{capitalize(type)} implications</h2>
 
 <SearchFilter bind:search />
 
