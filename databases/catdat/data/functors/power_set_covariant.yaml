@@ -9,7 +9,7 @@ nlab_link: https://ncatlab.org/nlab/show/power+set
 tags:
   - set theory
 
-related_functors:
+related:
   - power_set_contravariant
 
 satisfied_properties:

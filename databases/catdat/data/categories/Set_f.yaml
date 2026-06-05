@@ -9,7 +9,7 @@ nlab_link: null
 tags:
   - set theory
 
-related_categories:
+related:
   - FinSet
   - Set
 

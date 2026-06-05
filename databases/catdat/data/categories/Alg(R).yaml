@@ -9,7 +9,7 @@ nlab_link: https://ncatlab.org/nlab/show/Alg
 tags:
   - algebra
 
-related_categories:
+related:
   - CAlg(R)
   - R-Mod
   - Ring

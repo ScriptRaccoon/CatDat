@@ -9,7 +9,7 @@ nlab_link: https://ncatlab.org/nlab/show/finite+abelian+group
 tags:
   - algebra
 
-related_categories:
+related:
   - Ab
   - Ab_fg
   - FinGrp

@@ -9,7 +9,7 @@ nlab_link: https://ncatlab.org/nlab/show/torsion+subgroup
 tags:
   - algebra
 
-related_categories:
+related:
   - Ab
   - FinAb
   - TorsFreeAb

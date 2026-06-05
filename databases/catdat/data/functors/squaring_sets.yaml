@@ -10,7 +10,7 @@ left_adjoint: doubling_sets
 tags:
   - set theory
 
-related_functors:
+related:
   - id_Set
   - product_sets
   - sequences_sets

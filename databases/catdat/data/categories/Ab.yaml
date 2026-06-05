@@ -9,7 +9,7 @@ nlab_link: https://ncatlab.org/nlab/show/Ab
 tags:
   - algebra
 
-related_categories:
+related:
   - Ab_fg
   - CMon
   - FinAb

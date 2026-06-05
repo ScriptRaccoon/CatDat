@@ -10,7 +10,7 @@ tags:
   - algebra
   - forgetful
 
-related_functors:
+related:
   - forget_group
   - forget_ring
 

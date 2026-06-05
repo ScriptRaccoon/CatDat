@@ -9,7 +9,7 @@ nlab_link: https://ncatlab.org/nlab/show/Grp
 tags:
   - algebra
 
-related_categories:
+related:
   - FinGrp
   - Grp_c
   - Ab

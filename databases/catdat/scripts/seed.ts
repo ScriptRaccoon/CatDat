@@ -264,13 +264,7 @@ function seed_structures<Struct extends StructureYaml>(
 			comment_insert.run(structure.id, type, comment)
 		}
 
-		// TODO: transform
-		for (const related of structure.related_categories ?? []) {
-			related_insert.run(structure.id, related, type)
-		}
-
-		// TODO: transform
-		for (const related of structure.related_functors ?? []) {
+		for (const related of structure.related) {
 			related_insert.run(structure.id, related, type)
 		}
 

@@ -10,7 +10,7 @@ left_adjoint: id_Set
 tags:
   - set theory
 
-related_functors:
+related:
   - squaring_sets
   - doubling_sets
   - diagonal_sets

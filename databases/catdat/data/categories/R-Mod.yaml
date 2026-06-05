@@ -10,7 +10,7 @@ nlab_link: https://ncatlab.org/nlab/show/module
 tags:
   - algebra
 
-related_categories:
+related:
   - Ab
   - M-Set
   - R-Mod_div

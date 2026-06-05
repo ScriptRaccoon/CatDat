@@ -21,8 +21,7 @@ export type StructureYaml = {
 	nlab_link: string | null
 	tags: string[]
 	comments?: string[]
-	related_categories?: string[]
-	related_functors?: string[]
+	related: string[]
 	satisfied_properties: PropertyEntry[]
 	unsatisfied_properties: PropertyEntry[]
 	undecidable_properties?: PropertyEntry[]
