@@ -64,7 +64,8 @@ export type ImplicationYaml = {
 }
 
 export type ProofWarning = {
-	structure_id: string
+	structure: string
+	type: string
 	property: string
 	length: number
 }

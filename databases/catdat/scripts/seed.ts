@@ -62,9 +62,11 @@ function clear_all_tables() {
 		db.prepare(`DELETE FROM special_objects`).run()
 		db.prepare(`DELETE FROM special_object_types`).run()
 
-		db.prepare(`DELETE FROM required_target_categories`).run()
+		db.prepare(`DELETE FROM structure_map_values`).run()
 
-		db.prepare(`DELETE FROM implication_properties`).run()
+		db.prepare(`DELETE FROM assumptions`).run()
+		db.prepare(`DELETE FROM mapped_assumptions`).run()
+		db.prepare(`DELETE FROM conclusions`).run()
 		db.prepare(`DELETE FROM implications`).run()
 
 		db.prepare(`DELETE FROM property_assignments`).run()
@@ -77,6 +79,8 @@ function clear_all_tables() {
 		db.prepare(`DELETE FROM structure_comments`).run()
 		db.prepare(`DELETE FROM tag_assignments`).run()
 		db.prepare(`DELETE FROM structures`).run()
+
+		db.prepare(`DELETE FROM categories`).run()
 
 		db.prepare(`DELETE FROM tags`).run()
 		db.prepare(`DELETE FROM relations`).run()
@@ -144,31 +148,23 @@ function seed_config() {
 function seed_properties(type: StructureType) {
 	const property_insert = db.prepare(
 		`INSERT INTO properties (
-			type, id, relation, description, nlab_link,
+			name, type, relation, description, nlab_link,
 			invariant_under_equivalences
 		) VALUES (?, ?, ?, ?, ?, ?)`,
 	)
 
 	const related_insert = db.prepare(
-		`INSERT INTO related_properties
-		(property_id, related_property_id)
-		VALUES (?, ?)`,
+		`INSERT INTO related_properties (property, related_property, type) VALUES (?, ?, ?)`,
 	)
 
 	const dual_insert = db.prepare(
-		`INSERT INTO dual_properties (type, property_id, dual_property_id)
-		VALUES (?, ?, ?)`,
-	)
-
-	const required_target_insert = db.prepare(
-		`INSERT INTO required_target_categories (functor_property_id, category_id)
-		VALUES (?, ?)`,
+		`INSERT INTO dual_properties (property, dual_property, type) VALUES (?, ?, ?)`,
 	)
 
 	function insert_property(property: PropertyYaml) {
 		property_insert.run(
+			property.id, // TODO: rename to .name
 			type,
-			property.id,
 			property.relation,
 			property.description,
 			property.nlab_link || null,
@@ -176,15 +172,11 @@ function seed_properties(type: StructureType) {
 		)
 
 		for (const related of property.related_properties) {
-			related_insert.run(property.id, related)
+			related_insert.run(property.id, related, type)
 		}
 
 		if (property.dual_property) {
-			dual_insert.run(type, property.id, property.dual_property)
-		}
-
-		if (type === 'functor' && property.required_target) {
-			required_target_insert.run(property.id, property.required_target)
+			dual_insert.run(property.id, property.dual_property, type)
 		}
 	}
 
@@ -206,38 +198,38 @@ function seed_structures<Struct extends StructureYaml>(
 ) {
 	const structure_insert = db.prepare(
 		`INSERT INTO structures (
-	        type, id, name, notation, description, nlab_link
+	        name, type, long_name, notation, description, nlab_link
 		) VALUES (?, ?, ?, ?, ?, ?)`,
 	)
 
 	const tag_insert = db.prepare(
-		`INSERT INTO tag_assignments (type, structure_id, tag) VALUES (?, ?, ?)`,
+		`INSERT INTO tag_assignments (structure, type, tag) VALUES (?, ?, ?)`,
 	)
 
 	const comment_insert = db.prepare(
-		`INSERT INTO structure_comments (structure_id, comment) VALUES (?, ?)`,
+		`INSERT INTO structure_comments (structure, type, comment) VALUES (?, ?, ?)`,
 	)
 
 	const related_insert = db.prepare(
-		`INSERT INTO related_structures (structure_id, related_structure_id) VALUES (?, ?)`,
+		`INSERT INTO related_structures (structure, related_structure, type) VALUES (?, ?, ?)`,
 	)
 
 	const property_assignment_insert = db.prepare(
 		`INSERT INTO property_assignments (
-			type, structure_id, property_id,
+			type, structure, property,
 			is_satisfied, proof, check_redundancy
 		) VALUES (?, ?, ?, ?, ?, ?)`,
 	)
 
 	function insert_property_assignments(
-		structure_id: string,
+		structure_name: string,
 		entries: PropertyEntry[],
 		is_satisfied: 0 | 1 | null,
 	) {
 		for (const entry of entries) {
 			property_assignment_insert.run(
 				type,
-				structure_id,
+				structure_name,
 				entry.property,
 				is_satisfied,
 				entry.proof,
@@ -245,7 +237,8 @@ function seed_structures<Struct extends StructureYaml>(
 			)
 			if (entry.proof.length >= PROOF_LENGTH_THRESHOLD) {
 				proof_length_warnings.push({
-					structure_id,
+					structure: structure_name,
+					type,
 					property: entry.property,
 					length: entry.proof.length,
 				})
@@ -255,28 +248,30 @@ function seed_structures<Struct extends StructureYaml>(
 
 	function insert_structure(structure: Struct) {
 		structure_insert.run(
+			structure.id, // TODO: rename to .name
 			type,
-			structure.id,
-			structure.name,
+			structure.name, // TODO: rename to .long_name
 			structure.notation,
 			structure.description,
 			structure.nlab_link,
 		)
 
 		for (const tag of structure.tags) {
-			tag_insert.run(type, structure.id, tag)
+			tag_insert.run(structure.id, type, tag)
 		}
 
 		for (const comment of structure.comments ?? []) {
-			comment_insert.run(structure.id, comment)
+			comment_insert.run(structure.id, type, comment)
 		}
 
+		// TODO: transform
 		for (const related of structure.related_categories ?? []) {
-			related_insert.run(structure.id, related)
+			related_insert.run(structure.id, related, type)
 		}
 
+		// TODO: transform
 		for (const related of structure.related_functors ?? []) {
-			related_insert.run(structure.id, related)
+			related_insert.run(structure.id, related, type)
 		}
 
 		insert_property_assignments(structure.id, structure.satisfied_properties, 1)
@@ -303,19 +298,19 @@ function seed_structures<Struct extends StructureYaml>(
  */
 function insert_category(category: CategoryYaml) {
 	const category_insert = db.prepare(`
-		INSERT INTO categories (id, objects, morphisms) VALUES (?, ?, ?)
+		INSERT INTO categories (name, objects, morphisms) VALUES (?, ?, ?)
 	`)
 
 	const dual_insert = db.prepare(`
-		INSERT INTO dual_structures (type, structure_id, dual_structure_id)
+		INSERT INTO dual_structures (type, structure, dual_structure)
 		VALUES ('category', ?, ?)`)
 
 	const special_object_insert = db.prepare(
-		`INSERT INTO special_objects (category_id, type, description) VALUES (?, ?, ?)`,
+		`INSERT INTO special_objects (category, type, description) VALUES (?, ?, ?)`,
 	)
 
 	const special_morphism_insert = db.prepare(
-		`INSERT INTO special_morphisms (category_id, type, description, proof)
+		`INSERT INTO special_morphisms (category, type, description, proof)
 		VALUES (?, ?, ?, ?)`,
 	)
 
@@ -340,19 +335,17 @@ function insert_category(category: CategoryYaml) {
  * Inserts the data of a functor that is only relevant for functors.
  */
 function insert_functor(functor: FunctorYaml) {
-	const functor_insert = db.prepare(
-		`INSERT INTO functors (id, source, target) VALUES (?, ?, ?)`,
+	const value_insert = db.prepare(
+		`INSERT INTO structure_map_values
+			(name, input, input_type, output, output_type)
+		VALUES (?, ?, 'functor', ?, ?)`,
 	)
 
-	const adjoint_insert = db.prepare(
-		`INSERT INTO adjoint_functors (left_adjoint, right_adjoint)
-		VALUES (?, ?)`,
-	)
-
-	functor_insert.run(functor.id, functor.source, functor.target)
+	value_insert.run('source', functor.id, functor.source, 'category')
+	value_insert.run('target', functor.id, functor.target, 'category')
 
 	if (functor.left_adjoint) {
-		adjoint_insert.run(functor.left_adjoint, functor.id)
+		value_insert.run('left_adjoint', functor.id, functor.left_adjoint, 'functor')
 	}
 }
 
@@ -362,34 +355,45 @@ function insert_functor(functor: FunctorYaml) {
 function seed_implications(type: StructureType) {
 	const implication_insert = db.prepare(
 		`INSERT INTO implications (
-	        type, id, proof, is_equivalence
+	        name, type, proof, is_equivalence
 		) VALUES (?, ?, ?, ?)`,
 	)
 
-	const implication_property_insert = db.prepare(
-		`INSERT INTO implication_properties (
-			type, implication_id, property_id,
-			kind, structure
-		) VALUES (?, ?, ?, ?, ?)`,
+	const assumption_insert = db.prepare(
+		`INSERT INTO assumptions (implication, property, type) VALUES (?, ?, ?)`,
+	)
+
+	const mapped_assumption_insert = db.prepare(
+		`INSERT INTO mapped_assumptions
+			(name, implication, implication_type, property, property_type)
+		VALUES (?, ?, ?, ?, ?)`,
+	)
+
+	const conclusion_insert = db.prepare(
+		`INSERT INTO conclusions (implication, property, type) VALUES (?, ?, ?)`,
 	)
 
 	function insert_implication(impl: ImplicationYaml) {
-		implication_insert.run(type, impl.id, impl.proof, Number(impl.is_equivalence))
+		// TODO: rename to .name in YAML files
+		implication_insert.run(impl.id, type, impl.proof, Number(impl.is_equivalence))
 
-		function insert_properties(
-			properties: string[],
-			kind: 'assumption' | 'conclusion',
-			structure: 'self' | 'source' | 'target',
-		) {
-			for (const p of properties) {
-				implication_property_insert.run(type, impl.id, p, kind, structure)
-			}
+		for (const p of impl.assumptions) {
+			assumption_insert.run(impl.id, p, type)
 		}
 
-		insert_properties(impl.assumptions, 'assumption', 'self')
-		insert_properties(impl.source_assumptions ?? [], 'assumption', 'source')
-		insert_properties(impl.target_assumptions ?? [], 'assumption', 'target')
-		insert_properties(impl.conclusions, 'conclusion', 'self')
+		for (const q of impl.conclusions) {
+			conclusion_insert.run(impl.id, q, type)
+		}
+
+		for (const p of impl.source_assumptions ?? []) {
+			// TODO: generalize
+			mapped_assumption_insert.run('source', impl.id, type, p, 'category')
+		}
+
+		for (const p of impl.target_assumptions ?? []) {
+			// TODO: generalize
+			mapped_assumption_insert.run('target', impl.id, type, p, 'category')
+		}
 	}
 
 	function insert_implications(implications: ImplicationYaml[]) {
@@ -413,9 +417,9 @@ function print_proof_length_warnings() {
 
 	proof_length_warnings.sort((a, b) => b.length - a.length)
 
-	for (const { structure_id, property, length } of proof_length_warnings) {
+	for (const { structure, type, property, length } of proof_length_warnings) {
 		console.warn(
-			`🟡 The proof for (${structure_id}, ${property}) has ${length} characters. Consider moving it to a content page.`,
+			`🟡 The proof for (${structure}, ${property}) of type ${type} has ${length} characters. Consider moving it to a content page.`,
 		)
 	}
 }
