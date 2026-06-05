@@ -1,7 +1,7 @@
 import path from 'node:path'
 import { get_client, seed_file, seed_files, pluralize } from './utils/helpers'
 import { create_schema_hash, get_saved_schema_hash } from './utils/schema'
-import { PROOF_LENGTH_THRESHOLD, type StructureType } from './config'
+import { PROOF_LENGTH_THRESHOLD, STRUCTURE_MAPS, type StructureType } from './config'
 import type {
 	CategoryYaml,
 	ConfigYaml,
@@ -385,14 +385,13 @@ function seed_implications(type: StructureType) {
 			conclusion_insert.run(impl.id, q, type)
 		}
 
-		for (const p of impl.source_assumptions ?? []) {
-			// TODO: generalize
-			mapped_assumption_insert.run('source', impl.id, type, p, 'category')
-		}
-
-		for (const p of impl.target_assumptions ?? []) {
-			// TODO: generalize
-			mapped_assumption_insert.run('target', impl.id, type, p, 'category')
+		if (impl.mapped_assumptions) {
+			for (const map in impl.mapped_assumptions) {
+				const prop_type = STRUCTURE_MAPS[type][map]
+				for (const prop of impl.mapped_assumptions[map]) {
+					mapped_assumption_insert.run(map, impl.id, type, prop, prop_type)
+				}
+			}
 		}
 	}
 

@@ -1,8 +1,6 @@
 - id: monadic_consequences
   assumptions:
     - monadic
-  source_assumptions: []
-  target_assumptions: []
   conclusions:
     - conservative
     - faithful
@@ -15,8 +13,9 @@
     - right adjoint
     - conservative
     - preserves reflexive coequalizers
-  source_assumptions:
-    - reflexive coequalizers
+  mapped_assumptions:
+    source:
+      - reflexive coequalizers
   target_assumptions: []
   conclusions:
     - monadic

@@ -48,7 +48,7 @@ export type PropertyYaml = {
 	description: string
 	nlab_link?: string | null
 	dual_property?: string | null
-	required_target?: string // for functors
+	required_target?: string // for functors, TODO: bring back this feature
 	invariant_under_equivalences: boolean
 	related_properties: string[]
 }
@@ -57,8 +57,7 @@ export type ImplicationYaml = {
 	id: string
 	assumptions: string[]
 	conclusions: string[]
-	source_assumptions?: string[] // for functors
-	target_assumptions?: string[] // for functors
+	mapped_assumptions?: Record<string, string[]>
 	proof: string
 	is_equivalence: boolean
 }
