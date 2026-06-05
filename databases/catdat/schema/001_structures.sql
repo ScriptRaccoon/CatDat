@@ -9,48 +9,48 @@ INSERT INTO structure_types (type) VALUES ('category'), ('functor');
 -- STRUCTURES
 
 CREATE TABLE structures (
-    name TEXT NOT NULL,
+    id TEXT NOT NULL,
     type TEXT NOT NULL,
-    long_name TEXT NOT NULL,
+    name TEXT NOT NULL,
     notation TEXT NOT NULL,
     description TEXT,
     nlab_link TEXT CHECK (nlab_link IS NULL OR nlab_link like 'https://%'),
-    PRIMARY KEY (name, type),
-    UNIQUE (long_name, type),
+    PRIMARY KEY (id, type),
+    UNIQUE (name, type),
     FOREIGN KEY (type) REFERENCES structure_types (type) ON DELETE RESTRICT
 );
 
-CREATE UNIQUE INDEX idx_structures_lower_id_unique ON structures (lower(name), type);
+CREATE UNIQUE INDEX idx_structures_lower_id_unique ON structures (lower(id), type);
 
 CREATE INDEX idx_structures_by_type ON structures (type);
 
 -- STRUCTURE MAPS
 
 CREATE TABLE structure_maps (
-    name TEXT NOT NULL,
+    map TEXT NOT NULL,
     input_type TEXT NOT NULL,
     output_type TEXT NOT NULL,
-    PRIMARY KEY (name, input_type, output_type),
+    PRIMARY KEY (map, input_type, output_type),
     FOREIGN KEY (input_type) REFERENCES structure_types (type) ON DELETE RESTRICT,
     FOREIGN KEY (output_type) REFERENCES structure_types (type) ON DELETE RESTRICT
 );
 
-INSERT INTO structure_maps (name, input_type, output_type) VALUES
+INSERT INTO structure_maps (map, input_type, output_type) VALUES
     ('source', 'functor', 'category'),
     ('target', 'functor', 'category'),
     ('left_adjoint', 'functor', 'functor');
 
 CREATE TABLE structure_map_values (
-    name TEXT NOT NULL,
+    map TEXT NOT NULL,
     input TEXT NOT NULL,
     input_type TEXT NOT NULL,
     output TEXT NOT NULL,
     output_type TEXT NOT NULL,
-    PRIMARY KEY (name, input, input_type, output, output_type),
-    FOREIGN KEY (name, input_type, output_type)
-        REFERENCES structure_maps (name, input_type, output_type) ON DELETE CASCADE,
-    FOREIGN KEY (input, input_type) REFERENCES structures (name, type) ON DELETE CASCADE,
-    FOREIGN KEY (output, output_type) REFERENCES structures (name, type) ON DELETE CASCADE
+    PRIMARY KEY (map, input, input_type, output, output_type),
+    FOREIGN KEY (map, input_type, output_type)
+        REFERENCES structure_maps (map, input_type, output_type) ON DELETE CASCADE,
+    FOREIGN KEY (input, input_type) REFERENCES structures (id, type) ON DELETE CASCADE,
+    FOREIGN KEY (output, output_type) REFERENCES structures (id, type) ON DELETE CASCADE
 );
 
 -- TAGS
@@ -70,7 +70,7 @@ CREATE TABLE tag_assignments (
     tag TEXT NOT NULL,
     type TEXT NOT NULL,
     PRIMARY KEY (structure, tag),
-    FOREIGN KEY (structure, type) REFERENCES structures (name, type) ON DELETE CASCADE,
+    FOREIGN KEY (structure, type) REFERENCES structures (id, type) ON DELETE CASCADE,
     FOREIGN KEY (tag, type) REFERENCES tags (tag, type) ON DELETE CASCADE
 );
 
@@ -81,8 +81,8 @@ CREATE TABLE related_structures (
     related_structure TEXT NOT NULL,
     type TEXT NOT NULL,
     PRIMARY KEY (structure, related_structure, type),
-    FOREIGN KEY (structure, type) REFERENCES structures (name, type) ON DELETE CASCADE,
-    FOREIGN KEY (related_structure, type) REFERENCES structures (name, type) ON DELETE CASCADE
+    FOREIGN KEY (structure, type) REFERENCES structures (id, type) ON DELETE CASCADE,
+    FOREIGN KEY (related_structure, type) REFERENCES structures (id, type) ON DELETE CASCADE
 );
 
 CREATE TABLE dual_structures (
@@ -90,8 +90,8 @@ CREATE TABLE dual_structures (
     dual_structure TEXT NOT NULL,
     type TEXT NOT NULL,
     PRIMARY KEY (structure, dual_structure, type),
-    FOREIGN KEY (structure, type) REFERENCES structures (name, type) ON DELETE CASCADE,
-    FOREIGN KEY (dual_structure, type) REFERENCES structures (name, type) ON DELETE CASCADE,
+    FOREIGN KEY (structure, type) REFERENCES structures (id, type) ON DELETE CASCADE,
+    FOREIGN KEY (dual_structure, type) REFERENCES structures (id, type) ON DELETE CASCADE,
     UNIQUE (structure),
     UNIQUE (dual_structure)
 );
@@ -103,7 +103,7 @@ CREATE TABLE structure_comments (
     structure TEXT NOT NULL,
     type TEXT NOT NULL,
     comment TEXT NOT NULL,
-    FOREIGN KEY (structure, type) REFERENCES structures (name, type) ON DELETE CASCADE
+    FOREIGN KEY (structure, type) REFERENCES structures (id, type) ON DELETE CASCADE
 );
 
 CREATE INDEX idx_comments_by_structure ON structure_comments (structure, type);
@@ -116,19 +116,19 @@ CREATE TABLE relations (
 );
 
 CREATE TABLE properties (
-    name TEXT NOT NULL,
+    id TEXT NOT NULL,
     type TEXT NOT NULL,
     relation TEXT NOT NULL,
     description TEXT NOT NULL CHECK (length(description) > 0),
     nlab_link TEXT CHECK (nlab_link IS NULL OR nlab_link like 'https://%'),
     invariant_under_equivalences INTEGER NOT NULL DEFAULT TRUE,
     CHECK (invariant_under_equivalences in (TRUE, FALSE)),
-    PRIMARY KEY (name, type),
+    PRIMARY KEY (id, type),
     FOREIGN KEY (type) REFERENCES structure_types (type) ON DELETE RESTRICT,
     FOREIGN KEY (relation) REFERENCES relations (relation) ON DELETE RESTRICT
 );
 
-CREATE UNIQUE INDEX idx_properties_lower_name_unique ON properties (lower(name), type);
+CREATE UNIQUE INDEX idx_properties_lower_id_unique ON properties (lower(id), type);
 
 CREATE INDEX idx_properties_by_type ON properties (type);
 
@@ -139,8 +139,8 @@ CREATE TABLE related_properties (
     related_property TEXT NOT NULL,
     type TEXT NOT NULL,
     PRIMARY KEY (property, related_property, type),
-    FOREIGN KEY (property, type) REFERENCES properties (name, type) ON DELETE CASCADE,
-    FOREIGN KEY (related_property, type) REFERENCES properties (name, type) ON DELETE CASCADE
+    FOREIGN KEY (property, type) REFERENCES properties (id, type) ON DELETE CASCADE,
+    FOREIGN KEY (related_property, type) REFERENCES properties (id, type) ON DELETE CASCADE
 );
 
 CREATE TABLE dual_properties (
@@ -148,8 +148,8 @@ CREATE TABLE dual_properties (
     dual_property TEXT NOT NULL,
     type TEXT NOT NULL,
     PRIMARY KEY (property, dual_property, type),
-    FOREIGN KEY (property, type) REFERENCES properties (name, type) ON DELETE CASCADE,
-    FOREIGN KEY (dual_property, type) REFERENCES properties (name, type) ON DELETE CASCADE,
+    FOREIGN KEY (property, type) REFERENCES properties (id, type) ON DELETE CASCADE,
+    FOREIGN KEY (dual_property, type) REFERENCES properties (id, type) ON DELETE CASCADE,
     UNIQUE (property, type),
     UNIQUE (dual_property, type)
 );
@@ -170,8 +170,8 @@ CREATE TABLE property_assignments (
     check_redundancy INTEGER NOT NULL DEFAULT TRUE
         CHECK (check_redundancy in (TRUE, FALSE)),
     UNIQUE (structure, property, type),
-    FOREIGN KEY (structure, type) REFERENCES structures (name, type) ON DELETE CASCADE,
-    FOREIGN KEY (property, type) REFERENCES properties (name, type) ON DELETE CASCADE
+    FOREIGN KEY (structure, type) REFERENCES structures (id, type) ON DELETE CASCADE,
+    FOREIGN KEY (property, type) REFERENCES properties (id, type) ON DELETE CASCADE
 );
 
 CREATE INDEX idx_assignment_by_property ON property_assignments (property, type);
@@ -180,7 +180,7 @@ CREATE INDEX idx_assignment_by_type ON property_assignments (type);
 -- IMPLICATIONS BETWEEN PROPERTIES
 
 CREATE TABLE implications (
-    name TEXT NOT NULL,
+    id TEXT NOT NULL,
     type TEXT NOT NULL,
     proof TEXT NOT NULL CHECK (length(proof) > 0),
     is_equivalence INTEGER NOT NULL DEFAULT FALSE
@@ -189,20 +189,20 @@ CREATE TABLE implications (
         CHECK (is_deduced in (TRUE, FALSE)),
     dualized_from TEXT,
     CHECK (dualized_from IS NULL OR is_deduced = TRUE),
-    PRIMARY KEY (name, type),
+    PRIMARY KEY (id, type),
     FOREIGN KEY (type) REFERENCES structure_types (type) ON DELETE RESTRICT,
-    FOREIGN KEY (dualized_from, type) REFERENCES implications (name, type) ON DELETE CASCADE
+    FOREIGN KEY (dualized_from, type) REFERENCES implications (id, type) ON DELETE CASCADE
 );
 
-CREATE UNIQUE INDEX idx_implications_lower_name_unique ON implications (lower(name), type);
+CREATE UNIQUE INDEX idx_implications_lower_id_unique ON implications (lower(id), type);
 
 CREATE TABLE assumptions (
     implication TEXT NOT NULL,
     property TEXT NOT NULL,
     type TEXT NOT NULL,
     PRIMARY KEY (implication, property, type),
-    FOREIGN KEY (implication, type) REFERENCES implications (name, type) ON DELETE CASCADE,
-    FOREIGN KEY (property, type) REFERENCES properties (name, type) ON DELETE CASCADE
+    FOREIGN KEY (implication, type) REFERENCES implications (id, type) ON DELETE CASCADE,
+    FOREIGN KEY (property, type) REFERENCES properties (id, type) ON DELETE CASCADE
 );
 
 CREATE TABLE conclusions (
@@ -210,23 +210,24 @@ CREATE TABLE conclusions (
     property TEXT NOT NULL,
     type TEXT NOT NULL,
     PRIMARY KEY (implication, property, type),
-    FOREIGN KEY (implication, type) REFERENCES implications (name, type) ON DELETE CASCADE,
-    FOREIGN KEY (property, type) REFERENCES properties (name, type) ON DELETE CASCADE
+    FOREIGN KEY (implication, type) REFERENCES implications (id, type) ON DELETE CASCADE,
+    FOREIGN KEY (property, type) REFERENCES properties (id, type) ON DELETE CASCADE
 );
 
 CREATE TABLE mapped_assumptions (
-    name TEXT NOT NULL,
+    map TEXT NOT NULL,
     implication TEXT NOT NULL,
     implication_type TEXT NOT NULL,
     property TEXT NOT NULL,
     property_type TEXT NOT NULL,
+    PRIMARY KEY (map, implication, implication_type, property, property_type),
     FOREIGN KEY (implication, implication_type)
-        REFERENCES implications (name, type)
+        REFERENCES implications (id, type)
         ON DELETE CASCADE,
     FOREIGN KEY (property, property_type)
-        REFERENCES properties (name, type)
+        REFERENCES properties (id, type)
         ON DELETE CASCADE,
-    FOREIGN KEY (name, implication_type, property_type)
-        REFERENCES structure_maps (name, input_type, output_type)
+    FOREIGN KEY (map, implication_type, property_type)
+        REFERENCES structure_maps (map, input_type, output_type)
         ON DELETE CASCADE
 );

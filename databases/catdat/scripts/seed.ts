@@ -148,7 +148,7 @@ function seed_config() {
 function seed_properties(type: StructureType) {
 	const property_insert = db.prepare(
 		`INSERT INTO properties (
-			name, type, relation, description, nlab_link,
+			id, type, relation, description, nlab_link,
 			invariant_under_equivalences
 		) VALUES (?, ?, ?, ?, ?, ?)`,
 	)
@@ -163,7 +163,7 @@ function seed_properties(type: StructureType) {
 
 	function insert_property(property: PropertyYaml) {
 		property_insert.run(
-			property.id, // TODO: rename to .name
+			property.id,
 			type,
 			property.relation,
 			property.description,
@@ -198,7 +198,7 @@ function seed_structures<Struct extends StructureYaml>(
 ) {
 	const structure_insert = db.prepare(
 		`INSERT INTO structures (
-	        name, type, long_name, notation, description, nlab_link
+	        id, type, name, notation, description, nlab_link
 		) VALUES (?, ?, ?, ?, ?, ?)`,
 	)
 
@@ -222,14 +222,14 @@ function seed_structures<Struct extends StructureYaml>(
 	)
 
 	function insert_property_assignments(
-		structure_name: string,
+		structure_id: string,
 		entries: PropertyEntry[],
 		is_satisfied: 0 | 1 | null,
 	) {
 		for (const entry of entries) {
 			property_assignment_insert.run(
 				type,
-				structure_name,
+				structure_id,
 				entry.property,
 				is_satisfied,
 				entry.proof,
@@ -237,7 +237,7 @@ function seed_structures<Struct extends StructureYaml>(
 			)
 			if (entry.proof.length >= PROOF_LENGTH_THRESHOLD) {
 				proof_length_warnings.push({
-					structure: structure_name,
+					structure: structure_id,
 					type,
 					property: entry.property,
 					length: entry.proof.length,
@@ -248,9 +248,9 @@ function seed_structures<Struct extends StructureYaml>(
 
 	function insert_structure(structure: Struct) {
 		structure_insert.run(
-			structure.id, // TODO: rename to .name
+			structure.id,
 			type,
-			structure.name, // TODO: rename to .long_name
+			structure.name,
 			structure.notation,
 			structure.description,
 			structure.nlab_link,
@@ -292,7 +292,7 @@ function seed_structures<Struct extends StructureYaml>(
  */
 function insert_category(category: CategoryYaml) {
 	const category_insert = db.prepare(`
-		INSERT INTO categories (name, objects, morphisms) VALUES (?, ?, ?)
+		INSERT INTO categories (id, objects, morphisms) VALUES (?, ?, ?)
 	`)
 
 	const dual_insert = db.prepare(`
@@ -331,9 +331,11 @@ function insert_category(category: CategoryYaml) {
 function insert_functor(functor: FunctorYaml) {
 	const value_insert = db.prepare(
 		`INSERT INTO structure_map_values
-			(name, input, input_type, output, output_type)
+			(map, input, input_type, output, output_type)
 		VALUES (?, ?, 'functor', ?, ?)`,
 	)
+
+	// TODO: refactor this using the STRUCTURE_MAPS object
 
 	value_insert.run('source', functor.id, functor.source, 'category')
 	value_insert.run('target', functor.id, functor.target, 'category')
@@ -349,7 +351,7 @@ function insert_functor(functor: FunctorYaml) {
 function seed_implications(type: StructureType) {
 	const implication_insert = db.prepare(
 		`INSERT INTO implications (
-	        name, type, proof, is_equivalence
+	        id, type, proof, is_equivalence
 		) VALUES (?, ?, ?, ?)`,
 	)
 
@@ -359,7 +361,7 @@ function seed_implications(type: StructureType) {
 
 	const mapped_assumption_insert = db.prepare(
 		`INSERT INTO mapped_assumptions
-			(name, implication, implication_type, property, property_type)
+			(map, implication, implication_type, property, property_type)
 		VALUES (?, ?, ?, ?, ?)`,
 	)
 
@@ -368,7 +370,6 @@ function seed_implications(type: StructureType) {
 	)
 
 	function insert_implication(impl: ImplicationYaml) {
-		// TODO: rename to .name in YAML files
 		implication_insert.run(impl.id, type, impl.proof, Number(impl.is_equivalence))
 
 		for (const p of impl.assumptions) {
