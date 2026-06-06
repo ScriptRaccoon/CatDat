@@ -107,3 +107,12 @@
     - locally cartesian closed
   proof: Each slice is thin, semi-strongly connected, and has a terminal object. Thus, it corresponds to a linear order with a largest element $1$. Every such category is cartesian closed, where the exponential $a \Rightarrow b$ (Heyting implication) is $1$ when $a \leq b$ and otherwise $b$.
   is_equivalence: false
+
+- id: cartesian_closed_thin_implies_lcc
+  assumptions:
+    - cartesian closed
+    - thin
+  conclusions:
+    - locally cartesian closed
+  proof: In a thin category, every object is subterminal. Thus, the result follows from Corollary 6 <a href="/content/subcategories">here</a>.
+  is_equivalence: false

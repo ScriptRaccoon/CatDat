@@ -53,6 +53,22 @@ unsatisfied_properties:
 
       Alternatively, using the usual adjunction between affine schemes and locally ringed spaces (<a href="https://en.wikipedia.org/wiki/%C3%89l%C3%A9ments_de_g%C3%A9om%C3%A9trie_alg%C3%A9brique" target="_blank">EGA I</a> (1971), Ch. 1, Prop. 1.6.3), a generating set in $\LRS_R$ would induce a generating set in the category of affine $R$-schemes, which contradicts the fact that <a href="/category/CAlg(R)">$\CAlg(R)$</a> does not have a cogenerating set.
 
+  - property: cartesian closed
+    proof: This is Corollary 4(a) <a href="/content/Top-embeds-in-LRS">here</a>.
+    check_redundancy: false
+
+  - property: cartesian filtered colimits
+    proof: This is Corollary 4(b) <a href="/content/Top-embeds-in-LRS">here</a>.
+
+  - property: regular
+    proof: This is Corollary 4(c) <a href="/content/Top-embeds-in-LRS">here</a>.
+
+  - property: cofiltered-limit-stable epimorphisms
+    proof: This is Corollary 4(d) <a href="/content/Top-embeds-in-LRS">here</a>.
+
+  - property: effective cocongruences
+    proof: This is Corollary 4(e) <a href="/content/Top-embeds-in-LRS">here</a>.
+
 special_objects:
   initial object:
     description: empty space

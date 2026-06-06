@@ -146,6 +146,7 @@ type ContentMetaData = {
 	title: string
 	description: string
 	author?: string
+	authors?: string[]
 }
 
 /**
