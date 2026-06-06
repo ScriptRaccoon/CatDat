@@ -1,3 +1,5 @@
+import { StructureType } from './config'
+
 export type ConfigYaml = {
 	shared_tags: string[]
 	category_tags: string[]

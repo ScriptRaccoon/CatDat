@@ -45,7 +45,7 @@ function seed() {
 
 	seed_properties('functor')
 	seed_implications('functor')
-	seed_structures('functor', insert_functor)
+	seed_structures('functor')
 
 	print_proof_length_warnings()
 }
@@ -192,14 +192,19 @@ function seed_properties(type: StructureType) {
  * Seeds all structures of a given type from YAML files,
  * including their related structures and property assignments.
  */
-function seed_structures<Struct extends StructureYaml>(
-	type: StructureType,
-	extra?: (item: Struct) => void,
-) {
+function seed_structures<
+	Struct extends StructureYaml & { source?: string; target?: string },
+>(type: StructureType, extra?: (item: Struct) => void) {
 	const structure_insert = db.prepare(
 		`INSERT INTO structures (
 	        id, type, name, notation, description, nlab_link
 		) VALUES (?, ?, ?, ?, ?, ?)`,
+	)
+
+	const value_insert = db.prepare(
+		`INSERT INTO structure_map_values
+			(map, input, input_type, output, output_type)
+		VALUES (?, ?, ?, ?, ?)`,
 	)
 
 	const tag_insert = db.prepare(
@@ -255,6 +260,13 @@ function seed_structures<Struct extends StructureYaml>(
 			structure.description,
 			structure.nlab_link,
 		)
+
+		for (const map in STRUCTURE_MAPS[type]) {
+			const val = structure[map]
+			if (!val) continue
+			const val_type = STRUCTURE_MAPS[type][map]
+			value_insert.run(map, structure.id, type, val, val_type)
+		}
 
 		for (const tag of structure.tags) {
 			tag_insert.run(structure.id, type, tag)
@@ -322,26 +334,6 @@ function insert_category(category: CategoryYaml) {
 	for (const [type, entry] of Object.entries(category.special_morphisms)) {
 		if (!entry) continue
 		special_morphism_insert.run(category.id, type, entry.description, entry.proof)
-	}
-}
-
-/**
- * Inserts the data of a functor that is only relevant for functors.
- */
-function insert_functor(functor: FunctorYaml) {
-	const value_insert = db.prepare(
-		`INSERT INTO structure_map_values
-			(map, input, input_type, output, output_type)
-		VALUES (?, ?, 'functor', ?, ?)`,
-	)
-
-	// TODO: refactor this using the STRUCTURE_MAPS object
-
-	value_insert.run('source', functor.id, functor.source, 'category')
-	value_insert.run('target', functor.id, functor.target, 'category')
-
-	if (functor.left_adjoint) {
-		value_insert.run('left_adjoint', functor.id, functor.left_adjoint, 'functor')
 	}
 }
 
