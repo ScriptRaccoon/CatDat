@@ -168,5 +168,6 @@
 	"effective cocongruences": false,
 	"locally finite": false,
 	"Barr-coexact": false,
-	"Barr-exact": false
+	"Barr-exact": false,
+	"pretopos": false
 }

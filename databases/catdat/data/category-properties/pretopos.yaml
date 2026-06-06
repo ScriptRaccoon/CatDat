@@ -1,0 +1,11 @@
+id: pretopos
+relation: is a
+description: A <i>pretopos</i> is a category which is Barr-exact and extensive.
+nlab_link: https://ncatlab.org/nlab/show/pretopos
+invariant_under_equivalences: true
+
+related_properties:
+  - Barr-exact
+  - extensive
+  - elementary topos
+  - mono-regular

@@ -111,6 +111,7 @@
 	"ℵ₂-small coproducts": true,
 	"ℵ₂-small powers": true,
 	"ℵ₂-small copowers": true,
+	"pretopos": true,
 
 	"Grothendieck abelian": false,
 	"Malcev": false,
