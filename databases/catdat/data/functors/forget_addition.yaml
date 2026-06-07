@@ -1,0 +1,58 @@
+id: forget_addition
+name: forgetful functor from rings to monoids
+notation: $U_{\Ring,\Mon}$
+source: Ring
+target: Mon
+description: This functor maps a ring to its underlying multiplicative monoid, which as "forgotten" the addition of the ring.
+nlab_link: https://ncatlab.org/nlab/show/forgetful+functor
+left_adjoint: monoid_ring
+
+tags:
+  - algebra
+  - forgetful
+
+related_functors:
+  - forget_ring
+
+satisfied_properties:
+  - property: right adjoint
+    proof: The monoid ring functor $\Mon \to \Ring$, $M \mapsto \IZ[M]$ is left adjoint to $U_{\Ring,\Mon}$.
+
+  - property: conservative
+    proof: 'This is because even the composition $U_{\Mon} \circ U_{\Ring,\Mon} : \Ring \to \Set$, namely the forgetful functor $U_{\Ring} : \Ring \to \Set$, is conservative.'
+
+  - property: finitary
+    proof: 'Since the forgetful functor $U_{\Mon} : \Mon \to \Set$ is finitary and conservative, it suffices to prove that the composition $U_{\Mon} \circ U_{\Ring,\Mon} : \Ring \to \Set$ is finitary. This is just the forgetful functor $U_{\Ring} : \Ring \to \Set$ and is therefore finitary.'
+
+  - property: preserves reflexive coequalizers
+    proof: 'Since the forgetful functor $U_{\Mon} : \Mon \to \Set$ preserves reflexive coequalizers (by Theorem 2.5 at the <a href="https://ncatlab.org/nlab/show/reflexive+coequalizer" target="_blank">nLab</a>) and is conservative, it suffices to prove that the composition $U_{\Mon} \circ U_{\Ring,\Mon} : \Ring \to \Set$ preserves reflexive coequalizers. This is just the forgetful functor $U_{\Ring} : \Ring \to \Set$ and therefore preserves reflexive coequalizers (by loc.cit.).'
+
+  - property: preserves epimorphisms
+    proof: This follows from <a href="https://en.wikipedia.org/wiki/Isbell's_zigzag_theorem" target="_blank">Isbell's zigzag theorem</a>.
+
+unsatisfied_properties:
+  - property: preserves initial objects
+    proof: The initial object in $\Ring$ is $\IZ$, but the initial object in $\Mon$ is the trivial monoid.
+
+  - property: full
+    proof: The map $\IZ \to \IZ$, $z \mapsto 1$ is compatible with multiplication, but not with addition.
+
+  - property: essentially surjective
+    proof: 'A necessary condition for a monoid to be the multiplicative monoid of a ring is that it has an <a href="https://en.wikipedia.org/wiki/Absorbing_element" target="_blank">absorbing element</a>. Thus, for example, $(\IN,+,0)$ is not contained in the essential image. Remark: even a monoid with an absorbing element does not necessarily come from a ring; see <a href="https://math.stackexchange.com/questions/3075364" target="_blank">MSE/3075364</a>.'
+
+  - property: preserves coequalizers
+    proof: >-
+      Consider the two homomorphisms $f,g : \IZ[X] \rightrightarrows \IZ[X]$ defined by $f(X) = X^2$ and $g(X) = 0$. Their coequalizer is the ring $\IZ[X] / \langle X^2 \rangle$. In particular, it identifies $X^2 + X$ and $X$. We will prove that the coequalizer of $U(f), U(g) : U(\IZ[X]) \rightrightarrows U(\IZ[X])$ in $\Mon$ does not identify these elements.
+
+
+      The coequalizer in $\Mon$ is the quotient of $U(\IZ[X])$ by the smallest congruence relation satisfying $p(X^2) \sim p(0)$. Thus, two polynomials $f,g$ are equivalent iff there is a finite sequence
+      $$f = f_0,f_1,\dotsc,f_n = g$$
+      where for each index $i$ we have
+      $$\{f_i,f_{i+1}\} = \{p(X^2) q(X), p(0) q(X)\}$$
+      for some polynomials $p,q$ (that depend on the index).
+
+
+      Let $v : \IZ[X] \to \IN \cup \{\infty\}$ denote the $X$-adic valuation, returning the exponent of the largest power of $X$ dividing a polynomial. We claim that if $v(f)=1$ and $f \sim g$, then $v(g)=1$, and in that case $f/g \in \IQ(X^2)$. In fact, consider a step in the sequence $\{f_i,f_{i+1}\} = \{p(X^2) q(X), p(0) q(X)\}$ as above. If $p(0)=0$, then $p(0) q(X) = 0$ has valuation $\infty$, and $p(X^2) q(X)$ has valuation $\geq 2$. If $p(0) \neq 0$, then the valuations of $p(X^2) q(X)$ and $p(0) q(X)$ both equal the valuation of $q(X)$. Therefore, $v(f_i)=1 \iff v(f_{i+1})=1$. Moreover, in that case the ratio $f_i / f_{i+1}$ is either $p(X^2) / p(0)$ (which is well-defined) or $p(0) / p(X^2)$, both of which lie in $\IQ(X^2)$. From this, the claim follows.
+
+
+      Now we can conclude that $X^2+X$ and $X$ are not equivalent: both have valuation $1$, but their quotient is $X+1$, which is not contained in $\IQ(X^2)$.

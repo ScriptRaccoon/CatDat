@@ -255,6 +255,7 @@
 		"subobjects",
 		"subposet",
 		"subproset",
+		"subring",
 		"subscheme",
 		"subsemigroup",
 		"subsheaf",

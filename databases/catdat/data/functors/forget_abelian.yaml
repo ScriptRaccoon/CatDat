@@ -32,7 +32,7 @@ satisfied_properties:
     proof: 'This follows from the concrete construction of coequalizers, but it can also be proven as follows: Assume that $f,g : A \rightrightarrows B$ have coequalizer $p : B \to C$ in $\Ab$. If $G$ is any group and $h : B \to G$ is a homomorphism with $hf = hg$, consider the image factorization $h = i h''$ of $h$. We have $h'' f = h'' g$, and the image $\im(h)$ is abelian. Hence, there is a unique homomorphism $k : C \to \im(h)$ with $kp = h''$. Hence, $ik : C \to G$ satisfies $ikp = h$. Uniqueness follows since we already know that the forgetful functor is preserves epimorphisms.'
 
   - property: finitary
-    proof: 'Since the forgetful functor $U_{\Grp} : \Grp \to \Set$ is finitary and conservative, it suffices to prove that the composition $U_{\Ab,\Grp} \circ U_{\Grp} : \Ab \to \Set$ is finitary. This is just the forgetful functor $U_{\Ab} : \Ab \to \Set$ and therefore finitary.'
+    proof: 'Since the forgetful functor $U_{\Grp} : \Grp \to \Set$ is finitary and conservative, it suffices to prove that the composition $U_{\Grp} \circ U_{\Ab,\Grp} : \Ab \to \Set$ is finitary. This is just the forgetful functor $U_{\Ab} : \Ab \to \Set$ and therefore finitary.'
 
 unsatisfied_properties:
   - property: preserves finite coproducts

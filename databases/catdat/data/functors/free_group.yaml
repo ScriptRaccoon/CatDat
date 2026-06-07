@@ -10,7 +10,9 @@ tags:
   - algebra
   - free
 
-related_functors: []
+related_functors:
+  - monoid_ring
+  - enveloping_group
 
 satisfied_properties:
   - property: left adjoint

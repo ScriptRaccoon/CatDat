@@ -1,0 +1,43 @@
+id: monoid_ring
+name: monoid ring functor
+notation: $\IZ[-]$
+source: Mon
+target: Ring
+description: This functor maps a monoid $M$ to the monoid ring $\IZ[M]$, which consists of finite sums of elements in $M$.
+nlab_link: https://ncatlab.org/nlab/show/group+algebra
+
+tags:
+  - algebra
+  - free
+
+related_functors:
+  - free_group
+
+satisfied_properties:
+  - property: left adjoint
+    proof: 'This functor is left adjoint to the forgetful functor $U_{\Ring,\Mon} : \Ring \to \Mon$, which maps a ring to its underlying multiplicative monoid.'
+
+  - property: conservative
+    proof: 'Assume that $f : M \to N$ is a homomorphism of monoids such that the induced ring homomorphism $\IZ[f] : \IZ[M] \to \IZ[N]$ is bijective. Since the natural map $N \to \IZ[N]$ is injective, it follows immediately that $f$ is injective. Now let $n \in N$ and choose a preimage $\sum_m z_m \cdot m$ in $\IZ[M]$. Thus, $n = \sum_m z_m \cdot f(m)$. If $f(m) \neq n$ for all $m$, this would contradict the linear independence of $N$ in $\IZ[N]$. Thus, $n$ lies in the image of $f$.'
+
+  - property: preserves monomorphisms
+    proof: 'Let $f : M \to N$ be an injective monoid homomorphism. To show that the ring homomorphism $\IZ[f] : \IZ[M] \to \IZ[N]$ is injective, take an element in the kernel, say $\sum_{m \in M} z_m \cdot m$. Then $\sum_{m \in M} z_m \cdot f(m) = 0$ in $\IZ[N]$. Since the $f(m) \in N$ are pairwise distinct and linearly independent over $\IZ$, it follows that $z_m = 0$ for every $m \in M$, proving the claim.'
+
+  - property: preserves coreflexive equalizers
+    proof: 'Let $f,g : M \rightrightarrows N$ be homomorphisms of monoids with a common retraction $r : N \to M$, i.e. $r f = r g = \id_M$. Let $E = \{m \in M : f(m) = g(m)\}$ be the equalizer of $f$ and $g$. Consider an element $x \in \IZ[M]$ that is equalized by $\IZ[f], \IZ[g]$; we need to show that $x \in \IZ[E]$ (which is a subring of $\IZ[M]$, as we have seen before). Write $x = \sum_m z_m \cdot m$. Then $\sum_m z_m \cdot f(m) = \sum_m z_m \cdot g(m)$. If $n \in N$, comparing coefficients on both sides shows that $\sum_{m \in f^*(n)} z_m = \sum_{m \in g^*(n)} z_m$ in $\IZ$. Since $f$ and $g$ are injective, the fibers have at most one element. Now let $m \in M$ with $z_m \neq 0$. Let $n \coloneqq f(m)$. By the coefficient equation above, we deduce that $g^*(n)$ must be non-empty. Choose $m'' \in M$ with $g(m'') = n$. By applying $r$ to $f(m) = g(m'')$, we get $m = m''$. Thus, $m \in E$. This shows that $x \in \IZ[E]$.'
+
+unsatisfied_properties:
+  - property: full
+    proof: Take $M = \langle X \rangle$ and $N = \{1\}$, the free monoids of ranks $1$ and $0$, respectively. Their monoid rings are $\IZ[X]$ (the polynomial ring) and $\IZ$. The only ring homomorphism $\IZ[X] \to \IZ$ in the image of the functor is $X \mapsto 1$. But there are many more, such as $X \mapsto 0$.
+
+  - property: essentially surjective
+    proof: Every monoid ring is torsion-free (in fact, the underlying additive group is free abelian), so the ring $\IZ/2$ is not contained in the essential image.
+
+  - property: preserves terminal objects
+    proof: The monoid ring of the trivial monoid is the ring $\IZ$, which is not the zero ring.
+
+  - property: preserves equalizers
+    proof: 'Consider the free monoids $M = \langle a,b \rangle$, $N = \langle c \rangle$ and the homomorphisms $f,g : M \rightrightarrows N$ defined by $f(a)=c$, $f(b)=1$ and $g(a)=1$, $g(b)=c$. Then $a$ and $b$ are not contained in the equalizer $E$ of $f$ and $g$. More generally, $E$ contains exactly the words in $a,b$ in which $a$ and $b$ occur the same number of times. The element $a+b \in \IZ[M]$ is equalized by $\IZ[f], \IZ[g]$ since $\IZ[f]$ maps it to $c+1$, while $\IZ[g]$ maps it to $1+c$. But it is not contained in $\IZ[E]$.'
+
+  - property: cofinitary
+    proof: 'Consider the homomorphisms of commutative additive monoids $\IN^{n+1} \to \IN^n$ defined by $(k_1,\dotsc,k_{n+1}) \mapsto (k_1,\dotsc,k_n)$ for $n \geq 1$. Their limit is the power $\IN^\omega$. The natural ring homomorphism $\alpha : \IZ[\IN^\omega] \to \lim_n \IZ[\IN^n]$ is not surjective: The ring $\IZ[\IN^n]$ identifies with the polynomial ring $\IZ[X_1,\dotsc,X_n]$, and the transition maps are given by $X_{n+1} \mapsto 1$. The ring $\IZ[\IN^\omega]$ can be seen as a variant of the polynomial ring $\IZ[X_1,X_2,\dotsc]$ in which monomials are allowed to contain infinitely many variables, but a polynomial is still just a finite linear combination of such monomials. The homomorphism $\alpha$ inserts $1$ in the unused variables: $\alpha(X_1^{k_1} X_2^{k_2} \cdots)_n = X_1^{k_1} X_2^{k_2} \cdots X_n^{k_n}$. For every element in the image of $\alpha$ there is some $N \in \IN$ such that every entry in $\IZ[X_1,\dotsc,X_n]$ is a sum of at most $N$ monomials. Now consider the element $f \in \lim_n \IZ[X_1,\dotsc,X_n]$ defined by $f_n = \sum_{i=1}^n (X_i - 1)$. It is indeed contained in the limit, since $X_{n+1} \mapsto 1$ turns $f_{n+1}$ into $f_n$. Since $f_n$ is a sum of $n+1$ monomials, $f$ is not contained in the image of $\alpha$.'

@@ -13,6 +13,7 @@ tags:
 related_functors:
   - forget_group
   - forget_vector
+  - forget_addition
 
 satisfied_properties:
   - property: representable
