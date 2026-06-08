@@ -1,4 +1,3 @@
-import sql from 'sql-template-tag'
 import { query } from '$lib/server/db.catdat'
 import { is_subset } from './utils'
 import type { SqliteError } from 'better-sqlite3'
@@ -110,28 +109,34 @@ function build_shortest_proof(
 	return proof
 }
 
-export function get_missing_combinations() {
-	const { implications, err: err_imp } = get_normalized_implications('category')
+export function get_missing_combinations(type: StructureType) {
+	const { implications, err: err_imp } = get_normalized_implications(type)
 
 	if (err_imp) return { err: err_imp, missing_combinations: [] }
 
 	const { rows: properties, err } = query<{
 		id: string
 		dual_property_id: string | null
-	}>(sql`SELECT id, dual_property_id FROM category_properties ORDER BY lower(id)`)
+	}>({
+		sql: `SELECT id, dual_property_id FROM ${type}_properties ORDER BY lower(id)`,
+		values: [],
+	})
 
 	if (err) return { err, missing_combinations: [] }
 
 	const { rows: existing, err: err_existing } = query<{
 		p: string
 		q: string
-	}>(sql`
-		SELECT DISTINCT cp.property_id AS p, cnp.property_id AS q
-		FROM category_property_assignments cp
-		INNER JOIN category_property_assignments cnp
-		ON cp.category_id = cnp.category_id
-		WHERE cp.is_satisfied = TRUE AND cnp.is_satisfied = FALSE
-	`)
+	}>({
+		sql: `
+		SELECT DISTINCT a.property_id AS p, an.property_id AS q
+		FROM ${type}_property_assignments a
+		INNER JOIN ${type}_property_assignments an
+		ON a.${type}_id = an.${type}_id
+		WHERE a.is_satisfied = TRUE AND an.is_satisfied = FALSE
+	`,
+		values: [],
+	})
 
 	if (err_existing) return { err: err_existing, missing_combinations: [] }
 

@@ -125,21 +125,51 @@
 	<h3>Missing category combinations</h3>
 
 	<p class="hint">
-		Among the consistent combinations of the form p &and; &not;q, the following are
-		not yet witnessed by a category in the database or its dual category. If some of
-		these combinations <i>are</i>
+		Among the consistent category combinations of the form p &and; &not;q, the
+		following are not yet witnessed by a category in the database or its dual
+		category. If some of these combinations <i>are</i>
 		inconsistent, this indicates that some
 		<a href="/category-implications">implication</a> is missing.
 	</p>
 
 	<details>
-		<summary>Show all {data.missing_combinations.length} combinations</summary>
+		<summary>
+			Show all {data.missing_category_combinations.length} combinations
+		</summary>
 
 		<ul class="combinations with-margins">
-			{#each data.missing_combinations as [p, q]}
+			{#each data.missing_category_combinations as [p, q]}
 				<li class="combination">
 					<a href={get_property_url(p, 'category')}>{p}</a> &and; &not;<a
 						href={get_property_url(q, 'category')}>{q}</a
+					>
+				</li>
+			{/each}
+		</ul>
+	</details>
+</section>
+
+<section>
+	<h3>Missing functor combinations</h3>
+
+	<p class="hint">
+		Among the consistent functor combinations of the form p &and; &not;q, the
+		following are not yet witnessed by a functor in the database or its dual functor.
+		If some of these combinations <i>are</i>
+		inconsistent, this indicates that some
+		<a href="/functor-implications">implication</a> is missing.
+	</p>
+
+	<details>
+		<summary>
+			Show all {data.missing_functor_combinations.length} combinations
+		</summary>
+
+		<ul class="combinations with-margins">
+			{#each data.missing_functor_combinations as [p, q]}
+				<li class="combination">
+					<a href={get_property_url(p, 'functor')}>{p}</a> &and; &not;<a
+						href={get_property_url(q, 'functor')}>{q}</a
 					>
 				</li>
 			{/each}
