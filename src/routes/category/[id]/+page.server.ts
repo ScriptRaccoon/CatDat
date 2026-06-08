@@ -42,8 +42,8 @@ export const load = async (event) => {
 				c.description,
 				c.nlab_link,
 				c.dual_category_id,
-				d.name as dual_category_name,
-				d.notation as dual_category_notation
+				d.name AS dual_category_name,
+				d.notation AS dual_category_notation
 			FROM categories c
 			LEFT JOIN categories d ON d.id = c.dual_category_id
 			WHERE c.id = ${id}

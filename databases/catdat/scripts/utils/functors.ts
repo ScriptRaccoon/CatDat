@@ -26,34 +26,40 @@ type NormalizedFunctorImplication = {
  */
 export function get_functors(db: Database): FunctorMeta[] {
 	const rows = db
-		.prepare(
+		.prepare<
+			never[],
+			{
+				id: string
+				name: string
+				source: string
+				target: string
+				source_props: string
+				target_props: string
+			}
+		>(
 			`SELECT
-				id, name, source, target,
+				id,
+				name,
+				source,
+				target,
 				(
 					SELECT json_group_array(property_id) FROM (
 						SELECT property_id
 						FROM category_property_assignments
 						WHERE category_id = source AND is_satisfied = TRUE
 					)
-				) as source_props,
+				) AS source_props,
 				(
 					SELECT json_group_array(property_id) FROM (
 						SELECT property_id
 						FROM category_property_assignments
 						WHERE category_id = target AND is_satisfied = TRUE
 					)
-				) as target_props
+				) AS target_props
 			FROM functors
 			ORDER BY lower(name)`,
 		)
-		.all() as {
-		id: string
-		name: string
-		source: string
-		target: string
-		source_props: string
-		target_props: string
-	}[]
+		.all()
 
 	return rows.map((row) => ({
 		id: row.id,
@@ -78,20 +84,23 @@ export function get_normalized_functor_implications(
 	db: Database,
 ): NormalizedFunctorImplication[] {
 	const all_implications_db = db
-		.prepare(
+		.prepare<
+			never[],
+			{
+				id: string
+				assumptions: string
+				source_assumptions: string
+				target_assumptions: string
+				conclusions: string
+				is_equivalence: 0 | 1
+			}
+		>(
 			`SELECT
                 id, assumptions, source_assumptions, target_assumptions,
 				conclusions, is_equivalence
 			FROM functor_implications_view`,
 		)
-		.all() as {
-		id: string
-		assumptions: string
-		source_assumptions: string
-		target_assumptions: string
-		conclusions: string
-		is_equivalence: 0 | 1
-	}[]
+		.all()
 
 	const implications: NormalizedFunctorImplication[] = []
 

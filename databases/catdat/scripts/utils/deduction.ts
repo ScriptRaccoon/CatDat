@@ -55,15 +55,15 @@ export function get_normalized_implications(
  */
 export function get_properties_dict(db: Database, type: StructureType) {
 	const properties = db
-		.prepare(
+		.prepare<never[], PropertyMeta>(
 			`SELECT
-				p.id, p.dual_property_id as dual, p.relation,
+				p.id, p.dual_property_id AS dual, p.relation,
 				r.conditional
 			FROM ${type}_properties p
 			INNER JOIN relations r ON r.relation = p.relation
 			ORDER BY lower(p.id)`,
 		)
-		.all() as PropertyMeta[]
+		.all()
 
 	const dict: Record<string, PropertyMeta> = {}
 
@@ -83,15 +83,21 @@ export function get_property_assignments(
 	type: StructureType,
 ) {
 	const rows = db
-		.prepare(
-			`SELECT property_id, ${type}_id as structure_id, is_satisfied
+		.prepare<
+			never[],
+			{
+				property_id: string
+				structure_id: string
+				is_satisfied: 0 | 1 | null
+			}
+		>(
+			`SELECT
+				property_id,
+				${type}_id AS structure_id,
+				is_satisfied
 			FROM ${type}_property_assignments`,
 		)
-		.all() as {
-		property_id: string
-		structure_id: string
-		is_satisfied: 0 | 1 | null
-	}[]
+		.all()
 
 	const grouped: Record<
 		string,
@@ -133,16 +139,24 @@ export function get_property_assignments_by_deduction(
 	type: StructureType,
 ) {
 	const rows = db
-		.prepare(
-			`SELECT property_id, ${type}_id as structure_id, is_satisfied, is_deduced
-			FROM ${type}_property_assignments WHERE is_satisfied IS NOT NULL`,
+		.prepare<
+			never[],
+			{
+				property_id: string
+				structure_id: string
+				is_satisfied: 0 | 1
+				is_deduced: 0 | 1
+			}
+		>(
+			`SELECT
+				property_id,
+				${type}_id AS structure_id,
+				is_satisfied,
+				is_deduced
+			FROM ${type}_property_assignments
+			WHERE is_satisfied IS NOT NULL`,
 		)
-		.all() as {
-		property_id: string
-		structure_id: string
-		is_satisfied: 0 | 1
-		is_deduced: 0 | 1
-	}[]
+		.all()
 
 	const grouped: Record<
 		string,

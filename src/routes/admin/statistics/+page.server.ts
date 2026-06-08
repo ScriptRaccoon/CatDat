@@ -55,7 +55,7 @@ export const load = async (event) => {
 			`,
 		sql`SELECT
                 country,
-                COUNT(*) as count
+                COUNT(*) AS count
             FROM visits
             GROUP BY country
             ORDER BY count DESC
@@ -63,14 +63,14 @@ export const load = async (event) => {
 			`,
 		sql`SELECT
                 theme,
-                COUNT(*) as count,
+                COUNT(*) AS count,
 				 ROUND(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER (), 1) AS percentage
             FROM visits
             GROUP BY theme
             ORDER BY theme`,
 		sql`SELECT
                 device_type,
-                COUNT(*) as count,
+                COUNT(*) AS count,
 				ROUND(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER (), 1) AS percentage
             FROM visits
             GROUP BY device_type

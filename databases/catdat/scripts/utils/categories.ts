@@ -18,11 +18,11 @@ export type NormalizedCategoryImplication = {
  */
 export function get_categories(db: Database) {
 	return db
-		.prepare(
-			`SELECT id, name, dual_category_id as dual
+		.prepare<never[], CategoryMeta>(
+			`SELECT id, name, dual_category_id AS dual
             FROM categories ORDER BY lower(name)`,
 		)
-		.all() as CategoryMeta[]
+		.all()
 }
 
 /**
@@ -38,16 +38,19 @@ export function get_normalized_category_implications(
 	db: Database,
 ): NormalizedCategoryImplication[] {
 	const all_implications_db = db
-		.prepare(
+		.prepare<
+			never[],
+			{
+				id: string
+				assumptions: string
+				conclusions: string
+				is_equivalence: 0 | 1
+			}
+		>(
 			`SELECT id, assumptions, conclusions, is_equivalence
 			FROM category_implications_view`,
 		)
-		.all() as {
-		id: string
-		assumptions: string
-		conclusions: string
-		is_equivalence: 0 | 1
-	}[]
+		.all()
 
 	const implications: NormalizedCategoryImplication[] = []
 

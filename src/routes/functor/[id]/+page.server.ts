@@ -41,10 +41,10 @@ export const load = async (event) => {
 				f.target,
 				f.description,
 				f.nlab_link,
-                s.name as source_name,
-				t.name as target_name,
-				s.notation as source_notation,
-				t.notation as target_notation
+                s.name AS source_name,
+				t.name AS target_name,
+				s.notation AS source_notation,
+				t.notation AS target_notation
             FROM functors f
             INNER JOIN categories s ON s.id = f.source
             INNER JOIN categories t ON t.id = f.target
