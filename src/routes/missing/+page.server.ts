@@ -11,6 +11,8 @@ export const load = async () => {
 		[
 			StructureShort & { count: number },
 			StructureShort & { count: number },
+			StructureShort & { count: number },
+			StructurePair,
 			StructurePair,
 		]
 	>([
@@ -26,7 +28,19 @@ export const load = async () => {
 			GROUP BY c.id
 			ORDER BY lower(c.name);
 		`,
-		// missing special morphisms
+		// functors with unknown properties
+		sql`
+			SELECT f.id, f.name, COUNT(*) AS count
+			FROM functors f
+			INNER JOIN functor_properties p
+			LEFT JOIN functor_property_assignments fp
+				ON fp.functor_id = f.id
+				AND fp.property_id = p.id
+			WHERE fp.property_id IS NULL
+			GROUP BY f.id
+			ORDER BY lower(f.name);
+		`,
+		// categories with missing special morphisms
 		sql`
 			SELECT c.id, c.name, COUNT(*) AS count
 			FROM categories c
@@ -58,17 +72,43 @@ export const load = async () => {
 			END
 			) = 0;
 		`,
+		// undistinguishable functor pairs
+		sql`
+			SELECT
+				f1.id AS id1, f1.name AS name1,
+				f2.id AS id2, f2.name AS name2
+			FROM functors f1
+			JOIN functors f2
+				ON f1.id < f2.id
+			JOIN functor_properties p
+			LEFT JOIN functor_property_assignments a1
+				ON a1.functor_id = f1.id AND a1.property_id = p.id
+			LEFT JOIN functor_property_assignments a2
+				ON a2.functor_id = f2.id AND a2.property_id = p.id
+			GROUP BY f1.id, f1.name, f2.id, f2.name
+			HAVING SUM(
+			CASE
+				WHEN a1.is_satisfied IS a2.is_satisfied THEN 0
+				ELSE 1
+			END
+			) = 0;
+		`,
 	])
 
 	if (err) error(500, 'Failed to load data')
 
 	const [
 		categories_with_unknown_properties,
+		functors_with_unknown_properties,
 		categories_with_missing_morphisms,
 		undistinguishable_category_pairs,
+		undistinguishable_functor_pairs,
 	] = results
 
-	const total_unknown_pairs = categories_with_unknown_properties.reduce(
+	const total_unknown_category_property_pairs =
+		categories_with_unknown_properties.reduce((total, item) => item.count + total, 0)
+
+	const total_unknown_functor_property_pairs = functors_with_unknown_properties.reduce(
 		(total, item) => item.count + total,
 		0,
 	)
@@ -79,9 +119,12 @@ export const load = async () => {
 
 	return {
 		categories_with_unknown_properties,
-		total_unknown_pairs,
+		total_unknown_category_property_pairs,
+		functors_with_unknown_properties,
+		total_unknown_functor_property_pairs,
 		categories_with_missing_morphisms,
 		undistinguishable_category_pairs,
+		undistinguishable_functor_pairs,
 		missing_combinations,
 	}
 }

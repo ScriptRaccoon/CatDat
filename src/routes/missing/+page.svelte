@@ -24,11 +24,37 @@
 
 	<p class="hint">
 		There are {data.categories_with_unknown_properties.length} categories where at least
-		one property is unknown. In total, there are {data.total_unknown_pairs} unknown (category,
-		property)-pairs.
+		one property is unknown.
+
+		{#if data.total_unknown_category_property_pairs > 0}
+			In total, there are
+			{data.total_unknown_category_property_pairs}
+			unknown (category, property)-pairs.
+		{:else}
+			🎉
+		{/if}
 	</p>
 
 	<StructureList structures={data.categories_with_unknown_properties} type="category" />
+</section>
+
+<section>
+	<h3>Functors with unknown properties</h3>
+
+	<p class="hint">
+		There are {data.functors_with_unknown_properties.length} functors where at least one
+		property is unknown.
+
+		{#if data.functors_with_unknown_properties.length > 0}
+			In total, there are
+			{data.total_unknown_functor_property_pairs}
+			unknown (functor, property)-pairs.
+		{:else}
+			🎉
+		{/if}
+	</p>
+
+	<StructureList structures={data.functors_with_unknown_properties} type="functor" />
 </section>
 
 <section>
@@ -69,8 +95,34 @@
 	</section>
 {/if}
 
+{#if data.undistinguishable_functor_pairs.length > 0}
+	<section>
+		<h3>Undistinguishable functor pairs</h3>
+
+		<p class="hint">
+			There are {data.undistinguishable_functor_pairs.length} pairs of functors that cannot
+			be distinguished by the properties currently recorded in the database. This indicates
+			that the data may be incomplete or that a distinguishing property may be missing.
+		</p>
+
+		<ul class="with-margins">
+			{#each data.undistinguishable_functor_pairs as pair}
+				<li>
+					<a href="/functor/{pair.id1}">
+						{pair.name1}
+					</a>
+					&approx;
+					<a href="/functor/{pair.id2}">
+						{pair.name2}
+					</a>
+				</li>
+			{/each}
+		</ul>
+	</section>
+{/if}
+
 <section>
-	<h3>Missing combinations</h3>
+	<h3>Missing category combinations</h3>
 
 	<p class="hint">
 		Among the consistent combinations of the form p &and; &not;q, the following are
