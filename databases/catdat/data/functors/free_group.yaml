@@ -27,6 +27,9 @@ satisfied_properties:
   - property: preserves coreflexive equalizers
     proof: 'More generally, if $f,g : X \rightrightarrows Y$ are two injective maps with equalizer $E \hookrightarrow X$, then $F(E) \to F(X)$ is the equalizer of $F(f),F(g) : F(X) \rightrightarrows F(Y)$. In fact, we already know that $F(E) \to F(X)$ is injective. Now let $w \in F(X)$ be an element, and write it as a reduced word $w = x_1^{k_1} \cdots x_n^{k_n}$, meaning $x_i \in X$, $x_i \neq x_{i+1}$, $k_i \in \IZ \setminus \{0\}$. Since $f$ is injective, also $f(w) = f(x_1)^{k_1} \cdots f(x_n)^{k_n}$ is a reduced word. The same is true for $g(w)$. Hence, $f(w)=g(w)$ implies $f(x_i)=g(x_i)$ for every $i$, i.e. $x_i \in E$. Therefore, $w \in F(E)$.'
 
+  - property: essentially injective
+    proof: See <a href="https://math.stackexchange.com/questions/35229" target="_blank">MSE/35229</a>.
+
 unsatisfied_properties:
   - property: full
     proof: The homomorphism $F(\{x\}) \to F(\{x\})$, $x \mapsto x^k$ for $k \in \IZ$ provides a counterexample when $k \neq 1$.
@@ -46,3 +49,10 @@ unsatisfied_properties:
       The canonical map $F(L) \to \lim_n F(X_n)$ is not surjective: For $n \geq 0$ define $w_n \in F(X_n)$ by
       $$w_n \coloneqq x_1 y^{-1} \cdots x_n y^{-1}.$$
       Since $X_{n+1} \to X_n$ maps $w_{n+1} \mapsto w_n$, these elements yield a unique element $w \in \lim_n F(X_n)$. Notice that the word length of $w_n$ is unbounded in $n$. However, every element in $F(L)$ is contained already in $F(\{y,x_1,\dotsc,x_m\})$ for some $m$ and hence maps to an element with bounded word length. Hence, $w$ is not contained in the image.
+
+  - property: left-invertible
+    proof: 'Assume that there is a functor $H : \Grp \to \Set$ with $H \circ F \cong \id_\Set$. In particular, $H(1)= \varnothing$. Since for every $G \in \Grp$ there is a homomorphism $G \to 1$, there is a map $H(G) \to H(1) = \varnothing$, which forces $H(G) = \varnothing$. If we apply this to $G = F(X)$ for some non-empty set $X$, we obtain a contradiction.'
+    # TODO: when category_conclusions are integrated, replace this proof with
+    # this more general implication:
+    # if F : C -> D is a left-invertible functor, D has a zero object,
+    # and C has a strict initial object, then C is trivial.

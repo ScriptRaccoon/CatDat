@@ -19,11 +19,14 @@ satisfied_properties:
     proof: The initial object in $\Top^{\op}$ is the singleton space, which is mapped to $\IR$, the initial commutative $\IR$-algebra.
 
 unsatisfied_properties:
+  - property: essentially injective
+    proof: 'If $X,Y$ are non-empty indiscrete spaces, then $C(X) \cong \IR \cong C(Y)$ since every continuous function on $X$ resp. $Y$ is constant.'
+
   - property: essentially surjective
     proof: The algebra $C(X)$ is <a href="https://en.wikipedia.org/wiki/Reduced_ring" target="_blank">reduced</a>, whereas there exist non-reduced algebras such as $\IR[T]/\langle T^2 \rangle$.
 
-  - property: preserves finite coproducts
-    proof: 'The canonical homomorphism $C(X) \otimes_{\IR} C(Y) \to C(X \times Y)$ need not be surjective. For example, for $X = Y = \IR$ one can show that $(x,y) \mapsto \exp(xy)$ is not contained in its image.'
+  - property: faithful
+    proof: 'If $X,Y$ are non-empty indiscrete spaces, there is only one homomorphism of $\IR$-algebras $C(Y) \to C(X)$ (since both are isomorphic to $\IR$), but there can be many maps $X \to Y$.'
 
   - property: full
     proof: >-
@@ -33,8 +36,8 @@ unsatisfied_properties:
       $$u(\beta) \coloneqq \begin{cases} 0 & \beta \leq \alpha \\ 1 & \beta > \alpha \end{cases}$$
       satisfies $\varphi(u) = u(\alpha + 1) \neq u(\alpha)$.
 
-  - property: faithful
-    proof: 'If $X,Y$ are non-empty indiscrete spaces, there is only one homomorphism of $\IR$-algebras $C(Y) \to C(X)$ (since both are isomorphic to $\IR$), but there can be many maps $X \to Y$.'
+  - property: preserves finite coproducts
+    proof: 'The canonical homomorphism $C(X) \otimes_{\IR} C(Y) \to C(X \times Y)$ need not be surjective. For example, for $X = Y = \IR$ one can show that $(x,y) \mapsto \exp(xy)$ is not contained in its image.'
 
   - property: preserves reflexive coequalizers
     proof: 'Let $i : U \hookrightarrow X$ be an open embedding such that there exists a continuous function on $U$ that does not extend to $X$; for example, $i : \IR \setminus \{0\} \hookrightarrow \IR$ together with the continuous function $x \mapsto x^{-1}$. Then $i$ is the equalizer of the two inclusions $X \rightrightarrows X +_U X$, which have common retraction $\nabla : X +_U X \to X$. But $i^* : C(X) \to C(U)$ is not a coequalizer in $\CAlg(\IR)$, since it is not surjective.'

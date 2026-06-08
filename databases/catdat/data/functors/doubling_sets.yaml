@@ -27,6 +27,9 @@ satisfied_properties:
   - property: cofinitary
     proof: The doubling functor can also be written as $X \mapsto \{1,2\} \times X$, from which the claim follows.
 
+  - property: essentially injective
+    proof: Let $X,Y$ be two sets with $X + X \cong Y + Y$. If $X$ is finite, then $X + X$ and hence $Y + Y$ is finite, so that also $Y$ is finite. For the cardinalities we deduce $2 \card(X) = 2 \card(Y)$ and hence $\card(X) = \card(Y)$. This yields $X \cong Y$. If $X$ is infinite, then $Y$ is infinite, and $X \cong X + X \cong Y + Y \cong Y$.
+
 unsatisfied_properties:
   - property: full
     proof: If $X$ is non-empty, the swap $2X \to 2X$ is not induced by a map $X \to X$.
@@ -36,3 +39,15 @@ unsatisfied_properties:
 
   - property: essentially surjective
     proof: The singleton set is not contained in the essential image.
+
+  - property: left-invertible
+    proof: >-
+      Assume that there is a functor $F : \Set \to \Set$ with natural isomorphisms 
+      $$\alpha_X : X \to F(X+X).$$
+      By the Yoneda Lemma, there is some $u \in F(1+1)$ such that $\alpha_X$ is given by
+      $$\alpha_X(x) = F((x;x) : 1+1 \to X + X)(u)$$
+      for $x \in X$. For the involution $\tau_X : X + X \to X + X$ we have $(x;x) = \tau_X \circ (x;x)$. Since $\alpha_X$ is surjective, it follows that $F(\tau_X) : F(X+X) \to F(X+X)$ is the identity. The inclusions $\iota_1,\iota_2 : X \to X + X$ satisfy $\tau_X \circ \iota_1 = \iota_2$, so that $F(\iota_1) = F(\iota_2)$.
+
+      Now let $f : X \to X$ be any endomorphism. It induces a map $\tilde{f} : X + X \to X$ defined by $\tilde{f} \circ \iota_1 = \id_X$ and $\tilde{f} \circ \iota_2 = f$. Thus, $F(\iota_1) = F(\iota_2)$ implies
+      $$F(f) = F(\tilde{f} \circ \iota_2) = F(\tilde{f} \circ \iota_1) = F(\id_X) = \id_{F(X)}.$$
+      In particular, for every endomorphism $f : X \to X$, the induced endomorphism $F(f+f) : F(X+X) \to F(X+X)$ is the identity. By using naturality of $\alpha_X$, it follows that $f$ is the identity, which is absurd.

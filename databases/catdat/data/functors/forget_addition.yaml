@@ -34,8 +34,8 @@ unsatisfied_properties:
   - property: preserves initial objects
     proof: The initial object in $\Ring$ is $\IZ$, but the initial object in $\Mon$ is the trivial monoid.
 
-  - property: full
-    proof: The map $\IZ \to \IZ$, $z \mapsto 1$ is compatible with multiplication, but not with addition.
+  - property: essentially injective
+    proof: See <a href="https://math.stackexchange.com/questions/4054295" target="_blank">MSE/4054295</a> for a collection of counterexamples.
 
   - property: essentially surjective
     proof: 'A necessary condition for a monoid to be the multiplicative monoid of a ring is that it has an <a href="https://en.wikipedia.org/wiki/Absorbing_element" target="_blank">absorbing element</a>. Thus, for example, $(\IN,+,0)$ is not contained in the essential image. Remark: even a monoid with an absorbing element does not necessarily come from a ring; see <a href="https://math.stackexchange.com/questions/3075364" target="_blank">MSE/3075364</a>.'

@@ -14,7 +14,7 @@ related_functors:
   - id_Set
 
 satisfied_properties:
-  - property: conservative
+  - property: left-invertible
     proof: This follows from $p_1 \circ \Delta = \id_\Set$.
 
   - property: left adjoint

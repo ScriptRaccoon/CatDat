@@ -34,14 +34,17 @@ satisfied_properties:
       Surjectivity: Assume we have a $p$-torsion element in $\colim_i A_i$. It has a preimage in some $A_i$. When we multiply it with $p$, it becomes zero in the colimit. This means that there exists some $i \to j$ such that this multiple becomes zero in $A_j$. Therefore, the image in $A_j$ is a $p$-torsion element. It provides the desired preimage.
 
 unsatisfied_properties:
+  - property: essentially injective
+    proof: 'We have $T_p(\IZ) = 0 = T_p(0)$, but $\IZ \not\cong 0$.'
+
+  - property: essentially surjective
+    proof: The essential image consists precisely of the elementary abelian $p$-groups, equivalently, the vector spaces over $\IF_p$. For example, $\IZ$ is not contained in it.
+
   - property: faithful
     proof: 'We have $T_p(\IZ) = 0$, but $\IZ \not\cong 0$. Thus, faithfulness is failing for $0, \id_{\IZ} : \IZ \rightrightarrows \IZ$.'
 
   - property: full
     proof: 'The canonical map from $\Hom(\IZ/p^2,\IZ/p)$ to $\Hom(T_p(\IZ/p^2),T_p(\IZ/p)) = \Hom(p \IZ/p^2, \IZ/p)$ is not surjective: The homomorphism $[p] \mapsto [1]$ is not contained in its image.'
-
-  - property: essentially surjective
-    proof: The essential image consists precisely of the elementary abelian $p$-groups, equivalently, the vector spaces over $\IF_p$. For example, $\IZ$ is not contained in it.
 
   - property: preserves epimorphisms
     proof: The surjective homomorphism $\IZ \to \IZ/p$ is mapped to the homomorphism $0 \to \IZ/p$, which is not surjective.

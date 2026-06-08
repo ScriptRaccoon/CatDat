@@ -35,6 +35,9 @@ satisfied_properties:
       It is straightforward to check that it is inverse to $\alpha$ by arguing with the generators in both groups.
 
 unsatisfied_properties:
+  - property: essentially injective
+    proof: The enveloping group of any monoid with an absorbing element is trivial.
+
   - property: faithful
     proof: 'Take any non-trivial monoid $M$ with an absorbing element, such as $(\IN,\cdot,1)$. Its enveloping group is trivial. Hence, $\id_M,1 : M \rightrightarrows M$ provide a counterexample.'
 

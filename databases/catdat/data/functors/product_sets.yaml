@@ -42,5 +42,8 @@ unsatisfied_properties:
   - property: faithful
     proof: 'If $f,g : A \rightrightarrows B$ are two maps, we always have $f \times \id_{\varnothing} = g \times \id_{\varnothing} : A \times \varnothing \rightrightarrows B \times \varnothing$.'
 
+  - property: essentially injective
+    proof: Both $(1,0)$ and $(0,1)$ are mapped to $0$.
+
   - property: preserves coequalizers
     proof: 'Since the diagonal functor $\Delta : \Set \to \Set \times \Set$ preserves coequalizers (in fact, all colimits), it would follow that the composition $\Set \to \Set$, $X \mapsto X^2$ preserves coequalizers. But this is the <a href="/functor/squaring_sets">squaring functor</a>, from we already know that it does not preserve coequalizers.'

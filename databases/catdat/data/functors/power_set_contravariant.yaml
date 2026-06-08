@@ -67,3 +67,11 @@ unsatisfied_properties:
 
   - property: finitary
     proof: Consider the sequence of truncation maps $\cdots \twoheadrightarrow \{0,1\}^2 \twoheadrightarrow \{0,1\}^1$. Its limit in $\Set$ (i.e. colimit in $\Set^{\op}$) is $\{0,1\}^{\IN}$, which is uncountable, so that $P(\{0,1\}^{\IN})$ is also uncountable. But the colimit of the induced diagram $P(\{0,1\}^1) \hookrightarrow P(\{0,1\}^2) \hookrightarrow \cdots$ is countable since each set $P(\{0,1\}^n)$ is finite.
+
+  - property: left-invertible
+    proof: 'Assume for a contradiction that there is a functor $F : \Set \to \Set^{\op}$ with (natural) isomorphisms $X \cong F(P(X))$. For any non-empty set $X$ there is a map $1 \to X$, which yields a map $F(X) \to F(1)$. Since $F(1) \cong F(P(0)) \cong 0$ is empty, it follows that also $F(X)$ is empty. Since this holds for every non-empty set, it also follows that $X \cong F(P(X)) \cong 0$, which is a contradiction.'
+
+undecidable_properties:
+  - property: essentially injective
+    proof: >-
+      The property $P(X) \cong P(Y) \implies X \cong Y$ is undecidable in ZFC. It holds when the generalized continuum hypothesis is true, but it can fail otherwise. A more precise result is given by <a href="https://en.wikipedia.org/wiki/Easton's_theorem" target="_blank">Easton's Theorem</a>. See also <a href="https://mathoverflow.net/questions/17152" target="_blank">MO/17152</a>.

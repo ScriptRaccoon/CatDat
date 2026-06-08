@@ -29,6 +29,12 @@ satisfied_properties:
 unsatisfied_properties:
   - property: full
     proof: Take $M = \langle X \rangle$ and $N = \{1\}$, the free monoids of ranks $1$ and $0$, respectively. Their monoid rings are $\IZ[X]$ (the polynomial ring) and $\IZ$. The only ring homomorphism $\IZ[X] \to \IZ$ in the image of the functor is $X \mapsto 1$. But there are many more, such as $X \mapsto 0$.
+    check_redundancy: false
+
+  - property: essentially injective
+    proof: See <a href="https://math.stackexchange.com/questions/5139806" target="_blank">MSE/5139806</a>.
+    # use this proof when group rings are added.
+    # proof: There are finite non-isomorphic groups whose group rings are isomorphic. The first example has been constructed by M. Hertweck, <a href="https://doi.org/10.2307/3062112" target="_blank">A Counterexample to the Isomorphism Problem for Integral Group Rings</a>.
 
   - property: essentially surjective
     proof: Every monoid ring is torsion-free (in fact, the underlying additive group is free abelian), so the ring $\IZ/2$ is not contained in the essential image.

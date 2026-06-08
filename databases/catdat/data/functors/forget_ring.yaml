@@ -29,7 +29,7 @@ satisfied_properties:
     proof: This follows from Theorem 2.5 at the <a href="https://ncatlab.org/nlab/show/reflexive+coequalizer" target="_blank">nLab</a>.
 
 unsatisfied_properties:
-  - property: full
+  - property: essentially injective
     proof: This is trivial.
 
   - property: essentially surjective

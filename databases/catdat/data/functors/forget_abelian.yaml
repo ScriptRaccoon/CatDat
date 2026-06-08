@@ -19,11 +19,11 @@ satisfied_properties:
   - property: full
     proof: This is trivial.
 
-  - property: faithful
-    proof: This is trivial.
-
   - property: right adjoint
-    proof: The abelianization functor is left adjoint to this forgetful functor.
+    proof: The abelianization functor $\Grp \to \Ab$, $G \mapsto G^{\ab}$ provides a left adjoint.
+
+  - property: left-invertible
+    proof: The abelianization functor $\Grp \to \Ab$, $G \mapsto G^{\ab}$ provides a left inverse.
 
   - property: preserves initial objects
     proof: The trivial group is initial in both $\Ab$ and $\Grp$.

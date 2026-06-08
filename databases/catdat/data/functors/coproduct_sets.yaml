@@ -34,3 +34,6 @@ satisfied_properties:
 unsatisfied_properties:
   - property: preserves terminal objects
     proof: This is obvious.
+
+  - property: essentially injective
+    proof: Both $(1,0)$ and $(0,1)$ are mapped to $1$.

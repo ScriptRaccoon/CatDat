@@ -28,11 +28,11 @@ satisfied_properties:
     proof: We have $\Hom(\IN \times X,Y) \cong \Hom(X,Y^{\IN})$.
 
 unsatisfied_properties:
-  - property: full
-    proof: If $X$ is non-empty, the map $\IN \times X \to \IN \times X$, $(n,x) \mapsto (n+1,x)$ is not induced by a map $X \to X$.
-
   - property: preserves terminal objects
     proof: We have $\IN \times 1 \cong \IN \not\cong 1$.
 
   - property: essentially surjective
     proof: A non-empty finite set is not contained in the essential image.
+
+  - property: essentially injective
+    proof: For any two non-empty finite sets $X,Y$ there is a bijection $\IN \times X \cong \IN \cong \IN \times Y$, so this does not imply $X \cong Y$.

@@ -39,6 +39,9 @@ satisfied_properties:
       which shows that $1 = y_1 x_n$ in $M_k$. Combined with $x_n y_1 = 1$, this shows that $x_n$ is a unit as well.
 
 unsatisfied_properties:
+  - property: essentially injective
+    proof: If $M$ is the free monoid on one generator (i.e. $\IN$ w.r.t. addition), then $M^{\times}$ is trivial, just as the group of units of the trivial monoid, but $M$ is not trivial.
+
   - property: faithful
     proof: If $M$ is the free monoid on one generator (i.e. $\IN$ w.r.t. addition), then $M^{\times}$ is trivial, but $M$ is not. Hence, the identity $M \to M$ and the trivial homomorphism $M \to M$ have the same image under the functor, but they are not equal.
 

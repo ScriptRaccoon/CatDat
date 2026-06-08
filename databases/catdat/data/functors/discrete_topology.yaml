@@ -16,10 +16,10 @@ satisfied_properties:
   - property: left adjoint
     proof: 'This functor is left adjoint to the forgetful functor $U_{\Top} : \Top \to \Set$.'
 
-  - property: full
-    proof: This is trivial.
+  - property: left-invertible
+    proof: The forgetful functor provides a left inverse.
 
-  - property: faithful
+  - property: full
     proof: This is trivial.
 
   - property: preserves finite products

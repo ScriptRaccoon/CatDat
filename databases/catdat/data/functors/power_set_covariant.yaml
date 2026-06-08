@@ -62,3 +62,18 @@ unsatisfied_properties:
 
   - property: cofinitary
     proof: 'The canonical map $P(\lim_i X_i) \to \lim_i P(X_i)$ is typically not injective already for cardinality reasons: Consider for example the sequential diagram $X_n \coloneqq \{0,1\}^n$ with the truncation maps $X_{n+1} \to X_n$. The limit is $\{0,1\}^{\IN}$ with cardinality $c \coloneqq 2^{\aleph_0}$, so that its power set has cardinality $2^c$. However, the limit of the power sets $P(X_n)$ is a subset of a countable product of finite sets, hence has cardinality $\leq c$, which is strictly smaller than $2^c$.'
+
+  - property: left-invertible
+    proof: >-
+      Assume that there is a functor $F : \Set \to \Set$ with natural isomorphisms
+      $$\alpha_X : X \to F(P(X)).$$
+      By the Yoneda Lemma, there is some element $u \in F(P(1))$ (where $1$ is the singleton set as usual) such that $\alpha_X$ is given by
+      $$\alpha_X(x) = F(P(x : 1 \to X))(u).$$
+      The map $P(x) : P(1) \to P(X)$ is given by $\varnothing \mapsto \varnothing$ and $1 \mapsto \{x\}$. It factors through the map $e : X + 1 \to P(X)$ which maps $a \in X$ to $\{a\}$ and the unique element of $1$ to $\varnothing$. Since $\alpha_X$ is surjective, it follows that also $F(e) : F(X + 1) \to F(P(X))$ is surjective. Since $e$ is a split monomorphism, also $F(e)$ is a split monomorphism. Hence, $F(e)$ must be an isomorphism. But then $F(X+1) \cong F(P(X)) \cong X$ for all sets $X$. If $X$ is a finite non-empty set, we conclude $\card(F(X)) = \card(X) - 1$. But then
+      $$\card(X) = \card(F(P(X))) = \card(P(X)) - 1 = 2^{\card(X)} - 1$$
+      yields a contradiction when $\card(X) > 1$.
+
+undecidable_properties:
+  - property: essentially injective
+    proof: >-
+      The property $P(X) \cong P(Y) \implies X \cong Y$ is undecidable in ZFC. It holds when the generalized continuum hypothesis is true, but it can fail otherwise. A more precise result is given by <a href="https://en.wikipedia.org/wiki/Easton's_theorem" target="_blank">Easton's Theorem</a>. See also <a href="https://mathoverflow.net/questions/17152" target="_blank">MO/17152</a>.

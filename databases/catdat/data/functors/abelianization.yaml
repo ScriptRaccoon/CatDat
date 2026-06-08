@@ -23,6 +23,9 @@ satisfied_properties:
     proof: See <a href="https://mathoverflow.net/questions/386144">MO/386144</a>.
 
 unsatisfied_properties:
+  - property: essentially injective
+    proof: The abelianizations of $S_3$ and $C_2$ are both isomorphic to $C_2$.
+
   - property: faithful
     proof: Both the inclusion $A_3 \hookrightarrow S_3$ and the trivial homomorphism $A_3 \to S_3$ are mapped to the trivial homomorphism $A_3 \to 1$.
 

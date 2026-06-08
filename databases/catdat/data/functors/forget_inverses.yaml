@@ -15,9 +15,6 @@ related_functors:
   - forget_abelian
 
 satisfied_properties:
-  - property: faithful
-    proof: This is trivial.
-
   - property: full
     proof: It is a standard fact from group theory that a multiplicative map already preserves inverses.
 
@@ -26,6 +23,9 @@ satisfied_properties:
 
   - property: left adjoint
     proof: 'This functor is left adjoint to the functor $(-)^{\times} : \Mon \to \Grp$ that sends a monoid $M$ to its group of units $M^{\times} \coloneqq \{(a,b) \in M^2 : ab = ba = 1 \}$. In fact, if $M$ is a monoid and $G$ is a group, there is a bijection $\Hom(U_{\Grp,\Mon}(G),M) \to \Hom(G,M^{\times})$ given by mapping $\varphi$ to $g \mapsto (\varphi(g),\varphi(g^{-1}))$.'
+
+  - property: left-invertible
+    proof: 'The group of units functor $(-)^{\times} : \Mon \to \Grp$ provides a left inverse.'
 
 unsatisfied_properties:
   - property: essentially surjective
