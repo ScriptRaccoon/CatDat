@@ -8,17 +8,14 @@ import type {
 	FunctorImplicationYaml,
 	FunctorPropertyYaml,
 	FunctorYaml,
-	ProofWarning,
 	PropertyEntry,
 } from './seed.types'
 import { create_schema_hash, get_saved_schema_hash } from './utils/schema'
-import { PLURALS, PROOF_LENGTH_THRESHOLD, STRUCTURES } from './config'
+import { PLURALS, STRUCTURES } from './config'
 
 const db = get_client()
 
 const data_folder = path.resolve('databases', 'catdat', 'data')
-
-const proof_length_warnings: ProofWarning[] = []
 
 seed()
 
@@ -47,8 +44,6 @@ function seed() {
 	seed_functor_properties()
 	seed_functor_implications()
 	seed_functors()
-
-	print_proof_length_warnings()
 }
 
 /**
@@ -280,13 +275,6 @@ function seed_categories() {
 				entry.proof,
 				entry.check_redundancy === false ? 0 : 1,
 			)
-			if (entry.proof.length >= PROOF_LENGTH_THRESHOLD) {
-				proof_length_warnings.push({
-					structure_id: category_id,
-					property: entry.property,
-					length: entry.proof.length,
-				})
-			}
 		}
 	}
 
@@ -490,13 +478,6 @@ function seed_functors() {
 				entry.proof,
 				entry.check_redundancy === false ? 0 : 1,
 			)
-			if (entry.proof.length >= PROOF_LENGTH_THRESHOLD) {
-				proof_length_warnings.push({
-					structure_id: functor_id,
-					property: entry.property,
-					length: entry.proof.length,
-				})
-			}
 		}
 	}
 
@@ -537,18 +518,4 @@ function seed_functors() {
 	}
 
 	seed_files(db, 'functors', path.join(data_folder, 'functors'), insert_functor)
-}
-
-function print_proof_length_warnings() {
-	if (!proof_length_warnings.length) return
-
-	console.info('\n--- Proof Length Warnings ---')
-
-	proof_length_warnings.sort((a, b) => b.length - a.length)
-
-	for (const { structure_id, property, length } of proof_length_warnings) {
-		console.warn(
-			`🟡 The proof for (${structure_id}, ${property}) has ${length} characters. Consider moving it to a content page.`,
-		)
-	}
 }

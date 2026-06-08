@@ -106,9 +106,3 @@ export type FunctorYaml = {
 	undecidable_properties?: PropertyEntry[]
 	comments?: string[]
 }
-
-export type ProofWarning = {
-	structure_id: string
-	property: string
-	length: number
-}
