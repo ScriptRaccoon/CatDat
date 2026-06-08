@@ -124,14 +124,22 @@ export const load = async () => {
 	if (err_fun_missing) error(500, 'Failed to load missing functor combinations')
 
 	return {
-		categories_with_unknown_properties,
-		total_unknown_category_property_pairs,
-		functors_with_unknown_properties,
-		total_unknown_functor_property_pairs,
+		unknowns_pairs: {
+			category: categories_with_unknown_properties,
+			functor: functors_with_unknown_properties,
+		},
+		unknown_totals: {
+			category: total_unknown_category_property_pairs,
+			functor: total_unknown_functor_property_pairs,
+		},
+		undistinguishable_pairs: {
+			category: undistinguishable_category_pairs,
+			functor: undistinguishable_functor_pairs,
+		},
+		missing_combinations: {
+			category: missing_category_combinations,
+			functor: missing_functor_combinations,
+		},
 		categories_with_missing_morphisms,
-		undistinguishable_category_pairs,
-		undistinguishable_functor_pairs,
-		missing_category_combinations,
-		missing_functor_combinations,
 	}
 }

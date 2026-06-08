@@ -3,6 +3,8 @@
 	import MetaData from '$components/MetaData.svelte'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
 	import { get_property_url } from '$lib/commons/property.url'
+	import { PLURALS, STRUCTURES } from '$lib/commons/structures'
+	import { capitalize } from '$lib/client/utils'
 
 	const { data } = $props()
 </script>
@@ -19,43 +21,27 @@
 	<a href="/content/contribute">contributing</a> to this project.
 </p>
 
-<section>
-	<h3>Categories with unknown properties</h3>
+{#each STRUCTURES as type}
+	{@const list = data.unknowns_pairs[type]}
+	{@const total = data.unknown_totals[type]}
+	<section>
+		<h3>{capitalize(PLURALS[type])} with unknown properties</h3>
 
-	<p class="hint">
-		There are {data.categories_with_unknown_properties.length} categories where at least
-		one property is unknown.
+		<p class="hint">
+			There are {list.length}
+			{PLURALS[type]}
+			where at least one property is unknown.
 
-		{#if data.total_unknown_category_property_pairs > 0}
-			In total, there are
-			{data.total_unknown_category_property_pairs}
-			unknown (category, property)-pairs.
-		{:else}
-			🎉
-		{/if}
-	</p>
+			{#if total > 0}
+				In total, there are {total} unknown ({type}, property)-pairs.
+			{:else}
+				🎉
+			{/if}
+		</p>
 
-	<StructureList structures={data.categories_with_unknown_properties} type="category" />
-</section>
-
-<section>
-	<h3>Functors with unknown properties</h3>
-
-	<p class="hint">
-		There are {data.functors_with_unknown_properties.length} functors where at least one
-		property is unknown.
-
-		{#if data.functors_with_unknown_properties.length > 0}
-			In total, there are
-			{data.total_unknown_functor_property_pairs}
-			unknown (functor, property)-pairs.
-		{:else}
-			🎉
-		{/if}
-	</p>
-
-	<StructureList structures={data.functors_with_unknown_properties} type="functor" />
-</section>
+		<StructureList structures={list} {type} />
+	</section>
+{/each}
 
 <section>
 	<h3>Categories with unknown special morphisms</h3>
@@ -68,114 +54,67 @@
 	<StructureList structures={data.categories_with_missing_morphisms} type="category" />
 </section>
 
-{#if data.undistinguishable_category_pairs.length > 0}
+{#each STRUCTURES as type}
+	{@const list = data.undistinguishable_pairs[type]}
+
+	{#if list.length > 0}
+		<section>
+			<h3>Undistinguishable {type} pairs</h3>
+
+			<p class="hint">
+				There are {list.length} pairs of {PLURALS[type]} that cannot be distinguished
+				by the properties currently recorded in the database. This indicates that the
+				data may be incomplete or that a distinguishing property may be missing.
+			</p>
+
+			<ul class="with-margins">
+				{#each list as pair}
+					<li>
+						<a href="/{type}/{pair.id1}">
+							{pair.name1}
+						</a>
+						&approx;
+						<a href="/{type}/{pair.id2}">
+							{pair.name2}
+						</a>
+					</li>
+				{/each}
+			</ul>
+		</section>
+	{/if}
+{/each}
+
+{#each STRUCTURES as type}
+	{@const list = data.missing_combinations[type]}
+
 	<section>
-		<h3>Undistinguishable category pairs</h3>
+		<h3>Missing {type} combinations</h3>
 
 		<p class="hint">
-			There are {data.undistinguishable_category_pairs.length} pairs of categories that
-			cannot be distinguished by the properties currently recorded in the database. This
-			indicates that the data may be incomplete or that a distinguishing property may
-			be missing.
+			Among the consistent {type} combinations of the form p &and; &not;q, the following
+			are not yet witnessed by a {type} in the database or its dual. If some of these
+			combinations <i>are</i>
+			inconsistent, this indicates that some
+			<a href="/{type}-implications">implication</a> is missing.
 		</p>
 
-		<ul class="with-margins">
-			{#each data.undistinguishable_category_pairs as pair}
-				<li>
-					<a href="/category/{pair.id1}">
-						{pair.name1}
-					</a>
-					&approx;
-					<a href="/category/{pair.id2}">
-						{pair.name2}
-					</a>
-				</li>
-			{/each}
-		</ul>
+		<details>
+			<summary>
+				Show all {list.length} combinations
+			</summary>
+
+			<ul class="combinations with-margins">
+				{#each list as [p, q]}
+					<li class="combination">
+						<a href={get_property_url(p, type)}>{p}</a> &and; &not;<a
+							href={get_property_url(q, type)}>{q}</a
+						>
+					</li>
+				{/each}
+			</ul>
+		</details>
 	</section>
-{/if}
-
-{#if data.undistinguishable_functor_pairs.length > 0}
-	<section>
-		<h3>Undistinguishable functor pairs</h3>
-
-		<p class="hint">
-			There are {data.undistinguishable_functor_pairs.length} pairs of functors that cannot
-			be distinguished by the properties currently recorded in the database. This indicates
-			that the data may be incomplete or that a distinguishing property may be missing.
-		</p>
-
-		<ul class="with-margins">
-			{#each data.undistinguishable_functor_pairs as pair}
-				<li>
-					<a href="/functor/{pair.id1}">
-						{pair.name1}
-					</a>
-					&approx;
-					<a href="/functor/{pair.id2}">
-						{pair.name2}
-					</a>
-				</li>
-			{/each}
-		</ul>
-	</section>
-{/if}
-
-<section>
-	<h3>Missing category combinations</h3>
-
-	<p class="hint">
-		Among the consistent category combinations of the form p &and; &not;q, the
-		following are not yet witnessed by a category in the database or its dual
-		category. If some of these combinations <i>are</i>
-		inconsistent, this indicates that some
-		<a href="/category-implications">implication</a> is missing.
-	</p>
-
-	<details>
-		<summary>
-			Show all {data.missing_category_combinations.length} combinations
-		</summary>
-
-		<ul class="combinations with-margins">
-			{#each data.missing_category_combinations as [p, q]}
-				<li class="combination">
-					<a href={get_property_url(p, 'category')}>{p}</a> &and; &not;<a
-						href={get_property_url(q, 'category')}>{q}</a
-					>
-				</li>
-			{/each}
-		</ul>
-	</details>
-</section>
-
-<section>
-	<h3>Missing functor combinations</h3>
-
-	<p class="hint">
-		Among the consistent functor combinations of the form p &and; &not;q, the
-		following are not yet witnessed by a functor in the database or its dual functor.
-		If some of these combinations <i>are</i>
-		inconsistent, this indicates that some
-		<a href="/functor-implications">implication</a> is missing.
-	</p>
-
-	<details>
-		<summary>
-			Show all {data.missing_functor_combinations.length} combinations
-		</summary>
-
-		<ul class="combinations with-margins">
-			{#each data.missing_functor_combinations as [p, q]}
-				<li class="combination">
-					<a href={get_property_url(p, 'functor')}>{p}</a> &and; &not;<a
-						href={get_property_url(q, 'functor')}>{q}</a
-					>
-				</li>
-			{/each}
-		</ul>
-	</details>
-</section>
+{/each}
 
 <SuggestionForm />
 
