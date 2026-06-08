@@ -66,7 +66,7 @@ unsatisfied_properties:
     proof: 'Assume that $\Grp$ has a (regular) quotient object classifier, i.e. a group $P$ such that every surjective homomorphism $G \to H$ is the cokernel of a unique homomorphism $\varphi : P \to G$. Equivalently, every normal subgroup $N \subseteq G$ is $\langle \langle \varphi(P) \rangle \rangle$ for a unique homomorphism $\varphi : P \to G$, where $\langle \langle - \rangle \rangle$ denotes the normal closure. If $c_g : G \to G$ denotes the conjugation with $g \in G$, then the images of $\varphi$ and $c_g \circ \varphi$ have the same normal closures, so the homomorphisms must be equal. In other words, $\varphi$ factors through the center $Z(G)$. But then every normal subgroup of $G$, in particular $G$ itself, would be contained in $Z(G)$, which is wrong for every non-abelian group $G$.'
 
   - property: cofiltered-limit-stable epimorphisms
-    proof: We already know that <a href="/category/Ab">$\Ab$</a> does not have this property. Now apply the contrapositive of the dual of <a href="/content/filtered-monos">this lemma</a> to the forgetful functor $\Ab \to \Grp$ which indeed preserves epimorphisms.
+    proof: We already know that <a href="/category/Ab">$\Ab$</a> does not have this property. Now apply the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> to the forgetful functor $\Ab \to \Grp$ which indeed preserves epimorphisms.
 
   - property: cocartesian cofiltered limits
     proof: >-

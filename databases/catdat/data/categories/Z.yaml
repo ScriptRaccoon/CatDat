@@ -72,7 +72,7 @@ unsatisfied_properties:
     proof: 'Consider the functor $F$ from <a href="https://mathoverflow.net/questions/390611" target="_blank">MO/390611</a> for example. The collection of subobjects of $F$ is not isomorphic to a set: for each infinite cardinal $\kappa$, simply cut off the construction of $F$ at $\kappa$. This yields a different subobject for each $\kappa$.'
 
   - property: cofiltered-limit-stable epimorphisms
-    proof: We already know that <a href="/category/Set">$\Set$</a> does not have this property. Now apply the contrapositive of the dual of <a href="/content/filtered-monos">this lemma</a> to the functor $\Set \to [\CRing, \Set]$ that maps a set to its constant functor.
+    proof: We already know that <a href="/category/Set">$\Set$</a> does not have this property. Now apply the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> to the functor $\Set \to [\CRing, \Set]$ that maps a set to its constant functor.
 
 special_objects:
   initial object:

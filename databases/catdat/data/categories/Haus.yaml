@@ -66,7 +66,7 @@ unsatisfied_properties:
     proof: 'It is shown in <a href="https://math.stackexchange.com/questions/1255678">MSE/1255678</a> that $\IQ \times - : \Top \to \Top$ does not preserve sequential colimits (so that it cannot be a left adjoint). The same example also works in $\Haus$: Surely $\IQ$ is Hausdorff, $X_n$ is Hausdorff, as is their colimit $X$, and the colimit (taken in $\Top$) of the $X_n \times \IQ$ admits a bijective continuous map to a Hausdorff space, therefore is also Hausdorff, meaning it is also the colimit taken in $\Haus$.'
 
   - property: cofiltered-limit-stable epimorphisms
-    proof: 'Recall the counterexample for sets: The unique maps $\IN_{\geq n} \to 1$ are surjective, but their limit $0 = \bigcap_{n \geq 0} \IN_{\geq n} \to 1$ is not. This also works in $\Haus$ by using discrete topologies. We could also apply a variant of (the dual of) <a href="/content/filtered-monos">this lemma</a> to the discrete topology functor $\Set \to \Haus$, which does not preserve all cofiltered limits, but does preserve intersections.'
+    proof: 'Recall the counterexample for sets: The unique maps $\IN_{\geq n} \to 1$ are surjective, but their limit $0 = \bigcap_{n \geq 0} \IN_{\geq n} \to 1$ is not. This also works in $\Haus$ by using discrete topologies. We could also apply a variant of (the dual of) Lemma 2 <a href="/content/subcategories">here</a> to the discrete topology functor $\Set \to \Haus$, which does not preserve all cofiltered limits, but does preserve intersections.'
 
   - property: filtered-colimit-stable monomorphisms
     proof: |-

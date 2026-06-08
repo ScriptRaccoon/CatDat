@@ -56,7 +56,7 @@ unsatisfied_properties:
     proof: 'We can adapt the proof from <a href="/category/Mon">$\Mon$</a> as follows: Consider the functor $U : \Cat \to \Set^+$ sending a category $\C$ to the (large) set $\{(x,u) : x \in \Ob(\C) ,\, u \in \End(x) \}$. It is represented by $B \IN$, the one-object category associated to the free monoid in one generator. Consider the relation $R \subseteq U^2$ consisting of those pairs $((x,u),(y,v))$ where $x = y$ and $uv = u^2$. This also representable, namely be the one-object category associated to the monoid with the presentation $\langle u,v : uv = u^2 \rangle$. Clearly, $R$ is reflexive, but not symmetric.'
 
   - property: cofiltered-limit-stable epimorphisms
-    proof: We already know that <a href="/category/Set">$\Set$</a> does not have this property. Now apply the contrapositive of the dual of <a href="/content/filtered-monos">this lemma</a> to the functor $\Set \to \Cat$ that maps a set to its discrete category.
+    proof: We already know that <a href="/category/Set">$\Set$</a> does not have this property. Now apply the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> to the functor $\Set \to \Cat$ that maps a set to its discrete category.
 
   - property: effective cocongruences
     proof: >-

@@ -44,7 +44,7 @@ satisfied_properties:
     proof: '[Sketch] Since <a href="/category/Set">$\Set$</a> is infinitary extensive, a map $f : Y \to \coprod_i X_i \eqqcolon X$ corresponds to a decomposition $Y = \coprod_i Y_i$ (as sets) with maps $f_i : Y_i \to X_i$. Endow the measurable subset $Y_i \subseteq Y$ with the restricted $\sigma$-algebra. If $f$ is measurable, each $f_i$ is measurable, and $Y = \coprod_i Y_i$ holds as measurable spaces.'
 
   - property: filtered-colimit-stable monomorphisms
-    proof: This follows from <a href="/content/filtered-monos">this lemma</a> applied to the forgetful functor to $\Set$.
+    proof: This follows from Lemma 2 <a href="/content/subcategories">here</a> applied to the forgetful functor to $\Set$.
 
   - property: regular subobject classifier
     proof: The set $\{0,1\}$ with the trivial $\sigma$-algebra is a regular subobject classifier since measurable maps $X \to \{0,1\}$ correspond to subsets of $X$.
@@ -63,7 +63,7 @@ unsatisfied_properties:
     proof: See <a href="https://math.stackexchange.com/questions/5027218" target="_blank">MSE/5027218</a>.
 
   - property: cofiltered-limit-stable epimorphisms
-    proof: We already know that <a href="/category/Set">$\Set$</a> does not have this property. Now apply the contrapositive of the dual of <a href="/content/filtered-monos">this lemma</a> to the functor $\Set \to \Meas$ which equips a set with the trivial $\sigma$-algebra.
+    proof: We already know that <a href="/category/Set">$\Set$</a> does not have this property. Now apply the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> to the functor $\Set \to \Meas$ which equips a set with the trivial $\sigma$-algebra.
 
   - property: effective cocongruences
     proof: 'The proof is similar to the one for <a href="/category/Top">$\Top$</a>: Use the trivial $\sigma$-algebra on a two-point set.'

@@ -62,7 +62,7 @@ unsatisfied_properties:
     proof: 'We can copy the proof for <a href="/category/Ring">$\Ring$</a>. In short, the inclusion of diagonal matrices $\IQ^2 \hookrightarrow M_2(\IQ)$ is a regular monomorphism, but becomes zero after taking the pushout with $p_1 : \IQ^2 \twoheadrightarrow \IQ$ because $M_2(\IQ)$ is simple.'
 
   - property: regular quotient object classifier
-    proof: 'Assume that $\Rng$ has a regular quotient object classifier $P$. Consider the functor $N : \Ab \to \Rng$ that equips an abelian group with zero multiplication. It is fully faithful and has a left adjoint mapping a rng $R$ to the abelian group $R/R^2$. If $R$ is a rng with zero multiplication and $R \to S$ is a surjective homomorphism, then $S$ has zero multiplication. Therefore, the assumptions of <a href="/content/subobject_classifiers_coreflection">this lemma</a> (dualized) apply and we conclude that $P/P^2$ is a regular quotient object classifier of $\Ab$. But we already know that <a href="/category/Ab">$\Ab$</a> has no such object (in fact, the only additive categories with such an object are trivial by <a href="https://math.stackexchange.com/questions/4086192" target="_blank">MSE/4086192</a>).'
+    proof: 'Assume that $\Rng$ has a regular quotient object classifier $P$. Consider the functor $N : \Ab \to \Rng$ that equips an abelian group with zero multiplication. It is fully faithful and has a left adjoint mapping a rng $R$ to the abelian group $R/R^2$. If $R$ is a rng with zero multiplication and $R \to S$ is a surjective homomorphism, then $S$ has zero multiplication. Therefore, the assumptions of Lemma 1 <a href="/content/subcategories">here</a> (dualized) apply and we conclude that $P/P^2$ is a regular quotient object classifier of $\Ab$. But we already know that <a href="/category/Ab">$\Ab$</a> has no such object (in fact, the only additive categories with such an object are trivial by <a href="https://math.stackexchange.com/questions/4086192" target="_blank">MSE/4086192</a>).'
 
   - property: cocartesian cofiltered limits
     proof: >-
@@ -71,7 +71,7 @@ unsatisfied_properties:
       Because of $w_n \equiv w_{n-1} \bmod Y^n$ these form an element $w \in \lim_n (A \sqcup B_n)$. Expanding $w_n$, the longest term is $XY XY^2 \cdots X Y^n$ of "free product" length $2n$, which is unbounded.
 
   - property: cofiltered-limit-stable epimorphisms
-    proof: 'We know that <a href="/category/Ring">$\Ring$</a> does not have this property. Now use the contrapositive of the dual of <a href="/content/filtered-monos">this lemma</a> applied to the forgetful functor $\Ring \to \Rng$. We only need to verify that it preserves epimorphisms: Let $f : R \to S$ be an epimorphism in $\Ring$ and let $g,h : S \rightrightarrows T$ be two homomorphisms of rngs with $gf = hf$. The element $e = g(1) = h(1) \in T$ is idempotent, and $g,h$ become homomorphisms of rings $S \rightrightarrows eTe$. Hence, $g=h$.'
+    proof: 'We know that <a href="/category/Ring">$\Ring$</a> does not have this property. Now use the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> applied to the forgetful functor $\Ring \to \Rng$. We only need to verify that it preserves epimorphisms: Let $f : R \to S$ be an epimorphism in $\Ring$ and let $g,h : S \rightrightarrows T$ be two homomorphisms of rngs with $gf = hf$. The element $e = g(1) = h(1) \in T$ is idempotent, and $g,h$ become homomorphisms of rings $S \rightrightarrows eTe$. Hence, $g=h$.'
 
   - property: effective cocongruences
     proof: >-

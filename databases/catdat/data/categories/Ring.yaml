@@ -56,7 +56,7 @@ unsatisfied_properties:
     proof: 'Let $B \coloneqq M_2(\IQ)$ and $A \coloneqq \IQ^2$. Then $A \to B$, $(x,y) \mapsto \diag(x,y)$ is a regular monomorphism: A direct calculation shows that a matrix is diagonal iff it commutes with $M \coloneqq \bigl(\begin{smallmatrix} 1 & 0 \\ 0 & 2 \end{smallmatrix}\bigr)$, so that $A \to B$ is the equalizer of the identity $B \to B$ and the conjugation $B \to B$, $X \mapsto M X M^{-1}$. Consider the homomorphism $A \to K$, $(a,b) \mapsto a$. We claim that $K \to K \sqcup_A B$ is not a monomorphism, because in fact, the pushout $K \sqcup_A B$ is zero: Since $A \to K$ is surjective with kernel $0 \times K$, the pushout is $B/\langle 0 \times K \rangle$, which is $0$ because $B$ is simple (<a href="https://math.stackexchange.com/questions/22629" target="_blank">proof</a>) or via a direct calculation with elementary matrices.'
 
   - property: regular quotient object classifier
-    proof: We may copy the proof for <a href="/category/CRing">$\CRing$</a> (since the proof there did not use that $P$ is commutative). Alternatively, any regular quotient object classifier in $\Ring$ would produce one in $\CRing$ by <a href="/content/subobject_classifiers_coreflection">this lemma</a> (dualized).
+    proof: We may copy the proof for <a href="/category/CRing">$\CRing$</a> (since the proof there did not use that $P$ is commutative). Alternatively, any regular quotient object classifier in $\Ring$ would produce one in $\CRing$ by Lemma 1 <a href="/content/subcategories">here</a> (dualized).
 
   - property: cocartesian cofiltered limits
     proof: >-
@@ -65,7 +65,7 @@ unsatisfied_properties:
       Because of $w_n \equiv w_{n-1} \bmod Y^n$ these form an element $w \in \lim_n (A \sqcup B_n)$. Expanding $w_n$, the longest term is $XY XY^2 \cdots X Y^n$ of "free product" length $2n$, which is unbounded.
 
   - property: cofiltered-limit-stable epimorphisms
-    proof: We know that <a href="/category/CRing">$\CRing$</a> does not have this property. Now use the contrapositive of the dual of <a href="/content/filtered-monos">this lemma</a> applied to the forgetful functor $\CRing \to \Ring$. It preserves epimorphisms by <a href="https://math.stackexchange.com/questions/5133488" target="_blank">MSE/5133488</a>.
+    proof: We know that <a href="/category/CRing">$\CRing$</a> does not have this property. Now use the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> applied to the forgetful functor $\CRing \to \Ring$. It preserves epimorphisms by <a href="https://math.stackexchange.com/questions/5133488" target="_blank">MSE/5133488</a>.
 
   - property: effective cocongruences
     proof: See <a href="https://mathoverflow.net/a/510809" target="_blank">MO/510744</a>.
