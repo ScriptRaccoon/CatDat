@@ -22,6 +22,7 @@ async function setup() {
 	console.info('\n--- Setup App database ---')
 	await create_visits_table()
 	await create_submissions_table()
+	await create_actions_table()
 }
 
 /**
@@ -58,4 +59,20 @@ async function create_submissions_table() {
     `)
 
 	console.info('Submissions table ready')
+}
+
+/**
+ * Creates the user actions table, used to record anonymously various user actions.
+ */
+async function create_actions_table() {
+	await db.execute(`
+        CREATE TABLE IF NOT EXISTS user_actions (
+            id INTEGER PRIMARY KEY,
+            action TEXT NOT NULL,
+            value TEXT,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+        )
+    `)
+
+	console.info('User actions table ready')
 }
