@@ -1,5 +1,16 @@
 <script lang="ts">
 	import MetaData from '$components/MetaData.svelte'
+
+	/**
+	 * This is (temporarily) recorded to see if this feature is used at all.
+	 */
+	async function record_download() {
+		await fetch(`/api/user_action`, {
+			method: 'POST',
+			body: JSON.stringify({ action: 'download_database' }),
+			headers: { 'Content-Type': 'application/json' },
+		})
+	}
 </script>
 
 <MetaData title="Download" description="Download CatDat's SQLite database" />
@@ -18,7 +29,7 @@
 	beyond what is available through the web application.
 </p>
 
-<a href="/databases/catdat-snapshot.db" class="button" download>
+<a href="/databases/catdat-snapshot.db" class="button" download onclick={record_download}>
 	Download CatDat database
 </a>
 
