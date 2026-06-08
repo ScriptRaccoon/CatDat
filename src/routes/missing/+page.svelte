@@ -22,13 +22,13 @@
 </p>
 
 {#each STRUCTURES as type}
-	{@const list = data.unknowns_pairs[type]}
+	{@const structures = data.structures_with_unknown_properties[type]}
 	{@const total = data.unknown_totals[type]}
 	<section>
 		<h3>{capitalize(PLURALS[type])} with unknown properties</h3>
 
 		<p class="hint">
-			There are {list.length}
+			There are {structures.length}
 			{PLURALS[type]}
 			where at least one property is unknown.
 
@@ -39,7 +39,7 @@
 			{/if}
 		</p>
 
-		<StructureList structures={list} {type} />
+		<StructureList {structures} {type} />
 	</section>
 {/each}
 
@@ -55,20 +55,20 @@
 </section>
 
 {#each STRUCTURES as type}
-	{@const list = data.undistinguishable_pairs[type]}
+	{@const pairs = data.undistinguishable_pairs[type]}
 
-	{#if list.length > 0}
+	{#if pairs.length > 0}
 		<section>
 			<h3>Undistinguishable {type} pairs</h3>
 
 			<p class="hint">
-				There are {list.length} pairs of {PLURALS[type]} that cannot be distinguished
+				There are {pairs.length} pairs of {PLURALS[type]} that cannot be distinguished
 				by the properties currently recorded in the database. This indicates that the
 				data may be incomplete or that a distinguishing property may be missing.
 			</p>
 
 			<ul class="with-margins">
-				{#each list as pair}
+				{#each pairs as pair}
 					<li>
 						<a href="/{type}/{pair.id1}">
 							{pair.name1}
@@ -85,7 +85,7 @@
 {/each}
 
 {#each STRUCTURES as type}
-	{@const list = data.missing_combinations[type]}
+	{@const combinations = data.missing_combinations[type]}
 
 	<section>
 		<h3>Missing {type} combinations</h3>
@@ -100,11 +100,11 @@
 
 		<details>
 			<summary>
-				Show all {list.length} combinations
+				Show all {combinations.length} combinations
 			</summary>
 
 			<ul class="combinations with-margins">
-				{#each list as [p, q]}
+				{#each combinations as [p, q]}
 					<li class="combination">
 						<a href={get_property_url(p, type)}>{p}</a> &and; &not;<a
 							href={get_property_url(q, type)}>{q}</a

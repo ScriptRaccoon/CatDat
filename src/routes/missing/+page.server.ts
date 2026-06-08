@@ -124,7 +124,7 @@ export const load = async () => {
 	if (err_fun_missing) error(500, 'Failed to load missing functor combinations')
 
 	return {
-		unknowns_pairs: {
+		structures_with_unknown_properties: {
 			category: categories_with_unknown_properties,
 			functor: functors_with_unknown_properties,
 		},
