@@ -1,9 +1,11 @@
 id: faithful
 relation: is
-description: 'A functor is <i>faithful</i> when it is injective on Hom-sets: If $F(f)=F(g)$, then $f=g$.'
+description: 'A functor is <i>faithful</i> when it is injective on Hom-sets: If $F(f)=F(g)$ for two morphisms $f,g : A \rightrightarrows B$, then $f=g$.'
 nlab_link: https://ncatlab.org/nlab/show/faithful+functor
 invariant_under_equivalences: true
 dual_property: faithful
 related_properties:
   - equivalence
   - full
+  - essentially injective
+  - left-invertible

@@ -11,6 +11,8 @@
 	"preserves initial objects": false,
 	"left adjoint": false,
 	"right exact": false,
+	"essentially injective": false,
+	"left-invertible": false,
 
 	"cofinitary": true,
 	"conservative": true,

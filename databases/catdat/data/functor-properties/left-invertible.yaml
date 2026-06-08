@@ -1,0 +1,10 @@
+id: left-invertible
+relation: is
+description: 'A <i>left inverse</i> of a functor $F : \C \to \D$ is a functor $G : \D \to \C$ satisfying $G \circ F \cong \id_{\C}$. We do not require $G \circ F = \id_{\C}$ here, which is often too strict. A functor is called <i>left-invertible</i> when it has a left inverse.'
+nlab_link: https://ncatlab.org/nlab/show/inverse+functor
+invariant_under_equivalences: true
+dual_property: left-invertible
+related_properties:
+  - equivalence
+  - faithful
+  - essentially injective

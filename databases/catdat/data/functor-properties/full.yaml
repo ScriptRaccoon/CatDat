@@ -7,3 +7,4 @@ dual_property: full
 related_properties:
   - equivalence
   - faithful
+  - essentially injective

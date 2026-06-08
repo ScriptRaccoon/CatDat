@@ -27,5 +27,7 @@
 	"right exact": true,
 	"preserves terminal objects": true,
 	"preserves reflexive coequalizers": true,
-	"preserves coreflexive equalizers": true
+	"preserves coreflexive equalizers": true,
+	"essentially injective": true,
+	"left-invertible": true
 }

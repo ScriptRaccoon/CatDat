@@ -17,5 +17,6 @@
   target_assumptions: []
   conclusions:
     - monadic
+    - left-invertible
   proof: This is easy.
   is_equivalence: false

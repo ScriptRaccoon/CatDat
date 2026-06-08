@@ -1,0 +1,14 @@
+id: essentially injective
+relation: 'is'
+description: >-
+  A functor $F : \C \to \D$ is <i>essentially injective</i> if the implication
+  $$F(A) \cong F(B) \implies A \cong B$$
+  holds for all objects $A,B \in \C$. This is a condition solely on the objects themselves. It is <i>not</i> required that every isomorphism between $F(A)$ and $F(B)$ lifts to an isomorphism between $A$ and $B$. An equivalent condition is that $F$ induces an injective map on isomorphism classes.
+nlab_link: https://ncatlab.org/nlab/show/essentially+injective+functor
+invariant_under_equivalences: true
+dual_property: essentially injective
+related_properties:
+  - conservative
+  - faithful
+  - full
+  - essentially surjective
