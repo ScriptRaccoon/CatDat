@@ -17,9 +17,15 @@ db_app.execute('PRAGMA foreign_keys = ON')
  * Small wrapper around db.execute to handle errors,
  * use sql templates, and specify the type of the result.
  */
-export async function query_app<T>(stmt: { sql: string; values: any[] }) {
+export async function query_app<T>({
+	sql,
+	values = [],
+}: {
+	sql: string
+	values?: any[]
+}) {
 	try {
-		const { rows } = await db_app.execute(stmt.sql, stmt.values)
+		const { rows } = await db_app.execute(sql, values)
 		return { rows: rows as T[], err: null }
 	} catch (err) {
 		console.error(err)
@@ -32,16 +38,16 @@ export async function query_app<T>(stmt: { sql: string; values: any[] }) {
  * use sql templates, and specify the type of the result.
  */
 export async function batch_app<T extends any[]>(
-	queries: { sql: string; values: any[] }[],
+	queries: { sql: string; values?: any[] }[],
 ) {
 	try {
 		const results = await db_app.batch(
-			queries.map((query) => ({
-				sql: query.sql,
-				args: query.values,
-			})),
+			queries.map(({ sql, values = [] }) => ({ sql, args: values ?? [] })),
 		)
-		return { results: results.map(({ rows }) => rows) as Arrayed<T>, err: null }
+		return {
+			results: results.map(({ rows }) => rows) as Arrayed<T>,
+			err: null,
+		}
 	} catch (err) {
 		console.error(err)
 		return { results: null, err: err as LibsqlError }

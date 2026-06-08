@@ -13,10 +13,10 @@ const db = new Database(db_path, { readonly: true, fileMustExist: true })
  * Small wrapper around db.prepare.all to handle errors,
  * use sql templates, and specify the type of the result.
  */
-export function query<T>(stmt: { sql: string; values: any[] }) {
+export function query<T>({ sql, values = [] }: { sql: string; values?: any[] }) {
 	try {
-		const rows = db.prepare(stmt.sql).all(...stmt.values)
-		return { rows: rows as T[], err: null }
+		const rows = db.prepare<unknown[], T>(sql).all(...values)
+		return { rows, err: null }
 	} catch (err) {
 		console.error(err)
 		return { rows: null, err: err as SqliteError }
@@ -27,13 +27,13 @@ export function query<T>(stmt: { sql: string; values: any[] }) {
  * Small wrapper around db.transaction to handle errors
  * use sql templates, and specify the type of the result.
  */
-export function batch<T extends any[]>(queries: { sql: string; values: any[] }[]) {
+export function batch<T extends any[]>(queries: { sql: string; values?: any[] }[]) {
 	try {
 		const run_batch = db.transaction(() => {
 			const results = []
 
-			for (const query of queries) {
-				const result = db.prepare(query.sql).all(...query.values)
+			for (const { sql, values = [] } of queries) {
+				const result = db.prepare(sql).all(...values)
 				results.push(result)
 			}
 

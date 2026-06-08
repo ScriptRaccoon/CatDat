@@ -5,7 +5,6 @@ import { error } from '@sveltejs/kit'
 export function get_property_ids(type: StructureType) {
 	const { rows, err } = query<{ id: string }>({
 		sql: `SELECT id FROM ${type}_properties ORDER BY lower(id)`,
-		values: [],
 	})
 
 	if (err) error(500, 'Failed to load properties')

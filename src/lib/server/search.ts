@@ -27,7 +27,6 @@ export function search_handler(event: RequestEvent, type: StructureType): Search
 		dual_property_id: string | null
 	}>({
 		sql: `SELECT id, dual_property_id FROM ${type}_properties ORDER BY lower(id)`,
-		values: [],
 	})
 
 	if (err_all) error(500, 'Failed to load properties')

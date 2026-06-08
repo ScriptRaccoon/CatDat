@@ -119,7 +119,6 @@ export function get_missing_combinations(type: StructureType) {
 		dual_property_id: string | null
 	}>({
 		sql: `SELECT id, dual_property_id FROM ${type}_properties ORDER BY lower(id)`,
-		values: [],
 	})
 
 	if (err) return { err, missing_combinations: [] }
@@ -135,7 +134,6 @@ export function get_missing_combinations(type: StructureType) {
 		ON a.${type}_id = an.${type}_id
 		WHERE a.is_satisfied = TRUE AND an.is_satisfied = FALSE
 	`,
-		values: [],
 	})
 
 	if (err_existing) return { err: err_existing, missing_combinations: [] }
