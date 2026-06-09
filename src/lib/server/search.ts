@@ -6,7 +6,6 @@ import { SEARCH_SEPARATOR } from '$lib/commons/search.config'
 import { get_contradiction } from '$lib/server/consistency'
 import type { SearchResults, StructureShort, StructureType } from '$lib/commons/types'
 import { to_placeholders } from './utils'
-import { PLURALS } from '$lib/commons/structures'
 
 function cache_page(event: RequestEvent) {
 	event.setHeaders({
@@ -100,9 +99,11 @@ export function search_handler(event: RequestEvent, type: StructureType): Search
 	const all_selected_properties = [...satisfied_properties, ...unsatisfied_properties]
 
 	const search_query = `
-		SELECT s.id, s.name FROM ${PLURALS[type]} s
+		SELECT s.id, s.name FROM structures s
 		INNER JOIN ${type}_property_assignments a ON a.${type}_id = s.id
-		WHERE property_id IN (${to_placeholders(all_selected_properties)})
+		WHERE
+			s.type = ? AND
+			property_id IN (${to_placeholders(all_selected_properties)})
 		GROUP BY ${type}_id
 		HAVING
 			SUM (
@@ -130,6 +131,7 @@ export function search_handler(event: RequestEvent, type: StructureType): Search
 	const { rows: found_structures, err } = query<StructureShort>({
 		sql: search_query,
 		values: [
+			type,
 			...all_selected_properties,
 			...satisfied_properties,
 			...unsatisfied_properties,

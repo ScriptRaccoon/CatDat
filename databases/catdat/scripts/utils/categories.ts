@@ -19,8 +19,10 @@ export type NormalizedCategoryImplication = {
 export function get_categories(db: Database) {
 	return db
 		.prepare<never[], CategoryMeta>(
-			`SELECT id, name, dual_category_id AS dual
-            FROM categories ORDER BY lower(name)`,
+			`SELECT c.id, s.name, c.dual_category_id AS dual
+            FROM categories c
+			INNER JOIN structures s ON s.id = c.id
+			ORDER BY lower(s.name)`,
 		)
 		.all()
 }

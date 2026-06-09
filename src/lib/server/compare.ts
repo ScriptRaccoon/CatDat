@@ -31,9 +31,9 @@ export function compare_handler(
 	}>({
 		sql: `
 			SELECT id, name, notation 
-			FROM ${PLURALS[type]}
-			WHERE id in (${placeholders})`,
-		values: compared_ids,
+			FROM structures
+			WHERE type = ? AND id in (${placeholders})`,
+		values: [type, ...compared_ids],
 	})
 
 	if (err_cat) error(500, `Could not load ${PLURALS[type]}`)

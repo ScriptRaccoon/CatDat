@@ -18,53 +18,54 @@ export const load = async () => {
 	>([
 		// categories with unknown properties
 		sql`
-			SELECT c.id, c.name, COUNT(*) AS count
-			FROM categories c
+			SELECT s.id, s.name, COUNT(*) AS count
+			FROM structures s
 			INNER JOIN category_properties p
 			LEFT JOIN category_property_assignments cp
-				ON cp.category_id = c.id
+				ON cp.category_id = s.id
 				AND cp.property_id = p.id
-			WHERE cp.property_id IS NULL
-			GROUP BY c.id
-			ORDER BY lower(c.name);
+			WHERE s.type = 'category' AND cp.property_id IS NULL
+			GROUP BY s.id
+			ORDER BY lower(s.name);
 		`,
 		// functors with unknown properties
 		sql`
-			SELECT f.id, f.name, COUNT(*) AS count
-			FROM functors f
+			SELECT s.id, s.name, COUNT(*) AS count
+			FROM structures s
 			INNER JOIN functor_properties p
 			LEFT JOIN functor_property_assignments fp
-				ON fp.functor_id = f.id
+				ON fp.functor_id = s.id
 				AND fp.property_id = p.id
-			WHERE fp.property_id IS NULL
-			GROUP BY f.id
-			ORDER BY lower(f.name);
+			WHERE s.type = 'functor' AND fp.property_id IS NULL
+			GROUP BY s.id
+			ORDER BY lower(s.name);
 		`,
 		// categories with missing special morphisms
 		sql`
-			SELECT c.id, c.name, COUNT(*) AS count
-			FROM categories c
+			SELECT s.id, s.name, COUNT(*) AS count
+			FROM structures s
 			JOIN special_morphism_types t
-			LEFT JOIN special_morphisms s
-				ON s.category_id = c.id AND s.type = t.type
-			WHERE s.type IS NULL
-			GROUP BY c.id
-			ORDER BY lower(c.name);
+			LEFT JOIN special_morphisms m
+				ON m.category_id = s.id AND m.type = t.type
+			WHERE s.type = 'category' AND m.type IS NULL
+			GROUP BY s.id
+			ORDER BY lower(s.name);
 		`,
 		// undistinguishable category pairs
 		sql`
 			SELECT
-				c1.id AS id1, c1.name AS name1,
-				c2.id AS id2, c2.name AS name2
-			FROM categories c1
-			JOIN categories c2
-				ON c1.id < c2.id
+				s1.id AS id1, s1.name AS name1,
+				s2.id AS id2, s2.name AS name2
+			FROM structures s1
+			JOIN structures s2
+				ON s1.id < s2.id
 			JOIN category_properties p
 			LEFT JOIN category_property_assignments a1
-				ON a1.category_id = c1.id AND a1.property_id = p.id
+				ON a1.category_id = s1.id AND a1.property_id = p.id
 			LEFT JOIN category_property_assignments a2
-				ON a2.category_id = c2.id AND a2.property_id = p.id
-			GROUP BY c1.id, c1.name, c2.id, c2.name
+				ON a2.category_id = s2.id AND a2.property_id = p.id
+			WHERE s1.type = 'category' AND s2.type = 'category'
+			GROUP BY s1.id, s1.name, s2.id, s2.name
 			HAVING SUM(
 			CASE
 				WHEN a1.is_satisfied IS a2.is_satisfied THEN 0
@@ -75,17 +76,18 @@ export const load = async () => {
 		// undistinguishable functor pairs
 		sql`
 			SELECT
-				f1.id AS id1, f1.name AS name1,
-				f2.id AS id2, f2.name AS name2
-			FROM functors f1
-			JOIN functors f2
-				ON f1.id < f2.id
+				s1.id AS id1, s1.name AS name1,
+				s2.id AS id2, s2.name AS name2
+			FROM structures s1
+			JOIN structures s2
+				ON s1.id < s2.id
 			JOIN functor_properties p
 			LEFT JOIN functor_property_assignments a1
-				ON a1.functor_id = f1.id AND a1.property_id = p.id
+				ON a1.functor_id = s1.id AND a1.property_id = p.id
 			LEFT JOIN functor_property_assignments a2
-				ON a2.functor_id = f2.id AND a2.property_id = p.id
-			GROUP BY f1.id, f1.name, f2.id, f2.name
+				ON a2.functor_id = s2.id AND a2.property_id = p.id
+			WHERE s1.type = 'functor' AND s2.type = 'functor'
+			GROUP BY s1.id, s1.name, s2.id, s2.name
 			HAVING SUM(
 			CASE
 				WHEN a1.is_satisfied IS a2.is_satisfied THEN 0

@@ -38,26 +38,27 @@ export function get_functors(db: Database): FunctorMeta[] {
 			}
 		>(
 			`SELECT
-				id,
-				name,
-				source,
-				target,
+				f.id,
+				s.name,
+				f.source,
+				f.target,
 				(
 					SELECT json_group_array(property_id) FROM (
 						SELECT property_id
 						FROM category_property_assignments
-						WHERE category_id = source AND is_satisfied = TRUE
+						WHERE category_id = f.source AND is_satisfied = TRUE
 					)
 				) AS source_props,
 				(
 					SELECT json_group_array(property_id) FROM (
 						SELECT property_id
 						FROM category_property_assignments
-						WHERE category_id = target AND is_satisfied = TRUE
+						WHERE category_id = f.target AND is_satisfied = TRUE
 					)
 				) AS target_props
-			FROM functors
-			ORDER BY lower(name)`,
+			FROM functors f
+			INNER JOIN structures s ON s.id = f.id
+			ORDER BY lower(s.name)`,
 		)
 		.all()
 

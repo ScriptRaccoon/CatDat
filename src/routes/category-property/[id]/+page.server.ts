@@ -65,22 +65,23 @@ export const load = async (event) => {
 		`,
 		// known categories
 		sql`
-			SELECT c.id, c.name, cp.is_satisfied
+			SELECT s.id, s.name, cp.is_satisfied
 			FROM category_property_assignments cp
-			INNER JOIN categories c ON c.id = cp.category_id
-			WHERE cp.property_id = ${id}
-			ORDER BY lower(c.name)
+			INNER JOIN structures s ON s.id = cp.category_id
+			WHERE cp.property_id = ${id} AND s.type = 'category'
+			ORDER BY lower(s.name)
 		`,
 		// unknown categories
 		sql`
-			SELECT c.id, c.name
-			FROM categories c
+			SELECT s.id, s.name
+			FROM structures s
 			LEFT JOIN category_property_assignments cp
-				ON cp.category_id = c.id
+				ON cp.category_id = s.id
 				AND cp.property_id = ${id}
 			WHERE
+				s.type = 'category' AND
 				cp.property_id IS NULL
-			ORDER BY lower(c.name)
+			ORDER BY lower(s.name)
 		`,
 	])
 

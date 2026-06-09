@@ -34,53 +34,54 @@ export const load = async (event) => {
 		// basic information
 		sql`
             SELECT
-                f.id,
-				f.name,
-				f.notation,
+                s.id,
+				s.name,
+				s.notation,
 				f.source,
 				f.target,
-				f.description,
-				f.nlab_link,
-                s.name AS source_name,
-				t.name AS target_name,
-				s.notation AS source_notation,
-				t.notation AS target_notation
+				s.description,
+				s.nlab_link,
+                source.name AS source_name,
+				source.notation AS source_notation,
+				target.name AS target_name,
+				target.notation AS target_notation
             FROM functors f
-            INNER JOIN categories s ON s.id = f.source
-            INNER JOIN categories t ON t.id = f.target
+			INNER JOIN structures s ON s.id = f.id
+            INNER JOIN structures AS source ON source.id = f.source
+            INNER JOIN structures AS target ON target.id = f.target
             WHERE f.id = ${id}
         `,
 		// related functors
 		sql`
 			SELECT
-				r.related_functor_id AS id,
-				f.name,
-				f.notation
-			FROM related_functors r
-			INNER JOIN functors f ON f.id = r.related_functor_id
-			WHERE r.functor_id = ${id}
-			ORDER BY lower(f.name)
+				s.id,
+				s.name,
+				s.notation
+			FROM related_structures r
+			INNER JOIN structures s ON s.id = r.related_structure_id
+			WHERE r.structure_id = ${id} AND r.type = 'functor'
+			ORDER BY lower(s.name)
 		`,
 		// left adjoint functor
 		sql`
 			SELECT f.id, f.name, f.notation
 			FROM adjoint_functors a
-			INNER JOIN functors f ON f.id = a.left_adjoint
+			INNER JOIN structures f ON f.id = a.left_adjoint
 			WHERE a.right_adjoint = ${id}
 		`,
 		// right adjoint functor
 		sql`
 			SELECT f.id, f.name, f.notation
 			FROM adjoint_functors a
-			INNER JOIN functors f ON f.id = a.right_adjoint
+			INNER JOIN structures f ON f.id = a.right_adjoint
 			WHERE a.left_adjoint = ${id}
 		`,
 		// tags
 		sql`
-			SELECT ft.tag
-			FROM functor_tag_assignments ft
-			INNER JOIN functor_tags t ON t.tag = ft.tag
-			WHERE ft.functor_id = ${id}
+			SELECT st.tag
+			FROM structure_tag_assignments st
+			INNER JOIN tags t ON t.tag = st.tag
+			WHERE st.structure_id = ${id} AND t.type = 'functor'
 			ORDER BY t.id
 		`,
 		// properties
@@ -109,13 +110,13 @@ export const load = async (event) => {
 		// undistinguishable functors
 		sql`
 			SELECT u.id, u.name
-			FROM functors u
+			FROM structures u
 			JOIN functor_properties p
 			LEFT JOIN functor_property_assignments fp
 				ON fp.functor_id = ${id} AND fp.property_id = p.id
 			LEFT JOIN functor_property_assignments up
 				ON up.functor_id = u.id AND up.property_id = p.id
-			WHERE u.id != ${id}
+			WHERE u.type = 'functor' AND u.id != ${id}
 			GROUP BY u.id, u.name
 			HAVING SUM(
 				CASE
@@ -126,8 +127,8 @@ export const load = async (event) => {
 		`,
 		// comments
 		sql`
-			SELECT id, comment FROM functor_comments
-			WHERE functor_id = ${id}
+			SELECT id, comment FROM structure_comments
+			WHERE structure_id = ${id}
 		`,
 	])
 

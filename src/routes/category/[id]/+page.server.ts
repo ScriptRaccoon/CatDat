@@ -35,36 +35,37 @@ export const load = async (event) => {
 		sql`
 			SELECT
 				c.id,
-				c.name,
-				c.notation,
+				s.name,
+				s.notation,
 				c.objects,
 				c.morphisms,
-				c.description,
-				c.nlab_link,
+				s.description,
+				s.nlab_link,
 				c.dual_category_id,
-				d.name AS dual_category_name,
-				d.notation AS dual_category_notation
+				ds.name AS dual_category_name,
+				ds.notation AS dual_category_notation
 			FROM categories c
-			LEFT JOIN categories d ON d.id = c.dual_category_id
+			INNER JOIN structures s ON s.id = c.id
+			LEFT JOIN structures ds ON ds.id = c.dual_category_id
 			WHERE c.id = ${id}
 		`,
 		// related categories
 		sql`
 			SELECT
-				r.related_category_id AS id,
+				c.id,
 				c.name,
 				c.notation
-			FROM related_categories r
-			INNER JOIN categories c ON c.id = r.related_category_id
-			WHERE r.category_id = ${id}
+			FROM related_structures r
+			INNER JOIN structures c ON c.id = r.related_structure_id
+			WHERE r.structure_id = ${id} AND r.type = 'category'
 			ORDER BY lower(c.name)
 		`,
 		// tags
 		sql`
-			SELECT ct.tag
-			FROM category_tag_assignments ct
-			INNER JOIN category_tags t ON t.tag = ct.tag
-			WHERE ct.category_id = ${id}
+			SELECT st.tag
+			FROM structure_tag_assignments st
+			INNER JOIN tags t ON t.tag = st.tag
+			WHERE st.structure_id = ${id} AND t.type = 'category'
 			ORDER BY t.id
 		`,
 		// properties
@@ -109,13 +110,13 @@ export const load = async (event) => {
 		// undistinguishable categories
 		sql`
 			SELECT u.id, u.name
-			FROM categories u
+			FROM structures u
 			JOIN category_properties p
 			LEFT JOIN category_property_assignments cp
 				ON cp.category_id = ${id} AND cp.property_id = p.id
 			LEFT JOIN category_property_assignments up
 				ON up.category_id = u.id AND up.property_id = p.id
-			WHERE u.id != ${id}
+			WHERE u.type = 'category' AND u.id != ${id}
 			GROUP BY u.id, u.name
 			HAVING SUM(
 				CASE
@@ -126,8 +127,8 @@ export const load = async (event) => {
 		`,
 		// comments
 		sql`
-			SELECT id, comment FROM category_comments
-			WHERE category_id = ${id}
+			SELECT id, comment FROM structure_comments
+			WHERE structure_id = ${id}
 		`,
 	])
 

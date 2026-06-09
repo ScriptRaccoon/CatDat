@@ -11,7 +11,7 @@ import type {
 	PropertyEntry,
 } from './seed.types'
 import { create_schema_hash, get_saved_schema_hash } from './utils/schema'
-import { PLURALS, STRUCTURES } from './config'
+import { PLURALS, STRUCTURES, type StructureType } from './config'
 
 const db = get_client()
 
@@ -71,16 +71,17 @@ function clear_all_tables() {
 			db.prepare(`DELETE FROM ${type}_implication_conclusions`).run()
 			db.prepare(`DELETE FROM ${type}_implications`).run()
 			db.prepare(`DELETE FROM ${type}_property_assignments`).run()
-			db.prepare(`DELETE FROM ${type}_comments`).run()
-			db.prepare(`DELETE FROM related_${plural}`).run()
-			db.prepare(`DELETE FROM ${type}_tag_assignments`).run()
 			db.prepare(`DELETE FROM related_${type}_properties`).run()
 			db.prepare(`DELETE FROM ${type}_properties`).run()
 			db.prepare(`DELETE FROM ${plural}`).run()
-			db.prepare(`DELETE FROM ${type}_tags`).run()
 		}
 
+		db.prepare(`DELETE FROM related_structures`).run()
+		db.prepare(`DELETE FROM structure_comments`).run()
+		db.prepare(`DELETE FROM structure_tag_assignments`).run()
+		db.prepare(`DELETE FROM tags`).run()
 		db.prepare(`DELETE FROM relations`).run()
+		db.prepare(`DELETE FROM structures`).run()
 	})
 
 	try {
@@ -95,8 +96,9 @@ function clear_all_tables() {
  * Seeds the data from the global config file `config.yaml`.
  */
 function seed_config() {
-	const category_tag_insert = db.prepare(`INSERT INTO category_tags (tag) VALUES (?)`)
-	const functor_tag_insert = db.prepare(`INSERT INTO functor_tags (tag) VALUES (?)`)
+	const tag_insert = db.prepare<[string, StructureType]>(
+		`INSERT INTO tags (tag, type) VALUES (?, ?)`,
+	)
 
 	const relation_insert = db.prepare(
 		`INSERT INTO relations (relation, conditional) VALUES (?, ?)`,
@@ -112,16 +114,16 @@ function seed_config() {
 
 	function insert_config(config: ConfigYaml) {
 		for (const tag of config.shared_tags) {
-			category_tag_insert.run(tag)
-			functor_tag_insert.run(tag)
+			tag_insert.run(tag, 'category')
+			tag_insert.run(tag, 'functor')
 		}
 
 		for (const tag of config.category_tags) {
-			category_tag_insert.run(tag)
+			tag_insert.run(tag, 'category')
 		}
 
 		for (const tag of config.functor_tags) {
-			functor_tag_insert.run(tag)
+			tag_insert.run(tag, 'functor')
 		}
 
 		for (const { relation, conditional } of config.relations) {
@@ -228,23 +230,32 @@ function seed_category_implications() {
  * Seeds all categories from YAML files, including their property assignments.
  */
 function seed_categories() {
+	const structure_insert = db.prepare(
+		`INSERT INTO structures (
+			id, name, notation, description, nlab_link, type
+		)
+		VALUES (?, ?, ?, ?, ?, 'category')`,
+	)
+
 	const category_insert = db.prepare(
 		`INSERT INTO categories (
-	        id, name, notation, objects, morphisms,
-	        description, nlab_link, dual_category_id
-		) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
+	        id, objects, morphisms, dual_category_id
+		) VALUES (?, ?, ?, ?)`,
 	)
 
 	const tag_insert = db.prepare(
-		`INSERT INTO category_tag_assignments (category_id, tag) VALUES (?, ?)`,
+		`INSERT INTO structure_tag_assignments (structure_id, tag, type)
+		VALUES (?, ?, 'category')`,
 	)
 
 	const comment_insert = db.prepare(
-		`INSERT INTO category_comments (category_id, comment) VALUES (?, ?)`,
+		`INSERT INTO structure_comments (structure_id, comment)
+		VALUES (?, ?)`,
 	)
 
 	const related_insert = db.prepare(
-		`INSERT INTO related_categories (category_id, related_category_id) VALUES (?, ?)`,
+		`INSERT INTO related_structures (structure_id, related_structure_id, type)
+		VALUES (?, ?, 'category')`,
 	)
 
 	const special_object_insert = db.prepare(
@@ -279,14 +290,18 @@ function seed_categories() {
 	}
 
 	function insert_category(category: CategoryYaml) {
-		category_insert.run(
+		structure_insert.run(
 			category.id,
 			category.name,
 			category.notation,
-			category.objects,
-			category.morphisms,
 			category.description,
 			category.nlab_link,
+		)
+
+		category_insert.run(
+			category.id,
+			category.objects,
+			category.morphisms,
 			category.dual_category || null,
 		)
 
@@ -435,22 +450,29 @@ function seed_functor_implications() {
  * Seeds all functors from YAML files.
  */
 function seed_functors() {
+	const structure_insert = db.prepare(
+		`INSERT INTO structures
+			(id, name, notation, description, nlab_link, type)
+		VALUES (?, ?, ?, ?, ?, 'functor')`,
+	)
+
 	const functor_insert = db.prepare(
-		`INSERT INTO functors (
-	        id, name, notation, source, target, description, nlab_link
-		) VALUES (?, ?, ?, ?, ?, ?, ?)`,
+		`INSERT INTO functors (id, source, target) VALUES (?, ?, ?)`,
 	)
 
 	const tag_insert = db.prepare(
-		`INSERT INTO functor_tag_assignments (functor_id, tag) VALUES (?, ?)`,
+		`INSERT INTO structure_tag_assignments (structure_id, tag, type)
+		VALUES (?, ?, 'functor')`,
 	)
 
 	const comment_insert = db.prepare(
-		`INSERT INTO functor_comments (functor_id, comment) VALUES (?, ?)`,
+		`INSERT INTO structure_comments (structure_id, comment)
+		VALUES (?, ?)`,
 	)
 
 	const related_insert = db.prepare(
-		`INSERT INTO related_functors (functor_id, related_functor_id) VALUES (?, ?)`,
+		`INSERT INTO related_structures (structure_id, related_structure_id, type)
+		VALUES (?, ?, 'functor')`,
 	)
 
 	const adjoint_insert = db.prepare(
@@ -482,15 +504,15 @@ function seed_functors() {
 	}
 
 	function insert_functor(functor: FunctorYaml) {
-		functor_insert.run(
+		structure_insert.run(
 			functor.id,
 			functor.name,
 			functor.notation,
-			functor.source,
-			functor.target,
 			functor.description || null,
 			functor.nlab_link || null,
 		)
+
+		functor_insert.run(functor.id, functor.source, functor.target)
 
 		for (const tag of functor.tags) {
 			tag_insert.run(functor.id, tag)

@@ -24,11 +24,11 @@ export function restrict_functor_properties() {
                     f.id,
                     p.id,
                     FALSE,
-                    'The ${domain} category is not ' || c.notation || '.',
+                    'The ${domain} category is not ' || s.notation || '.',
                     FALSE,
                     FALSE
                 FROM functor_properties p
-                INNER JOIN categories c ON c.id = p.required_${domain}
+                INNER JOIN structures s ON s.id = p.required_${domain}
                 JOIN functors f
                 WHERE f.${domain} <> p.required_${domain}`,
 			)

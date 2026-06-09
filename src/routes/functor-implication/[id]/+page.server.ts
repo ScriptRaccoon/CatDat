@@ -24,10 +24,10 @@ export const load = async (event) => {
             WHERE id = ${id}
         `,
 		sql`
-            SELECT f.id, f.name FROM functors f
-            WHERE EXISTS (
+            SELECT s.id, s.name FROM structures s
+            WHERE s.type = 'functor' AND EXISTS (
                 SELECT 1 FROM functor_property_assignments fp
-                WHERE fp.functor_id = f.id
+                WHERE fp.functor_id = s.id
                 AND fp.proof LIKE '%/functor-implication/' || ${id} || '%'
             )
         `,

@@ -67,22 +67,23 @@ export const load = async (event) => {
         `,
 		// known functors
 		sql`
-            SELECT f.id, f.name, fp.is_satisfied
+            SELECT s.id, s.name, fp.is_satisfied
             FROM functor_property_assignments fp
-            INNER JOIN functors f ON f.id = fp.functor_id
-            WHERE fp.property_id = ${id}
-            ORDER BY lower(f.name)
+            INNER JOIN structures s ON s.id = fp.functor_id
+            WHERE s.type = 'functor' AND fp.property_id = ${id}
+            ORDER BY lower(s.name)
         `,
 		// unknown functors
 		sql`
-            SELECT f.id, f.name
-            FROM functors f
+            SELECT s.id, s.name
+            FROM structures s
             LEFT JOIN functor_property_assignments fp
-                ON fp.functor_id = f.id
+                ON fp.functor_id = s.id
                 AND fp.property_id = ${id}
             WHERE
+                s.type = 'functor' AND
                 fp.property_id IS NULL
-            ORDER BY lower(f.name)
+            ORDER BY lower(s.name)
         `,
 	])
 

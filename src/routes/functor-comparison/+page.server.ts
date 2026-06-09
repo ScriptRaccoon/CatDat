@@ -5,7 +5,9 @@ import { error } from '@sveltejs/kit'
 
 export const load = async () => {
 	const { rows: functors, err } = query<StructureShort>(sql`
-		SELECT id, name FROM functors ORDER BY lower(name)
+		SELECT id, name FROM structures
+		WHERE type = 'functor'
+		ORDER BY lower(name)
 	`)
 
 	if (err) error(500, 'Functors could not be loaded')

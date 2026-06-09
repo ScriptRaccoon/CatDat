@@ -5,8 +5,15 @@ import sql from 'sql-template-tag'
 
 export const load = async () => {
 	const { results, err } = batch<[StructureShort, TagObject]>([
-		sql`SELECT id, name FROM functors ORDER BY lower(name)`,
-		sql`SELECT tag FROM functor_tags ORDER BY id`,
+		sql`
+			SELECT id, name FROM structures
+			WHERE type = 'functor'
+			ORDER BY lower(name)`,
+		sql`
+			SELECT tag FROM tags
+			WHERE type = 'functor'
+			ORDER BY id
+		`,
 	])
 
 	if (err) error(500, 'Functors could not be loaded')
