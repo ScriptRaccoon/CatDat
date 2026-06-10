@@ -2,7 +2,7 @@ id: LRS_R
 name: category of locally ringed spaces
 notation: $\LRS_R$
 objects: locally ringed spaces over $R \neq 0$, i.e. pairs $(X,\O_X)$ consisting of a topological space and a sheaf of commutative $R$-algebras on it whose stalks are local rings
-morphisms: 'A morphism $(f,f^\#) : (X,\O_X) \to (Y,\O_Y)$ consists of a continuous map $f : X \to Y$ and a homomorphism $f^\# : \O_Y \to f_* \O_X$ of sheaves of $R$-algebras such that for every $x \in X$ the induced map on stalks $f_x : \O_{Y,f(x)} \to \O_{X,x}$ is local.'
+morphisms: 'A morphism $(f,f^\sharp) : (X,\O_X) \to (Y,\O_Y)$ consists of a continuous map $f : X \to Y$ and a homomorphism $f^\sharp : \O_Y \to f_* \O_X$ of sheaves of $R$-algebras such that for every $x \in X$ the induced map on stalks $f_x : \O_{Y,f(x)} \to \O_{X,x}$ is local.'
 description: Here, $R$ is a fixed non-trivial commutative ring. The general properties of this category will not depend on the choice of $R$. For $R = \IZ$ we obtain the category $\LRS$ of locally ringed spaces.
 nlab_link: https://ncatlab.org/nlab/show/locally+ringed+topological+space
 
@@ -11,6 +11,9 @@ tags:
 
 related_categories:
   - Sch_R
+
+comments:
+  - Monomorphisms $X \to Y$ can be formally described by the condition that the diagonal morphism $X \to X \times_Y X$ is an isomorphism. Since the fiber product of locally ringed spaces has a concrete description (<a href="https://math.stackexchange.com/questions/1033675" target="_blank">MSE/1033675</a>), we thus have a description of the monomorphisms, albeit a very complicated one.
 
 satisfied_properties:
   - property: locally small
@@ -26,7 +29,7 @@ satisfied_properties:
     proof: 'Let $f : X \to Y$ be a monomorphism of locally ringed spaces. I claim that $f$ is injective, from which the claim will follow. The diagonal $\Delta : X \to X \times_Y X$ is an isomorphism. By the explicit construction of fiber products, $X \times_Y X$ consists of triples $(x_1,x_2,\p)$ where $x_1,x_2 \in X$, $y \coloneqq f(x_1) = f(x_2)$ and $\p$ is a prime ideal in $k(x_1) \otimes_{k(y)} k(x_2)$. The map $\Delta$ is given by $\Delta(x) = \bigl(x,x,\ker(k(x) \otimes_{k(f(x))} k(x) \to k(x)\bigr)$, and it is bijective. This clearly implies that $f$ is injective (and that each tensor product $k(x) \otimes_{k(f(x))} k(x)$ has a unique prime ideal, namely the kernel mentioned).'
 
   - property: well-copowered
-    proof: It is enough to prove that every epimorphism of locally ringed spaces is surjective. The forgetful functor $\LRS_R \to \RS_R$ has a right adjoint (see <a href="https://arxiv.org/abs/1103.2139" target="_blank">Localization of ringed spaces</a> by W. Gillam), so it preserves epimorphisms. The forgetful functor $\RS_R \to \Top$ also has a right adjoint, namely $X \mapsto (X,\underline{R})$, so it also preserves epimorphisms.
+    proof: This is because every epimorphism of locally ringed spaces is surjective (by their characterization below).
 
   - property: infinitary extensive
     proof: '[Sketch] Since <a href="/category/Top">$\Top$</a> is infinitary extensive, a morphism $f : Y \to \coprod_i X_i \eqqcolon X$ yields a decomposition $Y = \coprod_i Y_i$ (as topological spaces) with continuous maps $f_i : Y_i \to X_i$. Endow the open subset $Y_i \subseteq Y$ with the restricted sheaf. Then each $f_i$ becomes a morphism of locally ringed spaces, and $Y = \coprod_i Y_i$ holds as locally ringed spaces.'
@@ -81,5 +84,13 @@ special_objects:
 
 special_morphisms:
   isomorphisms:
-    description: pairs $(f,f^{\sharp})$ consisting of a homeomorphism $f$ and an isomorphism of sheaves $f^{\sharp}$ of $R$-algebras
+    description: 'A morphism $(f,f^\sharp) : (X, \O_X) \to (Y,\O_Y)$ is an isomorphism iff $f : X \to Y$ is a homeomorphism and $f^\sharp : \O_Y \to f_* \O_X$ is an isomorphism of sheaves.'
     proof: This is easy.
+  epimorphisms:
+    description: 'A morphism $(f,f^\sharp) : (X, \O_X) \to (Y,\O_Y)$ is an epimorphism iff $f : X \to Y$ is surjective and $f^\sharp : \O_Y \to f_* \O_X$ is a monomorphism sheaves.'
+    proof: >-
+      It is obvious that morphisms with this property are epimorphisms. For the opposite, assume that $(f,f^\sharp) : (X, \O_X) \to (Y,\O_Y)$ is an epimorphism. Then the codiagonal
+      $$(Y,\O_Y) \sqcup_{(X,\O_X)} (Y,\O_Y) \to (Y,\O_Y)$$
+      is an isomorphism. By construction of the pushout, the underlying space of the pushout is $Y \sqcup_X Y$. Hence, $f$ is an epimorphism in $\Top$, i.e. it is surjective. For open subsets $V \subseteq Y$ the preimage in the pushout is $V \sqcup_{f^{-1}(V)} V$, and its ring of sections is the pullback $\O_Y(V) \times_{\O_X(f^{-1}(V))} \O_Y(V)$. Since the diagonal
+      $$\O_Y(V) \to \O_Y(V) \times_{\O_X(f^{-1}(V))} \O_Y(V)$$
+      is an isomorphism, the map $f^\sharp(V) : \O_Y(V) \to \O_X(f^{-1}(V))$ is a monomorphism. Hence, $f^\sharp$ is a monomorphism of sheaves.
