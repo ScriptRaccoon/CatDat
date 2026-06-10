@@ -49,8 +49,9 @@ export const load = async (event) => {
                 source_assumptions,
                 target_assumptions,
                 conclusions
-            FROM functor_implications_view
-            WHERE
+            FROM implications_view
+            WHERE type = 'functor'
+            AND (
                 EXISTS (
                     SELECT 1
                     FROM json_each(conclusions)
@@ -62,6 +63,7 @@ export const load = async (event) => {
                     FROM json_each(assumptions)
                     WHERE value = ${id}
                 )
+			)
             ORDER BY lower(assumptions) || ' ' || lower(conclusions)
         `,
 		// known functors

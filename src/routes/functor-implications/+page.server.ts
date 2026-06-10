@@ -14,10 +14,11 @@ export const load = async () => {
             dualized_from,
             proof,
             assumptions,
-            conclusions,
             source_assumptions,
-            target_assumptions
-        FROM functor_implications_view
+            target_assumptions,
+            conclusions
+        FROM implications_view
+        WHERE type = 'functor'
         ORDER BY lower(assumptions) || ' ' || lower(conclusions)
     `)
 

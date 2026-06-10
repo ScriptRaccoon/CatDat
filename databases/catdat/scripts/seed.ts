@@ -11,7 +11,7 @@ import type {
 	PropertyEntry,
 } from './seed.types'
 import { create_schema_hash, get_saved_schema_hash } from './utils/schema'
-import { STRUCTURES, type StructureType } from './config'
+import { type StructureType } from './config'
 
 const db = get_client()
 
@@ -60,15 +60,13 @@ function clear_all_tables() {
 		db.prepare(`DELETE FROM special_objects`).run()
 		db.prepare(`DELETE FROM special_object_types`).run()
 
-		db.prepare(`DELETE FROM functor_implication_source_assumptions`).run()
-		db.prepare(`DELETE FROM functor_implication_target_assumptions`).run()
+		db.prepare(`DELETE FROM source_assumptions`).run()
+		db.prepare(`DELETE FROM target_assumptions`).run()
 		db.prepare(`DELETE FROM adjoint_functors`).run()
 
-		for (const type of STRUCTURES) {
-			db.prepare(`DELETE FROM ${type}_implication_assumptions`).run()
-			db.prepare(`DELETE FROM ${type}_implication_conclusions`).run()
-			db.prepare(`DELETE FROM ${type}_implications`).run()
-		}
+		db.prepare(`DELETE FROM assumptions`).run()
+		db.prepare(`DELETE FROM conclusions`).run()
+		db.prepare(`DELETE FROM implications`).run()
 
 		db.prepare(`DELETE FROM property_assignments`).run()
 		db.prepare(`DELETE FROM related_properties`).run()
@@ -187,21 +185,21 @@ function seed_category_properties() {
  */
 function seed_category_implications() {
 	const implication_insert = db.prepare(
-		`INSERT INTO category_implications (
-	        id, proof, is_equivalence
-		) VALUES (?, ?, ?)`,
+		`INSERT INTO implications (
+	        id, type, proof, is_equivalence
+		) VALUES (?, 'category', ?, ?)`,
 	)
 
 	const assumption_insert = db.prepare(
-		`INSERT INTO category_implication_assumptions (
-			implication_id, property_id
-		) VALUES (?, ?)`,
+		`INSERT INTO assumptions (
+			implication_id, property_id, type
+		) VALUES (?, ?, 'category')`,
 	)
 
 	const conclusion_insert = db.prepare(
-		`INSERT INTO category_implication_conclusions (
-			implication_id, property_id
-		) VALUES (?, ?)`,
+		`INSERT INTO conclusions (
+			implication_id, property_id, type
+		) VALUES (?, ?, 'category')`,
 	)
 
 	function insert_implications(implications: CategoryImplicationYaml[]) {
@@ -384,33 +382,33 @@ function seed_functor_properties() {
  */
 function seed_functor_implications() {
 	const implication_insert = db.prepare(
-		`INSERT INTO functor_implications (
-	        id, proof, is_equivalence
-		) VALUES (?, ?, ?)`,
+		`INSERT INTO implications (
+	        id, type, proof, is_equivalence
+		) VALUES (?, 'functor', ?, ?)`,
 	)
 
 	const assumption_insert = db.prepare(
-		`INSERT INTO functor_implication_assumptions (
-			implication_id, property_id
-		) VALUES (?, ?)`,
+		`INSERT INTO assumptions (
+			implication_id, property_id, type
+		) VALUES (?, ?, 'functor')`,
 	)
 
 	const source_assumption_insert = db.prepare(
-		`INSERT INTO functor_implication_source_assumptions (
-			implication_id, property_id
-		) VALUES (?, ?)`,
+		`INSERT INTO source_assumptions (
+			implication_id, property_id, type, property_type
+		) VALUES (?, ?, 'functor', 'category')`,
 	)
 
 	const target_assumption_insert = db.prepare(
-		`INSERT INTO functor_implication_target_assumptions (
-			implication_id, property_id
-		) VALUES (?, ?)`,
+		`INSERT INTO target_assumptions (
+			implication_id, property_id, type, property_type
+		) VALUES (?, ?, 'functor', 'category')`,
 	)
 
 	const conclusion_insert = db.prepare(
-		`INSERT INTO functor_implication_conclusions (
-			implication_id, property_id
-		) VALUES (?, ?)`,
+		`INSERT INTO conclusions (
+			implication_id, property_id, type
+		) VALUES (?, ?, 'functor')`,
 	)
 
 	function insert_implications(implications: FunctorImplicationYaml[]) {

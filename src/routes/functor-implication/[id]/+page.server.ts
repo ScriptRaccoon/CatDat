@@ -10,18 +10,18 @@ export const load = async (event) => {
 
 	const { results, err } = batch<[ImplicationDB, StructureShort]>([
 		sql`
-            SELECT
-                id,
-                is_equivalence,
-                is_deduced,
-                dualized_from,
-                proof,
-                assumptions,
-                conclusions,
-                source_assumptions,
-                target_assumptions
-            FROM functor_implications_view
-            WHERE id = ${id}
+			SELECT
+				id,
+				is_equivalence,
+				is_deduced,
+				dualized_from,
+				proof,
+				assumptions,
+				source_assumptions,
+				target_assumptions,
+				conclusions
+			FROM implications_view
+			WHERE type = 'functor' AND id = ${id}
         `,
 		sql`
             SELECT s.id, s.name FROM structures s

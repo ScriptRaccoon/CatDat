@@ -95,17 +95,22 @@ export function get_normalized_functor_implications(
 			never[],
 			{
 				id: string
+				is_equivalence: 0 | 1
 				assumptions: string
 				source_assumptions: string
 				target_assumptions: string
 				conclusions: string
-				is_equivalence: 0 | 1
 			}
 		>(
 			`SELECT
-                id, assumptions, source_assumptions, target_assumptions,
-				conclusions, is_equivalence
-			FROM functor_implications_view`,
+				id,
+				is_equivalence,
+				assumptions,
+				source_assumptions,
+				target_assumptions,
+				conclusions
+			FROM implications_view i
+			WHERE i.type = 'functor'`,
 		)
 		.all()
 

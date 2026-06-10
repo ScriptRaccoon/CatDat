@@ -47,15 +47,18 @@ function report_long_property_proofs(type: StructureType) {
 
 function report_long_implication_proofs(type: StructureType) {
 	const long_proofs = db
-		.prepare<[number], { id: string; length: number }>(
+		.prepare<[StructureType, number], { id: string; length: number }>(
 			`SELECT
                 id,
                 length(proof) AS length
-            FROM ${type}_implications
-            WHERE is_deduced = FALSE AND length(proof) >= ?
+            FROM implications
+            WHERE
+				type = ?
+				AND is_deduced = FALSE
+				AND length(proof) >= ?
             ORDER BY length(proof) DESC`,
 		)
-		.all(PROOF_LENGTH_THRESHOLD)
+		.all(type, PROOF_LENGTH_THRESHOLD)
 
 	if (!long_proofs.length) return
 

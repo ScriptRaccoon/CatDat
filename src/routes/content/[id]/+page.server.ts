@@ -13,15 +13,17 @@ export const load = async (event) => {
 		[StructureShort, PropertyShort, { id: string }]
 	>([
 		sql`
-			SELECT c.id, c.name FROM categories c
-			WHERE EXISTS (
-				SELECT 1
-				FROM property_assignments cp
-				WHERE
-					cp.type = 'category'
-					AND cp.structure_id = c.id
-					AND cp.proof LIKE '%/content/' || ${id} || '%'
-			)
+			SELECT c.id, c.name FROM structures c
+			WHERE
+				type = 'category'
+				AND EXISTS (
+					SELECT 1
+					FROM property_assignments cp
+					WHERE
+						cp.type = 'category'
+						AND cp.structure_id = c.id
+						AND cp.proof LIKE '%/content/' || ${id} || '%'
+				)
 		`,
 		sql`
 			SELECT id, relation FROM properties
@@ -30,8 +32,10 @@ export const load = async (event) => {
 				AND description LIKE '%/content/' || ${id} || '%'
 		`,
 		sql`
-			SELECT id FROM category_implications
-			WHERE proof LIKE '%/content/' || ${id} || '%'
+			SELECT id FROM implications
+			WHERE
+				type = 'category'
+				AND proof LIKE '%/content/' || ${id} || '%'
 		`,
 	])
 

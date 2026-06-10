@@ -48,8 +48,9 @@ export const load = async (event) => {
 				proof,
 				assumptions,
 				conclusions
-			FROM category_implications_view
-			WHERE
+			FROM implications_view
+			WHERE type = 'category'
+			AND (
 				EXISTS (
 					SELECT 1
 					FROM json_each(conclusions)
@@ -61,6 +62,7 @@ export const load = async (event) => {
 					FROM json_each(assumptions)
 					WHERE value = ${id}
 				)
+			)
 			ORDER BY lower(assumptions) || ' ' || lower(conclusions)
 		`,
 		// known categories

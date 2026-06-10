@@ -44,13 +44,18 @@ export function get_normalized_category_implications(
 			never[],
 			{
 				id: string
+				is_equivalence: 0 | 1
 				assumptions: string
 				conclusions: string
-				is_equivalence: 0 | 1
 			}
 		>(
-			`SELECT id, assumptions, conclusions, is_equivalence
-			FROM category_implications_view`,
+			`SELECT
+				id,
+				is_equivalence,
+				assumptions,
+				conclusions
+			FROM implications_view i
+			WHERE i.type = 'category'`,
 		)
 		.all()
 

@@ -26,11 +26,27 @@ export function get_normalized_implications(type: StructureType) {
 function get_normalized_category_implications() {
 	const { rows, err } = query<{
 		id: string
+		is_equivalence: 0 | 1
 		assumptions: string
 		conclusions: string
-		is_equivalence: 0 | 1
 	}>(
-		sql`SELECT id, assumptions, conclusions, is_equivalence FROM category_implications_view`,
+		sql`
+			SELECT
+				i.id,
+				i.is_equivalence,
+				(
+					SELECT json_group_array(a.property_id)
+					FROM assumptions a WHERE a.implication_id = i.id
+					ORDER BY lower(a.property_id)
+				) AS assumptions,
+				(
+					SELECT json_group_array(c.property_id)
+					FROM conclusions c WHERE c.implication_id = i.id
+					ORDER BY lower(c.property_id)
+				) AS conclusions
+			FROM implications i
+			WHERE i.type = 'category'
+		`,
 	)
 
 	if (err) return { implications: null, err }
@@ -67,16 +83,39 @@ function get_normalized_category_implications() {
 function get_normalized_functor_implications() {
 	const { rows, err } = query<{
 		id: string
+		is_equivalence: 0 | 1
 		assumptions: string
-		conclusions: string
 		source_assumptions: string
 		target_assumptions: string
-		is_equivalence: 0 | 1
+		conclusions: string
 	}>(
 		sql`
-			SELECT id, assumptions, source_assumptions, target_assumptions,
-			conclusions, is_equivalence
-			FROM functor_implications_view`,
+			SELECT
+				i.id,
+				i.is_equivalence,
+				(
+					SELECT json_group_array(a.property_id)
+					FROM assumptions a WHERE a.implication_id = i.id
+					ORDER BY lower(a.property_id)
+				) AS assumptions,
+				(
+					SELECT json_group_array(a.property_id)
+					FROM source_assumptions a WHERE a.implication_id = i.id
+					ORDER BY lower(a.property_id)
+				) AS source_assumptions,
+				(
+					SELECT json_group_array(a.property_id)
+					FROM target_assumptions a WHERE a.implication_id = i.id
+					ORDER BY lower(a.property_id)
+				) AS target_assumptions,
+				(
+					SELECT json_group_array(c.property_id)
+					FROM conclusions c WHERE c.implication_id = i.id
+					ORDER BY lower(c.property_id)
+				) AS conclusions
+			FROM implications i
+			WHERE type = 'functor'
+		`,
 	)
 
 	if (err) return { implications: null, err }

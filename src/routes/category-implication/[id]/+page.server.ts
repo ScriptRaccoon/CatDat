@@ -18,8 +18,8 @@ export const load = async (event) => {
 				proof,
 				assumptions,
 				conclusions
-			FROM category_implications_view
-			WHERE id = ${id}
+			FROM implications_view
+			WHERE type = 'category' AND id = ${id}
 		`,
 		sql`
 			SELECT s.id, s.name FROM structures s
