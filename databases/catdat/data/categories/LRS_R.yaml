@@ -13,7 +13,7 @@ related_categories:
   - Sch_R
 
 comments:
-  - Monomorphisms $X \to Y$ can be formally described by the condition that the diagonal morphism $X \to X \times_Y X$ is an isomorphism. Since the fiber product of locally ringed spaces has a concrete description (<a href="https://math.stackexchange.com/questions/1033675" target="_blank">MSE/1033675</a>), we thus have a description of the monomorphisms, albeit a very complicated one.
+  - Monomorphisms $X \to Y$ can be formally described by the condition that the diagonal morphism $X \to X \times_Y X$ is an isomorphism. Since the fiber product of locally ringed spaces has a concrete description (<a href="https://math.stackexchange.com/questions/1033675" target="_blank">MSE/1033675</a>), we thus have a description of the monomorphisms, albeit a very complicated one. At least, we can say that every monomorphism is injective.
 
 satisfied_properties:
   - property: locally small
@@ -25,11 +25,8 @@ satisfied_properties:
   - property: cocomplete
     proof: See Demazure-Gabriel's "Groupes algébriques", I. §1. 1.6. Specifically, the forgetful functor from locally ringed spaces to ringed spaces preserves colimits, and colimits of ringed spaces are built from colimits of topological spaces and limits of commutative rings, see <a href="https://math.stackexchange.com/questions/1646202" target="_blank">MSE/1646202</a>.
 
-  - property: well-powered
-    proof: 'Let $f : X \to Y$ be a monomorphism of locally ringed spaces. I claim that $f$ is injective, from which the claim will follow. The diagonal $\Delta : X \to X \times_Y X$ is an isomorphism. By the explicit construction of fiber products, $X \times_Y X$ consists of triples $(x_1,x_2,\p)$ where $x_1,x_2 \in X$, $y \coloneqq f(x_1) = f(x_2)$ and $\p$ is a prime ideal in $k(x_1) \otimes_{k(y)} k(x_2)$. The map $\Delta$ is given by $\Delta(x) = \bigl(x,x,\ker(k(x) \otimes_{k(f(x))} k(x) \to k(x)\bigr)$, and it is bijective. This clearly implies that $f$ is injective (and that each tensor product $k(x) \otimes_{k(f(x))} k(x)$ has a unique prime ideal, namely the kernel mentioned).'
-
   - property: well-copowered
-    proof: This is because every epimorphism of locally ringed spaces is surjective (by their characterization below).
+    proof: This follows from the characterization of epimorphisms below.
 
   - property: infinitary extensive
     proof: '[Sketch] Since <a href="/category/Top">$\Top$</a> is infinitary extensive, a morphism $f : Y \to \coprod_i X_i \eqqcolon X$ yields a decomposition $Y = \coprod_i Y_i$ (as topological spaces) with continuous maps $f_i : Y_i \to X_i$. Endow the open subset $Y_i \subseteq Y$ with the restricted sheaf. Then each $f_i$ becomes a morphism of locally ringed spaces, and $Y = \coprod_i Y_i$ holds as locally ringed spaces.'
