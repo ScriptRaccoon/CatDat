@@ -38,12 +38,12 @@ function create_dualized_category_implications() {
 			(
 				SELECT json_group_array(p.dual_property_id)
 				FROM json_each(v.assumptions) a
-				JOIN category_properties p ON p.id = a.value
+				JOIN properties p ON p.id = a.value
 			) AS dual_assumptions,
 			(
 				SELECT json_group_array(p.dual_property_id)
 				FROM json_each(v.conclusions) c
-				JOIN category_properties p ON p.id = c.value
+				JOIN properties p ON p.id = c.value
 			) AS dual_conclusions
 		FROM category_implications_view v
 		WHERE v.is_deduced = FALSE`,
@@ -106,9 +106,10 @@ function create_self_dual_category_implications() {
                 'This holds by self-duality.',
                 TRUE
             FROM
-                category_properties p
+                properties p
             WHERE
-                p.dual_property_id IS NOT NULL
+				p.type = 'category'
+                AND p.dual_property_id IS NOT NULL
                 AND p.id != 'self-dual'
                 AND p.id != p.dual_property_id
                 AND p.invariant_under_equivalences = TRUE

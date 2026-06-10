@@ -76,18 +76,21 @@ export const load = async (event) => {
 				cp.proof,
 				cp.is_deduced,
 				p.relation
-			FROM category_property_assignments cp
-			INNER JOIN category_properties p ON p.id = cp.property_id
-			WHERE cp.category_id = ${id}
+			FROM property_assignments cp
+			INNER JOIN properties p ON p.id = cp.property_id
+			WHERE cp.type = 'category' AND cp.structure_id = ${id}
 			ORDER BY cp.id
 		`,
 		// unknown properties
 		sql`
 			SELECT p.id, p.relation
-			FROM category_properties p
-			WHERE NOT EXISTS (
-				SELECT 1 FROM category_property_assignments
-				WHERE category_id = ${id} AND property_id = p.id
+			FROM properties p
+			WHERE type = 'category' AND NOT EXISTS (
+				SELECT 1 FROM property_assignments
+				WHERE
+					type = 'category' 
+					AND structure_id = ${id}
+					AND property_id = p.id
 			)
 			ORDER BY lower(p.id)
 		`,
@@ -111,12 +114,19 @@ export const load = async (event) => {
 		sql`
 			SELECT u.id, u.name
 			FROM structures u
-			JOIN category_properties p
-			LEFT JOIN category_property_assignments cp
-				ON cp.category_id = ${id} AND cp.property_id = p.id
-			LEFT JOIN category_property_assignments up
-				ON up.category_id = u.id AND up.property_id = p.id
-			WHERE u.type = 'category' AND u.id != ${id}
+			JOIN properties p
+			LEFT JOIN property_assignments cp
+				ON cp.type = 'category'
+				AND cp.structure_id = ${id}
+				AND cp.property_id = p.id
+			LEFT JOIN property_assignments up
+				ON up.type = 'category'
+				AND up.structure_id = u.id
+				AND up.property_id = p.id
+			WHERE
+				p.type = 'category'
+				AND u.type = 'category'
+				AND u.id != ${id}
 			GROUP BY u.id, u.name
 			HAVING SUM(
 				CASE

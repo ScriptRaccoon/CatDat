@@ -20,11 +20,14 @@ export const load = async () => {
 		sql`
 			SELECT s.id, s.name, COUNT(*) AS count
 			FROM structures s
-			INNER JOIN category_properties p
-			LEFT JOIN category_property_assignments cp
-				ON cp.category_id = s.id
+			INNER JOIN properties p
+			LEFT JOIN property_assignments cp
+				ON cp.structure_id = s.id
 				AND cp.property_id = p.id
-			WHERE s.type = 'category' AND cp.property_id IS NULL
+			WHERE
+				p.type = 'category'
+				AND s.type = 'category'
+				AND cp.property_id IS NULL
 			GROUP BY s.id
 			ORDER BY lower(s.name);
 		`,
@@ -32,11 +35,14 @@ export const load = async () => {
 		sql`
 			SELECT s.id, s.name, COUNT(*) AS count
 			FROM structures s
-			INNER JOIN functor_properties p
-			LEFT JOIN functor_property_assignments fp
-				ON fp.functor_id = s.id
+			INNER JOIN properties p
+			LEFT JOIN property_assignments fp
+				ON fp.structure_id = s.id
 				AND fp.property_id = p.id
-			WHERE s.type = 'functor' AND fp.property_id IS NULL
+			WHERE
+				p.type = 'functor'
+				AND s.type = 'functor'
+				AND fp.property_id IS NULL
 			GROUP BY s.id
 			ORDER BY lower(s.name);
 		`,
@@ -59,12 +65,15 @@ export const load = async () => {
 			FROM structures s1
 			JOIN structures s2
 				ON s1.id < s2.id
-			JOIN category_properties p
-			LEFT JOIN category_property_assignments a1
-				ON a1.category_id = s1.id AND a1.property_id = p.id
-			LEFT JOIN category_property_assignments a2
-				ON a2.category_id = s2.id AND a2.property_id = p.id
-			WHERE s1.type = 'category' AND s2.type = 'category'
+			JOIN properties p
+			LEFT JOIN property_assignments a1
+				ON a1.structure_id = s1.id AND a1.property_id = p.id
+			LEFT JOIN property_assignments a2
+				ON a2.structure_id = s2.id AND a2.property_id = p.id
+			WHERE
+				p.type = 'category'
+				AND s1.type = 'category'
+				AND s2.type = 'category'
 			GROUP BY s1.id, s1.name, s2.id, s2.name
 			HAVING SUM(
 			CASE
@@ -81,12 +90,15 @@ export const load = async () => {
 			FROM structures s1
 			JOIN structures s2
 				ON s1.id < s2.id
-			JOIN functor_properties p
-			LEFT JOIN functor_property_assignments a1
-				ON a1.functor_id = s1.id AND a1.property_id = p.id
-			LEFT JOIN functor_property_assignments a2
-				ON a2.functor_id = s2.id AND a2.property_id = p.id
-			WHERE s1.type = 'functor' AND s2.type = 'functor'
+			JOIN properties p
+			LEFT JOIN property_assignments a1
+				ON a1.structure_id = s1.id AND a1.property_id = p.id
+			LEFT JOIN property_assignments a2
+				ON a2.structure_id = s2.id AND a2.property_id = p.id
+			WHERE
+				p.type = 'functor'
+				AND s1.type = 'functor'
+				AND s2.type = 'functor'
 			GROUP BY s1.id, s1.name, s2.id, s2.name
 			HAVING SUM(
 			CASE

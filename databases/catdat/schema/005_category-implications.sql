@@ -15,7 +15,8 @@ CREATE TABLE category_implication_assumptions (
     property_id TEXT NOT NULL,
     PRIMARY KEY (implication_id, property_id),
     FOREIGN KEY (implication_id) REFERENCES category_implications (id) ON DELETE CASCADE,
-    FOREIGN KEY (property_id) REFERENCES category_properties (id) ON DELETE CASCADE
+    FOREIGN KEY (property_id) REFERENCES properties (id) ON DELETE CASCADE
+    -- TODO: check that the property type is correct
 );
 
 CREATE TABLE category_implication_conclusions (
@@ -23,7 +24,8 @@ CREATE TABLE category_implication_conclusions (
     property_id TEXT NOT NULL,
     PRIMARY KEY (implication_id, property_id),
     FOREIGN KEY (implication_id) REFERENCES category_implications (id) ON DELETE CASCADE,
-    FOREIGN KEY (property_id) REFERENCES category_properties (id) ON DELETE CASCADE
+    FOREIGN KEY (property_id) REFERENCES properties (id) ON DELETE CASCADE
+    -- TODO: check that the property type is correct
 );
 
 CREATE INDEX idx_assumptions_category_property ON category_implication_assumptions (property_id);

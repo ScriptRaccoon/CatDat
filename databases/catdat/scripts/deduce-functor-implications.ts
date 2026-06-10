@@ -40,22 +40,22 @@ function create_dualized_functor_implications() {
 			(
 				SELECT json_group_array(p.dual_property_id)
 				FROM json_each(v.assumptions) a
-				JOIN functor_properties p ON p.id = a.value
+				JOIN properties p ON p.id = a.value
 			) AS dual_assumptions,
 			(
 				SELECT json_group_array(p.dual_property_id)
 				FROM json_each(v.source_assumptions) sa
-				JOIN category_properties p ON p.id = sa.value
+				JOIN properties p ON p.id = sa.value
 			) AS dual_source_assumptions,
 			(
 				SELECT json_group_array(p.dual_property_id)
 				FROM json_each(v.target_assumptions) ta
-				JOIN category_properties p ON p.id = ta.value
+				JOIN properties p ON p.id = ta.value
 			) AS dual_target_assumptions,
 			(
 				SELECT json_group_array(p.dual_property_id)
 				FROM json_each(v.conclusions) c
-				JOIN functor_properties p ON p.id = c.value
+				JOIN properties p ON p.id = c.value
 			) AS dual_conclusions
 		FROM functor_implications_view v
 		WHERE v.is_deduced = FALSE`,

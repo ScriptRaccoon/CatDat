@@ -15,7 +15,8 @@ CREATE TABLE functor_implication_assumptions (
     property_id TEXT NOT NULL,
     PRIMARY KEY (implication_id, property_id),
     FOREIGN KEY (implication_id) REFERENCES functor_implications (id) ON DELETE CASCADE,
-    FOREIGN KEY (property_id) REFERENCES functor_properties (id) ON DELETE CASCADE
+    FOREIGN KEY (property_id) REFERENCES properties (id) ON DELETE CASCADE
+    -- TODO: check that the property has the correct type ("functor")
 );
 
 CREATE TABLE functor_implication_conclusions (
@@ -23,7 +24,8 @@ CREATE TABLE functor_implication_conclusions (
     property_id TEXT NOT NULL,
     PRIMARY KEY (implication_id, property_id),
     FOREIGN KEY (implication_id) REFERENCES functor_implications (id) ON DELETE CASCADE,
-    FOREIGN KEY (property_id) REFERENCES functor_properties (id) ON DELETE CASCADE
+    FOREIGN KEY (property_id) REFERENCES properties (id) ON DELETE CASCADE
+    -- TODO: check that the property has the correct type ("functor")
 );
 
 -- property of source category
@@ -32,7 +34,8 @@ CREATE TABLE functor_implication_source_assumptions (
     property_id TEXT NOT NULL,
     PRIMARY KEY (implication_id, property_id),
     FOREIGN KEY (implication_id) REFERENCES functor_implications (id) ON DELETE CASCADE,
-    FOREIGN KEY (property_id) REFERENCES category_properties (id) ON DELETE CASCADE 
+    FOREIGN KEY (property_id) REFERENCES properties (id) ON DELETE CASCADE 
+    -- TODO: check that the property has the correct type ("category")
 );
 
 -- property of target category
@@ -41,7 +44,8 @@ CREATE TABLE functor_implication_target_assumptions (
     property_id TEXT NOT NULL,
     PRIMARY KEY (implication_id, property_id),
     FOREIGN KEY (implication_id) REFERENCES functor_implications (id) ON DELETE CASCADE,
-    FOREIGN KEY (property_id) REFERENCES category_properties (id) ON DELETE CASCADE 
+    FOREIGN KEY (property_id) REFERENCES properties (id) ON DELETE CASCADE 
+    -- TODO: check that the property has the correct type ("category")
 );
 
 CREATE INDEX idx_assumptions_functor_property ON functor_implication_assumptions (property_id);

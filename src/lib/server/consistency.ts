@@ -7,6 +7,7 @@ import {
 	type NormalizedImplication,
 } from './implications'
 import type { StructureType } from '$lib/commons/types'
+import sql from 'sql-template-tag'
 
 // TODO: If possible, remove the code duplication with deduction and redundancy scripts.
 
@@ -117,24 +118,30 @@ export function get_missing_combinations(type: StructureType) {
 	const { rows: properties, err } = query<{
 		id: string
 		dual_property_id: string | null
-	}>({
-		sql: `SELECT id, dual_property_id FROM ${type}_properties ORDER BY lower(id)`,
-	})
+	}>(
+		sql`
+			SELECT id, dual_property_id FROM properties
+			WHERE type = ${type}
+			ORDER BY lower(id)
+		`,
+	)
 
 	if (err) return { err, missing_combinations: [] }
 
 	const { rows: existing, err: err_existing } = query<{
 		p: string
 		q: string
-	}>({
-		sql: `
+	}>(sql`
 		SELECT DISTINCT a.property_id AS p, an.property_id AS q
-		FROM ${type}_property_assignments a
-		INNER JOIN ${type}_property_assignments an
-		ON a.${type}_id = an.${type}_id
-		WHERE a.is_satisfied = TRUE AND an.is_satisfied = FALSE
-	`,
-	})
+		FROM property_assignments a
+		INNER JOIN property_assignments an
+		ON a.structure_id = an.structure_id
+		WHERE
+			a.type = ${type}
+			AND an.type = ${type}
+			AND a.is_satisfied = TRUE
+			AND an.is_satisfied = FALSE
+	`)
 
 	if (err_existing) return { err: err_existing, missing_combinations: [] }
 

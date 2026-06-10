@@ -6,6 +6,7 @@ import { SEARCH_SEPARATOR } from '$lib/commons/search.config'
 import { get_contradiction } from '$lib/server/consistency'
 import type { SearchResults, StructureShort, StructureType } from '$lib/commons/types'
 import { to_placeholders } from './utils'
+import sql from 'sql-template-tag'
 
 function cache_page(event: RequestEvent) {
 	event.setHeaders({
@@ -24,9 +25,11 @@ export function search_handler(event: RequestEvent, type: StructureType): Search
 	const { rows: all_properties_objects, err: err_all } = query<{
 		id: string
 		dual_property_id: string | null
-	}>({
-		sql: `SELECT id, dual_property_id FROM ${type}_properties ORDER BY lower(id)`,
-	})
+	}>(sql`
+		SELECT id, dual_property_id FROM properties
+		WHERE type = ${type}
+		ORDER BY lower(id)
+	`)
 
 	if (err_all) error(500, 'Failed to load properties')
 
@@ -100,11 +103,11 @@ export function search_handler(event: RequestEvent, type: StructureType): Search
 
 	const search_query = `
 		SELECT s.id, s.name FROM structures s
-		INNER JOIN ${type}_property_assignments a ON a.${type}_id = s.id
+		INNER JOIN property_assignments a ON a.structure_id = s.id
 		WHERE
-			s.type = ? AND
-			property_id IN (${to_placeholders(all_selected_properties)})
-		GROUP BY ${type}_id
+			a.type = ? AND s.type = ?
+			AND property_id IN (${to_placeholders(all_selected_properties)})
+		GROUP BY structure_id
 		HAVING
 			SUM (
 				CASE
@@ -131,6 +134,7 @@ export function search_handler(event: RequestEvent, type: StructureType): Search
 	const { rows: found_structures, err } = query<StructureShort>({
 		sql: search_query,
 		values: [
+			type,
 			type,
 			...all_selected_properties,
 			...satisfied_properties,

@@ -28,14 +28,14 @@ export const load = async (event) => {
 				dual_property_id,
 				nlab_link,
 				invariant_under_equivalences
-			FROM category_properties
-			WHERE id = ${id}
+			FROM properties
+			WHERE type = 'category' AND id = ${id}
 		`,
 		// related properties
 		sql`
 			SELECT related_property_id AS id
-			FROM related_category_properties
-			WHERE property_id = ${id}
+			FROM related_properties
+			WHERE type = 'category' AND property_id = ${id}
 			ORDER BY lower(id)
 		`,
 		// relevant implications
@@ -66,21 +66,25 @@ export const load = async (event) => {
 		// known categories
 		sql`
 			SELECT s.id, s.name, cp.is_satisfied
-			FROM category_property_assignments cp
-			INNER JOIN structures s ON s.id = cp.category_id
-			WHERE cp.property_id = ${id} AND s.type = 'category'
+			FROM property_assignments cp
+			INNER JOIN structures s ON s.id = cp.structure_id
+			WHERE
+				cp.type = 'category'
+				AND s.type = 'category'
+				AND cp.property_id = ${id}
 			ORDER BY lower(s.name)
 		`,
 		// unknown categories
 		sql`
 			SELECT s.id, s.name
 			FROM structures s
-			LEFT JOIN category_property_assignments cp
-				ON cp.category_id = s.id
+			LEFT JOIN property_assignments cp
+				ON cp.structure_id = s.id
 				AND cp.property_id = ${id}
 			WHERE
-				s.type = 'category' AND
-				cp.property_id IS NULL
+				cp.type = 'category'
+				AND s.type = 'category'
+				AND cp.property_id IS NULL
 			ORDER BY lower(s.name)
 		`,
 	])

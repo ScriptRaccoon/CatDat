@@ -5,7 +5,8 @@ import sql from 'sql-template-tag'
 
 export const load = async () => {
 	const { rows: properties, err } = query<GroupedPropertyShort>(sql`
-		SELECT id, relation, dual_property_id FROM category_properties
+		SELECT id, relation, dual_property_id FROM properties
+		WHERE type = 'category'
 		ORDER BY lower(id)
 	`)
 

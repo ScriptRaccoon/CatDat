@@ -180,14 +180,14 @@ function save_satisfied_properties(
 	const err_msg = `❌ Failed to complete deduction of satisfied properties for ${structure_id} because of a conflict. The likely cause is a contradiction between its assigned properties.`
 
 	const property_insert = db.prepare(`
-		INSERT INTO ${type}_property_assignments
-			(${type}_id, property_id, is_satisfied, proof, is_deduced)
-		VALUES (?, ?, TRUE, ?, TRUE)
+		INSERT INTO property_assignments
+			(structure_id, property_id, type, is_satisfied, proof, is_deduced)
+		VALUES (?, ?, ?, TRUE, ?, TRUE)
 	`)
 
 	try {
 		for (const p of found) {
-			property_insert.run(structure_id, p, proofs[p])
+			property_insert.run(structure_id, p, type, proofs[p])
 		}
 	} catch (err) {
 		if (err instanceof SqliteError) {
@@ -217,14 +217,14 @@ function save_unsatisfied_properties(
 	const err_msg = `❌ Failed to complete deduction of unsatisfied properties for ${structure_id} because of a conflict. The likely cause is a contradiction between its assigned properties.`
 
 	const property_insert = db.prepare(`
-		INSERT INTO ${type}_property_assignments
-			(${type}_id, property_id, is_satisfied, proof, is_deduced)
-		VALUES (?, ?, FALSE, ?, TRUE)
+		INSERT INTO property_assignments
+			(structure_id, property_id, type, is_satisfied, proof, is_deduced)
+		VALUES (?, ?, ?, FALSE, ?, TRUE)
 	`)
 
 	try {
 		for (const p of found) {
-			property_insert.run(structure_id, p, proofs[p])
+			property_insert.run(structure_id, p, type, proofs[p])
 		}
 	} catch (err) {
 		if (err instanceof SqliteError) {
@@ -342,9 +342,9 @@ function deduce_dual_properties(
 	}
 
 	const property_insert = db.prepare(`
-		INSERT INTO ${type}_property_assignments
-			(${type}_id, property_id, is_satisfied, proof, is_deduced)
-		VALUES (?, ?, ?, ?, TRUE)
+		INSERT INTO property_assignments
+			(structure_id, property_id, type, is_satisfied, proof, is_deduced)
+		VALUES (?, ?, ?, ?, ?, TRUE)
 	`)
 
 	const proof_satisfied = `Its dual ${type} satisfies the dual property.`
@@ -352,7 +352,7 @@ function deduce_dual_properties(
 	const proof_undecidable = `The dual property is undecidable for its dual ${type}.`
 
 	for (const p of new_satisfied) {
-		property_insert.run(structure.id, p, 1, proof_satisfied)
+		property_insert.run(structure.id, p, type, 1, proof_satisfied)
 	}
 
 	console.info(
@@ -360,7 +360,7 @@ function deduce_dual_properties(
 	)
 
 	for (const q of new_unsatisfied) {
-		property_insert.run(structure.id, q, 0, proof_unsatisfied)
+		property_insert.run(structure.id, q, type, 0, proof_unsatisfied)
 	}
 
 	console.info(
@@ -368,7 +368,7 @@ function deduce_dual_properties(
 	)
 
 	for (const q of new_undecidable) {
-		property_insert.run(structure.id, q, null, proof_undecidable)
+		property_insert.run(structure.id, q, type, null, proof_undecidable)
 	}
 
 	console.info(
@@ -380,7 +380,9 @@ function deduce_dual_properties(
  * Clears all the deduced properties. This runs before the deduction starts.
  */
 function delete_deduced_properties(db: Database, type: StructureType) {
-	db.prepare(`DELETE FROM ${type}_property_assignments WHERE is_deduced = TRUE`).run()
+	db.prepare(
+		`DELETE FROM property_assignments WHERE is_deduced = TRUE AND type = ?`,
+	).run(type)
 }
 
 /**

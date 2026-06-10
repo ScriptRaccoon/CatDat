@@ -11,7 +11,7 @@ import type {
 	PropertyEntry,
 } from './seed.types'
 import { create_schema_hash, get_saved_schema_hash } from './utils/schema'
-import { PLURALS, STRUCTURES, type StructureType } from './config'
+import { STRUCTURES, type StructureType } from './config'
 
 const db = get_client()
 
@@ -53,7 +53,7 @@ function clear_all_tables() {
 	console.info(`\nClear all tables ...`)
 
 	const tx = db.transaction(() => {
-		db.pragma('foreign_keys = OFF')
+		db.pragma('defer_foreign_keys = ON')
 
 		db.prepare(`DELETE FROM special_morphisms`).run()
 		db.prepare(`DELETE FROM special_morphism_types`).run()
@@ -65,22 +65,22 @@ function clear_all_tables() {
 		db.prepare(`DELETE FROM adjoint_functors`).run()
 
 		for (const type of STRUCTURES) {
-			const plural = PLURALS[type]
-
 			db.prepare(`DELETE FROM ${type}_implication_assumptions`).run()
 			db.prepare(`DELETE FROM ${type}_implication_conclusions`).run()
 			db.prepare(`DELETE FROM ${type}_implications`).run()
-			db.prepare(`DELETE FROM ${type}_property_assignments`).run()
-			db.prepare(`DELETE FROM related_${type}_properties`).run()
-			db.prepare(`DELETE FROM ${type}_properties`).run()
-			db.prepare(`DELETE FROM ${plural}`).run()
 		}
+
+		db.prepare(`DELETE FROM property_assignments`).run()
+		db.prepare(`DELETE FROM related_properties`).run()
+		db.prepare(`DELETE FROM properties`).run()
 
 		db.prepare(`DELETE FROM related_structures`).run()
 		db.prepare(`DELETE FROM structure_comments`).run()
 		db.prepare(`DELETE FROM structure_tag_assignments`).run()
 		db.prepare(`DELETE FROM tags`).run()
 		db.prepare(`DELETE FROM relations`).run()
+
+		// this deletes categories and functors automatically
 		db.prepare(`DELETE FROM structures`).run()
 	})
 
@@ -147,16 +147,16 @@ function seed_config() {
  */
 function seed_category_properties() {
 	const property_insert = db.prepare(
-		`INSERT INTO category_properties (
-			id, relation, description, nlab_link,
+		`INSERT INTO properties (
+			id, type, relation, description, nlab_link,
 			dual_property_id, invariant_under_equivalences
-		) VALUES (?, ?, ?, ?, ?, ?)`,
+		) VALUES (?, 'category', ?, ?, ?, ?, ?)`,
 	)
 
 	const related_insert = db.prepare(
-		`INSERT INTO related_category_properties
-		(property_id, related_property_id)
-		VALUES (?, ?)`,
+		`INSERT INTO related_properties
+			(property_id, related_property_id, type)
+		VALUES (?, ?, 'category')`,
 	)
 
 	function insert_property(property: CategoryPropertyYaml) {
@@ -268,9 +268,9 @@ function seed_categories() {
 	)
 
 	const property_assignment_insert = db.prepare(
-		`INSERT INTO category_property_assignments (
-			category_id, property_id, is_satisfied, proof, check_redundancy
-		) VALUES (?, ?, ?, ?, ?)`,
+		`INSERT INTO property_assignments (
+			structure_id, property_id, type, is_satisfied, proof, check_redundancy
+		) VALUES (?, ?, 'category', ?, ?, ?)`,
 	)
 
 	function insert_property_assignments(
@@ -344,17 +344,16 @@ function seed_categories() {
  */
 function seed_functor_properties() {
 	const property_insert = db.prepare(`
-		INSERT INTO functor_properties (
-			id, relation, description,
-			required_source, required_target,
+		INSERT INTO properties (
+			id, type, relation, description,
 			nlab_link, dual_property_id,
 			invariant_under_equivalences
-		) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`)
+		) VALUES (?, 'functor', ?, ?, ?, ?, ?)`)
 
 	const related_insert = db.prepare(
-		`INSERT INTO related_functor_properties
-		(property_id, related_property_id)
-		VALUES (?, ?)`,
+		`INSERT INTO related_properties
+			(property_id, related_property_id, type)
+		VALUES (?, ?, 'functor')`,
 	)
 
 	function insert_property(property: FunctorPropertyYaml) {
@@ -362,8 +361,6 @@ function seed_functor_properties() {
 			property.id,
 			property.relation,
 			property.description,
-			property.required_source || null,
-			property.required_target || null,
 			property.nlab_link || null,
 			property.dual_property || null,
 			Number(property.invariant_under_equivalences),
@@ -482,9 +479,9 @@ function seed_functors() {
 	)
 
 	const property_assignment_insert = db.prepare(
-		`INSERT INTO functor_property_assignments (
-			functor_id, property_id, is_satisfied, proof, check_redundancy
-		) VALUES (?, ?, ?, ?, ?)`,
+		`INSERT INTO property_assignments (
+			structure_id, property_id, type, is_satisfied, proof, check_redundancy
+		) VALUES (?, ?, 'functor', ?, ?, ?)`,
 	)
 
 	function insert_property_assignments(

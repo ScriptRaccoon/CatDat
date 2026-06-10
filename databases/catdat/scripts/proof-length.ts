@@ -1,4 +1,4 @@
-import { PLURALS, type StructureType } from './config'
+import { type StructureType } from './config'
 import { get_client } from './utils/helpers'
 
 const db = get_client()
@@ -20,20 +20,23 @@ function report_long_proofs() {
 
 function report_long_property_proofs(type: StructureType) {
 	const long_proofs = db
-		.prepare<[number], { id: string; property: string; length: number }>(
+		.prepare<
+			[StructureType, number],
+			{ id: string; property: string; length: number }
+		>(
 			`SELECT
-                ${type}_id AS id,
+                structure_id AS id,
                 property_id AS property,
                 length(proof) AS length
-            FROM ${type}_property_assignments
-            WHERE is_deduced = FALSE AND length(proof) >= ?
+            FROM property_assignments
+            WHERE type = ? AND is_deduced = FALSE AND length(proof) >= ?
             ORDER BY length(proof) DESC`,
 		)
-		.all(PROOF_LENGTH_THRESHOLD)
+		.all(type, PROOF_LENGTH_THRESHOLD)
 
 	if (!long_proofs.length) return
 
-	console.info(`\n--- Long property proofs for ${PLURALS[type]} ---`)
+	console.info(`\n--- Long property proofs (type: ${type}) ---`)
 
 	for (const { id, property, length } of long_proofs) {
 		console.warn(
@@ -56,7 +59,7 @@ function report_long_implication_proofs(type: StructureType) {
 
 	if (!long_proofs.length) return
 
-	console.info(`\n--- Long implication proofs for ${PLURALS[type]} ---`)
+	console.info(`\n--- Long implication proofs (type: ${type}) ---`)
 
 	for (const { id, length } of long_proofs) {
 		console.warn(

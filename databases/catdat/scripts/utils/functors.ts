@@ -45,15 +45,21 @@ export function get_functors(db: Database): FunctorMeta[] {
 				(
 					SELECT json_group_array(property_id) FROM (
 						SELECT property_id
-						FROM category_property_assignments
-						WHERE category_id = f.source AND is_satisfied = TRUE
+						FROM property_assignments
+						WHERE
+							type = 'category'
+							AND structure_id = f.source
+							AND is_satisfied = TRUE
 					)
 				) AS source_props,
 				(
 					SELECT json_group_array(property_id) FROM (
 						SELECT property_id
-						FROM category_property_assignments
-						WHERE category_id = f.target AND is_satisfied = TRUE
+						FROM property_assignments
+						WHERE
+							type = 'category'
+							AND structure_id = f.target
+							AND is_satisfied = TRUE
 					)
 				) AS target_props
 			FROM functors f

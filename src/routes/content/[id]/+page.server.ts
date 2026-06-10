@@ -16,15 +16,18 @@ export const load = async (event) => {
 			SELECT c.id, c.name FROM categories c
 			WHERE EXISTS (
 				SELECT 1
-				FROM category_property_assignments cp
+				FROM property_assignments cp
 				WHERE
-					cp.category_id = c.id
+					cp.type = 'category'
+					AND cp.structure_id = c.id
 					AND cp.proof LIKE '%/content/' || ${id} || '%'
 			)
 		`,
 		sql`
-			SELECT id, relation FROM category_properties
-			WHERE description LIKE '%/content/' || ${id} || '%'
+			SELECT id, relation FROM properties
+			WHERE
+				type = 'category'
+				AND description LIKE '%/content/' || ${id} || '%'
 		`,
 		sql`
 			SELECT id FROM category_implications

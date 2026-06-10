@@ -82,8 +82,6 @@ export type FunctorPropertyYaml = {
 	id: string
 	relation: string
 	description: string
-	required_source?: string
-	required_target?: string
 	nlab_link?: string | null
 	dual_property?: string | null
 	invariant_under_equivalences: boolean

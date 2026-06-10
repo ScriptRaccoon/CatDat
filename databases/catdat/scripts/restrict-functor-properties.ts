@@ -3,39 +3,35 @@ import { get_client } from './utils/helpers'
 const db = get_client()
 
 /**
- * Ensures that selected properties of functors are restricted
- * to specified source and target categories.
+ * Ensures that only functors with target Set are representable.
+ * When necessary, this can be extended to other properties in the future.
  */
-export function restrict_functor_properties() {
-	console.info('\n--- Restrict functor properties ---')
+export function restrict_representable_functors() {
+	console.info('\n--- Restrict representable functors ---')
 
-	for (const domain of ['source', 'target']) {
-		const res = db
-			.prepare(
-				`INSERT INTO functor_property_assignments (
-                    functor_id,
-                    property_id,
-                    is_satisfied,
-                    proof,
-                    is_deduced,
-                    check_redundancy
-                )
-                SELECT
-                    f.id,
-                    p.id,
-                    FALSE,
-                    'The ${domain} category is not ' || s.notation || '.',
-                    FALSE,
-                    FALSE
-                FROM functor_properties p
-                INNER JOIN structures s ON s.id = p.required_${domain}
-                JOIN functors f
-                WHERE f.${domain} <> p.required_${domain}`,
-			)
-			.run()
-
-		console.info(
-			`Restricted ${res.changes} functor properties based on their required ${domain}`,
+	const res = db
+		.prepare(
+			`INSERT INTO property_assignments (
+                structure_id,
+                property_id,
+                type,
+                is_satisfied,
+                proof,
+                is_deduced,
+                check_redundancy
+            )
+            SELECT
+                f.id,
+                'representable',
+                'functor',
+                FALSE,
+                'The target category is not $\\Set$.',
+                FALSE,
+                FALSE
+            FROM functors f
+            WHERE f.target <> 'Set'`,
 		)
-	}
+		.run()
+
+	console.info(`Deduced that ${res.changes} functors cannot be representable`)
 }

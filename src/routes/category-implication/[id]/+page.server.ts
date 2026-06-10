@@ -24,9 +24,11 @@ export const load = async (event) => {
 		sql`
 			SELECT s.id, s.name FROM structures s
 			WHERE s.type = 'category' AND EXISTS (
-				SELECT 1 FROM category_property_assignments cp
-				WHERE cp.category_id = s.id
-				AND cp.proof LIKE '%/category-implication/' || ${id} || '%'
+				SELECT 1 FROM property_assignments cp
+				WHERE
+					cp.type = 'category'
+					AND cp.structure_id = s.id
+					AND cp.proof LIKE '%/category-implication/' || ${id} || '%'
 			)
 		`,
 	])

@@ -26,9 +26,11 @@ export const load = async (event) => {
 		sql`
             SELECT s.id, s.name FROM structures s
             WHERE s.type = 'functor' AND EXISTS (
-                SELECT 1 FROM functor_property_assignments fp
-                WHERE fp.functor_id = s.id
-                AND fp.proof LIKE '%/functor-implication/' || ${id} || '%'
+                SELECT 1 FROM property_assignments cp
+                WHERE
+                    cp.type = 'functor'
+                    AND cp.structure_id = s.id
+                    AND cp.proof LIKE '%/functor-implication/' || ${id} || '%'
             )
         `,
 	])

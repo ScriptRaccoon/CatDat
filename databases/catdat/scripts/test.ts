@@ -84,8 +84,11 @@ function test_mutual_category_duals() {
 function test_properties_of_trivial_category() {
 	const rows = db
 		.prepare<never[], { property_id: string }>(
-			`SELECT property_id FROM category_property_assignments
-			WHERE category_id = '1' AND is_satisfied = FALSE`,
+			`SELECT property_id FROM property_assignments
+			WHERE
+				type = 'category' AND
+				structure_id = '1' AND
+				is_satisfied = FALSE`,
 		)
 		.all()
 
@@ -107,10 +110,10 @@ function test_mutual_property_duals(type: StructureType) {
 
 	const properties = db
 		.prepare<
-			never[],
+			[StructureType],
 			{ id: string; dual_property_id: string | null }
-		>(`SELECT id, dual_property_id FROM ${type}_properties`)
-		.all()
+		>(`SELECT id, dual_property_id FROM properties WHERE type = ?`)
+		.all(type)
 
 	for (const { id, dual_property_id } of properties) {
 		dict[id] = dual_property_id
@@ -131,16 +134,19 @@ function test_mutual_property_duals(type: StructureType) {
  * been decided. If this test fails, property assignments or implications are missing.
  */
 function test_decided_structures(structure_ids: string[], type: StructureType) {
-	const unknown_query = db.prepare<[string], { id: string }>(
-		`SELECT p.id FROM ${type}_properties p WHERE NOT EXISTS
-			(SELECT 1 FROM ${type}_property_assignments
-				WHERE ${type}_id = ? AND property_id = p.id
+	const unknown_query = db.prepare<
+		[StructureType, StructureType, string],
+		{ id: string }
+	>(
+		`SELECT p.id FROM properties p WHERE type = ? AND NOT EXISTS
+			(SELECT 1 FROM property_assignments
+				WHERE type = ? AND structure_id = ? AND property_id = p.id
 			)
 		`,
 	)
 
 	for (const structure_id of structure_ids) {
-		const res = unknown_query.all(structure_id)
+		const res = unknown_query.all(type, type, structure_id)
 		const unknown_properties = res.map((row) => row.id)
 
 		if (unknown_properties.length > 0) {
@@ -164,15 +170,15 @@ function test_properties_of_selected_structures(
 	type: StructureType,
 ) {
 	const property_query = db.prepare<
-		[string],
+		[StructureType, string],
 		{ property_id: string; is_satisfied: 0 | 1 }
 	>(
-		`SELECT property_id, is_satisfied FROM ${type}_property_assignments
-		WHERE ${type}_id = ? AND is_satisfied IS NOT NULL`,
+		`SELECT property_id, is_satisfied FROM property_assignments
+		WHERE type = ? AND structure_id = ? AND is_satisfied IS NOT NULL`,
 	)
 
 	for (const structure_id in expected) {
-		const properties = property_query.all(structure_id)
+		const properties = property_query.all(type, structure_id)
 
 		for (const { property_id, is_satisfied } of properties) {
 			const ok = Boolean(is_satisfied) === expected[structure_id][property_id]

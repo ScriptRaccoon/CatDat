@@ -61,18 +61,21 @@ export function compare_handler(
 
 	compared_ids.forEach((id, i) => {
 		join_fragments.push(`
-			LEFT JOIN ${type}_property_assignments a${i}
-			ON a${i}.property_id = p.id AND a${i}.${type}_id = ?
+			LEFT JOIN property_assignments a${i}
+			ON a${i}.property_id = p.id AND a${i}.structure_id = ?
 		`)
 		values.push(id)
 	})
+
+	values.push(type)
 
 	const stmt = `
 		SELECT
 			p.id AS property_id,
 			${select_columns}
-		FROM ${type}_properties p
+		FROM properties p
 		${join_fragments.join('\n')}
+		WHERE p.type = ?
 		ORDER BY lower(p.id)`
 
 	const { rows: comparison_objects, err } = query<Record<string, string>>({

@@ -27,15 +27,14 @@ export const load = async (event) => {
                 dual_property_id,
                 nlab_link,
                 invariant_under_equivalences
-            FROM
-                functor_properties
-            WHERE id = ${id}
+            FROM properties
+            WHERE type = 'functor' AND id = ${id}
         `,
 		// related properties
 		sql`
             SELECT related_property_id AS id
-            FROM related_functor_properties
-            WHERE property_id = ${id}
+            FROM related_properties
+            WHERE type = 'functor' AND property_id = ${id}
             ORDER BY lower(id)
         `,
 		// relevant implications
@@ -67,22 +66,26 @@ export const load = async (event) => {
         `,
 		// known functors
 		sql`
-            SELECT s.id, s.name, fp.is_satisfied
-            FROM functor_property_assignments fp
-            INNER JOIN structures s ON s.id = fp.functor_id
-            WHERE s.type = 'functor' AND fp.property_id = ${id}
+            SELECT s.id, s.name, cp.is_satisfied
+            FROM property_assignments cp
+            INNER JOIN structures s ON s.id = cp.structure_id
+            WHERE
+                cp.type = 'functor'
+                AND s.type = 'functor'
+                AND cp.property_id = ${id}
             ORDER BY lower(s.name)
         `,
 		// unknown functors
 		sql`
             SELECT s.id, s.name
             FROM structures s
-            LEFT JOIN functor_property_assignments fp
-                ON fp.functor_id = s.id
-                AND fp.property_id = ${id}
+            LEFT JOIN property_assignments cp
+                ON cp.structure_id = s.id
+                AND cp.property_id = ${id}
             WHERE
-                s.type = 'functor' AND
-                fp.property_id IS NULL
+                cp.type = 'functor'
+                AND s.type = 'functor'
+                AND cp.property_id IS NULL
             ORDER BY lower(s.name)
         `,
 	])

@@ -92,31 +92,44 @@ export const load = async (event) => {
 				fp.proof,
 				fp.is_deduced,
 				p.relation
-			FROM functor_property_assignments fp
-			INNER JOIN functor_properties p ON p.id = fp.property_id
-			WHERE fp.functor_id = ${id}
+			FROM property_assignments fp
+			INNER JOIN properties p ON p.id = fp.property_id
+			WHERE
+				fp.type = 'functor'
+				AND p.type = 'functor'
+				AND fp.structure_id = ${id}
 			ORDER BY fp.id
 		`,
 		// unknown properties
 		sql`
 			SELECT p.id, p.relation
-			FROM functor_properties p
-			WHERE NOT EXISTS (
-				SELECT 1 FROM functor_property_assignments
-				WHERE functor_id = ${id} AND property_id = p.id
+			FROM properties p
+			WHERE p.type = 'functor' AND NOT EXISTS (
+				SELECT 1 FROM property_assignments
+				WHERE
+					type = 'functor'
+					AND structure_id = ${id}
+					AND property_id = p.id
 			)
 			ORDER BY lower(p.id)
 		`,
-		// undistinguishable functors
+		// undistinguishable categories
 		sql`
 			SELECT u.id, u.name
 			FROM structures u
-			JOIN functor_properties p
-			LEFT JOIN functor_property_assignments fp
-				ON fp.functor_id = ${id} AND fp.property_id = p.id
-			LEFT JOIN functor_property_assignments up
-				ON up.functor_id = u.id AND up.property_id = p.id
-			WHERE u.type = 'functor' AND u.id != ${id}
+			JOIN properties p
+			LEFT JOIN property_assignments fp
+				ON fp.type = 'functor'
+				AND fp.structure_id = ${id}
+				AND fp.property_id = p.id
+			LEFT JOIN property_assignments up
+				ON up.type = 'functor'
+				AND up.structure_id = u.id
+				AND up.property_id = p.id
+			WHERE
+				p.type = 'functor'
+				AND u.type = 'functor'
+				AND u.id != ${id}
 			GROUP BY u.id, u.name
 			HAVING SUM(
 				CASE

@@ -170,12 +170,12 @@ function get_redundant_unsatisfied_property(
  */
 function get_ignored_redundant_assignments(type: StructureType) {
 	const rows = db
-		.prepare<never[], { structure_id: string; property_id: string }>(
-			`SELECT ${type}_id AS structure_id, property_id
-			FROM ${type}_property_assignments
-			WHERE check_redundancy = FALSE`,
+		.prepare<[StructureType], { structure_id: string; property_id: string }>(
+			`SELECT structure_id, property_id
+			FROM property_assignments
+			WHERE check_redundancy = FALSE AND type = ?`,
 		)
-		.all()
+		.all(type)
 
 	const grouped: Record<string, Set<string>> = {}
 
