@@ -60,13 +60,13 @@ export const load = async (event) => {
 	if (!functors.length) error(404, `Could not find functor with ID '${id}'`)
 
 	const functor = {
-		...structure,
 		...functors[0],
 		left_adjoint: left_adjoints.at(0),
 		right_adjoint: right_adjoints.at(0),
 	}
 
 	return render_nested_formulas({
+		structure,
 		functor,
 		related_structures,
 		tags,

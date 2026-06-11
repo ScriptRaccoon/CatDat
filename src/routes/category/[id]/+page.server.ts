@@ -58,13 +58,13 @@ export const load = (event) => {
 	if (!categories.length) error(404, `Could not find category with ID '${id}'`)
 
 	const category = {
-		...structure,
 		...categories[0],
 		special_objects,
 		special_morphisms,
 	}
 
 	return render_nested_formulas({
+		structure,
 		category,
 		related_structures,
 		tags,
