@@ -27,7 +27,7 @@ CREATE TABLE related_structures (
     structure_id TEXT NOT NULL,
     related_structure_id TEXT NOT NULL,
     type TEXT NOT NULL,
-    PRIMARY KEY (structure_id, related_structure_id, type),
+    PRIMARY KEY (structure_id, related_structure_id),
     FOREIGN KEY (structure_id, type) REFERENCES structures (id, type) ON DELETE CASCADE,
     FOREIGN KEY (related_structure_id, type) REFERENCES structures (id, type) ON DELETE CASCADE
 );

@@ -24,7 +24,7 @@
 
 <CategoryDescription
 	category={data.category}
-	related_categories={data.related_categories}
+	related_categories={data.related_structures}
 />
 
 <PropertyAssignmentList
@@ -38,9 +38,9 @@
 <section>
 	<h3>Special objects</h3>
 
-	{#if data.special_objects.length}
+	{#if data.category.special_objects.length}
 		<ul class="with-margins">
-			{#each data.special_objects as obj}
+			{#each data.category.special_objects as obj}
 				<li>{obj.type}: {@html obj.description}</li>
 			{/each}
 		</ul>
@@ -53,7 +53,7 @@
 	<h3>Special morphisms</h3>
 
 	<ul class="with-margins no-bullets">
-		{#each data.special_morphisms as obj}
+		{#each data.category.special_morphisms as obj}
 			<li>
 				<TextWithProof proof={obj.proof}>
 					{#if obj.description}
@@ -69,7 +69,7 @@
 
 <UndistinguishableStructures
 	type="category"
-	structures={data.undistinguishable_categories}
+	structures={data.undistinguishable_structures}
 	name={data.category.name}
 />
 

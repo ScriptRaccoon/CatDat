@@ -21,9 +21,9 @@
 
 <FunctorDescription
 	functor={data.functor}
-	related_functors={data.related_functors}
-	left_adjoint={data.left_adjoint}
-	right_adjoint={data.right_adjoint}
+	related_functors={data.related_structures}
+	left_adjoint={data.functor.left_adjoint}
+	right_adjoint={data.functor.right_adjoint}
 />
 
 <PropertyAssignmentList
@@ -36,7 +36,7 @@
 
 <UndistinguishableStructures
 	type="functor"
-	structures={data.undistinguishable_functors}
+	structures={data.undistinguishable_structures}
 	name={data.functor.name}
 />
 

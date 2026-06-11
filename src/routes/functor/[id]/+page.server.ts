@@ -1,67 +1,42 @@
-import type {
-	CommentObject,
-	FunctorDisplay,
-	PropertyAssignmentDB,
-	PropertyShort,
-	RelatedStructure,
-	StructureShort,
-	TagObject,
-} from '$lib/commons/types'
+import type { FunctorSpecificDisplay, RelatedStructure } from '$lib/commons/types'
 import { batch } from '$lib/server/db.catdat'
+import { fetch_structure } from '$lib/server/fetchers/structure'
 import { render_nested_formulas } from '$lib/server/formulas'
-import { display_property_assignment } from '$lib/server/transforms'
 import { error } from '@sveltejs/kit'
 import sql from 'sql-template-tag'
-
-// TODO: remove code duplication with category detail page
 
 export const load = async (event) => {
 	const id = event.params.id
 
+	const {
+		structure,
+		related_structures,
+		tags,
+		satisfied_properties,
+		unsatisfied_properties,
+		unknown_properties,
+		undecidable_properties,
+		undistinguishable_structures,
+		comments,
+	} = fetch_structure('functor', id)
+
 	const { results, err } = batch<
-		[
-			FunctorDisplay,
-			RelatedStructure,
-			RelatedStructure,
-			RelatedStructure,
-			TagObject,
-			PropertyAssignmentDB,
-			PropertyShort,
-			StructureShort,
-			CommentObject,
-		]
+		[FunctorSpecificDisplay, RelatedStructure, RelatedStructure]
 	>([
-		// basic information
+		// specific information for the functor
 		sql`
             SELECT
-                s.id,
-				s.name,
-				s.notation,
 				f.source,
 				f.target,
-				s.description,
-				s.nlab_link,
                 source.name AS source_name,
 				source.notation AS source_notation,
 				target.name AS target_name,
 				target.notation AS target_notation
             FROM functors f
-			INNER JOIN structures s ON s.id = f.id
             INNER JOIN structures AS source ON source.id = f.source
             INNER JOIN structures AS target ON target.id = f.target
             WHERE f.id = ${id}
         `,
-		// related functors
-		sql`
-			SELECT
-				s.id,
-				s.name,
-				s.notation
-			FROM related_structures r
-			INNER JOIN structures s ON s.id = r.related_structure_id
-			WHERE r.structure_id = ${id} AND r.type = 'functor'
-			ORDER BY lower(s.name)
-		`,
 		// left adjoint functor
 		sql`
 			SELECT f.id, f.name, f.notation
@@ -76,121 +51,30 @@ export const load = async (event) => {
 			INNER JOIN structures f ON f.id = a.right_adjoint
 			WHERE a.left_adjoint = ${id}
 		`,
-		// tags
-		sql`
-			SELECT st.tag
-			FROM structure_tag_assignments st
-			INNER JOIN tags t ON t.tag = st.tag
-			WHERE st.structure_id = ${id} AND t.type = 'functor'
-			ORDER BY t.id
-		`,
-		// properties
-		sql`
-			SELECT
-				fp.property_id AS id,
-				fp.is_satisfied,
-				fp.proof,
-				fp.is_deduced,
-				p.relation
-			FROM property_assignments fp
-			INNER JOIN properties p ON p.id = fp.property_id
-			WHERE
-				fp.type = 'functor'
-				AND p.type = 'functor'
-				AND fp.structure_id = ${id}
-			ORDER BY fp.id
-		`,
-		// unknown properties
-		sql`
-			SELECT p.id, p.relation
-			FROM properties p
-			WHERE p.type = 'functor' AND NOT EXISTS (
-				SELECT 1 FROM property_assignments
-				WHERE
-					type = 'functor'
-					AND structure_id = ${id}
-					AND property_id = p.id
-			)
-			ORDER BY lower(p.id)
-		`,
-		// undistinguishable categories
-		sql`
-			SELECT u.id, u.name
-			FROM structures u
-			JOIN properties p
-			LEFT JOIN property_assignments fp
-				ON fp.type = 'functor'
-				AND fp.structure_id = ${id}
-				AND fp.property_id = p.id
-			LEFT JOIN property_assignments up
-				ON up.type = 'functor'
-				AND up.structure_id = u.id
-				AND up.property_id = p.id
-			WHERE
-				p.type = 'functor'
-				AND u.type = 'functor'
-				AND u.id != ${id}
-			GROUP BY u.id, u.name
-			HAVING SUM(
-				CASE
-					WHEN fp.is_satisfied IS up.is_satisfied THEN 0
-					ELSE 1
-				END
-			) = 0;
-		`,
-		// comments
-		sql`
-			SELECT id, comment FROM structure_comments
-			WHERE structure_id = ${id}
-		`,
 	])
 
 	if (err) error(500, 'Could not load functor')
 
-	const [
-		functors,
-		related_functors,
-		left_adjoints,
-		right_adjoints,
-		tag_objects,
-		properties_db,
-		unknown_properties,
-		undistinguishable_functors,
-		comments,
-	] = results
+	const [functors, left_adjoints, right_adjoints] = results
 
 	if (!functors.length) error(404, `Could not find functor with ID '${id}'`)
 
-	const functor = functors[0]
-
-	const left_adjoint = left_adjoints.at(0)
-	const right_adjoint = right_adjoints.at(0)
-
-	const tags = tag_objects.map(({ tag }) => tag)
-
-	const satisfied_properties = properties_db
-		.filter((obj) => obj.is_satisfied === 1)
-		.map(display_property_assignment)
-
-	const unsatisfied_properties = properties_db
-		.filter((obj) => obj.is_satisfied === 0)
-		.map(display_property_assignment)
-
-	const undecidable_properties = properties_db
-		.filter((obj) => obj.is_satisfied === null)
-		.map(display_property_assignment)
+	const functor = {
+		...structure,
+		...functors[0],
+		left_adjoint: left_adjoints.at(0),
+		right_adjoint: right_adjoints.at(0),
+	}
 
 	return render_nested_formulas({
 		functor,
-		related_functors,
-		left_adjoint,
-		right_adjoint,
+		related_structures,
 		tags,
 		satisfied_properties,
 		unsatisfied_properties,
 		unknown_properties,
 		undecidable_properties,
-		undistinguishable_functors,
+		undistinguishable_structures,
 		comments,
 	})
 }

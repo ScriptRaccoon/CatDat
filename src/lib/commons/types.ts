@@ -13,17 +13,29 @@ export type StructureShort = {
 
 export type RelatedStructure = StructureShort & { notation: string }
 
-export type CategoryDisplay = {
+export type StructureDisplay = {
 	id: string
 	name: string
 	notation: string
-	objects: string
-	morphisms: string
 	description: string | null
 	nlab_link: string | null
-	dual_category_id: string | null
-	dual_category_name: string | null
-	dual_category_notation: string | null
+	dual_structure_id: string | null
+	dual_structure_name: string | null
+	dual_structure_notation: string | null
+}
+
+export type CategorySpecificDisplay = {
+	objects: string
+	morphisms: string
+}
+
+export type FunctorSpecificDisplay = {
+	source: string
+	target: string
+	source_name: string
+	target_name: string
+	source_notation: string
+	target_notation: string
 }
 
 export type TagObject = { tag: string }
@@ -76,20 +88,6 @@ export type SpecialMorphism = {
 	type: string
 	description: string | null
 	proof: string
-}
-
-export type FunctorDisplay = {
-	id: string
-	name: string
-	notation: string
-	source: string
-	target: string
-	source_name: string
-	target_name: string
-	source_notation: string
-	target_notation: string
-	description: string
-	nlab_link: string | null
 }
 
 export type ImplicationDB = {

@@ -1,8 +1,12 @@
 <script lang="ts">
-	import type { CategoryDisplay, RelatedStructure } from '$lib/commons/types'
+	import type {
+		CategorySpecificDisplay,
+		StructureDisplay,
+		RelatedStructure,
+	} from '$lib/commons/types'
 
 	type Props = {
-		category: CategoryDisplay
+		category: CategorySpecificDisplay & StructureDisplay
 		related_categories: RelatedStructure[]
 	}
 
@@ -45,14 +49,14 @@
 			</li>
 		{/if}
 
-		{#if category.dual_category_id}
+		{#if category.dual_structure_id}
 			<li>
 				<strong>Dual category:</strong>
 				<a
-					href="/category/{category.dual_category_id}"
-					aria-label={category.dual_category_name}
+					href="/category/{category.dual_structure_id}"
+					aria-label={category.dual_structure_name}
 				>
-					{@html category.dual_category_notation}
+					{@html category.dual_structure_notation}
 				</a>
 			</li>
 		{/if}

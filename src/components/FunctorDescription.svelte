@@ -1,8 +1,12 @@
 <script lang="ts">
-	import type { FunctorDisplay, RelatedStructure } from '$lib/commons/types'
+	import type {
+		FunctorSpecificDisplay,
+		RelatedStructure,
+		StructureDisplay,
+	} from '$lib/commons/types'
 
 	type Props = {
-		functor: FunctorDisplay
+		functor: FunctorSpecificDisplay & StructureDisplay
 		related_functors: RelatedStructure[]
 		left_adjoint?: RelatedStructure
 		right_adjoint?: RelatedStructure
