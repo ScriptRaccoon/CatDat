@@ -8,13 +8,15 @@ INSERT INTO structure_types (type) VALUES
 
 CREATE TABLE structures (
     id TEXT PRIMARY KEY,
+    type TEXT NOT NULL,
     name TEXT NOT NULL UNIQUE,
     notation TEXT NOT NULL,
     description TEXT,
     nlab_link TEXT CHECK (nlab_link IS NULL OR nlab_link like 'https://%'),
-    type TEXT NOT NULL,
+    dual_structure_id TEXT,
     UNIQUE (id, type),
-    FOREIGN KEY (type) REFERENCES structure_types (type) ON DELETE RESTRICT
+    FOREIGN KEY (type) REFERENCES structure_types (type) ON DELETE RESTRICT,
+    FOREIGN KEY (dual_structure_id, type) REFERENCES structures (id, type) ON DELETE RESTRICT
 );
 
 CREATE UNIQUE INDEX structures_lower_id_unique ON structures (lower(id));

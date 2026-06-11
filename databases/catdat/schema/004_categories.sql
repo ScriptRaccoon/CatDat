@@ -2,7 +2,6 @@ CREATE TABLE categories (
     id TEXT PRIMARY KEY,
     objects TEXT NOT NULL,
     morphisms TEXT NOT NULL,
-    dual_category_id TEXT REFERENCES categories (id),
     FOREIGN KEY (id) REFERENCES structures (id) ON DELETE CASCADE
 );
 

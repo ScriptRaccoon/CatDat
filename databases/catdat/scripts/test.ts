@@ -12,7 +12,7 @@ import id_Set_expected from './expected-data/id_Set.json'
 import decided_categories from './expected-data/decided-categories.json'
 import decided_functors from './expected-data/decided-functors.json'
 import { capitalize, get_client } from './utils/helpers'
-import { StructureType } from './config'
+import { PLURALS, StructureType } from './config'
 
 const db = get_client()
 
@@ -24,7 +24,7 @@ execute_tests()
 function execute_tests() {
 	try {
 		console.info('\n--- Test categories ---')
-		test_mutual_category_duals()
+		test_mutual_structure_duals('category')
 		test_properties_of_trivial_category()
 		test_mutual_property_duals('category')
 		test_decided_structures(decided_categories, 'category')
@@ -51,30 +51,31 @@ function execute_tests() {
 }
 
 /**
- * Tests for all categories C,D that if C is dual to D, then D is dual to C.
+ * Tests for all structures of a given type C,D that if
+ * C is dual to D, then D is dual to C.
  */
-function test_mutual_category_duals() {
+function test_mutual_structure_duals(type: StructureType) {
 	const dict: Record<string, string | null> = {}
 
-	const categories = db
-		.prepare<
-			never[],
-			{ id: string; dual_category_id: string | null }
-		>('SELECT id, dual_category_id FROM categories')
-		.all()
+	const structures_with_duals = db
+		.prepare<[StructureType], { id: string; dual: string | null }>(
+			`SELECT id, dual_structure_id AS dual
+			FROM structures WHERE type = ?`,
+		)
+		.all(type)
 
-	for (const { id, dual_category_id } of categories) {
-		dict[id] = dual_category_id
+	for (const { id, dual } of structures_with_duals) {
+		dict[id] = dual
 	}
 
 	for (const id in dict) {
 		const dual = dict[id]
 		if (dual && dict[dual] !== id) {
-			throw new Error(`❌ Found non-mutual category duality: ${id}, ${dual}`)
+			throw new Error(`❌ Found non-mutual ${type} duality: ${id}, ${dual}`)
 		}
 	}
 
-	console.info(`✅ Categories are mutually dual`)
+	console.info(`✅ ${capitalize(PLURALS[type])} are mutually dual`)
 }
 
 /**

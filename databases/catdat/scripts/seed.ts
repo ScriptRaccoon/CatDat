@@ -161,9 +161,10 @@ function seed_structures<T extends StructureYaml>({
 }) {
 	const structure_insert = db.prepare(
 		`INSERT INTO structures (
-			id, type, name, notation, description, nlab_link
+			id, type, name, notation, description, nlab_link,
+			dual_structure_id
 		)
-		VALUES (?, ?, ?, ?, ?, ?)`,
+		VALUES (?, ?, ?, ?, ?, ?, ?)`,
 	)
 
 	const tag_insert = db.prepare(
@@ -212,6 +213,7 @@ function seed_structures<T extends StructureYaml>({
 			structure.notation,
 			structure.description,
 			structure.nlab_link,
+			structure[`dual_${type}`] || null,
 		)
 
 		for (const tag of structure.tags) {
@@ -246,8 +248,8 @@ function seed_structures<T extends StructureYaml>({
 function insert_category(category: CategoryYaml) {
 	const category_insert = db.prepare(
 		`INSERT INTO categories (
-	        id, objects, morphisms, dual_category_id
-		) VALUES (?, ?, ?, ?)`,
+	        id, objects, morphisms
+		) VALUES (?, ?, ?)`,
 	)
 
 	const special_object_insert = db.prepare(
@@ -259,12 +261,7 @@ function insert_category(category: CategoryYaml) {
 		VALUES (?, ?, ?, ?)`,
 	)
 
-	category_insert.run(
-		category.id,
-		category.objects,
-		category.morphisms,
-		category.dual_category || null,
-	)
+	category_insert.run(category.id, category.objects, category.morphisms)
 
 	for (const [type, entry] of Object.entries(category.special_objects)) {
 		if (!entry) continue

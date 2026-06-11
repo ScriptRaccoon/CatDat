@@ -10,3 +10,6 @@ export const STRUCTURE_MAPS = [
 	['source', 'functor', 'category'],
 	['target', 'functor', 'category'],
 ] as const
+
+// TODO: move this to the schema
+export const STRUCTURES_WITH_DUALS: StructureType[] = ['category']

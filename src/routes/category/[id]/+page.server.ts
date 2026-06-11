@@ -41,12 +41,12 @@ export const load = async (event) => {
 				c.morphisms,
 				s.description,
 				s.nlab_link,
-				c.dual_category_id,
+				s.dual_structure_id as dual_category_id,
 				ds.name AS dual_category_name,
 				ds.notation AS dual_category_notation
 			FROM categories c
 			INNER JOIN structures s ON s.id = c.id
-			LEFT JOIN structures ds ON ds.id = c.dual_category_id
+			LEFT JOIN structures ds ON ds.id = s.dual_structure_id
 			WHERE c.id = ${id}
 		`,
 		// related categories

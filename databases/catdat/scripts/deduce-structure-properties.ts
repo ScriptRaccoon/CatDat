@@ -16,7 +16,7 @@ import {
 	type PropertyMeta,
 } from './utils/deduction'
 import { get_contradiction_string, get_proof_string } from './utils/implications'
-import type { StructureType } from './config'
+import { STRUCTURES_WITH_DUALS, type StructureType } from './config'
 
 /**
  * Returns the set of satisfied properties that can be deduced from a set
@@ -312,7 +312,7 @@ function deduce_dual_properties(
 	dual_unsatisfied: Set<string>,
 	dual_undecidable: Set<string>,
 	properties_dict: Record<string, PropertyMeta>,
-	type: 'category',
+	type: StructureType,
 ) {
 	const new_satisfied = new Set<string>()
 
@@ -429,8 +429,7 @@ export function deduce_properties_for_structures(type: StructureType) {
 
 	deduction()
 
-	// currently, only categories have duals
-	if (type !== 'category') return
+	if (!STRUCTURES_WITH_DUALS.includes(type)) return
 
 	const dual_deduction = db.transaction(() => {
 		for (const structure of structures) {
