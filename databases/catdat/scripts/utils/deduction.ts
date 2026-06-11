@@ -1,6 +1,6 @@
 import { type Database } from 'better-sqlite3'
-import { get_categories, get_normalized_category_implications } from './categories'
-import { get_functors, get_normalized_functor_implications } from './functors'
+import { get_categories } from './categories'
+import { get_functors } from './functors'
 import { StructureType } from '../config'
 
 /**
@@ -12,14 +12,6 @@ export type StructureMeta = {
 	dual?: string | null
 	// used for source and target properties of a functor
 	associated_satisfied_properties?: Record<string, Set<string>>
-}
-
-export type NormalizedImplication = {
-	id: string
-	assumptions: Set<string>
-	conclusion: string
-	// used for source and target assumptions of a functor in an implication
-	associated_assumptions?: Record<string, Set<string>>
 }
 
 export type PropertyMeta = {
@@ -35,18 +27,6 @@ export type PropertyMeta = {
 export function get_structures(db: Database, type: StructureType): StructureMeta[] {
 	if (type === 'category') return get_categories(db)
 	if (type === 'functor') return get_functors(db)
-	throw new Error('Unsupported type')
-}
-
-/**
- * Returns the list of normalized implications saved in the database of a given type.
- */
-export function get_normalized_implications(
-	db: Database,
-	type: StructureType,
-): NormalizedImplication[] {
-	if (type === 'category') return get_normalized_category_implications(db)
-	if (type === 'functor') return get_normalized_functor_implications(db)
 	throw new Error('Unsupported type')
 }
 

@@ -1,6 +1,100 @@
 import { type Database } from 'better-sqlite3'
-import type { NormalizedImplication, PropertyMeta } from './deduction'
+import type { PropertyMeta } from './deduction'
 import { StructureType } from '../config'
+import { parse_json_set } from './helpers'
+
+export type NormalizedImplication = {
+	id: string
+	assumptions: Set<string>
+	conclusion: string
+	// used for source and target assumptions of a functor in an implication
+	associated_assumptions?: Record<string, Set<string>>
+}
+
+/**
+ * Implications have the form
+ * P_1 + ... + P_n ===> Q_1 + ... + Q_m
+ * or
+ * P_1 + ... + P_n <===> Q_1 + ... + Q_m.
+ * This function decomposes them into normalized implications,
+ * which have the form
+ * P_1 + ... + P_n ===> Q.
+ */
+export function get_normalized_implications(
+	db: Database,
+	type: StructureType,
+): NormalizedImplication[] {
+	const all_implications_db = db
+		.prepare<
+			[StructureType],
+			{
+				id: string
+				is_equivalence: 0 | 1
+				assumptions: string
+				source_assumptions: string
+				target_assumptions: string
+				conclusions: string
+			}
+		>(
+			`SELECT
+				id,
+				is_equivalence,
+				assumptions,
+				source_assumptions,
+				target_assumptions,
+				conclusions
+			FROM implications_view i
+			WHERE i.type = ?`,
+		)
+		.all(type)
+
+	const implications: NormalizedImplication[] = []
+
+	for (const impl of all_implications_db) {
+		const assumptions = parse_json_set<string>(impl.assumptions)
+		const conclusions = parse_json_set<string>(impl.conclusions)
+		const source_assumptions = parse_json_set<string>(impl.source_assumptions)
+		const target_assumptions = parse_json_set<string>(impl.target_assumptions)
+
+		for (const conclusion of conclusions) {
+			const implication: NormalizedImplication = {
+				id: impl.id,
+				assumptions,
+				conclusion,
+			}
+
+			if (source_assumptions.size > 0 || target_assumptions.size > 0) {
+				implication.associated_assumptions = {
+					source: source_assumptions,
+					target: target_assumptions,
+				}
+			}
+
+			implications.push(implication)
+		}
+
+		if (impl.is_equivalence) {
+			for (const assumption of assumptions) {
+				const implication: NormalizedImplication = {
+					id: impl.id,
+					assumptions: conclusions,
+					conclusion: assumption,
+				}
+
+				if (source_assumptions.size > 0 || target_assumptions.size > 0) {
+					implication.associated_assumptions = {
+						source: source_assumptions,
+						target: target_assumptions,
+					}
+				}
+
+				implications.push(implication)
+			}
+		}
+	}
+
+	return implications
+}
 
 function get_assumption_string(
 	implication: NormalizedImplication,

@@ -7,15 +7,18 @@ import { type Database, SqliteError } from 'better-sqlite3'
 import { get_client, is_subset } from './utils/helpers'
 import {
 	get_structures,
-	get_normalized_implications,
 	get_properties_dict,
 	get_property_assignments,
 	is_dual_structure,
 	type StructureMeta,
-	type NormalizedImplication,
 	type PropertyMeta,
 } from './utils/deduction'
-import { get_contradiction_string, get_proof_string } from './utils/implications'
+import {
+	get_contradiction_string,
+	get_normalized_implications,
+	get_proof_string,
+	NormalizedImplication,
+} from './utils/implications'
 import { STRUCTURES_WITH_DUALS, type StructureType } from './config'
 
 /**

@@ -1,16 +1,13 @@
 import { get_client } from './utils/helpers'
-import {
-	get_categories,
-	get_normalized_category_implications,
-	type NormalizedCategoryImplication,
-} from './utils/categories'
+import { get_categories, type NormalizedCategoryImplication } from './utils/categories'
 import {
 	get_deduced_satisfied_properties,
 	get_deduced_unsatisfied_properties,
 } from './deduce-structure-properties'
 import { get_property_assignments_by_deduction, StructureMeta } from './utils/deduction'
-import { get_functors, get_normalized_functor_implications } from './utils/functors'
+import { get_functors } from './utils/functors'
 import { StructureType } from './config'
+import { get_normalized_implications } from './utils/implications'
 
 const db = get_client()
 
@@ -33,11 +30,7 @@ function check_redundancies() {
 function check_redundant_property_assignments(type: StructureType) {
 	console.info(`\n--- Check redundant ${type} property assignments ---`)
 
-	// TODO: refactor this when > 2 types of structures are available
-	const implications =
-		type === 'category'
-			? get_normalized_category_implications(db)
-			: get_normalized_functor_implications(db)
+	const implications = get_normalized_implications(db, type)
 
 	const structures: StructureMeta[] =
 		type === 'category' ? get_categories(db) : get_functors(db)
