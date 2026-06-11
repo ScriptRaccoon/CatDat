@@ -25,7 +25,7 @@ function execute_tests() {
 	try {
 		console.info('\n--- Test categories ---')
 		test_mutual_structure_duals('category')
-		test_properties_of_trivial_category()
+		test_positivity('1', 'category')
 		test_mutual_property_duals('category')
 		test_decided_structures(decided_categories, 'category')
 		test_properties_of_selected_structures(
@@ -34,6 +34,7 @@ function execute_tests() {
 		)
 
 		console.info('\n--- Test functors ---')
+		test_positivity('id_Set', 'functor')
 		test_mutual_property_duals('functor')
 		test_decided_structures(decided_functors, 'functor')
 		test_properties_of_selected_structures(
@@ -79,27 +80,27 @@ function test_mutual_structure_duals(type: StructureType) {
 }
 
 /**
- * Tests that the trivial category has no unsatisfied property.
+ * Tests that a specified structure has no unsatisfied property.
  * This enforces that all properties in the database are "positive".
  */
-function test_properties_of_trivial_category() {
-	const rows = db
-		.prepare<never[], { property_id: string }>(
+function test_positivity(structure_id: string, type: StructureType) {
+	const unsatisfied_props = db
+		.prepare<[StructureType, string], { property_id: string }>(
 			`SELECT property_id FROM property_assignments
 			WHERE
-				type = 'category' AND
-				structure_id = '1' AND
+				type = ? AND
+				structure_id = ? AND
 				is_satisfied = FALSE`,
 		)
-		.all()
+		.all(type, structure_id)
 
-	if (rows.length > 0) {
+	if (unsatisfied_props.length > 0) {
 		throw new Error(
-			`❌ The trivial category has ${rows.length} unsatisfied properties, but it should have 0.`,
+			`❌ The ${type} ${structure_id} has ${unsatisfied_props.length} unsatisfied properties, but it should have 0.`,
 		)
 	}
 
-	console.info(`✅ The trivial category has no unsatisfied properties`)
+	console.info(`✅ The ${type} ${structure_id} has no unsatisfied properties`)
 }
 
 /**
