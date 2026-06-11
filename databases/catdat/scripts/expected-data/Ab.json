@@ -169,5 +169,7 @@
 	"subobject-trivial": false,
 	"quotient-trivial": false,
 	"locally finite": false,
-	"pretopos": false
+	"pretopos": false,
+	"quasitopos": false,
+	"Grothendieck quasitopos": false
 }

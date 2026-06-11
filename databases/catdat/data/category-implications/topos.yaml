@@ -32,10 +32,10 @@
 
 - id: topos_implies_coregular
   assumptions:
-    - elementary topos
+    - quasitopos
   conclusions:
     - coregular
-  proof: This is proven in <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, A2.6.3 (for every quasitopos).
+  proof: This is proven in <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, A2.6.3.
   is_equivalence: false
 
 - id: grothendieck_topos_definition
@@ -70,12 +70,15 @@
 
 - id: topos_no_stable_epis
   assumptions:
-    - elementary topos
+    - quasitopos
     - cofiltered-limit-stable epimorphisms
     - countable coproducts
   conclusions:
-    - trivial
-  proof: Let $N \coloneqq \coprod_{m \in \IN} 1$ and consider for every $n \in \IN$ the subobject $N_{\geq n} = \coprod_{m \geq n} 1$ of $N$. For $n \leq n'$ we have $N_{\geq n'} \subseteq N_{\geq n}$. There is a (unique, split) epimorphism $N_{\geq n} \to 1$ for every $n$. By assumption, their limit $\lim_n N_{\geq n} \to 1$ is also an epimorphism. But $\lim_n N_{\geq n} = \bigcap_{n} N_{\geq n} = 0$. Thus, $0 \to 1$ is an epimorphism. It must be a regular epimorphism, but $0$ is strict initial, so that $0 \to 1$ is an isomorphism. Hence, $X \cong X \times 1 \cong X \times 0 \cong 0$ for all $X$.
+    - thin
+  proof: >-
+    Let $N \coloneqq \coprod_{m \in \IN} 1$ and consider for every $n \in \IN$ the subobject $N_{\geq n} = \coprod_{m \geq n} 1$ of $N$. For $n \leq n'$ we have $N_{\geq n'} \subseteq N_{\geq n}$. Now let $\bar 0$ be the coimage of the unique morphism $0 \to 1$, so that we get a factorization $0 \twoheadrightarrow \bar 0 \hookrightarrow 1$ where $0 \twoheadrightarrow \bar 0$ is an epimorphism and $\bar 0 \to 1$ is a regular monomorphism. Then since $\bar 0$ is a quotient of $0$, the coslice over $\bar 0$ is equivalent to a full subcategory. Moreover, the coslice is again a quasitopos with countable coproducts, and the inclusion functor preserves and reflects limits and inhabited colimits. In fact, this coslice is also a solid quasitopos (meaning exactly that the unique morphism from its initial object $\bar 0$ to its terminal object $1$ is a regular monomorphism), which implies that it has disjoint finite coproducts by <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, ???. Since the coslice is locally cartesian closed, we conclude that it is countably extensive. Also, each $N_{\geq n}$ is in the coslice. From this, we can conclude that $\lim_n N_{\geq n} \simeq \bar 0$ in the coslice, and therefore also in the original quasitopos.
+
+    There is a (unique, split) epimorphism $N_{\geq n} \to 1$ for every $n$. By assumption, their limit $\lim_n N_{\geq n} \to 1$ is also an epimorphism. Thus, $0 \to 1$ is an epimorphism. It follows that for any parallel pair $f, g : X \rightrightarrows Y$, the corresponding morphisms $1 \rightrightarrows [X, Y]$ are equal, so that $f = g$.
   is_equivalence: false
 
 - id: pretopos_definition
@@ -86,3 +89,68 @@
     - extensive
   proof: This is true by definition.
   is_equivalence: true
+
+- id: quasitopos_definition
+  assumptions:
+    - quasitopos
+  conclusions:
+    - finitely complete
+    - finitely cocomplete
+    - locally cartesian closed
+    - regular subobject classifier
+  proof: This is true by definition.
+  is_equivalence: true
+
+- id: quasitopos_consequence
+  assumptions:
+    - quasitopos
+  conclusions:
+    - effective cocongruences
+  proof: >-
+    Suppose $p : X+X' \rightrightarrows E$ is a cocongruence, with coreflexivity morphism $r : E \to X$ and cotransitivity morphism $t : E \to E +_X E'$. (Here $X'$ is an isomorphic copy of $X$; $E'$ is an isomorphic copy of $E$; and $E +_X E'$ is the coproduct modulo the relations $p(x') = p(x)'$, i.e. it is equivalent to the pushout of $E \xleftarrow{p\circ i_2} X \xrightarrow{p\circ i_1} E$.) Now by <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, ???, the quasitopos is equivalent to a comma category $H \mathop{\downarrow} F$ where $H$ is the poset category of a Heyting algebra, and $F : H \to S$ is a functor from $H$ to a solid quasitopos $S$ (meaning a quasitopos in which $! : 0 \to 1$ is a regular monomorphism). However, since we have morphisms $X \to E$ and $E \to X$, we see that the $H$-components of $X$ and $E$ are isomorphic, and similarly for $E +_X E'$. Therefore, we may work in the full subcategory with constant $H$-component $X_H = E_H$; this is equivalent to the slice category $S / F(X_H)$ which is again a solid quasitopos. This shows that without loss of generality, we may assume the original quasitopos is solid; and therefore, by <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, ???, the quasitopos has disjoint coproducts and is therefore extensive. However, in that subcategory, <a href="/category-implication/regular_extensive_consequences">this result</a> applies to show that $E$ is an effective cocongruence; and since the inclusion functor into the original quasitopos preserves inhabited limits and inhabited colimits, we see that $E$ is effective in the original quasitopos as well.
+  is_equivalence: false
+
+- id: balanced_quasitopos_is_topos
+  assumptions:
+    - quasitopos
+    - balanced
+  conclusions:
+    - elementary topos
+  proof: This is proven in <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, A2.6.3.
+  is_equivalence: false
+
+- id: Giraud_for_quasitopos
+  assumptions:
+    - Grothendieck quasitopos
+  conclusions:
+    - quasitopos
+    - locally presentable
+  proof: See <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, C2.2.13, which proves that a category is a Grothendieck quasitopos if and only if it is a locally essentially small, cocomplete quasitopos with a small strong generating set, which in turn is equivalent to the category being locally presentable and locally cartesian closed, such that all regular congruences are effective. (Note that Johnstone uses "small generating set" in the statement, but Johnstone's definition of "generating set" matches what would usually be called a "strong generating set", or "extremal generating set" in the terminology of nLab.) This is sufficient to establish the forward implication. For the reverse implication, note that any locally presentable category is locally essentially small and cocomplete; and it has a small strong generating set by <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>, Theorem 1.20 in Chapter 1.
+  is_equivalence: true
+
+- id: Malcev_quasitopos_is_thin
+  assumptions:
+    - regular subobject classifier
+    - Malcev
+  conclusions:
+    - thin
+  proof: 'By a proof similar to <a href="/category-implication/subobject_classifier_disallows_malcev">this</a> we conclude that every regular monomorphism is an isomorphism. Applying this to the equalizer of any parallel pair $f, g : X \rightrightarrows Y$, we conclude that $f = g$.'
+  is_equivalence: false
+
+- id: Grothendieck_quasitopos_consequences
+  assumptions:
+    - Grothendieck quasitopos
+  conclusions:
+    - exact filtered colimits
+    - cogenerator
+  proof: >-
+    To show that a Grothendieck quasitopos has exact filtered colimits, note that $\BiSep(\C, J, K)$ is a reflective subcategory of $\Sh(\C, J)$, with the reflector preserving finite limits. (This is a special case of the more general situation of $\Sep(j)$ being a reflective subcategory of $\T$ whenever $j$ is a Lawvere-Tierney topology on an elementary topos $\T$ with the reflector preserving finite limits.) The result follows from Lemma 3 <a href="/content/subcategories">here</a>.
+
+    As for having a cogenerator: we have that $\Sh(\C, K)$ is a reflective subcategory of $\BiSep(\C, J, K)$, with the reflector being the restriction of the $K$-sheafification functor to the subcategory $\BiSep(\C, J, K)$. Also, recall in general that if $\F$ is a presheaf on $\C$, then the morphism $\F \to \F^+_K$ has $K$-dense presheaf image, and if $\F$ is $K$-separated then the morphism $\F \to \F^+_K$ is a monomorphism. Thus, for $\F$ an object of $\BiSep(\C, J, K)$, the morphism $\eta_\F : \F \to \F^+_K$ is both a monomorphism and an epimorphism in $\BiSep(\C, J, K)$. Now, let $Q$ be a cogenerator of the Grothendieck topos $\Sh(\C, K)$, and suppose we have a parallel pair of morphisms $f, g : \F \rightrightarrows \G$ in $\BiSep(\C, J, K)$ such that $f \ne g$. Then since $\eta_\G : \G \to \G^+_K$ is a monomorphism, we have $f^+ \ne g^+$. Therefore, there exists $h : \G^+_K \to Q$ such that $h \circ f^+_K \ne h \circ g^+_K$. Since $\eta_\F$ is an epimorphism, we conclude $h \circ f^+_K \circ \eta_\F \ne h \circ g^+_K \circ \eta_G$, and thus $h \circ \eta_\G \circ f \ne h \circ \eta_\G \circ g$.
+
+    $$\begin{CD}
+    \F @> f > g > \G \\
+    @V \eta_\F VV @V \eta_\G VV \\
+    \F^+_K @> f^+_K > g^+_K > \G^+_K @> h >> Q
+    \end{CD}$$
+  is_equivalence: false

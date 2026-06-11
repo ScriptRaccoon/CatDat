@@ -1,0 +1,11 @@
+id: Grothendieck quasitopos
+relation: is a
+description: Given a small category $\C$ with a pair of Grothendieck topologies $J \subseteq K$, we define $\BiSep(\C, J, K)$ to be the full subcategory of presheaves on $\C$ which are both a sheaf for the $J$ topology and also separated for the $K$ topology. A <i>Grothendieck quasitopos</i> is a category which is equivalent to $\BiSep(\C, J, K)$ for some $\C, J, K$. Equivalently, a category is a Grothendieck quasitopos if and only if it is equivalent to the full subcategory of separated objects for a <a href="https://ncatlab.org/nlab/show/Lawvere-Tierney+topology" target="_blank">Lawvere-Tierney topology</a> on a Grothendieck topos. For the equivalence, see <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, C2.2.13.
+nlab_link: https://ncatlab.org/nlab/show/quasitopos
+invariant_under_equivalences: true
+
+related_properties:
+  - quasitopos
+  - Grothendieck topos
+  - elementary topos
+  - locally presentable

@@ -62,6 +62,7 @@ unsatisfied_properties:
 
   - property: regular
     proof: This is Corollary 4(c) <a href="/content/Top-embeds-in-LRS">here</a>.
+    check_redundancy: false
 
   - property: cofiltered-limit-stable epimorphisms
     proof: This is Corollary 4(d) <a href="/content/Top-embeds-in-LRS">here</a>.

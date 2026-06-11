@@ -43,9 +43,6 @@ unsatisfied_properties:
   - property: cogenerating set
     proof: 'Assume that $S$ is a cogenerating set in $\Cat$. Then one checks that the set of monoids $\{\End(X) : X \in \C \in S\}$ is a cogenerating set in <a href="/category/Mon">$\Mon$</a>, which we know does not exist.'
 
-  - property: regular
-    proof: See Example 3.14 at the <a href="https://ncatlab.org/nlab/show/regular+category" target="_blank">nLab</a>.
-
   - property: coregular
     proof: 'We already know that <a href="/category/Mon">$\Mon$</a> is not coregular, in fact there is a regular monomorphism $M \to N$ of monoids and a morphism $M \to K$ such that $K \to K \sqcup_M N$ is not a monomorphism. The delooping functor $B : \Mon \to \Cat$ has a left adjoint (<a href="https://math.stackexchange.com/questions/574745" target="_blank">MSE/574745</a>), hence it preserves regular monomorphisms. It also preserves pushouts (<a href="https://math.stackexchange.com/questions/5130854" target="_blank">MSE/5130854</a>), and it reflects monomorphisms since it is faithful. Therefore, $B(M) \to B(N)$ provides the desired counterexample of a non-stable regular monomorphism of categories.'
 

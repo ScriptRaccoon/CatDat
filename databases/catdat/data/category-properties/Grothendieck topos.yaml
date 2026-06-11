@@ -6,6 +6,7 @@ invariant_under_equivalences: true
 
 related_properties:
   - elementary topos
+  - Grothendieck quasitopos
 
 tags:
   - topos theory

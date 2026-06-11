@@ -111,6 +111,36 @@
     Remark: The assumptions are satisfied in particular for every elementary topos. Therefore, every elementary topos has effective cocongruences and is co-Malcev. This special case is Example 2.2.18 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>. An alternative proof of this special case is given later in A.5.17.
   is_equivalence: false
 
+- id: regular_extensive_consequences
+  assumptions:
+    - extensive
+    - regular
+    - quotients of congruences
+  conclusions:
+    - effective cocongruences
+  proof: >-
+    Suppose $p : X+X' \twoheadrightarrow E$ is a cocongruence, with coreflexivity morphism $r : E \to X$ and cotransitivity morphism $t : E \to E +_X E'$. (Here $X'$ is an isomorphic copy of $X$; $E'$ is an isomorphic copy of $E$; and $E +_X E'$ is the coproduct modulo the relations $p(x') = p(x)'$, i.e. it is equivalent to the pushout of $E \xleftarrow{p\circ i_2} X \xrightarrow{p\circ i_1} E$. Since both these morphisms are (split) monomorphisms, the pushout exists by <a href="/content/pushouts-of-monos-via-congruence-quotients">this result</a>.)
+
+    We now claim that we have pullback diagrams
+    $$\begin{CD}
+    X @> p \circ i_1 >> E @. \quad @. X' @> p \circ i_2 >> E \\
+    @V p \circ i_1 VV @VV t V @. @V p \circ i_2 VV @VV t V \\
+    E @> i_1 >> E +_X E' @. \quad @. E'  @> i_2 >> E +_X E'.
+    \end{CD}$$
+    For the left diagram, suppose we have generalized elements $e_1, e_2 \in E$ such that $t(e_1) = i_1(e_2) \in E +_X E'$. Then we have two retractions of $t$, $s_1 : E +_X E' \to E$, defined by $e \mapsto p(r(e)), e' \mapsto e'$; and $s_2 : E +_X E' \to E$, defined by $e \mapsto e, e' \mapsto p(r(e)')$. To check for instance that $s_1$ is a retraction, note that $s_1(t(p(x))) = s_1(p(x)) = p(r(p(x)) = p(x)$ and $s_1(t(p(x'))) = s_1(p(x')') = p(x')$ and then use the assumption that $p$ is an epimorphism; the proof for $s_2$ is similar. Therefore, $e_1 = s_1(t(e_1)) = s_1(i_1(e_2)) = p(r(e_2))$. On the other hand, $e_1 = s_2(t(e_1)) = s_2(i_1(e_2)) = e_2$. Therefore, $e_1 = e_2 = p(r(e_2))$, so the generalized element $r(e_2)$ of $X$ maps to $e_1$ and $e_2$ respectively as required. On the other hand, since $p\circ i_1 : X \to E$ is a (split) monomorphism, the uniqueness of the generalized element of $X$ is automatic, completing the proof that the left diagram is a pullback square. The proof for the right diagram is similar.
+
+    Now, using extensivity, we can combine these into a pullback diagram
+    $$\begin{CD}
+    X+X' @> p >> E \\
+    @VVV @VV t V \\
+    E+E' @>>> E +_X E'.
+    \end{CD}$$
+    Since both morphisms $X \to E$ and $X \to E'$ used in the pushforward are monomorphisms, by the construction <a href="/content/pushouts-of-monos-via-congruence-quotients">here</a>, the morphism $E+E' \to E +_X E'$ is a regular epimorphism. Therefore, by the assumption that the category is regular, we have that $p$ is in fact a regular epimorphism.
+
+    From here, essentially the same argument as in <a href="/category-implication/regular_epi-regular_extensive_consequences">this proof</a> applies to show that $E$ is effective.
+
+  is_equivalence: false
+
 - id: pretopos_balanced
   assumptions:
     - effective congruences

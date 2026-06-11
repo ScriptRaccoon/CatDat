@@ -14,6 +14,7 @@ related_categories:
   - Set
   - SetxSet
   - Sh(X,Ab)
+  - SepPsh(X)
 
 comments:
   - It is likely that none of the currently remaining unknown properties (locally ℵ₁-presentable, exact filtered colimits, etc.) are satisfied for a <i>generic</i> space $X$, but we need to make this precise by adding additional requirements to $X$. Maybe we need to create separate entries for specific spaces $X$.

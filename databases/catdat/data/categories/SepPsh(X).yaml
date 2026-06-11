@@ -1,0 +1,77 @@
+id: SepPsh(X)
+name: category of separated presheaves
+notation: $\SepPsh(X)$
+objects: separated presheaves of sets on a topological space $X$
+morphisms: morphisms of presheaves
+description: Here, we assume that the topological space $X$ is such that there is a non-empty family of open subsets whose union is not in the family, since otherwise this category is almost the category of all presheaves. For a few of the properties, we will strengthen this assumption to the assumption that there are two open subsets $U, V$ such that neither is contained in the other.
+nlab_link: https://ncatlab.org/nlab/show/separated+presheaf
+
+tags:
+  - algebraic geometry
+  - topology
+
+related_categories:
+  - Sh(X)
+  - Set
+
+satisfied_properties:
+  - property: locally small
+    proof: This is easy.
+
+  - property: Grothendieck quasitopos
+    proof: It is equivalent to $\BiSep(\Open(X), J, K)$ where $J$ is the trivial Grothendieck topology and $K$ is the open covering topology.
+
+  - property: cocartesian cofiltered limits
+    proof: 'Let $c : \F \sqcup \lim_{i\in I} \G_i \to \lim_{i\in I} (\F \sqcup \G_i)$ be the comparison map. Using the description of coproducts below, we see that for non-empty $U$, both sides of $c(U)$ can be calculated component-wise. Therefore, for those $U$, the conclusion follows from the corresponding fact in <a href="/category/Set">$\Set$</a>. For $U = \varnothing$, we can see that both sides of $c(\varnothing)$ are empty if and only if $\F(\varnothing) = \varnothing$ and $\G_i(\varnothing) = \varnothing$ for some $i$, and otherwise both sides are a singleton.'
+
+unsatisfied_properties:
+  - property: skeletal
+    proof: Consider the constant presheaves for two non-equal singleton sets.
+
+  - property: disjoint finite coproducts
+    proof: The equalizer of the two coprojections $1 \rightrightarrows 1 + 1$ has value $1$ at $\varnothing$.
+
+  - property: generator
+    proof: 'The subcategory $\Sh(X)$ of $\SepPsh(X)$ is reflective by <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a> Prop A.2.6.12 and A.4.4.4. Therefore, if $\SepPsh(X)$ had a generator then so would <a href="/category/Sh(X)">$\Sh(X)$</a>, which we know is not the case.'
+
+  - property: effective congruences
+    proof: >-
+      Let $\{ U_i : i \in I \}$ be a non-empty family of open sets whose union $U$ is not in the family. In particular, this implies $U \ne \varnothing$. We then consider the relation $\E$ on $\F \coloneqq y_U + y_U '$ where for $x_1, x_2 \in \F(V)$, $(x_1, x_2) \in \E(V)$ if and only if either $x_1 = x_2$ or $V \subseteq U_i$ for some $i \in I$. It is easy to see that $\E$ is a congruence. However, $\E \hookrightarrow \F \times \F$ is not a regular monomorphism: to see this, use the description of regular monomorphisms below, and observe that $(\id_U, \id_U ') \notin \E(U)$ but its restriction is in $\E(U_i)$ for each $i$. On the other hand, any effective congruence would necessarily be an equalizer.
+
+  - property: semi-strongly connected
+    proof: Let $U$ and $V$ be two open subsets such that neither is contained in the other. Then there is neither a morphism $y_U \to y_V$ nor a morphism $y_V \to y_U$.
+
+  - property: co-Malcev
+    proof: >-
+      Let $U$ and $V$ be two open subsets such that neither is contained in the other. We will let $\F \coloneqq y_{U \cup V}$, which represents the functor of sections over $U \cup V$, and then consider the reflexive relation on such sections $a, b \in \G(U \cup V)$ where $a \sim b$ if and only if there exists $c \in \G(U\cup V)$ such that $c |_U = a |_U$ and $c |_V = b |_V$. Note that since $\G$ is separated, such a $z$ is unique if it exists. From this, we can see that this relation is representable by the colimit of a diagram where the objects are $y_U$, $y_V$, and three copies of $y_{U\cup V}$, and the morphisms are canonical morphisms from $y_U$ to the first and third copies of $y_{U\cup V}$ and canonical morphisms from $y_V$ to the second and third copies of $y_{U\cup V}$. In fact, we can see that the presheaf colimit is separated, so this presheaf colimit is also the colimit in $\SepPsh(X)$.
+
+      For a more concrete description of the presheaf colimit $\E$, if $W \not\subseteq U\cup V$, then $\E(W) = \varnothing$. If $W \subseteq U\cup V$ but $W \not\subseteq U$ and $W \not\subseteq V$, then $\E(W) \simeq \{ a_W, b_W, c_W \}$. If $W \subseteq U$ but $W \not\subseteq V$, then $\E(W) \simeq \{ a_W = c_W, b_W \}$; similarly, if $W \subseteq V$ but $W \not\subseteq U$, then $\E(W) \simeq \{ a_W, b_W = c_W \}$. Finally, if $W \subseteq U \cap V$, then $\E(W) \simeq \{ a_W = b_W = c_W \}$. The restriction maps of $\E$ are induced by $a_W \mapsto a_{W'}, b_W \mapsto b_{W'}, c_W \mapsto c_{W'}$.
+
+      Now if $\E$ were cosymmetric, with cosymmetry morphism $s : \E \to \E$, then $c' \coloneqq s(c_{U\cup V}) \in \E(U\cup V)$ would have to satisfy $c' |_U = s(c_{U\cup V} |_U) = s(a_U) = b_U$ and $c' |_V = s(c_{U\cup V} |_V) = s(b_V) = a_V$. However, none of $a_{U\cup V}, b_{U\cup V}, c_{U\cup V}$ satisfies these conditions.
+
+special_objects:
+  initial object:
+    description: empty presheaf sending every open set to $\varnothing$
+  terminal object:
+    description: constant presheaf with value a singleton
+  coproducts:
+    description: take the section-wise disjoint union, and then collapse the value at $\varnothing$ to a singleton if it is non-empty
+  products:
+    description: section-wise defined direct product
+
+special_morphisms:
+  isomorphisms:
+    description: morphisms of separated presheaves that are bijective on every open set
+    proof: This is easy.
+  monomorphisms:
+    description: morphisms of separated presheaves that are injective on every open set
+    proof: This is a corollary of Lemma 1(a) <a href="/content/separated_objects_quasitopos">here</a>.
+  epimorphisms:
+    description: 'morphisms of separated presheaves $\varphi : \F \to \G$ which are "locally surjective": for every local section $g \in \G(U)$ there is an open covering $\bigcup_{i\in I} U_i = U$ such that each $g|_{U_i} \in \G(U_i)$ is contained in the image of $\varphi(U_i) : \F(U_i) \to \G(U_i)$'
+    proof: This is a corollary of Lemma 1(b) <a href="/content/separated_objects_quasitopos">here</a>.
+  regular monomorphisms:
+    description: 'morphisms of separated presheaves $\varphi : \F \hookrightarrow \G$ that are injective on every open set, and such that "every section of $\G$ which is locally in $\F$ is itself in $\F$": if a local section $g \in \G(U)$ has an open covering $\bigcup_{i\in I} U_i = U$ such that each $g|_{U_i} \in \G(U_i)$ is contained in the image of $\varphi(U_i) : \F(U_i) \to \G(U_i)$, then $g$ is contained in the image of $\varphi(U) : \F(U) \to \G(U)$'
+    proof: This is a corollary of Lemma 1(c) <a href="/content/separated_objects_quasitopos">here</a>.
+  regular epimorphisms:
+    description: morphisms of separated presheaves that are surjective on every open set
+    proof: This is a corollary of Lemma 1(d) <a href="/content/separated_objects_quasitopos">here</a>.

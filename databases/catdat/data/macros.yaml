@@ -18,6 +18,7 @@
 \D: \mathcal{D}
 \E: \mathcal{E}
 \F: \mathcal{F}
+\G: \mathcal{G}
 \I: \mathcal{I}
 \J: \mathcal{J}
 \O: \mathcal{O}
@@ -49,7 +50,6 @@
 \im: \operatorname{im}
 \lcm: \operatorname{lcm}
 \Spec: \operatorname{Spec}
-\Sh: \operatorname{Sh}
 \ord: \operatorname{ord}
 \diag: \operatorname{diag}
 \Sub: \operatorname{Sub}
@@ -62,6 +62,7 @@
 \cod: \operatorname{cod}
 \rank: \operatorname{rank}
 \Gal: \operatorname{Gal}
+\Open: \operatorname{Open}
 
 # categories
 \Set: \mathbf{Set}
@@ -121,3 +122,7 @@
 \Isom: \mathbf{Isom}
 \Pair: \mathbf{Pair}
 \Span: \mathbf{Span}
+\Sh: \mathbf{Sh}
+\Sep: \mathbf{Sep}
+\BiSep: \mathbf{BiSep}
+\SepPsh: \mathbf{SepPsh}

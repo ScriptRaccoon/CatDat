@@ -11,6 +11,8 @@ related_properties:
   - natural numbers object
   - subobject classifier
   - pretopos
+  - quasitopos
+  - Grothendieck quasitopos
 
 tags:
   - topos theory
