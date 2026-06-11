@@ -152,10 +152,3 @@ export function get_contradiction_string(
 		? `${contra}. Then it ${assumption_string}, so it ${conclusion_string} (${ref}) – contradiction.`
 		: `${contra}. Then it ${conclusion_string} (${ref}) – contradiction.`
 }
-
-/**
- * Clears all deduced implications. This is done before the deduction starts.
- */
-export function clear_deduced_implications(db: Database, type: StructureType) {
-	db.prepare(`DELETE FROM implications WHERE is_deduced = TRUE AND type = ?`).run(type)
-}

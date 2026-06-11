@@ -1,25 +1,23 @@
+import { STRUCTURE_MAPS, STRUCTURES_WITH_DUALS, type StructureType } from './config'
 import { are_equal_sets, get_client, parse_json_set } from './utils/helpers'
-import { clear_deduced_implications } from './utils/implications'
 
 const db = get_client()
 
 /**
- * Deduces functor implications from given ones.
+ * Clears all deduced implications. This is done before the deduction starts.
  */
-export function deduce_functor_implications() {
-	console.info('\n--- Deduce functor implications ---')
-	clear_deduced_implications(db, 'functor')
-	create_dualized_functor_implications()
+export function clear_deduced_implications(type: StructureType) {
+	db.prepare(`DELETE FROM implications WHERE is_deduced = TRUE AND type = ?`).run(type)
 }
 
 /**
- * Dualizes all implications of functors by dualizing the involved properties
+ * Dualizes all implications by dualizing the involved properties
  * (in case they have a dual). For example, if P ===> Q holds,
  * then P^op ===> Q^op holds as well.
  */
-function create_dualized_functor_implications() {
+export function create_dualized_implications(type: StructureType) {
 	const implications_query = db.prepare<
-		never[],
+		[StructureType],
 		{
 			id: string
 			is_equivalence: 0 | 1
@@ -61,38 +59,43 @@ function create_dualized_functor_implications() {
 				WHERE a.implication_id = i.id
 			) AS dual_conclusions
 		FROM implications_view i
-		WHERE i.type = 'functor' AND i.is_deduced = FALSE`,
+		WHERE i.type = ? AND i.is_deduced = FALSE`,
 	)
 
-	const implications = implications_query.all()
+	const implications = implications_query.all(type)
 
 	const implication_insert = db.prepare(`
 		INSERT INTO implications
 			(id, type, is_equivalence, proof, is_deduced, dualized_from)
-		VALUES (?, 'functor', ?, ?, TRUE, ?)	
+		VALUES (?, ?, ?, ?, TRUE, ?)	
 	`)
 
 	const assumption_insert = db.prepare(`
 		INSERT INTO assumptions (implication_id, property_id, type)
-		VALUES (?, ?, 'functor')
+		VALUES (?, ?, ?)
+	`)
+
+	const conclusion_insert = db.prepare(`
+		INSERT INTO conclusions (implication_id, property_id, type)
+		VALUES (?, ?, ?)
 	`)
 
 	const source_assumption_insert = db.prepare(`
 		INSERT INTO source_assumptions
 			(implication_id, property_id, type, property_type)
-		VALUES (?, ?, 'functor', 'category')
+		VALUES (?, ?, ?, ?)
 	`)
 
 	const target_assumption_insert = db.prepare(`
 		INSERT INTO target_assumptions
 			(implication_id, property_id, type, property_type)
-		VALUES (?, ?, 'functor', 'category')
+		VALUES (?, ?, ?, ?)
 	`)
 
-	const conclusion_insert = db.prepare(`
-		INSERT INTO conclusions (implication_id, property_id, type)
-		VALUES (?, ?, 'functor')
-	`)
+	const mapped_assumption_inserts = {
+		source: source_assumption_insert,
+		target: target_assumption_insert,
+	}
 
 	const insert_duals = db.transaction(() => {
 		let count = 0
@@ -121,32 +124,83 @@ function create_dualized_functor_implications() {
 
 			count++
 
+			const mapped_dual_assumptions = {
+				source: dual_source_assumptions,
+				target: dual_target_assumptions,
+			}
+
 			implication_insert.run(
 				dual_id,
+				type,
 				impl.is_equivalence,
 				'This follows from the dual implication.',
 				impl.id,
 			)
 
 			for (const a of dual_assumptions) {
-				assumption_insert.run(dual_id, a)
-			}
-
-			for (const a of dual_source_assumptions) {
-				source_assumption_insert.run(dual_id, a)
-			}
-
-			for (const a of dual_target_assumptions) {
-				target_assumption_insert.run(dual_id, a)
+				assumption_insert.run(dual_id, a, type)
 			}
 
 			for (const c of dual_conclusions) {
-				conclusion_insert.run(dual_id, c)
+				conclusion_insert.run(dual_id, c, type)
+			}
+
+			for (const map of STRUCTURE_MAPS) {
+				const [name, from, to] = map
+				if (from !== type) continue
+
+				for (const assumption of mapped_dual_assumptions[name] ?? []) {
+					mapped_assumption_inserts[name].run(dual_id, assumption, type, to)
+				}
 			}
 		}
 
-		console.info(`Deduced ${count} implications by duality`)
+		console.info(`Deduced ${count} ${type} implications by duality`)
 	})
 
 	insert_duals()
+}
+
+/**
+ * Creates all trivial implications of the form "self-dual + P ===> P^op".
+ */
+export function create_self_dual_implications(type: StructureType) {
+	if (!STRUCTURES_WITH_DUALS.includes(type)) return
+
+	const relevant_props = db
+		.prepare<[StructureType], { id: string; dual: string }>(
+			`SELECT id, dual_property_id AS dual
+			FROM properties
+			WHERE
+				type = ?
+				AND dual_property_id IS NOT NULL
+				AND id != dual_property_id
+				AND invariant_under_equivalences = TRUE`,
+		)
+		.all(type)
+
+	const implication_insert = db.prepare(`
+		INSERT INTO implications (id, type, proof, is_deduced)
+		VALUES (?, ?, 'This holds by self-duality.', TRUE)	
+	`)
+
+	const assumption_insert = db.prepare(`
+		INSERT INTO assumptions (implication_id, property_id, type)
+		VALUES (?, ?, ?)
+	`)
+
+	const conclusion_insert = db.prepare(`
+		INSERT INTO conclusions (implication_id, property_id, type)
+		VALUES (?, ?, ?)
+	`)
+
+	for (const p of relevant_props) {
+		const implication_id = `self-dual_${p.id}`
+		implication_insert.run(implication_id, type)
+		assumption_insert.run(implication_id, p.id, type)
+		assumption_insert.run(implication_id, 'self-dual', type)
+		conclusion_insert.run(implication_id, p.dual, type)
+	}
+
+	console.info(`Deduced ${relevant_props.length} ${type} implications by self-duality`)
 }
