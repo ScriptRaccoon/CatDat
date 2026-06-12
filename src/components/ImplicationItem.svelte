@@ -18,8 +18,8 @@
 	let { type, implication, highlighted_property }: Props = $props()
 
 	let has_additional_assumptions = $derived(
-		Boolean(implication.source_assumptions?.length) ||
-			Boolean(implication.target_assumptions?.length),
+		Boolean(implication.source_assumptions.length) ||
+			Boolean(implication.target_assumptions.length),
 	)
 </script>
 

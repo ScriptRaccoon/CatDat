@@ -98,8 +98,8 @@ export type ImplicationDB = {
 	proof: string
 	assumptions: string
 	conclusions: string
-	source_assumptions?: string // for functors
-	target_assumptions?: string // for functors
+	source_assumptions: string // for functors
+	target_assumptions: string // for functors
 }
 
 export type ImplicationDisplay = Replace<
@@ -109,8 +109,8 @@ export type ImplicationDisplay = Replace<
 		is_deduced: boolean
 		assumptions: string[]
 		conclusions: string[]
-		source_assumptions?: string[]
-		target_assumptions?: string[]
+		source_assumptions: string[]
+		target_assumptions: string[]
 	}
 >
 

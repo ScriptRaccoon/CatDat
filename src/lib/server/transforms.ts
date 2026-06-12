@@ -69,12 +69,8 @@ export function display_implication(implication: ImplicationDB): ImplicationDisp
 		dualized_from: implication.dualized_from,
 		proof: implication.proof,
 		assumptions: JSON.parse(implication.assumptions),
-		source_assumptions: implication.source_assumptions
-			? JSON.parse(implication.source_assumptions)
-			: undefined,
-		target_assumptions: implication.target_assumptions
-			? JSON.parse(implication.target_assumptions)
-			: undefined,
+		source_assumptions: JSON.parse(implication.source_assumptions),
+		target_assumptions: JSON.parse(implication.target_assumptions),
 		conclusions: JSON.parse(implication.conclusions),
 	}
 }
