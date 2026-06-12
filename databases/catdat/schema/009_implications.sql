@@ -100,3 +100,4 @@ CREATE VIEW implications_view AS
             ORDER BY lower(c.property_id)
         ) AS conclusions
     FROM implications i
+;
