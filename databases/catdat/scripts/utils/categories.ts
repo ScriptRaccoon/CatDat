@@ -6,12 +6,6 @@ type CategoryMeta = {
 	dual: string | null
 }
 
-export type NormalizedCategoryImplication = {
-	id: string
-	assumptions: Set<string>
-	conclusion: string
-}
-
 /**
  * Returns the list of categories saved in the database.
  */

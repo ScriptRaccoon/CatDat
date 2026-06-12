@@ -1,13 +1,18 @@
 import { get_client } from './utils/helpers'
-import { get_categories, type NormalizedCategoryImplication } from './utils/categories'
 import {
 	get_deduced_satisfied_properties,
 	get_deduced_unsatisfied_properties,
 } from './deduce-structure-properties'
-import { get_property_assignments_by_deduction, StructureMeta } from './utils/deduction'
-import { get_functors } from './utils/functors'
-import { StructureType } from './config'
-import { get_normalized_implications } from './utils/implications'
+import {
+	get_property_assignments_by_deduction,
+	get_structures,
+	StructureMeta,
+} from './utils/deduction'
+import type { StructureType } from './config'
+import {
+	get_normalized_implications,
+	type NormalizedImplication,
+} from './utils/implications'
 
 const db = get_client()
 
@@ -32,8 +37,7 @@ function check_redundant_property_assignments(type: StructureType) {
 
 	const implications = get_normalized_implications(db, type)
 
-	const structures: StructureMeta[] =
-		type === 'category' ? get_categories(db) : get_functors(db)
+	const structures: StructureMeta[] = get_structures(db, type)
 
 	const assignments = get_property_assignments_by_deduction(db, structures, type)
 	const ignore_dict = get_ignored_redundant_assignments(type)
@@ -105,7 +109,7 @@ function check_redundant_property_assignments(type: StructureType) {
 function get_redundant_satisfied_property(
 	type: StructureType,
 	satisfied_properties: Set<string>,
-	implications: NormalizedCategoryImplication[],
+	implications: NormalizedImplication[],
 	ignored: Set<string> = new Set(),
 	associated_satisfied_properties?: Record<string, Set<string>>,
 ) {
@@ -135,7 +139,7 @@ function get_redundant_unsatisfied_property(
 	type: StructureType,
 	satisfied_properties: Set<string>,
 	unsatisfied_properties: Set<string>,
-	implications: NormalizedCategoryImplication[],
+	implications: NormalizedImplication[],
 	ignored: Set<string> = new Set(),
 	associated_satisfied_properties?: Record<string, Set<string>>,
 ) {
