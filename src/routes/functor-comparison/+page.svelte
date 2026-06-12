@@ -4,4 +4,4 @@
 	let { data } = $props()
 </script>
 
-<ComparisonPage type="functor" structures={data.functors} />
+<ComparisonPage type="functor" {...data} />

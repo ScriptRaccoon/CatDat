@@ -6,6 +6,18 @@ import { error } from '@sveltejs/kit'
 import sql from 'sql-template-tag'
 
 export function fetch_structures(type: StructureType) {
+	const { rows: structures, err } = query<StructureShort>(sql`
+        SELECT id, name FROM structures
+        WHERE type = ${type}
+        ORDER BY lower(name)
+    `)
+
+	if (err) error(500, `${capitalize(PLURALS[type])} could not be loaded`)
+
+	return { structures }
+}
+
+export function fetch_structures_with_tags(type: StructureType) {
 	const { results, err } = batch<[StructureShort, TagObject]>([
 		sql`
             SELECT id, name FROM structures

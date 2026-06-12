@@ -1,16 +1,5 @@
-import type { StructureShort } from '$lib/commons/types'
-import sql from 'sql-template-tag'
-import { query } from '$lib/server/db.catdat'
-import { error } from '@sveltejs/kit'
+import { fetch_structures } from '$lib/server/fetchers/structures'
 
 export const load = () => {
-	const { rows: functors, err } = query<StructureShort>(sql`
-		SELECT id, name FROM structures
-		WHERE type = 'functor'
-		ORDER BY lower(name)
-	`)
-
-	if (err) error(500, 'Functors could not be loaded')
-
-	return { functors }
+	return fetch_structures('functor')
 }
