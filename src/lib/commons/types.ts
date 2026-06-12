@@ -115,7 +115,6 @@ export type ImplicationDisplay = Replace<
 >
 
 export type SearchResults = {
-	type: StructureType
 	contradiction: string[] | null
 	satisfied_properties: string[]
 	unsatisfied_properties: string[]
@@ -126,7 +125,6 @@ export type SearchResults = {
 }
 
 export type ComparisonResult = {
-	type: StructureType
 	structures: RelatedStructure[]
 	comparison_table: string[][]
 }

@@ -2,7 +2,7 @@
 	import MetaData from '$components/MetaData.svelte'
 	import { get_property_url } from '$lib/commons/property.url'
 	import { PLURALS } from '$lib/commons/structures'
-	import type { ComparisonResult } from '$lib/commons/types'
+	import type { ComparisonResult, StructureType } from '$lib/commons/types'
 	import {
 		faCheck,
 		faQuestion,
@@ -11,7 +11,9 @@
 	} from '@fortawesome/free-solid-svg-icons'
 	import Fa from 'svelte-fa'
 
-	let { type, structures, comparison_table }: ComparisonResult = $props()
+	type Props = { type: StructureType } & ComparisonResult
+
+	let { type, structures, comparison_table }: Props = $props()
 
 	const icon_config: Record<string, IconDefinition> = {
 		yes: faCheck,

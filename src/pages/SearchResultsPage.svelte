@@ -7,8 +7,10 @@
 	import { pluralize } from '$lib/client/utils'
 	import Fa from 'svelte-fa'
 	import { faWarning } from '@fortawesome/free-solid-svg-icons'
-	import type { SearchResults } from '$lib/commons/types'
+	import type { SearchResults, StructureType } from '$lib/commons/types'
 	import { PLURALS } from '$lib/commons/structures'
+
+	type Props = { type: StructureType } & SearchResults
 
 	let {
 		type,
@@ -19,7 +21,7 @@
 		dual_search_available,
 		found_structures,
 		contradiction,
-	}: SearchResults = $props()
+	}: Props = $props()
 
 	function get_dual_search_results_link() {
 		if (!dual_search_available || !browser) return '/'

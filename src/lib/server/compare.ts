@@ -93,7 +93,6 @@ export function compare_handler(
 	})
 
 	return {
-		type,
 		structures: render_nested_formulas(structures),
 		comparison_table,
 	}

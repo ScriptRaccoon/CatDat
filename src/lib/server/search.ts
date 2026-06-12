@@ -88,7 +88,6 @@ export function search_handler(event: RequestEvent, type: StructureType): Search
 		cache_page(event)
 
 		return {
-			type,
 			contradiction,
 			satisfied_properties,
 			unsatisfied_properties,
@@ -147,7 +146,6 @@ export function search_handler(event: RequestEvent, type: StructureType): Search
 	cache_page(event)
 
 	return {
-		type,
 		contradiction: null,
 		satisfied_properties,
 		unsatisfied_properties,

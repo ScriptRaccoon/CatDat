@@ -4,4 +4,4 @@
 	let { data } = $props()
 </script>
 
-<ComparisonResultPage {...data} />
+<ComparisonResultPage type="category" {...data} />
