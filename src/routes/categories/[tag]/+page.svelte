@@ -4,4 +4,4 @@
 	let { data } = $props()
 </script>
 
-<TaggedPage type="category" structures={data.categories} tag={data.tag} />
+<TaggedPage type="category" {...data} />

@@ -1,26 +1,5 @@
-import type { StructureShort, TagObject } from '$lib/commons/types'
-import { batch } from '$lib/server/db.catdat'
-import { error } from '@sveltejs/kit'
-import sql from 'sql-template-tag'
+import { fetch_structures } from '$lib/server/fetchers/structures'
 
-export const load = async () => {
-	const { results, err } = batch<[StructureShort, TagObject]>([
-		sql`
-			SELECT id, name FROM structures
-			WHERE type = 'category'
-			ORDER BY lower(name)`,
-		sql`
-			SELECT tag FROM tags
-			WHERE type = 'category'
-			ORDER BY id
-		`,
-	])
-
-	if (err) error(500, 'Categories could not be loaded')
-
-	const [categories, tag_objects] = results
-
-	const tags = tag_objects.map(({ tag }) => tag)
-
-	return { categories, tags }
+export const load = () => {
+	return fetch_structures('category')
 }

@@ -4,4 +4,4 @@
 	let { data } = $props()
 </script>
 
-<TaggedPage type="functor" structures={data.functors} tag={data.tag} />
+<TaggedPage type="functor" {...data} />
