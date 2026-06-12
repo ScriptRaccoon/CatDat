@@ -1,4 +1,3 @@
-import { query } from '$lib/server/db.catdat'
 import { is_subset } from './utils'
 import type { SqliteError } from 'better-sqlite3'
 import {
@@ -7,7 +6,6 @@ import {
 	type NormalizedImplication,
 } from './implications'
 import type { StructureType } from '$lib/commons/types'
-import sql from 'sql-template-tag'
 
 // TODO: If possible, remove the code duplication with deduction and redundancy scripts.
 
@@ -34,7 +32,7 @@ export function get_contradiction(
 	return { contradiction, err: null }
 }
 
-function contradiction_worker(
+export function contradiction_worker(
 	satisfied_properties: Set<string>,
 	unsatisfied_properties: Set<string>,
 	implications: NormalizedImplication[],
@@ -108,70 +106,4 @@ function build_shortest_proof(
 	derive(target_property)
 
 	return proof
-}
-
-export function get_missing_combinations(type: StructureType) {
-	const { implications, err: err_imp } = get_normalized_implications(type)
-
-	if (err_imp) return { err: err_imp, missing_combinations: [] }
-
-	const { rows: properties, err } = query<{
-		id: string
-		dual_property_id: string | null
-	}>(
-		sql`
-			SELECT id, dual_property_id FROM properties
-			WHERE type = ${type}
-			ORDER BY lower(id)
-		`,
-	)
-
-	if (err) return { err, missing_combinations: [] }
-
-	const { rows: existing, err: err_existing } = query<{
-		p: string
-		q: string
-	}>(sql`
-		SELECT DISTINCT a.property_id AS p, an.property_id AS q
-		FROM property_assignments a
-		INNER JOIN property_assignments an
-		ON a.structure_id = an.structure_id
-		WHERE
-			a.type = ${type}
-			AND an.type = ${type}
-			AND a.is_satisfied = TRUE
-			AND an.is_satisfied = FALSE
-	`)
-
-	if (err_existing) return { err: err_existing, missing_combinations: [] }
-
-	const witnessed_pairs = new Set(existing.map(({ p, q }) => `${p}|${q}`))
-
-	const missing_combinations: [string, string][] = []
-
-	for (const p of properties) {
-		for (const q of properties) {
-			if (p.id === q.id) continue
-
-			if (witnessed_pairs.has(`${p.id}|${q.id}`)) continue
-
-			if (
-				p.dual_property_id &&
-				q.dual_property_id &&
-				witnessed_pairs.has(`${p.dual_property_id}|${q.dual_property_id}`)
-			) {
-				continue
-			}
-
-			const contradiction = contradiction_worker(
-				new Set([p.id]),
-				new Set([q.id]),
-				implications,
-			)
-
-			if (!contradiction) missing_combinations.push([p.id, q.id])
-		}
-	}
-
-	return { missing_combinations, err: null }
 }
