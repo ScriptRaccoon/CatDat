@@ -56,7 +56,7 @@ export function fetch_structure(type: StructureType, id: string) {
             SELECT st.tag
             FROM structure_tag_assignments st
             INNER JOIN tags t ON t.tag = st.tag
-            WHERE st.structure_id = ${id}
+            WHERE t.type = ${type} AND st.structure_id = ${id}
             ORDER BY t.id
         `,
 		// properties
