@@ -4,7 +4,7 @@ import { batch } from '$lib/server/db.catdat'
 import sql from 'sql-template-tag'
 import type { StructureShort, PropertyShort } from '$lib/commons/types'
 
-export const load = async (event) => {
+export const load = (event) => {
 	const id = event.params.id
 	const content = get_rendered_content(id)
 	if (!content) error(404, 'Not Found')

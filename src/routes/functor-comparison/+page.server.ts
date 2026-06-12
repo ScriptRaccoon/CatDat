@@ -3,7 +3,7 @@ import sql from 'sql-template-tag'
 import { query } from '$lib/server/db.catdat'
 import { error } from '@sveltejs/kit'
 
-export const load = async () => {
+export const load = () => {
 	const { rows: functors, err } = query<StructureShort>(sql`
 		SELECT id, name FROM structures
 		WHERE type = 'functor'

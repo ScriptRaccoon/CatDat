@@ -6,7 +6,7 @@ import { display_implication, display_property } from '$lib/server/transforms'
 import { error } from '@sveltejs/kit'
 import sql from 'sql-template-tag'
 
-export const load = async (event) => {
+export const load = (event) => {
 	const id = decode_property_ID(event.params.id)
 
 	const { results, err } = batch<

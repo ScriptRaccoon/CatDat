@@ -5,7 +5,7 @@ import sql from 'sql-template-tag'
 
 // TODO: remove code duplication with category properties list page
 
-export const load = async () => {
+export const load = () => {
 	const { rows: properties, err } = query<GroupedPropertyShort>(sql`
         SELECT id, relation, dual_property_id FROM properties
 		WHERE type = 'functor'

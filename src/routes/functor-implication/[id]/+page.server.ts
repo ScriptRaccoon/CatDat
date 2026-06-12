@@ -5,7 +5,7 @@ import { error } from '@sveltejs/kit'
 import type { ImplicationDB, StructureShort } from '$lib/commons/types'
 import { display_implication } from '$lib/server/transforms'
 
-export const load = async (event) => {
+export const load = (event) => {
 	const id = event.params.id
 
 	const { results, err } = batch<[ImplicationDB, StructureShort]>([

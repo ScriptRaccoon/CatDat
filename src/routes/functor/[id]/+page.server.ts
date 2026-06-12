@@ -5,7 +5,7 @@ import { render_nested_formulas } from '$lib/server/formulas'
 import { error } from '@sveltejs/kit'
 import sql from 'sql-template-tag'
 
-export const load = async (event) => {
+export const load = (event) => {
 	const id = event.params.id
 
 	const {

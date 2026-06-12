@@ -6,7 +6,7 @@ import { get_missing_combinations } from '$lib/server/consistency'
 
 type StructurePair = { id1: string; name1: string; id2: string; name2: string }
 
-export const load = async () => {
+export const load = () => {
 	const { results, err } = batch<
 		[
 			StructureShort & { count: number },

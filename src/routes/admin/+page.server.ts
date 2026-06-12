@@ -3,6 +3,6 @@ import { has_session } from './sessions'
 
 export const prerender = false
 
-export const load = async (event) => {
+export const load = (event) => {
 	if (!has_session(event)) redirect(307, '/admin/login')
 }

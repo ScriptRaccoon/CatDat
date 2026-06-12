@@ -3,7 +3,7 @@ import { query } from '$lib/server/db.catdat'
 import { error } from '@sveltejs/kit'
 import sql from 'sql-template-tag'
 
-export const load = async () => {
+export const load = () => {
 	const { rows: properties, err } = query<GroupedPropertyShort>(sql`
 		SELECT id, relation, dual_property_id FROM properties
 		WHERE type = 'category'

@@ -7,7 +7,7 @@ import type { StructureShort, PropertyDB } from '$lib/commons/types'
 import type { ImplicationDB } from '$lib/commons/types'
 import { display_implication, display_property } from '$lib/server/transforms'
 
-export const load = async (event) => {
+export const load = (event) => {
 	const id = decode_property_ID(event.params.id)
 
 	const { results, err } = batch<
