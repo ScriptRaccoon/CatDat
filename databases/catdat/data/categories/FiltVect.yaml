@@ -1,0 +1,119 @@
+id: FiltVect
+name: category of filtered vector spaces
+notation: $\FiltVect_K$
+objects: >-
+  A filtered vector space over a field $K$ consists of a vector space $V$ over $K$ together with an $\IZ$-indexed sequence of subspaces $F^n(V) \subseteq V$ satisfying $F^{n+1}(V) \subseteq F^n(V)$ for all $n \in \IZ$.
+  $$\cdots \subseteq F^1(V) \subseteq F^0(V) \subseteq F^{-1}(V) \subseteq \cdots \subseteq V$$
+morphisms: 'A morphism $(V,F) \to (W,G)$ is a linear map $f : V \to W$ satisfying $f_*(F^n(V)) \subseteq G^n(W)$ for all $n \in \IZ$. We call such morphisms filtered linear maps.'
+description: The definition of a <a href="https://stacks.math.columbia.edu/tag/0121" target="_blank">filtered object</a> is available in any abelian category; in this entry, the ambient category is $\Vect_K$. We do <i>not</i> require the filtration to be exhaustive (i.e. $V = \bigcup_n F^n(V)$) or separated (i.e. $\bigcap_n F^n(V) = 0$). In the proofs below, we will often write $F$ for the filtration regardless of the vector space on which it is defined.
+nlab_link: https://ncatlab.org/nlab/show/filtered+vector+space
+
+tags:
+  - algebra
+
+related_categories:
+  - Vect
+
+comments:
+  - 'The forgetful functor $U : \FiltVect \to \Vect$ has a left adjoint that equips a vector space with the trivial filtration. It also has a right adjoint that equips a vector space with the maximal filtration. In particular, it follows that $U$ preserves limits and colimits.'
+  - 'The filtration functor $F^n : \FiltVect \to \Vect$ has a left adjoint that equips a vector space $V$ with the filtration $F^n(V)=V$ and $F^{n+1}(V)=0$. In particular, it follows that $F^n$ preserves limits. However, it does not have a right adjoint. In fact, $F^n$ does not preserve coequalizers. On the other hand, $F^n$ does preserve filtered colimits; this can be verified using the concrete construction of filtered colimits.'
+
+satisfied_properties:
+  - property: locally small
+    proof: There is a forgetful functor $\FiltVect \to \Vect$, and $\Vect$ is locally small.
+
+  - property: preadditive
+    proof: We know that $\Vect$ is preadditive with pointwise operations. It is easy to check that the sum of two filtered linear maps is again a filtered linear map. Moreover, the additive inverse of a filtered linear map is again a filtered linear map.
+
+  - property: kernels
+    proof: 'Let $f : (V,F) \to (W,F)$ be a filtered linear map. Equip the kernel $U \subseteq V$ of the underlying linear map $f : V \to W$ with the induced filtration $F^n(U) \coloneqq U \cap F^n(V)$. Then $(U,F)$ is a filtered vector space together with a filtered linear map $\iota : (U,F) \to (V,F)$, which is clearly the kernel of $f$ in $\FiltVect$.'
+    check_redundancy: false
+
+  - property: cokernels
+    proof: 'Let $f : (V,F) \to (W,F)$ be a filtered linear map. Let $\pi : W \to C$ be the cokernel of the underlying linear map $f : V \to W$. Equip $C$ with the induced filtration $F^n(C) \coloneqq \pi_*(F^n(W))$. Then $(C,F)$ is a filtered vector space together with a filtered linear map $\pi : (W,F) \to (C,F)$, which is clearly the cokernel of $f$ in $\FiltVect$.'
+    check_redundancy: false
+
+  - property: products
+    proof: 'Let $(V_i,F)_{i \in I}$ be a family of filtered vector spaces. Equip the product $\prod_{i \in I} V_i$ with the filtration $F^n(\prod_{i \in I} V_i) \coloneqq \prod_{i \in I} F^n(V_i)$. It is straightforward to check that this satisfies the universal property of products in $\FiltVect$.'
+    check_redundancy: false
+
+  - property: coproducts
+    proof: 'Let $(V_i,F)_{i \in I}$ be a family of filtered vector spaces. Equip the direct sum $\bigoplus_{i \in I} V_i$ with the filtration $F^n(\bigoplus_{i \in I} V_i) \coloneqq \bigoplus_{i \in I} F^n(V_i)$. It is straightforward to check that this satisfies the universal property of coproducts in $\FiltVect$.'
+    check_redundancy: false
+
+  - property: generator
+    proof: The vector space $K$ equipped with the trivial filtration $F^n(K) \coloneqq 0$ is a generator, since it represents the forgetful functor $\FiltVect \to \Set$.
+    check_redundancy: false
+
+  - property: cogenerator
+    proof: It is straightforward to check that the vector space $K$ equipped with the maximal filtration $F^n(K) \coloneqq K$ is a cogenerator.
+
+  - property: finitely accessible
+    proof: >-
+      Consider a filtered vector space $(V,F)$ such that $V$ is finite-dimensional and there exists some $N \in \IN$ with $F^N(V)=0$ (and hence $F^n(V)=0$ for all $n \geq N$). We claim that such an object is finitely presentable in $\FiltVect$:
+
+
+      Let $(W_i,F)$ be a filtered diagram of filtered vector spaces. Its colimit is the vector space $\colim_i W_i$ equipped with the filtration $F^n(\colim_i W_i) = \colim_i F^n(W_i)$. Let $f : (V,F) \to (\colim_i W_i,F)$ be a filtered linear map. The underlying linear map $f : V \to \colim_i W_i$ factors through some morphism $W_i \to \colim_i W_i$. Moreover, $f$ maps $F^n(V)$ into $\colim_i F^n(W_i)$ for every $n \in \IZ$. This condition is automatic when $n \geq N$, so assume that $n < N$. Since $V$ is finite-dimensional, the filtration stabilizes; that is, there exists some $M \in \IN$ such that $F^M(V) = F^n(V)$ for all $n \leq M$. Thus the filtered condition only needs to be checked in the finitely many degrees
+      $$n \in \{M,M+1,\cdots,N-1\}.$$
+      Since the index category is filtered, there exists some index $j \geq i$ such that, for every relevant degree $n$, the map $f|_{F^n(V)}$ factors through $F^n(W_j)$. It follows that $f$ factors as a filtered linear map $(V,F) \to (W_j,F)$ followed by the colimit inclusion. This factorization is essentially unique because the corresponding statement holds in $\Vect$.
+
+
+      It remains to prove that every filtered vector space $(V,F)$ is a filtered colimit of such objects. First, it is clearly the filtered colimit of the subspaces $(V',F)$, where $V' \subseteq V$ is a finite-dimensional subspace equipped with the induced filtration.
+      Second, every filtered vector space $(V,F)$ is the filtered colimit of the spaces $(V,F_{< N})$ for $N \in \IN$, where
+      $$F_{< N}^n(V) \coloneqq \begin{cases} F^n(V) & n < N \\ 0 & n \geq N. \end{cases}$$
+      Indeed, we have $F_{< N} \subseteq F_{< N+1}$, so that $\id_V : (V,F_{<N}) \to (V,F_{<N+1})$ is a filtered linear map. If $(W,F)$ is a filtered vector space together with a linear map $f : V \to W$ such that each map $f : (V,F_{<N}) \to (W,F)$ is filtered, then $f : (V,F) \to (W,F)$ is filtered as well. Indeed, for every $n \in \IZ$ we can choose some $N \in \IN$ with $n < N$, so that $F_{<N}^n(V) = F^n(V)$ is mapped into $F^n(W)$.
+  - property: regular
+    proof: >-
+      It remains to prove that regular epimorphisms are stable under pullbacks. This follows immediately from their classification below, from the fact that $F^n$ preserves limits, and from the regularity of $\Vect$.
+
+
+      In more detail, if $(V,F) \to (W,F)$ is a regular epimorphism and $(U,F) \to (W,F)$ is any morphism, then $(V,F) \times_{(W,F)} (U,F) \to (U,F)$ is a regular epimorphism, since $V \times_W U \to U$ is surjective and, for every $n \in \IZ$, the restricted map
+      $$F^n(V \times_W U) = F^n(V) \times_{F^n(W)} F^n(U) \to F^n(U)$$
+      is surjective.
+  - property: coregular
+    proof: >-
+      It remains to prove that regular monomorphisms (as classified below) are stable under pushouts. Let $i : (U,F) \to (V,F)$ be a regular monomorphism, i.e. $i$ is injective and $F^n(U) = i^*(F^n(V))$. Let $f : (U,F) \to (W,F)$ be any morphism. We must prove that the canonical morphism $(W,F) \to (V,F) \oplus_{(U,F)} (W,F)$ is a regular monomorphism. It is certainly injective, since the forgetful functor to $\Vect$ preserves colimits and $\Vect$ is abelian, and <a href="/category-implication/dual_abelian_implies_regular">hence coregular</a>. Now suppose that $w \in W$ is an element whose image $[0,w] \in V \oplus_U W$ lies in $F^n(V \oplus_U W)$; we must show that $w \in F^n(W)$.
+      Since, by the construction of colimits in $\FiltVect$, the subspace $F^n(V \oplus_U W)$ is the sum of the images of $F^n(V)$ and $F^n(W)$, there exist $v \in F^n(V)$ and $w' \in F^n(W)$ such that $[0,w] = [v,w']$. This means that there exists some $u \in U$ with $v = i(u)$ and $w = f(u) + w'$. Then $u \in F^n(U)$ because $i(u) \in F^n(V)$. Hence $f(u) \in F^n(W)$, and therefore $w = f(u) + w' \in F^n(W)$.
+
+unsatisfied_properties:
+  - property: skeletal
+    proof: This is straightforward.
+
+  - property: balanced
+    proof: 'Take any non-trivial vector space $V$ and consider the two filtrations defined by $F^n(V) \coloneqq 0$ and $G^n(V) \coloneqq V$ for all $n \in \IZ$. Then $\id_V : (V,F) \to (V,G)$ is both a monomorphism and an epimorphism of filtered vector spaces, but it is not an isomorphism.'
+
+  - property: CSP
+    proof: The canonical filtered linear map $\bigoplus_{n \geq 0} (K,0) \to \prod_{n \geq 0} (K,0)$ is not an epimorphism, since its underlying linear map is the canonical map $\bigoplus_{n \geq 0} K \to \prod_{n \geq 0} K$, which is not surjective.
+
+special_objects:
+  initial object:
+    description: the trivial vector space equipped with the unique filtration
+  terminal object:
+    description: the trivial vector space equipped with the unique filtration
+  coproducts:
+    description: direct sums of the underlying vector spaces equipped with the filtration $F^n(\bigoplus_i V_i) \coloneqq \bigoplus_i F^n(V_i)$
+  products:
+    description: direct products of the underlying vector spaces equipped with the filtration $F^n(\prod_i V_i) \coloneqq \prod_i F^n(V_i)$
+
+special_morphisms:
+  isomorphisms:
+    description: 'A filtered linear map $f : (V,F) \to (W,G)$ is an isomorphism if $f : V \to W$ is bijective and $f_*(F^n(V)) = G^n(W)$ for all $n \in \IZ$.'
+    proof: This is straightforward to verify.
+
+  monomorphisms:
+    description: injective filtered linear maps
+    proof: For the non-trivial direction, the forgetful functor $\FiltVect \to \Set$ is representable (by $K$ equipped with the trivial filtration), and therefore preserves monomorphisms.
+
+  epimorphisms:
+    description: surjective filtered linear maps
+    proof: We saw above that the category has cokernels, and that these are preserved by the forgetful functor to $\Vect$. Moreover, a morphism is an epimorphism if and only if its cokernel is zero, and a filtered vector space is zero if and only if its underlying vector space is zero. Therefore, the claim follows from the classification of epimorphisms in $\Vect$.
+
+  regular monomorphisms:
+    description: 'A filtered linear map $f : (V,F) \to (W,G)$ is a regular monomorphism if and only if $f : V \to W$ is injective and $F^n(V) = f^*(G^n(W))$ for all $n \in \IZ$.'
+    proof: 'Every kernel (and hence every equalizer) satisfies this property by the construction of kernels. Conversely, suppose that $f : (V,F) \to (W,G)$ is a filtered linear map satisfying this condition. Then $f$ induces an isomorphism between $(V,F)$ and $(U,G)$, where $U \coloneqq \im(f) \subseteq W$ is equipped with the induced filtration $G^n(U) \coloneqq U \cap G^n(W)$. Endow $W/U$ with the induced filtration $G^n(W/U) \coloneqq \pi_*(G^n(W))$, where $\pi : W \to W/U$ is the quotient map. Then $\pi : (W,G) \to (W/U,G)$ is a filtered linear map, and by the general construction of kernels, its kernel is the vector space $U$ equipped with the induced filtration. Hence, $f : (V,F) \to (W,G)$ is a kernel of $\pi : (W,G) \to (W/U,G)$.'
+
+  regular epimorphisms:
+    description: 'A filtered linear map $f : (V,F) \to (W,G)$ is a regular epimorphism if and only if $f : V \to W$ is surjective and $G^n(W) = f_*(F^n(V))$ for all $n \in \IZ$.'
+    proof: >-
+      Every cokernel (and hence every coequalizer) satisfies this property by the construction of cokernels. Conversely, suppose that $f : (V,F) \to (W,G)$ is a filtered linear map satisfying this condition. Let $U \subseteq V$ be the kernel of the underlying linear map $f : V \to W$, equipped with the induced filtration $F^n(U) \coloneqq U \cap F^n(V)$. The inclusion $(U,F) \to (V,F)$ is a filtered linear map. By the general construction of cokernels, its cokernel is $(V/U,F)$, where $F^n(V/U) \coloneqq \pi_*(F^n(V))$ and $\pi : V \to V/U$ is the quotient map. It remains to observe that the induced isomorphism of vector spaces $h : V/U \to W$, characterized by $h \circ \pi = f$, is in fact an isomorphism of filtered vector spaces. Indeed,
+      $$h_*(F^n(V/U)) = h_*(\pi_*(F^n(V))) = f_*(F^n(V)) = G^n(W).$$

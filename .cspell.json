@@ -16,7 +16,8 @@
 		"mdash",
 		"comphaus",
 		"esbuild",
-		"coloneqq"
+		"coloneqq",
+		"FiltVect"
 	],
 	"words": [
 		"abelian",
@@ -136,6 +137,7 @@
 		"extensivity",
 		"extremal",
 		"fieldification",
+		"filtrations",
 		"finitary",
 		"foundedness",
 		"Freyd",
