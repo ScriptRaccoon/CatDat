@@ -12,6 +12,7 @@ tags:
 related_categories:
   - Ab
   - FinAb
+  - FinVect
 
 satisfied_properties:
   - property: locally small
@@ -27,7 +28,7 @@ satisfied_properties:
     proof: Every finitely generated abelian group is isomorphic to a group of the form $\IZ^n / U$, where $n \in \IN$ and $U$ is a subgroup of $\IZ^n$. Since $\IZ^n$ is Noetherian as a $\IZ$-module, $U$ is finitely generated, hence the category $\Ab_\fg$ has only countably many objects up to isomorphism. Furthermore, for any objects $A \cong \IZ^n / U$ and $B \cong \IZ^m / T$, the hom-set $\Hom(A,B)$ is countable. Indeed, precomposition with the quotient map yields an injection $\Hom(A,B) \hookrightarrow \Hom(\IZ^n, B) \cong B^n$, and $B^n$ is countable.
 
   - property: ℵ₁-accessible
-    proof: The inclusion $\Ab_{\fg} \hookrightarrow \Ab$ is closed under $\aleph_1$-filtered colimits by <a href="https://mathoverflow.net/questions/400763/">MO/400763</a>. In particular, $\Ab_{\fg}$ has $\aleph_1$-filtered colimits. Since $\Ab_{\fg}$ is essentially small, there is a set $G$ such that every f.g. abelian group is isomorphic to one in $G$. So trivially it is also a $\aleph_1$-filtered colimit of such objects (take the constant diagram). Finally, every object is $\Ab_{\fg} = \Ab_{\fp}$ is finitely presentable in $\Ab$ and hence also in $\Ab_{\fg}$, a fortiori $\aleph_1$-presentable.
+    proof: The inclusion $\Ab_{\fg} \hookrightarrow \Ab$ is closed under $\aleph_1$-filtered colimits by <a href="https://mathoverflow.net/questions/400763/" target="_blank">MO/400763</a>. In particular, $\Ab_{\fg}$ has $\aleph_1$-filtered colimits. Since $\Ab_{\fg}$ is essentially small, there is a set $G$ such that every f.g. abelian group is isomorphic to one in $G$. So trivially it is also a $\aleph_1$-filtered colimit of such objects (take the constant diagram). Finally, every object is $\Ab_{\fg} = \Ab_{\fp}$ is finitely presentable in $\Ab$ and hence also in $\Ab_{\fg}$, a fortiori $\aleph_1$-presentable.
 
   - property: ℵ₁-cofiltered limits
     proof: A proof can be found <a href="/content/aleph1-cofiltered-limits-fg-groups">here</a>.

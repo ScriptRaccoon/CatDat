@@ -12,6 +12,8 @@ tags:
 related_categories:
   - R-Mod
   - R-Mod_div
+  - FinVect
+  - FreeAb
 
 satisfied_properties:
   - property: locally small

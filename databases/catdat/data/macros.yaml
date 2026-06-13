@@ -69,6 +69,7 @@
 \Ab: \mathbf{Ab}
 \Grp: \mathbf{Grp}
 \Vect: \mathbf{Vect}
+\FinVect: \mathbf{FinVect}
 \Ring: \mathbf{Ring}
 \Alg: \mathbf{Alg}
 \CRing: \mathbf{CRing}
