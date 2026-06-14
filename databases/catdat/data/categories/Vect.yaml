@@ -12,7 +12,9 @@ tags:
 related_categories:
   - R-Mod
   - R-Mod_div
-  - FinVect
+  - FinVect_f
+  - FinVect_c
+  - FinVect_u
   - FiltVect
   - FreeAb
 

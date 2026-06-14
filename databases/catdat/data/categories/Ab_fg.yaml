@@ -12,7 +12,7 @@ tags:
 related_categories:
   - Ab
   - FinAb
-  - FinVect
+  - FinVect_c
 
 satisfied_properties:
   - property: locally small

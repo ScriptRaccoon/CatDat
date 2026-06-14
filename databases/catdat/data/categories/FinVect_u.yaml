@@ -1,0 +1,80 @@
+# TODO: fix duplication with FinVect_c and FinVect_f
+id: FinVect_u
+name: category of finite-dimensional vector spaces [uncountable field]
+notation: $\FinVect_K$
+objects: finite-dimensional vector spaces over an uncountable field $K$
+morphisms: linear maps
+description: This is the full subcategory of $\Vect_K$ consisting of finite-dimensional vector spaces. Every object is isomorphic to $K^n$ for a unique $n \in \IN$. In this entry, we assume that $K$ is uncountable (e.g. $K = \IR$) in order to determine all properties of this category.
+nlab_link: https://ncatlab.org/nlab/show/FinDimVect
+
+tags:
+  - algebra
+
+related_categories:
+  - Vect
+  - FinVect_c
+  - FinVect_f
+  - Ab_fg
+
+satisfied_properties:
+  - property: locally small
+    proof: There is a forgetful functor $\FinVect_K \to \Vect_K$, and $\Vect_K$ is locally small.
+
+  - property: essentially small
+    proof: Every object is isomorphic to $K^n$ for some $n \in \IN$, and $\Hom(K^n,K^m) \cong M_{m \times n}(K)$ is a set.
+
+  - property: generator
+    proof: The forgetful functor $\FinVect_K \to \Set$ is faithful and represented by $K$. Hence, $K$ is a generator.
+
+  - property: split abelian
+    proof: This follows directly from the corresponding fact for <a href="/category/Vect">$\Vect_K$</a>.
+
+  - property: self-dual
+    proof: The functor $V \mapsto V^*$ defines an equivalence of categories $\FinVect_K^{\op} \simeq \FinVect_K$. In fact, the natural map $V \to V^{**}$, $v \mapsto (\omega \mapsto \omega(v))$ is an isomorphism by standard linear algebra.
+
+  - property: ℵ₁-accessible
+    proof: 'The inclusion $\FinVect_K \hookrightarrow \Vect_K$ is closed under $\aleph_1$-filtered colimits by <a href="https://mathoverflow.net/a/511519/2841" target="_blank">MO/400763</a>. In particular, $\FinVect_K$ has $\aleph_1$-filtered colimits. Moreover, every object in $\FinVect_K$ is $\aleph_1$-presentable: it is isomorphic to some $K^n$, which is finitely presentable in $\Vect_K$, hence $\aleph_1$-presentable in $\Vect_K$, and therefore also $\aleph_1$-presentable in $\FinVect_K$.'
+
+unsatisfied_properties:
+  - property: skeletal
+    proof: This is trivial.
+
+  - property: small
+    proof: This is trivial.
+
+  - property: essentially countable
+    proof: The hom-set $\Hom(K,K) \cong K$ is uncountable by assumption.
+
+  - property: locally finite
+    proof: The hom-set $\Hom(K,K) \cong K$ is infinite by assumption.
+
+special_objects:
+  initial object:
+    description: the trivial vector space
+  terminal object:
+    description: the trivial vector space
+  coproducts:
+    description: '[finite case] direct sums'
+  products:
+    description: '[finite case] direct products with pointwise operations'
+
+special_morphisms:
+  isomorphisms:
+    description: bijective linear maps
+    proof: This is easy to check.
+
+  monomorphisms:
+    description: injective linear maps
+    proof: For the non-trivial direction, the forgetful functor $\FinVect_K \to \Set$ is representable (by $K$), and therefore preserves monomorphisms.
+
+  epimorphisms:
+    description: surjective linear maps
+    proof: 'For the non-trivial direction, it suffices to observe that every epimorphism in $\FinVect_K$ is also an epimorphism in $\Vect_K$, where epimorphisms are already classified. Namely, let $f : V \to W$ be an epimorphism in $\FinVect_K$ and let $g : W \to T$ be a linear map with $g \circ f = 0$. Then $g$ factors as $g = i \circ h$, where $i : \im(g) \hookrightarrow T$ is the inclusion of the image and $h : W \twoheadrightarrow \im(g)$ is the corestriction of $g$. Then $h \circ f = 0$, and since $\im(g)$ is finite-dimensional, it follows that $h = 0$. Hence $g = 0$.'
+
+  regular monomorphisms:
+    description: same as monomorphisms
+    proof: This holds because the category is abelian.
+
+  regular epimorphisms:
+    description: same as epimorphisms
+    proof: This holds because the category is abelian.

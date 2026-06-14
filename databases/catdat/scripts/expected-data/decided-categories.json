@@ -15,7 +15,9 @@
 	"Top",
 	"Top*",
 	"Vect",
-	"FinVect",
+	"FinVect_f",
+	"FinVect_c",
+	"FinVect_u",
 	"walking_morphism",
 	"walking_pair"
 ]
