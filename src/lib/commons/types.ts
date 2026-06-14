@@ -31,11 +31,17 @@ export type CategorySpecificDisplay = {
 
 export type FunctorSpecificDisplay = {
 	source: string
-	target: string
 	source_name: string
-	target_name: string
 	source_notation: string
+	target: string
+	target_name: string
 	target_notation: string
+	left_adjoint: string | null
+	left_adjoint_name: string | null
+	left_adjoint_notation: string | null
+	right_adjoint: string | null
+	right_adjoint_name: string | null
+	right_adjoint_notation: string | null
 }
 
 export type TagObject = { tag: string }

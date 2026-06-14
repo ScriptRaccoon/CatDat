@@ -1,5 +1,5 @@
-import type { FunctorSpecificDisplay, RelatedStructure } from '$lib/commons/types'
-import { batch } from '$lib/server/db.catdat'
+import type { FunctorSpecificDisplay } from '$lib/commons/types'
+import { query } from '$lib/server/db.catdat'
 import { fetch_structure } from '$lib/server/fetchers/structure'
 import { render_nested_formulas } from '$lib/server/formulas'
 import { error } from '@sveltejs/kit'
@@ -20,9 +20,7 @@ export const load = (event) => {
 		comments,
 	} = fetch_structure('functor', id)
 
-	const { results, err } = batch<
-		[FunctorSpecificDisplay, RelatedStructure, RelatedStructure]
-	>([
+	const { rows: functors, err } = query<FunctorSpecificDisplay>(
 		// specific information for the functor
 		sql`
             SELECT
@@ -31,39 +29,28 @@ export const load = (event) => {
                 source.name AS source_name,
 				source.notation AS source_notation,
 				target.name AS target_name,
-				target.notation AS target_notation
+				target.notation AS target_notation,
+				la.id AS left_adjoint,
+				la.name AS left_adjoint_name,
+				la.notation AS left_adjoint_notation,
+				ra.id AS right_adjoint,
+				ra.name AS right_adjoint_name,
+				ra.notation AS right_adjoint_notation
             FROM functors f
             INNER JOIN structures AS source ON source.id = f.source
             INNER JOIN structures AS target ON target.id = f.target
+			LEFT JOIN structures AS la ON la.id = f.left_adjoint
+			LEFT JOIN functors AS rf ON rf.left_adjoint = f.id
+			LEFT JOIN structures AS ra ON ra.id = rf.id
             WHERE f.id = ${id}
         `,
-		// left adjoint functor
-		sql`
-			SELECT f.id, f.name, f.notation
-			FROM adjoint_functors a
-			INNER JOIN structures f ON f.id = a.left_adjoint
-			WHERE a.right_adjoint = ${id}
-		`,
-		// right adjoint functor
-		sql`
-			SELECT f.id, f.name, f.notation
-			FROM adjoint_functors a
-			INNER JOIN structures f ON f.id = a.right_adjoint
-			WHERE a.left_adjoint = ${id}
-		`,
-	])
+	)
 
 	if (err) error(500, 'Could not load functor')
 
-	const [functors, left_adjoints, right_adjoints] = results
-
 	if (!functors.length) error(404, `Could not find functor with ID '${id}'`)
 
-	const functor = {
-		...functors[0],
-		left_adjoint: left_adjoints.at(0),
-		right_adjoint: right_adjoints.at(0),
-	}
+	const functor = functors[0]
 
 	return render_nested_formulas({
 		structure,

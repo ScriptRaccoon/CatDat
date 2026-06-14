@@ -68,7 +68,6 @@ function clear_all_tables() {
 
 		db.prepare(`DELETE FROM source_assumptions`).run()
 		db.prepare(`DELETE FROM target_assumptions`).run()
-		db.prepare(`DELETE FROM adjoint_functors`).run()
 
 		db.prepare(`DELETE FROM assumptions`).run()
 		db.prepare(`DELETE FROM conclusions`).run()
@@ -279,20 +278,16 @@ function insert_category(category: CategoryYaml) {
  */
 function insert_functor(functor: FunctorYaml) {
 	const functor_insert = db.prepare(
-		`INSERT INTO functors (id, source, target) VALUES (?, ?, ?)`,
+		`INSERT INTO functors (id, source, target, left_adjoint)
+		VALUES (?, ?, ?, ?)`,
 	)
 
-	const adjoint_insert = db.prepare(
-		`INSERT INTO adjoint_functors (left_adjoint, right_adjoint)
-		VALUES (?, ?)
-		ON CONFLICT (left_adjoint, right_adjoint) DO NOTHING`,
+	functor_insert.run(
+		functor.id,
+		functor.source,
+		functor.target,
+		functor.left_adjoint || null,
 	)
-
-	functor_insert.run(functor.id, functor.source, functor.target)
-
-	if (functor.left_adjoint) {
-		adjoint_insert.run(functor.left_adjoint, functor.id)
-	}
 }
 
 /**

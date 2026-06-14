@@ -20,10 +20,10 @@
 			<li>
 				<strong>Left adjoint:</strong>
 				<a
-					href="/functor/{data.functor.left_adjoint.id}"
-					aria-label={data.functor.left_adjoint.name}
+					href="/functor/{data.functor.left_adjoint}"
+					aria-label={data.functor.left_adjoint_name}
 				>
-					{@html data.functor.left_adjoint.notation}
+					{@html data.functor.left_adjoint_notation}
 				</a>
 			</li>
 		{/if}
@@ -32,10 +32,10 @@
 			<li>
 				<strong>Right adjoint:</strong>
 				<a
-					href="/functor/{data.functor.right_adjoint.id}"
-					aria-label={data.functor.right_adjoint.name}
+					href="/functor/{data.functor.right_adjoint}"
+					aria-label={data.functor.right_adjoint_name}
 				>
-					{@html data.functor.right_adjoint.notation}
+					{@html data.functor.right_adjoint_notation}
 				</a>
 			</li>
 		{/if}

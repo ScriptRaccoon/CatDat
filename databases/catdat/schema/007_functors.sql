@@ -2,9 +2,14 @@ CREATE TABLE functors (
     id TEXT PRIMARY KEY,
     source TEXT NOT NULL,
     target TEXT NOT NULL,
+    left_adjoint TEXT,
+    UNIQUE (id, source, target),
+    FOREIGN KEY (id)  REFERENCES structures (id) ON DELETE CASCADE,
     FOREIGN KEY (source) REFERENCES categories (id) ON DELETE CASCADE,
     FOREIGN KEY (target) REFERENCES categories (id) ON DELETE CASCADE,
-    FOREIGN KEY (id)  REFERENCES structures (id) ON DELETE CASCADE
+    FOREIGN KEY (left_adjoint, target, source)
+        REFERENCES functors (id, source, target)
+        ON DELETE CASCADE
 );
 
 CREATE TRIGGER trg_functor_type_check
