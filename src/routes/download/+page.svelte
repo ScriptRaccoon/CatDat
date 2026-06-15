@@ -39,8 +39,8 @@
 .tables
 </pre>
 
-<pre>-- Schema of categories table
-.schema categories
+<pre>-- Schema of structures table
+.schema structures
 </pre>
 
 <pre>-- Number of categories
@@ -48,94 +48,101 @@ SELECT COUNT(*) FROM categories;
 </pre>
 
 <pre>-- Categories without an nLab link
-SELECT id, name FROM categories WHERE nlab_link IS NULL;
+SELECT id, name FROM structures
+WHERE type = 'category' AND nlab_link IS NULL;
 </pre>
 
-<pre>-- Categories involving rings
-SELECT id, name FROM categories WHERE name LIKE '%ring%';
+<pre>-- Structures involving rings
+SELECT id, name, type FROM structures WHERE name LIKE '%ring%';
 </pre>
 
 <pre>-- Finite categories
-SELECT category_id FROM category_property_assignments
-WHERE property_id = 'finite' AND is_satisfied = TRUE;
+SELECT structure_id FROM property_assignments
+WHERE type = 'category' AND property_id = 'finite'
+AND is_satisfied = TRUE;
 </pre>
 
 <pre>-- Categories without a generating set
-SELECT category_id FROM category_property_assignments
-WHERE property_id = 'generating set' AND is_satisfied = FALSE;
+SELECT structure_id FROM property_assignments
+WHERE type = 'category' AND property_id = 'generating set'
+AND is_satisfied = FALSE;
 </pre>
 
 <pre>-- Abelian categories that are not cocomplete
-SELECT a.category_id
-FROM category_property_assignments a
-CROSS JOIN category_property_assignments b
-WHERE a.category_id = b.category_id
+SELECT a.structure_id
+FROM property_assignments a
+CROSS JOIN property_assignments b
+WHERE a.type = 'category'
+AND a.structure_id = b.structure_id
 AND a.property_id = 'abelian' AND a.is_satisfied = TRUE
 AND b.property_id = 'cocomplete' AND b.is_satisfied = FALSE;
 </pre>
 
 <pre>-- Number of categories per tag
-SELECT tag, count(category_id) AS tagged_categories
-FROM category_tag_assignments
+SELECT tag, count(structure_id) AS tagged_categories
+FROM structure_tag_assignments
+WHERE type = 'category'
 GROUP BY tag
 ORDER BY tagged_categories DESC;
 </pre>
 
 <pre>-- Properties without a dual
-SELECT id FROM category_properties WHERE dual_property_id IS NULL;
+SELECT id, type FROM properties WHERE dual_property_id IS NULL;
 </pre>
 
 <pre>-- Self-dual properties
-SELECT id FROM category_properties WHERE id = dual_property_id;
+SELECT id, type FROM properties WHERE id = dual_property_id;
 </pre>
 
 <pre>-- Properties not invariant under equivalences
-SELECT id FROM category_properties WHERE invariant_under_equivalences = FALSE;
+SELECT id, type FROM properties WHERE invariant_under_equivalences = FALSE;
 </pre>
 
-<pre>-- Properties without related properties
-SELECT p.id FROM category_properties p
-LEFT JOIN related_category_properties r
+<pre>-- Properties of categories without related properties
+SELECT p.id FROM properties p
+LEFT JOIN related_properties r
 ON r.property_id = p.id
-WHERE r.related_property_id IS NULL;
+WHERE p.type = 'category' AND r.related_property_id IS NULL;
 </pre>
 
-<pre>-- Equivalences
-SELECT assumptions, conclusions FROM category_implications_view
-WHERE is_equivalence = TRUE;
+<pre>-- Equivalent characterizations
+SELECT assumptions, conclusions FROM implications_view
+WHERE type = 'category' AND is_equivalence = TRUE;
 </pre>
 
-<pre>-- Top 5 implications with the most assumptions
-SELECT assumptions, conclusions FROM category_implications_view
+<pre>-- Top 5 implications of categories with the most assumptions
+SELECT assumptions, conclusions FROM implications_view
+WHERE type = 'category'
 ORDER BY json_array_length(assumptions) DESC LIMIT 5;
 </pre>
 
 <pre>-- Trivial proofs
-SELECT category_id, property_id, is_satisfied, proof
-FROM category_property_assignments
+SELECT structure_id, type, property_id, is_satisfied, proof
+FROM property_assignments
 WHERE proof = 'This is trivial.';
 </pre>
 
 <pre>-- Top 10 longest proofs
-SELECT category_id, property_id, is_satisfied, proof
-FROM category_property_assignments
+SELECT structure_id, type, property_id, is_satisfied, proof
+FROM property_assignments
 ORDER BY length(proof) DESC LIMIT 10;
 </pre>
 
 <pre>-- Top 10 properties with the most undecided categories
-SELECT p.id AS property_id, COUNT(c.id) AS undecided_categories
-FROM category_properties p
-CROSS JOIN categories c
-LEFT JOIN category_property_assignments pa
-ON pa.category_id = c.id AND pa.property_id = p.id
-WHERE pa.property_id IS NULL
+SELECT p.id AS property_id, COUNT(s.id) AS undecided_categories
+FROM properties p
+CROSS JOIN structures s
+LEFT JOIN property_assignments pa
+ON pa.structure_id = s.id AND pa.property_id = p.id
+WHERE p.type = 'category' AND pa.property_id IS NULL
+AND s.type = 'category'
 GROUP BY p.id
 ORDER BY undecided_categories DESC LIMIT 10;
 </pre>
 
-<pre>-- Properties which cannot be decided for a given category
-SELECT category_id, property_id, proof
-FROM category_property_assignments
+<pre>-- Properties which cannot be decided for a given structure
+SELECT structure_id, type, property_id, proof
+FROM property_assignments
 WHERE is_satisfied IS NULL;
 </pre>
 
