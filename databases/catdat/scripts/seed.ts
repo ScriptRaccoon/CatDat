@@ -1,5 +1,6 @@
 import path from 'node:path'
-import { get_client, seed_file, seed_files } from './utils/helpers'
+import { seed_file, seed_files } from './utils/seed.helpers'
+import { get_client } from './utils/db'
 import type {
 	CategoryYaml,
 	ConfigYaml,
@@ -8,7 +9,7 @@ import type {
 	PropertyEntry,
 	StructureYaml,
 	PropertyYaml,
-} from './seed.types'
+} from './utils/seed.types'
 import { create_schema_hash, get_saved_schema_hash } from './utils/schema'
 import { PLURALS, STRUCTURE_MAPS, type StructureType } from './config'
 

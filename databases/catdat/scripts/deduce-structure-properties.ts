@@ -4,15 +4,13 @@
  */
 
 import { type Database, SqliteError } from 'better-sqlite3'
-import { get_client, is_subset } from './utils/helpers'
+import { is_subset } from './utils/helpers'
+import { get_client } from './utils/db'
 import {
-	get_structures,
 	get_properties_dict,
 	get_property_assignments,
-	is_dual_structure,
-	type StructureMeta,
 	type PropertyMeta,
-} from './utils/deduction'
+} from './utils/properties'
 import {
 	get_contradiction_string,
 	get_normalized_implications,
@@ -20,6 +18,7 @@ import {
 	NormalizedImplication,
 } from './utils/implications'
 import { STRUCTURES_WITH_DUALS, type StructureType } from './config'
+import { get_structures, is_dual_structure, type StructureMeta } from './utils/structures'
 
 /**
  * Returns the set of satisfied properties that can be deduced from a set
@@ -389,9 +388,8 @@ function delete_deduced_properties(db: Database, type: StructureType) {
 }
 
 /**
- * --- MAIN FUNCTION ---
- * Deduce properties of structures from given ones
- * by using the list of implications.
+ * Main function: Deduce properties of structures from given ones
+ * by using the stored implications.
  */
 export function deduce_properties_for_structures(type: StructureType) {
 	console.info(`\n--- Deduce ${type} properties ---`)

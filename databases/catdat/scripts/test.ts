@@ -11,7 +11,8 @@ import forget_vector_expected from './expected-data/forget_vector.json'
 import id_Set_expected from './expected-data/id_Set.json'
 import decided_categories from './expected-data/decided-categories.json'
 import decided_functors from './expected-data/decided-functors.json'
-import { capitalize, get_client } from './utils/helpers'
+import { capitalize } from './utils/helpers'
+import { get_client } from './utils/db'
 import { PLURALS, StructureType } from './config'
 
 const db = get_client()

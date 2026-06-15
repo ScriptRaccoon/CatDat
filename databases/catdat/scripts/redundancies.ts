@@ -1,18 +1,15 @@
-import { get_client } from './utils/helpers'
+import { get_client } from './utils/db'
 import {
 	get_deduced_satisfied_properties,
 	get_deduced_unsatisfied_properties,
 } from './deduce-structure-properties'
-import {
-	get_property_assignments_by_deduction,
-	get_structures,
-	StructureMeta,
-} from './utils/deduction'
+import { get_property_assignments_by_deduction } from './utils/properties'
 import type { StructureType } from './config'
 import {
 	get_normalized_implications,
 	type NormalizedImplication,
 } from './utils/implications'
+import { get_structures } from './utils/structures'
 
 const db = get_client()
 
@@ -37,7 +34,7 @@ function check_redundant_property_assignments(type: StructureType) {
 
 	const implications = get_normalized_implications(db, type)
 
-	const structures: StructureMeta[] = get_structures(db, type)
+	const structures = get_structures(db, type)
 
 	const assignments = get_property_assignments_by_deduction(db, structures, type)
 	const ignore_dict = get_ignored_redundant_assignments(type)

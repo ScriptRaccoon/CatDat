@@ -1,5 +1,6 @@
 import { STRUCTURE_MAPS, STRUCTURES_WITH_DUALS, type StructureType } from './config'
-import { are_equal_sets, get_client, parse_json_set } from './utils/helpers'
+import { are_equal_sets, parse_json_set } from './utils/helpers'
+import { get_client } from './utils/db'
 
 const db = get_client()
 
@@ -24,9 +25,9 @@ export function create_dualized_implications(type: StructureType) {
 			assumptions: string
 			conclusions: string
 			dual_assumptions: string
+			dual_conclusions: string
 			dual_source_assumptions: string
 			dual_target_assumptions: string
-			dual_conclusions: string
 		}
 	>(
 		`SELECT
@@ -42,6 +43,12 @@ export function create_dualized_implications(type: StructureType) {
 			) AS dual_assumptions,
 			(
 				SELECT json_group_array(p.dual_property_id)
+				FROM conclusions a
+				LEFT JOIN properties p ON p.id = a.property_id
+				WHERE a.implication_id = i.id
+			) AS dual_conclusions,
+			(
+				SELECT json_group_array(p.dual_property_id)
 				FROM source_assumptions a
 				LEFT JOIN properties p ON p.id = a.property_id
 				WHERE a.implication_id = i.id
@@ -51,13 +58,7 @@ export function create_dualized_implications(type: StructureType) {
 				FROM target_assumptions a
 				LEFT JOIN properties p ON p.id = a.property_id
 				WHERE a.implication_id = i.id
-			) AS dual_target_assumptions,
-			(
-				SELECT json_group_array(p.dual_property_id)
-				FROM conclusions a
-				LEFT JOIN properties p ON p.id = a.property_id
-				WHERE a.implication_id = i.id
-			) AS dual_conclusions
+			) AS dual_target_assumptions
 		FROM implications_view i
 		WHERE i.type = ? AND i.is_deduced = FALSE`,
 	)
@@ -92,7 +93,7 @@ export function create_dualized_implications(type: StructureType) {
 		VALUES (?, ?, ?, ?)
 	`)
 
-	const mapped_assumption_inserts = {
+	const associated_assumption_inserts = {
 		source: source_assumption_insert,
 		target: target_assumption_insert,
 	}
@@ -124,7 +125,7 @@ export function create_dualized_implications(type: StructureType) {
 
 			count++
 
-			const mapped_dual_assumptions = {
+			const associated_dual_assumptions = {
 				source: dual_source_assumptions,
 				target: dual_target_assumptions,
 			}
@@ -149,8 +150,8 @@ export function create_dualized_implications(type: StructureType) {
 				const [name, from, to] = map
 				if (from !== type) continue
 
-				for (const assumption of mapped_dual_assumptions[name] ?? []) {
-					mapped_assumption_inserts[name].run(dual_id, assumption, type, to)
+				for (const assumption of associated_dual_assumptions[name] ?? []) {
+					associated_assumption_inserts[name].run(dual_id, assumption, type, to)
 				}
 			}
 		}
@@ -169,7 +170,9 @@ export function create_self_dual_implications(type: StructureType) {
 
 	const relevant_props = db
 		.prepare<[StructureType], { id: string; dual: string }>(
-			`SELECT id, dual_property_id AS dual
+			`SELECT
+				id,
+				dual_property_id AS dual
 			FROM properties
 			WHERE
 				type = ?
@@ -180,17 +183,20 @@ export function create_self_dual_implications(type: StructureType) {
 		.all(type)
 
 	const implication_insert = db.prepare(`
-		INSERT INTO implications (id, type, proof, is_deduced)
+		INSERT INTO implications
+			(id, type, proof, is_deduced)
 		VALUES (?, ?, 'This holds by self-duality.', TRUE)	
 	`)
 
 	const assumption_insert = db.prepare(`
-		INSERT INTO assumptions (implication_id, property_id, type)
+		INSERT INTO assumptions
+			(implication_id, property_id, type)
 		VALUES (?, ?, ?)
 	`)
 
 	const conclusion_insert = db.prepare(`
-		INSERT INTO conclusions (implication_id, property_id, type)
+		INSERT INTO conclusions
+			(implication_id, property_id, type)
 		VALUES (?, ?, ?)
 	`)
 

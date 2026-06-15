@@ -5,6 +5,7 @@ export const PLURALS = {
 	functor: 'functors',
 } as const
 
+// TODO: integrate this into schema
 export const STRUCTURE_MAPS = [
 	['source', 'functor', 'category'],
 	['target', 'functor', 'category'],

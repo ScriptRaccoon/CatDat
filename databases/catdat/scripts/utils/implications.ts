@@ -1,5 +1,5 @@
 import { type Database } from 'better-sqlite3'
-import type { PropertyMeta } from './deduction'
+import type { PropertyMeta } from './properties'
 import { StructureType } from '../config'
 import { parse_json_set } from './helpers'
 
@@ -7,7 +7,7 @@ export type NormalizedImplication = {
 	id: string
 	assumptions: Set<string>
 	conclusion: string
-	// used for source and target assumptions of a functor in an implication
+	// used for source and target assumptions of a functor implication
 	associated_assumptions?: Record<string, Set<string>>
 }
 
@@ -24,7 +24,7 @@ export function get_normalized_implications(
 	db: Database,
 	type: StructureType,
 ): NormalizedImplication[] {
-	const all_implications_db = db
+	const implications_db = db
 		.prepare<
 			[StructureType],
 			{
@@ -50,7 +50,7 @@ export function get_normalized_implications(
 
 	const implications: NormalizedImplication[] = []
 
-	for (const impl of all_implications_db) {
+	for (const impl of implications_db) {
 		const assumptions = parse_json_set<string>(impl.assumptions)
 		const conclusions = parse_json_set<string>(impl.conclusions)
 		const source_assumptions = parse_json_set<string>(impl.source_assumptions)
@@ -106,7 +106,7 @@ function get_assumption_string(
 	return Array.from(assumptions)
 		.map(
 			(assumption) =>
-				`${properties_dict[assumption][conditional ? 'conditional' : 'relation']} ${assumption}`,
+				`${properties_dict[assumption][conditional ? 'conditional_relation' : 'relation']} ${assumption}`,
 		)
 		.join(' and ')
 }
@@ -118,7 +118,7 @@ function get_conclusion_string(
 ): string {
 	const { conclusion } = implication
 
-	return `${properties_dict[conclusion][conditional ? 'conditional' : 'relation']} ${conclusion}`
+	return `${properties_dict[conclusion][conditional ? 'conditional_relation' : 'relation']} ${conclusion}`
 }
 
 export function get_proof_string(
@@ -146,7 +146,9 @@ export function get_contradiction_string(
 
 	const ref = `by <a href="/${type}-implication/${implication.id}">this result</a>`
 
-	const contra = `Assume for contradiction that it ${properties_dict[property].relation} ${property}`
+	const relation = properties_dict[property].relation
+
+	const contra = `Assume for contradiction that it ${relation} ${property}`
 
 	return has_multiple_assumptions
 		? `${contra}. Then it ${assumption_string}, so it ${conclusion_string} (${ref}) – contradiction.`

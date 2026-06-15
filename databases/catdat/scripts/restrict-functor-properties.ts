@@ -1,4 +1,4 @@
-import { get_client } from './utils/helpers'
+import { get_client } from './utils/db'
 
 const db = get_client()
 

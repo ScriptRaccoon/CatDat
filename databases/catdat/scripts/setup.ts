@@ -1,6 +1,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import { get_client } from './utils/helpers'
+import { get_client } from './utils/db'
 import { create_schema_hash, write_schema_hash } from './utils/schema'
 
 const schema_folder = path.resolve('databases', 'catdat', 'schema')
