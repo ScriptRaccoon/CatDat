@@ -21,7 +21,7 @@ and properties. Built by and for those who love [category theory](https://en.wik
 - **Deduction System**: Automatically infers properties from existing ones using a database of implications, both for categories and functors.
 - **Automatic Dualization**: Automatically dualizes implications and property assignments.
 - **Searchable Database**: Find categories and functors based on satisfied properties and unsatisfied properties.
-- **Comparison Feature**: Compare multiple categories to identify their differences and similarities.
+- **Comparison Feature**: Compare multiple categories and functors to identify their differences and similarities.
 - **Customizable Display**: Light/dark mode and optional display of deduced properties.
 - **Intuitive User Interface**: Usable on both mobile and desktop.
 

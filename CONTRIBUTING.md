@@ -56,7 +56,7 @@ You need to have [Git](https://git-scm.com/), [NodeJS](https://nodejs.org/) and 
 
 ### Updating the Database
 
-All updates to the database are made by modifying the YAML files in the folder [/databases/catdat/data](databases/catdat/data). See [DATABASE.md](/DATABASE.md) for an overview of the database structure.
+All updates to the database are made by modifying the YAML files in the folder [/databases/catdat/data](databases/catdat/data). See [DATABASE.md](/DATABASE.md) for an overview of the database structure, and see [below](#authoring-of-yaml-files) for some tips how to edit YAML files.
 
 Apply the updates using:
 
@@ -83,8 +83,8 @@ The `pnpm db:test` command runs several tests to ensure the data behaves as expe
 
 1. Properties and their duals are mutual.
 2. Categories and their duals are mutual.
-3. For a specified list of categories (see [decided-categories.json](/databases/catdat/scripts/expected-data/decided-categories.json)), all properties have been decided.
-4. Every property of the categories `Set`, `Ab`, `Top` matches precisely the expected properties defined in the [/databases/catdat/scripts/expected-data](/databases/catdat/scripts/expected-data/) folder.
+3. For a specified list of categories (see [decided-categories.json](/databases/catdat/scripts/expected-data/decided-categories.json)) and functors (see [decided-functors.json](/databases/catdat/scripts/expected-data/decided-functors.json)), all properties have been decided.
+4. Every property of the categories `Set`, `Ab`, `Top` and the functors `forget_vector`, `id_Set` matches precisely the expected properties defined in the [/databases/catdat/scripts/expected-data](/databases/catdat/scripts/expected-data/) folder.
 
 If any of these tests fail, adjust the data accordingly.
 
@@ -102,33 +102,33 @@ When contributing new data (categories, functors, properties, implications), ple
 
 - **Reduce Unknowns**: Try to reduce the number of unknown properties of categories, in particular when adding a new category. Use the category detail page to see its unknown properties. Use the [page with missing data](https://catdat.app/missing) to identify categories with unknown properties. The same remarks apply to functors.
 
-- **Avoid redundant assignments**: Only assign properties (satisfied or not) to a category or functor if they cannot be deduced from other assignments. For example, if a category is complete, record that it is complete, but do not also record that it has a terminal object; the application infers this automatically. Redundant assignments can be identified using the redundancy script described below.
+- **Avoid redundant assignments**: Only assign properties (satisfied or not) to a category or functor if they cannot be deduced from other assignments. For example, if a category is complete by a direct proof, record that it is complete, but do not also record that it has a terminal object; the application infers this automatically. Redundant assignments can be identified using the redundancy script described below.
 
 - **No dual categories**: Instead of adding the dual of a category already in the database, consider adding properties to the original category (use the corresponding dual properties).
 
 - **No equivalent categories**: Do not add categories that are equivalent or even isomorphic to categories already in the database. If the equivalence is non-trivial, mention it in the description of the original category. Some exceptions are allowed, since certain properties (such as being skeletal) are not invariant under equivalence.
 
-- **Special Objects and Morphisms**: For each new category, try to specify its special objects (terminal object, initial object, etc.) in the corresponding table. Also try to specify its special morphisms (isomorphisms, monomorphisms, epimorphisms).
+- **Special Objects and Morphisms**: For each new category, try to specify its special objects (terminal object, initial object, etc.) in the corresponding table. Also try to specify its special morphisms (isomorphisms, monomorphisms, epimorphisms, regular monomorphisms, regular epimorphisms).
 
-- **Proofs for New Properties**: For every new property, for each existing category or functor, try to find a proof for whether it has this property or not, in case this has not already been deduced automatically via some implication. Use the property detail page to check unknown categories. These proofs may also refer to other categories, in which case you may add links to their corresponding pages. As mentioned in the section on tests, for a list of selected categories it is actually mandatory to decide their properties.
+- **Proofs for New Properties**: For every new property of categories (resp. functors), for each existing category (resp. functor), try to find a proof for whether it has this property or not, in case this has not already been deduced automatically via some implication. Use the property detail page to check unknown cases. These proofs may also refer to other categories (resp. functors), in which case you may add links to their corresponding pages. As mentioned in the section on tests, for a list of selected categories and functors it is actually mandatory to decide their properties.
 
-- **Counterexamples**: Ensure that at least one category does not satisfy any new property of categories that is added. If no existing category fits, add a new category that does not have the new property. The same remarks apply to properties of functors.
+- **Counterexamples**: For any added property of categories, ensure that at least one category does not satisfy it. If no existing category fits, add a new category that does not have the new property. The same remarks apply to properties of functors.
 
-- **Easy properties first**: The order in which properties are assigned to a category will also be shown on its page. For this reason, prefer an order in which the trivial and easy assignments appear first. More technical properties should usually appear later. Assignments of closely related properties should also be grouped together whenever possible.
+- **Easy properties first**: The order in which properties are assigned to a category (resp. functor) will also be shown on its page. For this reason, prefer an order in which the trivial and easy assignments appear first. More technical properties should usually appear later. Assignments of closely related properties should also be grouped together whenever possible.
 
 - **Positive Properties**: Do not add negated properties to the database. For example, do not add "large" as the negation of "small". Instead, add "small" to the list of unsatisfied properties for a category. Every registered property of categories should be satisfied at least by the trivial category. Similarly, every property of functors should be satisfied at least by the identity functor.
 
 - **Proofs for Claims**: Provide proofs for all new claims (satisfied properties, unsatisfied properties, implications, special morphisms).
 
-- **Atomic Implications**: Do not add implications that can be deduced from others. For example, do not add "complete => finite products" since it can be deduced from "complete => finitely complete" and "finitely complete => finite products". These are deduced automatically.
+- **Atomic Implications**: Do not add implications that can be deduced from others. For example, do not add "complete => finite products" since it can be deduced from "complete => finitely complete" and "finitely complete => finite products". These are combined automatically.
 
 - **No dual implications**: Implications are dualized automatically when applicable. For this reason, adding the category implication "finitely cocomplete => pushouts" is not necessary when "finitely complete => pullbacks" has already been added. Similarly, the functor implication "comonadic => left adjoint" is automatically dualized from "monadic => right adjoint". When an implication can be phrased both in a "limit" or "colimit" variant, prefer the "limit" variant (unless the literature focusses on the "colimit" variant).
 
 - **Relevant implications**: When adding a new property, include implications involving this property and existing properties. For example, when adding the property of categories of having "countable products", also add the implication "countable products => finite products". Refactor existing implications if necessary. Ensure that for most categories and functors, it will be inferred if the property holds or not.
 
-- **Simplify Implications**: When adding a new implication, check if it simplifies existing implications and if it deduces some previously non-deduced properties for categories.
+- **Simplify Implications**: When adding a new implication, check if it simplifies existing implications and if it deduces some previously non-deduced properties.
 
-- **Long-form content**: If a proof for a property becomes very long, move it into a markdown-generated content page and link to that page. These files are located in the `/content` folder. For example, `/content/cocongruences_of_groups.md` is rendered at [`/content/cocongruences_of_groups`](https://catdat.app/content/cocongruences_of_groups). Content pages are also used for reusable lemmas that apply to multiple property assignments.
+- **Long-form content**: If a proof for a property becomes very long, move it into a markdown-generated content page and link to that page. These files are located in the [`/content`](/content/) folder. For example, `/content/cocongruences_of_groups.md` is rendered at [`/content/cocongruences_of_groups`](https://catdat.app/content/cocongruences_of_groups). Content pages are also used for reusable lemmas that apply to multiple property assignments.
 
 - **New Combinations**: Add new categories that satisfy combinations of satisfied properties and unsatisfied properties and not yet in the database. For example, you may add a category that is abelian but neither cocomplete nor essentially small (if it is not already present). The [page with missing data](https://catdat.app/missing) lists consistent combinations of the form $p \land \neg q$ that are not yet witnessed by a category in the database. The same remarks apply to functors.
 
@@ -150,7 +150,7 @@ In particular, it often makes sense to **keep** a redundant assignment of a sati
 
 For example, you may first prove that a category has zero morphisms, and then prove that it is normal. Although the database contains the implication "normal => zero morphisms", in practice the latter is used as a prerequisite. Similarly, when proving that a category is extensive, it is often clearer to first show that finite coproducts exist, rather than relying on the implication "extensive => finite coproducts". Also, an explicit description of finite coproducts is useful for deciding other properties involving coproducts.
 
-Every redundant assignment of a satisfied property that is intentionally kept must be explicitly marked to skip the redundancy check. See `N.yaml` for an example.
+Every redundant assignment of a satisfied property that is intentionally kept must be explicitly marked to skip the redundancy check. See [`N.yaml`](/databases/catdat/data/categories/N.yaml) for an example.
 
 ### Keep Pull Requests Focused
 
@@ -181,9 +181,9 @@ AI tools may be used to assist with development in this repository, but not to r
 
 - Use AI to support your workflow (e.g. by asking questions, getting suggestions, or creating snippets), not to generate complete features or large portions of code without your active involvement.
 - AI agents that autonomously generate or modify code are not allowed. Pull requests that are mainly written by AI agents will be closed.
-- AI can also be used to find proofs for properties of categories, but they must be checked thoroughly and written in your own words.
+- AI can also be used to find proofs for properties of categories and functors, but they must be checked thoroughly and written in your own words.
 - AI may also be used to improve English writing (e.g. grammar, clarity, phrasing), particularly if you are not a native speaker.
-- Every line of code in a pull request must be understood by the developer submitting it.
+- Every line of code in a pull request must be understood by the person submitting it.
 - Pull request descriptions and commit messages must be written manually. AI-generated summaries are often superficial, meaningless, and do not tell the whole story.
 
 In summary, treat AI as a productivity tool, not as a substitute for understanding or authorship.
@@ -194,6 +194,6 @@ If you are not familiar with YAML, a short beginner-friendly introduction can be
 
 1. It is recommended to enable word wrap in your editor when working with YAML files.
 2. HTML may be used inside string values, for example for links (`<a>`), italic text (`<i>`), and ordered lists (`<ol>`).
-3. Use single-quoted strings (`'...'`) for values containing `:`. See `Cat.yaml` for an example. Inside single-quoted strings, a literal single quote must be escaped as `''`. See `Man.yaml` for an example.
-4. Use `>-` for multiline text that should be rendered as a single paragraph without line breaks. This is particularly useful for improving readability of longer texts or HTML lists in the YAML file itself. See `core-thin.yaml` for an example.
-5. Use `|-` for multiline text where line breaks should be preserved. These line breaks are automatically converted to `<br>` when rendered. See `FreeAb.yaml` for an example.
+3. Use single-quoted strings (`'...'`) for values containing `:`. See [`Cat.yaml`](/databases/catdat/data/categories/Cat.yaml) for an example. Inside single-quoted strings, a literal single quote must be escaped as `''`. See [`Man.yaml`](/databases/catdat/data/categories/Man.yaml) for an example.
+4. Use `>-` for multiline text that should be rendered as a single paragraph without line breaks. This is particularly useful for improving readability of longer texts or HTML lists in the YAML file itself. See [`core-thin.yaml`](/databases/catdat/data/category-properties/core-thin.yaml) for an example.
+5. Use `|-` for multiline text where line breaks should be preserved. These line breaks are automatically converted to `<br>` when rendered. See [`FreeAb.yaml`](/databases/catdat/data/categories/FreeAb.yaml) for an example.

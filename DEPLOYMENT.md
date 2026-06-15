@@ -7,7 +7,7 @@ This page is only relevant to the maintainer(s) of this project.
 
 ## Prerendering
 
-Most pages are prerendered for performance reasons. This implies that the database is consumed at build time to generate static HTML pages. The only non-prerendered pages are the search and comparison pages, since they involve dynamic lists of properties and categories.
+Most pages are prerendered for performance reasons. This implies that the database is consumed at build time to generate static HTML pages. The only non-prerendered pages are the search and comparison pages, since they involve dynamic lists of properties and categories resp. functors.
 
 ## Databases
 
