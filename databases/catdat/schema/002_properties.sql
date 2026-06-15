@@ -24,6 +24,7 @@ CREATE TABLE related_properties (
     property_id TEXT NOT NULL,
     related_property_id TEXT NOT NULL,
     type TEXT NOT NULL,
+    CHECK (property_id != related_property_id),
     PRIMARY KEY (property_id, related_property_id),
     FOREIGN KEY (property_id, type)
         REFERENCES properties (id, type) ON DELETE CASCADE,
