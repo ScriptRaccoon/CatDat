@@ -1,5 +1,5 @@
-import { fetch_structures_with_tags } from '$lib/server/fetchers/structures'
+import { fetch_structures_and_tags } from '$lib/server/fetchers/structures'
 
 export const load = () => {
-	return fetch_structures_with_tags('category')
+	return fetch_structures_and_tags('category')
 }

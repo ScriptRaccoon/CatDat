@@ -126,9 +126,9 @@ ORDER BY length(proof) DESC LIMIT 10;
 SELECT p.id AS property_id, COUNT(c.id) AS undecided_categories
 FROM category_properties p
 CROSS JOIN categories c
-LEFT JOIN category_property_assignments cp
-ON cp.category_id = c.id AND cp.property_id = p.id
-WHERE cp.property_id IS NULL
+LEFT JOIN category_property_assignments pa
+ON pa.category_id = c.id AND pa.property_id = p.id
+WHERE pa.property_id IS NULL
 GROUP BY p.id
 ORDER BY undecided_categories DESC LIMIT 10;
 </pre>

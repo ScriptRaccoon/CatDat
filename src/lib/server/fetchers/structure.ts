@@ -62,15 +62,15 @@ export function fetch_structure(type: StructureType, id: string) {
 		// properties
 		sql`
             SELECT
-                cp.property_id AS id,
-                cp.is_satisfied,
-                cp.proof,
-                cp.is_deduced,
+                pa.property_id AS id,
+                pa.is_satisfied,
+                pa.proof,
+                pa.is_deduced,
                 p.relation
-            FROM property_assignments cp
-            INNER JOIN properties p ON p.id = cp.property_id
-            WHERE cp.structure_id = ${id}
-            ORDER BY cp.id
+            FROM property_assignments pa
+            INNER JOIN properties p ON p.id = pa.property_id
+            WHERE pa.structure_id = ${id}
+            ORDER BY pa.id
         `,
 		// unknown properties
 		sql`
@@ -87,9 +87,9 @@ export function fetch_structure(type: StructureType, id: string) {
             SELECT u.id, u.name
             FROM structures u
             JOIN properties p
-            LEFT JOIN property_assignments cp
-                ON cp.structure_id = ${id}
-                AND cp.property_id = p.id
+            LEFT JOIN property_assignments pa
+                ON pa.structure_id = ${id}
+                AND pa.property_id = p.id
             LEFT JOIN property_assignments up
                 ON up.structure_id = u.id
                 AND up.property_id = p.id
@@ -100,7 +100,7 @@ export function fetch_structure(type: StructureType, id: string) {
             GROUP BY u.id, u.name
             HAVING SUM(
                 CASE
-                    WHEN cp.is_satisfied IS up.is_satisfied THEN 0
+                    WHEN pa.is_satisfied IS up.is_satisfied THEN 0
                     ELSE 1
                 END
             ) = 0;

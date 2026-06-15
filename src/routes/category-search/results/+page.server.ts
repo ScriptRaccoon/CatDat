@@ -1,7 +1,13 @@
-import { search_handler } from '$lib/server/search'
+import { fetch_search_results } from '$lib/server/fetchers/search'
+import { cache_page } from '$lib/server/utils'
 
 export const prerender = false
 
 export const load = (event) => {
-	return search_handler(event, 'category')
+	const satisfied_query = event.url.searchParams.get('satisfied')
+	const unsatisfied_query = event.url.searchParams.get('unsatisfied')
+
+	return fetch_search_results(satisfied_query, unsatisfied_query, 'category', () =>
+		cache_page(event),
+	)
 }

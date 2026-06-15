@@ -1,11 +1,7 @@
 import { is_subset } from './utils'
 import type { SqliteError } from 'better-sqlite3'
-import {
-	get_normalized_implications,
-	stringify_implication,
-	type NormalizedImplication,
-} from './implications'
-import type { StructureType } from '$lib/commons/types'
+import type { NormalizedImplication, StructureType } from '$lib/commons/types'
+import { get_normalized_implications } from './fetchers/implications'
 
 // TODO: If possible, remove the code duplication with deduction and redundancy scripts.
 
@@ -106,4 +102,8 @@ function build_shortest_proof(
 	derive(target_property)
 
 	return proof
+}
+
+function stringify_implication(implication: NormalizedImplication) {
+	return `${[...implication.assumptions].join(' ∧ ')} ⟹ ${implication.conclusion}`
 }

@@ -7,7 +7,8 @@ import sql from 'sql-template-tag'
 
 export function fetch_structures(type: StructureType) {
 	const { rows: structures, err } = query<StructureShort>(sql`
-        SELECT id, name FROM structures
+        SELECT id, name
+        FROM structures
         WHERE type = ${type}
         ORDER BY lower(name)
     `)
@@ -17,14 +18,16 @@ export function fetch_structures(type: StructureType) {
 	return { structures }
 }
 
-export function fetch_structures_with_tags(type: StructureType) {
+export function fetch_structures_and_tags(type: StructureType) {
 	const { results, err } = batch<[StructureShort, TagObject]>([
 		sql`
-            SELECT id, name FROM structures
+            SELECT id, name
+            FROM structures
             WHERE type = ${type}
             ORDER BY lower(name)`,
 		sql`
-            SELECT tag FROM tags
+            SELECT tag
+            FROM tags
             WHERE type = ${type}
             ORDER BY id
         `,
@@ -41,10 +44,11 @@ export function fetch_structures_with_tags(type: StructureType) {
 
 export function fetch_tagged_structures(type: StructureType, tag: string) {
 	const { rows: structures, err } = query<StructureShort>(sql`
-        SELECT s.id, s.name FROM structures s
-        LEFT JOIN structure_tag_assignments t
+        SELECT s.id, s.name
+        FROM structure_tag_assignments t
+        INNER JOIN structures s
         ON s.id = t.structure_id
-        WHERE t.tag = ${tag} AND s.type = ${type}
+        WHERE t.tag = ${tag} AND t.type = ${type}
         ORDER BY lower(name)
     `)
 

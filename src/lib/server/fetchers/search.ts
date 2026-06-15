@@ -1,23 +1,18 @@
-import type { RequestEvent } from '@sveltejs/kit'
 import { decode_property_ID } from '$lib/commons/property.url'
 import { query } from '$lib/server/db.catdat'
 import { error } from '@sveltejs/kit'
 import { SEARCH_SEPARATOR } from '$lib/commons/search.config'
 import { get_contradiction } from '$lib/server/consistency'
 import type { SearchResults, StructureShort, StructureType } from '$lib/commons/types'
-import { to_placeholders } from './utils'
+import { to_placeholders } from '$lib/server/utils'
 import sql from 'sql-template-tag'
 
-function cache_page(event: RequestEvent) {
-	event.setHeaders({
-		'cache-control': 'public, max-age=0, s-maxage=1800', // shared cache for 30min
-	})
-}
-
-export function search_handler(event: RequestEvent, type: StructureType): SearchResults {
-	const satisfied_query = event.url.searchParams.get('satisfied')
-	const unsatisfied_query = event.url.searchParams.get('unsatisfied')
-
+export function fetch_search_results(
+	satisfied_query: string | null,
+	unsatisfied_query: string | null,
+	type: StructureType,
+	callback: () => void,
+): SearchResults {
 	if (!satisfied_query && !unsatisfied_query) {
 		error(400, 'No properties selected')
 	}
@@ -85,7 +80,7 @@ export function search_handler(event: RequestEvent, type: StructureType): Search
 	if (err_con) error(500, 'Consistency check failed')
 
 	if (contradiction) {
-		cache_page(event)
+		callback()
 
 		return {
 			contradiction,
@@ -143,7 +138,7 @@ export function search_handler(event: RequestEvent, type: StructureType): Search
 
 	if (err) error(500, 'Search failed')
 
-	cache_page(event)
+	callback()
 
 	return {
 		contradiction: null,

@@ -2,8 +2,8 @@ import { batch } from '$lib/server/db.catdat'
 import sql from 'sql-template-tag'
 import type { StructureShort, StructureType } from '$lib/commons/types'
 import { error } from '@sveltejs/kit'
-import { get_normalized_implications } from '../implications'
-import { contradiction_worker } from '../consistency'
+import { contradiction_worker } from '$lib/server/consistency'
+import { get_normalized_implications } from './implications'
 
 export function fetch_missing_data(type: StructureType) {
 	const { results, err } = batch<
@@ -19,13 +19,13 @@ export function fetch_missing_data(type: StructureType) {
 			SELECT s.id, s.name, COUNT(*) AS count
 			FROM structures s
 			INNER JOIN properties p
-			LEFT JOIN property_assignments cp
-				ON cp.structure_id = s.id
-				AND cp.property_id = p.id
+			LEFT JOIN property_assignments pa
+				ON pa.structure_id = s.id
+				AND pa.property_id = p.id
 			WHERE
 				p.type = ${type}
 				AND s.type = ${type}
-				AND cp.property_id IS NULL
+				AND pa.property_id IS NULL
 			GROUP BY s.id
 			ORDER BY lower(s.name);
 		`,
@@ -56,7 +56,8 @@ export function fetch_missing_data(type: StructureType) {
 		`,
 		// properties
 		sql`
-			SELECT id, dual_property_id FROM properties
+			SELECT id, dual_property_id
+			FROM properties
 			WHERE type = ${type}
 			ORDER BY lower(id)
 		`,

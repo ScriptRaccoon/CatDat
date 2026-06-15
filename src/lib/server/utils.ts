@@ -1,3 +1,5 @@
+import type { RequestEvent } from '@sveltejs/kit'
+
 export function is_object(obj: unknown): obj is Record<string, unknown> {
 	return obj != null && obj.constructor.name === 'Object'
 }
@@ -17,4 +19,9 @@ export const sleep = (delay: number) => new Promise<void>((res) => setTimeout(re
 
 export function parse_json_set<T>(json: string): Set<T> {
 	return new Set(JSON.parse(json))
+}
+
+export function cache_page(event: RequestEvent) {
+	// shared cache for 30min
+	event.setHeaders({ 'cache-control': 'public, max-age=0, s-maxage=1800' })
 }

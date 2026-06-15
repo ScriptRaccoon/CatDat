@@ -120,6 +120,12 @@ export type ImplicationDisplay = Replace<
 	}
 >
 
+export type NormalizedImplication = {
+	id: string
+	assumptions: Set<string>
+	conclusion: string
+}
+
 export type SearchResults = {
 	contradiction: string[] | null
 	satisfied_properties: string[]

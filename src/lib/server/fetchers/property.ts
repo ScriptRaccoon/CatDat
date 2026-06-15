@@ -69,24 +69,24 @@ export function fetch_property(type: StructureType, id: string) {
         `,
 		// known structures
 		sql`
-            SELECT s.id, s.name, cp.is_satisfied
-            FROM property_assignments cp
-            INNER JOIN structures s ON s.id = cp.structure_id
+            SELECT s.id, s.name, pa.is_satisfied
+            FROM property_assignments pa
+            INNER JOIN structures s ON s.id = pa.structure_id
             WHERE
                 s.type = ${type}
-                AND cp.property_id = ${id}
+                AND pa.property_id = ${id}
             ORDER BY lower(s.name)
         `,
 		// unknown structures
 		sql`
             SELECT s.id, s.name
             FROM structures s
-            LEFT JOIN property_assignments cp
-                ON cp.structure_id = s.id
-                AND cp.property_id = ${id}
+            LEFT JOIN property_assignments pa
+                ON pa.structure_id = s.id
+                AND pa.property_id = ${id}
             WHERE
                 s.type = ${type}
-                AND cp.property_id IS NULL
+                AND pa.property_id IS NULL
             ORDER BY lower(s.name)
         `,
 	])

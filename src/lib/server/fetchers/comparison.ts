@@ -1,18 +1,16 @@
-import { error, type RequestEvent } from '@sveltejs/kit'
+import { error } from '@sveltejs/kit'
 import { query } from '$lib/server/db.catdat'
 import { render_nested_formulas } from '$lib/server/formulas'
 import { MAX_STRUCTURES_COMPARE } from '$lib/commons/compare.utils'
 import type { ComparisonResult, StructureType } from '$lib/commons/types'
 import { PLURALS } from '$lib/commons/structures'
+import { to_placeholders } from '$lib/server/utils'
 
-export function compare_handler(
-	event: RequestEvent,
+export function fetch_comparison_result(
+	compared_ids: string[],
 	type: StructureType,
+	callback: () => void,
 ): ComparisonResult {
-	if (!event.params.ids) error(400, `No ${type} selected for comparison`)
-
-	const compared_ids = event.params.ids?.split('/')
-
 	if (!compared_ids.length) error(400, `No ${type} selected for comparison`)
 
 	if (compared_ids.length > MAX_STRUCTURES_COMPARE) {
@@ -22,8 +20,6 @@ export function compare_handler(
 		)
 	}
 
-	const placeholders = compared_ids.map(() => '?').join(', ')
-
 	const { rows, err: err_cat } = query<{
 		id: string
 		name: string
@@ -32,7 +28,8 @@ export function compare_handler(
 		sql: `
 			SELECT id, name, notation 
 			FROM structures
-			WHERE type = ? AND id in (${placeholders})`,
+			WHERE type = ?
+			AND id in (${to_placeholders(compared_ids)})`,
 		values: [type, ...compared_ids],
 	})
 
@@ -69,7 +66,7 @@ export function compare_handler(
 
 	values.push(type)
 
-	const stmt = `
+	const comparison_query = `
 		SELECT
 			p.id AS property_id,
 			${select_columns}
@@ -79,18 +76,15 @@ export function compare_handler(
 		ORDER BY lower(p.id)`
 
 	const { rows: comparison_objects, err } = query<Record<string, string>>({
-		sql: stmt,
+		sql: comparison_query,
 		values,
 	})
 
-	if (err) error(500, 'Could not load properties')
+	if (err) error(500, 'Could not load comparison table')
 
 	const comparison_table = comparison_objects.map((obj) => Object.values(obj))
 
-	event.setHeaders({
-		// shared cache for 30min
-		'cache-control': 'public, max-age=0, s-maxage=1800',
-	})
+	callback()
 
 	return {
 		structures: render_nested_formulas(structures),

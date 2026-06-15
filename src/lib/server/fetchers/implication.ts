@@ -18,21 +18,15 @@ export function fetch_implication(type: StructureType, id: string) {
                 target_assumptions,
                 conclusions
             FROM implications_view
-            WHERE
-                type = ${type}
-                AND id = ${id}
+            WHERE id = ${id}
         `,
 		sql`
-            SELECT s.id, s.name
-            FROM structures s
-            WHERE s.type = ${type}
-            AND EXISTS (
-                SELECT 1 FROM property_assignments cp
-                WHERE
-                    cp.type = ${type}
-                    AND cp.structure_id = s.id
-                    AND cp.proof LIKE '%/' || ${type} || '-implication/' || ${id} || '%'
-            )
+            SELECT DISTINCT s.id, s.name
+            FROM property_assignments pa
+            INNER JOIN structures s ON s.id = pa.structure_id
+            WHERE
+                pa.type = ${type}
+                AND pa.proof LIKE '%/' || ${type} || '-implication/' || ${id} || '%'
         `,
 	])
 

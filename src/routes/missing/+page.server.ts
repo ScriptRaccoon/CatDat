@@ -1,27 +1,8 @@
-import { query } from '$lib/server/db.catdat'
-import sql from 'sql-template-tag'
-import type { StructureShort } from '$lib/commons/types'
-import { error } from '@sveltejs/kit'
 import { fetch_missing_data } from '$lib/server/fetchers/missing_data'
+import { fetch_categories_with_missing_morphisms } from '$lib/server/fetchers/category'
 
 export const load = () => {
-	const { rows: categories_with_missing_morphisms, err } = query<
-		StructureShort & { count: number }
-	>(
-		// categories with missing special morphisms
-		sql`
-			SELECT s.id, s.name, COUNT(*) AS count
-			FROM structures s
-			JOIN special_morphism_types t
-			LEFT JOIN special_morphisms m
-				ON m.category_id = s.id AND m.type = t.type
-			WHERE s.type = 'category' AND m.type IS NULL
-			GROUP BY s.id
-			ORDER BY lower(s.name);
-		`,
-	)
-
-	if (err) error(500, 'Failed to load data')
+	const categories_with_missing_morphisms = fetch_categories_with_missing_morphisms()
 
 	const missing_category_data = fetch_missing_data('category')
 	const missing_functor_data = fetch_missing_data('functor')
