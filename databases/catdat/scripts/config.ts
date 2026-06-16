@@ -8,3 +8,8 @@ export const PLURALS = {
 export const STRUCTURES: StructureType[] = ['category', 'functor']
 
 export const STRUCTURES_WITH_DUALS: StructureType[] = ['category']
+
+export const TABLES = {
+	category: 'categories',
+	functor: 'functors',
+} as const

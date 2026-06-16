@@ -1,6 +1,5 @@
 import { type Database } from 'better-sqlite3'
-import { StructureType } from '../config'
-import { parse_json_set } from './helpers'
+import { StructureType, TABLES } from '../config'
 
 /**
  * Type for various types of categorical structures (category, functor, ...)
@@ -14,84 +13,51 @@ export type StructureMeta = {
 
 /**
  * Returns the list of stored categorical structures of a given type.
+ * For structures with structure maps (e.g. functors), the associated
+ * satisfied properties are retrieved as well.
  */
 export function get_structures(db: Database, type: StructureType): StructureMeta[] {
-	if (type === 'category') return get_categories(db)
-	if (type === 'functor') return get_functors(db)
-	throw new Error('Unsupported type')
-}
-
-/**
- * Returns the list of categories saved in the database.
- */
-function get_categories(db: Database) {
-	return db
-		.prepare<
-			never[],
-			{
-				id: string
-				name: string
-				dual: string | null
-			}
-		>(
+	const structures = db
+		.prepare<[StructureType], StructureMeta>(
 			`SELECT
-                c.id,
+                s.id,
                 s.name,
                 s.dual_structure_id AS dual
-            FROM categories c
-            INNER JOIN structures s ON s.id = c.id
+            FROM structures s
+			WHERE s.type = ?
             ORDER BY lower(s.name)`,
 		)
-		.all()
-}
+		.all(type)
 
-/**
- * Returns the list of functors saved in the database along with
- * the satisfied properties of their source and target category.
- */
-function get_functors(db: Database) {
-	const rows = db
-		.prepare<
-			never[],
-			{
-				id: string
-				name: string
-				source_props: string
-				target_props: string
+	const structure_maps = db
+		.prepare<[StructureType], string>(`SELECT map FROM structure_maps WHERE type = ?`)
+		.pluck()
+		.all(type)
+
+	if (!structure_maps.length) return structures
+
+	const add_associated_properties = db.transaction(() => {
+		for (const map of structure_maps) {
+			const prop_query = db
+				.prepare<[string], string>(
+					`SELECT property_id FROM property_assignments
+					INNER JOIN ${TABLES[type]} t ON t.id = ?
+					WHERE structure_id = t.${map}
+					AND is_satisfied = TRUE`,
+				)
+				.pluck()
+
+			for (const structure of structures) {
+				structure.associated_satisfied_properties ??= {}
+				const props = prop_query.all(structure.id)
+				structure.associated_satisfied_properties[map] = new Set(props)
 			}
-		>(
-			`SELECT
-				f.id,
-				s.name,
-				(
-					SELECT json_group_array(property_id)
-					FROM property_assignments
-					WHERE
-						structure_id = f.source
-						AND is_satisfied = TRUE
-					
-				) AS source_props,
-				(
-					SELECT json_group_array(property_id)
-					FROM property_assignments
-					WHERE
-						structure_id = f.target
-						AND is_satisfied = TRUE
-				) AS target_props
-			FROM functors f
-			INNER JOIN structures s ON s.id = f.id
-			ORDER BY lower(s.name)`,
-		)
-		.all()
+		}
+	})
 
-	return rows.map((functor) => ({
-		id: functor.id,
-		name: functor.name,
-		associated_satisfied_properties: {
-			source: parse_json_set<string>(functor.source_props),
-			target: parse_json_set<string>(functor.target_props),
-		},
-	}))
+	add_associated_properties()
+
+	return structures
 }
 
 /**
