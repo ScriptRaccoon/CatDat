@@ -44,6 +44,8 @@ export type FunctorSpecificDisplay = {
 	right_adjoint_notation: string | null
 }
 
+export type MappedTypes = Record<string, StructureType>
+
 export type TagObject = { tag: string }
 
 export type CommentObject = { id: number; comment: string }
@@ -104,8 +106,7 @@ export type ImplicationDB = {
 	proof: string
 	assumptions: string
 	conclusions: string
-	source_assumptions: string // for functors
-	target_assumptions: string // for functors
+	mapped_assumptions: string
 }
 
 export type ImplicationDisplay = Replace<
@@ -115,8 +116,7 @@ export type ImplicationDisplay = Replace<
 		is_deduced: boolean
 		assumptions: string[]
 		conclusions: string[]
-		source_assumptions: string[]
-		target_assumptions: string[]
+		mapped_assumptions: Partial<Record<string, string[]>>
 	}
 >
 

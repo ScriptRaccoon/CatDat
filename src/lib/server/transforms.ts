@@ -6,6 +6,7 @@ import type {
 	ImplicationDB,
 	ImplicationDisplay,
 } from '$lib/commons/types'
+import { parse_nested_json_list } from './utils'
 
 export function display_property(property: PropertyDB): PropertyDisplay {
 	return {
@@ -69,8 +70,7 @@ export function display_implication(implication: ImplicationDB): ImplicationDisp
 		dualized_from: implication.dualized_from,
 		proof: implication.proof,
 		assumptions: JSON.parse(implication.assumptions),
-		source_assumptions: JSON.parse(implication.source_assumptions),
-		target_assumptions: JSON.parse(implication.target_assumptions),
 		conclusions: JSON.parse(implication.conclusions),
+		mapped_assumptions: parse_nested_json_list(implication.mapped_assumptions),
 	}
 }

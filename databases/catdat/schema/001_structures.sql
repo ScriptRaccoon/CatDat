@@ -58,3 +58,19 @@ CREATE TABLE structure_tag_assignments (
     FOREIGN KEY (structure_id, type) REFERENCES structures (id, type) ON DELETE CASCADE,
     FOREIGN KEY (tag, type) REFERENCES tags (tag, type) ON DELETE CASCADE
 );
+
+CREATE TABLE structure_maps (
+    map TEXT NOT NULL,
+    type TEXT NOT NULL,
+    mapped_type TEXT NOT NULL,
+    PRIMARY KEY (map, type, mapped_type),
+    UNIQUE (map, type),
+    FOREIGN KEY (type) REFERENCES structure_types (type) ON DELETE CASCADE,
+    FOREIGN KEY (mapped_type) REFERENCES structure_types (type) ON DELETE CASCADE
+);
+
+INSERT INTO structure_maps
+    (map, type, mapped_type)
+VALUES
+    ('source', 'functor', 'category'),
+    ('target', 'functor', 'category');

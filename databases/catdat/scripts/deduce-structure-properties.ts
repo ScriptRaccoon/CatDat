@@ -33,7 +33,6 @@ export function get_deduced_satisfied_properties(
 		stop_when_found?: string
 	},
 	type: StructureType,
-	// used for source and target properties of a functor
 	associated_satisfied_properties?: Record<string, Set<string>>,
 ) {
 	const found = new Set<string>()
@@ -51,15 +50,15 @@ export function get_deduced_satisfied_properties(
 
 			if (!is_valid) continue
 
-			if (implication.associated_assumptions) {
-				const is_applicable = Object.keys(
-					implication.associated_assumptions,
-				).every((key) => {
-					return is_subset(
-						implication.associated_assumptions?.[key] ?? new Set(),
-						associated_satisfied_properties?.[key] ?? new Set(),
-					)
-				})
+			if (implication.mapped_assumptions) {
+				const is_applicable = Object.keys(implication.mapped_assumptions).every(
+					(key) => {
+						return is_subset(
+							implication.mapped_assumptions?.[key] ?? new Set(),
+							associated_satisfied_properties?.[key] ?? new Set(),
+						)
+					},
+				)
 				if (!is_applicable) continue
 			}
 
@@ -103,7 +102,6 @@ export function get_deduced_unsatisfied_properties(
 		stop_when_found?: string
 	},
 	type: StructureType,
-	// used for source and target properties of a functor
 	associated_satisfied_properties?: Record<string, Set<string>>,
 ) {
 	const found = new Set<string>()
@@ -124,12 +122,12 @@ export function get_deduced_unsatisfied_properties(
 					})
 				if (!is_valid) continue
 
-				if (implication.associated_assumptions) {
+				if (implication.mapped_assumptions) {
 					const is_applicable = Object.keys(
-						implication.associated_assumptions,
+						implication.mapped_assumptions,
 					).every((key) => {
 						return is_subset(
-							implication.associated_assumptions?.[key] ?? new Set(),
+							implication.mapped_assumptions?.[key] ?? new Set(),
 							associated_satisfied_properties?.[key] ?? new Set(),
 						)
 					})

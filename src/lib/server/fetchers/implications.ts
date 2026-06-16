@@ -7,7 +7,7 @@ import type {
 	StructureType,
 } from '$lib/commons/types'
 import { display_implication } from '$lib/server/transforms'
-import { parse_json_set } from '$lib/server/utils'
+import { parse_json_set, parse_nested_json_list } from '$lib/server/utils'
 
 export function fetch_implications(type: StructureType) {
 	const { rows, err } = query<ImplicationDB>(sql`
@@ -18,9 +18,8 @@ export function fetch_implications(type: StructureType) {
             dualized_from,
             proof,
             assumptions,
-            source_assumptions,
-            target_assumptions,
-            conclusions
+            conclusions,
+			mapped_assumptions
         FROM implications_view
         WHERE type = ${type}
         ORDER BY lower(assumptions) || ' ' || lower(conclusions)
@@ -34,8 +33,8 @@ export function fetch_implications(type: StructureType) {
 }
 
 /**
- * List of normalized implications of a given type that have,
- * in the case of functors, no source and no target assumptions,
+ * List of normalized implications of a given type that have no mapped assumptions
+ * (e.g. no source and no target assumptions in the case of functors),
  * i.e. those that are universally true. Only those are relevant
  * for the consistency check.
  */
@@ -46,8 +45,7 @@ export function get_normalized_implications(type: StructureType) {
 		id: string
 		is_equivalence: 0 | 1
 		assumptions: string
-		source_assumptions: string
-		target_assumptions: string
+		mapped_assumptions: string
 		conclusions: string
 	}>(
 		sql`
@@ -55,9 +53,8 @@ export function get_normalized_implications(type: StructureType) {
 				id,
 				is_equivalence,
 				assumptions,
-				source_assumptions,
-				target_assumptions,
-				conclusions
+				conclusions,
+				mapped_assumptions
 			FROM implications_view
 			WHERE type = ${type}
 		`,
@@ -69,11 +66,10 @@ export function get_normalized_implications(type: StructureType) {
 
 	for (const impl of rows) {
 		const assumptions = parse_json_set<string>(impl.assumptions)
-		const source_assumptions = parse_json_set<string>(impl.source_assumptions)
-		const target_assumptions = parse_json_set<string>(impl.target_assumptions)
 		const conclusions = parse_json_set<string>(impl.conclusions)
+		const mapped_assumptions = parse_nested_json_list<string>(impl.mapped_assumptions)
 
-		if (source_assumptions.size > 0 || target_assumptions.size > 0) continue
+		if (Object.values(mapped_assumptions).some((list) => list?.length)) continue
 
 		for (const conclusion of conclusions) {
 			implications.push({ id: impl.id, assumptions, conclusion })

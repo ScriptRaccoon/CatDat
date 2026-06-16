@@ -21,6 +21,15 @@ export function parse_json_set<T>(json: string): Set<T> {
 	return new Set(JSON.parse(json))
 }
 
+export function parse_nested_json_list<T>(json: string): Partial<Record<string, T[]>> {
+	const obj = JSON.parse(json)
+	const result: Partial<Record<string, T[]>> = {}
+	for (const key in obj) {
+		result[key] = JSON.parse(obj[key])
+	}
+	return result
+}
+
 export function cache_page(event: RequestEvent) {
 	// shared cache for 30min
 	event.setHeaders({ 'cache-control': 'public, max-age=0, s-maxage=1800' })

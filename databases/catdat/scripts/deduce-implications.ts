@@ -1,5 +1,5 @@
-import { STRUCTURE_MAPS, STRUCTURES_WITH_DUALS, type StructureType } from './config'
-import { are_equal_sets, parse_json_set } from './utils/helpers'
+import { STRUCTURES_WITH_DUALS, type StructureType } from './config'
+import { are_equal_sets, parse_nested_json_set, parse_json_set } from './utils/helpers'
 import { get_client } from './utils/db'
 
 const db = get_client()
@@ -17,6 +17,13 @@ export function clear_deduced_implications(type: StructureType) {
  * then P^op ===> Q^op holds as well.
  */
 export function create_dualized_implications(type: StructureType) {
+	const structure_maps = db
+		.prepare<[StructureType], { map: string; mapped_type: StructureType }>(
+			`SELECT map, mapped_type
+			FROM structure_maps WHERE type = ?`,
+		)
+		.all(type)
+
 	const implications_query = db.prepare<
 		[StructureType],
 		{
@@ -26,8 +33,7 @@ export function create_dualized_implications(type: StructureType) {
 			conclusions: string
 			dual_assumptions: string
 			dual_conclusions: string
-			dual_source_assumptions: string
-			dual_target_assumptions: string
+			dual_mapped_assumptions: string
 		}
 	>(
 		`SELECT
@@ -48,17 +54,17 @@ export function create_dualized_implications(type: StructureType) {
 				WHERE a.implication_id = i.id
 			) AS dual_conclusions,
 			(
-				SELECT json_group_array(p.dual_property_id)
-				FROM source_assumptions a
-				LEFT JOIN properties p ON p.id = a.property_id
-				WHERE a.implication_id = i.id
-			) AS dual_source_assumptions,
-			(
-				SELECT json_group_array(p.dual_property_id)
-				FROM target_assumptions a
-				LEFT JOIN properties p ON p.id = a.property_id
-				WHERE a.implication_id = i.id
-			) AS dual_target_assumptions
+				SELECT json_group_object(map, properties)
+				FROM (
+					SELECT
+						a.map,
+						json_group_array(p.dual_property_id) AS properties
+					FROM mapped_assumptions a
+					INNER JOIN properties p ON p.id = a.property_id
+					WHERE a.implication_id = i.id
+					GROUP BY a.map
+				)
+			) AS dual_mapped_assumptions
 		FROM implications_view i
 		WHERE i.type = ? AND i.is_deduced = FALSE`,
 	)
@@ -81,22 +87,11 @@ export function create_dualized_implications(type: StructureType) {
 		VALUES (?, ?, ?)
 	`)
 
-	const source_assumption_insert = db.prepare(`
-		INSERT INTO source_assumptions
-			(implication_id, property_id, type, property_type)
-		VALUES (?, ?, ?, ?)
+	const mapped_assumption_insert = db.prepare(`
+		INSERT INTO mapped_assumptions
+			(implication_id, map, property_id, type, property_type)
+		VALUES (?, ?, ?, ?, ?)
 	`)
-
-	const target_assumption_insert = db.prepare(`
-		INSERT INTO target_assumptions
-			(implication_id, property_id, type, property_type)
-		VALUES (?, ?, ?, ?)
-	`)
-
-	const associated_assumption_inserts = {
-		source: source_assumption_insert,
-		target: target_assumption_insert,
-	}
 
 	const insert_duals = db.transaction(() => {
 		let count = 0
@@ -104,17 +99,20 @@ export function create_dualized_implications(type: StructureType) {
 		for (const impl of implications) {
 			const dual_id = `dual_${impl.id}`
 
-			const assumptions = parse_json_set(impl.assumptions)
-			const dual_assumptions = parse_json_set(impl.dual_assumptions)
-			const conclusions = parse_json_set(impl.conclusions)
-			const dual_conclusions = parse_json_set(impl.dual_conclusions)
-			const dual_source_assumptions = parse_json_set(impl.dual_source_assumptions)
-			const dual_target_assumptions = parse_json_set(impl.dual_target_assumptions)
+			const assumptions = parse_json_set<string>(impl.assumptions)
+			const dual_assumptions = parse_json_set<string | null>(impl.dual_assumptions)
+			const conclusions = parse_json_set<string>(impl.conclusions)
+			const dual_conclusions = parse_json_set<string | null>(impl.dual_conclusions)
+			const dual_mapped_assumptions = parse_nested_json_set<string | null>(
+				impl.dual_mapped_assumptions,
+			)
 
 			if (dual_assumptions.has(null)) continue
 			if (dual_conclusions.has(null)) continue
-			if (dual_source_assumptions.has(null)) continue
-			if (dual_target_assumptions.has(null)) continue
+
+			if (Object.values(dual_mapped_assumptions).some((set) => set?.has(null))) {
+				continue
+			}
 
 			if (
 				are_equal_sets(assumptions, dual_assumptions) &&
@@ -124,11 +122,6 @@ export function create_dualized_implications(type: StructureType) {
 			}
 
 			count++
-
-			const associated_dual_assumptions = {
-				source: dual_source_assumptions,
-				target: dual_target_assumptions,
-			}
 
 			implication_insert.run(
 				dual_id,
@@ -146,12 +139,10 @@ export function create_dualized_implications(type: StructureType) {
 				conclusion_insert.run(dual_id, c, type)
 			}
 
-			for (const map of STRUCTURE_MAPS) {
-				const [name, from, to] = map
-				if (from !== type) continue
-
-				for (const assumption of associated_dual_assumptions[name] ?? []) {
-					associated_assumption_inserts[name].run(dual_id, assumption, type, to)
+			for (const { map, mapped_type } of structure_maps) {
+				const duals = dual_mapped_assumptions[map]
+				for (const d of duals ?? []) {
+					mapped_assumption_insert.run(dual_id, map, d, type, mapped_type)
 				}
 			}
 		}

@@ -30,10 +30,9 @@ To mark properties as assumptions or conclusions of an implication, there are tw
 
 These tables are abstracted through the `implications_view` view.
 
-Functor implications may also depend on properties of the source or target category. Such dependencies are stored in the following tables:
+Functor implications may also depend on properties of the source or target category. Such dependencies are stored in the table:
 
-- `source_assumptions`
-- `target_assumptions`
+- `mapped_assumptions`
 
 Additional tables are available. For a complete overview, see the diagram below.
 

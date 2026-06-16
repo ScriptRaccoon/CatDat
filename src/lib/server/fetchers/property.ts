@@ -47,9 +47,8 @@ export function fetch_property(type: StructureType, id: string) {
                 dualized_from,
                 proof,
                 assumptions,
-                source_assumptions,
-                target_assumptions,
-                conclusions
+                conclusions,
+                mapped_assumptions
             FROM implications_view
             WHERE type = ${type}
             AND (

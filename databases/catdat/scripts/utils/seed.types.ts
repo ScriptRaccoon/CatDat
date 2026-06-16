@@ -76,9 +76,8 @@ export type PropertyYaml = {
 export type ImplicationYaml = {
 	id: string
 	assumptions: string[]
-	source_assumptions?: string[]
-	target_assumptions?: string[]
 	conclusions: string[]
+	mapped_assumptions?: Partial<Record<string, string[]>>
 	proof: string
 	is_equivalence: boolean
 }

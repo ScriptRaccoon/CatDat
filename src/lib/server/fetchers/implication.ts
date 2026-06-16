@@ -1,11 +1,18 @@
 import { batch } from '$lib/server/db.catdat'
 import sql from 'sql-template-tag'
 import { error } from '@sveltejs/kit'
-import type { ImplicationDB, StructureShort, StructureType } from '$lib/commons/types'
+import type {
+	ImplicationDB,
+	MappedTypes,
+	StructureShort,
+	StructureType,
+} from '$lib/commons/types'
 import { display_implication } from '$lib/server/transforms'
 
 export function fetch_implication(type: StructureType, id: string) {
-	const { results, err } = batch<[ImplicationDB, StructureShort]>([
+	const { results, err } = batch<
+		[ImplicationDB, StructureShort, { map: string; mapped_type: StructureType }]
+	>([
 		sql`
             SELECT
                 id,
@@ -14,9 +21,8 @@ export function fetch_implication(type: StructureType, id: string) {
                 dualized_from,
                 proof,
                 assumptions,
-                source_assumptions,
-                target_assumptions,
-                conclusions
+                conclusions,
+                mapped_assumptions
             FROM implications_view
             WHERE id = ${id}
         `,
@@ -28,11 +34,16 @@ export function fetch_implication(type: StructureType, id: string) {
                 pa.type = ${type}
                 AND pa.proof LIKE '%/' || ${type} || '-implication/' || ${id} || '%'
         `,
+		sql`
+            SELECT map, mapped_type
+            FROM structure_maps
+            WHERE type = ${type}
+        `,
 	])
 
 	if (err) error(500, 'Could not load implication')
 
-	const [implications, structures] = results
+	const [implications, structures, structure_maps] = results
 
 	if (!implications.length) {
 		error(404, `Could not find implication with ID '${id}'`)
@@ -40,5 +51,11 @@ export function fetch_implication(type: StructureType, id: string) {
 
 	const implication = display_implication(implications[0])
 
-	return { implication, structures }
+	const mapped_types: MappedTypes = {}
+
+	for (const { map, mapped_type } of structure_maps) {
+		mapped_types[map] = mapped_type
+	}
+
+	return { implication, structures, mapped_types }
 }

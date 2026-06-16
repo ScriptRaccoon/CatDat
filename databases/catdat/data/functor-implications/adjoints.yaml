@@ -1,8 +1,6 @@
 - id: right_adjoint_consequences
   assumptions:
     - right adjoint
-  source_assumptions: []
-  target_assumptions: []
   conclusions:
     - continuous
   proof: This is standard, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. V, Theorem 5.1.
@@ -11,13 +9,14 @@
 - id: saft
   assumptions:
     - continuous
-  source_assumptions:
-    - cogenerating set
-    - complete
-    - locally small
-    - well-powered
-  target_assumptions:
-    - locally small
+  mapped_assumptions:
+    source:
+      - cogenerating set
+      - complete
+      - locally small
+      - well-powered
+    target:
+      - locally small
   conclusions:
     - right adjoint
   proof: This is the Special Adjoint Functor Theorem. The proof can be found, for example, at the <a href="https://ncatlab.org/nlab/show/adjoint+functor+theorem" target="_blank">nLab</a>, or in <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. V, Theorem 8.2.

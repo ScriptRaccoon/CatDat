@@ -1,14 +1,13 @@
 import { type Database } from 'better-sqlite3'
 import type { PropertyMeta } from './properties'
 import { StructureType } from '../config'
-import { parse_json_set } from './helpers'
+import { parse_nested_json_set, parse_json_set } from './helpers'
 
 export type NormalizedImplication = {
 	id: string
 	assumptions: Set<string>
 	conclusion: string
-	// used for source and target assumptions of a functor implication
-	associated_assumptions?: Record<string, Set<string>>
+	mapped_assumptions?: Partial<Record<string, Set<string>>>
 }
 
 /**
@@ -31,18 +30,16 @@ export function get_normalized_implications(
 				id: string
 				is_equivalence: 0 | 1
 				assumptions: string
-				source_assumptions: string
-				target_assumptions: string
 				conclusions: string
+				mapped_assumptions: string
 			}
 		>(
 			`SELECT
 				id,
 				is_equivalence,
 				assumptions,
-				source_assumptions,
-				target_assumptions,
-				conclusions
+				conclusions,
+				mapped_assumptions
 			FROM implications_view i
 			WHERE i.type = ?`,
 		)
@@ -53,8 +50,7 @@ export function get_normalized_implications(
 	for (const impl of implications_db) {
 		const assumptions = parse_json_set<string>(impl.assumptions)
 		const conclusions = parse_json_set<string>(impl.conclusions)
-		const source_assumptions = parse_json_set<string>(impl.source_assumptions)
-		const target_assumptions = parse_json_set<string>(impl.target_assumptions)
+		const mapped_assumptions = parse_nested_json_set<string>(impl.mapped_assumptions)
 
 		for (const conclusion of conclusions) {
 			const implication: NormalizedImplication = {
@@ -63,11 +59,8 @@ export function get_normalized_implications(
 				conclusion,
 			}
 
-			if (source_assumptions.size > 0 || target_assumptions.size > 0) {
-				implication.associated_assumptions = {
-					source: source_assumptions,
-					target: target_assumptions,
-				}
+			if (Object.keys(mapped_assumptions).length > 0) {
+				implication.mapped_assumptions = mapped_assumptions
 			}
 
 			implications.push(implication)
@@ -81,11 +74,8 @@ export function get_normalized_implications(
 					conclusion: assumption,
 				}
 
-				if (source_assumptions.size > 0 || target_assumptions.size > 0) {
-					implication.associated_assumptions = {
-						source: source_assumptions,
-						target: target_assumptions,
-					}
+				if (Object.keys(mapped_assumptions).length > 0) {
+					implication.mapped_assumptions = mapped_assumptions
 				}
 
 				implications.push(implication)

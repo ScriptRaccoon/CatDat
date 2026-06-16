@@ -4,4 +4,4 @@
 	let { data } = $props()
 </script>
 
-<ImplicationPage type="functor" associated_type="category" {...data} />
+<ImplicationPage type="functor" {...data} />

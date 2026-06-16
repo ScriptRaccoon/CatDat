@@ -3,8 +3,6 @@
     - essentially surjective
     - faithful
     - full
-  source_assumptions: []
-  target_assumptions: []
   conclusions:
     - equivalence
   proof: This is standard, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. IV, Theorem 4.1.
@@ -13,8 +11,6 @@
 - id: equivalence_consequences
   assumptions:
     - equivalence
-  source_assumptions: []
-  target_assumptions: []
   conclusions:
     - monadic
     - left-invertible

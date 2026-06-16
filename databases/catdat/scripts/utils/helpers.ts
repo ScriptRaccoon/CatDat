@@ -16,3 +16,12 @@ export function capitalize(txt: string) {
 export function parse_json_set<T>(json: string): Set<T> {
 	return new Set(JSON.parse(json))
 }
+
+export function parse_nested_json_set<T>(json: string): Partial<Record<string, Set<T>>> {
+	const obj = JSON.parse(json)
+	const result: Partial<Record<string, Set<T>>> = {}
+	for (const key in obj) {
+		result[key] = parse_json_set(obj[key])
+	}
+	return result
+}

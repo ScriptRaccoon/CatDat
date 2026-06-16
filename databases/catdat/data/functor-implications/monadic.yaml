@@ -1,8 +1,6 @@
 - id: monadic_consequences
   assumptions:
     - monadic
-  source_assumptions: []
-  target_assumptions: []
   conclusions:
     - conservative
     - faithful
@@ -15,9 +13,9 @@
     - right adjoint
     - conservative
     - preserves reflexive coequalizers
-  source_assumptions:
-    - reflexive coequalizers
-  target_assumptions: []
+  mapped_assumptions:
+    source:
+      - reflexive coequalizers
   conclusions:
     - monadic
   proof: This is the crude monadicity theorem. A proof can be found in <a href="https://ncatlab.org/nlab/show/Sheaves+in+Geometry+and+Logic" target="_blank">Mac Lane & Moerdijk</a>, Thm. IV.4.2.

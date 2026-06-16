@@ -1,8 +1,6 @@
 - id: continuous_consequences
   assumptions:
     - continuous
-  source_assumptions: []
-  target_assumptions: []
   conclusions:
     - cofinitary
     - preserves products
@@ -13,8 +11,6 @@
 - id: products_consequences
   assumptions:
     - preserves products
-  source_assumptions: []
-  target_assumptions: []
   conclusions:
     - preserves finite products
   proof: This is trivial.
@@ -23,8 +19,6 @@
 - id: finite_products_consequences
   assumptions:
     - preserves finite products
-  source_assumptions: []
-  target_assumptions: []
   conclusions:
     - preserves terminal objects
   proof: This is trivial.
@@ -34,9 +28,9 @@
   assumptions:
     - preserves equalizers
     - preserves products
-  source_assumptions:
-    - products
-  target_assumptions: []
+  mapped_assumptions:
+    source:
+      - products
   conclusions:
     - continuous
   proof: This follows from the construction of limits via equalizers and products, see  <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. V, Theorem 2.2.
@@ -46,9 +40,9 @@
   assumptions:
     - cofinitary
     - left exact
-  source_assumptions:
-    - finitely complete
-  target_assumptions: []
+  mapped_assumptions:
+    source:
+      - finitely complete
   conclusions:
     - continuous
   proof: This is because every limit can be written as a filtered limit of finite limits, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. IX, Theorem 1.1.
@@ -58,9 +52,9 @@
   assumptions:
     - cofinitary
     - preserves finite products
-  source_assumptions:
-    - finite products
-  target_assumptions: []
+  mapped_assumptions:
+    source:
+      - finite products
   conclusions:
     - preserves products
   proof: This is because every product can be written as a filtered limit of finite products, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. IX, Theorem 1.1.
@@ -69,8 +63,6 @@
 - id: exact_definition
   assumptions:
     - exact
-  source_assumptions: []
-  target_assumptions: []
   conclusions:
     - left exact
     - right exact
@@ -80,8 +72,6 @@
 - id: left_exact_consequences
   assumptions:
     - left exact
-  source_assumptions: []
-  target_assumptions: []
   conclusions:
     - preserves finite products
     - preserves equalizers
@@ -96,9 +86,9 @@
   assumptions:
     - preserves equalizers
     - preserves finite products
-  source_assumptions:
-    - finite products
-  target_assumptions: []
+  mapped_assumptions:
+    source:
+      - finite products
   conclusions:
     - left exact
   proof: This follows from the construction of finite limits via equalizers and finite products, see  <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. V, Theorem 2.2.
@@ -107,8 +97,6 @@
 - id: representable_is_continuous
   assumptions:
     - representable
-  source_assumptions: []
-  target_assumptions: []
   conclusions:
     - continuous
   proof: This is standard, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. V, Theorem 4.1.
@@ -117,8 +105,6 @@
 - id: equalizers_include_coreflexive_equalizers
   assumptions:
     - preserves equalizers
-  source_assumptions: []
-  target_assumptions: []
   conclusions:
     - preserves coreflexive equalizers
   proof: This is trivial.
@@ -128,9 +114,9 @@
   assumptions:
     - preserves coreflexive equalizers
     - preserves finite products # TODO: only need binary products
-  source_assumptions:
-    - binary products
-  target_assumptions: []
+  mapped_assumptions:
+    source:
+      - binary products
   conclusions:
     - preserves equalizers
   proof: This follows easily from <a href="/category-implication/equalizers_via_coreflexive_equalizers">this result</a> about categories.
@@ -139,9 +125,9 @@
 - id: mono-preserving_criterion
   assumptions:
     - preserves equalizers
-  source_assumptions:
-    - mono-regular
-  target_assumptions: []
+  mapped_assumptions:
+    source:
+      - mono-regular
   conclusions:
     - preserves monomorphisms
   proof: Any monomorphism in the domain is a regular monomorphism and is mapped to a regular monomorphism.

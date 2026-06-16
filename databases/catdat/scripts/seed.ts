@@ -11,7 +11,7 @@ import type {
 	PropertyYaml,
 } from './utils/seed.types'
 import { create_schema_hash, get_saved_schema_hash } from './utils/schema'
-import { PLURALS, STRUCTURE_MAPS, type StructureType } from './config'
+import { PLURALS, type StructureType } from './config'
 
 const db = get_client()
 
@@ -67,9 +67,7 @@ function clear_all_tables() {
 		db.prepare(`DELETE FROM special_objects`).run()
 		db.prepare(`DELETE FROM special_object_types`).run()
 
-		db.prepare(`DELETE FROM source_assumptions`).run()
-		db.prepare(`DELETE FROM target_assumptions`).run()
-
+		db.prepare(`DELETE FROM mapped_assumptions`).run()
 		db.prepare(`DELETE FROM assumptions`).run()
 		db.prepare(`DELETE FROM conclusions`).run()
 		db.prepare(`DELETE FROM implications`).run()
@@ -336,6 +334,13 @@ function seed_properties({ type, folder }: { type: StructureType; folder: string
  * Seeds all implications of a given type from YAML files.
  */
 function seed_implications({ type, folder }: { type: StructureType; folder: string }) {
+	const structure_maps = db
+		.prepare<[StructureType], { map: string; mapped_type: StructureType }>(
+			`SELECT map, mapped_type
+			FROM structure_maps WHERE type = ?`,
+		)
+		.all(type)
+
 	const implication_insert = db.prepare(
 		`INSERT INTO implications (
 	        id, type, proof, is_equivalence
@@ -348,27 +353,16 @@ function seed_implications({ type, folder }: { type: StructureType; folder: stri
 		) VALUES (?, ?, ?)`,
 	)
 
-	const source_assumption_insert = db.prepare(
-		`INSERT INTO source_assumptions (
-			implication_id, property_id, type, property_type
-		) VALUES (?, ?, ?, ?)`,
-	)
-
-	const target_assumption_insert = db.prepare(
-		`INSERT INTO target_assumptions (
-			implication_id, property_id, type, property_type
-		) VALUES (?, ?, ?, ?)`,
-	)
-
-	const mapped_assumption_inserts = {
-		source: source_assumption_insert,
-		target: target_assumption_insert,
-	}
-
 	const conclusion_insert = db.prepare(
 		`INSERT INTO conclusions (
 			implication_id, property_id, type
 		) VALUES (?, ?, ?)`,
+	)
+
+	const mapped_assumption_insert = db.prepare(
+		`INSERT INTO mapped_assumptions (
+			implication_id, map, property_id, type, property_type
+		) VALUES (?, ?, ?, ?, ?)`,
 	)
 
 	function insert_implications(implications: ImplicationYaml[]) {
@@ -383,12 +377,12 @@ function seed_implications({ type, folder }: { type: StructureType; folder: stri
 				conclusion_insert.run(impl.id, conclusion, type)
 			}
 
-			for (const map of STRUCTURE_MAPS) {
-				const [name, from, to] = map
-				if (from !== type) continue
+			if (!impl.mapped_assumptions) continue
 
-				for (const assumption of impl[`${name}_assumptions`] ?? []) {
-					mapped_assumption_inserts[name].run(impl.id, assumption, type, to)
+			for (const { map, mapped_type } of structure_maps) {
+				const assumptions = impl.mapped_assumptions[map] ?? []
+				for (const p of assumptions) {
+					mapped_assumption_insert.run(impl.id, map, p, type, mapped_type)
 				}
 			}
 		}

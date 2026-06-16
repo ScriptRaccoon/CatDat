@@ -8,19 +8,20 @@
 	import Fa from 'svelte-fa'
 	import type {
 		ImplicationDisplay,
+		MappedTypes,
 		StructureShort,
 		StructureType,
 	} from '$lib/commons/types'
 	import { PLURALS } from '$lib/commons/structures'
 
 	type Props = {
+		type: StructureType
 		implication: ImplicationDisplay
 		structures: StructureShort[]
-		type: StructureType
-		associated_type?: StructureType
+		mapped_types: MappedTypes
 	}
 
-	let { implication, structures, type, associated_type = type }: Props = $props()
+	let { type, implication, structures, mapped_types }: Props = $props()
 </script>
 
 <MetaData title="Implication Details" />
@@ -38,31 +39,20 @@
 	{/each}
 </p>
 
-{#if implication.source_assumptions?.length}
-	<p>
-		<strong>Assumptions on source {associated_type}:</strong>
+{#each Object.entries(implication.mapped_assumptions) as [map, list]}
+	{#if list?.length}
+		<p>
+			<strong>Assumptions on {map} {mapped_types[map]}:</strong>
 
-		{#each implication.source_assumptions as property, index}
-			<a href={get_property_url(property, associated_type)}>{property}</a
-			>{#if index < implication.source_assumptions.length - 1}
-				,&nbsp;
-			{/if}
-		{/each}
-	</p>
-{/if}
-
-{#if implication.target_assumptions?.length}
-	<p>
-		<strong>Assumptions on target {associated_type}:</strong>
-
-		{#each implication.target_assumptions as property, index}
-			<a href={get_property_url(property, associated_type)}>{property}</a
-			>{#if index < implication.target_assumptions.length - 1}
-				,&nbsp;
-			{/if}
-		{/each}
-	</p>
-{/if}
+			{#each list as property, index}
+				<a href={get_property_url(property, mapped_types[map])}>{property}</a
+				>{#if index < list.length - 1}
+					,&nbsp;
+				{/if}
+			{/each}
+		</p>
+	{/if}
+{/each}
 
 <p>
 	<strong>Conclusions:</strong>
