@@ -7,6 +7,7 @@
 	import NavMobile from '$components/NavMobile.svelte'
 	import Popup from '$components/Popup.svelte'
 	import { track_visit } from '$lib/client/track'
+	import { get_selected_type } from '$lib/commons/structures'
 	import type { StructureType } from '$lib/commons/types'
 	import { tracking } from '$lib/states/tracking.svelte'
 	import './app.css'
@@ -31,20 +32,7 @@
 
 	let nav_dialog = $state<HTMLDialogElement | null>(null)
 
-	let selected_type = $state<StructureType>(
-		page.url.pathname.startsWith('/functor') ? 'functor' : 'category',
-	)
-
-	$effect(() => {
-		if (page.url.pathname.startsWith('/functor')) {
-			selected_type = 'functor'
-		} else if (
-			page.url.pathname.startsWith('/category') ||
-			page.url.pathname.startsWith('/categories')
-		) {
-			selected_type = 'category'
-		}
-	})
+	let selected_type = $derived<StructureType>(get_selected_type(page.url.pathname))
 </script>
 
 <svelte:head>

@@ -11,7 +11,7 @@ import type {
 	PropertyYaml,
 } from './utils/seed.types'
 import { create_schema_hash, get_saved_schema_hash } from './utils/schema'
-import { PLURALS, type StructureType } from './config'
+import { PLURALS, STRUCTURES, type StructureType } from './config'
 
 const db = get_client()
 
@@ -115,17 +115,14 @@ function seed_config() {
 	)
 
 	function insert_config(config: ConfigYaml) {
-		for (const tag of config.shared_tags) {
-			tag_insert.run(tag, 'category')
-			tag_insert.run(tag, 'functor')
-		}
+		for (const type of STRUCTURES) {
+			for (const tag of config.shared_tags) {
+				tag_insert.run(tag, type)
+			}
 
-		for (const tag of config.category_tags) {
-			tag_insert.run(tag, 'category')
-		}
-
-		for (const tag of config.functor_tags) {
-			tag_insert.run(tag, 'functor')
+			for (const tag of config[`${type}_tags`]) {
+				tag_insert.run(tag, type)
+			}
 		}
 
 		for (const { relation, conditional } of config.relations) {

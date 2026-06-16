@@ -8,6 +8,7 @@ const db = get_client()
  * Clears all deduced implications. This is done before the deduction starts.
  */
 export function clear_deduced_implications(type: StructureType) {
+	console.info(`\n--- Deduce ${type} implications ---`)
 	db.prepare(`DELETE FROM implications WHERE is_deduced = TRUE AND type = ?`).run(type)
 }
 

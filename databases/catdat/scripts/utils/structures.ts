@@ -3,13 +3,12 @@ import { StructureType } from '../config'
 import { parse_json_set } from './helpers'
 
 /**
- * A structure is a category or a functor.
+ * Type for various types of categorical structures (category, functor, ...)
  */
 export type StructureMeta = {
 	id: string
 	name: string
 	dual?: string | null
-	// used for source and target properties of a functor
 	associated_satisfied_properties?: Record<string, Set<string>>
 }
 
