@@ -57,8 +57,6 @@ function get_functors(db: Database) {
 			{
 				id: string
 				name: string
-				source: string
-				target: string
 				source_props: string
 				target_props: string
 			}
