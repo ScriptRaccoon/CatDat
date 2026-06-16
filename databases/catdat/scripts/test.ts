@@ -86,13 +86,11 @@ function test_mutual_structure_duals(type: StructureType) {
  */
 function test_positivity(structure_id: string, type: StructureType) {
 	const unsatisfied_props = db
-		.prepare<[StructureType, string], { property_id: string }>(
+		.prepare<[StructureType, string], string>(
 			`SELECT property_id FROM property_assignments
-			WHERE
-				type = ? AND
-				structure_id = ? AND
-				is_satisfied = FALSE`,
+			WHERE type = ? AND structure_id = ? AND is_satisfied = FALSE`,
 		)
+		.pluck()
 		.all(type, structure_id)
 
 	if (unsatisfied_props.length > 0) {
@@ -137,20 +135,18 @@ function test_mutual_property_duals(type: StructureType) {
  * been decided. If this test fails, property assignments or implications are missing.
  */
 function test_decided_structures(structure_ids: string[], type: StructureType) {
-	const unknown_query = db.prepare<
-		[StructureType, StructureType, string],
-		{ id: string }
-	>(
-		`SELECT p.id FROM properties p WHERE type = ? AND NOT EXISTS
-			(SELECT 1 FROM property_assignments
+	const unknown_query = db
+		.prepare<[StructureType, StructureType, string], string>(
+			`SELECT p.id FROM properties p WHERE type = ? AND NOT EXISTS
+			(
+				SELECT 1 FROM property_assignments
 				WHERE type = ? AND structure_id = ? AND property_id = p.id
-			)
-		`,
-	)
+			)`,
+		)
+		.pluck()
 
 	for (const structure_id of structure_ids) {
-		const res = unknown_query.all(type, type, structure_id)
-		const unknown_properties = res.map((row) => row.id)
+		const unknown_properties = unknown_query.all(type, type, structure_id)
 
 		if (unknown_properties.length > 0) {
 			throw new Error(
