@@ -18,7 +18,7 @@
 
 		{#if data.functor.left_adjoint}
 			<li>
-				<strong>Left adjoint:</strong>
+				<strong>Left adjoint functor:</strong>
 				<a
 					href="/functor/{data.functor.left_adjoint}"
 					aria-label={data.functor.left_adjoint_name}
@@ -30,7 +30,7 @@
 
 		{#if data.functor.right_adjoint}
 			<li>
-				<strong>Right adjoint:</strong>
+				<strong>Right adjoint functor:</strong>
 				<a
 					href="/functor/{data.functor.right_adjoint}"
 					aria-label={data.functor.right_adjoint_name}
