@@ -30,5 +30,6 @@
 	"preserves reflexive coequalizers": true,
 	"preserves coreflexive equalizers": true,
 	"essentially injective": true,
-	"left-invertible": true
+	"left-invertible": true,
+	"right-invertible": true
 }

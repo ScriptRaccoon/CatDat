@@ -16,6 +16,9 @@ satisfied_properties:
   - property: left adjoint
     proof: This functor is left adjoint to the forgetful functor.
 
+  - property: right-invertible
+    proof: The forgetful functor provides a right inverse.
+
   - property: essentially surjective
     proof: For abelian groups $G$ we have $G \cong G^{\ab}$.
 

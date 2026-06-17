@@ -14,6 +14,7 @@
 	"right exact": false,
 	"essentially injective": false,
 	"left-invertible": false,
+	"right-invertible": false,
 
 	"cofinitary": true,
 	"conservative": true,

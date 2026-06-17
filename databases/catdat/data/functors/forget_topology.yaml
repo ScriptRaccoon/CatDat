@@ -20,8 +20,8 @@ satisfied_properties:
   - property: representable
     proof: This functor is represented by the singleton space.
 
-  - property: essentially surjective
-    proof: Every set can be equipped with the discrete topology.
+  - property: right-invertible
+    proof: 'The functor $D : \Set \to \Top$ that endows a set with the discrete topology provides a right inverse. Remark: Another right inverse functor can be defined with the indiscrete topology. These are the only right inverses (up to isomorphism) by <a href="https://math.stackexchange.com/questions/4368730" target="_blank">MSE/4368730</a>.'
 
   - property: left adjoint
     proof: 'The indiscrete topology defines a functor $I : \Set \to \Top$ which is right adjoint to $U_{\Top}$.'

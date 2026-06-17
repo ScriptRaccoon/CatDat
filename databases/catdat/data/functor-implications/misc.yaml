@@ -45,3 +45,11 @@
     - conservative
   proof: 'Let $G : \D \to \C$ be a left-inverse to $F : \C \to \D$, meaning that $G \circ F \cong \id_{\C}$. Then $F(A) \cong F(B)$ implies $A \cong G(F(A)) \cong G(F(B)) \cong B$ for all $A,B \in \C$. Thus, $F$ essentially injective. Moreover, since $G \circ F$ is faithful, the composed map $\Hom(A,B) \to \Hom(F(A),F(B)) \to \Hom(G(F(A)),G(F(B))$ is injective, so that also $\Hom(A,B) \to \Hom(F(A),F(B))$ is injective. This shows that $F$ is faithful. Finally, if $f : A \to B$ is a morphism such that $F(f)$ is an isomorphism, then $G(F(f))$ is an isomorphism. Since $G(F(f)) \cong f$ in $\Mor(\C)$, we conclude that $f$ is an isomorphism. Therefore, $F$ is conservative.'
   is_equivalence: false
+
+- id: right-invertible_consequences
+  assumptions:
+    - right-invertible
+  conclusions:
+    - essentially surjective
+  proof: This is trivial.
+  is_equivalence: false

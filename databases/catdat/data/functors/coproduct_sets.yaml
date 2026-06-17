@@ -14,8 +14,8 @@ related_functors:
   - product_sets
 
 satisfied_properties:
-  - property: essentially surjective
-    proof: We have $X \cong X + 0$.
+  - property: right-invertible
+    proof: The functor $\Set \to \Set \times \Set$, $X \mapsto (X,0)$ provides a right inverse since $X + 0 \cong X$.
 
   - property: preserves equalizers
     proof: This can be checked with a straight forward calculation.

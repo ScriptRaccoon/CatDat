@@ -15,8 +15,8 @@ related_functors:
   - coproduct_sets
 
 satisfied_properties:
-  - property: essentially surjective
-    proof: We have $X \cong X \times 1$.
+  - property: right-invertible
+    proof: The functor $\Set \to \Set \times \Set$, $X \mapsto (X,1)$ provides a right inverse since $X \times 1 \cong X$.
 
   - property: preserves initial objects
     proof: This is obvious.

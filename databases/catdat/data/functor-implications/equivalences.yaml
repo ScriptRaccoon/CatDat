@@ -7,11 +7,22 @@
   proof: This is standard, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. IV, Theorem 4.1.
   is_equivalence: true
 
-- id: equivalence_consequences
+- id: equivalence_invertible
+  assumptions:
+    - equivalence
+  conclusions:
+    - left-invertible
+    - right-invertible
+  proof: >-
+    If a functor $F$ has a right inverse $R$ and a left inverse $L$, then
+    $$L \cong L \circ F \circ R \cong R.$$
+    Hence, $R$ (and $L$) are (pseudo-)inverse to $F$.
+  is_equivalence: true
+
+- id: equivalence_monadic
   assumptions:
     - equivalence
   conclusions:
     - monadic
-    - left-invertible
   proof: This is easy.
   is_equivalence: false

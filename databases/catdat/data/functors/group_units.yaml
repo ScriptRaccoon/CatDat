@@ -13,8 +13,8 @@ tags:
 related_functors: []
 
 satisfied_properties:
-  - property: essentially surjective
-    proof: If $G$ is a group, then $G$ is isomorphic to its group of units.
+  - property: right-invertible
+    proof: The forgetful functor provides a right inverse, since the group of units of a group $G$ is isomorphic to $G$.
 
   - property: right adjoint
     proof: This functor is right adjoint to the forgetful functor $\Grp \to \Mon$.
