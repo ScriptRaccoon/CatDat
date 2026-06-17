@@ -14,11 +14,8 @@ related_functors:
   - free_group
 
 satisfied_properties:
-  - property: left adjoint
-    proof: 'By definition, this functor is left adjoint to the forgetful functor $U_{\Grp,\Mon} : \Grp \to \Mon$.'
-
-  - property: right-invertible
-    proof: 'In fact, the counit of the adjunction $F \circ U_{\Grp,\Mon} \to \id_{\Grp}$ is an isomorphism since the right adjoint $U_{\Grp,\Mon}$ is fully faithful (Prop. 3.4 at the <a href="https://ncatlab.org/nlab/show/adjoint+functor#FullyFaithfulAndInvertibleAdjoints" target="_blank">nLab</a>).'
+  - property: reflector
+    proof: 'By definition, this functor is left adjoint to the forgetful functor $U_{\Grp,\Mon} : \Grp \hookrightarrow \Mon$, which is fully faithful.'
 
   - property: preserves finite products
     proof: >-

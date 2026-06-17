@@ -3,7 +3,7 @@ name: binary coproduct functor on sets
 notation: $+$
 source: SetxSet
 target: Set
-description: This functor maps a pair of sets $(X,Y)$ to their coproduct $X + Y$.
+description: This functor maps a pair of sets $(X,Y)$ to their coproduct $X + Y$. It is an example of a right-invertible left adjoint functor which is not a reflector.
 nlab_link: null
 
 tags:
@@ -37,3 +37,6 @@ unsatisfied_properties:
 
   - property: essentially injective
     proof: Both $(1,0)$ and $(0,1)$ are mapped to $1$.
+
+  - property: reflector
+    proof: 'Its right adjoint, the diagonal functor $\Delta : \Set \to \Set \times \Set$, is faithful, but not full.'

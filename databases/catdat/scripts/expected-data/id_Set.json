@@ -31,5 +31,6 @@
 	"preserves coreflexive equalizers": true,
 	"essentially injective": true,
 	"left-invertible": true,
-	"right-invertible": true
+	"right-invertible": true,
+	"reflector": true
 }

@@ -24,5 +24,6 @@
     - equivalence
   conclusions:
     - monadic
+    - reflector
   proof: This is easy.
   is_equivalence: false

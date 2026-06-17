@@ -7,3 +7,4 @@ dual_property: right adjoint
 related_properties:
   - cocontinuous
   - comonadic
+  - reflector

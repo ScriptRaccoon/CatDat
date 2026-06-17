@@ -15,6 +15,7 @@
 	"essentially injective": false,
 	"left-invertible": false,
 	"right-invertible": false,
+	"reflector": false,
 
 	"cofinitary": true,
 	"conservative": true,

@@ -13,14 +13,8 @@ tags:
 related_functors: []
 
 satisfied_properties:
-  - property: left adjoint
-    proof: This functor is left adjoint to the forgetful functor.
-
-  - property: right-invertible
-    proof: The forgetful functor provides a right inverse.
-
-  - property: essentially surjective
-    proof: For abelian groups $G$ we have $G \cong G^{\ab}$.
+  - property: reflector
+    proof: 'This functor is left adjoint to the forgetful functor $U_{\Ab,\Grp} : \Ab \hookrightarrow \Grp$, which is fully faithful.'
 
   - property: preserves finite products
     proof: See <a href="https://mathoverflow.net/questions/386144">MO/386144</a>.
