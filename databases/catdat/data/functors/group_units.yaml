@@ -13,11 +13,8 @@ tags:
 related_functors: []
 
 satisfied_properties:
-  - property: right-invertible
-    proof: The forgetful functor provides a right inverse, since the group of units of a group $G$ is isomorphic to $G$.
-
-  - property: right adjoint
-    proof: This functor is right adjoint to the forgetful functor $\Grp \to \Mon$.
+  - property: coreflector
+    proof: 'This functor is right adjoint to the forgetful functor $U_{\Grp,\Mon} : \Grp \hookrightarrow \Mon$, which is fully faithful.'
 
   - property: finitary
     proof: 'There is a direct way to prove this, but here is an abstract argument: Since the forgetful functor $\Grp \to \Set$ is conservative and finitary, it suffices to prove that the composition $\Mon \to \Set$, which maps a monoid to its set of units, is finitary. This functor is represented by the monoid $\langle x,y : xy = yx = 1 \rangle \cong \IZ$. It has a finite presentation and hence is finitely presentable in the categorical sense (Corollary 3.13 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>).'

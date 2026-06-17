@@ -32,5 +32,6 @@
 	"essentially injective": true,
 	"left-invertible": true,
 	"right-invertible": true,
-	"reflector": true
+	"reflector": true,
+	"coreflector": true
 }

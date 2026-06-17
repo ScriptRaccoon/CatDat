@@ -16,6 +16,7 @@
 	"left-invertible": false,
 	"right-invertible": false,
 	"reflector": false,
+	"coreflector": false,
 
 	"cofinitary": true,
 	"conservative": true,

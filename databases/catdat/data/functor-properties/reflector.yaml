@@ -3,7 +3,7 @@ relation: is a
 description: 'A functor $F : \C \to \D$ is a <i>reflector</i> if it is left adjoint to a functor $G : \D \to \C$ which is fully faithful. Hence, $G$ is equivalent to the inclusion of a full reflective subcategory. The condition that $G$ is fully faithful can also be expressed by the condition that the counit $\varepsilon : F \circ G \to \id_{\D}$ is an isomorphism (Prop. 3.4 at the <a href="https://ncatlab.org/nlab/show/adjoint+functor#FullyFaithfulAndInvertibleAdjoints" target="_blank">nLab</a>).'
 nlab_link: https://ncatlab.org/nlab/show/reflective+subcategory
 invariant_under_equivalences: true
-# dual_property: null FIXME
+dual_property: coreflector
 related_properties:
   - left adjoint
   - right-invertible

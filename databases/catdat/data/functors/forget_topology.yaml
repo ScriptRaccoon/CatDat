@@ -23,6 +23,9 @@ satisfied_properties:
   - property: reflector
     proof: 'The indiscrete topology defines a fully faithful functor $I : \Set \to \Top$ which is right adjoint to $U_{\Top}$.'
 
+  - property: coreflector
+    proof: 'The discrete topology defines a fully faithful functor $D : \Set \to \Top$ which is left adjoint to $U_{\Top}$.'
+
   - property: representable
     proof: This functor is represented by the singleton space.
 
