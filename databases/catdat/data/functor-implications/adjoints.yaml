@@ -13,10 +13,10 @@
     source:
       - cogenerating set
       - complete
-      - locally small
+      - locally essentially small
       - well-powered
     target:
-      - locally small
+      - locally essentially small
   conclusions:
     - right adjoint
   proof: This is the Special Adjoint Functor Theorem. The proof can be found, for example, at the <a href="https://ncatlab.org/nlab/show/adjoint+functor+theorem" target="_blank">nLab</a>, or in <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. V, Theorem 8.2.
