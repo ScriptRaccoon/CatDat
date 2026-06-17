@@ -15,6 +15,7 @@ related_functors:
   - forget_vector
   - forget_ring
   - forget_abelian
+  - forget_group_pointed
 
 satisfied_properties:
   - property: representable

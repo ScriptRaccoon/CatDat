@@ -1,0 +1,44 @@
+id: forget_group_pointed
+name: forgetful functor from groups to pointed sets
+notation: $U_{\Grp,\Set_*}$
+source: Grp
+target: Set*
+description: This functor maps a group $G$ to its underlying pointed set $U_{\Grp,\Set_*}(G)$, whose base point is the identity element of $G$. It is an example of an essentially surjective functor which is not right-invertible.
+nlab_link: https://ncatlab.org/nlab/show/forgetful+functor
+
+tags:
+  - algebra
+  - forgetful
+
+related_functors:
+  - forget_group
+  - forget_inverses
+
+satisfied_properties:
+  - property: right adjoint
+    proof: A left adjoint can be constructed by mapping a pointed set $(X,x_0)$ to the free group $F(X)$ modulo $x_0 = 1$.
+
+  - property: conservative
+    proof: 'We already know that the forgetful functor $U_{\Grp} : \Grp \to \Set$ is conservative.'
+
+  - property: finitary
+    proof: 'Since the forgetful functor $U_{\Set_*} : \Set_* \to \Set$ is finitary and conservative, it suffices to prove that the composition $U_{\Set_*} \circ U_{\Grp,\Set_*} : \Grp \to \Set_*$ is finitary. This is just the forgetful functor $U_{\Grp} : \Grp \to \Set$ and therefore finitary.'
+
+  - property: preserves reflexive coequalizers
+    proof: 'It suffices to prove that $U_{\Grp} : \Grp \to \Set$ preserves them, which follows from Theorem 2.5 at the <a href="https://ncatlab.org/nlab/show/reflexive+coequalizer" target="_blank">nLab</a>.'
+
+  - property: preserves epimorphisms
+    proof: This follows from the classifications of epimorphisms in <a href="/category/Grp">$\Grp$</a> and in <a href="/category/Set*">$\Set_*$</a>.
+
+  - property: essentially surjective
+    proof: Let $(X,x_0)$ be a pointed set. If $X$ is finite, we can endow $X$ with a cyclic group structure in which $x_0$ is the identity element. If $X$ is infinite, there is a bijection between $X$ and the set $P_{<\aleph_0}(X)$ of finite subsets of $X$, and we may assume that $x_0$ is mapped to $\varnothing$. Since $P_{<\aleph_0}(X)$ carries a group structure with identity element $\varnothing$ (it is the underlying set of $\IF_2^{\oplus X}$), it follows that $X$ also carries a group structure with identity element $x_0$.
+
+unsatisfied_properties:
+  - property: essentially injective
+    proof: This is trivial.
+
+  - property: preserves coequalizers
+    proof: 'The coequalizer of $1,2 : \IZ \rightrightarrows \IZ$ is the trivial group in $\Grp$, but the coequalizer of these maps in $\Set_*$ is infinite.'
+
+  - property: right-invertible
+    proof: 'Assume that there is a functor $G : \Set_* \to \Grp$ with $U \circ G \cong \id_{\Set_*}$, where $U : \Grp \to \Set_*$ is the forgetful functor. By using transport of structure, we can even assume that $U \circ G = \id_{\Set_*}$. Consider the set $X = \{x_0,x_1,x_2\}$ and the pointed set $(X,x_0)$. It carries a group structure with identity element $x_0$ such that every pointed map $(X,x_0) \to (X,x_0)$ is a group homomorphism (namely, its image under $G$). A group of order $3$ is isomorphic to $C_3$. If $t$ is a generator of $C_3$, then the map $U(C_3) \to U(C_3)$, $1 \mapsto 1$, $t \mapsto t$, $t^2 \mapsto t$ is pointed, but not a group homomorphism.'

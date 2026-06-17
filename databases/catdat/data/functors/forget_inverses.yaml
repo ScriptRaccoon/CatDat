@@ -12,7 +12,9 @@ tags:
   - forgetful
 
 related_functors:
+  - forget_group
   - forget_abelian
+  - forget_group_pointed
 
 satisfied_properties:
   - property: full
