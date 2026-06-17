@@ -132,3 +132,16 @@
     - preserves monomorphisms
   proof: Any monomorphism in the domain is a regular monomorphism and is mapped to a regular monomorphism.
   is_equivalence: false
+
+- id: zero_preserving_condition
+  assumptions:
+    - preserves terminal objects
+  mapped_assumptions:
+    source:
+      - pointed
+    target:
+      - pointed
+  conclusions:
+    - preserves initial objects
+  proof: This is trivial.
+  is_equivalence: false
