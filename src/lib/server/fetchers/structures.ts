@@ -26,10 +26,14 @@ export function fetch_structures_and_tags(type: StructureType) {
             WHERE type = ${type}
             ORDER BY lower(name)`,
 		sql`
-            SELECT tag
-            FROM tags
-            WHERE type = ${type}
-            ORDER BY id
+            SELECT t.tag
+            FROM tags t
+            WHERE t.type = ${type}
+            AND EXISTS (
+                SELECT 1 FROM structure_tag_assignments a
+                WHERE a.tag = t.tag AND a.type = ${type}
+            )
+            ORDER BY t.id
         `,
 	])
 
