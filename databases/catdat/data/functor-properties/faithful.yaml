@@ -7,5 +7,6 @@ dual_property: faithful
 related_properties:
   - equivalence
   - full
+  - fully faithful
   - essentially injective
   - left-invertible

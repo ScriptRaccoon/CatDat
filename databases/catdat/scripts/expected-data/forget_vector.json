@@ -8,6 +8,7 @@
 	"exact": false,
 	"preserves finite coproducts": false,
 	"full": false,
+	"fully faithful": false,
 	"preserves initial objects": false,
 	"left adjoint": false,
 	"right exact": false,

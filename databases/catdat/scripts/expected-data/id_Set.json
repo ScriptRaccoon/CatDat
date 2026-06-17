@@ -16,6 +16,7 @@
 	"preserves finite coproducts": true,
 	"preserves finite products": true,
 	"full": true,
+	"fully faithful": true,
 	"preserves initial objects": true,
 	"left adjoint": true,
 	"left exact": true,
