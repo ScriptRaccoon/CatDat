@@ -93,12 +93,23 @@ function get_assumption_string(
 ): string {
 	const { assumptions } = implication
 
-	return Array.from(assumptions)
+	const own = Array.from(assumptions)
 		.map(
 			(assumption) =>
 				`${properties_dict[assumption][conditional ? 'conditional_relation' : 'relation']} ${assumption}`,
 		)
 		.join(' and ')
+
+	if (!implication.mapped_assumptions) return own
+
+	const mapped = Object.entries(implication.mapped_assumptions)
+		.map(
+			([map, props]) =>
+				`and the ${map} has the required properties (${Array.from(props!).join(', ')})`,
+		)
+		.join(', ')
+
+	return `${own}, ${mapped}`
 }
 
 function get_conclusion_string(
