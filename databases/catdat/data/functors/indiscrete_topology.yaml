@@ -1,0 +1,40 @@
+id: indiscrete_topology
+name: indiscrete topology functor
+notation: $I$
+source: Set
+target: Top
+description: This functor maps a set $X$ to the indiscrete topological space $I(X) \coloneqq (X, \{\varnothing,X\})$ in which only the empty set and $X$ are open.
+nlab_link: https://ncatlab.org/nlab/show/discrete+and+indiscrete+topology
+left_adjoint: forget_topology
+
+tags:
+  - topology
+
+related_functors:
+  - discrete_topology
+
+satisfied_properties:
+  - property: full
+    proof: This is trivial.
+
+  - property: preserves initial objects
+    proof: This is obvious.
+
+  - property: right adjoint
+    proof: 'This functor is right adjoint to the forgetful functor $U_{\Top} : \Top \to \Set$.'
+
+  - property: left-invertible
+    proof: The forgetful functor provides a left inverse.
+
+  - property: preserves coequalizers
+    proof: 'This follows easily from the description of coequalizers in $\Set$ and $\Top$, and the fact that if $p : X \to Y$ is a surjective map, then $I(p) : I(X) \to I(Y)$ is a quotient map.'
+
+  - property: finitary
+    proof: >-
+      Let $X$ be a filtered diagram of sets. We need to prove that the filtered colimit of spaces $\colim_i I(X_i)$ is indiscrete. If $X_i$ is empty for all $i$, this is trivial. Otherwise, by considering a slice of the index category, we may assume that every $X_i$ is non-empty. A topological space $Y$ is indiscrete iff there are at most two continuous maps $Y \to S$, where $S$ is the Sierpinski space; there are exactly two when $Y$ is non-empty. We have
+      $$\textstyle \Hom(\colim_i I(X_i),S) \cong \lim_i \Hom(I(X_i),S) \cong \lim_i \{\varnothing, X_i\}.$$
+      For every $i \to j$ the map $I(X_i) \to I(X_j)$ pulls back $\varnothing \mapsto \varnothing$ and $X_j \mapsto X_i$. Thus, the limit has exactly two elements.
+
+unsatisfied_properties:
+  - property: preserves finite coproducts
+    proof: If $X$ and $Y$ are two non-empty sets, the canonical continuous bijection $I(X) + I(Y) \to I(X + Y)$ is not an isomorphism since $I(X) + I(Y)$ is not indiscrete as witnessed by the open subset $X$.

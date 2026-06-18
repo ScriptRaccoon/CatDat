@@ -10,7 +10,8 @@ tags:
   - topology
   - free
 
-related_functors: []
+related_functors:
+  - indiscrete_topology
 
 satisfied_properties:
   - property: left adjoint
