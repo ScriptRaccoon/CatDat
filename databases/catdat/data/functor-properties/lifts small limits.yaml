@@ -1,0 +1,8 @@
+id: lifts small limits
+relation: ''
+description: 'A functor $F : \C \to \D$ <i>lifts small limits</i> when for every small diagram $X : \I \to \C$ and every every limit cone of $F \circ X$ there is a limit cone of $X$ that is mapped by $F$ to the given limit cone of $F \circ X$.'
+nlab_link: https://ncatlab.org/nlab/show/lifted+limit
+invariant_under_equivalences: true
+dual_property: lifts small colimits
+related_properties:
+  - continuous

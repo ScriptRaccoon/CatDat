@@ -19,7 +19,7 @@
     Hence, $R$ (and $L$) are (pseudo-)inverse to $F$.
   is_equivalence: true
 
-- id: equivalence_monadic
+- id: equivalence_consequences
   assumptions:
     - equivalence
   conclusions:

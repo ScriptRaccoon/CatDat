@@ -10,3 +10,4 @@ related_properties:
   - left adjoint
   - preserves coequalizers
   - finitary
+  - lifts small colimits

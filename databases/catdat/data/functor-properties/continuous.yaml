@@ -10,3 +10,4 @@ related_properties:
   - right adjoint
   - preserves equalizers
   - cofinitary
+  - lifts small limits

@@ -20,3 +20,11 @@
     - monadic
   proof: This is the crude monadicity theorem. A proof can be found in <a href="https://ncatlab.org/nlab/show/Sheaves+in+Geometry+and+Logic" target="_blank">Mac Lane & Moerdijk</a>, Thm. IV.4.2.
   is_equivalence: false
+
+- id: monadic_lift_limits
+  assumptions:
+    - monadic
+  conclusions:
+    - lifts small limits
+  proof: 'See <a href="https://ncatlab.org/nlab/show/Abstract+and+Concrete+Categories" target="_blank">Joy of Cats</a>, Prop. 20.12.'
+  is_equivalence: false
