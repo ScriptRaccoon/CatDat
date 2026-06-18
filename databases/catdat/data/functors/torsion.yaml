@@ -14,12 +14,8 @@ related_functors:
   - p-torsion
 
 satisfied_properties:
-  - property: preserves coproducts
-    proof: This is easy to check using the description of coproducts as direct sums.
-
   - property: preserves finite products
-    # TODO: automate this with an implication
-    proof: Finite products coincide with finite direct sums.
+    proof: This is easy.
 
   - property: preserves equalizers
     proof: 'Let $E \subseteq A$ be the equalizer of two homomorphisms $f,g : A \rightrightarrows B$. If $a \in T(A)$ is equalized by $T(f),T(g) : T(A) \rightrightarrows T(B)$, then $a \in A$ is equalized by $f,g$, so that $a \in E$. It follows $a \in T(A) \cap E = T(E)$.'

@@ -20,9 +20,6 @@ satisfied_properties:
   - property: right adjoint
     proof: 'This functor is clearly right adjoint to $A \mapsto A/pA$.'
 
-  - property: preserves coproducts
-    proof: This is easy to check using the description of coproducts as direct sums.
-
   - property: finitary
     proof: >-
       This follows abstractly from the fact that $\IZ/p$ is finitely presentable. We nevertheless give a direct proof. Let $(A_i)$ be a filtered diagram of abelian groups. We need to show that the canonical map

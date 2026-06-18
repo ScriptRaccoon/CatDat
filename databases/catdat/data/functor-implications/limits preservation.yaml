@@ -146,6 +146,19 @@
   proof: This is trivial.
   is_equivalence: false
 
+- id: biproduct_preserving_condition
+  assumptions:
+    - preserves finite products
+  mapped_assumptions:
+    source:
+      - biproducts
+    target:
+      - biproducts
+  conclusions:
+    - preserves finite coproducts
+  proof: This is trivial.
+  is_equivalence: false
+
 - id: lift_implies_preservation
   assumptions:
     - lifts small limits
