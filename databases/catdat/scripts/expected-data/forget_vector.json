@@ -17,7 +17,6 @@
 	"right-invertible": false,
 	"reflector": false,
 	"coreflector": false,
-	"lifts small colimits": false,
 
 	"cofinitary": true,
 	"conservative": true,
@@ -35,6 +34,5 @@
 	"right adjoint": true,
 	"preserves terminal objects": true,
 	"preserves reflexive coequalizers": true,
-	"preserves coreflexive equalizers": true,
-	"lifts small limits": true
+	"preserves coreflexive equalizers": true
 }

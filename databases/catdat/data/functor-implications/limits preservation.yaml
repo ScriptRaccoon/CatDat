@@ -158,25 +158,3 @@
     - preserves finite coproducts
   proof: This is trivial.
   is_equivalence: false
-
-- id: lift_implies_preservation
-  assumptions:
-    - lifts small limits
-  mapped_assumptions:
-    target:
-      - complete
-  conclusions:
-    - continuous
-  proof: 'Let $F : \C \to \D$ be the given functor and $X : \I \to \C$ be a small diagram. Since $\D$ is complete, the diagram $F \circ X$ has a limit cone. Since $F$ lifts small limits, there is a limit cone of $X$ which is mapped by $F$ to the limit cone of $F \circ X$. Hence, $F$ preserves this limit cone of $X$. Since any other limit cone of $X$ is isomorphic to it, the claim follows.'
-  is_equivalence: false
-
-- id: preservation_implies_lift
-  assumptions:
-    - continuous
-  mapped_assumptions:
-    source:
-      - complete
-  conclusions:
-    - lifts small limits
-  proof: 'Let $F : \C \to \D$ be the given functor and $X : \I \to \C$ be a small diagram such that $F \circ X$ has a limit cone. By assumption, $X$ has a limit cone, and $F$ maps it to a limit cone of $F \circ X$. But then the image must be isomorphic to the given limit cone.'
-  is_equivalence: false

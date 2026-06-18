@@ -49,21 +49,6 @@ export function display_property_assignment(
 		}
 	}
 
-	// TODO: improve this
-	if (
-		property.is_satisfied === 0 &&
-		property.id.startsWith('lifts') &&
-		!property.relation
-	) {
-		return {
-			id: property.id,
-			label: property.id.replace(/^lifts/, 'lift'),
-			proof: property.proof,
-			is_deduced: Boolean(property.is_deduced),
-			relation: 'does not',
-		}
-	}
-
 	if (property.is_satisfied === 0) {
 		property.relation = relation_negations[property.relation]
 	}

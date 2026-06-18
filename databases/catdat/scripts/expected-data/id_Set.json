@@ -33,7 +33,5 @@
 	"left-invertible": true,
 	"right-invertible": true,
 	"reflector": true,
-	"coreflector": true,
-	"lifts small limits": true,
-	"lifts small colimits": true
+	"coreflector": true
 }

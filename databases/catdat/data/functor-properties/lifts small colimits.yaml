@@ -1,8 +1,0 @@
-id: lifts small colimits
-relation: ''
-description: 'A functor $F : \C \to \D$ <i>lifts small colimits</i> when for every small diagram $X : \I \to \C$ and every every colimit cocone of $F \circ X$ there is a colimit cocone of $X$ that is mapped by $F$ to the given colimit cocone of $F \circ X$.'
-nlab_link: https://ncatlab.org/nlab/show/lifted+limit
-invariant_under_equivalences: true
-dual_property: lifts small limits
-related_properties:
-  - cocontinuous
