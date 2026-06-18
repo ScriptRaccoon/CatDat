@@ -11,7 +11,8 @@ tags:
   - topology
   - forgetful
 
-related_functors: []
+related_functors:
+  - pi_0
 
 comments:
   - This functor has exactly two right inverses (up to isomorphism), see <a href="https://math.stackexchange.com/questions/4368730" target="_blank">MSE/4368730</a>.
