@@ -22,8 +22,8 @@ unsatisfied_properties:
   - property: essentially injective
     proof: 'If $X,Y$ are non-empty indiscrete spaces, then $C(X) \cong \IR \cong C(Y)$ since every continuous function on $X$ resp. $Y$ is constant.'
 
-  - property: essentially surjective
-    proof: The algebra $C(X)$ is <a href="https://en.wikipedia.org/wiki/Reduced_ring" target="_blank">reduced</a>, whereas there exist non-reduced algebras such as $\IR[T]/\langle T^2 \rangle$.
+  - property: dominant
+    proof: The algebra $C(X)$ is <a href="https://en.wikipedia.org/wiki/Reduced_ring" target="_blank">reduced</a>, and every subalgebra of a reduced algebra is also reduced. But there exist non-reduced algebras such as $\IR[T]/\langle T^2 \rangle$.
 
   - property: faithful
     proof: 'If $X,Y$ are non-empty indiscrete spaces, there is only one homomorphism of $\IR$-algebras $C(Y) \to C(X)$ (since both are isomorphic to $\IR$), but there can be many maps $X \to Y$.'

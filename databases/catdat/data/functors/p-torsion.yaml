@@ -34,8 +34,8 @@ unsatisfied_properties:
   - property: essentially injective
     proof: 'We have $T_p(\IZ) = 0 = T_p(0)$, but $\IZ \not\cong 0$.'
 
-  - property: essentially surjective
-    proof: The essential image consists precisely of the elementary abelian $p$-groups, equivalently, the vector spaces over $\IF_p$. For example, $\IZ$ is not contained in it.
+  - property: dominant
+    proof: The essential image consists precisely of the elementary abelian $p$-groups, equivalently, the vector spaces over $\IF_p$, and these are closed under retracts. For example, $\IZ$ is not contained in it.
 
   - property: faithful
     proof: 'We have $T_p(\IZ) = 0$, but $\IZ \not\cong 0$. Thus, faithfulness is failing for $0, \id_{\IZ} : \IZ \rightrightarrows \IZ$.'

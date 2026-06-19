@@ -30,5 +30,5 @@ satisfied_properties:
     proof: 'The group of units functor $(-)^{\times} : \Mon \to \Grp$ provides a left inverse.'
 
 unsatisfied_properties:
-  - property: essentially surjective
-    proof: This is trivial.
+  - property: dominant
+    proof: Every submonoid of a group is cancellative. Thus, if $M$ is a non-cancellative monoid such as $(\IN,\cdot,1)$, there cannot be a group $G$ with a (split) monomorphism $M \hookrightarrow G$.

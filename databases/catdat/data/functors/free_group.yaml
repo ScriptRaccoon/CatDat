@@ -34,8 +34,8 @@ unsatisfied_properties:
   - property: full on isomorphisms
     proof: The homomorphism $F(\{x\}) \to F(\{x\})$, $x \mapsto x^{-1}$ provides a counterexample.
 
-  - property: essentially surjective
-    proof: Not every group is free (consider $\IZ/2$).
+  - property: dominant
+    proof: If $G$ is a non-free group such as $\IZ/2$, there is no free group $F(X)$ with a (split) monomorphism $G \hookrightarrow F(X)$, since subgroups of free groups are free (Nielsen–Schreier theorem).
 
   - property: preserves terminal objects
     proof: The free group of rank $1$ is not the trivial group.

@@ -38,3 +38,6 @@ satisfied_properties:
 unsatisfied_properties:
   - property: preserves finite coproducts
     proof: If $X$ and $Y$ are two non-empty sets, the canonical continuous bijection $I(X) + I(Y) \to I(X + Y)$ is not an isomorphism since $I(X) + I(Y)$ is not indiscrete as witnessed by the open subset $X$.
+
+  - property: dominant
+    proof: A subspace of an indiscrete space is again indiscrete. Hence, if $Y$ is any non-indiscrete space such as the discrete space $\IN$, there is no set $X$ with a regular (or even split) monomorphism $Y \hookrightarrow I(X)$.

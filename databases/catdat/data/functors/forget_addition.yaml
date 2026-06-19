@@ -34,8 +34,8 @@ unsatisfied_properties:
   - property: essentially injective
     proof: See <a href="https://math.stackexchange.com/questions/4054295" target="_blank">MSE/4054295</a> for a collection of counterexamples.
 
-  - property: essentially surjective
-    proof: 'A necessary condition for a monoid to be the multiplicative monoid of a ring is that it has an <a href="https://en.wikipedia.org/wiki/Absorbing_element" target="_blank">absorbing element</a>. Thus, for example, $(\IN,+,0)$ is not contained in the essential image. Remark: even a monoid with an absorbing element does not necessarily come from a ring; see <a href="https://math.stackexchange.com/questions/3075364" target="_blank">MSE/3075364</a>.'
+  - property: dominant
+    proof: 'A necessary condition for a monoid to be a retract of the multiplicative monoid of a ring is that it has an <a href="https://en.wikipedia.org/wiki/Absorbing_element" target="_blank">absorbing element</a>. Thus, for example, $(\IN,+,0)$ provides a counterexample. Remark: even a monoid with an absorbing element does not necessarily come from a ring; see <a href="https://math.stackexchange.com/questions/3075364" target="_blank">MSE/3075364</a>.'
 
   - property: preserves epimorphisms
     proof: See <a href="https://math.stackexchange.com/questions/5139630" target="_blank">MSE/5139630</a>.

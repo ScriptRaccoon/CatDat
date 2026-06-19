@@ -34,8 +34,8 @@ unsatisfied_properties:
   - property: essentially injective
     proof: We have $T(\IZ) = 0 = T(0)$, but $\IZ \not\cong 0$.
 
-  - property: essentially surjective
-    proof: The essential image consists precisely of the abelian torsion groups. For example, $\IZ$ is not contained in it.
+  - property: dominant
+    proof: The essential image consists precisely of the abelian torsion groups, and these are closed under retracts. For example, $\IZ$ is not contained in it.
 
   - property: faithful
     proof: 'We have $T(\IZ) = 0$, but $\IZ \not\cong 0$. Thus, faithfulness is failing for $0, \id_{\IZ} : \IZ \rightrightarrows \IZ$.'

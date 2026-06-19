@@ -31,8 +31,8 @@ satisfied_properties:
       To see this, let $a \in A$. Then $f(a)=g(a')$ for some $a' \in A$. Applying $r$ to both sides yields $a=a'$. Hence $f(a)=g(a)$, so $a \in E$.
 
 unsatisfied_properties:
-  - property: essentially surjective
-    proof: Every power set is non-empty.
+  - property: dominant
+    proof: There is no split monomorphism $\varnothing \hookrightarrow P(X)$ for any set $X$ since $P(X)$ is non-empty.
 
   - property: preserves initial objects
     proof: We have $2^0 \neq 0$.

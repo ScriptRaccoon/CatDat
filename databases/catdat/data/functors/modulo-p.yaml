@@ -24,8 +24,8 @@ satisfied_properties:
       $$\textstyle \prod_{i \in I} A_i / p \prod_{i \in I} A_i = \prod_{i \in I} A_i / \prod_{i \in I} p A_i \cong \prod_{i \in I} A_i / p A_i.$$
 
 unsatisfied_properties:
-  - property: essentially surjective
-    proof: The essential image consists precisely of the elementary abelian $p$-groups, equivalently, the vector spaces over $\IF_p$. For example, $\IZ$ is not contained in it.
+  - property: dominant
+    proof: The essential image consists precisely of the elementary abelian $p$-groups, equivalently, the vector spaces over $\IF_p$, and these are closed under retracts. For example, $\IZ$ is not contained in it.
 
   - property: essentially injective
     proof: 'We have $\IQ / p \IQ \cong 0 \cong 0 / p 0$, but $\IQ \not\cong 0$.'

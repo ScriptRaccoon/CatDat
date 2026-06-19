@@ -37,8 +37,8 @@ unsatisfied_properties:
   - property: essentially injective
     proof: This is trivial.
 
-  - property: essentially surjective
-    proof: The empty set has has no group structure.
+  - property: dominant
+    proof: There is no group $G$ with a split monomorphism $\varnothing \hookrightarrow U(G)$ since $U(G)$ is non-empty.
 
   - property: preserves initial objects
     proof: The underlying set of a trivial group is not empty.

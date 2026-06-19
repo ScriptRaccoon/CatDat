@@ -27,6 +27,9 @@ satisfied_properties:
   - property: cofinitary
     proof: The doubling functor can also be written as $X \mapsto \{1,2\} \times X$, from which the claim follows.
 
+  - property: dominant
+    proof: 'For every set $X$ the inclusion map $\iota_1 : X \to X + X$ is a split monomorphism.'
+
   - property: essentially injective
     proof: Let $X,Y$ be two sets with $X + X \cong Y + Y$. If $X$ is finite, then $X + X$ and hence $Y + Y$ is finite, so that also $Y$ is finite. For the cardinalities we deduce $2 \card(X) = 2 \card(Y)$ and hence $\card(X) = \card(Y)$. This yields $X \cong Y$. If $X$ is infinite, then $Y$ is infinite, and $X \cong X + X \cong Y + Y \cong Y$.
 

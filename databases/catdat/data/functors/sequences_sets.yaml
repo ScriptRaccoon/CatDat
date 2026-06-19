@@ -28,6 +28,9 @@ satisfied_properties:
   - property: representable
     proof: We have $X^{\IN} \cong \Hom(\IN,X)$.
 
+  - property: dominant
+    proof: Every set $X$ admits the split monomorphism $X \to X^{\IN}$ mapping $x \mapsto (x,x,\dotsc)$.
+
 unsatisfied_properties:
   - property: essentially surjective
     proof: A finite set with at least $2$ elements is not contained in the essential image.

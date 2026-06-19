@@ -32,8 +32,8 @@ unsatisfied_properties:
   - property: essentially injective
     proof: This is trivial.
 
-  - property: essentially surjective
-    proof: The empty set has has no ring structure.
+  - property: dominant
+    proof: There is no ring $R$ with a split monomorphism $\varnothing \hookrightarrow U(R)$ since $U(R)$ is non-empty.
 
   - property: preserves epimorphisms
     proof: This follows from the classifications of epimorphisms in <a href="/category/Ring">$\Ring$</a> and in <a href="/category/Set">$\Set$</a>. Namely, the unique homomorphism $\IZ \to \IQ$ is an epimorphism in $\Ring$, but its underlying map of sets is not surjective, and hence no epimorphism in $\Set$.

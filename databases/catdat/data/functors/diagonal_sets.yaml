@@ -31,5 +31,5 @@ unsatisfied_properties:
   - property: full on isomorphisms
     proof: 'Take any pair of distinct isomorphisms $f,g : X \rightrightarrows Y$. Then $(f,g) : (X,X) \to (Y,Y)$ is not induced by an isomorphism $X \to Y$.'
 
-  - property: essentially surjective
-    proof: This is trivial.
+  - property: dominant
+    proof: If $Y$ is a non-empty set, there is no set $X$ with a split monomorphism $(\varnothing,Y) \hookrightarrow (X,X)$. In fact, this would give a pair of epimorphisms $X \to \varnothing$ and $X \to Y$. The first one gives $X = \varnothing$, and the second one then gives $Y = \varnothing$.

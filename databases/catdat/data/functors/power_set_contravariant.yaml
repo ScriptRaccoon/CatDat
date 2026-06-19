@@ -48,8 +48,8 @@ unsatisfied_properties:
   - property: preserves initial objects
     proof: In fact, the initial object does not even lie in the essential image since $P(X) \neq \varnothing$ for all $X$.
 
-  - property: essentially surjective
-    proof: The empty set does not lie in the essential image since $P(X) \neq \varnothing$ for all $X$.
+  - property: dominant
+    proof: There is no split monomorphism $\varnothing \hookrightarrow P(X)$ for any set $X$ since $P(X)$ is non-empty.
 
   - property: preserves coequalizers
     proof: >-

@@ -34,3 +34,6 @@ satisfied_properties:
 unsatisfied_properties:
   - property: preserves finite coproducts
     proof: The coproduct of two non-trivial cyclic groups in $\Ab$ is just their direct sum, which is finite, but the coproduct of these groups in $\Grp$, also called the free product, is an infinite group.
+
+  - property: dominant
+    proof: Any subgroup of an abelian group is again abelian. Thus, if $G$ is any non-abelian group such as $S_3$, there cannot be an abelian group $A$ with a (split) monomorphism $G \hookrightarrow A$.

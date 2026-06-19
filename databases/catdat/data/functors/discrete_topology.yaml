@@ -32,3 +32,6 @@ satisfied_properties:
 unsatisfied_properties:
   - property: preserves products
     proof: An infinite product of discrete spaces is usually not discrete, e.g. $\{0,1\}^{\IN}$.
+
+  - property: dominant
+    proof: A subspace of a discrete space is again discrete. Hence, if $Y$ is any non-discrete space such as $\IR$ with the Euclidean topology, there is no set $X$ with a regular (or even split) monomorphism $Y \hookrightarrow D(X)$.

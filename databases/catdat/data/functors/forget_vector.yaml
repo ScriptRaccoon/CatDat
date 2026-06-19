@@ -34,8 +34,8 @@ unsatisfied_properties:
   - property: essentially injective
     proof: This is trivial.
 
-  - property: essentially surjective
-    proof: The empty set has has no vector space structure.
+  - property: dominant
+    proof: There is no vector space $V$ with a split monomorphism $\varnothing \hookrightarrow U(V)$ since $U(V)$ is non-empty.
 
   - property: preserves initial objects
     proof: The underlying set of a trivial vector space is not empty.

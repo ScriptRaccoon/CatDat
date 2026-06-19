@@ -35,5 +35,6 @@
 	"reflector": true,
 	"coreflector": true,
 	"full on isomorphisms": true,
-	"pseudomonic": true
+	"pseudomonic": true,
+	"dominant": true
 }
