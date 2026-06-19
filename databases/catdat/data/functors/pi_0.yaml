@@ -41,25 +41,6 @@ unsatisfied_properties:
   - property: preserves monomorphisms
     proof: The functor $\pi_0$ maps the embedding $\{0,1\} \hookrightarrow [0,1]$ to the (unique) map $\{\{0\},\{1\}\} \to \{[0,1]\}$, which is not injective.
 
-  - property: preserves coequalizers
-    proof: >-
-      Let $X \subseteq \IR^2$ be the <a href="https://en.wikipedia.org/wiki/Topologist's_sine_curve" target="_blank">closed topologist's sine curve</a> defined by $X = S \cup L$, where
-      $$\begin{align*}
-      S & \coloneqq \{(x,\sin(1/x)) : 0 < x \leq 1 \} \\
-      L & \coloneqq \{(0,y) : y \in [-1,+1] \}
-      \end{align*}$$
-      It is known that $X$ is connected, but not path connected. Its path components are $\pi_0(X) = \{S,L\}$.
-
-      Now let $p : X \to Y$ be the quotient map which collapses $L$ to a point $y_0 \in Y$. Then $p$ is the coequalizer of the two projections $q_1,q_2 : E \rightrightarrows X$, where $E \coloneqq X \times_Y X = \{(x,x') \in X \times X : p(x) = p(x')\}$.
-
-      We claim that $Y$ is path connected. In fact, it is easy to check that the map
-      $$\gamma : [0,1] \to Y, ~ \gamma(t) \coloneqq \begin{cases} p(1-t, \sin(1/(1-t)) & t < 1 \\ y_0 & t = 1 \end{cases}$$
-      is continuous and satisfies $\gamma(0)=p(1,\sin(1))$ and $\gamma(1) = y_0$. Thus, $\pi_0(Y) = \{Y\}$. In other words, $\pi_0(\coeq(q_1,q_2))$ has exactly one element. We will see next that $\coeq(\pi_0(q_1),\pi_0(q_2))$ has two elements, which will prove that $\pi_0$ does not preserve coequalizers.
-
-      As a set, $E$ decomposes into $E = \Delta_S \cup (L \times L)$, where $\Delta_S$ is the diagonal of $S$. Both $\Delta_S$ and $L \times L$ are path connected. Moreover, there is no path from a point in $\Delta_S$ to a point in $L \times L$, since its image under $q_1$ would be a path in $X$ from a point in $S$ to a point in $L$, which does not exist. Thus, $\pi_0(E) = \{\Delta_S, L \times L\}$.
-
-      The map $\pi_0(q_1) : \pi_0(E) \to \pi_0(X)$ sends the path component $\Delta_S$ to $S$ and the path component $L \times L$ to $L$. The map $\pi_0(q_2)$ has exactly the same description. Hence, their coequalizer is just $\pi_0(X)$, which has two elements.
-
   - property: cofinitary
     proof: 'Consider the spaces $X_n = [n,\infty) \subseteq \IR$ and the inclusion maps $X_{n+1} \hookrightarrow X_n$. Then $\lim_n X_n = \varnothing$ and hence $\pi_0(\lim_n X_n) = \varnothing$. However, each $\pi_0(X_n) = \{X_n\}$ is a singleton, so that also $\lim_n \pi_0(X_n)$ is a singleton.'
 
