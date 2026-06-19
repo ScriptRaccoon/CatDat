@@ -34,6 +34,9 @@ unsatisfied_properties:
   - property: preserves terminal objects
     proof: We have $\IN \times 1 \cong \IN \not\cong 1$.
 
+  - property: preserves binary products
+    proof: The canonical map $\IN \times (X \times Y) \to (\IN \times X) \times (\IN \times Y)$ is given by $(n,(x,y)) \mapsto ((n,x),(n,y))$. It is clearly not surjective when $X$ and $Y$ are non-empty.
+
   - property: essentially surjective
     proof: A non-empty finite set is not contained in the essential image.
 

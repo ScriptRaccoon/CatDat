@@ -1,0 +1,10 @@
+id: preserves binary coproducts
+relation: ''
+description: A functor $F$ <i>preserves binary coproducts</i> when for every pair of objects $A,B$ in the source whose coproduct $A \sqcup B$ exists, also the coproduct $F(A) \sqcup F(B)$ exists in the target and such that the canonical morphism $F(A) \sqcup F(B) \to F(A \sqcup B)$ is an isomorphism.
+nlab_link: https://ncatlab.org/nlab/show/preserved+colimit
+invariant_under_equivalences: true
+dual_property: preserves binary products
+related_properties:
+  - preserves finite products
+  - preserves products
+  - continuous

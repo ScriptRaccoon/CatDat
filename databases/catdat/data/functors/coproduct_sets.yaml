@@ -33,7 +33,10 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: preserves terminal objects
-    proof: This is obvious.
+    proof: The terminal object is mapped to a set with two elements, which is not terminal.
+
+  - property: preserves binary products
+    proof: The canonical map $(X_1 \times Y_1) + (X_2 \times Y_2) \to (X_1 + X_2) \times (Y_1 + Y_2)$ misses the "mixed terms" $X_1 \times Y_2$ and $X_2 \times Y_1$ in the codomain.
 
   - property: essentially injective
     proof: Both $(1,0)$ and $(0,1)$ are mapped to $1$.

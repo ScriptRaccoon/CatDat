@@ -6,5 +6,6 @@ invariant_under_equivalences: true
 dual_property: preserves finite products
 related_properties:
   - preserves coproducts
+  - preserves binary coproducts
   - preserves initial objects
   - cocontinuous

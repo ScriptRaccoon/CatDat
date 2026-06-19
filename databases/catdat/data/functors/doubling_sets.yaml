@@ -38,7 +38,10 @@ unsatisfied_properties:
     proof: If $X$ is non-empty, the swap map $2X \to 2X$ is not induced by any map $X \to X$.
 
   - property: preserves terminal objects
-    proof: This is trivial.
+    proof: We have $2 \cdot 1 \neq 1$.
+
+  - property: preserves binary products
+    proof: For $a,b \geq 1$ we have $2 (a \cdot b) < (2 a) \cdot (2 b)$.
 
   - property: essentially surjective
     proof: The singleton set is not contained in the essential image.

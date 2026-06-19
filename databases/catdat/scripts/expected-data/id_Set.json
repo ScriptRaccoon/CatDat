@@ -15,6 +15,8 @@
 	"finitary": true,
 	"preserves finite coproducts": true,
 	"preserves finite products": true,
+	"preserves binary products": true,
+	"preserves binary coproducts": true,
 	"full": true,
 	"fully faithful": true,
 	"preserves initial objects": true,

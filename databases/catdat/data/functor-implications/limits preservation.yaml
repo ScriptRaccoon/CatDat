@@ -16,13 +16,14 @@
   proof: This is trivial.
   is_equivalence: false
 
-- id: finite_products_consequences
+- id: preserve_finite_products_criterion
   assumptions:
     - preserves finite products
   conclusions:
     - preserves terminal objects
-  proof: This is trivial.
-  is_equivalence: false
+    - preserves binary products
+  proof: This follows immediately from <a href="/category-implication/finite_products_characterization">this result</a> about finite products in categories.
+  is_equivalence: true
 
 - id: continuous_criterion
   assumptions:
@@ -33,7 +34,7 @@
       - products
   conclusions:
     - continuous
-  proof: This follows from the construction of limits via equalizers and products, see  <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. V, Theorem 2.2.
+  proof: This follows from the construction of limits via equalizers and products, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. V, Theorem 2.2.
   is_equivalence: false
 
 - id: continuous_criterion_filtered
@@ -113,7 +114,7 @@
 - id: criterion_coreflexive_equalizers
   assumptions:
     - preserves coreflexive equalizers
-    - preserves finite products # TODO: only need binary products
+    - preserves binary products
   mapped_assumptions:
     source:
       - binary products
