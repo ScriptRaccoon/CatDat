@@ -61,3 +61,12 @@
     - essentially injective
   proof: This is trivial.
   is_equivalence: false
+
+- id: pseudomonic_definition
+  assumptions:
+    - pseudomonic
+  conclusions:
+    - faithful
+    - full on isomorphisms
+  proof: This holds by definition.
+  is_equivalence: true

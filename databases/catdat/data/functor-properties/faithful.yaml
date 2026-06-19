@@ -5,8 +5,8 @@ nlab_link: https://ncatlab.org/nlab/show/faithful+functor
 invariant_under_equivalences: true
 dual_property: faithful
 related_properties:
-  - equivalence
   - full
   - fully faithful
   - essentially injective
   - left-invertible
+  - pseudomonic

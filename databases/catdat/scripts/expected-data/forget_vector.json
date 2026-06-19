@@ -18,6 +18,7 @@
 	"reflector": false,
 	"coreflector": false,
 	"full on isomorphisms": false,
+	"pseudomonic": false,
 
 	"cofinitary": true,
 	"conservative": true,

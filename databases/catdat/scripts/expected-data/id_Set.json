@@ -34,5 +34,6 @@
 	"right-invertible": true,
 	"reflector": true,
 	"coreflector": true,
-	"full on isomorphisms": true
+	"full on isomorphisms": true,
+	"pseudomonic": true
 }
