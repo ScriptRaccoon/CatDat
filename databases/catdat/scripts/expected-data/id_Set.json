@@ -33,5 +33,6 @@
 	"left-invertible": true,
 	"right-invertible": true,
 	"reflector": true,
-	"coreflector": true
+	"coreflector": true,
+	"full on isomorphisms": true
 }

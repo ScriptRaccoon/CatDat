@@ -40,8 +40,8 @@ unsatisfied_properties:
   - property: preserves terminal objects
     proof: We have $2^1 \neq 1$.
 
-  - property: full
-    proof: Take any map $P(X) \to P(X)$ that does not preserve the empty set, say the constant map with value $X$ (for $X \neq \varnothing$).
+  - property: full on isomorphisms
+    proof: 'If $f : X \to Y$ is any map, then $f_* : P(Y) \to P(X)$ preserves the empty set (in fact, all unions). Thus, it suffices to take any bijective map $P(X) \to P(X)$ that does not preserve $\varnothing$, such as the transposition of $\varnothing$ and $X$ (where $X$ is non-empty).'
 
   - property: preserves reflexive coequalizers
     proof: >-

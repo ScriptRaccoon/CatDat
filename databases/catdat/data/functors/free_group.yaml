@@ -31,8 +31,8 @@ satisfied_properties:
     proof: See <a href="https://math.stackexchange.com/questions/35229" target="_blank">MSE/35229</a>.
 
 unsatisfied_properties:
-  - property: full
-    proof: The homomorphism $F(\{x\}) \to F(\{x\})$, $x \mapsto x^k$ for $k \in \IZ$ provides a counterexample when $k \neq 1$.
+  - property: full on isomorphisms
+    proof: The homomorphism $F(\{x\}) \to F(\{x\})$, $x \mapsto x^{-1}$ provides a counterexample.
 
   - property: essentially surjective
     proof: Not every group is free (consider $\IZ/2$).

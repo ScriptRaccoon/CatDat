@@ -28,8 +28,8 @@ satisfied_properties:
       $$\Hom(A + B,X) \cong \Hom(A,X) \times \Hom(B,X) \cong \Hom((A,B),(X,X)).$$
 
 unsatisfied_properties:
-  - property: full
-    proof: 'Take any pair of distinct maps $f,g : X \rightrightarrows Y$. Then $(f,g) : (X,X) \to (Y,Y)$ is not induced diagonally via a map $X \to Y$.'
+  - property: full on isomorphisms
+    proof: 'Take any pair of distinct isomorphisms $f,g : X \rightrightarrows Y$. Then $(f,g) : (X,X) \to (Y,Y)$ is not induced by an isomorphism $X \to Y$.'
 
   - property: essentially surjective
     proof: This is trivial.

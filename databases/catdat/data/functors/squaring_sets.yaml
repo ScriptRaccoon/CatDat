@@ -44,8 +44,8 @@ satisfied_properties:
     proof: Let $X,Y$ be two sets with $X^2 \cong Y^2$. If $X$ is finite, then $X^2$ and hence $Y^2$ is finite, so that also $Y$ is finite. For the cardinalities we deduce $\card(X)^2 = \card(Y)^2$ and hence $\card(X) = \card(Y)$. This yields $X \cong Y$. If $X$ is infinite, then $Y$ is infinite, and $X \cong X^2 \cong Y^2 \cong Y$.
 
 unsatisfied_properties:
-  - property: full
-    proof: If $X$ has more than one element, the swap $X^2 \to X^2$, $(x,y) \mapsto (y,x)$ is not induced by a map $X \to X$.
+  - property: full on isomorphisms
+    proof: If $X$ has more than one element, the swap map $X^2 \to X^2$, $(x,y) \mapsto (y,x)$ is not induced by any map $X \to X$.
 
   - property: essentially surjective
     proof: We have $2 \neq a^2$ for all $a \in \IN$.

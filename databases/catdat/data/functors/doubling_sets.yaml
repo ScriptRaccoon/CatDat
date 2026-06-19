@@ -31,8 +31,8 @@ satisfied_properties:
     proof: Let $X,Y$ be two sets with $X + X \cong Y + Y$. If $X$ is finite, then $X + X$ and hence $Y + Y$ is finite, so that also $Y$ is finite. For the cardinalities we deduce $2 \card(X) = 2 \card(Y)$ and hence $\card(X) = \card(Y)$. This yields $X \cong Y$. If $X$ is infinite, then $Y$ is infinite, and $X \cong X + X \cong Y + Y \cong Y$.
 
 unsatisfied_properties:
-  - property: full
-    proof: If $X$ is non-empty, the swap $2X \to 2X$ is not induced by a map $X \to X$.
+  - property: full on isomorphisms
+    proof: If $X$ is non-empty, the swap map $2X \to 2X$ is not induced by any map $X \to X$.
 
   - property: preserves terminal objects
     proof: This is trivial.

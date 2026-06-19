@@ -27,15 +27,6 @@
   proof: If $F(f)$ is an isomorphism, its inverse has the form $F(g)$ since $F$ is full. Since $F$ is faithful, it follows that $f$ is inverse to $g$.
   is_equivalence: false
 
-- id: reflects_isomorphism_criterion
-  assumptions:
-    - full
-    - conservative
-  conclusions:
-    - essentially injective
-  proof: 'The functor even lifts isomorphisms: If $F(A) \to F(B)$ is an isomorphism, then it is induced by a morphism $A \to B$ since $F$ is full. Moreover, $A \to B$ is an isomorphism since its $F$-image is an isomorphism and $F$ is conservative.'
-  is_equivalence: false
-
 - id: left-invertible_consequences
   assumptions:
     - left-invertible
@@ -51,5 +42,22 @@
     - right-invertible
   conclusions:
     - essentially surjective
+  proof: This is trivial.
+  is_equivalence: false
+
+- id: full-on-isomorphisms_criterion
+  assumptions:
+    - full
+    - conservative
+  conclusions:
+    - full on isomorphisms
+  proof: This is obvious.
+  is_equivalence: false
+
+- id: full-on-isomorphisms_consequences
+  assumptions:
+    - full on isomorphisms
+  conclusions:
+    - essentially injective
   proof: This is trivial.
   is_equivalence: false

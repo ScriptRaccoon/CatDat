@@ -17,6 +17,7 @@
 	"right-invertible": false,
 	"reflector": false,
 	"coreflector": false,
+	"full on isomorphisms": false,
 
 	"cofinitary": true,
 	"conservative": true,

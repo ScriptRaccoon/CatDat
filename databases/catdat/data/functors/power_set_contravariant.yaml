@@ -42,8 +42,8 @@ satisfied_properties:
       $$A = f^*(f_*(A)) \sim_2 g^*(f_*(A)) = g^*(f_*(B)) \sim_2 f^*(f_*(B)) = B.$$
 
 unsatisfied_properties:
-  - property: full
-    proof: 'Each map $f^* : P(Y) \to P(X)$ preserves the empty set (in fact, all unions), so the constant map with value $X$ provides a counterexample as long as $X$ is non-empty.'
+  - property: full on isomorphisms
+    proof: 'If $f : X \to Y$ is any map, then $f^* : P(Y) \to P(X)$ preserves the empty set (in fact, all unions). Thus, it suffices to take any bijective map $P(X) \to P(X)$ that does not preserve $\varnothing$, such as the transposition of $\varnothing$ and $X$ (where $X$ is non-empty).'
 
   - property: preserves initial objects
     proof: In fact, the initial object does not even lie in the essential image since $P(X) \neq \varnothing$ for all $X$.
