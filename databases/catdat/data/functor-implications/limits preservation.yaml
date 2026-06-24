@@ -16,13 +16,25 @@
   proof: This is trivial.
   is_equivalence: false
 
-- id: preserve_finite_products_criterion
+- id: preserve_finite_products_consequences
   assumptions:
     - preserves finite products
   conclusions:
     - preserves terminal objects
     - preserves binary products
-  proof: This follows immediately from <a href="/category-implication/finite_products_characterization">this result</a> about finite products in categories.
+  proof: This is trivial.
+  is_equivalence: false
+
+- id: preserve_finite_products_criterion
+  assumptions:
+    - preserves terminal objects
+    - preserves binary products
+  mapped_assumptions:
+    source:
+      - finite products
+  conclusions:
+    - preserves finite products
+  proof: This is because finite products can be constructed recursively via $X_1 \times \cdots \times X_{n+1} = (X_1 \times \cdots \times X_n) \times X_{n+1}$. We need the assumption on the source category since otherwise $X_1 \times \cdots \times X_n$ might not exist.
   is_equivalence: true
 
 - id: continuous_criterion
@@ -120,7 +132,7 @@
       - binary products
   conclusions:
     - preserves equalizers
-  proof: This follows easily from <a href="/category-implication/equalizers_via_coreflexive_equalizers">this result</a> about categories.
+  proof: This follows easily from <a href="/category-implication/equalizers_via_coreflexive_equalizers">this result</a> about categories and its proof.
   is_equivalence: false
 
 - id: mono-preserving_criterion
