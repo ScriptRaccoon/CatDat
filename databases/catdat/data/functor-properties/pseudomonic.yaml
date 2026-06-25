@@ -1,6 +1,6 @@
 id: pseudomonic
 relation: 'is'
-description: A functor is <i>pseudomonic</i> when it is faithful and full on isomorphisms.
+description: A functor is <i>pseudomonic</i> when it is faithful and is full on isomorphisms.
 nlab_link: https://ncatlab.org/nlab/show/pseudomonic+functor
 invariant_under_equivalences: true
 dual_property: pseudomonic

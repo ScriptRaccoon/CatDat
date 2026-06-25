@@ -1,6 +1,6 @@
 id: fully faithful
 relation: is
-description: 'A functor is <i>fully faithful</i> when it is full and faithful. This means that for all objects $A,B$ in its domain the map $\Hom(A,B) \to \Hom(F(A),F(B))$, $f \mapsto F(f)$ is a bijection.'
+description: 'A functor $F : \C \to \D$ is <i>fully faithful</i> when it is full and faithful. This means that for all objects $A,B \in \C$ the map $\Hom(A,B) \to \Hom(F(A),F(B))$, $f \mapsto F(f)$ is a bijection.'
 nlab_link: https://ncatlab.org/nlab/show/full+and+faithful+functor
 invariant_under_equivalences: true
 dual_property: fully faithful
