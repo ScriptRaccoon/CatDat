@@ -35,7 +35,7 @@ unsatisfied_properties:
     proof: The homomorphism $F(\{x\}) \to F(\{x\})$, $x \mapsto x^{-1}$ provides a counterexample.
 
   - property: dominant
-    proof: If $G$ is a non-free group such as $\IZ/2$, there is no free group $F(X)$ with a (split) monomorphism $G \hookrightarrow F(X)$, since subgroups of free groups are free (Nielsen–Schreier theorem).
+    proof: If $G$ is a non-free group such as $\IZ/2$, there is no free group $F(X)$ with a (split) monomorphism $G \hookrightarrow F(X)$, since subgroups of free groups are free (Nielsen–Schreier theorem). Alternatively, use that $F(X)$ has no non-trivial elements of finite order.
 
   - property: preserves terminal objects
     proof: The free group of rank $1$ is not the trivial group.

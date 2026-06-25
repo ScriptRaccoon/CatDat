@@ -22,7 +22,7 @@ satisfied_properties:
     proof: 'We already know that the forgetful functor $U_{\Grp} : \Grp \to \Set$ is conservative.'
 
   - property: finitary
-    proof: 'Since the forgetful functor $U_{\Set_*} : \Set_* \to \Set$ is finitary and conservative, it suffices to prove that the composition $U_{\Set_*} \circ U_{\Grp,\Set_*} : \Grp \to \Set_*$ is finitary. This is just the forgetful functor $U_{\Grp} : \Grp \to \Set$ and therefore finitary.'
+    proof: 'Since the forgetful functor $U_{\Set_*} : \Set_* \to \Set$ is finitary and conservative, it suffices to prove that the composition $U_{\Set_*} \circ U_{\Grp,\Set_*} : \Grp \to \Set$ is finitary. This is just the forgetful functor $U_{\Grp} : \Grp \to \Set$ and therefore finitary.'
 
   - property: preserves reflexive coequalizers
     proof: 'It suffices to prove that $U_{\Grp} : \Grp \to \Set$ preserves them, which follows from Theorem 2.5 at the <a href="https://ncatlab.org/nlab/show/reflexive+coequalizer" target="_blank">nLab</a>.'
@@ -31,7 +31,7 @@ satisfied_properties:
     proof: This follows from the classifications of epimorphisms in <a href="/category/Grp">$\Grp$</a> and in <a href="/category/Set*">$\Set_*$</a>.
 
   - property: essentially surjective
-    proof: Let $(X,x_0)$ be a pointed set. If $X$ is finite, we can endow $X$ with a cyclic group structure in which $x_0$ is the identity element. If $X$ is infinite, there is a bijection between $X$ and the set $P_{<\aleph_0}(X)$ of finite subsets of $X$, and we may assume that $x_0$ is mapped to $\varnothing$. Since $P_{<\aleph_0}(X)$ carries a group structure with identity element $\varnothing$ (it is the underlying set of $\IF_2^{\oplus X}$), it follows that $X$ also carries a group structure with identity element $x_0$.
+    proof: Let $(X,x_0)$ be a pointed set. If $X$ is finite, we can endow $X$ with a cyclic group structure in which $x_0$ is the identity element. If $X$ is infinite, there is a bijection between $X$ and the set $P_{<\aleph_0}(X)$ of finite subsets of $X$, and we may assume that $x_0$ is mapped to $\varnothing$. Since $P_{<\aleph_0}(X)$ carries a group structure with identity element $\varnothing$ (it is the underlying set of the vector space $\IF_2^{\oplus X}$), $X$ also carries a group structure with identity element $x_0$.
 
 unsatisfied_properties:
   - property: essentially injective

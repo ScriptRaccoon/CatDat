@@ -35,4 +35,4 @@ unsatisfied_properties:
     proof: This is trivial.
 
   - property: conservative
-    proof: If $X$ is a set, the map $D(X) \to I(X)$, $x \mapsto x$ is bijective and continuous (where $D(-)$ denotes the discrete topological space and $I()$ the indiscrete topological space), but not an isomorphism (unless $X$ has at most one element).
+    proof: If $X$ is a set, the map $D(X) \to I(X)$, $x \mapsto x$ is bijective and continuous (where $D(-)$ denotes the discrete topological space and $I(-)$ the indiscrete topological space), but not an isomorphism (unless $X$ has at most one element).
