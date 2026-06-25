@@ -11,7 +11,7 @@ tags:
 
 related_functors:
   - id_Set
-  - coproduct_sets
+  - binary_coproduct_sets
   - countable_copower_sets
 
 satisfied_properties:

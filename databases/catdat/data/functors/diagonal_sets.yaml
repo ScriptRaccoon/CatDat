@@ -5,7 +5,7 @@ source: Set
 target: SetxSet
 description: 'Every category $\C$ has a (binary) diagonal functor $\Delta : \C \to \C^2$, $X \mapsto (X,X)$. Here, we specify that $\C$ is the category of sets.'
 nlab_link: https://ncatlab.org/nlab/show/diagonal+functor
-left_adjoint: coproduct_sets
+left_adjoint: binary_coproduct_sets
 
 tags:
   - set theory

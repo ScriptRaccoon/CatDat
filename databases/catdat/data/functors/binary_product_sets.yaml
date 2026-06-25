@@ -1,4 +1,4 @@
-id: product_sets
+id: binary_product_sets
 name: binary product functor on sets
 notation: $\times$
 source: SetxSet
@@ -12,7 +12,7 @@ tags:
 
 related_functors:
   - squaring_sets
-  - coproduct_sets
+  - binary_coproduct_sets
 
 satisfied_properties:
   - property: right-invertible

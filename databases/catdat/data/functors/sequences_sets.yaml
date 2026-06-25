@@ -12,7 +12,7 @@ tags:
 
 related_functors:
   - id_Set
-  - product_sets
+  - binary_product_sets
   - squaring_sets
 
 satisfied_properties:

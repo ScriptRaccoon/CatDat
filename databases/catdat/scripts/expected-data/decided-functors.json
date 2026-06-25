@@ -1,7 +1,7 @@
 [
 	"id_Set",
 	"diagonal_sets",
-	"product_sets",
+	"binary_product_sets",
 	"forget_vector",
 	"forget_group",
 	"forget_topology"
