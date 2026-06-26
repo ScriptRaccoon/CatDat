@@ -1,0 +1,27 @@
+id: trivial_groups
+name: trivial functor from the category of groups
+notation: $!$
+source: Grp
+target: '1'
+description: 'Every category $\C$ has a unique functor $! : \C \to 1$ into the trivial category. Here, we specify that $\C$ is the category of groups. It is a basic example of a full functor which is not faithful.'
+nlab_link: null
+
+tags:
+  - algebra
+
+related_functors:
+  - trivial_sets
+
+satisfied_properties:
+  - property: coreflector
+    proof: 'The constant functor $1 \to \Grp$ with value the trivial group is a left adjoint of $! : \Grp \to 1$ and fully faithful; this is because the trivial group is an initial object of $\Grp$.'
+
+  - property: reflector
+    proof: 'The constant functor $1 \to \Grp$ with value the trivial group is a left adjoint of $! : \Grp \to 1$ and fully faithful; this is because $\{\ast\}$ is a terminal object of $\Grp$.'
+
+  - property: full
+    proof: This follows easily from the fact that <a href="/category/Grp">$\Grp$</a> is strongly connected.
+
+unsatisfied_properties:
+  - property: essentially injective
+    proof: This is trivial.
