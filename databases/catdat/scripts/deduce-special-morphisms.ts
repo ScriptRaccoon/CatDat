@@ -8,7 +8,15 @@ const db = get_client()
 
 export function deduce_special_morphisms() {
 	console.info('\n--- Deduce special morphisms ---')
+	clear_deduced_special_morphisms()
 	deduce_special_morphisms_of_dual_categories()
+}
+
+/**
+ * Clears deduced special morphisms
+ */
+function clear_deduced_special_morphisms() {
+	db.prepare(`DELETE FROM special_morphisms WHERE is_deduced = TRUE`).run()
 }
 
 /**
@@ -18,18 +26,23 @@ export function deduce_special_morphisms() {
 function deduce_special_morphisms_of_dual_categories() {
 	const res = db
 		.prepare(
-			`INSERT INTO special_morphisms
-                (category_id, type, description, proof)
+			`INSERT INTO special_morphisms (
+                category_id,
+                type,
+                description,
+                proof,
+                is_deduced
+            )
             SELECT
                 c.dual_structure_id,
                 t.dual,
                 m.description,
-                'This is deduced from its dual category.'
+                'This is deduced from its dual category.',
+                TRUE
             FROM structures c
             INNER JOIN special_morphisms m ON m.category_id = c.id
             INNER JOIN special_morphism_types t ON t.type = m.type
-            WHERE c.type = 'category' AND c.dual_structure_id IS NOT NULL
-            ON CONFLICT DO NOTHING`,
+            WHERE c.type = 'category' AND c.dual_structure_id IS NOT NULL`,
 		)
 		.run()
 
