@@ -23,8 +23,8 @@ function deduce() {
 	deduce_special_morphisms()
 
 	// --- functors ---
-	restrict_representable_functors()
 	clear_deduced_implications('functor')
 	create_dualized_implications('functor')
 	deduce_properties_for_structures('functor')
+	restrict_representable_functors()
 }

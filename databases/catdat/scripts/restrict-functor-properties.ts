@@ -26,7 +26,7 @@ export function restrict_representable_functors() {
                 'functor',
                 FALSE,
                 'The target category is not $\\Set$.',
-                FALSE,
+                TRUE,
                 FALSE
             FROM functors f
             WHERE f.target <> 'Set'
