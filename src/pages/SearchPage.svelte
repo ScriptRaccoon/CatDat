@@ -61,13 +61,6 @@
 		if (satisfied_query) url.searchParams.set('satisfied', satisfied_query)
 		if (unsatisfied_query) url.searchParams.set('unsatisfied', unsatisfied_query)
 
-		if (browser) {
-			window.sessionStorage.setItem(
-				`${type}-search`,
-				JSON.stringify({ satisfied_properties, unsatisfied_properties }),
-			)
-		}
-
 		goto(url)
 	}
 

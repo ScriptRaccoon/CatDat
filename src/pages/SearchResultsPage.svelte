@@ -41,6 +41,13 @@
 
 		return decodeURIComponent(url.toString())
 	}
+
+	$effect(() => {
+		window.sessionStorage.setItem(
+			`${type}-search`,
+			JSON.stringify({ satisfied_properties, unsatisfied_properties }),
+		)
+	})
 </script>
 
 <MetaData
