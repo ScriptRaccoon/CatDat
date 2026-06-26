@@ -394,14 +394,14 @@ export function deduce_properties_for_structures(type: StructureType) {
 
 	const db = get_client()
 
+	delete_deduced_properties(db, type)
+
 	const implications = get_normalized_implications(db, type)
 	const structures = get_structures(db, type)
 	const properties_dict = get_properties_dict(db, type)
 	const get_assigned_properties = get_property_assignments(db, structures, type)
 
 	const deduction = db.transaction(() => {
-		delete_deduced_properties(db, type)
-
 		for (const structure of structures) {
 			const assigned = get_assigned_properties[structure.id]
 
