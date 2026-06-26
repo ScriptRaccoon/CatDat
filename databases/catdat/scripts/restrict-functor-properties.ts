@@ -30,7 +30,11 @@ export function restrict_representable_functors() {
                 FALSE
             FROM functors f
             WHERE f.target <> 'Set'
-            ON CONFLICT (structure_id, property_id) DO NOTHING`,
+            ON CONFLICT (structure_id, property_id)
+            DO UPDATE SET
+                proof = excluded.proof,
+                is_deduced = excluded.is_deduced,
+                check_redundancy = excluded.check_redundancy`,
 		)
 		.run()
 
