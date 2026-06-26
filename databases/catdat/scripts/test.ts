@@ -13,7 +13,10 @@ import decided_categories from './expected-data/decided-categories.json'
 import decided_functors from './expected-data/decided-functors.json'
 import { capitalize } from './utils/helpers'
 import { get_client } from './utils/db'
-import { PLURALS, StructureType } from './config'
+import { PLURALS, STRUCTURES, type StructureType } from './config'
+import fs from 'node:fs'
+import path from 'node:path'
+import { decode_property_ID } from '../../../src/lib/commons/property.url'
 
 const db = get_client()
 
@@ -24,6 +27,9 @@ execute_tests()
  */
 function execute_tests() {
 	try {
+		console.info('--- Test link targets ---')
+		check_link_targets_exist()
+
 		console.info('\n--- Test categories ---')
 		test_mutual_structure_duals('category')
 		test_positivity('1', 'category')
@@ -187,4 +193,89 @@ function test_properties_of_selected_structures(
 
 		console.info(`✅ Properties of ${structure_id} are correct`)
 	}
+}
+
+/**
+ * Checks if all links in proofs refer to existing entries.
+ */
+function check_link_targets_exist() {
+	const content_ids = new Set(
+		fs
+			.readdirSync(path.resolve('content'))
+			.filter((file) => file.endsWith('.md'))
+			.map((file) => path.basename(file, '.md')),
+	)
+
+	const proofs: { proof: string; error_prefix: string }[] = [
+		...db
+
+			.prepare<never[], { structure: string; property: string; proof: string }>(
+				`SELECT
+					structure_id AS structure,
+					property_id AS property,
+					proof
+				FROM property_assignments`,
+			)
+			.all()
+			.map((x) => ({
+				proof: x.proof,
+				error_prefix: `❌ The proof of (${x.structure}, ${x.property})`,
+			})),
+		...db
+			.prepare<never[], { id: string; proof: string }>(
+				`SELECT id, proof FROM implications`,
+			)
+			.all()
+			.map((x) => ({
+				proof: x.proof,
+				error_prefix: `❌ The proof of the implication (${x.id})`,
+			})),
+	]
+
+	for (const { proof, error_prefix } of proofs) {
+		const link_regex = new RegExp(
+			`<a\\s+href="\\/(${STRUCTURES.join('|')})(?:-(implication|property))?\\/([^"]+)"`,
+			'g',
+		)
+
+		for (const match of proof.matchAll(link_regex)) {
+			const type = match[1]
+			const id = match[3]
+			const sort =
+				match[2] === 'implication'
+					? 'implications'
+					: match[2] === 'property'
+						? 'properties'
+						: 'structures'
+
+			const decoded_id = sort === 'properties' ? decode_property_ID(id) : id
+
+			const exists = db
+				.prepare<
+					[string, string],
+					string
+				>(`SELECT id FROM ${sort} WHERE id = ? AND type = ?`)
+				.get(decoded_id, type)
+
+			if (!exists) {
+				throw new Error(
+					`${error_prefix} has a link to "${id}" which does not exist:\n"${proof}"`,
+				)
+			}
+		}
+
+		const content_link_regex = /<a\s+href="\/content\/([^"]+)"/g
+
+		for (const match of proof.matchAll(content_link_regex)) {
+			const id = match[1]
+
+			if (!content_ids.has(id)) {
+				throw new Error(
+					`${error_prefix} has a link to "${id}" which does not exist:\n"${proof}"`,
+				)
+			}
+		}
+	}
+
+	console.info(`✅ Link targets exist`)
 }
