@@ -11,6 +11,7 @@ tags:
 
 related_functors:
   - forget_topology
+  - pi_1
 
 satisfied_properties:
   - property: preserves products

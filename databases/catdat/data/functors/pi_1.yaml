@@ -1,0 +1,59 @@
+id: pi_1
+name: fundamental group functor
+notation: $\pi_1$
+source: Top_*
+target: Grp
+description: The fundamental group $\pi_1(X,x_0)$ of a pointed topological space $(X,x_0)$ is the group of homotopy classes of loops at $x_0$. The group operation is concatenation of paths. For example, we have $\pi_1(S^1,1) \cong \IZ$ (see Hatcher's <a href="https://pi.math.cornell.edu/~hatcher/AT/ATpage.html" target="_blank">Algebraic Topology</a>, Theorem 1.7).
+nlab_link: https://ncatlab.org/nlab/show/fundamental+group
+
+tags:
+  - topology
+
+related_functors:
+  - pi_0
+
+satisfied_properties:
+  - property: preserves products
+    proof: This is straightforward to check. A reference for binary products is Theorem III.2.6 in Bredon's <a href="https://doi.org/10.1007/978-1-4757-6848-0" target="_blank">Topology and Geometry</a>. The general case works exactly the same.
+
+  - property: right-invertible
+    proof: The classifying space $BG$ of a group $G$ is functorial in $G$ and satisfies $\pi_1(BG) \cong G$; see Hatcher's <a href="https://pi.math.cornell.edu/~hatcher/AT/ATpage.html" target="_blank">Algebraic Topology</a>, Example 1B.7.
+
+unsatisfied_properties:
+  - property: conservative
+    proof: 'The inclusion map $(\{0\},0) \hookrightarrow ([0,1],0)$ induces an isomorphism of groups $\pi_1(\{0\},0) \to \pi_1([0,1],0)$ (both groups are trivial), but is not an isomorphism itself.'
+
+  - property: faithful
+    proof: 'Any two pointed continuous maps $(\IR,0) \to (\IR,0)$, such as $x \mapsto \pm x$, have the same image under $\pi_1$ since $\pi_1(\IR,0)$ is the trivial group. More generally, homotopic pointed maps have the same image under $\pi_1$.'
+
+  - property: full
+    proof: See <a href="https://math.stackexchange.com/questions/414093" target="_blank">MSE/414093</a>.
+
+  - property: essentially injective
+    proof: We have $\pi_1(\{0\},0) \cong \pi_1([0,1],0)$ (both groups are trivial), but $(\{0\},0) \not\cong ([0,1],0)$.
+
+  - property: preserves monomorphisms
+    proof: The functor $\pi_1$ maps the embedding $(S^1,1) \hookrightarrow (\IC,1)$ to the trivial group homomorphism $\IZ \to \{1\}$, which is not injective.
+
+  - property: preserves epimorphisms
+    proof: The functor $\pi_1$ maps the epimorphism $(\IR,0) \to (S^1,1)$, $t \mapsto e^{2 \pi i t}$, to the trivial group homomorphism $\{1\} \to \IZ$, which is not surjective.
+
+  - property: preserves reflexive coequalizers
+    proof: 'The previous counterexample of an epimorphism $f : (\IR,0) \to (S^1,1)$ that is not preserved by $\pi_1$ is actually an open map and hence a regular epimorphism, and in <a href="/category/Top_*">$\Top_*$</a>, every regular epimorphism $f : X \to Y$ is the coequalizer of the reflexive pair $p_1,p_2 : X \times_Y X \rightrightarrows Y$.'
+
+  - property: preserves binary coproducts
+    proof: See <a href="https://math.stackexchange.com/questions/3991443" target="_blank">MSE/3991443</a> or <a href="https://math.stackexchange.com/questions/2788471" target="_blank">MSE/2788471</a> for counterexamples. See <a href="https://math.stackexchange.com/questions/4625240" target="_blank">MSE/4625240</a> for conditions which binary products are preserved.
+
+  - property: finitary
+    proof: >-
+      Consider the sequence of pointed spaces
+      $$(S^1,1) \xrightarrow{f} (S^1,1) \xrightarrow{f} (S^1,1) \xrightarrow{f} \cdots \tag{S}$$
+      where $f(z) \coloneqq z^2$. The induced sequence of fundamental groups is isomorphic to
+      $$\IZ \xrightarrow{2} \IZ \xrightarrow{2} \IZ \xrightarrow{2} \cdots,$$
+      whose colimit is $\IZ[1/2]$, the group of dyadic rationals.
+      In contrast, since $f$ is a surjective open map, the colimit $(X,x_0)$ of (S) is a quotient of $(S^1,1)$, namely $(S^1 / G,[1])$, where $G \subseteq S^1$ is the subgroup of elements $a \in S^1$ satisfying $a^{2^n}=1$ for some $n \in \IN$.
+      The quotient $S^1 / G$ is indiscrete: any non-empty open subset pulls back to a non-empty open subset of $S^1$ that is $G$-invariant, and this must be all of $S^1$ since $G \subseteq S^1$ is dense.
+      Now it is easy to check that the fundamental group of an indiscrete pointed space is trivial. This proves that $\pi_1$ does not preserve the colimit of (S).
+
+  - property: cofinitary
+    proof: See <a href="https://math.stackexchange.com/questions/3680659" target="_blank">MSE/3680659</a>.
