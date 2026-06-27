@@ -1,4 +1,4 @@
-id: Top*
+id: Top_*
 name: category of pointed topological spaces
 notation: $\Top_*$
 objects: pointed topological spaces
@@ -10,7 +10,7 @@ tags:
   - topology
 
 related_categories:
-  - Set*
+  - Set_*
   - Top
 
 satisfied_properties:
@@ -52,11 +52,11 @@ satisfied_properties:
     proof: Since embeddings are regular monomorphisms in this category (see below) and hence strong monomorphisms, it suffices to prove that the canonical morphism $X \vee Y \hookrightarrow X \times Y$ is an embedding. For a proof, see <a href="https://math.stackexchange.com/questions/4055988" target="_blank">MSE/4055988</a>.
 
   - property: CIP
-    proof: This follows since <a href="/category/Set*">$\Set_*$</a> has this property and the forgetful functor preserves products and coproducts.
+    proof: This follows since <a href="/category/Set_*">$\Set_*$</a> has this property and the forgetful functor preserves products and coproducts.
 
   - property: cocartesian cofiltered limits
     proof: >-
-      We continue the proof for <a href="/category/Set*">$\Set_*$</a> by showing that the natural bijective map
+      We continue the proof for <a href="/category/Set_*">$\Set_*$</a> by showing that the natural bijective map
       $$\textstyle \alpha : X \vee \lim_i Y_i \to \lim_i (X \vee Y_i)$$
       is open. It suffices to consider open sets of two types: (1) If $U \subseteq X$ is open, the $\alpha$-image of $U \vee \lim_i Y_i$ is $p_{i_0}^{-1}(U \vee Y_{i_0})$ for any chosen index $i_0$, hence open. (2) If $i$ is an index and $V_i \subseteq Y_i$ is open, then the $\alpha$-image of $X \vee (p_i^{-1}(V_i) \cap \lim_i Y_i)$ is $p_i^{-1}(X \vee V_i)$, hence open.
 
@@ -93,13 +93,13 @@ unsatisfied_properties:
     proof: 'The image of $X \vee Y$ in $X \times Y$ is just $\{(x,0) : x \in X\} \cup \{(0,y) : y \in Y\}$ (where $0$ denotes the base point), which is clearly a proper subset when both $X,Y$ are non-trivial.'
 
   - property: regular quotient object classifier
-    proof: We can recycle the proof for <a href="/category/Set*">$\Set_*$</a> using discrete topological spaces.
+    proof: We can recycle the proof for <a href="/category/Set_*">$\Set_*$</a> using discrete topological spaces.
 
   - property: coaccessible
-    proof: 'We can adjust the proof for <a href="/category/Top">$\Top$</a> as follows: Assume $\Top_*$ is coaccessible. Let $S_0=\{x,*\}$ be the pointed topological space such that $\{*\}$ is the only non-trivial open set, and let $S_1=\{x,*\}$ be the pointed space such that $\{x\}$ is the only non-trivial open set. Let $p_i : S_i \to \{x,*\}$ be the identity function to the two-element indiscrete pointed space. Then, a pointed topological space is discrete if and only if it is projective to the morphisms $p_0$ and $p_1$. This implies that the full subcategory spanned by all discrete pointed spaces, which is equivalent to $\Set_*$, is coaccessible by Prop. 4.7 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>. However, since <a href="/category/Set*">$\Set_*$</a> is not coaccessible, this is a contradiction.'
+    proof: 'We can adjust the proof for <a href="/category/Top">$\Top$</a> as follows: Assume $\Top_*$ is coaccessible. Let $S_0=\{x,*\}$ be the pointed topological space such that $\{*\}$ is the only non-trivial open set, and let $S_1=\{x,*\}$ be the pointed space such that $\{x\}$ is the only non-trivial open set. Let $p_i : S_i \to \{x,*\}$ be the identity function to the two-element indiscrete pointed space. Then, a pointed topological space is discrete if and only if it is projective to the morphisms $p_0$ and $p_1$. This implies that the full subcategory spanned by all discrete pointed spaces, which is equivalent to $\Set_*$, is coaccessible by Prop. 4.7 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>. However, since <a href="/category/Set_*">$\Set_*$</a> is not coaccessible, this is a contradiction.'
 
   - property: cofiltered-limit-stable epimorphisms
-    proof: We already know that <a href="/category/Set*">$\Set_*$</a> does not have this property. Now apply the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> to the functor $\Set_* \to \Top_*$ that equips a pointed set with the indiscrete topology.
+    proof: We already know that <a href="/category/Set_*">$\Set_*$</a> does not have this property. Now apply the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> to the functor $\Set_* \to \Top_*$ that equips a pointed set with the indiscrete topology.
 
   - property: effective congruences
     proof: Suppose that $\Top_*$ had effective congruences. Then by <a href="/content/coslice-effective-congruences">this result</a>, <a href="/category/Top">$\Top$</a> would also have effective congruences, which we know is not the case.

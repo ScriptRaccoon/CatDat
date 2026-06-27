@@ -1,4 +1,4 @@
-id: Set*
+id: Set_*
 name: category of pointed sets
 notation: $\Set_*$
 objects: pointed sets
@@ -11,7 +11,7 @@ tags:
 
 related_categories:
   - Set
-  - Top*
+  - Top_*
 
 satisfied_properties:
   - property: locally small
