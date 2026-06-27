@@ -55,7 +55,7 @@
 	<ul class="with-margins">
 		{#if property.dual_property_id}
 			<li>
-				<strong>Dual property:</strong>
+				<strong><a href="/content/dual-properties">Dual property:</a></strong>
 				<a href={get_property_url(property.dual_property_id, type)}
 					>{property.dual_property_id}</a
 				>
