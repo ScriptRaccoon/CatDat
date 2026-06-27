@@ -1,6 +1,6 @@
 id: right-invertible
 relation: is
-description: 'A <i>right inverse</i> of a functor $F : \C \to \D$ is a functor $G : \D \to \C$ satisfying $F \circ G \cong \id_{\D}$. We do not require $F \circ G = \id_{\D}$ here, which is often too strict. A functor is called <i>right-invertible</i> when it has a right inverse. This notion is self-dual in the sense that $F : \C \to \D$ is right-invertible iff $F^{\op} : \C^{\op} \to \D^{\op}$ is right-invertible.'
+description: 'A <i>right inverse</i> of a functor $F : \C \to \D$ is a functor $G : \D \to \C$ satisfying $F \circ G \cong \id_{\D}$. We do not require $F \circ G = \id_{\D}$ here, which is often too strict. A functor is called <i>right-invertible</i> when it has a right inverse.'
 nlab_link: https://ncatlab.org/nlab/show/inverse+functor
 invariant_under_equivalences: true
 dual_property: right-invertible
