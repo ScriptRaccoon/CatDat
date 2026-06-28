@@ -49,7 +49,7 @@ unsatisfied_properties:
     proof: If $\Omega$ is a regular subobject classifier, then by the classification of regular monomorphisms, $\Hom(X,\Omega)$ is isomorphic to the set of closed subspaces of $X$ for any Banach space $X$. For $X = \IC$ this implies that there are exactly two vectors in $\Omega$ with norm $\leq 1$, which is absurd. (For $\Omega = 0$ there is just one, and for $\Omega \neq 0$ there are infinitely many.)
 
   - property: unital
-    proof: See <a href="https://math.stackexchange.com/questions/5033161" target="_blank">MSE/5033161</a>.
+    proof: The canonical morphism $X \sqcup Y \to X \times Y$ is injective, and therefore a monomorphism. Hence, if it were also a strong epimorphism, it would be an isomorphism. However, for example, when $X = Y = \IC$, the norms do not agree.
 
   - property: counital
     proof: The canonical morphism $X \sqcup Y \to X \times Y$ is surjective, and therefore an epimorphism. Hence, if it were also a strong monomorphism, it would be an isomorphism. However, for example, when $X = Y = \IC$, the norms do not agree.
