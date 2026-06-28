@@ -1,6 +1,6 @@
 id: counital
 relation: is
-description: 'A category is <i>counital</i> if its dual is unital, i.e., it has a zero object, finite colimits, and for all objects $X,Y$ the two morphisms $(\id_X;0) : X \sqcup Y \twoheadrightarrow X$ and $(0;\id_Y) : X \sqcup Y \twoheadrightarrow Y$ are jointly strongly monomorphic. When products exist, the canonical morphism $X \sqcup Y \to X \times Y$ therefore must be a strong monomorphism.'
+description: 'A category is <i>counital</i> if its dual is unital, i.e., it has a zero object, finite colimits, and for all objects $X,Y$ the two morphisms $(\id_X;0) : X \sqcup Y \twoheadrightarrow X$ and $(0;\id_Y) : X \sqcup Y \twoheadrightarrow Y$ are jointly strongly monomorphic. When binary products exist, the canonical morphism $X \sqcup Y \to X \times Y$ therefore must be a <a href="https://ncatlab.org/nlab/show/strong+monomorphism" target="_blank">strong monomorphism</a>.'
 dual_property: unital
 invariant_under_equivalences: true
 

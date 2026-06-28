@@ -51,6 +51,9 @@ unsatisfied_properties:
   - property: unital
     proof: See <a href="https://math.stackexchange.com/questions/5033161" target="_blank">MSE/5033161</a>.
 
+  - property: counital
+    proof: The canonical morphism $X \sqcup Y \to X \times Y$ is surjective, and therefore an epimorphism. Hence, if it were also a strong monomorphism, it would be an isomorphism. However, for example, when $X = Y = \IC$, the norms do not agree.
+
   - property: co-Malcev
     proof: See the comments to <a href="https://mathoverflow.net/a/509555/2841" target="_blank">MO/509552</a>.
 
