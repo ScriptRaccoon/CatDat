@@ -86,3 +86,14 @@ special_morphisms:
   regular monomorphisms:
     description: closed embeddings
     proof: The non-trivial direction follows from the <a href="https://math.stackexchange.com/questions/319867" target="_blank">well-known fact</a> that for every closed subspace of a Banach space its quotient space is again a Banach space.
+  regular epimorphisms:
+    description: >-
+      For a linear contraction $f : V \to W$ the following are equivalent: (1) $f$ is a regular epimorphism. (2) $f$ is surjective and the norm on $W$ is given by $|w| = \inf \{|v| : f(v) = w\}$. (3) $f$ is surjective and $f$ maps the open unit ball of $V$ onto the open unit ball of $W$.
+    proof: >-
+      (1) implies (2): This follows immediately from the concrete construction of coequalizers, and the quotient Banach space $V/U$ in particular.
+
+      (2) implies (1): Let $U \coloneqq \ker(f)$. Then $U$ is a closed subspace of $V$, and $f$ induces a bijective linear contraction $\tilde{f} : V/U \to W$. It is isometric by assumption on $f$ and the definition of the norm on $V/U$. Thus, $\tilde{f}$ is an isomorphism. Since $V/U$ is the cokernel of $U \hookrightarrow V$, it follows that $f$ is a regular epimorphism.
+
+      (2) implies (3): Let $w \in W$ be an element with $|w| < 1$. Since $|w|$ is the infimum of all $|v|$ with $f(v)=w$, there is some $v$ with $f(v)=w$ and $|v| < 1$.
+
+      (3) implies (2): Let $w \in W$. Since $f$ is a linear contraction, the inequality $|w| \leq \inf \{|v| : f(v) = w\}$ holds. Let $\varepsilon > 0$. Consider $w' \coloneqq w / (|w| + \varepsilon)$. Then $|w'| < 1$. Thus, by assumption, there is some $v' \in V$ with $|v'| < 1$ and $f(v') =w'$. Let $v \coloneqq (|w| + \varepsilon) v'$. Then $f(v) = w$ and $|v| < |w| + \varepsilon$. Thus, the infimum in question is $\leq |w| + \varepsilon$, for every $\varepsilon > 0$, and hence $\leq |w|$.
