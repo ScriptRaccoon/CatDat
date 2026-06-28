@@ -35,6 +35,13 @@ satisfied_properties:
   - property: cocartesian cofiltered limits
     proof: 'If $X$ is a Banach space and $(Y_i)$ is a cofiltered diagram of Banach spaces, the canonical map $X \oplus \lim_i Y_i \to \lim_i (X \oplus Y_i)$ is an isomorphism: Since the forgetful functor $\Ban \to \Vect$ preserves finite coproducts and all limits, and $\Vect$ has the claimed property (see <a href="/category-implication/biproducts_cartesian_filtered_colimits">here</a>), the canonical map is bijective. It remains to show that it is isometric. For $(x,y) \in X \oplus \lim_i Y_i$ the norm in the domain is $|x| + \sup_i |y_i|$, and the norm in the codomain is $\sup_i (|x| + |y_i|)$, and these clearly agree.'
 
+  - property: regular
+    proof: >-
+      It suffices to prove that regular epimorphisms are stable under pullbacks. We will use their classification below.
+      So let $f : V \to W$ be a regular epimorphism of Banach spaces and let $g : T \to W$ be any morphism. We need to show that the projection $V \times_W T \to T$ is a regular epimorphism.
+      Clearly, it is surjective since $f$ is surjective. Now let $t \in T$ be an element of norm $<1$. Since $g$ is a linear contraction, $g(t)$ has norm $<1$. Since $f$ is a regular epimorphism, there is some $v \in V$ with norm $<1$ and $f(v) = g(t)$.
+      Then $(v,t) \in V \times_W T$ has norm $\max(|v|,|t|) < 1$ and provides a preimage of $t$.
+
 unsatisfied_properties:
   - property: skeletal
     proof: This is trivial.
