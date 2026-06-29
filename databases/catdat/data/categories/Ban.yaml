@@ -56,6 +56,42 @@ satisfied_properties:
       \end{align*}$$
       This shows that the infimum is precisely $|t|$.
 
+  - property: effective congruences
+    proof: >-
+      Let $R \hookrightarrow X \times X$ be a congruence in $\Ban$. We may assume that it is an inclusion of vector spaces. Since the forgetful functor $\Ban \to \Vect$ preserves finite limits, the congruence yields a congruence in $\Vect$, which we understand well:
+      It is fully classified by the subspace $U \coloneqq \{x \in X : (x,0) \in R\}$ via $R = \{(x,y) \in X \times X : x-y \in U\}$.
+
+
+      Since $R \hookrightarrow X \times X$ is a linear contraction, the norm $|{-}|_R$ on $R$ satisfies
+      $$\max(|x|,|y|) \leq |(x,y)|_R.$$
+      We claim that this is an equality, i.e. that $R \hookrightarrow X \times X$ is an isometry.
+
+
+      Since the reflexivity morphism $X \to R$, $x \mapsto (x,x)$ is a split monomorphism, it is isometric, i.e.
+      $$|(x,x)|_R = |x|.$$
+      Since the transitivity morphism $R \times_X R \to R$ is a linear contraction and the fiber product carries the $\max$-norm, we have
+      $$|(x,z)|_R \leq \max(|(x,y)|_R, |(y,z)|_R)$$
+      whenever $(x,y) \in R$ and $(y,z) \in R$.
+
+
+      Now let $(x,z) \in R$ and define $y \coloneqq \frac{1}{2} (x + z)$. Then
+      $$(x,y) = \tfrac{1}{2} (x,x) + \tfrac{1}{2} (x,z)$$
+      and likewise
+      $$(y,z) = \tfrac{1}{2} (z,z) + \tfrac{1}{2} (x,z)$$
+      are contained in $R$. We have
+      $$|(x,y)_R| \leq \tfrac{1}{2} |x| + \tfrac{1}{2} |(x,z)|_R$$
+      and likewise
+      $$|(y,z)|_R \leq \tfrac{1}{2} |z| + \tfrac{1}{2} |(x,z)|_R$$
+      Together with the transitivity bound we obtain
+      $$\begin{align*}
+      |(x,z)|_R & \leq \max(|(x,y)|_R, |(y,z)|_R) \\
+      & \leq \tfrac{1}{2} \max(|x|,|z|) + \tfrac{1}{2} |(x,z)|_R,
+      \end{align*}$$
+      which proves the claim $|(x,z)|_R \leq \max(|x|,|z|)$.
+
+
+      Since $R \hookrightarrow X \times X$ is an isometry, $R$ is a closed subspace of $X \times X$. It follows that also $U$ is a closed subspace of $X$. Finally, $R$ is the kernel pair of the projection $X \to X/U$ since this is true by construction on the level of vector spaces and the kernel pair carries the $\max$-norm, just like $R$.
+
 unsatisfied_properties:
   - property: skeletal
     proof: This is trivial.
