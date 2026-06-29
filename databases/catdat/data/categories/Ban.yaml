@@ -98,8 +98,14 @@ special_morphisms:
     description: linear contractions with dense image
     proof: 'Let $f : X \to Y$ be an epimorphism of Banach spaces. The subspace $U \coloneqq \overline{f(X)} \subseteq Y$ is closed. It is well-known that the quotient $Y/U$ is also a Banach space with a projection $p : Y \to Y/U$. Since $p \circ f = 0 = 0 \circ f$, we infer $p = 0$, so that $U = Y$.'
   regular monomorphisms:
-    description: closed embeddings
-    proof: The non-trivial direction follows from the <a href="https://math.stackexchange.com/questions/319867" target="_blank">well-known fact</a> that for every closed subspace of a Banach space its quotient space is again a Banach space.
+    description: >-
+      For a linear contraction $f : X \to Y$ the following are equivalent: (1) $f$ is a regular monomorphism. (2) $f$ is isometric. (3) $f$ is isomorphic to the inclusion of a closed subspace of $Y$.
+    proof: >-
+      (1) implies (2): This follows immediately from the concrete construction of equalizers.
+
+      (2) implies (3): The image of $f$ is complete, hence closed. The rest is clear.
+
+      (3) implies (1): If $U \subseteq Y$ is a closed subspace, then the inclusion is the kernel of the projection $Y \to Y/U$, where $Y/U$ is the <a href="https://math.stackexchange.com/questions/319867" target="_blank">well-known</a> quotient Banach space.
   regular epimorphisms:
     description: >-
       For a linear contraction $f : V \to W$ the following are equivalent: (1) $f$ is a regular epimorphism. (2) The norm on $W$ is given by $|w| = \inf \{|v| : f(v) = w\}$. (3) $f$ maps the open unit ball of $V$ onto the open unit ball of $W$.
