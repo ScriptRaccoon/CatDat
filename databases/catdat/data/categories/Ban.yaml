@@ -55,6 +55,13 @@ unsatisfied_properties:
   - property: regular subobject classifier
     proof: If $\Omega$ is a regular subobject classifier, then by the classification of regular monomorphisms, $\Hom(X,\Omega)$ is isomorphic to the set of closed subspaces of $X$ for any Banach space $X$. For $X = \IC$ this implies that there are exactly two vectors in $\Omega$ with norm $\leq 1$, which is absurd. (For $\Omega = 0$ there is just one, and for $\Omega \neq 0$ there are infinitely many.)
 
+  - property: regular quotient object classifier
+    proof: >-
+      Assume that $\Psi$ is a regular quotient object classifier in $\Ban$. For a Banach space $V$ let $S(V)$ be the set of closed subspaces of $V$. Then for any Banach space $V$ the map
+      $$\Hom(\Psi,V) \to S(V), \quad f \mapsto \overline{\im(f)}$$
+      is bijective. In particular, there is a morphism $f : \Psi \to V$ with dense image, i.e. an epimorphism. But this contradicts the already established fact that $\Ban$ is well-copowered (since it is locally presentable).
+      Alternatively, we may use that for every cardinal $\kappa$ the Banach space $\ell^2(\kappa^+)$ has no dense subset of size $\kappa$.
+
   - property: unital
     proof: The canonical morphism $X \sqcup Y \to X \times Y$ is injective, and therefore a monomorphism. Hence, if it were also a strong epimorphism, it would be an isomorphism. However, for example, when $X = Y = \IC$, the norms do not agree.
 
