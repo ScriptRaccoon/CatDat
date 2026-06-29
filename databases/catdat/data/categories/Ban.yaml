@@ -38,9 +38,23 @@ satisfied_properties:
   - property: regular
     proof: >-
       It suffices to prove that regular epimorphisms are stable under pullbacks. We will use their classification via open unit balls below.
-      So let $f : X \to Y$ be a regular epimorphism of Banach spaces and let $g : T \to Y$ be any morphism. We need to show that the projection $X \times_Y T \to X$ is a regular epimorphism.
+      So let $f : X \to Y$ be a regular epimorphism and let $g : T \to Y$ be any morphism. We need to show that the projection $X \times_Y T \to X$ is a regular epimorphism.
       Let $t \in T$ be an element of norm $<1$. Since $g$ is a linear contraction, $g(t)$ has norm $<1$. Since $f$ is a regular epimorphism, there is some $x \in X$ with norm $<1$ and $f(x) = g(t)$.
       Then $(x,t) \in X \times_Y T$ is a preimage of $t$ with norm $\max(|x|,|t|) < 1$.
+
+  - property: coregular
+    proof: >-
+      It suffices to prove that regular monomorphisms are stable under pushouts. We will use their classification as isometric linear maps below.
+      So let $i : X \to Y$ be an isometric linear map and let $f : X \to T$ be any morphism. We need to show that the linear contraction $\iota : T \to T \sqcup_X Y$ is isometric as well. The pushout can be constructed as the quotient of the direct sum $T \oplus Y$, equipped with the $1$-norm, modulo the closure of the subspace containing all $(-f(x),i(x))$ for $x \in X$. Using that $i$ is an isometry, it is easily checked that this subspace is already closed.
+      For $t \in T$ the norm of $\iota(t) = [(t,0)]$ is the infimum of the norms of $(t,0) + (-f(x),i(x)) = (t - f(x), i(x))$ for $x \in X$.
+      By taking $x=0$ we see that the infimum is $\leq |t|$.
+      On the other hand, for any $x \in X$ we compute
+      $$\begin{align*}
+      |(t - f(x), i(x))| & = |t - f(x)| + |i(x)| \\
+      & = |t - f(x)| + |x| \\
+      & \geq |t - f(x)| + |f(x)| \geq |t|.
+      \end{align*}$$
+      This shows that the infimum is precisely $|t|$.
 
 unsatisfied_properties:
   - property: skeletal
