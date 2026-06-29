@@ -37,10 +37,10 @@ satisfied_properties:
 
   - property: regular
     proof: >-
-      It suffices to prove that regular epimorphisms are stable under pullbacks. We will use their classification below.
+      It suffices to prove that regular epimorphisms are stable under pullbacks. We will use their classification via open unit balls below.
       So let $f : V \to W$ be a regular epimorphism of Banach spaces and let $g : T \to W$ be any morphism. We need to show that the projection $V \times_W T \to T$ is a regular epimorphism.
-      Clearly, it is surjective since $f$ is surjective. Now let $t \in T$ be an element of norm $<1$. Since $g$ is a linear contraction, $g(t)$ has norm $<1$. Since $f$ is a regular epimorphism, there is some $v \in V$ with norm $<1$ and $f(v) = g(t)$.
-      Then $(v,t) \in V \times_W T$ has norm $\max(|v|,|t|) < 1$ and provides a preimage of $t$.
+      Let $t \in T$ be an element of norm $<1$. Since $g$ is a linear contraction, $g(t)$ has norm $<1$. Since $f$ is a regular epimorphism, there is some $v \in V$ with norm $<1$ and $f(v) = g(t)$.
+      Then $(v,t) \in V \times_W T$ is a preimage of $t$ with norm $\max(|v|,|t|) < 1$.
 
 unsatisfied_properties:
   - property: skeletal
@@ -95,8 +95,10 @@ special_morphisms:
     proof: The non-trivial direction follows from the <a href="https://math.stackexchange.com/questions/319867" target="_blank">well-known fact</a> that for every closed subspace of a Banach space its quotient space is again a Banach space.
   regular epimorphisms:
     description: >-
-      For a linear contraction $f : V \to W$ the following are equivalent: (1) $f$ is a regular epimorphism. (2) $f$ is surjective and the norm on $W$ is given by $|w| = \inf \{|v| : f(v) = w\}$. (3) $f$ is surjective and $f$ maps the open unit ball of $V$ onto the open unit ball of $W$.
+      For a linear contraction $f : V \to W$ the following are equivalent: (1) $f$ is a regular epimorphism. (2) The norm on $W$ is given by $|w| = \inf \{|v| : f(v) = w\}$. (3) $f$ maps the open unit ball of $V$ onto the open unit ball of $W$.
     proof: >-
+      First of all, notice that all three conditions imply that $f$ is surjective.
+
       (1) implies (2): This follows immediately from the concrete construction of coequalizers, and the quotient Banach space $V/U$ in particular.
 
       (2) implies (1): Let $U \coloneqq \ker(f)$. Then $U$ is a closed subspace of $V$, and $f$ induces a bijective linear contraction $\tilde{f} : V/U \to W$. It is isometric by assumption on $f$ and the definition of the norm on $V/U$. Thus, $\tilde{f}$ is an isomorphism. Since $V/U$ is the cokernel of $U \hookrightarrow V$, it follows that $f$ is a regular epimorphism.
