@@ -76,9 +76,9 @@ special_objects:
   terminal object:
     description: trivial Banach space
   coproducts:
-    description: 'The coproduct of a family of Banach spaces $(B_i)$ is the subspace $\bigl\{x \in \prod_i B_i : \sum_i |x_i| < \infty\bigr\}$ equipped with the $1$-norm $|x| \coloneqq \sum_i |x_i|$.'
+    description: 'The coproduct of a family of Banach spaces $(B_i,|{-}|)_{i \in I}$ is the subspace $\bigl\{x \in \prod_{i \in I} B_i : \sum_{i \in I} |x_i| < \infty\bigr\}$ of their vector space product equipped with the $1$-norm $|x|_1 \coloneqq \sum_{i \in I} |x_i|$.'
   products:
-    description: direct products with the $\sup$-norm
+    description: 'The product of a family of Banach spaces $(B_i,|{-}|)_{i \in I}$ is the subspace $\bigl\{x \in \prod_{i \in I} B_i : \sup_{i \in I} |x_i| < \infty\bigr\}$ of their vector space product equipped with the $\sup$-norm $|x|_\infty \coloneqq \sup_{i \in I} |x_i|$.'
 
 special_morphisms:
   isomorphisms:
