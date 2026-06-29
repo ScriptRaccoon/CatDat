@@ -38,28 +38,28 @@ satisfied_properties:
   - property: regular
     proof: >-
       It suffices to prove that regular epimorphisms are stable under pullbacks. We will use their classification via open unit balls below.
-      So let $f : V \to W$ be a regular epimorphism of Banach spaces and let $g : T \to W$ be any morphism. We need to show that the projection $V \times_W T \to T$ is a regular epimorphism.
-      Let $t \in T$ be an element of norm $<1$. Since $g$ is a linear contraction, $g(t)$ has norm $<1$. Since $f$ is a regular epimorphism, there is some $v \in V$ with norm $<1$ and $f(v) = g(t)$.
-      Then $(v,t) \in V \times_W T$ is a preimage of $t$ with norm $\max(|v|,|t|) < 1$.
+      So let $f : X \to Y$ be a regular epimorphism of Banach spaces and let $g : T \to Y$ be any morphism. We need to show that the projection $X \times_Y T \to X$ is a regular epimorphism.
+      Let $t \in T$ be an element of norm $<1$. Since $g$ is a linear contraction, $g(t)$ has norm $<1$. Since $f$ is a regular epimorphism, there is some $x \in X$ with norm $<1$ and $f(x) = g(t)$.
+      Then $(x,t) \in X \times_Y T$ is a preimage of $t$ with norm $\max(|x|,|t|) < 1$.
 
 unsatisfied_properties:
   - property: skeletal
     proof: This is trivial.
 
   - property: balanced
-    proof: The linear map $\IC \to \IC$, $x \mapsto x/2$ is a counterexample. It is bijective, hence a mono- and epimorphism, but not isometric and therefore no isomorphism.
+    proof: The linear map $\IC \to \IC$, $x \mapsto x/2$ with the usual norm on $\IC$ is a counterexample. It is bijective, hence a mono- and epimorphism, but not isometric and therefore no isomorphism.
 
   - property: CSP
-    proof: By using the concrete description of products and coproducts, for the constant family $X_n = \IC$ the canonical morphism $\coprod_n X_n \to \prod_n X_n$ becomes the canonical inclusion map $\ell^1 \hookrightarrow \ell^\infty$. This is not an epimorphism (i.e., has no dense image) since the closure of the image is precisely $c_0$. So for example, $(1,1,\dotsc)$ is not contained in the closure of the image.
+    proof: By using the concrete description of products and coproducts, for the constant family $X_n = \IC$ equipped with the usual norm, the canonical morphism $\coprod_n X_n \to \prod_n X_n$ becomes the canonical inclusion map $\ell^1 \hookrightarrow \ell^\infty$. This is not an epimorphism (i.e., has no dense image) since the closure of the image is precisely $c_0$. So for example, $(1,1,\dotsc)$ is not contained in the closure of the image.
 
   - property: regular subobject classifier
     proof: If $\Omega$ is a regular subobject classifier, then by the classification of regular monomorphisms, $\Hom(X,\Omega)$ is isomorphic to the set of closed subspaces of $X$ for any Banach space $X$. For $X = \IC$ this implies that there are exactly two vectors in $\Omega$ with norm $\leq 1$, which is absurd. (For $\Omega = 0$ there is just one, and for $\Omega \neq 0$ there are infinitely many.)
 
   - property: regular quotient object classifier
     proof: >-
-      Assume that $\Psi$ is a regular quotient object classifier in $\Ban$. For a Banach space $V$ let $S(V)$ be the set of closed subspaces of $V$. Then for any Banach space $V$ the map
-      $$\Hom(\Psi,V) \to S(V), \quad f \mapsto \overline{\im(f)}$$
-      is bijective. In particular, there is a morphism $f : \Psi \to V$ with dense image, i.e. an epimorphism. But this contradicts the already established fact that $\Ban$ is well-copowered (since it is locally presentable).
+      Assume that $\Psi$ is a regular quotient object classifier in $\Ban$. For a Banach space $X$ let $S(X)$ be the set of closed subspaces of $X$. Then for any Banach space $X$ the map
+      $$\Hom(\Psi,X) \to S(X), \quad f \mapsto \overline{\im(f)}$$
+      is bijective. In particular, there is a morphism $f : \Psi \to X$ with dense image, i.e. an epimorphism. But this contradicts the already established fact that $\Ban$ is well-copowered (since it is locally presentable).
       Alternatively, we may use that for every cardinal $\kappa$ the Banach space $\ell^2(\kappa^+)$ has no dense subset of size $\kappa$.
 
   - property: unital
@@ -72,10 +72,10 @@ unsatisfied_properties:
     proof: See the comments to <a href="https://mathoverflow.net/a/509555/2841" target="_blank">MO/509552</a>.
 
   - property: filtered-colimit-stable monomorphisms
-    proof: 'The proof is similar to <a href="/category/Met">$\Met$</a>. For $n \geq 1$ let $V_n$ be the Banach space with underlying vector space $\IC$ and the norm $|x|_n \coloneqq \frac{1}{n} |x|$. For $n \leq m$ the identity map provides a morphism $V_n \to V_m$, which is clearly a monomorphism (also an epimorphism by the way, but an isomorphism iff $n=m$). Let $V$ be the colimit of all $V_n$ in the category of semi-normed vector spaces. It is constructed as the colimit in the category of vector spaces with the semi-norm $|x| \coloneqq \inf \{|x|_m : n \leq m \}$ for $x \in V_n$. So clearly, the semi-norm is zero. Hence, the colimit in the category of normed vector spaces is $0$. The colimit in the category of Banach spaces is its completion, also $0$. Thus, the monomorphisms $V_1 \to V_n$ become $V_1 \to 0$ in the colimit.'
+    proof: 'The proof is similar to <a href="/category/Met">$\Met$</a>. For $n \geq 1$ let $X_n$ be the Banach space with underlying vector space $\IC$ and the norm $|x|_n \coloneqq \frac{1}{n} |x|$. For $n \leq m$ the identity map provides a morphism $X_n \to X_m$, which is clearly a monomorphism (also an epimorphism by the way, but an isomorphism iff $n=m$). Let $X$ be the colimit of all $X_n$ in the category of semi-normed vector spaces. It is constructed as the colimit in the category of vector spaces with the semi-norm $|x| \coloneqq \inf \{|x|_m : n \leq m \}$ for $x \in X_n$. So clearly, the semi-norm is zero. Hence, the colimit in the category of normed vector spaces is $0$. The colimit in the category of Banach spaces is its completion, which is also $0$. Thus, the monomorphisms $X_1 \hookrightarrow X_n$ become the zero map $X_1 \to 0$ in the colimit, which is not a monomorphism.'
 
   - property: cofiltered-limit-stable epimorphisms
-    proof: 'We show that epimorphisms are not stable under sequential limits. Let $X_n = Y_n = \IC$ for all $n \geq 0$. The transition morphism $Y_{n+1} \to Y_n$ is the identity, and the transition morphism $X_{n+1} \to X_n$ is $x \mapsto x/2$. The morphisms $X_n \to Y_n$, $x \mapsto x/2^n$ are compatible with the transitions, and they are surjective, hence epimorphisms. Now we check $\lim_n X_n = 0$: An element $(x_n) \in \lim_n X_n$ is a family of complex numbers satisfying $x_n = x_{n+1}/2$ <i>and</i> $\sup_n |x_n| < \infty$. But then $x_n = 2^n x_0$ and this can only be bounded when $x_0=0$. Hence, $0 = \lim_n X_n \to \lim_n Y_n = \IC$ is no epimorphism.'
+    proof: 'We show that epimorphisms are not stable under sequential limits. Let $X_n = Y_n = \IC$ for all $n \geq 0$, equipped with the usual norm. The transition morphism $Y_{n+1} \to Y_n$ is the identity, and the transition morphism $X_{n+1} \to X_n$ is $x \mapsto x/2$. The morphisms $X_n \to Y_n$, $x \mapsto x/2^n$ are compatible with the transitions, and they are surjective, hence epimorphisms. Now we check $\lim_n X_n = 0$: An element $(x_n) \in \lim_n X_n$ is a family of complex numbers satisfying $x_n = x_{n+1}/2$ <i>and</i> $\sup_n |x_n| < \infty$. But then $x_n = 2^n x_0$ and this can only be bounded when $x_0=0$. Hence, $0 = \lim_n X_n \to \lim_n Y_n = \IC$ is no epimorphism.'
 
 special_objects:
   initial object:
@@ -83,9 +83,9 @@ special_objects:
   terminal object:
     description: trivial Banach space
   coproducts:
-    description: 'The coproduct of a family of Banach spaces $(B_i,|{-}|)_{i \in I}$ is the subspace $\bigl\{x \in \prod_{i \in I} B_i : \sum_{i \in I} |x_i| < \infty\bigr\}$ of their vector space product equipped with the $1$-norm $|x|_1 \coloneqq \sum_{i \in I} |x_i|$.'
+    description: 'The coproduct of a family of Banach spaces $(X_i,|{-}|)_{i \in I}$ is the subspace $\bigl\{x \in \prod_{i \in I} X_i : \sum_{i \in I} |x_i| < \infty\bigr\}$ of their vector space product equipped with the $1$-norm $|x|_1 \coloneqq \sum_{i \in I} |x_i|$.'
   products:
-    description: 'The product of a family of Banach spaces $(B_i,|{-}|)_{i \in I}$ is the subspace $\bigl\{x \in \prod_{i \in I} B_i : \sup_{i \in I} |x_i| < \infty\bigr\}$ of their vector space product equipped with the $\sup$-norm $|x|_\infty \coloneqq \sup_{i \in I} |x_i|$.'
+    description: 'The product of a family of Banach spaces $(X_i,|{-}|)_{i \in I}$ is the subspace $\bigl\{x \in \prod_{i \in I} X_i : \sup_{i \in I} |x_i| < \infty\bigr\}$ of their vector space product equipped with the $\sup$-norm $|x|_\infty \coloneqq \sup_{i \in I} |x_i|$.'
 
 special_morphisms:
   isomorphisms:
@@ -108,14 +108,14 @@ special_morphisms:
       (3) implies (1): If $U \subseteq Y$ is a closed subspace, then the inclusion is the kernel of the projection $Y \to Y/U$, where $Y/U$ is the <a href="https://math.stackexchange.com/questions/319867" target="_blank">well-known</a> quotient Banach space.
   regular epimorphisms:
     description: >-
-      For a linear contraction $f : V \to W$ the following are equivalent: (1) $f$ is a regular epimorphism. (2) The norm on $W$ is given by $|w| = \inf \{|v| : f(v) = w\}$. (3) $f$ maps the open unit ball of $V$ onto the open unit ball of $W$.
+      For a linear contraction $f : X \to Y$ the following are equivalent: (1) $f$ is a regular epimorphism. (2) The norm on $Y$ is given by $|y| = \inf \{|x| : f(x) = y\}$. (3) $f$ maps the open unit ball of $X$ onto the open unit ball of $Y$.
     proof: >-
       First of all, notice that all three conditions imply that $f$ is surjective.
 
-      (1) implies (2): This follows immediately from the concrete construction of coequalizers, and the quotient Banach space $V/U$ in particular.
+      (1) implies (2): This follows immediately from the concrete construction of coequalizers, and the quotient Banach space in particular.
 
-      (2) implies (1): Let $U \coloneqq \ker(f)$. Then $U$ is a closed subspace of $V$, and $f$ induces a bijective linear contraction $\tilde{f} : V/U \to W$. It is isometric by assumption on $f$ and the definition of the norm on $V/U$. Thus, $\tilde{f}$ is an isomorphism. Since $V/U$ is the cokernel of $U \hookrightarrow V$, it follows that $f$ is a regular epimorphism.
+      (2) implies (1): Let $U \coloneqq \ker(f)$. Then $U$ is a closed subspace of $X$, and $f$ induces a bijective linear contraction $\tilde{f} : X/U \to Y$. It is isometric by assumption on $f$ and the definition of the norm on $X/U$. Thus, $\tilde{f}$ is an isomorphism. Since $X/U$ is the cokernel of $U \hookrightarrow X$, it follows that $f$ is a regular epimorphism.
 
-      (2) implies (3): Let $w \in W$ be an element with $|w| < 1$. Since $|w|$ is the infimum of all $|v|$ with $f(v)=w$, there is some $v$ with $f(v)=w$ and $|v| < 1$.
+      (2) implies (3): Let $y \in Y$ be an element with $|y| < 1$. Since $|y|$ is the infimum of all $|x|$ with $f(x)=y$, there is some $x$ with $f(x)=y$ and $|x| < 1$.
 
-      (3) implies (2): Let $w \in W$. Since $f$ is a linear contraction, the inequality $|w| \leq \inf \{|v| : f(v) = w\}$ holds. Let $\varepsilon > 0$. Consider $w' \coloneqq w / (|w| + \varepsilon)$. Then $|w'| < 1$. Thus, by assumption, there is some $v' \in V$ with $|v'| < 1$ and $f(v') =w'$. Let $v \coloneqq (|w| + \varepsilon) v'$. Then $f(v) = w$ and $|v| < |w| + \varepsilon$. Thus, the infimum in question is $\leq |w| + \varepsilon$, for every $\varepsilon > 0$, and hence $\leq |w|$.
+      (3) implies (2): Let $y \in Y$. Since $f$ is a linear contraction, the inequality $|y| \leq \inf \{|x| : f(x) = y\}$ holds. Let $\varepsilon > 0$. Consider $y' \coloneqq y / (|y| + \varepsilon)$. Then $|y'| < 1$. Thus, by assumption, there is some $x' \in X$ with $|x'| < 1$ and $f(x') =y'$. Let $x \coloneqq (|y| + \varepsilon) x'$. Then $f(x) = y$ and $|x| < |y| + \varepsilon$. Thus, the infimum in question is $\leq |y| + \varepsilon$, for every $\varepsilon > 0$, and hence $\leq |y|$.
