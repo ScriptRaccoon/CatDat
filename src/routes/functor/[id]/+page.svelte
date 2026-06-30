@@ -1,5 +1,5 @@
 <script lang="ts">
-	import StructureDetailPage from '$components/StructureDetailPage.svelte'
+	import StructureDetailPage from '$pages/StructureDetailPage.svelte'
 
 	let { data } = $props()
 </script>

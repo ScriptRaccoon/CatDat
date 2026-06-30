@@ -2,7 +2,7 @@
 	import TextWithProof from '$components/TextWithProof.svelte'
 	import { faQuestion } from '@fortawesome/free-solid-svg-icons'
 	import Fa from 'svelte-fa'
-	import StructureDetailPage from '$components/StructureDetailPage.svelte'
+	import StructureDetailPage from '$pages/StructureDetailPage.svelte'
 
 	let { data } = $props()
 </script>
