@@ -27,7 +27,7 @@ export function fetch_structures_and_tags(type: StructureType) {
             ORDER BY lower(name)`,
 		sql`
             SELECT t.tag
-            FROM tags t
+            FROM structure_tags t
             WHERE t.type = ${type}
             AND EXISTS (
                 SELECT 1 FROM structure_tag_assignments a

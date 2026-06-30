@@ -79,7 +79,7 @@ function clear_all_tables() {
 		db.prepare(`DELETE FROM related_structures`).run()
 		db.prepare(`DELETE FROM structure_comments`).run()
 		db.prepare(`DELETE FROM structure_tag_assignments`).run()
-		db.prepare(`DELETE FROM tags`).run()
+		db.prepare(`DELETE FROM structure_tags`).run()
 		db.prepare(`DELETE FROM relations`).run()
 
 		// this deletes categories and functors automatically
@@ -98,8 +98,8 @@ function clear_all_tables() {
  * Seeds the data from the global config file `config.yaml`.
  */
 function seed_config() {
-	const tag_insert = db.prepare<[string, StructureType]>(
-		`INSERT INTO tags (tag, type) VALUES (?, ?)`,
+	const structure_tag_insert = db.prepare<[string, StructureType]>(
+		`INSERT INTO structure_tags (tag, type) VALUES (?, ?)`,
 	)
 
 	const relation_insert = db.prepare(
@@ -116,12 +116,12 @@ function seed_config() {
 
 	function insert_config(config: ConfigYaml) {
 		for (const type of STRUCTURES) {
-			for (const tag of config.shared_tags) {
-				tag_insert.run(tag, type)
+			for (const tag of config.structure_tags) {
+				structure_tag_insert.run(tag, type)
 			}
 
 			for (const tag of config[`${type}_tags`]) {
-				tag_insert.run(tag, type)
+				structure_tag_insert.run(tag, type)
 			}
 		}
 

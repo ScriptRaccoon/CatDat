@@ -42,7 +42,7 @@ CREATE TABLE structure_comments (
 
 CREATE INDEX idx_structure_comments ON structure_comments (structure_id);
 
-CREATE TABLE tags (
+CREATE TABLE structure_tags (
     id INTEGER PRIMARY KEY,
     tag TEXT NOT NULL,
     type TEXT NOT NULL,
@@ -56,7 +56,7 @@ CREATE TABLE structure_tag_assignments (
     tag TEXT NOT NULL,
     PRIMARY KEY (structure_id, type, tag),
     FOREIGN KEY (structure_id, type) REFERENCES structures (id, type) ON DELETE CASCADE,
-    FOREIGN KEY (tag, type) REFERENCES tags (tag, type) ON DELETE CASCADE
+    FOREIGN KEY (tag, type) REFERENCES structure_tags (tag, type) ON DELETE CASCADE
 );
 
 CREATE TABLE structure_maps (

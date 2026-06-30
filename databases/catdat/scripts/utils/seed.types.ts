@@ -1,5 +1,5 @@
 export type ConfigYaml = {
-	shared_tags: string[]
+	structure_tags: string[]
 	category_tags: string[]
 	functor_tags: string[]
 	relations: {
