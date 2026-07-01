@@ -108,9 +108,9 @@ to check for redundant assignments of properties to categorical structures.
 
 ## Diagram
 
-This is the database schema as of 17.06.2026; changes may occur.
+This is the database schema as of 01.07.2026; changes may occur.
 
-<img alt="database diagram" src="https://github.com/user-attachments/assets/8625e58a-660b-47f7-8e01-ab74a1286617" />
+<img alt="database diagram" src="https://github.com/user-attachments/assets/cfde0cea-07fa-4538-8ebb-9d97b1c352cc" />
 
 ## Application Database
 
