@@ -10,3 +10,6 @@ related_properties:
   - essentially injective
   - left-invertible
   - pseudomonic
+
+tags:
+  - morphism behavior

@@ -7,3 +7,7 @@ dual_property: preserves initial objects
 related_properties:
   - preserves finite products
   - continuous
+
+tags:
+  - limit preservation
+  - object behavior

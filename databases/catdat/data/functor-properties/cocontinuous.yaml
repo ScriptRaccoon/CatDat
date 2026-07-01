@@ -10,3 +10,6 @@ related_properties:
   - left adjoint
   - preserves coequalizers
   - finitary
+
+tags:
+  - colimit preservation

@@ -7,3 +7,6 @@ dual_property: left exact
 related_properties:
   - exact
   - cocontinuous
+
+tags:
+  - colimit preservation

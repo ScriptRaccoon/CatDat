@@ -7,3 +7,6 @@ dual_property: comonadic
 related_properties:
   - right adjoint
   - faithful
+
+tags:
+  - adjunctions

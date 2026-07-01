@@ -8,3 +8,6 @@ related_properties:
   - continuous
   - left exact
   - preserves coreflexive equalizers
+
+tags:
+  - limit preservation

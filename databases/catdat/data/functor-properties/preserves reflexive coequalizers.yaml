@@ -7,3 +7,6 @@ dual_property: preserves coreflexive equalizers
 related_properties:
   - cocontinuous
   - preserves coequalizers
+
+tags:
+  - colimit preservation

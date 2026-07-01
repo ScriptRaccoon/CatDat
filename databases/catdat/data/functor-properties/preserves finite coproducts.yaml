@@ -9,3 +9,6 @@ related_properties:
   - preserves binary coproducts
   - preserves initial objects
   - cocontinuous
+
+tags:
+  - colimit preservation

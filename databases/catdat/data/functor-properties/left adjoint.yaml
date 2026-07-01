@@ -8,3 +8,6 @@ related_properties:
   - cocontinuous
   - comonadic
   - reflector
+
+tags:
+  - adjunctions

@@ -10,3 +10,6 @@ related_properties:
   - right adjoint
   - preserves equalizers
   - cofinitary
+
+tags:
+  - limit preservation

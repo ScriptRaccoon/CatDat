@@ -7,3 +7,6 @@ dual_property: reflector
 related_properties:
   - right adjoint
   - right-invertible
+
+tags:
+  - adjunctions

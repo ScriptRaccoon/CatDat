@@ -8,3 +8,6 @@ related_properties:
   - preserves finite products
   - preserves terminal objects
   - continuous
+
+tags:
+  - limit preservation

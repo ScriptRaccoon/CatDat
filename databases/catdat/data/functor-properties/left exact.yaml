@@ -7,3 +7,6 @@ dual_property: right exact
 related_properties:
   - exact
   - continuous
+
+tags:
+  - limit preservation

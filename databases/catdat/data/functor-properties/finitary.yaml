@@ -6,3 +6,6 @@ invariant_under_equivalences: true
 dual_property: cofinitary
 related_properties:
   - cocontinuous
+
+tags:
+  - colimit preservation

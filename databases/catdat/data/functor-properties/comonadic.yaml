@@ -7,3 +7,6 @@ dual_property: monadic
 related_properties:
   - left adjoint
   - faithful
+
+tags:
+  - adjunctions

@@ -7,3 +7,7 @@ dual_property: preserves terminal objects
 related_properties:
   - preserves finite coproducts
   - cocontinuous
+
+tags:
+  - colimit preservation
+  - object behavior

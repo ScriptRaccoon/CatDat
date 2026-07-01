@@ -9,3 +9,6 @@ related_properties:
   - preserves binary products
   - preserves terminal objects
   - continuous
+
+tags:
+  - limit preservation

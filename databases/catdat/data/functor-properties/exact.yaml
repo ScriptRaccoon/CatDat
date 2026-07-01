@@ -9,3 +9,7 @@ related_properties:
   - right exact
   - continuous
   - cocontinuous
+
+tags:
+  - limit preservation
+  - colimit preservation

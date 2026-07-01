@@ -9,3 +9,6 @@ related_properties:
   - faithful
   - equivalence
   - pseudomonic
+
+tags:
+  - morphism behavior

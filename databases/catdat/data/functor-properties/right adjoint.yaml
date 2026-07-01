@@ -7,3 +7,6 @@ dual_property: left adjoint
 related_properties:
   - continuous
   - monadic
+
+tags:
+  - adjunctions

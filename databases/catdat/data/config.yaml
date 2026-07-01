@@ -32,7 +32,14 @@ category_property_tags:
   - misc
   - evil
 
-functor_property_tags: []
+functor_property_tags:
+  - limit preservation
+  - colimit preservation
+  - morphism behavior
+  - object behavior
+  - adjunctions
+  - invertibility
+  - misc
 
 relations:
   - relation: is

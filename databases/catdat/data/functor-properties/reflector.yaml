@@ -7,3 +7,6 @@ dual_property: coreflector
 related_properties:
   - left adjoint
   - right-invertible
+
+tags:
+  - adjunctions

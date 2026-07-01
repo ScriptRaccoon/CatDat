@@ -8,3 +8,6 @@ related_properties:
   - full
   - conservative
   - essentially injective
+
+tags:
+  - morphism behavior

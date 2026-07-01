@@ -7,3 +7,6 @@ dual_property: preserves reflexive coequalizers
 related_properties:
   - continuous
   - preserves equalizers
+
+tags:
+  - limit preservation

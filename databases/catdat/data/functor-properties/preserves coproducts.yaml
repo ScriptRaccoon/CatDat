@@ -8,3 +8,6 @@ related_properties:
   - preserves finite coproducts
   - preserves initial objects
   - cocontinuous
+
+tags:
+  - colimit preservation
