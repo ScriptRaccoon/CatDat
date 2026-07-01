@@ -10,3 +10,6 @@ related_properties:
   - copowers
   - countable copowers
   - finite coproducts
+
+tags:
+  - colimits

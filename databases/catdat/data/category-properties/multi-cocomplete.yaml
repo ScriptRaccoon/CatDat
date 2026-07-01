@@ -8,3 +8,6 @@ invariant_under_equivalences: true
 related_properties:
   - cocomplete
   - multi-initial object
+
+tags:
+  - colimits

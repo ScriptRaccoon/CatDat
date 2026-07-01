@@ -10,3 +10,9 @@ related_properties:
   - finite coproducts
   - finite products
   - preadditive
+
+tags:
+  - morphism behavior
+  - limits
+  - colimits
+  - limit–colimit interaction

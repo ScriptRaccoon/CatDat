@@ -8,3 +8,6 @@ invariant_under_equivalences: true
 related_properties:
   - discrete
   - thin
+
+tags:
+  - morphism behavior

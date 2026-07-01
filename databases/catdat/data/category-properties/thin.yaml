@@ -9,3 +9,6 @@ related_properties:
   - core-thin
   - discrete
   - locally finite
+
+tags:
+  - morphism behavior

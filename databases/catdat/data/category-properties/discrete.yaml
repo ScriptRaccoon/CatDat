@@ -8,3 +8,7 @@ invariant_under_equivalences: false
 related_properties:
   - essentially discrete
   - thin
+
+tags:
+  - morphism behavior
+  - evil

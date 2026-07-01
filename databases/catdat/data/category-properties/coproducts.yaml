@@ -9,3 +9,6 @@ related_properties:
   - cocomplete
   - copowers
   - finite coproducts
+
+tags:
+  - colimits

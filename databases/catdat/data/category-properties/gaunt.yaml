@@ -9,3 +9,7 @@ related_properties:
   - core-thin
   - one-way
   - skeletal
+
+tags:
+  - morphism behavior
+  - evil

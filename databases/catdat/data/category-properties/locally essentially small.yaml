@@ -6,3 +6,6 @@ invariant_under_equivalences: true
 
 related_properties:
   - locally small
+
+tags:
+  - size

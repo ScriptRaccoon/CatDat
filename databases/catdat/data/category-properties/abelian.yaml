@@ -11,3 +11,8 @@ related_properties:
   - conormal
   - kernels
   - normal
+  - Grothendieck abelian
+  - split abelian
+
+tags:
+  - abelian

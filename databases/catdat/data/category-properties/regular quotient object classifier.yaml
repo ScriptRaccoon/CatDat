@@ -11,3 +11,6 @@ invariant_under_equivalences: true
 related_properties:
   - finitely cocomplete
   - quotient object classifier
+
+tags:
+  - topos theory

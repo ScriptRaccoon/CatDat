@@ -10,3 +10,6 @@ related_properties:
   - quotient-trivial
   - right cancellative
   - subobject-trivial
+
+tags:
+  - morphism behavior

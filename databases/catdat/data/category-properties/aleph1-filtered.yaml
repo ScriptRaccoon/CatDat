@@ -9,3 +9,6 @@ related_properties:
   - filtered
   - ℵ₁-filtered colimits
   - cocomplete
+
+tags:
+  - morphism behavior

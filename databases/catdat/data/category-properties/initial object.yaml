@@ -8,3 +8,6 @@ invariant_under_equivalences: true
 related_properties:
   - finite coproducts
   - multi-initial object
+
+tags:
+  - colimits

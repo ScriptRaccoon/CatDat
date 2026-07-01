@@ -16,3 +16,6 @@ related_properties:
   - cofiltered limits
   - cofiltered-limit-stable epimorphisms
   - finitely cocomplete
+
+tags:
+  - limit–colimit interaction

@@ -12,3 +12,6 @@ invariant_under_equivalences: true
 related_properties:
   - elementary topos
   - finite products
+
+tags:
+  - topos theory

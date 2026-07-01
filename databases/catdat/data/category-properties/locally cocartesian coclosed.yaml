@@ -7,3 +7,6 @@ invariant_under_equivalences: true
 
 related_properties:
   - cocartesian coclosed
+
+tags:
+  - topos theory

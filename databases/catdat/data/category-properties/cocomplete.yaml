@@ -9,3 +9,6 @@ related_properties:
   - coequalizers
   - coproducts
   - multi-cocomplete
+
+tags:
+  - colimits

@@ -13,3 +13,8 @@ related_properties:
   - finite coproducts
   - finite products
   - zero morphisms
+
+tags:
+  - limits
+  - colimits
+  - limit–colimit interaction

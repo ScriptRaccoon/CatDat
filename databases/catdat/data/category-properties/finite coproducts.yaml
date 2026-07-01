@@ -10,3 +10,6 @@ related_properties:
   - coproducts
   - finite copowers
   - initial object
+
+tags:
+  - colimits

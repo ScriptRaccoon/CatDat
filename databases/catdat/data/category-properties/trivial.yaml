@@ -6,3 +6,6 @@ dual_property: trivial
 invariant_under_equivalences: true
 
 related_properties: []
+
+tags:
+  - misc

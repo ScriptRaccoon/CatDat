@@ -8,3 +8,6 @@ invariant_under_equivalences: true
 related_properties:
   - initial object
   - terminal object
+
+tags:
+  - limit–colimit interaction

@@ -7,3 +7,7 @@ invariant_under_equivalences: true
 
 related_properties:
   - initial object
+
+tags:
+  - colimits
+  - morphism behavior

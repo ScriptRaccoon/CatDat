@@ -8,3 +8,7 @@ invariant_under_equivalences: false
 related_properties:
   - essentially small
   - locally small
+
+tags:
+  - size
+  - evil

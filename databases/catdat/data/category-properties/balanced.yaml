@@ -6,3 +6,6 @@ dual_property: balanced
 invariant_under_equivalences: true
 
 related_properties: []
+
+tags:
+  - morphism behavior

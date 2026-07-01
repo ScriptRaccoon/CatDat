@@ -11,3 +11,7 @@ invariant_under_equivalences: false
 related_properties:
   - one-way
   - skeletal
+
+tags:
+  - morphism behavior
+  - evil

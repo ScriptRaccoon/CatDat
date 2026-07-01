@@ -12,3 +12,6 @@ invariant_under_equivalences: true
 related_properties:
   - finitely complete
   - subobject classifier
+
+tags:
+  - topos theory

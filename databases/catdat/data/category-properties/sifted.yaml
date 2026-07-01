@@ -12,3 +12,6 @@ related_properties:
   - connected
   - filtered
   - sifted colimits
+
+tags:
+  - morphism behavior

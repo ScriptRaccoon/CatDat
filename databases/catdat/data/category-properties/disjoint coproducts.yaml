@@ -9,3 +9,6 @@ related_properties:
   - coproducts
   - disjoint finite coproducts
   - infinitary extensive
+
+tags:
+  - limit–colimit interaction

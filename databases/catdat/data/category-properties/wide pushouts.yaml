@@ -7,3 +7,6 @@ invariant_under_equivalences: true
 
 related_properties:
   - pushouts
+
+tags:
+  - colimits

@@ -8,3 +8,6 @@ invariant_under_equivalences: true
 related_properties:
   - finite products
   - locally cartesian closed
+
+tags:
+  - topos theory

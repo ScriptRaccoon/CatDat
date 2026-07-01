@@ -9,3 +9,6 @@ related_properties:
   - conormal
   - effective cocongruences
   - quotient-trivial
+
+tags:
+  - morphism behavior

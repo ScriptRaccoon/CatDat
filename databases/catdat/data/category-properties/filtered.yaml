@@ -10,3 +10,6 @@ related_properties:
   - filtered colimits
   - cocomplete
   - sifted
+
+tags:
+  - morphism behavior

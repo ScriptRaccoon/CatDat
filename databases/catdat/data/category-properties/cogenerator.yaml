@@ -7,3 +7,7 @@ invariant_under_equivalences: true
 
 related_properties:
   - cogenerating set
+
+tags:
+  - morphism behavior
+  - size

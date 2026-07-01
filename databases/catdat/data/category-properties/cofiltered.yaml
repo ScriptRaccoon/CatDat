@@ -8,3 +8,6 @@ invariant_under_equivalences: true
 related_properties:
   - cofiltered limits
   - finitely complete
+
+tags:
+  - morphism behavior

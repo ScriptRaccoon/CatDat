@@ -7,3 +7,8 @@ invariant_under_equivalences: true
 
 related_properties:
   - finitely complete
+
+tags:
+  - limits
+  - colimits
+  - morphism behavior

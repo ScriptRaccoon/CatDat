@@ -9,3 +9,6 @@ related_properties:
   - cocomplete
   - connected
   - filtered colimits
+
+tags:
+  - colimits

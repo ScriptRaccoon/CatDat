@@ -9,3 +9,6 @@ invariant_under_equivalences: true
 
 related_properties:
   - additive
+
+tags:
+  - morphism behavior

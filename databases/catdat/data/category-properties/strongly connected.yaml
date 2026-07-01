@@ -9,3 +9,6 @@ related_properties:
   - connected
   - inhabited
   - semi-strongly connected
+
+tags:
+  - morphism behavior

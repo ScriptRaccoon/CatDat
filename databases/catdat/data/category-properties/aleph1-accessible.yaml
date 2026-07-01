@@ -9,3 +9,6 @@ related_properties:
   - finitely accessible
   - locally ℵ₁-presentable
   - ℵ₁-filtered colimits
+
+tags:
+  - accessibility

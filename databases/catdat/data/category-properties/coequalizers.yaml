@@ -10,3 +10,6 @@ related_properties:
   - finitely cocomplete
   - quotients of congruences
   - reflexive coequalizers
+
+tags:
+  - colimits

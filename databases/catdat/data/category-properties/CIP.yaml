@@ -14,3 +14,6 @@ related_properties:
   - filtered-colimit-stable monomorphisms
   - products
   - zero morphisms
+
+tags:
+  - limit–colimit interaction

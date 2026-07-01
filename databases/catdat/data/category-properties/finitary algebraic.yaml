@@ -6,3 +6,6 @@ invariant_under_equivalences: true
 
 related_properties:
   - locally strongly finitely presentable
+
+tags:
+  - algebraicity

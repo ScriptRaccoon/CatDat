@@ -55,7 +55,10 @@
 	{@html property.description}
 
 	{#if property.invariant_under_equivalences === false}
-		Warning: This property is not invariant under equivalences.
+		Warning: This property is not <a
+			href="https://ncatlab.org/nlab/show/principle+of+equivalence"
+			target="_blank">invariant under equivalences</a
+		>.
 	{/if}
 </p>
 

@@ -18,7 +18,19 @@ functor_tags:
   - forgetful
   - free
 
-category_property_tags: []
+category_property_tags:
+  - limits
+  - colimits
+  - limit–colimit interaction
+  - morphism behavior
+  - size
+  - algebraicity
+  - accessibility
+  - topos theory
+  - abelian
+  - congruences
+  - misc
+  - evil
 
 functor_property_tags: []
 

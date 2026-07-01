@@ -8,3 +8,6 @@ invariant_under_equivalences: true
 related_properties:
   - finite copowers
   - finite coproducts
+
+tags:
+  - colimits
