@@ -20,7 +20,7 @@ import { PLURALS } from '$lib/commons/structures'
 type Link = {
 	href: string
 	text: string
-	nested?: string
+	nested?: string[]
 	icon: IconDefinition
 }
 
@@ -34,32 +34,32 @@ export function get_navigation_links(type: StructureType): Link[] {
 		{
 			href: `/${PLURALS[type]}`,
 			text: capitalize(PLURALS[type]),
-			nested: `/${type}/`,
+			nested: [`/${type}/`, `/${PLURALS[type]}/`],
 			icon: faDatabase,
 		},
 		{
 			href: `/${type}-properties`,
 			text: `Properties`,
-			nested: `/${type}-property/`,
+			nested: [`/${type}-property/`, `/${type}-properties/`],
 			icon: faList,
 		},
 		{
 			href: `/${type}-implications`,
 			text: `Implications`,
-			nested: `/${type}-implication`,
+			nested: [`/${type}-implication`],
 			icon: faArrowsSplitUpAndLeft,
 		},
 		{
 			href: `/${type}-comparison`,
 			text: `Compare`,
 			icon: faChartBar,
-			nested: `/${type}-comparison`,
+			nested: [`/${type}-comparison`],
 		},
 		{
 			href: `/${type}-search`,
 			text: `Search`,
 			icon: faSearch,
-			nested: `/${type}-search/results`,
+			nested: [`/${type}-search/results`],
 		},
 	]
 }

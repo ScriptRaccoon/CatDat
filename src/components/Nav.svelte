@@ -17,7 +17,7 @@
 		{#each get_navigation_links(selected_type) as { nested, href, text, icon }}
 			<li
 				class:current={page.url.pathname === href ||
-					(nested && page.url.pathname.startsWith(nested))}
+					(nested && nested.some((path) => page.url.pathname.startsWith(path)))}
 			>
 				<a {href}><Fa {icon} scale={0.85} /> {text}</a>
 			</li>
