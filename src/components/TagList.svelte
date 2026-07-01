@@ -8,12 +8,17 @@
 	type Props = {
 		type: StructureType
 		tags: string[]
+		sort: 'structure' | 'property'
 	}
 
-	let { type, tags }: Props = $props()
+	let { type, tags, sort }: Props = $props()
 
 	function filter_by_tag(tag: string) {
-		goto(`/${PLURALS[type]}/${tag}`)
+		if (sort === 'structure') {
+			goto(`/${PLURALS[type]}/${tag}`)
+		} else {
+			goto(`/${type}-properties/${tag}`)
+		}
 	}
 </script>
 

@@ -2,6 +2,8 @@ export type ConfigYaml = {
 	structure_tags: string[]
 	category_tags: string[]
 	functor_tags: string[]
+	category_property_tags: string[]
+	functor_property_tags: string[]
 	relations: {
 		relation: string
 		conditional: string
@@ -71,6 +73,7 @@ export type PropertyYaml = {
 	dual_property?: string | null
 	invariant_under_equivalences: boolean
 	related_properties: string[]
+	tags?: string[]
 }
 
 export type ImplicationYaml = {

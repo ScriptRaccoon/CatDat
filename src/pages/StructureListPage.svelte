@@ -58,7 +58,7 @@
 <section>
 	<h2>List of tags</h2>
 
-	<TagList {tags} {type} />
+	<TagList {tags} {type} sort="structure" />
 </section>
 
 <SuggestionForm />

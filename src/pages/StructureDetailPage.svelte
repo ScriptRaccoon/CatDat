@@ -52,7 +52,7 @@
 
 <h2>{structure.name}</h2>
 
-<TagList {tags} {type} />
+<TagList {tags} {type} sort="structure" />
 
 <section aria-label="main info" class="main-info">
 	<ul class="with-margins">

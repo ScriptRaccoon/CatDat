@@ -18,6 +18,10 @@ functor_tags:
   - forgetful
   - free
 
+category_property_tags: []
+
+functor_property_tags: []
+
 relations:
   - relation: is
     conditional: would be

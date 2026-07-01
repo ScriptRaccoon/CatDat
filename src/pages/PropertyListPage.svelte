@@ -2,6 +2,7 @@
 	import MetaData from '$components/MetaData.svelte'
 	import SearchFilter from '$components/SearchFilter.svelte'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
+	import TagList from '$components/TagList.svelte'
 	import { normalize_text, pluralize } from '$lib/client/utils'
 	import { get_property_url } from '$lib/commons/property.url'
 	import { PLURALS } from '$lib/commons/structures'
@@ -14,9 +15,10 @@
 		grouped_properties: GroupedPropertyShort[]
 		total: number
 		grouped_total: number
+		tags: string[]
 	}
 
-	let { type, grouped_properties, total, grouped_total }: Props = $props()
+	let { type, grouped_properties, total, grouped_total, tags }: Props = $props()
 
 	let searched_properties = $derived(
 		search
@@ -63,4 +65,18 @@
 	{/each}
 </ul>
 
+{#if tags.length > 0}
+	<section class="tag-section">
+		<h2>List of tags</h2>
+
+		<TagList {tags} {type} sort="property" />
+	</section>
+{/if}
+
 <SuggestionForm />
+
+<style>
+	.tag-section {
+		margin-top: 2rem;
+	}
+</style>

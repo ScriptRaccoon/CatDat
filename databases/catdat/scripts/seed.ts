@@ -74,6 +74,8 @@ function clear_all_tables() {
 
 		db.prepare(`DELETE FROM property_assignments`).run()
 		db.prepare(`DELETE FROM related_properties`).run()
+		db.prepare(`DELETE FROM property_tag_assignments`).run()
+		db.prepare(`DELETE FROM property_tags`).run()
 		db.prepare(`DELETE FROM properties`).run()
 
 		db.prepare(`DELETE FROM related_structures`).run()
@@ -102,6 +104,10 @@ function seed_config() {
 		`INSERT INTO structure_tags (tag, type) VALUES (?, ?)`,
 	)
 
+	const property_tag_insert = db.prepare<[string, StructureType]>(
+		`INSERT INTO property_tags (tag, type) VALUES (?, ?)`,
+	)
+
 	const relation_insert = db.prepare(
 		`INSERT INTO relations (relation, conditional) VALUES (?, ?)`,
 	)
@@ -122,6 +128,10 @@ function seed_config() {
 
 			for (const tag of config[`${type}_tags`]) {
 				structure_tag_insert.run(tag, type)
+			}
+
+			for (const tag of config[`${type}_property_tags`]) {
+				property_tag_insert.run(tag, type)
 			}
 		}
 
@@ -303,6 +313,12 @@ function seed_properties({ type, folder }: { type: StructureType; folder: string
 		VALUES (?, ?, ?)`,
 	)
 
+	const tag_insert = db.prepare(
+		`INSERT INTO property_tag_assignments
+			(property_id, tag, type)
+		VALUES (?, ?, ?)`,
+	)
+
 	function insert_property(property: PropertyYaml) {
 		property_insert.run(
 			property.id,
@@ -316,6 +332,11 @@ function seed_properties({ type, folder }: { type: StructureType; folder: string
 
 		for (const related of property.related_properties) {
 			related_insert.run(property.id, related, type)
+		}
+
+		for (const tag of property.tags ?? []) {
+			// TODO: remove ?? when tags are filled
+			tag_insert.run(property.id, tag, type)
 		}
 	}
 

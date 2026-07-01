@@ -1,7 +1,7 @@
 <script lang="ts">
-	import TaggedPage from '$pages/TaggedPage.svelte'
+	import TaggedStructuresPage from '$pages/TaggedStructuresPage.svelte'
 
 	let { data } = $props()
 </script>
 
-<TaggedPage type="category" {...data} />
+<TaggedStructuresPage type="category" {...data} />

@@ -53,3 +53,20 @@ CREATE TABLE property_assignments (
 );
 
 CREATE INDEX idx_property_assigned ON property_assignments (property_id);
+
+CREATE TABLE property_tags (
+    id INTEGER PRIMARY KEY,
+    tag TEXT NOT NULL,
+    type TEXT NOT NULL,
+    UNIQUE (tag, type),
+    FOREIGN KEY (type) REFERENCES structure_types (type) ON DELETE RESTRICT
+);
+
+CREATE TABLE property_tag_assignments (
+    property_id TEXT NOT NULL,
+    type TEXT NOT NULL,
+    tag TEXT NOT NULL,
+    PRIMARY KEY (property_id, type, tag),
+    FOREIGN KEY (property_id, type) REFERENCES properties (id, type) ON DELETE CASCADE,
+    FOREIGN KEY (tag, type) REFERENCES property_tags (tag, type) ON DELETE CASCADE
+);

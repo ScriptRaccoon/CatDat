@@ -15,11 +15,13 @@
 		StructureType,
 	} from '$lib/commons/types'
 	import { PLURALS } from '$lib/commons/structures'
+	import TagList from '$components/TagList.svelte'
 
 	type Props = {
 		type: StructureType
 		property: PropertyDisplay
 		related_properties: string[]
+		tags: string[]
 		examples: StructureShort[]
 		counterexamples: StructureShort[]
 		unknown_structures: StructureShort[]
@@ -31,6 +33,7 @@
 		type,
 		property,
 		related_properties,
+		tags,
 		examples,
 		counterexamples,
 		unknown_structures,
@@ -42,6 +45,11 @@
 <MetaData title={property.id} description="Discover this property of {PLURALS[type]}" />
 
 <h2>{property.id}</h2>
+
+{#if tags.length}
+	<!-- TODO: remove this if-check later -->
+	<TagList {tags} {type} sort="property" />
+{/if}
 
 <p>
 	{@html property.description}

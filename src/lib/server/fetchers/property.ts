@@ -3,6 +3,7 @@ import type {
 	StructureShort,
 	PropertyDB,
 	StructureType,
+	TagObject,
 } from '$lib/commons/types'
 import { batch } from '$lib/server/db.catdat'
 import { display_implication, display_property } from '$lib/server/transforms'
@@ -14,6 +15,7 @@ export function fetch_property(type: StructureType, id: string) {
 		[
 			PropertyDB,
 			{ id: string },
+			TagObject,
 			ImplicationDB,
 			StructureShort & { is_satisfied: 0 | 1 | null },
 			StructureShort,
@@ -37,6 +39,15 @@ export function fetch_property(type: StructureType, id: string) {
             FROM related_properties
             WHERE property_id = ${id}
             ORDER BY lower(id)
+        `,
+		// tags
+		sql`
+            SELECT pt.tag
+            FROM property_tag_assignments pt
+            INNER JOIN property_tags t
+                ON t.tag = pt.tag AND t.type = ${type}
+            WHERE pt.property_id = ${id} AND pt.type = ${type}
+            ORDER BY t.id
         `,
 		// relevant implications
 		sql`
@@ -95,6 +106,7 @@ export function fetch_property(type: StructureType, id: string) {
 	const [
 		properties,
 		related,
+		tag_objects,
 		relevant_implications_db,
 		known_structures,
 		unknown_structures,
@@ -107,6 +119,8 @@ export function fetch_property(type: StructureType, id: string) {
 	const property = display_property(properties[0])
 
 	const related_properties = related.map(({ id }) => id)
+
+	const tags = tag_objects.map(({ tag }) => tag)
 
 	const examples = known_structures.filter((f) => f.is_satisfied === 1)
 	const counterexamples = known_structures.filter((f) => f.is_satisfied === 0)
@@ -123,6 +137,7 @@ export function fetch_property(type: StructureType, id: string) {
 	return {
 		property,
 		related_properties,
+		tags,
 		examples,
 		counterexamples,
 		unknown_structures,
