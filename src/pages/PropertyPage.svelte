@@ -46,10 +46,7 @@
 
 <h2>{property.id}</h2>
 
-{#if tags.length}
-	<!-- TODO: remove this if-check later -->
-	<TagList {tags} {type} sort="property" />
-{/if}
+<TagList {tags} {type} sort="property" />
 
 <p>
 	{@html property.description}

@@ -73,7 +73,7 @@ export type PropertyYaml = {
 	dual_property?: string | null
 	invariant_under_equivalences: boolean
 	related_properties: string[]
-	tags?: string[]
+	tags: string[]
 }
 
 export type ImplicationYaml = {

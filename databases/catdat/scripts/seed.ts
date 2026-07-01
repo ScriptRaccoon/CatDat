@@ -221,6 +221,11 @@ function seed_structures<T extends StructureYaml>({
 			structure[`dual_${type}`] || null,
 		)
 
+		if (!structure.tags.length) {
+			console.error(`❌ Structure "${structure.id}" has no tags`)
+			process.exit(1)
+		}
+
 		for (const tag of structure.tags) {
 			tag_insert.run(structure.id, tag, type)
 		}
@@ -334,8 +339,12 @@ function seed_properties({ type, folder }: { type: StructureType; folder: string
 			related_insert.run(property.id, related, type)
 		}
 
-		for (const tag of property.tags ?? []) {
-			// TODO: remove ?? when tags are filled
+		if (!property.tags.length) {
+			console.error(`❌ Property "${property.id}" has no tags`)
+			process.exit(1)
+		}
+
+		for (const tag of property.tags) {
 			tag_insert.run(property.id, tag, type)
 		}
 	}
