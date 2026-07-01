@@ -3,6 +3,7 @@
 	import { pluralize } from '$lib/client/utils'
 	import type { PropertyShort, StructureType } from '$lib/commons/types'
 	import PropertyList from '$components/PropertyList.svelte'
+	import { PLURALS } from '$lib/commons/structures'
 
 	type Props = {
 		type: StructureType
@@ -13,9 +14,9 @@
 	let { type, properties, tag }: Props = $props()
 </script>
 
-<MetaData title="List of {type} properties tagged with '{tag}'" />
+<MetaData title="Properties of {PLURALS[type]} tagged with '{tag}'" />
 
-<h2>List of {type} properties tagged with '{tag}'</h2>
+<h2>Properties of {PLURALS[type]} tagged with '{tag}'</h2>
 
 <p class="hint">
 	{pluralize(properties.length, {

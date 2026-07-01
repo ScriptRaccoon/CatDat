@@ -1,7 +1,7 @@
 <script lang="ts">
 	import StructureList from '$components/StructureList.svelte'
 	import MetaData from '$components/MetaData.svelte'
-	import { pluralize } from '$lib/client/utils'
+	import { capitalize, pluralize } from '$lib/client/utils'
 	import type { StructureShort, StructureType } from '$lib/commons/types'
 	import { PLURALS } from '$lib/commons/structures'
 
@@ -14,9 +14,9 @@
 	let { type, structures, tag }: Props = $props()
 </script>
 
-<MetaData title="List of {PLURALS[type]} tagged with '{tag}'" />
+<MetaData title="{capitalize(PLURALS[type])} tagged with '{tag}'" />
 
-<h2>List of {PLURALS[type]} tagged with '{tag}'</h2>
+<h2>{capitalize(PLURALS[type])} tagged with '{tag}'</h2>
 
 <p class="hint">
 	{pluralize(structures.length, {

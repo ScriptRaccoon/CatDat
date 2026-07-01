@@ -56,7 +56,7 @@
 </section>
 
 <section>
-	<h2>List of tags</h2>
+	<h2>Tags</h2>
 
 	<TagList {tags} {type} sort="structure" />
 </section>

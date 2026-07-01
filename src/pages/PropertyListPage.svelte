@@ -67,7 +67,7 @@
 
 {#if tags.length > 0}
 	<section class="tag-section">
-		<h2>List of tags</h2>
+		<h2>Tags</h2>
 
 		<TagList {tags} {type} sort="property" />
 	</section>
