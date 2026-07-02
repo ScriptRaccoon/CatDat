@@ -65,13 +65,13 @@ special_morphisms:
     proof: This is easy.
   monomorphisms:
     description: morphisms of separated presheaves that are injective on every open set
-    proof: This is a corollary of Lemma 1(a) <a href="/content/separated_objects_quasitopos">here</a>.
+    proof: This is a corollary of Lemma 2(a) <a href="/content/separated_objects_quasitopos">here</a>.
   epimorphisms:
     description: 'morphisms of separated presheaves $\varphi : \F \to \G$ which are "locally surjective": for every local section $g \in \G(U)$ there is an open covering $\bigcup_{i\in I} U_i = U$ such that each $g|_{U_i} \in \G(U_i)$ is contained in the image of $\varphi(U_i) : \F(U_i) \to \G(U_i)$'
-    proof: This is a corollary of Lemma 1(b) <a href="/content/separated_objects_quasitopos">here</a>.
+    proof: This is a corollary of Lemma 2(b) <a href="/content/separated_objects_quasitopos">here</a>.
   regular monomorphisms:
     description: 'morphisms of separated presheaves $\varphi : \F \hookrightarrow \G$ that are injective on every open set, and such that "every section of $\G$ which is locally in $\F$ is itself in $\F$": if a local section $g \in \G(U)$ has an open covering $\bigcup_{i\in I} U_i = U$ such that each $g|_{U_i} \in \G(U_i)$ is contained in the image of $\varphi(U_i) : \F(U_i) \to \G(U_i)$, then $g$ is contained in the image of $\varphi(U) : \F(U) \to \G(U)$'
-    proof: This is a corollary of Lemma 1(c) <a href="/content/separated_objects_quasitopos">here</a>.
+    proof: This is a corollary of Lemma 2(c) <a href="/content/separated_objects_quasitopos">here</a>.
   regular epimorphisms:
     description: morphisms of separated presheaves that are surjective on every open set
-    proof: This is a corollary of Lemma 1(d) <a href="/content/separated_objects_quasitopos">here</a>.
+    proof: This is a corollary of Lemma 2(d) <a href="/content/separated_objects_quasitopos">here</a>.

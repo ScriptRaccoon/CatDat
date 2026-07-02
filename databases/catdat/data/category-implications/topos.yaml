@@ -141,10 +141,13 @@
   assumptions:
     - Grothendieck quasitopos
   conclusions:
-    - exact filtered colimits
+    - cartesian filtered colimits
+    - filtered-colimit-stable monomorphisms
     - cogenerator
   proof: >-
-    To show that a Grothendieck quasitopos has exact filtered colimits, note that $\BiSep(\C, J, K)$ is a reflective subcategory of $\Sh(\C, J)$, with the reflector preserving finite limits. (This is a special case of the more general situation of $\Sep(j)$ being a reflective subcategory of $\T$ whenever $j$ is a Lawvere-Tierney topology on an elementary topos $\T$ with the reflector preserving finite limits.) The result follows from Lemma 3 <a href="/content/subcategories">here</a>.
+    To show that a Grothendieck quasitopos has cartesian filtered colimits, note that by Lemma 1 <a href="/content/separated_objects_quasitopos">here</a>, $\BiSep(\C, J, K)$ is a reflective subcategory of $\Sh(\C, J)$, with the reflector preserving finite products. The result follows from Lemma 4 <a href="/content/subcategories">here</a>.
+
+    To show that a Grothendieck quasitopos has filtered-colimit-stable monomorphisms, suppose $(f_i : \F_i \to \G_i)_{i\in \I}$ is a filtered diagram of monomorphisms in $\BiSep(\C, J, K)$. In order to form the filtered colimit in $\BiSep(\C, J, K)$, we can take the filtered colimit in $\Sh(\C, J)$, and then apply the reflector to $\BiSep(\C, J, K)$. Since $\Sh(C, J)$ has exact filtered colimits, the first step results in a monomorphism, and since the reflector preserves monomorphisms by Lemma 1 <a href="/content/separated_objects_quasitopos">here</a>, the filtered colimit in $\BiSep(\C, J, K)$ is also a monomorphism.
 
     As for having a cogenerator: we have that $\Sh(\C, K)$ is a reflective subcategory of $\BiSep(\C, J, K)$, with the reflector being the restriction of the $K$-sheafification functor to the subcategory $\BiSep(\C, J, K)$. Also, recall in general that if $\F$ is a presheaf on $\C$, then the morphism $\F \to \F^+_K$ has $K$-dense presheaf image, and if $\F$ is $K$-separated then the morphism $\F \to \F^+_K$ is a monomorphism. Thus, for $\F$ an object of $\BiSep(\C, J, K)$, the morphism $\eta_\F : \F \to \F^+_K$ is both a monomorphism and an epimorphism in $\BiSep(\C, J, K)$. Now, let $Q$ be a cogenerator of the Grothendieck topos $\Sh(\C, K)$, and suppose we have a parallel pair of morphisms $f, g : \F \rightrightarrows \G$ in $\BiSep(\C, J, K)$ such that $f \ne g$. Then since $\eta_\G : \G \to \G^+_K$ is a monomorphism, we have $f^+ \ne g^+$. Therefore, there exists $h : \G^+_K \to Q$ such that $h \circ f^+_K \ne h \circ g^+_K$. Since $\eta_\F$ is an epimorphism, we conclude $h \circ f^+_K \circ \eta_\F \ne h \circ g^+_K \circ \eta_G$, and thus $h \circ \eta_\G \circ f \ne h \circ \eta_\G \circ g$.
 
