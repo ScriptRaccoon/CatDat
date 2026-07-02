@@ -34,3 +34,11 @@ export function cache_page(event: RequestEvent) {
 	// shared cache for 30min
 	event.setHeaders({ 'cache-control': 'public, max-age=0, s-maxage=1800' })
 }
+
+export function strip_math(s: string) {
+	return s.replaceAll('$', '')
+}
+
+export function add_math(s: string) {
+	return `$${s}$`
+}
