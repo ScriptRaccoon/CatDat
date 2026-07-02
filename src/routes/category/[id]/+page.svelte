@@ -3,6 +3,8 @@
 	import { faQuestion } from '@fortawesome/free-solid-svg-icons'
 	import Fa from 'svelte-fa'
 	import StructureDetailPage from '$pages/StructureDetailPage.svelte'
+	import StructureList from '$components/StructureList.svelte'
+	import { pluralize } from '$lib/client/utils.js'
 
 	let { data } = $props()
 </script>
@@ -51,5 +53,22 @@
 				{/each}
 			</ul>
 		</section>
+	{/snippet}
+
+	{#snippet footer()}
+		{#if data.category.functors.length}
+			<section>
+				<h3>Functors</h3>
+
+				<p class="hint">
+					{pluralize(data.category.functors.length, {
+						one: 'There is 1 functor',
+						other: 'There are {count} functors',
+					})}
+					whose source or target is the {data.structure.name}.
+				</p>
+				<StructureList structures={data.category.functors} type="functor" />
+			</section>
+		{/if}
 	{/snippet}
 </StructureDetailPage>

@@ -10,35 +10,43 @@ import { error } from '@sveltejs/kit'
 
 export function fetch_category(id: string) {
 	const { results, err } = batch<
-		[CategorySpecificDisplay, SpecialObject, SpecialMorphism]
+		[CategorySpecificDisplay, SpecialObject, SpecialMorphism, StructureShort]
 	>([
 		// specific information for the category
 		sql`
-                SELECT c.objects, c.morphisms
-                FROM categories c
-                WHERE c.id = ${id}
-            `,
+			SELECT c.objects, c.morphisms
+			FROM categories c
+			WHERE c.id = ${id}
+		`,
 		// special objects
 		sql`
-                SELECT s.type, s.description
-                FROM special_objects s
-                INNER JOIN special_object_types t ON t.type = s.type
-                WHERE s.category_id = ${id}
-                ORDER BY t.id
-            `,
+			SELECT s.type, s.description
+			FROM special_objects s
+			INNER JOIN special_object_types t ON t.type = s.type
+			WHERE s.category_id = ${id}
+			ORDER BY t.id
+		`,
 		// special morphisms
 		sql`
-                SELECT t.type, s.description, s.proof
-                FROM special_morphism_types t
-                LEFT JOIN special_morphisms s
-                    ON s.type = t.type AND s.category_id = ${id}
-                ORDER BY t.id
-            `,
+			SELECT t.type, s.description, s.proof
+			FROM special_morphism_types t
+			LEFT JOIN special_morphisms s
+				ON s.type = t.type AND s.category_id = ${id}
+			ORDER BY t.id
+		`,
+		// functors whose source or target is the current category
+		sql`
+			SELECT f.id, s.name
+			FROM functors f
+			INNER JOIN structures s ON s.id = f.id
+			WHERE f.source = ${id} OR f.target = ${id}
+			ORDER BY lower(s.name)
+		`,
 	])
 
 	if (err) error(500, 'Could not load category')
 
-	const [categories, special_objects, special_morphisms] = results
+	const [categories, special_objects, special_morphisms, functors] = results
 
 	if (!categories.length) error(404, `Could not find category with ID '${id}'`)
 
@@ -46,6 +54,7 @@ export function fetch_category(id: string) {
 		...categories[0],
 		special_objects,
 		special_morphisms,
+		functors,
 	}
 }
 

@@ -30,6 +30,7 @@
 		comments: CommentObject[]
 		definition?: Snippet
 		specials?: Snippet
+		footer?: Snippet
 	}
 
 	let {
@@ -45,6 +46,7 @@
 		comments,
 		definition,
 		specials,
+		footer,
 	}: Props = $props()
 </script>
 
@@ -117,6 +119,8 @@
 />
 
 <CommentList {comments} />
+
+{@render footer?.()}
 
 <SuggestionForm />
 
