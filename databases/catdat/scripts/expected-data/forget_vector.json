@@ -21,6 +21,7 @@
 	"full on isomorphisms": false,
 	"pseudomonic": false,
 	"dominant": false,
+	"isomorphism": false,
 
 	"cofinitary": true,
 	"conservative": true,

@@ -16,7 +16,7 @@ related_functors:
   - diagonal_sets
 
 satisfied_properties:
-  - property: equivalence
+  - property: isomorphism
     proof: This is trivial.
 
   - property: representable

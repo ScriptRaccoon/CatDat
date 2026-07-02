@@ -1,0 +1,11 @@
+id: isomorphism
+relation: is an
+description: 'A functor $F : \C \to \D$ is an <i>isomorphism</i> when there is a functor $G : \D \to \C$ with $F \circ G = \id_{\D}$ and $G \circ F = \id_{\C}$. In contrast to an equivalence of categories, these compositions are required to be <i>equal</i> to the identities.'
+nlab_link: https://ncatlab.org/nlab/show/equivalence+of+categories#Isomorphism
+invariant_under_equivalences: false
+dual_property: isomorphism
+related_properties:
+  - equivalence
+
+tags:
+  - invertibility
