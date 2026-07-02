@@ -1,0 +1,20 @@
+id: opposite_category
+name: opposite category functor
+notation: $(-)^{\op}$
+source: Cat
+target: Cat
+description: 'This functor maps a small category $\C$ to its opposite category $\C^{\op}$ and a functor $F : \C \to \D$ to the opposite functor $F^{\op} : \C^{\op} \to \D^{\op}$.'
+nlab_link: https://ncatlab.org/nlab/show/opposite+category
+left_adjoint: opposite_category
+
+tags:
+  - category theory
+
+related_functors:
+  - opposite_monoid
+
+satisfied_properties:
+  - property: isomorphism
+    proof: This functor is inverse to itself.
+
+unsatisfied_properties: []
