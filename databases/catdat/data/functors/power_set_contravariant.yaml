@@ -1,9 +1,9 @@
 id: power_set_contravariant
 name: contravariant power set functor
-notation: $\Hom(-,2)$
+notation: $P_{\forall}$
 source: Set_op
 target: Set
-description: 'This functor maps a set $X$ to its power set $P(X)$ and a map of sets $f : X \to Y$ to the induced preimage operator $f^* : P(Y) \to P(X)$. It is isomorphic to the representable functor $\Hom(-,2) : \Set^{\op} \to \Set$.'
+description: 'This functor $P_{\forall}$ maps a set $X$ to its power set $P(X)$ and a map of sets $f : X \to Y$ to the induced preimage operator $f^* : P(Y) \to P(X)$.'
 nlab_link: https://ncatlab.org/nlab/show/power+set
 
 tags:
@@ -26,13 +26,13 @@ satisfied_properties:
 
   - property: right adjoint
     proof: >-
-      The functor $P : \Set^{\op} \to \Set$ is right adjoint to $P^{\op} : \Set \to \Set^{\op}$ since
+      The functor $P_{\forall} : \Set^{\op} \to \Set$ is right adjoint to $P_{\forall}^{\op} : \Set \to \Set^{\op}$ since
       $$\Hom_{\Set}(X,P(Y)) \cong P(X \times Y) \cong \Hom_{\Set}(Y,P(X)) = \Hom_{\Set^{\op}}(P(X),Y).$$
     check_redundancy: false
 
   - property: preserves reflexive coequalizers
     proof: >-
-      This is contained in the proof of Theorem 2.2.7 (monadicity of $P$ for an elementary topos) in <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, but we include a direct proof here for the sake of completeness, and also since we want the system to deduce monadicity automatically.
+      This is contained in the proof of Theorem 2.2.7 (monadicity of $P_{\forall}$ for an elementary topos) in <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, but we include a direct proof here for the sake of completeness, and also since we want the system to deduce monadicity automatically.
 
       Let $f,g : X \rightrightarrows Y$ be two maps with a common retraction $r : Y \to X$, i.e. $rf = rg = \id_X$. Let $i : E \hookrightarrow X$ be their equalizer. We need to show that $i^* : P(X) \to P(E)$ is a coequalizer of $f^*,g^* : P(Y) \rightrightarrows P(X)$. First, $i^*$ is surjective since $i$ is injective, which implies that $A = i^*(i_*(A))$ for all $A \subseteq E$. Hence, $i^*$ is the quotient of $P(X)$ by the equivalence relation $\sim_1$ defined by $A \sim_1 B \iff i^*(A) = i^*(B)$, i.e. $A \cap E = B \cap E$. The coequalizer of $f^*,g^*$ is the quotient of $P(X)$ by the smallest equivalence relation $\sim_2$ satisfying $f^*(C) \sim_2 g^*(C)$ for all $C \subseteq Y$. We need to show that these equivalence relations coincide.
 
