@@ -143,7 +143,8 @@ export function get_contradiction_string(
 	const assumption_string = get_assumption_string(implication, properties_dict, true)
 	const conclusion_string = get_conclusion_string(implication, properties_dict, true)
 
-	const has_multiple_assumptions = implication.assumptions.size > 1
+	const has_multiple_assumptions =
+		implication.assumptions.size > 1 || !!implication.mapped_assumptions
 
 	const ref = `by <a href="/${type}-implication/${implication.id}">this result</a>`
 
