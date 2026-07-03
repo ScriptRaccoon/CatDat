@@ -17,6 +17,7 @@ related_categories:
   - Set_f
   - SetxSet
   - Setne
+  - Set_arrow
 
 satisfied_properties:
   - property: locally small
