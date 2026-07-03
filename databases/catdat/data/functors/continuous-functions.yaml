@@ -39,11 +39,14 @@ unsatisfied_properties:
   - property: preserves finite coproducts
     proof: 'The canonical homomorphism $C(X) \otimes_{\IR} C(Y) \to C(X \times Y)$ need not be surjective. For example, for $X = Y = \IR$ one can show that $(x,y) \mapsto \exp(xy)$ is not contained in its image.'
 
+  - property: preserves regular epimorphisms
+    proof: 'The embedding $i : \IR \setminus \{0\} \hookrightarrow \IR$ is a regular monomorphism in $\Top$, i.e. a regular epimorphism in $\Top^{\op}$. It is mapped to the restriction map $i^* : C(\IR) \to C(\IR \setminus \{0\})$, which is not surjective, as witnessed by the map $x \mapsto x^{-1}$. Hence, $i^*$ is not a regular epimorphism.'
+
   - property: preserves reflexive coequalizers
     proof: 'Let $i : U \hookrightarrow X$ be an open embedding such that there exists a continuous function on $U$ that does not extend to $X$; for example, $i : \IR \setminus \{0\} \hookrightarrow \IR$ together with the continuous function $x \mapsto x^{-1}$. Then $i$ is the equalizer of the two inclusions $X \rightrightarrows X +_U X$, which have common retraction $\nabla : X +_U X \to X$. But $i^* : C(X) \to C(U)$ is not a coequalizer in $\CAlg(\IR)$, since it is not surjective.'
 
   - property: preserves epimorphisms
-    proof: 'If $i : X \to Y$ is an injective continuous map, the induced homomorphism $C(Y) \to C(X)$ need not be surjective (consider the inclusion $i : \IR \setminus \{0\} \hookrightarrow \IR$ and the map $x \mapsto x^{-1}$). However, we need an example where it is not even an epimorphism in $\CAlg(\IR)$. A simple counterexample can again be constructed using (in)discrete spaces. Namely, if $X$ is any finite set with at least two elements, we have a continuous bijection $D(X) \to I(X)$, $x \mapsto x$, where $D(X)$ (resp. $I(X)$) denotes the discrete (resp. indiscrete) space on $X$. It induces the algebra homomorphism $\IR \cong C(I(X)) \to C(D(X)) \cong \IR^X$, which is not an epimorphism since $\IR^X \otimes_\IR \IR^X \not\cong \IR^X$.'
+    proof: 'It is not sufficient to find an injective continuous map $i : X \to Y$ such that $i^* : C(Y) \to C(X)$ is not surjective, since epimorphisms in $\CAlg(\IR)$ do not need to be surjective. But a simple counterexample can again be constructed using (in)discrete spaces. Namely, if $X$ is any finite set with at least two elements, we have a continuous bijection $D(X) \to I(X)$, $x \mapsto x$, where $D(X)$ (resp. $I(X)$) denotes the discrete (resp. indiscrete) space on $X$. It induces the algebra homomorphism $\IR \cong C(I(X)) \to C(D(X)) \cong \IR^X$, which is not an epimorphism since $\IR^X \otimes_\IR \IR^X \not\cong \IR^X$.'
 
   - property: finitary
     proof: >-

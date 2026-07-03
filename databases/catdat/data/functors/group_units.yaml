@@ -45,5 +45,5 @@ unsatisfied_properties:
   - property: full
     proof: Let $M$ be a monoid and $G \subseteq M$ be its group of units. Then the identity $M^{\times} \to G^{\times} = G$ is in the image of the functor iff there is a homomorphism $M \to G$ that extends the identity on $G$, i.e. a retraction of $G \subseteq M$. If $M$ has an absorbing element, then its image in $G$ would be an absorbing element, forcing $G$ to be trivial. However, the monoid $(\IZ,\cdot,1)$, for example, has an absorbing element and a non-trivial group of units $\{\pm 1\}$.
 
-  - property: preserves epimorphisms
-    proof: The inclusion $\IN \hookrightarrow \IZ$ is an epimorphism of monoids. It is mapped to the trivial homomorphism $\{0\} \hookrightarrow \IZ$, which is not an epimorphism of groups.
+  - property: preserves regular epimorphisms
+    proof: 'Consider the monoids $M = \langle x : x^3 = x \rangle$ and $N = \langle y : y^2 = 1 \rangle$. Thus, $M$ has order $3$ and consists of $1,x,x^2$, and $N$ has order $2$ (and is even a group) with the elements $1,y$. We have a unique homomorphism $f : M \to N$ defined by $f(x)=y$, which is surjective. Since $M^{\times}$ is trivial and $N^{\times} \cong N$, the induced map $f^{\times} : M^{\times} \to N^{\times}$ is not surjective.'

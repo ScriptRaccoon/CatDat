@@ -40,5 +40,7 @@
 	"right adjoint": true,
 	"preserves terminal objects": true,
 	"preserves reflexive coequalizers": true,
-	"preserves coreflexive equalizers": true
+	"preserves coreflexive equalizers": true,
+	"preserves regular monomorphisms": true,
+	"preserves regular epimorphisms": true
 }

@@ -39,5 +39,7 @@
 	"full on isomorphisms": true,
 	"pseudomonic": true,
 	"dominant": true,
-	"isomorphism": true
+	"isomorphism": true,
+	"preserves regular monomorphisms": true,
+	"preserves regular epimorphisms": true
 }

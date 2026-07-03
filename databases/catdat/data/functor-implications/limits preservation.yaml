@@ -115,11 +115,12 @@
   proof: This is standard, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. V, Theorem 4.1.
   is_equivalence: false
 
-- id: equalizers_include_coreflexive_equalizers
+- id: equalizers_preservation_consequences
   assumptions:
     - preserves equalizers
   conclusions:
     - preserves coreflexive equalizers
+    - preserves regular monomorphisms
   proof: This is trivial.
   is_equivalence: false
 
@@ -137,13 +138,24 @@
 
 - id: mono-preserving_criterion
   assumptions:
-    - preserves equalizers
+    - preserves regular monomorphisms
   mapped_assumptions:
     source:
       - mono-regular
   conclusions:
     - preserves monomorphisms
-  proof: Any monomorphism in the domain is a regular monomorphism and is mapped to a regular monomorphism.
+  proof: This is trivial.
+  is_equivalence: false
+
+- id: regular-mono-preserving_criterion
+  assumptions:
+    - preserves monomorphisms
+  mapped_assumptions:
+    target:
+      - mono-regular
+  conclusions:
+    - preserves regular monomorphisms
+  proof: This is trivial.
   is_equivalence: false
 
 - id: zero_preserving_condition

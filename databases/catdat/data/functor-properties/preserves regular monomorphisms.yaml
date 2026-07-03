@@ -1,0 +1,13 @@
+id: preserves regular monomorphisms
+relation: ''
+description: 'A functor $F : \C \to \D$ <i>preserves regular monomorphisms</i> if every regular monomorphism in $\C$ is mapped to a regular monomorphism in $\D$.'
+nlab_link: https://ncatlab.org/nlab/show/regular+monomorphism
+invariant_under_equivalences: true
+dual_property: preserves regular epimorphisms
+related_properties:
+  - preserves monomorphisms
+  - left exact
+  - preserves equalizers
+
+tags:
+  - morphism behavior

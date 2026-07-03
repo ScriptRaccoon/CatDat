@@ -41,8 +41,8 @@ unsatisfied_properties:
   - property: full
     proof: 'We have $F(\IN) = \IZ$ (w.r.t. addition). The homomorphism $\IZ \to \IZ$, $x \mapsto -x$ is not induced by a homomorphism $\IN \to \IN$.'
 
-  - property: preserves monomorphisms
-    proof: 'Consider the monoid $N = \langle a,b,c : ab = ac \rangle_{\Mon}$ and the free monoid $M = \langle b,c \rangle_{\Mon}$. The canonical homomorphism $M \to N$ is injective. However, $F(M) = \langle b,c \rangle_{\Grp}$ (free group), and $b,c$ become identified in $F(N) \cong \langle a,b,c : b = c \rangle_{\Grp}$ since we may cancel $a$, so that $F(M) \to F(N)$ is not injective.'
+  - property: preserves regular monomorphisms
+    proof: 'Consider the monoid $N = \langle a,b,c : ab = ac \rangle_{\Mon}$ and the free monoid $M = \langle b,c \rangle_{\Mon}$. The canonical homomorphism $M \to N$ is injective. It is also the equalizer of the two natural maps from $N$ into $\langle a_1,a_2,b,c : a_1 b = a_1 c, \, a_2 b = a_2 c \rangle_{\Mon}$. However, $F(M) = \langle b,c \rangle_{\Grp}$ (free group), and $b,c$ become identified in $F(N) \cong \langle a,b,c : b = c \rangle_{\Grp}$ since we may cancel $a$, so that $F(M) \to F(N)$ is not injective.'
 
   - property: preserves products
     proof: >-

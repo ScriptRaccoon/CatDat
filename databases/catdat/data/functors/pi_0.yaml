@@ -39,7 +39,7 @@ unsatisfied_properties:
   - property: essentially injective
     proof: We have $\pi_0(\{\ast\}) \cong \pi_0([0,1])$, but $\{\ast\} \not\cong [0,1]$.
 
-  - property: preserves monomorphisms
+  - property: preserves regular monomorphisms
     proof: The functor $\pi_0$ maps the embedding $\{0,1\} \hookrightarrow [0,1]$ to the (unique) map $\{\{0\},\{1\}\} \to \{[0,1]\}$, which is not injective.
 
   - property: cofinitary

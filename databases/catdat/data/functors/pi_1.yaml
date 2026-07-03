@@ -32,11 +32,11 @@ unsatisfied_properties:
   - property: essentially injective
     proof: We have $\pi_1(\{0\},0) \cong \pi_1([0,1],0)$ (both groups are trivial), but $(\{0\},0) \not\cong ([0,1],0)$.
 
-  - property: preserves monomorphisms
+  - property: preserves regular monomorphisms
     proof: The functor $\pi_1$ maps the embedding $(S^1,1) \hookrightarrow (\IC,1)$ to the trivial group homomorphism $\IZ \to \{1\}$, which is not injective.
 
-  - property: preserves epimorphisms
-    proof: The functor $\pi_1$ maps the epimorphism $(\IR,0) \to (S^1,1)$, $t \mapsto e^{2 \pi i t}$, to the trivial group homomorphism $\{1\} \to \IZ$, which is not surjective.
+  - property: preserves regular epimorphisms
+    proof: The functor $\pi_1$ maps the regular epimorphism $(\IR,0) \to (S^1,1)$, $t \mapsto e^{2 \pi i t}$, to the trivial group homomorphism $\{1\} \to \IZ$, which is not surjective.
 
   - property: preserves reflexive coequalizers
     proof: 'The previous counterexample of an epimorphism $f : (\IR,0) \to (S^1,1)$ that is not preserved by $\pi_1$ is actually an open map and hence a regular epimorphism, and in <a href="/category/Top_*">$\Top_*$</a>, every regular epimorphism $f : X \to Y$ is the coequalizer of the reflexive pair $p_1,p_2 : X \times_Y X \rightrightarrows Y$.'

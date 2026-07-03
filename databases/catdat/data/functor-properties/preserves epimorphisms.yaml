@@ -8,6 +8,7 @@ invariant_under_equivalences: true
 dual_property: preserves monomorphisms
 related_properties:
   - right exact
+  - preserves regular epimorphisms
 
 tags:
   - morphism behavior
