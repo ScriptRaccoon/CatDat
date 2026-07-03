@@ -45,13 +45,15 @@ export function create_dualized_implications(type: StructureType) {
 			(
 				SELECT json_group_array(p.dual_property_id)
 				FROM assumptions a
-				LEFT JOIN properties p ON p.id = a.property_id
+				LEFT JOIN properties p
+				ON p.id = a.property_id AND p.type = i.type
 				WHERE a.implication_id = i.id
 			) AS dual_assumptions,
 			(
 				SELECT json_group_array(p.dual_property_id)
 				FROM conclusions a
-				LEFT JOIN properties p ON p.id = a.property_id
+				LEFT JOIN properties p
+				ON p.id = a.property_id AND p.type = i.type
 				WHERE a.implication_id = i.id
 			) AS dual_conclusions,
 			(
@@ -61,7 +63,8 @@ export function create_dualized_implications(type: StructureType) {
 						a.map,
 						json_group_array(p.dual_property_id) AS properties
 					FROM mapped_assumptions a
-					INNER JOIN properties p ON p.id = a.property_id
+					INNER JOIN properties p
+					ON p.id = a.property_id AND p.type = a.property_type
 					WHERE a.implication_id = i.id
 					GROUP BY a.map
 				)

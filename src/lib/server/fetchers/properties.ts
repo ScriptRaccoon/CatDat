@@ -83,7 +83,7 @@ export function fetch_tagged_properties(type: StructureType, tag: string) {
 		SELECT p.id, p.relation
 		FROM property_tag_assignments t
 		INNER JOIN properties p
-		ON p.id = t.property_id
+		ON p.id = t.property_id AND p.type = ${type}
 		WHERE t.tag = ${tag} AND t.type = ${type}
 		ORDER BY lower(id)
 	`)

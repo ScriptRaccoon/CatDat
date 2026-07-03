@@ -31,13 +31,13 @@ export function fetch_property(type: StructureType, id: string) {
                 nlab_link,
                 invariant_under_equivalences
             FROM properties
-            WHERE id = ${id}
+            WHERE id = ${id} AND type = ${type}
         `,
 		// related properties
 		sql`
             SELECT related_property_id AS id
             FROM related_properties
-            WHERE property_id = ${id}
+            WHERE property_id = ${id} AND type = ${type}
             ORDER BY lower(id)
         `,
 		// tags

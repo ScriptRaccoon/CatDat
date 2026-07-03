@@ -99,7 +99,7 @@ export function fetch_search_results(
 		SELECT s.id, s.name FROM structures s
 		INNER JOIN property_assignments a ON a.structure_id = s.id
 		WHERE
-			a.type = ? AND s.type = ?
+			s.type = ? AND a.type = s.type
 			AND property_id IN (${to_placeholders(all_selected_properties)})
 		GROUP BY structure_id
 		HAVING
@@ -128,7 +128,6 @@ export function fetch_search_results(
 	const { rows: found_structures, err } = query<StructureShort>({
 		sql: search_query,
 		values: [
-			type,
 			type,
 			...all_selected_properties,
 			...satisfied_properties,

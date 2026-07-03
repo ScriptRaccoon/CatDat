@@ -68,7 +68,8 @@ export function fetch_structure(type: StructureType, id: string) {
                 pa.is_deduced,
                 p.relation
             FROM property_assignments pa
-            INNER JOIN properties p ON p.id = pa.property_id
+            INNER JOIN properties p
+            ON p.id = pa.property_id AND p.type = pa.type
             WHERE pa.structure_id = ${id}
             ORDER BY pa.id
         `,
@@ -76,7 +77,7 @@ export function fetch_structure(type: StructureType, id: string) {
 		sql`
             SELECT p.id, p.relation
             FROM properties p
-            WHERE type = ${type} AND NOT EXISTS (
+            WHERE p.type = ${type} AND NOT EXISTS (
                 SELECT 1 FROM property_assignments
                 WHERE structure_id = ${id} AND property_id = p.id
             )
@@ -86,7 +87,7 @@ export function fetch_structure(type: StructureType, id: string) {
 		sql`
             SELECT u.id, u.name
             FROM structures u
-            JOIN properties p
+            JOIN properties p ON p.type = u.type
             LEFT JOIN property_assignments pa
                 ON pa.structure_id = ${id}
                 AND pa.property_id = p.id
@@ -94,8 +95,7 @@ export function fetch_structure(type: StructureType, id: string) {
                 ON up.structure_id = u.id
                 AND up.property_id = p.id
             WHERE
-                p.type = ${type}
-                AND u.type = ${type}
+                u.type = ${type}
                 AND u.id != ${id}
             GROUP BY u.id, u.name
             HAVING SUM(

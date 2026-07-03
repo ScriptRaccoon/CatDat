@@ -4,28 +4,28 @@ CREATE TABLE relations (
 );
 
 CREATE TABLE properties (
-    id TEXT PRIMARY KEY,
+    id TEXT NOT NULL,
     type TEXT NOT NULL,
     relation TEXT NOT NULL,
     description TEXT NOT NULL CHECK (length(description) > 0),
     nlab_link TEXT CHECK (nlab_link IS NULL OR nlab_link like 'https://%'),
     invariant_under_equivalences INTEGER NOT NULL DEFAULT TRUE,
     dual_property_id TEXT,
-    UNIQUE (id, type), -- TODO: make (id, type) the primary key
+    PRIMARY KEY (id, type),
     FOREIGN KEY (relation) REFERENCES relations (relation) ON DELETE RESTRICT,
     FOREIGN KEY (dual_property_id, type)
         REFERENCES properties (id, type) ON DELETE RESTRICT,
     FOREIGN KEY (type) REFERENCES structure_types (type) ON DELETE RESTRICT
 );
 
-CREATE UNIQUE INDEX properties_lower_id_unique ON properties (lower(id));
+CREATE UNIQUE INDEX properties_lower_id_unique ON properties (lower(id), type);
 
 CREATE TABLE related_properties (
     property_id TEXT NOT NULL,
     related_property_id TEXT NOT NULL,
     type TEXT NOT NULL,
     CHECK (property_id != related_property_id),
-    PRIMARY KEY (property_id, related_property_id),
+    PRIMARY KEY (property_id, related_property_id, type),
     FOREIGN KEY (property_id, type)
         REFERENCES properties (id, type) ON DELETE CASCADE,
     FOREIGN KEY (related_property_id, type)

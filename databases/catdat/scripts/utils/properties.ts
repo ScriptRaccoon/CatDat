@@ -24,7 +24,7 @@ export function get_properties_dict(db: Database, type: StructureType) {
 				r.conditional AS conditional_relation
 			FROM properties p
 			INNER JOIN relations r ON r.relation = p.relation
-			WHERE type = ?
+			WHERE p.type = ?
 			ORDER BY lower(p.id)`,
 		)
 		.all(type)

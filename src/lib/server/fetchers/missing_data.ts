@@ -18,13 +18,12 @@ export function fetch_missing_data(type: StructureType) {
 		sql`
 			SELECT s.id, s.name, COUNT(*) AS count
 			FROM structures s
-			INNER JOIN properties p
+			INNER JOIN properties p ON p.type = s.type
 			LEFT JOIN property_assignments pa
 				ON pa.structure_id = s.id
 				AND pa.property_id = p.id
 			WHERE
-				p.type = ${type}
-				AND s.type = ${type}
+				s.type = ${type}
 				AND pa.property_id IS NULL
 			GROUP BY s.id
 			ORDER BY lower(s.name);
@@ -36,16 +35,13 @@ export function fetch_missing_data(type: StructureType) {
 				s2.id AS id2, s2.name AS name2
 			FROM structures s1
 			JOIN structures s2
-				ON s1.id < s2.id
-			JOIN properties p
+				ON s1.id < s2.id AND s2.type = s1.type
+			JOIN properties p ON p.type = s1.type
 			LEFT JOIN property_assignments a1
 				ON a1.structure_id = s1.id AND a1.property_id = p.id
 			LEFT JOIN property_assignments a2
 				ON a2.structure_id = s2.id AND a2.property_id = p.id
-			WHERE
-				p.type = ${type}
-				AND s1.type = ${type}
-				AND s2.type = ${type}
+			WHERE s1.type = ${type}
 			GROUP BY s1.id, s1.name, s2.id, s2.name
 			HAVING SUM(
 			CASE
