@@ -41,5 +41,7 @@
 	"dominant": true,
 	"isomorphism": true,
 	"preserves regular monomorphisms": true,
-	"preserves regular epimorphisms": true
+	"preserves regular epimorphisms": true,
+	"regular": true,
+	"coregular": true
 }

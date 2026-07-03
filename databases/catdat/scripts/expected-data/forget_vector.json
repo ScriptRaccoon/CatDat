@@ -42,5 +42,7 @@
 	"preserves reflexive coequalizers": true,
 	"preserves coreflexive equalizers": true,
 	"preserves regular monomorphisms": true,
-	"preserves regular epimorphisms": true
+	"preserves regular epimorphisms": true,
+	"regular": true,
+	"coregular": false
 }

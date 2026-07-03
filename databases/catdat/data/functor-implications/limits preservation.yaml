@@ -194,3 +194,12 @@
     - preserves finite coproducts
   proof: This is trivial.
   is_equivalence: false
+
+- id: regular_functor_definition
+  assumptions:
+    - left exact
+    - preserves regular epimorphisms
+  conclusions:
+    - regular
+  proof: This holds by definition of a regular functor.
+  is_equivalence: true

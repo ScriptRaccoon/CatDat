@@ -1,0 +1,13 @@
+id: regular
+relation: is
+description: 'A functor $F : \C \to \D$ is <i>regular</i> when it preserves finite limits and regular epimorphisms. This notion is used in particular when $\C$ and $\D$ are regular categories.'
+nlab_link: https://ncatlab.org/nlab/show/regular+functor
+invariant_under_equivalences: true
+dual_property: coregular
+related_properties:
+  - left exact
+  - preserves regular epimorphisms
+
+tags:
+  - limit preservation
+  - morphism behavior
