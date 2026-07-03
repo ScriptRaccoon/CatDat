@@ -38,9 +38,6 @@ unsatisfied_properties:
   - property: preserves regular epimorphisms
     proof: The functor $\pi_1$ maps the regular epimorphism $(\IR,0) \to (S^1,1)$, $t \mapsto e^{2 \pi i t}$, to the trivial group homomorphism $\{1\} \to \IZ$, which is not surjective.
 
-  - property: preserves reflexive coequalizers
-    proof: 'The previous counterexample of an epimorphism $f : (\IR,0) \to (S^1,1)$ that is not preserved by $\pi_1$ is actually an open map and hence a regular epimorphism, and in <a href="/category/Top_*">$\Top_*$</a>, every regular epimorphism $f : X \to Y$ is the coequalizer of the reflexive pair $p_1,p_2 : X \times_Y X \rightrightarrows Y$.'
-
   - property: preserves binary coproducts
     proof: See <a href="https://math.stackexchange.com/questions/3991443" target="_blank">MSE/3991443</a> or <a href="https://math.stackexchange.com/questions/2788471" target="_blank">MSE/2788471</a> for counterexamples. See <a href="https://math.stackexchange.com/questions/4625240" target="_blank">MSE/4625240</a> for conditions which binary products are preserved.
 

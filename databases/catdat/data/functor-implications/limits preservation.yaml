@@ -158,6 +158,17 @@
   proof: This is trivial.
   is_equivalence: false
 
+- id: another_regular-mono-preserving_criterion
+  assumptions:
+    - preserves coreflexive equalizers
+  mapped_assumptions:
+    source:
+      - pushouts
+  conclusions:
+    - preserves regular monomorphisms
+  proof: 'Let $F : \C \to \D$ be a functor preserving coreflexive equalizers, where $\C$ has pushouts; we only need that $\C$ has cokernel pairs. Let $i : X \to Y$ be a regular monomorphism in $\C$. By Prop. 3.2 at the <a href="https://ncatlab.org/nlab/show/regular+epimorphism#MorphismsWithKernelPairsAreRegularIffEffective" target="_blank">nLab</a>, $i$ is the equalizer of the two canonical morphisms $u_1,u_2 : Y \rightrightarrows Y \sqcup_X Y$ into the cokernel pair of $i$. By the universal property of the pushout, there is a morphism $\nabla : Y \sqcup_X Y \to Y$ with $\nabla u_1 = \nabla u_2 = \id_Y$. Thus, $u_1,u_2$ is a coreflexive pair. Since $F$ preserves coreflexive equalizers by assumption, $F(i)$ is the equalizer of $F(u_1), F(u_2)$. In particular, $F(i)$ is a regular monomorphism.'
+  is_equivalence: false
+
 - id: zero_preserving_condition
   assumptions:
     - preserves terminal objects

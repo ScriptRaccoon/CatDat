@@ -21,6 +21,7 @@ satisfied_properties:
 
   - property: preserves monomorphisms
     proof: 'If $f : X \to Y$ is injective, then $f^* \circ f_* = \id_{P(X)}$, so that $f_*$ is injective.'
+    check_redundancy: false
 
   - property: conservative
     proof: 'Assume that $f : X \to Y$ is a map such that $f_* : P(X) \to P(Y)$ is an isomorphism. There is some $A \subseteq X$ with $Y = f_*(A)$, this proves that $f$ is surjective. It is also injective: If $x,y \in X$ satisfy $f(x) = f(y)$, then $f_*(\{x\}) = f_*(\{y\})$, and hence $\{x\} = \{y\}$, i.e. $x = y$.'

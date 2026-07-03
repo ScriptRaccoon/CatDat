@@ -27,9 +27,6 @@ satisfied_properties:
   - property: preserves reflexive coequalizers
     proof: 'Since the forgetful functor $U_{\Mon} : \Mon \to \Set$ preserves reflexive coequalizers (by Theorem 2.5 at the <a href="https://ncatlab.org/nlab/show/reflexive+coequalizer" target="_blank">nLab</a>) and is conservative, it suffices to prove that the composition $U_{\Mon} \circ U_{\Ring,\Mon} : \Ring \to \Set$ preserves reflexive coequalizers. This is just the forgetful functor $U_{\Ring} : \Ring \to \Set$ and therefore preserves reflexive coequalizers (by loc.cit.).'
 
-  - property: preserves regular epimorphisms
-    proof: Since both rings and monoids form algebraic categories, their regular epimorphisms are precisely the surjective homomorphisms.
-
 unsatisfied_properties:
   - property: preserves initial objects
     proof: The initial object in $\Ring$ is $\IZ$, but the initial object in $\Mon$ is the trivial monoid.

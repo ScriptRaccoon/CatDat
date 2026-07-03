@@ -28,9 +28,6 @@ satisfied_properties:
   - property: preserves reflexive coequalizers
     proof: This follows from Theorem 2.5 at the <a href="https://ncatlab.org/nlab/show/reflexive+coequalizer" target="_blank">nLab</a>.
 
-  - property: preserves regular epimorphisms
-    proof: We know that regular epimorphisms of rings are surjective.
-
 unsatisfied_properties:
   - property: essentially injective
     proof: This is trivial.

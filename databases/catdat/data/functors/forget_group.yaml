@@ -27,9 +27,6 @@ satisfied_properties:
   - property: finitary
     proof: For every algebraic category the forgetful functor to the category of sets preserves filtered colimits.
 
-  - property: preserves epimorphisms
-    proof: This follows from the classifications of epimorphisms in <a href="/category/Grp">$\Grp$</a> and in <a href="/category/Set">$\Set$</a>.
-
   - property: preserves reflexive coequalizers
     proof: This follows from Theorem 2.5 at the <a href="https://ncatlab.org/nlab/show/reflexive+coequalizer" target="_blank">nLab</a>.
 

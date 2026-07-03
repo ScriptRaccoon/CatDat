@@ -21,9 +21,6 @@ satisfied_properties:
   - property: preserves initial objects
     proof: This is obvious.
 
-  - property: preserves epimorphisms
-    proof: This follows easily from the description of epimorphisms in $\Set$ as surjective maps.
-
   - property: representable
     proof: We have $X \times Y \cong \Hom_{\Set \times \Set}((1,1),(X,Y))$.
 

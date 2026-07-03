@@ -19,9 +19,6 @@ satisfied_properties:
   - property: preserves initial objects
     proof: This is obvious.
 
-  - property: preserves epimorphisms
-    proof: This follows easily from the fact that epimorphisms in $\Set$ are surjective functions.
-
   - property: representable
     proof: We have $X^2 \cong \Hom(\{1,2\},X)$.
 

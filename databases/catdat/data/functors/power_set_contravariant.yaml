@@ -16,9 +16,6 @@ satisfied_properties:
   - property: representable
     proof: This is because there are natural bijections $P(X) \cong \Hom(X,2)$, sending a subset to its characteristic function.
 
-  - property: preserves epimorphisms
-    proof: 'If $f : X \to Y$ is injective, then $f^* : P(Y) \to P(X)$ is surjective, since for all $A \subseteq X$ we have $A = f^*(f_*(A))$.'
-
   - property: conservative
     proof: >-
       Assume that $f : X \to Y$ is a map such that $f^* : P(Y) \to P(X)$ is bijective. For $y \in Y$ it follows that $f^*(\{y\}) \neq f^*(\varnothing) = \varnothing$, which means that $y$ has an $f$-preimage. That is, $f$ is surjective.
