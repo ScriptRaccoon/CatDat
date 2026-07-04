@@ -17,3 +17,6 @@ satisfied_properties:
 unsatisfied_properties:
   - property: epimorphism
     proof: Since $X$ is non-empty, the map is not surjective.
+
+  - property: split monomorphism
+    proof: There is no map $X \to \varnothing$.

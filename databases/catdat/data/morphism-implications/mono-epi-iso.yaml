@@ -2,8 +2,16 @@
   assumptions:
     - isomorphism
   conclusions:
+    - split monomorphism
+  proof: This is trivial.
+  is_equivalence: false
+
+- id: split_mono_is_regular_mono
+  assumptions:
+    - split monomorphism
+  conclusions:
     - regular monomorphism
-  proof: 'If $f : A \to B$ is an isomorphism, it is an equalizer of $\id_B, \id_B : B \rightrightarrows B$.'
+  proof: 'Let $f : A \to B$ be a split monomorphism, and choose a morphism $g : B \to A$ with $g \circ f = \id_A$. Then it is easy to check that $f$ is an equalizer of $\id_B, f \circ g : B \rightrightarrows B$.'
   is_equivalence: false
 
 - id: mono_is_iso

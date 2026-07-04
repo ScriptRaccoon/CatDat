@@ -11,8 +11,8 @@ tags:
 related_morphisms: []
 
 satisfied_properties:
-  - property: epimorphism
-    proof: The map is surjective because $X$ is non-empty.
+  - property: split epimorphism
+    proof: 'Take any element $x \in X$. The corresponding map $x : 1 \to X$ is a section of $! : X \to 1$.'
 
 unsatisfied_properties:
   - property: monomorphism
