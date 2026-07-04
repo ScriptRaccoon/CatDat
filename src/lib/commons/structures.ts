@@ -2,6 +2,10 @@ import type { StructureType } from './types'
 
 export const STRUCTURES: StructureType[] = ['category', 'functor', 'morphism']
 
+export function is_structure_type(txt: string): txt is StructureType {
+	return (STRUCTURES as string[]).includes(txt)
+}
+
 export const PLURALS = {
 	category: 'categories',
 	functor: 'functors',

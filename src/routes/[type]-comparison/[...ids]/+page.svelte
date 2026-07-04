@@ -4,4 +4,4 @@
 	let { data } = $props()
 </script>
 
-<ComparisonResultPage type="morphism" {...data} />
+<ComparisonResultPage {...data} />

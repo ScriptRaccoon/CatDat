@@ -89,5 +89,6 @@ export function fetch_comparison_result(
 	return {
 		structures: render_nested_formulas(structures),
 		comparison_table,
+		type,
 	}
 }

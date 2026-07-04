@@ -15,7 +15,7 @@ export function fetch_structures(type: StructureType) {
 
 	if (err) error(500, `${capitalize(PLURALS[type])} could not be loaded`)
 
-	return { structures }
+	return { structures, type }
 }
 
 export function fetch_structures_and_tags(type: StructureType) {

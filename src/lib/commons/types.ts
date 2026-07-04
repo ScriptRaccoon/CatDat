@@ -145,4 +145,5 @@ export type SearchResults = {
 export type ComparisonResult = {
 	structures: RelatedStructure[]
 	comparison_table: string[][]
+	type: StructureType
 }
