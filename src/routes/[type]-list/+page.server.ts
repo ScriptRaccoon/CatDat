@@ -1,6 +1,11 @@
-import { is_structure_type } from '$lib/commons/structures'
+import { is_structure_type, STRUCTURES } from '$lib/commons/structures'
 import { fetch_structures_and_tags } from '$lib/server/fetchers/structures'
 import { error } from '@sveltejs/kit'
+import type { EntryGenerator } from './$types'
+
+export const entries: EntryGenerator = () => {
+	return STRUCTURES.map((type) => ({ type }))
+}
 
 export const load = (event) => {
 	const type = event.params.type
