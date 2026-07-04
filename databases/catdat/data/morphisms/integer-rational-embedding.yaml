@@ -1,0 +1,22 @@
+id: integer-rational-embedding
+name: embedding of integer into rational numbers
+notation: $\iota_{\IZ,\IQ}$
+ambient_category: CRing
+description: 'The inclusion $\iota_{\IZ,\IQ} : \IZ \hookrightarrow \IQ$ is a typical example of a localization. It is a standard example of a mono- and epimorphism which is not an isomorphism in the category of (commutative) rings.'
+nlab_link: https://ncatlab.org/nlab/show/localization+of+a+commutative+ringlization
+
+tags:
+  - algebra
+
+related_morphisms: []
+
+satisfied_properties:
+  - property: monomorphism
+    proof: It is clearly injective.
+
+  - property: epimorphism
+    proof: Every localization $R \to S^{-1} R$ has this property by the universal property of localizations.
+
+unsatisfied_properties:
+  - property: isomorphism
+    proof: Clearly, this map is not surjective.

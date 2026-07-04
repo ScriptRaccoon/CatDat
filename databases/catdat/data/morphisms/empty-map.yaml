@@ -1,0 +1,19 @@
+id: empty-map
+name: map from the empty set
+notation: $!$
+ambient_category: Set
+description: 'For every set $X$ there is a unique map $! : \varnothing \hookrightarrow X$, the empty map. In this entry, we require that $X$ is non-empty.'
+nlab_link: https://ncatlab.org/nlab/show/empty+set
+
+tags:
+  - set theory
+
+related_morphisms: []
+
+satisfied_properties:
+  - property: monomorphism
+    proof: It is vacuously injective.
+
+unsatisfied_properties:
+  - property: epimorphism
+    proof: Since $X$ is non-empty, the map is not surjective.
