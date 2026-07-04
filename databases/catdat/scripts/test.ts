@@ -11,6 +11,7 @@ import forget_vector_expected from './expected-data/forget_vector.json'
 import id_Set_expected from './expected-data/id_Set.json'
 import decided_categories from './expected-data/decided-categories.json'
 import decided_functors from './expected-data/decided-functors.json'
+import decided_morphisms from './expected-data/decided-morphisms.json'
 import { capitalize } from './utils/helpers'
 import { get_client } from './utils/db'
 import { PLURALS, STRUCTURES, type StructureType } from './config'
@@ -31,6 +32,7 @@ function execute_tests() {
 		check_link_targets_exist()
 
 		console.info('\n--- Test categories ---')
+
 		test_mutual_structure_duals('category')
 		test_positivity('1', 'category')
 		test_mutual_property_duals('category')
@@ -41,6 +43,7 @@ function execute_tests() {
 		)
 
 		console.info('\n--- Test functors ---')
+
 		test_positivity('id_Set', 'functor')
 		test_mutual_property_duals('functor')
 		test_decided_structures(decided_functors, 'functor')
@@ -48,6 +51,11 @@ function execute_tests() {
 			{ forget_vector: forget_vector_expected, id_Set: id_Set_expected },
 			'functor',
 		)
+
+		console.info('\n--- Test morphisms ---')
+
+		test_positivity('id_X', 'morphism')
+		test_decided_structures(decided_morphisms, 'morphism')
 	} catch (err) {
 		if (err instanceof Error) {
 			console.error(err.message)
