@@ -1,0 +1,158 @@
+id: Mono
+name: category of sets with a distinguished subset
+notation: $\Mono$
+objects: >-
+  pairs $(X, X')$ where $X$ is a set and $X' \subseteq X$ is a subset
+morphisms: >-
+  a morphism $(X, X') \to (Y, Y')$ is a function $f : X \to Y$ such that $f(X') \subseteq Y'$
+description: >-
+  This is equivalent to the full subcategory of objects $(X, Y, f)$ of <a href="/category/Set_arrow">$\Set^{\rightarrow}$</a> where $f : X \to Y$ is an injective function, i.e. a monomorphism. This explains our notation.
+nlab_link: https://ncatlab.org/nlab/show/M-category#def
+
+tags:
+  - set theory
+
+related:
+  - Set
+  - Set_arrow
+  - FI
+  - Pos
+  - Prost
+
+satisfied_properties:
+  - property: locally small
+    proof: There is a forgetful functor $\Mono \to \Set$, $(X, X') \mapsto X$, and $\Set$ is locally small.
+
+  - property: semi-strongly connected
+    proof: This is immediate from the fact that $\Mono$ is equivalent to a full subcategory of <a href="/category/Set_arrow">$\Set^{\rightarrow}$</a>, and the latter is semi-strongly connected.
+
+  - property: generator
+    proof: >-
+      The object $(1, 0)$ is a generator. This is because it represents the functor taking an object $(X, X')$ to $X$, and taking a morphism $f : (X, X') \to (Y, Y')$ to the function $f : X \to Y$.
+
+  - property: cogenerator
+    proof: >-
+      Consider the forgetful functor $U : \Mono \to \Set$, $(X, X') \mapsto X$. This has right adjoint $R : \Set \to \Mono$, $X \mapsto (X, X)$. Therefore, by the dual of Lemma 9 <a href="/content/subcategories">here</a>, $R$ preserves cogenerators; and in particular, since $\Set$ has a cogenerator, so does $\Mono$.
+
+  - property: complete
+    proof: >-
+      The component-wise limit gives a pair of a set and a subset, and this pair forms the limit in $\Mono$.
+
+      More concretely, suppose we have a diagram $((X_i, X_i'))_{i \in \I}$, with limit cone $p_i : \lim_{i\in\I} X_i \to X_i$ in <a href="/category/Set">$\Set$</a>. Then the limit in $\Mono$ is $(\lim_{i\in\I} X_i, \bigcap_{i\in\I} p_i^{-1}(X_i'))$. (It is easy to see that in the subset component, we can also restrict $i$ to range over a <a href="https://ncatlab.org/nlab/show/weak+multilimit" target="_blank">weakly terminal</a> set of objects of $I$.)
+    check_redundancy: false
+
+  - property: cocomplete
+    proof: >-
+      We have that $\Mono$ is a reflective subcategory of $\Set^{\rightarrow}$, with the reflector taking a function $f : X \to Y$ to the pair $(Y, \im(f))$. Therefore, the result follows from the fact that <a href="/category/Set_arrow">$\Set^{\rightarrow}$</a> is cocomplete.
+
+      More concretely, suppose we have a diagram $((X_i, X_i'))_{i \in \I}$, with colimit cone $c_i : X_i \to \colim_{i\in\I} X_i$ in <a href="/category/Set">$\Set$</a>. Then the colimit in $\Mono$ is $(\colim_{i\in\I} X_i, \bigcup_{i\in\I} c_i(X_i'))$. (It is easy to see that in the subset component, we can also restrict $i$ to range over a <a href="https://ncatlab.org/nlab/show/weak+multilimit" target="_blank">weakly initial</a> set of objects of $I$.)
+    check_redundancy: false
+
+  - property: disjoint coproducts
+    proof: This follows from the fact that coproducts in $\Mono$ can be computed component-wise, along with the fact that <a href="/category/Set">$\Set$</a> has disjoint coproducts.
+
+  - property: locally cartesian closed
+    proof: >-
+      For any object $(S, S')$ of $\Mono$, we can view objects of the slice $\Mono / (S, S')$ as indexed families $(\bigsqcup_{s\in S} X_s, \bigsqcup_{s\in S'} X'_s)$ where $X'_s \subseteq X_s$ for each $s\in S'$. Given any two such objects $X = (\bigsqcup_{s\in S} X_s, \bigsqcup_{s\in S'} X'_s)$ and $Y = (\bigsqcup_{s\in S} Y_s, \bigsqcup_{s\in S'} Y'_s)$, observe that $\Hom_{\Mono / (S, S')}(X, Y)$ is equivalent to the tuples of functions $f \in \prod_{s\in S} \Hom_{\Set}(X_s, Y_s)$ such that whenever $s \in S'$, then $f_s(X_s ') \subseteq Y_s '$. We claim that $\Mono$ has a relative exponential given by
+      $$[X, Y]_S \coloneqq \left(\bigsqcup_{s\in S} [X_s, Y_s], \bigsqcup_{s\in S'} [X_s, Y_s]' \right)$$
+      where
+      $$[X_s, Y_s]' \coloneqq \{ f \in [X_s, Y_s] : f(X_s ') \subseteq Y_s ' \}.$$
+      To check that this works, suppose we have a test object $U = (\bigsqcup_{s\in S} U_s, \bigsqcup_{s\in S'} U_s ')$. Then $U \times_S X = (\bigsqcup_{s\in S} (U_s \times X_s), \bigsqcup_{s\in S'} (U_s ' \times X_s '))$. Given a morphism $g : U \times_S X \to Y$ in $\Mono / (S, S')$, we define the corresponding morphism $h : U \to [X, Y]_S$ to have $s$-component given by $u \mapsto (x \mapsto g_s(u, x))$. To check this is a valid morphism in $\Mono / (S, S')$, suppose that $s \in S'$ and $u \in U_s '$; then for every $x \in X_s '$, we have $(u, x) \in U_s ' \times X_s '$, so $g_s(u, x) \in Y_s '$. This shows that $h_s(u) \in [X_s, Y_s]'$. Conversely, given a morphism $h : U \to [X, Y]_S$ in $\Mono / (S, S')$, we define the corresponding morphism $g : U \times_S X \to Y$ to have $s$-component given by $(u, x) \mapsto h_s(u)(x)$. To check this is a valid morphism in $\Mono / (S, S')$, suppose that $s \in S'$ and $(u, x) \in U_s ' \times X_s '$; then $u \in U_s '$ so $h_s(u) \in [X_s, Y_s]'$. Furthermore, $x \in X_s '$, so $h_s(u)(x) \in Y_s '$.
+
+      It is easy to check these give inverse operations which are natural in $U$ (in fact, the details are exactly the same as the details of an explicit proof that $\Set$ is locally cartesian closed), completing the proof.
+
+  - property: regular subobject classifier
+    proof: 'The object $(\{ \top, \bot \}, \{ \top, \bot \})$ is a regular subobject classifier, with $\top : (1, 1) \to (\{ \top, \bot \}, \{ \top, \bot \})$ consisting of the function with image $\top$. This follows from the description of regular monomorphisms below.'
+
+  - property: locally finitely presentable
+    proof: >-
+      It is equivalent to the category of models of the finite limit sketch with a single limit cone
+      $$\begin{CD}
+      X @> \id >> X \\
+      @V \id VV @VV f VV \\
+      X @>> f > Y.
+      \end{CD}$$
+      Alternately, we already know $\Mono$ is cocomplete. We claim that both $(1, 0)$ and $(1, 1)$ are finitely presentable objects of $\Mono$. For the first, $(1, 0)$ represents the forgetful functor $(X, X') \mapsto X$; and this functor has a right adjoint $X \mapsto (X, X)$ so it preserves filtered colimits (in fact all colimits). For the second, $(1, 1)$ represents the functor $(X, X') \mapsto X'$. Now by the previous description of colimits, for a filtered diagram $((X_i, X_i'))_{i\in\I}$, first form the filtered colimit of $X_i$ in <a href="/category/Set">$\Set$</a> with cocone $c_i : X_i \to \colim_{i\in\I} X_i$. Then the filtered colimit in $\Mono$ is $(\colim_{i\in\I} X_i, \bigcup_{i\in\I} c_i(X_i'))$. This makes it easy to see that the canonical function
+      $$\colim_{i\in\I} \Hom((1,1), (X_i,X_i')) \to \Hom((1,1), \colim_{i\in\I} (X_i,X_i'))$$
+      is surjective. To see it is injective, use the fact that the unique morphism $(1, 0) \to (1, 1)$ is an epimorphism (see below), and we have already seen that the corresponding function for $(1,0)$ is injective.
+
+      Therefore, any finite coproduct of $(1, 0)$ and $(1, 1)$ is finitely presentable; this means any object of the form $([n], [m])$ with $m, n \in \IN$ and $m \le n$ is finitely presentable. All such objects form a small set. Moreover, any object $(X,X')$ of $\Mono$ is a filtered colimit of the subobjects $(F, F \cap X')$ where $F$ is a finite subset of $X$, and each $(F, F \cap X')$ is isomorphic to some $([n], [m])$.
+
+  - property: coregular
+    proof: >-
+      It suffices to show regular monomorphisms are stable under pushouts. Thus, suppose we have two morphisms $f : (X, X') \to (Y, Y')$ and $g : (X, X') \to (Z, Z')$ where $f$ is a regular monomorphism, which means $f$ is injective and $X' = f^{-1}(Y')$. Then we can construct a pushout diagram
+      $$\begin{CD}
+      (X, X') @> f >> (Y, Y') \\
+      @V g VV @VV i_1 VV \\
+      (Z, Z') @>> i_2 > ((Y \setminus f(X)) \sqcup Z, i_1(Y') \cup i_2(Z')).
+      \end{CD}$$
+      Here $i_1$ sends $f(x) \mapsto g(x) \in Z$ for $x \in X$, and otherwise it sends $y \mapsto y$ for $y \in Y \setminus f(X)$; and $i_2$ is the inclusion of $Z$. We certainly have $i_2$ is injective; it remains to show $i_2^{-1}(i_1(Y') \cup i_2(Z')) = Z'$. However, we have
+      $$i_2^{-1}(i_1(Y') \cup i_2(Z')) = i_2^{-1}(i_1(Y')) \cup i_2^{-1}(i_2(Z'))$$
+      and obviously $i_2^{-1}(i_2(Z')) = Z'$. Therefore, it suffices to show $i_2^{-1}(i_1(Y')) \subseteq Z'$. Thus, suppose we have $z \in Z$ such that $i_2(z) \in i_1(Y')$. That means there exists $y' \in Y'$ such that $z = i_1(y')$. But in order for $i_1(y')$ to land in the $Z$ portion of $(Y \setminus f(X)) \sqcup Z$, we must have $y' \in f(X)$. That means there exists $x \in X$ such that $f(x) = y'$; and by the assumption on $f$, in fact $x \in X'$. Therefore,
+      $$i_2(g(x)) = i_1(f(x)) = i_1(y') = z = i_2(z),$$
+      so $z = g(x) \in Z'$.
+
+  - property: co-Malcev
+    proof: >-
+      Suppose we have a coreflexive corelation $p : (X \sqcup X, X' \sqcup X') \twoheadrightarrow (E, E')$ with coreflexivity morphism $r : (E, E') \to (X, X')$. From the assumption that $p$ is an epimorphism, we have that $p : X \sqcup X \to E$ is a surjective function. Since <a href="/category/Set">$\Set$</a> is co-Malcev, it follows that $E \cong X \sqcup_Y X$ for some subset $Y \subseteq X$. It remains to show that $E' = i_1(X') \cup i_2(X') \subseteq X \sqcup_Y X$. Certainly, since we have a morphism $(X \sqcup_Y X, i_1(X') \cup i_2(X')) \to (E, E')$ induced by $p$, we must have $i_1(X') \cup i_2(X') \subseteq E'$. On the other hand, any element of $E'$ is an element of $E$ and hence is equal to either $i_1(x)$ or $i_2(x)$ for $x \in X$. In the first case, we must have $x = r(i_1(x)) \in X'$, so $i_1(x) \in i_1(X')$; and similarly for the second case.
+
+  - property: effective cocongruences
+    proof: 'See the proof that $\Mono$ is co-Malcev: It shows that in fact any coreflexive corelation is equivalent to an effective cocongruence $X \sqcup X \twoheadrightarrow X \sqcup_Y X$.'
+
+unsatisfied_properties:
+  - property: skeletal
+    proof: Consider the objects $(X, X)$ and $(Y, Y)$ for isomorphic but non-equal sets $X$ and $Y$.
+
+  - property: balanced
+    proof: The unique morphism from $(1, 0)$ to $(1, 1)$ is both a monomorphism and an epimorphism, but not an isomorphism (see descriptions below).
+
+  - property: cofiltered-limit-stable epimorphisms
+    proof: >-
+      We already know that <a href="/category/Set">$\Set$</a> does not have this property. Now apply the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> to the functor $\Set \to \Mono$ which sends a set $X$ to the pair $(X, X)$.
+
+  - property: Malcev
+    proof: This is clear since $\Set$ is not Malcev, and it has a left exact embedding in $\Mono$ via the functor sending a set $X$ to $(X, X)$.
+
+special_objects:
+  initial object:
+    description: $(0, 0)$
+  terminal object:
+    description: $(1, 1)$
+  coproducts:
+    description: component-wise defined disjoint union
+  products:
+    description: component-wise defined cartesian product
+
+special_morphisms:
+  isomorphisms:
+    description: >-
+      morphisms $f : (X, X') \to (Y, Y')$ such that $f$ is a bijection between $X$ and $Y$, and $f(X') = Y'$
+    proof: This is easy.
+  monomorphisms:
+    description: >-
+      morphisms $f : (X, X') \to (Y, Y')$ such that $f$ is an injective function from $X$ to $Y$
+    proof: >-
+      For the non-trivial direction, use the fact that the functor taking an object $(X, X')$ to $X$ and a morphism $f : (X, X') \to (Y, Y')$ to the function $f : X \to Y$ is representable by $(1, 0)$.
+  epimorphisms:
+    description: >-
+      morphisms $f : (X, X') \to (Y, Y')$ such that $f$ is a surjective function from $X$ to $Y$
+    proof: >-
+      For the non-trivial direction, use the fact that the forgetful functor $\Mono \to \Set$, $(X, X') \mapsto X$, has a right adjoint given by $X \mapsto (X, X)$. Therefore, the forgetful functor preserves epimorphisms; so if $f : (X, X') \to (Y, Y')$ is an epimorphism in $\Mono$, then $f : X \to Y$ is an epimorphism in <a href="/category/Set">$\Set$</a> and therefore surjective.
+  regular monomorphisms:
+    description: >-
+      morphisms $f : (X, X') \to (Y, Y')$ such that $f$ is an injective function from $X$ to $Y$, and $f^{-1}(Y') = X'$ (in particular, if $f : X \to Y$ is an inclusion map, then this is equivalent to $X' = X \cap Y'$)
+    proof: >-
+      To show any regular monomorphism satisfies this condition, suppose we have a parallel pair $g, h : (Y, Y') \to (Z, Z')$. To form the equalizer in $\Mono$, first we form the equalizer $f : X \hookrightarrow Y$ in $\Set$ of the underlying functions $g$ and $h$. Then by the construction of limits in the proof of completeness above, the equalizer in $\Mono$ is $(X, f^{-1}(Y'))$. Thus, we see that $f^{-1}(Y') = X'$.
+
+      For the other direction, suppose we are given a morphism $f : (X, X') \to (Y, Y')$ satisfying this condition. We can then construct an equalizer diagram
+      $$\begin{CD}
+      (X, X') @> f >> (Y, Y') @> \chi_{f(X)} > \top_Y > (\{ \top, \bot \}, \{ \top, \bot \}).
+      \end{CD}$$
+      Here $\chi_{f(X)} : Y \to \{ \top, \bot \}$ is the characteristic function of the subset $f(X) \subseteq Y$, and $\top_Y$ is the constant function on $Y$ with value $\top$.
+  regular epimorphisms:
+    description: >-
+      morphisms $f : (X, X') \to (Y, Y')$ such that $f$ is a surjective function from $X$ to $Y$, and $f(X') = Y'$
+    proof: >-
+      To show any regular epimorphism satisfies this condition, suppose we have a parallel pair $g, h : (Z, Z') \rightrightarrows (X, X')$. To form the coequalizer in $\Mono$, first we form the coequalizer $f : X \twoheadrightarrow Y$ in $\Set$ of the underlying functions $g$ and $h$. Then by the construction of colimits in the proof of cocompleteness above, the coequalizer in $\Mono$ is $(Y, f(X'))$. Thus, we see that $f(X') = Y'$.
+
+      To show any morphism $f : (X, X') \to (Y, Y')$ satisfying this condition is a regular epimorphism, note that the kernel pair of $f$ can be computed component-wise. Therefore, in general the coequalizer of the kernel pair of $f$ is $(f(X), f(X'))$; and with the given assumptions on $f$, this is isomorphic to $(Y, Y')$.

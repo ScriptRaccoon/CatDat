@@ -11,6 +11,7 @@ tags:
 
 related:
   - Pos
+  - Mono
 
 satisfied_properties:
   - property: locally small

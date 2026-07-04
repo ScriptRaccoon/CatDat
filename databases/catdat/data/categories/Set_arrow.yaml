@@ -20,6 +20,7 @@ related:
   - Set
   - SetxSet
   - Sh(X)
+  - Mono
 
 satisfied_properties:
   - property: locally small

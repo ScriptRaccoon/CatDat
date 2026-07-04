@@ -12,6 +12,7 @@ tags:
 related:
   - FinOrd
   - Prost
+  - Mono
 
 satisfied_properties:
   - property: locally small

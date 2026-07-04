@@ -101,3 +101,14 @@ $$E \xrightarrow{i} X \times_{X/E} X \rightrightarrows X \to X/E.$$
 By the assumptions, the image under $U$ is equivalent to the diagram in $\D$:
 $$UE \xrightarrow{Ui} UX \times_{U(X/E)} UX \rightrightarrows UX \to U(X/E).$$
 Here, $UE \rightrightarrows UX$ is a congruence: the map $UE \to UX \times UX$ is a monomorphism since $U$ preserves pullbacks and therefore preserves monomorphisms; the reflexivity and symmetry morphisms for $E$ are easily seen to transform under $U$ to reflexivity and symmetry morphisms for $UE$; and similarly, since $U$ preserves pullbacks, the transitivity morphism for $E$ transforms under $U$ to a transitivity morphism for $UE$. This congruence $UE$ of $\D$ is effective, so we must have $Ui$ is an isomorphism. Since $U$ is fully faithful and therefore conservative, we get $i$ is an isomorphism as well, so $E$ is effective. <span class="qed">$\square$</span>
+
+::: Lemma 9
+Let $L$ be a functor which is left adjoint to a faithful functor $U$. Then $L$ preserves generating sets. (Thus in particular, any reflective subcategory of a category with a generating set also has a generating set; and similarly for a single generator.)
+:::
+
+_Proof._ If $S$ is a generating set,
+$$\begin{align*}
+\prod_{G\in S} \Hom(L(G),-) & \cong \prod_{G\in S} \Hom(G,U(-)) \\
+& \cong \left( \prod_{G\in S} \Hom(G,-) \right) \circ U
+\end{align*}$$
+is a composition of faithful functors, hence faithful. <span class="qed">$\square$</span>
