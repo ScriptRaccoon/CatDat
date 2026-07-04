@@ -6,6 +6,7 @@ invariant_under_equivalences: true
 dual_property: monomorphism
 related_properties:
   - isomorphism
+  - regular epimorphism
 
 tags:
   - types of epimorphisms

@@ -1,0 +1,11 @@
+id: regular epimorphism
+relation: is a
+description: 'A morphism $f : A \to B$ is a <i>regular epimorphism</i> if it is the coequalizer of a pair of morphisms $g,h : C \rightrightarrows A$. In many categories appearing in practice, this is the same as a quotient.'
+nlab_link: https://ncatlab.org/nlab/show/regular+epimorphism
+invariant_under_equivalences: true
+dual_property: regular monomorphism
+related_properties:
+  - epimorphism
+
+tags:
+  - types of epimorphisms

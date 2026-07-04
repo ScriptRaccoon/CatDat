@@ -2,8 +2,8 @@
   assumptions:
     - isomorphism
   conclusions:
-    - monomorphism
-  proof: This is easy.
+    - regular monomorphism
+  proof: 'If $f : A \to B$ is an isomorphism, it is an equalizer of $\id_B, \id_B : B \rightrightarrows B$.'
   is_equivalence: false
 
 - id: mono_is_iso
@@ -27,4 +27,32 @@
   conclusions:
     - isomorphism
   proof: This holds by definition of a balanced category.
+  is_equivalence: false
+
+- id: regular_mono_is_mono
+  assumptions:
+    - regular monomorphism
+  conclusions:
+    - monomorphism
+  proof: This is an immediate consequence of the definition of an equalizer.
+  is_equivalence: false
+
+- id: mono-regular_def
+  assumptions:
+    - monomorphism
+  mapped_assumptions:
+    ambient_category:
+      - mono-regular
+  conclusions:
+    - regular monomorphism
+  proof: This is the definition of a mono-regular category.
+  is_equivalence: false
+
+- id: regular_epi_and_mono_is_iso
+  assumptions:
+    - regular epimorphism
+    - monomorphism
+  conclusions:
+    - isomorphism
+  proof: 'If $p : A \to B$ is the coequalizer of $f,g : C \rightrightarrows A$, then $p \circ f = p \circ g$. If $p$ is also a monomorphism, this implies $f = g$. But then $\id_B$ is a coequalizer of $f,g$, so that $p$ is an isomorphism.'
   is_equivalence: false
