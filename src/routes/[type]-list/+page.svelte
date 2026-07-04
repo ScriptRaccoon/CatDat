@@ -4,4 +4,4 @@
 	let { data } = $props()
 </script>
 
-<StructureListPage type="functor" {...data} />
+<StructureListPage {...data} />

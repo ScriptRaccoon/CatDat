@@ -14,8 +14,7 @@ export const PLURALS = {
 
 export function get_selected_type(pathname: string): StructureType {
 	for (const type of STRUCTURES) {
-		const matches =
-			pathname.startsWith(`/${type}`) || pathname.startsWith(`/${PLURALS[type]}`)
+		const matches = pathname.startsWith(`/${type}`)
 		if (matches) return type
 	}
 	return 'category'

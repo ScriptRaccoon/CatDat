@@ -20,8 +20,8 @@
 
 <p>
 	<i>CatDat</i> provides a growing collection of
-	<a class="accent" href="/categories">categories</a> and
-	<a class="accent" href="/functors">functors</a>. Built by and for those who love
+	<a class="accent" href="/category-list">categories</a> and
+	<a class="accent" href="/functor-list">functors</a>. Built by and for those who love
 	<a href="https://en.wikipedia.org/wiki/Category_theory" target="_blank">
 		category theory
 	</a>.
@@ -47,10 +47,10 @@
 		</h3>
 
 		<p>
-			Browse a comprehensive collection of <a class="accent" href="/categories"
+			Browse a comprehensive collection of <a class="accent" href="/category-list"
 				>categories</a
 			>
-			and <a class="accent" href="/functors">functors</a>, each with detailed
+			and <a class="accent" href="/functor-list">functors</a>, each with detailed
 			descriptions, proofs of their properties, and related structures.
 		</p>
 	</article>

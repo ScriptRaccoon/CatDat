@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { goto } from '$app/navigation'
-	import { PLURALS } from '$lib/commons/structures'
 	import type { StructureType } from '$lib/commons/types'
 	import Chip from './Chip.svelte'
 	import ChipGroup from './ChipGroup.svelte'
@@ -15,7 +14,7 @@
 
 	function filter_by_tag(tag: string) {
 		if (sort === 'structure') {
-			goto(`/${PLURALS[type]}/${tag}`)
+			goto(`/${type}-list/${tag}`)
 		} else {
 			goto(`/${type}-properties/${tag}`)
 		}

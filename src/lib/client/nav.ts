@@ -32,9 +32,9 @@ export function get_navigation_links(type: StructureType): Link[] {
 			icon: faHome,
 		},
 		{
-			href: `/${PLURALS[type]}`,
+			href: `/${type}-list`,
 			text: capitalize(PLURALS[type]),
-			nested: [`/${type}/`, `/${PLURALS[type]}/`],
+			nested: [`/${type}/`, `/${type}-list/`],
 			icon: faDatabase,
 		},
 		{

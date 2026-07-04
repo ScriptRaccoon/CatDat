@@ -43,7 +43,7 @@ export function fetch_structures_and_tags(type: StructureType) {
 
 	const tags = tag_objects.map(({ tag }) => tag)
 
-	return { structures, tags }
+	return { type, structures, tags }
 }
 
 export function fetch_tagged_structures(type: StructureType, tag: string) {
@@ -58,5 +58,5 @@ export function fetch_tagged_structures(type: StructureType, tag: string) {
 
 	if (err) error(500, `${capitalize(PLURALS[type])} could not be loaded`)
 
-	return { structures, tag }
+	return { type, structures, tag }
 }

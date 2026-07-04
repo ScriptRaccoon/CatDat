@@ -24,7 +24,7 @@
 		} else if (path.includes('-comparison')) {
 			goto(`/${selected_type}-comparison`)
 		} else {
-			goto(`/${PLURALS[selected_type]}`)
+			goto(`/${selected_type}-list`)
 		}
 	}
 
