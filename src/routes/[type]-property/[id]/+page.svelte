@@ -4,4 +4,4 @@
 	let { data } = $props()
 </script>
 
-<PropertyPage type="functor" {...data} />
+<PropertyPage {...data} />

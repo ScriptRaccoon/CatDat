@@ -4,4 +4,4 @@
 	let { data } = $props()
 </script>
 
-<TaggedPropertiesPage type="morphism" {...data} />
+<TaggedPropertiesPage {...data} />

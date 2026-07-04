@@ -135,6 +135,7 @@ export function fetch_property(type: StructureType, id: string) {
 	}
 
 	return {
+		type,
 		property,
 		related_properties,
 		tags,

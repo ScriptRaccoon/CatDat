@@ -75,7 +75,7 @@ export function fetch_grouped_properties_and_tags(type: StructureType) {
 	const total = properties.length
 	const grouped_total = grouped_properties.length
 
-	return { grouped_properties, total, grouped_total, tags }
+	return { type, grouped_properties, total, grouped_total, tags }
 }
 
 export function fetch_tagged_properties(type: StructureType, tag: string) {
@@ -90,5 +90,5 @@ export function fetch_tagged_properties(type: StructureType, tag: string) {
 
 	if (err) error(500, `Properties could not be loaded`)
 
-	return { properties, tag }
+	return { type, properties, tag }
 }
