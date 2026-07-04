@@ -18,6 +18,9 @@ functor_tags:
   - forgetful
   - free
 
+morphism_tags:
+  - misc
+
 category_property_tags:
   - limits
   - colimits
@@ -40,6 +43,11 @@ functor_property_tags:
   - adjunctions
   - invertibility
   - misc
+
+morphism_property_tags:
+  - types of monomorphisms
+  - types of epimorphisms
+  - invertibility
 
 relations:
   - relation: is

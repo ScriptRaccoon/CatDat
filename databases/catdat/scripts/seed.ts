@@ -9,6 +9,7 @@ import type {
 	PropertyEntry,
 	StructureYaml,
 	PropertyYaml,
+	MorphismYaml,
 } from './utils/seed.types'
 import { create_schema_hash, get_saved_schema_hash } from './utils/schema'
 import { PLURALS, STRUCTURES, type StructureType } from './config'
@@ -36,6 +37,10 @@ function seed() {
 	seed_properties({ type: 'functor', folder: 'functor-properties' })
 	seed_implications({ type: 'functor', folder: 'functor-implications' })
 	seed_structures({ type: 'functor', folder: 'functors', extra: insert_functor })
+
+	seed_properties({ type: 'morphism', folder: 'morphism-properties' })
+	seed_implications({ type: 'morphism', folder: 'morphism-implications' })
+	seed_structures({ type: 'morphism', folder: 'morphisms', extra: insert_morphism })
 }
 
 /**
@@ -218,6 +223,7 @@ function seed_structures<T extends StructureYaml>({
 			structure.notation,
 			structure.description,
 			structure.nlab_link,
+			// @ts-ignore FIXME
 			structure[`dual_${type}`] || null,
 		)
 
@@ -299,6 +305,18 @@ function insert_functor(functor: FunctorYaml) {
 		functor.target,
 		functor.left_adjoint || null,
 	)
+}
+
+/**
+ * Inserts the data of a morphism that is specific to morphisms.
+ */
+function insert_morphism(morphism: MorphismYaml) {
+	const morphism_insert = db.prepare(
+		`INSERT INTO morphisms (id, ambient_category)
+		VALUES (?, ?)`,
+	)
+
+	morphism_insert.run(morphism.id, morphism.ambient_category)
 }
 
 /**

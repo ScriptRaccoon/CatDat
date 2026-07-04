@@ -1,10 +1,11 @@
 import type { StructureType } from './types'
 
-export const STRUCTURES: StructureType[] = ['category', 'functor']
+export const STRUCTURES: StructureType[] = ['category', 'functor', 'morphism']
 
 export const PLURALS = {
 	category: 'categories',
 	functor: 'functors',
+	morphism: 'morphisms',
 }
 
 export function get_selected_type(pathname: string): StructureType {

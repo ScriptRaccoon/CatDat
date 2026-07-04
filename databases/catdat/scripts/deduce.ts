@@ -27,4 +27,9 @@ function deduce() {
 	create_dualized_implications('functor')
 	deduce_properties_for_structures('functor')
 	restrict_representable_functors()
+
+	// --- morphisms ---
+	clear_deduced_implications('morphism')
+	create_dualized_implications('morphism')
+	deduce_properties_for_structures('morphism')
 }

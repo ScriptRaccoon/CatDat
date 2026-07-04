@@ -87,33 +87,35 @@
 {#each STRUCTURES as type}
 	{@const combinations = data.missing_combinations[type]}
 
-	<section>
-		<h3>Missing {type} combinations</h3>
+	{#if combinations.length > 0}
+		<section>
+			<h3>Missing {type} combinations</h3>
 
-		<p class="hint">
-			Among the consistent {type} combinations of the form p &and; &not;q, the following
-			are not yet witnessed by a {type} in the database or its dual. If some of these
-			combinations <i>are</i>
-			inconsistent, this indicates that some
-			<a href="/{type}-implications">implication</a> is missing.
-		</p>
+			<p class="hint">
+				Among the consistent {type} combinations of the form p &and; &not;q, the following
+				are not yet witnessed by a {type} in the database or its dual. If some of these
+				combinations <i>are</i>
+				inconsistent, this indicates that some
+				<a href="/{type}-implications">implication</a> is missing.
+			</p>
 
-		<details>
-			<summary>
-				Show all {combinations.length} combinations
-			</summary>
+			<details>
+				<summary>
+					Show all {combinations.length} combinations
+				</summary>
 
-			<ul class="combinations with-margins">
-				{#each combinations as [p, q]}
-					<li class="combination">
-						<a href={get_property_url(p, type)}>{p}</a> &and; &not;<a
-							href={get_property_url(q, type)}>{q}</a
-						>
-					</li>
-				{/each}
-			</ul>
-		</details>
-	</section>
+				<ul class="combinations with-margins">
+					{#each combinations as [p, q]}
+						<li class="combination">
+							<a href={get_property_url(p, type)}>{p}</a> &and; &not;<a
+								href={get_property_url(q, type)}>{q}</a
+							>
+						</li>
+					{/each}
+				</ul>
+			</details>
+		</section>
+	{/if}
 {/each}
 
 <SuggestionForm />

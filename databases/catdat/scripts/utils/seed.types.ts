@@ -2,8 +2,10 @@ export type ConfigYaml = {
 	structure_tags: string[]
 	category_tags: string[]
 	functor_tags: string[]
+	morphism_tags: string[]
 	category_property_tags: string[]
 	functor_property_tags: string[]
+	morphism_property_tags: string[]
 	relations: {
 		relation: string
 		conditional: string
@@ -43,8 +45,8 @@ export type StructureYaml = {
 	tags: string[]
 	related_categories?: string[] // TODO: improve this
 	related_functors?: string[]
+	related_morphisms?: string[]
 	dual_category?: string // TODO: improve this
-	dual_functor?: string
 	satisfied_properties: PropertyEntry[]
 	unsatisfied_properties: PropertyEntry[]
 	undecidable_properties?: PropertyEntry[]
@@ -63,6 +65,10 @@ export type FunctorYaml = StructureYaml & {
 	source: string
 	target: string
 	left_adjoint?: string
+}
+
+export type MorphismYaml = StructureYaml & {
+	ambient_category: string
 }
 
 export type PropertyYaml = {

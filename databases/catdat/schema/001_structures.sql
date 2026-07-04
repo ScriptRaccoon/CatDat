@@ -4,7 +4,8 @@ CREATE TABLE structure_types (
 
 INSERT INTO structure_types (type) VALUES
     ('category'),
-    ('functor');
+    ('functor'),
+    ('morphism');
 
 CREATE TABLE structures (
     id TEXT PRIMARY KEY,
@@ -73,4 +74,5 @@ INSERT INTO structure_maps
     (map, type, mapped_type)
 VALUES
     ('source', 'functor', 'category'),
-    ('target', 'functor', 'category');
+    ('target', 'functor', 'category'),
+    ('ambient_category', 'morphism', 'category');

@@ -43,6 +43,15 @@
 		</p>
 	{/if}
 
+	{#if type === 'morphism'}
+		<!-- TODO: remove this later -->
+		<p>
+			<Fa icon={faInfoCircle} />
+			The morphism application is still in its early stages. More morphisms will be added
+			soon.
+		</p>
+	{/if}
+
 	<SearchFilter bind:search />
 
 	<p class="hint">
