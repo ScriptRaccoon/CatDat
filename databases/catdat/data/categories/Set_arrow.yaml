@@ -4,8 +4,13 @@ notation: $\Set^{\rightarrow}$
 objects: >-
   triples $(X, Y, f)$ where $X$ and $Y$ are sets, and $f : X \to Y$ is a function
 morphisms: >-
-  a morphism $(X, Y, f) \to (X', Y', f')$ is a pair of functions $\ell : X \to X'$ and $r : Y \to Y'$ making a commutative square, i.e. such that $f' \circ \ell = r \circ f$
-description: This category is also known as the Sierpinski topos, since it is equivalent to the category of sheaves on the Sierpinski space.
+  a morphism $(X, Y, f) \to (X', Y', f')$ is a pair of functions $\ell : X \to X'$ and $r : Y \to Y'$ making a commutative square
+  $$\begin{CD}
+  X @>{f}>> Y \\
+  @V{\ell}VV @VV{r}V \\
+  X' @>>{f'}> Y'
+  \end{CD}$$
+description: This category is an example of the <a href="https://ncatlab.org/nlab/show/arrow+category" target="_blank">arrow category</a> $\Arr(\C)$, where $\C$ is the category of sets. It is also known as the Sierpinski topos, since it is equivalent to the category of sheaves on the Sierpinski space.
 nlab_link: https://ncatlab.org/nlab/show/Sierpinski+topos
 
 tags:
@@ -22,10 +27,10 @@ satisfied_properties:
 
   - property: semi-strongly connected
     proof: >-
-      Consider two objects $(X, Y, f)$ and $(X', Y', f')$. If $X'$ is non-empty with element $x'$, we can construct a morphism $(\ell, r) : (X, Y, f) \to (X', Y', f')$ where $\ell$ is the constant function with value $x'$, and $r$ is the constant function with value $f'(x')$; and similarly if $X$ is non-empty we can construct a morphism $(X', Y', f') \to (X, Y, f)$. Otherwise, if $X$ and $Y$ are both empty, we can reduce to the fact that $\Set$ is semi-strongly connected to find $r$ in one direction, and fill in $\ell$ as the unique function $\varnothing \to \varnothing$.
+      Consider two objects $(X, Y, f)$ and $(X', Y', f')$. If $X'$ is non-empty with element $x'$, we can construct a morphism $(\ell, r) : (X, Y, f) \to (X', Y', f')$ where $\ell$ is the constant function with value $x'$, and $r$ is the constant function with value $f'(x')$; and similarly if $X$ is non-empty we can construct a morphism $(X', Y', f') \to (X, Y, f)$. Otherwise, if $X$ and $X'$ are both empty, we can reduce to the fact that $\Set$ is semi-strongly connected to find $r$ in one direction, and fill in $\ell$ as the unique function $\varnothing \to \varnothing$.
 
   - property: Grothendieck topos
-    proof: It is equivalent to the category of presheaves on <a href="/category/walking_morphism">the walking morphism $I$</a>.
+    proof: It is equivalent to the category of presheaves on <a href="/category/walking_morphism">the walking morphism</a>.
 
   - property: locally strongly finitely presentable
     proof: It is equivalent to the category of models of the algebraic theory with two sorts, and a single unary operation from one sort to the other.
@@ -54,10 +59,10 @@ special_morphisms:
     proof: This is easy.
   monomorphisms:
     description: pairs $(\ell, r)$ where $\ell$ and $r$ are both injective
-    proof: For the non-trivial direction, use the fact that the domain functor taking an object $(X, Y, f)$ to $X$ and a morphism $(\ell, r)$ to $\ell$ is representable by $1 \to 1$; and similarly, the codomain functor taking an object $(X, Y, f)$ to $Y$ and a morphism $(\ell, r)$ to $r$ is representable by $0 \to 1$.
+    proof: For the non-trivial direction, use the fact that the domain functor taking an object $(X, Y, f)$ to $X$ and a morphism $(\ell, r)$ to $\ell$ is representable by $1 \to 1$; and moreover, the codomain functor taking an object $(X, Y, f)$ to $Y$ and a morphism $(\ell, r)$ to $r$ is representable by $0 \to 1$.
   epimorphisms:
     description: pairs $(\ell, r)$ where $\ell$ and $r$ are both surjective
-    proof: For the non-trivial direction, use the fact that the category is regular and epi-regular, so any epimorphism is a coequalizer; and the fact that coequalizers can be calculated component-wise.
+    proof: For the non-trivial direction, use the fact that the category is epi-regular, so any epimorphism is a coequalizer; and the fact that coequalizers can be calculated component-wise.
   regular monomorphisms:
     description: same as monomorphisms
     proof: This is because the category is mono-regular.
