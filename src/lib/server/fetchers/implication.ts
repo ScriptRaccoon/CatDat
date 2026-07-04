@@ -57,5 +57,5 @@ export function fetch_implication(type: StructureType, id: string) {
 		mapped_types[map] = mapped_type
 	}
 
-	return { implication, structures, mapped_types }
+	return { type, implication, structures, mapped_types }
 }

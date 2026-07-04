@@ -4,4 +4,4 @@
 	let { data } = $props()
 </script>
 
-<ImplicationPage type="morphism" {...data} />
+<ImplicationPage {...data} />

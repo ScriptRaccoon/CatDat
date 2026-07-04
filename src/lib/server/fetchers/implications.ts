@@ -29,7 +29,7 @@ export function fetch_implications(type: StructureType) {
 
 	const implications = rows.map(display_implication)
 
-	return { implications }
+	return { type, implications }
 }
 
 /**
