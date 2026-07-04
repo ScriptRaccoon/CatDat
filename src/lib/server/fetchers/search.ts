@@ -90,6 +90,7 @@ export function fetch_search_results(
 			dual_unsatisfied_properties,
 			dual_search_available,
 			found_structures: [],
+			type,
 		}
 	}
 
@@ -147,5 +148,6 @@ export function fetch_search_results(
 		dual_unsatisfied_properties,
 		dual_search_available,
 		found_structures,
+		type,
 	}
 }

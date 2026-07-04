@@ -4,4 +4,4 @@
 	let { data } = $props()
 </script>
 
-<SearchResultsPage type="morphism" {...data} />
+<SearchResultsPage {...data} />

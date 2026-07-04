@@ -140,6 +140,7 @@ export type SearchResults = {
 	dual_unsatisfied_properties: (string | null)[]
 	dual_search_available: boolean
 	found_structures: StructureShort[]
+	type: StructureType
 }
 
 export type ComparisonResult = {
