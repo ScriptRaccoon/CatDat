@@ -1,35 +1,29 @@
 import { fetch_missing_data } from '$lib/server/fetchers/missing_data'
 import { fetch_categories_with_missing_morphisms } from '$lib/server/fetchers/category'
+import { STRUCTURES } from '$lib/commons/structures'
 
-// TODO: remove code duplication
 export const load = () => {
 	const categories_with_missing_morphisms = fetch_categories_with_missing_morphisms()
 
-	const missing_category_data = fetch_missing_data('category')
-	const missing_functor_data = fetch_missing_data('functor')
-	const missing_morphism_data = fetch_missing_data('morphism')
+	const missing_data = Object.fromEntries(
+		STRUCTURES.map((type) => [type, fetch_missing_data(type)]),
+	)
+
+	function select<T>(
+		selector: (data: (typeof missing_data)[keyof typeof missing_data]) => T,
+	) {
+		return Object.fromEntries(
+			STRUCTURES.map((type) => [type, selector(missing_data[type])]),
+		)
+	}
 
 	return {
-		structures_with_unknown_properties: {
-			category: missing_category_data.structures_with_unknown_properties,
-			functor: missing_functor_data.structures_with_unknown_properties,
-			morphism: missing_morphism_data.structures_with_unknown_properties,
-		},
-		unknown_totals: {
-			category: missing_category_data.total_unknown_property_pairs,
-			functor: missing_functor_data.total_unknown_property_pairs,
-			morphism: missing_morphism_data.total_unknown_property_pairs,
-		},
-		undistinguishable_pairs: {
-			category: missing_category_data.undistinguishable_structure_pairs,
-			functor: missing_functor_data.undistinguishable_structure_pairs,
-			morphism: missing_morphism_data.undistinguishable_structure_pairs,
-		},
-		missing_combinations: {
-			category: missing_category_data.missing_combinations,
-			functor: missing_functor_data.missing_combinations,
-			morphism: missing_morphism_data.missing_combinations,
-		},
+		structures_with_unknown_properties: select(
+			(data) => data.structures_with_unknown_properties,
+		),
+		unknown_totals: select((data) => data.total_unknown_property_pairs),
+		undistinguishable_pairs: select((data) => data.undistinguishable_structure_pairs),
+		missing_combinations: select((data) => data.missing_combinations),
 		categories_with_missing_morphisms,
 	}
 }
