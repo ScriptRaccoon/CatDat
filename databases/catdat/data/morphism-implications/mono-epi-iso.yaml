@@ -1,0 +1,30 @@
+- id: iso_is_mono
+  assumptions:
+    - isomorphism
+  conclusions:
+    - monomorphism
+  proof: This is easy.
+  is_equivalence: false
+
+- id: mono_is_iso
+  assumptions:
+    - monomorphism
+  mapped_assumptions:
+    ambient_category:
+      - subobject-trivial
+  conclusions:
+    - isomorphism
+  proof: This holds by definition of a subobject-trivial category.
+  is_equivalence: false
+
+- id: balanced_def
+  assumptions:
+    - monomorphism
+    - epimorphism
+  mapped_assumptions:
+    ambient_category:
+      - balanced
+  conclusions:
+    - isomorphism
+  proof: This holds by definition of a balanced category.
+  is_equivalence: false
