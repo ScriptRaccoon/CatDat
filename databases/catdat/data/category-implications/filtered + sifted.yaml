@@ -81,16 +81,6 @@
   proof: This is obvious.
   is_equivalence: false
 
-- id: terminal_object_yields_filtered
-  # TODO: remove this implication once we add ℵ₁-cofiltered:
-  # only then it becomes fully redundant
-  assumptions:
-    - terminal object
-  conclusions:
-    - filtered
-  proof: This is obvious.
-  is_equivalence: false
-
 - id: filtered-finite-thin
   assumptions:
     - thin
