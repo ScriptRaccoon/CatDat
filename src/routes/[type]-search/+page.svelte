@@ -1,18 +1,31 @@
 <script lang="ts">
+	import { PLURALS } from '$lib/commons/structures'
 	import SearchPage from '$pages/SearchPage.svelte'
 
 	let { data } = $props()
 
-	const SAMPLES = {
+	const sample_links = {
 		category:
-			'Search for categories with certain properties while excluding others. For example, you can <a href="/category-search/results?satisfied=finitely_complete~pointed&unsatisfied=complete">look</a> for categories that are finitely complete and pointed but not complete.',
-		functor:
-			'Search for functors with certain properties while excluding others. For example, you can <a href="/functor-search/results?satisfied=continuous&unsatisfied=cocontinuous">look</a> for functors that are continuous but not cocontinuous.',
+			'/category-search/results?satisfied=finitely_complete~pointed&unsatisfied=complete',
+		functor: '/functor-search/results?satisfied=continuous&unsatisfied=cocontinuous',
 		morphism:
-			'Search for morphism with certain properties while excluding others. For example, you can <a href="/morphism-search/results?satisfied=monomorphism~epimorphism&unsatisfied=isomorphism">look</a> for morphisms which are monomorphisms and epimorphisms, but no isomorphisms.',
+			'/morphism-search/results?satisfied=monomorphism~epimorphism&unsatisfied=isomorphism',
 	}
 </script>
 
 <SearchPage {...data}>
-	{@html SAMPLES[data.type]}
+	Search for {PLURALS[data.type]} with certain properties while excluding others.
+	{#if data.type === 'category'}
+		For example, you can
+		<a href={sample_links.category}>look</a>
+		for categories that are finitely complete and pointed, but not complete.
+	{:else if data.type === 'functor'}
+		For example, you can
+		<a href={sample_links.functor}>look</a>
+		for functors that are continuous, but not cocontinuous.
+	{:else if data.type === 'morphism'}
+		For example, you can
+		<a href={sample_links.morphism}>look</a>
+		for morphisms that are monomorphisms and epimorphisms, but no isomorphisms.
+	{/if}
 </SearchPage>
