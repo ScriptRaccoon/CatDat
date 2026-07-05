@@ -42,7 +42,7 @@
 {#each Object.entries(implication.mapped_assumptions) as [map, list]}
 	{#if list?.length}
 		<p>
-			<strong>Assumptions on {map} {mapped_types[map]}:</strong>
+			<strong>Requirements of the {map}:</strong>
 
 			{#each list as property, index}
 				<a href={get_property_url(property, mapped_types[map])}>{property}</a
