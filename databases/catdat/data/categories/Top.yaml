@@ -5,7 +5,7 @@ objects: topological spaces
 morphisms: continuous functions
 description: This is the most basic category of geometric objects.
 nlab_link: https://ncatlab.org/nlab/show/Top
-dual_category: Top_op
+dual: Top_op
 
 tags:
   - topology

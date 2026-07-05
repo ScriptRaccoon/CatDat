@@ -5,7 +5,7 @@ objects: topological spaces
 morphisms: a morphism $X \to Y$ is a continuous map $Y \to X$
 description: By definition, this category is the dual (or opposite) of the category <a href="/category/Top">$\Top$</a>.
 nlab_link: https://ncatlab.org/nlab/show/opposite+category
-dual_category: Top
+dual: Top
 
 tags:
   - topology

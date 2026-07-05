@@ -41,10 +41,9 @@ export type StructureYaml = {
 	notation: string
 	description?: string | null
 	nlab_link?: string
-	left_adjoint?: string // TODO: improve this
 	tags: string[]
 	related: string[]
-	dual_category?: string // TODO: improve this
+	dual?: string
 	satisfied_properties: PropertyEntry[]
 	unsatisfied_properties: PropertyEntry[]
 	undecidable_properties?: PropertyEntry[]

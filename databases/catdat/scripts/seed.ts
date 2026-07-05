@@ -223,8 +223,7 @@ function seed_structures<T extends StructureYaml>({
 			structure.notation,
 			structure.description,
 			structure.nlab_link,
-			// @ts-ignore FIXME
-			structure[`dual_${type}`] || null,
+			structure.dual || null,
 		)
 
 		if (!structure.tags.length) {

@@ -5,7 +5,7 @@ objects: sets
 morphisms: maps
 description: The category of sets plays a fundamental role in category theory. Due to the Yoneda embedding, many results about general categories can be reduced to the category of sets. It is also usually the first example of a category that one encounters.
 nlab_link: https://ncatlab.org/nlab/show/Set
-dual_category: Set_op
+dual: Set_op
 
 tags:
   - set theory

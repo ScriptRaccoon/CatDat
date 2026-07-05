@@ -5,7 +5,7 @@ objects: sets
 morphisms: 'A morphism $f : X \to Y$ is a map of sets $Y \to X$.'
 description: By definition, this category is the dual (or opposite) of the category <a href="/category/Set">$\Set$</a>.
 nlab_link: https://ncatlab.org/nlab/show/opposite+category
-dual_category: Set
+dual: Set
 
 tags:
   - set theory
