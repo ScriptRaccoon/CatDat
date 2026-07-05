@@ -4,7 +4,7 @@ description: |-
   A category $\C$ is <i>infinitary coextensive</i> when it has products and for all families of objects $(A_i)_{i \in I}$ the product functor $\prod_{i \in I} A_i / \C/A_i \to \prod_{i \in I} A_i / \C$ is an equivalence of categories.
   This terminology does not seem to be common, but we have added it as a dual for the more commonly known property of being infinitary extensive.
 nlab_link: null
-dual_property: infinitary extensive
+dual: infinitary extensive
 invariant_under_equivalences: true
 
 related_properties:

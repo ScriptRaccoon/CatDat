@@ -3,7 +3,7 @@ relation: is an
 description: 'A functor $F : \C \to \D$ is an <i>equivalence</i> when there is a functor $G : \D \to \C$ with $F \circ G \cong \id_{\D}$ and $G \circ F \cong \id_{\C}$. In contrast to an isomorphism of categories, these compositions are only required to be <i>isomorphic</i> to the identities.'
 nlab_link: https://ncatlab.org/nlab/show/equivalence+of+categories
 invariant_under_equivalences: true
-dual_property: equivalence
+dual: equivalence
 related_properties:
   - full
   - faithful

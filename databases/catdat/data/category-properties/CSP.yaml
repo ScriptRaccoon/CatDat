@@ -6,7 +6,7 @@ description: >-
   defined by $p_j \circ \alpha \circ \iota_i = \delta_{i,j}$ is an epimorphism.
   This is no standard terminology. This property has been added to clarify relationships between other properties, in particular those concerning the commutation between limits and colimits.
 nlab_link: null
-dual_property: CIP
+dual: CIP
 invariant_under_equivalences: true
 
 related_properties:

@@ -3,7 +3,7 @@ relation: is a
 description: 'A morphism $f : A \to B$ is a <i>split epimorphism</i> if there is a morphism $g : B \to A$ with $f \circ g = \id_B$.'
 nlab_link: https://ncatlab.org/nlab/show/split+epimorphism
 invariant_under_equivalences: true
-dual_property: split monomorphism
+dual: split monomorphism
 related_properties:
   - epimorphism
 

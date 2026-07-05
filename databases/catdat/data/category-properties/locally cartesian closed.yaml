@@ -2,7 +2,7 @@ id: locally cartesian closed
 relation: is
 description: A category is <i>locally cartesian closed</i> if each of its slice categories is cartesian closed.
 nlab_link: https://ncatlab.org/nlab/show/locally+cartesian+closed+category
-dual_property: locally cocartesian coclosed
+dual: locally cocartesian coclosed
 invariant_under_equivalences: true
 
 related_properties:

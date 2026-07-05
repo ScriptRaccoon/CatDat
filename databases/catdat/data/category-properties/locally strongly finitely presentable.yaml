@@ -11,7 +11,7 @@ description: >-
   A category satisfying this property is simply called a <i>variety</i> (of algebras) by some authors, although one should be aware that this term is sometimes used only for the one-sorted case.
 
 nlab_link: https://ncatlab.org/nlab/show/locally+strongly+finitely+presentable+category
-dual_property: null
+dual: null
 invariant_under_equivalences: true
 
 related_properties:

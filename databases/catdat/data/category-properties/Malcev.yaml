@@ -2,7 +2,7 @@ id: Malcev
 relation: is
 description: A category is <i>Malcev</i> when it has finite limits and every internal reflexive relation is an internal equivalence relation. That is, if $R \subseteq X^2$ is a subobject with $\Delta_X \subseteq R$, then $R$ is symmetric and transitive.
 nlab_link: https://ncatlab.org/nlab/show/Malcev+category
-dual_property: co-Malcev
+dual: co-Malcev
 invariant_under_equivalences: true
 
 related_properties:

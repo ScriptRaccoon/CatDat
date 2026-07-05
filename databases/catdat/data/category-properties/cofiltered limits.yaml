@@ -2,7 +2,7 @@ id: cofiltered limits
 relation: has
 description: A category has <i>cofiltered limits</i> if it has limits of diagrams indexed by small <a href="/category-property/cofiltered">cofiltered</a> categories. This is actually equivalent to having directed limits.
 nlab_link: https://ncatlab.org/nlab/show/filtered+limit
-dual_property: filtered colimits
+dual: filtered colimits
 invariant_under_equivalences: true
 
 related_properties:

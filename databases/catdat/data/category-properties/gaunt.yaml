@@ -2,7 +2,7 @@ id: gaunt
 relation: is
 description: 'A category is <i>gaunt</i> when every isomorphism $f : A \to B$ must be the identity (in particular, $A = B$). This is the "skeletal variant" of being core-thin.'
 nlab_link: https://ncatlab.org/nlab/show/gaunt+category
-dual_property: gaunt
+dual: gaunt
 invariant_under_equivalences: false
 
 related_properties:

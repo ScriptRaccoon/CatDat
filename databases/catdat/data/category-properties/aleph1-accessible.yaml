@@ -2,7 +2,7 @@ id: ℵ₁-accessible
 relation: is
 description: This is the special case of the notion of a $\kappa$-accessible category, where $\kappa = \aleph_1$ is the first uncountable cardinal. Concretely, a category is $\aleph_1$-accessible when it has $\aleph_1$-filtered colimits and there is a small set $G$ of $\aleph_1$-presentable objects such that every object is a $\aleph_1$-filtered colimit of objects in $G$.
 nlab_link: https://ncatlab.org/nlab/show/accessible+category
-dual_property: null
+dual: null
 invariant_under_equivalences: true
 
 related_properties:

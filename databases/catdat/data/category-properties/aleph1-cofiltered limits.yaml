@@ -2,7 +2,7 @@ id: ℵ₁-cofiltered limits
 relation: has
 description: A category has <i>$\aleph_1$-cofiltered limits</i> if it has limits of diagrams indexed by small $\aleph_1$-cofiltered categories. This is the special case of having small $\kappa$-cofiltered limits for $\kappa=\aleph_1$, the first uncountable cardinal.
 nlab_link: https://ncatlab.org/nlab/show/filtered+colimit
-dual_property: ℵ₁-filtered colimits
+dual: ℵ₁-filtered colimits
 invariant_under_equivalences: true
 
 related_properties:

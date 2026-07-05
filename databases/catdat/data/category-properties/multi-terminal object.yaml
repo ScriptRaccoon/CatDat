@@ -2,7 +2,7 @@ id: multi-terminal object
 relation: has a
 description: This property refers to the existence of a multi-limit of the empty diagram. A category has a multi-terminal object if and only if the collection of all connected components is isomorphic to a set, and each connected component has a terminal object.
 nlab_link: https://ncatlab.org/nlab/show/multilimit
-dual_property: multi-initial object
+dual: multi-initial object
 invariant_under_equivalences: true
 
 related_properties:

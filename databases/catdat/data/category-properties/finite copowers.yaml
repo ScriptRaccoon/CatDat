@@ -2,7 +2,7 @@ id: finite copowers
 relation: has
 description: A category has <i>finite copowers</i> when for every object $X$ and every finite set $I$ the copower $I \otimes X$ exists. Equivalently, for every $n \in \IN$ the copower $n \otimes X$ exists.
 nlab_link: https://ncatlab.org/nlab/show/copower
-dual_property: finite powers
+dual: finite powers
 invariant_under_equivalences: true
 
 related_properties:

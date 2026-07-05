@@ -2,7 +2,7 @@ id: countable powers
 relation: has
 description: A category has <i>countable powers</i> when for every object $X$ and every countable set $I$ the power $X^I$ exists.
 nlab_link: https://ncatlab.org/nlab/show/powering
-dual_property: countable copowers
+dual: countable copowers
 invariant_under_equivalences: true
 
 related_properties:

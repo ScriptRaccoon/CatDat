@@ -5,7 +5,7 @@ description: >-
   $$\cdots \to A_2 \to A_1 \to A_0.$$
   For example, a poset is direct iff it is well-founded.
 nlab_link: https://ncatlab.org/nlab/show/direct+category
-dual_property: inverse
+dual: inverse
 invariant_under_equivalences: false
 
 related_properties:

@@ -2,7 +2,7 @@ id: Cauchy complete
 relation: is
 description: 'A category is <i>Cauchy complete</i> if every idempotent splits. That is, every endomorphism $e : X \to X$ with $e^2 = e$ may be written as $e = i \circ p$ for some morphisms $p : X \to Y$ and $i : Y \to X$ with $p \circ i = \id_Y$. Equivalently, the pair $e,\id_X : X \rightrightarrows X$ has an equalizer (or a coequalizer).'
 nlab_link: https://ncatlab.org/nlab/show/Cauchy+complete+category
-dual_property: Cauchy complete
+dual: Cauchy complete
 invariant_under_equivalences: true
 
 related_properties:

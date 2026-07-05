@@ -2,7 +2,7 @@ id: reflexive coequalizers
 relation: has
 description: A <i>reflexive coequalizer</i> is a colimit of a diagram consisting of a parallel pair of morphisms with a common section (right inverse), which is the same concept as a coequalizer of such a parallel pair. This property refers to the existence of reflexive coequalizers.
 nlab_link: https://ncatlab.org/nlab/show/reflexive+coequalizer
-dual_property: coreflexive equalizers
+dual: coreflexive equalizers
 invariant_under_equivalences: true
 
 related_properties:

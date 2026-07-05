@@ -2,7 +2,7 @@ id: epi-regular
 relation: is
 description: A category is <i>epi-regular</i> when every epimorphism is regular, i.e. the coequalizer of a pair of morphisms. Notice that this is not standard terminology, <a href="https://math.stackexchange.com/questions/5031588" target="_blank">apparently</a> the literature has no name for this yet. A <i>preadditive</i> category is epi-regular iff it is conormal. The notion of a conormal category is reserved for categories with zero morphisms, while epi-regular applies to all categories.
 nlab_link: https://ncatlab.org/nlab/show/regular+epimorphism
-dual_property: mono-regular
+dual: mono-regular
 invariant_under_equivalences: true
 
 related_properties:

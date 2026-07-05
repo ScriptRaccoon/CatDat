@@ -2,7 +2,7 @@ id: infinitary distributive
 relation: is
 description: A category is <i>infinitary distributive</i> if it has finite products, all coproducts, and for every object $A$ the functor $A \times -$ preserves all coproducts. Concretely, for every family of objects $(B_i)$ the canonical morphism $\coprod_i (A \times B_i) \to A \times \coprod_i B_i$ must be an isomorphism.
 nlab_link: https://ncatlab.org/nlab/show/distributive+category
-dual_property: infinitary codistributive
+dual: infinitary codistributive
 invariant_under_equivalences: true
 
 related_properties:

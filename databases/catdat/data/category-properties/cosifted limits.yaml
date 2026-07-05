@@ -2,7 +2,7 @@ id: cosifted limits
 relation: has
 description: A category has <i>cosifted limits</i> if it has limits of diagrams indexed by small <a href="/category-property/cosifted">cosifted</a> categories.
 nlab_link: https://ncatlab.org/nlab/show/sifted+colimit
-dual_property: sifted colimits
+dual: sifted colimits
 invariant_under_equivalences: true
 
 related_properties:

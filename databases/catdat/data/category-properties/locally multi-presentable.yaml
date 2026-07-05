@@ -9,7 +9,7 @@ description: >-
   </ol>
   For equivalence of conditions above, see Thm. 4.30, Thm. 4.32, and the remark below in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>. A category is <i>locally multi-presentable</i> if it is locally $\kappa$-multi-presentable for some $\kappa$.
 nlab_link: https://ncatlab.org/nlab/show/locally+multipresentable+category
-dual_property: null
+dual: null
 invariant_under_equivalences: true
 
 related_properties:

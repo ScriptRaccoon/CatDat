@@ -2,7 +2,7 @@ id: generator
 relation: has a
 description: 'An object $G$ of a category is called a <i>generator</i> if for every pair of parallel morphisms $f,g : A \rightrightarrows B$ the equation $f = g$ holds if for every morphism $h : G \to A$ we have $f \circ h = g \circ h$. Equivalently, the functor $\Hom(G,-) : \C \to \Set^+$ is faithful. This property refers to the existence of a generator. By definition, $G$ is a generator if and only if $\{G\}$ is a <a href="/category-property/generating_set">generating set</a>.'
 nlab_link: https://ncatlab.org/nlab/show/separator
-dual_property: cogenerator
+dual: cogenerator
 invariant_under_equivalences: true
 
 related_properties:

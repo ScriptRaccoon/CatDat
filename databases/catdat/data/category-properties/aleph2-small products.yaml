@@ -4,7 +4,7 @@ description: |-
   A category has <i>$\aleph_2$-small products</i> if it has products indexed by sets of cardinality $< \aleph_2$. In particular, this includes products indexed by sets of cardinality $\aleph_1$. Here, $\aleph_1$ denotes the first uncountable cardinal, and $\aleph_2$ the next larger cardinal.
   Notice that finite products are just $\aleph_0$-small products, and countable products are $\aleph_1$-small products.
 nlab_link: https://ncatlab.org/nlab/show/cartesian+product
-dual_property: ℵ₂-small coproducts
+dual: ℵ₂-small coproducts
 invariant_under_equivalences: true
 
 related_properties:

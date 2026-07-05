@@ -3,7 +3,7 @@ relation: is
 description: 'A functor $F : \C \to \D$ is <i>dominant</i> when every object $Y \in \D$ there is an object $X \in \C$ such that $Y$ is a retract of $F(X)$, i.e. there is a split monomorphism $Y \hookrightarrow F(X)$.'
 nlab_link: https://ncatlab.org/nlab/show/dominant+functor
 invariant_under_equivalences: true
-dual_property: dominant
+dual: dominant
 related_properties:
   - essentially surjective
 

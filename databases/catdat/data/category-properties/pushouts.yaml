@@ -2,7 +2,7 @@ id: pushouts
 relation: has
 description: A category $\C$ has <i>pushouts</i> if every span of morphisms $X \leftarrow S \rightarrow Y$ has a pushout $X \sqcup_S Y$. This is also known as a fiber coproduct. Equivalently, the coslice category $S/\C$ has binary coproducts.
 nlab_link: https://ncatlab.org/nlab/show/pushout
-dual_property: pullbacks
+dual: pullbacks
 invariant_under_equivalences: true
 
 related_properties:

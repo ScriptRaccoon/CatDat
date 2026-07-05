@@ -2,7 +2,7 @@ id: locally cocartesian coclosed
 relation: is
 description: A category is <i>locally cocartesian coclosed</i> if its dual is locally cartesian closed, i.e. if each of its coslice categories is cocartesian coclosed.
 nlab_link: https://ncatlab.org/nlab/show/locally+cocartesian+coclosed+category
-dual_property: locally cartesian closed
+dual: locally cartesian closed
 invariant_under_equivalences: true
 
 related_properties:

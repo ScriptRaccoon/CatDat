@@ -2,7 +2,7 @@ id: connected
 relation: is
 description: A category is <i>connected</i> if it is inhabited and every two objects can be joined via a zig-zag path of morphisms. Equivalently, $\C$ is connected if $\C \simeq \coprod_{i \in I} \C_i$ implies $\C_i \simeq 0$ for some $i$.
 nlab_link: https://ncatlab.org/nlab/show/connected+category
-dual_property: connected
+dual: connected
 invariant_under_equivalences: true
 
 related_properties:

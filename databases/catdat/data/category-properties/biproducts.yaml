@@ -6,7 +6,7 @@ description: >-
   is an isomorphism. Such a category is also called <i>semi-additive</i>, and it is automatically enriched over commutative monoids: the sum of $f,g : A \rightrightarrows B$ is defined as:
   $$A \xrightarrow{(f,g)} B \times B \xrightarrow{\mu^{-1}} B \oplus B \xrightarrow{\nabla} B$$
 nlab_link: https://ncatlab.org/nlab/show/biproduct
-dual_property: biproducts
+dual: biproducts
 invariant_under_equivalences: true
 
 related_properties:

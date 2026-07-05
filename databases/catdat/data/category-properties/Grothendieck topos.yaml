@@ -2,7 +2,7 @@ id: Grothendieck topos
 relation: is a
 description: A <i>Grothendieck topos</i> is a category that is equivalent to the category of sheaves on a site.
 nlab_link: https://ncatlab.org/nlab/show/Grothendieck+topos
-dual_property: null
+dual: null
 invariant_under_equivalences: true
 
 related_properties:

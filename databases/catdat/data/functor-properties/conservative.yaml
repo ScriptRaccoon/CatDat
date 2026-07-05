@@ -3,7 +3,7 @@ relation: is
 description: 'A functor $F : \C \to \D$ is <i>conservative</i> when it is isomorphism-reflecting: If $f$ is a morphism in $\C$ such that $F(f)$ is an isomorphism, then $f$ is an isomorphism.'
 nlab_link: https://ncatlab.org/nlab/show/conservative+functor
 invariant_under_equivalences: true
-dual_property: conservative
+dual: conservative
 related_properties:
   - fully faithful
   - essentially injective

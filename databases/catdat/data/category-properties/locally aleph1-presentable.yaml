@@ -2,7 +2,7 @@ id: locally ℵ₁-presentable
 relation: is
 description: This is the special case of the notion of locally $\kappa$-presentable categories, where $\kappa = \aleph_1$ is the first uncountable cardinal.
 nlab_link: https://ncatlab.org/nlab/show/locally+presentable+category
-dual_property: null
+dual: null
 invariant_under_equivalences: true
 
 related_properties:

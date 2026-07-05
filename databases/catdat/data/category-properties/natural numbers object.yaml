@@ -7,7 +7,7 @@ description: >-
 
   This concept is an abstraction of the set of natural numbers, which indeed provide a NNO for the category of sets. We have used the parametrized definition here which is more natural (sic!) for categories that are not cartesian closed (cf. <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, Part A, Remark 2.5.3).
 nlab_link: https://ncatlab.org/nlab/show/natural+numbers+object
-dual_property: null
+dual: null
 invariant_under_equivalences: true
 
 related_properties:

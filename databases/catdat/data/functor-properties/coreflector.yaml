@@ -3,7 +3,7 @@ relation: is a
 description: 'A functor $F : \C \to \D$ is a <i>coreflector</i> if it is right adjoint to a functor $G : \D \to \C$ which is fully faithful. Hence, $G$ is equivalent to the inclusion of a full coreflective subcategory. The condition that $G$ is fully faithful can also be expressed by the condition that the unit $\eta : \id_{\D} \to F \circ G$ is an isomorphism (Prop. 3.4 at the <a href="https://ncatlab.org/nlab/show/adjoint+functor#FullyFaithfulAndInvertibleAdjoints" target="_blank">nLab</a>).'
 nlab_link: https://ncatlab.org/nlab/show/coreflective+subcategory
 invariant_under_equivalences: true
-dual_property: reflector
+dual: reflector
 related_properties:
   - right adjoint
   - right-invertible

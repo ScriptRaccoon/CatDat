@@ -2,7 +2,7 @@ id: essentially countable
 relation: is
 description: A category is <i>essentially countable</i> if it is equivalent to a countable category. This means that up to isomorphism there is only a countable collection of objects, and for every pair of objects $A,B$ the collection $\Hom(A,B)$ is countable.
 nlab_link: null
-dual_property: essentially countable
+dual: essentially countable
 invariant_under_equivalences: true
 
 related_properties:

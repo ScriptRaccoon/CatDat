@@ -2,7 +2,7 @@ id: wide pullbacks
 relation: has
 description: A category $\C$ has <i>wide pullbacks</i> if for every object $S$ the slice category $\C/S$ has arbitrary small products.
 nlab_link: https://ncatlab.org/nlab/show/wide+pullback
-dual_property: wide pushouts
+dual: wide pushouts
 invariant_under_equivalences: true
 
 related_properties:

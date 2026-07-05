@@ -6,7 +6,7 @@ description: >-
   holds for all objects $A,B \in \C$. This is a condition solely on the objects themselves, i.e. it is <i>not</i> required that every isomorphism between $F(A)$ and $F(B)$ is induced by an isomorphism between $A$ and $B$ (cf. <a href="/functor-property/full_on_isomorphisms">full on isomorphisms</a>). An equivalent condition is that $F$ induces an injective map on isomorphism classes.
 nlab_link: https://ncatlab.org/nlab/show/essentially+injective+functor
 invariant_under_equivalences: true
-dual_property: essentially injective
+dual: essentially injective
 related_properties:
   - conservative
   - fully faithful

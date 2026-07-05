@@ -4,7 +4,7 @@ description: |-
   A category has <i>disjoint products</i> if it has products, the product projections $\prod_{i \in I} A_i \to A_i$ are epimorphisms, and the pushout of the projections $\prod_{i \in I} A_i \to A_i$ and $\prod_{i \in I} A_i \to A_j$ for $i \neq j$ exists and is given by the terminal object $1$.
   This terminology does not seem to be common, but we have added it as a dual for the more commonly known property of having disjoint coproducts.
 nlab_link: null
-dual_property: disjoint coproducts
+dual: disjoint coproducts
 invariant_under_equivalences: true
 
 related_properties:

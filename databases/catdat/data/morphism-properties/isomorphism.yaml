@@ -3,7 +3,7 @@ relation: is an
 description: 'A morphism $f : A \to B$ is an <i>isomorphism</i> if it has an inverse, i.e. a morphism $f^{-1} : B \to A$ satisfying $f \circ f^{-1} = \id_B$ and $f^{-1} \circ f = \id_A$.'
 nlab_link: https://ncatlab.org/nlab/show/isomorphism
 invariant_under_equivalences: true
-dual_property: isomorphism
+dual: isomorphism
 related_properties:
   - monomorphism
   - epimorphism

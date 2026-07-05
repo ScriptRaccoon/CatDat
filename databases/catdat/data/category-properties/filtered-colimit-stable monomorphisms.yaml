@@ -2,7 +2,7 @@ id: filtered-colimit-stable monomorphisms
 relation: has
 description: A category has <i>filtered-colimit-stable monomorphisms</i> if it has filtered colimits and for every filtered diagram of monomorphisms $(X_i \to Y_i)$ also their colimit $\colim_i X_i \to \colim_i Y_i$ is a monomorphism.
 nlab_link: null
-dual_property: cofiltered-limit-stable epimorphisms
+dual: cofiltered-limit-stable epimorphisms
 invariant_under_equivalences: true
 
 related_properties:

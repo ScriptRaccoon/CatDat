@@ -3,7 +3,7 @@ relation: is
 description: 'A functor $F : \C \to \D$ is <i>essentially surjective</i> (on objects) when every object $Y \in \D$ is isomorphic to $F(X)$ for some object $X \in \C$.'
 nlab_link: https://ncatlab.org/nlab/show/essentially+surjective+functor
 invariant_under_equivalences: true
-dual_property: essentially surjective
+dual: essentially surjective
 related_properties:
   - equivalence
   - essentially injective

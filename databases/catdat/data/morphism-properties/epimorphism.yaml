@@ -3,7 +3,7 @@ relation: is an
 description: 'A morphism $f : A \to B$ is an <i>epimorphism</i> if it is right-cancellative, i.e. if $g \circ f = h \circ f$ for two morphisms $g,h : B \rightrightarrows T$, then $g = h$. In many concrete categories appearing in practice, these are are a bit harder to understand than monomorphisms; in particular, epimorphisms usually are not to be confused with surjective structure-preserving maps.'
 nlab_link: https://ncatlab.org/nlab/show/epimorphism
 invariant_under_equivalences: true
-dual_property: monomorphism
+dual: monomorphism
 related_properties:
   - isomorphism
   - regular epimorphism

@@ -3,7 +3,7 @@ relation: ''
 description: 'A functor $F : \C \to \D$ <i>preserves regular epimorphisms</i> if every regular epimorphism in $\C$ is mapped to a regular epimorphism in $\D$.'
 nlab_link: https://ncatlab.org/nlab/show/regular+epimorphism
 invariant_under_equivalences: true
-dual_property: preserves regular monomorphisms
+dual: preserves regular monomorphisms
 related_properties:
   - preserves epimorphisms
   - right exact

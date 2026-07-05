@@ -5,7 +5,7 @@ description: >-
   $$\begin{CD} Y @> h >> X \\ @V h VV @VV f V \\ X @>> g > E. \end{CD}$$
   A category <i>has effective cocongruences</i> if every cocongruence in the category is effective.
 nlab_link: null
-dual_property: effective congruences
+dual: effective congruences
 invariant_under_equivalences: true
 
 related_properties:

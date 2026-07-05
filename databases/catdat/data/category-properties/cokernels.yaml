@@ -2,7 +2,7 @@ id: cokernels
 relation: has
 description: 'A category has <i>cokernels</i> if it has zero morphisms and every morphism $f : A \to B$ has a cokernel, i.e. a coequalizer of $f$ with the zero morphism $0_{A,B} : A \to B$.'
 nlab_link: https://ncatlab.org/nlab/show/cokernel
-dual_property: kernels
+dual: kernels
 invariant_under_equivalences: true
 
 related_properties:

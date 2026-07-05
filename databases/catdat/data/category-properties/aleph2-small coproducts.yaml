@@ -4,7 +4,7 @@ description: |-
   A category has <i>$\aleph_2$-small coproducts</i> if it has coproducts of families of objects indexed by sets of cardinality $< \aleph_2$. In particular, this includes coproducts indexed by sets of cardinality $\aleph_1$. Here, $\aleph_1$ denotes the first uncountable cardinal, and $\aleph_2$ the next larger cardinal.
   Notice that finite coproducts are just $\aleph_0$-small coproducts, and countable coproducts are $\aleph_1$-small coproducts.
 nlab_link: https://ncatlab.org/nlab/show/coproduct
-dual_property: ℵ₂-small products
+dual: ℵ₂-small products
 invariant_under_equivalences: true
 
 related_properties:

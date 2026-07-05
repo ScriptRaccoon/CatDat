@@ -2,7 +2,7 @@ id: coaccessible
 relation: is
 description: A category is <i>coaccessible</i> if its opposite category is accessible.
 nlab_link: null
-dual_property: accessible
+dual: accessible
 invariant_under_equivalences: true
 
 related_properties:

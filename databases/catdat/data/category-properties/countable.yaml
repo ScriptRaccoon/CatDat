@@ -2,7 +2,7 @@ id: countable
 relation: is
 description: A category is <i>countable</i> if it has countably many objects and morphisms.
 nlab_link: null
-dual_property: countable
+dual: countable
 invariant_under_equivalences: false
 
 related_properties:

@@ -3,7 +3,7 @@ relation: 'is'
 description: 'A functor $F : \C \to \D$ is <i>full on isomorphisms</i> when, for every pair of objects $A,B \in \C$, every isomorphism $F(A) \to F(B)$ is induced by an isomorphism $A \to B$.'
 nlab_link: null
 invariant_under_equivalences: true
-dual_property: full on isomorphisms
+dual: full on isomorphisms
 related_properties:
   - full
   - conservative

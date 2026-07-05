@@ -2,7 +2,7 @@ id: countable copowers
 relation: has
 description: A category has <i>countable copowers</i> when for every object $X$ and every countable set $I$ the copower $I \otimes X$ exists.
 nlab_link: https://ncatlab.org/nlab/show/copower
-dual_property: countable powers
+dual: countable powers
 invariant_under_equivalences: true
 
 related_properties:

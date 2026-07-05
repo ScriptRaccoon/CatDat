@@ -2,7 +2,7 @@ id: strongly connected
 relation: is
 description: A category is <i>strongly connected</i> if it is inhabited and for every two objects $A,B$ there is a morphism $A \to B$. In other words, each hom-set is inhabited. Notice that when a terminal object $1$ exists, this property means that every object $A$ admits a morphism $1 \to A$.
 nlab_link: https://ncatlab.org/nlab/show/strongly+connected+category
-dual_property: strongly connected
+dual: strongly connected
 invariant_under_equivalences: true
 
 related_properties:

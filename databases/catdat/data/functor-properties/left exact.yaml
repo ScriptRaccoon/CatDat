@@ -3,7 +3,7 @@ relation: is
 description: A functor is <i>left exact</i> when it preserves finite limits.
 nlab_link: https://ncatlab.org/nlab/show/exact+functor
 invariant_under_equivalences: true
-dual_property: right exact
+dual: right exact
 related_properties:
   - exact
   - continuous

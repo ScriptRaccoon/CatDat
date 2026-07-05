@@ -2,7 +2,7 @@ id: multi-complete
 relation: is
 description: 'A <i>multi-limit</i> of a diagram $D : \S \to \C$ is a set $I$ of cones over $D$ such that every cone over $D$ uniquely factors through a unique cone belonging to $I$. This property refers to the existence of multi-limits of small diagrams. Note that any diagram with no cone admits a multi-limit, which is the empty set of cones.'
 nlab_link: https://ncatlab.org/nlab/show/multilimit
-dual_property: multi-cocomplete
+dual: multi-cocomplete
 invariant_under_equivalences: true
 
 related_properties:

@@ -10,7 +10,7 @@ description: >-
   </ol>
   Multi-algebraic categories are like locally strongly finitely presentable categories but only with multi-colimits. The relation is similar as between locally finitely multi-presentable and locally finitely presentable categories. For equivalence of conditions above, see [<a href="https://doi.org/10.1016/S0022-4049(01)00015-9" target="_blank">AR01a</a>, Lem. 1] and [<a href="http://www.tac.mta.ca/tac/volumes/8/n3/8-03abs.html" target="_blank">AR01b</a>, Thm. 4.4]. This notion was originally introduced by <a href="https://doi.org/10.1007/BF01224953" target="_blank">Diers</a>.
 nlab_link: null
-dual_property: null
+dual: null
 invariant_under_equivalences: true
 
 related_properties:

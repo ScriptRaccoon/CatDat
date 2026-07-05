@@ -2,7 +2,7 @@ id: finite coproducts
 relation: has
 description: A category has <i>finite coproducts</i> if it has coproducts for finite families of objects. Equivalently, it has an initial object and binary coproducts.
 nlab_link: https://ncatlab.org/nlab/show/finite+coproduct
-dual_property: finite products
+dual: finite products
 invariant_under_equivalences: true
 
 related_properties:

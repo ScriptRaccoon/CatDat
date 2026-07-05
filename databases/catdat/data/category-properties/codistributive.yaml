@@ -2,7 +2,7 @@ id: codistributive
 relation: is
 description: A category is <i>codistributive</i> if it has finite coproducts, finite products, and for every object $A$ the functor $- \sqcup A$ preserves finite products. Concretely, for every finite family of objects $(B_i)$ the canonical morphism $A \sqcup \prod_i B_i \to \prod_i (A \sqcup B_i)$ must be an isomorphism.
 nlab_link: null
-dual_property: distributive
+dual: distributive
 invariant_under_equivalences: true
 
 related_properties:

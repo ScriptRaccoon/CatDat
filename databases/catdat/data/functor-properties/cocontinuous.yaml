@@ -3,7 +3,7 @@ relation: is
 description: A functor is <i>cocontinuous</i> when it preserves all small colimits.
 nlab_link: https://ncatlab.org/nlab/show/cocontinuous+functor
 invariant_under_equivalences: true
-dual_property: continuous
+dual: continuous
 related_properties:
   - preserves coproducts
   - right exact

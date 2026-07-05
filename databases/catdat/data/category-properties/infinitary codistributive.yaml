@@ -2,7 +2,7 @@ id: infinitary codistributive
 relation: is
 description: A category is <i>infinitary codistributive</i> if it has finite coproducts, all products, and for every object $A$ the functor $A \sqcup -$ preserves all products. Concretely, for every family of objects $(B_i)$ the canonical morphism $A \sqcup \prod_i B_i \to \prod_i (A \sqcup B_i)$ must be an isomorphism.
 nlab_link: null
-dual_property: infinitary distributive
+dual: infinitary distributive
 invariant_under_equivalences: true
 
 related_properties:

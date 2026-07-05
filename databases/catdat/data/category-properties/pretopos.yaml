@@ -2,7 +2,7 @@ id: pretopos
 relation: is a
 description: A <i>pretopos</i> is a category which is Barr-exact and extensive.
 nlab_link: https://ncatlab.org/nlab/show/pretopos
-dual_property: null
+dual: null
 invariant_under_equivalences: true
 
 related_properties:

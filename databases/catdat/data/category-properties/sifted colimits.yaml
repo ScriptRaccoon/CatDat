@@ -2,7 +2,7 @@ id: sifted colimits
 relation: has
 description: A category has <i>sifted colimits</i> if it has colimits of diagrams indexed by small <a href="/category-property/sifted">sifted</a> categories.
 nlab_link: https://ncatlab.org/nlab/show/sifted+colimit
-dual_property: cosifted limits
+dual: cosifted limits
 invariant_under_equivalences: true
 
 related_properties:

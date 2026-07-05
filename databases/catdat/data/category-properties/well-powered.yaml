@@ -2,7 +2,7 @@ id: well-powered
 relation: is
 description: A category is <i>well-powered</i> if the collection of subobjects of any object is isomorphic to a set.
 nlab_link: https://ncatlab.org/nlab/show/well-powered+category
-dual_property: well-copowered
+dual: well-copowered
 invariant_under_equivalences: true
 
 related_properties:

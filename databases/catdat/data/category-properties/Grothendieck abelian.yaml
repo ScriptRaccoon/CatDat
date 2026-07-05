@@ -2,7 +2,7 @@ id: Grothendieck abelian
 relation: is
 description: A category is <i>Grothendieck abelian</i> if it is abelian, has coproducts (and is therefore cocomplete), a generator, and filtered colimits commute with finite limits. These categories play an important role in homological algebra.
 nlab_link: https://ncatlab.org/nlab/show/Grothendieck+category
-dual_property: null
+dual: null
 invariant_under_equivalences: true
 
 related_properties:

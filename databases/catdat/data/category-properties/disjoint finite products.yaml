@@ -4,7 +4,7 @@ description: |-
   A category has <i>disjoint finite products</i> if it has finite products, for every pair of objects $A,B$ the product projections $A \leftarrow A \times B \rightarrow B$ are epimorphisms, and the pushout $A \sqcup_{A \times B} B$ exists and is given by the terminal object $1$.
   This terminology does not seem to be common, but we have added it as a dual for the more commonly known property of having disjoint finite coproducts.
 nlab_link: null
-dual_property: disjoint finite coproducts
+dual: disjoint finite coproducts
 invariant_under_equivalences: true
 
 related_properties:

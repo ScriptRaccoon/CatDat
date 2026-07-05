@@ -4,7 +4,7 @@ description: >-
   A category is <i>inverse</i> if its dual is direct, i.e., if it contains no infinite sequence of non-identity morphisms of the form
   $$A_0 \to A_1 \to A_2 \to \cdots.$$
 nlab_link: https://ncatlab.org/nlab/show/inverse+category
-dual_property: direct
+dual: direct
 invariant_under_equivalences: false
 
 related_properties:

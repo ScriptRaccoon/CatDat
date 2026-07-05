@@ -2,7 +2,7 @@ id: cocartesian coclosed
 relation: is
 description: A category is <i>cocartesian coclosed</i> if its dual category is cartesian closed, i.e. if all finite coproducts and coexponentials $\Coexp(X,Y)$ exist, defined by the adjunction $\Hom(\Coexp[X,Y],T) \cong \Hom(Y,T \sqcup X)$.
 nlab_link: https://ncatlab.org/nlab/show/cocartesian+coclosed+category
-dual_property: cartesian closed
+dual: cartesian closed
 invariant_under_equivalences: true
 
 related_properties:

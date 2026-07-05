@@ -2,7 +2,7 @@ id: locally copresentable
 relation: is
 description: A category is <i>locally copresentable</i> if its opposite category is locally presentable.
 nlab_link: null
-dual_property: locally presentable
+dual: locally presentable
 invariant_under_equivalences: true
 
 related_properties:

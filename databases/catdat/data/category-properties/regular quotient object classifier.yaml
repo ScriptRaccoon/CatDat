@@ -6,7 +6,7 @@ description: >-
   is a pushout diagram. Equivalently, the functor $\Quot_{\reg} : \C \to \Set^+$ is representable.
   *Every morphism $\Psi \to 0$ is a split epimorphism anyway.
 nlab_link: null
-dual_property: regular subobject classifier
+dual: regular subobject classifier
 invariant_under_equivalences: true
 
 related_properties:

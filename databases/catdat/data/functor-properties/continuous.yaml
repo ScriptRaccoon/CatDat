@@ -3,7 +3,7 @@ relation: is
 description: A functor is <i>continuous</i> when it preserves all small limits.
 nlab_link: https://ncatlab.org/nlab/show/continuous+functor
 invariant_under_equivalences: true
-dual_property: cocontinuous
+dual: cocontinuous
 related_properties:
   - preserves products
   - left exact

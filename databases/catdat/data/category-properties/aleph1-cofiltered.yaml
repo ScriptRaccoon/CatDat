@@ -2,7 +2,7 @@ id: ℵ₁-cofiltered
 relation: is
 description: A category is <i>$\aleph_1$-cofiltered</i> if every countable diagram admits a cone. This is the special case of the notion of a $\kappa$-cofiltered category for $\kappa = \aleph_1$, the first uncountable cardinal. An equivalent characterization is given as the dual of Theorem 2.2 at the <a href="https://ncatlab.org/nlab/show/filtered+category">nLab</a>.
 nlab_link: https://ncatlab.org/nlab/show/cofiltered+category
-dual_property: ℵ₁-filtered
+dual: ℵ₁-filtered
 invariant_under_equivalences: true
 
 related_properties:
