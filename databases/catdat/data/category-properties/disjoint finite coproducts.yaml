@@ -5,7 +5,7 @@ nlab_link: https://ncatlab.org/nlab/show/disjoint+coproduct
 dual: disjoint finite products
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - disjoint coproducts
   - extensive
   - finite coproducts

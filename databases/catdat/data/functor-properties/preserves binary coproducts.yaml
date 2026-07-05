@@ -4,7 +4,7 @@ description: 'A functor $F : \C \to \D$ <i>preserves binary coproducts</i> when 
 nlab_link: https://ncatlab.org/nlab/show/preserved+colimit
 invariant_under_equivalences: true
 dual: preserves binary products
-related_properties:
+related:
   - preserves finite products
   - preserves products
   - continuous

@@ -4,7 +4,7 @@ description: 'A functor $F$ is <i>full</i> when it is surjective on Hom-sets: Ev
 nlab_link: https://ncatlab.org/nlab/show/full+functor
 invariant_under_equivalences: true
 dual: full
-related_properties:
+related:
   - equivalence
   - faithful
   - fully faithful

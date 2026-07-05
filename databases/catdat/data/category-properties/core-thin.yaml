@@ -11,7 +11,7 @@ nlab_link: https://ncatlab.org/nlab/show/gaunt+category
 dual: core-thin
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - gaunt
   - one-way
   - thin

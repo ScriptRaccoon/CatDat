@@ -5,7 +5,7 @@ nlab_link: https://ncatlab.org/nlab/show/filtered+limit
 dual: filtered colimits
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - cofiltered
   - complete
   - cosifted limits

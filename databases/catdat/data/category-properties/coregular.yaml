@@ -5,7 +5,7 @@ nlab_link: null
 dual: regular
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - coquotients of cocongruences
   - finitely cocomplete
   - Barr-coexact

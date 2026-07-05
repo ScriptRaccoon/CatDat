@@ -5,7 +5,7 @@ nlab_link: https://ncatlab.org/nlab/show/regular+epimorphism
 dual: mono-regular
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - conormal
   - effective cocongruences
   - quotient-trivial

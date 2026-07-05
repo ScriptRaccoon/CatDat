@@ -4,7 +4,7 @@ description: 'A morphism $f : A \to B$ is an <i>isomorphism</i> if it has an inv
 nlab_link: https://ncatlab.org/nlab/show/isomorphism
 invariant_under_equivalences: true
 dual: isomorphism
-related_properties:
+related:
   - monomorphism
   - epimorphism
 

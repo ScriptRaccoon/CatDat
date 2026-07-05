@@ -5,7 +5,7 @@ nlab_link: null
 dual: subobject-trivial
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - epi-regular
   - groupoid
 

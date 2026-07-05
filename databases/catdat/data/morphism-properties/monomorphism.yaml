@@ -4,7 +4,7 @@ description: 'A morphism $f : A \to B$ is a <i>monomorphism</i> if it is left-ca
 nlab_link: https://ncatlab.org/nlab/show/monomorphism
 invariant_under_equivalences: true
 dual: epimorphism
-related_properties:
+related:
   - isomorphism
   - regular monomorphism
 

@@ -4,7 +4,7 @@ description: 'A functor $F : \C \to \D$ is <i>fully faithful</i> when it is full
 nlab_link: https://ncatlab.org/nlab/show/full+and+faithful+functor
 invariant_under_equivalences: true
 dual: fully faithful
-related_properties:
+related:
   - full
   - faithful
   - equivalence

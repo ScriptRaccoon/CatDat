@@ -5,7 +5,7 @@ nlab_link: https://ncatlab.org/nlab/show/cogenerator
 dual: generator
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - cogenerating set
 
 tags:

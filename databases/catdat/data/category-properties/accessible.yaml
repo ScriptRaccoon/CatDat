@@ -5,7 +5,7 @@ nlab_link: https://ncatlab.org/nlab/show/accessible+category
 dual: coaccessible
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - finitely accessible
   - locally multi-presentable
   - locally poly-presentable

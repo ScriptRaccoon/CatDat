@@ -4,7 +4,7 @@ description: 'A functor $F : \C \to \D$ <i>preserves regular monomorphisms</i> i
 nlab_link: https://ncatlab.org/nlab/show/regular+monomorphism
 invariant_under_equivalences: true
 dual: preserves regular epimorphisms
-related_properties:
+related:
   - preserves monomorphisms
   - left exact
   - preserves equalizers

@@ -4,7 +4,7 @@ description: 'A <i>left inverse</i> of a functor $F : \C \to \D$ is a functor $G
 nlab_link: https://ncatlab.org/nlab/show/inverse+functor
 invariant_under_equivalences: true
 dual: left-invertible
-related_properties:
+related:
   - equivalence
   - faithful
   - essentially injective

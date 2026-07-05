@@ -11,7 +11,7 @@ nlab_link: https://ncatlab.org/nlab/show/commutativity+of+limits+and+colimits
 dual: exact cofiltered limits
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - cartesian filtered colimits
   - filtered colimits
   - finitely complete

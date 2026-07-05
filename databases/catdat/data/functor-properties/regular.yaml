@@ -4,7 +4,7 @@ description: 'A functor $F : \C \to \D$ is <i>regular</i> when it preserves fini
 nlab_link: https://ncatlab.org/nlab/show/regular+functor
 invariant_under_equivalences: true
 dual: coregular
-related_properties:
+related:
   - left exact
   - preserves regular epimorphisms
 

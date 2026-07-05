@@ -5,7 +5,7 @@ nlab_link: https://ncatlab.org/nlab/show/topos
 dual: null
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - Grothendieck topos
   - cartesian closed
   - finitely complete

@@ -8,7 +8,7 @@ nlab_link: null
 dual: Malcev
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - finitely cocomplete
 
 tags:

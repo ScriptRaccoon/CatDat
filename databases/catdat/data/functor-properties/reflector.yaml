@@ -4,7 +4,7 @@ description: 'A functor $F : \C \to \D$ is a <i>reflector</i> if it is left adjo
 nlab_link: https://ncatlab.org/nlab/show/reflective+subcategory
 invariant_under_equivalences: true
 dual: coreflector
-related_properties:
+related:
   - left adjoint
   - right-invertible
 

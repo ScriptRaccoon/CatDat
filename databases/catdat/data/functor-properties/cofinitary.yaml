@@ -4,7 +4,7 @@ description: A functor is <i>cofinitary</i> when it preserves cofiltered limits.
 nlab_link: https://ncatlab.org/nlab/show/preserved+limit
 invariant_under_equivalences: true
 dual: finitary
-related_properties:
+related:
   - continuous
 
 tags:

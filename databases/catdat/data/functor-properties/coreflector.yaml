@@ -4,7 +4,7 @@ description: 'A functor $F : \C \to \D$ is a <i>coreflector</i> if it is right a
 nlab_link: https://ncatlab.org/nlab/show/coreflective+subcategory
 invariant_under_equivalences: true
 dual: reflector
-related_properties:
+related:
   - right adjoint
   - right-invertible
 

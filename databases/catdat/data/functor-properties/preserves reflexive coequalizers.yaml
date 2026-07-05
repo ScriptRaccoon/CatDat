@@ -4,7 +4,7 @@ description: 'A functor $F$ <i>preserves reflexive coequalizers</i> when for eve
 nlab_link: https://ncatlab.org/nlab/show/reflexive+coequalizer
 invariant_under_equivalences: true
 dual: preserves coreflexive equalizers
-related_properties:
+related:
   - cocontinuous
   - preserves coequalizers
 

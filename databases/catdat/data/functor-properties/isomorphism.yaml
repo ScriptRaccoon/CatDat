@@ -4,7 +4,7 @@ description: 'A functor $F : \C \to \D$ is an <i>isomorphism</i> when there is a
 nlab_link: https://ncatlab.org/nlab/show/equivalence+of+categories#Isomorphism
 invariant_under_equivalences: false
 dual: isomorphism
-related_properties:
+related:
   - equivalence
 
 tags:

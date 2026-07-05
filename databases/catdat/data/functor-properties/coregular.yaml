@@ -4,7 +4,7 @@ description: 'A functor $F : \C \to \D$ is <i>coregular</i> when it preserves fi
 nlab_link: null
 invariant_under_equivalences: true
 dual: regular
-related_properties:
+related:
   - right exact
   - preserves regular monomorphisms
 

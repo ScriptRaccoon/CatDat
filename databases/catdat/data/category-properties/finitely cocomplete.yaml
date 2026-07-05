@@ -5,7 +5,7 @@ nlab_link: https://ncatlab.org/nlab/show/finitely+cocomplete+category
 dual: finitely complete
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - cocomplete
   - coequalizers
   - finite coproducts

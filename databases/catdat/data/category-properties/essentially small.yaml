@@ -5,7 +5,7 @@ nlab_link: https://ncatlab.org/nlab/show/small+category
 dual: essentially small
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - locally essentially small
   - small
 

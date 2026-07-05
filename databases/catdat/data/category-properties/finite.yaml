@@ -5,7 +5,7 @@ nlab_link: https://ncatlab.org/nlab/show/finite+category
 dual: finite
 invariant_under_equivalences: false
 
-related_properties:
+related:
   - countable
   - essentially finite
   - locally finite

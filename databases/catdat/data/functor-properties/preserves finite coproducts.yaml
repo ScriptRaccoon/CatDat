@@ -4,7 +4,7 @@ description: A functor $F$ <i>preserves finite coproducts</i> when for every fam
 nlab_link: https://ncatlab.org/nlab/show/preserved+colimit
 invariant_under_equivalences: true
 dual: preserves finite products
-related_properties:
+related:
   - preserves coproducts
   - preserves binary coproducts
   - preserves initial objects

@@ -7,7 +7,7 @@ nlab_link: https://ncatlab.org/nlab/show/powering
 dual: ℵ₂-small copowers
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - powers
   - countable powers
   - finite powers

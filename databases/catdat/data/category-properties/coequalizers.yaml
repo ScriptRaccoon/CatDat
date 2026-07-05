@@ -5,7 +5,7 @@ nlab_link: https://ncatlab.org/nlab/show/coequalizer
 dual: equalizers
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - cokernels
   - finitely cocomplete
   - quotients of congruences

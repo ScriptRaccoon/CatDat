@@ -5,7 +5,7 @@ nlab_link: null
 dual: null
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - locally strongly finitely presentable
   - multi-algebraic
   - sifted colimits

@@ -4,7 +4,7 @@ description: 'A functor $F$ is <i>faithful</i> when it is injective on Hom-sets:
 nlab_link: https://ncatlab.org/nlab/show/faithful+functor
 invariant_under_equivalences: true
 dual: faithful
-related_properties:
+related:
   - full
   - fully faithful
   - essentially injective

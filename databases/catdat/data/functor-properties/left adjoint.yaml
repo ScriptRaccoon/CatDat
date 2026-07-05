@@ -4,7 +4,7 @@ description: 'A functor $F : \C \to \D$ is a <i>left adjoint</i> when there is a
 nlab_link: https://ncatlab.org/nlab/show/left+adjoint
 invariant_under_equivalences: true
 dual: right adjoint
-related_properties:
+related:
   - cocontinuous
   - comonadic
   - reflector

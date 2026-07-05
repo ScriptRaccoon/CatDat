@@ -5,7 +5,7 @@ nlab_link: https://ncatlab.org/nlab/show/directed+limit
 dual: directed colimits
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - cofiltered limits
   - complete
 

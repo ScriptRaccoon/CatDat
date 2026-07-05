@@ -5,7 +5,7 @@ nlab_link: https://ncatlab.org/nlab/show/one-way+category
 dual: one-way
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - core-thin
   - direct
   - inverse

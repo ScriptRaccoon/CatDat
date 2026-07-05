@@ -5,7 +5,7 @@ nlab_link: https://ncatlab.org/nlab/show/cartesian+product
 dual: coproducts
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - complete
   - finite products
   - powers

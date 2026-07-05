@@ -5,7 +5,7 @@ nlab_link: https://ncatlab.org/nlab/show/strongly+connected+category
 dual: strongly connected
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - connected
   - inhabited
   - semi-strongly connected

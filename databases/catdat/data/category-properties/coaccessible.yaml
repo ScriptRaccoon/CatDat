@@ -5,7 +5,7 @@ nlab_link: null
 dual: accessible
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - locally copresentable
 
 tags:

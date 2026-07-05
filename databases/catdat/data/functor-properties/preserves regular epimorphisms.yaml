@@ -4,7 +4,7 @@ description: 'A functor $F : \C \to \D$ <i>preserves regular epimorphisms</i> if
 nlab_link: https://ncatlab.org/nlab/show/regular+epimorphism
 invariant_under_equivalences: true
 dual: preserves regular monomorphisms
-related_properties:
+related:
   - preserves epimorphisms
   - right exact
   - preserves coequalizers

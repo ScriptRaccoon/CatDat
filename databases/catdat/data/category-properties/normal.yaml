@@ -5,7 +5,7 @@ nlab_link: https://ncatlab.org/nlab/show/normal+monomorphism
 dual: conormal
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - effective congruences
   - kernels
   - mono-regular

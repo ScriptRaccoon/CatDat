@@ -8,7 +8,7 @@ nlab_link: https://ncatlab.org/nlab/show/congruence
 dual: effective cocongruences
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - mono-regular
   - normal
   - quotients of congruences

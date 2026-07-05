@@ -7,7 +7,7 @@ nlab_link: null
 dual: cartesian filtered colimits
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - cofiltered limits
   - exact cofiltered limits
   - finite coproducts

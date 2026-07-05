@@ -4,7 +4,7 @@ description: A functor is <i>finitary</i> when it preserves filtered colimits.
 nlab_link: https://ncatlab.org/nlab/show/finitary+functor
 invariant_under_equivalences: true
 dual: cofinitary
-related_properties:
+related:
   - cocontinuous
 
 tags:

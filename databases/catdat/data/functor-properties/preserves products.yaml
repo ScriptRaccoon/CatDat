@@ -4,7 +4,7 @@ description: A functor $F$ <i>preserves products</i> when for every family of ob
 nlab_link: https://ncatlab.org/nlab/show/preserved+limit
 invariant_under_equivalences: true
 dual: preserves coproducts
-related_properties:
+related:
   - preserves finite products
   - preserves terminal objects
   - continuous

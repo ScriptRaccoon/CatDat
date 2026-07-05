@@ -8,7 +8,7 @@ nlab_link: null
 dual: effective congruences
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - conormal
   - coquotients of cocongruences
   - epi-regular

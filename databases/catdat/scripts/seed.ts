@@ -352,7 +352,7 @@ function seed_properties({ type, folder }: { type: StructureType; folder: string
 			Number(property.invariant_under_equivalences),
 		)
 
-		for (const related of property.related_properties) {
+		for (const related of property.related) {
 			related_insert.run(property.id, related, type)
 		}
 

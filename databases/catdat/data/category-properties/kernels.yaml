@@ -5,7 +5,7 @@ nlab_link: https://ncatlab.org/nlab/show/kernel
 dual: cokernels
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - coquotients of cocongruences
   - equalizers
   - normal

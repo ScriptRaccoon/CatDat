@@ -9,7 +9,7 @@ nlab_link: null
 dual: CIP
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - cofiltered-limit-stable epimorphisms
   - coproducts
   - products

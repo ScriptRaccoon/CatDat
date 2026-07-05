@@ -5,7 +5,7 @@ nlab_link: https://ncatlab.org/nlab/show/multilimit
 dual: multi-complete
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - cocomplete
   - multi-initial object
 

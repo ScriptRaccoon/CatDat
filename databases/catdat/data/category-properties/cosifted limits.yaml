@@ -5,7 +5,7 @@ nlab_link: https://ncatlab.org/nlab/show/sifted+colimit
 dual: sifted colimits
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - cofiltered limits
   - complete
   - coreflexive equalizers

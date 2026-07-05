@@ -14,7 +14,7 @@ nlab_link: https://ncatlab.org/nlab/show/locally+presentable+category
 dual: locally copresentable
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - accessible
   - cocomplete
   - locally finitely presentable

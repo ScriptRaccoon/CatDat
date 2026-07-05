@@ -5,7 +5,7 @@ nlab_link: https://ncatlab.org/nlab/show/locally+finite+category
 dual: locally finite
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - finite
   - thin
 

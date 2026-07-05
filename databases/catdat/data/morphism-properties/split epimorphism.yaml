@@ -4,7 +4,7 @@ description: 'A morphism $f : A \to B$ is a <i>split epimorphism</i> if there is
 nlab_link: https://ncatlab.org/nlab/show/split+epimorphism
 invariant_under_equivalences: true
 dual: split monomorphism
-related_properties:
+related:
   - epimorphism
 
 tags:

@@ -4,7 +4,7 @@ description: A functor is <i>continuous</i> when it preserves all small limits.
 nlab_link: https://ncatlab.org/nlab/show/continuous+functor
 invariant_under_equivalences: true
 dual: cocontinuous
-related_properties:
+related:
   - preserves products
   - left exact
   - right adjoint

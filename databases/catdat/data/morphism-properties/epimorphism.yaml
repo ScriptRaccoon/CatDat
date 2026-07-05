@@ -4,7 +4,7 @@ description: 'A morphism $f : A \to B$ is an <i>epimorphism</i> if it is right-c
 nlab_link: https://ncatlab.org/nlab/show/epimorphism
 invariant_under_equivalences: true
 dual: monomorphism
-related_properties:
+related:
   - isomorphism
   - regular epimorphism
 

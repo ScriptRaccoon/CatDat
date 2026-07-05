@@ -5,7 +5,7 @@ nlab_link: null
 dual: infinitary distributive
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - codistributive
   - countably codistributive
   - finite coproducts

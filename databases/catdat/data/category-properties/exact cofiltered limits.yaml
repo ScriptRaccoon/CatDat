@@ -11,7 +11,7 @@ nlab_link: https://ncatlab.org/nlab/show/commutativity+of+limits+and+colimits
 dual: exact filtered colimits
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - cocartesian cofiltered limits
   - cofiltered limits
   - cofiltered-limit-stable epimorphisms

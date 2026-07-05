@@ -4,7 +4,7 @@ description: 'A functor $F : \C \to \D$ is <i>dominant</i> when every object $Y 
 nlab_link: https://ncatlab.org/nlab/show/dominant+functor
 invariant_under_equivalences: true
 dual: dominant
-related_properties:
+related:
   - essentially surjective
 
 tags:

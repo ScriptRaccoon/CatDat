@@ -4,7 +4,7 @@ description: 'A functor $F : \C \to \D$ is <i>essentially surjective</i> (on obj
 nlab_link: https://ncatlab.org/nlab/show/essentially+surjective+functor
 invariant_under_equivalences: true
 dual: essentially surjective
-related_properties:
+related:
   - equivalence
   - essentially injective
   - dominant

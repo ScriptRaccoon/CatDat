@@ -5,7 +5,7 @@ nlab_link: https://ncatlab.org/nlab/show/initial+object
 dual: terminal object
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - finite coproducts
   - multi-initial object
 

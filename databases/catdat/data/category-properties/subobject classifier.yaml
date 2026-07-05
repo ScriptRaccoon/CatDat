@@ -9,7 +9,7 @@ nlab_link: https://ncatlab.org/nlab/show/subobject+classifier
 dual: quotient object classifier
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - elementary topos
   - finitely complete
   - regular subobject classifier

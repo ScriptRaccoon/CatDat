@@ -5,7 +5,7 @@ nlab_link: https://ncatlab.org/nlab/show/balanced+category
 dual: balanced
 invariant_under_equivalences: true
 
-related_properties: []
+related: []
 
 tags:
   - morphism behavior

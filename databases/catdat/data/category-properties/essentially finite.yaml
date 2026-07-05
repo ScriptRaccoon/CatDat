@@ -5,7 +5,7 @@ nlab_link: null
 dual: essentially finite
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - essentially countable
   - essentially small
   - finite

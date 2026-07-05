@@ -74,7 +74,7 @@ export type PropertyYaml = {
 	nlab_link: string | null
 	dual: string | null
 	invariant_under_equivalences: boolean
-	related_properties: string[]
+	related: string[]
 	tags: string[]
 }
 

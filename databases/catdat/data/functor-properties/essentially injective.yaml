@@ -7,7 +7,7 @@ description: >-
 nlab_link: https://ncatlab.org/nlab/show/essentially+injective+functor
 invariant_under_equivalences: true
 dual: essentially injective
-related_properties:
+related:
   - conservative
   - fully faithful
   - full on isomorphisms

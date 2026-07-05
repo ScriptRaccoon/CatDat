@@ -4,7 +4,7 @@ description: A functor is <i>cocontinuous</i> when it preserves all small colimi
 nlab_link: https://ncatlab.org/nlab/show/cocontinuous+functor
 invariant_under_equivalences: true
 dual: continuous
-related_properties:
+related:
   - preserves coproducts
   - right exact
   - left adjoint

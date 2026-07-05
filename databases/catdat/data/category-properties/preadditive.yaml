@@ -7,7 +7,7 @@ nlab_link: https://ncatlab.org/nlab/show/Ab-enriched+category
 dual: preadditive
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - additive
 
 tags:

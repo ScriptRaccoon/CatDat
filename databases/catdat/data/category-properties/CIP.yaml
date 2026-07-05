@@ -9,7 +9,7 @@ nlab_link: null
 dual: CSP
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - coproducts
   - counital
   - filtered-colimit-stable monomorphisms

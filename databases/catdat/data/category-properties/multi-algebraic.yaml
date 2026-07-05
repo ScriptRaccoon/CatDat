@@ -13,7 +13,7 @@ nlab_link: null
 dual: null
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - finitary algebraic
   - generalized variety
   - locally finitely multi-presentable

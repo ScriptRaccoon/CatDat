@@ -4,7 +4,7 @@ description: 'A functor $F : \C \to \D$ is <i>conservative</i> when it is isomor
 nlab_link: https://ncatlab.org/nlab/show/conservative+functor
 invariant_under_equivalences: true
 dual: conservative
-related_properties:
+related:
   - fully faithful
   - essentially injective
   - full on isomorphisms

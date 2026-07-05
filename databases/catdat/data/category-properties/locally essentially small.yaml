@@ -5,7 +5,7 @@ nlab_link: null
 dual: locally essentially small
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - locally small
 
 tags:

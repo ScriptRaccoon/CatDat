@@ -5,7 +5,7 @@ nlab_link: https://ncatlab.org/nlab/show/extensive+category
 dual: coextensive
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - disjoint finite coproducts
   - finite coproducts
   - infinitary extensive

@@ -8,7 +8,7 @@ nlab_link: https://ncatlab.org/nlab/show/sifted+category
 dual: cosifted
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - connected
   - filtered
   - sifted colimits

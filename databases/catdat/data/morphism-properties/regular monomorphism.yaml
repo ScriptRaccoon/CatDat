@@ -4,7 +4,7 @@ description: 'A morphism $f : A \to B$ is a <i>regular monomorphism</i> if it is
 nlab_link: https://ncatlab.org/nlab/show/regular+monomorphism
 invariant_under_equivalences: true
 dual: regular epimorphism
-related_properties:
+related:
   - monomorphism
 
 tags:

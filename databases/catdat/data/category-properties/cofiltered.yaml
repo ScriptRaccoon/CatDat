@@ -5,7 +5,7 @@ nlab_link: https://ncatlab.org/nlab/show/cofiltered+category
 dual: filtered
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - cofiltered limits
   - finitely complete
 

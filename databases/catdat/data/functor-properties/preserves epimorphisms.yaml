@@ -6,7 +6,7 @@ description: |-
 nlab_link: https://ncatlab.org/nlab/show/epimorphism
 invariant_under_equivalences: true
 dual: preserves monomorphisms
-related_properties:
+related:
   - right exact
   - preserves regular epimorphisms
 

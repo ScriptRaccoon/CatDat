@@ -13,7 +13,7 @@ nlab_link: https://ncatlab.org/nlab/show/locally+multipresentable+category
 dual: null
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - connected limits
   - filtered colimits
   - finitely accessible

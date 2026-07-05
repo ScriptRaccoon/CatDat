@@ -14,7 +14,7 @@ nlab_link: https://ncatlab.org/nlab/show/locally+strongly+finitely+presentable+c
 dual: null
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - finitary algebraic
   - generalized variety
   - locally finitely presentable

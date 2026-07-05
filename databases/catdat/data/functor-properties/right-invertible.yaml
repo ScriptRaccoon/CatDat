@@ -4,7 +4,7 @@ description: 'A <i>right inverse</i> of a functor $F : \C \to \D$ is a functor $
 nlab_link: https://ncatlab.org/nlab/show/inverse+functor
 invariant_under_equivalences: true
 dual: right-invertible
-related_properties:
+related:
   - equivalence
   - essentially surjective
   - left-invertible

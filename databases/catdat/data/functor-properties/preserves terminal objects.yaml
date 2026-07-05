@@ -4,7 +4,7 @@ description: A functor $F$ <i>preserves terminal objects</i> when it maps every 
 nlab_link: https://ncatlab.org/nlab/show/preserved+limit
 invariant_under_equivalences: true
 dual: preserves initial objects
-related_properties:
+related:
   - preserves finite products
   - continuous
 

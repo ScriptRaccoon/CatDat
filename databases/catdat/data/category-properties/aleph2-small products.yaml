@@ -7,7 +7,7 @@ nlab_link: https://ncatlab.org/nlab/show/cartesian+product
 dual: ℵ₂-small coproducts
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - complete
   - countable products
   - finite products

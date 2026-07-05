@@ -4,7 +4,7 @@ description: 'A functor $F$ <i>preserves coequalizers</i> when for every paralle
 nlab_link: https://ncatlab.org/nlab/show/preserved+colimit
 invariant_under_equivalences: true
 dual: preserves equalizers
-related_properties:
+related:
   - cocontinuous
   - right exact
   - preserves reflexive coequalizers

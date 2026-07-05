@@ -4,7 +4,7 @@ description: 'A functor $F : \C \to \D$ is <i>comonadic</i> when there is a como
 nlab_link: https://ncatlab.org/nlab/show/comonadic+functor
 invariant_under_equivalences: true
 dual: monadic
-related_properties:
+related:
   - left adjoint
   - faithful
 

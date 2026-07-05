@@ -9,7 +9,7 @@ nlab_link: null
 dual: subobject classifier
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - finitely cocomplete
   - regular quotient object classifier
 

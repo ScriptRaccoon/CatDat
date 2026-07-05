@@ -5,7 +5,7 @@ nlab_link: https://ncatlab.org/nlab/show/discrete+category
 dual: discrete
 invariant_under_equivalences: false
 
-related_properties:
+related:
   - essentially discrete
   - thin
 

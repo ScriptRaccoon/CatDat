@@ -5,7 +5,7 @@ nlab_link: https://ncatlab.org/nlab/show/reflexive+coequalizer
 dual: coreflexive equalizers
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - coequalizers
   - sifted colimits
 

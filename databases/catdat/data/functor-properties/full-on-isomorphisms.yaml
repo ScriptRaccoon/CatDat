@@ -4,7 +4,7 @@ description: 'A functor $F : \C \to \D$ is <i>full on isomorphisms</i> when, for
 nlab_link: null
 invariant_under_equivalences: true
 dual: full on isomorphisms
-related_properties:
+related:
   - full
   - conservative
   - essentially injective

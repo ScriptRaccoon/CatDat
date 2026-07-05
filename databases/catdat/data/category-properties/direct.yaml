@@ -8,7 +8,7 @@ nlab_link: https://ncatlab.org/nlab/show/direct+category
 dual: inverse
 invariant_under_equivalences: false
 
-related_properties:
+related:
   - one-way
   - skeletal
 

@@ -5,7 +5,7 @@ nlab_link: https://ncatlab.org/nlab/show/strict+terminal+object
 dual: strict initial object
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - terminal object
 
 tags:

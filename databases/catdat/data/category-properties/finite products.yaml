@@ -5,7 +5,7 @@ nlab_link: https://ncatlab.org/nlab/show/finite+product
 dual: finite coproducts
 invariant_under_equivalences: true
 
-related_properties:
+related:
   - binary products
   - finite powers
   - products
