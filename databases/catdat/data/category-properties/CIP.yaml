@@ -5,6 +5,7 @@ description: >-
   $$\textstyle \alpha : \coprod_i X_i \to \prod_{i \in I} X_i$$
   defined by $p_j \circ \alpha \circ \iota_i = \delta_{i,j}$ is a monomorphism.
   This is no standard terminology. This property has been added to clarify relationships between other properties, in particular those concerning the commutation between limits and colimits.
+nlab_link: null
 dual_property: CSP
 invariant_under_equivalences: true
 

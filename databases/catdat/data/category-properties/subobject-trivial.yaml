@@ -1,6 +1,7 @@
 id: subobject-trivial
 relation: is
 description: A category is <i>subobject-trivial</i> if every monomorphism is an isomorphism. Equivalently, the poset of subobjects of any object is trivial. This is no standard terminology. We have added it to the database since it clarifies the relationship between several related properties.
+nlab_link: null
 dual_property: quotient-trivial
 invariant_under_equivalences: true
 

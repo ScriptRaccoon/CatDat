@@ -5,6 +5,7 @@ description: >-
   $$\begin{CD} \Psi @>{\top}>> 0 \\ @V{\psi_e}VV @VV{!}V \\ A @>>{e}> B \end{CD}$$
   is a pushout diagram. Equivalently, the functor $\Quot : \C \to \Set^+$ is representable.
   *Every morphism $\Psi \to 0$ is a split epimorphism anyway.
+nlab_link: null
 dual_property: subobject classifier
 invariant_under_equivalences: true
 

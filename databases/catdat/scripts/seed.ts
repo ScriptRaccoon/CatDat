@@ -347,7 +347,7 @@ function seed_properties({ type, folder }: { type: StructureType; folder: string
 			type,
 			property.relation,
 			property.description,
-			property.nlab_link || null,
+			property.nlab_link,
 			property.dual_property || null,
 			Number(property.invariant_under_equivalences),
 		)

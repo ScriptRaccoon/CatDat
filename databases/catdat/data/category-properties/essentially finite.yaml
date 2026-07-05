@@ -1,6 +1,7 @@
 id: essentially finite
 relation: is
 description: A category is <i>essentially finite</i> if it is equivalent to a finite category. Equivalently, there are only finitely many objects up to isomorphism, and the collection of morphisms between any two objects is isomorphic to a finite set. In contrast to being finite, this property is invariant under equivalences of categories.
+nlab_link: null
 dual_property: essentially finite
 invariant_under_equivalences: true
 

@@ -1,6 +1,7 @@
 id: generalized variety
 relation: is a
 description: A category is a <i>generalized variety</i> if it has sifted colimits and there is a (small) set $G$ of strongly finitely presentable objects such that every object is a sifted colimit of objects from $G$. Generalized varieties are like locally strongly finitely presentable categories but without colimits. The relation is similar as between finitely accessible and locally finitely presentable categories. This notion is defined in <a href="http://www.tac.mta.ca/tac/volumes/8/n3/8-03abs.html" target="_blank">[AR01, Def. 3.6]</a>.
+nlab_link: null
 invariant_under_equivalences: true
 
 related_properties:
