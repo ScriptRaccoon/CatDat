@@ -39,8 +39,8 @@ export type StructureYaml = {
 	id: string
 	name: string
 	notation: string
-	description?: string | null
-	nlab_link?: string
+	description: string | null
+	nlab_link: string | null
 	tags: string[]
 	related: string[]
 	dual?: string
@@ -53,7 +53,6 @@ export type StructureYaml = {
 export type CategoryYaml = StructureYaml & {
 	objects: string
 	morphisms: string
-	dual_category?: string | null
 	special_objects: Record<string, ObjectEntry | undefined>
 	special_morphisms: Record<string, MorphismEntry | undefined>
 }
