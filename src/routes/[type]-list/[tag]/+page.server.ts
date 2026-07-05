@@ -1,8 +1,12 @@
 import { fetch_tagged_structures } from '$lib/server/fetchers/structures'
 import { is_structure_type } from '$lib/commons/structures'
 import { error } from '@sveltejs/kit'
+import type { EntryGenerator } from './$types'
+import { fetch_structure_tags } from '$lib/server/fetchers/tags'
 
-export const prerender = false // FIXME
+export const entries: EntryGenerator = () => {
+	return fetch_structure_tags()
+}
 
 export const load = (event) => {
 	const type = event.params.type
