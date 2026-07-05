@@ -5,6 +5,7 @@ source: Set
 target: Set
 description: This functor maps a set $X$ to its double $2 X \coloneqq X + X$. It is a simple example of a polynomial functor.
 nlab_link: null
+left_adjoint: null
 
 tags:
   - set theory

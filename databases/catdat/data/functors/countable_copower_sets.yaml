@@ -5,6 +5,7 @@ source: Set
 target: Set
 description: This functor maps a set $X$ to the product $\IN \times X$, which can also be seen as the copower $\IN \otimes X = \coprod_{n \in \IN} X$. It is an example of a polynomial functor.
 nlab_link: null
+left_adjoint: null
 
 tags:
   - set theory

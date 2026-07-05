@@ -5,6 +5,7 @@ source: Set
 target: Top
 description: This functor maps a set $X$ to the discrete topological space $D(X) \coloneqq (X, P(X))$ in which every subset is open.
 nlab_link: https://ncatlab.org/nlab/show/discrete+and+indiscrete+topology
+left_adjoint: null
 
 tags:
   - topology

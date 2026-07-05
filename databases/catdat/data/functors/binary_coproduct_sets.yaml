@@ -5,6 +5,7 @@ source: SetxSet
 target: Set
 description: This functor maps a pair of sets $(X,Y)$ to their coproduct $X + Y$. It is an example of a right-invertible left adjoint functor which is not a reflector.
 nlab_link: null
+left_adjoint: null
 
 tags:
   - set theory

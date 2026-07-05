@@ -5,6 +5,7 @@ source: Set
 target: Set
 description: 'This functor $P_{\exists}$ maps a set $X$ to its power set $P(X)$ and a map of sets $f : X \to Y$ to the induced image operator $f_* : P(X) \to P(Y)$.'
 nlab_link: https://ncatlab.org/nlab/show/power+set
+left_adjoint: null
 
 tags:
   - set theory

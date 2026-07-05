@@ -5,6 +5,7 @@ source: Set
 target: '1'
 description: 'Every category $\C$ has a unique functor $! : \C \to 1$ into the trivial category. Here, we specify that $\C$ is the category of sets.'
 nlab_link: null
+left_adjoint: null
 
 tags:
   - set theory

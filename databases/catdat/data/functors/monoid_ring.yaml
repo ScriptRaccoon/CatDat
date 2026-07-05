@@ -5,6 +5,7 @@ source: Mon
 target: Ring
 description: This functor maps a monoid $M$ to the monoid ring $\IZ[M]$, which consists of finite sums of elements in $M$.
 nlab_link: https://ncatlab.org/nlab/show/group+algebra
+left_adjoint: null
 
 tags:
   - algebra

@@ -5,6 +5,7 @@ source: Grp
 target: '1'
 description: 'Every category $\C$ has a unique functor $! : \C \to 1$ into the trivial category. Here, we specify that $\C$ is the category of groups. It is a basic example of a full functor which is not faithful.'
 nlab_link: null
+left_adjoint: null
 
 tags:
   - algebra

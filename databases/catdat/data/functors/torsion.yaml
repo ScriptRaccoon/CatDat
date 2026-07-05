@@ -7,6 +7,8 @@ description: >-
   This functor maps an abelian group $A$ to its torsion subgroup
   $$T(A) \coloneqq \{a \in A : \exists n \geq 1 \, (na = 0)\}.$$
 nlab_link: https://ncatlab.org/nlab/show/torsion+subgroup
+left_adjoint: null
+
 tags:
   - algebra
 
