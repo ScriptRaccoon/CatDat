@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { goto } from '$app/navigation'
 	import { page } from '$app/state'
-	import { PLURALS, STRUCTURES } from '$lib/commons/structures'
+	import { PLURALS, STRUCTURE_TYPES } from '$lib/commons/structures'
 	import type { StructureType } from '$lib/commons/types'
 
 	type Props = {
@@ -33,8 +33,8 @@
 
 <label for={id}>Structure</label>
 
-<select {id} bind:value={selected_type} onchange={handle_change} aria-label="Structure">
-	{#each STRUCTURES as structure}
+<select {id} bind:value={selected_type} onchange={handle_change}>
+	{#each STRUCTURE_TYPES as structure}
 		<option value={structure}>{PLURALS[structure]}</option>
 	{/each}
 </select>

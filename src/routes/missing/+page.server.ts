@@ -1,19 +1,19 @@
 import { fetch_missing_data } from '$lib/server/fetchers/missing_data'
 import { fetch_categories_with_missing_morphisms } from '$lib/server/fetchers/category'
-import { STRUCTURES } from '$lib/commons/structures'
+import { STRUCTURE_TYPES } from '$lib/commons/structures'
 
 export const load = () => {
 	const categories_with_missing_morphisms = fetch_categories_with_missing_morphisms()
 
 	const missing_data = Object.fromEntries(
-		STRUCTURES.map((type) => [type, fetch_missing_data(type)]),
+		STRUCTURE_TYPES.map((type) => [type, fetch_missing_data(type)]),
 	)
 
 	function select<T>(
 		selector: (data: (typeof missing_data)[keyof typeof missing_data]) => T,
 	) {
 		return Object.fromEntries(
-			STRUCTURES.map((type) => [type, selector(missing_data[type])]),
+			STRUCTURE_TYPES.map((type) => [type, selector(missing_data[type])]),
 		)
 	}
 

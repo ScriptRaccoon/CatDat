@@ -14,7 +14,7 @@ import decided_functors from './expected-data/decided-functors.json'
 import decided_morphisms from './expected-data/decided-morphisms.json'
 import { capitalize } from './utils/helpers'
 import { get_client } from './utils/db'
-import { PLURALS, STRUCTURES, type StructureType } from './config'
+import { PLURALS, STRUCTURE_TYPES, type StructureType } from './config'
 import fs from 'node:fs'
 import path from 'node:path'
 import { decode_property_ID } from '../../../src/lib/commons/property.url'
@@ -242,7 +242,7 @@ function check_link_targets_exist() {
 
 	for (const { proof, error_prefix } of proofs) {
 		const link_regex = new RegExp(
-			`<a\\s+href="\\/(${STRUCTURES.join('|')})(?:-(implication|property))?\\/([^"]+)"`,
+			`<a\\s+href="\\/(${STRUCTURE_TYPES.join('|')})(?:-(implication|property))?\\/([^"]+)"`,
 			'g',
 		)
 

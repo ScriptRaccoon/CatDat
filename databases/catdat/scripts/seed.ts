@@ -12,7 +12,7 @@ import type {
 	MorphismYaml,
 } from './utils/seed.types'
 import { create_schema_hash, get_saved_schema_hash } from './utils/schema'
-import { PLURALS, STRUCTURES, type StructureType } from './config'
+import { PLURALS, STRUCTURE_TYPES, type StructureType } from './config'
 
 const db = get_client()
 
@@ -126,7 +126,7 @@ function seed_config() {
 	)
 
 	function insert_config(config: ConfigYaml) {
-		for (const type of STRUCTURES) {
+		for (const type of STRUCTURE_TYPES) {
 			for (const tag of config.structure_tags) {
 				structure_tag_insert.run(tag, type)
 			}

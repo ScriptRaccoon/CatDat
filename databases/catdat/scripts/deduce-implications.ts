@@ -1,4 +1,4 @@
-import { STRUCTURES_WITH_DUALS, type StructureType } from './config'
+import { STRUCTURE_TYPES_WITH_DUALS, type StructureType } from './config'
 import { are_equal_sets, parse_nested_json_set, parse_json_set } from './utils/helpers'
 import { get_client } from './utils/db'
 
@@ -161,7 +161,7 @@ export function create_dualized_implications(type: StructureType) {
  * Creates all trivial implications of the form "self-dual + P ===> P^op".
  */
 export function create_self_dual_implications(type: StructureType) {
-	if (!STRUCTURES_WITH_DUALS.includes(type)) return
+	if (!STRUCTURE_TYPES_WITH_DUALS.includes(type)) return
 
 	const relevant_props = db
 		.prepare<[StructureType], { id: string; dual: string }>(

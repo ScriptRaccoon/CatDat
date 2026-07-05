@@ -17,7 +17,7 @@ import {
 	get_proof_string,
 	NormalizedImplication,
 } from './utils/implications'
-import { STRUCTURES_WITH_DUALS, type StructureType } from './config'
+import { STRUCTURE_TYPES_WITH_DUALS, type StructureType } from './config'
 import { get_structures, is_dual_structure, type StructureMeta } from './utils/structures'
 
 /**
@@ -428,7 +428,7 @@ export function deduce_properties_for_structures(type: StructureType) {
 
 	deduction()
 
-	if (!STRUCTURES_WITH_DUALS.includes(type)) return
+	if (!STRUCTURE_TYPES_WITH_DUALS.includes(type)) return
 
 	const dual_deduction = db.transaction(() => {
 		for (const structure of structures) {

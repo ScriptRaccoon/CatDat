@@ -1,10 +1,12 @@
+import type { StructureType } from './structures'
+
+export type { StructureType }
+
 export type Arrayed<T extends readonly unknown[]> = {
 	[K in keyof T]: T[K][]
 }
 
 type Replace<T, R extends Partial<Record<keyof T, any>>> = Omit<T, keyof R> & R
-
-export type StructureType = 'category' | 'functor' | 'morphism'
 
 export type StructureShort = {
 	id: string

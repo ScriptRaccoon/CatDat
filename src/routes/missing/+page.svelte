@@ -3,7 +3,7 @@
 	import MetaData from '$components/MetaData.svelte'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
 	import { get_property_url } from '$lib/commons/property.url'
-	import { PLURALS, STRUCTURES } from '$lib/commons/structures'
+	import { PLURALS, STRUCTURE_TYPES } from '$lib/commons/structures'
 	import { capitalize } from '$lib/client/utils'
 
 	const { data } = $props()
@@ -21,7 +21,7 @@
 	<a href="/content/contribute">contributing</a> to this project.
 </p>
 
-{#each STRUCTURES as type}
+{#each STRUCTURE_TYPES as type}
 	{@const structures = data.structures_with_unknown_properties[type]}
 	{@const total = data.unknown_totals[type]}
 	<section>
@@ -54,7 +54,7 @@
 	<StructureList structures={data.categories_with_missing_morphisms} type="category" />
 </section>
 
-{#each STRUCTURES as type}
+{#each STRUCTURE_TYPES as type}
 	{@const pairs = data.undistinguishable_pairs[type]}
 
 	{#if pairs.length > 0}
@@ -84,7 +84,7 @@
 	{/if}
 {/each}
 
-{#each STRUCTURES as type}
+{#each STRUCTURE_TYPES as type}
 	{@const combinations = data.missing_combinations[type]}
 
 	{#if combinations.length > 0}
