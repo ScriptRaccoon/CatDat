@@ -21,5 +21,5 @@ export function fetch_morphism(id: string) {
 
 	if (!morphisms.length) error(404, `Could not find morphism with ID '${id}'`)
 
-	return morphisms[0]
+	return { type: 'morphism' as const, ...morphisms[0] }
 }

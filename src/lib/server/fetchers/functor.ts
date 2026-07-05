@@ -34,5 +34,5 @@ export function fetch_functor(id: string) {
 
 	if (!functors.length) error(404, `Could not find functor with ID '${id}'`)
 
-	return functors[0]
+	return { type: 'functor' as const, ...functors[0] }
 }

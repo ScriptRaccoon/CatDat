@@ -26,32 +26,6 @@ export type StructureDisplay = {
 	dual_structure_notation: string | null
 }
 
-export type CategorySpecificDisplay = {
-	objects: string
-	morphisms: string
-}
-
-export type FunctorSpecificDisplay = {
-	source: string
-	source_name: string
-	source_notation: string
-	target: string
-	target_name: string
-	target_notation: string
-	left_adjoint: string | null
-	left_adjoint_name: string | null
-	left_adjoint_notation: string | null
-	right_adjoint: string | null
-	right_adjoint_name: string | null
-	right_adjoint_notation: string | null
-}
-
-export type MorphismSpecificDisplay = {
-	category: string
-	category_name: string
-	category_notation: string
-}
-
 export type MappedTypes = Record<string, StructureType>
 
 export type TagObject = { tag: string }
@@ -149,4 +123,46 @@ export type ComparisonResult = {
 	structures: RelatedStructure[]
 	comparison_table: string[][]
 	type: StructureType
+}
+
+export type StructureDetails = {
+	type: StructureType
+	structure: StructureDisplay
+	related_structures: RelatedStructure[]
+	tags: string[]
+	satisfied_properties: PropertyAssignmentDisplay[]
+	unsatisfied_properties: PropertyAssignmentDisplay[]
+	unknown_properties: PropertyShort[]
+	undecidable_properties: PropertyAssignmentDisplay[]
+	undistinguishable_structures: StructureShort[]
+	comments: CommentObject[]
+}
+
+export type CategorySpecificDisplay = {
+	objects: string
+	morphisms: string
+	special_objects: SpecialObject[]
+	special_morphisms: SpecialMorphism[]
+	functors: StructureShort[]
+}
+
+export type FunctorSpecificDisplay = {
+	source: string
+	source_name: string
+	source_notation: string
+	target: string
+	target_name: string
+	target_notation: string
+	left_adjoint: string | null
+	left_adjoint_name: string | null
+	left_adjoint_notation: string | null
+	right_adjoint: string | null
+	right_adjoint_name: string | null
+	right_adjoint_notation: string | null
+}
+
+export type MorphismSpecificDisplay = {
+	category: string
+	category_name: string
+	category_notation: string
 }

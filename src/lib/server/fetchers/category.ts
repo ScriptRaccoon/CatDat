@@ -1,16 +1,16 @@
-import type {
-	CategorySpecificDisplay,
-	SpecialMorphism,
-	SpecialObject,
-	StructureShort,
-} from '$lib/commons/types'
+import type { SpecialMorphism, SpecialObject, StructureShort } from '$lib/commons/types'
 import sql from 'sql-template-tag'
 import { batch, query } from '$lib/server/db.catdat'
 import { error } from '@sveltejs/kit'
 
 export function fetch_category(id: string) {
 	const { results, err } = batch<
-		[CategorySpecificDisplay, SpecialObject, SpecialMorphism, StructureShort]
+		[
+			{ objects: string; morphisms: string },
+			SpecialObject,
+			SpecialMorphism,
+			StructureShort,
+		]
 	>([
 		// specific information for the category
 		sql`
@@ -51,6 +51,7 @@ export function fetch_category(id: string) {
 	if (!categories.length) error(404, `Could not find category with ID '${id}'`)
 
 	return {
+		type: 'category' as const,
 		...categories[0],
 		special_objects,
 		special_morphisms,

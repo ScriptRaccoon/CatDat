@@ -3,6 +3,7 @@ import type {
 	PropertyAssignmentDB,
 	PropertyShort,
 	RelatedStructure,
+	StructureDetails,
 	StructureDisplay,
 	StructureShort,
 	StructureType,
@@ -13,7 +14,7 @@ import sql from 'sql-template-tag'
 import { batch } from '$lib/server/db.catdat'
 import { display_property_assignment } from '$lib/server/transforms'
 
-export function fetch_structure(type: StructureType, id: string) {
+export function fetch_structure(type: StructureType, id: string): StructureDetails {
 	const { err, results } = batch<
 		[
 			StructureDisplay,
