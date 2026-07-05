@@ -11,7 +11,7 @@ tags:
   - algebra
   - forgetful
 
-related_functors:
+related:
   - forget_group
   - forget_inverses
 

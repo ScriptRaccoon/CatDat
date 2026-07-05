@@ -13,7 +13,7 @@ left_adjoint: modulo-p
 tags:
   - algebra
 
-related_functors:
+related:
   - torsion
 
 satisfied_properties:

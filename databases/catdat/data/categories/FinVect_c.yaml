@@ -10,7 +10,7 @@ nlab_link: https://ncatlab.org/nlab/show/FinDimVect
 tags:
   - algebra
 
-related_categories:
+related:
   - Vect
   - FinVect_u
   - FinVect_f

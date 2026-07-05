@@ -9,7 +9,7 @@ nlab_link: null
 tags:
   - set theory
 
-related_functors:
+related:
   - id_Set
   - binary_coproduct_sets
   - countable_copower_sets

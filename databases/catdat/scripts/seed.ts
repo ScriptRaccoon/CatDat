@@ -240,7 +240,7 @@ function seed_structures<T extends StructureYaml>({
 			comment_insert.run(structure.id, comment)
 		}
 
-		for (const related of structure[`related_${PLURALS[type]}`] ?? []) {
+		for (const related of structure.related) {
 			related_insert.run(structure.id, related, type)
 		}
 

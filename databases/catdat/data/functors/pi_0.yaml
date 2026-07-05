@@ -9,7 +9,7 @@ nlab_link: https://ncatlab.org/nlab/show/connected+space
 tags:
   - topology
 
-related_functors:
+related:
   - forget_topology
   - pi_1
 

@@ -10,7 +10,7 @@ tags:
   - topology
   - free
 
-related_functors:
+related:
   - indiscrete_topology
 
 satisfied_properties:

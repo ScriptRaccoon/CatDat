@@ -9,7 +9,7 @@ nlab_link: https://ncatlab.org/nlab/show/Hausdorff+space
 tags:
   - topology
 
-related_categories:
+related:
   - Met_c
   - Top
   - CompHaus

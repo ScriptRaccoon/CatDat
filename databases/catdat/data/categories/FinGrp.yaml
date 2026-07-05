@@ -9,7 +9,7 @@ nlab_link: https://ncatlab.org/nlab/show/finite+group
 tags:
   - algebra
 
-related_categories:
+related:
   - FinAb
   - Grp
   - Grp_c

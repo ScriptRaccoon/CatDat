@@ -8,7 +8,7 @@ nlab_link: https://ncatlab.org/nlab/show/empty+set
 tags:
   - set theory
 
-related_morphisms: []
+related: []
 
 satisfied_properties:
   - property: monomorphism

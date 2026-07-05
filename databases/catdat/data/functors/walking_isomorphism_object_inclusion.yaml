@@ -9,7 +9,7 @@ nlab_link: null
 tags:
   - category theory
 
-related_functors: []
+related: []
 
 satisfied_properties:
   - property: fully faithful

@@ -8,7 +8,7 @@ nlab_link: null
 tags:
   - set theory
 
-related_morphisms: []
+related: []
 
 satisfied_properties:
   - property: split epimorphism

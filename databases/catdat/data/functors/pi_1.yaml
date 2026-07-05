@@ -9,7 +9,7 @@ nlab_link: https://ncatlab.org/nlab/show/fundamental+group
 tags:
   - topology
 
-related_functors:
+related:
   - pi_0
 
 satisfied_properties:

@@ -10,7 +10,7 @@ dual_category: Set_op
 tags:
   - set theory
 
-related_categories:
+related:
   - FinSet
   - Set_*
   - Set_c

@@ -10,7 +10,7 @@ tags:
   - algebra
   - free
 
-related_functors: []
+related: []
 
 satisfied_properties:
   - property: reflector

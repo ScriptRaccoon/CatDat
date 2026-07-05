@@ -16,7 +16,7 @@ nlab_link: https://ncatlab.org/nlab/show/Sierpinski+topos
 tags:
   - set theory
 
-related_categories:
+related:
   - Set
   - SetxSet
   - Sh(X)

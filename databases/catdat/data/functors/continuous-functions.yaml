@@ -9,7 +9,7 @@ nlab_link: null
 tags:
   - topology
 
-related_functors: []
+related: []
 
 satisfied_properties:
   - property: continuous

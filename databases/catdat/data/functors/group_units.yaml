@@ -10,7 +10,7 @@ left_adjoint: forget_inverses
 tags:
   - algebra
 
-related_functors: []
+related: []
 
 satisfied_properties:
   - property: coreflector

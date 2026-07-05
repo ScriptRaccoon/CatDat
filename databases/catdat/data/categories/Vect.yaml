@@ -9,7 +9,7 @@ nlab_link: https://ncatlab.org/nlab/show/Vect
 tags:
   - algebra
 
-related_categories:
+related:
   - R-Mod
   - R-Mod_div
   - FinVect_f

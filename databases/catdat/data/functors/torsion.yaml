@@ -10,7 +10,7 @@ nlab_link: https://ncatlab.org/nlab/show/torsion+subgroup
 tags:
   - algebra
 
-related_functors:
+related:
   - p-torsion
 
 satisfied_properties:

@@ -10,7 +10,7 @@ tags:
   - algebra
   - free
 
-related_functors:
+related:
   - monoid_ring
   - enveloping_group
 

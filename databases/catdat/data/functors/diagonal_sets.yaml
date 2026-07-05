@@ -10,7 +10,7 @@ left_adjoint: binary_coproduct_sets
 tags:
   - set theory
 
-related_functors:
+related:
   - id_Set
 
 satisfied_properties:

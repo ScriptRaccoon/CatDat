@@ -10,7 +10,7 @@ left_adjoint: forget_topology
 tags:
   - topology
 
-related_functors:
+related:
   - discrete_topology
 
 satisfied_properties:

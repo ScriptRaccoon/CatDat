@@ -10,7 +10,7 @@ left_adjoint: diagonal_sets
 tags:
   - set theory
 
-related_functors:
+related:
   - squaring_sets
   - binary_coproduct_sets
 

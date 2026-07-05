@@ -8,7 +8,7 @@ nlab_link: https://ncatlab.org/nlab/show/localization+of+a+commutative+ringlizat
 tags:
   - algebra
 
-related_morphisms: []
+related: []
 
 satisfied_properties:
   - property: monomorphism

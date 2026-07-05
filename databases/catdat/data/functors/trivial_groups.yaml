@@ -9,7 +9,7 @@ nlab_link: null
 tags:
   - algebra
 
-related_functors:
+related:
   - trivial_sets
 
 satisfied_properties:

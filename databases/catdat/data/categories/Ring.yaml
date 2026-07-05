@@ -9,7 +9,7 @@ nlab_link: https://ncatlab.org/nlab/show/Ring
 tags:
   - algebra
 
-related_categories:
+related:
   - Alg(R)
   - CRing
   - Rng

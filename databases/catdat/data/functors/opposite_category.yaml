@@ -10,7 +10,7 @@ left_adjoint: opposite_category
 tags:
   - category theory
 
-related_functors:
+related:
   - opposite_monoid
 
 satisfied_properties:

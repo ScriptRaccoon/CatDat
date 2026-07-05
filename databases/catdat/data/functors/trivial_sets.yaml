@@ -9,7 +9,7 @@ nlab_link: null
 tags:
   - set theory
 
-related_functors:
+related:
   - trivial_groups
 
 satisfied_properties:

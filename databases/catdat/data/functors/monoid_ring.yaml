@@ -10,7 +10,7 @@ tags:
   - algebra
   - free
 
-related_functors:
+related:
   - free_group
 
 satisfied_properties:

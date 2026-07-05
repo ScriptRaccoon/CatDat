@@ -9,7 +9,7 @@ nlab_link: https://ncatlab.org/nlab/show/category+of+monoids
 tags:
   - algebra
 
-related_categories:
+related:
   - CMon
   - Cat
   - Grp
