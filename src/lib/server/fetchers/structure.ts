@@ -142,6 +142,7 @@ export function fetch_structure(type: StructureType, id: string) {
 		.map(display_property_assignment)
 
 	return {
+		type,
 		structure,
 		related_structures,
 		tags,
