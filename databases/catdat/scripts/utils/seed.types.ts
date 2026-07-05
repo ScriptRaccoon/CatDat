@@ -68,7 +68,7 @@ export type FunctorYaml = StructureYaml & {
 }
 
 export type MorphismYaml = StructureYaml & {
-	ambient_category: string
+	category: string
 }
 
 export type PropertyYaml = {

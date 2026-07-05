@@ -8,11 +8,11 @@ export function fetch_morphism(id: string) {
 		// specific information for the morphism
 		sql`
             SELECT
-                c.id AS ambient_category,
-                c.name AS ambient_category_name,
-                c.notation AS ambient_category_notation
+                c.id AS category,
+                c.name AS category_name,
+                c.notation AS category_notation
             FROM morphisms m
-            INNER JOIN structures AS c ON c.id = m.ambient_category
+            INNER JOIN structures AS c ON c.id = m.category
             WHERE m.id = ${id}
         `,
 	)

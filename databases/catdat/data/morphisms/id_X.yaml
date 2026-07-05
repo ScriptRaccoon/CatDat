@@ -1,7 +1,7 @@
 id: id_X
 name: identity map of a set
 notation: $\id_X$
-ambient_category: Set
+category: Set
 description: 'Every object of a category has an identity morphism. In this case, we take a set $X$ and consider its identity morphism $\id_X : X \to X$ in $\Set$.'
 nlab_link: https://ncatlab.org/nlab/show/identity+morphism
 

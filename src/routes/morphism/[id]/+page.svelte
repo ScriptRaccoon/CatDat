@@ -7,9 +7,9 @@
 <StructureDetailPage type="morphism" {...data}>
 	{#snippet definition()}
 		<li>
-			<strong>Ambient category:</strong>
-			<a href="/category/{data.morphism.ambient_category}">
-				{data.morphism.ambient_category_name}
+			<strong>Category:</strong>
+			<a href="/category/{data.morphism.category}">
+				{data.morphism.category_name}
 			</a>
 		</li>
 	{/snippet}

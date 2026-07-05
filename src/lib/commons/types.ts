@@ -45,9 +45,9 @@ export type FunctorSpecificDisplay = {
 }
 
 export type MorphismSpecificDisplay = {
-	ambient_category: string
-	ambient_category_name: string
-	ambient_category_notation: string
+	category: string
+	category_name: string
+	category_notation: string
 }
 
 export type MappedTypes = Record<string, StructureType>

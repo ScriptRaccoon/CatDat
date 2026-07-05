@@ -1,7 +1,7 @@
 id: terminal-map
 name: map into the singleton set
 notation: $!$
-ambient_category: Set
+category: Set
 description: 'For every set $X$ there is a unique map $! : X \to 1$, where $1$ is the singleton set. In this entry, we require that $X$ has at least $2$ elements.'
 nlab_link: null
 

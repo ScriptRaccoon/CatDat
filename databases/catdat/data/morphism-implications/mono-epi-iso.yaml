@@ -18,7 +18,7 @@
   assumptions:
     - monomorphism
   mapped_assumptions:
-    ambient_category:
+    category:
       - subobject-trivial
   conclusions:
     - isomorphism
@@ -30,7 +30,7 @@
     - monomorphism
     - epimorphism
   mapped_assumptions:
-    ambient_category:
+    category:
       - balanced
   conclusions:
     - isomorphism
@@ -49,7 +49,7 @@
   assumptions:
     - monomorphism
   mapped_assumptions:
-    ambient_category:
+    category:
       - mono-regular
   conclusions:
     - regular monomorphism

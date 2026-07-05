@@ -75,4 +75,4 @@ INSERT INTO structure_maps
 VALUES
     ('source', 'functor', 'category'),
     ('target', 'functor', 'category'),
-    ('ambient_category', 'morphism', 'category');
+    ('category', 'morphism', 'category');

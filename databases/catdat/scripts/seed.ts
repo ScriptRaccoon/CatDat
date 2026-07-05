@@ -312,11 +312,11 @@ function insert_functor(functor: FunctorYaml) {
  */
 function insert_morphism(morphism: MorphismYaml) {
 	const morphism_insert = db.prepare(
-		`INSERT INTO morphisms (id, ambient_category)
+		`INSERT INTO morphisms (id, category)
 		VALUES (?, ?)`,
 	)
 
-	morphism_insert.run(morphism.id, morphism.ambient_category)
+	morphism_insert.run(morphism.id, morphism.category)
 }
 
 /**
