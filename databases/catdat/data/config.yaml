@@ -51,20 +51,28 @@ morphism_property_tags:
 
 relations:
   - relation: is
+    negation: is not
     conditional: would be
   - relation: is a
+    negation: is not a
     conditional: would be a
   - relation: is an
+    negation: is not an
     conditional: would be an
   - relation: has
+    negation: does not have
     conditional: would have
   - relation: has a
+    negation: does not have a
     conditional: would have a
   - relation: has an
+    negation: does not have an
     conditional: would have an
   - relation: satisfies
+    negation: does not satisfy
     conditional: would satisfy
   - relation: ''
+    negation: ''
     conditional: ''
 
 special_object_types:

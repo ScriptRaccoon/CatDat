@@ -114,7 +114,7 @@ function seed_config() {
 	)
 
 	const relation_insert = db.prepare(
-		`INSERT INTO relations (relation, conditional) VALUES (?, ?)`,
+		`INSERT INTO relations (relation, negation, conditional) VALUES (?, ?, ?)`,
 	)
 
 	const object_insert = db.prepare(
@@ -140,8 +140,8 @@ function seed_config() {
 			}
 		}
 
-		for (const { relation, conditional } of config.relations) {
-			relation_insert.run(relation, conditional)
+		for (const { relation, negation, conditional } of config.relations) {
+			relation_insert.run(relation, negation, conditional)
 		}
 
 		for (const { type, dual } of config.special_object_types) {

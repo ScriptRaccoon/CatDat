@@ -67,10 +67,15 @@ export function fetch_structure(type: StructureType, id: string): StructureDetai
                 pa.is_satisfied,
                 pa.proof,
                 pa.is_deduced,
-                p.relation
+                CASE
+                    WHEN pa.is_satisfied = FALSE THEN r.negation
+                    ELSE p.relation
+                END AS relation
             FROM property_assignments pa
             INNER JOIN properties p
             ON p.id = pa.property_id AND p.type = pa.type
+            INNER JOIN relations r
+            ON r.relation = p.relation
             WHERE pa.structure_id = ${id}
             ORDER BY pa.id
         `,

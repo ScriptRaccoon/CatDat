@@ -8,6 +8,7 @@ export type ConfigYaml = {
 	morphism_property_tags: string[]
 	relations: {
 		relation: string
+		negation: string
 		conditional: string
 	}[]
 	special_object_types: {
