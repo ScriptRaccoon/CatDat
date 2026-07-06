@@ -1,0 +1,14 @@
+{
+	"compilerOptions": {
+		"module": "ESNext",
+		"moduleResolution": "bundler",
+		"paths": {
+			"$shared/*": ["../shared/*"]
+		},
+		"strict": true,
+		"esModuleInterop": true,
+		"resolveJsonModule": true,
+		"noEmit": true
+	},
+	"include": ["**/*.ts"]
+}
