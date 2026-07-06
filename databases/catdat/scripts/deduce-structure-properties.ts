@@ -17,7 +17,8 @@ import {
 	get_proof_string,
 	NormalizedImplication
 } from './utils/implications'
-import { STRUCTURE_TYPES_WITH_DUALS, type StructureType } from './config'
+import { STRUCTURE_TYPES_WITH_DUALS } from './config'
+import { type StructureType } from '$shared/config'
 import { get_structures, is_dual_structure, type StructureMeta } from './utils/structures'
 
 /**

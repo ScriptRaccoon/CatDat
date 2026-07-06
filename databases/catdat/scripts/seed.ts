@@ -12,7 +12,8 @@ import type {
 	MorphismYaml
 } from './utils/seed.types'
 import { create_schema_hash, get_saved_schema_hash } from './utils/schema'
-import { PLURALS, STRUCTURE_TYPES, type StructureType } from './config'
+import { PLURALS } from './config'
+import { STRUCTURE_TYPES, type StructureType } from '$shared/config'
 
 const db = get_client()
 

@@ -1,6 +1,4 @@
-export const STRUCTURE_TYPES = ['category', 'functor', 'morphism'] as const
-
-export type StructureType = (typeof STRUCTURE_TYPES)[number]
+import { type StructureType } from '$shared/config'
 
 export const STRUCTURE_TYPES_WITH_DUALS: StructureType[] = ['category']
 

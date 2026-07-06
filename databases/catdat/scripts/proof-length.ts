@@ -1,4 +1,4 @@
-import { type StructureType } from './config'
+import { type StructureType } from '$shared/config'
 import { get_client } from './utils/db'
 
 const db = get_client()

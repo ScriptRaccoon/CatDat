@@ -1,6 +1,6 @@
 import { type Database } from 'better-sqlite3'
 import type { PropertyMeta } from './properties'
-import { StructureType } from '../config'
+import { type StructureType } from '$shared/config'
 import { parse_nested_json_set, parse_json_set } from './helpers'
 import { get_property_label } from '../../../../src/lib/commons/property.utils'
 

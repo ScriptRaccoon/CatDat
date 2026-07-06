@@ -1,5 +1,5 @@
 import { type Database } from 'better-sqlite3'
-import type { StructureType } from '../config'
+import { type StructureType } from '$shared/config'
 
 /**
  * Property of a categorical structure

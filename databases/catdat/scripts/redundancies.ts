@@ -4,7 +4,7 @@ import {
 	get_deduced_unsatisfied_properties
 } from './deduce-structure-properties'
 import { get_property_assignments_by_deduction } from './utils/properties'
-import type { StructureType } from './config'
+import { type StructureType } from '$shared/config'
 import {
 	get_normalized_implications,
 	type NormalizedImplication

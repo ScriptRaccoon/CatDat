@@ -1,5 +1,6 @@
 import { type Database } from 'better-sqlite3'
-import { StructureType, TABLES } from '../config'
+import { TABLES } from '../config'
+import { type StructureType } from '$shared/config'
 
 /**
  * Type for various types of categorical structures (category, functor, ...)

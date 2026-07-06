@@ -3,7 +3,8 @@
 	import MetaData from '$components/MetaData.svelte'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
 	import { get_property_url } from '$lib/commons/property.utils'
-	import { PLURALS, STRUCTURE_TYPES } from '$lib/commons/structures'
+	import { PLURALS } from '$lib/commons/structures'
+	import { STRUCTURE_TYPES } from '$shared/config'
 	import { capitalize } from '$lib/client/utils'
 
 	const { data } = $props()

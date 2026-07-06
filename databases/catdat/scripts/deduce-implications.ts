@@ -1,4 +1,5 @@
-import { STRUCTURE_TYPES_WITH_DUALS, type StructureType } from './config'
+import { STRUCTURE_TYPES_WITH_DUALS } from './config'
+import { type StructureType } from '$shared/config'
 import { are_equal_sets, parse_nested_json_set, parse_json_set } from './utils/helpers'
 import { get_client } from './utils/db'
 
