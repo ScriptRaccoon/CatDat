@@ -1,5 +1,5 @@
 id: preserves binary coproducts
-relation: ''
+relation: preserves
 description: 'A functor $F : \C \to \D$ <i>preserves binary coproducts</i> when for every pair of objects $A,B \in \C$ whose coproduct $A \sqcup B$ exists, also the coproduct $F(A) \sqcup F(B)$ exists and such that the canonical morphism $F(A) \sqcup F(B) \to F(A \sqcup B)$ is an isomorphism.'
 nlab_link: https://ncatlab.org/nlab/show/preserved+colimit
 invariant_under_equivalences: true

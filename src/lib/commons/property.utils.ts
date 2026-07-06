@@ -33,3 +33,7 @@ export function decode_property_ID(str: string): string {
 export function get_property_url(id: string, type: StructureType) {
 	return `/${type}-property/${encode_property_ID(id)}`
 }
+
+export function get_property_label(id: string) {
+	return id.replace(/^preserves\s/, '')
+}

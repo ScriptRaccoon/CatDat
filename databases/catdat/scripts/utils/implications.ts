@@ -2,6 +2,7 @@ import { type Database } from 'better-sqlite3'
 import type { PropertyMeta } from './properties'
 import { StructureType } from '../config'
 import { parse_nested_json_set, parse_json_set } from './helpers'
+import { get_property_label } from '../../../../src/lib/commons/property.utils'
 
 export type NormalizedImplication = {
 	id: string
@@ -96,7 +97,7 @@ function get_assumption_string(
 	const own = Array.from(assumptions)
 		.map(
 			(assumption) =>
-				`${properties_dict[assumption][conditional ? 'conditional_relation' : 'relation']} ${assumption}`,
+				`${properties_dict[assumption][conditional ? 'conditional_relation' : 'relation']} ${get_property_label(assumption)}`,
 		)
 		.join(' and ')
 
@@ -119,7 +120,7 @@ function get_conclusion_string(
 ): string {
 	const { conclusion } = implication
 
-	return `${properties_dict[conclusion][conditional ? 'conditional_relation' : 'relation']} ${conclusion}`
+	return `${properties_dict[conclusion][conditional ? 'conditional_relation' : 'relation']} ${get_property_label(conclusion)}`
 }
 
 export function get_proof_string(
@@ -150,7 +151,7 @@ export function get_contradiction_string(
 
 	const relation = properties_dict[property].relation
 
-	const contra = `Assume for contradiction that it ${relation} ${property}`
+	const contra = `Assume for contradiction that it ${relation} ${get_property_label(property)}`
 
 	return has_multiple_assumptions
 		? `${contra}. Then it ${assumption_string}, so it ${conclusion_string} (${ref}) – contradiction.`

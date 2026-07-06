@@ -1,5 +1,5 @@
 id: preserves monomorphisms
-relation: ''
+relation: preserves
 description: |-
   A functor $F : \C \to \D$ <i>preserves monomorphisms</i> if every monomorphism in $\C$ is mapped to a monomorphism in $\D$.
   This property is useful to rule out some adjunctions.

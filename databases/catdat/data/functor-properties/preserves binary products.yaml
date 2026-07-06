@@ -1,5 +1,5 @@
 id: preserves binary products
-relation: ''
+relation: preserves
 description: 'A functor $F : \C \to \D$ <i>preserves binary products</i> when for every pair of objects $A,B \in \C$ whose product $A \times B$ exists, also the product $F(A) \times F(B)$ exists and such that the canonical morphism $F(A \times B) \to F(A) \times F(B)$ is an isomorphism.'
 nlab_link: https://ncatlab.org/nlab/show/preserved+limit
 invariant_under_equivalences: true

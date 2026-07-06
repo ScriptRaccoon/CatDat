@@ -1,12 +1,11 @@
 <script lang="ts">
-	import { get_property_url } from '$lib/commons/property.utils'
+	import { get_property_label, get_property_url } from '$lib/commons/property.utils'
 	import type { StructureType } from '$lib/commons/types'
 	import TextWithProof from './TextWithProof.svelte'
 
 	type Props = {
 		properties: {
 			id: string
-			label?: string
 			relation: string
 			proof?: string | null
 		}[]
@@ -19,11 +18,11 @@
 
 {#if properties.length}
 	<ul class:no-bullets={no_bullets} class="with-margins">
-		{#each properties as { id, label, relation, proof }}
+		{#each properties as { id, relation, proof }}
 			<li>
 				<TextWithProof {proof}>
 					{relation}
-					<a href={get_property_url(id, type)}>{label || id}</a>
+					<a href={get_property_url(id, type)}>{get_property_label(id)}</a>
 				</TextWithProof>
 			</li>
 		{/each}

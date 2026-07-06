@@ -4,7 +4,7 @@
 	import SuggestionForm from '$components/SuggestionForm.svelte'
 	import TagList from '$components/TagList.svelte'
 	import { normalize_text, pluralize } from '$lib/client/utils'
-	import { get_property_url } from '$lib/commons/property.utils'
+	import { get_property_label, get_property_url } from '$lib/commons/property.utils'
 	import { PLURALS } from '$lib/commons/structures'
 	import type { GroupedPropertyShort, StructureType } from '$lib/commons/types'
 
@@ -55,10 +55,12 @@
 	{#each searched_properties as { id, relation, dual_property_id }}
 		<li>
 			{relation}
-			<a href={get_property_url(id, type)}>{id}</a>
+			<a href={get_property_url(id, type)}>
+				{get_property_label(id)}
+			</a>
 			{#if dual_property_id && id !== dual_property_id}
 				/ <a href={get_property_url(dual_property_id, type)}>
-					{dual_property_id}
+					{get_property_label(dual_property_id)}
 				</a>
 			{/if}
 		</li>

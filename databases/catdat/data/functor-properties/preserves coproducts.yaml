@@ -1,5 +1,5 @@
 id: preserves coproducts
-relation: ''
+relation: preserves
 description: A functor $F$ <i>preserves coproducts</i> when for every family of objects $(A_i)$ in the source whose coproduct $\prod_i A_i$ exists, also the coproduct $\coprod_i F(A_i)$ exists in the target and such that the canonical morphism $\coprod_i F(A_i) \to F(\coprod_i A_i)$ is an isomorphism.
 nlab_link: https://ncatlab.org/nlab/show/preserved+colimit
 invariant_under_equivalences: true

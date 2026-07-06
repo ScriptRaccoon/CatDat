@@ -1,5 +1,5 @@
 id: preserves epimorphisms
-relation: ''
+relation: preserves
 description: |-
   A functor $F : \C \to \D$ <i>preserves epimorphisms</i> if every epimorphism in $\C$ is mapped to an epimorphism in $\D$.
   This property is useful to rule out some adjunctions.
