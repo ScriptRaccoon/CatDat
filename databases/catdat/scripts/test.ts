@@ -17,7 +17,7 @@ import { get_client } from './utils/db'
 import { PLURALS, STRUCTURE_TYPES, type StructureType } from './config'
 import fs from 'node:fs'
 import path from 'node:path'
-import { decode_property_ID } from '../../../src/lib/commons/property.url'
+import { decode_property_ID } from '../../../src/lib/commons/property.utils'
 
 const db = get_client()
 

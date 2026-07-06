@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { goto } from '$app/navigation'
 	import Selection from '$components/Selection.svelte'
-	import { encode_property_ID } from '$lib/commons/property.url'
+	import { encode_property_ID } from '$lib/commons/property.utils'
 	import MetaData from '$components/MetaData.svelte'
 	import { SEARCH_SEPARATOR } from '$lib/commons/search.config'
 	import { navigating } from '$app/state'

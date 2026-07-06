@@ -1,6 +1,6 @@
 <script lang="ts">
 	import MetaData from '$components/MetaData.svelte'
-	import { get_property_url } from '$lib/commons/property.url'
+	import { get_property_url } from '$lib/commons/property.utils'
 	import { PLURALS } from '$lib/commons/structures'
 	import type { ComparisonResult, StructureType } from '$lib/commons/types'
 	import {

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { get_property_url } from '$lib/commons/property.url'
+	import { get_property_url } from '$lib/commons/property.utils'
 	import type { StructureType } from '$lib/commons/types'
 	import TextWithProof from './TextWithProof.svelte'
 

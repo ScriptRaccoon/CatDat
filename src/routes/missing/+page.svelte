@@ -2,7 +2,7 @@
 	import StructureList from '$components/StructureList.svelte'
 	import MetaData from '$components/MetaData.svelte'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
-	import { get_property_url } from '$lib/commons/property.url'
+	import { get_property_url } from '$lib/commons/property.utils'
 	import { PLURALS, STRUCTURE_TYPES } from '$lib/commons/structures'
 	import { capitalize } from '$lib/client/utils'
 

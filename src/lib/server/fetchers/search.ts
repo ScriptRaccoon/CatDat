@@ -1,4 +1,4 @@
-import { decode_property_ID } from '$lib/commons/property.url'
+import { decode_property_ID } from '$lib/commons/property.utils'
 import { query } from '$lib/server/db.catdat'
 import { error } from '@sveltejs/kit'
 import { SEARCH_SEPARATOR } from '$lib/commons/search.config'

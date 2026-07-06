@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { browser } from '$app/environment'
 	import StructureList from '$components/StructureList.svelte'
-	import { encode_property_ID, get_property_url } from '$lib/commons/property.url'
+	import { encode_property_ID, get_property_url } from '$lib/commons/property.utils'
 	import MetaData from '$components/MetaData.svelte'
 	import { SEARCH_SEPARATOR } from '$lib/commons/search.config'
 	import { pluralize } from '$lib/client/utils'

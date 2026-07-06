@@ -5,7 +5,7 @@
 	import MetaData from '$components/MetaData.svelte'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
 	import { pluralize } from '$lib/client/utils'
-	import { get_property_url } from '$lib/commons/property.url'
+	import { get_property_url } from '$lib/commons/property.utils'
 	import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
 	import Fa from 'svelte-fa'
 	import type {

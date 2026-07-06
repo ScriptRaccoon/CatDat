@@ -1,5 +1,5 @@
 import { render_nested_formulas } from '$lib/server/formulas'
-import { decode_property_ID } from '$lib/commons/property.url'
+import { decode_property_ID } from '$lib/commons/property.utils'
 import { fetch_property } from '$lib/server/fetchers/property'
 import { is_structure_type } from '$lib/commons/structures'
 import { error } from '@sveltejs/kit'
