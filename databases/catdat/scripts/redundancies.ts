@@ -20,8 +20,9 @@ check_redundancies()
  * No error is thrown intentionally.
  */
 function check_redundancies() {
-	check_redundant_property_assignments('category')
-	check_redundant_property_assignments('functor')
+	for (const type of STRUCTURE_TYPES) {
+		check_redundant_property_assignments(type)
+	}
 }
 
 /**

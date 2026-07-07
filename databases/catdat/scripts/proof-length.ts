@@ -1,4 +1,4 @@
-import { type StructureType } from '$shared/config'
+import { STRUCTURE_TYPES, type StructureType } from '$shared/config'
 import { get_client } from './utils/db'
 
 const db = get_client()
@@ -12,10 +12,12 @@ report_long_proofs()
  * perhaps be moved to a separate content page.
  */
 function report_long_proofs() {
-	report_long_property_proofs('category')
-	report_long_property_proofs('functor')
-	report_long_implication_proofs('category')
-	report_long_implication_proofs('functor')
+	for (const type of STRUCTURE_TYPES) {
+		report_long_property_proofs(type)
+	}
+	for (const type of STRUCTURE_TYPES) {
+		report_long_implication_proofs(type)
+	}
 }
 
 function report_long_property_proofs(type: StructureType) {
