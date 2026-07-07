@@ -3,8 +3,8 @@ import { query } from '$lib/server/db.catdat'
 import { render_nested_formulas } from '$lib/server/formulas'
 import { MAX_STRUCTURES_COMPARE } from '$lib/commons/compare.utils'
 import type { ComparisonResult, StructureType } from '$lib/commons/types'
-import { PLURALS } from '$lib/commons/structures'
-import { to_placeholders } from '$lib/server/utils'
+import { to_placeholders } from '$shared/utils'
+import { PLURALS } from '$shared/config'
 
 export function fetch_comparison_result(
 	compared_ids: string[],

@@ -4,7 +4,7 @@
  */
 
 import { type Database, SqliteError } from 'better-sqlite3'
-import { is_subset } from './utils/helpers'
+import { is_subset } from '$shared/utils'
 import { get_client } from './utils/db'
 import {
 	get_properties_dict,
@@ -17,8 +17,7 @@ import {
 	get_proof_string,
 	NormalizedImplication
 } from './utils/implications'
-import { STRUCTURE_TYPES_WITH_DUALS } from './config'
-import { type StructureType } from '$shared/config'
+import { type StructureType, STRUCTURE_TYPES_WITH_DUALS } from '$shared/config'
 import { get_structures, is_dual_structure, type StructureMeta } from './utils/structures'
 
 /**

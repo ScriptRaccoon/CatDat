@@ -1,4 +1,4 @@
-import type { StructureType } from './types'
+import type { StructureType } from './config'
 
 const ENCODE_MAP: Record<string, string> = {
 	' ': '_',

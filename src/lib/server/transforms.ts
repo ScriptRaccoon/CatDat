@@ -6,7 +6,7 @@ import type {
 	ImplicationDB,
 	ImplicationDisplay
 } from '$lib/commons/types'
-import { parse_nested_json_list } from './utils'
+import { parse_nested_json_list } from '$shared/utils'
 
 export function display_property(property: PropertyDB): PropertyDisplay {
 	return {

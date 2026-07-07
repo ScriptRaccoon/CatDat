@@ -1,14 +1,14 @@
 <script lang="ts">
 	import { browser } from '$app/environment'
 	import StructureList from '$components/StructureList.svelte'
-	import { encode_property_ID, get_property_url } from '$lib/commons/property.utils'
+	import { encode_property_ID, get_property_url } from '$shared/property.utils'
 	import MetaData from '$components/MetaData.svelte'
 	import { SEARCH_SEPARATOR } from '$lib/commons/search.config'
-	import { pluralize } from '$lib/client/utils'
+	import { pluralize } from '$shared/utils'
 	import Fa from 'svelte-fa'
 	import { faWarning } from '@fortawesome/free-solid-svg-icons'
 	import type { SearchResults, StructureType } from '$lib/commons/types'
-	import { PLURALS } from '$lib/commons/structures'
+	import { PLURALS } from '$shared/config'
 
 	type Props = { type: StructureType } & SearchResults
 

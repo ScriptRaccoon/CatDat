@@ -1,5 +1,5 @@
 import katex from 'katex'
-import { is_object } from './utils'
+import { is_object } from '$shared/utils'
 import { MACROS } from './macros'
 
 export const MATH_REGEX = /\$\$(.*?)\$\$|\$(.*?)\$/gs

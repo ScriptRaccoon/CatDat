@@ -1,4 +1,4 @@
-import { is_structure_type } from '$lib/commons/structures'
+import { is_structure_type } from '$shared/config'
 import { get_property_ids } from '$lib/server/fetchers/properties'
 import { error } from '@sveltejs/kit'
 

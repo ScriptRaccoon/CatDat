@@ -1,11 +1,11 @@
 import { render_nested_formulas } from '$lib/server/formulas'
 import { fetch_structure } from '$lib/server/fetchers/structure'
-import { is_structure_type } from '$lib/commons/structures'
+import { is_structure_type } from '$shared/config'
 import { error } from '@sveltejs/kit'
 import { fetch_category } from '$lib/server/fetchers/category'
 import { fetch_functor } from '$lib/server/fetchers/functor'
 import { fetch_morphism } from '$lib/server/fetchers/morphism'
-import { add_math, strip_math } from '$lib/server/utils'
+import { add_math, strip_math } from '$shared/utils'
 
 const special_fetchers = {
 	category: fetch_category,

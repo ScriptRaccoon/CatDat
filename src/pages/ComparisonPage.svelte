@@ -8,7 +8,7 @@
 		MAX_STRUCTURES_COMPARE,
 		save_comparison
 	} from '$lib/commons/compare.utils'
-	import { PLURALS } from '$lib/commons/structures'
+	import { PLURALS } from '$shared/config'
 	import type { StructureShort, StructureType } from '$lib/commons/types'
 
 	type Props = {

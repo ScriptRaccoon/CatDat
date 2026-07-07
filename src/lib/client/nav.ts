@@ -14,8 +14,8 @@ import {
 	faSearch,
 	type IconDefinition
 } from '@fortawesome/free-solid-svg-icons'
-import { capitalize } from './utils'
-import { PLURALS } from '$lib/commons/structures'
+import { capitalize } from '$shared/utils'
+import { PLURALS } from '$shared/config'
 
 type Link = {
 	href: string

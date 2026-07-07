@@ -1,8 +1,8 @@
 import { type Database } from 'better-sqlite3'
 import type { PropertyMeta } from './properties'
 import { type StructureType } from '$shared/config'
-import { parse_nested_json_set, parse_json_set } from './helpers'
-import { get_property_label } from '../../../../src/lib/commons/property.utils'
+import { parse_nested_json_set, parse_json_set } from '$shared/utils'
+import { get_property_label } from '$shared/property.utils'
 
 export type NormalizedImplication = {
 	id: string

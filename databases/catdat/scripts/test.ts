@@ -12,13 +12,12 @@ import id_Set_expected from './expected-data/id_Set.json'
 import decided_categories from './expected-data/decided-categories.json'
 import decided_functors from './expected-data/decided-functors.json'
 import decided_morphisms from './expected-data/decided-morphisms.json'
-import { capitalize } from './utils/helpers'
+import { capitalize } from '$shared/utils'
 import { get_client } from './utils/db'
-import { PLURALS } from './config'
-import { STRUCTURE_TYPES, type StructureType } from '$shared/config'
+import { STRUCTURE_TYPES, type StructureType, PLURALS } from '$shared/config'
 import fs from 'node:fs'
 import path from 'node:path'
-import { decode_property_ID } from '../../../src/lib/commons/property.utils'
+import { decode_property_ID } from '$shared/property.utils'
 
 const db = get_client()
 

@@ -1,4 +1,4 @@
-import { is_object } from '$lib/server/utils'
+import { is_object } from '$shared/utils'
 import { json } from '@sveltejs/kit'
 import { get_geo_data, is_allowed } from './track.utils'
 import { query_app } from '$lib/server/db.app'

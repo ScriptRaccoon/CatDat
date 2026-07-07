@@ -1,6 +1,6 @@
 import { render_nested_formulas } from '$lib/server/formulas'
 import { fetch_implications } from '$lib/server/fetchers/implications'
-import { is_structure_type } from '$lib/commons/structures'
+import { is_structure_type } from '$shared/config'
 import { error } from '@sveltejs/kit'
 
 export const load = (event) => {

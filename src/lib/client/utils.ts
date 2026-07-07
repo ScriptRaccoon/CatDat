@@ -1,3 +1,4 @@
+import { normalize_text } from '$shared/utils'
 import type { Attachment } from 'svelte/attachments'
 
 export function get_device_type() {
@@ -5,25 +6,6 @@ export function get_device_type() {
 	if (w < 640) return 'mobile'
 	if (w < 1024) return 'tablet'
 	return 'desktop'
-}
-
-export function pluralize(count: number, forms: { one: string; other: string }) {
-	const word = count === 1 ? forms.one : forms.other
-	return word.replace('{count}', String(count))
-}
-
-export function capitalize(txt: string) {
-	return txt[0].toUpperCase() + txt.slice(1)
-}
-
-/**
- * Removes accents from letters and transforms to lowercase
- */
-export function normalize_text(txt: string) {
-	return txt
-		.toLowerCase()
-		.normalize('NFD')
-		.replace(/\p{Diacritic}/gu, '')
 }
 
 export function get_comparison_score(value: string, query: string) {

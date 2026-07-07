@@ -1,5 +1,5 @@
 import { fetch_tagged_structures } from '$lib/server/fetchers/structures'
-import { is_structure_type } from '$lib/commons/structures'
+import { is_structure_type } from '$shared/config'
 import { error } from '@sveltejs/kit'
 import type { EntryGenerator } from './$types'
 import { fetch_structure_tags } from '$lib/server/fetchers/tags'

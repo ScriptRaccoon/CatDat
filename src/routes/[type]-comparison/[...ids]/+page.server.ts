@@ -1,4 +1,4 @@
-import { is_structure_type } from '$lib/commons/structures'
+import { is_structure_type } from '$shared/config'
 import { fetch_comparison_result } from '$lib/server/fetchers/comparison'
 import { cache_page } from '$lib/server/utils'
 import { error } from '@sveltejs/kit'

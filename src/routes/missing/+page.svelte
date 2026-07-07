@@ -2,10 +2,10 @@
 	import StructureList from '$components/StructureList.svelte'
 	import MetaData from '$components/MetaData.svelte'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
-	import { get_property_url } from '$lib/commons/property.utils'
-	import { PLURALS } from '$lib/commons/structures'
+	import { get_property_url } from '$shared/property.utils'
+	import { PLURALS } from '$shared/config'
 	import { STRUCTURE_TYPES } from '$shared/config'
-	import { capitalize } from '$lib/client/utils'
+	import { capitalize } from '$shared/utils'
 
 	const { data } = $props()
 </script>

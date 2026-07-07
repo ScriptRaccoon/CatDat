@@ -1,10 +1,10 @@
-import { decode_property_ID } from '$lib/commons/property.utils'
+import { decode_property_ID } from '$shared/property.utils'
 import { query } from '$lib/server/db.catdat'
 import { error } from '@sveltejs/kit'
 import { SEARCH_SEPARATOR } from '$lib/commons/search.config'
 import { get_contradiction } from '$lib/server/consistency'
 import type { SearchResults, StructureShort, StructureType } from '$lib/commons/types'
-import { to_placeholders } from '$lib/server/utils'
+import { to_placeholders } from '$shared/utils'
 import sql from 'sql-template-tag'
 
 export function fetch_search_results(

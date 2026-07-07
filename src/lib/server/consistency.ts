@@ -1,4 +1,4 @@
-import { is_subset } from './utils'
+import { is_subset } from '$shared/utils'
 import type { SqliteError } from 'better-sqlite3'
 import type { NormalizedImplication, StructureType } from '$lib/commons/types'
 import { get_normalized_implications } from './fetchers/implications'

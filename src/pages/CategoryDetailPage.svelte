@@ -1,7 +1,7 @@
 <script lang="ts">
 	import StructureList from '$components/StructureList.svelte'
 	import TextWithProof from '$components/TextWithProof.svelte'
-	import { pluralize } from '$lib/client/utils'
+	import { pluralize } from '$shared/utils'
 	import type { StructureDetails, CategorySpecificDisplay } from '$lib/commons/types'
 	import StructureDetailPage from '$pages/StructureDetailPage.svelte'
 	import { faQuestion } from '@fortawesome/free-solid-svg-icons'

@@ -5,7 +5,7 @@
 	import MetaData from '$components/MetaData.svelte'
 	import SearchFilter from '$components/SearchFilter.svelte'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
-	import { capitalize, normalize_text, pluralize } from '$lib/client/utils'
+	import { capitalize, normalize_text, pluralize } from '$shared/utils'
 	import type { ImplicationDisplay, StructureType } from '$lib/commons/types'
 	import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
 	import type { Snippet } from 'svelte'

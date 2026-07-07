@@ -7,7 +7,7 @@ import type {
 	StructureType
 } from '$lib/commons/types'
 import { display_implication } from '$lib/server/transforms'
-import { parse_json_set, parse_nested_json_list } from '$lib/server/utils'
+import { parse_json_set, parse_nested_json_list } from '$shared/utils'
 
 export function fetch_implications(type: StructureType) {
 	const { rows, err } = query<ImplicationDB>(sql`

@@ -2,8 +2,8 @@
 	import StructureList from '$components/StructureList.svelte'
 	import MetaData from '$components/MetaData.svelte'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
-	import { pluralize } from '$lib/client/utils'
-	import { get_property_url } from '$lib/commons/property.utils'
+	import { pluralize } from '$shared/utils'
+	import { get_property_url } from '$shared/property.utils'
 	import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
 	import Fa from 'svelte-fa'
 	import type {
@@ -12,7 +12,7 @@
 		StructureShort,
 		StructureType
 	} from '$lib/commons/types'
-	import { PLURALS } from '$lib/commons/structures'
+	import { PLURALS } from '$shared/config'
 
 	type Props = {
 		type: StructureType

@@ -1,5 +1,4 @@
 import { type Database } from 'better-sqlite3'
-import { TABLES } from '../config'
 import { type StructureType } from '$shared/config'
 
 /**
@@ -10,6 +9,16 @@ export type StructureMeta = {
 	name: string
 	dual?: string | null
 	associated_satisfied_properties?: Record<string, Set<string>>
+}
+
+/**
+ * Dictionary associating to every structure type the name of the table.
+ * Currently, this is the same as the plural.
+ */
+const TABLES: Record<StructureType, string> = {
+	category: 'categories',
+	functor: 'functors',
+	morphism: 'morphisms',
 }
 
 /**

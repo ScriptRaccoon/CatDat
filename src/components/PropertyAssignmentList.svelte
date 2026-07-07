@@ -9,7 +9,7 @@
 		StructureType
 	} from '$lib/commons/types'
 	import { assignment_level } from '$lib/states/assignment_level.svelte'
-	import { pluralize } from '$lib/client/utils'
+	import { pluralize } from '$shared/utils'
 
 	type Props = {
 		type: StructureType

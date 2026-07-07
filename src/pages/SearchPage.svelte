@@ -1,13 +1,13 @@
 <script lang="ts">
 	import { goto } from '$app/navigation'
 	import Selection from '$components/Selection.svelte'
-	import { encode_property_ID } from '$lib/commons/property.utils'
+	import { encode_property_ID } from '$shared/property.utils'
 	import MetaData from '$components/MetaData.svelte'
 	import { SEARCH_SEPARATOR } from '$lib/commons/search.config'
 	import { navigating } from '$app/state'
 	import { browser } from '$app/environment'
 	import type { StructureType } from '$lib/commons/types'
-	import { PLURALS } from '$lib/commons/structures'
+	import { PLURALS } from '$shared/config'
 	import type { Snippet } from 'svelte'
 
 	type Props = {

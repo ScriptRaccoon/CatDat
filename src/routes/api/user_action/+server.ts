@@ -1,5 +1,5 @@
 import { query_app } from '$lib/server/db.app'
-import { is_object } from '$lib/server/utils'
+import { is_object } from '$shared/utils'
 import sql from 'sql-template-tag'
 import { is_allowed } from '../track/track.utils'
 import { json } from '@sveltejs/kit'

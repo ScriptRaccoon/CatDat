@@ -5,7 +5,7 @@
 	import SuggestionForm from '$components/SuggestionForm.svelte'
 	import TagList from '$components/TagList.svelte'
 	import UndistinguishableStructures from '$components/UndistinguishableStructures.svelte'
-	import { PLURALS } from '$lib/commons/structures'
+	import { PLURALS } from '$shared/config'
 	import type {
 		CommentObject,
 		PropertyAssignmentDisplay,

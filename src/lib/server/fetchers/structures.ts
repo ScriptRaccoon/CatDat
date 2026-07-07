@@ -1,5 +1,5 @@
-import { capitalize } from '$lib/client/utils'
-import { PLURALS } from '$lib/commons/structures'
+import { capitalize } from '$shared/utils'
+import { PLURALS } from '$shared/config'
 import type { StructureShort, StructureType, TagObject } from '$lib/commons/types'
 import { batch, query } from '$lib/server/db.catdat'
 import { error } from '@sveltejs/kit'

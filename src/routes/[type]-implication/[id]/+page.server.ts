@@ -1,4 +1,4 @@
-import { is_structure_type } from '$lib/commons/structures'
+import { is_structure_type } from '$shared/config'
 import { fetch_implication } from '$lib/server/fetchers/implication'
 import { render_nested_formulas } from '$lib/server/formulas'
 import { error } from '@sveltejs/kit'

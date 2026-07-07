@@ -8,9 +8,9 @@
 	import Popup from '$components/Popup.svelte'
 	import { PUBLIC_PLAYWRIGHT } from '$env/static/public'
 	import { track_visit } from '$lib/client/track'
-	import { get_selected_type } from '$lib/commons/structures'
 	import type { StructureType } from '$lib/commons/types'
 	import { tracking } from '$lib/states/tracking.svelte'
+	import { STRUCTURE_TYPES } from '$shared/config'
 	import './app.css'
 
 	let { children } = $props()
@@ -33,7 +33,10 @@
 
 	let nav_dialog = $state<HTMLDialogElement | null>(null)
 
-	let selected_type = $derived<StructureType>(get_selected_type(page.url.pathname))
+	let selected_type = $derived<StructureType>(
+		STRUCTURE_TYPES.find((type) => page.url.pathname.startsWith(`/${type}`)) ||
+			'category',
+	)
 </script>
 
 <svelte:head>

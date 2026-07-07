@@ -1,6 +1,5 @@
-import { STRUCTURE_TYPES_WITH_DUALS } from './config'
-import { type StructureType } from '$shared/config'
-import { are_equal_sets, parse_nested_json_set, parse_json_set } from './utils/helpers'
+import { type StructureType, STRUCTURE_TYPES_WITH_DUALS } from '$shared/config'
+import { are_equal_sets, parse_nested_json_set, parse_json_set } from '$shared/utils'
 import { get_client } from './utils/db'
 
 const db = get_client()
