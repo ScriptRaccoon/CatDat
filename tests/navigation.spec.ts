@@ -1,0 +1,368 @@
+import { test, expect } from '@playwright/test'
+
+test.describe('category navigation', () => {
+	test('user can navigate to a category', async ({ page }) => {
+		await page.goto('/')
+
+		const nav = page.getByRole('navigation')
+		await expect(nav).toBeVisible()
+
+		await nav
+			.getByRole('link', {
+				name: 'Categories',
+				exact: true,
+			})
+			.click()
+
+		await expect(
+			page.getByRole('heading', {
+				name: 'List of categories',
+				exact: true,
+			}),
+		).toBeVisible()
+
+		await expect(page).toHaveURL('/category-list')
+
+		await page
+			.getByRole('link', {
+				name: 'category of commutative rings',
+				exact: true,
+			})
+			.click()
+
+		await expect(
+			page.getByRole('heading', {
+				name: 'category of commutative rings',
+				exact: true,
+			}),
+		).toBeVisible()
+
+		await expect(page).toHaveURL('/category/CRing')
+	})
+
+	test('user can view category details', async ({ page }) => {
+		await page.goto('/category/CRing')
+
+		await expect(
+			page.getByRole('heading', {
+				name: 'category of commutative rings',
+				exact: true,
+			}),
+		).toBeVisible()
+
+		await expect(page.getByText('objects: commutative rings')).toBeVisible()
+		await expect(page.getByText('morphisms: ring homomorphisms')).toBeVisible()
+		await expect(page.getByText('is cocomplete')).toBeVisible()
+		await expect(page.getByText('is locally finitely presentable')).toBeVisible()
+		await expect(page.getByText('is not additive')).toBeVisible()
+		await expect(page.getByText('is not balanced')).toBeVisible()
+		await expect(page.getByText('terminal object: zero ring')).toBeVisible()
+		await expect(page.getByText('coproducts: tensor products')).toBeVisible()
+		await expect(
+			page.getByText('regular epimorphisms: surjective homomorphisms'),
+		).toBeVisible()
+	})
+
+	test('user can navigate to a category property', async ({ page }) => {
+		await page.goto('/')
+
+		const nav = page.getByRole('navigation')
+		await expect(nav).toBeVisible()
+
+		await nav
+			.getByRole('link', {
+				name: 'Properties',
+				exact: true,
+			})
+			.click()
+
+		await expect(
+			page.getByRole('heading', {
+				name: 'Properties of categories',
+				exact: true,
+			}),
+		).toBeVisible()
+
+		await page
+			.getByRole('link', {
+				name: 'finitely accessible',
+				exact: true,
+			})
+			.click()
+
+		await expect(
+			page.getByRole('heading', {
+				name: 'finitely accessible',
+				exact: true,
+			}),
+		).toBeVisible()
+
+		await expect(page).toHaveURL('/category-property/finitely_accessible')
+	})
+
+	test('user can view category property details', async ({ page }) => {
+		await page.goto('/category-property/finitely_accessible')
+
+		await expect(
+			page.getByRole('heading', {
+				name: 'finitely accessible',
+				exact: true,
+			}),
+		).toBeVisible()
+
+		await expect(page.getByText('A category is finitely accessible if')).toBeVisible()
+
+		await expect(
+			page.getByRole('link', {
+				name: 'accessible',
+				exact: true,
+			}),
+		).toBeVisible()
+
+		const examples = page
+			.getByRole('heading', {
+				name: 'Examples',
+				exact: true,
+			})
+			.locator('xpath=following-sibling::ul[1]')
+
+		await expect(
+			examples.getByRole('link', {
+				name: 'category of fields',
+				exact: true,
+			}),
+		).toBeVisible()
+
+		await expect(
+			examples.getByRole('link', {
+				name: 'category of vector spaces',
+				exact: true,
+			}),
+		).toBeVisible()
+
+		const counterexamples = page
+			.getByRole('heading', {
+				name: 'Counterexamples',
+				exact: true,
+			})
+			.locator('xpath=following-sibling::ul[1]')
+
+		await expect(
+			counterexamples.getByRole('link', {
+				name: 'category of finite sets',
+				exact: true,
+			}),
+		).toBeVisible()
+
+		await expect(
+			counterexamples.getByRole('link', {
+				name: 'category of topological spaces',
+				exact: true,
+			}),
+		).toBeVisible()
+	})
+
+	test('user can navigate to a category implication', async ({ page }) => {
+		await page.goto('/')
+
+		const nav = page.getByRole('navigation')
+		await expect(nav).toBeVisible()
+
+		await nav
+			.getByRole('link', {
+				name: 'Implications',
+				exact: true,
+			})
+			.click()
+
+		await expect(
+			page.getByRole('heading', {
+				name: 'Category implications',
+				exact: true,
+			}),
+		).toBeVisible()
+
+		await page
+			.getByRole('link', {
+				name: 'details',
+			})
+			.first()
+			.click()
+
+		await expect(
+			page.getByRole('heading', {
+				name: 'Implication Details',
+				exact: true,
+			}),
+		).toBeVisible()
+	})
+})
+
+test.describe('functor navigation', () => {
+	test('user can navigate to a functor', async ({ page }) => {
+		await page.goto('/')
+
+		await page
+			.getByRole('link', {
+				name: 'functors',
+				exact: true,
+			})
+			.first()
+			.click()
+
+		const nav = page.getByRole('navigation')
+		await expect(nav).toBeVisible()
+
+		await nav
+			.getByRole('link', {
+				name: 'Functors',
+				exact: true,
+			})
+			.click()
+
+		await expect(
+			page.getByRole('heading', {
+				name: 'List of functors',
+				exact: true,
+			}),
+		).toBeVisible()
+
+		await expect(page).toHaveURL('/functor-list')
+
+		await page
+			.getByRole('link', {
+				name: 'fundamental group functor',
+				exact: true,
+			})
+			.click()
+
+		await expect(
+			page.getByRole('heading', {
+				name: 'fundamental group functor',
+				exact: true,
+			}),
+		).toBeVisible()
+
+		await expect(page).toHaveURL('/functor/pi_1')
+	})
+
+	test('user can view functor details', async ({ page }) => {
+		await page.goto('/functor/pi_1')
+
+		await expect(
+			page.getByRole('heading', {
+				name: 'fundamental group functor',
+				exact: true,
+			}),
+		).toBeVisible()
+
+		await expect(page.getByText('group of homotopy classes of loops')).toBeVisible()
+
+		await expect(page.getByText('preserves products')).toBeVisible()
+		await expect(page.getByText('is essentially surjective')).toBeVisible()
+
+		await expect(page.getByText('is not faithful')).toBeVisible()
+		await expect(page.getByText('does not preserve binary coproducts')).toBeVisible()
+	})
+
+	test('user can navigate to a functor property', async ({ page }) => {
+		await page.goto('/functor-list')
+
+		const nav = page.getByRole('navigation')
+		await expect(nav).toBeVisible()
+
+		await nav
+			.getByRole('link', {
+				name: 'Properties',
+				exact: true,
+			})
+			.click()
+
+		await expect(
+			page.getByRole('heading', {
+				name: 'Properties of functors',
+				exact: true,
+			}),
+		).toBeVisible()
+
+		await page
+			.getByRole('link', {
+				name: 'faithful',
+				exact: true,
+			})
+			.click()
+
+		await expect(
+			page.getByRole('heading', {
+				name: 'faithful',
+				exact: true,
+			}),
+		).toBeVisible()
+
+		await expect(page).toHaveURL('/functor-property/faithful')
+	})
+
+	test('user can view functor property details', async ({ page }) => {
+		await page.goto('/functor-property/faithful')
+
+		await expect(
+			page.getByRole('heading', {
+				name: 'faithful',
+				exact: true,
+			}),
+		).toBeVisible()
+
+		await expect(page.getByText('is faithful when')).toBeVisible()
+
+		await expect(
+			page
+				.getByRole('link', {
+					name: 'fully faithful',
+					exact: true,
+				})
+				.first(),
+		).toBeVisible()
+
+		const examples = page
+			.getByRole('heading', {
+				name: 'Examples',
+				exact: true,
+			})
+			.locator('xpath=following-sibling::ul[1]')
+
+		await expect(
+			examples.getByRole('link', {
+				name: 'forgetful functor for rings',
+				exact: true,
+			}),
+		).toBeVisible()
+
+		await expect(
+			examples.getByRole('link', {
+				name: 'free group functor',
+				exact: true,
+			}),
+		).toBeVisible()
+
+		const counterexamples = page
+			.getByRole('heading', {
+				name: 'Counterexamples',
+				exact: true,
+			})
+			.locator('xpath=following-sibling::ul[1]')
+
+		await expect(
+			counterexamples.getByRole('link', {
+				name: 'abelianization functor for groups',
+				exact: true,
+			}),
+		).toBeVisible()
+
+		await expect(
+			counterexamples.getByRole('link', {
+				name: 'fundamental group functor',
+				exact: true,
+			}),
+		).toBeVisible()
+	})
+})
