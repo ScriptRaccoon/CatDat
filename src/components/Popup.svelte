@@ -89,18 +89,26 @@ an issue when clicking two proofs in a row. So it's a <div> then.
 		box-shadow: 0 0 3rem var(--bg-color);
 
 		opacity: 0;
+		visibility: hidden;
 		transform: translateY(1.5rem);
 		pointer-events: none;
 
 		transition:
 			opacity 140ms linear,
-			transform 140ms ease-out;
+			transform 140ms ease-out,
+			visibility 0s linear 140ms;
 	}
 
 	.popup.open {
+		visibility: visible;
 		opacity: 1;
 		transform: translateY(0);
 		pointer-events: initial;
+
+		transition:
+			opacity 140ms linear,
+			transform 140ms ease-out,
+			visibility 0s;
 	}
 
 	.content {
