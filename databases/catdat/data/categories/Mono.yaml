@@ -38,14 +38,14 @@ satisfied_properties:
     proof: >-
       The component-wise limit gives a pair of a set and a subset, and this pair forms the limit in $\Mono$.
 
-      More concretely, suppose we have a diagram $((X_i, X_i'))_{i \in \I}$, with limit cone $p_i : \lim_{i\in\I} X_i \to X_i$ in <a href="/category/Set">$\Set$</a>. Then the limit in $\Mono$ is $(\lim_{i\in\I} X_i, \bigcap_{i\in\I} p_i^{-1}(X_i'))$. (It is easy to see that in the subset component, we can also restrict $i$ to range over a <a href="https://ncatlab.org/nlab/show/weak+multilimit" target="_blank">weakly terminal</a> set of objects of $I$.)
+      More concretely, suppose we have a diagram $((X_i, X_i'))_{i \in \I}$, with limit cone $p_i : \lim_{i\in\I} X_i \to X_i$ in <a href="/category/Set">$\Set$</a>. Then the limit in $\Mono$ is $(\lim_{i\in\I} X_i, \bigcap_{i\in\I} p_i^{-1}(X_i'))$. (It is easy to see that in the subset component, we can also restrict $i$ to range over a <a href="https://ncatlab.org/nlab/show/weak+multilimit" target="_blank">weakly initial</a> set of objects of $\I$.)
     check_redundancy: false
 
   - property: cocomplete
     proof: >-
       We have that $\Mono$ is a reflective subcategory of $\Set^{\rightarrow}$, with the reflector taking a function $f : X \to Y$ to the pair $(Y, \im(f))$. Therefore, the result follows from the fact that <a href="/category/Set_arrow">$\Set^{\rightarrow}$</a> is cocomplete.
 
-      More concretely, suppose we have a diagram $((X_i, X_i'))_{i \in \I}$, with colimit cone $c_i : X_i \to \colim_{i\in\I} X_i$ in <a href="/category/Set">$\Set$</a>. Then the colimit in $\Mono$ is $(\colim_{i\in\I} X_i, \bigcup_{i\in\I} c_i(X_i'))$. (It is easy to see that in the subset component, we can also restrict $i$ to range over a <a href="https://ncatlab.org/nlab/show/weak+multilimit" target="_blank">weakly initial</a> set of objects of $I$.)
+      More concretely, suppose we have a diagram $((X_i, X_i'))_{i \in \I}$, with colimit cone $c_i : X_i \to \colim_{i\in\I} X_i$ in <a href="/category/Set">$\Set$</a>. Then the colimit in $\Mono$ is $(\colim_{i\in\I} X_i, \bigcup_{i\in\I} c_i(X_i'))$. (It is easy to see that in the subset component, we can also restrict $i$ to range over a <a href="https://ncatlab.org/nlab/show/weak+multilimit" target="_blank">weakly terminal</a> set of objects of $\I$.)
     check_redundancy: false
 
   - property: disjoint coproducts
@@ -142,7 +142,7 @@ special_morphisms:
     description: >-
       morphisms $f : (X, X') \to (Y, Y')$ such that $f$ is an injective function from $X$ to $Y$, and $f^{-1}(Y') = X'$ (in particular, if $f : X \to Y$ is an inclusion map, then this is equivalent to $X' = X \cap Y'$)
     proof: >-
-      To show any regular monomorphism satisfies this condition, suppose we have a parallel pair $g, h : (Y, Y') \to (Z, Z')$. To form the equalizer in $\Mono$, first we form the equalizer $f : X \hookrightarrow Y$ in $\Set$ of the underlying functions $g$ and $h$. Then by the construction of limits in the proof of completeness above, the equalizer in $\Mono$ is $(X, f^{-1}(Y'))$. Thus, we see that $f^{-1}(Y') = X'$.
+      To show any regular monomorphism satisfies this condition, suppose we have a parallel pair $g, h : (Y, Y') \rightrightarrows (Z, Z')$. To form the equalizer in $\Mono$, first we form the equalizer $f : X \hookrightarrow Y$ in $\Set$ of the underlying functions $g$ and $h$. Then by the construction of limits in the proof of completeness above, the equalizer in $\Mono$ is $(X, f^{-1}(Y'))$. Thus, we see that $f^{-1}(Y') = X'$.
 
       For the other direction, suppose we are given a morphism $f : (X, X') \to (Y, Y')$ satisfying this condition. We can then construct an equalizer diagram
       $$\begin{CD}
