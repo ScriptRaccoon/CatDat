@@ -88,6 +88,8 @@ The `pnpm db:test` command runs several tests to ensure the data behaves as expe
 
 If any of these tests fail, adjust the data accordingly.
 
+**For maintainers:** The command `pnpm e2e` executes end-to-end tests via Playwright.
+
 ### Example Pull Requests
 
 - [Add category of compact Hausdorff spaces](https://github.com/ScriptRaccoon/CatDat/pull/160)

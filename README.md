@@ -59,6 +59,7 @@ Built with modern web technologies:
 - Database: [SQLite](https://sqlite.org/)
 - Deployment: [Netlify](https://netlify.com)
 - Math Rendering: [katex](https://www.npmjs.com/package/katex)
+- End-to-end testing: [Playwright](https://playwright.dev)
 
 ## Similar projects
 
