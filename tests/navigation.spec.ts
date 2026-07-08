@@ -63,6 +63,56 @@ test.describe('category navigation', () => {
 		).toBeVisible()
 	})
 
+	test('user can open and close a proof for a category', async ({ page }) => {
+		await page.goto('/category/Grp', { waitUntil: 'networkidle' })
+
+		const claim = page.locator('li', { has: page.getByText('is mono-regular') })
+
+		await expect(claim).toBeVisible()
+
+		await claim.locator('button').click()
+
+		await expect(
+			page.getByRole('heading', {
+				name: 'Proof',
+				exact: true,
+			}),
+		).toBeVisible()
+
+		const popup = page.locator('.popup').filter({ hasText: 'Proof' })
+
+		const text = (await popup.textContent())?.trim() ?? ''
+
+		const proof_text = text.replace(/^Proof/, '').trim()
+
+		expect(proof_text.length).toBeGreaterThan(0)
+
+		await popup.getByRole('button', { name: 'close' }).click()
+
+		await expect(
+			page.getByRole('heading', {
+				name: 'Proof',
+				exact: true,
+			}),
+		).not.toBeVisible()
+	})
+
+	test('user can open a derived proof for a category', async ({ page }) => {
+		await page.goto('/category/Set', { waitUntil: 'networkidle' })
+
+		const claim = page.locator('li', { has: page.getByText('has a generator') })
+
+		await expect(claim).toBeVisible()
+
+		await claim.locator('button').click()
+
+		const popup = page.locator('.popup').filter({ hasText: 'Proof' })
+
+		await expect(
+			popup.getByText('Since it is finitary algebraic, it has a generator'),
+		).toBeVisible()
+	})
+
 	test('user can navigate to a category property', async ({ page }) => {
 		await page.goto('/')
 
@@ -318,6 +368,38 @@ test.describe('functor navigation', () => {
 
 		await expect(page.getByText('is not faithful')).toBeVisible()
 		await expect(page.getByText('does not preserve binary coproducts')).toBeVisible()
+	})
+
+	test('user can open and close a derived proof for a functor', async ({ page }) => {
+		await page.goto('/functor/free_group', { waitUntil: 'networkidle' })
+
+		const claim = page.locator('li', { has: page.getByText('is cocontinuous') })
+
+		await expect(claim).toBeVisible()
+
+		await claim.locator('button').click()
+
+		await expect(
+			page.getByRole('heading', {
+				name: 'Proof',
+				exact: true,
+			}),
+		).toBeVisible()
+
+		const popup = page.locator('.popup').filter({ hasText: 'Proof' })
+
+		await expect(
+			popup.getByText('Since it is a left adjoint, it is cocontinuous'),
+		).toBeVisible()
+
+		await popup.getByRole('button', { name: 'close' }).click()
+
+		await expect(
+			page.getByRole('heading', {
+				name: 'Proof',
+				exact: true,
+			}),
+		).not.toBeVisible()
 	})
 
 	test('user can navigate to a functor property', async ({ page }) => {
