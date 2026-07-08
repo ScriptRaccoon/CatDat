@@ -71,10 +71,7 @@
 				</td>
 				{#each structures as _, i}
 					{@const value = values[i]}
-					<td
-						class={value}
-						aria-label={value === null ? 'Unknown' : value ? 'Yes' : 'No'}
-					>
+					<td class={value} aria-label={value}>
 						<Fa icon={icon_config[value]} />
 					</td>
 				{/each}
