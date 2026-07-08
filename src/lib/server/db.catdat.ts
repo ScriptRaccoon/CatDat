@@ -1,17 +1,17 @@
 import type { Arrayed } from '$lib/commons/types'
-import Database, { type SqliteError } from 'better-sqlite3'
-import path from 'node:path'
+import { type SqliteError } from 'better-sqlite3'
 
-const db_path = path.resolve('databases', 'catdat', 'catdat.db')
+import { get_client } from '$shared/db'
 
 /**
  * Database client for the CatDat database holding all mathematical knowledge
  */
-const db = new Database(db_path, { readonly: true, fileMustExist: true })
+export const db = get_client({ readonly: true })
 
 /**
  * Small wrapper around db.prepare.all to handle errors,
  * use sql templates, and specify the type of the result.
+ * @deprecated
  */
 export function query<T>({ sql, values = [] }: { sql: string; values?: any[] }) {
 	try {
@@ -26,6 +26,7 @@ export function query<T>({ sql, values = [] }: { sql: string; values?: any[] }) 
 /**
  * Small wrapper around db.transaction to handle errors
  * use sql templates, and specify the type of the result.
+ * @deprecated
  */
 export function batch<T extends any[]>(queries: { sql: string; values?: any[] }[]) {
 	try {
