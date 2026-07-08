@@ -62,6 +62,26 @@ test('user can view category details', async ({ page }) => {
 	).toBeVisible()
 })
 
+test('user can navigate to a related category', async ({ page }) => {
+	await page.goto('/category/FinSet', { waitUntil: 'networkidle' })
+
+	await page
+		.getByRole('link', {
+			name: 'category of sets',
+			exact: true,
+		})
+		.click()
+
+	await expect(
+		page.getByRole('heading', {
+			name: 'category of sets',
+			exact: true,
+		}),
+	).toBeVisible()
+
+	await expect(page).toHaveURL('/category/Set')
+})
+
 test('user can open and close a proof for a category', async ({ page }) => {
 	await page.goto('/category/Grp', { waitUntil: 'networkidle' })
 

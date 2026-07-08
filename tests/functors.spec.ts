@@ -66,6 +66,106 @@ test('user can view functor details', async ({ page }) => {
 	await expect(page.getByText('does not preserve binary coproducts')).toBeVisible()
 })
 
+test('user can navigate to a related functor', async ({ page }) => {
+	await page.goto('/functor/forget_ring', { waitUntil: 'networkidle' })
+
+	await page
+		.getByRole('link', {
+			name: 'forgetful functor for groups',
+			exact: true,
+		})
+		.click()
+
+	await expect(
+		page.getByRole('heading', {
+			name: 'forgetful functor for groups',
+			exact: true,
+		}),
+	).toBeVisible()
+
+	await expect(page).toHaveURL('/functor/forget_group')
+})
+
+test('user can navigate to the source category', async ({ page }) => {
+	await page.goto('/functor/forget_ring', { waitUntil: 'networkidle' })
+
+	await page
+		.getByRole('link', {
+			name: 'category of rings',
+			exact: true,
+		})
+		.click()
+
+	await expect(
+		page.getByRole('heading', {
+			name: 'category of rings',
+			exact: true,
+		}),
+	).toBeVisible()
+
+	await expect(page).toHaveURL('/category/Ring')
+})
+
+test('user can navigate to the target category', async ({ page }) => {
+	await page.goto('/functor/group_units', { waitUntil: 'networkidle' })
+
+	await page
+		.getByRole('link', {
+			name: 'category of groups',
+			exact: true,
+		})
+		.click()
+
+	await expect(
+		page.getByRole('heading', {
+			name: 'category of groups',
+			exact: true,
+		}),
+	).toBeVisible()
+
+	await expect(page).toHaveURL('/category/Grp')
+})
+
+test('user can navigate to the left adjoint functor', async ({ page }) => {
+	await page.goto('/functor/group_units', { waitUntil: 'networkidle' })
+
+	await page
+		.getByRole('link', {
+			name: 'forgetful functor from groups to monoids',
+			exact: true,
+		})
+		.click()
+
+	await expect(
+		page.getByRole('heading', {
+			name: 'forgetful functor from groups to monoids',
+			exact: true,
+		}),
+	).toBeVisible()
+
+	await expect(page).toHaveURL('/functor/forget_inverses')
+})
+
+test('user can navigate to the right adjoint functor', async ({ page }) => {
+	await page.goto('/functor/forget_topology', { waitUntil: 'networkidle' })
+
+	await page
+		.getByRole('link', {
+			name: 'indiscrete topology functor',
+			exact: true,
+		})
+		.click()
+
+	await expect(
+		page.getByRole('heading', {
+			name: 'indiscrete topology functor',
+			exact: true,
+		}),
+	).toBeVisible()
+
+	await expect(page).toHaveURL('/functor/indiscrete_topology')
+})
+
 test('user can open and close a derived proof for a functor', async ({ page }) => {
 	await page.goto('/functor/free_group', { waitUntil: 'networkidle' })
 
