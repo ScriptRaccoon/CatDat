@@ -37,6 +37,12 @@ jobs:
       - name: Redundancy check
         run: pnpm db:redundancies
 
+      - name: Cache Playwright browsers
+        uses: actions/cache@v6
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-${{ hashFiles('pnpm-lock.yaml') }}
+
       - name: Install Playwright Browsers
         run: pnpm exec playwright install --with-deps chromium
 
