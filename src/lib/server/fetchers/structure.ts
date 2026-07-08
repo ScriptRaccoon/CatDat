@@ -6,29 +6,16 @@ import type {
 	StructureDetails,
 	StructureDisplay,
 	StructureShort,
-	StructureType,
-	TagObject
+	StructureType
 } from '$lib/commons/types'
 import { error } from '@sveltejs/kit'
-import sql from 'sql-template-tag'
-import { batch } from '$lib/server/db.catdat'
+import { db } from '$lib/server/db'
 import { display_property_assignment } from '$lib/server/transforms'
 
 export function fetch_structure(type: StructureType, id: string): StructureDetails {
-	const { err, results } = batch<
-		[
-			StructureDisplay,
-			RelatedStructure,
-			TagObject,
-			PropertyAssignmentDB,
-			PropertyShort,
-			StructureShort,
-			CommentObject
-		]
-	>([
-		// basic information
-		sql`
-            SELECT
+	const structure = db
+		.prepare<[string], StructureDisplay>(
+			`SELECT
                 s.id,
                 s.name,
                 s.notation,
@@ -39,30 +26,41 @@ export function fetch_structure(type: StructureType, id: string): StructureDetai
                 ds.notation AS dual_structure_notation
             FROM structures s
             LEFT JOIN structures ds ON ds.id = s.dual_structure_id
-            WHERE s.id = ${id}
-        `,
-		// related structures
-		sql`
-            SELECT
+            WHERE s.id = ?`
+		)
+		.get(id)
+
+	if (!structure) {
+		error(404, `Could not find ${type} with ID '${id}'`)
+	}
+
+	const related_structures = db
+		.prepare<[string], RelatedStructure>(
+			`SELECT
                 c.id,
                 c.name,
                 c.notation
             FROM related_structures r
             INNER JOIN structures c ON c.id = r.related_structure_id
-            WHERE r.structure_id = ${id}
-            ORDER BY lower(c.name)
-        `,
-		// tags
-		sql`
-            SELECT st.tag
+            WHERE r.structure_id = ?
+            ORDER BY lower(c.name)`
+		)
+		.all(id)
+
+	const tags = db
+		.prepare<[StructureType, string], string>(
+			`SELECT st.tag
             FROM structure_tag_assignments st
             INNER JOIN structure_tags t ON t.tag = st.tag
-            WHERE t.type = ${type} AND st.structure_id = ${id}
-            ORDER BY t.id
-        `,
-		// properties
-		sql`
-            SELECT
+            WHERE t.type = ? AND st.structure_id = ?
+            ORDER BY t.id`
+		)
+		.pluck()
+		.all(type, id)
+
+	const properties_db = db
+		.prepare<[string], PropertyAssignmentDB>(
+			`SELECT
                 pa.property_id AS id,
                 pa.is_satisfied,
                 pa.proof,
@@ -76,64 +74,50 @@ export function fetch_structure(type: StructureType, id: string): StructureDetai
             ON p.id = pa.property_id AND p.type = pa.type
             INNER JOIN relations r
             ON r.relation = p.relation
-            WHERE pa.structure_id = ${id}
-            ORDER BY pa.id
-        `,
-		// unknown properties
-		sql`
-            SELECT p.id, p.relation
+            WHERE pa.structure_id = ?
+            ORDER BY pa.id`
+		)
+		.all(id)
+
+	const unknown_properties = db
+		.prepare<[StructureType, string], PropertyShort>(
+			`SELECT p.id, p.relation
             FROM properties p
-            WHERE p.type = ${type} AND NOT EXISTS (
+            WHERE p.type = ?
+            AND NOT EXISTS (
                 SELECT 1 FROM property_assignments
-                WHERE structure_id = ${id} AND property_id = p.id
+                WHERE structure_id = ? AND property_id = p.id
             )
-            ORDER BY lower(p.id)
-        `,
-		// undistinguishable structures
-		sql`
-            SELECT u.id, u.name
+            ORDER BY lower(p.id)`
+		)
+		.all(type, id)
+
+	const undistinguishable_structures = db
+		.prepare<[string, StructureType, string], StructureShort>(
+			`SELECT u.id, u.name
             FROM structures u
             JOIN properties p ON p.type = u.type
             LEFT JOIN property_assignments pa
-                ON pa.structure_id = ${id}
-                AND pa.property_id = p.id
+            ON pa.structure_id = ? AND pa.property_id = p.id
             LEFT JOIN property_assignments up
-                ON up.structure_id = u.id
-                AND up.property_id = p.id
-            WHERE
-                u.type = ${type}
-                AND u.id != ${id}
+            ON up.structure_id = u.id AND up.property_id = p.id
+            WHERE u.type = ? AND u.id != ?
             GROUP BY u.id, u.name
             HAVING SUM(
                 CASE
                     WHEN pa.is_satisfied IS up.is_satisfied THEN 0
                     ELSE 1
                 END
-            ) = 0;
-        `,
-		// comments
-		sql`
-            SELECT id, comment FROM structure_comments
-            WHERE structure_id = ${id}
-        `
-	])
+            ) = 0`
+		)
+		.all(id, type, id)
 
-	if (err) error(500, `Could not load ${type} with ID ${id}`)
-
-	const [
-		structures,
-		related_structures,
-		tag_objects,
-		properties_db,
-		unknown_properties,
-		undistinguishable_structures,
-		comments
-	] = results
-
-	if (!structures.length) error(404, `Could not find ${type} with ID '${id}'`)
-
-	const structure = structures[0]
-	const tags = tag_objects.map(({ tag }) => tag)
+	const comments = db
+		.prepare<[string], CommentObject>(
+			`SELECT id, comment FROM structure_comments
+            WHERE structure_id = ?`
+		)
+		.all(id)
 
 	const satisfied_properties = properties_db
 		.filter((obj) => obj.is_satisfied === 1)

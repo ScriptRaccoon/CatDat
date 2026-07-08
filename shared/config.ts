@@ -11,5 +11,5 @@ export const STRUCTURE_TYPES_WITH_DUALS: StructureType[] = ['category']
 export const PLURALS: Record<StructureType, string> = {
 	category: 'categories',
 	functor: 'functors',
-	morphism: 'morphisms',
+	morphism: 'morphisms'
 }

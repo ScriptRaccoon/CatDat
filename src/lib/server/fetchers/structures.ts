@@ -1,62 +1,57 @@
-import { capitalize } from '$shared/utils'
-import { PLURALS } from '$shared/config'
-import type { StructureShort, StructureType, TagObject } from '$lib/commons/types'
-import { batch, query } from '$lib/server/db.catdat'
-import { error } from '@sveltejs/kit'
-import sql from 'sql-template-tag'
+import type { StructureShort, StructureType } from '$lib/commons/types'
+import { db } from '$lib/server/db'
 
 export function fetch_structures(type: StructureType) {
-	const { rows: structures, err } = query<StructureShort>(sql`
-        SELECT id, name
-        FROM structures
-        WHERE type = ${type}
-        ORDER BY lower(name)
-    `)
-
-	if (err) error(500, `${capitalize(PLURALS[type])} could not be loaded`)
+	const structures = db
+		.prepare<[StructureType], StructureShort>(
+			`SELECT id, name
+            FROM structures
+            WHERE type = ?
+            ORDER BY lower(name)`
+		)
+		.all(type)
 
 	return { structures, type }
 }
 
 export function fetch_structures_and_tags(type: StructureType) {
-	const { results, err } = batch<[StructureShort, TagObject]>([
-		sql`
-            SELECT id, name
+	const structures = db
+		.prepare<[StructureType], StructureShort>(
+			`SELECT id, name
             FROM structures
-            WHERE type = ${type}
-            ORDER BY lower(name)`,
-		sql`
-            SELECT t.tag
+            WHERE type = ?
+            ORDER BY lower(name)`
+		)
+		.all(type)
+
+	const tags = db
+		.prepare<[StructureType], string>(
+			`SELECT t.tag
             FROM structure_tags t
-            WHERE t.type = ${type}
+            WHERE t.type = ?
             AND EXISTS (
                 SELECT 1 FROM structure_tag_assignments a
-                WHERE a.tag = t.tag AND a.type = ${type}
+                WHERE a.tag = t.tag AND a.type = t.type
             )
-            ORDER BY t.id
-        `
-	])
-
-	if (err) error(500, `${capitalize(PLURALS[type])} could not be loaded`)
-
-	const [structures, tag_objects] = results
-
-	const tags = tag_objects.map(({ tag }) => tag)
+            ORDER BY t.id`
+		)
+		.pluck()
+		.all(type)
 
 	return { type, structures, tags }
 }
 
 export function fetch_tagged_structures(type: StructureType, tag: string) {
-	const { rows: structures, err } = query<StructureShort>(sql`
-        SELECT s.id, s.name
-        FROM structure_tag_assignments t
-        INNER JOIN structures s
-        ON s.id = t.structure_id
-        WHERE t.tag = ${tag} AND t.type = ${type}
-        ORDER BY lower(name)
-    `)
-
-	if (err) error(500, `${capitalize(PLURALS[type])} could not be loaded`)
+	const structures = db
+		.prepare<[StructureType, string], StructureShort>(
+			`SELECT s.id, s.name
+            FROM structure_tag_assignments t
+            INNER JOIN structures s
+            ON s.id = t.structure_id
+            WHERE t.type = ? AND t.tag = ?
+            ORDER BY lower(name)`
+		)
+		.all(type, tag)
 
 	return { type, structures, tag }
 }

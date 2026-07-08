@@ -28,8 +28,6 @@ export type StructureDisplay = {
 
 export type MappedTypes = Record<string, StructureType>
 
-export type TagObject = { tag: string }
-
 export type CommentObject = { id: number; comment: string }
 
 export type PropertyDB = {
@@ -66,6 +64,11 @@ export type PropertyAssignmentDisplay = {
 	proof: string
 	relation: string
 	is_deduced: boolean
+}
+
+export type CategoryDefinition = {
+	objects: string
+	morphisms: string
 }
 
 export type SpecialObject = {

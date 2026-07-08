@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit'
-import { query } from '$lib/server/db.catdat'
+import { db } from '$lib/server/db'
 import { render_nested_formulas } from '$lib/server/formulas'
 import { MAX_STRUCTURES_COMPARE } from '$lib/commons/compare.utils'
 import type { ComparisonResult, StructureType } from '$lib/commons/types'
@@ -20,69 +20,30 @@ export function fetch_comparison_result(
 		)
 	}
 
-	const { rows, err: err_cat } = query<{
-		id: string
-		name: string
-		notation: string
-	}>({
-		sql: `
-			SELECT id, name, notation 
+	const unsorted_structures = db
+		.prepare<string[], { id: string; name: string; notation: string }>(
+			`SELECT id, name, notation 
 			FROM structures
 			WHERE type = ?
-			AND id in (${to_placeholders(compared_ids)})`,
-		values: [type, ...compared_ids]
-	})
+			AND id in ${to_placeholders(compared_ids)}`
+		)
+		.all(type, ...compared_ids)
 
-	if (err_cat) error(500, `Could not load ${PLURALS[type]}`)
-
-	const invalid_id = compared_ids.find((id) => rows.every((row) => row.id !== id))
+	const invalid_id = compared_ids.find((id) =>
+		unsorted_structures.every((row) => row.id !== id)
+	)
 	if (invalid_id) error(404, `Could not find ${type} with ID '${invalid_id}'`)
 
-	const structures = rows.sort(
+	const structures = unsorted_structures.sort(
 		(a, b) => compared_ids.indexOf(a.id) - compared_ids.indexOf(b.id)
 	)
 
-	const select_columns = compared_ids
-		.map(
-			(_, i) =>
-				`CASE 
-					WHEN a${i}.is_satisfied = TRUE THEN 'yes'
-					WHEN a${i}.is_satisfied = FALSE THEN 'no'
-					ELSE 'unknown'
-				END AS struct${i}`
-		)
-		.join(',\n')
+	const comparison_query = get_comparison_query(compared_ids)
 
-	const join_fragments: string[] = []
-	const values: string[] = []
-
-	compared_ids.forEach((id, i) => {
-		join_fragments.push(`
-			LEFT JOIN property_assignments a${i}
-			ON a${i}.property_id = p.id AND a${i}.structure_id = ?
-		`)
-		values.push(id)
-	})
-
-	values.push(type)
-
-	const comparison_query = `
-		SELECT
-			p.id AS property_id,
-			${select_columns}
-		FROM properties p
-		${join_fragments.join('\n')}
-		WHERE p.type = ?
-		ORDER BY lower(p.id)`
-
-	const { rows: comparison_objects, err } = query<Record<string, string>>({
-		sql: comparison_query,
-		values
-	})
-
-	if (err) error(500, 'Could not load comparison table')
-
-	const comparison_table = comparison_objects.map((obj) => Object.values(obj))
+	const comparison_table = db
+		.prepare<string[], string[]>(comparison_query)
+		.raw()
+		.all(...compared_ids, type)
 
 	callback()
 
@@ -91,4 +52,30 @@ export function fetch_comparison_result(
 		comparison_table,
 		type
 	}
+}
+
+function get_comparison_query(compared_ids: string[]) {
+	const columns = compared_ids.map(
+		(_, i) =>
+			`CASE 
+				WHEN a${i}.is_satisfied = TRUE THEN 'yes'
+				WHEN a${i}.is_satisfied = FALSE THEN 'no'
+				ELSE 'unknown'
+			END AS struct${i}`
+	)
+
+	const joins = compared_ids.map(
+		(_, i) =>
+			`LEFT JOIN property_assignments a${i}
+			ON a${i}.property_id = p.id AND a${i}.structure_id = ?`
+	)
+
+	return `
+		SELECT
+			p.id AS property_id,
+			${columns.join(',\n')}
+		FROM properties p
+		${joins.join('\n')}
+		WHERE p.type = ?
+		ORDER BY lower(p.id)`
 }

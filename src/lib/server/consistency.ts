@@ -1,11 +1,10 @@
 import { is_subset } from '$shared/utils'
-import type { SqliteError } from 'better-sqlite3'
 import type { StructureType } from '$lib/commons/types'
 import {
 	get_normalized_implications,
 	type NormalizedImplication
 } from '$shared/implications'
-import { db } from './db.catdat'
+import { db } from './db'
 
 // TODO: If possible, remove the code duplication with deduction and redundancy scripts.
 
@@ -13,10 +12,10 @@ export function get_contradiction(
 	satisfied_properties: Set<string>,
 	unsatisfied_properties: Set<string>,
 	type: StructureType
-): { contradiction: string[] | null; err: SqliteError | null } {
+): { contradiction: string[] | null } {
 	for (const p of satisfied_properties) {
 		const contradiction = [`${p} ⟹ ${p}`]
-		if (unsatisfied_properties.has(p)) return { contradiction, err: null }
+		if (unsatisfied_properties.has(p)) return { contradiction }
 	}
 
 	const implications = get_normalized_implications(db, type).filter(
@@ -29,7 +28,7 @@ export function get_contradiction(
 		implications
 	)
 
-	return { contradiction, err: null }
+	return { contradiction }
 }
 
 export function contradiction_worker(

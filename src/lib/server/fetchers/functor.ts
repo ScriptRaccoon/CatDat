@@ -1,13 +1,11 @@
 import type { FunctorSpecificDisplay } from '$lib/commons/types'
-import sql from 'sql-template-tag'
-import { query } from '$lib/server/db.catdat'
+import { db } from '$lib/server/db'
 import { error } from '@sveltejs/kit'
 
 export function fetch_functor(id: string) {
-	const { rows: functors, err } = query<FunctorSpecificDisplay>(
-		// specific information for the functor
-		sql`
-            SELECT
+	const functor = db
+		.prepare<[string], FunctorSpecificDisplay>(
+			`SELECT
                 f.source,
                 f.target,
                 source.name AS source_name,
@@ -26,13 +24,11 @@ export function fetch_functor(id: string) {
             LEFT JOIN structures AS la ON la.id = f.left_adjoint
             LEFT JOIN functors AS rf ON rf.left_adjoint = f.id
             LEFT JOIN structures AS ra ON ra.id = rf.id
-            WHERE f.id = ${id}
-        `
-	)
+            WHERE f.id = ?`
+		)
+		.get(id)
 
-	if (err) error(500, 'Could not load functor')
+	if (!functor) error(404, `Could not find functor with ID '${id}'`)
 
-	if (!functors.length) error(404, `Could not find functor with ID '${id}'`)
-
-	return { type: 'functor' as const, ...functors[0] }
+	return { type: 'functor' as const, ...functor }
 }

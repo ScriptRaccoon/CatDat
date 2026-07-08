@@ -1,5 +1,4 @@
-import { batch } from '$lib/server/db.catdat'
-import sql from 'sql-template-tag'
+import { db } from '$lib/server/db'
 import { error } from '@sveltejs/kit'
 import type {
 	ImplicationDB,
@@ -10,11 +9,9 @@ import type {
 import { display_implication } from '$lib/server/transforms'
 
 export function fetch_implication(type: StructureType, id: string) {
-	const { results, err } = batch<
-		[ImplicationDB, StructureShort, { map: string; mapped_type: StructureType }]
-	>([
-		sql`
-            SELECT
+	const implication_db = db
+		.prepare<[string], ImplicationDB>(
+			`SELECT
                 id,
                 is_equivalence,
                 is_deduced,
@@ -24,32 +21,33 @@ export function fetch_implication(type: StructureType, id: string) {
                 conclusions,
                 mapped_assumptions
             FROM implications_view
-            WHERE id = ${id}
-        `,
-		sql`
-            SELECT DISTINCT s.id, s.name
+            WHERE id = ?`
+		)
+		.get(id)
+
+	const structures = db
+		.prepare<[StructureType, string], StructureShort>(
+			`SELECT DISTINCT s.id, s.name
             FROM property_assignments pa
             INNER JOIN structures s ON s.id = pa.structure_id
-            WHERE
-                pa.type = ${type}
-                AND pa.proof LIKE '%/' || ${type} || '-implication/' || ${id} || '%'
-        `,
-		sql`
-            SELECT map, mapped_type
+            WHERE pa.type = ?
+            AND pa.proof LIKE '%/' || pa.type || '-implication/' || ? || '%'`
+		)
+		.all(type, id)
+
+	const structure_maps = db
+		.prepare<[StructureType], { map: string; mapped_type: StructureType }>(
+			`SELECT map, mapped_type
             FROM structure_maps
-            WHERE type = ${type}
-        `
-	])
+            WHERE type = ?`
+		)
+		.all(type)
 
-	if (err) error(500, 'Could not load implication')
-
-	const [implications, structures, structure_maps] = results
-
-	if (!implications.length) {
+	if (!implication_db) {
 		error(404, `Could not find implication with ID '${id}'`)
 	}
 
-	const implication = display_implication(implications[0])
+	const implication = display_implication(implication_db)
 
 	const mapped_types: MappedTypes = {}
 

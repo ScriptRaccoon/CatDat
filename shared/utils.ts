@@ -52,7 +52,7 @@ export function parse_nested_json_set<T>(json: string): Partial<Record<string, S
 }
 
 export function to_placeholders(arr: string[]): string {
-	return arr.map(() => '?').join(', ')
+	return `(${arr.map(() => '?').join(', ')})`
 }
 
 export function strip_math(s: string) {

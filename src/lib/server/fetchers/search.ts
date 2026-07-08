@@ -1,11 +1,10 @@
 import { decode_property_ID } from '$shared/property.utils'
-import { query } from '$lib/server/db.catdat'
+import { db } from '$lib/server/db'
 import { error } from '@sveltejs/kit'
 import { SEARCH_SEPARATOR } from '$lib/commons/search.config'
 import { get_contradiction } from '$lib/server/consistency'
 import type { SearchResults, StructureShort, StructureType } from '$lib/commons/types'
 import { to_placeholders } from '$shared/utils'
-import sql from 'sql-template-tag'
 
 export function fetch_search_results(
 	satisfied_query: string | null,
@@ -17,21 +16,18 @@ export function fetch_search_results(
 		error(400, 'No properties selected')
 	}
 
-	const { rows: all_properties_objects, err: err_all } = query<{
-		id: string
-		dual_property_id: string | null
-	}>(sql`
-		SELECT id, dual_property_id FROM properties
-		WHERE type = ${type}
-		ORDER BY lower(id)
-	`)
+	const all_properties = db
+		.prepare<[StructureType], { id: string; dual_property_id: string | null }>(
+			`SELECT id, dual_property_id FROM properties
+			WHERE type = ?
+			ORDER BY lower(id)`
+		)
+		.all(type)
 
-	if (err_all) error(500, 'Failed to load properties')
-
-	const all_properties = new Set(all_properties_objects.map(({ id }) => id))
+	const all_properties_ids = new Set(all_properties.map(({ id }) => id))
 
 	const dual_properties_dict: Record<string, string | null> = {}
-	for (const row of all_properties_objects) {
+	for (const row of all_properties) {
 		dual_properties_dict[row.id] = row.dual_property_id
 	}
 
@@ -40,7 +36,7 @@ export function fetch_search_results(
 		: []
 
 	const invalid_satisfied_property = satisfied_properties.find(
-		(p) => !all_properties.has(p)
+		(p) => !all_properties_ids.has(p)
 	)
 
 	if (invalid_satisfied_property) {
@@ -52,7 +48,7 @@ export function fetch_search_results(
 		: []
 
 	const invalid_unsatisfied_property = unsatisfied_properties.find(
-		(p) => !all_properties.has(p)
+		(p) => !all_properties_ids.has(p)
 	)
 
 	if (invalid_unsatisfied_property) {
@@ -71,13 +67,11 @@ export function fetch_search_results(
 		dual_satisfied_properties.every(Boolean) &&
 		dual_unsatisfied_properties.every(Boolean)
 
-	const { contradiction, err: err_con } = get_contradiction(
+	const { contradiction } = get_contradiction(
 		new Set(satisfied_properties),
 		new Set(unsatisfied_properties),
 		type
 	)
-
-	if (err_con) error(500, 'Consistency check failed')
 
 	if (contradiction) {
 		callback()
@@ -97,17 +91,19 @@ export function fetch_search_results(
 	const all_selected_properties = [...satisfied_properties, ...unsatisfied_properties]
 
 	const search_query = `
-		SELECT s.id, s.name FROM structures s
-		INNER JOIN property_assignments a ON a.structure_id = s.id
+		SELECT s.id, s.name
+		FROM structures s
+		INNER JOIN property_assignments a
+		ON a.structure_id = s.id
 		WHERE
 			s.type = ? AND a.type = s.type
-			AND property_id IN (${to_placeholders(all_selected_properties)})
+			AND property_id IN ${to_placeholders(all_selected_properties)}
 		GROUP BY structure_id
 		HAVING
 			SUM (
 				CASE
 					WHEN
-						property_id IN (${to_placeholders(satisfied_properties)})
+						property_id IN ${to_placeholders(satisfied_properties)}
 						AND is_satisfied = TRUE
 					THEN 1
 					ELSE 0
@@ -117,7 +113,7 @@ export function fetch_search_results(
 			SUM(
 				CASE
 					WHEN
-						property_id IN (${to_placeholders(unsatisfied_properties)})
+						property_id IN ${to_placeholders(unsatisfied_properties)}
 						AND is_satisfied = FALSE
 					THEN 1
 					ELSE 0
@@ -126,17 +122,14 @@ export function fetch_search_results(
 		ORDER BY lower(s.name)
 	`
 
-	const { rows: found_structures, err } = query<StructureShort>({
-		sql: search_query,
-		values: [
+	const found_structures = db
+		.prepare<string[], StructureShort>(search_query)
+		.all(
 			type,
 			...all_selected_properties,
 			...satisfied_properties,
 			...unsatisfied_properties
-		]
-	})
-
-	if (err) error(500, 'Search failed')
+		)
 
 	callback()
 

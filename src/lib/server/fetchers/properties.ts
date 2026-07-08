@@ -1,52 +1,44 @@
 import type {
 	GroupedPropertyShort,
 	PropertyShort,
-	StructureType,
-	TagObject
+	StructureType
 } from '$lib/commons/types'
-import sql from 'sql-template-tag'
-import { query, batch } from '$lib/server/db.catdat'
-import { error } from '@sveltejs/kit'
+import { db } from '$lib/server/db'
 
 export function get_property_ids(type: StructureType) {
-	const { rows, err } = query<{ id: string }>(
-		sql`
-			SELECT id FROM properties
-			WHERE type = ${type}
-			ORDER BY lower(id)
-		`
-	)
-
-	if (err) error(500, 'Failed to load properties')
-
-	return rows.map(({ id }) => id)
+	return db
+		.prepare<[StructureType], string>(
+			`SELECT id FROM properties
+			WHERE type = ?
+			ORDER BY lower(id)`
+		)
+		.pluck()
+		.all(type)
 }
 
 export function fetch_grouped_properties_and_tags(type: StructureType) {
-	const { results, err } = batch<[GroupedPropertyShort, TagObject]>([
-		sql`
-		SELECT id, relation, dual_property_id
-		FROM properties
-		WHERE type = ${type}
-		ORDER BY lower(id)
-	`,
-		sql`
-			SELECT t.tag
+	const properties = db
+		.prepare<[StructureType], GroupedPropertyShort>(
+			`SELECT id, relation, dual_property_id
+			FROM properties
+			WHERE type = ?
+			ORDER BY lower(id)`
+		)
+		.all(type)
+
+	const tags = db
+		.prepare<[StructureType], string>(
+			`SELECT t.tag
 			FROM property_tags t
-			WHERE t.type = ${type}
+			WHERE t.type = ?
 			AND EXISTS (
 				SELECT 1 FROM property_tag_assignments a
-				WHERE a.tag = t.tag AND a.type = ${type}
+				WHERE a.tag = t.tag AND a.type = t.type
 			)
-			ORDER BY t.id
-		`
-	])
-
-	if (err) error(500, 'Failed to load properties')
-
-	const [properties, tag_objects] = results
-
-	const tags = tag_objects.map(({ tag }) => tag)
+			ORDER BY t.id`
+		)
+		.pluck()
+		.all(type)
 
 	const seen = new Set()
 
@@ -79,16 +71,16 @@ export function fetch_grouped_properties_and_tags(type: StructureType) {
 }
 
 export function fetch_tagged_properties(type: StructureType, tag: string) {
-	const { rows: properties, err } = query<PropertyShort>(sql`
-		SELECT p.id, p.relation
-		FROM property_tag_assignments t
-		INNER JOIN properties p
-		ON p.id = t.property_id AND p.type = ${type}
-		WHERE t.tag = ${tag} AND t.type = ${type}
-		ORDER BY lower(id)
-	`)
-
-	if (err) error(500, `Properties could not be loaded`)
+	const properties = db
+		.prepare<[StructureType, string], PropertyShort>(
+			`SELECT p.id, p.relation
+			FROM property_tag_assignments t
+			INNER JOIN properties p
+			ON p.id = t.property_id AND p.type = ?
+			WHERE t.tag = ? AND t.type = p.type
+			ORDER BY lower(id)`
+		)
+		.all(type, tag)
 
 	return { type, properties, tag }
 }

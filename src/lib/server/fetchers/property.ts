@@ -2,28 +2,16 @@ import type {
 	ImplicationDB,
 	StructureShort,
 	PropertyDB,
-	StructureType,
-	TagObject
+	StructureType
 } from '$lib/commons/types'
-import { batch } from '$lib/server/db.catdat'
+import { db } from '$lib/server/db'
 import { display_implication, display_property } from '$lib/server/transforms'
 import { error } from '@sveltejs/kit'
-import sql from 'sql-template-tag'
 
 export function fetch_property(type: StructureType, id: string) {
-	const { results, err } = batch<
-		[
-			PropertyDB,
-			{ id: string },
-			TagObject,
-			ImplicationDB,
-			StructureShort & { is_satisfied: 0 | 1 | null },
-			StructureShort
-		]
-	>([
-		// basic information
-		sql`
-            SELECT
+	const property_db = db
+		.prepare<[string, StructureType], PropertyDB>(
+			`SELECT
                 id,
                 relation,
                 description,
@@ -31,27 +19,41 @@ export function fetch_property(type: StructureType, id: string) {
                 nlab_link,
                 invariant_under_equivalences
             FROM properties
-            WHERE id = ${id} AND type = ${type}
-        `,
-		// related properties
-		sql`
-            SELECT related_property_id AS id
+            WHERE id = ? AND type = ?`
+		)
+		.get(id, type)
+
+	if (!property_db) {
+		error(404, `Could not find ${type} property with ID '${id}'`)
+	}
+
+	const property = display_property(property_db)
+
+	const related_properties = db
+		.prepare<[string, StructureType], string>(
+			`SELECT related_property_id AS id
             FROM related_properties
-            WHERE property_id = ${id} AND type = ${type}
-            ORDER BY lower(id)
-        `,
-		// tags
-		sql`
-            SELECT pt.tag
+            WHERE property_id = ? AND type = ?
+            ORDER BY lower(id)`
+		)
+		.pluck()
+		.all(id, type)
+
+	const tags = db
+		.prepare<[StructureType, string], string>(
+			`SELECT pt.tag
             FROM property_tag_assignments pt
             INNER JOIN property_tags t
-                ON t.tag = pt.tag AND t.type = ${type}
-            WHERE pt.property_id = ${id} AND pt.type = ${type}
-            ORDER BY t.id
-        `,
-		// relevant implications
-		sql`
-            SELECT
+            ON t.tag = pt.tag AND t.type = ?
+            WHERE pt.property_id = ? AND pt.type = t.type
+            ORDER BY t.id`
+		)
+		.pluck()
+		.all(type, id)
+
+	const relevant_implications_db = db
+		.prepare<string[], ImplicationDB>(
+			`SELECT
                 id,
                 is_equivalence,
                 is_deduced,
@@ -61,72 +63,53 @@ export function fetch_property(type: StructureType, id: string) {
                 conclusions,
                 mapped_assumptions
             FROM implications_view
-            WHERE type = ${type}
+            WHERE type = ?
             AND (
                 EXISTS (
                     SELECT 1
                     FROM json_each(conclusions)
-                    WHERE value = ${id}
+                    WHERE value = ?
                 )
                 OR
                 EXISTS (
                     SELECT 1
                     FROM json_each(assumptions)
-                    WHERE value = ${id}
+                    WHERE value = ?
                 )
             )
-            ORDER BY lower(assumptions) || ' ' || lower(conclusions)
-        `,
-		// known structures
-		sql`
-            SELECT s.id, s.name, pa.is_satisfied
+            ORDER BY lower(assumptions) || ' ' || lower(conclusions)`
+		)
+		.all(type, id, id)
+
+	const relevant_implications = relevant_implications_db.map(display_implication)
+
+	const known_structures = db
+		.prepare<
+			[StructureType, string],
+			StructureShort & { is_satisfied: 0 | 1 | null }
+		>(
+			`SELECT s.id, s.name, pa.is_satisfied
             FROM property_assignments pa
             INNER JOIN structures s ON s.id = pa.structure_id
-            WHERE
-                s.type = ${type}
-                AND pa.property_id = ${id}
-            ORDER BY lower(s.name)
-        `,
-		// unknown structures
-		sql`
-            SELECT s.id, s.name
+            WHERE s.type = ? AND pa.property_id = ?
+            ORDER BY lower(s.name)`
+		)
+		.all(type, id)
+
+	const unknown_structures = db
+		.prepare<[string, StructureType], StructureShort>(
+			`SELECT s.id, s.name
             FROM structures s
             LEFT JOIN property_assignments pa
-                ON pa.structure_id = s.id
-                AND pa.property_id = ${id}
-            WHERE
-                s.type = ${type}
-                AND pa.property_id IS NULL
-            ORDER BY lower(s.name)
-        `
-	])
-
-	if (err) error(500, 'Could not load property')
-
-	const [
-		properties,
-		related,
-		tag_objects,
-		relevant_implications_db,
-		known_structures,
-		unknown_structures
-	] = results
-
-	if (!properties.length) {
-		error(404, `Could not find property with ID '${id}'`)
-	}
-
-	const property = display_property(properties[0])
-
-	const related_properties = related.map(({ id }) => id)
-
-	const tags = tag_objects.map(({ tag }) => tag)
+            ON pa.structure_id = s.id AND pa.property_id = ?
+            WHERE s.type = ? AND pa.property_id IS NULL
+            ORDER BY lower(s.name)`
+		)
+		.all(id, type)
 
 	const examples = known_structures.filter((f) => f.is_satisfied === 1)
 	const counterexamples = known_structures.filter((f) => f.is_satisfied === 0)
 	const undecidable_structures = known_structures.filter((f) => f.is_satisfied === null)
-
-	const relevant_implications = relevant_implications_db.map(display_implication)
 
 	for (const impl of relevant_implications) {
 		if (!impl.is_equivalence && impl.conclusions.includes(id)) {
