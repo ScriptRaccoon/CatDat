@@ -17,7 +17,8 @@
 		"comphaus",
 		"esbuild",
 		"coloneqq",
-		"FiltVect"
+		"FiltVect",
+		"networkidle"
 	],
 	"words": [
 		"abelian",

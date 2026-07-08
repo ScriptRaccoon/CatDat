@@ -1,5 +1,7 @@
 import { test, expect } from '@playwright/test'
 
+const encoded_delimiter = '%7E'
+
 test('user can navigate to the search page', async ({ page }) => {
 	await page.goto('/')
 
@@ -70,7 +72,7 @@ test('user can enter properties', async ({ page }) => {
 		.click()
 
 	await expect(page).toHaveURL(
-		'/category-search/results?satisfied=finitely_complete%7Efinitely_cocomplete&unsatisfied=cocomplete%7Eabelian',
+		`/category-search/results?satisfied=finitely_complete${encoded_delimiter}finitely_cocomplete&unsatisfied=cocomplete${encoded_delimiter}abelian`,
 	)
 
 	await expect(
@@ -83,7 +85,7 @@ test('user can enter properties', async ({ page }) => {
 
 test('user can view search results', async ({ page }) => {
 	await page.goto(
-		'/category-search/results?satisfied=finitely_complete%7Efinitely_cocomplete&unsatisfied=cocomplete%7Eabelian',
+		`/category-search/results?satisfied=finitely_complete${encoded_delimiter}finitely_cocomplete&unsatisfied=cocomplete${encoded_delimiter}abelian`,
 	)
 
 	await expect(
