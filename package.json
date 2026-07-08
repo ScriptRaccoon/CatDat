@@ -27,6 +27,7 @@
 		"db:redundancies": "tsx databases/catdat/scripts/redundancies.ts",
 		"db:proof-length": "tsx databases/catdat/scripts/proof-length.ts",
 		"e2e": "PUBLIC_PLAYWRIGHT=true pnpm exec playwright test",
+		"e2e:debug": "PUBLIC_PLAYWRIGHT=true pnpm exec playwright test --debug",
 		"e2e:ui": "PUBLIC_PLAYWRIGHT=true pnpm exec playwright test --ui"
 	},
 	"devDependencies": {
