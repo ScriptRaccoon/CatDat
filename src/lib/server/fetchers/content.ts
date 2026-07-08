@@ -27,7 +27,7 @@ export function fetch_category_references(content_id: string) {
             WHERE
                 type = 'category'
                 AND proof LIKE '%/content/' || ${content_id} || '%'
-        `,
+        `
 	])
 
 	if (err_categories) error(500, 'Could not load context')

@@ -6,7 +6,7 @@ test('categories are selected by default', async ({ page }) => {
 	const selector = page
 		.getByRole('combobox', {
 			name: 'Structure',
-			exact: true,
+			exact: true
 		})
 		.first()
 
@@ -20,7 +20,7 @@ test('user can switch to functors', async ({ page }) => {
 	const selector = page
 		.getByRole('combobox', {
 			name: 'Structure',
-			exact: true,
+			exact: true
 		})
 		.first()
 
@@ -34,8 +34,8 @@ test('user can switch to functors', async ({ page }) => {
 	await expect(
 		page.getByRole('heading', {
 			name: 'List of functors',
-			exact: true,
-		}),
+			exact: true
+		})
 	).toBeVisible()
 })
 
@@ -45,7 +45,7 @@ test('functors are selected on a functor route', async ({ page }) => {
 	const selector = page
 		.getByRole('combobox', {
 			name: 'Structure',
-			exact: true,
+			exact: true
 		})
 		.first()
 

@@ -4,7 +4,7 @@ import type {
 	PropertyAssignmentDB,
 	PropertyAssignmentDisplay,
 	ImplicationDB,
-	ImplicationDisplay,
+	ImplicationDisplay
 } from '$lib/commons/types'
 import { parse_nested_json_list } from './utils'
 
@@ -15,18 +15,18 @@ export function display_property(property: PropertyDB): PropertyDisplay {
 		description: property.description,
 		dual_property_id: property.dual_property_id,
 		nlab_link: property.nlab_link,
-		invariant_under_equivalences: Boolean(property.invariant_under_equivalences),
+		invariant_under_equivalences: Boolean(property.invariant_under_equivalences)
 	}
 }
 
 export function display_property_assignment(
-	property: PropertyAssignmentDB,
+	property: PropertyAssignmentDB
 ): PropertyAssignmentDisplay {
 	return {
 		id: property.id,
 		proof: property.proof,
 		is_deduced: Boolean(property.is_deduced),
-		relation: property.relation,
+		relation: property.relation
 	}
 }
 
@@ -39,6 +39,6 @@ export function display_implication(implication: ImplicationDB): ImplicationDisp
 		proof: implication.proof,
 		assumptions: JSON.parse(implication.assumptions),
 		conclusions: JSON.parse(implication.conclusions),
-		mapped_assumptions: parse_nested_json_list(implication.mapped_assumptions),
+		mapped_assumptions: parse_nested_json_list(implication.mapped_assumptions)
 	}
 }

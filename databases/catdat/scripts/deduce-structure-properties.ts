@@ -9,13 +9,13 @@ import { get_client } from './utils/db'
 import {
 	get_properties_dict,
 	get_property_assignments,
-	type PropertyMeta,
+	type PropertyMeta
 } from './utils/properties'
 import {
 	get_contradiction_string,
 	get_normalized_implications,
 	get_proof_string,
-	NormalizedImplication,
+	NormalizedImplication
 } from './utils/implications'
 import { STRUCTURE_TYPES_WITH_DUALS, type StructureType } from './config'
 import { get_structures, is_dual_structure, type StructureMeta } from './utils/structures'
@@ -33,7 +33,7 @@ export function get_deduced_satisfied_properties(
 		stop_when_found?: string
 	},
 	type: StructureType,
-	associated_satisfied_properties?: Record<string, Set<string>>,
+	associated_satisfied_properties?: Record<string, Set<string>>
 ) {
 	const found = new Set<string>()
 	const proofs: Record<string, string> = {}
@@ -55,9 +55,9 @@ export function get_deduced_satisfied_properties(
 					(key) => {
 						return is_subset(
 							implication.mapped_assumptions?.[key] ?? new Set(),
-							associated_satisfied_properties?.[key] ?? new Set(),
+							associated_satisfied_properties?.[key] ?? new Set()
 						)
-					},
+					}
 				)
 				if (!is_applicable) continue
 			}
@@ -74,7 +74,7 @@ export function get_deduced_satisfied_properties(
 				proofs[implication.conclusion] = get_proof_string(
 					implication,
 					options.properties_dict,
-					type,
+					type
 				)
 			}
 		}
@@ -102,7 +102,7 @@ export function get_deduced_unsatisfied_properties(
 		stop_when_found?: string
 	},
 	type: StructureType,
-	associated_satisfied_properties?: Record<string, Set<string>>,
+	associated_satisfied_properties?: Record<string, Set<string>>
 ) {
 	const found = new Set<string>()
 	const proofs: Record<string, string> = {}
@@ -118,17 +118,17 @@ export function get_deduced_unsatisfied_properties(
 					!deduced_unsatisfied_properties.has(p) &&
 					!newly_found.has(p) &&
 					is_subset(implication.assumptions, satisfied_properties, {
-						exception: p,
+						exception: p
 					})
 				if (!is_valid) continue
 
 				if (implication.mapped_assumptions) {
 					const is_applicable = Object.keys(
-						implication.mapped_assumptions,
+						implication.mapped_assumptions
 					).every((key) => {
 						return is_subset(
 							implication.mapped_assumptions?.[key] ?? new Set(),
-							associated_satisfied_properties?.[key] ?? new Set(),
+							associated_satisfied_properties?.[key] ?? new Set()
 						)
 					})
 					if (!is_applicable) continue
@@ -151,7 +151,7 @@ export function get_deduced_unsatisfied_properties(
 						implication,
 						options.properties_dict,
 						p,
-						type,
+						type
 					)
 				}
 			}
@@ -173,7 +173,7 @@ function save_satisfied_properties(
 	structure_id: string,
 	found: Set<string>,
 	proofs: Record<string, string>,
-	type: StructureType,
+	type: StructureType
 ) {
 	if (found.size === 0) return
 
@@ -210,7 +210,7 @@ function save_unsatisfied_properties(
 	structure_id: string,
 	found: Set<string>,
 	proofs: Record<string, string>,
-	type: StructureType,
+	type: StructureType
 ) {
 	if (found.size === 0) return
 
@@ -250,14 +250,14 @@ function deduce_satisfied_properties(
 	implications: NormalizedImplication[],
 	satisfied_properties: Set<string>,
 	properties_dict: Record<string, PropertyMeta>,
-	type: StructureType,
+	type: StructureType
 ) {
 	const { found, proofs } = get_deduced_satisfied_properties(
 		satisfied_properties,
 		implications,
 		{ properties_dict },
 		type,
-		structure.associated_satisfied_properties,
+		structure.associated_satisfied_properties
 	)
 
 	for (const p of found) satisfied_properties.add(p)
@@ -279,7 +279,7 @@ function deduce_unsatisfied_properties(
 	satisfied_properties: Set<string>,
 	unsatisfied_properties: Set<string>,
 	properties_dict: Record<string, PropertyMeta>,
-	type: StructureType,
+	type: StructureType
 ) {
 	const { found, proofs } = get_deduced_unsatisfied_properties(
 		satisfied_properties,
@@ -287,7 +287,7 @@ function deduce_unsatisfied_properties(
 		implications,
 		{ properties_dict },
 		type,
-		structure.associated_satisfied_properties,
+		structure.associated_satisfied_properties
 	)
 
 	for (const p of found) unsatisfied_properties.add(p)
@@ -312,7 +312,7 @@ function deduce_dual_properties(
 	dual_unsatisfied: Set<string>,
 	dual_undecidable: Set<string>,
 	properties_dict: Record<string, PropertyMeta>,
-	type: StructureType,
+	type: StructureType
 ) {
 	const new_satisfied = new Set<string>()
 
@@ -356,7 +356,7 @@ function deduce_dual_properties(
 	}
 
 	console.info(
-		`Deduced ${new_satisfied.size} satisfied properties by duality for ${structure.id}`,
+		`Deduced ${new_satisfied.size} satisfied properties by duality for ${structure.id}`
 	)
 
 	for (const q of new_unsatisfied) {
@@ -364,7 +364,7 @@ function deduce_dual_properties(
 	}
 
 	console.info(
-		`Deduced ${new_unsatisfied.size} unsatisfied properties by duality for ${structure.id}`,
+		`Deduced ${new_unsatisfied.size} unsatisfied properties by duality for ${structure.id}`
 	)
 
 	for (const q of new_undecidable) {
@@ -372,7 +372,7 @@ function deduce_dual_properties(
 	}
 
 	console.info(
-		`Deduced ${new_undecidable.size} undecidable properties by duality for ${structure.id}`,
+		`Deduced ${new_undecidable.size} undecidable properties by duality for ${structure.id}`
 	)
 }
 
@@ -381,7 +381,7 @@ function deduce_dual_properties(
  */
 function delete_deduced_properties(db: Database, type: StructureType) {
 	db.prepare(
-		`DELETE FROM property_assignments WHERE is_deduced = TRUE AND type = ?`,
+		`DELETE FROM property_assignments WHERE is_deduced = TRUE AND type = ?`
 	).run(type)
 }
 
@@ -411,7 +411,7 @@ export function deduce_properties_for_structures(type: StructureType) {
 				implications,
 				assigned.satisfied,
 				properties_dict,
-				type,
+				type
 			)
 
 			deduce_unsatisfied_properties(
@@ -421,7 +421,7 @@ export function deduce_properties_for_structures(type: StructureType) {
 				assigned.satisfied,
 				assigned.unsatisfied,
 				properties_dict,
-				type,
+				type
 			)
 		}
 	})
@@ -447,7 +447,7 @@ export function deduce_properties_for_structures(type: StructureType) {
 				dual_assigned.unsatisfied,
 				dual_assigned.undecidable,
 				properties_dict,
-				type,
+				type
 			)
 
 			deduce_satisfied_properties(
@@ -456,7 +456,7 @@ export function deduce_properties_for_structures(type: StructureType) {
 				implications,
 				assigned.satisfied,
 				properties_dict,
-				type,
+				type
 			)
 
 			deduce_unsatisfied_properties(
@@ -466,7 +466,7 @@ export function deduce_properties_for_structures(type: StructureType) {
 				assigned.satisfied,
 				assigned.unsatisfied,
 				properties_dict,
-				type,
+				type
 			)
 		}
 	})

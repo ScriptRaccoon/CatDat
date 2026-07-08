@@ -11,7 +11,7 @@ export function fetch_search_results(
 	satisfied_query: string | null,
 	unsatisfied_query: string | null,
 	type: StructureType,
-	callback: () => void,
+	callback: () => void
 ): SearchResults {
 	if (!satisfied_query && !unsatisfied_query) {
 		error(400, 'No properties selected')
@@ -40,7 +40,7 @@ export function fetch_search_results(
 		: []
 
 	const invalid_satisfied_property = satisfied_properties.find(
-		(p) => !all_properties.has(p),
+		(p) => !all_properties.has(p)
 	)
 
 	if (invalid_satisfied_property) {
@@ -52,7 +52,7 @@ export function fetch_search_results(
 		: []
 
 	const invalid_unsatisfied_property = unsatisfied_properties.find(
-		(p) => !all_properties.has(p),
+		(p) => !all_properties.has(p)
 	)
 
 	if (invalid_unsatisfied_property) {
@@ -60,11 +60,11 @@ export function fetch_search_results(
 	}
 
 	const dual_satisfied_properties = satisfied_properties.map(
-		(p) => dual_properties_dict[p],
+		(p) => dual_properties_dict[p]
 	)
 
 	const dual_unsatisfied_properties = unsatisfied_properties.map(
-		(p) => dual_properties_dict[p],
+		(p) => dual_properties_dict[p]
 	)
 
 	const dual_search_available =
@@ -74,7 +74,7 @@ export function fetch_search_results(
 	const { contradiction, err: err_con } = get_contradiction(
 		new Set(satisfied_properties),
 		new Set(unsatisfied_properties),
-		type,
+		type
 	)
 
 	if (err_con) error(500, 'Consistency check failed')
@@ -90,7 +90,7 @@ export function fetch_search_results(
 			dual_unsatisfied_properties,
 			dual_search_available,
 			found_structures: [],
-			type,
+			type
 		}
 	}
 
@@ -132,8 +132,8 @@ export function fetch_search_results(
 			type,
 			...all_selected_properties,
 			...satisfied_properties,
-			...unsatisfied_properties,
-		],
+			...unsatisfied_properties
+		]
 	})
 
 	if (err) error(500, 'Search failed')
@@ -148,6 +148,6 @@ export function fetch_search_results(
 		dual_unsatisfied_properties,
 		dual_search_available,
 		found_structures,
-		type,
+		type
 	}
 }

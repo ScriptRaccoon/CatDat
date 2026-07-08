@@ -7,7 +7,7 @@ import type {
 	StructureDisplay,
 	StructureShort,
 	StructureType,
-	TagObject,
+	TagObject
 } from '$lib/commons/types'
 import { error } from '@sveltejs/kit'
 import sql from 'sql-template-tag'
@@ -23,7 +23,7 @@ export function fetch_structure(type: StructureType, id: string): StructureDetai
 			PropertyAssignmentDB,
 			PropertyShort,
 			StructureShort,
-			CommentObject,
+			CommentObject
 		]
 	>([
 		// basic information
@@ -115,7 +115,7 @@ export function fetch_structure(type: StructureType, id: string): StructureDetai
 		sql`
             SELECT id, comment FROM structure_comments
             WHERE structure_id = ${id}
-        `,
+        `
 	])
 
 	if (err) error(500, `Could not load ${type} with ID ${id}`)
@@ -127,7 +127,7 @@ export function fetch_structure(type: StructureType, id: string): StructureDetai
 		properties_db,
 		unknown_properties,
 		undistinguishable_structures,
-		comments,
+		comments
 	] = results
 
 	if (!structures.length) error(404, `Could not find ${type} with ID '${id}'`)
@@ -157,6 +157,6 @@ export function fetch_structure(type: StructureType, id: string): StructureDetai
 		unknown_properties,
 		undecidable_properties,
 		undistinguishable_structures,
-		comments,
+		comments
 	}
 }

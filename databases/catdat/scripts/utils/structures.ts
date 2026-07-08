@@ -25,7 +25,7 @@ export function get_structures(db: Database, type: StructureType): StructureMeta
                 s.dual_structure_id AS dual
             FROM structures s
 			WHERE s.type = ?
-            ORDER BY lower(s.name)`,
+            ORDER BY lower(s.name)`
 		)
 		.all(type)
 
@@ -43,7 +43,7 @@ export function get_structures(db: Database, type: StructureType): StructureMeta
 					`SELECT property_id FROM property_assignments
 					INNER JOIN ${TABLES[type]} t ON t.id = ?
 					WHERE structure_id = t.${map}
-					AND is_satisfied = TRUE`,
+					AND is_satisfied = TRUE`
 				)
 				.pluck()
 
@@ -65,7 +65,7 @@ export function get_structures(db: Database, type: StructureType): StructureMeta
  * original structure to prevent circular reasoning.
  */
 export function is_dual_structure(
-	structure: StructureMeta,
+	structure: StructureMeta
 ): structure is StructureMeta & { dual: string } {
 	return Boolean(structure.dual) && structure.name.toLowerCase().startsWith('dual')
 }

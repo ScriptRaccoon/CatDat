@@ -25,6 +25,6 @@ export function save_comparison(type: StructureType, compared_categories: string
 
 	window.sessionStorage.setItem(
 		`comparison:${type}`,
-		JSON.stringify(compared_categories),
+		JSON.stringify(compared_categories)
 	)
 }

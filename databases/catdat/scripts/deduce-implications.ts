@@ -21,7 +21,7 @@ export function create_dualized_implications(type: StructureType) {
 	const structure_maps = db
 		.prepare<[StructureType], { map: string; mapped_type: StructureType }>(
 			`SELECT map, mapped_type
-			FROM structure_maps WHERE type = ?`,
+			FROM structure_maps WHERE type = ?`
 		)
 		.all(type)
 
@@ -70,7 +70,7 @@ export function create_dualized_implications(type: StructureType) {
 				)
 			) AS dual_mapped_assumptions
 		FROM implications_view i
-		WHERE i.type = ? AND i.is_deduced = FALSE`,
+		WHERE i.type = ? AND i.is_deduced = FALSE`
 	)
 
 	const implications = implications_query.all(type)
@@ -108,7 +108,7 @@ export function create_dualized_implications(type: StructureType) {
 			const conclusions = parse_json_set<string>(impl.conclusions)
 			const dual_conclusions = parse_json_set<string | null>(impl.dual_conclusions)
 			const dual_mapped_assumptions = parse_nested_json_set<string | null>(
-				impl.dual_mapped_assumptions,
+				impl.dual_mapped_assumptions
 			)
 
 			if (dual_assumptions.has(null)) continue
@@ -132,7 +132,7 @@ export function create_dualized_implications(type: StructureType) {
 				type,
 				impl.is_equivalence,
 				'This follows from the dual implication.',
-				impl.id,
+				impl.id
 			)
 
 			for (const a of dual_assumptions) {
@@ -173,7 +173,7 @@ export function create_self_dual_implications(type: StructureType) {
 				type = ?
 				AND dual_property_id IS NOT NULL
 				AND id != dual_property_id
-				AND invariant_under_equivalences = TRUE`,
+				AND invariant_under_equivalences = TRUE`
 		)
 		.all(type)
 

@@ -4,14 +4,14 @@ const ENCODE_MAP: Record<string, string> = {
 	' ': '_',
 	'ℵ₀': 'aleph0',
 	'ℵ₁': 'aleph1',
-	'ℵ₂': 'aleph2',
+	'ℵ₂': 'aleph2'
 }
 
 const DECODE_MAP: Record<string, string> = {
 	_: ' ',
 	aleph0: 'ℵ₀',
 	aleph1: 'ℵ₁',
-	aleph2: 'ℵ₂',
+	aleph2: 'ℵ₂'
 }
 
 export function encode_property_ID(id: string): string {

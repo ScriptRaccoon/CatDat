@@ -39,7 +39,7 @@ function execute_tests() {
 		test_decided_structures(decided_categories, 'category')
 		test_properties_of_selected_structures(
 			{ Set: Set_expected, Ab: Ab_expected, Top: Top_expected },
-			'category',
+			'category'
 		)
 
 		console.info('\n--- Test functors ---')
@@ -49,7 +49,7 @@ function execute_tests() {
 		test_decided_structures(decided_functors, 'functor')
 		test_properties_of_selected_structures(
 			{ forget_vector: forget_vector_expected, id_Set: id_Set_expected },
-			'functor',
+			'functor'
 		)
 
 		console.info('\n--- Test morphisms ---')
@@ -76,7 +76,7 @@ function test_mutual_structure_duals(type: StructureType) {
 	const structures_with_duals = db
 		.prepare<[StructureType], { id: string; dual: string | null }>(
 			`SELECT id, dual_structure_id AS dual
-			FROM structures WHERE type = ?`,
+			FROM structures WHERE type = ?`
 		)
 		.all(type)
 
@@ -102,14 +102,14 @@ function test_positivity(structure_id: string, type: StructureType) {
 	const unsatisfied_props = db
 		.prepare<[StructureType, string], string>(
 			`SELECT property_id FROM property_assignments
-			WHERE type = ? AND structure_id = ? AND is_satisfied = FALSE`,
+			WHERE type = ? AND structure_id = ? AND is_satisfied = FALSE`
 		)
 		.pluck()
 		.all(type, structure_id)
 
 	if (unsatisfied_props.length > 0) {
 		throw new Error(
-			`❌ The ${type} ${structure_id} has ${unsatisfied_props.length} unsatisfied properties, but it should have 0.`,
+			`❌ The ${type} ${structure_id} has ${unsatisfied_props.length} unsatisfied properties, but it should have 0.`
 		)
 	}
 
@@ -155,7 +155,7 @@ function test_decided_structures(structure_ids: string[], type: StructureType) {
 			(
 				SELECT 1 FROM property_assignments
 				WHERE type = ? AND structure_id = ? AND property_id = p.id
-			)`,
+			)`
 		)
 		.pluck()
 
@@ -164,7 +164,7 @@ function test_decided_structures(structure_ids: string[], type: StructureType) {
 
 		if (unknown_properties.length > 0) {
 			throw new Error(
-				`❌ Found unknown properties of ${structure_id}:\n${unknown_properties.join(', ')}.\nEvery property needs to be decided for this ${type}.`,
+				`❌ Found unknown properties of ${structure_id}:\n${unknown_properties.join(', ')}.\nEvery property needs to be decided for this ${type}.`
 			)
 		}
 
@@ -180,14 +180,14 @@ function test_decided_structures(structure_ids: string[], type: StructureType) {
  */
 function test_properties_of_selected_structures(
 	expected: Record<string, Record<string, boolean>>,
-	type: StructureType,
+	type: StructureType
 ) {
 	const property_query = db.prepare<
 		[StructureType, string],
 		{ property_id: string; is_satisfied: 0 | 1 }
 	>(
 		`SELECT property_id, is_satisfied FROM property_assignments
-		WHERE type = ? AND structure_id = ? AND is_satisfied IS NOT NULL`,
+		WHERE type = ? AND structure_id = ? AND is_satisfied IS NOT NULL`
 	)
 
 	for (const structure_id in expected) {
@@ -211,7 +211,7 @@ function check_link_targets_exist() {
 		fs
 			.readdirSync(path.resolve('content'))
 			.filter((file) => file.endsWith('.md'))
-			.map((file) => path.basename(file, '.md')),
+			.map((file) => path.basename(file, '.md'))
 	)
 
 	const proofs: { proof: string; error_prefix: string }[] = [
@@ -222,28 +222,28 @@ function check_link_targets_exist() {
 					structure_id AS structure,
 					property_id AS property,
 					proof
-				FROM property_assignments`,
+				FROM property_assignments`
 			)
 			.all()
 			.map((x) => ({
 				proof: x.proof,
-				error_prefix: `❌ The proof of (${x.structure}, ${x.property})`,
+				error_prefix: `❌ The proof of (${x.structure}, ${x.property})`
 			})),
 		...db
 			.prepare<never[], { id: string; proof: string }>(
-				`SELECT id, proof FROM implications`,
+				`SELECT id, proof FROM implications`
 			)
 			.all()
 			.map((x) => ({
 				proof: x.proof,
-				error_prefix: `❌ The proof of the implication (${x.id})`,
-			})),
+				error_prefix: `❌ The proof of the implication (${x.id})`
+			}))
 	]
 
 	for (const { proof, error_prefix } of proofs) {
 		const link_regex = new RegExp(
 			`<a\\s+href="\\/(${STRUCTURE_TYPES.join('|')})(?:-(implication|property))?\\/([^"]+)"`,
-			'g',
+			'g'
 		)
 
 		for (const match of proof.matchAll(link_regex)) {
@@ -267,7 +267,7 @@ function check_link_targets_exist() {
 
 			if (!exists) {
 				throw new Error(
-					`${error_prefix} has a link to "${id}" which does not exist:\n"${proof}"`,
+					`${error_prefix} has a link to "${id}" which does not exist:\n"${proof}"`
 				)
 			}
 		}
@@ -279,7 +279,7 @@ function check_link_targets_exist() {
 
 			if (!content_ids.has(id)) {
 				throw new Error(
-					`${error_prefix} has a link to "${id}" which does not exist:\n"${proof}"`,
+					`${error_prefix} has a link to "${id}" which does not exist:\n"${proof}"`
 				)
 			}
 		}

@@ -9,7 +9,7 @@ import type {
 	PropertyEntry,
 	StructureYaml,
 	PropertyYaml,
-	MorphismYaml,
+	MorphismYaml
 } from './utils/seed.types'
 import { create_schema_hash, get_saved_schema_hash } from './utils/schema'
 import { PLURALS, STRUCTURE_TYPES, type StructureType } from './config'
@@ -106,23 +106,23 @@ function clear_all_tables() {
  */
 function seed_config() {
 	const structure_tag_insert = db.prepare<[string, StructureType]>(
-		`INSERT INTO structure_tags (tag, type) VALUES (?, ?)`,
+		`INSERT INTO structure_tags (tag, type) VALUES (?, ?)`
 	)
 
 	const property_tag_insert = db.prepare<[string, StructureType]>(
-		`INSERT INTO property_tags (tag, type) VALUES (?, ?)`,
+		`INSERT INTO property_tags (tag, type) VALUES (?, ?)`
 	)
 
 	const relation_insert = db.prepare(
-		`INSERT INTO relations (relation, negation, conditional) VALUES (?, ?, ?)`,
+		`INSERT INTO relations (relation, negation, conditional) VALUES (?, ?, ?)`
 	)
 
 	const object_insert = db.prepare(
-		`INSERT INTO special_object_types (type, dual) VALUES (?, ?)`,
+		`INSERT INTO special_object_types (type, dual) VALUES (?, ?)`
 	)
 
 	const morphism_insert = db.prepare(
-		`INSERT INTO special_morphism_types (type, dual) VALUES (?, ?)`,
+		`INSERT INTO special_morphism_types (type, dual) VALUES (?, ?)`
 	)
 
 	function insert_config(config: ConfigYaml) {
@@ -163,7 +163,7 @@ function seed_config() {
 function seed_structures<T extends StructureYaml>({
 	type,
 	folder,
-	extra,
+	extra
 }: {
 	type: StructureType
 	folder: string
@@ -174,34 +174,34 @@ function seed_structures<T extends StructureYaml>({
 			id, type, name, notation, description, nlab_link,
 			dual_structure_id
 		)
-		VALUES (?, ?, ?, ?, ?, ?, ?)`,
+		VALUES (?, ?, ?, ?, ?, ?, ?)`
 	)
 
 	const tag_insert = db.prepare(
 		`INSERT INTO structure_tag_assignments (structure_id, tag, type)
-		VALUES (?, ?, ?)`,
+		VALUES (?, ?, ?)`
 	)
 
 	const comment_insert = db.prepare(
 		`INSERT INTO structure_comments (structure_id, comment)
-		VALUES (?, ?)`,
+		VALUES (?, ?)`
 	)
 
 	const related_insert = db.prepare(
 		`INSERT INTO related_structures (structure_id, related_structure_id, type)
-		VALUES (?, ?, ?)`,
+		VALUES (?, ?, ?)`
 	)
 
 	const property_assignment_insert = db.prepare(
 		`INSERT INTO property_assignments (
 			structure_id, property_id, type, is_satisfied, proof, check_redundancy
-		) VALUES (?, ?, ?, ?, ?, ?)`,
+		) VALUES (?, ?, ?, ?, ?, ?)`
 	)
 
 	function insert_property_assignments(
 		structure_id: string,
 		entries: PropertyEntry[],
-		is_satisfied: 0 | 1 | null,
+		is_satisfied: 0 | 1 | null
 	) {
 		for (const entry of entries) {
 			property_assignment_insert.run(
@@ -210,7 +210,7 @@ function seed_structures<T extends StructureYaml>({
 				type,
 				is_satisfied,
 				entry.proof,
-				entry.check_redundancy === false ? 0 : 1,
+				entry.check_redundancy === false ? 0 : 1
 			)
 		}
 	}
@@ -223,7 +223,7 @@ function seed_structures<T extends StructureYaml>({
 			structure.notation,
 			structure.description,
 			structure.nlab_link,
-			structure.dual || null,
+			structure.dual || null
 		)
 
 		if (!structure.tags.length) {
@@ -248,7 +248,7 @@ function seed_structures<T extends StructureYaml>({
 		insert_property_assignments(
 			structure.id,
 			structure.undecidable_properties ?? [],
-			null,
+			null
 		)
 
 		if (extra) extra(structure)
@@ -264,16 +264,16 @@ function insert_category(category: CategoryYaml) {
 	const category_insert = db.prepare(
 		`INSERT INTO categories (
 	        id, objects, morphisms
-		) VALUES (?, ?, ?)`,
+		) VALUES (?, ?, ?)`
 	)
 
 	const special_object_insert = db.prepare(
-		`INSERT INTO special_objects (category_id, type, description) VALUES (?, ?, ?)`,
+		`INSERT INTO special_objects (category_id, type, description) VALUES (?, ?, ?)`
 	)
 
 	const special_morphism_insert = db.prepare(
 		`INSERT INTO special_morphisms (category_id, type, description, proof)
-		VALUES (?, ?, ?, ?)`,
+		VALUES (?, ?, ?, ?)`
 	)
 
 	category_insert.run(category.id, category.objects, category.morphisms)
@@ -295,14 +295,14 @@ function insert_category(category: CategoryYaml) {
 function insert_functor(functor: FunctorYaml) {
 	const functor_insert = db.prepare(
 		`INSERT INTO functors (id, source, target, left_adjoint)
-		VALUES (?, ?, ?, ?)`,
+		VALUES (?, ?, ?, ?)`
 	)
 
 	functor_insert.run(
 		functor.id,
 		functor.source,
 		functor.target,
-		functor.left_adjoint || null,
+		functor.left_adjoint || null
 	)
 }
 
@@ -312,7 +312,7 @@ function insert_functor(functor: FunctorYaml) {
 function insert_morphism(morphism: MorphismYaml) {
 	const morphism_insert = db.prepare(
 		`INSERT INTO morphisms (id, category)
-		VALUES (?, ?)`,
+		VALUES (?, ?)`
 	)
 
 	morphism_insert.run(morphism.id, morphism.category)
@@ -332,13 +332,13 @@ function seed_properties({ type, folder }: { type: StructureType; folder: string
 	const related_insert = db.prepare(
 		`INSERT INTO related_properties
 			(property_id, related_property_id, type)
-		VALUES (?, ?, ?)`,
+		VALUES (?, ?, ?)`
 	)
 
 	const tag_insert = db.prepare(
 		`INSERT INTO property_tag_assignments
 			(property_id, tag, type)
-		VALUES (?, ?, ?)`,
+		VALUES (?, ?, ?)`
 	)
 
 	function insert_property(property: PropertyYaml) {
@@ -349,7 +349,7 @@ function seed_properties({ type, folder }: { type: StructureType; folder: string
 			property.description,
 			property.nlab_link,
 			property.dual,
-			Number(property.invariant_under_equivalences),
+			Number(property.invariant_under_equivalences)
 		)
 
 		for (const related of property.related) {
@@ -370,7 +370,7 @@ function seed_properties({ type, folder }: { type: StructureType; folder: string
 		db,
 		`properties of ${PLURALS[type]}`,
 		path.join(data_folder, folder),
-		insert_property,
+		insert_property
 	)
 }
 
@@ -381,32 +381,32 @@ function seed_implications({ type, folder }: { type: StructureType; folder: stri
 	const structure_maps = db
 		.prepare<[StructureType], { map: string; mapped_type: StructureType }>(
 			`SELECT map, mapped_type
-			FROM structure_maps WHERE type = ?`,
+			FROM structure_maps WHERE type = ?`
 		)
 		.all(type)
 
 	const implication_insert = db.prepare(
 		`INSERT INTO implications (
 	        id, type, proof, is_equivalence
-		) VALUES (?, ?, ?, ?)`,
+		) VALUES (?, ?, ?, ?)`
 	)
 
 	const assumption_insert = db.prepare(
 		`INSERT INTO assumptions (
 			implication_id, property_id, type
-		) VALUES (?, ?, ?)`,
+		) VALUES (?, ?, ?)`
 	)
 
 	const conclusion_insert = db.prepare(
 		`INSERT INTO conclusions (
 			implication_id, property_id, type
-		) VALUES (?, ?, ?)`,
+		) VALUES (?, ?, ?)`
 	)
 
 	const mapped_assumption_insert = db.prepare(
 		`INSERT INTO mapped_assumptions (
 			implication_id, map, property_id, type, property_type
-		) VALUES (?, ?, ?, ?, ?)`,
+		) VALUES (?, ?, ?, ?, ?)`
 	)
 
 	function insert_implications(implications: ImplicationYaml[]) {
@@ -436,6 +436,6 @@ function seed_implications({ type, folder }: { type: StructureType; folder: stri
 		db,
 		`${type} implications`,
 		path.join(data_folder, folder),
-		insert_implications,
+		insert_implications
 	)
 }

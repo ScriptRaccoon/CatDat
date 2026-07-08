@@ -7,7 +7,7 @@
 	import {
 		assignment_level,
 		ASSIGNMENT_LEVELS,
-		update_assignment_level,
+		update_assignment_level
 	} from '$lib/states/assignment_level.svelte'
 	import { theme, THEMES, update_theme } from '$lib/states/theme.svelte'
 	import MetaData from '$components/MetaData.svelte'

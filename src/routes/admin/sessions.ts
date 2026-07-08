@@ -14,7 +14,7 @@ export function create_session(event: RequestEvent) {
 		httpOnly: true,
 		secure: true,
 		sameSite: 'lax',
-		maxAge: 60 * 60,
+		maxAge: 60 * 60
 	})
 }
 

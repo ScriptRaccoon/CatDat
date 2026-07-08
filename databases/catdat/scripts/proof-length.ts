@@ -30,7 +30,7 @@ function report_long_property_proofs(type: StructureType) {
                 length(proof) AS length
             FROM property_assignments
             WHERE type = ? AND is_deduced = FALSE AND length(proof) >= ?
-            ORDER BY length(proof) DESC`,
+            ORDER BY length(proof) DESC`
 		)
 		.all(type, PROOF_LENGTH_THRESHOLD)
 
@@ -40,7 +40,7 @@ function report_long_property_proofs(type: StructureType) {
 
 	for (const { id, property, length } of long_proofs) {
 		console.warn(
-			`🟡 The proof for (${id}, ${property}) has ${length} characters. Consider moving it to a content page.`,
+			`🟡 The proof for (${id}, ${property}) has ${length} characters. Consider moving it to a content page.`
 		)
 	}
 }
@@ -56,7 +56,7 @@ function report_long_implication_proofs(type: StructureType) {
 				type = ?
 				AND is_deduced = FALSE
 				AND length(proof) >= ?
-            ORDER BY length(proof) DESC`,
+            ORDER BY length(proof) DESC`
 		)
 		.all(type, PROOF_LENGTH_THRESHOLD)
 
@@ -66,7 +66,7 @@ function report_long_implication_proofs(type: StructureType) {
 
 	for (const { id, length } of long_proofs) {
 		console.warn(
-			`🟡 The proof for ${id} has ${length} characters. Consider moving it to a content page.`,
+			`🟡 The proof for ${id} has ${length} characters. Consider moving it to a content page.`
 		)
 	}
 }

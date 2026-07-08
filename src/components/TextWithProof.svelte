@@ -18,7 +18,7 @@
 		show_popup({
 			id,
 			heading: 'Proof',
-			text: proof!,
+			text: proof!
 		})
 	}
 </script>

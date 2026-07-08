@@ -5,7 +5,7 @@ import { restrict_representable_functors } from './restrict-functor-properties'
 import {
 	clear_deduced_implications,
 	create_dualized_implications,
-	create_self_dual_implications,
+	create_self_dual_implications
 } from './deduce-implications'
 
 deduce()

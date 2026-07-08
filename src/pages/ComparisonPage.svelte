@@ -6,7 +6,7 @@
 	import {
 		get_compared_structures,
 		MAX_STRUCTURES_COMPARE,
-		save_comparison,
+		save_comparison
 	} from '$lib/commons/compare.utils'
 	import { PLURALS } from '$lib/commons/structures'
 	import type { StructureShort, StructureType } from '$lib/commons/types'
@@ -28,12 +28,11 @@
 	let chosen_structures: StructureShort[] = $derived(
 		compared_structures
 			.map((name) => structures.find((s) => s.name === name))
-			.filter((s) => s !== undefined),
+			.filter((s) => s !== undefined)
 	)
 
 	let is_valid_comparison = $derived(
-		chosen_structures.length > 0 &&
-			chosen_structures.length <= MAX_STRUCTURES_COMPARE,
+		chosen_structures.length > 0 && chosen_structures.length <= MAX_STRUCTURES_COMPARE
 	)
 
 	function compare_structures() {
@@ -43,7 +42,7 @@
 	}
 
 	let is_comparing = $derived(
-		navigating.to?.route.id?.startsWith(`/${type}-comparison`),
+		navigating.to?.route.id?.startsWith(`/${type}-comparison`)
 	)
 </script>
 

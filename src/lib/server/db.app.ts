@@ -8,7 +8,7 @@ import { APP_DB_AUTH_TOKEN, APP_DB_URL } from '$env/static/private'
  */
 const db_app = createClient({
 	url: APP_DB_URL,
-	authToken: APP_DB_AUTH_TOKEN,
+	authToken: APP_DB_AUTH_TOKEN
 })
 
 db_app.execute('PRAGMA foreign_keys = ON')
@@ -19,7 +19,7 @@ db_app.execute('PRAGMA foreign_keys = ON')
  */
 export async function query_app<T>({
 	sql,
-	values = [],
+	values = []
 }: {
 	sql: string
 	values?: any[]
@@ -38,15 +38,15 @@ export async function query_app<T>({
  * use sql templates, and specify the type of the result.
  */
 export async function batch_app<T extends any[]>(
-	queries: { sql: string; values?: any[] }[],
+	queries: { sql: string; values?: any[] }[]
 ) {
 	try {
 		const results = await db_app.batch(
-			queries.map(({ sql, values = [] }) => ({ sql, args: values ?? [] })),
+			queries.map(({ sql, values = [] }) => ({ sql, args: values ?? [] }))
 		)
 		return {
 			results: results.map(({ rows }) => rows) as Arrayed<T>,
-			err: null,
+			err: null
 		}
 	} catch (err) {
 		console.error(err)

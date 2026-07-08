@@ -29,7 +29,7 @@
 	let displayed_implications = $derived(
 		show_deduced_implications
 			? implications
-			: implications.filter((implication) => !implication.is_deduced),
+			: implications.filter((implication) => !implication.is_deduced)
 	)
 
 	let search = $state('')
@@ -38,10 +38,10 @@
 		search
 			? displayed_implications.filter((implication) =>
 					[...implication.assumptions, ...implication.conclusions].some(
-						(prop) => normalize_text(prop).includes(normalize_text(search)),
-					),
+						(prop) => normalize_text(prop).includes(normalize_text(search))
+					)
 				)
-			: displayed_implications,
+			: displayed_implications
 	)
 </script>
 
@@ -54,7 +54,7 @@
 <p class="hint">
 	{pluralize(filtered_implications.length, {
 		one: 'Found {count} implication*',
-		other: 'Found {count} implications*',
+		other: 'Found {count} implications*'
 	})}
 </p>
 

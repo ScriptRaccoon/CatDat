@@ -21,7 +21,7 @@
 <p class="hint">
 	{pluralize(properties.length, {
 		one: `Found {count} property`,
-		other: `Found {count} properties`,
+		other: `Found {count} properties`
 	})}
 </p>
 

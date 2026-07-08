@@ -22,7 +22,7 @@ export function write_schema_hash(hash: string) {
 	fs.writeFileSync(
 		path.join(schema_folder, 'schema.json'),
 		JSON.stringify({ hash }),
-		'utf8',
+		'utf8'
 	)
 }
 

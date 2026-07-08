@@ -10,7 +10,7 @@
 		ImplicationDisplay,
 		MappedTypes,
 		StructureShort,
-		StructureType,
+		StructureType
 	} from '$lib/commons/types'
 	import { PLURALS } from '$lib/commons/structures'
 
@@ -91,7 +91,7 @@
 		<summary class="hint">
 			{pluralize(structures.length, {
 				one: `Show {count} ${type} using this implication`,
-				other: `Show {count} ${PLURALS[type]} using this implication`,
+				other: `Show {count} ${PLURALS[type]} using this implication`
 			})}
 		</summary>
 		<StructureList {structures} {type} />

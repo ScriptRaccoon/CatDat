@@ -36,7 +36,7 @@ function deduce_special_objects_of_dual_categories() {
             FROM structures c
             INNER JOIN special_objects o ON o.category_id = c.id
             INNER JOIN special_object_types t ON t.type = o.type
-            WHERE c.type = 'category' AND c.dual_structure_id IS NOT NULL`,
+            WHERE c.type = 'category' AND c.dual_structure_id IS NOT NULL`
 		)
 		.run()
 

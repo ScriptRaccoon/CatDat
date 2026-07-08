@@ -6,7 +6,7 @@
 	import type {
 		PropertyAssignmentDisplay,
 		PropertyShort,
-		StructureType,
+		StructureType
 	} from '$lib/commons/types'
 	import { assignment_level } from '$lib/states/assignment_level.svelte'
 	import { pluralize } from '$lib/client/utils'
@@ -24,7 +24,7 @@
 		satisfied_properties,
 		unsatisfied_properties,
 		undecidable_properties,
-		unknown_properties,
+		unknown_properties
 	}: Props = $props()
 </script>
 
@@ -102,7 +102,7 @@
 		<p class="hint">
 			{pluralize(unknown_properties.length, {
 				one: "There is {count} property for which the database doesn't have an answer if it is satisfied or not.",
-				other: "There are {count} properties for which the database doesn't have an answer if they are satisfied or not.",
+				other: "There are {count} properties for which the database doesn't have an answer if they are satisfied or not."
 			})}
 
 			Please help to <a href="/content/contribute">contribute</a> the data!
@@ -120,7 +120,7 @@
 			<p class="hint">
 				{pluralize(undecidable_properties.length, {
 					one: 'There is {count} property for which it cannot be decided if it is satisfied or not.',
-					other: 'There are {count} properties for which it cannot be decided if they are satisfied or not.',
+					other: 'There are {count} properties for which it cannot be decided if they are satisfied or not.'
 				})}
 			</p>
 		{/if}

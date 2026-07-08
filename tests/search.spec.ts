@@ -11,15 +11,15 @@ test('user can navigate to the search page', async ({ page }) => {
 	await nav
 		.getByRole('link', {
 			name: 'Search',
-			exact: true,
+			exact: true
 		})
 		.click()
 
 	await expect(
 		page.getByRole('heading', {
 			name: 'Property combo search',
-			exact: true,
-		}),
+			exact: true
+		})
 	).toBeVisible()
 
 	await expect(page).toHaveURL('/category-search')
@@ -30,7 +30,7 @@ test('user can enter properties', async ({ page }) => {
 
 	const satisfied_input_field = page.getByRole('textbox', {
 		name: 'Satisfied property',
-		exact: true,
+		exact: true
 	})
 
 	for (const p of ['finitely complete', 'finitely cocomplete']) {
@@ -48,7 +48,7 @@ test('user can enter properties', async ({ page }) => {
 
 	const unsatisfied_input_field = page.getByRole('textbox', {
 		name: 'Unsatisfied property',
-		exact: true,
+		exact: true
 	})
 
 	for (const q of ['cocomplete', 'abelian']) {
@@ -67,74 +67,74 @@ test('user can enter properties', async ({ page }) => {
 	await page
 		.getByRole('button', {
 			name: 'Search',
-			exact: true,
+			exact: true
 		})
 		.click()
 
 	await expect(page).toHaveURL(
-		`/category-search/results?satisfied=finitely_complete${encoded_delimiter}finitely_cocomplete&unsatisfied=cocomplete${encoded_delimiter}abelian`,
+		`/category-search/results?satisfied=finitely_complete${encoded_delimiter}finitely_cocomplete&unsatisfied=cocomplete${encoded_delimiter}abelian`
 	)
 
 	await expect(
 		page.getByRole('heading', {
 			name: 'Search results',
-			exact: true,
-		}),
+			exact: true
+		})
 	).toBeVisible()
 })
 
 test('user can view search results', async ({ page }) => {
 	await page.goto(
-		`/category-search/results?satisfied=finitely_complete${encoded_delimiter}finitely_cocomplete&unsatisfied=cocomplete${encoded_delimiter}abelian`,
+		`/category-search/results?satisfied=finitely_complete${encoded_delimiter}finitely_cocomplete&unsatisfied=cocomplete${encoded_delimiter}abelian`
 	)
 
 	await expect(
 		page.getByRole('heading', {
 			name: 'Search results',
-			exact: true,
-		}),
+			exact: true
+		})
 	).toBeVisible()
 
 	await expect(
 		page.getByRole('link', {
 			name: 'finitely complete',
-			exact: true,
-		}),
+			exact: true
+		})
 	).toBeVisible()
 
 	await expect(
 		page.getByRole('link', {
 			name: 'finitely cocomplete',
-			exact: true,
-		}),
+			exact: true
+		})
 	).toBeVisible()
 
 	await expect(
 		page.getByRole('link', {
 			name: 'cocomplete',
-			exact: true,
-		}),
+			exact: true
+		})
 	).toBeVisible()
 
 	await expect(
 		page.getByRole('link', {
 			name: 'abelian',
-			exact: true,
-		}),
+			exact: true
+		})
 	).toBeVisible()
 
 	await expect(
 		page.getByRole('link', {
 			name: 'category of finite sets',
-			exact: true,
-		}),
+			exact: true
+		})
 	).toBeVisible()
 
 	await expect(
 		page.getByRole('link', {
 			name: 'category of countable groups',
-			exact: true,
-		}),
+			exact: true
+		})
 	).toBeVisible()
 })
 
@@ -148,27 +148,27 @@ test('user can dualize search', async ({ page }) => {
 	await expect(
 		page.getByRole('heading', {
 			name: 'Search results',
-			exact: true,
-		}),
+			exact: true
+		})
 	).toBeVisible()
 
 	await expect(
 		page.getByRole('link', {
 			name: 'Barr-exact',
-			exact: true,
-		}),
+			exact: true
+		})
 	).toBeVisible()
 
 	await expect(
 		page.getByRole('link', {
 			name: 'category of finite groups',
-			exact: true,
-		}),
+			exact: true
+		})
 	).toBeVisible()
 
 	const dualize_link = page.getByRole('link', {
 		name: 'Dualize search',
-		exact: true,
+		exact: true
 	})
 
 	await expect(dualize_link).toBeVisible()
@@ -179,21 +179,21 @@ test('user can dualize search', async ({ page }) => {
 	await expect(
 		page.getByRole('link', {
 			name: 'Barr-coexact',
-			exact: true,
-		}),
+			exact: true
+		})
 	).toBeVisible()
 
 	await expect(
 		page.getByRole('link', {
 			name: 'category of finite groups',
-			exact: true,
-		}),
+			exact: true
+		})
 	).toHaveCount(0)
 
 	await expect(
 		page.getByRole('link', {
 			name: 'poset of natural numbers',
-			exact: true,
-		}),
+			exact: true
+		})
 	).toBeVisible()
 })

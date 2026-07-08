@@ -6,12 +6,12 @@ export const MATH_REGEX = /\$\$(.*?)\$\$|\$(.*?)\$/gs
 
 export function render_formula(
 	formula: string,
-	options: { displayMode: boolean } = { displayMode: false },
+	options: { displayMode: boolean } = { displayMode: false }
 ): string {
 	return katex.renderToString(formula, {
 		throwOnError: true,
 		macros: MACROS,
-		...options,
+		...options
 	})
 }
 

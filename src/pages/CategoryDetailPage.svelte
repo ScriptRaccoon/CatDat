@@ -66,7 +66,7 @@
 				<p class="hint">
 					{pluralize(data.functors.length, {
 						one: 'There is 1 functor',
-						other: 'There are {count} functors',
+						other: 'There are {count} functors'
 					})}
 					whose source or target is the {data.structure.name}.
 				</p>

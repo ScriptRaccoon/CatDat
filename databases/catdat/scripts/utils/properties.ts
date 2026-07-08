@@ -25,7 +25,7 @@ export function get_properties_dict(db: Database, type: StructureType) {
 			FROM properties p
 			INNER JOIN relations r ON r.relation = p.relation
 			WHERE p.type = ?
-			ORDER BY lower(p.id)`,
+			ORDER BY lower(p.id)`
 		)
 		.all(type)
 
@@ -44,7 +44,7 @@ export function get_properties_dict(db: Database, type: StructureType) {
 export function get_property_assignments(
 	db: Database,
 	structures: { id: string }[],
-	type: StructureType,
+	type: StructureType
 ) {
 	const assignments = db
 		.prepare<
@@ -60,7 +60,7 @@ export function get_property_assignments(
 				structure_id,
 				is_satisfied
 			FROM property_assignments
-			WHERE type = ?`,
+			WHERE type = ?`
 		)
 		.all(type)
 
@@ -70,9 +70,9 @@ export function get_property_assignments(
 			{
 				satisfied: new Set<string>(),
 				unsatisfied: new Set<string>(),
-				undecidable: new Set<string>(),
-			},
-		]),
+				undecidable: new Set<string>()
+			}
+		])
 	)
 
 	for (const assignment of assignments) {
@@ -105,7 +105,7 @@ function get_assignment_key(is_satisfied: 0 | 1 | null) {
 export function get_property_assignments_by_deduction(
 	db: Database,
 	structures: { id: string }[],
-	type: StructureType,
+	type: StructureType
 ) {
 	const assignments = db
 		.prepare<
@@ -125,7 +125,7 @@ export function get_property_assignments_by_deduction(
 			FROM property_assignments
 			WHERE
 				type = ?
-				AND is_satisfied IS NOT NULL`,
+				AND is_satisfied IS NOT NULL`
 		)
 		.all(type)
 
@@ -135,14 +135,14 @@ export function get_property_assignments_by_deduction(
 			{
 				satisfied: {
 					non_deduced: new Set<string>(),
-					deduced: new Set<string>(),
+					deduced: new Set<string>()
 				},
 				unsatisfied: {
 					non_deduced: new Set<string>(),
-					deduced: new Set<string>(),
-				},
-			},
-		]),
+					deduced: new Set<string>()
+				}
+			}
+		])
 	)
 
 	for (const assignment of assignments) {

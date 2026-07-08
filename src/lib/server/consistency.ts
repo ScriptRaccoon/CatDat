@@ -8,7 +8,7 @@ import { get_normalized_implications } from './fetchers/implications'
 export function get_contradiction(
 	satisfied_properties: Set<string>,
 	unsatisfied_properties: Set<string>,
-	type: StructureType,
+	type: StructureType
 ): { contradiction: string[] | null; err: SqliteError | null } {
 	for (const p of satisfied_properties) {
 		const contradiction = [`${p} ⟹ ${p}`]
@@ -22,7 +22,7 @@ export function get_contradiction(
 	const contradiction = contradiction_worker(
 		satisfied_properties,
 		unsatisfied_properties,
-		implications,
+		implications
 	)
 
 	return { contradiction, err: null }
@@ -31,7 +31,7 @@ export function get_contradiction(
 export function contradiction_worker(
 	satisfied_properties: Set<string>,
 	unsatisfied_properties: Set<string>,
-	implications: NormalizedImplication[],
+	implications: NormalizedImplication[]
 ): string[] | null {
 	for (const p of satisfied_properties) {
 		if (unsatisfied_properties.has(p)) return [`${p} ⟹ ${p}`]
@@ -73,14 +73,14 @@ export function contradiction_worker(
 	return build_shortest_proof(
 		satisfied_properties,
 		deduction_dict,
-		contradictory_property,
+		contradictory_property
 	)
 }
 
 function build_shortest_proof(
 	satisfied_properties: Set<string>,
 	deduction_dict: Record<string, NormalizedImplication>,
-	target_property: string,
+	target_property: string
 ) {
 	const proof: string[] = []
 

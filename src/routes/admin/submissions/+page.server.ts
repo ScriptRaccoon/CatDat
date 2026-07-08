@@ -45,7 +45,7 @@ export const actions = {
 		if (!submission_id) return fail(400, { error: 'Submission ID required' })
 
 		const { err } = await query_app(
-			sql`DELETE FROM submissions WHERE id = ${submission_id}`,
+			sql`DELETE FROM submissions WHERE id = ${submission_id}`
 		)
 
 		if (err) return fail(500, { error: 'Failed to delete submission' })
@@ -71,7 +71,7 @@ export const actions = {
 				SET approved_at = CURRENT_TIMESTAMP
 				WHERE id = ${submission_id}
 				RETURNING title, body, name, url
-			`,
+			`
 		)
 
 		if (err) return fail(500, { error: 'Failed to approve submission' })
@@ -80,7 +80,7 @@ export const actions = {
 
 		const app = new App({
 			appId: GITHUB_APP_ID,
-			privateKey: GITHUB_PRIVATE_KEY,
+			privateKey: GITHUB_PRIVATE_KEY
 		})
 
 		const footer = name
@@ -91,14 +91,14 @@ export const actions = {
 
 		try {
 			const octokit = await app.getInstallationOctokit(
-				Number(GITHUB_INSTALLATION_ID),
+				Number(GITHUB_INSTALLATION_ID)
 			)
 
 			const issue = await octokit.request('POST /repos/{owner}/{repo}/issues', {
 				owner: GITHUB_OWNER,
 				repo: GITHUB_REPO,
 				title,
-				body: full_body,
+				body: full_body
 			})
 
 			return { issue_url: issue.data.html_url }
@@ -106,5 +106,5 @@ export const actions = {
 			console.error(err)
 			return fail(502, { error: 'Issue could not be created' })
 		}
-	},
+	}
 }

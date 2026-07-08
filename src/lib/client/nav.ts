@@ -12,7 +12,7 @@ import {
 	faPenToSquare,
 	faPuzzlePiece,
 	faSearch,
-	type IconDefinition,
+	type IconDefinition
 } from '@fortawesome/free-solid-svg-icons'
 import { capitalize } from './utils'
 import { PLURALS } from '$lib/commons/structures'
@@ -29,38 +29,38 @@ export function get_navigation_links(type: StructureType): Link[] {
 		{
 			href: '/',
 			text: 'Home',
-			icon: faHome,
+			icon: faHome
 		},
 		{
 			href: `/${type}-list`,
 			text: capitalize(PLURALS[type]),
 			nested: [`/${type}/`, `/${type}-list/`],
-			icon: faDatabase,
+			icon: faDatabase
 		},
 		{
 			href: `/${type}-properties`,
 			text: `Properties`,
 			nested: [`/${type}-property/`, `/${type}-properties/`],
-			icon: faList,
+			icon: faList
 		},
 		{
 			href: `/${type}-implications`,
 			text: `Implications`,
 			nested: [`/${type}-implication`],
-			icon: faArrowsSplitUpAndLeft,
+			icon: faArrowsSplitUpAndLeft
 		},
 		{
 			href: `/${type}-comparison`,
 			text: `Compare`,
 			icon: faChartBar,
-			nested: [`/${type}-comparison`],
+			nested: [`/${type}-comparison`]
 		},
 		{
 			href: `/${type}-search`,
 			text: `Search`,
 			icon: faSearch,
-			nested: [`/${type}-search/results`],
-		},
+			nested: [`/${type}-search/results`]
+		}
 	]
 }
 
@@ -69,32 +69,32 @@ export function get_footer_links() {
 		{
 			href: '/content/contribute',
 			text: 'Contribute',
-			icon: faPenToSquare,
+			icon: faPenToSquare
 		},
 		{
 			href: '/settings',
 			text: 'Settings',
-			icon: faCog,
+			icon: faCog
 		},
 		{
 			href: '/missing',
 			text: 'Missing data',
-			icon: faPuzzlePiece,
+			icon: faPuzzlePiece
 		},
 		{
 			href: '/content/resources',
 			text: 'Resources',
-			icon: faBook,
+			icon: faBook
 		},
 		{
 			href: '/content/foundations',
 			text: 'Foundations',
-			icon: faCubes,
+			icon: faCubes
 		},
 		{
 			href: '/download',
 			text: 'Download',
-			icon: faDownload,
-		},
+			icon: faDownload
+		}
 	]
 }

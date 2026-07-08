@@ -13,7 +13,7 @@
 		RelatedStructure,
 		StructureDisplay,
 		StructureShort,
-		StructureType,
+		StructureType
 	} from '$lib/commons/types'
 	import type { Snippet } from 'svelte'
 
@@ -46,7 +46,7 @@
 		comments,
 		definition,
 		specials,
-		footer,
+		footer
 	}: Props = $props()
 </script>
 

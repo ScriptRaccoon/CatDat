@@ -37,7 +37,7 @@
 			const res = await fetch('/api/submissions', {
 				method: 'POST',
 				body: JSON.stringify({ title, body, url: page.url.href, name }),
-				headers: { 'Content-Type': 'application/json' },
+				headers: { 'Content-Type': 'application/json' }
 			})
 
 			const res_json = await res.json()
@@ -55,7 +55,7 @@
 			await tick()
 			section?.scrollIntoView({
 				block: 'end',
-				behavior: 'smooth',
+				behavior: 'smooth'
 			})
 		}
 	}
@@ -69,7 +69,7 @@
 		await tick()
 		section?.scrollIntoView({
 			block: 'start',
-			behavior: 'smooth',
+			behavior: 'smooth'
 		})
 	}
 </script>

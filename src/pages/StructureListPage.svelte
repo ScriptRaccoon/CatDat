@@ -23,9 +23,9 @@
 	let searched_structures = $derived(
 		search
 			? structures.filter((s) =>
-					normalize_text(s.name).includes(normalize_text(search)),
+					normalize_text(s.name).includes(normalize_text(search))
 				)
-			: structures,
+			: structures
 	)
 </script>
 
@@ -57,7 +57,7 @@
 	<p class="hint">
 		{pluralize(searched_structures.length, {
 			one: `Found {count} ${type}`,
-			other: `Found {count} ${PLURALS[type]}`,
+			other: `Found {count} ${PLURALS[type]}`
 		})}
 	</p>
 

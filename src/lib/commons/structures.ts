@@ -9,7 +9,7 @@ export function is_structure_type(txt: string): txt is StructureType {
 export const PLURALS: Record<StructureType, string> = {
 	category: 'categories',
 	functor: 'functors',
-	morphism: 'morphisms',
+	morphism: 'morphisms'
 }
 
 export function get_selected_type(pathname: string): StructureType {

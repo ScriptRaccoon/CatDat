@@ -22,7 +22,7 @@
 	let unsatisfied_properties: string[] = $state([])
 
 	let is_valid_search = $derived(
-		satisfied_properties.length > 0 || unsatisfied_properties.length > 0,
+		satisfied_properties.length > 0 || unsatisfied_properties.length > 0
 	)
 
 	$effect(() => {

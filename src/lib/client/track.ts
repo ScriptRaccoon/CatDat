@@ -11,8 +11,8 @@ export async function track_visit() {
 		headers: { 'Content-Type': 'application/json' },
 		body: JSON.stringify({
 			device_type: get_device_type(),
-			theme: theme.value,
-		}),
+			theme: theme.value
+		})
 	})
 
 	if (res.ok) sessionStorage.setItem('visit-tracked', '1')

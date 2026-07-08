@@ -107,8 +107,12 @@ Let $L$ be a functor which is left adjoint to a faithful functor $U$. Then $L$ p
 :::
 
 _Proof._ If $S$ is a generating set,
-$$\begin{align*}
+
+$$
+\begin{align*}
 \prod_{G\in S} \Hom(L(G),-) & \cong \prod_{G\in S} \Hom(G,U(-)) \\
 & \cong \left( \prod_{G\in S} \Hom(G,-) \right) \circ U
-\end{align*}$$
+\end{align*}
+$$
+
 is a composition of faithful functors, hence faithful. <span class="qed">$\square$</span>

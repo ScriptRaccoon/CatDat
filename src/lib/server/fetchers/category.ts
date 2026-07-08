@@ -9,7 +9,7 @@ export function fetch_category(id: string) {
 			{ objects: string; morphisms: string },
 			SpecialObject,
 			SpecialMorphism,
-			StructureShort,
+			StructureShort
 		]
 	>([
 		// specific information for the category
@@ -41,7 +41,7 @@ export function fetch_category(id: string) {
 			INNER JOIN structures s ON s.id = f.id
 			WHERE f.source = ${id} OR f.target = ${id}
 			ORDER BY lower(s.name)
-		`,
+		`
 	])
 
 	if (err) error(500, 'Could not load category')
@@ -55,7 +55,7 @@ export function fetch_category(id: string) {
 		...categories[0],
 		special_objects,
 		special_morphisms,
-		functors,
+		functors
 	}
 }
 
@@ -70,7 +70,7 @@ export function fetch_categories_with_missing_morphisms() {
 			WHERE s.type = 'category' AND m.type IS NULL
 			GROUP BY s.id
 			ORDER BY lower(s.name);
-		`,
+		`
 	)
 
 	if (err) error(500, 'Failed to load data')

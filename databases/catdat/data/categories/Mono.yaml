@@ -8,7 +8,6 @@ morphisms: >-
 description: >-
   This is equivalent to the full subcategory of objects $(X, Y, f)$ of <a href="/category/Set_arrow">$\Set^{\rightarrow}$</a> where $f : X \to Y$ is an injective function, i.e. a monomorphism. This explains our notation.
 nlab_link: https://ncatlab.org/nlab/show/M-category#def
-
 tags:
   - set theory
 

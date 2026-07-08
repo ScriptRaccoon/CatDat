@@ -11,7 +11,7 @@ export function fetch_missing_data(type: StructureType) {
 			StructureShort & { count: number },
 			{ id1: string; name1: string; id2: string; name2: string },
 			{ id: string; dual_property_id: string | null },
-			{ p: string; q: string },
+			{ p: string; q: string }
 		]
 	>([
 		// structures with unknown properties
@@ -70,7 +70,7 @@ export function fetch_missing_data(type: StructureType) {
                 AND an.type = ${type}
                 AND a.is_satisfied = TRUE
                 AND an.is_satisfied = FALSE
-	    `,
+	    `
 	])
 
 	if (err) error(500, 'Failed to load data')
@@ -79,12 +79,12 @@ export function fetch_missing_data(type: StructureType) {
 		structures_with_unknown_properties,
 		undistinguishable_structure_pairs,
 		properties,
-		witnessed_pairs,
+		witnessed_pairs
 	] = results
 
 	const total_unknown_property_pairs = structures_with_unknown_properties.reduce(
 		(total, item) => item.count + total,
-		0,
+		0
 	)
 
 	const { implications, err: err_imp } = get_normalized_implications(type)
@@ -112,7 +112,7 @@ export function fetch_missing_data(type: StructureType) {
 			const contradiction = contradiction_worker(
 				new Set([p.id]),
 				new Set([q.id]),
-				implications,
+				implications
 			)
 
 			if (!contradiction) missing_combinations.push([p.id, q.id])
@@ -123,6 +123,6 @@ export function fetch_missing_data(type: StructureType) {
 		structures_with_unknown_properties,
 		undistinguishable_structure_pairs,
 		total_unknown_property_pairs,
-		missing_combinations,
+		missing_combinations
 	}
 }

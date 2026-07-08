@@ -19,7 +19,7 @@
 		section_label,
 		item_label,
 		max = Infinity,
-		children,
+		children
 	}: Props = $props()
 
 	let item = $state('')
@@ -112,7 +112,7 @@
 
 	function scroll_to_option() {
 		document.querySelector(`#${id}-${active_index}`)?.scrollIntoView({
-			block: 'center',
+			block: 'center'
 		})
 	}
 

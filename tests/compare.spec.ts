@@ -9,15 +9,15 @@ test('user can navigate to compare page', async ({ page }) => {
 	await nav
 		.getByRole('link', {
 			name: 'Compare',
-			exact: true,
+			exact: true
 		})
 		.click()
 
 	await expect(
 		page.getByRole('heading', {
 			name: 'Compare categories',
-			exact: true,
-		}),
+			exact: true
+		})
 	).toBeVisible()
 
 	await expect(page).toHaveURL('/category-comparison')
@@ -29,8 +29,8 @@ test('user can select categories for comparison', async ({ page }) => {
 	await expect(
 		page.getByRole('heading', {
 			name: 'Compare categories',
-			exact: true,
-		}),
+			exact: true
+		})
 	).toBeVisible()
 
 	const textbox = page.getByRole('textbox', { name: 'Category' })
@@ -47,15 +47,15 @@ test('user can select categories for comparison', async ({ page }) => {
 		await expect(
 			page.getByRole('button', {
 				name: category,
-				exact: true,
-			}),
+				exact: true
+			})
 		).toBeVisible()
 	}
 
 	await page
 		.getByRole('button', {
 			name: 'Compare',
-			exact: true,
+			exact: true
 		})
 		.click()
 
@@ -64,8 +64,8 @@ test('user can select categories for comparison', async ({ page }) => {
 	await expect(
 		page.getByRole('heading', {
 			name: 'Comparison of categories',
-			exact: true,
-		}),
+			exact: true
+		})
 	).toBeVisible()
 })
 
@@ -75,8 +75,8 @@ test('user can view comparison table', async ({ page }) => {
 	await expect(
 		page.getByRole('heading', {
 			name: 'Comparison of categories',
-			exact: true,
-		}),
+			exact: true
+		})
 	).toBeVisible()
 
 	await expect(page.getByText('category of rings')).toBeVisible()
@@ -89,13 +89,13 @@ test('user can view comparison table', async ({ page }) => {
 		abelian: ['no', 'no'],
 		generator: ['yes', 'yes'],
 		cocomplete: ['yes', 'yes'],
-		coextensive: ['no', 'yes'],
+		coextensive: ['no', 'yes']
 	}
 
 	for (const [prop, values] of Object.entries(table_except)) {
 		const row = table
 			.locator('tbody tr', {
-				has: page.getByRole('link', { name: prop, exact: true }),
+				has: page.getByRole('link', { name: prop, exact: true })
 			})
 			.first()
 		await expect(row).toBeVisible()

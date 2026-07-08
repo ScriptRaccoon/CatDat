@@ -4,7 +4,7 @@ import { error } from '@sveltejs/kit'
 import type {
 	ImplicationDB,
 	NormalizedImplication,
-	StructureType,
+	StructureType
 } from '$lib/commons/types'
 import { display_implication } from '$lib/server/transforms'
 import { parse_json_set, parse_nested_json_list } from '$lib/server/utils'
@@ -57,7 +57,7 @@ export function get_normalized_implications(type: StructureType) {
 				mapped_assumptions
 			FROM implications_view
 			WHERE type = ${type}
-		`,
+		`
 	)
 
 	if (err) return { implications: null, err }
@@ -80,7 +80,7 @@ export function get_normalized_implications(type: StructureType) {
 				implications.push({
 					id: impl.id,
 					assumptions: conclusions,
-					conclusion: assumption,
+					conclusion: assumption
 				})
 			}
 		}

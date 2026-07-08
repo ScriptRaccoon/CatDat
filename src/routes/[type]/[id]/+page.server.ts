@@ -10,7 +10,7 @@ import { add_math, strip_math } from '$lib/server/utils'
 const special_fetchers = {
 	category: fetch_category,
 	functor: fetch_functor,
-	morphism: fetch_morphism,
+	morphism: fetch_morphism
 }
 
 export const load = (event) => {
@@ -25,12 +25,12 @@ export const load = (event) => {
 
 	if (special_structure_data.type === 'functor') {
 		structure_data.structure.notation = add_math(
-			`${strip_math(structure_data.structure.notation)}: ${strip_math(special_structure_data.source_notation)} \\to ${strip_math(special_structure_data.target_notation)}`,
+			`${strip_math(structure_data.structure.notation)}: ${strip_math(special_structure_data.source_notation)} \\to ${strip_math(special_structure_data.target_notation)}`
 		)
 	}
 
 	return render_nested_formulas({
 		structure_data,
-		special_structure_data,
+		special_structure_data
 	})
 }

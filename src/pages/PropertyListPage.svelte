@@ -27,10 +27,10 @@
 						normalize_text(property.id).includes(normalize_text(search)) ||
 						(!!property.dual_property_id &&
 							normalize_text(property.dual_property_id).includes(
-								normalize_text(search),
-							)),
+								normalize_text(search)
+							))
 				)
-			: grouped_properties,
+			: grouped_properties
 	)
 </script>
 
@@ -46,7 +46,7 @@
 	{:else}
 		{pluralize(searched_properties.length, {
 			one: 'Found {count} group',
-			other: 'Found {count} groups',
+			other: 'Found {count} groups'
 		})}
 	{/if}
 </p>

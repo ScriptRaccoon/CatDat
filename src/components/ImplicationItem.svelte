@@ -3,7 +3,7 @@
 		faArrowRight,
 		faArrowsLeftRight,
 		faInfoCircle,
-		faPlus,
+		faPlus
 	} from '@fortawesome/free-solid-svg-icons'
 	import Fa from 'svelte-fa'
 	import { get_property_url } from '$lib/commons/property.utils'
@@ -18,7 +18,7 @@
 	let { type, implication, highlighted_property }: Props = $props()
 
 	let has_additional_assumptions = $derived(
-		Object.values(implication.mapped_assumptions).some((list) => list?.length),
+		Object.values(implication.mapped_assumptions).some((list) => list?.length)
 	)
 </script>
 

@@ -6,15 +6,15 @@ test('user can navigate to the page with missing data', async ({ page }) => {
 	await page
 		.getByRole('link', {
 			name: 'Missing data',
-			exact: true,
+			exact: true
 		})
 		.click()
 
 	await expect(
 		page.getByRole('heading', {
 			name: 'Missing data',
-			exact: true,
-		}),
+			exact: true
+		})
 	).toBeVisible()
 
 	await expect(page).toHaveURL('/missing')
@@ -28,12 +28,12 @@ test('user can see categories with missing data', async ({ page }) => {
 	await expect(
 		page.getByRole('heading', {
 			name: 'Missing data',
-			exact: true,
-		}),
+			exact: true
+		})
 	).toBeVisible()
 
 	const categories_section = page.locator('section', {
-		hasText: 'Categories with unknown properties',
+		hasText: 'Categories with unknown properties'
 	})
 
 	await expect(categories_section).toBeVisible()
@@ -55,12 +55,12 @@ test('user can see no functors with missing data', async ({ page }) => {
 	await expect(
 		page.getByRole('heading', {
 			name: 'Missing data',
-			exact: true,
-		}),
+			exact: true
+		})
 	).toBeVisible()
 
 	const functors_section = page.locator('section', {
-		hasText: 'Functors with unknown properties',
+		hasText: 'Functors with unknown properties'
 	})
 
 	await expect(functors_section.getByRole('link')).toHaveCount(0)
@@ -70,7 +70,7 @@ test('user can see missing category combinations', async ({ page }) => {
 	await page.goto('/missing', { waitUntil: 'networkidle' })
 
 	const combinations_section = page.locator('section', {
-		hasText: 'Missing category combinations',
+		hasText: 'Missing category combinations'
 	})
 
 	await expect(combinations_section).toBeVisible()
@@ -80,7 +80,7 @@ test('user can see missing category combinations', async ({ page }) => {
 		.click()
 
 	await expect(
-		combinations_section.locator('li', { hasText: /[A-Za-z]+ ∧ ¬[A-Za-z]+/ }).first(),
+		combinations_section.locator('li', { hasText: /[A-Za-z]+ ∧ ¬[A-Za-z]+/ }).first()
 	).toBeVisible()
 })
 
@@ -88,7 +88,7 @@ test('user can see missing functor combinations', async ({ page }) => {
 	await page.goto('/missing', { waitUntil: 'networkidle' })
 
 	const combinations_section = page.locator('section', {
-		hasText: 'Missing functor combinations',
+		hasText: 'Missing functor combinations'
 	})
 
 	await expect(combinations_section).toBeVisible()
@@ -98,6 +98,6 @@ test('user can see missing functor combinations', async ({ page }) => {
 		.click()
 
 	await expect(
-		combinations_section.locator('li', { hasText: /[A-Za-z]+ ∧ ¬[A-Za-z]+/ }).first(),
+		combinations_section.locator('li', { hasText: /[A-Za-z]+ ∧ ¬[A-Za-z]+/ }).first()
 	).toBeVisible()
 })

@@ -7,7 +7,7 @@
 		faCheck,
 		faQuestion,
 		faXmark,
-		type IconDefinition,
+		type IconDefinition
 	} from '@fortawesome/free-solid-svg-icons'
 	import Fa from 'svelte-fa'
 
@@ -18,7 +18,7 @@
 	const icon_config: Record<string, IconDefinition> = {
 		yes: faCheck,
 		no: faXmark,
-		unknown: faQuestion,
+		unknown: faQuestion
 	}
 
 	let paragraph_element = $state<HTMLElement | null>(null)
@@ -31,7 +31,7 @@
 			([entry]) => {
 				show_thead_outline = entry.intersectionRatio == 0
 			},
-			{ threshold: [0] },
+			{ threshold: [0] }
 		)
 
 		observer.observe(paragraph_element)

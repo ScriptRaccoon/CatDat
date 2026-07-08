@@ -13,6 +13,6 @@ export const load = (event) => {
 	const unsatisfied_query = event.url.searchParams.get('unsatisfied')
 
 	return fetch_search_results(satisfied_query, unsatisfied_query, type, () =>
-		cache_page(event),
+		cache_page(event)
 	)
 }

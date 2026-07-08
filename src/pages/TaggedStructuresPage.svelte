@@ -21,7 +21,7 @@
 <p class="hint">
 	{pluralize(structures.length, {
 		one: `Found {count} ${type}`,
-		other: `Found {count} ${PLURALS[type]}`,
+		other: `Found {count} ${PLURALS[type]}`
 	})}
 </p>
 

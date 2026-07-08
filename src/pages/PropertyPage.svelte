@@ -12,7 +12,7 @@
 		ImplicationDisplay,
 		PropertyDisplay,
 		StructureShort,
-		StructureType,
+		StructureType
 	} from '$lib/commons/types'
 	import { PLURALS } from '$lib/commons/structures'
 	import TagList from '$components/TagList.svelte'
@@ -38,7 +38,7 @@
 		counterexamples,
 		unknown_structures,
 		undecidable_structures,
-		relevant_implications,
+		relevant_implications
 	}: Props = $props()
 </script>
 
@@ -111,7 +111,7 @@
 <p class="hint">
 	{pluralize(examples.length, {
 		one: `There is {count} ${type} with this property.`,
-		other: `There are {count} ${PLURALS[type]} with this property.`,
+		other: `There are {count} ${PLURALS[type]} with this property.`
 	})}
 </p>
 
@@ -122,7 +122,7 @@
 <p class="hint">
 	{pluralize(counterexamples.length, {
 		one: `There is {count} ${type} without this property.`,
-		other: `There are {count} ${PLURALS[type]} without this property.`,
+		other: `There are {count} ${PLURALS[type]} without this property.`
 	})}
 </p>
 
@@ -134,7 +134,7 @@
 	<p class="hint">
 		{pluralize(undecidable_structures.length, {
 			one: `There is {count} ${type} for which it cannot be decided if this property is satisfied or not.`,
-			other: `There are {count} ${PLURALS[type]} for which it cannot be decided if this property is satisfied or not.`,
+			other: `There are {count} ${PLURALS[type]} for which it cannot be decided if this property is satisfied or not.`
 		})}
 	</p>
 
@@ -146,7 +146,7 @@
 <p class="hint">
 	{pluralize(unknown_structures.length, {
 		one: `There is {count} ${type} for which the database has no information on whether it satisfies this property.`,
-		other: `There are {count} ${PLURALS[type]} for which the database has no information on whether they satisfy this property.`,
+		other: `There are {count} ${PLURALS[type]} for which the database has no information on whether they satisfy this property.`
 	})}
 	{#if unknown_structures.length > 0}
 		Please help us fill in the gaps by

@@ -18,7 +18,7 @@ export const POST = async (event) => {
 	if (count > 5) {
 		return json(
 			{ error: 'Too many submissions. Please try again later.' },
-			{ status: 429 },
+			{ status: 429 }
 		)
 	}
 
@@ -48,7 +48,7 @@ export const POST = async (event) => {
 		await send_email({
 			subject: 'CatDat – New submission',
 			text: email_text,
-			to: APPROVAL_EMAIL,
+			to: APPROVAL_EMAIL
 		})
 	} catch (err) {
 		console.error(err)

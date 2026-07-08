@@ -9,7 +9,7 @@
 			'/category-search/results?satisfied=finitely_complete~pointed&unsatisfied=complete',
 		functor: '/functor-search/results?satisfied=continuous&unsatisfied=cocontinuous',
 		morphism:
-			'/morphism-search/results?satisfied=monomorphism~epimorphism&unsatisfied=isomorphism',
+			'/morphism-search/results?satisfied=monomorphism~epimorphism&unsatisfied=isomorphism'
 	}
 </script>
 

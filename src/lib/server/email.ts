@@ -13,15 +13,15 @@ const transporter = nodemailer.createTransport({
 	secure: false,
 	auth: {
 		user: EMAIL_ADDRESS,
-		pass: EMAIL_PASSWORD,
-	},
+		pass: EMAIL_PASSWORD
+	}
 })
 
 export async function send_email(email: Email) {
 	if (ENABLE_EMAILS === 'true') {
 		if (!EMAIL_ADDRESS || !EMAIL_PASSWORD) {
 			throw new Error(
-				'Email sending is enabled but EMAIL_ADDRESS or EMAIL_PASSWORD is not set',
+				'Email sending is enabled but EMAIL_ADDRESS or EMAIL_PASSWORD is not set'
 			)
 		}
 		await transporter.sendMail({ from: EMAIL_ADDRESS, ...email })

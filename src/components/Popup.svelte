@@ -10,7 +10,7 @@
 		id: '',
 		open: false,
 		heading: '',
-		text: '',
+		text: ''
 	})
 
 	export function show_popup(data: Omit<PopupState, 'open'>) {

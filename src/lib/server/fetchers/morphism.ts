@@ -14,7 +14,7 @@ export function fetch_morphism(id: string) {
             FROM morphisms m
             INNER JOIN structures AS c ON c.id = m.category
             WHERE m.id = ${id}
-        `,
+        `
 	)
 
 	if (err) error(500, 'Could not load morphism')

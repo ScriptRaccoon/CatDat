@@ -1,13 +1,13 @@
 import { get_client } from './utils/db'
 import {
 	get_deduced_satisfied_properties,
-	get_deduced_unsatisfied_properties,
+	get_deduced_unsatisfied_properties
 } from './deduce-structure-properties'
 import { get_property_assignments_by_deduction } from './utils/properties'
 import type { StructureType } from './config'
 import {
 	get_normalized_implications,
-	type NormalizedImplication,
+	type NormalizedImplication
 } from './utils/implications'
 import { get_structures } from './utils/structures'
 
@@ -41,7 +41,7 @@ function check_redundant_property_assignments(type: StructureType) {
 
 	const ignore_count = Object.keys(ignore_dict).reduce(
 		(count, id) => count + ignore_dict[id].size,
-		0,
+		0
 	)
 
 	let redundancy_count = 0
@@ -52,12 +52,12 @@ function check_redundant_property_assignments(type: StructureType) {
 			assignments[structure.id].satisfied.non_deduced,
 			implications,
 			ignore_dict[structure.id],
-			structure.associated_satisfied_properties,
+			structure.associated_satisfied_properties
 		)
 
 		if (redundant_satisfied_property) {
 			console.warn(
-				`🟠 Redundant satisfied property for ${structure.id}: "${redundant_satisfied_property}" is implied by others.`,
+				`🟠 Redundant satisfied property for ${structure.id}: "${redundant_satisfied_property}" is implied by others.`
 			)
 
 			redundancy_count++
@@ -65,7 +65,7 @@ function check_redundant_property_assignments(type: StructureType) {
 
 		const all_satisfied_properties = new Set([
 			...assignments[structure.id].satisfied.non_deduced,
-			...assignments[structure.id].satisfied.deduced,
+			...assignments[structure.id].satisfied.deduced
 		])
 
 		const redundant_unsatisfied_property = get_redundant_unsatisfied_property(
@@ -74,12 +74,12 @@ function check_redundant_property_assignments(type: StructureType) {
 			assignments[structure.id].unsatisfied.non_deduced,
 			implications,
 			ignore_dict[structure.id],
-			structure.associated_satisfied_properties,
+			structure.associated_satisfied_properties
 		)
 
 		if (redundant_unsatisfied_property) {
 			console.warn(
-				`🟡 Redundant unsatisfied property for ${structure.id}: "${redundant_unsatisfied_property}" is implied by others.`,
+				`🟡 Redundant unsatisfied property for ${structure.id}: "${redundant_unsatisfied_property}" is implied by others.`
 			)
 
 			redundancy_count++
@@ -108,7 +108,7 @@ function get_redundant_satisfied_property(
 	satisfied_properties: Set<string>,
 	implications: NormalizedImplication[],
 	ignored: Set<string> = new Set(),
-	associated_satisfied_properties?: Record<string, Set<string>>,
+	associated_satisfied_properties?: Record<string, Set<string>>
 ) {
 	for (const p of [...satisfied_properties]) {
 		if (ignored.has(p)) continue
@@ -118,7 +118,7 @@ function get_redundant_satisfied_property(
 			implications,
 			{ stop_when_found: p },
 			type,
-			associated_satisfied_properties,
+			associated_satisfied_properties
 		)
 		if (deduced_satisfied_properties.has(p)) return p
 		satisfied_properties.add(p)
@@ -138,7 +138,7 @@ function get_redundant_unsatisfied_property(
 	unsatisfied_properties: Set<string>,
 	implications: NormalizedImplication[],
 	ignored: Set<string> = new Set(),
-	associated_satisfied_properties?: Record<string, Set<string>>,
+	associated_satisfied_properties?: Record<string, Set<string>>
 ) {
 	for (const p of [...unsatisfied_properties]) {
 		if (ignored.has(p)) continue
@@ -149,7 +149,7 @@ function get_redundant_unsatisfied_property(
 			implications,
 			{ stop_when_found: p },
 			type,
-			associated_satisfied_properties,
+			associated_satisfied_properties
 		)
 		if (deduced_unsatisfied_properties.has(p)) return p
 		unsatisfied_properties.add(p)
@@ -167,7 +167,7 @@ function get_ignored_redundant_assignments(type: StructureType) {
 		.prepare<[StructureType], { structure_id: string; property_id: string }>(
 			`SELECT structure_id, property_id
 			FROM property_assignments
-			WHERE check_redundancy = FALSE AND type = ?`,
+			WHERE check_redundancy = FALSE AND type = ?`
 		)
 		.all(type)
 

@@ -34,7 +34,7 @@ export function restrict_representable_functors() {
             DO UPDATE SET
                 proof = excluded.proof,
                 is_deduced = excluded.is_deduced,
-                check_redundancy = excluded.check_redundancy`,
+                check_redundancy = excluded.check_redundancy`
 		)
 		.run()
 

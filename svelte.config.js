@@ -7,10 +7,10 @@ const config = {
 	kit: {
 		alias: {
 			$components: './src/components',
-			$pages: './src/pages',
+			$pages: './src/pages'
 		},
-		adapter: adapter(),
-	},
+		adapter: adapter()
+	}
 }
 
 export default config

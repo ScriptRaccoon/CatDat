@@ -22,7 +22,7 @@ export type NormalizedImplication = {
  */
 export function get_normalized_implications(
 	db: Database,
-	type: StructureType,
+	type: StructureType
 ): NormalizedImplication[] {
 	const implications_db = db
 		.prepare<
@@ -42,7 +42,7 @@ export function get_normalized_implications(
 				conclusions,
 				mapped_assumptions
 			FROM implications_view i
-			WHERE i.type = ?`,
+			WHERE i.type = ?`
 		)
 		.all(type)
 
@@ -57,7 +57,7 @@ export function get_normalized_implications(
 			const implication: NormalizedImplication = {
 				id: impl.id,
 				assumptions,
-				conclusion,
+				conclusion
 			}
 
 			if (Object.keys(mapped_assumptions).length > 0) {
@@ -72,7 +72,7 @@ export function get_normalized_implications(
 				const implication: NormalizedImplication = {
 					id: impl.id,
 					assumptions: conclusions,
-					conclusion: assumption,
+					conclusion: assumption
 				}
 
 				if (Object.keys(mapped_assumptions).length > 0) {
@@ -90,14 +90,14 @@ export function get_normalized_implications(
 function get_assumption_string(
 	implication: NormalizedImplication,
 	properties_dict: Record<string, PropertyMeta>,
-	conditional = false,
+	conditional = false
 ): string {
 	const { assumptions } = implication
 
 	const own = Array.from(assumptions)
 		.map(
 			(assumption) =>
-				`${properties_dict[assumption][conditional ? 'conditional_relation' : 'relation']} ${get_property_label(assumption)}`,
+				`${properties_dict[assumption][conditional ? 'conditional_relation' : 'relation']} ${get_property_label(assumption)}`
 		)
 		.join(' and ')
 
@@ -106,7 +106,7 @@ function get_assumption_string(
 	const mapped = Object.entries(implication.mapped_assumptions)
 		.map(
 			([map, props]) =>
-				`and the ${map} has the required properties (${Array.from(props!).join(', ')})`,
+				`and the ${map} has the required properties (${Array.from(props!).join(', ')})`
 		)
 		.join(', ')
 
@@ -116,7 +116,7 @@ function get_assumption_string(
 function get_conclusion_string(
 	implication: NormalizedImplication,
 	properties_dict: Record<string, PropertyMeta>,
-	conditional = false,
+	conditional = false
 ): string {
 	const { conclusion } = implication
 
@@ -126,7 +126,7 @@ function get_conclusion_string(
 export function get_proof_string(
 	implication: NormalizedImplication,
 	properties_dict: Record<string, PropertyMeta>,
-	type: StructureType,
+	type: StructureType
 ) {
 	const assumption_string = get_assumption_string(implication, properties_dict)
 	const conclusion_string = get_conclusion_string(implication, properties_dict)
@@ -139,7 +139,7 @@ export function get_contradiction_string(
 	implication: NormalizedImplication,
 	properties_dict: Record<string, PropertyMeta>,
 	property: string,
-	type: StructureType,
+	type: StructureType
 ) {
 	const assumption_string = get_assumption_string(implication, properties_dict, true)
 	const conclusion_string = get_conclusion_string(implication, properties_dict, true)

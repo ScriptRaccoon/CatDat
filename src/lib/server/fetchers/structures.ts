@@ -34,7 +34,7 @@ export function fetch_structures_and_tags(type: StructureType) {
                 WHERE a.tag = t.tag AND a.type = ${type}
             )
             ORDER BY t.id
-        `,
+        `
 	])
 
 	if (err) error(500, `${capitalize(PLURALS[type])} could not be loaded`)

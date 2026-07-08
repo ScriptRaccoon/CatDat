@@ -42,7 +42,7 @@ function deduce_special_morphisms_of_dual_categories() {
             FROM structures c
             INNER JOIN special_morphisms m ON m.category_id = c.id
             INNER JOIN special_morphism_types t ON t.type = m.type
-            WHERE c.type = 'category' AND c.dual_structure_id IS NOT NULL`,
+            WHERE c.type = 'category' AND c.dual_structure_id IS NOT NULL`
 		)
 		.run()
 

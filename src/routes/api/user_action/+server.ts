@@ -28,7 +28,7 @@ export const POST = async (event) => {
 	const { action, value = null } = body
 
 	const { err } = await query_app(
-		sql`INSERT INTO user_actions (action, value) VALUES (${action}, ${value})`,
+		sql`INSERT INTO user_actions (action, value) VALUES (${action}, ${value})`
 	)
 
 	if (err) return json({ error: 'Database error' }, { status: 500 })

@@ -20,7 +20,7 @@
 		dual_unsatisfied_properties,
 		dual_search_available,
 		found_structures,
-		contradiction,
+		contradiction
 	}: Props = $props()
 
 	function get_dual_search_results_link() {
@@ -45,7 +45,7 @@
 	$effect(() => {
 		window.sessionStorage.setItem(
 			`${type}-search`,
-			JSON.stringify({ satisfied_properties, unsatisfied_properties }),
+			JSON.stringify({ satisfied_properties, unsatisfied_properties })
 		)
 	})
 </script>
@@ -89,7 +89,7 @@
 	<p class="hint">
 		{pluralize(found_structures.length, {
 			one: `Found {count} ${type}`,
-			other: `Found {count} ${PLURALS[type]}`,
+			other: `Found {count} ${PLURALS[type]}`
 		})}
 	</p>
 

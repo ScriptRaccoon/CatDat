@@ -8,7 +8,7 @@
 		await fetch(`/api/user_action`, {
 			method: 'POST',
 			body: JSON.stringify({ action: 'download_database' }),
-			headers: { 'Content-Type': 'application/json' },
+			headers: { 'Content-Type': 'application/json' }
 		})
 	}
 </script>

@@ -19,7 +19,7 @@ export function seed_file<T>(
 	db: Database,
 	label: string,
 	file: string,
-	insert: (item: T) => void,
+	insert: (item: T) => void
 ) {
 	console.info(`\nSeed ${label} ...`)
 	const item = read_yaml_file<T>(file)
@@ -41,7 +41,7 @@ export function seed_files<T>(
 	db: Database,
 	label: string,
 	folder: string,
-	insert: (item: T) => void,
+	insert: (item: T) => void
 ) {
 	console.info(`\nSeed ${label} ...`)
 

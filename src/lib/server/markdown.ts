@@ -72,7 +72,7 @@ md.block.ruler.before(
 
 		state.line = next_line + 1
 		return true
-	},
+	}
 )
 
 /**
@@ -93,7 +93,7 @@ function preprocess_math(content: string) {
 					: render_formula(display_formula, { displayMode: true })
 
 			return placeholder
-		},
+		}
 	)
 
 	return { processed_content: with_placeholders, formulas }
@@ -127,7 +127,7 @@ function insert_svg(content: string) {
  * Renders markdown content and formulas of a given string
  */
 function render_content<T = Record<string, unknown>>(
-	txt: string,
+	txt: string
 ): { meta_data: T; html: string } {
 	const { data, content } = matter(txt)
 

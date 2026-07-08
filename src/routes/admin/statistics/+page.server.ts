@@ -35,7 +35,7 @@ export const load = async (event) => {
 				device_type: string
 				count: number
 				percentage: number
-			},
+			}
 		]
 	>([
 		sql`SELECT
@@ -74,7 +74,7 @@ export const load = async (event) => {
 				ROUND(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER (), 1) AS percentage
             FROM visits
             GROUP BY device_type
-            ORDER BY count DESC`,
+            ORDER BY count DESC`
 	])
 
 	if (err) {
@@ -86,7 +86,7 @@ export const load = async (event) => {
 		daily_visits,
 		country_stats,
 		theme_stats,
-		device_stats,
+		device_stats
 	] = results
 
 	return {
@@ -98,6 +98,6 @@ export const load = async (event) => {
 		daily_visits,
 		country_stats,
 		theme_stats,
-		device_stats,
+		device_stats
 	}
 }

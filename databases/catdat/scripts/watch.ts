@@ -22,7 +22,7 @@ function onchange(file: string) {
 
 const watcher = chokidar.watch(data_folder, {
 	persistent: true,
-	ignoreInitial: true,
+	ignoreInitial: true
 })
 
 watcher.on('add', onchange).on('change', onchange).on('unlink', onchange)

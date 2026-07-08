@@ -6,7 +6,7 @@ if (!REDIS_URL) throw new Error('Redis URL is missing')
 
 export const redis = new Redis(REDIS_URL, {
 	tls: dev ? undefined : { rejectUnauthorized: true },
-	retryStrategy: (times) => (times >= 5 ? null : 1000),
+	retryStrategy: (times) => (times >= 5 ? null : 1000)
 })
 
 redis.on('connect', () => {

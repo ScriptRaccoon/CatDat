@@ -5,7 +5,7 @@ import type {
 	ImplicationDB,
 	MappedTypes,
 	StructureShort,
-	StructureType,
+	StructureType
 } from '$lib/commons/types'
 import { display_implication } from '$lib/server/transforms'
 
@@ -38,7 +38,7 @@ export function fetch_implication(type: StructureType, id: string) {
             SELECT map, mapped_type
             FROM structure_maps
             WHERE type = ${type}
-        `,
+        `
 	])
 
 	if (err) error(500, 'Could not load implication')

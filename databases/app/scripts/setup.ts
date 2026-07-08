@@ -10,7 +10,7 @@ if (!APP_DB_URL) throw new Error('No APP_DB_URL found')
 
 const db = createClient({
 	url: APP_DB_URL,
-	authToken: APP_DB_AUTH_TOKEN,
+	authToken: APP_DB_AUTH_TOKEN
 })
 
 setup()

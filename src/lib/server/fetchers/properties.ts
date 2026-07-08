@@ -2,7 +2,7 @@ import type {
 	GroupedPropertyShort,
 	PropertyShort,
 	StructureType,
-	TagObject,
+	TagObject
 } from '$lib/commons/types'
 import sql from 'sql-template-tag'
 import { query, batch } from '$lib/server/db.catdat'
@@ -14,7 +14,7 @@ export function get_property_ids(type: StructureType) {
 			SELECT id FROM properties
 			WHERE type = ${type}
 			ORDER BY lower(id)
-		`,
+		`
 	)
 
 	if (err) error(500, 'Failed to load properties')
@@ -39,7 +39,7 @@ export function fetch_grouped_properties_and_tags(type: StructureType) {
 				WHERE a.tag = t.tag AND a.type = ${type}
 			)
 			ORDER BY t.id
-		`,
+		`
 	])
 
 	if (err) error(500, 'Failed to load properties')
@@ -61,7 +61,7 @@ export function fetch_grouped_properties_and_tags(type: StructureType) {
 			const swap = {
 				id: p.dual_property_id,
 				dual_property_id: p.id,
-				relation: p.relation,
+				relation: p.relation
 			}
 			grouped_properties.push(swap)
 		} else {

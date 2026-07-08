@@ -14,7 +14,7 @@ export const actions: Actions = {
 
 		if (count >= 5) {
 			return fail(429, {
-				error: 'Too many login attempts. Please try again later.',
+				error: 'Too many login attempts. Please try again later.'
 			})
 		}
 
@@ -37,5 +37,5 @@ export const actions: Actions = {
 		await redis.del(key)
 
 		redirect(303, '/admin')
-	},
+	}
 }

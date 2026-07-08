@@ -7,7 +7,7 @@
 		faDatabase,
 		faList,
 		faSearch,
-		faUsers,
+		faUsers
 	} from '@fortawesome/free-solid-svg-icons'
 	import Fa from 'svelte-fa'
 </script>

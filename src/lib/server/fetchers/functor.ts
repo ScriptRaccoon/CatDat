@@ -27,7 +27,7 @@ export function fetch_functor(id: string) {
             LEFT JOIN functors AS rf ON rf.left_adjoint = f.id
             LEFT JOIN structures AS ra ON ra.id = rf.id
             WHERE f.id = ${id}
-        `,
+        `
 	)
 
 	if (err) error(500, 'Could not load functor')

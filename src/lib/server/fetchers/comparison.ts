@@ -9,14 +9,14 @@ import { to_placeholders } from '$lib/server/utils'
 export function fetch_comparison_result(
 	compared_ids: string[],
 	type: StructureType,
-	callback: () => void,
+	callback: () => void
 ): ComparisonResult {
 	if (!compared_ids.length) error(400, `No ${type} selected for comparison`)
 
 	if (compared_ids.length > MAX_STRUCTURES_COMPARE) {
 		error(
 			400,
-			`It is only possible to compare up to ${MAX_STRUCTURES_COMPARE} ${PLURALS[type]}`,
+			`It is only possible to compare up to ${MAX_STRUCTURES_COMPARE} ${PLURALS[type]}`
 		)
 	}
 
@@ -30,7 +30,7 @@ export function fetch_comparison_result(
 			FROM structures
 			WHERE type = ?
 			AND id in (${to_placeholders(compared_ids)})`,
-		values: [type, ...compared_ids],
+		values: [type, ...compared_ids]
 	})
 
 	if (err_cat) error(500, `Could not load ${PLURALS[type]}`)
@@ -39,7 +39,7 @@ export function fetch_comparison_result(
 	if (invalid_id) error(404, `Could not find ${type} with ID '${invalid_id}'`)
 
 	const structures = rows.sort(
-		(a, b) => compared_ids.indexOf(a.id) - compared_ids.indexOf(b.id),
+		(a, b) => compared_ids.indexOf(a.id) - compared_ids.indexOf(b.id)
 	)
 
 	const select_columns = compared_ids
@@ -49,7 +49,7 @@ export function fetch_comparison_result(
 					WHEN a${i}.is_satisfied = TRUE THEN 'yes'
 					WHEN a${i}.is_satisfied = FALSE THEN 'no'
 					ELSE 'unknown'
-				END AS struct${i}`,
+				END AS struct${i}`
 		)
 		.join(',\n')
 
@@ -77,7 +77,7 @@ export function fetch_comparison_result(
 
 	const { rows: comparison_objects, err } = query<Record<string, string>>({
 		sql: comparison_query,
-		values,
+		values
 	})
 
 	if (err) error(500, 'Could not load comparison table')
@@ -89,6 +89,6 @@ export function fetch_comparison_result(
 	return {
 		structures: render_nested_formulas(structures),
 		comparison_table,
-		type,
+		type
 	}
 }

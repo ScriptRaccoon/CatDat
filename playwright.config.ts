@@ -28,15 +28,15 @@ export default defineConfig({
 		baseURL: 'http://localhost:5173',
 
 		/* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-		trace: 'on-first-retry',
+		trace: 'on-first-retry'
 	},
 
 	/* Configure projects for major browsers */
 	projects: [
 		{
 			name: 'chromium',
-			use: { ...devices['Desktop Chrome'] },
-		},
+			use: { ...devices['Desktop Chrome'] }
+		}
 
 		// {
 		// 	name: 'firefox',
@@ -73,6 +73,6 @@ export default defineConfig({
 	webServer: {
 		command: 'pnpm dev',
 		url: 'http://localhost:5173',
-		reuseExistingServer: !process.env.CI,
-	},
+		reuseExistingServer: !process.env.CI
+	}
 })

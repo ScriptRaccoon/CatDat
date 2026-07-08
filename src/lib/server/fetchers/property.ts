@@ -3,7 +3,7 @@ import type {
 	StructureShort,
 	PropertyDB,
 	StructureType,
-	TagObject,
+	TagObject
 } from '$lib/commons/types'
 import { batch } from '$lib/server/db.catdat'
 import { display_implication, display_property } from '$lib/server/transforms'
@@ -18,7 +18,7 @@ export function fetch_property(type: StructureType, id: string) {
 			TagObject,
 			ImplicationDB,
 			StructureShort & { is_satisfied: 0 | 1 | null },
-			StructureShort,
+			StructureShort
 		]
 	>([
 		// basic information
@@ -98,7 +98,7 @@ export function fetch_property(type: StructureType, id: string) {
                 s.type = ${type}
                 AND pa.property_id IS NULL
             ORDER BY lower(s.name)
-        `,
+        `
 	])
 
 	if (err) error(500, 'Could not load property')
@@ -109,7 +109,7 @@ export function fetch_property(type: StructureType, id: string) {
 		tag_objects,
 		relevant_implications_db,
 		known_structures,
-		unknown_structures,
+		unknown_structures
 	] = results
 
 	if (!properties.length) {
@@ -143,6 +143,6 @@ export function fetch_property(type: StructureType, id: string) {
 		counterexamples,
 		unknown_structures,
 		undecidable_structures,
-		relevant_implications,
+		relevant_implications
 	}
 }
