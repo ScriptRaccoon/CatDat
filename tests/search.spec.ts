@@ -136,4 +136,62 @@ test('user can view search results', async ({ page }) => {
 	).toBeVisible()
 })
 
-// TODO: test dualize search
+test('user can dualize search', async ({ page }) => {
+	const url = '/category-search/results?satisfied=Barr-exact&unsatisfied=complete'
+	const dual_url =
+		'/category-search/results?satisfied=Barr-coexact&unsatisfied=cocomplete'
+
+	await page.goto(url, { waitUntil: 'networkidle' })
+
+	await expect(
+		page.getByRole('heading', {
+			name: 'Search results',
+			exact: true,
+		}),
+	).toBeVisible()
+
+	await expect(
+		page.getByRole('link', {
+			name: 'Barr-exact',
+			exact: true,
+		}),
+	).toBeVisible()
+
+	await expect(
+		page.getByRole('link', {
+			name: 'category of finite groups',
+			exact: true,
+		}),
+	).toBeVisible()
+
+	const dualize_link = page.getByRole('link', {
+		name: 'Dualize search',
+		exact: true,
+	})
+
+	await expect(dualize_link).toBeVisible()
+	expect(await dualize_link.getAttribute('href')).toContain(dual_url)
+
+	await dualize_link.click()
+
+	await expect(
+		page.getByRole('link', {
+			name: 'Barr-coexact',
+			exact: true,
+		}),
+	).toBeVisible()
+
+	await expect(
+		page.getByRole('link', {
+			name: 'category of finite groups',
+			exact: true,
+		}),
+	).toHaveCount(0)
+
+	await expect(
+		page.getByRole('link', {
+			name: 'poset of natural numbers',
+			exact: true,
+		}),
+	).toBeVisible()
+})
