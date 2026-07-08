@@ -74,6 +74,7 @@ jobs:
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
           ENABLE_EMAILS: ${{ secrets.ENABLE_EMAILS }}
           APPROVAL_EMAIL: ${{ secrets.APPROVAL_EMAIL }}
+          PUBLIC_PLAYWRIGHT: ''
         run: pnpm build
 
       - name: Get latest commit message
