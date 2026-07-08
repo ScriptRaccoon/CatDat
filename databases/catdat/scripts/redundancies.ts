@@ -1,17 +1,17 @@
-import { get_client } from './utils/db'
+import { get_client } from '$shared/db'
 import {
 	get_deduced_satisfied_properties,
 	get_deduced_unsatisfied_properties
 } from './deduce-structure-properties'
 import { get_property_assignments_by_deduction } from './utils/properties'
-import { type StructureType } from '$shared/config'
+import { STRUCTURE_TYPES, type StructureType } from '$shared/config'
 import {
 	get_normalized_implications,
 	type NormalizedImplication
 } from '$shared/implications'
 import { get_structures } from './utils/structures'
 
-const db = get_client()
+const db = get_client({ readonly: true })
 
 check_redundancies()
 

@@ -1,6 +1,6 @@
-import { get_client } from './utils/db'
+import { get_client } from '$shared/db'
 
-const db = get_client()
+const db = get_client({ readonly: false })
 
 // TODO: deduce further morphisms,
 // e.g. isomorphisms = bijective morphisms in algebraic categories,

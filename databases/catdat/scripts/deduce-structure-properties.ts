@@ -5,7 +5,7 @@
 
 import { type Database, SqliteError } from 'better-sqlite3'
 import { is_subset } from '$shared/utils'
-import { get_client } from './utils/db'
+import { get_client } from '$shared/db'
 import {
 	get_properties_dict,
 	get_property_assignments,
@@ -388,7 +388,7 @@ function delete_deduced_properties(db: Database, type: StructureType) {
 export function deduce_properties_for_structures(type: StructureType) {
 	console.info(`\n--- Deduce ${type} properties ---`)
 
-	const db = get_client()
+	const db = get_client({ readonly: false })
 
 	delete_deduced_properties(db, type)
 

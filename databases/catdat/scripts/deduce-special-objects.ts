@@ -1,6 +1,6 @@
-import { get_client } from './utils/db'
+import { get_client } from '$shared/db'
 
-const db = get_client()
+const db = get_client({ readonly: false })
 
 export function deduce_special_objects() {
 	console.info('\n--- Deduce special objects ---')

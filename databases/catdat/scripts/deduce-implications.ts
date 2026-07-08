@@ -1,8 +1,8 @@
 import { type StructureType, STRUCTURE_TYPES_WITH_DUALS } from '$shared/config'
 import { are_equal_sets, parse_nested_json_set, parse_json_set } from '$shared/utils'
-import { get_client } from './utils/db'
+import { get_client } from '$shared/db'
 
-const db = get_client()
+const db = get_client({ readonly: false })
 
 /**
  * Clears all deduced implications. This is done before the deduction starts.

@@ -1,7 +1,8 @@
 import { STRUCTURE_TYPES, type StructureType } from '$shared/config'
-import { get_client } from './utils/db'
+import { get_client } from '$shared/db'
+get_client
 
-const db = get_client()
+const db = get_client({ readonly: true })
 
 const PROOF_LENGTH_THRESHOLD = 1200
 

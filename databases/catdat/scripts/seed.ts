@@ -1,6 +1,6 @@
 import path from 'node:path'
 import { seed_file, seed_files } from './utils/seed.helpers'
-import { get_client } from './utils/db'
+import { get_client } from '$shared/db'
 import type {
 	CategoryYaml,
 	ConfigYaml,
@@ -14,7 +14,7 @@ import type {
 import { create_schema_hash, get_saved_schema_hash } from './utils/schema'
 import { STRUCTURE_TYPES, type StructureType, PLURALS } from '$shared/config'
 
-const db = get_client()
+const db = get_client({ readonly: false })
 
 const data_folder = path.resolve('databases', 'catdat', 'data')
 

@@ -13,13 +13,13 @@ import decided_categories from './expected-data/decided-categories.json'
 import decided_functors from './expected-data/decided-functors.json'
 import decided_morphisms from './expected-data/decided-morphisms.json'
 import { capitalize } from '$shared/utils'
-import { get_client } from './utils/db'
+import { get_client } from '$shared/db'
 import { STRUCTURE_TYPES, type StructureType, PLURALS } from '$shared/config'
 import fs from 'node:fs'
 import path from 'node:path'
 import { decode_property_ID } from '$shared/property.utils'
 
-const db = get_client()
+const db = get_client({ readonly: true })
 
 execute_tests()
 
