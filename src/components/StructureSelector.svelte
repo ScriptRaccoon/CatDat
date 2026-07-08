@@ -34,8 +34,8 @@
 <label for={id}>Structure</label>
 
 <select {id} bind:value={selected_type} onchange={handle_change}>
-	{#each STRUCTURE_TYPES as structure}
-		<option value={structure}>{PLURALS[structure]}</option>
+	{#each STRUCTURE_TYPES as type}
+		<option value={type}>{PLURALS[type]}</option>
 	{/each}
 </select>
 
