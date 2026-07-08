@@ -60,6 +60,33 @@ test('user can view category details', async ({ page }) => {
 	await expect(
 		page.getByText('regular epimorphisms: surjective homomorphisms'),
 	).toBeVisible()
+
+	const unknown_properties_section = page.locator('section', {
+		hasText: 'Unknown properties',
+	})
+	await expect(unknown_properties_section.locator('li')).toHaveCount(0)
+})
+
+// this can be changed as soon as all properties have been decided for Sh(X)
+test('user may see unknown properties', async ({ page }) => {
+	await page.goto('/category/Sh(X)')
+
+	await expect(
+		page.getByRole('heading', {
+			name: 'category of sheaves',
+			exact: true,
+		}),
+	).toBeVisible()
+
+	const unknown_properties_section = page
+		.locator('section', {
+			hasText: 'Unknown properties',
+		})
+		.first()
+
+	const unknown_property_link = unknown_properties_section.locator('li').first()
+
+	await expect(unknown_property_link).toBeVisible()
 })
 
 test('user can navigate to a related category', async ({ page }) => {
@@ -228,6 +255,17 @@ test('user can view category property details', async ({ page }) => {
 			name: 'category of topological spaces',
 			exact: true,
 		}),
+	).toBeVisible()
+})
+
+test('user sees no unknown categories for the property of being additive', async ({
+	page,
+}) => {
+	await page.goto('/category-property/additive')
+	await expect(
+		page.getByText(
+			'There are 0 categories for which the database has no information on whether they satisfy this property',
+		),
 	).toBeVisible()
 })
 
