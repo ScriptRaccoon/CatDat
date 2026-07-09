@@ -28,10 +28,6 @@ satisfied_properties:
   - property: exact filtered colimits
     proof: This follows immediately from the fact for <a href="/category/Set">$\Set$</a>.
 
-  - property: mono-regular
-    proof: This follows immediately from the fact for <a href="/category/Set">$\Set$</a>.
-    check_redundancy: false
-
   - property: regular
     proof: This follows immediately from the fact for <a href="/category/Set">$\Set$</a>.
 
