@@ -89,7 +89,6 @@ function clear_all_tables() {
 		db.prepare(`DELETE FROM structure_tags`).run()
 		db.prepare(`DELETE FROM relations`).run()
 
-		// this deletes categories and functors automatically
 		db.prepare(`DELETE FROM structures`).run()
 	})
 

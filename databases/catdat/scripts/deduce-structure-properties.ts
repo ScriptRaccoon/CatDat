@@ -1,6 +1,6 @@
 /**
  * This file contains all functions that are used to deduce properties
- * for categories and functors.
+ * for categories and other categorical structures.
  */
 
 import { type Database, SqliteError } from 'better-sqlite3'

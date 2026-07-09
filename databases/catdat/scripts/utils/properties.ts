@@ -38,8 +38,7 @@ export function get_properties_dict(db: Database, type: StructureType) {
 
 /**
  * Returns a dictionary with all assigned properties of a list of structures
- * (categories or functors), grouped by id and
- * value (satisfied / unsatisfied / undecidable).
+ * grouped by id and value (satisfied / unsatisfied / undecidable).
  */
 export function get_property_assignments(
 	db: Database,

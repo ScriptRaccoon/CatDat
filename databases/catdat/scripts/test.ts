@@ -117,7 +117,7 @@ function test_positivity(structure_id: string, type: StructureType) {
 }
 
 /**
- * Tests for all properties p,q of categories or functors that
+ * Tests for all properties p,q of structures that
  * if p is dual to q, then q is dual to p.
  */
 function test_mutual_property_duals(type: StructureType) {
@@ -145,7 +145,7 @@ function test_mutual_property_duals(type: StructureType) {
 }
 
 /**
- * Tests that for a specified list of categories or functors all properties have
+ * Tests that for a specified list of structures all properties have
  * been decided. If this test fails, property assignments or implications are missing.
  */
 function test_decided_structures(structure_ids: string[], type: StructureType) {
@@ -173,7 +173,7 @@ function test_decided_structures(structure_ids: string[], type: StructureType) {
 }
 
 /**
- * Tests if selected categories or functors behave as expected:
+ * Tests if selected structures behave as expected:
  * All of their properties in the database have to match those in the
  * respective JSON files in the subfolder "expected-data".
  * We exclude undecidable properties here.

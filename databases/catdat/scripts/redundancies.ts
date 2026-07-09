@@ -27,7 +27,7 @@ function check_redundancies() {
 
 /**
  * Checks for redundant (structure, property)-assignments and logs
- * one per functor if any are found (satisfied or unsatisfied).
+ * one per structure if any are found (satisfied or unsatisfied).
  * No error is thrown intentionally.
  */
 function check_redundant_property_assignments(type: StructureType) {
