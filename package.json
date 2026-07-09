@@ -4,7 +4,7 @@
 	"version": "0.0.1",
 	"type": "module",
 	"scripts": {
-		"dev": "vite dev",
+		"dev": "pnpm env:check && vite dev",
 		"dev:remote": "vite dev --mode prod",
 		"dev:host": "vite dev --host",
 		"build": "vite build",
@@ -14,6 +14,7 @@
 		"format": "prettier --write .",
 		"lint": "prettier --check .",
 		"prepare": "husky",
+		"env:check": "tsx scripts/env.check",
 		"db:shell": "sqlite3 databases/catdat/catdat.db",
 		"db:kill": "rm -rf databases/catdat/catdat.db",
 		"db:setup:catdat": "pnpm db:kill && tsx databases/catdat/scripts/setup.ts",
