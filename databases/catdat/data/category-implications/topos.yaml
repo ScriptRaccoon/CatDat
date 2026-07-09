@@ -32,10 +32,10 @@
 
 - id: topos_implies_coregular
   assumptions:
-    - elementary topos
+    - quasitopos
   conclusions:
     - coregular
-  proof: This is proven in <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, A2.6.3 (for every quasitopos).
+  proof: This is proven in <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, A2.6.3.
   is_equivalence: false
 
 - id: grothendieck_topos_definition
@@ -84,5 +84,16 @@
   conclusions:
     - Barr-exact
     - extensive
+  proof: This is true by definition.
+  is_equivalence: true
+
+- id: quasitopos_definition
+  assumptions:
+    - quasitopos
+  conclusions:
+    - finitely complete
+    - finitely cocomplete
+    - locally cartesian closed
+    - regular subobject classifier
   proof: This is true by definition.
   is_equivalence: true

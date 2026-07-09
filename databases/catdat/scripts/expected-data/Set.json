@@ -112,6 +112,7 @@
 	"ℵ₂-small powers": true,
 	"ℵ₂-small copowers": true,
 	"pretopos": true,
+	"quasitopos": true,
 
 	"Grothendieck abelian": false,
 	"Malcev": false,

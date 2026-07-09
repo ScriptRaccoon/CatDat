@@ -1,0 +1,20 @@
+id: quasitopos
+relation: is a
+description: >-
+  A <i>quasitopos</i> is a category which is finitely complete, finitely cocomplete, locally cartesian closed, and has a regular subobject classifier. This gives the category properties similar to those of an elementary topos; a major difference is that a quasitopos need not be balanced.
+
+  Note that some authors use a strong subobject classifier in place of a regular subobject classifier in the definition, i.e. a morphism $\top : 1 \to \Omega$ which classifies strong monomorphisms. For the equivalence of these definitions, see <a href="https://math.stackexchange.com/q/4335533" target="_blank">MSE/4335533</a>.
+nlab_link: https://ncatlab.org/nlab/show/quasitopos
+dual: null
+invariant_under_equivalences: true
+
+related:
+  - finitely complete
+  - finitely cocomplete
+  - locally cartesian closed
+  - regular subobject classifier
+  - elementary topos
+  - balanced
+
+tags:
+  - topos theory

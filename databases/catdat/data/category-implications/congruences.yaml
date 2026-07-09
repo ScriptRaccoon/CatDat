@@ -18,6 +18,15 @@
   proof: The regularity condition gives a bijection between the collection of quotients of $X$ and the collection of effective congruences on $X$, where the latter is a subcollection of the collection of subobjects of $X\times X$.
   is_equivalence: false
 
+- id: regular_balanced_epi-regular
+  assumptions:
+    - regular
+    - balanced
+  conclusions:
+    - epi-regular
+  proof: 'Given any epimorphism $f : X \twoheadrightarrow Y$ in a regular category, we have the factorization into a regular epimorphism $X \twoheadrightarrow \im(f)$ followed by a monomorphism $\im(f) \hookrightarrow Y$. Because the composition is an epimorphism, the monomorphism $\im(f) \hookrightarrow Y$ must also be an epimorphism, and therefore an isomorphism. It follows that $f$ is in fact a regular epimorphism.'
+  is_equivalence: false
+
 - id: congruence_quotients_are_reflexive_coequalizers
   assumptions:
     - reflexive coequalizers

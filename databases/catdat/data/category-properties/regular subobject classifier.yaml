@@ -12,6 +12,7 @@ invariant_under_equivalences: true
 related:
   - finitely complete
   - subobject classifier
+  - quasitopos
 
 tags:
   - topos theory

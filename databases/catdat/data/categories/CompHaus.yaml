@@ -55,11 +55,6 @@ satisfied_properties:
   - property: extensive
     proof: This follows as for <a href="/category/Top">$\Top$</a> or <a href="/category/Haus">$\Haus$</a> since finite coproducts in $\CompHaus$ are formed as disjoint union spaces with the disjoint union topology.
 
-  - property: epi-regular
-    proof: |-
-      First, any epimorphism $f : X \to Y$ is surjective: if not, its image would be a proper subset of $Y$, which is compact and hence closed. Then by Urysohn's lemma, there would be a non-zero continuous function $g : Y \to [0, 1]$ which is $0$ on the image; but then $g \circ f = 0 \circ f$, giving a contradiction.
-      Now the identity morphism from $Y$, with the quotient topology of $f$, to $Y$ with its given topology is a bijective continuous function between compact Hausdorff spaces, so it is a homeomorphism. In other words, $f$ is a quotient map. Therefore, we see that if $g, h : E \rightrightarrows X$ is the kernel pair of $f$, and $U : \CompHaus \to \Top$ is the forgetful functor, then $U(f)$ is the coequalizer of $U(g)$ and $U(h)$. Since $U$ is fully faithful, that implies $f$ is the coequalizer of $g$ and $h$.
-
   - property: cofiltered-limit-stable epimorphisms
     proof: 'Suppose we have a cofiltered diagram of epimorphisms $(f_i : X_i \to Y_i)$, and $y = (y_i) \in \lim_i Y_i$. Then by lemma 1 <a href="/content/comphaus_copresentable">here</a>, the limit of $f_i^{-1}(\{ y_i \})$ is non-empty. If $x$ is in this limit, that implies that $(\lim_i f_i)(x) = y$.'
 

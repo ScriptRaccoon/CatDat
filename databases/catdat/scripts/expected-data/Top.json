@@ -169,5 +169,6 @@
 	"locally finite": false,
 	"Barr-coexact": false,
 	"Barr-exact": false,
-	"pretopos": false
+	"pretopos": false,
+	"quasitopos": false
 }

@@ -32,9 +32,6 @@ satisfied_properties:
   - property: subobject classifier
     proof: This is because $\{0,1\}$ is a subobject classifier in <a href="/category/Set">$\Set$</a>, which is countable, and the monomorphisms coincide.
 
-  - property: epi-regular
-    proof: If $X \to Y$ is an epimorphism in $\Set_\c$, i.e. a surjective map, it is coequalizer of the two maps $X \times_Y X \rightrightarrows X$ in $\Set$ and hence also in $\Set_\c$.
-
   - property: generator
     proof: The one-point set is clearly a generator.
 

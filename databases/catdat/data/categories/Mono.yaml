@@ -77,20 +77,6 @@ satisfied_properties:
 
       Therefore, any finite coproduct of $(1, 0)$ and $(1, 1)$ is finitely presentable; this means any object of the form $([n], [m])$ with $m, n \in \IN$ and $m \le n$ is finitely presentable. All such objects form a small set. Moreover, any object $(X,X')$ of $\Mono$ is a filtered colimit of the subobjects $(F, F \cap X')$ where $F$ is a finite subset of $X$, and each $(F, F \cap X')$ is isomorphic to some $([n], [m])$.
 
-  - property: coregular
-    proof: >-
-      It suffices to show regular monomorphisms are stable under pushouts. Thus, suppose we have two morphisms $f : (X, X') \to (Y, Y')$ and $g : (X, X') \to (Z, Z')$ where $f$ is a regular monomorphism, which means $f$ is injective and $X' = f^{-1}(Y')$. Then we can construct a pushout diagram
-      $$\begin{CD}
-      (X, X') @> f >> (Y, Y') \\
-      @V g VV @VV i_1 VV \\
-      (Z, Z') @>> i_2 > ((Y \setminus f(X)) \sqcup Z, i_1(Y') \cup i_2(Z')).
-      \end{CD}$$
-      Here $i_1$ sends $f(x) \mapsto g(x) \in Z$ for $x \in X$, and otherwise it sends $y \mapsto y$ for $y \in Y \setminus f(X)$; and $i_2$ is the inclusion of $Z$. We certainly have $i_2$ is injective; it remains to show $i_2^{-1}(i_1(Y') \cup i_2(Z')) = Z'$. However, we have
-      $$i_2^{-1}(i_1(Y') \cup i_2(Z')) = i_2^{-1}(i_1(Y')) \cup i_2^{-1}(i_2(Z'))$$
-      and obviously $i_2^{-1}(i_2(Z')) = Z'$. Therefore, it suffices to show $i_2^{-1}(i_1(Y')) \subseteq Z'$. Thus, suppose we have $z \in Z$ such that $i_2(z) \in i_1(Y')$. That means there exists $y' \in Y'$ such that $z = i_1(y')$. But in order for $i_1(y')$ to land in the $Z$ portion of $(Y \setminus f(X)) \sqcup Z$, we must have $y' \in f(X)$. That means there exists $x \in X$ such that $f(x) = y'$; and by the assumption on $f$, in fact $x \in X'$. Therefore,
-      $$i_2(g(x)) = i_1(f(x)) = i_1(y') = z = i_2(z),$$
-      so $z = g(x) \in Z'$.
-
   - property: co-Malcev
     proof: >-
       Suppose we have a coreflexive corelation $p : (X \sqcup X, X' \sqcup X') \twoheadrightarrow (E, E')$ with coreflexivity morphism $r : (E, E') \to (X, X')$. From the assumption that $p$ is an epimorphism, we have that $p : X \sqcup X \to E$ is a surjective function. Since <a href="/category/Set">$\Set$</a> is co-Malcev, it follows that $E \cong X \sqcup_Y X$ for some subset $Y \subseteq X$. It remains to show that $E' = i_1(X') \cup i_2(X') \subseteq X \sqcup_Y X$. Certainly, since we have a morphism $(X \sqcup_Y X, i_1(X') \cup i_2(X')) \to (E, E')$ induced by $p$, we must have $i_1(X') \cup i_2(X') \subseteq E'$. On the other hand, any element of $E'$ is an element of $E$ and hence is equal to either $i_1(x)$ or $i_2(x)$ for $x \in X$. In the first case, we must have $x = r(i_1(x)) \in X'$, so $i_1(x) \in i_1(X')$; and similarly for the second case.

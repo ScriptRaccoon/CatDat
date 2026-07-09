@@ -32,9 +32,6 @@ satisfied_properties:
     proof: This follows immediately from the fact for <a href="/category/Set">$\Set$</a>.
     check_redundancy: false
 
-  - property: epi-regular
-    proof: This follows immediately from the fact for <a href="/category/Set">$\Set$</a>.
-
   - property: regular
     proof: This follows immediately from the fact for <a href="/category/Set">$\Set$</a>.
 

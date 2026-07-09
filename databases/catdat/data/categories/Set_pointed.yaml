@@ -30,9 +30,6 @@ satisfied_properties:
   - property: cogenerator
     proof: The pointed set $(\{0,1\},1)$ is a cogenerator.
 
-  - property: epi-regular
-    proof: Every epimorphism is surjective for this category, and in an algebraic category every surjective homomorphism is a regular epimorphism.
-
   - property: coregular
     proof: From the other properties we know that (co-)limits exist and that monomorphisms coincide with injective pointed maps. So it suffices to prove that these maps are stable under pushouts. This follows from the corresponding fact for <a href="/category/Set">$\Set$</a> and the observation that the forgetful functor $\Set_* \to \Set$ preserves pushouts.
     check_redundancy: false

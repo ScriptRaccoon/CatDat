@@ -49,7 +49,6 @@
 \im: \operatorname{im}
 \lcm: \operatorname{lcm}
 \Spec: \operatorname{Spec}
-\Sh: \operatorname{Sh}
 \ord: \operatorname{ord}
 \diag: \operatorname{diag}
 \Sub: \operatorname{Sub}
@@ -123,3 +122,4 @@
 \Span: \mathbf{Span}
 \Arr: \mathbf{Arr}
 \Mono: \mathbf{Mono}
+\Sh: \mathbf{Sh}
