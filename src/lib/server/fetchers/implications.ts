@@ -7,7 +7,7 @@ import type {
 	StructureType
 } from '$lib/commons/types'
 import { display_implication } from '$lib/server/transforms'
-import { parse_json_set, parse_nested_json_list } from '$shared/utils'
+import { parse_json_set, parse_nested_json_set } from '$shared/utils'
 
 export function fetch_implications(type: StructureType) {
 	const { rows, err } = query<ImplicationDB>(sql`
@@ -67,9 +67,9 @@ export function get_normalized_implications(type: StructureType) {
 	for (const impl of rows) {
 		const assumptions = parse_json_set<string>(impl.assumptions)
 		const conclusions = parse_json_set<string>(impl.conclusions)
-		const mapped_assumptions = parse_nested_json_list<string>(impl.mapped_assumptions)
+		const mapped_assumptions = parse_nested_json_set<string>(impl.mapped_assumptions)
 
-		if (Object.values(mapped_assumptions).some((list) => list?.length)) continue
+		if (Object.values(mapped_assumptions).some((list) => list?.size)) continue
 
 		for (const conclusion of conclusions) {
 			implications.push({ id: impl.id, assumptions, conclusion })

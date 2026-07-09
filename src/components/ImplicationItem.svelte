@@ -18,7 +18,7 @@
 	let { type, implication, highlighted_property }: Props = $props()
 
 	let has_additional_assumptions = $derived(
-		Object.values(implication.mapped_assumptions).some((list) => list?.length)
+		Object.values(implication.mapped_assumptions).some((list) => list?.size)
 	)
 </script>
 

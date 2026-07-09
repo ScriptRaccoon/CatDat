@@ -51,15 +51,6 @@ export function parse_nested_json_set<T>(json: string): Partial<Record<string, S
 	return result
 }
 
-export function parse_nested_json_list<T>(json: string): Partial<Record<string, T[]>> {
-	const obj = JSON.parse(json)
-	const result: Partial<Record<string, T[]>> = {}
-	for (const key in obj) {
-		result[key] = JSON.parse(obj[key])
-	}
-	return result
-}
-
 export function to_placeholders(arr: string[]): string {
 	return arr.map(() => '?').join(', ')
 }

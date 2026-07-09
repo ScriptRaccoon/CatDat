@@ -97,7 +97,7 @@ export type ImplicationDisplay = Replace<
 		is_deduced: boolean
 		assumptions: string[]
 		conclusions: string[]
-		mapped_assumptions: Partial<Record<string, string[]>>
+		mapped_assumptions: Partial<Record<string, Set<string>>>
 	}
 >
 

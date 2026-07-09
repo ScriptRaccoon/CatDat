@@ -41,8 +41,8 @@ export function get_normalized_implications(
 				assumptions,
 				conclusions,
 				mapped_assumptions
-			FROM implications_view i
-			WHERE i.type = ?`
+			FROM implications_view
+			WHERE type = ?`
 		)
 		.all(type)
 

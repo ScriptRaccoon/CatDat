@@ -39,14 +39,14 @@
 	{/each}
 </p>
 
-{#each Object.entries(implication.mapped_assumptions) as [map, list]}
-	{#if list?.length}
+{#each Object.entries(implication.mapped_assumptions) as [map, set]}
+	{#if set?.size}
 		<p>
 			<strong>Requirements of the {map}:</strong>
 
-			{#each list as property, index}
+			{#each set as property, index}
 				<a href={get_property_url(property, mapped_types[map])}>{property}</a
-				>{#if index < list.length - 1}
+				>{#if index < set.size - 1}
 					,&nbsp;
 				{/if}
 			{/each}
