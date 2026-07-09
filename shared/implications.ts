@@ -86,3 +86,7 @@ export function get_normalized_implications(
 
 	return implications
 }
+
+export function stringify_implication(implication: NormalizedImplication) {
+	return `${[...implication.assumptions].join(' ∧ ')} ⟹ ${implication.conclusion}`
+}

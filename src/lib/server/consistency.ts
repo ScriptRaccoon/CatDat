@@ -2,7 +2,8 @@ import { is_subset } from '$shared/utils'
 import type { StructureType } from '$lib/commons/types'
 import {
 	get_normalized_implications,
-	type NormalizedImplication
+	type NormalizedImplication,
+	stringify_implication
 } from '$shared/implications'
 import { db } from './db'
 
@@ -40,7 +41,7 @@ export function contradiction_worker(
 		if (unsatisfied_properties.has(p)) return [`${p} ⟹ ${p}`]
 	}
 
-	const deduction_dict: Record<string, NormalizedImplication> = {}
+	const deduction_dict: Partial<Record<string, NormalizedImplication>> = {}
 	const deduced_satisfied_properties = new Set(satisfied_properties)
 
 	// bfs to find contradiction
@@ -82,7 +83,7 @@ export function contradiction_worker(
 
 function build_shortest_proof(
 	satisfied_properties: Set<string>,
-	deduction_dict: Record<string, NormalizedImplication>,
+	deduction_dict: Partial<Record<string, NormalizedImplication>>,
 	target_property: string
 ) {
 	const proof: string[] = []
@@ -105,8 +106,4 @@ function build_shortest_proof(
 	derive(target_property)
 
 	return proof
-}
-
-function stringify_implication(implication: NormalizedImplication) {
-	return `${[...implication.assumptions].join(' ∧ ')} ⟹ ${implication.conclusion}`
 }
