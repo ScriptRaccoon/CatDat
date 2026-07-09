@@ -1,7 +1,11 @@
 import { is_subset } from '$shared/utils'
 import type { SqliteError } from 'better-sqlite3'
-import type { NormalizedImplication, StructureType } from '$lib/commons/types'
-import { get_normalized_implications } from './fetchers/implications'
+import type { StructureType } from '$lib/commons/types'
+import {
+	get_normalized_implications,
+	type NormalizedImplication
+} from '$shared/implications'
+import { db } from './db.catdat'
 
 // TODO: If possible, remove the code duplication with deduction and redundancy scripts.
 
@@ -15,9 +19,9 @@ export function get_contradiction(
 		if (unsatisfied_properties.has(p)) return { contradiction, err: null }
 	}
 
-	const { implications, err } = get_normalized_implications(type)
-
-	if (err) return { contradiction: null, err }
+	const implications = get_normalized_implications(db, type).filter(
+		(impl) => !impl.mapped_assumptions
+	)
 
 	const contradiction = contradiction_worker(
 		satisfied_properties,

@@ -11,14 +11,10 @@ import {
 	get_property_assignments,
 	type PropertyMeta
 } from './utils/properties'
-import {
-	get_contradiction_string,
-	get_normalized_implications,
-	get_proof_string,
-	NormalizedImplication
-} from './utils/implications'
+import { get_contradiction_string, get_proof_string } from './utils/implications'
 import { type StructureType, STRUCTURE_TYPES_WITH_DUALS } from '$shared/config'
 import { get_structures, is_dual_structure, type StructureMeta } from './utils/structures'
+import { get_normalized_implications, NormalizedImplication } from '$shared/implications'
 
 /**
  * Returns the set of satisfied properties that can be deduced from a set

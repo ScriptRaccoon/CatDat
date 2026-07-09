@@ -1,9 +1,9 @@
-import { batch } from '$lib/server/db.catdat'
+import { batch, db } from '$lib/server/db.catdat'
 import sql from 'sql-template-tag'
 import type { StructureShort, StructureType } from '$lib/commons/types'
 import { error } from '@sveltejs/kit'
 import { contradiction_worker } from '$lib/server/consistency'
-import { get_normalized_implications } from './implications'
+import { get_normalized_implications } from '$shared/implications'
 
 export function fetch_missing_data(type: StructureType) {
 	const { results, err } = batch<
@@ -87,9 +87,9 @@ export function fetch_missing_data(type: StructureType) {
 		0
 	)
 
-	const { implications, err: err_imp } = get_normalized_implications(type)
-
-	if (err_imp) error(500, 'Failed to load data')
+	const implications = get_normalized_implications(db, type).filter(
+		(impl) => !impl.mapped_assumptions
+	)
 
 	const witnessed_pairs_set = new Set(witnessed_pairs.map(({ p, q }) => `${p}|${q}`))
 

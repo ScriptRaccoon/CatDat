@@ -8,7 +8,7 @@ import { type StructureType } from '$shared/config'
 import {
 	get_normalized_implications,
 	type NormalizedImplication
-} from './utils/implications'
+} from '$shared/implications'
 import { get_structures } from './utils/structures'
 
 const db = get_client()
