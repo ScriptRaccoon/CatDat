@@ -13,6 +13,7 @@ import type {
 } from './utils/seed.types'
 import { create_schema_hash, get_saved_schema_hash } from './utils/schema'
 import { STRUCTURE_TYPES, type StructureType, PLURALS } from '$shared/config'
+import { are_disjoint } from '$shared/utils'
 
 const db = get_client({ readonly: false })
 
@@ -215,6 +216,20 @@ function seed_structures<T extends StructureYaml>({
 	}
 
 	function insert_structure(structure: T) {
+		const properties_are_disjoint = are_disjoint(
+			[
+				structure.satisfied_properties,
+				structure.unsatisfied_properties,
+				structure.undecidable_properties ?? []
+			],
+			(entry) => entry.property
+		)
+
+		if (!properties_are_disjoint) {
+			console.error(`❌ Properties of ${structure.id} are contradictory.`)
+			process.exit(1)
+		}
+
 		structure_insert.run(
 			structure.id,
 			type,

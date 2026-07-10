@@ -3,7 +3,7 @@
  * for categories and other categorical structures.
  */
 
-import { type Database, SqliteError } from 'better-sqlite3'
+import { type Database } from 'better-sqlite3'
 import { deduce_properties, refute_properties } from '$shared/deduction.utils'
 import { get_client } from '$shared/db'
 import {
@@ -27,18 +27,26 @@ function deduce_satisfied_properties(
 	structure: StructureMeta,
 	implications: NormalizedImplication[],
 	satisfied_properties: Set<string>,
+	unsatisfied_properties: Set<string>,
 	properties_dict: Record<string, PropertyMeta>,
 	type: StructureType
 ) {
-	const { found, proofs } = deduce_properties(
+	const { found, proofs, stop_property } = deduce_properties(
 		satisfied_properties,
 		implications,
 		(implication) => ({
 			proof: get_proof_string(implication, properties_dict, type),
-			stop: false
+			stop: unsatisfied_properties.has(implication.conclusion)
 		}),
 		structure.associated_satisfied_properties
 	)
+
+	if (stop_property) {
+		console.error(
+			`❌ Property assignments of ${structure.id} are contradictory: "${stop_property}" can be deduced from its satisfied properties, but is marked as unsatisfied.`
+		)
+		process.exit(1)
+	}
 
 	for (const p of found) satisfied_properties.add(p)
 
@@ -99,28 +107,14 @@ function save_satisfied_properties(
 ) {
 	if (found.size === 0) return
 
-	const err_msg = `❌ Failed to complete deduction of satisfied properties for ${structure_id} because of a conflict. The likely cause is a contradiction between its assigned properties.`
-
 	const property_insert = db.prepare(`
 		INSERT INTO property_assignments
 			(structure_id, property_id, type, is_satisfied, proof, is_deduced)
 		VALUES (?, ?, ?, TRUE, ?, TRUE)
 	`)
 
-	try {
-		for (const p of found) {
-			property_insert.run(structure_id, p, type, proofs[p])
-		}
-	} catch (err) {
-		if (err instanceof SqliteError) {
-			if (err.code.startsWith('SQLITE_CONSTRAINT')) {
-				console.error(err_msg)
-			}
-			console.error(err.message)
-		} else {
-			console.error(err)
-		}
-		process.exit(1)
+	for (const p of found) {
+		property_insert.run(structure_id, p, type, proofs[p])
 	}
 }
 
@@ -136,28 +130,14 @@ function save_unsatisfied_properties(
 ) {
 	if (found.size === 0) return
 
-	const err_msg = `❌ Failed to complete deduction of unsatisfied properties for ${structure_id} because of a conflict. The likely cause is a contradiction between its assigned properties.`
-
 	const property_insert = db.prepare(`
 		INSERT INTO property_assignments
 			(structure_id, property_id, type, is_satisfied, proof, is_deduced)
 		VALUES (?, ?, ?, FALSE, ?, TRUE)
 	`)
 
-	try {
-		for (const p of found) {
-			property_insert.run(structure_id, p, type, proofs[p])
-		}
-	} catch (err) {
-		if (err instanceof SqliteError) {
-			if (err.code.startsWith('SQLITE_CONSTRAINT')) {
-				console.error(err_msg)
-			}
-			console.error(err.message)
-		} else {
-			console.error(err)
-		}
-		process.exit(1)
+	for (const p of found) {
+		property_insert.run(structure_id, p, type, proofs[p])
 	}
 }
 
@@ -274,6 +254,7 @@ export function deduce_properties_for_structures(type: StructureType) {
 				structure,
 				implications,
 				assigned.satisfied,
+				assigned.unsatisfied,
 				properties_dict,
 				type
 			)
@@ -319,6 +300,7 @@ export function deduce_properties_for_structures(type: StructureType) {
 				structure,
 				implications,
 				assigned.satisfied,
+				assigned.unsatisfied,
 				properties_dict,
 				type
 			)

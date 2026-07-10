@@ -17,6 +17,17 @@ export function is_subset<T>(a: Set<T>, b: Set<T>, options?: { exception: T }) {
 	return true
 }
 
+export function are_disjoint<T, S>(lists: T[][], transform: (x: T) => S) {
+	for (let i = 0; i < lists.length; i++) {
+		const a = lists[i].map(transform)
+		for (let j = i + 1; j < lists.length; j++) {
+			const b = lists[j].map(transform)
+			if (a.some((x) => b.includes(x))) return false
+		}
+	}
+	return true
+}
+
 export const sleep = (delay: number) => new Promise<void>((res) => setTimeout(res, delay))
 
 export function capitalize(txt: string) {
