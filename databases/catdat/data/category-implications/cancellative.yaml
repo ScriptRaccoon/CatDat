@@ -1,14 +1,5 @@
 # results on left cancellative and right cancellative categories
 
-- id: cancellative_consequence
-  assumptions:
-    - equalizers
-    - right cancellative
-  conclusions:
-    - thin
-  proof: If $f,g$ are two parallel morphisms, then their equalizer is a regular monomorphism, but also an epimorphism by assumption, so it must be an isomorphism. But this means that $f = g$.
-  is_equivalence: false
-
 - id: zero-no-mono
   assumptions:
     - left cancellative

@@ -56,9 +56,6 @@ unsatisfied_properties:
   - property: balanced
     proof: Take a set $X$ with two different $\sigma$-algebras $\A \subset \B$ (for example, $\A = \{\varnothing,X\}$ and $\B = P(X)$ when $X$ has at least $2$ elements), then the identity map $(X,\B) \to (X,\A)$ provides a counterexample.
 
-  - property: Malcev
-    proof: Use that <a href="/category/Set">$\Set$</a> is not Malcev and endow sets with the trivial $\sigma$-algebra.
-
   - property: cartesian filtered colimits
     proof: See <a href="https://math.stackexchange.com/questions/5027218" target="_blank">MSE/5027218</a>.
 

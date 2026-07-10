@@ -170,5 +170,7 @@
 	"quotient-trivial": false,
 	"locally finite": false,
 	"pretopos": false,
-	"quasitopos": false
+	"quasitopos": false,
+	"regular-subobject-trivial": false,
+	"regular-quotient-trivial": false
 }

@@ -95,9 +95,6 @@ unsatisfied_properties:
     proof: >-
       We already know that <a href="/category/Set">$\Set$</a> does not have this property. Now apply the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> to the functor $\Set \to \Mono$ which sends a set $X$ to the pair $(X, X)$.
 
-  - property: Malcev
-    proof: This is clear since $\Set$ is not Malcev, and it has a left exact embedding in $\Mono$ via the functor sending a set $X$ to $(X, X)$.
-
 special_objects:
   initial object:
     description: $(0, 0)$

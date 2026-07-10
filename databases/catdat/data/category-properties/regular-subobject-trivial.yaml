@@ -1,0 +1,13 @@
+id: regular-subobject-trivial
+relation: is
+description: 'A category is <i>regular-subobject-trivial</i> if every regular monomorphism is an isomorphism. Equivalently, the poset of regular subobjects of any object is trivial. Or as another equivalent condition, whenever a parallel pair $f, g : X \rightrightarrows Y$ has an equalizer, then $f = g$. This is not standard terminology. We have added it to the database since it clarifies the relationship between several related properties.'
+nlab_link: null
+dual: regular-quotient-trivial
+invariant_under_equivalences: true
+
+related:
+  - subobject-trivial
+  - thin
+
+tags:
+  - morphism behavior

@@ -170,5 +170,7 @@
 	"Barr-coexact": false,
 	"Barr-exact": false,
 	"pretopos": false,
-	"quasitopos": false
+	"quasitopos": false,
+	"regular-subobject-trivial": false,
+	"regular-quotient-trivial": false
 }

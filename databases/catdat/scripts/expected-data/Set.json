@@ -170,5 +170,7 @@
 	"core-thin": false,
 	"subobject-trivial": false,
 	"quotient-trivial": false,
-	"locally finite": false
+	"locally finite": false,
+	"regular-subobject-trivial": false,
+	"regular-quotient-trivial": false
 }

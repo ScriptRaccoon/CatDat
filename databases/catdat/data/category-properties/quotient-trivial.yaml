@@ -8,6 +8,7 @@ invariant_under_equivalences: true
 related:
   - epi-regular
   - groupoid
+  - regular-quotient-trivial
 
 tags:
   - morphism behavior
