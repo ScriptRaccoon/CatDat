@@ -1,6 +1,6 @@
 id: regular-quotient-trivial
 relation: is
-description: 'A category is <i>regular-quotient-trivial</i> if every epimorphism is an isomorphism. Equivalently, the poset of regular quotients of any object is trivial. Or as another equivalent condition, if a paralle pair $f, g : X \rightrightarrows Y$ has a coequalizer, then $f = g$. This is not standard terminology. We have added it to the database since it clarifies the relationship between several related properties.'
+description: 'A category is <i>regular-quotient-trivial</i> if every regular epimorphism is an isomorphism. Equivalently, the poset of regular quotients of any object is trivial. Or as another equivalent condition, if a parallel pair $f, g : X \rightrightarrows Y$ has a coequalizer, then $f = g$. This is not standard terminology. We have added it to the database since it clarifies the relationship between several related properties.'
 nlab_link: null
 dual: regular-subobject-trivial
 invariant_under_equivalences: true
