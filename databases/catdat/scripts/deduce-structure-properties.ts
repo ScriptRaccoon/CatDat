@@ -4,7 +4,7 @@
  */
 
 import { type Database, SqliteError } from 'better-sqlite3'
-import { is_subset } from '$shared/utils'
+import { deduce_properties, refute_properties } from '$shared/deduction.utils'
 import { get_client } from '$shared/db'
 import {
 	get_properties_dict,
@@ -17,148 +17,74 @@ import { get_structures, is_dual_structure, type StructureMeta } from './utils/s
 import { get_normalized_implications, NormalizedImplication } from '$shared/implications'
 
 /**
- * Returns the set of satisfied properties that can be deduced from a set
- * of satisfied properties, based on a list of normalized implications. If a
- * property dictionary is provided, human-readable proofs are generated as well.
+ * Deduce satisfied properties for a given structure from given ones
+ * by using a list of normalized implications.
+ * Human-readable proofs are generated as well.
+ * Warning: This mutates the set of satisfied properties.
  */
-export function get_deduced_satisfied_properties(
-	satisfied_properties: Set<string>,
+function deduce_satisfied_properties(
+	db: Database,
+	structure: StructureMeta,
 	implications: NormalizedImplication[],
-	options: {
-		properties_dict?: Record<string, PropertyMeta>
-		stop_when_found?: string
-	},
-	type: StructureType,
-	associated_satisfied_properties?: Record<string, Set<string>>
+	satisfied_properties: Set<string>,
+	properties_dict: Record<string, PropertyMeta>,
+	type: StructureType
 ) {
-	const found = new Set<string>()
-	const proofs: Record<string, string> = {}
-	const deduced_satisfied_properties = new Set(satisfied_properties)
+	const { found, proofs } = deduce_properties(
+		satisfied_properties,
+		implications,
+		(implication) => ({
+			proof: get_proof_string(implication, properties_dict, type),
+			stop: false
+		}),
+		structure.associated_satisfied_properties
+	)
 
-	while (true) {
-		const newly_found = new Set<string>()
+	for (const p of found) satisfied_properties.add(p)
 
-		for (const implication of implications) {
-			const is_valid =
-				is_subset(implication.assumptions, deduced_satisfied_properties) &&
-				!deduced_satisfied_properties.has(implication.conclusion) &&
-				!newly_found.has(implication.conclusion)
+	save_satisfied_properties(db, structure.id, found, proofs, type)
 
-			if (!is_valid) continue
-
-			if (implication.mapped_assumptions) {
-				const is_applicable = Object.keys(implication.mapped_assumptions).every(
-					(key) => {
-						return is_subset(
-							implication.mapped_assumptions?.[key] ?? new Set(),
-							associated_satisfied_properties?.[key] ?? new Set()
-						)
-					}
-				)
-				if (!is_applicable) continue
-			}
-
-			newly_found.add(implication.conclusion)
-			found.add(implication.conclusion)
-
-			if (options?.stop_when_found === implication.conclusion) {
-				deduced_satisfied_properties.add(implication.conclusion)
-				return { deduced_satisfied_properties, found, proofs }
-			}
-
-			if (options.properties_dict) {
-				proofs[implication.conclusion] = get_proof_string(
-					implication,
-					options.properties_dict,
-					type
-				)
-			}
-		}
-
-		for (const p of newly_found) deduced_satisfied_properties.add(p)
-
-		if (!newly_found.size) break
-	}
-
-	return { deduced_satisfied_properties, found, proofs }
+	console.info(`Deduced ${found.size} satisfied properties for ${structure.id}`)
 }
 
 /**
- * Returns the set of unsatisfied properties that can be deduced from
- * a set of satisfied properties and a set of unsatisfied properties,
- * based on a list of normalized implications. If a property dictionary
- * is provided, human-readable proofs are generated as well.
+ * Deduce unsatisfied properties for a given structure from given ones
+ * by using satisfied properties and a list of normalized implications.
+ * Human-readable proofs are generated as well.
+ * Warning: This mutates the set of unsatisfied properties.
  */
-export function get_deduced_unsatisfied_properties(
+function deduce_unsatisfied_properties(
+	db: Database,
+	structure: StructureMeta,
+	implications: NormalizedImplication[],
 	satisfied_properties: Set<string>,
 	unsatisfied_properties: Set<string>,
-	implications: NormalizedImplication[],
-	options: {
-		properties_dict?: Record<string, PropertyMeta>
-		stop_when_found?: string
-	},
-	type: StructureType,
-	associated_satisfied_properties?: Record<string, Set<string>>
+	properties_dict: Record<string, PropertyMeta>,
+	type: StructureType
 ) {
-	const found = new Set<string>()
-	const proofs: Record<string, string> = {}
-	const deduced_unsatisfied_properties = new Set(unsatisfied_properties)
-
-	while (true) {
-		const newly_found = new Set<string>()
-
-		for (const implication of implications) {
-			if (!deduced_unsatisfied_properties.has(implication.conclusion)) continue
-			for (const p of implication.assumptions) {
-				const is_valid =
-					!deduced_unsatisfied_properties.has(p) &&
-					!newly_found.has(p) &&
-					is_subset(implication.assumptions, satisfied_properties, {
-						exception: p
-					})
-				if (!is_valid) continue
-
-				if (implication.mapped_assumptions) {
-					const is_applicable = Object.keys(
-						implication.mapped_assumptions
-					).every((key) => {
-						return is_subset(
-							implication.mapped_assumptions?.[key] ?? new Set(),
-							associated_satisfied_properties?.[key] ?? new Set()
-						)
-					})
-					if (!is_applicable) continue
-				}
-
-				if (satisfied_properties.has(p)) {
-					throw new Error(`Contradiction has been found for: ${p}`)
-				}
-
-				if (options?.stop_when_found === p) {
-					deduced_unsatisfied_properties.add(p)
-					return { deduced_unsatisfied_properties, found, proofs }
-				}
-
-				newly_found.add(p)
-				found.add(p)
-
-				if (options.properties_dict) {
-					proofs[p] = get_contradiction_string(
-						implication,
-						options.properties_dict,
-						p,
-						type
-					)
-				}
+	const { found, proofs } = refute_properties<string>(
+		satisfied_properties,
+		unsatisfied_properties,
+		implications,
+		(implication, property) => {
+			return {
+				proof: get_contradiction_string(
+					implication,
+					properties_dict,
+					property,
+					type
+				),
+				stop: false
 			}
-		}
+		},
+		structure.associated_satisfied_properties
+	)
 
-		for (const p of newly_found) deduced_unsatisfied_properties.add(p)
+	for (const p of found) unsatisfied_properties.add(p)
 
-		if (!newly_found.size) break
-	}
+	save_unsatisfied_properties(db, structure.id, found, proofs, type)
 
-	return { deduced_unsatisfied_properties, found, proofs }
+	console.info(`Deduced ${found.size} unsatisfied properties for ${structure.id}`)
 }
 
 /**
@@ -168,7 +94,7 @@ function save_satisfied_properties(
 	db: Database,
 	structure_id: string,
 	found: Set<string>,
-	proofs: Record<string, string>,
+	proofs: Partial<Record<string, string>>,
 	type: StructureType
 ) {
 	if (found.size === 0) return
@@ -205,7 +131,7 @@ function save_unsatisfied_properties(
 	db: Database,
 	structure_id: string,
 	found: Set<string>,
-	proofs: Record<string, string>,
+	proofs: Partial<Record<string, string>>,
 	type: StructureType
 ) {
 	if (found.size === 0) return
@@ -233,64 +159,6 @@ function save_unsatisfied_properties(
 		}
 		process.exit(1)
 	}
-}
-
-/**
- * Deduce satisfied properties for a given structure from given ones
- * by using the list of normalized implications.
- * Warning: This mutates the set of satisfied properties.
- */
-function deduce_satisfied_properties(
-	db: Database,
-	structure: StructureMeta,
-	implications: NormalizedImplication[],
-	satisfied_properties: Set<string>,
-	properties_dict: Record<string, PropertyMeta>,
-	type: StructureType
-) {
-	const { found, proofs } = get_deduced_satisfied_properties(
-		satisfied_properties,
-		implications,
-		{ properties_dict },
-		type,
-		structure.associated_satisfied_properties
-	)
-
-	for (const p of found) satisfied_properties.add(p)
-
-	save_satisfied_properties(db, structure.id, found, proofs, type)
-
-	console.info(`Deduced ${found.size} satisfied properties for ${structure.id}`)
-}
-
-/**
- * Deduce unsatisfied properties for a given structure from given ones
- * by using the satisfied properties and the list of normalized implications.
- * Warning: This mutates the set of unsatisfied properties.
- */
-function deduce_unsatisfied_properties(
-	db: Database,
-	structure: StructureMeta,
-	implications: NormalizedImplication[],
-	satisfied_properties: Set<string>,
-	unsatisfied_properties: Set<string>,
-	properties_dict: Record<string, PropertyMeta>,
-	type: StructureType
-) {
-	const { found, proofs } = get_deduced_unsatisfied_properties(
-		satisfied_properties,
-		unsatisfied_properties,
-		implications,
-		{ properties_dict },
-		type,
-		structure.associated_satisfied_properties
-	)
-
-	for (const p of found) unsatisfied_properties.add(p)
-
-	save_unsatisfied_properties(db, structure.id, found, proofs, type)
-
-	console.info(`Deduced ${found.size} unsatisfied properties for ${structure.id}`)
 }
 
 /**

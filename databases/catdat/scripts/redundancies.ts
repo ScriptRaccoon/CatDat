@@ -1,14 +1,12 @@
 import { get_client } from '$shared/db'
-import {
-	get_deduced_satisfied_properties,
-	get_deduced_unsatisfied_properties
-} from './deduce-structure-properties'
 import { get_property_assignments_by_deduction } from './utils/properties'
 import { STRUCTURE_TYPES, type StructureType } from '$shared/config'
 import {
 	get_normalized_implications,
+	stringify_implication,
 	type NormalizedImplication
 } from '$shared/implications'
+import { deduce_properties, refute_properties } from '$shared/deduction.utils'
 import { get_structures } from './utils/structures'
 
 const db = get_client({ readonly: true })
@@ -49,7 +47,6 @@ function check_redundant_property_assignments(type: StructureType) {
 
 	for (const structure of structures) {
 		const redundant_satisfied_property = get_redundant_satisfied_property(
-			type,
 			assignments[structure.id].satisfied.non_deduced,
 			implications,
 			ignore_dict[structure.id],
@@ -70,7 +67,6 @@ function check_redundant_property_assignments(type: StructureType) {
 		])
 
 		const redundant_unsatisfied_property = get_redundant_unsatisfied_property(
-			type,
 			all_satisfied_properties,
 			assignments[structure.id].unsatisfied.non_deduced,
 			implications,
@@ -105,7 +101,6 @@ function check_redundant_property_assignments(type: StructureType) {
  * If no such property exists, null is returned.
  */
 function get_redundant_satisfied_property(
-	type: StructureType,
 	satisfied_properties: Set<string>,
 	implications: NormalizedImplication[],
 	ignored: Set<string> = new Set(),
@@ -113,17 +108,24 @@ function get_redundant_satisfied_property(
 ) {
 	for (const p of [...satisfied_properties]) {
 		if (ignored.has(p)) continue
+
 		satisfied_properties.delete(p)
-		const { deduced_satisfied_properties } = get_deduced_satisfied_properties(
+
+		const { deduced_satisfied_properties } = deduce_properties(
 			satisfied_properties,
 			implications,
-			{ stop_when_found: p },
-			type,
+			(implication) => ({
+				proof: stringify_implication(implication),
+				stop: implication.conclusion === p
+			}),
 			associated_satisfied_properties
 		)
+
 		if (deduced_satisfied_properties.has(p)) return p
+
 		satisfied_properties.add(p)
 	}
+
 	return null
 }
 
@@ -134,7 +136,6 @@ function get_redundant_satisfied_property(
  * If no such property exists, null is returned.
  */
 function get_redundant_unsatisfied_property(
-	type: StructureType,
 	satisfied_properties: Set<string>,
 	unsatisfied_properties: Set<string>,
 	implications: NormalizedImplication[],
@@ -143,16 +144,22 @@ function get_redundant_unsatisfied_property(
 ) {
 	for (const p of [...unsatisfied_properties]) {
 		if (ignored.has(p)) continue
+
 		unsatisfied_properties.delete(p)
-		const { deduced_unsatisfied_properties } = get_deduced_unsatisfied_properties(
+
+		const { deduced_unsatisfied_properties } = refute_properties(
 			satisfied_properties,
 			unsatisfied_properties,
 			implications,
-			{ stop_when_found: p },
-			type,
+			(implication, property) => ({
+				proof: stringify_implication(implication),
+				stop: property === p
+			}),
 			associated_satisfied_properties
 		)
+
 		if (deduced_unsatisfied_properties.has(p)) return p
+
 		unsatisfied_properties.add(p)
 	}
 	return null
