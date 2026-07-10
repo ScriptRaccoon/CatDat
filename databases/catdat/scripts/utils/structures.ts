@@ -8,7 +8,7 @@ export type StructureMeta = {
 	id: string
 	name: string
 	dual?: string | null
-	associated_satisfied_properties?: Record<string, Set<string>>
+	associated_satisfied_properties?: Partial<Record<string, Set<string>>>
 }
 
 /**
@@ -18,7 +18,7 @@ export type StructureMeta = {
 const TABLES: Record<StructureType, string> = {
 	category: 'categories',
 	functor: 'functors',
-	morphism: 'morphisms',
+	morphism: 'morphisms'
 }
 
 /**
@@ -40,7 +40,11 @@ export function get_structures(db: Database, type: StructureType): StructureMeta
 		.all(type)
 
 	const structure_maps = db
-		.prepare<[StructureType], string>(`SELECT map FROM structure_maps WHERE type = ?`)
+		.prepare<[StructureType], string>(
+			`SELECT map
+			FROM structure_maps
+			WHERE type = ?`
+		)
 		.pluck()
 		.all(type)
 

@@ -122,9 +122,7 @@ export function get_property_assignments_by_deduction(
 				is_satisfied,
 				is_deduced
 			FROM property_assignments
-			WHERE
-				type = ?
-				AND is_satisfied IS NOT NULL`
+			WHERE type = ? AND is_satisfied IS NOT NULL`
 		)
 		.all(type)
 

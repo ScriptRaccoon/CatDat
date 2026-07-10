@@ -104,7 +104,7 @@ function get_redundant_satisfied_property(
 	satisfied_properties: Set<string>,
 	implications: NormalizedImplication[],
 	ignored: Set<string> = new Set(),
-	associated_satisfied_properties?: Record<string, Set<string>>
+	associated_satisfied_properties?: Partial<Record<string, Set<string>>>
 ) {
 	for (const p of [...satisfied_properties]) {
 		if (ignored.has(p)) continue
@@ -140,7 +140,7 @@ function get_redundant_unsatisfied_property(
 	unsatisfied_properties: Set<string>,
 	implications: NormalizedImplication[],
 	ignored: Set<string> = new Set(),
-	associated_satisfied_properties?: Record<string, Set<string>>
+	associated_satisfied_properties?: Partial<Record<string, Set<string>>>
 ) {
 	for (const p of [...unsatisfied_properties]) {
 		if (ignored.has(p)) continue

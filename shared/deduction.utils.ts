@@ -8,7 +8,7 @@ export function deduce_properties<ProofType>(
 		proof: ProofType
 		stop: boolean
 	},
-	associated_satisfied_properties?: Record<string, Set<string>>
+	associated_satisfied_properties?: Partial<Record<string, Set<string>>>
 ) {
 	const found = new Set<string>()
 	const proofs: Partial<Record<string, ProofType>> = {}
@@ -61,7 +61,7 @@ export function refute_properties<ProofType>(
 		implication: NormalizedImplication,
 		property: string
 	) => { proof: ProofType; stop: boolean },
-	associated_satisfied_properties?: Record<string, Set<string>>
+	associated_satisfied_properties?: Partial<Record<string, Set<string>>>
 ) {
 	const found = new Set<string>()
 	const proofs: Partial<Record<string, ProofType>> = {}
@@ -120,7 +120,7 @@ export function refute_properties<ProofType>(
 
 function is_applicable(
 	implication: NormalizedImplication,
-	associated_satisfied_properties?: Record<string, Set<string>>
+	associated_satisfied_properties?: Partial<Record<string, Set<string>>>
 ) {
 	return (
 		!implication.mapped_assumptions ||
