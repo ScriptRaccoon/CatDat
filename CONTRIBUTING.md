@@ -47,10 +47,9 @@ You need to have [Git](https://git-scm.com/), [NodeJS](https://nodejs.org/) and 
 2. Clone your fork with `git clone https://github.com/{your_username}/CatDat.git`.
 3. Change into the directory with `cd CatDat`.
 4. Install dependencies with `pnpm install`.
-5. Create a local `.env` file from `.env.example`.
-6. Create the local database with `pnpm db:setup`.
-7. Update the local database with `pnpm db:update`.
-8. Start the local development server with `pnpm dev`.
+5. Create the local database with `pnpm db:setup`.
+6. Update the local database with `pnpm db:update`.
+7. Start the local development server with `pnpm dev`.
 
 ### Updating the Database
 
