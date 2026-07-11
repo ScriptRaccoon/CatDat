@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test'
 
-test('user can navigate to a category implication', async ({ page }) => {
-	await page.goto('/')
+test('user can navigate to a functor implication', async ({ page }) => {
+	await page.goto('/functor-list')
 
 	const nav = page.getByRole('navigation')
 	await expect(nav).toBeVisible()
@@ -15,14 +15,14 @@ test('user can navigate to a category implication', async ({ page }) => {
 
 	await expect(
 		page.getByRole('heading', {
-			name: 'Category implications',
+			name: 'Functor implications',
 			exact: true
 		})
 	).toBeVisible()
 
-	await expect(page).toHaveURL('/category-implications')
+	await expect(page).toHaveURL('/functor-implications')
 
-	const item = page.locator('li', { hasText: /cartesian closed.+finite products/ })
+	const item = page.locator('li', { hasText: /fully faithful.+conservative/ })
 
 	await expect(item).toBeVisible()
 
@@ -35,11 +35,11 @@ test('user can navigate to a category implication', async ({ page }) => {
 		})
 	).toBeVisible()
 
-	await expect(page).toHaveURL('/category-implication/ccc_condition')
+	await expect(page).toHaveURL('/functor-implication/conservative_criterion')
 })
 
 test('user can see the details of an implication', async ({ page }) => {
-	await page.goto('/category-implication/ccc_condition')
+	await page.goto('/functor-implication/conservative_criterion')
 
 	await expect(
 		page.getByRole('heading', {
@@ -50,27 +50,29 @@ test('user can see the details of an implication', async ({ page }) => {
 
 	await expect(
 		page.getByRole('link', {
-			name: 'cartesian closed',
+			name: 'fully faithful',
 			exact: true
 		})
 	).toBeVisible()
 
 	await expect(
 		page.getByRole('link', {
-			name: 'finite products',
+			name: 'conservative',
 			exact: true
 		})
 	).toBeVisible()
 
-	await expect(page.getByText('Proof: This holds by definition')).toBeVisible()
+	await expect(page.getByText(/Proof:.+follows that/)).toBeVisible()
 })
 
 test('user can open the list of deduced implications', async ({ page }) => {
-	await page.goto('/category-implications', { waitUntil: 'networkidle' })
+	await page.goto('/functor-implications', { waitUntil: 'networkidle' })
 
-	await expect(page.locator('li', { hasText: /abelian.+regular/ })).toBeVisible()
+	await expect(page.locator('li', { hasText: /monadic.+right adjoint/ })).toBeVisible()
 
-	await expect(page.locator('li', { hasText: /abelian.+coregular/ })).toHaveCount(0)
+	await expect(page.locator('li', { hasText: /comonadic.+left adjoint/ })).toHaveCount(
+		0
+	)
 
 	await page
 		.getByRole('button', {
@@ -79,5 +81,5 @@ test('user can open the list of deduced implications', async ({ page }) => {
 		})
 		.click()
 
-	await expect(page.locator('li', { hasText: /abelian.+coregular/ })).toBeVisible()
+	await expect(page.locator('li', { hasText: /comonadic.+left adjoint/ })).toBeVisible()
 })
