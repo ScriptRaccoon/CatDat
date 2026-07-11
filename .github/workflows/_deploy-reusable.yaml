@@ -11,8 +11,6 @@ on:
         required: true
       NETLIFY_ACCESS_TOKEN:
         required: true
-      PUBLIC_ADMIN_URL:
-        required: true
 
 jobs:
   build-and-deploy:
@@ -47,7 +45,7 @@ jobs:
       - name: Build app
         env:
           PUBLIC_PLAYWRIGHT: ''
-          PUBLIC_ADMIN_URL: ${{ secrets.PUBLIC_ADMIN_URL }}
+          PUBLIC_ADMIN_URL: ${{ vars.PUBLIC_ADMIN_URL }}
         run: pnpm build
 
       - name: Get latest commit message
