@@ -1,4 +1,5 @@
 import { get_client } from '$shared/db'
+import { devlog } from '$shared/utils'
 
 const db = get_client({ readonly: false })
 
@@ -38,5 +39,5 @@ export function restrict_representable_functors() {
 		)
 		.run()
 
-	console.info(`Deduced that ${res.changes} functors cannot be representable`)
+	devlog(`Deduced that ${res.changes} functors cannot be representable`)
 }

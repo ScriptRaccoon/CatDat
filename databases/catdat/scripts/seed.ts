@@ -13,7 +13,7 @@ import type {
 } from './utils/seed.types'
 import { create_schema_hash, get_saved_schema_hash } from './utils/schema'
 import { STRUCTURE_TYPES, type StructureType, PLURALS } from '$shared/config'
-import { are_disjoint } from '$shared/utils'
+import { are_disjoint, devlog } from '$shared/utils'
 
 const db = get_client({ readonly: false })
 
@@ -48,7 +48,7 @@ function seed() {
  * Checks if the schema is up-to-date, and throws an error otherwise.
  */
 function check_schema() {
-	console.info(`\nCheck schema ...`)
+	devlog(`\nCheck schema ...`)
 
 	const schema_hash = get_saved_schema_hash()
 	const actual_hash = create_schema_hash()
@@ -63,7 +63,7 @@ function check_schema() {
  * Clears all tables in the database. This is done as a first step.
  */
 function clear_all_tables() {
-	console.info(`\nClear all tables ...`)
+	devlog(`\nClear all tables ...`)
 
 	const tx = db.transaction(() => {
 		db.pragma('defer_foreign_keys = ON')

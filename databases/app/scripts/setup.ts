@@ -1,5 +1,6 @@
 import dotenv from 'dotenv'
 import { createClient } from '@libsql/client'
+import { devlog } from '$shared/utils'
 
 dotenv.config({ quiet: true })
 
@@ -39,7 +40,7 @@ async function create_visits_table() {
         )
     `)
 
-	console.info('Visits table ready')
+	devlog('Visits table ready')
 }
 
 /**
@@ -58,7 +59,7 @@ async function create_submissions_table() {
         )
     `)
 
-	console.info('Submissions table ready')
+	devlog('Submissions table ready')
 }
 
 /**
@@ -74,5 +75,5 @@ async function create_actions_table() {
         )
     `)
 
-	console.info('User actions table ready')
+	devlog('User actions table ready')
 }

@@ -1,4 +1,5 @@
 import { get_client } from '$shared/db'
+import { devlog } from '$shared/utils'
 
 const db = get_client({ readonly: false })
 
@@ -40,5 +41,5 @@ function deduce_special_objects_of_dual_categories() {
 		)
 		.run()
 
-	console.info(`Deduced ${res.changes} special objects by duality`)
+	devlog(`Deduced ${res.changes} special objects by duality`)
 }

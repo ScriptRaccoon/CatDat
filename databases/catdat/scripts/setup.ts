@@ -2,6 +2,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { get_client } from '$shared/db'
 import { create_schema_hash, write_schema_hash } from './utils/schema'
+import { devlog } from '$shared/utils'
 
 const schema_folder = path.resolve('databases', 'catdat', 'schema')
 
@@ -26,7 +27,7 @@ function setup() {
 	for (const file of files) {
 		const sql = fs.readFileSync(path.join(schema_folder, file), 'utf8')
 
-		console.info(`Apply: ${file}`)
+		devlog(`Apply: ${file}`)
 
 		try {
 			db.exec(sql)
@@ -39,5 +40,5 @@ function setup() {
 	const hash = create_schema_hash()
 	write_schema_hash(hash)
 
-	console.info('Setup complete')
+	devlog('Setup complete')
 }

@@ -2,6 +2,7 @@ import type { Database } from 'better-sqlite3'
 import path from 'node:path'
 import fs from 'node:fs'
 import YAML from 'yaml'
+import { devlog } from '$shared/utils'
 
 function read_yaml_file<T>(...parts: string[]): T {
 	const content = fs.readFileSync(path.join(...parts), 'utf8')
@@ -21,7 +22,7 @@ export function seed_file<T>(
 	file: string,
 	insert: (item: T) => void
 ) {
-	console.info(`\nSeed ${label} ...`)
+	devlog(`\nSeed ${label} ...`)
 	const item = read_yaml_file<T>(file)
 
 	const tx = db.transaction(() => {
@@ -43,7 +44,7 @@ export function seed_files<T>(
 	folder: string,
 	insert: (item: T) => void
 ) {
-	console.info(`\nSeed ${label} ...`)
+	devlog(`\nSeed ${label} ...`)
 
 	const files = get_yaml_files(folder)
 
@@ -51,7 +52,7 @@ export function seed_files<T>(
 		db.pragma('defer_foreign_keys = ON')
 
 		for (const file of files) {
-			console.info(`Seed: ${file}`)
+			devlog(`Seed: ${file}`)
 
 			const item = read_yaml_file<T>(folder, file)
 			insert(item)

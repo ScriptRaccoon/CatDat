@@ -73,3 +73,7 @@ export function strip_math(s: string) {
 export function add_math(s: string) {
 	return `$${s}$`
 }
+
+export function devlog(msg: string) {
+	if (!process.env.CI) console.info(msg)
+}

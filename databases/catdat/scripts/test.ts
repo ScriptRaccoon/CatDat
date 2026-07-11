@@ -12,7 +12,7 @@ import id_Set_expected from './expected-data/id_Set.json'
 import decided_categories from './expected-data/decided-categories.json'
 import decided_functors from './expected-data/decided-functors.json'
 import decided_morphisms from './expected-data/decided-morphisms.json'
-import { capitalize } from '$shared/utils'
+import { capitalize, devlog } from '$shared/utils'
 import { get_client } from '$shared/db'
 import { STRUCTURE_TYPES, type StructureType, PLURALS } from '$shared/config'
 import fs from 'node:fs'
@@ -28,10 +28,12 @@ execute_tests()
  */
 function execute_tests() {
 	try {
-		console.info('--- Test link targets ---')
+		console.info('--- Database Tests ---')
+
+		devlog('\n--- Test link targets ---')
 		check_link_targets_exist()
 
-		console.info('\n--- Test categories ---')
+		devlog('\n--- Test categories ---')
 
 		test_mutual_structure_duals('category')
 		test_positivity('1', 'category')
@@ -42,7 +44,7 @@ function execute_tests() {
 			'category'
 		)
 
-		console.info('\n--- Test functors ---')
+		devlog('\n--- Test functors ---')
 
 		test_positivity('id_Set', 'functor')
 		test_mutual_property_duals('functor')
@@ -52,7 +54,7 @@ function execute_tests() {
 			'functor'
 		)
 
-		console.info('\n--- Test morphisms ---')
+		devlog('\n--- Test morphisms ---')
 
 		test_positivity('id_X', 'morphism')
 		test_decided_structures(decided_morphisms, 'morphism')
@@ -91,7 +93,7 @@ function test_mutual_structure_duals(type: StructureType) {
 		}
 	}
 
-	console.info(`✅ ${capitalize(PLURALS[type])} are mutually dual`)
+	devlog(`✅ ${capitalize(PLURALS[type])} are mutually dual`)
 }
 
 /**
@@ -113,7 +115,7 @@ function test_positivity(structure_id: string, type: StructureType) {
 		)
 	}
 
-	console.info(`✅ The ${type} ${structure_id} has no unsatisfied properties`)
+	devlog(`✅ The ${type} ${structure_id} has no unsatisfied properties`)
 }
 
 /**
@@ -141,7 +143,7 @@ function test_mutual_property_duals(type: StructureType) {
 		}
 	}
 
-	console.info(`✅ ${capitalize(type)} properties are mutually dual`)
+	devlog(`✅ ${capitalize(type)} properties are mutually dual`)
 }
 
 /**
@@ -168,7 +170,7 @@ function test_decided_structures(structure_ids: string[], type: StructureType) {
 			)
 		}
 
-		console.info(`✅ All properties have been decided for ${structure_id}`)
+		devlog(`✅ All properties have been decided for ${structure_id}`)
 	}
 }
 
@@ -199,7 +201,7 @@ function test_properties_of_selected_structures(
 			throw new Error(`❌ Incorrect property of ${structure_id}: ${property_id}`)
 		}
 
-		console.info(`✅ Properties of ${structure_id} are correct`)
+		devlog(`✅ Properties of ${structure_id} are correct`)
 	}
 }
 
@@ -285,5 +287,5 @@ function check_link_targets_exist() {
 		}
 	}
 
-	console.info(`✅ Link targets exist`)
+	devlog(`✅ Link targets exist`)
 }

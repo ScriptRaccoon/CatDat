@@ -18,7 +18,8 @@
 		"esbuild",
 		"coloneqq",
 		"FiltVect",
-		"networkidle"
+		"networkidle",
+		"devlog"
 	],
 	"words": [
 		"abelian",

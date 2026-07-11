@@ -1,4 +1,5 @@
 import { get_client } from '$shared/db'
+import { devlog } from '$shared/utils'
 
 const db = get_client({ readonly: false })
 
@@ -46,5 +47,5 @@ function deduce_special_morphisms_of_dual_categories() {
 		)
 		.run()
 
-	console.info(`Deduced ${res.changes} special morphisms by duality`)
+	devlog(`Deduced ${res.changes} special morphisms by duality`)
 }

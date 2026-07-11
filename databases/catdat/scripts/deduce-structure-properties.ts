@@ -15,6 +15,7 @@ import { get_contradiction_string, get_proof_string } from './utils/implications
 import { type StructureType, STRUCTURE_TYPES_WITH_DUALS } from '$shared/config'
 import { get_structures, is_dual_structure, type StructureMeta } from './utils/structures'
 import { get_normalized_implications, NormalizedImplication } from '$shared/implications'
+import { devlog } from '$shared/utils'
 
 /**
  * Deduce satisfied properties for a given structure from given ones
@@ -52,7 +53,7 @@ function deduce_satisfied_properties(
 
 	save_satisfied_properties(db, structure.id, found, proofs, type)
 
-	console.info(`Deduced ${found.size} satisfied properties for ${structure.id}`)
+	devlog(`Deduced ${found.size} satisfied properties for ${structure.id}`)
 }
 
 /**
@@ -92,7 +93,7 @@ function deduce_unsatisfied_properties(
 
 	save_unsatisfied_properties(db, structure.id, found, proofs, type)
 
-	console.info(`Deduced ${found.size} unsatisfied properties for ${structure.id}`)
+	devlog(`Deduced ${found.size} unsatisfied properties for ${structure.id}`)
 }
 
 /**
@@ -199,7 +200,7 @@ function deduce_dual_properties(
 		property_insert.run(structure.id, p, type, 1, proof_satisfied)
 	}
 
-	console.info(
+	devlog(
 		`Deduced ${new_satisfied.size} satisfied properties by duality for ${structure.id}`
 	)
 
@@ -207,7 +208,7 @@ function deduce_dual_properties(
 		property_insert.run(structure.id, q, type, 0, proof_unsatisfied)
 	}
 
-	console.info(
+	devlog(
 		`Deduced ${new_unsatisfied.size} unsatisfied properties by duality for ${structure.id}`
 	)
 
@@ -215,7 +216,7 @@ function deduce_dual_properties(
 		property_insert.run(structure.id, q, type, null, proof_undecidable)
 	}
 
-	console.info(
+	devlog(
 		`Deduced ${new_undecidable.size} undecidable properties by duality for ${structure.id}`
 	)
 }

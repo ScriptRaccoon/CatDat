@@ -1,5 +1,10 @@
 import { type StructureType, STRUCTURE_TYPES_WITH_DUALS } from '$shared/config'
-import { are_equal_sets, parse_nested_json_set, parse_json_set } from '$shared/utils'
+import {
+	are_equal_sets,
+	parse_nested_json_set,
+	parse_json_set,
+	devlog
+} from '$shared/utils'
 import { get_client } from '$shared/db'
 
 const db = get_client({ readonly: false })
@@ -151,7 +156,7 @@ export function create_dualized_implications(type: StructureType) {
 			}
 		}
 
-		console.info(`Deduced ${count} ${type} implications by duality`)
+		devlog(`Deduced ${count} ${type} implications by duality`)
 	})
 
 	insert_duals()
@@ -203,5 +208,5 @@ export function create_self_dual_implications(type: StructureType) {
 		conclusion_insert.run(implication_id, p.dual, type)
 	}
 
-	console.info(`Deduced ${relevant_props.length} ${type} implications by self-duality`)
+	devlog(`Deduced ${relevant_props.length} ${type} implications by self-duality`)
 }
