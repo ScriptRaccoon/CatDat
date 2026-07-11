@@ -197,3 +197,13 @@ test('user can dualize search', async ({ page }) => {
 		})
 	).toBeVisible()
 })
+
+test('contradictions are detected', async ({ page }) => {
+	await page.goto(
+		'/category-search/results?satisfied=equalizers~products&unsatisfied=pullbacks'
+	)
+
+	await expect(page.getByText('the requirements are inconsistent')).toBeVisible()
+
+	await expect(page.getByText('equalizers ∧ products ⟹ complete')).toBeVisible()
+})

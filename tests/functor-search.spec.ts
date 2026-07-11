@@ -183,3 +183,21 @@ test('user can dualize search', async ({ page }) => {
 		})
 	).toBeVisible()
 })
+
+test('contradictions are detected', async ({ page }) => {
+	await page.goto(
+		'/functor-search/results?satisfied=cocontinuous~continuous&unsatisfied=preserves_terminal_objects'
+	)
+
+	await expect(page.getByText('the requirements are inconsistent')).toBeVisible()
+
+	await expect(page.getByText('continuous ⟹ preserves products')).toBeVisible()
+
+	await expect(
+		page.getByText('preserves products ⟹ preserves finite products')
+	).toBeVisible()
+
+	await expect(
+		page.getByText('preserves finite products ⟹ preserves terminal objects')
+	).toBeVisible()
+})
