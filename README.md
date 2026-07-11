@@ -58,6 +58,10 @@ Built with modern web technologies:
 - Math Rendering: [katex](https://www.npmjs.com/package/katex)
 - End-to-end testing: [Playwright](https://playwright.dev)
 
+## Admin application
+
+The repository [CatDatAdmin](https://github.com/ScriptRaccoon/CatDatAdmin) contains the admin functionality for CatDat.
+
 ## Similar projects
 
 _CatDat_ draws inspiration from and complements other resources in category theory:
