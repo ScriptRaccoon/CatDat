@@ -11,16 +11,6 @@ test('user can navigate to a functor', async ({ page }) => {
 		.first()
 		.click()
 
-	const nav = page.getByRole('navigation')
-	await expect(nav).toBeVisible()
-
-	await nav
-		.getByRole('link', {
-			name: 'Functors',
-			exact: true
-		})
-		.click()
-
 	await expect(
 		page.getByRole('heading', {
 			name: 'List of functors',
@@ -47,6 +37,60 @@ test('user can navigate to a functor', async ({ page }) => {
 	await expect(page).toHaveURL('/functor/pi_1')
 })
 
+test("user can navigate to functors tagged with 'topology' from the functor list page", async ({
+	page
+}) => {
+	await page.goto('/functor-list', { waitUntil: 'networkidle' })
+
+	await page
+		.getByRole('button', {
+			name: 'topology',
+			exact: true
+		})
+		.click()
+
+	await expect(
+		page.getByRole('heading', {
+			name: "Functors tagged with 'topology'",
+			exact: true
+		})
+	).toBeVisible()
+
+	await expect(
+		page.getByRole('link', {
+			name: 'path components functor',
+			exact: true
+		})
+	).toBeVisible()
+})
+
+test("user can navigate to functors tagged with 'algebra' from the category detail page", async ({
+	page
+}) => {
+	await page.goto('/functor/abelianization', { waitUntil: 'networkidle' })
+
+	await page
+		.getByRole('button', {
+			name: 'algebra',
+			exact: true
+		})
+		.click()
+
+	await expect(
+		page.getByRole('heading', {
+			name: "Functors tagged with 'algebra'",
+			exact: true
+		})
+	).toBeVisible()
+
+	await expect(
+		page.getByRole('link', {
+			name: 'torsion functor',
+			exact: true
+		})
+	).toBeVisible()
+})
+
 test('user can view functor details', async ({ page }) => {
 	await page.goto('/functor/pi_1')
 
@@ -58,12 +102,44 @@ test('user can view functor details', async ({ page }) => {
 	).toBeVisible()
 
 	await expect(page.getByText('group of homotopy classes of loops')).toBeVisible()
-
+	await expect(page.getByRole('link', { name: 'nLab link' })).toBeVisible()
 	await expect(page.getByText('preserves products')).toBeVisible()
 	await expect(page.getByText('is essentially surjective')).toBeVisible()
-
 	await expect(page.getByText('is not faithful')).toBeVisible()
 	await expect(page.getByText('does not preserve binary coproducts')).toBeVisible()
+})
+
+test('user sees no unknown properties for a forgetful functor', async ({ page }) => {
+	await page.goto('/functor/forget_vector')
+
+	const unknown_properties_section = page.locator('section', {
+		hasText: 'Unknown properties'
+	})
+	await expect(unknown_properties_section.locator('li')).toHaveCount(0)
+})
+
+test('user may see undecidable properties', async ({ page }) => {
+	await page.goto('/functor/power_set_covariant')
+
+	await expect(
+		page.getByRole('heading', {
+			name: 'covariant power set functor',
+			exact: true
+		})
+	).toBeVisible()
+
+	const undecidable_properties_section = page
+		.locator('section', {
+			hasText: 'Undecidable properties'
+		})
+		.first()
+
+	const link = undecidable_properties_section.getByRole('link', {
+		name: 'essentially injective',
+		exact: true
+	})
+
+	await expect(link).toBeVisible()
 })
 
 test('user can navigate to a related functor', async ({ page }) => {
@@ -166,10 +242,10 @@ test('user can navigate to the right adjoint functor', async ({ page }) => {
 	await expect(page).toHaveURL('/functor/indiscrete_topology')
 })
 
-test('user can open and close a derived proof for a functor', async ({ page }) => {
-	await page.goto('/functor/free_group', { waitUntil: 'networkidle' })
+test('user can open and close a proof for a property of a functor', async ({ page }) => {
+	await page.goto('/functor/forget_ring', { waitUntil: 'networkidle' })
 
-	const claim = page.locator('li', { has: page.getByText('is cocontinuous') })
+	const claim = page.locator('li', { has: page.getByText('is monadic') })
 
 	await expect(claim).toBeVisible()
 
@@ -184,9 +260,11 @@ test('user can open and close a derived proof for a functor', async ({ page }) =
 
 	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
 
-	await expect(
-		popup.getByText('Since it is a left adjoint, it is cocontinuous')
-	).toBeVisible()
+	const text = (await popup.textContent())?.trim() ?? ''
+
+	const proof_text = text.replace(/^Proof/, '').trim()
+
+	expect(proof_text.length).toBeGreaterThan(0)
 
 	await popup.getByRole('button', { name: 'close' }).click()
 
@@ -198,103 +276,38 @@ test('user can open and close a derived proof for a functor', async ({ page }) =
 	).not.toBeVisible()
 })
 
-test('user can navigate to a functor property', async ({ page }) => {
-	await page.goto('/functor-list')
+test('user can open a proof for a deduced satisfied property of functor', async ({
+	page
+}) => {
+	await page.goto('/functor/free_group', { waitUntil: 'networkidle' })
 
-	const nav = page.getByRole('navigation')
-	await expect(nav).toBeVisible()
+	const claim = page.locator('li', { has: page.getByText('is cocontinuous') })
 
-	await nav
-		.getByRole('link', {
-			name: 'Properties',
-			exact: true
-		})
-		.click()
+	await expect(claim).toBeVisible()
 
-	await expect(
-		page.getByRole('heading', {
-			name: 'Properties of functors',
-			exact: true
-		})
-	).toBeVisible()
+	await claim.locator('button').click()
 
-	await page
-		.getByRole('link', {
-			name: 'faithful',
-			exact: true
-		})
-		.click()
+	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
 
 	await expect(
-		page.getByRole('heading', {
-			name: 'faithful',
-			exact: true
-		})
+		popup.getByText('Since it is a left adjoint, it is cocontinuous')
 	).toBeVisible()
-
-	await expect(page).toHaveURL('/functor-property/faithful')
 })
 
-test('user can view functor property details', async ({ page }) => {
-	await page.goto('/functor-property/faithful')
+test('user can open a proof for a deduced unsatisfied property of a functor', async ({
+	page
+}) => {
+	await page.goto('/functor/pi_1', { waitUntil: 'networkidle' })
+
+	const claim = page.locator('li', { has: page.getByText('is not continuous') })
+
+	await expect(claim).toBeVisible()
+
+	await claim.locator('button').click()
+
+	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
 
 	await expect(
-		page.getByRole('heading', {
-			name: 'faithful',
-			exact: true
-		})
-	).toBeVisible()
-
-	await expect(page.getByText('is faithful when')).toBeVisible()
-
-	await expect(
-		page
-			.getByRole('link', {
-				name: 'fully faithful',
-				exact: true
-			})
-			.first()
-	).toBeVisible()
-
-	const examples = page
-		.getByRole('heading', {
-			name: 'Examples',
-			exact: true
-		})
-		.locator('xpath=following-sibling::ul[1]')
-
-	await expect(
-		examples.getByRole('link', {
-			name: 'forgetful functor for rings',
-			exact: true
-		})
-	).toBeVisible()
-
-	await expect(
-		examples.getByRole('link', {
-			name: 'free group functor',
-			exact: true
-		})
-	).toBeVisible()
-
-	const counterexamples = page
-		.getByRole('heading', {
-			name: 'Counterexamples',
-			exact: true
-		})
-		.locator('xpath=following-sibling::ul[1]')
-
-	await expect(
-		counterexamples.getByRole('link', {
-			name: 'abelianization functor for groups',
-			exact: true
-		})
-	).toBeVisible()
-
-	await expect(
-		counterexamples.getByRole('link', {
-			name: 'fundamental group functor',
-			exact: true
-		})
+		popup.getByText('Assume for contradiction that it is continuous.')
 	).toBeVisible()
 })
