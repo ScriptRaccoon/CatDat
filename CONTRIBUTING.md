@@ -52,8 +52,6 @@ You need to have [Git](https://git-scm.com/), [NodeJS](https://nodejs.org/) and 
 7. Update the local database with `pnpm db:update`.
 8. Start the local development server with `pnpm dev`.
 
-**For Maintainers:** Redis is required for admin features and submissions. Start a local instance on port 6379 via `redis-server --port 6379`.
-
 ### Updating the Database
 
 All updates to the database are made by modifying the YAML files in the folder [/databases/catdat/data](databases/catdat/data). See [DATABASE.md](/DATABASE.md) for an overview of the database structure, and see [below](#authoring-of-yaml-files) for some tips how to edit YAML files.

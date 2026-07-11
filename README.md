@@ -48,8 +48,6 @@ You need to have [Git](https://git-scm.com/), [NodeJS](https://nodejs.org/) and 
 7. Update the local database with `pnpm db:update`.
 8. Start the local development server with `pnpm dev`.
 
-**For Maintainers:** Redis is required for admin features and submissions. Start a local instance on port 6379 via `redis-server --port 6379`.
-
 ## Tech Stack
 
 Built with modern web technologies:

@@ -111,7 +111,3 @@ to check for redundant assignments of properties to categorical structures.
 This is the database schema as of 01.07.2026; changes may occur.
 
 <img alt="database diagram" src="https://github.com/user-attachments/assets/cfde0cea-07fa-4538-8ebb-9d97b1c352cc" />
-
-## Application Database
-
-The application itself uses another database to store user submissions and page visits. The local copy of this database is at `/databases/app/app.db`.

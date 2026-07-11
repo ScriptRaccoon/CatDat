@@ -7,27 +7,11 @@ on:
         required: true
         type: boolean
     secrets:
-      APP_DB_URL:
-        required: true
-      APP_DB_AUTH_TOKEN:
-        required: true
       NETLIFY_SITE_ID:
         required: true
       NETLIFY_ACCESS_TOKEN:
         required: true
-      _GITHUB_PRIVATE_KEY:
-        required: true
-      REDIS_URL:
-        required: true
-      ADMIN_PAGE_PASSWORD:
-        required: true
-      EMAIL_ADDRESS:
-        required: true
-      EMAIL_PASSWORD:
-        required: true
-      ENABLE_EMAILS:
-        required: true
-      APPROVAL_EMAIL:
+      PUBLIC_ADMIN_URL:
         required: true
 
 jobs:
@@ -56,25 +40,14 @@ jobs:
         run: pnpm i
 
       - name: Build database
-        env:
-          APP_DB_URL: ${{ secrets.APP_DB_URL }}
-          APP_DB_AUTH_TOKEN: ${{ secrets.APP_DB_AUTH_TOKEN }}
         run: |
           pnpm db:setup
           pnpm db:update
 
       - name: Build app
         env:
-          APP_DB_URL: ${{ secrets.APP_DB_URL }}
-          APP_DB_AUTH_TOKEN: ${{ secrets.APP_DB_AUTH_TOKEN }}
-          GITHUB_PRIVATE_KEY: ${{ secrets._GITHUB_PRIVATE_KEY }}
-          REDIS_URL: ${{ secrets.REDIS_URL }}
-          ADMIN_PAGE_PASSWORD: ${{ secrets.ADMIN_PAGE_PASSWORD }}
-          EMAIL_ADDRESS: ${{ secrets.EMAIL_ADDRESS }}
-          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
-          ENABLE_EMAILS: ${{ secrets.ENABLE_EMAILS }}
-          APPROVAL_EMAIL: ${{ secrets.APPROVAL_EMAIL }}
           PUBLIC_PLAYWRIGHT: ''
+          PUBLIC_ADMIN_URL: ${{ secrets.PUBLIC_ADMIN_URL }}
         run: pnpm build
 
       - name: Get latest commit message

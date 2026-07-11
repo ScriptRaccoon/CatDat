@@ -2,10 +2,6 @@ import type { StructureType } from '$shared/config'
 
 export type { StructureType }
 
-export type Arrayed<T extends readonly unknown[]> = {
-	[K in keyof T]: T[K][]
-}
-
 type Replace<T, R extends Partial<Record<keyof T, any>>> = Omit<T, keyof R> & R
 
 export type StructureShort = {

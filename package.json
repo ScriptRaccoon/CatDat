@@ -17,8 +17,7 @@
 		"env:check": "tsx scripts/env.check",
 		"db:shell": "sqlite3 databases/catdat/catdat.db",
 		"db:kill": "rm -rf databases/catdat/catdat.db",
-		"db:setup:catdat": "pnpm db:kill && tsx --tsconfig databases/tsconfig.json databases/catdat/scripts/setup.ts",
-		"db:setup": "pnpm db:kill && tsx --tsconfig databases/tsconfig.json databases/catdat/scripts/setup.ts && tsx --tsconfig databases/tsconfig.json databases/app/scripts/setup.ts",
+		"db:setup": "pnpm db:kill && tsx --tsconfig databases/tsconfig.json databases/catdat/scripts/setup.ts",
 		"db:seed": "tsx --tsconfig databases/tsconfig.json databases/catdat/scripts/seed.ts",
 		"db:deduce": "tsx --tsconfig databases/tsconfig.json databases/catdat/scripts/deduce.ts",
 		"db:test": "tsx --tsconfig databases/tsconfig.json databases/catdat/scripts/test.ts",
@@ -40,7 +39,6 @@
 		"@types/katex": "^0.16.8",
 		"@types/markdown-it": "^14.1.2",
 		"@types/node": "^25.5.0",
-		"@types/nodemailer": "^8.0.0",
 		"better-sqlite3": "^12.9.0",
 		"chokidar": "^5.0.0",
 		"dotenv": "^17.3.1",
@@ -62,12 +60,6 @@
 	"dependencies": {
 		"@fortawesome/free-regular-svg-icons": "^7.2.0",
 		"@fortawesome/free-solid-svg-icons": "^7.2.0",
-		"@libsql/client": "^0.17.2",
-		"@octokit/app": "^16.1.2",
-		"es6-crawler-detect": "^4.0.2",
-		"ioredis": "^5.10.1",
-		"nodemailer": "^8.0.5",
-		"sql-template-tag": "^5.2.1",
 		"svelte-fa": "^4.0.4",
 		"yaml": "^2.8.4"
 	}
