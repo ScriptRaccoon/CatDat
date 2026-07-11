@@ -44,4 +44,6 @@ jobs:
         run: pnpm exec playwright install --with-deps chromium
 
       - name: Run Playwright tests
+        env:
+          PUBLIC_ADMIN_URL: http://localhost:5174
         run: pnpm e2e
