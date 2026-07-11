@@ -103,6 +103,37 @@ test('user can view functor property details', async ({ page }) => {
 	).toBeVisible()
 })
 
+test('user can navigate to the dual property', async ({ page }) => {
+	await page.goto('/functor-property/left_exact')
+
+	await expect(
+		page.getByRole('heading', {
+			name: 'left exact',
+			exact: true
+		})
+	).toBeVisible()
+
+	const item = page.locator('li', {
+		hasText: 'Dual property'
+	})
+
+	await item
+		.getByRole('link', {
+			name: 'right exact',
+			exact: true
+		})
+		.click()
+
+	await expect(
+		page.getByRole('heading', {
+			name: 'right exact',
+			exact: true
+		})
+	).toBeVisible()
+
+	await expect(page).toHaveURL('/functor-property/right_exact')
+})
+
 test("user can navigate to properties tagged with 'adjunctions' from the property list page", async ({
 	page
 }) => {

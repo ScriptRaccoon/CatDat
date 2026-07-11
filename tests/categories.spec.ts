@@ -192,6 +192,39 @@ test('user can navigate to a related category', async ({ page }) => {
 	await expect(page).toHaveURL('/category/Set')
 })
 
+test('user can navigate to the dual category if it exists in the database', async ({
+	page
+}) => {
+	await page.goto('/category/Set')
+
+	await expect(
+		page.getByRole('heading', {
+			name: 'category of sets',
+			exact: true
+		})
+	).toBeVisible()
+
+	const item = page.locator('li', {
+		hasText: 'Dual category'
+	})
+
+	await item
+		.getByRole('link', {
+			name: 'dual of the category of sets',
+			exact: true
+		})
+		.click()
+
+	await expect(
+		page.getByRole('heading', {
+			name: 'dual of the category of sets',
+			exact: true
+		})
+	).toBeVisible()
+
+	await expect(page).toHaveURL('/category/Set_op')
+})
+
 test('user can open and close a proof for a property of a category', async ({ page }) => {
 	await page.goto('/category/Grp', { waitUntil: 'networkidle' })
 

@@ -101,6 +101,37 @@ test('user can view category property details', async ({ page }) => {
 	).toBeVisible()
 })
 
+test('user can navigate to the dual property', async ({ page }) => {
+	await page.goto('/category-property/equalizers')
+
+	await expect(
+		page.getByRole('heading', {
+			name: 'equalizers',
+			exact: true
+		})
+	).toBeVisible()
+
+	const item = page.locator('li', {
+		hasText: 'Dual property'
+	})
+
+	await item
+		.getByRole('link', {
+			name: 'coequalizers',
+			exact: true
+		})
+		.click()
+
+	await expect(
+		page.getByRole('heading', {
+			name: 'coequalizers',
+			exact: true
+		})
+	).toBeVisible()
+
+	await expect(page).toHaveURL('/category-property/coequalizers')
+})
+
 test('user sees no unknown categories for the property of being additive', async ({
 	page
 }) => {
