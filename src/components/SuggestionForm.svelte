@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { browser } from '$app/environment'
 	import { page } from '$app/state'
+	import { PUBLIC_ADMIN_URL } from '$env/static/public'
 	import { resize_textarea } from '$lib/client/utils'
 	import { faCheckCircle, faWarning } from '@fortawesome/free-solid-svg-icons'
 	import { tick } from 'svelte'
@@ -34,7 +35,7 @@
 		}
 
 		try {
-			const res = await fetch('/api/submissions', {
+			const res = await fetch(`${PUBLIC_ADMIN_URL}/api/submissions`, {
 				method: 'POST',
 				body: JSON.stringify({ title, body, url: page.url.href, name }),
 				headers: { 'Content-Type': 'application/json' }

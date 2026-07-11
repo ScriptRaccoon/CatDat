@@ -1,11 +1,12 @@
 <script lang="ts">
 	import MetaData from '$components/MetaData.svelte'
+	import { PUBLIC_ADMIN_URL } from '$env/static/public'
 
 	/**
 	 * This is (temporarily) recorded to see if this feature is used at all.
 	 */
 	async function record_download() {
-		await fetch(`/api/user_action`, {
+		await fetch(`${PUBLIC_ADMIN_URL}/api/user_action`, {
 			method: 'POST',
 			body: JSON.stringify({ action: 'download_database' }),
 			headers: { 'Content-Type': 'application/json' }
