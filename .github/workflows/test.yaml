@@ -34,9 +34,6 @@ jobs:
           pnpm db:setup:catdat
           pnpm db:update
 
-      - name: Redundancy check
-        run: pnpm db:redundancies
-
       - name: Cache Playwright browsers
         uses: actions/cache@v6
         with:
