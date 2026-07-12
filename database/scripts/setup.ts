@@ -4,7 +4,7 @@ import { get_client } from '$shared/db'
 import { create_schema_hash, write_schema_hash } from './utils/schema'
 import { devlog } from '$shared/utils'
 
-const schema_folder = path.resolve('databases', 'catdat', 'schema')
+const schema_folder = path.resolve('database', 'schema')
 
 setup()
 

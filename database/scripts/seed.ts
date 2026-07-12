@@ -17,7 +17,7 @@ import { are_disjoint, devlog } from '$shared/utils'
 
 const db = get_client({ readonly: false })
 
-const data_folder = path.resolve('databases', 'catdat', 'data')
+const data_folder = path.resolve('database', 'data')
 
 seed()
 

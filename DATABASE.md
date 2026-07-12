@@ -4,7 +4,7 @@
 
 _CatDat_ is based on a [SQLite database](https://sqlite.org/). During runtime of the application, it is read-only.
 
-The local copy of the database is located at `/databases/catdat/catdat.db`. It contains three main tables:
+The local copy of the database is located at `/database/catdat.db`. It contains three main tables:
 
 - `structures`
 - `properties`
@@ -38,7 +38,7 @@ Additional tables are available. For a complete overview, see the diagram below.
 
 ## Schema vs. Data
 
-The schema defines the structure of the database: tables, views, indexes, and triggers. It is specified in several SQL files located in the subfolder [/databases/catdat/schema](/databases/catdat/schema/). The command
+The schema defines the structure of the database: tables, views, indexes, and triggers. It is specified in several SQL files located in the subfolder [/database/schema](/database/schema/). The command
 
 ```
 pnpm db:setup
@@ -46,7 +46,7 @@ pnpm db:setup
 
 deletes the old database file (if it exists) and creates a new one using this schema. This is required when the schema changes.
 
-Database entries (categories, functors, properties, implications, etc.) are defined in YAML files located in the subfolder [/databases/catdat/data](/databases/catdat/data/). The command
+Database entries (categories, functors, properties, implications, etc.) are defined in YAML files located in the subfolder [/database/data](/database/data/). The command
 
 ```
 pnpm db:seed
@@ -94,7 +94,7 @@ Use
 pnpm db:watch
 ```
 
-to run this command automatically every time a file in the subfolder [/databases/catdat/data](/databases/catdat/data) changes. This is useful in particular during development.
+to run this command automatically every time a file in the subfolder [/database/data](/database/data) changes. This is useful in particular during development.
 
 ## Redundancies
 

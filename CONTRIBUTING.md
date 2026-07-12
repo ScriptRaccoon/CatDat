@@ -53,7 +53,7 @@ You need to have [Git](https://git-scm.com/), [NodeJS](https://nodejs.org/) and 
 
 ### Updating the Database
 
-All updates to the database are made by modifying the YAML files in the folder [/databases/catdat/data](databases/catdat/data). See [DATABASE.md](/DATABASE.md) for an overview of the database structure, and see [below](#authoring-of-yaml-files) for some tips how to edit YAML files.
+All updates to the database are made by modifying the YAML files in the folder [/database/data](database/data). See [DATABASE.md](/DATABASE.md) for an overview of the database structure, and see [below](#authoring-of-yaml-files) for some tips how to edit YAML files.
 
 Apply the updates using:
 
@@ -67,7 +67,7 @@ You can also use
 pnpm db:watch
 ```
 
-to continuously run this update when a file in the subfolder [/databases/catdat/data](/databases/catdat/data) changes.
+to continuously run this update when a file in the subfolder [/database/data](/database/data) changes.
 
 ### Troubleshooting
 
@@ -80,8 +80,8 @@ The `pnpm db:test` command runs several tests to ensure the data behaves as expe
 
 1. Properties and their duals are mutual.
 2. Categories and their duals are mutual.
-3. For a specified list of categories (see [decided-categories.json](/databases/catdat/scripts/expected-data/decided-categories.json)) and functors (see [decided-functors.json](/databases/catdat/scripts/expected-data/decided-functors.json)), all properties have been decided.
-4. Every property of the categories `Set`, `Ab`, `Top` and the functors `forget_vector`, `id_Set` matches precisely the expected properties defined in the [/databases/catdat/scripts/expected-data](/databases/catdat/scripts/expected-data/) folder.
+3. For a specified list of categories (see [decided-categories.json](/database/scripts/expected-data/decided-categories.json)) and functors (see [decided-functors.json](/database/scripts/expected-data/decided-functors.json)), all properties have been decided.
+4. Every property of the categories `Set`, `Ab`, `Top` and the functors `forget_vector`, `id_Set` matches precisely the expected properties defined in the [/database/scripts/expected-data](/database/scripts/expected-data/) folder.
 
 If any of these tests fail, adjust the data accordingly.
 
@@ -149,7 +149,7 @@ In particular, it often makes sense to **keep** a redundant assignment of a sati
 
 For example, you may first prove that a category has zero morphisms, and then prove that it is normal. Although the database contains the implication "normal => zero morphisms", in practice the latter is used as a prerequisite. Similarly, when proving that a category is extensive, it is often clearer to first show that finite coproducts exist, rather than relying on the implication "extensive => finite coproducts". Also, an explicit description of finite coproducts is useful for deciding other properties involving coproducts.
 
-Every redundant assignment of a satisfied property that is intentionally kept must be explicitly marked to skip the redundancy check. See [`N.yaml`](/databases/catdat/data/categories/N.yaml) for an example.
+Every redundant assignment of a satisfied property that is intentionally kept must be explicitly marked to skip the redundancy check. See [`N.yaml`](/database/data/categories/N.yaml) for an example.
 
 ### Keep Pull Requests Focused
 
@@ -172,7 +172,7 @@ As a practical guideline, avoid introducing more than four properties (or four c
 2. Use `\varnothing` to display the empty set, not `\emptyset`.
 3. For declarations of functions or morphisms use `f : X \to Y`, not `f \colon X \to Y`.
 4. For definitions use `\coloneqq` instead of `:=`.
-5. For LaTeX symbols that are used repeatedly, in particular category-theoretic notation, define a LaTeX macro in [macros.yaml](databases/catdat/data/macros.yaml).
+5. For LaTeX symbols that are used repeatedly, in particular category-theoretic notation, define a LaTeX macro in [macros.yaml](database/data/macros.yaml).
 
 ### Responsible Use of AI
 
@@ -193,6 +193,6 @@ If you are not familiar with YAML, a short beginner-friendly introduction can be
 
 1. It is recommended to enable word wrap in your editor when working with YAML files.
 2. HTML may be used inside string values, for example for links (`<a>`), italic text (`<i>`), and ordered lists (`<ol>`).
-3. Use single-quoted strings (`'...'`) for values containing `:`. See [`Cat.yaml`](/databases/catdat/data/categories/Cat.yaml) for an example. Inside single-quoted strings, a literal single quote must be escaped as `''`. See [`Man.yaml`](/databases/catdat/data/categories/Man.yaml) for an example.
-4. Use `>-` for multiline text that should be rendered as a single paragraph without line breaks. This is particularly useful for improving readability of longer texts or HTML lists in the YAML file itself. See [`core-thin.yaml`](/databases/catdat/data/category-properties/core-thin.yaml) for an example.
-5. Use `|-` for multiline text where line breaks should be preserved. These line breaks are automatically converted to `<br>` when rendered. See [`FreeAb.yaml`](/databases/catdat/data/categories/FreeAb.yaml) for an example.
+3. Use single-quoted strings (`'...'`) for values containing `:`. See [`Cat.yaml`](/database/data/categories/Cat.yaml) for an example. Inside single-quoted strings, a literal single quote must be escaped as `''`. See [`Man.yaml`](/database/data/categories/Man.yaml) for an example.
+4. Use `>-` for multiline text that should be rendered as a single paragraph without line breaks. This is particularly useful for improving readability of longer texts or HTML lists in the YAML file itself. See [`core-thin.yaml`](/database/data/category-properties/core-thin.yaml) for an example.
+5. Use `|-` for multiline text where line breaks should be preserved. These line breaks are automatically converted to `<br>` when rendered. See [`FreeAb.yaml`](/database/data/categories/FreeAb.yaml) for an example.

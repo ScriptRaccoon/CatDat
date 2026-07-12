@@ -5,7 +5,7 @@ import path from 'node:path'
 import fs from 'node:fs'
 
 const MACROS = YAML.parse(
-	fs.readFileSync(path.resolve('databases', 'catdat', 'data', 'macros.yaml'), 'utf8'),
+	fs.readFileSync(path.resolve('database', 'data', 'macros.yaml'), 'utf8')
 ) as Record<string, string>
 
 export const MATH_REGEX = /\$\$(.*?)\$\$|\$(.*?)\$/gs

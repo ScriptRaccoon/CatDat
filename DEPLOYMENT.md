@@ -11,7 +11,7 @@ Most pages are prerendered for performance reasons. This implies that the databa
 
 ## Databases
 
-The CatDat SQLite database `catdat.db` is deployed as a file alongside the web application to Netlify and is located at `/var/task/databases/catdat/catdat.db` after deployment. The file system on Netlify is ephemeral, so this only works because the database is read-only during the runtime of the application.
+The CatDat SQLite database `catdat.db` is deployed as a file alongside the web application to Netlify and is located at `/var/task/database/catdat.db` after deployment. The file system on Netlify is ephemeral, so this only works because the database is read-only during the runtime of the application.
 
 However, the SQLite database `app.db` (used for user submissions and page visits) requires writes and is hosted remotely on [Turso](https://turso.tech).
 

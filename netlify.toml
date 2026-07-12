@@ -3,4 +3,4 @@
 	publish = "build"
 
 [functions]
-	included_files = ["databases/catdat/catdat.db"]
+	included_files = ["database/catdat.db"]
