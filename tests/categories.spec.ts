@@ -113,7 +113,7 @@ test('user can view category details', async ({ page }) => {
 	await expect(page.getByText('terminal object: zero ring')).toBeVisible()
 	await expect(page.getByText('coproducts: tensor products')).toBeVisible()
 	await expect(
-		page.getByText('regular epimorphisms: surjective homomorphisms')
+		page.getByText('regular epimorphisms: surjective morphisms')
 	).toBeVisible()
 })
 

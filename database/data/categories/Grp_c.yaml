@@ -117,9 +117,3 @@ special_morphisms:
   epimorphisms:
     description: surjective homomorphisms
     proof: 'For the non-trivial direction, if $f : G \to H$ is an epimorphism, we may factor it as $G \to f(G) \to H$, and $f(G) \to H$ is still an epimorphism, but also an inclusion and hence a monomorphism. Since we already know that the category is mono-regular, $f(G) \to H$ must be an isomorphism.'
-  regular monomorphisms:
-    description: same as monomorphisms
-    proof: This is because the category is mono-regular.
-  regular epimorphisms:
-    description: same as epimorphisms
-    proof: This is because the category is epi-regular.

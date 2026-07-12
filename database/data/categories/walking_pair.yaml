@@ -55,15 +55,6 @@ special_morphisms:
   isomorphisms:
     description: the two identities
     proof: This is trivial.
-  monomorphisms:
-    description: every morphism
-    proof: This is trivial.
   epimorphisms:
     description: every morphism
     proof: Each $0 \to 1$ is an epimorphism since the only morphism starting at $1$ is the identity.
-  regular monomorphisms:
-    description: same as isomorphisms
-    proof: This is because the category is right cancellative.
-  regular epimorphisms:
-    description: same as isomorphisms
-    proof: This is because the category is left cancellative.

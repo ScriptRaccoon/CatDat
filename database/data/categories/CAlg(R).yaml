@@ -70,15 +70,6 @@ special_objects:
     description: direct products with pointwise operations
 
 special_morphisms:
-  isomorphisms:
-    description: bijective homomorphisms
-    proof: This characterization holds in every algebraic category.
-  monomorphisms:
-    description: injective homomorphisms
-    proof: 'This holds in every finitary algebraic category: the forgetful functor to $\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
   epimorphisms:
     description: a homomorphism of algebras which is an epimorphism of commutative rings
     proof: The forgetful functor $\CAlg(R) \to \CRing$ is faithful and hence reflects epimorphisms, but it also preserves epimorphisms since it preserves pushouts (since $\CAlg(R) \cong R / \CRing$). For epimorphisms of commutative rings see the page for <a href="/category/CRing">$\CRing$</a>.
-  regular epimorphisms:
-    description: surjective homomorphisms
-    proof: This holds in every finitary algebraic category.

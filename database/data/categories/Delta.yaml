@@ -107,9 +107,3 @@ special_morphisms:
   epimorphisms:
     description: surjective order-preserving maps
     proof: We can use the same proof as for <a href="/category/FinOrd">$\FinOrd$</a> since this has merely used the non-empty ordered set $\{0 < 1\}$.
-  regular monomorphisms:
-    description: same as monomorphisms
-    proof: This is because the category is mono-regular.
-  regular epimorphisms:
-    description: same as epimorphisms
-    proof: This is because the category is epi-regular.

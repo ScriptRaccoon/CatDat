@@ -98,9 +98,3 @@ special_morphisms:
   epimorphisms:
     description: surjective order-preserving maps
     proof: 'The proof is similar to the one for <a href="/category/Set">$\Set$</a>: If $f : X \to Y$ is an epimorphism of (finite) orders, in particular for all morphisms $g,h : Y \to \{0 < 1\}$ with $g \circ f = h \circ f$ we have $g = h$. This means for all upper sets $A,B \subseteq Y$ with $f^*(A) = f^*(B)$ we have $A = B$. If $y \in Y$, apply this to the intervals $A = Y_{\geq y}$ and $B = Y_{> y}$, which are different. Hence, there is some $x \in f^*(A) \setminus f^*(B)$, which means $f(x) \geq y$ but not $f(x) > y$, so that $f(x) = y$.'
-  regular monomorphisms:
-    description: same as monomorphisms
-    proof: This is because the category is mono-regular.
-  regular epimorphisms:
-    description: same as epimorphisms
-    proof: This is because the category is epi-regular.

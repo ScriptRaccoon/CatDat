@@ -90,13 +90,4 @@ special_objects:
   products:
     description: direct products with pointwise operations
 
-special_morphisms:
-  isomorphisms:
-    description: bijective rng homomorphisms
-    proof: This characterization holds in every algebraic category.
-  monomorphisms:
-    description: injective rng homomorphisms
-    proof: 'This holds in every finitary algebraic category: the forgetful functor to $\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
-  regular epimorphisms:
-    description: surjective homomorphisms
-    proof: This holds in every finitary algebraic category.
+special_morphisms: {}

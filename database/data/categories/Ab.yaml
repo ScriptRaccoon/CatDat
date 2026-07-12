@@ -50,18 +50,6 @@ special_objects:
     description: direct products with pointwise operations
 
 special_morphisms:
-  isomorphisms:
-    description: bijective homomorphisms
-    proof: This characterization holds in every algebraic category.
-  monomorphisms:
-    description: injective homomorphisms
-    proof: 'This holds in every finitary algebraic category: the forgetful functor to $\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
   epimorphisms:
     description: surjective homomorphisms
     proof: 'For the non-trivial direction, if $f : A \to B$ is an epimorphism, then $p \circ f = 0$ for the projection  $p : B \to B/f(A)$ implies that $p = 0$, so that $B = f(A)$.'
-  regular monomorphisms:
-    description: same as monomorphisms
-    proof: This is because the category is mono-regular.
-  regular epimorphisms:
-    description: same as epimorphisms
-    proof: This is because the category is epi-regular.

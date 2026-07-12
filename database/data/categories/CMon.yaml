@@ -67,18 +67,6 @@ special_objects:
     description: direct products with pointwise operations
 
 special_morphisms:
-  isomorphisms:
-    description: bijective homomorphisms
-    proof: This characterization holds in every algebraic category.
-  monomorphisms:
-    description: injective homomorphisms
-    proof: 'This holds in every finitary algebraic category: the forgetful functor to $\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
   epimorphisms:
     description: A morphism in $\CMon$ is an epimorphism iff it is an epimorphism in $\Mon$, which in turn can be characterized by <a href="https://en.wikipedia.org/wiki/Isbell's_zigzag_theorem" target="_blank">Isbell's zigzag theorem</a>.
-    proof:
-      "If $f : M \\to N$ is a homomorphism of commutative monoids which is an epimorphism in $\\Mon$, then it is trivially also an epimorphism in $\\CMon$. The converse requires a proof, which can be found at <a href=\"https://math.stackexchange.com/a/5133596/1650\">MSE/5133488</a>.
-
-      \t"
-  regular epimorphisms:
-    description: surjective homomorphisms
-    proof: This holds in every finitary algebraic category.
+    proof: 'If $f : M \to N$ is a homomorphism of commutative monoids which is an epimorphism in $\Mon$, then it is trivially also an epimorphism in $\CMon$. The converse requires a proof, which can be found at <a href="https://math.stackexchange.com/a/5133596/1650">MSE/5133488</a>.'

@@ -66,15 +66,9 @@ special_morphisms:
   isomorphisms:
     description: the three identities
     proof: This is trivial.
-  monomorphisms:
-    description: every morphism
-    proof: This is easily checked.
   epimorphisms:
     description: the identities and $f,g$
     proof: This is easily checked.
   regular monomorphisms:
     description: the identities and $i$
     proof: First, $i$ is the equalizer of $f,g$. The morphism $f$ is an epimorphism (and a monomorphism), but no isomorphism, hence cannot be a regular monomorphism. The same holds for $g$.
-  regular epimorphisms:
-    description: same as isomorphisms
-    proof: This is because the category is left cancellative.

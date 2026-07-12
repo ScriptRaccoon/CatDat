@@ -85,9 +85,3 @@ special_morphisms:
   epimorphisms:
     description: the identities and $p$
     proof: Since $pi = \id$, but $ip \neq \id$, we conclude that $p$ is an epimorphism, but $i$ is not. Hence, also $ip$ is not an epimorphism. Likewise, $j$ and $jp$ are no epimorphisms.
-  regular monomorphisms:
-    description: same as monomorphisms
-    proof: This is because the category is mono-regular.
-  regular epimorphisms:
-    description: same as epimorphisms
-    proof: This is because the category is epi-regular.

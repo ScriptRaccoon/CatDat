@@ -73,15 +73,6 @@ special_objects:
     description: direct products with pointwise operations
 
 special_morphisms:
-  isomorphisms:
-    description: bijective ring homomorphisms
-    proof: This characterization holds in every algebraic category.
-  monomorphisms:
-    description: injective ring homomorphisms
-    proof: 'This holds in every finitary algebraic category: the forgetful functor to $\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
   epimorphisms:
     description: 'A ring map $f : R \to S$ is an epimorphism iff $S$ equals the <i>dominion</i> of $f(R) \subseteq S$, meaning that for every $s \in S$ there is some matrix factorization $(s) = Y X Z$ with $X \in M_{n \times n}(R)$, $Y \in M_{1 \times n}(S)$, and $Z \in M_{n \times 1}(S)$.'
     proof: See <a href="https://stacks.math.columbia.edu/tag/04VM" target="_blank">Stacks Project</a> ,or, for many more results, the seminar <a href="https://www.numdam.org/issues/SAC_1967-1968__2_/">Les épimorphismes d'anneaux</a>. See also <a href="https://mathoverflow.net/questions/109/" target="_blank">MO/109</a> for some results.
-  regular epimorphisms:
-    description: surjective homomorphisms
-    proof: This holds in every finitary algebraic category.

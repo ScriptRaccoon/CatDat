@@ -77,15 +77,9 @@ special_morphisms:
   isomorphisms:
     description: bijective field homomorphisms
     proof: This is easy.
-  monomorphisms:
-    description: every morphism
-    proof: It is well-known that field homomorphisms are injective.
   epimorphisms:
     description: purely inseparable homomorphisms
     proof: See <a href="https://math.stackexchange.com/questions/687869" target="_blank">MSE/687869</a>.
   regular monomorphisms:
     description: A Galois extension is a regular monomorphism iff it is procyclic, and the general case can be reduced to this situation; see the reference for details.
     proof: See <a href="https://math.stackexchange.com/questions/5129895" target="_blank">MSE/5129895</a>.
-  regular epimorphisms:
-    description: same as isomorphisms
-    proof: This is because the category is left cancellative.

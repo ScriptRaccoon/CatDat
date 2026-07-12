@@ -78,15 +78,9 @@ special_morphisms:
   isomorphisms:
     description: only the ordinal $0$
     proof: The $0$ is the only ordinal which has an additive inverse, since for $\alpha > 0$ we have $\alpha + \beta > 0$ for all $\beta$.
-  monomorphisms:
-    description: every ordinal number
-    proof: This is because ordinal addition is left cancellative.
   epimorphisms:
     description: finite ordinal numbers
     proof: See <a href="https://math.stackexchange.com/questions/5029605" target="_blank">MSE/5029605</a>.
   regular monomorphisms:
     description: ordinals of the form $\alpha \cdot \omega$, where $\alpha$ is any ordinal
     proof: This results from the proof that equalizers exist, see <a href="https://math.stackexchange.com/questions/5029668" target="_blank">MSE/5029668</a>.
-  regular epimorphisms:
-    description: same as isomorphisms
-    proof: This is because the category is left cancellative.

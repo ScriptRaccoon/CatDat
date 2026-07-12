@@ -57,15 +57,3 @@ special_morphisms:
   isomorphisms:
     description: 'the identities $(a,a) : a \to a$ and the isomorphisms $(a,-a) : a \to -a$ for $a \in \IZ$'
     proof: This is trivial.
-  monomorphisms:
-    description: every morphism
-    proof: It is a thin category.
-  epimorphisms:
-    description: every morphism
-    proof: It is a thin category.
-  regular monomorphisms:
-    description: same as isomorphisms
-    proof: This is because the category is right cancellative.
-  regular epimorphisms:
-    description: same as isomorphisms
-    proof: This is because the category is left cancellative.

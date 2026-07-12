@@ -64,9 +64,3 @@ special_morphisms:
   epimorphisms:
     description: pairs $(\ell, r)$ where $\ell$ and $r$ are both surjective
     proof: For the non-trivial direction, use the fact that the category is epi-regular, so any epimorphism is a coequalizer; and the fact that coequalizers can be calculated component-wise.
-  regular monomorphisms:
-    description: same as monomorphisms
-    proof: This is because the category is mono-regular.
-  regular epimorphisms:
-    description: same as epimorphisms
-    proof: This is because the category is epi-regular.

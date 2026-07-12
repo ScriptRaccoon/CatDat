@@ -87,15 +87,6 @@ special_objects:
     description: direct products with pointwise operations
 
 special_morphisms:
-  isomorphisms:
-    description: bijective homomorphisms
-    proof: This characterization holds in every algebraic category.
-  monomorphisms:
-    description: injective homomorphisms
-    proof: 'This holds in every finitary algebraic category: the forgetful functor to $\Set$ is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
   epimorphisms:
     description: 'A monoid map $f : T \to S$ is an epimorphism iff $S$ equals the <i>dominion</i> of $U \coloneqq f(T) \subseteq S$, meaning that for every $s \in S$ there are $u_1,\dotsc,u_{m+1} \in U$, $v_1,\dotsc,v_m \in U$, $x_1,\dotsc,x_m \in S$ and $y_1,\dotsc,y_m \in S$ such that $s = x_1 u_1$, $u_1 = v_1 y_1$, $x_{i-1} v_{i-1} = x_i u_i$, $u_i y_{i-1} = v_i y_i$, $x_m v_m = u_{m+1}$ and $u_{m+1} y_m = s$.'
     proof: This is <a href="https://en.wikipedia.org/wiki/Isbell's_zigzag_theorem" target="_blank">Isbell's zigzag Theorem</a>, see references there.
-  regular epimorphisms:
-    description: surjective homomorphisms
-    proof: This holds in every finitary algebraic category.

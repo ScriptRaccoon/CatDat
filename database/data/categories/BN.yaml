@@ -59,15 +59,3 @@ special_morphisms:
   isomorphisms:
     description: only the number $0$
     proof: The $0$ is the only natural number which has an additive inverse, since for $n > 0$ we have $n + m > 0$ for all $m$.
-  monomorphisms:
-    description: every morphism
-    proof: This is because addition of natural numbers is cancellative.
-  epimorphisms:
-    description: every morphism
-    proof: Addition of natural numbers is cancellative.
-  regular monomorphisms:
-    description: same as isomorphisms
-    proof: This is because the category is right cancellative.
-  regular epimorphisms:
-    description: same as isomorphisms
-    proof: This is because the category is left cancellative.

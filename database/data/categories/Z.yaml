@@ -87,9 +87,3 @@ special_morphisms:
   epimorphisms:
     description: objectwise surjective natural transformations
     proof: This holds in every functor category $[\C,\Set]$, here applied to the case that $\C$ has just one object.
-  regular monomorphisms:
-    description: same as monomorphisms
-    proof: This is because the category is mono-regular.
-  regular epimorphisms:
-    description: same as epimorphisms
-    proof: This is because the category is epi-regular.

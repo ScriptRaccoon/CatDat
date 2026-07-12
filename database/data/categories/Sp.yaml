@@ -77,9 +77,3 @@ special_morphisms:
   epimorphisms:
     description: pointwise surjective natural transformations
     proof: This holds in every functor category $[\C,\Set]$.
-  regular monomorphisms:
-    description: same as monomorphisms
-    proof: This is because the category is mono-regular.
-  regular epimorphisms:
-    description: same as epimorphisms
-    proof: This is because the category is epi-regular.

@@ -57,9 +57,3 @@ special_morphisms:
   epimorphisms:
     description: pairs of surjective maps
     proof: This follows from the fact for the category of sets.
-  regular monomorphisms:
-    description: same as monomorphisms
-    proof: This is because the category is mono-regular.
-  regular epimorphisms:
-    description: same as epimorphisms
-    proof: This is because the category is epi-regular.

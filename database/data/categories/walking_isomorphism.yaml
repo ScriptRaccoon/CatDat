@@ -42,19 +42,4 @@ special_objects:
   products:
     description: $0 \times 0 = 0$
 
-special_morphisms:
-  isomorphisms:
-    description: every morphism
-    proof: This is trivial.
-  monomorphisms:
-    description: every morphism
-    proof: This is trivial.
-  epimorphisms:
-    description: every morphism
-    proof: This holds because it is a groupoid.
-  regular monomorphisms:
-    description: same as isomorphisms
-    proof: This is because the category is right cancellative.
-  regular epimorphisms:
-    description: same as isomorphisms
-    proof: This is because the category is left cancellative.
+special_morphisms: {}

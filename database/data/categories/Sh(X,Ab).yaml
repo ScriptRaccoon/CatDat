@@ -51,9 +51,3 @@ special_morphisms:
   epimorphisms:
     description: 'morphisms of abelian sheaves $f : F \to G$ that are "locally surjective": for every local section $g \in G(U)$ there is an open covering $U = \bigcup_{i \in I} U_i$ such that each $g|_{U_i} \in G(U_i)$ is contained in the image of $f(U_i) : F(U_i) \to G(U_i)$.'
     proof: 'The one direction is easy. For the other one, assume that $f : F \to G$ is an epimorphism of abelian sheaves. For every $x \in X$ the homomorphism on stalks $f_x : F_x \to G_x$ is an epimorphism because the stalk functor  $\Sh(X,\Ab) \to \Ab$ admits a right adjoint: take skyscraper sheaves. For $x \in U$ then $g_x \in G_x$ has a preimage in $F_x$, say represented by some $f \in F(V_x)$ for some $x \in V_x \subseteq U$. By construction of the stalk $G_x$, there is some $x \in U_x \subseteq V_x$ with $f(U_x)(f|_{U_x}) = g|_{U_x}$. Hence, the sets $(U_x)$ provide the open covering.'
-  regular monomorphisms:
-    description: same as monomorphisms
-    proof: This is because the category is mono-regular.
-  regular epimorphisms:
-    description: same as epimorphisms
-    proof: This is because the category is epi-regular.

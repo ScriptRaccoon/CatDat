@@ -109,9 +109,3 @@ special_morphisms:
   epimorphisms:
     description: surjective continuous maps (which are automatically quotient maps)
     proof: For the non-trivial direction, and for a proof of the parenthetical remark, see the proof above that $\CompHaus$ is epi-regular.
-  regular monomorphisms:
-    description: same as monomorphisms
-    proof: This is because the category is mono-regular.
-  regular epimorphisms:
-    description: same as epimorphisms
-    proof: This is because the category is epi-regular.

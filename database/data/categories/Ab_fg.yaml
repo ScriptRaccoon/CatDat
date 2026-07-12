@@ -72,9 +72,3 @@ special_morphisms:
   epimorphisms:
     description: surjective homomorphisms
     proof: Use the same proof as for abelian groups.
-  regular monomorphisms:
-    description: same as monomorphisms
-    proof: This is because the category is mono-regular.
-  regular epimorphisms:
-    description: same as epimorphisms
-    proof: This is because the category is epi-regular.

@@ -97,9 +97,3 @@ special_morphisms:
   epimorphisms:
     description: surjective maps
     proof: 'For the non-trivial direction, let $f : X \to Y$ be an epimorphism of non-empty sets. Then the inclusion $f(X) \hookrightarrow Y$ is an epimorphism as well, but also a split monomorphism (we can just map everything in $Y \setminus f(X)$ to a fixed element of $f(X)$). As such, it must be an isomorphism.'
-  regular monomorphisms:
-    description: same as monomorphisms
-    proof: This is because the category is mono-regular.
-  regular epimorphisms:
-    description: same as epimorphisms
-    proof: This is because the category is epi-regular.
