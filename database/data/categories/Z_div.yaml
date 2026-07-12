@@ -1,9 +1,9 @@
 id: Z_div
-name: proset of integers w.r.t. divisibility
+name: preordered set of integers w.r.t. divisibility
 notation: $(\IZ,\mid)$
 objects: integers
 morphisms: 'a unique morphism $(a,b) : a \to b$ if $a$ divides $b$'
-description: This is a proset, not a poset, because $a$ and $-a$ divide each other, but are not equal for $a \neq 0$. Notice that this category is equivalent (but not isomorphic) to $(\IN,\mid)$.
+description: This is a preordered set, not a partially ordered set, because $a$ and $-a$ divide each other, but are not equal for $a \neq 0$. Notice that this category is equivalent (but not isomorphic) to $(\IN,\mid)$.
 nlab_link: null
 
 tags:

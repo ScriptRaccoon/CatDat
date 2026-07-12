@@ -149,7 +149,7 @@
     - thin
   conclusions:
     - cocomplete
-  proof: The supremum of a subset in a (small) proset is the infimum of the set of upper bounds.
+  proof: The supremum of a subset in a (small) preordered set is the infimum of the set of upper bounds.
   is_equivalence: false
 
 - id: thin_implies_regular

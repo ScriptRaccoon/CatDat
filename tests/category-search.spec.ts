@@ -192,7 +192,7 @@ test('user can dualize search', async ({ page }) => {
 
 	await expect(
 		page.getByRole('link', {
-			name: 'poset of natural numbers',
+			name: 'partially ordered set of natural numbers',
 			exact: true
 		})
 	).toBeVisible()

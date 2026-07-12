@@ -117,5 +117,5 @@
     This is trivially true for the identity cospan. Since $\I$ is sifted, it suffices to prove that $D(f) = D(g) \iff D(f') = D(g')$ whenever there is a morphism of cospans $(f,g) \to (f',g')$. Such a morphism is given by a morphism $h : \cod(f) \to \cod(f')$ satisfying $hf = f'$ and $hg = g'$. The implication $D(f) = D(g) \implies D(f') = D(g')$ is formal, while the converse follows because $D(h)$ is a monomorphism.
 
 
-    It follows that the diagram $D$ factors as $\I \to \I_p \to \C$, where $\I_p$ is the preorder reflection of $\I$ (same objects, with $i \leq j$ whenever there exists a morphism $i \to j$). Since $\I$ is sifted, the preorder $\I_p$ is filtered. Hence, the diagram $\I_p \to \C$ has a colimit, and this colimit is also a colimit of the original diagram $\I \to \C$.
+    It follows that the diagram $D$ factors as $\I \to \I_p \to \C$, where $\I_p$ is the preorder reflection of $\I$ (same objects, with $i \leq j$ whenever there exists a morphism $i \to j$). Since $\I$ is sifted, the preordered set $\I_p$ is filtered. Hence, the diagram $\I_p \to \C$ has a colimit, and this colimit is also a colimit of the original diagram $\I \to \C$.
   is_equivalence: false

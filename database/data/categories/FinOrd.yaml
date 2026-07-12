@@ -91,7 +91,7 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: bijective order-preserving maps
-    proof: This works as for posets, using that injective order-preserving maps must be order-reflecting.
+    proof: This works as for partially ordered sets, using that injective order-preserving maps must be order-reflecting.
   monomorphisms:
     description: injective order-preserving maps
     proof: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.

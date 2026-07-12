@@ -13,7 +13,7 @@ The category $B\IN$ has $\aleph_1$-filtered colimits.
 :::
 
 _Proof._
-Let $D : \I \to B\IN$ be an $\aleph_1$-filtered diagram. Every two parallel morphisms $i \rightrightarrows j$ are mapped to the same morphism in $B \IN$, because they are coequalized by some morphism and $(\IN,+)$ is cancellative. Hence, $D$ factors through the preorder reflection of $\I$, and we may therefore assume that $\I$ itself is a preorder. Thus, the diagram consists of numbers $D(i,j) \in \IN$ for all $i \leq j$ satisfying
+Let $D : \I \to B\IN$ be an $\aleph_1$-filtered diagram. Every two parallel morphisms $i \rightrightarrows j$ are mapped to the same morphism in $B \IN$, because they are coequalized by some morphism and $(\IN,+)$ is cancellative. Hence, $D$ factors through the preorder reflection of $\I$, and we may therefore assume that $\I$ itself is a preordered set. Thus, the diagram consists of numbers $D(i,j) \in \IN$ for all $i \leq j$ satisfying
 
 $$D(j,k) + D(i,j) = D(i,k)$$
 
@@ -79,7 +79,7 @@ The category $B\On$ has $\aleph_1$-filtered colimits.
 _Proof._
 The proof is similar to $B\IN$. Let $\I$ be an $\aleph_1$-filtered small category and $D : \I \to B\On$ a diagram. A cocone $\lambda = (\lambda_i)_{i \in \I}$ for $D$ is a family of ordinals satisfying $\lambda_i = \lambda_j + D(f)$ for every morphism $f: i \to j$ in $\I$.
 
-We first observe that $D$ factors uniquely through the preorder reflection of $\I$. Indeed, any two parallel morphisms in $\I$ are coequalized by some morphism, and $B\On$ is left cancellative. Thus, we may assume that $\I$ is a preorder. Each inequality $i \leq j$ in $\I$ is mapped to an ordinal number $\alpha_{i,j} \coloneqq D(i \to j)$, and these numbers satisfy
+We first observe that $D$ factors uniquely through the preorder reflection of $\I$. Indeed, any two parallel morphisms in $\I$ are coequalized by some morphism, and $B\On$ is left cancellative. Thus, we may assume that $\I$ is a preordered set. Each inequality $i \leq j$ in $\I$ is mapped to an ordinal number $\alpha_{i,j} \coloneqq D(i \to j)$, and these numbers satisfy
 $$\alpha_{i,k} = \alpha_{j,k} + \alpha_{i,j}$$
 for all $i \leq j \leq k$. In particular, $\alpha_{i,j} \leq \alpha_{i,k}$.
 

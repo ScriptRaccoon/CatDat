@@ -16,7 +16,7 @@ related:
   - Set_arrow
   - FI
   - Pos
-  - Prost
+  - PreOrd
 
 satisfied_properties:
   - property: locally small

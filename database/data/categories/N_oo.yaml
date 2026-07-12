@@ -1,5 +1,5 @@
 id: N_oo
-name: poset of extended natural numbers
+name: partially ordered set of extended natural numbers
 notation: $(\IN_\infty, \leq)$
 objects: natural numbers and $\infty$
 morphisms: 'a unique morphism $(n, m) : n \to m$ if $n \leq m$, where of course $n \leq \infty$ for all $n$'

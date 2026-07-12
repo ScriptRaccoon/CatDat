@@ -1,9 +1,9 @@
 id: Pos
-name: category of posets
+name: category of partially ordered sets
 notation: $\Pos$
 objects: partially ordered sets (aka posets), i.e. sets equipped with a reflexive, transitive, antisymmetric relation
 morphisms: order-preserving functions
-description: Even though there are many similarities with $\Prost$, the main difference is that the forgetful functor $\Pos \to \Set$ has no right adjoint.
+description: Even though there are many similarities with $\PreOrd$, the main difference is that the forgetful functor $\Pos \to \Set$ has no right adjoint.
 nlab_link: https://ncatlab.org/nlab/show/Pos
 
 tags:
@@ -11,7 +11,7 @@ tags:
 
 related:
   - FinOrd
-  - Prost
+  - PreOrd
   - Mono
 
 satisfied_properties:

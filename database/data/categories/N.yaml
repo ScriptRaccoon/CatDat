@@ -1,5 +1,5 @@
 id: N
-name: poset of natural numbers
+name: partially ordered set of natural numbers
 notation: $(\IN,\leq)$
 objects: natural numbers $0, 1, 2, \dotsc$
 morphisms: 'a unique morphism $(n,m) : n \to m$ if $n \leq m$'

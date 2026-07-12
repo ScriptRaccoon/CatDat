@@ -1,5 +1,5 @@
 id: real_interval
-name: poset [0,1]
+name: real interval [0,1]
 notation: $([0,1],\leq)$
 objects: real numbers between $0$ and $1$
 morphisms: 'a unique morphism $(s,t) : s \to t$ when $s \leq t$'
