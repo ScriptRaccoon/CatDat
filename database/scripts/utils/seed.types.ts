@@ -21,6 +21,13 @@ export type ConfigYaml = {
 	}[]
 }
 
+export type SpecialMorphismRuleYaml = {
+	property: string
+	type: string
+	description: string
+	proof: string
+}
+
 export type PropertyEntry = {
 	property: string
 	proof: string

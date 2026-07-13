@@ -7,6 +7,7 @@ import type {
 	ImplicationYaml,
 	FunctorYaml,
 	PropertyEntry,
+	SpecialMorphismRuleYaml,
 	StructureYaml,
 	PropertyYaml,
 	MorphismYaml
@@ -32,6 +33,7 @@ function seed() {
 	seed_config()
 
 	seed_properties({ type: 'category', folder: 'category-properties' })
+	seed_special_morphism_rules()
 	seed_implications({ type: 'category', folder: 'category-implications' })
 	seed_structures({ type: 'category', folder: 'categories', extra: insert_category })
 
@@ -68,6 +70,7 @@ function clear_all_tables() {
 	const tx = db.transaction(() => {
 		db.pragma('defer_foreign_keys = ON')
 
+		db.prepare(`DELETE FROM special_morphism_rules`).run()
 		db.prepare(`DELETE FROM special_morphisms`).run()
 		db.prepare(`DELETE FROM special_morphism_types`).run()
 		db.prepare(`DELETE FROM special_objects`).run()
@@ -154,6 +157,30 @@ function seed_config() {
 	}
 
 	seed_file(db, 'config', path.join(data_folder, 'config.yaml'), insert_config)
+}
+
+/**
+ * Seeds special morphism deduction rules from a YAML file.
+ */
+function seed_special_morphism_rules() {
+	const rule_insert = db.prepare(
+		`INSERT INTO special_morphism_rules
+			(property_id, type, description, proof)
+		VALUES (?, ?, ?, ?)`
+	)
+
+	function insert_rules(rules: SpecialMorphismRuleYaml[]) {
+		for (const { property, type, description, proof } of rules) {
+			rule_insert.run(property, type, description, proof)
+		}
+	}
+
+	seed_file(
+		db,
+		'special morphism rules',
+		path.join(data_folder, 'special-morphism-rules.yaml'),
+		insert_rules
+	)
 }
 
 /**

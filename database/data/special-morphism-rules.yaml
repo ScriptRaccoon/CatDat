@@ -1,0 +1,59 @@
+- property: groupoid
+  type: isomorphisms
+  description: every morphism
+  proof: The category is a groupoid.
+
+- property: thin
+  type: monomorphisms
+  description: every morphism
+  proof: It is a thin category.
+
+- property: thin
+  type: epimorphisms
+  description: every morphism
+  proof: It is a thin category.
+
+- property: left cancellative
+  type: monomorphisms
+  description: every morphism
+  proof: The category is left cancellative.
+
+- property: right cancellative
+  type: epimorphisms
+  description: every morphism
+  proof: The category is right cancellative.
+
+- property: left cancellative
+  type: regular epimorphisms
+  description: same as isomorphisms
+  proof: The category is left cancellative, and a regular epimorphism which is a monomorphism must be an isomorphism.
+
+- property: right cancellative
+  type: regular monomorphisms
+  description: same as isomorphisms
+  proof: The category is right cancellative, and a regular monomorphism which is an epimorphism must be an isomorphism.
+
+- property: finitary algebraic
+  type: isomorphisms
+  description: bijective morphisms
+  proof: 'This holds in every finitary algebraic category: the inverse of a bijective morphism is again a morphism.'
+
+- property: finitary algebraic
+  type: monomorphisms
+  description: injective morphisms
+  proof: 'This holds in every finitary algebraic category: the forgetful functor to sets is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
+
+- property: finitary algebraic
+  type: regular epimorphisms
+  description: surjective morphisms
+  proof: 'This holds in every finitary algebraic category: the construction of coequalizers shows that every regular epimorphism is surjective. Conversely, the fundamental theorem on homomorphisms states that every surjective homomorphism $A \to B$ is the coequalizer of the two projections $A \times_B A \rightrightarrows A$.'
+
+- property: mono-regular
+  type: regular monomorphisms
+  description: same as monomorphisms
+  proof: The category is mono-regular.
+
+- property: epi-regular
+  type: regular epimorphisms
+  description: same as epimorphisms
+  proof: The category is epi-regular.
