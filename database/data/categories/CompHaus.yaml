@@ -108,4 +108,6 @@ special_morphisms:
     proof: 'For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms. To prove the parenthetical remark, given an injective continuous function $f : X \to Y$ between compact Hausdorff spaces, the image of $f$ is a closed subset. Also, the induced map from $X$ to $\im(f)$ with the subspace topology is a bijective continuous map between compact Hausdorff spaces, so it is a homeomorphism.'
   epimorphisms:
     description: surjective continuous maps (which are automatically quotient maps)
-    proof: For the non-trivial direction, and for a proof of the parenthetical remark, see the proof above that $\CompHaus$ is epi-regular.
+    proof: >-
+      For the non-trivial direction, let $f : X \to Y$ be an epimorphism. If it is not surjective, its image would be a proper subset of $Y$, which is compact and hence closed. Then by Urysohn's lemma, there would be a non-zero continuous function $g : Y \to [0, 1]$ which is $0$ on the image; but then $g \circ f = 0 \circ f$, giving a contradiction.
+      To prove that $f$ is a quotient map, it suffices to prove that $f$ maps closed subsets onto closed subsets. If $A \subseteq X$ is a closed subset, it is compact since $X$ is compact. Hence, $f(A) \subseteq Y$ is compact. Since $Y$ is Hausdorff, this implies that $f(A)$ is closed.
