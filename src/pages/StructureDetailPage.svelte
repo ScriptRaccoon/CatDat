@@ -59,7 +59,7 @@
 <section aria-label="main info" class="main-info">
 	<ul class="with-margins">
 		<li>
-			<strong>notation:</strong>
+			<strong>Notation:</strong>
 			{@html structure.notation}
 		</li>
 

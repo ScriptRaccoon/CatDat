@@ -15,11 +15,11 @@
 <StructureDetailPage {...data}>
 	{#snippet definition()}
 		<li>
-			<strong>objects:</strong>
+			<strong>Objects:</strong>
 			{@html data.objects}
 		</li>
 		<li>
-			<strong>morphisms:</strong>
+			<strong>Morphisms:</strong>
 			{@html data.morphisms}
 		</li>
 	{/snippet}
