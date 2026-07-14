@@ -34,8 +34,8 @@
       - finite products
   conclusions:
     - preserves finite products
-  proof: This is because finite products can be constructed recursively via $X_1 \times \cdots \times X_{n+1} = (X_1 \times \cdots \times X_n) \times X_{n+1}$. We need the assumption on the source category since otherwise $X_1 \times \cdots \times X_n$ might not exist.
-  is_equivalence: true
+  proof: This is because finite products can be constructed recursively via $X_1 \times \cdots \times X_{n+1} = (X_1 \times \cdots \times X_n) \times X_{n+1}$. We need the assumption on the source category since otherwise $X_1 \times \cdots \times X_n$ might not exist. See <a href="https://math.stackexchange.com/questions/5142961" target="_blank">MSE/5142961</a>.
+  is_equivalence: false
 
 - id: continuous_criterion
   assumptions:
