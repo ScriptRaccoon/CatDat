@@ -7,9 +7,7 @@ description: 'This is the simplest category, consisting of a single object $0$ a
 nlab_link: https://ncatlab.org/nlab/show/terminal+category
 
 tags:
-  - finite
-  - single object
-  - thin
+  - category theory
 
 related:
   - '0'

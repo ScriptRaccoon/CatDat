@@ -9,17 +9,13 @@ structure_tags:
   - set theory
   - topology
 
-category_tags:
-  - finite
-  - thin
-  - single object
+category_tags: []
 
 functor_tags:
   - forgetful
   - free
 
-morphism_tags:
-  - misc
+morphism_tags: []
 
 category_property_tags:
   - limits
