@@ -99,7 +99,7 @@ function clear_all_tables() {
 	try {
 		tx()
 	} catch (err) {
-		console.error(`Error clearing data:`, err)
+		console.error(`❌ Error clearing data:`, err)
 		process.exit(1)
 	}
 }
@@ -452,6 +452,16 @@ function seed_implications({ type, folder }: { type: StructureType; folder: stri
 
 	function insert_implications(implications: ImplicationYaml[]) {
 		for (const impl of implications) {
+			if (!impl.assumptions.length) {
+				console.error(`❌ Implication ${impl.id} has no assumptions.`)
+				process.exit(1)
+			}
+
+			if (!impl.conclusions.length) {
+				console.error(`❌ Implication ${impl.id} has no conclusions.`)
+				process.exit(1)
+			}
+
 			implication_insert.run(impl.id, type, impl.proof, Number(impl.is_equivalence))
 
 			for (const assumption of impl.assumptions) {
