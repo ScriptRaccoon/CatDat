@@ -15,7 +15,6 @@ export function fetch_implication(type: StructureType, id: string) {
                 id,
                 is_equivalence,
                 is_deduced,
-                dualized_from,
                 proof,
                 assumptions,
                 conclusions,
@@ -24,6 +23,12 @@ export function fetch_implication(type: StructureType, id: string) {
             WHERE id = ?`
 		)
 		.get(id)
+
+	if (!implication_db) {
+		error(404, `Could not find implication with ID '${id}'`)
+	}
+
+	const implication = display_implication(implication_db)
 
 	const structures = db
 		.prepare<[StructureType, string], StructureShort>(
@@ -42,12 +47,6 @@ export function fetch_implication(type: StructureType, id: string) {
             WHERE type = ?`
 		)
 		.all(type)
-
-	if (!implication_db) {
-		error(404, `Could not find implication with ID '${id}'`)
-	}
-
-	const implication = display_implication(implication_db)
 
 	const mapped_types: MappedTypes = {}
 

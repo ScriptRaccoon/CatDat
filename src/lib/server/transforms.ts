@@ -35,7 +35,6 @@ export function display_implication(implication: ImplicationDB): ImplicationDisp
 		id: implication.id,
 		is_equivalence: Boolean(implication.is_equivalence),
 		is_deduced: Boolean(implication.is_deduced),
-		dualized_from: implication.dualized_from,
 		proof: implication.proof,
 		assumptions: JSON.parse(implication.assumptions),
 		conclusions: JSON.parse(implication.conclusions),

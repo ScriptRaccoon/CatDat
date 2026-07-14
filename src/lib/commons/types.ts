@@ -82,7 +82,6 @@ export type ImplicationDB = {
 	id: string
 	is_equivalence: 0 | 1
 	is_deduced: 0 | 1
-	dualized_from: string | null
 	proof: string
 	assumptions: string
 	conclusions: string

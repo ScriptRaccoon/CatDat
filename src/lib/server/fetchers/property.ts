@@ -57,7 +57,6 @@ export function fetch_property(type: StructureType, id: string) {
                 id,
                 is_equivalence,
                 is_deduced,
-                dualized_from,
                 proof,
                 assumptions,
                 conclusions,

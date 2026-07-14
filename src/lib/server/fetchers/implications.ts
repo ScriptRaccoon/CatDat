@@ -9,7 +9,6 @@ export function fetch_implications(type: StructureType) {
 				id,
 				is_equivalence,
 				is_deduced,
-				dualized_from,
 				proof,
 				assumptions,
 				conclusions,

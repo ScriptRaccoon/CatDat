@@ -4,10 +4,7 @@ CREATE TABLE implications (
     proof TEXT NOT NULL CHECK (length(proof) > 0),
     is_equivalence INTEGER NOT NULL DEFAULT FALSE,
     is_deduced INTEGER NOT NULL DEFAULT FALSE,
-    dualized_from TEXT,
     UNIQUE (id, type),
-    CHECK (dualized_from IS NULL OR is_deduced = TRUE),
-    FOREIGN KEY (dualized_from, type) REFERENCES implications (id, type) ON DELETE RESTRICT,
     FOREIGN KEY (type) REFERENCES structure_types (type) ON DELETE RESTRICT
 );
 
@@ -65,7 +62,6 @@ CREATE VIEW implications_view AS
         i.type,
         i.is_equivalence,
         i.is_deduced,
-        i.dualized_from,
         i.proof,
         (
             SELECT json_group_array(a.property_id)
