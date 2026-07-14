@@ -14,14 +14,8 @@ related:
   - BN
 
 satisfied_properties:
-  - property: generator
-    proof: There is just one object.
-
-  - property: cogenerator
-    proof: There is just one object.
-
-  - property: strongly connected
-    proof: This is trivial.
+  - property: core-connected
+    proof: The category has exactly one object.
 
   - property: gaunt
     proof: This is because $0$ is the only ordinal number with an additive inverse.
@@ -48,9 +42,6 @@ satisfied_properties:
     proof: A proof can be found <a href="/content/aleph1-filtered-colimits-in-deloopings">here</a> as Proposition 3.
 
 unsatisfied_properties:
-  - property: initial object
-    proof: This is trivial.
-
   - property: one-way
     proof: This is trivial.
 

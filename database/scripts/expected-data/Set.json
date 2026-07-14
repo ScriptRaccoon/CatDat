@@ -172,5 +172,6 @@
 	"quotient-trivial": false,
 	"locally finite": false,
 	"regular-subobject-trivial": false,
-	"regular-quotient-trivial": false
+	"regular-quotient-trivial": false,
+	"core-connected": false
 }

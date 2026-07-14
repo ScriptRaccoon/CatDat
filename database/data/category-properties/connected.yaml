@@ -9,6 +9,7 @@ related:
   - inhabited
   - semi-strongly connected
   - strongly connected
+  - core-connected
 
 tags:
   - morphism behavior

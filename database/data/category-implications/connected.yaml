@@ -1,5 +1,4 @@
-# results on connected, semi-strongly connected and
-# strongly connected categories
+# results on connected categories and related notions
 
 - id: connected_consequence
   assumptions:
@@ -51,4 +50,37 @@
   conclusions:
     - pointed
   proof: By assumption there is a morphism $1 \to 0$. There is also a unique morphism $0 \to 1$. They are necessarily inverse to each other.
+  is_equivalence: false
+
+- id: core-connected_implies_strongly-connected
+  assumptions:
+    - core-connected
+  conclusions:
+    - strongly connected
+  proof: This is trivial.
+  is_equivalence: false
+
+- id: unique_object_generates
+  assumptions:
+    - core-connected
+  conclusions:
+    - generator
+  proof: This is trivial.
+  is_equivalence: false
+
+- id: trivial_is_core-connected
+  assumptions:
+    - trivial
+  conclusions:
+    - core-connected
+  proof: This is trivial.
+  is_equivalence: false
+
+- id: core_connected_becomes_trivial
+  assumptions:
+    - core-connected
+    - initial object
+  conclusions:
+    - trivial
+  proof: Every object is isomorphic to the initial object.
   is_equivalence: false

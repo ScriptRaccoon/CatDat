@@ -30,8 +30,8 @@ satisfied_properties:
   - property: self-dual
     proof: This is obvious.
 
-  - property: generator
-    proof: The unique object is a generator for trivial reasons.
+  - property: core-connected
+    proof: The category has exactly one object.
 
   - property: subobject-trivial
     proof: This is because the identity is the only monomorphism.
@@ -43,9 +43,6 @@ satisfied_properties:
     proof: 'In fact, the walking idempotent is $\kappa$-filtered for every regular infinite cardinal $\kappa$: Every diagram $D : \I \to \Idem$ has the cocone $(e : D(i) \to 0)_{i \in \I}$.'
 
 unsatisfied_properties:
-  - property: terminal object
-    proof: This is obvious.
-
   - property: Cauchy complete
     proof: The idempotent $e$ does not split.
 

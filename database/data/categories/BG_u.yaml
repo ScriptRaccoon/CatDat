@@ -23,14 +23,11 @@ satisfied_properties:
   - property: groupoid
     proof: This is trivial.
 
-  - property: connected
-    proof: This is trivial.
+  - property: core-connected
+    proof: The category has exactly one object.
 
   - property: skeletal
-    proof: There is just one object.
-
-  - property: generator
-    proof: The unique object is a generator for trivial reasons.
+    proof: The category has exactly one object.
 
 unsatisfied_properties:
   - property: locally finite

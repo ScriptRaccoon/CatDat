@@ -1,0 +1,21 @@
+id: core-connected
+relation: is
+description: >-
+  We say that a category $\C$ is <i>core-connected</i> if it satisfies one of the following equivalent conditions:
+  <ol>
+  <li>The <a href="https://ncatlab.org/nlab/show/core+groupoid" target="_blank">core</a> of $\C$ is <a href="/category-property/connected">connected</a>.</li>
+  <li>There is an object $X \in \C$ such that every object of $\C$ is isomorphic to $X$.</li>
+  <li>There is a (possibly large) monoid $M$ such that $\C$ is equivalent to the one-object category $BM$.</li>
+  </ol>
+  This is not standard terminology. We have added this property to systematically handle the one-object categories in the database; a category has exactly one object iff it is core-connected and <a href="/category-property/skeletal">skeletal</a>.
+nlab_link: null
+dual: core-connected
+invariant_under_equivalences: true
+
+related:
+  - connected
+  - trivial
+  - core-thin
+
+tags:
+  - object behavior

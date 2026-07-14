@@ -5,7 +5,8 @@ nlab_link: https://ncatlab.org/nlab/show/terminal+category
 dual: trivial
 invariant_under_equivalences: true
 
-related: []
+related:
+  - core-connected
 
 tags:
   - misc

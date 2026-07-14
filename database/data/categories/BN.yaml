@@ -22,14 +22,11 @@ satisfied_properties:
   - property: countable
     proof: This is trivial.
 
-  - property: strongly connected
-    proof: This is trivial.
+  - property: core-connected
+    proof: The category has exactly one object.
 
   - property: self-dual
     proof: The identity is a self-duality since the addition is commutative.
-
-  - property: generator
-    proof: The unique object is a generator for trivial reasons.
 
   - property: left cancellative
     proof: This is because addition of natural numbers is cancellative.
