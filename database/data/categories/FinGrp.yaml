@@ -88,7 +88,7 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: bijective homomorphisms
-    proof: This follows exactly as for <a href="/category/Grp">$\Grp$</a>.
+    proof: It is a full subcategory of $\Grp$, for which we know that isomorphisms are bijective homomorphisms.
   monomorphisms:
     description: injective homomorphisms
     proof: 'Let $f : A \to B$ be a monomorphism of finite groups. Let $a \in A$ be in the kernel of $a$, say of order $n$. Then we may view $a$ as a morphism $a : C_n \to A$ with $f \circ a = 1$ (the trivial homomorphism), and $C_n$ is finite. Hence, $a = 1$.'

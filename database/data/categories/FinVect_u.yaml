@@ -61,7 +61,7 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: bijective linear maps
-    proof: This is easy to check.
+    proof: It is a full subcategory of $\Vect_K$, for which we know that isomorphisms are bijective linear maps.
 
   monomorphisms:
     description: injective linear maps

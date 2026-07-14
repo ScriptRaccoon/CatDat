@@ -102,7 +102,7 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: homeomorphisms
-    proof: This is easy.
+    proof: It is a full subcategory of $\Top$, for which isomorphisms are known to be homeomorphisms.
   monomorphisms:
     description: injective continuous maps (which are automatically closed embeddings)
     proof: 'For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms. To prove the parenthetical remark, given an injective continuous function $f : X \to Y$ between compact Hausdorff spaces, the image of $f$ is a closed subset. Also, the induced map from $X$ to $\im(f)$ with the subspace topology is a bijective continuous map between compact Hausdorff spaces, so it is a homeomorphism.'

@@ -76,7 +76,7 @@ special_objects: {}
 special_morphisms:
   isomorphisms:
     description: bijective field homomorphisms
-    proof: This is easy.
+    proof: It is a full subcategory of $\CRing$, for which we know that isomorphisms are bijective homomorphisms.
   epimorphisms:
     description: purely inseparable homomorphisms
     proof: See <a href="https://math.stackexchange.com/questions/687869" target="_blank">MSE/687869</a>.

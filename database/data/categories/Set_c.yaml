@@ -91,7 +91,7 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: bijective maps
-    proof: This is easy.
+    proof: It is a full subcategory of $\Set$, for which we know that isomorphisms are bijective maps.
   monomorphisms:
     description: injective maps
     proof: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.

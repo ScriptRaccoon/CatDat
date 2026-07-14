@@ -48,4 +48,4 @@ special_objects:
 special_morphisms:
   epimorphisms:
     description: surjective $M$-maps
-    proof: This holds in every functor category $[\C,\Set]$, here applied to the case that $\C$ has just one object.
+    proof: More generally, epimorphisms in functor categories $[\C,\Set]$ can be detected pointwise, since pushouts can be constructed pointwise. This is applied here to the one-object category corresponding to $M$.

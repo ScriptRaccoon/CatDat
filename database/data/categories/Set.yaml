@@ -52,7 +52,7 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: bijective maps
-    proof: This is easy.
+    proof: This is an elementary fact from set theory.
   monomorphisms:
     description: injective maps
     proof: 'For the non-trivial direction, if $f : X \to Y$ is a monomorphism of sets and $a,b \in X$ satisfy $f(a) = f(b)$, then $f \circ a = f \circ b$ when we regard $a,b$ as morphisms $a,b : 1 \to X$. Hence, $a = b$. More generally, if $\C$ is a category that admits a faithful and representable functor $U : \C \to \Set$, then the monomorphisms in $\C$ are precisely the morphisms whose $U$-image is injective.'

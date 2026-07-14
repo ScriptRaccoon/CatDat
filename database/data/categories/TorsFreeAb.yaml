@@ -67,7 +67,7 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: bijective group homomorphisms
-    proof: This is easy.
+    proof: It is a full subcategory of $\Ab$, for which we know that isomorphisms are bijective homomorphisms.
   monomorphisms:
     description: injective group homomorphisms
     proof: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the group $\IZ$), hence preserves monomorphisms.

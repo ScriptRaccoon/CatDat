@@ -74,7 +74,7 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: bijective homomorphisms
-    proof: This follows exactly as for abelian groups.
+    proof: It is a full subcategory of $\Ab$, for which we know that isomorphisms are bijective homomorphisms.
   monomorphisms:
     description: injective homomorphisms
     proof: 'Let $f : A \to B$ be a monomorphism of free abelian groups. Let $a \in A$ be in the kernel of $a$. Then we may view $a$ as a morphism $a : \IZ \to A$ with $f \circ a = 0$, and $\IZ$ is free. Hence, $a = 0$.'

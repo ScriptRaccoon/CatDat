@@ -67,7 +67,7 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: bijective group homomorphisms
-    proof: This is easy.
+    proof: It is a full subcategory of $\Ab$, for which we know that isomorphisms are bijective homomorphisms.
   monomorphisms:
     description: injective group homomorphisms
     proof: 'For the non-trivial direction, assume $f : A \to B$ is a monomorphism and $a \in A$ satisfies $f(a)=0$. Choose $n \geq 1$ with $n a = 0$. Then $a$ corresponds to a homomorphism of torsion abelian groups $\tilde{a} : \IZ/n \to A$ satisfying $f \circ \tilde{a} = 0$. Hence, $\tilde{a} = 0$, which means $a = 0$.'

@@ -110,7 +110,7 @@ special_objects:
 special_morphisms:
   isomorphisms:
     description: bijective homomorphisms
-    proof: This is easy.
+    proof: It is a full subcategory of $\Grp$, for which we know that isomorphisms are bijective homomorphisms.
   monomorphisms:
     description: injective homomorphisms
     proof: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the countable group $\IZ$), hence preserves monomorphisms.
