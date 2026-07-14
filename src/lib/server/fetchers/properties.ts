@@ -16,6 +16,24 @@ export function get_property_ids(type: StructureType) {
 		.all(type)
 }
 
+export function fetch_property_relation_dict() {
+	const rows = db
+		.prepare<
+			never[],
+			{ id: string; type: string; relation: string }
+		>(`SELECT id, type, relation FROM properties`)
+		.all()
+
+	const dict: Record<string, Record<string, string>> = {}
+
+	for (const { id, type, relation } of rows) {
+		dict[type] ??= {}
+		dict[type][id] = relation
+	}
+
+	return dict
+}
+
 export function fetch_grouped_properties_and_tags(type: StructureType) {
 	const properties = db
 		.prepare<[StructureType], GroupedPropertyShort>(

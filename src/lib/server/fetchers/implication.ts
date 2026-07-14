@@ -7,8 +7,11 @@ import type {
 	StructureType
 } from '$lib/commons/types'
 import { display_implication } from '$lib/server/transforms'
+import { fetch_property_relation_dict } from './properties'
 
 export function fetch_implication(type: StructureType, id: string) {
+	const property_relation_dict = fetch_property_relation_dict()
+
 	const implication_db = db
 		.prepare<[string], ImplicationDB>(
 			`SELECT
@@ -54,5 +57,5 @@ export function fetch_implication(type: StructureType, id: string) {
 		mapped_types[map] = mapped_type
 	}
 
-	return { type, implication, structures, mapped_types }
+	return { type, implication, property_relation_dict, structures, mapped_types }
 }

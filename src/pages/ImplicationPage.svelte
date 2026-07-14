@@ -4,8 +4,6 @@
 	import SuggestionForm from '$components/SuggestionForm.svelte'
 	import { pluralize } from '$shared/utils'
 	import { get_property_url } from '$shared/property.utils'
-	import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
-	import Fa from 'svelte-fa'
 	import type {
 		ImplicationDisplay,
 		MappedTypes,
@@ -19,9 +17,15 @@
 		implication: ImplicationDisplay
 		structures: StructureShort[]
 		mapped_types: MappedTypes
+		property_relation_dict: Record<string, Record<string, string>>
 	}
 
-	let { type, implication, structures, mapped_types }: Props = $props()
+	let { type, implication, structures, mapped_types, property_relation_dict }: Props =
+		$props()
+
+	let has_additional_assumptions = $derived(
+		Object.values(implication.mapped_assumptions).some((list) => list?.size)
+	)
 </script>
 
 <MetaData title="Implication Details" />
@@ -29,62 +33,59 @@
 <h2>Implication Details</h2>
 
 <p>
-	<strong>Assumptions:</strong>
-
+	<strong>Claim:</strong>
+	{#if has_additional_assumptions}
+		Given a {type}
+		{#each Object.entries(implication.mapped_assumptions) as [map, set], ind}
+			{#if set}
+				whose
+				{map}
+				{#each set as property, index}
+					{property_relation_dict[mapped_types[map]][property]}
+					<a href={get_property_url(property, mapped_types[map])}>{property}</a
+					>{#if index < set.size - 1}
+						&nbsp;and&nbsp;
+					{/if}
+				{/each}{#if ind < Object.entries(implication.mapped_assumptions).length - 1}
+					, and&nbsp;
+				{/if}
+			{/if}
+		{/each},
+		{#if implication.is_equivalence}
+			it
+		{:else}
+			if it
+		{/if}
+	{:else if implication.is_equivalence}
+		A {type}
+	{:else}
+		If a {type}
+	{/if}
 	{#each implication.assumptions as property, index}
+		{property_relation_dict[type][property]}
 		<a href={get_property_url(property, type)}>{property}</a
 		>{#if index < implication.assumptions.length - 1}
-			,&nbsp;
+			&nbsp;and&nbsp;
 		{/if}
-	{/each}
-</p>
-
-{#each Object.entries(implication.mapped_assumptions) as [map, set]}
-	{#if set?.size}
-		<p>
-			<strong>Requirements of the {map}:</strong>
-
-			{#each set as property, index}
-				<a href={get_property_url(property, mapped_types[map])}>{property}</a
-				>{#if index < set.size - 1}
-					,&nbsp;
-				{/if}
-			{/each}
-		</p>
+	{/each}{#if implication.is_equivalence}
+		&nbsp;if and only if it
+	{:else}
+		, then it
 	{/if}
-{/each}
-
-<p>
-	<strong>Conclusions:</strong>
 	{#each implication.conclusions as property, index}
+		{property_relation_dict[type][property]}
 		<a href={get_property_url(property, type)}>{property}</a
 		>{#if index < implication.conclusions.length - 1}
-			,&nbsp;
+			&nbsp;and&nbsp;
+		{:else}.
 		{/if}
 	{/each}
 </p>
 
-{#if implication.is_equivalence}
-	<p>
-		<Fa icon={faInfoCircle} />
-		This is an equivalence.
-	</p>
-{/if}
-
-{#if implication.dualized_from}
-	<p>
-		This implication has been dualized from <a
-			href="/{type}-implication/{implication.dualized_from}"
-		>
-			this implication
-		</a>.
-	</p>
-{:else}
-	<p>
-		<strong>Proof:</strong>
-		{@html implication.proof}
-	</p>
-{/if}
+<p>
+	<strong>Proof:</strong>
+	{@html implication.proof}
+</p>
 
 {#if structures.length > 0}
 	<details>
