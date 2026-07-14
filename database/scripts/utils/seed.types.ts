@@ -66,8 +66,8 @@ export type CategoryYaml = StructureYaml & {
 }
 
 export type FunctorYaml = StructureYaml & {
-	source: string
-	target: string
+	domain: string
+	codomain: string
 	left_adjoint: string | null
 }
 

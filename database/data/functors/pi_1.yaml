@@ -1,8 +1,8 @@
 id: pi_1
 name: fundamental group functor
 notation: $\pi_1$
-source: Top_*
-target: Grp
+domain: Top_*
+codomain: Grp
 description: The fundamental group $\pi_1(X,x_0)$ of a pointed topological space $(X,x_0)$ is the group of homotopy classes of loops at $x_0$. The group operation is concatenation of paths. For example, we have $\pi_1(S^1,1) \cong \IZ$ (see Hatcher's <a href="https://pi.math.cornell.edu/~hatcher/AT/ATpage.html" target="_blank">Algebraic Topology</a>, Theorem 1.7).
 nlab_link: https://ncatlab.org/nlab/show/fundamental+group
 left_adjoint: null

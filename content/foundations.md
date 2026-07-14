@@ -41,8 +41,8 @@ A collection is called _countable_ if it admits a surjective map from $\IN$. In 
 A _category_ $\C$ consists of a pair of collections $O, M$, whose elements are called _objects_ and _morphisms_, respectively, together with maps
 
 - $i : O \to M$ (_identity_),
-- $s : M \to O$ (_source_),
-- $t : M \to O$ (_target_),
+- $s : M \to O$ (_source_ or _domain_),
+- $t : M \to O$ (_target_ or _codomain_),
 - $c : M \times_O M \to M$ (_composition_),
 
 such that the usual [axioms of a category](<https://en.wikipedia.org/wiki/Category_(mathematics)>) are satisfied. The domain of $c$ consists of all pairs of morphisms $(f,g)$ with $s(f) = t(g)$, and we write $f \circ g \coloneqq c(f,g)$ for their composition. Instead of $i(X)$ one usually writes $\id_X$ for the identity morphism of $X$. Formally, a category is a tuple

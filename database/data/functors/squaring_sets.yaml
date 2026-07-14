@@ -1,8 +1,8 @@
 id: squaring_sets
 name: squaring functor on sets
 notation: $(-)^2$
-source: Set
-target: Set
+domain: Set
+codomain: Set
 description: This functor maps a set $X$ to its square $X^2$. It is a simple example of a polynomial functor.
 nlab_link: null
 left_adjoint: doubling_sets

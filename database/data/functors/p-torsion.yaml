@@ -1,8 +1,8 @@
 id: p-torsion
 name: p-torsion functor
 notation: $T_p$
-source: Ab
-target: Ab
+domain: Ab
+codomain: Ab
 description: >-
   This functor maps an abelian group $A$ to its $p$-torsion subgroup
   $$T_p(A) \coloneqq \{a \in A : pa = 0\},$$

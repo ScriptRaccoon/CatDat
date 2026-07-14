@@ -1,8 +1,8 @@
 id: walking_isomorphism_object_inclusion
 name: walking isomorphism object inclusion
 notation: $\iota$
-source: '1'
-target: walking_isomorphism
+domain: '1'
+codomain: walking_isomorphism
 description: 'This is the natural embedding of the trivial category with a single object $0$ into the walking isomorphism given by two objects $0,1$ and an isomorphism $0 \to 1$. This is the simplest example of an equivalence of categories which is not an isomorphism.'
 nlab_link: null
 left_adjoint: null

@@ -4,7 +4,7 @@ import { devlog } from '$shared/utils'
 const db = get_client({ readonly: false })
 
 /**
- * Ensures that only functors with target Set are representable.
+ * Ensures that only functors with codomain Set are representable.
  * When necessary, this can be extended to other properties in the future.
  */
 export function restrict_representable_functors() {
@@ -26,11 +26,11 @@ export function restrict_representable_functors() {
                 'representable',
                 'functor',
                 FALSE,
-                'The target category is not $\\Set$.',
+                'The codomain is not $\\Set$.',
                 TRUE,
                 FALSE
             FROM functors f
-            WHERE f.target <> 'Set'
+            WHERE f.codomain <> 'Set'
             ON CONFLICT (structure_id, property_id)
             DO UPDATE SET
                 proof = excluded.proof,

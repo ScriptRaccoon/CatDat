@@ -1,8 +1,8 @@
 id: indiscrete_topology
 name: indiscrete topology functor
 notation: $I$
-source: Set
-target: Top
+domain: Set
+codomain: Top
 description: This functor maps a set $X$ to the indiscrete topological space $I(X) \coloneqq (X, \{\varnothing,X\})$ in which only the empty set and $X$ are open.
 nlab_link: https://ncatlab.org/nlab/show/discrete+and+indiscrete+topology
 left_adjoint: forget_topology

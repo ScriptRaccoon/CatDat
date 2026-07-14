@@ -1,8 +1,8 @@
 id: opposite_category
 name: opposite category functor
 notation: $(-)^{\op}$
-source: Cat
-target: Cat
+domain: Cat
+codomain: Cat
 description: 'This functor maps a small category $\C$ to its opposite category $\C^{\op}$ and a functor $F : \C \to \D$ to the opposite functor $F^{\op} : \C^{\op} \to \D^{\op}$.'
 nlab_link: https://ncatlab.org/nlab/show/opposite+category
 left_adjoint: opposite_category

@@ -1,6 +1,6 @@
 id: preserves terminal objects
 relation: preserves
-description: A functor $F$ <i>preserves terminal objects</i> when it maps every terminal object to a terminal object. It is not assumed that the source category has a terminal object.
+description: A functor $F$ <i>preserves terminal objects</i> when it maps every terminal object to a terminal object. It is not assumed that the domain has a terminal object.
 nlab_link: https://ncatlab.org/nlab/show/preserved+limit
 invariant_under_equivalences: true
 dual: preserves initial objects

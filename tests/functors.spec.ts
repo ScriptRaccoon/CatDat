@@ -162,7 +162,7 @@ test('user can navigate to a related functor', async ({ page }) => {
 	await expect(page).toHaveURL('/functor/forget_group')
 })
 
-test('user can navigate to the source category', async ({ page }) => {
+test('user can navigate to the domain category', async ({ page }) => {
 	await page.goto('/functor/forget_ring', { waitUntil: 'networkidle' })
 
 	await page
@@ -182,7 +182,7 @@ test('user can navigate to the source category', async ({ page }) => {
 	await expect(page).toHaveURL('/category/Ring')
 })
 
-test('user can navigate to the target category', async ({ page }) => {
+test('user can navigate to the codomain category', async ({ page }) => {
 	await page.goto('/functor/group_units', { waitUntil: 'networkidle' })
 
 	await page

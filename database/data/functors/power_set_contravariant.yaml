@@ -1,8 +1,8 @@
 id: power_set_contravariant
 name: contravariant power set functor
 notation: $P_{\forall}$
-source: Set_op
-target: Set
+domain: Set_op
+codomain: Set
 description: 'This functor $P_{\forall}$ maps a set $X$ to its power set $P(X)$ and a map of sets $f : X \to Y$ to the induced preimage operator $f^* : P(Y) \to P(X)$.'
 nlab_link: https://ncatlab.org/nlab/show/power+set
 left_adjoint: null

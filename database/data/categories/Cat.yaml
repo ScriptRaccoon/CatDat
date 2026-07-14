@@ -79,7 +79,7 @@ unsatisfied_properties:
       0 \mapsto (0,0),~ 1 \mapsto (0,1),~ 2 \mapsto (1,1); \\
       0 \mapsto (0,0),~ 1 \mapsto (1,0),~ 2 \mapsto (1,1).
       \end{align*}$$
-      This equalizer contains the unique morphism $0 \to 2$. On the other hand, if for the target we instead use the free category on the square diagram, in this case the equalizer does not contain the unique morphism $0 \to 2$. However, in both cases, the pullbacks of these equalizers to $\{ 0 \to 1 \}$ and to $\{ 1 \to 2 \}$ will be the same. Namely, the pullback of each to $\{ 0 \to 1 \}$ will be the subcategory with just the object $0$ and its identity morphism; and the pullback of each to $\{ 1 \to 2 \}$ will be the subcategory with just the object $2$ and its identity morphism.
+      This equalizer contains the unique morphism $0 \to 2$. On the other hand, if for the codomain we instead use the free category on the square diagram, in this case the equalizer does not contain the unique morphism $0 \to 2$. However, in both cases, the pullbacks of these equalizers to $\{ 0 \to 1 \}$ and to $\{ 1 \to 2 \}$ will be the same. Namely, the pullback of each to $\{ 0 \to 1 \}$ will be the subcategory with just the object $0$ and its identity morphism; and the pullback of each to $\{ 1 \to 2 \}$ will be the subcategory with just the object $2$ and its identity morphism.
 
       This shows that the comparison function
       $$\Sub_{\reg}(\{ 0 \to 1 \to 2 \}) \to \Sub_{\reg}(\{ 0 \to 1 \}) \times_{\Sub_{\reg}(\{1\})} \Sub_{\reg}(\{ 1 \to 2 \})$$

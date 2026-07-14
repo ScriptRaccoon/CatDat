@@ -44,7 +44,7 @@ export function fetch_category(id: string) {
 			`SELECT f.id, s.name
 			FROM functors f
 			INNER JOIN structures s ON s.id = f.id
-			WHERE f.source = ? OR f.target = ?
+			WHERE f.domain = ? OR f.codomain = ?
 			ORDER BY lower(s.name)`
 		)
 		.all(id, id)

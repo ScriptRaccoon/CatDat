@@ -1,8 +1,8 @@
 id: countable_copower_sets
 name: countable copower functor on sets
 notation: $\IN \times (-)$
-source: Set
-target: Set
+domain: Set
+codomain: Set
 description: This functor maps a set $X$ to the product $\IN \times X$, which can also be seen as the copower $\IN \otimes X = \coprod_{n \in \IN} X$. It is an example of a polynomial functor.
 nlab_link: null
 left_adjoint: null

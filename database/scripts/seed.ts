@@ -335,14 +335,14 @@ function insert_category(category: CategoryYaml) {
  */
 function insert_functor(functor: FunctorYaml) {
 	const functor_insert = db.prepare(
-		`INSERT INTO functors (id, source, target, left_adjoint)
+		`INSERT INTO functors (id, domain, codomain, left_adjoint)
 		VALUES (?, ?, ?, ?)`
 	)
 
 	functor_insert.run(
 		functor.id,
-		functor.source,
-		functor.target,
+		functor.domain,
+		functor.codomain,
 		functor.left_adjoint || null
 	)
 }

@@ -34,5 +34,5 @@
     - effective cocongruences
     - effective congruences
     - reflexive coequalizers
-  proof: Any parallel pair of morphisms with a common section (or retraction) must be a pair of equal isomorphisms. In particular, they are the kernel pair of the identity morphism on the target, and the cokernel pair of the identity morphism on the source.
+  proof: 'Any parallel pair of morphisms $f,g : A \rightrightarrows B$ with a common section (or retraction) must be a pair of equal isomorphisms. In particular, they are the kernel pair of $\id_B$, and the cokernel pair of $\id_A$.'
   is_equivalence: false

@@ -1,6 +1,6 @@
 id: preserves initial objects
 relation: preserves
-description: A functor $F$ <i>preserves initial objects</i> when it maps every initial object to an initial object. It is not assumed that the source category has a initial object.
+description: A functor $F$ <i>preserves initial objects</i> when it maps every initial object to an initial object. It is not assumed that the domain has an initial object.
 nlab_link: https://ncatlab.org/nlab/show/preserved+colimit
 invariant_under_equivalences: true
 dual: preserves terminal objects

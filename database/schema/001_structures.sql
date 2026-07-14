@@ -73,6 +73,6 @@ CREATE TABLE structure_maps (
 INSERT INTO structure_maps
     (map, type, mapped_type)
 VALUES
-    ('source', 'functor', 'category'),
-    ('target', 'functor', 'category'),
+    ('domain', 'functor', 'category'),
+    ('codomain', 'functor', 'category'),
     ('category', 'morphism', 'category');

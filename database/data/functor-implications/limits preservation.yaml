@@ -30,11 +30,11 @@
     - preserves terminal objects
     - preserves binary products
   mapped_assumptions:
-    source:
+    domain:
       - finite products
   conclusions:
     - preserves finite products
-  proof: This is because finite products can be constructed recursively via $X_1 \times \cdots \times X_{n+1} = (X_1 \times \cdots \times X_n) \times X_{n+1}$. We need the assumption on the source category since otherwise $X_1 \times \cdots \times X_n$ might not exist. See <a href="https://math.stackexchange.com/questions/5142961" target="_blank">MSE/5142961</a>.
+  proof: This is because finite products can be constructed recursively via $X_1 \times \cdots \times X_{n+1} = (X_1 \times \cdots \times X_n) \times X_{n+1}$. We need the assumption on the domain since otherwise $X_1 \times \cdots \times X_n$ might not exist. See <a href="https://math.stackexchange.com/questions/5142961" target="_blank">MSE/5142961</a>.
   is_equivalence: false
 
 - id: continuous_criterion
@@ -42,7 +42,7 @@
     - preserves equalizers
     - preserves products
   mapped_assumptions:
-    source:
+    domain:
       - products
   conclusions:
     - continuous
@@ -54,7 +54,7 @@
     - cofinitary
     - left exact
   mapped_assumptions:
-    source:
+    domain:
       - finitely complete
   conclusions:
     - continuous
@@ -66,7 +66,7 @@
     - cofinitary
     - preserves finite products
   mapped_assumptions:
-    source:
+    domain:
       - finite products
   conclusions:
     - preserves products
@@ -100,7 +100,7 @@
     - preserves equalizers
     - preserves finite products
   mapped_assumptions:
-    source:
+    domain:
       - finite products
   conclusions:
     - left exact
@@ -129,7 +129,7 @@
     - preserves coreflexive equalizers
     - preserves binary products
   mapped_assumptions:
-    source:
+    domain:
       - binary products
   conclusions:
     - preserves equalizers
@@ -140,7 +140,7 @@
   assumptions:
     - preserves regular monomorphisms
   mapped_assumptions:
-    source:
+    domain:
       - mono-regular
   conclusions:
     - preserves monomorphisms
@@ -151,7 +151,7 @@
   assumptions:
     - preserves monomorphisms
   mapped_assumptions:
-    target:
+    codomain:
       - mono-regular
   conclusions:
     - preserves regular monomorphisms
@@ -162,7 +162,7 @@
   assumptions:
     - preserves coreflexive equalizers
   mapped_assumptions:
-    source:
+    domain:
       - pushouts
   conclusions:
     - preserves regular monomorphisms
@@ -173,9 +173,9 @@
   assumptions:
     - preserves terminal objects
   mapped_assumptions:
-    source:
+    domain:
       - pointed
-    target:
+    codomain:
       - pointed
   conclusions:
     - preserves initial objects
@@ -186,9 +186,9 @@
   assumptions:
     - preserves finite products
   mapped_assumptions:
-    source:
+    domain:
       - biproducts
-    target:
+    codomain:
       - biproducts
   conclusions:
     - preserves finite coproducts

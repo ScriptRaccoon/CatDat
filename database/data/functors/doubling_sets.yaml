@@ -1,8 +1,8 @@
 id: doubling_sets
 name: doubling functor on sets
 notation: $2(-)$
-source: Set
-target: Set
+domain: Set
+codomain: Set
 description: This functor maps a set $X$ to its double $2 X \coloneqq X + X$. It is a simple example of a polynomial functor.
 nlab_link: null
 left_adjoint: null

@@ -10,13 +10,13 @@
 <StructureDetailPage {...data}>
 	{#snippet definition()}
 		<li>
-			<strong>Source:</strong>
-			<a href="/category/{data.source}">{data.source_name}</a>
+			<strong>Domain:</strong>
+			<a href="/category/{data.domain}">{data.domain_name}</a>
 		</li>
 
 		<li>
-			<strong>Target:</strong>
-			<a href="/category/{data.target}">{data.target_name}</a>
+			<strong>Codomain:</strong>
+			<a href="/category/{data.codomain}">{data.codomain_name}</a>
 		</li>
 
 		{#if data.left_adjoint}

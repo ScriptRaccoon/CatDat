@@ -14,7 +14,7 @@
     - conservative
     - preserves reflexive coequalizers
   mapped_assumptions:
-    source:
+    domain:
       - reflexive coequalizers
   conclusions:
     - monadic

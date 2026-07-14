@@ -12,11 +12,11 @@
     - conservative
     - preserves equalizers
   mapped_assumptions:
-    source:
+    domain:
       - equalizers
   conclusions:
     - faithful
-  proof: 'Let $f,g : X \rightrightarrows Y$ be two morphisms in the source category, and choose an equalizer $E \hookrightarrow X$. By assumption, $F(E) \to F(X)$ is the equalizer of $F(f),F(g) : F(X) \rightrightarrows F(Y)$. Thus, if $F(f) = F(g)$, then $F(E) \to F(X)$ is an isomorphism. Since $F$ is conservative, $E \to X$ is an isomorphism, which means $f = g$.'
+  proof: 'Let $f,g : X \rightrightarrows Y$ be two morphisms in the domain, and choose an equalizer $E \hookrightarrow X$. By assumption, $F(E) \to F(X)$ is the equalizer of $F(f),F(g) : F(X) \rightrightarrows F(Y)$. Thus, if $F(f) = F(g)$, then $F(E) \to F(X)$ is an isomorphism. Since $F$ is conservative, $E \to X$ is an isomorphism, which means $f = g$.'
   is_equivalence: false
 
 - id: conservative_criterion

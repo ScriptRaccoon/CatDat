@@ -1,8 +1,8 @@
 id: forget_inverses
 name: forgetful functor from groups to monoids
 notation: $U_{\Grp,\Mon}$
-source: Grp
-target: Mon
+domain: Grp
+codomain: Mon
 description: This functor maps a group to its underlying monoid. We view groups as structured sets $(X,m,e,i)$ (consisting of a set, a multiplication, a neutral element, and an inverse operation), and monoids as structured sets $(X,m,e)$. This forgetful functor precisely maps $(X,m,e,i)$ to $(X,m,e)$. From this point of view, it does <i>not</i> merely forget a property; it forgets an operation. This perspective is useful in contexts where the inverse operation is no longer reducible to a property, for example, the forgetful functor from topological groups to topological monoids.
 nlab_link: https://ncatlab.org/nlab/show/forgetful+functor
 left_adjoint: enveloping_group

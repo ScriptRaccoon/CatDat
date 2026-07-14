@@ -1,8 +1,8 @@
 id: group_units
 name: group of units functor
 notation: $(-)^{\times}$
-source: Mon
-target: Grp
+domain: Mon
+codomain: Grp
 description: This functor maps a monoid $M$ to its group of units $M^{\times}$, consisting of pairs $(a,b) \in M^2$ satisfying $ab=ba=1$. Equivalently, it takes the submonoid of invertible elements of $M$, equipped with the inverse operation.
 nlab_link: https://ncatlab.org/nlab/show/group+of+units
 left_adjoint: forget_inverses

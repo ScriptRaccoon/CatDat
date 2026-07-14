@@ -68,7 +68,7 @@
 						one: 'There is 1 functor',
 						other: 'There are {count} functors'
 					})}
-					whose source or target is the {data.structure.name}.
+					whose (co-)domain is the {data.structure.name}.
 				</p>
 				<StructureList structures={data.functors} type="functor" />
 			</section>

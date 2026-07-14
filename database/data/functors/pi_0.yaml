@@ -1,8 +1,8 @@
 id: pi_0
 name: path components functor
 notation: $\pi_0$
-source: Top
-target: Set
+domain: Top
+codomain: Set
 description: This functor maps a topological space $X$ to its set $\pi_0(X)$ of path components. Thus, $\pi_0(X) = U(X) / {\sim}$, where $U(X)$ is the underlying set and $x \sim y$ when there is a path from $x$ to $y$.
 nlab_link: https://ncatlab.org/nlab/show/connected+space
 left_adjoint: null

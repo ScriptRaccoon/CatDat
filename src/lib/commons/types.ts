@@ -138,12 +138,12 @@ export type CategorySpecificDisplay = {
 }
 
 export type FunctorSpecificDisplay = {
-	source: string
-	source_name: string
-	source_notation: string
-	target: string
-	target_name: string
-	target_notation: string
+	domain: string
+	domain_name: string
+	domain_notation: string
+	codomain: string
+	codomain_name: string
+	codomain_notation: string
 	left_adjoint: string | null
 	left_adjoint_name: string | null
 	left_adjoint_notation: string | null

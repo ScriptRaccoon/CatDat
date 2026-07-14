@@ -1,8 +1,8 @@
 id: forget_ring
 name: forgetful functor for rings
 notation: $U_{\Ring}$
-source: Ring
-target: Set
+domain: Ring
+codomain: Set
 description: This functor maps a ring $R$ to its underlying set $U_{\Ring}(R)$.
 nlab_link: https://ncatlab.org/nlab/show/forgetful+functor
 left_adjoint: null

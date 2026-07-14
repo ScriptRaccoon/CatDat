@@ -1,8 +1,8 @@
 id: opposite_monoid
 name: opposite monoid functor
 notation: $(-)^{\op}$
-source: Mon
-target: Mon
+domain: Mon
+codomain: Mon
 description: 'This functor maps a monoid $M$ to its opposite monoid $M^{\op}$ which has the multiplication $a *^{\op} b \coloneqq a * b$. A monoid homomorphism $f : M \to N$ is also a monoid homomorphism $f^{\op} : M^{\op} \to N^{\op}$.'
 nlab_link: https://ncatlab.org/nlab/show/opposite+magma
 left_adjoint: opposite_monoid

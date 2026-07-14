@@ -1,8 +1,8 @@
 id: continuous_functions
 name: functor of continuous functions
 notation: $C$
-source: Top_op
-target: CAlg(R) # TODO: specify that R is IR
+domain: Top_op
+codomain: CAlg(R) # TODO: specify that R is IR
 description: 'This functor maps a topological space $X$ to the commutative $\IR$-algebra $C(X)$ of continuous functions $X \to \IR$. A continuous map $f : X \to Y$ is mapped to the algebra homomorphism $f^* : C(Y) \to C(X)$, $u \mapsto u \circ f$.'
 nlab_link: null
 left_adjoint: null

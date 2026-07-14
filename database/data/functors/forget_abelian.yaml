@@ -1,8 +1,8 @@
 id: forget_abelian
 name: forgetful functor from abelian groups to groups
 notation: $U_{\Ab,\Grp}$
-source: Ab
-target: Grp
+domain: Ab
+codomain: Grp
 description: This functor maps an abelian group to itself, considered merely as a group.
 nlab_link: https://ncatlab.org/nlab/show/forgetful+functor
 left_adjoint: abelianization

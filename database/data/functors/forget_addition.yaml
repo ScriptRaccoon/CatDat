@@ -1,8 +1,8 @@
 id: forget_addition
 name: forgetful functor from rings to monoids
 notation: $U_{\Ring,\Mon}$
-source: Ring
-target: Mon
+domain: Ring
+codomain: Mon
 description: This functor maps a ring to its underlying multiplicative monoid, which as "forgotten" the addition of the ring.
 nlab_link: https://ncatlab.org/nlab/show/forgetful+functor
 left_adjoint: monoid_ring

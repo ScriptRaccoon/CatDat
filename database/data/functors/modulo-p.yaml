@@ -1,8 +1,8 @@
 id: modulo-p
 name: modulo p functor
 notation: $T^p$
-source: Ab
-target: Ab
+domain: Ab
+codomain: Ab
 description: This functor maps an abelian group $A$ to the quotient $T^p(A) \coloneqq A/pA$, where $p$ is a fixed prime number. This group can also be represented as $A \otimes \IZ/p$.
 nlab_link: null
 left_adjoint: null

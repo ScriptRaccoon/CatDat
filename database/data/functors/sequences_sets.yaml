@@ -1,8 +1,8 @@
 id: sequences_sets
 name: sequences functor on sets
 notation: $(-)^{\IN}$
-source: Set
-target: Set
+domain: Set
+codomain: Set
 description: This functor maps a set $X$ to the countable power $X^{\IN}$, i.e. the set of sequences in $X$. It is an example of a polynomial functor. It is also an example of a monadic functor for which the crude monadicity theorem does not apply.
 nlab_link: null
 left_adjoint: countable_copower_sets

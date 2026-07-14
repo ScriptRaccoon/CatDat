@@ -10,12 +10,12 @@
   assumptions:
     - continuous
   mapped_assumptions:
-    source:
+    domain:
       - cogenerating set
       - complete
       - locally essentially small
       - well-powered
-    target:
+    codomain:
       - locally essentially small
   conclusions:
     - right adjoint

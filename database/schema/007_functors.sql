@@ -1,14 +1,14 @@
 CREATE TABLE functors (
     id TEXT PRIMARY KEY,
-    source TEXT NOT NULL,
-    target TEXT NOT NULL,
+    domain TEXT NOT NULL,
+    codomain TEXT NOT NULL,
     left_adjoint TEXT,
-    UNIQUE (id, source, target),
+    UNIQUE (id, domain, codomain),
     FOREIGN KEY (id)  REFERENCES structures (id) ON DELETE CASCADE,
-    FOREIGN KEY (source) REFERENCES categories (id) ON DELETE CASCADE,
-    FOREIGN KEY (target) REFERENCES categories (id) ON DELETE CASCADE,
-    FOREIGN KEY (left_adjoint, target, source)
-        REFERENCES functors (id, source, target)
+    FOREIGN KEY (domain) REFERENCES categories (id) ON DELETE CASCADE,
+    FOREIGN KEY (codomain) REFERENCES categories (id) ON DELETE CASCADE,
+    FOREIGN KEY (left_adjoint, codomain, domain)
+        REFERENCES functors (id, domain, codomain)
         ON DELETE CASCADE
 );
 
