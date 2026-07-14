@@ -78,5 +78,5 @@ special_objects:
 
 special_morphisms:
   epimorphisms:
-    description: surjective pointed maps
+    description: surjective morphisms
     proof: 'If $f : X \to Y$ is an epimorphism of pointed sets, then the inclusion $i : f(X) \hookrightarrow Y$ is an epimorphism as well. But it is also a split monomorphism (we may map everything in $Y \setminus f(X)$ to the base point of $f(X)$, and do not touch the rest), hence an isomorphism.'

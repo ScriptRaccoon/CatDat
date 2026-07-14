@@ -73,7 +73,7 @@ special_morphisms:
     proof: This is true for every functor category.
   monomorphisms:
     description: pointwise injective natural transformations
-    proof: 'If $a : F \to G$ is a monomorphism of species, then the diagonal morphism $F \to F \times_G F$ is an isomorphism, so that for every $x$ the diagonal morphism $F(x) \to F(x) \times_{G(x)} F(x)$ is an isomorphism, i.e., $a(x) : F(x) \to G(x)$ is a monomorphism. This argument works for every functor category where the target has fiber products.'
+    proof: This holds in every functor category $[\C,\Set]$ since pullbacks can be constructed pointwise.
   epimorphisms:
     description: pointwise surjective natural transformations
-    proof: This holds in every functor category $[\C,\Set]$.
+    proof: This holds in every functor category $[\C,\Set]$ since pushouts can be constructed pointwise.

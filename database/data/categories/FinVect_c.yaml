@@ -62,11 +62,9 @@ special_morphisms:
   isomorphisms:
     description: bijective linear maps
     proof: It is a full subcategory of $\Vect_K$, for which we know that isomorphisms are bijective linear maps.
-
   monomorphisms:
     description: injective linear maps
     proof: For the non-trivial direction, the forgetful functor $\FinVect_K \to \Set$ is representable (by $K$), and therefore preserves monomorphisms.
-
   epimorphisms:
     description: surjective linear maps
     proof: 'For the non-trivial direction, it suffices to observe that every epimorphism in $\FinVect_K$ is also an epimorphism in $\Vect_K$, where epimorphisms are already classified. Namely, let $f : V \to W$ be an epimorphism in $\FinVect_K$ and let $g : W \to T$ be a linear map with $g \circ f = 0$. Then $g$ factors as $g = i \circ h$, where $i : \im(g) \hookrightarrow T$ is the inclusion of the image and $h : W \twoheadrightarrow \im(g)$ is the corestriction of $g$. Then $h \circ f = 0$, and since $\im(g)$ is finite-dimensional, it follows that $h = 0$. Hence $g = 0$.'

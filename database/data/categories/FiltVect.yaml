@@ -99,19 +99,15 @@ special_morphisms:
   isomorphisms:
     description: 'A filtered linear map $f : (V,F) \to (W,G)$ is an isomorphism if $f : V \to W$ is bijective and $f_*(F^n(V)) = G^n(W)$ for all $n \in \IZ$.'
     proof: This is straightforward to verify.
-
   monomorphisms:
     description: injective filtered linear maps
     proof: For the non-trivial direction, the forgetful functor $\FiltVect \to \Set$ is representable (by $K$ equipped with the trivial filtration), and therefore preserves monomorphisms.
-
   epimorphisms:
     description: surjective filtered linear maps
     proof: We saw above that the category has cokernels, and that these are preserved by the forgetful functor to $\Vect$. Moreover, a morphism is an epimorphism if and only if its cokernel is zero, and a filtered vector space is zero if and only if its underlying vector space is zero. Therefore, the claim follows from the classification of epimorphisms in $\Vect$.
-
   regular monomorphisms:
     description: 'A filtered linear map $f : (V,F) \to (W,G)$ is a regular monomorphism if and only if $f : V \to W$ is injective and $F^n(V) = f^*(G^n(W))$ for all $n \in \IZ$.'
     proof: 'Every kernel (and hence every equalizer) satisfies this property by the construction of kernels. Conversely, suppose that $f : (V,F) \to (W,G)$ is a filtered linear map satisfying this condition. Then $f$ induces an isomorphism between $(V,F)$ and $(U,G)$, where $U \coloneqq \im(f) \subseteq W$ is equipped with the induced filtration $G^n(U) \coloneqq U \cap G^n(W)$. Endow $W/U$ with the induced filtration $G^n(W/U) \coloneqq \pi_*(G^n(W))$, where $\pi : W \to W/U$ is the quotient map. Then $\pi : (W,G) \to (W/U,G)$ is a filtered linear map, and by the general construction of kernels, its kernel is the vector space $U$ equipped with the induced filtration. Hence, $f : (V,F) \to (W,G)$ is a kernel of $\pi : (W,G) \to (W/U,G)$.'
-
   regular epimorphisms:
     description: 'A filtered linear map $f : (V,F) \to (W,G)$ is a regular epimorphism if and only if $f : V \to W$ is surjective and $G^n(W) = f_*(F^n(V))$ for all $n \in \IZ$.'
     proof: >-

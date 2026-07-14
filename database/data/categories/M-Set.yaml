@@ -47,5 +47,5 @@ special_objects:
 
 special_morphisms:
   epimorphisms:
-    description: surjective $M$-maps
+    description: surjective morphisms
     proof: More generally, epimorphisms in functor categories $[\C,\Set]$ can be detected pointwise, since pushouts can be constructed pointwise. This is applied here to the one-object category corresponding to $M$.

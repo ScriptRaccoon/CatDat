@@ -47,5 +47,5 @@ special_objects:
 
 special_morphisms:
   epimorphisms:
-    description: surjective linear maps
+    description: surjective morphisms
     proof: The forgetful functor to abelian groups is faithful and preserves colimits, hence reflects and preserves epimorphisms. Alternatively, just use the same proof as for abelian groups.
