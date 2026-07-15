@@ -6,7 +6,7 @@ morphisms: 'one morphism $i : 0 \to 1$, two morphisms $f,g : 1 \rightrightarrows
 description: >-
   This category can be pictured as:
   $$\{0 \to 1 \rightrightarrows 2\}$$
-  Its name comes from the fact that a functor $\Fork \to \C$ is the same as a <a href="https://ncatlab.org/nlab/show/fork" target="_blank">fork</a> in $\C$.
+  Its name comes from the fact that a functor $\Fork \to \C$ is the same as a <a href="https://ncatlab.org/nlab/show/fork" target="_blank">fork</a> in $\C$. It can also be realized as the category of ordered sets of cardinality $\leq 2$ with injective order-preserving maps.
 nlab_link: null
 tags:
   - category theory

@@ -1,0 +1,22 @@
+id: fork-handle
+name: handle of the universal fork
+notation: $i$
+category: walking_fork
+description: 'This is the morphism $i : 0 \to 1$ from the <a href="/category/walking_fork">walking fork</a>, see details there. It provides an example of a regular monomorphism which is neither split nor effective.'
+nlab_link: null
+
+tags:
+  - category theory
+
+related: []
+
+satisfied_properties:
+  - property: regular monomorphism
+    proof: 'In fact, $i$ is the equalizer of the other two morphisms $f,g : 1 \rightrightarrows 2$.'
+
+unsatisfied_properties:
+  - property: split monomorphism
+    proof: There is no morphism $1 \to 0$.
+
+  - property: effective monomorphism
+    proof: 'If $i$ were effective, the pushout $1 \sqcup_0 1$ would exist, which is the coproduct $1 \sqcup 1$ since $0$ is initial. Since there are two morphisms $1 \to 2$, there are four morphisms $1 \sqcup 1 \to 2$. But none of the objects $0,1,2$ of the walking fork has four morphisms to $2$.'
