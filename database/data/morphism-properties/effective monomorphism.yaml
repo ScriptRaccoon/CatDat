@@ -1,0 +1,15 @@
+id: effective monomorphism
+relation: is an
+description: >-
+  A morphism $m : A \to B$ is an <i>effective monomorphism</i> if the pushout $B \sqcup_A B$ exists and $m$ is the equalizer of the two coprojections $i_1,i_2 : B \rightrightarrows B \sqcup_A B$.
+
+  By the implications below, effective monomorphisms are closely related to strict and regular monomorphisms. Every effective monomorphism is regular and hence strict, and in a category with pushouts, every strict monomorphism is effective. Thus, in categories with pushouts, all three mentioned classes of monomorphisms coincide.
+nlab_link: https://ncatlab.org/nlab/show/effective+monomorphism
+invariant_under_equivalences: true
+dual: effective epimorphism
+related:
+  - regular monomorphism
+  - strict monomorphism
+
+tags:
+  - types of monomorphisms

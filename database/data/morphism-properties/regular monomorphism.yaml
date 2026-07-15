@@ -6,6 +6,8 @@ invariant_under_equivalences: true
 dual: regular epimorphism
 related:
   - monomorphism
+  - effective monomorphism
+  - strict monomorphism
 
 tags:
   - types of monomorphisms

@@ -3,6 +3,7 @@
     - isomorphism
   conclusions:
     - split monomorphism
+    - effective monomorphism
   proof: This is trivial.
   is_equivalence: false
 
@@ -56,11 +57,51 @@
   proof: This is the definition of a mono-regular category.
   is_equivalence: false
 
-- id: regular_epi_and_mono_is_iso
+- id: strict_epi_and_mono_is_iso
   assumptions:
-    - regular epimorphism
+    - strict epimorphism
     - monomorphism
   conclusions:
     - isomorphism
-  proof: 'If $p : A \to B$ is the coequalizer of $f,g : C \rightrightarrows A$, then $p \circ f = p \circ g$. If $p$ is also a monomorphism, this implies $f = g$. But then $\id_B$ is a coequalizer of $f,g$, so that $p$ is an isomorphism.'
+  proof: 'Assume that $p : A \to B$ is a strict epimorphism and a monomorphism. Then $p$ is the joint coequalizer of all pairs $g,h : C \rightrightarrows A$ with $p \circ g = p \circ h$, which simplifies to $g = h$. Thus, any morphism $A \to T$ automatically coequalizes these pairs and therefore factors uniquely through $p$. This shows that $p$ is an isomorphism.'
+  is_equivalence: false
+
+- id: strict_mono_is_mono
+  assumptions:
+    - strict monomorphism
+  conclusions:
+    - monomorphism
+  proof: This is trivial.
+  is_equivalence: false
+
+- id: regular_mono_is_strict
+  assumptions:
+    - regular monomorphism
+  conclusions:
+    - strict monomorphism
+  proof: 'Let $m : A \to B$ be the equalizer of $g,h : B \rightrightarrows C$. In particular, $m$ is a monomorphism. Let $t : T \to B$ be a monomorphism which equalizes all pairs that are equalized by $m$. In particular, $t$ equalizes $g,h$, i.e. $g \circ t = h \circ t$. By definition of an equalizer, this means that $t$ factors through $m$.'
+  is_equivalence: false
+
+- id: effective_mono_implies_regular_mono
+  assumptions:
+    - effective monomorphism
+  conclusions:
+    - regular monomorphism
+  proof: This is trivial.
+  is_equivalence: false
+
+- id: strict_monos_are_often_effective
+  assumptions:
+    - strict monomorphism
+  mapped_assumptions:
+    category:
+      - pushouts
+  conclusions:
+    - effective monomorphism
+  proof: >-
+    Let $m : A \to B$ be a strict monomorphism in a category with pushouts. In particular, the pushout $B \sqcup_A B$ exists (and actually, we only need this pushout) with coprojections $i_1,i_2 : B \rightrightarrows B \sqcup_A B$ satisfying $i_1 \circ m = i_2 \circ m$.
+    To show that $m$ is the equalizer of $i_1,i_2$, let $t : T \to B$ be a morphism with $i_1 \circ t = i_2 \circ t$. If $g,h : B \rightrightarrows C$ is any parallel pair with $g \circ m = h \circ m$, it induces a morphism $(g;h) : B \sqcup_A B \to C$ with $(g;h) \circ i_1 = g$ and $(g;h) \circ i_2 = h$.
+    By composing these equations with $t$, we get
+    $$g \circ t = (g;h) \circ i_1 \circ t = (g;h) \circ i_2 \circ t = h \circ t.$$
+    Thus, $t$ equalizes every parallel pair that is equalized by $m$. Since $m$ is a strict monomorphism, $t$ factors through $m$.
   is_equivalence: false

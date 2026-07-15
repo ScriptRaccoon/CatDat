@@ -1,0 +1,15 @@
+id: strict monomorphism
+relation: is a
+description: >-
+  A morphism $m : A \to B$ is a <i>strict monomorphism</i> if it is the joint equalizer of all pairs of morphisms $g,h : B \rightrightarrows C$ that it equalizes. That is, $m$ is a monomorphism, and a morphism $t : T \to B$ factors through $m$ if we have $g \circ t = h \circ t$ for all morphisms $g,h : B \rightrightarrows C$ that satisfy $g \circ m = h \circ m$. That is, the minimal requirement for a morphism to factor through $m$ is actually sufficient.
+
+  By the implications below, strict monomorphisms are closely related to effective and regular monomorphisms. Every effective monomorphism is regular and hence strict, and in a category with pushouts, every strict monomorphism is effective. Thus, in categories with pushouts, all three mentioned classes of monomorphisms coincide.
+nlab_link: https://ncatlab.org/nlab/show/strict+monomorphism
+invariant_under_equivalences: true
+dual: strict epimorphism
+related:
+  - regular monomorphism
+  - effective monomorphism
+
+tags:
+  - types of monomorphisms

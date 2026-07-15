@@ -1,0 +1,15 @@
+id: effective epimorphism
+relation: is an
+description: >-
+  A morphism $p : A \to B$ is an <i>effective epimorphism</i> if the pullback $A \times_B A$ exists and $p$ is the coequalizer of the two projections $p_1,p_2 : A \times_B A \rightrightarrows A$.
+
+  By the implications below, effective epimorphisms are closely related to strict and regular epimorphisms. Every effective epimorphism is regular and hence strict, and in a category with pullbacks, every strict epimorphism is effective. Thus, in categories with pullbacks, all three mentioned classes of epimorphisms coincide.
+nlab_link: https://ncatlab.org/nlab/show/effective+epimorphism
+invariant_under_equivalences: true
+dual: effective monomorphism
+related:
+  - regular epimorphism
+  - strict epimorphism
+
+tags:
+  - types of epimorphisms

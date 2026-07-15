@@ -1,0 +1,15 @@
+id: strict epimorphism
+relation: is a
+description: >-
+  A morphism $p : A \to B$ is a <i>strict epimorphism</i> if it is the joint coequalizer of all pairs of morphisms $g,h : C \rightrightarrows A$ that it coequalizes. That is, $p$ is an epimorphism, and a morphism $t : A \to T$ factors through $p$ if we have $t \circ g = t \circ h$ for all morphisms $g,h : C \rightrightarrows A$ that satisfy $p \circ g = p \circ h$. That is, the minimal requirement for a morphism to factor through $p$ is actually sufficient.
+
+  By the implications below, strict epimorphisms are closely related to effective and regular epimorphisms. Every effective epimorphism is regular and hence strict, and in a category with pullbacks, every strict epimorphism is effective. Thus, in categories with pullbacks, all three mentioned classes of epimorphisms coincide.
+nlab_link: https://ncatlab.org/nlab/show/strict+epimorphism
+invariant_under_equivalences: true
+dual: strict monomorphism
+related:
+  - regular epimorphism
+  - effective epimorphism
+
+tags:
+  - types of epimorphisms
