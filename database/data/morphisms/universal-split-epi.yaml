@@ -1,0 +1,19 @@
+id: universal-split-epi
+name: universal split epimorphism
+notation: $p$
+category: walking_splitting
+description: 'This is the morphism $p : 1 \to 0$ in the <a href="/category/walking_splitting">walking splitting</a>, see there for details. It can also be seen as the unique morphism $\IF_2 \to 0$ in the category of $\IF_2$-vector spaces of dimension $\leq 1$. It provides a basic example of a split epimorphism (and hence regular and strict epimorphism) which is not effective.'
+nlab_link: null
+
+tags:
+  - category theory
+
+related: []
+
+satisfied_properties:
+  - property: split epimorphism
+    proof: 'We have $p \circ i = \id_0$ for the other morphism $i : 0 \to 1$ in the category.'
+
+unsatisfied_properties:
+  - property: effective epimorphism
+    proof: If $p$ were effective, the pullback $1 \times_0 1$ would exist, which is the product $1 \times 1$ since $0$ is terminal. Each hom-set in the walking splitting has $\leq 2$ elements, but $\Hom(1, 1 \times 1) \cong \Hom(1,1)^2$ would have four elements.
