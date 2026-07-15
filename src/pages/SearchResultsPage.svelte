@@ -89,7 +89,10 @@
 	<p class="hint">
 		{pluralize(found_structures.length, {
 			one: `Found {count} ${type}`,
-			other: `Found {count} ${PLURALS[type]}`
+			other:
+				found_structures.length === 0
+					? `Found {count} ${PLURALS[type]}. Try to dualize the search.`
+					: `Found {count} ${PLURALS[type]}`
 		})}
 	</p>
 
