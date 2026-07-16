@@ -37,8 +37,8 @@ satisfied_properties:
 
   - property: regular
     proof: |-
-      This follows formally from the fact that <a href="/category/Ab">$\Ab$</a> is regular and $\FreeAb$ is closed under subobjects and finite products: By Prop. 2.5 in the <a href="https://ncatlab.org/nlab/show/regular+category">nLab</a> it suffices to prove that there are pullback-stable (reg epi, mono)-factorizations. Every homomorphism $f : A \to B$ in $\FreeAb$ factors as $f = i \circ p : A \twoheadrightarrow C \hookrightarrow B$, where $C$ is a subgroup, hence free, and $A \to C$ is surjective. Clearly, surjective homomorphisms are pullback-stable. It remains to show that they coincide with the regular epimorphisms.
-      (1) If $f : A \to B$ is surjective, it is the coequalizer of $A \times_B A \rightrightarrows A$ in $\Ab$. Since $A \times_B A$ is free abelian, $f$ is also a coequalizer in $\FreeAb$.
+      This follows formally from the fact that <a href="/category/Ab">$\Ab$</a> is regular and $\FreeAb$ is closed under subobjects and finite products: By Prop. 2.5 in the <a href="https://ncatlab.org/nlab/show/regular+category">nLab</a> it suffices to prove that there are pullback-stable (reg epi, mono)-factorizations. Every homomorphism $f : A \to B$ in $\FreeAb$ factors as $f = i \circ p : A \twoheadrightarrow C \hookrightarrow B$, where $C$ is a subgroup of $B$, hence free abelian, and $A \to C$ is surjective. Clearly, surjective homomorphisms are pullback-stable. It remains to show that they coincide with the regular epimorphisms.
+      (1) If $f : A \to B$ is surjective, it is the coequalizer of $A \times_B A \rightrightarrows A$ in $\Ab$. Since $A \times_B A$ is free abelian (as a subgroup of $A \times A$), $f$ is also a coequalizer in $\FreeAb$.
       (2) If $f : A \to B$ is a regular epimorphism in $\FreeAb$, consider the factorization $f = i \circ p$ as above. Since $f$ is an extremal epimorphism, $i$ must be an isomorphism, so that $f$ is surjective.
 
 unsatisfied_properties:
@@ -79,5 +79,11 @@ special_morphisms:
     description: injective homomorphisms
     proof: 'Let $f : A \to B$ be a monomorphism of free abelian groups. Let $a \in A$ be in the kernel of $a$. Then we may view $a$ as a morphism $a : \IZ \to A$ with $f \circ a = 0$, and $\IZ$ is free. Hence, $a = 0$.'
   epimorphisms:
-    description: 'homomorphisms $f : A \to B$ with the property that $f(A)$ is not contained in a proper direct summand of $B$.'
+    description: 'homomorphisms $f : A \to B$ with the property that $f(A)$ is not contained in a proper direct summand of $B$'
     proof: 'Let $f : A \to B$ be a morphism of free abelian groups such that $f(A)$ is not contained in a proper direct summand of $B$. Then $f$ is an epimorphism: If $t : B \to C$ is a morphism with $t \circ f = 0$, we want to show $t = 0$. Since the image of $t$ is free abelian (as a subgroup of $B$), we may assume that $t$ is surjective. Since $C$ is free, $t$ splits, so its kernel $K$ is a direct summand of $B$ (Splitting Lemma). It contains $f(A)$ because of $t \circ f = 0$. By assumption, $K = B$, so that $t = 0$. Conversely, assume that $f : A \to B$ is an epimorphism, and that $f(A)$ is contained in a direct summand $K$ of $B$. Let $L$ be a complement of $B$ (which is free abelian) and let $p : B \to L$ be the projection. Then $t \circ f = 0$, so $t = 0$. But then $L = 0$, which means $K = B$.'
+  regular monomorphisms:
+    description: 'injective homomorphisms $f : A \to B$ with the property that $B/f(A)$ is free abelian'
+    proof: 'If $f$ is injective and $B/f(A)$ is free abelian, then $f$ is a kernel of the projection $B \to B/f(A)$. Conversely, if $f$ is a kernel of some homomorphism $g : B \to C$ of free abelian groups, by applying $\Hom(\IZ,-)$ we see that it is also the kernel in $\Ab$. In particular, $f$ is injective, and the quotient $B/f(A)$ embeds into $C$ and is therefore free abelian.'
+  regular epimorphisms:
+    description: surjective homomorphisms
+    proof: See the proof above that $\FreeAb$ is regular.
