@@ -1,0 +1,19 @@
+id: reduction-mod-p
+name: reduction modulo p
+notation: $\bmod\, p$
+category: Ab
+description: This is the projection homomorphism $\IZ \to \IZ/p$, where $p$ is a prime number. It is a common example of an epimorphism in $\Ab$ which does not split.
+nlab_link: null
+
+tags:
+  - algebra
+
+related: []
+
+satisfied_properties:
+  - property: epimorphism
+    proof: The map is clearly surjective.
+
+unsatisfied_properties:
+  - property: split epimorphism
+    proof: Every homomorphism $\IZ/p \to \IZ$ is trivial since $\IZ$ has no torsion.
