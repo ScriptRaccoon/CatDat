@@ -1,0 +1,18 @@
+id: id_G
+name: identity map of a group
+notation: $\id_G$
+category: Grp
+description: 'Every object of a category has an identity morphism. In this case, we take a group $G$ and consider its identity morphism $\id_G : G \to G$ in $\Grp$.'
+nlab_link: https://ncatlab.org/nlab/show/identity+morphism
+
+tags:
+  - algebra
+
+related:
+  - id_X
+
+satisfied_properties:
+  - property: isomorphism
+    proof: This is obvious.
+
+unsatisfied_properties: []

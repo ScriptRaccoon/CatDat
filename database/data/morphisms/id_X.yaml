@@ -8,7 +8,8 @@ nlab_link: https://ncatlab.org/nlab/show/identity+morphism
 tags:
   - set theory
 
-related: []
+related:
+  - id_G
 
 satisfied_properties:
   - property: isomorphism

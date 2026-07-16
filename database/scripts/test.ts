@@ -55,6 +55,7 @@ function execute_tests() {
 
 		devlog('\n--- Test morphisms ---')
 
+		test_positivity('id_G', 'morphism')
 		test_decided_structures(decided_morphisms, 'morphism')
 	} catch (err) {
 		if (err instanceof Error) {
