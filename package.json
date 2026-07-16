@@ -19,7 +19,7 @@
 		"db:seed": "tsx --tsconfig database/tsconfig.json database/scripts/seed.ts",
 		"db:deduce": "tsx --tsconfig database/tsconfig.json database/scripts/deduce.ts",
 		"db:test": "tsx --tsconfig database/tsconfig.json database/scripts/test.ts",
-		"db:snapshot": "cp database/catdat.db static/databases/catdat-snapshot.db",
+		"db:snapshot": "tsx --tsconfig database/tsconfig.json database/scripts/snapshot.ts",
 		"db:update": "pnpm db:seed && pnpm db:deduce && pnpm db:test && pnpm db:snapshot",
 		"db:watch": "tsx --tsconfig database/tsconfig.json database/scripts/watch.ts",
 		"db:redundancies": "tsx --tsconfig database/tsconfig.json database/scripts/redundancies.ts",
