@@ -1,0 +1,19 @@
+id: baer-specker-relations
+name: Baer-Specker relations
+notation: $m$
+category: FreeAb
+description: 'Consider the Baer-Specker group $\IZ^\IN$ and choose a free abelian group $F$ with an epimorphism $\pi : F \to \IZ^\IN$ (for example, to make this example explicit, the free abelian group on the underlying set of $\IZ^\IN$). Let $K \subseteq F$ be its kernel (which is also free abelian). In this entry, we consider the inclusion $m : K \hookrightarrow F$. It provides an example of a strict monomorphism which is not regular.'
+nlab_link: null
+
+tags:
+  - algebra
+
+related: []
+
+satisfied_properties:
+  - property: strict monomorphism
+    proof: 'Since $m$ is an injective homomorphism, it is a monomorphism. Now let $t : T \to F$ be a homomorphism which equalizes all pairs in $\FreeAb$ that are equalized by $m$. If $p_n : \IZ^\IN \to \IZ$ denotes the $n$th projection, we have $p_n \circ \pi \circ m = 0$, so that $p_n \circ \pi, 0 : F \rightrightarrows \IZ$ is a pair that is equalized by $m$. Hence, we get $p_n \circ \pi \circ t = 0$. Since this holds for all $n$, we conclude $\pi \circ t = 0$, which means that $t$ factors through $m$.'
+
+unsatisfied_properties:
+  - property: regular monomorphism
+    proof: 'We know that a monomorphism $f : A \to B$ in <a href="/category/FreeAb">$\FreeAb$</a> is regular if and only if the quotient (taken in $\Ab$) $B/f(A)$ is free abelian. But $F/K \cong \IZ^\IN$ is the Baer-Specker group, which is not free abelian.'
