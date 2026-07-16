@@ -66,6 +66,25 @@ test('user can see no functors with missing data', async ({ page }) => {
 	await expect(functors_section.getByRole('link')).toHaveCount(0)
 })
 
+// this can be adjusted if at some point in the future a morphism
+// is not fully understood anymore
+test('user can see no morphisms with missing data', async ({ page }) => {
+	await page.goto('/missing', { waitUntil: 'networkidle' })
+
+	await expect(
+		page.getByRole('heading', {
+			name: 'Missing data',
+			exact: true
+		})
+	).toBeVisible()
+
+	const morphisms_section = page.locator('section', {
+		hasText: 'Morphisms with unknown properties'
+	})
+
+	await expect(morphisms_section.getByRole('link')).toHaveCount(0)
+})
+
 test('user can see missing category combinations', async ({ page }) => {
 	await page.goto('/missing', { waitUntil: 'networkidle' })
 
