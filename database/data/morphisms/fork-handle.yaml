@@ -20,3 +20,7 @@ unsatisfied_properties:
 
   - property: effective monomorphism
     proof: 'If $i$ were effective, the pushout $1 \sqcup_0 1$ would exist, which is the coproduct $1 \sqcup 1$ since $0$ is initial. Since there are two morphisms $1 \to 2$, there are four morphisms $1 \sqcup 1 \to 2$. But none of the objects $0,1,2$ of the walking fork has four morphisms to $2$.'
+
+  # TODO: automate this
+  - property: normal monomorphism
+    proof: The walking fork does not have zero morphisms.

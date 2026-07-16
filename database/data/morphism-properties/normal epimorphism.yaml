@@ -1,0 +1,11 @@
+id: normal epimorphism
+relation: is a
+description: 'A morphism $f : A \to B$ in a category with <a href="/category-property/zero_morphisms">zero morphisms</a> is a <i>normal epimorphism</i> if it is the cokernel of a morphism $g : C \to A$, i.e. the coequalizer of $g$ and the zero morphism $0 : C \to A$.'
+nlab_link: https://ncatlab.org/nlab/show/normal+epimorphism
+invariant_under_equivalences: true
+dual: normal monomorphism
+related:
+  - regular epimorphism
+
+tags:
+  - types of epimorphisms

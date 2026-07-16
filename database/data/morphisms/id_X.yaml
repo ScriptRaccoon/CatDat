@@ -14,4 +14,11 @@ satisfied_properties:
   - property: isomorphism
     proof: This is obvious.
 
-unsatisfied_properties: []
+unsatisfied_properties:
+  # TODO: automate this
+  - property: normal monomorphism
+    proof: The category $\Set$ does not have zero morphisms.
+
+  # TODO: automate this
+  - property: normal epimorphism
+    proof: The category $\Set$ does not have zero morphisms.

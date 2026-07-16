@@ -105,3 +105,33 @@
     $$g \circ t = (g;h) \circ i_1 \circ t = (g;h) \circ i_2 \circ t = h \circ t.$$
     Thus, $t$ equalizes every parallel pair that is equalized by $m$. Since $m$ is a strict monomorphism, $t$ factors through $m$.
   is_equivalence: false
+
+- id: iso_is_normal_mono
+  assumptions:
+    - isomorphism
+  mapped_assumptions:
+    category:
+      - zero morphisms
+  conclusions:
+    - normal monomorphism
+  proof: This is trivial.
+  is_equivalence: false
+
+- id: normal_mono_is_regular
+  assumptions:
+    - normal monomorphism
+  conclusions:
+    - regular monomorphism
+  proof: This is trivial.
+  is_equivalence: false
+
+- id: regular_implies_normal_mono_preadditive_case
+  assumptions:
+    - regular monomorphism
+  mapped_assumptions:
+    category:
+      - preadditive
+  conclusions:
+    - normal monomorphism
+  proof: 'The equalizer of $g,h : B \rightrightarrows C$ is the kernel of $g-h : B \to C$.'
+  is_equivalence: false

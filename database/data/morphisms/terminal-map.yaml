@@ -17,3 +17,7 @@ satisfied_properties:
 unsatisfied_properties:
   - property: monomorphism
     proof: Since $X$ has two different elements by assumption, which trivially have the same image, the map is not injective.
+
+  # TODO: automate this
+  - property: normal epimorphism
+    proof: The category of sets does not have zero morphisms.

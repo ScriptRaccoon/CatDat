@@ -17,3 +17,7 @@ satisfied_properties:
 unsatisfied_properties:
   - property: split monomorphism
     proof: There is no map $X \to \varnothing$.
+
+  # TODO: automate this
+  - property: normal monomorphism
+    proof: The category of sets does not have zero morphisms.
