@@ -5,7 +5,7 @@
 	import { get_property_url } from '$shared/property.utils'
 	import { PLURALS } from '$shared/config'
 	import { STRUCTURE_TYPES } from '$shared/config'
-	import { capitalize } from '$shared/utils'
+	import { capitalize, pluralize } from '$shared/utils'
 
 	const { data } = $props()
 </script>
@@ -63,9 +63,13 @@
 			<h3>Undistinguishable {type} pairs</h3>
 
 			<p class="hint">
-				There are {pairs.length} pairs of {PLURALS[type]} that cannot be distinguished
-				by the properties currently recorded in the database. This indicates that the
-				data may be incomplete or that a distinguishing property may be missing.
+				{pluralize(pairs.length, {
+					one: 'There is {count} pair',
+					other: 'There are {count} pairs'
+				})}
+				of {PLURALS[type]} that cannot be distinguished by the properties currently
+				recorded in the database. This indicates that the data may be incomplete or
+				that a distinguishing property may be missing.
 			</p>
 
 			<ul class="with-margins">
