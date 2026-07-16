@@ -57,15 +57,6 @@
   proof: This is the definition of a mono-regular category.
   is_equivalence: false
 
-- id: strict_epi_and_mono_is_iso
-  assumptions:
-    - strict epimorphism
-    - monomorphism
-  conclusions:
-    - isomorphism
-  proof: 'Assume that $p : A \to B$ is a strict epimorphism and a monomorphism. Then $p$ is the joint coequalizer of all pairs $g,h : C \rightrightarrows A$ with $p \circ g = p \circ h$, which simplifies to $g = h$. Thus, any morphism $A \to T$ automatically coequalizes these pairs and therefore factors uniquely through $p$. This shows that $p$ is an isomorphism.'
-  is_equivalence: false
-
 - id: strict_mono_is_mono
   assumptions:
     - strict monomorphism
@@ -134,4 +125,60 @@
   conclusions:
     - normal monomorphism
   proof: 'The equalizer of $g,h : B \rightrightarrows C$ is the kernel of $g-h : B \to C$.'
+  is_equivalence: false
+
+- id: strong_mono_is_mono
+  assumptions:
+    - strong monomorphism
+  conclusions:
+    - monomorphism
+  proof: This holds by definition.
+  is_equivalence: false
+
+- id: strict_mono_is_strong
+  assumptions:
+    - strict monomorphism
+  conclusions:
+    - strong monomorphism
+  proof: >-
+    Consider a commutative diagram
+    $$\begin{CD} C @>e>> D \\ @VVV @VVV \\ A @>>m> B \end{CD}$$
+    where $e$ is an epimorphism and $m$ is a strict monomorphism. We need to show that $D \to B$ factors through $m$. It suffices to show that it equalizes all pairs $B \rightrightarrows T$ that are equalized by $m$. Since $e$ is an epimorphism, it suffices to check this for the composite $C \to D \to B$. This is equal to $C \to A \to B$, which factors through $m$ and hence equalizes the pair.
+  is_equivalence: false
+
+- id: strong_monos_are_regular_in_coregular_category
+  assumptions:
+    - strong monomorphism
+  mapped_assumptions:
+    category:
+      - coregular
+  conclusions:
+    - regular monomorphism
+  proof: >-
+    Let $m : A \to B$ be a strong monomorphism in a coregular category. We may factor it as $m = i \circ e$, where $i : C \to B$ is a regular monomorphism and $e : A \to C$ is an epimorphism. The orthogonality condition applied to the diagram
+    $$\begin{CD} A @>e>> C \\ @V{\id_A}VV @VV{i}V \\ A @>>m> B \end{CD}$$
+    shows that $e$ is a split monomorphism, hence an isomorphism. But then $m = i \circ e$ is a regular monomorphism as well.
+  is_equivalence: false
+
+- id: strong_monos_are_no_epis
+  assumptions:
+    - strong monomorphism
+    - epimorphism
+  conclusions:
+    - isomorphism
+  proof: >-
+    Assume that $m : A \to B$ is a strong monomorphism which is also an epimorphism. Then we apply the orthogonality condition to
+    $$\begin{CD} A @>m>> B \\ @V{\id_A}VV @VV{\id_B}V \\ A @>>m> B \end{CD}$$
+    to conclude that $m$ is a split epimorphism, and hence an isomorphism.
+  is_equivalence: false
+
+- id: strong_monos_collapse
+  assumptions:
+    - monomorphism
+  mapped_assumptions:
+    category:
+      - quotient-trivial
+  conclusions:
+    - strong monomorphism
+  proof: This is because any morphism is right orthogonal to any isomorphism.
   is_equivalence: false
