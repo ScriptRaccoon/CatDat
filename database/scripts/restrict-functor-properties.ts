@@ -4,10 +4,17 @@ import { devlog } from '$shared/utils'
 const db = get_client({ readonly: false })
 
 /**
- * Ensures that only functors with codomain Set are representable.
- * When necessary, this can be extended to other properties in the future.
+ * Ensures that certain properties of functors are only satisfied
+ * when their domain or codomains have certain properties.
  */
-export function restrict_representable_functors() {
+export function restrict_functor_properties() {
+	restrict_representable_functors()
+}
+
+/**
+ * Ensures that only functors with codomain Set are representable.
+ */
+function restrict_representable_functors() {
 	console.info('\n--- Restrict representable functors ---')
 
 	const res = db
