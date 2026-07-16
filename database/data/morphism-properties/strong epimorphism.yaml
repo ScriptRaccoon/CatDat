@@ -1,0 +1,17 @@
+id: strong epimorphism
+relation: is a
+description: >-
+  A morphism $e : A \to B$ is a <i>strong epimorphism</i> if it is a epimorphism that is left orthogonal to any monomorphism. That is, for every commutative diagram
+  $$\begin{CD} A @>e>> B \\ @VVV @VVV \\ C @>>m> D \end{CD}$$
+  in which $m : C \to D$ is a monomorphism, there is a unique morphism $B \to C$ such that both triangles commute. Uniqueness is actually for free, and it suffices to demand commutativity of one triangle, as the other one follows.
+  $$\begin{CD} A @>e>> B \\ @VVV \swarrow @VVV \\ C @>>m> D \end{CD}$$
+  If the category has equalizers, the orthogonality condition already implies that $e$ is an epimorphism, but in general, we need to demand this.
+nlab_link: https://ncatlab.org/nlab/show/strong+epimorphism
+invariant_under_equivalences: true
+dual: strong monomorphism
+related:
+  - strict epimorphism
+  - epimorphism
+
+tags:
+  - types of epimorphisms

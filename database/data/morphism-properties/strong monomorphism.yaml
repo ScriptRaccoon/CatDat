@@ -1,0 +1,17 @@
+id: strong monomorphism
+relation: is a
+description: >-
+  A morphism $m : A \to B$ is a <i>strong monomorphism</i> if it is a monomorphism that is right orthogonal to any epimorphism. That is, for every commutative diagram
+  $$\begin{CD} C @>e>> D \\ @VVV @VVV \\ A @>>m> B \end{CD}$$
+  in which $e : C \to D$ is an epimorphism, there is a unique morphism $D \to A$ such that both triangles commute. Uniqueness is actually for free, and it suffices to demand commutativity of one triangle, as the other one follows.
+  $$\begin{CD} C @>e>> D \\ @VVV \swarrow @VVV \\ A @>>m> B \end{CD}$$
+  If the category has coequalizers, the orthogonality condition already implies that $m$ is a monomorphism, but in general, we need to demand this.
+nlab_link: https://ncatlab.org/nlab/show/strong+monomorphism
+invariant_under_equivalences: true
+dual: strong epimorphism
+related:
+  - strict monomorphism
+  - monomorphism
+
+tags:
+  - types of monomorphisms
