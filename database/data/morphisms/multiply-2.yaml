@@ -1,0 +1,22 @@
+id: multiply-2
+name: multiplication with 2
+notation: $2$
+category: TorsFreeAb
+description: 'The multiplication map $2 : \IZ \to \IZ$ in $\TorsFreeAb$ provides an example of a monomorphism in an additive category which is not regular (and hence, not normal). Thus, it provides a proof that $\TorsFreeAb$ is not abelian.'
+nlab_link: null
+
+tags:
+  - algebra
+
+related: []
+
+satisfied_properties:
+  - property: monomorphism
+    proof: The map is clearly injective.
+
+  - property: epimorphism
+    proof: 'We know that a homomorphism $f : A \to B$ in <a href="/category/TorsFreeAb">$\TorsFreeAb$</a> is an epimorphism if and only if $B/f(A)$ is torsion. Since $\IZ/2$ is torsion, the claim follows.'
+
+unsatisfied_properties:
+  - property: isomorphism
+    proof: The map is not bijective.

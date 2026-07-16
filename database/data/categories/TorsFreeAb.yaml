@@ -49,7 +49,7 @@ unsatisfied_properties:
     proof: This is trivial.
 
   - property: balanced
-    proof: 'It can be checked directly that $2 : \IZ \to \IZ$ is both a monomorphism and an epimorphism, but no isomorphism. This also follows from the general classification of mono- and epimorphisms below.'
+    proof: 'It can be checked directly that $2 : \IZ \to \IZ$ is both a monomorphism and an epimorphism, but no isomorphism (see also <a href="/morphism/multiply-2">here</a>). This also follows from the general classification of mono- and epimorphisms below.'
 
   - property: CSP
     proof: The canonical homomorphism $\bigoplus_{n \geq 0} \IZ \to \prod_{n \geq 0} \IZ$ is injective, but not an epimorphism, since the quotient $\prod_{n \geq 0} \IZ / \bigoplus_{n \geq 0} \IZ$ is not torsion. In fact, it is torsion-free and non-zero.
