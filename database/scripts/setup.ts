@@ -1,6 +1,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import { get_client } from '$shared/db'
+import { delete_database_file, get_client } from '$shared/db'
 import { create_schema_hash, write_schema_hash } from './utils/schema'
 import { devlog } from '$shared/utils'
 
@@ -13,6 +13,8 @@ setup()
  */
 function setup() {
 	console.info('\n--- Setup CatDat database ---')
+
+	delete_database_file()
 
 	const db = get_client({ readonly: false })
 
