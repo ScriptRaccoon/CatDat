@@ -9,7 +9,7 @@ const schema_folder = path.resolve('database', 'schema')
 setup()
 
 /**
- * Creates the tables, indexes, triggers, and views.
+ * Creates the tables, indexes, triggers, and views in the database.
  */
 function setup() {
 	console.info('\n--- Setup CatDat database ---')

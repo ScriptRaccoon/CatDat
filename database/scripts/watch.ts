@@ -4,6 +4,10 @@ import { exec } from 'node:child_process'
 
 const data_folder = path.resolve('database', 'data')
 
+/**
+ * Script that continuously updates all data when some file is changed.
+ */
+
 function onchange(file: string) {
 	console.info(`File changed: ${file}`)
 

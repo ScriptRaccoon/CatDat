@@ -11,7 +11,7 @@ import {
 deduce()
 
 /**
- * Makes deductions for categories and functors.
+ * Makes deductions for categories, functors, and other categorical structures.
  */
 function deduce() {
 	// --- categories ---
