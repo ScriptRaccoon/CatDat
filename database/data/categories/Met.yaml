@@ -62,24 +62,19 @@ satisfied_properties:
       $$d(x_j,y_j) \geq d(x_{i_n},y_{i_n}) \geq n$$
       for every $n \in \IN$. This is impossible since the metric on $D(j)$ takes only finite values.
 
-  - property: well-powered
-    proof: This follows since monomorphisms are injective.
-
   - property: well-copowered
     proof: 'If $f : X \to Y$ is an epimorphism, then $f(X)$ is dense in $Y$ (see below). Hence, there is an injective map $Y \to X^{\IN}$, which bounds the size of $Y$.'
 
   - property: ℵ₁-accessible
     proof: >-
       For $\alpha=n$ or $\alpha=\infty$, let $I_\alpha$ denote the metric space (with $\infty$ allowed) consisting of exactly two points at distance $\alpha$.
-      Let $e_n\colon I_\infty \to I_n$ be the identity-on-points morphism in $\Met_\infty$.
-      Then, the category $\Met$ is precisely the cone-injectivity class with respect to the cone $\{e_n\}_{n\in\mathbb{N}}$ (cf. Section 4.B of <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>), that is, $M\in\Met_\infty$ belongs to $\Met$ iff every morphism $I_\infty \to M$ is factorized by some $e_n$.
-      (This implies $\Met$ is accessible, but an additional argument below is needed to show $\aleph_1$-accessibility.)
+      Let $e_n : I_\infty \to I_n$ be the identity-on-points morphism in $\Met_\infty$. Then $M \in \Met_\infty$ belongs to $\Met$ iff every morphism $I_\infty \to M$ factors through some $e_n$. In other words, using the terminology from Section 4.B of <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>, the category $\Met$ is precisely the cone-injectivity class with respect to the cone $(e_n)_{n \in \IN}$ in $\Met_\infty$. Since <a href="/category/Met_oo">$\Met_\infty$</a> is accessible, this already implies that $\Met$ is accessible by Prop. 4.16 in loc. cit., but an additional argument below is needed to show $\aleph_1$-accessibility.
 
-      It is known that an object in $\Met_\infty$ is $\aleph_1$-presentable iff the underlying set is countable (see Lem. 2.6 in <a href="https://doi.org/10.1016/j.jpaa.2021.106974" target="_blank">AR22</a>).
-      In particular, the metric spaces $I_\alpha$ are $\aleph_1$-presentable in $\Met_\infty$, which straightforwardly implies that the cone-injectivity class $\Met\subseteq\Met_\infty$ is closed under $\aleph_1$-filtered colimits.
-      Then, countable metric spaces in $\Met$ are $\aleph_1$-presentable not only in $\Met_\infty$.
+      It is known that an object in $\Met_\infty$ is $\aleph_1$-presentable iff the underlying set is countable (see Lem. 2.6 in <a href="https://doi.org/10.1016/j.jpaa.2021.106974" target="_blank">Approximate injectivity and smallness in metric-enriched categories</a> by Adamek-Rosicky).
+      In particular, the metric space $I_\infty$ is $\aleph_1$-presentable in $\Met_\infty$, which straightforwardly implies that the cone-injectivity class $\Met\subseteq\Met_\infty$ is closed under $\aleph_1$-filtered colimits.
+      Then, countable metric spaces in $\Met$ are $\aleph_1$-presentable not only in $\Met_\infty$, but also in $\Met$.
       On the other hand, every object in $\Met_\infty$ is an $\aleph_1$-filtered colimit of its countable isometric subspaces, and the same is true in $\Met$.
-      Hence, $\Met$ is ℵ₁-accessible.
+      Hence, $\Met$ is $\aleph_1$-accessible.
 unsatisfied_properties:
   - property: skeletal
     proof: This is trivial.
@@ -109,7 +104,21 @@ unsatisfied_properties:
     proof: This is proven in <a href="https://math.stackexchange.com/questions/5131457" target="_blank">MSE/5131457</a>.
 
   - property: filtered-colimit-stable monomorphisms
-    proof: 'The following example is taken from Remark 2.7 in <a href="https://arxiv.org/abs/2006.01399" target="_blank">Approximate injectivity and smallness in metric-enriched categories</a> by Adamek-Rosicky: For $n \geq 1$ let $X_n$ denote the metric space with underlying set $\{0,1\}$ in which $0,1$ have distance $1/n$. We have bijective non-expansive maps $X_n \to X_{n+1}$, $x \mapsto x$. The colimit of this sequence in <a href="/category/PMet">$\PMet$</a> is $\{0,1\}$ where $0,1$ have distance $0$, so the colimit in $\Met$ collapses to $\{0\}$. Therefore, the colimit of the monomorphisms $X_0 \to X_n$, $x \mapsto x$ is the non-injective map $X_0 \to \{0\}$.'
+    proof: >-
+      The following example is taken from Rem. 2.7 in <a href="https://doi.org/10.1016/j.jpaa.2021.106974" target="_blank">Approximate injectivity and smallness in metric-enriched categories</a> by Adamek-Rosicky.
+      For $n \geq 1$ let $X_n$ denote the metric space with underlying set $\{0,1\}$ in which $0,1$ have distance $1/n$. We have bijective non-expansive maps $X_n \to X_{n+1}$, $x \mapsto x$. The colimit of this sequence in <a href="/category/PMet">$\PMet$</a> is $\{0,1\}$ where $0,1$ have distance $0$, so the colimit in $\Met$ collapses to $\{0\}$. Therefore, the colimit of the monomorphisms $X_1 \to X_n$, $x \mapsto x$ is the non-injective map $X_1 \to \{0\}$.
+
+  - property: finitely accessible
+    proof: >-
+      The following proof is due to Rem. 2.7 in <a href="https://doi.org/10.1016/j.jpaa.2021.106974" target="_blank">Approximate injectivity and smallness in metric-enriched categories</a> by Adamek-Rosicky.
+      For $n \geq 1$ let $X_n$ denote the metric space with underlying set $\{0,1\}$ in which $0,1$ have distance $1/n$. Consider the sequence of identity-on-points maps
+      $$X_1 \to X_2 \to X_3 \to \cdots$$
+      in $\Met$. We already saw above that the colimit of this sequence is the singleton space. Hence, for every metric space $M$, the set $\Hom(M,\colim_n X_n)$ is a singleton set. But if $M$ is non-empty, the colimit $\colim_n \Hom(M,X_n)$ has at least two distinct elements (consider the two constant maps $0,1 : M \rightrightarrows X_1$).
+      Hence, $M \in \Met$ is finitely presentable iff it is empty.
+      Clearly, a non-empty metric space is never a filtered colimit of the empty one; hence $\Met$ is not finitely accessible.
+
+  - property: generalized variety
+    proof: 'We have just proven that every finitely presentable object is empty. It follows that also every strongly finitely presentable object is empty.  Clearly, a non-empty metric space is never a sifted colimit of the empty one; hence $\Met$ is not a generalized variety.'
 
   - property: natural numbers object
     proof: >-
@@ -131,18 +140,6 @@ unsatisfied_properties:
 
   - property: regular
     proof: We can take the same counterexample as for <a href="/category/PMet">$\PMet$</a>.
-
-  - property: finitely accessible
-    proof: >-
-      The following proof is due to Rem. 2.7 in <a href="https://doi.org/10.1016/j.jpaa.2021.106974" target="_blank">AR22</a>.
-      Consider a sequence $I_1 \to I_{\frac{1}{2}} \to I_\frac{1}{3} \to\cdots$ in $\Met$, where $I_{\frac{1}{n}}$ is the metric space consisting of exactly two points at distance $\frac{1}{n}$, and where each morphism in the sequence is the identity on the underlying set.
-      While the (filtered) colimit of the sequence is the singleton, for every non-empty metric space $M\in\Met$, the colimit $\colim_n \Hom(M,I_{\frac{1}{n}})$ has at least two distinct element.
-      Hence, $M\in\Met$ is finitely presentable iff it is empty.
-      Clearly, non-empty metric spaces are never filtered colimits of the empty one; hence $\Met$ is not finitely accessible.
-  
-  - property: generalized variety
-    proof: >-
-      Since every filtered colimit are in particular sifted and every strongly finitely presentable object is finitely presentable, the same argument showing that $\Met$ is not finitely accessible still works in this case.
 
 special_objects:
   initial object:
