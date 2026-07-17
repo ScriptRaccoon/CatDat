@@ -68,6 +68,18 @@ satisfied_properties:
   - property: well-copowered
     proof: 'If $f : X \to Y$ is an epimorphism, then $f(X)$ is dense in $Y$ (see below). Hence, there is an injective map $Y \to X^{\IN}$, which bounds the size of $Y$.'
 
+  - property: ℵ₁-accessible
+    proof: >-
+      For $\alpha=n$ or $\alpha=\infty$, let $I_\alpha$ denote the metric space (with $\infty$ allowed) consisting of exactly two points at distance $\alpha$.
+      Let $e_n\colon I_\infty \to I_n$ be the identity-on-points morphism in $\Met_\infty$.
+      Then, the category $\Met$ is precisely the cone-injectivity class with respect to the cone $\{e_n\}_{n\in\mathbb{N}}$ (cf. Section 4.B of <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>), that is, $M\in\Met_\infty$ belongs to $\Met$ iff every morphism $I_\infty \to M$ is factorized by some $e_n$.
+      (This implies $\Met$ is accessible, but an additional argument below is needed to show $\aleph_1$-accessibility.)
+
+      It is known that an object in $\Met_\infty$ is $\aleph_1$-presentable iff the underlying set is countable (see Lem. 2.6 in <a href="https://doi.org/10.1016/j.jpaa.2021.106974" target="_blank">AR22</a>).
+      In particular, the metric spaces $I_\alpha$ are $\aleph_1$-presentable in $\Met_\infty$, which straightforwardly implies that the cone-injectivity class $\Met\subseteq\Met_\infty$ is closed under $\aleph_1$-filtered colimits.
+      Then, countable metric spaces in $\Met$ are $\aleph_1$-presentable not only in $\Met_\infty$.
+      On the other hand, every object in $\Met_\infty$ is an $\aleph_1$-filtered colimit of its countable isometric subspaces, and the same is true in $\Met$.
+      Hence, $\Met$ is ℵ₁-accessible.
 unsatisfied_properties:
   - property: skeletal
     proof: This is trivial.
@@ -119,6 +131,18 @@ unsatisfied_properties:
 
   - property: regular
     proof: We can take the same counterexample as for <a href="/category/PMet">$\PMet$</a>.
+
+  - property: finitely accessible
+    proof: >-
+      The following proof is due to Rem. 2.7 in <a href="https://doi.org/10.1016/j.jpaa.2021.106974" target="_blank">AR22</a>.
+      Consider a sequence $I_1 \to I_{\frac{1}{2}} \to I_\frac{1}{3} \to\cdots$ in $\Met$, where $I_{\frac{1}{n}}$ is the metric space consisting of exactly two points at distance $\frac{1}{n}$, and where each morphism in the sequence is the identity on the underlying set.
+      While the (filtered) colimit of the sequence is the singleton, for every non-empty metric space $M\in\Met$, the colimit $\colim_n \Hom(M,I_{\frac{1}{n}})$ has at least two distinct element.
+      Hence, $M\in\Met$ is finitely presentable iff it is empty.
+      Clearly, non-empty metric spaces are never filtered colimits of the empty one; hence $\Met$ is not finitely accessible.
+  
+  - property: generalized variety
+    proof: >-
+      Since every filtered colimit are in particular sifted and every strongly finitely presentable object is finitely presentable, the same argument showing that $\Met$ is not finitely accessible still works in this case.
 
 special_objects:
   initial object:
