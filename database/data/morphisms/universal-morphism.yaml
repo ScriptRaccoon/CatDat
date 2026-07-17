@@ -1,0 +1,22 @@
+id: universal-morphism
+name: universal morphism
+notation: $!$
+category: walking_morphism
+description: 'This is the morphism $! : 0 \to 1$ in the <a href="/category/walking_morphism">walking morphism</a> $I$, see there for details.'
+nlab_link: null
+
+tags:
+  - category theory
+
+related: []
+
+satisfied_properties:
+  - property: monomorphism
+    proof: There is only one morphism with codomain $0$, namely $\id_0$.
+
+  - property: epimorphism
+    proof: There is only one morphism with domain $1$, namely $\id_1$.
+
+unsatisfied_properties:
+  - property: split monomorphism
+    proof: There is no morphism $1 \to 0$.
