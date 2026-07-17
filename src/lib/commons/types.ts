@@ -134,7 +134,8 @@ export type CategorySpecificDisplay = {
 	morphisms: string
 	special_objects: SpecialObject[]
 	special_morphisms: SpecialMorphism[]
-	functors: StructureShort[]
+	stored_functors: StructureShort[]
+	stored_morphisms: StructureShort[]
 }
 
 export type FunctorSpecificDisplay = {

@@ -59,18 +59,35 @@
 	{/snippet}
 
 	{#snippet footer()}
-		{#if data.functors.length}
+		{#if data.stored_functors.length}
 			<section>
 				<h3>Functors</h3>
 
 				<p class="hint">
-					{pluralize(data.functors.length, {
-						one: 'There is 1 functor',
-						other: 'There are {count} functors'
+					The database has stored
+					{pluralize(data.stored_functors.length, {
+						one: '{count} functor',
+						other: '{count} functors'
 					})}
 					whose (co-)domain is the {data.structure.name}.
 				</p>
-				<StructureList structures={data.functors} type="functor" />
+				<StructureList structures={data.stored_functors} type="functor" />
+			</section>
+		{/if}
+
+		{#if data.stored_morphisms.length}
+			<section>
+				<h3>Morphisms</h3>
+
+				<p class="hint">
+					The database has stored
+					{pluralize(data.stored_morphisms.length, {
+						one: '{count} morphism',
+						other: '{count} morphisms'
+					})}
+					in the {data.structure.name}.
+				</p>
+				<StructureList structures={data.stored_morphisms} type="morphism" />
 			</section>
 		{/if}
 	{/snippet}

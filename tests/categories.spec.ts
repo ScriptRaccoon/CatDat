@@ -312,3 +312,21 @@ test('user sees functors associated with the given category', async ({ page }) =
 		})
 	).toBeVisible()
 })
+
+test('user sees morphisms stored for the given category', async ({ page }) => {
+	await page.goto('/category/Grp', { waitUntil: 'networkidle' })
+
+	await expect(
+		page.getByRole('link', {
+			name: 'embedding of A3 into S3',
+			exact: true
+		})
+	).toBeVisible()
+
+	await expect(
+		page.getByRole('link', {
+			name: 'identity map of a group',
+			exact: true
+		})
+	).toBeVisible()
+})

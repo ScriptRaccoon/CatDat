@@ -39,7 +39,7 @@ export function fetch_category(id: string) {
 		)
 		.all(id)
 
-	const functors = db
+	const stored_functors = db
 		.prepare<[string, string], StructureShort>(
 			`SELECT f.id, s.name
 			FROM functors f
@@ -49,12 +49,23 @@ export function fetch_category(id: string) {
 		)
 		.all(id, id)
 
+	const stored_morphisms = db
+		.prepare<[string], StructureShort>(
+			`SELECT m.id, s.name
+			FROM morphisms m
+			INNER JOIN structures s ON s.id = m.id
+			WHERE m.category = ?
+			ORDER BY lower(s.name)`
+		)
+		.all(id)
+
 	return {
 		type: 'category' as const,
 		...category,
 		special_objects,
 		special_morphisms,
-		functors
+		stored_functors,
+		stored_morphisms
 	}
 }
 
