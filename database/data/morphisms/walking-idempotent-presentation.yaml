@@ -1,0 +1,30 @@
+id: walking-idempotent-presentation
+name: presentation of the walking idempotent
+notation: $F$
+category: Cat
+description: 'Let $I$ denote the <a href="/category/walking_morphism">walking morphism</a> and $\Idem$ denote the <a href="/category/walking_idempotent">walking idempotent</a>. In this entry, we consider the functor $F : I \to \Idem$ that sends the universal morphism $! : 0 \to 1$ to the universal idempotent $e : 0 \to 0$ and view $F$ as a morphism in $\Cat$. It provides an example of a strong epimorphism which is not strict.'
+nlab_link: null
+
+tags:
+  - category theory
+
+related: []
+
+satisfied_properties:
+  - property: strong epimorphism
+    proof: >-
+      First of all, $F$ is an epimorphism since it is surjective on objects and full. Now consider a commutative diagram of functors
+      $$\begin{CD}
+      I @>F>> \Idem \\ @V{U}VV @VV{V}V \\ \C @>>{M}> \D
+      \end{CD}$$
+      in which $M$ is a monomorphism, i.e. injective on objects and faithful. The functor $V$ corresponds to an idempotent endomorphism $v : Y \to Y$ in $\D$. The functor $U$ corresponds to a morphism $u : X \to X'$ in $\C$. Commutativity of the diagram means that $M(X) = M(X')$ and $M(u) = v$.
+      Since $M$ is injective on objects, we conclude $X = X'$. Since $M$ is faithful and $v$ is idempotent, we see that $u$ is idempotent. Thus, $u$ corresponds to a functor $\tilde{U} : \Idem \to \C$ with $M \circ \tilde{U} = U$.
+
+unsatisfied_properties:
+  - property: strict epimorphism
+    proof: >-
+      Let $B(\IN)$ denote the <a href="/category/BN">delooping of the additive monoid of natural numbers</a> whose single object is denoted $*$. Consider the functor $E : I \to B(\IN)$ defined by $E(!) = 1$. We claim that it coequalizes all pairs of functors that are coequalized by $F$.
+      Let $G,H : \C \rightrightarrows I$ be two functors with $FG = FH$, we need to prove $EG = EH$.
+      On objects this is trivial since $B(\IN)$ has a single object.
+      Now let $f$ be any morphism in $\C$. There are two cases for the morphism $F(G(f)) = F(H(f))$ in $\Idem$. If it is $\id_0$, then $G(f)$ and $H(f)$ must be one of $\id_0, \id_1$ in $I$. In both cases, since $E$ maps both $\id_0$ and $\id_1$ to $\id_*$, we conclude $E(G(f)) = E(H(f))$. Otherwise, $F(G(f)) = F(H(f))$ is $e$, but then $G(f) = H(f) = {!}$, so that $E(G(f)) = E(H(f))$.
+      This proves our claim. If $F$ was a strict epimorphism, this would mean in particular that $E$ factors through $F$, i.e. that the morphism $1$ is $B(\IN)$ is idempotent, which yields the contradiction $1 + 1 = 1$.
