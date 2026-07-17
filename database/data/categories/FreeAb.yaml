@@ -82,8 +82,8 @@ special_morphisms:
     description: 'homomorphisms $f : A \to B$ with the property that $f(A)$ is not contained in a proper direct summand of $B$'
     proof: 'Let $f : A \to B$ be a morphism of free abelian groups such that $f(A)$ is not contained in a proper direct summand of $B$. Then $f$ is an epimorphism: If $t : B \to C$ is a morphism with $t \circ f = 0$, we want to show $t = 0$. Since the image of $t$ is free abelian (as a subgroup of $B$), we may assume that $t$ is surjective. Since $C$ is free, $t$ splits, so its kernel $K$ is a direct summand of $B$ (Splitting Lemma). It contains $f(A)$ because of $t \circ f = 0$. By assumption, $K = B$, so that $t = 0$. Conversely, assume that $f : A \to B$ is an epimorphism, and that $f(A)$ is contained in a direct summand $K$ of $B$. Let $L$ be a complement of $B$ (which is free abelian) and let $p : B \to L$ be the projection. Then $t \circ f = 0$, so $t = 0$. But then $L = 0$, which means $K = B$.'
   regular monomorphisms:
-    description: 'injective homomorphisms $f : A \to B$ with the property that $B/f(A)$ is free abelian'
-    proof: 'If $f$ is injective and $B/f(A)$ is free abelian, then $f$ is a kernel of the projection $B \to B/f(A)$. Conversely, if $f$ is a kernel of some homomorphism $g : B \to C$ of free abelian groups, by applying $\Hom(\IZ,-)$ we see that it is also the kernel in $\Ab$. In particular, $f$ is injective, and the quotient $B/f(A)$ embeds into $C$ and is therefore free abelian.'
+    description: 'injective homomorphisms $f : A \to B$ with the property that $B/f(A)$ is free abelian (which are automatically split monomorphisms)'
+    proof: 'If $f$ is injective and $B/f(A)$ is free abelian, then $f$ is a kernel of the projection $B \to B/f(A)$. Since $B/f(A)$ is free abelian, the sequence $0 \to A \to B \to B/f(A) \to 0$ splits, so by the splitting lemma, $f$ is a split monomorphism. Conversely, if $f$ is a kernel of some homomorphism $g : B \to C$ of free abelian groups, by applying $\Hom(\IZ,-)$ we see that it is also the kernel in $\Ab$. In particular, $f$ is injective, and the quotient $B/f(A)$ embeds into $C$ and is therefore free abelian.'
   regular epimorphisms:
-    description: surjective homomorphisms
-    proof: See the proof above that $\FreeAb$ is regular.
+    description: surjective homomorphisms (which are automatically split epimorphisms)
+    proof: Regular homomorphisms coincide with surjective homomorphisms by the proof above that $\FreeAb$ is regular. They are automatically split because their codomain is free abelian.
