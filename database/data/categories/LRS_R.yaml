@@ -24,12 +24,26 @@ satisfied_properties:
 
   - property: cocomplete
     proof: See Demazure-Gabriel's "Groupes algébriques", I. §1. 1.6. Specifically, the forgetful functor from locally ringed spaces to ringed spaces preserves colimits, and colimits of ringed spaces are built from colimits of topological spaces and limits of commutative rings, see <a href="https://math.stackexchange.com/questions/1646202" target="_blank">MSE/1646202</a>.
+    dependencies:
+      - id: Top
+        type: category
+        property: cocomplete
+        satisfied: true
+      - id: CRing
+        type: category
+        property: complete
+        satisfied: true
 
   - property: well-copowered
     proof: This follows from the characterization of epimorphisms below.
 
   - property: infinitary extensive
     proof: '[Sketch] Since <a href="/category/Top">$\Top$</a> is infinitary extensive, a morphism $f : Y \to \coprod_i X_i \eqqcolon X$ yields a decomposition $Y = \coprod_i Y_i$ (as topological spaces) with continuous maps $f_i : Y_i \to X_i$. Endow the open subset $Y_i \subseteq Y$ with the restricted sheaf. Then each $f_i$ becomes a morphism of locally ringed spaces, and $Y = \coprod_i Y_i$ holds as locally ringed spaces.'
+    dependencies:
+      - id: Top
+        type: category
+        property: infinitary extensive
+        satisfied: true
 
 unsatisfied_properties:
   - property: skeletal
@@ -40,18 +54,38 @@ unsatisfied_properties:
 
   - property: semi-strongly connected
     proof: This is because already the full subcategory <a href="/category/Sch_R">$\Sch_R$</a> of $R$-schemes is not semi-strongly connected.
+    dependencies:
+      - id: Sch_R
+        type: category
+        property: semi-strongly connected
+        satisfied: false
 
   - property: Malcev
     proof: This is because already the full subcategory <a href="/category/Sch_R">$\Sch_R$</a> of $R$-schemes is not Malcev.
+    dependencies:
+      - id: Sch_R
+        type: category
+        property: Malcev
+        satisfied: false
 
   - property: co-Malcev
     proof: 'We can adjust the proof for <a href="/category/Top">$\Top$</a> (see <a href="https://mathoverflow.net/questions/509548" target="_blank">MO/509548</a>) as follows: Let $K$ be a residue field of $R$, let $X$ be a singleton and $Y = \{u,v\}$ be the Sierpinski space where $\{u\}$ is open, but $\{v\}$ is not. Endow both with the sheaf of locally constant functions to $K$. Thus, $\O_X(X) = K$, $\O_Y(Y) = \O_Y(\{u\}) = K$. There is a canonical morphism $p : X + X \to Y$. It is a coreflexive corelation that is not cosymmetric.'
+    dependencies:
+      - id: Top
+        type: category
+        property: co-Malcev
+        satisfied: false
 
   - property: generating set
     proof: >-
       Out of any small set $S$ of locally ringed spaces, there is only a small set of residue fields at their points. Therefore, if $K$ is a field over $R$ with a strictly larger cardinality than any of these residue fields, then the only possible morphism from an element of $S$ to $\Spec K(X,Y)$ is one with an empty domain. However, that makes it impossible for $S$ to distinguish the two canonical automorphisms of $\Spec K(X,Y)$.
 
       Alternatively, using the usual adjunction between affine schemes and locally ringed spaces (<a href="https://en.wikipedia.org/wiki/%C3%89l%C3%A9ments_de_g%C3%A9om%C3%A9trie_alg%C3%A9brique" target="_blank">EGA I</a> (1971), Ch. 1, Prop. 1.6.3), a generating set in $\LRS_R$ would induce a generating set in the category of affine $R$-schemes, which contradicts the fact that <a href="/category/CAlg(R)">$\CAlg(R)$</a> does not have a cogenerating set.
+    dependencies:
+      - id: CAlg(R)
+        type: category
+        property: cogenerating set
+        satisfied: false
 
   - property: cartesian closed
     proof: This is Corollary 4(a) <a href="/content/Top-embeds-in-LRS">here</a>.

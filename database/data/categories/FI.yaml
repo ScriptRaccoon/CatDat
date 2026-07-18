@@ -19,9 +19,19 @@ related:
 satisfied_properties:
   - property: locally small
     proof: There is a forgetful functor $\FI \to \Set$ and $\Set$ is locally small.
+    dependencies:
+      - id: Set
+        type: category
+        property: locally small
+        satisfied: true
 
   - property: locally finite
     proof: There is a faithful functor $\FI \to \FinSet$ and <a href="/category/FinSet">$\FinSet$</a> is locally finite.
+    dependencies:
+      - id: FinSet
+        type: category
+        property: locally finite
+        satisfied: true
 
   - property: left cancellative
     proof: This is trivial.
@@ -34,9 +44,19 @@ satisfied_properties:
 
   - property: equalizers
     proof: We construct equalizers just like in <a href="/category/FinSet">$\FinSet$</a> and observe that the universal property still holds.
+    dependencies:
+      - id: FinSet
+        type: category
+        property: equalizers
+        satisfied: true
 
   - property: wide pullbacks
     proof: 'We construct wide pullbacks just like in <a href="/category/Set">$\Set$</a>, i.e., for a w.l.o.g. non-empty family of injective maps $f_i : X_i \to S$ we consider the subset $P \subseteq \prod_{i \in I} X_i$ of those tuples $x$ where $f_i(x_i) = f_j(x_j)$. Each projection $P \to X_i$ is injective, so in particular $P$ is finite, and $P \to X_i$ becomes a morphism in $\FI$. It is easy to check that the universal property still holds in $\FI$.'
+    dependencies:
+      - id: Set
+        type: category
+        property: wide pullbacks
+        satisfied: true
 
   - property: mono-regular
     proof: 'If $f : X \to Y$ is an injective map of finite sets, it is the equalizer of the two injective maps $i_1,i_2 : Y \rightrightarrows Y \sqcup_X Y$, and $Y \sqcup_X Y$ is finite.'
@@ -56,6 +76,11 @@ unsatisfied_properties:
 
   - property: core-thin
     proof: Its core is <a href="/category/B">$\IB$</a>, which we know is not thin.
+    dependencies:
+      - id: B
+        type: category
+        property: thin
+        satisfied: false
 
   - property: strongly connected
     proof: There is no map from a non-empty set to the empty set.

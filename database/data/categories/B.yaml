@@ -17,9 +17,19 @@ related:
 satisfied_properties:
   - property: locally small
     proof: There is a forgetful functor $\IB \to \Set$ and $\Set$ is locally small.
+    dependencies:
+      - id: Set
+        type: category
+        property: locally small
+        satisfied: true
 
   - property: locally finite
     proof: There is a faithful functor $\IB \to \FinSet$ and <a href="/category/FinSet">$\FinSet$</a> is locally finite.
+    dependencies:
+      - id: FinSet
+        type: category
+        property: locally finite
+        satisfied: true
 
   - property: inhabited
     proof: This is trivial.

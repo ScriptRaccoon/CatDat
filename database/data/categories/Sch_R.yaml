@@ -21,6 +21,11 @@ comments:
 satisfied_properties:
   - property: locally small
     proof: There is a forgetful functor $\Sch_R \to \LRS_R$ and $\LRS_R$ is locally small.
+    dependencies:
+      - id: LRS_R
+        type: category
+        property: locally small
+        satisfied: true
 
   - property: terminal object
     proof: The scheme $\Spec(R)$ is terminal.
@@ -33,6 +38,11 @@ satisfied_properties:
 
   - property: infinitary extensive
     proof: One uses the same proof as for locally ringed spaces, using that open subspaces of schemes are also schemes.
+    dependencies:
+      - id: LRS_R
+        type: category
+        property: infinitary extensive
+        satisfied: true
 
 unsatisfied_properties:
   - property: skeletal
@@ -49,9 +59,19 @@ unsatisfied_properties:
 
   - property: semi-strongly connected
     proof: This is because already the full subcategory of affine $R$-schemes is not semi-strongly connected, because its dual <a href="/category/CAlg(R)">$\CAlg(R)$</a> is not semi-strongly connected.
+    dependencies:
+      - id: CAlg(R)
+        type: category
+        property: semi-strongly connected
+        satisfied: false
 
   - property: generating set
     proof: If $S$ is a generating set of $R$-schemes, then the set of affine open subsets of the schemes in $S$ would also be a generating set. This is then also a generating set in the category of affine $R$-schemes, corresponding to a cogenerating set in <a href="/category/CAlg(R)">$\CAlg(R)$</a>, which we know does not exist.
+    dependencies:
+      - id: CAlg(R)
+        type: category
+        property: cogenerating set
+        satisfied: false
 
   - property: quotients of congruences
     proof: If $\Sch_R$ had quotients of congruences, then by <a href="/content/pushouts-of-monos-via-congruence-quotients">this lemma</a> it would also have pushouts of monomorphisms, contradicting the fact that the span $\IA^1_K \leftarrow \Spec(K(t)) \rightarrow \IA^1_K$ has no pushout where $K$ is a residue field of $R$; see <a href="https://mathoverflow.net/questions/9961" target="_blank">MO/9961</a>.

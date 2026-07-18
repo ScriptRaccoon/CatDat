@@ -27,9 +27,19 @@ satisfied_properties:
 unsatisfied_properties:
   - property: skeletal
     proof: Consider constant sheaves for isomorphic but non-equal abelian groups.
+    dependencies:
+      - id: Ab
+        type: category
+        property: skeletal
+        satisfied: false
 
   - property: split abelian
     proof: 'Choose a point $x \in X$. The functor $x_* : \Ab \to \Sh(X,\Ab)$ (skyscraper sheaf) is exact, and its left adjoint $x^* : \Sh(X,\Ab) \to \Ab$ (stalk) satisfies $x^* x_* \cong \id_{\Ab}$. Now, since <a href="/category/Ab">$\Ab$</a> is not split abelian, there is a short exact sequence of abelian groups $0 \to A \to B \to C \to 0$ that does not split. Then $0 \to x_* A \to x_* B \to x_* C \to 0$ is also exact, but it does not split: Otherwise it would also be split after applying $x^*$, which however gives the original sequence in $\Ab$.'
+    dependencies:
+      - id: Ab
+        type: category
+        property: split abelian
+        satisfied: false
 
 special_objects:
   initial object:

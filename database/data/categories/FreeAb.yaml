@@ -16,12 +16,27 @@ related:
 satisfied_properties:
   - property: locally small
     proof: There is a forgetful functor $\FreeAb \to \Set$ and $\Set$ is locally small.
+    dependencies:
+      - id: Set
+        type: category
+        property: locally small
+        satisfied: true
 
   - property: additive
     proof: The embedding $\FreeAb \hookrightarrow \Ab$ is closed under (finite) direct sums, and <a href="/category/Ab">$\Ab$</a> is additive.
+    dependencies:
+      - id: Ab
+        type: category
+        property: additive
+        satisfied: true
 
   - property: coproducts
     proof: This is is because free abelian groups are closed under direct sums of abelian groups.
+    dependencies:
+      - id: Ab
+        type: category
+        property: coproducts
+        satisfied: true
 
   - property: generator
     proof: As for <a href="/category/Ab">$\Ab$</a>, the group $\IZ$ is a generator.
@@ -40,6 +55,11 @@ satisfied_properties:
       This follows formally from the fact that <a href="/category/Ab">$\Ab$</a> is regular and $\FreeAb$ is closed under subobjects and finite products: By Prop. 2.5 in the <a href="https://ncatlab.org/nlab/show/regular+category">nLab</a> it suffices to prove that there are pullback-stable (reg epi, mono)-factorizations. Every homomorphism $f : A \to B$ in $\FreeAb$ factors as $f = i \circ p : A \twoheadrightarrow C \hookrightarrow B$, where $C$ is a subgroup of $B$, hence free abelian, and $A \to C$ is surjective. Clearly, surjective homomorphisms are pullback-stable. It remains to show that they coincide with the regular epimorphisms.
       (1) If $f : A \to B$ is surjective, it is the coequalizer of $A \times_B A \rightrightarrows A$ in $\Ab$. Since $A \times_B A$ is free abelian (as a subgroup of $A \times A$), $f$ is also a coequalizer in $\FreeAb$.
       (2) If $f : A \to B$ is a regular epimorphism in $\FreeAb$, consider the factorization $f = i \circ p$ as above. Since $f$ is an extremal epimorphism, $i$ must be an isomorphism, so that $f$ is surjective.
+    dependencies:
+      - id: Ab
+        type: category
+        property: regular
+        satisfied: true
 
 unsatisfied_properties:
   - property: balanced

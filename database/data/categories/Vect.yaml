@@ -21,6 +21,11 @@ related:
 satisfied_properties:
   - property: locally small
     proof: There is a forgetful functor $\Vect \to \Set$ and $\Set$ is locally small.
+    dependencies:
+      - id: Set
+        type: category
+        property: locally small
+        satisfied: true
 
   - property: split abelian
     proof: That $\Vect$ is abelian is a standard fact, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. VIII. Furthermore, it is a fact from linear algebra that every subspace has a complement, which is why every short exact sequence splits.

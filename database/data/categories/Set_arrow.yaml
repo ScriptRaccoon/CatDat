@@ -24,11 +24,21 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: This is easy.
+    proof: There is a forgetful functor $\Set^{\rightarrow} \to \Set$, and \Set$ is locally small.
+    dependencies:
+      - id: Set
+        type: category
+        property: locally small
+        satisfied: true
 
   - property: semi-strongly connected
     proof: >-
       Consider two objects $(X, Y, f)$ and $(X', Y', f')$. If $X'$ is non-empty with element $x'$, we can construct a morphism $(\ell, r) : (X, Y, f) \to (X', Y', f')$ where $\ell$ is the constant function with value $x'$, and $r$ is the constant function with value $f'(x')$; and similarly if $X$ is non-empty we can construct a morphism $(X', Y', f') \to (X, Y, f)$. Otherwise, if $X$ and $X'$ are both empty, we can reduce to the fact that $\Set$ is semi-strongly connected to find $r$ in one direction, and fill in $\ell$ as the unique function $\varnothing \to \varnothing$.
+    dependencies:
+      - id: Set
+        type: category
+        property: semi-strongly connected
+        satisfied: true
 
   - property: Grothendieck topos
     proof: It is equivalent to the category of presheaves on <a href="/category/walking_morphism">the walking morphism</a>.

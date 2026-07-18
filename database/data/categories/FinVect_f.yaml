@@ -19,6 +19,11 @@ related:
 satisfied_properties:
   - property: locally small
     proof: There is a forgetful functor $\FinVect_K \to \Vect_K$, and $\Vect_K$ is locally small.
+    dependencies:
+      - id: Vect
+        type: category
+        property: locally small
+        satisfied: true
 
   - property: essentially countable
     proof: Every object is isomorphic to $K^n$ for some $n \in \IN$, and $\Hom(K^n,K^m) \cong M_{m \times n}(K)$ is a finite, hence countable set.
@@ -31,6 +36,11 @@ satisfied_properties:
 
   - property: split abelian
     proof: This follows directly from the corresponding fact for <a href="/category/Vect">$\Vect_K$</a>.
+    dependencies:
+      - id: Vect
+        type: category
+        property: split abelian
+        satisfied: true
 
   - property: self-dual
     proof: The functor $V \mapsto V^*$ defines an equivalence of categories $\FinVect_K^{\op} \simeq \FinVect_K$. In fact, the natural map $V \to V^{**}$, $v \mapsto (\omega \mapsto \omega(v))$ is an isomorphism by standard linear algebra.

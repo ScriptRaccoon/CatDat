@@ -14,7 +14,12 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\Setne \to \Set$ and $\Set$ is locally small.
+    proof: It is a full subcategory of $\Set$, which is locally small.
+    dependencies:
+      - id: Set
+        type: category
+        property: locally small
+        satisfied: true
 
   - property: generator
     proof: The one-point set is clearly a generator.
@@ -25,36 +30,86 @@ satisfied_properties:
 
   - property: products
     proof: Take the product of non-empty sets inside of <a href="/category/Set">$\Set$</a> and observe that it is non-empty by the axiom of choice.
+    dependencies:
+      - id: Set
+        type: category
+        property: products
+        satisfied: true
 
   - property: cartesian closed
     proof: This follows as for <a href="/category/Set">$\Set$</a>, since for non-empty sets $X,Y$ there is at least one function $X \to Y$.
+    dependencies:
+      - id: Set
+        type: category
+        property: cartesian closed
+        satisfied: true
 
   - property: binary coproducts
     proof: The disjoint union of two non-empty sets is non-empty.
+    dependencies:
+      - id: Set
+        type: category
+        property: binary coproducts
+        satisfied: true
 
   - property: mono-regular
     proof: This follows as for <a href="/category/Set">$\Set$</a>.
+    dependencies:
+      - id: Set
+        type: category
+        property: mono-regular
+        satisfied: true
 
   - property: epi-regular
     proof: This follows as for <a href="/category/Set">$\Set$</a>.
+    dependencies:
+      - id: Set
+        type: category
+        property: epi-regular
+        satisfied: true
 
   - property: strongly connected
     proof: Use constant maps.
 
   - property: finitely accessible
     proof: Since the inclusion $\Setne \hookrightarrow \Set$ is closed under non-empty colimits, it is also closed under filtered colimits. Therefore, non-empty finite sets are still finitely presentable in $\Setne$, and every non-empty set is written as a filtered colimit of them.
+    dependencies:
+      - id: Set
+        type: category
+        property: finitely accessible
+        satisfied: true
 
   - property: generalized variety
     proof: Since the inclusion $\Setne \hookrightarrow \Set$ is closed under non-empty colimits, it is also closed under sifted colimits. Therefore, non-empty finite sets are still strongly finitely presentable in $\Setne$, and every non-empty set is written as a sifted colimit of them.
+    dependencies:
+      - id: Set
+        type: category
+        property: generalized variety
+        satisfied: true
 
   - property: natural numbers object
     proof: Any natural numbers object in $\Set$, such as $(\IN,0,n \mapsto n+1)$, is clearly also one in $\Setne$.
+    dependencies:
+      - id: Set
+        type: category
+        property: natural numbers object
+        satisfied: true
 
   - property: multi-complete
     proof: Let $D$ be a diagram in $\Setne$, and let $L$ be a limit of $D$ in $\Set$. If $L$ is non-empty, it gives a limit in $\Setne$ as well. If $L$ is the empty set, there is no cone over $D$ in $\Setne$; hence the empty set of cones gives a multi-limit of $D$ in $\Setne$.
+    dependencies:
+      - id: Set
+        type: category
+        property: complete
+        satisfied: true
 
   - property: effective congruences
     proof: 'If a congruence $E \rightrightarrows X$ is the kernel pair of $h : X \to Z$, with both $E$ and $X$ non-empty, then certainly $Z$ must also be non-empty.'
+    dependencies:
+      - id: Set
+        type: category
+        property: effective congruences
+        satisfied: true
 
 unsatisfied_properties:
   - property: skeletal
@@ -77,6 +132,11 @@ unsatisfied_properties:
 
   - property: coaccessible
     proof: If $\Setne$ is coaccessible, then by the dual of Cor. 2.44 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a> also the coslice category $\{\ast\} / \Setne$ would be coaccessible. But this category is isomorphic to <a href="/category/Set_*">$\Set_*$</a>, from which we know that it is not coaccessible (namely, because of Thm. 1.64 in loc. cit.).
+    dependencies:
+      - id: Set_*
+        type: category
+        property: coaccessible
+        satisfied: false
 
 special_objects:
   terminal object:

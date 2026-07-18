@@ -35,6 +35,15 @@ satisfied_properties:
 
   - property: locally cartesian closed
     proof: The slice category $B\IN / *$ is isomorphic to the poset $(\IN,\geq)$ (not to $(\IN,\leq)$). This category is thin and and semi-strongly connected, <a href="/category-implication/sequential_implies_lcc">hence</a> cartesian closed.
+    dependencies:
+      - id: N
+        type: category
+        property: thin
+        satisfied: true
+      - id: N
+        type: category
+        property: semi-strongly connected
+        satisfied: true
 
   - property: ℵ₁-accessible
     proof: A proof can be found <a href="/content/aleph1-filtered-colimits-in-deloopings">here</a> as Proposition 2.

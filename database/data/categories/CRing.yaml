@@ -20,6 +20,11 @@ comments:
 satisfied_properties:
   - property: locally small
     proof: There is a forgetful functor $\CRing \to \Set$ and $\Set$ is locally small.
+    dependencies:
+      - id: Set
+        type: category
+        property: locally small
+        satisfied: true
 
   - property: finitary algebraic
     proof: Take the algebraic theory of a commutative ring.
@@ -30,6 +35,11 @@ satisfied_properties:
 
   - property: Malcev
     proof: This follows in the same way as for <a href="/category/Grp">$\Grp$</a>, see also Example 2.2.5 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>.
+    dependencies:
+      - id: Grp
+        type: category
+        property: Malcev
+        satisfied: true
 
   - property: coextensive
     proof: '[Sketch] A ring homomorphism $f : A \times B \to R$ yields the idempotent element $e \coloneqq f(1,0) \in R$, so that $R \cong eR \times (1-e)R$. Then $f$ decomposes into the ring homomorphisms $f_A : A \to eR$, $f_A(a) \coloneqq f(a,0)$ and $f_B : B \to (1-e)R$, $f_B(b) \coloneqq f(0,b)$.'

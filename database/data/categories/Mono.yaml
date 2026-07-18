@@ -21,9 +21,19 @@ related:
 satisfied_properties:
   - property: locally small
     proof: There is a forgetful functor $\Mono \to \Set$, $(X, X') \mapsto X$, and $\Set$ is locally small.
+    dependencies:
+      - id: Set
+        type: category
+        property: locally small
+        satisfied: true
 
   - property: semi-strongly connected
     proof: This is immediate from the fact that $\Mono$ is equivalent to a full subcategory of <a href="/category/Set_arrow">$\Set^{\rightarrow}$</a>, and the latter is semi-strongly connected.
+    dependencies:
+      - id: Set_arrow
+        type: category
+        property: semi-strongly connected
+        satisfied: true
 
   - property: generator
     proof: >-
@@ -39,6 +49,11 @@ satisfied_properties:
 
       More concretely, suppose we have a diagram $((X_i, X_i'))_{i \in \I}$, with limit cone $p_i : \lim_{i\in\I} X_i \to X_i$ in <a href="/category/Set">$\Set$</a>. Then the limit in $\Mono$ is $(\lim_{i\in\I} X_i, \bigcap_{i\in\I} p_i^{-1}(X_i'))$. (It is easy to see that in the subset component, we can also restrict $i$ to range over a <a href="https://ncatlab.org/nlab/show/weak+multilimit" target="_blank">weakly initial</a> set of objects of $\I$.)
     check_redundancy: false
+    dependencies:
+      - id: Set
+        type: category
+        property: complete
+        satisfied: true
 
   - property: cocomplete
     proof: >-
@@ -46,9 +61,19 @@ satisfied_properties:
 
       More concretely, suppose we have a diagram $((X_i, X_i'))_{i \in \I}$, with colimit cone $c_i : X_i \to \colim_{i\in\I} X_i$ in <a href="/category/Set">$\Set$</a>. Then the colimit in $\Mono$ is $(\colim_{i\in\I} X_i, \bigcup_{i\in\I} c_i(X_i'))$. (It is easy to see that in the subset component, we can also restrict $i$ to range over a <a href="https://ncatlab.org/nlab/show/weak+multilimit" target="_blank">weakly terminal</a> set of objects of $\I$.)
     check_redundancy: false
+    dependencies:
+      - id: Set_arrow
+        type: category
+        property: cocomplete
+        satisfied: true
 
   - property: disjoint coproducts
     proof: This follows from the fact that coproducts in $\Mono$ can be computed component-wise, along with the fact that <a href="/category/Set">$\Set$</a> has disjoint coproducts.
+    dependencies:
+      - id: Set
+        type: category
+        property: disjoint coproducts
+        satisfied: true
 
   - property: locally cartesian closed
     proof: >-
@@ -76,13 +101,28 @@ satisfied_properties:
       is surjective. To see it is injective, use the fact that the unique morphism $(1, 0) \to (1, 1)$ is an epimorphism (see below), and we have already seen that the corresponding function for $(1,0)$ is injective.
 
       Therefore, any finite coproduct of $(1, 0)$ and $(1, 1)$ is finitely presentable; this means any object of the form $([n], [m])$ with $m, n \in \IN$ and $m \le n$ is finitely presentable. All such objects form a small set. Moreover, any object $(X,X')$ of $\Mono$ is a filtered colimit of the subobjects $(F, F \cap X')$ where $F$ is a finite subset of $X$, and each $(F, F \cap X')$ is isomorphic to some $([n], [m])$.
+    dependencies:
+      - id: Mono
+        type: category
+        property: cocomplete
+        satisfied: true
 
   - property: co-Malcev
     proof: >-
       Suppose we have a coreflexive corelation $p : (X \sqcup X, X' \sqcup X') \twoheadrightarrow (E, E')$ with coreflexivity morphism $r : (E, E') \to (X, X')$. From the assumption that $p$ is an epimorphism, we have that $p : X \sqcup X \to E$ is a surjective function. Since <a href="/category/Set">$\Set$</a> is co-Malcev, it follows that $E \cong X \sqcup_Y X$ for some subset $Y \subseteq X$. It remains to show that $E' = i_1(X') \cup i_2(X') \subseteq X \sqcup_Y X$. Certainly, since we have a morphism $(X \sqcup_Y X, i_1(X') \cup i_2(X')) \to (E, E')$ induced by $p$, we must have $i_1(X') \cup i_2(X') \subseteq E'$. On the other hand, any element of $E'$ is an element of $E$ and hence is equal to either $i_1(x)$ or $i_2(x)$ for $x \in X$. In the first case, we must have $x = r(i_1(x)) \in X'$, so $i_1(x) \in i_1(X')$; and similarly for the second case.
+    dependencies:
+      - id: Set
+        type: category
+        property: co-Malcev
+        satisfied: true
 
   - property: effective cocongruences
     proof: 'See the proof that $\Mono$ is co-Malcev: It shows that in fact any coreflexive corelation is equivalent to an effective cocongruence $X \sqcup X \twoheadrightarrow X \sqcup_Y X$.'
+    dependencies:
+      - id: Mono
+        type: category
+        property: co-Malcev
+        satisfied: true
 
 unsatisfied_properties:
   - property: skeletal
@@ -94,6 +134,11 @@ unsatisfied_properties:
   - property: cofiltered-limit-stable epimorphisms
     proof: >-
       We already know that <a href="/category/Set">$\Set$</a> does not have this property. Now apply the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> to the functor $\Set \to \Mono$ which sends a set $X$ to the pair $(X, X)$.
+    dependencies:
+      - id: Set
+        type: category
+        property: cofiltered-limit-stable epimorphisms
+        satisfied: false
 
 special_objects:
   initial object:

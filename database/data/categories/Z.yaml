@@ -17,26 +17,61 @@ related:
 satisfied_properties:
   - property: complete
     proof: This follows immediately from the fact for <a href="/category/Set">$\Set$</a>.
+    dependencies:
+      - id: Set
+        type: category
+        property: complete
+        satisfied: true
 
   - property: cocomplete
     proof: This follows immediately from the fact for <a href="/category/Set">$\Set$</a>.
     check_redundancy: false
+    dependencies:
+      - id: Set
+        type: category
+        property: cocomplete
+        satisfied: true
 
   - property: infinitary extensive
     proof: This follows immediately from the fact for <a href="/category/Set">$\Set$</a>.
+    dependencies:
+      - id: Set
+        type: category
+        property: infinitary extensive
+        satisfied: true
 
   - property: exact filtered colimits
     proof: This follows immediately from the fact for <a href="/category/Set">$\Set$</a>.
+    dependencies:
+      - id: Set
+        type: category
+        property: exact filtered colimits
+        satisfied: true
 
   - property: regular
     proof: This follows immediately from the fact for <a href="/category/Set">$\Set$</a>.
+    dependencies:
+      - id: Set
+        type: category
+        property: regular
+        satisfied: true
 
   - property: coregular
     proof: This follows immediately from the fact for <a href="/category/Set">$\Set$</a>.
+    dependencies:
+      - id: Set
+        type: category
+        property: coregular
+        satisfied: true
 
   - property: co-Malcev
     proof: This follows immediately from the fact for <a href="/category/Set">$\Set$</a>.
     check_redundancy: false
+    dependencies:
+      - id: Set
+        type: category
+        property: co-Malcev
+        satisfied: true
 
   - property: effective congruences
     proof: 'If we have a congruence $E \rightrightarrows X$ in $[\CRing, \Set]$, then evaluating at any commutative ring gives a congruence in $\Set$. Defining $Y$ pointwise to be the quotient of this congruence, we get a morphism of functors $h : X \to Y$, and by <a href="/content/effective-congruence-quotients">this result</a> applied pointwise, the kernel pair of $h$ is $E$.'
@@ -51,9 +86,19 @@ unsatisfied_properties:
 
   - property: Malcev
     proof: Any counterexample for <a href="/category/Set">$\Set$</a> (i.e., any non-symmetric reflexive relation) yields one for this category by taking constant functors.
+    dependencies:
+      - id: Set
+        type: category
+        property: Malcev
+        satisfied: false
 
   - property: semi-strongly connected
     proof: This is because already the full subcategory of representable functors is not semi-strongly connected, because <a href="/category/CRing">$\CRing$</a> is not semi-strongly connected. Specifically, there is no morphism between $\Hom(\IF_2,-)$ and $\Hom(\IF_3,-)$.
+    dependencies:
+      - id: CRing
+        type: category
+        property: semi-strongly connected
+        satisfied: false
 
   - property: locally essentially small
     proof: See <a href="https://mathoverflow.net/questions/390611" target="_blank">MO/390611</a> for example.
@@ -66,6 +111,11 @@ unsatisfied_properties:
 
   - property: cofiltered-limit-stable epimorphisms
     proof: We already know that <a href="/category/Set">$\Set$</a> does not have this property. Now apply the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> to the functor $\Set \to [\CRing, \Set]$ that maps a set to its constant functor.
+    dependencies:
+      - id: Set
+        type: category
+        property: cofiltered-limit-stable epimorphisms
+        satisfied: false
 
 special_objects:
   initial object:

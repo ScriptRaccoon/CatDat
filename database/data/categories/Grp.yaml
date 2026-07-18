@@ -19,6 +19,11 @@ related:
 satisfied_properties:
   - property: locally small
     proof: There is a forgetful functor $\Grp \to \Set$ and $\Set$ is locally small.
+    dependencies:
+      - id: Set
+        type: category
+        property: locally small
+        satisfied: true
 
   - property: pointed
     proof: The trivial group is a zero object.
@@ -67,6 +72,11 @@ unsatisfied_properties:
 
   - property: cofiltered-limit-stable epimorphisms
     proof: We already know that <a href="/category/Ab">$\Ab$</a> does not have this property. Now apply the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> to the forgetful functor $\Ab \to \Grp$ which indeed preserves epimorphisms.
+    dependencies:
+      - id: Ab
+        type: category
+        property: cofiltered-limit-stable epimorphisms
+        satisfied: false
 
   - property: cocartesian cofiltered limits
     proof: >-

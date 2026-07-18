@@ -17,6 +17,11 @@ related:
 satisfied_properties:
   - property: locally small
     proof: There is a forgetful functor $\Pos \to \Set$ and $\Set$ is locally small.
+    dependencies:
+      - id: Set
+        type: category
+        property: locally small
+        satisfied: true
 
   - property: locally finitely presentable
     proof: See <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>, Example 1.10.
@@ -35,6 +40,11 @@ satisfied_properties:
 
   - property: infinitary extensive
     proof: '[Sketch] Since <a href="/category/Set">$\Set$</a> is infinitary extensive, a map $f : P \to \coprod_i Q_i$ corresponds to a decomposition $P = \coprod_i P_i$ (as sets) with maps $f_i : P_i \to Q_i$. Endow $P_i$ with the induced order. If $f$ is order-preserving, the elements in different $P_i$ cannot be comparable (since their $f$-images are not comparable), so that $P = \coprod_i P_i$ as posets, and each $f_i$ is order-preserving.'
+    dependencies:
+      - id: Set
+        type: category
+        property: infinitary extensive
+        satisfied: true
 
   - property: coregular
     proof: See <a href="https://math.stackexchange.com/questions/5130295" target="_blank">MSE/5130295</a>.

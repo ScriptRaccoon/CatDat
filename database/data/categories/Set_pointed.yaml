@@ -16,6 +16,11 @@ related:
 satisfied_properties:
   - property: locally small
     proof: There is a forgetful functor $\Set_* \to \Set$ and $\Set$ is locally small.
+    dependencies:
+      - id: Set
+        type: category
+        property: locally small
+        satisfied: true
 
   - property: pointed
     proof: The singleton set is a zero object.
@@ -33,9 +38,19 @@ satisfied_properties:
   - property: coregular
     proof: From the other properties we know that (co-)limits exist and that monomorphisms coincide with injective pointed maps. So it suffices to prove that these maps are stable under pushouts. This follows from the corresponding fact for <a href="/category/Set">$\Set$</a> and the observation that the forgetful functor $\Set_* \to \Set$ preserves pushouts.
     check_redundancy: false
+    dependencies:
+      - id: Set
+        type: category
+        property: coregular
+        satisfied: true
 
   - property: co-Malcev
     proof: Malcev categories are closed under slice categories by Prop. 2.2.14 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>. It follows that co-Malcev categories are closed under coslice categories, and $\Set_*$ is a coslice category of <a href="/category/Set">$\Set$</a>, which is co-Malcev since every elementary topos is co-Malcev.
+    dependencies:
+      - id: Set
+        type: category
+        property: co-Malcev
+        satisfied: true
 
   - property: cocartesian cofiltered limits
     proof: |-
@@ -65,6 +80,11 @@ unsatisfied_properties:
 
   - property: cofiltered-limit-stable epimorphisms
     proof: We already know that <a href="/category/Set">$\Set$</a> does not have this property. Now apply the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> to the functor $\Set \to \Set_*$ that freely adds a base point.
+    dependencies:
+      - id: Set
+        type: category
+        property: cofiltered-limit-stable epimorphisms
+        satisfied: false
 
 special_objects:
   initial object:

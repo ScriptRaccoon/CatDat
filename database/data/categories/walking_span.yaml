@@ -36,6 +36,15 @@ satisfied_properties:
 
   - property: locally cartesian closed
     proof: The slice category over $0$ is the <a href="/category/1">trivial category</a>, and the slice category over $1$ is the <a href="/category/walking_morphism">walking morphism</a>, which is cartesian closed. The same holds for $2$ by symmetry.
+    dependencies:
+      - id: '1'
+        type: category
+        property: cartesian closed
+        satisfied: true
+      - id: walking_morphism
+        type: category
+        property: cartesian closed
+        satisfied: true
 
 unsatisfied_properties:
   - property: sifted

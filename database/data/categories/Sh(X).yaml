@@ -30,11 +30,16 @@ satisfied_properties:
 unsatisfied_properties:
   - property: skeletal
     proof: Consider constant sheaves for isomorphic but non-equal sets.
+    dependencies:
+      - id: Set
+        type: category
+        property: skeletal
+        satisfied: false
 
   - property: generator
     proof: >-
       Suppose $\Sh(X)$ had a generator. Then by <a href="/content/topos-with-generator">this result</a>, every subterminal object would be either initial or terminal. On the other hand, the subterminal objects of $\Sh(X)$ are of the form $y_U \coloneqq \Hom({-}, U)$ for $U$ open. (Alternative descriptions of $y_U$ include:
-      $$y_U(V) = \begin{cases} 1, & V \subseteq U; \\ \varnothing & \mathrm{otherwise} \end{cases}$$
+      $$y_U(V) = \begin{cases} 1, & V \subseteq U; \\ \varnothing & \text{otherwise} \end{cases}$$
       with the unique restriction maps; and $y_U$ represents the functor $\Gamma(U, {-})$ of sections over $U$.) Therefore, the lemma implies that every open set of $X$ is either $\varnothing$ or $X$, contradicting our assumption that $X$ does not have the indiscrete topology.
 
 special_objects:

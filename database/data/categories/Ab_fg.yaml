@@ -17,9 +17,19 @@ related:
 satisfied_properties:
   - property: locally small
     proof: There is a forgetful functor $\FinAb \to \Set$ and $\Set$ is locally small.
+    dependencies:
+      - id: Set
+        type: category
+        property: locally small
+        satisfied: true
 
   - property: abelian
     proof: This follows from the fact for abelian groups and the fact that subgroups of finitely generated abelian groups are also finitely generated.
+    dependencies:
+      - id: Ab
+        type: category
+        property: abelian
+        satisfied: true
 
   - property: generator
     proof: The group $\IZ$ is a generator since it represents the forgetful functor to $\Set$.
@@ -29,6 +39,11 @@ satisfied_properties:
 
   - property: ℵ₁-accessible
     proof: The inclusion $\Ab_{\fg} \hookrightarrow \Ab$ is closed under $\aleph_1$-filtered colimits by <a href="https://mathoverflow.net/questions/400763/" target="_blank">MO/400763</a>. In particular, $\Ab_{\fg}$ has $\aleph_1$-filtered colimits. Since $\Ab_{\fg}$ is essentially small, there is a set $G$ such that every f.g. abelian group is isomorphic to one in $G$. So trivially it is also a $\aleph_1$-filtered colimit of such objects (take the constant diagram). Finally, every object is $\Ab_{\fg} = \Ab_{\fp}$ is finitely presentable in $\Ab$ and hence also in $\Ab_{\fg}$, a fortiori $\aleph_1$-presentable.
+    dependencies:
+      - id: Ab
+        type: category
+        property: ℵ₁-filtered colimits
+        satisfied: true
 
   - property: ℵ₁-cofiltered limits
     proof: A proof can be found <a href="/content/aleph1-cofiltered-limits-fg-groups">here</a>.

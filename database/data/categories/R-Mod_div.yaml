@@ -16,6 +16,11 @@ related:
 satisfied_properties:
   - property: locally small
     proof: There is a forgetful functor $R{-}\Mod \to \Set$ and $\Set$ is locally small.
+    dependencies:
+      - id: Set
+        type: category
+        property: locally small
+        satisfied: true
 
   - property: split abelian
     proof: It is a standard fact that the category of $R$-modules is abelian for any ring $R$, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. VIII. If $R$ is a division ring, then by linear algebra every $R$-module has a basis, hence is projective, so that every short exact sequence splits.

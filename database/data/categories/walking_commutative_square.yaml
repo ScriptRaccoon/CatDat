@@ -30,9 +30,19 @@ satisfied_properties:
 
   - property: locally cartesian closed
     proof: This is because the <a href="/category/walking_morphism">walking morphism</a> has this property.
+    dependencies:
+      - id: walking_morphism
+        type: category
+        property: locally cartesian closed
+        satisfied: true
 
   - property: locally strongly finitely presentable
     proof: This is because the <a href="/category/walking_morphism">walking morphism</a> has this property. Alternatively, we may represent this category as the category of algebras for the finitary algebraic theory with two sorts $S_1,S_2$, the equation $x=y$ for $x,y \in S_1$, and the equation $x=y$ for $x,y \in S_2$.
+    dependencies:
+      - id: walking_morphism
+        type: category
+        property: locally strongly finitely presentable
+        satisfied: true
 
 unsatisfied_properties:
   - property: semi-strongly connected

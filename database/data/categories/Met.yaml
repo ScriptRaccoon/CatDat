@@ -18,6 +18,11 @@ related:
 satisfied_properties:
   - property: locally small
     proof: There is a forgetful functor $\Met \to \Set$ and $\Set$ is locally small.
+    dependencies:
+      - id: Set
+        type: category
+        property: locally small
+        satisfied: true
 
   - property: strict initial object
     proof: The empty metric space is initial and clearly strict.
@@ -33,10 +38,20 @@ satisfied_properties:
 
   - property: equalizers
     proof: Just restrict the metric to the equalizer built from the sets.
+    dependencies:
+      - id: Set
+        type: category
+        property: equalizers
+        satisfied: true
 
   - property: binary products
     proof: The product of two metric spaces $(X,d)$, $(Y,d)$ is $(X \times Y,d)$ with $d((x_1,y_1),(x_2,x_2)) \coloneqq \sup(d(x_1,x_2),d(y_1,y_2))$.
     check_redundancy: false
+    dependencies:
+      - id: Set
+        type: category
+        property: binary products
+        satisfied: true
 
   - property: terminal object
     proof: The one-point metric space is terminal.
@@ -44,10 +59,20 @@ satisfied_properties:
 
   - property: coequalizers
     proof: This is because the category of pseudo-metric spaces <a href="/category/PMet">$\PMet$</a> has coequalizers and $\Met \hookrightarrow \PMet$ has a left adjoint, mapping a pseudo-metric space $X$ to $X /{\sim}$ where $x \sim y \iff d(x,y)=0$. Concretely, we take the coequalizer in the category of pseudo-metric spaces and then identify points with distance zero.
+    dependencies:
+      - id: PMet
+        type: category
+        property: coequalizers
+        satisfied: true
 
   - property: filtered colimits
     proof: This is because the category of pseudo-metric spaces <a href="/category/PMet">$\PMet$</a> has filtered colimits and $\Met \hookrightarrow \PMet$ has a left adjoint, mapping a pseudo-metric space $X$ to $X /{\sim}$ where $x \sim y \iff d(x,y)=0$. Concretely, we take the filtered colimit in the category of pseudo-metric spaces and then identify points with distance zero.
     check_redundancy: false
+    dependencies:
+      - id: PMet
+        type: category
+        property: filtered colimits
+        satisfied: true
 
   - property: cartesian filtered colimits
     proof: >-
@@ -61,6 +86,11 @@ satisfied_properties:
       Suppose otherwise. Then for every $n \in \IN$ there exists an object $i_n \in \I$ such that $d(x_{i_n},y_{i_n}) \geq n$. Since $\I$ is $\aleph_1$-cofiltered, there exists a cone $(j \to i_n)_{n \in \IN}$. Since the maps $D(j) \to D(i_n)$ are non-expansive, we have
       $$d(x_j,y_j) \geq d(x_{i_n},y_{i_n}) \geq n$$
       for every $n \in \IN$. This is impossible since the metric on $D(j)$ takes only finite values.
+    dependencies:
+      - id: Met_oo
+        type: category
+        property: ℵ₁-cofiltered limits
+        satisfied: true
 
   - property: well-copowered
     proof: 'If $f : X \to Y$ is an epimorphism, then $f(X)$ is dense in $Y$ (see below). Hence, there is an injective map $Y \to X^{\IN}$, which bounds the size of $Y$.'
@@ -75,6 +105,7 @@ satisfied_properties:
       Then, countable metric spaces in $\Met$ are $\aleph_1$-presentable not only in $\Met_\infty$, but also in $\Met$.
       On the other hand, every object in $\Met_\infty$ is an $\aleph_1$-filtered colimit of its countable isometric subspaces, and the same is true in $\Met$.
       Hence, $\Met$ is $\aleph_1$-accessible.
+
 unsatisfied_properties:
   - property: skeletal
     proof: This is trivial.

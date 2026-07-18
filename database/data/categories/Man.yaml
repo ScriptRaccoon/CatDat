@@ -17,10 +17,20 @@ related:
 satisfied_properties:
   - property: locally small
     proof: There is a forgetful functor $\Man \to \Set$ and $\Set$ is locally small.
+    dependencies:
+      - id: Set
+        type: category
+        property: locally small
+        satisfied: true
 
   - property: finite products
     proof: In short, this follows from the corresponding statement for topological spaces and $\IR^n \times \IR^m \cong \IR^{n+m}$.
     check_redundancy: false
+    dependencies:
+      - id: Top
+        type: category
+        property: finite products
+        satisfied: true
 
   - property: generator
     proof: The $0$-dimensional one-point manifold is a generator since it represents the forgetful functor $\Top \to \Set$.
@@ -36,10 +46,20 @@ satisfied_properties:
 
   - property: extensive
     proof: '[Sketch] Since <a href="/category/Top">$\Top$</a> is infinitary extensive, a continuous map $f : M \to \coprod_i N_i$ corresponds to a decomposition $M = \coprod_i M_i$ (as topological spaces) with continuous maps $f_i : M_i \to N_i$. Endow the open subset $M_i \subseteq M$ with the smooth structure inherited from $M$. Now remark that $f$ is smooth iff each $f_i$ is smooth.'
+    dependencies:
+      - id: Top
+        type: category
+        property: infinitary extensive
+        satisfied: true
 
   - property: countably distributive
     # TODO: maybe add "countably extensive" to make this more conceptual
     proof: To construct countable coproducts, take the usual disjoint union of spaces, which is clearly locally Euclidean and Hausdorff, and it is second countable since we are using only countable many spaces. (Without that condition, all coproducts would exist.) Now we need to check that the canonical smooth map $\coprod_i X \times Y_i \to X \times \coprod_i Y_i$ is a diffeomorphism (for countable families). It is a homeomorphism since <a href="/category/Top">$\Top$</a> is infinitary distributive. The inverse $X \times \coprod_i Y_i \to \coprod_i X \times Y_i$ is smooth since the domain is covered by the open subsets $X \times Y_i$ on which the map is clearly smooth.
+    dependencies:
+      - id: Top
+        type: category
+        property: countably distributive
+        satisfied: true
 
   - property: Cauchy complete
     proof: See Theorem 2.1 at the <a href="https://ncatlab.org/nlab/show/smooth+manifold" target="_blank">nLab</a>.
@@ -51,6 +71,11 @@ satisfied_properties:
 
   - property: effective cocongruences
     proof: 'From the proof that $\Man$ has coquotients of cocongruences, we know that for any cocongruence $X \rightrightarrows E$, there is a clopen submanifold $U$ of $X$ such that the fibers of $r : E \twoheadrightarrow X$ have one point on $U$, and two points on $X \setminus U$. Therefore, $E$ is the cokernel pair of the inclusion map $U \hookrightarrow X$.'
+    dependencies:
+      - id: Man
+        type: category
+        property: coquotients of cocongruences
+        satisfied: true
 
 unsatisfied_properties:
   - property: skeletal
@@ -81,9 +106,14 @@ unsatisfied_properties:
       Assume that there exists a limit cone $(\pi_C : M \to C \sqcup \{\ast\})$ in $\Man$. Since the forgetful functor $\Man \to \Set$ is representable, it preserves limits. In particular, the underlying set of $M$ is the limit of the underlying sets and is therefore uncountable.
       Since the codomain of $\pi_C$ is discrete, the map $\pi_C$ is locally constant. Thus, for every connected component $K \subseteq M$, the map $\pi_C$ is constant on $K$. Since the maps $\pi_C$ are jointly injective, it follows that every connected component of $M$ consists of a single point.
       Hence, $M$ is totally disconnected. Since $M$ is a smooth manifold, it follows that $M$ has dimension $0$. Since $M$ is also second-countable, it follows that the underlying set of $M$ is countable, contradicting our previous observation.
+    dependencies:
+      - id: Set_c
+        type: category
+        property: ℵ₁-cofiltered limits
+        satisfied: false
 
   - property: quotients of congruences
-    proof: If $\Man$ had quotients of congruences, then by <a href="/content/pushouts-of-monos-via-congruence-quotients">this lemma</a>, it would have a pushout of $\IR \leftarrow \{ 0 \} \rightarrow \IR$.  This contradicts <a href="https://mathoverflow.net/questions/19116">MO/19916</a>.
+    proof: If $\Man$ had quotients of congruences, then by <a href="/content/pushouts-of-monos-via-congruence-quotients">this lemma</a>, it would have a pushout of $\IR \leftarrow \{ 0 \} \rightarrow \IR$. This contradicts <a href="https://mathoverflow.net/questions/19116">MO/19916</a>.
 
 special_objects:
   initial object:

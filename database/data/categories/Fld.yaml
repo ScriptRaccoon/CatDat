@@ -18,6 +18,11 @@ comments:
 satisfied_properties:
   - property: locally small
     proof: There is a forgetful functor $\Fld \to \Set$ and $\Set$ is locally small.
+    dependencies:
+      - id: Set
+        type: category
+        property: locally small
+        satisfied: true
 
   - property: inhabited
     proof: This is trivial.

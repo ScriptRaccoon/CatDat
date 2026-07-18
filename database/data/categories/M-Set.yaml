@@ -17,6 +17,11 @@ related:
 satisfied_properties:
   - property: locally small
     proof: There is a forgetful functor $M{-}\Set \to \Set$ and $\Set$ is locally small.
+    dependencies:
+      - id: Set
+        type: category
+        property: locally small
+        satisfied: true
 
   - property: Grothendieck topos
     proof: It is the category of sheaves on the opposite of the one-object category associated to $M$.

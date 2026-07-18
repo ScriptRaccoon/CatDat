@@ -16,9 +16,19 @@ related:
 satisfied_properties:
   - property: locally small
     proof: There is a forgetful functor $\PreOrd \to \Set$ and $\Set$ is locally small.
+    dependencies:
+      - id: Set
+        type: category
+        property: locally small
+        satisfied: true
 
   - property: locally finitely presentable
     proof: The same proof as for <a href="/category/Pos">$\Pos$</a> works, cf. <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>, Example 1.10.
+    dependencies:
+      - id: Pos
+        type: category
+        property: locally finitely presentable
+        satisfied: true
 
   - property: cartesian closed
     proof: For preordered sets $P,Q$ we endow $\Hom(P,Q)$ with the preorder in which $f \leq g$ holds iff $f(p) \leq g(p)$ for all $p \in P$. The universal evaluation map is $\Hom(P,Q) \times P \to Q$, $(f,p) \mapsto f(p)$, it is order-preserving, and it satisfies the universal property.
@@ -34,6 +44,11 @@ satisfied_properties:
 
   - property: infinitary extensive
     proof: '[Sketch] Since <a href="/category/Set">$\Set$</a> is infinitary extensive, a map $f : P \to \coprod_i Q_i$ corresponds to a decomposition $P = \coprod_i P_i$ (as sets) with maps $f_i : P_i \to Q_i$. Endow $P_i$ with the induced order. If $f$ is order-preserving, the elements in different $P_i$ cannot be comparable (since their $f$-images are not comparable), so that $P = \coprod_i P_i$ as preordered sets, and each $f_i$ is order-preserving.'
+    dependencies:
+      - id: Set
+        type: category
+        property: infinitary extensive
+        satisfied: true
 
   - property: coregular
     proof: See <a href="https://math.stackexchange.com/questions/5130295" target="_blank">MSE/5130295</a>.
@@ -53,6 +68,11 @@ unsatisfied_properties:
 
   - property: cofiltered-limit-stable epimorphisms
     proof: We know that <a href="/category/Set">$\Set$</a> does not have this property. Now use the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> applied to the functor $\Set \to \PreOrd$ that equips a set with the chaotic preorder.
+    dependencies:
+      - id: Set
+        type: category
+        property: cofiltered-limit-stable epimorphisms
+        satisfied: false
 
   - property: effective cocongruences
     proof: 'Consider the preordered set $E \coloneqq \{ a, b \}$ with the chaotic preorder. This represents the functor which sends a preordered set to the pairs of elements $x,y$ with $x \le y$ and $y \le x$. Therefore, it defines a cocongruence $1 \rightrightarrows E$, where the maps are the two possible functions. However, this cannot be effective: for any map $h : Z \to 1$ which equalizes the two functions, $Z$ must be empty. But that means the cokernel pair of $h$ is the two-element preordered set with the trivial preorder.'

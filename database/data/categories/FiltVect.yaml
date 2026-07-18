@@ -21,25 +21,55 @@ comments:
 satisfied_properties:
   - property: locally small
     proof: There is a forgetful functor $\FiltVect \to \Vect$, and $\Vect$ is locally small.
+    dependencies:
+      - id: Vect
+        type: category
+        property: locally small
+        satisfied: true
 
   - property: preadditive
     proof: We know that $\Vect$ is preadditive with pointwise operations. It is easy to check that the sum of two filtered linear maps is again a filtered linear map. Moreover, the additive inverse of a filtered linear map is again a filtered linear map.
+    dependencies:
+      - id: Vect
+        type: category
+        property: preadditive
+        satisfied: true
 
   - property: kernels
     proof: 'Let $f : (V,F) \to (W,F)$ be a filtered linear map. Equip the kernel $U \subseteq V$ of the underlying linear map $f : V \to W$ with the induced filtration $F^n(U) \coloneqq U \cap F^n(V)$. Then $(U,F)$ is a filtered vector space together with a filtered linear map $\iota : (U,F) \to (V,F)$, which is clearly the kernel of $f$ in $\FiltVect$.'
     check_redundancy: false
+    dependencies:
+      - id: Vect
+        type: category
+        property: kernels
+        satisfied: true
 
   - property: cokernels
     proof: 'Let $f : (V,F) \to (W,F)$ be a filtered linear map. Let $\pi : W \to C$ be the cokernel of the underlying linear map $f : V \to W$. Equip $C$ with the induced filtration $F^n(C) \coloneqq \pi_*(F^n(W))$. Then $(C,F)$ is a filtered vector space together with a filtered linear map $\pi : (W,F) \to (C,F)$, which is clearly the cokernel of $f$ in $\FiltVect$.'
     check_redundancy: false
+    dependencies:
+      - id: Vect
+        type: category
+        property: cokernels
+        satisfied: true
 
   - property: products
     proof: 'Let $(V_i,F)_{i \in I}$ be a family of filtered vector spaces. Equip the product $\prod_{i \in I} V_i$ with the filtration $F^n(\prod_{i \in I} V_i) \coloneqq \prod_{i \in I} F^n(V_i)$. It is straightforward to check that this satisfies the universal property of products in $\FiltVect$.'
     check_redundancy: false
+    dependencies:
+      - id: Vect
+        type: category
+        property: products
+        satisfied: true
 
   - property: coproducts
     proof: 'Let $(V_i,F)_{i \in I}$ be a family of filtered vector spaces. Equip the direct sum $\bigoplus_{i \in I} V_i$ with the filtration $F^n(\bigoplus_{i \in I} V_i) \coloneqq \bigoplus_{i \in I} F^n(V_i)$. It is straightforward to check that this satisfies the universal property of coproducts in $\FiltVect$.'
     check_redundancy: false
+    dependencies:
+      - id: Vect
+        type: category
+        property: coproducts
+        satisfied: true
 
   - property: generator
     proof: The vector space $K$ equipped with the trivial filtration $F^n(K) \coloneqq 0$ is a generator, since it represents the forgetful functor $\FiltVect \to \Set$.
@@ -62,6 +92,7 @@ satisfied_properties:
       Second, every filtered vector space $(V,F)$ is the filtered colimit of the spaces $(V,F_{< N})$ for $N \in \IN$, where
       $$F_{< N}^n(V) \coloneqq \begin{cases} F^n(V) & n < N \\ 0 & n \geq N. \end{cases}$$
       Indeed, we have $F_{< N} \subseteq F_{< N+1}$, so that $\id_V : (V,F_{<N}) \to (V,F_{<N+1})$ is a filtered linear map. If $(W,F)$ is a filtered vector space together with a linear map $f : V \to W$ such that each map $f : (V,F_{<N}) \to (W,F)$ is filtered, then $f : (V,F) \to (W,F)$ is filtered as well. Indeed, for every $n \in \IZ$ we can choose some $N \in \IN$ with $n < N$, so that $F_{<N}^n(V) = F^n(V)$ is mapped into $F^n(W)$.
+
   - property: regular
     proof: >-
       It remains to prove that regular epimorphisms are stable under pullbacks. This follows immediately from their classification below, from the fact that $F^n$ preserves limits, and from the regularity of $\Vect$.
@@ -70,10 +101,21 @@ satisfied_properties:
       In more detail, if $(V,F) \to (W,F)$ is a regular epimorphism and $(U,F) \to (W,F)$ is any morphism, then $(V,F) \times_{(W,F)} (U,F) \to (U,F)$ is a regular epimorphism, since $V \times_W U \to U$ is surjective and, for every $n \in \IZ$, the restricted map
       $$F^n(V \times_W U) = F^n(V) \times_{F^n(W)} F^n(U) \to F^n(U)$$
       is surjective.
+    dependencies:
+      - id: Vect
+        type: category
+        property: regular
+        satisfied: true
+
   - property: coregular
     proof: >-
-      It remains to prove that regular monomorphisms (as classified below) are stable under pushouts. Let $i : (U,F) \to (V,F)$ be a regular monomorphism, i.e. $i$ is injective and $F^n(U) = i^*(F^n(V))$. Let $f : (U,F) \to (W,F)$ be any morphism. We must prove that the canonical morphism $(W,F) \to (V,F) \oplus_{(U,F)} (W,F)$ is a regular monomorphism. It is certainly injective, since the forgetful functor to $\Vect$ preserves colimits and $\Vect$ is abelian, and <a href="/category-implication/dual_abelian_implies_regular">hence coregular</a>. Now suppose that $w \in W$ is an element whose image $[0,w] \in V \oplus_U W$ lies in $F^n(V \oplus_U W)$; we must show that $w \in F^n(W)$.
+      It remains to prove that regular monomorphisms (as classified below) are stable under pushouts. Let $i : (U,F) \to (V,F)$ be a regular monomorphism, i.e. $i$ is injective and $F^n(U) = i^*(F^n(V))$. Let $f : (U,F) \to (W,F)$ be any morphism. We must prove that the canonical morphism $(W,F) \to (V,F) \oplus_{(U,F)} (W,F)$ is a regular monomorphism. It is certainly injective, since the forgetful functor to $\Vect$ preserves colimits and $\Vect$ is coregular. Now suppose that $w \in W$ is an element whose image $[0,w] \in V \oplus_U W$ lies in $F^n(V \oplus_U W)$; we must show that $w \in F^n(W)$.
       Since, by the construction of colimits in $\FiltVect$, the subspace $F^n(V \oplus_U W)$ is the sum of the images of $F^n(V)$ and $F^n(W)$, there exist $v \in F^n(V)$ and $w' \in F^n(W)$ such that $[0,w] = [v,w']$. This means that there exists some $u \in U$ with $v = i(u)$ and $w = f(u) + w'$. Then $u \in F^n(U)$ because $i(u) \in F^n(V)$. Hence $f(u) \in F^n(W)$, and therefore $w = f(u) + w' \in F^n(W)$.
+    dependencies:
+      - id: Vect
+        type: category
+        property: coregular
+        satisfied: true
 
 unsatisfied_properties:
   - property: skeletal

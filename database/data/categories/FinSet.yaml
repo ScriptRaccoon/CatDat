@@ -19,6 +19,11 @@ related:
 satisfied_properties:
   - property: locally small
     proof: There is a forgetful functor $\FinSet \to \Set$ and $\Set$ is locally small.
+    dependencies:
+      - id: Set
+        type: category
+        property: locally small
+        satisfied: true
 
   - property: locally finite
     proof: This is trivial.

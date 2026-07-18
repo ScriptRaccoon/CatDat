@@ -18,6 +18,11 @@ related:
 satisfied_properties:
   - property: locally small
     proof: There is a forgetful functor $\Mon \to \Set$ and $\Set$ is locally small.
+    dependencies:
+      - id: Set
+        type: category
+        property: locally small
+        satisfied: true
 
   - property: pointed
     proof: The trivial monoid is a zero object.
@@ -60,12 +65,27 @@ unsatisfied_properties:
 
   - property: regular quotient object classifier
     proof: We can just copy the proof for <a href="/category/CMon">$\CMon$</a>. Alternatively, we may use Lemma 1 <a href="/content/subcategories">here</a> (dualized) applied to the forgetful functor $\CMon \to \Mon$.
+    dependencies:
+      - id: CMon
+        type: category
+        property: regular quotient object classifier
+        satisfied: false
 
   - property: cofiltered-limit-stable epimorphisms
     proof: We already know that <a href="/category/Grp">$\Grp$</a> does not have this property. Now apply the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> to the forgetful functor $\Grp \to \Mon$. It preserves epimorphisms since it has a right adjoint, the unit group functor.
+    dependencies:
+      - id: Grp
+        type: category
+        property: cofiltered-limit-stable epimorphisms
+        satisfied: false
 
   - property: cocartesian cofiltered limits
     proof: 'We know that <a href="/category/Grp">$\Grp$</a> fails to satisfy this property. The same counterexample works here since the inclusion $\Grp \hookrightarrow \Mon$ preserves limits and colimits (it has a left and a right adjoint) and is conservative. A similar counterexample is given by the free monoids $N_n = \langle x_1,\dotsc,x_n \rangle$ and the Boolean monoid $M = \langle e : e^2=e \rangle$ with the maps $N_{n+1} \to N_n$, $x_{n+1} \mapsto 1$. Then the element $(x_1 e \cdots x_n e) \in \lim_n (M \sqcup N_n)$ does not come from $M \sqcup \lim_n N_n$ because its components have unbounded free product length.'
+    dependencies:
+      - id: Grp
+        type: category
+        property: cocartesian cofiltered limits
+        satisfied: false
 
   - property: effective cocongruences
     proof: >-
@@ -75,6 +95,11 @@ unsatisfied_properties:
       On the other hand, using the multiplicative map
       $$E \to M_{2\times 2}(\IZ), \quad p \mapsto \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix},\quad q \mapsto \begin{pmatrix} 1 & 1 \\ 0 & 0 \end{pmatrix},$$
       we can see that $p \ne q$ in $E$, so the equalizer of the two maps $X \rightrightarrows E$ is the trivial submonoid $\{ 1 \}$. Therefore, if $E$ were effective, it would be isomorphic to the coproduct $X \sqcup X$, whose underlying set consists of words in $p,q$ with $p,q$ strictly alternating. In particular, in this coproduct, $pq \ne q$.
+    dependencies:
+      - id: Ring
+        type: category
+        property: effective cocongruences
+        satisfied: false
 
 special_objects:
   initial object:

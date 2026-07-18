@@ -17,16 +17,31 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\FinAb \to \Set$ and $\Set$ is locally small.
+    proof: It is a full subcategory of $\Ab$, which is locally small.
+    dependencies:
+      - id: Ab
+        type: category
+        property: locally small
+        satisfied: true
 
   - property: locally finite
     proof: There is a faithful functor $\FinAb \to \FinSet$ and <a href="/category/FinSet">$\FinSet$</a> is locally finite.
+    dependencies:
+      - id: FinSet
+        type: category
+        property: locally finite
+        satisfied: true
 
   - property: essentially countable
     proof: The underlying set of a finite structure can be chosen to be a subset of $\IN$.
 
   - property: abelian
     proof: This follows from the fact for <a href="/category/Ab">$\Ab$</a>.
+    dependencies:
+      - id: Ab
+        type: category
+        property: abelian
+        satisfied: true
 
   - property: self-dual
     proof: 'This is a simple special case of Pontryagin duality: The functor $\Hom(-,\IQ/\IZ)$ provides the equivalence.'

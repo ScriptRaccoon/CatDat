@@ -15,6 +15,11 @@ related:
 satisfied_properties:
   - property: locally small
     proof: There is a forgetful functor $\PMet \to \Set$ and $\Set$ is locally small.
+    dependencies:
+      - id: Set
+        type: category
+        property: locally small
+        satisfied: true
 
   - property: generator
     proof: The one-point (pseudo-)metric space is a generator since it represents the forgetful functor $\PMet \to \Set$.
@@ -37,10 +42,20 @@ satisfied_properties:
   - property: equalizers
     proof: Just restrict the pseudo-metric to the equalizer built from the sets.
     check_redundancy: false
+    dependencies:
+      - id: Set
+        type: category
+        property: equalizers
+        satisfied: true
 
   - property: binary products
     proof: The product of two pseudo-metric spaces $(X,d)$, $(Y,d)$ is $(X \times Y,d)$ with $d((x_1,y_1),(x_2,x_2)) \coloneqq \sup(d(x_1,x_2),d(y_1,y_2))$.
     check_redundancy: false
+    dependencies:
+      - id: Set
+        type: category
+        property: binary products
+        satisfied: true
 
   - property: terminal object
     proof: The one-point (pseudo-)metric space is terminal.
@@ -52,12 +67,27 @@ satisfied_properties:
   - property: filtered colimits
     proof: 'Given a filtered diagram $(X_i)$ of pseudo-metric spaces, take the filtered colimit $X$ of the underlying sets with the following pseudo-metric: If $x,y \in X$, let $d(x,y)$ be infimum of all $d(x_i,y_i)$, where $x_i,y_i \in X_i$ are some preimages of $x,y$ in some $X_i$. The definition ensures that each $X_i \to X$ is non-expansive, and the universal property is easy to check.'
     check_redundancy: false
+    dependencies:
+      - id: Set
+        type: category
+        property: filtered colimits
+        satisfied: true
 
   - property: exact filtered colimits
     proof: 'We already saw that finite limits and filtered colimits exist. Now let $\I$ be a finite category and $\J$ be a small filtered category, w.l.o.g. a directed poset. Let $X : \I \times \J \to \PMet$ be a diagram. We need to show that the canonical map $\colim_{j \in \J} \lim_{i \in \I} X(i,j) \to \lim_{i \in \I} \colim_{j \in \J}  X(i,j)$ is an isomorphism. It is bijective since the forgetful functor to $\Set$ preserves finite limits and filtered colimits and since <a href="/category/Set">$\Set$</a> has exact filtered colimits. That the map is isometric can easily be reduced to the following lemma: If $d_{i,j} \in \IR_{\geq 0}$ are numbers for $i \in \I$, $j \in \J$ with $j \leq k \implies d_{i,k} \leq d_{i,j}$, then $\inf_j \sup_i d_{i,j} = \sup_i \inf_j d_{i,j}$. This can be proven directly. Alternatively, use that the thin category $(\IR_{\geq 0} \cup \{\infty\},\leq)$ is isomorphic to $([0,1],\leq)$, and we already know that <a href="/category/real_interval">it has exact filtered colimits</a>.'
+    dependencies:
+      - id: Set
+        type: category
+        property: exact filtered colimits
+        satisfied: true
 
   - property: ℵ₁-cofiltered limits
     proof: The proof is identical to the one for <a href="/category/Met">$\Met$</a>.
+    dependencies:
+      - id: Met
+        type: category
+        property: ℵ₁-cofiltered limits
+        satisfied: true
 
 unsatisfied_properties:
   - property: skeletal
@@ -77,6 +107,11 @@ unsatisfied_properties:
 
   - property: Malcev
     proof: Take any counterexample in <a href="/category/Set">$\Set$</a> and equip it with the zero pseudo-metric.
+    dependencies:
+      - id: Set
+        type: category
+        property: Malcev
+        satisfied: false
 
   - property: cartesian closed
     proof: This is proven in <a href="https://math.stackexchange.com/questions/5131457" target="_blank">MSE/5131457</a>.
@@ -95,6 +130,11 @@ unsatisfied_properties:
 
   - property: effective cocongruences
     proof: 'The proof is similar to the one for <a href="/category/Top">$\Top$</a>: Equip a two-point set with the zero metric; this pseudo-metric space represents the functor taking a pseudo-metric space to the pairs of points with $d(x,y) = 0$. In this case, once you conclude $Z = \varnothing$, the map $h : Z \to 1$ does not have any cokernel pair, since that would have to be a coproduct $1+1$, which does not exist.'
+    dependencies:
+      - id: Top
+        type: category
+        property: effective cocongruences
+        satisfied: false
 
   - property: regular
     proof: 'We can adapt Example 3.14 at the <a href="https://ncatlab.org/nlab/show/regular+category" target="_blank">nLab</a> (which disproves regularity for $\Pos$ and related categories) as follows: Consider the subspaces $X = \{0,1,2,3\}$ and $Y = \{0,1,2\}$ of $\IR$ with the usual metric. Define a surjective map $p : X \to Y$ by $p(0)=0$, $p(1)=p(2)=1$, and $p(3)=2$. Clearly, $p$ is non-expansive. Moreover, one can check that $p$ satisfies the universal property in $\PMet$ of a coequalizer of the two maps $1,2 : \{\ast\} \rightrightarrows X$. Thus, $p$ is a regular epimorphism. Now consider the subspace $Z = \{0,2\}$ of $Y$. As a set, the pullback $X \times_Y Z$ is $p^*(Z) = \{0,3\}$. Using the definition of the product metric, one can verify that $d(0,3) = 3$ in this pullback. The projection $X \times_Y Z \to Z$ identifies with the evident bijective and non-expansive map $\{0,3\} \to \{0,2\}$. It is a monomorphism and not an isomorphism (the distances do not match), hence cannot be a regular epimorphism.'

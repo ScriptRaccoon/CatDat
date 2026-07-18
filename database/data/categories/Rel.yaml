@@ -27,8 +27,13 @@ satisfied_properties:
     proof: One checks that the the one-point set is a generator.
 
   - property: coproducts
-    proof: It is an easy exercise to deduce this from the corresponding fact for sets and that sets form a distributive category.
+    proof: It is an easy exercise to deduce this from the corresponding fact for sets and that sets form an infinitary distributive category.
     check_redundancy: false
+    dependencies:
+      - id: Set
+        type: category
+        property: infinitary distributive
+        satisfied: true
 
   - property: biproducts
     proof: This is a consequence of the description of coproducts and products, both are disjoint unions (even for infinite families).
