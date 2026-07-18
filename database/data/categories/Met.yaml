@@ -108,15 +108,6 @@ unsatisfied_properties:
       The following example is taken from Rem. 2.7 in <a href="https://doi.org/10.1016/j.jpaa.2021.106974" target="_blank">Approximate injectivity and smallness in metric-enriched categories</a> by Adamek-Rosicky.
       For $n \geq 1$ let $X_n$ denote the metric space with underlying set $\{0,1\}$ in which $0,1$ have distance $1/n$. We have bijective non-expansive maps $X_n \to X_{n+1}$, $x \mapsto x$. The colimit of this sequence in <a href="/category/PMet">$\PMet$</a> is $\{0,1\}$ where $0,1$ have distance $0$, so the colimit in $\Met$ collapses to $\{0\}$. Therefore, the colimit of the monomorphisms $X_1 \to X_n$, $x \mapsto x$ is the non-injective map $X_1 \to \{0\}$.
 
-  - property: finitely accessible
-    proof: >-
-      The following proof is due to Rem. 2.7 in <a href="https://doi.org/10.1016/j.jpaa.2021.106974" target="_blank">Approximate injectivity and smallness in metric-enriched categories</a> by Adamek-Rosicky.
-      For $n \geq 1$ let $X_n$ denote the metric space with underlying set $\{0,1\}$ in which $0,1$ have distance $1/n$. Consider the sequence of identity-on-points maps
-      $$X_1 \to X_2 \to X_3 \to \cdots$$
-      in $\Met$. We already saw above that the colimit of this sequence is the singleton space. Hence, for every metric space $M$, the set $\Hom(M,\colim_n X_n)$ is a singleton set. But if $M$ is non-empty, the colimit $\colim_n \Hom(M,X_n)$ has at least two distinct elements (consider the two constant maps $0,1 : M \rightrightarrows X_1$).
-      Hence, $M \in \Met$ is finitely presentable iff it is empty.
-      Clearly, a non-empty metric space is never a filtered colimit of the empty one; hence $\Met$ is not finitely accessible.
-
   - property: generalized variety
     proof: 'We have just proven that every finitely presentable object is empty. It follows that also every strongly finitely presentable object is empty.  Clearly, a non-empty metric space is never a sifted colimit of the empty one; hence $\Met$ is not a generalized variety.'
 
