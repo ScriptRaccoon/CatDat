@@ -57,6 +57,9 @@ function execute_tests() {
 
 		test_positivity('id_G', 'morphism')
 		test_decided_structures(decided_morphisms, 'morphism')
+
+		devlog('\n--- Test proof dependencies ---')
+		test_proof_dependencies()
 	} catch (err) {
 		if (err instanceof Error) {
 			console.error(err.message)
@@ -287,4 +290,53 @@ function check_link_targets_exist() {
 	}
 
 	devlog(`✅ Link targets exist`)
+}
+
+/**
+ * Tests if the dependencies in the proofs of properties are actually true.
+ */
+function test_proof_dependencies() {
+	const count = db
+		.prepare<[], number>(`SELECT COUNT(*) FROM required_property_assignments`)
+		.pluck()
+		.get()
+
+	const rows = db
+		.prepare<
+			[],
+			{
+				required_for: string
+				structure_id: string
+				property_id: string
+				is_satisfied: number
+			}
+		>(
+			`SELECT
+				r.required_for,
+				r.structure_id,
+				r.property_id,
+				r.is_satisfied
+			FROM required_property_assignments r
+			WHERE NOT EXISTS (
+				SELECT 1 FROM property_assignments a
+				WHERE a.structure_id = r.structure_id
+				AND a.property_id = r.property_id
+				AND a.type = r.type
+				AND a.is_satisfied = r.is_satisfied
+			)`
+		)
+		.all()
+
+	if (!rows.length) {
+		devlog(`✅ ${count} Proof dependencies are validated`)
+		return
+	}
+
+	for (const { required_for, structure_id, property_id, is_satisfied } of rows) {
+		console.error(
+			`❌ ${required_for} expects ${structure_id} to ${is_satisfied === 1 ? '' : 'not '}have property "${property_id}", which could not be deduced`
+		)
+	}
+
+	throw new Error(`Found ${rows.length} invalid proof dependencies`)
 }

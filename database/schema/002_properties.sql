@@ -55,6 +55,20 @@ CREATE TABLE property_assignments (
 
 CREATE INDEX idx_property_assigned ON property_assignments (property_id);
 
+CREATE TABLE required_property_assignments (
+    id INTEGER PRIMARY KEY,
+    required_for TEXT NOT NULL,
+    structure_id TEXT NOT NULL,
+    property_id TEXT NOT NULL,
+    type TEXT NOT NULL,
+    is_satisfied INTEGER CHECK (is_satisfied in (TRUE, FALSE)),
+    FOREIGN KEY (required_for) REFERENCES structures (id) ON DELETE CASCADE,
+    FOREIGN KEY (structure_id, type)
+        REFERENCES structures (id, type) ON DELETE CASCADE,
+    FOREIGN KEY (property_id, type)
+        REFERENCES properties (id, type) ON DELETE CASCADE
+);
+
 CREATE TABLE property_tags (
     id INTEGER PRIMARY KEY,
     tag TEXT NOT NULL,

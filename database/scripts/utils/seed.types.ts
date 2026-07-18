@@ -32,6 +32,12 @@ export type PropertyEntry = {
 	property: string
 	proof: string
 	check_redundancy?: boolean
+	dependencies?: {
+		id: string
+		type: string
+		property: string
+		satisfied: boolean
+	}[]
 }
 
 type ObjectEntry = {

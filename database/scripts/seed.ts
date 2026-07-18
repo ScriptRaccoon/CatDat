@@ -82,6 +82,7 @@ function clear_all_tables() {
 		db.prepare(`DELETE FROM implications`).run()
 
 		db.prepare(`DELETE FROM property_assignments`).run()
+		db.prepare(`DELETE FROM required_property_assignments`).run()
 		db.prepare(`DELETE FROM related_properties`).run()
 		db.prepare(`DELETE FROM property_tag_assignments`).run()
 		db.prepare(`DELETE FROM property_tags`).run()
@@ -225,6 +226,12 @@ function seed_structures<T extends StructureYaml>({
 		) VALUES (?, ?, ?, ?, ?, ?)`
 	)
 
+	const required_property_assignment_insert = db.prepare(
+		`INSERT INTO required_property_assignments (
+			required_for, structure_id, property_id, type, is_satisfied
+		) VALUES (?, ?, ?, ?, ?)`
+	)
+
 	function insert_property_assignments(
 		structure_id: string,
 		entries: PropertyEntry[],
@@ -239,6 +246,16 @@ function seed_structures<T extends StructureYaml>({
 				entry.proof,
 				entry.check_redundancy === false ? 0 : 1
 			)
+
+			for (const dep of entry.dependencies ?? []) {
+				required_property_assignment_insert.run(
+					structure_id,
+					dep.id,
+					dep.property,
+					dep.type,
+					Number(dep.satisfied)
+				)
+			}
 		}
 	}
 
