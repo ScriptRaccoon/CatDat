@@ -36,6 +36,14 @@
   proof: Special case of <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>, Prop. 1.59 with $\lambda = \aleph_0$.
   is_equivalence: false
 
+- id: finitely_accessible_stable_monos
+  assumptions:
+    - finitely accessible
+  conclusions:
+    - filtered-colimit-stable monomorphisms
+  proof: 'Let $\C$ be a finitely accessible category and let $\C_{\fp}$ be its full subcategory of finitely presentable objects. Consider the restricted Yoneda embedding $\C \hookrightarrow [\C_{\fp}^{\op},\Set]$. It preserves filtered colimits (essentially by the definition of a finitely presentable object) and all limits, in particular monomorphisms. It also reflects monomorphisms since $\C_{\fp}$ is a generating set. Therefore, since $\Set$ and hence the functor category has filtered-colimit-stable monomorphisms, this is also true for $\C$.'
+  is_equivalence: false
+
 - id: locally_finitely_presentable_raise
   assumptions:
     - locally finitely presentable
