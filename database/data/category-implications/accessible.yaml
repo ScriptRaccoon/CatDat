@@ -41,7 +41,7 @@
     - finitely accessible
   conclusions:
     - filtered-colimit-stable monomorphisms
-  proof: 'Let $\C$ be a finitely accessible category and let $\C_{\fp}$ be its full subcategory of finitely presentable objects. Consider the restricted Yoneda embedding $\C \hookrightarrow [\C_{\fp}^{\op},\Set]$. It preserves filtered colimits (essentially by the definition of a finitely presentable object) and all limits, in particular monomorphisms. It also reflects monomorphisms since $\C_{\fp}$ is a generating set. Therefore, since $\Set$ and hence the functor category has filtered-colimit-stable monomorphisms, this is also true for $\C$.'
+  proof: 'Let $\C$ be a finitely accessible category and let $G$ be a set of finitely presentable objects which generates $\C$ under filtered colimits. Consider $G$ as a full subcategory and consider the restricted Yoneda embedding $\C \hookrightarrow [G^{\op},\Set]$. It preserves filtered colimits (essentially by the definition of a finitely presentable object) and all limits, in particular monomorphisms. It also reflects monomorphisms since $G$ is a generating set. Therefore, since $\Set$ and hence the functor category has filtered-colimit-stable monomorphisms, this is also true for $\C$.'
   is_equivalence: false
 
 - id: locally_finitely_presentable_raise
