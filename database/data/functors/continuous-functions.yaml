@@ -15,6 +15,7 @@ related: []
 satisfied_properties:
   - property: continuous
     proof: 'Since the forgetful functor $U : \CAlg(\IR) \to \Set$ is conservative and continuous, it suffices to prove that $U \circ C : \Top^{\op} \to \Set$ is continuous. But this functor is representable.'
+    # TODO: add proof dependencies when these functors are added
 
   - property: preserves initial objects
     proof: The initial object in $\Top^{\op}$ is the singleton space, which is mapped to $\IR$, the initial commutative $\IR$-algebra.

@@ -21,9 +21,11 @@ satisfied_properties:
     proof: This functor is represented by the polynomial ring $\IZ[T]$.
 
   - property: monadic
+    # TODO: add reference (also to similar functors)
     proof: For every algebraic category the forgetful functor to the category of sets is monadic.
 
   - property: finitary
+    # TODO: add reference (also to similar functors)
     proof: For every algebraic category the forgetful functor to the category of sets preserves filtered colimits.
 
   - property: preserves reflexive coequalizers

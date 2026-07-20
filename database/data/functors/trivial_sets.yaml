@@ -16,9 +16,19 @@ related:
 satisfied_properties:
   - property: coreflector
     proof: 'The constant functor $1 \to \Set$ with value $\varnothing$ is a left adjoint of $! : \Set \to 1$ and fully faithful; this is because $\varnothing$ is an initial object of $\Set$.'
+    dependencies:
+      - id: Set
+        type: category
+        property: initial object
+        satisfied: true
 
   - property: reflector
     proof: 'The constant functor $1 \to \Set$ with value $\{\ast\}$ is a right adjoint of $! : \Set \to 1$ and fully faithful; this is because $\{\ast\}$ is a terminal object of $\Set$.'
+    dependencies:
+      - id: Set
+        type: category
+        property: terminal object
+        satisfied: true
 
 unsatisfied_properties:
   - property: faithful

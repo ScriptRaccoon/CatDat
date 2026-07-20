@@ -31,6 +31,11 @@ satisfied_properties:
 
   - property: cofinitary
     proof: We already know that <a href="/category/Set">$\Set$</a> has cocartesian cofiltered limits; this is a consequence of <a href="/category-implication/extensive_cocartesian_cofiltered_limits">this result</a>.
+    dependencies:
+      - id: Set
+        type: category
+        property: cocartesian cofiltered limits
+        satisfied: true
 
 unsatisfied_properties:
   - property: preserves terminal objects
@@ -44,3 +49,8 @@ unsatisfied_properties:
 
   - property: reflector
     proof: 'Its right adjoint, the diagonal functor $\Delta : \Set \to \Set \times \Set$, is faithful, but not full.'
+    dependencies:
+      - id: diagonal_sets
+        type: functor
+        property: full
+        satisfied: false

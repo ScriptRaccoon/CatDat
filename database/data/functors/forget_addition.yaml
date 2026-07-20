@@ -20,12 +20,29 @@ satisfied_properties:
 
   - property: conservative
     proof: 'This is because even the composition $U_{\Mon} \circ U_{\Ring,\Mon} : \Ring \to \Set$, namely the forgetful functor $U_{\Ring} : \Ring \to \Set$, is conservative.'
+    dependencies:
+      - id: forget_ring
+        type: functor
+        property: conservative
+        satisfied: true
 
   - property: finitary
     proof: 'Since the forgetful functor $U_{\Mon} : \Mon \to \Set$ is finitary and conservative, it suffices to prove that the composition $U_{\Mon} \circ U_{\Ring,\Mon} : \Ring \to \Set$ is finitary. This is just the forgetful functor $U_{\Ring} : \Ring \to \Set$ and is therefore finitary.'
+    # TODO: add proof dependencies on U_Mon once this functor is added
+    dependencies:
+      - id: forget_ring
+        type: functor
+        property: finitary
+        satisfied: true
 
   - property: preserves reflexive coequalizers
     proof: 'Since the forgetful functor $U_{\Mon} : \Mon \to \Set$ preserves reflexive coequalizers (by Theorem 2.5 at the <a href="https://ncatlab.org/nlab/show/reflexive+coequalizer" target="_blank">nLab</a>) and is conservative, it suffices to prove that the composition $U_{\Mon} \circ U_{\Ring,\Mon} : \Ring \to \Set$ preserves reflexive coequalizers. This is just the forgetful functor $U_{\Ring} : \Ring \to \Set$ and therefore preserves reflexive coequalizers (by loc.cit.).'
+    # TODO: add proof dependency on U_Mon once this functor is added
+    dependencies:
+      - id: forget_ring
+        type: functor
+        property: preserves reflexive coequalizers
+        satisfied: true
 
 unsatisfied_properties:
   - property: preserves initial objects

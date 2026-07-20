@@ -44,6 +44,20 @@ unsatisfied_properties:
 
   - property: preserves coequalizers
     proof: 'Since the diagonal functor $\Delta : \Set \to \Set \times \Set$ preserves coequalizers (in fact, all colimits), it would follow that the composition $\Set \to \Set$, $X \mapsto X^2$ preserves coequalizers. But this is the <a href="/functor/squaring_sets">squaring functor</a>, from we already know that it does not preserve coequalizers.'
+    dependencies:
+      - id: diagonal_sets
+        type: functor
+        property: cocontinuous
+        satisfied: true
+      - id: squaring_sets
+        type: functor
+        property: preserves coequalizers
+        satisfied: false
 
   - property: coreflector
     proof: 'Its left adjoint, the diagonal functor $\Delta : \Set \to \Set \times \Set$, is faithful, but not full.'
+    dependencies:
+      - id: diagonal_sets
+        type: functor
+        property: full
+        satisfied: false

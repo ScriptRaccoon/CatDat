@@ -18,6 +18,15 @@ satisfied_properties:
 
   - property: finitary
     proof: 'There is a direct way to prove this, but here is an abstract argument: Since the forgetful functor $\Grp \to \Set$ is conservative and finitary, it suffices to prove that the composition $\Mon \to \Set$, which maps a monoid to its set of units, is finitary. This functor is represented by the monoid $\langle x,y : xy = yx = 1 \rangle \cong \IZ$. It has a finite presentation and hence is finitely presentable in the categorical sense (Corollary 3.13 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>).'
+    dependencies:
+      - id: forget_group
+        type: functor
+        property: conservative
+        satisfied: true
+      - id: forget_group
+        type: functor
+        property: finitary
+        satisfied: true
 
   - property: preserves coproducts
     proof: >-

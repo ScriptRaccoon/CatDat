@@ -16,6 +16,11 @@ related: []
 satisfied_properties:
   - property: reflector
     proof: 'This functor is left adjoint to the forgetful functor $U_{\Ab,\Grp} : \Ab \hookrightarrow \Grp$, which is fully faithful.'
+    dependencies:
+      - id: forget_abelian
+        type: functor
+        property: fully faithful
+        satisfied: true
 
   - property: preserves finite products
     proof: See <a href="https://mathoverflow.net/questions/386144">MO/386144</a>.
