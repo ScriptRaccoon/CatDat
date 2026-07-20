@@ -1,7 +1,24 @@
 import { test, expect } from '@playwright/test'
 
 test('user can navigate to a morphism', async ({ page }) => {
-	await page.goto('/morphism-list')
+	await page.goto('/')
+
+	await page
+		.getByRole('link', {
+			name: 'morphisms',
+			exact: true
+		})
+		.first()
+		.click()
+
+	await expect(
+		page.getByRole('heading', {
+			name: 'List of morphisms',
+			exact: true
+		})
+	).toBeVisible()
+
+	await expect(page).toHaveURL('/morphism-list')
 
 	await page
 		.getByRole('link', {

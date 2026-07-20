@@ -19,9 +19,10 @@
 </h2>
 
 <p>
-	<i>CatDat</i> provides a growing collection of
-	<a class="accent" href="/category-list">categories</a> and
-	<a class="accent" href="/functor-list">functors</a>. Built by and for those who love
+	<i>CatDat</i> provides a growing collection of categorical structures such as
+	<a class="accent" href="/category-list">categories</a>,
+	<a class="accent" href="/functor-list">functors</a>, and
+	<a class="accent" href="/morphism-list">morphisms</a>. Built by and for those who love
 	<a href="https://en.wikipedia.org/wiki/Category_theory" target="_blank">
 		category theory
 	</a>.
@@ -47,10 +48,9 @@
 		</h3>
 
 		<p>
-			Browse a comprehensive collection of <a class="accent" href="/category-list"
-				>categories</a
-			>
-			and <a class="accent" href="/functor-list">functors</a>, each with detailed
+			Browse a comprehensive collection of categorical structures, including
+			<a class="accent" href="/category-list">categories</a> and
+			<a class="accent" href="/functor-list">functors</a>, each with detailed
 			descriptions, proofs of their properties, and related structures.
 		</p>
 	</article>
@@ -60,12 +60,11 @@
 		</h3>
 
 		<p>
-			Browse a collection of <a href="/category-properties" class="accent"
-				>properties of categories</a
-			>
-			and <a href="/functor-properties" class="accent">properties of functors</a>,
-			each with relevant results, structures satisfying or not satisfying this
-			property, and related properties.
+			Browse properties of categorical structures, including
+			<a class="accent" href="/category-properties">category properties</a> and
+			<a class="accent" href="/functor-properties">functor properties</a>, each with
+			relevant results, structures satisfying or not satisfying the property, and
+			related properties.
 		</p>
 	</article>
 
@@ -76,10 +75,11 @@
 		</h3>
 
 		<p>
-			<a class="accent" href="/category-implications">Category implications</a>
-			and <a class="accent" href="/functor-implications">functor implications</a> leverage
-			a deduction system that automatically deduces satisfied and unsatisfied properties
-			from given ones.
+			Implications between properties of categorical structures, including
+			<a class="accent" href="/category-implications">category implications</a> and
+			<a class="accent" href="/functor-implications">functor implications</a>, power
+			a deduction system that automatically infers satisfied and unsatisfied
+			properties.
 		</p>
 	</article>
 
@@ -87,10 +87,14 @@
 		<h3>
 			<Fa icon={faSearch} /> Search by properties
 		</h3>
+
 		<p>
-			Search for <a class="accent" href="/category-search"> categories </a>
-			and <a class="accent" href="/functor-search">functors</a> that satisfy specific
-			properties while not satisfying others. Inconsistent property combinations are detected.
+			Search for categorical structures such as
+			<a class="accent" href="/category-search">categories</a>
+			or
+			<a class="accent" href="/functor-search">functors</a>
+			satisfying specific properties while not satisfying others. Inconsistent property
+			combinations are detected.
 		</p>
 	</article>
 
@@ -99,9 +103,11 @@
 			<Fa icon={faChartBar} /> Compare structures
 		</h3>
 		<p>
-			Compare <a class="accent" href="/category-comparison">categories</a>
-			and <a class="accent" href="/functor-comparison">functors</a> directly to identify
-			structural similarities and differences in their properties.
+			Compare categorical structures such as
+			<a class="accent" href="/category-comparison">categories</a>
+			or
+			<a class="accent" href="/functor-comparison">functors</a>
+			to identify similarities and differences in their properties.
 		</p>
 	</article>
 

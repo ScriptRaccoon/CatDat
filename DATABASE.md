@@ -10,7 +10,7 @@ The local copy of the database is located at `/database/catdat.db`. It contains 
 - `properties`
 - `implications`
 
-The `structures` table stores data that is common to all types of categorical structures. Two types are currently supported: categories and functors. They are stored in the following table:
+The `structures` table stores data that is common to all types of categorical structures. Three types are currently supported: categories, functors, and morphisms. They are stored in the following table:
 
 - `structure_types`
 
@@ -18,6 +18,7 @@ Structure-specific data is stored in additional tables, such as:
 
 - `categories`
 - `functors`
+- `morphisms`
 
 Properties (whether satisfied or not) are associated with categorical structures via the following table:
 
@@ -30,7 +31,7 @@ To mark properties as assumptions or conclusions of an implication, there are tw
 
 These tables are abstracted through the `implications_view` view.
 
-Functor implications may also depend on properties of the domain or codomain category. Such dependencies are stored in the table:
+Functor implications may also depend on properties of the domain or codomain category. Likewise, morphism implications may depend on properties of the ambient category. Such dependencies are stored in the following table:
 
 - `mapped_assumptions`
 
@@ -46,7 +47,7 @@ pnpm db:setup
 
 deletes the old database file (if it exists) and creates a new one using this schema. This is required when the schema changes.
 
-Database entries (categories, functors, properties, implications, etc.) are defined in YAML files located in the subfolder [/database/data](/database/data/). The command
+Database entries are defined in YAML files located in the subfolder [/database/data](/database/data/). The command
 
 ```
 pnpm db:seed
@@ -76,7 +77,7 @@ The command
 pnpm db:test
 ```
 
-executes some tests and verifies that the data behaves as expected.
+executes some tests that verify that the data behaves as expected.
 
 ## One command for everything
 
@@ -108,6 +109,6 @@ to check for redundant assignments of properties to categorical structures.
 
 ## Diagram
 
-This is the database schema as of 01.07.2026; changes may occur.
+This is the database schema as of 20.07.2026; changes may occur.
 
-<img alt="database diagram" src="https://github.com/user-attachments/assets/cfde0cea-07fa-4538-8ebb-9d97b1c352cc" />
+<img alt="database diagram" src="https://github.com/user-attachments/assets/45e8704a-34d6-43e1-a08e-d9bc3908dc28" />
