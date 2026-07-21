@@ -37,6 +37,7 @@ satisfied_properties:
         type: category
         property: Malcev
         satisfied: true
+        with_proof: true
 
   - property: coextensive
     proof: One can use the same proof as for <a href="/category/CRing">$\CRing$</a>.
@@ -45,6 +46,7 @@ satisfied_properties:
         type: category
         property: coextensive
         satisfied: true
+        with_proof: true
 
 unsatisfied_properties:
   - property: skeletal
@@ -75,6 +77,7 @@ unsatisfied_properties:
         type: category
         property: regular quotient object classifier
         satisfied: false
+        with_proof: true
 
   - property: cofiltered-limit-stable epimorphisms
     proof: Let $K$ be a field over $R$. Consider the sequence of projections $\cdots \to K[X]/\langle X^2 \rangle \to K[X]/\langle X \rangle$ and the constant sequence $\cdots \to K[X] \to K[X]$. The surjective homomorphisms $K[X] \to K[X]/\langle X^n \rangle$ induce the inclusion $K[X] \hookrightarrow K[[X]]$ in the limit, where $K[[X]]$ is the algebra of formal power series. It is clearly not surjective, but this is not sufficient, we need to argue that it is not an epimorphism in $\CAlg(R)$, or equivalently, in $\CRing$. For a proof, see <a href="https://math.stackexchange.com/questions/2391187" target="_blank">MSE/2391187</a>.

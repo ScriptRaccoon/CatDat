@@ -36,6 +36,7 @@ satisfied_properties:
         type: category
         property: disjoint finite products
         satisfied: true
+        with_proof: true
 
   - property: Malcev
     proof: This follows in the same way as for <a href="/category/Grp">$\Grp$</a>, see also Example 2.2.5 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>.
@@ -44,6 +45,7 @@ satisfied_properties:
         type: category
         property: Malcev
         satisfied: true
+        with_proof: true
 
 unsatisfied_properties:
   - property: skeletal
@@ -76,18 +78,16 @@ unsatisfied_properties:
         type: category
         property: coregular
         satisfied: false
+        with_proof: true
 
   - property: regular quotient object classifier
-    proof: We may copy the proof for <a href="/category/CAlg(R)">$\CRing$</a> (since the proof there did not use that $P$ is commutative). Alternatively, any regular quotient object classifier in $\Alg(R)$ would produce one in the reflective subcategory $\CAlg(R)$ by Lemma 1 <a href="/content/subcategories">here</a> (dualized).
+    proof: We may copy the proof for <a href="/category/CAlg(R)">$\CAlg(R)$</a> (since the proof there did not use that $P$ is commutative). Alternatively, any regular quotient object classifier in $\Alg(R)$ would produce one in the reflective subcategory $\CAlg(R)$ by Lemma 1 <a href="/content/subcategories">here</a> (dualized).
     dependencies:
-      - id: CRing
-        type: category
-        property: regular quotient object classifier
-        satisfied: false
       - id: CAlg(R)
         type: category
         property: regular quotient object classifier
         satisfied: false
+        with_proof: true
 
   - property: cocartesian cofiltered limits
     proof: >-
@@ -110,6 +110,7 @@ unsatisfied_properties:
         type: category
         property: effective cocongruences
         satisfied: false
+        with_proof: true
 
 special_objects:
   initial object:
