@@ -37,6 +37,7 @@ export type PropertyEntry = {
 		type: string
 		property: string
 		satisfied: boolean
+		with_proof?: boolean
 	}[]
 }
 

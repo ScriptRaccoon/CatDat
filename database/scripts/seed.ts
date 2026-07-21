@@ -228,8 +228,9 @@ function seed_structures<T extends StructureYaml>({
 
 	const required_property_assignment_insert = db.prepare(
 		`INSERT INTO required_property_assignments (
-			required_for, structure_id, property_id, type, is_satisfied
-		) VALUES (?, ?, ?, ?, ?)`
+			required_for, structure_id, property_id,
+			type, is_satisfied, with_proof
+		) VALUES (?, ?, ?, ?, ?, ?)`
 	)
 
 	function insert_property_assignments(
@@ -253,7 +254,8 @@ function seed_structures<T extends StructureYaml>({
 					dep.id,
 					dep.property,
 					dep.type,
-					Number(dep.satisfied)
+					Number(dep.satisfied),
+					dep.with_proof !== undefined ? Number(dep.with_proof) : null
 				)
 			}
 		}

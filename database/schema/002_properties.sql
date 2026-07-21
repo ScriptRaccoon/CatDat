@@ -61,7 +61,8 @@ CREATE TABLE required_property_assignments (
     structure_id TEXT NOT NULL,
     property_id TEXT NOT NULL,
     type TEXT NOT NULL,
-    is_satisfied INTEGER CHECK (is_satisfied in (TRUE, FALSE)),
+    is_satisfied INTEGER NOT NULL CHECK (is_satisfied in (TRUE, FALSE)),
+    with_proof INTEGER CHECK (with_proof in (TRUE, FALSE)),
     FOREIGN KEY (required_for) REFERENCES structures (id) ON DELETE CASCADE,
     FOREIGN KEY (structure_id, type)
         REFERENCES structures (id, type) ON DELETE CASCADE,

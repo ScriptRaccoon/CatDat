@@ -309,13 +309,15 @@ function test_proof_dependencies() {
 				structure_id: string
 				property_id: string
 				is_satisfied: number
+				with_proof: number | null
 			}
 		>(
 			`SELECT
 				r.required_for,
 				r.structure_id,
 				r.property_id,
-				r.is_satisfied
+				r.is_satisfied,
+				r.with_proof
 			FROM required_property_assignments r
 			WHERE NOT EXISTS (
 				SELECT 1 FROM property_assignments a
@@ -323,6 +325,7 @@ function test_proof_dependencies() {
 				AND a.property_id = r.property_id
 				AND a.type = r.type
 				AND a.is_satisfied = r.is_satisfied
+				AND (r.with_proof IS NULL OR r.with_proof != a.is_deduced)
 			)`
 		)
 		.all()
@@ -332,9 +335,10 @@ function test_proof_dependencies() {
 		return
 	}
 
-	for (const { required_for, structure_id, property_id, is_satisfied } of rows) {
+	for (const row of rows) {
+		const { required_for, structure_id, property_id, is_satisfied, with_proof } = row
 		console.error(
-			`❌ ${required_for} expects ${structure_id} to ${is_satisfied === 1 ? '' : 'not '}have property "${property_id}", which could not be deduced`
+			`❌ ${required_for} expects ${structure_id} to ${is_satisfied === 1 ? '' : 'not '}have property "${property_id}" ${with_proof === 1 ? '(with proof)' : ''}, which could not be deduced`
 		)
 	}
 
