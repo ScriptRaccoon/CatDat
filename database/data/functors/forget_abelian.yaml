@@ -14,6 +14,7 @@ tags:
 related:
   - forget_group
   - forget_inverses
+  - forget_torsion_free
 
 satisfied_properties:
   - property: full

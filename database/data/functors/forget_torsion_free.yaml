@@ -1,0 +1,36 @@
+id: forget_torsion_free
+name: forgetful functor from torsion-free abelian groups
+notation: $U_{\TorsFreeAb, \Ab}$
+domain: TorsFreeAb
+codomain: Ab
+description: 'This is the inclusion functor $\TorsFreeAb \hookrightarrow \Ab$. It can also be seen as a forgetful functor which forgets the property of being torsion-free. The functor provides a typical example of a fully faithful functor that does not preserve coequalizers and does not preserve epimorphisms.'
+nlab_link: null
+left_adjoint: null
+
+tags:
+  - algebra
+  - forgetful
+
+related:
+  - forget_abelian
+  - forget_inverses
+
+satisfied_properties:
+  - property: fully faithful
+    proof: This is trivial.
+
+  - property: right adjoint
+    proof: The forgetful functor is right adjoint to the functor $\Ab \to \TorsFreeAb$ that sends an abelian group to its torsion-free reflection $A/T(A)$, where $T(A)$ is the torsion subgroup of $A$.
+
+  - property: finitary
+    proof: This comes out of the construction of filtered colimits in <a href="/category/TorsFreeAb">$\TorsFreeAb$</a>.
+
+  - property: preserves regular epimorphisms
+    proof: In both $\Ab$ and $\TorsFreeAb$, regular epimorphisms are exactly the surjective group homomorphisms.
+
+unsatisfied_properties:
+  - property: preserves epimorphisms
+    proof: 'The homomorphism $2 : \IZ \to \IZ$ is an epimorphism in $\TorsFreeAb$, but its image in $\Ab$ is not an epimorphism. See the pages for these categories for descriptions of their epimorphisms.'
+
+  - property: dominant
+    proof: Not every abelian group is torsion-free, and every subgroup of a torsion-free abelian group is torsion-free.
