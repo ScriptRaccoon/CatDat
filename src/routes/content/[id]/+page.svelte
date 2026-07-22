@@ -19,7 +19,9 @@
 	<p class="hint">Authors: {data.meta_data.authors.join(', ')}</p>
 {/if}
 
-{#if data.categories.length > 0 || data.category_properties.length > 0 || data.category_implications.length > 0}
+<!-- TODO: make this more systematic -->
+
+{#if data.categories.length > 0 || data.category_properties.length > 0 || data.category_implications.length > 0 || data.functors.length > 0}
 	<h3>Context</h3>
 
 	{#if data.categories.length > 0}
@@ -46,6 +48,12 @@
 				</li>
 			{/each}
 		</ul>
+	{/if}
+
+	{#if data.functors.length > 0}
+		<p class="hint">This page is referenced by the following functors.</p>
+
+		<StructureList structures={data.functors} type="functor" />
 	{/if}
 {/if}
 
