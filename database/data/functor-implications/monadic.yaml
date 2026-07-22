@@ -20,3 +20,13 @@
     - monadic
   proof: This is the crude monadicity theorem. A proof can be found in <a href="https://ncatlab.org/nlab/show/Sheaves+in+Geometry+and+Logic" target="_blank">Mac Lane & Moerdijk</a>, Thm. IV.4.2.
   is_equivalence: false
+
+- id: monadic_fully_faithful
+  assumptions:
+    - fully faithful
+    - right adjoint
+  conclusions:
+    - monadic
+    - left-invertible
+  proof: A direct proof of monadicity is possible and straight forward. Alternatively, one can use <a href="https://ncatlab.org/nlab/show/monadicity+theorem" target="_blank">Beck's monadicity theorem</a>, since a fully faithful functor $U$ is conservative and creates coequalizers of $U$-split pairs. For the left adjoint $L$ the counit $L \circ U \to \id$ is an isomorphism (since $U$ is fully faithful, see Prop. 3.4 at the <a href="https://ncatlab.org/nlab/show/adjoint+functor#FullyFaithfulAndInvertibleAdjoints" target="_blank">nLab</a>), which shows that $U$ is left-invertible.
+  is_equivalence: false
