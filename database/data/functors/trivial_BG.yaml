@@ -1,0 +1,21 @@
+id: trivial_BG
+name: trivial functor from the delooping
+notation: $!_{BG}$
+domain: BG_f
+codomain: '1'
+description: 'Every category $\C$ has a unique functor $!_{\C} : \C \to 1$ into the trivial category. Here, we specify that $\C$ is the delooping of a non-trivial finite group $G$. It is a basic example of a conservative functor which is not faithful.'
+nlab_link: null
+left_adjoint: null
+
+tags:
+  - algebra
+
+related:
+  - trivial_groups
+  - trivial_sets
+
+satisfied_properties: []
+
+unsatisfied_properties:
+  - property: faithful
+    proof: This is trivial.
