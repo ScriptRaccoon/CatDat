@@ -1,0 +1,30 @@
+id: trivial_Idem
+name: trivial functor from the walking idempotent
+notation: $!_{\Idem}$
+domain: walking_idempotent
+codomain: '1'
+description: 'Every category $\C$ has a unique functor $!_{\C} : \C \to 1$ into the trivial category. Here, we specify that $\C$ is the walking idempotent. It is a basic example of an essentially injective functor which is not conservative.'
+nlab_link: null
+left_adjoint: null
+
+tags:
+  - category theory
+
+related:
+  - trivial_groups
+  - trivial_sets
+  - trivial_BG
+
+satisfied_properties: []
+
+unsatisfied_properties:
+  - property: conservative
+    proof: The universal idempotent is mapped to an isomorphism, but is not an isomorphism.
+
+  - property: left adjoint
+    # TODO: refactor this once functor implications support category conclusions
+    proof: A functor $1 \to \C$ which is right adjoint to $\Idem \to 1$ provides a terminal object in <a href="/category/walking_idempotent">$\Idem$</a>, which does not exist.
+
+  - property: right adjoint
+    # TODO: refactor this once functor implications support category conclusions
+    proof: A functor $1 \to \C$ which is left adjoint to $\Idem \to 1$ provides an initial object in <a href="/category/walking_idempotent">$\Idem$</a>, which does not exist.
