@@ -1,6 +1,6 @@
 import { get_rendered_content } from '$lib/server/markdown'
 import { error } from '@sveltejs/kit'
-import { fetch_category_references } from '$lib/server/fetchers/content'
+import { fetch_content_references } from '$lib/server/fetchers/content'
 
 export const load = (event) => {
 	const id = event.params.id
@@ -8,7 +8,7 @@ export const load = (event) => {
 	const content = get_rendered_content(id)
 	if (!content) error(404, 'Not Found')
 
-	const category_references = fetch_category_references(id)
+	const references = fetch_content_references(id)
 
-	return { ...content, ...category_references }
+	return { ...content, ...references }
 }

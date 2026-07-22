@@ -1,13 +1,25 @@
 import type { PropertyShort, StructureShort } from '$lib/commons/types'
 import { db } from '$lib/server/db'
 
-export function fetch_category_references(content_id: string) {
+export function fetch_content_references(content_id: string) {
+	// TODO: make this more systematic
+
 	const categories = db
 		.prepare<[string], StructureShort>(
 			`SELECT DISTINCT s.id, s.name
 	        FROM property_assignments pa
 	        INNER JOIN structures s ON s.id = pa.structure_id
 	        WHERE pa.type = 'category'
+	        AND pa.proof LIKE '%/content/' || ? || '%'`
+		)
+		.all(content_id)
+
+	const functors = db
+		.prepare<[string], StructureShort>(
+			`SELECT DISTINCT s.id, s.name
+	        FROM property_assignments pa
+	        INNER JOIN structures s ON s.id = pa.structure_id
+	        WHERE pa.type = 'functor'
 	        AND pa.proof LIKE '%/content/' || ? || '%'`
 		)
 		.all(content_id)
@@ -28,5 +40,5 @@ export function fetch_category_references(content_id: string) {
 		)
 		.all(content_id)
 
-	return { categories, category_properties, category_implications }
+	return { categories, category_properties, category_implications, functors }
 }
