@@ -15,6 +15,7 @@ related:
   - forget_group
   - forget_abelian
   - forget_group_pointed
+  - forget_torsion_free
 
 satisfied_properties:
   - property: full
