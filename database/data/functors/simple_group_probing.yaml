@@ -1,0 +1,58 @@
+id: simple_group_probing
+name: simple-group probing functor
+notation: $F$
+domain: Grp
+codomain: Set
+description: >-
+  This functor maps a group $G$ to the collection
+  $$F(G) := \textstyle\prod_{\kappa} \Hom(L_\kappa,G),$$
+  where $\kappa$ ranges over all infinite cardinals and $L_\kappa$ is an infinite simple group of cardinality $\kappa$; we choose $L_\kappa := \Alt_{\fin}(\kappa)$ to make things concrete. For each $G$, the collection $F(G)$ is isomorphic to a set, since for $\kappa > \card(G)$ every homomorphism $L_\kappa \to G$ is trivial. Thus, a more precise definition would be
+  $$F(G) := \textstyle\prod_{\kappa \leq \card(G)} \Hom(L_\kappa,G),$$
+  but the first definition makes it more apparent that $F$ is a functor.
+  This is the canonical example of a continuous functor $\Grp \to \Set$ that is not representable, and not a right adjoint.
+nlab_link: null
+left_adjoint: null
+
+tags:
+  - algebra
+
+related: []
+
+satisfied_properties:
+  - property: continuous
+    proof: It is a product of representable functors.
+
+unsatisfied_properties:
+  - property: right adjoint
+    # TODO: refactor this once functor implications may have category equality assumptions
+    proof: 'If $F : \Grp \to \Set$ is right adjoint to $G : \Set \to \Grp$, then $F$ is representable with representing object $U := G(1)$. Let $u \in F(U)$ be a universal element, consisting of homomorphisms $u_\kappa : L_\kappa \to U$. Choose an infinite cardinal $\kappa > \card(U)$. Then $u_\kappa$ must be trivial. The set $F(L_\kappa) = \prod_{\lambda \leq \kappa} \Hom(L_\lambda,L_\kappa)$ contains the element $x$ whose $\kappa$-component is $\id_{L_\kappa}$ and all other components are trivial. Since $u \in F(U)$ is universal, there is a unique homomorphism $f : U \to L_\kappa$ such that $F(f)(u) = x$ in $F(L_\kappa)$. The $\kappa$-component of this equality is $f \circ u_\kappa = \id_{L_\kappa}$. Thus, $u_\kappa$ is injective, contradicting our previous observation that $u_\kappa$ is trivial and the fact that $L_\kappa$ is non-trivial.'
+
+  # TODO: refactor this once functor implications may have category conclusions
+  # here: if a functor preserves terminal objects, and the domain is pointed,
+  # then the codomain is pointed as well.
+  - property: preserves initial objects
+    proof: The functor maps the trivial group to the singleton set, which is not initial.
+
+  - property: preserves binary coproducts
+    proof: The canonical map $F(1) \sqcup F(1) \to F(1 \sqcup 1) = F(1)$ is not injective, since $F(1)$ has one element, whereas $F(1) \sqcup F(1)$ has two elements.
+
+  - property: essentially injective
+    proof: Every finite group is mapped to a singleton set.
+
+  - property: faithful
+    proof: If $G$ is a non-trivial finite group, the trivial homomorphism $G \to G$ and the identity of $G$ are mapped to the same map, because $F(G)$ is a singleton set.
+
+  - property: dominant
+    proof: There is no group $G$ with a split monomorphism $\varnothing \to F(G)$, since $F(G)$ is not empty. In fact, using trivial homomorphisms $L_\kappa \to G$, we may regard $F(G)$ as a pointed set.
+
+  - property: preserves epimorphisms
+    proof: >-
+      We first prove that if $G$ is a torsion-free group, then the pointed set $F(G)$ is trivial, i.e. a singleton set. In fact, our explicit choice $L_\kappa = \Alt_{\fin}(\kappa)$ implies that $L_\kappa$ is a filtered colimit of finite groups and is therefore a torsion group, which implies that every homomorphism $L_\kappa \to G$ is trivial.
+
+      Now choose a free group $G$ that admits an epimorphism $G \to L_{\alpha_0}$. The induced map $F(G) \to F(L_{\alpha_0})$ is not an epimorphism, since otherwise $F(L_{\alpha_0})$ would be trivial, but $(\id_{L_{\alpha_0}},1,1,\dotsc)$ is a non-trivial element.
+
+  - property: full
+    proof: 'We already mentioned that $F(G)$ can be regarded as a pointed set. Every homomorphism $G \to H$ induces a pointed map $F(G) \to F(H)$. (Thus, the functor should really be regarded as a functor to $\Set_*$, but in this entry, the codomain is $\Set$, which makes life easier.) Thus, it suffices to find a group $G$ with a non-pointed map $F(G) \to F(G)$, which of course exists as soon as $F(G)$ is non-trivial. But we already saw that each $F(L_\kappa)$ is non-trivial.'
+
+  - property: finitary
+    proof: By our explicit choice of $L_{\aleph_0}$, it is a filtered colimit of finite groups $(\Alt(n))_{n \in \IN}$. But $F(L_{\aleph_0})$ is not the filtered colimit of the sets $F(\Alt(n))$, since these are singleton sets.

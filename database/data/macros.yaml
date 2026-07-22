@@ -36,6 +36,7 @@
 \fp: \mathrm{fp}
 \ab: \mathrm{ab}
 \reg: \mathrm{reg}
+\fin: \mathrm{fin}
 
 # operators
 \Mor: \operatorname{Mor}
@@ -61,6 +62,7 @@
 \cod: \operatorname{cod}
 \rank: \operatorname{rank}
 \Gal: \operatorname{Gal}
+\Alt: \operatorname{Alt}
 
 # categories
 \Set: \mathbf{Set}
