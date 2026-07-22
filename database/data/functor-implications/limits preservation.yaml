@@ -223,3 +223,16 @@
     - preserves equalizers
   proof: This is trivial.
   is_equivalence: false
+
+- id: thin_binary_product_preservation
+  assumptions: []
+  mapped_assumptions:
+    domain:
+      - thin
+      - semi-strongly connected
+    codomain:
+      - thin
+  conclusions:
+    - preserves binary products
+  proof: 'It is enough to prove that if $P$ is a linearly ordered set and $Q$ is a partially ordered set, then any order-preserving map $f : P \to Q$ preserves binary meets. Let $x,y \in P$. We may assume $x \leq y$. Then $x \wedge y = x$. Since we also have $f(x) \leq f(y)$, we have $f(x) \wedge f(y) = f(x)$. Therefore, $f(x \wedge y) = f(x) = f(x) \wedge f(y)$ holds.'
+  is_equivalence: false

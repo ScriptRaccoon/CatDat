@@ -159,3 +159,25 @@
     - full on isomorphisms
   proof: This is trivial.
   is_equivalence: false
+
+- id: thin_dominant_functor
+  # TODO: rework this once we add "split-mono trivial"
+  assumptions:
+    - dominant
+  mapped_assumptions:
+    codomain:
+      - regular-subobject-trivial
+  conclusions:
+    - essentially surjective
+  proof: This is trivial since every split monomorphism in the codomain is an isomorphism.
+  is_equivalence: false
+
+- id: automatic_preserves_mono
+  assumptions: []
+  mapped_assumptions:
+    codomain:
+      - left cancellative
+  conclusions:
+    - preserves monomorphisms
+  proof: This is trivial since every morphism in the codomain is a monomorphism.
+  is_equivalence: false
