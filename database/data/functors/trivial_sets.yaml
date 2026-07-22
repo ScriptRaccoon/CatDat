@@ -1,6 +1,6 @@
 id: trivial_sets
 name: trivial functor from the category of sets
-notation: $!$
+notation: $!_\Set$
 domain: Set
 codomain: '1'
 description: 'Every category $\C$ has a unique functor $! : \C \to 1$ into the trivial category. Here, we specify that $\C$ is the category of sets.'
@@ -13,12 +13,7 @@ tags:
 related:
   - trivial_groups
 
-satisfied_properties:
-  - property: coreflector
-    proof: 'The constant functor $1 \to \Set$ with value $\varnothing$ is a left adjoint of $! : \Set \to 1$ and fully faithful; this is because $\varnothing$ is an initial object of $\Set$.'
-
-  - property: reflector
-    proof: 'The constant functor $1 \to \Set$ with value $\{\ast\}$ is a right adjoint of $! : \Set \to 1$ and fully faithful; this is because $\{\ast\}$ is a terminal object of $\Set$.'
+satisfied_properties: []
 
 unsatisfied_properties:
   - property: faithful
