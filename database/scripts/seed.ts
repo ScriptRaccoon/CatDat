@@ -452,7 +452,7 @@ function seed_implications({ type, folder }: { type: StructureType; folder: stri
 
 	function insert_implications(implications: ImplicationYaml[]) {
 		for (const impl of implications) {
-			if (!impl.assumptions.length) {
+			if (!impl.assumptions.length && !impl.mapped_assumptions) {
 				console.error(`❌ Implication ${impl.id} has no assumptions.`)
 				process.exit(1)
 			}
