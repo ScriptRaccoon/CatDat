@@ -78,3 +78,72 @@
     - dominant
   proof: This is trivial.
   is_equivalence: false
+
+- id: surjective_functor_to_core_connected_category
+  assumptions: []
+  mapped_assumptions:
+    domain:
+      - inhabited
+    codomain:
+      - core-connected
+  conclusions:
+    - essentially surjective
+  proof: 'Let $F : \C \to \D$ be a functor from an inhabited category to a core-connected category. Choose any object $X \in \C$. For every $Y \in \D$ we have $Y \cong F(X)$. Thus, $F$ is essentially surjective.'
+  is_equivalence: false
+
+- id: right_invertible_functor_to_trivial_category
+  assumptions: []
+  mapped_assumptions:
+    domain:
+      - inhabited
+    codomain:
+      - trivial
+  conclusions:
+    - right-invertible
+  proof: 'Let $\C$ be an inhabited category and let $F : \C \to 1$ be the unique functor to the trivial category. Choose any object $X \in \C$. Then the constant functor $X : 1 \to \C$ satisfies $F \circ X = \id_1$.'
+  is_equivalence: false
+
+- id: full_functor_to_trivial_category
+  # TODO: add the converse once we have category_conclusions
+  assumptions: []
+  mapped_assumptions:
+    domain:
+      - strongly connected
+    codomain:
+      - trivial
+  conclusions:
+    - full
+  proof: 'Let $\C$ be a strongly connected category. Then the unique functor $F : \C \to 1$ to the trivial category is full: for all $X,Y \in \C$ the map $\Hom(X,Y) \to \Hom(F(X),F(Y))$ is surjective since its domain is non-empty and its codomain is a singleton set.'
+  is_equivalence: false
+
+- id: functor_conservative_on_groupoids
+  assumptions: []
+  mapped_assumptions:
+    domain:
+      - groupoid
+  conclusions:
+    - conservative
+  proof: This is trivial.
+  is_equivalence: false
+
+- id: automatic_ess_injective_functors
+  assumptions: []
+  mapped_assumptions:
+    domain:
+      - core-connected
+  conclusions:
+    - essentially injective
+  proof: This is trivial.
+  is_equivalence: false
+
+- id: automatic_full_on_isos_functors
+  assumptions: []
+  mapped_assumptions:
+    domain:
+      - core-connected
+    codomain:
+      - trivial
+  conclusions:
+    - full on isomorphisms
+  proof: This is trivial.
+  is_equivalence: false

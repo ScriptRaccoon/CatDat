@@ -15,6 +15,7 @@ related: []
 satisfied_properties:
   - property: fully faithful
     proof: This is trivial.
+    check_redundancy: false
 
   - property: essentially surjective
     proof: The object $0$ is in the image, and the other object $1$ is isomorphic to $0$.

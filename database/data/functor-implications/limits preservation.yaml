@@ -203,3 +203,23 @@
     - regular
   proof: This holds by definition of a regular functor.
   is_equivalence: true
+
+- id: trivial_functors_continuous
+  assumptions: []
+  mapped_assumptions:
+    codomain:
+      - trivial
+  conclusions:
+    - continuous
+  proof: 'We need to show that for every category $\C$ the unique functor $!_{\C} : \C \to 1$ into the trivial category is continuous. This easy to verify directly because in the trivial category every limit is, well, trivial. More generally, for every category $\C$ and every set $S$ the diagonal functor $\Delta : \C \to \C^S$ is continuous. Here we apply this to $S = \varnothing$ so that $\C^S$ is the trivial category.'
+  is_equivalence: false
+
+- id: automatically_preserve_equalizers
+  assumptions: []
+  mapped_assumptions:
+    domain:
+      - regular-subobject-trivial
+  conclusions:
+    - preserves equalizers
+  proof: This is trivial.
+  is_equivalence: false
