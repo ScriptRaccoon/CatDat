@@ -30,3 +30,15 @@
     - right-invertible
   proof: 'If $F : \C \to \D$ is a reflector, it is left adjoint to a fully faithful functor $G : \D \to \C$. Thus, the counit $\varepsilon : F \circ G \to \id_{\D}$ is an isomorphism (Prop. 3.4 at the <a href="https://ncatlab.org/nlab/show/adjoint+functor#FullyFaithfulAndInvertibleAdjoints" target="_blank">nLab</a>). This shows that $G$ is a right inverse of $F$.'
   is_equivalence: false
+
+- id: representable_right_adjoint
+  assumptions:
+    - representable
+  mapped_assumptions:
+    domain:
+      - locally essentially small
+      - coproducts
+  conclusions:
+    - right adjoint
+  proof: 'If $\C$ is a locally small category with coproducts and $X \in \C$ is any object, then the copower functor $\Set \to \C$, $T \mapsto T \otimes X$ is left adjoint to $\Hom(X,-) : \C \to \Set$.'
+  is_equivalence: false
