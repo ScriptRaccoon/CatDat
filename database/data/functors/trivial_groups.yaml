@@ -13,9 +13,7 @@ tags:
 related:
   - trivial_sets
 
-satisfied_properties:
-  - property: full
-    proof: This follows easily from the fact that <a href="/category/Grp">$\Grp$</a> is strongly connected.
+satisfied_properties: []
 
 unsatisfied_properties:
   - property: essentially injective
