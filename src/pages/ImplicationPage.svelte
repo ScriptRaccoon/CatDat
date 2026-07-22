@@ -53,7 +53,7 @@
 		{/each},
 		{#if implication.is_equivalence}
 			it
-		{:else}
+		{:else if implication.assumptions.length > 0}
 			if it
 		{/if}
 	{:else if implication.is_equivalence}
@@ -70,7 +70,7 @@
 	{/each}{#if implication.is_equivalence}
 		&nbsp;if and only if it
 	{:else}
-		, then it
+		{#if implication.assumptions.length},{/if} then it
 	{/if}
 	{#each implication.conclusions as property, index}
 		{property_relation_dict[type][property]}

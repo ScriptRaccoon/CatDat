@@ -6,16 +6,19 @@ import { type NormalizedImplication } from '$shared/implications'
 function get_assumption_string(
 	implication: NormalizedImplication,
 	properties_dict: Record<string, PropertyMeta>,
+	type: StructureType,
 	conditional = false
 ): string {
 	const { assumptions } = implication
 
-	const own = Array.from(assumptions)
-		.map(
-			(assumption) =>
-				`${properties_dict[assumption][conditional ? 'conditional_relation' : 'relation']} ${get_property_label(assumption)}`
-		)
-		.join(' and ')
+	const own = assumptions.size
+		? Array.from(assumptions)
+				.map(
+					(assumption) =>
+						`${properties_dict[assumption][conditional ? 'conditional_relation' : 'relation']} ${get_property_label(assumption)}`
+				)
+				.join(' and ')
+		: `is a ${type}`
 
 	if (!implication.mapped_assumptions) return own
 
@@ -44,10 +47,11 @@ export function get_proof_string(
 	properties_dict: Record<string, PropertyMeta>,
 	type: StructureType
 ) {
-	const assumption_string = get_assumption_string(implication, properties_dict)
+	const assumption_string = get_assumption_string(implication, properties_dict, type)
 	const conclusion_string = get_conclusion_string(implication, properties_dict)
 
 	const ref = `by <a href="/${type}-implication/${implication.id}">this result</a>`
+
 	return `Since it ${assumption_string}, it ${conclusion_string} (${ref}).`
 }
 
@@ -57,7 +61,12 @@ export function get_contradiction_string(
 	property: string,
 	type: StructureType
 ) {
-	const assumption_string = get_assumption_string(implication, properties_dict, true)
+	const assumption_string = get_assumption_string(
+		implication,
+		properties_dict,
+		type,
+		true
+	)
 	const conclusion_string = get_conclusion_string(implication, properties_dict, true)
 
 	const has_multiple_assumptions =
