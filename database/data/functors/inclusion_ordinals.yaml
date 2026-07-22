@@ -1,0 +1,27 @@
+id: inclusion_ordinals
+name: inclusion functor from extended natural numbers to ordinal numbers
+notation: $\iota$
+domain: N_oo
+codomain: On
+description: 'This is the inclusion map from the partially ordered set $(\IN \cup \{\infty\},\leq)$ (considered as a thin category as usual) into the partially ordered collection $(\On,\leq)$, where we map $\infty$ to the ordinal $\omega$. It is an example of a functor that preserves binary products, but not terminal objects.'
+nlab_link: https://ncatlab.org/nlab/show/identity+functor
+left_adjoint: null
+
+tags:
+  - set theory
+
+related: []
+
+satisfied_properties:
+  - property: fully faithful
+    proof: This is trivial.
+
+  - property: preserves coproducts
+    proof: The map preserves suprema by construction.
+
+  - property: cofinitary
+    proof: More generally, the functor preserves all non-empty indexed limits, because the map of partially ordered sets preserves all non-empty indexed infima.
+
+unsatisfied_properties:
+  - property: preserves terminal objects
+    proof: The terminal object is mapped to $\omega$, which is not terminal. In fact, $\On$ has no terminal object at all.
