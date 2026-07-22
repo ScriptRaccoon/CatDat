@@ -1,0 +1,36 @@
+id: span_endpoints_inclusion
+name: span endpoints inclusion
+notation: $E$
+domain: '2'
+codomain: walking_span
+description: This is the functor that embeds the discrete category $\{1,2\}$ into the walking span $\{1 \leftarrow 0 \rightarrow 2\}$. Among other things, it provides an example of a fully faithful functor which is not left-invertible.
+nlab_link: null
+left_adjoint: null
+
+tags:
+  - category theory
+
+related: []
+
+satisfied_properties:
+  - property: fully faithful
+    proof: This is trivial.
+
+  - property: continuous
+    proof: This follows from Lemma 2 <a href="/content/functors_on_discrete_categories">here</a>.
+
+  - property: cocontinuous
+    proof: This follows from the dual of Lemma 2 <a href="/content/functors_on_discrete_categories">here</a>.
+
+unsatisfied_properties:
+  - property: dominant
+    proof: The object $0 \in \Span$ does not admit a split monomorphism to either $1$ or $2$.
+
+  - property: left-invertible
+    proof: 'Assume that there is a functor $F : \Span \to \{1,2\}$ with $F(E(X)) \cong X$ for $X \in \{1,2\}$. Thus, $F(1) = 1$ and $F(2) = 2$. There are two possible choices for $F(0)$. Without loss of generality, assume that $F(0) = 1$. Then the morphism $0 \to 2$ in the walking span induces a morphism $1 = F(0) \to F(2) = 2$ in the discrete category, but no such morphism exists.'
+
+  - property: right adjoint
+    proof: This follows from Corollary 4 <a href="/content/functors_on_discrete_categories">here</a>.
+
+  - property: left adjoint
+    proof: This follows from the dual of Corollary 4 <a href="/content/functors_on_discrete_categories">here</a>.
