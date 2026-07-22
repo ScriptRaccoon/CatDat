@@ -18,6 +18,7 @@ satisfied_properties:
 
   - property: essentially surjective
     proof: The object $0$ is in the image, and the other object $1$ is isomorphic to $0$.
+    check_redundancy: false
 
 unsatisfied_properties:
   - property: isomorphism

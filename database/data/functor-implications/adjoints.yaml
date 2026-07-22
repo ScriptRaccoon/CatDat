@@ -42,3 +42,15 @@
     - right adjoint
   proof: 'If $\C$ is a locally small category with coproducts and $X \in \C$ is any object, then the copower functor $\Set \to \C$, $T \mapsto T \otimes X$ is left adjoint to $\Hom(X,-) : \C \to \Set$.'
   is_equivalence: false
+
+- id: initial_object_as_left_adjoint
+  assumptions: []
+  mapped_assumptions:
+    domain:
+      - initial object
+    codomain:
+      - trivial
+  conclusions:
+    - coreflector
+  proof: 'Let $F : \C \to 1$ be the unique functor into the trivial category, and assume that $\C$ has an initial object $X$. Then the constant functor $X : 1 \to \C$ is fully faithful and left adjoint to $F$ because $\Hom(X(*),Y) \cong * \cong \Hom(*,F(Y))$.'
+  is_equivalence: false
