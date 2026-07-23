@@ -65,6 +65,7 @@
 \Gal: \operatorname{Gal}
 \Alt: \operatorname{Alt}
 \Open: \operatorname{Open}
+\Id: \operatorname{Id}
 
 # categories
 \Set: \mathbf{Set}

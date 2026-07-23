@@ -1,0 +1,42 @@
+id: ring_idempotents
+name: ring idempotents functor
+notation: $\Id$
+domain: Ring
+codomain: Set
+description: This functor sends a ring $R$ to its set $\Id(R)$ of idempotent elements. A ring homomorphism $R \to S$ restricts to a map $\Id(R) \to \Id(S)$. Among other things, it provides an example of a representable functor that does not preserve regular epimorphisms.
+nlab_link: null
+left_adjoint: null
+
+tags:
+  - algebra
+
+related: []
+
+satisfied_properties:
+  - property: representable
+    proof: 'The functor is represented by the ring $\IZ[X] / \langle X^2 - X \rangle$.'
+
+  - property: finitary
+    proof: This is immediate from the construction of filtered colimits in $\Ring$ and $\Set$. Alternatively, this follows from the fact that $\IZ[X] / \langle X^2 - X \rangle$ is a finitely presentable object, since it has a finite presentation in the algebraic theory of rings.
+
+unsatisfied_properties:
+  - property: faithful
+    proof: 'If $R$ is any integral domain, then $\Id(R) = \{0,1\}$ has exactly two elements, and if $f : R \to S$ is a homomorphism between integral domains, then the induced map on idempotents is $0 \mapsto 0$ and $1 \mapsto 1$, regardless of how $f$ is defined. Thus, for example, the two ring homomorphisms $\IZ[T] \rightrightarrows \IZ[T]$, $T \mapsto \pm T$, provide a counterexample.'
+
+  - property: full
+    proof: 'We have $\Id(\IZ) = \{0,1\}$, and the constant map $0 : \{0,1\} \to \{0,1\}$ is not induced by a ring homomorphism $\IZ \to \IZ$ (which must be the identity anyway).'
+
+  - property: essentially injective
+    proof: If $R$ is any integral domain, then $\Id(R) = \{0,1\}$ has exactly two elements. Thus, for example, $\Id(\IZ) \cong \Id(\IQ)$, while $\IZ \not\cong \IQ$.
+
+  - property: dominant
+    proof: There is no ring $R$ with a split monomorphism $\varnothing \hookrightarrow \Id(R)$ since $\Id(R)$ is non-empty. (At least, for every set $X$ there is a ring $R$ with a monomorphism $X \hookrightarrow \Id(R)$.)
+
+  - property: preserves initial objects
+    proof: The initial ring is $\IZ$, and its set of idempotent elements is $\{0,1\}$, which is not the empty set.
+
+  - property: preserves binary coproducts
+    proof: The canonical map $\Id(\IZ) \sqcup \Id(\IZ) \to \Id(\IZ \sqcup \IZ)$, where $\sqcup$ denotes the coproduct in the respective categories, is not an isomorphism, since $\Id(\IZ \sqcup \IZ) = \Id(\IZ) = \{0,1\}$, while $\Id(\IZ) \sqcup \Id(\IZ) = \{0,1\} \sqcup \{0,1\}$ has four elements.
+
+  - property: preserves regular epimorphisms
+    proof: 'The unique ring homomorphism $p : \IZ \to \IZ/6$ is surjective and therefore a regular epimorphism. However, the induced map $\Id(p) : \Id(\IZ) \to \Id(\IZ/6)$ is not surjective: We have $\Id(\IZ) = \{0,1\}$, while $\Id(\IZ/6) = \{0,1,3,4\}$.'
