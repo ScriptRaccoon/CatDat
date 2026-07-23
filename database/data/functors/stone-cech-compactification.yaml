@@ -1,0 +1,47 @@
+id: stone-cech-compactification
+name: Stone-Čech compactification functor
+notation: $\beta$
+domain: Top
+codomain: CompHaus
+description: >-
+  This is the functor $\beta : \Top \to \CompHaus$ that is left adjoint to the inclusion functor $\CompHaus \hookrightarrow \Top$. There are various constructions (see <a href="https://en.wikipedia.org/wiki/Stone%E2%80%93%C4%8Cech_compactification" target="_blank">Wikipedia</a>), one being that $\beta(X)$ is the closure of the image of the canonical map
+  $$X \to [0,1]^{\Hom(X,[0,1])}.$$
+  Among other things, this functor provides an example of a reflector that does not preserve binary products.
+nlab_link: https://ncatlab.org/nlab/show/Stone-%C4%8Cech+compactification
+left_adjoint: null
+
+tags:
+  - topology
+
+related: []
+
+satisfied_properties:
+  - property: reflector
+    proof: See for example Theorem 5.2 at the <a href="https://ncatlab.org/nlab/show/compact+Hausdorff+space" target="_blank">nLab</a>.
+
+unsatisfied_properties:
+  - property: essentially injective
+    proof: If $X$ is a non-empty indiscrete space, then $\beta(X)$ has only one point.
+
+  - property: faithful
+    proof: If $X$ is an indiscrete space with $n \geq 2$ points, then $\Hom(X,X)$ has $n^n$ elements, but $\Hom(\beta(X),\beta(X))$ has exactly one element, and $n^n > 1$.
+
+  - property: full
+    proof: By Prop. 3.4 at the <a href="https://ncatlab.org/nlab/show/adjoint+functor#FullyFaithfulAndInvertibleAdjoints" target="_blank">nLab</a>, the left adjoint $\beta$ is full if and only if the unit morphism $X \to \beta(X)$ is a split epimorphism in $\Top$ for every $X \in \Top$. But if $X$ is a Tychonoff space, $X \to \beta(X)$ is a monomorphism, so it can only be a split epimorphism when it is an isomorphism, i.e. that $X$ is compact. Thus, $X := \IN$ provides a concrete counterexample.
+
+  - property: preserves regular monomorphisms
+    proof: >-
+      Consider the discrete space $\IN$ of natural numbers. The continuous map $\IN \hookrightarrow \IN \cup \{\infty\}$ into its one-point compactification is an embedding, hence a regular monomorphism in $\Top$, but its image $\beta(\IN) \to \beta(\IN \cup \{\infty\}) \cong \IN \cup \{\infty\}$ cannot be injective, for example since $\beta(\IN)$ is uncountable (more precisely, it has cardinality $2^{2^{\aleph_0}}$, see for example Theorem 3.1 at the <a href="https://ncatlab.org/nlab/show/independent+family+of+sets" target="_blank">nLab</a>).
+
+      Alternatively, if we view $\beta(\IN)$ as the set of ultrafilters on $\IN$, the map sends the principal ultrafilter $[n]$ to $n$, and every other ultrafilter to $\infty$. So it suffices to construct two non-principal ultrafilters on $\IN$. Let $X$ be the set of even and $Y$ be the set of odd numbers. Then the family containing $X$ and all cofinite subsets of $\IN$ has the finite intersection property, hence is contained in an ultrafilter $U_X$. Similarly, there is an ultrafilter $U_Y$. Then $X \cap Y = \varnothing$ implies $X \in U_X \setminus U_Y$.
+
+  - property: cofinitary
+    proof: >-
+      Let $S : \IN \to \IN$ be the successor map. In $\Top$, the limit of the sequence
+      $$\cdots \xrightarrow{S} \IN \xrightarrow{S} \IN$$
+      is empty. Hence, $\beta$ of that limit is also empty. However, the limit of the sequence
+      $$\cdots \xrightarrow{\beta(S)} \beta(\IN) \xrightarrow{\beta(S)} \beta(\IN)$$
+      in $\CompHaus$ is not empty by Lemma 1 <a href="/content/comphaus_copresentable">here</a>.
+
+  - property: preserves binary products
+    proof: The canonical map $\beta(\IN \times \IN) \to \beta(\IN) \times \beta(\IN)$, where $\IN$ carries the discrete topology, is not a homeomorphism. See Glicksberg, <a href="https://doi.org/10.1090/S0002-9947-1959-0105667-4" target="_blank">Stone-Čech compactifications of products</a>, where it shown for infinite completely regular spaces $X,Y$ that $\beta(X \times Y) \to \beta(X) \times \beta(Y)$ is a homeomorphism if and only if $X \times Y$ is <a href="https://en.wikipedia.org/wiki/Pseudocompact_space" target="_blank">pseudo-compact</a>.
