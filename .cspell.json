@@ -18,7 +18,8 @@
 		"coloneqq",
 		"FiltVect",
 		"networkidle",
-		"devlog"
+		"devlog",
+		"cech"
 	],
 	"words": [
 		"abelian",
@@ -79,6 +80,7 @@
 		"cofiltering",
 		"cofinal",
 		"cofinitary",
+		"cofinite",
 		"cofull",
 		"cogenerates",
 		"cogenerating",
@@ -92,6 +94,7 @@
 		"comonadic",
 		"comonadicity",
 		"compactification",
+		"compactifications",
 		"conormal",
 		"copower",
 		"copowers",
@@ -156,6 +159,7 @@
 		"functorial",
 		"functors",
 		"Gillam",
+		"Glicksberg",
 		"grothendieck",
 		"Grothendieck",
 		"Groupes",
