@@ -14,6 +14,7 @@ related:
   - id_Set
   - binary_coproduct_sets
   - doubling_sets
+  - rational_product
 
 satisfied_properties:
   - property: preserves equalizers
