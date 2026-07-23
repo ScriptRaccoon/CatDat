@@ -1,0 +1,33 @@
+id: walking_morphism_representation
+name: walking morphism representation
+notation: $F$
+domain: walking_morphism
+codomain: Set
+description: This is the functor $I \to \Set$ that maps the universal morphism $0 \to 1$ to the unique map $\varnothing \to \{*\}$ in $\Set$. It provides a very simple example of a functor that preserves coequalizers (and hence regular epimorphisms) but does not preserve epimorphisms.
+nlab_link: null
+left_adjoint: null
+
+tags:
+  - category theory
+
+related: []
+
+satisfied_properties:
+  - property: representable
+    proof: The functor is isomorphic to $\Hom(1,-)$, since $\Hom(1,0) = \varnothing$ and $\Hom(1,1) = \{\id_1\}$.
+
+  - property: fully faithful
+    proof: This is easy to check.
+
+  - property: preserves initial objects
+    proof: The functor maps $0 \mapsto \varnothing$.
+
+  - property: finitary
+    proof: A direct proof is possible, but we can also use the representation of $I$ as the category of algebras for the finitary algebraic theory having just one equation $x=y$. Then the functor $I \to \Set$ is just its forgetful functor, and is therefore finitary.
+
+unsatisfied_properties:
+  - property: preserves epimorphisms
+    proof: The universal morphism $0 \to 1$ is an epimorphism in $I$ (simply because $I$ is thin), but its image $\varnothing \to \{*\}$ in $\Set$ is not an epimorphism.
+
+  - property: dominant
+    proof: This is trivial.
