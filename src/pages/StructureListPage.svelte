@@ -34,15 +34,6 @@
 <section>
 	<h2>List of {PLURALS[type]}</h2>
 
-	{#if type === 'functor'}
-		<!-- TODO: remove this later -->
-		<p>
-			<Fa icon={faInfoCircle} />
-			The functor application is still in its early stages. More functors will be added
-			soon.
-		</p>
-	{/if}
-
 	{#if type === 'morphism'}
 		<!-- TODO: remove this later -->
 		<p>
