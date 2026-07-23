@@ -92,14 +92,14 @@
 {#each STRUCTURE_TYPES as type}
 	{@const combinations = data.missing_combinations[type]}
 
-	{#if combinations.length > 0}
-		<section>
-			<h3>Missing {type} combinations</h3>
+	<section>
+		<h3>Missing {type} combinations</h3>
 
+		{#if combinations.length}
 			<p class="hint">
-				Among the consistent {type} combinations of the form p &and; &not;q, the following
-				are not yet witnessed by a {type} in the database or its dual. If some of these
-				combinations <i>are</i>
+				Among the consistent {type} property combinations of the form p &and; &not;q,
+				the following are not yet witnessed by a {type} in the database or its dual.
+				If some of these combinations <i>are</i>
 				inconsistent, this indicates that some
 				<a href="/{type}-implications">implication</a> is missing.
 			</p>
@@ -119,8 +119,15 @@
 					{/each}
 				</ul>
 			</details>
-		</section>
-	{/if}
+		{:else}
+			<p class="hint">
+				Every consistent {type} property combination of the form p &and; &not;q is witnessed
+				by a {type} in the database or its dual. 🎉
+			</p>
+
+			<p>&mdash;</p>
+		{/if}
+	</section>
 {/each}
 
 <SuggestionForm />
