@@ -41,6 +41,3 @@ unsatisfied_properties:
 
   - property: essentially injective
     proof: Both $(1,0)$ and $(0,1)$ are mapped to $1$.
-
-  - property: reflector
-    proof: 'Its right adjoint, the diagonal functor $\Delta : \Set \to \Set \times \Set$, is faithful, but not full.'

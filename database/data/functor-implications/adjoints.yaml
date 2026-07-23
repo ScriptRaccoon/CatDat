@@ -54,3 +54,11 @@
     - coreflector
   proof: 'Let $F : \C \to 1$ be the unique functor into the trivial category, and assume that $\C$ has an initial object $X$. Then the constant functor $X : 1 \to \C$ is fully faithful and left adjoint to $F$ because $\Hom(X(*),Y) \cong * \cong \Hom(*,F(Y))$.'
   is_equivalence: false
+
+- id: reflector_preserves_terminal_objects
+  assumptions:
+    - reflector
+  conclusions:
+    - preserves terminal objects
+  proof: 'Let $\C \subseteq \D$ be a full reflective subcategory with reflector $R : \D \to \C$ and unit morphisms $u(X) : X \to R(X)$ for $X \in \D$. The universal property says that every morphism from $X$ into an object in $\C$ factors uniquely through $u(X)$. Let $1 \in \D$ be a terminal object. We claim that $u(1) : 1 \to R(1)$ is an isomorphism. In fact, since $1$ is terminal, there is a (unique) morphism $v : R(1) \to 1$ in $\D$. The composition $v \circ u(1)$ is the identity since $1$ is terminal. To show that also the composition $u(1) \circ v$ is the identity of $R(1)$, by the universal property of $u(1)$ it suffices to prove $u(1) \circ v \circ u(1) = u(1)$, which is immediate from $v \circ u(1) = \id_1$. This shows $R(1) \cong 1$. Now, since $R(1)$ is an object in $\C$ which is terminal in $\D$, it is a terminal object of $\C$.'
+  is_equivalence: false
