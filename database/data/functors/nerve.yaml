@@ -1,0 +1,44 @@
+id: nerve
+name: nerve functor
+notation: $N$
+domain: Cat
+codomain: sSet
+description: The nerve of a small category $\C$ is the simplicial set $N(\C)$ whose $n$-simplices are chains of morphisms $X_0 \to \cdots \to X_n$. Among other things, it provides an example of a fully faithful functor that does not preserve regular epimorphisms.
+nlab_link: https://ncatlab.org/nlab/show/nerve
+left_adjoint: null
+
+tags:
+  - category theory
+  - topology
+
+related: []
+
+satisfied_properties:
+  - property: fully faithful
+    proof: See <a href="https://kerodon.net/tag/002Z" target="_blank">Kerodon/002Z</a>.
+
+  - property: preserves coproducts
+    proof: This is immediate from the description of coproducts in $\Cat$ and $\sSet$. A chain of morphisms in a coproduct of categories $\coprod_i \C_i$ must be contained entirely in one of the $\C_i$.
+
+  - property: right adjoint
+    proof: See Theorem 2.1 at the <a href="https://ncatlab.org/nlab/show/nerve+and+realization" target="_blank">nLab</a>.
+
+  - property: finitary
+    proof: 'It suffices to prove that for every $n \in \IN$, the composite functor $N_n : \Cat \to \Set$ is finitary, where $N_n$ maps a small category to its set of $n$-chains of morphisms. This is easy to check directly using the concrete descriptions of filtered colimits in $\Cat$ and $\Set$. Alternatively, one can observe that $N_n$ is represented by the thin category $\{0 \to 1 \to \cdots \to n\}$, which is a finitely presentable object in $\Cat$.'
+
+unsatisfied_properties:
+  - property: preserves regular epimorphisms
+    proof: >-
+      Consider the thin categories $\C = \{0 \to 1, \, 1' \to 2\}$ and $\D = \{0 \to 1 \to 2\}$. There is a regular epimorphism $P : \C \to \D$ that identifies $1$ with $1'$. In fact, it is the coequalizer of the two functors $\{*\} \rightrightarrows \C$ whose images are $1$ and $1'$, respectively.
+      Notice that the map $\Mor(P) : \Mor(\C) \to \Mor(\D)$ is not surjective, as the morphism $0 \to 2$ in $\D$ has no preimage in $\C$. In other words, the map $N_1(P) : N_1(\C) \to N_1(\D)$ is not surjective. Therefore, $N(P)$ is not an epimorphism.
+
+  - property: dominant
+    proof: >-
+      The nerve of a small category $\C$ has the property that the canonical map
+      $$(d_2,d_0) : N_2(\C) \to N_1(\C) \times N_1(\C)$$
+      is injective, where $d_0,d_2$ are the face operators. In fact, this map simply sends a $2$-simplex $X_0 \xrightarrow{f} X_1 \xrightarrow{g} X_2$ to the pair consisting of $X_0 \xrightarrow{f} X_1$ and $X_1 \xrightarrow{g} X_2$.
+      Every simplicial set $S$ with a monomorphism to $N(\C)$ then also has the property that
+      $$(d_2,d_0) : S_2 \to S_1 \times S_1$$
+      is injective. Equivalently, every two morphisms $\Delta^2 \rightrightarrows S$ that coincide on the <a href="https://ncatlab.org/nlab/show/horn#examples" target="_blank">inner horn</a> $\Lambda^2_1 \subseteq \Delta^2$ are already equal. However, the simplicial set
+      $$S := \Delta^2 \sqcup_{\Lambda^2_1} \Delta^2$$
+      does not have this property.
