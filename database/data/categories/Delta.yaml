@@ -33,11 +33,11 @@ satisfied_properties:
   - property: strongly connected
     proof: For all $n,m$ there are morphisms $[n] \to [0] \to [m]$.
 
-  - property: generator
-    proof: The ordered set $[0] = \{0\}$ is a generator.
+  - property: extremal generator
+    proof: The ordered set $[1] = \{0 < 1\}$ is an extremal generator, even for <a href="/category/PreOrd">$\PreOrd$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
 
-  - property: cogenerator
-    proof: The ordered set $[1] = \{0 < 1\}$ is a cogenerator, even for <a href="/category/Pos">$\Pos$</a>.
+  - property: extremal cogenerator
+    proof: The ordered set $[1] = \{0 < 1\}$ is an extremal cogenerator, even for <a href="/category/Pos">$\Pos$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
 
   - property: skeletal
     proof: 'If $f : [n] \to [m]$ is an isomorphism, then $n + 1 = m + 1$ by comparing the cardinalities, hence $n = m$.'

@@ -32,11 +32,11 @@ satisfied_properties:
   - property: terminal object
     proof: The object $[0]$ is terminal since it is already terminal in <a href="/category/Delta">$\Delta$</a>.
 
-  - property: generator
-    proof: The object $[0]$ is generator since this is already true in <a href="/category/Delta">$\Delta$</a>. A direct proof is also possible.
+  - property: extremal generator
+    proof: The object $[1]$ is an extremal generator even in <a href="/category/Delta">$\Delta$</a>; now use Lemma 10 <a href="/content/subcategories">here</a>. A direct proof is also possible.
 
-  - property: cogenerator
-    proof: The object $[1]$ is cogenerator since this is already true in <a href="/category/Delta">$\Delta$</a>. A direct proof is also possible.
+  - property: extremal cogenerator
+    proof: The object $[1]$ is an extremal cogenerator even in <a href="/category/Delta">$\Delta$</a>; now use Lemma 10 <a href="/content/subcategories">here</a>. A direct proof is also possible.
 
   - property: epi-regular
     proof: 'The only non-identity epimorphism is $p$, which is the coequalizer of $\id, ip : [1] \rightrightarrows [1]$ (since $pi = \id$).'

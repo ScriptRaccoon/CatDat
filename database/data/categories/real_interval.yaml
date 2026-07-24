@@ -38,6 +38,9 @@ unsatisfied_properties:
   - property: inverse
     proof: Consider the strictly increasing sequence $1 - 1/2^n$ for $n \geq 0$.
 
+  - property: extremal generator
+    proof: The poset has infinitely many non-minimal elements $(0, 1]$. Therefore, by the corollary <a href="/content/thin_extremal_generator">here</a>, an extremal generator cannot exist.
+
   - property: locally finitely presentable
     proof: It suffices to prove that $0$ (the initial object) is the only finitely presentable object. If $s > 0$, then $s = \sup_{n \in \IN, \, s \geq 1/n } (s - 1/n)$, but there is no $n$ with $s \leq s - 1/n$.
 

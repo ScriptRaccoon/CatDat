@@ -20,6 +20,7 @@
 \F: \mathcal{F}
 \I: \mathcal{I}
 \J: \mathcal{J}
+\M: \mathcal{M}
 \O: \mathcal{O}
 \S: \mathcal{S}
 \T: \mathcal{T}
@@ -63,6 +64,7 @@
 \rank: \operatorname{rank}
 \Gal: \operatorname{Gal}
 \Alt: \operatorname{Alt}
+\Open: \operatorname{Open}
 
 # categories
 \Set: \mathbf{Set}

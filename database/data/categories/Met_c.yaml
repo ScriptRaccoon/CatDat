@@ -32,12 +32,6 @@ satisfied_properties:
     proof: See <a href="https://math.stackexchange.com/questions/5004389" target="_blank">MSE/5004389</a>.
     check_redundancy: false
 
-  - property: generator
-    proof: The one-point metric space is a generator since it represents the forgetful functor $\Met_c \to \Set$.
-
-  - property: cogenerator
-    proof: The same proof as for <a href="/category/Met">$\Met$</a> shows that $\IR$ with the usual metric is a cogenerator.
-
   - property: well-powered
     proof: This follows easily from the fact that monomorphisms are injective in this category.
 
@@ -49,6 +43,29 @@ satisfied_properties:
 
   - property: effective cocongruences
     proof: 'Suppose we have a cocongruence $f, g : X \rightrightarrows E$ in $\Met_c$. Then the image in $\Haus$ is a coreflexive corelation (since epimorphisms in both categories are continuous maps with dense image). By <a href="https://mathoverflow.net/a/509582/2841" target="_blank">MO/509548</a>, that implies that image is of the form $X +_S X$ for a closed subset $S$ of $X$. Since $S$ is metrizable, and the functor $\Met_c \to \Haus$ is fully faithful <a href="https://ncatlab.org/nlab/show/reflected+limit#FullSubcategoryInclusionReflectCoLimits" target="_blank">and therefore reflects colimits</a>, we conclude that $E$ is effective in $\Met_c$.'
+
+  - property: extremal generator
+    proof: 'We claim the metric space $G \coloneqq \{ 1/n : n \in \IN_{> 0} \} \cup \{ 0 \}$, with the metric inherited from $\IR$, is an extremal generator. First, the one-point metric space is a generator since it represents the forgetful functor $\Met_c \to \Set$; and since we have an epimorphism $! : G \to 1$, it follows that $G$ is a generator as well. Now, suppose we have a continuous function $f : X \to Y$ of metric spaces such that $f \circ {-} : \Hom(G, X) \to \Hom(G, Y)$ is a bijection. Then since $G$ is a generator, we can conclude that $f$ is a monomorphism, i.e. injective on the underlying sets. Also, considering a constant function $G \to Y$ with image $y$, we see that $f$ is surjective on the underlying sets. Finally, the fact that $f$ induces a bijection between $\Hom(G, X)$ and $\Hom(G, Y)$ implies that a sequence $(x_n)_{n\in \IN}$ in $X$ has limit $L$ if and only if $(f(x_n))_{n\in \IN}$ has limit $f(L)$ in $Y$. This shows that $f$ is a homeomorphism.'
+
+  - property: extremal cogenerator
+    proof: >-
+      The space $\IR$ with the usual metric is a cogenerator. To see this, suppose we have $x, y \in X$ with $f(x) = f(y)$ for each continuous $f : X \to \IR$. In particular, this folds for $f(z) \coloneqq d(x, z)$, implying that
+      $$d(x, y) = f(y) = f(x) = d(x, x) = 0,$$
+      so $x = y$.
+
+      In fact, $\IR$ is an extremal cogenerator. To see this, suppose $f : X \to Y$ is a continuous function of metric spaces such that ${-} \circ f : \Hom(Y, \IR) \to \Hom(X, \IR)$ is a bijection. We first show that $f$ is injective on the underlying sets. Thus, suppose we have $x_1, x_2 \in X$ with $f(x_1) = f(x_2)$. Then the function $d(x_1, {-}) : X \to \IR$ is continuous, so there exists a continuous function $\varphi : Y \to \IR$ such that $d(x_1, x) = \varphi(f(x))$ for each $x \in X$. In particular,
+      $$d(x_1, x_2) = \varphi(f(x_2)) = \varphi(f(x_1)) = d(x_1, x_1) = 0,$$
+      so $x_1 = x_2$.
+
+      Now, the fact that ${-} \circ f$ is a bijection, and $\IR$ is a cogenerator, implies that $f$ is an epimorphism, i.e. its image is dense in $Y$. We claim that in fact $f$ is surjective on underlying sets. Suppose, for the sake of contradiction, that we had $y \in Y \setminus \im(f)$. Then we can define a continuous function
+      $$X \to \IR, \, x \mapsto \frac{1}{d(f(x), y)}.$$
+      By the assumption on $f$, there exists continuous $\varphi : Y \to \IR$ such that
+      $$\varphi(f(x)) = \frac{1}{d(f(x), y)}$$
+      for each $x \in X$. However, since $f$ has dense image, there is a sequence $(x_n)_{n=1}^\infty$ of points of $X$ such that $f(x_n) \to y$, while
+      $$\lim_{n\to \infty} \varphi(f(x_n)) = \lim_{n\to \infty} \frac{1}{d(f(x_n), y)} = \infty.$$
+      This makes it impossible for $\varphi$ to be continuous at $y$, giving a contradiction.
+
+      Finally, since we have shown $f$ is bijective on underlying sets, to show $f$ is a homeomorphism, it suffices to show that $f$ is closed. Thus, let $F \subseteq X$ be closed. Then $d({-}, F) : X \to \IR$ is a continuous function, so there exists $\varphi : Y \to \IR$ such that $\varphi(f(x)) = d(x, F)$ for each $x\in X$. That implies that $f_*(F) = \{ y\in Y : \varphi(y) = 0 \}$ is closed.
 
 unsatisfied_properties:
   - property: skeletal

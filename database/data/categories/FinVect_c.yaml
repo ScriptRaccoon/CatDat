@@ -23,8 +23,8 @@ satisfied_properties:
   - property: essentially countable
     proof: Every object is isomorphic to $K^n$ for some $n \in \IN$, and $\Hom(K^n,K^m) \cong M_{m \times n}(K)$ is a countable set.
 
-  - property: generator
-    proof: The forgetful functor $\FinVect_K \to \Set$ is faithful and represented by $K$. Hence, $K$ is a generator.
+  - property: extremal generator
+    proof: The one-dimensional vector space $K$ is an extremal generator even in <a href="/category/Vect">$\Vect_K$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
 
   - property: split abelian
     proof: This follows directly from the corresponding fact for <a href="/category/Vect">$\Vect_K$</a>.

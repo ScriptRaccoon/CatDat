@@ -20,9 +20,6 @@ satisfied_properties:
     proof: The trivial Banach space $\{0\}$ is a zero object.
     check_redundancy: false
 
-  - property: cogenerator
-    proof: The Hahn-Banach theorem implies that $\IC$ is a cogenerator.
-
   - property: CIP
     proof: This is immediate from the concrete description of coproducts and products.
 
@@ -34,6 +31,10 @@ satisfied_properties:
 
   - property: cocartesian cofiltered limits
     proof: 'If $X$ is a Banach space and $(Y_i)$ is a cofiltered diagram of Banach spaces, the canonical map $X \oplus \lim_i Y_i \to \lim_i (X \oplus Y_i)$ is an isomorphism: Since the forgetful functor $\Ban \to \Vect$ preserves finite coproducts and all limits, and $\Vect$ has the claimed property (see <a href="/category-implication/biproducts_cartesian_filtered_colimits">here</a>), the canonical map is bijective. It remains to show that it is isometric. For $(x,y) \in X \oplus \lim_i Y_i$ the norm in the domain is $|x| + \sup_i |y_i|$, and the norm in the codomain is $\sup_i (|x| + |y_i|)$, and these clearly agree.'
+
+  - property: extremal cogenerator
+    proof: >-
+      The Hahn-Banach theorem implies that $\IC$ is a cogenerator. We claim that it is in fact an extremal cogenerator. Thus, suppose $f : X \to Y$ is a morphism such that ${-} \circ f : \Hom(Y, \IC) \to \Hom(X, \IC)$ is bijective on the underlying sets. Then for any non-zero $x \in X$, by the Hahn-Banach theorem, there exists $\varphi \in X^*$ such that $|\varphi| = 1$ and $\varphi(x) = |x|$. Since $|\varphi| = 1$, we see that $\varphi$ is a morphism $X \to \IC$ in $\Ban$; so by the assumption, there exists a morphism $\psi : Y \to \IC$ such that $\varphi = \psi \circ f$. Therefore, $|x| = |\psi(f(x))| \le |f(x)|$; and conversely, since $f$ is a morphism, $|f(x)| \le |x|$. On the other hand, if $x = 0$, then certainly $|f(x)| = |x| = 0$. This shows that $f$ is isometric and therefore a regular monomorphism (see below). On the other hand, since $\IC$ is a cogenerator and ${-} \circ f$ is injective, we have $f$ is also an epimorphism. Hence, $f$ is an isomorphism.
 
   - property: regular
     proof: >-

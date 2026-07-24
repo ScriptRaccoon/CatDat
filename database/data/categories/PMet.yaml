@@ -16,12 +16,6 @@ satisfied_properties:
   - property: locally small
     proof: There is a forgetful functor $\PMet \to \Set$ and $\Set$ is locally small.
 
-  - property: generator
-    proof: The one-point (pseudo-)metric space is a generator since it represents the forgetful functor $\PMet \to \Set$.
-
-  - property: cogenerator
-    proof: The set $\{0,1\}$ equipped with the pseudo-metric $d(0,1)=0$ is a cogenerator since every map into is automatically non-expansive and since $\{0,1\}$ is a cogenerator in $\Set$.
-
   - property: strict initial object
     proof: The empty (pseudo-)metric space is initial and clearly strict.
 
@@ -58,6 +52,32 @@ satisfied_properties:
 
   - property: ℵ₁-cofiltered limits
     proof: The proof is identical to the one for <a href="/category/Met">$\Met$</a>.
+
+  - property: extremal generator
+    proof: >-
+      The proof will be similar to the one for <a href="/category/Met">$\Met$</a>. Namely, let $G$ be the set $\IR_{\ge 0} \sqcup \{ 0' \}$, equipped with the metric where $d(x,y) = 0$ if $x=y$ and otherwise $d(x,y) = x+y$ for $x, y \in \IR_{\ge 0}$, and $d(x, 0') = d(0', x) = x$ for $x \in \IR_{\ge 0}$. We will show $G$ is an extremal generator for $\PMet$.
+
+      First, to see $G$ is a generator, note that the one-point metric space is a generator since it represents the forgetful functor $\PMet\to \Set$ which is faithful. Since we have an epimorphism $! : G \twoheadrightarrow 1$, then $G$ is also a generator.
+
+      Now, suppose that $f : X \to Y$ is a non-expansive map of pseudo-metric spaces such that $f \circ {-} : \Hom(G, X) \to \Hom(G, Y)$ is a bijection. By considering constant maps from $G$, we see that $f$ is a bijection on underlying sets. Now suppose we have $x_1, x_2 \in X$ with $d(f(x_1), f(x_2)) = \varepsilon \ge 0$. Then there is a non-expansive map $\varphi : G \to Y$ which maps $\varepsilon$ to $f(x_2)$ and every other element of $G$ to $f(x_1)$. Therefore, there is a non-expansive map $\psi : G \to X$ such that $\varphi = f \circ \psi$. Since $f$ is injective on underlying sets, we must have $\psi(\varepsilon) = x_2$ and $\psi(0') = x_1$. Hence,
+      $$\begin{align*}
+      d(x_1, x_2) &= d(\psi(0'), \psi(\varepsilon)) \\
+      & \le d(0', \varepsilon) \\
+      & = \varepsilon \\
+      & = d(f(x_1), f(x_2)) \\
+      & \le d(x_1, x_2).
+      \end{align*}$$
+      This shows that $f$ is isometric.
+
+  - property: extremal cogenerator
+    proof: >-
+      Let $Q$ be the set $\IR_{\ge 0} \sqcup \{ 0' \}$, equipped with the metric extending the usual metric on $\IR_{\ge 0}$ with $d(x, 0') = x$ for $x \in \IR_{\ge 0}$. Then $Q$ is an extremal cogenerator.
+
+      First, to see $Q$ is a cogenerator, note that the subspace $\{ 0, 0' \}$ is a cogenerator since every map into it is automatically non-expansive and since $\{0,0'\}$ is a cogenerator in <a href="/category/Set">$\Set$</a>. Therefore, since $\{ 0, 0' \} \hookrightarrow Q$ is a monomorphism, we have that $Q$ is also a cogenerator.
+
+      To see $Q$ is in fact an extremal cogenerator, suppose we have a non-expansive map $f : X \to Y$ such that ${-} \circ f : \Hom(Y, Q) \to \Hom(X, Q)$ is a bijection. First of all, any function $Y \to Q$ which factors through $\{ 0, 0' \}$ is automatically non-expansive; and the injectivity of $f^*$ on such maps implies that $f$ is surjective on underlying sets, since $\{ 0, 0' \}$ is a cogenerator of <a href="/category/Set">$\Set$</a>. From this, we can conclude that $f^*$ in fact induces a bijection on the functions $Y\to Q$ and $X\to Q$, respectively, which factor through $\{ 0, 0' \}$. Since $\{ 0, 0' \}$ is in fact an extremal cogenerator of $\Set$, we conclude that in fact, $f$ is a bijection on underlying sets.
+
+      From here, the proof that $f$ is isometric is similar to the one for <a href="/category/Met">$\Met$</a>, using the fact that $d(x, {-}) : X \to \IR_{\ge 0} \hookrightarrow Q$ induces a non-expansive map $Y   \to Q$.
 
 unsatisfied_properties:
   - property: skeletal

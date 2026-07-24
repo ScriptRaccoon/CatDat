@@ -27,6 +27,18 @@
   proof: If $F(f)$ is an isomorphism, its inverse has the form $F(g)$ since $F$ is full. Since $F$ is faithful, it follows that $f$ is inverse to $g$.
   is_equivalence: false
 
+- id: faithful_with_balanced_domain
+  assumptions:
+    - faithful
+  mapped_assumptions:
+    domain:
+      - balanced
+  conclusions:
+    - conservative
+  # TODO: refactor this if adding "reflects monomorphisms" / "reflects epimorphisms" properties
+  proof: 'It is easy to see that a faithful functor $F$ reflects monomorphisms: If we have two morphisms $x_1, x_2 : U \rightrightarrows X$ and $f : X \to Y$ such that $f(x_1) = f(x_2)$, and $F(f)$ is a monomorphism, then $F(x_1) = F(x_2)$; therefore, $x_1 = x_2$, so $f$ is also a monomorphism. The dual argument shows that $F$ also reflects epimorphisms. Therefore, if $F(f)$ is an isomorphism, then $f$ is both a monomorphism and an epimorphism; by the assumption on the domain category, this implies that $f$ is an isomorphism.'
+  is_equivalence: false
+
 - id: left-invertible_consequences
   assumptions:
     - left-invertible

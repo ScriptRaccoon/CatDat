@@ -42,6 +42,12 @@ unsatisfied_properties:
   - property: countably codistributive
     proof: If $p$ runs through all odd primes, we have $2 \sqcup \prod_p p = \lcm(2,\gcd_p p) = \lcm(2,0) = 0$, but $\prod_p (2 \sqcup p) = \gcd_p (\lcm(2,p)) = \gcd_p (2 \cdot p) = 2$.
 
+  - property: extremal generator
+    proof: The category is equivalent to $(\IN,\mid)$, which has infinitely many non-minimal elements. Therefore, by the corollary <a href="/content/thin_extremal_generator">here</a>, an extremal generator cannot exist.
+
+  - property: extremal cogenerator
+    proof: The category is equivalent to $(\IN,\mid)$, which has infinitely many non-maximal elements. Therefore, by the corollary <a href="/content/thin_extremal_generator">here</a>, an extremal generator cannot exist.
+
 special_objects:
   initial object:
     description: $1$

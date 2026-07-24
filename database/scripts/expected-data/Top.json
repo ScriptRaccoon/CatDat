@@ -80,6 +80,8 @@
 	"ℵ₂-small coproducts": true,
 	"ℵ₂-small powers": true,
 	"ℵ₂-small copowers": true,
+	"extremal cogenerator": true,
+	"extremal cogenerating set": true,
 
 	"abelian": false,
 	"additive": false,
@@ -173,5 +175,7 @@
 	"quasitopos": false,
 	"regular-subobject-trivial": false,
 	"regular-quotient-trivial": false,
-	"core-connected": false
+	"core-connected": false,
+	"extremal generator": false,
+	"extremal generating set": false
 }

@@ -22,12 +22,6 @@ satisfied_properties:
   - property: strict initial object
     proof: The empty metric space is initial and clearly strict.
 
-  - property: generator
-    proof: The one-point metric space is a generator since it represents the forgetful functor $\Met \to \Set$.
-
-  - property: cogenerator
-    proof: 'We claim that $\IR$ with the usual metric is a cogenerator. Let $a,b \in X$ be two points of a metric space such that $f(a)=f(b)$ for all non-expansive maps $f : X \to \IR$. This applies in particular to $f(x) \coloneqq d(a,x)$ and shows that $0=d(a,a)=d(a,b)$, so that $a=b$.'
-
   - property: semi-strongly connected
     proof: Every non-empty metric space is weakly terminal (by using constant maps).
 
@@ -64,6 +58,43 @@ satisfied_properties:
 
   - property: well-copowered
     proof: 'If $f : X \to Y$ is an epimorphism, then $f(X)$ is dense in $Y$ (see below). Hence, there is an injective map $Y \to X^{\IN}$, which bounds the size of $Y$.'
+
+  - property: extremal generator
+    proof: >-
+      Let $G$ be the metric space with underlying set $\IR_{\ge 0}$ equipped with the metric where $d(x,y) = 0$ if $x=y$, and otherwise $d(x,y) = x+y$. We claim that $G$ is an extremal generator.
+
+      First, to see that $G$ is a generator, note that the one-point metric space $1$ is a generator since it represents the forgetful functor $\Met \to \Set$ which is faithful. Since we have an epimorphism $! : G \twoheadrightarrow 1$, then $G$ is also a generator.
+
+      Now, suppose that $f : X \to Y$ is a non-expansive map of metric spaces such that $f \circ {-} : \Hom(G, X) \to \Hom(G, Y)$ is a bijection. By considering constant maps from $G$, we see that $f$ is a bijection on underlying sets. Now suppose we have $x_1, x_2 \in X$ with $d(f(x_1), f(x_2)) = \varepsilon > 0$. Then there is a non-expansive map $\varphi : G \to Y$ which maps $\varepsilon$ to $f(x_2)$ and every other element of $\IR_{\ge 0}$ to $f(x_1)$. Therefore, there is a non-expansive map $\psi : G \to X$ such that $\varphi = f \circ \psi$. Since $f$ is injective on underlying sets, we must have $\psi(\varepsilon) = x_2$ and $\psi(0) = x_1$. Hence,
+      $$\begin{align*}
+      d(x_1, x_2) &= d(\psi(0), \psi(\varepsilon)) \\
+      & \le d(0, \varepsilon) \\
+      & = \varepsilon \\
+      & = d(f(x_1), f(x_2)) \\
+      & \le d(x_1, x_2).
+      \end{align*}$$
+      This shows that $f$ is isometric.
+
+  - property: extremal cogenerator
+    # Note: $\IR$ is not an extremal cogenerator. This is because for example the non-isomorphism $(0, 1) \hookrightarrow [0, 1]$ induces a bijection $\Hom([0, 1], \IR) \to \Hom((0, 1), \IR)$. To see this, suppose we have a non-expansive map $f : (0, 1) \to \IR$. Then since $f$ is uniformly continuous in particular, it is well known that $\lim_{x\to 0^+} f(x)$ and $\lim_{x\to 1^-} f(x)$ both exist and are finite. If we extend $f$ with these values at 0 and 1 respectively, then it is straightforward to check that the resulting function is still non-expansive. This shows that $\Hom([0, 1], \IR) \to \Hom((0, 1), \IR)$ is surjective; and since $(0, 1) \hookrightarrow [0, 1]$ is an epimorphism, $\Hom([0, 1], \IR) \to \Hom((0, 1), \IR)$ is also injective. (The same proof also shows that $\IR_{\ge 0}$ is not an extremal cogenerator.)
+    proof: >-
+      We claim that $\IR_+$ (where $0 \notin \IR+$) with metric inherited from the usual metric on $\IR$ is a cogenerator. Let $a,b \in X$ be two points of a metric space such that $f(a)=f(b)$ for all non-expansive maps $f : X \to \IR_+$. This applies in particular to $f(x) \coloneqq d(a,x)+1$ and shows that $1=d(a,a)+1=d(a,b)+1$, so that $a=b$.
+
+      In fact, $\IR_+$ is an extremal cogenerator. To see this, suppose that $f : X \to Y$ is a non-expansive map of metric spaces such that ${-} \circ f : \Hom(Y, \IR_+) \to \Hom(X, \IR_+)$ is a bijection. First of all, since ${-} \circ f$ is injective and $\IR_+$ is a cogenerator, $f$ is an epimorphism, so it has dense image (see below). Now for each $x \in X$, we have a non-expansive map
+      $$\varphi : X \to \IR_+, \,x' \mapsto d(x, x') + 1.$$
+      By the assumption, there exists a non-expansive map $\psi : Y \to \IR_+$ such that $\psi \circ f = \varphi$. Therefore,
+      $$\begin{align*}
+      d(x, x') &= |d(x, x') - d(x, x)| \\
+      & = |\varphi(x') - \varphi(x)| \\
+      & = |\psi(f(x')) - \psi(f(x))| \\
+      & \le d(f(x), f(x')) \\
+      & \le d(x,x').
+      \end{align*}$$
+      This shows that $f$ is isometric, which in particular implies $f$ is injective on underlying sets.
+
+      It remains to show $f$ is surjective on underlying sets. To see this, suppose to the contrary that we have $y \in Y \setminus f(X)$. Then we have a non-expansive map
+      $$\varphi : X \to \IR_+,\, x \mapsto d(y, f(x)).$$
+      By the assumption on $f$, there exists a non-expansive map $\psi : Y \to \IR_+$ such that $\psi \circ f = \varphi$. However, since $\psi$ (seen as a function with codomain $\IR$) and $d(y, {-})$ are two continuous functions $Y \to \IR$ which agree on the dense subset $f(X)$, they must be the same function. Thus, $\psi(y) = d(y, y) = 0$, giving a contradiction.
 
   - property: ℵ₁-accessible
     proof: >-

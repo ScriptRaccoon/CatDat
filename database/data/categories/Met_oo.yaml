@@ -17,12 +17,6 @@ satisfied_properties:
   - property: locally small
     proof: There is a forgetful functor $\Met_{\infty} \to \Set$ and $\Set$ is locally small.
 
-  - property: generator
-    proof: The singleton metric space $1$ is a generator, since morphisms $1 \to X$ correspond to the elements of $X$.
-
-  - property: cogenerator
-    proof: 'The proof is similar to $\Met$, a cogenerator is given by $\IR \cup \{\infty\}$ with the metric in which $d(a,\infty)=\infty$ for $a \in \IR$. Then one checks that the maps $d(a,-) : X \to \IR \cup \{\infty\}$ are non-expansive and finishes as for <a href="/category/Met">$\Met$</a>.'
-
   - property: semi-strongly connected
     proof: Every non-empty metric space is weakly terminal (by using constant maps).
 
@@ -34,6 +28,12 @@ satisfied_properties:
 
   - property: infinitary extensive
     proof: '[Sketch] Since <a href="/category/Set">$\Set$</a> is infinitary extensive, a map $f : Y \to \coprod_i X_i \eqqcolon X$ corresponds to a decomposition $Y = \coprod_i Y_i$ (as sets) with maps $f_i : Y_i \to X_i$. Endow $Y_i$ with the restricted metric. If $f$ is non-expansive, each $f_i$ is non-expansive, and for $x_i \in Y_i$ and $i \neq j$ we have $d_Y(x_i,x_j) \geq d_X(f(x_i),f(x_j)) = \infty$, so that $Y = \coprod_i Y_i$ holds as metric spaces.'
+
+  - property: extremal generator
+    proof: A similar proof to the one for <a href="/category/Met">$\Met$</a> shows that $[0, \infty]$, equipped with the metric where $d(x,y) = 0$ if $x=y$ and otherwise $d(x,y) = x+y$, is an extremal generator for $\Met_{\infty}$.
+
+  - property: extremal cogenerator
+    proof: 'The proof is similar to $\Met$: an extremal cogenerator is given by $\IR_+ \cup \{\infty\}$ with the metric extending the usual metric on $\IR_+$ by defining $d(a,\infty) \coloneqq \infty$ for $a \in \IR_+$. Then one checks that the maps $1 + d(a,{-}) : X \to \IR_+ \cup \{\infty\}$ (assigning the value $\infty$ if $d(a,x) = \infty$) are non-expansive and finishes as for <a href="/category/Met">$\Met$</a>.'
 
 unsatisfied_properties:
   - property: skeletal

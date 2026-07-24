@@ -262,9 +262,9 @@ test('user can open and close a proof for a property of a category', async ({ pa
 test('user can open a proof for a deduced satisfied property of category', async ({
 	page
 }) => {
-	await page.goto('/category/Set', { waitUntil: 'networkidle' })
+	await page.goto('/category/Ring', { waitUntil: 'networkidle' })
 
-	const claim = page.locator('li', { has: page.getByText('has a generator') })
+	const claim = page.locator('li', { has: page.getByText('has an extremal generator') })
 
 	await expect(claim).toBeVisible()
 
@@ -273,7 +273,7 @@ test('user can open a proof for a deduced satisfied property of category', async
 	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
 
 	await expect(
-		popup.getByText('Since it is finitary algebraic, it has a generator')
+		popup.getByText('Since it is finitary algebraic, it has an extremal generator')
 	).toBeVisible()
 })
 

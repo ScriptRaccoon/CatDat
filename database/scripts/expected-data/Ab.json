@@ -116,6 +116,10 @@
 	"ℵ₂-small coproducts": true,
 	"ℵ₂-small powers": true,
 	"ℵ₂-small copowers": true,
+	"extremal generator": true,
+	"extremal generating set": true,
+	"extremal cogenerator": true,
+	"extremal cogenerating set": true,
 
 	"cartesian closed": false,
 	"locally cartesian closed": false,

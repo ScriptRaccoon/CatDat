@@ -43,8 +43,11 @@ unsatisfied_properties:
   - property: inverse
     proof: Consider the strictly increasing sequence $0 < 1 < 2 < \cdots$.
 
-  - property: finitary algebraic
-    proof: This follows from <a href="/content/thin_algebraic_categories">this lemma</a>.
+  - property: extremal generator
+    proof: The poset $\IN_\infty$ has infinitely many non-minimal elements $1, 2, \dotsc, \infty$. Therefore, by the corollary <a href="/content/thin_extremal_generator">here</a>, an extremal generator cannot exist.
+
+  - property: extremal cogenerator
+    proof: The poset $\IN_\infty$ has infinitely many non-maximal elements $0, 1, 2, \dotsc$. Therefore, by the corollary <a href="/content/thin_extremal_generator">here</a>, an extremal cogenerator cannot exist.
 
 special_objects:
   initial object:

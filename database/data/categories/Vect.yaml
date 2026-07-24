@@ -28,6 +28,14 @@ satisfied_properties:
   - property: finitary algebraic
     proof: Take the algebraic theory of a vector space.
 
+  - property: extremal generator
+    proof: The one-dimensional vector space $K$ is an extremal generator since it represents the forgetful functor $\Vect_K \to \Set$ which is faithful and conservative.
+    check_redundancy: false
+
+  - property: extremal cogenerator
+    proof: 'The one-dimensional vector space $K$ is an extremal cogenerator. To show this, using <a href="/category-implication/dual_generator_balanced_consequence">this result</a>, since $\Vect_K$ is balanced, it suffices to show that $K$ is a cogenerator. For this, suppose we have two unequal vectors $x, y \in V$. Then $x - y \ne 0$, so there exists a functional $\varphi : V \to K$ such that $\varphi(x - y) \ne 0$. It follows that $\varphi(x) \ne \varphi(y)$.'
+    check_redundancy: false
+
 unsatisfied_properties:
   - property: skeletal
     proof: This is trivial.

@@ -34,11 +34,11 @@ satisfied_properties:
   - property: semi-strongly connected
     proof: Every non-empty totally ordered set is weakly terminal (by using constant maps).
 
-  - property: generator
-    proof: The one-point finite ordered set is a generator since it represents the forgetful functor $\FinOrd \to \Set$.
+  - property: extremal generator
+    proof: The ordered set $\{0 < 1\}$ is an extremal generator, even for <a href="/category/PreOrd">$\PreOrd$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
 
-  - property: cogenerator
-    proof: The ordered set $\{0 < 1\}$ is a cogenerator, even for <a href="/category/Pos">$\Pos$</a>.
+  - property: extremal cogenerator
+    proof: The ordered set $\{0 < 1\}$ is an extremal cogenerator, even for <a href="/category/Pos">$\Pos$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
 
   - property: equalizers
     proof: Take the equalizer in $\FinSet$ and restrict the order.

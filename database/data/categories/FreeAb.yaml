@@ -23,8 +23,8 @@ satisfied_properties:
   - property: coproducts
     proof: This is is because free abelian groups are closed under direct sums of abelian groups.
 
-  - property: generator
-    proof: As for <a href="/category/Ab">$\Ab$</a>, the group $\IZ$ is a generator.
+  - property: extremal generator
+    proof: The group $\IZ$ is an extremal generator even in <a href="/category/Grp">$\Grp$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
 
   - property: cogenerator
     proof: It is easy to check that $\IZ$ is a cogenerator for free abelian groups.

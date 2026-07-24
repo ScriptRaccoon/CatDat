@@ -23,12 +23,6 @@ satisfied_properties:
   - property: cartesian closed
     proof: For preordered sets $P,Q$ we endow $\Hom(P,Q)$ with the preorder in which $f \leq g$ holds iff $f(p) \leq g(p)$ for all $p \in P$. The universal evaluation map is $\Hom(P,Q) \times P \to Q$, $(f,p) \mapsto f(p)$, it is order-preserving, and it satisfies the universal property.
 
-  - property: generator
-    proof: The singleton preordered set $1$ is a generator, since morphisms $1 \to P$ correspond to the elements of $P$.
-
-  - property: cogenerator
-    proof: Endow the set $\{ 0,1 \}$ with the preorder $0 \leq 1$, $1 \leq 0$ (which is not a partial order). Then every map $P \to \{0,1\}$ is order-preserving. Now the claim follows since the set $\{ 0,1 \}$ is a cogenerator in $\Set$.
-
   - property: semi-strongly connected
     proof: Every non-empty preordered set is weakly terminal (by using constant maps).
 
@@ -40,6 +34,17 @@ satisfied_properties:
 
   - property: regular subobject classifier
     proof: The set $\{0,1\}$ with the chaotic preorder $(0 \leq 1$, $1 \leq 0)$ is a regular subobject classifier since order-preserving maps $P \to \{0,1\}$ correspond to subsets of $P$.
+
+  - property: extremal generator
+    proof: 'We claim that $\{ 0 < 1 \}$ is an extremal generator. First, the singleton preordered set $1$ is a generator, since it represents the forgetful functor $\PreOrd \to \Set$ which is faithful. Since we have an epimorphism $\{ 0 < 1 \} \to 1$, it follows that $\{ 0 < 1 \}$ is also a generator. Now, suppose we have a morphism $f : P \to Q$ such that $f \circ {-} : \Hom(\{0<1\}, P) \to \Hom(\{0<1\}, Q)$ is a bijection. Then considering constant functions, we can see that $f$ must be a bijection on the underlying sets. Now, suppose we have $p_1, p_2 \in P$ such that $f(p_1) \le f(p_2)$. Then that induces a morphism $\{0,1\} \to Q$ with $0 \mapsto f(p_1), 1 \mapsto f(p_2)$. The corresponding morphism $\{0<1\}\to P$ must send $0\mapsto p_1, 1 \mapsto p_2$, showing that $p_1 \le p_2$. It follows that $f$ is an isomorphism.'
+
+  - property: extremal cogenerator
+    proof: >-
+      Endow the set $\{ 0,1 \}$ with the preorder $0 \leq 1$, $1 \leq 0$ (which is not a partial order), and call this object $\{0,1\}_c$. Then every map $P \to \{0,1\}$ is order-preserving. Therefore, $\{0,1\}_c$ represents the functor taking $(P, \le)$ to the power set of $P$. Now since the set $\{ 0,1 \}$ is a cogenerator in $\Set$, it follows that $\{0,1\}_c$ is a cogenerator of $\PreOrd$.
+
+      We now claim that $\{0,1\}_c$ together with $\{ 0 < 1 \}$ form an extremal cogenerating set. Thus, suppose we have a morphism $f : P \to Q$ such that ${-} \circ f$ induces a bijection for morphisms both to $\{0,1\}_c$ and to $\{ 0 < 1 \}$. Then since $\{0,1\}$ is an extremal cogenerator in $\Set$, it follows that $f$ is a bijection on the underlying sets. Now, suppose we have $p_1, p_2 \in P$ such that $f(p_1) \le f(p_2)$. Then we can define an increasing function $\varphi : P \to \{0<1\}$ which sends $p \mapsto 1$ if $p_1 \le p$, and $p \mapsto 0$ otherwise. By the assumption on $f$, there is an increasing function $\psi : Q \to \{0<1\}$ such that $\psi \circ f = \varphi$. Since $1 = \psi(f(p_1)) \le \psi(f(p_2))$, it follows that $\varphi(p_2) = 1$, so $p_1 \le p_2$. We conclude that $f$ is an isomorphism.
+
+      Finally, by <a href="/content/generator_construction">this result</a>, we can conclude that the product of $\{0,1\}_c$ and $\{0<1\}$ is an extremal cogenerator.
 
 unsatisfied_properties:
   - property: regular

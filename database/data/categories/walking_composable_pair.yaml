@@ -35,8 +35,8 @@ satisfied_properties:
     proof: 'Take the two-sorted (finitary) algebraic theory with exactly one unary operation between them and the equation $x=y$ for each sort. There are exactly three algebras for this theory up to isomorphism: the identities on the empty set and the singleton, the morphism from the empty set to the singleton. Hence we get the equivalence to $\{0 \to 1 \to 2\}$.'
 
 unsatisfied_properties:
-  - property: finitary algebraic
-    proof: This follows from <a href="/content/thin_algebraic_categories">this lemma</a>.
+  - property: extremal generator
+    proof: The corresponding poset contains two distinct non-minimal elements $1,2$. Therefore, by the corollary <a href="/content/thin_extremal_generator">here</a>, an extremal generator cannot exist.
 
 special_objects:
   initial object:

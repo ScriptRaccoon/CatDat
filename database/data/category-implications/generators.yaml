@@ -9,20 +9,83 @@
   proof: This is trivial.
   is_equivalence: false
 
+- id: extremal_generator_consequence
+  assumptions:
+    - extremal generator
+  conclusions:
+    - extremal generating set
+    - generator
+  proof: This is trivial.
+  is_equivalence: false
+
+- id: extremal_generating_set_consequence
+  assumptions:
+    - extremal generating set
+  conclusions:
+    - generating set
+  proof: This is trivial.
+  is_equivalence: false
+
+- id: generator_balanced_consequence
+  assumptions:
+    - generator
+    - balanced
+  conclusions:
+    - extremal generator
+  proof: This is immediate from the fact that any faithful functor out of a balanced category is also conservative (see <a href="/functor-implication/faithful_with_balanced_domain">here</a>).
+  is_equivalence: false
+
+- id: generating_set_balanced_consequences
+  assumptions:
+    - generating set
+    - balanced
+  conclusions:
+    - extremal generating set
+  proof: This is immediate from the fact that any faithful functor out of a balanced category is also conservative (see <a href="/functor-implication/faithful_with_balanced_domain">here</a>).
+  is_equivalence: false
+
 - id: generator_via_coproduct
   assumptions:
     - coproducts
     - generating set
-    - zero morphisms
+    - strongly connected
   conclusions:
     - generator
-  proof: 'If $S$ is a generating set, we claim that $U \coloneqq \coprod_{G \in S} G$ is a generator. Let $f,g : A \rightrightarrows B$ be two morphisms with $f h = g h$ for all $h : U \to A$. If $G \in S$, any morphism $G \to A$ extends to $U$ by using zero morphisms outside of $G$. Thus, $fh = gh$ holds for all $h : G \to A$ and $G \in S$. Since $S$ is a generating set, this implies $f = g$.'
+  proof: We get this as a corollary of <a href="/content/generator_construction">this result.</a>
+  is_equivalence: false
+
+- id: extremal_generator_via_coproduct
+  assumptions:
+    - coproducts
+    - extremal generating set
+    - strongly connected
+  conclusions:
+    - extremal generator
+  proof: We get this as a corollary of <a href="/content/generator_construction">this result.</a>
   is_equivalence: false
 
 - id: free-algebra-generates
   assumptions:
     - finitary algebraic
   conclusions:
-    - generator
-  proof: Pick an algebraic theory that represents the category. The free algebra $F(1)$ on one generator is a generator since morphisms $F(1) \to X$ correspond to the elements of (the underlying set of) the algebra $X$.
+    - extremal generator
+  proof: Pick an algebraic theory that represents the category. The free algebra $F(1)$ on one generator is an extremal generator since it represents the underlying set functor, which is faithful and conservative.
+  is_equivalence: false
+
+- id: locally-finite_left-cancellative_semi-strongly-connected_extremal-generating-set
+  assumptions:
+    - locally finite
+    - left cancellative
+    - semi-strongly connected
+    - extremal generating set
+  conclusions:
+    - essentially small
+  proof: >-
+    Suppose a category $\C$ is locally finite, left cancellative, semi-strongly connected, and has an extremal generating set $S$. We then claim that
+    $$\Ob(\C) \to \IN^S, \, X \mapsto (G \mapsto \card(\Hom(G, X)))$$
+    is injective on isomorphism classes of $\Ob(\C)$. To see this, suppose two objects $X$ and $Y$ map into the same cardinality tuple. Since $\C$ is semi-strongly connected, we may assume without loss of generality that there is a morphism $f : X \to Y$. Then since $f$ is a monomorphism, for each $G \in S$ we have
+    $$f \circ {-} : \Hom(G, X) \to \Hom(G, Y)$$
+    is an injective function between finite sets of equal cardinality, and therefore is also a bijection. By the assumption that $S$ is an extremal generating set, we thus have $f$ is an isomorphism.
+
+    This shows that the collection of isomorphism classes of objects of $X$ is in bijection with a set. Together with the assumption that the category is locally finite, this implies the category is essentially small.
   is_equivalence: false

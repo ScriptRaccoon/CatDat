@@ -45,6 +45,12 @@ unsatisfied_properties:
   - property: countable coproducts
     proof: The numbers $0,1,2,\dotsc$ have no supremum, i.e. no coproduct.
 
+  - property: extremal generator
+    proof: The poset $(\IN,\leq)$ has infinitely many non-minimal elements $1, 2, \dotsc$. Therefore, by the corollary <a href="/content/thin_extremal_generator">here</a>, an extremal generator cannot exist.
+
+  - property: extremal cogenerator
+    proof: The poset $\IN$ has infinitely many non-maximal elements $0, 1, 2, \dotsc$. Therefore, by the corollary <a href="/content/thin_extremal_generator">here</a>, an extremal generator cannot exist.
+
 special_objects:
   initial object:
     description: $0$
