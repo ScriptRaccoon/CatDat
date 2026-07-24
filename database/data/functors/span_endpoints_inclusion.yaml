@@ -10,7 +10,8 @@ left_adjoint: null
 tags:
   - category theory
 
-related: []
+related:
+  - morphism_endpoints_inclusion
 
 satisfied_properties:
   - property: fully faithful

@@ -1,0 +1,40 @@
+id: morphism_endpoints_inclusion
+name: morphism endpoints inclusion
+notation: $E$
+domain: '2'
+codomain: walking_morphism
+description: This is the functor that embeds the discrete category $\{0,1\}$ into the walking morphism $\{0 \to 1\}$. It provides an example of a faithful functor that is full on isomorphisms but not full.
+nlab_link: null
+left_adjoint: null
+
+tags:
+  - category theory
+
+related:
+  - span_endpoints_inclusion
+
+satisfied_properties:
+  - property: full on isomorphisms
+    proof: This is trivial.
+
+  - property: essentially surjective
+    proof: It is even bijective on objects.
+
+  - property: continuous
+    proof: This follows from Lemma 2 <a href="/content/functors_on_discrete_categories">here</a>.
+
+  - property: cocontinuous
+    proof: This follows from the dual of Lemma 2 <a href="/content/functors_on_discrete_categories">here</a>.
+
+unsatisfied_properties:
+  - property: left-invertible
+    proof: There are exactly two functors $\{0 \to 1\} \to \{0,1\}$, namely, the two constant functors $0,1$. Each of these does not provide a left inverse.
+
+  - property: right-invertible
+    proof: There are exactly two functors $\{0 \to 1\} \to \{0,1\}$, namely, the two constant functors $0,1$. Each of these does not provide a right inverse.
+
+  - property: right adjoint
+    proof: This follows from Corollary 4 <a href="/content/functors_on_discrete_categories">here</a>.
+
+  - property: left adjoint
+    proof: This follows from the dual of Corollary 4 <a href="/content/functors_on_discrete_categories">here</a>.
