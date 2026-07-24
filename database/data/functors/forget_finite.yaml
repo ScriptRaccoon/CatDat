@@ -1,0 +1,35 @@
+id: forget_finite
+name: forgetful functor from finite sets to sets
+notation: $U_{\FinSet,\Set}$
+domain: FinSet
+codomain: Set
+description: This functor is the inclusion functor $\FinSet \hookrightarrow \Set$ mapping a finite set to itself. It can also be regarded as a forgetful functor since it makes finite sets "forget" their finiteness. The functor is a basic example of a representable functor which is not a right adjoint.
+nlab_link: null
+left_adjoint: null
+
+tags:
+  - set theory
+  - forgetful
+
+related:
+  - id_Set
+
+satisfied_properties:
+  - property: fully faithful
+    proof: This is trivial.
+
+  - property: representable
+    proof: It is represented by the singleton set.
+
+  - property: cocontinuous
+    proof: This follows from Lemma 1 <a href="/content/inclusion-functors">here</a> since <a href="/category/Set">$\Set$</a> has an extremal cogenerator $\{0,1\}$ which is contained in $\FinSet$.
+
+unsatisfied_properties:
+  - property: left-invertible
+    proof: >-
+      Assume that there is a functor $F : \Set \to \FinSet$ such that $F(X) \cong X$ for every finite set $X$ (we won't even need naturality in $X$ to derive a contradiction). Let $S$ be any infinite set, such as $S = \IN$. Since $F(S)$ is a finite set, $n := \card(F(S))$ is a natural number. Since $S$ is infinite, there is a finite subset $X \subseteq S$ with $n+1$ elements. The inclusion map $X \hookrightarrow S$ is a split monomorphism. It follows that also $F(X) \hookrightarrow F(S)$ is a split monomorphism. But then
+      $$n = \card(F(S)) \geq \card(F(X)) = \card(X) = n+1$$
+      is a contradiction.
+
+  - property: dominant
+    proof: This is trivial.

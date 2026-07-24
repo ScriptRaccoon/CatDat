@@ -14,6 +14,7 @@ related:
   - squaring_sets
   - doubling_sets
   - diagonal_sets
+  - forget_finite
 
 satisfied_properties:
   - property: isomorphism
