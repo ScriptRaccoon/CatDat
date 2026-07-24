@@ -1,0 +1,18 @@
+id: extremal cogenerating set
+relation: has an
+description: >-
+  A set of objects $S$ is called an <i>extremal cogenerating set</i> if it is a cogenerating set and for every morphism $f : A \to B$, $f$ is an isomorphism if and only if for every object $Q \in S$ we have ${-}\circ f : \Hom(B, Q) \to \Hom(A, Q)$ is a bijection. Equivalently, the functor $(\Hom(-,Q))_{Q \in S} : \C^{\op} \to (\Set^+)^S$ is faithful and conservative. This property refers to the existence of an extremal cogenerating set.
+
+  In a locally essentially small category with small products, it is also equivalent to the condition that the canonical morphism
+  $$\textstyle A \to \prod_{Q\in S} \prod_{f\in\Hom(A,Q)} Q$$
+  is an extremal monomorphism for every object $A$, explaining the terminology (see Prop. 5.3 at the <a href="https://ncatlab.org/nlab/show/separator" target="_blank">nLab</a>).
+nlab_link: https://ncatlab.org/nlab/show/separator
+dual: extremal generating set
+invariant_under_equivalences: true
+
+related:
+  - extremal cogenerator
+  - cogenerating set
+
+tags:
+  - size

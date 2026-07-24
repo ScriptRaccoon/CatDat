@@ -1,0 +1,18 @@
+id: extremal generating set
+relation: has an
+description: >-
+  A set of objects $S$ is called an <i>extremal generating set</i> if it is a generating set and for every morphism $f : A \to B$, $f$ is an isomorphism if and only if for every object $G \in S$ we have $f \circ {-} : \Hom(G, A) \to \Hom(G, B)$ is a bijection. Equivalently, the functor $(\Hom(G,-))_{G \in S} : \C \to (\Set^+)^S$ is faithful and conservative. This property refers to the existence of an extremal generating set.
+
+  In a locally essentially small category with small coproducts, it is also equivalent to the condition that the canonical morphism
+  $$\textstyle\bigsqcup_{G\in S} \bigsqcup_{f\in\Hom(G,A)} G \to A$$
+  is an extremal epimorphism for every object $A$, explaining the terminology (see Prop. 5.3 at the <a href="https://ncatlab.org/nlab/show/separator" target="_blank">nLab</a>).
+nlab_link: https://ncatlab.org/nlab/show/separator
+dual: extremal cogenerating set
+invariant_under_equivalences: true
+
+related:
+  - extremal generator
+  - generating set
+
+tags:
+  - size
