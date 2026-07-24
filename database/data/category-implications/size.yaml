@@ -17,7 +17,7 @@
     - locally essentially small
     - well-copowered
     - well-powered
-  proof: All conclusions are trivial except perhaps that the category has an extremal generating set. For that, let $S$ be a set with one representative of each isomorphism class of objects of the category. Then it is easy to show using Yoneda's lemma that $S$ is an extremal generating set.
+  proof: All conclusions are trivial except perhaps that the category has an extremal generating set. For that, let $S$ be a set with one representative of each isomorphism class of objects of the category. Then it is easy to show using the Yoneda Lemma that $S$ is an extremal generating set.
   is_equivalence: false
 
 - id: finite_consequence

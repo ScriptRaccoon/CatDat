@@ -82,8 +82,8 @@
     - essentially small
   proof: >-
     Suppose a category $\C$ is locally finite, left cancellative, semi-strongly connected, and has an extremal generating set $S$. We then claim that
-    $$\Ob(\C) \to \IN^S, \, X \mapsto (G \mapsto \card(\Hom(G, X)))$$
-    is injective on isomorphism classes of $\Ob(\C)$. To see this, suppose two objects $X$ and $Y$ map into the same cardinality tuple. Since $\C$ is semi-strongly connected, we may assume without loss of generality that there is a morphism $f : X \to Y$. Then since $f$ is a monomorphism, for each $G \in S$ we have
+    $$\Ob(\C) \to \IN^S, \, X \mapsto \bigl(G \mapsto \card(\Hom(G, X))\bigr)$$
+    is injective on isomorphism classes of $\Ob(\C)$. To see this, suppose two objects $X$ and $Y$ map to the same cardinality tuple. Since $\C$ is semi-strongly connected, we may assume without loss of generality that there is a morphism $f : X \to Y$. Then since $f$ is a monomorphism, for each $G \in S$ we have
     $$f \circ {-} : \Hom(G, X) \to \Hom(G, Y)$$
     is an injective function between finite sets of equal cardinality, and therefore is also a bijection. By the assumption that $S$ is an extremal generating set, we thus have $f$ is an isomorphism.
 

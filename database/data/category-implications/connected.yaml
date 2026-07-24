@@ -66,9 +66,13 @@
   conclusions:
     - extremal generator
   proof: >-
-    Let $G$ be any object of the category. Then certainly $G$ is a generator: Let $f, g : X \rightrightarrows Y$ be morphisms such that $fu = gu$ for all $u : G \to X$. Choose an isomorphism $u : G \to X$. Then $u$ is an epimorphism, so that $f = g$.
+    Let $G$ be any object of a core-connected category. Then certainly $G$ is a generator: Let $f, g : X \rightrightarrows Y$ be morphisms such that $f \circ h = g \circ h$ for all $h : G \to X$. Choose an isomorphism $h : G \to X$. Then $h$ is an epimorphism, so that $f = g$.
 
-    To see $G$ is in fact an extremal generator: Let $f : X \to Y$ be morphism such that $f \circ {-} : \Hom(G, X) \to \Hom(G, Y)$ is a bijection. Then for any object $T$, $f \circ {-} : \Hom(T, X) \to \Hom(T, Y)$ is a bijection since $T \cong G$, and the Yoneda embedding of $f$ is a natural transformation $\Hom({-}, X) \to \Hom({-}, Y)$. By the Yoneda Lemma, $f$ is therefore an isomorphism.
+    To see $G$ is in fact an extremal generator: Let $f : X \to Y$ be a morphism such that
+    $$f \circ {-} : \Hom(G, X) \to \Hom(G, Y)$$
+    is a bijection. Then for any object $T$,
+    $$f \circ {-} : \Hom(T, X) \to \Hom(T, Y)$$
+    is a bijection since $T \cong G$, and the Yoneda embedding of $f$ is a natural transformation $\Hom({-}, X) \to \Hom({-}, Y)$. By the Yoneda Lemma, $f$ is therefore an isomorphism.
   is_equivalence: false
 
 - id: trivial_is_core-connected
