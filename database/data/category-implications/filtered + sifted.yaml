@@ -8,6 +8,16 @@
   proof: 'Every filtered category $\C$ is inhabited and has final diagonal functors $\Delta : \C \to \C^J$ for all finite index categories $J$; in particular, it is inhabited and its diagonal $\Delta: \C \to \C \times \C$ is final.'
   is_equivalence: false
 
+# TODO: with appropriate additional category properties, the hypothesis that the category is sifted could be weakened to a hypothesis that the category is inhabited and has cospans of all pairs, or equivalently that all finite sets of objects have a cospan
+- id: thin_sifted_is_filtered
+  assumptions:
+    - thin
+    - sifted
+  conclusions:
+    - filtered
+  proof: The assumption that the category is sifted implies that any finite set of objects (including an empty set) has a cospan. In order to conclude the category is filtered, the only thing left to show is that any parallel pair is coequalized by some morphism; but this is trivial in a thin category.
+  is_equivalence: false
+
 - id: sifted_is_connected
   assumptions:
     - sifted
