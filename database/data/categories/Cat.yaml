@@ -27,11 +27,14 @@ satisfied_properties:
   - property: semi-strongly connected
     proof: Every non-empty category is weakly terminal (by using constant functors).
 
-  - property: generator
-    proof: 'The <a href="/category/walking_morphism">walking morphism</a> $I$ is a generator: Assume that $F,G : \C \rightrightarrows \D$ are functors that agree when being precomposed with any functor from $I$. This means that $F(f) = G(f)$ for all morphisms $f : X \to Y$ in $\C$. By comparing the domains and applying this to $f = \id_X$, we see that $F(X) = G(X)$ for all objects $X$. And we just saw that $F,G$ also agree on morphisms.'
-
   - property: infinitary extensive
     proof: '[Sketch] This is straight forward from the fact that <a href="/category/Set">$\Set$</a> is infinitary extensive: A functor $\C \to \coprod_i \D_i$ yields full subcategories $\C_i \subseteq \C$ (the preimages of $\D_i)$ with $\C = \coprod_i \C_i$.'
+
+  - property: extremal generator
+    proof: >-
+      The <a href="/category/walking_morphism">walking morphism</a> $I$ is a generator: Assume that $F,G : \C \rightrightarrows \D$ are functors that agree when being precomposed with any functor from $I$. This means that $F(f) = G(f)$ for all morphisms $f : X \to Y$ in $\C$. By comparing the domains and applying this to $f = \id_X$, we see that $F(X) = G(X)$ for all objects $X$. And we just saw that $F,G$ also agree on morphisms.
+
+      In fact, $I$ is an extremal generator: suppose $F : \C \to \D$ is a functor which induces a bijection $\Mor(\C) \to \Mor(\D)$. By considering the images of identity morphisms in $\C$, we see that $F$ is injective on objects; and then by considering the preimages of identity morphisms in $\D$, we see that $F$ is surjective on objects. By assumption, $F$ is also bijective on morphisms, so $F$ is an isomorphism of categories.
 
 unsatisfied_properties:
   - property: skeletal

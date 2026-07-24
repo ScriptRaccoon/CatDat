@@ -113,6 +113,10 @@
 	"ℵ₂-small copowers": true,
 	"pretopos": true,
 	"quasitopos": true,
+	"extremal generator": true,
+	"extremal generating set": true,
+	"extremal cogenerator": true,
+	"extremal cogenerating set": true,
 
 	"Grothendieck abelian": false,
 	"Malcev": false,

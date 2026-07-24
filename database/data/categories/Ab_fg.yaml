@@ -21,8 +21,8 @@ satisfied_properties:
   - property: abelian
     proof: This follows from the fact for abelian groups and the fact that subgroups of finitely generated abelian groups are also finitely generated.
 
-  - property: generator
-    proof: The group $\IZ$ is a generator since it represents the forgetful functor to $\Set$.
+  - property: extremal generator
+    proof: The group $\IZ$ is an extremal generator since it represents the forgetful functor to $\Set$ which is faithful and conservative.
 
   - property: essentially countable
     proof: Every finitely generated abelian group is isomorphic to a group of the form $\IZ^n / U$, where $n \in \IN$ and $U$ is a subgroup of $\IZ^n$. Since $\IZ^n$ is Noetherian as a $\IZ$-module, $U$ is finitely generated, hence the category $\Ab_\fg$ has only countably many objects up to isomorphism. Furthermore, for any objects $A \cong \IZ^n / U$ and $B \cong \IZ^m / T$, the hom-set $\Hom(A,B)$ is countable. Indeed, precomposition with the quotient map yields an injection $\Hom(A,B) \hookrightarrow \Hom(\IZ^n, B) \cong B^n$, and $B^n$ is countable.

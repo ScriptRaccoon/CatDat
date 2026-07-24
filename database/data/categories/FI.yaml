@@ -26,8 +26,8 @@ satisfied_properties:
   - property: left cancellative
     proof: This is trivial.
 
-  - property: generator
-    proof: The one-point set is a generator since it represents the forgetful functor $\FI \to \Set$.
+  - property: extremal generator
+    proof: The one-point set is a generator since it represents the forgetful functor $\FI \to \Set$, which is faithful and conservative.
 
   - property: essentially countable
     proof: Every finite set is isomorphic to some $\{1,\dotsc,n\}$ for some $n \in \IN$.

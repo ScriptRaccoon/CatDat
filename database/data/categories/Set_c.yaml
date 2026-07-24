@@ -32,11 +32,11 @@ satisfied_properties:
   - property: subobject classifier
     proof: This is because $\{0,1\}$ is a subobject classifier in <a href="/category/Set">$\Set$</a>, which is countable, and the monomorphisms coincide.
 
-  - property: generator
-    proof: The one-point set is clearly a generator.
+  - property: extremal generator
+    proof: The one-point set is an extremal generator even in <a href="/category/Set">$\Set$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
 
-  - property: cogenerator
-    proof: The two-point set is a cogenerator in <a href="/category/Set">$\Set$</a>, hence also in $\Set_\c$.
+  - property: extremal cogenerator
+    proof: The two-point set is an extremal cogenerator even in <a href="/category/Set">$\Set$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
 
   - property: semi-strongly connected
     proof: This is because the larger category <a href="/category/Set">$\Set$</a> has this property.

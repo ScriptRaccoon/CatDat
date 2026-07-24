@@ -17,11 +17,8 @@ satisfied_properties:
   - property: locally small
     proof: There is a forgetful functor $\Set_\f \to \Set$ and $\Set$ is locally small.
 
-  - property: generator
-    proof: The singleton set (which is <i>not</i> terminal) is a generator as it represents the forgetful functor $\Set_\f \to \Set$.
-
-  - property: cogenerator
-    proof: 'The set $\{0,1\}$ is a cogenerator in $\Set_\f$: Assume that $f,g : X \rightrightarrows Y$ are two finite-to-one maps such that $h \circ f = h \circ g$ for all finite-to-one maps $h : Y \to \{0,1\}$. This exactly means $f^*(A)=g^*(A)$ for all finite subsets $A \subseteq Y$. Applying this to $A = \{f(x)\}$ for $x \in X$ we get $x \in f^*(\{f(x)\}) = g^*(\{f(x)\})$, so that $g(x) = f(x)$.'
+  - property: extremal generator
+    proof: The singleton set (which is <i>not</i> terminal) is an extremal generator as it represents the forgetful functor $\Set_\f \to \Set$ which is faithful and conservative.
 
   - property: semi-strongly connected
     proof: From set theory it is known that for all sets $X,Y$ there is an injective map $X \to Y$ or an injective map $Y \to X$, and injective maps are finite-to-one.
@@ -78,8 +75,8 @@ unsatisfied_properties:
   - property: sequential limits
     proof: Consider the set $[n] \coloneqq \{0,\dotsc,n\}$ for $n \in \IN$. The forgetful functor to $\Set$ is representable (by the singleton set), hence preserves all limits. Thus, if the diagram of truncation maps $\cdots \twoheadrightarrow [2] \twoheadrightarrow [1] \twoheadrightarrow [0]$ has a limit in $\Set_\f$, its underlying set is isomorphic to the limit taken in $\Set$, which is $\IN \cup \{\infty\}$. But there is no finite-to-one map $\IN \cup \{\infty\} \to [0]$.
 
-  - property: coaccessible
-    proof: 'Assume that $\Set_\f$ is $\lambda$-coaccessible for some regular cardinal. Then there is an infinite cardinal $\kappa$ such that every $X \in \Set_\f$ is a $\lambda$-cofiltered limit of sets of cardinality $\leq \kappa$. In particular, since every $\lambda$-cofiltered category is non-empty, there is some set $Y$ of cardinality $\leq \kappa$ that admits a morphism $f : X \to Y$ in $\Set_f$. Since $f$ has finite fibers, this implies $\card(X) \leq \card(Y) \cdot \aleph_0 \leq \kappa$. Since $X$ was an arbitrary set, this is a contradiction.'
+  - property: cogenerating set
+    proof: 'Suppose that $S$ is a set of objects of $\Set_\f$, and let $\kappa$ be an uncountable cardinal greater than $\card(Q)$ for each $Q \in S$. Then for each $Q \in S$, $\Hom(\kappa, Q) = \varnothing$ (or else we would have $\kappa = \card(\kappa) \le \aleph_0 \cdot \card(Q) = \max(\aleph_0, \card(Q)) < \kappa$ giving a contradiction). This makes it impossible for any morphisms from $\kappa$ to an object of $S$ to distinguish the two morphisms $0, 1 : 1 \rightrightarrows \kappa$.'
 
 special_objects:
   initial object:

@@ -39,6 +39,10 @@ satisfied_properties:
   - property: effective cocongruences
     proof: A proof can be found <a href="/content/cocongruences_of_groups">here</a>.
 
+  - property: extremal generator
+    proof: The group $\IZ$ is an extremal generator since it represents the forgetful functor $\Grp \to \Set$, which is faithful and conservative.
+    check_redundancy: false
+
 unsatisfied_properties:
   - property: skeletal
     proof: This is trivial.

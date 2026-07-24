@@ -116,3 +116,9 @@ $$
 $$
 
 is a composition of faithful functors, hence faithful. <span class="qed">$\square$</span>
+
+::: Lemma 10
+Any fully faithful functor reflects extremal generating sets (and therefore, by duality, it also reflects extremal cogenerating sets). In other words, if $U : \C \to \D$ is a fully faithful functor, and $S$ is a set of objects such that $U(S)$ is an extremal generating set of $\D$, then $S$ is an extremal generating set of $\C$.
+:::
+
+_Proof:_ Under the given assumptions, we can factor $\C \to (\Set^+)^S$, $X \mapsto (\Hom_\C(G, X))_{G\in S}$, as being isomorphic to the composition of $U : \C \to D$ followed by $Y \mapsto (\Hom_\D(UG, Y))_{G\in S}$, using the assumption on $U$ to identify $\Hom_\D(UG, UX)$ with $\Hom_C(G, X)$ naturally in $X$. In this composition, the first is fully faithful and therefore also conservative; and the second is assumed to be faithful and conservative. Therefore, the composition is also faithful and conservative. <span class="qed">$\square$</span>

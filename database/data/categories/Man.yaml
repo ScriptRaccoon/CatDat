@@ -22,12 +22,6 @@ satisfied_properties:
     proof: In short, this follows from the corresponding statement for topological spaces and $\IR^n \times \IR^m \cong \IR^{n+m}$.
     check_redundancy: false
 
-  - property: generator
-    proof: The $0$-dimensional one-point manifold is a generator since it represents the forgetful functor $\Top \to \Set$.
-
-  - property: cogenerator
-    proof: 'The manifold $\IR$ is a cogenerator, since for every smooth manifold $M$ and points $p \neq q$ in $M$ there is a smooth function $f : M \to \IR$ with $f(p) = 1$ and $f(q) = 0$ (John Lee, Introduction to Smooth Manifolds, Prop. 2.25).'
-
   - property: semi-strongly connected
     proof: Every non-empty manifold is weakly terminal (by using constant maps).
 
@@ -51,6 +45,24 @@ satisfied_properties:
 
   - property: effective cocongruences
     proof: 'From the proof that $\Man$ has coquotients of cocongruences, we know that for any cocongruence $X \rightrightarrows E$, there is a clopen submanifold $U$ of $X$ such that the fibers of $r : E \twoheadrightarrow X$ have one point on $U$, and two points on $X \setminus U$. Therefore, $E$ is the cokernel pair of the inclusion map $U \hookrightarrow X$.'
+
+  - property: extremal generator
+    proof: >-
+      The $0$-dimensional one-point manifold is a generator since it represents the forgetful functor $\Man \to \Set$. Since we have an epimorphism $\IR \to 1$, we see that $\IR$ is also a generator.
+
+      We claim that in fact, $\IR$ is an extremal generator. To see this, suppose we have a smooth map $f : M \to N$ which induces a bijection of smooth curves on $M$ to smooth curves on $N$. By considering constant curves, we must have that $f$ is a bijection on the underlying sets. Now for any point $p \in M$ and any tangent vector $v \in T_{f(p)}(N)$, there exists a smooth curve $\gamma : \IR \to N$ such that $\gamma(0) = f(p)$ and $\gamma'(0) = v$. By the assumption on $f$, there exists a smooth curve $\beta : \IR \to M$ such that $\gamma = f \circ \beta$. By the injectivity of $f$, we must have $\beta(0) = p$, so $\beta'(0) \in T_p(M)$ and $f_*(\beta'(0)) = \gamma'(0) = v$. This shows that $f_* : T_p(M) \to T_{f(p)}(N)$ is surjective, hence $f$ is a submersion whose fibers are singletons. Therefore, by the submersion theorem, $f$ is a local diffeomorphism. Since $f$ is bijective, $f$ must be a diffeomorphism.
+
+  - property: extremal cogenerator
+    proof: >-
+      The manifold $\IR$ is a cogenerator, since for every smooth manifold $M$ and points $p \neq q$ in $M$ there is a smooth function $f : M \to \IR$ with $f(p) = 1$ and $f(q) = 0$ (John Lee, Introduction to Smooth Manifolds, Prop. 2.25).
+
+      In fact, $\IR$ is an extremal cogenerator. To see this, suppose we have a smooth map $f : M \to N$ such that ${-} \circ f : \Hom(N, \IR) \to \Hom(M, \IR)$ is a bijection. Then using bump maps as before to separate points of $M$, we can see that $f$ must be injective on underlying sets. Also, since $\IR$ is a cogenerator and ${-} \circ f$ is injective, we get that $f$ is an epimorphism, so it has dense image (see below). We claim that in fact, $f$ is surjective. To see this, suppose we had $q \in N \setminus \im(f)$. Then there is a smooth function $\varphi : N \to \IR$ such that $\varphi^*(\{0\}) = \{q\}$ (John Lee, Introduction to Smooth Manifolds, Thm. 2.29). But then we can construct a smooth function $\psi : M \to \IR$ by
+      $$\psi(p) \coloneqq \frac{1}{\varphi(f(p))}.$$
+      Let $\xi : N \to \IR$ be the corresponding smooth function such that $f^* \xi = \psi$. Then $\varphi \cdot \xi$ must take value $1$ at any point in the image of $f$. Since the image of $f$ is dense, that implies that $\varphi \cdot \xi$ is the constant function with value 1, contradicting the fact that $\varphi(q) = 0$.
+
+      Now, recall that the tangent space $T_p(M)$ of $M$ at a point $p$ is defined as the space of $\IR$-linear functions $\partial : C^\infty(M) \to \IR$ such that $\partial(gh) = g(p) \partial(h) + h(p) \partial(g)$; and similarly for the tangent space of $N$ at $f(p)$. Also, the push-forward $f_* : T_p(M) \to T_{f(p)}(N)$ is defined by precomposition with $f^* : C^\infty(N) \to C^\infty(M)$. But by assumption, $f^* : C^\infty(N) \to C^\infty(M)$ is a bijection. Also, $f^* : C^\infty(N) \to C^\infty(M)$ is a homomorphism of $\IR$-algebras, so its inverse function $(f^*)^{-1} : C^\infty(M) \to C^\infty(N)$ is also a homomorphism of $\IR$-algebras. Furthermore,
+      $$(f^*)^{-1}(g)(f(p)) = f^*((f^*)^{-1}(g))(p) = g(p)$$
+      for each $g \in C^\infty(M)$. Therefore, we see that for each $\partial \in T_{f(p)}(N)$, $\partial \circ (f^*)^{-1} \in T_p(M)$, and this defines an inverse to $f_* : T_p(M) \to T_{f(p)}(N)$. Thus, by the   inverse function theorem, $f$ is a local diffeomorphism. Since $f$ is bijective, $f$ must be a diffeomorphism.
 
 unsatisfied_properties:
   - property: skeletal

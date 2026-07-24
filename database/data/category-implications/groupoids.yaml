@@ -40,6 +40,24 @@
   proof: Every slice category is a trivial category.
   is_equivalence: false
 
+- id: groupoid_generator
+  assumptions:
+    - groupoid
+    - generator
+  conclusions:
+    - extremal generator
+  proof: This is trivial.
+  is_equivalence: false
+
+- id: groupoid_generating_set
+  assumptions:
+    - groupoid
+    - generating set
+  conclusions:
+    - extremal generating set
+  proof: This is trivial.
+  is_equivalence: false
+
 - id: groupoid_with_multi-terminal
   assumptions:
     - groupoid

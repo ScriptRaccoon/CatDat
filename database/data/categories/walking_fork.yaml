@@ -32,9 +32,6 @@ satisfied_properties:
   - property: one-way
     proof: This is trivial.
 
-  - property: generator
-    proof: It is easy to check that $1$ is a generator.
-
   - property: cogenerator
     proof: It is easy to check that $2$ is a cogenerator.
 
@@ -44,6 +41,14 @@ satisfied_properties:
   - property: equalizers
     proof: The only pair of distinct parallel morphisms is $f,g$, and their equalizer is $i$.
 
+  - property: extremal generator
+    proof: >-
+      It is easy to check that $\Hom(1, {-})$ sends the category
+      $$0 \to 1 \rightrightarrows 2$$
+      to the diagram in $\Set$
+      $$\varnothing \to \{ \id_1 \} \rightrightarrows \{ f, g \}.$$
+      From this, it is easy to see that $\Hom(1, {-})$ is faithful and conservative, so $1$ is an extremal generator.
+
   - property: locally cartesian closed
     proof: We need to check that every slice category is cartesian closed. The slice category over $0$ is the <a href="/category/1">trivial category</a>. The slice category over $1$ is the <a href="/category/walking_morphism">walking morphism</a>. Finally, the slice category over $2$ ist the <a href="/category/walking_commutative_square">walking commutative square</a>. All of these are cartesian closed, see their pages for details.
 
@@ -51,11 +56,12 @@ unsatisfied_properties:
   - property: strongly connected
     proof: There is no morphism $1 \to 0$.
 
-  - property: balanced
-    proof: Both $f$ and $g$ are monomorphisms and epimorphisms.
-
   - property: binary powers
     proof: 'Assume that $X \coloneqq 2 \times 2$ exists. Since there is a diagonal morphism $2 \to X$, we must have $X = 2$, and the two projections $p_1,p_2 : X \rightrightarrows 2$ must be equal to the identity. But $f,g$ induce a morphism $(f,g) : 1 \to X$ with $p_1 (f,g) = f$ and $p_2 (f,g) = g$, so that $f=g$, a contradiction.'
+
+  - property: extremal cogenerator
+    proof: >-
+      Since any cogenerator must distinguish $f,g : 1 \rightrightarrows 2$ and the only object which has a morphism from $2$ is $2$, the only cogenerator is $2$. The unique morphism $h : 0 \to 2$ is not an isomorphism, but ${-} \circ h : \Hom(2,2) \to \Hom(0,2)$ is a bijection since both sides are singletons. Thus, $2$ is not an extremal cogenerator.
 
 special_objects:
   initial object:

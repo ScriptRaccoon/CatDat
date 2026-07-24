@@ -38,8 +38,8 @@ unsatisfied_properties:
   - property: semi-strongly connected
     proof: There is no morphism between $b$ and $c$ (resp., between $(0,1)$ and $(1,0)$).
 
-  - property: finitary algebraic
-    proof: This follows from <a href="/content/thin_algebraic_categories">this lemma</a>.
+  - property: extremal generator
+    proof: The corresponding poset has three distinct non-minimal elements $b,c,d$. Therefore, by the corollary <a href="/content/thin_extremal_generator">here</a>, an extremal generator cannot exist.
 
 special_objects:
   initial object:

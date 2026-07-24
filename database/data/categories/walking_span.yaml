@@ -28,18 +28,21 @@ satisfied_properties:
   - property: skeletal
     proof: The three objects are not isomorphic.
 
-  - property: initial object
-    proof: $0$ is an initial object.
-
   - property: binary products
     proof: We have $0 \times x = 0$ for all $x$, $x \times x = x$, and $1 \times 2 = 0$.
 
   - property: locally cartesian closed
     proof: The slice category over $0$ is the <a href="/category/1">trivial category</a>, and the slice category over $1$ is the <a href="/category/walking_morphism">walking morphism</a>, which is cartesian closed. The same holds for $2$ by symmetry.
 
+  - property: extremal cogenerator
+    proof: It follows from the corollary <a href="/content/thin_extremal_generator">here</a> that $0$, being the unique non-maximal element of the poset $\{ 0 < 1, 0 < 2 \}$, is an extremal cogenerator.
+
 unsatisfied_properties:
   - property: sifted
     proof: There is no cospan between $1$ and $2$.
+
+  - property: extremal generator
+    proof: The corresponding poset has two non-minimal elements $1$ and $2$. Therefore, by the corollary <a href="/content/thin_extremal_generator">here</a>, it is impossible for $\Span$ to have an extremal generator.
 
 special_objects:
   initial object:

@@ -53,9 +53,6 @@ unsatisfied_properties:
   - property: skeletal
     proof: This is trivial.
 
-  - property: balanced
-    proof: The inclusion $\IQ \hookrightarrow \IR$ is a counterexample; it is an epimorphism since $\IQ$ is dense in $\IR$.
-
   - property: Malcev
     proof: This is clear since <a href="/category/Set">$\Set$</a> is not Malcev and can be interpreted as the subcategory of discrete spaces (which are Hausdorff).
 
@@ -74,9 +71,6 @@ unsatisfied_properties:
       $$(-\infty, -1/n] \cup [1/n, \infty) \hookrightarrow \IR$$
       with itself. That is, $X_n$ is the union of two lines $\IR \times \{1\}$ and $\IR \times \{2\}$ where we identify $(x,1) \equiv (x,2)$ when $|x| \geq 1/n$. Then $X_n$ is Hausdorff, and there is a canonical surjective continuous map $X_n \to X_{n+1}$. The colimit in $\Top$ is the union of two lines where we identify $(x,1) \equiv (x,2)$ when $|x| \geq 1/n$ for some $n$, i.e. when $x \neq 0$. This is the line with the double origin, which is not Hausdorff. Its Hausdorff reflection is the line $\IR$ where all points of both lines are identified, and it provides the colimit in $\Haus$. Now, the injective continuous maps $\{1,2\} \to X_n$, $i \mapsto (0,i)$ (where $\{1,2\}$ is discrete) become the constant map $0 : \{1,2\} \to \IR$ in the colimit, which is not a monomorphism.
 
-  - property: accessible
-    proof: In fact, it does not have any small colimit-dense subcategory by <a href="https://math.stackexchange.com/questions/4097315/" target="_blank">MSE/4097315</a>.
-
   - property: cogenerator
     # cspell: disable-next-line
     proof: 'Assume that $Q$ is a cogenerator. Since $Q$ is Hausdorff, $Q$ is $T_1$. By a theorem of Herrlich (<i>Wann sind alle stetigen Abbildungen in Y konstant</i>. Math. Z. 90 (1965): 152-154. <a href="http://eudml.org/doc/170472" target="_blank">EUMDL</a>), there is a regular Hausdorff space $X$ with $\geq 2$ points such that every continuous map $X \to Q$ is constant. (The author only states that $X$ is regular, but actually, $X$ is regular and $T_1$, hence Hausdorff.) But since $Q$ is a cogenerator, this implies that all maps $1 \rightrightarrows X$ are equal, i.e. that $X$ has just one point. This is a contradiction.'
@@ -90,6 +84,9 @@ unsatisfied_properties:
       Consider the two subsets $A_1 \coloneqq \{(x,0) : x \in \IQ \}$ and $A_2 \coloneqq \{(x,0) : x \in \IR \setminus \IQ \}$ of $A$. They are closed in $A$ (since $A$ is closed and discrete), disjoint, but cannot be separated by disjoint open neighborhoods in $\Gamma$; this is part of the proof of the well-known fact that $\Gamma$ is not normal (<a href="https://math.stackexchange.com/questions/2528435" target="_blank">MSE/2528435</a>).
       Let $C \coloneqq \{1,2\}$ be the discrete two-point space. The map $f : A \to C$ defined by $f(a)=1$ for $a \in A_1$ and $f(a)=2$ for $a \in A_2$ is continuous, since $A$ is discrete.
       The pushout $C \sqcup_A \Gamma$ in $\Haus$ is the Hausdorff reflection of the pushout $Q$ in $\Top$. Notice that $Q$ is the quotient space of $\Gamma$ in which $A_1$ and $A_2$ are each collapsed to a point, denoted by $[A_1]$ and $[A_2]$. The canonical map $C \to Q$ is given by $i \mapsto [A_i]$. Now, $[A_1]$ and $[A_2]$ cannot be separated by disjoint open neighborhoods in $Q$, since such neighborhoods would pull back to disjoint open neighborhoods of $A_1$ and $A_2$ in $\Gamma$. Thus, they are identified in the Hausdorff reflection. This shows that the canonical map $C \to C \sqcup_A \Gamma$ is not injective and hence not a regular monomorphism.
+
+  - property: extremal generating set
+    proof: The proof is the same as the one for <a href="/category/Top">$\Top$</a>; there the test spaces we use are of the form $\kappa \sqcup \{ \kappa \}$ and $\kappa + 1$, which are both Hausdorff spaces.
 
 special_objects:
   initial object:

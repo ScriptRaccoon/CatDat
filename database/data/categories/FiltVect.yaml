@@ -47,6 +47,19 @@ satisfied_properties:
 
   - property: cogenerator
     proof: It is straightforward to check that the vector space $K$ equipped with the maximal filtration $F^n(K) \coloneqq K$ is a cogenerator.
+    check_redundancy: false
+
+  - property: extremal cogenerating set
+    proof: >-
+      Let $K_n$ denote the vector space $K$ equipped with the filtration such that $F_m(K) = K$ for $m < n$ and $F_m(K) = 0$ for $m \ge n$; and similarly, let $K_\infty$ denote the vector space equipped with the filtration such that $F_m(K) = K$ for each $m$. Then $K_n$ represents the functor mapping $(V, F)$ to $F_n(V)^\perp$, i.e. the space of functionals on $V$ whose kernels contain $F_n(V)$. Also, $K_\infty$ represents the functor sending $(V, F)$ to the dual $V^*$; and the canonical epimorphism $K_\infty \twoheadrightarrow K_n$ corresponds under the Yoneda embedding to the natural inclusion $F_n(V)^\perp \hookrightarrow V^*$. We claim that $\{ K_n : n \in \IZ \} \cup \{ K_\infty \}$ is an extremal cogenerating set of $\FiltVect_K$.
+
+      First, the set includes $K_\infty$, which we have already seen above is a cogenerator of $\FiltVect_K$. Now, suppose we have a morphism $f : (V, F) \to (W, G)$ such that
+      $${-} \circ f : \Hom((W, G), K_\infty) \to \Hom((V, F), K_\infty)$$
+      is a bijection. This implies that $f^* : W^* \to V^*$ is a bijection of the dual vector spaces, and therefore an isomorphism. By standard linear algebra, this implies that $f : V \to W$ is an isomorphism of vector spaces.
+
+      It remains to show that if $f$ also induces a bijection
+      $${-} \circ f : \Hom((W, G), K_n) \to \Hom(V, F), K_n)$$
+      for each $n$, then $f$ induces an isomorphism of the filtrations. For this step, we may assume without loss of generality that $f = \id_V : V \to V$. By the observations above, this implies that $F_n(V)^\perp = G_n(V)^\perp$. By standard linear algebra, we conclude $F_n(V) = G_n(V)$.
 
   - property: finitely accessible
     proof: >-

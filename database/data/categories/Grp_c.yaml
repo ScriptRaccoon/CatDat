@@ -25,8 +25,8 @@ satisfied_properties:
     proof: The trivial group is countable and is a zero object.
     check_redundancy: false
 
-  - property: generator
-    proof: The countable group $\IZ$ is a generator because it represents the forgetful functor $\Grp_\c \to \Set$.
+  - property: extremal generator
+    proof: The countable group $\IZ$ is an extremal generator even in <a href="/category/Grp">$\Grp$</a>. Now use Lemma 10 <a href="/content/subcategories">here</a>.
 
   - property: finite products
     proof: This is because <a href="/category/Grp">$\Grp$</a> has finite (in fact, all) products, and $\Grp_\c \hookrightarrow \Grp$ is closed under finite products. This is because a finite product of countable sets is again countable.
