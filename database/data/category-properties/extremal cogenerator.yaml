@@ -1,0 +1,21 @@
+id: extremal cogenerator
+relation: has an
+description: >-
+  An object $Q$ of a category is called an <i>extremal cogenerator</i> if it is a cogenerator and for every morphism $f : A \to B$, if ${-}\circ f : \Hom(B,Q)\to\Hom(A,Q)$ is a bijection, then $f$ is an isomorphism. Equivalently, the functor $\Hom(-,Q) : \C^{\op} \to \Set^+$ is faithful and conservative. This property refers to the existence of an extremal cogenerator.
+
+  In a locally essentially small category with small products, it is also equivalent to the condition that the canonical morphism
+  $$\textstyle A \to \prod_{f\in\Hom(A,Q)} Q$$
+  is an extremal monomorphism for every object $A$, explaining the terminology (see Prop. 5.3 at the <a href="https://ncatlab.org/nlab/show/separator" target="_blank">nLab</a>).
+
+  By definition, $Q$ is an extremal cogenerator if and only if $\{Q\}$ is an <a href="/category-property/extremal_cogenerating_set">extremal cogenerating set</a>.
+nlab_link: https://ncatlab.org/nlab/show/separator
+dual: extremal generator
+invariant_under_equivalences: true
+
+related:
+  - extremal cogenerating set
+  - cogenerator
+
+tags:
+  - morphism behavior
+  - size

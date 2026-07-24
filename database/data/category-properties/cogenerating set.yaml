@@ -7,6 +7,7 @@ invariant_under_equivalences: true
 
 related:
   - cogenerator
+  - extremal cogenerating set
 
 tags:
   - size
