@@ -20,8 +20,7 @@ test('user can navigate to the page with missing data', async ({ page }) => {
 	await expect(page).toHaveURL('/missing')
 })
 
-// this can be adjusted if at some point in the future everything is known,
-// but that is unlikely
+// this can be adjusted if at some point all categories are understood
 test('user can see categories with missing data', async ({ page }) => {
 	await page.goto('/missing', { waitUntil: 'networkidle' })
 
@@ -47,8 +46,7 @@ test('user can see categories with missing data', async ({ page }) => {
 	await page.waitForURL('/category/*')
 })
 
-// this can be adjusted if at some point in the future a functor
-// is not fully understood anymore
+// this can be adjusted if at some point not all functors are understood
 test('user can see no functors with missing data', async ({ page }) => {
 	await page.goto('/missing', { waitUntil: 'networkidle' })
 
@@ -66,8 +64,7 @@ test('user can see no functors with missing data', async ({ page }) => {
 	await expect(functors_section.getByRole('link')).toHaveCount(0)
 })
 
-// this can be adjusted if at some point in the future a morphism
-// is not fully understood anymore
+// this can be adjusted if at some point not all morphisms are understood
 test('user can see no morphisms with missing data', async ({ page }) => {
 	await page.goto('/missing', { waitUntil: 'networkidle' })
 
@@ -85,6 +82,7 @@ test('user can see no morphisms with missing data', async ({ page }) => {
 	await expect(morphisms_section.getByRole('link')).toHaveCount(0)
 })
 
+// this can be adjusted if at some point every category combination is witnessed
 test('user can see missing category combinations', async ({ page }) => {
 	await page.goto('/missing', { waitUntil: 'networkidle' })
 
@@ -103,7 +101,8 @@ test('user can see missing category combinations', async ({ page }) => {
 	).toBeVisible()
 })
 
-test('user can see missing functor combinations', async ({ page }) => {
+// this can be adjusted if at some point a functor combination is not witnessed
+test('user cannot see any missing functor combinations', async ({ page }) => {
 	await page.goto('/missing', { waitUntil: 'networkidle' })
 
 	const combinations_section = page.locator('section', {
@@ -112,11 +111,22 @@ test('user can see missing functor combinations', async ({ page }) => {
 
 	await expect(combinations_section).toBeVisible()
 
-	await combinations_section
-		.locator('summary', { hasText: /Show all \d+ combinations/ })
-		.click()
+	await expect(combinations_section).toHaveText(
+		/.+Every consistent functor property combination.+is witnessed/
+	)
+})
 
-	await expect(
-		combinations_section.locator('li', { hasText: /[A-Za-z]+ ∧ ¬[A-Za-z]+/ }).first()
-	).toBeVisible()
+// this can be adjusted if at some point a morphism combination is not witnessed
+test('user cannot see any missing morphism combinations', async ({ page }) => {
+	await page.goto('/missing', { waitUntil: 'networkidle' })
+
+	const combinations_section = page.locator('section', {
+		hasText: 'Missing morphism combinations'
+	})
+
+	await expect(combinations_section).toBeVisible()
+
+	await expect(combinations_section).toHaveText(
+		/.+Every consistent morphism property combination.+is witnessed/
+	)
 })
