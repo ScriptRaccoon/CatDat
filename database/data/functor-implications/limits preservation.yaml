@@ -224,6 +224,17 @@
   proof: This is trivial.
   is_equivalence: false
 
+- id: trivial_coreflexive_equalizer_preservation
+  # TODO: rework this once we add "split-epi-trivial"
+  assumptions: []
+  mapped_assumptions:
+    domain:
+      - regular-quotient-trivial
+  conclusions:
+    - preserves coreflexive equalizers
+  proof: 'Let $f,g : X \rightrightarrows Y$ be a coreflexive pair, i.e. there is a morphism $r : Y \to X$ with $rf = rg = \id_X$. Then $r$ is a split and hence a regular epimorphism. Thus, $r$ is an isomorphism. But then $f=g$, and $\id_X$ is an equalizer of $f,g$. This equalizer is obviously preserved.'
+  is_equivalence: false
+
 - id: thin_binary_product_preservation
   assumptions: []
   mapped_assumptions:

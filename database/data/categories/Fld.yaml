@@ -81,5 +81,5 @@ special_morphisms:
     description: purely inseparable homomorphisms
     proof: See <a href="https://math.stackexchange.com/questions/687869" target="_blank">MSE/687869</a>.
   regular monomorphisms:
-    description: A Galois extension is a regular monomorphism iff it is procyclic, and the general case can be reduced to this situation; see the reference for details.
+    description: A Galois extension is a regular monomorphism iff it is procyclic, and the general case can be reduced to this situation; see <a href="https://math.stackexchange.com/questions/5129895" target="_blank">MSE/5129895</a> for details.
     proof: See <a href="https://math.stackexchange.com/questions/5129895" target="_blank">MSE/5129895</a>.

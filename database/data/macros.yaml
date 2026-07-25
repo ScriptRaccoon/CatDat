@@ -66,6 +66,7 @@
 \Alt: \operatorname{Alt}
 \Open: \operatorname{Open}
 \Id: \operatorname{Id}
+\Br: \operatorname{Br}
 
 # categories
 \Set: \mathbf{Set}
