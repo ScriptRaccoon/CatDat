@@ -15,6 +15,7 @@ related:
   - forget_group
   - forget_finite
   - forget_torsion
+  - forget_finite_abelian_group
 
 satisfied_properties:
   - property: fully faithful
