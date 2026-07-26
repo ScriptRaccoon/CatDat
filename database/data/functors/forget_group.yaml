@@ -16,6 +16,7 @@ related:
   - forget_ring
   - forget_abelian
   - forget_group_pointed
+  - forget_finite_group
 
 satisfied_properties:
   - property: representable
