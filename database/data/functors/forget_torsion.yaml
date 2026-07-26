@@ -13,7 +13,7 @@ tags:
 
 related:
   - forget_abelian
-  - forget_finite_group
+  - forget_finite_abelian_group
   - forget_torsion_free
 
 satisfied_properties:

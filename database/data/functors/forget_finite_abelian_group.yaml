@@ -1,0 +1,42 @@
+id: forget_finite_abelian_group
+name: forgetful functor from finite abelian groups to abelian groups
+notation: $U_{\FinAb, \Ab}$
+domain: FinAb
+codomain: Ab
+description: 'This is the inclusion functor $\FinAb \hookrightarrow \Ab$ which maps a finite abelian group to itself, considered as an abelian group that has "forgotten" that it is finite. It provides an example of a fully faithful that is neither finitary nor cofinitary.'
+nlab_link: https://ncatlab.org/nlab/show/forgetful+functor
+left_adjoint: null
+
+tags:
+  - algebra
+  - forgetful
+
+related:
+  - forget_finite_group
+  - forget_torsion
+
+satisfied_properties:
+  - property: fully faithful
+    proof: This is trivial.
+
+  - property: exact
+    proof: This follows from the construction of finite limits and colimits in $\FinAb$.
+
+  - property: preserves products
+    proof: The proof is identical to the proof that the <a href="/functor/forget_finite_group">inclusion functor $\FinGrp \hookrightarrow \Grp$</a> preserves products.
+
+  - property: preserves coproducts
+    proof: The proof is a minor variation of the proof that products are preserved, using that finite coproduct objects coincide with finite product objects. Namely, one can show that a family of finite abelian groups has a coproduct in $\FinAb$ if and only if almost all groups are trivial.
+
+unsatisfied_properties:
+  - property: dominant
+    proof: This is trivial.
+
+  - property: finitary
+    proof: We can take the same counterexample as for the <a href="/functor/forget_finite_group">inclusion functor $\FinGrp \hookrightarrow \Grp$</a>, which has only involved abelian groups.
+
+  - property: cofinitary
+    proof: We can take the same counterexample as for the <a href="/functor/forget_finite_group">inclusion functor $\FinGrp \hookrightarrow \Grp$</a>, which has only involved abelian groups.
+
+  - property: left-invertible
+    proof: We can use the same proof as for the <a href="/functor/forget_finite_group">inclusion functor $\FinGrp \hookrightarrow \Grp$</a>.
