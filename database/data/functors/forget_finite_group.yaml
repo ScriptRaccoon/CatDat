@@ -14,6 +14,7 @@ tags:
 related:
   - forget_group
   - forget_finite
+  - forget_torsion
 
 satisfied_properties:
   - property: fully faithful

@@ -1,5 +1,5 @@
 id: forget_torsion_free
-name: forgetful functor from torsion-free abelian groups
+name: forgetful functor from torsion-free abelian groups to abelian groups
 notation: $U_{\TorsFreeAb, \Ab}$
 domain: TorsFreeAb
 codomain: Ab
@@ -14,6 +14,7 @@ tags:
 related:
   - forget_abelian
   - forget_inverses
+  - forget_torsion
 
 satisfied_properties:
   - property: fully faithful
