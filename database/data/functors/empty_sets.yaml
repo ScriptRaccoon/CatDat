@@ -1,0 +1,34 @@
+id: empty_sets
+name: empty functor to the category of sets
+notation: $!_{\Set}$
+domain: '0'
+codomain: Set
+description: 'Every category $\C$ has a unique functor $!_{\C} : \varnothing \to \C$. Here, we specify that $\C$ is the category of sets, but the properties do mostly not depend on $\C$ as long as $\C$ is not empty. It is the simplest example of a functor to $\Set$ that is continuous and cocontinuous, but not representable, and neither a left or a right adjoint.'
+nlab_link: null
+left_adjoint: null
+
+tags:
+  - set theory
+
+related:
+  - trivial_sets
+
+satisfied_properties:
+  - property: fully faithful
+    proof: This is trivial.
+
+  - property: continuous
+    proof: 'For every category $\C$ the unique functor $!_{\C} : \varnothing \to \C$ is continuous, since no diagram in $\varnothing$ has a limit.'
+
+  - property: cocontinuous
+    proof: 'For every category $\C$ the unique functor $!_{\C} : \varnothing \to \C$ is cocontinuous, since no diagram in $\varnothing$ has a colimit.'
+
+unsatisfied_properties:
+  - property: left-invertible
+    proof: There is no functor $\Set \to \varnothing$ at all.
+
+  - property: dominant
+    proof: This is trivial.
+
+  - property: representable
+    proof: There cannot be any representing object.
