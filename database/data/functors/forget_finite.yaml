@@ -13,6 +13,7 @@ tags:
 
 related:
   - id_Set
+  - forget_finite_group
 
 satisfied_properties:
   - property: fully faithful

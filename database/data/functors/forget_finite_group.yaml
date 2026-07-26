@@ -1,0 +1,65 @@
+id: forget_finite_group
+name: forgetful functor from finite groups to groups
+notation: $U_{\FinGrp, \Grp}$
+domain: FinGrp
+codomain: Grp
+description: 'This is the inclusion functor $\FinGrp \hookrightarrow \Grp$. It can also be seen as a forgetful functor which forgets the property of being finite. Among other things, it provides an example of a fully faithful that is neither finitary nor cofinitary.'
+nlab_link: https://ncatlab.org/nlab/show/forgetful+functor
+left_adjoint: null
+
+tags:
+  - algebra
+  - forgetful
+
+related:
+  - forget_group
+  - forget_finite
+
+satisfied_properties:
+  - property: fully faithful
+    proof: This is trivial.
+
+  - property: left exact
+    proof: This follows from the construction of finite limits in $\FinGrp$.
+    check_redundancy: false
+
+  - property: preserves coequalizers
+    proof: This follows from the construction of coequalizers in $\FinGrp$.
+
+  - property: preserves products
+    proof: >-
+      It is sufficient to prove that if a family of finite groups $(G_i)_{i \in I}$ has a product $P$ in $\FinGrp$, then almost all $G_i$ are trivial; then the product collapses to a finite product, which is clearly preserved. Remark right away that it is not enough to prove that the $\Grp$-product is infinite otherwise; this argument is circular since it assumes that the $\FinGrp$-product equals the $\Grp$-product.
+      Assume that there infinitely many indices $i_1,i_2,\dotsc$ for which $G_{i_n}$ is non-trivial. Let $N \geq 1$. There is a canonical homomorphism $P \to \prod_{n=1}^{N} G_{i_n}$ to the finite product (which definitely exists), and by using trivial homomorphisms, we see that it is actually a split epimorphism. Therefore,
+      $$\textstyle\card(P) \geq \prod_{i=1}^{N} \card(G_{i_n}) \geq \prod_{i=1}^{N} 2 = 2^N.$$
+      Since this holds for all $N$, we obtain a contradiction to the finiteness of $P$.
+
+  - property: preserves coproducts
+    proof: >-
+      It is sufficient to prove that if a family of finite groups $(G_i)_{i \in I}$ has a coproduct $C$ in $\FinGrp$, then at most one $G_j$ is non-trivial; then the coproduct is simply $G_j$ and it is clearly preserved. Remark right away that it is not enough to prove that the $\Grp$-coproduct is infinite otherwise; this argument is circular since it assumes that the $\FinGrp$-coproduct equals the $\Grp$-coproduct.
+      Let $\coprod_{i \in I} G_i$ denote the coproduct of $(G_i)_{i \in I}$ in $\Grp$, which can be constructed as the free product. Assume that two groups in the family are non-trivial, say $G_0$ and $G_1$ for some indices $0,1 \in I$.
+      We claim that the canonical homomorphism $G_0 \sqcup G_1 \to C$ is a monomorphism. If $x$ is a non-trivial element in the free product $G_0 \sqcup G_1$, which is well-known to be residually finite, there is some finite group $H$ and a homomorphism $\varphi : G_0 \sqcup G_1 \to H$ with $\varphi(x) \neq 1$. The homomorphism $\varphi$ corresponds to two homomorphisms $\varphi_0 : G_0 \to H$ and $\varphi_1 : G_1 \to H$. For all $i \neq 0,1$ let $\varphi_i : G_i \to H$ be the trivial homomorphism. The universal property of $C$ yields a unique homomorphism $\psi : C \to H$ that extends each $\varphi_i$. It maps the image of $x$ in $C$ to $\varphi(x) \neq 1$, so that this image is non-trivial, as claimed.
+      However, $G_0 \sqcup G_1$ is an infinite group (which can be seen from the usual element description of a free product), so that it cannot embed into the finite group $C$. This contradiction finishes the proof.
+
+unsatisfied_properties:
+  - property: dominant
+    proof: This is trivial.
+
+  - property: left-invertible
+    proof: 'Assume that there is a functor $F : \Grp \to \FinGrp$ with natural isomorphisms $F(G) \cong G$ for finite groups $G$. Consider the group $A := F(\prod_{n \geq 1} \IZ/n)$. For every $n \geq 1$ there is a split monomorphism from $\IZ/n$ to $\prod_{n \geq 1} \IZ/n$. It induces a split monomorphism from $F(\IZ/n) \cong \IZ/n$ to $A$, so that $\card(A) \geq n$. But then $A$ cannot be finite.'
+
+  - property: finitary
+    proof: >-
+      Let $Q$ be any non-trivial abelian divisible torsion group, such as $Q = \IQ / \IZ$. Let $\I$ be the poset of finite subgroups of $Q$ and let $D : \I \to \FinGrp$ be the diagram $D(A)=A$. Of course, the colimit of $U \circ D : \I \to \Grp$ is $Q$, where $U : \FinGrp \hookrightarrow \Grp$ is the inclusion functor. However, it turns out that the colimit of $D$ also exists and is the trivial group $1$. To prove this, let $G$ be any finite group. Then we compute:
+      $$\Hom(D,\Delta(G)) \cong \Hom(U \circ D, \Delta(U(G))) \cong \Hom(Q,U(G))$$
+      But every homomorphism $Q \to U(G)$ is trivial because its image is a finite divisible abelian group. Thus, $\Hom(Q,U(G)) \cong \Hom(1,G)$, proving that $1$ is a colimit of $D$. This shows that the colimit of $D$ is not preserved by $U$.
+
+      For example, when $Q = \IQ / \IZ$, the diagram is isomorphic to $(\IN_{>0},\mid)^{\op} \to \FinGrp$, mapping $n$ to the cyclic group $\IZ/n$, and its (trivial) colimit is not preserved by $U$.
+
+  - property: cofinitary
+    proof: >-
+      Let $p$ be a prime, and consider the sequence of projection homomorphisms
+      $$\cdots \to \IZ/p^3 \to \IZ/p^2 \to \IZ/p.$$
+      Its limit in $\Grp$ is the additive group $\IZ_p$ of $p$-adic integers. However, its limit in $\FinGrp$ exists and is the trivial group. This is because a cone in $\FinGrp$ over that sequence with vertex $G \in \FinGrp$ can be identified with a homomorphism $G \to \IZ_p$ in $\Grp$, which must be trivial since its image is a finite torsion-free group.
+
+  - property: right exact
+    proof: See <a href="https://mathoverflow.net/questions/513646" target="_blank">MO/513646</a>.
