@@ -1,0 +1,38 @@
+id: forget_hausdorff
+name: forgetful functor from Hausdorff spaces to topological spaces
+notation: $U_{\Haus,\Top}$
+domain: Haus
+codomain: Top
+description: This is the inclusion functor $\Haus \hookrightarrow \Top$ that maps a Hausdorff space to itself. It can also be seen as a forgetful functor since Hausdorff spaces "forget" that they are Hausdorff.
+nlab_link: https://ncatlab.org/nlab/show/forgetful+functor
+left_adjoint: null # TODO: add the Hausdorff reflection functor
+
+tags:
+  - topology
+  - forgetful
+
+related:
+  - forget_topology
+
+satisfied_properties:
+  - property: fully faithful
+    proof: This is trivial.
+
+  - property: right adjoint
+    proof: The Hausdorff reflection (see <a href="https://ncatlab.org/nlab/show/Hausdorff+space#HausdorffReflectionViaHomsIntoAllHausdorffSpaces" target="_blank">nLab</a>) provides a left adjoint $\Top \to \Haus$.
+
+  - property: preserves coproducts
+    proof: This follows easily from the elementary fact that the $\Top$-coproduct of a family of Hausdorff spaces is again Hausdorff.
+
+  - property: preserves regular epimorphisms
+    proof: This follows from the classifications of regular epimorphisms in $\Haus$ and $\Top$; in both cases, they are surjective quotient maps.
+
+unsatisfied_properties:
+  - property: preserves epimorphisms
+    proof: The inclusion $\IQ \hookrightarrow \IR$ is an epimorphism in $\Haus$ (since it has dense image), but not an epimorphism in $\Top$ (since it is not surjective).
+
+  - property: dominant
+    proof: A subspace of a Hausdorff space is again Hausdorff, and not every space is Hausdorff.
+
+  - property: finitary
+    proof: The inclusion functor certainly preserves monomorphisms, in fact all limits. We know that monomorphisms in <a href="/category/Top">$\Haus$</a> are not stable under filtered colimits, but they are in <a href="/category/Top">$\Top$</a>. Thus, the claim follows from Lemma 2 <a href="/content/subcategories">here</a>.
