@@ -14,7 +14,7 @@ related:
   - discrete_topology
 
 satisfied_properties:
-  - property: full
+  - property: fully faithful
     proof: This is trivial.
 
   - property: preserves initial objects
@@ -22,9 +22,6 @@ satisfied_properties:
 
   - property: right adjoint
     proof: 'This functor is right adjoint to the forgetful functor $U_{\Top} : \Top \to \Set$.'
-
-  - property: left-invertible
-    proof: The forgetful functor provides a left inverse.
 
   - property: preserves coequalizers
     proof: 'This follows easily from the description of coequalizers in $\Set$ and $\Top$, and the fact that if $p : X \to Y$ is a surjective map, then $I(p) : I(X) \to I(Y)$ is a quotient map.'

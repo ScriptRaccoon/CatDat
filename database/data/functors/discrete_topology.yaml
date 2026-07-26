@@ -3,7 +3,7 @@ name: discrete topology functor
 notation: $D$
 domain: Set
 codomain: Top
-description: This functor maps a set $X$ to the discrete topological space $D(X) \coloneqq (X, P(X))$ in which every subset is open.
+description: This functor maps a set $X$ to the discrete topological space $D(X) \coloneqq (X, P(X))$ in which every subset is open. It is a typical example of a fully faithful functor that preserves finite, but does not preserve infinite products.
 nlab_link: https://ncatlab.org/nlab/show/discrete+and+indiscrete+topology
 left_adjoint: null
 
@@ -15,14 +15,11 @@ related:
   - indiscrete_topology
 
 satisfied_properties:
+  - property: fully faithful
+    proof: This is trivial.
+
   - property: left adjoint
     proof: 'This functor is left adjoint to the forgetful functor $U_{\Top} : \Top \to \Set$.'
-
-  - property: left-invertible
-    proof: The forgetful functor provides a left inverse.
-
-  - property: full
-    proof: This is trivial.
 
   - property: preserves finite products
     proof: It is easy to check that a finite product of discrete spaces is again discrete.
@@ -31,8 +28,8 @@ satisfied_properties:
     proof: This follows since a subspace of a discrete space is again discrete.
 
 unsatisfied_properties:
-  - property: preserves products
-    proof: An infinite product of discrete spaces is usually not discrete, e.g. $\{0,1\}^{\IN}$.
-
   - property: dominant
     proof: A subspace of a discrete space is again discrete. Hence, if $Y$ is any non-discrete space such as $\IR$ with the Euclidean topology, there is no set $X$ with a regular (or even split) monomorphism $Y \hookrightarrow D(X)$.
+
+  - property: preserves products
+    proof: An infinite product of discrete spaces is usually not discrete, e.g. $\{0,1\}^{\IN}$.
