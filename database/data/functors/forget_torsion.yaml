@@ -3,7 +3,7 @@ name: forgetful functor from torsion abelian groups to abelian groups
 notation: $U_{\TorsAb, \Ab}$
 domain: TorsAb
 codomain: Ab
-description: 'This is the inclusion functor $\TorsAb \hookrightarrow \Ab$. It can also be seen as a forgetful functor which forgets the property of being torsion. It is a typical example of a fully faithful functor that preserves finite, but does not preserve infinite products.'
+description: 'This is the inclusion functor $\TorsAb \hookrightarrow \Ab$. It can also be viewed as a forgetful functor that forgets the property of being torsion. It is a typical example of a fully faithful functor that preserves finite products but does not preserve infinite products.'
 nlab_link: https://ncatlab.org/nlab/show/forgetful+functor
 left_adjoint: null # we only have the torsion functor Ab -> Ab in the database, not Ab -> TorsAb
 
@@ -24,11 +24,11 @@ satisfied_properties:
     proof: This follows from the construction of finite limits in $\TorsAb$.
 
   - property: left adjoint
-    proof: 'This functor is left adjoint to the torsion subgroup functor $T : \Ab \to \TorsAb$, since for every abelian torsion group $A$ and every abelian group $B$ every homomorphism $A \to B$ restricts to a homomorphism $A \to T(B)$.'
+    proof: 'This functor is left adjoint to the torsion subgroup functor $T : \Ab \to \TorsAb$, since for every torsion abelian group $A$ and every abelian group $B$, every homomorphism $A \to B$ restricts to a homomorphism $A \to T(B)$.'
 
 unsatisfied_properties:
   - property: dominant
     proof: This is trivial.
 
   - property: preserves products
-    proof: The product of the family $(\IZ/n)_{n \geq 1}$ in $\TorsAb$ is $T(\prod_{n \geq 1} \IZ/n)$, where $T(-)$ denotes the torsion subgroup and $\prod$ the usual product taken in $\Ab$. This is not equal to $\prod_{n \geq 1} \IZ/n$ since, for example, $([1],[1],\dotsc)$ is not a torsion element.
+    proof: The product of the family $(\IZ/n)_{n \geq 1}$ in $\TorsAb$ is $T(\prod_{n \geq 1} \IZ/n)$, where $T(-)$ denotes the torsion subgroup and $\prod$ denotes the usual product in $\Ab$. This is not equal to $\prod_{n \geq 1} \IZ/n$ since, for example, $([1],[1],\dotsc)$ is not a torsion element.

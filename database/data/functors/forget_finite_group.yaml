@@ -3,7 +3,7 @@ name: forgetful functor from finite groups to groups
 notation: $U_{\FinGrp, \Grp}$
 domain: FinGrp
 codomain: Grp
-description: 'This is the inclusion functor $\FinGrp \hookrightarrow \Grp$. It can also be seen as a forgetful functor which forgets the property of being finite. Among other things, it provides an example of a fully faithful that is neither finitary nor cofinitary.'
+description: 'This is the inclusion functor $\FinGrp \hookrightarrow \Grp$. It can also be viewed as a forgetful functor that forgets the property of being finite. Among other things, it provides an example of a fully faithful functor that is neither finitary nor cofinitary.'
 nlab_link: https://ncatlab.org/nlab/show/forgetful+functor
 left_adjoint: null
 
@@ -30,17 +30,17 @@ satisfied_properties:
 
   - property: preserves products
     proof: >-
-      It is sufficient to prove that if a family of finite groups $(G_i)_{i \in I}$ has a product $P$ in $\FinGrp$, then almost all $G_i$ are trivial; then the product collapses to a finite product, which is clearly preserved. Remark right away that it is not enough to prove that the $\Grp$-product is infinite otherwise; this argument is circular since it assumes that the $\FinGrp$-product equals the $\Grp$-product.
-      Assume that there infinitely many indices $i_1,i_2,\dotsc$ for which $G_{i_n}$ is non-trivial. Let $N \geq 1$. There is a canonical homomorphism $P \to \prod_{n=1}^{N} G_{i_n}$ to the finite product (which definitely exists), and by using trivial homomorphisms, we see that it is actually a split epimorphism. Therefore,
+      It is sufficient to prove that if a family of finite groups $(G_i)_{i \in I}$ has a product $P$ in $\FinGrp$, then almost all $G_i$ are trivial; then the product reduces to a finite product, which is clearly preserved. Note that it is not enough to prove that the $\Grp$-product is infinite; this argument would be circular, since it assumes that the $\FinGrp$-product is equal to the $\Grp$-product.
+      Assume that there are infinitely many indices $i_1,i_2,\dotsc$ for which $G_{i_n}$ is non-trivial. Let $N \geq 1$. There is a canonical homomorphism $P \to \prod_{n=1}^{N} G_{i_n}$ to the finite product (which definitely exists), and by using trivial homomorphisms, we see that it is actually a split epimorphism. Therefore,
       $$\textstyle\card(P) \geq \prod_{i=1}^{N} \card(G_{i_n}) \geq \prod_{i=1}^{N} 2 = 2^N.$$
       Since this holds for all $N$, we obtain a contradiction to the finiteness of $P$.
 
   - property: preserves coproducts
     proof: >-
-      It is sufficient to prove that if a family of finite groups $(G_i)_{i \in I}$ has a coproduct $C$ in $\FinGrp$, then at most one $G_j$ is non-trivial; then the coproduct is simply $G_j$ and it is clearly preserved. Remark right away that it is not enough to prove that the $\Grp$-coproduct is infinite otherwise; this argument is circular since it assumes that the $\FinGrp$-coproduct equals the $\Grp$-coproduct.
+      It is sufficient to prove that if a family of finite groups $(G_i)_{i \in I}$ has a coproduct $C$ in $\FinGrp$, then at most one $G_j$ is non-trivial; then the coproduct is simply $G_j$, and it is clearly preserved. Note that it is not enough to prove that the $\Grp$-coproduct is infinite; this argument would be circular, since it assumes that the $\FinGrp$-coproduct is equal to the $\Grp$-coproduct.
       Let $\coprod_{i \in I} G_i$ denote the coproduct of $(G_i)_{i \in I}$ in $\Grp$, which can be constructed as the free product. Assume that two groups in the family are non-trivial, say $G_0$ and $G_1$ for some indices $0,1 \in I$.
-      We claim that the canonical homomorphism $G_0 \sqcup G_1 \to C$ is a monomorphism. If $x$ is a non-trivial element in the free product $G_0 \sqcup G_1$, which is well-known to be residually finite, there is some finite group $H$ and a homomorphism $\varphi : G_0 \sqcup G_1 \to H$ with $\varphi(x) \neq 1$. The homomorphism $\varphi$ corresponds to two homomorphisms $\varphi_0 : G_0 \to H$ and $\varphi_1 : G_1 \to H$. For all $i \neq 0,1$ let $\varphi_i : G_i \to H$ be the trivial homomorphism. The universal property of $C$ yields a unique homomorphism $\psi : C \to H$ that extends each $\varphi_i$. It maps the image of $x$ in $C$ to $\varphi(x) \neq 1$, so that this image is non-trivial, as claimed.
-      However, $G_0 \sqcup G_1$ is an infinite group (which can be seen from the usual element description of a free product), so that it cannot embed into the finite group $C$. This contradiction finishes the proof.
+      We claim that the canonical homomorphism $G_0 \sqcup G_1 \to C$ is a monomorphism. If $x$ is a non-trivial element in the free product $G_0 \sqcup G_1$, which is well-known to be residually finite, there is some finite group $H$ and a homomorphism $\varphi : G_0 \sqcup G_1 \to H$ with $\varphi(x) \neq 1$. The homomorphism $\varphi$ corresponds to two homomorphisms $\varphi_0 : G_0 \to H$ and $\varphi_1 : G_1 \to H$. For all $i \neq 0,1$, let $\varphi_i : G_i \to H$ be the trivial homomorphism. The universal property of $C$ yields a unique homomorphism $\psi : C \to H$ that extends each $\varphi_i$. It maps the image of $x$ in $C$ to $\varphi(x) \neq 1$, so that this image is non-trivial, as claimed.
+      However, $G_0 \sqcup G_1$ is an infinite group (which can be seen from the usual element description of a free product), so it cannot embed into the finite group $C$. This contradiction finishes the proof.
 
 unsatisfied_properties:
   - property: dominant
