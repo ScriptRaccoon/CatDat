@@ -3,7 +3,7 @@ name: forgetful functor from commutative rings to rings
 notation: $U_{\CRing,\Ring}$
 domain: CRing
 codomain: Ring
-description: This is the inclusion functor $\CRing \hookrightarrow \Ring$ that maps a commutative ring to itself, considered merely as a ring.
+description: This is the inclusion functor $\CRing \hookrightarrow \Ring$ that maps a commutative ring to itself, regarded merely as a ring.
 nlab_link: https://ncatlab.org/nlab/show/forgetful+functor
 left_adjoint: null # TODO: add the left adjoint to the database
 
@@ -25,10 +25,10 @@ satisfied_properties:
     proof: In both categories, the ring $\IZ$ is initial.
 
   - property: finitary
-    proof: 'Since the forgetful functor $U_{\Ring} : \Ring \to \Set$ is finitary and conservative, it suffices to prove that the composition $U_{\Ring} \circ U_{\CRing,\Ring} : \CRing \to \Set$ is finitary. This is just the forgetful functor $U_{\CRing} : \CRing \to \Set$ and therefore finitary.'
+    proof: 'Since the forgetful functor $U_{\Ring} : \Ring \to \Set$ is finitary and conservative, it suffices to prove that the composition $U_{\Ring} \circ U_{\CRing,\Ring} : \CRing \to \Set$ is finitary. This is just the forgetful functor $U_{\CRing} : \CRing \to \Set$ and is therefore finitary.'
 
   - property: preserves coequalizers
-    proof: 'First of all, the functor preserves regular epimorphisms since they are surjective homomorphisms in both categories. Now assume that $f,g : A \rightrightarrows B$ have coequalizer $p : B \to C$ in $\CRing$. If $T$ is any ring and $h : B \to T$ is a homomorphism with $hf = hg$, consider the image factorization $h = i h''$ of $h$. We have $h'' f = h'' g$, and the image $\im(h)$ is commutative. Hence, there is a unique homomorphism $k : C \to \im(h)$ with $kp = h''$. Hence, $ik : C \to G$ satisfies $ikp = h$. Uniqueness follows since we already know that the forgetful functor is preserves regular epimorphisms.'
+    proof: 'First of all, the functor preserves regular epimorphisms, since they are surjective homomorphisms in both categories. Now assume that $f,g : A \rightrightarrows B$ have coequalizer $p : B \to C$ in $\CRing$. If $T$ is any ring and $h : B \to T$ is a homomorphism with $hf = hg$, consider the image factorization $h = i h''$ of $h$. We have $h'' f = h'' g$, and the image $\im(h)$ is commutative. Hence, there is a unique homomorphism $k : C \to \im(h)$ with $kp = h''$. Hence, $ik : C \to G$ satisfies $ikp = h$. Uniqueness follows since we already know that the forgetful functor preserves regular epimorphisms.'
 
   - property: preserves epimorphisms
     proof: This is not formal. See <a href="https://math.stackexchange.com/questions/5133488" target="_blank">MSE/5133488</a> for a proof.
@@ -38,4 +38,4 @@ unsatisfied_properties:
     proof: This is trivial.
 
   - property: preserves binary coproducts
-    proof: The coproduct of $\IZ[X]$ and $\IZ[Y]$ in $\CRing$ is the polynomial ring $\IZ[X,Y]$ in which $X,Y$ commute. Their coproduct in $\Ring$ is the non-commutative polynomial ring $\IZ\langle X,Y \rangle$ where $X,Y$ do not commute.
+    proof: The coproduct of $\IZ[X]$ and $\IZ[Y]$ in $\CRing$ is the polynomial ring $\IZ[X,Y]$ in which $X,Y$ commute. Their coproduct in $\Ring$ is the non-commutative polynomial ring $\IZ\langle X,Y \rangle$ in which $X,Y$ do not commute.

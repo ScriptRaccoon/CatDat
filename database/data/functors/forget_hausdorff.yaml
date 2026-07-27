@@ -3,7 +3,7 @@ name: forgetful functor from Hausdorff spaces to topological spaces
 notation: $U_{\Haus,\Top}$
 domain: Haus
 codomain: Top
-description: This is the inclusion functor $\Haus \hookrightarrow \Top$ that maps a Hausdorff space to itself. It can also be seen as a forgetful functor since Hausdorff spaces "forget" that they are Hausdorff.
+description: This is the inclusion functor $\Haus \hookrightarrow \Top$ that maps a Hausdorff space to itself. It can also be viewed as a forgetful functor, since Hausdorff spaces "forget" that they are Hausdorff.
 nlab_link: https://ncatlab.org/nlab/show/forgetful+functor
 left_adjoint: null # TODO: add the Hausdorff reflection functor
 
@@ -35,4 +35,4 @@ unsatisfied_properties:
     proof: A subspace of a Hausdorff space is again Hausdorff, and not every space is Hausdorff.
 
   - property: finitary
-    proof: The inclusion functor certainly preserves monomorphisms, in fact all limits. We know that monomorphisms in <a href="/category/Top">$\Haus$</a> are not stable under filtered colimits, but they are in <a href="/category/Top">$\Top$</a>. Thus, the claim follows from Lemma 2 <a href="/content/subcategories">here</a>.
+    proof: The inclusion functor certainly preserves monomorphisms, and in fact all limits. We know that monomorphisms in <a href="/category/Top">$\Haus$</a> are not stable under filtered colimits, whereas they are in <a href="/category/Top">$\Top$</a>. Thus, the claim follows from Lemma 2 <a href="/content/subcategories">here</a>.

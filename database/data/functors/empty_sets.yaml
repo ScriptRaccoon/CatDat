@@ -3,7 +3,7 @@ name: empty functor to the category of sets
 notation: $!_{\Set}$
 domain: '0'
 codomain: Set
-description: 'Every category $\C$ has a unique functor $!_{\C} : \varnothing \to \C$. Here, we specify that $\C$ is the category of sets, but the properties do mostly not depend on $\C$ as long as $\C$ is not empty. It is the simplest example of a functor to $\Set$ that is continuous and cocontinuous, but not representable, and neither a left or a right adjoint.'
+description: 'Every category $\C$ has a unique functor $!_{\C} : \varnothing \to \C$. Here, we specify $\C = \Set$, but most of the properties do not depend on the choice of $\C$, as long as $\C$ is non-empty. This is the simplest example of a functor to $\Set$ that is both continuous and cocontinuous, but is neither representable nor a left or right adjoint.'
 nlab_link: null
 left_adjoint: null
 
