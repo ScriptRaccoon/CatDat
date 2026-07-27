@@ -125,7 +125,7 @@ export type StructureDetails = {
 	unsatisfied_properties: PropertyAssignmentDisplay[]
 	unknown_properties: PropertyShort[]
 	undecidable_properties: PropertyAssignmentDisplay[]
-	undistinguishable_structures: StructureShort[]
+	indistinguishable_structures: StructureShort[]
 	comments: CommentObject[]
 }
 

@@ -22,7 +22,7 @@ export const load = () => {
 			(data) => data.structures_with_unknown_properties
 		),
 		unknown_totals: select((data) => data.total_unknown_property_pairs),
-		undistinguishable_pairs: select((data) => data.undistinguishable_structure_pairs),
+		indistinguishable_pairs: select((data) => data.indistinguishable_structure_pairs),
 		missing_combinations: select((data) => data.missing_combinations),
 		categories_with_missing_morphisms
 	}

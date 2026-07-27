@@ -4,7 +4,7 @@
 	import PropertyAssignmentList from '$components/PropertyAssignmentList.svelte'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
 	import TagList from '$components/TagList.svelte'
-	import UndistinguishableStructures from '$components/UndistinguishableStructures.svelte'
+	import IndistinguishableStructures from '$components/IndistinguishableStructures.svelte'
 	import { PLURALS } from '$shared/config'
 	import type {
 		CommentObject,
@@ -26,7 +26,7 @@
 		unsatisfied_properties: PropertyAssignmentDisplay[]
 		unknown_properties: PropertyShort[]
 		undecidable_properties: PropertyAssignmentDisplay[]
-		undistinguishable_structures: StructureShort[]
+		indistinguishable_structures: StructureShort[]
 		comments: CommentObject[]
 		definition?: Snippet
 		specials?: Snippet
@@ -42,7 +42,7 @@
 		unsatisfied_properties,
 		unknown_properties,
 		undecidable_properties,
-		undistinguishable_structures,
+		indistinguishable_structures,
 		comments,
 		definition,
 		specials,
@@ -112,9 +112,9 @@
 
 {@render specials?.()}
 
-<UndistinguishableStructures
+<IndistinguishableStructures
 	{type}
-	structures={undistinguishable_structures}
+	structures={indistinguishable_structures}
 	name={structure.name}
 />
 

@@ -92,7 +92,7 @@ export function fetch_structure(type: StructureType, id: string): StructureDetai
 		)
 		.all(type, id)
 
-	const undistinguishable_structures = db
+	const indistinguishable_structures = db
 		.prepare<[string, StructureType, string], StructureShort>(
 			`SELECT u.id, u.name
             FROM structures u
@@ -140,7 +140,7 @@ export function fetch_structure(type: StructureType, id: string): StructureDetai
 		unsatisfied_properties,
 		unknown_properties,
 		undecidable_properties,
-		undistinguishable_structures,
+		indistinguishable_structures,
 		comments
 	}
 }

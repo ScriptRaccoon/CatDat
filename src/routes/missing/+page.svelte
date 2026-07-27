@@ -56,11 +56,11 @@
 </section>
 
 {#each STRUCTURE_TYPES as type}
-	{@const pairs = data.undistinguishable_pairs[type]}
+	{@const pairs = data.indistinguishable_pairs[type]}
 
 	{#if pairs.length > 0}
 		<section>
-			<h3>Undistinguishable {type} pairs</h3>
+			<h3>Indistinguishable {type} pairs</h3>
 
 			<p class="hint">
 				{pluralize(pairs.length, {

@@ -20,7 +20,7 @@ export function fetch_missing_data(type: StructureType) {
 		)
 		.all(type)
 
-	const undistinguishable_structure_pairs = db
+	const indistinguishable_structure_pairs = db
 		.prepare<
 			[StructureType],
 			{ id1: string; name1: string; id2: string; name2: string }
@@ -111,7 +111,7 @@ export function fetch_missing_data(type: StructureType) {
 
 	return {
 		structures_with_unknown_properties,
-		undistinguishable_structure_pairs,
+		indistinguishable_structure_pairs,
 		total_unknown_property_pairs,
 		missing_combinations
 	}
