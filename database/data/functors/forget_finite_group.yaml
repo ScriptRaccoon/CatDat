@@ -23,7 +23,6 @@ satisfied_properties:
 
   - property: left exact
     proof: This follows from the construction of finite limits in $\FinGrp$.
-    check_redundancy: false
 
   - property: preserves coequalizers
     proof: This follows from the construction of coequalizers in $\FinGrp$.
