@@ -1,7 +1,6 @@
 ---
 title: Inheritance of effective congruences in coslice categories
 description: An extensive category has effective congruences when some of its coslice categories has effective congruences.
-author: Daniel Schepler
 ---
 
 ## Inheritance of effective congruences in coslice categories

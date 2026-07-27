@@ -1,7 +1,6 @@
 ---
 title: Topos with a Generator
 description: An elementary topos with a generator has at most two subterminal objects
-author: Daniel Schepler
 ---
 
 # Topos with a Generator

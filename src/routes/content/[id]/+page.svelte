@@ -13,12 +13,6 @@
 	{@html data.html}
 </div>
 
-{#if data.meta_data.author}
-	<p class="hint">Author: {data.meta_data.author}</p>
-{:else if data.meta_data.authors}
-	<p class="hint">Authors: {data.meta_data.authors.join(', ')}</p>
-{/if}
-
 <!-- TODO: make this more systematic -->
 
 {#if data.categories.length > 0 || data.category_properties.length > 0 || data.category_implications.length > 0 || data.functors.length > 0}

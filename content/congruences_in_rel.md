@@ -1,7 +1,6 @@
 ---
 title: A classification of congruences in the category of sets and relations
 description: The classification will prove in particular that the category of sets and relations has quotients of congruences and that congruences are effective.
-author: Daniel Schepler
 ---
 
 ## A classification of congruences in the category of sets and relations

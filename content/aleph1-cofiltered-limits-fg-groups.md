@@ -1,7 +1,6 @@
 ---
 title: ℵ₁-cofiltered limits of finitely generated abelian groups
 description: The existence of these limits follows from a couple of reduction arguments.
-author: Martin Brandenburg
 ---
 
 ## ℵ₁-cofiltered limits of finitely generated abelian groups

@@ -1,7 +1,6 @@
 ---
 title: Construction of a pushout of monomorphisms as a quotient of a congruence
 description: An extensive category with quotients of congruences has pushouts of monomorphisms.
-author: Daniel Schepler
 ---
 
 ## Construction of a pushout of monomorphisms as a quotient of a congruence

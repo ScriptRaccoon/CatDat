@@ -1,7 +1,6 @@
 ---
 title: Inclusion functors
 description: We gather results about inclusion functors
-author: Martin Brandenburg
 ---
 
 # Inclusion functors

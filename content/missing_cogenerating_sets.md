@@ -1,7 +1,6 @@
 ---
 title: Missing cogenerating sets
 description: A generalization of the proof that the category of commutative rings has no cogenerating set.
-author: Martin Brandenburg
 ---
 
 ## Missing cogenerating sets

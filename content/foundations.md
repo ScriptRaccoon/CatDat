@@ -1,7 +1,6 @@
 ---
 title: Foundations
 description: How to make sense of categories in set theory
-author: Martin Brandenburg
 ---
 
 ## Foundations

@@ -1,7 +1,6 @@
 ---
 title: The category of measurable spaces is not regular
 description: An example of a quotient measurable map is given whose product with itself is not a quotient map anymore.
-author: Nekoma
 ---
 
 ## $\Meas$ is not regular
