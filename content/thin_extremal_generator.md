@@ -1,7 +1,6 @@
 ---
 title: Thin Category with an Extremal Generator
 description: A result restricting which thin categories can have an extremal generator
-author: Daniel Schepler
 ---
 
 # Thin Category with an Extremal Generator

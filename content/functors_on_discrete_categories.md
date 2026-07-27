@@ -1,7 +1,6 @@
 ---
 title: Functors on discrete categories
 description: We describe which functors on discrete categories are continuous or cocontinuous.
-author: Martin Brandenburg
 ---
 
 ## Functors on discrete categories

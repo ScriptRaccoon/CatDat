@@ -1,7 +1,6 @@
 ---
 title: Sifted colimits in groupoids
 description: A description of sifted colimits in groupoids, yielding a proof that every essentially small groupoid is a generalized variety.
-author: Martin Brandenburg
 ---
 
 ## Sifted colimits in groupoids

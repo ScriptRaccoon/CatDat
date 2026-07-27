@@ -1,9 +1,6 @@
 ---
 title: Results on subcategories
 description: We prove that several properties of categories descend to suitable subcategories.
-authors:
-    - Martin Brandenburg
-    - Daniel Schepler
 ---
 
 ## Results on subcategories

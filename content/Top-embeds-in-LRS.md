@@ -1,7 +1,6 @@
 ---
 title: An embedding of the category of topological spaces in the category of locally ringed spaces
 description: Describes a functor which makes the category of topological spaces a coreflective and "almost reflective" subcategory of the category of locally ringed spaces. From the properties of this embedding, we can rule out several properties for the category of locally ringed spaces, using the corresponding failures of these properties for the category of topological spaces.
-author: Daniel Schepler
 ---
 
 ## An embedding of the category of topological spaces in the category of locally ringed spaces

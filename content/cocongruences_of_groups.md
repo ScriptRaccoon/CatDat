@@ -1,7 +1,6 @@
 ---
 title: Cocongruences on groups are effective
 description: This result will be proved more generally for categories in which pushouts and monomorphisms interact in a suitable way.
-author: Martin Brandenburg
 ---
 
 ## Cocongruences on groups are effective

@@ -145,8 +145,6 @@ function render_content<T = Record<string, unknown>>(
 type ContentMetaData = {
 	title: string
 	description: string
-	author?: string
-	authors?: string[]
 }
 
 /**

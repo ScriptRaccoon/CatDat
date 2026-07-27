@@ -1,7 +1,6 @@
 ---
 title: Uniqueness of preadditive structures
 description: In the presence of finite products, a preadditive structure on a given category is uniquely determined.
-author: Martin Brandenburg
 ---
 
 ## Uniqueness of preadditive structures

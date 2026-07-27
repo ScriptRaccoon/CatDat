@@ -1,7 +1,6 @@
 ---
 title: Natural number objects indicate distributivity
 description: A partial converse of the result that countably distributive categories have a NNO.
-author: Martin Brandenburg
 ---
 
 ## Natural number objects indicate distributivity

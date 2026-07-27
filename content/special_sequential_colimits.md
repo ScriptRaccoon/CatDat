@@ -1,7 +1,6 @@
 ---
 title: Finite structures usually have no sequential colimits
 description: A generalization of the proof that the category of finite groups has no filtered colimits.
-author: Martin Brandenburg
 ---
 
 ## Finite structures usually have no sequential colimits

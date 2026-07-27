@@ -1,7 +1,6 @@
 ---
 title: Algebraic categories are "never" thin
 description: A proof that the only thin algebraic categories are the terminal and the interval category.
-author: Martin Brandenburg
 ---
 
 ## Algebraic categories are "never" thin

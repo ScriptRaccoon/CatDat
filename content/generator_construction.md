@@ -1,9 +1,6 @@
 ---
 title: Construction of Generators
 description: How to construct a generator from a generating set
-authors:
-    - Martin Brandenburg
-    - Daniel Schepler
 ---
 
 ## Construction of Generators

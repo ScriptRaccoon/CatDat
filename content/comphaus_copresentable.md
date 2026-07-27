@@ -1,7 +1,6 @@
 ---
 title: Local ℵ₁-copresentability of the category of compact Hausdorff spaces
 description: We gather several relevant results about the category of compact Hausdorff spaces, and provide accessible proofs of these facts leading up to a proof that it is locally ℵ₁-copresentable.
-author: Daniel Schepler
 ---
 
 ## Local ℵ₁-copresentability of the category of compact Hausdorff spaces

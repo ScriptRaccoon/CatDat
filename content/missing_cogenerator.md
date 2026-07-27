@@ -1,7 +1,6 @@
 ---
 title: Missing cogenerator
 description: A generalization of the proof that the category of groups has no cogenerator.
-author: Martin Brandenburg
 ---
 
 ## Missing cogenerator

@@ -1,7 +1,6 @@
 ---
 title: Quotients of effective congruences are strict quotients
 description: Quotients by effective congruences are characterized via a pullback
-author: Daniel Schepler
 ---
 
 ## Quotients of effective congruences are strict quotients
