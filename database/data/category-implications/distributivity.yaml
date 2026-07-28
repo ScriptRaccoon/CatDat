@@ -48,7 +48,7 @@
     - distributive
   conclusions:
     - strict initial object
-  proof: See the <a href="https://ncatlab.org/nlab/show/distributive+category" target="_blank">nLab</a> or Prop. 3.4 in <a href="https://doi.org/10.1016/0022-4049(93)90035-R" target="_blank">Introduction to extensive and distributive categories</a>.
+  proof: See the <a href="https://ncatlab.org/nlab/show/distributive+category" target="_blank">nLab</a> or Prop. 3.4 in <a href="https://doi.org/10.1016/0022-4049(93)90035-R" target="_blank">Introduction to extensive and distributive categories</a> by Carboni-Lack-Walters.
   is_equivalence: false
 
 - id: distributive_criterion
