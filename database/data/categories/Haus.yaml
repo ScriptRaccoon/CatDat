@@ -35,7 +35,7 @@ satisfied_properties:
     check_redundancy: false
 
   - property: infinitary extensive
-    proof: This follows exactly as for <a href="/category/Top">$\Top$</a> since Hausdorff spaces are closed under taking subspaces and coproducts in $\Top$.
+    proof: This follows from Lemma 11 <a href="/content/subcategories">here</a> since <a href="/category/Top">$\Top$</a> is infinitary extensive and its full subcategory $\Haus$ is closed under pullbacks and coproducts in $\Top$.
 
   - property: well-powered
     proof: This is clear from the classification of monomorphisms as injective continuous maps.

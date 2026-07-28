@@ -39,7 +39,7 @@ satisfied_properties:
     proof: 'If $f : X \to Y$ is an epimorphism, then $f(X)$ is dense in $Y$ (see below). Hence, there is an injective map $Y \to X^{\IN}$, which bounds the size of $Y$.'
 
   - property: infinitary extensive
-    proof: This follows from the existence of coproducts and finite products, and from the fact that <a href="/category/Top">$\Top$</a> is infinitary extensive.
+    proof: This follows from Lemma 11 <a href="/content/subcategories">here</a> since <a href="/category/Top">$\Top$</a> is infinitary extensive and its full subcategory $\Met_c$ of metrizable topological spaces is closed under pullbacks and coproducts in $\Top$.
 
   - property: effective cocongruences
     proof: 'Suppose we have a cocongruence $f, g : X \rightrightarrows E$ in $\Met_c$. Then the image in $\Haus$ is a coreflexive corelation (since epimorphisms in both categories are continuous maps with dense image). By <a href="https://mathoverflow.net/a/509582/2841" target="_blank">MO/509548</a>, that implies that image is of the form $X +_S X$ for a closed subset $S$ of $X$. Since $S$ is metrizable, and the functor $\Met_c \to \Haus$ is fully faithful <a href="https://ncatlab.org/nlab/show/reflected+limit#FullSubcategoryInclusionReflectCoLimits" target="_blank">and therefore reflects colimits</a>, we conclude that $E$ is effective in $\Met_c$.'

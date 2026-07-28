@@ -28,7 +28,7 @@ satisfied_properties:
     proof: Every non-empty poset is weakly terminal (by using constant maps).
 
   - property: infinitary extensive
-    proof: '[Sketch] Since <a href="/category/Set">$\Set$</a> is infinitary extensive, a map $f : P \to \coprod_i Q_i$ corresponds to a decomposition $P = \coprod_i P_i$ (as sets) with maps $f_i : P_i \to Q_i$. Endow $P_i$ with the induced order. If $f$ is order-preserving, the elements in different $P_i$ cannot be comparable (since their $f$-images are not comparable), so that $P = \coprod_i P_i$ as posets, and each $f_i$ is order-preserving.'
+    proof: This follows from Lemma 11 <a href="/content/subcategories">here</a> since <a href="/category/PreOrd">$\PreOrd$</a> is infinitary extensive and its full subcategory $\Pos$ is closed under pullbacks and coproducts in $\PreOrd$.
 
   - property: coregular
     proof: See <a href="https://math.stackexchange.com/questions/5130295" target="_blank">MSE/5130295</a>.
