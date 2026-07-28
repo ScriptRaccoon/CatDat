@@ -26,13 +26,13 @@ satisfied_properties:
     proof: The scheme $\Spec(R)$ is terminal.
 
   - property: pullbacks
-    proof: This is the well-known construction of the fiber product of schemes, see e.g. EGA I, Chap. I, Thm. 3.2.1.
+    proof: This is the well-known construction of the fiber product of schemes, see e.g. EGA I, Chap. I, Thm. 3.2.1. Alternatively, one can show that $\Sch_R$ is closed under pullbacks in the category <a href="/category/LRS_R">$\LRS_R$</a>, which has pullbacks.
 
   - property: well-powered
     proof: See <a href="https://mathoverflow.net/questions/160681" target="_blank">MO/160681</a>.
 
   - property: infinitary extensive
-    proof: One uses the same proof as for locally ringed spaces, using that open subspaces of schemes are also schemes.
+    proof: This follows from Lemma 11 <a href="/content/subcategories">here</a> since <a href="/category/LRS_R">$\LRS_R$</a> is infinitary extensive and its full subcategory $\Sch_R$ is closed under pullbacks and coproducts in $\LRS_R$.
 
 unsatisfied_properties:
   - property: skeletal

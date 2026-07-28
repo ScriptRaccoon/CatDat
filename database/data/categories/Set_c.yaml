@@ -42,7 +42,7 @@ satisfied_properties:
     proof: This is because the larger category <a href="/category/Set">$\Set$</a> has this property.
 
   - property: extensive
-    proof: The same proof as for <a href="/category/Set">$\Set$</a> applies. Actually, the category is "countably extensive".
+    proof: Actually, $\Set_\c$ is countably extensive. This follows from Lemma 11 <a href="/content/subcategories">here</a> since <a href="/category/Set">$\Set$</a> is countably extensive (even infinitary extensive) and its full subcategory $\Set_\c$ is closed under pullbacks and countable coproducts in $\Set$.
 
   - property: countably distributive
     proof: By elementary set theory, a countable (disjoint) union of countable sets is again countable. Hence, countable coproducts exist in $\Set_\c$, and we already saw that finite products exist. The distributivity morphism is an isomorphism since this is the case in <a href="/category/Set">$\Set$</a> and the forgetful functor $\Set_\c \to \Set$ preserves finite products and countable coproducts.
