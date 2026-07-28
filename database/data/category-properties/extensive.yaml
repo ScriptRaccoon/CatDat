@@ -1,13 +1,23 @@
 id: extensive
 relation: is
-description: A category $\C$ is <i>extensive</i> when it has finite coproducts and for all objects $A,B \in \C$ the coproduct functor $\C/A \times \C/B \to \C/(A+B)$ is an equivalence of categories. Equivalently, pullbacks of finite coproduct inclusions along arbitrary morphisms exist and finite coproducts are disjoint and stable under pullback.
+description: >-
+  A category $\C$ is <i>extensive</i> when it has finite coproducts (denoted $+$) and for all objects $A,B \in \C$ the coproduct functor
+  $$\C/A \times \C/B \to \C/(A+B),$$
+  which maps $(X \to A, Y \to B)$ to $(X+Y \to A+B)$, is an equivalence of categories. This is equivalent to the following three conditions:
+  <ol>
+  <li>Pullbacks along binary coproduct inclusions exist, i.e. for every morphism $T \to A + B$, the pullback $T \times_{A + B} A$ exists.</li>
+  <li>Binary coproducts are <a href="/category-property/disjoint_finite_coproducts">disjoint</a>: The coproduct inclusions $A \rightarrow A + B \leftarrow B$ are monomorphisms, and their pullback $A \times_{A + B} B$ is the initial object $0$.</li>
+  <li>Binary coproducts are <a href="https://ncatlab.org/nlab/show/pullback-stable+colimit" target="_blank">stable under pullback</a>: For every morphism $T \to A + B$, if we define the pullbacks $T_A := T \times_{A + B} A$ and $T_B := T \times_{A + B} B$, then the canonical morphism $T_A + T_B \to T$ is an isomorphism.</li>
+  </ol>
+  For a proof of this equivalent characterization, see Section 2 in <a href="https://doi.org/10.1016/0022-4049(93)90035-R" target="_blank">Introduction to extensive and distributive categories</a> by Carboni-Lack-Walters.
+
 nlab_link: https://ncatlab.org/nlab/show/extensive+category
 dual: coextensive
 invariant_under_equivalences: true
 
 related:
   - disjoint finite coproducts
-  - finite coproducts
+  - distributive
   - infinitary extensive
   - pretopos
 

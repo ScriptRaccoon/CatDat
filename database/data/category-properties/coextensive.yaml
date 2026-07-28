@@ -1,13 +1,13 @@
 id: coextensive
 relation: is
-description: A category $\C$ is <i>coextensive</i> when it has finite products and for all objects $A,B \in \C$ the product functor $A/\C \times B/\C \to (A \times B)/\C$ is an equivalence of categories. The prototypical example is the category of commutative rings.
+description: A category $\C$ is <i>coextensive</i> when it has finite products and for all objects $A,B \in \C$ the product functor $A/\C \times B/\C \to (A \times B)/\C$ is an equivalence of categories. Equivalently (by using the characterization of extensive categories), pushouts along binary product projections exist, binary products are disjoint, and binary products are stable under pushouts. The prototypical example is the category of commutative rings.
 nlab_link: null
 dual: extensive
 invariant_under_equivalences: true
 
 related:
   - disjoint finite products
-  - finite products
+  - codistributive
   - infinitary coextensive
 
 tags:
