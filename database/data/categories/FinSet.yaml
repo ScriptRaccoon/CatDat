@@ -14,7 +14,7 @@ related:
   - FS
   - Set
   - Set_c
-  - Set_f
+  - Set_ff
 
 satisfied_properties:
   - property: locally small
