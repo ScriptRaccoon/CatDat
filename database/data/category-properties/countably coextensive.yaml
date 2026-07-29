@@ -1,0 +1,22 @@
+id: countably coextensive
+relation: is
+description: >-
+  A category $\C$ is <i>countably coextensive</i> if it has countable products and, for every countable family of objects $(A_i)_{i \in I}$, the product functor
+  $$\textstyle \prod_{i \in I} (A_i/\C) \to (\coprod_{i \in I} A_i) / \C,$$
+  which maps a family of morphisms $(A_i \to X_i)_{i \in I}$ to their product $\prod_{i \in I} A_i \to \prod_{i \in I} X_i$, is an equivalence of categories. Equivalently (by using the characterization of countably extensive categories), pushouts along product projections exist, countable products are <a href="/category-property/disjoint_products">disjoint</a>, and countable products are stable under pushouts. 
+
+  The only difference between this property and the property of being <a href="/category-property/infinitary_coextensive">infinitary coextensive</a> is that we restrict ourselves to countable families.
+
+nlab_link: null
+dual: countably extensive
+invariant_under_equivalences: true
+
+related:
+  - disjoint products
+  - countable products
+  - countably codistributive
+  - coextensive
+  - infinitary coextensive
+
+tags:
+  - limit–colimit interaction

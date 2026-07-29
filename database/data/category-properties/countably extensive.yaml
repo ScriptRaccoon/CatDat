@@ -1,0 +1,22 @@
+id: countably extensive
+relation: is
+description: >-
+  A category $\C$ is <i>countably extensive</i> if it has countable coproducts and, for every countable family of objects $(A_i)_{i \in I}$, the coproduct functor
+  $$\textstyle \prod_{i \in I} (\C/A_i) \to \C/(\coprod_{i \in I} A_i),$$
+  which maps a family of morphisms $(X_i \to A_i)_{i \in I}$ to their coproduct $\coprod_{i \in I} X_i \to \coprod_{i \in I} A_i$, is an equivalence of categories. Equivalently, pullbacks along coproduct inclusions exist, countable coproducts are <a href="/category-property/disjoint_coproducts">disjoint</a>, and countable coproducts are <a href="https://ncatlab.org/nlab/show/pullback-stable+colimit" target="_blank">stable under pullback</a>. For a proof of this equivalent characterization, see Section 2 of <a href="https://doi.org/10.1016/0022-4049(93)90035-R" target="_blank">Introduction to extensive and distributive categories</a> by Carboni, Lack, and Walters. This covers the finite case, but the countable case is similar.
+
+  The only difference between this property and the property of being <a href="/category-property/infinitary_extensive">infinitary extensive</a> is that we restrict ourselves to countable families. A typical example of a countably extensive category which is not infinitary extensive is the <a href="/category/Meas">category of measurable spaces</a>.
+
+nlab_link: null
+dual: countably coextensive
+invariant_under_equivalences: true
+
+related:
+  - disjoint coproducts
+  - countable coproducts
+  - countably distributive
+  - extensive
+  - infinitary extensive
+
+tags:
+  - limit–colimit interaction
