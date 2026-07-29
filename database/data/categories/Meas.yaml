@@ -3,7 +3,7 @@ name: category of measurable spaces
 notation: $\Meas$
 objects: measurable spaces
 morphisms: measurable maps
-description: This is very similar to the category of topological spaces. Accordingly, limits and colimits can be constructed in the same way.
+description: This category is similar to the category of topological spaces. For instance, limits and colimits can be constructed in the same way. However, a main difference is that this category is not infinitary distributive.
 nlab_link: https://ncatlab.org/nlab/show/Meas
 
 tags:
@@ -37,8 +37,18 @@ satisfied_properties:
   - property: cocomplete
     proof: Take the colimit of the underlying sets and take the largest $\sigma$-algebra making all inclusions measurable. That is, a set is measurable iff its preimage under each inclusion is measurable.
 
-  - property: infinitary extensive
-    proof: '[Sketch] Since <a href="/category/Set">$\Set$</a> is infinitary extensive, a map $f : Y \to \coprod_i X_i \eqqcolon X$ corresponds to a decomposition $Y = \coprod_i Y_i$ (as sets) with maps $f_i : Y_i \to X_i$. Endow the measurable subset $Y_i \subseteq Y$ with the restricted $\sigma$-algebra. If $f$ is measurable, each $f_i$ is measurable, and $Y = \coprod_i Y_i$ holds as measurable spaces.'
+  - property: extensive
+    # TODO: rework this once we add "countably extensive" as its own property
+    proof: >-
+      Actually, the category is countably extensive. This follows from the countable extensivity of <a href="/category/Set">$\Set$</a> as follows. We already know that coproducts and pullbacks exist, and that they are preserved by the forgetful functor to $\Set$. More concretely, coproducts are disjoint unions of the underlying sets, with measurable subsets given by unions of measurable subsets of the summands. Since coproducts are disjoint in $\Set$ and the empty set has a unique $\sigma$-algebra, it follows immediately that coproducts are disjoint in $\Meas$ as well.
+
+      It remains to show that <i>countable</i> coproducts are stable under pullback. Let $(X_i)_{i \in I}$ be a countable family of measurable spaces and let $f : T \to \coprod_{i \in I} X_i$ be a measurable map. Consider the pullbacks $T_i := f^*(X_i)$. These are simply the preimages of $X_i$ under $f$, equipped with the $\sigma$-algebra induced from $T$. Since coproducts in $\Set$ are stable under pullback, the canonical measurable map $\coprod_{i \in I} T_i \to T$ is bijective. It remains to show that it maps measurable sets to measurable sets.
+
+      A measurable subset of $\coprod_{i \in I} T_i$ has the form $A = \coprod_{i \in I} (B_i \cap T_i)$, where each $B_i$ is a measurable subset of $T$. The image of $A$ in $T$ is $\bigcup_{i \in I} (B_i \cap T_i)$. Since this is a countable union, it suffices to show that each $B_i \cap T_i$ is measurable in $T$. This holds because $T_i$ is measurable in $T$ (since $X_i$ is measurable in the coproduct and $f$ is measurable) and $B_i$ is measurable in $T$ by assumption.
+
+  - property: countably distributive
+    # TODO: rework this once we add "countably extensive" as its own property
+    proof: Since the category has finite products and is countably extensive by the previous proof, it is countably distributive; cf. <a href="/category-implication/infinitary_extensive_distributivity">this result</a>.
 
   - property: filtered-colimit-stable monomorphisms
     proof: This follows from Lemma 2 <a href="/content/subcategories">here</a> applied to the forgetful functor to $\Set$.
@@ -79,6 +89,18 @@ unsatisfied_properties:
       which is not an isomorphism, induces a bijection
       $$\Hom(G, (\kappa + 1, \M_\kappa')) \to \Hom(G, (\kappa + 1, \M_\kappa))$$
       for each $G \in S$, implying that $S$ cannot be an extremal generating set. In fact, if $f : G \to (\kappa + 1, \M_\kappa)$ is a measurable map, since $\kappa$ is regular and $\card(G) < \kappa$, there exists an ordinal $\alpha < \kappa$ which is an upper bound for $\im(f) \cap [0, \kappa)$. Therefore, $f^*(\{\kappa\}) = f^*([\alpha + 1, \kappa])$ is measurable, implying that $f$ factors through $(\kappa + 1, \M_\kappa')$.
+
+  - property: infinitary distributive
+    proof: >-
+      Let $X$ be a set of cardinality $> 2^{\aleph_0}$. We equip $X$ with the discrete $\sigma$-algebra. If $1$ denotes the singleton space, we therefore have $X \cong \coprod_{x \in X} 1$ in $\Meas$. However, we claim that the canonical bijective measurable map
+      $$\textstyle\coprod_{x,y \in X} 1 \to X \times X$$
+      is not an isomorphism, i.e. that $X \times X$ does not carry the discrete $\sigma$-algebra. More precisely, we will show that the diagonal $\Delta \subseteq X \times X$ is not measurable. (This is probably standard, but we include the proof here for lack of a reference.)
+
+      Assume that $\Delta \subseteq X \times X$ is measurable. Then (cf. <a href="https://math.stackexchange.com/questions/61617" target="_blank">MSE/61617</a>) there is a countable family of rectangles $(A_n \times B_n)_{n \in \IN}$ such that $\Delta \in \sigma(\{A_n \times B_n : n \in \IN\})$. Consider the product of the characteristic functions
+      $$((\chi_{A_n})_n,(\chi_{B_n})_n) : X \to \{0,1\}^{\IN} \times \{0,1\}^{\IN}.$$
+      Its kernel is an equivalence relation $\sim$ on $X$, namely, $x \sim y$ if and only if, for all $n$, we have $x \in A_n \iff y \in A_n$ and $x \in B_n \iff y \in B_n$. The set $X/{\sim}$ of equivalence classes embeds into $\{0,1\}^{\IN} \times \{0,1\}^{\IN}$ and therefore has at most $2^{\aleph_0}$ elements. By our assumption on $X$, the projection $X \to X/{\sim}$ cannot be injective. Thus, $\sim$ is not trivial.
+
+      Next, consider the collection of all subsets $E \subseteq X \times X$ with the property that, whenever $x \sim y$, we have $(x,y) \in E \iff (x,x) \in E$. It is easily seen that this collection is a $\sigma$-algebra on $X \times X$. Moreover, it contains each rectangle $A_n \times B_n$. Therefore, it also contains the diagonal $\Delta$. But this means that $x \sim y$ implies $x=y$, i.e. that $\sim$ is trivial. This contradiction proves that the diagonal is not measurable.
 
 special_objects:
   initial object:
