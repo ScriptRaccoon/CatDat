@@ -8,6 +8,14 @@
   proof: This holds by definition.
   is_equivalence: false
 
+- id: countably_extensive_assumption
+  assumptions:
+    - countably extensive
+  conclusions:
+    - countable coproducts
+  proof: This holds by definition.
+  is_equivalence: false
+
 - id: infinitary_extensive_assumption
   assumptions:
     - infinitary extensive
@@ -16,9 +24,17 @@
   proof: This holds by definition.
   is_equivalence: false
 
-- id: infinitary_extensive_finitary
+- id: infinitary_extensive_countable
   assumptions:
     - infinitary extensive
+  conclusions:
+    - countably extensive
+  proof: This is obvious.
+  is_equivalence: false
+
+- id: countably_extensive_finitary
+  assumptions:
+    - countably extensive
   conclusions:
     - extensive
   proof: This is obvious.
@@ -48,6 +64,15 @@
     - finite products
   conclusions:
     - infinitary distributive
+  proof: One can adjust the proof of Prop. 4.5 in <a href="https://doi.org/10.1016/0022-4049(93)90035-R" target="_blank">Introduction to extensive and distributive categories</a> by Carboni-Lack-Walters (which deals with the finite case).
+  is_equivalence: false
+
+- id: countably_extensive_distributivity
+  assumptions:
+    - countably extensive
+    - finite products
+  conclusions:
+    - countably distributive
   proof: One can adjust the proof of Prop. 4.5 in <a href="https://doi.org/10.1016/0022-4049(93)90035-R" target="_blank">Introduction to extensive and distributive categories</a> by Carboni-Lack-Walters (which deals with the finite case).
   is_equivalence: false
 

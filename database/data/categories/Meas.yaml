@@ -37,18 +37,13 @@ satisfied_properties:
   - property: cocomplete
     proof: Take the colimit of the underlying sets and take the largest $\sigma$-algebra making all inclusions measurable. That is, a set is measurable iff its preimage under each inclusion is measurable.
 
-  - property: extensive
-    # TODO: rework this once we add "countably extensive" as its own property
+  - property: countably extensive
     proof: >-
-      Actually, the category is countably extensive. This follows from the countable extensivity of <a href="/category/Set">$\Set$</a> as follows. We already know that coproducts and pullbacks exist, and that they are preserved by the forgetful functor to $\Set$. More concretely, coproducts are disjoint unions of the underlying sets, with measurable subsets given by unions of measurable subsets of the summands. Since coproducts are disjoint in $\Set$ and the empty set has a unique $\sigma$-algebra, it follows immediately that coproducts are disjoint in $\Meas$ as well.
+      This follows from the countable extensivity of <a href="/category/Set">$\Set$</a> as follows. We already know that coproducts and pullbacks exist, and that they are preserved by the forgetful functor to $\Set$. More concretely, coproducts are disjoint unions of the underlying sets, with measurable subsets given by unions of measurable subsets of the summands. Since coproducts are disjoint in $\Set$ and the empty set has a unique $\sigma$-algebra, it follows immediately that coproducts are disjoint in $\Meas$ as well.
 
       It remains to show that <i>countable</i> coproducts are stable under pullback. Let $(X_i)_{i \in I}$ be a countable family of measurable spaces and let $f : T \to \coprod_{i \in I} X_i$ be a measurable map. Consider the pullbacks $T_i := f^*(X_i)$. These are simply the preimages of $X_i$ under $f$, equipped with the $\sigma$-algebra induced from $T$. Since coproducts in $\Set$ are stable under pullback, the canonical measurable map $\coprod_{i \in I} T_i \to T$ is bijective. It remains to show that it maps measurable sets to measurable sets.
 
       A measurable subset of $\coprod_{i \in I} T_i$ has the form $A = \coprod_{i \in I} (B_i \cap T_i)$, where each $B_i$ is a measurable subset of $T$. The image of $A$ in $T$ is $\bigcup_{i \in I} (B_i \cap T_i)$. Since this is a countable union, it suffices to show that each $B_i \cap T_i$ is measurable in $T$. This holds because $T_i$ is measurable in $T$ (since $X_i$ is measurable in the coproduct and $f$ is measurable) and $B_i$ is measurable in $T$ by assumption.
-
-  - property: countably distributive
-    # TODO: rework this once we add "countably extensive" as its own property
-    proof: Since the category has finite products and is countably extensive by the previous proof, it is countably distributive; cf. <a href="/category-implication/infinitary_extensive_distributivity">this result</a>.
 
   - property: filtered-colimit-stable monomorphisms
     proof: This follows from Lemma 2 <a href="/content/subcategories">here</a> applied to the forgetful functor to $\Set$.
