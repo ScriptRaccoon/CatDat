@@ -32,7 +32,21 @@ satisfied_properties:
     proof: This follows in the same way as for <a href="/category/Grp">$\Grp$</a>, see also Example 2.2.5 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>.
 
   - property: coextensive
-    proof: '[Sketch] A ring homomorphism $f : A \times B \to R$ yields the idempotent element $e \coloneqq f(1,0) \in R$, so that $R \cong eR \times (1-e)R$. Then $f$ decomposes into the ring homomorphisms $f_A : A \to eR$, $f_A(a) \coloneqq f(a,0)$ and $f_B : B \to (1-e)R$, $f_B(b) \coloneqq f(0,b)$.'
+    proof: >-
+      We already know that $\CRing$ has products and pushouts, since it is finitary algebraic. Concretely, the pushout of a span $A \leftarrow R \rightarrow B$ can be constructed as the tensor product $A \otimes_R B$ with the obvious multiplication. Finite products are disjoint because the projection $p_1 : A \times B \to A$ is clearly surjective, hence an epimorphism, and the tensor product $A \otimes_{p_1,A \times B,p_2} B = 0$ is the zero ring (the terminal object), since
+      $$a \otimes b = a \cdot p_1(1,0) \otimes b = a \otimes p_2(1,0) \cdot b = a \otimes 0 = 0.$$
+      It remains to check that finite products are pushout-stable. Let
+      $$f : A \times B \to T$$
+      be a ring homomorphism, and consider the pushouts
+      $$\begin{align*}
+      T_A & := A \otimes_{p_1,A \times B,f} T \\
+      T_B & := B \otimes_{p_2,A \times B,f} T.
+      \end{align*}$$
+      We need to prove that the canonical homomorphism
+      $$T \to T_A \times T_B$$
+      is an isomorphism. Since $p_1 : A \times B \to A$ is surjective with kernel $0 \times B = \langle (0,1) \rangle$, we have $T_A = T/\langle f(1,0)\rangle$, and likewise, $T_B = T/\langle f(0,1) \rangle$. The elements $f(1,0)$ and $f(0,1)$ are orthogonal idempotents in $T$. Therefore, the claim follows from the well-known result in commutative algebra that if $R$ is a commutative ring and $e \in R$ is an idempotent, then $R \to R/\langle e \rangle \times R/\langle 1-e \rangle$ is an isomorphism. One can also deduce this from the Chinese Remainder Theorem.
+
+      An alternative proof, which we only sketch, uses the category of locally ringed spaces <a href="/category/LRS_R">$\LRS$</a>, which is infinitary extensive. It follows that the category of affine schemes is extensive by Lemma 11 <a href="/content/subcategories">here</a>, and this category is anti-equivalent to $\CRing$. This argument is not circular since our proof of extensivity of $\LRS$ does not use coextensivity of $\CRing$.
 
 unsatisfied_properties:
   - property: skeletal
