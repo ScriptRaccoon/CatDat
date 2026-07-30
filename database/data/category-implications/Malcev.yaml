@@ -32,7 +32,7 @@
     - pointed
   conclusions:
     - unital
-  proof: This follows from Corollary 2.2.10 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>. The proof is also written down in <a href="https://math.stackexchange.com/a/5034834/1650" target="_blank">MSE/5033161</a>.
+  proof: This follows from Corollary 2.2.10 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>. The proof is also written down in <a href="https://math.stackexchange.com/a/5034834" target="_blank">MSE/5033161</a>.
   is_equivalence: false
 
 - id: biproducts_unital

@@ -85,7 +85,7 @@ unsatisfied_properties:
     proof: If $\Man$ had sequential colimits, then by <a href="/content/special_sequential_colimits">this lemma</a> there would be a manifold $M$ that admits a split epimorphism $M \to \IR^n$ for every $n$. But then $M$ will have an infinite-dimensional tangent space, which is a contradiction.
 
   - property: ℵ₂-small copowers
-    proof: A proof can be found at <a href="https://math.stackexchange.com/a/5083683/1650" target="_blank">MSE/5083641</a> (ignore the arguments regarding equal dimension).
+    proof: A proof can be found at <a href="https://math.stackexchange.com/a/5083683" target="_blank">MSE/5083641</a> (ignore the arguments regarding equal dimension).
 
   - property: ℵ₁-cofiltered limits
     proof: >-

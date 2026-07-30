@@ -56,7 +56,7 @@ unsatisfied_properties:
     proof: This is trivial.
 
   - property: Cauchy complete
-    proof: See <a href="https://math.stackexchange.com/a/5030380/1650" target="_blank">MSE/1931577</a>.
+    proof: See <a href="https://math.stackexchange.com/a/5030380" target="_blank">MSE/1931577</a>.
 
   - property: normal
     proof: The construction of equalizers in $\Rel$ shows that they are injective functions, but <a href="https://math.stackexchange.com/questions/350716" target="_blank">MSE/350716</a> shows that monomorphisms in $\Rel$ don't have to be functions.
