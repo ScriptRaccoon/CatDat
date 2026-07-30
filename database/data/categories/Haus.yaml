@@ -13,6 +13,7 @@ related:
   - Met_c
   - Top
   - CompHaus
+  - Man
 
 satisfied_properties:
   - property: locally small

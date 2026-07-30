@@ -13,6 +13,7 @@ tags:
 related:
   - FI
   - FS
+  - FinSet
 
 satisfied_properties:
   - property: locally small

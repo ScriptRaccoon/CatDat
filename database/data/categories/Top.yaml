@@ -14,6 +14,7 @@ related:
   - Haus
   - Met_c
   - Top_*
+  - Man
 
 satisfied_properties:
   - property: locally small

@@ -11,6 +11,8 @@ tags:
 
 related:
   - Sch_R
+  - Top
+  - CAlg(R)
 
 comments:
   - Monomorphisms $X \to Y$ can be formally described by the condition that the diagonal morphism $X \to X \times_Y X$ is an isomorphism. Since the fiber product of locally ringed spaces has a concrete description (<a href="https://math.stackexchange.com/questions/1033675" target="_blank">MSE/1033675</a>), we thus have a description of the monomorphisms, albeit a very complicated one. At least, we can say that every monomorphism is injective.

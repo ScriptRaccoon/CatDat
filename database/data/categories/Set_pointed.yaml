@@ -12,6 +12,7 @@ tags:
 related:
   - Set
   - Top_*
+  - Setne
 
 satisfied_properties:
   - property: locally small

@@ -11,6 +11,7 @@ tags:
 
 related:
   - Met
+  - Vect
 
 satisfied_properties:
   - property: locally small

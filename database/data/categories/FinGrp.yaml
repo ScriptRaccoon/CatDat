@@ -13,6 +13,7 @@ related:
   - FinAb
   - Grp
   - Grp_c
+  - FinSet
 
 satisfied_properties:
   - property: locally small

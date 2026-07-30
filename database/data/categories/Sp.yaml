@@ -12,6 +12,7 @@ tags:
 related:
   - B
   - FinSet
+  - M-Set
 
 satisfied_properties:
   - property: essentially small

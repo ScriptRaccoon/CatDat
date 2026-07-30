@@ -12,6 +12,7 @@ tags:
 related:
   - N
   - On
+  - real_interval
 
 satisfied_properties:
   - property: small

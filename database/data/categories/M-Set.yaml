@@ -10,9 +10,9 @@ tags:
   - algebra
 
 related:
-  - J2
-  - R-Mod
   - Set
+  - R-Mod
+  - J2
 
 satisfied_properties:
   - property: locally small
