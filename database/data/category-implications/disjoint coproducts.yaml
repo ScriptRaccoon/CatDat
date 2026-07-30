@@ -41,7 +41,7 @@
     - strongly connected
   conclusions:
     - disjoint finite products
-  proof: See <a href="https://math.stackexchange.com/a/5132300/1650" target="_blank">MSE/5130190</a> for a proof.
+  proof: See <a href="https://math.stackexchange.com/a/5132300" target="_blank">MSE/5130190</a> for a proof.
   is_equivalence: false
 
 - id: disjoint_coproduct_cogenerator

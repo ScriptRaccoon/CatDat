@@ -33,7 +33,7 @@
     - regular subobject classifier
   conclusions:
     - trivial
-  proof: See <a href="https://math.stackexchange.com/a/5132767/1650" target="_blank">MSE/4086192</a>.
+  proof: See <a href="https://math.stackexchange.com/a/5132767" target="_blank">MSE/4086192</a>.
   is_equivalence: false
 
 - id: regular_subobjects_trivial
