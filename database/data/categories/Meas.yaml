@@ -14,6 +14,7 @@ related:
 
 comments:
   - The thread <a href="https://math.stackexchange.com/questions/5024471/">MSE/5024471</a> asks for the finitely presentable objects of this category.
+  - Will Sawin has sketched a proof for the co-Malcev property in <a href="https://mathoverflow.net/questions/509552/is-the-category-mathbfring-mathrmop-a-malcev-category#comment1328251_509555">MO/509552</a>.
 
 satisfied_properties:
   - property: locally small
@@ -36,6 +37,14 @@ satisfied_properties:
 
   - property: cocomplete
     proof: Take the colimit of the underlying sets and take the largest $\sigma$-algebra making all inclusions measurable. That is, a set is measurable iff its preimage under each inclusion is measurable.
+
+  - property: coregular
+    proof: >-
+      The proof is similar to the proof for <a href="/category/Top">$\Top$</a>. We already know that (finite) colimits and equalizers exist, and that they are preserved by the forgetful functor to $\Set$. It remains to show that regular monomorphisms, i.e. embeddings, are stable under pushouts. Thus, let $i : A \to X$ be an embedding and let $f : A \to Y$ be any measurable map. We claim that the induced measurable map
+      $$j : Y \to Y \sqcup_A X$$
+      is again an embedding. It is certainly injective, since <a href="/category/Set">$\Set$</a> is coregular. More precisely, the underlying set of $Y \sqcup_A X$ can be identified with $Y \sqcup (X \setminus \im(i))$. Now let $T \subseteq Y$ be a measurable subset. Then its preimage $f^*(T) \subseteq A$ is measurable. Since $i$ is an embedding, there exists a measurable subset $S \subseteq X$ such that $i^*(S) = f^*(T)$. Let $u : X \to Y \sqcup_A X$ denote the canonical map, so that $u \circ i = j \circ f$, and consider the subset
+      $$M := j_*(T) \cup u_*(S \setminus \im(i))$$
+      of the pushout. It is straightforward to verify that $j^*(M) = T$ and $u^*(M) = S$. Since both $T$ and $S$ are measurable, it follows that $M$ is measurable. Finally, the equality $j^*(M) = T$ shows that every measurable subset of $Y$ is the preimage of a measurable subset of the pushout. Hence $j$ is an embedding, as claimed.
 
   - property: countably extensive
     proof: >-
