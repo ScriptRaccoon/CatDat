@@ -94,6 +94,9 @@ unsatisfied_properties:
 
       Next, consider the collection of all subsets $E \subseteq X \times X$ with the property that, whenever $x \sim y$, we have $(x,y) \in E \iff (x,x) \in E$. It is easily seen that this collection is a $\sigma$-algebra on $X \times X$. Moreover, it contains each rectangle $A_n \times B_n$. Therefore, it also contains the diagonal $\Delta$. But this means that $x \sim y$ implies $x=y$, i.e. that $\sim$ is trivial. This contradiction proves that the diagonal is not measurable.
 
+  - property: coaccessible
+    proof: 'The proof is very similar to the proof for <a href="/category/Top">$\Top$</a>. Assume $\Meas$ is coaccessible. Let $p : D \to I$ be the identity map from the two-element discrete space to the two-element indiscrete space. Then, a measurable space is discrete if and only if it is projective to the morphism $p$. This implies that the full subcategory spanned by all discrete measurable spaces, which is equivalent to $\Set$, is coaccessible by Prop. 4.7 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>. However, since <a href="/category/Set">$\Set$</a> is not coaccessible, this is a contradiction.'
+
 special_objects:
   initial object:
     description: empty set with the unique $\sigma$-algebra
