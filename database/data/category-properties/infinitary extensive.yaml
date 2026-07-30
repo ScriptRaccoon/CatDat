@@ -7,7 +7,7 @@ description: >-
   <ol>
   <li>Pullbacks along coproduct inclusions exist, i.e. for every morphism $T \to \coprod_{i \in I} A_i$ and every $i \in I$ the pullback $T \times_{\coprod_{i \in I} A_i} A_i$ exists.</li>
   <li>Coproducts are <a href="/category-property/disjoint_coproducts">disjoint</a>: Each coproduct inclusion $A_i \to \coprod_{i \in I} A_i$ is a monomorphism, and for $i \neq j$ the pullback $A_i \times_{\coprod_{i \in I} A_i} A_j$ is the initial object $0$.</li>
-  <li>Coproducts are <a href="https://ncatlab.org/nlab/show/pullback-stable+colimit" target="_blank">stable under pullback</a>: For every morphism $T \to \coprod_{i \in I} A_i$, if we define the pullbacks $T_i := T \times_{\coprod_{i \in I} A_i} A_i$ for $i \in I$, then the canonical morphism $\coprod_{i \in I} T_i \to T$ is an isomorphism.</li>
+  <li>Coproducts are <a href="https://ncatlab.org/nlab/show/pullback-stable+colimit" target="_blank">stable under pullbacks</a>: For every morphism $T \to \coprod_{i \in I} A_i$, if we define the pullbacks $T_i := T \times_{\coprod_{i \in I} A_i} A_i$ for $i \in I$, then the canonical morphism $\coprod_{i \in I} T_i \to T$ is an isomorphism.</li>
   </ol>
   For a proof of this equivalent characterization, see Section 2 in <a href="https://doi.org/10.1016/0022-4049(93)90035-R" target="_blank">Introduction to extensive and distributive categories</a> by Carboni-Lack-Walters; this covers the finite case, but the infinite case is similar.
 

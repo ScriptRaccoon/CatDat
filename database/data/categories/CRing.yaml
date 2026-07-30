@@ -35,7 +35,7 @@ satisfied_properties:
     proof: >-
       We already know that $\CRing$ has products and pushouts, since it is finitary algebraic. Concretely, the pushout of a span $A \leftarrow R \rightarrow B$ can be constructed as the tensor product $A \otimes_R B$ with the obvious multiplication. Finite products are disjoint because the projection $p_1 : A \times B \to A$ is clearly surjective, hence an epimorphism, and the tensor product $A \otimes_{p_1,A \times B,p_2} B = 0$ is the zero ring (the terminal object), since
       $$a \otimes b = a \cdot p_1(1,0) \otimes b = a \otimes p_2(1,0) \cdot b = a \otimes 0 = 0.$$
-      It remains to check that finite products are pushout-stable. Let
+      It remains to check that finite products are stable under pushouts. Let
       $$f : A \times B \to T$$
       be a ring homomorphism, and consider the pushouts
       $$\begin{align*}

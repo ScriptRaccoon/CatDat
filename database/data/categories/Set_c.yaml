@@ -48,10 +48,10 @@ satisfied_properties:
     proof: 'Let $f, g : E \rightrightarrows X$ be a congruence in $\Set_\c$. Then using $1$ as a test object, we see that this induces an equivalence relation on $X$. We already know that <a href="/category/Set">$\Set$</a> has effective congruences (as does every topos). Using <a href="/content/effective-congruence-quotients">this result</a>, we see that $E$ is the kernel pair of $X \to (X/E)_{\Set}$ in $\Set$. Also, the quotient $(X/E)_{\Set}$ is countable; and the forgetful functor $\Set_\c \to \Set$ is fully faithful <a href="https://ncatlab.org/nlab/show/reflected+limit#FullSubcategoryInclusionReflectCoLimits" target="_blank">and therefore reflects limits</a>. Thus, we conclude that $E$ is the kernel pair of $X \to (X/E)_{\Set}$ in $\Set_\c$ as well.'
 
   - property: regular
-    proof: From the other properties we know that the category is finitely complete and that it has coequalizers. The regular epimorphisms are stable under pullback since this holds in <a href="/category/Set">$\Set$</a> and both regular epimorphisms (they are surjective maps) and pullbacks coincide.
+    proof: From the other properties we know that the category is finitely complete and that it has coequalizers. The regular epimorphisms are stable under pullbacks since this holds in <a href="/category/Set">$\Set$</a> and both regular epimorphisms (they are surjective maps) and pullbacks coincide.
 
   - property: coregular
-    proof: From the other properties we know that the category is finitely cocomplete and that it has equalizers. The regular monomorphisms are stable under pushout since this holds in <a href="/category/Set">$\Set$</a> and both regular monomorphisms (they are injective maps) and pushouts coincide.
+    proof: From the other properties we know that the category is finitely cocomplete and that it has equalizers. The regular monomorphisms are stable under pushouts since this holds in <a href="/category/Set">$\Set$</a> and both regular monomorphisms (they are injective maps) and pushouts coincide.
 
 unsatisfied_properties:
   - property: small

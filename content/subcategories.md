@@ -83,7 +83,7 @@ _Proof._ The forgetful functor $\C / P \to \C$ is fully faithful; it has right a
 Let $U : \C \to \D$ be a fully faithful functor. Assume that $\C$ has finite limits and coequalizers, and that $U$ preserves pullbacks and coequalizers. If $\D$ is regular, then so is $\C$.
 :::
 
-_Proof._ Since $\C$ has finite limits and coequalizers, the only nontrivial part of proving $\C$ is regular is to check that regular epimorphisms are stable under pullback in $\C$. Since $U$ preserves pullbacks and regular epimorphisms, it suffices to show that $U$ reflects regular epimorphisms. Thus, suppose $f : X \to Y$ is a morphism in $\C$ with $Uf$ a regular epimorphism. Then in $\C$ we have the diagram
+_Proof._ Since $\C$ has finite limits and coequalizers, the only nontrivial part of proving $\C$ is regular is to check that regular epimorphisms are stable under pullbacks in $\C$. Since $U$ preserves pullbacks and regular epimorphisms, it suffices to show that $U$ reflects regular epimorphisms. Thus, suppose $f : X \to Y$ is a morphism in $\C$ with $Uf$ a regular epimorphism. Then in $\C$ we have the diagram
 $$X \times_Y X \rightrightarrows X \to \im(f) \xrightarrow{i} Y$$
 where $X \times_Y X$ is the kernel pair of $f$, and $\im(f)$ is the coequalizer. By the assumptions, the image under $U$ is equivalent to the diagram in $\D$:
 $$UX \times_{UY} UX \rightrightarrows UX \to \im(Uf) \xrightarrow{Ui} UY$$
