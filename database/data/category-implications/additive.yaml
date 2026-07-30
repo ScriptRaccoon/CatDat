@@ -52,7 +52,7 @@
     - abelian
   conclusions:
     - regular
-  proof: In an abelian category, every epimorphism is regular, and epimorphisms are pullback-stable, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. VIII.
+  proof: In an abelian category, every epimorphism is regular, and epimorphisms are stable under pullbacks, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. VIII.
   is_equivalence: false
 
 - id: grothendieck_abelian_definition
