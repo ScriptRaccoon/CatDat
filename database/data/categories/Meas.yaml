@@ -37,6 +37,7 @@ satisfied_properties:
 
   - property: cocomplete
     proof: Take the colimit of the underlying sets and take the largest $\sigma$-algebra making all inclusions measurable. That is, a set is measurable iff its preimage under each inclusion is measurable.
+    check_redundancy: false
 
   - property: coregular
     proof: >-
