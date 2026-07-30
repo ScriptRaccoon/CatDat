@@ -63,9 +63,6 @@ unsatisfied_properties:
   - property: skeletal
     proof: This is trivial.
 
-  - property: cartesian filtered colimits
-    proof: See <a href="https://math.stackexchange.com/questions/5027218" target="_blank">MSE/5027218</a>.
-
   - property: cofiltered-limit-stable epimorphisms
     proof: We already know that <a href="/category/Set">$\Set$</a> does not have this property. Now apply the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> to the functor $\Set \to \Meas$ which equips a set with the trivial $\sigma$-algebra.
 
@@ -89,7 +86,7 @@ unsatisfied_properties:
     proof: >-
       Let $X$ be a set of cardinality $> 2^{\aleph_0}$. We equip $X$ with the discrete $\sigma$-algebra. If $1$ denotes the singleton space, we therefore have $X \cong \coprod_{x \in X} 1$ in $\Meas$. However, we claim that the canonical bijective measurable map
       $$\textstyle\coprod_{x,y \in X} 1 \to X \times X$$
-      is not an isomorphism, i.e. that $X \times X$ does not carry the discrete $\sigma$-algebra. More precisely, we will show that the diagonal $\Delta \subseteq X \times X$ is not measurable. (This is probably standard, but we include the proof here for lack of a reference.)
+      is not an isomorphism, i.e. that $X \times X$ does not carry the discrete $\sigma$-algebra. More precisely, we will show that the diagonal $\Delta \subseteq X \times X$ is not measurable. (This is well-known and is remarked for example at the end of chapter 1 in Wengenroth's book <a href="https://doi.org/10.1515/9783110203592" target="_blank">Wahrscheinlichkeitstheorie</a>, but we include the proof nevertheless.)
 
       Assume that $\Delta \subseteq X \times X$ is measurable. Then (cf. <a href="https://math.stackexchange.com/questions/61617" target="_blank">MSE/61617</a>) there is a countable family of rectangles $(A_n \times B_n)_{n \in \IN}$ such that $\Delta \in \sigma(\{A_n \times B_n : n \in \IN\})$. Consider the product of the characteristic functions
       $$((\chi_{A_n})_n,(\chi_{B_n})_n) : X \to \{0,1\}^{\IN} \times \{0,1\}^{\IN}.$$
