@@ -12,10 +12,22 @@
 	import { theme, THEMES, update_theme } from '$lib/states/theme.svelte'
 	import MetaData from '$components/MetaData.svelte'
 	import { set_tracking, tracking } from '$lib/states/tracking.svelte'
+	import { PUBLIC_ADMIN_URL } from '$env/static/public'
 
 	$effect(() => update_theme(theme.value))
 	$effect(() => update_assignment_level(assignment_level.value))
 	$effect(() => set_tracking(tracking.allow))
+
+	async function record_assignment_level_update() {
+		await fetch(`${PUBLIC_ADMIN_URL}/api/user_action`, {
+			method: 'POST',
+			body: JSON.stringify({
+				action: 'update_assignment_level',
+				value: assignment_level.value
+			}),
+			headers: { 'Content-Type': 'application/json' }
+		})
+	}
 </script>
 
 <MetaData title="Settings" description="Customize the appearance of CatDat" />
@@ -61,6 +73,7 @@
 					name="assignment-level"
 					value={level}
 					bind:group={assignment_level.value}
+					onchange={record_assignment_level_update}
 				/>
 				<Chip>
 					{level}
