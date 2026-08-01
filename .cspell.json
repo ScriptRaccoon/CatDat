@@ -150,6 +150,7 @@
 		"épimorphismes",
 		"epimorphisms",
 		"epis",
+		"EUMDL",
 		"exponentials",
 		"extensivity",
 		"extremal",
@@ -323,8 +324,8 @@
 		"Vincenzo",
 		"Vite",
 		"Wedderburn",
-		"Wengenroth",
 		"well-copowered",
+		"Wengenroth",
 		"Yoneda",
 		"Zulip"
 	],
@@ -339,5 +340,8 @@
 		"todo.txt",
 		"*.svg"
 	],
-	"ignoreRegExpList": ["\\$[^$]*\\$", "\\$\\$[^$]*\\$\\$"]
+	"ignoreRegExpList": [
+		"\\$[^$]*\\$",
+		"\\$\\$[^$]*\\$\\$"
+	]
 }

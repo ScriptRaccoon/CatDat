@@ -73,7 +73,6 @@ unsatisfied_properties:
       with itself. That is, $X_n$ is the union of two lines $\IR \times \{1\}$ and $\IR \times \{2\}$ where we identify $(x,1) \equiv (x,2)$ when $|x| \geq 1/n$. Then $X_n$ is Hausdorff, and there is a canonical surjective continuous map $X_n \to X_{n+1}$. The colimit in $\Top$ is the union of two lines where we identify $(x,1) \equiv (x,2)$ when $|x| \geq 1/n$ for some $n$, i.e. when $x \neq 0$. This is the line with the double origin, which is not Hausdorff. Its Hausdorff reflection is the line $\IR$ where all points of both lines are identified, and it provides the colimit in $\Haus$. Now, the injective continuous maps $\{1,2\} \to X_n$, $i \mapsto (0,i)$ (where $\{1,2\}$ is discrete) become the constant map $0 : \{1,2\} \to \IR$ in the colimit, which is not a monomorphism.
 
   - property: cogenerator
-    # cspell: disable-next-line
     proof: 'Assume that $Q$ is a cogenerator. Since $Q$ is Hausdorff, $Q$ is $T_1$. By a theorem of Herrlich (<i>Wann sind alle stetigen Abbildungen in Y konstant</i>. Math. Z. 90 (1965): 152-154. <a href="http://eudml.org/doc/170472" target="_blank">EUMDL</a>), there is a regular Hausdorff space $X$ with $\geq 2$ points such that every continuous map $X \to Q$ is constant. (The author only states that $X$ is regular, but actually, $X$ is regular and $T_1$, hence Hausdorff.) But since $Q$ is a cogenerator, this implies that all maps $1 \rightrightarrows X$ are equal, i.e. that $X$ has just one point. This is a contradiction.'
 
   - property: regular
