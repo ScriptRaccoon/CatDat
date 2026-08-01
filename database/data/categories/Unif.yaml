@@ -1,0 +1,182 @@
+id: Unif
+name: category of uniform spaces
+notation: $\Unif$
+objects: uniform spaces
+morphisms: uniform maps
+description: A <i>uniform space</i> consists of a set equipped with a uniform structure, which is a collection of relations called <i>entourages</i> satisfying certain axioms; we refer to <a href="https://en.wikipedia.org/wiki/Uniform_space" target="_blank">Wikipedia</a> for the complete definition. A <i>uniform map</i> or <i>uniformly continuous map</i> is a map whose preimages of entourages are entourages. We do not assume uniform spaces to be separated. In particular, every pseudo-metric induces a uniform structure.
+nlab_link: https://ncatlab.org/nlab/show/uniform+space
+tags:
+  - topology
+
+related:
+  - Top
+  - Met_c
+  - Meas
+
+satisfied_properties:
+  - property: locally small
+    proof: There is a forgetful functor $\Unif \to \Set$, and $\Set$ is locally small.
+
+  - property: complete
+    proof: 'Take the limit of the underlying sets and endow it with the coarsest uniform structure making all projections uniform; cf. Bourbaki, <i>General Topology</i> (Part 1), Chapter II, § 3, no. 3 on initial uniformities. More concretely, products are described below on this page, and the equalizer of two uniform maps $f,g : (X,\Phi) \rightrightarrows (Y,\Psi)$ is the subset $E := \{x \in X : f(x) = g(x)\}$ equipped with the uniform structure $\{U \cap (E \times E) : U \in \Phi\}$.'
+
+  - property: cocomplete
+    proof: 'Take the colimit of the underlying sets and endow it with the finest uniform structure making all inclusions uniform. More concretely, coproducts are described below on this page, and the coequalizer of two uniform maps $f,g : (X,\Phi) \rightrightarrows (Y,\Psi)$ is the $\Set$-based coequalizer $Q = Y / (f(x) \sim g(x))$ equipped with the following uniform structure, which makes the projection $p : Y \to Q$ uniform. Let $\Theta$ be the set of all subsets $U \subseteq Q \times Q$ such that $(p \times p)^*(U) \in \Psi$. It satisfies all the axioms of a uniform structure except one, namely the composition axiom. To fix this (and this construction works in complete generality), let $\Sigma \subseteq \Theta$ be the set of all $U \in \Theta$ for which there exists a sequence $U_1,U_2,\dotsc$ in $\Theta$ such that $U_1 \subseteq U$ and $U_{k+1} \circ U_{k+1} \subseteq U_k$ for all $k$. It is then straightforward to check that $\Sigma$ is a uniform structure on $Q$. Moreover, by construction, the map $p : (Y,\Psi) \to (Q,\Sigma)$ is uniform, and one verifies that it satisfies the required universal property.'
+
+  - property: filtered-colimit-stable monomorphisms
+    proof: This follows from Lemma 2 <a href="/content/subcategories">here</a>, applied to the forgetful functor to $\Set$.
+
+  - property: well-powered
+    proof: This is clear from the classification of monomorphisms as injective uniform maps.
+
+  - property: well-copowered
+    proof: This is clear from the classification of epimorphisms as surjective uniform maps.
+
+  - property: semi-strongly connected
+    proof: Every non-empty uniform space is weakly terminal, since constant maps are uniform.
+
+  - property: generator
+    proof: The one-point uniform space is a generator since it represents the forgetful functor $\Unif \to \Set$.
+
+  - property: cogenerator
+    proof: The indiscrete (aka trivial) uniform space $\{0,1\}$ (i.e. $\{0,1\} \times \{0,1\}$ is the only entourage) is a cogenerator because every map into $\{0,1\}$ is automatically uniform and because $\{0,1\}$ is a cogenerator in <a href="/category/Set">$\Set$</a>.
+
+  - property: regular subobject classifier
+    proof: The indiscrete two-point space $\{0,1\}$ is a regular subobject classifier since continuous maps $X \to \{0,1\}$ correspond to subsets of $X$.
+
+  - property: extensive
+    proof: >-
+      This can be deduced from the extensivity of <a href="/category/Set">$\Set$</a> as follows. We already know that coproducts and pullbacks exist and are preserved by the forgetful functor $\Unif \to \Set$. Moreover, the empty set carries a unique uniform structure. Since $\Set$ is extensive, it follows immediately that coproducts are disjoint in $\Unif$. It remains to show that finite coproducts are stable under pullbacks (we shall see later that countable coproducts are not, since the category is not countably distributive).
+
+      First, recall that if $A$ is a subset of a uniform space $X$ (we follow the common, albeit imprecise, abuse of notation of denoting a uniform space by the same symbol as its underlying set), then $A$ inherits a uniform structure by declaring the entourages of $A$ to be the sets of the form $U \cap (A \times A)$, where $U$ is an entourage of $X$. With this structure, $A$ is called a subspace of $X$. If $f : X \to Y$ is a uniform map and $A \subseteq Y$ is a subspace, then the subspace $f^*(A) \subseteq X$ is a pullback of the inclusion $A \hookrightarrow Y$ along $f$.
+
+      Now let $f : T \to X + Y$ be a uniform map. Notice that the inclusion maps $X \to X + Y \leftarrow Y$ are embeddings. Thus, we may regard $X$ and $Y$ as subspaces of $X + Y$. Consider the pullbacks $T_X$ and $T_Y$. These are subspaces of $T$, and there is a canonical uniform map $T_X + T_Y \to T$. Our task is to prove that it is an isomorphism of uniform spaces. It is certainly a bijection, since $\Set$ is extensive. It therefore remains to show that it maps entourages to entourages.
+
+      A basic entourage of $T_X \sqcup T_Y$ has the form
+      $$(U \cap (T_X \times T_X)) \sqcup (V \cap (T_Y \times T_Y))$$
+      for entourages $U$ and $V$ of $T$. Its image relation on $T$ is
+      $$(U \cap (T_X \times T_X)) \cup (V \cap (T_Y \times T_Y)),$$
+      and we need to show that this is an entourage of $T$. Since $f$ is uniform and
+      $$M := (X \times X) \sqcup (Y \times Y)$$
+      is an entourage of $X + Y$, its preimage
+      $$(f \times f)^*(M) = (T_X \times T_X) \cup (T_Y \times T_Y)$$
+      is an entourage of $T$. Since $U \cap V$ is also an entourage of $T$, and
+      $$(U \cap V) \cap \bigl((T_X \times T_X) \cup (T_Y \times T_Y)\bigr) \subseteq (U \cap (T_X \times T_X)) \cup (V \cap (T_Y \times T_Y)),$$
+      the claim follows.
+
+  - property: co-Malcev
+    proof: >-
+      Let $i_1,i_2 : X \rightrightarrows Y$ be a coreflexive corelation of uniform spaces, i.e. $i_1,i_2$ are jointly surjective uniform maps and there is a uniform map $r : Y \to X$ satisfying
+      $$r \circ i_1 = r \circ i_2 = \id_X.$$
+      In particular, $i_1,i_2$ are injective and satisfy $Y = i_1(X) \cup i_2(X)$ as sets. Moreover, $i_1(x) = i_1(x')$ implies $x = x'$ after applying $r$. First, we show that $(i_1,i_2)$ is cosymmetric, i.e. that there is a uniform map
+      $$s : Y \to Y$$
+      such that
+      $$s \circ i_1 = i_2, \quad s \circ i_2 = s_1.$$
+      We define the map of sets $s : Y \to Y$ by $s(i_1(x)) := i_2(x)$ and $s(i_2(x)) := i_1(x)$. This is well-defined by a direct calculation using the above properties of $i_1,i_2$, but we can also use the fact that <a href="/category/Set">$\Set$</a> is co-Malcev. It remains to verify that $s$ is uniform. To this end, let $V$ be an entourage of $Y$. Since $Y$ is a uniform space, there is an entourage $W$ with
+      $$W \circ W \circ W \subseteq V.$$
+      (This is the $\varepsilon/3$-trick in uniform space theory.) Since $i_1,i_2,r$ are uniform, the set
+      $$U := W^{\op} \cap (r \times r)^*(i_1 \times i_1)^*(W) \cap (r \times r)^*(i_2 \times i_2)^*(W)$$
+      is an entourage of $Y$. We claim that $U \subseteq (s \times s)^*(V)$, which will establish that $(s \times s)^*(V)$ is an entourage, as required. For the proof, let $(a,b) \in U$. Up to symmetry, there are two cases to consider:
+
+      Case 1: We have $a = i_1(x)$ and $b = i_1(x')$ for some $x,x' \in X$. Since $(a,b) \in U$, we have $(a,b) \in (r \times r)^*(i_2 \times i_2)^*(W)$. Thus, $W$ contains the pair
+      $$(i_2(r(a)),i_2(r(b))) = (i_2(x),i_2(x')) = (s(a),s(b)).$$
+      Since $W \subseteq V$, we conclude that $(s(a),s(b)) \in V$.
+
+      Case 2: We have $a = i_1(x)$ and $b = i_2(x')$ for some $x,x' \in X$. Since $(a,b) \in U$, the entourage $W$ contains $(b,a)= (i_2(x'),i_1(x))$, and it also contains the pairs $(i_1(r(a)), i_1(r(b))) = (i_1(x),i_1(x'))$ and $(i_2(r(a)), i_2(r(b))) = (i_2(x),i_2(x'))$. Thus, using infix notation,
+      $$i_2(x) \; W \; i_2(x') \; W \; i_1(x) \; W \; i_1(x')$$
+      which shows that
+      $$(s(a),s(b)) = (i_2(x),i_1(x')) \in W \circ W \circ W \subseteq V.$$
+      It remains to prove that $(i_1,i_2)$ is cotransitive. We adopt the functorial point of view and prove that the representable subfunctor $\Hom(Y,-) \hookrightarrow \Hom(X,-)^2$ is transitive. This means that for every uniform space $T$ and every triple of uniform maps $u,v,w : X \rightrightrightarrows T$ such that there are uniform maps $y_1,y_2 : Y \rightrightarrows T$ with
+      $$y_1 i_1 = u, \quad y_1 i_2 = v = y_2 i_1, \quad y_2 i_2 = w,$$
+      there is a uniform map $y_3 : Y \to T$ with $y_3 i_1 = u$ and $y_3 i_2 = w$. As before, we can easily define $y_3$ as a map of sets by
+      $$y_3(i_1(x)) := u(x), \quad y_3(i_2(x)) := w(x)$$
+      and verify that $y_3$ is well-defined, either by a direct calculation or using the fact that $\Set$ is co-Malcev. To prove that $y_3$ is uniform, let $E$ be an entourage of $T$. As in the proof of symmetry, choose an entourage $W$ of $T$ with $W \circ W \circ W \subseteq E$. Then
+      $$V := (y_1 \times y_1)^*(W) \cap (y_2 \times y_2)^*(W) \cap (r \times r)^* (v \times v)^*(W)^{\op}$$
+      is an entourage of $Y$, and we claim that $V \subseteq (y_3 \times y_3)^*(E)$, which will prove, as required, that $(y_3 \times y_3)^*(E)$ is an entourage. If $(a,b) \in V$, there are again two cases to consider:
+
+      Case 1: We have $a = i_1(x)$ and $b = i_1(x')$ for some $x,x' \in X$. Since $(a,b) \in V \subseteq (y_1 \times y_1)^*(W)$, we have $(y_1(a),y_1(b)) \in W$. Then
+      $$(y_3(a),y_3(b)) = (u(x),u(x')) = (y_1(a), y_1(b)) \in W \subseteq E.$$
+      Case 2: We have $a = i_1(x)$ and $b = i_2(x')$ for some $x,x' \in X$. Since $(a,b) \in V \subseteq (y_1 \times y_1)^*(W)$, the entourage $W$ contains $(y_1(a),y_1(b)) = (u(x),v(x'))$, and similarly it contains $(y_2(a),y_2(b)) = (v(x),w(x'))$. Furthermore, $W$ contains $(v(r(b)),v(r(a))) = (v(x'),v(x))$. Thus,
+      $$u(x) \; W \; v(x') \; W \; v(x) \; W \; w(x'),$$
+      which shows
+      $$(y_3(a),y_3(b)) = (u(x),w(x')) \in W \circ W \circ W \subseteq E.$$
+      This completes the proof.
+
+unsatisfied_properties:
+  - property: skeletal
+    proof: This is trivial.
+
+  - property: balanced
+    proof: If $X$ is a set, consider the discrete uniform space $X_d$ on $X$ (all reflexive relations are entourages) and the indiscrete space $X_i$ on $X$ (the relation $X \times X$ is the only entourage). The identity map $X \to X$ lifts to a uniform map $X_d \to X_i$, which is bijective and therefore both a monomorphism and an epimorphism, but it is not an isomorphism unless $X$ has at most one element.
+    check_redundancy: false
+
+  - property: cofiltered-limit-stable epimorphisms
+    proof: We already know that <a href="/category/Set">$\Set$</a> does not have this property. Now apply the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> to the functor $\Set \to \Unif$ which equips a set $X$ with the indiscrete uniform structure having $X \times X$ as its only entourage. This functor is right adjoint to the forgetful functor and therefore preserves cofiltered limits.
+
+  - property: effective cocongruences
+    proof: 'The proof is very similar to <a href="/category/Top">$\Top$</a>. Consider the indiscrete uniform space $I$ on two points whose only entourage is $I \times I$. This represents the functor which maps a uniform space $X$ to the set of pairs of points $(x,y) \in X$ that are indistinguishable, i.e. every entourage of $X$ contains $(x,y)$. This is an equivalence relation on $X$. Therefore, we get a cocongruence $1 \rightrightarrows I$, where the maps are the two possible functions. However, this cannot be effective: If a uniform map $h : Z \to 1$ equalizes the two maps, then $Z$ must be empty. But that means the cokernel pair of $h$ is the discrete uniform space on two points.'
+
+  - property: natural numbers object
+    proof: >-
+      We equip $[0,1]$ with the usual metric, which induces a uniform structure in the usual way: for $\varepsilon > 0$, we have the basic entourage $U_{\varepsilon} := \{(r,s) \in [0,1]^2 : |r-s| < \varepsilon\}$. We equip the set $\IN$ with the discrete uniform structure (i.e., every reflexive relation is an entourage). This uniform space is isomorphic to the coproduct of one-point spaces $\coprod_{n \in \IN} 1$.
+
+      If there were a natural numbers object, then by <a href="/content/nno_distributive_criterion">this result</a> the canonical map
+      $$\textstyle\coprod_{n \in \IN} [0,1] \to [0,1] \times \coprod_{n \in \IN} 1 \cong [0,1] \times \IN$$
+      would be a split monomorphism. It is certainly surjective and hence an epimorphism. Thus, it would be an isomorphism.
+
+      Choose any sequence of positive numbers $\varepsilon_n > 0$ converging to $0$. Then $\coprod_{n \in \IN} U_{\varepsilon_n}$ is an entourage of $\coprod_{n \in \IN} [0,1]$. Its image in $[0,1] \times \IN$ consists of all $((r,n),(s,m))$ such that $n=m$ and $|r-s| < \varepsilon_n$. Assume, for a contradiction, that this set is an entourage of the product. Then it contains $(p_1 \times p_1)^*(U_\delta) \cap (p_2 \times p_2)^*(\Delta_{\IN})$ for some $\delta > 0$. In other words, $|r-s| < \delta$ implies $|r-s| < \varepsilon_n$ for all $n \in \IN$ and $r,s \in [0,1]$. Taking $s=0$ and $r=\delta/2$, we see that the sequence $(\varepsilon_n)$ is bounded below by $\delta/2$, contradicting the assumption that it converges to $0$.
+
+  - property: extremal generating set
+    proof: >-
+      The proof is very similar to <a href="/category/Top">$\Top$</a>. Let $S$ be a set of uniform spaces. Let $\kappa$ be an infinite regular cardinal strictly greater than $\card(G)$ for every $G \in S$. Equip the ordinal $\kappa + 1$ with the order topology. As a compact Hausdorff space, it admits a unique compatible uniform structure (Theorem 8.3.13 in Engelking's <i>General Topology</i>). We equip the subset $\kappa$ with the induced uniform structure and the set $\kappa \sqcup \{\kappa\}$ with the coproduct uniform structure. Then the evident bijection
+      $$\kappa \sqcup \{\kappa\} \to \kappa + 1$$
+      is uniform, but not a uniform isomorphism (not even a topological isomorphism). However, we claim that for every $G \in S$ the induced map
+      $$\Hom(G,\kappa \sqcup \{\kappa\}) \to \Hom(G,\kappa + 1),$$
+      which is clearly injective, is even bijective. To this end, let $f : G \to \kappa + 1$ be a uniform map. Since $\card(G) < \kappa$ and $\kappa$ is regular, $\im(f) \cap \kappa$ is bounded above by some ordinal $\alpha < \kappa$. Therefore, $f$ factors through the uniform subspace $X := [0,\alpha] \cup \{\kappa\}$ of $\kappa + 1$. The underlying topological space of $X$ is compact Hausdorff and decomposes as a coproduct of $[0,\alpha]$ and $\{\kappa\}$. Because of the uniqueness of uniform structures, $X$ itself also decomposes as a coproduct of these spaces. In particular, $X$ is a uniform subspace of $\kappa \sqcup \{\kappa\}$. Hence, $f : G \to \kappa \sqcup \{\kappa\}$ is also a uniform map.
+
+  - property: extremal cogenerating set
+    proof: >-
+      Let $S$ be a set of uniform spaces. Let $\kappa$ be an infinite regular cardinal strictly greater than $\card(G)$ for every $G \in S$. Let $X$ be a set of cardinality $\kappa$. Let $X_d$ be the discrete uniform space with underlying set $X$, and let $X_r$ be the uniform space with underlying set $X$ whose entourages are precisely those sets $U \subseteq X \times X$ that contain an equivalence relation $R$ on $X$ such that $\card(X/R) < \kappa$. The axioms of a uniform structure are easy to check.
+      Notice that $X_r$ is not discrete, since otherwise $\Delta_X$ would be an entourage, but $\card(X/\Delta_X) = \card(X) = \kappa$. Thus, the identity map $X \to X$ lifts to a bijective uniform map
+      $$i : X_d \to X_r,$$
+      which is not an isomorphism. However, for every $G \in S$, the induced map
+      $$i^* : \Hom(X_r,G) \to \Hom(X_d,G)$$
+      is a bijection. In other words, every set map $f : X \to G$ is automatically a uniform map $X_r \to G$. To see this, let $V$ be any entourage of $G$. Then
+      $$\ker(f) = (f \times f)^*(\Delta_G) \subseteq (f \times f)^*(V),$$
+      and $\ker(f)$ is an equivalence relation with
+      $$\card(X/\ker(f)) = \card(\im(f)) \leq \card(G) < \kappa.$$
+      Therefore, $(f \times f)^*(V)$ is an entourage of $X_r$.
+
+special_objects:
+  initial object:
+    description: empty set with the unique uniform structure
+
+  terminal object:
+    description: singleton set with the unique uniform structure
+
+  coproducts:
+    description: The coproduct of a family of uniform spaces $(X_i,\Phi_i)_{i \in I}$ is $(\coprod_{i \in I} X_i,\Phi)$, where $\Phi$ consists of all subsets that contain $\coprod_{i \in I} U_i$ for some family of entourages $U_i \in \Phi_i$ for $i \in I$.
+
+  products:
+    description: The product of a family of uniform spaces $(X_i,\Phi_i)_{i \in I}$ is $(\prod_{i \in I} X_i,\Phi)$, where $\Phi$ consists of all subsets that contain $\bigcap_{i \in F} (p_i \times p_i)^*(U_i)$ for some finite subset $F \subseteq I$ and some family of entourages $U_i \in \Phi_i$ for $i \in F$.
+
+special_morphisms:
+  isomorphisms:
+    description: uniform isomorphisms, i.e. bijective uniform maps whose inverse map is also uniform; equivalently, bijective maps such that a relation in the domain is an entourage if and only if its image is an entourage of the codomain
+    proof: This is straightforward.
+
+  monomorphisms:
+    description: injective uniform maps
+    proof: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
+
+  epimorphisms:
+    description: surjective uniform maps
+    proof: The proof works exactly as for the category of sets, where we endow $\{0,1\}$ with the indiscrete uniform structure (having only one entourage, $\{0,1\} \times \{0,1\}$).
+
+  regular monomorphisms:
+    description: 'A morphism $f : X \to Y$ is a regular monomorphism if and only if $f$ is a uniform embedding, meaning that every entourage of $X$ is the preimage of an entourage of $Y$'
+    proof: 'Equalizers are uniform embeddings by their construction. Conversely, if $f : X \to Y$ is a uniform embedding, then $f$ is the equalizer of the two characteristic maps $\chi_Y, \chi_{f(X)} : Y \to \{0,1\}$, where $\{0,1\}$ carries the indiscrete uniform structure.'
+
+  regular epimorphisms:
+    description: 'A uniform map $f : X \to Y$ is a regular epimorphism if and only if $f$ is surjective and $Y$ carries the finest uniform structure that makes $f$ uniform. Concretely, this means that if $V \subseteq Y \times Y$ is a subset for which there exists a sequence of subsets $V_1,V_2,\dotsc$ of $Y \times Y$ such that $V_1 \subseteq V$, $V_{n+1} \circ V_{n+1} \subseteq V_n$, and each $(f \times f)^*(V_n)$ is an entourage of $X$, then $V$ is an entourage of $Y$. Thus, in contrast to the situation for $\Top$ or $\Meas$, not every subset whose preimage is an entourage is an entourage in the quotient.'
+    proof: 'A regular epimorphism has this property by our explicit construction of coequalizers above. Conversely, suppose that $f : X \to Y$ has this property. Then $f$ is the coequalizer of the two projections $X \times_Y X \rightrightarrows X$: Since the corresponding statement is true in $\Set$, it suffices to prove that a map $g : Y \to Z$ into a uniform space is uniform whenever $g \circ f : X \to Z$ is uniform. To this end, let $W$ be an entourage of $Z$ and choose entourages $W_1,W_2,\dotsc$ of $Z$ with $W_1 \subseteq W$ (we may even choose $W_1 = W$) and $W_{n+1} \circ W_{n+1} \subseteq W_n$; these exist simply because $Z$ is a uniform space. Let $V_n := (g \times g)^*(W_n) \subseteq Y \times Y$. Then $V_1 \subseteq (g \times g)^*(W)$, $V_{n+1} \circ V_{n+1} \subseteq V_n$, and $(f \times f)^*(V_n) = (g \circ f \times g \circ f)^*(W_n)$ is an entourage of $X$ since $g \circ f$ is uniform. Therefore, by the assumption on $f$, $(g \times g)^*(W)$ is an entourage of $Y$, as required.'
