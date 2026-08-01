@@ -285,6 +285,7 @@
 		"subcollection",
 		"subconjugated",
 		"subcover",
+		"subfunctor",
 		"submanifold",
 		"submonoid",
 		"subobject",
@@ -340,8 +341,5 @@
 		"todo.txt",
 		"*.svg"
 	],
-	"ignoreRegExpList": [
-		"\\$[^$]*\\$",
-		"\\$\\$[^$]*\\$\\$"
-	]
+	"ignoreRegExpList": ["\\$[^$]*\\$", "\\$\\$[^$]*\\$\\$"]
 }
