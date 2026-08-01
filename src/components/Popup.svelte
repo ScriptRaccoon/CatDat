@@ -4,20 +4,23 @@
 		open: boolean
 		heading: string
 		text: string
+		expanded: boolean
 	}
 
 	export const popup_state = $state<PopupState>({
 		id: '',
 		open: false,
 		heading: '',
-		text: ''
+		text: '',
+		expanded: false
 	})
 
-	export function show_popup(data: Omit<PopupState, 'open'>) {
+	export function show_popup(data: Omit<PopupState, 'open' | 'expanded'>) {
 		popup_state.open = true
 		popup_state.id = data.id
 		popup_state.heading = data.heading
 		popup_state.text = data.text
+		popup_state.expanded = false
 	}
 
 	export function close_popup() {
@@ -29,7 +32,7 @@
 <script lang="ts">
 	import { afterNavigate } from '$app/navigation'
 
-	import { faXmark } from '@fortawesome/free-solid-svg-icons'
+	import { faExpand, faXmark } from '@fortawesome/free-solid-svg-icons'
 	import Fa from 'svelte-fa'
 
 	afterNavigate(() => {
@@ -50,6 +53,10 @@
 	}
 
 	let popup = $state<HTMLElement | null>(null)
+
+	function toggle_expanded() {
+		popup_state.expanded = !popup_state.expanded
+	}
 </script>
 
 <svelte:document onkeydown={handle_keydown} />
@@ -60,10 +67,23 @@ In theory, it is better to use a <dialog> here, but Safari makes many
 problems, Firefox does not display the native animation, and there is
 an issue when clicking two proofs in a row. So it's a <div> then.
 -->
-<div class="popup" class:open={popup_state.open} bind:this={popup}>
+<div
+	class="popup"
+	class:open={popup_state.open}
+	class:expanded={popup_state.expanded}
+	bind:this={popup}
+>
 	<div class="content">
 		<header>
 			<h3>{popup_state.heading}</h3>
+
+			<button
+				onclick={toggle_expanded}
+				aria-label={popup_state.expanded ? 'collapse' : 'expand'}
+			>
+				<Fa icon={faExpand} />
+			</button>
+
 			<button onclick={close_popup} aria-label="close popup">
 				<Fa icon={faXmark} />
 			</button>
@@ -111,7 +131,12 @@ an issue when clicking two proofs in a row. So it's a <div> then.
 			visibility 0s;
 	}
 
-	.content {
+	.popup.expanded {
+		max-height: unset;
+		height: 100dvh;
+	}
+
+	.popup .content {
 		max-width: 800px;
 		margin: 0 auto;
 
@@ -121,7 +146,7 @@ an issue when clicking two proofs in a row. So it's a <div> then.
 		}
 	}
 
-	header {
+	.popup header {
 		margin-block: 0rem 1rem;
 		display: flex;
 		justify-content: space-between;
@@ -129,6 +154,7 @@ an issue when clicking two proofs in a row. So it's a <div> then.
 
 		h3 {
 			margin: 0;
+			margin-right: auto;
 		}
 
 		button {
