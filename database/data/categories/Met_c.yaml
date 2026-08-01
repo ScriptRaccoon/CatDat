@@ -14,6 +14,7 @@ related:
   - Met
   - Met_oo
   - Top
+  - Unif
 
 satisfied_properties:
   - property: locally small
