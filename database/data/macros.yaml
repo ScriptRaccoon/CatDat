@@ -67,6 +67,7 @@
 \Open: \operatorname{Open}
 \Id: \operatorname{Id}
 \Br: \operatorname{Br}
+\rightrightrightarrows: \mathrel{\substack{\rightarrow\\[-0.6ex]\rightarrow\\[-0.6ex]\rightarrow}}
 
 # categories
 \Set: \mathbf{Set}

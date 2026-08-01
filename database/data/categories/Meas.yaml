@@ -14,7 +14,6 @@ related:
 
 comments:
   - The thread <a href="https://math.stackexchange.com/questions/5024471/">MSE/5024471</a> asks for the finitely presentable objects of this category.
-  - Will Sawin has sketched a proof for the co-Malcev property in <a href="https://mathoverflow.net/questions/509552/is-the-category-mathbfring-mathrmop-a-malcev-category#comment1328251_509555">MO/509552</a>.
 
 satisfied_properties:
   - property: locally small
@@ -68,6 +67,46 @@ satisfied_properties:
       Now, we claim that adding the two-element set $2$ endowed with the discrete $\sigma$-algebra (where every subset is measurable) gives an extremal cogenerating set. To see this, suppose we have a morphism $f : (X, \M_X) \to (Y, \M_Y)$ such that $f \circ {-} : \Hom(Y, Q) \to \Hom(X, Q)$ is a bijection if $Q$ is either measurable space. Since $2$ with the trivial $\sigma$-algebra represents taking the power set of the underlying set, and <a href="/functor/power_set_contravariant">the contravariant power set functor on $\Set$</a> is conservative, we conclude that $f$ is a bijection on the underlying sets. Also, since $2$ with the discrete $\sigma$-algebra represents the functor $(X, \M_X) \mapsto \M_X$, we see that $f^* : \M_Y \to \M_X$ is also a bijection. This shows that $f$ is an isomorphism of measurable spaces.
 
       Finally, using <a href="/content/generator_construction">this result</a>, we conclude that the product of these two measurable spaces with underlying set $2$ is an extremal cogenerator of $\Meas$.
+
+  - property: co-Malcev
+    proof: >-
+      Let $i_1,i_2 : X \rightrightarrows R$ be a coreflexive corelation of measurable spaces. Thus, $i_1,i_2$ are jointly surjective measurable maps with a common retraction $r : R \twoheadrightarrow X$.
+      To show that $(i_1,i_2)$ is cosymmetric, define the map of sets $s : R \to R$ by
+      $$s(i_1(x)) := i_2(x), \quad s(i_2(x)) := i_1(x).$$
+      This is well-defined by a direct calculation or by using the fact that <a href="/category/Set">$\Set$</a> is co-Malcev. We need to show that $s$ is measurable. To this end, let $B \subseteq R$ be a measurable subset. Its preimages
+      $$A_1 := i_1^*(B), \quad A_2 := i_2^*(B)$$
+      are measurable subsets of $X$. We claim that
+      $$s^*(B) = \bigl((r^*(A_1) \cup r^*(A_2)) \setminus B\bigr) \cup r^*(A_1 \cap A_2), \tag{1}$$
+      which will prove in particular that $s^*(B)$ is measurable, as required. Let $y \in R$. Since $R = i_1(X) \cup i_2(X)$, we may assume without loss of generality that $y = i_1(x)$ for some $x \in X$. The following are equivalent:
+      $$y \in (r^*(A_1) \cup r^*(A_2)) \setminus B \iff x \in (A_1 \cup A_2) \setminus A_1,$$
+      $$y \in r^*(A_1 \cap A_2) \iff x \in A_1 \cap A_2.$$
+      Hence, $y$ lies in the RHS of $(1)$ if and only if
+      $$x \in ((A_1 \cup A_2) \setminus A_1) \cup (A_1 \cap A_2) = A_2 = i_2^*(B),$$
+      which means that $s(y) = i_2(x)$ lies in $B$. This proves $(1)$.
+
+      It remains to show that $(i_1,i_2)$ is cotransitive. We adopt the functorial point of view (simply to avoid talking about pushouts) and show that the subfunctor $\Hom(R,-) \hookrightarrow \Hom(X,-)^2$ is transitive. That is, given three measurable maps $u,v,w : X \rightrightrightarrows T$ into some measurable space $T$ and two measurable maps $f,g : R \rightrightarrows T$ such that
+      $$f i_1 = u, \quad f i_2 = v = g i_1, \quad g i_2 = w,$$
+      we need to show that there is a measurable map $h : R \to T$ with $h i_1 = u$ and $h i_2 = w$. We can certainly define $h$ as a map of sets by
+      $$h(i_1(x)) := u(x), \quad h(i_2(x)) := w(x),$$
+      which is well-defined by a direct calculation or again by using the fact that $\Set$ is co-Malcev. We need to show that $h$ is measurable. Let $C \subseteq T$ be a measurable subset. Its preimages
+      $$B_1 := f^*(C), \quad B_2 := g^*(C)$$
+      are measurable subsets of $R$. Notice that $f i_2 = g i_1$ implies
+      $$A := i_2^*(B_1) = i_1^*(B_2) \subseteq X.$$
+      We claim that
+      $$h^*(C) = \bigl((B_1 \cup B_2) \setminus r^*(A)\bigr) \cup (B_1 \cap B_2), \tag{2}$$
+      which will prove that $h^*(C)$ is measurable. Let $y \in R$. There are two cases to consider.
+
+      Case 1: We have $y = i_1(x)$ for some $x \in X$. The following are equivalent:
+      $$y \in (B_1 \cup B_2) \setminus r^*(A) \iff (u(x) \in C \vee v(x) \in C) \wedge v(x) \notin C,$$
+      $$y \in B_1 \cap B_2 \iff (u(x) \in C \wedge v(x) \in C).$$
+      Hence, $y$ lies in the RHS of $(2)$ if and only if $h(y) = u(x) \in C$, i.e. $y \in h^*(C)$.
+
+      Case 2: We have $y = i_2(x)$ for some $x \in X$. The following are equivalent:
+      $$y \in (B_1 \cup B_2) \setminus r^*(A) \iff (v(x) \in C \vee w(x) \in C) \wedge v(x) \notin C,$$
+      $$y \in B_1 \cap B_2 \iff (v(x) \in C \wedge w(x) \in C).$$
+      Hence, $y$ lies in the RHS of $(2)$ if and only if $h(y) = w(x) \in C$, i.e. $y \in h^*(C)$.
+
+      This proves $(2)$. We conclude that the corelation $(i_1,i_2)$ is both cosymmetric and cotransitive.
 
 unsatisfied_properties:
   - property: skeletal
