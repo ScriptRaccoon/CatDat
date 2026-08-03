@@ -44,9 +44,12 @@ satisfied_properties:
 
   - property: quotients of congruences
     proof: 'A congruence on a set $X$ in $\Set_\ff$ is the same as an equivalence relation $R$ on $X$ whose equivalence classes are finite. In that case, the usual quotient map $p : X \to X/R$ is finite-to-one. Moreover, if $h : X/R \to Y$ is a map such that $h \circ p : X \to Y$ is finite-to-one, then $h$ is finite-to-one as well because $h^*(\{y\}) \subseteq p^*((h \circ p)^*(\{y\}))$ for all $y \in Y$. Therefore, $p$ is also the quotient in $\Set_\ff$.'
+    label: set_ff_quotients_congruences
 
   - property: effective congruences
     proof: 'Let $f, g : E \rightrightarrows X$ be a congruence in $\Set_\ff$. From the proof on quotients of congruences in $\Set_\ff$, we have a quotient map $p : X \to X/E$ in $\Set_\ff$, and $E$ is the kernel pair of $p$ in $\Set$. It remains to see that $E$ is also the kernel pair of $p$ in $\Set_\ff$. Thus, suppose we have $x_1, x_2 : T \rightrightarrows X$ with $p \circ x_1 = p \circ x_2$. Then there is a unique $e : T \to E$ in $\Set$ with $x_1 = f\circ e$ and $x_2 = g\circ e$. Since $f\circ e$ is finite-to-one, we must have $e$ is finite-to-one as well.'
+    references:
+      - set_ff_quotients_congruences
 
   - property: effective cocongruences
     proof: 'Suppose we have a cocongruence $f, g : X \rightrightarrows E$ in $\Set_\ff$. Then it is a coreflexive corelation in $\Set$. Since <a href="/category/Set">$\Set$</a> is co-Malcev and has effective cocongruences, that implies $E$ is the cokernel pair of some function $h : Z \to X$ in $\Set$. By the dual of <a href="/content/effective-congruence-quotients">this result</a>, if $\inc_Y : Y \hookrightarrow X$ is the equalizer of $f$ and $g$, then $E$ is also the cokernel pair of $\inc_Y$ in $\Set$. It remains to see that $E$ is the cokernel pair of $\inc_Y$ in $\Set_\ff$ as well. Thus, suppose $a, b : X \rightrightarrows T$ are such that $a |_Y = b |_Y$. Then there is a unique $c : E\to T$ in $\Set$ with $a = c\circ f$ and $b = c\circ g$. Since $(f;g) : X + X \to E$ is surjective and $c \circ (f;g) = (a;b)$ is finite-to-one, we see $c$ is finite-to-one as well.'
@@ -56,6 +59,8 @@ satisfied_properties:
 
   - property: ℵ₁-cofiltered limits
     proof: 'We derive this from the fact that <a href="/category/FinSet">$\FinSet$</a> is closed under $\aleph_1$-cofiltered limits in $\Set$. Let $D : \I \to \Set_\ff$ be an $\aleph_1$-cofiltered diagram. Let $(p_i : L \to D(i))_{i \in \I}$ be the limit cone in $\Set$. Each $p_i$ is finite-to-one, because the fiber over $d \in D(i)$ is the limit of the $\aleph_1$-cofiltered diagram $\tilde{D} : I/i \to \FinSet$ which maps $j \to i$ to $D(j \to i)^*(\{d\})$. To verify the universal property, let $(f_i : T \to D(i))_{i \in \I}$ be a cone in $\Set_\ff$. There is a unique map $f : T \to L$ such that $p_i f = f_i$ for every $i \in \I$, and it remains to prove that $f$ is finite-to-one. Choose any $i \in \I$. Then for every $x \in L$ we have $f^*(\{x\}) \subseteq f_i^*(\{p_i(x)\})$, and the latter set is finite.'
+    references:
+      - finset_aleph1-cofiltered-limits
 
 unsatisfied_properties:
   - property: skeletal

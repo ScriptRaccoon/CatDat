@@ -24,6 +24,8 @@ satisfied_properties:
 
   - property: preserves products
     proof: The proof is identical to the proof that the <a href="/functor/forget_finite_group">inclusion functor $\FinGrp \hookrightarrow \Grp$</a> preserves products.
+    references:
+      - forget_finite_group_preserves_products
 
   - property: preserves coproducts
     proof: The proof is a minor variation of the proof that products are preserved, using the fact that finite coproducts and finite products coincide. Namely, one can show that a family of finite abelian groups has a coproduct in $\FinAb$ if and only if almost all groups are trivial.
@@ -34,9 +36,15 @@ unsatisfied_properties:
 
   - property: finitary
     proof: We can take the same counterexample as for the <a href="/functor/forget_finite_group">inclusion functor $\FinGrp \hookrightarrow \Grp$</a>, which only involves abelian groups.
+    references:
+      - forget_finite_group_not_finitary
 
   - property: cofinitary
     proof: We can take the same counterexample as for the <a href="/functor/forget_finite_group">inclusion functor $\FinGrp \hookrightarrow \Grp$</a>, which only involves abelian groups.
+    references:
+      - forget_finite_group_not_cofinitary
 
   - property: left-invertible
     proof: We can use the same proof as for the <a href="/functor/forget_finite_group">inclusion functor $\FinGrp \hookrightarrow \Grp$</a>.
+    references:
+      - forget_finite_group_not_left-invertible

@@ -52,6 +52,8 @@ satisfied_properties:
 
   - property: ℵ₁-cofiltered limits
     proof: The proof is identical to the one for <a href="/category/Met">$\Met$</a>.
+    references:
+      - met_aleph1_cofiltered_limits
 
   - property: extremal generator
     proof: >-
@@ -68,6 +70,8 @@ satisfied_properties:
       & \le d(x_1, x_2).
       \end{align*}$$
       This shows that $f$ is isometric.
+    references:
+      - met_extremal_generator
 
   - property: extremal cogenerator
     proof: >-
@@ -77,7 +81,9 @@ satisfied_properties:
 
       To see $Q$ is in fact an extremal cogenerator, suppose we have a non-expansive map $f : X \to Y$ such that ${-} \circ f : \Hom(Y, Q) \to \Hom(X, Q)$ is a bijection. First of all, any function $Y \to Q$ which factors through $\{ 0, 0' \}$ is automatically non-expansive; and the injectivity of $f^*$ on such maps implies that $f$ is surjective on underlying sets, since $\{ 0, 0' \}$ is a cogenerator of <a href="/category/Set">$\Set$</a>. From this, we can conclude that $f^*$ in fact induces a bijection on the functions $Y\to Q$ and $X\to Q$, respectively, which factor through $\{ 0, 0' \}$. Since $\{ 0, 0' \}$ is in fact an extremal cogenerator of $\Set$, we conclude that in fact, $f$ is a bijection on underlying sets.
 
-      From here, the proof that $f$ is isometric is similar to the one for <a href="/category/Met">$\Met$</a>, using the fact that $d(x, {-}) : X \to \IR_{\ge 0} \hookrightarrow Q$ induces a non-expansive map $Y   \to Q$.
+      From here, the proof that $f$ is isometric is similar to the one for <a href="/category/Met">$\Met$</a>, using the fact that $d(x, {-}) : X \to \IR_{\ge 0} \hookrightarrow Q$ induces a non-expansive map $Y \to Q$.
+    references:
+      - met_extremal_cogenerator
 
 unsatisfied_properties:
   - property: skeletal
@@ -115,9 +121,12 @@ unsatisfied_properties:
 
   - property: effective cocongruences
     proof: 'The proof is similar to the one for <a href="/category/Top">$\Top$</a>: Equip a two-point set with the zero metric; this pseudo-metric space represents the functor taking a pseudo-metric space to the pairs of points with $d(x,y) = 0$. In this case, once you conclude $Z = \varnothing$, the map $h : Z \to 1$ does not have any cokernel pair, since that would have to be a coproduct $1+1$, which does not exist.'
+    references:
+      - top_no_effective_cocongruences
 
   - property: regular
     proof: 'We can adapt Example 3.14 at the <a href="https://ncatlab.org/nlab/show/regular+category" target="_blank">nLab</a> (which disproves regularity for $\Pos$ and related categories) as follows: Consider the subspaces $X = \{0,1,2,3\}$ and $Y = \{0,1,2\}$ of $\IR$ with the usual metric. Define a surjective map $p : X \to Y$ by $p(0)=0$, $p(1)=p(2)=1$, and $p(3)=2$. Clearly, $p$ is non-expansive. Moreover, one can check that $p$ satisfies the universal property in $\PMet$ of a coequalizer of the two maps $1,2 : \{\ast\} \rightrightarrows X$. Thus, $p$ is a regular epimorphism. Now consider the subspace $Z = \{0,2\}$ of $Y$. As a set, the pullback $X \times_Y Z$ is $p^*(Z) = \{0,3\}$. Using the definition of the product metric, one can verify that $d(0,3) = 3$ in this pullback. The projection $X \times_Y Z \to Z$ identifies with the evident bijective and non-expansive map $\{0,3\} \to \{0,2\}$. It is a monomorphism and not an isomorphism (the distances do not match), hence cannot be a regular epimorphism.'
+    label: pmet_not_regular
 
 special_objects:
   initial object:

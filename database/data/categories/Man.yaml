@@ -43,9 +43,12 @@ satisfied_properties:
     proof: |-
       Let $p : X + X \twoheadrightarrow E$ be a cocongruence with coreflexivity morphism $r : E \to X$, so that $r \circ p : X + X \to X$ is the codiagonal. Since $p$ is an epimorphism, it has dense image (see below). We first claim that in fact $p$ also has closed image and therefore is surjective. Because $r \circ (p \circ i_1) : X \to X$ is the identity, the image of $p \circ i_1$ is the equalizer of $\id_E$ and $(p \circ i_1) \circ r$, hence closed. Likewise, the image of $p \circ i_2$ is closed. Thus, the image of $p$, which is the union of these images, is closed.
       Now, since the pushforward maps of tangent spaces compose to the identity, we see that $p$ must be a local immersion and $r$ must be a submersion. Also, since the fibers of $r$ have one or two points each, we see that the dimension of $E$ must locally be the same as the dimension of $X$. This implies that in fact $p$ and $r$ are local diffeomorphisms. Therefore, the cardinality of the fiber of $r$ is locally constant. Thus, if $U$ is the subset of $X$ where $r$ has fiber of a single point, with the subspace topology, then $U$ is a clopen submanifold of $X$ which serves as the equalizer of $p \circ i_1$ and $p \circ i_2$.
+    label: man_coquotients_congruences
 
   - property: effective cocongruences
     proof: 'From the proof that $\Man$ has coquotients of cocongruences, we know that for any cocongruence $X \rightrightarrows E$, there is a clopen submanifold $U$ of $X$ such that the fibers of $r : E \twoheadrightarrow X$ have one point on $U$, and two points on $X \setminus U$. Therefore, $E$ is the cokernel pair of the inclusion map $U \hookrightarrow X$.'
+    references:
+      - man_coquotients_congruences
 
   - property: extremal generator
     proof: >-
@@ -94,6 +97,8 @@ unsatisfied_properties:
       Assume that there exists a limit cone $(\pi_C : M \to C \sqcup \{\ast\})$ in $\Man$. Since the forgetful functor $\Man \to \Set$ is representable, it preserves limits. In particular, the underlying set of $M$ is the limit of the underlying sets and is therefore uncountable.
       Since the codomain of $\pi_C$ is discrete, the map $\pi_C$ is locally constant. Thus, for every connected component $K \subseteq M$, the map $\pi_C$ is constant on $K$. Since the maps $\pi_C$ are jointly injective, it follows that every connected component of $M$ consists of a single point.
       Hence, $M$ is totally disconnected. Since $M$ is a smooth manifold, it follows that $M$ has dimension $0$. Since $M$ is also second-countable, it follows that the underlying set of $M$ is countable, contradicting our previous observation.
+    references:
+      - setc_no_aleph1-cofiltered_limits
 
   - property: quotients of congruences
     proof: If $\Man$ had quotients of congruences, then by <a href="/content/pushouts-of-monos-via-congruence-quotients">this lemma</a>, it would have a pushout of $\IR \leftarrow \{ 0 \} \rightarrow \IR$.  This contradicts <a href="https://mathoverflow.net/questions/19116">MO/19916</a>.

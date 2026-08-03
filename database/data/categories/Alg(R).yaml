@@ -26,9 +26,13 @@ satisfied_properties:
 
   - property: disjoint finite products
     proof: One can take the same proof as for <a href="/category/Ring">$\Ring$</a>.
+    references:
+      - ring_disjoint_finite_products
 
   - property: Malcev
     proof: This follows in the same way as for <a href="/category/Grp">$\Grp$</a>, see also Example 2.2.5 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>.
+    references:
+      - grp_malcev
 
 unsatisfied_properties:
   - property: skeletal
@@ -51,9 +55,13 @@ unsatisfied_properties:
 
   - property: coregular
     proof: 'We just need to tweak the proof for <a href="/category/Ring">$\Ring$</a>. Since $R \neq 0$, there is an infinite field $K$ with a homomorphism $R \to K$. Since $K$ is infinite, we may choose some $\lambda \in K \setminus \{0,1\}$. Let $B \coloneqq M_2(K)$ and $A \coloneqq K \times K$. Then $A \to B$, $(x,y) \mapsto \diag(x,y)$ is a regular monomorphism: A direct calculation shows that a matrix is diagonal iff it commutes with $M \coloneqq \bigl(\begin{smallmatrix} 1 & 0 \\ 0 & \lambda \end{smallmatrix}\bigr)$, so that $A \to B$ is the equalizer of the identity $B \to B$ and the conjugation $B \to B$, $X \mapsto M X M^{-1}$. Consider the homomorphism $A \to K$, $(a,b) \mapsto a$. We claim that $K \to K \sqcup_A B$ is not a monomorphism, because in fact, the pushout $K \sqcup_A B$ is zero: Since $A \to K$ is surjective with kernel $0 \times K$, the pushout is $B/\langle 0 \times K \rangle$, which is $0$ because $B$ is simple (<a href="https://math.stackexchange.com/questions/22629" target="_blank">proof</a>) or via a direct calculation with elementary matrices.'
+    references:
+      - ring_not_coregular
 
   - property: regular quotient object classifier
-    proof: We may copy the proof for <a href="/category/CAlg(R)">$\CRing$</a> (since the proof there did not use that $P$ is commutative). Alternatively, any regular quotient object classifier in $\Alg(R)$ would produce one in the reflective subcategory $\CAlg(R)$ by Lemma 1 <a href="/content/subcategories">here</a> (dualized).
+    proof: We may copy the proof for <a href="/category/CAlg(R)">$\CAlg(R)$</a> (since the proof there did not use that $P$ is commutative). Alternatively, any regular quotient object classifier in $\Alg(R)$ would produce one in the reflective subcategory $\CAlg(R)$ by Lemma 1 <a href="/content/subcategories">here</a> (dualized).
+    references:
+      - calg_no_regular_quotient_object_classifier
 
   - property: cocartesian cofiltered limits
     proof: >-
@@ -66,6 +74,8 @@ unsatisfied_properties:
 
   - property: effective cocongruences
     proof: 'The counterexample is similar to the one for <a href="/category/Ring">$\Ring$</a>: Let $X \coloneqq R[p] / (p^2-p)$ with cocongruence $E \coloneqq R \langle p, q \rangle / (p^2-p, q^2-q, pq-q, qp-p)$.'
+    references:
+      - ring_no_effective_cocongruences
 
 special_objects:
   initial object:

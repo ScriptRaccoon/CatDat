@@ -24,6 +24,8 @@ satisfied_properties:
 
   - property: cocontinuous
     proof: This follows from Lemma 1 <a href="/content/inclusion-functors">here</a> since <a href="/category/Set">$\Set$</a> has an extremal cogenerator $\{0,1\}$ which is contained in $\FinSet$.
+    references:
+      - set_extremal_cogenerator
 
 unsatisfied_properties:
   - property: left-invertible

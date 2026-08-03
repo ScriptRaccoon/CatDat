@@ -48,6 +48,7 @@ satisfied_properties:
       We already saw that filtered colimits and finite products exist. The canonical map $\colim_i (X \times Y_i) \to X \times \colim_i Y_i$ is an isomorphism for filtered diagrams $(Y_i)$: It is surjective by the concrete description of filtered colimits. It is isometric because of the elementary observation
       $$\textstyle\inf_i \max(r, s_i) = \max(r, \inf_i s_i)$$
       for $r, s_i \in \IR$, where $i \leq j \implies s_i \geq s_j$.
+    label: met_cartesian_filtered_colimits
 
   - property: ℵ₁-cofiltered limits
     proof: >-
@@ -55,6 +56,7 @@ satisfied_properties:
       Suppose otherwise. Then for every $n \in \IN$ there exists an object $i_n \in \I$ such that $d(x_{i_n},y_{i_n}) \geq n$. Since $\I$ is $\aleph_1$-cofiltered, there exists a cone $(j \to i_n)_{n \in \IN}$. Since the maps $D(j) \to D(i_n)$ are non-expansive, we have
       $$d(x_j,y_j) \geq d(x_{i_n},y_{i_n}) \geq n$$
       for every $n \in \IN$. This is impossible since the metric on $D(j)$ takes only finite values.
+    label: met_aleph1_cofiltered_limits
 
   - property: well-copowered
     proof: 'If $f : X \to Y$ is an epimorphism, then $f(X)$ is dense in $Y$ (see below). Hence, there is an injective map $Y \to X^{\IN}$, which bounds the size of $Y$.'
@@ -74,6 +76,7 @@ satisfied_properties:
       & \le d(x_1, x_2).
       \end{align*}$$
       This shows that $f$ is isometric.
+    label: met_extremal_generator
 
   - property: extremal cogenerator
     proof: >-
@@ -97,6 +100,7 @@ satisfied_properties:
 
 
       Note: $\IR$ is not an extremal cogenerator. This is because for example the non-isomorphism $(0, 1) \hookrightarrow [0, 1]$ induces a bijection $\Hom([0, 1], \IR) \to \Hom((0, 1), \IR)$. To see this, suppose we have a non-expansive map $f : (0, 1) \to \IR$. Then since $f$ is uniformly continuous in particular, it is well known that $\lim_{x\to 0^+} f(x)$ and $\lim_{x\to 1^-} f(x)$ both exist and are finite. If we extend $f$ with these values at 0 and 1 respectively, then it is straightforward to check that the resulting function is still non-expansive. This shows that $\Hom([0, 1], \IR) \to \Hom((0, 1), \IR)$ is surjective; and since $(0, 1) \hookrightarrow [0, 1]$ is an epimorphism, $\Hom([0, 1], \IR) \to \Hom((0, 1), \IR)$ is also injective. (The same proof also shows that $\IR_{\ge 0}$ is not an extremal cogenerator.)
+    label: met_extremal_cogenerator
 
   - property: ℵ₁-accessible
     proof: >-
@@ -108,6 +112,7 @@ satisfied_properties:
       Then, countable metric spaces in $\Met$ are $\aleph_1$-presentable not only in $\Met_\infty$, but also in $\Met$.
       On the other hand, every object in $\Met_\infty$ is an $\aleph_1$-filtered colimit of its countable isometric subspaces, and the same is true in $\Met$.
       Hence, $\Met$ is $\aleph_1$-accessible.
+
 unsatisfied_properties:
   - property: skeletal
     proof: This is trivial.
@@ -140,6 +145,7 @@ unsatisfied_properties:
     proof: >-
       The following example is taken from Rem. 2.7 in <a href="https://doi.org/10.1016/j.jpaa.2021.106974" target="_blank">Approximate injectivity and smallness in metric-enriched categories</a> by Adamek-Rosicky.
       For $n \geq 1$ let $X_n$ denote the metric space with underlying set $\{0,1\}$ in which $0,1$ have distance $1/n$. We have bijective non-expansive maps $X_n \to X_{n+1}$, $x \mapsto x$. The colimit of this sequence in <a href="/category/PMet">$\PMet$</a> is $\{0,1\}$ where $0,1$ have distance $0$, so the colimit in $\Met$ collapses to $\{0\}$. Therefore, the colimit of the monomorphisms $X_1 \to X_n$, $x \mapsto x$ is the non-injective map $X_1 \to \{0\}$.
+    label: met_no_filtered_colimit_stable_monos
 
   - property: natural numbers object
     proof: >-
@@ -158,9 +164,12 @@ unsatisfied_properties:
       $$d(f(x), h(y)) \le d(f(x), g(\varepsilon)) + d(g(\varepsilon), h(y)) \le (x + \varepsilon) + (y + \varepsilon).$$
       Since this holds for every $\varepsilon > 0$, we conclude $d(f(x), h(y)) \le x+y$.
       On the other hand, if this cocongruence were effective, then by the dual of <a href="/content/effective-congruence-quotients">this result</a>, it would be the cokernel pair of the equalizer of the two inclusion maps. However, that equalizer is empty, so $E$ would have to be a binary copower of $(0,1)$, which does not exist in $\Met$.
+    label: met_no_effective_cocongruences
 
   - property: regular
     proof: We can take the same counterexample as for <a href="/category/PMet">$\PMet$</a>.
+    references:
+      - pmet_not_regular
 
 special_objects:
   initial object:

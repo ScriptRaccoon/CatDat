@@ -25,6 +25,8 @@ satisfied_properties:
 
   - property: finitary
     proof: This comes out of the construction of filtered colimits in <a href="/category/TorsFreeAb">$\TorsFreeAb$</a>.
+    references:
+      - torsfreeab_cocomplete
 
   - property: preserves regular epimorphisms
     proof: In both $\Ab$ and $\TorsFreeAb$, regular epimorphisms are exactly the surjective group homomorphisms.

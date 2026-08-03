@@ -34,9 +34,13 @@ satisfied_properties:
 
   - property: extremal generator
     proof: The one-point set is an extremal generator even in <a href="/category/Set">$\Set$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
+    references:
+      - set_extremal_generator
 
   - property: extremal cogenerator
     proof: The two-point set is an extremal cogenerator even in <a href="/category/Set">$\Set$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
+    references:
+      - set_extremal_cogenerator
 
   - property: semi-strongly connected
     proof: This is because the larger category <a href="/category/Set">$\Set$</a> has this property.
@@ -74,6 +78,7 @@ unsatisfied_properties:
       For $r \in R$ we define $\varepsilon(r) \in \lim(X)$ by
       $$\varepsilon(r)_C = \begin{cases} r & r \in C \\ \ast & r \notin C \end{cases}$$
       It is easily checked that this indeed lies in the limit. Moreover, $\varepsilon(r) = \varepsilon(r')$ implies $r=r'$, since evaluating at $C \coloneqq \{r\}$ yields $r = r'$. Hence, $\lim(X)$ is uncountable.
+    label: setc_no_aleph1-cofiltered_limits
 
 special_objects:
   initial object:

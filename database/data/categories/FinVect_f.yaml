@@ -28,6 +28,8 @@ satisfied_properties:
 
   - property: extremal generator
     proof: The one-dimensional vector space $K$ is an extremal generator even in <a href="/category/Vect">$\Vect_K$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
+    references:
+      - vect_extremal_generator
 
   - property: split abelian
     proof: This follows directly from the corresponding fact for <a href="/category/Vect">$\Vect_K$</a>.

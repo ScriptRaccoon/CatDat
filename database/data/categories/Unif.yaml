@@ -40,6 +40,8 @@ satisfied_properties:
 
   - property: cogenerator
     proof: The indiscrete (aka trivial) uniform space $\{0,1\}$ (i.e. $\{0,1\} \times \{0,1\}$ is the only entourage) is a cogenerator because every map into $\{0,1\}$ is automatically uniform and because $\{0,1\}$ is a cogenerator in <a href="/category/Set">$\Set$</a>.
+    references:
+      - set_extremal_cogenerator
 
   - property: regular subobject classifier
     proof: The indiscrete two-point space $\{0,1\}$ is a regular subobject classifier since continuous maps $X \to \{0,1\}$ correspond to subsets of $X$.
@@ -115,6 +117,8 @@ unsatisfied_properties:
 
   - property: effective cocongruences
     proof: 'The proof is very similar to <a href="/category/Top">$\Top$</a>. Consider the indiscrete uniform space $I$ on two points whose only entourage is $I \times I$. This represents the functor which maps a uniform space $X$ to the set of pairs of points $(x,y) \in X$ that are indistinguishable, i.e. every entourage of $X$ contains $(x,y)$. This is an equivalence relation on $X$. Therefore, we get a cocongruence $1 \rightrightarrows I$, where the maps are the two possible functions. However, this cannot be effective: If a uniform map $h : Z \to 1$ equalizes the two maps, then $Z$ must be empty. But that means the cokernel pair of $h$ is the discrete uniform space on two points.'
+    references:
+      - top_no_effective_cocongruences
 
   - property: natural numbers object
     proof: >-
@@ -133,6 +137,8 @@ unsatisfied_properties:
       is uniform, but not a uniform isomorphism (not even a topological isomorphism). However, we claim that for every $G \in S$ the induced map
       $$\Hom(G,\kappa \sqcup \{\kappa\}) \to \Hom(G,\kappa + 1),$$
       which is clearly injective, is even bijective. To this end, let $f : G \to \kappa + 1$ be a uniform map. Since $\card(G) < \kappa$ and $\kappa$ is regular, $\im(f) \cap \kappa$ is bounded above by some ordinal $\alpha < \kappa$. Therefore, $f$ factors through the uniform subspace $X := [0,\alpha] \cup \{\kappa\}$ of $\kappa + 1$. The underlying topological space of $X$ is compact Hausdorff and decomposes as a coproduct of $[0,\alpha]$ and $\{\kappa\}$. Because of the uniqueness of uniform structures, $X$ itself also decomposes as a coproduct of these spaces. In particular, $X$ is a uniform subspace of $\kappa \sqcup \{\kappa\}$. Hence, $f : G \to \kappa \sqcup \{\kappa\}$ is also a uniform map.
+    references:
+      - top_no_extremal_generating_set
 
   - property: extremal cogenerating set
     proof: >-

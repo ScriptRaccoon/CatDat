@@ -25,15 +25,21 @@ satisfied_properties:
 
   - property: cartesian filtered colimits
     proof: We can use the same proof as for <a href="/category/Met">$\Met$</a> since the equation $\inf_i \max(r, s_i) = \max(r, \inf_i s_i)$ also holds for for $r, s_i \in \IR \cup \{\infty\}$.
+    references:
+      - met_cartesian_filtered_colimits
 
   - property: infinitary extensive
     proof: 'This can be deduced from the infinitary extensivity of <a href="/category/Set">$\Set$</a> as follows. We already know that coproducts and pullbacks exist, and these are preserved by the forgetful functor to $\Set$. More concretely, coproducts are disjoint unions of the underlying sets equipped with the metric that extends the given metrics and assigns distance $\infty$ to points in different summands. Since coproducts are disjoint in $\Set$ and the empty set has a unique metric, it follows immediately that coproducts are disjoint in $\Met_\infty$ as well. It remains to show that coproducts are stable under pullbacks. Let $(X_i)_{i \in I}$ be a family of metric spaces and let $f : T \to \coprod_{i \in I} X_i$ be a non-expansive map. Consider the pullbacks $T_i := f^*(X_i)$. These are just the preimages of $X_i$ under $f$, with the metric induced from $T$. Since coproducts in $\Set$ are stable under pullbacks, the canonical non-expansive map $\coprod_{i \in I} T_i \to T$ is bijective. It remains to show that it is isometric. Since each $T_i \to T$ is isometric, it suffices to prove that for $a \in T_i$ and $b \in T_j$, where $i \neq j$, we have $d_T(a,b) = \infty$. Indeed, since $f(a) \in X_i$ and $f(b) \in X_j$, we have $\infty = d_{\coprod_i X_i}(f(a),f(b)) \leq d_T(a,b)$.'
 
   - property: extremal generator
     proof: A similar proof to the one for <a href="/category/Met">$\Met$</a> shows that $[0, \infty]$, equipped with the metric where $d(x,y) = 0$ if $x=y$ and otherwise $d(x,y) = x+y$, is an extremal generator for $\Met_{\infty}$.
+    references:
+      - met_extremal_generator
 
   - property: extremal cogenerator
     proof: 'The proof is similar to $\Met$: an extremal cogenerator is given by $\IR_+ \cup \{\infty\}$ with the metric extending the usual metric on $\IR_+$ by defining $d(a,\infty) \coloneqq \infty$ for $a \in \IR_+$. Then one checks that the maps $1 + d(a,{-}) : X \to \IR_+ \cup \{\infty\}$ (assigning the value $\infty$ if $d(a,x) = \infty$) are non-expansive and finishes as for <a href="/category/Met">$\Met$</a>.'
+    references:
+      - met_extremal_cogenerator
 
 unsatisfied_properties:
   - property: skeletal
@@ -53,15 +59,21 @@ unsatisfied_properties:
 
   - property: filtered-colimit-stable monomorphisms
     proof: We can copy the proof from <a href="/category/Met">$\Met$</a>.
+    references:
+      - met_no_filtered_colimit_stable_monos
 
   - property: cofiltered-limit-stable epimorphisms
     proof: We already know that <a href="/category/Set">$\Set$</a> does not have this property. Now apply the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> to the functor $\Set \to \Met_{\infty}$ that equips a set with the discrete topology.
 
   - property: effective cocongruences
     proof: The same counterexample as for <a href="/category/Met">$\Met$</a> works here. The difference in this case is that a binary copower of two copies of $(0,1)$ does exist in $\Met_\infty$. However, this would assign a distance of $\infty$ between points in $(-1,0)$ and points in $(0,1)$, which does not agree with the chosen subspace metric on $(-1,0) \cup (0,1)$.
+    references:
+      - met_no_effective_cocongruences
 
   - property: regular
     proof: We can take the same counterexample as for <a href="/category/PMet">$\PMet$</a>.
+    references:
+      - pmet_not_regular
 
 special_objects:
   initial object:

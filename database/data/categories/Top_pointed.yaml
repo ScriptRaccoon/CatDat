@@ -56,6 +56,8 @@ satisfied_properties:
       We continue the proof for <a href="/category/Set_*">$\Set_*$</a> by showing that the natural bijective map
       $$\textstyle \alpha : X \vee \lim_i Y_i \to \lim_i (X \vee Y_i)$$
       is open. It suffices to consider open sets of two types: (1) If $U \subseteq X$ is open, the $\alpha$-image of $U \vee \lim_i Y_i$ is $p_{i_0}^*(U \vee Y_{i_0})$ for any chosen index $i_0$, hence open. (2) If $i$ is an index and $V_i \subseteq Y_i$ is open, then the $\alpha$-image of $X \vee (p_i^*(V_i) \cap \lim_i Y_i)$ is $p_i^*(X \vee V_i)$, hence open.
+    references:
+      - set_*_cocartesian_cofiltered_limits
 
   - property: filtered-colimit-stable monomorphisms
     proof: This follows from Lemma 2 <a href="/content/subcategories">here</a> applied to the forgetful functor to $\Set$.
@@ -68,6 +70,8 @@ satisfied_properties:
       It is easily checked that the indiscrete two-point space $\{0,1\}$ with base point $1$ is a cogenerator, using the fact that the pointed set $\{0,1\}$ with base point $1$ is a cogenerator of <a href="/category/Set_*">$\Set_*$</a>. If $S$ is the Sierpinski space on $\{0,1\}$, we claim that adding $(S, 0)$ and $(S, 1)$ gives an extremal cogenerating set. To see this, let $f : X \to Y$ be a continuous function. Then $f$ inducing a bijection on maps to $(\{0,1\},1)$ implies that the underlying function of $f$ is bijective. In particular, because $f$ is injective, we see that for $V$ an open subset of $Y$, $f^*(V)$ contains the base point of $X$ if and only if $V$ contains the base point of $Y$. Also, $f$ inducing a bijection on maps to $(S, 1)$ implies that $f^* : \Open(Y) \to \Open(X)$ is bijective on the open sets containing the base points, and $f$ inducing a bijection on maps to $(S, 0)$ implies that $f^* : \Open(Y) \to \Open(X)$ is bijective on the open sets not containing the base points. From these observations, we can conclude that $f$ is a homeomorphism.
 
       Now, by <a href="/content/generator_construction">this result</a>, we get that the product of these three pointed topological spaces is an extremal cogenerator of $\Top_*$.
+    references:
+      - set_*_cogenerator
 
 unsatisfied_properties:
   - property: skeletal
@@ -81,6 +85,8 @@ unsatisfied_properties:
 
   - property: co-Malcev
     proof: 'We can adjust the proof for <a href="/category/Top">$\Top$</a> as follows: Consider the forgetful functor $U : \Top_* \to \Set$ and the relation $R \subseteq U^2$ defined by $R(X) \coloneqq \{(x,y) \in U(X)^2 : x \in \overline{\{y\}} \}$. Both are representable: $U$ by the discrete space $\{0,1\}$ with base point $0$ and $R$ by the Sierpinski space with an isolated base point added. It is clear that $R$ is reflexive, but not symmetric.'
+    references:
+      - top_not_co-malcev
 
   - property: unital
     proof: 'The joint image of $X \to X \times Y \leftarrow Y$ is just $\{(x,0) : x \in X\} \cup \{(0,y) : y \in Y\}$ (where $0$ denotes the base point), which is clearly a proper subset of $X \times Y$ when both $X,Y$ are non-trivial.'
@@ -91,9 +97,13 @@ unsatisfied_properties:
 
   - property: regular quotient object classifier
     proof: 'If there were a regular quotient object classifier, every regular epimorphism would be a cokernel. By considering discrete spaces, it would follow that every surjective pointed map between pointed sets is a cokernel, i.e. that <a href="/category/Set_*">$\Set_*$</a> is conormal. But we already know that this is not the case, since cokernels are "injective away from the base point".'
+    references:
+      - set_*_not_conormal
 
   - property: coaccessible
     proof: 'We can adjust the proof for <a href="/category/Top">$\Top$</a> as follows: Assume $\Top_*$ is coaccessible. Let $S_0=\{x,*\}$ be the pointed topological space such that $\{*\}$ is the only non-trivial open set, and let $S_1=\{x,*\}$ be the pointed space such that $\{x\}$ is the only non-trivial open set. Let $p_i : S_i \to \{x,*\}$ be the identity function to the two-element indiscrete pointed space. Then, a pointed topological space is discrete if and only if it is projective to the morphisms $p_0$ and $p_1$. This implies that the full subcategory spanned by all discrete pointed spaces, which is equivalent to $\Set_*$, is coaccessible by Prop. 4.7 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>. However, since <a href="/category/Set_*">$\Set_*$</a> is not coaccessible, this is a contradiction.'
+    references:
+      - top_not_coaccessible
 
   - property: cofiltered-limit-stable epimorphisms
     proof: We already know that <a href="/category/Set_*">$\Set_*$</a> does not have this property. Now apply the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> to the functor $\Set_* \to \Top_*$ that equips a pointed set with the indiscrete topology.
@@ -103,9 +113,13 @@ unsatisfied_properties:
 
   - property: effective cocongruences
     proof: 'This counterexample is adapted from the counterexample for <a href="/category/Top">$\Top$</a>. Consider the pointed topological space $I \coloneqq \{ *, a, b \}$ with topology $\{ \varnothing, \{ * \}, \{ a, b \}, \{ *, a, b \} \}$. This represents the functor which sends a pointed topological space $X$ to the pairs of indistinguishable points of $X$. Therefore, we get a cocongruence $\{ *, a \} \rightrightarrows I$ on the discrete space $\{ *, a \}$, where the maps are $*\mapsto *, a\mapsto a$ and $*\mapsto *, a\mapsto b$ respectively. However, this cannot be effective: if we have $h : Z \to \{ *, a \}$ which equalizes the cocongruence, then $h$ must be the constant function with value $*$. But that means the cokernel pair of $h$ is the discrete space on $\{ *, a, b \}$.'
+    references:
+      - top_no_effective_cocongruences
 
   - property: extremal generating set
     proof: 'The proof is similar to the one for <a href="/category/Top">$\Top$</a>: if $S$ is a set of pointed topological spaces and $\kappa$ is an infinite regular cardinal greater than $\card(G)$ for every $G\in S$, we show as before that morphisms from $S$ cannot detect the failure of $(\kappa \sqcup \{ \kappa \}, 0) \to (\kappa + 1, 0)$ to be an isomorphism (where as before, we use the standard order topology on both $\kappa$ and $\kappa + 1$).'
+    references:
+      - top_no_extremal_generating_set
 
 special_objects:
   initial object:

@@ -70,6 +70,8 @@ unsatisfied_properties:
 
   - property: regular subobject classifier
     proof: The proof is almost identical to the one for <a href="/category/Haus">$\Haus$</a>.
+    references:
+      - haus_no_regular_subobject_classifier
 
   - property: natural numbers object
     proof: >-
@@ -82,6 +84,8 @@ unsatisfied_properties:
 
   - property: filtered-colimit-stable monomorphisms
     proof: 'The proof is similar to <a href="/category/Haus">$\Haus$</a>. For $n \geq 1$ let $X_n$ be the pushout of $[1/n, 1] \hookrightarrow [0, 1]$ with itself. That is, $X_n$ is the union of two unit intervals $[0, 1] \times \{ 1 \}$ and $[0, 1] \times \{ 2 \}$ where we identify $(x,1) \equiv (x,2)$ when $x \geq 1/n$. As in the construction for $\Haus$, we see that the colimit in $\Haus$ is $[0, 1]$ where all corresponding points of both unit intervals are identified. Since this is compact Hausdorff, it also provides the colimit in $\CompHaus$. Again, the injective continuous maps $\{1,2\} \to X_n$, $i \mapsto (0,i)$ (where $\{1,2\}$ is discrete) become the constant map $0 : \{1,2\} \to [0,1]$ in the colimit, which is not a monomorphism.'
+    references:
+      - haus_no_filtered-colimit-stable_monos
 
   - property: exact cofiltered limits
     proof: |-

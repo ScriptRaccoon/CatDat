@@ -27,6 +27,8 @@ satisfied_properties:
 
   - property: extremal generator
     proof: The countable group $\IZ$ is an extremal generator even in <a href="/category/Grp">$\Grp$</a>. Now use Lemma 10 <a href="/content/subcategories">here</a>.
+    references:
+      - grp_extremal_generator
 
   - property: finite products
     proof: This is because <a href="/category/Grp">$\Grp$</a> has finite (in fact, all) products, and $\Grp_\c \hookrightarrow \Grp$ is closed under finite products. This is because a finite product of countable sets is again countable.
@@ -50,6 +52,8 @@ satisfied_properties:
 
   - property: Malcev
     proof: We can use the same proof as for <a href="/category/Grp">$\Grp$</a>.
+    references:
+      - grp_malcev
 
   - property: regular
     proof: We already know that the category is finitely complete, and that it has all coequalizers. The regular epimorphisms coincide with the surjective group homomorphisms (see below), hence are clearly stable under pullbacks.
@@ -81,6 +85,8 @@ unsatisfied_properties:
 
   - property: regular quotient object classifier
     proof: We can copy the proof from <a href="/category/Grp">$\Grp$</a>.
+    references:
+      - grp_no_regular_quotient_object_classifier
 
   - property: coregular
     proof: Pushouts of injective homomorphisms between countable groups do not need to be injective, see <a href="https://math.stackexchange.com/questions/5088032" target="_blank">MSE/5088032</a>.
@@ -96,6 +102,8 @@ unsatisfied_properties:
       For $r \in R$ we define $\varepsilon(r) \in \lim(X)$ by
       $$\varepsilon(r)_C = \begin{cases} r & r \in C \\ 0 & r \notin C \end{cases}$$
       It is easily checked that this indeed lies in the limit. Moreover, $\varepsilon(r) = \varepsilon(r')$ implies $r=r'$, since evaluating at $C \coloneqq \{r\}$ yields $r = r'$. Hence, $\lim(X)$ is uncountable.
+    references:
+      - setc_no_aleph1-cofiltered_limits
 
 special_objects:
   initial object:
