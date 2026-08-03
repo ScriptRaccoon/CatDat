@@ -32,6 +32,8 @@ export type PropertyEntry = {
 	property: string
 	proof: string
 	check_redundancy?: boolean
+	label?: string
+	references?: string[]
 }
 
 type ObjectEntry = {

@@ -46,6 +46,7 @@ CREATE TABLE property_assignments (
         CHECK (is_deduced in (TRUE, FALSE)),
     check_redundancy INTEGER NOT NULL DEFAULT TRUE
         CHECK (check_redundancy in (TRUE, FALSE)),
+    label TEXT UNIQUE,
     UNIQUE (structure_id, property_id),
     FOREIGN KEY (structure_id, type)
         REFERENCES structures (id, type) ON DELETE CASCADE,
@@ -70,4 +71,17 @@ CREATE TABLE property_tag_assignments (
     PRIMARY KEY (property_id, type, tag),
     FOREIGN KEY (property_id, type) REFERENCES properties (id, type) ON DELETE CASCADE,
     FOREIGN KEY (tag, type) REFERENCES property_tags (tag, type) ON DELETE CASCADE
+);
+
+CREATE TABLE proof_references (
+    structure_id TEXT NOT NULL,
+    property_id TEXT NOT NULL,
+    type TEXT NOT NULL,
+    reference TEXT NOT NULL,
+    PRIMARY KEY (structure_id, property_id),
+    FOREIGN KEY (structure_id, type)
+        REFERENCES structures (id, type) ON DELETE CASCADE,
+    FOREIGN KEY (property_id, type)
+        REFERENCES properties (id, type) ON DELETE CASCADE,
+    FOREIGN KEY (reference) REFERENCES property_assignments (label) ON DELETE CASCADE
 );

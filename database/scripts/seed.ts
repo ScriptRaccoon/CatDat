@@ -221,8 +221,15 @@ function seed_structures<T extends StructureYaml>({
 
 	const property_assignment_insert = db.prepare(
 		`INSERT INTO property_assignments (
-			structure_id, property_id, type, is_satisfied, proof, check_redundancy
-		) VALUES (?, ?, ?, ?, ?, ?)`
+			structure_id, property_id, type, is_satisfied,
+			proof, check_redundancy, label
+		) VALUES (?, ?, ?, ?, ?, ?, ?)`
+	)
+
+	const proof_reference_insert = db.prepare(
+		`INSERT INTO proof_references (
+			structure_id, property_id, type, reference
+		) VALUES (?, ?, ?, ?)`
 	)
 
 	function insert_property_assignments(
@@ -237,8 +244,13 @@ function seed_structures<T extends StructureYaml>({
 				type,
 				is_satisfied,
 				entry.proof,
-				entry.check_redundancy === false ? 0 : 1
+				entry.check_redundancy === false ? 0 : 1,
+				entry.label || null
 			)
+
+			for (const ref of entry.references ?? []) {
+				proof_reference_insert.run(structure_id, entry.property, type, ref)
+			}
 		}
 	}
 
