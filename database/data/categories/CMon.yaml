@@ -49,9 +49,12 @@ unsatisfied_properties:
 
   - property: regular subobject classifier
     proof: We can use exactly the same proof as for <a href="/category/Mon">$\Mon$</a>.
+    references:
+      - mon_no_regular_subobject_classifier
 
   - property: regular quotient object classifier
     proof: 'If $P \in \CMon$ is a regular quotient object classifier, this means that every surjective homomorphism of commutative monoids $A \to B$ is the cokernel of a unique homomorphism $P \to A$. But there are many surjective homomorphisms which are no cokernels at all: Consider the Boolean monoid $(\{0,1\},\vee)$ with $1 \vee 1 = 1$ and the surjective homomorphism $f : (\IN,+) \to (\{0,1\},\vee)$ defined by $f(0)=0$ and $f(n)=1$ for $n \geq 1$. It has trivial kernel, but is no isomorphism, so it cannot be a cokernel.'
+    label: cmon_no_regular_quotient_object_classifier
 
   - property: CSP
     proof: First of all, epimorphisms in $\CMon$ are preserved and reflected by the forgetful functor to $\Mon$ (see below). Furthermore, if $M \to N$ is an epimorphism in $\Mon$ and $M$ is infinite, then $\card(N) \leq \card(M)$ (see <a href="https://mathoverflow.net/questions/510431/" target="_blank">MO/510431</a>). This implies that in $\CMon$ the canonical homomorphism $\bigoplus_{n \geq 0} \IN \to \prod_{n \geq 0} \IN$ is not an epimorphism because its domain is countable and its codomain is uncountable.

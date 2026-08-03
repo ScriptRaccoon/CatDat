@@ -25,6 +25,7 @@ satisfied_properties:
   - property: cocomplete
     proof: 'The embedding $\TorsFreeAb \hookrightarrow \Ab$ has a left adjoint, sending an abelian group $A$ to its torsion-free reflection $A/T(A)$, where $T(A)$ is the torsion subgroup of $A$. Since <a href="/category/Ab">$\Ab$</a> is cocomplete, $\TorsFreeAb$ is cocomplete as well. The colimit of a diagram of torsion-free abelian groups is the torsion-free reflection of the colimit of the underlying abelian groups. Notice that the reflection is not required in the case of coproducts: the direct sum of torsion-free abelian groups is again torsion-free. It is also not required for filtered colimits.'
     check_redundancy: false
+    label: torsfreeab_cocomplete
 
   - property: finitely accessible
     proof: We already saw that filtered colimits exist and are preserved by the forgetful functor to $\Ab$. Every torsion-free abelian group is the filtered colimit of its finitely generated subgroups, which are in fact free. Finitely generated free abelian groups are finitely presentable in $\Ab$ and therefore also in $\TorsFreeAb$.

@@ -20,6 +20,8 @@ satisfied_properties:
 
   - property: locally finitely presentable
     proof: The same proof as for <a href="/category/Pos">$\Pos$</a> works, cf. <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>, Example 1.10.
+    references:
+      - pos_lfp
 
   - property: cartesian closed
     proof: For preordered sets $P,Q$ we endow $\Hom(P,Q)$ with the preorder in which $f \leq g$ holds iff $f(p) \leq g(p)$ for all $p \in P$. The universal evaluation map is $\Hom(P,Q) \times P \to Q$, $(f,p) \mapsto f(p)$, it is order-preserving, and it satisfies the universal property.
@@ -38,6 +40,7 @@ satisfied_properties:
 
   - property: extremal generator
     proof: 'We claim that $\{ 0 < 1 \}$ is an extremal generator. First, the singleton preordered set $1$ is a generator, since it represents the forgetful functor $\PreOrd \to \Set$ which is faithful. Since we have an epimorphism $\{ 0 < 1 \} \to 1$, it follows that $\{ 0 < 1 \}$ is also a generator. Now, suppose we have a morphism $f : P \to Q$ such that $f \circ {-} : \Hom(\{0<1\}, P) \to \Hom(\{0<1\}, Q)$ is a bijection. Then considering constant functions, we can see that $f$ must be a bijection on the underlying sets. Now, suppose we have $p_1, p_2 \in P$ such that $f(p_1) \le f(p_2)$. Then that induces a morphism $\{0,1\} \to Q$ with $0 \mapsto f(p_1), 1 \mapsto f(p_2)$. The corresponding morphism $\{0<1\}\to P$ must send $0\mapsto p_1, 1 \mapsto p_2$, showing that $p_1 \le p_2$. It follows that $f$ is an isomorphism.'
+    label: preord_extremal_generator
 
   - property: extremal cogenerator
     proof: >-

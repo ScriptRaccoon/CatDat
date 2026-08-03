@@ -52,6 +52,8 @@ satisfied_properties:
 
   - property: ℵ₁-cofiltered limits
     proof: For <a href="/category/FinSet">$\FinSet$</a> know that the embedding $\FinSet \hookrightarrow \Set$ is closed under $\aleph_1$-cofiltered limits. From this and the fact that the forgetful functor $\Grp \to \Set$ preserves limits it follows that $\FinGrp \hookrightarrow \Grp$ is closed under $\aleph_1$-cofiltered limits.
+    references:
+      - finset_aleph1-cofiltered-limits
 
 unsatisfied_properties:
   - property: small

@@ -41,7 +41,7 @@ satisfied_properties:
     proof: >-
       We prove that $\{0,1\}$ is an extremal cogenerator. First, to prove it is a cogenerator: The surjective maps $X \to \{0,1\}$ correspond to the non-empty proper subsets of $X$. If $a,b \in X$ are elements that have the same image under each surjective map $X \to \{0,1\}$, it therefore means that they lie in the same non-empty proper subsets of $X$. This implies $a=b$: If $X = \{a\}$, this is trivial. Otherwise, use the subset $\{a\}$.
 
-      Now, suppose we have a surjective map $f : X \to Y$ of finite sets such that ${-} \circ f : \Hom(Y, \{0,1\}) \to \Hom(X, \{0,1\})$ is bijective. That means that $f^* : P(Y) \to P(X)$ is bijective on non-empty proper subsets, and it certainly also maps $\varnothing \mapsto \varnothing$ and $Y \mapsto X$. Therefore, since the <a href="/functor/power_set_contravariant">contravariant powerset functor</a> is conservative, that implies $f$ is an isomorphism.
+      Now, suppose we have a surjective map $f : X \to Y$ of finite sets such that ${-} \circ f : \Hom(Y, \{0,1\}) \to \Hom(X, \{0,1\})$ is bijective. That means that $f^* : P(Y) \to P(X)$ is bijective on non-empty proper subsets, and it certainly also maps $\varnothing \mapsto \varnothing$ and $Y \mapsto X$. Therefore, since the <a href="/functor/power_set_contravariant">contravariant power set functor</a> is conservative, that implies $f$ is an isomorphism.
 
   - property: multi-complete
     proof: >-

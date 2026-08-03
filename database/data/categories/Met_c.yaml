@@ -83,6 +83,8 @@ unsatisfied_properties:
 
   - property: regular subobject classifier
     proof: 'We recycle the proof from <a href="/category/Haus">$\Haus$</a>: Assume that there is a regular subobject classifier $\Omega$. By the classification of regular monomorphisms, we would have an isomorphism between $\Hom(X,\Omega)$ and the set of closed subsets of $X$ for any metric space $X$. If we take $X = 1$ we see that $\Omega$ has two points. Since $\Omega$ is Hausdorff, $\Omega \cong 1 + 1$ must be discrete. But then $\Hom(X,\Omega)$ is isomorphic to the set of all clopen subsets of $X$, of which there are usually far fewer than closed subsets (consider $X = [0,1]$).'
+    references:
+      - haus_no_regular_subobject_classifier
 
   - property: sequential colimits
     proof: See <a href="https://mathoverflow.net/questions/510316" target="_blank">MO/510316</a> for a proof that the diagram $\IN \to \Met_c$, $n \mapsto \IR^n$ does not have a colimit.

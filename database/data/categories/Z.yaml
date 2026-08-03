@@ -54,6 +54,8 @@ unsatisfied_properties:
 
   - property: semi-strongly connected
     proof: This is because already the full subcategory of representable functors is not semi-strongly connected, because <a href="/category/CRing">$\CRing$</a> is not semi-strongly connected. Specifically, there is no morphism between $\Hom(\IF_2,-)$ and $\Hom(\IF_3,-)$.
+    references:
+      - cring_no_semi_strongly_connected
 
   - property: locally essentially small
     proof: See <a href="https://mathoverflow.net/questions/390611" target="_blank">MO/390611</a> for example.

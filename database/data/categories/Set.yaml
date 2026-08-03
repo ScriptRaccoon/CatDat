@@ -35,10 +35,12 @@ satisfied_properties:
   - property: extremal generator
     proof: The one-point set is an extremal generator since it represents the identity functor $\id_{\Set}$ which is certainly faithful and conservative.
     check_redundancy: false
+    label: set_extremal_generator
 
   - property: extremal cogenerator
     proof: The two-point set is an extremal cogenerator since it represents the contravariant power set functor $\Set^{\op} \to \Set$ which is faithful and conservative (see <a href="/functor/power_set_contravariant">contravariant power set functor</a>).
     check_redundancy: false
+    label: set_extremal_cogenerator
 
 unsatisfied_properties:
   - property: skeletal

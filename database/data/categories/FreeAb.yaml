@@ -25,6 +25,8 @@ satisfied_properties:
 
   - property: extremal generator
     proof: The group $\IZ$ is an extremal generator even in <a href="/category/Grp">$\Grp$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
+    references:
+      - grp_extremal_generator
 
   - property: cogenerator
     proof: It is easy to check that $\IZ$ is a cogenerator for free abelian groups.

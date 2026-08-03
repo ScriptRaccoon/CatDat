@@ -25,6 +25,7 @@ satisfied_properties:
 
   - property: abelian
     proof: This is standard, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. VIII.
+    label: ab_abelian
 
   - property: finitary algebraic
     proof: Take the algebraic theory of a commutative group.

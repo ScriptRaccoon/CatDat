@@ -59,18 +59,22 @@ unsatisfied_properties:
 
   - property: regular subobject classifier
     proof: Assume that there is a regular subobject classifier $\Omega$. By the classification of regular monomorphisms, we would have an isomorphism between $\Hom(X,\Omega)$ and the set of closed subsets of $X$ for any Hausdorff space $X$. If we take $X = 1$ we see that $\Omega$ has two points. Since $\Omega$ is Hausdorff, $\Omega \cong 1 + 1$ must be discrete. But then $\Hom(X,\Omega)$ is isomorphic to the set of all clopen subsets of $X$, of which there are usually far fewer than closed subsets (consider $X = [0,1]$).
+    label: haus_no_regular_subobject_classifier
 
   - property: cartesian filtered colimits
     proof: 'It is shown in <a href="https://math.stackexchange.com/questions/1255678">MSE/1255678</a> that $\IQ \times - : \Top \to \Top$ does not preserve sequential colimits (so that it cannot be a left adjoint). The same example also works in $\Haus$: Surely $\IQ$ is Hausdorff, $X_n$ is Hausdorff, as is their colimit $X$, and the colimit (taken in $\Top$) of the $X_n \times \IQ$ admits a bijective continuous map to a Hausdorff space, therefore is also Hausdorff, meaning it is also the colimit taken in $\Haus$.'
 
   - property: cofiltered-limit-stable epimorphisms
-    proof: 'Recall the counterexample for sets: The unique maps $\IN_{\geq n} \to 1$ are surjective, but their limit $0 = \bigcap_{n \geq 0} \IN_{\geq n} \to 1$ is not. This also works in $\Haus$ by using discrete topologies. We could also apply a variant of (the dual of) Lemma 2 <a href="/content/subcategories">here</a> to the discrete topology functor $\Set \to \Haus$, which does not preserve all cofiltered limits, but does preserve intersections.'
+    proof: 'The following is a basic counterexample for sets: The unique maps $\IN_{\geq n} \to 1$ are surjective, but their limit $0 = \bigcap_{n \geq 0} \IN_{\geq n} \to 1$ is not. This also works in $\Haus$ by using discrete topologies. We could also apply a variant of (the dual of) Lemma 2 <a href="/content/subcategories">here</a> to the discrete topology functor $\Set \to \Haus$, which does not preserve all cofiltered limits, but does preserve intersections.'
 
   - property: filtered-colimit-stable monomorphisms
     proof: |-
       The proof is similar to <a href="/category/Met">$\Met$</a>. For $n \geq 1$ let $X_n$ be the pushout of
       $$(-\infty, -1/n] \cup [1/n, \infty) \hookrightarrow \IR$$
       with itself. That is, $X_n$ is the union of two lines $\IR \times \{1\}$ and $\IR \times \{2\}$ where we identify $(x,1) \equiv (x,2)$ when $|x| \geq 1/n$. Then $X_n$ is Hausdorff, and there is a canonical surjective continuous map $X_n \to X_{n+1}$. The colimit in $\Top$ is the union of two lines where we identify $(x,1) \equiv (x,2)$ when $|x| \geq 1/n$ for some $n$, i.e. when $x \neq 0$. This is the line with the double origin, which is not Hausdorff. Its Hausdorff reflection is the line $\IR$ where all points of both lines are identified, and it provides the colimit in $\Haus$. Now, the injective continuous maps $\{1,2\} \to X_n$, $i \mapsto (0,i)$ (where $\{1,2\}$ is discrete) become the constant map $0 : \{1,2\} \to \IR$ in the colimit, which is not a monomorphism.
+    label: haus_no_filtered-colimit-stable_monos
+    references:
+      - met_no_filtered_colimit_stable_monos
 
   - property: cogenerator
     proof: 'Assume that $Q$ is a cogenerator. Since $Q$ is Hausdorff, $Q$ is $T_1$. By a theorem of Herrlich (<i>Wann sind alle stetigen Abbildungen in Y konstant</i>. Math. Z. 90 (1965): 152-154. <a href="http://eudml.org/doc/170472" target="_blank">EUMDL</a>), there is a regular Hausdorff space $X$ with $\geq 2$ points such that every continuous map $X \to Q$ is constant. (The author only states that $X$ is regular, but actually, $X$ is regular and $T_1$, hence Hausdorff.) But since $Q$ is a cogenerator, this implies that all maps $1 \rightrightarrows X$ are equal, i.e. that $X$ has just one point. This is a contradiction.'
@@ -87,6 +91,8 @@ unsatisfied_properties:
 
   - property: extremal generating set
     proof: The proof is the same as the one for <a href="/category/Top">$\Top$</a>; there the test spaces we use are of the form $\kappa \sqcup \{ \kappa \}$ and $\kappa + 1$, which are both Hausdorff spaces.
+    references:
+      - top_no_extremal_generating_set
 
 special_objects:
   initial object:
