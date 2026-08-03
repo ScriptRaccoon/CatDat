@@ -90,7 +90,7 @@ unsatisfied_properties:
     proof: 'The image of $X \vee Y$ in $X \times Y$ is just $\{(x,0) : x \in X\} \cup \{(0,y) : y \in Y\}$ (where $0$ denotes the base point), which is clearly a proper subset when both $X,Y$ are non-trivial.'
 
   - property: regular quotient object classifier
-    proof: We can recycle the proof for <a href="/category/Set_*">$\Set_*$</a> using discrete topological spaces.
+    proof: 'If there were a regular quotient object classifier, every regular epimorphism would be a cokernel. By considering discrete spaces, it would follow that every surjective pointed map between pointed sets is a cokernel, i.e. that <a href="/category/Set_*">$\Set_*$</a> is conormal. But we already know that this is not the case, since cokernels are "injective away from the base point".'
 
   - property: coaccessible
     proof: 'We can adjust the proof for <a href="/category/Top">$\Top$</a> as follows: Assume $\Top_*$ is coaccessible. Let $S_0=\{x,*\}$ be the pointed topological space such that $\{*\}$ is the only non-trivial open set, and let $S_1=\{x,*\}$ be the pointed space such that $\{x\}$ is the only non-trivial open set. Let $p_i : S_i \to \{x,*\}$ be the identity function to the two-element indiscrete pointed space. Then, a pointed topological space is discrete if and only if it is projective to the morphisms $p_0$ and $p_1$. This implies that the full subcategory spanned by all discrete pointed spaces, which is equivalent to $\Set_*$, is coaccessible by Prop. 4.7 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>. However, since <a href="/category/Set_*">$\Set_*$</a> is not coaccessible, this is a contradiction.'
