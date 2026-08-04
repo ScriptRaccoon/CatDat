@@ -1,0 +1,22 @@
+id: extremal-not-strong-example
+name: example of a non-strong extremal monomorphism
+notation: $m$
+category: forked_commutative_square
+description: 'This is the morphism $m : C \to D$ from the <a href="/category/forked_commutative_square">forked commutative square</a>, see details there. It provides an example of an extremal monomorphism which is not strong, and this is the only reason we have added this morphism and its category to the database.'
+nlab_link: null
+
+tags:
+  - category theory
+
+related: []
+
+satisfied_properties:
+  - property: extremal monomorphism
+    proof: It is a monomorphism because, in fact, every morphism in the forked commutative square is a monomorphism. The only factorizations of $m$ are $m \circ \id_C$ and ${\id_D} \circ m$, and $m$ is not an epimorphism (because $u \circ m = v \circ m$ but $u \neq v$).
+
+unsatisfied_properties:
+  - property: strong monomorphism
+    proof: >-
+      The category contains a commutative diagram
+      $$\begin{CD} A @>e>> B \\ @V{f}VV @VV{g}V \\ C @>>m> D \end{CD}$$
+      in which $e$ is an epimorphism, but there is no morphism $B \to C$ at all.
