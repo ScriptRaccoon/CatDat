@@ -15,6 +15,17 @@
   proof: 'Let $f : A \to B$ be a split monomorphism, and choose a morphism $g : B \to A$ with $g \circ f = \id_A$. Then it is easy to check that $f$ is an equalizer of $\id_B, f \circ g : B \rightrightarrows B$.'
   is_equivalence: false
 
+- id: split_mono_epi_is_iso
+  # This implication follows strictly from the others, but we add it
+  # because the other proofs use it and also to prevent long chains.
+  assumptions:
+    - split monomorphism
+    - epimorphism
+  conclusions:
+    - isomorphism
+  proof: 'Assume that $f : A \to B$ is a split monomorphism, and choose a morphism $g : B \to A$ with $g \circ f = \id_A$. Then $f \circ g \circ f = f = \id_B \circ f$. Thus, if $f$ is also an epimorphism, we conclude $f \circ g = \id_B$, showing that $f$ is an isomorphism with inverse $g$.'
+  is_equivalence: false
+
 - id: mono_is_iso
   assumptions:
     - monomorphism
@@ -146,39 +157,80 @@
     where $e$ is an epimorphism and $m$ is a strict monomorphism. We need to show that $D \to B$ factors through $m$. It suffices to show that it equalizes all pairs $B \rightrightarrows T$ that are equalized by $m$. Since $e$ is an epimorphism, it suffices to check this for the composite $C \to D \to B$. This is equal to $C \to A \to B$, which factors through $m$ and hence equalizes the pair.
   is_equivalence: false
 
-- id: strong_monos_are_regular_in_coregular_category
+- id: extremal_mono_is_mono
+  assumptions:
+    - extremal monomorphism
+  conclusions:
+    - monomorphism
+  proof: This holds by definition.
+  is_equivalence: false
+
+- id: strong_mono_is_extremal
   assumptions:
     - strong monomorphism
+  conclusions:
+    - extremal monomorphism
+  proof: >-
+    Assume that $m : A \to B$ is a strong monomorphism that factors as $m = g \circ e$, where $e : A \to C$ is an epimorphism and $g : C \to B$ is any morphism. Then the commutative diagram
+    $$\begin{CD} A @>e>> C \\ @V{\id_A}VV @VV{g}V \\ A @>>m> B \end{CD}$$
+    can be filled with a morphism $h : C \to A$. In particular, $h \circ e = \id_A$. Thus, $e$ is an epimorphism and a split monomorphism, <a href="/morphism-implication/split_mono_epi_is_iso">hence</a> an isomorphism.
+  is_equivalence: false
+
+- id: extremal_mono_epi_is_iso
+  assumptions:
+    - extremal monomorphism
+    - epimorphism
+  conclusions:
+    - isomorphism
+  proof: This is obvious.
+  is_equivalence: false
+
+- id: extremal_monos_are_regular_in_coregular_category
+  assumptions:
+    - extremal monomorphism
   mapped_assumptions:
     category:
       - coregular
   conclusions:
     - regular monomorphism
-  proof: >-
-    Let $m : A \to B$ be a strong monomorphism in a coregular category. We may factor it as $m = i \circ e$, where $i : C \to B$ is a regular monomorphism and $e : A \to C$ is an epimorphism. The orthogonality condition applied to the diagram
-    $$\begin{CD} A @>e>> C \\ @V{\id_A}VV @VV{i}V \\ A @>>m> B \end{CD}$$
-    shows that $e$ is a split monomorphism, hence an isomorphism. But then $m = i \circ e$ is a regular monomorphism as well.
+  proof: 'Let $m : A \to B$ be an extremal monomorphism in a coregular category. By coregularity, we may factor it as $m = i \circ e$, where $i : C \to B$ is a regular monomorphism and $e : A \to C$ is an epimorphism. Since $m$ is an extremal monomorphism, $e$ is an isomorphism. Therefore, $m \cong i$ is a regular monomorphism.'
   is_equivalence: false
 
-- id: strong_monos_are_no_epis
+- id: extremal_mono_strong_criterion
   assumptions:
-    - strong monomorphism
-    - epimorphism
+    - extremal monomorphism
+  mapped_assumptions:
+    category:
+      - pushouts
   conclusions:
-    - isomorphism
+    - strong monomorphism
   proof: >-
-    Assume that $m : A \to B$ is a strong monomorphism which is also an epimorphism. Then we apply the orthogonality condition to
-    $$\begin{CD} A @>m>> B \\ @V{\id_A}VV @VV{\id_B}V \\ A @>>m> B \end{CD}$$
-    to conclude that $m$ is a split epimorphism, and hence an isomorphism.
+    Let $m : A \to B$ be an extremal monomorphism and consider a diagram
+    $$\begin{CD} C @>{e}>> D \\ @V{f}VV @VV{g}V \\ A @>>{m}> B \end{CD}$$
+    in which $e : C \to D$ is an epimorphism. Choose a pushout
+    $$\begin{CD} C @>{e}>> D \\ @V{f}VV @VV{u}V \\ A @>>{v}> P. \end{CD}$$
+    Here, $v$ is an epimorphism since $e$ is an epimorphism. Moreover, by the universal property of the pushout, there is a unique morphism $h : P \to B$ such that $h \circ v = m$ and $h \circ u = g$. Since $m$ is an extremal monomorphism, $v$ is an isomorphism. Then $v^{-1} \circ u : D \to A$ is the required filling of the first diagram, since
+    $$v^{-1} \circ u \circ e = v^{-1} \circ v \circ f = f.$$
   is_equivalence: false
 
-- id: strong_monos_collapse
+- id: extremal_mono_balanced
   assumptions:
     - monomorphism
   mapped_assumptions:
     category:
-      - quotient-trivial
+      - balanced
+  conclusions:
+    - extremal monomorphism
+  proof: Assume $m$ is a monomorphism that factors as $m = g \circ e$, where $e$ is an epimorphism. But then $e$ is also a monomorphism, and since the category is balanced, $e$ must be an isomorphism.
+  is_equivalence: false
+
+- id: every_mono_strong_criterion
+  assumptions:
+    - monomorphism
+  mapped_assumptions:
+    category:
+      - epi-regular
   conclusions:
     - strong monomorphism
-  proof: This is because any morphism is right orthogonal to any isomorphism.
+  proof: Any monomorphism is right orthogonal to any regular epimorphism because regular epimorphisms are strong (by combining <a href="/morphism-implication/regular_mono_is_strict">this result</a> and <a href="/morphism-implication/strict_mono_is_strong">this result</a>).
   is_equivalence: false

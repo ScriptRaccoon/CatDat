@@ -1,0 +1,15 @@
+id: extremal monomorphism
+relation: is an
+description: >-
+  A morphism $m : A \to B$ is an <i>extremal monomorphism</i> if it is a monomorphism and whenever $m = g \circ e$ is a factorization in which $e$ is an epimorphism, then $e$ is an isomorphism. The condition that $m$ is a monomorphism follows from the factorization property when the category has coequalizers, but in general, we need to explicitly demand it.
+
+  By the implications below, extremal monomorphisms are closed related to strong monomorphisms: every strong monomorphism is extremal, and the converse holds when pushouts exist.
+nlab_link: https://ncatlab.org/nlab/show/extremal+monomorphism
+invariant_under_equivalences: true
+dual: extremal epimorphism
+related:
+  - strong monomorphism
+  - monomorphism
+
+tags:
+  - types of monomorphisms
