@@ -48,7 +48,4 @@ special_objects:
   products:
     description: infimum taken in $\{0 < 1 < 2\}$
 
-special_morphisms:
-  isomorphisms:
-    description: the three identities
-    proof: This is trivial.
+special_morphisms: {}

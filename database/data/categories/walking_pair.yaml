@@ -50,7 +50,4 @@ unsatisfied_properties:
 
 special_objects: {}
 
-special_morphisms:
-  isomorphisms:
-    description: the two identities
-    proof: This is trivial.
+special_morphisms: {}

@@ -3,6 +3,11 @@
   description: every morphism
   proof: The category is a groupoid.
 
+- property: gaunt
+  type: isomorphisms
+  description: only the identities
+  proof: The category is gaunt.
+
 - property: thin
   type: monomorphisms
   description: every morphism
@@ -57,3 +62,13 @@
   type: regular epimorphisms
   description: same as epimorphisms
   proof: The category is epi-regular.
+
+- property: regular-subobject-trivial
+  type: regular monomorphisms
+  description: same as isomorphisms
+  proof: The category is regular-subobject-trivial.
+
+- property: regular-quotient-trivial
+  type: regular epimorphisms
+  description: same as isomorphisms
+  proof: The category is regular-quotient-trivial.

@@ -51,7 +51,4 @@ special_objects:
   products:
     description: $b \times c = a$, $x \times x = x$, $a \times x = a$, $d \times x = x$
 
-special_morphisms:
-  isomorphisms:
-    description: the four identities
-    proof: This is trivial.
+special_morphisms: {}

@@ -50,7 +50,4 @@ special_objects:
   products:
     description: '[binary case] $1 \times 2 = 0$, $x \times x = x$, $0 \times x = 0$'
 
-special_morphisms:
-  isomorphisms:
-    description: the three identities
-    proof: This is trivial.
+special_morphisms: {}
