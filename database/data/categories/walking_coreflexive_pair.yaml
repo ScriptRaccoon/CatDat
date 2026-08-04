@@ -85,9 +85,6 @@ special_objects:
     description: $[1]$
 
 special_morphisms:
-  isomorphisms:
-    description: the two identities
-    proof: This is obvious.
   monomorphisms:
     description: the identities and $i$, $j$
     proof: Since $pi = \id$, but $ip \neq \id$, we conclude that $i$ is a monomorphism, but $p$ is not. Likewise, $j$ is a monomorphism. Since $p$ is not a monomorphism, $ip$ and $jp$ are also no monomorphisms.

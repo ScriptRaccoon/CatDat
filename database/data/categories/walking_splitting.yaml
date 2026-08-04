@@ -64,9 +64,6 @@ special_objects:
     description: $0$
 
 special_morphisms:
-  isomorphisms:
-    description: the two identities
-    proof: This is obvious.
   monomorphisms:
     description: the identities and $i$
     proof: The morphism $i$ is even a split monomorphism. The morphism $p$ is not a monomorphism since $p \circ \id_1 = p \circ ip$. The morphism $ip$ is not a monomorphism since it would imply that $p$ is a monomorphism.
