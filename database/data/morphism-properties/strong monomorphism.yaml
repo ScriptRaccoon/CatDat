@@ -6,11 +6,14 @@ description: >-
   in which $e : C \to D$ is an epimorphism, there is a unique morphism $D \to A$ such that both triangles commute. Uniqueness is actually for free, and it suffices to demand commutativity of one triangle, as the other one follows.
   $$\begin{CD} C @>e>> D \\ @VVV \swarrow @VVV \\ A @>>m> B \end{CD}$$
   If the category has coequalizers, the orthogonality condition already implies that $m$ is a monomorphism, but in general, we need to demand this.
+
+  By the implications below, strong monomorphisms are closed related to extremal monomorphisms: every strong monomorphism is extremal, and the converse holds when pushouts exist.
 nlab_link: https://ncatlab.org/nlab/show/strong+monomorphism
 invariant_under_equivalences: true
 dual: strong epimorphism
 related:
   - strict monomorphism
+  - extremal monomorphism
   - monomorphism
 
 tags:
