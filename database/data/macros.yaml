@@ -123,6 +123,7 @@
 \Cone: \mathbf{Cone}
 \SemiGrp: \mathbf{SemiGrp}
 \Square: \mathbf{Square}
+\ForkSquare: \mathbf{ForkSquare}
 \Comp: \mathbf{Comp}
 \Fork: \mathbf{Fork}
 \Isom: \mathbf{Isom}

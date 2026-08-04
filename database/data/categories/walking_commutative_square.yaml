@@ -14,6 +14,7 @@ tags:
 related:
   - walking_fork
   - walking_morphism
+  - forked_commutative_square
 
 satisfied_properties:
   - property: small
