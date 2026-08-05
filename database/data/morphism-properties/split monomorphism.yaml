@@ -1,11 +1,12 @@
 id: split monomorphism
 relation: is a
-description: 'A morphism $f : A \to B$ is a <i>split monomorphism</i> if there is a morphism $g : B \to A$ with $g \circ f = \id_A$.'
+description: 'A morphism $m : A \to B$ is a <i>split monomorphism</i> if there is a morphism $e : B \to A$ with $e \circ m = \id_A$.'
 nlab_link: https://ncatlab.org/nlab/show/split+monomorphism
 invariant_under_equivalences: true
 dual: split epimorphism
 related:
   - monomorphism
+  - isomorphism
 
 tags:
   - types of monomorphisms

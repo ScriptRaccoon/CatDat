@@ -12,7 +12,7 @@
     - split monomorphism
   conclusions:
     - regular monomorphism
-  proof: 'Let $f : A \to B$ be a split monomorphism, and choose a morphism $g : B \to A$ with $g \circ f = \id_A$. Then it is easy to check that $f$ is an equalizer of $\id_B, f \circ g : B \rightrightarrows B$.'
+  proof: 'Let $m : A \to B$ be a split monomorphism, and choose a morphism $e : B \to A$ with $e \circ m = \id_A$. Then it is easy to check that $m$ is an equalizer of $\id_B$ and the idempotent morphism $m \circ e : B \to B$.'
   is_equivalence: false
 
 - id: split_mono_epi_is_iso
@@ -23,7 +23,7 @@
     - epimorphism
   conclusions:
     - isomorphism
-  proof: 'Assume that $f : A \to B$ is a split monomorphism, and choose a morphism $g : B \to A$ with $g \circ f = \id_A$. Then $f \circ g \circ f = f = \id_B \circ f$. Thus, if $f$ is also an epimorphism, we conclude $f \circ g = \id_B$, showing that $f$ is an isomorphism with inverse $g$.'
+  proof: 'Assume that $m : A \to B$ is a split monomorphism, and choose a morphism $e : B \to A$ with $e \circ m = \id_A$. Then $m \circ e \circ m = m = {\id_B} \circ m$. Thus, if $m$ is also an epimorphism, we conclude $m \circ e = \id_B$, showing that $m$ is an isomorphism with inverse $e$.'
   is_equivalence: false
 
 - id: mono_is_iso
@@ -49,14 +49,6 @@
   proof: This holds by definition of a balanced category.
   is_equivalence: false
 
-- id: regular_mono_is_mono
-  assumptions:
-    - regular monomorphism
-  conclusions:
-    - monomorphism
-  proof: This is an immediate consequence of the definition of an equalizer.
-  is_equivalence: false
-
 - id: mono-regular_def
   assumptions:
     - monomorphism
@@ -68,20 +60,12 @@
   proof: This is the definition of a mono-regular category.
   is_equivalence: false
 
-- id: strict_mono_is_mono
-  assumptions:
-    - strict monomorphism
-  conclusions:
-    - monomorphism
-  proof: This is trivial.
-  is_equivalence: false
-
 - id: regular_mono_is_strict
   assumptions:
     - regular monomorphism
   conclusions:
     - strict monomorphism
-  proof: 'Let $m : A \to B$ be the equalizer of $g,h : B \rightrightarrows C$. In particular, $m$ is a monomorphism. Let $t : T \to B$ be a monomorphism which equalizes all pairs that are equalized by $m$. In particular, $t$ equalizes $g,h$, i.e. $g \circ t = h \circ t$. By definition of an equalizer, this means that $t$ factors through $m$.'
+  proof: 'Let $m : A \to B$ be the equalizer of $f,g : B \rightrightarrows C$. In particular, $m$ is a monomorphism. Let $t : T \to B$ be a morphism that equalizes all pairs that are equalized by $m$. In particular, $t$ equalizes $f,g$, i.e. $f \circ t = g \circ t$. By definition of an equalizer, this means that $t$ factors through $m$.'
   is_equivalence: false
 
 - id: effective_mono_implies_regular_mono
@@ -102,9 +86,9 @@
     - effective monomorphism
   proof: >-
     Let $m : A \to B$ be a strict monomorphism in a category with pushouts. In particular, the pushout $B \sqcup_A B$ exists (and actually, we only need this pushout) with coprojections $i_1,i_2 : B \rightrightarrows B \sqcup_A B$ satisfying $i_1 \circ m = i_2 \circ m$.
-    To show that $m$ is the equalizer of $i_1,i_2$, let $t : T \to B$ be a morphism with $i_1 \circ t = i_2 \circ t$. If $g,h : B \rightrightarrows C$ is any parallel pair with $g \circ m = h \circ m$, it induces a morphism $(g;h) : B \sqcup_A B \to C$ with $(g;h) \circ i_1 = g$ and $(g;h) \circ i_2 = h$.
+    To show that $m$ is the equalizer of $i_1,i_2$, let $t : T \to B$ be a morphism with $i_1 \circ t = i_2 \circ t$. If $f,g : B \rightrightarrows C$ is any parallel pair with $f \circ m = g \circ m$, it induces a morphism $(f;g) : B \sqcup_A B \to C$ with $(f;g) \circ i_1 = f$ and $(f;g) \circ i_2 = g$.
     By composing these equations with $t$, we get
-    $$g \circ t = (g;h) \circ i_1 \circ t = (g;h) \circ i_2 \circ t = h \circ t.$$
+    $$f \circ t = (f;g) \circ i_1 \circ t = (f;g) \circ i_2 \circ t = g \circ t.$$
     Thus, $t$ equalizes every parallel pair that is equalized by $m$. Since $m$ is a strict monomorphism, $t$ factors through $m$.
   is_equivalence: false
 
@@ -135,15 +119,7 @@
       - preadditive
   conclusions:
     - normal monomorphism
-  proof: 'The equalizer of $g,h : B \rightrightarrows C$ is the kernel of $g-h : B \to C$.'
-  is_equivalence: false
-
-- id: strong_mono_is_mono
-  assumptions:
-    - strong monomorphism
-  conclusions:
-    - monomorphism
-  proof: This holds by definition.
+  proof: 'The equalizer of $f,g : B \rightrightarrows C$ is the kernel of $f-g : B \to C$.'
   is_equivalence: false
 
 - id: strict_mono_is_strong
@@ -193,7 +169,10 @@
       - coregular
   conclusions:
     - regular monomorphism
-  proof: 'Let $m : A \to B$ be an extremal monomorphism in a coregular category. By coregularity, we may factor it as $m = i \circ e$, where $i : C \to B$ is a regular monomorphism and $e : A \to C$ is an epimorphism. Since $m$ is an extremal monomorphism, $e$ is an isomorphism. Therefore, $m \cong i$ is a regular monomorphism.'
+  proof: >-
+    Let $m : A \to B$ be an extremal monomorphism in a coregular category. By coregularity, we may factor it as $m = i \circ e$, where $i : C \to B$ is a regular monomorphism and $e : A \to C$ is an epimorphism. Since $m$ is an extremal monomorphism, $e$ is an isomorphism. Therefore, $m \cong i$ is a regular monomorphism.
+
+    The proof shows that the assumption of coregularity can be relaxed to the existence of (Epi, RegMono)-factorizations.
   is_equivalence: false
 
 - id: extremal_mono_strong_criterion

@@ -1,6 +1,6 @@
 id: monomorphism
 relation: is a
-description: 'A morphism $f : A \to B$ is a <i>monomorphism</i> if it is left-cancellative, i.e. if $f \circ g = f \circ h$ for two morphisms $g,h : T \rightrightarrows A$, then $g = h$. In many concrete categories appearing in practice, these are injective structure-preserving maps.'
+description: 'A morphism $m : A \to B$ is a <i>monomorphism</i> if it is left-cancellative, i.e. if $m \circ f = m \circ g$ for two morphisms $f,g : T \rightrightarrows A$, then $f = g$. In many concrete categories appearing in practice, these are injective structure-preserving maps.'
 nlab_link: https://ncatlab.org/nlab/show/monomorphism
 invariant_under_equivalences: true
 dual: epimorphism

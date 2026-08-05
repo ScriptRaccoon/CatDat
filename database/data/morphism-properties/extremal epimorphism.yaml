@@ -1,15 +1,16 @@
 id: extremal epimorphism
 relation: is an
 description: >-
-  A morphism $e : A \to B$ is an <i>extremal epimorphism</i> if it is a epimorphism and whenever $e = m \circ g$ is a factorization in which $m$ is a monomorphism, then $m$ is an isomorphism. The condition that $e$ is an epimorphism follows from the factorization property when the category has equalizers, but in general, we need to explicitly demand it.
+  A morphism $e : A \to B$ is an <i>extremal epimorphism</i> if it is an epimorphism and whenever $e = m \circ g$ is a factorization in which $m$ is a monomorphism, then $m$ is an isomorphism. The condition that $e$ is an epimorphism follows from the factorization property when the category has equalizers, but in general, we need to explicitly demand it.
 
   By the implications below, extremal epimorphisms are closed related to strong epimorphisms: every strong epimorphism is extremal, and the converse holds when pullbacks exist.
 nlab_link: https://ncatlab.org/nlab/show/extremal+epimorphism
 invariant_under_equivalences: true
 dual: extremal monomorphism
 related:
-  - strong epimorphism
   - epimorphism
+  - strong epimorphism
+  - regular epimorphism
 
 tags:
   - types of epimorphisms

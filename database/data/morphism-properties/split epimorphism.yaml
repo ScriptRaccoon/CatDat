@@ -1,11 +1,12 @@
 id: split epimorphism
 relation: is a
-description: 'A morphism $f : A \to B$ is a <i>split epimorphism</i> if there is a morphism $g : B \to A$ with $f \circ g = \id_B$.'
+description: 'A morphism $e : A \to B$ is a <i>split epimorphism</i> if there is a morphism $m : B \to A$ with $e \circ m = \id_B$.'
 nlab_link: https://ncatlab.org/nlab/show/split+epimorphism
 invariant_under_equivalences: true
 dual: split monomorphism
 related:
   - epimorphism
+  - isomorphism
 
 tags:
   - types of epimorphisms

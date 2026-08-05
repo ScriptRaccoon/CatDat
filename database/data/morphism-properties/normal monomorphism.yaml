@@ -1,6 +1,6 @@
 id: normal monomorphism
 relation: is a
-description: 'A morphism $f : A \to B$ in a category with <a href="/category-property/zero_morphisms">zero morphisms</a> is a <i>normal monomorphism</i> if it is the kernel of a morphism $g : B \to C$, i.e. the equalizer of $g$ and the zero morphism $0 : B \to C$.'
+description: 'A morphism $m : A \to B$ in a category with <a href="/category-property/zero_morphisms">zero morphisms</a> is a <i>normal monomorphism</i> if it is the kernel of a morphism $f : B \to C$, i.e. the equalizer of $f$ and the zero morphism $0_{B,C} : B \to C$.'
 nlab_link: https://ncatlab.org/nlab/show/normal+monomorphism
 invariant_under_equivalences: true
 dual: normal epimorphism

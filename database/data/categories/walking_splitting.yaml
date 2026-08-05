@@ -69,4 +69,4 @@ special_morphisms:
     proof: The morphism $i$ is even a split monomorphism. The morphism $p$ is not a monomorphism since $p \circ \id_1 = p \circ ip$. The morphism $ip$ is not a monomorphism since it would imply that $p$ is a monomorphism.
   epimorphisms:
     description: the identities and $p$
-    proof: The morphism $p$ is even a split monomorphism. The morphism $i$ is not an epimorphism since $\id_1 \circ i = ip \circ i$. The morphism $ip$ is not a epimorphism since it would imply that $i$ is an epimorphism.
+    proof: The morphism $p$ is even a split monomorphism. The morphism $i$ is not an epimorphism since $\id_1 \circ i = ip \circ i$. The morphism $ip$ is not an epimorphism since it would imply that $i$ is an epimorphism.
