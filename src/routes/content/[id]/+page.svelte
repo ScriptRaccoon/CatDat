@@ -96,5 +96,16 @@
 		:global(p:has(span.qed:only-child)) {
 			height: 1lh;
 		}
+
+		:global(pre) {
+			padding: 1rem;
+			border-radius: 0.75rem;
+			font-size: 0.875rem;
+			background-color: var(--secondary-bg-color);
+		}
+
+		:global(pre code) {
+			white-space: pre-wrap;
+		}
 	}
 </style>

@@ -9,7 +9,7 @@ description: >-
 
   If the category has equalizers, the orthogonality condition already implies that $e$ is an epimorphism, but in general, we need to demand this.
 
-  By the implications below, strong epimorphisms are closed related to extremal epimorphisms: every strong epimorphism is extremal, and the converse holds when pullbacks exist.
+  By the implications below, strong epimorphisms are closely related to extremal epimorphisms: every strong epimorphism is extremal, and the converse holds when pullbacks exist. See also <a href="/content/relationships-epis-monos">this overview</a>.
 nlab_link: https://ncatlab.org/nlab/show/strong+epimorphism
 invariant_under_equivalences: true
 dual: strong monomorphism

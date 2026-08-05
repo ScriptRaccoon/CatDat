@@ -9,7 +9,7 @@ description: >-
 
   If the category has coequalizers, the orthogonality condition already implies that $m$ is a monomorphism, but in general, we need to demand this.
 
-  By the implications below, strong monomorphisms are closed related to extremal monomorphisms: every strong monomorphism is extremal, and the converse holds when pushouts exist.
+  By the implications below, strong monomorphisms are closely related to extremal monomorphisms: every strong monomorphism is extremal, and the converse holds when pushouts exist. See also <a href="/content/relationships-epis-monos">this overview</a>.
 nlab_link: https://ncatlab.org/nlab/show/strong+monomorphism
 invariant_under_equivalences: true
 dual: strong epimorphism
