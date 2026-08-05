@@ -47,6 +47,12 @@
 				each morphism whenever applicable. Moreover, implications are
 				automatically dualized when the corresponding dual properties exist.
 			</p>
+
+			<p class="hint">
+				See <a href="/content/relationships-epis-monos">this page</a> for a graphical
+				overview of the relationships between the various types of epimorphisms and
+				monomorphisms.
+			</p>
 		{/if}
 
 		<p class="hint">
