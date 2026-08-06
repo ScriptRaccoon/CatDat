@@ -58,9 +58,13 @@
 		line-height: 1.6;
 
 		:global(img) {
-			width: min(100%, 30rem);
+			border-radius: 0.5rem;
+			border: 1px solid var(--secondary-outline-color);
+		}
+
+		:global(img.small) {
 			margin-inline: auto;
-			border-radius: 1rem;
+			width: min(100%, 30rem);
 		}
 
 		:global(svg.diagram) {

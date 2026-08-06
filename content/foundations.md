@@ -25,7 +25,7 @@ For example, there is a collection $[\mathrm{Set},\mathrm{Set}]$ that consists o
 
 Just imagine three copies of ZFC embedded into each other, each representing a "level of size". Grothendieck universes are merely an implementation detail, which we can _and will_ drop from now on. Sets are on level 1, collections on level 2, and hypercollections on level 3. Concrete mathematical objects such as numbers or functions can be thought of as living on level 0 (even though they are usually modeled as sets in ZFC).
 
-![visualization of three levels of size](/img/three-levels-of-size.webp)
+<img class="small" alt="visualization of three levels of size" src="/img/three-levels-of-size.webp" />
 
 The levels are not defined by cardinality alone. For example, $\{\mathrm{Set}\}$ is a collection with just one element, but it is not a set (since otherwise $\mathrm{Set}$ would be a set). In particular, not every finite collection is a set. However, every finite collection is isomorphic to a set.
 
