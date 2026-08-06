@@ -103,6 +103,8 @@ When contributing new data (categories, functors, properties, implications, etc.
 
 - **Avoid redundant assignments**: Only assign properties (satisfied or not) to a category or any other categorical structure if they cannot be deduced from other assignments. For example, if a category is complete by a direct proof, record that it is complete, but do not also record that it has a terminal object; the application infers this automatically. Redundant assignments can be identified using the redundancy script described below.
 
+- **References and Labels**: If a proof refers to another proof, use references and labels to make this connection explicit. See [this PR](https://github.com/ScriptRaccoon/CatDat/pull/319) for details.
+
 - **No dual categories**: Instead of adding the dual of a category already in the database, consider adding properties to the original category (use the corresponding dual properties).
 
 - **No equivalent categories**: Do not add categories that are equivalent or even isomorphic to categories already in the database. If the equivalence is non-trivial, mention it in the description of the original category. Some exceptions are allowed, since certain properties (such as being skeletal) are not invariant under equivalence.
