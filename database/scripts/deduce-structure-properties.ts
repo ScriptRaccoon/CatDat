@@ -20,7 +20,7 @@ import {
 	type StructureMeta
 } from './utils/structures'
 import { get_normalized_implications, NormalizedImplication } from '$shared/implications'
-import { devlog } from '$shared/utils'
+import { devlog, remove_underscores } from '$shared/utils'
 
 /**
  * Deduce satisfied properties for a given structure from given ones
@@ -296,7 +296,7 @@ function inherit_properties_from_parents(db: Database, type: StructureType) {
  * by using the stored implications.
  */
 export function deduce_properties_for_structures(type: StructureType) {
-	console.info(`\n--- Deduce ${type} properties ---`)
+	console.info(`\n--- Deduce ${remove_underscores(type)} properties ---`)
 
 	const db = get_client({ readonly: false })
 

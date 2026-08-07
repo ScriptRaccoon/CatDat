@@ -3,6 +3,7 @@
 	import Chip from './Chip.svelte'
 	import { get_comparison_score } from '$lib/client/utils'
 	import type { Snippet } from 'svelte'
+	import { remove_underscores } from '$shared/utils'
 
 	type Props = {
 		allowed_items: readonly string[]
@@ -130,7 +131,7 @@
 	<form onsubmit={handle_submit}>
 		<div class="input-wrapper">
 			<input
-				aria-label={item_label}
+				aria-label={remove_underscores(item_label)}
 				name={item_label}
 				aria-invalid={item.trim().length > 0 && !is_valid(item)}
 				type="text"

@@ -11,7 +11,7 @@ import forget_vector_expected from './expected-data/forget_vector.json'
 import decided_categories from './expected-data/decided-categories.json'
 import decided_functors from './expected-data/decided-functors.json'
 import decided_morphisms from './expected-data/decided-morphisms.json'
-import { capitalize, devlog } from '$shared/utils'
+import { capitalize, devlog, remove_underscores } from '$shared/utils'
 import { get_client } from '$shared/db'
 import { STRUCTURE_TYPES, type StructureType, PLURALS } from '$shared/config'
 import fs from 'node:fs'
@@ -88,7 +88,9 @@ function test_mutual_structure_duals(type: StructureType) {
 	for (const id in dict) {
 		const dual = dict[id]
 		if (dual && dict[dual] !== id) {
-			throw new Error(`❌ Found non-mutual ${type} duality: ${id}, ${dual}`)
+			throw new Error(
+				`❌ Found non-mutual ${remove_underscores(type)} duality: ${id}, ${dual}`
+			)
 		}
 	}
 
@@ -110,11 +112,13 @@ function test_positivity(structure_id: string, type: StructureType) {
 
 	if (unsatisfied_props.length > 0) {
 		throw new Error(
-			`❌ The ${type} ${structure_id} has ${unsatisfied_props.length} unsatisfied properties, but it should have 0.`
+			`❌ The ${remove_underscores(type)} ${structure_id} has ${unsatisfied_props.length} unsatisfied properties, but it should have 0.`
 		)
 	}
 
-	devlog(`✅ The ${type} ${structure_id} has no unsatisfied properties`)
+	devlog(
+		`✅ The ${remove_underscores(type)} ${structure_id} has no unsatisfied properties`
+	)
 }
 
 /**
@@ -142,7 +146,7 @@ function test_mutual_property_duals(type: StructureType) {
 		}
 	}
 
-	devlog(`✅ ${capitalize(type)} properties are mutually dual`)
+	devlog(`✅ ${capitalize(remove_underscores(type))} properties are mutually dual`)
 }
 
 /**
@@ -165,7 +169,7 @@ function test_decided_structures(structure_ids: string[], type: StructureType) {
 
 		if (unknown_properties.length > 0) {
 			throw new Error(
-				`❌ Found unknown properties of ${structure_id}:\n${unknown_properties.join(', ')}.\nEvery property needs to be decided for this ${type}.`
+				`❌ Found unknown properties of ${structure_id}:\n${unknown_properties.join(', ')}.\nEvery property needs to be decided for this ${remove_underscores(type)}.`
 			)
 		}
 

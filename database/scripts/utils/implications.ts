@@ -2,6 +2,7 @@ import type { PropertyMeta } from './properties'
 import { type StructureType } from '$shared/config'
 import { get_property_label } from '$shared/property.utils'
 import { type NormalizedImplication } from '$shared/implications'
+import { remove_underscores } from '$shared/utils'
 
 function get_assumption_string(
 	implication: NormalizedImplication,
@@ -18,14 +19,14 @@ function get_assumption_string(
 						`${properties_dict[assumption][conditional ? 'conditional_relation' : 'relation']} ${get_property_label(assumption)}`
 				)
 				.join(' and ')
-		: `is a ${type}`
+		: `is a ${remove_underscores(type)}`
 
 	if (!implication.mapped_assumptions) return own
 
 	const mapped = Object.entries(implication.mapped_assumptions)
 		.map(
 			([map, props]) =>
-				`and the ${map} has the required properties (${Array.from(props!).join(', ')})`
+				`and the ${remove_underscores(map)} has the required properties (${Array.from(props!).join(', ')})`
 		)
 		.join(', ')
 

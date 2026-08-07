@@ -2,7 +2,7 @@
 	import StructureList from '$components/StructureList.svelte'
 	import MetaData from '$components/MetaData.svelte'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
-	import { pluralize } from '$shared/utils'
+	import { pluralize, remove_underscores } from '$shared/utils'
 	import { get_property_url } from '$shared/property.utils'
 	import type {
 		ImplicationDisplay,
@@ -35,11 +35,11 @@
 <p>
 	<strong>Claim:</strong>
 	{#if has_additional_assumptions}
-		Given a {type}
+		Given a {remove_underscores(type)}
 		{#each Object.entries(implication.mapped_assumptions) as [map, set], ind}
 			{#if set}
 				whose
-				{map}
+				{remove_underscores(map)}
 				{#each set as property, index}
 					{property_relation_dict[mapped_types[map]][property]}
 					<a href={get_property_url(property, mapped_types[map])}>{property}</a
@@ -57,9 +57,9 @@
 			if it
 		{/if}
 	{:else if implication.is_equivalence}
-		A {type}
+		A {remove_underscores(type)}
 	{:else}
-		If a {type}
+		If a {remove_underscores(type)}
 	{/if}
 	{#each implication.assumptions as property, index}
 		{property_relation_dict[type][property]}
@@ -91,7 +91,7 @@
 	<details>
 		<summary class="hint">
 			{pluralize(structures.length, {
-				one: `Show {count} ${type} using this implication`,
+				one: `Show {count} ${remove_underscores(type)} using this implication`,
 				other: `Show {count} ${PLURALS[type]} using this implication`
 			})}
 		</summary>

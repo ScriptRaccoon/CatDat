@@ -4,7 +4,7 @@
 	import ImplicationList from '$components/ImplicationList.svelte'
 	import MetaData from '$components/MetaData.svelte'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
-	import { pluralize } from '$shared/utils'
+	import { pluralize, remove_underscores } from '$shared/utils'
 	import { get_property_url } from '$shared/property.utils'
 	import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
 	import Fa from 'svelte-fa'
@@ -110,7 +110,7 @@
 
 <p class="hint">
 	{pluralize(examples.length, {
-		one: `There is {count} ${type} with this property.`,
+		one: `There is {count} ${remove_underscores(type)} with this property.`,
 		other: `There are {count} ${PLURALS[type]} with this property.`
 	})}
 </p>
@@ -121,7 +121,7 @@
 
 <p class="hint">
 	{pluralize(counterexamples.length, {
-		one: `There is {count} ${type} without this property.`,
+		one: `There is {count} ${remove_underscores(type)} without this property.`,
 		other: `There are {count} ${PLURALS[type]} without this property.`
 	})}
 </p>
@@ -133,7 +133,7 @@
 
 	<p class="hint">
 		{pluralize(undecidable_structures.length, {
-			one: `There is {count} ${type} for which it cannot be decided if this property is satisfied or not.`,
+			one: `There is {count} ${remove_underscores(type)} for which it cannot be decided if this property is satisfied or not.`,
 			other: `There are {count} ${PLURALS[type]} for which it cannot be decided if this property is satisfied or not.`
 		})}
 	</p>
@@ -145,7 +145,7 @@
 
 <p class="hint">
 	{pluralize(unknown_structures.length, {
-		one: `There is {count} ${type} for which the database has no information on whether it satisfies this property.`,
+		one: `There is {count} ${remove_underscores(type)} for which the database has no information on whether it satisfies this property.`,
 		other: `There are {count} ${PLURALS[type]} for which the database has no information on whether they satisfy this property.`
 	})}
 	{#if unknown_structures.length > 0}

@@ -4,7 +4,7 @@
 	import { encode_property_ID, get_property_url } from '$shared/property.utils'
 	import MetaData from '$components/MetaData.svelte'
 	import { SEARCH_SEPARATOR } from '$lib/commons/search.config'
-	import { pluralize } from '$shared/utils'
+	import { pluralize, remove_underscores } from '$shared/utils'
 	import Fa from 'svelte-fa'
 	import { faWarning } from '@fortawesome/free-solid-svg-icons'
 	import type { SearchResults, StructureType } from '$lib/commons/types'
@@ -88,7 +88,7 @@
 {#if !contradiction}
 	<p class="hint">
 		{pluralize(found_structures.length, {
-			one: `Found {count} ${type}`,
+			one: `Found {count} ${remove_underscores(type)}`,
 			other:
 				found_structures.length === 0
 					? `Found {count} ${PLURALS[type]}. Try to dualize the search.`

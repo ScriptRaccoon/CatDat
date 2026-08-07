@@ -5,7 +5,7 @@
 	import { get_property_url } from '$shared/property.utils'
 	import { PLURALS } from '$shared/config'
 	import { STRUCTURE_TYPES } from '$shared/config'
-	import { capitalize, pluralize } from '$shared/utils'
+	import { capitalize, pluralize, remove_underscores } from '$shared/utils'
 
 	const { data } = $props()
 </script>
@@ -60,7 +60,7 @@
 
 	{#if pairs.length > 0}
 		<section>
-			<h3>Indistinguishable {type} pairs</h3>
+			<h3>Indistinguishable {remove_underscores(type)} pairs</h3>
 
 			<p class="hint">
 				{pluralize(pairs.length, {
@@ -93,13 +93,14 @@
 	{@const combinations = data.missing_combinations[type]}
 
 	<section>
-		<h3>Missing {type} combinations</h3>
+		<h3>Missing {remove_underscores(type)} combinations</h3>
 
 		{#if combinations.length}
 			<p class="hint">
-				Among the consistent {type} property combinations of the form p &and; &not;q,
-				the following are not yet witnessed by a {type} in the database or its dual.
-				If some of these combinations <i>are</i>
+				Among the consistent {remove_underscores(type)} property combinations of the
+				form p &and; &not;q, the following are not yet witnessed by a {remove_underscores(
+					type
+				)} in the database or its dual. If some of these combinations <i>are</i>
 				inconsistent, this indicates that some
 				<a href="/{type}-implications">implication</a> is missing.
 			</p>
@@ -121,8 +122,9 @@
 			</details>
 		{:else}
 			<p class="hint">
-				Every consistent {type} property combination of the form p &and; &not;q is witnessed
-				by a {type} in the database or its dual. 🎉
+				Every consistent {remove_underscores(type)} property combination of the form
+				p &and; &not;q is witnessed by a {remove_underscores(type)} in the database
+				or its dual. 🎉
 			</p>
 
 			<p>&mdash;</p>

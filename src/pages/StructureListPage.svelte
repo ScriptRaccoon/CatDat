@@ -2,7 +2,7 @@
 	import MetaData from '$components/MetaData.svelte'
 	import SearchFilter from '$components/SearchFilter.svelte'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
-	import { normalize_text, pluralize } from '$shared/utils'
+	import { normalize_text, pluralize, remove_underscores } from '$shared/utils'
 	import StructureList from '$components/StructureList.svelte'
 	import type { StructureShort, StructureType } from '$lib/commons/types'
 	import { PLURALS } from '$shared/config'
@@ -38,8 +38,9 @@
 		<!-- TODO: remove this later -->
 		<p>
 			<Fa icon={faInfoCircle} />
-			The {type} application is still in its early stages. More {PLURALS[type]} will be
-			added soon.
+			The {remove_underscores(type)} application is still in its early stages. More {PLURALS[
+				type
+			]} will be added soon.
 		</p>
 	{/if}
 
@@ -47,7 +48,7 @@
 
 	<p class="hint">
 		{pluralize(searched_structures.length, {
-			one: `Found {count} ${type}`,
+			one: `Found {count} ${remove_underscores(type)}`,
 			other: `Found {count} ${PLURALS[type]}`
 		})}
 	</p>
