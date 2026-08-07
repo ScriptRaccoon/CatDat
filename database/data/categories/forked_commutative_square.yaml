@@ -53,6 +53,73 @@ satisfied_properties:
     references:
       - forked_commutative_square_no_equalizers
 
+  - property: cosifted limits
+    proof: >-
+      Let $F : \I \to \ForkSquare$ be a diagram, where $\I$ is a small cosifted category. We need to show that the functor
+      $$\textstyle L : \ForkSquare^{\op} \to \Set, \, X \mapsto \lim_{i \in \I} \Hom(X,F(i))$$
+      is representable.
+
+
+      Since $A$ is initial and $\I$ is connected, we have $L(A)=1$ (the singleton set).
+
+
+      <strong>Case 1:</strong> $F$ hits $A$. Then $L(X)= \varnothing$ for every $X \neq A$, since it maps to $\Hom(X,A) = \varnothing$. Moreover, we have $L(A)=1$. Therefore, $L \cong \Hom(-,A)$.
+
+
+      <strong>Case 2:</strong> $F$ hits $B$, but does not hit $A$. We claim that $F$ then does not hit $C$. In fact, if $F(i)=B$ and $F(j)=C$, since $\I$ is cosifted, there is a cospan
+      $$i \leftarrow k \rightarrow j,$$
+      which induces a cospan
+      $$B \leftarrow F(k) \rightarrow C.$$
+      But then $F(k)=A$ is forced, contradicting our assumption that $F$ does not hit $A$. Therefore, $F$ takes values in $\{B,D,E\}$. Since $B$ has a unique morphism to each of these objects and $\I$ is connected, we see that $L(B)=1$. Moreover, we have $L(C)=\varnothing$ since it maps to $\Hom(C,B)=\varnothing$, and for the same reason we have $L(D)=\varnothing$ and $L(E)=\varnothing$. From these values, it is clear that $L \cong \Hom(-,B)$. (There is a bijection for each object, and naturality is automatic since we are only dealing with sets with at most one element.)
+
+
+      <strong>Case 3:</strong> $F$ hits $C$, but does not hit $A$. This is symmetric to Case 2 and leads to $L \cong \Hom(-,C)$. In fact, there is an automorphism of $\ForkSquare$ that swaps $B$ and $C$.
+
+
+      <strong>Case 4:</strong> $F$ only hits $E$. Then $F$ is the constant functor with value $E$, since $\End(E)=\{\id_E\}$. Since $\I$ is connected, it follows that $L \cong \Hom(-,E)$.
+
+
+      <strong>Case 5:</strong> $F$ takes values in $\{D,E\}$ and hits $D$. In this case, we will show that $L \cong \Hom(-,D)$. Choose $i_0 \in \I$ with
+      $$F(i_0)=D.$$
+      Since there is no morphism $E \to D = F(i_0)$, we have $L(E) = \varnothing$. We already know $L(A)=1$. Since $B$ has a unique morphism to each value of $F$ and $\I$ is connected, we see that $L(B)=1$. For the same reason, we have $L(C)=1$. Therefore, it remains to show that $L(D)=1$.
+
+
+      We first show that $L(D)$ has at most one element. Assume that $x,y \in L(D)$. For every $i \in \I$ we have morphisms $x_i,y_i : D \to F(i)$. Since $D$ has only one endomorphism, namely the identity, we must have $x_{i_0} = \id_D = y_{i_0}$. Since $\I$ is connected, it therefore remains to show that
+      $$x_i = y_i \iff x_j = y_j$$
+      for morphisms $\alpha : i \to j$. Because of the relations
+      $$x_j = F(\alpha) \circ x_i, \quad y_j = F(\alpha) \circ y_i,$$
+      the direction $\implies$ is clear. Now assume that $x_j = y_j$ holds. If $F(\alpha)$ is the identity, we have $x_i = y_i$. Otherwise, since $F$ takes only values in $\{D,E\}$, we must have $F(\alpha) \in \{u,v\}$ and hence $F(i)=D$ and $F(j)=E$. But then both $x_i$ and $y_i$ are endomorphisms of $D$ and therefore both equal to $\id_D$.
+
+
+      Finally, we will construct an element of $L(D)$ (and this is where we will use the full strength of the assumption that $\I$ is cosifted). For any $i \in \I$, choose a cospan
+      $$\begin{CD} i_0 @<{\beta}<< k @>{\alpha}>> i.\end{CD}$$
+      It induces a cospan
+      $$\begin{CD} D @<{F(\beta)}<< F(k) @>{F(\alpha)}>> F(i).\end{CD}$$
+      Since $F(k)$ is either $D$ or $E$, but has a morphism to $D$, it must be $D$, and $F(\beta)=\id_D$ is forced. Therefore, we may define
+      $$x_i := F(\alpha) : D \to F(i).$$
+      We need to show that this morphism does not depend on the choice of the cospan. Since $\I$ is cosifted, the category of cospans over $(i_0,i)$ is connected. Thus, for another cospan
+      $$\begin{CD} i_0 @<{\beta'}<< k' @>{\alpha'}>> i.\end{CD}$$
+      that induces another morphism $F(\alpha') : D \to F(i)$, we may assume that it receives a morphism from the given one:
+      $$\begin{CD} i_0 @<{\beta}<< k @>{\alpha}>> i \\
+      @V{\id}VV @VV{\gamma}V @VV{\id}V \\
+      i_0 @<<{\beta'}< k' @>>{\alpha'}> i
+      \end{CD}$$
+      The induced diagram in $\ForkSquare$ is very simple, since $D$ has only one endomorphism, the identity:
+      $$\begin{CD} D @<{\id}<< D @>{F(\alpha)}>> F(i) \\
+      @V{\id}VV @VV{\id}V @VV{\id}V \\
+      D @<<{\id}< D @>>{F(\alpha')}> F(i)
+      \end{CD}$$
+      Therefore, $F(\alpha) = F(\alpha')$. This proves that $x_i : D \to F(i)$ is well-defined.
+
+
+      The morphisms $x_i : D \to F(i)$ are compatible with respect to morphisms $\gamma : i \to j$: If we use the cospan
+      $$\begin{CD} i_0 @<{\beta}<< k @>{\alpha}>> i\end{CD}$$
+      to compute $x_i$, we use the cospan
+      $$\begin{CD} i_0 @<{\beta}<< k @>{\alpha}>> i @>{\gamma}>> j\end{CD}$$
+      to compute $x_j$. Thus,
+      $$x_j = F(\gamma \circ \alpha) = F(\gamma) \circ F(\alpha) = F(\gamma) \circ x_i.$$
+      Therefore, $x = (x_i)_{i \in \I}$ is a well-defined element of $L(D)$, and the proof is finished.
+
 unsatisfied_properties:
   - property: semi-strongly connected
     proof: There is no morphism $B \to C$ and no morphism $C \to B$.
