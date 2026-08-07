@@ -45,6 +45,7 @@
 \Hom: \operatorname{Hom}
 \HomInternal: \underline{\operatorname{Hom}}
 \End: \operatorname{End}
+\Bilin: \operatorname{Bilin}
 \Ob: \operatorname{Ob}
 \id: \operatorname{id}
 \card: \operatorname{card}

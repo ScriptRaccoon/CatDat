@@ -1,0 +1,29 @@
+id: Top_cartesian
+name: cartesian symmetric monoidal category of topological spaces
+notation: $(\Top,\times,1)$
+underlying_category: Top
+description: Every category with finite products (also called a cartesian category) can be endowed with a symmetric monoidal structure, where $1$ is the terminal object and $\otimes$ is the product $\times$. In this case, we apply this to the category $\Top$.
+nlab_link: https://ncatlab.org/nlab/show/cartesian+monoidal+category
+
+tags:
+  - topology
+
+related:
+  - Set_cartesian
+
+satisfied_properties:
+  - property: cartesian
+    proof: This holds by definition.
+
+  - property: well-pointed
+    proof: We know that the one-point space is a generator of <a href="/category/Top">$\Top$</a>.
+    references:
+      - top_generator
+
+unsatisfied_properties:
+  - property: strict
+    # TODO: automate this with category_conclusions
+    proof: Whether the underlying monoidal category is strict depends on the specific construction of sets and their products, but the symmetries cannot be identities, since otherwise $\Top$ would be thin (see <a href="/category-implication/core-thin_products_thin">this proof</a>).
+
+  - property: finitely cocomplete
+    proof: 'The functor $\IQ \times - : \Top \to \Top$ does not preserve coequalizers, see <a href="/functor/rational_product">here</a> or <a href="https://math.stackexchange.com/questions/2969372" target="_blank">MSE/2969372</a>.'

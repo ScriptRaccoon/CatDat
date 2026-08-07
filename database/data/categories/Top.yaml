@@ -43,6 +43,7 @@ satisfied_properties:
 
   - property: generator
     proof: The one-point space is a generator since it represents the forgetful functor $\Top \to \Set$.
+    label: top_generator
 
   - property: extremal cogenerator
     proof: >-

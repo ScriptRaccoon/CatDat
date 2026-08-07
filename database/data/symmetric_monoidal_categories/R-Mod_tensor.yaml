@@ -1,0 +1,33 @@
+id: R-Mod_tensor
+name: symmetric monoidal category of modules over a commutative ring
+notation: $(R{-}\Mod,\otimes,R)$
+underlying_category: R-Mod
+description: When $R$ is a commutative ring, we equip the category of left $R$-modules $R{-}\Mod$ with the usual symmetric monoidal structure, where $\otimes$ is the <a href="https://en.wikipedia.org/wiki/Tensor_product_of_modules" target="_blank">tensor product of modules</a> and the monoidal unit is $R$. The associator is defined by $(a \otimes b) \otimes c \mapsto a \otimes (b \otimes c)$, the left unitor maps $1 \otimes a \mapsto a$, the right unitor maps $a \otimes 1 \mapsto a$, and the symmetry maps $a \otimes b \mapsto b \otimes a$.
+nlab_link: https://ncatlab.org/nlab/show/tensor+product+of+modules
+
+tags:
+  - algebra
+
+related:
+  - Ab_tensor
+
+satisfied_properties:
+  - property: closed
+    proof: >-
+      This is standard. If $A$ and $B$ are $R$-modules, let $[A,B]$ be the $R$-module whose underlying set is $\Hom(A,B)$, with pointwise operations (usually, this module is also denoted $\Hom(A,B)$, which can be confusing). Then there is a natural bijection
+      $$\Hom(C,[A,B]) \cong \Bilin(C,A;B) \cong \Hom(C \otimes A, B).$$
+
+  - property: well-pointed
+    proof: In fact, $R$ is a generator of $R{-}\Mod$, since it represents the forgetful functor $R{-}\Mod \to \Set$.
+
+unsatisfied_properties:
+  - property: infinitary codistributive
+    proof: The endofunctor $R^{\oplus \IN} \otimes -$ identifies with the copower functor $M \mapsto M^{\oplus \IN}$. It does not preserve countable products. Specifically, the canonical map $(R^{\IN})^{\oplus \IN} \to (R^{\oplus \IN})^{\IN}$ is injective, but not surjective.
+
+  - property: strict
+    proof: 'Whether the underlying monoidal category is strict depends on the specific construction of modules and their tensor products, but the symmetries cannot be identities. In fact, if $A$ is a finitely generated free $R$-module, then the symmetry $\sigma_{A,A} : A \otimes A \to A \otimes A$ is the identity if and only if $A$ has rank $\leq 1$.'
+    label: R-Mod_tensor_not_strict
+
+undecidable_properties:
+  - property: finitely complete
+    proof: This property holds if and only if every $R$-module is flat, i.e. that $R$ is <a href="https://en.wikipedia.org/wiki/Von_Neumann_regular_ring" target="_blank">absolutely flat</a>.

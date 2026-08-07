@@ -1,0 +1,33 @@
+id: FinVect_tensor
+name: symmetric monoidal category of finite-dimensional vector spaces
+notation: $(\FinVect_K,\otimes,K)$
+underlying_category: FinVect
+description: This is the full symmetric monoidal subcategory of $(\Vect_K,\otimes,K)$ (see <a href="/symmetric_monoidal_category/R-Mod_tensor_af">here</a>) spanned by the finite-dimensional vector spaces.
+nlab_link: https://ncatlab.org/nlab/show/FinDimVect
+
+tags:
+  - algebra
+
+related:
+  - Ab_fg_tensor
+  - R-Mod_tensor_af
+
+satisfied_properties:
+  - property: closed
+    proof: This is because $(\Vect_K,\otimes,K)$ is closed and for finite-dimensional vector spaces $V,W$ also the vector space $[V,W]$ of linear maps is finite-dimensional (by elementary linear algebra).
+
+  - property: well-pointed
+    proof: In fact, $K$ is a generator of $\FinVect_K$, even in $\Vect_K$.
+    references:
+      - vect_extremal_generator
+
+  - property: self-dual
+    proof: From linear algebra we know that the dual vector space functor $V \mapsto V^*$ implements an equivalence $\FinVect \simeq \FinVect^{\op}$ with natural isomorphisms $K \cong K^*$ and $(V \otimes W)^* \cong V^* \otimes W^*$.
+
+unsatisfied_properties:
+  - property: strict
+    proof: 'Whether the underlying monoidal category is strict depends on the specific construction of vector spaces and their tensor products, but the symmetries cannot be identities. In fact, if $V$ is a finite-dimensional vector space, then the symmetry $\sigma_{V,V} : V \otimes V \to V \otimes V$ is the identity if and only if $V$ has dimension $\leq 1$.'
+
+  - property: infinitary distributive
+    # TODO: automate this
+    proof: This is because its underlying category $\FinVect$ does not have (infinite) coproducts.

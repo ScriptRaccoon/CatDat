@@ -1,0 +1,19 @@
+id: R-Mod_tensor_af
+name: symmetric monoidal category of modules over an absolutely flat commutative ring
+notation: $(R{-}\Mod,\otimes,R)$
+underlying_category: R-Mod
+description: This is the special case of <a href="/symmetric_monoidal_category/R-Mod_tensor">this entry</a> where we assume that $R$ is <a href="https://en.wikipedia.org/wiki/Von_Neumann_regular_ring" target="_blank">absolutely flat</a> and non-zero. For example, every field has this property, so that this entry also includes the symmetric monoidal category of vector spaces.
+nlab_link: https://ncatlab.org/nlab/show/tensor+product+of+modules
+parent: R-Mod_tensor
+
+tags:
+  - algebra
+
+related:
+  - FinVect_tensor
+
+satisfied_properties:
+  - property: finitely complete
+    proof: The underlying category is of course finitely complete. Apart from that, this property is exactly the assumption that $R$ is absolutely flat, meaning that every $R$-module $M$ is flat, so that $M \otimes -$ is left exact.
+
+unsatisfied_properties: []

@@ -1,0 +1,28 @@
+id: Set_cocartesian
+name: cocartesian symmetric monoidal category of sets
+notation: $(\Set,\sqcup,0)$
+underlying_category: Set
+description: Every category with finite coproducts (also called a cocartesian category) can be endowed with a symmetric monoidal structure, where $1$ is the initial object and $\otimes$ is the coproduct $\sqcup$. In this case, we apply this to the category $\Set$.
+nlab_link: https://ncatlab.org/nlab/show/cocartesian+monoidal+category
+
+tags:
+  - set theory
+
+related:
+  - Set_cartesian
+
+satisfied_properties:
+  - property: cocartesian
+    proof: This holds by definition.
+
+unsatisfied_properties:
+  - property: strict
+    # TODO: automate this with category_conclusions
+    proof: Whether the underlying monoidal category is strict depends on the specific construction of sets and their coproducts, but the symmetries cannot be identities, since otherwise $\Set$ would be thin (see <a href="/category-implication/core-thin_products_thin">this proof</a>, dualized).
+
+  - property: codistributive
+    proof: If $A$ is a non-empty set, the functor $A \sqcup - $ does not preserve the terminal object.
+
+  - property: well-pointed
+    # TODO: automate this with category_conclusions
+    proof: The empty set is clearly not a generator of $\Set$ since otherwise it would be thin.

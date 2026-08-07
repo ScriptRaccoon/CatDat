@@ -1,0 +1,20 @@
+id: 1_tensor
+name: trivial symmetric monoidal category
+notation: $(1,\times,0)$
+underlying_category: '1'
+description: This is the terminal symmetric monoidal category. It is the <a href="/category/1">trivial category</a> $1$ equipped with its unique strict symmetric monoidal structure. The monoidal unit is the unique object $0$.
+nlab_link: null
+
+tags:
+  - category theory
+
+related: []
+
+satisfied_properties:
+  - property: trivial
+    proof: This holds by construction.
+
+  - property: strict
+    proof: This is obvious.
+
+unsatisfied_properties: []

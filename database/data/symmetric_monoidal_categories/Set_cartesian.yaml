@@ -1,0 +1,31 @@
+id: Set_cartesian
+name: cartesian symmetric monoidal category of sets
+notation: $(\Set,\times,1)$
+underlying_category: Set
+description: Every category with finite products (also called a cartesian category) can be endowed with a symmetric monoidal structure, where $1$ is the terminal object and $\otimes$ is the product $\times$. In this case, we apply this to the category $\Set$.
+nlab_link: https://ncatlab.org/nlab/show/cartesian+monoidal+category
+
+tags:
+  - set theory
+
+related:
+  - Top_cartesian
+  - Cat_cartesian
+
+satisfied_properties:
+  - property: cartesian
+    proof: This holds by definition.
+
+  - property: well-pointed
+    proof: We know that the singleton set is even an extremal generator of <a href="/category/Set">$\Set$</a>.
+    references:
+      - set_extremal_generator
+
+unsatisfied_properties:
+  - property: trivial
+    # TODO: automate this with category_conclusions
+    proof: This is because <a href="/category/Set">$\Set$</a> is not trivial.
+
+  - property: strict
+    # TODO: automate this with category_conclusions
+    proof: Whether the underlying monoidal category is strict depends on the specific construction of sets and their products (see also <a href="https://math.stackexchange.com/a/5144448" target="_blank">MSE/4468970</a>), but the symmetries cannot be identities, since otherwise $\Set$ would be thin (see <a href="/category-implication/core-thin_products_thin">this proof</a>).
