@@ -3,9 +3,11 @@ export type ConfigYaml = {
 	category_tags: string[]
 	functor_tags: string[]
 	morphism_tags: string[]
+	symmetric_monoidal_category_tags: string[]
 	category_property_tags: string[]
 	functor_property_tags: string[]
 	morphism_property_tags: string[]
+	symmetric_monoidal_category_property_tags: string[]
 	relations: {
 		relation: string
 		negation: string
@@ -76,6 +78,10 @@ export type FunctorYaml = StructureYaml & {
 
 export type MorphismYaml = StructureYaml & {
 	category: string
+}
+
+export type SymmetricMonoidalCategoryYaml = StructureYaml & {
+	underlying_category: string
 }
 
 export type PropertyYaml = {

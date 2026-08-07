@@ -59,6 +59,7 @@
 	{/snippet}
 
 	{#snippet footer()}
+		<!-- TODO: make this more systematic by looping over the structure_maps -->
 		{#if data.stored_functors.length}
 			<section>
 				<h3>Functors</h3>
@@ -88,6 +89,25 @@
 					in the {data.structure.name}.
 				</p>
 				<StructureList structures={data.stored_morphisms} type="morphism" />
+			</section>
+		{/if}
+
+		{#if data.stored_symmetric_monoidal_categories}
+			<section>
+				<h3>Symmetric monoidal categories</h3>
+
+				<p class="hint">
+					The database has stored
+					{pluralize(data.stored_symmetric_monoidal_categories.length, {
+						one: '{count} symmetric monoidal category',
+						other: '{count} symmetric monoidal categories'
+					})}
+					based on the {data.structure.name}.
+				</p>
+				<StructureList
+					structures={data.stored_symmetric_monoidal_categories}
+					type="symmetric_monoidal_category"
+				/>
 			</section>
 		{/if}
 	{/snippet}

@@ -39,6 +39,8 @@ export function fetch_category(id: string) {
 		)
 		.all(id)
 
+	// TODO: make this more systematic by looping over the structure_maps
+
 	const stored_functors = db
 		.prepare<[string, string], StructureShort>(
 			`SELECT f.id, s.name
@@ -59,13 +61,24 @@ export function fetch_category(id: string) {
 		)
 		.all(id)
 
+	const stored_symmetric_monoidal_categories = db
+		.prepare<[string], StructureShort>(
+			`SELECT c.id, s.name
+			FROM symmetric_monoidal_categories c
+			INNER JOIN structures s ON s.id = c.id
+			WHERE c.underlying_category = ?
+			ORDER BY lower(s.name)`
+		)
+		.all(id)
+
 	return {
 		type: 'category' as const,
 		...category,
 		special_objects,
 		special_morphisms,
 		stored_functors,
-		stored_morphisms
+		stored_morphisms,
+		stored_symmetric_monoidal_categories
 	}
 }
 

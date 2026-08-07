@@ -13,12 +13,12 @@ export type StructureMeta = {
 
 /**
  * Dictionary associating to every structure type the name of the table.
- * Currently, this is the same as the plural.
  */
 const TABLES: Record<StructureType, string> = {
 	category: 'categories',
 	functor: 'functors',
-	morphism: 'morphisms'
+	morphism: 'morphisms',
+	symmetric_monoidal_category: 'symmetric_monoidal_categories'
 }
 
 /**

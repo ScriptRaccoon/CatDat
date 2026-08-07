@@ -9,7 +9,9 @@
 			'/category-search/results?satisfied=finitely_complete~pointed&unsatisfied=complete',
 		functor: '/functor-search/results?satisfied=continuous&unsatisfied=cocontinuous',
 		morphism:
-			'/morphism-search/results?satisfied=monomorphism~epimorphism&unsatisfied=isomorphism'
+			'/morphism-search/results?satisfied=monomorphism~epimorphism&unsatisfied=isomorphism',
+		symmetric_monoidal_category:
+			'/symmetric_monoidal_category-search/results?satisfied=cocomplete&unsatisfied=cartesian'
 	}
 </script>
 
@@ -27,5 +29,9 @@
 		For example, you can
 		<a href={sample_links.morphism}>look</a>
 		for morphisms that are monomorphisms and epimorphisms, but no isomorphisms.
+	{:else if data.type === 'symmetric_monoidal_category'}
+		For example, you can
+		<a href={sample_links.symmetric_monoidal_category}>look</a>
+		for symmetric monoidal categories that are cocomplete, but not cartesian.
 	{/if}
 </SearchPage>

@@ -6,11 +6,13 @@ import { fetch_category } from '$lib/server/fetchers/category'
 import { fetch_functor } from '$lib/server/fetchers/functor'
 import { fetch_morphism } from '$lib/server/fetchers/morphism'
 import { add_math, strip_math } from '$shared/utils'
+import { fetch_symmetric_monoidal_category } from '$lib/server/fetchers/symmetric_monoidal_category'
 
 const special_fetchers = {
 	category: fetch_category,
 	functor: fetch_functor,
-	morphism: fetch_morphism
+	morphism: fetch_morphism,
+	symmetric_monoidal_category: fetch_symmetric_monoidal_category
 }
 
 export const load = (event) => {

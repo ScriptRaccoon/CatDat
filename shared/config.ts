@@ -1,4 +1,9 @@
-export const STRUCTURE_TYPES = ['category', 'functor', 'morphism'] as const
+export const STRUCTURE_TYPES = [
+	'category',
+	'functor',
+	'morphism',
+	'symmetric_monoidal_category'
+] as const
 
 export type StructureType = (typeof STRUCTURE_TYPES)[number]
 
@@ -11,5 +16,6 @@ export const STRUCTURE_TYPES_WITH_DUALS: StructureType[] = ['category']
 export const PLURALS: Record<StructureType, string> = {
 	category: 'categories',
 	functor: 'functors',
-	morphism: 'morphisms'
+	morphism: 'morphisms',
+	symmetric_monoidal_category: 'symmetric monoidal categories'
 }

@@ -5,7 +5,27 @@ CREATE TABLE structure_types (
 INSERT INTO structure_types (type) VALUES
     ('category'),
     ('functor'),
-    ('morphism');
+    ('morphism'),
+    ('symmetric_monoidal_category');
+
+
+CREATE TABLE structure_maps (
+    map TEXT NOT NULL,
+    type TEXT NOT NULL,
+    mapped_type TEXT NOT NULL,
+    PRIMARY KEY (map, type, mapped_type),
+    UNIQUE (map, type),
+    FOREIGN KEY (type) REFERENCES structure_types (type) ON DELETE CASCADE,
+    FOREIGN KEY (mapped_type) REFERENCES structure_types (type) ON DELETE CASCADE
+);
+
+INSERT INTO structure_maps
+    (map, type, mapped_type)
+VALUES
+    ('domain', 'functor', 'category'),
+    ('codomain', 'functor', 'category'),
+    ('category', 'morphism', 'category'),
+    ('underlying_category', 'symmetric_monoidal_category', 'category');
 
 CREATE TABLE structures (
     id TEXT PRIMARY KEY,
@@ -61,20 +81,3 @@ CREATE TABLE structure_tag_assignments (
     FOREIGN KEY (structure_id, type) REFERENCES structures (id, type) ON DELETE CASCADE,
     FOREIGN KEY (tag, type) REFERENCES structure_tags (tag, type) ON DELETE CASCADE
 );
-
-CREATE TABLE structure_maps (
-    map TEXT NOT NULL,
-    type TEXT NOT NULL,
-    mapped_type TEXT NOT NULL,
-    PRIMARY KEY (map, type, mapped_type),
-    UNIQUE (map, type),
-    FOREIGN KEY (type) REFERENCES structure_types (type) ON DELETE CASCADE,
-    FOREIGN KEY (mapped_type) REFERENCES structure_types (type) ON DELETE CASCADE
-);
-
-INSERT INTO structure_maps
-    (map, type, mapped_type)
-VALUES
-    ('domain', 'functor', 'category'),
-    ('codomain', 'functor', 'category'),
-    ('category', 'morphism', 'category');

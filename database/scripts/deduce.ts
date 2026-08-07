@@ -34,4 +34,9 @@ function deduce() {
 	create_dualized_implications('morphism')
 	deduce_properties_for_structures('morphism')
 	restrict_morphism_properties()
+
+	// --- symmetric monoidal categories
+	clear_deduced_implications('symmetric_monoidal_category')
+	create_dualized_implications('symmetric_monoidal_category')
+	deduce_properties_for_structures('symmetric_monoidal_category')
 }
