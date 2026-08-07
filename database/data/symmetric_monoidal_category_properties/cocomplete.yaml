@@ -1,0 +1,12 @@
+id: cocomplete
+relation: is
+description: 'A symmetric monoidal category is called <i>cocomplete</i> when its underlying category is cocomplete and, for every object $A$, the endofunctor $A \otimes -$ is cocontinuous. Of course, then the endofunctor $- \otimes A$ is also cocontinuous. There is no need for a more complicated term such as "symmetric monoidally cocomplete" if one is careful to distinguish between a symmetric monoidal category and its underlying category.'
+nlab_link: https://ncatlab.org/nlab/show/monoidally+cocomplete+category
+invariant_under_equivalences: true
+dual: complete
+related:
+  - finitely cocomplete
+  - infinitary distributive
+
+tags:
+  - tensor-colimit interaction

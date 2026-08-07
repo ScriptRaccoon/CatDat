@@ -1,0 +1,10 @@
+id: coclosed
+relation: is
+description: 'A symmetric monoidal category is called <i>coclosed</i> when, for every object $A$, the endofunctor $- \otimes A$ has a left adjoint. This property is not very common, but we have included it because of its dual property.'
+nlab_link: null
+invariant_under_equivalences: true
+dual: closed
+related: []
+
+tags:
+  - misc

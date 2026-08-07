@@ -1,0 +1,10 @@
+id: closed
+relation: is
+description: 'A symmetric monoidal category is called <i>closed</i> when, for every object $A$, the endofunctor $- \otimes A$ has a right adjoint $[A,-]$. Thus, we have natural bijections $\Hom(B \otimes A,C) \cong \Hom(B,[A,C])$.'
+nlab_link: https://ncatlab.org/nlab/show/closed+monoidal+category
+invariant_under_equivalences: true
+dual: coclosed
+related: []
+
+tags:
+  - misc

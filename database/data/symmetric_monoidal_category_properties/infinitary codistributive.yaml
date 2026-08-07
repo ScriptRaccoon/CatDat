@@ -1,0 +1,12 @@
+id: infinitary codistributive
+relation: is
+description: 'A symmetric monoidal category is called <i>infinitary codistributive</i> when its underlying category has products and, for every object $A$, the endofunctor $A \otimes -$ preserves products. There should be no confusion with the closely related notion of an <a href="/category-property/infinitary_codistributive">infinitary codistributive category</a> as long as we distinguish carefully between a symmetric monoidal category and its underlying category.'
+nlab_link: null
+invariant_under_equivalences: true
+dual: infinitary distributive
+related:
+  - codistributive
+  - complete
+
+tags:
+  - tensor-limit interaction

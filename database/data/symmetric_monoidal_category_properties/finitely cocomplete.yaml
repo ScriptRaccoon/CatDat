@@ -1,0 +1,11 @@
+id: finitely cocomplete
+relation: is
+description: 'A symmetric monoidal category is called <i>finitely cocomplete</i> when its underlying category is finitely cocomplete and, for every object $A$, the endofunctor $A \otimes -$ preserves finite colimits (that is, it is right exact). Of course, then the endofunctor $- \otimes A$ also preserves finite colimits. There is no need for a more complicated term such as "symmetric monoidally finitely cocomplete" if one is careful to distinguish between a symmetric monoidal category and its underlying category.'
+nlab_link: null
+invariant_under_equivalences: true
+dual: finitely complete
+related:
+  - cocomplete
+
+tags:
+  - tensor-colimit interaction
