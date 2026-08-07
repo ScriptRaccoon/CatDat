@@ -34,12 +34,12 @@
 <section>
 	<h2>List of {PLURALS[type]}</h2>
 
-	{#if type === 'morphism'}
+	{#if type === 'morphism' || type === 'symmetric_monoidal_category'}
 		<!-- TODO: remove this later -->
 		<p>
 			<Fa icon={faInfoCircle} />
-			The morphism application is still in its early stages. More morphisms will be added
-			soon.
+			The {type} application is still in its early stages. More {PLURALS[type]} will be
+			added soon.
 		</p>
 	{/if}
 

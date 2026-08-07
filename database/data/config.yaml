@@ -17,6 +17,8 @@ functor_tags:
 
 morphism_tags: []
 
+symmetric_monoidal_category_tags: []
+
 category_property_tags:
   - limits
   - colimits
@@ -45,6 +47,9 @@ morphism_property_tags:
   - types of monomorphisms
   - types of epimorphisms
   - invertibility
+
+symmetric_monoidal_category_property_tags:
+  - misc
 
 relations:
   - relation: is

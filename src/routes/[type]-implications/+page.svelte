@@ -53,6 +53,13 @@
 				overview of the relationships between the various types of epimorphisms and
 				monomorphisms.
 			</p>
+		{:else if data.type === 'symmetric_monoidal_category'}
+			<p class="hint">
+				*Deductions from these implications are automatically incorporated into
+				each symmetric monoidal category whenever applicable. Moreover,
+				implications are automatically dualized when the corresponding dual
+				properties exist.
+			</p>
 		{/if}
 
 		<p class="hint">

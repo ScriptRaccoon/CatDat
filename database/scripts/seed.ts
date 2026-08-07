@@ -9,7 +9,8 @@ import type {
 	SpecialMorphismRuleYaml,
 	StructureYaml,
 	PropertyYaml,
-	MorphismYaml
+	MorphismYaml,
+	SymmetricMonoidalCategoryYaml
 } from './utils/seed.types'
 import { create_schema_hash, get_saved_schema_hash } from './utils/schema'
 import { STRUCTURE_TYPES, type StructureType, PLURALS } from '$shared/config'
@@ -43,6 +44,20 @@ function seed() {
 	seed_properties({ type: 'morphism', folder: 'morphism-properties' })
 	seed_implications({ type: 'morphism', folder: 'morphism-implications' })
 	seed_structures({ type: 'morphism', folder: 'morphisms', extra: insert_morphism })
+
+	seed_properties({
+		type: 'symmetric_monoidal_category',
+		folder: 'symmetric_monoidal_category_properties'
+	})
+	seed_implications({
+		type: 'symmetric_monoidal_category',
+		folder: 'symmetric_monoidal_category_implications'
+	})
+	seed_structures({
+		type: 'symmetric_monoidal_category',
+		folder: 'symmetric_monoidal_categories',
+		extra: insert_symmetric_monoidal_category
+	})
 }
 
 /**
@@ -335,29 +350,30 @@ function insert_category(category: CategoryYaml) {
  * Inserts the data of a functor that is specific to functors.
  */
 function insert_functor(functor: FunctorYaml) {
-	const functor_insert = db.prepare(
+	db.prepare(
 		`INSERT INTO functors (id, domain, codomain, left_adjoint)
 		VALUES (?, ?, ?, ?)`
-	)
-
-	functor_insert.run(
-		functor.id,
-		functor.domain,
-		functor.codomain,
-		functor.left_adjoint || null
-	)
+	).run(functor.id, functor.domain, functor.codomain, functor.left_adjoint || null)
 }
 
 /**
  * Inserts the data of a morphism that is specific to morphisms.
  */
 function insert_morphism(morphism: MorphismYaml) {
-	const morphism_insert = db.prepare(
+	db.prepare(
 		`INSERT INTO morphisms (id, category)
 		VALUES (?, ?)`
-	)
+	).run(morphism.id, morphism.category)
+}
 
-	morphism_insert.run(morphism.id, morphism.category)
+/**
+ * Inserts the data of a symmetric monoidal category that is specific to symmetric monoidal categories.
+ */
+function insert_symmetric_monoidal_category(s: SymmetricMonoidalCategoryYaml) {
+	db.prepare(
+		`INSERT INTO symmetric_monoidal_categories (id, underlying_category)
+		VALUES (?, ?)`
+	).run(s.id, s.underlying_category)
 }
 
 /**

@@ -47,6 +47,7 @@
 
 	select {
 		font-size: 1rem;
+		field-sizing: content;
 	}
 
 	@media (width <= 600px) {

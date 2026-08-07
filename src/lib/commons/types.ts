@@ -141,6 +141,7 @@ export type CategorySpecificDisplay = {
 	special_morphisms: SpecialMorphism[]
 	stored_functors: StructureShort[]
 	stored_morphisms: StructureShort[]
+	stored_symmetric_monoidal_categories: StructureShort[]
 }
 
 export type FunctorSpecificDisplay = {
@@ -162,4 +163,10 @@ export type MorphismSpecificDisplay = {
 	category: string
 	category_name: string
 	category_notation: string
+}
+
+export type SymmetricMonoidalCategorySpecificDisplay = {
+	underlying_category: string
+	underlying_category_name: string
+	underlying_category_notation: string
 }
