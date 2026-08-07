@@ -1,0 +1,35 @@
+id: N+
+name: symmetric monoidal poset of natural numbers
+notation: $(\IN,\leq,+,0)$
+underlying_category: N
+description: We view the poset $(\IN,\leq)$ as a thin category and equip it with the strict symmetric monoidal structure defined by $a \otimes b := a + b$ and the monoidal unit $0$.
+nlab_link: https://ncatlab.org/nlab/show/monoidal+preorder
+
+tags:
+  - number theory
+
+related: []
+
+satisfied_properties:
+  - property: strict
+    proof: This follows by construction.
+
+  - property: coclosed
+    proof: >-
+      For $a \in \IN$ the order-preserving function $(\IN,\leq) \to (\IN,\leq)$, $x \mapsto x + a$, viewed as a functor between thin categories, has the left adjoint $y \mapsto \max(0, y - a)$ because for all $x,y \in \IN$ the following are equivalent:
+      $$y \leq x + a \iff y - a \leq x \iff \max(0, y - a) \leq x.$$
+
+unsatisfied_properties:
+  - property: cartesian
+    # TODO: automate this with category_conclusions
+    proof: This is simply because its underlying category <a href="/category/N">$(\IN,\leq)$</a> does not have finite products; it has no terminal object.
+
+  - property: codistributive
+    # TODO: automate this with category_conclusions
+    proof: This is simply because its underlying category <a href="/category/N">$(\IN,\leq)$</a> does not have finite products; it has no terminal object.
+
+  - property: distributive
+    proof: The functor $x \mapsto x \otimes 1 = x + 1$ does not preserve the initial object $0$.
+
+  - property: cocartesian
+    proof: Even though the monoidal unit is the initial object, the tensor product $a \otimes b = a + b$ is not given by the coproduct $\max(a,b)$ in $(\IN,\leq)$.

@@ -1,0 +1,41 @@
+id: Ab_fg_tensor
+name: symmetric monoidal category of finitely generated abelian groups
+notation: $(\Ab_{\fg},\otimes,\IZ)$
+underlying_category: Ab_fg
+description: This is the full symmetric monoidal subcategory of $(\Ab,\otimes,\IZ)$ spanned by the finitely generated abelian groups. This is well-defined because $\IZ$ is finitely generated and the tensor product of two finitely generated abelian groups is finitely generated.
+nlab_link: null
+
+tags:
+  - algebra
+
+related:
+  - Ab_tensor
+  - FinVect_tensor
+
+satisfied_properties:
+  - property: closed
+    proof: Since <a href="/symmetric_monoidal_category/Ab_tensor">$(\Ab,\otimes,\IZ)$</a> is closed, it suffices to prove that for abelian groups $A,B$ with internal Hom $[A,B]$, if $A$ and $B$ are finitely generated, then $[A,B]$ is finitely generated. Since there is an epimorphism $\IZ^n \to A$, there is a monomorphism $[A,B] \to [\IZ^n,B] \cong B^n$. Since $B^n$ is finitely generated, the claim follows from the fact that subgroups of finitely generated abelian groups are finitely generated. (This also shows that the corresponding statement for finitely generated modules over a ring holds only when the ring is Noetherian.)
+
+  - property: well-pointed
+    proof: In fact, $\IZ$ is even an extremal generator of <a href="/category/Ab_fg">$\Ab_{\fg}$</a>.
+    references:
+      - Ab_fg_extremal_generator
+
+unsatisfied_properties:
+  - property: finitely complete
+    proof: The same counterexample as for <a href="/symmetric_monoidal_category/Ab_tensor">$(\Ab,\otimes,\IZ)$</a> works here.
+    references:
+      - Ab_tensor_not_fc
+
+  - property: strict
+    proof: The same argument as for <a href="/symmetric_monoidal_category/R-Mod_tensor">$(R{-}\Mod,\otimes,R)$</a> works here.
+    references:
+      - R-Mod_tensor_not_strict
+
+  - property: infinitary distributive
+    # TODO: automate this
+    proof: This is because <a href="/category/Ab_fg">$\Ab_{\fg}$</a> does not have coproducts.
+
+  - property: infinitary codistributive
+    # TODO: automate this
+    proof: This is because <a href="/category/Ab_fg">$\Ab_{\fg}$</a> does not have products.
