@@ -1,0 +1,30 @@
+# misc results on symmetric monoidal categories
+
+- id: trivial_is_everything
+  assumptions:
+    - trivial
+  conclusions:
+    - cartesian
+    - closed
+    - cocomplete
+  proof: This is trivial.
+  is_equivalence: false
+
+- id: trivial_is_well_pointed
+  # we need this separately since well-pointed currently has no dual
+  assumptions:
+    - trivial
+  conclusions:
+    - well-pointed
+  proof: This is trivial.
+  is_equivalence: false
+
+- id: thin_is_well_pointed
+  assumptions: []
+  mapped_assumptions:
+    underlying_category:
+      - thin
+  conclusions:
+    - well-pointed
+  proof: In a thin category, every object is a generator for trivial reasons.
+  is_equivalence: false

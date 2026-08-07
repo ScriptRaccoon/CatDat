@@ -28,3 +28,11 @@ Given a property $P$ of morphisms, its dual property $P^{\op}$ is defined as fol
 For example, the property [monomorphism](/morphism-property/monomorphism) is dual to [epimorphism](/morphism-property/epimorphism) since $f$ is an epimorphism if and only if $f^{\op}$ is a monomorphism.
 
 Notice that $(P^{\op})^{\op} = P$, and that $f$ satisfies $P$ if and only if $f^{\op}$ satisfies $P^{\op}$.
+
+### Symmetric Monoidal Categories
+
+The dual of a symmetric monoidal category $(\C,\otimes,1)$ is defined by $(\C^{\op},\otimes,1)$ (and the obvious coherence isomorphisms). Given a property $P$ of symmetric monoidal categories, its dual property $P^{\op}$ is defined as follows: a symmetric monoidal category satisfies $P^{\op}$ if and only if its dual satisfies $P$.
+
+For example, the properties [closed](/symmetric_monoidal_category-property/closed) and [coclosed](/symmetric_monoidal_category-property/coclosed) are dual to each other.
+
+A monoidal category has another dual, namely $(\C,\otimes^{\op},1)$, but for a symmetric monoidal category this is isomorphic to $(\C,\otimes,1)$.

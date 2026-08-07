@@ -1,0 +1,11 @@
+id: complete
+relation: is
+description: 'A symmetric monoidal category is called <i>complete</i> when its underlying category is complete and, for every object $A$, the endofunctor $A \otimes -$ is continuous. Of course, then the endofunctor $- \otimes A$ is also continuous. There is no need for a more complicated term such as "symmetric monoidally complete" if one is careful to distinguish between a symmetric monoidal category and its underlying category.'
+nlab_link: null
+invariant_under_equivalences: true
+dual: cocomplete
+related:
+  - finitely complete
+
+tags:
+  - tensor-limit interaction

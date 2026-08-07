@@ -1,0 +1,12 @@
+id: codistributive
+relation: is
+description: 'A symmetric monoidal category is called <i>codistributive</i> when its underlying category has finite products and, for every object $A$, the endofunctor $A \otimes -$ preserves finite products. There should be no confusion with the closely related notion of a <a href="/category-property/codistributive">codistributive category</a> as long as we distinguish carefully between a symmetric monoidal category and its underlying category.'
+nlab_link: null
+invariant_under_equivalences: true
+dual: distributive
+related:
+  - infinitary codistributive
+  - finitely complete
+
+tags:
+  - tensor-limit interaction

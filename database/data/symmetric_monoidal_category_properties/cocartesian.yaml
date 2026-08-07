@@ -1,0 +1,10 @@
+id: cocartesian
+relation: is
+description: 'A symmetric monoidal category is called <i>cocartesian</i> when its underlying category has finite coproducts and the symmetric monoidal structure is induced by these finite coproducts; that is, $A \otimes B = A \sqcup B$, and so on.'
+nlab_link: https://ncatlab.org/nlab/show/cocartesian+monoidal+category
+invariant_under_equivalences: true
+dual: cartesian
+related: []
+
+tags:
+  - misc

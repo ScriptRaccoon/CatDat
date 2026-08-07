@@ -1,0 +1,10 @@
+id: trivial
+relation: is
+description: 'A symmetric monoidal category is <i>trivial</i> when it is equivalent to the terminal symmetric monoidal category. This is equivalent to the condition that its underlying category is trivial.'
+nlab_link: null
+invariant_under_equivalences: true
+dual: trivial
+related: []
+
+tags:
+  - degeneracy

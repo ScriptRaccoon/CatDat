@@ -1,0 +1,10 @@
+id: well-pointed
+relation: is
+description: 'A symmetric monoidal category $(\C,\otimes,1)$ is called <i>well-pointed</i> if the monoidal unit $1$ is a generator. Equivalently, the functor $\Hom(1,-) : \C \to \Set^+$ is faithful. The terminology is taken from <a href="https://global.oup.com/academic/product/categories-for-quantum-theory-9780198739616" target="_blank">Categories for Quantum Theory</a> by Heunen-Vicari, Def. 1.12.'
+nlab_link: null
+invariant_under_equivalences: true
+dual: null
+related: []
+
+tags:
+  - misc

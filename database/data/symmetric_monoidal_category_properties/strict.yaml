@@ -1,0 +1,10 @@
+id: strict
+relation: is
+description: 'A symmetric monoidal category is called <i>strict</i> when its associator, symmetry, left unitor, and right unitor are identities. A strict symmetric monoidal category is simply a commutative monoid object in $(\Cat^+,\times,1)$.'
+nlab_link: https://ncatlab.org/nlab/show/strict+monoidal+category
+invariant_under_equivalences: false
+dual: strict
+related: []
+
+tags:
+  - degeneracy

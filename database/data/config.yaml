@@ -49,6 +49,9 @@ morphism_property_tags:
   - invertibility
 
 symmetric_monoidal_category_property_tags:
+  - tensor-colimit interaction
+  - tensor-limit interaction
+  - degeneracy
   - misc
 
 relations:
