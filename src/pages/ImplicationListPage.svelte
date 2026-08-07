@@ -5,7 +5,12 @@
 	import MetaData from '$components/MetaData.svelte'
 	import SearchFilter from '$components/SearchFilter.svelte'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
-	import { capitalize, normalize_text, pluralize } from '$shared/utils'
+	import {
+		capitalize,
+		normalize_text,
+		pluralize,
+		remove_underscores
+	} from '$shared/utils'
 	import type { ImplicationDisplay, StructureType } from '$lib/commons/types'
 	import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
 	import type { Snippet } from 'svelte'
@@ -45,9 +50,9 @@
 	)
 </script>
 
-<MetaData title="{capitalize(type)} implications" />
+<MetaData title="{capitalize(remove_underscores(type))} implications" />
 
-<h2>{capitalize(type)} implications</h2>
+<h2>{capitalize(remove_underscores(type))} implications</h2>
 
 <SearchFilter bind:search />
 

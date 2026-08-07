@@ -1,5 +1,6 @@
 import { STRUCTURE_TYPES, type StructureType } from '$shared/config'
 import { get_client } from '$shared/db'
+import { remove_underscores } from '$shared/utils'
 get_client
 
 const db = get_client({ readonly: true })
@@ -39,7 +40,7 @@ function report_long_property_proofs(type: StructureType) {
 
 	if (!long_proofs.length) return
 
-	console.info(`\n--- Long property proofs (type: ${type}) ---`)
+	console.info(`\n--- Long property proofs (type: ${remove_underscores(type)}) ---`)
 
 	for (const { id, property, length } of long_proofs) {
 		console.warn(
@@ -65,7 +66,7 @@ function report_long_implication_proofs(type: StructureType) {
 
 	if (!long_proofs.length) return
 
-	console.info(`\n--- Long implication proofs (type: ${type}) ---`)
+	console.info(`\n--- Long implication proofs (type: ${remove_underscores(type)}) ---`)
 
 	for (const { id, length } of long_proofs) {
 		console.warn(

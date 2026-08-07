@@ -8,6 +8,7 @@ import {
 } from '$shared/implications'
 import { deduce_properties, refute_properties } from '$shared/deduction.utils'
 import { get_structures } from './utils/structures'
+import { remove_underscores } from '$shared/utils'
 
 const db = get_client({ readonly: true })
 
@@ -29,7 +30,9 @@ function check_redundancies() {
  * No error is thrown intentionally.
  */
 function check_redundant_property_assignments(type: StructureType) {
-	console.info(`\n--- Check redundant ${type} property assignments ---`)
+	console.info(
+		`\n--- Check redundant ${remove_underscores(type)} property assignments ---`
+	)
 
 	const implications = get_normalized_implications(db, type)
 

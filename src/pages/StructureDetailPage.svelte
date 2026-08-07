@@ -16,6 +16,7 @@
 		StructureType
 	} from '$lib/commons/types'
 	import type { Snippet } from 'svelte'
+	import { remove_underscores } from '$shared/utils'
 
 	type Props = {
 		type: StructureType
@@ -110,7 +111,7 @@
 
 		{#if structure.dual_structure_id}
 			<li>
-				<strong>Dual {type}:</strong>
+				<strong>Dual {remove_underscores(type)}:</strong>
 				<a
 					href="/{type}/{structure.dual_structure_id}"
 					aria-label={structure.dual_structure_name}

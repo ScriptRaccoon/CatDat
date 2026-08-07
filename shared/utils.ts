@@ -49,6 +49,10 @@ export function normalize_text(txt: string) {
 		.replace(/\p{Diacritic}/gu, '')
 }
 
+export function remove_underscores(txt: string) {
+	return txt.replaceAll('_', ' ')
+}
+
 export function parse_json_set<T>(json: string): Set<T> {
 	return new Set(JSON.parse(json))
 }

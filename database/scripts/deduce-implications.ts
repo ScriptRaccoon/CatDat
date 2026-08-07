@@ -3,7 +3,8 @@ import {
 	are_equal_sets,
 	parse_nested_json_set,
 	parse_json_set,
-	devlog
+	devlog,
+	remove_underscores
 } from '$shared/utils'
 import { get_client } from '$shared/db'
 
@@ -13,7 +14,7 @@ const db = get_client({ readonly: false })
  * Clears all deduced implications. This is done before the deduction starts.
  */
 export function clear_deduced_implications(type: StructureType) {
-	console.info(`\n--- Deduce ${type} implications ---`)
+	console.info(`\n--- Deduce ${remove_underscores(type)} implications ---`)
 	db.prepare(`DELETE FROM implications WHERE is_deduced = TRUE AND type = ?`).run(type)
 }
 
@@ -155,7 +156,7 @@ export function create_dualized_implications(type: StructureType) {
 			}
 		}
 
-		devlog(`Deduced ${count} ${type} implications by duality`)
+		devlog(`Deduced ${count} ${remove_underscores(type)} implications by duality`)
 	})
 
 	insert_duals()
@@ -207,5 +208,7 @@ export function create_self_dual_implications(type: StructureType) {
 		conclusion_insert.run(implication_id, p.dual, type)
 	}
 
-	devlog(`Deduced ${relevant_props.length} ${type} implications by self-duality`)
+	devlog(
+		`Deduced ${relevant_props.length} ${remove_underscores(type)} implications by self-duality`
+	)
 }
