@@ -11,6 +11,7 @@ import forget_vector_expected from './expected-data/forget_vector.json'
 import decided_categories from './expected-data/decided-categories.json'
 import decided_functors from './expected-data/decided-functors.json'
 import decided_morphisms from './expected-data/decided-morphisms.json'
+import decided_symmetric_monoidal_categories from './expected-data/decided-symmetric-monoidal-categories.json'
 import { capitalize, devlog, remove_underscores } from '$shared/utils'
 import { get_client } from '$shared/db'
 import { STRUCTURE_TYPES, type StructureType, PLURALS } from '$shared/config'
@@ -57,6 +58,14 @@ function execute_tests() {
 
 		test_positivity('id_G', 'morphism')
 		test_decided_structures(decided_morphisms, 'morphism')
+
+		devlog('\n--- Test symmetric monoidal categories ---')
+
+		test_positivity('1_tensor', 'symmetric_monoidal_category')
+		test_decided_structures(
+			decided_symmetric_monoidal_categories,
+			'symmetric_monoidal_category'
+		)
 	} catch (err) {
 		if (err instanceof Error) {
 			console.error(err.message)

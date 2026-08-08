@@ -31,9 +31,11 @@ test('user can see categories with missing data', async ({ page }) => {
 		})
 	).toBeVisible()
 
-	const categories_section = page.locator('section', {
-		hasText: 'Categories with unknown properties'
-	})
+	const categories_section = page
+		.locator('section', {
+			hasText: 'Categories with unknown properties'
+		})
+		.first()
 
 	await expect(categories_section).toBeVisible()
 
@@ -112,7 +114,7 @@ test('user cannot see any missing functor combinations', async ({ page }) => {
 	await expect(combinations_section).toBeVisible()
 
 	await expect(combinations_section).toHaveText(
-		/.+Every consistent functor property combination.+is witnessed/
+		/Every consistent functor property combination[\s\S]+is witnessed/
 	)
 })
 
@@ -127,6 +129,6 @@ test('user cannot see any missing morphism combinations', async ({ page }) => {
 	await expect(combinations_section).toBeVisible()
 
 	await expect(combinations_section).toHaveText(
-		/.+Every consistent morphism property combination.+is witnessed/
+		/.+Every consistent morphism property combination[\s\S]+is witnessed/
 	)
 })

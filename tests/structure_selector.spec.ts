@@ -91,3 +91,44 @@ test('morphisms are selected on a morphism route', async ({ page }) => {
 	await expect(selector).toBeVisible()
 	await expect(selector).toHaveValue('morphism')
 })
+
+test('user can switch to symmetric monoidal categories', async ({ page }) => {
+	await page.goto('/', { waitUntil: 'networkidle' })
+
+	const selector = page
+		.getByRole('combobox', {
+			name: 'Structure',
+			exact: true
+		})
+		.first()
+
+	await expect(selector).toBeVisible()
+	await selector.selectOption('symmetric_monoidal_category')
+
+	await expect(selector).toHaveValue('symmetric_monoidal_category')
+
+	await expect(page).toHaveURL('/symmetric_monoidal_category-list')
+
+	await expect(
+		page.getByRole('heading', {
+			name: 'List of symmetric monoidal categories',
+			exact: true
+		})
+	).toBeVisible()
+})
+
+test('symmetric monoidal categories are selected on a symmetric monoidal category route', async ({
+	page
+}) => {
+	await page.goto('/symmetric_monoidal_category-properties')
+
+	const selector = page
+		.getByRole('combobox', {
+			name: 'Structure',
+			exact: true
+		})
+		.first()
+
+	await expect(selector).toBeVisible()
+	await expect(selector).toHaveValue('symmetric_monoidal_category')
+})
