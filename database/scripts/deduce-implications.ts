@@ -201,7 +201,7 @@ export function create_self_dual_implications(type: StructureType) {
 	`)
 
 	for (const p of relevant_props) {
-		const implication_id = `self-dual_${p.id}`
+		const implication_id = `self-dual_${p.id}_${type}`
 		implication_insert.run(implication_id, type)
 		assumption_insert.run(implication_id, p.id, type)
 		assumption_insert.run(implication_id, 'self-dual', type)
