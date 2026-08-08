@@ -41,7 +41,7 @@
     - finitely complete
   conclusions:
     - unital
-  proof: For all objects $X,Y$ the morphism $X \sqcup Y \to X \times Y$ is an isomorphism, hence a strong epimorphism.
+  proof: For all objects $X,Y$ the canonical morphism $X \sqcup Y \to X \times Y$ is an isomorphism, hence a strong epimorphism.
   is_equivalence: false
 
 - id: unital_assumptions

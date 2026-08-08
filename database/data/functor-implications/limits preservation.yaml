@@ -184,15 +184,42 @@
 
 - id: biproduct_preserving_condition
   assumptions:
-    - preserves finite products
+    - preserves finite coproducts
   mapped_assumptions:
     domain:
       - biproducts
     codomain:
       - biproducts
   conclusions:
-    - preserves finite coproducts
-  proof: This is trivial.
+    - preserves finite products
+  proof: >-
+    Let $\C,\D$ be categories with biproducts, and let $F : \C \to \D$ be a functor preserving finite coproducts. In particular, $F$ preserves the zero object. Since zero morphisms are precisely the morphisms that factor through the zero object, $F$ preserves zero morphisms.
+
+
+    Let $A,B \in \C$ be objects with coproduct injections $i_A : A \to A \sqcup B$ and $i_B : B \to A \sqcup B$. Since $\C$ has biproducts, there are projections $p_A : A \sqcup B \to A$ and $p_B : A \sqcup B \to B$ satisfying:
+    $$\begin{align*}
+    p_A i_A &= \id_A\\
+    p_B i_A &= 0\\
+    p_A i_B &= 0\\
+    p_B i_B &= \id_B\\
+    i_A p_A + i_B p_B &= \id_{A \sqcup B}.
+    \end{align*}$$
+    By assumption, $F(A \sqcup B)$ is a coproduct of $F(A)$ and $F(B)$ with coproduct injections $F(i_A)$ and $F(i_B)$. Since $\D$ has biproducts, there are product projections $q_A : F(A \sqcup B) \to F(A)$ and $q_B : F(A \sqcup B) \to F(B)$ satisfying:
+    $$\begin{align*}
+    q_A F(i_A) &= \id_{F(A)}\\
+    q_B F(i_A) &= 0\\
+    q_A F(i_B) &= 0\\
+    q_B F(i_B) &= \id_{F(B)}\\
+    F(i_A) q_A + F(i_B) q_B &= \id_{F(A \sqcup B)}.
+    \end{align*}$$
+    We need to show that $F(p_A) = q_A$; the proof that $F(p_B) = q_B$ is similar. Both sides are morphisms $F(A \sqcup B) \to F(A)$, and since $F(A \sqcup B)$ is a coproduct of $F(A)$ and $F(B)$, it suffices to verify the equality after precomposing with the two coproduct injections $F(i_A)$ and $F(i_B)$. We compute
+    $$q_A F(i_A) = \id_{F(A)} = F(\id_A) = F(p_A i_A) = F(p_A) F(i_A)$$
+    and
+    $$q_A F(i_B) = 0 = F(0) = F(p_A i_B) = F(p_A) F(i_B).$$
+
+    Remark: It now follows that $F$ is also additive, i.e., for two morphisms $f,g : A \rightrightarrows B$, we have $F(f+g) = F(f) + F(g)$. In fact, $f+g$ decomposes as
+    $$A \xrightarrow{(f,g)} B \times B \xrightarrow{\mu^{-1}} B \sqcup B \xrightarrow{\nabla} B,$$
+    and each of these components is preserved by $F$.
   is_equivalence: false
 
 - id: regular_functor_definition
