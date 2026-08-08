@@ -22,6 +22,7 @@ satisfied_properties:
 
   - property: cocomplete
     proof: 'Take the colimit of the underlying sets and endow it with the finest uniform structure making all inclusions uniform. More concretely, coproducts are described below on this page, and the coequalizer of two uniform maps $f,g : (X,\Phi) \rightrightarrows (Y,\Psi)$ is the $\Set$-based coequalizer $Q = Y / (f(x) \sim g(x))$ equipped with the following uniform structure, which makes the projection $p : Y \to Q$ uniform. Let $\Theta$ be the set of all subsets $U \subseteq Q \times Q$ such that $(p \times p)^*(U) \in \Psi$. It satisfies all the axioms of a uniform structure except one, namely the composition axiom. To fix this (and this construction works in complete generality), let $\Sigma \subseteq \Theta$ be the set of all $U \in \Theta$ for which there exists a sequence $U_1,U_2,\dotsc$ in $\Theta$ such that $U_1 \subseteq U$ and $U_{k+1} \circ U_{k+1} \subseteq U_k$ for all $k$. It is then straightforward to check that $\Sigma$ is a uniform structure on $Q$. Moreover, by construction, the map $p : (Y,\Psi) \to (Q,\Sigma)$ is uniform, and one verifies that it satisfies the required universal property.'
+    check_redundancy: false
 
   - property: filtered-colimit-stable monomorphisms
     proof: This follows from Lemma 2 <a href="/content/subcategories">here</a>, applied to the forgetful functor to $\Set$.
