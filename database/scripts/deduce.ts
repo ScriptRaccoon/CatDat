@@ -38,5 +38,6 @@ function deduce() {
 	// --- symmetric monoidal categories
 	clear_deduced_implications('symmetric_monoidal_category')
 	create_dualized_implications('symmetric_monoidal_category')
+	create_self_dual_implications('symmetric_monoidal_category')
 	deduce_properties_for_structures('symmetric_monoidal_category')
 }

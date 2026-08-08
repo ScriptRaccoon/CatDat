@@ -11,7 +11,10 @@ export function is_structure_type(txt: string): txt is StructureType {
 	return (STRUCTURE_TYPES as readonly string[]).includes(txt)
 }
 
-export const STRUCTURE_TYPES_WITH_DUALS: StructureType[] = ['category']
+export const STRUCTURE_TYPES_WITH_DUALS: StructureType[] = [
+	'category',
+	'symmetric_monoidal_category'
+]
 
 export const PLURALS: Record<StructureType, string> = {
 	category: 'categories',
