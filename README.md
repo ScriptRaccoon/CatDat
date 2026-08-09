@@ -7,13 +7,13 @@
 
 ## [**https://catdat.app**](https://catdat.app)
 
-_CatDat_ provides a growing collection of categorical structures such as categories, functors, and morphisms, each with detailed descriptions and properties. Built by and for those who love [category theory](https://en.wikipedia.org/wiki/Category_theory).
+_CatDat_ provides a growing collection of categorical structures such as categories, functors, morphisms, and symmetric monoidal categories, each with detailed descriptions and properties. Built by and for those who love [category theory](https://en.wikipedia.org/wiki/Category_theory).
 
 [Watch the YouTube video](https://youtu.be/dQXbPxk__qA)
 
 ## Features
 
-- **Types of Categorical Structures**: Supports categories, functors, and morphisms.
+- **Types of Categorical Structures**: Supports categories, functors, morphisms, and symmetric monoidal categories.
 - **Structure Detail Pages**: Each categorical structure has a dedicated page with its definition, satisfied and unsatisfied properties, and related structures.
 - **Property Detail Pages**: Explore the definition of a property and view categorical structures that satisfy it and those that don't.
 - **Proofs and References**: Each property and implication includes a proof or reference, forming a data-driven knowledge base for category theory.
