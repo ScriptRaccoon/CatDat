@@ -1,33 +1,14 @@
 <script lang="ts">
 	import { faCheckCircle } from '@fortawesome/free-solid-svg-icons'
 	import Fa from 'svelte-fa'
-
 	import Chip from '$components/Chip.svelte'
 	import ChipGroup from '$components/ChipGroup.svelte'
-	import {
-		assignment_level,
-		ASSIGNMENT_LEVELS,
-		update_assignment_level
-	} from '$lib/states/assignment_level.svelte'
 	import { theme, THEMES, update_theme } from '$lib/states/theme.svelte'
 	import MetaData from '$components/MetaData.svelte'
 	import { set_tracking, tracking } from '$lib/states/tracking.svelte'
-	import { PUBLIC_ADMIN_URL } from '$env/static/public'
 
 	$effect(() => update_theme(theme.value))
-	$effect(() => update_assignment_level(assignment_level.value))
 	$effect(() => set_tracking(tracking.allow))
-
-	async function record_assignment_level_update() {
-		await fetch(`${PUBLIC_ADMIN_URL}/api/user_action`, {
-			method: 'POST',
-			body: JSON.stringify({
-				action: 'update_assignment_level',
-				value: assignment_level.value
-			}),
-			headers: { 'Content-Type': 'application/json' }
-		})
-	}
 </script>
 
 <MetaData title="Settings" description="Customize the appearance of CatDat" />
@@ -58,37 +39,6 @@
 			</label>
 		{/each}
 	</ChipGroup>
-</section>
-
-<section>
-	<h3>Assignment Level</h3>
-
-	<ChipGroup>
-		{#each Object.keys(ASSIGNMENT_LEVELS) as level}
-			{@const selected = assignment_level.value === level}
-			<label class:selected>
-				<input
-					class="visually-hidden"
-					type="radio"
-					name="assignment-level"
-					value={level}
-					bind:group={assignment_level.value}
-					onchange={record_assignment_level_update}
-				/>
-				<Chip>
-					{level}
-					{#if selected}
-						&nbsp;
-						<Fa icon={faCheckCircle} />
-					{/if}
-				</Chip>
-			</label>
-		{/each}
-	</ChipGroup>
-
-	<p class="hint" aria-live="polite">
-		{ASSIGNMENT_LEVELS[assignment_level.value]}
-	</p>
 </section>
 
 <section>
