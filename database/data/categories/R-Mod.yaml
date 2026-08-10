@@ -4,16 +4,14 @@ notation: $R{-}\Mod$
 objects: left $R$-modules
 morphisms: $R$-linear maps
 description: |-
-  This is the prototype of an abelian category. The category of right modules is the same with the opposite ring $R^{\op}$, hence not listed here.
-  To settle the unsatisfied properties, we make the assumption that $R$ is <i>not</i> semisimple: If $R$ is semisimple, then by the Artin-Wedderburn theorem, the category is equivalent to a finite direct product of categories $D{-}\Mod$ for division rings $D$, and the case of division rings is in a separate entry. In particular, $R \neq 0$ and $R$ is not a field.
+  This is the prototype of an abelian category. The category of right modules is the same with the opposite ring $R^{\op}$, hence not listed here. We assume $R \neq 0$ since otherwise the category would be trivial.
 nlab_link: https://ncatlab.org/nlab/show/module
 tags:
   - algebra
 
 related:
-  - Ab
   - M-Set
-  - R-Mod_div
+  - Ab
   - Vect
 
 satisfied_properties:
@@ -27,14 +25,15 @@ satisfied_properties:
     proof: Take the algebraic theory of an $R$-module (given by the algebraic theory of an abelian group and for each $r \in R$ a unary operation).
 
 unsatisfied_properties:
-  - property: split abelian
-    proof: By assumption, $R$ is not semisimple, so that there is a non-projective $R$-module, which yields a non-split sequence.
-
   - property: skeletal
     proof: This is trivial.
 
   - property: CSP
     proof: The canonical homomorphism $\bigoplus_{n \geq 0} R \to \prod_{n \geq 0} R$ is not surjective, hence no epimorphism.
+
+undecidable_properties:
+  - property: split abelian
+    proof: The category $R{-}\Mod$ is split abelian if and only if $R$ is semisimple. See Theorem 2.5 in Lam's <a href="https://doi.org/10.1007/978-1-4419-8616-0">A First Course in Noncommutative Rings</a>. For example, <a href="/category/Vect">$\Vect_K$</a> is split abelian, while <a href="/category/Ab">$\Ab$</a> is not.
 
 special_objects:
   initial object:

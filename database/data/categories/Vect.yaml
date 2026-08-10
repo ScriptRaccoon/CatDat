@@ -3,18 +3,15 @@ name: category of vector spaces
 notation: $\Vect_K$
 objects: vector spaces over a field $K$
 morphisms: linear maps
-description: This is a special case of the category of modules over a ring, where the ring is a field. It is the prototype of a split abelian category.
+description: This is the special case of <a href="/category/R-Mod">$R{-}\Mod$</a> where $R$ is a field $K$. It is the prototype of a split abelian category.
 nlab_link: https://ncatlab.org/nlab/show/Vect
+parent: R-Mod_div
 
 tags:
   - algebra
 
 related:
-  - R-Mod
-  - R-Mod_div
-  - FinVect_f
-  - FinVect_c
-  - FinVect_u
+  - FinVect
   - FiltVect
   - FreeAb
 

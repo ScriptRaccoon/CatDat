@@ -1,12 +1,10 @@
-# TODO: fix duplication with FinVect_u and FinVect_c
-id: FinVect_f
-name: category of finite-dimensional vector spaces [finite field]
+id: FinVect
+name: category of finite-dimensional vector spaces
 notation: $\FinVect_K$
-objects: finite-dimensional vector spaces over a finite field $K$
+objects: finite-dimensional vector spaces over a field $K$
 morphisms: linear maps
-description: This is the special case of <a href="/category/FinVect">$\FinVect_K$</a> where $K$ is a finite field (e.g. $K = \IF_2$). We use this assumption in order to determine all properties of this category.
+description: This is the full subcategory of $\Vect_K$ consisting of finite-dimensional vector spaces. Every object is isomorphic to $K^n$ for a unique $n \in \IN$.
 nlab_link: https://ncatlab.org/nlab/show/FinDimVect
-parent: FinVect
 
 tags:
   - algebra
@@ -19,11 +17,8 @@ satisfied_properties:
   - property: locally small
     proof: There is a forgetful functor $\FinVect_K \to \Vect_K$, and $\Vect_K$ is locally small.
 
-  - property: essentially countable
-    proof: Every object is isomorphic to $K^n$ for some $n \in \IN$, and $\Hom(K^n,K^m) \cong M_{m \times n}(K)$ is a finite, hence countable set.
-
-  - property: locally finite
-    proof: Each hom-set $\Hom(K^n,K^m) \cong M_{m \times n}(K)$ is finite by assumption.
+  - property: essentially small
+    proof: Every object is isomorphic to $K^n$ for some $n \in \IN$, and $\Hom(K^n,K^m) \cong M_{m \times n}(K)$ is a set.
 
   - property: extremal generator
     proof: The one-dimensional vector space $K$ is an extremal generator even in <a href="/category/Vect">$\Vect_K$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
@@ -36,6 +31,9 @@ satisfied_properties:
   - property: self-dual
     proof: The functor $V \mapsto V^*$ defines an equivalence of categories $\FinVect_K^{\op} \simeq \FinVect_K$. In fact, the natural map $V \to V^{**}$, $v \mapsto (\omega \mapsto \omega(v))$ is an isomorphism by standard linear algebra.
 
+  - property: ℵ₁-accessible
+    proof: 'The inclusion $\FinVect_K \hookrightarrow \Vect_K$ is closed under $\aleph_1$-filtered colimits by <a href="https://mathoverflow.net/a/511519/2841" target="_blank">MO/400763</a>. In particular, $\FinVect_K$ has $\aleph_1$-filtered colimits. Moreover, every object in $\FinVect_K$ is $\aleph_1$-presentable: it is isomorphic to some $K^n$, which is finitely presentable in $\Vect_K$, hence $\aleph_1$-presentable in $\Vect_K$, and therefore also $\aleph_1$-presentable in $\FinVect_K$.'
+
 unsatisfied_properties:
   - property: skeletal
     proof: This is trivial.
@@ -47,7 +45,14 @@ unsatisfied_properties:
     proof: This is trivial.
 
   - property: thin
-    proof: This is trivial.
+    proof: This is clear.
+
+undecidable_properties:
+  - property: essentially countable
+    proof: This depends on the countability of $K$.
+
+  - property: locally finite
+    proof: This depends on the finiteness of $K$.
 
 special_objects:
   initial object:

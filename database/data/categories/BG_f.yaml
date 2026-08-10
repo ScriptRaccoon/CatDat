@@ -1,18 +1,17 @@
 id: BG_f
 name: delooping of a non-trivial finite group
 notation: $BG$
-objects: a single object
+objects: a single object $*$
 morphisms: the elements of a non-trivial finite group $G$
-description: Every group $G$ yields a groupoid $BG$ with a single object $*$, morphisms given by the elements of $G$, and composition given by the group operation. In this example, we consider the case of a non-trivial finite group $G$ (such as $G = C_2$).
-nlab_link: https://ncatlab.org/nlab/show/delooping
+description: This is the special case of <a href="/category/BG">$BG$</a> where $G$ is a non-trivial finite group $G$ (such as $G = C_2$).
+nlab_link: https://ncatlab.org/nlab/show/delooping#delooping_of_a_group_to_a_groupoid
+parent: BG
 
 tags:
   - algebra
   - category theory
 
 related:
-  - BG_c
-  - BG_u
   - BN
 
 satisfied_properties:

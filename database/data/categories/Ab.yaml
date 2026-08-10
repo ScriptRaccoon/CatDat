@@ -5,6 +5,7 @@ objects: abelian groups
 morphisms: group homomorphisms
 description: This is the prototype of an abelian category.
 nlab_link: https://ncatlab.org/nlab/show/Ab
+parent: R-Mod_non_ss
 
 tags:
   - algebra
@@ -15,7 +16,6 @@ related:
   - FinAb
   - FreeAb
   - Grp
-  - R-Mod
   - TorsAb
   - TorsFreeAb
 

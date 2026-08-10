@@ -3,15 +3,15 @@ name: category of left modules over a division ring
 notation: $R{-}\Mod$
 objects: left $R$-modules
 morphisms: $R$-linear maps
-description: Here, we assume that $R$ is a non-commutative division ring, i.e. a skew-field which is not a field. The category of modules behaves mostly the same as in the commutative case.
+description: This is the special case of <a href="/category/R-Mod">$R{-}\Mod$</a> where $R$ is a division ring (also known as a skew-field).
 nlab_link: https://ncatlab.org/nlab/show/module
+parent: R-Mod
 
 tags:
   - algebra
 
 related:
-  - R-Mod
-  - Vect
+  - M-Set
 
 satisfied_properties:
   - property: locally small
