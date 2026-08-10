@@ -199,9 +199,9 @@ function seed_structures<T extends StructureYaml>({
 	const structure_insert = db.prepare(
 		`INSERT INTO structures (
 			id, type, name, notation, description, nlab_link,
-			dual_structure_id
+			dual_structure_id, parent
 		)
-		VALUES (?, ?, ?, ?, ?, ?, ?)`
+		VALUES (?, ?, ?, ?, ?, ?, ?, ?)`
 	)
 
 	const tag_insert = db.prepare(
@@ -276,7 +276,8 @@ function seed_structures<T extends StructureYaml>({
 			structure.notation,
 			structure.description,
 			structure.nlab_link,
-			structure.dual || null
+			structure.dual || null,
+			structure.parent || null
 		)
 
 		if (!structure.tags.length) {

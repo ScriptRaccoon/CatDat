@@ -21,6 +21,7 @@
 		type: StructureType
 		structure: StructureDisplay
 		related_structures: RelatedStructure[]
+		children: RelatedStructure[]
 		tags: string[]
 		satisfied_properties: PropertyAssignmentDisplay[]
 		unsatisfied_properties: PropertyAssignmentDisplay[]
@@ -37,6 +38,7 @@
 		type,
 		structure,
 		related_structures,
+		children,
 		tags,
 		satisfied_properties,
 		unsatisfied_properties,
@@ -64,6 +66,28 @@
 		</li>
 
 		{@render definition?.()}
+
+		{#if structure.parent}
+			<li>
+				<strong>Parent:</strong>
+				<a href="/{type}/{structure.parent}" aria-label={structure.parent_name}>
+					{@html structure.parent_notation}
+				</a>
+			</li>
+		{/if}
+
+		{#if children.length}
+			<li>
+				<strong>Children:</strong>
+				{#each children as { id, name, notation }, i}
+					<a href="/{type}/{id}" aria-label={name}>
+						{@html notation}
+					</a>{#if i < children.length - 1}
+						,&nbsp;
+					{/if}
+				{/each}
+			</li>
+		{/if}
 
 		{#if related_structures.length}
 			<li>

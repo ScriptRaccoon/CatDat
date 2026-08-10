@@ -23,9 +23,13 @@ export function fetch_structure(type: StructureType, id: string): StructureDetai
                 s.nlab_link,
                 s.dual_structure_id,
                 ds.name AS dual_structure_name,
-                ds.notation AS dual_structure_notation
+                ds.notation AS dual_structure_notation,
+				s.parent,
+				ps.name AS parent_name,
+				ps.notation AS parent_notation
             FROM structures s
             LEFT JOIN structures ds ON ds.id = s.dual_structure_id
+			LEFT JOIN structures ps ON ps.id = s.parent
             WHERE s.id = ?`
 		)
 		.get(id)
@@ -37,13 +41,20 @@ export function fetch_structure(type: StructureType, id: string): StructureDetai
 	const related_structures = db
 		.prepare<[string], RelatedStructure>(
 			`SELECT
-                c.id,
-                c.name,
-                c.notation
+                s.id,
+                s.name,
+                s.notation
             FROM related_structures r
-            INNER JOIN structures c ON c.id = r.related_structure_id
+            INNER JOIN structures s ON s.id = r.related_structure_id
             WHERE r.structure_id = ?
-            ORDER BY lower(c.name)`
+            ORDER BY lower(s.name)`
+		)
+		.all(id)
+
+	const children = db
+		.prepare<[string], RelatedStructure>(
+			`SELECT s.id, s.name, s.notation
+			FROM structures s WHERE s.parent = ?`
 		)
 		.all(id)
 
@@ -134,6 +145,7 @@ export function fetch_structure(type: StructureType, id: string): StructureDetai
 	return {
 		type,
 		structure,
+		children,
 		related_structures,
 		tags,
 		satisfied_properties,

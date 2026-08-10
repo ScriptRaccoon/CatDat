@@ -20,6 +20,9 @@ export type StructureDisplay = {
 	dual_structure_id: string | null
 	dual_structure_name: string | null
 	dual_structure_notation: string | null
+	parent: string | null
+	parent_name: string | null
+	parent_notation: string | null
 }
 
 export type MappedTypes = Record<string, StructureType>
@@ -120,6 +123,7 @@ export type StructureDetails = {
 	type: StructureType
 	structure: StructureDisplay
 	related_structures: RelatedStructure[]
+	children: RelatedStructure[]
 	tags: string[]
 	satisfied_properties: PropertyAssignmentDisplay[]
 	unsatisfied_properties: PropertyAssignmentDisplay[]

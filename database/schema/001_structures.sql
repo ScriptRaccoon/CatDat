@@ -15,9 +15,11 @@ CREATE TABLE structures (
     description TEXT,
     nlab_link TEXT CHECK (nlab_link IS NULL OR nlab_link like 'https://%'),
     dual_structure_id TEXT,
+    parent TEXT,
     UNIQUE (id, type),
     FOREIGN KEY (type) REFERENCES structure_types (type) ON DELETE RESTRICT,
     FOREIGN KEY (dual_structure_id, type) REFERENCES structures (id, type) ON DELETE RESTRICT
+    FOREIGN KEY (parent, type) REFERENCES structures (id, type) ON DELETE RESTRICT
 );
 
 CREATE UNIQUE INDEX structures_lower_id_unique ON structures (lower(id));
