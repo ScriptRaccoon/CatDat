@@ -1,11 +1,13 @@
 import { get_client } from '$shared/db'
 import { devlog } from '$shared/utils'
+import { get_structure_parent_map } from './utils/structures'
 
 const db = get_client({ readonly: false })
 
 export function deduce_special_objects() {
 	console.info('\n--- Deduce special objects ---')
 	clear_deduced_special_objects()
+	inherit_special_objects_from_parents()
 	deduce_special_objects_of_dual_categories()
 }
 
@@ -14,6 +16,52 @@ export function deduce_special_objects() {
  */
 function clear_deduced_special_objects() {
 	db.prepare(`DELETE FROM special_objects WHERE is_deduced = TRUE`).run()
+}
+
+/**
+ * Inherit special object assignments from parent categories
+ */
+function inherit_special_objects_from_parents() {
+	type SpecialObject = { type: string; description: string }
+
+	const parent_map = get_structure_parent_map(db, 'category')
+
+	const get_parent_special_objects = db.prepare<[string], SpecialObject>(
+		`SELECT type, description FROM special_objects
+		WHERE category_id = ? AND is_deduced = FALSE`
+	)
+
+	const insert_special_object = db.prepare(
+		`INSERT INTO special_objects (category_id, type, description, is_deduced)
+		VALUES (?, ?, ?, TRUE)
+		ON CONFLICT (category_id, type) DO NOTHING`
+	)
+
+	let inherited_count = 0
+
+	for (const [category_id, parent_id] of parent_map) {
+		const inherited_objects = new Map<string, SpecialObject>()
+		let current_id = parent_id
+
+		while (current_id) {
+			const parent_entries = get_parent_special_objects.all(current_id)
+
+			for (const entry of parent_entries) {
+				if (!inherited_objects.has(entry.type)) {
+					inherited_objects.set(entry.type, entry)
+				}
+			}
+
+			current_id = parent_map.get(current_id) ?? null
+		}
+
+		for (const [type, entry] of inherited_objects) {
+			const res = insert_special_object.run(category_id, type, entry.description)
+			inherited_count += res.changes
+		}
+	}
+
+	devlog(`Inherited ${inherited_count} special objects from parents`)
 }
 
 /**
