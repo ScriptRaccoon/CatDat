@@ -83,3 +83,17 @@ export function is_dual_structure(
 ): structure is StructureMeta & { dual: string } {
 	return Boolean(structure.dual) && structure.name.toLowerCase().startsWith('dual')
 }
+
+/**
+ * Returns a map that assigns to each structure its parent, if present.
+ */
+export function get_structure_parent_map(db: Database, type: StructureType) {
+	const structures = db
+		.prepare<
+			[StructureType],
+			{ id: string; parent: string | null }
+		>(`SELECT id, parent FROM structures WHERE type = ?`)
+		.all(type)
+
+	return new Map(structures.map((structure) => [structure.id, structure.parent]))
+}

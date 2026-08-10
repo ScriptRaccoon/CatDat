@@ -13,7 +13,12 @@ import {
 } from './utils/properties'
 import { get_contradiction_string, get_proof_string } from './utils/implications'
 import { type StructureType, STRUCTURE_TYPES_WITH_DUALS } from '$shared/config'
-import { get_structures, is_dual_structure, type StructureMeta } from './utils/structures'
+import {
+	get_structure_parent_map,
+	get_structures,
+	is_dual_structure,
+	type StructureMeta
+} from './utils/structures'
 import { get_normalized_implications, NormalizedImplication } from '$shared/implications'
 import { devlog } from '$shared/utils'
 
@@ -231,6 +236,62 @@ function delete_deduced_properties(db: Database, type: StructureType) {
 }
 
 /**
+ * Inherits satisfied/unsatisfied properties from parent structures.
+ */
+function inherit_properties_from_parents(db: Database, type: StructureType) {
+	type PropertyAssignment = { property_id: string; is_satisfied: 0 | 1 }
+
+	const parent_map = get_structure_parent_map(db, type)
+
+	const get_assignments = db.prepare<[string], PropertyAssignment>(
+		`SELECT property_id, is_satisfied
+		FROM property_assignments
+		WHERE structure_id = ? AND is_satisfied IS NOT NULL
+		ORDER BY id`
+	)
+
+	const property_insert = db.prepare(
+		`INSERT INTO property_assignments
+			(structure_id, property_id, type, is_satisfied, proof, is_deduced)
+		VALUES (?, ?, ?, ?, ?, TRUE)
+		ON CONFLICT (structure_id, property_id) DO NOTHING`
+	)
+
+	let inherited_count = 0
+
+	for (const [structure_id, parent_id] of parent_map) {
+		const inherited_properties = new Map<string, PropertyAssignment>()
+		let current_id = parent_id
+
+		while (current_id) {
+			const parent_assignments = get_assignments.all(current_id)
+
+			for (const assignment of parent_assignments) {
+				if (!inherited_properties.has(assignment.property_id)) {
+					inherited_properties.set(assignment.property_id, assignment)
+				}
+			}
+
+			current_id = parent_map.get(current_id) ?? null
+		}
+
+		for (const [property_id, assignment] of inherited_properties) {
+			const proof = `This follows from the <a href="/${type}/${parent_id}">parent</a>.`
+			const res = property_insert.run(
+				structure_id,
+				property_id,
+				type,
+				assignment.is_satisfied,
+				proof
+			)
+			inherited_count += res.changes
+		}
+	}
+
+	devlog(`Inherited ${inherited_count} properties from parents`)
+}
+
+/**
  * Main function: Deduce properties of structures from given ones
  * by using the stored implications.
  */
@@ -240,6 +301,7 @@ export function deduce_properties_for_structures(type: StructureType) {
 	const db = get_client({ readonly: false })
 
 	delete_deduced_properties(db, type)
+	inherit_properties_from_parents(db, type)
 
 	const implications = get_normalized_implications(db, type)
 	const structures = get_structures(db, type)
