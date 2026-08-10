@@ -15,7 +15,7 @@ export type StructureDisplay = {
 	id: string
 	name: string
 	notation: string
-	description: string | null
+	description: string
 	nlab_link: string | null
 	dual_structure_id: string | null
 	dual_structure_name: string | null
@@ -77,6 +77,7 @@ export type SpecialObject = {
 
 export type SpecialMorphism = {
 	type: string
+	// null when the morphisms of this type have not been determined
 	description: string | null
 	proof: string
 }

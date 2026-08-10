@@ -49,7 +49,7 @@ export type StructureYaml = {
 	id: string
 	name: string
 	notation: string
-	description: string | null
+	description: string
 	nlab_link: string | null
 	tags: string[]
 	related: string[]
