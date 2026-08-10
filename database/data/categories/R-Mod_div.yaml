@@ -14,33 +14,11 @@ related:
   - M-Set
 
 satisfied_properties:
-  - property: locally small
-    proof: There is a forgetful functor $R{-}\Mod \to \Set$ and $\Set$ is locally small.
-
   - property: split abelian
     proof: It is a standard fact that the category of $R$-modules is abelian for any ring $R$, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. VIII. If $R$ is a division ring, then by linear algebra every $R$-module has a basis, hence is projective, so that every short exact sequence splits.
 
-  - property: finitary algebraic
-    proof: Take the algebraic theory of an $R$-module (given by the algebraic theory of an abelian group and for each $r \in R$ a unary operation).
+unsatisfied_properties: []
 
-unsatisfied_properties:
-  - property: skeletal
-    proof: This is trivial.
+special_objects: {}
 
-  - property: CSP
-    proof: The canonical homomorphism $\bigoplus_{n \geq 0} R \to \prod_{n \geq 0} R$ is not surjective, hence no epimorphism.
-
-special_objects:
-  initial object:
-    description: trivial module
-  terminal object:
-    description: zero module
-  coproducts:
-    description: direct sums
-  products:
-    description: direct products with pointwise operations
-
-special_morphisms:
-  epimorphisms:
-    description: surjective morphisms
-    proof: The forgetful functor to abelian groups is faithful and preserves colimits, hence reflects and preserves epimorphisms. Alternatively, use the same proof as for abelian groups.
+special_morphisms: {}

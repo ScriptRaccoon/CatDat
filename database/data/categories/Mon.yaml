@@ -3,7 +3,7 @@ name: category of monoids
 notation: $\Mon$
 objects: monoids
 morphisms: monoid homomorphisms
-description: null
+description: This category is a typical example of a finitary algebraic category.
 nlab_link: https://ncatlab.org/nlab/show/category+of+monoids
 
 tags:
@@ -11,6 +11,7 @@ tags:
 
 related:
   - CMon
+  - Ring
   - Cat
   - Grp
   - SemiGrp

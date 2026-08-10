@@ -3,7 +3,7 @@ name: category of finite sets
 notation: $\FinSet$
 objects: finite sets
 morphisms: maps
-description: null
+description: This is the full subcategory of $\Set$ that consists of the finite sets.
 nlab_link: https://ncatlab.org/nlab/show/FinSet
 
 tags:

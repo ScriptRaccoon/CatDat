@@ -3,7 +3,7 @@ name: partially ordered collection of ordinal numbers
 notation: $(\On,\leq)$
 objects: ordinal numbers
 morphisms: 'a unique morphism $(\alpha,\beta): \alpha \to \beta$ if $\alpha \leq \beta$'
-description: This is a large variant of the partially ordered set of natural numbers.
+description: This category is a large variant of the thin <a href="/category/N">category of natural numbers</a>.
 nlab_link: null
 
 tags:

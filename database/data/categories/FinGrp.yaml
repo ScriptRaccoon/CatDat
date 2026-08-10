@@ -3,7 +3,7 @@ name: category of finite groups
 notation: $\FinGrp$
 objects: finite groups
 morphisms: group homomorphisms
-description: null
+description: This is the full subcategory of $\Grp$ that consists of the finite groups.
 nlab_link: https://ncatlab.org/nlab/show/finite+group
 
 tags:

@@ -17,6 +17,7 @@ related:
   - Sh(X,Ab)
 
 comments:
+  # TODO: maybe create separate entries for specific spaces X
   - It is likely that none of the currently remaining unknown properties (locally finitely presentable, ℵ₁-accessible, etc.) are satisfied for a <i>generic</i> space $X$, but we need to make this precise by adding additional requirements to $X$. Maybe we need to create separate entries for specific spaces $X$.
   - See <a href="https://math.stackexchange.com/questions/5140378" target="_blank">MSE/5140378</a> in particular for conditions when $\Sh(X)$ is locally finitely presentable.
 

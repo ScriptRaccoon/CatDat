@@ -15,24 +15,12 @@ related:
   - BN
 
 satisfied_properties:
-  - property: small
-    proof: This is trivial.
-
-  - property: groupoid
-    proof: This is trivial.
-
-  - property: core-connected
-    proof: The category has exactly one object.
-
-  - property: skeletal
-    proof: The category has exactly one object.
-
   - property: countable
-    proof: This is because $G$ is countable.
+    proof: This is because $G$ is countable by assumption.
 
 unsatisfied_properties:
   - property: locally finite
-    proof: This is because we choose $G$ to be infinite.
+    proof: This is because $G$ is infinite by assumption.
 
 special_objects: {}
 

@@ -3,7 +3,7 @@ name: category of torsion-free abelian groups
 notation: $\TorsFreeAb$
 objects: torsion-free abelian groups
 morphisms: group homomorphisms
-description: This is a typical example of a well-behaved additive category which is <i>not</i> abelian. It contains the category of free abelian groups.
+description: This category is a typical example of a well-behaved additive category which is <i>not</i> abelian. It contains the category of free abelian groups.
 nlab_link: https://ncatlab.org/nlab/show/torsion-free+module
 
 tags:
