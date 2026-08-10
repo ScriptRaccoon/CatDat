@@ -1,12 +1,11 @@
 import path from 'node:path'
-import { seed_file, seed_files } from './utils/seed.helpers'
+import { get_property_assignments, seed_file, seed_files } from './utils/seed.helpers'
 import { get_client } from '$shared/db'
 import type {
 	CategoryYaml,
 	ConfigYaml,
 	ImplicationYaml,
 	FunctorYaml,
-	PropertyEntry,
 	SpecialMorphismRuleYaml,
 	StructureYaml,
 	PropertyYaml,
@@ -232,28 +231,6 @@ function seed_structures<T extends StructureYaml>({
 		) VALUES (?, ?, ?, ?)`
 	)
 
-	function insert_property_assignments(
-		structure_id: string,
-		entries: PropertyEntry[],
-		is_satisfied: 0 | 1 | null
-	) {
-		for (const entry of entries) {
-			property_assignment_insert.run(
-				structure_id,
-				entry.property,
-				type,
-				is_satisfied,
-				entry.proof,
-				entry.check_redundancy === false ? 0 : 1,
-				entry.label || null
-			)
-
-			for (const ref of entry.references ?? []) {
-				proof_reference_insert.run(structure_id, entry.property, type, ref)
-			}
-		}
-	}
-
 	function insert_structure(structure: T) {
 		const properties_are_disjoint = are_disjoint(
 			[
@@ -297,13 +274,23 @@ function seed_structures<T extends StructureYaml>({
 			related_insert.run(structure.id, related, type)
 		}
 
-		insert_property_assignments(structure.id, structure.satisfied_properties, 1)
-		insert_property_assignments(structure.id, structure.unsatisfied_properties, 0)
-		insert_property_assignments(
-			structure.id,
-			structure.undecidable_properties ?? [],
-			null
-		)
+		const property_assignments = get_property_assignments(structure)
+
+		for (const entry of property_assignments) {
+			property_assignment_insert.run(
+				structure.id,
+				entry.property,
+				type,
+				entry.is_satisfied,
+				entry.proof,
+				entry.check_redundancy === false ? 0 : 1,
+				entry.label || null
+			)
+
+			for (const ref of entry.references ?? []) {
+				proof_reference_insert.run(structure.id, entry.property, type, ref)
+			}
+		}
 
 		if (extra) extra(structure)
 	}
@@ -333,12 +320,10 @@ function insert_category(category: CategoryYaml) {
 	category_insert.run(category.id, category.objects, category.morphisms)
 
 	for (const [type, entry] of Object.entries(category.special_objects)) {
-		if (!entry) continue
 		special_object_insert.run(category.id, type, entry.description)
 	}
 
 	for (const [type, entry] of Object.entries(category.special_morphisms)) {
-		if (!entry) continue
 		special_morphism_insert.run(category.id, type, entry.description, entry.proof)
 	}
 }

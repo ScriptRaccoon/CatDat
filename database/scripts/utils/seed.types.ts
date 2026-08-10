@@ -28,7 +28,7 @@ export type SpecialMorphismRuleYaml = {
 	proof: string
 }
 
-export type PropertyEntry = {
+type PropertyEntry = {
 	property: string
 	proof: string
 	check_redundancy?: boolean
@@ -64,8 +64,8 @@ export type StructureYaml = {
 export type CategoryYaml = StructureYaml & {
 	objects: string
 	morphisms: string
-	special_objects: Record<string, ObjectEntry | undefined>
-	special_morphisms: Record<string, MorphismEntry | undefined>
+	special_objects: Record<string, ObjectEntry>
+	special_morphisms: Record<string, MorphismEntry>
 }
 
 export type FunctorYaml = StructureYaml & {
