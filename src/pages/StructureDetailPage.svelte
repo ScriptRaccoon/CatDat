@@ -121,9 +121,7 @@
 		{/if}
 	</ul>
 
-	{#if structure.description}
-		<p>{@html structure.description}</p>
-	{/if}
+	<p>{@html structure.description}</p>
 </section>
 
 <PropertyAssignmentList

@@ -43,13 +43,13 @@
 			<h3>Special morphisms</h3>
 
 			<ul class="with-margins no-bullets">
-				{#each data.special_morphisms as obj}
+				{#each data.special_morphisms as morph}
 					<li>
-						<TextWithProof proof={obj.proof}>
-							{#if obj.description}
-								{obj.type}: {@html obj.description}
+						<TextWithProof proof={morph.proof}>
+							{#if morph.description}
+								{morph.type}: {@html morph.description}
 							{:else}
-								{obj.type}: <Fa icon={faQuestion} scale={0.825} />
+								{morph.type}: <Fa icon={faQuestion} scale={0.825} />
 							{/if}
 						</TextWithProof>
 					</li>

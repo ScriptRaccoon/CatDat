@@ -12,7 +12,7 @@ CREATE TABLE structures (
     type TEXT NOT NULL,
     name TEXT NOT NULL UNIQUE,
     notation TEXT NOT NULL,
-    description TEXT,
+    description TEXT NOT NULL,
     nlab_link TEXT CHECK (nlab_link IS NULL OR nlab_link like 'https://%'),
     dual_structure_id TEXT,
     parent TEXT,
