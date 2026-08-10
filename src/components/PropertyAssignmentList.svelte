@@ -8,7 +8,6 @@
 		PropertyShort,
 		StructureType
 	} from '$lib/commons/types'
-	import { assignment_level } from '$lib/states/assignment_level.svelte'
 	import { pluralize } from '$shared/utils'
 
 	type Props = {
@@ -37,61 +36,39 @@
 	<section>
 		<h3 class="sticky-heading">Satisfied Properties</h3>
 
-		{#if assignment_level.value === 'all'}
-			<p class="hint">Assigned properties</p>
-			<PropertyList
-				properties={satisfied_properties.filter((p) => !p.is_deduced)}
-				{type}
-				no_bullets={true}
-			/>
+		<p class="hint">Assigned properties</p>
+		<PropertyList
+			properties={satisfied_properties.filter((p) => !p.is_deduced)}
+			{type}
+			no_bullets={true}
+		/>
 
-			<p class="hint">Deduced properties</p>
-			<PropertyList
-				properties={satisfied_properties.filter((p) => p.is_deduced)}
-				{type}
-				no_bullets={true}
-			/>
-		{:else if assignment_level.value === 'merged'}
-			<PropertyList properties={satisfied_properties} {type} no_bullets={true} />
-		{:else if assignment_level.value === 'basic'}
-			<p class="hint">Assigned properties; further properties can be deduced.</p>
-			<PropertyList
-				properties={satisfied_properties.filter((p) => !p.is_deduced)}
-				{type}
-				no_bullets={true}
-			/>
-		{/if}
+		<p class="hint">Deduced properties</p>
+		<PropertyList
+			properties={satisfied_properties.filter((p) => p.is_deduced)}
+			{type}
+			no_bullets={true}
+		/>
 	</section>
 
 	<section>
 		<h3 class="sticky-heading">Unsatisfied Properties</h3>
 
-		{#if assignment_level.value === 'all'}
-			<p class="hint">Assigned properties</p>
-			<PropertyList
-				properties={unsatisfied_properties.filter((p) => !p.is_deduced)}
-				{type}
-				no_bullets={true}
-			/>
+		<p class="hint">Assigned properties</p>
+		<PropertyList
+			properties={unsatisfied_properties.filter((p) => !p.is_deduced)}
+			{type}
+			no_bullets={true}
+		/>
 
-			<p class="hint">Deduced properties*</p>
-			<PropertyList
-				properties={unsatisfied_properties.filter((p) => p.is_deduced)}
-				{type}
-				no_bullets={true}
-			/>
+		<p class="hint">Deduced properties*</p>
+		<PropertyList
+			properties={unsatisfied_properties.filter((p) => p.is_deduced)}
+			{type}
+			no_bullets={true}
+		/>
 
-			<p class="hint">*This also uses the deduced satisfied properties.</p>
-		{:else if assignment_level.value === 'merged'}
-			<PropertyList properties={unsatisfied_properties} {type} no_bullets={true} />
-		{:else if assignment_level.value === 'basic'}
-			<p class="hint">Assigned properties; further properties can be deduced.</p>
-			<PropertyList
-				properties={unsatisfied_properties.filter((p) => !p.is_deduced)}
-				{type}
-				no_bullets={true}
-			/>
-		{/if}
+		<p class="hint">*This also uses the deduced satisfied properties.</p>
 	</section>
 </div>
 
