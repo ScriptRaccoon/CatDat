@@ -172,6 +172,32 @@ test('user may see undecidable properties', async ({ page }) => {
 	await expect(link).toBeVisible()
 })
 
+test('user may see properties that cannot be determined in a family of categories', async ({
+	page
+}) => {
+	await page.goto('/category/BG')
+
+	await expect(
+		page.getByRole('heading', {
+			name: 'delooping of a group',
+			exact: true
+		})
+	).toBeVisible()
+
+	const undecidable_properties_section = page
+		.locator('section', {
+			hasText: 'Undecidable properties'
+		})
+		.first()
+
+	const link = undecidable_properties_section.getByRole('link', {
+		name: 'finite',
+		exact: true
+	})
+
+	await expect(link).toBeVisible()
+})
+
 test('user can navigate to a related category', async ({ page }) => {
 	await page.goto('/category/FinSet', { waitUntil: 'networkidle' })
 
@@ -223,6 +249,47 @@ test('user can navigate to the dual category if it exists in the database', asyn
 	).toBeVisible()
 
 	await expect(page).toHaveURL('/category/Set_op')
+})
+
+test('user can navigate to a child category', async ({ page }) => {
+	await page.goto('/category/BG', { waitUntil: 'networkidle' })
+
+	await page
+		.getByRole('link', {
+			name: 'delooping of a non-trivial finite group',
+			exact: true
+		})
+		.click()
+
+	await expect(
+		page.getByRole('heading', {
+			name: 'delooping of a non-trivial finite group',
+			exact: true
+		})
+	).toBeVisible()
+
+	await expect(page).toHaveURL('/category/BG_f')
+})
+
+test('user can navigate to a parent category', async ({ page }) => {
+	await page.goto('/category/Ring', { waitUntil: 'networkidle' })
+
+	await page
+		.getByRole('link', {
+			name: 'category of algebras',
+			exact: true
+		})
+		.first()
+		.click()
+
+	await expect(
+		page.getByRole('heading', {
+			name: 'category of algebras',
+			exact: true
+		})
+	).toBeVisible()
+
+	await expect(page).toHaveURL('/category/Alg(R)')
 })
 
 test('user can open and close a proof for a property of a category', async ({ page }) => {
@@ -293,6 +360,38 @@ test('user can open a proof for a deduced unsatisfied property of a category', a
 	await expect(
 		popup.getByText('Assume for contradiction that it is cartesian closed.')
 	).toBeVisible()
+})
+
+test('user can open a proof for an inherited satisfied property of a category', async ({
+	page
+}) => {
+	await page.goto('/category/Ab', { waitUntil: 'networkidle' })
+
+	const claim = page.locator('li', { has: page.getByText('is abelian') })
+
+	await expect(claim).toBeVisible()
+
+	await claim.locator('button').click()
+
+	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
+
+	await expect(popup.getByText('This follows from the parent.')).toBeVisible()
+})
+
+test('user can open a proof for an inherited unsatisfied property of a category', async ({
+	page
+}) => {
+	await page.goto('/category/BG_f', { waitUntil: 'networkidle' })
+
+	const claim = page.locator('li', { has: page.getByText('is not thin') })
+
+	await expect(claim).toBeVisible()
+
+	await claim.locator('button').click()
+
+	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
+
+	await expect(popup.getByText('This follows from the parent.')).toBeVisible()
 })
 
 test('user sees functors associated with the given category', async ({ page }) => {
