@@ -1,0 +1,51 @@
+id: BG
+name: delooping of a group
+notation: $BG$
+objects: a single object $*$
+morphisms: the elements of $G$
+description: Every group $G$ yields a groupoid $BG$ with a single object $*$, morphisms given by the elements of $G$, and composition given by the group operation. We assume that $G$ is non-trivial, since otherwise we get the trivial category.
+nlab_link: https://ncatlab.org/nlab/show/delooping#delooping_of_a_group_to_a_groupoid
+
+tags:
+  - algebra
+  - category theory
+
+related:
+  - BN
+
+satisfied_properties:
+  - property: small
+    proof: This is trivial.
+
+  - property: groupoid
+    proof: This is trivial.
+
+  - property: core-connected
+    proof: The category has exactly one object.
+
+  - property: skeletal
+    proof: The category has exactly one object.
+
+unsatisfied_properties:
+  - property: thin
+    proof: This is because $G$ is not trivial, so there are at least two morphisms $* \rightrightarrows *$.
+
+undecidable_properties:
+  - property: essentially countable
+    proof: This holds if and only if $G$ is countable.
+
+  - property: countable
+    proof: This holds if and only if $G$ is countable.
+
+  - property: finite
+    proof: This holds if and only if $G$ is finite.
+
+  - property: locally finite
+    proof: This holds if and only if $G$ is finite.
+
+  - property: essentially finite
+    proof: This holds if and only if $G$ is finite.
+
+special_objects: {}
+
+special_morphisms: {}

@@ -1,0 +1,24 @@
+id: R-Mod_non_ss
+name: category of left modules over a non-semisimple ring
+notation: $R{-}\Mod$
+objects: left $R$-modules
+morphisms: $R$-linear maps
+description: This is the special case of <a href="/category/R-Mod">$R{-}\Mod$</a> where $R$ is a ring that is not semisimple. In particular, $R \neq 0$ and $R$ is not a field. If $R$ is semisimple, then by the Artin-Wedderburn theorem, the category is equivalent to a finite direct product of categories $D{-}\Mod$ for division rings $D$, and the case of division rings is in a <a href="/category/R-Mod_div">separate entry</a>.
+nlab_link: https://ncatlab.org/nlab/show/module
+parent: R-Mod
+
+tags:
+  - algebra
+
+related:
+  - M-Set
+
+satisfied_properties: []
+
+unsatisfied_properties:
+  - property: split abelian
+    proof: By assumption, $R$ is not semisimple, which means that there is a short exact sequence that does not split; see Theorem 2.5 in Lam's <a href="https://doi.org/10.1007/978-1-4419-8616-0">A First Course in Noncommutative Rings</a>.
+
+special_objects: {}
+
+special_morphisms: {}

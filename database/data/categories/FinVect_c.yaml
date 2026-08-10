@@ -4,16 +4,15 @@ name: category of finite-dimensional vector spaces [countable field]
 notation: $\FinVect_K$
 objects: finite-dimensional vector spaces over a countably infinite field $K$
 morphisms: linear maps
-description: This is the full subcategory of $\Vect_K$ consisting of finite-dimensional vector spaces. Every object is isomorphic to $K^n$ for a unique $n \in \IN$. In this entry, we assume that $K$ is countably infinite (e.g. $K = \IQ$) in order to determine all properties of this category.
+description: This is the special case of <a href="/category/FinVect">$\FinVect_K$</a> where $K$ is a countably infinite field (e.g. $K = \IQ$). We use this assumption in order to determine all properties of this category.
 nlab_link: https://ncatlab.org/nlab/show/FinDimVect
+parent: FinVect
 
 tags:
   - algebra
 
 related:
   - Vect
-  - FinVect_u
-  - FinVect_f
   - Ab_fg
 
 satisfied_properties:

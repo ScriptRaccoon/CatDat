@@ -5,12 +5,12 @@ objects: commutative rings
 morphisms: ring homomorphisms
 description: null
 nlab_link: https://ncatlab.org/nlab/show/CRing
+parent: CAlg(R)
 
 tags:
   - algebra
 
 related:
-  - CAlg(R)
   - Ring
   - Rng
 
