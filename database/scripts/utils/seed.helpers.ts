@@ -3,6 +3,7 @@ import path from 'node:path'
 import fs from 'node:fs'
 import YAML from 'yaml'
 import { devlog } from '$shared/utils'
+import { StructureYaml } from './seed.types'
 
 function read_yaml_file<T>(...parts: string[]): T {
 	const content = fs.readFileSync(path.join(...parts), 'utf8')
@@ -65,4 +66,21 @@ export function seed_files<T>(
 		console.error(`Error seeding ${label}:`, err)
 		process.exit(1)
 	}
+}
+
+export function get_property_assignments(structure: StructureYaml) {
+	return [
+		...structure.satisfied_properties.map((entry) => ({
+			...entry,
+			is_satisfied: 1 as const
+		})),
+		...structure.unsatisfied_properties.map((entry) => ({
+			...entry,
+			is_satisfied: 0 as const
+		})),
+		...(structure.undecidable_properties ?? []).map((entry) => ({
+			...entry,
+			is_satisfied: null
+		}))
+	]
 }
