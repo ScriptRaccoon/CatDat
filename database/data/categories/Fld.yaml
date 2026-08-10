@@ -3,7 +3,7 @@ name: category of fields
 notation: $\Fld$
 objects: fields
 morphisms: field homomorphisms (i.e., ring homomorphisms)
-description: This is a typical example of a bad category of good objects.
+description: This category is a typical example of a bad category of good objects.
 nlab_link: https://ncatlab.org/nlab/show/Field
 
 tags:

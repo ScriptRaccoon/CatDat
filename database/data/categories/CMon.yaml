@@ -3,7 +3,7 @@ name: category of commutative monoids
 notation: $\CMon$
 objects: commutative monoids
 morphisms: monoid homomorphisms
-description: null
+description: This is the full subcategory of $\Mon$ that consists of commutative monoids. It is a typical example of a finitary algebraic category and the "non-additive version" of $\CRing$.
 nlab_link: https://ncatlab.org/nlab/show/category+of+monoids
 
 tags:

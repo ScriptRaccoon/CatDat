@@ -16,14 +16,8 @@ related:
   - FreeAb
 
 satisfied_properties:
-  - property: locally small
-    proof: There is a forgetful functor $\Vect \to \Set$ and $\Set$ is locally small.
-
   - property: split abelian
     proof: That $\Vect$ is abelian is a standard fact, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. VIII. Furthermore, it is a fact from linear algebra that every subspace has a complement, which is why every short exact sequence splits.
-
-  - property: finitary algebraic
-    proof: Take the algebraic theory of a vector space.
 
   - property: extremal generator
     proof: The one-dimensional vector space $K$ is an extremal generator since it represents the forgetful functor $\Vect_K \to \Set$ which is faithful and conservative.
@@ -34,12 +28,7 @@ satisfied_properties:
     proof: 'The one-dimensional vector space $K$ is an extremal cogenerator. To show this, using <a href="/category-implication/dual_generator_balanced_consequence">this result</a>, since $\Vect_K$ is balanced, it suffices to show that $K$ is a cogenerator. For this, suppose we have two unequal vectors $x, y \in V$. Then $x - y \ne 0$, so there exists a functional $\varphi : V \to K$ such that $\varphi(x - y) \ne 0$. It follows that $\varphi(x) \ne \varphi(y)$.'
     check_redundancy: false
 
-unsatisfied_properties:
-  - property: skeletal
-    proof: This is trivial.
-
-  - property: CSP
-    proof: The canonical homomorphism $\bigoplus_{n \geq 0} K \to \prod_{n \geq 0} K$ is not surjective, hence no epimorphism.
+unsatisfied_properties: []
 
 special_objects:
   initial object:
@@ -51,7 +40,4 @@ special_objects:
   products:
     description: direct products with pointwise operations
 
-special_morphisms:
-  epimorphisms:
-    description: surjective morphisms
-    proof: The forgetful functor to abelian groups is faithful and preserves colimits, hence reflects and preserves epimorphisms. Alternatively, just use the same proof as for abelian groups.
+special_morphisms: {}

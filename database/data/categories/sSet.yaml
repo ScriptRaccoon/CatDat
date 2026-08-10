@@ -3,7 +3,7 @@ name: category of simplicial sets
 notation: $\sSet$
 objects: simplicial sets, i.e. functors $\Delta^{\op} \to \Set$ where <a href="/category/Delta">$\Delta$</a> denotes the simplex category.
 morphisms: natural transformations
-description: null
+description: The category of simplicial sets provides a fundamental combinatorial framework for representing spaces and $\infty$-categories, with applications throughout algebraic topology, higher category theory, and homological algebra.
 nlab_link: https://ncatlab.org/nlab/show/SimpSet
 
 tags:

@@ -3,7 +3,7 @@ name: category of rngs
 notation: $\Rng$
 objects: rngs, that is, non-unital rings
 morphisms: maps that preserve addition and multiplication
-description: null
+description: This category is a typical example of a finitary algebraic category. It is an "additive version" of the category of semigroups $\SemiGrp$.
 nlab_link: https://ncatlab.org/nlab/show/Rng
 
 tags:
@@ -13,6 +13,7 @@ related:
   - CRing
   - Ring
   - Ab
+  - SemiGrp
 
 comments:
   - It is likely that the epimorphisms can be described as for <a href="/category/CRing">$\CRing$</a>.
@@ -37,9 +38,7 @@ unsatisfied_properties:
     proof: This is trivial.
 
   - property: balanced
-    proof: The inclusion $\IZ \hookrightarrow \IQ$ is a counterexample; the proof can be reduced to the <a href="/category/Ring">unital case</a>.
-    references:
-      - ring_not_balanced
+    proof: The inclusion $\IZ \hookrightarrow \IQ$ is a counterexample; the proof can be reduced to the <a href="/morphism/integer-rational-embedding">unital case</a>.
 
   - property: cogenerator
     proof: 'We apply <a href="/content/missing_cogenerator">this lemma</a> to the collection of fields: Any non-zero rng homomorphism from a field to a rng must be injective, and for every infinite cardinal $\kappa$ the field of rational functions in $\kappa$ variables has cardinality $\geq \kappa$.'
@@ -61,9 +60,9 @@ unsatisfied_properties:
     proof: Assume that $\coprod_n \IZ \to \prod_n \IZ$ is an epimorphism in $\Rng$. Then $((\coprod_n \IZ)^+)^{\ab} \to \prod_n \IZ$ would be an epimorphism in $\CRing$, where $(-)^+$ denotes the unitalization and $(-)^{\ab}$ the abelianization. But if $R \to S$ is an epimorphism of commutative rings, then $\card(S) \leq \card(R)$ by <a href="https://stacks.math.columbia.edu/tag/04W0" target="_blank">SP/04W0</a>. Since $((\coprod_n \IZ)^+)^{\ab}$ is countable and $\prod_n \IZ$ is not, we get a contradiction.
 
   - property: coregular
-    proof: 'We can copy the proof for <a href="/category/Ring">$\Ring$</a>. In short, the inclusion of diagonal matrices $\IQ^2 \hookrightarrow M_2(\IQ)$ is a regular monomorphism, but becomes zero after taking the pushout with $p_1 : \IQ^2 \twoheadrightarrow \IQ$ because $M_2(\IQ)$ is simple.'
+    proof: 'We can copy the proof for <a href="/category/Ring">$\Ring$</a>, i.e. the proof for <a href="/category/Alg(R)">$\Alg(R)$</a>. In short, the inclusion of diagonal matrices $\IQ^2 \hookrightarrow M_2(\IQ)$ is a regular monomorphism, but becomes zero after taking the pushout with $p_1 : \IQ^2 \twoheadrightarrow \IQ$ because $M_2(\IQ)$ is simple.'
     references:
-      - ring_not_coregular
+      - alg_not_coregular
 
   - property: regular quotient object classifier
     proof: 'Assume that $\Rng$ has a regular quotient object classifier $P$. Consider the functor $N : \Ab \to \Rng$ that equips an abelian group with zero multiplication. It is fully faithful and has a left adjoint mapping a rng $R$ to the abelian group $R/R^2$. If $R$ is a rng with zero multiplication and $R \to S$ is a surjective homomorphism, then $S$ has zero multiplication. Therefore, the assumptions of Lemma 1 <a href="/content/subcategories">here</a> (dualized) apply and we conclude that $P/P^2$ is a regular quotient object classifier of $\Ab$. But we already know that <a href="/category/Ab">$\Ab$</a> has no such object (in fact, the only additive categories with such an object are trivial by <a href="https://math.stackexchange.com/questions/4086192" target="_blank">MSE/4086192</a>).'
@@ -86,8 +85,6 @@ unsatisfied_properties:
       via
       $$p \mapsto \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix}, \quad q \mapsto \begin{pmatrix} 1 & 1 \\ 0 & 0 \end{pmatrix}.$$
       From here, the rest of the proof is similar to the one for <a href="/category/Ring">$\Ring$</a>.
-    references:
-      - ring_no_effective_cocongruences
 
 special_objects:
   initial object:

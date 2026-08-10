@@ -3,7 +3,7 @@ name: category of free abelian groups
 notation: $\FreeAb$
 objects: free abelian groups
 morphisms: group homomorphisms
-description: null
+description: This is the full subcategory of $\Ab$ that consists of the <a href="https://ncatlab.org/nlab/show/free+abelian+group" target="_blank">free abelian groups</a>.
 nlab_link: null
 
 tags:

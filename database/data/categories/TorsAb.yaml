@@ -3,7 +3,7 @@ name: category of torsion abelian groups
 notation: $\TorsAb$
 objects: torsion abelian groups
 morphisms: group homomorphisms
-description: This is a Grothendieck abelian category containing all finite abelian groups.
+description: This category is a Grothendieck abelian category containing all finite abelian groups.
 nlab_link: https://ncatlab.org/nlab/show/torsion+subgroup
 
 tags:
@@ -31,13 +31,9 @@ satisfied_properties:
 
   - property: normal
     proof: 'If $f : A \to B$ is a monomorphism, it is injective (see below). In <a href="/category/Ab">$\Ab$</a> it is then the kernel of $B \to B/f(A)$. Since $B/f(A)$ is torsion, it is also the kernel in $\TorsAb$.'
-    references:
-      - ab_abelian
 
   - property: conormal
     proof: 'If $f : A \to B$ is an epimorphism, it is surjective (see below). In <a href="/category/Ab">$\Ab$</a> it is then the cokernel of its kernel $K \hookrightarrow A$. Since $K$ is torsion, it is also the cokernel in $\TorsAb$.'
-    references:
-      - ab_abelian
 
   - property: finitely accessible
     proof: We already know that (filtered) colimits exist and are preserved by the forgetful functor to $\Ab$. Every torsion abelian group is the filtered colimit of its finitely generated subgroups (which are finite). These are finitely presentable in $\Ab$, hence also in $\TorsAb$.

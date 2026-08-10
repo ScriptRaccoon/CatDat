@@ -16,23 +16,9 @@ related:
 
 satisfied_properties:
   - property: finite
-    proof: This is trivial.
+    proof: This is because $G$ is finite by assumption.
 
-  - property: small
-    proof: This is trivial.
-
-  - property: groupoid
-    proof: This is trivial.
-
-  - property: core-connected
-    proof: The category has exactly one object.
-
-  - property: skeletal
-    proof: The category has exactly one object.
-
-unsatisfied_properties:
-  - property: trivial
-    proof: This is trivial.
+unsatisfied_properties: []
 
 special_objects: {}
 
