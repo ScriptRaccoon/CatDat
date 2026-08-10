@@ -54,6 +54,7 @@ export type StructureYaml = {
 	tags: string[]
 	related: string[]
 	dual?: string
+	parent?: string
 	satisfied_properties: PropertyEntry[]
 	unsatisfied_properties: PropertyEntry[]
 	undecidable_properties?: PropertyEntry[]
