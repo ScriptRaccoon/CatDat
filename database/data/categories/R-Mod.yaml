@@ -37,7 +37,7 @@ undecidable_properties:
 
 special_objects:
   initial object:
-    description: trivial module
+    description: zero module
   terminal object:
     description: zero module
   coproducts:
