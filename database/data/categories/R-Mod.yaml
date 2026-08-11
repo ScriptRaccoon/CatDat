@@ -13,6 +13,7 @@ related:
   - M-Set
   - Ab
   - Vect
+  - grMod_G(R)
 
 satisfied_properties:
   - property: locally small

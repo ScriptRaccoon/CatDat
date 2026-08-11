@@ -1,0 +1,65 @@
+id: grMod_G(R)
+name: category of graded modules over a graded ring
+notation: $\grMod_G(R)$
+objects: $G$-graded modules over a $G$-graded ring $R$
+morphisms: $R$-linear $G$-graded maps
+description: Here, $G$ is a monoid (written additively), $R = (R_n)_{n \in G}$ is a non-trivial $G$-graded ring, and we consider $G$-graded $R$-modules, consisting of abelian groups $(M_n)_{n \in G}$ and bilinear maps $R_n \times M_m \to M_{n+m}$ satisfying the module axioms. Typical examples are $G = \IN$ and $G = \IZ$, both with respect to addition.
+nlab_link: https://ncatlab.org/nlab/show/grMod
+tags:
+  - algebra
+
+related:
+  - R-Mod
+
+satisfied_properties:
+  - property: locally small
+    proof: There is a forgetful functor $\grMod_G(R) \to \Ab^{G}$, and $\Ab^{G}$ is locally small since $\Ab$ is locally small.
+
+  - property: complete
+    proof: 'This follows formally since <a href="/category/Ab">$\Ab$</a> is complete and limits are computed degree-wise. In more detail, if $D : \I \to \grMod_G(R)$ is a small diagram and we write $D(i) = (D_n(i))_{n \in G}$, then each $D_n : \I \to \Ab$ is a diagram and therefore has a limit $L_n \in \Ab$. The multiplication maps $R_n \times D_m(i) \to D_{n+m}(i)$ induce a multiplication map $R_n \times L_m \to L_{n+m}$ on the limits. These maps make $(L_n)_{n \in G}$ into a graded module, and one can check that it satisfies the universal property of a limit of $D$.'
+    check_redundancy: false
+
+  - property: cocomplete
+    proof: 'This follows formally since <a href="/category/Ab">$\Ab$</a> is cocomplete and colimits are computed degree-wise. In more detail, if $D : \I \to \grMod_G(R)$ is a small diagram and we write $D(i) = (D_n(i))_{n \in G}$, then each $D_n : \I \to \Ab$ is a diagram and therefore has a colimit $L_n \in \Ab$. The linear multiplication maps $R_n \otimes D_m(i) \to D_{n+m}(i)$ induce a linear multiplication map $R_n \otimes L_m \to L_{n+m}$ on the colimits; here we use that $R_n \otimes -$ preserves colimits. These maps make $(L_n)_{n \in G}$ into a graded module, and one can check that it satisfies the universal property of a colimit of $D$.'
+    check_redundancy: false
+
+  - property: abelian
+    proof: 'The sum of two graded linear maps is defined degree-wise. Since we already know that limits and colimits exist and are computed degree-wise, kernels and cokernels exist in particular, and they are computed degree-wise. If $f : M \to N$ is a graded linear map, then the canonical morphism $\coim(f) \to \im(f)$ is an isomorphism since this is true in every degree.'
+
+  - property: locally strongly finitely presentable
+    proof: 'We can model graded modules using a multi-sorted finitary algebraic theory with sorts $(S_n)_{n \in G}$, unary operations $r : S_m \to S_{n+m}$ for $r \in R_n$, the algebraic theory of an abelian group on each $S_n$, and the obvious equations.'
+
+unsatisfied_properties:
+  - property: skeletal
+    proof: This is trivial.
+
+  - property: CSP
+    proof: By using the multiplication in $R$, we regard $R$ as a graded $R$-module. Then the canonical graded linear map $\bigoplus_{n \geq 0} R \to \prod_{n \geq 0} R$ is not an epimorphism in $\grMod_G(R)$. In fact, if it were an epimorphism, it would be surjective in every degree, and in particular the group homomorphism $\bigoplus_{n \geq 0} R_0 \to \prod_{n \geq 0} R_0$ would be surjective. But this is only possible when $R_0 = 0$, which would imply $R = 0$.
+
+undecidable_properties:
+  - property: split abelian
+    proof: This depends on the choice of the graded ring $R$ and the monoid $G$. For a trivial example, when $G = 0$, $R$ is just a ring and $\grMod_G(R) = \Mod(R)$ is split abelian if and only if $R$ is semisimple. For a slightly more interesting example, let $G = \IZ$, let $k$ be a ring, and consider the $\IZ$-graded ring $R := (k)_{n \in \IZ}$ with multiplication induced by the multiplication on $k$ (that is, the associated ring is the Laurent polynomial ring $k[T,T^{-1}]$). Then $\grMod_G(R) \simeq \Mod(k)$ is split abelian if and only if $k$ is semisimple.
+
+  - property: finitary algebraic
+    proof: This depends on the choice of the graded ring $R$ and the monoid $G$. For example, if $k$ is a ring and we take the $\IZ$-graded ring $R := (k)_{n \in \IZ}$ with multiplication induced by the multiplication on $k$ (that is, the associated ring is the Laurent polynomial ring $k[T,T^{-1}]$), then $\grMod_{\IZ}(R) \simeq \Mod(k)$ is finitary algebraic. On the other hand, when $R$ has the trivial $\IZ$-grading, with $R_n = 0$ for $n \neq 0$ and $k := R_0$, we have $\grMod_{\IZ}(R) \simeq \prod_{n \in \IZ} \Mod(k)$, which is not finitary algebraic when $k \neq 0$. To see this, note that every finitary algebraic category has a finitely presentable (regular-projective) generator, namely the free algebra on one generator. A finitely presentable object in $\prod_{n \in \IZ} \Mod(k)$ is concentrated in finitely many degrees and therefore cannot be a generator.
+
+special_objects:
+  initial object:
+    description: the zero graded module with $0_n := 0$
+  terminal object:
+    description: the zero graded module with $0_n := 0$
+  coproducts:
+    description: degree-wise defined direct sums
+  products:
+    description: degree-wise defined direct products
+
+special_morphisms:
+  isomorphisms:
+    description: morphisms that are bijective in each degree
+    proof: This is straightforward to check.
+  monomorphisms:
+    description: morphisms that are injective in each degree
+    proof: 'A graded linear map that is injective in each degree is clearly a monomorphism. Conversely, a monomorphism $f : M \to N$ has trivial kernel. Since limits are computed degree-wise, the kernel is computed degree-wise as well. It follows that each component $f_n : M_n \to N_n$ has trivial kernel, i.e. is injective.'
+  epimorphisms:
+    description: morphisms that are surjective in each degree
+    proof: 'A graded linear map that is surjective in each degree is clearly an epimorphism. Conversely, an epimorphism $f : M \to N$ has trivial cokernel. Since colimits are computed degree-wise, the cokernel is computed degree-wise as well. It follows that each component $f_n : M_n \to N_n$ has trivial cokernel, i.e. is surjective.'

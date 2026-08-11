@@ -49,6 +49,7 @@
 \card: \operatorname{card}
 \colim: \operatorname{colim}
 \im: \operatorname{im}
+\coim: \operatorname{coim}
 \lcm: \operatorname{lcm}
 \Spec: \operatorname{Spec}
 \ord: \operatorname{ord}
@@ -86,6 +87,7 @@
 \Mon: \mathbf{Mon}
 \CMon: \mathbf{CMon}
 \Mod: \mathbf{Mod}
+\grMod: \mathbf{grMod}
 \Fld: \mathbf{Fld}
 \FinAb: \mathbf{FinAb}
 \FinGrp: \mathbf{FinGrp}
