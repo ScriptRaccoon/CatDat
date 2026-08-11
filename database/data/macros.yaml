@@ -75,6 +75,7 @@
 \Setne: \mathbf{Set}_{\neq \varnothing}
 \Rel: \mathbf{Rel}
 \Ab: \mathbf{Ab}
+\grAb: \mathbf{grAb}
 \Grp: \mathbf{Grp}
 \Vect: \mathbf{Vect}
 \FinVect: \mathbf{FinVect}
