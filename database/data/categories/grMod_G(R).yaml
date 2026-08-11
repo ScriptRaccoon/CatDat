@@ -10,6 +10,7 @@ tags:
 
 related:
   - R-Mod
+  - FiltVect
 
 satisfied_properties:
   - property: locally small

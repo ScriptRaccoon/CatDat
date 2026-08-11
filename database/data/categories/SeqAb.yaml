@@ -1,0 +1,46 @@
+id: SeqAb
+name: category of sequences of abelian groups
+notation: $\Ab^{(\IN,\leq)}$
+objects: sequences of abelian groups $A_0 \to A_1 \to A_2 \to \cdots$
+morphisms: commutative diagrams
+description: This is the special case of the <a href="/category/grMod_G(R)">category of $\IN$-graded modules</a> over the $\IN$-graded ring $\IZ[T]$ with $\deg(T)=1$. It can also be viewed as the category of functors from the <a href="/category/N">category of natural numbers $(\IN,\leq)$</a> to $\Ab$. Thus, most (but not all) properties are inherited from <a href="/category/Ab">$\Ab$</a>. A notable difference is that $\Ab^{(\IN,\leq)}$ is not finitary algebraic.
+nlab_link: null
+parent: grMod_G(R)
+
+tags:
+  - algebra
+
+related:
+  - Ab
+  - grAb
+  - FiltVect
+
+satisfied_properties: []
+
+unsatisfied_properties:
+  - property: split abelian
+    proof: 'This follows directly from the fact that <a href="/category/Ab">$\Ab$</a> is not split abelian: it identifies with the full subcategory of $\Ab^{(\IN,\leq)}$ consisting of sequences concentrated in degree $0$.'
+
+  - property: finitary algebraic
+    proof: >-
+      The proof is similar to the one for <a href="/category/grAb">$\grAb$</a>, which is the special case in which all transition maps are zero. We will show that there is no finitely presentable generator.
+
+      First, notice that $\Ab^{(\IN,\leq)}$ is the category of algebras for the multi-sorted algebraic theory with one sort $S_n$ for each $n \in \IN$, one unary operation $T : S_n \to S_{n+1}$ for each $n \in \IN$, and the theory of an abelian group on each $S_n$. The free algebra on one generator of sort $S_n$ is the object $P[n]$ defined by
+      $$0 \to \cdots \to 0 \to \IZ \xrightarrow{\id} \IZ \xrightarrow{\id} \cdots,$$
+      which starts in degree $n$ and remains constant in all degrees $\geq n$. By Theorem 3.12 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>, every finitely presentable object $A$ is a quotient of a finite direct sum of objects $P[n]$. It follows that there is some $N \in \IN$ such that the map $A_n \to A_{n+1}$ is surjective for every $n \geq N$ (in fact, much more is true, but this is sufficient here). But then every homomorphism $A \to P[N+1]$ is zero, as can be seen from a diagram chase in
+      $$\begin{CD}
+      \cdots @>>> A_N @>{\text{epi}}>> A_{N+1} @>{\text{epi}}>> A_{N+2} @>{\text{epi}}>> \cdots \\
+      @. @VVV @VVV @VVV @. \\
+      \cdots @>>> 0 @>>> \IZ @>{\id}>> \IZ @>{\id}>> \cdots
+      \end{CD}$$
+      Since $P[N+1] \neq 0$, it follows that $A$ is not a generator.
+    references:
+      - grAb_not_finitary_algebraic
+
+special_objects:
+  initial object:
+    description: the zero sequence $0 \to 0 \to \cdots$
+  terminal object:
+    description: the zero sequence $0 \to 0 \to \cdots$
+
+special_morphisms: {}
