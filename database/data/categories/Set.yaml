@@ -24,7 +24,7 @@ satisfied_properties:
     proof: The collection of maps between two sets $X,Y$ is a subset of $X \times Y$ and therefore a set.
 
   - property: one-sorted finitary algebraic
-    proof: Use the empty algebraic theory.
+    proof: Use the empty one-sorted algebraic theory.
 
   - property: Grothendieck topos
     proof: It is equivalent to the category of sheaves on a one-point space.

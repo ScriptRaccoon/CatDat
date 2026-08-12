@@ -29,7 +29,7 @@ satisfied_properties:
     proof: 'Let $\Delta^n \coloneqq \Hom([n],-)$ be the standard $n$-simplex for $n \geq 0$. The set $\{\Delta^n : n \geq 0\}$ is a <a href="/category-property/generating_set">generating set</a> by the Yoneda Lemma. For all $n,m$ there is a morphism $[n] \to [m]$ in $\Delta$ and hence a morphism $\Delta^m \to \Delta^n$ in $\sSet$. Then by <a href="/content/generator_construction">this lemma</a> the coproduct $\coprod_{n \geq 0} \Delta^n$ is a generator in $\sSet$.'
 
   - property: finitary algebraic
-    proof: This follows from the fact that every category of presheaves over a small category is locally strongly finitely presentable, and therefore finitary algebraic. Alternatively, we may use the <a href="https://ncatlab.org/nlab/show/simplicial+identities" target="_blank">simplicial identities</a> to produce an $\IN$-sorted finitary algebraic theory (having unary operations only) whose models are precisely the simplicial sets.
+    proof: This follows from the fact that every category of presheaves on a small category is locally strongly finitely presentable, and hence finitary algebraic. Alternatively, we can use the <a href="https://ncatlab.org/nlab/show/simplicial+identities" target="_blank">simplicial identities</a> to construct an $\IN$-sorted finitary algebraic theory (with unary operations only) whose models are precisely the simplicial sets.
 
 unsatisfied_properties:
   - property: skeletal
