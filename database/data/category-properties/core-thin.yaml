@@ -7,7 +7,7 @@ description: >-
   <li>Parallel isomorphisms are equal.</li>
   <li>Every automorphism is the identity.</li>
   </ol>
-nlab_link: https://ncatlab.org/nlab/show/gaunt+category
+nlab_link: https://ncatlab.org/nlab/show/core-thin
 dual: core-thin
 invariant_under_equivalences: true
 
