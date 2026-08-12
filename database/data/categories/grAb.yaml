@@ -3,7 +3,7 @@ name: category of graded abelian groups
 notation: $\grAb$
 objects: $\IZ$-graded abelian groups
 morphisms: graded linear maps
-description: This is the special case of the <a href="/category/grMod_G(R)">category of $\IZ$-graded modules</a> over the $\IZ$-graded ring $\IZ$ concentrated in degree $0$. It can also be viewed as the product category $\Ab^{\IZ}$. It provides an example of a category that is locally strongly finitely presentable and Grothendieck abelian but, unlike $\Ab$, is not finitary algebraic.
+description: This is the special case of the <a href="/category/grMod_G(R)">category of $\IZ$-graded modules</a> over the $\IZ$-graded ring $\IZ$ concentrated in degree $0$. It can also be viewed as the product category $\Ab^{\IZ}$. It provides an example of a category that is locally strongly finitely presentable and Grothendieck abelian but, unlike $\Ab$, is not one-sorted finitary algebraic.
 nlab_link: https://ncatlab.org/nlab/show/graded+abelian+group
 parent: grMod_G(R)
 tags:
@@ -20,9 +20,9 @@ unsatisfied_properties:
   - property: split abelian
     proof: 'This follows directly from the fact that <a href="/category/Ab">$\Ab$</a> is not split abelian: it identifies with the full subcategory of $\grAb$ consisting of graded abelian groups concentrated in degree $0$.'
 
-  - property: finitary algebraic
-    proof: From the description of $\grAb$ using a $\IZ$-sorted algebraic theory and Theorem 3.12 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>, we see that a finitely presentable object of $\grAb \cong \Ab^{\IZ}$ is a graded abelian group $(A_n)_{n \in \IZ}$ such that each $A_n$ is finitely presentable and $A_n = 0$ for all but finitely many degrees $n$. Thus, it cannot be a generator, since it cannot distinguish homomorphisms concentrated in degrees outside the finite set of degrees. However, every finitary algebraic category has a finitely presentable generator, namely the free algebra on one generator.
-    label: grAb_not_finitary_algebraic
+  - property: one-sorted finitary algebraic
+    proof: From the description of $\grAb$ using a $\IZ$-sorted algebraic theory and Theorem 3.12 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>, we see that a finitely presentable object of $\grAb \cong \Ab^{\IZ}$ is a graded abelian group $(A_n)_{n \in \IZ}$ such that each $A_n$ is finitely presentable and $A_n = 0$ for all but finitely many degrees $n$. Thus, it cannot be a generator, since it cannot distinguish homomorphisms concentrated in degrees outside the finite set of degrees. However, every one-sorted finitary algebraic category has a finitely presentable generator, namely the free algebra on one generator.
+    label: grAb_not_one-sorted_finitary_algebraic
 
 special_objects: {}
 

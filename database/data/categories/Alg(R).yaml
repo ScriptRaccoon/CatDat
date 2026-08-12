@@ -17,8 +17,8 @@ satisfied_properties:
   - property: locally small
     proof: There is a forgetful functor $\Alg(R) \to \Set$ and $\Set$ is locally small.
 
-  - property: finitary algebraic
-    proof: Take the algebraic theory of an $R$-algebra.
+  - property: one-sorted finitary algebraic
+    proof: Take the one-sorted algebraic theory of an $R$-algebra.
 
   - property: strict terminal object
     proof: 'If $f : 0 \to A$ is an algebra homomorphism, then $A$ satisfies $1=f(1)=f(0)=0$, so that $A=0$.'

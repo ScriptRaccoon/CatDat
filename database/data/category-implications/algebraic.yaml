@@ -1,8 +1,8 @@
 # results on finitary algebraic categories and related notions
 
-- id: finitary_algebraic_consequence
+- id: one-sorted_finitary_algebraic_consequence
   assumptions:
-    - finitary algebraic
+    - one-sorted finitary algebraic
   conclusions:
     - locally strongly finitely presentable
   proof: This is trivial because a locally strongly finitely presentable category is a variety of many-sorted finitary algebras.
@@ -10,10 +10,10 @@
 
 - id: algebraic_well-copowered
   assumptions:
-    - finitary algebraic
+    - one-sorted finitary algebraic
   conclusions:
     - well-copowered
-  proof: See <a href="https://mathoverflow.net/questions/486607" target="_blank">MSE/486607</a>. Alternatively, one may combine the facts that finitary algebraic categories are locally (finitely) presentable and that locally presentable categories are well-copowered, both of which are saved in the database. But we include the direct proof here as well, since it makes it easier to deduce the property for finitary algebraic categories appearing in practice.
+  proof: See <a href="https://mathoverflow.net/questions/486607" target="_blank">MSE/486607</a>. Alternatively, one may combine the facts that one-sorted finitary algebraic categories are locally (finitely) presentable and that locally presentable categories are well-copowered, both of which are saved in the database. But we include the direct proof here as well, since it makes it easier to deduce the property for one-sorted finitary algebraic categories appearing in practice.
   is_equivalence: false
 
 - id: many_sorted_algebraic_implies_regular

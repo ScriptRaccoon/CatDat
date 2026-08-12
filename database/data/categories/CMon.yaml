@@ -3,7 +3,7 @@ name: category of commutative monoids
 notation: $\CMon$
 objects: commutative monoids
 morphisms: monoid homomorphisms
-description: This is the full subcategory of $\Mon$ that consists of commutative monoids. It is a typical example of a finitary algebraic category and the "non-additive version" of $\CRing$.
+description: This is the full subcategory of $\Mon$ that consists of commutative monoids. It is a typical example of a one-sorted finitary algebraic category and the "non-additive version" of $\CRing$.
 nlab_link: https://ncatlab.org/nlab/show/category+of+monoids
 
 tags:
@@ -22,8 +22,8 @@ satisfied_properties:
     proof: The trivial monoid is a zero object.
     check_redundancy: false
 
-  - property: finitary algebraic
-    proof: Take the algebraic of a commutative monoid.
+  - property: one-sorted finitary algebraic
+    proof: Take the one-sorted algebraic theory of a commutative monoid.
 
   - property: biproducts
     proof: This follows from the explicit construction of coproducts and products.

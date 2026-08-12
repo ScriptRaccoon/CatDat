@@ -21,8 +21,8 @@ satisfied_properties:
   - property: Grothendieck topos
     proof: It is the category of sheaves on the opposite of the one-object category associated to $M$.
 
-  - property: finitary algebraic
-    proof: Take the algebraic theory of an $M$-sets (having a unary operation for each $m \in M$).
+  - property: one-sorted finitary algebraic
+    proof: Take the one-sorted algebraic theory of an $M$-sets (having a unary operation for each $m \in M$).
 
 unsatisfied_properties:
   - property: skeletal

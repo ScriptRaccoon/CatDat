@@ -35,8 +35,8 @@ unsatisfied_properties:
   - property: skeletal
     proof: This is trivial.
 
-  - property: finitary algebraic
-    proof: A one-sorted finitary algebraic category has an object $F$ (the free algebra on one generator) such that $F$ is finitely presentable and every object $X$ admits an epimorphism $\coprod_{s \in S} F \to X$ for some index set $S$. Assume that such a simplicial set $F$ exists. By using the sequence of $n$-skeletons of $F$, we see that there is some $n$ such that every $n$-simplex in $F$ is degenerate. Now take $X = \Delta^n$, which has a non-degenerate $n$-simplex. Then there cannot be an epimorphism $\coprod_{s \in S} F \to X$.
+  - property: one-sorted finitary algebraic
+    proof: A one-sorted one-sorted finitary algebraic category has an object $F$ (the free algebra on one generator) such that $F$ is finitely presentable and every object $X$ admits an epimorphism $\coprod_{s \in S} F \to X$ for some index set $S$. Assume that such a simplicial set $F$ exists. By using the sequence of $n$-skeletons of $F$, we see that there is some $n$ such that every $n$-simplex in $F$ is degenerate. Now take $X = \Delta^n$, which has a non-degenerate $n$-simplex. Then there cannot be an epimorphism $\coprod_{s \in S} F \to X$.
 
 special_objects:
   initial object:

@@ -22,8 +22,8 @@ satisfied_properties:
     proof: The singleton set is a zero object.
     check_redundancy: false
 
-  - property: finitary algebraic
-    proof: Take the algebraic theory with just one constant.
+  - property: one-sorted finitary algebraic
+    proof: Take the one-sorted algebraic theory with just one constant.
 
   - property: subobject classifier
     proof: The pointed set $(\{0,1\},1)$ is a subobject classifier.

@@ -6,7 +6,7 @@ description: A proof that the only thin algebraic categories are the terminal an
 ## Algebraic categories are "never" thin
 
 ::: Lemma
-Let $\C$ be a [thin](/category-property/thin) and [finitary algebraic](/category-property/finitary_algebraic) category. Then $\C \simeq 1$ or $\C \simeq I$, where $I$ is the walking morphism.
+Let $\C$ be a [thin](/category-property/thin) and [one-sorted finitary algebraic](/category-property/one-sorted_finitary_algebraic) category. Then $\C \simeq 1$ or $\C \simeq I$, where $I$ is the walking morphism.
 :::
 
 _Proof._

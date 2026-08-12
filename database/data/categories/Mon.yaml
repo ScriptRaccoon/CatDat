@@ -3,7 +3,7 @@ name: category of monoids
 notation: $\Mon$
 objects: monoids
 morphisms: monoid homomorphisms
-description: This category is a typical example of a finitary algebraic category.
+description: This category is a typical example of a one-sorted finitary algebraic category.
 nlab_link: https://ncatlab.org/nlab/show/category+of+monoids
 
 tags:
@@ -24,8 +24,8 @@ satisfied_properties:
     proof: The trivial monoid is a zero object.
     check_redundancy: false
 
-  - property: finitary algebraic
-    proof: Take the algebraic of a monoid.
+  - property: one-sorted finitary algebraic
+    proof: Take the one-sorted algebraic theory of a monoid.
 
   - property: unital
     proof: If a submonoid of $X \times Y$ contains $X \times \{1\}$ and $\{1\} \times Y$, then for all $x \in X$ and $y \in Y$ it also contains $(x,1) \cdot (1,y) = (x,y)$.

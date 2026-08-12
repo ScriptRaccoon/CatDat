@@ -18,8 +18,8 @@ satisfied_properties:
   - property: locally small
     proof: There is a forgetful functor $\SemiGrp \to \Set$ and $\Set$ is locally small.
 
-  - property: finitary algebraic
-    proof: Take the algebraic theory of a semigroup.
+  - property: one-sorted finitary algebraic
+    proof: Take the one-sorted algebraic theory of a semigroup.
 
   - property: strict initial object
     proof: This is because the initial object is the empty semigroup, and a non-empty set has no map to an empty set.

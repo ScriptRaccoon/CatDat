@@ -14,7 +14,7 @@ dual: null
 invariant_under_equivalences: true
 
 related:
-  - finitary algebraic
+  - one-sorted finitary algebraic
   - generalized variety
   - locally finitely multi-presentable
   - locally strongly finitely presentable
