@@ -15,7 +15,7 @@ export function deduce_special_objects() {
  * Clears deduced special objects
  */
 function clear_deduced_special_objects() {
-	db.prepare(`DELETE FROM special_objects WHERE is_deduced = TRUE`).run()
+	db.prepare(`DELETE FROM special_object_assignments WHERE is_deduced = TRUE`).run()
 }
 
 /**
@@ -27,13 +27,14 @@ function inherit_special_objects_from_parents() {
 	const parent_map = get_structure_parent_map(db, 'category')
 
 	const get_parent_special_objects = db.prepare<[string], SpecialObject>(
-		`SELECT type, description FROM special_objects
+		`SELECT type, description FROM special_object_assignments
 		WHERE category_id = ? AND is_deduced = FALSE`
 	)
 
 	const insert_special_object = db.prepare(
-		`INSERT INTO special_objects (category_id, type, description, is_deduced)
-		VALUES (?, ?, ?, TRUE)
+		`INSERT INTO special_object_assignments (
+			category_id, type, description, is_deduced
+		) VALUES (?, ?, ?, TRUE)
 		ON CONFLICT (category_id, type) DO NOTHING`
 	)
 
@@ -71,7 +72,7 @@ function inherit_special_objects_from_parents() {
 function deduce_special_objects_of_dual_categories() {
 	const res = db
 		.prepare(
-			`INSERT INTO special_objects (
+			`INSERT INTO special_object_assignments (
                 category_id,
                 type,
                 description,
@@ -83,7 +84,7 @@ function deduce_special_objects_of_dual_categories() {
                 o.description,
                 TRUE
             FROM structures c
-            INNER JOIN special_objects o ON o.category_id = c.id
+            INNER JOIN special_object_assignments o ON o.category_id = c.id
             INNER JOIN special_object_types t ON t.type = o.type
             WHERE c.type = 'category' AND c.dual_structure_id IS NOT NULL`
 		)
