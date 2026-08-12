@@ -23,7 +23,7 @@ satisfied_properties:
     proof: The functor maps $0 \mapsto \varnothing$.
 
   - property: finitary
-    proof: A direct proof is possible, but we can also use the representation of $I$ as the category of algebras for the one-sorted finitary algebraic theory having just one equation $x=y$. Then the functor $I \to \Set$ is just its forgetful functor, and is therefore finitary.
+    proof: A direct proof is possible, but we can also use the representation of $I$ as the category of models of the one-sorted finitary algebraic theory with the single equation $x=y$. Then the functor $I \to \Set$ is precisely the forgetful functor and is therefore finitary.
 
 unsatisfied_properties:
   - property: preserves epimorphisms
