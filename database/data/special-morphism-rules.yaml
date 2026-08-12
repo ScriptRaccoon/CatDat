@@ -38,20 +38,20 @@
   description: same as isomorphisms
   proof: The category is right cancellative, and a regular monomorphism which is an epimorphism must be an isomorphism.
 
-- property: finitary algebraic
+- property: one-sorted finitary algebraic
   type: isomorphisms
   description: bijective morphisms
-  proof: 'This holds in every finitary algebraic category: the inverse of a bijective morphism is again a morphism.'
+  proof: 'This holds in every one-sorted finitary algebraic category: the inverse of a bijective morphism is again a morphism.'
 
-- property: finitary algebraic
+- property: one-sorted finitary algebraic
   type: monomorphisms
   description: injective morphisms
-  proof: 'This holds in every finitary algebraic category: the forgetful functor to sets is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
+  proof: 'This holds in every one-sorted finitary algebraic category: the forgetful functor to sets is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
 
-- property: finitary algebraic
+- property: one-sorted finitary algebraic
   type: regular epimorphisms
   description: surjective morphisms
-  proof: 'This holds in every finitary algebraic category: the construction of coequalizers shows that every regular epimorphism is surjective. Conversely, the fundamental theorem on homomorphisms states that every surjective homomorphism $A \to B$ is the coequalizer of the two projections $A \times_B A \rightrightarrows A$.'
+  proof: 'This holds in every one-sorted finitary algebraic category: the construction of coequalizers shows that every regular epimorphism is surjective. Conversely, the fundamental theorem on homomorphisms states that every surjective homomorphism $A \to B$ is the coequalizer of the two projections $A \times_B A \rightrightarrows A$.'
 
 - property: mono-regular
   type: regular monomorphisms

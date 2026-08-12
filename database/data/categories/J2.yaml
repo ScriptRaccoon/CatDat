@@ -19,7 +19,7 @@ satisfied_properties:
   - property: locally small
     proof: This is trivial.
 
-  - property: finitary algebraic
+  - property: one-sorted finitary algebraic
     proof: 'The structure of a Jónsson-Tarski algebra on a set $X$ is equivalent to one binary operation $\mu : X^2 \to X$ and two unary operations $\lambda, \rho : X \rightrightarrows X$ such that $\mu(\lambda(x),\rho(x)) = x$, $\lambda(\mu(x,y))=x$, and $\rho(\mu(x,y))=y$.'
 
   - property: Grothendieck topos

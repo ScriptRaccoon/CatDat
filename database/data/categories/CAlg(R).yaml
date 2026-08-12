@@ -17,8 +17,8 @@ satisfied_properties:
   - property: locally small
     proof: There is a forgetful functor $\CAlg(R) \to \Set$ and $\Set$ is locally small.
 
-  - property: finitary algebraic
-    proof: Take the algebraic theory of a commutative algebra.
+  - property: one-sorted finitary algebraic
+    proof: Take the one-sorted algebraic theory of a commutative algebra.
 
   - property: strict terminal object
     proof: 'If $f : 0 \to A$ is a homomorphism of $R$-algebras, then $A$ satisfies $1=f(1)=f(0)=0$, so that $A=0$.'
@@ -31,7 +31,7 @@ satisfied_properties:
 
   - property: coextensive
     proof: >-
-      We already know that $\CAlg(R)$ has products and pushouts, since it is finitary algebraic. Concretely, the pushout of a span $A \leftarrow S \rightarrow B$ can be constructed as the tensor product $A \otimes_S B$ with the obvious multiplication. Finite products are disjoint because the projection $p_1 : A \times B \to A$ is clearly surjective, hence an epimorphism, and the tensor product $A \otimes_{p_1,A \times B,p_2} B = 0$ is the zero ring (the terminal object), since
+      We already know that $\CAlg(R)$ has products and pushouts, since it is one-sorted finitary algebraic. Concretely, the pushout of a span $A \leftarrow S \rightarrow B$ can be constructed as the tensor product $A \otimes_S B$ with the obvious multiplication. Finite products are disjoint because the projection $p_1 : A \times B \to A$ is clearly surjective, hence an epimorphism, and the tensor product $A \otimes_{p_1,A \times B,p_2} B = 0$ is the zero ring (the terminal object), since
       $$a \otimes b = a \cdot p_1(1,0) \otimes b = a \otimes p_2(1,0) \cdot b = a \otimes 0 = 0.$$
       It remains to check that finite products are stable under pushouts. Let
       $$f : A \times B \to T$$

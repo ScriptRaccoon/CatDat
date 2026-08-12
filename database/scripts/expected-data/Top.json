@@ -96,7 +96,7 @@
 	"essentially finite": false,
 	"essentially small": false,
 	"exact filtered colimits": false,
-	"finitary algebraic": false,
+	"one-sorted finitary algebraic": false,
 	"finite": false,
 	"Grothendieck abelian": false,
 	"Grothendieck topos": false,

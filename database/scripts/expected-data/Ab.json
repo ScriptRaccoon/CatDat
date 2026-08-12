@@ -27,7 +27,7 @@
 	"cofiltered limits": true,
 	"directed limits": true,
 	"directed colimits": true,
-	"finitary algebraic": true,
+	"one-sorted finitary algebraic": true,
 	"finite coproducts": true,
 	"finite products": true,
 	"finitely cocomplete": true,

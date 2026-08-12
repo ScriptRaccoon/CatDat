@@ -17,7 +17,7 @@ satisfied_properties:
     proof: 'The functor is represented by the ring $\IZ[X] / \langle X^2 - X \rangle$.'
 
   - property: finitary
-    proof: This is immediate from the construction of filtered colimits in $\Ring$ and $\Set$. Alternatively, this follows from the fact that $\IZ[X] / \langle X^2 - X \rangle$ is a finitely presentable object, since it has a finite presentation in the algebraic theory of rings.
+    proof: This is immediate from the construction of filtered colimits in $\Ring$ and $\Set$. Alternatively, this follows from the fact that $\IZ[X] / \langle X^2 - X \rangle$ is a finitely presentable object, since it has a finite presentation in the one-sorted algebraic theory of rings.
 
 unsatisfied_properties:
   - property: faithful

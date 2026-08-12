@@ -36,8 +36,8 @@ satisfied_properties:
   - property: semi-strongly connected
     proof: This is trivial.
 
-  - property: finitary algebraic
-    proof: Take the algebraic theory with no operations but with the equation $x=y$ that is supposed to hold for all elements $x,y$. The algebras for this theory are the empty set and the singleton set, hence we get the equivalence to $I$.
+  - property: one-sorted finitary algebraic
+    proof: Take the one-sorted algebraic theory with no operations but with the equation $x=y$ that is supposed to hold for all elements $x,y$. The algebras for this theory are the empty set and the singleton set, hence we get the equivalence to $I$.
 
 unsatisfied_properties:
   - property: trivial

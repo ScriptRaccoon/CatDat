@@ -3,7 +3,7 @@ name: category of groups
 notation: $\Grp$
 objects: groups
 morphisms: group homomorphisms
-description: This is the prototype of a finitary algebraic category.
+description: This is the prototype of a one-sorted finitary algebraic category.
 nlab_link: https://ncatlab.org/nlab/show/Grp
 
 tags:
@@ -24,8 +24,8 @@ satisfied_properties:
     proof: The trivial group is a zero object.
     check_redundancy: false
 
-  - property: finitary algebraic
-    proof: Take the algebraic theory of a group.
+  - property: one-sorted finitary algebraic
+    proof: Take the one-sorted algebraic theory of a group.
 
   - property: mono-regular
     proof: See Prop. 4.2 at the <a href="https://ncatlab.org/nlab/show/regular+monomorphism#Examples" target="_blank">nLab</a>.

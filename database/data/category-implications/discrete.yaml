@@ -6,7 +6,7 @@
   conclusions:
     - essentially discrete
     - essentially finite
-    - finitary algebraic
+    - one-sorted finitary algebraic
     - Grothendieck topos
     - self-dual
     - split abelian

@@ -3,7 +3,7 @@ name: category of rngs
 notation: $\Rng$
 objects: rngs, that is, non-unital rings
 morphisms: maps that preserve addition and multiplication
-description: This category is a typical example of a finitary algebraic category. It is an "additive version" of the category of semigroups $\SemiGrp$.
+description: This category is a typical example of a one-sorted finitary algebraic category. It is an "additive version" of the category of semigroups $\SemiGrp$.
 nlab_link: https://ncatlab.org/nlab/show/Rng
 
 tags:
@@ -22,8 +22,8 @@ satisfied_properties:
   - property: locally small
     proof: There is a forgetful functor $\Rng \to \Set$ and $\Set$ is locally small.
 
-  - property: finitary algebraic
-    proof: Take the algebraic theory of a rng.
+  - property: one-sorted finitary algebraic
+    proof: Take the one-sorted algebraic theory of a rng.
 
   - property: pointed
     proof: The zero ring is a zero object.

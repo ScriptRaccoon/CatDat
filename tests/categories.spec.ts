@@ -340,7 +340,9 @@ test('user can open a proof for a deduced satisfied property of category', async
 	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
 
 	await expect(
-		popup.getByText('Since it is finitary algebraic, it has an extremal generator')
+		popup.getByText(
+			'Since it is one-sorted finitary algebraic, it has an extremal generator'
+		)
 	).toBeVisible()
 })
 

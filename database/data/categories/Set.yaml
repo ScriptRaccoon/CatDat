@@ -23,7 +23,7 @@ satisfied_properties:
   - property: locally small
     proof: The collection of maps between two sets $X,Y$ is a subset of $X \times Y$ and therefore a set.
 
-  - property: finitary algebraic
+  - property: one-sorted finitary algebraic
     proof: Use the empty algebraic theory.
 
   - property: Grothendieck topos
