@@ -28,7 +28,7 @@ satisfied_properties:
     proof: 'The sum of two graded linear maps is defined degree-wise. Since we already know that limits and colimits exist and are computed degree-wise, kernels and cokernels exist in particular, and they are computed degree-wise. If $f : M \to N$ is a graded linear map, then the canonical morphism $\coim(f) \to \im(f)$ is an isomorphism since this is true in every degree.'
 
   - property: locally strongly finitely presentable
-    proof: 'We can model graded modules using a multi-sorted finitary algebraic theory with sorts $(S_n)_{n \in G}$, unary operations $r : S_m \to S_{n+m}$ for $r \in R_n$, the algebraic theory of an abelian group on each $S_n$, and the obvious equations.'
+    proof: 'We can model graded modules using a many-sorted finitary algebraic theory with sorts $(S_n)_{n \in G}$, unary operations $r : S_m \to S_{n+m}$ for $r \in R_n$, the algebraic theory of an abelian group on each $S_n$, and the obvious equations.'
 
 unsatisfied_properties:
   - property: skeletal

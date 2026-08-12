@@ -26,7 +26,7 @@ unsatisfied_properties:
     proof: >-
       The proof is similar to the one for <a href="/category/grAb">$\grAb$</a>, which is the special case in which all transition maps are zero. We will show that there is no finitely presentable generator.
 
-      First, notice that $\Ab^{(\IN,\leq)}$ is the category of algebras for the multi-sorted algebraic theory with one sort $S_n$ for each $n \in \IN$, one unary operation $T : S_n \to S_{n+1}$ for each $n \in \IN$, and the theory of an abelian group on each $S_n$. The free algebra on one generator of sort $S_n$ is the object $P[n]$ defined by
+      First, notice that $\Ab^{(\IN,\leq)}$ is the category of algebras for the many-sorted algebraic theory with one sort $S_n$ for each $n \in \IN$, one unary operation $T : S_n \to S_{n+1}$ for each $n \in \IN$, and the theory of an abelian group on each $S_n$. The free algebra on one generator of sort $S_n$ is the object $P[n]$ defined by
       $$0 \to \cdots \to 0 \to \IZ \xrightarrow{\id} \IZ \xrightarrow{\id} \cdots,$$
       which starts in degree $n$ and remains constant in all degrees $\geq n$. By Theorem 3.12 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>, every finitely presentable object $A$ is a quotient of a finite direct sum of objects $P[n]$. It follows that there is some $N \in \IN$ such that the map $A_n \to A_{n+1}$ is surjective for every $n \geq N$ (in fact, much more is true, but this is sufficient here). But then every homomorphism $A \to P[N+1]$ is zero, as can be seen from a diagram chase in
       $$\begin{CD}
