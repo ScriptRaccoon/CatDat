@@ -16,7 +16,10 @@ export function deduce_special_morphisms() {
  * Clears deduced special morphisms
  */
 function clear_deduced_special_morphisms() {
-	db.prepare(`DELETE FROM special_morphisms WHERE is_deduced = TRUE`).run()
+	db.prepare(
+		`DELETE FROM special_morphism_assignments
+		WHERE is_deduced = TRUE`
+	).run()
 }
 
 /**
@@ -28,13 +31,15 @@ function inherit_special_morphisms_from_parents() {
 	const parent_map = get_structure_parent_map(db, 'category')
 
 	const get_parent_special_morphisms = db.prepare<[string], SpecialMorphism>(
-		`SELECT type, description, proof FROM special_morphisms
+		`SELECT type, description, proof
+		FROM special_morphism_assignments
 		WHERE category_id = ? AND is_deduced = FALSE`
 	)
 
 	const insert_special_morphism = db.prepare(
-		`INSERT INTO special_morphisms (category_id, type, description, proof, is_deduced)
-		VALUES (?, ?, ?, ?, TRUE)
+		`INSERT INTO special_morphism_assignments (
+			category_id, type, description, proof, is_deduced
+		) VALUES (?, ?, ?, ?, TRUE)
 		ON CONFLICT (category_id, type) DO NOTHING`
 	)
 
@@ -95,7 +100,7 @@ function deduce_special_morphisms_by_rules() {
 	for (const { property_id, type, description, proof } of rules) {
 		const res = db
 			.prepare(
-				`INSERT INTO special_morphisms (
+				`INSERT INTO special_morphism_assignments (
                     category_id,
                     type,
                     description,
@@ -131,7 +136,7 @@ function deduce_special_morphisms_by_rules() {
 function deduce_special_morphisms_of_dual_categories() {
 	const res = db
 		.prepare(
-			`INSERT INTO special_morphisms (
+			`INSERT INTO special_morphism_assignments (
                 category_id,
                 type,
                 description,
@@ -145,7 +150,7 @@ function deduce_special_morphisms_of_dual_categories() {
                 'This is deduced from its dual category.',
                 TRUE
             FROM structures c
-            INNER JOIN special_morphisms m ON m.category_id = c.id
+            INNER JOIN special_morphism_assignments m ON m.category_id = c.id
             INNER JOIN special_morphism_types t ON t.type = m.type
             WHERE c.type = 'category' AND c.dual_structure_id IS NOT NULL
             ON CONFLICT (category_id, type) DO NOTHING`

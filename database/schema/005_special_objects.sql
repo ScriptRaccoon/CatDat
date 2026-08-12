@@ -5,7 +5,7 @@ CREATE TABLE special_object_types (
     FOREIGN KEY (dual) REFERENCES special_object_types (type) ON DELETE SET NULL
 );
 
-CREATE TABLE special_objects (
+CREATE TABLE special_object_assignments (
     category_id TEXT NOT NULL,
     type TEXT NOT NULL,
     description TEXT NOT NULL,
@@ -16,4 +16,4 @@ CREATE TABLE special_objects (
     FOREIGN KEY (category_id) REFERENCES categories (id) ON DELETE CASCADE
 );
 
-CREATE INDEX idx_special_objects_by_category ON special_objects (category_id);
+CREATE INDEX idx_special_objects_by_category ON special_object_assignments (category_id);

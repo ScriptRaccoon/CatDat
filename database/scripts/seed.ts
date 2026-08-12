@@ -70,9 +70,9 @@ function clear_all_tables() {
 		db.pragma('defer_foreign_keys = ON')
 
 		db.prepare(`DELETE FROM special_morphism_rules`).run()
-		db.prepare(`DELETE FROM special_morphisms`).run()
+		db.prepare(`DELETE FROM special_morphism_assignments`).run()
 		db.prepare(`DELETE FROM special_morphism_types`).run()
-		db.prepare(`DELETE FROM special_objects`).run()
+		db.prepare(`DELETE FROM special_object_assignments`).run()
 		db.prepare(`DELETE FROM special_object_types`).run()
 
 		db.prepare(`DELETE FROM mapped_assumptions`).run()
@@ -309,12 +309,15 @@ function insert_category(category: CategoryYaml) {
 	)
 
 	const special_object_insert = db.prepare(
-		`INSERT INTO special_objects (category_id, type, description) VALUES (?, ?, ?)`
+		`INSERT INTO special_object_assignments (
+			category_id, type, description
+		) VALUES (?, ?, ?)`
 	)
 
 	const special_morphism_insert = db.prepare(
-		`INSERT INTO special_morphisms (category_id, type, description, proof)
-		VALUES (?, ?, ?, ?)`
+		`INSERT INTO special_morphism_assignments (
+			category_id, type, description, proof
+		) VALUES (?, ?, ?, ?)`
 	)
 
 	category_insert.run(category.id, category.objects, category.morphisms)
