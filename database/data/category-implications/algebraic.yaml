@@ -4,8 +4,8 @@
   assumptions:
     - one-sorted finitary algebraic
   conclusions:
-    - locally strongly finitely presentable
-  proof: This is trivial because a locally strongly finitely presentable category is a variety of many-sorted finitary algebras.
+    - finitary algebraic
+  proof: This is trivial.
   is_equivalence: false
 
 - id: algebraic_well-copowered
@@ -16,9 +16,9 @@
   proof: See <a href="https://mathoverflow.net/questions/486607" target="_blank">MSE/486607</a>. Alternatively, one may combine the facts that one-sorted finitary algebraic categories are locally (finitely) presentable and that locally presentable categories are well-copowered, both of which are saved in the database. But we include the direct proof here as well, since it makes it easier to deduce the property for one-sorted finitary algebraic categories appearing in practice.
   is_equivalence: false
 
-- id: many_sorted_algebraic_implies_regular
+- id: finitary_algebraic_implies_regular
   assumptions:
-    - locally strongly finitely presentable
+    - finitary algebraic
   conclusions:
     - regular
   proof: The regular epimorphisms are precisely the sort-wise surjective homomorphisms, which are clearly stable under pullbacks.
@@ -78,12 +78,12 @@
   proof: This is because that every (finite product, coproduct)-sketch is clearly a (finite limit, coproduct)-sketch.
   is_equivalence: false
 
-- id: varieties_are_multi-algebraic
+- id: algebraic_implies_multi-algebraic
   assumptions:
-    - locally strongly finitely presentable
+    - finitary algebraic
   conclusions:
     - multi-algebraic
-  proof: This is because that every finite-product-sketch is clearly a (finite product, coproduct)-sketch.
+  proof: This is because every finite-product-sketch is clearly a (finite product, coproduct)-sketch.
   is_equivalence: false
 
 - id: multi-algebraic_another_definition

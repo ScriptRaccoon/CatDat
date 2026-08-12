@@ -33,7 +33,7 @@ satisfied_properties:
   - property: Grothendieck topos
     proof: It is equivalent to the category of presheaves on <a href="/category/walking_morphism">the walking morphism</a>.
 
-  - property: locally strongly finitely presentable
+  - property: finitary algebraic
     proof: It is equivalent to the category of models of the algebraic theory with two sorts, and a single unary operation from one sort to the other.
 
 unsatisfied_properties:

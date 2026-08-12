@@ -62,7 +62,7 @@
 	"coregular": true,
 	"disjoint finite products": true,
 	"disjoint products": true,
-	"locally strongly finitely presentable": true,
+	"finitary algebraic": true,
 	"co-Malcev": true,
 	"unital": true,
 	"counital": true,

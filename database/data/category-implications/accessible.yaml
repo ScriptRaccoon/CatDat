@@ -1,5 +1,5 @@
-# results on locally presentable categories, accessible categories,
-# and related notions such as locally strongly finitely presentable, etc.
+# results on locally presentable categories, accessible categories
+# and related notions
 
 - id: locally_presentable_definition_finite
   assumptions:
@@ -120,9 +120,9 @@
   proof: See <a href="https://arxiv.org/abs/1409.7051" target="_blank">Deriving Auslander's formula</a>, Cor. 5.2, or <a href="https://arxiv.org/abs/math/0102087" target="_blank">Sheafifiable homotopy model categories</a>, Prop. 3.10.
   is_equivalence: false
 
-- id: locally_strongly_finitely_presentable_raise
+- id: algebraic_implies_lfp
   assumptions:
-    - locally strongly finitely presentable
+    - finitary algebraic
   conclusions:
     - locally finitely presentable
   proof: See <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>, Cor. 3.7.
@@ -234,13 +234,13 @@
   proof: This follows from one of equivalent formulations of locally presentable categories.
   is_equivalence: true
 
-- id: locally_strongly_finitely_presentable_definition
+- id: locally_strongly_finitely_presentable_characterization
   assumptions:
-    - locally strongly finitely presentable
+    - finitary algebraic
   conclusions:
     - cocomplete
     - generalized variety
-  proof: This is trivial.
+  proof: This follows from the equivalence between finitary algebraic categories and locally strongly finitely presentable categories.
   is_equivalence: true
 
 - id: locally_multi-presentable_definition
