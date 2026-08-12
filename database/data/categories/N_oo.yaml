@@ -31,8 +31,10 @@ satisfied_properties:
   - property: direct
     proof: This is because the natural numbers with $\infty$ with respect to $<$ are well-founded.
 
-  - property: locally strongly finitely presentable
-    proof: We already saw that coproducts, and therefore colimits exist. Every natural number is strongly finitely presentable, and $\infty$ is the colimit of all $n < \infty$.
+  - property: finitary algebraic
+    proof: >-
+      We already saw that coproducts, and therefore colimits exist. Every natural number is strongly finitely presentable, and $\infty$ is the colimit of all $n < \infty$. This shows that the category is locally strongly finitely presentable, which is equivalent to being finitary algebraic.
+      Alternatively, we may use the finitary algebraic theory with sorts $(S_n)_{n \in \IN}$, unary operations $S_n \to S_{n+1}$, and the equations $x=y$ for elements $x,y$ of sort $S_n$. The models of this theory are given by $(0,\dotsc,0,1,1,\dotsc)$, where $1$ starts at index $n \in \IN$, as well as $(0,0,\dotsc)$, which corresponds to $\infty$.
 
 unsatisfied_properties:
   - property: essentially finite

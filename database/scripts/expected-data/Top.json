@@ -131,7 +131,7 @@
 	"co-Malcev": false,
 	"unital": false,
 	"counital": false,
-	"locally strongly finitely presentable": false,
+	"finitary algebraic": false,
 	"direct": false,
 	"inverse": false,
 	"one-way": false,

@@ -3,7 +3,7 @@ name: category of graded abelian groups
 notation: $\grAb$
 objects: $\IZ$-graded abelian groups
 morphisms: graded linear maps
-description: This is the special case of the <a href="/category/grMod_G(R)">category of $\IZ$-graded modules</a> over the $\IZ$-graded ring $\IZ$ concentrated in degree $0$. It can also be viewed as the product category $\Ab^{\IZ}$. It provides an example of a category that is locally strongly finitely presentable and Grothendieck abelian but, unlike $\Ab$, is not one-sorted finitary algebraic.
+description: This is the special case of the <a href="/category/grMod_G(R)">category of $\IZ$-graded modules</a> over the $\IZ$-graded ring $\IZ$ concentrated in degree $0$. It can also be viewed as the product category $\Ab^{\IZ}$. It provides an example of a finitary algebraic Grothendieck abelian category that is, unlike $\Ab$, not one-sorted finitary algebraic.
 nlab_link: https://ncatlab.org/nlab/show/graded+abelian+group
 parent: grMod_G(R)
 tags:

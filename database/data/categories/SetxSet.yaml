@@ -21,7 +21,7 @@ satisfied_properties:
   - property: Grothendieck topos
     proof: It is equivalent to the category of sheaves on a discrete space with two points.
 
-  - property: locally strongly finitely presentable
+  - property: finitary algebraic
     proof: Take the two-sorted algebraic theory with no operations and no equations.
 
 unsatisfied_properties:

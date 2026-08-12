@@ -16,11 +16,10 @@ invariant_under_equivalences: true
 
 related:
   - cocomplete
-  - one-sorted finitary algebraic
   - finitely accessible
   - locally finitely multi-presentable
   - locally presentable
-  - locally strongly finitely presentable
+  - finitary algebraic
   - locally ℵ₁-presentable
 
 tags:

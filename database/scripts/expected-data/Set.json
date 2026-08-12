@@ -63,7 +63,7 @@
 	"countably extensive": true,
 	"infinitary extensive": true,
 	"co-Malcev": true,
-	"locally strongly finitely presentable": true,
+	"finitary algebraic": true,
 	"regular subobject classifier": true,
 	"coreflexive equalizers": true,
 	"reflexive coequalizers": true,
