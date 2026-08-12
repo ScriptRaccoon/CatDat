@@ -21,8 +21,7 @@ _CatDat_ provides a growing collection of categorical structures such as categor
 - **Automatic Dualization**: Automatically dualizes implications and property assignments.
 - **Searchable Database**: Find categorical structures based on satisfied properties and unsatisfied properties.
 - **Comparison Feature**: Compare multiple categorical structures to identify their differences and similarities.
-- **Customizable Display**: Light/dark mode and optional display of deduced properties.
-- **Intuitive User Interface**: Usable on both mobile and desktop.
+- **Intuitive User Interface**: Usable on both mobile and desktop. Supports Light/dark mode.
 
 ## How to contribute
 
