@@ -18,7 +18,7 @@ satisfied_properties:
     proof: There is a forgetful functor $\Unif \to \Set$, and $\Set$ is locally small.
 
   - property: complete
-    proof: 'Take the limit of the underlying sets and endow it with the coarsest uniform structure making all projections uniform; cf. Bourbaki, <i>General Topology</i> (Part 1), Chapter II, § 3, no. 3 on initial uniformities. More concretely, products are described below on this page, and the equalizer of two uniform maps $f,g : (X,\Phi) \rightrightarrows (Y,\Psi)$ is the subset $E := \{x \in X : f(x) = g(x)\}$ equipped with the uniform structure $\{U \cap (E \times E) : U \in \Phi\}$.'
+    proof: 'Take the limit of the underlying sets and endow it with the coarsest uniform structure making all projections uniform; cf. Bourbaki, <i>General Topology</i> (Part 1), Chapter II, § 3, no. 3 on initial uniformities. More concretely, products are described below on this page, and the equalizer of two uniform maps $f,g : (X,\Phi) \rightrightarrows (Y,\Psi)$ is the subset $E \coloneqq \{x \in X : f(x) = g(x)\}$ equipped with the uniform structure $\{U \cap (E \times E) : U \in \Phi\}$.'
 
   - property: cocomplete
     proof: 'Take the colimit of the underlying sets and endow it with the finest uniform structure making all inclusions uniform. More concretely, coproducts are described below on this page, and the coequalizer of two uniform maps $f,g : (X,\Phi) \rightrightarrows (Y,\Psi)$ is the $\Set$-based coequalizer $Q = Y / (f(x) \sim g(x))$ equipped with the following uniform structure, which makes the projection $p : Y \to Q$ uniform. Let $\Theta$ be the set of all subsets $U \subseteq Q \times Q$ such that $(p \times p)^*(U) \in \Psi$. It satisfies all the axioms of a uniform structure except one, namely the composition axiom. To fix this (and this construction works in complete generality), let $\Sigma \subseteq \Theta$ be the set of all $U \in \Theta$ for which there exists a sequence $U_1,U_2,\dotsc$ in $\Theta$ such that $U_1 \subseteq U$ and $U_{k+1} \circ U_{k+1} \subseteq U_k$ for all $k$. It is then straightforward to check that $\Sigma$ is a uniform structure on $Q$. Moreover, by construction, the map $p : (Y,\Psi) \to (Q,\Sigma)$ is uniform, and one verifies that it satisfies the required universal property.'
@@ -60,7 +60,7 @@ satisfied_properties:
       for entourages $U$ and $V$ of $T$. Its image relation on $T$ is
       $$(U \cap (T_X \times T_X)) \cup (V \cap (T_Y \times T_Y)),$$
       and we need to show that this is an entourage of $T$. Since $f$ is uniform and
-      $$M := (X \times X) \sqcup (Y \times Y)$$
+      $$M \coloneqq (X \times X) \sqcup (Y \times Y)$$
       is an entourage of $X + Y$, its preimage
       $$(f \times f)^*(M) = (T_X \times T_X) \cup (T_Y \times T_Y)$$
       is an entourage of $T$. Since $U \cap V$ is also an entourage of $T$, and
@@ -75,10 +75,10 @@ satisfied_properties:
       $$s : Y \to Y$$
       such that
       $$s \circ i_1 = i_2, \quad s \circ i_2 = s_1.$$
-      We define the map of sets $s : Y \to Y$ by $s(i_1(x)) := i_2(x)$ and $s(i_2(x)) := i_1(x)$. This is well-defined by a direct calculation using the above properties of $i_1,i_2$, but we can also use the fact that <a href="/category/Set">$\Set$</a> is co-Malcev. It remains to verify that $s$ is uniform. To this end, let $V$ be an entourage of $Y$. Since $Y$ is a uniform space, there is an entourage $W$ with
+      We define the map of sets $s : Y \to Y$ by $s(i_1(x)) \coloneqq i_2(x)$ and $s(i_2(x)) \coloneqq i_1(x)$. This is well-defined by a direct calculation using the above properties of $i_1,i_2$, but we can also use the fact that <a href="/category/Set">$\Set$</a> is co-Malcev. It remains to verify that $s$ is uniform. To this end, let $V$ be an entourage of $Y$. Since $Y$ is a uniform space, there is an entourage $W$ with
       $$W \circ W \circ W \subseteq V.$$
       (This is the $\varepsilon/3$-trick in uniform space theory.) Since $i_1,i_2,r$ are uniform, the set
-      $$U := W^{\op} \cap (r \times r)^*(i_1 \times i_1)^*(W) \cap (r \times r)^*(i_2 \times i_2)^*(W)$$
+      $$U \coloneqq W^{\op} \cap (r \times r)^*(i_1 \times i_1)^*(W) \cap (r \times r)^*(i_2 \times i_2)^*(W)$$
       is an entourage of $Y$. We claim that $U \subseteq (s \times s)^*(V)$, which will establish that $(s \times s)^*(V)$ is an entourage, as required. For the proof, let $(a,b) \in U$. Up to symmetry, there are two cases to consider:
 
       Case 1: We have $a = i_1(x)$ and $b = i_1(x')$ for some $x,x' \in X$. Since $(a,b) \in U$, we have $(a,b) \in (r \times r)^*(i_2 \times i_2)^*(W)$. Thus, $W$ contains the pair
@@ -92,9 +92,9 @@ satisfied_properties:
       It remains to prove that $(i_1,i_2)$ is cotransitive. We adopt the functorial point of view and prove that the representable subfunctor $\Hom(Y,-) \hookrightarrow \Hom(X,-)^2$ is transitive. This means that for every uniform space $T$ and every triple of uniform maps $u,v,w : X \rightrightrightarrows T$ such that there are uniform maps $y_1,y_2 : Y \rightrightarrows T$ with
       $$y_1 i_1 = u, \quad y_1 i_2 = v = y_2 i_1, \quad y_2 i_2 = w,$$
       there is a uniform map $y_3 : Y \to T$ with $y_3 i_1 = u$ and $y_3 i_2 = w$. As before, we can easily define $y_3$ as a map of sets by
-      $$y_3(i_1(x)) := u(x), \quad y_3(i_2(x)) := w(x)$$
+      $$y_3(i_1(x)) \coloneqq u(x), \quad y_3(i_2(x)) \coloneqq w(x)$$
       and verify that $y_3$ is well-defined, either by a direct calculation or using the fact that $\Set$ is co-Malcev. To prove that $y_3$ is uniform, let $E$ be an entourage of $T$. As in the proof of symmetry, choose an entourage $W$ of $T$ with $W \circ W \circ W \subseteq E$. Then
-      $$V := (y_1 \times y_1)^*(W) \cap (y_2 \times y_2)^*(W) \cap (r \times r)^* (v \times v)^*(W)^{\op}$$
+      $$V \coloneqq (y_1 \times y_1)^*(W) \cap (y_2 \times y_2)^*(W) \cap (r \times r)^* (v \times v)^*(W)^{\op}$$
       is an entourage of $Y$, and we claim that $V \subseteq (y_3 \times y_3)^*(E)$, which will prove, as required, that $(y_3 \times y_3)^*(E)$ is an entourage. If $(a,b) \in V$, there are again two cases to consider:
 
       Case 1: We have $a = i_1(x)$ and $b = i_1(x')$ for some $x,x' \in X$. Since $(a,b) \in V \subseteq (y_1 \times y_1)^*(W)$, we have $(y_1(a),y_1(b)) \in W$. Then
@@ -123,7 +123,7 @@ unsatisfied_properties:
 
   - property: natural numbers object
     proof: >-
-      We equip $[0,1]$ with the usual metric, which induces a uniform structure in the usual way: for $\varepsilon > 0$, we have the basic entourage $U_{\varepsilon} := \{(r,s) \in [0,1]^2 : |r-s| < \varepsilon\}$. We equip the set $\IN$ with the discrete uniform structure (i.e., every reflexive relation is an entourage). This uniform space is isomorphic to the coproduct of one-point spaces $\coprod_{n \in \IN} 1$.
+      We equip $[0,1]$ with the usual metric, which induces a uniform structure in the usual way: for $\varepsilon > 0$, we have the basic entourage $U_{\varepsilon} \coloneqq \{(r,s) \in [0,1]^2 : |r-s| < \varepsilon\}$. We equip the set $\IN$ with the discrete uniform structure (i.e., every reflexive relation is an entourage). This uniform space is isomorphic to the coproduct of one-point spaces $\coprod_{n \in \IN} 1$.
 
       If there were a natural numbers object, then by <a href="/content/nno_distributive_criterion">this result</a> the canonical map
       $$\textstyle\coprod_{n \in \IN} [0,1] \to [0,1] \times \coprod_{n \in \IN} 1 \cong [0,1] \times \IN$$
@@ -137,7 +137,7 @@ unsatisfied_properties:
       $$\kappa \sqcup \{\kappa\} \to \kappa + 1$$
       is uniform, but not a uniform isomorphism (not even a topological isomorphism). However, we claim that for every $G \in S$ the induced map
       $$\Hom(G,\kappa \sqcup \{\kappa\}) \to \Hom(G,\kappa + 1),$$
-      which is clearly injective, is even bijective. To this end, let $f : G \to \kappa + 1$ be a uniform map. Since $\card(G) < \kappa$ and $\kappa$ is regular, $\im(f) \cap \kappa$ is bounded above by some ordinal $\alpha < \kappa$. Therefore, $f$ factors through the uniform subspace $X := [0,\alpha] \cup \{\kappa\}$ of $\kappa + 1$. The underlying topological space of $X$ is compact Hausdorff and decomposes as a coproduct of $[0,\alpha]$ and $\{\kappa\}$. Because of the uniqueness of uniform structures, $X$ itself also decomposes as a coproduct of these spaces. In particular, $X$ is a uniform subspace of $\kappa \sqcup \{\kappa\}$. Hence, $f : G \to \kappa \sqcup \{\kappa\}$ is also a uniform map.
+      which is clearly injective, is even bijective. To this end, let $f : G \to \kappa + 1$ be a uniform map. Since $\card(G) < \kappa$ and $\kappa$ is regular, $\im(f) \cap \kappa$ is bounded above by some ordinal $\alpha < \kappa$. Therefore, $f$ factors through the uniform subspace $X \coloneqq [0,\alpha] \cup \{\kappa\}$ of $\kappa + 1$. The underlying topological space of $X$ is compact Hausdorff and decomposes as a coproduct of $[0,\alpha]$ and $\{\kappa\}$. Because of the uniqueness of uniform structures, $X$ itself also decomposes as a coproduct of these spaces. In particular, $X$ is a uniform subspace of $\kappa \sqcup \{\kappa\}$. Hence, $f : G \to \kappa \sqcup \{\kappa\}$ is also a uniform map.
     references:
       - top_no_extremal_generating_set
 
@@ -186,4 +186,4 @@ special_morphisms:
 
   regular epimorphisms:
     description: 'A uniform map $f : X \to Y$ is a regular epimorphism if and only if $f$ is surjective and $Y$ carries the finest uniform structure that makes $f$ uniform. Concretely, this means that if $V \subseteq Y \times Y$ is a subset for which there exists a sequence of subsets $V_1,V_2,\dotsc$ of $Y \times Y$ such that $V_1 \subseteq V$, $V_{n+1} \circ V_{n+1} \subseteq V_n$, and each $(f \times f)^*(V_n)$ is an entourage of $X$, then $V$ is an entourage of $Y$. Thus, in contrast to the situation for $\Top$ or $\Meas$, not every subset whose preimage is an entourage is an entourage in the quotient.'
-    proof: 'A regular epimorphism has this property by our explicit construction of coequalizers above. Conversely, suppose that $f : X \to Y$ has this property. Then $f$ is the coequalizer of the two projections $X \times_Y X \rightrightarrows X$: Since the corresponding statement is true in $\Set$, it suffices to prove that a map $g : Y \to Z$ into a uniform space is uniform whenever $g \circ f : X \to Z$ is uniform. To this end, let $W$ be an entourage of $Z$ and choose entourages $W_1,W_2,\dotsc$ of $Z$ with $W_1 \subseteq W$ (we may even choose $W_1 = W$) and $W_{n+1} \circ W_{n+1} \subseteq W_n$; these exist simply because $Z$ is a uniform space. Let $V_n := (g \times g)^*(W_n) \subseteq Y \times Y$. Then $V_1 \subseteq (g \times g)^*(W)$, $V_{n+1} \circ V_{n+1} \subseteq V_n$, and $(f \times f)^*(V_n) = (g \circ f \times g \circ f)^*(W_n)$ is an entourage of $X$ since $g \circ f$ is uniform. Therefore, by the assumption on $f$, $(g \times g)^*(W)$ is an entourage of $Y$, as required.'
+    proof: 'A regular epimorphism has this property by our explicit construction of coequalizers above. Conversely, suppose that $f : X \to Y$ has this property. Then $f$ is the coequalizer of the two projections $X \times_Y X \rightrightarrows X$: Since the corresponding statement is true in $\Set$, it suffices to prove that a map $g : Y \to Z$ into a uniform space is uniform whenever $g \circ f : X \to Z$ is uniform. To this end, let $W$ be an entourage of $Z$ and choose entourages $W_1,W_2,\dotsc$ of $Z$ with $W_1 \subseteq W$ (we may even choose $W_1 = W$) and $W_{n+1} \circ W_{n+1} \subseteq W_n$; these exist simply because $Z$ is a uniform space. Let $V_n \coloneqq (g \times g)^*(W_n) \subseteq Y \times Y$. Then $V_1 \subseteq (g \times g)^*(W)$, $V_{n+1} \circ V_{n+1} \subseteq V_n$, and $(f \times f)^*(V_n) = (g \circ f \times g \circ f)^*(W_n)$ is an entourage of $X$ since $g \circ f$ is uniform. Therefore, by the assumption on $f$, $(g \times g)^*(W)$ is an entourage of $Y$, as required.'

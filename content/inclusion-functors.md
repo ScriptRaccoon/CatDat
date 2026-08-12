@@ -13,4 +13,4 @@ _Proof._ Let $D : \I \to \C$ be a diagram such that $D$ has a colimit $(u_i : D(
 
 $$f^* : \Hom(X,T) \to \Hom(Y,T)$$
 
-is a bijection; both sides identify with cones $D \to T$. Now apply this to $T := Q$ to conclude that $f$ is an isomorphism. <span class="qed">$\square$</span>
+is a bijection; both sides identify with cones $D \to T$. Now apply this to $T \coloneqq Q$ to conclude that $f$ is an isomorphism. <span class="qed">$\square$</span>

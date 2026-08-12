@@ -3,7 +3,7 @@ name: Brauer group functor
 notation: $\Br$
 domain: Fld
 codomain: Ab
-description: The Brauer group $\Br(K)$ of a field $K$ consists of equivalence classes of central simple algebras over $K$, where $A \sim B$ iff $A \otimes_K M_n(K) \cong B \otimes_K M_n(K)$ for some $n \geq 0$. The group structure is given by $[A] \cdot [B] := [A \otimes_K B]$, $1 := [K]$ and $[A]^{-1} := [A^{\op}]$. A homomorphism $K \to L$ induces the homomorphism $\Br(K) \to \Br(L)$ defined by $[A] \mapsto [A \otimes_K L]$.
+description: The Brauer group $\Br(K)$ of a field $K$ consists of equivalence classes of central simple algebras over $K$, where $A \sim B$ iff $A \otimes_K M_n(K) \cong B \otimes_K M_n(K)$ for some $n \geq 0$. The group structure is given by $[A] \cdot [B] \coloneqq [A \otimes_K B]$, $1 \coloneqq [K]$ and $[A]^{-1} \coloneqq [A^{\op}]$. A homomorphism $K \to L$ induces the homomorphism $\Br(K) \to \Br(L)$ defined by $[A] \mapsto [A \otimes_K L]$.
 nlab_link: https://ncatlab.org/nlab/show/Brauer+group
 left_adjoint: null
 

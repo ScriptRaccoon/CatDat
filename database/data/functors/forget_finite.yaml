@@ -30,7 +30,7 @@ satisfied_properties:
 unsatisfied_properties:
   - property: left-invertible
     proof: >-
-      Assume that there is a functor $F : \Set \to \FinSet$ such that $F(X) \cong X$ for every finite set $X$ (we won't even need naturality in $X$ to derive a contradiction). Let $S$ be any infinite set, such as $S = \IN$. Since $F(S)$ is a finite set, $n := \card(F(S))$ is a natural number. Since $S$ is infinite, there is a finite subset $X \subseteq S$ with $n+1$ elements. The inclusion map $X \hookrightarrow S$ is a split monomorphism. It follows that also $F(X) \hookrightarrow F(S)$ is a split monomorphism. But then
+      Assume that there is a functor $F : \Set \to \FinSet$ such that $F(X) \cong X$ for every finite set $X$ (we won't even need naturality in $X$ to derive a contradiction). Let $S$ be any infinite set, such as $S = \IN$. Since $F(S)$ is a finite set, $n \coloneqq \card(F(S))$ is a natural number. Since $S$ is infinite, there is a finite subset $X \subseteq S$ with $n+1$ elements. The inclusion map $X \hookrightarrow S$ is a split monomorphism. It follows that also $F(X) \hookrightarrow F(S)$ is a split monomorphism. But then
       $$n = \card(F(S)) \geq \card(F(X)) = \card(X) = n+1$$
       is a contradiction.
 

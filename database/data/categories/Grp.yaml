@@ -36,7 +36,7 @@ satisfied_properties:
   - property: Malcev
     proof: >-
       See Example 2.2.4 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>.
-      Alternatively, here is a direct proof: let $G$ be a group and let $U \subseteq G^2$ be a subgroup containing the diagonal. Then $N := \{g \in G : (g,1) \in U\}$ is clearly a subgroup of $G$. It is a normal subgroup because, if $g \in N$ and $h \in G$, then $U$ contains $(h,h) (g,1) (h,h)^{-1} = (h g h^{-1},1)$, i.e. $h g h^{-1} \in N$. Moreover, $U$ contains $(g,g')$ if and only if it contains $(g,g') (g',g')^{-1} = (g g'^{-1},1)$, i.e. $g g'^{-1} \in N$. This means that $U$ is the congruence induced by the normal subgroup $N \subseteq G$ and is therefore transitive and symmetric.
+      Alternatively, here is a direct proof: let $G$ be a group and let $U \subseteq G^2$ be a subgroup containing the diagonal. Then $N \coloneqq \{g \in G : (g,1) \in U\}$ is clearly a subgroup of $G$. It is a normal subgroup because, if $g \in N$ and $h \in G$, then $U$ contains $(h,h) (g,1) (h,h)^{-1} = (h g h^{-1},1)$, i.e. $h g h^{-1} \in N$. Moreover, $U$ contains $(g,g')$ if and only if it contains $(g,g') (g',g')^{-1} = (g g'^{-1},1)$, i.e. $g g'^{-1} \in N$. This means that $U$ is the congruence induced by the normal subgroup $N \subseteq G$ and is therefore transitive and symmetric.
     label: grp_malcev
 
   - property: effective cocongruences

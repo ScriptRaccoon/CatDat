@@ -44,7 +44,7 @@ satisfied_properties:
       The proof is similar to the proof for <a href="/category/Top">$\Top$</a>. We already know that (finite) colimits and equalizers exist, and that they are preserved by the forgetful functor to $\Set$. It remains to show that regular monomorphisms, i.e. embeddings, are stable under pushouts. Thus, let $i : A \to X$ be an embedding and let $f : A \to Y$ be any measurable map. We claim that the induced measurable map
       $$j : Y \to Y \sqcup_A X$$
       is again an embedding. It is certainly injective, since <a href="/category/Set">$\Set$</a> is coregular. More precisely, the underlying set of $Y \sqcup_A X$ can be identified with $Y \sqcup (X \setminus \im(i))$. Now let $T \subseteq Y$ be a measurable subset. Then its preimage $f^*(T) \subseteq A$ is measurable. Since $i$ is an embedding, there exists a measurable subset $S \subseteq X$ such that $i^*(S) = f^*(T)$. Let $u : X \to Y \sqcup_A X$ denote the canonical map, so that $u \circ i = j \circ f$, and consider the subset
-      $$M := j_*(T) \cup u_*(S \setminus \im(i))$$
+      $$M \coloneqq j_*(T) \cup u_*(S \setminus \im(i))$$
       of the pushout. It is straightforward to verify that $j^*(M) = T$ and $u^*(M) = S$. Since both $T$ and $S$ are measurable, it follows that $M$ is measurable. Finally, the equality $j^*(M) = T$ shows that every measurable subset of $Y$ is the preimage of a measurable subset of the pushout. Hence $j$ is an embedding, as claimed.
     references:
       - top_coregular
@@ -53,7 +53,7 @@ satisfied_properties:
     proof: >-
       This follows from the countable extensivity of <a href="/category/Set">$\Set$</a> as follows. We already know that coproducts and pullbacks exist, and that they are preserved by the forgetful functor to $\Set$. More concretely, coproducts are disjoint unions of the underlying sets, with measurable subsets given by unions of measurable subsets of the summands. Since coproducts are disjoint in $\Set$ and the empty set has a unique $\sigma$-algebra, it follows immediately that coproducts are disjoint in $\Meas$ as well.
 
-      It remains to show that <i>countable</i> coproducts are stable under pullbacks. Let $(X_i)_{i \in I}$ be a countable family of measurable spaces and let $f : T \to \coprod_{i \in I} X_i$ be a measurable map. Consider the pullbacks $T_i := f^*(X_i)$. These are simply the preimages of $X_i$ under $f$, equipped with the $\sigma$-algebra induced from $T$. Since coproducts in $\Set$ are stable under pullbacks, the canonical measurable map $\coprod_{i \in I} T_i \to T$ is bijective. It remains to show that it maps measurable sets to measurable sets.
+      It remains to show that <i>countable</i> coproducts are stable under pullbacks. Let $(X_i)_{i \in I}$ be a countable family of measurable spaces and let $f : T \to \coprod_{i \in I} X_i$ be a measurable map. Consider the pullbacks $T_i \coloneqq f^*(X_i)$. These are simply the preimages of $X_i$ under $f$, equipped with the $\sigma$-algebra induced from $T$. Since coproducts in $\Set$ are stable under pullbacks, the canonical measurable map $\coprod_{i \in I} T_i \to T$ is bijective. It remains to show that it maps measurable sets to measurable sets.
 
       A measurable subset of $\coprod_{i \in I} T_i$ has the form $A = \coprod_{i \in I} (B_i \cap T_i)$, where each $B_i$ is a measurable subset of $T$. The image of $A$ in $T$ is $\bigcup_{i \in I} (B_i \cap T_i)$. Since this is a countable union, it suffices to show that each $B_i \cap T_i$ is measurable in $T$. This holds because $T_i$ is measurable in $T$ (since $X_i$ is measurable in the coproduct and $f$ is measurable) and $B_i$ is measurable in $T$ by assumption.
 
@@ -77,9 +77,9 @@ satisfied_properties:
     proof: >-
       Let $i_1,i_2 : X \rightrightarrows R$ be a coreflexive corelation of measurable spaces. Thus, $i_1,i_2$ are jointly surjective measurable maps with a common retraction $r : R \twoheadrightarrow X$.
       To show that $(i_1,i_2)$ is cosymmetric, define the map of sets $s : R \to R$ by
-      $$s(i_1(x)) := i_2(x), \quad s(i_2(x)) := i_1(x).$$
+      $$s(i_1(x)) \coloneqq i_2(x), \quad s(i_2(x)) \coloneqq i_1(x).$$
       This is well-defined by a direct calculation or by using the fact that <a href="/category/Set">$\Set$</a> is co-Malcev. We need to show that $s$ is measurable. To this end, let $B \subseteq R$ be a measurable subset. Its preimages
-      $$A_1 := i_1^*(B), \quad A_2 := i_2^*(B)$$
+      $$A_1 \coloneqq i_1^*(B), \quad A_2 \coloneqq i_2^*(B)$$
       are measurable subsets of $X$. We claim that
       $$s^*(B) = \bigl((r^*(A_1) \cup r^*(A_2)) \setminus B\bigr) \cup r^*(A_1 \cap A_2), \tag{1}$$
       which will prove in particular that $s^*(B)$ is measurable, as required. Let $y \in R$. Since $R = i_1(X) \cup i_2(X)$, we may assume without loss of generality that $y = i_1(x)$ for some $x \in X$. The following are equivalent:
@@ -92,11 +92,11 @@ satisfied_properties:
       It remains to show that $(i_1,i_2)$ is cotransitive. We adopt the functorial point of view (simply to avoid talking about pushouts) and show that the subfunctor $\Hom(R,-) \hookrightarrow \Hom(X,-)^2$ is transitive. That is, given three measurable maps $u,v,w : X \rightrightrightarrows T$ into some measurable space $T$ and two measurable maps $f,g : R \rightrightarrows T$ such that
       $$f i_1 = u, \quad f i_2 = v = g i_1, \quad g i_2 = w,$$
       we need to show that there is a measurable map $h : R \to T$ with $h i_1 = u$ and $h i_2 = w$. We can certainly define $h$ as a map of sets by
-      $$h(i_1(x)) := u(x), \quad h(i_2(x)) := w(x),$$
+      $$h(i_1(x)) \coloneqq u(x), \quad h(i_2(x)) \coloneqq w(x),$$
       which is well-defined by a direct calculation or again by using the fact that $\Set$ is co-Malcev. We need to show that $h$ is measurable. Let $C \subseteq T$ be a measurable subset. Its preimages
-      $$B_1 := f^*(C), \quad B_2 := g^*(C)$$
+      $$B_1 \coloneqq f^*(C), \quad B_2 \coloneqq g^*(C)$$
       are measurable subsets of $R$. Notice that $f i_2 = g i_1$ implies
-      $$A := i_2^*(B_1) = i_1^*(B_2) \subseteq X.$$
+      $$A \coloneqq i_2^*(B_1) = i_1^*(B_2) \subseteq X.$$
       We claim that
       $$h^*(C) = \bigl((B_1 \cup B_2) \setminus r^*(A)\bigr) \cup (B_1 \cap B_2), \tag{2}$$
       which will prove that $h^*(C)$ is measurable. Let $y \in R$. There are two cases to consider.

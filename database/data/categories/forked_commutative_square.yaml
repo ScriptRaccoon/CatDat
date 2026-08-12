@@ -96,7 +96,7 @@ satisfied_properties:
       It induces a cospan
       $$\begin{CD} D @<{F(\beta)}<< F(k) @>{F(\alpha)}>> F(i).\end{CD}$$
       Since $F(k)$ is either $D$ or $E$, but has a morphism to $D$, it must be $D$, and $F(\beta)=\id_D$ is forced. Therefore, we may define
-      $$x_i := F(\alpha) : D \to F(i).$$
+      $$x_i \coloneqq F(\alpha) : D \to F(i).$$
       We need to show that this morphism does not depend on the choice of the cospan. Since $\I$ is cosifted, the category of cospans over $(i_0,i)$ is connected. Thus, for another cospan
       $$\begin{CD} i_0 @<{\beta'}<< k' @>{\alpha'}>> i.\end{CD}$$
       that induces another morphism $F(\alpha') : D \to F(i)$, we may assume that it receives a morphism from the given one:

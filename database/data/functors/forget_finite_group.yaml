@@ -47,7 +47,7 @@ unsatisfied_properties:
     proof: This is trivial.
 
   - property: left-invertible
-    proof: 'Assume that there is a functor $F : \Grp \to \FinGrp$ with natural isomorphisms $F(G) \cong G$ for finite groups $G$. Consider the group $A := F(\prod_{n \geq 1} \IZ/n)$. For every $n \geq 1$ there is a split monomorphism from $\IZ/n$ to $\prod_{n \geq 1} \IZ/n$. It induces a split monomorphism from $F(\IZ/n) \cong \IZ/n$ to $A$, so that $\card(A) \geq n$. But then $A$ cannot be finite.'
+    proof: 'Assume that there is a functor $F : \Grp \to \FinGrp$ with natural isomorphisms $F(G) \cong G$ for finite groups $G$. Consider the group $A \coloneqq F(\prod_{n \geq 1} \IZ/n)$. For every $n \geq 1$ there is a split monomorphism from $\IZ/n$ to $\prod_{n \geq 1} \IZ/n$. It induces a split monomorphism from $F(\IZ/n) \cong \IZ/n$ to $A$, so that $\card(A) \geq n$. But then $A$ cannot be finite.'
     label: forget_finite_group_not_left-invertible
 
   - property: finitary

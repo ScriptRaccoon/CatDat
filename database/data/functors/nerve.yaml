@@ -40,5 +40,5 @@ unsatisfied_properties:
       Every simplicial set $S$ with a monomorphism to $N(\C)$ then also has the property that
       $$(d_2,d_0) : S_2 \to S_1 \times S_1$$
       is injective. Equivalently, every two morphisms $\Delta^2 \rightrightarrows S$ that coincide on the <a href="https://ncatlab.org/nlab/show/horn#examples" target="_blank">inner horn</a> $\Lambda^2_1 \subseteq \Delta^2$ are already equal. However, the simplicial set
-      $$S := \Delta^2 \sqcup_{\Lambda^2_1} \Delta^2$$
+      $$S \coloneqq \Delta^2 \sqcup_{\Lambda^2_1} \Delta^2$$
       does not have this property.

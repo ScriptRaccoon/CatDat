@@ -5,9 +5,9 @@ domain: Grp
 codomain: Set
 description: >-
   This functor maps a group $G$ to the collection
-  $$F(G) := \textstyle\prod_{\kappa} \Hom(L_\kappa,G),$$
-  where $\kappa$ ranges over all infinite cardinals and $L_\kappa$ is an infinite simple group of cardinality $\kappa$; we choose $L_\kappa := \Alt_{\fin}(\kappa)$ to make things concrete. For each $G$, the collection $F(G)$ is isomorphic to a set, since for $\kappa > \card(G)$ every homomorphism $L_\kappa \to G$ is trivial. Thus, a more precise definition would be
-  $$F(G) := \textstyle\prod_{\kappa \leq \card(G)} \Hom(L_\kappa,G),$$
+  $$F(G) \coloneqq \textstyle\prod_{\kappa} \Hom(L_\kappa,G),$$
+  where $\kappa$ ranges over all infinite cardinals and $L_\kappa$ is an infinite simple group of cardinality $\kappa$; we choose $L_\kappa \coloneqq \Alt_{\fin}(\kappa)$ to make things concrete. For each $G$, the collection $F(G)$ is isomorphic to a set, since for $\kappa > \card(G)$ every homomorphism $L_\kappa \to G$ is trivial. Thus, a more precise definition would be
+  $$F(G) \coloneqq \textstyle\prod_{\kappa \leq \card(G)} \Hom(L_\kappa,G),$$
   but the first definition makes it more apparent that $F$ is a functor.
   This is the canonical example of a continuous functor $\Grp \to \Set$ that is not representable, and not a right adjoint.
 nlab_link: null
@@ -25,7 +25,7 @@ satisfied_properties:
 unsatisfied_properties:
   - property: right adjoint
     # TODO: refactor this once functor implications may have category equality assumptions
-    proof: 'If $F : \Grp \to \Set$ is right adjoint to $G : \Set \to \Grp$, then $F$ is representable with representing object $U := G(1)$. Let $u \in F(U)$ be a universal element, consisting of homomorphisms $u_\kappa : L_\kappa \to U$. Choose an infinite cardinal $\kappa > \card(U)$. Then $u_\kappa$ must be trivial. The set $F(L_\kappa) = \prod_{\lambda \leq \kappa} \Hom(L_\lambda,L_\kappa)$ contains the element $x$ whose $\kappa$-component is $\id_{L_\kappa}$ and all other components are trivial. Since $u \in F(U)$ is universal, there is a unique homomorphism $f : U \to L_\kappa$ such that $F(f)(u) = x$ in $F(L_\kappa)$. The $\kappa$-component of this equality is $f \circ u_\kappa = \id_{L_\kappa}$. Thus, $u_\kappa$ is injective, contradicting our previous observation that $u_\kappa$ is trivial and the fact that $L_\kappa$ is non-trivial.'
+    proof: 'If $F : \Grp \to \Set$ is right adjoint to $G : \Set \to \Grp$, then $F$ is representable with representing object $U \coloneqq G(1)$. Let $u \in F(U)$ be a universal element, consisting of homomorphisms $u_\kappa : L_\kappa \to U$. Choose an infinite cardinal $\kappa > \card(U)$. Then $u_\kappa$ must be trivial. The set $F(L_\kappa) = \prod_{\lambda \leq \kappa} \Hom(L_\lambda,L_\kappa)$ contains the element $x$ whose $\kappa$-component is $\id_{L_\kappa}$ and all other components are trivial. Since $u \in F(U)$ is universal, there is a unique homomorphism $f : U \to L_\kappa$ such that $F(f)(u) = x$ in $F(L_\kappa)$. The $\kappa$-component of this equality is $f \circ u_\kappa = \id_{L_\kappa}$. Thus, $u_\kappa$ is injective, contradicting our previous observation that $u_\kappa$ is trivial and the fact that $L_\kappa$ is non-trivial.'
 
   # TODO: refactor this once functor implications may have category conclusions
   # here: if a functor preserves terminal objects, and the domain is pointed,

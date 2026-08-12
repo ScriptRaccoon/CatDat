@@ -37,8 +37,8 @@ satisfied_properties:
       $$f : A \times B \to T$$
       be an algebra homomorphism, and consider the pushouts
       $$\begin{align*}
-      T_A & := A \otimes_{p_1,A \times B,f} T \\
-      T_B & := B \otimes_{p_2,A \times B,f} T.
+      T_A & \coloneqq A \otimes_{p_1,A \times B,f} T \\
+      T_B & \coloneqq B \otimes_{p_2,A \times B,f} T.
       \end{align*}$$
       We need to prove that the canonical homomorphism
       $$T \to T_A \times T_B$$
