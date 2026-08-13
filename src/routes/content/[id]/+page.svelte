@@ -2,9 +2,10 @@
 	import MetaData from '$components/MetaData.svelte'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
 	import { PLURALS, STRUCTURE_TYPES } from '$shared/config'
+	import { remove_underscores } from '$shared/utils'
 	import StructureList from '$components/StructureList.svelte'
 	import PropertyList from '$components/PropertyList.svelte'
-	import { remove_underscores } from '$shared/utils.js'
+	import ImplicationList from '$components/ImplicationList.svelte'
 
 	let { data } = $props()
 
@@ -43,12 +44,7 @@
 				This page is referenced by the following {remove_underscores(type)} implications.
 			</p>
 
-			<ul class="with-margins">
-				{#each data.implications_by_type[type] as { id }}
-					<!-- TODO: improve the display of the implication -->
-					<li><a href="/{type}-implication/{id}">{id}</a></li>
-				{/each}
-			</ul>
+			<ImplicationList implications={data.implications_by_type[type]} {type} />
 		{/if}
 	{/each}
 {/if}

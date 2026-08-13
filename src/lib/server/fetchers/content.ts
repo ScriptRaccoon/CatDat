@@ -1,5 +1,12 @@
-import type { PropertyShort, StructureShort, StructureType } from '$lib/commons/types'
+import type {
+	ImplicationDB,
+	ImplicationDisplay,
+	PropertyShort,
+	StructureShort,
+	StructureType
+} from '$lib/commons/types'
 import { db } from '$lib/server/db'
+import { display_implication } from '../transforms'
 
 export function fetch_content_references(content_id: string) {
 	const structures = db
@@ -35,17 +42,27 @@ export function fetch_content_references(content_id: string) {
 	}
 
 	const implications = db
-		.prepare<[string], { id: string; type: StructureType }>(
-			`SELECT id, type FROM implications
-            WHERE proof LIKE '%/content/' || ? || '%'`
+		.prepare<[string], ImplicationDB & { type: StructureType }>(
+			`SELECT
+				id,
+				type,
+				is_equivalence,
+				is_deduced,
+				proof,
+				assumptions,
+				conclusions,
+				mapped_assumptions
+			FROM implications_view
+			WHERE proof LIKE '%/content/' || ? || '%'
+			ORDER BY lower(assumptions) || ' ' || lower(conclusions)`
 		)
 		.all(content_id)
 
-	const implications_by_type: Partial<Record<StructureType, { id: string }[]>> = {}
+	const implications_by_type: Partial<Record<StructureType, ImplicationDisplay[]>> = {}
 
-	for (const { id, type } of implications) {
+	for (const { type, ...rest } of implications) {
 		implications_by_type[type] ??= []
-		implications_by_type[type].push({ id })
+		implications_by_type[type].push(display_implication(rest))
 	}
 
 	return { structures_by_type, properties_by_type, implications_by_type }
