@@ -17,3 +17,9 @@ satisfied_properties:
 unsatisfied_properties:
   - property: regular monomorphism
     proof: 'We know that a monomorphism $f : A \to B$ in <a href="/category/FreeAb">$\FreeAb$</a> is regular if and only if the quotient (taken in $\Ab$) $B/f(A)$ is free abelian. But $F/K \cong \IZ^\IN$ is the Baer-Specker group, which is not free abelian.'
+
+  - property: constant
+    proof: This follows from Lemma 6 <a href="/content/constant_morphisms">here</a>.
+
+  - property: coconstant
+    proof: This follows from Lemma 6 <a href="/content/constant_morphisms">here</a>.

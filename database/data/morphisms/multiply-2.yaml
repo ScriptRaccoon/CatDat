@@ -20,3 +20,9 @@ satisfied_properties:
 unsatisfied_properties:
   - property: isomorphism
     proof: The map is not bijective.
+
+  - property: constant
+    proof: This follows from Lemma 6 <a href="/content/constant_morphisms">here</a>.
+
+  - property: coconstant
+    proof: This follows from Lemma 6 <a href="/content/constant_morphisms">here</a>.

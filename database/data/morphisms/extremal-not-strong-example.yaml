@@ -14,6 +14,12 @@ satisfied_properties:
   - property: extremal monomorphism
     proof: It is a monomorphism because, in fact, every morphism in the forked commutative square is a monomorphism. The only factorizations of $m$ are $m \circ \id_C$ and ${\id_D} \circ m$, and $m$ is not an epimorphism (because $u \circ m = v \circ m$ but $u \neq v$).
 
+  - property: constant
+    proof: This is easy to check. The conceptual reason is that $C$ is subterminal and Lemma 4 <a href="/content/constant_morphisms">here</a>.
+
+  - property: coconstant
+    proof: 'The only pair we need to check is $u,v : D \rightrightarrows E$, but we have $u \circ m = v \circ m$ by construction.'
+
 unsatisfied_properties:
   - property: strong monomorphism
     proof: >-

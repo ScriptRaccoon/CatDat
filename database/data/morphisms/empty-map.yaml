@@ -14,6 +14,12 @@ satisfied_properties:
   - property: monomorphism
     proof: It is vacuously injective.
 
+  - property: constant
+    proof: The map is clearly constant, and by Lemma 1 <a href="/content/constant_morphisms">here</a> this means that the morphism in $\Set$ is constant.
+
+  - property: coconstant
+    proof: This is because $\varnothing$ is initial; see also the dual of Lemma 4 <a href="/content/constant_morphisms">here</a>.
+
 unsatisfied_properties:
   - property: split monomorphism
     proof: There is no map $X \to \varnothing$.

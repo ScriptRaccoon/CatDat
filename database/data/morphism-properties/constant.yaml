@@ -1,0 +1,10 @@
+id: constant
+relation: is
+description: 'A morphism $f : A \to B$ is called <i>constant</i> if for all morphisms $a_1,a_2 : T \rightrightarrows A$ we have $f \circ a_1 = f \circ a_2$. This is a categorical generalization of the concept of a constant function.'
+nlab_link: https://ncatlab.org/nlab/show/constant+morphism
+invariant_under_equivalences: true
+dual: coconstant
+related: []
+
+tags:
+  - misc

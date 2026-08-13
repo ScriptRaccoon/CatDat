@@ -47,6 +47,7 @@ morphism_property_tags:
   - types of monomorphisms
   - types of epimorphisms
   - invertibility
+  - misc
 
 symmetric_monoidal_category_property_tags:
   - tensor-colimit interaction
