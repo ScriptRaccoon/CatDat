@@ -1,0 +1,12 @@
+id: zero morphism
+relation: is a
+description: 'A morphism in an arbitrary category is a <i>zero morphism</i> if it is constant and coconstant. In a <a href="/category-property/zero_morphisms">category with zero morphisms</a>, for every pair of objects $A,B$, there is a unique morphism $A \to B$ with this property, the distinguished zero morphism $0_{A,B} : A \to B$ (see <a href="/morphism-implication/zero_morphism_criterion">here</a>).'
+nlab_link: https://ncatlab.org/nlab/show/zero+morphism
+invariant_under_equivalences: true
+dual: zero morphism
+related:
+  - constant
+  - coconstant
+
+tags:
+  - misc

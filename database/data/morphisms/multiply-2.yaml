@@ -21,8 +21,5 @@ unsatisfied_properties:
   - property: isomorphism
     proof: The map is not bijective.
 
-  - property: constant
-    proof: This follows from Lemma 6 <a href="/content/constant_morphisms">here</a>.
-
-  - property: coconstant
-    proof: This follows from Lemma 6 <a href="/content/constant_morphisms">here</a>.
+  - property: zero morphism
+    proof: The homomorphism is not the trivial homomorphism.

@@ -35,14 +35,4 @@ If $f : X \to Y$ is a monomorphism that is constant, then $X$ is subterminal.
 
 _Proof._ If $x_1,x_2 : T \rightrightarrows X$ are morphisms, then $f \circ x_1 = f \circ x_2$ since $f$ is constant. Since $f$ is also a monomorphism, we infer that $x_1 = x_2$. <span class="qed">$\square$</span>
 
-::: Lemma 6
-In a category with [zero morphisms](/category-property/zero_morphisms), the constant morphisms coincide with the zero morphisms.
-:::
-
-_Proof._ A zero morphism $0_{X,Y} : X \to Y$ is constant because, for all $x_1,x_2 : T \rightrightarrows X$, we have
-$$0_{X,Y} \circ x_1 = 0_{T,Y} = 0_{X,Y} \circ x_2.$$
-Conversely, if $f : X \to Y$ is constant, then
-$$f = f \circ \id_X = f \circ 0_{X,X} = 0_{X,Y}.$$
-<span class="qed">$\square$</span>
-
-Of course, all results on constant morphisms dualize to results on coconstant morphisms (except for Lemma 2). For example, Lemma 5 implies that if an epimorphism $f : X \to Y$ is coconstant, then $Y$ is "co-subterminal", i.e. every two morphisms $Y \rightrightarrows T$ are equal. Also, Lemma 6 implies that in a category with zero morphisms, the coconstant morphisms coincide with the zero morphisms as well.
+Of course, all results on constant morphisms dualize to results on coconstant morphisms (except for Lemma 2). For example, Lemma 5 implies that if an epimorphism $f : X \to Y$ is coconstant, then $Y$ is "co-subterminal", i.e. every two morphisms $Y \rightrightarrows T$ are equal.
