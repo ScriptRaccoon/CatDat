@@ -14,11 +14,8 @@ satisfied_properties:
   - property: split epimorphism
     proof: 'We have $p \circ i = \id_0$ for the other morphism $i : 0 \to 1$ in the category.'
 
-  - property: constant
-    proof: This follows from Lemma 6 <a href="/content/constant_morphisms">here</a>.
-
-  - property: coconstant
-    proof: This follows from Lemma 6 <a href="/content/constant_morphisms">here</a>.
+  - property: zero morphism
+    proof: It factors through the zero object and is therefore the trivial homomorphism.
 
 unsatisfied_properties:
   - property: effective epimorphism

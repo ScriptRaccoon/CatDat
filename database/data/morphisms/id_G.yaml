@@ -17,7 +17,4 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: constant
-    proof: This follows from Lemma 6 <a href="/content/constant_morphisms">here</a>.
-
-  - property: coconstant
-    proof: This follows from Lemma 6 <a href="/content/constant_morphisms">here</a>.
+    proof: The homomorphism is not the trivial homomorphism since $G$ is non-trivial.
