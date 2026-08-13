@@ -10,7 +10,7 @@ The local copy of the database is located at `/database/catdat.db`. It contains 
 - `properties`
 - `implications`
 
-The `structures` table stores data that is common to all types of categorical structures. Three types are currently supported: categories, functors, morphisms, and symmetric monoidal categories. They are stored in the following table:
+The `structures` table stores data that is common to all types of categorical structures. These types are currently supported: categories, functors, morphisms, and symmetric monoidal categories. They are stored in the following table:
 
 - `structure_types`
 
@@ -110,6 +110,6 @@ to check for redundant assignments of properties to categorical structures.
 
 ## Diagram
 
-This is the database schema as of 12.08.2026; changes may occur.
+This is the database schema as of 13.08.2026; changes may occur.
 
-<img alt="database diagram" src="https://github.com/user-attachments/assets/e1a11ea8-6c00-4624-aeaf-6700b1a484cf" />
+<img alt="database diagram" src="https://github.com/user-attachments/assets/72da5e08-3eaf-48f4-9e00-bd0d865a2c92" />
