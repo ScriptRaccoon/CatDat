@@ -15,7 +15,7 @@
 
 <!-- TODO: make this more systematic -->
 
-{#if data.categories.length > 0 || data.category_properties.length > 0 || data.category_implications.length > 0 || data.functors.length > 0}
+{#if data.categories.length > 0 || data.category_properties.length > 0 || data.category_implications.length > 0 || data.functors.length > 0 || data.morphisms.length > 0}
 	<h3>Context</h3>
 
 	{#if data.categories.length > 0}
@@ -48,6 +48,12 @@
 		<p class="hint">This page is referenced by the following functors.</p>
 
 		<StructureList structures={data.functors} type="functor" />
+	{/if}
+
+	{#if data.morphisms.length > 0}
+		<p class="hint">This page is referenced by the following morphisms.</p>
+
+		<StructureList structures={data.morphisms} type="morphism" />
 	{/if}
 {/if}
 

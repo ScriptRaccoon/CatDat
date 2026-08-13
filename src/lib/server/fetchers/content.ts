@@ -24,6 +24,16 @@ export function fetch_content_references(content_id: string) {
 		)
 		.all(content_id)
 
+	const morphisms = db
+		.prepare<[string], StructureShort>(
+			`SELECT DISTINCT s.id, s.name
+	        FROM property_assignments pa
+	        INNER JOIN structures s ON s.id = pa.structure_id
+	        WHERE pa.type = 'morphism'
+	        AND pa.proof LIKE '%/content/' || ? || '%'`
+		)
+		.all(content_id)
+
 	const category_properties = db
 		.prepare<[string], PropertyShort>(
 			`SELECT id, relation FROM properties
@@ -40,5 +50,5 @@ export function fetch_content_references(content_id: string) {
 		)
 		.all(content_id)
 
-	return { categories, category_properties, category_implications, functors }
+	return { categories, category_properties, category_implications, functors, morphisms }
 }
