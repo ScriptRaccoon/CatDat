@@ -3,7 +3,7 @@ title: Thin Category with an Extremal Generator
 description: A result restricting which thin categories can have an extremal generator
 ---
 
-# Thin Category with an Extremal Generator
+## Thin Category with an Extremal Generator
 
 ::: Lemma
 Suppose $G$ is an object of a thin category. Then $G$ is an extremal generator if and only if for every object $X$, either $X \cong G$ or every morphism with codomain $X$ is an isomorphism.
