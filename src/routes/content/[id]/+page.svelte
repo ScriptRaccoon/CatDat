@@ -1,10 +1,18 @@
 <script lang="ts">
-	import StructureList from '$components/StructureList.svelte'
 	import MetaData from '$components/MetaData.svelte'
-	import PropertyList from '$components/PropertyList.svelte'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
+	import { PLURALS, STRUCTURE_TYPES } from '$shared/config'
+	import StructureList from '$components/StructureList.svelte'
+	import PropertyList from '$components/PropertyList.svelte'
+	import { remove_underscores } from '$shared/utils.js'
 
 	let { data } = $props()
+
+	let has_context = $derived(
+		Object.keys(data.structures_by_type).length ||
+			Object.keys(data.properties_by_type).length ||
+			Object.keys(data.implications_by_type).length
+	)
 </script>
 
 <MetaData title={data.meta_data.title} description={data.meta_data.description} />
@@ -13,48 +21,36 @@
 	{@html data.html}
 </div>
 
-<!-- TODO: make this more systematic -->
-
-{#if data.categories.length > 0 || data.category_properties.length > 0 || data.category_implications.length > 0 || data.functors.length > 0 || data.morphisms.length > 0}
+{#if has_context}
 	<h3>Context</h3>
 
-	{#if data.categories.length > 0}
-		<p class="hint">This page is referenced by the following categories.</p>
+	{#each STRUCTURE_TYPES as type}
+		{#if data.structures_by_type?.[type]?.length}
+			<p class="hint">This page is referenced by the following {PLURALS[type]}.</p>
+			<StructureList structures={data.structures_by_type[type]} {type} />
+		{/if}
 
-		<StructureList structures={data.categories} type="category" />
-	{/if}
+		{#if data.properties_by_type?.[type]?.length}
+			<p class="hint">
+				This page is referenced by the following properties of {PLURALS[type]}.
+			</p>
 
-	{#if data.category_properties.length > 0}
-		<p class="hint">
-			This page is referenced by the following properties of categories.
-		</p>
+			<PropertyList properties={data.properties_by_type[type]} {type} />
+		{/if}
 
-		<PropertyList properties={data.category_properties} type="category" />
-	{/if}
+		{#if data.implications_by_type?.[type]?.length}
+			<p class="hint">
+				This page is referenced by the following {remove_underscores(type)} implications.
+			</p>
 
-	{#if data.category_implications.length > 0}
-		<p class="hint">This page is referenced by the following implications.</p>
-
-		<ul class="with-margins">
-			{#each data.category_implications as { id }}
-				<li>
-					<a href="/category-implication/{id}">{id}</a>
-				</li>
-			{/each}
-		</ul>
-	{/if}
-
-	{#if data.functors.length > 0}
-		<p class="hint">This page is referenced by the following functors.</p>
-
-		<StructureList structures={data.functors} type="functor" />
-	{/if}
-
-	{#if data.morphisms.length > 0}
-		<p class="hint">This page is referenced by the following morphisms.</p>
-
-		<StructureList structures={data.morphisms} type="morphism" />
-	{/if}
+			<ul class="with-margins">
+				{#each data.implications_by_type[type] as { id }}
+					<!-- TODO: improve the display of the implication -->
+					<li><a href="/{type}-implication/{id}">{id}</a></li>
+				{/each}
+			</ul>
+		{/if}
+	{/each}
 {/if}
 
 <SuggestionForm />

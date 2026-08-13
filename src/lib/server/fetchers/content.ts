@@ -1,54 +1,52 @@
-import type { PropertyShort, StructureShort } from '$lib/commons/types'
+import type { PropertyShort, StructureShort, StructureType } from '$lib/commons/types'
 import { db } from '$lib/server/db'
 
 export function fetch_content_references(content_id: string) {
-	// TODO: make this more systematic
-
-	const categories = db
-		.prepare<[string], StructureShort>(
-			`SELECT DISTINCT s.id, s.name
+	const structures = db
+		.prepare<[string], StructureShort & { type: StructureType }>(
+			`SELECT DISTINCT s.id, s.name, s.type
 	        FROM property_assignments pa
 	        INNER JOIN structures s ON s.id = pa.structure_id
-	        WHERE pa.type = 'category'
-	        AND pa.proof LIKE '%/content/' || ? || '%'`
+	        WHERE pa.proof LIKE '%/content/' || ? || '%'
+			ORDER BY s.name`
 		)
 		.all(content_id)
 
-	const functors = db
-		.prepare<[string], StructureShort>(
-			`SELECT DISTINCT s.id, s.name
-	        FROM property_assignments pa
-	        INNER JOIN structures s ON s.id = pa.structure_id
-	        WHERE pa.type = 'functor'
-	        AND pa.proof LIKE '%/content/' || ? || '%'`
+	const structures_by_type: Partial<Record<StructureType, StructureShort[]>> = {}
+
+	for (const { type, ...structure } of structures) {
+		structures_by_type[type] ??= []
+		structures_by_type[type].push(structure)
+	}
+
+	const properties = db
+		.prepare<[string], PropertyShort & { type: StructureType }>(
+			`SELECT id, relation, type FROM properties
+            WHERE description LIKE '%/content/' || ? || '%'
+			ORDER BY lower(id)`
 		)
 		.all(content_id)
 
-	const morphisms = db
-		.prepare<[string], StructureShort>(
-			`SELECT DISTINCT s.id, s.name
-	        FROM property_assignments pa
-	        INNER JOIN structures s ON s.id = pa.structure_id
-	        WHERE pa.type = 'morphism'
-	        AND pa.proof LIKE '%/content/' || ? || '%'`
+	const properties_by_type: Partial<Record<StructureType, PropertyShort[]>> = {}
+
+	for (const { type, ...property } of properties) {
+		properties_by_type[type] ??= []
+		properties_by_type[type].push(property)
+	}
+
+	const implications = db
+		.prepare<[string], { id: string; type: StructureType }>(
+			`SELECT id, type FROM implications
+            WHERE proof LIKE '%/content/' || ? || '%'`
 		)
 		.all(content_id)
 
-	const category_properties = db
-		.prepare<[string], PropertyShort>(
-			`SELECT id, relation FROM properties
-            WHERE type = 'category'
-            AND description LIKE '%/content/' || ? || '%'`
-		)
-		.all(content_id)
+	const implications_by_type: Partial<Record<StructureType, { id: string }[]>> = {}
 
-	const category_implications = db
-		.prepare<[string], { id: string }>(
-			`SELECT id FROM implications
-            WHERE type = 'category'
-            AND proof LIKE '%/content/' || ? || '%'`
-		)
-		.all(content_id)
+	for (const { id, type } of implications) {
+		implications_by_type[type] ??= []
+		implications_by_type[type].push({ id })
+	}
 
-	return { categories, category_properties, category_implications, functors, morphisms }
+	return { structures_by_type, properties_by_type, implications_by_type }
 }
