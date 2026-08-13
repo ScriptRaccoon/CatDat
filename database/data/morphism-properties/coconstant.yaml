@@ -1,0 +1,10 @@
+id: coconstant
+relation: is
+description: 'A morphism $f : A \to B$ is called <i>coconstant</i> if for all morphisms $b_1,b_2 : B \rightrightarrows T$ we have $b_1 \circ f = b_2 \circ f$.'
+nlab_link: https://ncatlab.org/nlab/show/coconstant+morphism
+invariant_under_equivalences: true
+dual: constant
+related: []
+
+tags:
+  - misc

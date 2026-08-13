@@ -14,6 +14,12 @@ satisfied_properties:
   - property: regular monomorphism
     proof: 'In fact, $i$ is the equalizer of the other two morphisms $f,g : 1 \rightrightarrows 2$.'
 
+  - property: constant
+    proof: This is easy to check. The conceptual reason is that $0$ is subterminal and Lemma 4 <a href="/content/constant_morphisms">here</a>.
+
+  - property: coconstant
+    proof: This is because $0$ is initial; see also the dual of Lemma 4 <a href="/content/constant_morphisms">here</a>.
+
 unsatisfied_properties:
   - property: split monomorphism
     proof: There is no morphism $1 \to 0$.

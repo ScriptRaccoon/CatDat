@@ -1,0 +1,9 @@
+- id: thin_implies_constant
+  assumptions: []
+  mapped_assumptions:
+    category:
+      - thin
+  conclusions:
+    - constant
+  proof: This is trivial.
+  is_equivalence: false

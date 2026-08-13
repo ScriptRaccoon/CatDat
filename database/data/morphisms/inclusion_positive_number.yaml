@@ -18,3 +18,9 @@ satisfied_properties:
 unsatisfied_properties:
   - property: strong monomorphism
     proof: See <a href="https://math.stackexchange.com/a/5146482" target="_blank">MSE/5146052</a>.
+
+  - property: constant
+    proof: The underlying map of sets is not constant, so that the claim follows from Lemma 2 <a href="/content/constant_morphisms">here</a>.
+
+  - property: coconstant
+    proof: 'Consider for example the two smooth maps $f,g : \IR \rightrightarrows \IR$ defined by $f(x)=x$ and $g(x)=-x$. Then $f \circ i \neq g \circ i$.'

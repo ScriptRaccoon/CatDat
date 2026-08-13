@@ -2,7 +2,7 @@ id: id_X
 name: identity map of a set
 notation: $\id_X$
 category: Set
-description: 'Every object of a category has an identity morphism. In this case, we take a set $X$ and consider its identity morphism $\id_X : X \to X$ in $\Set$.'
+description: 'Every object of a category has an identity morphism. In this case, we take a set $X$ and consider its identity morphism $\id_X : X \to X$ in $\Set$. To decide all of its properties, we assume that $X$ has at least two elements.'
 nlab_link: https://ncatlab.org/nlab/show/identity+morphism
 
 tags:
@@ -15,4 +15,9 @@ satisfied_properties:
   - property: isomorphism
     proof: This is obvious.
 
-unsatisfied_properties: []
+unsatisfied_properties:
+  - property: constant
+    proof: The map is not constant since $X$ has at least two elements, and by Lemma 1 <a href="/content/constant_morphisms">here</a> this means that the morphism in $\Set$ is not constant.
+
+  - property: coconstant
+    proof: This is clear since there are two different maps $X \rightrightarrows X$. Conceptually, we can say that $X$ is not co-subterminal and apply the dual of Lemma 5 <a href="/content/constant_morphisms">here</a>.

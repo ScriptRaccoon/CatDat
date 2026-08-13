@@ -14,6 +14,12 @@ satisfied_properties:
   - property: split epimorphism
     proof: 'Take any element $x \in X$. The corresponding map $x : 1 \to X$ is a section of $! : X \to 1$.'
 
+  - property: constant
+    proof: This is clear because $1$ is terminal; see also Lemma 4 <a href="/content/constant_morphisms">here</a>.
+
 unsatisfied_properties:
   - property: monomorphism
     proof: Since $X$ has two different elements by assumption, which trivially have the same image, the map is not injective.
+
+  - property: coconstant
+    proof: 'A direct proof is possible, but we can also argue as follows: Since the map is an epimorphism, if it were coconstant, by the dual of Lemma 5 <a href="/content/constant_morphisms">here</a>, $1$ would be co-subterminal, which is absurd.'

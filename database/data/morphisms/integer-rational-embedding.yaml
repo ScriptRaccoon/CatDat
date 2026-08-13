@@ -17,6 +17,12 @@ satisfied_properties:
   - property: epimorphism
     proof: Every localization $R \to S^{-1} R$ has this property by the universal property of localizations.
 
+  - property: coconstant
+    proof: This is because the $\IZ$ is initial; see also the dual of Lemma 4 <a href="/content/constant_morphisms">here</a>.
+
 unsatisfied_properties:
   - property: isomorphism
     proof: Clearly, this map is not surjective.
+
+  - property: constant
+    proof: The underlying map of sets is not constant, so that the claim follows from Lemma 2 <a href="/content/constant_morphisms">here</a>.

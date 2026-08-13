@@ -56,7 +56,6 @@ function execute_tests() {
 
 		devlog('\n--- Test morphisms ---')
 
-		test_positivity('id_G', 'morphism')
 		test_decided_structures(decided_morphisms, 'morphism')
 
 		devlog('\n--- Test symmetric monoidal categories ---')

@@ -28,3 +28,9 @@ unsatisfied_properties:
       On objects this is trivial since $B(\IN)$ has a single object.
       Now let $f$ be any morphism in $\C$. There are two cases for the morphism $F(G(f)) = F(H(f))$ in $\Idem$. If it is $\id_0$, then $G(f)$ and $H(f)$ must be one of $\id_0, \id_1$ in $I$. In both cases, since $E$ maps both $\id_0$ and $\id_1$ to $\id_*$, we conclude $E(G(f)) = E(H(f))$. Otherwise, $F(G(f)) = F(H(f))$ is $e$, but then $G(f) = H(f) = {!}$, so that $E(G(f)) = E(H(f))$.
       This proves our claim. If $F$ was a strict epimorphism, this would mean in particular that $E$ factors through $F$, i.e. that the morphism $1$ is $B(\IN)$ is idempotent, which yields the contradiction $1 + 1 = 1$.
+
+  - property: constant
+    proof: 'The functor $\Mor : \Cat \to \Set$ is representable (by the walking morphism $I$), so that by Lemma 2 <a href="/content/constant_morphisms">here</a> it maps constant morphisms to constant maps. But the map $\Mor(F) : \Mor(I) \to \Mor(\Idem)$ is not constant since both $\id_0$ and $e$ are contained in its image.'
+
+  - property: coconstant
+    proof: 'Consider any category $\C$ with two different objects $X,Y$. Then we have functors $X,Y : \Idem \rightrightarrows \C$ mapping $e$ to $\id_X$ resp. $\id_Y$. But we have $X \circ F \neq Y \circ F$.'
