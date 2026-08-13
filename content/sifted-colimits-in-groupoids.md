@@ -5,7 +5,7 @@ description: A description of sifted colimits in groupoids, yielding a proof tha
 
 ## Sifted colimits in groupoids
 
-While the combination of [this result](http://localhost:5173/category-implication/groupoid_consequence) and [this result](http://localhost:5173/category-implication/sifted_colimits_criterion) already implies that groupoids have sifted colimits, we can make these colimits more explicit and also prove their existence without using any non-trivial theorem. We also do this in a more general setting.
+While the combination of [this result](/category-implication/groupoid_consequence) and [this result](/category-implication/sifted_colimits_criterion) already implies that groupoids have sifted colimits, we can make these colimits more explicit and also prove their existence without using any non-trivial theorem. We also do this in a more general setting.
 
 Let $D : \I \to \C$ be a [sifted](/category-property/sifted) diagram in a category and $i_0 \in \I$. We call $D$ _constant after_ $i_0$ when for all morphisms $i_0 \to i$ the morphism $D(i_0) \to D(i)$ is an isomorphism. Of course, in a groupoid, this is satisfied for every $i_0 \in \I$. If such an object $i_0$ exists, we call $D$ _eventually constant_.
 
