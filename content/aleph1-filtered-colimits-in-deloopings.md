@@ -3,7 +3,7 @@ title: ℵ₁-filtered colimits in deloopings
 description: We give a detailed proof that the delooping of the monoid of natural numbers, and likewise the delooping of the large monoid of ordinal numbers, has colimits indexed by ℵ₁-filtered categories.
 ---
 
-# $\aleph_1$-filtered colimits in deloopings
+## $\aleph_1$-filtered colimits in deloopings
 
 Every (possibly large) monoid $M$ induces a category $BM$ with just one object. We will show that this category has $\aleph_1$-filtered colimits in the cases $M = \IN$ and $M = \On$ (both respect to addition).
 

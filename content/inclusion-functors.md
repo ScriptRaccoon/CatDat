@@ -3,7 +3,7 @@ title: Inclusion functors
 description: We gather results about inclusion functors
 ---
 
-# Inclusion functors
+## Inclusion functors
 
 ::: Lemma 1
 Let $\D$ be category that has an extremal cogenerator $Q$. Let $\C \subseteq \D$ be a full subcategory that contains $Q$. Then the inclusion functor $U : \C \hookrightarrow \D$ preserves all colimits that exist in $\C$ and in $\D$. In particular, if $\D$ is cocomplete, $U$ is cocontinuous.
