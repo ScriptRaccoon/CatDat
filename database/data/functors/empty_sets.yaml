@@ -6,6 +6,7 @@ codomain: Set
 description: 'Every category $\C$ has a unique functor $!_{\C} : \varnothing \to \C$. Here, we specify $\C = \Set$, but most of the properties do not depend on the choice of $\C$, as long as $\C$ is non-empty. This is the simplest example of a functor to $\Set$ that is both continuous and cocontinuous, but is neither representable nor a left or right adjoint.'
 nlab_link: null
 left_adjoint: null
+right_adjoint: null
 
 tags:
   - set theory

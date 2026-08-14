@@ -6,6 +6,7 @@ codomain: Mon
 description: This functor maps a ring to its underlying multiplicative monoid, which as "forgotten" the addition of the ring.
 nlab_link: https://ncatlab.org/nlab/show/forgetful+functor
 left_adjoint: monoid_ring
+right_adjoint: null
 
 tags:
   - algebra

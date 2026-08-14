@@ -6,6 +6,7 @@ codomain: Ab
 description: 'This is the inclusion functor $\FinAb \hookrightarrow \Ab$ that maps a finite abelian group to itself, regarded as an abelian group that has "forgotten" that it is finite. It provides an example of a fully faithful functor that is neither finitary nor cofinitary.'
 nlab_link: https://ncatlab.org/nlab/show/forgetful+functor
 left_adjoint: null
+right_adjoint: null
 
 tags:
   - algebra

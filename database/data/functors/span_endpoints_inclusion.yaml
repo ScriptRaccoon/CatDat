@@ -6,6 +6,7 @@ codomain: walking_span
 description: This is the functor that embeds the discrete category $\{1,2\}$ into the walking span $\{1 \leftarrow 0 \rightarrow 2\}$. Among other things, it provides an example of a fully faithful functor which is not left-invertible.
 nlab_link: null
 left_adjoint: null
+right_adjoint: null
 
 tags:
   - category theory

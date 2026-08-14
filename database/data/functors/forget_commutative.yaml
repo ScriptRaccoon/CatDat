@@ -6,6 +6,7 @@ codomain: Ring
 description: This is the inclusion functor $\CRing \hookrightarrow \Ring$ that maps a commutative ring to itself, regarded merely as a ring.
 nlab_link: https://ncatlab.org/nlab/show/forgetful+functor
 left_adjoint: null # TODO: add the left adjoint to the database
+right_adjoint: null
 
 tags:
   - algebra

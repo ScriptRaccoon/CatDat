@@ -6,6 +6,7 @@ codomain: Ab
 description: 'This is the inclusion functor $\TorsFreeAb \hookrightarrow \Ab$. It can also be seen as a forgetful functor which forgets the property of being torsion-free. The functor provides a typical example of a fully faithful functor that does not preserve coequalizers and does not preserve epimorphisms.'
 nlab_link: null
 left_adjoint: null
+right_adjoint: null
 
 tags:
   - algebra

@@ -65,11 +65,11 @@ export function fetch_functor(id: string) {
                 s.notation
             FROM structure_map_assignments a
             INNER JOIN structures s
-            ON s.id = a.structure_id 
+            ON s.id = a.mapped_structure_id 
             WHERE
                 a.type = 'functor'
-                AND a.mapped_structure_id = ?
-                AND a.map = 'left_adjoint'`
+                AND a.structure_id = ?
+                AND a.map = 'right_adjoint'`
 		)
 		.get(id)
 

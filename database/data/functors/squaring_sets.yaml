@@ -6,6 +6,7 @@ codomain: Set
 description: This functor maps a set $X$ to its square $X^2$. It is a simple example of a polynomial functor.
 nlab_link: null
 left_adjoint: doubling_sets
+right_adjoint: null
 
 tags:
   - set theory

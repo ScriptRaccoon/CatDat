@@ -6,6 +6,7 @@ codomain: Set
 description: This functor sends a ring $R$ to its set $\Id(R)$ of idempotent elements. A ring homomorphism $R \to S$ restricts to a map $\Id(R) \to \Id(S)$. Among other things, it provides an example of a representable functor that does not preserve regular epimorphisms.
 nlab_link: null
 left_adjoint: null
+right_adjoint: null
 
 tags:
   - algebra

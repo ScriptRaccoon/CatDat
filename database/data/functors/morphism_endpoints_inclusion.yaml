@@ -6,6 +6,7 @@ codomain: walking_morphism
 description: This is the functor that embeds the discrete category $\{0,1\}$ into the walking morphism $\{0 \to 1\}$. It provides an example of a faithful functor that is full on isomorphisms but not full.
 nlab_link: null
 left_adjoint: null
+right_adjoint: null
 
 tags:
   - category theory

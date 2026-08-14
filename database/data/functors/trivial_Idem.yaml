@@ -6,6 +6,7 @@ codomain: '1'
 description: 'Every category $\C$ has a unique functor $!_{\C} : \C \to 1$ into the trivial category. Here, we specify that $\C$ is the walking idempotent. It is a basic example of an essentially injective functor which is not conservative.'
 nlab_link: null
 left_adjoint: null
+right_adjoint: null
 
 tags:
   - category theory

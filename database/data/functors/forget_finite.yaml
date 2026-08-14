@@ -6,6 +6,7 @@ codomain: Set
 description: This functor is the inclusion functor $\FinSet \hookrightarrow \Set$ mapping a finite set to itself. It can also be regarded as a forgetful functor since it makes finite sets "forget" their finiteness. The functor is a basic example of a representable functor which is not a right adjoint.
 nlab_link: null
 left_adjoint: null
+right_adjoint: null
 
 tags:
   - set theory
