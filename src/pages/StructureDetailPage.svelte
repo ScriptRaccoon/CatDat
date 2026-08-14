@@ -5,6 +5,7 @@
 	import SuggestionForm from '$components/SuggestionForm.svelte'
 	import TagList from '$components/TagList.svelte'
 	import IndistinguishableStructures from '$components/IndistinguishableStructures.svelte'
+	import StructuresBasedOn from '$components/StructuresBasedOn.svelte'
 	import { PLURALS } from '$shared/config'
 	import type {
 		CommentObject,
@@ -13,6 +14,7 @@
 		RelatedStructure,
 		StructureDisplay,
 		StructureShort,
+		StructureShortDictionary,
 		StructureType
 	} from '$lib/commons/types'
 	import type { Snippet } from 'svelte'
@@ -22,6 +24,7 @@
 		type: StructureType
 		structure: StructureDisplay
 		related_structures: RelatedStructure[]
+		structures_based_on: StructureShortDictionary
 		children: RelatedStructure[]
 		tags: string[]
 		satisfied_properties: PropertyAssignmentDisplay[]
@@ -32,13 +35,13 @@
 		comments: CommentObject[]
 		definition?: Snippet
 		specials?: Snippet
-		footer?: Snippet
 	}
 
 	let {
 		type,
 		structure,
 		related_structures,
+		structures_based_on,
 		children,
 		tags,
 		satisfied_properties,
@@ -48,8 +51,7 @@
 		indistinguishable_structures,
 		comments,
 		definition,
-		specials,
-		footer
+		specials
 	}: Props = $props()
 </script>
 
@@ -143,7 +145,7 @@
 
 <CommentList {comments} />
 
-{@render footer?.()}
+<StructuresBasedOn {structures_based_on} structure_name={structure.name} />
 
 <SuggestionForm />
 

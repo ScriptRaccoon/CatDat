@@ -6,6 +6,7 @@ import type {
 	StructureDetails,
 	StructureDisplay,
 	StructureShort,
+	StructureShortDictionary,
 	StructureType
 } from '$lib/commons/types'
 import { error } from '@sveltejs/kit'
@@ -50,6 +51,29 @@ export function fetch_structure(type: StructureType, id: string): StructureDetai
             ORDER BY lower(s.name)`
 		)
 		.all(id)
+
+	const list_structures_based_on = db
+		.prepare<[string], StructureShort & { type: StructureType }>(
+			`SELECT DISTINCT s.id, s.name, a.type
+			FROM structure_map_assignments a
+			INNER JOIN structures s
+			ON s.id = a.structure_id
+			INNER JOIN structure_maps m
+			ON
+				m.map = a.map
+				AND m.type = a.type
+				AND m.mapped_type = a.mapped_type
+			WHERE a.mapped_structure_id = ? AND m.required = TRUE
+			ORDER BY a.type, lower(s.name)`
+		)
+		.all(id)
+
+	const structures_based_on: StructureShortDictionary = {}
+
+	for (const { id, name, type } of list_structures_based_on) {
+		structures_based_on[type] ??= []
+		structures_based_on[type].push({ id, name })
+	}
 
 	const children = db
 		.prepare<[string], RelatedStructure>(
@@ -147,6 +171,7 @@ export function fetch_structure(type: StructureType, id: string): StructureDetai
 		structure,
 		children,
 		related_structures,
+		structures_based_on,
 		tags,
 		satisfied_properties,
 		unsatisfied_properties,

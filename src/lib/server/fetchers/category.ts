@@ -2,8 +2,7 @@ import type {
 	CategoryDefinition,
 	SpecialMorphism,
 	SpecialObject,
-	StructureShort,
-	StructureType
+	StructureShort
 } from '$lib/commons/types'
 import { db } from '$lib/server/db'
 import { error } from '@sveltejs/kit'
@@ -40,34 +39,11 @@ export function fetch_category(id: string) {
 		)
 		.all(id)
 
-	// TODO: make this more systematic
-
-	const get_stored_structures = db.prepare<[string, StructureType], StructureShort>(
-		`SELECT DISTINCT s.id, s.name
-		FROM structure_map_assignments a
-		INNER JOIN structures s
-		ON s.id = a.structure_id
-		WHERE
-			a.mapped_structure_id = ?
-			AND a.type = ?
-		ORDER BY lower(s.name)`
-	)
-
-	const stored_functors = get_stored_structures.all(id, 'functor')
-	const stored_morphisms = get_stored_structures.all(id, 'morphism')
-	const stored_symmetric_monoidal_categories = get_stored_structures.all(
-		id,
-		'symmetric_monoidal_category'
-	)
-
 	return {
 		type: 'category' as const,
 		...category,
 		special_objects,
-		special_morphisms,
-		stored_functors,
-		stored_morphisms,
-		stored_symmetric_monoidal_categories
+		special_morphisms
 	}
 }
 
