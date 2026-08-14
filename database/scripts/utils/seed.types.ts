@@ -70,10 +70,6 @@ export type CategoryYaml = StructureYaml & {
 	special_morphisms: Record<string, MorphismEntry>
 }
 
-export type FunctorYaml = StructureYaml & {
-	left_adjoint: string | null
-}
-
 export type PropertyYaml = {
 	id: string
 	relation: string

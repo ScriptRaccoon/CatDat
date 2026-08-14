@@ -5,7 +5,6 @@ import type {
 	CategoryYaml,
 	ConfigYaml,
 	ImplicationYaml,
-	FunctorYaml,
 	SpecialMorphismRuleYaml,
 	StructureYaml,
 	PropertyYaml
@@ -37,7 +36,7 @@ function seed() {
 
 	seed_properties({ type: 'functor', folder: 'functor-properties' })
 	seed_implications({ type: 'functor', folder: 'functor-implications' })
-	seed_structures({ type: 'functor', folder: 'functors', extra: insert_functor })
+	seed_structures({ type: 'functor', folder: 'functors' })
 
 	seed_properties({ type: 'morphism', folder: 'morphism-properties' })
 	seed_implications({ type: 'morphism', folder: 'morphism-implications' })
@@ -284,13 +283,15 @@ function seed_structures<T extends StructureYaml>({
 		)
 
 		for (const { map, mapped_type } of structure_maps) {
-			structure_map_assignment_insert.run(
-				map,
-				type,
-				mapped_type,
-				structure.id,
-				structure[map]
-			)
+			if (structure[map]) {
+				structure_map_assignment_insert.run(
+					map,
+					type,
+					mapped_type,
+					structure.id,
+					structure[map]
+				)
+			}
 		}
 
 		if (!structure.tags.length) {
@@ -364,19 +365,6 @@ function insert_category(category: CategoryYaml) {
 
 	for (const [type, entry] of Object.entries(category.special_morphisms)) {
 		special_morphism_insert.run(category.id, type, entry.description, entry.proof)
-	}
-}
-
-/**
- * Inserts the data of a functor that is specific to functors.
- */
-function insert_functor(functor: FunctorYaml) {
-	// TODO: refactor into optional structure_map_assignment
-	if (functor.left_adjoint) {
-		db.prepare(`INSERT INTO functors (id, left_adjoint) VALUES (?, ?)`).run(
-			functor.id,
-			functor.left_adjoint
-		)
 	}
 }
 
