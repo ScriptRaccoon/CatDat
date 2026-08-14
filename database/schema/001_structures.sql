@@ -35,8 +35,6 @@ VALUES
 
 -- TODO: perhaps make dual a structure_map (with required = FALSE)
 -- TODO: perhaps also "parent"
--- TODO: check that domain and codomain of functor match
--- TODO: check that right_adjoint and left_adjoint are symmetric
 
 CREATE TABLE structures (
     id TEXT PRIMARY KEY,

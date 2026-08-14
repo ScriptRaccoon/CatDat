@@ -53,6 +53,7 @@ function execute_tests() {
 			{ forget_vector: forget_vector_expected },
 			'functor'
 		)
+		test_adjoint_functor_relationships()
 
 		devlog('\n--- Test morphisms ---')
 
@@ -299,4 +300,121 @@ function check_link_targets_exist() {
 	}
 
 	devlog(`✅ Link targets exist`)
+}
+
+/**
+ * Tests for functors that if L is left adjoint to R,
+ * then R is right adjoint to L, and vice versa.
+ * Also tests dom(L)=cod(R) and cod(L)=dom(R).
+ */
+function test_adjoint_functor_relationships() {
+	const checks: Array<{
+		query: string
+		format: (row: Record<string, string | null>) => string
+	}> = [
+		{
+			query: `
+			SELECT
+				sm1.structure_id AS right_1,
+				sm1.mapped_structure_id AS left,
+				sm2.mapped_structure_id  AS right_2
+			FROM structure_map_assignments sm1
+			LEFT JOIN structure_map_assignments sm2
+			ON
+				sm2.type = 'functor'
+				AND sm2.structure_id = sm1.mapped_structure_id
+				AND sm2.map = 'right_adjoint'
+			WHERE
+				sm1.type = 'functor'
+				AND sm1.map = 'left_adjoint'
+				AND (right_2 IS NULL OR right_2 <> right_1)
+			`,
+			format: ({ right_1, left, right_2 }) =>
+				`❌ Adjoint asymmetry: ${left} is declared as left adjoint to ${right_1}, but ${right_2 ?? 'no functor'} is recorded as its right adjoint.`
+		},
+		{
+			query: `
+			SELECT
+				sm1.structure_id AS left_1,
+				sm1.mapped_structure_id AS right,
+				sm2.mapped_structure_id  AS left_2
+			FROM structure_map_assignments sm1
+			LEFT JOIN structure_map_assignments sm2
+			ON
+				sm2.type = 'functor'
+				AND sm2.structure_id = sm1.mapped_structure_id
+				AND sm2.map = 'left_adjoint'
+			WHERE
+				sm1.type = 'functor'
+				AND sm1.map = 'right_adjoint'
+				AND (left_2 IS NULL OR left_2 <> left_1)
+			`,
+			format: ({ left_1, right, left_2 }) =>
+				`❌ Adjoint asymmetry: ${right} is declared as right adjoint to ${left_1}, but ${left_2 ?? 'no functor'} is recorded as its left adjoint.`
+		},
+		{
+			query: `
+			SELECT
+				sm.structure_id AS functor,
+				sm.mapped_structure_id AS left_adjoint,
+				dom.mapped_structure_id AS functor_domain,
+				adj_cod.mapped_structure_id AS left_adjoint_codomain
+			FROM
+				structure_map_assignments sm
+			INNER JOIN structure_map_assignments dom
+			ON
+				dom.map = 'domain'
+				AND dom.type = 'functor'
+				AND dom.structure_id = sm.structure_id
+			INNER JOIN structure_map_assignments adj_cod
+			ON
+				adj_cod.map = 'codomain'
+				AND adj_cod.type = 'functor'
+				AND adj_cod.structure_id = sm.mapped_structure_id
+			WHERE
+				sm.map = 'left_adjoint'
+				AND functor_domain <> left_adjoint_codomain
+			`,
+			format: ({ functor, left_adjoint, functor_domain, left_adjoint_codomain }) =>
+				`❌ Domain/codomain mismatch: ${functor} has domain ${functor_domain}, but its left adjoint ${left_adjoint} has codomain ${left_adjoint_codomain}.`
+		},
+		{
+			query: `
+			SELECT
+				sm.structure_id AS functor,
+				sm.mapped_structure_id AS left_adjoint,
+				cod.mapped_structure_id AS functor_codomain,
+				adj_dom.mapped_structure_id AS left_adjoint_domain
+			FROM
+				structure_map_assignments sm
+			INNER JOIN structure_map_assignments cod
+			ON
+				cod.map = 'codomain'
+				AND cod.type = 'functor'
+				AND cod.structure_id = sm.structure_id
+			INNER JOIN structure_map_assignments adj_dom
+			ON
+				adj_dom.map = 'domain'
+				AND adj_dom.type = 'functor'
+				AND adj_dom.structure_id = sm.mapped_structure_id
+			WHERE
+				sm.map = 'left_adjoint'
+				AND functor_codomain <> left_adjoint_domain`,
+			format: ({ functor, left_adjoint, functor_codomain, left_adjoint_domain }) =>
+				`❌ Domain/codomain mismatch: ${functor} has codomain ${functor_codomain}, but its left adjoint ${left_adjoint} has domain ${left_adjoint_domain}.`
+		}
+	]
+
+	const violations = checks.flatMap(({ query, format }) =>
+		db
+			.prepare<never[], Record<string, string | null>>(query)
+			.all()
+			.map((row) => format(row))
+	)
+
+	if (violations.length > 0) {
+		throw new Error(violations.join('\n'))
+	}
+
+	console.info('✅ Adjoint functor relationships are valid')
 }
