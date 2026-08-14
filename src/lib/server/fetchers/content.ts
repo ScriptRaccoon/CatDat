@@ -3,6 +3,7 @@ import type {
 	ImplicationDisplay,
 	PropertyShort,
 	StructureShort,
+	StructureShortDictionary,
 	StructureType
 } from '$lib/commons/types'
 import { db } from '$lib/server/db'
@@ -19,7 +20,7 @@ export function fetch_content_references(content_id: string) {
 		)
 		.all(content_id)
 
-	const structures_by_type: Partial<Record<StructureType, StructureShort[]>> = {}
+	const structures_by_type: StructureShortDictionary = {}
 
 	for (const { type, ...structure } of structures) {
 		structures_by_type[type] ??= []

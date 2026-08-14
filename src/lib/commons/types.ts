@@ -9,6 +9,8 @@ export type StructureShort = {
 	name: string
 }
 
+export type StructureShortDictionary = Partial<Record<StructureType, StructureShort[]>>
+
 export type RelatedStructure = StructureShort & { notation: string }
 
 export type StructureDisplay = {
@@ -124,6 +126,7 @@ export type StructureDetails = {
 	type: StructureType
 	structure: StructureDisplay
 	related_structures: RelatedStructure[]
+	structures_based_on: StructureShortDictionary
 	children: RelatedStructure[]
 	tags: string[]
 	satisfied_properties: PropertyAssignmentDisplay[]
@@ -139,9 +142,6 @@ export type CategorySpecificDisplay = {
 	morphisms: string
 	special_objects: SpecialObject[]
 	special_morphisms: SpecialMorphism[]
-	stored_functors: StructureShort[]
-	stored_morphisms: StructureShort[]
-	stored_symmetric_monoidal_categories: StructureShort[]
 }
 
 export type FunctorSpecificDisplay = {
