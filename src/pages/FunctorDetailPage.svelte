@@ -8,25 +8,27 @@
 </script>
 
 <StructureDetailPage {...data}>
+	<!-- TODO: generalize this to all structures -->
+
 	{#snippet definition()}
 		<li>
 			<strong>Domain:</strong>
-			<a href="/category/{data.domain}">{data.domain_name}</a>
+			<a href="/category/{data.domain.id}">{data.domain.name}</a>
 		</li>
 
 		<li>
 			<strong>Codomain:</strong>
-			<a href="/category/{data.codomain}">{data.codomain_name}</a>
+			<a href="/category/{data.codomain.id}">{data.codomain.name}</a>
 		</li>
 
 		{#if data.left_adjoint}
 			<li>
 				<strong>Left adjoint functor:</strong>
 				<a
-					href="/functor/{data.left_adjoint}"
-					aria-label={data.left_adjoint_name}
+					href="/functor/{data.left_adjoint.id}"
+					aria-label={data.left_adjoint.name}
 				>
-					{@html data.left_adjoint_notation}
+					{@html data.left_adjoint.notation}
 				</a>
 			</li>
 		{/if}
@@ -35,10 +37,10 @@
 			<li>
 				<strong>Right adjoint functor:</strong>
 				<a
-					href="/functor/{data.right_adjoint}"
-					aria-label={data.right_adjoint_name}
+					href="/functor/{data.right_adjoint.id}"
+					aria-label={data.right_adjoint.name}
 				>
-					{@html data.right_adjoint_notation}
+					{@html data.right_adjoint.notation}
 				</a>
 			</li>
 		{/if}

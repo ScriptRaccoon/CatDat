@@ -1,16 +1,13 @@
 CREATE TABLE functors (
     id TEXT PRIMARY KEY,
-    domain TEXT NOT NULL,
-    codomain TEXT NOT NULL,
     left_adjoint TEXT,
-    UNIQUE (id, domain, codomain),
     FOREIGN KEY (id)  REFERENCES structures (id) ON DELETE CASCADE,
-    FOREIGN KEY (domain) REFERENCES categories (id) ON DELETE CASCADE,
-    FOREIGN KEY (codomain) REFERENCES categories (id) ON DELETE CASCADE,
-    FOREIGN KEY (left_adjoint, codomain, domain)
-        REFERENCES functors (id, domain, codomain)
-        ON DELETE CASCADE
+    FOREIGN KEY (left_adjoint) REFERENCES structures (id) ON DELETE CASCADE
 );
+
+-- TODO: bring back check that left_adjoint has correct domain and codomain
+-- TODO: move this feature to the structure_maps table
+-- TODO: check that the left_adjoint is a functor
 
 CREATE TRIGGER trg_functor_type_check
 BEFORE INSERT ON functors

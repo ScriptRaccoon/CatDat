@@ -145,28 +145,16 @@ export type CategorySpecificDisplay = {
 }
 
 export type FunctorSpecificDisplay = {
-	domain: string
-	domain_name: string
-	domain_notation: string
-	codomain: string
-	codomain_name: string
-	codomain_notation: string
-	left_adjoint: string | null
-	left_adjoint_name: string | null
-	left_adjoint_notation: string | null
-	right_adjoint: string | null
-	right_adjoint_name: string | null
-	right_adjoint_notation: string | null
+	domain: RelatedStructure
+	codomain: RelatedStructure
+	left_adjoint?: RelatedStructure
+	right_adjoint?: RelatedStructure
 }
 
 export type MorphismSpecificDisplay = {
-	category: string
-	category_name: string
-	category_notation: string
+	category: RelatedStructure
 }
 
 export type SymmetricMonoidalCategorySpecificDisplay = {
-	underlying_category: string
-	underlying_category_name: string
-	underlying_category_notation: string
+	underlying_category: RelatedStructure
 }

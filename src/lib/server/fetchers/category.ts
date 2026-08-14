@@ -2,7 +2,8 @@ import type {
 	CategoryDefinition,
 	SpecialMorphism,
 	SpecialObject,
-	StructureShort
+	StructureShort,
+	StructureType
 } from '$lib/commons/types'
 import { db } from '$lib/server/db'
 import { error } from '@sveltejs/kit'
@@ -39,37 +40,25 @@ export function fetch_category(id: string) {
 		)
 		.all(id)
 
-	// TODO: make this more systematic by looping over the structure_maps
+	// TODO: make this more systematic
 
-	const stored_functors = db
-		.prepare<[string, string], StructureShort>(
-			`SELECT f.id, s.name
-			FROM functors f
-			INNER JOIN structures s ON s.id = f.id
-			WHERE f.domain = ? OR f.codomain = ?
-			ORDER BY lower(s.name)`
-		)
-		.all(id, id)
+	const get_stored_structures = db.prepare<[string, StructureType], StructureShort>(
+		`SELECT DISTINCT s.id, s.name
+		FROM structure_map_assignments a
+		INNER JOIN structures s
+		ON s.id = a.structure_id
+		WHERE
+			a.mapped_structure_id = ?
+			AND a.type = ?
+		ORDER BY lower(s.name)`
+	)
 
-	const stored_morphisms = db
-		.prepare<[string], StructureShort>(
-			`SELECT m.id, s.name
-			FROM morphisms m
-			INNER JOIN structures s ON s.id = m.id
-			WHERE m.category = ?
-			ORDER BY lower(s.name)`
-		)
-		.all(id)
-
-	const stored_symmetric_monoidal_categories = db
-		.prepare<[string], StructureShort>(
-			`SELECT c.id, s.name
-			FROM symmetric_monoidal_categories c
-			INNER JOIN structures s ON s.id = c.id
-			WHERE c.underlying_category = ?
-			ORDER BY lower(s.name)`
-		)
-		.all(id)
+	const stored_functors = get_stored_structures.all(id, 'functor')
+	const stored_morphisms = get_stored_structures.all(id, 'morphism')
+	const stored_symmetric_monoidal_categories = get_stored_structures.all(
+		id,
+		'symmetric_monoidal_category'
+	)
 
 	return {
 		type: 'category' as const,

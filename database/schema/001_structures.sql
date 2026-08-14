@@ -19,6 +19,10 @@ CREATE TABLE structure_maps (
     FOREIGN KEY (mapped_type) REFERENCES structure_types (type) ON DELETE CASCADE
 );
 
+-- TODO: add the boolean field "required" to the structure_maps table.
+-- For example, the domain of a functor is required,
+-- but its left adjoint is not.
+
 INSERT INTO structure_maps
     (map, type, mapped_type)
 VALUES
@@ -26,6 +30,9 @@ VALUES
     ('codomain', 'functor', 'category'),
     ('category', 'morphism', 'category'),
     ('underlying_category', 'symmetric_monoidal_category', 'category');
+-- TODO: make left_adjoint a structure_map (with required = FALSE)
+-- TODO: perhaps make dual a structure_map (with required = FALSE)
+-- TODO: perhaps also "parent"
 
 CREATE TABLE structures (
     id TEXT PRIMARY KEY,
@@ -80,4 +87,18 @@ CREATE TABLE structure_tag_assignments (
     PRIMARY KEY (structure_id, type, tag),
     FOREIGN KEY (structure_id, type) REFERENCES structures (id, type) ON DELETE CASCADE,
     FOREIGN KEY (tag, type) REFERENCES structure_tags (tag, type) ON DELETE CASCADE
+);
+
+CREATE TABLE structure_map_assignments (
+    map TEXT NOT NULL,
+    type TEXT NOT NULL,
+    mapped_type TEXT NOT NULL,
+    structure_id TEXT NOT NULL,
+    mapped_structure_id TEXT NOT NULL,
+    FOREIGN KEY (map, type, mapped_type)
+        REFERENCES structure_maps (map, type, mapped_type) ON DELETE CASCADE,
+    FOREIGN KEY (structure_id, type)
+        REFERENCES structures (id, type) ON DELETE CASCADE,
+    FOREIGN KEY (mapped_structure_id, mapped_type)
+        REFERENCES structures (id, type) ON DELETE CASCADE
 );

@@ -108,6 +108,7 @@ function clear_all_tables() {
 		db.prepare(`DELETE FROM relations`).run()
 
 		db.prepare(`DELETE FROM structures`).run()
+		db.prepare(`DELETE FROM structure_map_assignments`).run()
 	})
 
 	try {
@@ -246,6 +247,9 @@ function seed_structures<T extends StructureYaml>({
 		) VALUES (?, ?, ?, ?)`
 	)
 
+	// TODO: loop over structure_maps here
+	// and fill the structure_map_assignments table
+
 	function insert_structure(structure: T) {
 		const properties_are_disjoint = are_disjoint(
 			[
@@ -350,30 +354,72 @@ function insert_category(category: CategoryYaml) {
  * Inserts the data of a functor that is specific to functors.
  */
 function insert_functor(functor: FunctorYaml) {
-	db.prepare(
-		`INSERT INTO functors (id, domain, codomain, left_adjoint)
-		VALUES (?, ?, ?, ?)`
-	).run(functor.id, functor.domain, functor.codomain, functor.left_adjoint || null)
+	// TODO: refactor into optional structure_map_assignment
+	if (functor.left_adjoint) {
+		db.prepare(`INSERT INTO functors (id, left_adjoint) VALUES (?, ?)`).run(
+			functor.id,
+			functor.left_adjoint
+		)
+	}
+
+	// TODO: unify this
+	const insert_mapped = db.prepare(
+		`INSERT INTO structure_map_assignments (
+			map,
+			type,
+			mapped_type,
+			structure_id,
+			mapped_structure_id
+		)
+		VALUES (?, ?, ?, ?, ?)`
+	)
+
+	insert_mapped.run('domain', 'functor', 'category', functor.id, functor.domain)
+	insert_mapped.run('codomain', 'functor', 'category', functor.id, functor.codomain)
 }
 
 /**
  * Inserts the data of a morphism that is specific to morphisms.
  */
 function insert_morphism(morphism: MorphismYaml) {
-	db.prepare(
-		`INSERT INTO morphisms (id, category)
-		VALUES (?, ?)`
-	).run(morphism.id, morphism.category)
+	// TODO: unify this
+	const insert_mapped = db.prepare(
+		`INSERT INTO structure_map_assignments (
+			map,
+			type,
+			mapped_type,
+			structure_id,
+			mapped_structure_id
+		)
+		VALUES (?, ?, ?, ?, ?)`
+	)
+
+	insert_mapped.run('category', 'morphism', 'category', morphism.id, morphism.category)
 }
 
 /**
  * Inserts the data of a symmetric monoidal category that is specific to symmetric monoidal categories.
  */
 function insert_symmetric_monoidal_category(s: SymmetricMonoidalCategoryYaml) {
-	db.prepare(
-		`INSERT INTO symmetric_monoidal_categories (id, underlying_category)
-		VALUES (?, ?)`
-	).run(s.id, s.underlying_category)
+	// TODO: unify this
+	const insert_mapped = db.prepare(
+		`INSERT INTO structure_map_assignments (
+			map,
+			type,
+			mapped_type,
+			structure_id,
+			mapped_structure_id
+		)
+		VALUES (?, ?, ?, ?, ?)`
+	)
+
+	insert_mapped.run(
+		'underlying_category',
+		'symmetric_monoidal_category',
+		'category',
+		s.id,
+		s.underlying_category
+	)
 }
 
 /**

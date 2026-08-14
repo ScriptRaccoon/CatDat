@@ -12,66 +12,60 @@ export type StructureMeta = {
 }
 
 /**
- * Dictionary associating to every structure type the name of the table.
- */
-const TABLES: Record<StructureType, string> = {
-	category: 'categories',
-	functor: 'functors',
-	morphism: 'morphisms',
-	symmetric_monoidal_category: 'symmetric_monoidal_categories'
-}
-
-/**
  * Returns the list of stored categorical structures of a given type.
  * For structures with structure maps (e.g. functors), the associated
  * satisfied properties are retrieved as well.
  */
 export function get_structures(db: Database, type: StructureType): StructureMeta[] {
-	const structures = db
-		.prepare<[StructureType], StructureMeta>(
-			`SELECT
-                s.id,
-                s.name,
-                s.dual_structure_id AS dual
-            FROM structures s
-			WHERE s.type = ?
-            ORDER BY lower(s.name)`
-		)
-		.all(type)
-
-	const structure_maps = db
-		.prepare<[StructureType], string>(
-			`SELECT map
-			FROM structure_maps
-			WHERE type = ?`
-		)
-		.pluck()
-		.all(type)
-
-	if (!structure_maps.length) return structures
-
-	const add_associated_properties = db.transaction(() => {
-		for (const map of structure_maps) {
-			const prop_query = db
-				.prepare<[string], string>(
-					`SELECT property_id FROM property_assignments
-					INNER JOIN ${TABLES[type]} t ON t.id = ?
-					WHERE structure_id = t.${map}
-					AND is_satisfied = TRUE`
-				)
-				.pluck()
-
-			for (const structure of structures) {
-				structure.associated_satisfied_properties ??= {}
-				const props = prop_query.all(structure.id)
-				structure.associated_satisfied_properties[map] = new Set(props)
+	const structures_raw = db
+		.prepare<
+			[StructureType],
+			{
+				id: string
+				name: string
+				dual: string | null
+				properties: string
 			}
+		>(
+			`WITH mapped_properties AS (
+				SELECT
+					s.id,
+					s.name,
+					s.dual_structure_id AS dual,
+					m.map,
+					json_group_array(a.property_id) AS props
+				FROM structures s
+				LEFT JOIN structure_map_assignments m
+					ON m.structure_id = s.id
+				LEFT JOIN property_assignments a
+					ON a.structure_id = m.mapped_structure_id
+					AND a.is_satisfied = TRUE
+				WHERE s.type = ?
+				GROUP BY s.id, m.map
+			)
+			SELECT
+				id, name, dual,
+				json_group_object(map, props) AS properties
+			FROM mapped_properties
+			GROUP BY id
+			ORDER BY id`
+		)
+		.all(type)
+
+	return structures_raw.map((s) => {
+		const { id, name, dual, properties } = s
+		const parsed_properties = JSON.parse(properties) as Partial<
+			Record<string, string>
+		>
+
+		const associated_satisfied_properties: Partial<Record<string, Set<string>>> = {}
+		for (const [map, props] of Object.entries(parsed_properties)) {
+			if (!props) continue
+			associated_satisfied_properties[map] = new Set(JSON.parse(props))
 		}
+
+		return { id, name, dual, associated_satisfied_properties }
 	})
-
-	add_associated_properties()
-
-	return structures
 }
 
 /**
