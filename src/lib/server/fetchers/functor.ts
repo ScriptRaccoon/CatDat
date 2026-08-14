@@ -47,10 +47,13 @@ export function fetch_functor(id: string) {
                 s.id,
                 s.name,
                 s.notation
-            FROM functors f
+            FROM structure_map_assignments a
             INNER JOIN structures s
-            ON s.id = f.left_adjoint
-            WHERE f.id = ?`
+            ON s.id = a.mapped_structure_id 
+            WHERE
+                a.type = 'functor'
+                AND a.structure_id = ?
+                AND a.map = 'left_adjoint'`
 		)
 		.get(id)
 
@@ -60,10 +63,13 @@ export function fetch_functor(id: string) {
                 s.id,
                 s.name,
                 s.notation
-            FROM functors f
+            FROM structure_map_assignments a
             INNER JOIN structures s
-            ON s.id = f.id
-            WHERE f.left_adjoint = ?`
+            ON s.id = a.structure_id 
+            WHERE
+                a.type = 'functor'
+                AND a.mapped_structure_id = ?
+                AND a.map = 'left_adjoint'`
 		)
 		.get(id)
 

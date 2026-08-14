@@ -13,26 +13,28 @@ CREATE TABLE structure_maps (
     map TEXT NOT NULL,
     type TEXT NOT NULL,
     mapped_type TEXT NOT NULL,
+    required INTEGER NOT NULL
+         CHECK (required in (TRUE, FALSE)),
     PRIMARY KEY (map, type, mapped_type),
     UNIQUE (map, type),
     FOREIGN KEY (type) REFERENCES structure_types (type) ON DELETE CASCADE,
     FOREIGN KEY (mapped_type) REFERENCES structure_types (type) ON DELETE CASCADE
 );
 
--- TODO: add the boolean field "required" to the structure_maps table.
--- For example, the domain of a functor is required,
--- but its left adjoint is not.
+-- TODO: check somewhere that the required fields are indeed filled for every structure.
 
 INSERT INTO structure_maps
-    (map, type, mapped_type)
+    (map, type, mapped_type, required)
 VALUES
-    ('domain', 'functor', 'category'),
-    ('codomain', 'functor', 'category'),
-    ('category', 'morphism', 'category'),
-    ('underlying_category', 'symmetric_monoidal_category', 'category');
--- TODO: make left_adjoint a structure_map (with required = FALSE)
+    ('domain', 'functor', 'category', TRUE),
+    ('codomain', 'functor', 'category', TRUE),
+    ('category', 'morphism', 'category', TRUE),
+    ('underlying_category', 'symmetric_monoidal_category', 'category', TRUE),
+    ('left_adjoint', 'functor', 'functor', FALSE);
+
 -- TODO: perhaps make dual a structure_map (with required = FALSE)
 -- TODO: perhaps also "parent"
+-- TODO: check that domain and codomain of functor match
 
 CREATE TABLE structures (
     id TEXT PRIMARY KEY,
