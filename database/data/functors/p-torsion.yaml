@@ -9,6 +9,7 @@ description: >-
   where $p$ is a fixed prime number. This group can also be represented as $\HomInternal(\IZ/p,A)$.
 nlab_link: null
 left_adjoint: modulo-p
+right_adjoint: null
 
 tags:
   - algebra

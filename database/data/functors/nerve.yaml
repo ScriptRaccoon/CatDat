@@ -6,6 +6,7 @@ codomain: sSet
 description: The nerve of a small category $\C$ is the simplicial set $N(\C)$ whose $n$-simplices are chains of morphisms $X_0 \to \cdots \to X_n$. Among other things, it provides an example of a fully faithful functor that does not preserve regular epimorphisms.
 nlab_link: https://ncatlab.org/nlab/show/nerve
 left_adjoint: null
+right_adjoint: null
 
 tags:
   - category theory

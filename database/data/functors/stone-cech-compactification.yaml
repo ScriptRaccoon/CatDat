@@ -9,6 +9,7 @@ description: >-
   Among other things, this functor provides an example of a reflector that does not preserve binary products.
 nlab_link: https://ncatlab.org/nlab/show/Stone-%C4%8Cech+compactification
 left_adjoint: null
+right_adjoint: null
 
 tags:
   - topology

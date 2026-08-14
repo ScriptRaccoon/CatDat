@@ -6,6 +6,7 @@ codomain: Set
 description: This functor maps a topological space $X$ to its underlying set $U_{\Top}(X)$.
 nlab_link: https://ncatlab.org/nlab/show/forgetful+functor
 left_adjoint: discrete_topology
+right_adjoint: indiscrete_topology
 
 tags:
   - topology

@@ -12,6 +12,7 @@ description: >-
   This is the canonical example of a continuous functor $\Grp \to \Set$ that is not representable, and not a right adjoint.
 nlab_link: null
 left_adjoint: null
+right_adjoint: null
 
 tags:
   - algebra

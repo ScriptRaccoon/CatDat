@@ -6,6 +6,7 @@ codomain: Top
 description: This functor maps a topological space $X$ to the topological space $X \times \IQ$, where $\IQ \subseteq \IR$ carries the usual topology. It is a typical example of a functor that preserves epimorphisms but not regular epimorphisms.
 nlab_link: null
 left_adjoint: null
+right_adjoint: null
 
 tags:
   - topology

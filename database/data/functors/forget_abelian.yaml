@@ -6,6 +6,7 @@ codomain: Grp
 description: This functor maps an abelian group to itself, considered merely as a group.
 nlab_link: https://ncatlab.org/nlab/show/forgetful+functor
 left_adjoint: abelianization
+right_adjoint: null
 
 tags:
   - algebra

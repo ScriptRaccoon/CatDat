@@ -30,11 +30,13 @@ VALUES
     ('codomain', 'functor', 'category', TRUE),
     ('category', 'morphism', 'category', TRUE),
     ('underlying_category', 'symmetric_monoidal_category', 'category', TRUE),
-    ('left_adjoint', 'functor', 'functor', FALSE);
+    ('left_adjoint', 'functor', 'functor', FALSE),
+    ('right_adjoint', 'functor', 'functor', FALSE);
 
 -- TODO: perhaps make dual a structure_map (with required = FALSE)
 -- TODO: perhaps also "parent"
 -- TODO: check that domain and codomain of functor match
+-- TODO: check that right_adjoint and left_adjoint are symmetric
 
 CREATE TABLE structures (
     id TEXT PRIMARY KEY,
