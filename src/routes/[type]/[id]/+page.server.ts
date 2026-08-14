@@ -27,7 +27,7 @@ export const load = (event) => {
 
 	if (special_structure_data.type === 'functor') {
 		structure_data.structure.notation = add_math(
-			`${strip_math(structure_data.structure.notation)}: ${strip_math(special_structure_data.domain_notation)} \\to ${strip_math(special_structure_data.codomain_notation)}`
+			`${strip_math(structure_data.structure.notation)}: ${strip_math(special_structure_data.domain.notation)} \\to ${strip_math(special_structure_data.codomain.notation)}`
 		)
 	}
 

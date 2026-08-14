@@ -1,34 +1,77 @@
-import type { FunctorSpecificDisplay } from '$lib/commons/types'
+import type { RelatedStructure } from '$lib/commons/types'
 import { db } from '$lib/server/db'
 import { error } from '@sveltejs/kit'
 
 export function fetch_functor(id: string) {
-	const functor = db
-		.prepare<[string], FunctorSpecificDisplay>(
+	// TODO: refactor this function
+
+	const domain = db
+		.prepare<[string], RelatedStructure>(
 			`SELECT
-                f.domain,
-                f.codomain,
-                domain.name AS domain_name,
-                domain.notation AS domain_notation,
-                codomain.name AS codomain_name,
-                codomain.notation AS codomain_notation,
-                la.id AS left_adjoint,
-                la.name AS left_adjoint_name,
-                la.notation AS left_adjoint_notation,
-                ra.id AS right_adjoint,
-                ra.name AS right_adjoint_name,
-                ra.notation AS right_adjoint_notation
+                s.id,
+                s.name,
+                s.notation
+            FROM structure_map_assignments a
+            INNER JOIN structures s
+            ON s.id = a.mapped_structure_id 
+            WHERE
+                a.type = 'functor'
+                AND a.structure_id = ?
+                AND a.map = 'domain'`
+		)
+		.get(id)
+
+	if (!domain) error(404, `No domain found for functor with ID ${id}`)
+
+	const codomain = db
+		.prepare<[string], RelatedStructure>(
+			`SELECT
+                s.id,
+                s.name,
+                s.notation
+            FROM structure_map_assignments a
+            INNER JOIN structures s
+            ON s.id = a.mapped_structure_id 
+            WHERE
+                a.type = 'functor'
+                AND a.structure_id = ?
+                AND a.map = 'codomain'`
+		)
+		.get(id)
+
+	if (!codomain) error(404, `No codomain found for functor with ID ${id}`)
+
+	const left_adjoint = db
+		.prepare<[string], RelatedStructure>(
+			`SELECT
+                s.id,
+                s.name,
+                s.notation
             FROM functors f
-            INNER JOIN structures AS domain ON domain.id = f.domain
-            INNER JOIN structures AS codomain ON codomain.id = f.codomain
-            LEFT JOIN structures AS la ON la.id = f.left_adjoint
-            LEFT JOIN functors AS rf ON rf.left_adjoint = f.id
-            LEFT JOIN structures AS ra ON ra.id = rf.id
+            INNER JOIN structures s
+            ON s.id = f.left_adjoint
             WHERE f.id = ?`
 		)
 		.get(id)
 
-	if (!functor) error(404, `Could not find functor with ID '${id}'`)
+	const right_adjoint = db
+		.prepare<[string], RelatedStructure>(
+			`SELECT
+                s.id,
+                s.name,
+                s.notation
+            FROM functors f
+            INNER JOIN structures s
+            ON s.id = f.id
+            WHERE f.left_adjoint = ?`
+		)
+		.get(id)
 
-	return { type: 'functor' as const, ...functor }
+	return {
+		type: 'functor' as const,
+		domain,
+		codomain,
+		left_adjoint,
+		right_adjoint
+	}
 }

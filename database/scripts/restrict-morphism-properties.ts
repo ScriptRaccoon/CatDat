@@ -6,6 +6,7 @@ const db = get_client({ readonly: false })
 /**
  * Ensures that certain properties of morphisms are only satisfied
  * when the ambient categories have certain properties.
+ * TODO: rework this once we have category_conclusions
  */
 export function restrict_morphism_properties() {
 	restrict_normal_morphisms('mono')
@@ -31,21 +32,23 @@ function restrict_normal_morphisms(variant: 'mono' | 'epi') {
                 check_redundancy
             )
             SELECT
-                m.id,
+                sa.structure_id,
                 ?,
                 'morphism',
                 FALSE,
                 'The ' || c.name || ' has no zero morphisms.',
                 TRUE,
                 FALSE
-            FROM morphisms m
+            FROM structure_map_assignments sa
+            INNER JOIN structures c 
+            ON c.id = sa.mapped_structure_id
             INNER JOIN property_assignments a
-            ON a.structure_id = m.category
-            INNER JOIN structures c
-            ON c.id = m.category
-            WHERE a.type = 'category'
-            AND a.property_id = 'zero morphisms'
-            AND a.is_satisfied = FALSE
+            ON a.structure_id = c.id
+            WHERE
+                sa.type = 'morphism'
+                AND sa.map = 'category'
+                AND a.property_id = 'zero morphisms'
+                AND a.is_satisfied = FALSE
             ON CONFLICT (structure_id, property_id)
             DO UPDATE SET
                 proof = excluded.proof,

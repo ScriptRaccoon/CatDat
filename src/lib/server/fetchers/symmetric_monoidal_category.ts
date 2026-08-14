@@ -1,21 +1,32 @@
-import type { SymmetricMonoidalCategorySpecificDisplay } from '$lib/commons/types'
+import type { RelatedStructure } from '$lib/commons/types'
 import { db } from '$lib/server/db'
 import { error } from '@sveltejs/kit'
 
 export function fetch_symmetric_monoidal_category(id: string) {
-	const s = db
-		.prepare<[string], SymmetricMonoidalCategorySpecificDisplay>(
+	// TODO: generalize this
+
+	const underlying_category = db
+		.prepare<[string], RelatedStructure>(
 			`SELECT
-                c.id AS underlying_category,
-                c.name AS underlying_category_name,
-                c.notation AS underlying_category_notation
-            FROM symmetric_monoidal_categories s
-            INNER JOIN structures AS c ON c.id = s.underlying_category
-            WHERE s.id = ?`
+				s.id,
+				s.name,
+				s.notation
+			FROM structure_map_assignments a
+			INNER JOIN structures s
+			ON s.id = a.mapped_structure_id 
+			WHERE
+				a.type = 'symmetric_monoidal_category'
+				AND a.structure_id = ?
+				AND a.map = 'underlying_category'`
 		)
 		.get(id)
 
-	if (!s) error(404, `Could not find symmetric monoidal category with ID '${id}'`)
+	if (!underlying_category) {
+		error(
+			404,
+			`No underlying category found for symmetric monoidal category with ID ${id}`
+		)
+	}
 
-	return { type: 'symmetric_monoidal_category' as const, ...s }
+	return { type: 'symmetric_monoidal_category' as const, underlying_category }
 }

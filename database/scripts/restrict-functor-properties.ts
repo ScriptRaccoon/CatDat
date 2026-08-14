@@ -29,15 +29,18 @@ function restrict_representable_functors() {
                 check_redundancy
             )
             SELECT
-                f.id,
+                a.structure_id,
                 'representable',
                 'functor',
                 FALSE,
                 'The codomain is not $\\Set$.',
                 TRUE,
                 FALSE
-            FROM functors f
-            WHERE f.codomain <> 'Set'
+            FROM structure_map_assignments a
+            WHERE
+                a.type = 'functor'
+                AND a.map = 'codomain'
+                AND a.mapped_structure_id <> 'Set'
             ON CONFLICT (structure_id, property_id)
             DO UPDATE SET
                 proof = excluded.proof,

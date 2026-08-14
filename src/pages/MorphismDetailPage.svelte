@@ -11,8 +11,8 @@
 	{#snippet definition()}
 		<li>
 			<strong>Category:</strong>
-			<a href="/category/{data.category}">
-				{data.category_name}
+			<a href="/category/{data.category.id}">
+				{data.category.name}
 			</a>
 		</li>
 	{/snippet}
