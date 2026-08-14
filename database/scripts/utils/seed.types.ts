@@ -71,17 +71,7 @@ export type CategoryYaml = StructureYaml & {
 }
 
 export type FunctorYaml = StructureYaml & {
-	domain: string
-	codomain: string
 	left_adjoint: string | null
-}
-
-export type MorphismYaml = StructureYaml & {
-	category: string
-}
-
-export type SymmetricMonoidalCategoryYaml = StructureYaml & {
-	underlying_category: string
 }
 
 export type PropertyYaml = {

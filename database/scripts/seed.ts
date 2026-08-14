@@ -8,9 +8,7 @@ import type {
 	FunctorYaml,
 	SpecialMorphismRuleYaml,
 	StructureYaml,
-	PropertyYaml,
-	MorphismYaml,
-	SymmetricMonoidalCategoryYaml
+	PropertyYaml
 } from './utils/seed.types'
 import { create_schema_hash, get_saved_schema_hash } from './utils/schema'
 import { STRUCTURE_TYPES, type StructureType, PLURALS } from '$shared/config'
@@ -43,7 +41,7 @@ function seed() {
 
 	seed_properties({ type: 'morphism', folder: 'morphism-properties' })
 	seed_implications({ type: 'morphism', folder: 'morphism-implications' })
-	seed_structures({ type: 'morphism', folder: 'morphisms', extra: insert_morphism })
+	seed_structures({ type: 'morphism', folder: 'morphisms' })
 
 	seed_properties({
 		type: 'symmetric_monoidal_category',
@@ -55,8 +53,7 @@ function seed() {
 	})
 	seed_structures({
 		type: 'symmetric_monoidal_category',
-		folder: 'symmetric_monoidal_categories',
-		extra: insert_symmetric_monoidal_category
+		folder: 'symmetric_monoidal_categories'
 	})
 }
 
@@ -211,6 +208,13 @@ function seed_structures<T extends StructureYaml>({
 	folder: string
 	extra?: (structure: T) => void
 }) {
+	const structure_maps = db
+		.prepare<[StructureType], { map: keyof T; mapped_type: StructureType }>(
+			`SELECT map, mapped_type
+			FROM structure_maps WHERE type = ?`
+		)
+		.all(type)
+
 	const structure_insert = db.prepare(
 		`INSERT INTO structures (
 			id, type, name, notation, description, nlab_link,
@@ -247,8 +251,11 @@ function seed_structures<T extends StructureYaml>({
 		) VALUES (?, ?, ?, ?)`
 	)
 
-	// TODO: loop over structure_maps here
-	// and fill the structure_map_assignments table
+	const structure_map_assignment_insert = db.prepare(
+		`INSERT INTO structure_map_assignments (
+			map, type, mapped_type, structure_id, mapped_structure_id
+		) VALUES (?, ?, ?, ?, ?)`
+	)
 
 	function insert_structure(structure: T) {
 		const properties_are_disjoint = are_disjoint(
@@ -275,6 +282,16 @@ function seed_structures<T extends StructureYaml>({
 			structure.dual || null,
 			structure.parent || null
 		)
+
+		for (const { map, mapped_type } of structure_maps) {
+			structure_map_assignment_insert.run(
+				map,
+				type,
+				mapped_type,
+				structure.id,
+				structure[map]
+			)
+		}
 
 		if (!structure.tags.length) {
 			console.error(`❌ Structure "${structure.id}" has no tags`)
@@ -361,65 +378,6 @@ function insert_functor(functor: FunctorYaml) {
 			functor.left_adjoint
 		)
 	}
-
-	// TODO: unify this
-	const insert_mapped = db.prepare(
-		`INSERT INTO structure_map_assignments (
-			map,
-			type,
-			mapped_type,
-			structure_id,
-			mapped_structure_id
-		)
-		VALUES (?, ?, ?, ?, ?)`
-	)
-
-	insert_mapped.run('domain', 'functor', 'category', functor.id, functor.domain)
-	insert_mapped.run('codomain', 'functor', 'category', functor.id, functor.codomain)
-}
-
-/**
- * Inserts the data of a morphism that is specific to morphisms.
- */
-function insert_morphism(morphism: MorphismYaml) {
-	// TODO: unify this
-	const insert_mapped = db.prepare(
-		`INSERT INTO structure_map_assignments (
-			map,
-			type,
-			mapped_type,
-			structure_id,
-			mapped_structure_id
-		)
-		VALUES (?, ?, ?, ?, ?)`
-	)
-
-	insert_mapped.run('category', 'morphism', 'category', morphism.id, morphism.category)
-}
-
-/**
- * Inserts the data of a symmetric monoidal category that is specific to symmetric monoidal categories.
- */
-function insert_symmetric_monoidal_category(s: SymmetricMonoidalCategoryYaml) {
-	// TODO: unify this
-	const insert_mapped = db.prepare(
-		`INSERT INTO structure_map_assignments (
-			map,
-			type,
-			mapped_type,
-			structure_id,
-			mapped_structure_id
-		)
-		VALUES (?, ?, ?, ?, ?)`
-	)
-
-	insert_mapped.run(
-		'underlying_category',
-		'symmetric_monoidal_category',
-		'category',
-		s.id,
-		s.underlying_category
-	)
 }
 
 /**
