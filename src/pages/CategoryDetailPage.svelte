@@ -92,7 +92,7 @@
 			</section>
 		{/if}
 
-		{#if data.stored_symmetric_monoidal_categories}
+		{#if data.stored_symmetric_monoidal_categories.length}
 			<section>
 				<h3>Symmetric monoidal categories</h3>
 
