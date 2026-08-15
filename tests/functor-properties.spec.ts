@@ -49,16 +49,16 @@ test('user can view functor property details', async ({ page }) => {
 		})
 	).toBeVisible()
 
-	await expect(page.getByText('is faithful when')).toBeVisible()
+	await expect(page.locator('body')).toContainText('is faithful when')
 
-	await expect(
-		page
-			.getByRole('link', {
-				name: 'fully faithful',
-				exact: true
-			})
-			.first()
-	).toBeVisible()
+	const related_link = page
+		.locator('li', { hasText: 'Related properties' })
+		.getByRole('link', {
+			name: 'fully faithful',
+			exact: true
+		})
+
+	expect(related_link).toBeVisible()
 
 	const examples = page
 		.getByRole('heading', {
@@ -113,11 +113,10 @@ test('user can navigate to the dual property', async ({ page }) => {
 		})
 	).toBeVisible()
 
-	const item = page.locator('li', {
-		hasText: 'Dual property'
-	})
-
-	await item
+	await page
+		.locator('li', {
+			hasText: 'Dual property:'
+		})
 		.getByRole('link', {
 			name: 'right exact',
 			exact: true

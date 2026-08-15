@@ -28,40 +28,40 @@ test('user can navigate to the search page', async ({ page }) => {
 test('user can enter properties', async ({ page }) => {
 	await page.goto('/morphism-search')
 
-	const satisfied_input_field = page.getByRole('textbox', {
+	const satisfied_textbox = page.getByRole('textbox', {
 		name: 'Satisfied property',
 		exact: true
 	})
 
 	for (const p of ['monomorphism', 'epimorphism']) {
-		await expect(satisfied_input_field).toHaveValue('')
+		await expect(satisfied_textbox).toHaveValue('')
 
-		await satisfied_input_field.fill(p)
-		await satisfied_input_field.focus()
+		await satisfied_textbox.fill(p)
+		await satisfied_textbox.focus()
 		await page.waitForTimeout(500)
-		await satisfied_input_field.press('Enter')
+		await satisfied_textbox.press('Enter')
 
 		await expect(page.getByRole('button', { name: p, exact: true })).toBeVisible()
 
-		await expect(satisfied_input_field).toHaveValue('')
+		await expect(satisfied_textbox).toHaveValue('')
 	}
 
-	const unsatisfied_input_field = page.getByRole('textbox', {
+	const unsatisfied_textbox = page.getByRole('textbox', {
 		name: 'Unsatisfied property',
 		exact: true
 	})
 
 	for (const q of ['isomorphism']) {
-		await expect(unsatisfied_input_field).toHaveValue('')
+		await expect(unsatisfied_textbox).toHaveValue('')
 
-		await unsatisfied_input_field.fill(q)
-		await unsatisfied_input_field.focus()
+		await unsatisfied_textbox.fill(q)
+		await unsatisfied_textbox.focus()
 		await page.waitForTimeout(500)
-		await unsatisfied_input_field.press('Enter')
+		await unsatisfied_textbox.press('Enter')
 
 		await expect(page.getByRole('button', { name: q, exact: true })).toBeVisible()
 
-		await expect(unsatisfied_input_field).toHaveValue('')
+		await expect(unsatisfied_textbox).toHaveValue('')
 	}
 
 	await page
@@ -183,7 +183,8 @@ test('contradictions are detected', async ({ page }) => {
 		'/morphism-search/results?satisfied=regular_epimorphism~monomorphism&unsatisfied=split_epimorphism'
 	)
 
-	await expect(page.getByText('the requirements are inconsistent')).toBeVisible()
+	const body = page.locator('body')
 
-	await expect(page.getByText('isomorphism ⟹ split epimorphism')).toBeVisible()
+	await expect(body).toContainText('the requirements are inconsistent')
+	await expect(body).toContainText('isomorphism ⟹ split epimorphism')
 })

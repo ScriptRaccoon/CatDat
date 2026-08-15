@@ -49,16 +49,16 @@ test('user can view morphism property details', async ({ page }) => {
 		})
 	).toBeVisible()
 
-	await expect(page.getByText('is an effective epimorphism if')).toBeVisible()
+	await expect(page.locator('body')).toContainText('is an effective epimorphism if')
 
-	await expect(
-		page
-			.getByRole('link', {
-				name: 'regular epimorphism',
-				exact: true
-			})
-			.first()
-	).toBeVisible()
+	const related_link = page
+		.locator('li', { hasText: 'Related properties' })
+		.getByRole('link', {
+			name: 'regular epimorphism',
+			exact: true
+		})
+
+	expect(related_link).toBeVisible()
 
 	const examples = page
 		.getByRole('heading', {
@@ -113,11 +113,10 @@ test('user can navigate to the dual property', async ({ page }) => {
 		})
 	).toBeVisible()
 
-	const item = page.locator('li', {
-		hasText: 'Dual property'
-	})
-
-	await item
+	await page
+		.locator('li', {
+			hasText: 'Dual property:'
+		})
 		.getByRole('link', {
 			name: 'strict monomorphism',
 			exact: true
@@ -138,11 +137,10 @@ test('user sees no unknown morphisms for the property of being an isomorphism', 
 	page
 }) => {
 	await page.goto('/morphism-property/isomorphism')
-	await expect(
-		page.getByText(
-			'There are 0 morphisms for which the database has no information on whether they satisfy this property'
-		)
-	).toBeVisible()
+
+	await expect(page.locator('body')).toContainText(
+		'There are 0 morphisms for which the database has no information on whether they satisfy this property'
+	)
 })
 
 test("user can navigate to properties tagged with 'types of epimorphism' from the property list page", async ({

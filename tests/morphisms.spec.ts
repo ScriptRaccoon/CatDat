@@ -101,14 +101,16 @@ test('user can view morphism details', async ({ page }) => {
 		})
 	).toBeVisible()
 
-	await expect(page.getByText('basic example of a split epimorphism')).toBeVisible()
-	await expect(page.getByText('is a split epimorphism')).toBeVisible()
-	await expect(page.getByText('is a regular epimorphism')).toBeVisible()
-	await expect(page.getByText('is not an effective epimorphism')).toBeVisible()
-	await expect(page.getByText('is not an isomorphism')).toBeVisible()
+	const body = page.locator('body')
+
+	await expect(body).toContainText('basic example of a split epimorphism')
+	await expect(body).toContainText('is a split epimorphism')
+	await expect(body).toContainText('is a regular epimorphism')
+	await expect(body).toContainText('is not an effective epimorphism')
+	await expect(body).toContainText('is not an isomorphism')
 })
 
-test('user sees no unknown properties for a basic map', async ({ page }) => {
+test('user sees no unknown properties for the terminal map', async ({ page }) => {
 	await page.goto('/morphism/terminal-map')
 
 	const unknown_properties_section = page.locator('section', {
@@ -121,6 +123,7 @@ test('user can navigate to a related morphism', async ({ page }) => {
 	await page.goto('/morphism/id_X', { waitUntil: 'networkidle' })
 
 	await page
+		.locator('li', { hasText: 'Related morphisms:' })
 		.getByRole('link', {
 			name: 'identity map of a group',
 			exact: true
@@ -141,11 +144,11 @@ test('user can navigate to the ambient category', async ({ page }) => {
 	await page.goto('/morphism/fork-handle', { waitUntil: 'networkidle' })
 
 	await page
+		.locator('li', { hasText: 'Category:' })
 		.getByRole('link', {
 			name: 'walking fork',
 			exact: true
 		})
-		.first()
 		.click()
 
 	await expect(
@@ -161,7 +164,7 @@ test('user can navigate to the ambient category', async ({ page }) => {
 test('user can open and close a proof for a property of a morphism', async ({ page }) => {
 	await page.goto('/morphism/A3-S3-embedding', { waitUntil: 'networkidle' })
 
-	const claim = page.locator('li', { has: page.getByText('is a normal monomorphism') })
+	const claim = page.locator('li', { hasText: 'is a normal monomorphism' })
 
 	await expect(claim).toBeVisible()
 
@@ -197,7 +200,7 @@ test('user can open a proof for a deduced satisfied property of a morphism', asy
 }) => {
 	await page.goto('/morphism/terminal-map', { waitUntil: 'networkidle' })
 
-	const claim = page.locator('li', { has: page.getByText('is a strict epimorphism') })
+	const claim = page.locator('li', { hasText: 'is a strict epimorphism' })
 
 	await expect(claim).toBeVisible()
 
@@ -205,9 +208,9 @@ test('user can open a proof for a deduced satisfied property of a morphism', asy
 
 	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
 
-	await expect(
-		popup.getByText('Since it is a regular epimorphism, it is a strict epimorphism')
-	).toBeVisible()
+	await expect(popup).toContainText(
+		'Since it is a regular epimorphism, it is a strict epimorphism'
+	)
 })
 
 test('user can open a proof for a deduced unsatisfied property of a morphism', async ({
@@ -215,9 +218,7 @@ test('user can open a proof for a deduced unsatisfied property of a morphism', a
 }) => {
 	await page.goto('/morphism/multiply-2', { waitUntil: 'networkidle' })
 
-	const claim = page.locator('li', {
-		has: page.getByText('is not a regular monomorphism')
-	})
+	const claim = page.locator('li', { hasText: 'is not a regular monomorphism' })
 
 	await expect(claim).toBeVisible()
 
@@ -225,7 +226,7 @@ test('user can open a proof for a deduced unsatisfied property of a morphism', a
 
 	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
 
-	await expect(
-		popup.getByText('Assume for contradiction that it is a regular monomorphism.')
-	).toBeVisible()
+	await expect(popup).toContainText(
+		'Assume for contradiction that it is a regular monomorphism.'
+	)
 })

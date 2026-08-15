@@ -3,12 +3,10 @@ import { test, expect } from '@playwright/test'
 test('categories are selected by default', async ({ page }) => {
 	await page.goto('/')
 
-	const selector = page
-		.getByRole('combobox', {
-			name: 'Structure',
-			exact: true
-		})
-		.first()
+	const selector = page.getByRole('combobox', {
+		name: 'Structure',
+		exact: true
+	})
 
 	await expect(selector).toBeVisible()
 	await expect(selector).toHaveValue('category')
@@ -17,12 +15,10 @@ test('categories are selected by default', async ({ page }) => {
 test('user can switch to functors', async ({ page }) => {
 	await page.goto('/', { waitUntil: 'networkidle' })
 
-	const selector = page
-		.getByRole('combobox', {
-			name: 'Structure',
-			exact: true
-		})
-		.first()
+	const selector = page.getByRole('combobox', {
+		name: 'Structure',
+		exact: true
+	})
 
 	await expect(selector).toBeVisible()
 	await selector.selectOption('functor')
@@ -42,12 +38,10 @@ test('user can switch to functors', async ({ page }) => {
 test('functors are selected on a functor route', async ({ page }) => {
 	await page.goto('/functor-properties')
 
-	const selector = page
-		.getByRole('combobox', {
-			name: 'Structure',
-			exact: true
-		})
-		.first()
+	const selector = page.getByRole('combobox', {
+		name: 'Structure',
+		exact: true
+	})
 
 	await expect(selector).toBeVisible()
 	await expect(selector).toHaveValue('functor')
@@ -56,12 +50,10 @@ test('functors are selected on a functor route', async ({ page }) => {
 test('user can switch to morphisms', async ({ page }) => {
 	await page.goto('/', { waitUntil: 'networkidle' })
 
-	const selector = page
-		.getByRole('combobox', {
-			name: 'Structure',
-			exact: true
-		})
-		.first()
+	const selector = page.getByRole('combobox', {
+		name: 'Structure',
+		exact: true
+	})
 
 	await expect(selector).toBeVisible()
 	await selector.selectOption('morphism')
@@ -81,12 +73,10 @@ test('user can switch to morphisms', async ({ page }) => {
 test('morphisms are selected on a morphism route', async ({ page }) => {
 	await page.goto('/morphism-properties')
 
-	const selector = page
-		.getByRole('combobox', {
-			name: 'Structure',
-			exact: true
-		})
-		.first()
+	const selector = page.getByRole('combobox', {
+		name: 'Structure',
+		exact: true
+	})
 
 	await expect(selector).toBeVisible()
 	await expect(selector).toHaveValue('morphism')
@@ -95,12 +85,10 @@ test('morphisms are selected on a morphism route', async ({ page }) => {
 test('user can switch to symmetric monoidal categories', async ({ page }) => {
 	await page.goto('/', { waitUntil: 'networkidle' })
 
-	const selector = page
-		.getByRole('combobox', {
-			name: 'Structure',
-			exact: true
-		})
-		.first()
+	const selector = page.getByRole('combobox', {
+		name: 'Structure',
+		exact: true
+	})
 
 	await expect(selector).toBeVisible()
 	await selector.selectOption('symmetric_monoidal_category')
@@ -122,12 +110,10 @@ test('symmetric monoidal categories are selected on a symmetric monoidal categor
 }) => {
 	await page.goto('/symmetric_monoidal_category-properties')
 
-	const selector = page
-		.getByRole('combobox', {
-			name: 'Structure',
-			exact: true
-		})
-		.first()
+	const selector = page.getByRole('combobox', {
+		name: 'Structure',
+		exact: true
+	})
 
 	await expect(selector).toBeVisible()
 	await expect(selector).toHaveValue('symmetric_monoidal_category')

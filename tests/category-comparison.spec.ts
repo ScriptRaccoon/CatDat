@@ -79,27 +79,26 @@ test('user can view comparison table', async ({ page }) => {
 		})
 	).toBeVisible()
 
-	await expect(page.getByText('category of rings')).toBeVisible()
-	await expect(page.getByText('category of commutative rings')).toBeVisible()
+	const body = page.locator('body')
+	await expect(body).toContainText('category of rings')
+	await expect(body).toContainText('category of commutative rings')
 
 	const table = page.getByRole('table')
 	await expect(table).toBeVisible()
 
-	const table_except = {
-		abelian: ['no', 'no'],
-		generator: ['yes', 'yes'],
-		cocomplete: ['yes', 'yes'],
-		coextensive: ['no', 'yes']
-	}
+	const table_excerpt = [
+		['abelian', 'no', 'no'],
+		['generator', 'yes', 'yes'],
+		['cocomplete', 'yes', 'yes'],
+		['coextensive', 'no', 'yes']
+	]
 
-	for (const [prop, values] of Object.entries(table_except)) {
-		const row = table
-			.locator('tbody tr', {
-				has: page.getByRole('link', { name: prop, exact: true })
-			})
-			.first()
+	for (const [prop, value_1, value_2] of table_excerpt) {
+		const row = table.locator('tbody tr', {
+			has: page.getByRole('link', { name: prop, exact: true })
+		})
 		await expect(row).toBeVisible()
-		await expect(row.locator('td').nth(1)).toHaveAttribute('aria-label', values[0])
-		await expect(row.locator('td').nth(2)).toHaveAttribute('aria-label', values[1])
+		await expect(row.locator('td').nth(1)).toHaveAttribute('aria-label', value_1)
+		await expect(row.locator('td').nth(2)).toHaveAttribute('aria-label', value_2)
 	}
 })
