@@ -41,12 +41,12 @@ export function fetch_property(type: StructureType, id: string) {
 
 	const tags = db
 		.prepare<[StructureType, string], string>(
-			`SELECT pt.tag
-            FROM property_tag_assignments pt
-            INNER JOIN property_tags t
-            ON t.tag = pt.tag AND t.type = ?
-            WHERE pt.property_id = ? AND pt.type = t.type
-            ORDER BY t.id`
+			`SELECT pta.tag
+            FROM property_tag_assignments pta
+            INNER JOIN property_tags pt
+            ON pt.tag = pta.tag AND pt.type = ?
+            WHERE pta.property_id = ? AND pta.type = pt.type
+            ORDER BY pt.id`
 		)
 		.pluck()
 		.all(type, id)

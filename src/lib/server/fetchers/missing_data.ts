@@ -26,21 +26,23 @@ export function fetch_missing_data(type: StructureType) {
 			{ id1: string; name1: string; id2: string; name2: string }
 		>(
 			`SELECT
-				s1.id AS id1, s1.name AS name1,
-				s2.id AS id2, s2.name AS name2
+				s1.id AS id1,
+				s1.name AS name1,
+				s2.id AS id2,
+				s2.name AS name2
 			FROM structures s1
 			JOIN structures s2
 			ON s1.id < s2.id AND s2.type = s1.type
 			JOIN properties p ON p.type = s1.type
-			LEFT JOIN property_assignments a1
-			ON a1.structure_id = s1.id AND a1.property_id = p.id
-			LEFT JOIN property_assignments a2
-			ON a2.structure_id = s2.id AND a2.property_id = p.id
+			LEFT JOIN property_assignments pa1
+			ON pa1.structure_id = s1.id AND pa1.property_id = p.id
+			LEFT JOIN property_assignments pa2
+			ON pa2.structure_id = s2.id AND pa2.property_id = p.id
 			WHERE s1.type = ?
 			GROUP BY s1.id, s1.name, s2.id, s2.name
 			HAVING SUM(
 				CASE
-					WHEN a1.is_satisfied IS a2.is_satisfied THEN 0
+					WHEN pa1.is_satisfied IS pa2.is_satisfied THEN 0
 					ELSE 1
 				END
 			) = 0`

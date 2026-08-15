@@ -74,12 +74,12 @@ export function fetch_structure(type: StructureType, id: string): StructureDetai
 			FROM associated_structures a
 			INNER JOIN structures s
 			ON s.id = a.structure_id
-			INNER JOIN associated_structure_types m
+			INNER JOIN associated_structure_types ast
 			ON
-				m.label = a.label
-				AND m.type = a.type
-				AND m.associated_type = a.associated_type
-			WHERE a.associated_structure_id = ? AND m.required = TRUE
+				ast.label = a.label
+				AND ast.type = a.type
+				AND ast.associated_type = a.associated_type
+			WHERE a.associated_structure_id = ? AND ast.required = TRUE
 			ORDER BY a.type, lower(s.name)`
 		)
 		.all(id)
