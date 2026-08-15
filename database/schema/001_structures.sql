@@ -21,8 +21,6 @@ CREATE TABLE structure_maps (
     FOREIGN KEY (mapped_type) REFERENCES structure_types (type) ON DELETE CASCADE
 );
 
--- TODO: check somewhere that the required fields are indeed filled for every structure.
-
 INSERT INTO structure_maps
     (map, type, mapped_type, required)
 VALUES
