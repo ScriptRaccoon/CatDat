@@ -1,6 +1,6 @@
 - id: thin_implies_constant
   assumptions: []
-  mapped_assumptions:
+  associated_assumptions:
     category:
       - thin
   conclusions:
@@ -20,7 +20,7 @@
 - id: zero_morphism_criterion
   assumptions:
     - constant
-  mapped_assumptions:
+  associated_assumptions:
     category:
       - zero morphisms
   conclusions:

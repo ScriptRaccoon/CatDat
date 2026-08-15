@@ -34,7 +34,7 @@ These tables are abstracted through the `implications_view` view.
 
 Functor implications may also depend on properties of the domain or codomain category. Likewise, morphism implications may depend on properties of the ambient category. Such dependencies are stored in the following table:
 
-- `mapped_assumptions`
+- `associated_assumptions`
 
 Additional tables are available. For a complete overview, see the diagram below.
 

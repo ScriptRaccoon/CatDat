@@ -13,7 +13,7 @@
     - right adjoint
     - conservative
     - preserves reflexive coequalizers
-  mapped_assumptions:
+  associated_assumptions:
     domain:
       - reflexive coequalizers
   conclusions:

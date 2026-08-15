@@ -86,7 +86,7 @@ function clear_all_tables() {
 		db.prepare(`DELETE FROM special_object_assignments`).run()
 		db.prepare(`DELETE FROM special_object_types`).run()
 
-		db.prepare(`DELETE FROM mapped_assumptions`).run()
+		db.prepare(`DELETE FROM associated_assumptions`).run()
 		db.prepare(`DELETE FROM assumptions`).run()
 		db.prepare(`DELETE FROM conclusions`).run()
 		db.prepare(`DELETE FROM implications`).run()
@@ -464,15 +464,15 @@ function seed_implications({ type, folder }: { type: StructureType; folder: stri
 		) VALUES (?, ?, ?)`
 	)
 
-	const mapped_assumption_insert = db.prepare(
-		`INSERT INTO mapped_assumptions (
-			implication_id, map, property_id, type, property_type
+	const associated_assumption_insert = db.prepare(
+		`INSERT INTO associated_assumptions (
+			implication_id, label, property_id, type, property_type
 		) VALUES (?, ?, ?, ?, ?)`
 	)
 
 	function insert_implications(implications: ImplicationYaml[]) {
 		for (const impl of implications) {
-			if (!impl.assumptions.length && !impl.mapped_assumptions) {
+			if (!impl.assumptions.length && !impl.associated_assumptions) {
 				console.error(`❌ Implication ${impl.id} has no assumptions.`)
 				process.exit(1)
 			}
@@ -492,12 +492,18 @@ function seed_implications({ type, folder }: { type: StructureType; folder: stri
 				conclusion_insert.run(impl.id, conclusion, type)
 			}
 
-			if (!impl.mapped_assumptions) continue
+			if (!impl.associated_assumptions) continue
 
 			for (const { label, associated_type } of associated_structure_types) {
-				const assumptions = impl.mapped_assumptions[label] ?? []
+				const assumptions = impl.associated_assumptions[label] ?? []
 				for (const p of assumptions) {
-					mapped_assumption_insert.run(impl.id, label, p, type, associated_type)
+					associated_assumption_insert.run(
+						impl.id,
+						label,
+						p,
+						type,
+						associated_type
+					)
 				}
 			}
 		}

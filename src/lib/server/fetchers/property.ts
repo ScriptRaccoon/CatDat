@@ -60,7 +60,7 @@ export function fetch_property(type: StructureType, id: string) {
                 proof,
                 assumptions,
                 conclusions,
-                mapped_assumptions
+                associated_assumptions
             FROM implications_view
             WHERE type = ?
             AND (

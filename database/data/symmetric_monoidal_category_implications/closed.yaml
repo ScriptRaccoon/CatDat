@@ -3,7 +3,7 @@
 - id: closed_cartesian_symmetric_monoidal
   assumptions:
     - cartesian
-  mapped_assumptions:
+  associated_assumptions:
     underlying_category:
       - cartesian closed
   conclusions:
@@ -14,7 +14,7 @@
 - id: when_closed_implies_cocomplete
   assumptions:
     - closed
-  mapped_assumptions:
+  associated_assumptions:
     underlying_category:
       - cocomplete
   conclusions:
@@ -25,7 +25,7 @@
 - id: when_closed_implies_finitely_cocomplete
   assumptions:
     - closed
-  mapped_assumptions:
+  associated_assumptions:
     underlying_category:
       - finitely cocomplete
   conclusions:
@@ -36,7 +36,7 @@
 - id: when_closed_implies_distributive
   assumptions:
     - closed
-  mapped_assumptions:
+  associated_assumptions:
     underlying_category:
       - finite coproducts
   conclusions:
@@ -47,7 +47,7 @@
 - id: when_closed_implies_infinitary_distributive
   assumptions:
     - closed
-  mapped_assumptions:
+  associated_assumptions:
     underlying_category:
       - coproducts
   conclusions:

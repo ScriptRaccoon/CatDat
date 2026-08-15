@@ -11,7 +11,7 @@
   assumptions:
     - conservative
     - preserves equalizers
-  mapped_assumptions:
+  associated_assumptions:
     domain:
       - equalizers
   conclusions:
@@ -30,7 +30,7 @@
 - id: faithful_with_balanced_domain
   assumptions:
     - faithful
-  mapped_assumptions:
+  associated_assumptions:
     domain:
       - balanced
   conclusions:
@@ -101,7 +101,7 @@
 
 - id: surjective_functor_to_core_connected_category
   assumptions: []
-  mapped_assumptions:
+  associated_assumptions:
     domain:
       - inhabited
     codomain:
@@ -113,7 +113,7 @@
 
 - id: right_invertible_functor_to_trivial_category
   assumptions: []
-  mapped_assumptions:
+  associated_assumptions:
     domain:
       - inhabited
     codomain:
@@ -126,7 +126,7 @@
 - id: full_functor_to_trivial_category
   # TODO: add the converse once we have category_conclusions
   assumptions: []
-  mapped_assumptions:
+  associated_assumptions:
     domain:
       - strongly connected
     codomain:
@@ -138,7 +138,7 @@
 
 - id: functor_conservative_on_groupoids
   assumptions: []
-  mapped_assumptions:
+  associated_assumptions:
     domain:
       - groupoid
   conclusions:
@@ -148,7 +148,7 @@
 
 - id: automatic_ess_injective_functors
   assumptions: []
-  mapped_assumptions:
+  associated_assumptions:
     domain:
       - core-connected
   conclusions:
@@ -158,7 +158,7 @@
 
 - id: automatic_full_on_isos_functors
   assumptions: []
-  mapped_assumptions:
+  associated_assumptions:
     domain:
       - core-connected
     codomain:
@@ -172,7 +172,7 @@
   # TODO: rework this once we add "split-mono trivial"
   assumptions:
     - dominant
-  mapped_assumptions:
+  associated_assumptions:
     codomain:
       - regular-subobject-trivial
   conclusions:
@@ -182,7 +182,7 @@
 
 - id: automatic_preserves_mono
   assumptions: []
-  mapped_assumptions:
+  associated_assumptions:
     codomain:
       - left cancellative
   conclusions:

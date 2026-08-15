@@ -96,7 +96,7 @@ export type ImplicationDB = {
 	proof: string
 	assumptions: string
 	conclusions: string
-	mapped_assumptions: string
+	associated_assumptions: string
 }
 
 export type ImplicationDisplay = Replace<
@@ -106,7 +106,7 @@ export type ImplicationDisplay = Replace<
 		is_deduced: boolean
 		assumptions: string[]
 		conclusions: string[]
-		mapped_assumptions: Partial<Record<string, Set<string>>>
+		associated_assumptions: Partial<Record<string, Set<string>>>
 	}
 >
 

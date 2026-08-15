@@ -52,7 +52,7 @@ export function fetch_content_references(content_id: string) {
 				proof,
 				assumptions,
 				conclusions,
-				mapped_assumptions
+				associated_assumptions
 			FROM implications_view
 			WHERE proof LIKE '%/content/' || ? || '%'
 			ORDER BY lower(assumptions) || ' ' || lower(conclusions)`
