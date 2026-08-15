@@ -3,17 +3,7 @@ import { fetch_structure } from '$lib/server/fetchers/structure'
 import { is_structure_type } from '$shared/config'
 import { error } from '@sveltejs/kit'
 import { fetch_category } from '$lib/server/fetchers/category'
-import { fetch_functor } from '$lib/server/fetchers/functor'
-import { fetch_morphism } from '$lib/server/fetchers/morphism'
-import { add_math, strip_math } from '$shared/utils'
-import { fetch_symmetric_monoidal_category } from '$lib/server/fetchers/symmetric_monoidal_category'
-
-const special_fetchers = {
-	category: fetch_category,
-	functor: fetch_functor,
-	morphism: fetch_morphism,
-	symmetric_monoidal_category: fetch_symmetric_monoidal_category
-}
+import { adjust_functor_notation } from '$lib/server/transforms'
 
 export const load = (event) => {
 	const type = event.params.type
@@ -23,13 +13,9 @@ export const load = (event) => {
 
 	const structure_data = fetch_structure(type, id)
 
-	const special_structure_data = special_fetchers[type](id)
+	if (type === 'functor') adjust_functor_notation(structure_data)
 
-	if (special_structure_data.type === 'functor') {
-		structure_data.structure.notation = add_math(
-			`${strip_math(structure_data.structure.notation)}: ${strip_math(special_structure_data.domain.notation)} \\to ${strip_math(special_structure_data.codomain.notation)}`
-		)
-	}
+	const special_structure_data = type === 'category' ? fetch_category(id) : { type }
 
 	return render_nested_formulas({
 		structure_data,

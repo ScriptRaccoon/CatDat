@@ -4,9 +4,10 @@ import type {
 	PropertyAssignmentDB,
 	PropertyAssignmentDisplay,
 	ImplicationDB,
-	ImplicationDisplay
+	ImplicationDisplay,
+	StructureDetails
 } from '$lib/commons/types'
-import { parse_nested_json_set } from '$shared/utils'
+import { add_math, parse_nested_json_set, strip_math } from '$shared/utils'
 
 export function display_property(property: PropertyDB): PropertyDisplay {
 	return {
@@ -40,4 +41,14 @@ export function display_implication(implication: ImplicationDB): ImplicationDisp
 		conclusions: JSON.parse(implication.conclusions),
 		mapped_assumptions: parse_nested_json_set(implication.mapped_assumptions)
 	}
+}
+
+export function adjust_functor_notation(functor: StructureDetails) {
+	const domain = functor.associated_structures.find((s) => s.map == 'domain')
+	const codomain = functor.associated_structures.find((s) => s.map == 'codomain')
+	if (!domain || !codomain) return
+
+	functor.structure.notation = add_math(
+		`${strip_math(functor.structure.notation)}: ${strip_math(domain.notation)} \\to ${strip_math(codomain.notation)}`
+	)
 }
