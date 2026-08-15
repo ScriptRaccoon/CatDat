@@ -35,7 +35,7 @@
 
 	let selected_type = $derived<StructureType>(
 		STRUCTURE_TYPES.find((type) => page.url.pathname.startsWith(`/${type}`)) ||
-			'category',
+			'category'
 	)
 </script>
 
