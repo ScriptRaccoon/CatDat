@@ -62,7 +62,7 @@ test('user can see the details of an implication', async ({ page }) => {
 		})
 	).toBeVisible()
 
-	await expect(page.getByText(/Proof:.+follows that/)).toBeVisible()
+	await expect(page.locator('body')).toContainText(/Proof:.+follows that/)
 })
 
 test('user can open the list of deduced implications', async ({ page }) => {

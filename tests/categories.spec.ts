@@ -103,18 +103,18 @@ test('user can view category details', async ({ page }) => {
 		})
 	).toBeVisible()
 
-	await expect(page.getByText('objects: commutative rings')).toBeVisible()
-	await expect(page.getByText('morphisms: ring homomorphisms')).toBeVisible()
+	const body = page.locator('body')
+
+	await expect(body).toContainText('Objects: commutative rings')
+	await expect(body).toContainText('Morphisms: ring homomorphisms')
 	await expect(page.getByRole('link', { name: 'nLab link' })).toBeVisible()
-	await expect(page.getByText('is cocomplete')).toBeVisible()
-	await expect(page.getByText('is locally finitely presentable')).toBeVisible()
-	await expect(page.getByText('is not additive')).toBeVisible()
-	await expect(page.getByText('is not balanced')).toBeVisible()
-	await expect(page.getByText('terminal object: zero ring')).toBeVisible()
-	await expect(page.getByText('coproducts: tensor products')).toBeVisible()
-	await expect(
-		page.getByText('regular epimorphisms: surjective morphisms')
-	).toBeVisible()
+	await expect(body).toContainText('is cocomplete')
+	await expect(body).toContainText('is locally finitely presentable')
+	await expect(body).toContainText('is not additive')
+	await expect(body).toContainText('is not balanced')
+	await expect(body).toContainText('terminal object: zero ring')
+	await expect(body).toContainText('coproducts: tensor products')
+	await expect(body).toContainText('regular epimorphisms: surjective morphisms')
 })
 
 test('user sees no unknown properties for the category of sets', async ({ page }) => {
@@ -137,15 +137,13 @@ test('user may see unknown properties', async ({ page }) => {
 		})
 	).toBeVisible()
 
-	const unknown_properties_section = page
-		.locator('section', {
-			hasText: 'Unknown properties'
-		})
-		.first()
+	const unknown_properties_section = page.locator('section', {
+		hasText: 'Unknown properties'
+	})
 
-	const unknown_property_link = unknown_properties_section.locator('li').first()
+	const link = unknown_properties_section.locator('li').first()
 
-	await expect(unknown_property_link).toBeVisible()
+	await expect(link).toBeVisible()
 })
 
 test('user may see undecidable properties', async ({ page }) => {
@@ -158,11 +156,9 @@ test('user may see undecidable properties', async ({ page }) => {
 		})
 	).toBeVisible()
 
-	const undecidable_properties_section = page
-		.locator('section', {
-			hasText: 'Undecidable properties'
-		})
-		.first()
+	const undecidable_properties_section = page.locator('section', {
+		hasText: 'Undecidable properties'
+	})
 
 	const link = undecidable_properties_section.getByRole('link', {
 		name: 'accessible',
@@ -184,11 +180,9 @@ test('user may see properties that cannot be determined in a family of categorie
 		})
 	).toBeVisible()
 
-	const undecidable_properties_section = page
-		.locator('section', {
-			hasText: 'Undecidable properties'
-		})
-		.first()
+	const undecidable_properties_section = page.locator('section', {
+		hasText: 'Undecidable properties'
+	})
 
 	const link = undecidable_properties_section.getByRole('link', {
 		name: 'finite',
@@ -202,6 +196,7 @@ test('user can navigate to a related category', async ({ page }) => {
 	await page.goto('/category/FinSet', { waitUntil: 'networkidle' })
 
 	await page
+		.locator('li', { hasText: 'Related categories:' })
 		.getByRole('link', {
 			name: 'category of sets',
 			exact: true
@@ -230,11 +225,8 @@ test('user can navigate to the dual category if it exists in the database', asyn
 		})
 	).toBeVisible()
 
-	const item = page.locator('li', {
-		hasText: 'Dual category'
-	})
-
-	await item
+	await page
+		.locator('li', { hasText: 'Dual category' })
 		.getByRole('link', {
 			name: 'dual of the category of sets',
 			exact: true
@@ -255,6 +247,7 @@ test('user can navigate to a child category', async ({ page }) => {
 	await page.goto('/category/BG', { waitUntil: 'networkidle' })
 
 	await page
+		.locator('li', { hasText: 'Children:' })
 		.getByRole('link', {
 			name: 'delooping of a non-trivial finite group',
 			exact: true
@@ -275,11 +268,11 @@ test('user can navigate to a parent category', async ({ page }) => {
 	await page.goto('/category/Ring', { waitUntil: 'networkidle' })
 
 	await page
+		.locator('li', { hasText: 'Parent:' })
 		.getByRole('link', {
 			name: 'category of algebras',
 			exact: true
 		})
-		.first()
 		.click()
 
 	await expect(
@@ -295,7 +288,7 @@ test('user can navigate to a parent category', async ({ page }) => {
 test('user can open and close a proof for a property of a category', async ({ page }) => {
 	await page.goto('/category/Grp', { waitUntil: 'networkidle' })
 
-	const claim = page.locator('li', { has: page.getByText('is mono-regular') })
+	const claim = page.locator('li', { hasText: 'is mono-regular' })
 
 	await expect(claim).toBeVisible()
 
@@ -331,7 +324,7 @@ test('user can open a proof for a deduced satisfied property of category', async
 }) => {
 	await page.goto('/category/Ring', { waitUntil: 'networkidle' })
 
-	const claim = page.locator('li', { has: page.getByText('has an extremal generator') })
+	const claim = page.locator('li', { hasText: 'has an extremal generator' })
 
 	await expect(claim).toBeVisible()
 
@@ -339,11 +332,9 @@ test('user can open a proof for a deduced satisfied property of category', async
 
 	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
 
-	await expect(
-		popup.getByText(
-			'Since it is one-sorted finitary algebraic, it has an extremal generator'
-		)
-	).toBeVisible()
+	await expect(popup).toContainText(
+		'Since it is one-sorted finitary algebraic, it has an extremal generator'
+	)
 })
 
 test('user can open a proof for a deduced unsatisfied property of a category', async ({
@@ -351,7 +342,7 @@ test('user can open a proof for a deduced unsatisfied property of a category', a
 }) => {
 	await page.goto('/category/Ab', { waitUntil: 'networkidle' })
 
-	const claim = page.locator('li', { has: page.getByText('is not cartesian closed') })
+	const claim = page.locator('li', { hasText: 'is not cartesian closed' })
 
 	await expect(claim).toBeVisible()
 
@@ -359,9 +350,9 @@ test('user can open a proof for a deduced unsatisfied property of a category', a
 
 	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
 
-	await expect(
-		popup.getByText('Assume for contradiction that it is cartesian closed.')
-	).toBeVisible()
+	await expect(popup).toContainText(
+		'Assume for contradiction that it is cartesian closed.'
+	)
 })
 
 test('user can open a proof for an inherited satisfied property of a category', async ({
@@ -369,7 +360,7 @@ test('user can open a proof for an inherited satisfied property of a category', 
 }) => {
 	await page.goto('/category/Ab', { waitUntil: 'networkidle' })
 
-	const claim = page.locator('li', { has: page.getByText('is abelian') })
+	const claim = page.locator('li', { hasText: 'is abelian' })
 
 	await expect(claim).toBeVisible()
 
@@ -377,7 +368,7 @@ test('user can open a proof for an inherited satisfied property of a category', 
 
 	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
 
-	await expect(popup.getByText('This follows from the parent.')).toBeVisible()
+	await expect(popup).toContainText('This follows from the parent.')
 })
 
 test('user can open a proof for an inherited unsatisfied property of a category', async ({
@@ -385,7 +376,7 @@ test('user can open a proof for an inherited unsatisfied property of a category'
 }) => {
 	await page.goto('/category/BG_f', { waitUntil: 'networkidle' })
 
-	const claim = page.locator('li', { has: page.getByText('is not thin') })
+	const claim = page.locator('li', { hasText: 'is not thin' })
 
 	await expect(claim).toBeVisible()
 
@@ -393,7 +384,7 @@ test('user can open a proof for an inherited unsatisfied property of a category'
 
 	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
 
-	await expect(popup.getByText('This follows from the parent.')).toBeVisible()
+	await expect(popup).toContainText('This follows from the parent.')
 })
 
 test('user sees functors associated with the given category', async ({ page }) => {
@@ -414,7 +405,7 @@ test('user sees functors associated with the given category', async ({ page }) =
 	).toBeVisible()
 })
 
-test('user sees morphisms stored for the given category', async ({ page }) => {
+test('user sees morphisms associated with the given category', async ({ page }) => {
 	await page.goto('/category/Grp', { waitUntil: 'networkidle' })
 
 	await expect(
@@ -427,6 +418,19 @@ test('user sees morphisms stored for the given category', async ({ page }) => {
 	await expect(
 		page.getByRole('link', {
 			name: 'identity map of a group',
+			exact: true
+		})
+	).toBeVisible()
+})
+
+test('user sees symmetric monoidal categories for the given category', async ({
+	page
+}) => {
+	await page.goto('/category/Top', { waitUntil: 'networkidle' })
+
+	await expect(
+		page.getByRole('link', {
+			name: 'cartesian symmetric monoidal category of topological spaces',
 			exact: true
 		})
 	).toBeVisible()

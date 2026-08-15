@@ -49,14 +49,18 @@ test('user can view category property details', async ({ page }) => {
 		})
 	).toBeVisible()
 
-	await expect(page.getByText('A category is finitely accessible if')).toBeVisible()
+	await expect(page.locator('body')).toContainText(
+		'A category is finitely accessible if'
+	)
 
-	await expect(
-		page.getByRole('link', {
+	const related_link = page
+		.locator('li', { hasText: 'Related properties:' })
+		.getByRole('link', {
 			name: 'accessible',
 			exact: true
 		})
-	).toBeVisible()
+
+	await expect(related_link).toBeVisible()
 
 	const examples = page
 		.getByRole('heading', {
@@ -111,11 +115,8 @@ test('user can navigate to the dual property', async ({ page }) => {
 		})
 	).toBeVisible()
 
-	const item = page.locator('li', {
-		hasText: 'Dual property'
-	})
-
-	await item
+	await page
+		.locator('li', { hasText: 'Dual property:' })
 		.getByRole('link', {
 			name: 'coequalizers',
 			exact: true
@@ -136,11 +137,10 @@ test('user sees no unknown categories for the property of being additive', async
 	page
 }) => {
 	await page.goto('/category-property/additive')
-	await expect(
-		page.getByText(
-			'There are 0 categories for which the database has no information on whether they satisfy this property'
-		)
-	).toBeVisible()
+
+	await expect(page.locator('body')).toContainText(
+		'There are 0 categories for which the database has no information on whether they satisfy this property'
+	)
 })
 
 test("user can navigate to properties tagged with 'colimits' from the property list page", async ({

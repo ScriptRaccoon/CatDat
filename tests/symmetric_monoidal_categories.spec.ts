@@ -51,11 +51,13 @@ test('user can view symmetric monoidal category details', async ({ page }) => {
 		})
 	).toBeVisible()
 
-	await expect(page.getByText('tensor product of abelian groups')).toBeVisible()
-	await expect(page.getByText('is closed')).toBeVisible()
-	await expect(page.getByText('is cocomplete')).toBeVisible()
-	await expect(page.getByText('is not strict')).toBeVisible()
-	await expect(page.getByText('is not cartesian')).toBeVisible()
+	const body = page.locator('body')
+
+	await expect(body).toContainText('tensor product of abelian groups')
+	await expect(body).toContainText('is closed')
+	await expect(body).toContainText('is cocomplete')
+	await expect(body).toContainText('is not strict')
+	await expect(body).toContainText('is not cartesian')
 })
 
 test('user can navigate to the underlying category', async ({ page }) => {
@@ -64,11 +66,11 @@ test('user can navigate to the underlying category', async ({ page }) => {
 	})
 
 	await page
+		.locator('li', { hasText: 'Underlying category:' })
 		.getByRole('link', {
 			name: 'category of sets',
 			exact: true
 		})
-		.first()
 		.click()
 
 	await expect(

@@ -64,7 +64,7 @@ test("user can navigate to functors tagged with 'topology' from the functor list
 	).toBeVisible()
 })
 
-test("user can navigate to functors tagged with 'algebra' from the category detail page", async ({
+test("user can navigate to functors tagged with 'algebra' from the functor detail page", async ({
 	page
 }) => {
 	await page.goto('/functor/abelianization', { waitUntil: 'networkidle' })
@@ -101,12 +101,14 @@ test('user can view functor details', async ({ page }) => {
 		})
 	).toBeVisible()
 
-	await expect(page.getByText('group of homotopy classes of loops')).toBeVisible()
+	const body = page.locator('body')
+
+	await expect(body).toContainText('group of homotopy classes of loops')
 	await expect(page.getByRole('link', { name: 'nLab link' })).toBeVisible()
-	await expect(page.getByText('preserves products')).toBeVisible()
-	await expect(page.getByText('is essentially surjective')).toBeVisible()
-	await expect(page.getByText('is not faithful')).toBeVisible()
-	await expect(page.getByText('does not preserve binary coproducts')).toBeVisible()
+	await expect(body).toContainText('preserves products')
+	await expect(body).toContainText('is essentially surjective')
+	await expect(body).toContainText('is not faithful')
+	await expect(body).toContainText('does not preserve binary coproducts')
 })
 
 test('user sees no unknown properties for a forgetful functor', async ({ page }) => {
@@ -128,11 +130,9 @@ test('user may see undecidable properties', async ({ page }) => {
 		})
 	).toBeVisible()
 
-	const undecidable_properties_section = page
-		.locator('section', {
-			hasText: 'Undecidable properties'
-		})
-		.first()
+	const undecidable_properties_section = page.locator('section', {
+		hasText: 'Undecidable properties'
+	})
 
 	const link = undecidable_properties_section.getByRole('link', {
 		name: 'essentially injective',
@@ -146,6 +146,7 @@ test('user can navigate to a related functor', async ({ page }) => {
 	await page.goto('/functor/forget_ring', { waitUntil: 'networkidle' })
 
 	await page
+		.locator('li', { hasText: 'Related functors:' })
 		.getByRole('link', {
 			name: 'forgetful functor for groups',
 			exact: true
@@ -166,6 +167,7 @@ test('user can navigate to the domain category', async ({ page }) => {
 	await page.goto('/functor/forget_ring', { waitUntil: 'networkidle' })
 
 	await page
+		.locator('li', { hasText: 'Domain:' })
 		.getByRole('link', {
 			name: 'category of rings',
 			exact: true
@@ -186,6 +188,7 @@ test('user can navigate to the codomain category', async ({ page }) => {
 	await page.goto('/functor/group_units', { waitUntil: 'networkidle' })
 
 	await page
+		.locator('li', { hasText: 'Codomain:' })
 		.getByRole('link', {
 			name: 'category of groups',
 			exact: true
@@ -206,6 +209,7 @@ test('user can navigate to the left adjoint functor', async ({ page }) => {
 	await page.goto('/functor/group_units', { waitUntil: 'networkidle' })
 
 	await page
+		.locator('li', { hasText: 'Left adjoint:' })
 		.getByRole('link', {
 			name: 'forgetful functor from groups to monoids',
 			exact: true
@@ -226,6 +230,7 @@ test('user can navigate to the right adjoint functor', async ({ page }) => {
 	await page.goto('/functor/forget_topology', { waitUntil: 'networkidle' })
 
 	await page
+		.locator('li', { hasText: 'Right adjoint:' })
 		.getByRole('link', {
 			name: 'indiscrete topology functor',
 			exact: true
@@ -245,7 +250,7 @@ test('user can navigate to the right adjoint functor', async ({ page }) => {
 test('user can open and close a proof for a property of a functor', async ({ page }) => {
 	await page.goto('/functor/forget_ring', { waitUntil: 'networkidle' })
 
-	const claim = page.locator('li', { has: page.getByText('is monadic') })
+	const claim = page.locator('li', { hasText: 'is monadic' })
 
 	await expect(claim).toBeVisible()
 
@@ -281,7 +286,7 @@ test('user can open a proof for a deduced satisfied property of functor', async 
 }) => {
 	await page.goto('/functor/free_group', { waitUntil: 'networkidle' })
 
-	const claim = page.locator('li', { has: page.getByText('is cocontinuous') })
+	const claim = page.locator('li', { hasText: 'is cocontinuous' })
 
 	await expect(claim).toBeVisible()
 
@@ -289,9 +294,7 @@ test('user can open a proof for a deduced satisfied property of functor', async 
 
 	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
 
-	await expect(
-		popup.getByText('Since it is a left adjoint, it is cocontinuous')
-	).toBeVisible()
+	await expect(popup).toContainText('Since it is a left adjoint, it is cocontinuous')
 })
 
 test('user can open a proof for a deduced unsatisfied property of a functor', async ({
@@ -299,7 +302,7 @@ test('user can open a proof for a deduced unsatisfied property of a functor', as
 }) => {
 	await page.goto('/functor/pi_1', { waitUntil: 'networkidle' })
 
-	const claim = page.locator('li', { has: page.getByText('is not continuous') })
+	const claim = page.locator('li', { hasText: 'is not continuous' })
 
 	await expect(claim).toBeVisible()
 
@@ -307,7 +310,5 @@ test('user can open a proof for a deduced unsatisfied property of a functor', as
 
 	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
 
-	await expect(
-		popup.getByText('Assume for contradiction that it is continuous.')
-	).toBeVisible()
+	await expect(popup).toContainText('Assume for contradiction that it is continuous.')
 })
