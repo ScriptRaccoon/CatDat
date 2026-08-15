@@ -14,13 +14,6 @@ The `structures` table stores data that is common to all types of categorical st
 
 - `structure_types`
 
-Structure-specific data is stored in additional tables, such as:
-
-- `categories`
-- `functors`
-- `morphisms`
-- `symmetric_monoidal_categories`
-
 Properties (whether satisfied or not) are associated with categorical structures via the following table:
 
 - `property_assignments`
@@ -110,6 +103,6 @@ to check for redundant assignments of properties to categorical structures.
 
 ## Diagram
 
-This is the database schema as of 13.08.2026; changes may occur.
+This is the database schema as of 15.08.2026; changes may occur.
 
-<img alt="database diagram" src="https://github.com/user-attachments/assets/72da5e08-3eaf-48f4-9e00-bd0d865a2c92" />
+<img alt="database diagram" src="https://github.com/user-attachments/assets/a2cb788e-cac0-44c6-80fc-ae07de2fe83a" />
