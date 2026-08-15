@@ -8,6 +8,7 @@
 	import StructuresBasedOn from '$components/StructuresBasedOn.svelte'
 	import { PLURALS } from '$shared/config'
 	import type {
+		AssociatedStructure,
 		CommentObject,
 		PropertyAssignmentDisplay,
 		PropertyShort,
@@ -18,11 +19,12 @@
 		StructureType
 	} from '$lib/commons/types'
 	import type { Snippet } from 'svelte'
-	import { remove_underscores } from '$shared/utils'
+	import { capitalize, remove_underscores } from '$shared/utils'
 
 	type Props = {
 		type: StructureType
 		structure: StructureDisplay
+		associated_structures: AssociatedStructure[]
 		related_structures: RelatedStructure[]
 		structures_based_on: StructureShortDictionary
 		children: RelatedStructure[]
@@ -40,6 +42,7 @@
 	let {
 		type,
 		structure,
+		associated_structures,
 		related_structures,
 		structures_based_on,
 		children,
@@ -69,6 +72,13 @@
 		</li>
 
 		{@render definition?.()}
+
+		{#each associated_structures as a}
+			<li>
+				<strong>{capitalize(remove_underscores(a.map))}:</strong>
+				<a href="/{a.mapped_type}/{a.id}">{a.name}</a>
+			</li>
+		{/each}
 
 		{#if structure.parent}
 			<li>

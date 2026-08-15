@@ -13,6 +13,11 @@ export type StructureShortDictionary = Partial<Record<StructureType, StructureSh
 
 export type RelatedStructure = StructureShort & { notation: string }
 
+export type AssociatedStructure = RelatedStructure & {
+	map: string
+	mapped_type: StructureType
+}
+
 export type StructureDisplay = {
 	id: string
 	name: string
@@ -125,6 +130,7 @@ export type ComparisonResult = {
 export type StructureDetails = {
 	type: StructureType
 	structure: StructureDisplay
+	associated_structures: AssociatedStructure[]
 	related_structures: RelatedStructure[]
 	structures_based_on: StructureShortDictionary
 	children: RelatedStructure[]
@@ -142,19 +148,4 @@ export type CategorySpecificDisplay = {
 	morphisms: string
 	special_objects: SpecialObject[]
 	special_morphisms: SpecialMorphism[]
-}
-
-export type FunctorSpecificDisplay = {
-	domain: RelatedStructure
-	codomain: RelatedStructure
-	left_adjoint?: RelatedStructure
-	right_adjoint?: RelatedStructure
-}
-
-export type MorphismSpecificDisplay = {
-	category: RelatedStructure
-}
-
-export type SymmetricMonoidalCategorySpecificDisplay = {
-	underlying_category: RelatedStructure
 }

@@ -7,7 +7,8 @@ import type {
 	StructureDisplay,
 	StructureShort,
 	StructureShortDictionary,
-	StructureType
+	StructureType,
+	AssociatedStructure
 } from '$lib/commons/types'
 import { error } from '@sveltejs/kit'
 import { db } from '$lib/server/db'
@@ -38,6 +39,21 @@ export function fetch_structure(type: StructureType, id: string): StructureDetai
 	if (!structure) {
 		error(404, `Could not find ${type} with ID '${id}'`)
 	}
+
+	const associated_structures = db
+		.prepare<[string], AssociatedStructure>(
+			`SELECT
+                s.id,
+                s.name,
+                s.notation,
+				a.map,
+				a.mapped_type
+            FROM structure_map_assignments a
+            INNER JOIN structures s
+            ON s.id = a.mapped_structure_id 
+            WHERE a.structure_id = ?`
+		)
+		.all(id)
 
 	const related_structures = db
 		.prepare<[string], RelatedStructure>(
@@ -171,6 +187,7 @@ export function fetch_structure(type: StructureType, id: string): StructureDetai
 		structure,
 		children,
 		related_structures,
+		associated_structures,
 		structures_based_on,
 		tags,
 		satisfied_properties,
