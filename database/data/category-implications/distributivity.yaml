@@ -7,7 +7,6 @@
     - coproducts
     - finite products
   proof: This holds by definition.
-  is_equivalence: false
 
 - id: countably_distributive_assumption
   assumptions:
@@ -16,7 +15,6 @@
     - countable coproducts
     - finite products
   proof: This holds by definition.
-  is_equivalence: false
 
 - id: distributive_assumption
   assumptions:
@@ -25,7 +23,6 @@
     - finite coproducts
     - finite products
   proof: This holds by definition.
-  is_equivalence: false
 
 - id: infinitary_distributive_trivial
   assumptions:
@@ -33,7 +30,6 @@
   conclusions:
     - countably distributive
   proof: This is trivial.
-  is_equivalence: false
 
 - id: countably_distributive_trivial
   assumptions:
@@ -41,7 +37,6 @@
   conclusions:
     - distributive
   proof: This is trivial.
-  is_equivalence: false
 
 - id: distributive_consequence
   assumptions:
@@ -49,7 +44,6 @@
   conclusions:
     - strict initial object
   proof: See the <a href="https://ncatlab.org/nlab/show/distributive+category" target="_blank">nLab</a> or Prop. 3.4 in <a href="https://doi.org/10.1016/0022-4049(93)90035-R" target="_blank">Introduction to extensive and distributive categories</a> by Carboni-Lack-Walters.
-  is_equivalence: false
 
 - id: distributive_criterion
   assumptions:
@@ -58,7 +52,6 @@
   conclusions:
     - distributive
   proof: Each functor $A \times -$ is left adjoint and hence preserves finite coproducts (in fact, all colimits).
-  is_equivalence: false
 
 - id: countably_distributive_criterion
   assumptions:
@@ -67,7 +60,6 @@
   conclusions:
     - countably distributive
   proof: Each functor $A \times -$ is left adjoint and hence preserves countable coproducts (in fact, all colimits).
-  is_equivalence: false
 
 - id: infinitary_distributive_criterion
   assumptions:
@@ -76,7 +68,6 @@
   conclusions:
     - infinitary distributive
   proof: Each functor $A \times -$ is left adjoint and hence preserves coproducts (in fact, all colimits).
-  is_equivalence: false
 
 - id: infinite_distributive_filtered_criterion
   assumptions:
@@ -86,7 +77,6 @@
   conclusions:
     - infinitary distributive
   proof: Each functor $A \times -$ preserves finite coproducts and filtered colimits, hence all coproducts.
-  is_equivalence: false
 
 - id: countably_distributive_filtered_criterion
   assumptions:
@@ -96,7 +86,6 @@
   conclusions:
     - countably distributive
   proof: Each functor $A \times -$ preserves finite coproducts and filtered colimits, hence all countable coproducts.
-  is_equivalence: false
 
 - id: distributive_duality
   assumptions:
@@ -105,4 +94,3 @@
   conclusions:
     - codistributive
   proof: This is equivalent to the classical result that the <a href="https://en.wikipedia.org/wiki/Distributive_lattice" target="_blank">distributivity law in a lattice</a> can be defined in two ways, see e.g. Birkhoff, <i>Lattice Theory</i>, Ch. IX, Thm. 1.
-  is_equivalence: false

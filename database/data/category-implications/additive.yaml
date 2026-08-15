@@ -7,7 +7,6 @@
     - locally essentially small
     - zero morphisms
   proof: This is trivial.
-  is_equivalence: false
 
 - id: preadditive_products_criterion
   assumptions:
@@ -16,7 +15,6 @@
   conclusions:
     - finite products
   proof: See <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, VIII.2., Theorem 2.
-  is_equivalence: false
 
 - id: additive_definition
   assumptions:
@@ -33,7 +31,6 @@
   conclusions:
     - biproducts
   proof: This is standard, see e.g. Prop. 2.1 on the <a href="https://ncatlab.org/nlab/show/additive+category" target="_blank">nLab</a>.
-  is_equivalence: false
 
 - id: abelian_definition
   assumptions:
@@ -53,7 +50,6 @@
   conclusions:
     - regular
   proof: In an abelian category, every epimorphism is regular, and epimorphisms are stable under pullbacks, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. VIII.
-  is_equivalence: false
 
 - id: grothendieck_abelian_definition
   assumptions:
@@ -72,7 +68,6 @@
   conclusions:
     - cogenerator
   proof: See <a href="https://ncatlab.org/nlab/show/Categories+and+Sheaves" target="_blank">Kashiwara-Schapira</a>, Thm. 9.6.3.
-  is_equivalence: false
 
 - id: grothendieck_abelian_self-dual
   assumptions:
@@ -81,7 +76,6 @@
   conclusions:
     - trivial
   proof: This follows since the dual of a non-trivial Grothendieck abelian category cannot be Grothendieck abelian. See Peter Freyd, <i>Abelian categories</i>, p. 116.
-  is_equivalence: false
 
 - id: split_abelian_condition
   assumptions:
@@ -89,7 +83,6 @@
   conclusions:
     - abelian
   proof: This holds by definition.
-  is_equivalence: false
 
 - id: biproducts_definition_consequences
   assumptions:
@@ -99,4 +92,3 @@
     - finite products
     - zero morphisms
   proof: This holds by definition of biproducts.
-  is_equivalence: false

@@ -7,7 +7,6 @@
     - generating set
     - inhabited
   proof: This is trivial.
-  is_equivalence: false
 
 - id: extremal_generator_consequence
   assumptions:
@@ -16,7 +15,6 @@
     - extremal generating set
     - generator
   proof: This is trivial.
-  is_equivalence: false
 
 - id: extremal_generating_set_consequence
   assumptions:
@@ -24,7 +22,6 @@
   conclusions:
     - generating set
   proof: This is trivial.
-  is_equivalence: false
 
 - id: generator_balanced_consequence
   assumptions:
@@ -33,7 +30,6 @@
   conclusions:
     - extremal generator
   proof: This is immediate from the fact that any faithful functor out of a balanced category is also conservative (see <a href="/functor-implication/faithful_with_balanced_domain">here</a>).
-  is_equivalence: false
 
 - id: generating_set_balanced_consequences
   assumptions:
@@ -42,7 +38,6 @@
   conclusions:
     - extremal generating set
   proof: This is immediate from the fact that any faithful functor out of a balanced category is also conservative (see <a href="/functor-implication/faithful_with_balanced_domain">here</a>).
-  is_equivalence: false
 
 - id: generator_via_coproduct
   assumptions:
@@ -52,7 +47,6 @@
   conclusions:
     - generator
   proof: We get this as a corollary of <a href="/content/generator_construction">this result.</a>
-  is_equivalence: false
 
 - id: extremal_generator_via_coproduct
   assumptions:
@@ -62,7 +56,6 @@
   conclusions:
     - extremal generator
   proof: We get this as a corollary of <a href="/content/generator_construction">this result.</a>
-  is_equivalence: false
 
 - id: free-algebra-generates
   assumptions:
@@ -70,7 +63,6 @@
   conclusions:
     - extremal generator
   proof: Pick an algebraic theory that represents the category. The free algebra $F(1)$ on one generator is an extremal generator since it represents the underlying set functor, which is faithful and conservative.
-  is_equivalence: false
 
 - id: locally-finite_left-cancellative_semi-strongly-connected_extremal-generating-set
   assumptions:
@@ -88,4 +80,3 @@
     is an injective function between finite sets of equal cardinality, and therefore is also a bijection. By the assumption that $S$ is an extremal generating set, we thus have $f$ is an isomorphism.
 
     This shows that the collection of isomorphism classes of objects of $X$ is in bijection with a set. Together with the assumption that the category is locally finite, this implies the category is essentially small.
-  is_equivalence: false

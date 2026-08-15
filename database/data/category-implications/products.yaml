@@ -6,7 +6,6 @@
   conclusions:
     - powers
   proof: This is trivial.
-  is_equivalence: false
 
 - id: products_include_aleph2-small_products
   assumptions:
@@ -14,7 +13,6 @@
   conclusions:
     - ℵ₂-small products
   proof: This is trivial.
-  is_equivalence: false
 
 - id: aleph2-small_products_consequences
   assumptions:
@@ -23,7 +21,6 @@
     - ℵ₂-small powers
     - countable products
   proof: This is trivial.
-  is_equivalence: false
 
 - id: finite_products_characterization
   assumptions:
@@ -41,7 +38,6 @@
   conclusions:
     - products
   proof: The product $\prod_{i \in I} X_i$ is the cofiltered limit of the finite partial products $\prod_{i \in E} X_i$ where $E$ ranges over the finite subsets of $I$.
-  is_equivalence: false
 
 - id: products_criterion_countable
   assumptions:
@@ -50,7 +46,6 @@
   conclusions:
     - products
   proof: The product $\prod_{i \in I} X_i$ is the $\aleph_1$-cofiltered limit of the countable partial products $\prod_{i \in C} X_i$ where $C$ ranges over the countable subsets of $I$.
-  is_equivalence: false
 
 - id: binary_products_criterion
   assumptions:
@@ -59,7 +54,6 @@
   conclusions:
     - binary products
   proof: If $1$ is a terminal object, then $X \times_1 Y = X \times Y$.
-  is_equivalence: false
 
 - id: countable_products_consequence
   assumptions:
@@ -68,7 +62,6 @@
     - countable powers
     - finite products
   proof: This is trivial.
-  is_equivalence: false
 
 - id: countable_products_criterion
   assumptions:
@@ -77,7 +70,6 @@
   conclusions:
     - countable products
   proof: If $X_1,X_2,\dotsc$ is an infinite sequence of objects, then their product is the limit of the sequence $\cdots \to X_2 \times X_1 \to X_1$.
-  is_equivalence: false
 
 - id: finite_products_include_finite_powers
   assumptions:
@@ -85,7 +77,6 @@
   conclusions:
     - finite powers
   proof: This is trivial.
-  is_equivalence: false
 
 - id: binary_products_include_binary_powers
   assumptions:
@@ -93,7 +84,6 @@
   conclusions:
     - binary powers
   proof: This is trivial.
-  is_equivalence: false
 
 - id: powers_include_aleph2-small_powers
   assumptions:
@@ -101,7 +91,6 @@
   conclusions:
     - ℵ₂-small powers
   proof: This is trivial.
-  is_equivalence: false
 
 - id: aleph2-small-powers_include_countable_powers
   assumptions:
@@ -109,7 +98,6 @@
   conclusions:
     - countable powers
   proof: This is trivial.
-  is_equivalence: false
 
 - id: countable_powers_include_finite_powers
   assumptions:
@@ -117,7 +105,6 @@
   conclusions:
     - finite powers
   proof: This is trivial.
-  is_equivalence: false
 
 - id: finite_powers_consequences
   assumptions:
@@ -126,7 +113,6 @@
     - binary powers
     - terminal object
   proof: This is trivial.
-  is_equivalence: false
 
 - id: countable_powers_criterion
   assumptions:
@@ -135,7 +121,6 @@
   conclusions:
     - countable powers
   proof: 'We can write $X^{\IN}$ as the limit of the sequence $\cdots \to X^3 \to X^2 \to X \to 1$ with transition morphisms $f_n : X^{n+1} \to X^n$, $(x_1,\dotsc,x_{n+1}) \mapsto (x_1,\dotsc,x_n)$, i.e., $p_i f_n = p_i$ for $1 \leq i \leq n$.'
-  is_equivalence: false
 
 - id: copowers_criterion
   assumptions:
@@ -144,7 +129,6 @@
   conclusions:
     - copowers
   proof: Let $\C$ be a category with filtered colimits and finite copowers. Let $X \in \C$ be an object and $I$ be a set. The poset $P_{<\aleph_0}(I)$ of finite subsets of $I$ is filtered, and we have a diagram $P_{<\aleph_0}(I) \to \C$, $A \mapsto A \otimes X$. Its colimit is the copower $I \otimes X$.
-  is_equivalence: false
 
 - id: copowers_criterion_countable
   assumptions:
@@ -153,4 +137,3 @@
   conclusions:
     - copowers
   proof: Let $\C$ be a category with $\aleph_1$-filtered colimits and countable copowers. Let $X \in \C$ be an object and $I$ be a set. The poset $P_{<\aleph_1}(I)$ of countable subsets of $I$ is $\aleph_1$-filtered, and we have a diagram $P_{<\aleph_1}(I) \to \C$, $A \mapsto A \otimes X$. Its colimit is the copower $I \otimes X$.
-  is_equivalence: false

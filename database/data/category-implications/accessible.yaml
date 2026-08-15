@@ -34,7 +34,6 @@
   conclusions:
     - exact filtered colimits
   proof: Special case of <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>, Prop. 1.59 with $\lambda = \aleph_0$.
-  is_equivalence: false
 
 - id: finitely_accessible_stable_monos
   assumptions:
@@ -42,7 +41,6 @@
   conclusions:
     - filtered-colimit-stable monomorphisms
   proof: 'Let $\C$ be a finitely accessible category and let $G$ be a set of finitely presentable objects which generates $\C$ under filtered colimits. Consider $G$ as a full subcategory and consider the restricted Yoneda embedding $\C \hookrightarrow [G^{\op},\Set]$. It preserves filtered colimits (essentially by the definition of a finitely presentable object) and all limits, in particular monomorphisms. It also reflects monomorphisms since $G$ is a generating set. Therefore, since $\Set$ and hence the functor category has filtered-colimit-stable monomorphisms, this is also true for $\C$.'
-  is_equivalence: false
 
 - id: locally_finitely_presentable_raise
   assumptions:
@@ -50,7 +48,6 @@
   conclusions:
     - locally ℵ₁-presentable
   proof: This is trivial.
-  is_equivalence: false
 
 - id: locally_countably_presentable_raise
   assumptions:
@@ -58,7 +55,6 @@
   conclusions:
     - locally presentable
   proof: This is trivial.
-  is_equivalence: false
 
 - id: accessible_trivial_consequence
   assumptions:
@@ -67,7 +63,6 @@
     - extremal generating set
   # TODO: refactor this once we add the property "has small dense subcategory"
   proof: The set appearing in the definition of a $\kappa$-accessible category gives a small dense full subcategory, which is in particular an extremal generating set.
-  is_equivalence: false
 
 - id: accessible_well-powered
   assumptions:
@@ -75,7 +70,6 @@
   conclusions:
     - well-powered
   proof: See <a href="https://ncatlab.org/nlab/show/accessible+category#wellpoweredness_and_wellcopoweredness" target="_blank">nLab</a>.
-  is_equivalence: false
 
 - id: accessible_locally_small
   assumptions:
@@ -83,7 +77,6 @@
   conclusions:
     - locally essentially small
   proof: See the proof of Prop. 2.1.5 in <a href="https://bookstore.ams.org/conm-104" target="_blank">Makkai-Pare</a>.
-  is_equivalence: false
 
 - id: accessible_well-copowered
   assumptions:
@@ -92,7 +85,6 @@
   conclusions:
     - well-copowered
   proof: See Thm. 2.49 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a> or Prop. 6.1.3 in <a href="https://bookstore.ams.org/conm-104" target="_blank">Makkai-Pare</a>.
-  is_equivalence: false
 
 - id: finite_accessible
   assumptions:
@@ -101,7 +93,6 @@
   conclusions:
     - finitely accessible
   proof: See <a href="https://mathoverflow.net/questions/509853" target="_blank">MO/509853</a>, where it is in fact shown that the ind-completion of any finite Cauchy-complete category becomes itself.
-  is_equivalence: false
 
 - id: locally_presentable_essentially_small
   assumptions:
@@ -110,7 +101,6 @@
   conclusions:
     - essentially small
   proof: This follows from <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>, Thm. 1.64.
-  is_equivalence: false
 
 - id: grothendieck_abelian_presentable
   assumptions:
@@ -118,7 +108,6 @@
   conclusions:
     - locally presentable
   proof: See <a href="https://arxiv.org/abs/1409.7051" target="_blank">Deriving Auslander's formula</a>, Cor. 5.2, or <a href="https://arxiv.org/abs/math/0102087" target="_blank">Sheafifiable homotopy model categories</a>, Prop. 3.10.
-  is_equivalence: false
 
 - id: algebraic_implies_lfp
   assumptions:
@@ -126,7 +115,6 @@
   conclusions:
     - locally finitely presentable
   proof: See <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>, Cor. 3.7.
-  is_equivalence: false
 
 - id: finitely_accessible_raise
   assumptions:
@@ -134,7 +122,6 @@
   conclusions:
     - ℵ₁-accessible
   proof: This is because any regular cardinal is strictly smaller than its successor cardinal. See <a href="https://ncatlab.org/nlab/show/sharply+smaller+cardinal" target="_blank">nLab</a>.
-  is_equivalence: false
 
 - id: countably_accessible_special_case
   assumptions:
@@ -143,7 +130,6 @@
     - accessible
     - ℵ₁-filtered colimits
   proof: This is trivial.
-  is_equivalence: false
 
 - id: accessible_require_filtered_colimit
   assumptions:
@@ -151,7 +137,6 @@
   conclusions:
     - filtered colimits
   proof: This holds by definition.
-  is_equivalence: false
 
 - id: accessible_require_Cauchy_complete
   assumptions:
@@ -159,7 +144,6 @@
   conclusions:
     - Cauchy complete
   proof: This is because the walking idempotent is $\kappa$-filtered for any regular cardinal $\kappa$. See also <a href="https://bookstore.ams.org/conm-104" target="_blank">Makkai-Pare</a>, Prop. 2.2.1.
-  is_equivalence: false
 
 - id: small_accessible_characterization
   assumptions:
@@ -168,7 +152,6 @@
   conclusions:
     - accessible
   proof: See <a href="https://bookstore.ams.org/conm-104" target="_blank">Makkai-Pare</a>, Thm. 2.2.2.
-  is_equivalence: false
 
 - id: countably_accessible_criterion
   assumptions:
@@ -222,8 +205,6 @@
     & = u_j(X) \circ v(X) = \id_{D_\infty(X)}.
     \end{align*}$$
     Therefore, $u_{j'}$ is a split epimorphism in $\widehat{\C}$. Since $\C$ is Cauchy complete, it follows that $D_\infty$ is representable, represented by a retract of $D(j')$. Since $Y$ is fully faithful, this object is a colimit of $D$.
-
-  is_equivalence: false
 
 - id: locally_presentable_another_definition
   assumptions:
@@ -294,4 +275,3 @@
   conclusions:
     - filtered-colimit-stable monomorphisms
   proof: Every locally finitely multi-presentable category is a multi-reflective full subcategory of a presheaf category closed under filtered colimits (<a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>, 4.30). Since multi-reflective full subcategories are in general closed under connected limits (<a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>, Thm. 4.26), in particular, we can calculate not only filtered colimits but also kernel pairs as well as in a presheaf category.
-  is_equivalence: false

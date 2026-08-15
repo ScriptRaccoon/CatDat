@@ -7,7 +7,6 @@
   conclusions:
     - equalizers
   proof: 'The equalizer of $f,g : X \rightrightarrows Y$ is the pullback of $(f,g) : X \to Y \times Y$ with the diagonal $Y \to Y \times Y$.'
-  is_equivalence: false
 
 - id: coreflexive_equalizers_are_equalizers
   assumptions:
@@ -15,7 +14,6 @@
   conclusions:
     - coreflexive equalizers
   proof: This is trivial.
-  is_equivalence: false
 
 - id: equalizers_via_coreflexive_equalizers
   assumptions:
@@ -24,7 +22,6 @@
   conclusions:
     - equalizers
   proof: 'If $f,g : X \rightrightarrows Y$ are two morphisms, we have a coreflexive pair $(\id_X,f), (\id_X,g) : X \rightrightarrows X \times Y$. A morphism with codomain $X$ equalizes $f$ and $g$ if and only if it equalizes $(\id_X,f)$ and $(\id_X,g)$. Thus, their equalizers agree.'
-  is_equivalence: false
 
 - id: equalizers_consequence
   assumptions:
@@ -32,7 +29,6 @@
   conclusions:
     - Cauchy complete
   proof: 'If $e : X \to X$ is an idempotent, then the equalizer of $e, \id_X : X \rightrightarrows X$ provides a splitting of $e$.'
-  is_equivalence: false
 
 - id: reflexive_pair_trivial_2
   assumptions:
@@ -41,7 +37,6 @@
     - coreflexive equalizers
     - reflexive coequalizers
   proof: Any parallel pair of morphisms with a common section (or retraction) must be a pair of equal isomorphisms.
-  is_equivalence: false
 
 - id: one-way_reflexive
   assumptions:
@@ -49,7 +44,6 @@
   conclusions:
     - reflexive coequalizers
   proof: 'Every reflexive pair is equal: If $f s = g s = \id$, then since $s f  = \id$ (one-way), we must have $f = s^{-1}$, and likewise $g = s^{-1}$.'
-  is_equivalence: false
 
 - id: kernels_condition
   assumptions:
@@ -57,7 +51,6 @@
   conclusions:
     - zero morphisms
   proof: This is part of our definition of having kernels.
-  is_equivalence: false
 
 - id: kernels_criterion
   assumptions:
@@ -66,7 +59,6 @@
   conclusions:
     - kernels
   proof: This is trivial.
-  is_equivalence: false
 
 - id: equalizers_via_kernels
   assumptions:
@@ -75,4 +67,3 @@
   conclusions:
     - equalizers
   proof: The equalizer of $f,g$ is the kernel of $f-g$.
-  is_equivalence: false

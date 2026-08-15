@@ -7,7 +7,6 @@
     - essentially small
     - locally small
   proof: This is trivial.
-  is_equivalence: false
 
 - id: essentially_small_consequences
   assumptions:
@@ -18,7 +17,6 @@
     - well-copowered
     - well-powered
   proof: All conclusions are trivial except perhaps that the category has an extremal generating set. For that, let $S$ be a set with one representative of each isomorphism class of objects of the category. Then it is easy to show using the Yoneda Lemma that $S$ is an extremal generating set.
-  is_equivalence: false
 
 - id: finite_consequence
   assumptions:
@@ -27,7 +25,6 @@
     - countable
     - essentially finite
   proof: This is trivial.
-  is_equivalence: false
 
 - id: essentially_finite_raise
   assumptions:
@@ -36,7 +33,6 @@
     - essentially countable
     - locally finite
   proof: This is trivial.
-  is_equivalence: false
 
 - id: countable_consequence
   assumptions:
@@ -44,7 +40,6 @@
   conclusions:
     - essentially countable
   proof: This is trivial.
-  is_equivalence: false
 
 - id: essentially_countable_consequence
   assumptions:
@@ -52,7 +47,6 @@
   conclusions:
     - essentially small
   proof: This is trivial.
-  is_equivalence: false
 
 - id: locally_small_consequence
   assumptions:
@@ -60,7 +54,6 @@
   conclusions:
     - locally essentially small
   proof: This is trivial.
-  is_equivalence: false
 
 - id: locally_finite_consequence
   assumptions:
@@ -68,4 +61,3 @@
   conclusions:
     - locally essentially small
   proof: This is trivial.
-  is_equivalence: false

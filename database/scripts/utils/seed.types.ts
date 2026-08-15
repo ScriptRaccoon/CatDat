@@ -87,5 +87,5 @@ export type ImplicationYaml = {
 	conclusions: string[]
 	associated_assumptions?: Partial<Record<string, string[]>>
 	proof: string
-	is_equivalence: boolean
+	is_equivalence?: boolean
 }

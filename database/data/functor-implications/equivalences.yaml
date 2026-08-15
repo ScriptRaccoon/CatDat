@@ -26,7 +26,6 @@
     - monadic
     - reflector
   proof: This is easy.
-  is_equivalence: false
 
 - id: isomorphism_is_equivalence
   assumptions:
@@ -34,4 +33,3 @@
   conclusions:
     - equivalence
   proof: This is trivial.
-  is_equivalence: false
