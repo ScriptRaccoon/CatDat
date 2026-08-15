@@ -11,7 +11,7 @@ import type {
 } from './utils/seed.types'
 import { create_schema_hash, get_saved_schema_hash } from './utils/schema'
 import { STRUCTURE_TYPES, type StructureType, PLURALS } from '$shared/config'
-import { are_disjoint, devlog } from '$shared/utils'
+import { are_disjoint, capitalize, devlog } from '$shared/utils'
 
 const db = get_client({ readonly: false })
 
@@ -208,8 +208,11 @@ function seed_structures<T extends StructureYaml>({
 	extra?: (structure: T) => void
 }) {
 	const structure_maps = db
-		.prepare<[StructureType], { map: keyof T; mapped_type: StructureType }>(
-			`SELECT map, mapped_type
+		.prepare<
+			[StructureType],
+			{ map: keyof T; mapped_type: StructureType; required: 0 | 1 }
+		>(
+			`SELECT map, mapped_type, required
 			FROM structure_maps WHERE type = ?`
 		)
 		.all(type)
@@ -282,7 +285,14 @@ function seed_structures<T extends StructureYaml>({
 			structure.parent || null
 		)
 
-		for (const { map, mapped_type } of structure_maps) {
+		for (const { map, mapped_type, required } of structure_maps) {
+			if (required && !structure[map]) {
+				console.error(
+					`❌ ${capitalize(type)} "${structure.id}" has no ${map.toString()}`
+				)
+				process.exit(1)
+			}
+
 			if (structure[map]) {
 				structure_map_assignment_insert.run(
 					map,
@@ -295,7 +305,7 @@ function seed_structures<T extends StructureYaml>({
 		}
 
 		if (!structure.tags.length) {
-			console.error(`❌ Structure "${structure.id}" has no tags`)
+			console.error(`❌ ${capitalize(type)} "${structure.id}" has no tags`)
 			process.exit(1)
 		}
 
