@@ -10,9 +10,8 @@ import { error } from '@sveltejs/kit'
 export function fetch_category(id: string) {
 	const category = db
 		.prepare<[string], CategoryDefinition>(
-			`SELECT c.objects, c.morphisms
-			FROM categories c
-			WHERE c.id = ?`
+			`SELECT objects, morphisms FROM categories
+			WHERE id = ?`
 		)
 		.get(id)
 
@@ -20,11 +19,11 @@ export function fetch_category(id: string) {
 
 	const special_objects = db
 		.prepare<[string], SpecialObject>(
-			`SELECT s.type, s.description
-			FROM special_object_assignments s
+			`SELECT o.type, o.description
+			FROM special_object_assignments o
 			INNER JOIN special_object_types t
-			ON t.type = s.type
-			WHERE s.category_id = ?
+			ON t.type = o.type
+			WHERE o.category_id = ?
 			ORDER BY t.id`
 		)
 		.all(id)

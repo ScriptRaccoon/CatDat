@@ -36,16 +36,16 @@ export function get_structures(db: Database, type: StructureType): StructureMeta
 					s.id,
 					s.name,
 					s.dual_structure_id AS dual,
-					m.label,
-					json_group_array(a.property_id) AS props
+					ass.label,
+					json_group_array(pa.property_id) AS props
 				FROM structures s
-				LEFT JOIN associated_structures m
-					ON m.structure_id = s.id
-				LEFT JOIN property_assignments a
-					ON a.structure_id = m.associated_structure_id
-					AND a.is_satisfied = TRUE
+				LEFT JOIN associated_structures ass
+					ON ass.structure_id = s.id
+				LEFT JOIN property_assignments pa
+					ON pa.structure_id = ass.associated_structure_id
+					AND pa.is_satisfied = TRUE
 				WHERE s.type = ?
-				GROUP BY s.id, m.label
+				GROUP BY s.id, ass.label
 			)
 			GROUP BY id
 			ORDER BY id`

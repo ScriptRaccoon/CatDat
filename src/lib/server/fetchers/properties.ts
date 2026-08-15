@@ -46,14 +46,14 @@ export function fetch_grouped_properties_and_tags(type: StructureType) {
 
 	const tags = db
 		.prepare<[StructureType], string>(
-			`SELECT t.tag
-			FROM property_tags t
-			WHERE t.type = ?
+			`SELECT pt.tag
+			FROM property_tags pt
+			WHERE pt.type = ?
 			AND EXISTS (
-				SELECT 1 FROM property_tag_assignments a
-				WHERE a.tag = t.tag AND a.type = t.type
+				SELECT 1 FROM property_tag_assignments pta
+				WHERE pta.tag = pt.tag AND pta.type = pt.type
 			)
-			ORDER BY t.id`
+			ORDER BY pt.id`
 		)
 		.pluck()
 		.all(type)
@@ -92,10 +92,10 @@ export function fetch_tagged_properties(type: StructureType, tag: string) {
 	const properties = db
 		.prepare<[StructureType, string], PropertyShort>(
 			`SELECT p.id, p.relation
-			FROM property_tag_assignments t
+			FROM property_tag_assignments pta
 			INNER JOIN properties p
-			ON p.id = t.property_id AND p.type = ?
-			WHERE t.tag = ? AND t.type = p.type
+			ON p.id = pta.property_id AND p.type = ?
+			WHERE pta.tag = ? AND pta.type = p.type
 			ORDER BY lower(id)`
 		)
 		.all(type, tag)
