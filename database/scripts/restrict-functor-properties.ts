@@ -36,11 +36,11 @@ function restrict_representable_functors() {
                 'The codomain is not $\\Set$.',
                 TRUE,
                 FALSE
-            FROM structure_map_assignments a
+            FROM associated_structures a
             WHERE
                 a.type = 'functor'
-                AND a.map = 'codomain'
-                AND a.mapped_structure_id <> 'Set'
+                AND a.label = 'codomain'
+                AND a.associated_structure_id <> 'Set'
             ON CONFLICT (structure_id, property_id)
             DO UPDATE SET
                 proof = excluded.proof,

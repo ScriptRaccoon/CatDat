@@ -44,8 +44,8 @@ export function display_implication(implication: ImplicationDB): ImplicationDisp
 }
 
 export function adjust_functor_notation(functor: StructureDetails) {
-	const domain = functor.associated_structures.find((s) => s.map == 'domain')
-	const codomain = functor.associated_structures.find((s) => s.map == 'codomain')
+	const domain = functor.associated_structures.find((s) => s.label == 'domain')
+	const codomain = functor.associated_structures.find((s) => s.label == 'codomain')
 	if (!domain || !codomain) return
 
 	functor.structure.notation = add_math(

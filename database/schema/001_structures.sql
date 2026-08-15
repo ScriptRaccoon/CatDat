@@ -9,20 +9,20 @@ INSERT INTO structure_types (type) VALUES
     ('symmetric_monoidal_category');
 
 
-CREATE TABLE structure_maps (
-    map TEXT NOT NULL,
+CREATE TABLE associated_structure_types (
+    label TEXT NOT NULL,
     type TEXT NOT NULL,
-    mapped_type TEXT NOT NULL,
+    associated_type TEXT NOT NULL,
     required INTEGER NOT NULL
          CHECK (required in (TRUE, FALSE)),
-    PRIMARY KEY (map, type, mapped_type),
-    UNIQUE (map, type),
+    PRIMARY KEY (label, type, associated_type),
+    UNIQUE (label, type),
     FOREIGN KEY (type) REFERENCES structure_types (type) ON DELETE CASCADE,
-    FOREIGN KEY (mapped_type) REFERENCES structure_types (type) ON DELETE CASCADE
+    FOREIGN KEY (associated_type) REFERENCES structure_types (type) ON DELETE CASCADE
 );
 
-INSERT INTO structure_maps
-    (map, type, mapped_type, required)
+INSERT INTO associated_structure_types
+    (label, type, associated_type, required)
 VALUES
     ('domain', 'functor', 'category', TRUE),
     ('codomain', 'functor', 'category', TRUE),
@@ -30,9 +30,6 @@ VALUES
     ('underlying_category', 'symmetric_monoidal_category', 'category', TRUE),
     ('left_adjoint', 'functor', 'functor', FALSE),
     ('right_adjoint', 'functor', 'functor', FALSE);
-
--- TODO: perhaps make dual a structure_map (with required = FALSE)
--- TODO: perhaps also "parent"
 
 CREATE TABLE structures (
     id TEXT PRIMARY KEY,
@@ -89,16 +86,17 @@ CREATE TABLE structure_tag_assignments (
     FOREIGN KEY (tag, type) REFERENCES structure_tags (tag, type) ON DELETE CASCADE
 );
 
-CREATE TABLE structure_map_assignments (
-    map TEXT NOT NULL,
+CREATE TABLE associated_structures (
+    label TEXT NOT NULL,
     type TEXT NOT NULL,
-    mapped_type TEXT NOT NULL,
+    associated_type TEXT NOT NULL,
     structure_id TEXT NOT NULL,
-    mapped_structure_id TEXT NOT NULL,
-    FOREIGN KEY (map, type, mapped_type)
-        REFERENCES structure_maps (map, type, mapped_type) ON DELETE CASCADE,
+    associated_structure_id TEXT NOT NULL,
+    FOREIGN KEY (label, type, associated_type)
+        REFERENCES associated_structure_types (label, type, associated_type)
+        ON DELETE CASCADE,
     FOREIGN KEY (structure_id, type)
         REFERENCES structures (id, type) ON DELETE CASCADE,
-    FOREIGN KEY (mapped_structure_id, mapped_type)
+    FOREIGN KEY (associated_structure_id, associated_type)
         REFERENCES structures (id, type) ON DELETE CASCADE
 );

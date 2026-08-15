@@ -14,8 +14,8 @@ export type StructureShortDictionary = Partial<Record<StructureType, StructureSh
 export type RelatedStructure = StructureShort & { notation: string }
 
 export type AssociatedStructure = RelatedStructure & {
-	map: string
-	mapped_type: StructureType
+	label: string
+	associated_type: StructureType
 }
 
 export type StructureDisplay = {
@@ -32,7 +32,7 @@ export type StructureDisplay = {
 	parent_notation: string | null
 }
 
-export type MappedTypes = Record<string, StructureType>
+export type AssociatedTypes = Record<string, StructureType>
 
 export type CommentObject = { id: number; comment: string }
 
