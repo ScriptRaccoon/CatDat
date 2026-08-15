@@ -2,7 +2,8 @@ CREATE TABLE implications (
     id TEXT PRIMARY KEY,
     type TEXT NOT NULL,
     proof TEXT NOT NULL CHECK (length(proof) > 0),
-    is_equivalence INTEGER NOT NULL DEFAULT FALSE,
+    is_equivalence INTEGER NOT NULL DEFAULT FALSE
+        CHECK (is_equivalence IN (TRUE, FALSE)),
     is_deduced INTEGER NOT NULL DEFAULT FALSE,
     UNIQUE (id, type),
     FOREIGN KEY (type) REFERENCES structure_types (type) ON DELETE RESTRICT
