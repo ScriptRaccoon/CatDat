@@ -50,7 +50,7 @@ CREATE TABLE mapped_assumptions (
     FOREIGN KEY (property_id, property_type)
         REFERENCES properties (id, type) ON DELETE CASCADE,
     FOREIGN KEY (map, type, property_type)
-        REFERENCES structure_maps (map, type, mapped_type)
+        REFERENCES associated_structure_types (label, type, associated_type)
         ON DELETE RESTRICT
 );
 

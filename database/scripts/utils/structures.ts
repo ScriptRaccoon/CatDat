@@ -27,26 +27,26 @@ export function get_structures(db: Database, type: StructureType): StructureMeta
 				properties: string
 			}
 		>(
-			`WITH mapped_properties AS (
+			`WITH associated_properties AS (
 				SELECT
 					s.id,
 					s.name,
 					s.dual_structure_id AS dual,
-					m.map,
+					m.label,
 					json_group_array(a.property_id) AS props
 				FROM structures s
-				LEFT JOIN structure_map_assignments m
+				LEFT JOIN associated_structures m
 					ON m.structure_id = s.id
 				LEFT JOIN property_assignments a
-					ON a.structure_id = m.mapped_structure_id
+					ON a.structure_id = m.associated_structure_id
 					AND a.is_satisfied = TRUE
 				WHERE s.type = ?
-				GROUP BY s.id, m.map
+				GROUP BY s.id, m.label
 			)
 			SELECT
 				id, name, dual,
-				json_group_object(map, props) AS properties
-			FROM mapped_properties
+				json_group_object(label, props) AS properties
+			FROM associated_properties
 			GROUP BY id
 			ORDER BY id`
 		)

@@ -75,8 +75,8 @@
 
 		{#each associated_structures as a}
 			<li>
-				<strong>{capitalize(remove_underscores(a.map))}:</strong>
-				<a href="/{a.mapped_type}/{a.id}">{a.name}</a>
+				<strong>{capitalize(remove_underscores(a.label))}:</strong>
+				<a href="/{a.associated_type}/{a.id}">{a.name}</a>
 			</li>
 		{/each}
 

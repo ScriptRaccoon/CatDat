@@ -104,7 +104,7 @@ function clear_all_tables() {
 		db.prepare(`DELETE FROM relations`).run()
 
 		db.prepare(`DELETE FROM structures`).run()
-		db.prepare(`DELETE FROM structure_map_assignments`).run()
+		db.prepare(`DELETE FROM associated_structures`).run()
 	})
 
 	try {
@@ -207,13 +207,13 @@ function seed_structures<T extends StructureYaml>({
 	folder: string
 	extra?: (structure: T) => void
 }) {
-	const structure_maps = db
+	const associated_structure_types = db
 		.prepare<
 			[StructureType],
-			{ map: keyof T; mapped_type: StructureType; required: 0 | 1 }
+			{ label: keyof T; associated_type: StructureType; required: 0 | 1 }
 		>(
-			`SELECT map, mapped_type, required
-			FROM structure_maps WHERE type = ?`
+			`SELECT label, associated_type, required
+			FROM associated_structure_types WHERE type = ?`
 		)
 		.all(type)
 
@@ -253,9 +253,10 @@ function seed_structures<T extends StructureYaml>({
 		) VALUES (?, ?, ?, ?)`
 	)
 
-	const structure_map_assignment_insert = db.prepare(
-		`INSERT INTO structure_map_assignments (
-			map, type, mapped_type, structure_id, mapped_structure_id
+	const associated_structure_insert = db.prepare(
+		`INSERT INTO associated_structures (
+			label, type, associated_type,
+			structure_id, associated_structure_id
 		) VALUES (?, ?, ?, ?, ?)`
 	)
 
@@ -285,21 +286,21 @@ function seed_structures<T extends StructureYaml>({
 			structure.parent || null
 		)
 
-		for (const { map, mapped_type, required } of structure_maps) {
-			if (required && !structure[map]) {
+		for (const { label, associated_type, required } of associated_structure_types) {
+			if (required && !structure[label]) {
 				console.error(
-					`❌ ${capitalize(type)} "${structure.id}" has no ${map.toString()}`
+					`❌ ${capitalize(type)} "${structure.id}" has no ${label.toString()}`
 				)
 				process.exit(1)
 			}
 
-			if (structure[map]) {
-				structure_map_assignment_insert.run(
-					map,
+			if (structure[label]) {
+				associated_structure_insert.run(
+					label,
 					type,
-					mapped_type,
+					associated_type,
 					structure.id,
-					structure[map]
+					structure[label]
 				)
 			}
 		}
@@ -438,10 +439,10 @@ function seed_properties({ type, folder }: { type: StructureType; folder: string
  * Seeds all implications of a given type from YAML files.
  */
 function seed_implications({ type, folder }: { type: StructureType; folder: string }) {
-	const structure_maps = db
-		.prepare<[StructureType], { map: string; mapped_type: StructureType }>(
-			`SELECT map, mapped_type
-			FROM structure_maps WHERE type = ?`
+	const associated_structure_types = db
+		.prepare<[StructureType], { label: string; associated_type: StructureType }>(
+			`SELECT label, associated_type
+			FROM associated_structure_types WHERE type = ?`
 		)
 		.all(type)
 
@@ -493,10 +494,10 @@ function seed_implications({ type, folder }: { type: StructureType; folder: stri
 
 			if (!impl.mapped_assumptions) continue
 
-			for (const { map, mapped_type } of structure_maps) {
-				const assumptions = impl.mapped_assumptions[map] ?? []
+			for (const { label, associated_type } of associated_structure_types) {
+				const assumptions = impl.mapped_assumptions[label] ?? []
 				for (const p of assumptions) {
-					mapped_assumption_insert.run(impl.id, map, p, type, mapped_type)
+					mapped_assumption_insert.run(impl.id, label, p, type, associated_type)
 				}
 			}
 		}

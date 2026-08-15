@@ -6,8 +6,8 @@
 	import { get_property_url } from '$shared/property.utils'
 	import type {
 		ImplicationDisplay,
-		MappedTypes,
 		StructureShort,
+		AssociatedTypes,
 		StructureType
 	} from '$lib/commons/types'
 	import { PLURALS } from '$shared/config'
@@ -16,12 +16,17 @@
 		type: StructureType
 		implication: ImplicationDisplay
 		structures: StructureShort[]
-		mapped_types: MappedTypes
+		associated_types: AssociatedTypes
 		property_relation_dict: Record<string, Record<string, string>>
 	}
 
-	let { type, implication, structures, mapped_types, property_relation_dict }: Props =
-		$props()
+	let {
+		type,
+		implication,
+		structures,
+		associated_types,
+		property_relation_dict
+	}: Props = $props()
 
 	let has_additional_assumptions = $derived(
 		Object.values(implication.mapped_assumptions).some((list) => list?.size)
@@ -41,8 +46,9 @@
 				whose
 				{remove_underscores(map)}
 				{#each set as property, index}
-					{property_relation_dict[mapped_types[map]][property]}
-					<a href={get_property_url(property, mapped_types[map])}>{property}</a
+					{property_relation_dict[associated_types[map]][property]}
+					<a href={get_property_url(property, associated_types[map])}
+						>{property}</a
 					>{#if index < set.size - 1}
 						&nbsp;and&nbsp;
 					{/if}

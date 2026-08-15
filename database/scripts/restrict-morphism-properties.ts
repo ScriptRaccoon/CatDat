@@ -39,14 +39,14 @@ function restrict_normal_morphisms(variant: 'mono' | 'epi') {
                 'The ' || c.name || ' has no zero morphisms.',
                 TRUE,
                 FALSE
-            FROM structure_map_assignments sa
+            FROM associated_structures sa
             INNER JOIN structures c 
-            ON c.id = sa.mapped_structure_id
+            ON c.id = sa.associated_structure_id
             INNER JOIN property_assignments a
             ON a.structure_id = c.id
             WHERE
                 sa.type = 'morphism'
-                AND sa.map = 'category'
+                AND sa.label = 'category'
                 AND a.property_id = 'zero morphisms'
                 AND a.is_satisfied = FALSE
             ON CONFLICT (structure_id, property_id)
