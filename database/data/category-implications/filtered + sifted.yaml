@@ -6,7 +6,6 @@
   conclusions:
     - sifted
   proof: 'Every filtered category $\C$ is inhabited and has final diagonal functors $\Delta : \C \to \C^J$ for all finite index categories $J$; in particular, it is inhabited and its diagonal $\Delta: \C \to \C \times \C$ is final.'
-  is_equivalence: false
 
 # TODO: with appropriate additional category properties, the hypothesis that the category is sifted could be weakened to a hypothesis that the category is inhabited and has cospans of all pairs, or equivalently that all finite sets of objects have a cospan
 - id: thin_sifted_is_filtered
@@ -16,7 +15,6 @@
   conclusions:
     - filtered
   proof: The assumption that the category is sifted implies that any finite set of objects (including an empty set) has a cospan. In order to conclude the category is filtered, the only thing left to show is that any parallel pair is coequalized by some morphism; but this is trivial in a thin category.
-  is_equivalence: false
 
 - id: sifted_is_connected
   assumptions:
@@ -24,7 +22,6 @@
   conclusions:
     - connected
   proof: Sifted categories are inhabited, and any two objects in a sifted category are joined by a cospan.
-  is_equivalence: false
 
 - id: coproducts_implies_sifted
   assumptions:
@@ -33,7 +30,6 @@
   conclusions:
     - sifted
   proof: The category is inhabited by assumption, and the coproduct of two objects is initial in the corresponding category of cospans.
-  is_equivalence: false
 
 - id: sifted_left_cancellative_implies_thin
   assumptions:
@@ -47,7 +43,6 @@
     in the category of cospans from $X$ to $X$ consists only of cospans
     $$X \xrightarrow{f} Y \xleftarrow{g} X$$
     where $f=g$; hence when the category is also sifted, all cospans must be of this form, and so any two parallel morphisms are equal.
-  is_equivalence: false
 
 - id: filtered_criterion
   assumptions:
@@ -55,7 +50,6 @@
   conclusions:
     - filtered
   proof: Every finite diagram even admits a <i>universal</i> cocone.
-  is_equivalence: false
 
 - id: filtered_via_coequalizers
   assumptions:
@@ -64,7 +58,6 @@
   conclusions:
     - filtered
   proof: This is obvious.
-  is_equivalence: false
 
 - id: aleph1-filtered-consequence
   assumptions:
@@ -72,7 +65,6 @@
   conclusions:
     - filtered
   proof: This is trivial.
-  is_equivalence: false
 
 - id: aleph1-filtered_criterion
   assumptions:
@@ -81,7 +73,6 @@
   conclusions:
     - ℵ₁-filtered
   proof: Every countable diagram even admits a <i>universal</i> cocone.
-  is_equivalence: false
 
 - id: terminal_object_yields_kappa_filtered
   assumptions:
@@ -89,7 +80,6 @@
   conclusions:
     - ℵ₁-filtered
   proof: This is obvious.
-  is_equivalence: false
 
 - id: filtered-finite-thin
   assumptions:
@@ -99,7 +89,6 @@
   conclusions:
     - terminal object
   proof: Let $\C$ be a thin, filtered, and w.l.o.g. finite category. The identity diagram $\C \to \C$ admits a cocone. That is, there is an object $T$ with a morphism $A \to T$ for all $A \in \C$. Then $T$ is terminal.
-  is_equivalence: false
 
 - id: aleph1-filtered-countable-thin
   assumptions:
@@ -109,4 +98,3 @@
   conclusions:
     - terminal object
   proof: Let $\C$ be a thin, $\aleph_1$-filtered, and w.l.o.g. countable category. The identity diagram $\C \to \C$ admits a cocone. That is, there is an object $T$ with a morphism $A \to T$ for all $A \in \C$. Then $T$ is terminal.
-  is_equivalence: false

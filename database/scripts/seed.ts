@@ -482,7 +482,7 @@ function seed_implications({ type, folder }: { type: StructureType; folder: stri
 				process.exit(1)
 			}
 
-			implication_insert.run(impl.id, type, impl.proof, Number(impl.is_equivalence))
+			implication_insert.run(impl.id, type, impl.proof, impl.is_equivalence ? 1 : 0)
 
 			for (const assumption of impl.assumptions) {
 				assumption_insert.run(impl.id, assumption, type)

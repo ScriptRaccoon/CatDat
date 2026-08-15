@@ -24,7 +24,6 @@
   conclusions:
     - subobject-trivial
   proof: This is trivial.
-  is_equivalence: false
 
 - id: subobject-trivial_criterion
   assumptions:
@@ -33,7 +32,6 @@
   conclusions:
     - subobject-trivial
   proof: This is because a monomorphism which is also a regular epimorphism is an isomorphism.
-  is_equivalence: false
 
 - id: regular-subobject-trivial_criterion
   assumptions:
@@ -41,7 +39,6 @@
   conclusions:
     - regular-subobject-trivial
   proof: This is because any regular monomorphism is also an epimorphism, and therefore an isomorphism.
-  is_equivalence: false
 
 - id: regular_subobject_classifier_disallows_malcev
   assumptions:
@@ -50,7 +47,6 @@
   conclusions:
     - regular-subobject-trivial
   proof: 'The regular subobject classifier $\Omega$ is an internal poset (cf. <a href="https://ncatlab.org/nlab/show/Sheaves+in+Geometry+and+Logic" target="_blank">Mac Lane & Moerdijk</a>, IV.8). Concretely, since the category is Malcev, it has binary products, so the intersection of regular subobjects is again a regular subobject. Namely, the intersection of the equalizer of $f_1, g_1 : X \rightrightarrows Y_1$ with the equalizer of $f_2, g_2 : X \rightrightarrows Y_2$ is the equalizer of $(f_1, f_2), (g_1, g_2) : X \rightrightarrows Y_1 \times Y_2$. This intersection operation on regular subobjects yields a morphism $\wedge : \Omega \times \Omega \to \Omega$, and the internal relation ${\leq_{\Omega}} \subseteq \Omega \times \Omega$ is defined as the equalizer of $\wedge, p_1 : \Omega \times \Omega \rightrightarrows \Omega$. The relation ${\leq_{\Omega}}$ is reflexive, hence symmetric by assumption. Since it also antisymmetric and has a largest element $\top$, every regular monomorphism must be an isomorphism. (From here, we can infer that the category is thin – or, if the category has a subobject classifier, that the category is trivial.)'
-  is_equivalence: false
 
 - id: disjoint_finite_coproducts_disallows_regular-subobject-trivial
   assumptions:
@@ -59,7 +55,6 @@
   conclusions:
     - trivial
   proof: 'For any object $X$, the unique morphism $! : 0 \to X$ is a regular monomorphism, as the equalizer of the two coprojections $X \rightrightarrows X \sqcup X$. Therefore, it is an isomorphism.'
-  is_equivalence: false
 
 - id: disjoint_finite_coproducts_disallows_regular-quotient-trivial
   assumptions:
@@ -68,4 +63,3 @@
   conclusions:
     - trivial
   proof: 'For any object $X$, the coequalizer of the two coprojections $X \rightrightarrows X \sqcup X$ is the codiagonal $\nabla : X \sqcup X \to X$. Therefore, these two coprojections are equal. But their equalizer is also the unique morphism $! : 0 \to X$. It follows that $! : 0 \to X$ is an isomorphism.'
-  is_equivalence: false

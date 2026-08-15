@@ -6,7 +6,6 @@
   conclusions:
     - finite products
   proof: This holds by definition.
-  is_equivalence: false
 
 - id: ccc_consequence
   assumptions:
@@ -15,7 +14,6 @@
   conclusions:
     - strict initial object
   proof: See the <a href="https://ncatlab.org/nlab/show/strict+initial+object" target="_blank">nLab</a>.
-  is_equivalence: false
 
 - id: ccc_cartesian_filtered_colimits
   assumptions:
@@ -24,7 +22,6 @@
   conclusions:
     - cartesian filtered colimits
   proof: Each functor $X \times -$ is a left adjoint and therefore preserves (filtered) colimits.
-  is_equivalence: false
 
 - id: ccc_no_strict_terminal
   assumptions:
@@ -33,7 +30,6 @@
   conclusions:
     - thin
   proof: If a morphism $X \to Y$ exists, we get a morphism $1 \to [X,Y]$, which forces $[X,Y]$ to be a terminal object by assumption. But then any two morphisms $1 \rightrightarrows [X,Y]$ are equal, so that any two morphisms $X \rightrightarrows Y$ are equal.
-  is_equivalence: false
 
 - id: power_construction
   assumptions:
@@ -50,7 +46,6 @@
     & \cong \Hom(T,X)^I.
     \end{align*}$$
     In the second isomorphism we have used that $T \times -$ preserves copowers, which is true because it is a left adjoint.
-  is_equivalence: false
 
 - id: countable_power_construction
   assumptions:
@@ -59,7 +54,6 @@
   conclusions:
     - countable powers
   proof: We can recycle <a href="/category-implication/power_construction">this proof</a>.
-  is_equivalence: false
 
 - id: pullbacks_are_local_products
   assumptions:
@@ -67,7 +61,6 @@
   conclusions:
     - pullbacks
   proof: Pullbacks are binary products in slice categories.
-  is_equivalence: false
 
 - id: locally_cartesian_closed_with_terminal_is_closed
   assumptions:
@@ -76,7 +69,6 @@
   conclusions:
     - cartesian closed
   proof: The slice over the terminal object is the category itself.
-  is_equivalence: false
 
 - id: lcc_implies_regular
   assumptions:
@@ -86,7 +78,6 @@
   conclusions:
     - regular
   proof: See <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, Lemma A1.5.13. From this it follows also that every elementary topos is regular.
-  is_equivalence: false
 
 - id: cartesian_closed_thin_criterion
   assumptions:
@@ -97,7 +88,6 @@
   conclusions:
     - cartesian closed
   proof: This is an application of the adjoint functor theorem. Specifically, if $P$ is a complete lattice in which $\sup_i \inf(t,x_i) = \inf(t, \sup_i y_i)$ always holds, then the functor $\inf(t,-)$ is a left adjoint because it preserves all suprema.
-  is_equivalence: false
 
 - id: sequential_implies_lcc
   assumptions:
@@ -106,7 +96,6 @@
   conclusions:
     - locally cartesian closed
   proof: Each slice is thin, semi-strongly connected, and has a terminal object. Thus, it corresponds to a linear order with a largest element $1$. Every such category is cartesian closed, where the exponential $a \Rightarrow b$ (Heyting implication) is $1$ when $a \leq b$ and otherwise $b$.
-  is_equivalence: false
 
 - id: cartesian_closed_thin_implies_lcc
   assumptions:
@@ -115,4 +104,3 @@
   conclusions:
     - locally cartesian closed
   proof: In a thin category, every object is subterminal. Thus, the result follows from Corollary 6 <a href="/content/subcategories">here</a>.
-  is_equivalence: false

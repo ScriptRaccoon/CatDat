@@ -6,7 +6,6 @@
     - preserves products
     - left exact
   proof: This is trivial.
-  is_equivalence: false
 
 - id: products_consequences
   assumptions:
@@ -14,7 +13,6 @@
   conclusions:
     - preserves finite products
   proof: This is trivial.
-  is_equivalence: false
 
 - id: preserve_finite_products_consequences
   assumptions:
@@ -23,7 +21,6 @@
     - preserves terminal objects
     - preserves binary products
   proof: This is trivial.
-  is_equivalence: false
 
 - id: preserve_finite_products_criterion
   assumptions:
@@ -35,7 +32,6 @@
   conclusions:
     - preserves finite products
   proof: This is because finite products can be constructed recursively via $X_1 \times \cdots \times X_{n+1} = (X_1 \times \cdots \times X_n) \times X_{n+1}$. We need the assumption on the domain since otherwise $X_1 \times \cdots \times X_n$ might not exist. See <a href="https://math.stackexchange.com/questions/5142961" target="_blank">MSE/5142961</a>.
-  is_equivalence: false
 
 - id: continuous_criterion
   assumptions:
@@ -47,7 +43,6 @@
   conclusions:
     - continuous
   proof: This follows from the construction of limits via equalizers and products, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. V, Theorem 2.2.
-  is_equivalence: false
 
 - id: continuous_criterion_filtered
   assumptions:
@@ -59,7 +54,6 @@
   conclusions:
     - continuous
   proof: This is because every limit can be written as a filtered limit of finite limits, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. IX, Theorem 1.1.
-  is_equivalence: false
 
 - id: product_criterion_filtered
   assumptions:
@@ -71,7 +65,6 @@
   conclusions:
     - preserves products
   proof: This is because every product can be written as a filtered limit of finite products, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. IX, Theorem 1.1.
-  is_equivalence: false
 
 - id: exact_definition
   assumptions:
@@ -93,7 +86,6 @@
     Finite products and equalizers are special cases of finite limits. Moreover, a morphism $f : X \to Y$ is a monomorphism if and only the square
     $$\begin{CD} X @>{\id_X}>> X \\ @V{\id_X}VV @VV{f}V \\ X @>>{f}> Y \end{CD}$$
     is a pullback square, and pullbacks are special cases of finite limits.
-  is_equivalence: false
 
 - id: left_exact_criterion
   assumptions:
@@ -105,7 +97,6 @@
   conclusions:
     - left exact
   proof: This follows from the construction of finite limits via equalizers and finite products, see  <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. V, Theorem 2.2.
-  is_equivalence: false
 
 - id: representable_is_continuous
   assumptions:
@@ -113,7 +104,6 @@
   conclusions:
     - continuous
   proof: This is standard, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. V, Theorem 4.1.
-  is_equivalence: false
 
 - id: equalizers_preservation_consequences
   assumptions:
@@ -122,7 +112,6 @@
     - preserves coreflexive equalizers
     - preserves regular monomorphisms
   proof: This is trivial.
-  is_equivalence: false
 
 - id: criterion_coreflexive_equalizers
   assumptions:
@@ -134,7 +123,6 @@
   conclusions:
     - preserves equalizers
   proof: This follows easily from <a href="/category-implication/equalizers_via_coreflexive_equalizers">this result</a> about categories and its proof.
-  is_equivalence: false
 
 - id: mono-preserving_criterion
   assumptions:
@@ -145,7 +133,6 @@
   conclusions:
     - preserves monomorphisms
   proof: This is trivial.
-  is_equivalence: false
 
 - id: regular-mono-preserving_criterion
   assumptions:
@@ -156,7 +143,6 @@
   conclusions:
     - preserves regular monomorphisms
   proof: This is trivial.
-  is_equivalence: false
 
 - id: another_regular-mono-preserving_criterion
   assumptions:
@@ -167,7 +153,6 @@
   conclusions:
     - preserves regular monomorphisms
   proof: 'Let $F : \C \to \D$ be a functor preserving coreflexive equalizers, where $\C$ has pushouts; we only need that $\C$ has cokernel pairs. Let $i : X \to Y$ be a regular monomorphism in $\C$. By Prop. 3.2 at the <a href="https://ncatlab.org/nlab/show/regular+epimorphism#MorphismsWithKernelPairsAreRegularIffEffective" target="_blank">nLab</a>, $i$ is the equalizer of the two canonical morphisms $u_1,u_2 : Y \rightrightarrows Y \sqcup_X Y$ into the cokernel pair of $i$. By the universal property of the pushout, there is a morphism $\nabla : Y \sqcup_X Y \to Y$ with $\nabla u_1 = \nabla u_2 = \id_Y$. Thus, $u_1,u_2$ is a coreflexive pair. Since $F$ preserves coreflexive equalizers by assumption, $F(i)$ is the equalizer of $F(u_1), F(u_2)$. In particular, $F(i)$ is a regular monomorphism.'
-  is_equivalence: false
 
 - id: zero_preserving_condition
   assumptions:
@@ -180,7 +165,6 @@
   conclusions:
     - preserves initial objects
   proof: This is trivial.
-  is_equivalence: false
 
 - id: biproduct_preserving_condition
   assumptions:
@@ -220,7 +204,6 @@
     Remark: It now follows that $F$ is also additive, i.e., for two morphisms $f,g : A \rightrightarrows B$, we have $F(f+g) = F(f) + F(g)$. In fact, $f+g$ decomposes as
     $$A \xrightarrow{(f,g)} B \times B \xrightarrow{\mu^{-1}} B \sqcup B \xrightarrow{\nabla} B,$$
     and each of these components is preserved by $F$.
-  is_equivalence: false
 
 - id: regular_functor_definition
   assumptions:
@@ -239,7 +222,6 @@
   conclusions:
     - continuous
   proof: 'We need to show that for every category $\C$ the unique functor $!_{\C} : \C \to 1$ into the trivial category is continuous. This easy to verify directly because in the trivial category every limit is, well, trivial. More generally, for every category $\C$ and every set $S$ the diagonal functor $\Delta : \C \to \C^S$ is continuous. Here we apply this to $S = \varnothing$ so that $\C^S$ is the trivial category.'
-  is_equivalence: false
 
 - id: automatically_preserve_equalizers
   assumptions: []
@@ -249,7 +231,6 @@
   conclusions:
     - preserves equalizers
   proof: This is trivial.
-  is_equivalence: false
 
 - id: trivial_coreflexive_equalizer_preservation
   # TODO: rework this once we add "split-epi-trivial"
@@ -260,7 +241,6 @@
   conclusions:
     - preserves coreflexive equalizers
   proof: 'Let $f,g : X \rightrightarrows Y$ be a coreflexive pair, i.e. there is a morphism $r : Y \to X$ with $rf = rg = \id_X$. Then $r$ is a split and hence a regular epimorphism. Thus, $r$ is an isomorphism. But then $f=g$, and $\id_X$ is an equalizer of $f,g$. This equalizer is obviously preserved.'
-  is_equivalence: false
 
 - id: thin_binary_product_preservation
   assumptions: []
@@ -273,4 +253,3 @@
   conclusions:
     - preserves binary products
   proof: 'It is enough to prove that if $P$ is a linearly ordered set and $Q$ is a partially ordered set, then any order-preserving map $f : P \to Q$ preserves binary meets. Let $x,y \in P$. We may assume $x \leq y$. Then $x \wedge y = x$. Since we also have $f(x) \leq f(y)$, we have $f(x) \wedge f(y) = f(x)$. Therefore, $f(x \wedge y) = f(x) = f(x) \wedge f(y)$ holds.'
-  is_equivalence: false

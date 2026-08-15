@@ -6,7 +6,6 @@
   conclusions:
     - constant
   proof: This is trivial.
-  is_equivalence: false
 
 - id: zero_morphism_definition
   assumptions:
@@ -31,4 +30,3 @@
     Furthermore, $0_{A,B}$ is coconstant because for all $g,h : B \rightrightarrows C$ we have
     $$g \circ 0_{A,B} = 0_{A,C} = h \circ 0_{A,B}.$$
     (A similar argument shows that $0_{A,B}$ is also constant.)
-  is_equivalence: false

@@ -6,7 +6,6 @@
   conclusions:
     - balanced
   proof: Any regular monomorphism that is an epimorphism must be an isomorphism.
-  is_equivalence: false
 
 - id: normal_condition
   assumptions:
@@ -14,7 +13,6 @@
   conclusions:
     - zero morphisms
   proof: This is part of our definition of a normal category.
-  is_equivalence: false
 
 - id: mono_regular_via_kernels
   assumptions:
@@ -22,7 +20,6 @@
   conclusions:
     - mono-regular
   proof: This is trivial.
-  is_equivalence: false
 
 - id: normal_criterion
   assumptions:
@@ -31,4 +28,3 @@
   conclusions:
     - normal
   proof: The a monomorphism is the equalizer of $f,g$, it is the kernel of $f-g$.
-  is_equivalence: false

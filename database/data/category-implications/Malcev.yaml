@@ -6,7 +6,6 @@
   conclusions:
     - finitely complete
   proof: This holds by definition.
-  is_equivalence: false
 
 - id: malcev_thin_condition
   assumptions:
@@ -15,7 +14,6 @@
   conclusions:
     - Malcev
   proof: In a thin category, every subobject of $X^2 = X$ containing $X$ is already $X$.
-  is_equivalence: false
 
 - id: malcev_additive_criterion
   assumptions:
@@ -24,7 +22,6 @@
   conclusions:
     - Malcev
   proof: See Prop. 2.2.13. in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>.
-  is_equivalence: false
 
 - id: malcev_implies_unital
   assumptions:
@@ -33,7 +30,6 @@
   conclusions:
     - unital
   proof: This follows from Corollary 2.2.10 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>. The proof is also written down in <a href="https://math.stackexchange.com/a/5034834" target="_blank">MSE/5033161</a>.
-  is_equivalence: false
 
 - id: biproducts_unital
   assumptions:
@@ -42,7 +38,6 @@
   conclusions:
     - unital
   proof: For all objects $X,Y$ the canonical morphism $X \sqcup Y \to X \times Y$ is an isomorphism, hence a strong epimorphism.
-  is_equivalence: false
 
 - id: unital_assumptions
   assumptions:
@@ -51,4 +46,3 @@
     - finitely complete
     - pointed
   proof: This holds by definition.
-  is_equivalence: false

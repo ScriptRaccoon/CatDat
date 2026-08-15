@@ -6,7 +6,6 @@
   conclusions:
     - inhabited
   proof: This holds by definition.
-  is_equivalence: false
 
 - id: strongly_connected_consequence
   assumptions:
@@ -14,7 +13,6 @@
   conclusions:
     - semi-strongly connected
   proof: This is immediate from the definition.
-  is_equivalence: false
 
 - id: semi-strongly_connected_consequence
   assumptions:
@@ -22,7 +20,6 @@
   conclusions:
     - connected
   proof: This is immediate from the definition.
-  is_equivalence: false
 
 - id: thin_not_strongly_connected
   assumptions:
@@ -31,7 +28,6 @@
   conclusions:
     - trivial
   proof: This is obvious.
-  is_equivalence: false
 
 - id: zero_morphisms_mean_strongly_connected
   assumptions:
@@ -40,7 +36,6 @@
   conclusions:
     - strongly connected
   proof: This holds by definition.
-  is_equivalence: false
 
 - id: strongly_connected_pointed_criterion
   assumptions:
@@ -50,7 +45,6 @@
   conclusions:
     - pointed
   proof: By assumption there is a morphism $1 \to 0$. There is also a unique morphism $0 \to 1$. They are necessarily inverse to each other.
-  is_equivalence: false
 
 - id: core-connected_implies_strongly-connected
   assumptions:
@@ -58,7 +52,6 @@
   conclusions:
     - strongly connected
   proof: This is trivial.
-  is_equivalence: false
 
 - id: unique_object_generates
   assumptions:
@@ -73,7 +66,6 @@
     is a bijection. Then for any object $T$,
     $$f \circ {-} : \Hom(T, X) \to \Hom(T, Y)$$
     is a bijection since $T \cong G$, and the Yoneda embedding of $f$ is a natural transformation $\Hom({-}, X) \to \Hom({-}, Y)$. By the Yoneda Lemma, $f$ is therefore an isomorphism.
-  is_equivalence: false
 
 - id: trivial_is_core-connected
   assumptions:
@@ -81,7 +73,6 @@
   conclusions:
     - core-connected
   proof: This is trivial.
-  is_equivalence: false
 
 - id: core_connected_becomes_trivial
   assumptions:
@@ -90,4 +81,3 @@
   conclusions:
     - trivial
   proof: Every object is isomorphic to the initial object.
-  is_equivalence: false

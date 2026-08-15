@@ -9,7 +9,6 @@
   conclusions:
     - closed
   proof: This is just the definition of a cartesian closed category.
-  is_equivalence: false
 
 - id: when_closed_implies_cocomplete
   assumptions:
@@ -20,7 +19,6 @@
   conclusions:
     - cocomplete
   proof: Each functor $A \otimes -$ is a left adjoint and therefore preserves colimits.
-  is_equivalence: false
 
 - id: when_closed_implies_finitely_cocomplete
   assumptions:
@@ -31,7 +29,6 @@
   conclusions:
     - finitely cocomplete
   proof: Each functor $A \otimes -$ is a left adjoint and therefore preserves finite colimits.
-  is_equivalence: false
 
 - id: when_closed_implies_distributive
   assumptions:
@@ -42,7 +39,6 @@
   conclusions:
     - distributive
   proof: Each functor $A \otimes -$ is a left adjoint and therefore preserves finite coproducts.
-  is_equivalence: false
 
 - id: when_closed_implies_infinitary_distributive
   assumptions:
@@ -53,4 +49,3 @@
   conclusions:
     - infinitary distributive
   proof: Each functor $A \otimes -$ is a left adjoint and therefore preserves coproducts.
-  is_equivalence: false

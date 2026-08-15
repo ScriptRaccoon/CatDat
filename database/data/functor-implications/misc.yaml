@@ -17,7 +17,6 @@
   conclusions:
     - faithful
   proof: 'Let $f,g : X \rightrightarrows Y$ be two morphisms in the domain, and choose an equalizer $E \hookrightarrow X$. By assumption, $F(E) \to F(X)$ is the equalizer of $F(f),F(g) : F(X) \rightrightarrows F(Y)$. Thus, if $F(f) = F(g)$, then $F(E) \to F(X)$ is an isomorphism. Since $F$ is conservative, $E \to X$ is an isomorphism, which means $f = g$.'
-  is_equivalence: false
 
 - id: conservative_criterion
   assumptions:
@@ -25,7 +24,6 @@
   conclusions:
     - conservative
   proof: If $F(f)$ is an isomorphism, its inverse has the form $F(g)$ since $F$ is full. Since $F$ is faithful, it follows that $f$ is inverse to $g$.
-  is_equivalence: false
 
 - id: faithful_with_balanced_domain
   assumptions:
@@ -37,7 +35,6 @@
     - conservative
   # TODO: refactor this if adding "reflects monomorphisms" / "reflects epimorphisms" properties
   proof: 'It is easy to see that a faithful functor $F$ reflects monomorphisms: If we have two morphisms $x_1, x_2 : U \rightrightarrows X$ and $f : X \to Y$ such that $f(x_1) = f(x_2)$, and $F(f)$ is a monomorphism, then $F(x_1) = F(x_2)$; therefore, $x_1 = x_2$, so $f$ is also a monomorphism. The dual argument shows that $F$ also reflects epimorphisms. Therefore, if $F(f)$ is an isomorphism, then $f$ is both a monomorphism and an epimorphism; by the assumption on the domain category, this implies that $f$ is an isomorphism.'
-  is_equivalence: false
 
 - id: left-invertible_consequences
   assumptions:
@@ -47,7 +44,6 @@
     - essentially injective
     - conservative
   proof: 'Let $G : \D \to \C$ be a left-inverse to $F : \C \to \D$, meaning that $G \circ F \cong \id_{\C}$. Then $F(A) \cong F(B)$ implies $A \cong G(F(A)) \cong G(F(B)) \cong B$ for all $A,B \in \C$. Thus, $F$ essentially injective. Moreover, since $G \circ F$ is faithful, the composed map $\Hom(A,B) \to \Hom(F(A),F(B)) \to \Hom(G(F(A)),G(F(B))$ is injective, so that also $\Hom(A,B) \to \Hom(F(A),F(B))$ is injective. This shows that $F$ is faithful. Finally, if $f : A \to B$ is a morphism such that $F(f)$ is an isomorphism, then $G(F(f))$ is an isomorphism. Since $G(F(f)) \cong f$ in $\Mor(\C)$, we conclude that $f$ is an isomorphism. Therefore, $F$ is conservative.'
-  is_equivalence: false
 
 - id: right-invertible_consequences
   assumptions:
@@ -55,7 +51,6 @@
   conclusions:
     - essentially surjective
   proof: This is trivial.
-  is_equivalence: false
 
 - id: full-on-isomorphisms_criterion
   assumptions:
@@ -64,7 +59,6 @@
   conclusions:
     - full on isomorphisms
   proof: This is obvious.
-  is_equivalence: false
 
 - id: full-on-isomorphisms_consequences
   assumptions:
@@ -72,7 +66,6 @@
   conclusions:
     - essentially injective
   proof: This is trivial.
-  is_equivalence: false
 
 - id: pseudomonic_definition
   assumptions:
@@ -89,7 +82,6 @@
   conclusions:
     - conservative
   proof: 'Let $F$ be a pseudomonic functor and let $f$ be a morphism in its domain such that $F(f)$ is an isomorphism. Then $F(f)^{-1} = F(g)$ for some isomorphism $g$ since $F$ is full on isomorphisms. Then $f \circ g$ and $g \circ f$ are identities since $F$ is faithful and their images are identities.'
-  is_equivalence: false
 
 - id: essentially-surjective_implies_dominant
   assumptions:
@@ -97,7 +89,6 @@
   conclusions:
     - dominant
   proof: This is trivial.
-  is_equivalence: false
 
 - id: surjective_functor_to_core_connected_category
   assumptions: []
@@ -109,7 +100,6 @@
   conclusions:
     - essentially surjective
   proof: 'Let $F : \C \to \D$ be a functor from an inhabited category to a core-connected category. Choose any object $X \in \C$. For every $Y \in \D$ we have $Y \cong F(X)$. Thus, $F$ is essentially surjective.'
-  is_equivalence: false
 
 - id: right_invertible_functor_to_trivial_category
   assumptions: []
@@ -121,7 +111,6 @@
   conclusions:
     - right-invertible
   proof: 'Let $\C$ be an inhabited category and let $F : \C \to 1$ be the unique functor to the trivial category. Choose any object $X \in \C$. Then the constant functor $X : 1 \to \C$ satisfies $F \circ X = \id_1$.'
-  is_equivalence: false
 
 - id: full_functor_to_trivial_category
   # TODO: add the converse once we have category_conclusions
@@ -134,7 +123,6 @@
   conclusions:
     - full
   proof: 'Let $\C$ be a strongly connected category. Then the unique functor $F : \C \to 1$ to the trivial category is full: for all $X,Y \in \C$ the map $\Hom(X,Y) \to \Hom(F(X),F(Y))$ is surjective since its domain is non-empty and its codomain is a singleton set.'
-  is_equivalence: false
 
 - id: functor_conservative_on_groupoids
   assumptions: []
@@ -144,7 +132,6 @@
   conclusions:
     - conservative
   proof: This is trivial.
-  is_equivalence: false
 
 - id: automatic_ess_injective_functors
   assumptions: []
@@ -154,7 +141,6 @@
   conclusions:
     - essentially injective
   proof: This is trivial.
-  is_equivalence: false
 
 - id: automatic_full_on_isos_functors
   assumptions: []
@@ -166,7 +152,6 @@
   conclusions:
     - full on isomorphisms
   proof: This is trivial.
-  is_equivalence: false
 
 - id: thin_dominant_functor
   # TODO: rework this once we add "split-mono trivial"
@@ -178,7 +163,6 @@
   conclusions:
     - essentially surjective
   proof: This is trivial since every split monomorphism in the codomain is an isomorphism.
-  is_equivalence: false
 
 - id: automatic_preserves_mono
   assumptions: []
@@ -188,4 +172,3 @@
   conclusions:
     - preserves monomorphisms
   proof: This is trivial since every morphism in the codomain is a monomorphism.
-  is_equivalence: false

@@ -9,7 +9,6 @@
     - cocomplete
     - self-dual
   proof: This is trivial.
-  is_equivalence: false
 
 - id: trivial_is_well_pointed
   # we need this separately since well-pointed currently has no dual
@@ -18,7 +17,6 @@
   conclusions:
     - well-pointed
   proof: This is trivial.
-  is_equivalence: false
 
 - id: thin_is_well_pointed
   assumptions: []
@@ -28,4 +26,3 @@
   conclusions:
     - well-pointed
   proof: In a thin category, every object is a generator for trivial reasons.
-  is_equivalence: false

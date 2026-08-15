@@ -8,7 +8,6 @@
     - connected limits
     - finitely complete
   proof: This is trivial.
-  is_equivalence: false
 
 - id: complete_characterization
   assumptions:
@@ -35,7 +34,6 @@
   conclusions:
     - complete
   proof: See the <a href="https://ncatlab.org/nlab/show/wide+pullback" target="_blank">nLab</a>.
-  is_equivalence: false
 
 - id: multi-complete_generalize_limits
   assumptions:
@@ -43,7 +41,6 @@
   conclusions:
     - multi-complete
   proof: Limits are precisely multi-limits such that the set of cones is singleton.
-  is_equivalence: false
 
 - id: multi-terminal_special_case
   assumptions:
@@ -51,7 +48,6 @@
   conclusions:
     - multi-terminal object
   proof: This is trivial.
-  is_equivalence: false
 
 - id: multi-terminal_with_connected
   assumptions:
@@ -69,4 +65,3 @@
   conclusions:
     - complete
   proof: 'Let $\C$ be a category with an initial object, and let $D : \I \to \C$ be a small diagram in $\C$. Since $\C$ has an initial object, the category $\Cone(D)$ of cones over $D$ also has an initial object. In particular, $\Cone(D)$ is connected, hence a multi-terminal object in it automatically becomes a terminal object. In other words, a multi-limit of $D$ is automatically a limit of $D$.'
-  is_equivalence: false

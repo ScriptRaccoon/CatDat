@@ -6,7 +6,6 @@
   conclusions:
     - finitely complete
   proof: This holds by definition of a regular category.
-  is_equivalence: false
 
 - id: regular_well-powered_well-copowered
   assumptions:
@@ -16,7 +15,6 @@
   conclusions:
     - well-copowered
   proof: The regularity condition gives a bijection between the collection of quotients of $X$ and the collection of effective congruences on $X$, where the latter is a subcollection of the collection of subobjects of $X\times X$.
-  is_equivalence: false
 
 - id: regular_balanced_epi-regular
   assumptions:
@@ -25,7 +23,6 @@
   conclusions:
     - epi-regular
   proof: 'Given any epimorphism $f : X \twoheadrightarrow Y$ in a regular category, we have the factorization into a regular epimorphism $X \twoheadrightarrow \im(f)$ followed by a monomorphism $\im(f) \hookrightarrow Y$. Because the composition is an epimorphism, the monomorphism $\im(f) \hookrightarrow Y$ must also be an epimorphism, and therefore an isomorphism. It follows that $f$ is in fact a regular epimorphism.'
-  is_equivalence: false
 
 - id: congruence_quotients_are_reflexive_coequalizers
   assumptions:
@@ -33,7 +30,6 @@
   conclusions:
     - quotients of congruences
   proof: A congruence $E \rightrightarrows X$ has a common section $X \to E$ given by the reflexivity morphism.
-  is_equivalence: false
 
 - id: cokernels_via_congruence_quotients
   assumptions:
@@ -43,7 +39,6 @@
   conclusions:
     - cokernels
   proof: 'By the regularity assumption, it suffices to consider cokernels of subobjects. Given a subobject $Y$ of $X$, we have the congruence on $X$ given by the pullback of ${-} : X \times X \to X$ and $Y$. The quotient of this congruence is a cokernel of $Y \hookrightarrow X$.'
-  is_equivalence: false
 
 - id: congruence_quotients_via_cokernels
   assumptions:
@@ -53,7 +48,6 @@
   conclusions:
     - quotients of congruences
   proof: 'For any congruence $E$ on an object $X$ of a preadditive category, let $E_0$ be the kernel of $p_2 : E \to X$.  The restriction of $p_1$ to $E_0$ is a monomorphism.  We can then see that $E$ must be the pullback of $p_1 - p_2 : E \to X$ and $E_0 \hookrightarrow X$.  Then the cokernel of $E_0 \hookrightarrow X$ is a quotient of $E$.'
-  is_equivalence: false
 
 - id: core-hin_quotients
   assumptions:
@@ -62,7 +56,6 @@
     - effective congruences
     - quotients of congruences
   proof: 'If $p_1, p_2 : E \rightrightarrows X$ is a congruence, the symmetry morphism $s : E \to E$ is an automorphism of $E$, hence equal to $\id_E$ by assumption. But then $p_1 = p_2 \circ s = p_2$, and simply $\id_X$ is a coequalizer. Also, for the reflexivity morphism $r : X \to E$, we have $p_1 \circ r = \id$. For the reverse composition, $p_1 \circ r \circ p_1 = p_1 \circ \id$ and $p_2 \circ r \circ p_1 = p_2 \circ \id$, so since $p_1, p_2$ are jointly monomorphic, we get $r \circ p_1 = \id$. Therefore, $p_1 = p_2$ is an isomorphism, so $E$ is the kernel pair of $\id_X$.'
-  is_equivalence: false
 
 - id: preadditive_kernels_normal_imply_effective_congruences
   assumptions:
@@ -77,7 +70,6 @@
     To see this, suppose we have a pair of generalized elements $x_1, x_2 \in X(T)$. Then we have
     $$\begin{align*} (x_1,x_2) \in E & \iff (x_1 - x_2,0) \in E \\ & \iff x_1 - x_2 \in E_0 \\ & \iff h(x_1 - x_2) = 0 \\ & \iff h(x_1) = h(x_2). \end{align*}$$
     In particular, applying the forward implications in the case $T \coloneqq E$, $x_1 \coloneqq f$, $x_2 \coloneqq g$, we conclude that $h \circ f = h \circ g$, so we get the required commutative diagram. From there, the reverse implications show this diagram is a cartesian square.
-  is_equivalence: false
 
 - id: additive_effective_congruences_imply_normal
   assumptions:
@@ -87,7 +79,6 @@
     - normal
   proof: >-
     Let $i : Y \hookrightarrow X$ be a monomorphism. Then we define a relation on $X$ via $E \coloneqq X \times Y$ with maps $f, g : E \rightrightarrows X$ defined by $f : (x, y) \mapsto x+i(y)$ and $g : (x, y) \mapsto x$. It is straightforward to check that $f$ and $g$ are jointly monomorphic. Now $E$ is a congruence because for generalized elements $x_1, x_2 \in X(T)$, $(x_1, x_2)$ factors through $E$ if and only if $x_1 - x_2$ factors through $Y$. In other words, the relation on $X(T)$ is exactly $x_1 \equiv x_2 \pmod{Y(T)}$, which is an equivalence relation on $X(T)$ (and in fact a congruence in $\Ab$). Now by assumption, $E$ is the kernel pair of some morphism $h : X \to Z$; in other words, $(x_1, x_2)$ factors through $E$ if and only if $h(x_1) = h(x_2)$. In particular, for $x \in X(T)$, $x$ factors through $Y$ if and only if $(x, 0)$ factors through $E$, which is equivalent to $h(x) = h(0) = 0$. We have thus shown that $Y$ is the kernel of $h$.
-  is_equivalence: false
 
 - id: regular_effective_congruences_implies_quotients
   assumptions:
@@ -96,7 +87,6 @@
   conclusions:
     - quotients of congruences
   proof: We assume that every congruence is effective, and the regularity condition implies that every effective congruence has a quotient.
-  is_equivalence: false
 
 - id: regular_epi-regular_extensive_consequences
   assumptions:
@@ -118,7 +108,6 @@
 
 
     Remark: The assumptions are satisfied in particular for every elementary topos. Therefore, every elementary topos has effective cocongruences and is co-Malcev. This special case is Example 2.2.18 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>. An alternative proof of this special case is given later in A.5.17.
-  is_equivalence: false
 
 - id: pretopos_balanced
   assumptions:
@@ -137,7 +126,6 @@
     g(y) & = \alpha(y)', & g(y') & = \alpha(y),
     \end{align*}$$
     on generalized elements. Extensivity can be used to show that $f, g$ are jointly monomorphic. Clearly, the pair $f, g$ is reflexive and symmetric. For transitivity, one once again uses extensivity. By assumption, there is a morphism $h : B + B' \to C$ such that $f, g$ is the kernel pair of $h$, that is, two generalized elements $x, y \in B + B'$ satisfy $h(x) = h(y)$ if and only if $x = f(e)$, $y = g(e)$ for some $e \in E$. In particular, for $x \in B$, we have $h(x) = h(x')$ if and only if $x = f(e)$, $x' = g(e)$ for some $e \in E$. By disjointness of coproducts, we must necessarily have $e \in A$, and $x = \alpha(e)$. This shows that $\alpha$ is the equalizer of $h \circ i_1, h \circ i_2 : B \rightrightarrows C$.
-  is_equivalence: false
 
 - id: Barr-exact_definition
   assumptions:

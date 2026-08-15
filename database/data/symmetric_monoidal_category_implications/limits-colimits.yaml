@@ -7,7 +7,6 @@
     - finitely cocomplete
     - infinitary distributive
   proof: This is trivial.
-  is_equivalence: false
 
 - id: finitely_cocomplete_consequences
   assumptions:
@@ -15,7 +14,6 @@
   conclusions:
     - distributive
   proof: This is trivial.
-  is_equivalence: false
 
 - id: infinitary_distributive_consequence
   assumptions:
@@ -23,7 +21,6 @@
   conclusions:
     - distributive
   proof: This is trivial.
-  is_equivalence: false
 
 - id: distributive_cartesian
   assumptions:
@@ -35,7 +32,6 @@
     - distributive
   proof: This is just the definition of a distributive category.
   # TODO: make this an equivalence when we have category_conclusions
-  is_equivalence: false
 
 - id: infinitary_distributive_cartesian
   assumptions:
@@ -47,7 +43,6 @@
     - infinitary distributive
   proof: This is just the definition of an infinitary distributive category.
   # TODO: make this an equivalence when we have category_conclusions
-  is_equivalence: false
 
 - id: cartesian_never_complete
   assumptions:
@@ -56,7 +51,6 @@
   conclusions:
     - trivial
   proof: In a codistributive symmetric monoidal category, for every object $X$, the functor $X \otimes -$ preserves the terminal object $1$. But since the symmetric monoidal structure is assumed to be cartesian, $1$ is the monoidal unit, so $1 = X \otimes 1 = X$.
-  is_equivalence: false
 
 - id: preadditive_codistributive_criterion
   assumptions:
@@ -67,4 +61,3 @@
   conclusions:
     - codistributive
   proof: This follows from <a href="/functor-implication/biproduct_preserving_condition">this result</a> on functors.
-  is_equivalence: false
