@@ -123,10 +123,10 @@ function is_applicable(
 	associated_satisfied_properties?: Partial<Record<string, Set<string>>>
 ) {
 	return (
-		!implication.mapped_assumptions ||
-		Object.keys(implication.mapped_assumptions).every((key) => {
+		!implication.associated_assumptions ||
+		Object.keys(implication.associated_assumptions).every((key) => {
 			return is_subset(
-				implication.mapped_assumptions?.[key] ?? new Set(),
+				implication.associated_assumptions?.[key] ?? new Set(),
 				associated_satisfied_properties?.[key] ?? new Set()
 			)
 		})

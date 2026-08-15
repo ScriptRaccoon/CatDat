@@ -21,16 +21,16 @@ function get_assumption_string(
 				.join(' and ')
 		: `is a ${remove_underscores(type)}`
 
-	if (!implication.mapped_assumptions) return own
+	if (!implication.associated_assumptions) return own
 
-	const mapped = Object.entries(implication.mapped_assumptions)
+	const associated = Object.entries(implication.associated_assumptions)
 		.map(
 			([map, props]) =>
 				`and the ${remove_underscores(map)} has the required properties (${Array.from(props!).join(', ')})`
 		)
 		.join(', ')
 
-	return `${own}, ${mapped}`
+	return `${own}, ${associated}`
 }
 
 function get_conclusion_string(
@@ -71,7 +71,7 @@ export function get_contradiction_string(
 	const conclusion_string = get_conclusion_string(implication, properties_dict, true)
 
 	const has_multiple_assumptions =
-		implication.assumptions.size > 1 || !!implication.mapped_assumptions
+		implication.assumptions.size > 1 || !!implication.associated_assumptions
 
 	const ref = `by <a href="/${type}-implication/${implication.id}">this result</a>`
 

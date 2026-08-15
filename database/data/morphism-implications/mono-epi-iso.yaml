@@ -29,7 +29,7 @@
 - id: mono_is_iso
   assumptions:
     - monomorphism
-  mapped_assumptions:
+  associated_assumptions:
     category:
       - subobject-trivial
   conclusions:
@@ -41,7 +41,7 @@
   assumptions:
     - monomorphism
     - epimorphism
-  mapped_assumptions:
+  associated_assumptions:
     category:
       - balanced
   conclusions:
@@ -52,7 +52,7 @@
 - id: mono-regular_def
   assumptions:
     - monomorphism
-  mapped_assumptions:
+  associated_assumptions:
     category:
       - mono-regular
   conclusions:
@@ -79,7 +79,7 @@
 - id: strict_monos_are_often_effective
   assumptions:
     - strict monomorphism
-  mapped_assumptions:
+  associated_assumptions:
     category:
       - pushouts
   conclusions:
@@ -95,7 +95,7 @@
 - id: iso_is_normal_mono
   assumptions:
     - isomorphism
-  mapped_assumptions:
+  associated_assumptions:
     category:
       - zero morphisms
   conclusions:
@@ -114,7 +114,7 @@
 - id: regular_implies_normal_mono_preadditive_case
   assumptions:
     - regular monomorphism
-  mapped_assumptions:
+  associated_assumptions:
     category:
       - preadditive
   conclusions:
@@ -164,7 +164,7 @@
 - id: extremal_monos_are_regular_in_coregular_category
   assumptions:
     - extremal monomorphism
-  mapped_assumptions:
+  associated_assumptions:
     category:
       - coregular
   conclusions:
@@ -178,7 +178,7 @@
 - id: extremal_mono_strong_criterion
   assumptions:
     - extremal monomorphism
-  mapped_assumptions:
+  associated_assumptions:
     category:
       - pushouts
   conclusions:
@@ -195,7 +195,7 @@
 - id: extremal_mono_balanced
   assumptions:
     - monomorphism
-  mapped_assumptions:
+  associated_assumptions:
     category:
       - balanced
   conclusions:
@@ -206,7 +206,7 @@
 - id: every_mono_strong_criterion
   assumptions:
     - monomorphism
-  mapped_assumptions:
+  associated_assumptions:
     category:
       - epi-regular
   conclusions:

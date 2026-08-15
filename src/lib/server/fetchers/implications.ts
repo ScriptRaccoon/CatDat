@@ -12,7 +12,7 @@ export function fetch_implications(type: StructureType) {
 				proof,
 				assumptions,
 				conclusions,
-				mapped_assumptions
+				associated_assumptions
 			FROM implications_view
 			WHERE type = ?
 			ORDER BY lower(assumptions) || ' ' || lower(conclusions)`

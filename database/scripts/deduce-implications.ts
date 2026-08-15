@@ -40,7 +40,7 @@ export function create_dualized_implications(type: StructureType) {
 			conclusions: string
 			dual_assumptions: string
 			dual_conclusions: string
-			dual_mapped_assumptions: string
+			dual_associated_assumptions: string
 		}
 	>(
 		`SELECT
@@ -63,18 +63,18 @@ export function create_dualized_implications(type: StructureType) {
 				WHERE a.implication_id = i.id
 			) AS dual_conclusions,
 			(
-				SELECT json_group_object(map, properties)
+				SELECT json_group_object(label, properties)
 				FROM (
 					SELECT
-						a.map,
+						a.label,
 						json_group_array(p.dual_property_id) AS properties
-					FROM mapped_assumptions a
+					FROM associated_assumptions a
 					INNER JOIN properties p
 					ON p.id = a.property_id AND p.type = a.property_type
 					WHERE a.implication_id = i.id
-					GROUP BY a.map
+					GROUP BY a.label
 				)
-			) AS dual_mapped_assumptions
+			) AS dual_associated_assumptions
 		FROM implications_view i
 		WHERE i.type = ? AND i.is_deduced = FALSE`
 	)
@@ -97,9 +97,9 @@ export function create_dualized_implications(type: StructureType) {
 		VALUES (?, ?, ?)
 	`)
 
-	const mapped_assumption_insert = db.prepare(`
-		INSERT INTO mapped_assumptions
-			(implication_id, map, property_id, type, property_type)
+	const associated_assumption_insert = db.prepare(`
+		INSERT INTO associated_assumptions
+			(implication_id, label, property_id, type, property_type)
 		VALUES (?, ?, ?, ?, ?)
 	`)
 
@@ -113,14 +113,16 @@ export function create_dualized_implications(type: StructureType) {
 			const dual_assumptions = parse_json_set<string | null>(impl.dual_assumptions)
 			const conclusions = parse_json_set<string>(impl.conclusions)
 			const dual_conclusions = parse_json_set<string | null>(impl.dual_conclusions)
-			const dual_mapped_assumptions = parse_nested_json_set<string | null>(
-				impl.dual_mapped_assumptions
+			const dual_associated_assumptions = parse_nested_json_set<string | null>(
+				impl.dual_associated_assumptions
 			)
 
 			if (dual_assumptions.has(null)) continue
 			if (dual_conclusions.has(null)) continue
 
-			if (Object.values(dual_mapped_assumptions).some((set) => set?.has(null))) {
+			if (
+				Object.values(dual_associated_assumptions).some((set) => set?.has(null))
+			) {
 				continue
 			}
 
@@ -149,9 +151,15 @@ export function create_dualized_implications(type: StructureType) {
 			}
 
 			for (const { label, associated_type } of associated_structure_types) {
-				const duals = dual_mapped_assumptions[label]
+				const duals = dual_associated_assumptions[label]
 				for (const d of duals ?? []) {
-					mapped_assumption_insert.run(dual_id, label, d, type, associated_type)
+					associated_assumption_insert.run(
+						dual_id,
+						label,
+						d,
+						type,
+						associated_type
+					)
 				}
 			}
 		}

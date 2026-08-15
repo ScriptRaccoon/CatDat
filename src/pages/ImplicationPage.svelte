@@ -28,8 +28,8 @@
 		property_relation_dict
 	}: Props = $props()
 
-	let has_additional_assumptions = $derived(
-		Object.values(implication.mapped_assumptions).some((list) => list?.size)
+	let has_associated_assumptions = $derived(
+		Object.values(implication.associated_assumptions).some((list) => list?.size)
 	)
 </script>
 
@@ -39,20 +39,20 @@
 
 <p>
 	<strong>Claim:</strong>
-	{#if has_additional_assumptions}
+	{#if has_associated_assumptions}
 		Given a {remove_underscores(type)}
-		{#each Object.entries(implication.mapped_assumptions) as [map, set], ind}
+		{#each Object.entries(implication.associated_assumptions) as [label, set], ind}
 			{#if set}
 				whose
-				{remove_underscores(map)}
+				{remove_underscores(label)}
 				{#each set as property, index}
-					{property_relation_dict[associated_types[map]][property]}
-					<a href={get_property_url(property, associated_types[map])}
+					{property_relation_dict[associated_types[label]][property]}
+					<a href={get_property_url(property, associated_types[label])}
 						>{property}</a
 					>{#if index < set.size - 1}
 						&nbsp;and&nbsp;
 					{/if}
-				{/each}{#if ind < Object.entries(implication.mapped_assumptions).length - 1}
+				{/each}{#if ind < Object.entries(implication.associated_assumptions).length - 1}
 					, and&nbsp;
 				{/if}
 			{/if}

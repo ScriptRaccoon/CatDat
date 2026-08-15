@@ -29,7 +29,7 @@
   assumptions:
     - preserves terminal objects
     - preserves binary products
-  mapped_assumptions:
+  associated_assumptions:
     domain:
       - finite products
   conclusions:
@@ -41,7 +41,7 @@
   assumptions:
     - preserves equalizers
     - preserves products
-  mapped_assumptions:
+  associated_assumptions:
     domain:
       - products
   conclusions:
@@ -53,7 +53,7 @@
   assumptions:
     - cofinitary
     - left exact
-  mapped_assumptions:
+  associated_assumptions:
     domain:
       - finitely complete
   conclusions:
@@ -65,7 +65,7 @@
   assumptions:
     - cofinitary
     - preserves finite products
-  mapped_assumptions:
+  associated_assumptions:
     domain:
       - finite products
   conclusions:
@@ -99,7 +99,7 @@
   assumptions:
     - preserves equalizers
     - preserves finite products
-  mapped_assumptions:
+  associated_assumptions:
     domain:
       - finite products
   conclusions:
@@ -128,7 +128,7 @@
   assumptions:
     - preserves coreflexive equalizers
     - preserves binary products
-  mapped_assumptions:
+  associated_assumptions:
     domain:
       - binary products
   conclusions:
@@ -139,7 +139,7 @@
 - id: mono-preserving_criterion
   assumptions:
     - preserves regular monomorphisms
-  mapped_assumptions:
+  associated_assumptions:
     domain:
       - mono-regular
   conclusions:
@@ -150,7 +150,7 @@
 - id: regular-mono-preserving_criterion
   assumptions:
     - preserves monomorphisms
-  mapped_assumptions:
+  associated_assumptions:
     codomain:
       - mono-regular
   conclusions:
@@ -161,7 +161,7 @@
 - id: another_regular-mono-preserving_criterion
   assumptions:
     - preserves coreflexive equalizers
-  mapped_assumptions:
+  associated_assumptions:
     domain:
       - pushouts
   conclusions:
@@ -172,7 +172,7 @@
 - id: zero_preserving_condition
   assumptions:
     - preserves terminal objects
-  mapped_assumptions:
+  associated_assumptions:
     domain:
       - pointed
     codomain:
@@ -185,7 +185,7 @@
 - id: biproduct_preserving_condition
   assumptions:
     - preserves finite coproducts
-  mapped_assumptions:
+  associated_assumptions:
     domain:
       - biproducts
     codomain:
@@ -233,7 +233,7 @@
 
 - id: trivial_functors_continuous
   assumptions: []
-  mapped_assumptions:
+  associated_assumptions:
     codomain:
       - trivial
   conclusions:
@@ -243,7 +243,7 @@
 
 - id: automatically_preserve_equalizers
   assumptions: []
-  mapped_assumptions:
+  associated_assumptions:
     domain:
       - regular-subobject-trivial
   conclusions:
@@ -254,7 +254,7 @@
 - id: trivial_coreflexive_equalizer_preservation
   # TODO: rework this once we add "split-epi-trivial"
   assumptions: []
-  mapped_assumptions:
+  associated_assumptions:
     domain:
       - regular-quotient-trivial
   conclusions:
@@ -264,7 +264,7 @@
 
 - id: thin_binary_product_preservation
   assumptions: []
-  mapped_assumptions:
+  associated_assumptions:
     domain:
       - thin
       - semi-strongly connected

@@ -22,7 +22,7 @@
 
 - id: thin_is_well_pointed
   assumptions: []
-  mapped_assumptions:
+  associated_assumptions:
     underlying_category:
       - thin
   conclusions:

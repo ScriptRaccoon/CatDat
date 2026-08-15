@@ -28,7 +28,7 @@
 - id: distributive_cartesian
   assumptions:
     - cartesian
-  mapped_assumptions:
+  associated_assumptions:
     underlying_category:
       - distributive
   conclusions:
@@ -40,7 +40,7 @@
 - id: infinitary_distributive_cartesian
   assumptions:
     - cartesian
-  mapped_assumptions:
+  associated_assumptions:
     underlying_category:
       - infinitary distributive
   conclusions:
@@ -61,7 +61,7 @@
 - id: preadditive_codistributive_criterion
   assumptions:
     - distributive
-  mapped_assumptions:
+  associated_assumptions:
     underlying_category:
       - biproducts
   conclusions:

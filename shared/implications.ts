@@ -6,7 +6,7 @@ export type NormalizedImplication = {
 	id: string
 	assumptions: Set<string>
 	conclusion: string
-	mapped_assumptions?: Partial<Record<string, Set<string>>>
+	associated_assumptions?: Partial<Record<string, Set<string>>>
 }
 
 /**
@@ -30,7 +30,7 @@ export function get_normalized_implications(
 				is_equivalence: 0 | 1
 				assumptions: string
 				conclusions: string
-				mapped_assumptions: string
+				associated_assumptions: string
 			}
 		>(
 			`SELECT
@@ -38,7 +38,7 @@ export function get_normalized_implications(
 				is_equivalence,
 				assumptions,
 				conclusions,
-				mapped_assumptions
+				associated_assumptions
 			FROM implications_view
 			WHERE type = ?`
 		)
@@ -49,9 +49,11 @@ export function get_normalized_implications(
 	for (const impl of implications_db) {
 		const assumptions = parse_json_set<string>(impl.assumptions)
 		const conclusions = parse_json_set<string>(impl.conclusions)
-		const mapped_assumptions = parse_nested_json_set<string>(impl.mapped_assumptions)
+		const associated_assumptions = parse_nested_json_set<string>(
+			impl.associated_assumptions
+		)
 
-		const has_mapped_assumptions = Object.keys(mapped_assumptions).length > 0
+		const has_associated_assumptions = Object.keys(associated_assumptions).length > 0
 
 		for (const conclusion of conclusions) {
 			const implication: NormalizedImplication = {
@@ -60,8 +62,8 @@ export function get_normalized_implications(
 				conclusion
 			}
 
-			if (has_mapped_assumptions) {
-				implication.mapped_assumptions = mapped_assumptions
+			if (has_associated_assumptions) {
+				implication.associated_assumptions = associated_assumptions
 			}
 
 			implications.push(implication)
@@ -75,8 +77,8 @@ export function get_normalized_implications(
 					conclusion: assumption
 				}
 
-				if (has_mapped_assumptions) {
-					implication.mapped_assumptions = mapped_assumptions
+				if (has_associated_assumptions) {
+					implication.associated_assumptions = associated_assumptions
 				}
 
 				implications.push(implication)

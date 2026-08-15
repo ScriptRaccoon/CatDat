@@ -78,7 +78,7 @@ export function fetch_missing_data(type: StructureType) {
 	)
 
 	const implications = get_normalized_implications(db, type).filter(
-		(impl) => !impl.mapped_assumptions
+		(impl) => !impl.associated_assumptions
 	)
 
 	const witnessed_pairs_set = new Set(witnessed_pairs.map(({ p, q }) => `${p}|${q}`))

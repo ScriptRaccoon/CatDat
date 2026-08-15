@@ -39,7 +39,7 @@ export function display_implication(implication: ImplicationDB): ImplicationDisp
 		proof: implication.proof,
 		assumptions: JSON.parse(implication.assumptions),
 		conclusions: JSON.parse(implication.conclusions),
-		mapped_assumptions: parse_nested_json_set(implication.mapped_assumptions)
+		associated_assumptions: parse_nested_json_set(implication.associated_assumptions)
 	}
 }
 

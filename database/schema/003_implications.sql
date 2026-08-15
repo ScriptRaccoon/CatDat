@@ -38,23 +38,23 @@ CREATE TABLE conclusions (
 
 CREATE INDEX idx_conclusions_property ON conclusions (property_id);
 
-CREATE TABLE mapped_assumptions (
+CREATE TABLE associated_assumptions (
     implication_id TEXT NOT NULL,
-    map TEXT NOT NULL,
+    label TEXT NOT NULL,
     property_id TEXT NOT NULL,
     type TEXT NOT NULL,
     property_type TEXT NOT NULL,
-    PRIMARY KEY (implication_id, map, property_id),
+    PRIMARY KEY (implication_id, label, property_id),
     FOREIGN KEY (implication_id, type)
         REFERENCES implications (id, type) ON DELETE CASCADE,
     FOREIGN KEY (property_id, property_type)
         REFERENCES properties (id, type) ON DELETE CASCADE,
-    FOREIGN KEY (map, type, property_type)
+    FOREIGN KEY (label, type, property_type)
         REFERENCES associated_structure_types (label, type, associated_type)
         ON DELETE RESTRICT
 );
 
-CREATE INDEX idx_assumptions_mapped_property ON mapped_assumptions (property_id);
+CREATE INDEX idx_assumptions_associated_property ON associated_assumptions (property_id);
 
 CREATE VIEW implications_view AS
     SELECT
@@ -74,15 +74,15 @@ CREATE VIEW implications_view AS
             ORDER BY lower(c.property_id)
         ) AS conclusions,
         (
-            SELECT json_group_object(map, properties)
+            SELECT json_group_object(label, properties)
             FROM (
                 SELECT
-                    a.map,
+                    a.label,
                     json_group_array(a.property_id) AS properties
-                FROM mapped_assumptions a
+                FROM associated_assumptions a
                 WHERE a.implication_id = i.id
-                GROUP BY a.map
+                GROUP BY a.label
             )
-        ) AS mapped_assumptions
+        ) AS associated_assumptions
     FROM implications i
 ;

@@ -17,8 +17,8 @@
 
 	let { type, implication, highlighted_property }: Props = $props()
 
-	let has_additional_assumptions = $derived(
-		Object.values(implication.mapped_assumptions).some((list) => list?.size)
+	let has_associated_assumptions = $derived(
+		Object.values(implication.associated_assumptions).some((list) => list?.size)
 	)
 </script>
 
@@ -46,11 +46,11 @@
 		{/each}
 
 		<span aria-hidden="true" class="operator">
-			{#if has_additional_assumptions}
+			{#if has_associated_assumptions}
 				<span class="bracket">(</span>
 			{/if}<Fa
 				icon={implication.is_equivalence ? faArrowsLeftRight : faArrowRight}
-			/>{#if has_additional_assumptions}
+			/>{#if has_associated_assumptions}
 				<span class="bracket">)</span>
 			{/if}
 		</span>

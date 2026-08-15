@@ -9,7 +9,7 @@
 - id: saft
   assumptions:
     - continuous
-  mapped_assumptions:
+  associated_assumptions:
     domain:
       - cogenerating set
       - complete
@@ -34,7 +34,7 @@
 - id: representable_right_adjoint
   assumptions:
     - representable
-  mapped_assumptions:
+  associated_assumptions:
     domain:
       - locally essentially small
       - coproducts
@@ -45,7 +45,7 @@
 
 - id: initial_object_as_left_adjoint
   assumptions: []
-  mapped_assumptions:
+  associated_assumptions:
     domain:
       - initial object
     codomain:
