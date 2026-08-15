@@ -27,7 +27,11 @@ export function get_structures(db: Database, type: StructureType): StructureMeta
 				properties: string
 			}
 		>(
-			`WITH associated_properties AS (
+			`
+			SELECT
+				id, name, dual,
+				json_group_object(label, props) AS properties
+			FROM (
 				SELECT
 					s.id,
 					s.name,
@@ -43,10 +47,6 @@ export function get_structures(db: Database, type: StructureType): StructureMeta
 				WHERE s.type = ?
 				GROUP BY s.id, m.label
 			)
-			SELECT
-				id, name, dual,
-				json_group_object(label, props) AS properties
-			FROM associated_properties
 			GROUP BY id
 			ORDER BY id`
 		)
