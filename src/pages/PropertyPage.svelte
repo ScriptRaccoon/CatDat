@@ -48,7 +48,7 @@
 
 <TagList {tags} {type} sort="property" />
 
-<p>
+<p class="justified">
 	{@html property.description}
 
 	{#if property.invariant_under_equivalences === false}

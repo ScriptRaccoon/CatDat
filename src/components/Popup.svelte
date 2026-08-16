@@ -88,7 +88,9 @@ an issue when clicking two proofs in a row. So it's a <div> then.
 				<Fa icon={faXmark} />
 			</button>
 		</header>
-		{@html popup_state.text}
+		<div class="justified">
+			{@html popup_state.text}
+		</div>
 	</div>
 </div>
 

@@ -61,6 +61,7 @@ body {
 	background-color: var(--bg-color);
 	color: var(--text-color);
 	line-height: 1.5;
+	hyphens: auto;
 }
 
 body:has(#nav_dialog[open]) {
@@ -83,6 +84,8 @@ h3 {
 	font-weight: 500;
 	color: var(--heading-color);
 	font-family: 'DM Mono', monospace;
+	text-align: left;
+	hyphens: none;
 }
 
 h2 {
@@ -294,6 +297,10 @@ label {
 
 .error {
 	color: var(--error-color);
+}
+
+.justified {
+	text-align: justify;
 }
 
 /* container class for youtube videos */

@@ -37,7 +37,7 @@
 
 <h2>Implication Details</h2>
 
-<p>
+<p class="justified">
 	<strong>Claim:</strong>
 	{#if has_associated_assumptions}
 		Given a {remove_underscores(type)}
@@ -88,7 +88,7 @@
 	{/each}
 </p>
 
-<p>
+<p class="justified">
 	<strong>Proof:</strong>
 	{@html implication.proof}
 </p>

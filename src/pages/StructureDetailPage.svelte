@@ -134,7 +134,7 @@
 		{/if}
 	</ul>
 
-	<p>{@html structure.description}</p>
+	<p class="justified">{@html structure.description}</p>
 </section>
 
 <PropertyAssignmentList

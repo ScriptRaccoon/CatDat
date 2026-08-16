@@ -18,7 +18,7 @@
 
 <MetaData title={data.meta_data.title} description={data.meta_data.description} />
 
-<div class="content">
+<div class="content justified">
 	{@html data.html}
 </div>
 
