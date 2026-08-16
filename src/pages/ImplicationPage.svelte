@@ -3,7 +3,7 @@
 	import MetaData from '$components/MetaData.svelte'
 	import SuggestionForm from '$components/SuggestionForm.svelte'
 	import { pluralize, remove_underscores } from '$shared/utils'
-	import { get_property_url } from '$shared/property.utils'
+	import { get_property_label, get_property_url } from '$shared/property.utils'
 	import type {
 		ImplicationDisplay,
 		StructureShort,
@@ -48,7 +48,7 @@
 				{#each set as property, index}
 					{property_relation_dict[associated_types[label]][property]}
 					<a href={get_property_url(property, associated_types[label])}
-						>{property}</a
+						>{get_property_label(property)}</a
 					>{#if index < set.size - 1}
 						&nbsp;and&nbsp;
 					{/if}
@@ -69,7 +69,7 @@
 	{/if}
 	{#each implication.assumptions as property, index}
 		{property_relation_dict[type][property]}
-		<a href={get_property_url(property, type)}>{property}</a
+		<a href={get_property_url(property, type)}>{get_property_label(property)}</a
 		>{#if index < implication.assumptions.length - 1}
 			&nbsp;and&nbsp;
 		{/if}
@@ -80,7 +80,7 @@
 	{/if}
 	{#each implication.conclusions as property, index}
 		{property_relation_dict[type][property]}
-		<a href={get_property_url(property, type)}>{property}</a
+		<a href={get_property_url(property, type)}>{get_property_label(property)}</a
 		>{#if index < implication.conclusions.length - 1}
 			&nbsp;and&nbsp;
 		{:else}.
