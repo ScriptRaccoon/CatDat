@@ -5,7 +5,7 @@ description: CatDat welcomes contributions from the community, including filling
 
 ## How to contribute
 
-_CatDat_ is developed in an open-source [GitHub repository](https://github.com/ScriptRaccoon/catdat) owned by [Martin Brandenburg](https://ncatlab.org/nlab/show/Martin+Brandenburg). It welcomes contributions from the community, including filling in missing information or discovering new combinations of properties.
+_CatDat_ is developed in an open-source [GitHub repository](https://github.com/ScriptRaccoon/catdat) by [Martin Brandenburg](https://ncatlab.org/nlab/show/Martin+Brandenburg). It welcomes contributions from the community, including filling in missing information or discovering new combinations of properties.
 
 [**Video tutorial**](https://www.youtube.com/watch?v=NoZWdMFfQfg)
 

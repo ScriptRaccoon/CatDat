@@ -55,7 +55,7 @@ $$h u_i = v_{i_0} D(b)^{-1} D(a) = v_k D(a) = v_i.$$
 Moreover, $h$ is uniquely determined: if $v_i = h u_i$ for all $i \in \I$, then for $i = i_0$ we obtain $v_{i_0} = h$. <span class="qed">$\square$</span>
 
 ::: Corollary 2
-Let $\C$ be a category with the property that every sifted diagram is eventually constant (for example, a groupoid). Then every object $X \in \C$ is strongly finitely presentable, i.e. the functor $\Hom(X,-) : \C \to \Set$ preserves sifted colimits.
+Let $\C$ be a category with the property that every sifted diagram is eventually constant (for example, a groupoid). Then every object $X \in \C$ is strongly finitely presentable, i.e. the functor $\Hom(X,-) : \C \to \Set$ preserves sifted co&shy;limits.
 :::
 
 _Proof._

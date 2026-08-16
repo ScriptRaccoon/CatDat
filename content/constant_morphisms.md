@@ -30,7 +30,7 @@ If $X$ is a subterminal object, then any morphism $X \to Y$ is constant. If $Y$ 
 _Proof._ This is immediate from the definitions. <span class="qed">$\square$</span>
 
 ::: Lemma 5
-If $f : X \to Y$ is a monomorphism that is constant, then $X$ is subterminal.
+If $f : X \to Y$ is a monomorphism that is constant, then $X$ is sub&shy;terminal.
 :::
 
 _Proof._ If $x_1,x_2 : T \rightrightarrows X$ are morphisms, then $f \circ x_1 = f \circ x_2$ since $f$ is constant. Since $f$ is also a monomorphism, we infer that $x_1 = x_2$. <span class="qed">$\square$</span>
