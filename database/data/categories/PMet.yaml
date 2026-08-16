@@ -113,9 +113,9 @@ unsatisfied_properties:
   - property: binary copowers
     proof: The coproduct of two non-empty pseudo-metric spaces does not exist, see <a href="https://math.stackexchange.com/questions/1778408" target="_blank">MSE/1778408</a> (the proof also works for pseudo-metric spaces). For example, the copower $\IR \sqcup \IR$ does not exist. We only get coproducts when allowing $\infty$ as a distance.
 
-  - property: natural numbers object
+  - property: parametrized natural numbers object
     proof: >-
-      If $(N,z,s)$ is a natural numbers object in $\PMet$, then
+      If $(N,z,s)$ is a parametrized natural numbers object in $\PMet$, then
       $$1 \xrightarrow{z} N \xleftarrow{s} N$$
       is a coproduct cocone by <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, Part A, Lemma 2.5.5. Since there is a map $1 \to N$, we have $N \neq \varnothing$. However, the coproduct of two non-empty pseudo-metric spaces does not exist, see <a href="https://math.stackexchange.com/questions/1778408" target="_blank">MSE/1778408</a>.
 

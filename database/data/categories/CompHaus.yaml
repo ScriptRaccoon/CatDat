@@ -73,9 +73,9 @@ unsatisfied_properties:
     references:
       - haus_no_regular_subobject_classifier
 
-  - property: natural numbers object
+  - property: parametrized natural numbers object
     proof: >-
-      Let $I \coloneqq [0, 1]$. If a natural numbers object $(N, z : 1 \to N, s : N \to N)$ existed, then we could iterate the initial conditions $I\to I\times I$, $x \mapsto (x, x)$ and the recursive step function $I\times I \to I \times I$, $(x, y) \mapsto (x, xy)$ to get a continuous function $N \times I \to I \times I$ such that $(s^n(z), x) \mapsto (x, x^n)$ for $x\in I$, $n \in \IN$. The sequence $(s^n(z)) \in N$ has a convergent subnet $(s^{n_\lambda}(z))_{\lambda \in \Lambda}$, say with limit $y$. Thus, for any $x\in I$ and $\lambda \in \Lambda$, we have $(s^{n_\lambda}(z), x) \mapsto (x, x^{n_\lambda})$. Taking limits, we see $(y, x) \mapsto (x, 0)$ if $x \ne 1$ or $(y, x) \mapsto (x, 1)$ if $x = 1$. In other words, $(y, x) \mapsto (x, \delta_{x, 1})$ for all $x\in I$. However, that contradicts the fact that the composition
+      Let $I \coloneqq [0, 1]$. If a parametrized natural numbers object $(N, z : 1 \to N, s : N \to N)$ existed, then we could iterate the initial conditions $I\to I\times I$, $x \mapsto (x, x)$ and the recursive step function $I\times I \to I \times I$, $(x, y) \mapsto (x, xy)$ to get a continuous function $N \times I \to I \times I$ such that $(s^n(z), x) \mapsto (x, x^n)$ for $x\in I$, $n \in \IN$. The sequence $(s^n(z)) \in N$ has a convergent subnet $(s^{n_\lambda}(z))_{\lambda \in \Lambda}$, say with limit $y$. Thus, for any $x\in I$ and $\lambda \in \Lambda$, we have $(s^{n_\lambda}(z), x) \mapsto (x, x^{n_\lambda})$. Taking limits, we see $(y, x) \mapsto (x, 0)$ if $x \ne 1$ or $(y, x) \mapsto (x, 1)$ if $x = 1$. In other words, $(y, x) \mapsto (x, \delta_{x, 1})$ for all $x\in I$. However, that contradicts the fact that the composition
       $$\begin{align*}
       I & \overset{y \times \id}\longrightarrow N\times I \to I\times I \overset{p_2}\longrightarrow I, \\
       x & \mapsto (y, x) \mapsto (x, \delta_{x,1}) \mapsto \delta_{x,1},
