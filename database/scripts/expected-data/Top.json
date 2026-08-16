@@ -73,7 +73,7 @@
 	"multi-initial object": true,
 	"cocartesian cofiltered limits": true,
 	"countably distributive": true,
-	"natural numbers object": true,
+	"parametrized natural numbers object": true,
 	"filtered-colimit-stable monomorphisms": true,
 	"quotients of congruences": true,
 	"coquotients of cocongruences": true,
