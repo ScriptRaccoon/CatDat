@@ -54,11 +54,8 @@ unsatisfied_properties:
   - property: countable
     proof: This is trivial.
 
-  - property: parametrized natural numbers object
-    proof: >-
-      If $(N,z,s)$ is a parametrized natural numbers object, then
-      $$1 \xrightarrow{z} N \xleftarrow{s} N$$
-      is a coproduct cocone by <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, Part A, Lemma 2.5.5. But there is no finite set $N$ with $N \cong 1 + N$.
+  - property: natural numbers object
+    proof: By Lemma 2 <a href="/content/natural_number_objects">here</a>, if $(N,z,s)$ is a natural numbers object, then $N \cong 1 \sqcup N$. But there is no finite set with this property.
 
 special_objects:
   initial object:
