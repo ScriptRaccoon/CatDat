@@ -55,7 +55,7 @@ unsatisfied_properties:
       Alternatively, the claim follows from <a href="/content/topos-with-generator">this result</a>.
 
   - property: natural numbers object
-    proof: By Lemma 2 <a href="/content/natural_number_objects">here</a>, if $(N,z,s)$ is a natural numbers object, then $N \cong 1 \sqcup N$. But there is no combinatorial species $N$ with this property, since evaluating this isomorphism at, say, $\varnothing$, would yield a finite set $N$ with this property.
+    proof: By Lemma 2 <a href="/content/natural_numbers_objects">here</a>, if $(N,z,s)$ is a natural numbers object, then $N \cong 1 \sqcup N$. But there is no combinatorial species $N$ with this property, since evaluating this isomorphism at, say, $\varnothing$, would yield a finite set $N$ with this property.
 
 special_objects:
   initial object:

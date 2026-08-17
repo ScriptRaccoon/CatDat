@@ -55,7 +55,7 @@ unsatisfied_properties:
     proof: This is trivial.
 
   - property: natural numbers object
-    proof: By Lemma 2 <a href="/content/natural_number_objects">here</a>, if $(N,z,s)$ is a natural numbers object, then $N \cong 1 \sqcup N$. But there is no finite set with this property.
+    proof: By Lemma 2 <a href="/content/natural_numbers_objects">here</a>, if $(N,z,s)$ is a natural numbers object, then $N \cong 1 \sqcup N$. But there is no finite set with this property.
 
 special_objects:
   initial object:

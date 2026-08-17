@@ -47,9 +47,15 @@ is a coproduct cocone. Thus, $N \cong 1 \sqcup N$.
 
 _Proof._ Let $a : 1 \to X$ and $b : N \to X$ be morphisms. We need to show that there is a unique morphism $c : N \to X$ satisfying $c(z) = a$ and $c(s(n)) = b(n)$. This follows by applying Lemma 1 to the morphism $g : N \times X \to X$ defined by $g(n,x) \coloneqq b(n)$. <span class="qed">$\square$</span>
 
+::: Lemma 3
+Let $1$ be a terminal object in a category. Then $(1,\id_1,\id_1)$ is a natural numbers object if and only if for every endomorphism $g : X \to X$ and every morphism $a : 1 \to X$ we have $g \circ a = a$. If the category has finite products, $(1,\id_1,\id_1)$ is a parametrized natural numbers object if and only if $g = \id_X$ for every endomorphism $g : X \to X$, i.e. the category is [one-way](/category-property/one-way).
+:::
+
+_Proof._ This first statement is immediate from the definition of a natural numbers of object. For the second, $(1,\id_1,\id_1)$ is a parametrized natural numbers object if and only if for all morphisms $f : A \to X$ and all endomorphisms $g : X \to X$ there is a unique morphism $\Phi : A \to X$ such that $\Phi \circ \id_A = f$ and $\Phi \circ \id_A = g \circ \Phi$. But these equations simplify to $\Phi = f$ and $f = g \circ f$. Since this must hold for all $f : A \to X$, we must have $g = \id_X$ (by the Yoneda Lemma or a direct argument). <span class="qed">$\square$</span>
+
 Next, we prove a partial converse of the [result](/category-implication/parametrized_nno_criterion) that countably distributive categories have a parametrized natural numbers object.
 
-::: Lemma 3
+::: Lemma 4
 Let $\C$ be a category with finite products, countable copowers denoted $\otimes$, and a parametrized natural numbers object $1 \xrightarrow{z} N \xrightarrow{s} N$. Then there is an isomorphism $N \cong \IN \otimes 1$, and for every object $A$ the natural morphism
 $$\alpha : \IN \otimes A \to A \times (\IN \otimes 1)$$
 is a split monomorphism.

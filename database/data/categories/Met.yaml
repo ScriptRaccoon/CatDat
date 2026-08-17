@@ -145,7 +145,7 @@ unsatisfied_properties:
     label: met_no_filtered_colimit_stable_monos
 
   - property: natural numbers object
-    proof: By Lemma 2 <a href="/content/natural_number_objects">here</a>, if $(N,z,s)$ is a natural numbers object, then $N \cong 1 \sqcup N$. Since there is a map $1 \to N$, we have $N \neq \varnothing$. However, the coproduct of two non-empty metric spaces does not exist, see <a href="https://math.stackexchange.com/questions/1778408" target="_blank">MSE/1778408</a>.
+    proof: By Lemma 2 <a href="/content/natural_numbers_objects">here</a>, if $(N,z,s)$ is a natural numbers object, then $N \cong 1 \sqcup N$. Since there is a map $1 \to N$, we have $N \neq \varnothing$. However, the coproduct of two non-empty metric spaces does not exist, see <a href="https://math.stackexchange.com/questions/1778408" target="_blank">MSE/1778408</a>.
 
   - property: effective congruences
     proof: 'Any kernel pair of $h : X \to Z$ in $\Met$ corresponds to a closed subset of $X\times X$. However, there are plenty of non-closed congruences, such as $\Delta \cup (\IQ \times \IQ) \subseteq \IR \times \IR$ with the subspace metric.'

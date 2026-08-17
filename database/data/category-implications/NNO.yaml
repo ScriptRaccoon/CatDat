@@ -60,14 +60,14 @@
     - strict terminal object
   conclusions:
     - natural numbers object
-  proof: 'Let $1$ be a strict terminal object. Then $(1,\id_1,\id_1)$ is a natural numbers object: If $a : 1 \to X$, $g : X \to X$ are given, then $a$ must be an isomorphism, so that $X$ is terminal. In particular, $g = \id_X$. Then $\Phi \coloneqq a$ is the unique morphism $\Phi : 1 \to X$ satisfying $\Phi \circ \id_1 = a$ and $\Phi \circ \id_1 = g \circ \Phi$.'
+  proof: 'Let $1$ be a strict terminal object. For every endomorphism $g : X \to X$ and every morphism $a : 1 \to X$ we have $g \circ a = a$, because $a$ is an isomorphism, so that $X$ is terminal, forcing $g = \id_X$. Therefore, $(1,\id_1,\id_1)$ is a natural numbers object by Lemma 3 <a href="/content/natural_numbers_objects">here</a>.'
 
 - id: pointed_has_nno
   assumptions:
     - pointed
   conclusions:
     - natural numbers object
-  proof: If $0$ is a zero object, then it is easy to check that $(0, \id_0, \id_0)$ is a natural numbers object.
+  proof: If $0$ is a zero object, then it is easy to check that $(0, \id_0, \id_0)$ is a natural numbers object; one can also derive this from Lemma 3 <a href="/content/natural_numbers_objects">here</a>.
 
 - id: one_way_implies_nno
   assumptions:
@@ -75,7 +75,7 @@
     - one-way
   conclusions:
     - natural numbers object
-  proof: 'Let $1$ be a terminal object in a one-way category. Then $(1,\id_1,\id_1)$ is a natural numbers object: If $a : 1 \to X$, $g : X \to X$ are given, then $g = \id_X$ is forced. Then $\Phi \coloneqq a$ is the unique morphism $\Phi : 1 \to X$ satisfying $\Phi \circ \id_1 = a$ and $\Phi \circ \id_1 = g \circ \Phi$.'
+  proof: This follows from Lemma 3 <a href="/content/natural_numbers_objects">here</a>.
 
 - id: one_way_implies_parametrized_nno
   assumptions:
@@ -83,7 +83,7 @@
     - one-way
   conclusions:
     - parametrized natural numbers object
-  proof: 'If $1$ denotes the terminal object, then the triple $(1, \id_1, \id_1)$ is a parametrized natural numbers object: If $f : A \to X$ and $g : X \to X$ are given, then $g = \id_X$ is forced, and $\Phi \coloneqq f : A \to X$ is the unique morphism satisfying the requirements.'
+  proof: This follows from Lemma 3 <a href="/content/natural_numbers_objects">here</a>.
 
 - id: parametrized_nno_criterion
   assumptions:
@@ -106,4 +106,4 @@
     - strict terminal object
   conclusions:
     - one-way
-  proof: 'Let $(N,z,s)$ be a parametrized natural numbers object. By assumption, $z : 1 \to N$ is an isomorphism. Therefore, the terminal object $1$ is a parametrized natural numbers object with $z = \id_1$ and $s = \id_1$. This precisely means that for all $f : A \to X$ and $g : X \to X$ there is a unique $\Phi : A \to X$ with $\Phi = f$ and $\Phi = g \circ \Phi$. In other words, we have $f = g \circ f$, and therefore $g = \id_X$ (take $f = \id_X$), which proves the claim. (From here one can further deduce that the category is thin.)'
+  proof: 'Let $(N,z,s)$ be a parametrized natural numbers object. By assumption, $z : 1 \to N$ is an isomorphism. Hence, $(1,\id_1,\id_1)$ is a parametrized natural numbers object. Now the claim follows from Lemma 3 <a href="/content/natural_numbers_objects">here</a>.'

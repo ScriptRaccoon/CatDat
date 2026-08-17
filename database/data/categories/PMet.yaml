@@ -111,7 +111,7 @@ unsatisfied_properties:
     proof: The coproduct of two non-empty pseudo-metric spaces does not exist, see <a href="https://math.stackexchange.com/questions/1778408" target="_blank">MSE/1778408</a> (the proof also works for pseudo-metric spaces). For example, the copower $\IR \sqcup \IR$ does not exist. We only get coproducts when allowing $\infty$ as a distance.
 
   - property: natural numbers object
-    proof: By Lemma 2 <a href="/content/natural_number_objects">here</a>, if $(N,z,s)$ is a natural numbers object, then $N \cong 1 \sqcup N$. Since there is a map $1 \to N$, we have $N \neq \varnothing$. However, the coproduct of two non-empty pseudo-metric spaces does not exist, see <a href="https://math.stackexchange.com/questions/1778408" target="_blank">MSE/1778408</a>.
+    proof: By Lemma 2 <a href="/content/natural_numbers_objects">here</a>, if $(N,z,s)$ is a natural numbers object, then $N \cong 1 \sqcup N$. Since there is a map $1 \to N$, we have $N \neq \varnothing$. However, the coproduct of two non-empty pseudo-metric spaces does not exist, see <a href="https://math.stackexchange.com/questions/1778408" target="_blank">MSE/1778408</a>.
 
   - property: effective cocongruences
     proof: 'The proof is similar to the one for <a href="/category/Top">$\Top$</a>: Equip a two-point set with the zero metric; this pseudo-metric space represents the functor taking a pseudo-metric space to the pairs of points with $d(x,y) = 0$. In this case, once you conclude $Z = \varnothing$, the map $h : Z \to 1$ does not have any cokernel pair, since that would have to be a coproduct $1+1$, which does not exist.'
