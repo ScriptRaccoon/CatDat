@@ -84,9 +84,9 @@ unsatisfied_properties:
       $$x_{n_1} * \cdots * x_{n_s}$$
       with $x_i \in A_i$ and $n_i \neq n_{i+1}$, and we have
       $$\alpha(x_{n_1} * \cdots * x_{n_s}) = (x_{n_1} \cdots x_{n_s}, n_1 * \cdots * n_s).$$
-      In particular, if $A$ has two non-equal commuting elements $x,y$ (for example, if $A$ is any non-trivial monoid), we have
-      $$\alpha(y_0 x_0) = \alpha(x_0 y_0),$$
-      showing that $\alpha$ is not injective.
+      In particular, if $A$ has distinct commuting elements $x,y$ (for example, if $A$ is any non-trivial monoid), we have
+      $$\alpha(x_0 y_1) = \alpha(y_0 x_1),$$
+      where $x_i$ (resp. $y_i$) denotes the image of $x$ (resp. $y$) in the copy $A_i$. This shows that $\alpha$ is not injective.
 
   - property: coregular
     proof: >-
