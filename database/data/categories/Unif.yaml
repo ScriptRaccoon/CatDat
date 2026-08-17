@@ -125,7 +125,7 @@ unsatisfied_properties:
     proof: >-
       We equip $[0,1]$ with the usual metric, which induces a uniform structure in the usual way: for $\varepsilon > 0$, we have the basic entourage $U_{\varepsilon} \coloneqq \{(r,s) \in [0,1]^2 : |r-s| < \varepsilon\}$. We equip the set $\IN$ with the discrete uniform structure (i.e., every reflexive relation is an entourage). This uniform space is isomorphic to the coproduct of one-point spaces $\coprod_{n \in \IN} 1$.
 
-      If there were a parametrized natural numbers object, then by <a href="/content/nno_distributive_criterion">this result</a> the canonical map
+      If there were a parametrized natural numbers object, then by Lemma 3 <a href="/content/natural_number_objects">here</a>, the canonical map
       $$\textstyle\coprod_{n \in \IN} [0,1] \to [0,1] \times \coprod_{n \in \IN} 1 \cong [0,1] \times \IN$$
       would be a split monomorphism. It is certainly surjective and hence an epimorphism. Thus, it would be an isomorphism.
 
