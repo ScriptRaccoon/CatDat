@@ -71,13 +71,7 @@ unsatisfied_properties:
   - property: skeletal
     proof: This is trivial.
 
-  - property: one-way
-    proof: There are three different order-preserving maps $\{0 < 1\} \to \{0 < 1\}$.
-
   - property: countable
-    proof: This is trivial.
-
-  - property: strict terminal object
     proof: This is trivial.
 
   - property: sequential limits
