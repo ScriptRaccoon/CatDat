@@ -88,6 +88,9 @@ unsatisfied_properties:
     proof: 'Consider the (non-empty) ordered set $[n] \coloneqq \{0 < \cdots < n\}$ for $n \in \IN$. Assume the sequence of inclusion maps $[0] \hookrightarrow [1] \hookrightarrow [2] \hookrightarrow \cdots$ has a colimit $(f_n : [n] \to X)$ in $\FinOrd$. Let $n_0 \geq 0$ be fixed. I claim that $f_{n_0}$ is injective, which will then yield a contradiction by taking $n_0 \geq \card(X)$. For $n \geq 0$ define $g_n : [n] \to [n_0]$ as follows. For $n \leq n_0$ it is the inclusion, and for $n \geq n_0$ it is the surjection which keeps all elements of $[n_0]$ and maps all other elements to $n_0$. Observe that $g_n$ preserves the order and $g_{n+1} |_{[n]} = g_n$. Hence, there is a unique order-preserving map $g : X \to [n_0]$ with $g \circ f_n = g_n$ for all $n$. For $n = n_0$ this shows $g \circ f_{n_0} = \id_{[n_0]}$, and $f_{n_0}$ is injective.'
     label: finord_no_sequential_colimits
 
+  - property: natural numbers object
+    proof: 'Assume that there is a natural numbers object $(N,z,s)$, where $z \in N$ and $s : N \to N$. Let $d \coloneqq \card(N)$. Consider the finite ordered set $X \coloneqq \{1 < \dotsc < d+1\}$ and the order-preserving map $g : X \to X$ defined by $g(k) \coloneqq k + 1$ for $k \leq d$ and $g(d+1) \coloneqq d+1$. By the universal property of $(N,z,s)$, there is a unique order-preserving map $\Phi : N \to X$ such that $\Phi(z) = 1$ and $\Phi(s(n)) = g(\Phi(n))$ for all $n \in N$. We then have $\Phi(s(z)) = 2$, $\Phi(s^2(z)) = 3$, and so on. Formally, an induction shows that $\Phi(s^n(z)) = n+1$ for every $0 \leq n \leq d$. Thus, $\Phi$ is surjective, contradicting $\card(N) < \card(X)$.'
+
 special_objects:
   initial object:
     description: empty ordered set
