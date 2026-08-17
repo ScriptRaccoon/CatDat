@@ -54,11 +54,8 @@ unsatisfied_properties:
 
       Alternatively, the claim follows from <a href="/content/topos-with-generator">this result</a>.
 
-  - property: parametrized natural numbers object
-    proof: >-
-      If $(N,z,s)$ is a parametrized natural numbers object, then
-      $$1 \xrightarrow{z} N \xleftarrow{s} N$$
-      is a coproduct cocone by <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, Part A, Lemma 2.5.5. But there is no combinatorial species $N$ with $N \cong 1 + N$, since evaluating this at, say, $\varnothing$, would yield a finite set $N$ with this property.
+  - property: natural numbers object
+    proof: By Lemma 2 <a href="/content/natural_number_objects">here</a>, if $(N,z,s)$ is a natural numbers object, then $N \cong 1 \sqcup N$. But there is no combinatorial species $N$ with this property, since evaluating this isomorphism at, say, $\varnothing$, would yield a finite set $N$ with this property.
 
 special_objects:
   initial object:
