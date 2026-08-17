@@ -46,3 +46,31 @@ is a coproduct cocone. Thus, $N \cong 1 \sqcup N$.
 :::
 
 _Proof._ Let $a : 1 \to X$ and $b : N \to X$ be morphisms. We need to show that there is a unique morphism $c : N \to X$ satisfying $c(z) = a$ and $c(s(n)) = b(n)$. This follows by applying Lemma 1 to the morphism $g : N \times X \to X$ defined by $g(n,x) \coloneqq b(n)$. <span class="qed">$\square$</span>
+
+Next, we prove a partial converse of the [result](/category-implication/parametrized_nno_criterion) that countably distributive categories have a parametrized natural numbers object.
+
+::: Lemma 3
+Let $\C$ be a category with finite products, countable copowers denoted $\otimes$, and a parametrized natural numbers object $1 \xrightarrow{z} N \xrightarrow{s} N$. Then there is an isomorphism $N \cong \IN \otimes 1$, and for every object $A$ the natural morphism
+$$\alpha : \IN \otimes A \to A \times (\IN \otimes 1)$$
+is a split monomorphism.
+:::
+
+_Proof._
+We will use element notation extensively. In particular, for every element $a \in A$ and $n \in \IN$ there is an element $n \otimes a \in \IN \otimes A$, formally defined by the $n$th coproduct inclusion. The morphism $\alpha$ is defined by
+$$\alpha(n \otimes a) = (a , n \otimes 1).$$
+In any category with a terminal object and countable copowers, we can construct the non-parametrized NNO $\IN \otimes 1$ with the element $0 \otimes 1 \in \IN \otimes 1$ and the map
+$$s : \IN \otimes 1 \to \IN \otimes 1, \quad s(n \otimes 1) \coloneqq (n+1) \otimes 1.$$
+See [here](/category-implication/nno_criterion) for a detailed proof. Since by assumption $1 \xrightarrow{z} N \xrightarrow{s} N$ is a parametrized NNO, it is also a non-parametrized NNO and therefore isomorphic to the one described. We will assume w.l.o.g. that it is equal to it and continue to work with $N = \IN \otimes 1$.
+
+Next, we apply the parametrized universal property of the NNO to the diagram
+$$A \xrightarrow{f} \IN \otimes A \xrightarrow{g} \IN \otimes A$$
+defined by $f(a) \coloneqq 0 \otimes a$ and $g(n \otimes a) \coloneqq (n+1) \otimes a$. It tells us that there is a map
+$$\Phi : A \times N \to \IN \otimes A$$
+with
+$$\Phi(a,0 \otimes 1) = 0 \otimes a, \quad \Phi(a, s(m)) = g(\Phi(a,m)).$$
+For $m \coloneqq n \otimes 1 \in N$, where $n \in \IN$, the second equation reads
+$$\Phi(a, (n+1) \otimes 1) = g(\Phi(a, n \otimes 1)).$$
+By classical induction on $n \in \IN$ it follows that
+$$\Phi(a, n \otimes 1) = n \otimes a,$$
+which exactly means $\Phi \circ \alpha = \id_{\IN \otimes A}$.
+<span class="qed">$\square$</span>
