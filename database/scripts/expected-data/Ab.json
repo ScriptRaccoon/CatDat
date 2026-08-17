@@ -120,6 +120,7 @@
 	"extremal generating set": true,
 	"extremal cogenerator": true,
 	"extremal cogenerating set": true,
+	"natural numbers object": true,
 
 	"cartesian closed": false,
 	"locally cartesian closed": false,
