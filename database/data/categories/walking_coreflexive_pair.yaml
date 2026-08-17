@@ -64,9 +64,6 @@ satisfied_properties:
     proof: This actually holds for every truncated simplex category $\Delta^{\leq n}$. See <a href="https://mathoverflow.net/questions/510760" target="_blank">MO/510760</a> for a proof that sifted colimits exist. See <a href="https://mathoverflow.net/questions/510827" target="_blank">MO/510827</a> for a proof that every object is strongly finitely presentable.
 
 unsatisfied_properties:
-  - property: strict terminal object
-    proof: 'The morphism $i : [0] \to [1]$ from the terminal object $[0]$ is a witness.'
-
   - property: cofiltered
     proof: 'The morphisms $i,j : [0] \rightrightarrows [1]$ are not equalized by any morphism.'
 

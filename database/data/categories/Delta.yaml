@@ -81,9 +81,6 @@ satisfied_properties:
       - finset_aleph1-cofiltered-limits
 
 unsatisfied_properties:
-  - property: strict terminal object
-    proof: This is trivial.
-
   - property: cofiltered
     proof: 'The two maps $d^0,d^1 : [0] \rightrightarrows [1]$ are not equalized by any morphism.'
 
