@@ -2,7 +2,7 @@ id: N+
 name: symmetric monoidal poset of natural numbers
 notation: $(\IN,\leq,+,0)$
 underlying_category: N
-description: We view the poset $(\IN,\leq)$ as a thin category and equip it with the strict symmetric monoidal structure defined by $a \otimes b := a + b$ and the monoidal unit $0$.
+description: We view the poset $(\IN,\leq)$ as a thin category and equip it with the strict symmetric monoidal structure defined by $a \otimes b \coloneqq a + b$ and the monoidal unit $0$.
 nlab_link: https://ncatlab.org/nlab/show/monoidal+preorder
 
 tags:

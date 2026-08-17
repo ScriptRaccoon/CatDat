@@ -1,0 +1,20 @@
+id: natural numbers object
+relation: has a
+description: >-
+  A <i>natural numbers object</i> in a category with a terminal object $1$ is a triple
+  $$(N,\, z : 1 \to N,\, s : N \to N)$$
+  satisfying the following universal property: for all $a : 1 \to X$, $g : X \to X$ there is a unique $\Phi : N \to X$ such that $\Phi \circ z = a$ and $\Phi \circ s = g \circ \Phi$. In element notation, this can also be written as $\Phi(z)=a$ and $\Phi(s(n)) = g(\Phi(n))$.
+
+  This concept is an abstraction of the set of natural numbers, which indeed provides a natural numbers object for the category of sets. There is also a <a href="/category-property/parametrized_natural_numbers_object">parametrized version</a>, which is more useful in categories that are not cartesian closed. Also, the results below show that "too many" categories have a natural numbers object.
+nlab_link: https://ncatlab.org/nlab/show/natural+numbers+object
+dual: null
+invariant_under_equivalences: true
+
+related:
+  - parametrized natural numbers object
+  - elementary topos
+  - terminal object
+
+tags:
+  - topos theory
+  - object behavior
