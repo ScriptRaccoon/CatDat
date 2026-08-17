@@ -127,7 +127,7 @@ unsatisfied_properties:
 
       If there were a parametrized natural numbers object, then by Lemma 4 <a href="/content/natural_numbers_objects">here</a>, the canonical map
       $$\textstyle\coprod_{n \in \IN} [0,1] \to [0,1] \times \coprod_{n \in \IN} 1 \cong [0,1] \times \IN$$
-      would be a split monomorphism. It is certainly surjective and hence an epimorphism. Thus, it would be an isomorphism.
+      would be an isomorphism.
 
       Choose any sequence of positive numbers $\varepsilon_n > 0$ converging to $0$. Then $\coprod_{n \in \IN} U_{\varepsilon_n}$ is an entourage of $\coprod_{n \in \IN} [0,1]$. Its image in $[0,1] \times \IN$ consists of all $((r,n),(s,m))$ such that $n=m$ and $|r-s| < \varepsilon_n$. Assume, for a contradiction, that this set is an entourage of the product. Then it contains $(p_1 \times p_1)^*(U_\delta) \cap (p_2 \times p_2)^*(\Delta_{\IN})$ for some $\delta > 0$. In other words, $|r-s| < \delta$ implies $|r-s| < \varepsilon_n$ for all $n \in \IN$ and $r,s \in [0,1]$. Taking $s=0$ and $r=\delta/2$, we see that the sequence $(\varepsilon_n)$ is bounded below by $\delta/2$, contradicting the assumption that it converges to $0$.
 

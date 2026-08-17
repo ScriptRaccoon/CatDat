@@ -58,7 +58,7 @@ Next, we prove a partial converse to the [result](/category-implication/parametr
 ::: Lemma 4
 Let $\C$ be a category with finite products, countable copowers denoted $\otimes$, and a parametrized natural numbers object $1 \xrightarrow{z} N \xrightarrow{s} N$. Then there is an isomorphism $N \cong \IN \otimes 1$, and for every object $A$ the natural morphism
 $$\alpha : \IN \otimes A \to A \times (\IN \otimes 1)$$
-is a split monomorphism.
+is an isomorphism.
 :::
 
 _Proof._ We will use element notation extensively. In particular, for every element $a \in A$ and $n \in \IN$, there is an element $n \otimes a \in \IN \otimes A$, formally defined by the $n$th coproduct inclusion. The morphism $\alpha$ is defined by
@@ -79,4 +79,25 @@ $$\Phi(a,(n+1) \otimes 1) = g(\Phi(a,n \otimes 1)).$$
 By induction on $n \in \IN$, it follows that
 $$\Phi(a,n \otimes 1) = n \otimes a,$$
 which is exactly the statement that $\Phi \circ \alpha = \id_{\IN \otimes A}$.
-<span class="qed">$\square$</span>
+
+It remains to prove $\alpha \circ \Phi = \id_{A \times N}$. We first observe that
+$$\alpha \circ g = (\id_A \times s) \circ \alpha$$
+as morphisms $\IN \otimes A \to A \times (\IN \otimes 1)$. Indeed, for every $n \otimes a \in \IN \otimes A$,
+$$\alpha(g(n \otimes a)) = \alpha((n+1) \otimes a) = (a, (n+1) \otimes 1),$$
+while
+$$(\id_A \times s)(\alpha(n \otimes a)) = (\id_A \times s)(a, n \otimes 1) = (a, (n+1) \otimes 1).$$
+The universal property applied to the diagram
+$$A \xrightarrow{(\id_A,z)} A \times N \xrightarrow{\id_A \times s} A \times N$$
+shows that there is a _unique_ morphism $\Psi : A \times N \to A \times N$ satisfying
+$$\Psi \circ (\id_A,z) = (\id_A,z)$$
+and
+$$\Psi \circ (\id_A \times s) = (\id_A \times s) \circ \Psi,$$
+namely $\id_{A \times N}$. Thus, it suffices to verify that $\alpha \circ \Phi : A \times N \to A \times N$ satisfies these two equations. We have
+$$\alpha(\Phi(a,z)) = \alpha(0 \otimes a) = (a, 0 \otimes 1) = (a,z),$$
+and hence $\alpha \circ \Phi \circ (\id_A,z) = (\id_A,z)$. Moreover,
+$$\alpha \circ \Phi \circ (\id_A \times s) = \alpha \circ g \circ \Phi = (\id_A \times s) \circ \alpha \circ \Phi.$$
+This finishes the proof. <span class="qed">$\square$</span>
+
+_Remark._ Actually, the mentioned [result](/category-implication/parametrized_nno_criterion) and Lemma 4 can be combined into an equivalent characterization as follows: In a category with finite products and countable copowers, the NNO (which exists, see [here](/category-implication/nno_criterion)) is a parametrized NNO if and only if for all objects $A$ the canonical morphism
+$$\textstyle \coprod_{n \in \IN} A = \coprod_{n \in \IN} (A \times 1) \to A \times \coprod_{n \in \IN} 1$$
+is an isomorphism. This is the precise connection to countable distributivity.
