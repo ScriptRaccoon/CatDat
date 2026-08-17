@@ -2,11 +2,11 @@ id: walking_coreflexive_pair
 name: walking coreflexive pair
 notation: $\Delta^{\leq 1}$
 objects: two objects $[0]$ and $[1]$
-morphisms: 'the identities, two morphisms $i,j : [0] \rightrightarrows [1]$, a morphism $p : [1] \to [0]$ with $p i = p j = \id_{[0]}$, and the two idempotent morphisms $ip, jp : [1] \to [1]$.'
+morphisms: 'the identities, two morphisms $i,j : [0] \rightrightarrows [1]$, a morphism $p : [1] \to [0]$ with $p i = p j = \id_{[0]}$, and the two idempotent morphisms $ip, jp : [1] \rightrightarrows [1]$.'
 description: >-
   This category is equal to the truncated simplex category $\Delta^{\leq 1}$, i.e. the full subcategory of $\Delta$ spanned by $[0] = \{0\}$ and $[1] = \{0 < 1\}$; this also explains our notation of the category and its objects.
   $$[0] \begin{array}{c} \xhookrightarrow{~~i~~} \\ \xtwoheadleftarrow{~~p~~} \\ \xhookrightarrow{~~j~~} \end{array} [1]$$
-  The morphisms $i,j$ are the two inclusions, $p$ is their unique retraction, and $ip,jp : [1] \to [1]$ are the two constant maps. The name of this category comes from the fact that a functor $\Delta^{\leq 1} \to \C$ is the same as a <a href="https://ncatlab.org/nlab/show/reflexive+pair" target="_blank">coreflexive pair</a> in $\C$. Its dual is therefore the walking reflexive pair.
+  The morphisms $i,j$ are the two inclusions, $p$ is their unique retraction, and $ip,jp : [1] \rightrightarrows [1]$ are the two constant maps. The name of this category comes from the fact that a functor $\Delta^{\leq 1} \to \C$ is the same as a <a href="https://ncatlab.org/nlab/show/reflexive+pair" target="_blank">coreflexive pair</a> in $\C$. Its dual is therefore the walking reflexive pair.
 nlab_link: null
 tags:
   - category theory
@@ -76,13 +76,16 @@ unsatisfied_properties:
   - property: pushouts
     proof: Assume that $[1] \xleftarrow{i} [0] \xrightarrow{i} [1]$ has a pushout in $\Delta^{\leq 1}$, where $i(0)=0$. This amounts to a universal totally ordered set of cardinality $\leq 2$ with elements $a,b,c$ satisfying $a \leq b$, $a \leq c$. Since a finite totally ordered set has trivial automorphism group, the automorphism defined by $a \mapsto a$, $b \mapsto c$, $c \mapsto b$ must be the identity, i.e., we have $b = c$. However, in $[1]$ the equations $0 \leq 0$, $0 \leq 1$ then show that the universal property fails.
 
+  - property: natural numbers object
+    proof: 'We work with the representation of this category as the full subcategory of $\FinOrd$ consisting of $\{0\}$ and $\{0 < 1\}$. First, the terminal object $\{0\}$ cannot be the underlying object of a natural numbers object: otherwise, by Lemma 3 <a href="/content/natural_numbers_objects">here</a> and the fact that $\{0\}$ is a generator, every endomorphism in the category would be the identity, which is not the case. It remains to show that $(\{0 < 1\}, z, s)$ is not a natural numbers object for any choice of $z \in \{0,1\}$ and $s : \{0 < 1\} \to \{0 < 1\}$. Using the isomorphism of the category that swaps the two morphisms $\{0\} \rightrightarrows \{0 < 1\}$, we may assume that $z = 0$. Every subobject of $\{0 < 1\}$ that contains $0$ and is closed under $s$ is also a natural numbers object and hence must be equal to $\{0 < 1\}$. It follows that $\{0,1\} = \{0,s(0),s^2(0),\dotsc\}$ as sets. In particular, $s(0) \neq 0$, so $s(0) = 1$. (We do not need to determine $s(1)$.) Now apply the universal property to the element $1 \in \{0 < 1\}$ and the zero map $\{0 < 1\} \to \{0 < 1\}$, $n \mapsto 0$. We obtain an order-preserving map $p : \{0 < 1\} \to \{0 < 1\}$ satisfying $p(0) = 1$ and $p(s(n)) = 0$. Thus, $p(1) = p(s(0)) = 0$, so $p(0) > p(1)$, contradicting the fact that $p$ is order-preserving.'
+
   - property: multi-complete
     # TODO: remove this manual proof once locally multi-presentable is dualized, cf. #139
     proof: 'This follows directly from existing results: If its dual, the walking reflexive pair, was multi-cocomplete, then since it is also accessible, it would be <a href="/category-property/locally_multi-presentable">locally multi-presentable</a>. But then it would have connected limits, in particular pullbacks.'
 
 special_objects:
   terminal object:
-    description: $[1]$
+    description: $[0]$
 
 special_morphisms:
   monomorphisms:
