@@ -80,7 +80,7 @@ unsatisfied_properties:
     proof: >-
       Assume that a parametrized natural numbers object exists. Then by Lemma 4 <a href="/content/natural_numbers_objects">here</a>, for every semigroup $A$ the natural homomorphism
       $$\textstyle\alpha : \coprod_{n \geq 0} A \to A \times \coprod_{n \geq 0} 1$$
-      is a split monomorphism. But this is not true: For each $n \geq 0$ let $A_n$ denote a copy of $A$. The elements of the coproduct in $\alpha$'s domain have a unique representation as
+      is an isomorphism. But this is not true: For each $n \geq 0$ let $A_n$ denote a copy of $A$. The elements of the coproduct in $\alpha$'s domain have a unique representation as
       $$x_{n_1} * \cdots * x_{n_s}$$
       with $x_i \in A_i$ and $n_i \neq n_{i+1}$, and we have
       $$\alpha(x_{n_1} * \cdots * x_{n_s}) = (x_{n_1} \cdots x_{n_s}, n_1 * \cdots * n_s).$$
