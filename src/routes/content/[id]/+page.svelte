@@ -100,6 +100,11 @@
 				float: right;
 				margin-left: 0.5rem;
 			}
+
+			:global(.qed-clear) {
+				display: block;
+				clear: both;
+			}
 		}
 
 		:global(pre) {
