@@ -14,5 +14,6 @@ Let $\C$ be a category with a faithful functor $U: \C \to \Set$. Assume there ex
 Then $\C$ does not have a cogenerating set.
 :::
 
-_Proof._
-Assume that there is a cogenerating set $S$. By assumption (2) there is an object $X \in \F$ such that $U(X)$ is larger than all the $U(Y)$ with $Y \in S$ (w.r.t. cardinalities) and which has a non-identity endomorphism $\sigma : X \to X$. Since $S$ cogenerates, there is a morphism $f : X \to Y$ with $Y \in S$ and $f \sigma \neq f$. For this, $Y$ must be non-terminal. By (1) the map $U(f) : U(X) \to U(Y)$ is injective. This is a contradiction. <span class="qed">$\square$</span>
+::: Proof
+Assume that there is a cogenerating set $S$. By assumption (2) there is an object $X \in \F$ such that $U(X)$ is larger than all the $U(Y)$ with $Y \in S$ (w.r.t. cardinalities) and which has a non-identity endomorphism $\sigma : X \to X$. Since $S$ cogenerates, there is a morphism $f : X \to Y$ with $Y \in S$ and $f \sigma \neq f$. For this, $Y$ must be non-terminal. By (1) the map $U(f) : U(X) \to U(Y)$ is injective. This is a contradiction.
+:::

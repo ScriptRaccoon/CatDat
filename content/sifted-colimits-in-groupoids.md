@@ -15,7 +15,7 @@ Let $\C$ be a category. Let $D : \I \to \C$ be a sifted diagram which is constan
 
 In particular, every groupoid has sifted colimits.
 
-_Proof._
+::: Proof
 For every $i \in \I$, define a morphism $u_i : D(i) \to D(i_0)$ as follows. Choose a cospan
 
 $$i \xrightarrow{a} k \xleftarrow{b} i_0,$$
@@ -52,13 +52,14 @@ We check that $v_i = h u_i$ for every $i \in \I$. Choose a cospan $i \xrightarro
 
 $$h u_i = v_{i_0} D(b)^{-1} D(a) = v_k D(a) = v_i.$$
 
-Moreover, $h$ is uniquely determined: if $v_i = h u_i$ for all $i \in \I$, then for $i = i_0$ we obtain $v_{i_0} = h$. <span class="qed">$\square$</span>
+Moreover, $h$ is uniquely determined: if $v_i = h u_i$ for all $i \in \I$, then for $i = i_0$ we obtain $v_{i_0} = h$.
+:::
 
 ::: Corollary 2
 Let $\C$ be a category with the property that every sifted diagram is eventually constant (for example, a groupoid). Then every object $X \in \C$ is strongly finitely presentable, i.e. the functor $\Hom(X,-) : \C \to \Set$ preserves sifted colimits.
 :::
 
-_Proof._
+::: Proof
 Let $D : \I \to \C$ be a diagram and choose $i_0 \in \I$ such that $D$ is constant after $i_0$. We obtain a commutative diagram:
 
 $$
@@ -69,19 +70,22 @@ $$
 \end{CD}
 $$
 
-The top horizontal map is the identity. By Lemma 1 applied to $D$, the right vertical map is an isomorphism. By Lemma 2 applied to the diagram $\Hom(X,D(-))$ in $\Set$, the left vertical map is an isomorphism. Hence the bottom horizontal map is an isomorphism. <span class="qed">$\square$</span>
+The top horizontal map is the identity. By Lemma 1 applied to $D$, the right vertical map is an isomorphism. By Lemma 2 applied to the diagram $\Hom(X,D(-))$ in $\Set$, the left vertical map is an isomorphism. Hence the bottom horizontal map is an isomorphism.
+:::
 
 ::: Corollary 3
 Let $\C$ be an essentially small category in which every sifted diagram is eventually constant. Then $\C$ is a [generalized variety](/category-property/generalized_variety).
 :::
 
-_Proof._
-This follows directly from Lemma 1 and Corollary 2. <span class="qed">$\square$</span>
+::: Proof
+This follows directly from Lemma 1 and Corollary 2.
+:::
 
 ::: Corollary 4
 Let $\C$ be an essentially small category in which every sifted diagram is eventually constant.
 Then $\C$ is [finitely accessible](/category-property/finitely_accessible).
 :::
 
-_Proof._
-Since sifted colimits exist, filtered colimits also exist. Moreover, every object is strongly finitely presentable and therefore also finitely presentable. <span class="qed">$\square$</span>
+::: Proof
+Since sifted colimits exist, filtered colimits also exist. Moreover, every object is strongly finitely presentable and therefore also finitely presentable.
+:::

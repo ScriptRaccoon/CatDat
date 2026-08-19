@@ -15,5 +15,6 @@ Let $\C$ be a pointed category with a faithful functor $U: \C \to \Set$. Assume 
 Then $\C$ does not have a cogenerator.
 :::
 
-_Proof._
-Assume that there is a cogenerator $Y$. By assumption (2) there is an object $X \in \F$ such that $U(X)$ is larger than $U(Y)$ (w.r.t. cardinalities). Since $0,\id_X : X \rightrightarrows X$ are distinct, there is a morphism $f : X \to Y$ with $f \neq 0$. But then $U(f) : U(X) \to U(Y)$ is injective by assumption (1), which contradicts our choice of $X$. <span class="qed">$\square$</span>
+::: Proof
+Assume that there is a cogenerator $Y$. By assumption (2) there is an object $X \in \F$ such that $U(X)$ is larger than $U(Y)$ (w.r.t. cardinalities). Since $0,\id_X : X \rightrightarrows X$ are distinct, there is a morphism $f : X \to Y$ with $f \neq 0$. But then $U(f) : U(X) \to U(Y)$ is injective by assumption (1), which contradicts our choice of $X$.
+:::
