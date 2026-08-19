@@ -75,6 +75,59 @@ md.block.ruler.before(
 	}
 )
 
+// add proof environments
+md.block.ruler.before(
+	'fence',
+	'proof_environment',
+	(state, start_line, end_line, silent) => {
+		const start = state.bMarks[start_line] + state.tShift[start_line]
+		const max = state.eMarks[start_line]
+		const line = state.src.slice(start, max).trim()
+
+		if (!/^:::\s*Proof$/i.test(line)) return false
+
+		let next_line = start_line + 1
+
+		while (next_line < end_line) {
+			const nStart = state.bMarks[next_line] + state.tShift[next_line]
+			const nEnd = state.eMarks[next_line]
+			const text = state.src.slice(nStart, nEnd).trim()
+
+			if (text === ':::') break
+			next_line++
+		}
+
+		if (silent) return true
+
+		const open = state.push('html_block', '', 0)
+		open.content = `<div class="proof">`
+
+		const token_start = state.tokens.length
+
+		state.md.block.tokenize(state, start_line + 1, next_line)
+
+		const proof_tokens = state.tokens.slice(token_start)
+
+		const first_inline = proof_tokens.find((token) => token.type === 'inline')
+
+		const last_inline = [...proof_tokens].findLast((token) => token.type === 'inline')
+
+		if (first_inline) {
+			first_inline.content = `<span class="proof-title">Proof.</span> ${first_inline.content}`
+		}
+
+		if (last_inline) {
+			last_inline.content += ` <span class="qed">${render_formula('\\square')}</span>`
+		}
+
+		const close = state.push('html_block', '', 0)
+		close.content = `</div>`
+
+		state.line = next_line + 1
+		return true
+	}
+)
+
 /**
  * Replaces the math formulas in a markdown text with placeholders and
  * returns a dictionary with the rendered formulas.

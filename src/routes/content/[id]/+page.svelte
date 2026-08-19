@@ -91,12 +91,15 @@
 			}
 		}
 
-		:global(span.qed) {
-			float: right;
-		}
+		:global(.proof) {
+			:global(.proof-title) {
+				font-style: italic;
+			}
 
-		:global(p:has(span.qed:only-child)) {
-			height: 1lh;
+			:global(.qed) {
+				float: right;
+				margin-left: 0.5rem;
+			}
 		}
 
 		:global(pre) {
