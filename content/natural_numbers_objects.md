@@ -21,7 +21,8 @@ N \times X @>>{g}> X
 \end{CD}
 $$
 
-_Proof._ Define the morphism $b : 1 \to N \times X$ by $b \coloneqq (z,a)$ and the morphism $h : N \times X \to N \times X$ by $h(n,x) \coloneqq (n,g(n,x))$. By the universal property of $(N,z,s)$, there is a unique morphism $\Psi : N \to N \times X$ such that:
+::: Proof
+Define the morphism $b : 1 \to N \times X$ by $b \coloneqq (z,a)$ and the morphism $h : N \times X \to N \times X$ by $h(n,x) \coloneqq (n,g(n,x))$. By the universal property of $(N,z,s)$, there is a unique morphism $\Psi : N \to N \times X$ such that:
 
 - $\Psi(z) = b$
 - $\Psi(s(n)) = h(\Psi(n))$
@@ -33,7 +34,8 @@ Write $\Psi(n) = (\Psi_0(n),\Psi_1(n))$, where $\Psi_0 : N \to N$ and $\Psi_1 : 
 - $\Psi_1(z) = a$
 - $\Psi_1(s(n)) = g(\Psi_0(n),\Psi_1(n))$
 
-The uniqueness in the universal property of $(N,z,s)$ implies $\Psi_0 = \id_N$. Therefore, $\Phi \coloneqq \Psi_1$ is the unique morphism $\Phi : N \to X$ satisfying $\Phi(z)=a$ and $\Phi(s(n)) = g(n,\Phi(n))$. <span class="qed">$\square$</span>
+The uniqueness in the universal property of $(N,z,s)$ implies $\Psi_0 = \id_N$. Therefore, $\Phi \coloneqq \Psi_1$ is the unique morphism $\Phi : N \to X$ satisfying $\Phi(z)=a$ and $\Phi(s(n)) = g(n,\Phi(n))$.
+:::
 
 The next result appears in [Johnstone](https://ncatlab.org/nlab/show/Sketches+of+an+Elephant), Part A, Lemma 2.5.5. Our proof is slightly more concise because we have extracted Lemma 1.
 
@@ -43,7 +45,9 @@ $$1 \xrightarrow{z} N \xleftarrow{s} N$$
 is a coproduct cocone. Thus, $N \cong 1 \sqcup N$.
 :::
 
-_Proof._ Let $a : 1 \to X$ and $b : N \to X$ be morphisms. We need to show that there is a unique morphism $c : N \to X$ satisfying $c(z) = a$ and $c(s(n)) = b(n)$. This follows by applying Lemma 1 to the morphism $g : N \times X \to X$ defined by $g(n,x) \coloneqq b(n)$. <span class="qed">$\square$</span>
+::: Proof
+Let $a : 1 \to X$ and $b : N \to X$ be morphisms. We need to show that there is a unique morphism $c : N \to X$ satisfying $c(z) = a$ and $c(s(n)) = b(n)$. This follows by applying Lemma 1 to the morphism $g : N \times X \to X$ defined by $g(n,x) \coloneqq b(n)$.
+:::
 
 Next, we will check when the terminal object $1$ itself is a natural numbers object. In that case, $z : 1 \to 1$ and $s : 1 \to 1$ are necessarily equal to $\id_1$.
 
@@ -51,7 +55,9 @@ Next, we will check when the terminal object $1$ itself is a natural numbers obj
 Let $1$ be a terminal object in a category. Then $(1,\id_1,\id_1)$ is a natural numbers object if and only if for every endomorphism $g : X \to X$ and every morphism $a : 1 \to X$ we have $g \circ a = a$. If the category has finite products, $(1,\id_1,\id_1)$ is a parametrized natural numbers object if and only if $g = \id_X$ for every endomorphism $g : X \to X$, i.e. the category is [one-way](/category-property/one-way).
 :::
 
-_Proof._ The first statement is immediate from the definition of a natural numbers object. For the second, $(1,\id_1,\id_1)$ is a parametrized natural numbers object if and only if, for all morphisms $f : A \to X$ and all endomorphisms $g : X \to X$, there is a unique morphism $\Phi : A \to X$ such that $\Phi \circ \id_A = f$ and $\Phi \circ \id_A = g \circ \Phi$. These equations simplify to $\Phi = f$ and $f = g \circ f$. Since this must hold for every $f : A \to X$, we must have $g = \id_X$ (by the Yoneda Lemma or by a direct argument). <span class="qed">$\square$</span>
+::: Proof
+The first statement is immediate from the definition of a natural numbers object. For the second, $(1,\id_1,\id_1)$ is a parametrized natural numbers object if and only if, for all morphisms $f : A \to X$ and all endomorphisms $g : X \to X$, there is a unique morphism $\Phi : A \to X$ such that $\Phi \circ \id_A = f$ and $\Phi \circ \id_A = g \circ \Phi$. These equations simplify to $\Phi = f$ and $f = g \circ f$. Since this must hold for every $f : A \to X$, we must have $g = \id_X$ (by the Yoneda Lemma or by a direct argument).
+:::
 
 Next, we prove a partial converse to the [result](/category-implication/parametrized_nno_criterion) that countably distributive categories have a parametrized natural numbers object.
 
@@ -61,7 +67,8 @@ $$\alpha : \IN \otimes A \to A \times (\IN \otimes 1)$$
 is an isomorphism.
 :::
 
-_Proof._ We will use element notation extensively. In particular, for every element $a \in A$ and $n \in \IN$, there is an element $n \otimes a \in \IN \otimes A$, formally defined by the $n$th coproduct inclusion. The morphism $\alpha$ is defined by
+::: Proof
+We will use element notation extensively. In particular, for every element $a \in A$ and $n \in \IN$, there is an element $n \otimes a \in \IN \otimes A$, formally defined by the $n$th coproduct inclusion. The morphism $\alpha$ is defined by
 $$\alpha(n \otimes a) = (a,n \otimes 1).$$
 
 In any category with a terminal object and countable copowers, we can construct the non-parametrized NNO $\IN \otimes 1$ with the element $0 \otimes 1 \in \IN \otimes 1$ and the map
@@ -96,7 +103,8 @@ namely $\id_{A \times N}$. Thus, it suffices to verify that $\alpha \circ \Phi :
 $$\alpha(\Phi(a,z)) = \alpha(0 \otimes a) = (a, 0 \otimes 1) = (a,z),$$
 and hence $\alpha \circ \Phi \circ (\id_A,z) = (\id_A,z)$. Moreover,
 $$\alpha \circ \Phi \circ (\id_A \times s) = \alpha \circ g \circ \Phi = (\id_A \times s) \circ \alpha \circ \Phi.$$
-This finishes the proof. <span class="qed">$\square$</span>
+This finishes the proof.
+:::
 
 _Remark._ Actually, the mentioned [result](/category-implication/parametrized_nno_criterion) and Lemma 4 can be combined into an equivalent characterization as follows: In a category with finite products and countable copowers, the NNO (which exists, see [here](/category-implication/nno_criterion)) is a parametrized NNO if and only if for all objects $A$ the canonical morphism
 $$\textstyle \coprod_{n \in \IN} A = \coprod_{n \in \IN} (A \times 1) \to A \times \coprod_{n \in \IN} 1$$

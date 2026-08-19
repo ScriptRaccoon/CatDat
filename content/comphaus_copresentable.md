@@ -15,31 +15,33 @@ We first prove a couple preliminary results.
 Let $\I$ be a cofiltered category, and let $X : \I \to \CompHaus$ be a cofiltered diagram in which $X_i$ is non-empty for each $i\in \I$. Then $\lim_{i\in \I} X_i$ is also non-empty.
 :::
 
-_Proof._
+::: Proof
 Consider the product space $\prod_{i\in \I} X_i$. Now for each morphism $f : i \to j$ in $\I$, define the subset
 
 $$\textstyle E_f \coloneqq \bigl\{ x \in \prod_{i \in \I} X_i \mid X_f(x_i) = x_j \bigr\}.$$
 
 Then each $E_f$ is a closed subset.
 Next, we prove that the collection $\{ E_f : f \in \Mor(\I) \}$ has the finite intersection property, i.e. that $\bigcap_{f\in F} E_f$ is non-empty for every finite set $F \subseteq \Mor(\I)$. For $f\in F$ we write $f : i_f \to j_f$. Then the diagram with objects $J \coloneqq \{ i_f \mid f \in F \} \cup \{ j_f \mid f \in F \}$ and morphisms $\{ f \mid f \in F \}$ has a cone with vertex $k \in \I$ and morphisms $g_i : k \to i$ for each $i \in J$. Now choose $y \in X_k$, and define $x \in \prod_{i \in \I} X_i$ such that $x_i = X_{g_i}(y)$ if $i \in J$, with arbitrary choices of $x_i \in X_i$ for all other $i$. We then see that $x \in \bigcap_{f\in F} E_f$, which finishes the proof of the claim.
-Since $\prod_{i \in \I} X_i$ is compact, that implies that the intersection of all $E_f$ is non-empty. But that intersection is precisely $\lim_{i \in \I} X_i$. <span class="qed">$\square$</span>
+Since $\prod_{i \in \I} X_i$ is compact, that implies that the intersection of all $E_f$ is non-empty. But that intersection is precisely $\lim_{i \in \I} X_i$.
+:::
 
 ::: Lemma 2
 Suppose we have a cofiltered limit $X = \lim_{i\in \I} X_i$ in $\Top$. Note the topology on $X$ is the weak topology for the projections $p_i : X \to X_i$. Then the canonical subbasis of this topology on $X$ is closed under finite intersections. Thus, it agrees with the canonical basis of the topology on $X$.
 :::
 
-_Proof._
+::: Proof
 Suppose we have a finite collection of subbasic open sets of the form $U_n = p_{i_n}^{-1}(V_n)$, $n \in \{ 1, \ldots, N \}$, where each $V_n$ is an open subset of $X_{i_n}$. Take a cone $(j, f_n : j \to i_n)$ of the objects $i_1, \ldots, i_N$. We then have
 
 $$\bigcap_{n=1}^N U_n = p_j^{-1} \left( \bigcap_{n=1}^N X_{f_n}^{-1}(V_n) \right),$$
 
-where the right hand side is again in the canonical subbasis. <span class="qed">$\square$</span>
+where the right hand side is again in the canonical subbasis.
+:::
 
 ::: Proposition 3
 The functor $\Hom({-}, [0, 1]) : \CompHaus^{\op} \to \Set$ is monadic. (Originally proved in [Dus69](#references))
 :::
 
-_Proof._
+::: Proof
 We use the crude monadicity theorem (see e.g. [SGL92](#references), Thm. IV.4.2). First, the functor has a left adjoint $S \mapsto [0, 1]^S$ with the evident isomorphism
 
 $$\Hom_{\CompHaus}\bigl(X, [0, 1]^S\bigr) \cong \Hom_{\Set}\bigl(S, \Hom_{\CompHaus}(X, [0, 1])\bigr).$$
@@ -54,7 +56,8 @@ with $r : B \to A$. We may assume that $i$ is a subspace inclusion map. We may u
 
 $$\Hom(B, [0,1]) ~\overset{f^*}{\underset{g^*}{\rightrightarrows}}~ \Hom(A, [0, 1]) \xrightarrow{i^*} \Hom(E, [0, 1])$$
 
-is a coequalizer diagram. We first define $s : \Hom(E,[0,1]) \to \Hom(A,[0,1])$ by choosing a Tietze extension of each continuous function $E \to [0,1]$. Now, for each $\varphi \in \Hom(A,[0,1])$, we can define a continuous function on $\im(f) \cup \im(g) \subseteq B$ to be $\varphi \circ r$ on $\im(f)$, and $s(i^*(\varphi))\circ r$ on $\im(g)$. Note that on the overlap $\im(f)\cap \im(g) = f(E) = g(E)$, the first expression gives $f(e) \mapsto \varphi(e)$, and the second expression gives $g(e) \mapsto s(i^*(\varphi))(e) = \varphi(e)$, so we have indeed given a well-defined function on $\im(f)\cup\im(g)$. Choosing a Tietze extension of this function to a function $B\to [0,1]$ for each $\varphi$, we get a map $t : \Hom(A,[0,1]) \to \Hom(B,[0,1])$. By construction, we have $i^* s = \id$, $f^* t = \id$, and $g^* t = s i^*$, so we have shown that the diagram above is a split coequalizer. <span class="qed">$\square$</span>
+is a coequalizer diagram. We first define $s : \Hom(E,[0,1]) \to \Hom(A,[0,1])$ by choosing a Tietze extension of each continuous function $E \to [0,1]$. Now, for each $\varphi \in \Hom(A,[0,1])$, we can define a continuous function on $\im(f) \cup \im(g) \subseteq B$ to be $\varphi \circ r$ on $\im(f)$, and $s(i^*(\varphi))\circ r$ on $\im(g)$. Note that on the overlap $\im(f)\cap \im(g) = f(E) = g(E)$, the first expression gives $f(e) \mapsto \varphi(e)$, and the second expression gives $g(e) \mapsto s(i^*(\varphi))(e) = \varphi(e)$, so we have indeed given a well-defined function on $\im(f)\cup\im(g)$. Choosing a Tietze extension of this function to a function $B\to [0,1]$ for each $\varphi$, we get a map $t : \Hom(A,[0,1]) \to \Hom(B,[0,1])$. By construction, we have $i^* s = \id$, $f^* t = \id$, and $g^* t = s i^*$, so we have shown that the diagram above is a split coequalizer.
+:::
 
 This shows that $\CompHaus^{\op}$ is equivalent to the category of algebras over the monad
 $$S \mapsto \Hom_{\CompHaus}\bigl([0, 1]^S, [0, 1]\bigr).$$
@@ -64,7 +67,7 @@ We may view such algebras as being models of the one-sorted infinitary algebraic
 The object $[0,1]$ of $\CompHaus$ is $\aleph_1$-copresentable. (Originally proved in [GU71](#references), 6.5(c))
 :::
 
-_Proof._
+::: Proof
 Suppose we have an $\aleph_1$-cofiltered limit $X = \lim_{i\in \I} X_i$ with projections $p_i : X \to X_i$, and a continuous function $\varphi : X \to [0,1]$. For the time being, fix $n\in \IN_{>0}$. Then for any $x\in X$, there exists an interval neighborhood $N_x$ of $\varphi(x)$ of diameter at most $1/n$ &mdash; for example, we can take $N_x \coloneqq (\varphi(x) - 1/(2n), \varphi(x) + 1/(2n)) \cap [0,1]$. We can also take a basic open neighborhood whose image is contained in $N_x$; by lemma 2, we can write that basic open neighborhood in the form $p_i^{-1}(V)$ where $V$ is an open subset of $X_i$.
 By compactness of $X$, we may take finitely many such basic open neighborhoods of the form $p_i^{-1}(V)$ which cover $X$. Again using the assumption that $\I$ is cofiltered, we may assume that $i$ is the same for each neighborhood. In particular, we see that whenever we have $x, y\in X$ with $p_i(x) = p_i(y)$, then $|\varphi(x) - \varphi(y)| < 1/n$.
 
@@ -79,13 +82,14 @@ Now each $D_n \setminus \im(X_f)$ is open and we have just shown such sets cover
 
 This shows the canonical map
 $$\textstyle \colim_{i\in \I^{\op}} \Hom(X_i, [0,1]) \to \Hom\bigl(\lim_{i\in I} X_i, [0,1]\bigr)$$
-is injective. <span class="qed">$\square$</span>
+is injective.
+:::
 
 ::: Corollary 5
 The category $\CompHaus$ is locally $\aleph_1$-copresentable.
 :::
 
-_Proof._
+::: Proof
 It suffices to show that the monad
 $$S \mapsto \Hom_{\CompHaus}\bigl([0, 1]^S, [0, 1]\bigr)$$
 is $\aleph_1$-accessible. This functor is the composition of
@@ -94,7 +98,8 @@ followed by
 $$\Hom_{\CompHaus}({-}, [0,1]) : \CompHaus^{\op} \to \Set.$$
 The first automatically preserves $\aleph_1$-filtered colimits (and in fact all colimits) since it has a right adjoint. The second one preserves $\aleph_1$-filtered colimits by the previous lemma.
 
-Alternately, applying the general framework of Lawvere theories shows that $\CompHaus^{\op}$ is equivalent to the category of functors $\T \to \Set$ preserving countable products, where $\T$ is the full subcategory of $\CompHaus$ of all spaces $[0,1]^A$ where $A$ is countable. Note that $\T$ is essentially small. We thus reproduce a result from [Isb82](#references) which also provides a nice description of a small set of generators of the operations of the $\aleph_0$-ary algebraic theory. A more recent treatment in [MR17](#references) refines this by providing a nice axiomatization of the relations of that theory. <span class="qed">$\square$</span>
+Alternately, applying the general framework of Lawvere theories shows that $\CompHaus^{\op}$ is equivalent to the category of functors $\T \to \Set$ preserving countable products, where $\T$ is the full subcategory of $\CompHaus$ of all spaces $[0,1]^A$ where $A$ is countable. Note that $\T$ is essentially small. We thus reproduce a result from [Isb82](#references) which also provides a nice description of a small set of generators of the operations of the $\aleph_0$-ary algebraic theory. A more recent treatment in [MR17](#references) refines this by providing a nice axiomatization of the relations of that theory.
+:::
 
 ### References
 

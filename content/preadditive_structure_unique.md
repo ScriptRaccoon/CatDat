@@ -13,7 +13,7 @@ $$f+g : A \to B$$
 is the composite of $(f,g) : A \to B \times B$, the inverse $\alpha^{-1} : B \oplus B \to B \times B$, and the codiagonal $\nabla : B \oplus B \to B$.
 :::
 
-_Proof._
+::: Proof
 The morphism $\alpha : X \oplus Y \to X \times Y$ is defined by the equations
 $$p_1 \circ \alpha \circ i_1 = \id_X, \quad p_2 \circ \alpha \circ i_2 = \id_Y,$$
 $$p_2 \circ \alpha \circ i_1 = 0,\quad p_1 \circ \alpha \circ i_2 = 0.$$
@@ -32,4 +32,4 @@ $$
 \end{align*}
 $$
 
-<span class="qed">$\square$</span>
+:::
