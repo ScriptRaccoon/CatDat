@@ -20,6 +20,7 @@
 \F: \mathcal{F}
 \I: \mathcal{I}
 \J: \mathcal{J}
+\K: \mathcal{K}
 \L: \mathcal{L}
 \M: \mathcal{M}
 \O: \mathcal{O}
@@ -48,6 +49,7 @@
 \Bilin: \operatorname{Bilin}
 \Ob: \operatorname{Ob}
 \id: \operatorname{id}
+\ev: \operatorname{ev}
 \card: \operatorname{card}
 \colim: \operatorname{colim}
 \im: \operatorname{im}
