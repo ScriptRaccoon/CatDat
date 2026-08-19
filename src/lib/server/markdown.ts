@@ -117,7 +117,7 @@ md.block.ruler.before(
 		}
 
 		if (last_inline) {
-			last_inline.content += ` <span class="qed">${render_formula('\\square')}</span>`
+			last_inline.content += ` <span class="qed">${render_formula('\\square')}</span><span class="qed-clear"></span>`
 		}
 
 		const close = state.push('html_block', '', 0)
