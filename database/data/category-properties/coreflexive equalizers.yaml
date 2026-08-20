@@ -8,6 +8,8 @@ invariant_under_equivalences: true
 related:
   - cosifted limits
   - equalizers
+  - coquotients of cocongruences
+  - equalizers of cokernel pairs
 
 tags:
   - limits

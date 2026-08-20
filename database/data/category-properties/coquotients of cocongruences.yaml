@@ -6,10 +6,10 @@ dual: quotients of congruences
 invariant_under_equivalences: true
 
 related:
-  - coregular
-  - effective cocongruences
   - equalizers
+  - equalizers of cokernel pairs
   - kernels
+  - effective cocongruences
   - Barr-coexact
 
 tags:

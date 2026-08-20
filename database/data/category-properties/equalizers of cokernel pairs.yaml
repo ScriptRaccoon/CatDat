@@ -1,0 +1,17 @@
+id: equalizers of cokernel pairs
+relation: has
+description: 'We say that a category has <i>equalizers of cokernel pairs</i> if every morphism $f : A \to B$ has a cokernel pair $i_1, i_2 : B \rightrightarrows B \sqcup_A B$ such that $i_1,i_2$ have an equalizer. The equalizer is sometimes also called the <i>regular coimage</i> of $f$.'
+nlab_link: https://ncatlab.org/nlab/show/image#AsEqualizer
+dual: coequalizers of kernel pairs
+invariant_under_equivalences: true
+
+related:
+  - coquotients of cocongruences
+  - coreflexive equalizers
+  - equalizers
+  - cokernel pairs
+  - coregular
+
+tags:
+  - limits
+  - colimits

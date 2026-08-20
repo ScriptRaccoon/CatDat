@@ -1,6 +1,6 @@
 id: kernel pairs
 relation: has
-description: 'The <i>kernel pair</i> of a morphism $f : X \to Y$ is the pullback $X \times_Y X$, i.e. the limit of the cospan $X \xrightarrow{f} Y \xleftarrow{f} X$. If the morphism is not clear from the context, we can write $X \times_{f,Y,f} X$ to denote the pullback. We say that a category $\C$ has kernel pairs if every morphism has a kernel pair. Equivalently, each slice category $\C / Y$ has binary powers.'
+description: 'The <i>kernel pair</i> of a morphism $f : X \to Y$ is the pullback $X \times_Y X \rightrightarrows X$, i.e. the limit of the cospan $X \xrightarrow{f} Y \xleftarrow{f} X$. If the morphism is not clear from the context, we can write $X \times_{f,Y,f} X$ to denote the pullback. We say that a category $\C$ has kernel pairs if every morphism has a kernel pair. Equivalently, each slice category $\C / Y$ has binary powers.'
 nlab_link: https://ncatlab.org/nlab/show/kernel+pair
 dual: cokernel pairs
 invariant_under_equivalences: true
@@ -10,6 +10,7 @@ related:
   - regular
   - kernels
   - binary powers
+  - coequalizers of kernel pairs
 
 tags:
   - limits

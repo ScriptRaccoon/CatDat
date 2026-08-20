@@ -7,9 +7,9 @@ invariant_under_equivalences: true
 
 related:
   - coequalizers
+  - coequalizers of kernel pairs
   - cokernels
   - effective congruences
-  - regular
   - Barr-exact
 
 tags:

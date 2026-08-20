@@ -7,9 +7,9 @@ invariant_under_equivalences: true
 
 related:
   - finitely complete
-  - quotients of congruences
-  - Barr-exact
   - kernel pairs
+  - coequalizers of kernel pairs
+  - Barr-exact
 
 tags:
   - limit–colimit interaction

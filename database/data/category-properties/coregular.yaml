@@ -6,10 +6,10 @@ dual: regular
 invariant_under_equivalences: true
 
 related:
-  - coquotients of cocongruences
   - finitely cocomplete
-  - Barr-coexact
   - cokernel pairs
+  - equalizers of cokernel pairs
+  - Barr-coexact
 
 tags:
   - limit–colimit interaction
