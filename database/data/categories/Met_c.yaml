@@ -97,9 +97,9 @@ unsatisfied_properties:
   - property: ℵ₁-filtered colimits
     proof: See <a href="https://mathoverflow.net/questions/511433" target="_blank">MO/511433</a> for a proof that the diagram $\omega_1 \to \Met_c$, $\alpha \mapsto \IR^\alpha$ does not have a colimit.
 
-  - property: regular
+  - property: coequalizers of kernel pairs
     proof: >-
-      We will find a morphism $f : X \to Y$ in $\Met_c$ whose kernel pair has no coequalizer. The idea is to represent the <a href="https://doi.org/10.1016/0166-8641(95)00016-X" target="_blank">sequential fan</a> $S_\omega$ as such a coequalizer in $\Top$, and generalize the diagonal argument showing that it is not metrizable.
+      The idea is to represent the <a href="https://doi.org/10.1016/0166-8641(95)00016-X" target="_blank">sequential fan</a> $S_\omega$ as a coequalizer of a kernel pair in $\Top$, and generalize the diagonal argument showing that it is not metrizable.
 
 
       For $n \geq 1$ consider the subspace
@@ -125,9 +125,6 @@ unsatisfied_properties:
       Sketch of an alternative proof: Consider the coproduct $X \coloneqq \coprod_n \IR^n$ in $\Met_c$. The canonical inclusions $\IR^n \to \ell^2$ into the Hilbert space of square-summable sequences yield a continuous map $f : X \to \ell^2$. A coequalizer of the kernel pair of $f$ would be a colimit of the sequence
       $$\IR \hookrightarrow \IR^2 \hookrightarrow \IR^3 \cdots$$
       where each map appends a zero coordinate, and we have seen above that this sequential colimit does not exist.
-
-  - property: quotients of congruences
-    proof: In the previous proof we have constructed a morphism whose kernel pair does not have a coequalizer, and every kernel pair is a congruence.
 
 special_objects:
   initial object:
