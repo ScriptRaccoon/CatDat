@@ -5,6 +5,7 @@
     - regular
   conclusions:
     - finitely complete
+    - coequalizers of kernel pairs
   proof: This holds by definition of a regular category.
 
 - id: regular_well-powered_well-copowered
@@ -31,6 +32,22 @@
     - quotients of congruences
   proof: A congruence $E \rightrightarrows X$ has a common section $X \to E$ given by the reflexivity morphism.
 
+- id: congruences_include_kernel_pairs
+  assumptions:
+    - quotients of congruences
+    - kernel pairs
+  conclusions:
+    - coequalizers of kernel pairs
+  proof: This is simply because a kernel pair is a congruence.
+
+- id: kernel_pairs_are_effective
+  assumptions:
+    - effective congruences
+    - coequalizers of kernel pairs
+  conclusions:
+    - quotients of congruences
+  proof: Every congruence is a kernel pair, thus has a coequalizer.
+
 - id: cokernels_via_congruence_quotients
   assumptions:
     - preadditive
@@ -47,7 +64,7 @@
     - preadditive
   conclusions:
     - quotients of congruences
-  proof: 'For any congruence $E$ on an object $X$ of a preadditive category, let $E_0$ be the kernel of $p_2 : E \to X$.  The restriction of $p_1$ to $E_0$ is a monomorphism.  We can then see that $E$ must be the pullback of $p_1 - p_2 : E \to X$ and $E_0 \hookrightarrow X$.  Then the cokernel of $E_0 \hookrightarrow X$ is a quotient of $E$.'
+  proof: 'For any congruence $E$ on an object $X$ of a preadditive category, let $E_0$ be the kernel of $p_2 : E \to X$. The restriction of $p_1$ to $E_0$ is a monomorphism.  We can then see that $E$ must be the pullback of $p_1 - p_2 : E \to X$ and $E_0 \hookrightarrow X$.  Then the cokernel of $E_0 \hookrightarrow X$ is a quotient of $E$.'
 
 - id: core-hin_quotients
   assumptions:
