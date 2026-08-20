@@ -121,6 +121,8 @@
 	"extremal cogenerator": true,
 	"extremal cogenerating set": true,
 	"natural numbers object": true,
+	"kernel pairs": true,
+	"cokernel pairs": true,
 
 	"cartesian closed": false,
 	"locally cartesian closed": false,

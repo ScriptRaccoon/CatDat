@@ -119,6 +119,8 @@
 	"extremal generating set": true,
 	"extremal cogenerator": true,
 	"extremal cogenerating set": true,
+	"kernel pairs": true,
+	"cokernel pairs": true,
 
 	"Grothendieck abelian": false,
 	"Malcev": false,

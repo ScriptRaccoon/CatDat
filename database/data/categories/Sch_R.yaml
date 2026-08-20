@@ -55,6 +55,9 @@ unsatisfied_properties:
   - property: generating set
     proof: If $S$ is a generating set of $R$-schemes, then the set of affine open subsets of the schemes in $S$ would also be a generating set. This is then also a generating set in the category of affine $R$-schemes, corresponding to a cogenerating set in <a href="/category/CAlg(R)">$\CAlg(R)$</a>, which we know does not exist.
 
+  - property: cokernel pairs
+    proof: Choose a residue field $K$ of $R$. Then the span $\IA^1_K \leftarrow \Spec(K(t)) \rightarrow \IA^1_K$ has no pushout; see <a href="https://mathoverflow.net/questions/9961" target="_blank">MO/9961</a>.
+
   - property: quotients of congruences
     proof: If $\Sch_R$ had quotients of congruences, then by <a href="/content/pushouts-of-monos-via-congruence-quotients">this lemma</a> it would also have pushouts of monomorphisms, contradicting the fact that the span $\IA^1_K \leftarrow \Spec(K(t)) \rightarrow \IA^1_K$ has no pushout where $K$ is a residue field of $R$; see <a href="https://mathoverflow.net/questions/9961" target="_blank">MO/9961</a>.
 

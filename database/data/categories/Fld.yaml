@@ -50,9 +50,6 @@ unsatisfied_properties:
   - property: multi-terminal object
     proof: Every field has a non-trivial extension, for instance, the rational function field over itself in one variable. Hence, a multi-terminal object never exists.
 
-  - property: pushouts
-    proof: 'By <a href="https://math.stackexchange.com/questions/359352/" target="_blank">MSE/359352</a>, the pushout $E \sqcup_K F$ of two field homomorphisms $E \leftarrow K \rightarrow F$ exists if and only if the tensor product $E \otimes_K F$ has a "fieldification": this means that the nilradical is a prime ideal whose quotient ring is a field. This is quite rare: Consider $E = K(X)$, $F = K(Y)$. Then $E \otimes_K F$ is isomorphic to $K[X,Y] (K[X]-\{0\})^{-1} (K[Y]-\{0\})^{-1}$, which is an integral domain but not a field: for example, $X-Y$ has no inverse.'
-
   - property: generator
     proof: Assume that $G$ is a generator, say of characteristic $p$. Then for all $q \neq p$ all homomorphisms between two fields of characteristic $q$ would be equal, which is absurd.
 

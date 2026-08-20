@@ -70,7 +70,7 @@ unsatisfied_properties:
   - property: coreflexive equalizers
     proof: 'The coreflexive pair $i,j : [0] \rightrightarrows [1]$ has no equalizer, in fact is not equalized by any morphism.'
 
-  - property: pushouts
+  - property: cokernel pairs
     proof: Assume that $[1] \xleftarrow{i} [0] \xrightarrow{i} [1]$ has a pushout in $\Delta^{\leq 1}$, where $i(0)=0$. This amounts to a universal totally ordered set of cardinality $\leq 2$ with elements $a,b,c$ satisfying $a \leq b$, $a \leq c$. Since a finite totally ordered set has trivial automorphism group, the automorphism defined by $a \mapsto a$, $b \mapsto c$, $c \mapsto b$ must be the identity, i.e., we have $b = c$. However, in $[1]$ the equations $0 \leq 0$, $0 \leq 1$ then show that the universal property fails.
 
   - property: natural numbers object

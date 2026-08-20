@@ -33,6 +33,9 @@ satisfied_properties:
   - property: cartesian closed
     proof: This is because <a href="/category/Set">$\Set$</a> is cartesian closed and since for non-empty sets $X,Y$ there is at least one function $X \to Y$.
 
+  - property: kernel pairs
+    proof: 'This is because <a href="/category/Set">$\Set$</a> has kernel pairs and for a map $f : X \to Y$ between non-empty sets $X,Y$ the kernel pair $\{(x,x'') \in X \times X : f(x) = f(x'')\}$ is also non-empty.'
+
   - property: binary coproducts
     proof: The disjoint union of two non-empty sets is non-empty.
 

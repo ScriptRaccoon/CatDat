@@ -81,8 +81,11 @@ unsatisfied_properties:
   - property: countable powers
     proof: 'The power $\IR^{\IN}$ does not exist. More generally, let $(M_n)_{n \geq 0}$ be a sequence of smooth manifolds of positive dimension whose product $(\pi_n : P \to M_n)_{n \geq 0}$ exists. This product cone in $\Man$ yields a product cone in $\Set$ since the forgetful functor $\Man \to \Set$ is representable, hence preserves all limits. Choose points $x_n \in M_n$ with $T_{x_n}(M_n) \neq 0$. Choose the point $x \in P$ with $\pi_n(x) = x_n$. Consider the linear map $T_x(P) \to \prod_{n \geq 0} T_{x_n}(M_n)$ induced by the derivatives $d_x(\pi_n) : T_x(P) \to T_{x_n}(M_n)$. Since $T_x(P)$ is finite-dimensional and $\prod_{n \geq 0} T_{x_n}(M_n)$ is not, it cannot be surjective. But actually, it is: Choose tangent vectors $v_n \in T_{x_n}(M_n)$. Choose smooth curves $\gamma_n : \IR \to M_n$ with $\gamma_n(0)=x_n$ and ${\gamma_n}''(0) = v_n$. By the universal property there is a unique smooth curve $\gamma : \IR \to P$ with $\pi_n \gamma = \gamma_n$. In particular, $\gamma(0) = x$. The chain rule now implies that $\gamma''(0) \in T_x(P)$ is a preimage of $(v_n)$ – a contradiction.'
 
-  - property: pullbacks
-    proof: See <a href="https://math.stackexchange.com/questions/5129579/" target="_blank">MSE/5129579</a> or <a href="https://math.stackexchange.com/questions/322485" target="_blank">MSE/322485</a>.
+  - property: kernel pairs
+    proof: One can show that the map $\IR \to \IR$, $x \mapsto x^2$ does not have a kernel pair, see <a href="https://math.stackexchange.com/a/322602" target="_blank">MSE/322485</a>.
+
+  - property: cokernel pairs
+    proof: The inclusion $\{0\} \to \IR$ does not have a cokernel pair, see <a href="https://mathoverflow.net/questions/19116">MO/19916</a>.
 
   - property: sequential colimits
     proof: If $\Man$ had sequential colimits, then by <a href="/content/special_sequential_colimits">this lemma</a> there would be a manifold $M$ that admits a split epimorphism $M \to \IR^n$ for every $n$. But then $M$ will have an infinite-dimensional tangent space, which is a contradiction.
@@ -101,7 +104,7 @@ unsatisfied_properties:
       - setc_no_aleph1-cofiltered_limits
 
   - property: quotients of congruences
-    proof: If $\Man$ had quotients of congruences, then by <a href="/content/pushouts-of-monos-via-congruence-quotients">this lemma</a>, it would have a pushout of $\IR \leftarrow \{ 0 \} \rightarrow \IR$.  This contradicts <a href="https://mathoverflow.net/questions/19116">MO/19916</a>.
+    proof: If $\Man$ had quotients of congruences, then by <a href="/content/pushouts-of-monos-via-congruence-quotients">this lemma</a>, it would have a pushout of $\IR \leftarrow \{0\} \rightarrow \IR$. This contradicts <a href="https://mathoverflow.net/questions/19116">MO/19916</a>.
 
 special_objects:
   initial object:

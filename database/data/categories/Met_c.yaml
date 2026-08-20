@@ -33,17 +33,22 @@ satisfied_properties:
     proof: See <a href="https://math.stackexchange.com/questions/5004389" target="_blank">MSE/5004389</a>.
     check_redundancy: false
 
+  - property: infinitary extensive
+    proof: This follows from Lemma 11 <a href="/content/subcategories">here</a> since <a href="/category/Top">$\Top$</a> is infinitary extensive and its full subcategory $\Met_c$ of metrizable topological spaces is closed under pullbacks and coproducts in $\Top$.
+
+  - property: cokernel pairs
+    proof: >-
+      Since metric spaces are Hausdorff, the cokernel pair of $f : Y \to X$ coincides with the cokernel pair of the inclusion $C \hookrightarrow X$, where $C$ is the closure of the image of $f$ (if it exists). Thus, it suffices to prove that for every closed subset $C \subseteq X$ of a metric space, the pushout $X \sqcup_C X$ exists. In fact, the $\Top$-pushout $X \sqcup_C X$ is metrizable.
+      To see this, consider the canonical continuous map $p : X \sqcup X \to X \sqcup_C X$. It is surjective and closed, and its fibers have cardinality at most $2$. In particular, its fibers are compact. Since $X \sqcup X$ is metrizable, the claim now follows from the Hanai-Morita-Stone theorem; see Theorem 4.4.17 in Engelking's book <i>General Topology</i>.
+
+  - property: effective cocongruences
+    proof: 'Suppose we have a cocongruence $f, g : X \rightrightarrows E$ in $\Met_c$. Then the image in $\Haus$ is a coreflexive corelation (since epimorphisms in both categories are continuous maps with dense image). By <a href="https://mathoverflow.net/a/509582/2841" target="_blank">MO/509548</a>, that implies that image is of the form $X +_S X$ for a closed subset $S$ of $X$. Since $S$ is metrizable, and the functor $\Met_c \to \Haus$ is fully faithful <a href="https://ncatlab.org/nlab/show/reflected+limit#FullSubcategoryInclusionReflectCoLimits" target="_blank">and therefore reflects colimits</a>, we conclude that $E$ is effective in $\Met_c$.'
+
   - property: well-powered
     proof: This follows easily from the fact that monomorphisms are injective in this category.
 
   - property: well-copowered
     proof: 'If $f : X \to Y$ is an epimorphism, then $f(X)$ is dense in $Y$ (see below). Hence, there is an injective map $Y \to X^{\IN}$, which bounds the size of $Y$.'
-
-  - property: infinitary extensive
-    proof: This follows from Lemma 11 <a href="/content/subcategories">here</a> since <a href="/category/Top">$\Top$</a> is infinitary extensive and its full subcategory $\Met_c$ of metrizable topological spaces is closed under pullbacks and coproducts in $\Top$.
-
-  - property: effective cocongruences
-    proof: 'Suppose we have a cocongruence $f, g : X \rightrightarrows E$ in $\Met_c$. Then the image in $\Haus$ is a coreflexive corelation (since epimorphisms in both categories are continuous maps with dense image). By <a href="https://mathoverflow.net/a/509582/2841" target="_blank">MO/509548</a>, that implies that image is of the form $X +_S X$ for a closed subset $S$ of $X$. Since $S$ is metrizable, and the functor $\Met_c \to \Haus$ is fully faithful <a href="https://ncatlab.org/nlab/show/reflected+limit#FullSubcategoryInclusionReflectCoLimits" target="_blank">and therefore reflects colimits</a>, we conclude that $E$ is effective in $\Met_c$.'
 
   - property: extremal generator
     proof: 'We claim the metric space $G \coloneqq \{ 1/n : n \in \IN_{> 0} \} \cup \{ 0 \}$, with the metric inherited from $\IR$, is an extremal generator. First, the one-point metric space is a generator since it represents the forgetful functor $\Met_c \to \Set$; and since we have an epimorphism $! : G \to 1$, it follows that $G$ is a generator as well. Now, suppose we have a continuous function $f : X \to Y$ of metric spaces such that $f \circ {-} : \Hom(G, X) \to \Hom(G, Y)$ is a bijection. Then since $G$ is a generator, we can conclude that $f$ is a monomorphism, i.e. injective on the underlying sets. Also, considering a constant function $G \to Y$ with image $y$, we see that $f$ is surjective on the underlying sets. Finally, the fact that $f$ induces a bijection between $\Hom(G, X)$ and $\Hom(G, Y)$ implies that a sequence $(x_n)_{n\in \IN}$ in $X$ has limit $L$ if and only if $(f(x_n))_{n\in \IN}$ has limit $f(L)$ in $Y$. This shows that $f$ is a homeomorphism.'

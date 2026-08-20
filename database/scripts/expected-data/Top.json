@@ -84,6 +84,8 @@
 	"ℵ₂-small copowers": true,
 	"extremal cogenerator": true,
 	"extremal cogenerating set": true,
+	"kernel pairs": true,
+	"cokernel pairs": true,
 
 	"abelian": false,
 	"additive": false,
