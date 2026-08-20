@@ -123,6 +123,8 @@
 	"natural numbers object": true,
 	"kernel pairs": true,
 	"cokernel pairs": true,
+	"equalizers of cokernel pairs": true,
+	"coequalizers of kernel pairs": true,
 
 	"cartesian closed": false,
 	"locally cartesian closed": false,

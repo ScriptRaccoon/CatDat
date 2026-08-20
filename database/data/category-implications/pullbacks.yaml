@@ -83,3 +83,10 @@
     is representable. Using $w = u-v$, this functor is isomorphic to
     $$T \mapsto \{(u,w) \in \Hom(T,X)^2 : f \circ w = 0\}.$$
     The functor $T \mapsto \{w \in \Hom(T,X) : f \circ w = 0\}$ is a retract of this functor. Since the category is Cauchy complete, every retract of a representable functor is representable. Therefore, the kernel of $f$ exists.
+
+- id: kernel_pairs_coequalizers_assumption
+  assumptions:
+    - coequalizers of kernel pairs
+  conclusions:
+    - kernel pairs
+  proof: This holds by definition.
