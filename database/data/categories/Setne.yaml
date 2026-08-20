@@ -39,6 +39,9 @@ satisfied_properties:
   - property: binary coproducts
     proof: The disjoint union of two non-empty sets is non-empty.
 
+  - property: equalizers of cokernel pairs
+    proof: 'Let $f : X \to Y$ be a map of non-empty sets. The cokernel pair $i_1,i_2 : Y \rightrightarrows Y \sqcup_X Y$ in <a href="/category/Set">$\Set$</a> is clearly also a cokernel pair in $\Setne$. Moreover, the equalizer of $i_1,i_2$ in $\Set$ is non-empty because it contains the elements of $X$.'
+
   - property: mono-regular
     proof: This follows easily from the fact that <a href="/category/Set">$\Set$</a> is mono-regular.
 
@@ -78,9 +81,6 @@ unsatisfied_properties:
 
   - property: coquotients of cocongruences
     proof: The two maps $\{0\} \rightrightarrows \{0,1\}$ form a cocongruence on $\{0\}$ &mdash; namely the cofull cocongruence on $\{0\}$ &mdash; but they do not have an equalizer.
-
-  - property: effective cocongruences
-    proof: The two maps $\{0\} \rightrightarrows \{0,1\}$ form a cocongruence on $\{0\}$ &mdash; namely the cofull cocongruence on $\{0\}$ &mdash; but there is no map $Z \to \{0\}$ making the required commutative diagram, much less a cocartesian square.
 
   - property: coaccessible
     proof: If $\Setne$ is coaccessible, then by the dual of Cor. 2.44 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a> also the coslice category $\{\ast\} / \Setne$ would be coaccessible. But this category is isomorphic to <a href="/category/Set_*">$\Set_*$</a>, from which we know that it is not coaccessible (namely, because of Thm. 1.64 in op. cit.).
