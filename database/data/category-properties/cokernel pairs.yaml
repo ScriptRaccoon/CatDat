@@ -1,0 +1,15 @@
+id: cokernel pairs
+relation: has
+description: 'The <i>cokernel pair</i> of a morphism $f : X \to Y$ is the pushout $Y \sqcup_X Y$, i.e. the colimit of the span $Y \xleftarrow{f} X \xrightarrow{f} Y$. If the morphism is not clear from the context, we can write $Y \sqcup_{f,X,f} Y$ to denote the pushout. We say that a category $\C$ has cokernel pairs if every morphism has a cokernel pair. Equivalently, each coslice category $X / \C$ has binary copowers.'
+nlab_link: https://ncatlab.org/nlab/show/cokernel+pair
+dual: kernel pairs
+invariant_under_equivalences: true
+
+related:
+  - pushouts
+  - coregular
+  - cokernels
+  - binary copowers
+
+tags:
+  - colimits

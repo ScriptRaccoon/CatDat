@@ -1,13 +1,14 @@
 id: binary powers
 relation: has
-description: A category has <i>binary powers</i> when for every object $X$ the product $X \times X$  exists. These objects might also be called <i>squares</i>.
+description: A category has <i>binary powers</i> when for every object $X$ the product $X \times X$ exists. These objects might also be called <i>squares</i>.
 nlab_link: https://ncatlab.org/nlab/show/powering
 dual: binary copowers
 invariant_under_equivalences: true
 
 related:
   - finite powers
-  - finite products
+  - binary products
+  - kernel pairs
 
 tags:
   - limits

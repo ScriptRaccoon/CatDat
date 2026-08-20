@@ -1,13 +1,14 @@
 id: binary copowers
 relation: has
-description: A category has <i>binary copowers</i> when for every object $X$ and every binary set $I$ the coproduct $X \sqcup X$ exists. These objects might also be called <i>doubles</i>.
+description: A category has <i>binary copowers</i> when for every object $X$ the coproduct $X \sqcup X$ exists. These objects might also be called <i>doubles</i>.
 nlab_link: https://ncatlab.org/nlab/show/copower
 dual: binary powers
 invariant_under_equivalences: true
 
 related:
   - finite copowers
-  - finite coproducts
+  - binary coproducts
+  - cokernel pairs
 
 tags:
   - colimits
