@@ -1,4 +1,4 @@
-# results on pullbacks and wide pullbacks
+# results on pullbacks, wide pullbacks, and kernel pairs
 
 - id: pullbacks_criterion
   assumptions:
@@ -33,3 +33,53 @@
   conclusions:
     - wide pullbacks
   proof: Each slice category has finite products and is essentially finite, hence has all products by <a href="/category-implication/freyd_finite">this result</a> followed by <a href="/category-implication/thin_finite_product_reduction">this result</a>.
+
+- id: kernel_pair_is_pullback
+  assumptions:
+    - pullbacks
+  conclusions:
+    - kernel pairs
+  proof: This is trivial.
+
+- id: kernel_pair_terminal_power
+  assumptions:
+    - kernel pairs
+    - terminal object
+  conclusions:
+    - binary powers
+  proof: If $1$ is a terminal object, then $X \times_1 X = X \times X$.
+
+- id: left_cancellative_kernel_pairs
+  assumptions:
+    - left cancellative
+  conclusions:
+    - kernel pairs
+  proof: >-
+    In general, the kernel pair of a monomorphism $f : X \to Y$ exists and is given by
+    $$\begin{CD} X @>{\id_X}>> X \\ @V{\id_X}VV @VV{f}V \\ X @>>{f}> Y. \end{CD}$$
+
+- id: right_cancellative_kernel_pairs
+  assumptions:
+    - right cancellative
+    - kernel pairs
+  # TODO: rework this once we have split-mono-trivial
+  conclusions:
+    - left cancellative
+  proof: >-
+    Let $f : X \to Y$ be a morphism with kernel pair $E \rightrightarrows X$. The diagonal $X \to E$ is a split monomorphism. By assumption on the category, it is also an epimorphism. Thus, it is an isomorphism. Therefore,
+    $$\begin{CD} X @>{\id_X}>> X \\ @V{\id_X}VV @VV{f}V \\ X @>>{f}> Y. \end{CD}$$
+    is a pullback, so $f$ is a monomorphism.
+
+- id: additive_kernel_pairs
+  assumptions:
+    - preadditive
+    - kernel pairs
+    - Cauchy complete
+  conclusions:
+    - kernels
+  proof: >-
+    Let $f : X \to Y$ be a morphism. Since $f$ has a kernel pair, the functor
+    $$\C^{\op} \to \Set^+, \quad T \mapsto \{(u,v) \in \Hom(T,X)^2 : f \circ u = f \circ v\}$$
+    is representable. Using $w = u-v$, this functor is isomorphic to
+    $$T \mapsto \{(u,w) \in \Hom(T,X)^2 : f \circ w = 0\}.$$
+    The functor $T \mapsto \{w \in \Hom(T,X) : f \circ w = 0\}$ is a retract of this functor. Since the category is Cauchy complete, every retract of a representable functor is representable. Therefore, the kernel of $f$ exists.
