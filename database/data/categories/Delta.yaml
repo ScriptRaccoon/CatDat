@@ -87,6 +87,9 @@ unsatisfied_properties:
   - property: coreflexive equalizers
     proof: 'The two maps $d^0,d^1 : [0] \rightrightarrows [1]$ have a common left inverse, the unique map $s^0 : [1] \to [0]$, but are not equalized by any morphism.'
 
+  - property: cokernel pairs
+    proof: Assume that the inclusion $\{0\} \to \{0 < 1\}$ has a cokernel pair in $\FinOrd \setminus \{\varnothing\}$. This would be a universal finite ordered set $X$ with three elements $0,1,2$ satisfying $0 \leq 1$ and $0 \leq 2$. Assume w.l.o.g. $1 \leq 2$ (the case $2 \leq 1$ is similar). The universal property yields an order-preserving map $X \to \{a < b < c\}$ with $0 \mapsto a$, $1 \mapsto c$, $2 \mapsto b$. But then $c \leq b$, which is a contradiction.
+
   - property: sequential colimits
     proof: We can just copy the proof for <a href="/category/FinOrd">$\FinOrd$</a> to show that the sequence of inclusions $[0] \hookrightarrow [1] \hookrightarrow [2] \hookrightarrow \cdots$ has no colimit.
     references:
@@ -99,9 +102,6 @@ unsatisfied_properties:
 
   - property: natural numbers object
     proof: Any natural numbers object in $\FinOrd \setminus \{\varnothing\}$ would also be a natural numbers object in <a href="/category/FinOrd">$\FinOrd$</a>, which we know does not exist.
-
-  - property: pushouts
-    proof: Assume that the two inclusions $\{0 < 1\} \leftarrow \{0\} \rightarrow \{0 < 2\}$ have a pushout in $\FinOrd \setminus \{\varnothing\}$. This would be a universal non-empty finite ordered set $X$ with three elements $0,1,2$ satisfying $0 \leq 1$ and $0 \leq 2$. Assume w.l.o.g. $1 \leq 2$ (the case $2 \leq 1$ is similar). The universal property yields an order-preserving map $X \to \{a < b < c\}$ with $0 \mapsto a$, $1 \mapsto c$, $2 \mapsto b$. But then $c \leq b$, which is a contradiction.
 
   - property: multi-complete
     proof: >-

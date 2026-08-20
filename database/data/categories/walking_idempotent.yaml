@@ -44,6 +44,9 @@ unsatisfied_properties:
   - property: Cauchy complete
     proof: The idempotent $e$ does not split.
 
+  - property: kernel pairs
+    proof: Assume that $e$ has a kernel pair. Its underlying object must be $0$. Thus, there is a bijection between the morphisms $0 \to 0$ and the pairs of morphisms $0 \rightrightarrows 0$ that $e$ equalizes. But this holds for all pairs of morphisms. Counting these sets gives the contradiction $2 = 4$.
+
 special_objects: {}
 
 special_morphisms:

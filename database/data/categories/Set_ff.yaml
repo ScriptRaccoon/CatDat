@@ -33,6 +33,12 @@ satisfied_properties:
     proof: 'The disjoint union $X+Y$ of two sets $X,Y$ with the inclusion maps $X \rightarrow X+Y \leftarrow Y$ is a coproduct: The inclusions are injective, hence finite-to-one. If $f : X \to T$, $g : Y \to T$ are finite-to-one maps, the induced map $(f;g) : X + Y \to T$ is finite-to-one since the fiber of $t \in T$ is $f^*(\{t\}) + g^*(\{t\})$, which is finite.'
     check_redundancy: false
 
+  - property: cokernel pairs
+    proof: >-
+      Let $f : X \to Y$ be a finite-to-one map. Consider the cokernel pair $i_1,i_2 : Y \rightrightarrows Y \sqcup_X Y$ in $\Set$. The maps $i_1,i_2$ are injective, in fact split monomorphisms in $\Set$, and therefore finite-to-one. To show that this cokernel pair is also a cokernel pair in $\Set_\ff$, it suffices to show that a map $h : Y \sqcup_X Y \to T$ is finite-to-one whenever both restrictions $h \circ i_1, h \circ i_2 : Y \rightrightarrows T$ are finite-to-one. Since $i_1,i_2$ are jointly surjective, we have
+      $$h^* \{y\} \subseteq (i_1)_* (h \circ i_1)^* \{y\} \cup (i_2)_* (h \circ i_2)^* \{y\},$$
+      and the right-hand side is finite.
+
   - property: extensive
     proof: We have already seen that finite coproducts exist in $\Set_\ff$, and pullbacks exist since the category is locally cartesian closed, although a direct argument is also possible. The forgetful functor $\Set_\ff \to \Set$ preserves finite coproducts and pullbacks, and is clearly faithful and conservative (but not full). Therefore, the claim follows from the extensivity of $\Set$ and Lemma 11 <a href="/content/subcategories">here</a>.
 

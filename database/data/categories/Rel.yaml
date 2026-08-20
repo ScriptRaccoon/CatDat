@@ -61,6 +61,9 @@ unsatisfied_properties:
   - property: normal
     proof: The construction of equalizers in $\Rel$ shows that they are injective functions, but <a href="https://math.stackexchange.com/questions/350716" target="_blank">MSE/350716</a> shows that monomorphisms in $\Rel$ don't have to be functions.
 
+  - property: kernel pairs
+    proof: 'Let $X$ be a finite set with $n$ elements. Consider the relation $R : X \to \{*\}$ corresponding to the set $\{(x,*) : x \in X\}$ (which is even a map). Assume that it has a kernel pair $E \rightrightarrows X$. Then, in particular, the set $P(E) \cong \Hom(\{*\},E)$ is isomorphic to the set of pairs $(S_1,S_2) \in \Hom(\{*\},X)^2$ such that $R \circ S_1 = R \circ S_2$. A relation $\{*\} \to X$ corresponds to a subset of $X$, and its composition with $R$ corresponds to the image of that subset under $R$, which is either $\varnothing$ or $\{*\}$, depending on whether the subset is empty or not. Therefore, the set of pairs $(S_1,S_2)$ with $R \circ S_1 = R \circ S_2$ has exactly $1 + (2^n - 1) (2^n - 1)$ elements. For $n=2$, for example, this is equal to $10$, and therefore not a power of $2$. Thus, the set cannot be isomorphic to $P(E)$ for any set $E$.'
+
 special_objects:
   initial object:
     description: empty set
