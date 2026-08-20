@@ -8,6 +8,8 @@ invariant_under_equivalences: true
 related:
   - coequalizers
   - sifted colimits
+  - quotients of congruences
+  - coequalizers of kernel pairs
 
 tags:
   - colimits

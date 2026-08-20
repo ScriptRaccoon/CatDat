@@ -1,0 +1,17 @@
+id: coequalizers of kernel pairs
+relation: has
+description: 'We say that a category has <i>coequalizers of kernel pairs</i> if every morphism $f : A \to B$ has a kernel pair $p_1, p_2 : A \times_B A \rightrightarrows A$ such that $p_1,p_2$ have a coequalizer. The coequalizer is sometimes also called the <i>regular image</i> of $f$.'
+nlab_link: https://ncatlab.org/nlab/show/image#AsEqualizer
+dual: equalizers of cokernel pairs
+invariant_under_equivalences: true
+
+related:
+  - quotients of congruences
+  - reflexive coequalizers
+  - coequalizers
+  - kernel pairs
+  - regular
+
+tags:
+  - limits
+  - colimits
