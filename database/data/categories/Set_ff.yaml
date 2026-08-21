@@ -26,6 +26,11 @@ satisfied_properties:
   - property: equalizers
     proof: 'Equalizers can be constructed as in <a href="/category/Set">$\Set$</a> because of the following trivial observation: if $f : X \to Y$ is a finite-to-one map and $E \subseteq Y$ is a subset with $f(X) \subseteq E$, then the induced map $f^E : X \to E$ is also finite-to-one.'
 
+  - property: pullbacks
+    proof: 'Pullbacks can be constructed as in <a href="/category/Set">$\Set$</a>. Namely, for two finite-to-one maps $f : X \to S$ and $g : Y \to S$, the projections from $X \times_S Y = \{(x,y) \in X \times Y : f(x)=g(y)\}$ to $X$ resp. $Y$ are finite-to-one since the fiber over $x \in X$ identifies with $g^*(\{f(x)\})$ and the fiber over $y \in Y$ identifies with $f^*(\{g(y)\})$. Moreover, if $h : T \to X \times_S Y$ is a map whose components $h_X : T \to X$ and $h_Y : T \to Y$ are finite-to-one, then $h$ is finite-to-one because of $h^*(\{x\}) = (h_X)^*(\{(x,y)\}) \cap (h_Y)^*(\{y\})$ for $(x,y) \in X \times_S Y$.'
+    check_redundancy: false
+    label: Set_ff_pullbacks
+
   - property: locally cartesian closed
     proof: If $X$ is a set, the equivalence $\Set/X \simeq \Set^X$, $f \mapsto (f^*(\{x\}))_{x \in X}$ restricts to an equivalence $\Set_\ff / X \simeq \FinSet^X$. This category is cartesian closed since <a href="/category/FinSet">$\FinSet$</a> is cartesian closed and products of cartesian closed categories are cartesian closed.
 
@@ -43,7 +48,16 @@ satisfied_properties:
     proof: We have already seen that finite coproducts exist in $\Set_\ff$, and pullbacks exist since the category is locally cartesian closed, although a direct argument is also possible. The forgetful functor $\Set_\ff \to \Set$ preserves finite coproducts and pullbacks, and is clearly faithful and conservative (but not full). Therefore, the claim follows from the extensivity of $\Set$ and Lemma 11 <a href="/content/subcategories">here</a>.
 
   - property: epi-regular
-    proof: 'If $f : X \to Y$ is an epimorphism in $\Set_\ff$, i.e. a surjective finite-to-one map, it is a coequalizer of the two maps $p_1, p_2 : X \times_Y Y \rightrightarrows Y$ in $\Set$. These maps are finite-to-one since $p_i^*(\{y\}) \cong f^*(\{y\})$ for $i=1,2$, and their coequalizer is also $f$ in $\Set_\ff$: It suffices to observe that if $h : Y \to T$ is a map such that $h \circ f$ is finite-to-one, then $h$ is finite-to-one as well. In fact, surjectivity of $f$ implies $h^*(\{t\}) = f_*((h \circ f)^*(\{t\}))$ for $t \in T$.'
+    proof: 'If $f : X \to Y$ is an epimorphism in $\Set_\ff$, i.e. a surjective finite-to-one map, it is a coequalizer of the two maps $p_1, p_2 : X \times_Y Y \rightrightarrows Y$ in $\Set$. These maps are finite-to-one (see the proof that pullbacks exist), and their coequalizer is also $f$ in $\Set_\ff$: It suffices to observe that if $h : Y \to T$ is a map such that $h \circ f$ is finite-to-one, then $h$ is finite-to-one as well. In fact, surjectivity of $f$ implies $h^*(\{t\}) = f_*((h \circ f)^*(\{t\}))$ for $t \in T$.'
+    label: Set_ff_epi_regular
+    references:
+      - Set_ff_pullbacks
+
+  - property: pullback-stable regular epimorphisms
+    proof: We have seen that a morphism is a regular epimorphism if and only if it is surjective and that pullbacks can be constructed just like in $\Set$. Therefore, the claim follows from the corresponding property of <a href="/category/Set">$\Set$</a>.
+    references:
+      - Set_ff_epi_regular
+      - Set_ff_pullbacks
 
   - property: well-copowered
     proof: This is clear since the epimorphisms are surjective.
