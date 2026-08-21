@@ -63,3 +63,11 @@
   conclusions:
     - trivial
   proof: 'For any object $X$, the coequalizer of the two coprojections $X \rightrightarrows X \sqcup X$ is the codiagonal $\nabla : X \sqcup X \to X$. Therefore, these two coprojections are equal. But their equalizer is also the unique morphism $! : 0 \to X$. It follows that $! : 0 \to X$ is an isomorphism.'
+
+- id: isos_are_stable
+  assumptions:
+    - regular-quotient-trivial
+    - pullbacks
+  conclusions:
+    - pullback-stable regular epimorphisms
+  proof: Regular epimorphisms are isomorphisms by assumption, and isomorphisms are clearly stable under pullback.

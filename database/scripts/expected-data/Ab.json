@@ -125,6 +125,8 @@
 	"cokernel pairs": true,
 	"equalizers of cokernel pairs": true,
 	"coequalizers of kernel pairs": true,
+	"pullback-stable regular epimorphisms": true,
+	"pushout-stable regular monomorphisms": true,
 
 	"cartesian closed": false,
 	"locally cartesian closed": false,
