@@ -98,33 +98,7 @@ unsatisfied_properties:
     proof: See <a href="https://mathoverflow.net/questions/511433" target="_blank">MO/511433</a> for a proof that the diagram $\omega_1 \to \Met_c$, $\alpha \mapsto \IR^\alpha$ does not have a colimit.
 
   - property: coequalizers of kernel pairs
-    proof: >-
-      The idea is to represent the <a href="https://doi.org/10.1016/0166-8641(95)00016-X" target="_blank">sequential fan</a> $S_\omega$ as a coequalizer of a kernel pair in $\Top$, and generalize the diagonal argument showing that it is not metrizable.
-
-
-      For $n \geq 1$ consider the subspace
-      $$S_n \coloneqq \{1/k : k \geq 1\} \cup \{0\}$$
-      of $\IR$, so that $\Hom(S_n,Y)$ corresponds to convergent sequences in $Y$. Each $S_n$ has diameter $1$, so we can endow the coproduct space
-      $$X \coloneqq \textstyle\coprod_n S_n$$
-      with a metric that extends the metric on each $S_n$ and in which points in $S_n$ and $S_m$ for $n \neq m$ have distance $1$. The points of $X$ will be written as $(n,x)$, where $x \in S_n$. If $p_n$ denotes the $n$th prime number, we have $\lim_{k \to \infty} p_n^{-k} = 0$ in $\IR$, so we have a continuous map $S_n \to \IR$ mapping $1/k \mapsto p_n^{-k}$ and $0 \mapsto 0$. Together, these yield a continuous map
-      $$f : X \to \IR, \, (n,0) \mapsto 0, \, (n,1/k) \mapsto p_n^{-k}.$$
-      Let $\pi_1,\pi_2 : E \rightrightarrows X$ be the kernel pair of $f$. Since $p_n^{-k}$ completely determines $n$ and $k$, $E$ consists precisely of the diagonal and all $((n,0),(m,0))$ for $n,m \geq 1$. Thus, the coequalizer of $\pi_1,\pi_2$ in $\Top$ is the quotient of $X$ that identifies all limit points $(n,0)$ for $n \geq 1$; this space is known as the sequential fan $S_\omega$.
-
-
-      Now assume that $\pi_1,\pi_2$ have a coequalizer $q : X \to Q$ in $\Met_c$, i.e. the universal continuous map from $X$ into a metrizable space such that the point
-      $$0_Q \coloneqq q(n,0) \in Q$$
-      does not depend on the choice of $n$. Since $Q$ is metrizable, there is a countable decreasing neighborhood basis $(B_m)_{m \geq 1}$ of $0_Q \in Q$. Then $U_m \coloneqq q^{-1}(B_m)$ is an open neighborhood of $(n,0) \in X$ for any $n$, and in particular of $(m,0)$. Hence, $U_m \cap S_m$ contains almost all points of $S_m$. In particular, we may choose a point $x_m \in U_m \cap S_m$ that is isolated in $S_m$.
-
-
-      Define the subset $A \coloneqq \{x_m : m \geq 1\}$ of $X$ and let $g : X \to \IR$ be its characteristic function, so that $g(a)=1$ for $a \in A$ and $g(x) = 0$ for $x \in X \setminus A$. To show that $g$ is continuous, it suffices to consider each restriction $g|_{S_m} : S_m \to \IR$. This is the characteristic function of the isolated point $x_m \in S_m$, hence continuous.
-
-
-      Since $g(n,0) = 0$ for all $n \geq 1$, there is a unique continuous map $\tilde{g} : Q \to \IR$ satisfying $\tilde{g} \circ q = g$. The points $q(x_m)$ in $Q$ converge to $0_Q$ because for all $k \geq m$ we have $x_k \in U_k$, hence $q(x_k) \in B_k \subseteq B_m$. Since $\tilde{g}$ is continuous, it follows that $\tilde{g}(q(x_m)) = g(x_m) = 1$ converges to $\tilde{g}(0_Q) = \tilde{g}(q(n,0)) = g(n,0) = 0$, which is a contradiction.
-
-
-      Sketch of an alternative proof: Consider the coproduct $X \coloneqq \coprod_n \IR^n$ in $\Met_c$. The canonical inclusions $\IR^n \to \ell^2$ into the Hilbert space of square-summable sequences yield a continuous map $f : X \to \ell^2$. A coequalizer of the kernel pair of $f$ would be a colimit of the sequence
-      $$\IR \hookrightarrow \IR^2 \hookrightarrow \IR^3 \cdots$$
-      where each map appends a zero coordinate, and we have seen above that this sequential colimit does not exist.
+    proof: The sequence of embeddings $\IR^1 \hookrightarrow \IR^2 \hookrightarrow \IR^3 \hookrightarrow \cdots$, where each map appends a zero coordinate, has no colimit by <a href="https://mathoverflow.net/questions/510316" target="_blank">MO/510316</a>. It has a cocone consisting of the embeddings $\IR^n \hookrightarrow \ell^2$, $x \mapsto (x,0,0,\dotsc)$, where $\ell^2$ is the Hilbert space of square-summable sequences. Since $\Met_c$ is infinitary extensive, it follows from Lemma 2 <a href="/content/monic_sequential_colimits">here</a> that $\Met_c$ does not have coequalizers of kernel pairs.
 
 special_objects:
   initial object:
