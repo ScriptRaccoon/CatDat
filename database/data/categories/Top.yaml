@@ -59,8 +59,8 @@ satisfied_properties:
   - property: infinitary extensive
     proof: 'This can be deduced from the infinitary extensivity of <a href="/category/Set">$\Set$</a> as follows. We already know that coproducts and pullbacks exist, and these are preserved by the forgetful functor to $\Set$. More concretely, coproducts are disjoint unions of the underlying sets whose open subsets are unions of open subsets of the summands. Since coproducts are disjoint in $\Set$ and the empty set has a unique topology, it follows immediately that coproducts are disjoint in $\Top$ as well. It remains to show that coproducts are stable under pullbacks. Let $(X_i)_{i \in I}$ be a family of topological spaces and let $f : T \to \coprod_{i \in I} X_i$ be a continuous map. Consider the pullbacks $T_i \coloneqq f^*(X_i)$. These are just the preimages of $X_i$ under $f$, with the topology induced from $T$. Since coproducts in $\Set$ are stable under pullbacks, the canonical continuous map $\coprod_{i \in I} T_i \to T$ is bijective. It remains to show that it is an open map. By the concrete description of open subsets in the disjoint union, it suffices to prove that each $T_i \to T$ is an open map. But this is the inclusion of a subspace, which is open since $X_i$ is open in $\coprod_{i \in I} X_i$.'
 
-  - property: coregular
-    proof: The category has all limits and colimits, and the regular monomorphisms are the subspace inclusions. Thus, it suffices to prove that subspace inclusions are stable under pushouts. For a proof see e.g. Lemma 3.6 at the <a href="https://ncatlab.org/nlab/show/subspace+topology#pushout" target="_blank">nLab</a>. Another proof can be found in <a href="https://math.stackexchange.com/a/2044509">MSE/2016945</a>.
+  - property: pushout-stable regular monomorphisms
+    proof: We need to show that embeddings are stable under pushouts. For a proof see e.g. Lemma 3.6 at the <a href="https://ncatlab.org/nlab/show/subspace+topology#pushout" target="_blank">nLab</a>. Another proof can be found in <a href="https://math.stackexchange.com/a/2044509">MSE/2016945</a>.
     label: top_coregular
 
 unsatisfied_properties:
@@ -77,7 +77,7 @@ unsatisfied_properties:
   - property: cartesian filtered colimits
     proof: 'The functor $\IQ \times - : \Top \to \Top$ does not preserve sequential colimits, see <a href="https://math.stackexchange.com/questions/1255678" target="_blank">MSE/1255678</a>.'
 
-  - property: regular
+  - property: pullback-stable regular epimorphisms
     proof: See Example 3.14 at the <a href="https://ncatlab.org/nlab/show/regular+category" target="_blank">nLab</a>.
 
   - property: coaccessible

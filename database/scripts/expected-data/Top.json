@@ -88,6 +88,7 @@
 	"cokernel pairs": true,
 	"equalizers of cokernel pairs": true,
 	"coequalizers of kernel pairs": true,
+	"pushout-stable regular monomorphisms": true,
 
 	"abelian": false,
 	"additive": false,
@@ -184,5 +185,6 @@
 	"regular-quotient-trivial": false,
 	"core-connected": false,
 	"extremal generator": false,
-	"extremal generating set": false
+	"extremal generating set": false,
+	"pullback-stable regular epimorphisms": false
 }

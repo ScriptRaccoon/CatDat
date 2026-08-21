@@ -121,5 +121,21 @@ special_morphisms:
     description: continuous maps with dense image
     proof: See <a href="https://math.stackexchange.com/questions/937387" target="_blank">MSE/937387</a>.
   regular monomorphisms:
-    description: embeddings of closed subspaces
-    proof: A reference is Example 7.58 (3) in <a href="https://ncatlab.org/nlab/show/Abstract+and+Concrete+Categories" target="_blank">Joy of Cats</a>, but a proof is missing there.
+    description: closed embeddings
+    proof: 'Regular monomorphisms are closed embeddings by the concrete construction of equalizers and the fact that metric spaces are Hausdorff. Conversely, let $A$ be a closed subset of a metric space $X$. If $A$ is empty, then it is the equalizer of the two constant maps $0,1 : X \rightrightarrows \IR$. If $A$ is non-empty, then it is the equalizer of the function $d(A,-) : X \to \IR$, $x \mapsto \inf_{a \in A} d(a,x)$, and the zero function $0 : X \to \IR$. The function $d(A,-)$ is non-expansive and hence continuous.'
+  regular epimorphisms:
+    description: 'A continuous map $f : X \to Y$ of metric spaces is a regular epimorphism if and only if $f$ is surjective and $Y$ carries the "final metric topology" with respect to $f$; by this we mean that, for every metric space $Z$ (not necessarily every topological space) and every set map $g : Y \to Z$ such that $g \circ f$ is continuous, $g$ is continuous. Furthermore, it is sufficient to demand this for $Z = \IR$.'
+    proof: >-
+      Assume first that $f$ is surjective and that $Y$ carries the final metric topology. Then it is straightforward to check, using the corresponding fact for $\Set$, that $f$ is the coequalizer of its kernel pair $X \times_Y X \rightrightarrows X$.
+
+      Conversely, assume that $f : X \to Y$ is the coequalizer of $u,v : U \rightrightarrows X$. Let $Y' \subseteq Y$ be the image of $f$, equipped with the metric induced from $Y$. Then $f$ factors as $i \circ g$, where $g : X \to Y'$ is a surjective continuous map and $i : Y' \to Y$ is the inclusion. Since
+      $$i \circ g \circ u = f \circ u = f \circ v = i \circ g \circ v$$
+      and $i$ is a monomorphism, we have $g \circ u = g \circ v$. Hence, there is a continuous map $\tilde{g} : Y \to Y'$ such that $\tilde{g} \circ f = g$. Thus
+      $$i \circ \tilde{g} \circ f = i \circ g = f = \id_Y \circ f.$$
+      Since $f$ is an epimorphism, it follows that $i \circ \tilde{g} = \id_Y$. Therefore, $i$ is surjective, so $f$ is surjective as well.
+
+      Finally, let $g : Y \to Z$ be a set map into a metric space $Z$, not assumed to be continuous, such that $g \circ f : X \to Z$ is continuous. Since $f \circ u = f \circ v$, we have
+      $$(g \circ f) \circ u = (g \circ f) \circ v.$$
+      Hence, there is a continuous map $h : Y \to Z$ such that $g \circ f = h \circ f$. Since $f$ is surjective, this implies $g = h$. Therefore, $g$ is continuous, as claimed.
+
+      That $Z = \IR$ suffices as a test space is a consequence of the general and elementary lemma that a map $X \to Y$ between metric spaces is continuous when for every continuous map $Y \to \IR$ the composition $X \to \IR$ is continuous.

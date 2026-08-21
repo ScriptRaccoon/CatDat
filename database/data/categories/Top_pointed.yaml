@@ -77,7 +77,7 @@ unsatisfied_properties:
   - property: skeletal
     proof: This is trivial.
 
-  - property: regular
+  - property: pullback-stable regular epimorphisms
     proof: See Example 3.14 at the <a href="https://ncatlab.org/nlab/show/regular+category" target="_blank">nLab</a>. The proof also works for pointed spaces (resp. posets) by using the base points $a$ and $0$.
 
   - property: cartesian filtered colimits

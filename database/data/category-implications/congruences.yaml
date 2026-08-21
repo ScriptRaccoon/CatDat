@@ -1,29 +1,4 @@
-# results on congruences and regular categories
-
-- id: regular_def
-  assumptions:
-    - regular
-  conclusions:
-    - finitely complete
-    - coequalizers of kernel pairs
-  proof: This holds by definition of a regular category.
-
-- id: regular_well-powered_well-copowered
-  assumptions:
-    - regular
-    - epi-regular
-    - well-powered
-  conclusions:
-    - well-copowered
-  proof: The regularity condition gives a bijection between the collection of quotients of $X$ and the collection of effective congruences on $X$, where the latter is a subcollection of the collection of subobjects of $X\times X$.
-
-- id: regular_balanced_epi-regular
-  assumptions:
-    - regular
-    - balanced
-  conclusions:
-    - epi-regular
-  proof: 'Given any epimorphism $f : X \twoheadrightarrow Y$ in a regular category, we have the factorization into a regular epimorphism $X \twoheadrightarrow \im(f)$ followed by a monomorphism $\im(f) \hookrightarrow Y$. Because the composition is an epimorphism, the monomorphism $\im(f) \hookrightarrow Y$ must also be an epimorphism, and therefore an isomorphism. It follows that $f$ is in fact a regular epimorphism.'
+# results on congruences
 
 - id: congruence_quotients_are_reflexive_coequalizers
   assumptions:
@@ -97,14 +72,6 @@
   proof: >-
     Let $i : Y \hookrightarrow X$ be a monomorphism. Then we define a relation on $X$ via $E \coloneqq X \times Y$ with maps $f, g : E \rightrightarrows X$ defined by $f : (x, y) \mapsto x+i(y)$ and $g : (x, y) \mapsto x$. It is straightforward to check that $f$ and $g$ are jointly monomorphic. Now $E$ is a congruence because for generalized elements $x_1, x_2 \in X(T)$, $(x_1, x_2)$ factors through $E$ if and only if $x_1 - x_2$ factors through $Y$. In other words, the relation on $X(T)$ is exactly $x_1 \equiv x_2 \pmod{Y(T)}$, which is an equivalence relation on $X(T)$ (and in fact a congruence in $\Ab$). Now by assumption, $E$ is the kernel pair of some morphism $h : X \to Z$; in other words, $(x_1, x_2)$ factors through $E$ if and only if $h(x_1) = h(x_2)$. In particular, for $x \in X(T)$, $x$ factors through $Y$ if and only if $(x, 0)$ factors through $E$, which is equivalent to $h(x) = h(0) = 0$. We have thus shown that $Y$ is the kernel of $h$.
 
-- id: regular_effective_congruences_implies_quotients
-  assumptions:
-    - effective congruences
-    - regular
-  conclusions:
-    - quotients of congruences
-  proof: We assume that every congruence is effective, and the regularity condition implies that every effective congruence has a quotient.
-
 - id: regular_epi-regular_extensive_consequences
   assumptions:
     - epi-regular
@@ -143,12 +110,3 @@
     g(y) & = \alpha(y)', & g(y') & = \alpha(y),
     \end{align*}$$
     on generalized elements. Extensivity can be used to show that $f, g$ are jointly monomorphic. Clearly, the pair $f, g$ is reflexive and symmetric. For transitivity, one once again uses extensivity. By assumption, there is a morphism $h : B + B' \to C$ such that $f, g$ is the kernel pair of $h$, that is, two generalized elements $x, y \in B + B'$ satisfy $h(x) = h(y)$ if and only if $x = f(e)$, $y = g(e)$ for some $e \in E$. In particular, for $x \in B$, we have $h(x) = h(x')$ if and only if $x = f(e)$, $x' = g(e)$ for some $e \in E$. By disjointness of coproducts, we must necessarily have $e \in A$, and $x = \alpha(e)$. This shows that $\alpha$ is the equalizer of $h \circ i_1, h \circ i_2 : B \rightrightarrows C$.
-
-- id: Barr-exact_definition
-  assumptions:
-    - Barr-exact
-  conclusions:
-    - regular
-    - effective congruences
-  proof: This holds by definition.
-  is_equivalence: true

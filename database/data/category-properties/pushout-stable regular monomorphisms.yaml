@@ -1,0 +1,14 @@
+id: pushout-stable regular monomorphisms
+relation: has
+description: A category has <i>pushout-stable regular monomorphisms</i> if it has pushouts and, for every regular monomorphism $X \to Y$ and every morphism $X \to Z$, the induced morphism $Z \to Z \sqcup_X Y$ is also a regular monomorphism. This property is one of the requirements for a category to be coregular.
+nlab_link: https://ncatlab.org/nlab/show/stability+under+pushout
+dual: pullback-stable regular epimorphisms
+invariant_under_equivalences: true
+
+related:
+  - pushouts
+  - coregular
+
+tags:
+  - limit–colimit interaction
+  - morphism behavior
