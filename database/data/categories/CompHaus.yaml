@@ -43,9 +43,9 @@ satisfied_properties:
   - property: Barr-exact
     proof: The forgetful functor from $\CompHaus$ to $\Set$ is monadic; see for example <a href="https://ncatlab.org/nlab/show/compact+Hausdorff+space#compact_hausdorff_spaces_are_monadic_over_sets">nLab</a>. Therefore, by <a href="https://ncatlab.org/nlab/show/colimits+in+categories+of+algebras#exact">this result</a>, $\CompHaus$ is Barr-exact.
 
-  - property: coregular
+  - property: pushout-stable regular monomorphisms
     proof: >-
-      It suffices to show that pushouts preserve (regular) monomorphisms in $\CompHaus$. Thus, suppose we have a pushout square
+      Suppose we have a pushout square
       $$\begin{CD}
       A @> i >> B \\
       @V f VV @VV g V \\
