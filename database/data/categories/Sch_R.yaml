@@ -58,11 +58,18 @@ unsatisfied_properties:
   - property: cokernel pairs
     proof: Choose a residue field $K$ of $R$. Then the span $\IA^1_K \leftarrow \Spec(K(t)) \rightarrow \IA^1_K$ has no pushout; see <a href="https://mathoverflow.net/questions/9961" target="_blank">MO/9961</a>.
 
-  - property: quotients of congruences
-    proof: If $\Sch_R$ had quotients of congruences, then by <a href="/content/pushouts-of-monos-via-congruence-quotients">this lemma</a> it would also have pushouts of monomorphisms, contradicting the fact that the span $\IA^1_K \leftarrow \Spec(K(t)) \rightarrow \IA^1_K$ has no pushout where $K$ is a residue field of $R$; see <a href="https://mathoverflow.net/questions/9961" target="_blank">MO/9961</a>.
-
   - property: sequential colimits
     proof: It is shown in <a href="https://mathoverflow.net/questions/511944" target="_blank">MO/511944</a> that the diagram $$\IA^1_R \hookrightarrow \IA^2_R \hookrightarrow \IA^3_R \hookrightarrow \cdots$$ has no colimit.
+
+  - property: coequalizers of kernel pairs
+    proof: >-
+      We have a diagram of closed immersions of affine spaces
+      $$\begin{array}{cccc}
+      \IA^1_R & \to & \IA^2_R & \to ~ \cdots \\[1ex]
+      \downarrow & \swarrow & & \\[1ex]
+      \IA^\infty_R, &&&
+      \end{array}$$
+      where $\IA^n_R = \Spec(R[X_1,\dotsc,X_n])$ and $\IA^\infty_R = \Spec(R[X_1,X_2,\dotsc])$. By <a href="https://mathoverflow.net/questions/511944" target="_blank">MO/511944</a>, the sequence $\IA^1_R \hookrightarrow \IA^2_R \hookrightarrow \cdots$ has no colimit. Moreover, we already know that $\Sch_R$ is infinitary extensive. Hence, Lemma 2 <a href="/content/monic_sequential_colimits">here</a> implies that $\Sch_R$ does not have coequalizers of kernel pairs. Specifically, the kernel pair of $\coprod_{n \geq 0} \IA^n_R \to \IA^\infty_R$ has no coequalizer.
 
 special_objects:
   initial object:
