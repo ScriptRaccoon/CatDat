@@ -18,7 +18,7 @@
   assumptions:
     - finitary algebraic
   conclusions:
-    - regular
+    - pullback-stable regular epimorphisms
   proof: The regular epimorphisms are precisely the sort-wise surjective homomorphisms, which are clearly stable under pullbacks.
 
 - id: generalized_variety_require_sifted_colimit

@@ -1,0 +1,14 @@
+id: pullback-stable regular epimorphisms
+relation: has
+description: A category has <i>pullback-stable regular epimorphisms</i> if it has pullbacks and, for every regular epimorphism $X \to Y$ and every morphism $Z \to Y$, the induced morphism $X \times_Y Z \to Z$ is also a regular epimorphism. This property is one of the requirements for a category to be regular.
+nlab_link: https://ncatlab.org/nlab/show/stability+under+pullback
+dual: pushout-stable regular monomorphisms
+invariant_under_equivalences: true
+
+related:
+  - pullbacks
+  - regular
+
+tags:
+  - limit–colimit interaction
+  - morphism behavior
