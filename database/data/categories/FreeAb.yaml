@@ -46,8 +46,8 @@ satisfied_properties:
     proof: 'Let $f : A \to B$ be a homomorphism of free abelian groups. The coequalizer of its kernel pair $A \times_B A \rightrightarrows A$ in $\Ab$ is the image $\im(f)$. As a subgroup of $B$, it is also free abelian. Then it is also the coequalizer of the kernel pair in $\FreeAb$.'
     check_redundancy: false
 
-  - property: regular
-    proof: It remains to prove that regular epimorphisms are stable under pullback. This is clear since they coincide with the surjective homomorphisms (see below).
+  - property: pullback-stable regular epimorphisms
+    proof: This is clear since regular epimorphisms coincide with the surjective homomorphisms (see below).
 
 unsatisfied_properties:
   - property: balanced

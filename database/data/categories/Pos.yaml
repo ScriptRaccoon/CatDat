@@ -33,7 +33,7 @@ satisfied_properties:
   - property: infinitary extensive
     proof: This follows from Lemma 11 <a href="/content/subcategories">here</a> since <a href="/category/PreOrd">$\PreOrd$</a> is infinitary extensive and its full subcategory $\Pos$ is closed under pullbacks and coproducts in $\PreOrd$.
 
-  - property: coregular
+  - property: pushout-stable regular monomorphisms
     proof: See <a href="https://math.stackexchange.com/questions/5130295" target="_blank">MSE/5130295</a>.
 
   - property: extremal generator
@@ -56,7 +56,7 @@ unsatisfied_properties:
   - property: balanced
     proof: The inclusion $\{0,1\} \to \{0 < 1\}$ provides a counterexample (where in the domain there is no relation between $0$ and $1$).
 
-  - property: regular
+  - property: pullback-stable regular epimorphisms
     proof: See Example 3.14 at the <a href="https://ncatlab.org/nlab/show/regular+category" target="_blank">nLab</a>.
 
   - property: Malcev
