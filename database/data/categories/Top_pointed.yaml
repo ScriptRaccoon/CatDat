@@ -63,7 +63,7 @@ satisfied_properties:
     proof: This follows from Lemma 2 <a href="/content/subcategories">here</a> applied to the forgetful functor to $\Set$.
 
   - property: coregular
-    proof: Regular monomorphisms coincide with the embeddings (see below). Since <a href="/category/Top">$\Top$</a> is coregular, they are stable under pushouts, and pushouts in $\Top_*$ are the same.
+    proof: This follows from the dual of Lemma 7 <a href="/content/subcategories">here</a> applied to the forgetful functor $\Top_* \to \Top$, using that $\Top$ is coregular and the description of regular monomorphisms below.
 
   - property: extremal cogenerator
     proof: >-

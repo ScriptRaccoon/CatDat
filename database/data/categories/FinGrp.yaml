@@ -48,7 +48,7 @@ satisfied_properties:
     proof: 'A proof can be found in <a href="https://mathoverflow.net/questions/511516" target="_blank">MO/511516</a>. It even shows that every cocongruence in $\FinGrp$ is trivial. In short, the proof goes like this: We know that <a href="/category/Grp">$\Grp$</a> has effective cocongruences. Using the fact that amalgamated sums of finite groups are residually finite, one can can show that every cocongruence in $\FinGrp$ is also a cocongruence in $\Grp$.'
 
   - property: regular
-    proof: The category is Malcev and hence finitely complete, and it has all coequalizers. The regular epimorphisms coincide with the surjective group homomorphisms (see below), hence are clearly stable under pullbacks.
+    proof: This follows from Lemma 7 <a href="/content/subcategories">here</a> applied to the inclusion functor $\FinGrp \hookrightarrow \Grp$ into the regular category $\Grp$ and the description of regular epimorphisms below.
 
   - property: ℵ₁-cofiltered limits
     proof: For <a href="/category/FinSet">$\FinSet$</a> know that the embedding $\FinSet \hookrightarrow \Set$ is closed under $\aleph_1$-cofiltered limits. From this and the fact that the forgetful functor $\Grp \to \Set$ preserves limits it follows that $\FinGrp \hookrightarrow \Grp$ is closed under $\aleph_1$-cofiltered limits.

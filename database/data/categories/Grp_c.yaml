@@ -56,7 +56,7 @@ satisfied_properties:
       - grp_malcev
 
   - property: regular
-    proof: We already know that the category is finitely complete, and that it has all coequalizers. The regular epimorphisms coincide with the surjective group homomorphisms (see below), hence are clearly stable under pullbacks.
+    proof: This follows from Lemma 7 <a href="/content/subcategories">here</a> applied to the inclusion functor $\Grp_\c \hookrightarrow \Grp$ into the regular category $\Grp$ and the description of regular epimorphisms below.
 
   - property: effective congruences
     proof: 'A congruence on a countable group $G$ has the form $\{(g,h) \in G^2 : g^{-1} h \in N \}$ for some normal subgroup $N \subseteq G$. It is the kernel pair of the projection $p : G \twoheadrightarrow G/N$ in $\Grp$, but also in $\Grp_\c$ since $G/N$ is countable.'
