@@ -88,7 +88,7 @@ unsatisfied_properties:
       $$\alpha(x_0 y_1) = \alpha(y_0 x_1),$$
       where $x_i$ (resp. $y_i$) denotes the image of $x$ (resp. $y$) in the copy $A_i$. This shows that $\alpha$ is not injective.
 
-  - property: coregular
+  - property: pushout-stable regular monomorphisms
     proof: >-
       We will find a regular monomorphism $\iota : F \to M$ of semigroups and a homomorphism $F \to K$ such that $K \to K \sqcup_F M$ is not injective. It is similar to our example for <a href="/category/Mon">$\Mon$</a>. Consider these semigroups defined by generators and relations:
       $$\begin{align*}

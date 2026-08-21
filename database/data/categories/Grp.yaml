@@ -58,8 +58,8 @@ unsatisfied_properties:
     proof: 'We apply <a href="/content/missing_cogenerator">this lemma</a> to the collection of simple groups: Any non-trivial homomorphism from a simple group to a group must be injective, and for every infinite cardinal $\kappa$ there is a simple group of size $\geq \kappa$ (for example, the alternating group on $\kappa$ elements).'
     label: grp_no_cogenerator
 
-  - property: coregular
-    proof: This is because injective group homomorphisms are not stable under pushouts, see e.g. <a href="https://math.stackexchange.com/questions/601463/" target="_blank">MSE/601463</a> or <a href="https://math.stackexchange.com/questions/5088032" target="_blank">MSE/5088032</a>.
+  - property: pushout-stable regular monomorphisms
+    proof: See <a href="https://math.stackexchange.com/questions/601463/" target="_blank">MSE/601463</a> or <a href="https://math.stackexchange.com/questions/5088032" target="_blank">MSE/5088032</a>.
 
   - property: counital
     proof: The canonical morphism $F_2 = \IZ \sqcup \IZ \to \IZ \times \IZ$ is not a monomorphism since $F_2$ is not abelian.

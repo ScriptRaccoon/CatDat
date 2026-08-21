@@ -88,8 +88,8 @@ unsatisfied_properties:
     references:
       - grp_no_regular_quotient_object_classifier
 
-  - property: coregular
-    proof: Pushouts of injective homomorphisms between countable groups do not need to be injective, see <a href="https://math.stackexchange.com/questions/5088032" target="_blank">MSE/5088032</a>.
+  - property: pushout-stable regular monomorphisms
+    proof: See <a href="https://math.stackexchange.com/questions/5088032" target="_blank">MSE/5088032</a>.
 
   - property: cogenerator
     proof: 'Assume that a cogenerator $Q$ exists in $\Grp_\c$. There are only countably many finitely generated subgroups of $Q$. But there are continuum many finitely generated simple groups; this follows from Corollary 1.5 in <a href="https://arxiv.org/abs/1807.06478" target="_blank">Finitely generated infinite simple groups of homeomorphisms of the real line</a> by J. Hyde and Y. Lodha. Hence, there is a finitely generated (and hence countable) simple group $H$ which does not embed into $Q$. Since $H$ is simple, any homomorphism $H \to Q$ must be trivial then. But then $\id_H, 1 : H \rightrightarrows H$ are not separated by a homomorphism $H \to Q$.'

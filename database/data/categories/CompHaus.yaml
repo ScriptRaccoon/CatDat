@@ -42,15 +42,15 @@ satisfied_properties:
   - property: Barr-exact
     proof: The forgetful functor from $\CompHaus$ to $\Set$ is monadic; see for example <a href="https://ncatlab.org/nlab/show/compact+Hausdorff+space#compact_hausdorff_spaces_are_monadic_over_sets">nLab</a>. Therefore, by <a href="https://ncatlab.org/nlab/show/colimits+in+categories+of+algebras#exact">this result</a>, $\CompHaus$ is Barr-exact.
 
-  - property: coregular
-    proof:
-      'It suffices to show that pushouts preserve (regular) monomorphisms in $\CompHaus$. Thus, suppose we have a pushout square
+  - property: pushout-stable regular monomorphisms
+    proof: >-
+      Suppose we have a pushout square
       $$\begin{CD}
       A @> i >> B \\
       @V f VV @VV g V \\
       C @>> j > D,
       \end{CD}$$
-      with $i : A \hookrightarrow B$ a monomorphism. Then for any pair of distinct elements $c, c'' \in C$, by Urysohn''s lemma there exists $\gamma : C \to [0, 1]$ with $\gamma(c) = 0$ and $\gamma(c'') = 1$. Also, by Tietze''s extension theorem, there exists $\beta : B \to [0, 1]$ such that $\beta \circ i = \gamma \circ f$. By the pushout property, there is a unique $\delta : D \to [0, 1]$ such that $\delta \circ g = \beta$ and $\delta \circ j = \gamma$. Since $\delta(j(c)) \ne \delta(j(c''))$, we conclude that $j(c) \ne j(c'')$. This shows that $j$ is injective, so it is a regular monomorphism.'
+      with $i : A \hookrightarrow B$ a monomorphism. Then for any pair of distinct elements $c, c' \in C$, by Urysohn's lemma there exists $\gamma : C \to [0, 1]$ with $\gamma(c) = 0$ and $\gamma(c') = 1$. Also, by Tietze's extension theorem, there exists $\beta : B \to [0, 1]$ such that $\beta \circ i = \gamma \circ f$. By the pushout property, there is a unique $\delta : D \to [0, 1]$ such that $\delta \circ g = \beta$ and $\delta \circ j = \gamma$. Since $\delta(j(c)) \ne \delta(j(c'))$, we conclude that $j(c) \ne j(c')$. This shows that $j$ is injective, so it is a regular monomorphism.
 
   - property: extensive
     proof: This follows from Lemma 11 <a href="/content/subcategories">here</a> since <a href="/category/Top">$\Top$</a> is infinitary extensive and its full subcategory $\CompHaus$ is closed under pullbacks and finite coproducts in $\Top$.
