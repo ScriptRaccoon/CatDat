@@ -53,8 +53,8 @@ satisfied_properties:
       - SetxSet_0_fin_equalizers
       - SetxSet_0_fin_finite_products
 
-  - property: regular
-    proof: By the previous properties, it suffices to prove that epimorphisms are stable under pullback. Since they are pairs of surjective maps and pullbacks are constructed pointwise, this follows immediately from the corresponding property of <a href="/category/Set">$\Set$</a>.
+  - property: pullback-stable regular epimorphisms
+    proof: Since every epimorphism is regular, epimorphisms are pairs of surjective maps, and pullbacks are constructed pointwise, this follows immediately from the corresponding property of <a href="/category/Set">$\Set$</a>.
 
   - property: effective congruences
     proof: Let $(R,S) \rightrightarrows (A,B)$ be a congruence in $(\Set \times \Set)_{\varnothing,\fin}$. Since finite limits are constructed pointwise, it is also a congruence in $\Set \times \Set$, and therefore a pair of congruences in $\Set$. Thus, the congruence is the kernel pair of $(A,B) \to (A/R,B/S)$ in $\Set \times \Set$. It remains to show that $(A/R,B/S)$ belongs to $(\Set \times \Set)_{\varnothing,\fin}$. If $A$ is empty, then $A/R$ is empty, and the claim holds. Otherwise, $B$ is finite, and hence $B/S$ is finite.

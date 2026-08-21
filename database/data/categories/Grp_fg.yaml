@@ -136,8 +136,8 @@ unsatisfied_properties:
     references:
       - grpc_no_cogenerator
 
-  - property: coregular
-    proof: Pushouts of injective homomorphisms between finitely generated groups do not need to be injective, see <a href="https://math.stackexchange.com/questions/5088032">MSE/5088032</a>.
+  - property: pushout-stable regular monomorphisms
+    proof: The regular monomorphisms are precisely the injective homomorphisms. Pushouts of injective homomorphisms between finitely generated groups do not need to be injective, see <a href="https://math.stackexchange.com/questions/5088032">MSE/5088032</a>.
 
   - property: regular quotient object classifier
     proof: >-
