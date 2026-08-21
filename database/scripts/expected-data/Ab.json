@@ -128,6 +128,8 @@
 	"concretizable": true,
 	"total": true,
 	"cototal": true,
+	"pullback-stable regular epimorphisms": true,
+	"pushout-stable regular monomorphisms": true,
 
 	"cartesian closed": false,
 	"locally cartesian closed": false,
