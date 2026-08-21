@@ -102,3 +102,11 @@
   conclusions:
     - coreflexive equalizers
   proof: 'Let $f,g : X \rightrightarrows Y$ be a coreflexive pair, i.e. there is a morphism $r : Y \to X$ with $r f = r g = \id_X$. Since $f$ is a split monomorphism, it is a regular monomorphism. By assumption, $f$ must be an isomorphism. Then $r f = \id_X$ implies that $r = f^{-1}$, and $r g = \id_X$ implies $g = f$. Hence, $\id_X$ is an equalizer of $f,g$.'
+
+- id: isos_are_stable
+  assumptions:
+    - regular-quotient-trivial
+    - pullbacks
+  conclusions:
+    - pullback-stable regular epimorphisms
+  proof: Regular epimorphisms are isomorphisms by assumption, and isomorphisms are clearly stable under pullback.

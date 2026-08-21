@@ -1945,6 +1945,14 @@
 		{
 			"type": "category",
 			"id": "total"
+		},
+		{
+			"type": "category",
+			"id": "pullback-stable regular epimorphisms"
+		},
+		{
+			"type": "category",
+			"id": "pushout-stable regular monomorphisms"
 		}
 	]
 }

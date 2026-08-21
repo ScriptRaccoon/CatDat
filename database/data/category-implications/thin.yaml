@@ -138,14 +138,6 @@
     - cocomplete
   proof: The supremum of a subset in a preordered set is the infimum of the set of upper bounds.
 
-- id: thin_implies_regular
-  assumptions:
-    - finitely complete
-    - thin
-  conclusions:
-    - regular
-  proof: In a thin category, regular epimorphisms are isomorphisms, and the rest is clear as well.
-
 - id: thin_zero_trivial
   assumptions:
     - inhabited
