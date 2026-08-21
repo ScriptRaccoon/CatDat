@@ -34,7 +34,7 @@ satisfied_properties:
     proof: It is a full subcategory of the preadditive category <a href="/category/Ab">$\Ab$</a>.
 
   - property: regular
-    proof: The regular epimorphisms are exactly the surjective homomorphisms (see below), and these are clearly stable under pullbacks.
+    proof: This follows from Lemma 7 <a href="/content/subcategories">here</a> applied to the inclusion functor $\TorsFreeAb \hookrightarrow \Ab$ into the regular category $\Ab$ and the description of regular epimorphisms below.
 
   - property: coregular
     proof: >-

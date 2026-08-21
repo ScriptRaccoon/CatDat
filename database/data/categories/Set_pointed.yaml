@@ -32,10 +32,6 @@ satisfied_properties:
     proof: The pointed set $(\{0,1\},1)$ is a cogenerator.
     label: set_*_cogenerator
 
-  - property: coregular
-    proof: From the other properties we know that (co-)limits exist and that monomorphisms coincide with injective pointed maps. So it suffices to prove that these maps are stable under pushouts. This follows from the corresponding fact for <a href="/category/Set">$\Set$</a> and the observation that the forgetful functor $\Set_* \to \Set$ preserves pushouts.
-    check_redundancy: false
-
   - property: co-Malcev
     proof: Malcev categories are closed under slice categories by Prop. 2.2.14 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>. It follows that co-Malcev categories are closed under coslice categories, and $\Set_*$ is a coslice category of <a href="/category/Set">$\Set$</a>, which is co-Malcev since every elementary topos is co-Malcev.
 

@@ -86,15 +86,17 @@ The forgetful functor $\C / P \to \C$ is fully faithful; it has right adjoint ${
 :::
 
 ::: Lemma 7
-Let $U : \C \to \D$ be a fully faithful functor. Assume that $\C$ has finite limits and coequalizers, and that $U$ preserves pullbacks and coequalizers. If $\D$ is regular, then so is $\C$.
+Let $U : \C \to \D$ be a functor preserving pullbacks. Assume that $\D$ is regular and that $\C$ has finite limits and coequalizers of kernel pairs. If $U$ preserves and reflects regular epimorphisms, then $\C$ is regular. Moreover, this condition is satisfied when $U$ is conservative and preserves coequalizers.
 :::
 
 ::: Proof
-Since $\C$ has finite limits and coequalizers, the only nontrivial part of proving $\C$ is regular is to check that regular epimorphisms are stable under pullbacks in $\C$. Since $U$ preserves pullbacks and regular epimorphisms, it suffices to show that $U$ reflects regular epimorphisms. Thus, suppose $f : X \to Y$ is a morphism in $\C$ with $Uf$ a regular epimorphism. Then in $\C$ we have the diagram
-$$X \times_Y X \rightrightarrows X \to \im(f) \xrightarrow{i} Y$$
-where $X \times_Y X$ is the kernel pair of $f$, and $\im(f)$ is the coequalizer. By the assumptions, the image under $U$ is equivalent to the diagram in $\D$:
-$$UX \times_{UY} UX \rightrightarrows UX \to \im(Uf) \xrightarrow{Ui} UY$$
-where $UX \times_{UY} UX$ is the kernel pair of $Uf$, and $\im(Uf)$ is the coequalizer. Since $Uf$ is a regular epimorphism, we must have $Ui$ is an isomorphism. Since $U$ is fully faithful and therefore conservative, we get $i$ is an isomorphism as well, so $f$ is a regular epimorphism.
+Since $\C$ has finite limits and coequalizers of kernel pairs, it remains to prove that regular epimorphisms are stable under pullbacks in $\C$. Assume first that $U$ preserves and reflects regular epimorphisms. If $X \to Y$ is a regular epimorphism and $Z \to Y$ is any morphism in $\C$, then $U(X) \to U(Y)$ is a regular epimorphism, and therefore also $U(X) \times_{U(Y)} U(Z) \to U(Z)$ is a regular epimorphism. Since $U$ preserves pullbacks, this identifies with $U(X \times_Y Z) \to U(Z)$, the image under $U$ of $X \times_Y Z \to Z$. Since $U$ reflects regular epimorphisms, it follows that $X \times_Y Z \to Z$ is a regular epimorphism, finishing the proof.
+
+Now assume that $U$ is conservative and preserves coequalizers. Then it clearly preserves regular epimorphisms. Conversely, suppose that $f : X \to Y$ is a morphism in $\C$ such that $U(f)$ is a regular epimorphism. Then in $\C$ we have the diagram
+$$X \times_Y X \rightrightarrows X \xrightarrow{p} \im(f) \xrightarrow{i} Y$$
+where $X \times_Y X \rightrightarrows X$ is the kernel pair of $f$, and $\im(f)$ is the coequalizer. By the assumptions on $U$, its image is equivalent to the diagram in $\D$:
+$$U(X) \times_{U(Y)} U(X) \rightrightarrows U(X) \xrightarrow{U(p)} U(\im(f)) \xrightarrow{U(i)} U(Y)$$
+where $U(X) \times_{U(Y)} U(X)$ is the kernel pair of $U(f)$, and $U(\im(f))$ is the coequalizer. Since $U(f)$ is a regular epimorphism and $\D$ is regular, we must have that $U(i)$ is an isomorphism. Since $U$ is conservative, $i$ is an isomorphism as well, so $f$ is a regular epimorphism.
 :::
 
 ::: Lemma 8
