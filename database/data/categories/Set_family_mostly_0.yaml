@@ -58,11 +58,11 @@ satisfied_properties:
   - property: filtered-colimit-stable monomorphisms
     proof: Since filtered colimits are constructed pointwise and the monomorphisms are precisely the morphisms that are pointwise injective (see below), this property is inherited from <a href="/category/Set">$\Set$</a>.
 
+  - property: pushout-stable regular monomorphisms
+    proof: Based on the descriptions of pushouts and regular monomorphisms, this property is inherited from <a href="/category/Set">$\Set$</a>.
+
   - property: cocartesian cofiltered limits
     proof: This property is inherited from <a href="/category/Set">$\Set$</a> since binary coproducts (in fact, all colimits) and cofiltered limits (in fact, all non-empty limits) are constructed pointwise.
-
-  - property: coregular
-    proof: It suffices to prove that regular monomorphisms are stable under pushout. This property is clearly inherited from <a href="/category/Set">$\Set$</a>.
 
   - property: well-powered
     proof: The monomorphisms $X \to Y$ are precisely the morphisms that are pointwise injective (see below). If $X_i \to Y_i$ is injective and $Y_i = \varnothing$, then also $X_i = \varnothing$. It follows that the collection $\Sub(Y) \cong \prod_{i \in \supp(Y)} \Sub(Y_i)$ is essentially small.

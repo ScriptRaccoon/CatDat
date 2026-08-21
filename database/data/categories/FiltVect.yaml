@@ -78,18 +78,18 @@ satisfied_properties:
       $$F_{< N}^n(V) \coloneqq \begin{cases} F^n(V) & n < N \\ 0 & n \geq N. \end{cases}$$
       Indeed, we have $F_{< N} \subseteq F_{< N+1}$, so that $\id_V : (V,F_{<N}) \to (V,F_{<N+1})$ is a filtered linear map. If $(W,F)$ is a filtered vector space together with a linear map $f : V \to W$ such that each map $f : (V,F_{<N}) \to (W,F)$ is filtered, then $f : (V,F) \to (W,F)$ is filtered as well. Indeed, for every $n \in \IZ$ we can choose some $N \in \IN$ with $n < N$, so that $F_{<N}^n(V) = F^n(V)$ is mapped into $F^n(W)$.
 
-  - property: regular
+  - property: pullback-stable regular epimorphisms
     proof: >-
-      It remains to prove that regular epimorphisms are stable under pullbacks. This follows immediately from their classification below, from the fact that $F^n$ preserves limits, and from the regularity of $\Vect$.
+      This follows immediately from the classification of regular epimorphisms below, from the fact that $F^n$ preserves limits, and from the corresponding property of $\Vect$.
 
 
       In more detail, if $(V,F) \to (W,F)$ is a regular epimorphism and $(U,F) \to (W,F)$ is any morphism, then $(V,F) \times_{(W,F)} (U,F) \to (U,F)$ is a regular epimorphism, since $V \times_W U \to U$ is surjective and, for every $n \in \IZ$, the restricted map
       $$F^n(V \times_W U) = F^n(V) \times_{F^n(W)} F^n(U) \to F^n(U)$$
       is surjective.
 
-  - property: coregular
+  - property: pushout-stable regular monomorphisms
     proof: >-
-      It remains to prove that regular monomorphisms (as classified below) are stable under pushouts. Let $i : (U,F) \to (V,F)$ be a regular monomorphism, i.e. $i$ is injective and $F^n(U) = i^*(F^n(V))$. Let $f : (U,F) \to (W,F)$ be any morphism. We must prove that the canonical morphism $(W,F) \to (V,F) \oplus_{(U,F)} (W,F)$ is a regular monomorphism. It is certainly injective, since the forgetful functor to $\Vect$ preserves colimits and $\Vect$ is abelian, and <a href="/category-implication/dual_abelian_implies_regular">hence coregular</a>. Now suppose that $w \in W$ is an element whose image $[0,w] \in V \oplus_U W$ lies in $F^n(V \oplus_U W)$; we must show that $w \in F^n(W)$.
+      Let $i : (U,F) \to (V,F)$ be a regular monomorphism, i.e. $i$ is injective and $F^n(U) = i^*(F^n(V))$. Let $f : (U,F) \to (W,F)$ be any morphism. We must prove that the canonical morphism $(W,F) \to (V,F) \oplus_{(U,F)} (W,F)$ is a regular monomorphism. It is certainly injective since the forgetful functor to $\Vect$ preserves colimits and $\Vect$ has the claimed property. Now suppose that $w \in W$ is an element whose image $[0,w] \in V \oplus_U W$ lies in $F^n(V \oplus_U W)$; we must show that $w \in F^n(W)$.
       Since, by the construction of colimits in $\FiltVect$, the subspace $F^n(V \oplus_U W)$ is the sum of the images of $F^n(V)$ and $F^n(W)$, there exist $v \in F^n(V)$ and $w' \in F^n(W)$ such that $[0,w] = [v,w']$. This means that there exists some $u \in U$ with $v = i(u)$ and $w = f(u) + w'$. Then $u \in F^n(U)$ because $i(u) \in F^n(V)$. Hence $f(u) \in F^n(W)$, and therefore $w = f(u) + w' \in F^n(W)$.
 
 unsatisfied_properties:
