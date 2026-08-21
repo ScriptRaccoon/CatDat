@@ -70,7 +70,7 @@ unsatisfied_properties:
     references:
       - Met_no_effective_cocongruences
 
-  - property: regular
+  - property: pullback-stable regular epimorphisms
     proof: We can take the same counterexample as for <a href="/category/PMet">$\PMet$</a>.
     references:
       - PMet_not_regular
