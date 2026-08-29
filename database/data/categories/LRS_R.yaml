@@ -30,6 +30,20 @@ satisfied_properties:
   - property: well-copowered
     proof: This follows from the characterization of epimorphisms below.
 
+  - property: concretizable
+    proof: >-
+      Consider the functor $F : \LRS_R \to \Set \times \Set^{\op}$ defined on objects by
+      $$\textstyle F(X,\O_X) \coloneqq \bigl(|X|,\coprod_{U \subseteq X} |\O_X(U)|\bigr),$$
+      where $U$ runs through the open subsets of $X$ and $|{-}|$ denotes the underlying set of a topological space or ring, respectively. If $(f,f^\sharp) : (X,\O_X) \to (Y,\O_Y)$ is a morphism of locally ringed spaces, then we get a map of sets $|f| : |X| \to |Y|$, and the ring homomorphisms $f^\sharp(V) : \O_Y(V) \to \O_X(f^*(V))$ for opens $V \subseteq Y$ induce a map of sets
+      $$\textstyle \alpha : \coprod_{V \subseteq Y} \O_Y(V) \to \coprod_{U \subseteq X} \O_X(U)$$
+      defined by $\alpha \circ \iota_V = \iota_{f^*(V)} \circ f^\sharp(V)$. We let $F(f,f^\sharp) \coloneqq (|f|,\alpha)$. It is easy to verify that $F$ is a functor.
+
+      To show that $F$ is faithful, assume that $(f,f^\sharp)$ and $(g,g^\sharp)$ are two morphisms with the same image under $F$. Then $|f| = |g|$, hence $f = g$. Also, we have
+      $$\iota_{f^*(V)} \circ f^\sharp(V) = \iota_{g^*(V)} \circ g^\sharp(V)$$
+      for every open subset $V \subseteq Y$. Since $\iota_{f^*(V)} = \iota_{g^*(V)}$ is a monomorphism of sets, we conclude that $f^\sharp(V) = g^\sharp(V)$. Thus, $f^\sharp = g^\sharp$. We have shown $(f,f^\sharp) = (g,g^\sharp)$, as required.
+
+      Since <a href="/category/Set_op">$\Set^{\op}$</a> is concretizable (say, via the contravariant power set functor), and <a href="/category/SetxSet">$\Set \times \Set$</a> is also concretizable (because it is locally small and has a generating set), it follows that $\LRS_R$ is concretizable.
+
   - property: infinitary extensive
     proof: >-
       The proof works for both ringed and locally ringed spaces and relies on the fact that <a href="/category/Top">$\Top$</a> is infinitary extensive.

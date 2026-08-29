@@ -1,0 +1,16 @@
+id: concretizable
+relation: is
+description: >-
+  A category $\C$ is <i>concretizable</i> when it admits a faithful functor
+  $$U : \C \to \Set.$$
+  In this case, the pair $(\C,U)$ is called a <i>concrete category</i>. Thus, "concretizable" is a property, whereas "concrete" is additional structure. (Some authors use "concrete" for the property as well.) The property of being concretizable is self-dual since $\Set^{\op}$ is concretizable (for instance, via the <a href="/functor/power_set_contravariant">contravariant power set functor</a>).
+nlab_link: https://ncatlab.org/nlab/show/concrete+category
+dual: concretizable
+invariant_under_equivalences: true
+
+related:
+  - generating set
+  - locally essentially small
+
+tags:
+  - size

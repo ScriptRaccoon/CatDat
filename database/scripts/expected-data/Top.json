@@ -88,6 +88,7 @@
 	"cokernel pairs": true,
 	"equalizers of cokernel pairs": true,
 	"coequalizers of kernel pairs": true,
+	"concretizable": true,
 
 	"abelian": false,
 	"additive": false,
