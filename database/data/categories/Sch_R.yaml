@@ -22,13 +22,16 @@ comments:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\Sch_R \to \LRS_R$ and $\LRS_R$ is locally small.
+    proof: There is a forgetful functor $\Sch_R \to \LRS_R$ and <a href="/category/LRS_R">$\LRS_R$</a> is locally small.
 
   - property: terminal object
     proof: The scheme $\Spec(R)$ is terminal.
 
   - property: pullbacks
     proof: This is the well-known construction of the fiber product of schemes, see e.g. EGA I, Chap. I, Thm. 3.2.1. Alternatively, one can show that $\Sch_R$ is closed under pullbacks in the category <a href="/category/LRS_R">$\LRS_R$</a>, which has pullbacks.
+
+  - property: concretizable
+    proof: This is because <a href="/category/LRS_R">$\LRS_R$</a> is concretizable.
 
   - property: well-powered
     proof: See <a href="https://mathoverflow.net/questions/160681" target="_blank">MO/160681</a>.

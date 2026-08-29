@@ -61,3 +61,18 @@
   conclusions:
     - locally essentially small
   proof: This is trivial.
+
+- id: concretizable_is_locally_essentially_small
+  assumptions:
+    - concretizable
+  conclusions:
+    - locally essentially small
+  proof: 'If $U : \C \to \Set$ is a faithful functor, for every pair of objects $A,B$, the collection $\Hom(A,B)$ embeds into the set $\Hom(U(A),U(B))$, so that it is isomorphic to a set.'
+
+- id: generating_set_concrete
+  assumptions:
+    - generating set
+    - locally essentially small
+  conclusions:
+    - concretizable
+  proof: 'If $S$ is a generating set of a locally small category $\C$, then by definition the functor $(\Hom(G,-))_{G \in S} : \C \to \Set^S$ is faithful. Furthermore, the functor $\Set^S \to \Set$ mapping $X \mapsto \coprod_{G \in S} X_G$ is faithful. Their composition provides a faithful functor $\C \to \Set$.'
