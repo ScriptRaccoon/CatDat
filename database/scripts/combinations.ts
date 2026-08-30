@@ -81,7 +81,7 @@ const unique_combinations = combinations
 	.map(({ p, q }) => ({ p, q }))
 
 console.info(
-	`Unique witnessed combinations for ${remove_underscores(type)} with ID "${structure_id}":`
+	`Found ${unique_combinations.length} unique witnessed combinations for ${remove_underscores(type)} with ID "${structure_id}":`
 )
 
 if (unique_combinations.length === 0) {
