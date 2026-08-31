@@ -39,7 +39,10 @@ satisfied_properties:
   - property: cokernel pairs
     proof: >-
       Since metric spaces are Hausdorff, the cokernel pair of $f : Y \to X$ coincides with the cokernel pair of the inclusion $C \hookrightarrow X$, where $C$ is the closure of the image of $f$ (if it exists). Thus, it suffices to prove that for every closed subset $C \subseteq X$ of a metric space, the pushout $X \sqcup_C X$ exists. In fact, the $\Top$-pushout $X \sqcup_C X$ is metrizable.
+
       To see this, consider the canonical continuous map $p : X \sqcup X \to X \sqcup_C X$. It is surjective and closed, and its fibers have cardinality at most $2$. In particular, its fibers are compact. Since $X \sqcup X$ is metrizable, the claim now follows from the Hanai-Morita-Stone theorem; see Theorem 4.4.17 in Engelking's book <i>General Topology</i>.
+
+      A more direct proof that $X \sqcup_C X$ is metrizable can be found at <a href="https://math.stackexchange.com/questions/5147463">MSE/5147463</a>.
 
   - property: effective cocongruences
     proof: 'Suppose we have a cocongruence $f, g : X \rightrightarrows E$ in $\Met_c$. Then the image in $\Haus$ is a coreflexive corelation (since epimorphisms in both categories are continuous maps with dense image). By <a href="https://mathoverflow.net/a/509582/2841" target="_blank">MO/509548</a>, that implies that image is of the form $X +_S X$ for a closed subset $S$ of $X$. Since $S$ is metrizable, and the functor $\Met_c \to \Haus$ is fully faithful <a href="https://ncatlab.org/nlab/show/reflected+limit#FullSubcategoryInclusionReflectCoLimits" target="_blank">and therefore reflects colimits</a>, we conclude that $E$ is effective in $\Met_c$.'
