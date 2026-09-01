@@ -1,7 +1,7 @@
 <script lang="ts">
 	import TextWithProof from '$components/TextWithProof.svelte'
 	import type { StructureDetails, CategorySpecificDisplay } from '$lib/commons/types'
-	import StructureDetailPage from '$pages/StructureDetailPage.svelte'
+	import StructurePage from '$pages/StructurePage.svelte'
 	import { faQuestion } from '@fortawesome/free-solid-svg-icons'
 	import Fa from 'svelte-fa'
 
@@ -10,7 +10,7 @@
 	let data: Props = $props()
 </script>
 
-<StructureDetailPage {...data}>
+<StructurePage {...data}>
 	{#snippet definition()}
 		<strong>Objects</strong>
 		<span> {@html data.objects}</span>
@@ -52,4 +52,4 @@
 			</ul>
 		</section>
 	{/snippet}
-</StructureDetailPage>
+</StructurePage>
