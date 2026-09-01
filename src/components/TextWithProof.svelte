@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Fa from 'svelte-fa'
-	import { faCommentDots } from '@fortawesome/free-solid-svg-icons'
+	import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
 	import type { Snippet } from 'svelte'
 	import { popup_state, show_popup } from './Popup.svelte'
 
@@ -26,7 +26,7 @@
 {#if proof}
 	<span class="wrapper" class:expanded={popup_state?.id === id}>
 		<button onclick={show_proof} aria-label="Show proof">
-			<Fa icon={faCommentDots} scale={0.825} />
+			<Fa icon={faInfoCircle} />
 		</button>
 
 		<span>{@render children()}</span>

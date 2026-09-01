@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Fa from 'svelte-fa'
 	import HelpMessage from './HelpMessage.svelte'
-	import { faCommentDots } from '@fortawesome/free-solid-svg-icons'
+	import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
 	import PropertyList from './PropertyList.svelte'
 	import type {
 		PropertyAssignmentDisplay,
@@ -28,7 +28,7 @@
 </script>
 
 <HelpMessage id="proof-bubble">
-	New here? Click any <Fa icon={faCommentDots} scale={0.825} />
+	New here? Click any <Fa icon={faInfoCircle} />
 	icon to view the proof for that property.
 </HelpMessage>
 
