@@ -1,8 +1,10 @@
 <script lang="ts">
 	import { goto } from '$app/navigation'
 	import type { StructureType } from '$lib/commons/types'
+	import Fa from 'svelte-fa'
 	import Chip from './Chip.svelte'
 	import ChipGroup from './ChipGroup.svelte'
+	import { faTag } from '@fortawesome/free-solid-svg-icons'
 
 	type Props = {
 		type: StructureType
@@ -23,6 +25,9 @@
 
 <ChipGroup>
 	{#each tags as tag}
-		<Chip size="small" handle_click={() => filter_by_tag(tag)}>{tag}</Chip>
+		<Chip size="small" handle_click={() => filter_by_tag(tag)}>
+			<Fa icon={faTag} color="var(--secondary-text-color)" />
+			&nbsp;{tag}
+		</Chip>
 	{/each}
 </ChipGroup>
