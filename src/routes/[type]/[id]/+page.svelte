@@ -1,12 +1,12 @@
 <script lang="ts">
-	import CategoryDetailPage from '$pages/CategoryDetailPage.svelte'
-	import StructureDetailPage from '$pages/StructureDetailPage.svelte'
+	import CategoryPage from '$pages/CategoryPage.svelte'
+	import StructurePage from '$pages/StructurePage.svelte'
 
 	let { data } = $props()
 </script>
 
 {#if data.special_structure_data.type === 'category'}
-	<CategoryDetailPage {...data.structure_data} {...data.special_structure_data} />
+	<CategoryPage {...data.structure_data} {...data.special_structure_data} />
 {:else}
-	<StructureDetailPage {...data.structure_data} {...data.special_structure_data} />
+	<StructurePage {...data.structure_data} {...data.special_structure_data} />
 {/if}
