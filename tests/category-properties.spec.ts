@@ -54,7 +54,7 @@ test('user can view category property details', async ({ page }) => {
 	)
 
 	const related_link = page
-		.locator('li', { hasText: 'Related properties:' })
+		.locator('strong:has-text("Related") + span')
 		.getByRole('link', {
 			name: 'accessible',
 			exact: true
@@ -116,7 +116,7 @@ test('user can navigate to the dual property', async ({ page }) => {
 	).toBeVisible()
 
 	await page
-		.locator('li', { hasText: 'Dual property:' })
+		.locator('strong:has-text("Dual") + span')
 		.getByRole('link', {
 			name: 'coequalizers',
 			exact: true

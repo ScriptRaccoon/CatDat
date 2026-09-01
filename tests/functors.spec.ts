@@ -146,7 +146,7 @@ test('user can navigate to a related functor', async ({ page }) => {
 	await page.goto('/functor/forget_ring', { waitUntil: 'networkidle' })
 
 	await page
-		.locator('li', { hasText: 'Related functors:' })
+		.locator('strong:has-text("Related") + span')
 		.getByRole('link', {
 			name: 'forgetful functor for groups',
 			exact: true
@@ -167,7 +167,7 @@ test('user can navigate to the domain category', async ({ page }) => {
 	await page.goto('/functor/forget_ring', { waitUntil: 'networkidle' })
 
 	await page
-		.locator('li', { hasText: 'Domain:' })
+		.locator('strong:has-text("Domain") + span')
 		.getByRole('link', {
 			name: 'category of rings',
 			exact: true
@@ -188,7 +188,7 @@ test('user can navigate to the codomain category', async ({ page }) => {
 	await page.goto('/functor/group_units', { waitUntil: 'networkidle' })
 
 	await page
-		.locator('li', { hasText: 'Codomain:' })
+		.locator('strong:has-text("Codomain") + span')
 		.getByRole('link', {
 			name: 'category of groups',
 			exact: true
@@ -209,7 +209,7 @@ test('user can navigate to the left adjoint functor', async ({ page }) => {
 	await page.goto('/functor/group_units', { waitUntil: 'networkidle' })
 
 	await page
-		.locator('li', { hasText: 'Left adjoint:' })
+		.locator('strong:has-text("Left adjoint") + span')
 		.getByRole('link', {
 			name: 'forgetful functor from groups to monoids',
 			exact: true
@@ -230,7 +230,7 @@ test('user can navigate to the right adjoint functor', async ({ page }) => {
 	await page.goto('/functor/forget_topology', { waitUntil: 'networkidle' })
 
 	await page
-		.locator('li', { hasText: 'Right adjoint:' })
+		.locator('strong:has-text("Right adjoint") + span')
 		.getByRole('link', {
 			name: 'indiscrete topology functor',
 			exact: true

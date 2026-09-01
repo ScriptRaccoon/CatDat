@@ -66,7 +66,7 @@ test('user can navigate to the underlying category', async ({ page }) => {
 	})
 
 	await page
-		.locator('li', { hasText: 'Underlying category:' })
+		.locator('strong:has-text("Underlying category") + span')
 		.getByRole('link', {
 			name: 'category of sets',
 			exact: true
