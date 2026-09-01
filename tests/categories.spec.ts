@@ -105,8 +105,8 @@ test('user can view category details', async ({ page }) => {
 
 	const body = page.locator('body')
 
-	await expect(body).toContainText('Objects: commutative rings')
-	await expect(body).toContainText('Morphisms: ring homomorphisms')
+	await expect(body).toContainText('Objects commutative rings')
+	await expect(body).toContainText('Morphisms ring homomorphisms')
 	await expect(page.getByRole('link', { name: 'nLab link' })).toBeVisible()
 	await expect(body).toContainText('is cocomplete')
 	await expect(body).toContainText('is locally finitely presentable')
@@ -196,7 +196,7 @@ test('user can navigate to a related category', async ({ page }) => {
 	await page.goto('/category/FinSet', { waitUntil: 'networkidle' })
 
 	await page
-		.locator('li', { hasText: 'Related categories:' })
+		.locator('strong:has-text("Related") + span')
 		.getByRole('link', {
 			name: 'category of sets',
 			exact: true
@@ -226,7 +226,7 @@ test('user can navigate to the dual category if it exists in the database', asyn
 	).toBeVisible()
 
 	await page
-		.locator('li', { hasText: 'Dual category' })
+		.locator('strong:has-text("Dual") + span')
 		.getByRole('link', {
 			name: 'dual of the category of sets',
 			exact: true
@@ -247,7 +247,7 @@ test('user can navigate to a child category', async ({ page }) => {
 	await page.goto('/category/BG', { waitUntil: 'networkidle' })
 
 	await page
-		.locator('li', { hasText: 'Children:' })
+		.locator('strong:has-text("Children") + span')
 		.getByRole('link', {
 			name: 'delooping of a non-trivial finite group',
 			exact: true
@@ -268,7 +268,7 @@ test('user can navigate to a parent category', async ({ page }) => {
 	await page.goto('/category/Ring', { waitUntil: 'networkidle' })
 
 	await page
-		.locator('li', { hasText: 'Parent:' })
+		.locator('strong:has-text("Parent") + span')
 		.getByRole('link', {
 			name: 'category of algebras',
 			exact: true

@@ -123,7 +123,7 @@ test('user can navigate to a related morphism', async ({ page }) => {
 	await page.goto('/morphism/id_X', { waitUntil: 'networkidle' })
 
 	await page
-		.locator('li', { hasText: 'Related morphisms:' })
+		.locator('strong:has-text("Related") + span')
 		.getByRole('link', {
 			name: 'identity map of a group',
 			exact: true
@@ -144,7 +144,7 @@ test('user can navigate to the ambient category', async ({ page }) => {
 	await page.goto('/morphism/fork-handle', { waitUntil: 'networkidle' })
 
 	await page
-		.locator('li', { hasText: 'Category:' })
+		.locator('strong:has-text("Category") + span')
 		.getByRole('link', {
 			name: 'walking fork',
 			exact: true
