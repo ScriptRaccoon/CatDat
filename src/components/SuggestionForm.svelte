@@ -89,7 +89,7 @@
 		<form onsubmit={create_issue}>
 			<div class="form-group">
 				<label for="title">
-					<span>Short summary</span>
+					<span>Title</span>
 					<span class="description">max. {TITLE_MAX_LENGTH} characters</span>
 				</label>
 				<input
@@ -119,8 +119,8 @@
 
 			<div class="form-group">
 				<label for="name">
-					<span>Your name</span>
-					<span class="description">optional</span>
+					<span>Your name (optional)</span>
+					<span class="description">max. {NAME_MAX_LENGTH} characters</span>
 				</label>
 				<input
 					type="text"
