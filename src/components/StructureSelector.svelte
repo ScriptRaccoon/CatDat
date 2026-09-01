@@ -6,9 +6,10 @@
 
 	type Props = {
 		selected_type: StructureType
+		variant: 'header' | 'nav_mobile'
 	}
 
-	let { selected_type }: Props = $props()
+	let { selected_type, variant }: Props = $props()
 
 	function handle_change() {
 		const path = page.url.pathname
@@ -31,36 +32,36 @@
 	const id = $props.id()
 </script>
 
-<label for={id}>Structure</label>
+<div class="selector {variant}">
+	<label for={id}>Structure</label>
 
-<select {id} bind:value={selected_type} onchange={handle_change}>
-	{#each STRUCTURE_TYPES as type}
-		<option value={type}>{PLURALS[type]}</option>
-	{/each}
-</select>
+	<select {id} bind:value={selected_type} onchange={handle_change}>
+		{#each STRUCTURE_TYPES as type}
+			<option value={type}>{PLURALS[type]}</option>
+		{/each}
+	</select>
+</div>
 
 <style>
+	.selector {
+		font-size: 1rem;
+
+		&.header {
+			display: inline-flex;
+			gap: 0.5rem;
+			align-items: center;
+		}
+
+		&.nav_mobile {
+			margin-top: 1rem;
+		}
+	}
+
 	label {
 		color: var(--secondary-text-color);
-		font-size: 1rem;
 	}
 
 	select {
-		font-size: 1rem;
 		field-sizing: content;
-	}
-
-	@media (width <= 600px) {
-		label {
-			/* visually hidden */
-			position: absolute;
-			clip: rect(1px, 1px, 1px, 1px);
-			padding: 0;
-			border: 0;
-			height: 1px;
-			width: 1px;
-			overflow: hidden;
-			white-space: nowrap;
-		}
 	}
 </style>

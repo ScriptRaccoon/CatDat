@@ -18,9 +18,7 @@
 		<Fa icon={faXmark} />
 	</button>
 
-	<div class="structure_selector_container">
-		<StructureSelector {selected_type} />
-	</div>
+	<StructureSelector {selected_type} variant="nav_mobile" />
 
 	<ul class="main-list">
 		{#each get_navigation_links(selected_type) as { text, href, icon }}
@@ -52,10 +50,6 @@
 		padding-inline: 0.75rem;
 		background-color: var(--bg-color);
 		text-align: right;
-	}
-
-	.structure_selector_container {
-		margin-top: 1rem;
 	}
 
 	ul {

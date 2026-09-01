@@ -33,7 +33,7 @@
 	</h1>
 
 	<div class="structure_selector_container">
-		<StructureSelector {selected_type} />
+		<StructureSelector {selected_type} variant="header" />
 	</div>
 
 	<button
