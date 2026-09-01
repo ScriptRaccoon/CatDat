@@ -6,7 +6,6 @@
 	import TagList from '$components/TagList.svelte'
 	import IndistinguishableStructures from '$components/IndistinguishableStructures.svelte'
 	import StructuresBasedOn from '$components/StructuresBasedOn.svelte'
-	import { PLURALS } from '$shared/config'
 	import type {
 		AssociatedStructure,
 		CommentObject,
@@ -64,78 +63,75 @@
 
 <TagList {tags} {type} sort="structure" />
 
-<section aria-label="main info" class="main-info">
-	<ul class="with-margins">
-		<li>
-			<strong>Notation:</strong>
-			{@html structure.notation}
-		</li>
+<section aria-label="main info" class="information-table">
+	<strong>Notation</strong>
+	<span>
+		{@html structure.notation}
+	</span>
 
-		{@render definition?.()}
+	{@render definition?.()}
 
-		{#each associated_structures as a}
-			<li>
-				<strong>{capitalize(remove_underscores(a.label))}:</strong>
-				<a href="/{a.associated_type}/{a.id}">{a.name}</a>
-			</li>
-		{/each}
+	{#each associated_structures as a}
+		<strong>{capitalize(remove_underscores(a.label))}</strong>
+		<span><a href="/{a.associated_type}/{a.id}">{a.name}</a></span>
+	{/each}
 
-		{#if structure.parent}
-			<li>
-				<strong>Parent:</strong>
-				<a href="/{type}/{structure.parent}" aria-label={structure.parent_name}>
-					{@html structure.parent_notation}
-				</a>
-			</li>
-		{/if}
+	{#if structure.parent}
+		<strong>Parent</strong>
+		<span>
+			<a href="/{type}/{structure.parent}" aria-label={structure.parent_name}>
+				{@html structure.parent_notation}
+			</a>
+		</span>
+	{/if}
 
-		{#if children.length}
-			<li>
-				<strong>Children:</strong>
-				{#each children as { id, name, notation }, i}
-					<a href="/{type}/{id}" aria-label={name}>
-						{@html notation}
-					</a>{#if i < children.length - 1}
-						,&nbsp;
-					{/if}
-				{/each}
-			</li>
-		{/if}
+	{#if children.length}
+		<strong>Children</strong>
+		<span>
+			{#each children as { id, name, notation }, i}
+				<a href="/{type}/{id}" aria-label={name}>
+					{@html notation}
+				</a>{#if i < children.length - 1}
+					,&nbsp;
+				{/if}
+			{/each}
+		</span>
+	{/if}
 
-		{#if related_structures.length}
-			<li>
-				<strong>Related {PLURALS[type]}:</strong>
-				{#each related_structures as { id, name, notation }, i}
-					<a href="/{type}/{id}" aria-label={name}>
-						{@html notation}
-					</a>{#if i < related_structures.length - 1}
-						,&nbsp;
-					{/if}
-				{/each}
-			</li>
-		{/if}
+	{#if related_structures.length}
+		<strong>Related</strong>
+		<span>
+			{#each related_structures as { id, name, notation }, i}
+				<a href="/{type}/{id}" aria-label={name}>
+					{@html notation}
+				</a>{#if i < related_structures.length - 1}
+					,&nbsp;
+				{/if}
+			{/each}
+		</span>
+	{/if}
 
-		{#if structure.nlab_link}
-			<li>
-				<a href={structure.nlab_link} target="_blank">nLab Link</a>
-			</li>
-		{/if}
+	{#if structure.nlab_link}
+		<strong>External</strong>
+		<span>
+			<a href={structure.nlab_link} target="_blank">nLab Link</a>
+		</span>
+	{/if}
 
-		{#if structure.dual_structure_id}
-			<li>
-				<strong>Dual {remove_underscores(type)}:</strong>
-				<a
-					href="/{type}/{structure.dual_structure_id}"
-					aria-label={structure.dual_structure_name}
-				>
-					{@html structure.dual_structure_notation}
-				</a>
-			</li>
-		{/if}
-	</ul>
-
-	<p>{@html structure.description}</p>
+	{#if structure.dual_structure_id}
+		<strong>Dual</strong>
+		<span>
+			<a
+				href="/{type}/{structure.dual_structure_id}"
+				aria-label={structure.dual_structure_name}
+			>
+				{@html structure.dual_structure_notation}
+			</a>
+		</span>
+	{/if}
 </section>
+
+<p>{@html structure.description}</p>
 
 <PropertyAssignmentList
 	{type}
@@ -160,7 +156,7 @@
 <SuggestionForm />
 
 <style>
-	.main-info {
+	.information-table {
 		margin-top: 1.5rem;
 	}
 </style>
