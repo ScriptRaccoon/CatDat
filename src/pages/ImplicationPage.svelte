@@ -11,6 +11,8 @@
 		StructureType
 	} from '$lib/commons/types'
 	import { PLURALS } from '$shared/config'
+	import Fa from 'svelte-fa'
+	import { faCircleArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
 	type Props = {
 		type: StructureType
@@ -35,7 +37,13 @@
 
 <MetaData title="Implication Details" />
 
-<h2>Implication Details</h2>
+<header>
+	<h2>Implication Details</h2>
+
+	<button onclick={() => window.history.back()} aria-label="go back">
+		<Fa icon={faCircleArrowLeft} />
+	</button>
+</header>
 
 <p>
 	<strong>Claim:</strong>
@@ -105,6 +113,21 @@
 	</details>
 {/if}
 
-<button class="button" onclick={() => window.history.back()}>Go back</button>
-
 <SuggestionForm />
+
+<style>
+	h2 {
+		margin-block: 0;
+	}
+
+	header {
+		display: grid;
+		grid-template-columns: 1fr auto;
+		align-items: start;
+		margin-block: 0.5rem 1rem;
+
+		button {
+			color: var(--secondary-text-color);
+		}
+	}
+</style>
