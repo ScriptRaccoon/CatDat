@@ -296,7 +296,13 @@ label {
 	color: var(--error-color);
 }
 
-/* container class for youtube videos */
+.information-table {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: 0.2rem 0.75rem;
+}
+
+/* container class for YouTube videos */
 
 .video-container {
 	margin-block: 2rem;

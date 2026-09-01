@@ -12,14 +12,11 @@
 
 <StructureDetailPage {...data}>
 	{#snippet definition()}
-		<li>
-			<strong>Objects:</strong>
-			{@html data.objects}
-		</li>
-		<li>
-			<strong>Morphisms:</strong>
-			{@html data.morphisms}
-		</li>
+		<strong>Objects</strong>
+		<span> {@html data.objects}</span>
+
+		<strong>Morphisms</strong>
+		<span>{@html data.morphisms}</span>
 	{/snippet}
 
 	{#snippet specials()}

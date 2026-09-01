@@ -60,22 +60,22 @@
 </p>
 
 {#if property.dual_property_id || related_properties.length || property.nlab_link}
-	<ul class="with-margins">
+	<div class="information-table">
 		{#if property.dual_property_id}
-			<li>
-				<strong><a href="/content/dual-properties">Dual property:</a></strong>
+			<strong><a href="/content/dual-properties">Dual</a></strong>
+			<span>
 				<a href={get_property_url(property.dual_property_id, type)}
-					>{property.dual_property_id}</a
-				>
+					>{property.dual_property_id}
+				</a>
 				{#if property.dual_property_id === property.id}
 					(self-dual)
 				{/if}
-			</li>
+			</span>
 		{/if}
 
 		{#if related_properties.length}
-			<li>
-				<strong>Related properties:</strong>
+			<strong>Related</strong>
+			<span>
 				{#each related_properties as related_property, i}
 					<a href={get_property_url(related_property, type)}>
 						{related_property}
@@ -83,15 +83,14 @@
 						,&nbsp;
 					{/if}
 				{/each}
-			</li>
+			</span>
 		{/if}
 
 		{#if property.nlab_link}
-			<li>
-				<a href={property.nlab_link} target="_blank">nLab Link</a>
-			</li>
+			<strong>External</strong>
+			<span><a href={property.nlab_link} target="_blank">nLab Link</a></span>
 		{/if}
-	</ul>
+	</div>
 {/if}
 
 <HelpMessage id="implication-link">
