@@ -12,6 +12,7 @@ tags:
 related:
   - Ab
   - TorsFreeAb
+  - FreeAb_fg
 
 satisfied_properties:
   - property: locally small

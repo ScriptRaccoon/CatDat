@@ -1,0 +1,94 @@
+id: FreeAb_fg
+name: category of finitely generated free abelian groups
+notation: $\FreeAb_\fg$
+objects: finitely generated free abelian groups
+morphisms: group homomorphisms
+description: This is the full subcategory of $\Ab$ consisting of the <a href="https://ncatlab.org/nlab/show/free+abelian+group" target="_blank">free abelian groups</a> that are also <a href="https://ncatlab.org/nlab/show/finitely+generated+group" target="_blank">finitely generated</a>. Equivalently, it is the category of finitely generated <a href="https://ncatlab.org/nlab/show/projective+module" target="_blank">projective</a> $\IZ$-modules. Every object is isomorphic to $\IZ^n$ for a unique $n \in \IN$.
+nlab_link: null
+
+tags:
+  - algebra
+
+related:
+  - Ab
+  - TorsFreeAb
+  - Ab_fg
+  - FreeAb
+  - FinVect_c
+
+satisfied_properties:
+  - property: locally small
+    proof: The category is a full subcategory of $\Ab$, which is locally small.
+
+  - property: essentially countable
+    proof: Every object is isomorphic to one of the countably many groups $\IZ^n$, and the set $\Hom(\IZ^n,\IZ^m) \cong M_{m \times n}(\IZ)$ is countable.
+
+  - property: additive
+    proof: The category is closed under finite direct sums in $\Ab$, which is additive.
+
+  - property: equalizers
+    proof: This follows from the standard fact that every subgroup of a finitely generated free abelian group is again finitely generated and free abelian.
+    check_redundancy: false
+
+  - property: extremal generator
+    proof: The group $\IZ$ is an extremal generator, even in $\Ab$.
+
+  - property: regular
+    proof: It remains to prove that regular epimorphisms are stable under pullback. This is clear since they coincide with the surjective homomorphisms (see below).
+
+  - property: self-dual
+    proof: >-
+      The functor $\Hom(-,\IZ) : \FreeAb_\fg^{\op} \to \Set$ lifts to an additive functor $$\underline{\Hom}(-,\IZ) : \FreeAb_\fg^{\op} \to \Ab.$$
+      It corestricts to $\FreeAb_\fg$ because of $\underline{\Hom}(\IZ^n,\IZ) \cong \IZ^n$. The functor
+      $$\underline{\Hom}(-,\IZ) : \FreeAb_\fg^{\op} \to \FreeAb_\fg$$
+      dualizes to a functor in the other direction, and we claim that these are inverse to each other. For this, it suffices to prove that the natural homomorphism
+      $$A \to \underline{\Hom}(\underline{\Hom}(A,\IZ),\IZ)$$
+      defined by $a \mapsto (\varphi \mapsto \varphi(a))$ is an isomorphism. The collection of abelian groups for which this is true is closed under finite direct sums (since both sides are additive functors), and it contains $\IZ$ by a direct calculation. Therefore, it contains every $\IZ^n$.
+
+  - property: ℵ₁-accessible
+    proof: 'The proof is very similar to the proof for <a href="/category/Ab_fg">$\Ab_\fg$</a>. The inclusion $\Ab_{\fg} \hookrightarrow \Ab$ is closed under $\aleph_1$-filtered colimits by <a href="https://mathoverflow.net/questions/400763/" target="_blank">MO/400763</a>. Furthermore, the inclusion $\TorsFreeAb \hookrightarrow \Ab$ is clearly closed under $\aleph_0$-filtered colimits, and hence under $\aleph_1$-filtered colimits. Since $\FreeAb_\fg = \Ab_\fg \cap \TorsFreeAb$, it follows that $\FreeAb_\fg \hookrightarrow \Ab$ is closed under $\aleph_1$-filtered colimits. In particular, $\FreeAb_\fg$ has $\aleph_1$-filtered colimits. Every finitely generated free abelian group is isomorphic to one in the set $\{\IZ^n : n \in \IN\}$, and each $\IZ^n$ is finitely presentable in $\Ab$, hence $\aleph_1$-presentable, and therefore also $\aleph_1$-presentable in $\FreeAb_\fg$.'
+    references:
+      - Ab_fg_aleph1-accessible
+
+unsatisfied_properties:
+  - property: skeletal
+    proof: This is trivial.
+
+  - property: small
+    proof: Even the collection of trivial groups is not a set.
+
+  - property: countable
+    proof: Even the collection of trivial groups is not countable.
+
+  - property: locally finite
+    proof: The set $\Hom(\IZ,\IZ) \cong \IZ$ is not finite.
+
+  - property: balanced
+    proof: 'The homomorphism $2 : \IZ \to \IZ$ is a counterexample.'
+
+special_objects:
+  initial object:
+    description: trivial group
+  terminal object:
+    description: trivial group
+  coproducts:
+    description: '[finite case] direct sums'
+  products:
+    description: '[finite case] direct sums'
+
+special_morphisms:
+  isomorphisms:
+    description: bijective homomorphisms
+    proof: We can copy the proof from <a href="/category/FreeAb">$\FreeAb$</a>.
+  monomorphisms:
+    description: injective homomorphisms
+    proof: We can copy the proof from <a href="/category/FreeAb">$\FreeAb$</a>.
+  epimorphisms:
+    description: 'homomorphisms $f : A \to B$ such that $f(A)$ is not contained in a proper direct summand of $B$'
+    proof: We can copy the proof from <a href="/category/FreeAb">$\FreeAb$</a>.
+  regular monomorphisms:
+    description: 'injective homomorphisms $f : A \to B$ such that $B/f(A)$ is free abelian (and hence which are automatically split monomorphisms)'
+    proof: We can copy the proof from <a href="/category/FreeAb">$\FreeAb$</a>.
+  regular epimorphisms:
+    description: surjective homomorphisms (which are automatically split epimorphisms)
+    proof: 'If $f : A \to B$ is a surjective homomorphism in $\FreeAb_\fg$ with kernel $K$, then $f$ is the cokernel of $K \hookrightarrow A$ in $\Ab$. Since $K$ is finitely generated and free abelian, this remains true in $\FreeAb_\fg$. Moreover, $f$ splits since $B$ is projective. Conversely, assume that $f : A \to B$ is a regular epimorphism in $\FreeAb_\fg$ and hence the cokernel of some homomorphism $g : C \to A$ in $\FreeAb_\fg$. Consider the image factorization $A \to \im(f) \hookrightarrow B$ in $\Ab$. Here, $\im(f)$ is also finitely generated and free abelian. Since $\im(f) \hookrightarrow B$ is a monomorphism in $\FreeAb_\fg$ and $f$ is a regular, hence extremal, epimorphism, $\im(f) \hookrightarrow B$ is an isomorphism. Thus, $f$ is surjective.'
