@@ -49,3 +49,15 @@
   conclusions:
     - infinitary distributive
   proof: Each functor $A \otimes -$ is a left adjoint and therefore preserves coproducts.
+
+- id: closed_saft_criterion
+  assumptions:
+    - cocomplete
+  associated_assumptions:
+    underlying_category:
+      - well-copowered
+      - generating set
+      - locally essentially small
+  conclusions:
+    - closed
+  proof: This follows by applying the dualized <a href="https://ncatlab.org/nlab/show/adjoint+functor+theorem" target="_blank">Special Adjoint Functor Theorem</a> to each functor $A \otimes -$.
