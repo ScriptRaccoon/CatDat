@@ -43,7 +43,7 @@ test("user can navigate to morphisms tagged with 'algebra' from the morphism lis
 	await page.goto('/morphism-list', { waitUntil: 'networkidle' })
 
 	await page
-		.getByRole('button', {
+		.getByRole('link', {
 			name: 'algebra',
 			exact: true
 		})
@@ -70,7 +70,7 @@ test("user can navigate to morphisms tagged with 'set theory' from the morphism 
 	await page.goto('/morphism/id_X', { waitUntil: 'networkidle' })
 
 	await page
-		.getByRole('button', {
+		.getByRole('link', {
 			name: 'set theory',
 			exact: true
 		})

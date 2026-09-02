@@ -149,7 +149,7 @@ test("user can navigate to properties tagged with 'colimits' from the property l
 	await page.goto('/category-properties', { waitUntil: 'networkidle' })
 
 	await page
-		.getByRole('button', {
+		.getByRole('link', {
 			name: 'colimits',
 			exact: true
 		})
@@ -183,7 +183,7 @@ test("user can navigate to properties tagged with 'topos theory' from the proper
 	await page.goto('/category-property/cartesian_closed', { waitUntil: 'networkidle' })
 
 	await page
-		.getByRole('button', {
+		.getByRole('link', {
 			name: 'topos theory',
 			exact: true
 		})

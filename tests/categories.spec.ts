@@ -45,7 +45,7 @@ test("user can navigate to categories tagged with 'analysis' from the category l
 	await page.goto('/category-list', { waitUntil: 'networkidle' })
 
 	await page
-		.getByRole('button', {
+		.getByRole('link', {
 			name: 'analysis',
 			exact: true
 		})
@@ -72,7 +72,7 @@ test("user can navigate to categories tagged with 'algebra' from the category de
 	await page.goto('/category/Grp', { waitUntil: 'networkidle' })
 
 	await page
-		.getByRole('button', {
+		.getByRole('link', {
 			name: 'algebra',
 			exact: true
 		})

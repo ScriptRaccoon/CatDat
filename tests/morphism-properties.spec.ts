@@ -147,7 +147,7 @@ test("user can navigate to properties tagged with 'types of epimorphism' from th
 	await page.goto('/morphism-properties', { waitUntil: 'networkidle' })
 
 	await page
-		.getByRole('button', {
+		.getByRole('link', {
 			name: 'types of epimorphisms',
 			exact: true
 		})
@@ -183,7 +183,7 @@ test("user can navigate to properties tagged with 'types of monomorphisms' from 
 	})
 
 	await page
-		.getByRole('button', {
+		.getByRole('link', {
 			name: 'types of monomorphisms',
 			exact: true
 		})
