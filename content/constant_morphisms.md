@@ -3,7 +3,7 @@ title: Results on constant morphisms
 description: We prove some results that help determine whether a morphism in a category is constant.
 ---
 
-## Results on constant morphisms
+# Results on constant morphisms
 
 ::: Lemma 1
 A [constant morphism](/morphism-property/constant) in $\Set$ is the same as a constant map in the usual sense.

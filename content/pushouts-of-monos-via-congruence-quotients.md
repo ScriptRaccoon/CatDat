@@ -3,7 +3,7 @@ title: Construction of a pushout of monomorphisms as a quotient of a congruence
 description: An extensive category with quotients of congruences has pushouts of monomorphisms.
 ---
 
-## Construction of a pushout of monomorphisms as a quotient of a congruence
+# Construction of a pushout of monomorphisms as a quotient of a congruence
 
 ::: Lemma
 Let $\C$ be an extensive category with quotients of congruences. Then $\C$ has pushouts of monomorphisms.

@@ -3,7 +3,7 @@ title: Algebraic categories are "never" thin
 description: A proof that the only thin algebraic categories are the terminal and the interval category.
 ---
 
-## Algebraic categories are "never" thin
+# Algebraic categories are "never" thin
 
 <!--
 TODO: Currently, this lemma is not used anymore

@@ -38,7 +38,7 @@
 <MetaData title="Implication Details" />
 
 <header>
-	<h2>Implication Details</h2>
+	<h1>Implication Details</h1>
 
 	<button onclick={() => window.history.back()} aria-label="go back">
 		<Fa icon={faCircleArrowLeft} />
@@ -116,7 +116,7 @@
 <SuggestionForm />
 
 <style>
-	h2 {
+	h1 {
 		margin-block: 0;
 	}
 

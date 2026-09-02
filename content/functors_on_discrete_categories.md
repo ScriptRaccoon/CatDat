@@ -3,7 +3,7 @@ title: Functors on discrete categories
 description: We describe which functors on discrete categories are continuous or cocontinuous.
 ---
 
-## Functors on discrete categories
+# Functors on discrete categories
 
 Let $\S$ be a discrete category. Thus, a functor $F : \S \to \C$ is the same as a family of objects $F(s) \in \C$ indexed by the objects $s \in \S$. Here, we want to determine under which conditions $F$ is continuous (or cocontinuous). The case $\S = \varnothing$ is rather boring, which is why we assume from now on that $\S \neq \varnothing$, i.e. that $\S$ is inhabited.
 

@@ -52,7 +52,7 @@
 
 <MetaData title="{capitalize(remove_underscores(type))} implications" />
 
-<h2>{capitalize(remove_underscores(type))} implications</h2>
+<h1>{capitalize(remove_underscores(type))} implications</h1>
 
 <SearchFilter bind:search />
 

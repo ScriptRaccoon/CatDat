@@ -3,7 +3,7 @@ title: Results on subcategories
 description: We prove that several properties of categories descend to suitable subcategories.
 ---
 
-## Results on subcategories
+# Results on subcategories
 
 This page collects several useful results of the following form: if $U : \C \to \D$ is a faithful functor (perhaps even fully faithful, or satisfying additional assumptions) and $\D$ has a certain property, then $\C$ has this property as well.
 

@@ -32,7 +32,7 @@
 <MetaData title="List of {PLURALS[type]}" />
 
 <section>
-	<h2>List of {PLURALS[type]}</h2>
+	<h1>List of {PLURALS[type]}</h1>
 
 	{#if type === 'morphism' || type === 'symmetric_monoidal_category'}
 		<!-- TODO: remove this later -->

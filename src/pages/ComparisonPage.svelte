@@ -51,7 +51,7 @@
 	description="Compare {PLURALS[type]} based on their properties"
 />
 
-<h2>Compare {PLURALS[type]}</h2>
+<h1>Compare {PLURALS[type]}</h1>
 
 <p class="hint">
 	Select up to {MAX_STRUCTURES_COMPARE}

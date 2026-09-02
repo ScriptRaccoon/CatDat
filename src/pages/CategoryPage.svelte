@@ -21,7 +21,7 @@
 
 	{#snippet specials()}
 		<section>
-			<h3>Special objects</h3>
+			<h2>Special objects</h2>
 
 			{#if data.special_objects.length}
 				<ul class="with-margins">
@@ -35,7 +35,7 @@
 		</section>
 
 		<section>
-			<h3>Special morphisms</h3>
+			<h2>Special morphisms</h2>
 
 			<ul class="with-margins no-bullets">
 				{#each data.special_morphisms as morph}

@@ -16,7 +16,7 @@
 
 <MetaData title="{capitalize(PLURALS[type])} tagged with '{tag}'" />
 
-<h2>{capitalize(PLURALS[type])} tagged with '{tag}'</h2>
+<h1>{capitalize(PLURALS[type])} tagged with '{tag}'</h1>
 
 <p class="hint">
 	{pluralize(structures.length, {

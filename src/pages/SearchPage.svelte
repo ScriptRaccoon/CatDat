@@ -80,7 +80,7 @@
 	]} that satisfy a specific set of properties while simultaneously not satisfying another set of properties. "
 />
 
-<h2>Property combo search</h2>
+<h1>Property combo search</h1>
 
 <p class="hint">
 	{@render children()}

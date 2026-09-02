@@ -3,7 +3,7 @@ title: Finite structures usually have no sequential colimits
 description: A generalization of the proof that the category of finite groups has no filtered colimits.
 ---
 
-## Finite structures usually have no sequential colimits
+# Finite structures usually have no sequential colimits
 
 ::: Lemma
 Let $\C$ be a category with finite powers, including a terminal object $1$. Let $a : 1 \to X$ be a morphism. Assume that the sequence of morphisms $(X^n,a) : X^n \to X^{n+1}$ for $n \geq 0$ admits a colimit $(i_n : X^n \to C)$. Then for every $m \geq 0$ there is a split epimorphism $C \to X^m$. In particular, if $U : \C \to \Set$ is a functor preserving finite powers and $\card(U(X)) \geq 2$, then $U(C)$ is infinite.

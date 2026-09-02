@@ -3,7 +3,7 @@ title: The colimit of a sequence of monomorphisms
 description: We find conditions under which a countably extensive category has colimits of sequences of monomorphisms.
 ---
 
-## The colimit of a sequence of monomorphisms
+# The colimit of a sequence of monomorphisms
 
 ::: Lemma 1
 Let $\C$ be a countably extensive category with quotients of congruences. Then $\C$ has colimits of sequences of monomorphisms.

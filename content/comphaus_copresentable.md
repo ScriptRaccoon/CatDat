@@ -3,7 +3,7 @@ title: Local ℵ₁-copresentability of the category of compact Hausdorff spaces
 description: We gather several relevant results about the category of compact Hausdorff spaces, and provide accessible proofs of these facts leading up to a proof that it is locally ℵ₁-copresentable.
 ---
 
-## Local ℵ₁-copresentability of the category of compact Hausdorff spaces
+# Local ℵ₁-copresentability of the category of compact Hausdorff spaces
 
 Our purpose here is to gather several relevant results about $\CompHaus$, the [category of compact Hausdorff spaces](/category/CompHaus), and provide accessible (sic) proofs of these facts leading up to a proof that it is locally $\aleph_1$-copresentable.
 
@@ -101,7 +101,7 @@ The first automatically preserves $\aleph_1$-filtered colimits (and in fact all 
 Alternately, applying the general framework of Lawvere theories shows that $\CompHaus^{\op}$ is equivalent to the category of functors $\T \to \Set$ preserving countable products, where $\T$ is the full subcategory of $\CompHaus$ of all spaces $[0,1]^A$ where $A$ is countable. Note that $\T$ is essentially small. We thus reproduce a result from [Isb82](#references) which also provides a nice description of a small set of generators of the operations of the $\aleph_0$-ary algebraic theory. A more recent treatment in [MR17](#references) refines this by providing a nice axiomatization of the relations of that theory.
 :::
 
-### References
+## References
 
 [Dus69]&nbsp; J. Duskin, _Variations on Beck’s tripleability criterion_. Reports of the Midwest Category Seminar III, pages 74–129. Springer Berlin Heidelberg, 1969
 

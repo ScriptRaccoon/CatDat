@@ -36,7 +36,7 @@
 
 <MetaData title="Properties of {PLURALS[type]}" />
 
-<h2>Properties of {PLURALS[type]}</h2>
+<h1>Properties of {PLURALS[type]}</h1>
 
 <SearchFilter bind:search />
 

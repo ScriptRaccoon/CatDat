@@ -14,7 +14,7 @@
 
 {#if structures.length}
 	<section>
-		<h3>Indistinguishable {PLURALS[type]}</h3>
+		<h2>Indistinguishable {PLURALS[type]}</h2>
 
 		<p class="hint">
 			These {PLURALS[type]} in the database currently have exactly the same properties

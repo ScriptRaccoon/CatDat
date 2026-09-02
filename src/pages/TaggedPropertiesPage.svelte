@@ -16,7 +16,7 @@
 
 <MetaData title="Properties of {PLURALS[type]} tagged with '{tag}'" />
 
-<h2>Properties of {PLURALS[type]} tagged with '{tag}'</h2>
+<h1>Properties of {PLURALS[type]} tagged with '{tag}'</h1>
 
 <p class="hint">
 	{pluralize(properties.length, {

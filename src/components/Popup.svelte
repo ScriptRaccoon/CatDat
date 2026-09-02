@@ -75,7 +75,7 @@ an issue when clicking two proofs in a row. So it's a <div> then.
 >
 	<div class="content">
 		<header>
-			<h3>{popup_state.heading}</h3>
+			<h2>{popup_state.heading}</h2>
 
 			<button
 				onclick={toggle_expanded}
@@ -152,7 +152,7 @@ an issue when clicking two proofs in a row. So it's a <div> then.
 		justify-content: space-between;
 		align-items: center;
 
-		h3 {
+		h2 {
 			margin: 0;
 			margin-right: auto;
 		}

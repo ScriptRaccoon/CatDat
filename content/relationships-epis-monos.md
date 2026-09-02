@@ -3,11 +3,11 @@ title: Relationships between epimorphisms and monomorphisms
 description: A graphical overview of the relationships between the various types of epimorphisms and monomorphisms
 ---
 
-## Relationships between epimorphisms and monomorphisms
+# Relationships between epimorphisms and monomorphisms
 
 There are several [properties of morphisms](/morphism-properties), including various types of epimorphisms and monomorphisms. The [implications](/morphism-implications) establish various relationships between these types. Here we present a graphical overview of these relationships.
 
-### The various types of epimorphisms
+## The various types of epimorphisms
 
 In the diagram, an arrow $X \Longrightarrow Y$ means that every morphism with property $X$ also has property $Y$. If it is labelled with a category property $P$, the implication does not hold in general, but it holds in categories satisfying $P$. For example, in a category with pullbacks, every strict epimorphism is effective.
 
@@ -25,7 +25,7 @@ In the diagram, an arrow $X \Longrightarrow Y$ means that every morphism with pr
 
 Fun fact: This describes a category in itself: We define the composition of $P : X \Rightarrow Y$ and $Q : Y \Rightarrow Z$ as $P \wedge Q : X \Rightarrow Z$.
 
-### The various types of monomorphisms
+## The various types of monomorphisms
 
 This diagram is just the dual of the previous diagram. The same notation applies.
 

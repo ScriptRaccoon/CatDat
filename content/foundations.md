@@ -3,11 +3,11 @@ title: Foundations
 description: How to make sense of categories in set theory
 ---
 
-## Foundations
+# Foundations
 
 In _CatDat_, we work with the following convenient set-theoretic foundation for category theory.
 
-### Sets, collections, and hypercollections
+## Sets, collections, and hypercollections
 
 We work with [ZFC](https://en.wikipedia.org/wiki/Zermelo%E2%80%93Fraenkel_set_theory) and two [Grothendieck universes](https://en.wikipedia.org/wiki/Grothendieck_universe), which we denote by
 $$\mathrm{Set} \in \mathrm{Set}^+.$$
@@ -35,7 +35,7 @@ A family $(X_i)_{i \in I}$ of collections is called _small_ when its index colle
 
 A collection is called _countable_ if it admits a surjective map from $\IN$. In particular, every finite collection is countable.
 
-### Categories
+## Categories
 
 A _category_ $\C$ consists of a pair of collections $O, M$, whose elements are called _objects_ and _morphisms_, respectively, together with maps
 
@@ -62,7 +62,7 @@ For example, the category of sets $\Set$ has $\Ob(\Set) = \mathrm{Set}$, the col
 
 Collections are the objects of a hypercategory $\Set^+$.
 
-### Functors
+## Functors
 
 A _functor_ $F : \C \to \D$ between two categories (or small categories, or hypercategories) is defined as usual; it consists of maps
 $$\Ob(F) : \Ob(\C) \to \Ob(\D),$$
@@ -77,7 +77,7 @@ If $\C, \D$ are categories, we can construct the functor category $[\C, \D]$ as 
 
 It is better to state explicitly when the assumption of being locally small is needed.
 
-### Representable Functors
+## Representable Functors
 
 If $\C$ is any category and $A \in \C$, we have the Hom-functor
 
@@ -89,7 +89,7 @@ Adjunctions are defined as usual via natural isomorphisms
 $$\Hom(F(A),B) \cong \Hom(A,G(B))$$
 of functors valued in $\Set^+$. No local smallness assumption is required. Equivalently, they can be defined via morphisms of functors $\id \to G \circ F$ and $F \circ G \to \id$ satisfying the triangle identities.
 
-### Limits and Colimits
+## Limits and Colimits
 
 Let $\C$ be a category. If $D : \I \to \C$ is a functor (in this context called a _diagram_), a _cone_ over $D$ is an object $X \in \C$ equipped with morphisms $p_i : X \to D(i)$ for all $i \in \I$ such that for every morphism $i \to j$ the evident triangle commutes. Cones form a category, and a terminal object in this category is called a _limit_ of $D$. The dual notion is a _colimit_.
 
@@ -97,10 +97,10 @@ Unless stated otherwise, we consider only small diagrams and hence small limits 
 
 There are special types of limits, such as equalizers, products, and cofiltered limits, and their duals, such as coequalizers, coproducts, and filtered colimits. By convention, products and coproducts are indexed by a set, not a collection (unless stated otherwise). Filtered colimits are indexed by a small filtered category (unless stated otherwise).
 
-### Well-powered categories
+## Well-powered categories
 
 If $A$ is an object of a category, the collection of all monomorphisms $B \to A$ need not be a set. If, for every $A$, there exists a small family of such monomorphisms such that every monomorphism $B \to A$ is isomorphic over $A$ to one in the family, then the category is called _well-powered_. The dual notion of being _well-copowered_ is defined using epimorphisms $A \to B$. Every small category is well-powered, but there are many well-powered categories that are not small and not even equivalent to a small category.
 
-### Conclusion
+## Conclusion
 
 There is much more to say about set-theoretic foundations for category theory (in fact, many papers have been written on the subject, and the approach developed above is just _one_ of [many](https://xkcd.com/927/) approaches), but this suffices for the purposes of _CatDat_.

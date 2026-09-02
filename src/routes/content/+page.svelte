@@ -9,7 +9,7 @@
 	description="For long-form content, particularly longer proofs and reusable lemmas, we use content pages."
 />
 
-<h2>Content pages</h2>
+<h1>Content pages</h1>
 
 <p class="hint">
 	For long-form content, particularly longer proofs and reusable lemmas, we use content

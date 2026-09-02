@@ -59,7 +59,7 @@
 
 <MetaData title={structure.name} description="Discover the properties of this {type}" />
 
-<h2>{structure.name}</h2>
+<h1>{structure.name}</h1>
 
 <TagList {tags} {type} sort="structure" />
 

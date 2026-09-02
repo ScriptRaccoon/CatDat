@@ -3,7 +3,7 @@ title: Cocongruences on groups are effective
 description: This result will be proved more generally for categories in which pushouts and monomorphisms interact in a suitable way.
 ---
 
-## Cocongruences on groups are effective
+# Cocongruences on groups are effective
 
 Our goal is to prove that every cocongruence in $\Grp$ is effective. We will establish a more general result for categories in which pushouts and monomorphisms interact in a suitable way.
 
