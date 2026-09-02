@@ -43,7 +43,7 @@ test("user can navigate to functors tagged with 'topology' from the functor list
 	await page.goto('/functor-list', { waitUntil: 'networkidle' })
 
 	await page
-		.getByRole('button', {
+		.getByRole('link', {
 			name: 'topology',
 			exact: true
 		})
@@ -70,7 +70,7 @@ test("user can navigate to functors tagged with 'algebra' from the functor detai
 	await page.goto('/functor/abelianization', { waitUntil: 'networkidle' })
 
 	await page
-		.getByRole('button', {
+		.getByRole('link', {
 			name: 'algebra',
 			exact: true
 		})

@@ -137,7 +137,7 @@ test("user can navigate to properties tagged with 'adjunctions' from the propert
 	await page.goto('/functor-properties', { waitUntil: 'networkidle' })
 
 	await page
-		.getByRole('button', {
+		.getByRole('link', {
 			name: 'adjunctions',
 			exact: true
 		})
@@ -171,7 +171,7 @@ test("user can navigate to properties tagged with 'colimit preservation' from th
 	await page.goto('/functor-property/finitary', { waitUntil: 'networkidle' })
 
 	await page
-		.getByRole('button', {
+		.getByRole('link', {
 			name: 'colimit preservation',
 			exact: true
 		})
