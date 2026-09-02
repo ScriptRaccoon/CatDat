@@ -105,6 +105,11 @@ h2 {
 	}
 }
 
+h3 {
+	font-size: 1.125rem;
+	margin-block: 1.5rem 0.5rem;
+}
+
 /* various elements */
 
 p {
