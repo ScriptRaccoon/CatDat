@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { goto } from '$app/navigation'
 	import type { StructureType } from '$lib/commons/types'
 	import Fa from 'svelte-fa'
 	import Chip from './Chip.svelte'
@@ -13,19 +12,16 @@
 	}
 
 	let { type, tags, sort }: Props = $props()
-
-	function filter_by_tag(tag: string) {
-		if (sort === 'structure') {
-			goto(`/${type}-list/${tag}`)
-		} else {
-			goto(`/${type}-properties/${tag}`)
-		}
-	}
 </script>
 
 <ChipGroup>
 	{#each tags as tag}
-		<Chip size="small" handle_click={() => filter_by_tag(tag)}>
+		<Chip
+			size="small"
+			link={sort === 'structure'
+				? `/${type}-list/${tag}`
+				: `/${type}-properties/${tag}`}
+		>
 			<Fa icon={faTag} color="var(--secondary-text-color)" />
 			&nbsp;{tag}
 		</Chip>
