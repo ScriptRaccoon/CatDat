@@ -1,4 +1,5 @@
 <script lang="ts">
+	import CodeSnippet from '$components/CodeSnippet.svelte'
 	import MetaData from '$components/MetaData.svelte'
 	import { PUBLIC_ADMIN_URL } from '$env/static/public'
 
@@ -36,137 +37,110 @@
 
 <h2>Example Queries</h2>
 
-<h3>List of tables</h3>
+<CodeSnippet title="List of tables" code={'.tables'} />
 
-<pre>
-.tables
-</pre>
+<CodeSnippet title="Schema of structures table" code={`.schema structures`} />
 
-<h3>Schema of structures table</h3>
+<CodeSnippet title="Number of categories" code={`SELECT COUNT(*) FROM categories;`} />
 
-<pre>
-.schema structures
-</pre>
+<CodeSnippet
+	title="Categories without an nLab link"
+	code={`SELECT id, name FROM structures
+WHERE type = 'category' AND nlab_link IS NULL;`}
+/>
 
-<h3>Number of categories</h3>
+<CodeSnippet
+	title="Structures involving rings"
+	code={`SELECT id, name, type FROM structures WHERE name LIKE '%ring%';`}
+/>
 
-<pre>
-SELECT COUNT(*) FROM categories;
-</pre>
-
-<h3>Categories without an nLab link</h3>
-
-<pre>
-SELECT id, name FROM structures
-WHERE type = 'category' AND nlab_link IS NULL;
-</pre>
-
-<h3>Structures involving rings</h3>
-
-<pre>
-SELECT id, name, type FROM structures WHERE name LIKE '%ring%';
-</pre>
-
-<h3>Finite categories</h3>
-
-<pre>
-SELECT structure_id FROM property_assignments
+<CodeSnippet
+	title="Finite categories"
+	code={`SELECT structure_id FROM property_assignments
 WHERE type = 'category' AND property_id = 'finite'
-AND is_satisfied = TRUE;
-</pre>
+AND is_satisfied = TRUE;`}
+/>
 
-<h3>Categories without a generating set</h3>
-
-<pre>
-SELECT structure_id FROM property_assignments
+<CodeSnippet
+	title="Categories without a generating set"
+	code={`SELECT structure_id FROM property_assignments
 WHERE type = 'category' AND property_id = 'generating set'
-AND is_satisfied = FALSE;
-</pre>
+AND is_satisfied = FALSE;`}
+/>
 
-<h3>Abelian categories that are not cocomplete</h3>
-
-<pre>
-SELECT a.structure_id
+<CodeSnippet
+	title="Abelian categories that are not cocomplete"
+	code={`SELECT a.structure_id
 FROM property_assignments a
 CROSS JOIN property_assignments b
 WHERE a.type = 'category'
 AND a.structure_id = b.structure_id
 AND a.property_id = 'abelian' AND a.is_satisfied = TRUE
-AND b.property_id = 'cocomplete' AND b.is_satisfied = FALSE;
-</pre>
+AND b.property_id = 'cocomplete' AND b.is_satisfied = FALSE;`}
+/>
 
-<h3>Number of categories per tag</h3>
-
-<pre>
-SELECT tag, count(structure_id) AS tagged_categories
+<CodeSnippet
+	title="Number of categories per tag"
+	code={`SELECT tag, count(structure_id) AS tagged_categories
 FROM structure_tag_assignments
 WHERE type = 'category'
 GROUP BY tag
-ORDER BY tagged_categories DESC;
-</pre>
+ORDER BY tagged_categories DESC;`}
+/>
 
-<h3>Properties without a dual</h3>
+<CodeSnippet
+	title="Properties without a dual"
+	code={`SELECT id, type FROM properties WHERE dual_property_id IS NULL;`}
+/>
 
-<pre>
-SELECT id, type FROM properties WHERE dual_property_id IS NULL;
-</pre>
+<CodeSnippet
+	title="Self-dual properties"
+	code={`SELECT id, type FROM properties WHERE id = dual_property_id;`}
+/>
 
-<h3>Self-dual properties</h3>
+<CodeSnippet
+	title="Properties not invariant under equivalences"
+	code={`SELECT id, type FROM properties WHERE invariant_under_equivalences = FALSE;`}
+/>
 
-<pre>
-SELECT id, type FROM properties WHERE id = dual_property_id;
-</pre>
-
-<h3>Properties not invariant under equivalences</h3>
-
-<pre>
-SELECT id, type FROM properties WHERE invariant_under_equivalences = FALSE;
-</pre>
-
-<h3>Properties of categories without related properties</h3>
-
-<pre>
-SELECT p.id FROM properties p
+<CodeSnippet
+	title="Properties of categories without related properties"
+	code={`SELECT p.id FROM properties p
 LEFT JOIN related_properties r
 ON r.property_id = p.id
-WHERE p.type = 'category' AND r.related_property_id IS NULL;
-</pre>
+WHERE p.type = 'category' AND r.related_property_id IS NULL;`}
+/>
 
-<h3>Equivalent characterizations</h3>
+<CodeSnippet
+	title="Equivalent characterizations"
+	code={`SELECT assumptions, conclusions FROM implications_view
+WHERE type = 'category' AND is_equivalence = TRUE;`}
+/>
 
-<pre>
-SELECT assumptions, conclusions FROM implications_view
-WHERE type = 'category' AND is_equivalence = TRUE;
-</pre>
-
-<h3>Top 5 implications of categories with the most assumptions</h3>
-
-<pre>
-SELECT assumptions, conclusions FROM implications_view
+<CodeSnippet
+	title="Top 5 implications of categories with the most assumptions"
+	code={`SELECT assumptions, conclusions FROM implications_view
 WHERE type = 'category'
-ORDER BY json_array_length(assumptions) DESC LIMIT 5;
-</pre>
+ORDER BY json_array_length(assumptions) DESC LIMIT 5;`}
+/>
 
-<h3>Trivial proofs</h3>
-
-<pre>
-SELECT structure_id, type, property_id, is_satisfied, proof
+<CodeSnippet
+	title="Trivial proofs"
+	code={`SELECT structure_id, type, property_id, is_satisfied, proof
 FROM property_assignments
-WHERE proof = 'This is trivial.';
-</pre>
+WHERE proof = 'This is trivial.';`}
+/>
 
-<h3>Top 10 longest proofs</h3>
-
-<pre>
-SELECT structure_id, type, property_id, is_satisfied, proof
+<CodeSnippet
+	title="Top 10 longest proofs"
+	code={`SELECT structure_id, type, property_id, is_satisfied, proof
 FROM property_assignments
-ORDER BY length(proof) DESC LIMIT 10;
-</pre>
+ORDER BY length(proof) DESC LIMIT 10;`}
+/>
 
-<h3>Top 10 properties with the most undecided categories</h3>
-
-<pre>
-SELECT p.id AS property_id, COUNT(s.id) AS undecided_categories
+<CodeSnippet
+	title="Top 10 properties with the most undecided categories"
+	code={`SELECT p.id AS property_id, COUNT(s.id) AS undecided_categories
 FROM properties p
 CROSS JOIN structures s
 LEFT JOIN property_assignments pa
@@ -174,23 +148,12 @@ ON pa.structure_id = s.id AND pa.property_id = p.id
 WHERE p.type = 'category' AND pa.property_id IS NULL
 AND s.type = 'category'
 GROUP BY p.id
-ORDER BY undecided_categories DESC LIMIT 10;
-</pre>
+ORDER BY undecided_categories DESC LIMIT 10;`}
+/>
 
-<h3>Properties which cannot be decided for a given structure</h3>
-
-<pre>
-SELECT structure_id, type, property_id, proof
+<CodeSnippet
+	title="Properties which cannot be decided for a given structure"
+	code={`SELECT structure_id, type, property_id, proof
 FROM property_assignments
-WHERE is_satisfied IS NULL;
-</pre>
-
-<style>
-	pre {
-		font-size: 0.875rem;
-		white-space: pre-wrap;
-		border: 1px solid var(--secondary-outline-color);
-		padding: 0.75rem;
-		border-radius: 0.25rem;
-	}
-</style>
+WHERE is_satisfied IS NULL;`}
+/>
