@@ -2,23 +2,18 @@
 	import type { Snippet } from 'svelte'
 
 	type Props = {
-		handle_click?: () => void
+		handle_click: () => void
 		children: Snippet
 		size?: 'small' | 'medium'
+		selected?: boolean
 	}
 
-	let { handle_click, children, size = 'medium' }: Props = $props()
+	let { handle_click, children, size = 'medium', selected }: Props = $props()
 </script>
 
-{#if handle_click !== undefined}
-	<button class="chip {size}" onclick={handle_click}>
-		{@render children()}
-	</button>
-{:else}
-	<div class="chip {size}">
-		{@render children()}
-	</div>
-{/if}
+<button class="chip {size}" onclick={handle_click} aria-current={selected}>
+	{@render children()}
+</button>
 
 <style>
 	.chip {
@@ -26,6 +21,7 @@
 		border-radius: 100vw;
 		background-color: var(--secondary-bg-color);
 		outline: 1px solid var(--secondary-outline-color);
+		transition: outline-color 150ms;
 	}
 
 	.chip.medium {
@@ -38,12 +34,8 @@
 		padding: 0.15rem 0.85rem;
 	}
 
-	button.chip {
-		transition: outline-color 150ms;
-	}
-
-	button.chip:hover,
-	button.chip:focus-visible {
+	.chip:hover,
+	.chip:focus-visible {
 		outline-color: var(--outline-color);
 	}
 </style>

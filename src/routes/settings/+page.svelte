@@ -21,22 +21,13 @@
 	<ChipGroup>
 		{#each THEMES as option}
 			{@const selected = theme.value === option}
-			<label class:selected>
-				<input
-					class="visually-hidden"
-					type="radio"
-					name="color"
-					value={option}
-					bind:group={theme.value}
-				/>
-				<Chip>
-					{option}
-					{#if selected}
-						&nbsp;
-						<Fa icon={faCheckCircle} />
-					{/if}
-				</Chip>
-			</label>
+			<Chip handle_click={() => (theme.value = option)} {selected}>
+				{option}
+				{#if selected}
+					&nbsp;
+					<Fa icon={faCheckCircle} />
+				{/if}
+			</Chip>
 		{/each}
 	</ChipGroup>
 </section>
@@ -53,34 +44,14 @@
 	<ChipGroup>
 		{#each [true, false] as allow}
 			{@const selected = tracking.allow === allow}
-			<label class:selected>
-				<input
-					class="visually-hidden"
-					type="radio"
-					name="tracking"
-					value={allow}
-					bind:group={tracking.allow}
-				/>
 
-				<Chip>
-					{allow ? 'On' : 'Off'}
-					{#if selected}
-						&nbsp;
-						<Fa icon={faCheckCircle} />
-					{/if}
-				</Chip>
-			</label>
+			<Chip handle_click={() => (tracking.allow = allow)} {selected}>
+				{allow ? 'On' : 'Off'}
+				{#if selected}
+					&nbsp;
+					<Fa icon={faCheckCircle} />
+				{/if}
+			</Chip>
 		{/each}
 	</ChipGroup>
 </section>
-
-<style>
-	label {
-		cursor: pointer;
-	}
-
-	label:has(:focus-visible) {
-		outline: 2px solid var(--outline-color);
-		outline-offset: 2px;
-	}
-</style>
