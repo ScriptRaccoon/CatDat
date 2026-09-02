@@ -36,40 +36,56 @@
 
 <h2>Example Queries</h2>
 
-<pre>-- List of tables
+<h3>List of tables</h3>
+
+<pre>
 .tables
 </pre>
 
-<pre>-- Schema of structures table
+<h3>Schema of structures table</h3>
+
+<pre>
 .schema structures
 </pre>
 
-<pre>-- Number of categories
+<h3>Number of categories</h3>
+
+<pre>
 SELECT COUNT(*) FROM categories;
 </pre>
 
-<pre>-- Categories without an nLab link
+<h3>Categories without an nLab link</h3>
+
+<pre>
 SELECT id, name FROM structures
 WHERE type = 'category' AND nlab_link IS NULL;
 </pre>
 
-<pre>-- Structures involving rings
+<h3>Structures involving rings</h3>
+
+<pre>
 SELECT id, name, type FROM structures WHERE name LIKE '%ring%';
 </pre>
 
-<pre>-- Finite categories
+<h3>Finite categories</h3>
+
+<pre>
 SELECT structure_id FROM property_assignments
 WHERE type = 'category' AND property_id = 'finite'
 AND is_satisfied = TRUE;
 </pre>
 
-<pre>-- Categories without a generating set
+<h3>Categories without a generating set</h3>
+
+<pre>
 SELECT structure_id FROM property_assignments
 WHERE type = 'category' AND property_id = 'generating set'
 AND is_satisfied = FALSE;
 </pre>
 
-<pre>-- Abelian categories that are not cocomplete
+<h3>Abelian categories that are not cocomplete</h3>
+
+<pre>
 SELECT a.structure_id
 FROM property_assignments a
 CROSS JOIN property_assignments b
@@ -79,7 +95,9 @@ AND a.property_id = 'abelian' AND a.is_satisfied = TRUE
 AND b.property_id = 'cocomplete' AND b.is_satisfied = FALSE;
 </pre>
 
-<pre>-- Number of categories per tag
+<h3>Number of categories per tag</h3>
+
+<pre>
 SELECT tag, count(structure_id) AS tagged_categories
 FROM structure_tag_assignments
 WHERE type = 'category'
@@ -87,49 +105,67 @@ GROUP BY tag
 ORDER BY tagged_categories DESC;
 </pre>
 
-<pre>-- Properties without a dual
+<h3>Properties without a dual</h3>
+
+<pre>
 SELECT id, type FROM properties WHERE dual_property_id IS NULL;
 </pre>
 
-<pre>-- Self-dual properties
+<h3>Self-dual properties</h3>
+
+<pre>
 SELECT id, type FROM properties WHERE id = dual_property_id;
 </pre>
 
-<pre>-- Properties not invariant under equivalences
+<h3>Properties not invariant under equivalences</h3>
+
+<pre>
 SELECT id, type FROM properties WHERE invariant_under_equivalences = FALSE;
 </pre>
 
-<pre>-- Properties of categories without related properties
+<h3>Properties of categories without related properties</h3>
+
+<pre>
 SELECT p.id FROM properties p
 LEFT JOIN related_properties r
 ON r.property_id = p.id
 WHERE p.type = 'category' AND r.related_property_id IS NULL;
 </pre>
 
-<pre>-- Equivalent characterizations
+<h3>Equivalent characterizations</h3>
+
+<pre>
 SELECT assumptions, conclusions FROM implications_view
 WHERE type = 'category' AND is_equivalence = TRUE;
 </pre>
 
-<pre>-- Top 5 implications of categories with the most assumptions
+<h3>Top 5 implications of categories with the most assumptions</h3>
+
+<pre>
 SELECT assumptions, conclusions FROM implications_view
 WHERE type = 'category'
 ORDER BY json_array_length(assumptions) DESC LIMIT 5;
 </pre>
 
-<pre>-- Trivial proofs
+<h3>Trivial proofs</h3>
+
+<pre>
 SELECT structure_id, type, property_id, is_satisfied, proof
 FROM property_assignments
 WHERE proof = 'This is trivial.';
 </pre>
 
-<pre>-- Top 10 longest proofs
+<h3>Top 10 longest proofs</h3>
+
+<pre>
 SELECT structure_id, type, property_id, is_satisfied, proof
 FROM property_assignments
 ORDER BY length(proof) DESC LIMIT 10;
 </pre>
 
-<pre>-- Top 10 properties with the most undecided categories
+<h3>Top 10 properties with the most undecided categories</h3>
+
+<pre>
 SELECT p.id AS property_id, COUNT(s.id) AS undecided_categories
 FROM properties p
 CROSS JOIN structures s
@@ -141,7 +177,9 @@ GROUP BY p.id
 ORDER BY undecided_categories DESC LIMIT 10;
 </pre>
 
-<pre>-- Properties which cannot be decided for a given structure
+<h3>Properties which cannot be decided for a given structure</h3>
+
+<pre>
 SELECT structure_id, type, property_id, proof
 FROM property_assignments
 WHERE is_satisfied IS NULL;
@@ -151,10 +189,8 @@ WHERE is_satisfied IS NULL;
 	pre {
 		font-size: 0.875rem;
 		white-space: pre-wrap;
-		margin-bottom: 1rem;
-	}
-
-	pre::first-line {
-		color: var(--accent-color);
+		border: 1px solid var(--secondary-outline-color);
+		padding: 0.75rem;
+		border-radius: 0.25rem;
 	}
 </style>
