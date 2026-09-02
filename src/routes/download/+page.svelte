@@ -37,24 +37,35 @@
 
 <h2>Example Queries</h2>
 
-<CodeSnippet title="List of tables" code={'.tables'} />
-
-<CodeSnippet title="Schema of structures table" code={`.schema structures`} />
-
-<CodeSnippet title="Number of categories" code={`SELECT COUNT(*) FROM categories;`} />
+<CodeSnippet language="sql" title="List of tables" code={'.tables'} />
 
 <CodeSnippet
+	language="sql"
+	title="Schema of structures table"
+	code={`.schema structures`}
+/>
+
+<CodeSnippet
+	language="sql"
+	title="Number of categories"
+	code={`SELECT COUNT(*) FROM categories;`}
+/>
+
+<CodeSnippet
+	language="sql"
 	title="Categories without an nLab link"
 	code={`SELECT id, name FROM structures
 WHERE type = 'category' AND nlab_link IS NULL;`}
 />
 
 <CodeSnippet
+	language="sql"
 	title="Structures involving rings"
 	code={`SELECT id, name, type FROM structures WHERE name LIKE '%ring%';`}
 />
 
 <CodeSnippet
+	language="sql"
 	title="Finite categories"
 	code={`SELECT structure_id FROM property_assignments
 WHERE type = 'category' AND property_id = 'finite'
@@ -62,6 +73,7 @@ AND is_satisfied = TRUE;`}
 />
 
 <CodeSnippet
+	language="sql"
 	title="Categories without a generating set"
 	code={`SELECT structure_id FROM property_assignments
 WHERE type = 'category' AND property_id = 'generating set'
@@ -69,6 +81,7 @@ AND is_satisfied = FALSE;`}
 />
 
 <CodeSnippet
+	language="sql"
 	title="Abelian categories that are not cocomplete"
 	code={`SELECT a.structure_id
 FROM property_assignments a
@@ -80,6 +93,7 @@ AND b.property_id = 'cocomplete' AND b.is_satisfied = FALSE;`}
 />
 
 <CodeSnippet
+	language="sql"
 	title="Number of categories per tag"
 	code={`SELECT tag, count(structure_id) AS tagged_categories
 FROM structure_tag_assignments
@@ -89,21 +103,25 @@ ORDER BY tagged_categories DESC;`}
 />
 
 <CodeSnippet
+	language="sql"
 	title="Properties without a dual"
 	code={`SELECT id, type FROM properties WHERE dual_property_id IS NULL;`}
 />
 
 <CodeSnippet
+	language="sql"
 	title="Self-dual properties"
 	code={`SELECT id, type FROM properties WHERE id = dual_property_id;`}
 />
 
 <CodeSnippet
+	language="sql"
 	title="Properties not invariant under equivalences"
 	code={`SELECT id, type FROM properties WHERE invariant_under_equivalences = FALSE;`}
 />
 
 <CodeSnippet
+	language="sql"
 	title="Properties of categories without related properties"
 	code={`SELECT p.id FROM properties p
 LEFT JOIN related_properties r
@@ -112,12 +130,14 @@ WHERE p.type = 'category' AND r.related_property_id IS NULL;`}
 />
 
 <CodeSnippet
+	language="sql"
 	title="Equivalent characterizations"
 	code={`SELECT assumptions, conclusions FROM implications_view
 WHERE type = 'category' AND is_equivalence = TRUE;`}
 />
 
 <CodeSnippet
+	language="sql"
 	title="Top 5 implications of categories with the most assumptions"
 	code={`SELECT assumptions, conclusions FROM implications_view
 WHERE type = 'category'
@@ -125,6 +145,7 @@ ORDER BY json_array_length(assumptions) DESC LIMIT 5;`}
 />
 
 <CodeSnippet
+	language="sql"
 	title="Trivial proofs"
 	code={`SELECT structure_id, type, property_id, is_satisfied, proof
 FROM property_assignments
@@ -132,6 +153,7 @@ WHERE proof = 'This is trivial.';`}
 />
 
 <CodeSnippet
+	language="sql"
 	title="Top 10 longest proofs"
 	code={`SELECT structure_id, type, property_id, is_satisfied, proof
 FROM property_assignments
@@ -139,6 +161,7 @@ ORDER BY length(proof) DESC LIMIT 10;`}
 />
 
 <CodeSnippet
+	language="sql"
 	title="Top 10 properties with the most undecided categories"
 	code={`SELECT p.id AS property_id, COUNT(s.id) AS undecided_categories
 FROM properties p
@@ -152,6 +175,7 @@ ORDER BY undecided_categories DESC LIMIT 10;`}
 />
 
 <CodeSnippet
+	language="sql"
 	title="Properties which cannot be decided for a given structure"
 	code={`SELECT structure_id, type, property_id, proof
 FROM property_assignments

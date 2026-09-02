@@ -1,13 +1,18 @@
 <script lang="ts">
 	import { faCheck, faCopy } from '@fortawesome/free-solid-svg-icons'
+	import hljs from 'highlight.js/lib/core'
+	import sql from 'highlight.js/lib/languages/sql'
 	import Fa from 'svelte-fa'
 
+	hljs.registerLanguage('sql', sql)
+
 	type Props = {
+		language: 'sql'
 		title: string
 		code: string
 	}
 
-	let { title, code }: Props = $props()
+	let { language, title, code }: Props = $props()
 
 	let copied = $state(false)
 
@@ -32,7 +37,7 @@
 		</button>
 	</header>
 
-	<pre>{normalized_code}</pre>
+	<pre>{@html hljs.highlight(normalized_code, { language }).value}</pre>
 </div>
 
 <style>
@@ -53,5 +58,22 @@
 		border: 1px solid var(--secondary-outline-color);
 		padding: 0.75rem;
 		border-radius: 0.25rem;
+	}
+
+	:global(.hljs-keyword),
+	:global(.hljs-selector-tag),
+	:global(.hljs-built_in),
+	:global(.hljs-title),
+	:global(.hljs-name) {
+		color: var(--accent-color);
+		font-weight: 600;
+	}
+
+	:global(.hljs-string),
+	:global(.hljs-quote),
+	:global(.hljs-symbol),
+	:global(.hljs-number),
+	:global(.hljs-literal) {
+		color: var(--success-color);
 	}
 </style>
