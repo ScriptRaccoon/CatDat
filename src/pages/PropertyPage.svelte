@@ -44,7 +44,7 @@
 
 <MetaData title={property.id} description="Discover this property of {PLURALS[type]}" />
 
-<h2>{property.id}</h2>
+<h1>{property.id}</h1>
 
 <TagList {tags} {type} sort="property" />
 
@@ -97,7 +97,7 @@
 	New here? Click any <Fa icon={faInfoCircle} /> icon to view the proof for that implication.
 </HelpMessage>
 
-<h3 class="sticky-heading">Relevant implications</h3>
+<h2 class="sticky-heading">Relevant implications</h2>
 
 <ImplicationList
 	implications={relevant_implications}
@@ -105,7 +105,7 @@
 	{type}
 />
 
-<h3 class="sticky-heading">Examples</h3>
+<h2 class="sticky-heading">Examples</h2>
 
 <p class="hint">
 	{pluralize(examples.length, {
@@ -116,7 +116,7 @@
 
 <StructureList structures={examples} {type} />
 
-<h3 class="sticky-heading">Counterexamples</h3>
+<h2 class="sticky-heading">Counterexamples</h2>
 
 <p class="hint">
 	{pluralize(counterexamples.length, {
@@ -128,7 +128,7 @@
 <StructureList structures={counterexamples} {type} />
 
 {#if undecidable_structures.length}
-	<h3 class="sticky-heading">Undecidable {PLURALS[type]}</h3>
+	<h2 class="sticky-heading">Undecidable {PLURALS[type]}</h2>
 
 	<p class="hint">
 		{pluralize(undecidable_structures.length, {
@@ -140,7 +140,7 @@
 	<StructureList structures={undecidable_structures} {type} />
 {/if}
 
-<h3 class="sticky-heading">Unknown</h3>
+<h2 class="sticky-heading">Unknown</h2>
 
 <p class="hint">
 	{pluralize(unknown_structures.length, {

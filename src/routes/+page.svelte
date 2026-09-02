@@ -14,9 +14,9 @@
 
 <MetaData />
 
-<h2>
+<h1>
 	A comprehensive and searchable database of categorical structures and their properties
-</h2>
+</h1>
 
 <p>
 	<i>CatDat</i> provides a growing collection of categorical structures such as
@@ -46,9 +46,9 @@
 
 <div class="features">
 	<article class="feature-card">
-		<h3>
+		<h2>
 			<Fa icon={faDatabase} /> Structures
-		</h3>
+		</h2>
 
 		<p>
 			Browse a comprehensive collection of categorical structures, including
@@ -58,9 +58,9 @@
 		</p>
 	</article>
 	<article class="feature-card">
-		<h3>
+		<h2>
 			<Fa icon={faList} /> Properties
-		</h3>
+		</h2>
 
 		<p>
 			Browse properties of categorical structures, including
@@ -72,10 +72,10 @@
 	</article>
 
 	<article class="feature-card">
-		<h3>
+		<h2>
 			<Fa icon={faChartDiagram} />
 			Deduction System
-		</h3>
+		</h2>
 
 		<p>
 			Implications between properties of categorical structures, including
@@ -87,9 +87,9 @@
 	</article>
 
 	<article class="feature-card">
-		<h3>
+		<h2>
 			<Fa icon={faSearch} /> Search by properties
-		</h3>
+		</h2>
 
 		<p>
 			Search for categorical structures such as
@@ -102,9 +102,9 @@
 	</article>
 
 	<article class="feature-card">
-		<h3>
+		<h2>
 			<Fa icon={faChartBar} /> Compare structures
-		</h3>
+		</h2>
 		<p>
 			Compare categorical structures such as
 			<a class="accent" href="/category-comparison">categories</a>
@@ -115,9 +115,9 @@
 	</article>
 
 	<article class="feature-card">
-		<h3>
+		<h2>
 			<Fa icon={faUsers} /> Community-driven
-		</h3>
+		</h2>
 		<p>
 			This <a
 				class="accent"
@@ -151,7 +151,7 @@
 		outline: 1px solid var(--secondary-outline-color);
 		box-shadow: 0 0 1rem var(--card-shadow);
 
-		h3 {
+		h2 {
 			margin-block: 1rem;
 		}
 	}

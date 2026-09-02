@@ -3,7 +3,7 @@ title: Sifted colimits in groupoids
 description: A description of sifted colimits in groupoids, yielding a proof that every essentially small groupoid is a generalized variety.
 ---
 
-## Sifted colimits in groupoids
+# Sifted colimits in groupoids
 
 While the combination of [this result](/category-implication/groupoid_consequence) and [this result](/category-implication/sifted_colimits_criterion) already implies that groupoids have sifted colimits, we can make these colimits more explicit and also prove their existence without using any non-trivial theorem. We also do this in a more general setting.
 

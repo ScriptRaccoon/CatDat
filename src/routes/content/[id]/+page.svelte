@@ -23,7 +23,7 @@
 </div>
 
 {#if has_context}
-	<h3>Context</h3>
+	<h2>Context</h2>
 
 	{#each STRUCTURE_TYPES as type}
 		{#if data.structures_by_type?.[type]?.length}

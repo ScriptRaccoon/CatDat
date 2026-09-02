@@ -3,7 +3,7 @@ title: Missing cogenerating sets
 description: A generalization of the proof that the category of commutative rings has no cogenerating set.
 ---
 
-## Missing cogenerating sets
+# Missing cogenerating sets
 
 ::: Lemma
 Let $\C$ be a category with a faithful functor $U: \C \to \Set$. Assume there exists a collection of objects $\F \subseteq \Ob(\C)$ satisfying the following conditions:

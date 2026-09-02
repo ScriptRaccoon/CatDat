@@ -57,7 +57,7 @@
 	]} that satisfy a specific set of properties while simultaneously not satisfying another set of properties."
 />
 
-<h2>Search results</h2>
+<h1>Search results</h1>
 
 {#if satisfied_properties.length > 0}
 	<div>

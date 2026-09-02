@@ -16,7 +16,7 @@
 
 <MetaData title="Download" description="Download CatDat's SQLite database" />
 
-<h2>Download</h2>
+<h1>Download</h1>
 
 <p>
 	<i>CatDat</i> is built on a
@@ -34,7 +34,7 @@
 	Download CatDat database
 </a>
 
-<h3>Example Queries</h3>
+<h2>Example Queries</h2>
 
 <pre>-- List of tables
 .tables

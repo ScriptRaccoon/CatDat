@@ -40,7 +40,7 @@
 
 <MetaData title="Comparison of {PLURALS[type]}" />
 
-<h2>Comparison of {PLURALS[type]}</h2>
+<h1>Comparison of {PLURALS[type]}</h1>
 
 <p class="hint" bind:this={paragraph_element}>
 	Selected:

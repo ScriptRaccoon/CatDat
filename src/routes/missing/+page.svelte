@@ -15,7 +15,7 @@
 	description="Missing properties, missing special morphisms, missing combinations, and more."
 />
 
-<h2>Missing data</h2>
+<h1>Missing data</h1>
 
 <p>
 	This page lists some missing data in the database. Please help us fill in the gaps by
@@ -26,7 +26,7 @@
 	{@const structures = data.structures_with_unknown_properties[type]}
 	{@const total = data.unknown_totals[type]}
 	<section>
-		<h3>{capitalize(PLURALS[type])} with unknown properties</h3>
+		<h2>{capitalize(PLURALS[type])} with unknown properties</h2>
 
 		<p class="hint">
 			There are {structures.length}
@@ -45,7 +45,7 @@
 {/each}
 
 <section>
-	<h3>Categories with unknown special morphisms</h3>
+	<h2>Categories with unknown special morphisms</h2>
 
 	<p class="hint">
 		There are {data.categories_with_missing_morphisms.length} categories where at least
@@ -60,7 +60,7 @@
 
 	{#if pairs.length > 0}
 		<section>
-			<h3>Indistinguishable {remove_underscores(type)} pairs</h3>
+			<h2>Indistinguishable {remove_underscores(type)} pairs</h2>
 
 			<p class="hint">
 				{pluralize(pairs.length, {
@@ -93,7 +93,7 @@
 	{@const combinations = data.missing_combinations[type]}
 
 	<section>
-		<h3>Missing {remove_underscores(type)} combinations</h3>
+		<h2>Missing {remove_underscores(type)} combinations</h2>
 
 		{#if combinations.length}
 			<p class="hint">

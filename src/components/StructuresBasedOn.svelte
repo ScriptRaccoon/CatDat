@@ -15,7 +15,7 @@
 {#each STRUCTURE_TYPES as type}
 	{@const structures = structures_based_on[type]}
 	{#if structures && structures.length > 0}
-		<h3>{capitalize(PLURALS[type])}</h3>
+		<h2>{capitalize(PLURALS[type])}</h2>
 
 		<p class="hint">
 			The database stores {structures.length}

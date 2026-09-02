@@ -3,7 +3,7 @@ title: Construction of generators
 description: How to construct a generator from a generating set
 ---
 
-## Construction of generators
+# Construction of generators
 
 ::: Lemma
 In a category let $S$ be a generating set which is [strongly connected](/category-property/strongly_connected), i.e. between any two objects $G,G' \in S$ there is a morphism $G \to G'$. If the coproduct $U \coloneqq \coprod_{G \in S} G$ exists, then it is a generator. Moreover, if $S$ is an extremal generating set, then $U$ is an extremal generator.

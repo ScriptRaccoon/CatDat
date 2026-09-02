@@ -3,7 +3,7 @@ title: Missing cogenerator
 description: A generalization of the proof that the category of groups has no cogenerator.
 ---
 
-## Missing cogenerator
+# Missing cogenerator
 
 ::: Lemma
 

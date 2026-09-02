@@ -13,10 +13,10 @@
 
 <MetaData title="Settings" description="Customize the appearance of CatDat" />
 
-<h2>Settings</h2>
+<h1>Settings</h1>
 
 <section>
-	<h3>Theme</h3>
+	<h2>Theme</h2>
 
 	<ChipGroup>
 		{#each THEMES as option}
@@ -42,7 +42,7 @@
 </section>
 
 <section>
-	<h3>Track visits</h3>
+	<h2>Track visits</h2>
 	<p class="hint">
 		To measure how this application is used, we collect anonymous page visit data:
 		time, device type (mobile, tablet, desktop), theme (light/dark), and country. We

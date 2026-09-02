@@ -3,9 +3,9 @@ title: Dual properties
 description: A short explanation of what we mean by dual properties in CatDat.
 ---
 
-## Dual properties
+# Dual properties
 
-### Categories
+## Categories
 
 Given a property $P$ of categories, its dual property $P^{\op}$ is defined as follows: a category $\C$ satisfies $P^{\op}$ if and only if its dual category $\C^{\op}$ satisfies $P$.
 
@@ -13,7 +13,7 @@ For example, since a category has an [initial object](/category-property/initial
 
 Notice that $(P^{\op})^{\op} = P$, and that $\C$ satisfies $P$ if and only if $\C^{\op}$ satisfies $P^{\op}$.
 
-### Functors
+## Functors
 
 Given a property $P$ of functors, its dual property $P^{\op}$ is defined as follows: a functor $F : \C \to \D$ satisfies $P^{\op}$ if and only if its dual functor $F^{\op} : \C^{\op} \to \D^{\op}$ satisfies $P$. Notice that taking the dual does not reverse the direction of the functor.
 
@@ -21,7 +21,7 @@ For example, since a functor is [essentially injective](/functor-property/essent
 
 Again, notice that $(P^{\op})^{\op} = P$, and that $F : \C \to \D$ satisfies $P$ if and only if $F^{\op} : \C^{\op} \to \D^{\op}$ satisfies $P^{\op}$.
 
-### Morphisms
+## Morphisms
 
 Given a property $P$ of morphisms, its dual property $P^{\op}$ is defined as follows: a morphism $f : X \to Y$ in a category $\C$ satisfies $P^{\op}$ if and only if its dual morphism $f^{\op} : Y \to X$ in the dual category $\C^{\op}$ satisfies $P$.
 
@@ -29,7 +29,7 @@ For example, the property [monomorphism](/morphism-property/monomorphism) is dua
 
 Notice that $(P^{\op})^{\op} = P$, and that $f$ satisfies $P$ if and only if $f^{\op}$ satisfies $P^{\op}$.
 
-### Symmetric Monoidal Categories
+## Symmetric Monoidal Categories
 
 The dual of a symmetric monoidal category $(\C,\otimes,1)$ is defined by $(\C^{\op},\otimes,1)$ (and the obvious coherence isomorphisms). Given a property $P$ of symmetric monoidal categories, its dual property $P^{\op}$ is defined as follows: a symmetric monoidal category satisfies $P^{\op}$ if and only if its dual satisfies $P$.
 

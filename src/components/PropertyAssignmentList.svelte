@@ -34,7 +34,7 @@
 
 <div class="two-columns">
 	<section>
-		<h3 class="sticky-heading">Satisfied Properties</h3>
+		<h2 class="sticky-heading">Satisfied Properties</h2>
 
 		<p class="hint">Assigned properties</p>
 		<PropertyList
@@ -52,7 +52,7 @@
 	</section>
 
 	<section>
-		<h3 class="sticky-heading">Unsatisfied Properties</h3>
+		<h2 class="sticky-heading">Unsatisfied Properties</h2>
 
 		<p class="hint">Assigned properties</p>
 		<PropertyList
@@ -73,7 +73,7 @@
 </div>
 
 <section>
-	<h3 class="sticky-heading">Unknown properties</h3>
+	<h2 class="sticky-heading">Unknown properties</h2>
 
 	{#if unknown_properties.length > 0}
 		<p class="hint">
@@ -91,7 +91,7 @@
 
 {#if undecidable_properties.length > 0}
 	<section>
-		<h3>Undecidable properties</h3>
+		<h2>Undecidable properties</h2>
 
 		{#if undecidable_properties.length > 0}
 			<p class="hint">

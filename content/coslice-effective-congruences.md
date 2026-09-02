@@ -3,7 +3,7 @@ title: Inheritance of effective congruences in coslice categories
 description: An extensive category has effective congruences when some of its coslice categories has effective congruences.
 ---
 
-## Inheritance of effective congruences in coslice categories
+# Inheritance of effective congruences in coslice categories
 
 ::: Lemma
 Let $\C$ be an extensive category, and $A$ an object of $\C$. If the coslice category $A \backslash \C$ has effective congruences, then so does $\C$.

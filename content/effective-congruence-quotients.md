@@ -3,7 +3,7 @@ title: Quotients of effective congruences are strict quotients
 description: Quotients by effective congruences are characterized via a pullback
 ---
 
-## Quotients of effective congruences are strict quotients
+# Quotients of effective congruences are strict quotients
 
 ::: Lemma
 Let $f, g : E \rightrightarrows X$ be an effective congruence. If $f, g$ have a coequalizer $p : X \to X/E$, then in fact we have a cartesian square

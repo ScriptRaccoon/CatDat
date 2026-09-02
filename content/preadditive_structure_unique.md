@@ -3,7 +3,7 @@ title: Uniqueness of preadditive structures
 description: In the presence of finite products, a preadditive structure on a given category is uniquely determined.
 ---
 
-## Uniqueness of preadditive structures
+# Uniqueness of preadditive structures
 
 ::: Lemma
 Let $\C$ be a preadditive category (or more generally, a category enriched in commutative monoids) with finite products and finite coproducts. Then for all objects $X,Y$ the canonical morphism

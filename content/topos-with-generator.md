@@ -3,7 +3,7 @@ title: Topos with a generator
 description: An elementary topos with a generator has at most two subterminal objects
 ---
 
-## Topos with a generator
+# Topos with a generator
 
 ::: Lemma
 Suppose a category is coregular, and it has disjoint finite coproducts, a terminal object, and a generator. Then every regular subterminal object (i.e. an object $X$ such that the unique morphism $X \to 1$ is a regular monomorphism) is either initial or terminal.

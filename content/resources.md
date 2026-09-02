@@ -3,7 +3,7 @@ title: Resources on category theory
 description: This is an (incomplete) list of resources on category theory.
 ---
 
-## Resources on category theory
+# Resources on category theory
 
 This is an (incomplete) list of resources on category theory.
 

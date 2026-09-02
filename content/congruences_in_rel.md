@@ -3,7 +3,7 @@ title: A classification of congruences in the category of sets and relations
 description: The classification will prove in particular that the category of sets and relations has quotients of congruences and that congruences are effective.
 ---
 
-## A classification of congruences in the category of sets and relations
+# A classification of congruences in the category of sets and relations
 
 We will give a classification of congruences in $\Rel$, the [category of sets and relations](/category/Rel). This classification will prove in particular that $\Rel$ has quotients of congruences and that congruences are effective.
 

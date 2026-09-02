@@ -10,7 +10,7 @@
 
 {#if comments.length}
 	<section>
-		<h3>Comments</h3>
+		<h2>Comments</h2>
 
 		<ul class="with-margins">
 			{#each comments as { id, comment } (id)}

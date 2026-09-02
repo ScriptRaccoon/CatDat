@@ -3,7 +3,7 @@ title: Natural numbers objects
 description: We prove some results on natural numbers objects.
 ---
 
-## Natural numbers objects
+# Natural numbers objects
 
 The definition of a [natural numbers object](/category-property/natural_numbers_object) a priori only allows for recursively defined morphisms in which the next value $\Phi(s(n))$ depends only on the previous value $\Phi(n)$. In many cases, however, we would also like to use $n$ itself to define $\Phi(s(n))$. This can be done in categories with finite products:
 
