@@ -3,7 +3,7 @@ name: category of finitely generated free abelian groups
 notation: $\FreeAb_\fg$
 objects: finitely generated free abelian groups
 morphisms: group homomorphisms
-description: This is the full subcategory of $\Ab$ consisting of the <a href="https://ncatlab.org/nlab/show/free+abelian+group" target="_blank">free abelian groups</a> that are also <a href="https://ncatlab.org/nlab/show/finitely+generated+group" target="_blank">finitely generated</a>. Equivalently, it is the category of finitely generated <a href="https://ncatlab.org/nlab/show/projective+module" target="_blank">projective</a> $\IZ$-modules. Every object is isomorphic to $\IZ^n$ for a unique $n \in \IN$.
+description: This is the full subcategory of $\Ab$ consisting of the <a href="https://ncatlab.org/nlab/show/free+abelian+group" target="_blank">free abelian groups</a> that are also <a href="https://ncatlab.org/nlab/show/finitely+generated+group" target="_blank">finitely generated</a>. Equivalently, it is the category $\Proj_\fg(\IZ)$ of finitely generated <a href="https://ncatlab.org/nlab/show/projective+module" target="_blank">projective</a> $\IZ$-modules. Every object is isomorphic to $\IZ^n$ for a unique $n \in \IN$.
 nlab_link: null
 
 tags:
@@ -15,6 +15,7 @@ related:
   - Ab_fg
   - FreeAb
   - FinVect_c
+  - Proj_fg(R[e])
 
 satisfied_properties:
   - property: locally small

@@ -1,0 +1,97 @@
+id: Proj_fg(R[e])
+name: category of finitely generated projective modules over the ring of dual numbers
+notation: $\Proj_\fg(\IR[\varepsilon])$
+objects: finitely generated projective modules over $\IR[\varepsilon]$
+morphisms: $\IR[\varepsilon]$-linear maps
+description: >-
+  In this entry, $R \coloneqq \IR[\varepsilon] \coloneqq \IR[X]/\langle X^2 \rangle$ is the <a href="https://ncatlab.org/nlab/show/dual+number" target="_blank">ring of dual numbers</a> over the real numbers, and we consider the full subcategory of $R{-}\Mod$ consisting of the modules that are <a href="https://ncatlab.org/nlab/show/finitely+generated+module" target="_blank">finitely generated</a> and <a href="https://ncatlab.org/nlab/show/projective+module" target="_blank">projective</a>. Thus, the objects are the direct summands of $R^n$ for some $n \in \IN$. But actually, since $R$ is local, every projective module is already free.
+
+  Some of the properties proven here hold for every commutative ring $R$. But for the specific choice $R = \IR[\varepsilon]$, this category provides an example of an additive, normal, and conormal category which is not abelian.
+nlab_link: null
+tags:
+  - algebra
+
+related:
+  - R-Mod
+  - FreeAb_fg
+  - FinVect_u
+
+satisfied_properties:
+  - property: locally small
+    proof: The category is a full subcategory of <a href="/category/R-Mod">$R{-}\Mod$</a>, which is locally small.
+
+  - property: essentially small
+    proof: 'This is because the category is locally small and every object is isomorphic to one in the set $\{R^n : n \in \IN\}$.'
+
+  - property: additive
+    proof: The category is closed under finite direct sums in <a href="/category/R-Mod">$R{-}\Mod$</a>, which is additive.
+
+  - property: extremal generator
+    proof: The module $R$ is an extremal generator, even in <a href="/category/R-Mod">$R{-}\Mod$</a>.
+
+  - property: self-dual
+    proof: >-
+      More generally, if $R$ is any ring, the category $\Proj_\fg(R)$ of finitely generated projective left $R$-modules is dual to $\Proj_\fg(R^\op)$, which simplifies to $\Proj_\fg(R)$ if $R$ is commutative. In fact, since $R$ is an $R$-bimodule, the functor $\Hom(-,R) : R{-}\Mod^{\op} \to \Set$ lifts to an additive functor
+      $$\underline{\Hom}(-,R) : R{-}\Mod^{\op} \to R^{\op}{-}\Mod.$$
+      It restricts to a functor
+      $$\underline{\Hom}(-,R) : \Proj_\fg(R)^{\op} \to \Proj_\fg(R^\op)$$
+      because of $\underline{\Hom}(R^n,R) \cong R^n$ and since an additive functor preserves direct summands. This functor dualizes to a functor in the other direction, and we claim that these are inverse to each other. For this, it suffices to prove that the natural homomorphism
+      $$M \to \underline{\Hom}(\underline{\Hom}(M,R),R^{\op})$$
+      defined by $m \mapsto (\varphi \mapsto \varphi(m))$ is an isomorphism. The collection of modules for which this is true is closed under finite direct sums and direct summands (since both sides are additive functors), and it contains $R$ by a direct calculation. Therefore, it contains every finitely generated projective left $R$-module.
+
+  - property: quotients of congruences
+    proof: 'Let $p_1,p_2 : E \rightrightarrows M$ be a congruence in $\Proj_\fg(R)$. In particular, it is a reflexive relation on $M$ in $R{-}\Mod$. Thus, there is some submodule $U \subseteq M$ such that (up to isomorphism) $E = \{(x,y) \in M^2 : x-y \in U\}$ and $p_1,p_2$ are the two projections. Since $E \cong U \oplus M$ and $E$ is finitely generated and projective, it follows that $U$ is finitely generated and projective. Moreover, the coequalizer of $p_1,p_2$ in $R{-}\Mod$ is given by $M/U$, which is clearly finitely generated, and we claim that $M/U$ is also projective. For this, it suffices to prove that the monomorphism $U \hookrightarrow M$ splits, since then $M/U$ is a direct summand of $M$. But every monomorphism splits in this category since it is self-dual, and every epimorphism is surjective (see below) and therefore splits.'
+    label: proj_dual_numbers_quotients_congruences
+
+  - property: effective congruences
+    proof: 'We saw before that every congruence $p_1,p_2 : E \rightrightarrows M$ in $\Proj_\fg(R)$ is isomorphic to $\{(x,y) \in M^2 : x-y \in U\}$ for some direct summand $U \subseteq M$, where $p_1,p_2$ are the two projections. Thus, it is the kernel pair of the projection $M \to M/U$, which indeed lies in $\Proj_\fg(R)$.'
+    references:
+      - proj_dual_numbers_quotients_congruences
+
+  - property: ℵ₁-accessible
+    proof: >-
+      We will prove more generally that for left Noetherian rings $R$, $\Proj_\fg(R)$ is $\aleph_1$-accessible. The proof is similar to <a href="/category/Ab_fg">$\Ab_\fg$</a>.
+
+      First, we show that the inclusion $\Proj_\fg(R) \hookrightarrow R{-}\Mod$ is closed under $\aleph_1$-filtered colimits. Assume that $(M_i)$ is an $\aleph_1$-filtered diagram of $R$-modules with colimit $M$, where each $M_i$ is finitely generated and projective. Since $R$ is left Noetherian, finitely generated modules coincide with Noetherian modules. Therefore, <a href="https://mathoverflow.net/questions/400763/" target="_blank">MO/400763</a> implies that $M$ is finitely generated.
+      We conclude that $M$ is finitely presentable since $R$ is left Noetherian. Since $(M_i)$ is also an $\aleph_0$-filtered diagram, it follows that $\id_M : M \to M = \colim_i M_i$ factors through some $M_i \to M$. Therefore, $M$ is a direct summand of $M_i$. Since $M_i$ is projective, it follows that $M$ is projective as well. This proves the claim that $\aleph_1$-filtered colimits exist.
+
+      To finish the proof that $\Proj_\fg(R)$ is $\aleph_1$-accessible, since it is essentially small, it suffices to prove that every object is $\aleph_1$-presentable. This follows since every finitely generated $R$-module is $\aleph_0$-presentable and therefore also $\aleph_1$-presentable in $R{-}\Mod$.
+    references:
+      - Ab_fg_aleph1-accessible
+
+unsatisfied_properties:
+  - property: skeletal
+    proof: This is trivial.
+
+  - property: small
+    proof: Even the collection of trivial modules is not a set.
+
+  - property: essentially countable
+    proof: The set $\Hom(R,R) \cong R = \IR[\varepsilon]$ is not countable.
+
+  - property: locally finite
+    proof: The set $\Hom(R,R) \cong R = \IR[\varepsilon]$ is infinite.
+
+  - property: kernels
+    proof: 'Assume that the linear map $\varepsilon : R \to R$ has a kernel $i : K \to R$, i.e. an equalizer with the zero map $0 : R \to R$. Since the forgetful functor to $\Set$ is representable, and therefore preserves equalizers, the underlying set of $K$ is $\{r \in R : r \varepsilon = 0\} = \IR \cdot \varepsilon$ and $i$ is the inclusion map. Thus, $K$ is isomorphic to the $R$-module $\IR$ on which $\varepsilon$ acts as zero. But this module is not projective. This is because it is not free, but a more elementary approach is to observe that the surjective $R$-linear map $R \to \IR$, $a + b \varepsilon \mapsto a$ does not split.'
+
+special_objects:
+  initial object:
+    description: zero module
+  terminal object:
+    description: zero module
+  coproducts:
+    description: '[finite case] direct sums'
+  products:
+    description: '[finite case] direct sums'
+
+special_morphisms:
+  isomorphisms:
+    description: bijective linear maps
+    proof: This follows from the corresponding fact for <a href="/category/R-Mod">$R{-}\Mod$</a>.
+  monomorphisms:
+    description: injective linear maps
+    proof: The non-trivial direction follows from the observation that the forgetful functor to $\Set$ is representable (by the free module of rank $1$) and therefore preserves monomorphisms.
+  epimorphisms:
+    description: surjective linear maps
+    proof: 'Surjective linear maps are clearly epimorphisms. Conversely, assume that $f : M \to N$ is an epimorphism in $\Proj_\fg(R)$. If $f$ is not surjective, $Q \coloneqq N/f(M)$ is a non-zero finitely generated $R$-module. Therefore, it has a simple quotient. Since $R$ is a local commutative ring with residue field $\IR$, the only simple $R$-module is $\IR$, on which $\varepsilon$ acts as zero. Thus, there is a surjective linear map $\varphi : Q \to \IR$. Composing this with the injective linear map $\IR \to R$, $r \mapsto r \varepsilon$, and the projection $N \twoheadrightarrow Q$, we get a non-zero linear map $\psi : N \to R$ with $\psi \circ f = 0$, which contradicts the assumption that $f$ is an epimorphism.'
