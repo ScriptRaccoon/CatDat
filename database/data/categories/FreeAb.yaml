@@ -3,7 +3,7 @@ name: category of free abelian groups
 notation: $\FreeAb$
 objects: free abelian groups
 morphisms: group homomorphisms
-description: This is the full subcategory of $\Ab$ that consists of the <a href="https://ncatlab.org/nlab/show/free+abelian+group" target="_blank">free abelian groups</a>.
+description: This is the full subcategory of $\Ab$ consisting of the <a href="https://ncatlab.org/nlab/show/free+abelian+group" target="_blank">free abelian groups</a>. Since $\IZ$ is a principal ideal domain, these coincide with the <a href="https://ncatlab.org/nlab/show/projective+module" target="_blank">projective</a> $\IZ$-modules, so that $\FreeAb \cong \Proj(\IZ)$.
 nlab_link: null
 
 tags:
@@ -85,13 +85,13 @@ special_morphisms:
     proof: It is a full subcategory of $\Ab$, for which we know that isomorphisms are bijective homomorphisms.
   monomorphisms:
     description: injective homomorphisms
-    proof: 'Let $f : A \to B$ be a monomorphism of free abelian groups. Let $a \in A$ be in the kernel of $a$. Then we may view $a$ as a morphism $a : \IZ \to A$ with $f \circ a = 0$, and $\IZ$ is free. Hence, $a = 0$.'
+    proof: The non-trivial direction follows from the observation that the forgetful functor to $\Set$ is representable (by $\IZ$), hence preserves monomorphisms.
   epimorphisms:
     description: 'homomorphisms $f : A \to B$ with the property that $f(A)$ is not contained in a proper direct summand of $B$'
-    proof: 'Let $f : A \to B$ be a morphism of free abelian groups such that $f(A)$ is not contained in a proper direct summand of $B$. Then $f$ is an epimorphism: If $t : B \to C$ is a morphism with $t \circ f = 0$, we want to show $t = 0$. Since the image of $t$ is free abelian (as a subgroup of $B$), we may assume that $t$ is surjective. Since $C$ is free, $t$ splits, so its kernel $K$ is a direct summand of $B$ (Splitting Lemma). It contains $f(A)$ because of $t \circ f = 0$. By assumption, $K = B$, so that $t = 0$. Conversely, assume that $f : A \to B$ is an epimorphism, and that $f(A)$ is contained in a direct summand $K$ of $B$. Let $L$ be a complement of $B$ (which is free abelian) and let $p : B \to L$ be the projection. Then $t \circ f = 0$, so $t = 0$. But then $L = 0$, which means $K = B$.'
+    proof: 'Let $f : A \to B$ be a morphism of free abelian groups such that $f(A)$ is not contained in a proper direct summand of $B$. Then $f$ is an epimorphism: If $t : B \to C$ is a morphism with $t \circ f = 0$, we want to show $t = 0$. Since the image of $t$ is free abelian (as a subgroup of $B$), we may assume that $t$ is surjective. Since $C$ is free, $t$ splits, so by the splitting lemma its kernel $K$ is a direct summand of $B$. It contains $f(A)$ because of $t \circ f = 0$. By assumption, $K = B$, so that $t = 0$. Conversely, assume that $f : A \to B$ is an epimorphism, and that $f(A)$ is contained in a direct summand $K$ of $B$. Let $L$ be a complement of $B$ (which is free abelian) and let $p : B \to L$ be the projection. Then $p \circ f = 0$, so $p = 0$. But then $L = 0$, which means $K = B$.'
   regular monomorphisms:
     description: 'injective homomorphisms $f : A \to B$ with the property that $B/f(A)$ is free abelian (which are automatically split monomorphisms)'
-    proof: 'If $f$ is injective and $B/f(A)$ is free abelian, then $f$ is a kernel of the projection $B \to B/f(A)$. Since $B/f(A)$ is free abelian, the sequence $0 \to A \to B \to B/f(A) \to 0$ splits, so by the splitting lemma, $f$ is a split monomorphism. Conversely, if $f$ is a kernel of some homomorphism $g : B \to C$ of free abelian groups, by applying $\Hom(\IZ,-)$ we see that it is also the kernel in $\Ab$. In particular, $f$ is injective, and the quotient $B/f(A)$ embeds into $C$ and is therefore free abelian.'
+    proof: 'If $f$ is injective and $B/f(A)$ is free abelian, then $f$ is a kernel of the canonical projection $B \to B/f(A)$. Since $B/f(A)$ is free abelian, the sequence $0 \to A \to B \to B/f(A) \to 0$ splits, so by the splitting lemma, $f$ is a split monomorphism. Conversely, if $f$ is a kernel of some homomorphism $g : B \to C$ of free abelian groups, by applying $\Hom(\IZ,-)$ we see that it is also the kernel in $\Ab$. In particular, $f$ is injective, and the quotient $B/f(A)$ embeds into $C$ and is therefore free abelian.'
   regular epimorphisms:
     description: surjective homomorphisms (which are automatically split epimorphisms)
     proof: 'If $f : A \to B$ is a surjective homomorphism in $\FreeAb$ with kernel $K$, then $f$ is the cokernel of $K \hookrightarrow A$ in $\Ab$. Since $K$ is free abelian, this remains true in $\FreeAb$. Moreover, $f$ splits since $B$ is projective. Conversely, assume that $f : A \to B$ is a regular epimorphism in $\FreeAb$ and hence the cokernel of some homomorphism $g : C \to A$ in $\FreeAb$. Consider the image factorization $A \to \im(f) \hookrightarrow B$ in $\Ab$. Here, $\im(f)$ is also free abelian. Since $\im(f) \hookrightarrow B$ is a monomorphism in $\FreeAb$ and $f$ is a regular, hence extremal, epimorphism, $\im(f) \hookrightarrow B$ is an isomorphism. Thus, $f$ is surjective.'
