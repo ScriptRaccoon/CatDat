@@ -1,4 +1,4 @@
-id: Proj_fg(R[e])
+id: Proj_fg(Re)
 name: category of finitely generated projective modules over the ring of dual numbers
 notation: $\Proj_\fg(\IR[\varepsilon])$
 objects: finitely generated projective modules over $\IR[\varepsilon]$

@@ -15,7 +15,7 @@ related:
   - Ab_fg
   - FreeAb
   - FinVect_c
-  - Proj_fg(R[e])
+  - Proj_fg(Re)
 
 satisfied_properties:
   - property: locally small
@@ -35,7 +35,7 @@ satisfied_properties:
     proof: The group $\IZ$ is an extremal generator, even in $\Ab$.
 
   - property: self-dual
-    proof: More generally, if $R$ is a commutative ring, $\Proj_\fg(R)$ is self-dual, as proven <a href="/category/Proj_fg(R[e])">here</a>.
+    proof: More generally, if $R$ is a commutative ring, $\Proj_\fg(R)$ is self-dual, as proven <a href="/category/Proj_fg(Re)">here</a>.
     references:
       - proj_fg_self-dual
 
@@ -46,7 +46,7 @@ satisfied_properties:
     proof: >-
       The proof is very similar to the proof for <a href="/category/Ab_fg">$\Ab_\fg$</a>. The inclusion $\Ab_{\fg} \hookrightarrow \Ab$ is closed under $\aleph_1$-filtered colimits by <a href="https://mathoverflow.net/questions/400763/" target="_blank">MO/400763</a>. Furthermore, the inclusion $\TorsFreeAb \hookrightarrow \Ab$ is clearly closed under $\aleph_0$-filtered colimits, and hence under $\aleph_1$-filtered colimits. Since $\FreeAb_\fg = \Ab_\fg \cap \TorsFreeAb$, it follows that $\FreeAb_\fg \hookrightarrow \Ab$ is closed under $\aleph_1$-filtered colimits. In particular, $\FreeAb_\fg$ has $\aleph_1$-filtered colimits. Every finitely generated free abelian group is isomorphic to one in the set $\{\IZ^n : n \in \IN\}$, and each $\IZ^n$ is finitely presentable in $\Ab$, hence $\aleph_1$-presentable, and therefore also $\aleph_1$-presentable in $\FreeAb_\fg$.
 
-      More generally, if $R$ is a left Noetherian ring, then $\Proj_\fg(R)$ is $\aleph_1$-accessible, as proven <a href="/category/Proj_fg(R[e])">here</a>.
+      More generally, if $R$ is a left Noetherian ring, then $\Proj_\fg(R)$ is $\aleph_1$-accessible, as proven <a href="/category/Proj_fg(Re)">here</a>.
     references:
       - Ab_fg_aleph1-accessible
       - Proj_fg_aleph1-accessible

@@ -14,7 +14,7 @@ related:
   - Ab
   - Vect
   - grMod_G(R)
-  - Proj_fg(R[e])
+  - Proj_fg(Re)
 
 satisfied_properties:
   - property: locally small
