@@ -10,13 +10,13 @@ There are three ways to contribute:
 
 ## Option 1: Use the Suggestion Form
 
-On most pages of CatDat, you will find a suggestion form at the bottom. Use it to contribute new data, report an issue, or make a suggestion. After submission, the form automatically creates a GitHub issue, which we then review and try to resolve and implement.
+On most pages of CatDat, you will find a suggestion form at the bottom. Use it to contribute new data, report an issue, or make a suggestion. Submissions are reviewed before automatically creating a GitHub issue, which we then try to resolve or implement.
 
 This option does not require any knowledge of GitHub or coding, making it accessible to everyone. It also does not require following any guidelines for adding new data (see below).
 
 ## Option 2: Create an Issue
 
-If you want to report a bug or submit a feature request, you can [**create an issue**](https://github.com/ScriptRaccoon/CatDat/issues/new). You will need a GitHub account for this.
+If you want to report a bug or submit a feature request, you can [**create an issue**](https://github.com/ScriptRaccoon/CatDat/issues/new). You will need a GitHub account.
 
 ## Option 3: Create a Pull Request
 
