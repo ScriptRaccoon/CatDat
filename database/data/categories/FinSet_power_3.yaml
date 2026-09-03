@@ -1,0 +1,128 @@
+id: FinSet_power_3
+name: category of finite sets of cardinality a power of 3
+notation: $\FinSet_{3^\bullet}$
+objects: finite sets whose cardinality is a power of $3$
+morphisms: maps
+description: 'This is the full subcategory of $\FinSet$ consisting of finite sets whose cardinality is $3^k$ for some $k \in \IN$. We have included this category only because of its interesting property combinations.'
+nlab_link: null
+
+tags:
+  - set theory
+
+related:
+  - FinSet
+  - FinSet_even
+
+satisfied_properties:
+  - property: locally small
+    proof: It is a full subcategory of <a href="/category/FinSet">$\FinSet$</a>, which is locally small.
+
+  - property: locally finite
+    proof: This property is inherited from <a href="/category/FinSet">$\FinSet$</a>.
+
+  - property: essentially countable
+    proof: This property is inherited from <a href="/category/FinSet">$\FinSet$</a>.
+
+  - property: strongly connected
+    proof: Use constant maps.
+
+  - property: cartesian closed
+    proof: 'We use that <a href="/category/FinSet">$\FinSet$</a> is cartesian closed. Since $\{3^n : n \geq 0\}$ is closed under finite products (we have $3^0=1$ and $3^n 3^m = 3^{n+m}$) and thus under exponentiation, it follows that $\FinSet_{3^\bullet}$ is closed under finite cartesian products and exponential objects in $\FinSet$.'
+
+  - property: mono-regular
+    proof: 'If $f : X \to Y$ is a monomorphism in $\FinSet_{3^\bullet}$, i.e. an injective map (see below), then $f$ is the equalizer of two maps $Y \rightrightarrows \{0,1\}$ in $\Set$, and therefore also of two maps $Y \rightrightarrows \{0,1,2\}$, which thus belong to $\FinSet_{3^\bullet}$.'
+
+  - property: epi-regular
+    proof: 'Let $f : X \to Y$ be an epimorphism in $\FinSet_{3^\bullet}$, i.e. a surjective map (see below). In $\FinSet$, we know that $f$ is the coequalizer of its kernel pair $E \rightrightarrows X$. Since $X$ is non-empty, $E$ is also non-empty. Thus, there is a finite set $F$ whose cardinality is a power of $3$ with a surjection $F \twoheadrightarrow E$. Then $f$ is the coequalizer of $F \rightrightarrows X$ in $\FinSet$, and hence also in $\FinSet_{3^\bullet}$.'
+
+  - property: extremal generator
+    proof: The set $\{0,1,2\}$ is an extremal generator even in <a href="/category/Set">$\Set$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
+
+  - property: extremal cogenerator
+    proof: The set $\{0,1,2\}$ is an extremal cogenerator even in <a href="/category/Set">$\Set$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
+
+  - property: effective congruences
+    proof: Let $E \rightrightarrows X$ be a congruence in $\FinSet_{3^\bullet}$. By applying the (functorial) definition to the test object $T = \{\ast\}$, we see that it is a congruence in $\Set$, i.e. an equivalence relation, such that $E$ and $X$ are finite sets of cardinality a power of $3$. Since for every $n \in \IN$ we have $n \leq 3^n$, the finite set $X/E$ embeds into a finite set $Q$ of cardinality a power of $3$. Then $E \rightrightarrows X$ is the kernel pair of $X \twoheadrightarrow X/E \hookrightarrow Q$ in $\FinSet_{3^\bullet}$.
+
+  - property: effective cocongruences
+    proof: >-
+      We will prove that, in fact, every cocongruence is trivial. Let $X \rightrightarrows Q$ be a cocongruence in $\FinSet_{3^\bullet}$. The induced map
+      $$\Hom(Q,\{0,1,2\}) \to \Hom(X,\{0,1,2\})^2 \cong \Hom(X+X, \{0,1,2\})$$
+      is injective, which implies that $X+X \to Q$ is surjective (where $X+X$ denotes the coproduct in $\Set$, which does not exist in $\FinSet_{3^\bullet}$). It follows that $X \rightrightarrows Q$ is a coreflexive corelation in $\Set$. Since <a href="/category/Set">$\Set$</a> is co-Malcev and has effective cocongruences (by <a href="/category-implication/regular_epi-regular_extensive_consequences">this result</a>), there is a subset $Y \subseteq X$ such that $Q \cong X \sqcup_Y X$ in $\Set$, with $X \rightrightarrows Q$ corresponding to the two pushout inclusions. If $X$ has cardinality $3^n$, the cardinality of $Q$ lies in the interval $[3^n,2 \cdot 3^n]$ and is a power of $3$. Thus, $Q$ also has cardinality $3^n$. It follows that $Y=X$ and that the cocongruence is isomorphic to $\id_X,\id_X : X \rightrightarrows X$. In particular, it is the kernel pair of $\id_X : X \to X$.
+    label: FinSet_power_3_trivial_cocongruences
+
+  - property: coquotients of cocongruences
+    proof: We have just seen that every cocongruence is trivial and therefore has a coquotient.
+    references:
+      - FinSet_power_3_trivial_cocongruences
+
+unsatisfied_properties:
+  - property: skeletal
+    proof: The two sets $\{0\}$ and $\{1\}$ are isomorphic but not equal.
+
+  - property: small
+    proof: Even the collection of all singleton sets is not a set.
+
+  - property: countable
+    proof: Even the collection of all singleton sets is not countable.
+
+  - property: Cauchy complete
+    proof: 'Consider the idempotent map $e : \{0,1,2\} \to \{0,1,2\}$ defined by $e(0)=0$, $e(1)=1$, $e(2)=1$. If it splits in $\FinSet_{3^\bullet}$ as $\{0,1,2\} \to X \to \{0,1,2\}$, this would also be a splitting in $\FinSet$, making $X$ isomorphic to $\im(e)=\{0,1\}$. But then $X$ is not a valid object of $\FinSet_{3^\bullet}$.'
+
+  - property: cofiltered
+    proof: 'The maps $0,1 : \{\ast\} \rightrightarrows \{0,1\}$ are not equalized by any morphism, since this would amount to a set $X$ in $\FinSet_{3^\bullet}$ such that $! : X \to \{*\}$ factors through $\varnothing$, i.e. $X = \varnothing$, but $0$ is not a power of $3$.'
+
+  - property: binary copowers
+    proof: >-
+      First, notice that the inclusion functor $\FinSet_{3^\bullet} \hookrightarrow \Set$ is cocontinuous. This follows from Lemma 1 <a href="/content/inclusion-functors">here</a> since $\FinSet_{3^\bullet}$ contains the extremal cogenerator $\{0,1,2\}$ of $\Set$. Therefore, if a binary copower $X+X$ exists in $\FinSet_{3^\bullet}$, and $X$ has $3$ elements, $X+X$ must be the disjoint union, which, however, has $6$ elements, which is not a power of $3$.
+
+      Remark: If we instead consider finite sets of cardinality a power of $2$, then binary copowers do exist, but binary coproducts still do not exist, since $2^0+2^1=3$ is not a power of $2$.
+    label: FinSet_power_3_inclusion_cocontinuous
+
+  - property: cokernel pairs
+    proof: We already know that the inclusion functor $\FinSet_{3^\bullet} \hookrightarrow \Set$ is cocontinuous, so it suffices to find an example of a map in $\FinSet_{3^\bullet}$ whose cokernel pair in $\Set$ is not contained in $\FinSet_{3^\bullet}$. Take the inclusion map $\{0\} \to \{0,1,2\}$. Then in $\Set$ we compute $\{0,1,2\} \sqcup_{\{0\}} \{0,1,2\} \cong \{0,1,2,1',2'\}$, which has $5$ elements, which is not a power of $3$.
+    references:
+      - FinSet_power_3_inclusion_cocontinuous
+
+  - property: kernel pairs
+    proof: >-
+      First, notice that the inclusion functor $\FinSet_{3^\bullet} \hookrightarrow \Set$ is continuous since it is representable. Therefore, if a map $f : X \to Y$ has a kernel pair in $\FinSet_{3^\bullet}$, it must be the set $\{(x,x') \in X \times X : f(x)=f(x')\}$.
+      But consider the map $f : \{0,1,2\} \to \{0,1,2\}$ defined by $f(0)=0$, $f(1)=1$, $f(2)=1$. Then the set in question is given by
+      $$\{(0,0), (1,1), (2,2), (1,2), (2,1) \}.$$
+      It has cardinality $5$, which, however, is not a power of $3$.
+
+  - property: quotients of congruences
+    proof: >-
+      Partition a finite set $X$ of cardinality $9$ into sets of cardinalities $1,1,3,4$. This yields an equivalence relation $E \subseteq X \times X$ with
+      $$\card(E) = 1^2 + 1^2 + 3^2 + 4^2 = 27 = 3^3.$$
+      Thus, $E \rightrightarrows X$ is a congruence in $\FinSet_{3^\bullet}$. We already know that the inclusion functor $\FinSet_{3^\bullet} \hookrightarrow \Set$ is cocontinuous, so a quotient in $\FinSet_{3^\bullet}$ must be the quotient taken in $\Set$. However, since there are $4$ equivalence classes, the set $X/E$ has cardinality $4$. Thus, the quotient does not exist in $\FinSet_{3^\bullet}$.
+    references:
+      - FinSet_power_3_inclusion_cocontinuous
+
+  - property: natural numbers object
+    proof: By Lemma 2 <a href="/content/natural_numbers_objects">here</a>, if $(N,z,s)$ is a natural numbers object, then $N \cong 1 \sqcup N$. But there is no finite set with this property.
+
+  - property: multi-complete
+    proof: >-
+      Let $I$ be an infinite set and, for every $i \in I$, let $A_i$ be a set of cardinality $3$. Assume that the multi-product of the family $(A_i)_{i \in I}$ exists in $\FinSet_{3^\bullet}$, i.e. that the category of cones has a multi-terminal object. Here, a cone can be identified with a map
+      $$\textstyle f : X \to \prod_{i \in I} A_i,$$
+      where $X \in \FinSet_{3^\bullet}$ and the product is taken in $\Set$. Therefore, there is a family of cones $(p_j : P_j \to \prod_{i \in I} A_i)_{j \in J}$ such that for every cone $f : X \to \prod_{i \in I} A_i$ there is a unique index $j \in J$ and a unique map $g : X \to P_j$ such that $p_j \circ g = f$. Applying this to $X = \{0\}$, we see that the maps $p_j$ induce a <i>bijective</i> map
+      $$\textstyle\coprod_{j \in J} P_j \to \prod_{i \in I} A_i.$$
+      In particular, the images of the maps $p_j$ are pairwise disjoint. Since $\prod_{i \in I} A_i$ is an infinite set, $J$ is infinite. In particular, there are distinct indices $j_1,j_2 \in J$. Choose elements $y_1 \in P_{j_1}$ and $y_2 \in P_{j_2}$. There is a map $f : \{0,1,2\} \to \prod_{i \in I} A_i$ with image $\{p_{j_1}(y_1), p_{j_2}(y_2)\}$. By assumption, there is some (unique) index $k \in J$ such that $f$ factors through $p_k$. But then both $p_{j_1}(y_1)$ and $p_{j_2}(y_2)$ are contained in the image of $p_k$, so that $j_1 = k = j_2$, which is a contradiction.
+
+special_objects:
+  terminal object:
+    description: singleton set
+  products:
+    description: '[finite case] direct products'
+
+special_morphisms:
+  isomorphisms:
+    description: bijective maps
+    proof: It is a full subcategory of $\Set$, in which isomorphisms are bijective maps.
+  monomorphisms:
+    description: injective maps
+    proof: The non-trivial direction follows since the forgetful functor to $\Set$ is representable (by the singleton set), and hence preserves monomorphisms.
+  epimorphisms:
+    description: surjective maps
+    proof: For the non-trivial direction, the forgetful functor to $\Set$ is cocontinuous by Lemma 1 <a href="/content/inclusion-functors">here</a> since $\FinSet_{3^\bullet}$ contains the extremal cogenerator $\{0,1,2\}$ of $\Set$. In particular, it preserves epimorphisms.
