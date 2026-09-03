@@ -24,6 +24,10 @@ satisfied_properties:
   - property: coproducts
     proof: This is is because free abelian groups are closed under direct sums of abelian groups.
 
+  - property: equalizers
+    proof: This follows from the fact that a subgroup of a free abelian group is again free abelian.
+    check_redundancy: false
+
   - property: extremal generator
     proof: The group $\IZ$ is an extremal generator even in <a href="/category/Grp">$\Grp$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
     references:
@@ -38,11 +42,12 @@ satisfied_properties:
   - property: well-copowered
     proof: See <a href="https://math.stackexchange.com/questions/5025660" target="_blank">MSE/5025660</a>.
 
+  - property: coequalizers of kernel pairs
+    proof: 'Let $f : A \to B$ be a homomorphism of free abelian groups. The coequalizer of its kernel pair $A \times_B A \rightrightarrows A$ in $\Ab$ is the image $\im(f)$. As a subgroup of $B$, it is also free abelian. Then it is also the coequalizer of the kernel pair in $\FreeAb$.'
+    check_redundancy: false
+
   - property: regular
-    proof: |-
-      This follows formally from the fact that <a href="/category/Ab">$\Ab$</a> is regular and $\FreeAb$ is closed under subobjects and finite products: By Prop. 2.5 in the <a href="https://ncatlab.org/nlab/show/regular+category">nLab</a> it suffices to prove that there are (reg epi, mono)-factorizations that are stable under pullbacks. Every homomorphism $f : A \to B$ in $\FreeAb$ factors as $f = i \circ p : A \twoheadrightarrow C \hookrightarrow B$, where $C$ is a subgroup of $B$, hence free abelian, and $A \to C$ is surjective. Clearly, surjective homomorphisms are stable under pullbacks. It remains to show that they coincide with the regular epimorphisms.
-      (1) If $f : A \to B$ is surjective, it is the coequalizer of $A \times_B A \rightrightarrows A$ in $\Ab$. Since $A \times_B A$ is free abelian (as a subgroup of $A \times A$), $f$ is also a coequalizer in $\FreeAb$.
-      (2) If $f : A \to B$ is a regular epimorphism in $\FreeAb$, consider the factorization $f = i \circ p$ as above. Since $f$ is an extremal epimorphism, $i$ must be an isomorphism, so that $f$ is surjective.
+    proof: It remains to prove that regular epimorphisms are stable under pullback. This is clear since they coincide with the surjective homomorphisms (see below).
 
 unsatisfied_properties:
   - property: balanced
@@ -89,4 +94,4 @@ special_morphisms:
     proof: 'If $f$ is injective and $B/f(A)$ is free abelian, then $f$ is a kernel of the projection $B \to B/f(A)$. Since $B/f(A)$ is free abelian, the sequence $0 \to A \to B \to B/f(A) \to 0$ splits, so by the splitting lemma, $f$ is a split monomorphism. Conversely, if $f$ is a kernel of some homomorphism $g : B \to C$ of free abelian groups, by applying $\Hom(\IZ,-)$ we see that it is also the kernel in $\Ab$. In particular, $f$ is injective, and the quotient $B/f(A)$ embeds into $C$ and is therefore free abelian.'
   regular epimorphisms:
     description: surjective homomorphisms (which are automatically split epimorphisms)
-    proof: Regular homomorphisms coincide with surjective homomorphisms by the proof above that $\FreeAb$ is regular. They are automatically split because their codomain is free abelian.
+    proof: 'If $f : A \to B$ is a surjective homomorphism in $\FreeAb$ with kernel $K$, then $f$ is the cokernel of $K \hookrightarrow A$ in $\Ab$. Since $K$ is free abelian, this remains true in $\FreeAb$. Moreover, $f$ splits since $B$ is projective. Conversely, assume that $f : A \to B$ is a regular epimorphism in $\FreeAb$ and hence the cokernel of some homomorphism $g : C \to A$ in $\FreeAb$. Consider the image factorization $A \to \im(f) \hookrightarrow B$ in $\Ab$. Here, $\im(f)$ is also free abelian. Since $\im(f) \hookrightarrow B$ is a monomorphism in $\FreeAb$ and $f$ is a regular, hence extremal, epimorphism, $\im(f) \hookrightarrow B$ is an isomorphism. Thus, $f$ is surjective.'
