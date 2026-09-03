@@ -35,21 +35,21 @@ satisfied_properties:
     proof: The group $\IZ$ is an extremal generator, even in $\Ab$.
 
   - property: self-dual
-    proof: >-
-      The functor $\Hom(-,\IZ) : \FreeAb_\fg^{\op} \to \Set$ lifts to an additive functor $$\underline{\Hom}(-,\IZ) : \FreeAb_\fg^{\op} \to \Ab.$$
-      It corestricts to $\FreeAb_\fg$ because of $\underline{\Hom}(\IZ^n,\IZ) \cong \IZ^n$. The functor
-      $$\underline{\Hom}(-,\IZ) : \FreeAb_\fg^{\op} \to \FreeAb_\fg$$
-      dualizes to a functor in the other direction, and we claim that these are inverse to each other. For this, it suffices to prove that the natural homomorphism
-      $$A \to \underline{\Hom}(\underline{\Hom}(A,\IZ),\IZ)$$
-      defined by $a \mapsto (\varphi \mapsto \varphi(a))$ is an isomorphism. The collection of abelian groups for which this is true is closed under finite direct sums (since both sides are additive functors), and it contains $\IZ$ by a direct calculation. Therefore, it contains every $\IZ^n$.
+    proof: More generally, if $R$ is a commutative ring, $\Proj_\fg(R)$ is self-dual, as proven <a href="/category/Proj_fg(R[e])">here</a>.
+    references:
+      - proj_fg_self-dual
 
   - property: regular
     proof: We already know that the category is finitely complete and self-dual, hence also finitely cocomplete. It remains to prove that regular epimorphisms are stable under pullback. This is clear since they coincide with the surjective homomorphisms (see below).
 
   - property: ℵ₁-accessible
-    proof: 'The proof is very similar to the proof for <a href="/category/Ab_fg">$\Ab_\fg$</a>. The inclusion $\Ab_{\fg} \hookrightarrow \Ab$ is closed under $\aleph_1$-filtered colimits by <a href="https://mathoverflow.net/questions/400763/" target="_blank">MO/400763</a>. Furthermore, the inclusion $\TorsFreeAb \hookrightarrow \Ab$ is clearly closed under $\aleph_0$-filtered colimits, and hence under $\aleph_1$-filtered colimits. Since $\FreeAb_\fg = \Ab_\fg \cap \TorsFreeAb$, it follows that $\FreeAb_\fg \hookrightarrow \Ab$ is closed under $\aleph_1$-filtered colimits. In particular, $\FreeAb_\fg$ has $\aleph_1$-filtered colimits. Every finitely generated free abelian group is isomorphic to one in the set $\{\IZ^n : n \in \IN\}$, and each $\IZ^n$ is finitely presentable in $\Ab$, hence $\aleph_1$-presentable, and therefore also $\aleph_1$-presentable in $\FreeAb_\fg$.'
+    proof: >-
+      The proof is very similar to the proof for <a href="/category/Ab_fg">$\Ab_\fg$</a>. The inclusion $\Ab_{\fg} \hookrightarrow \Ab$ is closed under $\aleph_1$-filtered colimits by <a href="https://mathoverflow.net/questions/400763/" target="_blank">MO/400763</a>. Furthermore, the inclusion $\TorsFreeAb \hookrightarrow \Ab$ is clearly closed under $\aleph_0$-filtered colimits, and hence under $\aleph_1$-filtered colimits. Since $\FreeAb_\fg = \Ab_\fg \cap \TorsFreeAb$, it follows that $\FreeAb_\fg \hookrightarrow \Ab$ is closed under $\aleph_1$-filtered colimits. In particular, $\FreeAb_\fg$ has $\aleph_1$-filtered colimits. Every finitely generated free abelian group is isomorphic to one in the set $\{\IZ^n : n \in \IN\}$, and each $\IZ^n$ is finitely presentable in $\Ab$, hence $\aleph_1$-presentable, and therefore also $\aleph_1$-presentable in $\FreeAb_\fg$.
+
+      More generally, if $R$ is a left Noetherian ring, then $\Proj_\fg(R)$ is $\aleph_1$-accessible, as proven <a href="/category/Proj_fg(R[e])">here</a>.
     references:
       - Ab_fg_aleph1-accessible
+      - Proj_fg_aleph1-accessible
 
 unsatisfied_properties:
   - property: skeletal
@@ -88,8 +88,8 @@ special_morphisms:
     description: 'homomorphisms $f : A \to B$ such that $f(A)$ is not contained in a proper direct summand of $B$'
     proof: We can copy the proof from <a href="/category/FreeAb">$\FreeAb$</a>.
   regular monomorphisms:
-    description: 'injective homomorphisms $f : A \to B$ such that $B/f(A)$ is free abelian (and hence which are automatically split monomorphisms)'
-    proof: We can copy the proof from <a href="/category/FreeAb">$\FreeAb$</a>.
+    description: 'injective homomorphisms $f : A \to B$ such that $B/f(A)$ is torsion-free  (and these are automatically split monomorphisms)'
+    proof: We can copy the proof from <a href="/category/FreeAb">$\FreeAb$</a>, since a finitely generated torsion-free abelian group is free.
   regular epimorphisms:
     description: surjective homomorphisms (which are automatically split epimorphisms)
     proof: We can copy the proof from <a href="/category/FreeAb">$\FreeAb$</a>.
