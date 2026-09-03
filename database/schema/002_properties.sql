@@ -78,7 +78,7 @@ CREATE TABLE proof_references (
     property_id TEXT NOT NULL,
     type TEXT NOT NULL,
     reference TEXT NOT NULL,
-    PRIMARY KEY (structure_id, property_id),
+    PRIMARY KEY (structure_id, property_id, reference),
     FOREIGN KEY (structure_id, type)
         REFERENCES structures (id, type) ON DELETE CASCADE,
     FOREIGN KEY (property_id, type)
