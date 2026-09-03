@@ -17,6 +17,7 @@ related:
   - Set_ff
   - B
   - FinGrp
+  - FinSet_even
 
 satisfied_properties:
   - property: locally small

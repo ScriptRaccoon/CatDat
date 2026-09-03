@@ -1,0 +1,134 @@
+id: FinSet_even
+name: category of finite sets of even cardinality
+notation: $\FinSet_{\even}$
+objects: finite sets of even cardinality
+morphisms: maps
+description: This is the full subcategory of $\FinSet$ consisting of finite sets with even cardinality, for example $\varnothing$ and $\{0,1\}$, but not $\{1\}$. We have included this category only because of its interesting property combinations.
+nlab_link: null
+
+tags:
+  - set theory
+
+related:
+  - FinSet
+
+satisfied_properties:
+  - property: locally small
+    proof: It is a full subcategory of <a href="/category/FinSet">$\FinSet$</a>, which is locally small.
+
+  - property: locally finite
+    proof: This property is inherited from <a href="/category/FinSet">$\FinSet$</a>.
+
+  - property: essentially countable
+    proof: This property is inherited from <a href="/category/FinSet">$\FinSet$</a>.
+
+  - property: semi-strongly connected
+    proof: This property is inherited from <a href="/category/FinSet">$\FinSet$</a>.
+
+  - property: disjoint finite coproducts
+    proof: A finite disjoint union of finite sets of even cardinality is again finite and has even cardinality, since a finite sum of even natural numbers is even. Moreover, coproducts are disjoint just as in <a href="/category/FinSet">$\FinSet$</a>.
+
+  - property: binary products
+    proof: This follows from the fact that the product of two even natural numbers is again even.
+
+  - property: strict initial object
+    proof: The empty set is clearly a strict initial object, just as in <a href="/category/FinSet">$\FinSet$</a>.
+
+  - property: kernel pairs
+    proof: >-
+      If $f : X \to Y$ is a map of finite sets with even cardinality, then we claim that its kernel pair in $\FinSet$, the set $\{(x,x') \in X \times X : f(x) = f(x')\}$, also has even cardinality. It decomposes into the diagonal $\{(x,x): x \in X\} \cong X$, which has even cardinality, and the set of pairs $(x,x')$ with $x \neq x'$ and $f(x) = f(x')$. The latter has even cardinality since $C_2$ acts on it via $(x,x') \mapsto (x',x)$ without fixed points.
+    label: FinSet_even_kernel_pairs
+
+  - property: epi-regular
+    proof: The epimorphisms are the surjective maps (see below). In $\FinSet$, a surjective map is the coequalizer of its kernel pair, and we have just seen that $\FinSet_{\even}$ is closed under kernel pairs in $\FinSet$.
+    references:
+      - FinSet_even_kernel_pairs
+
+  - property: mono-regular
+    proof: 'If $f : X \to Y$ is a monomorphism, i.e. an injective map (see below), then $f$ is the equalizer of two maps $Y \rightrightarrows \{0,1\}$ in $\Set$, and therefore also in $\FinSet_{\even}$.'
+
+  - property: extremal generator
+    proof: The two-element set is an extremal generator even in <a href="/category/Set">$\Set$</a> because the <a href="/functor/squaring_sets">squaring functor</a> $X \mapsto X^2$ is faithful and conservative. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
+
+  - property: extremal cogenerator
+    proof: The two-element set is an extremal cogenerator even in <a href="/category/Set">$\Set$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
+
+  - property: ℵ₁-filtered
+    proof: In fact, every small diagram has a cocone in $\FinSet_{\even}$. We take the colimit in $\Set$ and then map it to $\{0,1\}$ via a constant map.
+
+  - property: effective congruences
+    proof: Let $E \rightrightarrows X$ be a congruence in $\FinSet_{\even}$. This means that the induced map of sets $E \to X \times X$ is a monomorphism, i.e. injective, and that for every test object $T$ of $\FinSet_{\even}$, the induced injective map $\Hom(T,E) \to \Hom(T,X) \times \Hom(T,X)$ is an equivalence relation in $\Set$. By applying this to $T = \{0,1\}$ and constant maps, it is easy to check that $E \rightrightarrows X$ is a congruence in $\Set$. It is therefore the kernel pair of the projection $X \twoheadrightarrow X/E$ in $\Set$, and hence also in $\FinSet$. If $X/E$ has even cardinality, this remains true in $\FinSet_{\even}$, and we are done. If not, we simply compose the projection with the inclusion $X/E \hookrightarrow X/E + \{\ast\}$. The resulting map $X \to X/E + \{\ast\}$ is a morphism in $\FinSet_{\even}$ with kernel pair $E \rightrightarrows X$. (The last step is also an indication that quotients of congruences do not exist in general, which we will prove later.)
+    references:
+      - FinSet_even_no_kernel_pair_quotients
+
+  - property: effective cocongruences
+    proof: Let $X \rightrightarrows Q$ be a cocongruence in $\FinSet_{\even}$. In particular, it is a coreflexive corelation. Then $X+X \to Q$ is an epimorphism, hence surjective. It follows that $X \rightrightarrows Q$ is also a coreflexive corelation in $\Set$. Since <a href="/category/Set">$\Set$</a> is co-Malcev and has effective cocongruences (by <a href="/category-implication/regular_epi-regular_extensive_consequences">this result</a>), there is a subset $Y \subseteq X$ such that $Q \cong X \sqcup_Y X$ in $\Set$, with $X \rightrightarrows Q$ corresponding to the two pushout inclusions. We have $\card(Q) = 2 \card(X) - \card(Y)$, so $\card(Y)$ is even. Hence, $Q \cong X \sqcup_Y X$ remains true in $\FinSet_{\even}$.
+    label: FinSet_even_effective_cocongruences
+
+  - property: coquotients of cocongruences
+    proof: We have just seen that every cocongruence in $\FinSet_{\even}$ is of the form $X \rightrightarrows X \sqcup_Y X$ for some subset $Y \subseteq X$ of even cardinality. The equalizer in $\Set$ is the inclusion $Y \hookrightarrow X$. Since this morphism lies in $\FinSet_{\even}$, it is also the equalizer in $\FinSet_{\even}$.
+    references:
+      - FinSet_even_effective_cocongruences
+
+unsatisfied_properties:
+  - property: skeletal
+    proof: The two sets $\{0,1\}$ and $\{2,3\}$ are isomorphic but not equal.
+
+  - property: small
+    proof: Even the collection of all two-element sets is not a set.
+
+  - property: countable
+    proof: Even the collection of all two-element sets is not countable.
+
+  - property: strongly connected
+    proof: There is no map $\{0,1\} \to \varnothing$.
+
+  - property: terminal object
+    proof: Assume that $T$ is a terminal object, say with $n$ elements. Then $\Hom(\{0,1\},T)$ has $n^2$ elements, but also just one element. Thus, $n = 1$. But then $T$ is not a valid object.
+
+  - property: Cauchy complete
+    proof: 'The constant map $e : \{0,1\} \to \{0,1\}$, $x \mapsto 0$ is idempotent and does not split in $\FinSet_{\even}$, since a splitting $\{0,1\} \to X \to \{0,1\}$ would also be a splitting in $\FinSet$, making $X$ isomorphic to $\im(e) = \{0\}$.'
+    label: FinSet_even_not_cauchy_complete
+
+  - property: extensive
+    proof: >-
+      We will show that pullbacks along coproduct inclusions do not exist in general. First, we observe that the inclusion functor $\FinSet_{\even} \hookrightarrow \Set$ is continuous. This follows from the dual of Lemma 1 <a href="/content/inclusion-functors">here</a> since $\FinSet_{\even}$ contains the extremal generator $\{0,1\}$ of $\Set$.
+      Now consider the inclusion map $\{0,2\} \to \{0,1,2,3\} = \{0,1\} \sqcup \{2,3\}$. Assume that the pullback of this map along the coproduct inclusion from $\{0,1\}$ exists in $\FinSet_{\even}$. Since the inclusion functor to $\Set$ preserves pullbacks, we can compute it as the pullback in $\Set$, which is simply the intersection $\{0,2\} \cap \{0,1\} = \{0\}$. But this is not an object of $\FinSet_{\even}$.
+    label: FinSet_even_inclusion_continuous
+
+  - property: cokernel pairs
+    proof: >-
+      First, the inclusion functor $\FinSet_{\even} \hookrightarrow \Set$ is cocontinuous. This follows from Lemma 1 <a href="/content/inclusion-functors">here</a> since $\FinSet_{\even}$ contains the extremal cogenerator $\{0,1\}$ of $\Set$.
+      Now consider the constant map $e : \{0,1\} \to \{0,1\}$, $x \mapsto 0$. If it has a cokernel pair in $\FinSet_{\even}$, this must be the cokernel pair in $\Set$, i.e. $\{0,1\} \sqcup_{\{0\}} \{0,1\} \cong \{0,1,1'\}$, whose cardinality, however, is odd.
+    label: FinSet_even_inclusion_cocontinuous
+
+  - property: coequalizers of kernel pairs
+    proof: 'We already know that the inclusion functor $\FinSet_{\even} \hookrightarrow \Set$ is continuous and cocontinuous. Moreover, the coequalizer of the kernel pair of a map of sets is simply its image. Thus, it suffices to note that the image of, say, $e : \{0,1\} \to \{0,1\}$, $x \mapsto 0$, does not have even cardinality.'
+    label: FinSet_even_no_kernel_pair_quotients
+    references:
+      - FinSet_even_inclusion_continuous
+      - FinSet_even_inclusion_cocontinuous
+
+  - property: multi-cocomplete
+    proof: 'Assume that $D : \I \to \FinSet_{\even}$ is a small diagram. If $(D(i) \to X)_{i \in \I}$ is any cocone, then the constant map $0 : X \to \{0,1\}$ is a morphism of cocones from $(D(i) \to X)_{i \in \I}$ to the cocone $(0 : D(i) \to \{0,1\})_{i \in \I}$. Therefore, the category of cocones under $D$ is connected; it has a weakly terminal object. Thus, if a multi-colimit of $D$ exists, it is necessarily a colimit of $D$. But since we already know that $\FinSet_{\even}$ is not cocomplete (for example, since it is not Cauchy complete), we are done.'
+    references:
+      - FinSet_even_not_cauchy_complete
+
+special_objects:
+  initial object:
+    description: empty set
+  coproducts:
+    description: '[finite case] disjoint unions'
+  products:
+    description: '[non-empty, finite case] direct products'
+
+special_morphisms:
+  isomorphisms:
+    description: bijective maps
+    proof: It is a full subcategory of $\Set$, in which isomorphisms are bijective maps.
+  monomorphisms:
+    description: injective maps
+    proof: 'For the non-trivial direction, assume that $f : X \to Y$ is a monomorphism and let $a,b \in X$ satisfy $f(a)=f(b)$. Consider the constant maps $a,b : \{0,1\} \to X$ with values $a$ and $b$, respectively. Then $f \circ a = f \circ b$. Thus, $a = b$.'
+  epimorphisms:
+    description: surjective maps
+    proof: Use the same proof as for (finite) sets since there we have only used an auxiliary two-element set, which thus belongs to the given category.

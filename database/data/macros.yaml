@@ -50,6 +50,7 @@
 \Ob: \operatorname{Ob}
 \id: \operatorname{id}
 \ev: \operatorname{ev}
+\even: \operatorname{even}
 \card: \operatorname{card}
 \colim: \operatorname{colim}
 \im: \operatorname{im}
