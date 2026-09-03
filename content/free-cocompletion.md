@@ -173,7 +173,7 @@ Let $F \rightrightarrows G$ be a cocongruence in $\widehat{\C}$. Since the inclu
 $$F \rightrightarrows F \sqcup_E F,$$
 where $E \coloneqq \eq(F \rightrightarrows G)$ is the objectwise defined equalizer in $[\C^{\op},\Set]$. We would be done if $E$ were small, which however is not the case in general. But we can prove that $E$ is a quotient of a small presheaf, or equivalently, a quotient of a coproduct of representable presheaves, which is sufficient, since any epimorphism $E' \to E$ satisfies $F \sqcup_E F = F \sqcup_{E'} F$. (Such presheaves are also called _petty_ in the literature.)
 
-We view the pushout $P := F \sqcup_E F$ as the union of two copies $F_1,F_2$ of $F$ with $F_1 \cap F_2 = E$. In particular, we regard $E,F_1,F_2$ as sub-presheaves of $P$. For a morphism $f$ in $\C$, we write $f^*$ instead of $P(f)$.
+We view the pushout $P \coloneqq F \sqcup_E F$ as the union of two copies $F_1,F_2$ of $F$ with $F_1 \cap F_2 = E$. In particular, we regard $E,F_1,F_2$ as sub-presheaves of $P$. For a morphism $f$ in $\C$, we write $f^*$ instead of $P(f)$.
 
 Since $P \cong G$ is small, its category of elements $\int P$ has a finally small subcategory $\K$. Let $K \subseteq \Ob(\C)$ be the set of objects that appear in $\K$. We claim that
 $$\{(A,a) : A \in K, \, a \in E(A)\}$$
