@@ -24,6 +24,7 @@ satisfied_properties:
 
   - property: complete
     proof: Take the limit of the underlying sets and endow it with the coarsest topology making all projections continuous.
+    check_redundancy: false
 
   - property: cocomplete
     proof: Take the colimit of the underlying sets and endow it with the finest topology making all inclusions continuous.

@@ -40,7 +40,7 @@ unsatisfied_properties:
   - property: Malcev
     proof: 'Consider the submonoid $\{(a,b) : a \leq b \}$ of $\IN^2$.'
 
-  - property: cogenerator
+  - property: cototal
     proof: 'We apply <a href="/content/missing_cogenerator">this lemma</a> to the collection of simple groups: Any non-trivial homomorphism $G \to M$ from a simple group $G$ to a monoid $M$ must be injective (as it corestricts to a homomorphism of groups $G \to M^{\times}$), and for every infinite cardinal $\kappa$ there is a simple group of size $\geq \kappa$ (for example, the alternating group on $\kappa$ elements).'
 
   - property: counital

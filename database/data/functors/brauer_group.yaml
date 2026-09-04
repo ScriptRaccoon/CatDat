@@ -69,7 +69,7 @@ unsatisfied_properties:
     proof: >-
       A functor preserving binary products also preserves <a href="https://ncatlab.org/nlab/show/subterminal+object" target="_blank">subterminal objects</a>. In $\Fld$, the field $\IQ$ is subterminal. However, $\Br(\IQ)$ is not subterminal in $\Ab$, since otherwise it would be trivial, which is not the case. In fact, the rational quaternion algebra
       $$H(\IQ) = \langle i,j : i^2=j^2=-1,\, ij=-ji \rangle_{\IQ}$$
-      is a non-trivial central finite-dimensional division algebra over $\mathbb{Q}$, and more precisely, $\Br(\IQ)$ is an infinite abelian group. See for example Exercise 4 in Section 12.5 in <a href="">Associative Algebras</a> by Pierce.
+      is a non-trivial central finite-dimensional division algebra over $\IQ$, and more precisely, $\Br(\IQ)$ is an infinite abelian group. See for example Exercise 4 in Section 12.5 in <a href="">Associative Algebras</a> by Pierce.
 
   - property: preserves binary coproducts
     proof: If $K$ is any field of characteristic $0$, then $K \sqcup \IQ = K$ in $\Fld$. More precisely, the cospan $\IQ \rightarrow K \leftarrow K$ is a coproduct, where the map on the right is the identity. However, the cospan $\Br(\IQ) \rightarrow \Br(K) \leftarrow \Br(K)$ is not a coproduct in $\Ab$, since otherwise the group $\Br(\IQ)$ would be trivial.

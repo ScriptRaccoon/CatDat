@@ -34,6 +34,7 @@ satisfied_properties:
 
   - property: complete
     proof: Take the limit of the underlying sets and take the smallest $\sigma$-algebra making all projections measurable.
+    check_redundancy: false
 
   - property: cocomplete
     proof: Take the colimit of the underlying sets and take the largest $\sigma$-algebra making all inclusions measurable. That is, a set is measurable iff its preimage under each inclusion is measurable.

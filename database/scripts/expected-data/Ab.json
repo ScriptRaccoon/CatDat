@@ -126,6 +126,8 @@
 	"equalizers of cokernel pairs": true,
 	"coequalizers of kernel pairs": true,
 	"concretizable": true,
+	"total": true,
+	"cototal": true,
 
 	"cartesian closed": false,
 	"locally cartesian closed": false,

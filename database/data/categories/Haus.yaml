@@ -27,9 +27,11 @@ satisfied_properties:
 
   - property: equalizers
     proof: This follows from the corresponding fact for <a href="/category/Top">$\Top$</a> since subspaces of Hausdorff spaces are again Hausdorff.
+    check_redundancy: false
 
   - property: products
     proof: This follows from the corresponding fact for <a href="/category/Top">$\Top$</a> since products of Hausdorff spaces are again Hausdorff.
+    check_redundancy: false
 
   - property: cocomplete
     proof: This follows since $\Haus$ is a reflective subcategory of <a href="/category/Top">$\Top$</a>, which is cocomplete. For the reflector, see e.g. the <a href="https://ncatlab.org/nlab/show/Hausdorff+space#HausdorffReflection" target="_blank">nLab</a>. Explicitly, we construct the colimit of Hausdorff spaces by applying the reflector to the colimit of the underlying topological spaces.
@@ -76,9 +78,6 @@ unsatisfied_properties:
     references:
       - met_no_filtered_colimit_stable_monos
 
-  - property: cogenerator
-    proof: 'Assume that $Q$ is a cogenerator. Since $Q$ is Hausdorff, $Q$ is $T_1$. By a theorem of Herrlich (<i>Wann sind alle stetigen Abbildungen in Y konstant</i>. Math. Z. 90 (1965): 152-154. <a href="http://eudml.org/doc/170472" target="_blank">EUMDL</a>), there is a regular Hausdorff space $X$ with $\geq 2$ points such that every continuous map $X \to Q$ is constant. (The author only states that $X$ is regular, but actually, $X$ is regular and $T_1$, hence Hausdorff.) But since $Q$ is a cogenerator, this implies that all maps $1 \rightrightarrows X$ are equal, i.e. that $X$ has just one point. This is a contradiction.'
-
   - property: regular
     proof: 'The regular epimorphisms are precisely the surjective quotient maps of Hausdorff spaces (see below). In a regular category, for every regular epimorphism $X \to Y$ and every object $Z$, the induced morphism $X \times Z \to Y \times Z$ is again a regular epimorphism. This is not the case in $\Haus$ (or $\Top$, for that matter). The standard example is the quotient map $\IR \to \IR / \IZ^+$, for which the induced map $\IR \times \IQ \to \IR/\IZ^+ \times \IQ$ is not a quotient map (<a href="https://math.stackexchange.com/questions/1907972/">MSE/1907972</a>).'
 
@@ -88,6 +87,13 @@ unsatisfied_properties:
       Consider the two subsets $A_1 \coloneqq \{(x,0) : x \in \IQ \}$ and $A_2 \coloneqq \{(x,0) : x \in \IR \setminus \IQ \}$ of $A$. They are closed in $A$ (since $A$ is closed and discrete), disjoint, but cannot be separated by disjoint open neighborhoods in $\Gamma$; this is part of the proof of the well-known fact that $\Gamma$ is not normal (<a href="https://math.stackexchange.com/questions/2528435" target="_blank">MSE/2528435</a>).
       Let $C \coloneqq \{1,2\}$ be the discrete two-point space. The map $f : A \to C$ defined by $f(a)=1$ for $a \in A_1$ and $f(a)=2$ for $a \in A_2$ is continuous, since $A$ is discrete.
       The pushout $C \sqcup_A \Gamma$ in $\Haus$ is the Hausdorff reflection of the pushout $Q$ in $\Top$. Notice that $Q$ is the quotient space of $\Gamma$ in which $A_1$ and $A_2$ are each collapsed to a point, denoted by $[A_1]$ and $[A_2]$. The canonical map $C \to Q$ is given by $i \mapsto [A_i]$. Now, $[A_1]$ and $[A_2]$ cannot be separated by disjoint open neighborhoods in $Q$, since such neighborhoods would pull back to disjoint open neighborhoods of $A_1$ and $A_2$ in $\Gamma$. Thus, they are identified in the Hausdorff reflection. This shows that the canonical map $C \to C \sqcup_A \Gamma$ is not injective and hence not a regular monomorphism.
+
+  - property: cototal
+    # cspell: disable-next-line
+    proof: >-
+      For each cardinal $\kappa$, let $Q_\kappa$ be the product of all Hausdorff topological spaces whose underlying set is a non-empty subset of $\kappa$. By a theorem of Herrlich (<i>Wann sind alle stetigen Abbildungen in Y konstant</i>. Math. Z. 90 (1965): 152-154. <a href="http://eudml.org/doc/170472" target="_blank">EUMDL</a>), there is a regular Hausdorff space $X_\kappa$ with at least two points such that every continuous map $X_\kappa \to Q_\kappa$ is constant. (Note that the result there applies for general $T_1$ spaces $Q$, not just for $Q_\kappa$ as constructed above. In the reference, the author only states that $X_\kappa$ is regular, but actually, $X_\kappa$ is regular and $T_1$, hence Hausdorff.) Choose a base point $x_\kappa \in X_\kappa$ for each $\kappa$. We can form a large span diagram $1 \dottedrightrightarrows X_\kappa$ where each morphism $1 \to X_\kappa$ corresponds to $x_\kappa$. Then for any Hausdorff space $Y$, the collection of cocones $1 \dottedrightrightarrows X_\kappa \to Y$ is bijective to a set: We must first choose $y \in Y$ corresponding to the morphism $1 \to Y$. Then for each $\kappa \ge \card(U(Y))$, $Y$ is homeomorphic to one of the spaces in the product forming $Q_\kappa$. Therefore, there is a morphism $Y \to Q_\kappa$ splitting the projection map $Q_\kappa \to Y$. It follows that the map $X_\kappa \to Y$ is constant, and in fact it must be the constant map with image $y$.
+
+      On the other hand, we claim that $1 \dottedrightrightarrows X_\kappa$ does not have a pushout in $\Haus$; by G. M. Kelly, <a href="https://www.numdam.org/item/?id=CTGDC_1986__27_2_109_0" target="_blank">A survey of totality for enriched and ordinary categories</a>, Thm. 5.6 (namely the contrapositive of the implication (i) $\Rightarrow$ (iii)), this will imply that $\Haus$ is not cototal. To see this, suppose we had a pushout $Y$, and let $\lambda \coloneqq \card(U(Y))$. Then the coprojection $X_\lambda \to Y$ is split monic, since we can construct a cocone $1 \dottedrightrightarrows X_\kappa \to X_\lambda$ where the map $X_\kappa \to X_\lambda$ is the constant map with image $x_\lambda$ when $\kappa \ne \lambda$, and the map $X_\lambda \to X_\lambda$ is the identity. But similarly to the previous paragraph, we can show any morphism $X_\lambda \to Y$ must be constant, giving a contradiction since $X_\lambda$ has at least two points.
 
   - property: extremal generating set
     proof: The proof is the same as the one for <a href="/category/Top">$\Top$</a>; there the test spaces we use are of the form $\kappa \sqcup \{ \kappa \}$ and $\kappa + 1$, which are both Hausdorff spaces.

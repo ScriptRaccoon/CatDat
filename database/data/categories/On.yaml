@@ -42,9 +42,6 @@ unsatisfied_properties:
   - property: terminal object
     proof: There is no largest ordinal $\alpha$ since $\alpha + 1$ will always be larger.
 
-  - property: well-copowered
-    proof: The "quotients" of $0$ are all ordinals.
-
   - property: inverse
     proof: Consider the strictly increasing sequence $0 < 1 < 2 < \cdots$.
 

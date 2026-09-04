@@ -55,16 +55,6 @@ unsatisfied_properties:
       Let us first remark that every non-empty finite semigroup $A$ has an idempotent element $e$, and then $B \to A$, $x \mapsto e$ does define a semigroup homomorphism for any $B$. Therefore, counterexamples need to be infinite and also without idempotent elements.
       Let $A$ be the set of positive rational numbers of the form $m/2^n$ (with $m > 0$, $n \geq 0$), and let $B$ be the set of positive rational numbers of the form $m/3^n$ (with $m > 0$, $n \geq 0$). Both are semigroups under addition. The element $1 \in A$ is $2^\infty$-divisible, meaning that for every $n \geq 0$ there is some $a \in A$ with $1 = 2^n \cdot a$. But $B$ has no $2^\infty$-divisible element. Hence, there is no semigroup homomorphism $A \to B$. Likewise, there is no semigroup homomorphism $B \to A$.
 
-  - property: cogenerator
-    # TODO: find a variant of the lemma missing_cogenerating_sets
-    # (or missing_cogenerator) which handles this.
-    proof: >-
-      The proof is similar to the proof for <a href="/category/Grp">$\Grp$</a>. Assume that there is a cogenerator $Q$. There is an infinite simple group $G$ larger than $Q$ (such as an alternating group). Since $\id_G, 1 : G \rightrightarrows G$ are different, there is a homomorphism of semigroups $f : G \to Q$ with $f \neq f \circ 1$. Then
-      $$N \coloneqq \{g \in G : f(g) = f(1)\}$$
-      is a normal subgroup of $G$. It is proper, and hence trivial. But then $f$ is injective, which is a contradiction.
-    references:
-      - grp_no_cogenerator
-
   - property: cofiltered-limit-stable epimorphisms
     proof: We already know that <a href="/category/Set">$\Set$</a> does not have this property (by <a href="/category-implication/topos_no_stable_epis">this result</a>). Now apply the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> to the functor $\Set \to \SemiGrp$ that equips a set with the multiplication $a \cdot b \coloneqq a$.
 
@@ -75,6 +65,16 @@ unsatisfied_properties:
       whose underlying sets are $\{p\}$ and $\{p,q\}$, respectively. Then $X$ represents the functor sending a semigroup $A$ to its idempotents, and $E$ represents the relation on idempotents $a, b$ of $A$ that $ab = b$, $ba = a$. It is easy to check that this defines an equivalence relation (see <a href="https://mathoverflow.net/a/510809" target="_blank">MO/510744</a> for details). Since $p \ne q$ in $E$, the equalizer of the two maps $X \rightrightarrows E$ is the empty semigroup. Therefore, if $E$ were effective, it would be isomorphic to the coproduct $X \sqcup X$, whose underlying set consists of non-empty words in $p,q$ with $p,q$ strictly alternating. In particular, in this coproduct, $pq \ne q$.
     references:
       - mon_no_effective_cocongruences
+
+  - property: cototal
+    proof: >-
+      The proof is similar to the proof for <a href="/category/Cat">$\Cat$</a>. For each infinite cardinal $\kappa$, let $G_\kappa$ be a simple group of cardinality $\kappa$ (such as the alternating group on $\kappa$). We can then form the large span diagram $1 \dottedrightrightarrows G_\kappa$ in $\SemiGrp$. For every semigroup $A$, the collection of cocones $1 \dottedrightrightarrows G_\kappa \to A$ is bijective to a set: for every such cocone, we must first choose an idempotent $e$ of $A$ corresponding to the map $1 \to A$. Then, whenever $\kappa > \card(U(A))$, where $U(-)$ denotes the underlying set, for $f_\kappa : G_\kappa \to A$ in the cocone, we see
+      $$N \coloneqq \{g \in G_\kappa : f_\kappa(g) = e\}$$
+      is a normal subgroup of $G_\kappa$. It must be non-trivial since otherwise $f_\kappa$ would induce an injective group homomorphism from $G_\kappa$ to a group contained in $A$. Therefore, $N$ is all of $G_\kappa$, so $f_\kappa$ is the constant map with image $e$.
+
+      We now claim that $1 \dottedrightrightarrows G_\kappa$ does not have a pushout in $\SemiGrp$; by G. M. Kelly, <a href="https://www.numdam.org/item/?id=CTGDC_1986__27_2_109_0" target="_blank">A survey of totality for enriched and ordinary categories</a>, Thm. 5.6 (namely the contrapositive of the implication (i) $\Rightarrow$ (iii)), this will imply that $\SemiGrp$ is not cototal. To see this, suppose we had a pushout $A$, and let $\lambda$ be a cardinal strictly greater than $\card(U(A))$. Then the coprojection $G_\lambda\to A$ must be split monic, since we can construct a cocone $1 \dottedrightrightarrows G_\kappa \to G_\lambda$ such that the map $G_\kappa \to G_\lambda$ is the trivial (semi-)group homomorphism if $\kappa \ne \lambda$, while the map $G_\lambda \to G_\lambda$ is the identity.  But this contradicts the choice of $\lambda$.
+    references:
+      - cat_not_cototal
 
   - property: parametrized natural numbers object
     proof: >-

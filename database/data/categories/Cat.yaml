@@ -44,9 +44,6 @@ unsatisfied_properties:
   - property: balanced
     proof: Since we know that <a href="/category/Mon">$\Mon$</a> is not balanced, there is a monoid map $M \to N$ which is a monomorphism and an epimorphism which is not an isomorphism. Then $B(M) \to B(N)$ has the corresponding properties.
 
-  - property: cogenerating set
-    proof: 'Assume that $S$ is a cogenerating set in $\Cat$. Then one checks that the set of monoids $\{\End(X) : X \in \C \in S\}$ is a cogenerating set in <a href="/category/Mon">$\Mon$</a>, which we know does not exist.'
-
   - property: regular
     proof: See Example 3.14 at the <a href="https://ncatlab.org/nlab/show/regular+category" target="_blank">nLab</a>.
 
@@ -92,6 +89,13 @@ unsatisfied_properties:
       This shows that the comparison function
       $$\Sub_{\reg}(\{ 0 \to 1 \to 2 \}) \to \Sub_{\reg}(\{ 0 \to 1 \}) \times_{\Sub_{\reg}(\{1\})} \Sub_{\reg}(\{ 1 \to 2 \})$$
       is not injective. Therefore, $\Sub_{\reg} : \Cat^{\op} \to \Set^+$ does not preserve pullbacks, so it cannot be representable.
+
+  - property: cototal
+    proof: >-
+      For each infinite cardinal $\kappa$, choose a simple group $G_\kappa$ of cardinality $\kappa$ (such as the alternating group on $\kappa$). Now consider the large span diagram $1 \dottedrightrightarrows B G_\kappa$. Then for any small category $\C$, the collection of cocones $1 \dottedrightrightarrows B G_\kappa \to \C$ is bijective with a set: to form any such cocone, we must first choose the object $X$ of $\C$ which is the image of the object of $1$. Then, we must choose the morphisms $G_\kappa \to \End_{\C}(X)$; but for $\kappa > \card(\End_{\C}(X))$, the corresponding morphism must be zero.
+
+      On the other hand, we claim that $1 \dottedrightrightarrows B G_\kappa$ does not have a pushout in $\Cat$; by G. M. Kelly, <a href="https://www.numdam.org/item/?id=CTGDC_1986__27_2_109_0" target="_blank">A survey of totality for enriched and ordinary categories</a>, Thm. 5.6 (namely the contrapositive of the implication (i) $\Rightarrow$ (iii)), this will imply that $\Cat$ is not cototal. To see this, suppose we have a pushout $\C$ of $1 \dottedrightrightarrows B G_\kappa$, and choose a cardinal $\lambda > \card(\Mor(\C))$ (which is possible since $\C$ is a small category). Then the coprojection $i_\lambda : B G_\lambda \to \C$ must be split monic, since we can construct a cocone $1 \dottedrightrightarrows B G_\kappa \to B G_\lambda$ in which $B G_\kappa \to B G_\lambda$ corresponds to the zero map for $\kappa \ne \lambda$, and in which $B G_\lambda \to B G_\lambda$ is the identity. It follows that if $X$ is the image in $\C$ of the object of $B G_\lambda$ under $i_\lambda$, then $i_\lambda$ induces an injective map $G_\lambda \to \End_{\C}(X)$. This gives a contradiction since $\lambda > \card(\End_{\C}(X))$ and $G_\lambda$ has cardinality $\lambda$.
+    label: cat_not_cototal
 
 special_objects:
   initial object:
