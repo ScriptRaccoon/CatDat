@@ -1,0 +1,27 @@
+id: cototal
+relation: is
+description: >-
+  A locally small category $\C$ is called <i>cototal</i> if it satisfies one of the following equivalent conditions:
+  <ol>
+  <li>The contravariant Yoneda embedding
+  $$y : \C^{\op} \to [\C, \Set]$$
+  has a left adjoint.
+  <li>Every <a href="https://ncatlab.org/nlab/show/discrete+opfibration" target="_blank">discrete opfibration</a> $X : \I \to \C$ (with $\I$ not necessarily essentially small) whose fibers are bijective to sets has a limit in $\C$. (Recall that $X$ is a discrete opfibration if for every morphism $f : X_i \to Y$ in $\C$ there exists a unique $\alpha : i \to j$ in $\I$ such that $X_\alpha = f$.)</li>
+  <li>Let $X : \I \to \C$ be a diagram (with $\I$ not necessarily essentially small) such that for each object $Y$ of $\C$, the collection of connected components of the comma category $X \downarrow Y$ is bijective to a set. Then $X$ has a limit in $\C$.</li>
+  </ol>
+  The equivalence is proven as Thm. 5.2 and 5.5 in G. M. Kelly, <a href="https://www.numdam.org/item/?id=CTGDC_1986__27_2_109_0" target="_blank">A survey of totality for enriched and ordinary categories</a>.
+
+  A general category is called cototal if it is equivalent to a locally small category which is cototal.
+nlab_link: https://ncatlab.org/nlab/show/cototal+category
+dual: total
+invariant_under_equivalences: true
+
+related:
+  - cocomplete
+  - complete
+  - locally copresentable
+
+tags:
+  - limits
+  - colimits
+  - size
