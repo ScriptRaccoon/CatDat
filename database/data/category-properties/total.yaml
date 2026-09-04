@@ -1,0 +1,27 @@
+id: total
+relation: is
+description: >-
+  A locally small category $\C$ is called <i>total</i> if it satisfies one of the following equivalent conditions:
+  <ol>
+  <li>The covariant Yoneda embedding
+  $$y : \C \to [\C^{\op}, \Set]$$
+  has a left adjoint. For a concrete example of how such a left adjoint could look, see <a href="/content/Grp_total_explicit_proof">here</a>.
+  <li>Every <a href="https://ncatlab.org/nlab/show/discrete+fibration" target="_blank">discrete fibration</a> $X : \I \to \C$ (with $\I$ not necessarily essentially small) whose fibers are bijective to sets has a colimit in $\C$. (Recall that $X$ is a discrete fibration if for every morphism $f : Y \to X_i$ in $\C$ there exists a unique $\alpha : j \to i$ in $\I$ such that $X_\alpha = f$.)</li>
+  <li>Let $X : \I \to \C$ be a diagram (with $\I$ not necessarily essentially small) such that for each object $Y$ of $\C$, the collection of connected components of the comma category $Y \downarrow X$ is bijective to a set. Then $X$ has a colimit in $\C$.</li>
+  </ol>
+  The equivalence is proven as Thm. 5.2 and 5.5 in G. M. Kelly, <a href="https://www.numdam.org/item/?id=CTGDC_1986__27_2_109_0" target="_blank">A survey of totality for enriched and ordinary categories</a>.
+
+  A general category is called total if it is equivalent to a locally small category which is total.
+nlab_link: https://ncatlab.org/nlab/show/total+category
+dual: cototal
+invariant_under_equivalences: true
+
+related:
+  - cocomplete
+  - complete
+  - locally presentable
+
+tags:
+  - limits
+  - colimits
+  - size
