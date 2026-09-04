@@ -52,47 +52,56 @@ const dual_property_ids = new Map(
 	property_duals.map(({ id, dual_property_id }) => [id, dual_property_id])
 )
 
-const combinations = db
-	.prepare<[StructureType], { structure_id: string; p: string; q: string }>(
-		`SELECT
-			a.structure_id,
-			a.property_id AS p,
-			an.property_id AS q
-		FROM property_assignments a
-		JOIN property_assignments an
-			ON an.structure_id = a.structure_id AND an.type = a.type
-		WHERE a.type = ?
-			AND a.is_satisfied = TRUE
-			AND an.is_satisfied = FALSE`
+const structure_placeholders = structure_ids.map(() => '?').join(', ')
+
+const unique_combinations = db
+	.prepare<[StructureType, ...string[]], { p: string; q: string }>(
+		`WITH selected AS (
+			SELECT DISTINCT a.property_id AS p, an.property_id AS q
+			FROM property_assignments a
+			JOIN property_assignments an
+				ON an.structure_id = a.structure_id AND an.type = a.type
+			WHERE a.type = ?
+				AND a.structure_id IN (${structure_placeholders})
+				AND a.is_satisfied = TRUE
+				AND an.is_satisfied = FALSE
+		)
+		SELECT selected.p, selected.q
+		FROM selected
+		JOIN properties p ON p.id = selected.p AND p.type = ?
+		JOIN properties q ON q.id = selected.q AND q.type = ?
+		WHERE NOT EXISTS (
+			SELECT 1
+			FROM property_assignments a
+			JOIN property_assignments an
+				ON an.structure_id = a.structure_id AND an.type = a.type
+			WHERE a.type = ?
+				AND a.structure_id NOT IN (${structure_placeholders})
+				AND a.is_satisfied = TRUE
+				AND an.is_satisfied = FALSE
+				AND (
+					(a.property_id = selected.p AND an.property_id = selected.q)
+					OR (a.property_id = p.dual_property_id AND an.property_id = q.dual_property_id)
+				)
+		)`
 	)
-	.all(type)
+	.all(type, ...structure_ids, type, type, type, ...structure_ids)
 
-const other_combination_keys: Set<string> = new Set(
-	combinations
-		.filter(({ structure_id }) => !structure_ids.includes(structure_id))
-		.flatMap(({ p, q }) => combination_keys(p, q))
+const unique_combination_keys = new Set(
+	unique_combinations.map(({ p, q }) => combination_key(p, q))
 )
-
-const unique_combinations: { p: string; q: string }[] = []
-
-for (const { p, q, structure_id } of combinations) {
-	if (
-		structure_ids.includes(structure_id) &&
-		combination_keys(p, q).every((key) => !other_combination_keys.has(key)) &&
-		unique_combinations.every((comb) => comb.p != p || comb.q !== q)
-	) {
-		unique_combinations.push({ p, q })
-	}
-}
 
 const dual_combinations: { p: string; q: string }[] = []
 
-for (const { p, q } of unique_combinations) {
+for (const key of unique_combination_keys) {
+	const { p, q } = decode_combination_key(key)
 	const dual_p = dual_property_ids.get(p)
 	const dual_q = dual_property_ids.get(q)
 	if (!dual_p || !dual_q) continue
 
-	if (unique_combinations.every((comb) => comb.p != dual_p || comb.q != dual_q)) {
+	const dual_key = combination_key(dual_p, dual_q)
+
+	if (dual_key && !unique_combination_keys.has(dual_key)) {
 		dual_combinations.push({ p: dual_p, q: dual_q })
 	}
 }
@@ -120,10 +129,13 @@ if (dual_combinations.length > 0) {
 	}
 }
 
-function combination_keys(p: string, q: string): string[] {
-	const keys = new Set([`${p}|${q}`])
-	const dual_p = dual_property_ids.get(p)
-	const dual_q = dual_property_ids.get(q)
-	if (dual_p && dual_q) keys.add(`${dual_p}|${dual_q}`)
-	return [...keys]
+// Helper functions
+
+function combination_key(p: string, q: string) {
+	return `${p}|${q}`
+}
+
+function decode_combination_key(key: string) {
+	const separator = key.indexOf('|')
+	return { p: key.slice(0, separator), q: key.slice(separator + 1) }
 }
