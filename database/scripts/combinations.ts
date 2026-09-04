@@ -4,20 +4,20 @@ import { remove_underscores } from '$shared/utils'
 
 /**
  * This script prints the combinations of the form p ∧ ¬q
- * that are witnessed by a given structure but by no other
- * structure in the database. In particular, it can be used
- * when adding new structures to the database to detect which
- * combinations are newly witnessed.
+ * that are witnessed by the supplied structures (or their duals)
+ * but not by any other structure in the database.
  */
 
 const db = get_client({ readonly: true })
 
 const args = process.argv.slice(2)
 
-const [structure_id, type] = args
+const [type, ...structure_ids] = args
 
-if (args.length !== 2 || !structure_id || !type) {
-	console.error('Expected exactly 2 arguments: <structure-id> <structure-type>.')
+if (!type || structure_ids.length === 0) {
+	console.error(
+		'Expected arguments: <structure-type> <structure-id> <structure-id> ...'
+	)
 	process.exit(1)
 }
 
@@ -26,16 +26,17 @@ if (!is_structure_type(type)) {
 	process.exit(1)
 }
 
-const structure = db
-	.prepare<
-		[string, StructureType],
-		{ id: string }
-	>(`SELECT id FROM structures WHERE id = ? AND type = ?`)
-	.get(structure_id, type)
+const all_structure_ids = db
+	.prepare<[StructureType], string>(`SELECT id FROM structures WHERE type = ?`)
+	.pluck()
+	.all(type)
 
-if (!structure) {
+const set_all_structure_ids = new Set(all_structure_ids)
+const unknown_structure_ids = structure_ids.filter((id) => !set_all_structure_ids.has(id))
+
+if (unknown_structure_ids.length > 0) {
 	console.error(
-		`No ${remove_underscores(type)} with ID "${structure_id}" exists in the database.`
+		`No ${remove_underscores(type)} with ID "${unknown_structure_ids[0]}" exists in the database.`
 	)
 	process.exit(1)
 }
@@ -66,37 +67,63 @@ const combinations = db
 	)
 	.all(type)
 
-const other_combinations = new Set(
+const other_combination_keys: Set<string> = new Set(
 	combinations
-		.filter((comb) => comb.structure_id !== structure_id)
+		.filter(({ structure_id }) => !structure_ids.includes(structure_id))
 		.flatMap(({ p, q }) => combination_keys(p, q))
 )
 
-const unique_combinations = combinations
-	.filter(
-		(comb) =>
-			comb.structure_id === structure_id &&
-			combination_keys(comb.p, comb.q).every((key) => !other_combinations.has(key))
-	)
-	.map(({ p, q }) => ({ p, q }))
+const unique_combinations: { p: string; q: string }[] = []
+
+for (const { p, q, structure_id } of combinations) {
+	if (
+		structure_ids.includes(structure_id) &&
+		combination_keys(p, q).every((key) => !other_combination_keys.has(key)) &&
+		unique_combinations.every((comb) => comb.p != p || comb.q !== q)
+	) {
+		unique_combinations.push({ p, q })
+	}
+}
+
+const dual_combinations: { p: string; q: string }[] = []
+
+for (const { p, q } of unique_combinations) {
+	const dual_p = dual_property_ids.get(p)
+	const dual_q = dual_property_ids.get(q)
+	if (!dual_p || !dual_q) continue
+
+	if (unique_combinations.every((comb) => comb.p != dual_p || comb.q != dual_q)) {
+		dual_combinations.push({ p: dual_p, q: dual_q })
+	}
+}
+
+const all_unique_combinations = [...unique_combinations, ...dual_combinations]
 
 console.info(
-	`Found ${unique_combinations.length} unique witnessed combinations for ${remove_underscores(type)} with ID "${structure_id}":`
+	`Found ${all_unique_combinations.length} unique witnessed combinations by the supplied structures (${structure_ids.join(', ')}):`
 )
 
-if (unique_combinations.length === 0) {
-	console.info('None')
+if (all_unique_combinations.length === 0) {
+	console.info('\nNone')
 	process.exit(0)
 }
 
+console.info('\nDirectly witnessed:')
 for (const { p, q } of unique_combinations) {
 	console.info(`- ${p} ∧ ¬${q}`)
 }
 
+if (dual_combinations.length > 0) {
+	console.info('\nDually witnessed:')
+	for (const { p, q } of dual_combinations) {
+		console.info(`- ${p} ∧ ¬${q}`)
+	}
+}
+
 function combination_keys(p: string, q: string): string[] {
-	const keys = new Set<string>([`${p}|${q}`])
-	const dual_p = dual_property_ids.get(p) ?? null
-	const dual_q = dual_property_ids.get(q) ?? null
+	const keys = new Set([`${p}|${q}`])
+	const dual_p = dual_property_ids.get(p)
+	const dual_q = dual_property_ids.get(q)
 	if (dual_p && dual_q) keys.add(`${dual_p}|${dual_q}`)
 	return [...keys]
 }
