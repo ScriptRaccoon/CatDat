@@ -17,6 +17,7 @@ invariant_under_equivalences: true
 related:
   - accessible
   - cocomplete
+  - total
   - locally finitely presentable
   - locally multi-presentable
   - locally poly-presentable

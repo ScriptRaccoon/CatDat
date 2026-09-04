@@ -8,6 +8,7 @@ invariant_under_equivalences: true
 related:
   - coaccessible
   - complete
+  - cototal
 
 tags:
   - accessibility
