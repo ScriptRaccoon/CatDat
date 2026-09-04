@@ -18,7 +18,7 @@ satisfied_properties:
     proof: There is a forgetful functor $\CAlg(R) \to \Set$ and $\Set$ is locally small.
 
   - property: one-sorted finitary algebraic
-    proof: Take the one-sorted algebraic theory of a commutative algebra.
+    proof: Take the one-sorted algebraic theory of a commutative $R$-algebra.
 
   - property: strict terminal object
     proof: 'If $f : 0 \to A$ is a homomorphism of $R$-algebras, then $A$ satisfies $1=f(1)=f(0)=0$, so that $A=0$.'
@@ -55,9 +55,6 @@ unsatisfied_properties:
   - property: balanced
     proof: Take a prime ideal $P \subseteq R$ and consider the commutative $R$-algebra $A \coloneqq R/P$ (which is an integral domain). Then the inclusion $A \hookrightarrow Q(A)$ is a counterexample.
 
-  - property: cogenerating set
-    proof: 'We apply <a href="/content/missing_cogenerating_sets">this lemma</a> to the collection of commutative $R$-algebras which are fields: If $F$ is a commutative $R$-algebra that is also a field and $A$ is a non-trivial commutative $R$-algebra, any algebra homomorphism $F \to A$ is injective. For every infinite cardinal $\kappa$ the field of rational functions in $\kappa$ variables over some residue field of $R$ has cardinality $\geq \kappa$ and a non-trivial automorphism (swap two variables).'
-
   - property: countably codistributive
     proof: 'The canonical homomorphism $A \otimes_R R^{\IN} \to A^{\IN}$ is given by $a \otimes (r_n)_n \mapsto (r_n a)_n$ and does not have to be surjective: Since $R \neq 0$, there is a commutative $R$-algebra $K$ which is a field. Now take $A \coloneqq K[X]$ and consider the sequence $(X^n)_{n} \in A^{\IN}$.'
 
@@ -83,6 +80,13 @@ unsatisfied_properties:
       \cdots @>>> K[X]/\langle X^3 \rangle @>>> K[X]/\langle X^2 \rangle @>>> K[X]/\langle X \rangle
       \end{CD}$$
       In the limit, it induces the inclusion $K[X] \hookrightarrow K[[X]]$, where $K[[X]]$ is the algebra of formal power series over $K$. It is clearly not surjective, but this is not sufficient, we need to argue that it is not an epimorphism in $\CAlg(R)$, or equivalently, in $\CRing$. For a proof, see <a href="https://math.stackexchange.com/questions/2391187" target="_blank">MSE/2391187</a>.
+
+  - property: cototal
+    proof: >-
+      This proof will be similar to the proof of <a href="/content/missing_cogenerator">this lemma</a>. To start, for each infinite cardinal $\kappa \ge \card(U(R))$, choose a field $F_\kappa$ of cardinality $\kappa$ including a quotient field of $R$. (For example, fix some such quotient field $R / \m$ and then let $F_\kappa$ be the extension of $R / \m$ by $\kappa$ many indeterminates.) We first claim that for any commutative $R$-algebra $A$ with $\kappa > \card(U(A))$, there is exactly one $R$-algebra homomorphism $\varphi : R \times F_\kappa \to A$, which can be described as the projection $R \times F_\kappa \to R$ followed by the unique morphism $R \to A$. To see this, note that for any other such morphism $\varphi$, we must have $\varphi(0, 1) \ne 0$. It follows that the rng homomorphism $F_\kappa \to A$ formed by composing $F_\kappa \to R \times F_\kappa$, $x \mapsto (0, x)$, with $\varphi$ is non-zero, and it is therefore injective since $F_\kappa$ was chosen to be a field. This gives a contradiction.
+
+      It follows that for any commutative $R$-algebra $A$, the set of cocones $R \times F_\kappa \to A$ from the discrete diagram on $R \times F_\kappa$ is bijective to a set. On the other hand, we claim that $\CAlg(R)$ has no coproduct of all $R \times F_\kappa$. This will imply that $\CAlg(R)$ is not cototal, by G. M. Kelly, <a href="https://www.numdam.org/item/?id=CTGDC_1986__27_2_109_0" target="_blank">A survey of totality for enriched and ordinary categories</a>, Thm. 5.6 (namely the contrapositive of the implication (i) $\Rightarrow$ (iii)). To see this, suppose we had such a coproduct $A$, and choose a cardinal $\kappa$ greater than $\max(\card(U(A)), \card(U(R)), \aleph_0)$. Then the coprojection $R \times F_\kappa \to A$ would be split injective, where we can construct the splitting $A \to R\times F_\kappa$ such that the $\kappa$ component is the identity, whereas for $\lambda \ne \kappa$, the $\lambda$ component is given by the projection $R \times F_\lambda \to R$ composed with the unique morphism $R \to R \times F_\kappa$. However, from this injection, we would get $\card(A) \ge \card(R \times F_\kappa) = \kappa$, giving a contradiction.
+    label: calg_not_cototal
 
 special_objects:
   initial object:

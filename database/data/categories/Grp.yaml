@@ -42,6 +42,10 @@ satisfied_properties:
   - property: effective cocongruences
     proof: A proof can be found <a href="/content/cocongruences_of_groups">here</a>.
 
+  - property: total
+    proof: This follows formally from the fact that $\Grp$ is finitary algebraic and therefore locally presentable. For a more explicit proof, see <a href="/content/Grp_total_explicit_proof">here</a>.
+    check_redundancy: false
+
   - property: extremal generator
     proof: The group $\IZ$ is an extremal generator since it represents the forgetful functor $\Grp \to \Set$, which is faithful and conservative.
     check_redundancy: false
@@ -54,7 +58,7 @@ unsatisfied_properties:
   - property: normal
     proof: Every non-normal subgroup (such as $C_2 \hookrightarrow S_3$) provides a counterexample.
 
-  - property: cogenerator
+  - property: cototal
     proof: 'We apply <a href="/content/missing_cogenerator">this lemma</a> to the collection of simple groups: Any non-trivial homomorphism from a simple group to a group must be injective, and for every infinite cardinal $\kappa$ there is a simple group of size $\geq \kappa$ (for example, the alternating group on $\kappa$ elements).'
     label: grp_no_cogenerator
 
