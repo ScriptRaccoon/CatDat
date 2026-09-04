@@ -1,0 +1,33 @@
+# results on total and cototal categories
+
+- id: total_loc_ess_small
+  assumptions:
+    - total
+  conclusions:
+    - locally essentially small
+  proof: This is trivial.
+
+- id: total_cocomplete
+  assumptions:
+    - total
+  conclusions:
+    - cocomplete
+  proof: 'If the category $\C$ is locally small and total, then the Yoneda embedding $y : \C^{\op} \to [\C, \Set]$ makes $\C^{\op}$ into a reflective subcategory of the presheaf category $[\C, \Set]$, where the latter is complete. For a general total category $\C$, use the equivalence to a locally small, total category.'
+
+- id: total_complete
+  assumptions:
+    - total
+  conclusions:
+    - complete
+  proof: This is proven in G. M. Kelly, <a href="https://www.numdam.org/item/?id=CTGDC_1986__27_2_109_0" target="_blank">A survey of totality for enriched and ordinary categories</a>, Thm. 5.6.
+
+# TODO: replace "well-copowered" with "epi-cocomplete" if adding the latter property
+- id: cocomplete_well-copowered_generator_implies_total
+  assumptions:
+    - cocomplete
+    - locally essentially small
+    - well-copowered
+    - generating set
+  conclusions:
+    - total
+  proof: Since the category is cocomplete and well-copowered, it is epi-cocomplete (meaning that it has wide pushouts of epimorphisms, even of non-small families of epimorphisms). The result then follows from B. J. Day, <a href="https://www.numdam.org/item/?id=CTGDC_1987__28_1_77_0" target="_blank">Further criteria for totality</a>, Thm. 1.
