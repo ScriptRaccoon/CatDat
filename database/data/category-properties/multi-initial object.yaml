@@ -1,6 +1,6 @@
 id: multi-initial object
 relation: has a
-description: This property refers to the existence of a multi-colimit of the empty diagram. A category has a multi-initial object if and only if the collection of all connected components is isomorphic to a set, and each connected component has a initial object.
+description: A category has a <i>multi-initial object</i> if the empty diagram has a multi-colimit. That is, there is a small family of objects $(X_i)_{i \in I}$ such that for every object $Y$ there is a unique index $i \in I$ with a unique morphism $X_i \to Y$. A category has a multi-initial object if and only if the collection of all connected components is isomorphic to a set, and each connected component has a initial object.
 nlab_link: https://ncatlab.org/nlab/show/multilimit
 dual: multi-terminal object
 invariant_under_equivalences: true
