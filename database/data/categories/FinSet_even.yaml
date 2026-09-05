@@ -90,7 +90,6 @@ unsatisfied_properties:
 
   - property: Cauchy complete
     proof: 'The constant map $e : \{0,1\} \to \{0,1\}$, $x \mapsto 0$ is idempotent and does not split in $\FinSet_{\even}$, since a splitting $\{0,1\} \to X \to \{0,1\}$ would also be a splitting in $\FinSet$, making $X$ isomorphic to $\im(e) = \{0\}$.'
-    label: FinSet_even_not_cauchy_complete
 
   - property: extensive
     proof: >-
@@ -110,11 +109,6 @@ unsatisfied_properties:
     references:
       - FinSet_even_inclusion_continuous
       - FinSet_even_inclusion_cocontinuous
-
-  - property: multi-cocomplete
-    proof: 'Assume that $D : \I \to \FinSet_{\even}$ is a small diagram. If $(D(i) \to X)_{i \in \I}$ is any cocone, then the constant map $0 : X \to \{0,1\}$ is a morphism of cocones from $(D(i) \to X)_{i \in \I}$ to the cocone $(0 : D(i) \to \{0,1\})_{i \in \I}$. Therefore, the category of cocones under $D$ is connected; it has a weakly terminal object. Thus, if a multi-colimit of $D$ exists, it is necessarily a colimit of $D$. But since we already know that $\FinSet_{\even}$ is not cocomplete (for example, since it is not Cauchy complete), we are done.'
-    references:
-      - FinSet_even_not_cauchy_complete
 
 special_objects:
   initial object:

@@ -30,6 +30,13 @@
     - Cauchy complete
   proof: 'If $e : X \to X$ is an idempotent, then the equalizer of $e, \id_X : X \rightrightarrows X$ provides a splitting of $e$.'
 
+- id: multi_equalizers_consequence
+  assumptions:
+    - multi-complete
+  conclusions:
+    - Cauchy complete
+  proof: 'More precisely, if a category has multi-equalizers, then it is Cauchy complete. Namely, if $e : X \to X$ is an idempotent morphism, a cone over $e,\id_X$ is a morphism $f : Y \to X$ with $f = e \circ f$. In particular, $e : X \to X$ is such a cone, and $f$ can be regarded as a morphism of cones $f \to e$. This shows that the category of cones is connected. A multi-terminal object in the category of cones is therefore a terminal object, i.e. an equalizer of $e,\id_X$, and hence a splitting of $e$ (cf. <a href="/category-implication/equalizers_consequence">this result</a>).'
+
 - id: reflexive_pair_trivial_2
   assumptions:
     - subobject-trivial
