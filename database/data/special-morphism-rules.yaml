@@ -63,6 +63,16 @@
   description: same as epimorphisms
   proof: The category is epi-regular.
 
+- property: subobject-trivial
+  type: monomorphisms
+  description: same as isomorphisms
+  proof: The category is subobject-trivial.
+
+- property: quotient-trivial
+  type: epimorphisms
+  description: same as isomorphisms
+  proof: The category is quotient-trivial.
+
 - property: regular-subobject-trivial
   type: regular monomorphisms
   description: same as isomorphisms
