@@ -1,0 +1,82 @@
+id: Fld_0
+name: category of fields of characteristic zero
+notation: $\Fld_0$
+objects: fields of characteristic $0$
+morphisms: field homomorphisms (i.e., ring homomorphisms)
+description: This is the full subcategory of $\Fld$ consisting of fields of <a href="https://en.wikipedia.org/wiki/Characteristic_(algebra)" target="_blank">characteristic</a> $0$. It is isomorphic to the coslice category $\IQ / \Fld$.
+nlab_link: https://ncatlab.org/nlab/show/Field
+
+tags:
+  - algebra
+
+related:
+  - Fld
+  - CRing
+
+comments:
+  - Limits and colimits are discussed in <a href="https://math.stackexchange.com/questions/359352" target="_blank">MSE/359352</a>.
+
+satisfied_properties:
+  - property: locally small
+    proof: It is a full subcategory of <a href="/category/Fld">$\Fld$</a>, which is locally small.
+
+  - property: initial object
+    proof: The field $\IQ$ is an initial object; see for example <a href="https://proofwiki.org/wiki/Field_of_Characteristic_Zero_has_Unique_Prime_Subfield" target="_blank">here</a>.
+
+  - property: left cancellative
+    proof: This property is inherited from <a href="/category/Fld">$\Fld$</a>.
+
+  - property: quotient-trivial
+    proof: 'An epimorphism of fields of characteristic $0$ is clearly also an epimorphism of fields, and is therefore purely inseparable by <a href="https://math.stackexchange.com/questions/687869" target="_blank">MSE/687869</a>. In characteristic $0$, a purely inseparable field homomorphism is an isomorphism.'
+
+  - property: multi-algebraic
+    proof: 'Example 4.3(1) in <a href="http://www.tac.mta.ca/tac/volumes/8/n3/8-03abs.html" target="_blank">[AR01]</a> presents an FPC-sketch that models fields. It is an extension of the FP-sketch that models commutative rings. To model fields of characteristic $0$, we make the same construction with the FP-sketch that models commutative $\IQ$-algebras.'
+
+unsatisfied_properties:
+  - property: skeletal
+    proof: This is trivial.
+
+  - property: locally finite
+    proof: There are infinitely many homomorphisms $\IQ(X) \to \IQ(X)$, $X \mapsto X^k$.
+
+  - property: core-thin
+    proof: If this category were core-thin, Galois theory would not exist. Specifically, the conjugation $\IC \to \IC$, $z \mapsto \overline{z}$ is a non-trivial automorphism.
+
+  - property: semi-strongly connected
+    proof: There is no homomorphism from $\IQ(\sqrt{2})$ to $\IQ(\sqrt{3})$, since a direct calculation shows that $\IQ(\sqrt{3})$ has no element $a$ with $a^2=2$. Similarly, there is no homomorphism from $\IQ(\sqrt{3})$ to $\IQ(\sqrt{2})$. See also <a href="https://math.stackexchange.com/questions/1069387">MSE/1069387</a>.
+
+  - property: cogenerating set
+    proof: We can copy the proof from <a href="/category/Fld">$\Fld$</a>.
+    references:
+      - Fld_no_cogenerating_set
+
+  - property: binary powers
+    proof: We can copy the proof from <a href="/category/Fld">$\Fld$</a> that the product $\IQ(\sqrt{2}) \times \IQ(\sqrt{2})$ does not exist.
+    references:
+      - Fld_no_binary_powers
+
+  - property: locally cartesian closed
+    proof: We can copy the proof from <a href="/category/Fld">$\Fld$</a> that $\Fld_0 / \IQ(\sqrt{2}, \sqrt{3})$ is not cartesian closed.
+    references:
+      - Fld_not_lcc
+
+  - property: mono-regular
+    proof: >-
+      The following example comes from <a href="https://math.stackexchange.com/questions/5129895" target="_blank">MSE/5129895</a>, where a more general classification of regular monomorphisms is also given. Assume that $\IQ \hookrightarrow \IR$ is a regular monomorphism, i.e. the equalizer of two field homomorphisms $f,g : \IR \rightrightarrows K$. Consider the real numbers
+      $$x_1 = \sqrt{2}, \quad x_2 = \sqrt{3}, \quad x_3 = \sqrt{6}.$$
+      We have $x_1 x_2 = x_3$ and $f(x_i) = \pm g(x_i)$. Therefore, for some $i$ we have $f(x_i)=g(x_i)$. But $x_i \notin \IQ$.
+
+  - property: generator
+    proof: Assume that $G$ is a generator of $\Fld_0$. It must distinguish the two homomorphisms $\IQ(\sqrt{2}) \rightrightarrows \IQ(\sqrt{2})$. Since $\IQ(\sqrt{2})$ has only two subfields, we see that $G \cong \IQ(\sqrt{2})$. But $G$ must also distinguish the two homomorphisms $\IQ(\sqrt{3}) \rightrightarrows \IQ(\sqrt{3})$, so we likewise obtain $G \cong \IQ(\sqrt{3})$. This contradicts $\IQ(\sqrt{2}) \not\cong \IQ(\sqrt{3})$.
+
+special_objects:
+  initial object:
+    description: $\IQ$
+
+special_morphisms:
+  isomorphisms:
+    description: bijective field homomorphisms
+    proof: It is a full subcategory of $\CRing$, for which we know that isomorphisms are bijective homomorphisms.
+  regular monomorphisms:
+    description: A Galois extension is a regular monomorphism iff it is procyclic, and the general case can be reduced to this situation; see <a href="https://math.stackexchange.com/questions/5129895" target="_blank">MSE/5129895</a> for details.
+    proof: See <a href="https://math.stackexchange.com/questions/5129895" target="_blank">MSE/5129895</a>.
