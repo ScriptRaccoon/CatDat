@@ -1,0 +1,155 @@
+id: Euclid_coprod
+name: category of coproducts of Euclidean spaces
+notation: $\Euclid_{\sqcup}$
+objects: coproducts of Euclidean spaces
+morphisms: continuous functions
+description: >-
+  By definition, this is the full subcategory of $\Top$ (or $\Haus$) where every space is isomorphic to $\coprod_{i \in I} \IR^{n_i}$ for a family of natural numbers $(n_i)_{i \in I}$. These are locally Euclidean spaces in the strongest possible sense. This category provides an example of an infinitary distributive category that is not Cauchy complete. Using the fact that Euclidean spaces are connected, it is easy to see that this category is the <a href="https://ncatlab.org/nlab/show/free+coproduct+completion" target="_blank">free coproduct cocompletion</a> of the category of Euclidean spaces.
+nlab_link: null
+tags:
+  - topology
+
+related:
+  - Top
+  - Haus
+  - Man
+  - Met_c
+
+satisfied_properties:
+  - property: locally small
+    proof: It is a full subcategory of <a href="/category/Top">$\Top$</a>, which is locally small.
+
+  - property: finite products
+    proof: This follows since $\Top$ is infinitary distributive and Euclidean spaces are closed under finite products. Namely, $\IR^0=1$ and $\IR^n \times \IR^m \cong \IR^{n+m}$.
+
+  - property: infinitary extensive
+    proof: The <a href="https://ncatlab.org/nlab/show/free+coproduct+completion" target="_blank">free coproduct cocompletion</a> of any category is infinitary extensive; for the finite case see Proposition 2.4 in <a href="https://doi.org/10.1016/0022-4049(93)90035-R" target="_blank">Introduction to extensive and distributive categories</a> by Carboni-Lack-Walters.
+
+  - property: well-powered
+    proof: This is clear from the classification of monomorphisms as injective continuous maps.
+
+  - property: well-copowered
+    proof: The classification of epimorphisms below shows that every epimorphism is also an epimorphism in <a href="/category/Haus">$\Haus$</a>, so that the claim follows from the fact that $\Haus$ is well-copowered.
+
+  - property: semi-strongly connected
+    proof: This property is inherited from <a href="/category/Top">$\Top$</a>.
+
+  - property: extremal generator
+    proof: >-
+      We will prove that $\IR$ is an extremal generator. It is clearly a generator; in fact, every non-empty space is a generator in $\Top$ by using constant maps.
+      Now assume that $f : X \to Y$ is a map in $\Euclid_{\sqcup}$ such that
+      $$f_* : \Hom(\IR,X) \to \Hom(\IR,Y)$$
+      is bijective. Using constant maps, it is easy to see that $f$ is bijective. It remains to show that the inverse map $f^{-1} : Y \to X$ is continuous. It suffices to check this on every Euclidean component $\IR^n \subseteq Y$. To this end, assume that $(y_k)_{k \geq 1} \to y$ is a convergent sequence in $\IR^n$. It corresponds to a continuous map
+      $$\{0\} \cup \{1/k : k \geq 1\} \to \IR^n$$
+      mapping $0 \mapsto y$ and $1/k \mapsto y_k$. Using linear interpolation, it extends to a continuous map $[0,1] \to \IR^n$. We further extend this to a continuous map $\IR \to \IR^n$ by mapping every number $<0$ to $0$ and every number $>1$ to $y_1$. Thus, we obtain a continuous map $h : \IR \to Y$ with $h(0)=y$ and $h(1/k) = y_k$. By assumption, the map $f^{-1} \circ h : \IR \to X$ is also continuous. In particular, its restriction to $\{0\} \cup \{1/k : k \geq 1\}$ is continuous. This means that $(f^{-1}(y_k))_{k \geq 1} \to f^{-1}(y)$.
+
+  - property: extremal cogenerator
+    proof: The category $\Euclid_{\sqcup}$ is a full subcategory of <a href="/category/Met_c">$\Met_c$</a>, in which $\IR$ is an extremal cogenerator. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
+    references:
+      - Met_c_cogenerator
+
+  - property: effective cocongruences
+    proof: >-
+      Let $i_1,i_2 : X \rightrightarrows E$ be a coreflexive corelation in $\Euclid_{\sqcup}$. (We will not need to assume cosymmetry or cosymmetry, as both properties will follow.) This means that the induced map $(i_1;i_2) : X \sqcup X \to E$ is an epimorphism, i.e. has dense image, and that there is a continuous map $r : E \to X$ satisfying
+      $$r \circ i_1 = r \circ i_2 = \id_X.$$
+      It follows that, in $\Top$, $i_1$ is the equalizer of $\id_E$ and $i_1 \circ r : E \rightrightarrows E$. Since $E$ is Hausdorff, this implies that $i_1$ is an embedding with closed image $i_1(X)$. Likewise, $i_2$ is an embedding with closed image $i_2(X)$. Their union $i_1(X) \cup i_2(X)$ is also closed. On the other hand, since $(i_1;i_2)$ has dense image, $i_1(X) \cup i_2(X)$ is dense. Thus,
+      $$E = i_1(X) \cup i_2(X),$$
+      i.e. $i_1,i_2$ are jointly surjective. It follows that the underlying maps of $i_1,i_2$ form a coreflexive corelation in $\Set$. Therefore, by <a href="/category-implication/regular_epi-regular_extensive_consequences">this result</a>, if we define the equalizer
+      $$U \coloneqq \{x \in X : i_1(x) = i_2(x)\},$$
+      then the induced continuous map
+      $$X \sqcup_U X \to E$$
+      is a bijection. Since the maps $i_1,i_2$ are closed embeddings, $(i_1;i_2) : X + X \to E$ is closed, and therefore a quotient map. It follows that $X \sqcup_U X \cong E$ is an isomorphism of topological spaces. In other words, $i_1,i_2$ is the cokernel pair of $U \hookrightarrow X$ in $\Top$.
+
+      It remains to prove that $U$ belongs to $\Euclid_{\sqcup}$, since then $i_1,i_2$ is also a cokernel pair in $\Euclid_{\sqcup}$. In fact, we will prove that $U$ is a union of connected components of $X$.
+
+      Suppose that $U$ intersects a connected component $X' \subseteq X$. Choose a point $x \in U \cap X'$ and let $e \coloneqq i_1(x) = i_2(x)$. Let $E' \subseteq E$ be the connected component containing $e$. Then $i_1(X') \subseteq E'$ and $i_2(X') \subseteq E'$. Since $r(e)=x$, we also have $r(E') \subseteq X'$. We claim that
+      $$E' = i_1(X') \cup i_2(X').$$
+      The inclusion $\supseteq$ is clear. To show the inclusion $\subseteq$, pick any point $p \in E'$. We have either $p \in i_1(X)$ or $p \in i_2(X)$. Assume without loss of generality that $p \in i_1(X)$, say $p = i_1(y)$ for some $y \in X$. Then $y = r(p) \in r(E') \subseteq X'$, and hence $p \in i_1(X')$.
+
+      The space $E'$ is Euclidean and therefore a Baire space. Thus, it cannot be the union of two closed sets with empty interior. Assume without loss of generality that $i_1(X')$ has non-empty interior in $E'$. Since $i_1(X') \cong X'$ is also Euclidean, the Invariance of Domain theorem implies that $X'$ and $E'$ have the same dimension and that $i_1(X')$ is open in $E'$. Since $i_1$ is a closed embedding, $i_1(X')$ is also closed in $E'$, and it is non-empty. Since $E'$ is connected, this implies
+      $$i_1(X') = E'.$$
+      Hence, for every $y \in X'$, we have $i_2(y) = i_1(z)$ for some $z \in X'$. Applying $r$, we obtain $y=z$, and hence $y \in U$. This proves that $U$ contains the entire component $X'$ and finishes the proof.
+    label: Euclid_coprod_cocongruence_classification
+
+  - property: coquotients of cocongruences
+    proof: >-
+      We have proved above that every cocongruence in $\Euclid_{\sqcup}$ is isomorphic to
+      $$X \rightrightarrows X \sqcup_U X$$
+      for some subset $U \subseteq X$ which is a union of connected components of $X$. Since $U \hookrightarrow X$ is the equalizer of $X \rightrightarrows X \sqcup_U X$ in $\Top$, this remains true in $\Euclid_{\sqcup}$.
+    references:
+      - Euclid_coprod_cocongruence_classification
+
+unsatisfied_properties:
+  - property: skeletal
+    proof: This is trivial.
+
+  - property: balanced
+    proof: 'The space $\IR \setminus \{0\}$ belongs to $\Euclid_{\coprod}$ because it is the coproduct of $\IR^+$ and $\IR^-$, both of which are isomorphic to $\IR$; for example, $\exp : \IR \to \IR^+$ is an isomorphism in $\Top$. Now consider the inclusion map $\IR \setminus \{0\} \hookrightarrow \IR$. It has dense image, hence is an epimorphism in $\Haus$, a fortiori in $\Euclid_{\coprod}$. It is also injective and therefore a monomorphism. But it is not an isomorphism since it is not bijective.'
+
+  - property: Cauchy complete
+    proof: >-
+      Consider the continuous map $f : \IR \to \IR$ defined by
+      $$f(x) = \begin{cases}
+      0 & x \leq 0 \\
+      x & 0 \leq x \leq 1 \\
+      1 & x \geq 1.
+      \end{cases}$$
+      The map is clearly idempotent. A splitting in $\Euclid_{\coprod}$ would also be a splitting in $\Top$, and therefore be necessarily isomorphic (cf. <a href="https://math.stackexchange.com/questions/652185">MSE/652185</a>) to the splitting $\IR \twoheadrightarrow [0,1] \hookrightarrow \IR$ in $\Top$. But $[0,1]$ is not a coproduct of Euclidean spaces. Otherwise, being a connected space, it would be an Euclidean space, but also a compact space, which only leaves $\IR^0$, which is absurd.
+
+  - property: countable powers
+    proof: >-
+      Assume that the power $P \coloneqq \IR^{\IN^+}$ exists in $\Euclid_{\sqcup}$ with projection map $p_n : P \to \IR$ for $n \in \IN^+$. Notice that we <i>cannot</i> assume that its underlying space identifies with the power in $\Top$. By applying the universal property to $1 \in \Euclid_{\sqcup}$, we merely see that the underlying set of $P$ is the cartesian product $\IR^{\IN^+}$ and $p_n(x)=x_n$. But knowing the underlying set is not sufficient.
+
+      We first prove that $P$ is path-connected, and thus connected. The space $P$ is clearly non-empty, for example by our description of the underlying set. Take two points $x,y \in P$. For every $n \in \IN^+$, there is a continuous map $f_n : \IR \to \IR$ with $f_n(0) = p_n(x)$ and $f_n(1) = p_n(y)$; for example, we may take the affine-linear function through the points $(0,p_n(x))$ and $(1,p_n(y))$. By the universal property of $P$, there is a continuous map $f : \IR \to P$ with $p_n \circ f = f_n$ for every $n \in \IN^+$. Since the maps $p_n$ are jointly injective, it follows that $f(0)=x$ and $f(1)=y$. Thus, $f|_{[0,1]}$ is a continuous path from $x$ to $y$.
+
+      Since $P$ is connected and belongs to $\Euclid_{\sqcup}$, it is isomorphic to $\IR^k$ for some $k \in \IN$.
+
+      For every $n \in \IN$, we consider the continuous map $f : \IR^n \to P$, where $p_k \circ f : \IR^n \to \IR$ is the $k$th coordinate projection when $1 \leq k \leq n$, and otherwise, say, the zero map. Conversely, there is a continuous map $(p_1,\dotsc,p_n) : P \to \IR^n$. By construction, the composition $\IR^n \to P \to \IR^n$ is the identity. Therefore, for every $n \in \IN$, the Euclidean space $\IR^n$ embeds into $P$. But $P \cong \IR^k$, so if we apply this to $n = k+1$, we see that $\IR^{k+1}$ has an injective continuous map into $\IR^k$. This contradicts the theorem on the <a href="https://en.wikipedia.org/wiki/Invariance_of_domain">invariance of domain</a>.
+
+  - property: kernel pairs
+    proof: >-
+      First, we remark that the inclusion functor $\Euclid_{\sqcup} \hookrightarrow \Met_c$ preserves finite limits by Lemma 1 <a href="/content/inclusion-functors">here</a>, since $\Euclid_{\sqcup}$ contains the extremal cogenerator $\IR$ of $\Met_c$. The inclusion functor $\Met_c \hookrightarrow \Top$ clearly preserves finite limits. Hence, the inclusion functor $\Euclid_{\sqcup} \hookrightarrow \Top$ preserves finite limits. Therefore, $\Euclid_{\sqcup}$ has kernel pairs if and only if it is closed under kernel pairs taken in $\Top$.
+
+      Now consider the continuous map $f : \IR \to \IR$, $x \mapsto x^2$. Its kernel pair in $\Top$ is
+      $$\{(x,y) \in \IR^2 : x^2=y^2\} = \{(x,x) : x \in \IR\} \cup \{(x,-x) : x \in \IR\}.$$
+      But this space does not belong to $\Euclid_{\sqcup}$. In fact, since it is connected, it would have to be isomorphic to $\IR^n$. Removing $(0,0)$ from this space yields a space with four connected components. However, $\IR^n$ minus a point is connected for $n > 1$, while $\IR$ minus a point has two connected components.
+    references:
+      - Met_c_cogenerator
+
+  - property: cokernel pairs
+    proof: >-
+      Consider the inclusion map $\{0\} \hookrightarrow \IR$. We claim that the pushout $P = \IR \sqcup_{0} \IR$ does not exist in $\Euclid_{\sqcup}$. To prove this, let $W = \IR \sqcup_{0} \IR$ be the pushout in $\Top$. Then there is a continuous map
+      $$p : W \to P,$$
+      which is in fact the universal continuous map from $W$ to a space in $\Euclid_{\sqcup}$. Since the map $\IR \sqcup \IR \to P$ is an epimorphism in $\Euclid_{\sqcup}$, it has dense image (by the classification below). Therefore, $p : W \to P$ also has dense image. Since $W$ is connected, it follows that $P$ is connected as well. Thus, $P \cong \IR^n$ for some $n \in \IN$.
+
+      We claim that $p$ is an embedding of topological spaces. To this end, consider the standard embedding $i : W \to \IR^2$ that maps $x \in \IR$ in the first copy to $(x,0)$ and $y \in \IR$ in the second copy to $(0,y)$. Since $\IR^2$ is Euclidean, there is a continuous map $j : W \to \IR^2$ with $j \circ p = i$. Since $i$ is an embedding, we conclude that $p$ is an embedding.
+
+      We have shown that $W$ is isomorphic to a subspace of $\IR^n$ with dense image. Since $W$ is locally compact and $\IR^n$ is Hausdorff, this subspace is locally closed. Since it is locally closed and dense, it is open. But it is well known that $W$ is not a topological manifold, since $W \setminus \{(0,0)\}$ has too many connected components.
+    label: Euclid_coprod_no_cokernel_pairs
+    check_redundancy: false
+
+  - property: quotients of congruences
+    proof: Since the category is extensive, if it had quotients of congruences, by <a href="/content/pushouts-of-monos-via-congruence-quotients">this lemma</a> it would have pushouts of monomorphisms. But we have seen before that $\IR \sqcup_{0} \IR$ does not exist.
+    references:
+      - Euclid_coprod_no_cokernel_pairs
+
+special_objects:
+  initial object:
+    description: empty space
+  terminal object:
+    description: singleton space
+  coproducts:
+    description: disjoint union
+  products:
+    description: '[finite case] direct product'
+
+special_morphisms:
+  isomorphisms:
+    description: homeomorphisms
+    proof: This is easy.
+  monomorphisms:
+    description: injective continuous maps
+    proof: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
+  epimorphisms:
+    description: continuous maps with dense image
+    proof: 'A continuous map with dense image is an epimorphism in $\Haus$ and therefore also in $\Euclid_{\sqcup}$. Conversely, assume that $f : X \to Y$ is an epimorphism in $\Euclid_{\sqcup}$. Assume that there is a point $y \in Y \setminus \overline{f(X)}$. Consider the Euclidean component $\IR^n \subseteq Y$ containing $y$. Then $y \in \IR^n$ is not contained in the closed subset $\overline{f(X)} \cap \IR^n$. Since $\IR^n$ is a metric space and hence completely regular, there is a continuous map $\varphi : \IR^n \to \IR$ with $\varphi(y)=1$ and $\varphi \equiv 0$ on $\overline{f(X)} \cap \IR^n$. We may extend $\varphi$ to a continuous function $\psi : Y \to \IR$ by mapping every other component to $0$. Since $\psi$ is not the zero map and $f$ is an epimorphism, also $\psi \circ f$ is not the zero map. Choose $x \in X$ such that $\psi(f(x)) \neq 0$. Since $\psi$ maps every component to $0$ except for the mentioned $\IR^n$, we must have $f(x) \in \IR^n$. But then $\psi(f(x)) = \varphi(f(x))=0$ by construction of $\varphi$. This is a contradiction.'
