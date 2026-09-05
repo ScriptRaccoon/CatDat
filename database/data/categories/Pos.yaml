@@ -13,6 +13,7 @@ related:
   - FinOrd
   - PreOrd
   - Mono
+  - Pos_noiso
 
 satisfied_properties:
   - property: locally small
@@ -36,6 +37,7 @@ satisfied_properties:
 
   - property: extremal generator
     proof: We have that $\{0<1\}$ is an extremal generator even in <a href="/category/PreOrd">$\PreOrd$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
+    label: pos_extremal_generator
     references:
       - preord_extremal_generator
 
@@ -71,7 +73,8 @@ unsatisfied_properties:
   - property: effective cocongruences
     proof: |-
       Let $X$ be $\IR$ with the standard (total) order, and let $E$ be the poset with underlying set $\IR \times \{ 0, 1 \}$ and partial order such that $(x, m) \le (y, n)$ if and only if $x < y$ or $(x, m) = (y, n)$. The two maps $\IR \rightrightarrows E$ will be $x \mapsto (x, 0)$ and $x \mapsto (x, 1)$ respectively. For any partial order $(\IP, \le)$, the induced equivalence relation on the set of order-preserving functions $\IR \to \IP$ is that $f \sim g$ if and only if $f(x) \le g(y)$ and $g(x) \le f(y)$ whenever $x < y$. This relation is clearly reflexive and symmetric; for transitivity, if $f \sim g$ and $g \sim h$, then whenever $x < y$, we have $f(x) \le g(\frac{x+y}{2}) \le h(y)$ and similarly $h(x) \le g(\frac{x+y}{2}) \le f(y)$, showing that $f \sim h$.
-      On the other hand, if this cocongruence on $\IR$ were effective, then by the dual of <a href="/content/effective-congruence-quotients">this result</a>, $E$ would be the cokernel pair of the equalizer of the two maps $\IR \rightrightarrows E$. However, that equalizer is the empty poset, so $E$ would have to be the coproduct poset $\IR + \IR$, giving a contradiction.
+      On the other hand, if this cocongruence on $\IR$ were effective, i.e. the cokernel pair of some order-preserving map $P \to \IR$, then $P$ must be empty since the two maps $\IR \rightrightarrows E$ agree nowhere. So $E$ would have to be the coproduct poset $\IR + \IR$, giving a contradiction.
+    label: Pos_no_effective_cocongruences
 
 special_objects:
   initial object:
@@ -79,7 +82,7 @@ special_objects:
   terminal object:
     description: singleton poset
   coproducts:
-    description: disjoint union with the obvious partial order that leaves the distinct summands incomparable
+    description: disjoint union with the obvious partial order in which distinct summands are incomparable
   products:
     description: direct products with the evident partial order
 
