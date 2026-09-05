@@ -17,6 +17,7 @@ related:
   - Man
   - Unif
   - Meas
+  - Euclid_coprod
 
 satisfied_properties:
   - property: locally small

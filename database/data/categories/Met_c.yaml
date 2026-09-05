@@ -15,6 +15,7 @@ related:
   - Met_oo
   - Top
   - Unif
+  - Euclid_coprod
 
 satisfied_properties:
   - property: locally small
@@ -75,6 +76,7 @@ satisfied_properties:
       This makes it impossible for $\varphi$ to be continuous at $y$, giving a contradiction.
 
       Finally, since we have shown $f$ is bijective on underlying sets, to show $f$ is a homeomorphism, it suffices to show that $f$ is closed. Thus, let $F \subseteq X$ be closed. Then $d({-}, F) : X \to \IR$ is a continuous function, so there exists $\varphi : Y \to \IR$ such that $\varphi(f(x)) = d(x, F)$ for each $x\in X$. That implies that $f_*(F) = \{ y\in Y : \varphi(y) = 0 \}$ is closed.
+    label: Met_c_cogenerator
 
 unsatisfied_properties:
   - property: skeletal
