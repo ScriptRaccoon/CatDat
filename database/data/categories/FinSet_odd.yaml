@@ -1,0 +1,126 @@
+id: FinSet_odd
+name: category of finite sets of odd cardinality
+notation: $\FinSet_{\odd}$
+objects: finite sets of odd cardinality
+morphisms: maps
+description: This is the full subcategory of $\FinSet$ consisting of finite sets of odd cardinality, for example $\{0\}$ and $\{0,1,2\}$, but not $\varnothing$. We have included this category only because of its interesting property combinations.
+nlab_link: null
+
+tags:
+  - set theory
+
+related:
+  - FinSet
+  - FinSet_even
+  - FinSet_power_3
+
+satisfied_properties:
+  - property: locally small
+    proof: It is a full subcategory of <a href="/category/FinSet">$\FinSet$</a>, which is locally small.
+
+  - property: locally finite
+    proof: This property is inherited from <a href="/category/FinSet">$\FinSet$</a>.
+
+  - property: essentially countable
+    proof: This property is inherited from <a href="/category/FinSet">$\FinSet$</a>.
+
+  - property: strongly connected
+    proof: Use constant maps.
+
+  - property: cartesian closed
+    proof: This follows from the fact that the product of finitely many odd natural numbers is again odd. Hence, powers of odd numbers are also odd.
+
+  - property: kernel pairs
+    proof: >-
+      If $f : X \to Y$ is a map of finite sets with odd cardinality, then we claim that its kernel pair in $\FinSet$, the set $\{(x,x') \in X \times X : f(x) = f(x')\}$, also has odd cardinality. It decomposes into the diagonal $\{(x,x): x \in X\} \cong X$, which has odd cardinality, and the set of pairs $(x,x')$ with $x \neq x'$ and $f(x) = f(x')$. The latter has even cardinality since $C_2$ acts on it via $(x,x') \mapsto (x',x)$ without fixed points. Now use that "odd + even = odd".
+    label: FinSet_odd_kernel_pairs
+
+  - property: epi-regular
+    proof: The epimorphisms are the surjective maps (see below). In $\FinSet$, a surjective map is the coequalizer of its kernel pair, and we have just seen that $\FinSet_{\odd}$ is closed under kernel pairs in $\FinSet$.
+    references:
+      - FinSet_odd_kernel_pairs
+
+  - property: mono-regular
+    proof: 'If $f : X \to Y$ is a monomorphism in $\FinSet_{\odd}$, i.e. an injective map (see below), then $f$ is the equalizer of two maps $Y \rightrightarrows \{0,1\}$ in $\Set$, and therefore also of two maps $Y \rightrightarrows \{0,1,2\}$, which thus belong to $\FinSet_{\odd}$.'
+
+  - property: extremal generator
+    proof: The set $\{0\}$ is an extremal generator even in <a href="/category/Set">$\Set$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
+    references:
+      - set_extremal_generator
+
+  - property: extremal cogenerator
+    proof: The set $\{0,1,2\}$ is an extremal cogenerator even in <a href="/category/Set">$\Set$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
+
+  - property: effective congruences
+    proof: Let $E \rightrightarrows X$ be a congruence in $\FinSet_{\odd}$. By applying the (functorial) definition to the test object $T = \{\ast\}$, we see that it is a congruence in $\Set$, i.e. an equivalence relation, such that $E$ and $X$ are finite sets of odd cardinality. The finite set $X/E$ embeds into a finite set $Q$ of odd cardinality (either $X/E$ or $X/E + \{\ast\}$). Then $E \rightrightarrows X$ is the kernel pair of $X \twoheadrightarrow X/E \hookrightarrow Q$ in $\FinSet_{\odd}$.
+
+  - property: effective cocongruences
+    proof: >-
+      Let $X \rightrightarrows Q$ be a cocongruence in $\FinSet_{\odd}$. The induced map
+      $$\Hom(Q,\{0,1,2\}) \to \Hom(X,\{0,1,2\})^2 \cong \Hom(X+X, \{0,1,2\})$$
+      is injective, which implies that $X+X \to Q$ is surjective (where $X+X$ denotes the coproduct in $\Set$, which does not exist in $\FinSet_{\odd}$). It follows that $X \rightrightarrows Q$ is a coreflexive corelation in $\Set$. Since <a href="/category/Set">$\Set$</a> is co-Malcev and has effective cocongruences (by <a href="/category-implication/regular_epi-regular_extensive_consequences">this result</a>), there is a subset $Y \subseteq X$ such that $Q \cong X \sqcup_Y X$ in $\Set$, with $X \rightrightarrows Q$ corresponding to the two pushout inclusions. We have $\card(Q) = 2 \card(X) - \card(Y)$, so $\card(Y)$ is odd. Hence, $Q \cong X \sqcup_Y X$ remains true in $\FinSet_{\odd}$.
+    label: FinSet_odd_effective_cocongruences
+
+  - property: coquotients of cocongruences
+    proof: We have just seen that every cocongruence in $\FinSet_{\odd}$ is of the form $X \rightrightarrows X \sqcup_Y X$ for some subset $Y \subseteq X$ of odd cardinality. The equalizer in $\Set$ is the inclusion $Y \hookrightarrow X$. Since this morphism lies in $\FinSet_{\odd}$, it is also the equalizer in $\FinSet_{\odd}$.
+    references:
+      - FinSet_odd_effective_cocongruences
+
+unsatisfied_properties:
+  - property: skeletal
+    proof: The two sets $\{0\}$ and $\{1\}$ are isomorphic but not equal.
+
+  - property: small
+    proof: Even the collection of all singleton sets is not a set.
+
+  - property: countable
+    proof: Even the collection of all singleton sets is not countable.
+
+  - property: Cauchy complete
+    proof: 'The map $e : \{0,1,2\} \to \{0,1,2\}$, $0 \mapsto 0$, $1 \mapsto 1$, $2 \mapsto 1$ is idempotent and does not split in $\FinSet_{\odd}$, since a splitting $\{0,1,2\} \to X \to \{0,1,2\}$ would also be a splitting in $\FinSet$, making $X$ isomorphic to $\im(e) = \{0,1\}$.'
+
+  - property: cofiltered
+    proof: 'The maps $0,1 : \{\ast\} \rightrightarrows \{0,1,2\}$ are not equalized by any morphism, since this would amount to a set $X$ in $\FinSet_{\odd}$ such that $! : X \to \{*\}$ factors through $\varnothing$, i.e. $X = \varnothing$, which is not a valid object of $\FinSet_{\odd}$.'
+
+  - property: binary copowers
+    proof: A direct proof is possible, but (also for the remaining proofs) it is best to first establish that the inclusion functor $\FinSet_{\odd} \hookrightarrow \Set$ is cocontinuous. This follows from Lemma 1 <a href="/content/inclusion-functors">here</a> since $\FinSet_{\odd}$ contains the extremal cogenerator $\{0,1,2\}$ of $\Set$. Therefore, binary copowers exist only if $\FinSet_{\odd}$ is closed under binary copowers in $\Set$. But $\{0\} \sqcup \{0\}$ does not have odd cardinality.
+    label: FinSet_odd_inclusion_cocontinuous
+
+  - property: cokernel pairs
+    proof: >-
+      We already know that the inclusion functor $\FinSet_{\odd} \hookrightarrow \Set$ is cocontinuous. Now consider any map $e : \{0,1,2\} \to \{0,1,2\}$ with image $\{0,1\}$. It is a morphism in $\FinSet_{\odd}$. If it has a cokernel pair in $\FinSet_{\odd}$, this must be the cokernel pair in $\Set$, i.e. $\{0,1,2\} \sqcup_{\{0,1\}} \{0,1,2\} \cong \{0,1,2,2'\}$, whose cardinality, however, is even.
+    references:
+      - FinSet_odd_inclusion_cocontinuous
+
+  - property: quotients of congruences
+    proof: >-
+      Partition a finite set $X$ of cardinality $3$ into sets of cardinalities $1,2$. This yields an equivalence relation $E \subseteq X \times X$ with
+      $$\card(E) = 1^2 + 2^2 = 5.$$
+      Thus, $E \rightrightarrows X$ is a congruence in $\FinSet_{\odd}$. We already know that the inclusion functor $\FinSet_{\odd} \hookrightarrow \Set$ is cocontinuous, so a quotient in $\FinSet_{\odd}$ must be the quotient taken in $\Set$. However, since there are $2$ equivalence classes, the set $X/E$ has cardinality $2$. Thus, the quotient does not exist in $\FinSet_{\odd}$.
+    references:
+      - FinSet_odd_inclusion_cocontinuous
+
+  - property: natural numbers object
+    proof: By Lemma 2 <a href="/content/natural_numbers_objects">here</a>, if $(N,z,s)$ is a natural numbers object, then $N \cong 1 \sqcup N$. But there is no finite set with this property.
+
+  - property: multi-complete
+    proof: The same proof as for <a href="/category/FinSet_power_3">$\FinSet_{3^\bullet}$</a> works here.
+    references:
+      - FinSet_power_3_not_multi-complete
+
+special_objects:
+  terminal object:
+    description: singleton set
+  products:
+    description: '[finite case] direct products'
+
+special_morphisms:
+  isomorphisms:
+    description: bijective maps
+    proof: It is a full subcategory of $\Set$, in which isomorphisms are bijective maps.
+  monomorphisms:
+    description: injective maps
+    proof: 'The non-trivial direction follows since the inclusion functor to $\Set$ is representable (by the singleton set), and hence preserves monomorphisms.'
+  epimorphisms:
+    description: surjective maps
+    proof: For the non-trivial direction, the inclusion functor to $\Set$ is cocontinuous by Lemma 1 <a href="/content/inclusion-functors">here</a> since $\FinSet_{\odd}$ contains the extremal cogenerator $\{0,1,2\}$ of $\Set$. In particular, it preserves epimorphisms.
