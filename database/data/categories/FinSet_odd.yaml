@@ -103,11 +103,6 @@ unsatisfied_properties:
   - property: natural numbers object
     proof: By Lemma 2 <a href="/content/natural_numbers_objects">here</a>, if $(N,z,s)$ is a natural numbers object, then $N \cong 1 \sqcup N$. But there is no finite set with this property.
 
-  - property: multi-complete
-    proof: The same proof as for <a href="/category/FinSet_power_3">$\FinSet_{3^\bullet}$</a> works here.
-    references:
-      - FinSet_power_3_not_multi-complete
-
 special_objects:
   terminal object:
     description: singleton set
