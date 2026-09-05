@@ -1,5 +1,12 @@
 # results on subobject-trivial categories
 
+- id: well_powered_trivial_criterion
+  assumptions:
+    - subobject-trivial
+  conclusions:
+    - well-powered
+  proof: This is trivial.
+
 - id: thin_regular-subobject-trivial
   assumptions:
     - equalizers
