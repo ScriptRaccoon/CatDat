@@ -83,22 +83,7 @@ unsatisfied_properties:
     proof: 'The maps $0,1 : \{\ast\} \rightrightarrows \{0,1,2\}$ are not equalized by any morphism, since this would amount to a set $X$ in $\FinSet_{\odd}$ such that $! : X \to \{*\}$ factors through $\varnothing$, i.e. $X = \varnothing$, which is not a valid object of $\FinSet_{\odd}$.'
 
   - property: binary copowers
-    proof: A direct proof is possible, but (also for the remaining proofs) it is best to first establish that the inclusion functor $\FinSet_{\odd} \hookrightarrow \Set$ is cocontinuous. This follows from Lemma 1 <a href="/content/inclusion-functors">here</a> since $\FinSet_{\odd}$ contains the extremal cogenerator $\{0,1,2\}$ of $\Set$. Therefore, binary copowers exist only if $\FinSet_{\odd}$ is closed under binary copowers in $\Set$. But $\{0\} \sqcup \{0\}$ does not have odd cardinality.
-    label: FinSet_odd_inclusion_cocontinuous
-
-  - property: cokernel pairs
-    proof: >-
-      We already know that the inclusion functor $\FinSet_{\odd} \hookrightarrow \Set$ is cocontinuous. Now consider any map $e : \{0,1,2\} \to \{0,1,2\}$ with image $\{0,1\}$. It is a morphism in $\FinSet_{\odd}$. If it has a cokernel pair in $\FinSet_{\odd}$, this must be the cokernel pair in $\Set$, i.e. $\{0,1,2\} \sqcup_{\{0,1\}} \{0,1,2\} \cong \{0,1,2,2'\}$, whose cardinality, however, is even.
-    references:
-      - FinSet_odd_inclusion_cocontinuous
-
-  - property: quotients of congruences
-    proof: >-
-      Partition a finite set $X$ of cardinality $3$ into sets of cardinalities $1,2$. This yields an equivalence relation $E \subseteq X \times X$ with
-      $$\card(E) = 1^2 + 2^2 = 5.$$
-      Thus, $E \rightrightarrows X$ is a congruence in $\FinSet_{\odd}$. We already know that the inclusion functor $\FinSet_{\odd} \hookrightarrow \Set$ is cocontinuous, so a quotient in $\FinSet_{\odd}$ must be the quotient taken in $\Set$. However, since there are $2$ equivalence classes, the set $X/E$ has cardinality $2$. Thus, the quotient does not exist in $\FinSet_{\odd}$.
-    references:
-      - FinSet_odd_inclusion_cocontinuous
+    proof: A direct proof is possible, but it is best to first establish that the inclusion functor $\FinSet_{\odd} \hookrightarrow \Set$ is cocontinuous. This follows from Lemma 1 <a href="/content/inclusion-functors">here</a> since $\FinSet_{\odd}$ contains the extremal cogenerator $\{0,1,2\}$ of $\Set$. Therefore, binary copowers exist only if $\FinSet_{\odd}$ is closed under binary copowers in $\Set$. But $\{0\} \sqcup \{0\}$ does not have odd cardinality.
 
   - property: natural numbers object
     proof: By Lemma 2 <a href="/content/natural_numbers_objects">here</a>, if $(N,z,s)$ is a natural numbers object, then $N \cong 1 \sqcup N$. But there is no finite set with this property.
