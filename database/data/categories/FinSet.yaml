@@ -18,6 +18,7 @@ related:
   - B
   - FinGrp
   - FinSet_even
+  - FinSet_odd
   - FinSet_power_3
 
 satisfied_properties:

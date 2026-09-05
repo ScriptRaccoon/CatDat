@@ -51,6 +51,7 @@
 \id: \operatorname{id}
 \ev: \operatorname{ev}
 \even: \operatorname{even}
+\odd: \operatorname{odd}
 \card: \operatorname{card}
 \colim: \operatorname{colim}
 \im: \operatorname{im}

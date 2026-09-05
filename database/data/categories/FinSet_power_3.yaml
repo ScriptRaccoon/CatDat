@@ -12,6 +12,7 @@ tags:
 related:
   - FinSet
   - FinSet_even
+  - FinSet_odd
 
 satisfied_properties:
   - property: locally small
@@ -109,6 +110,7 @@ unsatisfied_properties:
       where $X \in \FinSet_{3^\bullet}$ and the product is taken in $\Set$. Therefore, there is a family of cones $(p_j : P_j \to \prod_{i \in I} A_i)_{j \in J}$ such that for every cone $f : X \to \prod_{i \in I} A_i$ there is a unique index $j \in J$ and a unique map $g : X \to P_j$ such that $p_j \circ g = f$. Applying this to $X = \{0\}$, we see that the maps $p_j$ induce a <i>bijective</i> map
       $$\textstyle\coprod_{j \in J} P_j \to \prod_{i \in I} A_i.$$
       In particular, the images of the maps $p_j$ are pairwise disjoint. Since $\prod_{i \in I} A_i$ is an infinite set, $J$ is infinite. In particular, there are distinct indices $j_1,j_2 \in J$. Choose elements $y_1 \in P_{j_1}$ and $y_2 \in P_{j_2}$. There is a map $f : \{0,1,2\} \to \prod_{i \in I} A_i$ with image $\{p_{j_1}(y_1), p_{j_2}(y_2)\}$. By assumption, there is some (unique) index $k \in J$ such that $f$ factors through $p_k$. But then both $p_{j_1}(y_1)$ and $p_{j_2}(y_2)$ are contained in the image of $p_k$, so that $j_1 = k = j_2$, which is a contradiction.
+    label: FinSet_power_3_not_multi-complete
 
 special_objects:
   terminal object:

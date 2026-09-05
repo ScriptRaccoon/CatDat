@@ -12,6 +12,7 @@ tags:
 related:
   - FinSet
   - FinSet_power_3
+  - FinSet_odd
 
 satisfied_properties:
   - property: locally small
