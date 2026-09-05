@@ -21,7 +21,8 @@
 		"devlog",
 		"cech",
 		"Unif",
-		"noiso"
+		"noiso",
+		"coprod"
 	],
 	"words": [
 		"abelian",
@@ -38,6 +39,7 @@
 		"Axiomatising",
 		"axiomatization",
 		"Baer",
+		"Baire",
 		"bijection",
 		"bijections",
 		"bijective",
