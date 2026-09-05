@@ -34,6 +34,13 @@
     - wide pullbacks
   proof: Each slice category has finite products and is essentially finite, hence has all products by <a href="/category-implication/freyd_finite">this result</a> followed by <a href="/category-implication/thin_finite_product_reduction">this result</a>.
 
+- id: pullback_implies_Cauchy_complete
+  assumptions:
+    - pullbacks
+  conclusions:
+    - Cauchy complete
+  proof: 'A direct proof is possible, but we give a more conceptual one. Suppose that $e : X \to X$ is an idempotent morphism in a category $\C$. It can be regarded as an idempotent morphism $e \to e$ in $\C / X$. If $\C$ has pullbacks, then the slice category $\C / X$ has pullbacks; in fact, the forgetful functor creates all connected limits. The slice category also has a terminal object, and hence is finitely complete. In particular, it has equalizers and is <a href="/category-implication/equalizers_consequence">therefore Cauchy complete</a>. Applying the forgetful functor $\C / X \to \C$ to a splitting of $e$ in $\C / X$ yields a splitting of $e$ in $\C$.'
+
 - id: kernel_pair_is_pullback
   assumptions:
     - pullbacks
