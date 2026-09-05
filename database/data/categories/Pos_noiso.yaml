@@ -71,12 +71,6 @@ unsatisfied_properties:
       It is easy to check that the element $(1,1')$ is isolated.
     references:
       - pos_extremal_generator
-    label: Pos_noiso_inclusion_continuous
-
-  - property: equalizers of cokernel pairs
-    proof: Consider the constant order-preserving map $\{0 < 1\} \to \{0 < 1\}$, $x \mapsto 0$. Its cokernel pair is $\{0 < 1, 0 < 1'\}$ with the two obvious maps from $\{0 < 1\}$. Since we have seen above that the inclusion functor $\Pos_{\noiso} \hookrightarrow \Pos$ is continuous, the equalizer of $\{0 < 1\} \rightrightarrows \{0 < 1, 0 < 1'\}$ must be the poset $\{0\}$, which, however, has an isolated point.
-    references:
-      - Pos_noiso_inclusion_continuous
 
   - property: quotients of congruences
     proof: The inclusion functor $\Pos_{\noiso} \hookrightarrow \Pos$ is cocontinuous by Lemma 1 <a href="/content/inclusion-functors">here</a>, since $\Pos_{\noiso}$ contains the extremal cogenerator $\{0 < 1\}$ of $\Pos$. Therefore, it suffices to find a congruence whose quotient in $\Pos$ has an isolated point. Take any non-empty poset $X$ without isolated points, such as $\{0 < 1\}$, and consider the maximal congruence $X \times X \rightrightarrows X$. Its quotient in $\Pos$ is just $\{\ast\}$, which therefore has an isolated point.
