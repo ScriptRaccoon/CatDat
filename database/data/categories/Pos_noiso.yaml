@@ -1,0 +1,111 @@
+id: Pos_noiso
+name: category of partially ordered sets without isolated points
+notation: $\Pos_{\noiso}$
+objects: partially ordered sets that have no isolated points
+morphisms: order-preserving functions
+description: Here, a point is called isolated if it is not comparable to any other point. Thus, we consider partially ordered sets whose connected components have cardinality $\geq 2$. This category provides an example of an infinitary extensive category that is not Cauchy complete.
+nlab_link: null
+
+tags:
+  - order theory
+
+related:
+  - Pos
+
+satisfied_properties:
+  - property: locally small
+    proof: It is a full subcategory of <a href="/category/Pos">$\Pos$</a>, which is locally small.
+
+  - property: binary products
+    proof: Let $P,Q$ be two posets without isolated points. Then $P \times Q$ has no isolated points, because if a point $(p,q) \in P \times Q$ is isolated, it is easy to check that $p$ is isolated as well.
+
+  - property: infinitary extensive
+    proof: 'It is easy to check that $\Pos_{\noiso} \hookrightarrow \Pos$ is closed under coproducts. If $f : X \to P + Q$ is an order-preserving map, where $X,P,Q$ have no isolated points, then the preimage $f^*(P)$ also has no isolated points. In fact, if $x \in f^*(P)$, then there is some $y \neq x$ in $X$ that is comparable to $x$, since $X$ has no isolated points. Then $f(x) \in P$ and $f(y)$ is comparable to $f(x)$. It follows that $f(y) \in P$, and hence $y \in f^*(P)$. We conclude the proof with Lemma 11 <a href="/content/subcategories">here</a>.'
+
+  - property: semi-strongly connected
+    proof: This property is inherited from <a href="/category/Pos">$\Pos$</a>.
+
+  - property: extremal generator
+    proof: The ordered set $\{0 < 1\}$ is an extremal generator, even for <a href="/category/PreOrd">$\PreOrd$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
+    references:
+      - preord_extremal_generator
+
+  - property: extremal cogenerator
+    proof: The ordered set $\{0 < 1\}$ is an extremal cogenerator, even for <a href="/category/Pos">$\Pos$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
+    references:
+      - pos_extremal_cogenerator
+
+  - property: well-powered
+    proof: This follows from the description of monomorphisms below.
+
+  - property: well-copowered
+    proof: This follows from the description of epimorphisms below.
+
+  - property: ℵ₁-filtered
+    proof: In fact, every small diagram has a cocone. Simply take the colimit in <a href="/category/Pos">$\Pos$</a> and then map it to $\{0 < 1\}$ via a constant map.
+
+  - property: cokernel pairs
+    proof: Let $P \to Q$ be an order-preserving map between posets without isolated points. We show that the poset $Q \sqcup_P Q$, constructed as the poset reflection of the pushout in $\PreOrd$, also has no isolated points. Notice that the inclusion maps $Q \twoheadrightarrow Q \sqcup_P Q$ are injective because the codiagonal $Q \sqcup_P Q \to Q$ provides a retraction. Every point in $Q \sqcup_P Q$ lies in the image of one of the two inclusion maps. Let us say that it comes from a point $q \in Q$ in the first copy. Since $q$ is not isolated, it is comparable to a point $q' \in Q$ distinct from $q$. Since the inclusion map into $Q \sqcup_P Q$ is injective, the images of $q$ and $q'$ are also distinct, and of course they are still comparable.
+
+unsatisfied_properties:
+  - property: skeletal
+    proof: This is trivial.
+
+  - property: terminal object
+    proof: Assume that there is a terminal object $P$. In particular, there is exactly one order-preserving map $\{0 < 1\} \to P$. Since every constant map is order-preserving, it follows that $P$ has exactly one element. But then $P$ has an isolated point.
+
+  - property: strongly connected
+    proof: There is no map $\{0 < 1\} \to \varnothing$.
+
+  - property: Cauchy complete
+    proof: The constant map $\{0 < 1\} \to \{0 < 1\}$, $x \mapsto 0$ does not split, because a splitting would also be a splitting in $\Pos$, therefore isomorphic to $\{0 < 1\} \twoheadrightarrow \{0\} \hookrightarrow \{0 < 1\}$. But $\{0\}$ has an isolated point.
+
+  - property: balanced
+    proof: The inclusion of $\{0 < 1\} \sqcup \{2 < 3\}$ (which has two components) into $\{0 < 1 < 2 < 3\}$ provides a counterexample.
+
+  - property: kernel pairs
+    proof: >-
+      First, we observe that the inclusion functor $\Pos_{\noiso} \hookrightarrow \Pos$ is continuous. This follows from the dual of Lemma 1 <a href="/content/inclusion-functors">here</a>, since $\Pos_{\noiso}$ contains the extremal generator $\{0 < 1\}$ of $\Pos$. Therefore, it suffices to find a morphism in $\Pos_{\noiso}$ whose kernel pair in $\Pos$ has an isolated point.
+      Consider the epimorphism $f : \{0 < 1\} \sqcup \{1' < 2\} \to \{0 < 1 < 2\}$ that identifies $1$ and $1'$. The kernel pair has the elements
+      $$(0,0),(1,1),(1',1'),(2,2),(1,1'),(1',1).$$
+      It is easy to check that the element $(1,1')$ is isolated.
+    references:
+      - pos_extremal_generator
+    label: Pos_noiso_inclusion_continuous
+
+  - property: equalizers of cokernel pairs
+    proof: Consider the constant order-preserving map $\{0 < 1\} \to \{0 < 1\}$, $x \mapsto 0$. Its cokernel pair is $\{0 < 1, 0 < 1'\}$ with the two obvious maps from $\{0 < 1\}$. Since we have seen above that the inclusion functor $\Pos_{\noiso} \hookrightarrow \Pos$ is continuous, the equalizer of $\{0 < 1\} \rightrightarrows \{0 < 1, 0 < 1'\}$ must be the poset $\{0\}$, which, however, has an isolated point.
+    references:
+      - Pos_noiso_inclusion_continuous
+
+  - property: quotients of congruences
+    proof: The inclusion functor $\Pos_{\noiso} \hookrightarrow \Pos$ is cocontinuous by Lemma 1 <a href="/content/inclusion-functors">here</a>, since $\Pos_{\noiso}$ contains the extremal cogenerator $\{0 < 1\}$ of $\Pos$. Therefore, it suffices to find a congruence whose quotient in $\Pos$ has an isolated point. Take any non-empty poset $X$ without isolated points, such as $\{0 < 1\}$, and consider the maximal congruence $X \times X \rightrightarrows X$. Its quotient in $\Pos$ is just $\{\ast\}$, which therefore has an isolated point.
+    references:
+      - pos_extremal_cogenerator
+
+  - property: effective cocongruences
+    proof: We can reuse the proof from <a href="/category/Pos">$\Pos$</a>, since the posets considered there have no isolated points.
+    references:
+      - Pos_no_effective_cocongruences
+
+special_objects:
+  initial object:
+    description: empty poset
+  coproducts:
+    description: disjoint union with the obvious partial order in which distinct summands are incomparable
+  products:
+    description: '[non-empty case] direct products with the evident partial order'
+
+special_morphisms:
+  isomorphisms:
+    description: bijective functions that are order-preserving and order-reflecting
+    proof: This is easy.
+  monomorphisms:
+    description: injective order-preserving functions
+    proof: 'For the non-trivial direction, assume that $f : P \to Q$ is a monomorphism and $a,b \in P$ satisfy $f(a)=f(b)$. Consider the two constant maps $c_a, c_b : \{0 < 1\} \to P$ with values $a$ and $b$. These are valid morphisms in $\Pos_{\noiso}$. Then $f \circ c_a = f \circ c_b$, so $c_a = c_b$, which means that $a = b$.'
+  epimorphisms:
+    description: surjective order-preserving functions
+    proof: We can use the same proof as for <a href="/category/Pos">$\Pos$</a>.
+  regular monomorphisms:
+    description: embeddings
+    proof: 'We use the fact that the regular monomorphisms in <a href="/category/Pos">$\Pos$</a> are precisely the embeddings, but we have to be a little careful since $\Pos_{\noiso}$ does not have all finite (co-)limits. If $P \to Q$ is an embedding of posets without isolated points, we have seen in the proof for $\Pos$ that it is the equalizer of its cokernel pair $Q \rightrightarrows Q \sqcup_P Q$ in $\Pos$. Moreover, we have seen above that this cokernel pair has no isolated points. It follows that $P \to Q$ is a regular monomorphism in $\Pos_{\noiso}$. Conversely, suppose that $P \to Q$ is a regular monomorphism in $\Pos_{\noiso}$. Since we already know that the inclusion functor $\Pos_{\noiso} \hookrightarrow \Pos$ is continuous, it follows that $P \to Q$ is also a regular monomorphism in $\Pos$. Therefore, it is an embedding.'

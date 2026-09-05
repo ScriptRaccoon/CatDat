@@ -40,6 +40,7 @@
 \ab: \mathrm{ab}
 \reg: \mathrm{reg}
 \fin: \mathrm{fin}
+\noiso: \mathrm{noiso}
 
 # operators
 \Mor: \operatorname{Mor}
