@@ -103,6 +103,7 @@
 \FinAb: \mathbf{FinAb}
 \FinGrp: \mathbf{FinGrp}
 \FreeAb: \mathbf{FreeAb}
+\Free: \mathbf{Free}
 \TorsFreeAb: \mathbf{TorsFreeAb}
 \TorsAb: \mathbf{TorsAb}
 \Cat: \mathbf{Cat}
