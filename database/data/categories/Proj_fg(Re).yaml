@@ -15,6 +15,7 @@ related:
   - R-Mod
   - FreeAb_fg
   - FinVect_u
+  - Free_fg(ZxZ)
 
 satisfied_properties:
   - property: locally small

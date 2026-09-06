@@ -50,11 +50,13 @@
 \Bilin: \operatorname{Bilin}
 \Ob: \operatorname{Ob}
 \id: \operatorname{id}
+\adj: \operatorname{adj}
 \ev: \operatorname{ev}
 \even: \operatorname{even}
 \odd: \operatorname{odd}
 \card: \operatorname{card}
 \colim: \operatorname{colim}
+\coker: \operatorname{coker}
 \im: \operatorname{im}
 \coim: \operatorname{coim}
 \lcm: \operatorname{lcm}
@@ -72,6 +74,7 @@
 \rank: \operatorname{rank}
 \Gal: \operatorname{Gal}
 \Alt: \operatorname{Alt}
+\Ann: \operatorname{Ann}
 \Open: \operatorname{Open}
 \Id: \operatorname{Id}
 \Br: \operatorname{Br}
@@ -103,6 +106,7 @@
 \FinAb: \mathbf{FinAb}
 \FinGrp: \mathbf{FinGrp}
 \FreeAb: \mathbf{FreeAb}
+\Free: \mathbf{Free}
 \TorsFreeAb: \mathbf{TorsFreeAb}
 \TorsAb: \mathbf{TorsAb}
 \Cat: \mathbf{Cat}
