@@ -15,6 +15,7 @@ related:
   - Vect
   - grMod_G(R)
   - Proj_fg(Re)
+  - Free_fg(ZxZ)
 
 satisfied_properties:
   - property: locally small

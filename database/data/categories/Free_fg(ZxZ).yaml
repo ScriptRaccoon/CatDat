@@ -1,0 +1,118 @@
+id: Free_fg(ZxZ)
+name: category of finitely generated free modules over Z x Z
+notation: $\Free_{\fg}(\IZ \times \IZ)$
+objects: $\IZ \times \IZ$-modules that are finitely generated and free, i.e. $\cong (\IZ \times \IZ)^n$ for some $n$
+morphisms: $\IZ \times \IZ$-linear maps
+description: This is a typical example of an additive category that is not Cauchy complete. It can also be seen as the free additive category on the walking idempotent.
+nlab_link: null
+
+tags:
+  - algebra
+
+related:
+  - R-Mod
+  - FreeAb_fg
+  - Proj_fg(Re)
+
+satisfied_properties:
+  - property: locally small
+    proof: It is a full subcategory of $(\IZ \times \IZ){-}\Mod$, which is locally small.
+
+  - property: essentially countable
+    proof: Every object is isomorphic to one of the countably many modules $(\IZ \times \IZ)^n$, and the set $\Hom((\IZ \times \IZ)^n,(\IZ \times \IZ)^m) \cong M_{m \times n}(\IZ \times \IZ)$ is countable.
+
+  - property: additive
+    proof: The category is closed under finite direct sums in $(\IZ \times \IZ){-}\Mod$, which is additive.
+
+  - property: extremal generator
+    proof: For every ring $R$, we know that $R$ is an extremal generator of $R{-}\Mod$, and hence also an extremal generator of the category of finitely generated free $R$-modules.
+
+  - property: self-dual
+    proof: More generally, if $R$ is a ring, the functor $\underline{\Hom}(-,R)$ implements an equivalence of categories between the dual of the category of finitely generated free $R$-modules and the category of finitely generated free $R^{\op}$-modules. See also the proof of self-duality <a href="/category/Proj_fg(Re)">here</a>.
+    references:
+      - proj_fg_self-dual
+
+  - property: quotients of congruences
+    proof: >-
+      Since $(\IZ \times \IZ){-}\Mod$ is equivalent to $\Ab \times \Ab$ via $M \mapsto ((1,0) M, (0,1) M)$, and the equivalence maps $(\IZ \times \IZ)^n$ to $(\IZ^n,\IZ^n)$, the category $\Free_{\fg}(\IZ \times \IZ)$ is equivalent to the full subcategory of $\FreeAb_{\fg} \times \FreeAb_{\fg}$ consisting of those pairs of finitely generated free abelian groups $(A,B)$ such that $\rank(A)=\rank(B)$, i.e. $A \cong B$. We denote these equivalences by $M \mapsto (M_1,M_2)$.
+
+      Let $E \rightrightarrows M$ be a congruence in $\Free_{\fg}(\IZ \times \IZ)$. By applying the definition to the test object $\IZ \times \IZ$, we see that it is a congruence in $(\IZ \times \IZ){-}\Mod$. Thus, we have
+      $$E = \{(x,y) \in M \times M : x - y \in U\}$$
+      for some $\IZ \times \IZ$-submodule $U \subseteq M$ (up to isomorphism), namely
+      $$U = \{x \in M : (x,0) \in E\}.$$
+      This implies
+      $$E \cong M \oplus U.$$
+      The pair $(U_1,U_2)$ of $\IZ$-modules corresponding to $U$ therefore satisfies $E_i \cong M_i \oplus U_i$ for $i=1,2$. Since $E_i$ is finitely generated and free, we see that $U_i$ is a finitely generated projective $\IZ$-module, which is therefore free. Moreover, the rank of $U_i$ is
+      $$\rank(U_i) = \rank(E_i) - \rank(M_i).$$
+      Since $\rank(E_1) = \rank(E_2)$ and $\rank(M_1) = \rank(M_2)$, we conclude that $\rank(U_1) = \rank(U_2)$. We have shown that $U$ belongs to $\Free_{\fg}(\IZ \times \IZ)$.
+
+      The quotient of the congruence $E \rightrightarrows M$ in $(\IZ \times \IZ){-}\Mod$ is $M/U$, but this will <i>not</i> be the quotient in the subcategory of free modules. Instead, consider the congruences $E_i \rightrightarrows M_i$ for $i=1,2$ in $\Ab$, whose quotients in $\TorsFreeAb$ and hence also in $\FreeAb_{\fg}$ are the torsion-free reflections $(M_i / U_i) / T(M_i / U_i)$. The rank of this abelian group is $\rank(M_i) - \rank(U_i)$, which therefore does not depend on $i$. Thus, the pair of these quotients belongs to $\Free_{\fg}(\IZ \times \IZ)$.
+
+unsatisfied_properties:
+  - property: skeletal
+    proof: This is trivial.
+
+  - property: small
+    proof: Even the collection of trivial modules is not a set.
+
+  - property: countable
+    proof: Even the collection of trivial modules is not countable.
+
+  - property: locally finite
+    proof: The set $\Hom(\IZ \times \IZ,\IZ \times \IZ) \cong \IZ \times \IZ$ is not finite.
+
+  - property: balanced
+    proof: 'The homomorphism $(2,2) : \IZ \times \IZ \to \IZ \times \IZ$ is a counterexample.'
+
+  - property: Cauchy complete
+    proof: 'The idempotent endomorphism $(1,0) : \IZ \times \IZ \to \IZ \times \IZ$ does not split.'
+
+special_objects:
+  initial object:
+    description: trivial module
+  terminal object:
+    description: trivial module
+  coproducts:
+    description: '[finite case] direct sums'
+  products:
+    description: '[finite case] direct sums'
+
+special_morphisms:
+  isomorphisms:
+    description: bijective homomorphisms
+    proof: It is a full subcategory of $R{-}\Mod$ for $R = \IZ \times \IZ$, and we already know that the isomorphisms in $R{-}\Mod$ are the bijective homomorphisms.
+  monomorphisms:
+    description: injective homomorphisms
+    proof: For the non-trivial direction, the forgetful functor to $\Set$ is representable, hence preserves monomorphisms.
+  epimorphisms:
+    description: >-
+      More generally, let $R$ be a commutative Noetherian ring, and let $f : R^n \to R^m$ be a linear map represented by a matrix $A \in M_{m \times n}(R)$. Let $I_m(A)$ be the ideal generated by the $m \times m$-minors of $A$. The following are equivalent:
+      <ol>
+      <li>$f$ is an epimorphism in $\Free_{\fg}(R)$.</li>
+      <li>We have $\Ann(I_m(A))=0$.</li>
+      <li>The ideal $I_m(A)$ contains a regular element of $R$.</li>
+      <li>If $\coker(f)$ denotes the cokernel in $R{-}\Mod$, then $\Ann(\coker(f))$ contains a regular element of $R$.</li>
+      <li>The localized map $f \otimes \id_K : K^n \to K^m$ is surjective, where $K$ is the total ring of fractions of $R$.</li>
+      </ol>
+    proof: >-
+      (1) $\iff$ (2): $~$ Condition (1) is clearly equivalent to the condition that the dual linear map
+      $$f^* : \underline{\Hom}(R^m,R) \to \underline{\Hom}(R^n,R)$$
+      is injective. This identifies with a linear map $R^m \to R^n$, which is represented by the transpose matrix $A^T \in M_{n \times m}(R)$. By McCoy's rank theorem (Theorem 51 on p. 159 in: McCoy, <i>Rings an ideals</i>, Carus Math. Monographs, Vol. 8), $A^T$ represents an injective linear map if and only if $\Ann(I_m(A^T))=0$. But $I_m(A^T)=I_m(A)$. Thus, (1) is equivalent to (2).
+
+
+      (2) $\iff$ (3): $~$ The implication (3) $\implies$ (2) is trivial. Now assume that (3) does not hold, i.e. $I_m(A)$ contains no regular element, i.e. is contained in the set of zero divisors. Since $R$ is Noetherian, the set of zero divisors is the finite union of the associated primes (of the zero ideal). Thus, by the Prime Avoidance Lemma, $I_m(A) \subseteq P$ for some associated prime $P$, say $P = \Ann(x)$ for some $x \neq 0$. Then $x \in \Ann(I_m(A))$, which shows that (2) does not hold.
+
+
+      (3) $\implies$ (4): $~$ It suffices to prove that $I_m(A) \subseteq \Ann(\coker(f))$. For this, it suffices to prove that $\det(A') \in \Ann(\coker(f))$, where $A'$ is any $m \times m$-submatrix of $A$. By Cramer's Rule,
+      $$A' \cdot \adj(A') = \det(A') \cdot 1.$$
+      Thus, for every $x \in R^m$ we have
+      $$\det(A') \, x \in \im(A') \subseteq \im(A),$$
+      and hence $\det(A') \, [x] = 0$ in $\coker(f)$.
+
+
+      (4) $\implies$ (3): $~$ Assume $\coker(f)$ is annihilated by some regular element $r \in R$. Thus, $r e_i \in \im(A)$ for every $1 \leq i \leq m$. It follows that there is some matrix $B \in M_{n \times m}(R)$ with $AB = r 1$. By the Cauchy-Binet formula,
+      $$\textstyle r^m = \det(AB) = \sum_{\card(J)=m} \det(A_J) \det(B_J),$$
+      where $A_J$ is the submatrix of $A$ which selects the columns in $J$. This shows that the regular element $r^m$ is contained in $I_m(A)$.
+
+
+      (4) $\iff$ (5): $~$ Since $(-) \otimes_R K$ is right exact, condition (5) says that $\coker(f) \otimes_R K = 0$. Since $K$ is the localization of $R$ by the subset of regular elements, this means that every element of $\coker(f)$ is annihilated by some regular element of $R$. Since $\coker(f)$ is finitely generated, this is equivalent to (4).
