@@ -1,0 +1,85 @@
+id: Free_fg(ZxZ)
+name: category of finitely generated free modules over Z x Z
+notation: $\Free_{\fg}(\IZ \times \IZ)$
+objects: $\IZ \times \IZ$-modules that are finitely generated and free, i.e. $\cong (\IZ \times \IZ)^n$ for some $n$
+morphisms: $\IZ \times \IZ$-linear maps
+description: This is a typical example of an additive category that is not Cauchy complete. It can also be seen as the free additive category on the walking idempotent.
+nlab_link: null
+
+tags:
+  - algebra
+
+related:
+  - R-Mod
+  - FreeAb_fg
+  - Proj_fg(Re)
+
+satisfied_properties:
+  - property: locally small
+    proof: It is a full subcategory of $(\IZ \times \IZ){-}\Mod$, which is locally small.
+
+  - property: essentially countable
+    proof: Every object is isomorphic to one of the countably many modules $(\IZ \times \IZ)^n$, and the set $\Hom((\IZ \times \IZ)^n,(\IZ \times \IZ)^m) \cong M_{m \times n}(\IZ \times \IZ)$ is countable.
+
+  - property: additive
+    proof: The category is closed under finite direct sums in $(\IZ \times \IZ){-}\Mod$, which is additive.
+
+  - property: extremal generator
+    proof: For every ring $R$ we know that $R$ is an extremal generator of $R{-}\Mod$, and hence also an extremal generator in the category of finitely generated free $R$-modules.
+
+  - property: self-dual
+    proof: More generally, if $R$ is a ring, the functor $\underline{\Hom}(-,R)$ implements an equivalence of categories between the dual of the category of finitely generated free $R$-modules and the category of finitely generated free $R^{\op}$-modules. See also the proof of self-duality <a href="/category/Proj_fg(Re)">here</a>.
+    references:
+      - proj_fg_self-dual
+
+unsatisfied_properties:
+  - property: skeletal
+    proof: This is trivial.
+
+  - property: small
+    proof: Even the collection of trivial modules is not a set.
+
+  - property: countable
+    proof: Even the collection of trivial modules is not countable.
+
+  - property: locally finite
+    proof: The set $\Hom(\IZ \times \IZ,\IZ \times \IZ) \cong \IZ \times \IZ$ is not finite.
+
+  - property: balanced
+    proof: 'The homomorphism $(2,2) : \IZ \times \IZ \to \IZ \times \IZ$ is a counterexample.'
+
+  - property: Cauchy complete
+    # FIXME
+    proof: TBA
+
+  - property: kernel pairs
+    # FIXME
+    proof: TBA
+
+  - property: quotients of congruences
+    # FIXME
+    proof: TBA
+
+special_objects:
+  initial object:
+    description: trivial module
+  terminal object:
+    description: trivial module
+  coproducts:
+    description: '[finite case] direct sums'
+  products:
+    description: '[finite case] direct sums'
+
+special_morphisms:
+  isomorphisms:
+    description: bijective homomorphisms
+    # FIXME
+    proof: TBA
+  monomorphisms:
+    description: injective homomorphisms
+    # FIXME
+    proof: TBA
+  epimorphisms:
+    description: TBA
+    # FIXME
+    proof: TBA

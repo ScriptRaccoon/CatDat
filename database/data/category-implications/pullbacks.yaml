@@ -34,6 +34,13 @@
     - wide pullbacks
   proof: Each slice category has finite products and is essentially finite, hence has all products by <a href="/category-implication/freyd_finite">this result</a> followed by <a href="/category-implication/thin_finite_product_reduction">this result</a>.
 
+- id: pullback_implies_Cauchy_complete
+  assumptions:
+    - pullbacks
+  conclusions:
+    - Cauchy complete
+  proof: 'A direct proof is possible, but we give a more conceptual one. Suppose that $e : X \to X$ is an idempotent morphism in a category $\C$. It can be regarded as an idempotent morphism $e \to e$ in $\C / X$. If $\C$ has pullbacks, then the slice category $\C / X$ has pullbacks; in fact, the forgetful functor creates all connected limits. The slice category also has a terminal object, and hence is finitely complete. In particular, it has equalizers and is <a href="/category-implication/equalizers_consequence">therefore Cauchy complete</a>. Applying the forgetful functor $\C / X \to \C$ to a splitting of $e$ in $\C / X$ yields a splitting of $e$ in $\C$.'
+
 - id: kernel_pair_is_pullback
   assumptions:
     - pullbacks
@@ -90,3 +97,16 @@
   conclusions:
     - kernel pairs
   proof: This holds by definition.
+
+- id: kernel_pairs_coequalizers_implies_Cauchy-complete
+  assumptions:
+    - coequalizers of kernel pairs
+  conclusions:
+    - Cauchy complete
+  proof: >-
+    Let $e : X \to X$ be an idempotent morphism. By assumption, the kernel pair $p_1,p_2 : E \rightrightarrows X$ of $e$ exists, i.e. the universal pair satisfying $e \circ p_1 = e \circ p_2$, and it has a coequalizer $q : X \to Q$. The morphism $e : X \to X$ coequalizes $p_1,p_2$, so there is a morphism $i : Q \to X$ satisfying $e = i \circ q$.
+    It remains to prove that $q \circ i = \id_Q$. Since $q$ is an epimorphism, it suffices to prove that $q \circ i \circ q = q$, i.e. that $q \circ e = q$.
+
+    Because $e \circ e = e \circ \id_X$, the universal property of the kernel pair yields a (unique) morphism $f : X \to E$ with $p_1 \circ f = e$ and $p_2 \circ f = \id_X$. Since $q \circ p_1 = q \circ p_2$, we obtain
+    $$q \circ e = q \circ p_1 \circ f = q \circ p_2 \circ f = q,$$
+    finishing the proof.

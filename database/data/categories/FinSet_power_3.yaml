@@ -80,11 +80,6 @@ unsatisfied_properties:
       Remark: If we instead consider finite sets of cardinality a power of $2$, then binary copowers do exist, but binary coproducts still do not exist, since $2^0+2^1=3$ is not a power of $2$.
     label: FinSet_power_3_inclusion_cocontinuous
 
-  - property: cokernel pairs
-    proof: We already know that the inclusion functor $\FinSet_{3^\bullet} \hookrightarrow \Set$ is cocontinuous, so it suffices to find an example of a map in $\FinSet_{3^\bullet}$ whose cokernel pair in $\Set$ is not contained in $\FinSet_{3^\bullet}$. Take the inclusion map $\{0\} \to \{0,1,2\}$. Then in $\Set$ we compute $\{0,1,2\} \sqcup_{\{0\}} \{0,1,2\} \cong \{0,1,2,1',2'\}$, which has $5$ elements, which is not a power of $3$.
-    references:
-      - FinSet_power_3_inclusion_cocontinuous
-
   - property: kernel pairs
     proof: >-
       First, notice that the inclusion functor $\FinSet_{3^\bullet} \hookrightarrow \Set$ is continuous since it is representable. Therefore, if a map $f : X \to Y$ has a kernel pair in $\FinSet_{3^\bullet}$, it must be the set $\{(x,x') \in X \times X : f(x)=f(x')\}$.

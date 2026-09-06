@@ -79,11 +79,12 @@
     - direct
   proof: See the <a href="https://ncatlab.org/nlab/show/direct+category#direct_versus_oneway_categories" target="_blank">nLab</a> for a proof.
 
-- id: one-way_implies_core-thin
+- id: one-way_consequences
   assumptions:
     - one-way
   conclusions:
     - core-thin
+    - Cauchy complete
   proof: This is trivial.
 
 - id: freyd_small

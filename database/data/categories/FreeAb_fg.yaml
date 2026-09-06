@@ -16,6 +16,7 @@ related:
   - FreeAb
   - FinVect_c
   - Proj_fg(Re)
+  - Free_fg(ZxZ)
 
 satisfied_properties:
   - property: locally small
