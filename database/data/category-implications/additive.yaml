@@ -64,9 +64,13 @@
 - id: grothendieck_abelian_cogenerator
   assumptions:
     - Grothendieck abelian
+    - locally essentially small
   conclusions:
     - cogenerator
-  proof: See <a href="https://ncatlab.org/nlab/show/Categories+and+Sheaves" target="_blank">Kashiwara-Schapira</a>, Thm. 9.6.3.
+  proof: >-
+    See <a href="https://ncatlab.org/nlab/show/Categories+and+Sheaves" target="_blank">Kashiwara-Schapira</a>, Thm. 9.6.3.
+
+    Remark: The assumption that the category is locally essentially small is necessary (and is implicit in most of the literature), as the example $[\On,\Ab]$ shows.
 
 - id: grothendieck_abelian_self-dual
   assumptions:
