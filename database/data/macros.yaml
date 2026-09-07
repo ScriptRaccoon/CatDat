@@ -63,6 +63,7 @@
 \Spec: \operatorname{Spec}
 \ord: \operatorname{ord}
 \diag: \operatorname{diag}
+\disc: \operatorname{disc}
 \Sub: \operatorname{Sub}
 \Quot: \operatorname{Quot}
 \supp: \operatorname{supp}

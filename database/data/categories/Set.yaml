@@ -18,6 +18,7 @@ related:
   - SetxSet
   - Setne
   - Set_arrow
+  - Set_disc
 
 satisfied_properties:
   - property: locally small
