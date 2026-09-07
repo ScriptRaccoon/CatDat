@@ -72,13 +72,23 @@
 
     Remark: The assumption that the category is locally essentially small is necessary (and is implicit in most of the literature), as the example $[\On,\Ab]$ shows.
 
-- id: grothendieck_abelian_self-dual
+- id: additive_CIP_CSP
   assumptions:
-    - Grothendieck abelian
-    - self-dual
+    - additive
+    - balanced
+    - CIP
+    - CSP
   conclusions:
     - trivial
-  proof: This follows since the dual of a non-trivial Grothendieck abelian category cannot be Grothendieck abelian. See Peter Freyd, <i>Abelian categories</i>, p. 116.
+  proof: >-
+    We work in a balanced additive category with products and coproducts such that, for every family of objects $(X_i)$, the canonical morphism
+    $$\textstyle \alpha : \coprod_i X_i \to \prod_{i \in I} X_i$$
+    is a monomorphism and an epimorphism, and therefore an isomorphism. In particular, for every object $A$ the canonical morphism
+    $$\textstyle \alpha : \coprod_{n \geq 1} A \to \prod_{n \geq 1} A$$
+    is an isomorphism. By <a href="/content/infinite-products-coproducts-additive-categories">this proposition</a>, this implies that $A = 0$.
+
+
+    Remark: This result strengthens the well-known theorem (and is inspired by it) stating that the dual of a Grothendieck abelian category can only be Grothendieck abelian when it is trivial, which appears as exercise B on p. 116 in Freyd's book <i>Abelian categories</i>. This follows from the result we have just proved since a Grothendieck abelian category with products is additive, balanced, and satisfies CIP (by <a href="/category-implication/CIP_criterion">this result</a>).
 
 - id: split_abelian_condition
   assumptions:
