@@ -1,6 +1,6 @@
 id: BOn
 name: delooping of the additive monoid of ordinal numbers
-notation: $B\On$
+notation: $B\OnColl$
 objects: a single object
 morphisms: ordinal numbers, with addition as composition
 description: Every monoid $M$ induces a category $BM$ with a single object $*$. This also works when $M$ is large, in which case $BM$ is not locally small. In this example, we apply this construction to the large monoid of ordinal numbers with respect to addition, so composition is $\alpha \circ \beta = \alpha + \beta$.
@@ -32,7 +32,7 @@ satisfied_properties:
     proof: See <a href="https://math.stackexchange.com/questions/5129138/" target="_blank">MSE/5129138</a>.
 
   - property: locally cartesian closed
-    proof: The slice category $B\On / *$ is isomorphic to the poset $(\On,\geq)$ (not to $(\On,\leq)$). This category is thin and and semi-strongly connected, <a href="/category-implication/sequential_implies_lcc">hence</a> cartesian closed.
+    proof: The slice category $B\OnColl / *$ is isomorphic to the poset $(\OnColl,\geq)$ (not to $(\OnColl,\leq)$). This category is thin and and semi-strongly connected, <a href="/category-implication/sequential_implies_lcc">hence</a> cartesian closed.
 
   - property: ℵ₁-cofiltered
     proof: In fact, it is $\kappa$-cofiltered for every cardinal $\kappa$. By the dual of Theorem 2.2 at the <a href="https://ncatlab.org/nlab/show/filtered+category">nLab</a> it suffices to prove any set of objects has a cone (which is trivial in a one-object category) and that any set of parallel morphisms is equalized by some morphism. Here, this means that for every set of ordinals $A$ there is some ordinal $\beta$ such that $\alpha + \beta$ for $\alpha \in A$ does not depend on $\alpha$. Take $\beta$ to be any ordinal larger than $\sup(A)$ of the form $\omega^\gamma$. It is well-known that $\omega^\gamma$ has the property that $\alpha + \omega^\gamma = \omega^\gamma$ for all $\alpha < \omega^\gamma$ (Kunen's <i>Set Theory</i>, Exercise I.9.53), from which the claim follows.
@@ -41,21 +41,21 @@ satisfied_properties:
     references:
       - BN_aleph1-filtered_colimits
     proof: >-
-      The proof is similar to <a href="/category/BN">$B\IN$</a>. Let $\I$ be an $\aleph_1$-filtered small category and $D : \I \to B\On$ a diagram. A cocone $\lambda = (\lambda_i)_{i \in \I}$ for $D$ is a family of ordinals satisfying $\lambda_i = \lambda_j + D(f)$ for every morphism $f: i \to j$ in $\I$.
+      The proof is similar to <a href="/category/BN">$B\IN$</a>. Let $\I$ be an $\aleph_1$-filtered small category and $D : \I \to B\OnColl$ a diagram. A cocone $\lambda = (\lambda_i)_{i \in \I}$ for $D$ is a family of ordinals satisfying $\lambda_i = \lambda_j + D(f)$ for every morphism $f: i \to j$ in $\I$.
 
 
-      We first observe that $D$ factors uniquely through the preorder reflection of $\I$. Indeed, any two parallel morphisms in $\I$ are coequalized by some morphism, and $B\On$ is left cancellative. Thus, we may assume that $\I$ is a preordered set. Each inequality $i \leq j$ in $\I$ is mapped to an ordinal number $\alpha_{i,j} \coloneqq D(i \to j)$, and these numbers satisfy
+      We first observe that $D$ factors uniquely through the preorder reflection of $\I$. Indeed, any two parallel morphisms in $\I$ are coequalized by some morphism, and $B\OnColl$ is left cancellative. Thus, we may assume that $\I$ is a preordered set. Each inequality $i \leq j$ in $\I$ is mapped to an ordinal number $\alpha_{i,j} \coloneqq D(i \to j)$, and these numbers satisfy
       $$\alpha_{i,k} = \alpha_{j,k} + \alpha_{i,j}$$
       for all $i \leq j \leq k$. In particular, $\alpha_{i,j} \leq \alpha_{i,k}$.
 
 
-      For fixed $i \in \I$, the collection $\{\alpha_{i,j} : j \geq i\}$ is a set of ordinals because $\I$ is small, hence bounded above in $\On$. We claim that it has a maximum element. Otherwise, we can find a countable chain $i = j_0 \leq j_1 \leq j_2 \leq \dotsc$ in $\I$ such that $\alpha_{i,j_n} < \alpha_{i,j_{n+1}}$ for all $n \in \IN$. Since $\I$ is $\aleph_1$-filtered, there is an upper bound $j_\infty \in \I$ of $(j_n)_{n \in \IN}$. For each $n \in \IN$, the equation
+      For fixed $i \in \I$, the collection $\{\alpha_{i,j} : j \geq i\}$ is a set of ordinals because $\I$ is small, hence bounded above in $\OnColl$. We claim that it has a maximum element. Otherwise, we can find a countable chain $i = j_0 \leq j_1 \leq j_2 \leq \dotsc$ in $\I$ such that $\alpha_{i,j_n} < \alpha_{i,j_{n+1}}$ for all $n \in \IN$. Since $\I$ is $\aleph_1$-filtered, there is an upper bound $j_\infty \in \I$ of $(j_n)_{n \in \IN}$. For each $n \in \IN$, the equation
       $$\alpha_{i,j_{n+1}} = \alpha_{j_n,j_{n+1}} + \alpha_{i,j_n}$$
       implies that $\alpha_{j_n,j_{n+1}} > 0$. Hence,
       $$\alpha_{j_n,j_\infty} = \alpha_{j_{n+1},j_\infty} + \alpha_{j_n,j_{n+1}} > \alpha_{j_{n+1},j_\infty},$$
-      so $(\alpha_{j_n,j_\infty})_{n \in \IN}$ is a strictly decreasing infinite sequence of ordinals, contradicting the well-foundedness of $\On$. Thus, the maximum
+      so $(\alpha_{j_n,j_\infty})_{n \in \IN}$ is a strictly decreasing infinite sequence of ordinals, contradicting the well-foundedness of $\OnColl$. Thus, the maximum
       $$u_i \coloneqq \max \{ \alpha_{i,j} : j \geq i \}$$
-      is a well-defined ordinal number, which we regard as a morphism in $B\On$. The family $(u_i)_{i \in \I}$ forms a cocone for $D$, since for all $i \leq j$ we have
+      is a well-defined ordinal number, which we regard as a morphism in $B\OnColl$. The family $(u_i)_{i \in \I}$ forms a cocone for $D$, since for all $i \leq j$ we have
       $$\begin{align*}
       u_i & = \max \{ \alpha_{i,k} : k \geq i \} \\
       & = \max \{ \alpha_{i,k} : k \geq j \} \\
@@ -63,7 +63,7 @@ satisfied_properties:
       & = \max \{ \alpha_{j,k} : k \geq j \} + \alpha_{i,j} \\
       & = u_j + \alpha_{i,j}.
       \end{align*}$$
-      To establish the universal property, let $(\lambda_i)_{i \in \I}$ be any cocone for $D$, so that $\lambda_i = \lambda_j + \alpha_{i,j}$ for all $i \leq j$. The cocone relation $u_i = u_j + \alpha_{i,j}$ implies that $u_i \geq u_j$ whenever $i \leq j$. By the well-foundedness of $\On$, there exists $i_0 \in \I$ such that $u_j = u_{i_0}$ for all $j \geq i_0$. For such $j$, the relation
+      To establish the universal property, let $(\lambda_i)_{i \in \I}$ be any cocone for $D$, so that $\lambda_i = \lambda_j + \alpha_{i,j}$ for all $i \leq j$. The cocone relation $u_i = u_j + \alpha_{i,j}$ implies that $u_i \geq u_j$ whenever $i \leq j$. By the well-foundedness of $\OnColl$, there exists $i_0 \in \I$ such that $u_j = u_{i_0}$ for all $j \geq i_0$. For such $j$, the relation
       $$u_{i_0} = u_j + \alpha_{i_0,j} = u_{i_0} + \alpha_{i_0,j}$$
       forces $\alpha_{i_0,j} = 0$. Consequently,
       $$u_{i_0} = \max \{ \alpha_{i_0,j} : j \geq i_0 \} = 0.$$
@@ -78,14 +78,14 @@ satisfied_properties:
 
       For uniqueness, suppose $\kappa'$ is any ordinal satisfying $\lambda_i = \kappa' + u_i$ for all $i \in \I$. Evaluating at $i_0$ yields
       $$\lambda_{i_0} = \kappa' + u_{i_0} = \kappa' + 0 = \kappa',$$
-      hence $\kappa' = \kappa$. Therefore, the cocone $(u_i)_{i \in \I}$ is the colimit of $D$ in $B\On$.
+      hence $\kappa' = \kappa$. Therefore, the cocone $(u_i)_{i \in \I}$ is the colimit of $D$ in $B\OnColl$.
 
 unsatisfied_properties:
   - property: one-way
     proof: This is trivial.
 
   - property: locally essentially small
-    proof: This is because $\On$ is large.
+    proof: This is because $\OnColl$ is a large collection.
 
   - property: balanced
     proof: Every finite ordinal is both a mono- and an epimorphism (see below), but only $0$ is an isomorphism.
