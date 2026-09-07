@@ -42,6 +42,12 @@
 \fin: \mathrm{fin}
 \noiso: \mathrm{noiso}
 
+# standard collections
+\SetColl: \mathrm{Set}
+\TopColl: \mathrm{Top}
+\GrpColl: \mathrm{Grp}
+\CatColl: \mathrm{Cat}
+
 # operators
 \Mor: \operatorname{Mor}
 \Hom: \operatorname{Hom}
