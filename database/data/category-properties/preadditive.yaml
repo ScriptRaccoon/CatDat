@@ -1,8 +1,12 @@
 id: preadditive
 relation: is
-description: |-
-  A category is <i>preadditive</i> when it is locally essentially small* and each hom-set carries the structure of an abelian group such that the composition is bilinear. Notice that "preadditive" is an extra structure. The property here just says that some preadditive structure exists.
-  *We demand this instead of the more common "locally small" to ensure that preadditive categories are invariant under equivalences of categories.
+description: >-
+  A category is <i>preadditive</i> if, for every pair of objects $A,B$, the collection of morphisms $\Hom(A,B)$ is equipped with the structure of an abelian group such that composition is bilinear:
+  $$\begin{align*}
+  f \circ (g + h) &= f \circ g + f \circ h \\
+  (f + g) \circ h &= f \circ h + g \circ h.
+  \end{align*}$$
+  Note that being preadditive is an extra structure. The property here merely says that a preadditive structure exists. Furthermore, since categories are not assumed to be locally small (see <a href="/content/foundations">Foundations</a>), the abelian group $\Hom(A,B)$ is not necessarily a set. In contrast, a locally small preadditive category is precisely an $(\Ab,\otimes)$-enriched category.
 nlab_link: https://ncatlab.org/nlab/show/Ab-enriched+category
 dual: preadditive
 invariant_under_equivalences: true
