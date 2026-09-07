@@ -111,7 +111,8 @@
   proof: >-
     See <a href="https://arxiv.org/abs/1409.7051" target="_blank">Deriving Auslander's formula</a>, Cor. 5.2, or <a href="https://arxiv.org/abs/math/0102087" target="_blank">Sheafifiable homotopy model categories</a>, Prop. 3.10.
 
-    Remark: The assumption that the category is locally essentially small is necessary (and is implicit in most of the literature), as the example $[\Set_{\disc},\Ab]$ shows.
+
+    Remark: The assumption that the category is locally essentially small is necessary (and is implicit in most of the literature), as the example $[\Set_{\disc},\Ab]$ shows (see <a href="/category/Set_disc_Ab">here</a>).
 
 - id: algebraic_implies_lfp
   assumptions:
