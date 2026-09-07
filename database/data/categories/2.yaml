@@ -11,6 +11,7 @@ tags:
 
 related:
   - '1'
+  - Set_disc
 
 satisfied_properties:
   - property: discrete

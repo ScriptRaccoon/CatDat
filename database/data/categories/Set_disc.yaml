@@ -1,0 +1,30 @@
+id: Set_disc
+name: discrete category of sets
+notation: $\Set_{\disc}$
+objects: sets
+morphisms: only the identity morphisms
+description: This category provides an example of a large discrete category.
+nlab_link: null
+
+tags:
+  - set theory
+  - category theory
+
+related:
+  - '2'
+  - Set
+
+satisfied_properties:
+  - property: discrete
+    proof: This is trivial.
+
+  - property: inhabited
+    proof: This is trivial.
+
+unsatisfied_properties:
+  - property: essentially small
+    proof: This is obvious.
+
+special_objects: {}
+
+special_morphisms: {}

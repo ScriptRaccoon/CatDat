@@ -46,3 +46,19 @@
   conclusions:
     - trivial
   proof: This is trivial.
+
+- id: discrete_multi_initial
+  assumptions:
+    - essentially discrete
+    - multi-initial object
+  conclusions:
+    - essentially small
+  proof: This is trivial.
+
+- id: discrete_accessible
+  assumptions:
+    - essentially discrete
+    - accessible
+  conclusions:
+    - essentially small
+  proof: This is trivial.
