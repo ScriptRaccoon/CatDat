@@ -10,26 +10,26 @@ In _CatDat_, we work with the following convenient set-theoretic foundation for 
 ## Sets, collections, and hypercollections
 
 We work with [ZFC](https://en.wikipedia.org/wiki/Zermelo%E2%80%93Fraenkel_set_theory) and two [Grothendieck universes](https://en.wikipedia.org/wiki/Grothendieck_universe), which we denote by
-$$\mathrm{Set} \in \mathrm{Set}^+.$$
+$$\SetColl \in \SetColl^+.$$
 Thus, in principle everything is a set, but we rename them as follows to introduce three "levels of size":
 
-- The sets in $\mathrm{Set}$ are renamed to _sets_ (sometimes also _small sets_).
-- The sets in $\mathrm{Set}^+$ are renamed to _collections_ (sometimes also _large sets_).
-- All available sets are renamed to _hypercollections_ (which may or may not lie in $\mathrm{Set}^+$).
+- The sets in $\SetColl$ are renamed to _sets_ (sometimes also _small sets_).
+- The sets in $\SetColl^+$ are renamed to _collections_ (sometimes also _large sets_).
+- All available sets are renamed to _hypercollections_ (which may or may not lie in $\SetColl^+$).
 
-For example, $\IR$ is a set, $\mathrm{Set}$ is a collection, and $\mathrm{Set}^+$ is a hypercollection. The collection $\mathrm{Set}$ consists of all sets, and the hypercollection $\mathrm{Set}^+$ consists of all collections. Every set is also a collection, and every collection is also a hypercollection. There is a collection $\mathrm{Grp}$ that consists of all groups, a collection $\mathrm{Top}$ of all topological spaces, etc.
+For example, $\IR$ is a set, $\SetColl$ is a collection, and $\SetColl^+$ is a hypercollection. The collection $\SetColl$ consists of all sets, and the hypercollection $\SetColl^+$ consists of all collections. Every set is also a collection, and every collection is also a hypercollection. There is a collection $\GrpColl$ that consists of all groups, a collection $\TopColl$ of all topological spaces, etc.
 
 Note that sets, collections, and hypercollections all satisfy the ZFC axioms. In this sense, (hyper)collections behave in the same way as sets. This is crucial for category theory. For example, we can form the collection of all maps between two collections. This basic property is not satisfied by [classes](<https://en.wikipedia.org/wiki/Class_(set_theory)>), which are not adequate for category theory.
 
-For example, there is a collection $[\mathrm{Set},\mathrm{Set}]$ that consists of all maps $\mathrm{Set} \to \mathrm{Set}$.
+For example, there is a collection $[\SetColl,\SetColl]$ that consists of all maps $\SetColl \to \SetColl$.
 
 Just imagine three copies of ZFC embedded into each other, each representing a "level of size". Grothendieck universes are merely an implementation detail, which we can _and will_ drop from now on. Sets are on level 1, collections on level 2, and hypercollections on level 3. Concrete mathematical objects such as numbers or functions can be thought of as living on level 0 (even though they are usually modeled as sets in ZFC).
 
 <img class="small" alt="visualization of three levels of size" src="/img/three-levels-of-size.webp" />
 
-The levels are not defined by cardinality alone. For example, $\{\mathrm{Set}\}$ is a collection with just one element, but it is not a set (since otherwise $\mathrm{Set}$ would be a set). In particular, not every finite collection is a set. However, every finite collection is isomorphic to a set.
+The levels are not defined by cardinality alone. For example, $\{\SetColl\}$ is a collection with just one element, but it is not a set (since otherwise $\SetColl$ would be a set). In particular, not every finite collection is a set. However, every finite collection is isomorphic to a set.
 
-In our framework, there is no way to group all hypercollections into a single mathematical object; for this, one would need a third Grothendieck universe $\mathrm{Set}^{++}$, but such a grouping is usually not required.
+In our framework, there is no way to group all hypercollections into a single mathematical object; for this, one would need a third Grothendieck universe $\SetColl^{++}$, but such a grouping is usually not required.
 
 A family $(X_i)_{i \in I}$ of collections is called _small_ when its index collection is a set.
 
@@ -56,9 +56,9 @@ We write $\Hom(X,Y)$ or $\Mor(X,Y)$ for the collection of such morphisms. This c
 
 When a morphism $f : X \to Y$ happens to be uniquely determined, it will be written as $!_{X,Y}$ or even just $!$.
 
-A _small category_ is defined as above, but using _sets_ $O$ and $M$ (instead of collections). A _hypercategory_ is defined similarly using _hypercollections_ $O$ and $M$. Every small category is a category, and every category is a hypercategory. Notice that there is a collection of all small categories $\mathrm{Cat}$, and likewise a hypercollection of all categories $\mathrm{Cat}^+$.
+A _small category_ is defined as above, but using _sets_ $O$ and $M$ (instead of collections). A _hypercategory_ is defined similarly using _hypercollections_ $O$ and $M$. Every small category is a category, and every category is a hypercategory. Notice that there is a collection of all small categories $\CatColl$, and likewise a hypercollection of all categories $\CatColl^+$.
 
-For example, the category of sets $\Set$ has $\Ob(\Set) = \mathrm{Set}$, the collection of all sets. The category of groups $\Grp$ has $\Ob(\Grp) = \mathrm{Grp}$, the collection of all groups. Other typical categories (topological spaces, graphs, metric spaces, etc.) are constructed as usual. All these examples are locally small.
+For example, the category of sets $\Set$ has $\Ob(\Set) = \SetColl$, the collection of all sets. The category of groups $\Grp$ has $\Ob(\Grp) = \GrpColl$, the collection of all groups. Other typical categories (topological spaces, graphs, metric spaces, etc.) are constructed as usual. All these examples are locally small.
 
 Collections are the objects of a hypercategory $\Set^+$.
 
