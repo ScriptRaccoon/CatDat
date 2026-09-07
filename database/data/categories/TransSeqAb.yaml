@@ -1,0 +1,118 @@
+id: TransSeqAb
+name: category of long transfinite sequences of abelian groups
+notation: $[\On,\Ab]$
+objects: 'long transfinite sequences of abelian groups, i.e. families of abelian groups $(A_\alpha)$ indexed by <i>all</i> ordinal numbers, equipped with transition homomorphisms $A_{\alpha,\beta} : A_\alpha \to A_\beta$ for $\alpha \leq \beta$ satisfying $A_{\alpha,\alpha} = \id_{A_\alpha}$ and $A_{\alpha,\gamma} = A_{\beta,\gamma} \circ A_{\alpha,\beta}$ for $\alpha \leq \beta \leq \gamma$'
+morphisms: A morphism $A \to B$ is a family of homomorphisms $A_\alpha \to B_\alpha$ such that the evident square commutes for every $\alpha \leq \beta$.
+description: This is the functor category $[\On,\Ab]$, where $\On$ is the thin <a href="/category/On">category of ordinal numbers</a>. It is a larger variant of the <a href="/category/SeqAb">category of sequences of abelian groups</a> $[\IN,\Ab]$. This category rarely appears in practice, but we have added it because of its interesting combinations of properties. For example, it shows that a Grothendieck abelian category that is not locally small does not necessarily have a cogenerator. For some background on why this functor category is well-defined, see <a href="/content/foundations">Foundations</a>.
+nlab_link: null
+
+tags:
+  - algebra
+
+related:
+  - Ab
+  - On
+  - SeqAb
+  - Set_disc_Ab
+
+satisfied_properties:
+  - property: preadditive
+    proof: This property is immediately inherited from <a href="/category/Ab">$\Ab$</a>, because we may define the preadditive structure pointwise via $(f+g)_\alpha \coloneqq f_\alpha + g_\alpha$. Note that for two transfinite sequences $A,B$, the collection $\Hom(A,B)$ is a <i>possibly large</i> abelian group, which is compatible with our definition of a preadditive category.
+
+  - property: cocomplete
+    proof: This property is immediately inherited from <a href="/category/Ab">$\Ab$</a>. Colimits are defined pointwise.
+
+  - property: complete
+    proof: This property is immediately inherited from <a href="/category/Ab">$\Ab$</a>. Limits are defined pointwise.
+
+  - property: exact filtered colimits
+    proof: This property is immediately inherited from <a href="/category/Ab">$\Ab$</a>.
+
+  - property: normal
+    proof: This property is immediately inherited from <a href="/category/Ab">$\Ab$</a>.
+
+  - property: conormal
+    proof: This property is immediately inherited from <a href="/category/Ab">$\Ab$</a>.
+
+  - property: generator
+    proof: >-
+      Define the functor $G : \On \to \Ab$ on objects by
+      $$\textstyle G_\alpha \coloneqq \bigoplus_{\gamma \leq \alpha} \IZ \, e_\gamma$$
+      with free generators $e_\gamma$. For $\alpha \leq \beta$, define the transition map $G_\alpha \to G_\beta$ by $e_\gamma \mapsto e_\gamma$ for $\gamma \leq \alpha$. Thus, $G$ is the composition of functors
+      $$\On \xrightarrow{+1} \On \hookrightarrow \Set \xrightarrow{F} \FreeAb \hookrightarrow \Ab.$$
+      To verify that $G$ is a generator, it suffices to show that for every non-zero functor $A : \On \to \Ab$, there is a non-zero morphism $G \to A$. Pick an ordinal $\kappa$ and a non-zero element $x \in A_\kappa$. For any ordinal $\alpha$, define the homomorphism $f_\alpha : G_\alpha \to A_\alpha$ by
+      $$f_\alpha(e_\gamma) \coloneqq \begin{cases}
+      A_{\kappa,\alpha}(x) & \alpha \geq \kappa \text{ and } \gamma = \kappa \\
+      0 & \text{else.}
+      \end{cases}$$
+      for ordinals $\gamma \leq \alpha$. In particular, $f_\kappa(e_\kappa) = x$, so $f_\kappa$ is non-zero. To show that $f = (f_\alpha) : G \to A$ is a morphism, for $\gamma \leq \alpha \leq \beta$ we compute:
+      $$\begin{align*}
+      A_{\alpha,\beta}(f_\alpha(e_\gamma)) & = \begin{cases}
+      A_{\alpha,\beta}(A_{\kappa,\alpha}(x)) & \alpha \geq \kappa \text{ and } \gamma = \kappa \\
+      A_{\alpha,\beta}(0) & \text{else.}
+      \end{cases} \\
+      & = \begin{cases}
+      A_{\kappa,\beta}(x) & \alpha \geq \kappa \text{ and } \gamma = \kappa \\
+      0 & \text{else.}
+      \end{cases} \\
+      & \quad (\text{since } \kappa = \gamma  \implies \kappa \leq \alpha \text{ anyway}) \\
+      & = \begin{cases}
+      A_{\kappa,\beta}(x) & \beta \geq \kappa \text{ and } \gamma = \kappa \\
+      0 & \text{else.}
+      \end{cases} \\
+      & = f_\beta(e_\gamma) \\
+      & = f_\beta(G_{\alpha,\beta}(e_\gamma))
+      \end{align*}$$
+    label: TransSeqAb_generator
+
+unsatisfied_properties:
+  - property: skeletal
+    proof: This is trivial.
+
+  - property: split abelian
+    proof: The diagonal functor $\Ab \hookrightarrow [\On,\Ab]$ is fully faithful and exact, so the claim follows from the fact that <a href="/category/Ab">$\Ab$</a> is not split abelian.
+
+  - property: well-powered
+    proof: >-
+      Consider the functor $G : \On \to \Ab$ defined by
+      $$\textstyle G(\alpha) \coloneqq \bigoplus_{\gamma \leq \alpha} \IZ \, e_\gamma,$$
+      which we have already identified as a generator. For every ordinal $\kappa$, consider the subfunctor $A^\kappa \subseteq G$ defined by
+      $$\textstyle (A^\kappa)_\alpha \coloneqq \bigoplus_{\gamma \leq \min(\alpha,\kappa)} \IZ \, e_\gamma.$$
+      For $\kappa < \lambda$, the subfunctors $A^\kappa$ and $A^{\lambda}$ are distinct because $(A^\kappa)_{\lambda} = \bigoplus_{\gamma \leq \kappa} \IZ \, e_\gamma$ and $(A^\lambda)_{\lambda} = \bigoplus_{\gamma \leq \lambda} \IZ \, e_\gamma$ are distinct subgroups of $G_{\lambda}$.
+    references:
+      - TransSeqAb_generator
+
+  - property: cogenerator
+    proof: >-
+      For each ordinal $\kappa$, define a functor $X^\kappa : \On \to \Ab$ which is constant at $\IZ$ on ordinals $\leq \kappa$ and is $0$ on ordinals $> \kappa$. The transition maps are identities of $\IZ$ for ordinals $\leq \kappa$ and necessarily zero for larger ordinals. Also define the functor $Y^\kappa : \On \to \Ab$ which is $\IZ$ at the ordinal $\kappa$ and $0$ at every other ordinal. Its transition maps are uniquely determined. There is a morphism $\iota^\kappa : Y^\kappa \to X^\kappa$ which is the identity of $\IZ$ at the ordinal $\kappa$ and necessarily zero at all other ordinals. Naturality is easy to check, and $\iota^\kappa$ is non-zero.
+
+      If a cogenerator $C$ exists in $[\On,\Ab]$, then for every $\kappa$ there is a morphism $f^\kappa : X^\kappa \to C$ such that $f^\kappa \circ \iota^\kappa : Y^\kappa \to C$ is non-zero. Since it is necessarily zero at all ordinals $\neq \kappa$, it must be non-zero at $\kappa$. But $\iota^\kappa$ is the identity at $\kappa$. Hence, $f^\kappa$ is non-zero at $\kappa$, i.e. the element $(f^\kappa)_\kappa(1) \in C_\kappa$ is non-zero. Consider the element
+      $$c_\kappa \coloneqq (f^\kappa)_0(1) \in C_0.$$
+      Its image in $C_\kappa$ is, by naturality of $f^\kappa$,
+      $$C_{0,\kappa}(c_\kappa) = (f^\kappa)_\kappa(X^\kappa_{0,\kappa}(1)) = (f^\kappa)_\kappa(1) \neq 0.$$
+      But for $\lambda > \kappa$ we have
+      $$C_{0,\lambda}(c_\kappa) = (f^\kappa)_\lambda(X^\kappa_{0,\lambda}(1)) = (f^\kappa)_\lambda(0) = 0.$$
+      Thus, $\kappa$ is the largest ordinal $\lambda$ such that $C_{0,\lambda}(c_\kappa) \neq 0$. Thus, $\kappa$ can be reconstructed from $c_\kappa$. We conclude that the map
+      $$\OnColl \to C_0, \quad \kappa \mapsto c_\kappa$$
+      is injective. This is impossible since $C_0$ is a set.
+
+special_objects:
+  initial object:
+    description: sequence of trivial groups
+  terminal object:
+    description: sequence of trivial groups
+  coproducts:
+    description: pointwise defined direct sums
+  products:
+    description: pointwise defined direct products
+
+special_morphisms:
+  isomorphisms:
+    description: morphisms that are pointwise bijective
+    proof: This is trivial.
+  monomorphisms:
+    description: morphisms that are pointwise injective
+    proof: The category is abelian and hence has kernels, constructed pointwise. Thus, a morphism $f = (f_\alpha)$ is a monomorphism if and only if $\ker(f_\alpha) = 0$ for all $\alpha$, i.e. each $f_\alpha$ is a monomorphism.
+  epimorphisms:
+    description: morphisms that are pointwise surjective
+    proof: The category is abelian and hence has cokernels, constructed pointwise. Thus, a morphism $f = (f_\alpha)$ is an epimorphism if and only if $\coker(f_\alpha) = 0$ for all $\alpha$, i.e. each $f_\alpha$ is an epimorphism.
