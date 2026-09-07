@@ -9,6 +9,7 @@ invariant_under_equivalences: true
 
 related:
   - additive
+  - zero morphisms
 
 tags:
   - morphism behavior

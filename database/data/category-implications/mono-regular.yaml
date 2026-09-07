@@ -27,4 +27,4 @@
     - preadditive
   conclusions:
     - normal
-  proof: The a monomorphism is the equalizer of $f,g$, it is the kernel of $f-g$.
+  proof: If a monomorphism is the equalizer of $f,g$, it is the kernel of $f-g$.
