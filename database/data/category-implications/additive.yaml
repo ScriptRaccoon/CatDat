@@ -4,7 +4,6 @@
   assumptions:
     - preadditive
   conclusions:
-    - locally essentially small
     - zero morphisms
   proof: This is trivial.
 
