@@ -21,6 +21,7 @@ related:
   - grAb
   - SeqAb
   - Set_disc_Ab
+  - TransSeqAb
 
 satisfied_properties: []
 
