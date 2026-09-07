@@ -47,6 +47,7 @@
 \TopColl: \mathrm{Top}
 \GrpColl: \mathrm{Grp}
 \CatColl: \mathrm{Cat}
+\OnColl: \mathrm{On}
 
 # operators
 \Mor: \operatorname{Mor}

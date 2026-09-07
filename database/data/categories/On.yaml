@@ -1,9 +1,9 @@
 id: On
 name: partially ordered collection of ordinal numbers
-notation: $(\On,\leq)$
+notation: $\On$
 objects: ordinal numbers
 morphisms: 'a unique morphism $(\alpha,\beta): \alpha \to \beta$ if $\alpha \leq \beta$'
-description: This category is a large variant of the thin <a href="/category/N">category of natural numbers</a>.
+description: This is the partially ordered collection $\On = (\OnColl,\leq)$, regarded as a thin category. This category is a large variant of the thin <a href="/category/N">category of natural numbers</a>.
 nlab_link: null
 
 tags:
