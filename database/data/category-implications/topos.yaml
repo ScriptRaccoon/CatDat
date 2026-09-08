@@ -35,6 +35,78 @@
     - coregular
   proof: This is proven in <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, A2.6.3.
 
+- id: topos_monadic_over_itself
+  assumptions:
+    - elementary topos
+    - complete
+  conclusions:
+    - cocomplete
+  proof: 'This follows from the fact that for an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is monadic, and therefore creates limits (i.e. it creates colimits in $\T$ from limits in $\T$).'
+
+- id: topos_monadic_over_itself_countable_powers
+  assumptions:
+    - elementary topos
+    - countable powers
+  conclusions:
+    - countable copowers
+  proof: 'This follows from the fact that for an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is monadic, and therefore creates limits (i.e. it creates colimits in $\T$ from limits in $\T$).'
+
+- id: topos_monadic_over_itself_sequential
+  assumptions:
+    - elementary topos
+    - sequential limits
+  conclusions:
+    - sequential colimits
+  proof: 'This follows from the fact that for an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is monadic, and therefore creates limits (i.e. it creates colimits in $\T$ from limits in $\T$).'
+
+- id: topos_monadic_over_itself_sifted
+  assumptions:
+    - elementary topos
+    - cosifted limits
+  conclusions:
+    - sifted colimits
+  proof: 'This follows from the fact that for an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is monadic, and therefore creates limits (i.e. it creates colimits in $\T$ from limits in $\T$).'
+
+- id: topos_monadic_over_itself_directed
+  assumptions:
+    - elementary topos
+    - directed limits
+  conclusions:
+    - directed colimits
+  proof: 'This follows from the fact that for an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is monadic, and therefore creates limits (i.e. it creates colimits in $\T$ from limits in $\T$).'
+
+- id: topos_monadic_over_itself_filtered
+  assumptions:
+    - elementary topos
+    - cofiltered limits
+  conclusions:
+    - filtered colimits
+  proof: 'This follows from the fact that for an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is monadic, and therefore creates limits (i.e. it creates colimits in $\T$ from limits in $\T$).'
+
+- id: topos_monadic_over_itself_aleph1_filtered
+  assumptions:
+    - elementary topos
+    - ℵ₁-cofiltered limits
+  conclusions:
+    - ℵ₁-filtered colimits
+  proof: 'This follows from the fact that for an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is monadic, and therefore creates limits (i.e. it creates colimits in $\T$ from limits in $\T$).'
+
+- id: topos_monadic_over_itself_aleph2_powers
+  assumptions:
+    - elementary topos
+    - ℵ₂-small powers
+  conclusions:
+    - ℵ₂-small copowers
+  proof: 'This follows from the fact that for an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is monadic, and therefore creates limits (i.e. it creates colimits in $\T$ from limits in $\T$).'
+
+- id: topos_monadic_over_itself_aleph2
+  assumptions:
+    - elementary topos
+    - ℵ₂-small products
+  conclusions:
+    - ℵ₂-small coproducts
+  proof: 'This follows from the fact that for an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is monadic, and therefore creates limits (i.e. it creates colimits in $\T$ from limits in $\T$).'
+
 - id: grothendieck_topos_definition
   assumptions:
     - Grothendieck topos
