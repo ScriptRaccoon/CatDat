@@ -14,6 +14,7 @@ related:
   - FinVect
   - FiltVect
   - FreeAb
+  - Vect_c
 
 satisfied_properties:
   - property: split abelian
