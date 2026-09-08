@@ -1,0 +1,142 @@
+id: Eff
+name: effective topos
+notation: $\Eff$
+objects: A set $X$ along with a subset $E_X \subseteq \IN \times X \times X$ giving an effective partial equivalence relation (see below for precise definition)
+morphisms: A morphism $(X, E_X) \to (Y, E_Y)$ is a subset $f \subseteq \IN \times X \times Y$ giving an effective functional relation, modulo a certain equivalence relation (see below for precise definitions)
+description: >-
+  The effective topos gives a "realizability" model of first-order intuitionistic logic roughly matching the principles of constructive mathematics &mdash; for example, that a proof of existence requires a computable function on the inputs whose output is a witness of the property, and similarly that a proof of a disjunction requires a computation (based on inputs from the context) of which branch of the disjunction holds. For instance, in this model, every total function $\IN \to \IN$ is (internally) recursive. Similarly, in the resulting model of constructive analysis, it turns out that every total function $\IR \to \IR$ on the constructive reals is continuous; and the Intermediate Value Theorem fails.
+
+  To give a precise definition, first fix a certain Turing-equivalent theory of computation, with an encoding of programs as elements of $\IN$ (note that not every element of $\IN$ needs to be a valid program encoding). We also fix a pairing function $\langle {-}, {-} \rangle : \IN \xrightarrow{\sim} \IN \times \IN$ along with the inverse pair $p_1, p_2 : \IN \rightrightarrows \IN$. We will define notation $p \cdot n \downarrow$ to mean that $p$ is a valid program encoding, and running the corresponding program with input $n$ terminates without error, returning a value $p \cdot n$.
+
+  Given a subset $E_X \subseteq \IN \times X \times X$, we will use notation $n \Vdash x_1 = x_2$ (or informally, $n$ realizes equality of $x_1$ and $x_2$) to mean $(n, x_1, x_2) \in E_X$. We will say that $E_X$ is an <i>effective partial equivalence relation</i> if $(p_1)_*(E_X)$ is a partial equivalence relation on $X$ with partial recursive functions relating the corresponding realizers; namely:
+
+  * (Symmetry:) There exists $s \in \IN$ such that whenever $n \Vdash x_1 = x_2$, then $s \cdot n \downarrow$ and $s \cdot n \Vdash x_2 = x_1$.
+
+  * (Transitivity:) There exists $t \in \IN$ such that whenever $n \Vdash x_1 = x_2$ and $m \Vdash x_2 = x_3$, then $t \cdot \langle n, m \rangle \downarrow$ and $t \cdot \langle n, m \rangle \Vdash x_1 = x_3$.
+
+  Likewise, suppose $f \subseteq \IN \times X \times Y$ where we have fixed effective partial equivalence relations $E_X$ and $E_Y$ on $X$ and $Y$, respectively. We then use notation $n \Vdash x \xmapsto{f} y$ to mean $(n, x, y) \in f$. We will say $f$ is an <i>effective functional relation</i> if $(p_1)_*(f)$ is a functional relation $X / E_X \to Y / E_Y$, with partial recursive functions relating the corresponding realizers; namely:
+
+  * (Domain condition:) There exists $d \in \IN$ such that whenever $n \Vdash x \xmapsto{f} y$, then $d \cdot n \downarrow$ and $d \cdot n \Vdash x = x$.
+
+  * (Codomain condition:) There exists $c \in \IN$ such that whenever $n \Vdash x \xmapsto{f} y$, then $c \cdot n \downarrow$ and $c \cdot n \Vdash y = y$.
+
+  * (Respectfulness condition:) There exists $r \in \IN$ such that whenever $n \Vdash x_1 \xmapsto{f} y_1$, $m \Vdash x_1 = x_2$, and $p \Vdash y_1 = y_2$, then $r \cdot \langle \langle n, m \rangle, p \rangle \downarrow$ and $r \cdot \langle \langle n, m \rangle, p \rangle \Vdash x_2 \xmapsto{f} y_2$. (From now on, we will use $\langle n, m, p \rangle$ as shorthand for $\langle \langle n, m \rangle, p \rangle$, with projectors $p_{1/3} \coloneqq p_1 \circ p_1$, $p_{2/3} \coloneqq p_2 \circ p_1$, $p_{3/3} \coloneqq p_2$; and similarly for larger tuples.)
+
+  * (Image uniqueness condition:) There exists $u \in \IN$ such that whenever $n \Vdash x \xmapsto{f} y_1$ and $m \Vdash x \xmapsto{f} y_2$, then $u \cdot \langle n, m \rangle \downarrow$ and $u \cdot \langle n, m \rangle \Vdash y_1 = y_2$.
+
+  * (Totality condition:) There exists $t \in \IN$ such that whenever $n \Vdash x = x$, then $t \cdot n \downarrow$, and there exists $y \in Y$ such that $t \cdot n \Vdash x \xmapsto{f} y$.
+
+  Similarly, for two such functional relations $f$ and $g$, we will say $f$ and $g$ are equivalent if $(p_1)_*(f) = (p_1)_*(g)$, with partial recursive functions relating the corresponding realizers; namely:
+
+  * There exists $\ell_1$ such that whenever $n \Vdash x \xmapsto{f} y$, then $\ell_1 \cdot n \downarrow$ and $\ell_1 \cdot n \Vdash x \xmapsto{g} y$.
+
+  * Conversely, there exists $\ell_2$ such that whenever $n \Vdash x \xmapsto{g} y$, then $\ell_2 \cdot n \downarrow$ and $\ell_2 \cdot n \Vdash x \xmapsto{f} y$.
+
+  The effective topos is then defined to be the category whose objects are pairs $(X, E_X)$ where $X$ is a set and $E_X$ is an effective partial equivalence relation on $X$; and the morphisms $\Hom((X, E_X), (Y, E_Y))$ are the quotient of the set of effective functional relations by the equivalence relation defined above. The identity morphism of $(X, E_X)$ is the equivalence class of $E_X$; in other words, it is $[\id]$ where $n \Vdash x \xmapsto{\id} y$ if and only if $n \Vdash x = y$. Composition is defined such that for $f$ an effective functional relation between $(Y, E_Y)$ and $(Z, E_Z)$ and $g$ an effective functional relation between $(X, E_X)$ and $(Y, E_Y)$, $[f] \circ [g]$ is the equivalence class of $f \circ g \coloneqq \{ (\langle n, m\rangle, x, z) \mid \exists y\in Y, (n \Vdash x \xmapsto{g} y) \land (m \Vdash y \xmapsto{f} z) \}$.
+
+nlab_link: https://ncatlab.org/nlab/show/effective+topos
+
+tags:
+  - computation theory
+
+related:
+  - Set
+
+satisfied_properties:
+  - property: locally small
+    proof: This is trivial.
+
+  - property: elementary topos
+    proof: This is a special case of the fact that from any <a href="https://ncatlab.org/nlab/show/tripos">tripos</a> we can construct a topos. (Needs reference...)
+
+  - property: semi-strongly connected
+    proof: Suppose we have two objects $(X, E_X)$ and $(Y, E_Y)$. If $E_Y$ is non-empty, then we can find $n_0\in \IN, y_0\in Y$ such that $n_0 \Vdash y_0 = y_0$. Then $\{ (\langle n, m \rangle, x, y) \mid (n \Vdash x = x) \land (m \Vdash y = y_0) \}$ gives an effective functional relation which induces a morphism $(X, E_X) \to (Y, E_Y)$. (This represents a constant morphism with value $y_0$.) Otherwise, if $E_Y$ is empty, then $\varnothing$ induces a morphism $(Y, E_Y) \to (X, E_X)$.
+
+  - property: natural numbers object
+    proof: 'We claim that $N \coloneqq (\IN, \{ (n, n, n) \mid n \in \IN \})$ is a natural numbers object. To see this, suppose we have an object $(X, E_X)$ with morphisms $x : 1 \to X$ and $f : X \to X$. Then we can find $n_0 \in \IN, x_0 \in X$ such that $n_0 \Vdash x_0 = x_0$; also, let $c$ and $t$ be witnesses to the codomain property and totality of $f$, respectively. We can then define an "iteration of $c\circ t$" program encoded by $i\in\IN$, such that $i \cdot n$ represents the result of the $n$-fold iteration of $t$ followed by $c$, starting with $n_0$. We can also find a sequence $x_n \in X$ extending $x_0$ such that $t \cdot (i \cdot n) \Vdash x_n \xmapsto{f} x_{n+1}$. We can then show that $\{ (\langle n, m \rangle, n, y) \mid (m \Vdash x_n = y) \}$ is an effective functional relation which induces a morphism $N \to X$, and this morphism has the required properties. Likewise, the uniqueness of this morphism is straightforward to establish.'
+
+unsatisfied_properties:
+  - property: skeletal
+    proof: Consider $(X, \IN \times \Delta_X)$ and $(Y, \IN \times \Delta_Y)$ for bijective but unequal sets $X, Y$.
+
+  - property: countable copowers
+    proof: If there were an $\aleph_0$-indexed copower of the terminal object, it would be isomorphic to the natural numbers object $N$ by <a href="/category-implication/nno_criterion">this result</a>, and any function $\IN \to \IN$ would induce a morphism $N \to N$. However, every morphism $N \to N$ in fact induces a total recursive function $\IN \to \IN$ on the global sections (in fact, the function on global sections agrees with the witness $t$ of totality for a representative of the equivalence class). We therefore get a contradiction from the fact that not every function $\IN \to \IN$ is recursive.
+
+  - property: essentially small
+    proof: 'There is a fully faithful (and therefore conservative) functor $\Set \to \Eff$ which sends $X$ to $(X, \IN \times \Delta_X)$, and which sends $f : X \to Y$ to the equivalence class of $\IN \times \Gamma_f$ where $\Gamma_f$ is the graph of $f$.'
+
+  - property: locally finite
+    proof: For example, $\Hom(1, N)$ is countably infinite where $N$ is the natural numbers object.
+
+special_objects:
+  initial object:
+    description: $(\varnothing, \varnothing)$
+  terminal object:
+    description: $(1, \{ (0, 0, n) \mid n \in \IN \})$
+  coproducts:
+    description: The binary coproduct of $(X, E_X)$ and $(Y, E_Y)$ is $X \sqcup Y$ with the PER given by $\{ (2n, x_1, x_2) \in \IN \times X \times X \mid n \Vdash x_1 = x_2 \} \cup \{ (2n+1, y_1, y_2) \in \IN \times Y \times Y \mid n \Vdash y_1 = y_2 \}$.
+  products:
+    description: The binary product of $(X, E_X)$ and $(Y, E_Y)$ is $X \times Y$ with the PER given by $\{ (\langle n, m \rangle, (x_1, y_1), (x_2, y_2)) \mid (n \Vdash x_1 = x_2) \land (m \Vdash y_1 = y_2) \}$
+
+special_morphisms:
+  isomorphisms:
+    description: A morphism is an isomorphism if and only if it is a monomorphism and an epimorphism (see below).
+    proof: Being an elementary topos, $\Eff$ is balanced.
+  monomorphisms:
+    description: For an effective functional relation $f \subseteq \IN \times X \times Y$, the equivalence class of $f$ is a monomorphism if and only if there is $i\in\IN$ such that whenever $n \Vdash x_1 \xmapsto{f} y$ and $m \Vdash x_2 \xmapsto{f} y$, then $i \cdot \langle n, m \rangle \downarrow$ and $i \cdot \langle n, m \rangle \Vdash x_1 = x_2$.
+    proof: >-
+      ($\Rightarrow$) We can define a kernel pair $E$ of $f$ with underlying set $X\times X$, and partial equivalence relation $\{ (\langle n, m, p, q \rangle, (x_1, x_2), (x_3, x_4)) \mid \exists y\in Y, (n \Vdash x_1 = x_3) \land (m \Vdash x_2 = x_4) \land (p \Vdash x_1 \xmapsto{f} y) \land (q \Vdash x_2 \xmapsto{f} y) \}$. We can also construct $[\pi_1], [\pi_2] : E \rightrightarrows (X, E_X)$ where $\pi_1$ is the effective functional relation $\{ (\langle n, m, p\rangle, (x_1, x_2), x_3) \mid \exists y\in Y, (n \Vdash x_1 \xmapsto{f} y) \land (m \Vdash x_2 \xmapsto{f} y) \land (p \Vdash x_1 = x_3) \}$, and similarly for $\pi_2$ with the last condition replaced with $p \Vdash x_2 = x_3$. We can then check $[f] \circ [\pi_1] = [f] \circ [\pi_2]$. Since $[f]$ is a monomorphism, we conclude $[\pi_1] = [\pi_2]$. Say we have witnesses $\ell_1, \ell_2$ to the equivalence of $\pi_1$ and $\pi_2$.
+
+      Now, suppose we have $n \Vdash x_1 \xmapsto{f} y$ and $m \Vdash x_2 \xmapsto{f} y$. Then
+      $$\begin{align*} & n_1 \Vdash (x_1, x_2) \xmapsto{\pi_1} x_1 & n_1 & \coloneqq \langle n, m, d_f \cdot n \rangle \\
+      \implies & n_2 \Vdash (x_1, x_2) \xmapsto{\pi_2} x_1 & n_2 & \coloneqq \ell_1 \cdot n_1 \\
+      \implies & n_3 \Vdash x_2 = x_1 & n_3 & \coloneqq p_2(n_2) \\
+      \implies & n_4 \Vdash x_1 = x_2 & n_4 & \coloneqq s_X \cdot n_3.\end{align*}$$
+      It is now easy to write a program which transforms $\langle n, m \rangle$ into $n_4$ following the steps in the right column, and an encoding of this program gives the required $i$.
+
+      ($\Leftarrow$) Essentially, we adapt the proof that an injective function is a monomorphism in $\Set$, and carry along realizers through the proof, verifying in the end that the transformation of realizers is computable. In detail, suppose we have an object $(Z, E_Z)$ and morphisms $[g], [h] : (Z, E_Z) \to (X, E_X)$ such that $[f] \circ [g] = [f] \circ [h]$ with witnesses $\ell_1, \ell_2 \in \IN$. Then whenever $n \Vdash z \xmapsto{g} x$, we have
+      $$\begin{align*} & n_1 \Vdash x = x & n_1 & \coloneqq c_g \cdot n. \end{align*}$$
+      Thus, there exists $y \in Y$ such that
+      $$\begin{align*} & n_2 \Vdash x \xmapsto{f} y & n_2 & \coloneqq t_f \cdot n_1 \\
+      \implies & n_3 \Vdash z \xmapsto{f\circ g} y & n_3 & \coloneqq \langle n, n_2 \rangle \\
+      \implies & n_4 \Vdash z \xmapsto{f\circ h} y & n_4 & \coloneqq \ell_1 \cdot n_3. \end{align*}$$
+      By the definition of $f \circ h$, there exists $x' \in X$ such that
+      $$\begin{align*} & n_5 \Vdash z \xmapsto{h} x', & n_5 & \coloneqq p_1(n_4) \\
+      & n_6 \Vdash x' \xmapsto{f} y & n_6 & \coloneqq p_2(n_4) \\
+      \implies & n_7 \Vdash x' = x & n_7 & \coloneqq i \cdot \langle n_6, n_2 \rangle \\
+      \implies & n_8 \Vdash z \xmapsto{h} x & n_8 & \coloneqq r_h \cdot \langle n_5, d_g \cdot n, n_7 \rangle. \end{align*}$$
+      It is now easy to write a program which transforms $n$ into $n_8$ according to the steps in the right column, and an encoding of this program gives the first half of the witness pair to $[g] = [h]$. The second half is almost identical, just swapping the roles of $g$ and $h$.
+  epimorphisms:
+    description: For an effective functional relation $f \subseteq \IN \times X \times Y$, the equivalence class of $f$ is an epimorphism if and only if there is $s\in\IN$ such that whenever $n \Vdash y = y$, then $s \cdot n \downarrow$ and there exists $x \in X$ such that $s \cdot n \Vdash x \xmapsto{f} y$.
+    proof: >-
+      ($\Rightarrow$) We will define $Z$ to be $Y \sqcup \{ * \}$ with every member of the image of $f$ identified with $*$; namely,
+      $$\begin{align*} E_Z \coloneqq & \{ (0, *, *) \} \cup\\
+      & \{ (4n+1, y_1, y_2) \mid n \Vdash y_1 = y_2 \} \cup\\
+      & \{ (4n+2, y_1, *) \mid \exists x\in X, n \Vdash x \xmapsto{f} y_1 \} \cup\\
+      & \{ (4n+3, *, y_2) \mid \exists x\in X, n \Vdash x \xmapsto{f} y_2 \} \cup\\
+      & \{ (4 \langle n, m \rangle + 4, y_1, y_2) \mid \exists x_1, x_2\in X, (n \Vdash x_1 \xmapsto{f} y_1) \land (m \Vdash x_2 \xmapsto{f} y_2) \}.\end{align*}$$
+      We can also define two effective functional relations $g$ and $h$ representing the projection and the constant map with value *, respectively. Namely, $g \coloneqq \{ (n, y, z) \mid n \Vdash y =_Z z \}$ and $h \coloneqq \{ (n, y, *) \mid n \Vdash y =_Y y \}$. We can check that $[g] \circ [f] = [h] \circ [f]$. Therefore, since $[f]$ is an epimorphism, we have $[g] = [h]$. Say we have witnesses $\ell_1, \ell_2$ to the equivalence of $g$ and $h$.
+
+      Now, suppose we have $n \Vdash y =_Y y$. Then
+      $$\begin{align*} & n_1 \Vdash y \xmapsto{g} y & n_1 & \coloneqq n \\
+      \implies & n_2 \Vdash y \xmapsto{h} y & n_2 & \coloneqq \ell_1 \cdot n_1.\end{align*}$$
+      We also have
+      $$\begin{align*} & n_3 \Vdash y \xmapsto{h} * & n_3 & \coloneqq n \\
+      \implies & n_4 \Vdash y = * & n_4 & \coloneqq u \cdot \langle n_2, n_3 \rangle.\end{align*}$$
+      In this last statement, the only possibility for $y$ to be identified with $*$ in $Z$ is for $n_4$ to be of the form $4n_5 + 2$, with the existence of $x\in X$ such that
+      $$\begin{align*} & n_5 \Vdash x \xmapsto{f} y & n_5 & \coloneqq \frac{n_4-2}{4}.\end{align*}$$
+      It is now easy to write a program which transforms $n$ into $n_5$ following the steps in the right column (in case $n_4$ is not of the required form, we can have the program either signal an error, intentionally enter an infinite loop, or proceed with an arbitrary value for $n_5$). An encoding of this program gives the required $s$.
+
+      ($\Leftarrow$) Essentially, we adapt the proof that a surjective function is an epimorphism in $\Set$, and carry along realizers through the proof, verifying in the end that the transformation of realizers is computable. In detail, suppose we have an object $(Z, E_Z)$ and morphisms $[g], [h] : (Y, E_Y) \to (Z, E_Z)$ such that $[g] \circ [f] = [h] \circ [f]$ with witnesses $\ell_1, \ell_2 \in \IN$. Then whenever $n \Vdash y \xmapsto{g} z$, we have
+      $$\begin{align*} & n_1 \Vdash y = y & n_1 & \coloneqq d_g \cdot n. \end{align*}$$
+      Thus, by assumption there exists $x\in X$ such that
+      $$\begin{align*} & n_2 \Vdash x \xmapsto{f} y & n_2 & \coloneqq s \cdot n_1 \\
+      \implies & n_3 \Vdash x \xmapsto{g\circ f} z & n_3 & \coloneqq \langle n_2, n \rangle \\
+      \implies & n_4 \Vdash x \xmapsto{h\circ f} z & n_4 & \coloneqq \ell_1 \cdot n_3.\end{align*}$$
+      By definition of $h\circ f$, then, there exists $y' \in Y$ such that
+      $$\begin{align*} & n_5 \Vdash x \xmapsto{f} y', & n_5 & \coloneqq p_1(n_4) \\
+      & n_6 \Vdash y' \xmapsto{h} z & n_6 & \coloneqq p_2(n_4) \\
+      \implies & n_7 \Vdash y' = y & n_7 & \coloneqq u_f \cdot \langle n_5, n_2 \rangle \\
+      \implies & n_8 \Vdash z = z & n_8 & \coloneqq c_g \cdot n \\
+      \implies & n_9 \Vdash y \xmapsto{h} z & n_9 & \coloneqq r_h \cdot \langle n_6, n_7, n_8 \rangle.\end{align*}$$
+      It is now easy to write a program which transforms $n$ into $n_9$ according to the steps in the right column, and an encoding of this program gives the first half of the witness pair to $[g] = [h]$. The second half is almost identical, just swapping the roles of $g$ and $h$.
