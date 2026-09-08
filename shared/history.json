@@ -883,6 +883,10 @@
 		{
 			"type": "category",
 			"id": "Set_c_inf"
+		},
+		{
+			"type": "category",
+			"id": "Eff"
 		}
 	],
 	"properties": [
