@@ -1,0 +1,82 @@
+id: Vect_c
+name: category of countable-dimensional vector spaces
+notation: $\Vect^\c_K$
+objects: vector spaces over a field $K$ of countable dimension
+morphisms: linear maps
+description: This is a full subcategory of $\Vect_K$ containing $\FinVect_K$. Up to isomorphism, the only object in $\Vect^\c_K \setminus \FinVect_K$ is $K^{\oplus \IN}$.
+nlab_link: null
+
+tags:
+  - algebra
+
+related:
+  - FinVect
+  - Vect
+  - Grp_c
+  - Set_c
+
+satisfied_properties:
+  - property: locally small
+    proof: It is a full subcategory of <a href="/category/Vect">$\Vect_K$</a>, which is locally small.
+
+  - property: essentially small
+    proof: 'Every object is isomorphic to one of the vector spaces in the set $\{K^n : n \in \IN\} \cup \{K^{\oplus \IN}\}$.'
+
+  - property: countable coproducts
+    proof: This follows from the fact that a countable union of countable sets is countable.
+
+  - property: split abelian
+    proof: This follows easily from the corresponding property of <a href="/category/Vect">$\Vect_K$</a>.
+
+  - property: generator
+    proof: We know that $K$ is a generator even in <a href="/category/Vect">$\Vect_K$</a>.
+
+  - property: cogenerator
+    proof: We know that $K$ is a cogenerator even in <a href="/category/Vect">$\Vect_K$</a>.
+
+unsatisfied_properties:
+  - property: small
+    proof: Even the collection of trivial vector spaces is not a set.
+
+  - property: skeletal
+    proof: This is trivial.
+
+  - property: ℵ₂-small copowers
+    proof: >-
+      Let $I$ be a set of cardinality $\aleph_1$. Assume that the coproduct $C = \coprod_{i \in I} K$ exists; we need to be careful here, since we cannot assume that its underlying vector space is the direct sum. The coproduct inclusions correspond to elements $c_i \in C$ for $i \in I$, and the universal property says that for every countable-dimensional vector space $V$ and every family of vectors $v_i \in V$, there is a unique linear map $\varphi : C \to V$ such that $\varphi(c_i)=v_i$. We claim that the $c_i$ are linearly independent.
+
+      Let $\{i_1,\dotsc,i_n\}$ be a finite subset of $I$ and suppose that $\sum_{k=1}^n \lambda_k c_{i_k} = 0$. For $i \in I$, define the vector $v_i \in K^n$ by $v_i = e_k$ if $i = i_k$ and $v_i = 0$ otherwise. By the universal property, there is a linear map $\varphi : C \to K^n$ such that $\varphi(c_i) = v_i$. Thus, $0 = \sum_{k=1}^n \lambda_k \varphi(c_{i_k}) = \sum_{k=1}^n \lambda_k e_k$. This shows that $\lambda_k=0$ for all $k$, as claimed.
+
+      Since the set $\{c_i : i \in I\}$ is linearly independent and has cardinality $\aleph_1$, $C$ cannot have countable dimension.
+
+  - property: countable powers
+    proof: First, the inclusion functor $\Vect^\c_K \hookrightarrow \Vect_K$ is continuous since the forgetful functor $\Vect_K \to \Set$ is continuous and conservative, while the forgetful functor $\Vect^\c_K \to \Set$ is representable and hence continuous. Thus, it suffices to show that $\Vect^\c_K$ is not closed under countable powers in $\Vect_K$. Specifically, we will show that $K^{\IN}$ does not have countable dimension. If it did, it would be isomorphic to $V \coloneqq K^{\oplus \IN}$. But then $V^* \cong V$, which contradicts <a href="https://mathoverflow.net/questions/13322" target="_blank">MO/13322</a>.
+    label: Vect_c_continuous_inclusion
+
+  - property: ℵ₁-cofiltered limits
+    proof: >-
+      We have already seen that the inclusion functor $\Vect^\c_K \hookrightarrow \Vect_K$ is continuous, so it suffices to prove that $\Vect^\c_K$ is not closed under $\aleph_1$-cofiltered limits. Pick any uncountable set $I$ and consider the poset $P_{<\aleph_1}(I)$ of countable subsets of $I$. This is $\aleph_1$-filtered, so its dual is $\aleph_1$-cofiltered. Define the diagram $P_{<\aleph_1}(I)^{\op} \to \Vect^\c_K$ by sending a countable subset $C \subseteq I$ to $K^{\oplus C}$ and an inclusion $C \subseteq D$ to the projection $K^{\oplus D} \to K^{\oplus C}$ that discards the coordinates in $D \setminus C$.
+      The limit of this diagram is a subspace of $K^I$ consisting of those functions $f : I \to K$ such that, for every countable subset $C \subseteq I$, the restriction $f|_C : C \to K$ has finite support. It follows that $f$ has finite support, because otherwise there would be an infinite countable subset $C \subseteq I$ such that $f(c)$ is non-zero for all $c \in C$, and then $f|_C$ would not have finite support. Therefore, the limit is just $K^{\oplus I}$, which does not have countable dimension.
+    references:
+      - Vect_c_continuous_inclusion
+
+special_objects:
+  initial object:
+    description: trivial vector space
+  terminal object:
+    description: trivial vector space
+  coproducts:
+    description: '[countable case] direct sums'
+  products:
+    description: '[finite case] direct products'
+
+special_morphisms:
+  isomorphisms:
+    description: bijective linear maps
+    proof: It is a full subcategory of $\Vect_K$, in which the isomorphisms are known to be the bijective linear maps.
+  monomorphisms:
+    description: injective linear maps
+    proof: The non-trivial direction follows since the forgetful functor to $\Set$ is representable (by $K$).
+  epimorphisms:
+    description: surjective linear maps
+    proof: By construction of the finite colimits, the inclusion functor to $\Vect_K$ preserves finite colimits. Hence, it preserves epimorphisms. Since it is faithful, it also reflects epimorphisms. Therefore, the description of epimorphisms in $\Vect_K$ carries over to this subcategory.

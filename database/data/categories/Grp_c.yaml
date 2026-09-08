@@ -13,6 +13,7 @@ related:
   - Grp
   - FinGrp
   - Set_c
+  - Vect_c
 
 satisfied_properties:
   - property: locally small
