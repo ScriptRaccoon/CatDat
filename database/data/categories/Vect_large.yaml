@@ -1,0 +1,114 @@
+id: Vect_large
+name: category of large vector spaces over a large field with a small basis
+notation: $\Vect^s_K$
+objects: large vector spaces over a large field $K$ that are isomorphic to $K^{\oplus X}$ for a set $X$
+morphisms: $K$-linear maps
+description: >-
+  Recall from our <a href="/content/foundations">foundations</a> that we work with sets ("small sets") and collections ("large sets"). A large field $K$ is a collection equipped with a field structure. Concrete examples are $\IQ(X_\alpha : \alpha \in \OnColl)$ and the <a href="https://en.wikipedia.org/wiki/Nimber" target="_blank">field of nimbers</a> $\On_2$. There is a well-behaved hypercategory $\Vect_K$ of large vector spaces over $K$, which are collections equipped with a suitable algebraic structure. (See the linked article on foundations for the definition of a hypercategory.) Since collections and sets behave mostly the same (both satisfy the ZFC-axioms), it has analogous properties to its small counterpart: it is a split abelian, finitary algebraic hypercategory, and every object is isomorphic to $K^{\oplus X}$ for a collection $X$.
+
+  In this entry, we consider the full sub-hypercategory $\Vect^s_K$ of $\Vect_K$ consisting of the large vector spaces that are isomorphic to $K^{\oplus X}$ for a set $X$. Equivalently, a small basis exists. The relationship between $\Vect^s_K$ and $\Vect_K$ is similar to that between $\FinVect_K$ and $\Vect_K$. However, $\Vect^s_K$ is not self-dual, which breaks the analogy.
+
+  However, $\Vect^s_K$ is not a category as defined in our <a href="/content/foundations">foundations</a>, because the totality of its objects is not a collection. Even the totality of trivial large vector spaces is not a collection, analogous to the fact that the collection of trivial vector spaces is not a set. However, the totality of objects of $\Vect^s_K$ is in bijection with the collection of sets, so $\Vect^s_K$ is equivalent (as a hypercategory) to a category. This category has sets as objects and (not necessarily finite) column-finite matrices over $K$ as morphisms. Formally, we need to work with this category to stay within our framework, but it is easier and more natural to work with $\Vect^s_K$ instead, in particular when studying its properties. To decide all properties, we assume that $K$ is not bijective to a set.
+
+  This category does not appear in practice, but it provides an example of a Grothendieck abelian category that is not complete, which is impossible in the locally small case.
+
+nlab_link: null
+tags:
+  - algebra
+
+related:
+  - Vect
+  - TransSeqAb
+  - Set_disc_Ab
+  - FinVect
+
+satisfied_properties:
+  - property: preadditive
+    proof: This is immediately inherited from the hypercategory $\Vect_K$. The sum of two linear maps is defined pointwise.
+    check_redundancy: false # the many redundancies are caused by "split abelian" which is not atomic yet
+
+  - property: coproducts
+    proof: The hypercategory $\Vect_K$ has large coproducts given by direct sums. The sub-hypercategory $\Vect^s_K$ is closed under small coproducts because for a small family of sets $(X_i)_{i \in I}$ also their disjoint union $S \coloneqq \coprod_{i \in I} X_i$ is a set and $\bigoplus_{i \in I} K^{\oplus X_i} \cong K^{\oplus S}$.
+    check_redundancy: false
+
+  - property: coequalizers
+    proof: Since the hypercategory $\Vect_K$ has coequalizers constructed just like in the small case, it suffices to prove that if $V \to W$ is a surjective linear map in $\Vect_K$ and $V \in \Vect^s_K$, then also $W \in \Vect^s_K$. Choose a set $X$ with $V \cong K^{\oplus X}$ and a collection $Y$ with $W \cong K^{\oplus Y}$. By standard infinite-dimensional linear algebra (developed in the ZFC-model of collections), there is a surjective map $X \to Y$. Hence, there is a subcollection $X' \subseteq X$ with $X' \cong Y$. Since $X$ is a set, $X'$ is also a set. Hence, $W \cong K^{\oplus X'}$ lies in $\Vect^s_K$.
+    label: Vect_large_coequalizers
+    check_redundancy: false
+
+  - property: equalizers
+    proof: Since the hypercategory $\Vect_K$ has equalizers constructed just like in the small case, it suffices to prove that if $V \to W$ is an injective linear map in $\Vect_K$ and $W \in \Vect^s_K$, then also $V \in \Vect^s_K$. Choose a collection $X$ with $V \cong K^{\oplus X}$ and a set $Y$ with $W \cong K^{\oplus Y}$. By standard infinite-dimensional linear algebra (developed in the ZFC-model of collections), there is an injective map $X \to Y$. Hence, there is a subcollection $Y' \subseteq Y$ with $X \cong Y'$. Since $Y$ is a set, $Y'$ is also a set. Hence, $V \cong K^{\oplus Y'}$ lies in $\Vect^s_K$.
+    label: Vect_large_equalizers
+    check_redundancy: false
+
+  - property: normal
+    proof: 'A monomorphism $f : V \to W$ in $\Vect^s_K$ is an injective linear map, hence a kernel of $W \to W/\im(f)$ in $\Vect_K$. Since $W$ belongs to $\Vect^s_K$, also $W/\im(f)$ belongs to $\Vect^s_K$ (see our proof for coequalizers).'
+    check_redundancy: false
+    references:
+      - Vect_large_coequalizers
+
+  - property: conormal
+    proof: 'An epimorphism $f : V \to W$ in $\Vect^s_K$ is a surjective linear map, hence a cokernel of $\ker(f) \hookrightarrow V$ in $\Vect_K$. Since $V$ belongs to $\Vect^s_K$, also its subspace $\ker(f)$ belongs to $\Vect^s_K$ (see our proof for equalizers).'
+    check_redundancy: false
+    references:
+      - Vect_large_equalizers
+
+  - property: split abelian
+    proof: The previous assignments already show that the category is abelian. Since the inclusion functor $\Vect^s_K \hookrightarrow \Vect_K$ is exact, the claim follows from the fact that $\Vect_K$ is split abelian (which we know in the <a href="/category/Vect">small case</a> and therefore also holds in the large case).
+
+  - property: generator
+    proof: Since $K$ is a generator of $\Vect_K$ that is contained in $\Vect^s_K$, it is a generator of $\Vect^s_K$.
+
+  - property: cogenerator
+    proof: Since $K$ is a cogenerator of $\Vect_K$ that is contained in $\Vect^s_K$, it is a cogenerator of $\Vect^s_K$.
+
+  - property: exact filtered colimits
+    proof: Since the inclusion functor $\Vect^s_K \hookrightarrow \Vect_K$ is exact, preserves small colimits, and is fully faithful, this follows from the corresponding fact for $\Vect_K$ (where finite limits even commute with large filtered colimits).
+
+  - property: well-powered
+    proof: In contrast to the other properties mentioned before, this does <i>not</i> follow from the hypercategory $\Vect_K$, since the subobjects of a large vector space merely form a collection. Instead, notice that the subobjects of $K^{\oplus X}$, where $X$ is a set, are isomorphic to $K^{\oplus Y}$ for subsets $Y \subseteq X$ (see our proof for equalizers). Since the subsets of $X$ form a set, the subobjects form a set.
+    references:
+      - Vect_large_equalizers
+
+  - property: ℵ₁-cofiltered limits
+    proof: >-
+      First, <a href="/category/FinVect">$\FinVect_K$</a> has $\aleph_1$-filtered colimits by <a href="https://mathoverflow.net/a/511519/2841" target="_blank">MO/400763</a>. Since it is self-dual, it also has $\aleph_1$-cofiltered limits. (The result has been proved for small fields, but the same proofs work for arbitrary fields.) Moreover, the inclusion functor $\FinVect_K \hookrightarrow \Vect_K$ is cocontinuous by Lemma 1 <a href="/content/inclusion-functors">here</a>, since $\FinVect_K$ contains the extremal cogenerator $K$ of $\Vect_K$. It follows that $\FinVect_K$ is closed under $\aleph_1$-cofiltered limits in $\Vect_K$.
+
+      We now prove that $\Vect^s_K$ is closed under $\aleph_1$-cofiltered limits in $\Vect_K$. To this end, let $D : \I \to \Vect^s_K$ be an $\aleph_1$-cofiltered diagram, and let $(\pi_i : V \to D(i))_{i \in \I}$ be its limit in $\Vect_K$. For each $i \in \I$, choose a set basis $B_i$ of $D(i)$. Let $\Lambda$ be the set of all families $S=(S_i)_{i \in \I}$ of finite subsets $S_i \subseteq B_i$. Since $\Ob(\I)$ and each $B_i$ are sets, $\Lambda$ is indeed a set. For $S \in \Lambda$, let $V_S \subseteq V$ be the subspace consisting of those vectors $v \in V$ such that $\pi_i(v) \in \langle S_i \rangle$ for every $i \in \I$. Clearly, $V = \bigcup_{S \in \Lambda} V_S$. In particular, there is an epimorphism $\bigoplus_{S \in \Lambda} V_S \to V$. Thus, it suffices to prove that each $V_S$ is finite-dimensional, since then $V \in \Vect^s_K$, using that $\Vect^s_K$ is closed under quotients.
+
+      Define a diagram $E : \I \to \FinVect_K$ by $E(i) = \pi_i(V_S)$. Since $\pi_i(V_S) \subseteq \langle S_i \rangle \subseteq D(i)$ and $S_i$ is finite, each $E(i)$ is finite-dimensional. If $i \to j$ is a morphism in $\I$, then the map $D(i \to j) : D(i) \to D(j)$ satisfies $D(i \to j) \circ \pi_i = \pi_j$ and therefore restricts to a map $E(i \to j) : E(i) \to E(j)$. By the preliminary observation, $\lim(E)$ is finite-dimensional. The maps $\pi_i : V_S \to E(i)$ induce a map $V_S \to \lim(E)$, which is clearly injective. Hence $V_S$ is finite-dimensional as well.
+    references:
+      - Vect_large_coequalizers
+
+unsatisfied_properties:
+  - property: skeletal
+    proof: This is trivial.
+
+  - property: countable powers
+    proof: >-
+      Assume that the power $K^{\IN}$ exists in $\Vect^s_K$. The forgetful functor $\Vect^s_K \to \Set^+$ is continuous since it is represented by $K$. Moreover, the forgetful functor $\Vect_K \to \Set^+$ is continuous and conservative. Hence the inclusion $\Vect^s_K \hookrightarrow \Vect_K$ is continuous. In particular, $K^{\IN}$ is the power in $\Vect_K$. Choose a set $X$ such that $K^{\IN} \cong K^{\oplus X}$.
+
+      Consider the subset $L \subseteq K^{\IN}$ consisting of the sequences
+      $$(1,\lambda,\lambda^2,\dotsc)$$
+      for $\lambda \in K$. Every finite subset of $L$ is linearly independent: for $n$ distinct elements $\lambda_1,\dotsc,\lambda_n$, the truncated sequences $(1,\lambda_i,\dotsc,\lambda_i^{n-1})$ are linearly independent by the Vandermonde determinant. Thus, $L$ is linearly independent. Equivalently, there is a monomorphism $K^{\oplus L} \hookrightarrow K^{\IN} \cong K^{\oplus X}$. Hence there is an injective map $L \hookrightarrow X$. But then $L \cong K$ would be bijective to a set, contradicting our choice of $K$.
+
+special_objects:
+  initial object:
+    description: trivial vector space
+  terminal object:
+    description: trivial vector space
+  coproducts:
+    description: direct sums
+  products:
+    description: direct products
+
+special_morphisms:
+  isomorphisms:
+    description: bijective linear maps
+    proof: This is trivial.
+  monomorphisms:
+    description: injective linear maps
+    proof: The non-trivial direction follows from the observation that $K$-linear maps $K \to V$ can be identified with the elements of the underlying set of $V$.
+  epimorphisms:
+    description: surjective linear maps
+    proof: 'Surjective linear maps are clearly epimorphisms. Conversely, if $f : V \to W$ is an epimorphism, this means that its cokernel vanishes, which we have constructed as $W/\im(f)$. Thus, $W = \im(f)$.'
