@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { dev } from '$app/environment'
 	import MetaData from '$components/MetaData.svelte'
 	import {
 		faChartBar,
@@ -20,29 +19,12 @@
 
 <p>
 	<i>CatDat</i> provides a growing collection of categorical structures such as
-	<a class="accent" href="/category-list">categories</a>,
-	<a class="accent" href="/functor-list">functors</a>,
-	<a class="accent" href="/morphism-list">morphisms</a>, and
-	<a class="accent" href="/symmetric_monoidal_category-list"
-		>symmetric monoidal categories</a
-	>. Built by and for those who love
+	<a class="accent" href="/category-list">categories</a> and
+	<a class="accent" href="/functor-list">functors</a>. Built by and for those who love
 	<a href="https://en.wikipedia.org/wiki/Category_theory" target="_blank">
 		category theory
 	</a>.
 </p>
-
-{#if !dev}
-	<div class="video-container">
-		<iframe
-			src="https://www.youtube.com/embed/dQXbPxk__qA"
-			title="YouTube video player"
-			frameborder="0"
-			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-			referrerpolicy="strict-origin-when-cross-origin"
-			allowfullscreen
-		></iframe>
-	</div>
-{/if}
 
 <div class="features">
 	<article class="feature-card">
