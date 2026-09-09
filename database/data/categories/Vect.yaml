@@ -11,10 +11,12 @@ tags:
   - algebra
 
 related:
+  - R-Mod
   - FinVect
   - FiltVect
   - FreeAb
   - Vect_c
+  - Vect_large
 
 satisfied_properties:
   - property: split abelian

@@ -15,6 +15,7 @@ related:
   - Set_disc
   - grAb
   - TransSeqAb
+  - Vect_large
 
 satisfied_properties:
   - property: preadditive
