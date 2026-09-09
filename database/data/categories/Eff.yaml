@@ -47,7 +47,7 @@ satisfied_properties:
     proof: This is trivial.
 
   - property: elementary topos
-    proof: This is a special case of the fact that from any <a href="https://ncatlab.org/nlab/show/tripos">tripos</a> we can construct a topos. (Needs reference...)
+    proof: This is a special case of the fact that from any <a href="https://ncatlab.org/nlab/show/tripos">tripos</a> we can construct a topos. See for example <a href="https://www.cl.cam.ac.uk/~amp12/papers/thet/thet.pdf">A. M. Pitts, <i>The Theory of Triposes</i></a>, with the definition of effective tripos in section 1.5 on p. 16, and the construction of a topos corresponding to a tripos as Thm. 2.3.
 
   - property: semi-strongly connected
     proof: Suppose we have two objects $(X, E_X)$ and $(Y, E_Y)$. If $E_Y$ is non-empty, then we can find $n_0\in \IN, y_0\in Y$ such that $n_0 \Vdash y_0 = y_0$. Then $\{ (\langle n, m \rangle, x, y) \mid (n \Vdash x = x) \land (m \Vdash y = y_0) \}$ gives an effective functional relation which induces a morphism $(X, E_X) \to (Y, E_Y)$. (This represents a constant morphism with value $y_0$.) Otherwise, if $E_Y$ is empty, then $\varnothing$ induces a morphism $(Y, E_Y) \to (X, E_X)$.
@@ -80,8 +80,17 @@ special_objects:
 
 special_morphisms:
   isomorphisms:
-    description: A morphism is an isomorphism if and only if it is a monomorphism and an epimorphism (see below).
-    proof: Being an elementary topos, $\Eff$ is balanced.
+    description: For an effective functional relation $f \subseteq \IN \times X \times Y$, the equivalence class of $f$ is an isomorphism if and only if the inverse relation $f^{-1} \subseteq \IN \times Y \times X$ is also an effective functional relation; or equivalently, if $[f]$ is both a monomorphism and an epimorphism (see below).
+    proof: >-
+      The equivalence to $f$ being a monomorphism and an epimorphism follows from the fact that the effective topos is an elementary topos, and therefore balanced.
+
+      ($\Rightarrow$) Most of the conditions for $f^{-1}$ being an effective functional relation are automatic. In establishing the uniqueness of image condition for $f^{-1}$, we use the fact that $f$ is a monomorphism and the description below. Similarly, in establishing the totality condition for $f^{-1}$, we use the fact that $f$ is an epimorphism and the description below.
+
+      Alternately, if $[g]$ is an inverse to $[f]$, so that $f \circ g$ and $g \circ f$ are equivalent to the identities, it is straightforward to show that $f^{-1}$ satisfies the definition of being equivalent to $g$ (ignoring for the moment that we haven't yet established $f^{-1}$ is effective functional), and then use this along with the fact that $g$ is effective functional to show $f^{-1}$ is also effective functional.
+
+      ($\Leftarrow$) The effective topos being an elementary topos and therefore balanced, it is sufficient to show $f$ is a monomorphism and an epimorphism. The fact that $f$ is a monomorphism follows from the uniqueness of image condition and $f^{-1}$ and the description of monomorphisms below. Similarly, the fact that $f$ is an epimorphism follows from the totality condition for $f^{-1}$ and the description of epimorphisms below.
+
+      Alternately, assuming $f^{-1}$ is effective functional, then it is staightforward to show that $f \circ f^{-1}$ and $f^{-1} \circ f$ are equivalent to the identities, so that $[f^{-1}]$ forms an inverse to $[f]$.
   monomorphisms:
     description: For an effective functional relation $f \subseteq \IN \times X \times Y$, the equivalence class of $f$ is a monomorphism if and only if there is $i\in\IN$ such that whenever $n \Vdash x_1 \xmapsto{f} y$ and $m \Vdash x_2 \xmapsto{f} y$, then $i \cdot \langle n, m \rangle \downarrow$ and $i \cdot \langle n, m \rangle \Vdash x_1 = x_2$.
     proof: >-
