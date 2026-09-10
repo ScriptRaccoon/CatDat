@@ -33,13 +33,25 @@ export const load = () => {
 		error(500, 'Could not load number of implications')
 	}
 
-	const assignment_number = db
+	const proof_number = db
 		.prepare<never[], number>('SELECT COUNT(*) FROM property_assignments')
 		.pluck()
 		.get()!
 
-	if (!assignment_number) {
-		error(500, 'Could not load number of property assignments')
+	if (!proof_number) {
+		error(500, 'Could not load number of proofs')
+	}
+
+	const automated_proof_number = db
+		.prepare<never[], number>(
+			`SELECT COUNT(*) FROM property_assignments
+			WHERE is_deduced = TRUE`
+		)
+		.pluck()
+		.get()!
+
+	if (!automated_proof_number) {
+		error(500, 'Could not load number of automated proofs')
 	}
 
 	const example_structure_ids = [
@@ -56,8 +68,11 @@ export const load = () => {
 	]
 
 	const example_structures_db = db
-		.prepare<string[], { id: string; type: StructureType; notation: string }>(
-			`SELECT id, type, notation
+		.prepare<
+			string[],
+			{ id: string; type: StructureType; name: string; notation: string }
+		>(
+			`SELECT id, type, name, notation
 			FROM structures
 			WHERE id IN ${to_placeholders(example_structure_ids)}`
 		)
@@ -93,7 +108,8 @@ export const load = () => {
 			structure_number,
 			property_number,
 			implication_number,
-			assignment_number
+			proof_number,
+			automated_proof_number
 		},
 		example_structures,
 		selected_structures,
