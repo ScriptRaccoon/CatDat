@@ -3,6 +3,9 @@
 	import StatsCard from '$components/StatsCard.svelte'
 
 	let { data } = $props()
+
+	let show_more_recent = $state(false)
+	let number_recent = $derived(show_more_recent ? data.recent_structures.length : 5)
 </script>
 
 <MetaData />
@@ -63,12 +66,20 @@
 	<h2>Recently added structures</h2>
 
 	<ul class="with-margins">
-		{#each data.recent_structures as structure (structure.id)}
+		{#each data.recent_structures.slice(0, number_recent) as structure (structure.id)}
 			<li>
 				<a href="/{structure.type}/{structure.id}">{structure.name}</a>
 			</li>
 		{/each}
 	</ul>
+
+	{#if !show_more_recent}
+		<p>
+			<button class="button" onclick={() => (show_more_recent = true)}
+				>Show more</button
+			>
+		</p>
+	{/if}
 </section>
 
 <section>
