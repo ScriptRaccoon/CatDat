@@ -3,6 +3,7 @@ import { db } from '$lib/server/db'
 import { render_nested_formulas } from '$lib/server/formulas'
 import { to_placeholders } from '$shared/utils'
 import { error } from 'node:console'
+import structure_history from '$shared/structure.history.json'
 
 export const load = () => {
 	const structure_number = db
@@ -73,6 +74,20 @@ export const load = () => {
 		FinAb: example_structures_db[1]
 	})
 
+	const recent_structures_ids = Object.entries(structure_history)
+		.sort((a, b) => b[1].localeCompare(a[1]))
+		.slice(0, 5)
+		.map((a) => a[0])
+
+	const recent_structures = db
+		.prepare<string[], { id: string; type: StructureType; name: string }>(
+			`SELECT id, type, name
+			FROM structures
+			WHERE id IN ${to_placeholders(recent_structures_ids)}`
+		)
+		.all(...recent_structures_ids)
+		.reverse()
+
 	return {
 		stats: {
 			structure_number,
@@ -81,6 +96,7 @@ export const load = () => {
 			assignment_number
 		},
 		example_structures,
-		selected_structures
+		selected_structures,
+		recent_structures
 	}
 }

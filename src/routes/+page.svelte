@@ -64,6 +64,18 @@
 	</StatsCard>
 </section>
 
+<section>
+	<h2>Recently added structures</h2>
+
+	<ul class="with-margins">
+		{#each data.recent_structures as structure (structure.id)}
+			<li>
+				<a href="/{structure.type}/{structure.id}">{structure.name}</a>
+			</li>
+		{/each}
+	</ul>
+</section>
+
 <div class="features">
 	<article class="feature-card">
 		<h2>
