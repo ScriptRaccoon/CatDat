@@ -2,7 +2,7 @@
 
 This page is only relevant to the maintainer(s) of this project.
 
-- [GitHub repository](https://github.com/ScriptRaccoon/catdat)
+- [GitHub repository](https://github.com/ScriptRaccoon/CatDat)
 - [Netlify project](https://app.netlify.com/sites/catdat/overview)
 
 ## Prerendering
