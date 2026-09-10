@@ -10,7 +10,7 @@ import { db } from '$lib/server/db'
 import { display_implication } from '../transforms'
 
 export function fetch_content_references(content_id: string) {
-	const structures = db
+	const structures_via_proofs = db
 		.prepare<[string], StructureShort & { type: StructureType }>(
 			`SELECT DISTINCT s.id, s.name, s.type
 	        FROM property_assignments pa
@@ -20,11 +20,23 @@ export function fetch_content_references(content_id: string) {
 		)
 		.all(content_id)
 
+	const structures_via_description = db
+		.prepare<[string], StructureShort & { type: StructureType }>(
+			`SELECT id, name, type FROM structures
+            WHERE description LIKE '%/content/' || ? || '%'
+			ORDER BY lower(id)`
+		)
+		.all(content_id)
+
+	const structures = [...structures_via_proofs, ...structures_via_description]
+
 	const structures_by_type: StructureShortDictionary = {}
 
 	for (const { type, ...structure } of structures) {
 		structures_by_type[type] ??= []
-		structures_by_type[type].push(structure)
+		if (structures_by_type[type].every((s) => s.id != structure.id)) {
+			structures_by_type[type].push(structure)
+		}
 	}
 
 	const properties = db
