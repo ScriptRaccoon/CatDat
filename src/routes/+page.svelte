@@ -1,5 +1,6 @@
 <script lang="ts">
 	import MetaData from '$components/MetaData.svelte'
+	import StatsCard from '$components/StatsCard.svelte'
 	import {
 		faChartBar,
 		faChartDiagram,
@@ -9,6 +10,8 @@
 		faUsers
 	} from '@fortawesome/free-solid-svg-icons'
 	import Fa from 'svelte-fa'
+
+	let { data } = $props()
 </script>
 
 <MetaData />
@@ -25,6 +28,41 @@
 		category theory
 	</a>.
 </p>
+
+<section class="stats" aria-label="Statistics">
+	<StatsCard number={data.stats.structure_number} title="Categorical structures">
+		e.g.
+		{#each data.example_structures as structure, index (structure.id)}
+			{@const last = index === data.example_structures.length - 1}
+			<span>
+				<a href="/{structure.type}/{structure.id}">{@html structure.notation}</a
+				>{#if !last}<span>,&nbsp;</span>{/if}
+			</span>
+		{/each}
+		...
+	</StatsCard>
+
+	<StatsCard number={data.stats.property_number} title="Properties">
+		e.g. <a href="/category-property/cocomplete">cocomplete</a>,
+		<a href="/category-property/Barr-exact">Barr-exact</a>,
+		<a href="/category-property/cartesian_closed">cartesian closed</a>,
+		<a href="/functor-property/left_adjoint">left adjoint</a>,
+		<a href="/functor-property/fully_faithful">fully faithful</a> ...
+	</StatsCard>
+
+	<StatsCard number={data.stats.assignment_number} title="Proofs">
+		e.g. <a href="/category/Haus">{@html data.selected_structures.Haus.notation}</a>
+		is extensive,
+		<a href="/category/FinAb">{@html data.selected_structures.FinAb.notation}</a> is ℵ₁-accessible
+		...
+	</StatsCard>
+
+	<StatsCard number={data.stats.implication_number} title="Implications">
+		e.g. <a href="/category-implication/pullbacks_criterion"
+			>binary products ∧ equalizers ⟹ pullbacks</a
+		>, <a href="/category-implication/abelian_implies_regular">abelian ⟹ regular</a> ...
+	</StatsCard>
+</section>
 
 <div class="features">
 	<article class="feature-card">
@@ -116,6 +154,13 @@
 </div>
 
 <style>
+	.stats {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 1rem;
+		margin-block: 2rem;
+	}
+
 	.features {
 		margin-block: 2rem;
 		display: grid;

@@ -14,6 +14,10 @@
 }
 
 body {
+	--text-font:
+		'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode',
+		Geneva, Verdana, sans-serif;
+	--mono-font: 'DM Mono', monospace;
 	--bg-color: #fff;
 	--secondary-bg-color: #eee;
 	--theorem-bg-color: #eee;
@@ -54,9 +58,7 @@ body[data-theme='dark'] {
 /* body */
 
 body {
-	font-family:
-		'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode',
-		Geneva, Verdana, sans-serif;
+	font-family: var(--text-font);
 	font-size: 1.125rem;
 	background-color: var(--bg-color);
 	color: var(--text-color);
@@ -82,7 +84,7 @@ h3 {
 	line-height: 1.2;
 	font-weight: 500;
 	color: var(--heading-color);
-	font-family: 'DM Mono', monospace;
+	font-family: var(--mono-font);
 }
 
 h1 {
@@ -304,6 +306,10 @@ label {
 	display: grid;
 	grid-template-columns: auto 1fr;
 	gap: 0.2rem 0.75rem;
+}
+
+.no-break {
+	white-space: nowrap;
 }
 
 /* cf. https://katex.org/docs/issues */
