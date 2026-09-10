@@ -67,7 +67,7 @@
     - concretizable
   conclusions:
     - locally essentially small
-  proof: 'If $U : \C \to \Set$ is a faithful functor, for every pair of objects $A,B$, the collection $\Hom(A,B)$ embeds into the set $\Hom(U(A),U(B))$, so that it is isomorphic to a set.'
+  proof: 'If $U : \C \to \Set$ is a faithful functor, for every pair of objects $A,B$, the collection $\Hom(A,B)$ embeds into the set $\Hom(U(A),U(B))$, so that it is essentially small.'
 
 - id: generating_set_concrete
   assumptions:

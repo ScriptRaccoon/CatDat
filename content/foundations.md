@@ -27,13 +27,21 @@ Just imagine three copies of ZFC embedded into each other, each representing a "
 
 <img class="small" alt="visualization of three levels of size" src="/img/three-levels-of-size.webp" />
 
-The levels are not defined by cardinality alone. For example, $\{\SetColl\}$ is a collection with just one element, but it is not a set (since otherwise $\SetColl$ would be a set). In particular, not every finite collection is a set. However, every finite collection is isomorphic to a set.
-
 In our framework, there is no way to group all hypercollections into a single mathematical object; for this, one would need a third Grothendieck universe $\SetColl^{++}$, but such a grouping is usually not required.
 
-A family $(X_i)_{i \in I}$ of collections is called _small_ when its index collection is a set.
+## Essentially small, finite, and countable collections
 
-A collection is called _countable_ if it admits a surjective map from $\IN$. In particular, every finite collection is countable.
+Let us call a collection $X$ _essentially small_ if it is isomorphic to a set $S$, i.e., if there is a bijection between $X$ and $S$. For most parts of category theory, $X$ can then simply be replaced with $S$ and assumed to be small itself, i.e., a set.
+
+For example, the collection $\{\SetColl\}$ is not small, but essentially small, since it is isomorphic to the set $\{0\}$. This shows that the three levels are not defined by cardinality alone.
+
+If a collection $X$ admits a surjective map from a set $S$, then it is also essentially small, since by the axiom of choice $X$ is isomorphic to a subset of $S$.
+
+A family of collections $(X_i)_{i \in I}$ is called _small_ when $I$ is a set. In this case, the collection of its elements $\{X_i : i \in I\}$ is essentially small. Every essentially small collection has this form.
+
+A collection is called _finite_ if it is isomorphic to $\{1,\dotsc,n\}$ for some $n \in \IN$. In particular, every finite collection is essentially small. However, a finite collection is not necessarily small, as the example $\{\SetColl\}$ shows.
+
+A collection is called _countable_ if it admits a surjective map from the set of natural numbers $\IN$. In particular, every finite collection is countable, and every countable collection is essentially small.
 
 ## Categories
 
@@ -52,7 +60,9 @@ of collections (and hence a collection itself). We write $\Ob(\C) \coloneqq O$ a
 
 When $f \in \Mor(\C)$ is a morphism with $s(f) = X$ and $t(f) = Y$, we write
 $$f : X \to Y.$$
-We write $\Hom(X,Y)$ or $\Mor(X,Y)$ for the collection of such morphisms. This collection need not be a set. If it is a set for all $X,Y$, the category is called _locally small_.
+We write $\Hom(X,Y)$ or $\Mor(X,Y)$ for the collection of such morphisms.
+
+The collection $\Hom(X,Y)$ need not be a set. If it is a set for all $X,Y$, the category is called _locally small_. If $\Hom(X,Y)$ is essentially small (isomorphic to a set) for all $X,Y$, the category is called _locally essentially small_.
 
 When a morphism $f : X \to Y$ happens to be uniquely determined, it will be written as $!_{X,Y}$ or even just $!$.
 
@@ -77,6 +87,8 @@ If $\C, \D$ are categories, we can construct the functor category $[\C, \D]$ as 
 
 It is better to state explicitly when the assumption of being locally small is needed.
 
+Equivalences of categories are defined [as usual](https://en.wikipedia.org/wiki/Equivalence_of_categories). A category is _essentially small_ if it is equivalent to a small category. A collection $X$ is essentially small if and only if the associated discrete category $X_{\disc}$ (which has only identity morphisms) is essentially small. In this sense, the two notions are compatible.
+
 ## Representable Functors
 
 If $\C$ is any category and $A \in \C$, we have the Hom-functor
@@ -96,10 +108,6 @@ Let $\C$ be a category. If $D : \I \to \C$ is a functor (in this context called 
 Unless stated otherwise, we consider only small diagrams and hence small limits and colimits, i.e. those where $\I$ is a small (or essentially small) category. This is because large limits rarely exist and it is cumbersome to specify "small" each time.
 
 There are special types of limits, such as equalizers, products, and cofiltered limits, and their duals, such as coequalizers, coproducts, and filtered colimits. By convention, products and coproducts are indexed by a set, not a collection (unless stated otherwise). Filtered colimits are indexed by a small filtered category (unless stated otherwise).
-
-## Well-powered categories
-
-If $A$ is an object of a category, the collection of all monomorphisms $B \to A$ need not be a set. If, for every $A$, there exists a small family of such monomorphisms such that every monomorphism $B \to A$ is isomorphic over $A$ to one in the family, then the category is called _well-powered_. The dual notion of being _well-copowered_ is defined using epimorphisms $A \to B$. Every small category is well-powered, but there are many well-powered categories that are not small and not even equivalent to a small category.
 
 ## Conclusion
 

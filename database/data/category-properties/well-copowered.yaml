@@ -1,6 +1,6 @@
 id: well-copowered
 relation: is
-description: A category is <i>well-copowered</i> if the collection of quotients of any object is isomorphic to a set.
+description: A category is <i>well-copowered</i> if the collection of quotients of any object is essentially small. Equivalently, for every object $X$, there is a small family of epimorphisms $(X \twoheadrightarrow Y_i)_{i \in I}$ (i.e., $I$ is a set) such that every epimorphism $X \twoheadrightarrow Y$ is isomorphic to some epimorphism in the family.
 nlab_link: https://ncatlab.org/nlab/show/well-powered+category
 dual: well-powered
 invariant_under_equivalences: true

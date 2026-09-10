@@ -1,6 +1,6 @@
 id: essentially small
 relation: is
-description: A category is <i>essentially small</i> when it is equivalent to a small category. In particular, there is a set of objects such that every object is isomorphic to an object in this set. In contrast to the property of being small, being essentially small is invariant under equivalences of categories.
+description: A category is <i>essentially small</i> when it is equivalent to a small category. Equivalently, it is locally essentially small and its collection of objects is essentially small (isomorphic to a set). See <a href="/content/foundations">here</a> for the set-theoretic foundation of category theory we are working with. In contrast to the property of being small, being essentially small is invariant under equivalences of categories.
 nlab_link: https://ncatlab.org/nlab/show/small+category
 dual: essentially small
 invariant_under_equivalences: true

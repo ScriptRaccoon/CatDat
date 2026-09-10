@@ -34,9 +34,9 @@ A presheaf $F$ on $\C$ is small if and only if it is nice.
 :::
 
 ::: Proof
-The collection of nice presheaves is clearly closed under small colimits of presheaves, since colimits commute with colimits and colimits of presheaves are computed objectwise. Furthermore, we have seen above that representable presheaves are nice. It follows that every small presheaf is nice.
+The collection of nice presheaves is clearly closed under colimits of presheaves, since colimits commute with colimits and colimits of presheaves are computed objectwise. Furthermore, we have seen above that representable presheaves are nice. It follows that every small presheaf is nice.
 
-Conversely, assume that $F$ is a nice presheaf and choose an exceptional set $S_F$. To show that $F$ is small, we will show that its category of elements $\int F$ has a small final subcategory. Let $\D$ be the full subcategory of $\int F$ consisting of the objects
+Conversely, assume that $F$ is a nice presheaf and choose an exceptional set $S_F$. To show that $F$ is small, we will show that its category of elements $\int F$ has an essentially small final subcategory. Let $\D$ be the full subcategory of $\int F$ consisting of the objects
 
 - $(A,a)$ for $a \in F(A)$,
 - $(B,b)$ for $b \in F(B)$,

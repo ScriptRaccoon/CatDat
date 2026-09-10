@@ -33,7 +33,7 @@ satisfied_properties:
       $$\textstyle \alpha : \lim_i B_i + \lim_i C_i \to \lim_i (B_i + C_i)$$
       is an isomorphism, i.e. bijective. The underlying set of the coproduct $B_i + C_i$ is identified with the disjoint union of sets of the form
       $$B_i \times C_i \times B_i \times \cdots \times C_i$$
-      with any positive product length, starting and ending either with $B_i$ or $C_i$. Moreover, $\lim_i$ commutes with arbitrary coproducts in $\Set$, and of course also with products. This shows that $\alpha$ is bijective.
+      with any positive product length, starting and ending either with $B_i$ or $C_i$. Moreover, $\lim_i$ commutes with coproducts in $\Set$, and of course also with products. This shows that $\alpha$ is bijective.
 
 unsatisfied_properties:
   - property: skeletal
@@ -68,7 +68,7 @@ unsatisfied_properties:
 
   - property: cototal
     proof: >-
-      The proof is similar to the proof for <a href="/category/Cat">$\Cat$</a>. For each infinite cardinal $\kappa$, let $G_\kappa$ be a simple group of cardinality $\kappa$ (such as the alternating group on $\kappa$). We can then form the large span diagram $1 \dottedrightrightarrows G_\kappa$ in $\SemiGrp$. For every semigroup $A$, the collection of cocones $1 \dottedrightrightarrows G_\kappa \to A$ is bijective to a set: for every such cocone, we must first choose an idempotent $e$ of $A$ corresponding to the map $1 \to A$. Then, whenever $\kappa > \card(U(A))$, where $U(-)$ denotes the underlying set, for $f_\kappa : G_\kappa \to A$ in the cocone, we see
+      The proof is similar to the proof for <a href="/category/Cat">$\Cat$</a>. For each infinite cardinal $\kappa$, let $G_\kappa$ be a simple group of cardinality $\kappa$ (such as the alternating group on $\kappa$). We can then form the large span diagram $1 \dottedrightrightarrows G_\kappa$ in $\SemiGrp$. For every semigroup $A$, the collection of cocones $1 \dottedrightrightarrows G_\kappa \to A$ is essentially small: for every such cocone, we must first choose an idempotent $e$ of $A$ corresponding to the map $1 \to A$. Then, whenever $\kappa > \card(U(A))$, where $U(-)$ denotes the underlying set, for $f_\kappa : G_\kappa \to A$ in the cocone, we see
       $$N \coloneqq \{g \in G_\kappa : f_\kappa(g) = e\}$$
       is a normal subgroup of $G_\kappa$. It must be non-trivial since otherwise $f_\kappa$ would induce an injective group homomorphism from $G_\kappa$ to a group contained in $A$. Therefore, $N$ is all of $G_\kappa$, so $f_\kappa$ is the constant map with image $e$.
 

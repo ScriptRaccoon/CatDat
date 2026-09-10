@@ -6,9 +6,9 @@ codomain: Set
 description: >-
   This functor maps a group $G$ to the collection
   $$F(G) \coloneqq \textstyle\prod_{\kappa} \Hom(L_\kappa,G),$$
-  where $\kappa$ ranges over all infinite cardinals and $L_\kappa$ is an infinite simple group of cardinality $\kappa$; we choose $L_\kappa \coloneqq \Alt_{\fin}(\kappa)$ to make things concrete. For each $G$, the collection $F(G)$ is isomorphic to a set, since for $\kappa > \card(G)$ every homomorphism $L_\kappa \to G$ is trivial. Thus, a more precise definition would be
+  where $\kappa$ ranges over all infinite cardinals and $L_\kappa$ is an infinite simple group of cardinality $\kappa$; we choose $L_\kappa \coloneqq \Alt_{\fin}(\kappa)$ to make things concrete. For each $G$, the collection $F(G)$ is essentially small, since for $\kappa > \card(G)$ every homomorphism $L_\kappa \to G$ is trivial. Thus, a more precise definition would be
   $$F(G) \coloneqq \textstyle\prod_{\kappa \leq \card(G)} \Hom(L_\kappa,G),$$
-  but the first definition makes it more apparent that $F$ is a functor.
+  since only then $F(G)$ is actually a set, but the first definition makes it more apparent that $F$ is a functor.
   This is the canonical example of a continuous functor $\Grp \to \Set$ that is not representable, and not a right adjoint.
 nlab_link: null
 left_adjoint: null

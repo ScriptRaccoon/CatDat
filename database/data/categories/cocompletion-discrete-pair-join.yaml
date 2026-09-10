@@ -80,7 +80,7 @@ unsatisfied_properties:
   - property: well-powered
     references:
       - terminal_presheaf_small
-    proof: We already know that the terminal presheaf $1$ is small. For every set $X$, the unique morphism $\Hom(-,X) \to 1$ is a monomorphism since $X$ is subterminal in $\C$ (in fact, any morphism with codomain $X$ is the identity). For different sets $X,X'$ we have $\Hom(-,X) \not\cong \Hom(-,X')$ since there is not even a morphism $X \to X'$ in $\C$. This shows that $\Sub(1)$ is not small.
+    proof: We already know that the terminal presheaf $1$ is small. For every set $X$, the unique morphism $\Hom(-,X) \to 1$ is a monomorphism since $X$ is subterminal in $\C$ (in fact, any morphism with codomain $X$ is the identity). For different sets $X,X'$ we have $\Hom(-,X) \not\cong \Hom(-,X')$ since there is not even a morphism $X \to X'$ in $\C$. This shows that $\Sub(1)$ is not essentially small.
 
   - property: well-copowered
     proof: >-

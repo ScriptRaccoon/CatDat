@@ -81,7 +81,7 @@ satisfied_properties:
       $$\colim_{i\in\I} \Hom((1,1), (X_i,X_i')) \to \Hom((1,1), \colim_{i\in\I} (X_i,X_i'))$$
       is surjective. To see it is injective, use the fact that the unique morphism $(1, 0) \to (1, 1)$ is an epimorphism (see below), and we have already seen that the corresponding function for $(1,0)$ is injective.
 
-      Therefore, any finite coproduct of $(1, 0)$ and $(1, 1)$ is finitely presentable; this means any object of the form $([n], [m])$ with $m, n \in \IN$ and $m \le n$ is finitely presentable. All such objects form a small set. Moreover, any object $(X,X')$ of $\Mono$ is a filtered colimit of the subobjects $(F, F \cap X')$ where $F$ is a finite subset of $X$, and each $(F, F \cap X')$ is isomorphic to some $([n], [m])$.
+      Therefore, any finite coproduct of $(1, 0)$ and $(1, 1)$ is finitely presentable; this means any object of the form $([n], [m])$ with $m, n \in \IN$ and $m \le n$ is finitely presentable. All such objects form a set. Moreover, any object $(X,X')$ of $\Mono$ is a filtered colimit of the subobjects $(F, F \cap X')$ where $F$ is a finite subset of $X$, and each $(F, F \cap X')$ is isomorphic to some $([n], [m])$.
 
   - property: co-Malcev
     proof: >-
