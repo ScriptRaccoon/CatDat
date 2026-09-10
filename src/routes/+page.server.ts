@@ -91,7 +91,7 @@ export const load = () => {
 
 	const recent_structures_ids = Object.entries(structure_history)
 		.sort((a, b) => b[1].localeCompare(a[1]))
-		.slice(0, 5)
+		.slice(0, 10)
 		.map((a) => a[0])
 
 	const recent_structures = db
@@ -101,7 +101,10 @@ export const load = () => {
 			WHERE id IN ${to_placeholders(recent_structures_ids)}`
 		)
 		.all(...recent_structures_ids)
-		.reverse()
+		.sort(
+			(a, b) =>
+				recent_structures_ids.indexOf(a.id) - recent_structures_ids.indexOf(b.id)
+		)
 
 	return {
 		stats: {
