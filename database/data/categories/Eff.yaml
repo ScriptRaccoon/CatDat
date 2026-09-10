@@ -55,6 +55,42 @@ satisfied_properties:
   - property: natural numbers object
     proof: 'We claim that $N \coloneqq (\IN, \{ (n, n, n) \mid n \in \IN \})$ is a natural numbers object. To see this, suppose we have an object $(X, E_X)$ with morphisms $x : 1 \to X$ and $f : X \to X$. Then we can find $n_0 \in \IN, x_0 \in X$ such that $n_0 \Vdash 0 \xmapsto{x} x_0$; also, let $c$ and $t$ be witnesses to the codomain property and totality of $f$, respectively. We can then define an "iteration of $c\circ t$" program encoded by $i\in\IN$, such that $i \cdot n$ represents the result of the $n$-fold iteration of $t$ followed by $c$, starting with $c \cdot n_0$. We can also find a sequence $x_n \in X$ extending $x_0$ such that $t \cdot (i \cdot n) \Vdash x_n \xmapsto{f} x_{n+1}$. We can then show that $\{ (\langle n, m \rangle, n, y) \mid (m \Vdash x_n = y) \}$ is an effective functional relation which induces a morphism $N \to X$, and this morphism has the required properties. Likewise, the uniqueness of this morphism is straightforward to establish.'
 
+  - property: extremal generating set
+    proof: >-
+      We claim that the collection of all $(X, E_X)$ with $X \subseteq \IN$ forms an extremal generating set. First, to see it is a generating set, suppose we have two effective functional relations $f, g$ between $(X, E_X)$ and $(Y, E_Y)$ such that $[f] \ne [g]$. Then either a witness $\ell_1$ or a witness $\ell_2$ does not exist; without loss of generality, suppose $\ell_1$ does not exist. That means that for each $\ell \in \IN$, we can find $n_\ell \in \IN$ and $x_\ell \in X$, $y_\ell \in Y$ such that $n_\ell \Vdash x_\ell \xmapsto{f} y_\ell$ but either $\ell \cdot n_\ell \not\downarrow$ or $\ell \cdot n_ell \not\Vdash x_\ell \xmapsto{g} y_\ell$. In either case, make one such choice for each $\ell$, and let $X' \coloneqq \{ x_\ell \mid \ell \in \IN \}$, and $E_{X'} \coloneqq E_X \cap (\IN \times X' \times X')$. We can then check that $E_{X'}$ is an effective PER; $i \coloneqq E_X \cap (\IN \times X' \times X)$ is an effective functional relation inducing a morphism $[i] : (X', E_{X'}) \to (X, E_X)$.
+
+      We now claim $[f] \circ [i] \ne [g] \circ [i]$. Suppose to the contrary that $f\circ i$ and $g\circ i$ were equivalent, with witnesses $\ell_1$ and $\ell_2$. Then whenever $x' \in X'$, and $n \Vdash x' \xmapsto{f} y$, we have:
+      $$\begin{align*}
+      & n_1 \Vdash x' = x' & n_1 & \coloneqq d_f \cdot n \\
+      \implies & n_2 \Vdash x' \xmapsto{i} x' & n_2 & \coloneqq n_1 \\
+      \implies & n_3 \Vdash x' \xmapsto{f\circ i} y & n_3 & \coloneqq \langle n_2, n \rangle \\
+      \implies & n_4 \Vdash x' \xmapsto{g\circ i} y & n_4 & \coloneqq \ell_1 \cdot n_3 \\
+      \implies \exists x_2\in X, ~ & n_5 \Vdash x' \xmapsto{i} x_2 & n_5 & \coloneqq p_1(n_4) \\
+      & n_6 \Vdash x_2 \xmapsto{g} y & n_6 & \coloneqq p_2(n_4) \\
+      \implies & n_7 \Vdash x' = x_2 & n_7 & \coloneqq n_5 \\
+      \implies & n_8 \Vdash x' \xmapsto{g} y & n_8 & \coloneqq r_g \cdot \langle n_6, s_X \cdot n_7, c_f \cdot n \rangle.\end{align*}$$
+      Therefore, if we let $\ell$ be the encoding of a program representing the transformation from $n$ to $n_8$ in the right column, then $n_\ell \Vdash x_\ell \xmapsto{f} y_\ell$; $\ell \cdot n_\ell \downarrow$; and $\ell \cdot n_\ell \Vdash x_\ell \xmapsto{g} y_\ell$. This contradicts the choice of $x_\ell$.
+
+      On the other hand, $(X', E_{X'})$ is isomorphic to an object with $X' \subseteq \IN$ (in fact, structurally isomorphic, not just isomorphic in $\Eff$).
+
+      Similarly, to show it is an extremal generating set, suppose we have an effective functional relation $f$ between $(X, E_X)$ and $(Y, E_Y)$ such that $[f]$ is not an isomorphism. By the above, if $[f]$ is not a monomorphism, then we can find $(U, E_U)$ with $U \subseteq \IN$ such that $\Hom(U, X) \to \Hom(U, Y)$ is not injective. Otherwise, since $\Eff$ is balanced, $[f]$ must not be an epimorphism. Using the description of epimorphisms below, we conclude that for each $s \in \IN$, there exists $n_s \in \IN$ and $y_s \in Y$ such that $n_s \Vdash y_s = y_s$, but either $s \cdot n_s \not\downarrow$ or for all $x \in X$, $s \cdot n_s \not\Vdash x \xmapsto{f} y_s$. In either case, make one such choice for each $s$, and let $Y' \coloneqq \{ y_s \mid s \in \IN \}$, $E_{Y'} \coloneqq E_Y \cap (\IN \times Y' \times Y')$, and $i \coloneqq E_Y \cap (\IN \times Y' \times Y)$. Then $E_{Y'}$ is an effective PER, $i$ is an effective functional relation inducing a morphism $[i] : (Y', E_{Y'}) \to (Y, E_Y)$.
+
+      We now claim that the conditions above make it impossible for there to be a functional relation $g$ between $(Y', E_{Y'})$ and $(X, E_X)$ such that $[i] = [f] \circ [g]$, with witnesses $\ell_1$ and $\ell_2$ of the equivalence of $i$ and $f \circ g$. Suppose, to the contrary, we did have such a functional relation $g$. Then whenever $y' \in Y'$ and $n \Vdash y' = y'$, we have:
+      $$\begin{align*}
+      \exists x\in X, ~ & n_1 \Vdash y' \xmapsto{g} x & n_1 & \coloneqq t_g \cdot n \\
+      \implies & n_2 \Vdash x = x & n_2 & \coloneqq c_g \cdot n_1 \\
+      \implies \exists y\in Y, ~ & n_3 \Vdash x \xmapsto{f} y & n_3 & \coloneqq t_f \cdot n_2 \\
+      \implies & n_4 \Vdash y' \xmapsto{f\circ g} y & n_4 & \coloneqq \langle n_2, n_3 \rangle \\
+      \implies & n_5 \Vdash y' \xmapsto{i} y & n_5 & \coloneqq \ell_2 \cdot n_4 \\
+      \implies & n_6 \Vdash y' = y & n_6 & \coloneqq n_5 \\
+      \implies & n_7 \Vdash x \xmapsto{f} y' & n_7 & \coloneqq r_f \cdot \langle n_3, n_2, s_Y \cdot n_6 \rangle.
+      \end{align*}$$
+      Therefore, if we let $s$ be the encoding of a program representing the transformation from $n$ to $n_7$ in the right column, then $n_s \vdash y_s = y_s$; $s \cdot n_s \downarrow$; and there exists $x\in X$ such that $s \cdot n_s \Vdash x \xmapsto{f} y_s$. This contradicts the choice of $y_s$.
+
+      Therefore, $\Hom(Y', X) \to \Hom(Y', Y)$ is not surjective. Again, $(Y', E_{Y'})$ is isomorphic to an object with $Y' \subseteq \IN$.
+
+      (Also, note that if $(X, E_X)$ is an object with $X \subseteq \IN$, then $(\IN, E_X)$ is also an object which is isomorphic to $(X, E_X)$; therefore, in the generating set, we can in fact require that $X = \IN$.)
+
 unsatisfied_properties:
   - property: skeletal
     proof: Consider $(X, \IN \times \Delta_X)$ and $(Y, \IN \times \Delta_Y)$ for bijective but unequal sets $X, Y$.
