@@ -1,6 +1,6 @@
 id: small
 relation: is
-description: A category is <i>small</i> when the collection of objects and the collection of morphisms are sets, i.e. small.
+description: A category is <i>small</i> when the collection of objects and the collection of morphisms are sets, i.e. small. See <a href="/content/foundations">here</a> for the set-theoretic foundation of category theory we are working with.
 nlab_link: https://ncatlab.org/nlab/show/small+category
 dual: small
 invariant_under_equivalences: false

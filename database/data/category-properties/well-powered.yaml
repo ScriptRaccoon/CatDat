@@ -1,6 +1,6 @@
 id: well-powered
 relation: is
-description: A category is <i>well-powered</i> if the collection of subobjects of any object is isomorphic to a set.
+description: A category is <i>well-powered</i> if the collection of subobjects of any object is essentially small. Equivalently, for every object $X$, there is a small family of monomorphisms $(Y_i \hookrightarrow X)_{i \in I}$ (i.e., $I$ is a set) such that every monomorphism $Y \hookrightarrow X$ is isomorphic to some monomorphism in the family.
 nlab_link: https://ncatlab.org/nlab/show/well-powered+category
 dual: well-copowered
 invariant_under_equivalences: true

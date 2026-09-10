@@ -61,8 +61,8 @@
     - accessible
   conclusions:
     - extremal generating set
-  # TODO: refactor this once we add the property "has small dense subcategory"
-  proof: The set appearing in the definition of a $\kappa$-accessible category gives a small dense full subcategory, which is in particular an extremal generating set.
+  # TODO: refactor this once we add the property "has (ess.) small dense subcategory"
+  proof: The set appearing in the definition of a $\kappa$-accessible category gives an essentially small dense full subcategory, which is in particular an extremal generating set.
 
 - id: accessible_well-powered
   assumptions:

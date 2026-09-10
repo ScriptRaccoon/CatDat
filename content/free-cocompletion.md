@@ -11,7 +11,7 @@ that are _small_. This condition can be described in many equivalent ways:
 
 1. $F$ is a small colimit of representable functors.
 2. There is a small category $\I$ such that $F$ is the left Kan extension of a presheaf on $\I$ along a functor $\I \to \C$.
-3. There is small subcategory $\I \subseteq \C$ such that $F$ is the left Kan extension of its restriction to $\I$.
+3. There is an essentially small subcategory $\I \subseteq \C$ such that $F$ is the left Kan extension of its restriction to $\I$.
 4. The category of elements $\int F$ is [finally small](https://ncatlab.org/nlab/show/finally+small).
 
 Here, the objects of $\int F$ are pairs $(X,a)$, where $X \in \C$ and $a \in F(X)$, and a morphism $(X,a) \to (Y,b)$ is a morphism $f : X \to Y$ with $F(f)(b) = a$. The equivalence of the conditions (1), (2), (3) is proven as Proposition 4.83 in Kelly's book [Basic Concepts of Enriched Category Theory](http://www.tac.mta.ca/tac/reprints/articles/10/tr10.html). The implication (1) $\implies$ (4) is proven as Proposition 3.7 in <a href="https://doi.org/10.1007/s10485-021-09671-9">Kan Extensions are Partial Colimits</a> by Perrone-Tholen (but there must be earlier references). The implication (4) $\implies$ (1) follows from the [co-Yoneda Lemma](https://ncatlab.org/nlab/show/co-Yoneda+lemma)
@@ -175,9 +175,9 @@ where $E \coloneqq \eq(F \rightrightarrows G)$ is the objectwise defined equaliz
 
 We view the pushout $P \coloneqq F \sqcup_E F$ as the union of two copies $F_1,F_2$ of $F$ with $F_1 \cap F_2 = E$. In particular, we regard $E,F_1,F_2$ as sub-presheaves of $P$. For a morphism $f$ in $\C$, we write $f^*$ instead of $P(f)$.
 
-Since $P \cong G$ is small, its category of elements $\int P$ has a finally small subcategory $\K$. Let $K \subseteq \Ob(\C)$ be the set of objects that appear in $\K$. We claim that
+Since $P \cong G$ is small, its category of elements $\int P$ has an essentially small final subcategory $\K$. Let $K \subseteq \Ob(\C)$ be the collection of objects that appear in $\K$. We claim that
 $$\{(A,a) : A \in K, \, a \in E(A)\}$$
-is a weakly terminal set in $\int E$, which is equivalent to saying that the canonical morphism
+is a weakly terminal essentially small collection in $\int E$, which is equivalent to saying that the canonical morphism
 $$\textstyle \coprod_{A \in K,\, a \in E(A)} \Hom(-,A) \to E$$
 is an epimorphism of presheaves, as required.
 

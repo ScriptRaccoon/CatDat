@@ -65,7 +65,7 @@ unsatisfied_properties:
     proof: 'There are functors $F,G : \CRing \rightrightarrows \Set$ such that $\Hom(F,G)$ is not essentially small, see <a href="https://mathoverflow.net/questions/390611" target="_blank">MO/390611</a> for example. Now if the exponential $[F,G] : \CRing \to \Set$ exists, we get $[F,G](\IZ) \cong \Hom(\Hom(\IZ,-),[F,G])$ by Yoneda, which simplifies to $\Hom(1,[F,G]) \cong \Hom(1 \times F,G) \cong \Hom(F,G)$, a contradiction.'
 
   - property: well-powered
-    proof: 'Consider the functor $F$ from <a href="https://mathoverflow.net/questions/390611" target="_blank">MO/390611</a> for example. The collection of subobjects of $F$ is not isomorphic to a set: for each infinite cardinal $\kappa$, simply cut off the construction of $F$ at $\kappa$. This yields a different subobject for each $\kappa$.'
+    proof: 'Consider the functor $F$ from <a href="https://mathoverflow.net/questions/390611" target="_blank">MO/390611</a> for example. The collection of subobjects of $F$ is not essentially small: for each infinite cardinal $\kappa$, simply cut off the construction of $F$ at $\kappa$. This yields a different subobject for each $\kappa$.'
 
   - property: cofiltered-limit-stable epimorphisms
     proof: We already know that <a href="/category/Set">$\Set$</a> does not have this property. Now apply the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> to the functor $\Set \to [\CRing, \Set]$ that maps a set to its constant functor.

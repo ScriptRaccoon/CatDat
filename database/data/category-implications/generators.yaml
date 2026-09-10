@@ -79,4 +79,4 @@
     $$f \circ {-} : \Hom(G, X) \to \Hom(G, Y)$$
     is an injective function between finite sets of equal cardinality, and therefore is also a bijection. By the assumption that $S$ is an extremal generating set, we thus have $f$ is an isomorphism.
 
-    This shows that the collection of isomorphism classes of objects of $X$ is in bijection with a set. Together with the assumption that the category is locally finite, this implies the category is essentially small.
+    This shows that the collection of isomorphism classes of objects of $X$ is essentially small, i.e. isomorphic to a set. Together with the assumption that the category is locally finite, this implies the category is essentially small.

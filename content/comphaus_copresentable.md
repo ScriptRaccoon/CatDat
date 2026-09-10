@@ -98,7 +98,7 @@ followed by
 $$\Hom_{\CompHaus}({-}, [0,1]) : \CompHaus^{\op} \to \Set.$$
 The first automatically preserves $\aleph_1$-filtered colimits (and in fact all colimits) since it has a right adjoint. The second one preserves $\aleph_1$-filtered colimits by the previous lemma.
 
-Alternately, applying the general framework of Lawvere theories shows that $\CompHaus^{\op}$ is equivalent to the category of functors $\T \to \Set$ preserving countable products, where $\T$ is the full subcategory of $\CompHaus$ of all spaces $[0,1]^A$ where $A$ is countable. Note that $\T$ is essentially small. We thus reproduce a result from [Isb82](#references) which also provides a nice description of a small set of generators of the operations of the $\aleph_0$-ary algebraic theory. A more recent treatment in [MR17](#references) refines this by providing a nice axiomatization of the relations of that theory.
+Alternately, applying the general framework of Lawvere theories shows that $\CompHaus^{\op}$ is equivalent to the category of functors $\T \to \Set$ preserving countable products, where $\T$ is the full subcategory of $\CompHaus$ of all spaces $[0,1]^A$ where $A$ is countable. Note that $\T$ is essentially small. We thus reproduce a result from [Isb82](#references) which also provides a nice description of a set of generators of the operations of the $\aleph_0$-ary algebraic theory. A more recent treatment in [MR17](#references) refines this by providing a nice axiomatization of the relations of that theory.
 :::
 
 ## References
