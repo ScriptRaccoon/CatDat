@@ -1,15 +1,6 @@
 <script lang="ts">
 	import MetaData from '$components/MetaData.svelte'
 	import StatsCard from '$components/StatsCard.svelte'
-	import {
-		faChartBar,
-		faChartDiagram,
-		faDatabase,
-		faList,
-		faSearch,
-		faUsers
-	} from '@fortawesome/free-solid-svg-icons'
-	import Fa from 'svelte-fa'
 
 	let { data } = $props()
 </script>
@@ -35,8 +26,9 @@
 		{#each data.example_structures as structure, index (structure.id)}
 			{@const last = index === data.example_structures.length - 1}
 			<span>
-				<a href="/{structure.type}/{structure.id}">{@html structure.notation}</a
-				>{#if !last}<span>,&nbsp;</span>{/if}
+				<a href="/{structure.type}/{structure.id}" aria-label={structure.name}>
+					{@html structure.notation}
+				</a>{#if !last}<span>,&nbsp;</span>{/if}
 			</span>
 		{/each}
 		...
@@ -50,11 +42,14 @@
 		<a href="/functor-property/fully_faithful">fully faithful</a> ...
 	</StatsCard>
 
-	<StatsCard number={data.stats.assignment_number} title="Proofs">
-		e.g. <a href="/category/Haus">{@html data.selected_structures.Haus.notation}</a>
+	<StatsCard number={data.stats.proof_number} title="Proofs of properties">
+		e.g. <a href="/category/Haus" aria-label={data.selected_structures.Haus.name}>
+			{@html data.selected_structures.Haus.notation}
+		</a>
 		is extensive,
-		<a href="/category/FinAb">{@html data.selected_structures.FinAb.notation}</a> is ℵ₁-accessible
-		...
+		<a href="/category/FinAb" aria-label={data.selected_structures.FinAb.name}>
+			{@html data.selected_structures.FinAb.notation}
+		</a> is ℵ₁-accessible ...
 	</StatsCard>
 
 	<StatsCard number={data.stats.implication_number} title="Implications">
@@ -76,94 +71,144 @@
 	</ul>
 </section>
 
-<div class="features">
-	<article class="feature-card">
-		<h2>
-			<Fa icon={faDatabase} /> Structures
-		</h2>
+<section>
+	<h2>Structures, Properties, Implications</h2>
 
-		<p>
-			Browse a comprehensive collection of categorical structures, including
-			<a class="accent" href="/category-list">categories</a> and
-			<a class="accent" href="/functor-list">functors</a>, each with detailed
-			descriptions, proofs of their properties, and related structures.
-		</p>
-	</article>
-	<article class="feature-card">
-		<h2>
-			<Fa icon={faList} /> Properties
-		</h2>
+	<p>
+		<i>CatDat</i> currently supports four types of categorical structures:
+		<a class="accent" href="/category-list">categories</a>,
+		<a class="accent" href="/functor-list">functors</a>,
+		<a class="accent" href="/morphism-list">morphisms</a>, and
+		<a class="accent" href="/symmetric_monoidal_category-list"
+			>symmetric monoidal categories</a
+		>. Each structure has a detailed description, proofs of its properties (satisfied
+		or unsatisfied), and related structures.
+	</p>
 
-		<p>
-			Browse properties of categorical structures, including
-			<a class="accent" href="/category-properties">category properties</a> and
-			<a class="accent" href="/functor-properties">functor properties</a>, each with
-			relevant results, structures satisfying or not satisfying the property, and
-			related properties.
-		</p>
-	</article>
+	<p>
+		For each type, there is a collection of properties, such as
+		<a class="accent" href="/category-properties">category properties</a> and
+		<a class="accent" href="/functor-properties">functor properties</a>. Each property
+		has a detailed description, relevant results, structures satisfying or not
+		satisfying the property, and related properties.
+	</p>
 
-	<article class="feature-card">
-		<h2>
-			<Fa icon={faChartDiagram} />
-			Deduction System
-		</h2>
+	<p>
+		For each type, there is a collection of implications, such as <a
+			class="accent"
+			href="/category-implications">category implications</a
+		>
+		and
+		<a class="accent" href="/functor-implications">functor implications</a>, each with
+		a detailed proof. They form the basis of a powerful deduction system that deduces,
+		for every structure, new properties from given ones. Of the {data.stats
+			.proof_number} proofs of properties in the database,
+		{data.stats.automated_proof_number} have been automated ({Math.round(
+			100 * (data.stats.automated_proof_number / data.stats.proof_number)
+		)}%).
+	</p>
+</section>
 
-		<p>
-			Implications between properties of categorical structures, including
-			<a class="accent" href="/category-implications">category implications</a> and
-			<a class="accent" href="/functor-implications">functor implications</a>, power
-			a deduction system that automatically infers satisfied and unsatisfied
-			properties.
-		</p>
-	</article>
+<section>
+	<h2>Search</h2>
 
-	<article class="feature-card">
-		<h2>
-			<Fa icon={faSearch} /> Search by properties
-		</h2>
+	<p>
+		<i>CatDat's</i> <a class="accent" href="/category-search">search feature</a> makes it
+		easy to find structures that satisfy specific properties while not satisfying others.
+		For example, you can find ...
+	</p>
 
-		<p>
-			Search for categorical structures such as
-			<a class="accent" href="/category-search">categories</a>
-			or
-			<a class="accent" href="/functor-search">functors</a>
-			satisfying specific properties while not satisfying others. Inconsistent property
-			combinations are detected.
-		</p>
-	</article>
-
-	<article class="feature-card">
-		<h2>
-			<Fa icon={faChartBar} /> Compare structures
-		</h2>
-		<p>
-			Compare categorical structures such as
-			<a class="accent" href="/category-comparison">categories</a>
-			or
-			<a class="accent" href="/functor-comparison">functors</a>
-			to identify similarities and differences in their properties.
-		</p>
-	</article>
-
-	<article class="feature-card">
-		<h2>
-			<Fa icon={faUsers} /> Community-driven
-		</h2>
-		<p>
-			This <a
-				class="accent"
-				href="https://github.com/ScriptRaccoon/catdat"
-				target="_blank"
+	<ul class="with-margins">
+		<li>
+			<a href="/category-search/results?satisfied=abelian&unsatisfied=well-powered"
+				>abelian categories that are not well-powered</a
 			>
-				open-source project
+		</li>
+		<li>
+			<a
+				href="/category-search/results?satisfied=finitely_cocomplete&unsatisfied=terminal_object~cocomplete"
+				>finitely cocomplete categories that have neither a terminal object nor
+				are cocomplete</a
+			>
+		</li>
+		<li>
+			<a
+				href="/functor-search/results?satisfied=cocontinuous&unsatisfied=preserves_monomorphisms"
+				>cocontinuous functors that do not preserve monomorphisms</a
+			>
+		</li>
+		<li>
+			<a
+				href="/morphism-search/results?satisfied=regular_monomorphism&unsatisfied=split_monomorphism"
+				>regular monomorphisms that do not split</a
+			>
+		</li>
+	</ul>
+
+	<p>
+		Any combination of properties is possible. Inconsistent combinations are detected
+		as well (<a
+			href="/category-search/results?satisfied=groupoid~binary_products~inhabited&unsatisfied=trivial"
+			>example</a
+		>).
+	</p>
+</section>
+
+<section>
+	<h2>Compare structures</h2>
+
+	<p>
+		<i>CatDat's</i>
+		<a class="accent" href="/category-comparison">comparison feature</a> allows you to compare
+		multiple categories, functors, etc. to identify similarities and differences in their
+		properties. For example, you can compare ...
+	</p>
+
+	<ul class="with-margins">
+		<li>
+			<a href="/category-comparison/CRing/Ring">rings with commutative rings</a>
+		</li>
+		<li>
+			<a href="/category-comparison/FinSet/Set_c/Set"
+				>finite sets and countable sets with all sets
 			</a>
-			welcomes <a class="accent" href="/content/contribute">contributions</a>
-			to fill in <a class="accent" href="/missing">missing data</a>
-			or observe new combinations of properties.
-		</p>
-	</article>
-</div>
+		</li>
+		<li>
+			<a href="/category-comparison/grAb/Ch(Ab)"
+				>graded modules with cochain complexes</a
+			>
+		</li>
+		<li>
+			<a href="/functor-comparison/power_set_contravariant/power_set_covariant"
+				>the contravariant power set functor with the covariant power set functor
+			</a>
+		</li>
+	</ul>
+</section>
+
+<section>
+	<h2>Contribute to CatDat</h2>
+
+	<p>
+		<i>CatDat</i> is a <strong>community effort</strong>, developed in an
+		<a class="accent" href="https://github.com/ScriptRaccoon/CatDat" target="_blank">
+			open-source GitHub repository
+		</a>.
+	</p>
+
+	<p>
+		Whether you're a mathematician spotting missing data or a developer improving the
+		interface, your contributions are welcome. A particularly useful way to help is to
+		fill in
+		<a href="/missing">missing information</a> in the database.
+	</p>
+
+	<p></p>
+
+	<p>
+		See <a class="accent" href="/content/contribute">how to contribute</a> for more information.
+	</p>
+</section>
 
 <style>
 	.stats {
@@ -171,27 +216,5 @@
 		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 		gap: 1rem;
 		margin-block: 2rem;
-	}
-
-	.features {
-		margin-block: 2rem;
-		display: grid;
-		gap: 1.25rem;
-
-		@media (min-width: 600px) {
-			grid-template-columns: repeat(2, 1fr);
-		}
-	}
-
-	.feature-card {
-		background-color: var(--card-color);
-		padding: 1rem 1.5rem;
-		border-radius: 1rem;
-		outline: 1px solid var(--secondary-outline-color);
-		box-shadow: 0 0 1rem var(--card-shadow);
-
-		h2 {
-			margin-block: 1rem;
-		}
 	}
 </style>
