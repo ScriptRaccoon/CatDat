@@ -1,3 +1,4 @@
+import fs from 'node:fs'
 import path from 'node:path'
 import { get_property_assignments, seed_file, seed_files } from './utils/seed.helpers'
 import { get_client } from '$shared/db'
@@ -16,6 +17,13 @@ import { are_disjoint, capitalize, devlog } from '$shared/utils'
 const db = get_client({ readonly: false })
 
 const data_folder = path.resolve('database', 'data')
+
+const structure_history_file = path.resolve('shared', 'structure.history.json')
+const structure_history: Record<string, string> = JSON.parse(
+	fs.readFileSync(structure_history_file, 'utf8')
+)
+
+let structure_history_changed = false
 
 seed()
 
@@ -54,6 +62,13 @@ function seed() {
 		type: 'symmetric_monoidal_category',
 		folder: 'symmetric_monoidal_categories'
 	})
+
+	if (structure_history_changed) {
+		fs.writeFileSync(
+			structure_history_file,
+			`${JSON.stringify(structure_history, null, '\t')}\n`
+		)
+	}
 }
 
 /**
@@ -286,6 +301,8 @@ function seed_structures<T extends StructureYaml>({
 			structure.parent || null
 		)
 
+		record_structure_addition(structure.id)
+
 		for (const { label, associated_type, required } of associated_structure_types) {
 			if (required && !structure[label]) {
 				console.error(
@@ -344,6 +361,17 @@ function seed_structures<T extends StructureYaml>({
 	}
 
 	seed_files(db, PLURALS[type], path.join(data_folder, folder), insert_structure)
+}
+
+/**
+ * Adds the structure to the history in case it is new.
+ */
+function record_structure_addition(id: string) {
+	if (structure_history[id]) return
+
+	const date = new Date().toLocaleDateString('en-CA')
+	structure_history[id] = date
+	structure_history_changed = true
 }
 
 /**
