@@ -7,7 +7,6 @@ import {
 	faCubes,
 	faDatabase,
 	faDownload,
-	faHome,
 	faList,
 	faPenToSquare,
 	faPuzzlePiece,
@@ -26,11 +25,6 @@ type Link = {
 
 export function get_navigation_links(type: StructureType): Link[] {
 	return [
-		{
-			href: '/',
-			text: 'Home',
-			icon: faHome
-		},
 		{
 			href: `/${type}-list`,
 			text: capitalize(PLURALS[type]),
