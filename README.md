@@ -5,15 +5,13 @@
 ![Build](https://github.com/ScriptRaccoon/CatDat/actions/workflows/deploy-prod.yaml/badge.svg?label=xyz)
 ![Last commit](https://img.shields.io/github/last-commit/ScriptRaccoon/CatDat)
 
-## [**https://catdat.app**](https://catdat.app)
+_CatDat_ provides a growing collection of categorical structures such as categories and functors, each with detailed descriptions and properties. Built by and for those who love [category theory](https://en.wikipedia.org/wiki/Category_theory).
 
-_CatDat_ provides a growing collection of categorical structures such as categories, functors, morphisms, and symmetric monoidal categories, each with detailed descriptions and properties. Built by and for those who love [category theory](https://en.wikipedia.org/wiki/Category_theory).
-
-[Watch the YouTube video](https://youtu.be/dQXbPxk__qA)
+### [**https://catdat.app**](https://catdat.app)
 
 ## Features
 
-- **Types of Categorical Structures**: Supports categories, functors, morphisms, and symmetric monoidal categories.
+- **Four Types of Categorical Structures**: Supports categories, functors, morphisms, and symmetric monoidal categories.
 - **Structure Detail Pages**: Each categorical structure has a dedicated page with its definition, satisfied and unsatisfied properties, and related structures.
 - **Property Detail Pages**: Explore the definition of a property and view categorical structures that satisfy it and those that don't.
 - **Proofs and References**: Each property and implication includes a proof or reference, forming a data-driven knowledge base for category theory.
@@ -79,4 +77,4 @@ If you find this project useful, you can support its development:
 
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-00AA00?logo=buymeacoffee&logoColor=white)](https://www.buymeacoffee.com/scriptraccoon)
 
-**Cost transparency.** The project currently only incurs domain costs of about $10 per year. There are no costs for hosting or the database. All development is done in free time.
+**Cost transparency.** The project currently only incurs domain costs of about $15 per year. There are no costs for hosting or the database. The project has no external funding.
