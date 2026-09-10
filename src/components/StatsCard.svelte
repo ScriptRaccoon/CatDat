@@ -49,7 +49,7 @@
 </script>
 
 <article>
-	<span class="number">
+	<span class="number" class:done={has_shown_animation}>
 		<span aria-hidden="true">{current_number.toLocaleString('en-US')}</span>
 		<span class="visually-hidden">{number}</span>
 	</span>
