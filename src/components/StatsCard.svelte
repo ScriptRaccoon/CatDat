@@ -11,33 +11,47 @@
 	let { number, title, children }: Props = $props()
 
 	const storage_key = 'has_shown_stats_animation'
+	const animation_duration = 1500
 
 	let has_shown_animation = $state(
 		browser && window.sessionStorage.getItem(storage_key) === '1'
 	)
 
-	let current_number = $derived(has_shown_animation ? number : 0)
+	let current_number = $state(0)
 
 	$effect(() => {
-		if (has_shown_animation) return
+		if (has_shown_animation) {
+			current_number = number
+			return
+		}
 
-		const STEP = Math.round(number / 150)
+		const start_time = performance.now()
 
-		let interval = setInterval(() => {
-			if (current_number < number) {
-				current_number = Math.min(current_number + STEP, number)
+		const update = (time: number) => {
+			const progress = Math.max(
+				Math.min((time - start_time) / animation_duration, 1),
+				0
+			)
+
+			const eased_progress = 1 - (1 - progress) ** 3
+			current_number = Math.round(number * eased_progress)
+
+			if (progress < 1) {
+				requestAnimationFrame(update)
 			} else {
 				has_shown_animation = true
 				window.sessionStorage.setItem(storage_key, '1')
-				clearInterval(interval)
 			}
-		}, 10)
+		}
+
+		requestAnimationFrame(update)
 	})
 </script>
 
 <article>
 	<span class="number">
-		{current_number.toLocaleString('en-US')}
+		<span aria-hidden="true">{current_number.toLocaleString('en-US')}</span>
+		<span class="visually-hidden">{number}</span>
 	</span>
 	<span class="title">
 		{title}
