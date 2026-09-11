@@ -1,0 +1,83 @@
+id: Vect_family
+name: category of large families of vector spaces with small support
+notation: $\Vect^{(I)}_K$
+objects: 'families of vector spaces $V = (V_i)_{i \in I}$ over a field $K$ whose support $\supp(V) \coloneqq \{i \in I : V_i \neq 0\}$ is essentially small (i.e., isomorphic to a set), where $I$ is a fixed collection that is not essentially small'
+morphisms: families of linear maps
+description: We have added this category solely as an example of a split abelian category that does not have a generator. It is a full subcategory of the product category $\Vect_K^I$ (which exists even when $I$ is merely a collection; see <a href="/content/foundations">Foundations</a>).
+nlab_link: null
+
+tags:
+  - algebra
+
+related:
+  - Vect
+  - Set_disc_Ab
+  - Vect_large
+
+satisfied_properties:
+  - property: cocomplete
+    proof: Since <a href="/category/Vect">$\Vect_K$</a> is cocomplete, the product category $\Vect_K^I$ is cocomplete with pointwise colimits. (The size of the index collection does not matter.) Since our colimits are small by convention, it is easy to check that its full subcategory $\Vect^{(I)}_K$ is closed under colimits.
+    check_redundancy: false
+
+  - property: complete
+    proof: Since <a href="/category/Vect">$\Vect_K$</a> is complete, the product category $\Vect_K^I$ is complete with pointwise limits. (The size of the index collection does not matter.) Since our limits are small by convention, it is easy to check that its full subcategory $\Vect^{(I)}_K$ is closed under limits.
+
+  - property: split abelian
+    proof: This follows easily from the fact that <a href="/category/Vect">$\Vect_K$</a> is split abelian.
+
+  - property: exact filtered colimits
+    proof: This follows easily from the fact that <a href="/category/Vect">$\Vect_K$</a> has exact filtered colimits.
+
+  - property: well-powered
+    proof: The subobjects of $V$ are given by the families $W$ with $W_i \subseteq V_i$ for all $i \in I$. In particular, $\supp(W) \subseteq \supp(V)$. Hence, the collection of subobjects is small.
+
+  - property: concretizable
+    proof: The functor $\Vect^{(I)}_K \to \Vect_K$, $(V_i)_{i \in I} \mapsto \bigoplus_{i \in I} V_i$ is well-defined (since we may discard all indices $i$ for which $V_i=0$) and faithful. Since $\Vect_K$ is concretizable, so is $\Vect^{(I)}_K$.
+
+unsatisfied_properties:
+  - property: skeletal
+    proof: This is trivial.
+
+  - property: locally small
+    proof: >-
+      Disclaimer: This result and its proof are not relevant for category theory and also depend on implementation details of set theory. Only the fact that the category is locally essentially small matters.
+
+      The collection $\Hom(0,0)$ is not a set, since otherwise its unique element, the $I$-indexed family of identities $\id_0 : 0 \to 0$, would also be a set. But this is modelled as the collection of Kuratowski pairs $(i,\id_0) = \{\{i\},\{i,\id_0\}\}$ for $i \in I$. Since $I$ is not a set, this is not a set.
+
+  - property: generator
+    proof: Assume that a generator $G$ exists. Since $\supp(G)$ is essentially small, but $I$ is not, we may pick $i \in I \setminus \supp(G)$. Consider the family $V$ with $\supp(V)=\{i\}$ and $V_i = K$. Then $V \neq 0$, but $\Hom(G,V) \cong \Hom(G_i,V_i) = 0$.
+    check_redundancy: false
+
+  - property: cogenerator
+    proof: Assume that a cogenerator $Q$ exists. Since $\supp(Q)$ is essentially small, but $I$ is not, we may pick $i \in I \setminus \supp(Q)$. Consider the family $V$ with $\supp(V)=\{i\}$ and $V_i = K$. Then $V \neq 0$, but $\Hom(V,Q) \cong \Hom(V_i,Q_i) = 0$.
+    check_redundancy: false
+
+  - property: cototal
+    proof: For $i \in I$ define $E^i \in \Vect^{(I)}_K$ by $E^i_j = 0$ for $j \neq i$ and $E^i_i = K$. This yields a discrete diagram $(E^i)_{i \in I}$. For every $V \in \Vect^{(I)}_K$ the collection of cocones $(E^i \to V)_{i \in I}$ is essentially small, since for $i \notin \supp(V)$ every morphism $E^i \to V$ is zero, so the indices may be restricted to the collection $\supp(V)$, which is essentially small. Assuming $\Vect^{(I)}_K$ is cototal, by G. M. Kelly, <a href="https://www.numdam.org/item/?id=CTGDC_1986__27_2_109_0" target="_blank">A survey of totality for enriched and ordinary categories</a>, Thm. 5.6 (namely the contrapositive of the implication (i) $\Rightarrow$ (iii)), the coproduct $S \coloneqq \coprod_{i \in I} E^i$ would exist in $\Vect^{(I)}_K$. Since each $E^i$ is a retract of $S$ and $E^i_i \neq 0$, we see that $\supp(S) = I$, which however is not essentially small.
+    label: Vect_family_not_cototal
+
+  - property: total
+    proof: We can almost repeat the previous proof that the category is not cototal. The collection of cones $(V \to E^i)_{i \in I}$ is essentially small for every $V$, but $\prod_{i \in I} E^i$ does not exist since it would have support $I$.
+    references:
+      - Vect_family_not_cototal
+
+special_objects:
+  initial object:
+    description: family of trivial vector spaces
+  terminal object:
+    description: family of trivial vector spaces
+  coproducts:
+    description: pointwise direct sums
+  products:
+    description: pointwise direct products
+
+special_morphisms:
+  isomorphisms:
+    description: families of bijective linear maps
+    proof: This is trivial.
+  monomorphisms:
+    description: families of injective linear maps
+    proof: The category is abelian and hence has kernels, constructed pointwise. Thus, a homomorphism $f = (f_i)_{i \in I}$ is a monomorphism if and only if $\ker(f_i) = 0$ for all $i$, i.e. each $f_i$ is a monomorphism.
+  epimorphisms:
+    description: families of surjective linear maps
+    proof: The category is abelian and hence has cokernels, constructed pointwise. Thus, a homomorphism $f = (f_i)_{i \in I}$ is an epimorphism if and only if $\coker(f_i) = 0$ for all $i$, i.e. each $f_i$ is an epimorphism.

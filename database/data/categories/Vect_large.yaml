@@ -21,6 +21,7 @@ related:
   - TransSeqAb
   - Set_disc_Ab
   - FinVect
+  - Vect_family
 
 satisfied_properties:
   - property: preadditive
