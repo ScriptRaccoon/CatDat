@@ -41,6 +41,28 @@
     - Cauchy complete
   proof: 'A direct proof is possible, but we give a more conceptual one. Suppose that $e : X \to X$ is an idempotent morphism in a category $\C$. It can be regarded as an idempotent morphism $e \to e$ in $\C / X$. If $\C$ has pullbacks, then the slice category $\C / X$ has pullbacks; in fact, the forgetful functor creates all connected limits. The slice category also has a terminal object, and hence is finitely complete. In particular, it has equalizers and is <a href="/category-implication/equalizers_consequence">therefore Cauchy complete</a>. Applying the forgetful functor $\C / X \to \C$ to a splitting of $e$ in $\C / X$ yields a splitting of $e$ in $\C$.'
 
+- id: pullbacks_imply_coreflexive_equalizers
+  assumptions:
+    - pullbacks
+  conclusions:
+    - coreflexive equalizers
+  proof: >-
+    Assume that $f,g : A \rightrightarrows B$ is a coreflexive pair. Choose a morphism $r : B \to A$ with $r \circ f = r \circ g = \id_A$. By assumption, $f,g$ have a pullback
+    $$\begin{CD}
+    P @>{u}>> A \\
+    @V{v}VV @VV{g}V \\
+    A @>>{f}> B 
+    \end{CD}$$
+    Then
+    $$u = r \circ f \circ u = r \circ g \circ v = v.$$
+    Thus, $u$ equalizes $f$ and $g$. If $w : T \to A$ is another morphism equalizing $f$ and $g$, we have a commutative diagram
+    $$\begin{CD}
+    T @>{w}>> A \\
+    @V{w}VV @VV{g}V \\
+    A @>>{f}> B, 
+    \end{CD}$$
+    so that, by the universal property of the pullback, there is a unique morphism $h : T \to P$ with $u \circ h = w$ and $v \circ h = w$. The second equation is redundant because $u = v$. Thus, we have shown that $w$ factors uniquely through $u$, showing that $u$ is an equalizer of $f$ and $g$.
+
 - id: kernel_pair_is_pullback
   assumptions:
     - pullbacks
