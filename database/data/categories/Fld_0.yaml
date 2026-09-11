@@ -45,10 +45,10 @@ unsatisfied_properties:
   - property: semi-strongly connected
     proof: There is no homomorphism from $\IQ(\sqrt{2})$ to $\IQ(\sqrt{3})$, since a direct calculation shows that $\IQ(\sqrt{3})$ has no element $a$ with $a^2=2$. Similarly, there is no homomorphism from $\IQ(\sqrt{3})$ to $\IQ(\sqrt{2})$. See also <a href="https://math.stackexchange.com/questions/1069387">MSE/1069387</a>.
 
-  - property: cogenerating set
+  - property: cogenerating collection
     proof: We can copy the proof from <a href="/category/Fld">$\Fld$</a>.
     references:
-      - Fld_no_cogenerating_set
+      - Fld_no_cogenerating_collection
 
   - property: binary powers
     proof: We can copy the proof from <a href="/category/Fld">$\Fld$</a> that the product $\IQ(\sqrt{2}) \times \IQ(\sqrt{2})$ does not exist.

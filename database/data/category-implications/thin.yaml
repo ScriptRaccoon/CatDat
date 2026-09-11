@@ -4,7 +4,7 @@
   assumptions:
     - thin
   conclusions:
-    - generating set
+    - generating collection
     - locally finite
     - one-way
     - equalizers

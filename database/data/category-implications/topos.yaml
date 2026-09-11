@@ -41,7 +41,7 @@
   conclusions:
     - coproducts
     - elementary topos
-    - generating set
+    - generating collection
     - locally essentially small
   proof: See <a href="https://ncatlab.org/nlab/show/Sheaves+in+Geometry+and+Logic" target="_blank">Mac Lane & Moerdijk</a>, Appendix, Prop. 4.4.
   is_equivalence: true

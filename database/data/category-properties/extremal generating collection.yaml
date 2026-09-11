@@ -1,0 +1,19 @@
+id: extremal generating collection
+relation: has an
+description: >-
+  This property refers to the existence of an extremal generating collection. A collection of objects $S \subseteq \Ob(\C)$ in a category $\C$ is called an <i>extremal generating collection</i> if it is a <a href="/category-property/generating_collection">generating collection</a> and for every morphism $f : A \to B$, $f$ is an isomorphism if and only if for every object $G \in S$ we have $f \circ {-} : \Hom(G, A) \to \Hom(G, B)$ is a bijection. Equivalently, the functor
+  $$(\Hom(G,-))_{G \in S} : \C \to (\Set^+)^S$$
+  is faithful and conservative. If $\C$ is locally essentially small and has coproducts, it is also equivalent to the condition that the canonical morphism
+  $$\textstyle\bigsqcup_{G\in S} \bigsqcup_{f\in\Hom(G,A)} G \to A$$
+  is an extremal epimorphism for every object $A$, explaining the terminology (see Prop. 5.3 at the <a href="https://ncatlab.org/nlab/show/separator" target="_blank">nLab</a>). The term "extremal generating set" is more common, but within our <a href="/content/foundations">foundations</a>, the collection $S$ is not necessarily a set; it is just isomorphic to a set.
+
+nlab_link: https://ncatlab.org/nlab/show/separator
+dual: extremal cogenerating collection
+invariant_under_equivalences: true
+
+related:
+  - extremal generator
+  - generating collection
+
+tags:
+  - size

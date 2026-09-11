@@ -44,12 +44,14 @@
     - extremal generator
   proof: This is trivial.
 
-- id: groupoid_generating_set
+- id: groupoid_generating_collection
+  # redundant because of "generating_collection_balanced_consequence",
+  # but we can keep it, because the proof is simpler.
   assumptions:
     - groupoid
-    - generating set
+    - generating collection
   conclusions:
-    - extremal generating set
+    - extremal generating collection
   proof: This is trivial.
 
 - id: groupoid_with_multi-terminal

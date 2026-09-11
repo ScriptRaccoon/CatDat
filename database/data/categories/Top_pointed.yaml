@@ -67,7 +67,7 @@ satisfied_properties:
 
   - property: extremal cogenerator
     proof: >-
-      It is easily checked that the indiscrete two-point space $\{0,1\}$ with base point $1$ is a cogenerator, using the fact that the pointed set $\{0,1\}$ with base point $1$ is a cogenerator of <a href="/category/Set_*">$\Set_*$</a>. If $S$ is the Sierpinski space on $\{0,1\}$, we claim that adding $(S, 0)$ and $(S, 1)$ gives an extremal cogenerating set. To see this, let $f : X \to Y$ be a continuous function. Then $f$ inducing a bijection on maps to $(\{0,1\},1)$ implies that the underlying function of $f$ is bijective. In particular, because $f$ is injective, we see that for $V$ an open subset of $Y$, $f^*(V)$ contains the base point of $X$ if and only if $V$ contains the base point of $Y$. Also, $f$ inducing a bijection on maps to $(S, 1)$ implies that $f^* : \Open(Y) \to \Open(X)$ is bijective on the open sets containing the base points, and $f$ inducing a bijection on maps to $(S, 0)$ implies that $f^* : \Open(Y) \to \Open(X)$ is bijective on the open sets not containing the base points. From these observations, we can conclude that $f$ is a homeomorphism.
+      It is easily checked that the indiscrete two-point space $\{0,1\}$ with base point $1$ is a cogenerator, using the fact that the pointed set $\{0,1\}$ with base point $1$ is a cogenerator of <a href="/category/Set_*">$\Set_*$</a>. If $S$ is the Sierpinski space on $\{0,1\}$, we claim that adding $(S, 0)$ and $(S, 1)$ gives an extremal cogenerating collection. To see this, let $f : X \to Y$ be a continuous function. Then $f$ inducing a bijection on maps to $(\{0,1\},1)$ implies that the underlying function of $f$ is bijective. In particular, because $f$ is injective, we see that for $V$ an open subset of $Y$, $f^*(V)$ contains the base point of $X$ if and only if $V$ contains the base point of $Y$. Also, $f$ inducing a bijection on maps to $(S, 1)$ implies that $f^* : \Open(Y) \to \Open(X)$ is bijective on the open sets containing the base points, and $f$ inducing a bijection on maps to $(S, 0)$ implies that $f^* : \Open(Y) \to \Open(X)$ is bijective on the open sets not containing the base points. From these observations, we can conclude that $f$ is a homeomorphism.
 
       Now, by <a href="/content/generator_construction">this result</a>, we get that the product of these three pointed topological spaces is an extremal cogenerator of $\Top_*$.
     references:
@@ -116,10 +116,10 @@ unsatisfied_properties:
     references:
       - top_no_effective_cocongruences
 
-  - property: extremal generating set
+  - property: extremal generating collection
     proof: 'The proof is similar to the one for <a href="/category/Top">$\Top$</a>: if $S$ is a set of pointed topological spaces and $\kappa$ is an infinite regular cardinal greater than $\card(G)$ for every $G\in S$, we show as before that morphisms from $S$ cannot detect the failure of $(\kappa \sqcup \{ \kappa \}, 0) \to (\kappa + 1, 0)$ to be an isomorphism (where as before, we use the standard order topology on both $\kappa$ and $\kappa + 1$).'
     references:
-      - top_no_extremal_generating_set
+      - top_no_extremal_generating_collection
 
 special_objects:
   initial object:

@@ -112,11 +112,11 @@ Here, $UE \rightrightarrows UX$ is a congruence: the map $UE \to UX \times UX$ i
 :::
 
 ::: Lemma 9
-Let $L$ be a functor which is left adjoint to a faithful functor $U$. Then $L$ preserves generating sets. (Thus in particular, any reflective subcategory of a category with a generating set also has a generating set; and similarly for a single generator.)
+Let $L$ be a functor which is left adjoint to a faithful functor $U$. Then $L$ preserves generating collections. (Thus in particular, any reflective subcategory of a category with a generating collection also has a generating collection; and similarly for a single generator.)
 :::
 
 ::: Proof
-If $S$ is a generating set,
+If $S$ is a generating collection,
 
 $$
 \begin{align*}
@@ -129,7 +129,7 @@ is a composition of faithful functors, hence faithful.
 :::
 
 ::: Lemma 10
-Any fully faithful functor reflects extremal generating sets (and therefore, by duality, it also reflects extremal cogenerating sets). In other words, if $U : \C \to \D$ is a fully faithful functor, and $S$ is a set of objects such that $U(S)$ is an extremal generating set of $\D$, then $S$ is an extremal generating set of $\C$.
+Any fully faithful functor reflects extremal generating collections (and therefore, by duality, it also reflects extremal cogenerating collections). In other words, if $U : \C \to \D$ is a fully faithful functor, and $S$ is an essentially small collection of objects such that $U(S)$ is an extremal generating collection of $\D$, then $S$ is an extremal generating collection of $\C$.
 :::
 
 ::: Proof
