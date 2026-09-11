@@ -12,11 +12,11 @@
   assumptions:
     - essentially small
   conclusions:
-    - extremal generating set
+    - extremal generating collection
     - locally essentially small
     - well-copowered
     - well-powered
-  proof: All conclusions are trivial except perhaps that the category has an extremal generating set. For that, let $S$ be a set with one representative of each isomorphism class of objects of the category. Then it is easy to show using the Yoneda Lemma that $S$ is an extremal generating set.
+  proof: This is trivial.
 
 - id: finite_consequence
   assumptions:
@@ -69,10 +69,10 @@
     - locally essentially small
   proof: 'If $U : \C \to \Set$ is a faithful functor, for every pair of objects $A,B$, the collection $\Hom(A,B)$ embeds into the set $\Hom(U(A),U(B))$, so that it is essentially small.'
 
-- id: generating_set_concrete
+- id: generating_collection_concrete
   assumptions:
-    - generating set
+    - generating collection
     - locally essentially small
   conclusions:
     - concretizable
-  proof: 'If $S$ is a generating set of a locally small category $\C$, then by definition the functor $(\Hom(G,-))_{G \in S} : \C \to \Set^S$ is faithful. Furthermore, the functor $\Set^S \to \Set$ mapping $X \mapsto \coprod_{G \in S} X_G$ is faithful. Their composition provides a faithful functor $\C \to \Set$.'
+  proof: 'If $S$ is a generating collection of a locally small category $\C$, then by definition the functor $(\Hom(G,-))_{G \in S} : \C \to \Set^S$ is faithful. Furthermore, the functor $\Set^S \to \Set$ mapping $X \mapsto \coprod_{G \in S} X_G$ is faithful. Their composition provides a faithful functor $\C \to \Set$.'

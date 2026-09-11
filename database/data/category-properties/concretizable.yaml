@@ -9,7 +9,7 @@ dual: concretizable
 invariant_under_equivalences: true
 
 related:
-  - generating set
+  - generating collection
   - locally essentially small
 
 tags:

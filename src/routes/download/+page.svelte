@@ -82,11 +82,11 @@ AND is_satisfied = TRUE;`}
 
 <CodeSnippet
 	language="sql"
-	title="Categories without a generating set"
+	title="Categories without a generating collection"
 	code={`SELECT structure_id
 FROM property_assignments
 WHERE type = 'category'
-AND property_id = 'generating set'
+AND property_id = 'generating collection'
 AND is_satisfied = FALSE;`}
 />
 

@@ -31,9 +31,9 @@ In our framework, there is no way to group all hypercollections into a single ma
 
 ## Essentially small, finite, and countable collections
 
-Let us call a collection $X$ _essentially small_ if it is isomorphic to a set $S$, i.e., if there is a bijection between $X$ and $S$. For most parts of category theory, $X$ can then simply be replaced with $S$ and assumed to be small itself, i.e., a set.
+Let us call a collection $X$ _essentially small_ if it is isomorphic to a set $S$, i.e., if there is a bijection between $X$ and $S$. (An alternative terminology suggested [here](https://ncatlab.org/nlab/show/small+category) is _structurally small_.) For most parts of category theory, $X$ can then simply be replaced with $S$ and assumed to be small itself, i.e., a set.
 
-For example, the collection $\{\SetColl\}$ is not small, but essentially small, since it is isomorphic to the set $\{0\}$. This shows that the three levels are not defined by cardinality alone.
+For example, the collection $\{\SetColl\}$ is not small, but essentially small, since it is isomorphic to the set $\{0\}$. This example shows that the three levels are not defined by cardinality alone. It also shows that the elements of a collection are not necessarily sets, which is yet another fundamental difference to classes.
 
 If a collection $X$ admits a surjective map from a set $S$, then it is also essentially small, since by the axiom of choice $X$ is isomorphic to a subset of $S$.
 

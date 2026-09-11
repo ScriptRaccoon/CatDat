@@ -55,8 +55,8 @@ unsatisfied_properties:
   - property: semi-strongly connected
     proof: This is because already the full subcategory of affine $R$-schemes is not semi-strongly connected, because its dual <a href="/category/CAlg(R)">$\CAlg(R)$</a> is not semi-strongly connected.
 
-  - property: generating set
-    proof: If $S$ is a generating set of $R$-schemes, then the set of affine open subsets of the schemes in $S$ would also be a generating set. This is then also a generating set in the category of affine $R$-schemes, corresponding to a cogenerating set in <a href="/category/CAlg(R)">$\CAlg(R)$</a>, which we know does not exist.
+  - property: generating collection
+    proof: If $S$ is a generating collection of $R$-schemes, then the collection of affine opens of the schemes in $S$ would also be a generating collection. This is then also a generating collection of the category of affine $R$-schemes, corresponding to a cogenerating collection of <a href="/category/CAlg(R)">$\CAlg(R)$</a>, which we know does not exist.
 
   - property: cokernel pairs
     proof: Choose a residue field $K$ of $R$. Then the span $\IA^1_K \leftarrow \Spec(K(t)) \rightarrow \IA^1_K$ has no pushout; see <a href="https://mathoverflow.net/questions/9961" target="_blank">MO/9961</a>.

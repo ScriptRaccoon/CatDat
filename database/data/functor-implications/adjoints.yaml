@@ -10,7 +10,7 @@
     - continuous
   associated_assumptions:
     domain:
-      - cogenerating set
+      - cogenerating collection
       - complete
       - locally essentially small
       - well-powered

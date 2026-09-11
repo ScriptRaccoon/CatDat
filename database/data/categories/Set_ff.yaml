@@ -90,8 +90,8 @@ unsatisfied_properties:
   - property: sequential limits
     proof: Consider the set $[n] \coloneqq \{0,\dotsc,n\}$ for $n \in \IN$. The forgetful functor to $\Set$ is representable (by the singleton set), hence preserves all limits. Thus, if the diagram of truncation maps $\cdots \twoheadrightarrow [2] \twoheadrightarrow [1] \twoheadrightarrow [0]$ has a limit in $\Set_\ff$, its underlying set is isomorphic to the limit taken in $\Set$, which is $\IN \cup \{\infty\}$. But there is no finite-to-one map $\IN \cup \{\infty\} \to [0]$.
 
-  - property: cogenerating set
-    proof: 'Suppose that $S$ is a set of objects of $\Set_\ff$, and let $\kappa$ be an uncountable cardinal greater than $\card(Q)$ for each $Q \in S$. Then for each $Q \in S$, $\Hom(\kappa, Q) = \varnothing$ (or else we would have $\kappa = \card(\kappa) \le \aleph_0 \cdot \card(Q) = \max(\aleph_0, \card(Q)) < \kappa$ giving a contradiction). This makes it impossible for any morphisms from $\kappa$ to an object of $S$ to distinguish the two morphisms $0, 1 : 1 \rightrightarrows \kappa$.'
+  - property: cogenerating collection
+    proof: 'Suppose that $S$ is an essentially small collection of objects of $\Set_\ff$, and let $\kappa$ be an uncountable cardinal greater than $\card(Q)$ for each $Q \in S$. Then for each $Q \in S$, $\Hom(\kappa, Q) = \varnothing$ (or else we would have $\kappa = \card(\kappa) \le \aleph_0 \cdot \card(Q) = \max(\aleph_0, \card(Q)) < \kappa$ giving a contradiction). This makes it impossible for any morphisms from $\kappa$ to an object of $S$ to distinguish the two morphisms $0, 1 : 1 \rightrightarrows \kappa$.'
 
 special_objects:
   initial object:

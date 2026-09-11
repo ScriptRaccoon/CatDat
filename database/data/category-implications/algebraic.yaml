@@ -53,14 +53,14 @@
   proof: >-
     Let $\C$ be a finitely accessible left cancellative category. The proof of <a href="/category-implication/sifted_colimits_left_cancellative">this result</a> shows that every sifted diagram $\I \to \C$ factors through the preorder reflection of $\I$, and hence reduces to a filtered diagram. Since $\C$ has filtered colimits, it therefore also has sifted colimits.
     It follows that every functor on $\C$ preserving filtered colimits automatically preserves sifted colimits. In particular, for representable functors this means that every finitely presentable object is automatically strongly finitely presentable.
-    Now let $G$ be a set of finitely presentable objects in $\C$ generating all objects via filtered colimits. The claim follows because every filtered colimit is sifted and the objects in $G$ are strongly finitely presentable.
+    Now let $G$ be an essentially small collection of finitely presentable objects in $\C$ generating all objects via filtered colimits. The claim follows because every filtered colimit is sifted and the objects in $G$ are strongly finitely presentable.
 
 - id: generalized_variety_stable_monos
   assumptions:
     - generalized variety
   conclusions:
     - filtered-colimit-stable monomorphisms
-  proof: 'Let $\C$ be a generalized variety and let $G$ be a set of strongly finitely presentable objects which generates $\C$ under sifted colimits. Consider $G$ as a full subcategory of $\C$ and consider the restricted Yoneda embedding $\C \hookrightarrow [G^{\op},\Set]$. It preserves sifted colimits (essentially by the definition of a strongly finitely presentable object) and therefore filtered colimits. It also preserves all limits, in particular monomorphisms, and it reflects monomorphisms since $G$ is a generating set. Therefore, since $\Set$ and hence the functor category has filtered-colimit-stable monomorphisms, this is also true for $\C$.'
+  proof: 'Let $\C$ be a generalized variety and let $G$ be an essentially small collection of strongly finitely presentable objects which generates $\C$ under sifted colimits. Consider $G$ as a full subcategory of $\C$ and consider the restricted Yoneda embedding $\C \hookrightarrow [G^{\op},\Set]$. It preserves sifted colimits (essentially by the definition of a strongly finitely presentable object) and therefore filtered colimits. It also preserves all limits, in particular monomorphisms, and it reflects monomorphisms since $G$ is a generating collection. Therefore, since $\Set$ and hence the functor category has filtered-colimit-stable monomorphisms, this is also true for $\C$.'
 
 - id: multi-algebraic_implies_locally_finitely_multi-presentable
   assumptions:

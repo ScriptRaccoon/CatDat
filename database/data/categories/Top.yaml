@@ -49,7 +49,7 @@ satisfied_properties:
 
   - property: extremal cogenerator
     proof: >-
-      Using the dual of Lemma 9 <a href="/content/subcategories">here</a> with $U : \Top \to \Set$ the forgetful functor whose right adjoint is the indiscrete topology functor, and the fact that the two-element set is a cogenerator of <a href="/category/Set">$\Set$</a>, we see that the indiscrete two-point space is a cogenerator of $\Top$. We claim that adding the Sierpinski space $S$ makes an extremal cogenerating set. To see this, let $f : X \to Y$ be a continuous function. First, $f$ inducing a bijection of maps to the indiscrete two-point space implies that $f$ is bijective on the underlying sets. Then, $f$ inducing a bijection of maps to the Sierpinski space implies that $f^* : \Open(Y) \to \Open(X)$ is also a bijection. We can then conclude that $f$ is open and therefore a homeomorphism: if $U \subseteq X$ is open, then there is an open subset $V \subseteq Y$ such that $f^*(V) = U$. Therefore, $f_*(U) = f_*(f^*(V)) = V$ is open, where in the last equality we use the fact that $f$ is surjective.
+      Using the dual of Lemma 9 <a href="/content/subcategories">here</a> with $U : \Top \to \Set$ the forgetful functor whose right adjoint is the indiscrete topology functor, and the fact that the two-element set is a cogenerator of <a href="/category/Set">$\Set$</a>, we see that the indiscrete two-point space is a cogenerator of $\Top$. We claim that adding the Sierpinski space $S$ makes an extremal cogenerating collection. To see this, let $f : X \to Y$ be a continuous function. First, $f$ inducing a bijection of maps to the indiscrete two-point space implies that $f$ is bijective on the underlying sets. Then, $f$ inducing a bijection of maps to the Sierpinski space implies that $f^* : \Open(Y) \to \Open(X)$ is also a bijection. We can then conclude that $f$ is open and therefore a homeomorphism: if $U \subseteq X$ is open, then there is an open subset $V \subseteq Y$ such that $f^*(V) = U$. Therefore, $f_*(U) = f_*(f^*(V)) = V$ is open, where in the last equality we use the fact that $f$ is surjective.
 
       Now, by <a href="/content/generator_construction">this result</a>, we conclude that the product of the indiscrete two-point space and the Sierpinski space is an extremal cogenerator of $\Top$.
     references:
@@ -94,12 +94,12 @@ unsatisfied_properties:
     proof: 'Consider the indiscrete topological space $I$ on two points. This represents the functor which takes a topological space $X$ to the pairs of indistinguishable points of $X$. Therefore, we get a cocongruence $1 \rightrightarrows I$, where the maps are the two possible functions. However, this cannot be effective: if we have $h : Z\to 1$ which equalizes the two maps, then $Z$ must be empty. But that means the cokernel pair of $h$ is the discrete space on two points.'
     label: top_no_effective_cocongruences
 
-  - property: extremal generating set
+  - property: extremal generating collection
     proof: >-
-      Suppose $S$ is any set of topological spaces, and let $\kappa$ be an infinite regular cardinal greater than $\card(G)$ for every $G \in S$. Equip ordinal numbers with the order topology as usual. We then claim that the canonical continuous bijection $\kappa \sqcup \{ \kappa \} \to \kappa + 1$, which is not a homeomorphism, induces a bijection $\Hom(G, \kappa \sqcup \{ \kappa \}) \to \Hom(G,  \kappa + 1)$ for every $G \in S$, showing that $S$ cannot be an extremal generating set.
+      Suppose $S$ is any set of topological spaces, and let $\kappa$ be an infinite regular cardinal greater than $\card(G)$ for every $G \in S$. Equip ordinal numbers with the order topology as usual. We then claim that the canonical continuous bijection $\kappa \sqcup \{ \kappa \} \to \kappa + 1$, which is not a homeomorphism, induces a bijection $\Hom(G, \kappa \sqcup \{ \kappa \}) \to \Hom(G,  \kappa + 1)$ for every $G \in S$, showing that $S$ cannot be an extremal generating collection.
 
       To see this, suppose we have a continuous function $f : G \to \kappa + 1$, and consider $T \coloneqq \im(f) \cap \kappa$. Then $T \subseteq \kappa$ and $\card(T) \leq \card(G) < \kappa$. Since $\kappa$ is regular, this implies $\alpha \coloneqq \sup(T) < \kappa$. Therefore, $f^*(\{ \kappa \}) = f^*((\alpha, \kappa])$ is open, showing that $f$ is also continuous as a function $G \to \kappa \sqcup \{ \kappa \}$.
-    label: top_no_extremal_generating_set
+    label: top_no_extremal_generating_collection
 
 special_objects:
   initial object:

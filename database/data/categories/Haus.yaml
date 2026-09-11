@@ -95,10 +95,10 @@ unsatisfied_properties:
 
       On the other hand, we claim that $1 \dottedrightrightarrows X_\kappa$ does not have a pushout in $\Haus$; by G. M. Kelly, <a href="https://www.numdam.org/item/?id=CTGDC_1986__27_2_109_0" target="_blank">A survey of totality for enriched and ordinary categories</a>, Thm. 5.6 (namely the contrapositive of the implication (i) $\Rightarrow$ (iii)), this will imply that $\Haus$ is not cototal. To see this, suppose we had a pushout $Y$, and let $\lambda \coloneqq \card(U(Y))$. Then the coprojection $X_\lambda \to Y$ is split monic, since we can construct a cocone $1 \dottedrightrightarrows X_\kappa \to X_\lambda$ where the map $X_\kappa \to X_\lambda$ is the constant map with image $x_\lambda$ when $\kappa \ne \lambda$, and the map $X_\lambda \to X_\lambda$ is the identity. But similarly to the previous paragraph, we can show any morphism $X_\lambda \to Y$ must be constant, giving a contradiction since $X_\lambda$ has at least two points.
 
-  - property: extremal generating set
+  - property: extremal generating collection
     proof: The proof is the same as the one for <a href="/category/Top">$\Top$</a>; there the test spaces we use are of the form $\kappa \sqcup \{ \kappa \}$ and $\kappa + 1$, which are both Hausdorff spaces.
     references:
-      - top_no_extremal_generating_set
+      - top_no_extremal_generating_collection
 
 special_objects:
   initial object:

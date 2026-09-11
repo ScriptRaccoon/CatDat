@@ -42,7 +42,7 @@ satisfied_properties:
       $$\iota_{f^*(V)} \circ f^\sharp(V) = \iota_{g^*(V)} \circ g^\sharp(V)$$
       for every open subset $V \subseteq Y$. Since $\iota_{f^*(V)} = \iota_{g^*(V)}$ is a monomorphism of sets, we conclude that $f^\sharp(V) = g^\sharp(V)$. Thus, $f^\sharp = g^\sharp$. We have shown $(f,f^\sharp) = (g,g^\sharp)$, as required.
 
-      Since <a href="/category/Set_op">$\Set^{\op}$</a> is concretizable (say, via the contravariant power set functor), and <a href="/category/SetxSet">$\Set \times \Set$</a> is also concretizable (because it is locally small and has a generating set), it follows that $\LRS_R$ is concretizable.
+      Since <a href="/category/Set_op">$\Set^{\op}$</a> is concretizable (say, via the contravariant power set functor), and <a href="/category/SetxSet">$\Set \times \Set$</a> is also concretizable (because it is locally small and has a generating collection), it follows that $\LRS_R$ is concretizable.
 
   - property: infinitary extensive
     proof: >-

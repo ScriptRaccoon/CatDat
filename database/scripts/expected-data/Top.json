@@ -5,7 +5,7 @@
 	"cocomplete": true,
 	"coequalizers": true,
 	"cogenerator": true,
-	"cogenerating set": true,
+	"cogenerating collection": true,
 	"complete": true,
 	"connected": true,
 	"semi-strongly connected": true,
@@ -27,7 +27,7 @@
 	"finitely cocomplete": true,
 	"finitely complete": true,
 	"generator": true,
-	"generating set": true,
+	"generating collection": true,
 	"infinitary distributive": true,
 	"inhabited": true,
 	"initial object": true,
@@ -83,7 +83,7 @@
 	"ℵ₂-small powers": true,
 	"ℵ₂-small copowers": true,
 	"extremal cogenerator": true,
-	"extremal cogenerating set": true,
+	"extremal cogenerating collection": true,
 	"kernel pairs": true,
 	"cokernel pairs": true,
 	"equalizers of cokernel pairs": true,
@@ -187,5 +187,5 @@
 	"regular-quotient-trivial": false,
 	"core-connected": false,
 	"extremal generator": false,
-	"extremal generating set": false
+	"extremal generating collection": false
 }

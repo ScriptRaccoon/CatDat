@@ -56,7 +56,7 @@
   associated_assumptions:
     underlying_category:
       - well-copowered
-      - generating set
+      - generating collection
       - locally essentially small
   conclusions:
     - closed

@@ -27,7 +27,7 @@
     - cocomplete
     - locally essentially small
     - well-copowered
-    - generating set
+    - generating collection
   conclusions:
     - total
   proof: Since the category is cocomplete and well-copowered, it is epi-cocomplete (meaning that it has wide pushouts of epimorphisms, even of non-small families of epimorphisms). The result then follows from B. J. Day, <a href="https://www.numdam.org/item/?id=CTGDC_1987__28_1_77_0" target="_blank">Further criteria for totality</a>, Thm. 1.
