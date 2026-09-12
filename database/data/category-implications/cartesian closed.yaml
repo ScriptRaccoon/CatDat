@@ -7,13 +7,13 @@
     - finite products
   proof: This holds by definition.
 
-- id: ccc_consequence
+- id: lcc_consequence
   assumptions:
-    - cartesian closed
+    - locally cartesian closed
     - initial object
   conclusions:
     - strict initial object
-  proof: See the <a href="https://ncatlab.org/nlab/show/strict+initial+object" target="_blank">nLab</a>.
+  proof: Assume that $\C$ is locally cartesian closed and $0 \in \C$ is an initial object. The slice category $\C / 0$ has a zero object, the identity of $0$. By assumption, it is also cartesian closed. But a cartesian closed category with a zero object is trivial, since for every object $A$ we have $A \cong A \times 1 \cong A \times 0 \cong 0$, where the last step uses that $A \times -$ is a left adjoint and hence preserves the initial object. Since $\C / 0$ is trivial, every morphism $X \to 0$ is an isomorphism.
 
 - id: ccc_cartesian_filtered_colimits
   assumptions:
