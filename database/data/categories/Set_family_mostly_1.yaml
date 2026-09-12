@@ -3,7 +3,7 @@ name: category of large families of sets which are mostly singletons
 notation: $\Set^{(I)}_1$
 objects: 'families of sets $X = (X_i)_{i \in I}$ such that $S(X) \coloneqq \{i \in I : X_i \not\cong 1\}$ is essentially small (i.e., isomorphic to a set), where $I$ is a fixed collection that is not essentially small'
 morphisms: families of maps
-description: We have added this category solely as an example of a cartesian closed category without a generating collection, but it also satisfies some other interesting combinations of properties. It is a full subcategory of the product category $\Set^I$, which exists even when $I$ is merely a collection; see <a href="/content/foundations">Foundations</a>.
+description: We have added this category solely as an example of a cartesian closed category without a generating collection, but it also satisfies some other interesting combinations of properties. It is a full subcategory of the product category $\Set^I$, which exists even when $I$ is merely a collection; see <a href="/content/foundations">Foundations</a>. Most properties are immediately inherited from $\Set$, but there is no initial object. There are also many differences between this category and its variant <a href="/category/Set_family_mostly_0">$\Set^{(I)}_0$</a>.
 nlab_link: null
 
 tags:
@@ -12,6 +12,7 @@ tags:
 related:
   - Set
   - SetxSet
+  - Set_family_mostly_0
   - Ab_family
   - Vect_family
 
