@@ -20,7 +20,7 @@ related:
   - TorsFreeAb
   - grAb
   - SeqAb
-  - Set_disc_Ab
+  - Ab_family
   - TransSeqAb
 
 satisfied_properties: []
