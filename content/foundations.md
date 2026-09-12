@@ -72,6 +72,16 @@ For example, the category of sets $\Set$ has $\Ob(\Set) = \SetColl$, the collect
 
 Collections are the objects of a hypercategory $\Set^+$.
 
+## Product categories
+
+If $(\C_i)_{i \in I}$ is a collection of categories, we can define their product $\prod_{i \in I} \C_i$ by
+$$\textstyle \Ob(\prod_{i \in I} \C_i) = \prod_{i \in I} \Ob(\C_i)$$
+and
+$$\textstyle \Hom(X,Y) = \prod_{i \in I} \Hom(X_i,Y_i).$$
+Identities and compositions are defined pointwise. This construction works for any collection $I$ because collections are closed under products; $I$ does not need to be small. The size of $I$ only matters if we want to determine whether the product is locally small: if $I$ is (essentially) small and each $\C_i$ is locally (essentially) small, then $\prod_{i \in I} \C_i$ is locally (essentially) small. If $I$ is not essentially small, the product is usually not locally essentially small.
+
+In particular, if $\C$ is a single category and $I$ is any collection, we can construct the product category $\C^I$, whose objects are $I$-indexed families of objects in $\C$. This is in fact an example of a functor category $[I_{\disc},\C]$, which we describe next.
+
 ## Functors
 
 A _functor_ $F : \C \to \D$ between two categories (or small categories, or hypercategories) is defined as usual; it consists of maps
@@ -83,7 +93,7 @@ Small categories and functors form the category $\Cat$ of small categories, whic
 
 If $F,G : \C \rightrightarrows \D$ are two functors, a morphism $F \to G$ (a _natural transformation_) is defined as a map $\Ob(\C) \to \Mor(\D)$ satisfying the usual naturality condition. These morphisms form a collection $\Hom(F,G)$.
 
-If $\C, \D$ are categories, we can construct the functor category $[\C, \D]$ as usual. There is no set-theoretic issue, since collections behave like sets. If $\C$ is small and $\D$ is locally small, then $[\C, \D]$ is locally small. This extra assumption on $\C$ is one of many indications that categories should not be assumed locally small by default. For example, one could not even form the category of endofunctors of a general category under such a restriction, and hence no category of monads.
+If $\C, \D$ are categories, we can therefore construct the functor category $[\C, \D]$ as usual, whose objects are functors and whose morphisms are morphisms of functors. There is no set-theoretic issue, since collections behave like sets. If $\C$ is small and $\D$ is locally small, then $[\C, \D]$ is locally small. This extra assumption on $\C$ is one of many indications that categories should not be assumed locally small by default. For example, one could not even form the category of endofunctors of a general category under such a restriction, and hence no category of monads.
 
 It is better to state explicitly when the assumption of being locally small is needed.
 
