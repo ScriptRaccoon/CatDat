@@ -1,0 +1,119 @@
+id: Set_family_mostly_1
+name: category of large families of sets which are mostly singletons
+notation: $\Set^{(I)}_1$
+objects: 'families of sets $X = (X_i)_{i \in I}$ such that $S(X) \coloneqq \{i \in I : X_i \not\cong 1\}$ is essentially small (i.e., isomorphic to a set), where $I$ is a fixed collection that is not essentially small'
+morphisms: families of maps
+description: We have added this category solely as an example of a cartesian closed category without a generating collection, but it also satisfies some other interesting combinations of properties. It is a full subcategory of the product category $\Set^I$, which exists even when $I$ is merely a collection; see <a href="/content/foundations">Foundations</a>.
+nlab_link: null
+
+tags:
+  - set theory
+
+related:
+  - Set
+  - SetxSet
+  - Set_disc_Ab
+  - Vect_family
+
+satisfied_properties:
+  - property: locally essentially small
+    proof: For two families $X$ and $Y$, the collection $\Hom(X,Y) = \prod_{i \in I} \Hom(X_i,Y_i)$ is isomorphic to $\prod_{i \in S(Y)} \Hom(X_i,Y_i)$, which is essentially small since $S(Y)$ and each $\Hom(X_i,Y_i)$ are essentially small.
+
+  - property: complete
+    proof: 'Since <a href="/category/Set">$\Set$</a> is complete, the product category $\Set^I$ is complete with pointwise limits. (The size of the index collection does not matter.) Thus, it only remains to check that $\Set^{(I)}_1$ is closed under limits, which are small by convention. Let $D : \J \to \Set^{(I)}_1$ be a small diagram and let $L$ be its limit in $\Set^I$. Thus, $L_i = \lim_{j \in \J} D(j)_i$. Consider the collection $\bigcup_{j \in \J} S(D(j))$, which is essentially small. For any index $i$ outside this collection, we have $L_i \cong \lim_{j \in \J} 1 \cong 1$. Thus, $S(L) \subseteq \bigcup_{j \in \J} S(D(j))$, and hence $S(L)$ is essentially small.'
+
+  - property: locally cartesian closed
+    proof: >-
+      First of all, <a href="/category/Set">$\Set$</a> is locally cartesian closed, i.e. each slice $\Set / X$ is cartesian closed, with exponentials
+      $$\textstyle [Y \to X, Z \to X] = \coprod_{x \in X} \Hom(Y_x,Z_x),$$
+      where $Y_x$ denotes the fiber of $Y \to X$ over $x \in X$. It follows formally that, for every collection $I$, also $\Set^I$ is locally cartesian closed, with exponentials
+      $$\textstyle [Y \to X, Z \to X]_i = \coprod_{x \in X_i} \Hom((Y_i)_x,(Z_i)_x).$$
+      Thus, if $X_i \cong 1$ and $Z_i \cong 1$, then $[Y \to X, Z \to X]_i \cong 1$. In other words,
+      $$S([Y \to X, Z \to X]) \subseteq S(X) \cup S(Z).$$
+      In particular, if $S(X)$ and $S(Z)$ are essentially small, then $S([Y \to X, Z \to X])$ is also essentially small. Thus, if $X \in \Set^{(I)}_1$, then the full subcategory $\Set^{(I)}_1 / X$ of $\Set^I / X$ is closed under exponentials and is therefore also cartesian closed.
+
+  - property: connected colimits
+    proof: 'Since <a href="/category/Set">$\Set$</a> is cocomplete, the product category $\Set^I$ is also cocomplete with pointwise colimits. It suffices to prove that $\Set^{(I)}_1$ is closed under connected colimits, which are small by convention. Let $D : \J \to \Set^{(I)}_1$ be a small connected diagram and let $C$ be its colimit in $\Set^I$. Thus, $C_i = \colim_{j \in \J} D(j)_i$. Consider the collection $\bigcup_{j \in \J} S(D(j))$, which is essentially small. For any index $i$ outside this collection, we have $C_i \cong \colim_{j \in \J} 1 \cong 1$, where the last step uses the fact that $\J$ is connected. Thus, $S(C) \subseteq \bigcup_{j \in \J} S(D(j))$, and hence $S(C)$ is essentially small.'
+
+  - property: exact filtered colimits
+    proof: We already know that the category has connected, hence filtered, colimits, and that it has finite limits. These (co)limits are defined pointwise. Hence, the claim follows from the corresponding property of <a href="/category/Set">$\Set$</a>.
+
+  - property: mono-regular
+    proof: We claim that every monomorphism $X \to Y$ is the equalizer of its cokernel pair $Y \rightrightarrows Y \sqcup_X Y$. This is because every component $X_i \to Y_i$ is injective (see the classification of monomorphisms below), the statement holds in <a href="/category/Set">$\Set$</a>, and equalizers and pushouts are constructed pointwise.
+
+  - property: well-copowered
+    proof: The epimorphisms $X \to Y$ are precisely the morphisms that are pointwise surjective (see below). If $X_i \to Y_i$ is surjective and $X_i \cong 1$, then also $Y_i \cong 1$. It follows that the collection $\Quot(X) \cong \prod_{i \in S(X)} \Quot(X_i)$ is essentially small.
+
+  - property: effective congruences
+    proof: Let $R \rightrightarrows X$ be a congruence in $\Set^{(I)}_1$. We claim that it is the kernel pair of its coequalizer $X \twoheadrightarrow X/R$. This certainly holds in <a href="/category/Set">$\Set$</a>, and for every $i \in I$, the pair $R_i \rightrightarrows X_i$ is a congruence in $\Set$. Therefore, the claim follows since kernel pairs (in fact, all limits) and coequalizers (in fact, all connected colimits) are constructed pointwise.
+
+  - property: effective cocongruences
+    proof: Let $X \rightrightarrows R$ be a cocongruence in $\Set^{(I)}_1$. We claim that it is the cokernel pair of its equalizer $E \hookrightarrow X$. This certainly holds in <a href="/category/Set">$\Set$</a>, and for every $i \in I$, the pair $X_i \rightrightarrows R_i$ is a cocongruence in $\Set$. Therefore, the claim follows since cokernel pairs (in fact, all connected colimits) and equalizers (in fact, all limits) are constructed pointwise.
+
+unsatisfied_properties:
+  - property: skeletal
+    proof: This is trivial.
+
+  - property: semi-strongly connected
+    proof: This is because <a href="/category/SetxSet">$\Set \times \Set$</a> can be embedded into $\Set^{(I)}_1$ by extending each pair of sets with singletons, and we know that $\Set \times \Set$ is not semi-strongly connected.
+
+  - property: locally small
+    proof: The proof is identical to the proof for <a href="/category/Vect_family">$\Vect^{(I)}$</a>. However, this result is not relevant for category theory; only the fact that the category is locally essentially small matters.
+    references:
+      - Vect_family_not_locally_small
+
+  - property: binary copowers
+    proof: >-
+      We first observe that each evaluation functor $\ev_i : \Set^{(I)}_1 \to \Set$ is cocontinuous. This is because it has a right adjoint, which maps a set $T$ to the family $\widetilde{T}$ defined by $\widetilde{T}_i = T$ and $\widetilde{T}_j = 1$ for indices $j \neq i$.
+      It follows that the inclusion functor $\Set^{(I)}_1 \hookrightarrow \Set^I$ is cocontinuous. In particular, a coproduct $X+Y$ exists in $\Set^{(I)}_1$ if and only if the pointwise coproduct $X+Y$ belongs to $\Set^{(I)}_1$. But this almost never happens. For example, if $X=Y=1$, then $S(1+1) = I$, which is not essentially small. Thus, the coproduct $1+1$ does not exist.
+    label: Set_family_mostly_1_colimits
+
+  - property: natural numbers object
+    proof: 'Assume that $(N,z,s)$ is a natural numbers object. Since $z : 1 \to N$ is a morphism consisting of maps $z_i : 1 \to N_i$, we have $N_i \neq \varnothing$ for every $i \in I$. By Lemma 2 <a href="/content/natural_numbers_objects">here</a>, the coproduct $1 + N$ exists, and we have $N \cong 1 + N$. We have seen above that coproducts, if they exist, must be computed pointwise. Thus, for every $i \in I$, the set $N_i \cong 1 + N_i$ has at least $2$ elements. Hence, $S(N) = I$, which is not essentially small.'
+    references:
+      - Set_family_mostly_1_colimits
+
+  - property: cofiltered-limit-stable epimorphisms
+    proof: Take some index $i \in I$ and consider the embedding $\Set \to \Set^{(I)}_1$, $T \mapsto \widetilde{T}$, defined by $\widetilde{T}_i = T$ and $\widetilde{T}_j = 1$ for indices $j \neq i$. This embedding is faithful and preserves limits and epimorphisms. Thus, by Lemma 2 <a href="/content/subcategories">here</a>, the claim follows from the fact that epimorphisms in <a href="/category/Set">$\Set$</a> are not stable under cofiltered limits.
+
+  - property: Malcev
+    proof: Again, we use the embedding $\Set \to \Set^{(I)}_1$, $T \mapsto \widetilde{T}$, which extends a set by singletons. Take any set $X$ with a non-symmetric reflexive relation $R \hookrightarrow X \times X$. Then $\widetilde{R} \hookrightarrow \widetilde{X} \times \widetilde{X}$ is a non-symmetric reflexive relation.
+
+  - property: disjoint finite products
+    proof: Take some index $i \in I$ and consider the embedding $\Set \to \Set^{(I)}_1$, $T \mapsto \widetilde{T}$, defined by $\widetilde{T}_i = T$ and $\widetilde{T}_j = 1$ for indices $j \neq i$. This embedding preserves products (in fact, it is right adjoint to $\ev_i$, as noted above). Take a non-empty set $T$. The projection $T \times \varnothing \to T$ is not surjective. It follows that the projection $\widetilde{T} \times \widetilde{\varnothing} \to \widetilde{T}$ is not an epimorphism, using the description of epimorphisms below.
+    references:
+      - Set_family_mostly_1_colimits
+
+  - property: well-powered
+    proof: The collection $\Sub(1)$ is isomorphic to the collection of essentially small subcollections of $I$. In fact, if $J \subseteq I$ is an essentially small subcollection, we define $X \subseteq 1$ by $X_i = \varnothing$ for $i \in J$ and $X_i = 1$ for $i \notin J$. Every subobject of $1$ has this form. Since for every $i \in I$ the collection $\{i\} \subseteq I$ is essentially small, we conclude that $\Sub(1)$ is not essentially small.
+
+  - property: concretizable
+    proof: >-
+      We will show that <a href="/content/isbell_concreteness">Isbell's condition for concretizability</a> fails. For every object $X$ there is a unique span $1 \leftarrow X \rightarrow 1$, where $1$ is the terminal object. A cospan $1 \xrightarrow{u} Y \xleftarrow{v} 1$ corresponds to a family of elements $u_i, v_i \in Y_i$ for $i \in I$. The span commutes with the cospan if and only if, for every $i \in I$, the diagram
+      $$\begin{CD}
+      X_i @>>> 1 \\
+      @VVV @VV{v_i}V \\
+      1 @>>{u_i}> Y_i
+      \end{CD}$$
+      commutes. In other words, we must have
+      $$X_i \neq \varnothing \implies u_i = v_i.$$
+      In particular, if we define $V(X) \coloneqq \{i \in I : X_i = \varnothing\}$, then $V(X)=V(X')$ implies that the spans for $X$ and $X'$ are equivalent, i.e., they commute with the same cospans. The converse also holds. To prove this, assume that the spans for $X$ and $X'$ are equivalent and that $i \in V(X)$. To show that $i \in V(X')$, consider the family $Y$ defined by $Y_i = \{1,2\}$ and $Y_j = \{\ast\}$ for $j \neq i$. Define $u,v : 1 \rightrightarrows Y$ by $u_i = 1$ and $v_i = 2$, and by taking the unique value for all indices $j \neq i$. Since $X_i = \varnothing$ and $u_j = v_j$ for all $j \neq i$, we see that the span for $X$ commutes with the cospan $(u,v)$. By assumption, the span for $X'$ also commutes with that cospan. Since $u_i \neq v_i$, this implies that $X'_i = \varnothing$.
+
+      We have thus fully characterized the equivalence classes of spans $1 \leftarrow X \rightarrow 1$. For every $i \in I$, there is a family $X^i$ with $V(X^i) = \{i\}$, for example, $X^i_i = \varnothing$ and $X^i_j = \{\ast\}$ for $j \neq i$. For $i \neq i'$, the spans for $X^i$ and $X^{i'}$ are not equivalent since $V(X^i) \neq V(X^{i'})$. We conclude that the collection of equivalence classes is not essentially small.
+
+special_objects:
+  terminal object:
+    description: family of singleton sets
+  products:
+    description: pointwise direct products
+
+special_morphisms:
+  isomorphisms:
+    description: families of bijective maps
+    proof: This is trivial.
+  monomorphisms:
+    description: families of injective maps
+    proof: 'The non-trivial direction follows from the observation that each evaluation functor $\ev_i : \Set^{(I)}_1 \to \Set$ is continuous by the pointwise description of limits, and hence preserves monomorphisms.'
+  epimorphisms:
+    description: families of surjective maps
+    proof: 'The non-trivial direction follows from the observation that each evaluation functor $\ev_i : \Set^{(I)}_1 \to \Set$ preserves connected colimits by the pointwise description of connected colimits, and hence preserves pushouts and, consequently, epimorphisms.'
