@@ -13,6 +13,7 @@ related:
   - Vect
   - Set_disc_Ab
   - Vect_large
+  - Set_family_mostly_1
 
 satisfied_properties:
   - property: cocomplete
@@ -43,6 +44,7 @@ unsatisfied_properties:
       Disclaimer: This result and its proof are not relevant for category theory and also depend on implementation details of set theory. Only the fact that the category is locally essentially small matters.
 
       The collection $\Hom(0,0)$ is not a set, since otherwise its unique element, the $I$-indexed family of identities $\id_0 : 0 \to 0$, would also be a set. But this is modelled as the collection of Kuratowski pairs $(i,\id_0) = \{\{i\},\{i,\id_0\}\}$ for $i \in I$. Since $I$ is not a set, this is not a set.
+    label: Vect_family_not_locally_small
 
   - property: generator
     proof: Assume that a generator $G$ exists. Since $\supp(G)$ is essentially small, but $I$ is not, we may pick $i \in I \setminus \supp(G)$. Consider the family $V$ with $\supp(V)=\{i\}$ and $V_i = K$. Then $V \neq 0$, but $\Hom(G,V) \cong \Hom(G_i,V_i) = 0$.

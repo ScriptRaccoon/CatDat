@@ -22,7 +22,8 @@
 		"cech",
 		"Unif",
 		"noiso",
-		"coprod"
+		"coprod",
+		"isbell"
 	],
 	"words": [
 		"abelian",
@@ -321,6 +322,7 @@
 		"subbasic",
 		"subbasis",
 		"subcollection",
+		"subcollections",
 		"subconjugated",
 		"subcover",
 		"subfunctor",

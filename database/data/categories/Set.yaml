@@ -19,6 +19,7 @@ related:
   - Setne
   - Set_arrow
   - Set_disc
+  - Set_family_mostly_1
 
 satisfied_properties:
   - property: locally small
