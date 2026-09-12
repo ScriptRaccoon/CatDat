@@ -6,15 +6,15 @@ morphisms: A morphism $(X, E_X) \to (Y, E_Y)$ is a subset $f \subseteq \IN \time
 description: >-
   The effective topos gives a "realizability" model of first-order intuitionistic logic roughly matching the principles of constructive mathematics &mdash; for example, that a proof of existence requires a computable function on the inputs whose output is a witness of the property, and similarly that a proof of a disjunction requires a computation (based on inputs from the context) of which branch of the disjunction holds. For instance, in this model, every total function $\IN \to \IN$ is (internally) recursive. Similarly, in the resulting model of constructive analysis, it turns out that every total function $\IR \to \IR$ on the constructive reals is continuous; and the Intermediate Value Theorem fails.
 
-  To give a precise definition, first fix a certain Turing-equivalent theory of computation, with an encoding of programs as elements of $\IN$ (note that not every element of $\IN$ needs to be a valid program encoding). We also fix a pairing function $\langle {-}, {-} \rangle : \IN \xrightarrow{\sim} \IN \times \IN$ along with the inverse pair $p_1, p_2 : \IN \rightrightarrows \IN$. We will define notation $p \cdot n \downarrow$ to mean that $p$ is a valid program encoding, and running the corresponding program with input $n$ terminates without error, returning a value $p \cdot n$.
+  To give a precise definition, first fix a certain Turing-equivalent theory of computation, with an encoding of programs as elements of $\IN$ (note that not every element of $\IN$ needs to be a valid program encoding). We also fix a pairing function $\langle {-}, {-} \rangle : \IN \times \IN \xrightarrow{\sim} \IN$ along with the inverse pair $p_1, p_2 : \IN \rightrightarrows \IN$. We will define notation $p \cdot n \downarrow$ to mean that $p$ is a valid program encoding, and running the corresponding program with input $n$ terminates without error, returning a value $p \cdot n$.
 
-  Given a subset $E_X \subseteq \IN \times X \times X$, we will use notation $n \Vdash x_1 = x_2$ (or informally, $n$ realizes equality of $x_1$ and $x_2$) to mean $(n, x_1, x_2) \in E_X$. We will say that $E_X$ is an <i>effective partial equivalence relation</i> if $(p_1)_*(E_X)$ is a partial equivalence relation on $X$ with partial recursive functions relating the corresponding realizers; namely:
+  Given a subset $E_X \subseteq \IN \times X \times X$, we will use notation $n \Vdash x_1 = x_2$ (or informally, $n$ realizes equality of $x_1$ and $x_2$) to mean $(n, x_1, x_2) \in E_X$. We will say that $E_X$ is an <i>effective partial equivalence relation</i> if $(p_{2,3})_*(E_X)$ is a partial equivalence relation on $X$ with partial recursive functions relating the corresponding realizers; namely:
 
   * (Symmetry:) There exists $s \in \IN$ such that whenever $n \Vdash x_1 = x_2$, then $s \cdot n \downarrow$ and $s \cdot n \Vdash x_2 = x_1$.
 
   * (Transitivity:) There exists $t \in \IN$ such that whenever $n \Vdash x_1 = x_2$ and $m \Vdash x_2 = x_3$, then $t \cdot \langle n, m \rangle \downarrow$ and $t \cdot \langle n, m \rangle \Vdash x_1 = x_3$.
 
-  Likewise, suppose $f \subseteq \IN \times X \times Y$ where we have fixed effective partial equivalence relations $E_X$ and $E_Y$ on $X$ and $Y$, respectively. We then use notation $n \Vdash x \xmapsto{f} y$ to mean $(n, x, y) \in f$. We will say $f$ is an <i>effective functional relation</i> if $(p_1)_*(f)$ is a functional relation $X / E_X \to Y / E_Y$, with partial recursive functions relating the corresponding realizers; namely:
+  Likewise, suppose $f \subseteq \IN \times X \times Y$ where we have fixed effective partial equivalence relations $E_X$ and $E_Y$ on $X$ and $Y$, respectively. We then use notation $n \Vdash x \xmapsto{f} y$ to mean $(n, x, y) \in f$. We will say $f$ is an <i>effective functional relation</i> if $(p_{2,3})_*(f)$ is a functional relation $X / E_X \to Y / E_Y$, with partial recursive functions relating the corresponding realizers; namely:
 
   * (Domain condition:) There exists $d \in \IN$ such that whenever $n \Vdash x \xmapsto{f} y$, then $d \cdot n \downarrow$ and $d \cdot n \Vdash x = x$.
 
@@ -26,7 +26,7 @@ description: >-
 
   * (Totality condition:) There exists $t \in \IN$ such that whenever $n \Vdash x = x$, then $t \cdot n \downarrow$, and there exists $y \in Y$ such that $t \cdot n \Vdash x \xmapsto{f} y$.
 
-  Similarly, for two such functional relations $f$ and $g$, we will say $f$ and $g$ are equivalent if $(p_1)_*(f) = (p_1)_*(g)$, with partial recursive functions relating the corresponding realizers; namely:
+  Similarly, for two such functional relations $f$ and $g$, we will say $f$ and $g$ are equivalent if $(p_{2,3})_*(f) = (p_{2,3})_*(g)$, with partial recursive functions relating the corresponding realizers; namely:
 
   * There exists $\ell_1$ such that whenever $n \Vdash x \xmapsto{f} y$, then $\ell_1 \cdot n \downarrow$ and $\ell_1 \cdot n \Vdash x \xmapsto{g} y$.
 
@@ -37,7 +37,7 @@ description: >-
 nlab_link: https://ncatlab.org/nlab/show/effective+topos
 
 tags:
-  - computation theory
+  - logic
 
 related:
   - Set
@@ -92,7 +92,7 @@ special_objects:
   initial object:
     description: $(\varnothing, \varnothing)$
   terminal object:
-    description: $(1, \{ (0, 0, n) \mid n \in \IN \})$
+    description: $(1, \{ (n, 0, 0) \mid n \in \IN \})$
   coproducts:
     description: The binary coproduct of $(X, E_X)$ and $(Y, E_Y)$ is $X \sqcup Y$ with the PER given by $\{ (2n, x_1, x_2) \in \IN \times X \times X \mid n \Vdash x_1 = x_2 \} \cup \{ (2n+1, y_1, y_2) \in \IN \times Y \times Y \mid n \Vdash y_1 = y_2 \}$.
   products:
