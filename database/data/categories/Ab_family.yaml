@@ -1,0 +1,72 @@
+id: Ab_family
+name: category of large families of abelian groups
+notation: $\Ab^I$
+objects: families of abelian groups $(A_i)_{i \in I}$ indexed by a collection $I$ that is not essentially small
+morphisms: families of homomorphisms
+description: This is the product category $\Ab^I = \prod_{i \in I} \Ab$, or equivalently, the functor category $[I_{\disc},\Ab]$. For some background on why this product category is well-defined even though $I$ is a collection, see <a href="/content/foundations">Foundations</a>. This category is a larger variant of $\grAb = \Ab^{\IZ}$. The properties do not depend on the specific choice of $I$, but to make things concrete, one might take $I = \SetColl$, the collection of all sets. The category does not appear in practice, but we have added it because of its interesting combinations of properties. For example, it shows that a Grothendieck abelian category is not necessarily locally essentially small or well-powered.
+nlab_link: null
+
+tags:
+  - algebra
+
+related:
+  - Ab
+  - grAb
+  - TransSeqAb
+  - Vect_family
+
+satisfied_properties:
+  - property: preadditive
+    proof: This property is immediately inherited from <a href="/category/Ab">$\Ab$</a>, because we may define the preadditive structure pointwise via $(f+g)_i \coloneqq f_i + g_i$. Note that for two families $A,B$, the collection $\Hom(A,B)$ is a <i>possibly large</i> abelian group, which is compatible with our definition of a preadditive category.
+
+  - property: cocomplete
+    proof: This property is immediately inherited from <a href="/category/Ab">$\Ab$</a>. Colimits are defined pointwise.
+
+  - property: complete
+    proof: This property is immediately inherited from <a href="/category/Ab">$\Ab$</a>. Limits are defined pointwise.
+
+  - property: exact filtered colimits
+    proof: This property is immediately inherited from <a href="/category/Ab">$\Ab$</a>.
+
+  - property: normal
+    proof: This property is immediately inherited from <a href="/category/Ab">$\Ab$</a>.
+
+  - property: conormal
+    proof: This property is immediately inherited from <a href="/category/Ab">$\Ab$</a>.
+
+  - property: generator
+    proof: We know that <a href="/category/Ab">$\Ab$</a> has a cogenerator $G$, for example $G = \IZ$. Then the constant family $(G)_{i \in I}$ is a generator of $\Ab^I$.
+
+  - property: cogenerator
+    proof: We know that <a href="/category/Ab">$\Ab$</a> has a cogenerator $Q$, for example $Q = \IQ / \IZ$. Then the constant family $(Q)_{i \in I}$ is a cogenerator of $\Ab^I$.
+
+unsatisfied_properties:
+  - property: skeletal
+    proof: This is trivial.
+
+  - property: split abelian
+    proof: Since there is an exact embedding $\Ab \to \Ab^I$ which inserts an abelian group at some index, this follows from the fact that <a href="/category/Ab">$\Ab$</a> is not split abelian.
+
+  - property: well-powered
+    proof: The collection of subobjects of the constant family $(\IZ/2)_{i \in I}$ identifies with the collection $P(I)$, which is not essentially small.
+
+special_objects:
+  initial object:
+    description: family of trivial groups
+  terminal object:
+    description: family of trivial groups
+  coproducts:
+    description: pointwise defined direct sums
+  products:
+    description: pointwise defined direct products
+
+special_morphisms:
+  isomorphisms:
+    description: families of bijective homomorphisms
+    proof: This is trivial.
+  monomorphisms:
+    description: families of injective homomorphisms
+    proof: The category is abelian and hence has kernels, constructed pointwise. Thus, a homomorphism $f = (f_i)_{i \in I}$ is a monomorphism if and only if $\ker(f_i) = 0$ for all $i$, i.e. each $f_i$ is a monomorphism.
+  epimorphisms:
+    description: families of surjective homomorphisms
+    proof: The category is abelian and hence has cokernels, constructed pointwise. Thus, a homomorphism $f = (f_i)_{i \in I}$ is an epimorphism if and only if $\coker(f_i) = 0$ for all $i$, i.e. each $f_i$ is an epimorphism.
