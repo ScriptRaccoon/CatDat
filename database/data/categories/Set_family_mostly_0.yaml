@@ -1,0 +1,120 @@
+id: Set_family_mostly_0
+name: category of large families of sets which are mostly empty
+notation: $\Set^{(I)}_0$
+objects: 'families of sets $X = (X_i)_{i \in I}$ such that $\supp(X) \coloneqq \{i \in I : X_i \neq \varnothing\}$ is essentially small (i.e., isomorphic to a set), where $I$ is a fixed collection that is not essentially small'
+morphisms: families of maps
+description: We have added this category solely as an example of a locally cartesian closed category without a generating collection. It is a full subcategory of the product category $\Set^I$, which exists even when $I$ is merely a collection; see <a href="/content/foundations">Foundations</a>. Most properties are immediately inherited from $\Set$, but there is no terminal object. There are also many differences between this category and its variant <a href="/category/Set_family_mostly_1">$\Set^{(I)}_1$</a>.
+nlab_link: null
+
+tags:
+  - set theory
+
+related:
+  - Set
+  - SetxSet
+  - Ab_family
+  - Vect_family
+  - Set_family_mostly_1
+
+satisfied_properties:
+  - property: locally essentially small
+    proof: For two families $X$ and $Y$, the collection $\Hom(X,Y) = \prod_{i \in I} \Hom(X_i,Y_i)$ is isomorphic to $\prod_{i \in \supp(X)} \Hom(X_i,Y_i)$, which is essentially small since $\supp(X)$ and each $\Hom(X_i,Y_i)$ are essentially small.
+    check_redundancy: false
+
+  - property: concretizable
+    proof: The functor $\Set^{(I)}_0 \to \Set^+$, $X \mapsto \coprod_{i \in I} X_i$ is faithful. Since $\coprod_{i \in I} X_i \cong \coprod_{i \in \supp(X)} X_i$ is essentially small, it yields a faithful functor $\Set^{(I)}_0 \to \Set$.
+
+  - property: cocomplete
+    proof: 'Since <a href="/category/Set">$\Set$</a> is cocomplete, the product category $\Set^I$ is cocomplete with pointwise colimits. (The size of the index collection does not matter.) Thus, it only remains to check that $\Set^{(I)}_0$ is closed under colimits, which are small by convention. Let $D : \J \to \Set^{(I)}_0$ be a small diagram and let $C$ be its colimit in $\Set^I$. Thus, $C_i = \colim_{j \in \J} D(j)_i$. Consider the collection $\bigcup_{j \in \J} \supp(D(j))$, which is essentially small. For any index $i$ outside this collection, we have $C_i \cong \colim_{j \in \J} 0 \cong 0$. Thus, $\supp(C) \subseteq \bigcup_{j \in \J} \supp(D(j))$, and hence $\supp(C)$ is essentially small.'
+    check_redundancy: false
+
+  - property: connected limits
+    proof: 'In fact, all non-empty limits exist. Since <a href="/category/Set">$\Set$</a> is complete, the product category $\Set^I$ is also complete with pointwise limits. It suffices to prove that $\Set^{(I)}_0$ is closed under non-empty limits, which are small by convention. Let $D : \J \to \Set^{(I)}_0$ be a small non-empty diagram and let $L$ be its limit in $\Set^I$. Thus, $L_i = \lim_{j \in \J} D(j)_i$. Consider the collection $\bigcup_{j \in \J} \supp(D(j))$, which is essentially small. For any index $i$ outside this collection, we have $L_i \cong \lim_{j \in \J} 0 \cong 0$, where the last step uses the fact that $\J$ is non-empty. Thus, $\supp(L) \subseteq \bigcup_{j \in \J} \supp(D(j))$, and hence $\supp(L)$ is essentially small.'
+    label: Set_family_mostly_0_non_empty_limits
+    check_redundancy: false
+
+  - property: binary products
+    proof: We have just proved that non-empty limits exist. Concretely, we have $(X \times Y)_i = X_i \times Y_i$ with $\supp(X \times Y) = \supp(X) \cap \supp(Y)$.
+    references:
+      - Set_family_mostly_0_non_empty_limits
+
+  - property: infinitary extensive
+    proof: Since <a href="/category/Set">$\Set$</a> is infinitary extensive, $\Set^I$ is also infinitary extensive. We can now apply Lemma 11 <a href="/content/subcategories">here</a> to the inclusion functor $\Set^{(I)}_0 \hookrightarrow \Set^I$.
+
+  - property: locally cartesian closed
+    proof: >-
+      First of all, <a href="/category/Set">$\Set$</a> is locally cartesian closed, i.e. each slice $\Set / X$ is cartesian closed, with exponentials
+      $$\textstyle [Y \to X, Z \to X] = \coprod_{x \in X} \Hom(Y_x,Z_x),$$
+      where $Y_x$ denotes the fiber of $Y \to X$ over $x \in X$. It follows formally that, for every collection $I$, $\Set^I$ is also locally cartesian closed, with exponentials
+      $$\textstyle [Y \to X, Z \to X]_i = \coprod_{x \in X_i} \Hom((Y_i)_x,(Z_i)_x).$$
+      We see
+      $$\supp([Y \to X, Z \to X]) \subseteq \supp(X).$$
+      In particular, if $\supp(X)$ is essentially small, then $\supp([Y \to X, Z \to X])$ is also essentially small. Thus, if $X \in \Set^{(I)}_0$, then the full subcategory $\Set^{(I)}_0 / X$ of $\Set^I / X$ is closed under exponentials and is therefore also cartesian closed.
+
+  - property: epi-regular
+    proof: We claim that every epimorphism $X \to Y$ is the coequalizer of its kernel pair $X \times_Y X \rightrightarrows X$. This is because every component $X_i \to Y_i$ is surjective (see the classification of epimorphisms below), the statement holds in <a href="/category/Set">$\Set$</a>, and coequalizers and pullbacks are constructed pointwise.
+
+  - property: filtered-colimit-stable monomorphisms
+    proof: Since filtered colimits are constructed pointwise and the monomorphisms are precisely the morphisms that are pointwise injective (see below), this property is inherited from <a href="/category/Set">$\Set$</a>.
+
+  - property: cocartesian cofiltered limits
+    proof: This property is inherited from <a href="/category/Set">$\Set$</a> since binary coproducts (in fact, all colimits) and cofiltered limits (in fact, all non-empty limits) are constructed pointwise.
+
+  - property: coregular
+    proof: It suffices to prove that regular monomorphisms are stable under pushout. This property is clearly inherited from <a href="/category/Set">$\Set$</a>.
+
+  - property: well-powered
+    proof: The monomorphisms $X \to Y$ are precisely the morphisms that are pointwise injective (see below). If $X_i \to Y_i$ is injective and $Y_i = \varnothing$, then also $X_i = \varnothing$. It follows that the collection $\Sub(Y) \cong \prod_{i \in \supp(Y)} \Sub(Y_i)$ is essentially small.
+    check_redundancy: false
+
+  - property: well-copowered
+    proof: The epimorphisms $X \to Y$ are precisely the morphisms that are pointwise surjective (see below). If $X_i \to Y_i$ is surjective and $X_i = \varnothing$, then also $Y_i = \varnothing$. It follows that the collection $\Quot(X) \cong \prod_{i \in \supp(X)} \Quot(X_i)$ is essentially small.
+
+  - property: effective congruences
+    proof: Let $R \rightrightarrows X$ be a congruence in $\Set^{(I)}_0$. We claim that it is the kernel pair of its coequalizer $X \twoheadrightarrow X/R$. This certainly holds in <a href="/category/Set">$\Set$</a>, and for every $i \in I$, the pair $R_i \rightrightarrows X_i$ is a congruence in $\Set$. Therefore, the claim follows since kernel pairs (in fact, all connected limits) and coequalizers (in fact, all colimits) are constructed pointwise.
+
+  - property: effective cocongruences
+    proof: Let $X \rightrightarrows R$ be a cocongruence in $\Set^{(I)}_0$. We claim that it is the cokernel pair of its equalizer $E \hookrightarrow X$. This certainly holds in <a href="/category/Set">$\Set$</a>, and for every $i \in I$, the pair $X_i \rightrightarrows R_i$ is a cocongruence in $\Set$. Therefore, the claim follows since cokernel pairs (in fact, all colimits) and equalizers (in fact, all connected limits) are constructed pointwise.
+
+  - property: co-Malcev
+    proof: Since colimits are constructed pointwise, this property is inherited from <a href="/category/Set">$\Set$</a>.
+
+unsatisfied_properties:
+  - property: skeletal
+    proof: This is trivial.
+
+  - property: semi-strongly connected
+    proof: This is because <a href="/category/SetxSet">$\Set \times \Set$</a> can be embedded into $\Set^{(I)}_0$ by extending each pair of sets with empty sets, and we know that $\Set \times \Set$ is not semi-strongly connected.
+
+  - property: locally small
+    proof: The proof is identical to the proof for <a href="/category/Vect_family">$\Vect^{(I)}$</a>. However, this result is not relevant for category theory; only the fact that the category is locally essentially small matters.
+    references:
+      - Vect_family_not_locally_small
+
+  - property: terminal object
+    proof: Assume that a terminal object $X$ exists. For $i \in I$, define the family $Y$ by $Y_i = \{\ast\}$ and $Y_j = \varnothing$ for $j \neq i$. Then $\supp(Y) = \{i\}$, so $Y$ belongs to $\Set^{(I)}_0$. By assumption, there is a morphism $Y \to X$. In particular, we see that $X_i$ is non-empty. But then $\supp(X) = I$, which is not essentially small.
+
+  - property: cofiltered-limit-stable epimorphisms
+    proof: Take some index $i \in I$ and consider the embedding $\Set \to \Set^{(I)}_0$, $T \mapsto \widetilde{T}$, defined by $\widetilde{T}_i = T$ and $\widetilde{T}_j = 0$ for indices $j \neq i$. This embedding is faithful and preserves non-empty limits and epimorphisms. Thus, by Lemma 2 <a href="/content/subcategories">here</a>, the claim follows from the fact that epimorphisms in <a href="/category/Set">$\Set$</a> are not stable under cofiltered limits.
+
+  - property: cogenerating collection
+    proof: Assume that $S$ is a cogenerating collection. In particular, $S$ is essentially small (by definition). Since $\bigcup_{Q \in S} \supp(Q)$ is essentially small, but $I$ is not essentially small, there is some index $i \in I$ with $Q_i = \varnothing$ for all $Q \in S$. Consider the family $X \in \Set^{(I)}_0$ defined by $X_i = \{1,2\}$ and $X_j = \varnothing$ for all $j \neq i$. There are (at least) two morphisms $X \rightrightarrows X$. Thus, there is some $Q \in S$ and some morphism $X \to Q$ that distinguishes them. The component at $i$ is a map $X_i \to Q_i$, which cannot exist since $X_i$ is non-empty and $Q_i$ is empty.
+
+special_objects:
+  initial object:
+    description: family of empty sets
+  coproducts:
+    description: pointwise disjoint unions
+  products:
+    description: '[non-empty case] pointwise direct products'
+
+special_morphisms:
+  isomorphisms:
+    description: families of bijective maps
+    proof: This is trivial.
+  monomorphisms:
+    description: families of injective maps
+    proof: 'The non-trivial direction follows from the observation that each evaluation functor $\ev_i : \Set^{(I)}_0 \to \Set$ preserves pullbacks by the pointwise description of pullbacks, and hence preserves monomorphisms.'
+  epimorphisms:
+    description: families of surjective maps
+    proof: 'The non-trivial direction follows from the observation that each evaluation functor $\ev_i : \Set^{(I)}_0 \to \Set$ preserves pushouts by the pointwise description of colimits, and hence preserves epimorphisms.'

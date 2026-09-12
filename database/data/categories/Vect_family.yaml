@@ -13,6 +13,7 @@ related:
   - Vect
   - Ab_family
   - Vect_large
+  - Set_family_mostly_0
   - Set_family_mostly_1
 
 satisfied_properties:
