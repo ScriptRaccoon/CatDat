@@ -107,6 +107,22 @@
     - ℵ₂-small coproducts
   proof: 'This follows from the fact that for an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is monadic (<a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, 2.2.7), and therefore creates limits (i.e. it creates colimits in $\T$ from limits in $\T$).'
 
+- id: topos_generator_implies_cogenerator
+  assumptions:
+    - elementary topos
+    - generator
+  conclusions:
+    - cogenerator
+  proof: 'For an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is right adjoint to $P^{\op} : \T \to \T^{\op}$ and moreover is faithful. The first statement is part of the proof that $P$ is monadic (<a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, 2.2.7) and the second is a corollary. Therefore, from Lemma 9 <a href="/content/subcategories"> here, if $G$ is a generator of $\T$, then $PG$ is a cogenerator.'
+
+- id: topos_generating_set_implies_cogenerating_set
+  assumptions:
+    - elementary topos
+    - generating set
+  conclusions:
+    - cogenerating set
+  proof: 'For an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is right adjoint to $P^{\op} : \T \to \T^{\op}$ and moreover is faithful. The first statement is part of the proof that $P$ is monadic (<a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, 2.2.7) and the second is a corollary. Therefore, from Lemma 9 <a href="/content/subcategories"> here, if $F$ is a generating set of $\T$, then $P_*(F)$ is a cogenerating set.'
+
 - id: grothendieck_topos_definition
   assumptions:
     - Grothendieck topos
