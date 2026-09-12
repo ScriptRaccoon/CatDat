@@ -41,7 +41,7 @@
     - complete
   conclusions:
     - cocomplete
-  proof: 'This follows from the fact that for an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is monadic, and therefore creates limits (i.e. it creates colimits in $\T$ from limits in $\T$).'
+  proof: 'This follows from the fact that for an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is monadic (<a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, 2.2.7), and therefore creates limits (i.e. it creates colimits in $\T$ from limits in $\T$).'
 
 - id: topos_monadic_over_itself_countable_powers
   assumptions:
@@ -49,7 +49,7 @@
     - countable powers
   conclusions:
     - countable copowers
-  proof: 'This follows from the fact that for an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is monadic, and therefore creates limits (i.e. it creates colimits in $\T$ from limits in $\T$).'
+  proof: 'This follows from the fact that for an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is monadic (<a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, 2.2.7), and therefore creates limits (i.e. it creates colimits in $\T$ from limits in $\T$).'
 
 - id: topos_monadic_over_itself_sequential
   assumptions:
@@ -57,7 +57,7 @@
     - sequential limits
   conclusions:
     - sequential colimits
-  proof: 'This follows from the fact that for an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is monadic, and therefore creates limits (i.e. it creates colimits in $\T$ from limits in $\T$).'
+  proof: 'This follows from the fact that for an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is monadic (<a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, 2.2.7), and therefore creates limits (i.e. it creates colimits in $\T$ from limits in $\T$).'
 
 - id: topos_monadic_over_itself_sifted
   assumptions:
@@ -65,7 +65,7 @@
     - cosifted limits
   conclusions:
     - sifted colimits
-  proof: 'This follows from the fact that for an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is monadic, and therefore creates limits (i.e. it creates colimits in $\T$ from limits in $\T$).'
+  proof: 'This follows from the fact that for an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is monadic (<a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, 2.2.7), and therefore creates limits (i.e. it creates colimits in $\T$ from limits in $\T$).'
 
 - id: topos_monadic_over_itself_directed
   assumptions:
@@ -73,7 +73,7 @@
     - directed limits
   conclusions:
     - directed colimits
-  proof: 'This follows from the fact that for an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is monadic, and therefore creates limits (i.e. it creates colimits in $\T$ from limits in $\T$).'
+  proof: 'This follows from the fact that for an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is monadic (<a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, 2.2.7), and therefore creates limits (i.e. it creates colimits in $\T$ from limits in $\T$).'
 
 - id: topos_monadic_over_itself_filtered
   assumptions:
@@ -81,7 +81,7 @@
     - cofiltered limits
   conclusions:
     - filtered colimits
-  proof: 'This follows from the fact that for an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is monadic, and therefore creates limits (i.e. it creates colimits in $\T$ from limits in $\T$).'
+  proof: 'This follows from the fact that for an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is monadic (<a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, 2.2.7), and therefore creates limits (i.e. it creates colimits in $\T$ from limits in $\T$).'
 
 - id: topos_monadic_over_itself_aleph1_filtered
   assumptions:
@@ -89,7 +89,7 @@
     - ℵ₁-cofiltered limits
   conclusions:
     - ℵ₁-filtered colimits
-  proof: 'This follows from the fact that for an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is monadic, and therefore creates limits (i.e. it creates colimits in $\T$ from limits in $\T$).'
+  proof: 'This follows from the fact that for an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is monadic (<a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, 2.2.7), and therefore creates limits (i.e. it creates colimits in $\T$ from limits in $\T$).'
 
 - id: topos_monadic_over_itself_aleph2_powers
   assumptions:
@@ -97,7 +97,7 @@
     - ℵ₂-small powers
   conclusions:
     - ℵ₂-small copowers
-  proof: 'This follows from the fact that for an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is monadic, and therefore creates limits (i.e. it creates colimits in $\T$ from limits in $\T$).'
+  proof: 'This follows from the fact that for an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is monadic (<a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, 2.2.7), and therefore creates limits (i.e. it creates colimits in $\T$ from limits in $\T$).'
 
 - id: topos_monadic_over_itself_aleph2
   assumptions:
@@ -105,7 +105,7 @@
     - ℵ₂-small products
   conclusions:
     - ℵ₂-small coproducts
-  proof: 'This follows from the fact that for an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is monadic, and therefore creates limits (i.e. it creates colimits in $\T$ from limits in $\T$).'
+  proof: 'This follows from the fact that for an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is monadic (<a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, 2.2.7), and therefore creates limits (i.e. it creates colimits in $\T$ from limits in $\T$).'
 
 - id: grothendieck_topos_definition
   assumptions:
