@@ -13,8 +13,7 @@ related:
   - Set
   - Set_arrow
   - Sh(X)
-  - Set_family_mostly_0
-  - Set_family_mostly_1
+  - Set_family
 
 satisfied_properties:
   - property: locally small

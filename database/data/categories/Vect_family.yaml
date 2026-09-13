@@ -15,6 +15,7 @@ related:
   - Vect_large
   - Set_family_mostly_0
   - Set_family_mostly_1
+  - Set_family
 
 satisfied_properties:
   - property: cocomplete
