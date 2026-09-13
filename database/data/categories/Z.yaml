@@ -17,10 +17,10 @@ related:
 
 satisfied_properties:
   - property: complete
-    proof: This follows immediately from the fact for <a href="/category/Set">$\Set$</a>.
+    proof: This follows immediately from the fact for <a href="/category/Set">$\Set$</a>. Limits are constructed pointwise.
 
   - property: cocomplete
-    proof: This follows immediately from the fact for <a href="/category/Set">$\Set$</a>.
+    proof: This follows immediately from the fact for <a href="/category/Set">$\Set$</a>. Colimits are constructed pointwise.
     check_redundancy: false
 
   - property: infinitary extensive
@@ -35,16 +35,8 @@ satisfied_properties:
   - property: coregular
     proof: This follows immediately from the fact for <a href="/category/Set">$\Set$</a>.
 
-  - property: co-Malcev
-    proof: This follows immediately from the fact for <a href="/category/Set">$\Set$</a>.
-    check_redundancy: false
-
   - property: effective congruences
     proof: 'If we have a congruence $E \rightrightarrows X$ in $[\CRing, \Set]$, then evaluating at any commutative ring gives a congruence in $\Set$. Defining $Y$ pointwise to be the quotient of this congruence, we get a morphism of functors $h : X \to Y$, and by <a href="/content/effective-congruence-quotients">this result</a> applied pointwise, the kernel pair of $h$ is $E$.'
-
-  - property: effective cocongruences
-    proof: 'If we have a cocongruence $X\rightrightarrows E$ in $[\CRing, \Set]$, then evaluating at any commutative gives a cocongruence in $\Set$. Defining $Y$ pointwise to be the equalizer of the pair, we get a morphism of functors $h : Y \to X$, and by the dual of <a href="/content/effective-congruence-quotients">this result</a> applied pointwise, the cokernel pair of $h$ is $E$.'
-    check_redundancy: false
 
 unsatisfied_properties:
   - property: skeletal
