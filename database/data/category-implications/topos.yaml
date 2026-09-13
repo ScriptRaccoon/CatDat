@@ -35,6 +35,94 @@
     - coregular
   proof: This is proven in <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, A2.6.3.
 
+- id: topos_monadic_over_itself
+  assumptions:
+    - elementary topos
+    - complete
+  conclusions:
+    - cocomplete
+  proof: 'This follows from the fact that for an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is monadic (<a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, 2.2.7), and therefore creates limits (i.e. it creates colimits in $\T$ from limits in $\T$).'
+
+- id: topos_monadic_over_itself_countable_powers
+  assumptions:
+    - elementary topos
+    - countable powers
+  conclusions:
+    - countable copowers
+  proof: 'This follows from the fact that for an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is monadic (<a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, 2.2.7), and therefore creates limits (i.e. it creates colimits in $\T$ from limits in $\T$).'
+
+- id: topos_monadic_over_itself_sequential
+  assumptions:
+    - elementary topos
+    - sequential limits
+  conclusions:
+    - sequential colimits
+  proof: 'This follows from the fact that for an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is monadic (<a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, 2.2.7), and therefore creates limits (i.e. it creates colimits in $\T$ from limits in $\T$).'
+
+- id: topos_monadic_over_itself_sifted
+  assumptions:
+    - elementary topos
+    - cosifted limits
+  conclusions:
+    - sifted colimits
+  proof: 'This follows from the fact that for an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is monadic (<a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, 2.2.7), and therefore creates limits (i.e. it creates colimits in $\T$ from limits in $\T$).'
+
+- id: topos_monadic_over_itself_directed
+  assumptions:
+    - elementary topos
+    - directed limits
+  conclusions:
+    - directed colimits
+  proof: 'This follows from the fact that for an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is monadic (<a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, 2.2.7), and therefore creates limits (i.e. it creates colimits in $\T$ from limits in $\T$).'
+
+- id: topos_monadic_over_itself_filtered
+  assumptions:
+    - elementary topos
+    - cofiltered limits
+  conclusions:
+    - filtered colimits
+  proof: 'This follows from the fact that for an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is monadic (<a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, 2.2.7), and therefore creates limits (i.e. it creates colimits in $\T$ from limits in $\T$).'
+
+- id: topos_monadic_over_itself_aleph1_filtered
+  assumptions:
+    - elementary topos
+    - ℵ₁-cofiltered limits
+  conclusions:
+    - ℵ₁-filtered colimits
+  proof: 'This follows from the fact that for an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is monadic (<a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, 2.2.7), and therefore creates limits (i.e. it creates colimits in $\T$ from limits in $\T$).'
+
+- id: topos_monadic_over_itself_aleph2_powers
+  assumptions:
+    - elementary topos
+    - ℵ₂-small powers
+  conclusions:
+    - ℵ₂-small copowers
+  proof: 'This follows from the fact that for an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is monadic (<a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, 2.2.7), and therefore creates limits (i.e. it creates colimits in $\T$ from limits in $\T$).'
+
+- id: topos_monadic_over_itself_aleph2
+  assumptions:
+    - elementary topos
+    - ℵ₂-small products
+  conclusions:
+    - ℵ₂-small coproducts
+  proof: 'This follows from the fact that for an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is monadic (<a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, 2.2.7), and therefore creates limits (i.e. it creates colimits in $\T$ from limits in $\T$).'
+
+- id: topos_generator_implies_cogenerator
+  assumptions:
+    - elementary topos
+    - generator
+  conclusions:
+    - cogenerator
+  proof: 'For an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is right adjoint to $P^{\op} : \T \to \T^{\op}$ and moreover is faithful. The first statement is part of the proof that $P$ is monadic (<a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, 2.2.7) and the second is a corollary. Therefore, from Lemma 9 <a href="/content/subcategories"> here, if $G$ is a generator of $\T$, then $PG$ is a cogenerator.'
+
+- id: topos_generating_set_implies_cogenerating_set
+  assumptions:
+    - elementary topos
+    - generating set
+  conclusions:
+    - cogenerating set
+  proof: 'For an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is right adjoint to $P^{\op} : \T \to \T^{\op}$ and moreover is faithful. The first statement is part of the proof that $P$ is monadic (<a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, 2.2.7) and the second is a corollary. Therefore, from Lemma 9 <a href="/content/subcategories"> here, if $F$ is a generating set of $\T$, then $P_*(F)$ is a cogenerating set.'
+
 - id: grothendieck_topos_definition
   assumptions:
     - Grothendieck topos
