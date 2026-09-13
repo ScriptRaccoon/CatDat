@@ -15,6 +15,7 @@ related:
   - Sh(X)
   - Set_family
   - DiGraph
+  - SetxSet_0_fin
 
 satisfied_properties:
   - property: locally small
