@@ -5,6 +5,8 @@ description: How to construct a cogenerator in a product category
 
 # Cogenerators in product categories
 
+Recall that an object $X$ of a category is called _weakly terminal_ if any object $Y$ admits at least one morphism $Y \to X$. Uniqueness is not required.
+
 ::: Lemma
 For a family of categories $(\C_i)_{i \in I}$, each having a cogenerator $Q_i$ which is weakly terminal, the object $(Q_i)_{i \in I}$ is a cogenerator in the product category $\prod_{i \in I} \C_i$.
 :::

@@ -14,6 +14,7 @@ related:
   - grAb
   - TransSeqAb
   - Vect_family
+  - Set_family
 
 satisfied_properties:
   - property: preadditive

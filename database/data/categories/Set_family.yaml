@@ -1,0 +1,73 @@
+id: Set_family
+name: category of large families of sets
+notation: $\Set^I$
+objects: families of sets $(X_i)_{i \in I}$ indexed by a collection $I$ that is not essentially small
+morphisms: families of maps
+description: This is the product category $\Set^I = \prod_{i \in I} \Set$, or equivalently, the functor category $[I_{\disc},\Set]$. For some background on why this product category is well-defined even though $I$ is a collection, see <a href="/content/foundations">Foundations</a>. It is a larger variant of $\Set \times \Set$, and most of its properties are inherited from $\Set$, but it is not locally essentially small.
+nlab_link: null
+
+tags:
+  - set theory
+
+related:
+  - Set
+  - SetxSet
+  - Set_family_mostly_0
+  - Set_family_mostly_1
+  - Vect_family
+  - Ab_family
+  - Z
+
+satisfied_properties:
+  - property: complete
+    proof: This follows immediately from the fact that <a href="/category/Set">$\Set$</a> is complete. Limits are constructed pointwise.
+
+  - property: cocomplete
+    proof: This follows immediately from the fact that <a href="/category/Set">$\Set$</a> is cocomplete. Colimits are constructed pointwise.
+    check_redundancy: false
+
+  - property: exact filtered colimits
+    proof: This follows immediately from the corresponding property of <a href="/category/Set">$\Set$</a>.
+
+  - property: cartesian closed
+    proof: This follows immediately from the fact that <a href="/category/Set">$\Set$</a> is cartesian closed. Exponentials are constructed pointwise.
+
+  - property: subobject classifier
+    proof: Since monomorphisms in $\Set^I$ are families of monomorphisms in $\Set$ (see below) and the set $\{0,1\}$ is a subobject classifier for <a href="/category/Set">$\Set$</a>, the family $(\{0,1\})_{i \in I}$ is a subobject classifier for $\Set^I$.
+
+  - property: cogenerator
+    proof: The set $\{0,1\}$ is a cogenerator of $\Set$, which is weakly terminal. Hence, <a href="/content/cogenerators_in_product_categories">this lemma</a> implies that the family $(\{0,1\})_{i \in I}$ is a cogenerator of $\Set^I$.
+
+unsatisfied_properties:
+  - property: skeletal
+    proof: This is trivial.
+
+  - property: semi-strongly connected
+    proof: This is because <a href="/category/SetxSet">$\Set \times \Set$</a> can be embedded into $\Set^I$ by extending each pair of sets with empty sets, and we know that $\Set \times \Set$ is not semi-strongly connected.
+
+  - property: generating collection
+    proof: 'Assume that there is a generating collection $S$, which is in particular essentially small by convention. For $i \in I$, consider the family $X^i$ defined by $(X^i)_i = \{0,1\}$ and $(X^i)_j = \varnothing$ for $j \neq i$. There are (at least) two morphisms $X^i \rightrightarrows X^i$. Thus, there is some $G^i \in S$ and a morphism $G^i \to X^i$ that distinguishes the two morphisms. This is only possible when $(G^i)_i$ is non-empty, while $(G^i)_j$ is empty for all $j \neq i$. Thus, if we define the support of a family by $\supp(X) \coloneqq \{i \in I : X_i \neq \varnothing\}$, then $\supp(G^i) = \{i\}$. Therefore, using the axiom of choice, we get an injective map $I \to S$, $i \mapsto G^i$. Since $S$ is essentially small, it follows that $I$ is essentially small, which contradicts our assumption on $I$.'
+
+  - property: well-powered
+    proof: The collection $\Sub(1)$ is isomorphic to the collection $P(I)$ of subcollections of $I$. In fact, if $J \subseteq I$ is a subcollection, we define $X \subseteq 1$ by $X_i = \varnothing$ for $i \in J$ and $X_i = 1$ for $i \notin J$. Every subobject of $1$ has this form. Since $P(I)$ is not essentially small (there is an injective map $I \hookrightarrow P(I)$), we conclude that $\Sub(1)$ is not essentially small.
+
+special_objects:
+  initial object:
+    description: family of empty sets
+  terminal object:
+    description: family of singleton sets
+  coproducts:
+    description: pointwise defined disjoint unions
+  products:
+    description: pointwise defined direct products
+
+special_morphisms:
+  isomorphisms:
+    description: families of bijective maps
+    proof: This is trivial.
+  monomorphisms:
+    description: families of injective maps
+    proof: 'The non-trivial direction follows from the observation that each evaluation functor $\ev_i : \Set^I \to \Set$ preserves pullbacks by the pointwise description of limits, and hence preserves monomorphisms.'
+  epimorphisms:
+    description: families of surjective maps
+    proof: 'The non-trivial direction follows from the observation that each evaluation functor $\ev_i : \Set^I \to \Set$ preserves pushouts by the pointwise description of colimits, and hence preserves epimorphisms.'
