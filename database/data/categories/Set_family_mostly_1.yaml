@@ -15,7 +15,7 @@ related:
   - Set_family_mostly_0
   - Set_family
   - Ab_family
-  - Vect_family
+  - Vect_family_mostly_0
 
 satisfied_properties:
   - property: locally essentially small
@@ -60,9 +60,9 @@ unsatisfied_properties:
     proof: This is because <a href="/category/SetxSet">$\Set \times \Set$</a> can be embedded into $\Set^{(I)}_1$ by extending each pair of sets with singletons, and we know that $\Set \times \Set$ is not semi-strongly connected.
 
   - property: locally small
-    proof: The proof is identical to the proof for <a href="/category/Vect_family">$\Vect^{(I)}$</a>. However, this result is not relevant for category theory; only the fact that the category is locally essentially small matters.
+    proof: The proof is identical to the proof for <a href="/category/Vect_family_mostly_0">$\Vect^{(I)}$</a>. However, this result is not relevant for category theory; only the fact that the category is locally essentially small matters.
     references:
-      - Vect_family_not_locally_small
+      - Vect_family_mostly_0_not_locally_small
 
   - property: binary copowers
     proof: >-

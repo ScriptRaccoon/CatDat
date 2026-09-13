@@ -14,7 +14,7 @@ related:
   - SetxSet
   - Set_family
   - Ab_family
-  - Vect_family
+  - Vect_family_mostly_0
   - Set_family_mostly_1
 
 satisfied_properties:
@@ -88,9 +88,9 @@ unsatisfied_properties:
     proof: This is because <a href="/category/SetxSet">$\Set \times \Set$</a> can be embedded into $\Set^{(I)}_0$ by extending each pair of sets with empty sets, and we know that $\Set \times \Set$ is not semi-strongly connected.
 
   - property: locally small
-    proof: The proof is identical to the proof for <a href="/category/Vect_family">$\Vect^{(I)}$</a>. However, this result is not relevant for category theory; only the fact that the category is locally essentially small matters.
+    proof: The proof is identical to the proof for <a href="/category/Vect_family_mostly_0">$\Vect^{(I)}$</a>. However, this result is not relevant for category theory; only the fact that the category is locally essentially small matters.
     references:
-      - Vect_family_not_locally_small
+      - Vect_family_mostly_0_not_locally_small
 
   - property: terminal object
     proof: Assume that a terminal object $X$ exists. For $i \in I$, define the family $Y$ by $Y_i = \{\ast\}$ and $Y_j = \varnothing$ for $j \neq i$. Then $\supp(Y) = \{i\}$, so $Y$ belongs to $\Set^{(I)}_0$. By assumption, there is a morphism $Y \to X$. In particular, we see that $X_i$ is non-empty. But then $\supp(X) = I$, which is not essentially small.
