@@ -92,6 +92,7 @@
 # categories
 \Set: \mathbf{Set}
 \Setne: \mathbf{Set}_{\neq \varnothing}
+\DiGraph: \mathbf{DiGraph}
 \Rel: \mathbf{Rel}
 \Ab: \mathbf{Ab}
 \grAb: \mathbf{grAb}

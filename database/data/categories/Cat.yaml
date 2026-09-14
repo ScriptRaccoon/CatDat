@@ -14,6 +14,7 @@ related:
   - Mon
   - Set
   - PreOrd
+  - DiGraph
 
 satisfied_properties:
   - property: locally small

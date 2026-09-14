@@ -1,0 +1,62 @@
+id: DiGraph
+name: category of directed graphs
+notation: $\DiGraph$
+objects: >-
+  directed graphs, meaning tuples $(V,E,s,t)$, where $V$ is a set of vertices, $E$ is a set of edges, and $s,t : E \rightrightarrows V$ are two maps (the source and target maps); we often abbreviate this tuple as $(V,E)$
+morphisms: >-
+  A morphism $f : (V,E) \to (V',E')$ is a pair of maps $f_V : V \to V'$ and $f_E : E \to E'$ satisfying $s \circ f_E = f_V \circ s$ and $t \circ f_E = f_V \circ t$.
+description: This category can also be described as the functor category $[\Pair,\Set]$, where $\Pair$ denotes the <a href="/category/walking_pair">walking pair</a>.
+nlab_link: https://ncatlab.org/nlab/show/DiGraph
+
+tags:
+  - graph theory
+
+related:
+  - Set
+  - SetxSet
+  - walking_pair
+  - Cat
+
+satisfied_properties:
+  - property: locally small
+    proof: This is obvious.
+
+  - property: Grothendieck topos
+    proof: This follows from the description as a functor category $[\Pair,\Set]$.
+
+  - property: finitary algebraic
+    proof: 'Consider the algebraic theory with two sorts $V,E$ and two unary operations $s,t : E \rightrightarrows V$. The models of this theory are precisely directed graphs, and the morphisms of the theory coincide with graph morphisms.'
+
+unsatisfied_properties:
+  - property: skeletal
+    proof: This is trivial.
+
+  - property: generator
+    proof: >-
+      Assume that $G$ is a generator. Consider the edgeless graph $H$ with two vertices. Since it has two distinct endomorphisms $H \rightrightarrows H$, there is a morphism $G \to H$. Since $H$ has no edges, this implies that $G$ has no edges. The directed graph $L$ with a single vertex and two loops has two distinct endomorphisms $L \rightrightarrows L$, but since their maps on vertices agree, every morphism $G \to L$ equalizes them. Thus, $G$ is not a generator.
+
+      Alternatively, the claim follows from <a href="/content/topos-with-generator">this result</a>, since the terminal graph (having one vertex and one loop) has a subgraph (having one vertex and no loops) which is neither initial nor terminal.
+
+  - property: semi-strongly connected
+    proof: Let $G$ be the directed cycle $0 \to 1 \to 0$ and $H$ be the directed cycle $0 \to 1 \to 2 \to 0$. There is no morphism of directed graphs $G \to H$ since $H$ does not contain two edges of the form $x \to y \to x$ (a vertex can only reoccur after $3$ steps). There is also no morphism $H \to G$, because this would amount to a sequence of edges $x \to y \to z \to x$ in $G$. Every edge in $G$ alternates between the two vertices, so if, say, $x=0$, then $y=1$, $z=0$, and then $x=1$, contradicting $x=0$. More generally, if $C_n$ is the directed $n$-cycle, a morphism of directed graphs $C_n \to C_m$ exists if and only if $m \mid n$.
+
+special_objects:
+  initial object:
+    description: the graph with no vertices and hence no edges
+  terminal object:
+    description: the graph with one vertex and one loop
+  coproducts:
+    description: The coproduct of a family of directed graphs $(V_i,E_i,s_i,t_i)$ is $(\coprod_i V_i, \coprod_i E_i, \coprod_i s_i, \coprod_i t_i)$. Intuitively, we take the disjoint union of the vertices, keep the edges in the individual graphs, and do not add any edges between distinct graphs.
+  products:
+    description: The product of a family of directed graphs $(V_i,E_i,s_i,t_i)$ is $(\prod_i V_i, \prod_i E_i, \prod_i s_i, \prod_i t_i)$.
+
+special_morphisms:
+  isomorphisms:
+    description: morphisms $f = (f_V, f_E)$ where $f_V$ and $f_E$ are bijective
+    proof: This is easy to check. It can also be deduced from the fact that isomorphisms in functor categories coincide with natural isomorphisms.
+  monomorphisms:
+    description: morphisms $f = (f_V, f_E)$ where $f_V$ and $f_E$ are injective
+    proof: This holds in every functor category $[\C,\Set]$ because the evaluation functors are continuous.
+  epimorphisms:
+    description: morphisms $f = (f_V, f_E)$ where $f_V$ and $f_E$ are surjective
+    proof: This holds in every functor category $[\C,\Set]$ because the evaluation functors are cocontinuous.

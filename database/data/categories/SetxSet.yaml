@@ -14,6 +14,7 @@ related:
   - Set_arrow
   - Sh(X)
   - Set_family
+  - DiGraph
 
 satisfied_properties:
   - property: locally small
