@@ -16,6 +16,7 @@ related:
   - walking_fork
   - walking_morphism
   - forked_commutative_square
+  - DiGraph
 
 satisfied_properties:
   - property: small
