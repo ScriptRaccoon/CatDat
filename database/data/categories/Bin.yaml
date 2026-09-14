@@ -1,0 +1,155 @@
+id: Bin
+name: category of sets with a binary relation
+notation: $\Bin$
+objects: pairs $(X,R)$, where $X$ is a set and $R \subseteq X \times X$ is a binary relation
+morphisms: >-
+  A morphism $(X,R) \to (Y,S)$ is a relation-preserving map, i.e. a map $f : X \to Y$ such that $(x,x') \in R$ implies $(f(x),f(x')) \in S$.
+description: This category can also be viewed as a full subcategory of <a href="/category/DiGraph">$\DiGraph$</a> consisting of directed graphs with at most one edge between any pair of vertices. Loops are allowed. It is a typical example of a quasitopos.
+nlab_link: null
+
+tags:
+  - set theory
+  - graph theory
+
+related:
+  - Set
+  - Rel
+  - DiGraph
+  - PreOrd
+  - Pos
+  - Mono
+
+satisfied_properties:
+  - property: locally small
+    proof: This is obvious.
+
+  - property: complete
+    proof: If $\I \to \Bin$, $i \mapsto (X_i,R_i)$ is a diagram, its limit is $(\lim_{i \in \I} X_i,R)$, where $R$ consists of pairs $(x,y)$ such that $(x_i,y_i) \in R_i$ for every $i \in \I$. The universal property is easy to check.
+    check_redundancy: false
+
+  - property: cocomplete
+    proof: If $\I \to \Bin$, $i \mapsto (X_i,R_i)$ is a diagram, its colimit is $(\colim_{i \in \I} X_i,R)$, where $R$ consists of pairs $(\iota_i(x),\iota_i(y))$ for $i \in \I$ and $(x,y) \in R_i$. The universal property is easy to check.
+    check_redundancy: false
+
+  - property: finitely accessible
+    proof: Using the description of colimits, it is easy to see that $(E,R)$ is finitely presentable when $E$ is a finite set. The collection of such objects is essentially small. Moreover, every object $(X,R)$ of $\Bin$ can be written as the filtered colimit of $(E,R|_E)$, where $E$ runs through the finite subsets of $X$.
+
+  - property: locally cartesian closed
+    proof: >-
+      Let $(X,R)$ be a fixed object. We say that $x$ relates to $x'$ when $(x,x') \in R$ and suppress the relations from the notation. For two objects $Y \to X$ and $Z \to X$ in $\Bin / X$, we define their exponential to be the set $\coprod_{x \in X} \Hom(Y_x,Z_x)$ (the exponential in $\Set / X$), where $Y_x$ denotes the fiber over $x$, equipped with the following relation: a map $f : Y_x \to Z_x$ relates to a map $g : Y_{x'} \to Z_{x'}$ when $x$ relates to $x'$ and, for all $y \in Y_x$ and $y' \in Y_{x'}$, if $y$ relates to $y'$, then $f(y)$ relates to $g(y')$. The projection map $\coprod_{x \in X} \Hom(Y_x,Z_x) \to X$ is relation-preserving by construction.
+
+      Let us check the universal property of an exponential. Given an object $A \to X$ in $\Bin / X$, a morphism $\alpha : A \to \coprod_{x \in X} \Hom(Y_x,Z_x)$ over $X$ is in particular a morphism in $\Set / X$ and thus corresponds to a morphism $\beta : A \times_X Y \to Z$ in $\Set / X$ via $\beta(a,y) = \alpha(a)(y)$. It remains to check that $\alpha$ is relation-preserving if and only if $\beta$ is relation-preserving.
+
+      That $\alpha$ is relation-preserving means that if $a \in A_x$ relates to $a' \in A_{x'}$, then the map $\alpha(a) : Y_x \to Z_x$ relates to the map $\alpha(a') : Y_{x'} \to Z_{x'}$, i.e., that $x$ relates to $x'$ (which is automatic since $a$ relates to $a'$ and $A \to X$ is relation-preserving) and that if $y \in Y_x$ relates to $y' \in Y_{x'}$, then $\alpha(a)(y)$ relates to $\alpha(a')(y')$. In other words, if $(a,y)$ relates to $(a',y')$ in the pullback $A \times_X Y$, then $\beta(a,y)$ relates to $\beta(a',y')$. This is precisely the statement that $\beta$ is relation-preserving.
+
+  - property: regular subobject classifier
+    proof: By the description of regular monomorphisms below, the poset of regular subobjects of $(X,R)$ is isomorphic to the poset of subsets of $X$. The subsets of $X$ correspond to morphisms from $(X,R)$ into $\Omega \coloneqq (\{0,1\}, \{0,1\} \times \{0,1\})$, which shows that $\Omega$ is a regular subobject classifier.
+
+  - property: infinitary extensive
+    proof: We can copy the proof for <a href="/category/PreOrd">$\PreOrd$</a>.
+    references:
+      - PreOrd_infinitary_extensive
+
+  - property: generator
+    proof: The object $(\{\ast\},\varnothing)$ is clearly a generator.
+
+  - property: extremal cogenerator
+    proof: >-
+      We claim that the set $Q = \{0,1,2\}$ equipped with the relation $R_Q \coloneqq (Q \times Q) \setminus \{(0,1)\}$ is an extremal cogenerator of $\Bin$. First, to show that it is a cogenerator, assume that $f,g : (X,R) \rightrightarrows (Y,S)$ are distinct morphisms. Choose $x \in X$ with $f(x) \neq g(x)$. Define the map $h : Y \to Q$ by $h(f(x))=0$ and $h(y)=2$ for $y \neq f(x)$. Since $1 \notin \im(h)$, we obtain a morphism $h : (Y,S) \to (Q,R_Q)$, and it satisfies $h \circ f \neq h \circ g$ since $h(f(x)) = 0$, while $h(g(x)) = 2$.
+
+      To show that $(Q,R_Q)$ is extremal, let $f : (X,R) \to (Y,S)$ be a morphism such that
+      $$f^* : \Hom((Y,S),(Q,R_Q)) \to \Hom((X,R),(Q,R_Q))$$
+      is bijective. Since $(Q,R_Q)$ is a cogenerator, it follows that $f$ is both a monomorphism and an epimorphism. By the classification of monomorphisms and epimorphisms below, this means that $f : X \to Y$ is bijective. It remains to show that $f$ is relation-reflecting.
+
+      Assume for contradiction that $x,x' \in X$ satisfy $(f(x),f(x')) \in S$, but $(x,x') \notin R$. Define the map $h : X \to Q$ by $h(x)=0$, $h(x')=1$, and $h(p)=2$ for $p \neq x,x'$. Then $h : (X,R) \to (Q,R_Q)$ is a morphism since the only pair in $X \times X$ whose image is not in $R_Q$ is the pair $(x,x')$, which is not contained in $R$. By assumption, there is a morphism $g : (Y,S) \to (Q,R_Q)$ such that $g \circ f = h$. Since $(f(x),f(x')) \in S$, it follows that
+      $$(0,1) = (h(x),h(x')) = (g(f(x)),g(f(x'))) \in R_Q,$$
+      which is a contradiction.
+
+  - property: effective cocongruences
+    proof: >-
+      Let $q_1,q_2 : (X,R) \rightrightarrows (Y,S)$ be a cocongruence. Since the forgetful functor $\Bin \to \Set$ is cocontinuous, the pair $q_1,q_2 : X \rightrightarrows Y$ is a cocongruence in <a href="/category/Set">$\Set$</a>, which has effective cocongruences and equalizers. Thus, if $E \subseteq X$ denotes the equalizer of $q_1,q_2$, the canonical map
+      $$\alpha : X \sqcup_E X \to Y,\qquad i_1(x) \mapsto q_1(x),\quad i_2(x) \mapsto q_2(x)$$
+      is bijective. This is the underlying map of the canonical morphism
+      $$\alpha : (X,R) \sqcup_{(E,R|_E)} (X,R) \to (Y,S),$$
+      and it remains to prove that $\alpha$ is relation-reflecting. By the construction of colimits, the pushout is given by
+      $$(X \sqcup_E X, i_1(R) \cup i_2(R)),$$
+      where $i_k(R)$ is shorthand for $\{(i_k(x),i_k(x')) : (x,x') \in R\}$. Thus, we need to show that for all elements $p,q \in X \sqcup_E X$ with $(\alpha(p),\alpha(q)) \in S$, we have $(p,q) \in i_1(R) \cup i_2(R)$. Since $p$ and $q$ are contained in $i_1(X) \cup i_2(X)$, there are four cases to consider.
+
+      <strong>Case 1.</strong> We have $p = i_1(x)$ and $q = i_1(x')$. Thus,
+      $$(q_1(x),q_1(x')) = (\alpha(p),\alpha(q)) \in S.$$
+      Applying the retraction $r : (Y,S) \to (X,R)$, we obtain $(x,x') \in R$. Thus,
+      $$(p,q) = (i_1(x),i_1(x')) \in i_1(R) \subseteq i_1(R) \cup i_2(R).$$
+      <strong>Case 2.</strong> We have $p = i_2(x)$ and $q = i_2(x')$. This is symmetric to Case 1.
+
+      <strong>Case 3.</strong> We have $p = i_1(x)$ and $q = i_2(x')$. Thus,
+      $$(q_1(x),q_2(x')) = (\alpha(p),\alpha(q)) \in S.$$
+      Consider the set
+      $$Z \coloneqq X \sqcup_E X \sqcup_E X.$$
+      There are three canonical injective maps
+      $$u_i : X \to Z$$
+      satisfying $u_i(x) = u_j(x') \iff x = x' \in E$ for $i \neq j$. Because $(u_1)|_E = (u_2)|_E$, there is a unique map $f : Y \to Z$ with $f q_1 = u_1$ and $f q_2 = u_2$. Likewise, there is a unique map $g : Y \to Z$ with $g q_1 = u_2$ and $g q_2 = u_3$. Consider the binary relation $T \coloneqq f(S) \cup g(S)$ on $Z$. Then $f$ and $g$ induce morphisms $f,g : (Y,S) \rightrightarrows (Z,T)$ satisfying $f q_2 = g q_1$. Since $q_1,q_2$ is cotransitive, there is a morphism
+      $$h : (Y,S) \to (Z,T)$$
+      satisfying $h q_1 = f q_1 = u_1$ and $h q_2 = g q_2 = u_3$. Since $(q_1(x),q_2(x')) \in S$ and $h$ is a morphism, we have
+      $$(u_1(x),u_3(x')) \in T = f(S) \cup g(S).$$
+      Assume first that $(u_1(x),u_3(x')) \in f(S)$. Then
+      $$u_3(x') \in \im(f) \subseteq \im(u_1) \cup \im(u_2),$$
+      so that $x' \in E$. But then $p = i_1(x)$ and $q = i_1(x')$, so that we are in Case 1. Next, assume that $(u_1(x),u_3(x')) \in g(S)$. Then
+      $$u_1(x) \in \im(g) \subseteq \im(u_2) \cup \im(u_3),$$
+      so that $x \in E$. But then $p = i_2(x)$ and $q = i_2(x')$, so that we are in Case 2.
+
+      <strong>Case 4.</strong> We have $p = i_2(x)$ and $q = i_1(x')$. This is symmetric to Case 3.
+
+unsatisfied_properties:
+  - property: skeletal
+    proof: This is trivial.
+
+  - property: semi-strongly connected
+    proof: >-
+      By viewing sets with binary relations as directed graphs without multiple edges, we may use the same counterexample as for <a href="/category/DiGraph">$\DiGraph$</a>, since directed cycles have no multiple edges. Concretely, there is no morphism in $\Bin$ between
+      $$\bigl(\{0,1\},\{(0,1),(1,0)\}\bigr)$$
+      and
+      $$\bigl(\{0,1,2\},\{(0,1),(1,2),(2,0)\}\bigr).$$
+
+    references:
+      - DiGraph_not_semi-strongly_connected
+
+  - property: extremal generator
+    proof: Let $(X,R)$ be any object. We will prove that $\Hom((X,R),-)$ is not conservative. If $R$ is non-empty, consider the unique morphism from $(\varnothing,\varnothing)$ to $(\{\ast\},\varnothing)$. It is not an isomorphism, but since $(X,R)$ has no morphism to either object, the functor $\Hom((X,R),-)$ maps it to an isomorphism between empty sets. If $R$ is empty, consider the unique morphism from $(\{\ast\},\varnothing)$ to $(\{\ast\},\{(\ast,\ast)\})$. It is not an isomorphism, but since $(X,R) = (X,\varnothing)$ has a unique morphism to each of these objects, the functor $\Hom((X,R),-)$ maps it to an isomorphism between singleton sets.
+
+  - property: cofiltered-limit-stable epimorphisms
+    proof: We already know that <a href="/category/Set">$\Set$</a> does not have this property. Now apply the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> to the functor $\Set \to \Bin$, $X \mapsto (X,\varnothing)$.
+
+  - property: co-Malcev
+    proof: >-
+      Consider the set $X = \{x\}$ with the relation $R_X = \{(x,x)\}$ and the set $Y = \{x,x'\}$ with the relation $R_Y = \{(x,x),(x',x'),(x,x')\}$. There are two canonical morphisms $q,q' : (X,R_X) \rightrightarrows (Y,R_Y)$ defined by $q(x)=x$ and $q'(x)=x'$. They are jointly surjective and have a common retraction $(Y,R_Y) \to (X,R_X)$, namely the unique map $Y \to X$ sending both $x$ and $x'$ to $x$. Thus, $q,q'$ form a coreflexive corelation. It is not cosymmetric, since otherwise there would be a morphism $s : (Y,R_Y) \to (Y,R_Y)$ satisfying $s(x)=x'$ and $s(x')=x$, which would imply $(x',x) \in R_Y$, contrary to the definition of $R_Y$.
+
+special_objects:
+  initial object:
+    description: the empty set with the empty relation
+  terminal object:
+    description: the singleton set $\{\ast\}$ with the full relation
+  coproducts:
+    description: The coproduct of a family $(X_i,R_i)_{i \in I}$ is $(\coprod_{i \in I} X_i, \coprod_{i \in I} R_i)$, where $\coprod_{i \in I} R_i \subseteq \coprod_{i \in I} (X_i \times X_i) \subseteq \coprod_{i \in I} X_i \times \coprod_{i \in I} X_i$.
+  products:
+    description: The product of a family $(X_i,R_i)_{i \in I}$ is $(\prod_{i \in I} X_i, \prod_{i \in I} R_i)$, where $\prod_{i \in I} R_i \subseteq \prod_{i \in I} (X_i \times X_i) \cong \prod_i X_i \times \prod_i X_i$.
+
+special_morphisms:
+  isomorphisms:
+    description: bijective maps that preserve and reflect the relation
+    proof: This is easy to check.
+  monomorphisms:
+    description: injective relation-preserving maps
+    proof: For the non-trivial direction, the construction of limits shows that the forgetful functor $\Bin \to \Set$ is continuous, so that it preserves monomorphisms in particular.
+  epimorphisms:
+    description: surjective relation-preserving maps
+    proof: For the non-trivial direction, the construction of colimits shows that the forgetful functor $\Bin \to \Set$ is cocontinuous, so that it preserves epimorphisms in particular.
+  regular monomorphisms:
+    description: injective maps that reflect and preserve the relation
+    proof: 'The equalizer of two morphisms $f,g : (X,R) \rightrightarrows (Y,S)$ is constructed as $(E,R|_E)$, where $E = \{x \in X : f(x) = g(x)\}$ is the equalizer of $f,g : X \rightrightarrows Y$. The inclusion map $(E,R|_E) \hookrightarrow (X,R)$ reflects and preserves the relation. Conversely, let $(X,R)$ be an object and let $E \subseteq X$ be a subset. Then $E \subseteq X$ is the equalizer of the two maps $1,\chi_E : X \rightrightarrows \{0,1\}$, which induce morphisms $1,\chi_E : (X,R) \rightrightarrows (\{0,1\}, \{0,1\} \times \{0,1\})$ with equalizer $(E,R|_E)$.'
+  regular epimorphisms:
+    description: >-
+      morphisms $f : (X,R) \to (Y,S)$ such that $f : X \to Y$ is surjective and $S = \{(f(x),f(x')) : (x,x') \in R\}$
+    proof: >-
+      The coequalizer of two morphisms $f,g : (X,R) \rightrightarrows (Y,S)$ in $\Bin$ can be constructed as $\pi : (Y,S) \twoheadrightarrow (C,T)$, where $\pi : Y \twoheadrightarrow C$ is the coequalizer of $f,g : X \rightrightarrows Y$ in $\Set$ and $T = \{(\pi(y),\pi(y')) : (y,y') \in S\}$. Thus, $\pi : (Y,S) \twoheadrightarrow (C,T)$ has the claimed property.
+
+      Conversely, assume that $f : (X,R) \to (Y,S)$ is a morphism such that $f$ is surjective and $S = \{(f(x),f(x')) : (x,x') \in R\}$. This property of $S$ means that a map on $Y$ is relation-preserving whenever its composition with $f$ is relation-preserving on $X$. (The situation is completely analogous to <a href="/category/Top">$\Top$</a>, but much simpler.) Then $f : (X,R) \to (Y,S)$ is the coequalizer of its kernel pair $(X,R) \times_{(Y,S)} (X,R) \rightrightarrows (X,R)$ because of the corresponding statement in $\Set$.
