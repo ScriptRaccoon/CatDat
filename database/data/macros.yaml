@@ -94,6 +94,7 @@
 \Setne: \mathbf{Set}_{\neq \varnothing}
 \DiGraph: \mathbf{DiGraph}
 \Rel: \mathbf{Rel}
+\Bin: \mathbf{Bin}
 \Ab: \mathbf{Ab}
 \grAb: \mathbf{grAb}
 \Ch: \mathbf{Ch}

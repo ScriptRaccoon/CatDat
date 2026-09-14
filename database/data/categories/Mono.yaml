@@ -6,7 +6,7 @@ objects: >-
 morphisms: >-
   a morphism $(X, X') \to (Y, Y')$ is a function $f : X \to Y$ such that $f_*(X') \subseteq Y'$, or equivalently $X' \subseteq f^*(Y')$
 description: >-
-  This is equivalent to the full subcategory of objects $(X, Y, f)$ of <a href="/category/Set_arrow">$\Set^{\rightarrow}$</a> where $f : X \to Y$ is an injective function, i.e. a monomorphism. This explains our notation.
+  This is equivalent to the full subcategory of objects $(X, Y, f)$ of <a href="/category/Set_arrow">$\Set^{\rightarrow}$</a> where $f : X \to Y$ is an injective function, i.e. a monomorphism. This explains our notation. It is a typical example of a quasitopos.
 nlab_link: https://ncatlab.org/nlab/show/M-category#def
 tags:
   - set theory
@@ -14,9 +14,9 @@ tags:
 related:
   - Set
   - Set_arrow
-  - FI
   - Pos
   - PreOrd
+  - Bin
 
 satisfied_properties:
   - property: locally small

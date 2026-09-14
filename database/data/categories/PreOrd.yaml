@@ -1,9 +1,9 @@
 id: PreOrd
 name: category of preordered sets
 notation: $\PreOrd$
-objects: preordered sets, i.e. sets equipped with a reflexive, transitive relation
+objects: preordered sets, i.e. sets equipped with a reflexive and transitive relation
 morphisms: order-preserving functions
-description: Even though there are many similarities with $\Pos$, the main difference is that the forgetful functor $\PreOrd \to \Set$ has a right adjoint, mapping $X$ to $(X , X \times X)$ (chaotic preorder).
+description: Despite the many similarities with <a href="/category/Pos">$\Pos$</a>, the main difference is that the forgetful functor $\PreOrd \to \Set$ has a right adjoint, which maps $X$ to $(X, X \times X)$ (the chaotic preorder). It is a full subcategory of <a href="/category/Bin">$\Bin$</a>.
 nlab_link: https://ncatlab.org/nlab/show/PreOrd
 
 tags:
@@ -13,6 +13,7 @@ related:
   - Pos
   - Mono
   - Cat
+  - Bin
 
 satisfied_properties:
   - property: locally small
@@ -31,6 +32,7 @@ satisfied_properties:
 
   - property: infinitary extensive
     proof: 'This can be deduced from the infinitary extensivity of <a href="/category/Set">$\Set$</a> as follows. We already know that coproducts and pullbacks exist, and these are preserved by the forgetful functor to $\Set$. More concretely, coproducts are disjoint unions of the underlying sets equipped with the evident partial order that leaves the distinct summands incomparable. Since coproducts are disjoint in $\Set$ and the empty set has a unique preorder, it follows immediately that coproducts are disjoint in $\PreOrd$ as well. It remains to show that coproducts are stable under pullbacks. Let $(P_i)_{i \in I}$ be a family of preordered sets and let $f : T \to \coprod_{i \in I} P_i$ be an order-preserving map. Consider the pullbacks $T_i \coloneqq f^*(P_i)$. These are just the preimages of $P_i$ under $f$, with the partial order induced from $T$. Since coproducts in $\Set$ are stable under pullbacks, the canonical order-preserving map $\coprod_{i \in I} T_i \to T$ is bijective. It remains to show that it is order-reflecting. Since each $T_i \to T$ is order-reflecting, this amounts to proving that, for $x \in T_i$ and $y \in T_j$ with $i \neq j$, we never have $x \leq y$ in $T$. But such a relation would imply $f(x) \leq f(y)$ in $\coprod_{i \in I} P_i$, where $f(x) \in P_i$ and $f(y) \in P_j$, which contradicts the concrete description of the coproduct.'
+    label: PreOrd_infinitary_extensive
 
   - property: coregular
     proof: See <a href="https://math.stackexchange.com/questions/5130295" target="_blank">MSE/5130295</a>.

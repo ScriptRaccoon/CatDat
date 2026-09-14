@@ -16,6 +16,7 @@ related:
   - SetxSet
   - walking_pair
   - Cat
+  - Bin
 
 satisfied_properties:
   - property: locally small
@@ -39,6 +40,7 @@ unsatisfied_properties:
 
   - property: semi-strongly connected
     proof: Let $G$ be the directed cycle $0 \to 1 \to 0$ and $H$ be the directed cycle $0 \to 1 \to 2 \to 0$. There is no morphism of directed graphs $G \to H$ since $H$ does not contain two edges of the form $x \to y \to x$ (a vertex can only reoccur after $3$ steps). There is also no morphism $H \to G$, because this would amount to a sequence of edges $x \to y \to z \to x$ in $G$. Every edge in $G$ alternates between the two vertices, so if, say, $x=0$, then $y=1$, $z=0$, and then $x=1$, contradicting $x=0$. More generally, if $C_n$ is the directed $n$-cycle, a morphism of directed graphs $C_n \to C_m$ exists if and only if $m \mid n$.
+    label: DiGraph_not_semi-strongly_connected
 
 special_objects:
   initial object:
