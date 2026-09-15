@@ -1,0 +1,114 @@
+id: omega-Set
+name: category of ω-sets
+notation: $\omega{-}\Set$
+objects: pairs $(X, R_X)$ where $X$ is a set and $R_X \subseteq \IN \times X$ is a "realization" relation such that $(p_2)_*(R_X) = X$
+morphisms: 'a morphism $(X, R_X) \to (Y, R_Y)$ is a function $f : X \to Y$ such that there exists a <a href="https://ncatlab.org/nlab/show/partial+recursive+function">partial recursive function</a> $\varphi : \IN \dashrightarrow \IN$ such that whenever we have $n\in \IN, x\in X$ such that $n$ realizes $x$ (i.e. $(n, x) \in R_X$), then $\varphi(n)$ exists and $\varphi(n)$ realizes $f(x)$'
+description: ...
+nlab_link: https://ncatlab.org/nlab/show/assembly
+
+tags:
+  - logic
+
+related:
+  - Set
+
+satisfied_properties:
+  - property: locally small
+    proof: There is a forgetful functor $\omega{-}\Set \to \Set$ and $\Set$ is locally small.
+
+  - property: semi-strongly connected
+    proof: 'Suppose we have two objects $(X, R_X)$ and $(Y, R_Y)$. If $Y$ is non-empty, suppose $y_0 \in Y$, and find $n_0 \in \IN$ such that $n_0$ realizes $y_0$. Then it is easy to see that the constant function with value $y_0$ is a morphism in $\Hom_{\omega{-}\Set}((X, R_X), (Y, R_Y))$, where we can choose $\varphi : \IN \dashrightarrow \IN$ to be the full recursive function with constant value $n_0$. Otherwise, if $Y$ is empty, then the unique function $Y \to X$ is a morphism in $\Hom_{\omega{-}\Set}((Y, R_Y), (X, R_X))$, and in fact any partial recursive function $\IN \dashrightarrow \IN$ works for $\varphi$.'
+
+  - property: well-powered
+    proof: If $(X, R_X) \hookrightarrow (Y, R_Y)$ is a monomorphism, then by the description below, this implies the underlying function $X \to Y$ is injective. Therefore, we can find an equivalent subobject $(X, R_X) \cong (Y', R_{Y'})$ where $Y' \subseteq Y$ by transporting $R_X$ to the image of the underlying function. The collection of possible $Y'$ is then essentially small, and for each $Y'$, the collection of possible $R_{Y'}$ is also essentially small.
+
+  - property: well-copowered
+    proof: If $(X, R_X) \twoheadrightarrow (Y, R_Y)$ is an epimorphism, then by the description below, this implies the underlying function $X \to Y$ is surjective. Therefore, if $E$ is the kernel pair of this underlying function, then we can find an equivalent quotient object $(X / E, R_{X'})$ by transporting $R_X$ to $X / E$. The collection of possible equivalence relations $E$ is then essentially small, and for each $E$, the collection of possible $R_{X'}$ is also essentially small.
+
+  - property: terminal object
+    proof: 'The $\omega$-set $(1, \IN \times 1)$ is terminal. Namely, for any object $(X, R_X)$, the unique function $! : X \to 1$ is a morphism $(X, R_X) \to (1, \IN \times 1)$, since for example we can take any total recursive function $\varphi : \IN \to \IN$ in the definition.'
+    check_redundancy: false
+
+  - property: generator
+    proof: The terminal object represents the forgetful functor $\omega{-}\Set \to \Set$ which is clearly faithful.
+
+  - property: cogenerator
+    proof: 'The object $(2, \IN\times 2)$ is a cogenerator. To see this, note that $\Hom_{\omega{-}\Set}({-}, (2, \IN \times 2) \cong \Hom_{\Set}(U{-}, 2)$, where $U : \omega{-}\Set \to \Set$ is the forgetful functor. Therefore, $\Hom_{\omega{-}\Set}({-}, (2, \IN \times 2))$ is isomorphic to the composition of $U$ and the power set functor $P : \Set^{\op} \to \Set$, both of which are faithful.'
+
+  - property: binary products
+    proof: ...
+    check_redundancy: false
+
+  - property: equalizers
+    proof: >-
+      Let $f, g : (X, R_X) \rightrightarrows (Y, R_Y)$ be two parallel morphisms, and let $X'$ be the equalizer of the underlying functions. We then claim that $(X', R_X \cap (\IN \times X'))$ is an equalizer of $f$ and $g$, with the morphism $(X', R_X \cap (\IN \times X')) \hookrightarrow (X, R_X)$ being the inclusion map. First, to see this indeed gives a morphism of $\omega$-sets, note that the identity function works for $\varphi$. Now, if we have $h : (U, R_U) \to (X, R_X)$ such that $h \circ f = h \circ g$, then it is easy to see that the induced function $\bar h : U \to X'$ to the equalizer in $\Set$ induces a morphism $(U, R_U) \to (X', R_X \cap (\IN \times X'))$ since the same partial recursive function $\varphi : \IN \dashrightarrow \IN$ which works for $h$ will also work for $\bar h$. From here, it is easy to conclude that $(X', R_X \cap X')$ is indeed an equalizer of $f$ and $g$.
+    check_redundancy: false
+
+  - property: initial object
+    proof: 'The $\omega$-set $(\varnothing, \varnothing)$ is initial. Namely, for any object $(X, R_X)$, the unique function $! : \varnothing \to X$ is a morphism $(\varnothing, \varnothing) \to (X, R_X)$. In fact, any partial recursive function $\varphi : \IN \dashrightarrow \IN$ satisfies the definition vacuously.'
+    check_redundancy: false
+
+  - property: binary coproducts
+    proof: ...
+    check_redundancy: false
+
+  - property: coequalizers
+    proof: ...
+
+  - property: locally cartesian closed
+    proof: ...
+
+  - property: regular subobject classifier
+    proof: ...
+
+  - property: extensive
+    proof: ...
+
+  - property: natural numbers object
+    proof: ...
+
+unsatisfied_properties:
+  - property: skeletal
+    proof: Consider $(X, \IN \times X)$ and $(Y, \IN \times Y)$ for $X$ and $Y$ bijective but unequal sets.
+
+  - property: essentially small
+    proof: There is a fully faithful (and therefore conservative) functor $\Set \to \omega{-}\Set$ which sends a set $X$ to $(X, \IN \times X)$.
+
+  - property: locally finite
+    proof: 'There is a fully faithful functor $\nabla : \Set \to \omega{-}\Set$ which sends a set $X$ to $(X, \IN \times X)$. Therefore, for example, $\Hom_{\omega{-}\Set}(\nabla 1, \nabla \IN) \simeq \Hom_{\Set}(1, \IN)$ is infinite.'
+
+  - property: balanced
+    proof: 'For example, the identity function $2 \to 2$ induces a morphism $(2, \{ (0, 0), (1, 1) \}) \to (2, \IN \times 2)$ which is a monomorphism and an epimorphism by the conditions below. However, it is not an isomorphism: Any partial recursive function $\psi : \IN \dashrightarrow \IN$ as in the condition below would have to satisfy $\psi(0) = 0$ (plug in $x=0$ in the condition) and $\psi(0) = 1$ (plug in $x=1$ in the condition), giving a contradiction.'
+
+  - property: countable powers
+    proof: >-
+      Let $\Omega_c \coloneqq (2, \{ (0, 0), (1, 1) \})$ (where the name is chosen from the fact that $\Omega_c$ represents the functor of *complemented* subobjects). In fact, for any $\omega$-set $(X, R_X)$ with a sequence of morphisms $f_n : (X, R_X) \to \Omega_c$, we can define a function $g : X \to 2^{\IN}$ which sends $x \in X$ to the sequence $(f_n(x))_{n\in \IN}$. We claim that $g$ has countable image. To see this, suppose $x\in X$. Then there exists $m\in \IN$ such that $m$ realizes $x$. We can also choose partial recursive functions $\varphi_n : \IN \dashrightarrow \IN$ corresponding to the fact that each $f_n$ is a morphism of $\omega$-sets. It follows that $\varphi_n(m)$ is defined and $\varphi_n(m) = f_n(x)$ for each $n$. Therefore, the image of $g$ is contained in the set of sequences $(\varphi_n(m))_{n\in N}$ where $m \in \IN$ is such that $\varphi_n(m)$ is defined and $\varphi_n(m) \in \{ 0, 1 \}$ for each $n$.
+
+      From this, we see that there can be no $\aleph_0$-indexed power of $\Omega_c$. Indeed, if $X$ were such a power, then for any sequence $(a_n) \in 2^{\IN}$, we would have a corresponding sequence of morphisms $1 \to \Omega_c$, inducing a morphism $1 \to X$ and thus an element $x$ of the underlying set. The corresponding function $g : X \to 2^{\IN}$ would then have to have value $g(x) = (a_n)$. Thus, $g$ would be surjective, contradicting the previous paragraph.
+
+special_objects:
+  initial object:
+    description: $(\varnothing, \varnothing)$
+  terminal object:
+    description: $(1, \IN \times 1)$
+  coproducts:
+    description: ...
+  products:
+    description: ...
+
+special_morphisms:
+  isomorphisms:
+    description: 'A morphism $f : (X, E_X) \to (Y, E_Y)$ is an isomorphism if and only if the underlying function $X \to Y$ is a bijection, and there also exists a partial recursive function $\psi : \IN \dashrightarrow \IN$ such that whenever we have $n\in\IN, x\in X$ such that $n$ realizes $f(x)$, then $\psi(n)$ exists and $\psi(n)$ realizes $x$'
+    proof: This is easy, since the condition just says that the set-level inverse of $f$ is also a morphism in $\omega{-}\Set$.
+  monomorphisms:
+    description: 'A morphism $f : (X, E_X) \to (Y, E_Y)$ is a monomorphism if and only if the underlying function $X \to Y$ is injective'
+    proof: This follows from the fact that the forgetful functor $\omega{-}\Set \to \Set$ is clearly faithful, and it is representable by the terminal object $(1, \IN \times 1)$.
+  regular monomorphisms:
+    description: ...
+    proof: ...
+  epimorphisms:
+    description: 'A morphism $f : (X, E_X) \to (Y, E_Y)$ is an epimorphism if and only if the underlying function $X \to Y$ is surjective'
+    proof: Sufficiency of the latter condition is easy to show. For necessity, use the fact that $\Hom_{\Set}(X, Z) \cong \Hom_{\omega{-}\Set}((X, E_X), (Z, \IN \times Z))$ to show that if $f$ is an epimorphism in $\omega{-}\Set$, then the underlying set function of $f$ is an epimorphism in $\Set$.
+  regular epimorphisms:
+    description: ...
+    proof: ...
