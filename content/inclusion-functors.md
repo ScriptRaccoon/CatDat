@@ -6,7 +6,7 @@ description: We gather results about inclusion functors
 # Inclusion functors
 
 ::: Lemma 1
-Let $\D$ be category that has an extremal cogenerator $Q$. Let $\C \subseteq \D$ be a full subcategory that contains $Q$. Then the inclusion functor $U : \C \hookrightarrow \D$ preserves all colimits that exist in $\C$ and in $\D$. In particular, if $\D$ is cocomplete, $U$ is cocontinuous.
+Let $\D$ be category that has an extremal cogenerating collection $S$. Let $\C \subseteq \D$ be a full subcategory that contains every object of $S$. Then the inclusion functor $U : \C \hookrightarrow \D$ preserves all colimits that exist in $\C$ and in $\D$. In particular, if $\D$ is cocomplete, $U$ is cocontinuous.
 :::
 
 ::: Proof
@@ -14,5 +14,5 @@ Let $D : \I \to \C$ be a diagram such that $D$ has a colimit $(u_i : D(i) \to X)
 
 $$f^* : \Hom(X,T) \to \Hom(Y,T)$$
 
-is a bijection; both sides identify with cones $D \to T$. Now apply this to $T \coloneqq Q$ to conclude that $f$ is an isomorphism.
+is a bijection; both sides identify with cones $D \to T$. Now apply this to $T \in S$ to conclude that $f$ is an isomorphism.
 :::
