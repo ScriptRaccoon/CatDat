@@ -4,7 +4,7 @@ notation: $\Euclid_{\sqcup}$
 objects: coproducts of Euclidean spaces
 morphisms: continuous functions
 description: >-
-  By definition, this is the full subcategory of $\Top$ (or $\Haus$) where every space is isomorphic to $\coprod_{i \in I} \IR^{n_i}$ for a family of natural numbers $(n_i)_{i \in I}$. These are locally Euclidean spaces in the strongest possible sense. This category provides an example of an infinitary distributive category that is not Cauchy complete. Using the fact that Euclidean spaces are connected, it is easy to see that this category is the <a href="https://ncatlab.org/nlab/show/free+coproduct+completion" target="_blank">free coproduct cocompletion</a> of the category of Euclidean spaces.
+  By definition, this is the full subcategory of $\Top$ (or $\Haus$) where every space is isomorphic to $\coprod_{i \in I} \IR^{n_i}$ for a family of natural numbers $(n_i)_{i \in I}$. These are locally Euclidean spaces in the strongest possible sense. This category provides an example of an infinitary distributive category that is not Cauchy complete. Using the fact that Euclidean spaces are connected, it is easy to see that this category is the <a href="https://ncatlab.org/nlab/show/free+coproduct+completion" target="_blank">free coproduct completion</a> of the category of Euclidean spaces.
 nlab_link: null
 tags:
   - topology
@@ -14,6 +14,7 @@ related:
   - Haus
   - Man
   - Met_c
+  - DiGraph_fc
 
 satisfied_properties:
   - property: locally small
@@ -23,7 +24,7 @@ satisfied_properties:
     proof: This follows since $\Top$ is infinitary distributive and Euclidean spaces are closed under finite products. Namely, $\IR^0=1$ and $\IR^n \times \IR^m \cong \IR^{n+m}$.
 
   - property: infinitary extensive
-    proof: The <a href="https://ncatlab.org/nlab/show/free+coproduct+completion" target="_blank">free coproduct cocompletion</a> of any category is infinitary extensive; for the finite case see Proposition 2.4 in <a href="https://doi.org/10.1016/0022-4049(93)90035-R" target="_blank">Introduction to extensive and distributive categories</a> by Carboni-Lack-Walters.
+    proof: The <a href="https://ncatlab.org/nlab/show/free+coproduct+completion" target="_blank">free coproduct completion</a> of any category is infinitary extensive; for the finite case see Proposition 2.4 in <a href="https://doi.org/10.1016/0022-4049(93)90035-R" target="_blank">Introduction to extensive and distributive categories</a> by Carboni-Lack-Walters.
 
   - property: well-powered
     proof: This is clear from the classification of monomorphisms as injective continuous maps.

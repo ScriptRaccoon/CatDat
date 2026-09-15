@@ -1,0 +1,140 @@
+id: DiGraph_fc
+name: category of directed graphs with finite components
+notation: $\DiGraph_{\fc}$
+objects: directed graphs whose connected components are finite
+morphisms: morphisms of directed graphs
+description: Here, connected components are understood in the underlying undirected graph, so edges may be traversed in either direction. Thus, the objects are precisely the coproducts of finite directed graphs. We have included this category solely as an example of a category with a subobject classifier that does not have coequalizers. Note that $\DiGraph_{\fc}$ is the <a href="https://ncatlab.org/nlab/show/free+coproduct+completion" target="_blank">free coproduct completion</a> of the category of finite connected directed graphs.
+nlab_link: null
+
+tags:
+  - graph theory
+
+related:
+  - DiGraph
+  - Euclid_coprod
+
+satisfied_properties:
+  - property: locally small
+    proof: It is a full subcategory of <a href="/category/DiGraph">$\DiGraph$</a>, which is locally small.
+
+  - property: finite products
+    proof: The category <a href="/category/DiGraph">$\DiGraph$</a> has finite products. The full subcategory $\DiGraph_{\fc} \subseteq \DiGraph$ is closed under finite products because every object of $\DiGraph_{\fc}$ is a coproduct of finite directed graphs, $\DiGraph$ is infinitary distributive, and finite products of finite directed graphs are finite.
+    check_redundancy: false
+
+  - property: equalizers
+    proof: This follows because <a href="/category/DiGraph">$\DiGraph$</a> has equalizers and $\DiGraph_{\fc} \subseteq \DiGraph$ is closed under subgraphs. Namely, every subgraph of a coproduct of finite directed graphs decomposes as a coproduct of subgraphs of these finite directed graphs, and a subgraph of a finite directed graph is finite.
+    check_redundancy: false
+
+  - property: subobject classifier
+    proof: >-
+      The previous proofs show that $\DiGraph_{\fc} \subseteq \DiGraph$ is closed under finite limits. The subobject classifier $\Omega$ of <a href="/category/DiGraph">$\DiGraph$</a> is finite; see <a target="_blank" href="https://ncatlab.org/nlab/show/Quiv">nLab</a> for a detailed description. Hence, $\top : 1 \to \Omega$ is a morphism in $\DiGraph_{\fc}$. If $X \hookrightarrow Y$ is a monomorphism in $\DiGraph_{\fc}$, it is also a monomorphism in $\DiGraph$ since the inclusion functor preserves pullbacks. Hence, there is a unique morphism of directed graphs $Y \to \Omega$ such that
+      $$\begin{CD} X @>>> Y \\ @V{!}VV @VVV \\ 1 @>>> \Omega \end{CD}$$
+      is a pullback square in $\DiGraph$, i.e. a pullback square in $\DiGraph_{\fc}$.
+
+  - property: infinitary extensive
+    proof: Since <a href="/category/DiGraph">$\DiGraph$</a> is infinitary extensive and $\DiGraph_{\fc} \subseteq \DiGraph$ is closed under coproducts and pullbacks, this follows from Lemma 11 <a href="/content/subcategories">here</a>.
+
+  - property: cokernel pairs
+    proof: 'We will show that $\DiGraph_{\fc} \subseteq \DiGraph$ is closed under cokernel pairs. More generally, let $f : G \to H$ be a morphism of directed graphs with $H \in \DiGraph_{\fc}$. Write $H = \coprod_i H_i$ as a coproduct of finite directed graphs. Since $\DiGraph$ is infinitary extensive, we have $G = \coprod_i f^*(H_i)$, and $f$ decomposes as a coproduct of morphisms $f_i : f^*(H_i) \to H_i$. Then $H \sqcup_G H = \coprod_i (H_i \sqcup_{f^*(H_i)} H_i)$. Each directed graph $H_i \sqcup_{f^*(H_i)} H_i$ is finite because it is a quotient of the finite directed graph $H_i \sqcup H_i$. Thus, $H \sqcup_G H$ belongs to $\DiGraph_{\fc}$.'
+
+  - property: coequalizers of kernel pairs
+    proof: 'Let $f : G \to H$ be a morphism in $\DiGraph_{\fc}$. In $\DiGraph$, the coequalizer of the kernel pair of $f$ is simply the image of $f$. Since $\DiGraph_{\fc} \subseteq \DiGraph$ is closed under subgraphs, this image belongs to $\DiGraph_{\fc}$. The universal property of a coequalizer persists in $\DiGraph_{\fc}$.'
+
+  - property: extremal cogenerating collection
+    proof: >-
+      We claim that the "chaotic" directed graph $G = (\{a,b\},\{a,b\} \times \{a,b\})$ and the directed graph $H = (\{a\},\{\ell,\ell'\})$ with one vertex and two loops form an extremal cogenerating collection. Indeed, $\Hom(-,G)$ is isomorphic to the contravariant functor $(V,E) \mapsto P(V)$, and $\Hom(-,H)$ is isomorphic to the contravariant functor $(V,E) \mapsto P(E)$. The combined functor $(V,E) \mapsto (P(V),P(E))$ is faithful and conservative because the <a href="/functor/power_set_contravariant">contravariant power set functor</a> $P : \Set^{\op} \mapsto \Set$ is faithful and conservative.
+
+      Remark: The same proof works for $\DiGraph$.
+    label: DiGraph_fc_extremal_cogenerators
+
+  - property: well-copowered
+    proof: This follows immediately from the description of epimorphisms below.
+
+  - property: epi-regular
+    proof: Any epimorphism $f = (f_V,f_E)$ in $\DiGraph_{\fc}$ has surjective components $f_V,f_E$ by the classification below. Hence, it is the coequalizer of its kernel pair in $\DiGraph$. Since the kernel pair belongs to $\DiGraph_{\fc}$, it is also the coequalizer in $\DiGraph_{\fc}$.
+
+  - property: ℵ₁-accessible
+    proof: >-
+      First, we show that $\DiGraph_{\fc} \subseteq \DiGraph$ is closed under $\aleph_1$-filtered colimits. Let $D : \I \to \DiGraph_{\fc}$ be an $\aleph_1$-filtered diagram, and let $C$ be its colimit directed graph in $\DiGraph$. Thus, the set of vertices is given by $V_C = \colim_{i \in \I} V_{D(i)}$, and the set of edges is given by $E_C = \colim_{i \in \I} E_{D(i)}$. Consider a vertex $v$ of $C$. It has a preimage vertex $v_{i_0}$ in some $D(i_0)$. For each morphism $i_0 \to i$, consider its image $v_i$ in $D(i)$, and let $C(i) \subseteq D(i)$ denote the connected component of $v_i$. Then it is easy to see that the connected component of $v$ is identified with $\colim_{i_0 \to i} C(i)$. Since <a href="/category/FinSet">$\FinSet$</a> is closed under $\aleph_1$-filtered colimits in $\Set$ (the proof is identical to the proof for <a href="/category/Ab_fg">$\Ab_{\fg}$</a> in <a href="https://mathoverflow.net/a/511519" target="_blank">MO/400763</a>), it follows that the collection of finite directed graphs is closed under $\aleph_1$-filtered colimits in $\DiGraph$. Since each $C(i)$ is finite, it follows that the connected component of $v$ is finite, as required.
+
+      Let $S \subseteq \Ob(\DiGraph_{\fc})$ be the collection of directed graphs with countably many components, each of them finite. Note that $S$ is essentially small. Each directed graph in $S$ has countably many vertices and edges, and hence is $\aleph_1$-presentable in $\DiGraph$ (either by a direct argument or by using Corollary 3.13 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>). Since the inclusion $\DiGraph_{\fc} \hookrightarrow \DiGraph$ preserves $\aleph_1$-filtered colimits, it follows that each directed graph in $S$ is also $\aleph_1$-presentable in $\DiGraph_{\fc}$.
+
+      Finally, every directed graph $G$ in $\DiGraph_{\fc}$ can be written as $\coprod_{i \in I} G_i$ with finite directed graphs $G_i$, and therefore expressed as the $\aleph_1$-filtered colimit of the directed graphs $\coprod_{i \in C} G_i$ in $S$, where $C$ runs through the countable subsets of $I$.
+
+  - property: ℵ₁-cofiltered limits
+    proof: >-
+      We show that $\DiGraph_{\fc} \subseteq \DiGraph$ is closed under $\aleph_1$-cofiltered limits. Let $D : \I \to \DiGraph_{\fc}$ be an $\aleph_1$-cofiltered diagram, and let $L$ be its limit in $\DiGraph$. Consider a vertex $v \in V_L$, and let $C(v) \subseteq L$ denote its connected component. For each $i \in \I$, let $C(v_i) \subseteq D(i)$ be the connected component of $v_i \in V_{D(i)}$. Each transition map $D(i \to j) : D(i) \to D(j)$ maps $C(v_i)$ into $C(v_j)$. Thus, we can construct the directed graph $\lim_{i \in \I} C(v_i)$. It is finite because <a href="/category/FinSet">$\FinSet$</a> is closed under $\aleph_1$-cofiltered limits in $\Set$. Since each projection map $L \to D(i)$ maps $C(v)$ into $C(v_i)$, there is an embedding $C(v) \hookrightarrow \lim_{i \in \I} C(v_i)$. Hence, $C(v)$ is finite.
+    references:
+      - finset_aleph1-cofiltered-limits
+
+  - property: effective cocongruences
+    proof: More generally, let $G \rightrightarrows H$ be a coreflexive corelation in $\DiGraph_{\fc}$. Since binary coproducts exist and the inclusion functor $\DiGraph_{\fc} \hookrightarrow \DiGraph$ preserves epimorphisms, it is a coreflexive corelation in $\DiGraph$. Since <a href="/category/DiGraph">$\DiGraph$</a> is co-Malcev and has effective cocongruences (by <a href=/category-implication/regular_epi-regular_extensive_consequences">this result</a>), the pair $G \rightrightarrows H$ is the cokernel pair of some morphism $E \to G$ in $\DiGraph$, namely (since equalizers exist, see <a href="/content/effective-congruence-quotients">here</a>) the equalizer of $G \rightrightarrows H$. Since $G$ belongs to $\DiGraph_{\fc}$, also $E$ belongs to $\DiGraph_{\fc}$. It follows that $G \rightrightarrows H$ is also the cokernel pair of $E \to G$ in $\DiGraph_{\fc}$.
+
+unsatisfied_properties:
+  - property: skeletal
+    proof: This is trivial.
+
+  - property: semi-strongly connected
+    proof: We can recycle the proof from <a href="/category/DiGraph">$\DiGraph$</a>, which only uses finite auxiliary directed graphs.
+    references:
+      - DiGraph_not_semi-strongly_connected
+
+  - property: generator
+    proof: We can recycle the proof from <a href="/category/DiGraph">$\DiGraph$</a>, which only uses finite auxiliary directed graphs.
+    references:
+      - DiGraph_no_generator
+
+  - property: countable powers
+    proof: >-
+      First, note that the forgetful functor $\DiGraph_{\fc} \to \Set$, $(V,E) \mapsto V$, is represented by the directed graph $\bullet$ (one vertex, no edges), and hence preserves limits. Similarly, the forgetful functor $(V,E) \mapsto E$ is represented by the directed graph $\bullet \to \bullet$ (two vertices, one edge), and hence also preserves limits. We conclude that the forgetful functor $\DiGraph_{\fc} \to \DiGraph$ preserves limits. Alternatively, this follows from Lemma 1 <a href="/content/inclusion-functors">here</a>, since $\DiGraph_{\fc}$ contains an extremal generating set of $\DiGraph$, namely the two directed graphs mentioned above.
+
+      Now let $G$ be the directed graph with vertices $a,b$, one loop $a \to a$, and one edge $a \to b$. If the power $G^{\IN}$ exists in $\DiGraph_{\fc}$, it must be the power in $\DiGraph$. It has the vertex $(a,a,\dotsc)$, which admits an edge to every sequence of vertices consisting of $a$ and $b$. Thus, its connected component is infinite, which is a contradiction.
+
+  - property: sequential colimits
+    proof: >-
+      First, note that the inclusion functor $\DiGraph_{\fc} \to \DiGraph$ preserves colimits. This is because $\DiGraph$ is cocomplete, $\DiGraph_{\fc}$ contains an extremal cogenerating collection of $\DiGraph$ (by our proof that $\DiGraph_{\fc}$ has one), and Lemma 1 <a href="/content/inclusion-functors">here</a>. Thus, it suffices to show that $\DiGraph_{\fc}$ is not closed under sequential colimits in $\DiGraph$.
+
+      Consider the directed path $P_n$ with $n$ vertices and $n-1$ edges. It is finite, hence belongs to $\DiGraph_{\fc}$, and there is a canonical embedding $P_n \hookrightarrow P_{n+1}$. The colimit of this sequence in $\DiGraph$ is the directed path $P_\infty$ with infinitely many vertices. It is connected but not finite, hence does not belong to $\DiGraph_{\fc}$.
+    label: DiGraph_fc_no_sequential_colimits
+    references:
+      - DiGraph_fc_extremal_cogenerators
+
+  - property: quotients of congruences
+    proof: Since the category is infinitary extensive and we have just identified a sequence of monomorphisms without a colimit, there is a congruence without a quotient by Lemma 1 <a href="/content/monic_sequential_colimits">here</a>.
+    references:
+      - DiGraph_fc_no_sequential_colimits
+
+  - property: coaccessible
+    proof: >-
+      The proof is very similar to the proof for <a href="/category/Top">$\Top$</a>. Let $D$ be the directed graph with vertices $0,1$ and no edges, and let $I$ be the directed graph with vertices $0,1$ and the four edges $i \to j$ for $i,j \in \{0,1\}$. There is a canonical morphism $p : D \to I$. By definition, a directed graph $G = (V,E)$ is projective to $p$ if the map
+      $$p_* : \Hom(G,D) \to \Hom(G,I)$$
+      is surjective. Note that $\Hom(G,I) \cong \Hom(V,\{0,1\})$ and that
+      $$\Hom(G,D) \cong \begin{cases}
+      \Hom(V,\{0,1\}) & E = \varnothing \\
+      \varnothing & E \neq \varnothing.
+      \end{cases}$$
+      Thus, $G$ is projective to $p$ if and only if $G$ has no edges, i.e. $G$ is discrete. Every discrete graph belongs to $\DiGraph_{\fc}$. This shows that the full subcategory of directed graphs in $\DiGraph_{\fc}$ that are projective to $p$ is equivalent to $\Set$. Since <a href="/category/Set">$\Set$</a> is not coaccessible, it follows from the dual of Prop. 4.7 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a> that $\DiGraph_{\fc}$ is not coaccessible.
+    references:
+      - top_not_coaccessible
+
+special_objects:
+  initial object:
+    description: the directed graph with no vertices and hence no edges
+  terminal object:
+    description: the directed graph with one vertex and one loop
+  coproducts:
+    description: just as in <a href="/category/DiGraph">$\DiGraph$</a>
+  products:
+    description: '[finite case] just as in <a href="/category/DiGraph">$\DiGraph$</a>'
+
+special_morphisms:
+  isomorphisms:
+    description: morphisms $f = (f_V, f_E)$ such that $f_V$ and $f_E$ are bijective
+    proof: This description holds in <a href="/category/DiGraph">$\DiGraph$</a>.
+  monomorphisms:
+    description: morphisms $f = (f_V, f_E)$ such that $f_V$ and $f_E$ are injective
+    proof: For the non-trivial direction, the construction of finite limits shows that the forgetful functor $\DiGraph_{\fc} \to \DiGraph$ preserves finite limits and hence preserves monomorphisms. The monomorphisms in $\DiGraph$ have the stated description.
+  epimorphisms:
+    description: morphisms $f = (f_V, f_E)$ such that $f_V$ and $f_E$ are surjective
+    proof: >-
+      For the non-trivial direction, let $f = (f_V,f_E) : (V,E) \to (V',E')$ be an epimorphism. Consider the "chaotic" directed graph $G = (\{a,b\},\{a,b\} \times \{a,b\})$. It is finite, so the map $f^* : \Hom((V',E'),G) \to \Hom((V,E),G)$ is injective. This map identifies with $(f_V)^* : \Hom(V',\{0,1\}) \to \Hom(V,\{0,1\})$. Hence, $f_V$ is surjective. Now consider the directed graph $H = (\{a\},\{\ell,\ell'\})$ with one vertex and two loops. It is finite, so the map $f^* : \Hom((V',E'),H) \to \Hom((V,E),H)$ is injective. This map identifies with $(f_E)^* : \Hom(E',\{\ell,\ell'\}) \to \Hom(E,\{\ell,\ell'\})$. Hence, $f_E$ is surjective.
