@@ -214,5 +214,6 @@
 	"Bin_symm",
 	"Bin_symm_refl",
 	"Set_bij",
-	"Set_family_bij"
+	"Set_family_bij",
+	"omega-Set"
 ]
