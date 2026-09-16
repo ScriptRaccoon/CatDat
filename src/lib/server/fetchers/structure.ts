@@ -64,7 +64,7 @@ export function fetch_structure(type: StructureType, id: string): StructureDetai
             FROM related_structures r
             INNER JOIN structures s ON s.id = r.related_structure_id
             WHERE r.structure_id = ?
-            ORDER BY lower(s.name)`
+            ORDER BY r.id`
 		)
 		.all(id)
 

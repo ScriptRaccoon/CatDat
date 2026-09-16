@@ -51,11 +51,12 @@ CREATE UNIQUE INDEX structures_lower_id_unique ON structures (lower(id));
 CREATE INDEX structure_by_type ON structures (type);
 
 CREATE TABLE related_structures (
+    id INTEGER PRIMARY KEY,
     structure_id TEXT NOT NULL,
     related_structure_id TEXT NOT NULL,
     type TEXT NOT NULL,
     CHECK (structure_id != related_structure_id),
-    PRIMARY KEY (structure_id, related_structure_id),
+    UNIQUE (structure_id, related_structure_id),
     FOREIGN KEY (structure_id, type) REFERENCES structures (id, type) ON DELETE CASCADE,
     FOREIGN KEY (related_structure_id, type) REFERENCES structures (id, type) ON DELETE CASCADE
 );
