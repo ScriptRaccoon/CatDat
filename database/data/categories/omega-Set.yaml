@@ -3,9 +3,13 @@ name: category of ω-sets
 notation: $\omega{-}\Set$
 objects: pairs $(X, R_X)$ where $X$ is a set and $R_X \subseteq \IN \times X$ is a "realization" relation such that $(p_2)_*(R_X) = X$
 morphisms: 'a morphism $(X, R_X) \to (Y, R_Y)$ is a function $f : X \to Y$ such that there exists a <a href="https://ncatlab.org/nlab/show/partial+recursive+function">partial recursive function</a> $\varphi : \IN \dashrightarrow \IN$ such that whenever we have $n\in \IN, x\in X$ such that $n$ realizes $x$ (i.e. $(n, x) \in R_X$), then $\varphi(n)$ exists and $\varphi(n)$ realizes $f(x)$'
-description: ...
-nlab_link: https://ncatlab.org/nlab/show/assembly
+description: >-
+  The category of $\omega$-sets is mostly useful as a <a href="https://ncatlab.org/nlab/show/dense+subcategory">dense subcategory</a> of the <a href="https://ncatlab.org/nlab/show/effective+topos">effective topos</a> consisting of objects which are simpler to work with. Namely, the effective topos can be constructed as the <a href="https://ncatlab.org/nlab/show/regular+and+exact+completions">ex/reg completion</a> of $\omega-{\Set}$.
 
+  Note that in several of the properties below, we will fix a choice of a full recursive pairing function $\langle {-}, {-} \rangle : \IN^2 \to \IN$ with full recursive inverses $p_1, p_2 : \IN \to \IN$. (Standard examples of such a pairing function include $\langle m, n \rangle \coloneqq \binom{m+n+1}{2} + m$, or the function intertwining the binary representations of $m$ and $n$.)
+
+  For a few of the properties, we also fix a choice of <a href="https://en.wikipedia.org/wiki/Admissible_numbering">admissible numbering</a> of the partial recursive functions. (Typical examples of such an admissible pairing include integer encodings of Turing machines; integer encodings of untyped lambda calculus expressions; or integer encodings of the "syntax tree" building up a partial recursive function from the mathematical definition as the smallest class of functions closed under certain operations.) Given such an admissible numbering, we will use the notation that $p \cdot n \downarrow$ if for the $p$th partial recursive function $\varphi_p : \IN \to \IN$, $\varphi_p(n)$ exists, and in this case we will write $p \cdot n$ for its value.
+nlab_link: https://ncatlab.org/nlab/show/assembly
 tags:
   - logic
 
@@ -36,12 +40,15 @@ satisfied_properties:
     proof: 'The object $(2, \IN\times 2)$ is a cogenerator. To see this, note that $\Hom_{\omega{-}\Set}({-}, (2, \IN \times 2) \cong \Hom_{\Set}(U{-}, 2)$, where $U : \omega{-}\Set \to \Set$ is the forgetful functor. Therefore, $\Hom_{\omega{-}\Set}({-}, (2, \IN \times 2))$ is isomorphic to the composition of $U$ and the power set functor $P : \Set^{\op} \to \Set$, both of which are faithful.'
 
   - property: binary products
-    proof: ...
+    proof: >-
+      We claim that for $\omega$-sets $(X, R_X)$ and $(Y, R_Y)$, then $(X \times Y, R_{X\times Y})$ is a binary product where
+      $$R_{X\times Y} \coloneqq \{ (\langle n, m \rangle, (x, y)) \mid (n, x) \in R_X \land (m, y) \in R_Y \}$$
+      and the two projections are the standard set-level projections $\pi_1 : X\times Y \to X$ and $\pi_2 : X\times Y \to Y$. First, those projections are indeed morphisms of $\omega$-sets, since $p_1, p_2 : \IN \to \IN$ are assumed to be full recursive functions. Also, for any two morphisms $f : (U, R_U) \to (X, R_X)$ and $g : (U, R_U) \to (Y, R_Y)$, let $\varphi, \psi : \IN \dashrightarrow \IN$ be respective partial recursive functions from the definition. Then $\langle {-}, {-} \rangle \circ (\varphi, \psi)$ is a partial recursive function showing that $(f, g) : U \to X \times Y$ induces a morphism $(U, R_U) \to (X\times Y, R_{X\times Y})$.
     check_redundancy: false
 
   - property: equalizers
     proof: >-
-      Let $f, g : (X, R_X) \rightrightarrows (Y, R_Y)$ be two parallel morphisms, and let $X'$ be the equalizer of the underlying functions. We then claim that $(X', R_X \cap (\IN \times X'))$ is an equalizer of $f$ and $g$, with the morphism $(X', R_X \cap (\IN \times X')) \hookrightarrow (X, R_X)$ being the inclusion map. First, to see this indeed gives a morphism of $\omega$-sets, note that the identity function works for $\varphi$. Now, if we have $h : (U, R_U) \to (X, R_X)$ such that $h \circ f = h \circ g$, then it is easy to see that the induced function $\bar h : U \to X'$ to the equalizer in $\Set$ induces a morphism $(U, R_U) \to (X', R_X \cap (\IN \times X'))$ since the same partial recursive function $\varphi : \IN \dashrightarrow \IN$ which works for $h$ will also work for $\bar h$. From here, it is easy to conclude that $(X', R_X \cap X')$ is indeed an equalizer of $f$ and $g$.
+      Let $f, g : (X, R_X) \rightrightarrows (Y, R_Y)$ be two parallel morphisms, and let $E$ be the equalizer of the underlying functions. We then claim that $(E, R_X \cap (\IN \times X'))$ is an equalizer of $f$ and $g$, with the morphism $(E, R_X \cap (\IN \times X')) \hookrightarrow (X, R_X)$ being the inclusion map. First, to see this indeed gives a morphism of $\omega$-sets, note that the identity function works for $\varphi$. Now, if we have $h : (U, R_U) \to (X, R_X)$ such that $h \circ f = h \circ g$, then it is easy to see that the induced function $\bar h : U \to E$ to the equalizer in $\Set$ induces a morphism $(U, R_U) \to (E, R_X \cap (\IN \times X'))$ since the same partial recursive function $\varphi : \IN \dashrightarrow \IN$ which works for $h$ will also work for $\bar h$. From here, it is easy to conclude that $(E, R_X \cap X')$ is indeed an equalizer of $f$ and $g$.
     check_redundancy: false
 
   - property: initial object
@@ -49,23 +56,40 @@ satisfied_properties:
     check_redundancy: false
 
   - property: binary coproducts
-    proof: ...
+    proof: >-
+      We claim that for $\omega$-sets $(X, R_X)$ and $(Y, R_Y)$, then $(X \sqcup Y, R_{X\sqcup Y})$ is a binary coproduct where
+      $$R_{X\sqcup Y} \coloneqq \{ (2n, x) \mid (n, x) \in R_X \} \cup \{ (2n+1, y) \mid (n, y) \in R_Y \}$$
+      and the two coprojections are the standard set-level coprojections $i_1 : X \hookrightarrow X \sqcup Y$ and $i_2 : Y \hookrightarrow X \sqcup Y$. First, those coprojections are indeed morphisms of $\omega$-sets, since the functions $n \mapsto 2n$ and $n \mapsto 2n+1$ are full recursive functions $\IN \to \IN$. Also, for any two morphisms $f : (X, R_X) \to (Z, R_Z)$ and $g : (Y, R_Y) \to (Z, R_Z)$, let $\varphi, \psi : \IN \dashrightarrow \IN$ be respective partial recursive functions from the definition. Then there is a unique partial recursive function which sends $2n \mapsto \varphi(n)$ (if the latter exists) and $2n+1 \mapsto \psi(n)$ (if the latter exists), and it shows that $f+g : X\sqcup Y \to Z$ induces a morphism $(X\sqcup Y, R_{X\sqcup Y}) \to (Z, R_Z)$.
     check_redundancy: false
 
   - property: coequalizers
-    proof: ...
+    proof: >-
+      Let $f, g : (X, R_X) \rightrightarrows (Y, R_Y)$ be two parallel morphisms, and let $Q$ be the coequalizer of the underlying functions with projection $p : Y \twoheadrightarrow Q$. Also, let
+      $$R_Q \coloneqq (\id_{\IN} \times p)_*(R_Y) = \{ (n, p(y)) \mid (n, y) \in R_Y \}.$$
+      We claim that $(Q, R_Q)$ is a coequalizer of $f$ and $g$ with $p$ as the projection morphism $(Y, R_Y) \to (Q, R_Q)$. First, the identity function $\IN \to \IN$ works to show that $p$ is indeed a morphism of $\omega$-sets. Now, suppose we have a morphism $h : (Y, R_Y) \to (Z, R_Z)$ with $h\circ f = h\circ g$. Let $\bar h : Q \to Z$ be the function induced by $Q$ being the coequalizer in $\Set$. We then claim that $\bar h : (Q, R_Q) \to (Z, R_Z)$ is also a morphism of $\omega$-sets. This follows since it is easy to see that if $\varphi : \IN \dashrightarrow \IN$ works in the definition for $h$ being a morphism of $\omega$-sets, then $\varphi$ also works in the definition for $\bar h$ being a morphism of $\omega$-sets.
 
   - property: locally cartesian closed
-    proof: ...
+    proof: >-
+      Suppose we have two morphisms $f : (X, R_X) \to (Z, R_Z)$ and $g : (Y, R_Y) \to (Z, R_Z)$. Let $[X, Y]_Z$ be the relative exponential of $f$ and $g$ in $\Set$, with function $h : [X, Y]_Z \to Z$ coming from $[X, Y]_Z$ being an object of $\Set/Z$. We will then define a realization relation between $\IN$ and $[X, Y]_Z$ such that $\langle n, p \rangle$ realizes $\varphi \in [X, Y]_Z$ if and only if $n$ realizes $h(\varphi) \in Z$, and for every $x\in X$ such that $f(x) = h(\varphi)$ and every $m \in \IN$ such that $m$ realizes $x$, then $p \cdot m \downarrow$ and $p \cdot m$ realizes $\varphi(x) \in Y$. Finally, let $E$ be the subset of $[X, Y]_Z$ consisting of elements which are realized by some $\langle n, p \rangle\in \IN$. We then claim that $E$ with the restriction $R_E$ of the above realization relation forms a relative exponential of $f$ and $g$ in $\omega{-}\Set$.
+
+      First, it is easy to see that the restriction of $h$ to $E$ is a morphism of $\omega$-sets $(E, R_E) \to (Z, R_Z)$, with $p_1 : \IN \to \IN$ working as the partial recursive function in the definition. This is the morphism we will use to consider $(E, R_E)$ as an object of $\omega{-}\Set / (Z, R_Z)$.
+
+      The next step is to define an evaluation morphism $(E, R_E) \times_{(Z, R_Z)} (X, R_X) \to (Y, R_Y)$. Note that from the above descriptions of binary products and equalizers, we can describe the pullback as $E \times_Z X$ with realization relation that $\langle n, m \rangle$ realizes $(e, x) \in E \times_Z X$ if and only if $n$ realizes $e$ and $m$ realizes $x$. We will then define the evaluation map to be the restriction of the set-level evaluation map $X \times_Z [X, Y]_Z \to Y$ to $E \times_Z X \to Y$. The fact that this is a morphism of $\omega$-sets follows from the fact that there is a partial recursive function $\IN \dashrightarrow \IN$ which sends $\langle \langle n', p \rangle, m \rangle$ to $p \cdot m$ if the latter exists.
+
+      Finally, suppose we have a morphism $d : (U, R_U) \to (Z, R_Z)$ and a morphism $j : (U, R_U) \times (Z, R_Z) (X, R_X) \to (Y, R_Y)$ in $\omega{-}\Set / (Z, R_Z)$. Choose partial recursive functions $\varphi_d : \IN \dashrightarrow \IN$ and $\varphi_j : \IN \dashrightarrow \IN$ as in the definition of morphism. Then we can curry $\varphi_j$ into a full recursive function $\varphi_j ' : \IN \to \IN$, such that $\varphi_j '(n) \cdot m \downarrow$ if and only if $\varphi_j(\langle n, m \rangle)$ exists, and in that case $\varphi_j '(n) \cdot m = \varphi_j(\langle n, m \rangle)$. It is now straightforward to check that $n \mapsto \langle \varphi_d(n), \varphi_j'(n) \rangle$ is a partial recursive function, and it shows that the function $\tilde j : U \to [X, Y]_Z$ coming from $[X, Y]_Z$ being a relative exponential in $\Set$ factors through $E$, and it induces a morphism $(U, R_U) \to (E, R_E)$.
+
+      (Note that in the case where $(Z, R_Z)$ is terminal, we can simplify the description of exponentials in $\omega{-}\Set$ as follows: We define $[(X, R_X), (Y, R_Y)]$ to be the set $\Hom_{\omega{-}\Set}((X, R_X), (Y, R_Y))$ with the realization relation that $p$ realizes $f$ if and only if the $p$th partial recursive function is unary $\IN \dashrightarrow \IN$ and it works in the definition to show that $f$ is a morphism of $\omega$-sets.)
 
   - property: regular subobject classifier
-    proof: ...
+    proof: >-
+      We claim that $\Omega \coloneqq (2, \IN \times 2)$ is a regular subobject classifier, with $\top : 1 \to \Omega$ being the morphism whose underlying set function is $0 \mapsto 1$. To see this, note that from the construction of equalizers above, any regular subobject of $(X, R_X)$ is equivalent to $(X', R_X \cap (\IN \times X'))$ for some $X' \subseteq X$. It is then straightforward to check that the characteristic function $\chi_{X'} : X \to 2$ induces a morphism $(X, R_X) \to \Omega$, and that $(X', R_X \cap (\IN \times X'))$ is also the pullback of $\chi_{X'}$ and $\top$.
 
-  - property: extensive
-    proof: ...
+  - property: disjoint finite coproducts
+    proof: This follows from the fact that the forgetful functor $\omega{-}\Set \to \Set$ preserves finite coproducts from the construction above; the fact that finite coproducts are disjoint in $\Set$; and the fact that the forgetful functor reflects initial objects.
 
   - property: natural numbers object
-    proof: ...
+    proof: >-
+      We claim that $N \coloneqq (\IN, \Delta_{\IN})$ is a natural numbers object. First, the zero function $z : 1 \to \IN$ and the successor function $s : \IN \to \IN$ clearly induce morphisms of $\omega$-sets $z : 1 \to N$ and $s : N \to N$. Now, suppose we have $a : 1 \to (X, R_X)$ and $g : (X, R_X) \to (X, R_X)$, and choose partial recursive functions $\varphi_a : \IN \dashrightarrow \IN$ and $\varphi_g : \IN \dashrightarrow \IN$ from the definition. Then there is a partial recursive function $\psi : \IN \dashrightarrow \IN$ which sends $n$ to $\varphi_g^n(\varphi_a(0))$; and an easy induction shows that in fact this is a full recursive function, and also that $\psi(n) = \varphi_g^n(\varphi_a(0))$ realizes $g^n(a(0))$. Therefore, if we define $\Phi : \IN \to X$, $n \mapsto g^n(a(0))$, then $\Phi$ also induces a morphism of $\omega$-sets $N \to (X, R_X)$ with the required properties.
 
 unsatisfied_properties:
   - property: skeletal
@@ -77,14 +101,14 @@ unsatisfied_properties:
   - property: locally finite
     proof: 'There is a fully faithful functor $\nabla : \Set \to \omega{-}\Set$ which sends a set $X$ to $(X, \IN \times X)$. Therefore, for example, $\Hom_{\omega{-}\Set}(\nabla 1, \nabla \IN) \simeq \Hom_{\Set}(1, \IN)$ is infinite.'
 
-  - property: balanced
-    proof: 'For example, the identity function $2 \to 2$ induces a morphism $(2, \{ (0, 0), (1, 1) \}) \to (2, \IN \times 2)$ which is a monomorphism and an epimorphism by the conditions below. However, it is not an isomorphism: Any partial recursive function $\psi : \IN \dashrightarrow \IN$ as in the condition below would have to satisfy $\psi(0) = 0$ (plug in $x=0$ in the condition) and $\psi(0) = 1$ (plug in $x=1$ in the condition), giving a contradiction.'
+  - property: co-Malcev
+    proof: 'Consider the two possible morphisms $f, g : (1, \IN \times 1) \rightrightarrows (2, \IN \times 2)$. This defines a cocongruence representing the functor which to $(X, E_X)$ assigns the binary relation on $X$ of two elements having a common realizer. That shows that this cocongruence is coreflexive, since by definition any element of an $\omega$-set has a realizer. However, it is easy to see that it is not cotransitive; for example, in $(3, \{ (0, 0), (0, 1), (1, 1), (1, 2) \})$, $0$ and $1$ have a common realizer, as do $1$ and $2$; but $0$ and $2$ do not have a common realizer.'
 
   - property: countable powers
     proof: >-
-      Let $\Omega_c \coloneqq (2, \{ (0, 0), (1, 1) \})$ (where the name is chosen from the fact that $\Omega_c$ represents the functor of *complemented* subobjects). In fact, for any $\omega$-set $(X, R_X)$ with a sequence of morphisms $f_n : (X, R_X) \to \Omega_c$, we can define a function $g : X \to 2^{\IN}$ which sends $x \in X$ to the sequence $(f_n(x))_{n\in \IN}$. We claim that $g$ has countable image. To see this, suppose $x\in X$. Then there exists $m\in \IN$ such that $m$ realizes $x$. We can also choose partial recursive functions $\varphi_n : \IN \dashrightarrow \IN$ corresponding to the fact that each $f_n$ is a morphism of $\omega$-sets. It follows that $\varphi_n(m)$ is defined and $\varphi_n(m) = f_n(x)$ for each $n$. Therefore, the image of $g$ is contained in the set of sequences $(\varphi_n(m))_{n\in N}$ where $m \in \IN$ is such that $\varphi_n(m)$ is defined and $\varphi_n(m) \in \{ 0, 1 \}$ for each $n$.
+      Let $N \coloneqq (\IN, \Delta_{\IN})$ be the natural numbers object. For any $\omega$-set $(X, R_X)$ with a sequence of morphisms $f_n : (X, R_X) \to N$, we can define a function $g : X \to \IN^{\IN}$ which sends $x \in X$ to the sequence $(f_n(x))_{n\in \IN}$. We claim that $g$ has countable image. To see this, suppose $x\in X$. Then there exists $m\in \IN$ such that $m$ realizes $x$. We can also choose partial recursive functions $\varphi_n : \IN \dashrightarrow \IN$ corresponding to the fact that each $f_n$ is a morphism of $\omega$-sets. It follows that $\varphi_n(m)$ is defined and $\varphi_n(m) = f_n(x)$ for each $n$. Therefore, the image of $g$ is contained in the set of sequences $(\varphi_n(m))_{n\in N}$ where $m \in \IN$ is such that $\varphi_n(m)$ is defined for each $n$.
 
-      From this, we see that there can be no $\aleph_0$-indexed power of $\Omega_c$. Indeed, if $X$ were such a power, then for any sequence $(a_n) \in 2^{\IN}$, we would have a corresponding sequence of morphisms $1 \to \Omega_c$, inducing a morphism $1 \to X$ and thus an element $x$ of the underlying set. The corresponding function $g : X \to 2^{\IN}$ would then have to have value $g(x) = (a_n)$. Thus, $g$ would be surjective, contradicting the previous paragraph.
+      From this, we see that there can be no $\aleph_0$-indexed power of $N$. Indeed, if $X$ were such a power, then for any sequence $(a_n) \in \IN^{\IN}$, we would have a corresponding sequence of morphisms $1 \to \IN$, inducing a morphism $1 \to X$ and thus an element $x$ of the underlying set. The corresponding function $g : X \to \IN^{\IN}$ would then have to have value $g(x) = (a_n)$. Thus, $g$ would be surjective, contradicting the previous paragraph.
 
 special_objects:
   initial object:
@@ -92,23 +116,23 @@ special_objects:
   terminal object:
     description: $(1, \IN \times 1)$
   coproducts:
-    description: ...
+    description: The binary coproduct of $(X, R_X)$ and $(Y, R_Y)$ is $X \sqcup Y$ with realization relation $$R_{X\sqcup Y} \coloneqq \{ (2n, x) \mid (n, x) \in R_X \} \cup \{ (2n+1, y) \mid (n, y) \in R_Y \}.$$
   products:
-    description: ...
+    description: The binary product of $(X, R_X)$ and $(Y, R_Y)$ is $X \times Y$ with realization relation $$R_{X\times Y} \coloneqq \{ (\langle n, m \rangle, (x, y)) \mid (n, x) \in R_X \land (m, y) \in R_Y \}.$$
 
 special_morphisms:
   isomorphisms:
-    description: 'A morphism $f : (X, E_X) \to (Y, E_Y)$ is an isomorphism if and only if the underlying function $X \to Y$ is a bijection, and there also exists a partial recursive function $\psi : \IN \dashrightarrow \IN$ such that whenever we have $n\in\IN, x\in X$ such that $n$ realizes $f(x)$, then $\psi(n)$ exists and $\psi(n)$ realizes $x$'
-    proof: This is easy, since the condition just says that the set-level inverse of $f$ is also a morphism in $\omega{-}\Set$.
+    description: 'A morphism $f : (X, R_X) \to (Y, R_Y)$ is an isomorphism if and only if the underlying function $X \to Y$ is a bijection, and there also exists a partial recursive function $\psi : \IN \dashrightarrow \IN$ such that whenever we have $n\in\IN, x\in X$ such that $n$ realizes $f(x)\in Y$, then $\psi(n)$ exists and $\psi(n)$ realizes $x\in X$'
+    proof: This is easy, since the condition on the existence of $\psi$ just says that the set-level inverse of $f$ is also a morphism in $\omega{-}\Set$.
   monomorphisms:
-    description: 'A morphism $f : (X, E_X) \to (Y, E_Y)$ is a monomorphism if and only if the underlying function $X \to Y$ is injective'
+    description: Morphisms of $\omega$-sets whose underlying set function is injective
     proof: This follows from the fact that the forgetful functor $\omega{-}\Set \to \Set$ is clearly faithful, and it is representable by the terminal object $(1, \IN \times 1)$.
   regular monomorphisms:
-    description: ...
-    proof: ...
+    description: 'A morphism $f : (X, R_X) \to (Y, R_Y)$ is a regular monomorphism if and only if the underlying function $X \to Y$ is injective, and there exists a partial recursive function $\psi : \IN \dashrightarrow \IN$ such that whenever we have $n\in \IN$ and $x\in X$ such that $n$ realizes $f(x) \in Y$, then $\psi(n)$ exists and $\psi(n)$ realizes $x\in X$'
+    proof: 'Following the constructions above, we can see that for any morphism $f : (X, R_X) \to (Y, R_Y)$, the equalizer of the cokernel pair of $f$ is $(\im(f), R_Y \cap (\IN \times \im(f)))$; and the condition above is equivalent to the condition that the canonical map $X \to \im(f)$ induces an isomorphism of $\omega$-sets $(X, R_X) \to (\im(f), R_Y \cap (\IN \times \im(f)))$.'
   epimorphisms:
-    description: 'A morphism $f : (X, E_X) \to (Y, E_Y)$ is an epimorphism if and only if the underlying function $X \to Y$ is surjective'
-    proof: Sufficiency of the latter condition is easy to show. For necessity, use the fact that $\Hom_{\Set}(X, Z) \cong \Hom_{\omega{-}\Set}((X, E_X), (Z, \IN \times Z))$ to show that if $f$ is an epimorphism in $\omega{-}\Set$, then the underlying set function of $f$ is an epimorphism in $\Set$.
+    description: Morphisms of $\omega$-sets whose underlying set function is surjective
+    proof: Sufficiency of this condition is easy to show. For necessity, use the fact that $\Hom_{\Set}(X, Z) \cong \Hom_{\omega{-}\Set}((X, E_X), (Z, \IN \times Z))$ to show that if $f$ is an epimorphism in $\omega{-}\Set$, then the underlying set function of $f$ is an epimorphism in $\Set$.
   regular epimorphisms:
-    description: ...
-    proof: ...
+    description: 'A morphism $f : (X, R_X) \to (Y, R_Y)$ is a regular epimorphism if and only if there exists a partial recursive function $\psi : \IN \dashrightarrow \IN$ such that whenever we have $n\in \IN$ and $y\in Y$ such that $n$ realizes $y$, then $\psi(n)$ exists, and there exists $x\in X$ such that $f(x) = y$ and $\psi(n)$ realizes $x$'
+    proof: 'Following the constructions above, we can see that for any morphism $f : (X, R_X) \to (Y, R_Y)$, the coequalizer of the kernel pair of $f$ is $(\im(f), (\id_{\IN} \times f)_*(R_X))$; and the condition above is equivalent to the condition that the canonical map $\im(f) \to Y$ induces an isomorphism of $\omega$-sets $(\im(f), (\id_{\IN} \times f)_*(R_X)) \to (Y, R_Y)$.'
