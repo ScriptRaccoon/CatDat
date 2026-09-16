@@ -198,3 +198,5 @@ If you are not familiar with YAML, a short beginner-friendly introduction can be
 3. Use single-quoted strings (`'...'`) for values containing `:`. See [`Cat.yaml`](/database/data/categories/Cat.yaml) for an example. Inside single-quoted strings, a literal single quote must be escaped as `''`. See [`Man.yaml`](/database/data/categories/Man.yaml) for an example.
 4. Use `>-` for multiline text that should be rendered as a single paragraph without line breaks. This is particularly useful for improving readability of longer texts or HTML lists in the YAML file itself. See [`core-thin.yaml`](/database/data/category-properties/core-thin.yaml) for an example.
 5. Use `|-` for multiline text where line breaks should be preserved. These line breaks are automatically converted to `<br>` when rendered. See [`FreeAb.yaml`](/database/data/categories/FreeAb.yaml) for an example.
+
+The command `pnpm cspell` checks for spelling mistakes.
