@@ -16,6 +16,7 @@ related:
   - FiltVect
   - Ch(Ab)
   - TransSeqAb
+  - SeqSet
 
 satisfied_properties: []
 

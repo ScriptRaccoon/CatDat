@@ -21,6 +21,7 @@ related:
   - SetxSet
   - Sh(X)
   - Mono
+  - SeqSet
 
 satisfied_properties:
   - property: locally small
