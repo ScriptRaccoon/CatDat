@@ -42,6 +42,7 @@
 \reg: \mathrm{reg}
 \fin: \mathrm{fin}
 \noiso: \mathrm{noiso}
+\conn: \mathrm{conn}
 
 # standard collections
 \SetColl: \mathrm{Set}
