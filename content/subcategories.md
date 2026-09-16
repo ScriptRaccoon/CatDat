@@ -100,15 +100,19 @@ where $U(X) \times_{U(Y)} U(X)$ is the kernel pair of $U(f)$, and $U(\im(f))$ is
 :::
 
 ::: Lemma 8
-Let $U : \C \to \D$ be a fully faithful functor. Assume that $\C$ has finite limits and coequalizers, and that $U$ preserves inhabited finite limits and coequalizers. If $\D$ has effective congruences, then so does $\C$.
+Let $U : \C \to \D$ be a fully faithful functor. Assume that $\C$ has pullbacks and coequalizers, that $U$ preserves pullbacks and coequalizers, and that $U$ preserves jointly monomorphic parallel pairs (which holds, for example, if $\C$ has binary products and $U$ preserves them). If $\D$ has effective congruences, then so does $\C$.
 :::
 
 ::: Proof
-Suppose we have a congruence $E \hookrightarrow X\times X$ in $\C$. We can then form the quotient $X \to X/E$ as a coequalizer, along with the kernel pair $X \times_{X/E} X$ and the comparison map $i$ in the diagram below:
-$$E \xrightarrow{i} X \times_{X/E} X \rightrightarrows X \to X/E.$$
-By the assumptions, the image under $U$ is equivalent to the diagram in $\D$:
-$$UE \xrightarrow{Ui} UX \times_{U(X/E)} UX \rightrightarrows UX \to U(X/E).$$
-Here, $UE \rightrightarrows UX$ is a congruence: the map $UE \to UX \times UX$ is a monomorphism since $U$ preserves pullbacks and therefore preserves monomorphisms; the reflexivity and symmetry morphisms for $E$ are easily seen to transform under $U$ to reflexivity and symmetry morphisms for $UE$; and similarly, since $U$ preserves pullbacks, the transitivity morphism for $E$ transforms under $U$ to a transitivity morphism for $UE$. This congruence $UE$ of $\D$ is effective, so we must have $Ui$ is an isomorphism. Since $U$ is fully faithful and therefore conservative, we get $i$ is an isomorphism as well, so $E$ is effective.
+Suppose we have a congruence $E \rightrightarrows X$ in $\C$. We first observe that its image $U(E) \rightrightarrows U(X)$ is a congruence in $\D$, and therefore effective. It is jointly monomorphic by assumption on $U$; the reflexivity and symmetry morphisms for $E$ are easily seen to transform under $U$ into reflexivity and symmetry morphisms for $U(E)$; and similarly, since $U$ preserves pullbacks, the transitivity morphism for $E$ transforms under $U$ into a transitivity morphism for $U(E)$.
+
+Now let $X/E$ be the quotient of $E \rightrightarrows X$, i.e. its coequalizer. We will show that the canonical morphism
+$$E \to X \times_{X/E} X$$
+is an isomorphism. Since $U$ is fully faithful and preserves pullbacks, it suffices to prove that the canonical morphism
+$$U(E) \to U(X) \times_{U(X/E)} U(X)$$
+is an isomorphism, where $U(X/E)$ is the coequalizer of $U(E) \rightrightarrows U(X)$ since $U$ preserves coequalizers. Since the congruence $U(E) \rightrightarrows U(X)$ is effective by the first part of the proof, this follows from [this lemma](/content/effective-congruence-quotients).
+
+Finally, to prove the parenthetical remark, assume that $\C$ has binary products and that $U$ preserves them. Then $U$ preserves jointly monomorphic parallel pairs, because it preserves monomorphisms (as it preserves pullbacks), and a pair $A \rightrightarrows B$ is jointly monomorphic if and only if the induced morphism $A \to B \times B$ is a monomorphism.
 :::
 
 ::: Lemma 9
