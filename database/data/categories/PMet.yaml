@@ -37,7 +37,7 @@ satisfied_properties:
     check_redundancy: false
 
   - property: terminal object
-    proof: The one-point (pseudo-)metric space is terminal.
+    proof: The one-point (pseudo-)metric space $\{\ast\}$ is terminal.
     check_redundancy: false
 
   - property: coequalizers
@@ -54,6 +54,12 @@ satisfied_properties:
     proof: The proof is identical to the one for <a href="/category/Met">$\Met$</a>.
     references:
       - met_aleph1_cofiltered_limits
+
+  - property: regular subobject classifier
+    proof: >-
+      Consider the pseudo-metric space $\Omega = (\{0,1\},0)$, equipped with the zero pseudo-metric. We know that the regular monomorphisms are precisely the injective isometric maps (see below), and hence are, up to isomorphism, inclusions of isometric subspaces. In particular, the map $\top : \{\ast\} \to \Omega$, $\ast \mapsto 1$, is a regular monomorphism. If $Y \subseteq X$ is an isometric subspace, its characteristic function $\chi_Y : X \to \Omega$ is non-expansive for trivial reasons and satisfies $X \times_{\Omega} \{\ast\} = Y$. Indeed, the underlying set of the pullback $X \times_{\Omega} \{\ast\}$ identifies with the preimage $(\chi_Y)^*(\{1\}) = Y$, and the metric on the pullback is
+      $d((x,\ast),(x',\ast)) = \sup(d(x,x'),d(\ast,\ast)) = d(x,x')$,
+      i.e. the metric induced from $X$.
 
   - property: extremal generator
     proof: >-
@@ -98,9 +104,6 @@ unsatisfied_properties:
   - property: balanced
     proof: 'Let $d : \IR \times \IR \to \IR_{\geq 0}$ be the usual Euclidean metric on $\IR$ and $0 : \IR \times \IR \to \IR_{\geq 0}$ be the zero pseudo-metric. Then the identity map $(\IR,d) \to (\IR,0)$ provides a counterexample.'
 
-  - property: Malcev
-    proof: Take any counterexample in <a href="/category/Set">$\Set$</a> and equip it with the zero pseudo-metric.
-
   - property: cartesian closed
     proof: This is proven in <a href="https://math.stackexchange.com/questions/5131457" target="_blank">MSE/5131457</a>.
 
@@ -140,6 +143,9 @@ special_morphisms:
   epimorphisms:
     description: surjective non-expansive maps
     proof: 'Let $f : X \to Y$ be a non-expansive map that is not surjective. Choose $y_0 \in Y \setminus f(X)$. We extend the pseudo-metric from $Y$ to $Z \coloneqq Y \sqcup \{y''_0\}$ via $d(y,y''_0) \coloneqq d(y,y_0)$, i.e., we make $y_0,y''_0$ indistinguishable. Let $g : Y \to Z$ be the inclusion and $h : Y \to Z$ be the map that composes $g$ with the swap between $y_0$ and $y''_0$. Both are isometric and satisfy $g \circ f = h \circ f$. Therefore, $f$ is not an epimorphism.'
+  regular monomorphisms:
+    description: injective isometric maps
+    proof: 'Equalizers are injective isometric maps by construction. Conversely, if $X \hookrightarrow Y$ is an injective isometric map, we may assume without loss of generality that it is the inclusion of an isometric subspace. Then it is the equalizer of the two non-expansive maps $\chi_X, 1 : Y \rightrightarrows \Omega$, where $\Omega = (\{0,1\},0)$ is equipped with the zero pseudo-metric.'
   regular epimorphisms:
     description: 'surjective non-expansive maps $f : X \to Y$ with the property that for all $x,x'' \in X$, $d(p(x),p(x''))$ is the infimum of the sums $\sum_{i=0}^{n-1} d(y_i,x_{i+1})$, where $x=x_0$, $x_i \sim y_i$ for $0 \leq i \leq n$, and $y_n = x''$.'
     proof: This follows from the construction of the quotient pseudo-metric on $X/{\sim}$ in <a href="https://mathoverflow.net/questions/123739" target="_blank">MO/123739</a>.
