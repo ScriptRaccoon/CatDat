@@ -33,7 +33,7 @@ satisfied_properties:
     check_redundancy: false
 
   - property: terminal object
-    proof: The one-point metric space is terminal.
+    proof: The one-point metric space $\{\ast\}$ is terminal.
     check_redundancy: false
 
   - property: coequalizers
@@ -164,6 +164,13 @@ unsatisfied_properties:
     proof: We can take the same counterexample as for <a href="/category/PMet">$\PMet$</a>.
     references:
       - pmet_not_regular
+
+  - property: regular subobject classifier
+    proof: >-
+      Assume that $\top : 1 \to \Omega$ is a regular subobject classifier. We can identify $\top$ with a point $\top \in \Omega$, and for every regular monomorphism $Y \hookrightarrow X$ there is a unique non-expansive map $f : X \to \Omega$ such that $f^*(\{\top\}) = Y$ as metric spaces, and hence as topological spaces.
+
+      The underlying set of $\Omega$ is identified with $\Hom(1,\Omega) \cong \Sub_{\reg}(1)$. There are two regular subobjects of $1 = \{\ast\}$, namely $\{\ast\} \subseteq \{\ast\}$ and $\varnothing \subseteq \{\ast\}$ (the latter being the equalizer of, say, two maps $\{\ast\} \rightrightarrows \{0,1\}$). Thus, $\Omega$ has exactly two points and is therefore discrete. In particular, $\top : 1 \to \Omega$ is a clopen inclusion. The universal property then implies that every regular monomorphism is a clopen inclusion. But this is not the case: for example, the inclusion $[0,\infty) \hookrightarrow \IR$ is the equalizer of $\id : \IR \to \IR$ and the absolute value function $|{-}| : \IR \to \IR$, where $\IR$ is equipped with the standard metric.
+    label: Met_no_regular_subobject_classifier
 
 special_objects:
   initial object:
