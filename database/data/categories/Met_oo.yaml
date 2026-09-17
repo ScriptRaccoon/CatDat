@@ -75,6 +75,11 @@ unsatisfied_properties:
     references:
       - pmet_not_regular
 
+  - property: regular subobject classifier
+    proof: The same proof as for <a href="/category/Met">$\Met$</a> works.
+    references:
+      - Met_no_regular_subobject_classifier
+
 special_objects:
   initial object:
     description: empty metric space
