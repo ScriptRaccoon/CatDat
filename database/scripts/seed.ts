@@ -222,13 +222,13 @@ function seed_structures<T extends StructureYaml>({
 	folder: string
 	extra?: (structure: T) => void
 }) {
-	const associated_structure_types = db
+	const structure_associations = db
 		.prepare<
 			[StructureType],
 			{ label: keyof T; associated_type: StructureType; required: 0 | 1 }
 		>(
 			`SELECT label, associated_type, required
-			FROM associated_structure_types WHERE type = ?`
+			FROM structure_associations WHERE type = ?`
 		)
 		.all(type)
 
@@ -303,7 +303,7 @@ function seed_structures<T extends StructureYaml>({
 
 		record_structure_addition(structure.id)
 
-		for (const { label, associated_type, required } of associated_structure_types) {
+		for (const { label, associated_type, required } of structure_associations) {
 			if (required && !structure[label]) {
 				console.error(
 					`❌ ${capitalize(type)} "${structure.id}" has no ${label.toString()}`
@@ -467,10 +467,10 @@ function seed_properties({ type, folder }: { type: StructureType; folder: string
  * Seeds all implications of a given type from YAML files.
  */
 function seed_implications({ type, folder }: { type: StructureType; folder: string }) {
-	const associated_structure_types = db
+	const structure_associations = db
 		.prepare<[StructureType], { label: string; associated_type: StructureType }>(
 			`SELECT label, associated_type
-			FROM associated_structure_types WHERE type = ?`
+			FROM structure_associations WHERE type = ?`
 		)
 		.all(type)
 
@@ -522,7 +522,7 @@ function seed_implications({ type, folder }: { type: StructureType; folder: stri
 
 			if (!impl.associated_assumptions) continue
 
-			for (const { label, associated_type } of associated_structure_types) {
+			for (const { label, associated_type } of structure_associations) {
 				const assumptions = impl.associated_assumptions[label] ?? []
 				for (const p of assumptions) {
 					associated_assumption_insert.run(

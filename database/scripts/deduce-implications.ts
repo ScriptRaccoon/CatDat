@@ -24,10 +24,10 @@ export function clear_deduced_implications(type: StructureType) {
  * then P^op ===> Q^op holds as well.
  */
 export function create_dualized_implications(type: StructureType) {
-	const associated_structure_types = db
+	const structure_associations = db
 		.prepare<[StructureType], { label: string; associated_type: StructureType }>(
 			`SELECT label, associated_type
-			FROM associated_structure_types WHERE type = ?`
+			FROM structure_associations WHERE type = ?`
 		)
 		.all(type)
 
@@ -157,7 +157,7 @@ export function create_dualized_implications(type: StructureType) {
 				conclusion_insert.run(dual_id, c, type)
 			}
 
-			for (const { label, associated_type } of associated_structure_types) {
+			for (const { label, associated_type } of structure_associations) {
 				const duals = dual_associated_assumptions[label]
 				for (const d of duals ?? []) {
 					associated_assumption_insert.run(
