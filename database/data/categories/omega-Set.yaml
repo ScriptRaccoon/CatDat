@@ -66,7 +66,7 @@ satisfied_properties:
 
   - property: cartesian closed
     proof: >-
-      Let $(X, R_X)$ and $(Y, R_Y)$ be two $\omega$-sets. We will define the exponential $[(X, R_X), (Y, R_Y)]$ to have underlying set $\Hom_{\omega{-}\Set}((X, R_X), (Y, R_Y))$. The realization relation will be that $n \in \IN$ realizes $f : (X, R_X) \to (Y, R_Y)$ if and only if $n$ is the code for a *unary* partial recursive function $\varphi_n : \IN \dashrightarrow \IN$ which is a realizer transformer compatible with $f$.
+      Let $(X, R_X)$ and $(Y, R_Y)$ be two $\omega$-sets. We will define the exponential $[(X, R_X), (Y, R_Y)]$ to have underlying set $\Hom_{\omega{-}\Set}((X, R_X), (Y, R_Y))$. The realization relation will be that $n \in \IN$ realizes $f : (X, R_X) \to (Y, R_Y)$ if and only if $n$ is the code for a <i>unary</i> partial recursive function $\varphi_n : \IN \dashrightarrow \IN$ which is a realizer transformer compatible with $f$.
 
       In order to check that this is indeed an exponential in $\omega{-}\Set$, we first define the evaluation morphism
       $$ev : [(X, R_X), (Y, R_Y)] \times (X, R_X) \to (Y, R_Y), (f, x) \mapsto f(x).$$
@@ -97,8 +97,15 @@ satisfied_properties:
   - property: generator
     proof: The terminal object $(1, \IN \times 1)$ represents the forgetful functor $\omega{-}\Set \to \Set$ which is clearly faithful. (For the nontrivial direction of the isomorphism between $\Hom_{\omega{-}\Set}((1, \IN \times 1), (X, R_X))$ and $X$, suppose we have $x \in X$. Then there exists $n \in \IN$ such that $n$ realizes $x$; therefore, the full recursive function given by the constant function with image $n$ forms a realizer transformer compatible with the corresponding function $1 \to X$.)
 
-  - property: cogenerator
-    proof: 'The object $(2, \IN\times 2)$ is a cogenerator. To see this, note that $\Hom_{\omega{-}\Set}({-}, (2, \IN \times 2)) \cong \Hom_{\Set}(U{-}, 2)$, where $U : \omega{-}\Set \to \Set$ is the forgetful functor. (For the nontrivial direction of this isomorphism, note that for any function $f : X \to 2$, then we can choose any total recursive function as the compatible realizer transformer, showing that $f$ indeed induces a morphism of $\omega$-sets $(X, R_X) \to (2, \IN \times 2)$.) Therefore, $\Hom_{\omega{-}\Set}({-}, (2, \IN \times 2))$ is isomorphic to the composition of $U$ and the power set functor $P : \Set^{\op} \to \Set$, both of which are faithful.'
+  - property: extremal cogenerator
+    proof: >-
+      We first claim that $(2, \IN\times 2)$ and $(P(\IN) \setminus \{ \varnothing \}, {\in}_{\IN})$ form an extremal cogenerating collection. To see this, we first consider morphisms to the first member $(2, \IN\times 2)$ of the family. Note that $\Hom_{\omega{-}\Set}({-}, (2, \IN \times 2)) \cong \Hom_{\Set}(U{-}, 2)$, where $U : \omega{-}Set \to \Set$ is the forgetful functor. (For the nontrivial direction of this isomorphism, note that for any function $f : X \to 2$, then we can choose any total recursive function as the compatible realizer transformer, showing that $f$ indeed induces a morphism of $\omega$-sets $(X, R_X) \to (2, \IN \times 2)$.) Therefore, $\Hom_{\omega{-}\Set}({-}, (2, \IN \times 2))$ is isomorphic to the composition of $U$ and the power set functor $P : \Set^{\op} \to \Set$, both of which are faithful. This shows that $(2, \IN\times 2)$ is a cogenerator, so the collection is also a cogenerating collection.
+
+      To show the collection is an extremal cogenerating collection, suppose we have a morphism $f : (X, R_X) \to (Y, R_Y)$ such that ${-} \circ f$ induces bijections of morphism sets to both members of the collection. From the first assumption that ${-} \circ f : \Hom((Y, R_Y), (2, \IN\times 2)) \to \Hom((X, R_X), (2, \IN\times 2))$ is a bijection, we see that ${-} \circ f : \Hom_{\Set}(Y, 2) \to \Hom_{\Set}(X, 2)$ is a bijection. Since $2$ is an extremal cogenerator of $\Set$, we conclude that the underlying function of $f$ is a bijection.
+
+      Now, consider the morphism $g : (X, R_X) \to (P(\IN) \setminus \{ \varnothing \}, {\in}_{\IN})$ which sends $x \in X$ to its set of realizers (with the identity function $\IN \to \IN$ as the compatible realizer transformer). From the hypothesis, there exists a morphism $h : (Y, R_Y) \to (P(\IN) \setminus \{ \varnothing \}, {\in}_{\IN})$ such that $g = h \circ f$. Choose a compatible realizer transformer $\varphi_h : \IN \dashrightarrow \IN$. Then for any $x\in X$, if $n$ realizes $f(x)$, then $\varphi_h(n)$ exists and $\varphi_h(n)$ realizes $h(f(x)) = g(x)$. Thus, by definition of $g$, $\varphi_h(n)$ is in the set of realizers of $x$, i.e. $\varphi_h(n)$ realizes $x$. From the characterization of isomorphisms below, this implies that $f$ is an isomorphism.
+
+      Finally, since $(2, \IN\times 2)$ and $(P(\IN) \setminus \{ \varnothing \}, {\in}_{\IN})$ both have non-empty underlying sets, they form a strongly connected family (see the proof above that $\omega{-}\Set$ is semi-strongly connected). Therefore, by <a href="/content/generator_construction">this result</a>, the product of these two objects is an extremal cogenerator.
 
   - property: natural numbers object
     proof: >-
