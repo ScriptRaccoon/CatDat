@@ -82,24 +82,24 @@ relations:
     negation: does not preserve
     conditional: would preserve
 
-special_object_types:
-  - type: terminal object
+special_objects:
+  - kind: terminal object
     dual: initial object
-  - type: initial object
+  - kind: initial object
     dual: terminal object
-  - type: products
+  - kind: products
     dual: coproducts
-  - type: coproducts
+  - kind: coproducts
     dual: products
 
-special_morphism_types:
-  - type: isomorphisms
+special_morphisms:
+  - kind: isomorphisms
     dual: isomorphisms
-  - type: monomorphisms
+  - kind: monomorphisms
     dual: epimorphisms
-  - type: epimorphisms
+  - kind: epimorphisms
     dual: monomorphisms
-  - type: regular monomorphisms
+  - kind: regular monomorphisms
     dual: regular epimorphisms
-  - type: regular epimorphisms
+  - kind: regular epimorphisms
     dual: regular monomorphisms

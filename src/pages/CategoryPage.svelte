@@ -26,7 +26,7 @@
 			{#if data.special_objects.length}
 				<ul class="with-margins">
 					{#each data.special_objects as obj}
-						<li>{obj.type}: {@html obj.description}</li>
+						<li>{obj.kind}: {@html obj.description}</li>
 					{/each}
 				</ul>
 			{:else}
@@ -42,9 +42,9 @@
 					<li>
 						<TextWithProof proof={morph.proof}>
 							{#if morph.description}
-								{morph.type}: {@html morph.description}
+								{morph.kind}: {@html morph.description}
 							{:else}
-								{morph.type}: <Fa icon={faQuestion} scale={0.825} />
+								{morph.kind}: <Fa icon={faQuestion} scale={0.825} />
 							{/if}
 						</TextWithProof>
 					</li>

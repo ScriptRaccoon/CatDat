@@ -49,7 +49,7 @@
 
 	<p class="hint">
 		There are {data.categories_with_missing_morphisms.length} categories where at least
-		one type of special morphism is unknown.
+		one kind of special morphism is unknown.
 	</p>
 
 	<StructureList structures={data.categories_with_missing_morphisms} type="category" />

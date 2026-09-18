@@ -13,19 +13,19 @@ export type ConfigYaml = {
 		negation: string
 		conditional: string
 	}[]
-	special_object_types: {
-		type: string
+	special_objects: {
+		kind: string
 		dual: string
 	}[]
-	special_morphism_types: {
-		type: string
+	special_morphisms: {
+		kind: string
 		dual: string
 	}[]
 }
 
 export type SpecialMorphismRuleYaml = {
 	property: string
-	type: string
+	kind: string
 	description: string
 	proof: string
 }
