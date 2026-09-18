@@ -8,7 +8,7 @@ CREATE TABLE implications (
     dual_implication_id TEXT,
     UNIQUE (id, type),
     FOREIGN KEY (type) REFERENCES structure_types (type) ON DELETE RESTRICT,
-    FOREIGN KEY (dual_implication_id) REFERENCES implications (id)
+    FOREIGN KEY (dual_implication_id, type) REFERENCES implications (id, type)
 );
 
 CREATE UNIQUE INDEX idx_implications_lower_id_unique ON implications (lower(id));
@@ -26,7 +26,7 @@ CREATE TABLE assumptions (
         REFERENCES properties (id, type) ON DELETE CASCADE
 );
 
-CREATE INDEX idx_assumptions_property ON assumptions (property_id);
+CREATE INDEX idx_assumptions_by_property ON assumptions (property_id);
 
 CREATE TABLE conclusions (
     implication_id TEXT NOT NULL,
@@ -39,7 +39,7 @@ CREATE TABLE conclusions (
         REFERENCES properties (id, type) ON DELETE CASCADE
 );
 
-CREATE INDEX idx_conclusions_property ON conclusions (property_id);
+CREATE INDEX idx_conclusions_by_property ON conclusions (property_id);
 
 CREATE TABLE associated_assumptions (
     implication_id TEXT NOT NULL,
@@ -57,7 +57,7 @@ CREATE TABLE associated_assumptions (
         ON DELETE RESTRICT
 );
 
-CREATE INDEX idx_assumptions_associated_property ON associated_assumptions (property_id);
+CREATE INDEX idx_assumptions_associated_by_property ON associated_assumptions (property_id);
 
 CREATE VIEW implications_view AS
     SELECT

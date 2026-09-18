@@ -54,7 +54,7 @@ CREATE TABLE property_assignments (
         REFERENCES properties (id, type) ON DELETE CASCADE
 );
 
-CREATE INDEX idx_property_assigned ON property_assignments (property_id);
+CREATE INDEX idx_property_assignments_by_property ON property_assignments (property_id);
 
 CREATE TABLE property_tags (
     id INTEGER PRIMARY KEY,

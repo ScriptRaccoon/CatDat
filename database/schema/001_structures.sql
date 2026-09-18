@@ -25,7 +25,9 @@ CREATE TABLE structures (
 
 CREATE UNIQUE INDEX structures_lower_id_unique ON structures (lower(id));
 
-CREATE INDEX structure_by_type ON structures (type);
+CREATE INDEX idx_structures_by_type ON structures (type);
+
+CREATE INDEX idx_structures_by_parent ON structures (parent, type);
 
 CREATE TABLE related_structures (
     id INTEGER PRIMARY KEY,
@@ -45,7 +47,7 @@ CREATE TABLE structure_comments (
     FOREIGN KEY (structure_id) REFERENCES structures (id) ON DELETE CASCADE
 );
 
-CREATE INDEX idx_structure_comments ON structure_comments (structure_id);
+CREATE INDEX idx_comments_by_structure ON structure_comments (structure_id);
 
 CREATE TABLE structure_tags (
     id INTEGER PRIMARY KEY,
@@ -63,6 +65,8 @@ CREATE TABLE structure_tag_assignments (
     FOREIGN KEY (structure_id, type) REFERENCES structures (id, type) ON DELETE CASCADE,
     FOREIGN KEY (tag, type) REFERENCES structure_tags (tag, type) ON DELETE CASCADE
 );
+
+CREATE INDEX idx_structures_by_tag ON structure_tag_assignments (type, tag, structure_id);
 
 CREATE TABLE associated_structure_types (
     label TEXT NOT NULL,
@@ -102,4 +106,6 @@ CREATE TABLE associated_structures (
         REFERENCES structures (id, type) ON DELETE CASCADE
 );
 
-CREATE INDEX idx_structure_associations ON associated_structures (structure_id);
+CREATE INDEX idx_associated_structures_by_structure ON associated_structures (structure_id);
+
+CREATE INDEX idx_associated_structures_by_target ON associated_structures (associated_structure_id, type, label);
