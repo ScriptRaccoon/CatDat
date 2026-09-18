@@ -97,9 +97,9 @@ function clear_all_tables() {
 
 		db.prepare(`DELETE FROM special_morphism_rules`).run()
 		db.prepare(`DELETE FROM special_morphism_assignments`).run()
-		db.prepare(`DELETE FROM special_morphism_types`).run()
+		db.prepare(`DELETE FROM special_morphisms`).run()
 		db.prepare(`DELETE FROM special_object_assignments`).run()
-		db.prepare(`DELETE FROM special_object_types`).run()
+		db.prepare(`DELETE FROM special_objects`).run()
 
 		db.prepare(`DELETE FROM associated_assumptions`).run()
 		db.prepare(`DELETE FROM assumptions`).run()
@@ -146,12 +146,12 @@ function seed_config() {
 		`INSERT INTO relations (relation, negation, conditional) VALUES (?, ?, ?)`
 	)
 
-	const object_insert = db.prepare(
-		`INSERT INTO special_object_types (type, dual) VALUES (?, ?)`
+	const special_object_insert = db.prepare(
+		`INSERT INTO special_objects (kind, dual) VALUES (?, ?)`
 	)
 
-	const morphism_insert = db.prepare(
-		`INSERT INTO special_morphism_types (type, dual) VALUES (?, ?)`
+	const special_morphism_insert = db.prepare(
+		`INSERT INTO special_morphisms (kind, dual) VALUES (?, ?)`
 	)
 
 	function insert_config(config: ConfigYaml) {
@@ -173,12 +173,12 @@ function seed_config() {
 			relation_insert.run(relation, negation, conditional)
 		}
 
-		for (const { type, dual } of config.special_object_types) {
-			object_insert.run(type, dual)
+		for (const { kind, dual } of config.special_objects) {
+			special_object_insert.run(kind, dual)
 		}
 
-		for (const { type, dual } of config.special_morphism_types) {
-			morphism_insert.run(type, dual)
+		for (const { kind, dual } of config.special_morphisms) {
+			special_morphism_insert.run(kind, dual)
 		}
 	}
 
@@ -191,13 +191,13 @@ function seed_config() {
 function seed_special_morphism_rules() {
 	const rule_insert = db.prepare(
 		`INSERT INTO special_morphism_rules
-			(property_id, type, description, proof)
+			(property_id, kind, description, proof)
 		VALUES (?, ?, ?, ?)`
 	)
 
 	function insert_rules(rules: SpecialMorphismRuleYaml[]) {
-		for (const { property, type, description, proof } of rules) {
-			rule_insert.run(property, type, description, proof)
+		for (const { property, kind, description, proof } of rules) {
+			rule_insert.run(property, kind, description, proof)
 		}
 	}
 
@@ -386,24 +386,24 @@ function insert_category(category: CategoryYaml) {
 
 	const special_object_insert = db.prepare(
 		`INSERT INTO special_object_assignments (
-			category_id, type, description
+			category_id, kind, description
 		) VALUES (?, ?, ?)`
 	)
 
 	const special_morphism_insert = db.prepare(
 		`INSERT INTO special_morphism_assignments (
-			category_id, type, description, proof
+			category_id, kind, description, proof
 		) VALUES (?, ?, ?, ?)`
 	)
 
 	category_insert.run(category.id, category.objects, category.morphisms)
 
-	for (const [type, entry] of Object.entries(category.special_objects)) {
-		special_object_insert.run(category.id, type, entry.description)
+	for (const [kind, entry] of Object.entries(category.special_objects)) {
+		special_object_insert.run(category.id, kind, entry.description)
 	}
 
-	for (const [type, entry] of Object.entries(category.special_morphisms)) {
-		special_morphism_insert.run(category.id, type, entry.description, entry.proof)
+	for (const [kind, entry] of Object.entries(category.special_morphisms)) {
+		special_morphism_insert.run(category.id, kind, entry.description, entry.proof)
 	}
 }
 

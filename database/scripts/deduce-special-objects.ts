@@ -22,20 +22,20 @@ function clear_deduced_special_objects() {
  * Inherit special object assignments from parent categories
  */
 function inherit_special_objects_from_parents() {
-	type SpecialObject = { type: string; description: string }
+	type SpecialObject = { kind: string; description: string }
 
 	const parent_map = get_structure_parent_map(db, 'category')
 
 	const get_parent_special_objects = db.prepare<[string], SpecialObject>(
-		`SELECT type, description FROM special_object_assignments
+		`SELECT kind, description FROM special_object_assignments
 		WHERE category_id = ? AND is_deduced = FALSE`
 	)
 
 	const insert_special_object = db.prepare(
 		`INSERT INTO special_object_assignments (
-			category_id, type, description, is_deduced
+			category_id, kind, description, is_deduced
 		) VALUES (?, ?, ?, TRUE)
-		ON CONFLICT (category_id, type) DO NOTHING`
+		ON CONFLICT (category_id, kind) DO NOTHING`
 	)
 
 	let inherited_count = 0
@@ -48,16 +48,16 @@ function inherit_special_objects_from_parents() {
 			const parent_entries = get_parent_special_objects.all(current_id)
 
 			for (const entry of parent_entries) {
-				if (!inherited_objects.has(entry.type)) {
-					inherited_objects.set(entry.type, entry)
+				if (!inherited_objects.has(entry.kind)) {
+					inherited_objects.set(entry.kind, entry)
 				}
 			}
 
 			current_id = parent_map.get(current_id) ?? null
 		}
 
-		for (const [type, entry] of inherited_objects) {
-			const res = insert_special_object.run(category_id, type, entry.description)
+		for (const [kind, entry] of inherited_objects) {
+			const res = insert_special_object.run(category_id, kind, entry.description)
 			inherited_count += res.changes
 		}
 	}
@@ -74,19 +74,19 @@ function deduce_special_objects_of_dual_categories() {
 		.prepare(
 			`INSERT INTO special_object_assignments (
                 category_id,
-                type,
+                kind,
                 description,
                 is_deduced
             )
             SELECT
-                c.dual_structure_id,
-                t.dual,
-                o.description,
+                s.dual_structure_id,
+                so.dual,
+                soa.description,
                 TRUE
-            FROM structures c
-            INNER JOIN special_object_assignments o ON o.category_id = c.id
-            INNER JOIN special_object_types t ON t.type = o.type
-            WHERE c.type = 'category' AND c.dual_structure_id IS NOT NULL`
+            FROM structures s
+            INNER JOIN special_object_assignments soa ON soa.category_id = s.id
+            INNER JOIN special_objects so ON so.kind = soa.kind
+            WHERE s.type = 'category' AND s.dual_structure_id IS NOT NULL`
 		)
 		.run()
 

@@ -78,12 +78,12 @@ export type CategoryDefinition = {
 }
 
 export type SpecialObject = {
-	type: string
+	kind: string
 	description: string
 }
 
 export type SpecialMorphism = {
-	type: string
+	kind: string
 	// null when the morphisms of this type have not been determined
 	description: string | null
 	proof: string

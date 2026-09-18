@@ -26,21 +26,21 @@ function clear_deduced_special_morphisms() {
  * Inherit special morphism assignments from parent categories
  */
 function inherit_special_morphisms_from_parents() {
-	type SpecialMorphism = { type: string; description: string; proof: string }
+	type SpecialMorphism = { kind: string; description: string; proof: string }
 
 	const parent_map = get_structure_parent_map(db, 'category')
 
 	const get_parent_special_morphisms = db.prepare<[string], SpecialMorphism>(
-		`SELECT type, description, proof
+		`SELECT kind, description, proof
 		FROM special_morphism_assignments
 		WHERE category_id = ? AND is_deduced = FALSE`
 	)
 
 	const insert_special_morphism = db.prepare(
 		`INSERT INTO special_morphism_assignments (
-			category_id, type, description, proof, is_deduced
+			category_id, kind, description, proof, is_deduced
 		) VALUES (?, ?, ?, ?, TRUE)
-		ON CONFLICT (category_id, type) DO NOTHING`
+		ON CONFLICT (category_id, kind) DO NOTHING`
 	)
 
 	let inherited_count = 0
@@ -53,19 +53,19 @@ function inherit_special_morphisms_from_parents() {
 			const parent_entries = get_parent_special_morphisms.all(current_id)
 
 			for (const entry of parent_entries) {
-				if (!inherited_morphisms.has(entry.type)) {
-					inherited_morphisms.set(entry.type, entry)
+				if (!inherited_morphisms.has(entry.kind)) {
+					inherited_morphisms.set(entry.kind, entry)
 				}
 			}
 
 			current_id = parent_map.get(current_id) ?? null
 		}
 
-		for (const [type, entry] of inherited_morphisms) {
+		for (const [kind, entry] of inherited_morphisms) {
 			const proof = `This follows from the <a href="/category/${parent_id}">parent</a>.`
 			const res = insert_special_morphism.run(
 				category_id,
-				type,
+				kind,
 				entry.description,
 				proof
 			)
@@ -84,25 +84,25 @@ function inherit_special_morphisms_from_parents() {
 function deduce_special_morphisms_by_rules() {
 	type Rule = {
 		property_id: string
-		type: string
+		kind: string
 		description: string
 		proof: string
 	}
 
 	const rules = db
 		.prepare<[], Rule>(
-			`SELECT property_id, type, description, proof
+			`SELECT property_id, kind, description, proof
 			FROM special_morphism_rules
 			ORDER BY id`
 		)
 		.all()
 
-	for (const { property_id, type, description, proof } of rules) {
+	for (const { property_id, kind, description, proof } of rules) {
 		const res = db
 			.prepare(
 				`INSERT INTO special_morphism_assignments (
                     category_id,
-                    type,
+                    kind,
                     description,
                     proof,
                     is_deduced
@@ -117,12 +117,12 @@ function deduce_special_morphisms_by_rules() {
                 WHERE pa.type = 'category'
                     AND pa.property_id = ?
                     AND pa.is_satisfied = TRUE
-                ON CONFLICT (category_id, type) DO NOTHING`
+                ON CONFLICT (category_id, kind) DO NOTHING`
 			)
-			.run(type, description, proof, property_id)
+			.run(kind, description, proof, property_id)
 
 		devlog(
-			`Deduced ${res.changes} descriptions of ${type} in ${property_id} categories`
+			`Deduced ${res.changes} descriptions of ${kind} in ${property_id} categories`
 		)
 	}
 }
@@ -138,22 +138,22 @@ function deduce_special_morphisms_of_dual_categories() {
 		.prepare(
 			`INSERT INTO special_morphism_assignments (
                 category_id,
-                type,
+                kind,
                 description,
                 proof,
                 is_deduced
             )
             SELECT
-                c.dual_structure_id,
-                t.dual,
-                m.description,
+                s.dual_structure_id,
+                sm.dual,
+                sma.description,
                 'This is deduced from its dual category.',
                 TRUE
-            FROM structures c
-            INNER JOIN special_morphism_assignments m ON m.category_id = c.id
-            INNER JOIN special_morphism_types t ON t.type = m.type
-            WHERE c.type = 'category' AND c.dual_structure_id IS NOT NULL
-            ON CONFLICT (category_id, type) DO NOTHING`
+            FROM structures s
+            INNER JOIN special_morphism_assignments sma ON sma.category_id = s.id
+            INNER JOIN special_morphisms sm ON sm.kind = sma.kind
+            WHERE s.type = 'category' AND s.dual_structure_id IS NOT NULL
+            ON CONFLICT (category_id, kind) DO NOTHING`
 		)
 		.run()
 
