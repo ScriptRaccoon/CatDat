@@ -12,7 +12,7 @@
 	} from '$lib/commons/types'
 	import { PLURALS } from '$shared/config'
 	import Fa from 'svelte-fa'
-	import { faCircleArrowLeft } from '@fortawesome/free-solid-svg-icons'
+	import { faCircleArrowLeft, faInfoCircle } from '@fortawesome/free-solid-svg-icons'
 
 	type Props = {
 		type: StructureType
@@ -100,6 +100,14 @@
 	<strong>Proof:</strong>
 	{@html implication.proof}
 </p>
+
+{#if implication.dual_implication_id}
+	<p>
+		<Fa icon={faInfoCircle} />
+		This implication has a
+		<a href="/{type}-implication/{implication.dual_implication_id}">dual</a>.
+	</p>
+{/if}
 
 {#if structures.length > 0}
 	<details>

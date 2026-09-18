@@ -48,6 +48,10 @@ test('user can see the details of an implication', async ({ page }) => {
 		})
 	).toBeVisible()
 
+	await expect(page.locator('body')).toContainText(
+		'If a category is cartesian closed, then it has finite products.'
+	)
+
 	await expect(
 		page.getByRole('link', {
 			name: 'cartesian closed',
@@ -63,6 +67,22 @@ test('user can see the details of an implication', async ({ page }) => {
 	).toBeVisible()
 
 	await expect(page.locator('body')).toContainText('Proof: This holds by definition')
+})
+
+test('user can navigate to the dual implication', async ({ page }) => {
+	await page.goto('/category-implication/abelian_implies_regular')
+
+	await expect(page.locator('body')).toContainText(
+		'If a category is abelian, then it is regular.'
+	)
+
+	await page.getByRole('link', { name: 'dual' }).click()
+
+	await expect(page).toHaveURL('/category-implication/dual_abelian_implies_regular')
+
+	await expect(page.locator('body')).toContainText(
+		'If a category is abelian, then it is coregular.'
+	)
 })
 
 test('user can open the list of deduced implications', async ({ page }) => {

@@ -50,6 +50,10 @@ test('user can see the details of an implication', async ({ page }) => {
 		})
 	).toBeVisible()
 
+	await expect(page.locator('body')).toContainText(
+		'If a morphism is a split monomorphism, then it is a regular monomorphism.'
+	)
+
 	await expect(
 		page.getByRole('link', {
 			name: 'split monomorphism',
@@ -65,6 +69,22 @@ test('user can see the details of an implication', async ({ page }) => {
 	).toBeVisible()
 
 	await expect(page.locator('body')).toContainText('Proof: Let')
+})
+
+test('user can navigate to the dual implication', async ({ page }) => {
+	await page.goto('/morphism-implication/split_mono_epi_is_iso')
+
+	await expect(page.locator('body')).toContainText(
+		'If a morphism is an epimorphism and is a split monomorphism, then it is an isomorphism.'
+	)
+
+	await page.getByRole('link', { name: 'dual' }).click()
+
+	await expect(page).toHaveURL('/morphism-implication/dual_split_mono_epi_is_iso')
+
+	await expect(page.locator('body')).toContainText(
+		'If a morphism is a monomorphism and is a split epimorphism, then it is an isomorphism.'
+	)
 })
 
 test('user can open the list of deduced implications', async ({ page }) => {

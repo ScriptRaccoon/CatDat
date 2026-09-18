@@ -83,8 +83,12 @@ export function create_dualized_implications(type: StructureType) {
 
 	const implication_insert = db.prepare(`
 		INSERT INTO implications
-			(id, type, is_equivalence, proof, is_deduced)
-		VALUES (?, ?, ?, ?, TRUE)	
+			(id, type, is_equivalence, proof, is_deduced, dual_implication_id)
+		VALUES (?, ?, ?, ?, TRUE, ?)	
+	`)
+
+	const dual_update = db.prepare(`
+		UPDATE implications SET dual_implication_id = ? WHERE id = ?	
 	`)
 
 	const assumption_insert = db.prepare(`
@@ -139,8 +143,11 @@ export function create_dualized_implications(type: StructureType) {
 				dual_id,
 				type,
 				impl.is_equivalence,
-				`This follows from the <a href="/${type}-implication/${impl.id}">dual implication</a>.`
+				`This follows from the <a href="/${type}-implication/${impl.id}">dual implication</a>.`,
+				impl.id
 			)
+
+			dual_update.run(dual_id, impl.id)
 
 			for (const a of dual_assumptions) {
 				assumption_insert.run(dual_id, a, type)
