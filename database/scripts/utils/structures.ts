@@ -83,11 +83,13 @@ export function is_dual_structure(
  */
 export function get_structure_parent_map(db: Database, type: StructureType) {
 	const structures = db
-		.prepare<
-			[StructureType],
-			{ id: string; parent: string | null }
-		>(`SELECT id, parent FROM structures WHERE type = ?`)
+		.prepare<[StructureType], { id: string; parent_structure_id: string | null }>(
+			`SELECT id, parent_structure_id
+			FROM structures WHERE type = ?`
+		)
 		.all(type)
 
-	return new Map(structures.map((structure) => [structure.id, structure.parent]))
+	return new Map(
+		structures.map((structure) => [structure.id, structure.parent_structure_id])
+	)
 }

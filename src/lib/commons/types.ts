@@ -27,7 +27,7 @@ export type StructureDisplay = {
 	dual_structure_id: string | null
 	dual_structure_name: string | null
 	dual_structure_notation: string | null
-	parent: string | null
+	parent_structure_id: string | null
 	parent_name: string | null
 	parent_notation: string | null
 }

@@ -26,12 +26,12 @@ export function fetch_structure(type: StructureType, id: string): StructureDetai
                 s.dual_structure_id,
                 ds.name AS dual_structure_name,
                 ds.notation AS dual_structure_notation,
-				s.parent,
+				s.parent_structure_id,
 				ps.name AS parent_name,
 				ps.notation AS parent_notation
             FROM structures s
             LEFT JOIN structures ds ON ds.id = s.dual_structure_id
-			LEFT JOIN structures ps ON ps.id = s.parent
+			LEFT JOIN structures ps ON ps.id = s.parent_structure_id
             WHERE s.id = ?`
 		)
 		.get(id)
@@ -94,7 +94,7 @@ export function fetch_structure(type: StructureType, id: string): StructureDetai
 	const children = db
 		.prepare<[string], RelatedStructure>(
 			`SELECT s.id, s.name, s.notation
-			FROM structures s WHERE s.parent = ?`
+			FROM structures s WHERE s.parent_structure_id = ?`
 		)
 		.all(id)
 
