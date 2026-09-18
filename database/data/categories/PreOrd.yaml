@@ -53,9 +53,6 @@ satisfied_properties:
       Finally, by <a href="/content/generator_construction">this result</a>, we can conclude that the product of $\{0,1\}_c$ and $\{0<1\}$ is an extremal cogenerator.
 
 unsatisfied_properties:
-  - property: regular
-    proof: See Example 3.14 at the <a href="https://ncatlab.org/nlab/show/regular+category" target="_blank">nLab</a>.
-
   - property: skeletal
     proof: This is trivial.
 

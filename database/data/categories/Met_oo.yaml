@@ -70,11 +70,6 @@ unsatisfied_properties:
     references:
       - met_no_effective_cocongruences
 
-  - property: regular
-    proof: We can take the same counterexample as for <a href="/category/PMet">$\PMet$</a>.
-    references:
-      - pmet_not_regular
-
 special_objects:
   initial object:
     description: empty metric space
