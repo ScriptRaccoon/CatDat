@@ -70,14 +70,14 @@
 		unsatisfied_properties = []
 	}
 
-	let is_searching = $derived(navigating.to?.route.id === `/${type}-search/results`)
+	// only [type] works here, not ${type}
+	let is_searching = $derived(navigating.to?.route.id === `/[type]-search/results`)
 </script>
 
 <MetaData
 	title="Property combo search"
-	description="Search for {PLURALS[
-		type
-	]} that satisfy a specific set of properties while simultaneously not satisfying another set of properties. "
+	description="Search for {PLURALS[type]}
+	that satisfy a specific set of properties while simultaneously not satisfying another set of properties. "
 />
 
 <h1>Property combo search</h1>
