@@ -70,18 +70,17 @@ CREATE INDEX idx_structures_by_tag ON structure_tag_assignments (type, tag, stru
 
 CREATE TABLE structure_associations (
     label TEXT NOT NULL,
-    type TEXT NOT NULL,
-    associated_type TEXT NOT NULL,
-    required INTEGER NOT NULL
-         CHECK (required in (TRUE, FALSE)),
-    PRIMARY KEY (label, type, associated_type),
-    UNIQUE (label, type),
-    FOREIGN KEY (type) REFERENCES structure_types (type) ON DELETE CASCADE,
-    FOREIGN KEY (associated_type) REFERENCES structure_types (type) ON DELETE CASCADE
+    source_type TEXT NOT NULL,
+    target_type TEXT NOT NULL,
+    required INTEGER NOT NULL CHECK (required in (TRUE, FALSE)),
+    PRIMARY KEY (label, source_type),
+    UNIQUE (label, source_type, target_type),
+    FOREIGN KEY (source_type) REFERENCES structure_types (type) ON DELETE CASCADE,
+    FOREIGN KEY (target_type) REFERENCES structure_types (type) ON DELETE CASCADE
 );
 
 INSERT INTO structure_associations
-    (label, type, associated_type, required)
+    (label, source_type, target_type, required)
 VALUES
     ('domain', 'functor', 'category', TRUE),
     ('codomain', 'functor', 'category', TRUE),
@@ -92,20 +91,20 @@ VALUES
 
 CREATE TABLE associated_structures (
     label TEXT NOT NULL,
-    type TEXT NOT NULL,
-    associated_type TEXT NOT NULL,
-    structure_id TEXT NOT NULL,
-    associated_structure_id TEXT NOT NULL,
-    PRIMARY KEY (label, type, associated_type, structure_id),
-    FOREIGN KEY (label, type, associated_type)
-        REFERENCES structure_associations (label, type, associated_type)
+    source_type TEXT NOT NULL,
+    target_type TEXT NOT NULL,
+    source_structure_id TEXT NOT NULL,
+    target_structure_id TEXT NOT NULL,
+    PRIMARY KEY (label, source_type, source_structure_id),
+    FOREIGN KEY (label, source_type, target_type)
+        REFERENCES structure_associations (label, source_type, target_type)
         ON DELETE CASCADE,
-    FOREIGN KEY (structure_id, type)
+    FOREIGN KEY (source_structure_id, source_type)
         REFERENCES structures (id, type) ON DELETE CASCADE,
-    FOREIGN KEY (associated_structure_id, associated_type)
+    FOREIGN KEY (target_structure_id, target_type)
         REFERENCES structures (id, type) ON DELETE CASCADE
 );
 
-CREATE INDEX idx_associated_structures_by_structure ON associated_structures (structure_id);
+CREATE INDEX idx_associated_structures_by_source ON associated_structures (source_structure_id);
 
-CREATE INDEX idx_associated_structures_by_target ON associated_structures (associated_structure_id, type, label);
+CREATE INDEX idx_associated_structures_by_target ON associated_structures (target_structure_id);

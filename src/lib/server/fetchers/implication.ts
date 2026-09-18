@@ -2,7 +2,7 @@ import { db } from '$lib/server/db'
 import { error } from '@sveltejs/kit'
 import type {
 	ImplicationDB,
-	AssociatedTypes,
+	TargetTypes,
 	StructureShort,
 	StructureType
 } from '$lib/commons/types'
@@ -45,18 +45,18 @@ export function fetch_implication(type: StructureType, id: string) {
 		.all(type, id)
 
 	const structure_associations = db
-		.prepare<[StructureType], { label: string; associated_type: StructureType }>(
-			`SELECT label, associated_type
+		.prepare<[StructureType], { label: string; target_type: StructureType }>(
+			`SELECT label, target_type
             FROM structure_associations
-            WHERE type = ?`
+            WHERE source_type = ?`
 		)
 		.all(type)
 
-	const associated_types: AssociatedTypes = {}
+	const target_types: TargetTypes = {}
 
-	for (const { label, associated_type } of structure_associations) {
-		associated_types[label] = associated_type
+	for (const { label, target_type } of structure_associations) {
+		target_types[label] = target_type
 	}
 
-	return { type, implication, property_relation_dict, structures, associated_types }
+	return { type, implication, property_relation_dict, structures, target_types }
 }

@@ -25,9 +25,9 @@ export function clear_deduced_implications(type: StructureType) {
  */
 export function create_dualized_implications(type: StructureType) {
 	const structure_associations = db
-		.prepare<[StructureType], { label: string; associated_type: StructureType }>(
-			`SELECT label, associated_type
-			FROM structure_associations WHERE type = ?`
+		.prepare<[StructureType], { label: string; target_type: StructureType }>(
+			`SELECT label, target_type
+			FROM structure_associations WHERE source_type = ?`
 		)
 		.all(type)
 
@@ -149,23 +149,22 @@ export function create_dualized_implications(type: StructureType) {
 
 			dual_update.run(dual_id, impl.id)
 
-			for (const a of dual_assumptions) {
-				assumption_insert.run(dual_id, a, type)
+			for (const assumption of dual_assumptions) {
+				assumption_insert.run(dual_id, assumption, type)
 			}
 
-			for (const c of dual_conclusions) {
-				conclusion_insert.run(dual_id, c, type)
+			for (const conclusion of dual_conclusions) {
+				conclusion_insert.run(dual_id, conclusion, type)
 			}
 
-			for (const { label, associated_type } of structure_associations) {
-				const duals = dual_associated_assumptions[label]
-				for (const d of duals ?? []) {
+			for (const { label, target_type } of structure_associations) {
+				for (const assumption of dual_associated_assumptions[label] ?? []) {
 					associated_assumption_insert.run(
 						dual_id,
 						label,
-						d,
+						assumption,
 						type,
-						associated_type
+						target_type
 					)
 				}
 			}

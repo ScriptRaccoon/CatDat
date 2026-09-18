@@ -315,18 +315,18 @@ function test_adjoint_functor_relationships() {
 		{
 			query: `
 			SELECT
-				sm1.structure_id AS right_1,
-				sm1.associated_structure_id AS left,
-				sm2.associated_structure_id AS right_2
-			FROM associated_structures sm1
-			LEFT JOIN associated_structures sm2
+				ass1.source_structure_id AS right_1,
+				ass1.target_structure_id AS left,
+				ass2.target_structure_id AS right_2
+			FROM associated_structures ass1
+			LEFT JOIN associated_structures ass2
 			ON
-				sm2.type = 'functor'
-				AND sm2.structure_id = sm1.associated_structure_id
-				AND sm2.label = 'right_adjoint'
+				ass2.source_type = 'functor'
+				AND ass2.label = 'right_adjoint'
+				AND ass2.source_structure_id = ass1.target_structure_id
 			WHERE
-				sm1.type = 'functor'
-				AND sm1.label = 'left_adjoint'
+				ass1.source_type = 'functor'
+				AND ass1.label = 'left_adjoint'
 				AND (right_2 IS NULL OR right_2 <> right_1)
 			`,
 			format: ({ right_1, left, right_2 }) =>
@@ -335,18 +335,18 @@ function test_adjoint_functor_relationships() {
 		{
 			query: `
 			SELECT
-				sm1.structure_id AS left_1,
-				sm1.associated_structure_id AS right,
-				sm2.associated_structure_id AS left_2
-			FROM associated_structures sm1
-			LEFT JOIN associated_structures sm2
+				ass1.source_structure_id AS left_1,
+				ass1.target_structure_id AS right,
+				ass2.target_structure_id AS left_2
+			FROM associated_structures ass1
+			LEFT JOIN associated_structures ass2
 			ON
-				sm2.type = 'functor'
-				AND sm2.structure_id = sm1.associated_structure_id
-				AND sm2.label = 'left_adjoint'
+				ass2.source_type = 'functor'
+				AND ass2.label = 'left_adjoint'
+				AND ass2.source_structure_id = ass1.target_structure_id
 			WHERE
-				sm1.type = 'functor'
-				AND sm1.label = 'right_adjoint'
+				ass1.source_type = 'functor'
+				AND ass1.label = 'right_adjoint'
 				AND (left_2 IS NULL OR left_2 <> left_1)
 			`,
 			format: ({ left_1, right, left_2 }) =>
@@ -355,24 +355,24 @@ function test_adjoint_functor_relationships() {
 		{
 			query: `
 			SELECT
-				sm.structure_id AS functor,
-				sm.associated_structure_id AS left_adjoint,
-				dom.associated_structure_id AS functor_domain,
-				adj_cod.associated_structure_id AS left_adjoint_codomain
+				ass.source_structure_id AS functor,
+				ass.target_structure_id AS left_adjoint,
+				dom.target_structure_id AS functor_domain,
+				adj_cod.target_structure_id AS left_adjoint_codomain
 			FROM
-				associated_structures sm
+				associated_structures ass
 			INNER JOIN associated_structures dom
 			ON
 				dom.label = 'domain'
-				AND dom.type = 'functor'
-				AND dom.structure_id = sm.structure_id
+				AND dom.source_type = 'functor'
+				AND dom.source_structure_id = ass.source_structure_id
 			INNER JOIN associated_structures adj_cod
 			ON
 				adj_cod.label = 'codomain'
-				AND adj_cod.type = 'functor'
-				AND adj_cod.structure_id = sm.associated_structure_id
+				AND adj_cod.source_type = 'functor'
+				AND adj_cod.source_structure_id = ass.target_structure_id
 			WHERE
-				sm.label = 'left_adjoint'
+				ass.label = 'left_adjoint'
 				AND functor_domain <> left_adjoint_codomain
 			`,
 			format: ({ functor, left_adjoint, functor_domain, left_adjoint_codomain }) =>
@@ -381,24 +381,24 @@ function test_adjoint_functor_relationships() {
 		{
 			query: `
 			SELECT
-				sm.structure_id AS functor,
-				sm.associated_structure_id AS left_adjoint,
-				cod.associated_structure_id AS functor_codomain,
-				adj_dom.associated_structure_id AS left_adjoint_domain
+				ass.source_structure_id AS functor,
+				ass.target_structure_id AS left_adjoint,
+				cod.target_structure_id AS functor_codomain,
+				adj_dom.target_structure_id AS left_adjoint_domain
 			FROM
-				associated_structures sm
+				associated_structures ass
 			INNER JOIN associated_structures cod
 			ON
 				cod.label = 'codomain'
-				AND cod.type = 'functor'
-				AND cod.structure_id = sm.structure_id
+				AND cod.source_type = 'functor'
+				AND cod.source_structure_id = ass.source_structure_id
 			INNER JOIN associated_structures adj_dom
 			ON
 				adj_dom.label = 'domain'
-				AND adj_dom.type = 'functor'
-				AND adj_dom.structure_id = sm.associated_structure_id
+				AND adj_dom.source_type = 'functor'
+				AND adj_dom.source_structure_id = ass.target_structure_id
 			WHERE
-				sm.label = 'left_adjoint'
+				ass.label = 'left_adjoint'
 				AND functor_codomain <> left_adjoint_domain`,
 			format: ({ functor, left_adjoint, functor_codomain, left_adjoint_domain }) =>
 				`❌ Domain/codomain mismatch: ${functor} has codomain ${functor_codomain}, but its left adjoint ${left_adjoint} has domain ${left_adjoint_domain}.`

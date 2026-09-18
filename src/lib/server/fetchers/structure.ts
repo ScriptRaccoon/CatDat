@@ -46,12 +46,12 @@ export function fetch_structure(type: StructureType, id: string): StructureDetai
                 s.id,
                 s.name,
                 s.notation,
-				a.label,
-				a.associated_type
-            FROM associated_structures a
+				s.type,
+				ass.label
+            FROM associated_structures ass
             INNER JOIN structures s
-            ON s.id = a.associated_structure_id
-            WHERE a.structure_id = ?`
+            ON s.id = ass.target_structure_id
+            WHERE ass.source_structure_id = ?`
 		)
 		.all(id)
 
@@ -70,17 +70,17 @@ export function fetch_structure(type: StructureType, id: string): StructureDetai
 
 	const list_structures_based_on = db
 		.prepare<[string], StructureShort & { type: StructureType }>(
-			`SELECT DISTINCT s.id, s.name, a.type
+			`SELECT DISTINCT s.id, s.name, s.type
 			FROM associated_structures a
 			INNER JOIN structures s
-			ON s.id = a.structure_id
+			ON s.id = a.source_structure_id
 			INNER JOIN structure_associations sa
 			ON
 				sa.label = a.label
-				AND sa.type = a.type
-				AND sa.associated_type = a.associated_type
-			WHERE a.associated_structure_id = ? AND sa.required = TRUE
-			ORDER BY a.type, lower(s.name)`
+				AND sa.source_type = a.source_type
+				AND sa.target_type = a.target_type
+			WHERE a.target_structure_id = ? AND sa.required = TRUE
+			ORDER BY s.type, lower(s.name)`
 		)
 		.all(id)
 
