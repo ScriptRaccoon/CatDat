@@ -105,4 +105,4 @@ to check for redundant assignments of properties to categorical structures.
 
 This is the database schema as of 18.09.2026; changes may occur.
 
-<img alt="database diagram" src="https://github.com/user-attachments/assets/31a8e7f3-59b0-4d57-8d06-0aa554e8159a" />
+<img alt="database diagram" src="https://github.com/user-attachments/assets/053744e9-71c4-4fb5-82a1-8cdd3bbea3e2" />
