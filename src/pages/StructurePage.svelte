@@ -76,10 +76,13 @@
 		<span><a href="/{a.associated_type}/{a.id}">{a.name}</a></span>
 	{/each}
 
-	{#if structure.parent}
+	{#if structure.parent_structure_id}
 		<strong>Parent</strong>
 		<span>
-			<a href="/{type}/{structure.parent}" aria-label={structure.parent_name}>
+			<a
+				href="/{type}/{structure.parent_structure_id}"
+				aria-label={structure.parent_name}
+			>
 				{@html structure.parent_notation}
 			</a>
 		</span>

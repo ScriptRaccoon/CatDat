@@ -235,7 +235,7 @@ function seed_structures<T extends StructureYaml>({
 	const structure_insert = db.prepare(
 		`INSERT INTO structures (
 			id, type, name, notation, description, nlab_link,
-			dual_structure_id, parent
+			dual_structure_id, parent_structure_id
 		)
 		VALUES (?, ?, ?, ?, ?, ?, ?, ?)`
 	)
