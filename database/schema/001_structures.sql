@@ -8,29 +8,6 @@ INSERT INTO structure_types (type) VALUES
     ('morphism'),
     ('symmetric_monoidal_category');
 
-
-CREATE TABLE associated_structure_types (
-    label TEXT NOT NULL,
-    type TEXT NOT NULL,
-    associated_type TEXT NOT NULL,
-    required INTEGER NOT NULL
-         CHECK (required in (TRUE, FALSE)),
-    PRIMARY KEY (label, type, associated_type),
-    UNIQUE (label, type),
-    FOREIGN KEY (type) REFERENCES structure_types (type) ON DELETE CASCADE,
-    FOREIGN KEY (associated_type) REFERENCES structure_types (type) ON DELETE CASCADE
-);
-
-INSERT INTO associated_structure_types
-    (label, type, associated_type, required)
-VALUES
-    ('domain', 'functor', 'category', TRUE),
-    ('codomain', 'functor', 'category', TRUE),
-    ('category', 'morphism', 'category', TRUE),
-    ('underlying_category', 'symmetric_monoidal_category', 'category', TRUE),
-    ('left_adjoint', 'functor', 'functor', FALSE),
-    ('right_adjoint', 'functor', 'functor', FALSE);
-
 CREATE TABLE structures (
     id TEXT PRIMARY KEY,
     type TEXT NOT NULL,
@@ -86,6 +63,28 @@ CREATE TABLE structure_tag_assignments (
     FOREIGN KEY (structure_id, type) REFERENCES structures (id, type) ON DELETE CASCADE,
     FOREIGN KEY (tag, type) REFERENCES structure_tags (tag, type) ON DELETE CASCADE
 );
+
+CREATE TABLE associated_structure_types (
+    label TEXT NOT NULL,
+    type TEXT NOT NULL,
+    associated_type TEXT NOT NULL,
+    required INTEGER NOT NULL
+         CHECK (required in (TRUE, FALSE)),
+    PRIMARY KEY (label, type, associated_type),
+    UNIQUE (label, type),
+    FOREIGN KEY (type) REFERENCES structure_types (type) ON DELETE CASCADE,
+    FOREIGN KEY (associated_type) REFERENCES structure_types (type) ON DELETE CASCADE
+);
+
+INSERT INTO associated_structure_types
+    (label, type, associated_type, required)
+VALUES
+    ('domain', 'functor', 'category', TRUE),
+    ('codomain', 'functor', 'category', TRUE),
+    ('category', 'morphism', 'category', TRUE),
+    ('underlying_category', 'symmetric_monoidal_category', 'category', TRUE),
+    ('left_adjoint', 'functor', 'functor', FALSE),
+    ('right_adjoint', 'functor', 'functor', FALSE);
 
 CREATE TABLE associated_structures (
     label TEXT NOT NULL,
