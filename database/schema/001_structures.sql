@@ -93,6 +93,7 @@ CREATE TABLE associated_structures (
     associated_type TEXT NOT NULL,
     structure_id TEXT NOT NULL,
     associated_structure_id TEXT NOT NULL,
+    PRIMARY KEY (label, type, associated_type, structure_id),
     FOREIGN KEY (label, type, associated_type)
         REFERENCES associated_structure_types (label, type, associated_type)
         ON DELETE CASCADE,
@@ -101,3 +102,5 @@ CREATE TABLE associated_structures (
     FOREIGN KEY (associated_structure_id, associated_type)
         REFERENCES structures (id, type) ON DELETE CASCADE
 );
+
+CREATE INDEX idx_structure_associations ON associated_structures (structure_id);
