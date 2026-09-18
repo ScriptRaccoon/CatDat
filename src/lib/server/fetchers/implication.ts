@@ -44,17 +44,17 @@ export function fetch_implication(type: StructureType, id: string) {
 		)
 		.all(type, id)
 
-	const associated_structure_types = db
+	const structure_associations = db
 		.prepare<[StructureType], { label: string; associated_type: StructureType }>(
 			`SELECT label, associated_type
-            FROM associated_structure_types
+            FROM structure_associations
             WHERE type = ?`
 		)
 		.all(type)
 
 	const associated_types: AssociatedTypes = {}
 
-	for (const { label, associated_type } of associated_structure_types) {
+	for (const { label, associated_type } of structure_associations) {
 		associated_types[label] = associated_type
 	}
 

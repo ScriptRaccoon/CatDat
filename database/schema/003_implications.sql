@@ -53,7 +53,7 @@ CREATE TABLE associated_assumptions (
     FOREIGN KEY (property_id, property_type)
         REFERENCES properties (id, type) ON DELETE CASCADE,
     FOREIGN KEY (label, type, property_type)
-        REFERENCES associated_structure_types (label, type, associated_type)
+        REFERENCES structure_associations (label, type, associated_type)
         ON DELETE RESTRICT
 );
 

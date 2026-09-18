@@ -68,7 +68,7 @@ CREATE TABLE structure_tag_assignments (
 
 CREATE INDEX idx_structures_by_tag ON structure_tag_assignments (type, tag, structure_id);
 
-CREATE TABLE associated_structure_types (
+CREATE TABLE structure_associations (
     label TEXT NOT NULL,
     type TEXT NOT NULL,
     associated_type TEXT NOT NULL,
@@ -80,7 +80,7 @@ CREATE TABLE associated_structure_types (
     FOREIGN KEY (associated_type) REFERENCES structure_types (type) ON DELETE CASCADE
 );
 
-INSERT INTO associated_structure_types
+INSERT INTO structure_associations
     (label, type, associated_type, required)
 VALUES
     ('domain', 'functor', 'category', TRUE),
@@ -98,7 +98,7 @@ CREATE TABLE associated_structures (
     associated_structure_id TEXT NOT NULL,
     PRIMARY KEY (label, type, associated_type, structure_id),
     FOREIGN KEY (label, type, associated_type)
-        REFERENCES associated_structure_types (label, type, associated_type)
+        REFERENCES structure_associations (label, type, associated_type)
         ON DELETE CASCADE,
     FOREIGN KEY (structure_id, type)
         REFERENCES structures (id, type) ON DELETE CASCADE,
