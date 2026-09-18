@@ -48,6 +48,10 @@ test('user can see the details of an implication', async ({ page }) => {
 		})
 	).toBeVisible()
 
+	await expect(page.locator('body')).toContainText(
+		'If a functor is fully faithful, then it is conservative.'
+	)
+
 	await expect(
 		page.getByRole('link', {
 			name: 'fully faithful',
@@ -63,6 +67,22 @@ test('user can see the details of an implication', async ({ page }) => {
 	).toBeVisible()
 
 	await expect(page.locator('body')).toContainText(/Proof:.+follows that/)
+})
+
+test('user can navigate to the dual implication', async ({ page }) => {
+	await page.goto('/functor-implication/equivalence_consequences')
+
+	await expect(page.locator('body')).toContainText(
+		'If a functor is an equivalence, then it is monadic and is a reflector.'
+	)
+
+	await page.getByRole('link', { name: 'dual' }).click()
+
+	await expect(page).toHaveURL('/functor-implication/dual_equivalence_consequences')
+
+	await expect(page.locator('body')).toContainText(
+		'If a functor is an equivalence, then it is comonadic and is a coreflector.'
+	)
 })
 
 test('user can open the list of deduced implications', async ({ page }) => {

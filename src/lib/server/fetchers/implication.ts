@@ -19,6 +19,7 @@ export function fetch_implication(type: StructureType, id: string) {
                 is_equivalence,
                 is_deduced,
                 proof,
+				dual_implication_id,
                 assumptions,
                 conclusions,
                 associated_assumptions

@@ -5,8 +5,10 @@ CREATE TABLE implications (
     is_equivalence INTEGER NOT NULL DEFAULT FALSE
         CHECK (is_equivalence IN (TRUE, FALSE)),
     is_deduced INTEGER NOT NULL DEFAULT FALSE,
+    dual_implication_id TEXT,
     UNIQUE (id, type),
-    FOREIGN KEY (type) REFERENCES structure_types (type) ON DELETE RESTRICT
+    FOREIGN KEY (type) REFERENCES structure_types (type) ON DELETE RESTRICT,
+    FOREIGN KEY (dual_implication_id) REFERENCES implications (id)
 );
 
 CREATE UNIQUE INDEX idx_implications_lower_id_unique ON implications (lower(id));
@@ -64,6 +66,7 @@ CREATE VIEW implications_view AS
         i.is_equivalence,
         i.is_deduced,
         i.proof,
+        i.dual_implication_id,
         (
             SELECT json_group_array(a.property_id)
             FROM assumptions a WHERE a.implication_id = i.id

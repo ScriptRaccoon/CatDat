@@ -94,6 +94,7 @@ export type ImplicationDB = {
 	is_equivalence: 0 | 1
 	is_deduced: 0 | 1
 	proof: string
+	dual_implication_id?: string | null
 	assumptions: string
 	conclusions: string
 	associated_assumptions: string
