@@ -6,34 +6,11 @@
 	import TagList from '$components/TagList.svelte'
 	import IndistinguishableStructures from '$components/IndistinguishableStructures.svelte'
 	import StructuresBasedOn from '$components/StructuresBasedOn.svelte'
-	import type {
-		AssociatedStructure,
-		CommentObject,
-		PropertyAssignmentDisplay,
-		PropertyShort,
-		RelatedStructure,
-		StructureDisplay,
-		StructureShort,
-		StructureShortDictionary,
-		StructureType
-	} from '$lib/commons/types'
+	import type { StructureDetails } from '$lib/commons/types'
 	import type { Snippet } from 'svelte'
 	import { capitalize, remove_underscores } from '$shared/utils'
 
-	type Props = {
-		type: StructureType
-		structure: StructureDisplay
-		associated_structures: AssociatedStructure[]
-		related_structures: RelatedStructure[]
-		structures_based_on: StructureShortDictionary
-		children: RelatedStructure[]
-		tags: string[]
-		satisfied_properties: PropertyAssignmentDisplay[]
-		unsatisfied_properties: PropertyAssignmentDisplay[]
-		unknown_properties: PropertyShort[]
-		undecidable_properties: PropertyAssignmentDisplay[]
-		indistinguishable_structures: StructureShort[]
-		comments: CommentObject[]
+	type Props = StructureDetails & {
 		definition?: Snippet
 		specials?: Snippet
 	}

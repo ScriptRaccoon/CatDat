@@ -1,7 +1,7 @@
 <script lang="ts">
 	import StructureList from '$components/StructureList.svelte'
 	import MetaData from '$components/MetaData.svelte'
-	import { capitalize, pluralize } from '$shared/utils'
+	import { capitalize, pluralize, remove_underscores } from '$shared/utils'
 	import type { StructureShort, StructureType } from '$lib/commons/types'
 	import { PLURALS } from '$shared/config'
 
@@ -20,7 +20,7 @@
 
 <p class="hint">
 	{pluralize(structures.length, {
-		one: `Found {count} ${type}`,
+		one: `Found {count} ${remove_underscores(type)}`,
 		other: `Found {count} ${PLURALS[type]}`
 	})}
 </p>
