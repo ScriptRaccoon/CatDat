@@ -65,40 +65,6 @@ satisfied_properties:
       $$(0,1) = (h(x),h(x')) = (g(f(x)),g(f(x'))) \in R_Q,$$
       which is a contradiction.
 
-  - property: effective cocongruences
-    proof: >-
-      Let $q_1,q_2 : (X,R) \rightrightarrows (Y,S)$ be a cocongruence. Since the forgetful functor $\Bin \to \Set$ is cocontinuous, the pair $q_1,q_2 : X \rightrightarrows Y$ is a cocongruence in <a href="/category/Set">$\Set$</a>, which has effective cocongruences and equalizers. Thus, if $E \subseteq X$ denotes the equalizer of $q_1,q_2$, the canonical map
-      $$\alpha : X \sqcup_E X \to Y,\qquad i_1(x) \mapsto q_1(x),\quad i_2(x) \mapsto q_2(x)$$
-      is bijective. This is the underlying map of the canonical morphism
-      $$\alpha : (X,R) \sqcup_{(E,R|_E)} (X,R) \to (Y,S),$$
-      and it remains to prove that $\alpha$ is relation-reflecting. By the construction of colimits, the pushout is given by
-      $$(X \sqcup_E X, i_1(R) \cup i_2(R)),$$
-      where $i_k(R)$ is shorthand for $\{(i_k(x),i_k(x')) : (x,x') \in R\}$. Thus, we need to show that for all elements $p,q \in X \sqcup_E X$ with $(\alpha(p),\alpha(q)) \in S$, we have $(p,q) \in i_1(R) \cup i_2(R)$. Since $p$ and $q$ are contained in $i_1(X) \cup i_2(X)$, there are four cases to consider.
-
-      <strong>Case 1.</strong> We have $p = i_1(x)$ and $q = i_1(x')$. Thus,
-      $$(q_1(x),q_1(x')) = (\alpha(p),\alpha(q)) \in S.$$
-      Applying the retraction $r : (Y,S) \to (X,R)$, we obtain $(x,x') \in R$. Thus,
-      $$(p,q) = (i_1(x),i_1(x')) \in i_1(R) \subseteq i_1(R) \cup i_2(R).$$
-      <strong>Case 2.</strong> We have $p = i_2(x)$ and $q = i_2(x')$. This is symmetric to Case 1.
-
-      <strong>Case 3.</strong> We have $p = i_1(x)$ and $q = i_2(x')$. Thus,
-      $$(q_1(x),q_2(x')) = (\alpha(p),\alpha(q)) \in S.$$
-      Consider the set
-      $$Z \coloneqq X \sqcup_E X \sqcup_E X.$$
-      There are three canonical injective maps
-      $$u_i : X \to Z$$
-      satisfying $u_i(x) = u_j(x') \iff x = x' \in E$ for $i \neq j$. Because $(u_1)|_E = (u_2)|_E$, there is a unique map $f : Y \to Z$ with $f q_1 = u_1$ and $f q_2 = u_2$. Likewise, there is a unique map $g : Y \to Z$ with $g q_1 = u_2$ and $g q_2 = u_3$. Consider the binary relation $T \coloneqq f(S) \cup g(S)$ on $Z$. Then $f$ and $g$ induce morphisms $f,g : (Y,S) \rightrightarrows (Z,T)$ satisfying $f q_2 = g q_1$. Since $q_1,q_2$ is cotransitive, there is a morphism
-      $$h : (Y,S) \to (Z,T)$$
-      satisfying $h q_1 = f q_1 = u_1$ and $h q_2 = g q_2 = u_3$. Since $(q_1(x),q_2(x')) \in S$ and $h$ is a morphism, we have
-      $$(u_1(x),u_3(x')) \in T = f(S) \cup g(S).$$
-      Assume first that $(u_1(x),u_3(x')) \in f(S)$. Then
-      $$u_3(x') \in \im(f) \subseteq \im(u_1) \cup \im(u_2),$$
-      so that $x' \in E$. But then $p = i_1(x)$ and $q = i_1(x')$, so that we are in Case 1. Next, assume that $(u_1(x),u_3(x')) \in g(S)$. Then
-      $$u_1(x) \in \im(g) \subseteq \im(u_2) \cup \im(u_3),$$
-      so that $x \in E$. But then $p = i_2(x)$ and $q = i_2(x')$, so that we are in Case 2.
-
-      <strong>Case 4.</strong> We have $p = i_2(x)$ and $q = i_1(x')$. This is symmetric to Case 3.
-
 unsatisfied_properties:
   - property: skeletal
     proof: This is trivial.

@@ -89,6 +89,7 @@ satisfied_properties:
 
   - property: effective cocongruences
     proof: 'See the proof that $\Mono$ is co-Malcev: It shows that in fact any coreflexive corelation is equivalent to an effective cocongruence $X \sqcup X \twoheadrightarrow X \sqcup_Y X$.'
+    check_redundancy: false
 
 unsatisfied_properties:
   - property: skeletal
