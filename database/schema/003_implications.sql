@@ -53,11 +53,11 @@ CREATE TABLE associated_assumptions (
     FOREIGN KEY (property_id, property_type)
         REFERENCES properties (id, type) ON DELETE CASCADE,
     FOREIGN KEY (label, type, property_type)
-        REFERENCES structure_associations (label, type, associated_type)
+        REFERENCES structure_associations (label, source_type, target_type)
         ON DELETE RESTRICT
 );
 
-CREATE INDEX idx_assumptions_associated_by_property ON associated_assumptions (property_id);
+CREATE INDEX idx_associated_assumptions_by_property ON associated_assumptions (property_id);
 
 CREATE VIEW implications_view AS
     SELECT

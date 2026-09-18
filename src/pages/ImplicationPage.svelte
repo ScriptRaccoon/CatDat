@@ -7,7 +7,7 @@
 	import type {
 		ImplicationDisplay,
 		StructureShort,
-		AssociatedTypes,
+		TargetTypes,
 		StructureType
 	} from '$lib/commons/types'
 	import { PLURALS } from '$shared/config'
@@ -18,17 +18,12 @@
 		type: StructureType
 		implication: ImplicationDisplay
 		structures: StructureShort[]
-		associated_types: AssociatedTypes
+		target_types: TargetTypes
 		property_relation_dict: Record<string, Record<string, string>>
 	}
 
-	let {
-		type,
-		implication,
-		structures,
-		associated_types,
-		property_relation_dict
-	}: Props = $props()
+	let { type, implication, structures, target_types, property_relation_dict }: Props =
+		$props()
 
 	let has_associated_assumptions = $derived(
 		Object.values(implication.associated_assumptions).some((list) => list?.size)
@@ -54,8 +49,8 @@
 				whose
 				{remove_underscores(label)}
 				{#each set as property, index}
-					{property_relation_dict[associated_types[label]][property]}
-					<a href={get_property_url(property, associated_types[label])}
+					{property_relation_dict[target_types[label]][property]}
+					<a href={get_property_url(property, target_types[label])}
 						>{get_property_label(property)}</a
 					>{#if index < set.size - 1}
 						&nbsp;and&nbsp;

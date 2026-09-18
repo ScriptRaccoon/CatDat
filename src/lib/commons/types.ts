@@ -15,7 +15,7 @@ export type RelatedStructure = StructureShort & { notation: string }
 
 export type AssociatedStructure = RelatedStructure & {
 	label: string
-	associated_type: StructureType
+	type: StructureType
 }
 
 export type StructureDisplay = {
@@ -32,7 +32,7 @@ export type StructureDisplay = {
 	parent_notation: string | null
 }
 
-export type AssociatedTypes = Record<string, StructureType>
+export type TargetTypes = Record<string, StructureType>
 
 export type CommentObject = { id: number; comment: string }
 

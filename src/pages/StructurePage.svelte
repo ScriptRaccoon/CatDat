@@ -73,7 +73,7 @@
 
 	{#each associated_structures as a}
 		<strong>{capitalize(remove_underscores(a.label))}</strong>
-		<span><a href="/{a.associated_type}/{a.id}">{a.name}</a></span>
+		<span><a href="/{a.type}/{a.id}">{a.name}</a></span>
 	{/each}
 
 	{#if structure.parent_structure_id}

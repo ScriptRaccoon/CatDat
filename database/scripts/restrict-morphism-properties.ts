@@ -32,21 +32,21 @@ function restrict_normal_morphisms(variant: 'mono' | 'epi') {
                 check_redundancy
             )
             SELECT
-                sa.structure_id,
+                ass.source_structure_id,
                 ?,
                 'morphism',
                 FALSE,
                 'The ' || c.name || ' has no zero morphisms.',
                 TRUE,
                 FALSE
-            FROM associated_structures sa
+            FROM associated_structures ass
             INNER JOIN structures c 
-            ON c.id = sa.associated_structure_id
+            ON c.id = ass.target_structure_id
             INNER JOIN property_assignments a
             ON a.structure_id = c.id
             WHERE
-                sa.type = 'morphism'
-                AND sa.label = 'category'
+                ass.source_type = 'morphism'
+                AND ass.label = 'category'
                 AND a.property_id = 'zero morphisms'
                 AND a.is_satisfied = FALSE
             ON CONFLICT (structure_id, property_id)

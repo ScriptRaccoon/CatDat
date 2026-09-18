@@ -255,10 +255,10 @@ WHERE is_satisfied IS NULL;`}
 	language="sql"
 	title="Functors with left adjoints"
 	code={`SELECT
-    structure_id AS functor,
-    associated_structure_id AS left_adjoint
+    source_structure_id AS functor,
+    target_structure_id AS left_adjoint
 FROM associated_structures
-WHERE type = 'functor'
+WHERE source_type = 'functor'
 AND label = 'left_adjoint';`}
 />
 
@@ -266,10 +266,10 @@ AND label = 'left_adjoint';`}
 	language="sql"
 	title="Symmetric monoidal categories with their underlying categories"
 	code={`SELECT
-    structure_id AS symmetric_monoidal_category,
-    associated_structure_id AS category
+    source_structure_id AS symmetric_monoidal_category,
+    target_structure_id AS category
 FROM associated_structures
-WHERE type = 'symmetric_monoidal_category'
+WHERE source_type = 'symmetric_monoidal_category'
 AND label = 'underlying_category';`}
 />
 

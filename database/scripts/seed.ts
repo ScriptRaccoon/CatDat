@@ -225,10 +225,10 @@ function seed_structures<T extends StructureYaml>({
 	const structure_associations = db
 		.prepare<
 			[StructureType],
-			{ label: keyof T; associated_type: StructureType; required: 0 | 1 }
+			{ label: keyof T; target_type: StructureType; required: 0 | 1 }
 		>(
-			`SELECT label, associated_type, required
-			FROM structure_associations WHERE type = ?`
+			`SELECT label, target_type, required
+			FROM structure_associations WHERE source_type = ?`
 		)
 		.all(type)
 
@@ -270,8 +270,8 @@ function seed_structures<T extends StructureYaml>({
 
 	const associated_structure_insert = db.prepare(
 		`INSERT INTO associated_structures (
-			label, type, associated_type,
-			structure_id, associated_structure_id
+			label, source_type, target_type,
+			source_structure_id, target_structure_id
 		) VALUES (?, ?, ?, ?, ?)`
 	)
 
@@ -303,7 +303,7 @@ function seed_structures<T extends StructureYaml>({
 
 		record_structure_addition(structure.id)
 
-		for (const { label, associated_type, required } of structure_associations) {
+		for (const { label, target_type, required } of structure_associations) {
 			if (required && !structure[label]) {
 				console.error(
 					`❌ ${capitalize(type)} "${structure.id}" has no ${label.toString()}`
@@ -315,7 +315,7 @@ function seed_structures<T extends StructureYaml>({
 				associated_structure_insert.run(
 					label,
 					type,
-					associated_type,
+					target_type,
 					structure.id,
 					structure[label]
 				)
@@ -468,9 +468,9 @@ function seed_properties({ type, folder }: { type: StructureType; folder: string
  */
 function seed_implications({ type, folder }: { type: StructureType; folder: string }) {
 	const structure_associations = db
-		.prepare<[StructureType], { label: string; associated_type: StructureType }>(
-			`SELECT label, associated_type
-			FROM structure_associations WHERE type = ?`
+		.prepare<[StructureType], { label: string; target_type: StructureType }>(
+			`SELECT label, target_type
+			FROM structure_associations WHERE source_type = ?`
 		)
 		.all(type)
 
@@ -522,15 +522,14 @@ function seed_implications({ type, folder }: { type: StructureType; folder: stri
 
 			if (!impl.associated_assumptions) continue
 
-			for (const { label, associated_type } of structure_associations) {
-				const assumptions = impl.associated_assumptions[label] ?? []
-				for (const p of assumptions) {
+			for (const { label, target_type } of structure_associations) {
+				for (const assumption of impl.associated_assumptions[label] ?? []) {
 					associated_assumption_insert.run(
 						impl.id,
 						label,
-						p,
+						assumption,
 						type,
-						associated_type
+						target_type
 					)
 				}
 			}

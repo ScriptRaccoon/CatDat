@@ -40,9 +40,9 @@ export function get_structures(db: Database, type: StructureType): StructureMeta
 					json_group_array(pa.property_id) AS props
 				FROM structures s
 				LEFT JOIN associated_structures ass
-					ON ass.structure_id = s.id
+					ON ass.source_structure_id = s.id
 				LEFT JOIN property_assignments pa
-					ON pa.structure_id = ass.associated_structure_id
+					ON pa.structure_id = ass.target_structure_id
 					AND pa.is_satisfied = TRUE
 				WHERE s.type = ?
 				GROUP BY s.id, ass.label
