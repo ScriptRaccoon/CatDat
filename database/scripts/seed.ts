@@ -2,17 +2,18 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { get_property_assignments, seed_file, seed_files } from './utils/seed.helpers'
 import { get_client } from '$shared/db'
-import type {
-	CategoryYaml,
-	ConfigYaml,
-	ImplicationYaml,
-	SpecialMorphismRuleYaml,
-	StructureYaml,
-	PropertyYaml
-} from './utils/seed.types'
 import { create_schema_hash, get_saved_schema_hash } from './utils/schema'
 import { STRUCTURE_TYPES, type StructureType, PLURALS } from '$shared/config'
 import { are_disjoint, capitalize, devlog } from '$shared/utils'
+import {
+	category_yaml_schema,
+	config_yaml_schema,
+	implications_yaml_schema,
+	property_yaml_schema,
+	special_morphism_rule_yaml_schema,
+	structure_yaml_schema
+} from './utils/seed.schemas'
+import * as v from 'valibot'
 
 const db = get_client({ readonly: false })
 
@@ -40,7 +41,8 @@ function seed() {
 	seed_properties({ type: 'category', folder: 'category-properties' })
 	seed_special_morphism_rules()
 	seed_implications({ type: 'category', folder: 'category-implications' })
-	seed_structures({ type: 'category', folder: 'categories', extra: insert_category })
+	seed_structures({ type: 'category', folder: 'categories' })
+	seed_special_category_data({ folder: 'categories' })
 
 	seed_properties({ type: 'functor', folder: 'functor-properties' })
 	seed_implications({ type: 'functor', folder: 'functor-implications' })
@@ -154,7 +156,7 @@ function seed_config() {
 		`INSERT INTO special_morphisms (kind, dual) VALUES (?, ?)`
 	)
 
-	function insert_config(config: ConfigYaml) {
+	function insert_config(config: v.InferOutput<typeof config_yaml_schema>) {
 		for (const type of STRUCTURE_TYPES) {
 			for (const tag of config.structure_tags) {
 				structure_tag_insert.run(tag, type)
@@ -182,7 +184,13 @@ function seed_config() {
 		}
 	}
 
-	seed_file(db, 'config', path.join(data_folder, 'config.yaml'), insert_config)
+	seed_file(
+		db,
+		'config',
+		path.join(data_folder, 'config.yaml'),
+		config_yaml_schema,
+		insert_config
+	)
 }
 
 /**
@@ -195,7 +203,9 @@ function seed_special_morphism_rules() {
 		VALUES (?, ?, ?, ?)`
 	)
 
-	function insert_rules(rules: SpecialMorphismRuleYaml[]) {
+	function insert_rules(
+		rules: v.InferOutput<typeof special_morphism_rule_yaml_schema>
+	) {
 		for (const { property, kind, description, proof } of rules) {
 			rule_insert.run(property, kind, description, proof)
 		}
@@ -205,6 +215,7 @@ function seed_special_morphism_rules() {
 		db,
 		'special morphism rules',
 		path.join(data_folder, 'special-morphism-rules.yaml'),
+		special_morphism_rule_yaml_schema,
 		insert_rules
 	)
 }
@@ -213,19 +224,11 @@ function seed_special_morphism_rules() {
  * Seeds all structures from YAML files of a given type,
  * including their property assignments.
  */
-function seed_structures<T extends StructureYaml>({
-	type,
-	folder,
-	extra
-}: {
-	type: StructureType
-	folder: string
-	extra?: (structure: T) => void
-}) {
+function seed_structures({ type, folder }: { type: StructureType; folder: string }) {
 	const structure_associations = db
 		.prepare<
 			[StructureType],
-			{ label: keyof T; target_type: StructureType; required: 0 | 1 }
+			{ label: string; target_type: StructureType; required: 0 | 1 }
 		>(
 			`SELECT label, target_type, required
 			FROM structure_associations WHERE source_type = ?`
@@ -275,7 +278,7 @@ function seed_structures<T extends StructureYaml>({
 		) VALUES (?, ?, ?, ?, ?)`
 	)
 
-	function insert_structure(structure: T) {
+	function insert_structure(structure: v.InferOutput<typeof structure_yaml_schema>) {
 		const properties_are_disjoint = are_disjoint(
 			[
 				structure.satisfied_properties,
@@ -304,20 +307,20 @@ function seed_structures<T extends StructureYaml>({
 		record_structure_addition(structure.id)
 
 		for (const { label, target_type, required } of structure_associations) {
-			if (required && !structure[label]) {
+			if (required && !structure.associated?.[label]) {
 				console.error(
 					`❌ ${capitalize(type)} "${structure.id}" has no ${label.toString()}`
 				)
 				process.exit(1)
 			}
 
-			if (structure[label]) {
+			if (structure.associated?.[label]) {
 				associated_structure_insert.run(
 					label,
 					type,
 					target_type,
 					structure.id,
-					structure[label]
+					structure.associated?.[label]
 				)
 			}
 		}
@@ -356,11 +359,15 @@ function seed_structures<T extends StructureYaml>({
 				proof_reference_insert.run(structure.id, entry.property, type, ref)
 			}
 		}
-
-		if (extra) extra(structure)
 	}
 
-	seed_files(db, PLURALS[type], path.join(data_folder, folder), insert_structure)
+	seed_files(
+		db,
+		PLURALS[type],
+		path.join(data_folder, folder),
+		structure_yaml_schema,
+		insert_structure
+	)
 }
 
 /**
@@ -375,9 +382,9 @@ function record_structure_addition(id: string) {
 }
 
 /**
- * Inserts the data of a category that is specific to categories.
+ * Inserts data of categories that is specific to categories.
  */
-function insert_category(category: CategoryYaml) {
+function seed_special_category_data({ folder }: { folder: string }) {
 	const category_insert = db.prepare(
 		`INSERT INTO categories (
 	        id, objects, morphisms
@@ -396,15 +403,25 @@ function insert_category(category: CategoryYaml) {
 		) VALUES (?, ?, ?, ?)`
 	)
 
-	category_insert.run(category.id, category.objects, category.morphisms)
+	function insert_category(category: v.InferOutput<typeof category_yaml_schema>) {
+		category_insert.run(category.id, category.objects, category.morphisms)
 
-	for (const [kind, entry] of Object.entries(category.special_objects)) {
-		special_object_insert.run(category.id, kind, entry.description)
+		for (const [kind, entry] of Object.entries(category.special_objects)) {
+			special_object_insert.run(category.id, kind, entry.description)
+		}
+
+		for (const [kind, entry] of Object.entries(category.special_morphisms)) {
+			special_morphism_insert.run(category.id, kind, entry.description, entry.proof)
+		}
 	}
 
-	for (const [kind, entry] of Object.entries(category.special_morphisms)) {
-		special_morphism_insert.run(category.id, kind, entry.description, entry.proof)
-	}
+	seed_files(
+		db,
+		'special category data',
+		path.join(data_folder, folder),
+		category_yaml_schema,
+		insert_category
+	)
 }
 
 /**
@@ -430,7 +447,7 @@ function seed_properties({ type, folder }: { type: StructureType; folder: string
 		VALUES (?, ?, ?)`
 	)
 
-	function insert_property(property: PropertyYaml) {
+	function insert_property(property: v.InferOutput<typeof property_yaml_schema>) {
 		property_insert.run(
 			property.id,
 			type,
@@ -459,6 +476,7 @@ function seed_properties({ type, folder }: { type: StructureType; folder: string
 		db,
 		`properties of ${PLURALS[type]}`,
 		path.join(data_folder, folder),
+		property_yaml_schema,
 		insert_property
 	)
 }
@@ -498,7 +516,9 @@ function seed_implications({ type, folder }: { type: StructureType; folder: stri
 		) VALUES (?, ?, ?, ?, ?)`
 	)
 
-	function insert_implications(implications: ImplicationYaml[]) {
+	function insert_implications(
+		implications: v.InferOutput<typeof implications_yaml_schema>
+	) {
 		for (const impl of implications) {
 			if (!impl.assumptions.length && !impl.associated_assumptions) {
 				console.error(`❌ Implication ${impl.id} has no assumptions.`)
@@ -540,6 +560,7 @@ function seed_implications({ type, folder }: { type: StructureType; folder: stri
 		db,
 		`${type} implications`,
 		path.join(data_folder, folder),
+		implications_yaml_schema,
 		insert_implications
 	)
 }
