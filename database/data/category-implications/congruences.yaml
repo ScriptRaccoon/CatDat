@@ -150,9 +150,9 @@
     @VVV @VV t V \\
     E+E' @>>> E +_X E'.
     \end{CD}$$
-    Since both morphisms $X \to E$ and $X \to E'$ used in the pushforward are monomorphisms, by the construction <a href="/content/pushouts-of-monos-via-congruence-quotients">here</a>, the morphism $E+E' \to E +_X E'$ is a regular epimorphism. Therefore, by the assumption that the category is regular, we have that $p$ is in fact a regular epimorphism.
+    Since both morphisms $X \to E$ and $X \to E'$ used in the pushout are monomorphisms, by the construction <a href="/content/pushouts-of-monos-via-congruence-quotients">here</a>, the morphism $E+E' \to E +_X E'$ is a regular epimorphism. Therefore, by the assumption that the category is regular, we have that $p$ is in fact a regular epimorphism.
 
-    From here, essentially the same argument as in <a href="/category-implication/regular_epi-regular_extensive_consequences">this proof</a> applies to show that $E$ is effective.
+    From here, <a href="/category-implication/regular_epi-regular_extensive_consequences">this proof</a> shows that $E$ is effective. This proof applies since the assumption that the category is epi-regular has only been used to make sure that $p$ is a regular epimorphism.
 
 - id: pretopos_balanced
   assumptions:
