@@ -109,3 +109,35 @@ This finishes the proof.
 _Remark._ Actually, the mentioned [result](/category-implication/parametrized_nno_criterion) and Lemma 4 can be combined into an equivalent characterization as follows: In a category with finite products and countable copowers, the NNO (which exists, see [here](/category-implication/nno_criterion)) is a parametrized NNO if and only if for all objects $A$ the canonical morphism
 $$\textstyle \coprod_{n \in \IN} A = \coprod_{n \in \IN} (A \times 1) \to A \times \coprod_{n \in \IN} 1$$
 is an isomorphism. This is the precise connection to countable distributivity.
+
+::: Lemma 5
+Let $F : \C \to \D$ be left adjoint to $G : \D \to \C$. Assume that $1_{\C}$ is a terminal object of $\C$ such that $1_{\D} \coloneqq F(1_{\C})$ is a terminal object of $\D$. Then $F$ preserves natural numbers objects. That is, if $(N,z,s)$ is a natural numbers object in $\C$, then its image $(F(N),F(z),F(s))$ is a natural numbers object in $\D$.
+:::
+
+::: Proof
+For a category $\C$ with a terminal object $1_{\C}$, let $R(\C)$ denote the category of diagrams
+$$1_{\C} \xrightarrow{x_0} X \xrightarrow{r} X$$
+in $\C$. A natural numbers object in $\C$ is precisely an initial object of $R(\C)$. Suppose that $H : \C \to \D$ is a functor between categories with terminal objects that preserves terminal objects. Then $H$ induces a functor $R(H) : R(\C) \to R(\D)$ that maps
+$$1_{\C} \xrightarrow{x_0} X \xrightarrow{r} X$$
+to its image
+$$1_{\D} \cong H(1_{\C}) \xrightarrow{H(x_0)} H(X) \xrightarrow{H(r)} H(X).$$
+
+In the situation of the lemma, we therefore have two functors
+
+$$
+\begin{align*}
+R(F) & : R(\C) \to R(\D),\\
+R(G) & : R(\D) \to R(\C).
+\end{align*}
+$$
+
+Notice that $G$ preserves terminal objects since it is a right adjoint.
+
+We claim that $R(F)$ is left adjoint to $R(G)$. Indeed, for objects $(X,x_0,r) \in R(\C)$ and $(Y,y_0,s) \in R(\D)$, a morphism $R(F)(X,x_0,r) \to (Y,y_0,s)$ is the same as a morphism $f : F(X) \to Y$ such that
+$$f \circ F(x_0) = y_0, \quad s \circ f = f \circ F(r).$$
+Under the adjunction $F \dashv G$, it corresponds to a morphism $\widetilde{f} : X \to G(Y)$ such that
+$$\widetilde{f} \circ x_0 = G(y_0), \quad G(s) \circ \widetilde{f} = \widetilde{f} \circ r.$$
+This is precisely a morphism $(X,x_0,r) \to R(G)(Y,y_0,s)$.
+
+Since $R(F)$ is a left adjoint, it preserves initial objects. This is precisely the statement that $F$ preserves natural numbers objects.
+:::
