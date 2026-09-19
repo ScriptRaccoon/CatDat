@@ -80,6 +80,20 @@ satisfied_properties:
       which for $i=k$ gives the desired result.
     label: SeqSet_conn_subobject_classifier
 
+  - property: cogenerator
+    proof: >-
+      We claim that the subobject classifier $\Omega$ that we have constructed above is a cogenerator. In other words, if $f,g : X \rightrightarrows Y$ are distinct morphisms of connected sequences, then there is a subobject $U \subseteq Y$ such that $f^*(U) \neq g^*(U)$ as subobjects of $X$.
+
+      Choose some $n \geq 0$ and $x_n \in X_n$ such that $f_n(x_n) \neq g_n(x_n)$ in $Y_n$. Define the subsequence $U \subseteq Y$ by
+      $$U_k = \begin{cases}
+      \varnothing & k < n \\
+      Y_n \setminus \{f_n(x_n)\} & k = n \\
+      Y_k & k > n 
+      \end{cases}$$
+      Since $U_k = Y_k$ for $k > n$ and $Y$ is connected, it follows that $U$ is connected. Since $f_n(x_n) \notin U_n$, the set $f^*(U)_n = (f_n)^*(U_n)$ does not contain $x_n$. But the set $g^*(U)_n = (g_n)^*(U_n)$ does contain $x_n$ because $g_n(x_n) \in U_n$. Hence, $f^*(U) \neq g^*(U)$.
+    references:
+      - SeqSet_conn_subobject_classifier
+
   - property: finitely accessible
     proof: >-
       Let $X$ be a sequence of finite sets such that there is some $k \geq 0$ such that $X_n \to X_{n+1}$ is bijective for all $n \geq k$. Then it is easy to check that $X$ is finitely presentable in the category of sequences of sets $[(\IN,\leq),\Set]$, using the fact that finite sets are finitely presentable in $\Set$. (One can show that every finitely presentable object has this form, but we will not need this fact.) It follows that if $X$ is a sequence of finite sets that eventually consists of singletons, i.e. is of the form
