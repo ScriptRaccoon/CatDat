@@ -3,7 +3,7 @@ name: category of connected sequences of sets
 notation: $[(\IN,\leq),\Set]_{\conn}$
 objects: 'sequences of sets $X_0 \to X_1 \to X_2 \to \cdots$ that are <i>connected</i>, meaning that $\colim_{n \geq 0} X_n$ is a singleton set'
 morphisms: commutative diagrams
-description: This is a full subcategory of the <a href="/category/SeqSet">category of sequences of sets</a>, containing those sequences $X_0 \to X_1 \to X_2 \to \cdots$ with the following two properties. (1) There is some $n \geq 0$ with $X_n \neq \varnothing$. (2) For all $n \geq 0$ and all $x,y \in X_n$ there is some $k \geq n$ such that $x,y$ map to the same element in $X_k$. We have added this category to provide an example of a category with a subobject classifier but without an initial object.
+description: This is a full subcategory of the <a href="/category/SeqSet">category of sequences of sets</a>, containing those sequences $X_0 \to X_1 \to X_2 \to \cdots$ whose colimit is a singleton set. Equivalently, the following two properties are satisfied. (1) There is some $n \geq 0$ with $X_n \neq \varnothing$. (2) For all $n \geq 0$ and all $x,y \in X_n$ there is some $k \geq n$ such that $x,y$ map to the same element in $X_k$. We have added this category to provide an example of a category with a subobject classifier but without an initial object.
 nlab_link: null
 
 tags:
