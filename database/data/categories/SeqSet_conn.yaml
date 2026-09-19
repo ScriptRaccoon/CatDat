@@ -65,8 +65,27 @@ satisfied_properties:
       which for $i=k$ gives the desired result.
     label: SeqSet_conn_subobject_classifier
 
-  # - property: finitely accessible
-  #   proof: TBA
+  - property: finitely accessible
+    proof: >-
+      Let $X$ be a sequence of finite sets such that there is some $k \geq 0$ such that $X_n \to X_{n+1}$ is bijective for all $n \geq k$. Then it is easy to check that $X$ is finitely presentable in the category of sequences of sets $[(\IN,\leq),\Set]$, using the fact that finite sets are finitely presentable in $\Set$. (One can show that every finitely presentable object has this form, but we will not need this fact.) It follows that if $X$ is a sequence of finite sets that eventually consists of singletons, i.e. is of the form
+      $$X_0 \to \cdots \to X_{k-1} \to \{\ast\} \to \{\ast\} \to \cdots,$$
+      then $X$ is finitely presentable in $[(\IN,\leq),\Set]_{\conn}$. The collection of isomorphism classes of such sequences is essentially small. It remains to prove that every connected sequence of sets is a filtered colimit of such sequences.
+
+      Let $X$ be any connected sequence. Consider the set $P$ of subsequences $U \subseteq X$ (meaning that $U_n \subseteq X_n$ and the transition maps of $U$ are restrictions of the transition maps of $X$) such that each $U_n$ is finite and there is some $k \geq 0$ such that $U_n$ is a singleton for every $n \geq k$. Then $(P,\subseteq)$ is a partial order.
+
+      Let us check that $(P,\subseteq)$ is directed. First, it is non-empty, because we may choose some element $x_n \in X_n$, and then the sequence
+      $$\varnothing \to \cdots \to \varnothing \to \{x_n\} \to \{x_{n+1}\} \to \cdots$$
+      belongs to $P$, where the empty sets occupy the indices $0,1,\dotsc,n-1$ and $x_m$ denotes the image of $x_n$ in $X_m$ for any $m \geq n$.
+
+      Now let $U,V \in P$. There is some $k \geq 0$ such that both $U_n$ and $V_n$ are singletons for every $n \geq k$. Write $U_k = \{u_k\}$ and $V_k = \{v_k\}$. Then $u_k,v_k \in X_k$, so there is some $m \geq k$ such that $u_k$ and $v_k$ have the same image $x_m \in X_m$. Since $U \subseteq X$ and $V \subseteq X$ are subsequences, we have $x_m \in U_m$ and $x_m \in V_m$, so $U_m = \{x_m\}$ and $V_m = \{x_m\}$. Define $W \subseteq X$ by $W_n = U_n \cup V_n$ for $n \leq m$ and $W_n = \{x_n\}$ for $n \geq m$, where $x_n$ denotes the image of $x_m$ in $X_n$. Then $W \in P$, and clearly $U \subseteq W$ and $V \subseteq W$, as required.
+
+      We claim that the canonical morphism
+      $$\colim_{U \in P} U \to X$$
+      induced by the inclusion maps $U \hookrightarrow X$ is an isomorphism. In other words, for every $n \geq 0$, the component
+      $$\colim_{U \in P} U_n \to X_n$$
+      is an isomorphism. It is injective since $(P,\leq)$ is directed and each $U_n \hookrightarrow X_n$ is injective. To show surjectivity, let $x_n \in X_n$. As before, consider the sequence $U$ defined by
+      $$\varnothing \to \cdots \to \varnothing \to \{x_n\} \to \{x_{n+1}\} \to \cdots.$$
+      It belongs to $P$, and the element $x_n \in U_n$ induces an element of $\colim_{U \in P} U_n$ that maps to $x_n \in X_n$.
 
 unsatisfied_properties:
   - property: skeletal
