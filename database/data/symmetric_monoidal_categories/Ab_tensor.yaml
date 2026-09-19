@@ -1,7 +1,8 @@
 id: Ab_tensor
 name: symmetric monoidal category of abelian groups
 notation: $(\Ab,\otimes,\IZ)$
-underlying_category: Ab
+associated:
+  underlying_category: Ab
 description: This is the category of abelian groups equipped with the usual tensor product of abelian groups and the monoidal unit $\IZ$. It is the special case of <a href="/symmetric_monoidal_category/R-Mod_tensor_naf">$(R{-}\Mod,\otimes,R)$</a> where $R = \IZ$.
 nlab_link: https://ncatlab.org/nlab/show/tensor+product+of+abelian+groups
 parent: R-Mod_tensor_naf

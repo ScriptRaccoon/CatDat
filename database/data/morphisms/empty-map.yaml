@@ -1,7 +1,8 @@
 id: empty-map
 name: map from the empty set
 notation: $!$
-category: Set
+associated:
+  category: Set
 description: 'For every set $X$ there is a unique map $! : \varnothing \hookrightarrow X$, the empty map. In this entry, we require that $X$ is non-empty.'
 nlab_link: https://ncatlab.org/nlab/show/empty+set
 

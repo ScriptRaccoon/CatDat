@@ -1,12 +1,13 @@
 id: trivial_Idem
 name: trivial functor from the walking idempotent
 notation: $!_{\Idem}$
-domain: walking_idempotent
-codomain: '1'
+associated:
+  domain: walking_idempotent
+  codomain: '1'
+  left_adjoint: null
+  right_adjoint: null
 description: 'Every category $\C$ has a unique functor $!_{\C} : \C \to 1$ into the trivial category. Here, we specify that $\C$ is the walking idempotent. It is a basic example of an essentially injective functor which is not conservative.'
 nlab_link: null
-left_adjoint: null
-right_adjoint: null
 
 tags:
   - category theory

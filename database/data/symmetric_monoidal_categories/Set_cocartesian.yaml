@@ -1,7 +1,8 @@
 id: Set_cocartesian
 name: cocartesian symmetric monoidal category of sets
 notation: $(\Set,\sqcup,0)$
-underlying_category: Set
+associated:
+  underlying_category: Set
 description: Every category with finite coproducts (also called a cocartesian category) can be endowed with a symmetric monoidal structure, where $1$ is the initial object and $\otimes$ is the coproduct $\sqcup$. In this case, we apply this to the category $\Set$.
 nlab_link: https://ncatlab.org/nlab/show/cocartesian+monoidal+category
 

@@ -1,7 +1,8 @@
 id: inclusion_positive_numbers
 name: inclusion of positive numbers
 notation: $i$
-category: Man
+associated:
+  category: Man
 description: This is the inclusion map $(0,\infty) \to \IR$ inside the category of smooth manifolds. It provides an example of an extremal monomorphism that is not strong.
 nlab_link: null
 

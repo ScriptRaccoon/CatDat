@@ -1,12 +1,13 @@
 id: trivial_sets
 name: trivial functor from the category of sets
 notation: $!_\Set$
-domain: Set
-codomain: '1'
+associated:
+  domain: Set
+  codomain: '1'
+  left_adjoint: null
+  right_adjoint: null
 description: 'Every category $\C$ has a unique functor $!_{\C} : \C \to 1$ into the trivial category. Here, we specify that $\C$ is the category of sets.'
 nlab_link: null
-left_adjoint: null
-right_adjoint: null
 
 tags:
   - set theory

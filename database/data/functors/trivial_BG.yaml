@@ -1,12 +1,13 @@
 id: trivial_BG
 name: trivial functor from the delooping
 notation: $!_{BG}$
-domain: BG
-codomain: '1'
+associated:
+  domain: BG
+  codomain: '1'
+  left_adjoint: null
+  right_adjoint: null
 description: 'Every category $\C$ has a unique functor $!_{\C} : \C \to 1$ into the trivial category. Here, we specify that $\C$ is the delooping of a non-trivial group $G$. It is a basic example of a conservative functor which is not faithful.'
 nlab_link: null
-left_adjoint: null
-right_adjoint: null
 
 tags:
   - algebra

@@ -1,12 +1,13 @@
 id: forget_finite_group
 name: forgetful functor from finite groups to groups
 notation: $U_{\FinGrp, \Grp}$
-domain: FinGrp
-codomain: Grp
+associated:
+  domain: FinGrp
+  codomain: Grp
+  left_adjoint: null
+  right_adjoint: null
 description: 'This is the inclusion functor $\FinGrp \hookrightarrow \Grp$. It can also be viewed as a forgetful functor that forgets the property of being finite. Among other things, it provides an example of a fully faithful functor that is neither finitary nor cofinitary.'
 nlab_link: https://ncatlab.org/nlab/show/forgetful+functor
-left_adjoint: null
-right_adjoint: null
 
 tags:
   - algebra

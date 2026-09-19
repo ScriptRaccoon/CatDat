@@ -1,7 +1,8 @@
 id: baer-specker-relations
 name: Baer-Specker relations
 notation: $m$
-category: FreeAb
+associated:
+  category: FreeAb
 description: 'Consider the Baer-Specker group $\IZ^\IN$ and choose a free abelian group $F$ with an epimorphism $\pi : F \to \IZ^\IN$ (for example, to make this example explicit, the free abelian group on the underlying set of $\IZ^\IN$). Let $K \subseteq F$ be its kernel (which is also free abelian). In this entry, we consider the inclusion $m : K \hookrightarrow F$. It provides an example of a strict monomorphism which is not regular.'
 nlab_link: null
 

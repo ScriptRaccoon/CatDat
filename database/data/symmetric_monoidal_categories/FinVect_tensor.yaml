@@ -1,7 +1,8 @@
 id: FinVect_tensor
 name: symmetric monoidal category of finite-dimensional vector spaces
 notation: $(\FinVect_K,\otimes,K)$
-underlying_category: FinVect
+associated:
+  underlying_category: FinVect
 description: This is the full symmetric monoidal subcategory of $(\Vect_K,\otimes,K)$ (see <a href="/symmetric_monoidal_category/R-Mod_tensor_af">here</a>) spanned by the finite-dimensional vector spaces.
 nlab_link: https://ncatlab.org/nlab/show/FinDimVect
 

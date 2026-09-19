@@ -1,7 +1,8 @@
 id: R-Mod_tensor
 name: symmetric monoidal category of modules over a commutative ring
 notation: $(R{-}\Mod,\otimes,R)$
-underlying_category: R-Mod
+associated:
+  underlying_category: R-Mod
 description: When $R$ is a commutative ring, we equip the category of left $R$-modules $R{-}\Mod$ with the usual symmetric monoidal structure, where $\otimes$ is the <a href="https://en.wikipedia.org/wiki/Tensor_product_of_modules" target="_blank">tensor product of modules</a> and the monoidal unit is $R$. The associator is defined by $(a \otimes b) \otimes c \mapsto a \otimes (b \otimes c)$, the left unitor maps $1 \otimes a \mapsto a$, the right unitor maps $a \otimes 1 \mapsto a$, and the symmetry maps $a \otimes b \mapsto b \otimes a$.
 nlab_link: https://ncatlab.org/nlab/show/tensor+product+of+modules
 

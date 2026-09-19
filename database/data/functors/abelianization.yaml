@@ -1,12 +1,13 @@
 id: abelianization
 name: abelianization functor for groups
 notation: $(-)^{\ab}$
-domain: Grp
-codomain: Ab
+associated:
+  domain: Grp
+  codomain: Ab
+  left_adjoint: null
+  right_adjoint: forget_abelian
 description: This functor maps a group $G$ to its abelianization $G^{\ab} \coloneqq G/[G,G]$.
 nlab_link: https://ncatlab.org/nlab/show/abelianization
-left_adjoint: null
-right_adjoint: forget_abelian
 
 tags:
   - algebra

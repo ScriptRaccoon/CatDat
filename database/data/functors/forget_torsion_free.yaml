@@ -1,12 +1,13 @@
 id: forget_torsion_free
 name: forgetful functor from torsion-free abelian groups to abelian groups
 notation: $U_{\TorsFreeAb, \Ab}$
-domain: TorsFreeAb
-codomain: Ab
+associated:
+  domain: TorsFreeAb
+  codomain: Ab
+  left_adjoint: null
+  right_adjoint: null
 description: 'This is the inclusion functor $\TorsFreeAb \hookrightarrow \Ab$. It can also be seen as a forgetful functor which forgets the property of being torsion-free. The functor provides a typical example of a fully faithful functor that does not preserve coequalizers and does not preserve epimorphisms.'
 nlab_link: null
-left_adjoint: null
-right_adjoint: null
 
 tags:
   - algebra
