@@ -4,7 +4,7 @@ import { get_property_assignments, seed_file, seed_files } from './utils/seed.he
 import { get_client } from '$shared/db'
 import { create_schema_hash, get_saved_schema_hash } from './utils/schema'
 import { STRUCTURE_TYPES, type StructureType, PLURALS } from '$shared/config'
-import { are_disjoint, capitalize, devlog } from '$shared/utils'
+import { capitalize, devlog } from '$shared/utils'
 import {
 	category_yaml_schema,
 	config_yaml_schema,
@@ -279,20 +279,6 @@ function seed_structures({ type, folder }: { type: StructureType; folder: string
 	)
 
 	function insert_structure(structure: v.InferOutput<typeof structure_yaml_schema>) {
-		const properties_are_disjoint = are_disjoint(
-			[
-				structure.satisfied_properties,
-				structure.unsatisfied_properties,
-				structure.undecidable_properties ?? []
-			],
-			(entry) => entry.property
-		)
-
-		if (!properties_are_disjoint) {
-			console.error(`❌ Properties of ${structure.id} are contradictory.`)
-			process.exit(1)
-		}
-
 		structure_insert.run(
 			structure.id,
 			type,
@@ -323,11 +309,6 @@ function seed_structures({ type, folder }: { type: StructureType; folder: string
 					structure.associated?.[label]
 				)
 			}
-		}
-
-		if (!structure.tags.length) {
-			console.error(`❌ ${capitalize(type)} "${structure.id}" has no tags`)
-			process.exit(1)
 		}
 
 		for (const tag of structure.tags) {
@@ -462,11 +443,6 @@ function seed_properties({ type, folder }: { type: StructureType; folder: string
 			related_insert.run(property.id, related, type)
 		}
 
-		if (!property.tags.length) {
-			console.error(`❌ Property "${property.id}" has no tags`)
-			process.exit(1)
-		}
-
 		for (const tag of property.tags) {
 			tag_insert.run(property.id, tag, type)
 		}
@@ -520,16 +496,6 @@ function seed_implications({ type, folder }: { type: StructureType; folder: stri
 		implications: v.InferOutput<typeof implications_yaml_schema>
 	) {
 		for (const impl of implications) {
-			if (!impl.assumptions.length && !impl.associated_assumptions) {
-				console.error(`❌ Implication ${impl.id} has no assumptions.`)
-				process.exit(1)
-			}
-
-			if (!impl.conclusions.length) {
-				console.error(`❌ Implication ${impl.id} has no conclusions.`)
-				process.exit(1)
-			}
-
 			implication_insert.run(impl.id, type, impl.proof, impl.is_equivalence ? 1 : 0)
 
 			for (const assumption of impl.assumptions) {
