@@ -36,6 +36,21 @@ satisfied_properties:
   - property: regular
     proof: We already know that the category has finite limits and coequalizers, and the inclusion functor to the regular <a href="/category/SeqSet">category of sequences of sets</a> is fully faithful and preserves finite limits and coequalizers. Thus, the claim follows from Lemma 7 <a href="/content/subcategories">here</a>.
 
+  - property: effective congruences
+    proof: Since the <a href="/category/SeqSet">category of sequences of sets</a> has effective congruences, finite limits and coequalizers, and the full subcategory of connected sequences is closed under finite limits and coequalizers, this follows from Lemma 8 <a href="/content/subcategories">here</a>.
+
+  - property: effective cocongruences
+    proof: >-
+      Since the <a href="/category/SeqSet">category of sequences of sets</a> $[(\IN,\leq),\Set]$ has effective cocongruences, pushouts and equalizers, and the full subcategory $[(\IN,\leq),\Set]_{\conn}$ is closed under pushouts and equalizers, this follows from Lemma 8 <a href="/content/subcategories">here</a> as long as we can prove that the inclusion functor
+      $$[(\IN,\leq),\Set]_{\conn} \hookrightarrow [(\IN,\leq),\Set]$$
+      preserves jointly epimorphic parallel pairs, which is not immediate because connected sequences are not closed under binary coproducts. But we can even prove this for non-parallel pairs.
+
+      Let $f : X \to Z$ and $g : Y \to Z$ be jointly epimorphic morphisms in $[(\IN,\leq),\Set]_{\conn}$. We will prove that they are jointly epimorphic even in $[(\IN,\leq),\Set]$. Consider the subsequence $U \subseteq Z$ defined by
+      $$U_n \coloneqq (f_n)_*(X_n) \cup (g_n)_*(Y_n).$$
+      Since $X_n \neq \varnothing$ for some $n$, we also have $U_n \neq \varnothing$ for some $n$. Any two elements of $U_n$ become eventually equally in $Z$ and hence in $U$. Hence, $U$ is connected. Therefore, also the pushout $P \coloneqq Z \sqcup_U Z$ is connected. The two coprojections $i_1,i_2 : Z \rightrightarrows P$ are morphisms with $i_1 \circ f = i_2 \circ f$ and $i_1 \circ g = i_2 \circ g$. Since $f,g$ are jointly epimorphic, we conclude $i_1 = i_2$, i.e. $U = Z$. The equation
+      $$Z_n = (f_n)_*(X_n) \cup (g_n)_*(Y_n)$$
+      shows that $f$ and $g$ are pointwise jointly epimorphic, and therefore jointly epimorphic in $[(\IN,\leq),\Set]$.
+
   - property: subobject classifier
     proof: >-
       Define the map ("truncated subtraction") $s : \IN \to \IN$ by $s(k) = \max(0,k-1)$. We claim that the sequence
