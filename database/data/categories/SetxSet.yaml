@@ -12,9 +12,11 @@ tags:
 related:
   - Set
   - Set_arrow
+  - SeqSet
   - Sh(X)
   - Set_family
   - DiGraph
+  - SetxSet_0_fin
 
 satisfied_properties:
   - property: locally small

@@ -1,0 +1,60 @@
+id: SeqSet
+name: category of sequences of sets
+notation: $[(\IN,\leq),\Set]$
+objects: sequences of sets $X_0 \to X_1 \to X_2 \to \cdots$
+morphisms: commutative diagrams
+description: As a functor category of $\Set$, most properties are inherited from $\Set$, but a notable difference is that it has no generator.
+nlab_link: null
+
+tags:
+  - set theory
+
+related:
+  - Set
+  - Set_arrow
+  - SeqAb
+  - SetxSet
+  - SeqSet_conn
+
+satisfied_properties:
+  - property: locally small
+    proof: This is obvious.
+
+  - property: Grothendieck topos
+    proof: This follows from the description as a functor category $[(\IN,\leq),\Set]$.
+
+  - property: finitary algebraic
+    proof: 'Take the algebraic theory with sorts $S_0,S_1,\dotsc$ and unary operations $S_n \to S_{n+1}$ for every $n \geq 0$.'
+
+  - property: semi-strongly connected
+    proof: >-
+      Let $X,Y$ be two sequences. If $X_n = \varnothing$ for every $n \geq 0$, there is a unique morphism $X \to Y$. Likewise, if $Y_m = \varnothing$ for every $m \geq 0$, there is a unique morphism $Y \to X$. Otherwise, choose $n \geq 0$ minimal with $X_n \neq \varnothing$, and choose $m \geq 0$ minimal with $Y_m \neq \varnothing$. Assume without loss of generality that $n \leq m$. Choose an element $x_n \in X_n$. For $k \geq n$, let $x_k \in X_k$ denote its image under the map $X_n \to X_k$, and consider the constant map $Y_k \to X_k$ with value $x_k$. For $k < n \leq m$, define $\varnothing = Y_k \to X_k$ to be the unique map. This defines a morphism of sequences $Y \to X$.
+
+unsatisfied_properties:
+  - property: skeletal
+    proof: This is trivial.
+
+  - property: generator
+    proof: >-
+      Suppose the category of sequences had a generator. Then, by <a href="/content/topos-with-generator">this result</a>, every subterminal object would be either initial or terminal. However, $0 \to 1 \to 1 \to \cdots$ is a subterminal object which is isomorphic to neither the initial object $0 \to 0 \to 0 \to \cdots$ nor the terminal object $1 \to 1 \to 1 \to \cdots$.
+
+special_objects:
+  initial object:
+    description: the constant sequence $0 \to 0 \to \cdots$
+  terminal object:
+    description: the constant sequence $1 \to 1 \to \cdots$
+  coproducts:
+    description: component-wise defined disjoint union
+  products:
+    description: component-wise defined direct product
+
+special_morphisms:
+  isomorphisms:
+    description: morphisms $f = (f_n)_{n \geq 0}$ where every $f_n$ is bijective
+    proof: This is easy to check. It can also be deduced from the fact that isomorphisms in functor categories coincide with natural isomorphisms.
+  monomorphisms:
+    description: morphisms $f = (f_n)_{n \geq 0}$ where every $f_n$ is injective
+    proof: This holds in every functor category $[\C,\Set]$ because the evaluation functors are continuous.
+  epimorphisms:
+    description: morphisms $f = (f_n)_{n \geq 0}$ where every $f_n$ is surjective
+    proof: This holds in every functor category $[\C,\Set]$ because the evaluation functors are cocontinuous.

@@ -1,0 +1,204 @@
+id: SeqSet_conn
+name: category of connected sequences of sets
+notation: $[(\IN,\leq),\Set]_{\conn}$
+objects: 'sequences of sets $X_0 \to X_1 \to X_2 \to \cdots$ that are <i>connected</i>, meaning that $\colim_{n \geq 0} X_n$ is a singleton set'
+morphisms: commutative diagrams
+description: This is a full subcategory of the <a href="/category/SeqSet">category of sequences of sets</a>, containing those sequences $X_0 \to X_1 \to X_2 \to \cdots$ whose colimit is a singleton set. Equivalently, the following two properties are satisfied. (1) There is some $n \geq 0$ with $X_n \neq \varnothing$. (2) For all $n \geq 0$ and all $x,y \in X_n$ there is some $k \geq n$ such that $x,y$ map to the same element in $X_k$. We have added this category to provide an example of a category with a subobject classifier but without an initial object.
+nlab_link: null
+
+tags:
+  - set theory
+
+related:
+  - SeqSet
+  - Setne
+
+comments:
+  - This category has been suggested by Jonas Frey at <a target="_blank" href="https://mathoverflow.net/questions/515206">MO/515206</a>.
+
+satisfied_properties:
+  - property: locally small
+    proof: It is a full subcategory of the <a href="/category/SeqSet">category of sequences of sets</a>, which is locally small.
+
+  - property: semi-strongly connected
+    proof: It is a full subcategory of the <a href="/category/SeqSet">category of sequences of sets</a>, which is semi-strongly connected.
+
+  - property: finitely complete
+    proof: 'The <a href="/category/SeqSet">category of sequences of sets</a> has (finite) limits, defined pointwise. A sequence of sets $X$ is connected if and only if the unique maps $! : X_n \to \{\ast\}$ induce an isomorphism in the colimit. Since filtered colimits commute with finite limits in <a href="/category/Set">$\Set$</a>, a finite limit of connected sequences is again connected.'
+    check_redundancy: false
+
+  - property: connected colimits
+    proof: 'The <a href="/category/SeqSet">category of sequences of sets</a> has (connected) colimits, defined pointwise. A sequence of sets $X$ is connected if and only if the unique maps $! : X_n \to \{\ast\}$ induce an isomorphism in the colimit. Since colimits commute with (connected) colimits and since a connected colimit of singleton sets is a singleton set, a connected colimit of connected sequences is again connected.'
+
+  - property: exact filtered colimits
+    proof: Since the subcategory of connected sequences is closed under filtered colimits and finite limits, this follows from the corresponding property of the <a href="/category/SeqSet">category of sequences of sets</a>.
+
+  - property: regular
+    proof: We already know that the category has finite limits and coequalizers, and the inclusion functor to the regular <a href="/category/SeqSet">category of sequences of sets</a> is fully faithful and preserves finite limits and coequalizers. Thus, the claim follows from Lemma 7 <a href="/content/subcategories">here</a>.
+
+  - property: effective congruences
+    proof: Since the <a href="/category/SeqSet">category of sequences of sets</a> has effective congruences, finite limits and coequalizers, and the full subcategory of connected sequences is closed under finite limits and coequalizers, this follows from Lemma 8 <a href="/content/subcategories">here</a>.
+
+  - property: effective cocongruences
+    proof: >-
+      Since the <a href="/category/SeqSet">category of sequences of sets</a> $[(\IN,\leq),\Set]$ has effective cocongruences, pushouts and equalizers, and the full subcategory $[(\IN,\leq),\Set]_{\conn}$ is closed under pushouts and equalizers, this follows from Lemma 8 <a href="/content/subcategories">here</a> as long as we can prove that the inclusion functor
+      $$[(\IN,\leq),\Set]_{\conn} \hookrightarrow [(\IN,\leq),\Set]$$
+      preserves jointly epimorphic parallel pairs, which is not immediate because connected sequences are not closed under binary coproducts. But we can even prove this for non-parallel pairs.
+
+      Let $f : X \to Z$ and $g : Y \to Z$ be jointly epimorphic morphisms in $[(\IN,\leq),\Set]_{\conn}$. We will prove that they are jointly epimorphic even in $[(\IN,\leq),\Set]$. Consider the subsequence $U \subseteq Z$ defined by
+      $$U_n \coloneqq (f_n)_*(X_n) \cup (g_n)_*(Y_n).$$
+      Since $X_n \neq \varnothing$ for some $n$, we also have $U_n \neq \varnothing$ for some $n$. Any two elements of $U_n$ become eventually equally in $Z$ and hence in $U$. Hence, $U$ is connected. Therefore, also the pushout $P \coloneqq Z \sqcup_U Z$ is connected. The two coprojections $i_1,i_2 : Z \rightrightarrows P$ are morphisms with $i_1 \circ f = i_2 \circ f$ and $i_1 \circ g = i_2 \circ g$. Since $f,g$ are jointly epimorphic, we conclude $i_1 = i_2$, i.e. $U = Z$. The equation
+      $$Z_n = (f_n)_*(X_n) \cup (g_n)_*(Y_n)$$
+      shows that $f$ and $g$ are pointwise jointly epimorphic, and therefore jointly epimorphic in $[(\IN,\leq),\Set]$.
+
+  - property: subobject classifier
+    proof: >-
+      Define the map ("truncated subtraction") $s : \IN \to \IN$ by $s(k) = \max(0,k-1)$. We claim that the sequence
+      $$\Omega = \bigl(\IN \xrightarrow{s} \IN \xrightarrow{s} \IN \xrightarrow{s} \cdots\bigr)$$
+      is a subobject classifier, where $\top : 1 \to \Omega$ is defined by the elements $0 \in \IN$ in every degree. Clearly, $\Omega$ is connected. Consider a monomorphism $U \to X$. By the classification of monomorphisms below, we may assume that $U \subseteq X$ is a subsequence, i.e. $U_n \subseteq X_n$ for each $n$ and the transition maps $X_n \to X_{n+1}$ restrict to the transition maps $U_n \to U_{n+1}$.
+
+      For $x_n \in X_n$ we claim that there is some $k \geq 0$ such that its image $x_{n+k} \in X_{n+k}$ belongs to $U_{n+k}$. In fact, there is some $u_n \in U_n$, and connectedness of $X$ yields some $k \geq 0$ such that the image of $u_n$ in $X_{n+k}$ is equal to $x_{n+k}$, and this image belongs to $U_{n+k}$. Therefore, the map
+      $$\chi_n : X_n \to \IN, \quad x_n \mapsto \min \{k \in \IN : x_{n+k} \in U_{n+k}\}$$
+      is well-defined. We claim that the diagram
+      $$\begin{CD}
+      X_n @>{x_n \mapsto x_{n+1}}>> X_{n+1} \\
+      @V{\chi_n}VV @VV{\chi_{n+1}}V \\
+      \IN @>>{s}> \IN
+      \end{CD}$$
+      commutes, i.e. that if $k$ is the smallest number with $x_{n+k} \in U_{n+k}$, then $s(k)$ is the smallest number $k'$ with $x_{n+1+k'} \in U_{n+1+k'}$. If $k=0$, then $x_n \in U_n$, hence $x_{n+1} \in U_{n+1}$, so that $k'=0=s(k)$. Now assume $k > 0$, so that $s(k)=k-1$. Then $k' = k-1$, since $x_{n+1+(k-1)} \in U_{n+1+(k-1)}$ is clear and if $\ell < k-1$, i.e. $\ell+1 < k$, then $x_{n+(\ell+1)} \notin U_{n+(\ell+1)}$ by definition of $k$, or $x_{n+1+\ell} \notin U_{n+1+\ell}$.
+
+      Thus, $\chi = (\chi_n) : X \to \Omega$ is well-defined morphism of sequences. Since $\chi_n^*(\{0\}) = U_n$ for each $n$, the canonical morphism $U \to X \times_{\Omega} 1$ is an isomorphism. It remains to show that $\chi$ is unique with this property.
+
+      Let $\alpha : X \to \Omega$ be another morphism of sequences with $\alpha_n^*(\{0\}) = U_n$ for every $n$, and in particular $(\alpha_n)|_{U_n} = 0$. If $x_n \in X_n$ is any element, choose $k \geq 0$ minimal with $x_{n+k} \in U_{n+k}$, where $x_{n+k}$ denotes the image of $x_n$ as before. We claim
+      $$\alpha_n(x_n) = k.$$
+      For $k=0$, this is clear. Otherwise, we compute
+      $$0 = \alpha_{n+k}(x_{n+k}) = s(\alpha_{n+k-1}(x_{n+k-1}))$$
+      and $\alpha_{n+k-1}(x_{n+k-1}) \neq 0$ since $x_{n+k-1} \notin U_{n+k-1}$, so that
+      $$\alpha_{n+k-1}(x_{n+k-1})=1.$$
+      For any $i \geq 1$, the only preimage of $i$ under $s$ is $i+1$. Hence, by induction on $i \in \{1,\dotsc,k\}$, we see that
+      $$\alpha_{n+k-i}(x_{n+k-i})=i,$$
+      which for $i=k$ gives the desired result.
+    label: SeqSet_conn_subobject_classifier
+
+  - property: cogenerator
+    proof: >-
+      We claim that the subobject classifier $\Omega$ that we have constructed above is a cogenerator. In other words, if $f,g : X \rightrightarrows Y$ are distinct morphisms of connected sequences, then there is a subobject $U \subseteq Y$ such that $f^*(U) \neq g^*(U)$ as subobjects of $X$.
+
+      Choose some $n \geq 0$ and $x_n \in X_n$ such that $f_n(x_n) \neq g_n(x_n)$ in $Y_n$. Define the subsequence $U \subseteq Y$ by
+      $$U_k = \begin{cases}
+      \varnothing & k < n \\
+      Y_n \setminus \{f_n(x_n)\} & k = n \\
+      Y_k & k > n 
+      \end{cases}$$
+      Since $U_k = Y_k$ for $k > n$ and $Y$ is connected, it follows that $U$ is connected. Since $f_n(x_n) \notin U_n$, the set $f^*(U)_n = (f_n)^*(U_n)$ does not contain $x_n$. But the set $g^*(U)_n = (g_n)^*(U_n)$ does contain $x_n$ because $g_n(x_n) \in U_n$. Hence, $f^*(U) \neq g^*(U)$.
+    references:
+      - SeqSet_conn_subobject_classifier
+
+  - property: finitely accessible
+    proof: >-
+      Let $X$ be a sequence of finite sets such that there is some $k \geq 0$ such that $X_n \to X_{n+1}$ is bijective for all $n \geq k$. Then it is easy to check that $X$ is finitely presentable in the category of sequences of sets $[(\IN,\leq),\Set]$, using the fact that finite sets are finitely presentable in $\Set$. (One can show that every finitely presentable object has this form, but we will not need this fact.) It follows that if $X$ is a sequence of finite sets that eventually consists of singletons, i.e. is of the form
+      $$X_0 \to \cdots \to X_{k-1} \to \{\ast\} \to \{\ast\} \to \cdots,$$
+      then $X$ is finitely presentable in $[(\IN,\leq),\Set]_{\conn}$. The collection of isomorphism classes of such sequences is essentially small. It remains to prove that every connected sequence of sets is a filtered colimit of such sequences.
+
+      Let $X$ be any connected sequence. Consider the set $P$ of subsequences $U \subseteq X$ (meaning that $U_n \subseteq X_n$ and the transition maps of $U$ are restrictions of the transition maps of $X$) such that each $U_n$ is finite and there is some $k \geq 0$ such that $U_n$ is a singleton for every $n \geq k$. Then $(P,\subseteq)$ is a partial order.
+
+      Let us check that $(P,\subseteq)$ is directed. First, it is non-empty, because we may choose some element $x_n \in X_n$, and then the sequence
+      $$\varnothing \to \cdots \to \varnothing \to \{x_n\} \to \{x_{n+1}\} \to \cdots$$
+      belongs to $P$, where the empty sets occupy the indices $0,1,\dotsc,n-1$ and $x_m$ denotes the image of $x_n$ in $X_m$ for any $m \geq n$.
+
+      Now let $U,V \in P$. There is some $k \geq 0$ such that both $U_n$ and $V_n$ are singletons for every $n \geq k$. Write $U_k = \{u_k\}$ and $V_k = \{v_k\}$. Then $u_k,v_k \in X_k$, so there is some $m \geq k$ such that $u_k$ and $v_k$ have the same image $x_m \in X_m$. Since $U \subseteq X$ and $V \subseteq X$ are subsequences, we have $x_m \in U_m$ and $x_m \in V_m$, so $U_m = \{x_m\}$ and $V_m = \{x_m\}$. Define $W \subseteq X$ by $W_n = U_n \cup V_n$ for $n \leq m$ and $W_n = \{x_n\}$ for $n \geq m$, where $x_n$ denotes the image of $x_m$ in $X_n$. Then $W \in P$, and clearly $U \subseteq W$ and $V \subseteq W$, as required.
+
+      We claim that the canonical morphism
+      $$\colim_{U \in P} U \to X$$
+      induced by the inclusion maps $U \hookrightarrow X$ is an isomorphism. In other words, for every $n \geq 0$, the component
+      $$\colim_{U \in P} U_n \to X_n$$
+      is an isomorphism. It is injective since $(P,\leq)$ is directed and each $U_n \hookrightarrow X_n$ is injective. To show surjectivity, let $x_n \in X_n$. As before, consider the sequence $U$ defined by
+      $$\varnothing \to \cdots \to \varnothing \to \{x_n\} \to \{x_{n+1}\} \to \cdots.$$
+      It belongs to $P$, and the element $x_n \in U_n$ induces an element of $\colim_{U \in P} U_n$ that maps to $x_n \in X_n$.
+
+unsatisfied_properties:
+  - property: skeletal
+    proof: This is trivial.
+
+  - property: essentially small
+    proof: For every set $X$ the sequence $X \to \{\ast\} \to \{\ast\} \to \cdots$ is connected, and non-isomorphic sets yield non-isomorphic sequences.
+
+  - property: locally finite
+    proof: The endomorphisms of the sequence $\IN \to \{\ast\} \to \{\ast\} \to \cdots$ correspond to the endomorphisms of the set $\IN$.
+
+  - property: disjoint finite products
+    proof: >-
+      If $X,Y$ are connected sequences with $X_0 = \varnothing$ and $Y_0 \neq \varnothing$, for example
+      $$\begin{align*}
+      X & = \bigl(\varnothing \to \{\ast\} \to \{\ast\} \to \cdots\bigr), \\
+      Y & = \bigl(\{\ast\} \to \{\ast\} \to \{\ast\} \to \cdots\bigr),
+      \end{align*}$$
+      then the projection $X \times Y \to Y$ is not an epimorphism. In fact, by their classification below, this would require $X_0 \times Y_0 \to Y_0$ to be surjective, which is not the case.
+
+  - property: generator
+    proof: >-
+      Assume that $G$ is a generator sequence. For every $n \in \IN$ consider the sequence
+      $$\varnothing \to \cdots \to \varnothing \to \IN \to \{\ast\} \to \{\ast\} \to \cdots,$$
+      where the empty sets occupy the indices $0,1,\dotsc,n$. It is connected and has a non-trivial endomorphism. Thus, there must be a morphism from $G$ to that sequence that distinguishes the two endomorphisms. Thus, $G_0,\dotsc,G_n$ are empty, while $G_{n+1}$ must be non-empty. Since this holds for all $n$, we get a contradiction.
+
+  - property: ℵ₁-cofiltered
+    proof: >-
+      For every $n \in \IN$ consider the sequence $X^n$ defined by
+      $$\varnothing \to \cdots \to \varnothing \to \{\ast\} \to \{\ast\} \to \cdots,$$
+      where the empty sets occupy the indices $0,1,\dotsc,n$. Clearly, $X^n$ is connected. If there is some connected sequence $Y$ admitting morphisms $Y \to X^n$ for every $n \in \IN$, this implies $Y_0=\cdots=Y_n=\varnothing$ for every $n \in \IN$. Thus, $Y$ is the empty sequence, which however is not connected. Therefore, the countable family $(X^n)_{n \in \IN}$ has no cone.
+
+  - property: binary copowers
+    proof: >-
+      We show that the coproduct $1+1$ does not exist, where $1$ denotes the terminal object, the constant sequence with value $\{\ast\}$. Since a morphism $1 \to X$ corresponds to an element of $X_0$, this amounts to a universal connected sequence of sets $X$ equipped with two elements $x,x' \in X_0$. Choose $k \geq 0$ such that their images in $X_k$ coincide. Then, by virtue of the universal property, for every connected sequence $Y$ and every pair of elements $y,y' \in Y_0$, their images in $Y_k$ coincide. The smallest counterexample is the sequence $Y$ defined by
+      $$\{0,1\} \xrightarrow{\id} \cdots \xrightarrow{\id} \{0,1\} \xrightarrow{!} \{0\} \xrightarrow{!} \{0\} \xrightarrow{!} \cdots,$$
+      where $Y_k = \{0,1\}$ and $Y_{k+1}=\{\ast\}$. It is connected, and the elements $0,1 \in Y_0$ become only equal in $Y_{k+1}$.
+      Another counterexample is the subobject classifier $\Omega$ with the elements $0,k+1 \in \Omega_0$.
+    references:
+      - SeqSet_conn_subobject_classifier
+
+  - property: countable powers
+    proof: >-
+      First, we prove that the inclusion functor $[(\IN,\leq),\Set]_{\conn} \hookrightarrow [(\IN,\leq),\Set]$ is continuous. By the Yoneda Lemma, the Hom-functors $\Hom(n,-)$ for $n \geq 0$ form an extremal generating collection of the functor category $[(\IN,\leq),\Set]$. The corresponding sequence is
+      $$\varnothing \to \cdots \to \varnothing \to \{\ast\}\to \{\ast\} \to \cdots,$$
+      where $\{\ast\}$ starts at index $n$, and this sequence is clearly connected. Now the claim follows from the dual of Lemma 1 <a href="/content/inclusion-functors">here</a>.
+
+      Thus, it suffices to prove that connected sequences are not closed under countable powers of sequences, which are defined pointwise. Consider the subobject classifier
+      $$\Omega = \bigl(\IN \xrightarrow{s} \IN \xrightarrow{s} \IN \xrightarrow{s} \cdots\bigr)$$
+      with $s(k) = \max(0,k-1)$. We will prove that $\Omega^{\IN}$ is not connected. For the two elements $n,0 \in \Omega_0 = \IN$, their images in $\Omega_k = \IN$ coincide if and only if $k \geq n$. It follows that the two elements $(0,1,2,\dotsc)$ and $(0,0,\dotsc)$ of $\Omega_0^{\IN}$ have the same image in $\Omega_k^{\IN}$ if and only if $k \geq n$ for every $n \in \IN$. Thus, no such number $k$ exists, and $\Omega^{\IN}$ is not connected.
+    references:
+      - SeqSet_conn_subobject_classifier
+
+  - property: natural numbers object
+    proof: >-
+      Assume that a natural numbers object $(N,z,s)$ exists in $[(\IN,\leq),\Set]_{\conn}$. The morphism $z : 1 \to N$ corresponds to an element $z \in N_0$. The functor
+      $$[(\IN,\leq),\Set]_{\conn} \to \Set, \quad X \mapsto X_0$$
+      has a right adjoint mapping a set $S$ to the connected sequence
+      $$S \xrightarrow{!} \{\ast\} \xrightarrow{!} \{\ast\} \xrightarrow{!} \cdots,$$
+      and it preserves terminal objects. Thus, by Lemma 5 <a href="/content/natural_numbers_objects">here</a>, the triple $(N_0,z,s_0)$ is a natural numbers object of $\Set$, and therefore isomorphic to the standard natural numbers object $(\IN, 0, x \mapsto x+1)$. In particular, $N_0$ is an infinite set.
+
+      For every $k \geq 0$ consider the connected sequence $X$ defined by
+      $$N_0 \xrightarrow{\id} \cdots \xrightarrow{\id} N_0 \xrightarrow{!} \{\ast\} \xrightarrow{!} \{\ast\} \xrightarrow{!} \cdots,$$
+      where the singleton sets start at index $k+1$. The element $z \in N_0 = X_0$ induces a morphism $z : 1 \to X$. We define the endomorphism $r : X \to X$ by using the map $s_0 : N_0 \to N_0$ at indices $0,\dotsc,k$ and the unique maps at indices $> k$. Since $(N,z,s)$ is a natural numbers object, there is a (unique) morphism of sequences $f : N \to X$ such that $f_0(z)=z$ and $r \circ f = f \circ s$. Evaluating this equation at index $0$ yields $s_0 \circ f_0 = f_0 \circ s_0$, so that $f_0 = \id_{N_0}$. Furthermore, naturality of $f : N \to X$ for $0 \to k$ shows that the diagram
+      $$\begin{CD}
+      N_0 @>{N_{0 \to k}}>> N_k \\
+      @V{\id}VV @VV{f_k}V \\
+      N_0 @>>{\id}> N_0
+      \end{CD}$$
+      commutes. In particular, each transition map $N_0 \to N_k$ is injective. It follows that also the induced map $N_0 \to \colim_k N_k$ is injective. But this contradicts the fact that $N_0$ is infinite and $\colim_k N_k$ is a singleton set.
+
+special_objects:
+  terminal object:
+    description: the constant sequence $\{\ast\} \to \{\ast\} \to \cdots$
+  products:
+    description: '[finite case] component-wise defined direct product'
+
+special_morphisms:
+  isomorphisms:
+    description: morphisms $f = (f_n)_{n \geq 0}$ where every $f_n$ is bijective
+    proof: It is a full subcategory of the <a href="/category/SeqSet">category of sequences of sets</a>, where isomorphisms are described as stated.
+  monomorphisms:
+    description: morphisms $f = (f_n)_{n \geq 0}$ where every $f_n$ is injective
+    proof: Morphisms with injective components are clearly monomorphisms. To prove the converse, use that the inclusion functor into the <a href="/category/SeqSet">category of sequences of sets</a> preserves finite limits (by their construction), hence preserves monomorphisms, and that monomorphisms of the category of sequences have injective components.
+  epimorphisms:
+    description: morphisms $f = (f_n)_{n \geq 0}$ where every $f_n$ is surjective
+    proof: Morphisms with surjective components are clearly epimorphisms. To prove the converse, use that the inclusion functor into the <a href="/category/SeqSet">category of sequences of sets</a> preserves connected colimits, hence preserves pushouts in particular, and therefore preserves epimorphisms, and that epimorphisms of the category of sequences have surjective components.

@@ -35,12 +35,14 @@
 \op: \mathrm{op}
 \c: \mathrm{c}
 \ff: \mathrm{ff}
+\fc: \mathrm{fc}
 \fg: \mathrm{fg}
 \fp: \mathrm{fp}
 \ab: \mathrm{ab}
 \reg: \mathrm{reg}
 \fin: \mathrm{fin}
 \noiso: \mathrm{noiso}
+\conn: \mathrm{conn}
 
 # standard collections
 \SetColl: \mathrm{Set}

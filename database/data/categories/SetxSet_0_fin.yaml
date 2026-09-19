@@ -1,0 +1,140 @@
+id: SetxSet_0_fin
+name: category of empty-or-finite pairs of sets
+notation: $(\Set \times \Set)_{\varnothing,\fin}$
+objects: pairs $(A,B)$ of sets $A$ and $B$ such that $A$ is empty or $B$ is finite
+morphisms: pairs of functions
+description: This is a rather random full subcategory of <a href="/category/SetxSet">$\Set \times \Set$</a>. We have included it solely as an example of a category with a subobject classifier that does not have binary coproducts.
+nlab_link: null
+
+tags:
+  - set theory
+
+related:
+  - Set
+  - SetxSet
+  - FinSet
+
+satisfied_properties:
+  - property: locally small
+    proof: It is a full subcategory of <a href="/category/SetxSet">$\Set \times \Set$</a>, which is locally small.
+
+  - property: finite products
+    proof: We show that the category is closed under finite products in <a href="/category/SetxSet">$\Set \times \Set$</a>. Let $(A_i,B_i)_{i \in I}$ be a finite family in $(\Set \times \Set)_{\varnothing,\fin}$. The product in $\Set \times \Set$ is $(\prod_{i \in I} A_i, \prod_{i \in I} B_i)$. If $\prod_{i \in I} A_i$ is non-empty, every $A_i$ is non-empty. Hence, every $B_i$ is finite, and therefore $\prod_{i \in I} B_i$ is finite.
+    check_redundancy: false
+    label: SetxSet_0_fin_finite_products
+
+  - property: equalizers
+    proof: In fact, $(\Set \times \Set)_{\varnothing,\fin}$ is closed under subobjects in <a href="/category/SetxSet">$\Set \times \Set$</a>, which has equalizers. Let $(C,D) \hookrightarrow (A,B)$ be a monomorphism in $\Set \times \Set$ with $(A,B) \in (\Set \times \Set)_{\varnothing,\fin}$. If $C$ is non-empty, then $A$ is non-empty, so $B$ is finite, and hence $D$, which injects into $B$, is finite.
+    check_redundancy: false
+    label: SetxSet_0_fin_equalizers
+
+  - property: coequalizers
+    proof: In fact, $(\Set \times \Set)_{\varnothing,\fin}$ is closed under quotients in <a href="/category/SetxSet">$\Set \times \Set$</a>, which has coequalizers. Let $(A,B) \twoheadrightarrow (C,D)$ be an epimorphism in $\Set \times \Set$ with $(A,B) \in (\Set \times \Set)_{\varnothing,\fin}$. If $C$ is non-empty, then $A$ is non-empty since $A \to C$ is surjective. Thus, $B$ is finite. Since $B \to D$ is surjective, it follows that $D$ is finite.
+
+  - property: strict initial object
+    proof: Since $(\varnothing, \varnothing)$ is clearly a strict initial object of <a href="/category/SetxSet">$\Set \times \Set$</a> and belongs to $(\Set \times \Set)_{\varnothing,\fin}$, it is also a strict initial object of $(\Set \times \Set)_{\varnothing,\fin}$.
+
+  - property: finite copowers
+    proof: In fact, $(\Set \times \Set)_{\varnothing,\fin}$ is closed under finite copowers in <a href="/category/SetxSet">$\Set \times \Set$</a>. That is, if $(A,B) \in (\Set \times \Set)_{\varnothing,\fin}$ and $I$ is a finite set, then $\coprod_{i \in I} (A,B) = (\coprod_{i \in I} A, \coprod_{i \in I} B)$ belongs to $(\Set \times \Set)_{\varnothing,\fin}$. Namely, if $\coprod_{i \in I} A$ is non-empty, then $A$ is non-empty, so $B$ is finite, and hence $\coprod_{i \in I} B$ is finite.
+
+  - property: cokernel pairs
+    proof: 'Let $(f,g) : (A,B) \to (C,D)$ be a morphism in $(\Set \times \Set)_{\varnothing,\fin}$. We show that the pointwise pushout $(C,D) \sqcup_{(A,B)} (C,D) = (C \sqcup_A C, D \sqcup_B D)$ in $\Set \times \Set$ also belongs to $(\Set \times \Set)_{\varnothing,\fin}$. If $C = \varnothing$, then $C \sqcup_A C = \varnothing$, and the claim holds. Otherwise, $D$ is finite, and hence $D \sqcup_B D$ is finite.'
+
+  - property: subobject classifier
+    proof: Using the classification of monomorphisms as pairs of injective maps (see below) and the fact that $\{0,1\}$ is a subobject classifier of <a href="/category/Set">$\Set$</a>, it is clear that the pair $(\{0,1\}, \{0,1\})$ is a subobject classifier.
+
+  - property: cogenerator
+    proof: The pair $(\{0,1\}, \{0,1\})$ is a cogenerator of <a href="/category/SetxSet">$\Set \times \Set$</a> by <a href="/content/cogenerators_in_product_categories">this lemma</a> and belongs to $(\Set \times \Set)_{\varnothing,\fin}$.
+
+  - property: epi-regular
+    proof: Every epimorphism is the coequalizer of its kernel pair. In fact, this is true in $\Set$, hence also in $\Set \times \Set$. It remains to use that $(\Set \times \Set)_{\varnothing,\fin}$ is closed under finite limits in $\Set \times \Set$, as shown above, and that epimorphisms are pairs of surjective maps (proven below).
+    check_redundancy: false
+    references:
+      - SetxSet_0_fin_equalizers
+      - SetxSet_0_fin_finite_products
+
+  - property: regular
+    proof: By the previous properties, it suffices to prove that epimorphisms are stable under pullback. Since they are pairs of surjective maps and pullbacks are constructed pointwise, this follows immediately from the corresponding property of <a href="/category/Set">$\Set$</a>.
+
+  - property: effective congruences
+    proof: Let $(R,S) \rightrightarrows (A,B)$ be a congruence in $(\Set \times \Set)_{\varnothing,\fin}$. Since finite limits are constructed pointwise, it is also a congruence in $\Set \times \Set$, and therefore a pair of congruences in $\Set$. Thus, the congruence is the kernel pair of $(A,B) \to (A/R,B/S)$ in $\Set \times \Set$. It remains to show that $(A/R,B/S)$ belongs to $(\Set \times \Set)_{\varnothing,\fin}$. If $A$ is empty, then $A/R$ is empty, and the claim holds. Otherwise, $B$ is finite, and hence $B/S$ is finite.
+
+  - property: effective cocongruences
+    proof: More generally, let $(A,B) \rightrightarrows (R,S)$ be a coreflexive corelation in $(\Set \times \Set)_{\varnothing,\fin}$. Since binary copowers exist and the forgetful functor to $\Set \times \Set$ preserves epimorphisms (see their classification below), it is a coreflexive corelation in $\Set \times \Set$. Any coreflexive corelation in $\Set \times \Set$ is an effective cocongruence (by <a href="/category-implication/regular_epi-regular_extensive_consequences">this result</a>). Therefore, using <a href="/content/effective-congruence-quotients">this result</a>, $(A,B) \rightrightarrows (R,S)$ is the cokernel pair of its equalizer. Since the equalizer belongs to $(\Set \times \Set)_{\varnothing,\fin}$, we are done.
+
+  - property: ℵ₁-accessible
+    proof: >-
+      First, we will show that $(\Set \times \Set)_{\varnothing,\fin}$ is closed under $\aleph_1$-filtered colimits in $\Set \times \Set$. Let $D : \I \to (\Set \times \Set)_{\varnothing,\fin}$ be an $\aleph_1$-filtered diagram. Write $D(i) = (A(i),B(i))$, so that $\colim(D) = (\colim(A),\colim(B))$. If every $A(i)$ is empty, then $\colim(A)$ is empty, and we are done. Otherwise, there is some $i \in \I$ such that $A(i)$ is non-empty, and by passing to a final subcategory of $\I$, we may assume that $A(i)$ is non-empty for every $i \in \I$. Since $D(i) \in (\Set \times \Set)_{\varnothing,\fin}$, this means that each $B(i)$ is finite. Since <a href="/category/FinSet">$\FinSet$</a> is closed under $\aleph_1$-filtered colimits in $\Set$ (the proof is identical to the proof for <a href="/category/Ab_fg">$\Ab_{\fg}$</a> in <a href="https://mathoverflow.net/a/511519" target="_blank">MO/400763</a>), we conclude that $\colim(B)$ is finite. Hence, $(\colim(A), \colim(B))$ is an object of $(\Set \times \Set)_{\varnothing,\fin}$.
+
+      Countable sets are precisely the $\aleph_1$-presentable objects of $\Set$. It follows that for every countable set $C$ and every finite set $E$, the objects $(C,E)$ and $(\varnothing,C)$ are $\aleph_1$-presentable objects of $(\Set \times \Set)_{\varnothing,\fin}$. The collection of isomorphism classes of such objects is essentially small. Any object of $(\Set \times \Set)_{\varnothing,\fin}$ is either of the form $(\varnothing,X)$ for some set $X$ and therefore expressible as $\colim_{C \in P_{<\aleph_1}(X)} (\varnothing,C)$, where $P_{<\aleph_1}(X)$ is the $\aleph_1$-filtered poset of countable subsets of $X$, or of the form $(X,E)$ for a set $X$ and a finite set $E$ and therefore expressible as $\colim_{C \in P_{<\aleph_1}(X)} (C,E)$. In each case, we have expressed the object as an $\aleph_1$-filtered colimit of the selected $\aleph_1$-presentable objects.
+
+  - property: ℵ₁-cofiltered limits
+    proof: >-
+      We will show that $(\Set \times \Set)_{\varnothing,\fin}$ is closed under $\aleph_1$-cofiltered limits in $\Set \times \Set$. Let $D : \I \to (\Set \times \Set)_{\varnothing,\fin}$ be an $\aleph_1$-cofiltered diagram. Write $D(i) = (A(i),B(i))$, so that $\lim(D) = (\lim(A),\lim(B))$. If some $A(i)$ is empty, then $\lim(A)$ is empty, and we are done. If not, since $D(i) \in (\Set \times \Set)_{\varnothing,\fin}$, each $B(i)$ is finite. Since we know that <a href="/category/FinSet">$\FinSet$</a> is closed under $\aleph_1$-cofiltered limits in $\Set$, we conclude that $\lim(B)$ is finite. Hence, $(\lim(A), \lim(B))$ is an object of $(\Set \times \Set)_{\varnothing,\fin}$.
+    references:
+      - finset_aleph1-cofiltered-limits
+
+unsatisfied_properties:
+  - property: skeletal
+    proof: This is trivial.
+
+  - property: locally finite
+    proof: The object $(\IN,\varnothing)$ is valid and has infinitely many endomorphisms.
+
+  - property: semi-strongly connected
+    proof: If $X$ is a non-empty set, there is no map between $(\varnothing,X)$ and $(X,\varnothing)$.
+
+  - property: countable powers
+    proof: >-
+      The first projection functor $(\Set \times \Set)_{\varnothing,\fin} \to \Set$ mapping $(A,B)$ to $A$ is right adjoint to $A \mapsto (A,\varnothing)$ (which is a valid object), and hence preserves limits. Likewise, the second projection functor $(\Set \times \Set)_{\varnothing,\fin} \to \Set$ mapping $(A,B)$ to $B$ is right adjoint to $B \mapsto (\varnothing,B)$ (which is a valid object), and hence preserves limits. It follows that any limits in $(\Set \times \Set)_{\varnothing,\fin}$, if they exist, are computed pointwise.
+
+      Therefore, to show that countable powers do not exist, it suffices to note that $(\{0\},\{0,1\})$ is a valid object, whereas $(\{0\},\{0,1\})^{\IN} = (\{0\}^{\IN},\{0,1\}^{\IN})$ is not, since $\{0,1\}^{\IN}$ is infinite.
+    label: SetxSet_0_fin_countable_powers
+
+  - property: binary coproducts
+    proof: 'We will prove that the objects $(\{0\},\varnothing)$ and $(\varnothing,\IN)$ have no coproduct in $(\Set \times \Set)_{\varnothing,\fin}$, i.e. that there is no initial cocone. The category of cocones is isomorphic to the product category $\Set_* \times \IN / \FinSet$. If it has an initial object, then $\IN / \FinSet$ would have an initial object as well. Assume that $f : \IN \to X$ is initial in $\IN / \FinSet$. Let $n,m \in \IN$ with $n \neq m$. There is a map $g : \IN \to \{0,1\}$ with $g(n)=0$ and $g(m)=1$. Since $f$ is initial, there is a unique map $h : X \to \{0,1\}$ with $h \circ f = g$. Since $g(n) \neq g(m)$, it follows that $f(n) \neq f(m)$. Thus, $f : \IN \to X$ is injective, which contradicts the fact that $X$ is finite.'
+
+  - property: generator
+    proof: Assume that $(A,B)$ is a generator. Since it has to distinguish the three endomorphisms of $(\{0,1\},\varnothing)$ (which is a valid object), we see that $A$ is non-empty and $B$ is empty. Using the object $(\varnothing,\{0,1\})$ (which is also valid), we see that $B$ is non-empty and $A$ is empty. This is a contradiction.
+
+  - property: natural numbers object
+    proof: >-
+      Assume that $N = (N_A,N_B)$ is a natural numbers object of $(\Set \times \Set)_{\varnothing,\fin}$ equipped with morphisms $z : (1,1) \to N$ and $s : N \to N$, i.e. elements $z_A \in N_A$, $z_B \in N_B$, and maps $s_A : N_A \to N_A$ and $s_B : N_B \to N_B$. Since $N_A$ is non-empty, $N_B$ is finite. We claim that $(N_B, z_B, s_B)$ is a natural numbers object of <a href="/category/FinSet">$\FinSet$</a>, which we know does not exist.
+
+      Let $X$ be a finite set, $x_0 \in X$, and $r : X \to X$ be a map. Then $(N_A,X)$ is a valid object of $(\Set \times \Set)_{\varnothing,\fin}$, and we have morphisms $(z_A,x_0) : (1,1) \to (N_A,X)$ and $(s_A,r) : (N_A,X) \to (N_A,X)$. Since $(N_A,N_B)$ is a natural numbers object, there is a unique pair of maps $(f,g) : (N_A,N_B) \to (N_A,X)$ such that $f$ satisfies $f(z_A) = z_A$ and $f \circ s_A = s_A \circ f$, and $g$ satisfies $g(z_B) = x_0$ and $g \circ s_B = r \circ g$. These conditions are independent, and a cartesian product $P \times Q$ is a singleton if and only if both $P$ and $Q$ are singletons. Thus, there is a unique map $g : N_B \to X$ satisfying $g(z_B) = x_0$ and $g \circ s_B = r \circ g$. This proves that $(N_B, z_B, s_B)$ is a natural numbers object, as claimed.
+
+  - property: coaccessible
+    proof: >-
+      Assume that the category is $\kappa$-coaccessible for a regular cardinal $\kappa$. In particular, every object is a limit of $\kappa$-copresentable objects. We claim that every $\kappa$-copresentable object $(A,B)$ satisfies $A \cong \{\ast\}$, so that a limit of such objects also has this property (since the projection functor is continuous, as shown before), and hence does not include every object.
+
+      Assume that $(A,B)$ is $\kappa$-copresentable. Since $\kappa$ is regular, $(\kappa,\leq)$ is $\kappa$-filtered, so its dual $(\kappa,\geq)$ is $\kappa$-cofiltered. Consider the diagram $D : (\kappa,\geq) \to (\Set \times \Set)_{\varnothing,\fin}$ defined by $D(\alpha) = ({[\alpha,\kappa[}, \varnothing)$ on objects. If $\alpha \geq \beta$, the morphism $D(\alpha) \to D(\beta)$ is induced by the inclusion map ${[\alpha,\kappa[} \subseteq {[\beta,\kappa[}$. We have $\lim_\alpha D(\alpha) = (\varnothing,\varnothing)$. Since $(A,B)$ is $\kappa$-copresentable, the canonical map
+      $$\textstyle \Hom(\lim_\alpha D(\alpha),(A,B)) \to \lim_\alpha \Hom(D(\alpha),(A,B))$$
+      is an isomorphism. Thus,
+      $$\textstyle \{\ast\} \cong \lim_\alpha \Hom({[\alpha,\kappa[},A).$$
+      Since $A$ embeds into $\Hom({[\alpha,\kappa[},A)$ via constant functions, and hence into the limit, we see that $\card(A) \leq 1$. But $A = \varnothing$ is not possible, since then the limit would also be empty. Thus, $A \cong \{\ast\}$.
+    references:
+      - SetxSet_0_fin_countable_powers
+
+special_objects:
+  initial object:
+    description: $(0,0)$
+  terminal object:
+    description: $(1,1)$
+  products:
+    description: '[finite case] component-wise direct product'
+
+special_morphisms:
+  isomorphisms:
+    description: pairs of bijective maps
+    proof: This is trivial.
+  monomorphisms:
+    description: pairs of injective maps
+    proof: For the non-trivial direction, the construction of finite limits shows that the two projection functors to $\Set$ preserve finite limits and hence preserve monomorphisms.
+  epimorphisms:
+    description: pairs of surjective maps
+    proof: >-
+      For the non-trivial direction, let $(f,g) : (A,B) \to (C,D)$ be an epimorphism. Assume for contradiction that $f : A \to C$ is not surjective. Since $\{0,1\}$ cogenerates, then there are distinct maps $u,v : C \rightrightarrows \{0,1\}$ with $u \circ f = v \circ f$. The set $C$ is non-empty, so $D$ is finite, and $(\{0,1\},D)$ is a valid object. Then
+      $$(u,\id_D), (v,\id_D) : (C,D) \rightrightarrows (\{0,1\},D)$$
+      are distinct morphisms satisfying $(u,\id_D) \circ (f,g) = (v,\id_D) \circ (f,g)$. This contradicts the assumption that $(f,g)$ is an epimorphism. Thus, $f$ is surjective. Now assume that $g$ is not surjective. Then there are distinct maps $u,v : D \rightrightarrows \{0,1\}$ with $u \circ g = v \circ g$. Then
+      $$(\id_C,u), (\id_C,v) : (C,D) \rightrightarrows (C,\{0,1\})$$
+      are distinct morphisms satisfying $(\id_C,u) \circ (f,g) = (\id_C,v) \circ (f,g)$, contradicting the assumption that $(f,g)$ is an epimorphism.
