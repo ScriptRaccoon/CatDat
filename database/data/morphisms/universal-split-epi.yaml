@@ -1,7 +1,8 @@
 id: universal-split-epi
 name: universal split epimorphism
 notation: $p$
-category: walking_splitting
+associated:
+  category: walking_splitting
 description: 'This is the morphism $p : 1 \to 0$ in the <a href="/category/walking_splitting">walking splitting</a>, see there for details. It can also be seen as the unique morphism $\IF_2 \to 0$ in the category of $\IF_2$-vector spaces of dimension $\leq 1$. It provides a basic example of a split epimorphism (and hence regular and strict epimorphism) which is not effective.'
 nlab_link: null
 

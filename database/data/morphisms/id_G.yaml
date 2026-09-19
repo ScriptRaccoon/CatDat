@@ -1,7 +1,8 @@
 id: id_G
 name: identity map of a group
 notation: $\id_G$
-category: Grp
+associated:
+  category: Grp
 description: 'Every object of a category has an identity morphism. In this case, we take a non-trivial group $G$ and consider its identity morphism $\id_G : G \to G$ in $\Grp$.'
 nlab_link: https://ncatlab.org/nlab/show/identity+morphism
 

@@ -1,15 +1,16 @@
 id: p-torsion
 name: p-torsion functor
 notation: $T_p$
-domain: Ab
-codomain: Ab
+associated:
+  domain: Ab
+  codomain: Ab
+  left_adjoint: modulo-p
+  right_adjoint: null
 description: >-
   This functor maps an abelian group $A$ to its $p$-torsion subgroup
   $$T_p(A) \coloneqq \{a \in A : pa = 0\},$$
   where $p$ is a fixed prime number. This group can also be represented as $\HomInternal(\IZ/p,A)$.
 nlab_link: null
-left_adjoint: modulo-p
-right_adjoint: null
 
 tags:
   - algebra

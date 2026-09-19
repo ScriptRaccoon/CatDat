@@ -1,15 +1,16 @@
 id: stone-cech-compactification
 name: Stone-Čech compactification functor
 notation: $\beta$
-domain: Top
-codomain: CompHaus
+associated:
+  domain: Top
+  codomain: CompHaus
+  left_adjoint: null
+  right_adjoint: null
 description: >-
   This is the functor $\beta : \Top \to \CompHaus$ that is left adjoint to the inclusion functor $\CompHaus \hookrightarrow \Top$. There are various constructions (see <a href="https://en.wikipedia.org/wiki/Stone%E2%80%93%C4%8Cech_compactification" target="_blank">Wikipedia</a>), one being that $\beta(X)$ is the closure of the image of the canonical map
   $$X \to [0,1]^{\Hom(X,[0,1])}.$$
   Among other things, this functor provides an example of a reflector that does not preserve binary products.
 nlab_link: https://ncatlab.org/nlab/show/Stone-%C4%8Cech+compactification
-left_adjoint: null
-right_adjoint: null
 
 tags:
   - topology

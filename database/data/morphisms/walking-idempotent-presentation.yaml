@@ -1,7 +1,8 @@
 id: walking-idempotent-presentation
 name: presentation of the walking idempotent
 notation: $F$
-category: Cat
+associated:
+  category: Cat
 description: 'Let $I$ denote the <a href="/category/walking_morphism">walking morphism</a> and $\Idem$ denote the <a href="/category/walking_idempotent">walking idempotent</a>. In this entry, we consider the functor $F : I \to \Idem$ that sends the universal morphism $! : 0 \to 1$ to the universal idempotent $e : 0 \to 0$ and view $F$ as a morphism in $\Cat$. It provides an example of a strong epimorphism which is not strict.'
 nlab_link: null
 

@@ -1,12 +1,13 @@
 id: inclusion_ordinals
 name: inclusion functor from extended natural numbers to ordinal numbers
 notation: $\iota$
-domain: N_oo
-codomain: On
+associated:
+  domain: N_oo
+  codomain: On
+  left_adjoint: null
+  right_adjoint: null
 description: 'This is the inclusion map from the partially ordered set $(\IN \cup \{\infty\},\leq)$ (considered as a thin category as usual) into the partially ordered collection $(\OnColl,\leq)$, where we map $\infty$ to the ordinal $\omega$. It is an example of a functor that preserves binary products, but not terminal objects.'
 nlab_link: https://ncatlab.org/nlab/show/identity+functor
-left_adjoint: null
-right_adjoint: null
 
 tags:
   - set theory

@@ -1,7 +1,8 @@
 id: Ab_fg_tensor
 name: symmetric monoidal category of finitely generated abelian groups
 notation: $(\Ab_{\fg},\otimes,\IZ)$
-underlying_category: Ab_fg
+associated:
+  underlying_category: Ab_fg
 description: This is the full symmetric monoidal subcategory of $(\Ab,\otimes,\IZ)$ spanned by the finitely generated abelian groups. This is well-defined because $\IZ$ is finitely generated and the tensor product of two finitely generated abelian groups is finitely generated.
 nlab_link: null
 

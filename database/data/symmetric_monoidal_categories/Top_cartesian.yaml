@@ -1,7 +1,8 @@
 id: Top_cartesian
 name: cartesian symmetric monoidal category of topological spaces
 notation: $(\Top,\times,1)$
-underlying_category: Top
+associated:
+  underlying_category: Top
 description: Every category with finite products (also called a cartesian category) can be endowed with a symmetric monoidal structure, where $1$ is the terminal object and $\otimes$ is the product $\times$. In this case, we apply this to the category $\Top$.
 nlab_link: https://ncatlab.org/nlab/show/cartesian+monoidal+category
 

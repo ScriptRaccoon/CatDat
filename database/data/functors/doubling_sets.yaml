@@ -1,12 +1,13 @@
 id: doubling_sets
 name: doubling functor on sets
 notation: $2(-)$
-domain: Set
-codomain: Set
+associated:
+  domain: Set
+  codomain: Set
+  left_adjoint: null
+  right_adjoint: squaring_sets
 description: This functor maps a set $X$ to its double $2 X \coloneqq X + X$. It is a simple example of a polynomial functor.
 nlab_link: null
-left_adjoint: null
-right_adjoint: squaring_sets
 
 tags:
   - set theory

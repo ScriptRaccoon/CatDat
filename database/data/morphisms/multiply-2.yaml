@@ -1,7 +1,8 @@
 id: multiply-2
 name: multiplication with 2
 notation: $2$
-category: TorsFreeAb
+associated:
+  category: TorsFreeAb
 description: 'The multiplication map $2 : \IZ \to \IZ$ in $\TorsFreeAb$ provides an example of a monomorphism in an additive category which is not regular (and hence, not normal). Thus, it provides a proof that $\TorsFreeAb$ is not abelian.'
 nlab_link: null
 

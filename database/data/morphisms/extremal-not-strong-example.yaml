@@ -1,7 +1,8 @@
 id: extremal-not-strong-example
 name: example of a non-strong extremal monomorphism
 notation: $m$
-category: forked_commutative_square
+associated:
+  category: forked_commutative_square
 description: 'This is the morphism $m : C \to D$ from the <a href="/category/forked_commutative_square">forked commutative square</a>, see details there. It provides an example of an extremal monomorphism which is not strong, and this is the only reason we have added this morphism and its category to the database.'
 nlab_link: null
 

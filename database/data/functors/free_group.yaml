@@ -1,12 +1,13 @@
 id: free_group
 name: free group functor
 notation: $F_{\Grp}$
-domain: Set
-codomain: Grp
+associated:
+  domain: Set
+  codomain: Grp
+  left_adjoint: null
+  right_adjoint: forget_group
 description: This functor maps a set $X$ to the free group $F_{\Grp}(X)$ on that set. In the proofs, we abbreviate $F \coloneqq F_{\Grp}$.
 nlab_link: https://ncatlab.org/nlab/show/free+functor
-left_adjoint: null
-right_adjoint: forget_group
 
 tags:
   - algebra
