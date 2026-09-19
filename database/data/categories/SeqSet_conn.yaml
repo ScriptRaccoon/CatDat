@@ -162,6 +162,24 @@ unsatisfied_properties:
     references:
       - SeqSet_conn_subobject_classifier
 
+  - property: natural numbers object
+    proof: >-
+      Assume that a natural numbers object $(N,z,s)$ exists in $[(\IN,\leq),\Set]_{\conn}$. The morphism $z : 1 \to N$ corresponds to an element $z \in N_0$. The functor
+      $$[(\IN,\leq),\Set]_{\conn} \to \Set, \quad X \mapsto X_0$$
+      has a right adjoint mapping a set $S$ to the connected sequence
+      $$S \xrightarrow{!} \{\ast\} \xrightarrow{!} \{\ast\} \xrightarrow{!} \cdots,$$
+      and it preserves terminal objects. Thus, by Lemma 5 <a href="/content/natural_numbers_objects">here</a>, the triple $(N_0,z,s_0)$ is a natural numbers object of $\Set$, and therefore isomorphic to the standard natural numbers object $(\IN, 0, x \mapsto x+1)$. In particular, $N_0$ is an infinite set.
+
+      For every $k \geq 0$ consider the connected sequence $X$ defined by
+      $$N_0 \xrightarrow{\id} \cdots \xrightarrow{\id} N_0 \xrightarrow{!} \{\ast\} \xrightarrow{!} \{\ast\} \xrightarrow{!} \cdots,$$
+      where the singleton sets start at index $k+1$. The element $z \in N_0 = X_0$ induces a morphism $z : 1 \to X$. We define the endomorphism $r : X \to X$ by using the map $s_0 : N_0 \to N_0$ at indices $0,\dotsc,k$ and the unique maps at indices $> k$. Since $(N,z,s)$ is a natural numbers object, there is a (unique) morphism of sequences $f : N \to X$ such that $f_0(z)=z$ and $r \circ f = f \circ s$. Evaluating this equation at index $0$ yields $s_0 \circ f_0 = f_0 \circ s_0$, so that $f_0 = \id_{N_0}$. Furthermore, naturality of $f : N \to X$ for $0 \to k$ shows that the diagram
+      $$\begin{CD}
+      N_0 @>{N_{0 \to k}}>> N_k \\
+      @V{\id}VV @VV{f_k}V \\
+      N_0 @>>{\id}> N_0
+      \end{CD}$$
+      commutes. In particular, each transition map $N_0 \to N_k$ is injective. It follows that also the induced map $N_0 \to \colim_k N_k$ is injective. But this contradicts the fact that $N_0$ is infinite and $\colim_k N_k$ is a singleton set.
+
 special_objects:
   terminal object:
     description: the constant sequence $\{\ast\} \to \{\ast\} \to \cdots$
