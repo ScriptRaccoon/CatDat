@@ -141,10 +141,16 @@ unsatisfied_properties:
       $$\varnothing \to \cdots \to \varnothing \to \IN \to \{\ast\} \to \{\ast\} \to \cdots,$$
       where the empty sets occupy the indices $0,1,\dotsc,n$. It is connected and has a non-trivial endomorphism. Thus, there must be a morphism from $G$ to that sequence that distinguishes the two endomorphisms. Thus, $G_0,\dotsc,G_n$ are empty, while $G_{n+1}$ must be non-empty. Since this holds for all $n$, we get a contradiction.
 
+  - property: ℵ₁-cofiltered
+    proof: >-
+      For every $n \in \IN$ consider the sequence $X^n$ defined by
+      $$\varnothing \to \cdots \to \varnothing \to \{\ast\} \to \{\ast\} \to \cdots,$$
+      where the empty sets occupy the indices $0,1,\dotsc,n$. Clearly, $X^n$ is connected. If there is some connected sequence $Y$ admitting morphisms $Y \to X^n$ for every $n \in \IN$, this implies $Y_0=\cdots=Y_n=\varnothing$ for every $n \in \IN$. Thus, $Y$ is the empty sequence, which however is not connected. Therefore, the countable family $(X^n)_{n \in \IN}$ has no cone.
+
   - property: binary copowers
     proof: >-
       We show that the coproduct $1+1$ does not exist, where $1$ denotes the terminal object, the constant sequence with value $\{\ast\}$. Since a morphism $1 \to X$ corresponds to an element of $X_0$, this amounts to a universal connected sequence of sets $X$ equipped with two elements $x,x' \in X_0$. Choose $k \geq 0$ such that their images in $X_k$ coincide. Then, by virtue of the universal property, for every connected sequence $Y$ and every pair of elements $y,y' \in Y_0$, their images in $Y_k$ coincide. The smallest counterexample is the sequence $Y$ defined by
-      $$\{0,1\} \xrightarrow{\id} \{0,1\} \xrightarrow{\id} \cdots \xrightarrow{\id} \{0,1\} \xrightarrow{!} \{0\} \xrightarrow{!} \{0\} \xrightarrow{!} \cdots,$$
+      $$\{0,1\} \xrightarrow{\id} \cdots \xrightarrow{\id} \{0,1\} \xrightarrow{!} \{0\} \xrightarrow{!} \{0\} \xrightarrow{!} \cdots,$$
       where $Y_k = \{0,1\}$ and $Y_{k+1}=\{\ast\}$. It is connected, and the elements $0,1 \in Y_0$ become only equal in $Y_{k+1}$.
       Another counterexample is the subobject classifier $\Omega$ with the elements $0,k+1 \in \Omega_0$.
     references:
