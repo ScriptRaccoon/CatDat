@@ -1,20 +1,28 @@
 import { are_disjoint } from '$shared/utils'
 import * as v from 'valibot'
 
-export const config_yaml_schema = v.object({
-	structure_tags: v.array(v.string()),
-	category_tags: v.array(v.string()),
-	functor_tags: v.array(v.string()),
-	morphism_tags: v.array(v.string()),
-	symmetric_monoidal_category_tags: v.array(v.string()),
+const distinct_strings_schema = v.pipe(
+	v.array(v.string()),
+	v.check(
+		(values) => new Set(values).size === values.length,
+		'Values must be pairwise distinct.'
+	)
+)
 
-	category_property_tags: v.array(v.string()),
-	functor_property_tags: v.array(v.string()),
-	morphism_property_tags: v.array(v.string()),
-	symmetric_monoidal_category_property_tags: v.array(v.string()),
+export const config_yaml_schema = v.strictObject({
+	structure_tags: distinct_strings_schema,
+	category_tags: distinct_strings_schema,
+	functor_tags: distinct_strings_schema,
+	morphism_tags: distinct_strings_schema,
+	symmetric_monoidal_category_tags: distinct_strings_schema,
+
+	category_property_tags: distinct_strings_schema,
+	functor_property_tags: distinct_strings_schema,
+	morphism_property_tags: distinct_strings_schema,
+	symmetric_monoidal_category_property_tags: distinct_strings_schema,
 
 	relations: v.array(
-		v.object({
+		v.strictObject({
 			relation: v.string(),
 			negation: v.string(),
 			conditional: v.string()
@@ -22,14 +30,14 @@ export const config_yaml_schema = v.object({
 	),
 
 	special_objects: v.array(
-		v.object({
+		v.strictObject({
 			kind: v.string(),
 			dual: v.string()
 		})
 	),
 
 	special_morphisms: v.array(
-		v.object({
+		v.strictObject({
 			kind: v.string(),
 			dual: v.string()
 		})
@@ -37,7 +45,7 @@ export const config_yaml_schema = v.object({
 })
 
 export const special_morphism_rule_yaml_schema = v.array(
-	v.object({
+	v.strictObject({
 		property: v.string(),
 		kind: v.string(),
 		description: v.string(),
@@ -45,12 +53,12 @@ export const special_morphism_rule_yaml_schema = v.array(
 	})
 )
 
-const property_entry_schema = v.object({
+const property_entry_schema = v.strictObject({
 	property: v.string(),
 	proof: v.string(),
 	check_redundancy: v.optional(v.literal(false)),
 	label: v.optional(v.string()),
-	references: v.optional(v.array(v.string()))
+	references: v.optional(distinct_strings_schema)
 })
 
 export const structure_yaml_schema = v.pipe(
@@ -60,8 +68,8 @@ export const structure_yaml_schema = v.pipe(
 		notation: v.string(),
 		description: v.string(),
 		nlab_link: v.nullable(v.string()),
-		tags: v.pipe(v.array(v.string()), v.minLength(1)),
-		related: v.array(v.string()),
+		tags: v.pipe(distinct_strings_schema, v.minLength(1)),
+		related: distinct_strings_schema,
 		dual: v.optional(v.string()),
 		parent: v.optional(v.string()),
 		associated: v.optional(v.record(v.string(), v.nullable(v.string()))),
@@ -88,33 +96,35 @@ export const category_yaml_schema = v.object({
 	id: v.string(),
 	objects: v.string(),
 	morphisms: v.string(),
-	special_objects: v.record(v.string(), v.object({ description: v.string() })),
+	special_objects: v.record(v.string(), v.strictObject({ description: v.string() })),
 	special_morphisms: v.record(
 		v.string(),
-		v.object({ description: v.string(), proof: v.string() })
+		v.strictObject({ description: v.string(), proof: v.string() })
 	)
 })
 
-export const property_yaml_schema = v.object({
+export const property_yaml_schema = v.strictObject({
 	id: v.string(),
 	relation: v.string(),
 	description: v.string(),
 	nlab_link: v.nullable(v.string()),
 	dual: v.nullable(v.string()),
 	invariant_under_equivalences: v.boolean(),
-	related: v.array(v.string()),
-	tags: v.pipe(v.array(v.string()), v.minLength(1))
+	related: distinct_strings_schema,
+	tags: v.pipe(distinct_strings_schema, v.minLength(1))
 })
 
 export const implications_yaml_schema = v.array(
 	v.pipe(
-		v.object({
+		v.strictObject({
 			id: v.string(),
-			assumptions: v.array(v.string()),
-			conclusions: v.pipe(v.array(v.string()), v.minLength(1)),
-			associated_assumptions: v.optional(v.record(v.string(), v.array(v.string()))),
+			assumptions: distinct_strings_schema,
+			conclusions: v.pipe(distinct_strings_schema, v.minLength(1)),
+			associated_assumptions: v.optional(
+				v.record(v.string(), distinct_strings_schema)
+			),
 			proof: v.string(),
-			is_equivalence: v.optional(v.boolean())
+			is_equivalence: v.optional(v.literal(true))
 		}),
 		v.check(
 			(impl) =>
