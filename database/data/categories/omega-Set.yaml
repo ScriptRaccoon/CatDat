@@ -97,6 +97,16 @@ satisfied_properties:
   - property: generator
     proof: The terminal object $(1, \IN \times 1)$ represents the forgetful functor $\omega{-}\Set \to \Set$ which is clearly faithful. (For the nontrivial direction of the isomorphism between $\Hom_{\omega{-}\Set}((1, \IN \times 1), (X, R_X))$ and $X$, suppose we have $x \in X$. Then there exists $n \in \IN$ such that $n$ realizes $x$; therefore, the full recursive function given by the constant function with image $n$ forms a realizer transformer compatible with the corresponding function $1 \to X$.)
 
+  - property: extremal generating collection
+    proof: >-
+      We claim that the collection of $\omega$-sets $(U, R_U)$ with $U\subseteq \IN$ is an extremal generating collection. To see this, note that the terminal object is isomorphic to the object $(\{ 0 \}, \IN \times \{ 0 \})$, and we saw above that it is a generator, so the given collection is certainly a generating collection.
+
+      To see it is extremal, suppose we have a morphism $f : (X, R_X) \to (Y, R_Y)$ which is not an isomorphism. If this is because the underlying function $f : X \to Y$ is not a bijection, then that implies $f \circ {-} : \Hom((\{0\}, \IN\times\{0\}), (X, R_X)) \to \Hom((\{0\}, \IN\times\{0\}), (Y, R_Y))$ is not a bijection. Otherwise, if the underlying function is not a bijection, then by the description of isomorphisms below, for each partial recursive function $\psi : \IN \dashrightarrow \IN$, there exist $n_\psi \in \IN$ and $x_\psi \in X$ such that $n_\psi$ realizes $f(x_\psi)\in Y$, but either $\psi(n_\psi)$ does not exist, or $\psi(n_\psi)$ does not realize $x_\psi\in X$. Choose one such pair of $n_\psi$ and $x_\psi$ for each unary partial recursive function $\psi$. We will then define $U \coloneqq \{ f(x_\psi) \}$ and $R_U \coloneqq R_Y \cap (\IN \times U)$.
+
+      Then $(U, R_U)$ is an $\omega$-set, and the inclusion map $i : U \hookrightarrow Y$ induces a morphism $i : (U, R_U) \hookrightarrow (Y, R_Y)$ of $\omega$-sets, since the identity function $\IN \to \IN$ is a compatible realizer transformer. However, we claim there can be no morphism $g : (U, R_U) \to (X, R_X)$ such that $f \circ g = i$. In fact, if such $g$ existed, then the underlying function would have to send $f(x_{\psi}) \mapsto x_{\psi}$. On the other hand, if $\varphi : \IN \dashrightarrow \IN$ were a compatible realizer transformer, then we would have that $n_\varphi$ realizes $f(x_{\varphi})\in U$, and therefore $\varphi(n_\varphi)$ exists and $\varphi(n_\varphi)$ realizes $g(f(x_\varphi)) = x_\varphi\in X$, contradicting the choice of $n_\varphi$ and $x_\varphi$.
+
+      This shows that $f \circ {-} : \Hom((U, R_U), (X, R_X)) \to \Hom((U, R_U), (Y, R_Y))$ is not surjective, and therefore not bijective. However, since there are only countably many partial recursive functions, $U$ is countable, so $(U, R_U)$ is isomorphic to a member of the given collection (and in fact structurally isomorphic, not just isomorphic in $\omega{-}\Set$).
+
   - property: extremal cogenerator
     proof: >-
       We first claim that $(2, \IN\times 2)$ and $(P(\IN) \setminus \{ \varnothing \}, {\in}_{\IN})$ form an extremal cogenerating collection. To see this, we first consider morphisms to the first member $(2, \IN\times 2)$ of the family. Note that $\Hom_{\omega{-}\Set}({-}, (2, \IN \times 2)) \cong \Hom_{\Set}(U{-}, 2)$, where $U : \omega{-}Set \to \Set$ is the forgetful functor. (For the nontrivial direction of this isomorphism, note that for any function $f : X \to 2$, then we can choose any total recursive function as the compatible realizer transformer, showing that $f$ indeed induces a morphism of $\omega$-sets $(X, R_X) \to (2, \IN \times 2)$.) Therefore, $\Hom_{\omega{-}\Set}({-}, (2, \IN \times 2))$ is isomorphic to the composition of $U$ and the power set functor $P : \Set^{\op} \to \Set$, both of which are faithful. This shows that $(2, \IN\times 2)$ is a cogenerator, so the collection is also a cogenerating collection.
@@ -121,6 +131,10 @@ unsatisfied_properties:
   - property: locally finite
     proof: 'There is a fully faithful functor $\nabla : \Set \to \omega{-}\Set$ which sends a set $X$ to $(X, \IN \times X)$. Therefore, for example, $\Hom_{\omega{-}\Set}(\nabla 1, \nabla \IN) \simeq \Hom_{\Set}(1, \IN)$ is infinite.'
 
+  - property: balanced
+    proof: 'Define $\nabla \IN \coloneqq (\IN, \IN \times \IN)$ and $N \coloneqq (\IN, \Delta_{\IN})$. Then the identity map $\IN \to \IN$ induces a morphism of $\omega$-sets $N \to \nabla \IN$, since the identity map is also a compatible realizer transformer. It is both a monomorphism and an epimorphism by the characterizations below. However, it is not an isomorphism: an inverse $\nabla \IN \to N$ would have to have the identity map $\IN \to \IN$ as its underlying function. But for any compatible realizer transformer $\varphi$, we have that $0$ realizes both $0$ and $1$ in $\nabla \IN$. Therefore, $\varphi(0)$ would have to exist and realize both $0$ and $1$ in $N$, which is impossible. (Alternately, $\Hom_{\omega{-}\Set}(\nabla \IN, \nabla \IN) \simeq \Hom_{\Set}(\IN, \IN)$ is uncountable. On the other hand, it is easy to see that $\Hom_{\omega{-}\Set}(N, N)$ is exactly the full recursive functions, since a compatible realizer transformer would have to agree with the underlying function. Therefore, $\Hom_{\omega{-}\Set}(N, N)$ is countable.)'
+    check_redundancy: false
+
   - property: co-Malcev
     proof: 'Consider the two possible morphisms $f, g : (1, \IN \times 1) \rightrightarrows (2, \IN \times 2)$. This defines a cocongruence representing the functor which to $(X, E_X)$ assigns the binary relation on $X$ of two elements having a common realizer. That shows that this cocongruence is coreflexive, since by definition any element of an $\omega$-set has a realizer. However, it is easy to see that it is not cotransitive; for example, in $(3, \{ (0, 0), (0, 1), (1, 1), (1, 2) \})$, $0$ and $1$ have a common realizer, as do $1$ and $2$; but $0$ and $2$ do not have a common realizer.'
 
@@ -136,9 +150,9 @@ special_objects:
   terminal object:
     description: $(1, \IN \times 1)$
   coproducts:
-    description: The binary coproduct of $(X, R_X)$ and $(Y, R_Y)$ is $X \sqcup Y$ with realization relation $$R_{X\sqcup Y} \coloneqq \{ (2n, x) \mid (n, x) \in R_X \} \cup \{ (2n+1, y) \mid (n, y) \in R_Y \}.$$
+    description: '[binary case] The binary coproduct of $(X, R_X)$ and $(Y, R_Y)$ is $X \sqcup Y$ with realization relation $$R_{X\sqcup Y} \coloneqq \{ (2n, x) \mid (n, x) \in R_X \} \cup \{ (2n+1, y) \mid (n, y) \in R_Y \}.$$'
   products:
-    description: The binary product of $(X, R_X)$ and $(Y, R_Y)$ is $X \times Y$ with realization relation $$R_{X\times Y} \coloneqq \{ (\langle n, m \rangle, (x, y)) \mid (n, x) \in R_X \land (m, y) \in R_Y \}.$$
+    description: '[binary case] The binary product of $(X, R_X)$ and $(Y, R_Y)$ is $X \times Y$ with realization relation $$R_{X\times Y} \coloneqq \{ (\langle n, m \rangle, (x, y)) \mid (n, x) \in R_X \land (m, y) \in R_Y \}.$$'
 
 special_morphisms:
   isomorphisms:
