@@ -4,7 +4,8 @@ description: 'A morphism $f : A \to B$ is called <i>constant</i> if for all morp
 nlab_link: https://ncatlab.org/nlab/show/constant+morphism
 invariant_under_equivalences: true
 dual: coconstant
-related: []
+related:
+  - zero morphism
 
 tags:
   - misc

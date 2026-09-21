@@ -6,7 +6,9 @@ dual: Cauchy complete
 invariant_under_equivalences: true
 
 related:
-  - finitely complete
+  - equalizers
+  - coequalizers
+  - one-way
 
 tags:
   - limits
