@@ -47,7 +47,7 @@
 
 - id: finite_filtered_colimits
   # TODO: combine this with the implication with ID "finite_accessible"
-  # once its dual is added to the database.
+  # once its dual is added to the database. cf. #364
   assumptions:
     - Cauchy complete
     - essentially finite

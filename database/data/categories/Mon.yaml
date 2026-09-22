@@ -47,7 +47,7 @@ unsatisfied_properties:
     proof: The canonical morphism $\IN \sqcup \IN \to \IN \times \IN$ is not a monomorphism since $\IN \sqcup \IN$ is not commutative.
 
   - property: CIP
-    # TODO: remove code duplication with "counital" proof
+    # TODO: remove duplication with "counital" proof, cf. #382
     proof: The canonical morphism $\IN \sqcup \IN \to \IN \times \IN$ is not a monomorphism since $\IN \sqcup \IN$ is not commutative.
 
   - property: CSP

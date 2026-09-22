@@ -19,11 +19,11 @@ comments:
 
 satisfied_properties:
   - property: preserves terminal objects
-    # TODO: automate this
+    # TODO: automate this with category_conclusion
     proof: This is trivial since $\Fld$ has no terminal object.
 
   - property: preserves initial objects
-    # TODO: automate this
+    # TODO: automate this with category_conclusions
     proof: This is trivial since $\Fld$ has no initial object.
 
   - property: finitary

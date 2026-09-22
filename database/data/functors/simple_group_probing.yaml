@@ -14,7 +14,6 @@ description: >-
   since only then $F(G)$ is actually a set, but the first definition makes it more apparent that $F$ is a functor.
   This is the canonical example of a continuous functor $\Grp \to \Set$ that is not representable, and not a right adjoint.
 nlab_link: null
-
 tags:
   - algebra
 
@@ -29,7 +28,7 @@ unsatisfied_properties:
     # TODO: refactor this once functor implications may have category equality assumptions
     proof: 'If $F : \Grp \to \Set$ is right adjoint to $G : \Set \to \Grp$, then $F$ is representable with representing object $U \coloneqq G(1)$. Let $u \in F(U)$ be a universal element, consisting of homomorphisms $u_\kappa : L_\kappa \to U$. Choose an infinite cardinal $\kappa > \card(U)$. Then $u_\kappa$ must be trivial. The set $F(L_\kappa) = \prod_{\lambda \leq \kappa} \Hom(L_\lambda,L_\kappa)$ contains the element $x$ whose $\kappa$-component is $\id_{L_\kappa}$ and all other components are trivial. Since $u \in F(U)$ is universal, there is a unique homomorphism $f : U \to L_\kappa$ such that $F(f)(u) = x$ in $F(L_\kappa)$. The $\kappa$-component of this equality is $f \circ u_\kappa = \id_{L_\kappa}$. Thus, $u_\kappa$ is injective, contradicting our previous observation that $u_\kappa$ is trivial and the fact that $L_\kappa$ is non-trivial.'
 
-  # TODO: refactor this once functor implications may have category conclusions
+  # TODO: refactor this once functor implications may have category_conclusions
   # here: if a functor preserves terminal objects, and the domain is pointed,
   # then the codomain is pointed as well.
   - property: preserves initial objects

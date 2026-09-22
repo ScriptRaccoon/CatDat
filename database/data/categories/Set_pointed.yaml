@@ -56,7 +56,7 @@ unsatisfied_properties:
     proof: 'The joint image of $X \to X \times Y \leftarrow Y$ is just $\{(x,0) : x \in X\} \cup \{(0,y) : y \in Y\}$ (where $0$ denotes the base point), which is clearly a proper subset of $X \times Y$ when both $X,Y$ are non-trivial.'
 
   - property: CSP
-    # TODO: remove duplication with unital proof
+    # TODO: remove duplication with unital proof, cf. #382
     proof: 'The image of $X \vee Y$ in $X \times Y$ is just $\{(x,0) : x \in X\} \cup \{(0,y) : y \in Y\}$ (where $0$ denotes the base point), which is clearly a proper subset when both $X,Y$ are non-trivial.'
 
   - property: conormal

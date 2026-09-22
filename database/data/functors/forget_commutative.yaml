@@ -4,7 +4,7 @@ notation: $U_{\CRing,\Ring}$
 associated:
   domain: CRing
   codomain: Ring
-  left_adjoint: null # TODO: add the left adjoint to the database
+  left_adjoint: null # TODO: add the left adjoint to the database ("ring-abelianization")
   right_adjoint: null
 description: This is the inclusion functor $\CRing \hookrightarrow \Ring$ that maps a commutative ring to itself, regarded merely as a ring.
 nlab_link: https://ncatlab.org/nlab/show/forgetful+functor

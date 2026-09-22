@@ -154,7 +154,7 @@
   proof: This is trivial.
 
 - id: thin_dominant_functor
-  # TODO: rework this once we add "split-mono trivial"
+  # TODO: rework this once we add "split-mono trivial", cf. #383
   assumptions:
     - dominant
   associated_assumptions:

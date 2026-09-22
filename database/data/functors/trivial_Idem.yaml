@@ -24,9 +24,9 @@ unsatisfied_properties:
     proof: The universal idempotent is mapped to an isomorphism, but is not an isomorphism.
 
   - property: left adjoint
-    # TODO: refactor this once functor implications support category conclusions
+    # TODO: refactor this once functor implications support category_conclusions
     proof: A functor $1 \to \C$ which is right adjoint to $\Idem \to 1$ provides a terminal object in <a href="/category/walking_idempotent">$\Idem$</a>, which does not exist.
 
   - property: right adjoint
-    # TODO: refactor this once functor implications support category conclusions
+    # TODO: refactor this once functor implications support category_conclusions
     proof: A functor $1 \to \C$ which is left adjoint to $\Idem \to 1$ provides an initial object in <a href="/category/walking_idempotent">$\Idem$</a>, which does not exist.

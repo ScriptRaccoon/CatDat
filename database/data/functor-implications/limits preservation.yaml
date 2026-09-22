@@ -233,7 +233,7 @@
   proof: This is trivial.
 
 - id: trivial_coreflexive_equalizer_preservation
-  # TODO: rework this once we add "split-epi-trivial"
+  # TODO: rework this once we add "split-epi-trivial", cf. #383
   assumptions: []
   associated_assumptions:
     domain:

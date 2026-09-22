@@ -34,9 +34,9 @@ unsatisfied_properties:
       - R-Mod_tensor_not_strict
 
   - property: infinitary distributive
-    # TODO: automate this
+    # TODO: automate this with category_conclusions
     proof: This is because <a href="/category/Ab_fg">$\Ab_{\fg}$</a> does not have coproducts.
 
   - property: infinitary codistributive
-    # TODO: automate this
+    # TODO: automate this with category_conclusions
     proof: This is because <a href="/category/Ab_fg">$\Ab_{\fg}$</a> does not have products.

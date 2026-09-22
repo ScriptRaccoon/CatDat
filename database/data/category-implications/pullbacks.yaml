@@ -91,7 +91,7 @@
   assumptions:
     - right cancellative
     - kernel pairs
-  # TODO: rework this once we have split-mono-trivial
+  # TODO: rework this once we have split-mono-trivial, cf. #383
   conclusions:
     - left cancellative
   proof: >-

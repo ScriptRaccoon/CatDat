@@ -30,5 +30,5 @@ unsatisfied_properties:
     proof: 'Whether the underlying monoidal category is strict depends on the specific construction of vector spaces and their tensor products, but the symmetries cannot be identities. In fact, if $V$ is a finite-dimensional vector space, then the symmetry $\sigma_{V,V} : V \otimes V \to V \otimes V$ is the identity if and only if $V$ has dimension $\leq 1$.'
 
   - property: infinitary distributive
-    # TODO: automate this
+    # TODO: automate this with category_conclusions
     proof: This is because its underlying category $\FinVect$ does not have (infinite) coproducts.
