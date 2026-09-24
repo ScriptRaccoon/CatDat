@@ -57,10 +57,12 @@ unsatisfied_properties:
     check_redundancy: false
 
   - property: cototal
-    proof: For $i \in I$ define $E^i \in \Vect^{(I)}_K$ by $E^i_j = 0$ for $j \neq i$ and $E^i_i = K$. This yields a discrete diagram $(E^i)_{i \in I}$. For every $V \in \Vect^{(I)}_K$ the collection of cocones $(E^i \to V)_{i \in I}$ is essentially small, since for $i \notin \supp(V)$ every morphism $E^i \to V$ is zero, so the indices may be restricted to the collection $\supp(V)$, which is essentially small. Assuming $\Vect^{(I)}_K$ is cototal, by G. M. Kelly, <a href="https://www.numdam.org/item/?id=CTGDC_1986__27_2_109_0" target="_blank">A survey of totality for enriched and ordinary categories</a>, Thm. 5.6 (namely the contrapositive of the implication (i) $\Rightarrow$ (iii)), the coproduct $S \coloneqq \coprod_{i \in I} E^i$ would exist in $\Vect^{(I)}_K$. Since each $E^i$ is a retract of $S$ and $E^i_i \neq 0$, we see that $\supp(S) = I$, which however is not essentially small.
+    # TODO: refactor this once we add "hypercocomplete"
+    proof: In fact, it is not hypercocomplete. For $i \in I$ define $E^i \in \Vect^{(I)}_K$ by $E^i_j = 0$ for $j \neq i$ and $E^i_i = K$. This yields a discrete diagram $(E^i)_{i \in I}$. For every $V \in \Vect^{(I)}_K$ the collection of cocones $(E^i \to V)_{i \in I}$ is essentially small, since for $i \notin \supp(V)$ every morphism $E^i \to V$ is zero, so the indices may be restricted to the collection $\supp(V)$, which is essentially small. Assuming $\Vect^{(I)}_K$ is hypercocomplete, the coproduct $S \coloneqq \coprod_{i \in I} E^i$ would exist in $\Vect^{(I)}_K$. Since each $E^i$ is a retract of $S$ and $E^i_i \neq 0$, we see that $\supp(S) = I$, which however is not essentially small.
     label: Vect_family_not_cototal
 
   - property: total
+    # TODO: refactor this once we add "hypercomplete"
     proof: We can almost repeat the previous proof that the category is not cototal. The collection of cones $(V \to E^i)_{i \in I}$ is essentially small for every $V$, but $\prod_{i \in I} E^i$ does not exist since it would have support $I$.
     references:
       - Vect_family_not_cototal
