@@ -1,0 +1,97 @@
+id: Z-FinSet
+name: category of finite Z-sets
+notation: $\IZ{-}\FinSet$
+objects: finite sets with an action of the additive group $\IZ$, i.e. a permutation
+morphisms: maps that are compatible with the action, i.e. commute with the permutation
+description: 'This is a full subcategory of the Grothendieck topos <a href="/category/Z-Set">$\IZ{-}\Set$</a>, and provides an example of an elementary topos that has no generator and no cogenerator. Objects can be identified with pairs $(X,\sigma)$, where $X$ is a finite set and $\sigma : X \to X$ is a permutation of $X$. A morphism $(X,\sigma) \to (Y,\tau)$ is a map $f : X \to Y$ satisfying $\tau \circ f = f \circ \sigma$.'
+nlab_link: null
+
+tags:
+  - set theory
+  - combinatorics
+
+related:
+  - Z-Set
+  - M-Set
+  - FinSet
+  - Set
+
+satisfied_properties:
+  - property: locally small
+    proof: It is a full subcategory of <a href="/category/Z-Set">$\IZ{-}\Set$</a>, which is locally small.
+
+  - property: locally finite
+    proof: This follows easily from the fact that <a href="/category/FinSet">$\FinSet$</a> is locally finite.
+
+  - property: essentially countable
+    proof: This is because the category is locally small and every object is isomorphic to an object of the form $(\{1,\dotsc,n\},\sigma)$, where $n \in \IN$ and $\sigma$ is a permutation of $\{1,\dotsc,n\}$.
+
+  - property: finitely complete
+    proof: >-
+      The category is the functor category $[B\IZ,\FinSet]$, so this follows from the fact that <a href="/category/FinSet">$\FinSet$</a> is finitely complete. Concretely, a finite limit of finite $\IZ$-sets $(X_i,\sigma_i)$ is constructed using the finite limit of the underlying finite sets $X_i$, equipped with the obvious permutation induced by the $\sigma_i$.
+
+      Remark: The same works with finite colimits.
+    check_redundancy: false
+
+  - property: cartesian closed
+    proof: 'We already know that finite products exist. Exponentials exist because <a href="/category/Z-Set">$\IZ{-}\Set$</a> is cartesian closed, and the full subcategory $\IZ{-}\FinSet$ is closed under exponentials. Concretely, the exponential of two $\IZ$-sets $(X,\sigma)$ and $(Y,\tau)$ is $(\Hom(X,Y),\rho)$, where $\Hom(X,Y)$ is the set of maps $f : X \to Y$ and $\rho(f) = \tau \circ f \circ \sigma^{-1}$. If $X,Y$ are finite, then $\Hom(X,Y)$ is finite as well.'
+
+  - property: subobject classifier
+    proof: 'We already know that finite limits exist. By the description of monomorphisms below, the subobjects of $(X,\sigma)$ are the objects $(U,\sigma|_U)$, where $U \subseteq X$ is a subset such that $\sigma_*(U)=U$, and $\sigma|_U : U \to U$ is the restricted permutation. The subset corresponds to a map of sets $f : X \to \{0,1\}$ with $f^*(\{1\}) = U$, and the condition $\sigma_*(U) = U$ is equivalent to $f$ being a morphism $(X,\sigma) \to (\{0,1\},\id)$. This shows that $(\{0,1\},\id)$ is a subobject classifier in both $\IZ{-}\FinSet$ and $\IZ{-}\Set$.'
+
+  - property: ℵ₁-cofiltered limits
+    proof: Using that <a href="/category/FinSet">$\FinSet$</a> is closed under $\aleph_1$-cofiltered limits in $\Set$, and that the forgetful functor $\IZ{-}\Set \to \Set$ is continuous, it follows immediately that $\IZ{-}\FinSet$ is closed under $\aleph_1$-cofiltered limits in $\IZ{-}\Set$.
+    references:
+      - finset_aleph1-cofiltered-limits
+
+unsatisfied_properties:
+  - property: skeletal
+    proof: The two terminal objects $(\{0\},\id)$ and $(\{1\},\id)$ are isomorphic, but not equal.
+
+  - property: small
+    proof: For every set $X$ this category contains the terminal object $(\{X\},\id)$.
+
+  - property: countable
+    proof: For every set $X$ this category contains the terminal object $(\{X\},\id)$.
+
+  - property: generator
+    proof: >-
+      Assume that $(G,\gamma)$ is a generator of $\IZ{-}\FinSet$. Then $G$ cannot be empty, since otherwise $\IZ{-}\FinSet$ would be thin, which is absurd. Choose an element $g \in G$. Since $\gamma$ is a permutation of a finite set, there is some $n \geq 2$ with $\gamma^n(g)=g$.
+
+      Choose a natural number $m \geq 2$ that does not divide $n$ (for example, $m=n+1$), and consider the finite set $X = \{0,1,\dotsc,m-1\}$ equipped with the permutation $\sigma$ defined by $\sigma(x) = (x+1) \bmod m$. Since $(X,\sigma)$ has a non-trivial endomorphism, for example $\sigma$, and $(G,\gamma)$ is a generator, there is a morphism $(G,\gamma) \to (X,\sigma)$. If $x \in X$ denotes the image of $g \in G$, we conclude that $\sigma^n(x)=x$. By construction of $\sigma$, this implies $m \mid n$, which contradicts our assumption on $m$.
+
+  - property: cogenerator
+    proof: >-
+      Assume that $(Q,\rho)$ is a cogenerator of $\IZ{-}\FinSet$. Choose $k \geq 1$ with $\rho^k = \id_Q$. Now consider the finite set $X = \{0,1,\dotsc,2k-1\}$ equipped with the permutation $\sigma$ defined by $\sigma(x) = (x+1) \bmod 2k$. The object $(X,\sigma)$ has a non-trivial endomorphism $g$ defined by $g(x) = (x+k) \bmod 2k$, i.e. $g = \sigma^k$. Since $(Q,\rho)$ is a cogenerator, there is a morphism $f : (X,\sigma) \to (Q,\rho)$ with $f \circ g \neq f$. But since $f$ is a morphism, we have
+      $$f \circ g = f \circ \sigma^k = \rho^k \circ f = f.$$
+
+  - property: semi-strongly connected
+    proof: The same reasoning as for <a href="/category/Z-Set">$\IZ{-}\Set$</a> shows that if an abelian group $G$ has two subgroups of finite index that are not contained in each other, then $G{-}\FinSet$ is not semi-strongly connected. Since $\IZ$ has such subgroups, e.g. $2\IZ$ and $3\IZ$, the category $\IZ{-}\FinSet$ is not semi-strongly connected.
+    references:
+      - Z-Set_not_semi-strongly_connected
+
+  - property: natural numbers object
+    proof: We can copy the proof from <a href="/category/FinSet">$\FinSet$</a>.
+    references:
+      - FinSet_no_NNO
+
+special_objects:
+  initial object:
+    description: $(\varnothing,\id)$
+  terminal object:
+    description: $(\{\ast\},\id)$
+  coproducts:
+    description: '[finite case] disjoint union with the obvious action'
+  products:
+    description: '[finite case] direct product with the obvious action'
+
+special_morphisms:
+  isomorphisms:
+    description: bijective morphisms
+    proof: This is inherited from <a href="/category/Z-Set">$\IZ{-}\Set$</a>.
+  monomorphisms:
+    description: injective morphisms
+    proof: The non-trivial direction follows from the fact that the inclusion functor to the <a href="/category/Z-Set">$\IZ{-}\Set$</a> preserves finite limits (by their construction), hence preserves monomorphisms, and the description of monomorphisms in $\IZ{-}\Set$.
+  epimorphisms:
+    description: surjective morphisms
+    proof: The non-trivial direction follows from the fact that the inclusion functor to the <a href="/category/Z-Set">$\IZ{-}\Set$</a> preserves finite colimits (by their construction), hence preserves epimorphisms, and the description of epimorphisms in $\IZ{-}\Set$.

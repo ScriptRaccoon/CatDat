@@ -20,6 +20,7 @@ related:
   - FinSet_even
   - FinSet_odd
   - FinSet_power_3
+  - Z-FinSet
 
 satisfied_properties:
   - property: locally small
@@ -59,6 +60,7 @@ unsatisfied_properties:
 
   - property: natural numbers object
     proof: By Lemma 2 <a href="/content/natural_numbers_objects">here</a>, if $(N,z,s)$ is a natural numbers object, then $N \cong 1 \sqcup N$. But there is no finite set with this property.
+    label: FinSet_no_NNO
 
 special_objects:
   initial object:
