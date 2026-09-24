@@ -5,6 +5,8 @@ import { to_placeholders } from '$shared/utils'
 import { error } from 'node:console'
 import structure_history from '$shared/structure.history.json'
 
+const NUMBER_RECENT_STRUCTURES = 20
+
 export const load = () => {
 	const structure_number = db
 		.prepare<never[], number>('SELECT COUNT(*) FROM structures')
@@ -91,7 +93,7 @@ export const load = () => {
 
 	const recent_structures_ids = Object.entries(structure_history)
 		.sort((a, b) => b[1].localeCompare(a[1]))
-		.slice(0, 10)
+		.slice(0, NUMBER_RECENT_STRUCTURES)
 		.map((a) => a[0])
 
 	const recent_structures = db
