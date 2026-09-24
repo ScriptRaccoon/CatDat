@@ -1,0 +1,90 @@
+id: F(I)-Set
+name: category of F(I)-sets
+notation: $F(I){-}\Set$
+objects: sets with an action of a free <i>large</i> group $F(I)$
+morphisms: maps that are compatible with the action
+description: Here, $I$ is a collection that is not essentially small, and its free group is constructed in the universe of collections (cf. <a href="/content/foundations">Foundations</a>). Objects can be identified with pairs $(X,\sigma)$, where $X$ is a set and $\sigma = (\sigma_i)_{i \in I}$ is a large family of permutations of $X$, and morphisms are maps of sets that commute with the permutations. This category behaves similarly to <a href="/category/Z-Set">$\IZ{-}\Set$</a> (in particular, it is a cocomplete elementary topos), but the most important difference is that it has neither a generating collection nor a cogenerating collection.
+nlab_link: null
+
+tags:
+  - algebra
+
+related:
+  - M-Set
+  - Z-Set
+  - Set_family
+
+comments:
+  - The category has appeared in <a href="https://mathoverflow.net/questions/258269/">MO/258269</a>.
+  - The category is well-defined in our <a href="/content/foundations">Foundations</a>. For instance, the collection of objects is $\prod_{X \in \SetColl} \prod_{i \in I} \Aut(X)$, which is indeed a collection since collections are closed under the usual operations of set theory. Another explanation is that it is the functor category $[B(F(I)),\Set]$, where $B(F(I))$ is the one-object category associated with $F(I)$.
+  - Surprisingly, the forgetful functor to $\Set$ does not preserve large limits, hence is not representable, and therefore has no left adjoint. For $i \in I$ consider the object $X_i = (\{0,1\},\sigma^{[i]})$, where $\sigma^{[i]}_i = (0 ~ 1)$ and $\sigma^{[i]}_j = \id$ for $j \neq i$. One can show that the product of the large family $(X_i)_{i \in I}$ exists in $F(I){-}\Set$ and is given by the empty set with the unique action. But the large family of underlying sets has no product in $\Set$.
+
+satisfied_properties:
+  - property: locally small
+    proof: The collection $\Hom((X,\sigma),(Y,\tau))$ is contained in the set $\Hom(X,Y)$, and is therefore a set.
+
+  - property: concretizable
+    proof: The forgetful functor $F(I){-}\Set \to \Set$, $(X,\sigma) \mapsto X$, is faithful.
+
+  - property: complete
+    proof: The forgetful functor $F(I){-}\Set \to \Set$ creates limits, and <a href="/category/Set">$\Set$</a> is complete.
+
+  - property: cocomplete
+    proof: The forgetful functor $F(I){-}\Set \to \Set$ creates colimits, and <a href="/category/Set">$\Set$</a> is cocomplete.
+    check_redundancy: false
+
+  - property: exact filtered colimits
+    proof: This property is inherited from <a href="/category/Set">$\Set$</a> since the forgetful functor to $\Set$ is continuous, cocontinuous, and conservative.
+
+  - property: subobject classifier
+    proof: If $G$ is any group, then $\{0,1\}$ equipped with the trivial $G$-action is a subobject classifier of $G{-}\Set$, because a map of sets $X \to \{0,1\}$ lifts to a morphism of $G$-sets if and only if the fiber at $1$ is $G$-stable. The same proof works when $G$ is a large group.
+
+  - property: cartesian closed
+    proof: If $G$ is a group and $(X,\sigma),(Y,\tau)$ are two $G$-sets, their exponential is $\Hom(X,Y)$ equipped with the $G$-action $(g f)(x) = g f(g^{-1} x)$. The same proof works when $G$ is a large group.
+
+unsatisfied_properties:
+  - property: skeletal
+    proof: This is trivial.
+
+  - property: semi-strongly connected
+    proof: Choose an element $i_0 \in I$. There is a fully faithful functor $\IZ{-}\Set \to F(I){-}\Set$ that maps $(X,\sigma) \mapsto (X,\widetilde{\sigma})$, where $\widetilde{\sigma}_{i_0} = \sigma$ and $\widetilde{\sigma}_i = \id_X$ for $i \neq i_0$. Since <a href="/category/Z-Set">$\IZ{-}\Set$</a> is not semi-strongly connected, it follows that $F(I){-}\Set$ is not semi-strongly connected.
+
+  - property: cogenerator
+    proof: >-
+      Assume that a cogenerator $(Q,\rho)$ exists. Then $\rho : I \to \Aut(Q)$ is a map which cannot be injective, since otherwise $I$ would be essentially small. Choose elements $i \neq j$ with $\rho_i = \rho_j$. Let $X = \{a,b\}$ and define $\sigma : I \to \Aut(X)$ by $\sigma_i = (a ~ b)$ and $\sigma_k = \id_X$ for all $k \neq i$. Thus, $(X,\sigma)$ is an object of the category, and $\sigma_i : (X,\sigma) \to (X,\sigma)$ is a non-trivial endomorphism since $\sigma_i$ commutes with every $\sigma_k$. Since $(Q,\rho)$ is a cogenerator, there is some morphism $f : (X,\sigma) \to (Q,\rho)$ with $f \circ \sigma_i \neq f$. However, since $f$ is a morphism, we have
+      $$f \circ \sigma_i = \rho_i \circ f = \rho_j \circ f = f \circ \sigma_j = f.$$
+
+  - property: total
+    proof: >-
+      In fact, we will prove that the category is not hypercomplete. For $i \in I$, consider the object $T_i = (\{0,1,\ast\},t^i)$, where $t^i_i = (0 ~ 1)$ and $t^i_j = \id$ for $j \neq i$. We claim that for every object $(X,\sigma)$, the collection of cones $(f_i : (X,\sigma) \to T_i)_{i \in I}$ is essentially small. Each $f_i$ is a map $X \to \{0,1,\ast\}$ satisfying $f_i \circ \sigma_i = (0 ~ 1) \circ f_i$ and $f_i \circ \sigma_j = f_i$ for $j \neq i$. Thus, for $j \neq i$ with $\sigma_i = \sigma_j$, we have
+      $$f_i = f_i \circ \sigma_j = f_i \circ \sigma_i = (0 ~ 1) \circ f_i,$$
+      so $f_i$ must be the constant map with value $\ast$. The collection
+      $$I_X \coloneqq \{i \in I : \forall j \neq i \, (\sigma_i \neq \sigma_j)\}$$
+      is essentially small since the map $I_X \to \Aut(X)$, $i \mapsto \sigma_i$, is injective, and for every $i \notin I_X$ we have just seen that $f_i \equiv \ast$ is constant. Thus, the collection of cones is isomorphic to the collection of cones over the essentially small family $(T_i)_{i \in I_X}$, proving the claim.
+
+      We will now prove that the family $(T_i)_{i \in I}$ has no product, showing that the category is not hypercomplete. Assume that $(p_i : (X,\sigma) \to T_i)_{i \in I}$ is a product. By what we have seen before, there is an essentially small collection $I_X \subseteq I$ such that $p_i \equiv \ast$ for all $i \in I \setminus I_X$. Since $I$ is not essentially small, we may choose an index $k \in I \setminus I_X$. For every $i \in I$, $i \neq k$, the constant map $\ast : \{0,1,\ast\} \to \{0,1,\ast\}$ lifts to a morphism $T_k \to T_i$, since the maps $t^i_j$ and $t^k_j$ preserve $\ast$. Thus, by the universal property of the product, there is a morphism $f : T_k \to (X,\sigma)$ such that $p_k \circ f = \id_{T_k}$ and $p_i \circ f = \ast$ for $i \neq k$. The first equation shows that $p_k$ is surjective, which contradicts $p_k \equiv \ast$.
+
+  # TODO: decide if this category is cototal.
+
+  # TODO: once adding "hypercocomplete", add a proof that this category is hypercocomplete.
+
+special_objects:
+  initial object:
+    description: empty set with the unique action
+  terminal object:
+    description: singleton set with the unique action
+  coproducts:
+    description: disjoint union with the obvious action
+  products:
+    description: direct product with the obvious action
+
+special_morphisms:
+  isomorphisms:
+    description: bijective morphisms
+    proof: This is easy to check.
+  monomorphisms:
+    description: injective morphisms
+    proof: Injective morphisms are clearly monomorphisms. The converse follows since the forgetful functor to $\Set$ preserves limits, pullbacks in particular, and therefore preserves monomorphisms.
+  epimorphisms:
+    description: surjective morphisms
+    proof: Surjective morphisms are clearly epimorphisms. The converse follows since the forgetful functor to $\Set$ preserves colimits, pushouts in particular, and therefore preserves epimorphisms.
