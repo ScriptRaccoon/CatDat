@@ -12,6 +12,7 @@
     - total
   conclusions:
     - cocomplete
+  # TODO: refactor this once we add "hypercocomplete"
   proof: 'If the category $\C$ is locally small and total, then the Yoneda embedding $y : \C^{\op} \to [\C, \Set]$ makes $\C^{\op}$ into a reflective subcategory of the presheaf category $[\C, \Set]$, where the latter is complete. For a general total category $\C$, use the equivalence to a locally small, total category.'
 
 - id: total_complete
@@ -19,6 +20,7 @@
     - total
   conclusions:
     - complete
+  # TODO: refactor this once we add "hypercomplete"
   proof: This is proven in G. M. Kelly, <a href="https://www.numdam.org/item/?id=CTGDC_1986__27_2_109_0" target="_blank">A survey of totality for enriched and ordinary categories</a>, Thm. 5.6.
 
 # TODO: replace "well-copowered" with "epi-cocomplete" if adding the latter property

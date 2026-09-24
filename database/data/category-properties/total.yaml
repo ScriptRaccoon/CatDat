@@ -9,7 +9,7 @@ description: >-
   <li>Every <a href="https://ncatlab.org/nlab/show/discrete+fibration" target="_blank">discrete fibration</a> $D : \I \to \C$ (with $\I$ not necessarily essentially small) with the property that each fiber $D^*(\{X\}) = \{i \in \Ob(\C) : D_i = X\}$ is essentially small (bijective to a set), has a colimit in $\C$.</li>
   <li>Let $D : \I \to \C$ be a diagram (with $\I$ not necessarily essentially small) such that for each object $X$ of $\C$, the collection $\pi_0(X \downarrow D)$ of connected components of the comma category $X \downarrow D$ is essentially small. Then $D$ has a colimit in $\C$.</li>
   </ol>
-  The equivalence is proven as Thm. 5.2 and 5.5 in G. M. Kelly, <a href="https://www.numdam.org/item/?id=CTGDC_1986__27_2_109_0" target="_blank">A survey of totality for enriched and ordinary categories</a>.
+  The equivalence is proven as Thm. 5.2 and 5.5 in G. M. Kelly, <a href="https://www.numdam.org/item/?id=CTGDC_1986__27_2_109_0" target="_blank">A survey of totality for enriched and ordinary categories</a>. Thm. 5.6 in that paper also proves that every total category is <i>hypercomplete</i>, meaning that every diagram $D : \I \to \C$ with the property that for every object $X$ of $\C$ the collection of cones $\Hom(\Delta(X),D)$ is essentially small, has a limit.
 
   A general category is called total if it is equivalent to a locally small category which is total.
 nlab_link: https://ncatlab.org/nlab/show/total+category

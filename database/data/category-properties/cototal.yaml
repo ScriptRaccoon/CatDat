@@ -9,7 +9,7 @@ description: >-
   <li>Every <a href="https://ncatlab.org/nlab/show/discrete+opfibration" target="_blank">discrete opfibration</a> $D : \I \to \C$ (with $\I$ not necessarily essentially small) with the property that each fiber $D^*(\{X\}) = \{i \in \Ob(\C) : D_i = X\}$ is essentially small (bijective to a set), has a limit in $\C$.</li>
   <li>Let $D : \I \to \C$ be a diagram (with $\I$ not necessarily essentially small) such that for each object $X$ of $\C$, the collection $\pi_0(D \downarrow X)$ of connected components of the comma category $D \downarrow X$ is essentially small. Then $D$ has a limit in $\C$.</li>
   </ol>
-  The equivalence is proven as Thm. 5.2 and 5.5 in G. M. Kelly, <a href="https://www.numdam.org/item/?id=CTGDC_1986__27_2_109_0" target="_blank">A survey of totality for enriched and ordinary categories</a>.
+  The equivalence is proven as Thm. 5.2 and 5.5 in G. M. Kelly, <a href="https://www.numdam.org/item/?id=CTGDC_1986__27_2_109_0" target="_blank">A survey of totality for enriched and ordinary categories</a>. Thm. 5.6 in that paper also proves that every cototal category is <i>hypercocomplete</i>, meaning that every diagram $D : \I \to \C$ with the property that for every object $X$ of $\C$ the collection of cocones $\Hom(D,\Delta(X))$ is essentially small, has a colimit.
 
   A general category is called cototal if it is equivalent to a locally small category which is cototal.
 nlab_link: https://ncatlab.org/nlab/show/cototal+category
