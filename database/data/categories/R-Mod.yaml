@@ -10,12 +10,13 @@ tags:
   - algebra
 
 related:
-  - M-Set
   - Ab
   - Vect
   - grMod_G(R)
   - Proj_fg(Re)
   - Free_fg(ZxZ)
+  - M-Set
+  - Z-Set
 
 satisfied_properties:
   - property: locally small

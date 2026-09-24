@@ -34,7 +34,7 @@ unsatisfied_properties:
 undecidable_properties:
   - property: semi-strongly connected
     # TODO: decide if we want to add separate children entries to decide this for some cases.
-    proof: If this category is semi-strongly connected depends on the choice of $M$. For $M = 1$ it is, for $M = \IZ$ it is not. In general, if $G$ is a group, then $G{-}\Set$ is semi-strongly connected if and only if for all subgroups $H,K \subseteq G$, $H$ is subconjugated to $K$ or $K$ is subconjugated to $H$. If $G$ is abelian, this means that the poset of subgroups is linear, in which case $G$ is either isomorphic to $\IZ/p^n$ or to $\IZ/p^{\infty}$ for a prime $p$. See also <a href="https://math.stackexchange.com/questions/5129804" target="_blank">MSE/5129804</a>.
+    proof: If this category is semi-strongly connected depends on the choice of $M$. For $M = 1$ it is, for $M = \IZ$ it is not (see the entry for <a href="/category/Z-Set">$\IZ{-}\Set$</a>). In general, if $G$ is a group, then $G{-}\Set$ is semi-strongly connected if and only if for all subgroups $H,K \subseteq G$, $H$ is subconjugated to $K$ or $K$ is subconjugated to $H$. If $G$ is abelian, this means that the poset of subgroups is linear, in which case $G$ is either isomorphic to $\IZ/p^n$ or to $\IZ/p^{\infty}$ for a prime $p$. See also <a href="https://math.stackexchange.com/questions/5129804" target="_blank">MSE/5129804</a>.
 
 special_objects:
   initial object:
@@ -42,11 +42,11 @@ special_objects:
   terminal object:
     description: singleton set with the unique action
   coproducts:
-    description: disjoint union with obvious $M$-action
+    description: disjoint union with the obvious action
   products:
-    description: direct products with the evident $M$-action
+    description: direct product with the obvious action
 
 special_morphisms:
   epimorphisms:
     description: surjective morphisms
-    proof: More generally, epimorphisms in functor categories $[\C,\Set]$ can be detected pointwise, since pushouts can be constructed pointwise. This is applied here to the one-object category corresponding to $M$.
+    proof: More generally, epimorphisms in functor categories $[\C,\Set]$ can be detected pointwise, since pushouts can be constructed pointwise. This is applied here to the one-object category corresponding to a monoid.
