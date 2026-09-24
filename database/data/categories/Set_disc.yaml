@@ -3,7 +3,7 @@ name: discrete category of sets
 notation: $\Set_{\disc}$
 objects: sets
 morphisms: only the identity morphisms
-description: This category provides an example of a large discrete category.
+description: This category provides an example of a large discrete category. More generally, every collection $I$ yields a discrete category $I_{\disc}$, and it shares the same properties as this one as long as $I$ is not essentially small.
 nlab_link: null
 
 tags:
@@ -13,6 +13,7 @@ tags:
 related:
   - '2'
   - Set
+  - Set_indisc
 
 satisfied_properties:
   - property: discrete

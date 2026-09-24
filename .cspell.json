@@ -23,7 +23,8 @@
 		"Unif",
 		"noiso",
 		"coprod",
-		"isbell"
+		"isbell",
+		"indisc"
 	],
 	"words": [
 		"abelian",

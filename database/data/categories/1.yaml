@@ -20,9 +20,6 @@ satisfied_properties:
   - property: finite
     proof: This is trivial.
 
-  - property: small
-    proof: This is trivial.
-
   - property: discrete
     proof: This is trivial.
 

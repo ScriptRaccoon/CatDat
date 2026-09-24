@@ -19,6 +19,7 @@ related:
   - Setne
   - Set_arrow
   - Set_disc
+  - Set_indisc
   - Set_family
 
 satisfied_properties:

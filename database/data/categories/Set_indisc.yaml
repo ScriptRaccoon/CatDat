@@ -1,0 +1,33 @@
+id: Set_indisc
+name: indiscrete category of sets
+notation: $\Set_{\indisc}$
+objects: sets
+morphisms: for every pair of sets $X,Y$ exactly one morphism $X \to Y$
+description: This category provides an example of a large indiscrete category. More generally, every collection $I$ yields an indiscrete category $I_{\indisc}$, and it shares the same properties as this one as long as $I$ is uncountable and not small.
+nlab_link: null
+
+tags:
+  - set theory
+  - category theory
+
+related:
+  - Set
+  - Set_disc
+
+satisfied_properties:
+  - property: trivial
+    proof: If $X_0$ is any fixed set, for every set $X$ there is a unique morphism $X_0 \to X$, which is an isomorphism.
+
+  - property: locally small
+    proof: 'This is trivial. To be precise, we define the unique morphism $X \to Y$ to be the ordered pair $(X,Y)$. Hence, $\Hom(X,Y) = \{(X,Y)\}$ is a set. If we would define, for some reason, the unique morphism to be $(X,Y,\OnColl)$, then the category would not be locally small, but of course still be locally essentially small.'
+
+unsatisfied_properties:
+  - property: small
+    proof: This is trivial.
+
+  - property: countable
+    proof: This is trivial.
+
+special_objects: {}
+
+special_morphisms: {}

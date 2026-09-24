@@ -62,3 +62,12 @@
   conclusions:
     - essentially small
   proof: This is trivial.
+
+- id: trivial_gaunt
+  assumptions:
+    - trivial
+    - locally small
+    - gaunt
+  conclusions:
+    - small
+  proof: 'The category is trivial and therefore inhabited. Choose an object $A$. For every object $B$, since the category is trivial, there is an isomorphism $f : A \to B$. Since the category is gaunt, $f$ is the identity. In particular, $A = B$. Therefore, there is exactly one object $A$. The collection $\Hom(A,A)$ is a set since the category is locally small. Thus, the category is small.'
