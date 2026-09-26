@@ -69,6 +69,10 @@ pnpm db:watch
 
 to continuously run this update when a file in the subfolder [/database/data](/database/data) changes.
 
+For text-only changes to existing structures (names, notations, descriptions, nLab
+links, or proofs), use `pnpm db:text`. It detects and updates changed fields without
+rebuilding relations or running deductions.
+
 ### Troubleshooting
 
 - If the local database is corrupted, or its schema has changed, recreate it using `pnpm db:setup`.

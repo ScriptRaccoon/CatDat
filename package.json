@@ -18,6 +18,7 @@
 		"db:shell": "sqlite3 database/catdat.db",
 		"db:setup": "tsx --tsconfig database/tsconfig.json database/scripts/setup.ts",
 		"db:seed": "tsx --tsconfig database/tsconfig.json database/scripts/seed.ts",
+		"db:text": "tsx --tsconfig database/tsconfig.json database/scripts/text.ts",
 		"db:deduce": "tsx --tsconfig database/tsconfig.json database/scripts/deduce.ts",
 		"db:test": "tsx --tsconfig database/tsconfig.json database/scripts/test.ts",
 		"db:snapshot": "tsx --tsconfig database/tsconfig.json database/scripts/snapshot.ts",
