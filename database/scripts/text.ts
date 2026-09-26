@@ -1,5 +1,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
+import chokidar from 'chokidar'
 import * as v from 'valibot'
 import { get_client } from '$shared/db'
 import { STRUCTURE_TYPES, type StructureType } from '$shared/config'
@@ -17,9 +18,18 @@ const structure_folders: Record<StructureType, string> = {
 	symmetric_monoidal_category: 'symmetric_monoidal_categories'
 }
 
-main()
+const watch_mode = process.argv.includes('--watch')
 
-function main() {
+if (watch_mode) {
+	watch()
+} else {
+	run_text_update()
+}
+
+/**
+ * Updates text-only changes to existing structures
+ */
+function run_text_update() {
 	try {
 		const structures: v.InferOutput<typeof structure_yaml_schema>[] = []
 
@@ -134,25 +144,48 @@ function main() {
 			}
 		})()
 
-		const {
-			name_updates,
-			notation_updates,
-			description_updates,
-			nlab_link_updates,
-			proof_updates
-		} = tx_update
+		const updates = [
+			{ count: tx_update.name_updates, label: 'names' },
+			{ count: tx_update.notation_updates, label: 'notations' },
+			{ count: tx_update.description_updates, label: 'descriptions' },
+			{ count: tx_update.nlab_link_updates, label: 'nLab links' },
+			{ count: tx_update.proof_updates, label: 'proofs' }
+		].filter(({ count }) => count > 0)
 
-		console.info(
-			`Updated text: ${name_updates} names, ` +
-				`${notation_updates} notations, ` +
-				`${description_updates} descriptions, ` +
-				`${nlab_link_updates} nLab links, ` +
-				`${proof_updates} proofs.`
-		)
+		const update_txt = updates
+			.map(({ count, label }) => `${count} ${label}`)
+			.join(', ')
+
+		if (updates.length > 0) {
+			console.info(`Updated text: ${update_txt}.`)
+		} else {
+			console.info('Text is up to date.')
+		}
 	} catch (error) {
 		console.error(error instanceof Error ? error.message : error)
-		process.exit(1)
-	} finally {
-		db.close()
+		if (!watch_mode) process.exitCode = 1
 	}
+}
+
+function watch() {
+	const folders = STRUCTURE_TYPES.map((type) =>
+		path.join(data_folder, structure_folders[type])
+	)
+	let update_timer: NodeJS.Timeout | undefined
+
+	function on_change(file: string) {
+		if (!file.endsWith('.yaml')) return
+		console.info(`File changed: ${file}`)
+		if (update_timer) clearTimeout(update_timer)
+		update_timer = setTimeout(() => run_text_update(), 150)
+	}
+
+	const watcher = chokidar.watch(folders, {
+		persistent: true,
+		ignoreInitial: true,
+		awaitWriteFinish: { stabilityThreshold: 200, pollInterval: 50 }
+	})
+
+	watcher.on('add', on_change).on('change', on_change).on('unlink', on_change)
+	console.info(`Watching structure folders for text changes...`)
 }
