@@ -91,13 +91,11 @@ pnpm db:update
 
 to run all the commands in sequence: `pnpm db:seed`,`pnpm db:deduce`, and `pnpm db:test`. This also creates a copy of the local database in the `/static` folder.
 
-Use
+Pass `--watch` to rerun the update whenever a file in the data folder changes:
 
 ```
-pnpm db:watch
+pnpm db:update --watch
 ```
-
-to run this command automatically every time a file in the subfolder [/database/data](/database/data) changes. This is useful in particular during development.
 
 ## Redundancies
 
