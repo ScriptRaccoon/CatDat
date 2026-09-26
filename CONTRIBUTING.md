@@ -61,13 +61,11 @@ Apply the updates using:
 pnpm db:update
 ```
 
-You can also use
+To continuously run the update when a file in the data folder changes, use
 
 ```sh
-pnpm db:watch
+pnpm db:update --watch
 ```
-
-to continuously run this update when a file in the subfolder [/database/data](/database/data) changes.
 
 For text-only changes to existing structures (names, notations, descriptions, nLab
 links, or proofs), use `pnpm db:text`. It detects and updates changed fields without
