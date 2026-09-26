@@ -2,7 +2,6 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { get_property_assignments, seed_file, seed_files } from './utils/seed.helpers'
 import { get_client } from '$shared/db'
-import { create_schema_hash, get_saved_schema_hash } from './utils/schema'
 import { STRUCTURE_TYPES, type StructureType, PLURALS } from '$shared/config'
 import { capitalize, devlog } from '$shared/utils'
 import {
@@ -14,6 +13,7 @@ import {
 	structure_yaml_schema
 } from './utils/seed.schemas'
 import * as v from 'valibot'
+import { check_schema } from './utils/schema'
 
 const db = get_client({ readonly: false })
 
@@ -70,21 +70,6 @@ function seed() {
 			structure_history_file,
 			`${JSON.stringify(structure_history, null, '\t')}\n`
 		)
-	}
-}
-
-/**
- * Checks if the schema is up-to-date, and throws an error otherwise.
- */
-function check_schema() {
-	devlog(`\nCheck schema ...`)
-
-	const schema_hash = get_saved_schema_hash()
-	const actual_hash = create_schema_hash()
-
-	if (schema_hash !== actual_hash) {
-		console.error(`❌ Your schema appears to be outdated. Run first pnpm db:setup.`)
-		process.exit(1)
 	}
 }
 
