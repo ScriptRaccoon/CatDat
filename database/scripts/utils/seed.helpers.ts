@@ -33,8 +33,8 @@ export function seed_file<Schema extends v.GenericSchema>(
 	if (issues) {
 		console.error(`❌ Contents of ${file} have invalid format`)
 		issues.forEach((issue) => {
-			const path = issue.path?.map((item) => item.key).join('.') ?? '<root>'
-			console.error(`${path}: ${issue.message}`)
+			const issue_path = issue.path?.map((item) => item.key).join('.') ?? '<root>'
+			console.error(`${issue_path}: ${issue.message}`)
 		})
 		process.exit(1)
 	}
@@ -50,6 +50,25 @@ export function seed_file<Schema extends v.GenericSchema>(
 		console.error(`Error seeding ${label}:`, err)
 		process.exit(1)
 	}
+}
+
+export function parse_file<Schema extends v.GenericSchema>(file: string, schema: Schema) {
+	const item = read_yaml_file(file)
+
+	const { output, issues } = v.safeParse(schema, item)
+
+	if (issues) {
+		const details = issues
+			.map((issue) => {
+				const issue_path =
+					issue.path?.map((item) => item.key).join('.') ?? '<root>'
+				return `${issue_path}: ${issue.message}`
+			})
+			.join('\n')
+		throw new Error(`Invalid YAML in ${file}:\n${details}`)
+	}
+
+	return output
 }
 
 export function seed_files<Schema extends v.GenericSchema>(

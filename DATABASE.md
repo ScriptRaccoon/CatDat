@@ -49,6 +49,14 @@ pnpm db:seed
 
 rebuilds the database by clearing all existing data and then parsing and inserting the entries defined in these YAML files.
 
+For text-only changes to existing structures, use
+
+```
+pnpm db:text
+```
+
+This compares structure YAML text with the existing database and updates changed names, notations, descriptions, nLab links, and proofs without changing relations or running deductions. Properties and implications are currently not included.
+
 ## Derived Data
 
 From the defined satisfied properties of a given categorical structure, new properties can be automatically deduced using the implications. (For example, when a category has equalizers and products, we can infer that it is complete.) The same applies to unsatisfied properties.
