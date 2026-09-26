@@ -59,7 +59,7 @@
 		"@fortawesome/free-regular-svg-icons": "^7.3.1",
 		"@fortawesome/free-solid-svg-icons": "^7.3.1",
 		"better-sqlite3": "^13.0.3",
-		"katex": "^0.17.0",
+		"katex": "^0.18.9",
 		"svelte-fa": "^4.0.4",
 		"valibot": "^1.5.0",
 		"yaml": "^2.9.1"
