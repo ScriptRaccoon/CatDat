@@ -316,7 +316,7 @@ label {
 .katex-display > .katex {
 	white-space: normal;
 }
-.katex-display > .base {
+.katex-display > .katex > .katex-html > .katex-base {
 	margin: 0.25em 0;
 }
 .katex-display {

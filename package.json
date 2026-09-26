@@ -30,39 +30,38 @@
 		"e2e:ui": "PUBLIC_PLAYWRIGHT=true pnpm exec playwright test --ui"
 	},
 	"devDependencies": {
-		"@playwright/test": "^1.61.1",
+		"@playwright/test": "^1.63.0",
 		"@sveltejs/adapter-netlify": "^6.0.4",
-		"@sveltejs/kit": "^2.60.1",
-		"@sveltejs/vite-plugin-svelte": "^7.1.2",
-		"@types/better-sqlite3": "^7.6.13",
+		"@sveltejs/kit": "^2.70.3",
+		"@sveltejs/vite-plugin-svelte": "^7.3.1",
+		"@types/better-sqlite3": "^9.6.0",
 		"@types/katex": "^0.16.8",
-		"@types/markdown-it": "^14.1.2",
-		"@types/node": "^25.5.0",
+		"@types/node": "^26.6.3",
 		"chokidar": "^5.0.0",
-		"cspell": "^10.3.2",
-		"dotenv": "^17.3.1",
+		"cspell": "^10.3.4",
+		"dotenv": "^18.0.4",
 		"gray-matter": "^4.0.3",
 		"highlight.js": "^11.12.0",
 		"husky": "^9.1.7",
-		"markdown-it": "^14.1.1",
-		"prettier": "^3.8.1",
-		"prettier-plugin-svelte": "^3.5.2",
-		"svelte": "^5.55.7",
-		"svelte-check": "^4.4.8",
-		"tsx": "^4.21.0",
-		"typescript": "^5.9.3",
-		"vite": "^8.0.13"
+		"markdown-it": "^15.0.2",
+		"prettier": "^3.9.9",
+		"prettier-plugin-svelte": "^4.1.1",
+		"svelte": "^5.57.1",
+		"svelte-check": "^4.7.6",
+		"tsx": "^4.23.15",
+		"typescript": "^6.0.3",
+		"vite": "^8.3.1"
 	},
 	"engines": {
 		"node": ">=24.14.0"
 	},
 	"dependencies": {
-		"@fortawesome/free-regular-svg-icons": "^7.2.0",
-		"@fortawesome/free-solid-svg-icons": "^7.2.0",
-		"better-sqlite3": "^12.11.1",
-		"katex": "^0.17.0",
+		"@fortawesome/free-regular-svg-icons": "^7.3.1",
+		"@fortawesome/free-solid-svg-icons": "^7.3.1",
+		"better-sqlite3": "^13.0.3",
+		"katex": "^0.18.9",
 		"svelte-fa": "^4.0.4",
 		"valibot": "^1.5.0",
-		"yaml": "^2.8.4"
+		"yaml": "^2.9.1"
 	}
 }
