@@ -25,7 +25,7 @@ md.renderer.rules.link_open = (tokens, idx, options, _, self) => {
 
 	const href_index = token.attrIndex('href')
 	if (href_index >= 0) {
-		const href = token.attrs?.[href_index]?.[1]
+		const href = String(token.attrs?.[href_index]?.[1])
 
 		if (href?.startsWith('https://') || href?.startsWith('http://')) {
 			token.attrSet('target', '_blank')
