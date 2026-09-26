@@ -71,7 +71,7 @@ to continuously run this update when a file in the subfolder [/database/data](/d
 
 For text-only changes to existing structures (names, notations, descriptions, nLab
 links, or proofs), use `pnpm db:text`. It detects and updates changed fields without
-rebuilding relations or running deductions.
+rebuilding relations or running deductions. Add `--watch` to keep it running and update whenever a structure YAML file changes.
 
 ### Troubleshooting
 

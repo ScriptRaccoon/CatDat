@@ -55,7 +55,7 @@ For text-only changes to existing structures, use
 pnpm db:text
 ```
 
-This compares structure YAML text with the existing database and updates changed names, notations, descriptions, nLab links, and proofs without changing relations or running deductions. Properties and implications are currently not included.
+This compares structure YAML text with the existing database and updates changed names, notations, descriptions, nLab links, and proofs without changing relations or running deductions. Properties and implications are currently not included. Pass `--watch` to keep the command running and update whenever a structure YAML file changes.
 
 ## Derived Data
 
