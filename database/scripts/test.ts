@@ -416,5 +416,5 @@ function test_adjoint_functor_relationships() {
 		throw new Error(violations.join('\n'))
 	}
 
-	console.info('✅ Adjoint functor relationships are valid')
+	devlog('✅ Adjoint functor relationships are valid')
 }
