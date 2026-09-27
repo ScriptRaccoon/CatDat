@@ -91,3 +91,19 @@
   conclusions:
     - effective congruences
   proof: This is Thm. 4.0 in <a href="https://doi.org/10.1007/BF01224953" target="_blank">Yves Diers, Catégories Multialgébriques</a> or <a href="https://translations.thosgood.net/ADM-34-1980-193.pdf" target="_blank">its English translation</a>.
+
+- id: multi-algebraic_classification_regular_epis
+  assumptions:
+    - multi-algebraic
+  conclusions:
+    - pullback-stable regular epimorphisms
+  proof: >-
+    Let $\C$ be a multi-algebraic category. We may assume $\C = \Mod(\A)$, where $\A$ is a small category equipped with a collection of finite discrete cones and discrete cocones, and $\Mod(\A) \subseteq \Hom(\A,\Set)$ consists of those functors that map the finite discrete cones in $\A$ to finite product cones in $\Set$ and the discrete cocones in $\A$ to coproduct cocones in $\Set$. Since finite products and coproducts commute with pullbacks in $\Set$, it is easy to check that $\Mod(\A) \subseteq \Hom(\A,\Set)$ is closed under pullbacks. Thus, pullbacks are constructed pointwise. Since surjective maps are stable under pullback in $\Set$, it remains to show, as in the case of finitary algebraic categories, that regular epimorphisms in $\C$ are precisely the pointwise surjective morphisms of models.
+
+
+    First, let $\alpha : F \to G$ be any morphism of models. For $A \in \A$, consider the image $I(A) = \im(\alpha(A)) \subseteq G(A)$. This defines a subfunctor $I \subseteq G$. It is a model because $F$ and $G$ are models and, for any family of maps of sets $(f_i : X_i \to Y_i)_{i \in I}$, we have $\im(\prod_{i \in I} f_i) = \prod_{i \in I} \im(f_i)$ and $\im(\coprod_{i \in I} f_i) = \coprod_{i \in I} \im(f_i)$. Therefore, $\alpha$ factors in $\C$ as
+    $$\alpha = \iota \circ \pi,$$
+    where $\pi : F \to I$ is pointwise surjective and $\iota : I \to G$ is pointwise injective, hence a monomorphism. If $\alpha$ is a regular epimorphism, then it is in particular an extremal epimorphism, so $\iota$ is an isomorphism. Thus, $I = G$, and $\alpha$ is pointwise surjective.
+
+
+    Conversely, assume that $\alpha : F \to G$ is pointwise surjective. Then it is the coequalizer of its kernel pair $F \times_G F \rightrightarrows F$ in the category $\Hom(\A,\Set)$ of all functors. Since the pullback $F \times_G F$ is a model, $\alpha$ is also the coequalizer in the full subcategory of models.
