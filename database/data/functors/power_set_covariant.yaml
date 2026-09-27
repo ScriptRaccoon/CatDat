@@ -71,7 +71,7 @@ unsatisfied_properties:
     proof: >-
       Assume that there is a functor $F : \Set \to \Set$ with natural isomorphisms
       $$\alpha_X : X \to F(P(X)).$$
-      By the Yoneda Lemma, there is some element $u \in F(P(1))$ (where $1$ is the singleton set as usual) such that $\alpha_X$ is given by
+      By the Yoneda lemma, there is some element $u \in F(P(1))$ (where $1$ is the singleton set as usual) such that $\alpha_X$ is given by
       $$\alpha_X(x) = F(P(x : 1 \to X))(u).$$
       The map $P(x) : P(1) \to P(X)$ is given by $\varnothing \mapsto \varnothing$ and $1 \mapsto \{x\}$. It factors through the map $e : X + 1 \to P(X)$ which maps $a \in X$ to $\{a\}$ and the unique element of $1$ to $\varnothing$. Since $\alpha_X$ is surjective, it follows that also $F(e) : F(X + 1) \to F(P(X))$ is surjective. Since $e$ is a split monomorphism, also $F(e)$ is a split monomorphism. Hence, $F(e)$ must be an isomorphism. But then $F(X+1) \cong F(P(X)) \cong X$ for all sets $X$. If $X$ is a finite non-empty set, we conclude $\card(F(X)) = \card(X) - 1$. But then
       $$\card(X) = \card(F(P(X))) = \card(P(X)) - 1 = 2^{\card(X)} - 1$$

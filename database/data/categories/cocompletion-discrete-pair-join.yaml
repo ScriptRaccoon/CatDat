@@ -162,7 +162,7 @@ unsatisfied_properties:
       $$\Hom(-,A) \xleftarrow{(u_X)_*} \Hom(-,X) \xrightarrow{(u_X)_*} \Hom(-,A).$$
       We claim that these spans are pairwise non-equivalent. Thus, for $X \neq Y$, there must be a cospan that commutes with the span associated with $X$ but not with the span associated with $Y$.
 
-      By the Yoneda Lemma, such a cospan is equivalently a small presheaf $F$ together with elements $a,b \in F(A)$ such that $u_X^*(a) = u_X^*(b)$ in $F(X)$, but $u_Y^*(a) \neq u_Y^*(b)$ in $F(Y)$. For the first condition, take the pushout
+      By the Yoneda lemma, such a cospan is equivalently a small presheaf $F$ together with elements $a,b \in F(A)$ such that $u_X^*(a) = u_X^*(b)$ in $F(X)$, but $u_Y^*(a) \neq u_Y^*(b)$ in $F(Y)$. For the first condition, take the pushout
       $$F \coloneqq \Hom(-,A) \sqcup_{\Hom(-,X)} \Hom(-,A).$$
       This is a small presheaf, since it is a pushout of representable presheaves. Let $a,b \in F(A)$ be the images of $\id_A$ under the two canonical maps $\Hom(-,A) \to F$. Since the two copies of $\Hom(-,X)$ are identified in the pushout, we have $u_X^*(a) = u_X^*(b)$ in $F(X)$. On the other hand, $F(Y) = \Hom(Y,A) \sqcup \Hom(Y,A)$ shows that the two copies of $\id_A$ remain distinct, so $u_Y^*(a) \neq u_Y^*(b)$.
 

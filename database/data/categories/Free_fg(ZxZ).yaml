@@ -100,7 +100,7 @@ special_morphisms:
       is injective. This identifies with a linear map $R^m \to R^n$, which is represented by the transpose matrix $A^T \in M_{n \times m}(R)$. By McCoy's rank theorem (Theorem 51 on p. 159 in: McCoy, <i>Rings an ideals</i>, Carus Math. Monographs, Vol. 8), $A^T$ represents an injective linear map if and only if $\Ann(I_m(A^T))=0$. But $I_m(A^T)=I_m(A)$. Thus, (1) is equivalent to (2).
 
 
-      (2) $\iff$ (3): $~$ The implication (3) $\implies$ (2) is trivial. Now assume that (3) does not hold, i.e. $I_m(A)$ contains no regular element, i.e. is contained in the set of zero divisors. Since $R$ is Noetherian, the set of zero divisors is the finite union of the associated primes (of the zero ideal). Thus, by the Prime Avoidance Lemma, $I_m(A) \subseteq P$ for some associated prime $P$, say $P = \Ann(x)$ for some $x \neq 0$. Then $x \in \Ann(I_m(A))$, which shows that (2) does not hold.
+      (2) $\iff$ (3): $~$ The implication (3) $\implies$ (2) is trivial. Now assume that (3) does not hold, i.e. $I_m(A)$ contains no regular element, i.e. is contained in the set of zero divisors. Since $R$ is Noetherian, the set of zero divisors is the finite union of the associated primes (of the zero ideal). Thus, by the prime avoidance lemma, $I_m(A) \subseteq P$ for some associated prime $P$, say $P = \Ann(x)$ for some $x \neq 0$. Then $x \in \Ann(I_m(A))$, which shows that (2) does not hold.
 
 
       (3) $\implies$ (4): $~$ It suffices to prove that $I_m(A) \subseteq \Ann(\coker(f))$. For this, it suffices to prove that $\det(A') \in \Ann(\coker(f))$, where $A'$ is any $m \times m$-submatrix of $A$. By Cramer's Rule,

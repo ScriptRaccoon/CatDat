@@ -166,7 +166,7 @@ unsatisfied_properties:
 
   - property: countable powers
     proof: >-
-      First, we prove that the inclusion functor $[(\IN,\leq),\Set]_{\conn} \hookrightarrow [(\IN,\leq),\Set]$ is continuous. By the Yoneda Lemma, the Hom-functors $\Hom(n,-)$ for $n \geq 0$ form an extremal generating collection of the functor category $[(\IN,\leq),\Set]$. The corresponding sequence is
+      First, we prove that the inclusion functor $[(\IN,\leq),\Set]_{\conn} \hookrightarrow [(\IN,\leq),\Set]$ is continuous. By the Yoneda lemma, the Hom-functors $\Hom(n,-)$ for $n \geq 0$ form an extremal generating collection of the functor category $[(\IN,\leq),\Set]$. The corresponding sequence is
       $$\varnothing \to \cdots \to \varnothing \to \{\ast\} \to \{\ast\} \to \cdots,$$
       where $\{\ast\}$ starts at index $n$, and this sequence is clearly connected. The claim now follows from the dual of Lemma 1 <a href="/content/inclusion-functors">here</a>. Alternatively, each projection functor $[(\IN,\leq),\Set]_{\conn} \to \Set$, $X \mapsto X_n$, is representable by the sequence just described and hence continuous.
 
