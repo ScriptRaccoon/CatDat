@@ -1,6 +1,6 @@
 id: locally cartesian closed
 relation: is
-description: A category is <i>locally cartesian closed</i> if each of its slice categories is cartesian closed.
+description: 'A category $\C$ is <i>locally cartesian closed</i> if each of its slice categories $\C / X$ is cartesian closed. Equivalently, pullbacks exist, and for every morphism $f : X \to Y$ the base change functor $f^* : \C / Y \to \C / X$ has a right adjoint.'
 nlab_link: https://ncatlab.org/nlab/show/locally+cartesian+closed+category
 dual: locally cocartesian coclosed
 invariant_under_equivalences: true
