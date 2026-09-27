@@ -78,11 +78,11 @@ The direction $\impliedby$ is trivial in each case. For the direction $\implies$
 :::
 
 ::: Lemma 6
-If $\C$ is a locally small category, then $\widehat{\C}$ is mono-regular. Actually, every monomorphism is an effective monomorphism. Moreover, monomorphisms are stable under filtered colimits.
+If $\C$ is a locally small category, then $\widehat{\C}$ is mono-regular. Actually, every monomorphism is an effective monomorphism. Moreover, monomorphisms are stable under filtered colimits and pushouts.
 :::
 
 ::: Proof
-The first statement is a formal consequence of the fact that every monomorphism in $\Set$ is effective and the already established facts that monomorphisms and pushouts can be understood objectwise. For similar reasons, the second statement is a formal consequence of the corresponding fact for $\Set$.
+The first statement is a formal consequence of the fact that every monomorphism in $\Set$ is effective and the already established facts that monomorphisms and pushouts can be understood objectwise. For similar reasons, the second statement is a formal consequence of the corresponding facts for $\Set$.
 :::
 
 ::: Lemma 7
