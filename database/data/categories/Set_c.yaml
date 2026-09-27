@@ -3,7 +3,7 @@ name: category of countable sets
 notation: $\Set_\c$
 objects: countable sets
 morphisms: maps
-description: A set is countable if it admits a surjection from $\IN$. In particular, every finite set is countable.
+description: Here, a set is countable if it admits an injective map to $\IN$. In particular, every finite set is countable.
 nlab_link: null
 
 tags:

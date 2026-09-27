@@ -41,7 +41,7 @@ A family of collections $(X_i)_{i \in I}$ is called _small_ when $I$ is a set. I
 
 A collection is called _finite_ if it is isomorphic to $\{1,\dotsc,n\}$ for some $n \in \IN$. In particular, every finite collection is essentially small. However, a finite collection is not necessarily small, as the example $\{\SetColl\}$ shows.
 
-A collection is called _countable_ if it admits a surjective map from the set of natural numbers $\IN$. In particular, every finite collection is countable, and every countable collection is essentially small.
+A collection is called _countable_ if it admits an injective map to the set of natural numbers $\IN$. In particular, every finite collection is countable, and every countable collection is essentially small. A countable collection is either finite or isomorphic to $\IN$.
 
 ## Categories
 
