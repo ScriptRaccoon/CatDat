@@ -17,7 +17,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\Ab_{fg} \to \Set$ and $\Set$ is locally small.
+    proof: There is a forgetful functor $\Ab_{\fg} \to \Set$ and $\Set$ is locally small.
 
   - property: abelian
     proof: This follows from the fact for abelian groups and the fact that subgroups of finitely generated abelian groups are also finitely generated.
