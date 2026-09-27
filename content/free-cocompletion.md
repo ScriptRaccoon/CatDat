@@ -78,11 +78,11 @@ The direction $\impliedby$ is trivial in each case. For the direction $\implies$
 :::
 
 ::: Lemma 6
-If $\C$ is a locally small category, then $\widehat{\C}$ is mono-regular. Actually, every monomorphism is an effective monomorphism. Moreover, monomorphisms are stable under filtered colimits.
+If $\C$ is a locally small category, then $\widehat{\C}$ is mono-regular. Actually, every monomorphism is an effective monomorphism. Moreover, monomorphisms are stable under filtered colimits and pushouts.
 :::
 
 ::: Proof
-The first statement is a formal consequence of the fact that every monomorphism in $\Set$ is effective and the already established facts that monomorphisms and pushouts can be understood objectwise. For similar reasons, the second statement is a formal consequence of the corresponding fact for $\Set$.
+The first statement is a formal consequence of the fact that every monomorphism in $\Set$ is effective and the already established facts that monomorphisms and pushouts can be understood objectwise. For similar reasons, the second statement is a formal consequence of the corresponding facts for $\Set$.
 :::
 
 ::: Lemma 7
@@ -181,7 +181,7 @@ is a weakly terminal essentially small collection in $\int E$, which is equivale
 $$\textstyle \coprod_{A \in K,\, a \in E(A)} \Hom(-,A) \to E$$
 is an epimorphism of presheaves, as required.
 
-Let $(X,x)$ be an object of $\int E$, i.e. $X \in \Ob(\C)$ and $x \in E(X)$. In particular, $x \in P(X)$. Thus the comma category $(X,x) \downarrow \K$ is connected, and therefore non-empty. Choose an object $f : (X,x) \to (A,a)$. Thus, $A \in K$, $a \in P(A)$, and $f : X \to A$ satisfies $f^*(a)=x$. If $a \in E(A)$, we are done. Assume otherwise and, without loss of generality, $a \in F_1(A)$. Let $b \in F_2(A) \subseteq P(A)$ be the corresponding element in the other copy of $F$. Using the flip automorphism of $P$ that fixes $E$ and exchanges $F_1$ and $F_2$, we see that $f^*(b)=x$. Thus, we also have a morphism $f' : (X,x) \to (A,b)$ with the same underlying morphism $f : X \to A$.
+Let $(X,x)$ be an object of $\int E$, i.e. $X \in \Ob(\C)$ and $x \in E(X)$. In particular, $x \in P(X)$. Thus the comma category $(X,x) \downarrow \K$ is connected, and therefore non-empty. Choose an object $f : (X,x) \to (A,a)$. Thus, $A \in K$, $a \in P(A)$, and $f : X \to A$ satisfies $f^_(a)=x$. If $a \in E(A)$, we are done. Assume otherwise and, without loss of generality, $a \in F_1(A)$. Let $b \in F_2(A) \subseteq P(A)$ be the corresponding element in the other copy of $F$. Using the flip automorphism of $P$ that fixes $E$ and exchanges $F_1$ and $F_2$, we see that $f^_(b)=x$. Thus, we also have a morphism $f' : (X,x) \to (A,b)$ with the same underlying morphism $f : X \to A$.
 
 Since $(X,x) \downarrow \K$ is connected, the two morphisms $f$ and $f'$ are connected to each other. Thus, there are morphisms $(X,x) \to (A_i,a_i)$ with $A_i \in K$, $a_i \in P(A_i)$, starting with $f$ and ending with $f'$, such that for each pair of adjacent indices $i,i+1$, there is a morphism $(A_i,a_i) \to (A_{i+1},a_{i+1})$ or a morphism $(A_{i+1},a_{i+1}) \to (A_i,a_i)$. If any $a_i$ is contained in $E(A_i)$, we would be done. Assume, for a contradiction, that this is not the case.
 
