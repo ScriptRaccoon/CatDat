@@ -23,7 +23,13 @@
 	<i>CatDat</i> is built on a
 	<a href="https://sqlite.org/" target="_blank">SQLite database</a>. You can download a
 	snapshot of it below and inspect the data in your terminal or with any database tool
-	of your choice.
+	of your choice. A
+	<a
+		href="https://github.com/user-attachments/assets/053744e9-71c4-4fb5-82a1-8cdd3bbea3e2"
+	>
+		database diagram
+	</a>
+	is available.
 </p>
 
 <p>
