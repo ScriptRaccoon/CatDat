@@ -105,23 +105,21 @@
     - quotients of congruences
   proof: We assume that every congruence is effective, and the regularity condition implies that every effective congruence has a quotient.
 
+# TODO: The "finitely cocomplete" assumption is only needed to satisfy the preconditions of co-Malcev; thus, if we
+#       revise the definition of "Malcev" not to require a finitely complete category, then that condition can be dropped.
+#       (In particular, this will allow us to conclude that the category Set_ff of sets with finite-to-one maps
+#       satisfies the more general definition of co-Malcev.)
 - id: regular_epi-regular_extensive_consequences
   assumptions:
     - epi-regular
     - extensive
-    - regular
+    - equalizers
+    - finitely cocomplete
   conclusions:
     - co-Malcev
     - effective cocongruences
   proof: >-
-    Suppose we have a coreflexive corelation
-    $$X+X' \xtwoheadrightarrow{p} E \xtwoheadrightarrow{r} X$$
-    on $X$, where we let $X'$ be an isomorphic copy of $X$ for clarity below. Let $Y$ be the equalizer of $p\circ i_1, p\circ i_2 : X \rightrightarrows E$. That means that for a generalized element $x \in X(T)$, $x \in Y(T)$ if and only if $p(x) = p(x')$. Then by the assumptions $p$ is a regular epimorphism. By regularity, $p$ is the coequalizer of its kernel pair, which can be expressed as the equalizer $K$ of
-    $$p \circ \pi_1,\, p\circ \pi_2 : (X+X') \times (X+X') \rightrightarrows E,$$
-    where $\pi_1, \pi_2$ are the projections. By distributivity and extensivity, it is sufficient to calculate the equalizer on each "quadrant" of $(X+X') \times (X+X')$, i.e. the four copies of $X \times X$.
-
-    On the $X\times X$ quadrant, for generalized elements $x_1, x_2 \in X(T)$, we have $(x_1, x_2) \in K(T)$ if and only if $p(x_1) = p(x_2)$. Since $p\circ i_1$ is a split monomorphism, this is equivalent to $x_1 = x_2$. Thus, the $X\times X$ quadrant of $K$ is the diagonal of $X$. On the $X\times X'$ quadrant, we have $(x_1, x_2')\in K(T)$ if and only if $p(x_1) = p(x_2')$. Since $r(p(x_1)) = x_1$ and $r(p(x_2')) = x_2$, this condition implies $x_1 = x_2$; and then by definition of $Y$, $x_1 = x_2 \in Y(T)$. The converse is straightforward. Thus, the $X\times X'$ quadrant of $K$ is the diagonal of $Y$. Similarly, the $X'\times X$ quadrant of $K$ is the diagonal of $Y$, and the $X'\times X'$ quadrant of $K$ is the diagonal of $X$.
-    Thus, we get that a morphism $h : X+X' \to Z$ factors through $E$ if and only if $h(x) = h(x)$ for every generalized element $x \in X$; $h(y) = h(y')$ for every $y \in Y$; $h(y') = h(y)$ for every $y\in Y$; and $h(x') = h(x')$ for every $x \in X$. Clearly this is equivalent to $h(y) = h(y')$ for every $y\in Y$, so in fact $E$ is the cokernel pair of $i_1 \circ \inc_Y$ and $i_2 \circ \inc_Y$. This means that $E$ is an effective cocongruence.
+    This is a consequence of Lemma 4 <a href="/content/cocongruences_in_extensive_categories">here</a>, since every coreflexive corelation is regular and has an equalizer by the assumptions.
 
 
     Remark: The assumptions are satisfied in particular for every elementary topos. Therefore, every elementary topos has effective cocongruences and is co-Malcev. This special case is Example 2.2.18 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>. An alternative proof of this special case is given later in A.5.17.
@@ -134,25 +132,7 @@
   conclusions:
     - effective cocongruences
   proof: >-
-    Suppose $p : X+X' \twoheadrightarrow E$ is a cocongruence, with coreflexivity morphism $r : E \to X$ and cotransitivity morphism $t : E \to E +_X E'$. (Here $X'$ is an isomorphic copy of $X$; $E'$ is an isomorphic copy of $E$; and $E +_X E'$ is the coproduct modulo the relations $p(x') = p(x)'$, i.e. it is equivalent to the pushout of $E \xleftarrow{p\circ i_2} X \xrightarrow{p\circ i_1} E$. Since both these morphisms are (split) monomorphisms, the pushout exists by <a href="/content/pushouts-of-monos-via-congruence-quotients">this result</a>.)
-
-    We now claim that we have pullback diagrams
-    $$\begin{CD}
-    X @> p \circ i_1 >> E @. \quad @. X' @> p \circ i_2 >> E \\
-    @V p \circ i_1 VV @VV t V @. @V p \circ i_2 VV @VV t V \\
-    E @> i_1 >> E +_X E' @. \quad @. E'  @> i_2 >> E +_X E'.
-    \end{CD}$$
-    For the left diagram, suppose we have generalized elements $e_1, e_2 \in E$ such that $t(e_1) = i_1(e_2) \in E +_X E'$. Then we have two retractions of $t$, $s_1 : E +_X E' \to E$, defined by $e \mapsto p(r(e)), e' \mapsto e'$; and $s_2 : E +_X E' \to E$, defined by $e \mapsto e, e' \mapsto p(r(e)')$. To check for instance that $s_1$ is a retraction, note that $s_1(t(p(x))) = s_1(p(x)) = p(r(p(x)) = p(x)$ and $s_1(t(p(x'))) = s_1(p(x')') = p(x')$ and then use the assumption that $p$ is an epimorphism; the proof for $s_2$ is similar. Therefore, $e_1 = s_1(t(e_1)) = s_1(i_1(e_2)) = p(r(e_2))$. On the other hand, $e_1 = s_2(t(e_1)) = s_2(i_1(e_2)) = e_2$. Therefore, $e_1 = e_2 = p(r(e_2))$, so the generalized element $r(e_2)$ of $X$ maps to $e_1$ and $e_2$ respectively as required. On the other hand, since $p\circ i_1 : X \to E$ is a (split) monomorphism, the uniqueness of the generalized element of $X$ is automatic, completing the proof that the left diagram is a pullback square. The proof for the right diagram is similar.
-
-    Now, using extensivity, we can combine these into a pullback diagram
-    $$\begin{CD}
-    X+X' @> p >> E \\
-    @VVV @VV t V \\
-    E+E' @>>> E +_X E'.
-    \end{CD}$$
-    Since both morphisms $X \to E$ and $X \to E'$ used in the pushout are monomorphisms, by the construction <a href="/content/pushouts-of-monos-via-congruence-quotients">here</a>, the morphism $E+E' \to E +_X E'$ is a regular epimorphism. Therefore, by the assumption that the category is regular, we have that $p$ is in fact a regular epimorphism.
-
-    From here, <a href="/category-implication/regular_epi-regular_extensive_consequences">this proof</a> shows that $E$ is effective. This proof applies since the assumption that the category is epi-regular has only been used to make sure that $p$ is a regular epimorphism.
+    This is proved as Corollary 5 <a href="/content/cocongruences_in_extensive_categories">here</a>.
 
 - id: pretopos_balanced
   assumptions:

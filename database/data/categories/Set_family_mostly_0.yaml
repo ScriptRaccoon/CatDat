@@ -74,12 +74,6 @@ satisfied_properties:
   - property: effective congruences
     proof: Let $R \rightrightarrows X$ be a congruence in $\Set^{(I)}_0$. We claim that it is the kernel pair of its coequalizer $X \twoheadrightarrow X/R$. This certainly holds in <a href="/category/Set">$\Set$</a>, and for every $i \in I$, the pair $R_i \rightrightarrows X_i$ is a congruence in $\Set$. Therefore, the claim follows since kernel pairs (in fact, all connected limits) and coequalizers (in fact, all colimits) are constructed pointwise.
 
-  - property: effective cocongruences
-    proof: Let $X \rightrightarrows R$ be a cocongruence in $\Set^{(I)}_0$. We claim that it is the cokernel pair of its equalizer $E \hookrightarrow X$. This certainly holds in <a href="/category/Set">$\Set$</a>, and for every $i \in I$, the pair $X_i \rightrightarrows R_i$ is a cocongruence in $\Set$. Therefore, the claim follows since cokernel pairs (in fact, all colimits) and equalizers (in fact, all connected limits) are constructed pointwise.
-
-  - property: co-Malcev
-    proof: Since colimits are constructed pointwise, this property is inherited from <a href="/category/Set">$\Set$</a>.
-
 unsatisfied_properties:
   - property: skeletal
     proof: This is trivial.
