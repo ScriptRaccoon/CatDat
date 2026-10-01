@@ -46,6 +46,13 @@
 		{@html structure.notation}
 	</span>
 
+	{#if structure.alternative_notation}
+		<strong>Alternative notation</strong>
+		<span>
+			{@html structure.alternative_notation}
+		</span>
+	{/if}
+
 	{@render definition?.()}
 
 	{#each associated_structures as a}

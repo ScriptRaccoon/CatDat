@@ -222,10 +222,10 @@ function seed_structures({ type, folder }: { type: StructureType; folder: string
 
 	const structure_insert = db.prepare(
 		`INSERT INTO structures (
-			id, type, name, notation, description, nlab_link,
-			dual_structure_id, parent_structure_id
+			id, type, name, notation, alternative_notation, description,
+			nlab_link, dual_structure_id, parent_structure_id
 		)
-		VALUES (?, ?, ?, ?, ?, ?, ?, ?)`
+		VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`
 	)
 
 	const tag_insert = db.prepare(
@@ -269,6 +269,7 @@ function seed_structures({ type, folder }: { type: StructureType; folder: string
 			type,
 			structure.name,
 			structure.notation,
+			structure.alternative_notation || null,
 			structure.description,
 			structure.nlab_link,
 			structure.dual || null,
