@@ -10,13 +10,11 @@ description: >-
 nlab_link: https://ncatlab.org/nlab/show/M-category#def
 tags:
   - set theory
+  - relational structures
 
 related:
   - Set
   - Set_arrow
-  - Pos
-  - PreOrd
-  - Bin
 
 satisfied_properties:
   - property: locally small
