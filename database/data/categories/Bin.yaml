@@ -19,6 +19,11 @@ tags:
 
 related:
   - Quiv
+  - Bin_irr
+  - Bin_symm
+  - Bin_symm_irr
+  - Bin_refl
+  - Bin_symm_refl
   - Pos
   - PreOrd
 

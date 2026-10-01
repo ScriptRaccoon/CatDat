@@ -25,7 +25,8 @@
 		"coprod",
 		"isbell",
 		"indisc",
-		"Quiv"
+		"Quiv",
+		"symm"
 	],
 	"words": [
 		"abelian",
@@ -200,6 +201,7 @@
 		"Glicksberg",
 		"grothendieck",
 		"Grothendieck",
+		"Grötzsch",
 		"Groupes",
 		"groupoid",
 		"groupoids",
