@@ -55,14 +55,22 @@ satisfied_properties:
 
   - property: extremal cogenerator
     proof: >-
-      We claim that the set $Q = \{0,1,2\}$ equipped with the relation $R_Q \coloneqq (Q \times Q) \setminus \{(0,1)\}$ is an extremal cogenerator of $\Bin$. First, to show that it is a cogenerator, assume that $f,g : (X,R) \rightrightarrows (Y,S)$ are distinct morphisms. Choose $x \in X$ with $f(x) \neq g(x)$. Define the map $h : Y \to Q$ by $h(f(x))=0$ and $h(y)=2$ for $y \neq f(x)$. Since $1 \notin \im(h)$, we obtain a morphism $h : (Y,S) \to (Q,R_Q)$, and it satisfies $h \circ f \neq h \circ g$ since $h(f(x)) = 0$, while $h(g(x)) = 2$.
+      We claim that the set $Q \coloneqq \{0,1,2,3\}$ equipped with the relation
+      $$R_Q \coloneqq (Q \times Q) \setminus \{(0,1),(3,3)\}$$
+      is an extremal cogenerator of $\Bin$. First, to show that it is a cogenerator, assume that $f,g : (X,R) \rightrightarrows (Y,S)$ are distinct morphisms. Choose $x \in X$ with $f(x) \neq g(x)$. Define the map $h : Y \to Q$ by $h(f(x))=0$ and $h(y)=2$ for $y \neq f(x)$. Since $1,3 \notin \im(h)$, we obtain a morphism $h : (Y,S) \to (Q,R_Q)$, and it satisfies $h \circ f \neq h \circ g$ since $h(f(x)) = 0$, while $h(g(x)) = 2$.
 
       To show that $(Q,R_Q)$ is extremal, let $f : (X,R) \to (Y,S)$ be a morphism such that
       $$f^* : \Hom((Y,S),(Q,R_Q)) \to \Hom((X,R),(Q,R_Q))$$
       is bijective. Since $(Q,R_Q)$ is a cogenerator, it follows that $f$ is both a monomorphism and an epimorphism. By the classification of monomorphisms and epimorphisms below, this means that $f : X \to Y$ is bijective. It remains to show that $f$ is relation-reflecting.
 
-      Assume for contradiction that $x,x' \in X$ satisfy $(f(x),f(x')) \in S$, but $(x,x') \notin R$. Define the map $h : X \to Q$ by $h(x)=0$, $h(x')=1$, and $h(p)=2$ for $p \neq x,x'$. Then $h : (X,R) \to (Q,R_Q)$ is a morphism since the only pair in $X \times X$ whose image is not in $R_Q$ is the pair $(x,x')$, which is not contained in $R$. By assumption, there is a morphism $g : (Y,S) \to (Q,R_Q)$ such that $g \circ f = h$. Since $(f(x),f(x')) \in S$, it follows that
+      Assume for contradiction that $x,x' \in X$ satisfy $(f(x),f(x')) \in S$, but $(x,x') \notin R$. There are two cases to consider.
+
+      <strong>Case 1:</strong> $x \neq x'$. Define the map $h : X \to Q$ by $h(x)=0$, $h(x')=1$, and $h(p)=2$ for $p \neq x,x'$. Then $h : (X,R) \to (Q,R_Q)$ is a morphism since the only pair in $X \times X$ whose image is not in $R_Q$ is the pair $(x,x')$, which is not contained in $R$. By assumption, there is a morphism $g : (Y,S) \to (Q,R_Q)$ such that $g \circ f = h$. Since $(f(x),f(x')) \in S$, it follows that
       $$(0,1) = (h(x),h(x')) = (g(f(x)),g(f(x'))) \in R_Q,$$
+      which is a contradiction.
+
+      <strong>Case 2:</strong> $x = x'$. Define the map $h : X \to Q$ by $h(x)=3$ and $h(p)=2$ for $p \neq x$. Then $h : (X,R) \to (Q,R_Q)$ is a morphism since the only pair in $X \times X$ whose image is not in $R_Q$ is the pair $(x,x)$, which is not contained in $R$. By assumption, there is a morphism $g : (Y,S) \to (Q,R_Q)$ such that $g \circ f = h$. Since $(f(x),f(x)) \in S$, it follows that
+      $$(3,3) = (h(x),h(x)) = (g(f(x)),g(f(x))) \in R_Q,$$
       which is a contradiction.
 
   - property: effective cocongruences
