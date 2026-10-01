@@ -15,7 +15,7 @@ related:
   - SeqSet
   - Sh(X)
   - Set_family
-  - DiGraph
+  - Quiv
   - SetxSet_0_fin
 
 satisfied_properties:
