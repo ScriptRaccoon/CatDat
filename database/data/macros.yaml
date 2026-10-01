@@ -96,6 +96,7 @@
 # categories
 \Set: \mathbf{Set}
 \Setne: \mathbf{Set}_{\neq \varnothing}
+\Quiv: \mathbf{Quiv}
 \DiGraph: \mathbf{DiGraph}
 \Rel: \mathbf{Rel}
 \Bin: \mathbf{Bin}

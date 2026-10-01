@@ -1,10 +1,16 @@
 id: Bin
-name: category of sets with a binary relation
+name: category of sets equipped with a binary relation
 notation: $\Bin$
-objects: pairs $(X,R)$, where $X$ is a set and $R \subseteq X \times X$ is a binary relation
+alternative_notation: $\DiGraph$
+objects: pairs $(X,R)$, where $X$ is a set and $R \subseteq X \times X$ is a binary relation on $X$
 morphisms: >-
   A morphism $(X,R) \to (Y,S)$ is a relation-preserving map, i.e. a map $f : X \to Y$ such that $(x,x') \in R$ implies $(f(x),f(x')) \in S$.
-description: This category can also be viewed as a full subcategory of <a href="/category/DiGraph">$\DiGraph$</a> consisting of directed graphs with at most one edge between any pair of vertices. Loops are allowed. It is a typical example of a quasitopos.
+description: >-
+  The pair $(X,R)$ can also be interpreted as a directed graph (with vertex set $X$ and edge set $R$), where loops are allowed, and the morphisms are precisely the morphisms of directed graphs. Thus,
+  $$\Bin = \DiGraph,$$
+  and $\DiGraph$ can be interpreted as the full subcategory of $\Quiv$, the <a href="/category/Quiv">category of quivers</a>, consisting of quivers with at most one edge between any pair of vertices. In the proofs below, however, we will mostly not use the graph-theoretic interpretation and instead work with binary relations. This simplifies the exposition and has the additional advantage that we do not need to deal with the varying definitions of the term "directed graph" in the literature (in particular, there is no complete consensus on whether loops are allowed). Instead, we can work with the unambiguous notion of a binary relation.
+
+  The category $\Bin$ is a typical example of a quasitopos.
 nlab_link: null
 
 tags:
@@ -12,12 +18,13 @@ tags:
   - relational structures
 
 related:
-  - Set
-  - Rel
-  - DiGraph
-  - PreOrd
+  - Quiv
   - Pos
-  - Mono
+  - PreOrd
+
+comments:
+  - The forgetful functor $\Bin \to \Set$ has a left adjoint mapping a set $X$ to $(X,\varnothing)$.
+  - The forgetful functor $\Bin \to \Set$ has a right adjoint mapping a set $X$ to $(X,X \times X)$.
 
 satisfied_properties:
   - property: locally small
@@ -31,27 +38,29 @@ satisfied_properties:
     proof: If $\I \to \Bin$, $i \mapsto (X_i,R_i)$ is a diagram, its colimit is $(\colim_{i \in \I} X_i,R)$, where $R$ consists of pairs $(\iota_i(x),\iota_i(y))$ for $i \in \I$ and $(x,y) \in R_i$. The universal property is easy to check.
     check_redundancy: false
 
-  - property: finitely accessible
-    proof: Using the description of colimits, it is easy to see that $(E,R)$ is finitely presentable when $E$ is a finite set. The collection of such objects is essentially small. Moreover, every object $(X,R)$ of $\Bin$ can be written as the filtered colimit of $(E,R|_E)$, where $E$ runs through the finite subsets of $X$.
-
-  - property: locally cartesian closed
-    proof: >-
-      Let $(X,R)$ be a fixed object. We say that $x$ relates to $x'$ when $(x,x') \in R$ and suppress the relations from the notation. For two objects $Y \to X$ and $Z \to X$ in $\Bin / X$, we define their exponential to be the set $\coprod_{x \in X} \Hom(Y_x,Z_x)$ (the exponential in $\Set / X$), where $Y_x$ denotes the fiber over $x$, equipped with the following relation: a map $f : Y_x \to Z_x$ relates to a map $g : Y_{x'} \to Z_{x'}$ when $x$ relates to $x'$ and, for all $y \in Y_x$ and $y' \in Y_{x'}$, if $y$ relates to $y'$, then $f(y)$ relates to $g(y')$. The projection map $\coprod_{x \in X} \Hom(Y_x,Z_x) \to X$ is relation-preserving by construction.
-
-      Let us check the universal property of an exponential. Given an object $A \to X$ in $\Bin / X$, a morphism $\alpha : A \to \coprod_{x \in X} \Hom(Y_x,Z_x)$ over $X$ is in particular a morphism in $\Set / X$ and thus corresponds to a morphism $\beta : A \times_X Y \to Z$ in $\Set / X$ via $\beta(a,y) = \alpha(a)(y)$. It remains to check that $\alpha$ is relation-preserving if and only if $\beta$ is relation-preserving.
-
-      That $\alpha$ is relation-preserving means that if $a \in A_x$ relates to $a' \in A_{x'}$, then the map $\alpha(a) : Y_x \to Z_x$ relates to the map $\alpha(a') : Y_{x'} \to Z_{x'}$, i.e., that $x$ relates to $x'$ (which is automatic since $a$ relates to $a'$ and $A \to X$ is relation-preserving) and that if $y \in Y_x$ relates to $y' \in Y_{x'}$, then $\alpha(a)(y)$ relates to $\alpha(a')(y')$. In other words, if $(a,y)$ relates to $(a',y')$ in the pullback $A \times_X Y$, then $\beta(a,y)$ relates to $\beta(a',y')$. This is precisely the statement that $\beta$ is relation-preserving.
-
-  - property: regular subobject classifier
-    proof: By the description of regular monomorphisms below, the poset of regular subobjects of $(X,R)$ is isomorphic to the poset of subsets of $X$. The subsets of $X$ correspond to morphisms from $(X,R)$ into $\Omega \coloneqq (\{0,1\}, \{0,1\} \times \{0,1\})$, which shows that $\Omega$ is a regular subobject classifier.
-
   - property: infinitary extensive
     proof: We can copy the proof for <a href="/category/PreOrd">$\PreOrd$</a>.
     references:
       - PreOrd_infinitary_extensive
 
+  - property: finitely accessible
+    proof: Using the description of colimits, it is easy to see that $(X,R)$ is finitely presentable when $X$ is a finite set. The collection of such objects, up to isomorphism, is essentially small. Moreover, every object $(X,R)$ can be written as the filtered colimit of $(F,R|_F)$, where $F$ runs through the finite subsets of $X$.
+    label: Bin_finitely_accessible
+
+  - property: locally cartesian closed
+    proof: >-
+      Let $(X,R)$ be a fixed object. We say that $x$ relates to $x'$ when $(x,x') \in R$ and suppress the relation set $R$ from the notation. For two objects $Y \to X$ and $Z \to X$ in $\Bin / X$, we define their exponential to be the set $\coprod_{x \in X} \Hom(Y_x,Z_x)$ (the exponential in $\Set / X$), where $Y_x$ denotes the fiber over $x$, equipped with the following relation: a map $f : Y_x \to Z_x$ relates to a map $g : Y_{x'} \to Z_{x'}$ when $x$ relates to $x'$ and, for all $y \in Y_x$ and $y' \in Y_{x'}$, if $y$ relates to $y'$, then $f(y)$ relates to $g(y')$. The projection map $\coprod_{x \in X} \Hom(Y_x,Z_x) \to X$ is relation-preserving by construction.
+
+      Let us check the universal property of an exponential. Given an object $A \to X$ in $\Bin / X$, a morphism $\alpha : A \to \coprod_{x \in X} \Hom(Y_x,Z_x)$ over $X$ is in particular a morphism in $\Set / X$ and thus corresponds to a morphism $\beta : A \times_X Y \to Z$ in $\Set / X$ via $\beta(a,y) = \alpha(a)(y)$. It remains to check that $\alpha$ is relation-preserving if and only if $\beta$ is relation-preserving.
+
+      That $\alpha$ is relation-preserving means that if $a \in A_x$ relates to $a' \in A_{x'}$, then the map $\alpha(a) : Y_x \to Z_x$ relates to the map $\alpha(a') : Y_{x'} \to Z_{x'}$, i.e., that $x$ relates to $x'$ (which is automatic since $a$ relates to $a'$ and $A \to X$ is relation-preserving) and that if $y \in Y_x$ relates to $y' \in Y_{x'}$, then $\alpha(a)(y)$ relates to $\alpha(a')(y')$. In other words, if $(a,y)$ relates to $(a',y')$ in the pullback $A \times_X Y$, then $\beta(a,y)$ relates to $\beta(a',y')$. This is precisely the statement that $\beta$ is relation-preserving.
+    label: Bin_exponentials
+
+  - property: regular subobject classifier
+    proof: By the description of regular monomorphisms below, the poset of regular subobjects of $(X,R)$ is isomorphic to the poset of subsets of $X$. The subsets of $X$ correspond to morphisms from $(X,R)$ into the object $\Omega \coloneqq (\{0,1\}, \{0,1\} \times \{0,1\})$, which shows that $\Omega$ is a regular subobject classifier.
+
   - property: generator
-    proof: The object $(\{\ast\},\varnothing)$ is clearly a generator.
+    proof: The object $(\{\ast\},\varnothing)$ is a generator because it represents the forgetful functor $\Bin \to \Set$, $(X,R) \mapsto X$, which is faithful.
 
   - property: extremal cogenerator
     proof: >-
@@ -72,6 +81,7 @@ satisfied_properties:
       <strong>Case 2:</strong> $x = x'$. Define the map $h : X \to Q$ by $h(x)=3$ and $h(p)=2$ for $p \neq x$. Then $h : (X,R) \to (Q,R_Q)$ is a morphism since the only pair in $X \times X$ whose image is not in $R_Q$ is the pair $(x,x)$, which is not contained in $R$. By assumption, there is a morphism $g : (Y,S) \to (Q,R_Q)$ such that $g \circ f = h$. Since $(f(x),f(x)) \in S$, it follows that
       $$(3,3) = (h(x),h(x)) = (g(f(x)),g(f(x))) \in R_Q,$$
       which is a contradiction.
+    label: Bin_extremal_cogenerator
 
   - property: effective cocongruences
     proof: >-
@@ -113,29 +123,32 @@ unsatisfied_properties:
 
   - property: semi-strongly connected
     proof: >-
-      By viewing sets with binary relations as directed graphs without multiple edges, we may use the same counterexample as for <a href="/category/DiGraph">$\DiGraph$</a>, since directed cycles have no multiple edges. Concretely, there is no morphism in $\Bin$ between
-      $$\bigl(\{0,1\},\{(0,1),(1,0)\}\bigr)$$
-      and
-      $$\bigl(\{0,1,2\},\{(0,1),(1,2),(2,0)\}\bigr).$$
-
+      Interpreting the objects of $\Bin$ as directed graphs, we may use the same counterexample as for <a href="/category/Quiv">$\Quiv$</a>, since directed cycles have no multiple edges. Concretely, there is no morphism between these two objects:
+      $$\begin{align*}
+      C_2 & = \bigl(\{0,1\}, \{(0,1),(1,0)\}\bigr) \\
+      C_3 & = \bigl(\{0,1,2\}, \{(0,1),(1,2),(2,0)\}\bigr)
+      \end{align*}$$
     references:
-      - DiGraph_not_semi-strongly_connected
+      - Quiv_not_semi-strongly_connected
 
   - property: extremal generator
-    proof: Let $(X,R)$ be any object. We will prove that $\Hom((X,R),-)$ is not conservative. If $R$ is non-empty, consider the unique morphism from $(\varnothing,\varnothing)$ to $(\{\ast\},\varnothing)$. It is not an isomorphism, but since $(X,R)$ has no morphism to either object, the functor $\Hom((X,R),-)$ maps it to an isomorphism between empty sets. If $R$ is empty, consider the unique morphism from $(\{\ast\},\varnothing)$ to $(\{\ast\},\{(\ast,\ast)\})$. It is not an isomorphism, but since $(X,R) = (X,\varnothing)$ has a unique morphism to each of these objects, the functor $\Hom((X,R),-)$ maps it to an isomorphism between singleton sets.
+    proof: Let $(X,R) \in \Bin$. We will prove that $\Hom((X,R),-)$ is not conservative. If $R$ is non-empty, consider the unique morphism from $(\varnothing,\varnothing)$ to $(\{\ast\},\varnothing)$. It is not an isomorphism, but since $(X,R)$ has no morphism to either object, the functor $\Hom((X,R),-)$ maps it to an isomorphism between empty sets. If $R$ is empty, consider the unique morphism from $(\{\ast\},\varnothing)$ to $(\{\ast\},\{(\ast,\ast)\})$. It is not an isomorphism, but since $(X,R) = (X,\varnothing)$ has a unique morphism to each of these objects, the functor $\Hom((X,R),-)$ maps it to an isomorphism between singleton sets.
+    label: Bin_no_extremal_generator
 
   - property: cofiltered-limit-stable epimorphisms
     proof: We already know that <a href="/category/Set">$\Set$</a> does not have this property. Now apply the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> to the functor $\Set \to \Bin$, $X \mapsto (X,\varnothing)$.
+    label: Bin_no_cofiltered-limit-stable_epis
 
   - property: co-Malcev
     proof: >-
       Consider the set $X = \{x\}$ with the relation $R_X = \{(x,x)\}$ and the set $Y = \{x,x'\}$ with the relation $R_Y = \{(x,x),(x',x'),(x,x')\}$. There are two canonical morphisms $q,q' : (X,R_X) \rightrightarrows (Y,R_Y)$ defined by $q(x)=x$ and $q'(x)=x'$. They are jointly surjective and have a common retraction $(Y,R_Y) \to (X,R_X)$, namely the unique map $Y \to X$ sending both $x$ and $x'$ to $x$. Thus, $q,q'$ form a coreflexive corelation. It is not cosymmetric, since otherwise there would be a morphism $s : (Y,R_Y) \to (Y,R_Y)$ satisfying $s(x)=x'$ and $s(x')=x$, which would imply $(x',x) \in R_Y$, contrary to the definition of $R_Y$.
+    label: Bin_not_co-Malcev
 
 special_objects:
   initial object:
-    description: the empty set with the empty relation
+    description: $(\varnothing,\varnothing)$, which can be seen as the directed graph with no vertices and no directed edges
   terminal object:
-    description: the singleton set $\{\ast\}$ with the full relation
+    description: $(\{\ast\},\{(\ast,\ast)\})$, which can be seen as the directed graph with a single vertex and a loop
   coproducts:
     description: The coproduct of a family $(X_i,R_i)_{i \in I}$ is $(\coprod_{i \in I} X_i, \coprod_{i \in I} R_i)$, where $\coprod_{i \in I} R_i \subseteq \coprod_{i \in I} (X_i \times X_i) \subseteq \coprod_{i \in I} X_i \times \coprod_{i \in I} X_i$.
   products:
@@ -147,10 +160,10 @@ special_morphisms:
     proof: This is easy to check.
   monomorphisms:
     description: injective relation-preserving maps
-    proof: For the non-trivial direction, the construction of limits shows that the forgetful functor $\Bin \to \Set$ is continuous, so that it preserves monomorphisms in particular.
+    proof: For the non-trivial direction, the construction of limits shows that the forgetful functor $\Bin \to \Set$ is continuous, so that it preserves monomorphisms in particular. Another explanation for this fact is that the forgetful functor is right adjoint to the functor mapping a set $X$ to $(X,\varnothing)$.
   epimorphisms:
     description: surjective relation-preserving maps
-    proof: For the non-trivial direction, the construction of colimits shows that the forgetful functor $\Bin \to \Set$ is cocontinuous, so that it preserves epimorphisms in particular.
+    proof: For the non-trivial direction, the construction of colimits shows that the forgetful functor $\Bin \to \Set$ is cocontinuous, so that it preserves epimorphisms in particular. Another explanation for this fact is that the forgetful functor is left adjoint to the functor mapping a set $X$ to $(X,X \times X)$.
   regular monomorphisms:
     description: injective maps that reflect and preserve the relation
     proof: 'The equalizer of two morphisms $f,g : (X,R) \rightrightarrows (Y,S)$ is constructed as $(E,R|_E)$, where $E = \{x \in X : f(x) = g(x)\}$ is the equalizer of $f,g : X \rightrightarrows Y$. The inclusion map $(E,R|_E) \hookrightarrow (X,R)$ reflects and preserves the relation. Conversely, let $(X,R)$ be an object and let $E \subseteq X$ be a subset. Then $E \subseteq X$ is the equalizer of the two maps $1,\chi_E : X \rightrightarrows \{0,1\}$, which induce morphisms $1,\chi_E : (X,R) \rightrightarrows (\{0,1\}, \{0,1\} \times \{0,1\})$ with equalizer $(E,R|_E)$.'

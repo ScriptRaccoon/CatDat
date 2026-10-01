@@ -24,7 +24,8 @@
 		"noiso",
 		"coprod",
 		"isbell",
-		"indisc"
+		"indisc",
+		"Quiv"
 	],
 	"words": [
 		"abelian",
@@ -298,6 +299,8 @@
 		"pretopos",
 		"procyclic",
 		"protomodular",
+		"pseudograph",
+		"pseudographs",
 		"pseudomonic",
 		"pushforward",
 		"pushout",
@@ -335,6 +338,8 @@
 		"subobject",
 		"subobjects",
 		"subposet",
+		"subquiver",
+		"subquivers",
 		"subring",
 		"subscheme",
 		"subsemigroup",
