@@ -20,5 +20,5 @@ Now if this congruence is the kernel pair of $h : A+X \to Z$ in $A \backslash \C
 
 $$\id_A + x_1,\, \id_A + x_2 : A+T \rightrightarrows A+X$$
 
-in $A \backslash \C$ with $h \circ (\id_A + x_1) = h \circ (\id_A + x_2)$. Therefore, $\id_A + x_1, \id_A + x_2$ factors through $A+E$ in $A \backslash \C$, so $x_1, x_2$ factors through $A+E$ in $\C$; and using disjoint coproducts, we may conclude $x_1, x_2$ factors through $E$.
+in $A \backslash \C$ with $h \circ (\id_A + x_1) = h \circ (\id_A + x_2)$. Therefore, $\id_A + x_1, \id_A + x_2$ factor through $A+E$ in $A \backslash \C$, so $x_1, x_2$ factor through $A+E$ in $\C$; and using disjoint coproducts, we may conclude that $x_1, x_2$ factor through $E$.
 :::
