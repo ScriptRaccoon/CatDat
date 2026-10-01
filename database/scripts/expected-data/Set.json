@@ -126,6 +126,8 @@
 	"concretizable": true,
 	"total": true,
 	"cototal": true,
+	"pullback-stable regular epimorphisms": true,
+	"pushout-stable regular monomorphisms": true,
 
 	"Grothendieck abelian": false,
 	"Malcev": false,

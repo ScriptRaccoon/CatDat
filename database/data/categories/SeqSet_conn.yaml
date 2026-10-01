@@ -37,6 +37,9 @@ satisfied_properties:
   - property: exact filtered colimits
     proof: Since the subcategory of connected sequences is closed under filtered colimits and finite limits, this follows from the corresponding property of the <a href="/category/SeqSet">category of sequences of sets</a>.
 
+  - property: pushout-stable regular monomorphisms
+    proof: Based on the pointwise descriptions of regular monomorphisms and pushouts, this follows from the corresponding property of <a href="/category/Set">$\Set$</a>.
+
   - property: regular
     proof: We already know that the category has finite limits and coequalizers, and that the inclusion functor into the regular <a href="/category/SeqSet">category of sequences of sets</a> is fully faithful and preserves finite limits and coequalizers. Thus, the claim follows from Lemma 7 <a href="/content/subcategories">here</a>.
 

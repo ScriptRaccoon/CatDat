@@ -104,3 +104,11 @@
   conclusions:
     - locally cartesian closed
   proof: In a thin category, every object is subterminal. Thus, the result follows from Corollary 6 <a href="/content/subcategories">here</a>.
+
+- id: lcc_stable_reg_epis
+  assumptions:
+    - locally cartesian closed
+    - binary products
+  conclusions:
+    - pullback-stable regular epimorphisms
+  proof: 'Let $p : X \to Y$ be a regular epimorphism in a locally cartesian closed category, and let $f : Z \to Y$ be any morphism. We may lift $p$ to a morphism in $\C / Y$ by equipping $X$ with the structure morphism $p$ and $Y$ with the structure morphism $\id_Y$. It is straightforward to check that $p$ is also a regular epimorphism in $\C / Y$. Since the base change functor $f^* : \C / Y \to \C / Z$ is a left adjoint, it preserves regular epimorphisms. Hence the morphism $X \times_Y Z \to Z$ induced by $p$ is a regular epimorphism in $\C / Z$. Finally, the underlying morphism in $\C$ is a regular epimorphism because the forgetful functor $\C / Z \to \C$ has a right adjoint, mapping $T$ to $T \times Z \to Z$, and therefore preserves regular epimorphisms.'
