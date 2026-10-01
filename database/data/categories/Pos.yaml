@@ -8,11 +8,11 @@ nlab_link: https://ncatlab.org/nlab/show/Pos
 
 tags:
   - order theory
+  - relational structures
 
 related:
-  - FinOrd
   - PreOrd
-  - Mono
+  - FinOrd
   - Pos_noiso
   - Bin
 
