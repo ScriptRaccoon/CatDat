@@ -192,4 +192,4 @@
       - epi-regular
   conclusions:
     - strong monomorphism
-  proof: Any monomorphism is right orthogonal to any regular epimorphism because regular epimorphisms are strong (by combining <a href="/morphism-implication/regular_mono_is_strict">this result</a> and <a href="/morphism-implication/strict_mono_is_strong">this result</a>).
+  proof: Any monomorphism is right orthogonal to any regular epimorphism because regular epimorphisms are strong (by combining the dual of <a href="/morphism-implication/regular_mono_is_strict">this result</a> and the dual of <a href="/morphism-implication/strict_mono_is_strong">this result</a>). In an epi-regular category, it follows that every monomorphism is right orthogonal to any epimorphism, i.e. a strong monomorphism.

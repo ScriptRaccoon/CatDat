@@ -137,7 +137,7 @@ Any fully faithful functor reflects extremal generating collections (and therefo
 :::
 
 ::: Proof
-Under the given assumptions, we can factor $\C \to (\Set^+)^S$, $X \mapsto (\Hom_\C(G, X))_{G\in S}$, as being isomorphic to the composition of $U : \C \to D$ followed by $Y \mapsto (\Hom_\D(UG, Y))_{G\in S}$, using the assumption on $U$ to identify $\Hom_\D(UG, UX)$ with $\Hom_C(G, X)$ naturally in $X$. In this composition, the first is fully faithful and therefore also conservative; and the second is assumed to be faithful and conservative. Therefore, the composition is also faithful and conservative.
+Under the given assumptions, we can factor $\C \to (\Set^+)^S$, $X \mapsto (\Hom_\C(G, X))_{G\in S}$, as being isomorphic to the composition of $U : \C \to \D$ followed by $Y \mapsto (\Hom_\D(UG, Y))_{G\in S}$, using the assumption on $U$ to identify $\Hom_\D(UG, UX)$ with $\Hom_\C(G, X)$ naturally in $X$. In this composition, the first is fully faithful and therefore also conservative; and the second is assumed to be faithful and conservative. Therefore, the composition is also faithful and conservative.
 :::
 
 ::: Lemma 11

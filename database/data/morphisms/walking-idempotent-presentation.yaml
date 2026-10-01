@@ -14,12 +14,12 @@ related: []
 satisfied_properties:
   - property: strong epimorphism
     proof: >-
-      First of all, $F$ is an epimorphism since it is surjective on objects and full. Now consider a commutative diagram of functors
+      First of all, $F$ is an epimorphism since it is surjective on objects and morphisms (even though $F$ is not full). Now consider a commutative diagram of functors
       $$\begin{CD}
       I @>F>> \Idem \\ @V{U}VV @VV{V}V \\ \C @>>{M}> \D
       \end{CD}$$
       in which $M$ is a monomorphism, i.e. injective on objects and faithful. The functor $V$ corresponds to an idempotent endomorphism $v : Y \to Y$ in $\D$. The functor $U$ corresponds to a morphism $u : X \to X'$ in $\C$. Commutativity of the diagram means that $M(X) = M(X')$ and $M(u) = v$.
-      Since $M$ is injective on objects, we conclude $X = X'$. Since $M$ is faithful and $v$ is idempotent, we see that $u$ is idempotent. Thus, $u$ corresponds to a functor $\tilde{U} : \Idem \to \C$ with $M \circ \tilde{U} = U$.
+      Since $M$ is injective on objects, we conclude $X = X'$. Since $M$ is faithful and $v$ is idempotent, we see that $u$ is idempotent. Thus, $u$ corresponds to a functor $\tilde{U} : \Idem \to \C$ with $M \circ \tilde{U} = V$.
 
 unsatisfied_properties:
   - property: strict epimorphism

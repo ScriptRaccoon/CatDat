@@ -36,7 +36,7 @@ satisfied_properties:
     proof: This property is immediately inherited from <a href="/category/Ab">$\Ab$</a>.
 
   - property: generator
-    proof: We know that <a href="/category/Ab">$\Ab$</a> has a cogenerator $G$, for example $G = \IZ$. Then the constant family $(G)_{i \in I}$ is a generator of $\Ab^I$.
+    proof: We know that <a href="/category/Ab">$\Ab$</a> has a generator $G$, for example $G = \IZ$. Then the constant family $(G)_{i \in I}$ is a generator of $\Ab^I$.
 
   - property: cogenerator
     proof: We know that <a href="/category/Ab">$\Ab$</a> has a cogenerator $Q$, for example $Q = \IQ / \IZ$. Then the constant family $(Q)_{i \in I}$ is a cogenerator of $\Ab^I$.

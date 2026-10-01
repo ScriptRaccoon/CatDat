@@ -42,7 +42,7 @@ satisfied_properties:
       \end{align*}$$
       We need to prove that the canonical homomorphism
       $$T \to T_A \times T_B$$
-      is an isomorphism. Since $p_1 : A \times B \to A$ is surjective with kernel $0 \times B = \langle (0,1) \rangle$, we have $T_A = T/\langle f(1,0)\rangle$, and likewise, $T_B = T/\langle f(0,1) \rangle$. The elements $f(1,0)$ and $f(0,1)$ are orthogonal idempotents in $T$. Therefore, the claim follows from the well-known result in commutative algebra that if $A$ is a commutative algebra and $e \in A$ is an idempotent, then the canonical homomorphism
+      is an isomorphism. Since $p_1 : A \times B \to A$ is surjective with kernel $0 \times B = \langle (0,1) \rangle$, we have $T_A = T/\langle f(0,1)\rangle$, and likewise, $T_B = T/\langle f(1,0) \rangle$. The elements $f(1,0)$ and $f(0,1)$ are orthogonal idempotents in $T$. Therefore, the claim follows from the well-known result in commutative algebra that if $A$ is a commutative algebra and $e \in A$ is an idempotent, then the canonical homomorphism
       $$A \to A/\langle e \rangle \times A/\langle 1-e \rangle$$
       is an isomorphism. One can also deduce this from the Chinese Remainder Theorem.
 
