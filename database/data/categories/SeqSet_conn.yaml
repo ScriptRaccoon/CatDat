@@ -61,7 +61,7 @@ satisfied_properties:
       $$\Omega = \bigl(\IN \xrightarrow{s} \IN \xrightarrow{s} \IN \xrightarrow{s} \cdots\bigr)$$
       is a subobject classifier, where $\top : 1 \to \Omega$ is given by the elements $0 \in \IN$ in every degree. Clearly, $\Omega$ is connected. Consider a monomorphism $U \to X$. By the classification of monomorphisms below, we may assume that $U \subseteq X$ is a subsequence, i.e. $U_n \subseteq X_n$ for each $n$, and the transition maps $X_n \to X_{n+1}$ restrict to the transition maps $U_n \to U_{n+1}$.
 
-      For $x_n \in X_n$, we claim that there is some $k \geq 0$ such that its image $x_{n+k} \in X_{n+k}$ belongs to $U_{n+k}$. In fact, there is some $u_n \in U_n$, and connectedness of $X$ yields some $k \geq 0$ such that the image of $u_n$ in $X_{n+k}$ is equal to $x_{n+k}$. This image belongs to $U_{n+k}$. Therefore, the map
+      For $x_n \in X_n$, we claim that there is some $k \geq 0$ such that its image $x_{n+k} \in X_{n+k}$ belongs to $U_{n+k}$. In fact, there is some $r \geq 0$ such that an element $u_{n+r} \in U_{n+r}$ exists, and connectedness of $X$ yields some $k \geq r$ such that the image of $u_{n+r}$ in $X_{n+k}$ is equal to $x_{n+k}$. This image belongs to $U_{n+k}$. Therefore, the map
       $$\chi_n : X_n \to \IN, \quad x_n \mapsto \min \{k \geq 0 : x_{n+k} \in U_{n+k}\}$$
       is well-defined. We claim that the diagram
       $$\begin{CD}

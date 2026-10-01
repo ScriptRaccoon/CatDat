@@ -22,7 +22,7 @@ N \times X @>>{g}> X
 $$
 
 ::: Proof
-Define the morphism $b : 1 \to N \times X$ by $b \coloneqq (z,a)$ and the morphism $h : N \times X \to N \times X$ by $h(n,x) \coloneqq (n,g(n,x))$. By the universal property of $(N,z,s)$, there is a unique morphism $\Psi : N \to N \times X$ such that:
+Define the morphism $b : 1 \to N \times X$ by $b \coloneqq (z,a)$ and the morphism $h : N \times X \to N \times X$ by $h(n,x) \coloneqq (s(n),g(n,x))$. By the universal property of $(N,z,s)$, there is a unique morphism $\Psi : N \to N \times X$ such that:
 
 - $\Psi(z) = b$
 - $\Psi(s(n)) = h(\Psi(n))$
@@ -30,7 +30,7 @@ Define the morphism $b : 1 \to N \times X$ by $b \coloneqq (z,a)$ and the morphi
 Write $\Psi(n) = (\Psi_0(n),\Psi_1(n))$, where $\Psi_0 : N \to N$ and $\Psi_1 : N \to X$. The two equations above then become:
 
 - $\Psi_0(z) = z$
-- $\Psi_0(s(n)) = \Psi_0(n)$
+- $\Psi_0(s(n)) = s(\Psi_0(n))$
 - $\Psi_1(z) = a$
 - $\Psi_1(s(n)) = g(\Psi_0(n),\Psi_1(n))$
 

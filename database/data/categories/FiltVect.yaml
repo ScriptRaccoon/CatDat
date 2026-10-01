@@ -60,7 +60,7 @@ satisfied_properties:
       is a bijection. This implies that $f^* : W^* \to V^*$ is a bijection of the dual vector spaces, and therefore an isomorphism. By standard linear algebra, this implies that $f : V \to W$ is an isomorphism of vector spaces.
 
       It remains to show that if $f$ also induces a bijection
-      $${-} \circ f : \Hom((W, G), K_n) \to \Hom(V, F), K_n)$$
+      $${-} \circ f : \Hom((W, G), K_n) \to \Hom((V, F), K_n)$$
       for each $n$, then $f$ induces an isomorphism of the filtrations. For this step, we may assume without loss of generality that $f = \id_V : V \to V$. By the observations above, this implies that $F_n(V)^\perp = G_n(V)^\perp$. By standard linear algebra, we conclude $F_n(V) = G_n(V)$.
 
   - property: finitely accessible
