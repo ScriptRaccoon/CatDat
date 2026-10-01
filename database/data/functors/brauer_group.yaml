@@ -6,7 +6,7 @@ associated:
   codomain: Ab
   left_adjoint: null
   right_adjoint: null
-description: The Brauer group $\Br(K)$ of a field $K$ consists of equivalence classes of central simple algebras over $K$, where $A \sim B$ iff $A \otimes_K M_n(K) \cong B \otimes_K M_n(K)$ for some $n \geq 0$. The group structure is given by $[A] \cdot [B] \coloneqq [A \otimes_K B]$, $1 \coloneqq [K]$ and $[A]^{-1} \coloneqq [A^{\op}]$. A homomorphism $K \to L$ induces the homomorphism $\Br(K) \to \Br(L)$ defined by $[A] \mapsto [A \otimes_K L]$.
+description: The Brauer group $\Br(K)$ of a field $K$ consists of equivalence classes of central simple algebras over $K$, where $A \sim B$ iff $A \otimes_K M_n(K) \cong B \otimes_K M_m(K)$ for some $n,m \geq 1$. The group structure is given by $[A] \cdot [B] \coloneqq [A \otimes_K B]$, $1 \coloneqq [K]$ and $[A]^{-1} \coloneqq [A^{\op}]$. A homomorphism $K \to L$ induces the homomorphism $\Br(K) \to \Br(L)$ defined by $[A] \mapsto [A \otimes_K L]$.
 nlab_link: https://ncatlab.org/nlab/show/Brauer+group
 
 tags:
@@ -32,17 +32,17 @@ satisfied_properties:
       $$\alpha : \colim_i \Br(F_i) \to \Br(F)$$
       is surjective. Let $A$ be a central simple algebra over $F$. Since it finite-dimensional, it has a finite presentation over $F$. The relations are non-commutative polynomials in $F$, thus have coefficients in some $F_i$ (more precisely, the image of $F_i \to F$ in $F$). We may therefore lift this presentation to $F_i$ and find an algebra $A_i$ over $F_i$ with an isomorphism $A_i \otimes_{F_i} F \cong A$. We need to show that $A_i$ is a central simple algebra. First, we have $A_i \neq 0$ and $\dim_{F_i}(A_i) = \dim_F(A) < \infty$. If $x \in Z(A_i)$, then $x \otimes 1 \in Z(A_i \otimes_{F_i} F) = F$. From linear algebra we know that the intersection of $A_i$ and $F$ in $A_i \otimes_{F_i} F$ is $F_i$, so that $x \in F_i$, as claimed. Finally, to show that $A_i$ is simple, let $I$ be a two-sided ideal in $A_i$. Then $I \otimes_{F_i} F$ is a two-sided ideal in the tensor product. Thus, it is either zero, which also gives $I=0$ by linear algebra, or it is $A_i \otimes_{F_i} F$, which gives $I=A_i$ by linear algebra. Therefore, $[A_i]$ is a well-defined preimage of $[A]$ in $\Br(F_i)$.
 
-      To show that the canonical map $\alpha$ is injective, choose an element in its kernel. It is induced by an element in some $\Br(F_i)$, say $[A]$ for a central simple algebra $A$ over $F_i$. Then $[A \otimes_{F_i} F] = 1$ in $\Br(F)$ means that there is some $n \geq 0$ such that
-      $$A \otimes_{F_i} M_n(F) \cong A \otimes_{F_i} F \otimes_F M_n(F) \cong M_n(F)$$
-      as $F$-algebras. Since $M_n(F) = M_n(F_i) \otimes_{F_i} F$, this means that
-      $$(A \otimes_{F_i} M_n(F_i)) \otimes_{F_i} F \cong M_n(F_i) \otimes_{F_i} F.$$
+      To show that the canonical map $\alpha$ is injective, choose an element in its kernel. It is induced by an element in some $\Br(F_i)$, say $[A]$ for a central simple algebra $A$ over $F_i$. Then $[A \otimes_{F_i} F] = 1$ in $\Br(F)$ means that there are $n,m \geq 1$ such that
+      $$A \otimes_{F_i} M_n(F) \cong A \otimes_{F_i} F \otimes_F M_n(F) \cong M_m(F)$$
+      as $F$-algebras. Since $M_k(F) = M_k(F_i) \otimes_{F_i} F$, this means that
+      $$(A \otimes_{F_i} M_n(F_i)) \otimes_{F_i} F \cong M_m(F_i) \otimes_{F_i} F.$$
       In general, if $R,S$ are two finitely presentable $F_i$-algebras with an isomorphism of $F$-algebras
       $$R \otimes_{F_i} F \cong S \otimes_{F_i} F,$$
       then there is some $i \to j$ such that this isomorphism is induced by an isomorphism of $F_j$-algebras
       $$R \otimes_{F_i} F_j \cong S \otimes_{F_i} F_j;$$
       this is easily checked by using the finite presentations and $F = \colim_i F_i$. Therefore, in our case, there is some $i \to j$ and an isomorphism between
       $$(A \otimes_{F_i} M_n(F_i)) \otimes_{F_i} F_j \cong (A \otimes_{F_i} F_j) \otimes_{F_j} M_n(F_j)$$
-      and $M_n(F_i) \otimes_{F_i} F_j \cong M_n(F_j)$. In other words, $[A]$ is contained in the kernel of $\Br(F_i) \to \Br(F_j)$, which means that it vanishes in the colimit, as claimed.
+      and $M_m(F_i) \otimes_{F_i} F_j \cong M_m(F_j)$. In other words, $[A]$ is contained in the kernel of $\Br(F_i) \to \Br(F_j)$, which means that it vanishes in the colimit, as claimed.
 
   - property: preserves epimorphisms
     proof: It needs to be shown that if $K \to L$ is a purely inseparable field extension, then $\Br(K) \to \Br(L)$ is surjective. This is Theorem 4.1.5 in Jacobson's <a href=" https://doi.org/10.1007/978-3-642-02429-0" target="_blank">Finite-Dimensional Division Algebras over Fields</a>.
