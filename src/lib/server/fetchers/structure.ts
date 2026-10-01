@@ -21,6 +21,7 @@ export function fetch_structure(type: StructureType, id: string): StructureDetai
                 s.id,
                 s.name,
                 s.notation,
+				s.alternative_notation,
                 s.description,
                 s.nlab_link,
                 s.dual_structure_id,

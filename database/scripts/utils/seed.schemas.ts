@@ -66,6 +66,7 @@ export const structure_yaml_schema = v.pipe(
 		id: v.string(),
 		name: v.string(),
 		notation: v.string(),
+		alternative_notation: v.optional(v.string()),
 		description: v.string(),
 		nlab_link: v.nullable(v.string()),
 		tags: v.pipe(distinct_strings_schema, v.minLength(1)),

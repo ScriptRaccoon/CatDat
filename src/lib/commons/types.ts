@@ -22,6 +22,7 @@ export type StructureDisplay = {
 	id: string
 	name: string
 	notation: string
+	alternative_notation: string | null
 	description: string
 	nlab_link: string | null
 	dual_structure_id: string | null
