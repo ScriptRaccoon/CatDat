@@ -6,7 +6,7 @@ description: We gather results about inclusion functors
 # Inclusion functors
 
 ::: Lemma 1
-Let $\D$ be category that has an extremal cogenerating collection $S$. Let $\C \subseteq \D$ be a full subcategory that contains every object of $S$. Then the inclusion functor $U : \C \hookrightarrow \D$ preserves all colimits that exist in $\C$ and in $\D$. In particular, if $\D$ is cocomplete, $U$ is cocontinuous.
+Let $\D$ be a category that has an extremal cogenerating collection $S$. Let $\C \subseteq \D$ be a full subcategory that contains every object of $S$. Then the inclusion functor $U : \C \hookrightarrow \D$ preserves all colimits that exist in $\C$ and in $\D$. In particular, if $\D$ is cocomplete, $U$ is cocontinuous.
 :::
 
 ::: Proof

@@ -18,7 +18,7 @@ Let $\C$ be a countably extensive category with coequalizers of kernel pairs. As
 :::
 
 ::: Proof
-We consider the morphism $\coprod_{n \geq 0} X_n \to Y$ induced by the monomorphisms $X_n \hookrightarrow Y$. By assumption, its kernel pair $\coprod_{n \geq 0} X_n \times_Y \coprod_{n \geq 0} X_n$ exists, and the two projections to $\coprod_{n \geq 0} X_n$ have a coequalizer. We will prove that this coequalizer is a colimit of the sequence $X_1 \hookrightarrow X_2 \hookrightarrow \cdots$. For this, it suffices to find a natural bijection between cocones $(h_n : X_n \to T)_{n \geq 0}$ and morphisms $h : \coprod_{n \geq 0} X_n \to T$ that coequalize the two projections, where $T \in \C$ is any object.
+We consider the morphism $\coprod_{n \geq 0} X_n \to Y$ induced by the monomorphisms $X_n \hookrightarrow Y$. By assumption, its kernel pair $\coprod_{n \geq 0} X_n \times_Y \coprod_{n \geq 0} X_n$ exists, and the two projections to $\coprod_{n \geq 0} X_n$ have a coequalizer. We will prove that this coequalizer is a colimit of the sequence $X_0 \hookrightarrow X_1 \hookrightarrow \cdots$. For this, it suffices to find a natural bijection between cocones $(h_n : X_n \to T)_{n \geq 0}$ and morphisms $h : \coprod_{n \geq 0} X_n \to T$ that coequalize the two projections, where $T \in \C$ is any object.
 
 A morphism $h : \coprod_{n \geq 0} X_n \to Y$ is equivalent to a family of morphisms $(h_n : X_n \to T)_{n \geq 0}$. Since $\C$ is countably extensive, the canonical morphism
 $$\textstyle \coprod_{n,m \geq 0} X_n \times_Y X_m \to \coprod_{n \geq 0} X_n \times_Y \coprod_{m \geq 0} X_m$$

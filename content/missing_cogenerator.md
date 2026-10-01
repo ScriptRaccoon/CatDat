@@ -12,7 +12,7 @@ Let $\C$ be a pointed category with a faithful functor $U: \C \to \Set$. Assume 
 1. For any $X \in \F$ and any $Y \in \C$, every non-zero morphism $f: X \to Y$ is injective on underlying sets.
 2. For every $Y \in \C$ there is some object $X \in \F$ such that $\card(U(X)) > \card(U(Y))$.
 
-Then $\C$ does not have a cogenerator. Moreover, $\C$ is not hypercocomplete, and hence, not cototal.
+Then $\C$ does not have a cogenerator. Moreover, $\C$ is not hypercocomplete, and hence not cototal.
 :::
 
 ::: Proof

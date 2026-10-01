@@ -12,7 +12,7 @@ The forgetful functor $U : \LRS_k \to \Top$ has a right adjoint $K : \Top \to \L
 :::
 
 ::: Proof
-In this adjunction, the counit $UK \to \id$ is just the identity. To describe the unit $\id \to KU$, we need to define a morphism $(X, \O_X) \to (X, \underline{k})$ for any locally ringed space $(X, \O_X)$ over $k$. This morphism will be the identity on topological spaces, and the pullback operation $\underline{k} \to \O_X$ will be the unique morphism of sheaves induced by the given structure of $\O_X$ as a sheaf of $k$-algebras. It is now straightforward to check this indeed defines an adjunction; and since the counit is an isomorphism, that implies that $K$ is fully faithful.
+In this adjunction, the counit $UK \to \id$ is just the identity. To describe the unit $\id \to KU$, we need to define a morphism $(X, \O_X) \to (X, \underline{k})$ for any locally ringed space $(X, \O_X)$ over $k$. This morphism will be the identity on topological spaces, and the pullback operation $\underline{k} \to \O_X$ will be the unique morphism of sheaves induced by the given structure of $\O_X$ as a sheaf of $k$-algebras. It is now straightforward to check that this indeed defines an adjunction; and since the counit is an isomorphism, that implies that $K$ is fully faithful.
 :::
 
 We now show that this reflective subcategory is in fact also a coreflective subcategory. Recall that for $f \in \O_X(U)$ we have its vanishing set $V(f) \coloneqq \{x\in U : f \in \m_{X,x}\} = \{x \in U : f(x) = 0\}$, where $f(x) \in \kappa(x)$ is the image of $f_x \in \O_{X,x}$ in the residue field.

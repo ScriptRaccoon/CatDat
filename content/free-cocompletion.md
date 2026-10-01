@@ -5,7 +5,7 @@ description: We investigate the properties of the free cocompletion of a locally
 
 # The free cocompletion of a locally small category
 
-Let $\C$ be a locally small category. All results here can easily be adapted to the case that $\C$ is locally essentially small, and we do not assume that $\C$ is small. Then $\widehat{\C}$ denotes its _free cocompletion_ (often called $P\C$ in the literature when $\C$ is not assumed to be small), which is the full subcategory of $[\C^{\op},\Set]$ consisting presheaves
+Let $\C$ be a locally small category. All results here can easily be adapted to the case that $\C$ is locally essentially small, and we do not assume that $\C$ is small. Then $\widehat{\C}$ denotes its _free cocompletion_ (often called $P\C$ in the literature when $\C$ is not assumed to be small), which is the full subcategory of $[\C^{\op},\Set]$ consisting of presheaves
 $$F : \C^{\op} \to \Set$$
 that are _small_. This condition can be described in many equivalent ways:
 
