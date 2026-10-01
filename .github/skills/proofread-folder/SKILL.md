@@ -15,7 +15,7 @@ Proofread all YAML and Markdown files directly inside the folder specified by th
 - Correct genuine spelling, grammar, punctuation, and typographical mistakes in prose, comments, and human-readable string values.
 - In YAML and Markdown, edit only human-language text and obvious text typos. Preserve YAML keys, Markdown structure, identifiers, markup, links, interpolation, and syntax.
 - In mathematical notation, correct only an obvious local typo, such as a variable name that inconsistently changes from `$a$` to `$x$` where the surrounding text makes the intended symbol unambiguous. Preserve formulas and claims otherwise.
-- Do not assess or correct the mathematical validity of proofs. That is the role of `/check-proofs`. Language mistakes inside proof text may still be corrected without changing the mathematical argument.
+- Do not assess or correct the mathematical validity of proofs. That is the role of `/check-proofs-folder`. Language mistakes inside proof text may still be corrected without changing the mathematical argument.
 - Make stylistic changes sparingly. Only adjust wording when it is clearly awkward or ambiguous and a small change improves readability while preserving the author's meaning and voice. Prefer leaving acceptable personal style alone.
 
 ## Procedure
