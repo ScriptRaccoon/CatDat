@@ -38,6 +38,9 @@
 \fc: \mathrm{fc}
 \fg: \mathrm{fg}
 \fp: \mathrm{fp}
+\irr: \mathrm{irr}
+\refl: \mathrm{refl}
+\symm: \mathrm{symm}
 \ab: \mathrm{ab}
 \reg: \mathrm{reg}
 \fin: \mathrm{fin}
@@ -98,6 +101,7 @@
 \Setne: \mathbf{Set}_{\neq \varnothing}
 \Quiv: \mathbf{Quiv}
 \DiGraph: \mathbf{DiGraph}
+\Graph: \mathbf{Graph}
 \Rel: \mathbf{Rel}
 \Bin: \mathbf{Bin}
 \Ab: \mathbf{Ab}

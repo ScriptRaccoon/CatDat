@@ -1,0 +1,138 @@
+id: Bin_symm_irr
+name: category of sets equipped with a symmetric irreflexive binary relation
+notation: $\Bin_{\symm,\irr}$
+alternative_notation: $\Graph$
+objects: pairs $(X,R)$, where $X$ is a set and $R \subseteq X \times X$ is a symmetric irreflexive binary relation
+morphisms: >-
+  A morphism $(X,R) \to (Y,S)$ is a relation-preserving map, i.e. a map $f : X \to Y$ such that $(x,x') \in R$ implies $(f(x),f(x')) \in S$.
+description: >-
+  If we define an undirected graph as a pair $(V,E)$ with $E \subseteq P_2(V)$, the pair $(X,R)$ induces an undirected graph $(X,\{\{x,x'\} : (x,x') \in R\})$, and this gives an isomorphism of categories
+  $$\Bin_{\symm,\irr} \cong \Graph.$$
+  In the proofs below, however, we will mostly not use the graph-theoretic interpretation and instead work with binary relations. This simplifies the exposition and has the additional advantage that we do not need to deal with the varying definitions of the term "graph" in the literature (simple? multiple edges? loops? finite?). Instead, we can focus on the unambiguous notion of a symmetric irreflexive binary relation.
+
+  It turns out that this category behaves exactly like <a href="/category/Bin_irr">$\Bin_{\irr}$</a> (i.e. the category of directed graphs without loops), and the proofs of the properties are very similar.
+nlab_link: null
+
+tags:
+  - graph theory
+  - relational structures
+
+related:
+  - Bin
+  - Bin_symm
+  - Bin_symm_refl
+  - Bin_irr
+  - Bin_refl
+  - Quiv
+
+comments:
+  - The "category of simple graphs" studied in the <a href="https://ncatlab.org/nlab/show/category+of+simple+graphs" target="_blank">nLab</a> is a misnomer. The nLab article actually studies the <a href="/category/Bin_symm_refl">category of sets equipped with a reflexive symmetric relation</a>. Although the objects correspond to undirected graphs, since reflexive relations correspond to irreflexive relations by removing the diagonal, the morphisms are not the same. As mentioned above, the category of undirected graphs is isomorphic to the category of sets equipped with an irreflexive symmetric relation. While it is true that this category does not behave as well as the category of sets equipped with a reflexive symmetric relation, this does not justify renaming it.
+  - 'Although the categories $\Bin_{\symm,\irr}$ and $\Bin_{\irr}$, or equivalently $\Graph$ and $\DiGraph_{NL}$, agree on all properties currently recorded in the database, they are not equivalent categories. In both categories, the one-vertex graph $K_1$ without edges can be characterized up to isomorphism as the unique <a href="https://ncatlab.org/nlab/show/connected+object" target="_blank">connected object</a> that admits a morphism to every non-initial object. We can then count the connected objects up to isomorphism that admit exactly two morphisms from $K_1$ (i.e. have two vertices). In $\Graph$, there is only one such graph, $\bullet \longleftrightarrow \bullet$, whereas in $\DiGraph_{NL}$ there are two: $\bullet \longrightarrow \bullet$ and $\bullet \longleftrightarrow \bullet$.'
+
+satisfied_properties:
+  - property: locally small
+    proof: This is obvious.
+
+  - property: connected limits
+    proof: >-
+      In fact, $\Bin_{\symm,\irr}$ is closed under all non-empty limits in <a href="/category/Bin">$\Bin$</a>. If $\I \to \Bin$, $i \mapsto (X_i,R_i)$ is a non-empty diagram, its limit is $(\lim_{i \in \I} X_i,R)$, where $R$ consists of pairs $(x,y)$ such that $(x_i,y_i) \in R_i$ for every $i \in \I$. If each $R_i$ is irreflexive and symmetric, then $R$ is symmetric. It is irreflexive because, if $(x,x) \in R$, we may choose any $i \in \I$ and obtain the contradiction $(x_i,x_i) \in R_i$.
+    check_redundancy: false
+
+  - property: binary products
+    proof: We have just seen that all non-empty limits exist.
+
+  - property: infinitary extensive
+    proof: It is easy to check that $\Bin_{\symm,\irr} \subseteq \Bin$ is closed under coproducts (see below for their concrete description), and we already know that it is also closed under pullbacks. Since <a href="/category/Bin">$\Bin$</a> is infinitary extensive, the claim therefore follows from Lemma 11 <a href="/content/subcategories">here</a>.
+
+  - property: finitely accessible
+    proof: >-
+      First, we claim that $\Bin_{\symm,\irr} \subseteq \Bin$ is closed under filtered colimits. In fact, the colimit of a filtered diagram $i \mapsto (X_i,R_i)$ in <a href="/category/Bin">$\Bin$</a> is $(\colim_i X_i, R)$, where $R$ consists of all pairs $(\iota_i(x),\iota_i(y))$ for some index $i$ and some $(x,y) \in R_i$. If each $R_i$ is symmetric, then $R$ is symmetric. If each $R_i$ is irreflexive, then $R$ is irreflexive as well, as we have seen in the proof for <a href="/category/Bin_irr">$\Bin_{\irr}$</a>. The rest of the proof is the same as for the finite accessibility of <a href="/category/Bin">$\Bin$</a>.
+    references:
+      - Bin_irr_finitely_accessible
+      - Bin_finitely_accessible
+
+  - property: locally cartesian closed
+    proof: >-
+      We know that <a href="/category/Bin">$\Bin$</a> is locally cartesian closed, and that $\Bin_{\symm,\irr} \subseteq \Bin$ is closed under pullbacks. Therefore, it suffices to show that $\Bin_{\symm,\irr} \subseteq \Bin$ is closed under relative exponentials. Recall that for two objects $(Y,R_Y) \to (X,R_X)$ and $(Z,R_Z) \to (X,R_X)$ in $\Bin / (X,R_X)$, their exponential is the set $F = \coprod_{x \in X} \Hom(Y_x,Z_x)$ equipped with the following relation $R_F$: for maps $f : Y_x \to Z_x$ and $g : Y_{x'} \to Z_{x'}$ we have $(f,g) \in R_F$ when $(x,x') \in R_X$ and, for all $y \in Y_x$ and $y' \in Y_{x'}$, if $(y,y') \in R_Y$, then $(f(y),g(y')) \in R_Z$. Now assume that $R_X,R_Y,R_Z$ are symmetric and irreflexive. Then $R_F$ is irreflexive since $R_X$ is irreflexive, and $R_F$ is symmetric since $R_X$, $R_Y$, and $R_Z$ are symmetric.
+    references:
+      - Bin_exponentials
+
+  - property: cokernel pairs
+    proof: >-
+      We will prove that $\Bin_{\symm,\irr} \subseteq \Bin$ is closed under cokernel pairs. Let $f : (X,R) \to (Y,S)$ be a morphism in $\Bin_{\symm,\irr}$. The pushout $(Y,S) \sqcup_{(X,R)} (Y,S)$ is constructed as $(Y \sqcup_R Y, T)$, where $T$ consists of the pairs $(\iota_1(y),\iota_1(y'))$ and $(\iota_2(y),\iota_2(y'))$ for $(y,y') \in S$. The relation $T$ is symmetric because $S$ is symmetric. It is also irreflexive since there is a morphism $(Y,S) \sqcup_{(X,R)} (Y,S) \to (Y,S)$, the codiagonal, and $S$ is irreflexive.
+
+  - property: coequalizers of kernel pairs
+    proof: >-
+      We already know that kernel pairs exist; in fact, $\Bin_{\symm,\irr} \subseteq \Bin$ is closed under kernel pairs. Moreover, <a href="/category/Bin">$\Bin$</a> has coequalizers. If $f : (X,R) \to (Y,S)$ is a morphism in $\Bin_{\symm,\irr}$ and $p : (X,R) \to (C,T)$ is the coequalizer of its kernel pair in $\Bin$, then there is a morphism $\overline{f} : (C,T) \to (Y,S)$ (since $f$ coequalizes its kernel pair). Since $S$ is irreflexive, it follows that $T$ is irreflexive. Moreover, $T$ is the set of pairs $(p(x),p(x'))$ for $(x,x') \in R$. Since $R$ is symmetric, it follows that $T$ is symmetric. Thus, $(C,T)$ belongs to $\Bin_{\symm,\irr}$. We conclude that $(X,R) \to (C,T)$ is also the coequalizer of the kernel pair in $\Bin_{\symm,\irr}$.
+
+  - property: cocartesian cofiltered limits
+    proof: This follows from the corresponding property of <a href="/category/Bin">$\Bin$</a> because the inclusion functor $\Bin_{\symm,\irr} \to \Bin$ is fully faithful and preserves binary coproducts and cofiltered limits (in fact, all coproducts and all non-empty limits).
+
+  - property: generator
+    proof: The object $(\{\ast\},\varnothing)$ is a generator because it represents the forgetful functor $\Bin_{\symm,\irr} \to \Set$, $(X,R) \mapsto X$, which is faithful.
+
+  - property: well-copowered
+    proof: This follows easily from the description of epimorphisms below.
+
+  - property: effective cocongruences
+    proof: >-
+      Let $q_1, q_2 : X \rightrightarrows Y$ be a cocongruence in $\Bin_{\symm,\irr}$. Then $(q_1;q_2) : X \sqcup X \to Y$ is an epimorphism, i.e. surjective on underlying sets, and hence an epimorphism in $\Bin$. The pushout $Y \sqcup_{q_2,X,q_1} Y$ in $\Bin$ belongs to $\Bin_{\irr}$ since, using the common retraction $Y \to X$ of $q_1,q_2$ (the coreflexivity morphism), it admits a morphism to $X$. It also belongs to $\Bin_{\symm}$ since $Y$ belongs to $\Bin_{\symm}$ and every relation comes from one of the two copies of $Y$. Therefore, we obtain coreflexivity, cosymmetry, and cotransitivity morphisms in $\Bin_{\symm,\irr}$, and these are also such morphisms in $\Bin$. Hence, $q_1, q_2 : X \rightrightarrows Y$ is a cocongruence in $\Bin$. Since <a href="/category/Bin">$\Bin$</a> has effective cocongruences and equalizers, there is a monomorphism $T \to X$ whose cokernel pair is $X \rightrightarrows Y$ in $\Bin$. Since $T$ admits a monomorphism to $X \in \Bin_{\symm,\irr}$, we have $T \in \Bin_{\symm,\irr}$. It follows that $T \to X$ also has cokernel pair $X \rightrightarrows Y$ in $\Bin_{\symm,\irr}$.
+
+unsatisfied_properties:
+  - property: skeletal
+    proof: This is trivial.
+
+  - property: semi-strongly connected
+    proof: We use the graph-theoretic interpretation. Let $G$ be the <a href="https://en.wikipedia.org/wiki/Gr%C3%B6tzsch_graph">Grötzsch graph</a> and $K_3$ be the <a href="https://en.wikipedia.org/wiki/Complete_graph" target="_blank">complete undirected graph</a> on three vertices. There is no morphism $G \to K_3$ since $G$ has chromatic number $4$. There is no morphism $K_3 \to G$ since $G$ is triangle-free.
+
+  - property: filtered
+    proof: >-
+      The two morphisms
+      $$(\{a\},\varnothing) \rightrightarrows \bigl(\{a,a'\},\{(a,a'),(a',a)\}\bigr)$$
+      in $\Bin_{\irr}$ are not coequalized by any morphism, since such a morphism would necessarily identify $a$ and $a'$, and hence would map $a$ to an element that relates to itself.
+
+  - property: quotients of congruences
+    proof: We can copy the proof for <a href="/category/Bin_irr">$\Bin_{\irr}$</a>.
+    references:
+      - Bin_irr_no_quotients_congruences
+
+  - property: extremal generator
+    proof: The proof for <a href="/category/Bin_irr">$\Bin_{\irr}$</a> can be easily adjusted.
+    references:
+      - Bin_irr_no_extremal_generator
+
+  - property: cogenerating collection
+    proof: We can copy the proof for <a href="/category/Bin_irr">$\Bin_{\irr}$</a>.
+    references:
+      - Bin_irr_no_cogenerating_collection
+
+  - property: cofiltered-limit-stable epimorphisms
+    proof: We can copy the proof from <a href="/category/Bin">$\Bin$</a>.
+    references:
+      - Bin_no_cofiltered-limit-stable_epis
+
+special_objects:
+  initial object:
+    description: $(\varnothing,\varnothing)$, which can be seen as the undirected graph with no vertices and no edges
+  coproducts:
+    description: The coproduct of a family $(X_i,R_i)_{i \in I}$ in $\Bin_{\symm,\irr}$ is $(\coprod_{i \in I} X_i, \coprod_{i \in I} R_i)$, where $\coprod_{i \in I} R_i \subseteq \coprod_{i \in I} (X_i \times X_i) \subseteq \coprod_{i \in I} X_i \times \coprod_{i \in I} X_i$. On the level of undirected graphs, this means that we take the disjoint union of vertices and edges, with no edges between distinct components.
+  products:
+    description: '[non-empty case] The product of a <i>non-empty</i> family $(X_i,R_i)_{i \in I}$ in $\Bin_{\symm,\irr}$ is $(\prod_{i \in I} X_i, \prod_{i \in I} R_i)$, where $\prod_{i \in I} R_i \subseteq \prod_{i \in I} (X_i \times X_i) \cong \prod_i X_i \times \prod_i X_i$.'
+
+special_morphisms:
+  isomorphisms:
+    description: bijective maps that preserve and reflect the relation
+    proof: This is easy to check.
+  monomorphisms:
+    description: injective relation-preserving maps
+    proof: The proof is identical to <a href="/category/Bin_irr">$\Bin_{\irr}$</a>.
+  epimorphisms:
+    description: surjective relation-preserving maps
+    proof: The proof is identical to <a href="/category/Bin_irr">$\Bin_{\irr}$</a>.
+  regular monomorphisms:
+    description: injective maps that reflect and preserve the relation
+    proof: The proof is identical to <a href="/category/Bin_irr">$\Bin_{\irr}$</a>.
+  regular epimorphisms:
+    description: >-
+      morphisms $f : (X,R) \to (Y,S)$ such that $f : X \to Y$ is surjective and $S = \{(f(x),f(x')) : (x,x') \in R\}$
+    proof: The proof is identical to <a href="/category/Bin_irr">$\Bin_{\irr}$</a>.

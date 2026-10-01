@@ -1,0 +1,150 @@
+id: Bin_symm
+name: category of sets equipped with a symmetric binary relation
+notation: $\Bin_{\symm}$
+alternative_notation: $\Graph_L$
+objects: pairs $(X,R)$, where $X$ is a set and $R \subseteq X \times X$ is a symmetric binary relation
+morphisms: >-
+  A morphism $(X,R) \to (Y,S)$ is a relation-preserving map, i.e. a map $f : X \to Y$ such that $(x,x') \in R$ implies $(f(x),f(x')) \in S$.
+description: >-
+  If we define an undirected loop-graph as a pair $(V,E)$ with $E \subseteq P_{1,2}(V)$, the pair $(X,R)$ induces an undirected loop-graph $(X,\{\{x,x'\} : (x,x') \in R\})$, and this gives an isomorphism of categories
+  $$\Bin_{\symm} \cong \Graph_L.$$
+  In the proofs below, however, we will mostly not use the graph-theoretic interpretation and instead work with binary relations. This simplifies the exposition and has the additional advantage that we do not need to deal with the varying definitions of the term "graph" in the literature (simple? multiple edges? loops? finite?). Instead, we can focus on the unambiguous notion of a symmetric binary relation.
+
+  It turns out that this category behaves exactly like <a href="/category/Bin">$\Bin$</a> (i.e. the category of directed graphs), and the proofs of the properties are very similar.
+nlab_link: null
+
+tags:
+  - graph theory
+  - relational structures
+
+related:
+  - Bin
+  - Bin_irr
+  - Bin_refl
+  - Bin_symm_irr
+  - Bin_symm_refl
+
+comments:
+  - The inclusion functor $\Bin_{\symm} \to \Bin$ has a left adjoint mapping $(X,R)$ to $(X,R \cup R^{\op})$.
+  - The inclusion functor $\Bin_{\symm} \to \Bin$ has a right adjoint mapping $(X,R)$ to $(X,R \cap R^{\op})$.
+  - 'Although the categories $\Bin_{\symm}$ and $\Bin$, or equivalently $\Graph_L$ and $\DiGraph$, agree on all properties currently recorded in the database, they are not equivalent categories. In both categories, the one-vertex graph $K_1$ without edges can be characterized up to isomorphism as the unique <a href="https://ncatlab.org/nlab/show/connected+object" target="_blank">connected object</a> that admits a morphism to every non-initial object. We can then count the connected objects up to isomorphism that admit exactly two morphisms from $K_1$ (i.e. have two vertices) and no morphism from the terminal object (i.e. have no loops). In $\Graph_L$, there is only one such graph, $\bullet \longleftrightarrow \bullet$, whereas in $\DiGraph$ there are two: $\bullet \longrightarrow \bullet$ and $\bullet \longleftrightarrow \bullet$.'
+
+satisfied_properties:
+  - property: locally small
+    proof: This is obvious.
+
+  - property: complete
+    proof: In fact, $\Bin_{\symm}$ is closed under all limits in <a href="/category/Bin">$\Bin$</a>. If $\I \to \Bin$, $i \mapsto (X_i,R_i)$ is a diagram, its limit is $(\lim_{i \in \I} X_i,R)$, where $R$ consists of pairs $(x,y)$ such that $(x_i,y_i) \in R_i$ for every $i \in \I$. If each $R_i$ is symmetric, it is immediate that $R$ is symmetric.
+    check_redundancy: false
+
+  - property: cocomplete
+    proof: In fact, $\Bin_{\symm}$ is closed under all colimits in <a href="/category/Bin">$\Bin$</a>. If $\I \to \Bin$, $i \mapsto (X_i,R_i)$ is a diagram, its colimit is $(\colim_{i \in \I} X_i,R)$, where $R$ consists of pairs $(\iota_i(x),\iota_i(y))$ for $i \in \I$ and $(x,y) \in R_i$. If each $R_i$ is symmetric, then $R$ is symmetric since every element of $\colim_{i \in \I} X_i$ has the form $\iota_i(x)$ for some $i \in \I$ and $x \in X_i$.
+    check_redundancy: false
+
+  - property: infinitary extensive
+    proof: We already know that $\Bin_{\symm} \subseteq \Bin$ is closed under coproducts and pullbacks. Since <a href="/category/Bin">$\Bin$</a> is infinitary extensive, the claim therefore follows from Lemma 11 <a href="/content/subcategories">here</a>.
+
+  - property: finitely accessible
+    proof: The proof is the same as for the finite accessibility of <a href="/category/Bin">$\Bin$</a>.
+    references:
+      - Bin_finitely_accessible
+
+  - property: locally cartesian closed
+    proof: >-
+      We know that <a href="/category/Bin">$\Bin$</a> is locally cartesian closed, and that $\Bin_{\symm} \subseteq \Bin$ is closed under pullbacks. Therefore, it suffices to show that $\Bin_{\symm} \subseteq \Bin$ is closed under relative exponentials. Recall that for two objects $(Y,R_Y) \to (X,R_X)$ and $(Z,R_Z) \to (X,R_X)$ in $\Bin / (X,R_X)$, their exponential is the set $F = \coprod_{x \in X} \Hom(Y_x,Z_x)$ equipped with the following relation $R_F$: for maps $f : Y_x \to Z_x$ and $g : Y_{x'} \to Z_{x'}$ we have $(f,g) \in R_F$ when $(x,x') \in R_X$ and, for all $y \in Y_x$ and $y' \in Y_{x'}$, if $(y,y') \in R_Y$, then $(f(y),g(y')) \in R_Z$. Now assume that $R_X,R_Y,R_Z$ are symmetric. Then it is obvious that $R_F$ is symmetric.
+    label: Bin_symm_exponentials
+    references:
+      - Bin_exponentials
+
+  - property: regular subobject classifier
+    proof: By the description of regular monomorphisms below, the poset of regular subobjects of $(X,R)$ is isomorphic to the poset of subsets of $X$. The subsets of $X$ correspond to morphisms from $(X,R)$ into $\Omega \coloneqq (\{0,1\}, \{0,1\} \times \{0,1\})$, which belongs to $\Bin_{\symm}$, showing that $\Omega$ is a regular subobject classifier.
+
+  - property: generator
+    proof: The object $(\{\ast\},\varnothing)$ is a generator because it represents the forgetful functor $\Bin_{\symm} \to \Set$, $(X,R) \mapsto X$, which is faithful.
+
+  - property: extremal cogenerator
+    proof: >-
+      The proof is very similar to the proof for <a href="/category/Bin">$\Bin$</a>. We claim that the set $Q \coloneqq \{0,1,2,3\}$ equipped with the symmetric relation
+      $$R_Q \coloneqq (Q \times Q) \setminus \{(0,1),(1,0),(3,3)\}$$
+      is an extremal cogenerator of $\Bin_{\symm}$. First, to show that it is a cogenerator, assume that $f,g : (X,R) \rightrightarrows (Y,S)$ are distinct morphisms. Choose $x \in X$ with $f(x) \neq g(x)$. Define the map $h : Y \to Q$ by $h(f(x))=0$ and $h(y)=2$ for $y \neq f(x)$. Since $1,3 \notin \im(h)$, we obtain a morphism $h : (Y,S) \to (Q,R_Q)$, and it satisfies $h \circ f \neq h \circ g$ since $h(f(x)) = 0$, while $h(g(x)) = 2$.
+
+      To show that $(Q,R_Q)$ is extremal, let $f : (X,R) \to (Y,S)$ be a morphism such that
+      $$f^* : \Hom((Y,S),(Q,R_Q)) \to \Hom((X,R),(Q,R_Q))$$
+      is bijective. Since $(Q,R_Q)$ is a cogenerator, it follows that $f$ is both a monomorphism and an epimorphism. By the classification of monomorphisms and epimorphisms below, this means that $f : X \to Y$ is bijective. It remains to show that $f$ is relation-reflecting.
+
+      Assume for contradiction that $x,x' \in X$ satisfy $(f(x),f(x')) \in S$, but $(x,x') \notin R$. Since $R$ is symmetric, we also have $(x',x) \notin R$. There are two cases to consider.
+
+      <strong>Case 1:</strong> $x \neq x'$. Define the map $h : X \to Q$ by $h(x)=0$, $h(x')=1$, and $h(p)=2$ for $p \neq x,x'$. Then $h : (X,R) \to (Q,R_Q)$ is a morphism since the only pairs in $X \times X$ whose image is not in $R_Q$ are the pairs $(x,x')$ and $(x',x)$, which are not contained in $R$. By assumption, there is a morphism $g : (Y,S) \to (Q,R_Q)$ such that $g \circ f = h$. Since $(f(x),f(x')) \in S$, it follows that
+      $$(0,1) = (h(x),h(x')) = (g(f(x)),g(f(x'))) \in R_Q,$$
+      which is a contradiction.
+
+      <strong>Case 2:</strong> $x = x'$. Define the map $h : X \to Q$ by $h(x)=3$ and $h(p)=2$ for $p \neq x$. Then $h : (X,R) \to (Q,R_Q)$ is a morphism since the only pair in $X \times X$ whose image is not in $R_Q$ is the pair $(x,x)$, which is not contained in $R$. By assumption, there is a morphism $g : (Y,S) \to (Q,R_Q)$ such that $g \circ f = h$. Since $(f(x),f(x)) \in S$, it follows that
+      $$(3,3) = (h(x),h(x)) = (g(f(x)),g(f(x))) \in R_Q,$$
+      which is a contradiction.
+    references:
+      - Bin_extremal_cogenerator
+
+  - property: effective cocongruences
+    proof: This follows from the corresponding fact for <a href="/category/Bin">$\Bin$</a> and the dual of Lemma 8 <a href="/content/subcategories">here</a>.
+
+unsatisfied_properties:
+  - property: skeletal
+    proof: This is trivial.
+
+  - property: semi-strongly connected
+    proof: Even the full subcategory <a href="/category/Bin_symm_irr">$\Bin_{\symm,\irr}$</a> is not semi-strongly connected.
+
+  - property: extremal generator
+    proof: We may copy the proof from <a href="/category/Bin">$\Bin$</a>.
+    references:
+      - Bin_no_extremal_generator
+
+  - property: cofiltered-limit-stable epimorphisms
+    proof: 'We already know that <a href="/category/Set">$\Set$</a> does not have this property. Now apply the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> to the functor $\Set \to \Bin_{\symm}$, $X \mapsto (X,\varnothing)$.'
+
+  - property: co-Malcev
+    proof: >-
+      Consider these two objects of $\Bin_{\symm}$:
+      $$\begin{align*}
+      G & = (\{a,b\},\{(a,b),(b,a)\}) \\
+      H & = (\{a,b,a',b'\},\{(a,b),(b,a),(a',b'),(b',a'),(a,b'),(b',a)\})
+      \end{align*}$$
+      As undirected (loop-)graphs, these look as follows:
+      $$\begin{array}{cccc}
+      G: & a & \longleftrightarrow & b
+      \end{array}$$
+      $$\begin{array}{cccc}
+      & a & \longleftrightarrow & b \\[1ex]
+      H : & & \searrow \!\!\!\!\!\! \nwarrow & \\[1ex]
+      & a' & \longleftrightarrow & b' \\
+      \end{array}$$
+      There are two canonical morphisms $G \rightrightarrows H$. They are jointly epimorphic and have a common retraction $H \to G$ mapping $a,a' \mapsto a$ and $b,b' \mapsto b$. Thus, $G \rightrightarrows H$ is a coreflexive corelation. But it is not cosymmetric, since there is no edge $a' \leftrightarrow b$ in $H$.
+    label: Bin_symm_not_co-Malcev
+
+special_objects:
+  initial object:
+    description: $(\varnothing,\varnothing)$, which can be seen as the undirected loop-graph with no vertices and no directed edges
+  terminal object:
+    description: $(\{\ast\},\{(\ast,\ast)\})$, which can be seen as undirected loop-graph with a single vertex and a loop
+  coproducts:
+    description: The coproduct of a family $(X_i,R_i)_{i \in I}$ is $(\coprod_{i \in I} X_i, \coprod_{i \in I} R_i)$, where $\coprod_{i \in I} R_i \subseteq \coprod_{i \in I} (X_i \times X_i) \subseteq \coprod_{i \in I} X_i \times \coprod_{i \in I} X_i$.
+  products:
+    description: The product of a family $(X_i,R_i)_{i \in I}$ is $(\prod_{i \in I} X_i, \prod_{i \in I} R_i)$, where $\prod_{i \in I} R_i \subseteq \prod_{i \in I} (X_i \times X_i) \cong \prod_i X_i \times \prod_i X_i$.
+
+special_morphisms:
+  isomorphisms:
+    description: bijective maps that preserve and reflect the relation
+    proof: This is easy to check.
+  monomorphisms:
+    description: injective relation-preserving maps
+    proof: For the non-trivial direction, the construction of limits shows that the forgetful functor $\Bin_{\symm} \to \Set$ is continuous, so that it preserves monomorphisms in particular. Another explanation for this fact is that the forgetful functor is right adjoint to the functor mapping a set $X$ to $(X,\varnothing)$.
+  epimorphisms:
+    description: surjective relation-preserving maps
+    proof: For the non-trivial direction, the construction of colimits shows that the forgetful functor $\Bin_{\symm} \to \Set$ is cocontinuous, so that it preserves epimorphisms in particular. Another explanation for this fact is that the forgetful functor is left adjoint to the functor mapping a set $X$ to $(X,X \times X)$.
+  regular monomorphisms:
+    description: injective maps that reflect and preserve the relation
+    proof: The proof is identical to <a href="/category/Bin">$\Bin$</a>.
+  regular epimorphisms:
+    description: >-
+      morphisms $f : (X,R) \to (Y,S)$ such that $f : X \to Y$ is surjective and $S = \{(f(x),f(x')) : (x,x') \in R\}$
+    proof: The proof is identical to <a href="/category/Bin">$\Bin$</a>.
