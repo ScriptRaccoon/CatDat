@@ -14,6 +14,7 @@ related:
   - FI
   - FS
   - FinSet
+  - Set_bij
 
 satisfied_properties:
   - property: locally small
