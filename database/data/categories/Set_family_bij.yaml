@@ -1,0 +1,38 @@
+id: Set_family_bij
+name: category of large families of sets and bijections
+notation: $(\Set_{\bij})^I$
+objects: families of sets $(X_i)_{i \in I}$ indexed by a collection $I$ that is not essentially small
+morphisms: families of bijections
+description: This is the <a href="https://ncatlab.org/nlab/show/core+groupoid">core groupoid</a> of <a href="/category/Set_family">$\Set^I$</a>. It provides an example of a groupoid that is not locally essentially small.
+nlab_link: null
+
+tags:
+  - set theory
+
+related:
+  - Set_family
+  - Set_bij
+
+satisfied_properties:
+  - property: inhabited
+    proof: This is trivial.
+
+  - property: groupoid
+    proof: This is trivial.
+
+unsatisfied_properties:
+  - property: skeletal
+    proof: This is trivial.
+
+  - property: strongly connected
+    proof: 'There is no morphism from $(\varnothing)_{i \in I}$ to $(\{\ast\})_{i \in I}$.'
+
+  - property: locally essentially small
+    proof: If $X$ is a two-element set, the collection of endomorphisms of $(X)_{i \in I}$ is isomorphic to the collection $P(I)$ of all subsets of $I$, which is not essentially small, since $I$ is assumed to be not essentially small.
+
+  - property: generating collection
+    proof: Assume that $S$ is a generating collection. It is essentially small by definition. For every $i \in I$, there is an object $X^i \in (\Set_{\bij})^I$ defined by $X^i_i = \{0,1\}$ and $X^i_j = \varnothing$ for $j \neq i$. It has a non-trivial automorphism. Thus, there must be some object $G^i \in S$ and a morphism $G^i \to X^i$. Since morphisms are families of bijections, $G^i_i$ is a two-element set, while all other sets $G^i_j$ for $j \neq i$ are empty. It follows that the map $I \to S$, $i \mapsto G^i$, is injective. But then $I$ would be essentially small, which contradicts our assumption.
+
+special_objects: {}
+
+special_morphisms: {}
