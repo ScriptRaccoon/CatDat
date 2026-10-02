@@ -1,0 +1,44 @@
+id: Set_bij
+name: category of sets and bijections
+notation: $\Set_{\bij}$
+objects: sets
+morphisms: bijective maps
+description: This is a typical example of a large groupoid, namely the <a href="https://ncatlab.org/nlab/show/core+groupoid">core groupoid</a> of the <a href="/category/Set">category of sets</a>.
+nlab_link: null
+
+tags:
+  - set theory
+
+related:
+  - Set
+  - B
+
+satisfied_properties:
+  - property: locally small
+    proof: It is a full subcategory of <a href="/category/Set">$\Set$</a>, which is locally small.
+
+  - property: concretizable
+    proof: It is a subcategory of $\Set$.
+
+  - property: inhabited
+    proof: This is trivial.
+
+  - property: groupoid
+    proof: This is trivial.
+
+unsatisfied_properties:
+  - property: skeletal
+    proof: This is trivial.
+
+  - property: strongly connected
+    proof: For example, there is no morphism from the empty set to a singleton set.
+
+  - property: locally finite
+    proof: There are infinitely many bijections $\IN \to \IN$, for example, the countably many transpositions.
+
+  - property: cogenerating collection
+    proof: 'This follows from <a href="/content/missing_cogenerating_collections">this result</a>, applied to the forgetful functor $U : \Set_{\bij} \to \Set$ and the collection $\F$ of all sets.'
+
+special_objects: {}
+
+special_morphisms: {}
