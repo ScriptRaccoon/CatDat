@@ -34,9 +34,11 @@ satisfied_properties:
 
   - property: complete
     proof: In fact, $\Bin_{\symm,\refl}$ is closed under all limits in <a href="/category/Bin">$\Bin$</a>. If $\I \to \Bin$, $i \mapsto (X_i,R_i)$ is a diagram, its limit is $(\lim_{i \in \I} X_i,R)$, where $R$ consists of pairs $(x,y)$ such that $(x_i,y_i) \in R_i$ for every $i \in \I$. If each $R_i$ is symmetric and reflexive, it is immediate that $R$ is symmetric and reflexive.
+    check_redundancy: false
 
   - property: cocomplete
     proof: In fact, $\Bin_{\symm,\refl}$ is closed under all colimits in <a href="/category/Bin">$\Bin$</a>. If $\I \to \Bin$, $i \mapsto (X_i,R_i)$ is a diagram, its colimit is $(\colim_{i \in \I} X_i,R)$, where $R$ consists of pairs $(\iota_i(x),\iota_i(y))$ for $i \in \I$ and $(x,y) \in R_i$. If each $R_i$ is reflexive, then $R$ is reflexive since every element of $\colim_{i \in \I} X_i$ has the form $\iota_i(x)$ for some $i \in \I$ and $x \in X_i$. If each $R_i$ is symmetric, it is immediate that $R$ is symmetric.
+    check_redundancy: false
 
   - property: semi-strongly connected
     proof: This follows from the fact that <a href="/category/Bin_refl">$\Bin_{\refl}$</a> is semi-strongly connected and contains $\Bin_{\symm,\refl}$ as a full subcategory.
