@@ -70,3 +70,35 @@
   conclusions:
     - trivial
   proof: 'For any object $X$, the coequalizer of the two coprojections $X \rightrightarrows X \sqcup X$ is the codiagonal $\nabla : X \sqcup X \to X$. Therefore, these two coprojections are equal. But their equalizer is also the unique morphism $! : 0 \to X$. It follows that $! : 0 \to X$ is an isomorphism.'
+
+- id: regular_subobject_trivial_congruences
+  # TODO: refactor this once we add "split-mono-trivial", cf. #383
+  assumptions:
+    - regular-subobject-trivial
+  conclusions:
+    - effective congruences
+  proof: 'Let $f,g : E \rightrightarrows X$ be a congruence. In particular, there is a morphism $r : X \to E$ with $f r = g r = \id_X$. Since $r$ is a split monomorphism, it is a regular monomorphism. By assumption, $r$ must be an isomorphism. Thus, $f = g = r^{-1}$, and $f,g$ is a kernel pair of $\id_X$.'
+
+- id: regular_subobject_trivial_reflexive_coequalizers
+  # TODO: refactor this once we add "split-mono-trivial", cf. #383
+  assumptions:
+    - regular-subobject-trivial
+  conclusions:
+    - reflexive coequalizers
+  proof: 'Let $f,g : X \rightrightarrows Y$ be a reflexive pair, i.e. there is a morphism $r : Y \to X$ with $f r = g r = \id_Y$. Since $r$ is a split monomorphism, it is a regular monomorphism. By assumption, $r$ must be an isomorphism. Thus, $f = g = r^{-1}$, and $\id_Y$ is a coequalizer of $f,g$.'
+
+- id: regular_subobject_trivial_cocongruences
+  # TODO: refactor this once we add "split-mono-trivial", cf. #383
+  assumptions:
+    - regular-subobject-trivial
+  conclusions:
+    - effective cocongruences
+  proof: 'Let $f,g : X \rightrightarrows E$ be a cocongruence. In particular, there is a morphism $r : E \to X$ with $r f = r g = \id_X$. Since $f$ is a split monomorphism, it is a regular monomorphism. By assumption, $f$ must be an isomorphism. Then $r f = \id_X$ implies that $r = f^{-1}$, and $r g = \id_X$ implies $g = f$. Hence, $f,g$ is a cokernel pair of $\id_X$.'
+
+- id: regular_subobject_trivial_coreflexive_equalizers
+  # TODO: refactor this once we add "split-mono-trivial", cf. #383
+  assumptions:
+    - regular-subobject-trivial
+  conclusions:
+    - coreflexive equalizers
+  proof: 'Let $f,g : X \rightrightarrows Y$ be a coreflexive pair, i.e. there is a morphism $r : Y \to X$ with $r f = r g = \id_X$. Since $f$ is a split monomorphism, it is a regular monomorphism. By assumption, $f$ must be an isomorphism. Then $r f = \id_X$ implies that $r = f^{-1}$, and $r g = \id_X$ implies $g = f$. Hence, $\id_X$ is an equalizer of $f,g$.'
