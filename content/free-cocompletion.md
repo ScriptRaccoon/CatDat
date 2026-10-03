@@ -36,7 +36,7 @@ But it is usually not locally small:
 If $\widehat{\C}$ is locally small, then $\C$ is small.
 :::
 
-Disclaimer: This result and its proof are not relevant for category theory and are also depending on implementation details of set theory. That $\widehat{\C}$ is locally essentially small is only what matters.
+Disclaimer: This result and its proof are not relevant for category theory and also depend on implementation details of set theory. That $\widehat{\C}$ is locally essentially small is all that matters.
 
 ::: Proof
 If $\C$ is empty, there is nothing to prove. Otherwise, choose an object $X \in \C$. Consider the collection of morphisms $\Hom(-,X) \to \Hom(-,X)$, which is surely isomorphic to the set $\Hom(X,X)$. By assumption, it actually _is_ a set. It follows that $\{\id_{\Hom(-,X)}\}$ is a set, and therefore also that $\id_{\Hom(-,X)}$ is a set. This natural transformation is a map that associates to every object $Y \in \Ob(\C)$ the map $\id_{\Hom(Y,X)}$. If we model a map as a set of ordered pairs and ordered pairs as Kuratowski pairs, we get
@@ -70,7 +70,7 @@ By the Yoneda Lemma, the evaluation functor is represented by $\Hom(-,X)$. Thus,
 :::
 
 ::: Lemma 5
-A morphism $\alpha : F \to G$ in $\widehat{\C}$ is a monomorphism (resp. epimorphism) if and only if for every $X \in \C$ the map $\alpha(X) : F(X) \to G(X)$ injective (resp. surjective).
+A morphism $\alpha : F \to G$ in $\widehat{\C}$ is a monomorphism (resp. epimorphism) if and only if for every $X \in \C$ the map $\alpha(X) : F(X) \to G(X)$ is injective (resp. surjective).
 :::
 
 ::: Proof
@@ -102,7 +102,7 @@ Let $\C,\D$ be two categories. Assume that the coproduct $\C + \D$ is finally sm
 :::
 
 ::: Proof
-Assume that $\I \to \C + \D$ is a final functor, where $\I$ is small. Since $\Cat$ is extensive, we get a decomposition $\I = \I_\C + \I_\D$ with two functors $\I_\C \to \C$ and $\I_\D \to \D$. For every $X \in \C$ the comma category $X \downarrow I_\C$ identifies with the comma category $X \downarrow I$, which is connected. Therefore, $I_\C \to \C$ is final.
+Assume that $\I \to \C + \D$ is a final functor, where $\I$ is small. Since $\Cat$ is extensive, we get a decomposition $\I = \I_\C + \I_\D$ with two functors $\I_\C \to \C$ and $\I_\D \to \D$. For every $X \in \C$ the comma category $X \downarrow \I_\C$ identifies with the comma category $X \downarrow \I$, which is connected. Therefore, $\I_\C \to \C$ is final.
 :::
 
 ::: Lemma 9
@@ -120,7 +120,7 @@ Let $\C$ be a locally small category. Then $\widehat{\C}$ is epi-regular.
 Notice that this would be easy if $\widehat{\C}$ has pullbacks. In that case, every epimorphism would even be effective since this is the case for $\Set$. But in general, $\widehat{\C}$ may fail to have pullbacks. This is why the proof is more complicated.
 
 ::: Proof
-First, notice that the Yoneda Lemma and the description of epimorphisms (see Lemma 5) implies that representable functors are [projective objects](https://ncatlab.org/nlab/show/projective+object). Therefore, also coproducts of representable functors are projective.
+First, notice that the Yoneda Lemma and the description of epimorphisms (see Lemma 5) imply that representable functors are [projective objects](https://ncatlab.org/nlab/show/projective+object). Therefore, also coproducts of representable functors are projective.
 
 Now let $\eta : F \to G$ be an epimorphism of small presheaves. Since $F$ is small, there is an epimorphism
 $$F_0 \xrightarrow{~ \pi ~} F,$$
@@ -134,7 +134,7 @@ G_1
 G_0 \xrightarrow{~ \psi ~} G,
 $$
 
-where $G_0$ and $G_1$ are coproducts of representable functors. Since $G_0$ is projective, there is a morphism $\lambda : G_0 \to F$ such that $\eta \circ \lambda = \psi$. Since $F_0$ is projective, there is a morphism $\mu : F_0 \to G_0$ such that $\psi \circ \mu = \eta \circ \pi$. We get the following diagram, where the outer square and the lower triangle commutes, but not necessarily the upper triangle.
+where $G_0$ and $G_1$ are coproducts of representable functors. Since $G_0$ is projective, there is a morphism $\lambda : G_0 \to F$ such that $\eta \circ \lambda = \psi$. Since $F_0$ is projective, there is a morphism $\mu : F_0 \to G_0$ such that $\psi \circ \mu = \eta \circ \pi$. We get the following diagram, where the outer square and the lower triangle commute, but not necessarily the upper triangle.
 
 $$
 \begin{CD}
@@ -153,7 +153,7 @@ and
 $$\eta \circ \gamma|_{F_0} = \eta \circ \lambda \circ \mu = \psi \circ \mu = \eta \circ \pi = \eta \circ \delta|_{F_0}.$$
 Conversely, suppose that $\vartheta : F \to H$ is a morphism that coequalizes these morphisms, meaning that $\vartheta \circ \lambda \circ \alpha = \vartheta \circ \lambda \circ \beta$ and $\vartheta \circ \lambda \circ \mu = \vartheta \circ \pi$. The first equation means that there is a morphism $\vartheta' : G \to H$ such that $\vartheta' \circ \psi = \vartheta \circ \lambda$. The second equation then becomes
 $$\vartheta \circ \pi = \vartheta' \circ \psi \circ \mu = \vartheta' \circ \eta \circ \pi,$$
-which is equivalent to $\vartheta = \vartheta' \circ \eta$. We have thus shown that every morphism that coequalizes $\alpha$ and $\beta$ factors through $\eta$, and uniqueness is clear since $\eta$ is an epimorphism.
+which is equivalent to $\vartheta = \vartheta' \circ \eta$. We have thus shown that every morphism that coequalizes $\gamma$ and $\delta$ factors through $\eta$, and uniqueness is clear since $\eta$ is an epimorphism.
 :::
 
 ::: Lemma 11
@@ -161,7 +161,7 @@ Let $\C$ be a locally small category. Then $\widehat{\C}$ has effective congruen
 :::
 
 ::: Proof
-Let $f,g : F \rightrightarrows G$ be a congruence in $\widehat{\C}$. Let $p : G \twoheadrightarrow Q$ be its quotient (i.e. coequalizer) in $\widehat{\C}$, which is constructed objectwise. Applying the functorial definition of a congruence to representable functors in $\widehat{\C}$, we see that for every object $X \in \C$ that $f(X),g(X) : F(X) \rightrightarrows G(X)$ is a congruence in $\Set$. Since congruences in $\Set$ are effective, $f(X),g(X)$ is the kernel pair of $p(X)$; we are also using [this result](/content/effective-congruence-quotients). Therefore, $f,g$ is the kernel pair of $p$ in the category of all presheaves, _a fortiori_ in the category of small presheaves.
+Let $f,g : F \rightrightarrows G$ be a congruence in $\widehat{\C}$. Let $p : G \twoheadrightarrow Q$ be its quotient (i.e. coequalizer) in $\widehat{\C}$, which is constructed objectwise. Applying the functorial definition of a congruence to representable functors in $\widehat{\C}$, we see that for every object $X \in \C$, $f(X),g(X) : F(X) \rightrightarrows G(X)$ is a congruence in $\Set$. Since congruences in $\Set$ are effective, $f(X),g(X)$ is the kernel pair of $p(X)$; we are also using [this result](/content/effective-congruence-quotients). Therefore, $f,g$ is the kernel pair of $p$ in the category of all presheaves, _a fortiori_ in the category of small presheaves.
 :::
 
 ::: Proposition 12

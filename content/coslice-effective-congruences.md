@@ -1,6 +1,6 @@
 ---
 title: Inheritance of effective congruences in coslice categories
-description: An extensive category has effective congruences when some of its coslice categories has effective congruences.
+description: An extensive category has effective congruences when one of its coslice categories has effective congruences.
 ---
 
 # Inheritance of effective congruences in coslice categories
@@ -16,7 +16,7 @@ $$\id_A + f,\, \id_A + g : A+E \rightrightarrows A+X$$
 
 form a congruence. To show the pair of maps is jointly monomorphic, we use extensivity to split the domains of the generalized elements, so without loss of generality we may assume each comes from either $A$ or $E$. Reflexivity and symmetry are straightforward; and for transitivity, we again use extensivity to split the domains of the generalized elements, and provide an argument on each subdomain where the three generalized elements all come from either $A$ or $E$.
 
-Now if this congruence is the kernel pair of $h : A+X \to Z$ in $A \backslash \C$, then $E$ is the kernel pair of $h \circ i_2 : X \to Z$ in $\C$. Namely, if we have two generalized elements $x_1, x_2 : T \rightrightarrows X$ such that $h \circ i_2 \circ x_1 = h \circ i_2 \circ x_2$, then we can construct a map pair
+Now if this congruence is the kernel pair of $h : A+X \to Z$ in $A \backslash \C$, then $E$ is the kernel pair of $h \circ i_2 : X \to Z$ in $\C$. Namely, if we have two generalized elements $x_1, x_2 : T \rightrightarrows X$ such that $h \circ i_2 \circ x_1 = h \circ i_2 \circ x_2$, then we can construct a pair of maps
 
 $$\id_A + x_1,\, \id_A + x_2 : A+T \rightrightarrows A+X$$
 

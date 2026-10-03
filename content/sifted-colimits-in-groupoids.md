@@ -70,7 +70,7 @@ $$
 \end{CD}
 $$
 
-The top horizontal map is the identity. By Lemma 1 applied to $D$, the right vertical map is an isomorphism. By Lemma 2 applied to the diagram $\Hom(X,D(-))$ in $\Set$, the left vertical map is an isomorphism. Hence the bottom horizontal map is an isomorphism.
+The top horizontal map is the identity. By Lemma 1 applied to $D$, the right vertical map is an isomorphism. By Lemma 1 applied to the diagram $\Hom(X,D(-))$ in $\Set$, the left vertical map is an isomorphism. Hence the bottom horizontal map is an isomorphism.
 :::
 
 ::: Corollary 3
