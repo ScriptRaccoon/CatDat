@@ -180,13 +180,11 @@ As a practical guideline, avoid introducing more than four properties (or four c
 
 ### Responsible Use of AI
 
-AI tools may be used to assist with development in this repository, but not to replace the act of programming.
+AI tools may be used for both code and data in this repository, as long as a human author takes full responsibility for the result.
 
-- Use AI to support your workflow (e.g. by asking questions, getting suggestions, or creating snippets), not to generate complete features or large portions of code without your active involvement.
-- AI agents that autonomously generate or modify code are not allowed. Pull requests that are mainly written by AI agents will be closed.
-- AI can also be used to find proofs for properties of categorical structures, but they must be checked thoroughly and written in your own words.
+- AI-generated code and data (proofs, structures, properties, implications) are accepted as long as they are readable, understandable, and have been checked thoroughly by you.
+- You are the author: you must understand every line of code and every argument and be able to explain them, check every claim, link, and citation, and fix anything that is unclear, incomplete, or wrong before submitting it.
 - AI may also be used to improve English writing (e.g. grammar, clarity, phrasing), particularly if you are not a native speaker.
-- Every line of code in a pull request must be understood by the person submitting it.
 - Pull request descriptions and commit messages must be written manually. AI-generated summaries are often superficial, meaningless, and do not tell the whole story.
 
 In summary, treat AI as a productivity tool, not as a substitute for understanding or authorship.
