@@ -78,12 +78,6 @@ satisfied_properties:
       hence $\kappa' = \kappa$. Therefore, the cocone $(u_i)_{i \in \I}$ is the colimit of $D$ in $B\OnColl$.
 
 unsatisfied_properties:
-  - property: one-way
-    proof: This is trivial.
-
-  - property: locally essentially small
-    proof: This is because $\OnColl$ is a large collection.
-
   - property: balanced
     proof: Every finite ordinal is both a mono- and an epimorphism (see below), but only $0$ is an isomorphism.
 
