@@ -19,7 +19,7 @@ Also, let $i_1,i_2 : \IZ \rightrightarrows \IZ * \IZ'$ denote the coprojections.
 
 - $e(T\mu(x)) = e(Ti_1(x)) \cdot e(Ti_2(x))$ for each $x \in T(\IZ * \IZ')$,
 - $e(T\varepsilon(x)) = 1$ for each $x \in T0$,
-- $e(T\iota(x)) = e(x)^{-1}$ for each $x \in T\IZ$,
+- $e(T\iota(x)) = e(x)^{-1}$ for each $x \in T\IZ$.
 
 We first need to define a natural transformation $\eta_T : T \to \Hom({-}, L(T))$. For each group $H$ we define the function $\eta_T(H) : TH \to \Hom(H, L(T))$ by sending $x \in TH$ to $h \mapsto e(Th(x))$, where we abuse notation to identify $h \in H$ with the corresponding morphism $\IZ \to H$ mapping $1 \mapsto h$, so that $Th : TH \to T\IZ$. To see that this defines a group homomorphism from $H$ to $L(T)$, note that for $h, h' \in H$ we have three commutative diagrams of the form
 

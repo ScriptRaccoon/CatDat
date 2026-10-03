@@ -89,12 +89,12 @@ $$
 \begin{CD}
 E @> f >> X \\
 @V g VV @V e VV \\
-X @> e >> A.
+X @> e >> Q.
 \end{CD}
 $$
 
 :::
 
 ::: Proof
-Suppose we have generalized elements $x_1, x_2 : U \to X$ with $e x_1 = e x_2$. Then $f t x_1 = x_1$ and $g t x_1 = s e x_1$, so the pair $x_1, s e x_1$ factors through $E$. Similarly, the pair $x_2, s e x_2$ factors through $E$. However, by the assumption, we also have $s e x_1 = s e x_2$. Therefore, since $E$ is a congruence, we conclude $x_1, x_2$ factors through $E$.
+Suppose we have generalized elements $x_1, x_2 : U \to X$ with $e x_1 = e x_2$. Then $f t x_1 = x_1$ and $g t x_1 = s e x_1$, so the pair $x_1, s e x_1$ factors through $E$. Similarly, the pair $x_2, s e x_2$ factors through $E$. However, by the assumption, we also have $s e x_1 = s e x_2$. Therefore, since $E$ is a congruence, we conclude that the pair $x_1, x_2$ factors through $E$.
 :::

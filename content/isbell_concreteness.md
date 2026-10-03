@@ -5,7 +5,7 @@ description: We present a direct proof that concretizable categories satisfy the
 
 # Isbell's condition for concretizability
 
-Here we reproduce a sufficient condition for [concretizability](/category-property/concretizable) due to Isbell [[I63]](#references). It was further investigated by Freyd [[F73]](#references).
+Here we reproduce a necessary condition for [concretizability](/category-property/concretizable) due to Isbell [[I63]](#references). It was further investigated by Freyd [[F73]](#references).
 
 Let $A,B$ be fixed objects of a category. We say that a span $A \leftarrow X \rightarrow B$ over $(A,B)$ _commutes_ with a cospan $A \rightarrow Y \leftarrow B$ if the diagram
 
