@@ -47,7 +47,7 @@ Database (all scripts run with `tsx` using [database/tsconfig.json](database/tsc
 - `pnpm db:update`: run `db:seed`, `db:deduce`, `db:test`, and `db:snapshot` in sequence. **This is the standard command after editing any YAML data.** Use `--watch` to rerun it whenever a file in `database/data/` changes.
 - `pnpm db:text`: fast path for text-only changes to existing structures (names, notations, descriptions, nLab links, proofs). It updates changed fields without rebuilding relations or running deductions. Properties and implications are not covered. Supports `--watch`.
 - `pnpm db:redundancies`: report property assignments that could already be deduced from others. It reports at most one per structure and kind, so rerun it after each removal. Not part of `db:update`.
-- `pnpm db:combinations <type> <id> [<id> ...]`: list the combinations p ∧ ¬q that the given structures (or their duals) witness and that no other structure in the database witnesses. Useful to judge whether a structure adds new information.
+- `pnpm db:combinations <id> [<id> ...]`: list the combinations p ∧ ¬q that the given structures (or their duals) witness and that no other structure in the database witnesses. Needs only the IDs, not the type (all IDs must have the same type). Useful to judge whether a structure adds new information.
 - `pnpm db:structure <id> [group]`: print the property IDs of a structure, grouped into `satisfied`, `unsatisfied`, `unknown`, and `undecidable` with counts (a terminal version of the structure detail page). An optional group argument restricts the output to that group, e.g. `pnpm db:structure Ab unsatisfied`. Needs only the ID, not the type.
 - `pnpm db:shell`: open a `sqlite3` shell on the local database.
 

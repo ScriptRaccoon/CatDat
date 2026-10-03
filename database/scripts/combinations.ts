@@ -1,5 +1,5 @@
 import { get_client } from '$shared/db'
-import { is_structure_type, type StructureType } from '$shared/config'
+import type { StructureType } from '$shared/config'
 import { remove_underscores } from '$shared/utils'
 
 /**
@@ -10,19 +10,20 @@ import { remove_underscores } from '$shared/utils'
 
 const db = get_client({ readonly: true })
 
-const args = process.argv.slice(2)
+const structure_ids = process.argv.slice(2)
 
-const [type, ...structure_ids] = args
-
-if (!type || structure_ids.length === 0) {
-	console.error(
-		'Expected arguments: <structure-type> <structure-id> <structure-id> ...'
-	)
+if (structure_ids.length === 0) {
+	console.error('Expected arguments: <structure-id> <structure-id> ...')
 	process.exit(1)
 }
 
-if (!is_structure_type(type)) {
-	console.error(`Unknown structure type: ${type}`)
+const type = db
+	.prepare<[string], StructureType>(`SELECT type FROM structures WHERE id = ?`)
+	.pluck()
+	.get(structure_ids[0])
+
+if (!type) {
+	console.error(`No structure with ID "${structure_ids[0]}" exists in the database.`)
 	process.exit(1)
 }
 
