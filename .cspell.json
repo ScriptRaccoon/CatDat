@@ -384,7 +384,8 @@
 		"well-copowered",
 		"Wengenroth",
 		"Yoneda",
-		"Zulip"
+		"Zulip",
+		"Neumann"
 	],
 	"ignorePaths": [
 		"node_modules",
