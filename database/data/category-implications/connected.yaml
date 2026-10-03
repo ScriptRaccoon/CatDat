@@ -81,3 +81,33 @@
   conclusions:
     - trivial
   proof: Every object is isomorphic to the initial object.
+
+- id: core-connected_one-way_trivial
+  assumptions:
+    - core-connected
+    - one-way
+  conclusions:
+    - trivial
+  proof: Every core-connected category is equivalent to $BM$ for a (possibly large) monoid $M$. If it is one-way, $\End(*)=M$ must be trivial, in which case $BM$ is trivial.
+
+- id: core-connected_essentially_small
+  assumptions:
+    - core-connected
+    - locally essentially small
+  conclusions:
+    - essentially small
+  proof: There is only one isomorphism class of objects. Now use the characterization of essentially small categories as the locally essentially small categories whose collection of isomorphism classes of objects is essentially small.
+
+- id: core-connected_products_congruences_trivial
+  assumptions:
+    - core-connected
+    - binary products
+    - quotients of congruences
+  conclusions:
+    - trivial
+  proof: >-
+    We may assume that the category is $BM$ for a (possibly large) monoid $M$. In any category with binary products, the projections $p_1, p_2 : X \times X \rightrightarrows X$ form a congruence on $X$. Since $BM$ has only one object, we have $* \times * = *$, so that $p_1, p_2 \in M$, and for all $a,b \in M$ there is some $m \in M$ with $p_1 m = a$ and $p_2 m = b$.
+
+    Let $c \in M$ be a quotient of $p_1, p_2$. This means that $c p_1 = c p_2$, and that every $d \in M$ with $d p_1 = d p_2$ can be written as $d = u c$ for a unique $u \in M$. For all $a,b \in M$ we choose $m \in M$ with $p_1 m = a$ and $p_2 m = b$, and get
+    $$c a = c p_1 m = c p_2 m = c b.$$
+    For $b = 1$ this means that $c a = c$ for all $a \in M$. In particular, $c c = c = 1 c$. Since $c$ is a coequalizer, it is an epimorphism, so that $c = 1$. But then $a = c a = c = 1$ for all $a \in M$, so $M$ is trivial.

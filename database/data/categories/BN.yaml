@@ -79,9 +79,6 @@ satisfied_properties:
       (2) <strong>The map $\alpha$ is injective:</strong> Assume that $[i,n]$ and $[j,m]$ have the same image. Since $\I$ is filtered, we may assume $i=j$. The condition then becomes $u_i + n = u_i + m$, and therefore $n=m$. This completes the proof.
 
 unsatisfied_properties:
-  - property: one-way
-    proof: This is trivial.
-
   - property: locally finite
     proof: This is trivial.
 
