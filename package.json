@@ -25,6 +25,7 @@
 		"db:update": "tsx --tsconfig database/tsconfig.json database/scripts/update.ts",
 		"db:redundancies": "tsx --tsconfig database/tsconfig.json database/scripts/redundancies.ts",
 		"db:combinations": "tsx --tsconfig database/tsconfig.json database/scripts/combinations.ts",
+		"db:structure": "tsx --tsconfig database/tsconfig.json database/scripts/structure.ts",
 		"e2e": "PUBLIC_PLAYWRIGHT=true pnpm exec playwright test",
 		"e2e:debug": "PUBLIC_PLAYWRIGHT=true pnpm exec playwright test --debug",
 		"e2e:ui": "PUBLIC_PLAYWRIGHT=true pnpm exec playwright test --ui"

@@ -107,6 +107,16 @@ pnpm db:redundancies
 
 to check for redundant assignments of properties to categorical structures.
 
+## Properties of a structure
+
+Use the command
+
+```
+pnpm db:structure <structure-id> [group]
+```
+
+to list the satisfied, unsatisfied, unknown, and undecidable properties of a structure in the terminal, grouped as on its detail page. Pass one of these groups as a second argument to list only that group.
+
 ## Diagram
 
 This is the database schema as of 18.09.2026; changes may occur.
