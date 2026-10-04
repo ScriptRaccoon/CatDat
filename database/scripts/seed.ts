@@ -20,7 +20,7 @@ const db = get_client({ readonly: false })
 const data_folder = path.resolve('database', 'data')
 
 const structure_history_file = path.resolve('shared', 'structure.history.json')
-const structure_history: Record<string, string> = JSON.parse(
+const structure_history: string[] = JSON.parse(
 	fs.readFileSync(structure_history_file, 'utf8')
 )
 
@@ -338,13 +338,13 @@ function seed_structures({ type, folder }: { type: StructureType; folder: string
 }
 
 /**
- * Adds the structure to the history in case it is new.
+ * Appends the structure to the history in case it is new.
+ * The history lists structure ids in the order they were added.
  */
 function record_structure_addition(id: string) {
-	if (structure_history[id]) return
+	if (structure_history.includes(id)) return
 
-	const date = new Date().toLocaleDateString('en-CA')
-	structure_history[id] = date
+	structure_history.push(id)
 	structure_history_changed = true
 }
 
