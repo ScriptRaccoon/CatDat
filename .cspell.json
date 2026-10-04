@@ -407,7 +407,8 @@
 		"Wengenroth",
 		"Yoneda",
 		"Zulip",
-		"Neumann"
+		"Neumann",
+		"Baumslag"
 	],
 	"ignorePaths": [
 		"node_modules",
