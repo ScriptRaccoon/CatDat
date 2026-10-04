@@ -142,3 +142,35 @@ test('user sees five recently added structures', async ({ page }) => {
 	const items = section.locator('li')
 	await expect(items).toHaveCount(5)
 })
+
+test('user can see recently added structures', async ({ page }) => {
+	await page.goto('/', { waitUntil: 'networkidle' })
+
+	const section = page.locator('section', {
+		has: page.getByRole('heading', { name: 'Recently added structures' })
+	})
+
+	const items = section.locator('li')
+	await expect(items).toHaveCount(5)
+
+	const button = section.getByRole('button', { name: 'Show more' })
+	await button.click()
+
+	await expect.poll(() => items.count()).toBeGreaterThan(5)
+	await expect(button).toBeHidden()
+})
+
+test('user can navigate to a recently added structure', async ({ page }) => {
+	await page.goto('/')
+
+	const section = page.locator('section', {
+		has: page.getByRole('heading', { name: 'Recently added structures' })
+	})
+
+	const link = section.getByRole('link').first()
+	const name = (await link.textContent())!.trim()
+
+	await link.click()
+
+	await expect(page.getByRole('heading', { name, exact: true })).toBeVisible()
+})
