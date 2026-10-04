@@ -91,10 +91,9 @@ export const load = () => {
 		FinAb: example_structures_db[1]
 	})
 
-	const recent_structures_ids = Object.entries(structure_history)
-		.sort((a, b) => b[1].localeCompare(a[1]))
-		.slice(0, NUMBER_RECENT_STRUCTURES)
-		.map((a) => a[0])
+	const recent_structures_ids = structure_history
+		.slice(-NUMBER_RECENT_STRUCTURES)
+		.reverse()
 
 	const recent_structures = db
 		.prepare<string[], { id: string; type: StructureType; name: string }>(
