@@ -123,7 +123,7 @@ Format:
 - Write in full sentences, using "we". Introduce notation with `\coloneqq`, and use `$$...$$` for displayed formulas. In long YAML proofs, use a `>-` block and separate paragraphs with a blank line.
 - Internal links in YAML: structures as `<a href="/category/Set">$\Set$</a>` (with the notation as link text), properties as `<a href="/category-property/<id>">...</a>`, and content pages as `<a href="/content/<name>">here</a>` or `<a href="/content/<name>">this lemma</a>`.
 - External links in YAML get `target="_blank"` and point to a specific result: `See Prop. 4.2 at the <a href="..." target="_blank">nLab</a>.`, `<a href="https://math.stackexchange.com/questions/601463/" target="_blank">MSE/601463</a>` (`MO/...` for MathOverflow), and books with the author as link text followed by the location, e.g. `<a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. V, Theorem 5.1`.
-- Content pages are Markdown with `title` and `description` in the front matter and use Markdown links. Statements go in blocks such as `::: Lemma 1` (also `Proposition`, `Corollary`, `Claim`), closed by `:::`, followed by a `::: Proof` block. Where useful, also state the dual version of a result.
+- Content pages are Markdown with `title` and `description` in the front matter and use Markdown links. Statements go in blocks such as `::: Lemma 1` (also `Proposition`, `Corollary`, `Claim`), closed by `:::`, followed by a `::: Proof` block. Do not state the dual version of a result unless it is used often (as for Lemma 2 in [content/subcategories.md](content/subcategories.md)).
 
 ## Workflow after changing data
 
