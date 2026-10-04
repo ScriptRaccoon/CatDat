@@ -147,3 +147,13 @@ Let $U : \C \to \D$ be a faithful conservative functor (for example, a fully fai
 ::: Proof
 This is straightforward. We need to prove that finite coproducts are disjoint and stable under pullbacks in $\C$. If $A,B \in \C$, the coproduct inclusion $A \to A + B$ is a monomorphism: Since $U$ is faithful, it suffices to prove that its image under $U$ is a monomorphism. Since $U$ preserves finite coproducts, the image identifies with the coproduct inclusion $U(A) \to U(A) + U(B)$, which is a monomorphism since $\D$ is extensive. Moreover, the unique morphism $0 \to A \times_{A + B} B$ is an isomorphism: Since $U$ is conservative, it suffices to prove that its image under $U$ is an isomorphism. Since $U$ preserves finite coproducts and pullbacks along coproduct inclusions, the image identifies with the unique morphism $0 \to U(A) \times_{U(A) + U(B)} U(B)$, which is an isomorphism since $\D$ is extensive. This proves that finite coproducts are disjoint in $\C$. To prove that they are stable under pullbacks, let $T \to A + B$ be any morphism in $\C$, and consider the pullbacks $T_A \coloneqq T \times_{A + B} A$ and $T_B \coloneqq T \times_{A + B} B$. We need to show that the canonical morphism $T_A + T_B \to T$ is an isomorphism. Since $U$ is conservative, it suffices to prove that its image under $U$ is an isomorphism. Since $U$ preserves finite coproducts and pullbacks along coproduct inclusions, the image identifies with the canonical morphism $U(T)_{U(A)} + U(T)_{U(B)} \to U(T)$ induced by the morphism $U(T) \to U(A) + U(B)$ in $\D$, which is an isomorphism since $\D$ is extensive.
 :::
+
+::: Lemma 12
+Let $U : \C \to \D$ be a fully faithful functor that preserves kernel pairs. Let $f : X \to Y$ be a morphism in $\C$ that has a kernel pair in $\C$. If $U(f)$ is a regular epimorphism in $\D$, then $f$ is a regular epimorphism in $\C$. In particular, if $U$ maps epimorphisms to regular epimorphisms and $\C$ is not epi-regular, then $\C$ does not have kernel pairs.
+:::
+
+::: Proof
+Let $p_1,p_2 : E \rightrightarrows X$ be the kernel pair of $f$ in $\C$. Then $U(p_1),U(p_2)$ is the kernel pair of $U(f)$ in $\D$. Since $U(f)$ is a regular epimorphism, it is the coequalizer of $U(p_1),U(p_2)$ by [this lemma](/content/regular-epis-kernel-pairs). Since $U$ is fully faithful, it reflects colimits, so $f$ is the coequalizer of $p_1,p_2$ in $\C$, i.e. a regular epimorphism.
+
+For the second statement, assume that $\C$ has kernel pairs and that $U$ maps epimorphisms to regular epimorphisms. By the first statement, every epimorphism of $\C$ is regular, i.e. $\C$ is epi-regular.
+:::
