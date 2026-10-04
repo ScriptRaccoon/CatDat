@@ -55,6 +55,9 @@ satisfied_properties:
   - property: filtered-colimit-stable monomorphisms
     proof: This holds for the free cocompletion of every locally small category. See Lemma 6 <a href="/content/free-cocompletion">here</a>.
 
+  - property: pushout-stable regular monomorphisms
+    proof: This holds for the free cocompletion of every locally small category. See Lemma 6 <a href="/content/free-cocompletion">here</a>.
+
   - property: infinitary extensive
     proof: This holds for the free cocompletion of every locally small category. See Lemma 7 <a href="/content/free-cocompletion">here</a>.
 

@@ -53,7 +53,7 @@ unsatisfied_properties:
   - property: CSP
     proof: If $M \to N$ is an epimorphism in $\Mon$ and $M$ is infinite, then $\card(N) \leq \card(M)$ (see <a href="https://mathoverflow.net/questions/510431/" target="_blank">MO/510431</a>). This implies that in $\Mon$ the canonical homomorphism $\coprod_{n \geq 0} \IN \to \prod_{n \geq 0} \IN$ is not an epimorphism because its domain is countable and its codomain is uncountable.
 
-  - property: coregular
+  - property: pushout-stable regular monomorphisms
     proof: 'Consider the monoid $M \coloneqq \langle x_0, x_1, s : x_0 s = x_1 s = 1 \rangle$. Notice that every element in $M$ has a unique expression as $s^k \cdot u$ with $k \in \IN$ and $u \in \langle x_0,x_1 \rangle_M$. Moreover, the canonical homomorphism $\iota : \langle x_0, x_1 \rangle \to M$ (from the free monoid) is injective. We will prove that it is a regular monomorphism, which however is not stable under pushouts. Consider $N \coloneqq \langle x_0, x_1, s_0, s_1 : x_i s_j = 1 \rangle$ and define $f_i : M \to N$ for $i=0,1$ by $f_i(x_j) = x_j$ and $f_i(s) = s_i$. Then $\iota$ is the equalizer of $f_0,f_1$. Now consider $g : \langle x_0,x_1 \rangle \to \langle y_0 \rangle$ defined by $g(x_0) = y_0$, $g(x_1) = 1$. The pushout of $\iota$ with $g$ is given by $\langle x_0, x_1, s, y_0 : x_0 s = x_1 s = 1 , \, x_0 = y_0, \, x_1 = 1 \rangle$, which simplifies to $\langle x_0, s : x_0 s = s = 1 \rangle$, which is trivial.'
     label: mon_not_coregular
 

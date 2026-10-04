@@ -1,0 +1,44 @@
+# results on regular categories and related notions
+
+- id: regular_def
+  assumptions:
+    - regular
+  conclusions:
+    - finitely complete
+    - coequalizers of kernel pairs
+    - pullback-stable regular epimorphisms
+  proof: This is the definition of a regular category.
+  is_equivalence: true
+
+- id: pullback-stable-requires-pullbacks
+  assumptions:
+    - pullback-stable regular epimorphisms
+  conclusions:
+    - pullbacks
+  proof: This holds by definition.
+
+- id: regular_well-powered_well-copowered
+  assumptions:
+    - regular
+    - epi-regular
+    - well-powered
+  conclusions:
+    - well-copowered
+  proof: The regularity condition gives a bijection between the collection of quotients of $X$ and the collection of effective congruences on $X$, where the latter is a subcollection of the collection of subobjects of $X\times X$.
+
+- id: regular_balanced_epi-regular
+  assumptions:
+    - regular
+    - balanced
+  conclusions:
+    - epi-regular
+  proof: 'Given any epimorphism $f : X \twoheadrightarrow Y$ in a regular category, we have the factorization into a regular epimorphism $X \twoheadrightarrow \im(f)$ followed by a monomorphism $\im(f) \hookrightarrow Y$. Because the composition is an epimorphism, the monomorphism $\im(f) \hookrightarrow Y$ must also be an epimorphism, and therefore an isomorphism. It follows that $f$ is in fact a regular epimorphism.'
+
+- id: Barr-exact_definition
+  assumptions:
+    - Barr-exact
+  conclusions:
+    - regular
+    - effective congruences
+  proof: This holds by definition.
+  is_equivalence: true

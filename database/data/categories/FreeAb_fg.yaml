@@ -40,8 +40,8 @@ satisfied_properties:
     references:
       - proj_fg_self-dual
 
-  - property: regular
-    proof: We already know that the category is finitely complete and self-dual, hence also finitely cocomplete. It remains to prove that regular epimorphisms are stable under pullback. This is clear since they coincide with the surjective homomorphisms (see below).
+  - property: pullback-stable regular epimorphisms
+    proof: This is clear since regular epimorphisms coincide with the surjective homomorphisms (see below).
 
   - property: ℵ₁-accessible
     proof: >-

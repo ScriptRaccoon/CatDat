@@ -37,16 +37,16 @@ satisfied_properties:
     proof: >-
       The Hahn-Banach theorem implies that $\IC$ is a cogenerator. We claim that it is in fact an extremal cogenerator. Thus, suppose $f : X \to Y$ is a morphism such that ${-} \circ f : \Hom(Y, \IC) \to \Hom(X, \IC)$ is bijective on the underlying sets. Then for any non-zero $x \in X$, by the Hahn-Banach theorem, there exists $\varphi \in X^*$ such that $|\varphi| = 1$ and $\varphi(x) = |x|$. Since $|\varphi| = 1$, we see that $\varphi$ is a morphism $X \to \IC$ in $\Ban$; so by the assumption, there exists a morphism $\psi : Y \to \IC$ such that $\varphi = \psi \circ f$. Therefore, $|x| = |\psi(f(x))| \le |f(x)|$; and conversely, since $f$ is a morphism, $|f(x)| \le |x|$. On the other hand, if $x = 0$, then certainly $|f(x)| = |x| = 0$. This shows that $f$ is isometric and therefore a regular monomorphism (see below). On the other hand, since $\IC$ is a cogenerator and ${-} \circ f$ is injective, we have $f$ is also an epimorphism. Hence, $f$ is an isomorphism.
 
-  - property: regular
+  - property: pullback-stable regular epimorphisms
     proof: >-
-      It suffices to prove that regular epimorphisms are stable under pullbacks. We will use their classification via open unit balls below.
+      We will use the classification of regular epimorphisms via open unit balls below.
       So let $f : X \to Y$ be a regular epimorphism and let $g : T \to Y$ be any morphism. We need to show that the projection $X \times_Y T \to X$ is a regular epimorphism.
       Let $t \in T$ be an element of norm $<1$. Since $g$ is a linear contraction, $g(t)$ has norm $<1$. Since $f$ is a regular epimorphism, there is some $x \in X$ with norm $<1$ and $f(x) = g(t)$.
       Then $(x,t) \in X \times_Y T$ is a preimage of $t$ with norm $\max(|x|,|t|) < 1$.
 
-  - property: coregular
+  - property: pushout-stable regular monomorphisms
     proof: >-
-      It suffices to prove that regular monomorphisms are stable under pushouts. We will use their classification as isometric linear maps below.
+      We will use the classification of regular monomorphisms as isometric linear maps below.
       So let $i : X \to Y$ be an isometric linear map and let $f : X \to T$ be any morphism. We need to show that the linear contraction $\iota : T \to T \sqcup_X Y$ is isometric as well. The pushout can be constructed as the quotient of the direct sum $T \oplus Y$, equipped with the $1$-norm, modulo the closure of the subspace containing all $(-f(x),i(x))$ for $x \in X$. Using that $i$ is an isometry, it is easily checked that this subspace is already closed.
       For $t \in T$ the norm of $\iota(t) = [(t,0)]$ is the infimum of the norms of $(t,0) + (-f(x),i(x)) = (t - f(x), i(x))$ for $x \in X$.
       By taking $x=0$ we see that the infimum is $\leq |t|$.
