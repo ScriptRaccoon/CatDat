@@ -12,6 +12,7 @@ import decided_categories from './expected-data/decided-categories.json'
 import decided_functors from './expected-data/decided-functors.json'
 import decided_morphisms from './expected-data/decided-morphisms.json'
 import decided_symmetric_monoidal_categories from './expected-data/decided-symmetric-monoidal-categories.json'
+import structure_history from '$shared/structure.history.json'
 import { capitalize, devlog, remove_underscores } from '$shared/utils'
 import { get_client } from '$shared/db'
 import { STRUCTURE_TYPES, type StructureType, PLURALS } from '$shared/config'
@@ -32,6 +33,9 @@ function execute_tests() {
 
 		devlog('\n--- Test link targets ---')
 		check_link_targets_exist()
+
+		devlog('\n--- Test structure history ---')
+		test_structure_history_ids_exist()
 
 		devlog('\n--- Test categories ---')
 
@@ -156,6 +160,26 @@ function test_mutual_property_duals(type: StructureType) {
 	}
 
 	devlog(`✅ ${capitalize(remove_underscores(type))} properties are mutually dual`)
+}
+
+/**
+ * Tests that every ID in the structure history refers to an existing structure.
+ * If this test fails, a structure has probably been renamed or deleted.
+ */
+function test_structure_history_ids_exist() {
+	const structure_ids = new Set(
+		db.prepare<never[], string>(`SELECT id FROM structures`).pluck().all()
+	)
+
+	const unknown_ids = structure_history.filter((id) => !structure_ids.has(id))
+
+	if (unknown_ids.length > 0) {
+		throw new Error(
+			`❌ Found unknown structure IDs in structure.history.json:\n${unknown_ids.join(', ')}`
+		)
+	}
+
+	devlog('✅ All structure IDs in the history exist')
 }
 
 /**
