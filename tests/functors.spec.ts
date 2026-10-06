@@ -37,6 +37,52 @@ test('user can navigate to a functor', async ({ page }) => {
 	await expect(page).toHaveURL('/functor/pi_1')
 })
 
+test('user can search for a functor by its name', async ({ page }) => {
+	await page.goto('/functor-list', { waitUntil: 'networkidle' })
+
+	const irrelevant_names = [
+		'abelianization functor for groups',
+		'fundamental group functor'
+	]
+
+	for (const name of irrelevant_names) {
+		await expect(page.getByRole('link', { name, exact: true })).toBeVisible()
+	}
+
+	await page.getByRole('searchbox', { name: 'search filter' }).fill('power set')
+
+	await expect(
+		page.getByRole('link', {
+			name: 'covariant power set functor',
+			exact: true
+		})
+	).toBeVisible()
+
+	for (const name of irrelevant_names) {
+		await expect(page.getByRole('link', { name, exact: true })).not.toBeVisible()
+	}
+})
+
+test('user can search for a functor by its keyword', async ({ page }) => {
+	await page.goto('/functor-list', { waitUntil: 'networkidle' })
+
+	await page.getByRole('searchbox', { name: 'search filter' }).fill('group completion')
+
+	await expect(
+		page.getByRole('link', {
+			name: 'enveloping group functor',
+			exact: true
+		})
+	).toBeVisible()
+
+	await expect(
+		page.getByRole('link', {
+			name: 'abelianization functor for groups',
+			exact: true
+		})
+	).not.toBeVisible()
+})
+
 test("user can navigate to functors tagged with 'topology' from the functor list page", async ({
 	page
 }) => {

@@ -14,7 +14,7 @@ export function fetch_structures(type: StructureType) {
 	return { structures, type }
 }
 
-export function fetch_structures_and_tags(type: StructureType) {
+export function fetch_structures_with_tags_and_keywords(type: StructureType) {
 	const structures = db
 		.prepare<[StructureType], StructureShort>(
 			`SELECT id, name
@@ -38,7 +38,24 @@ export function fetch_structures_and_tags(type: StructureType) {
 		.pluck()
 		.all(type)
 
-	return { type, structures, tags }
+	const keywords_db = db
+		.prepare<[StructureType], { structure_id: string; keyword: string }>(
+			`SELECT k.structure_id, k.keyword
+            FROM structure_keywords k
+            INNER JOIN structures s
+            ON s.id = k.structure_id
+            WHERE s.type = ?`
+		)
+		.all(type)
+
+	const keywords: Record<string, string[]> = {}
+
+	for (const { structure_id, keyword } of keywords_db) {
+		keywords[structure_id] ??= []
+		keywords[structure_id].push(keyword)
+	}
+
+	return { type, structures, tags, keywords }
 }
 
 export function fetch_tagged_structures(type: StructureType, tag: string) {

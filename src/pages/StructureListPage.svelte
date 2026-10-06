@@ -14,19 +14,22 @@
 		type: StructureType
 		structures: StructureShort[]
 		tags: string[]
+		keywords: Record<string, string[]>
 	}
 
-	let { type, structures, tags }: Props = $props()
+	let { type, structures, tags, keywords }: Props = $props()
 
 	let search = $state('')
 
-	let searched_structures = $derived(
-		search
-			? structures.filter((s) =>
-					normalize_text(s.name).includes(normalize_text(search))
-				)
-			: structures
-	)
+	let searched_structures = $derived.by(() => {
+		if (!search) return structures
+		const query = normalize_text(search)
+		return structures.filter((s) =>
+			[s.name, ...(keywords[s.id] ?? [])].some((text) =>
+				normalize_text(text).includes(query)
+			)
+		)
+	})
 </script>
 
 <MetaData title="List of {PLURALS[type]}" />
