@@ -8,6 +8,8 @@ associated:
   right_adjoint: opposite_category
 description: 'This functor maps a small category $\C$ to its opposite category $\C^{\op}$ and a functor $F : \C \to \D$ to the opposite functor $F^{\op} : \C^{\op} \to \D^{\op}$.'
 nlab_link: https://ncatlab.org/nlab/show/opposite+category
+keywords:
+  - dual category
 
 tags:
   - category theory

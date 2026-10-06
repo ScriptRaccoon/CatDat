@@ -6,6 +6,9 @@ morphisms: $R$-linear maps
 description: This is the special case of <a href="/category/R-Mod">$R{-}\Mod$</a> where $R$ is a division ring (also known as a skew-field).
 nlab_link: https://ncatlab.org/nlab/show/module
 parent: R-Mod
+keywords:
+  - skew-field
+  - R-modules
 
 tags:
   - algebra

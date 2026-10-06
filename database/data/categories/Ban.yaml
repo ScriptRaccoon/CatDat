@@ -5,6 +5,8 @@ objects: Banach spaces over $\IC$
 morphisms: linear contractions, i.e. linear maps of norm $\leq 1$
 description: The choice of morphisms is similar to that of $\Met$ which yields better categorical properties.
 nlab_link: https://ncatlab.org/nlab/show/Banach+space
+keywords:
+  - complete normed space
 
 tags:
   - analysis

@@ -6,6 +6,8 @@ morphisms: maps that are compatible with the action
 description: 'This is the special case of the <a href="/category/M-Set">category of $M$-sets</a>, where $M$ is the additive group of integers. Objects can be identified with pairs $(X,\sigma)$, where $X$ is a set and $\sigma : X \to X$ is a permutation on $X$. A morphism $(X,\sigma) \to (Y,\tau)$ is a map $f : X \to Y$ satisfying $\tau \circ f = f \circ \sigma$.'
 nlab_link: https://ncatlab.org/nlab/show/MSet
 parent: M-Set
+keywords:
+  - permutations
 
 tags:
   - set theory

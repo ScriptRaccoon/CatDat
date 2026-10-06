@@ -12,6 +12,8 @@ description: >-
 
   It turns out that this category behaves exactly like <a href="/category/Bin">$\Bin$</a> (i.e. the category of directed graphs), and the proofs of the properties are very similar.
 nlab_link: null
+keywords:
+  - undirected graphs with loops
 
 tags:
   - graph theory

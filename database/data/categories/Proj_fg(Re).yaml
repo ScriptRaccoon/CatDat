@@ -10,6 +10,8 @@ description: >-
 nlab_link: null
 tags:
   - algebra
+keywords:
+  - free modules
 
 related:
   - R-Mod

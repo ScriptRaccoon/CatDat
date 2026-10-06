@@ -8,6 +8,8 @@ description: >-
   $$\{0 \rightleftarrows 1\}$$
   Its name comes from the fact that a functor $\Isom \to \C$ is the same as an isomorphism in $\C$. The walking isomorphism is actually equivalent to the trivial category.
 nlab_link: https://ncatlab.org/nlab/show/walking+isomorphism
+keywords:
+  - interval groupoid
 tags:
   - category theory
 

@@ -5,6 +5,8 @@ objects: commutative algebras over a commutative ring $R \neq 0$
 morphisms: maps preserving the ring and module structure
 description: This category is a generalization of the category of commutative rings, which we get for $R = \IZ$. In general, $\CAlg(R) \cong R \,/\, \CRing$. We assume our rings (and algebras) to be unital. For $R = 0$ we would get the trivial category, which is why we exclude this here.
 nlab_link: https://ncatlab.org/nlab/show/CommAlg
+keywords:
+  - commutative R-algebras
 
 tags:
   - algebra

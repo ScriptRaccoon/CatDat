@@ -5,6 +5,8 @@ objects: 'long transfinite sequences of abelian groups, i.e. families of abelian
 morphisms: A morphism $A \to B$ is a family of homomorphisms $A_\alpha \to B_\alpha$ such that the evident square commutes for every $\alpha \leq \beta$.
 description: This is the functor category $[\On,\Ab]$, where $\On$ is the thin <a href="/category/On">category of ordinal numbers</a>. It is a larger variant of the <a href="/category/SeqAb">category of sequences of abelian groups</a> $[\IN,\Ab]$. This category rarely appears in practice, but we have added it because of its interesting combinations of properties. For example, it shows that a Grothendieck abelian category that is not locally small does not necessarily have a cogenerator. For some background on why this functor category is well-defined, see <a href="/content/foundations">Foundations</a>.
 nlab_link: null
+keywords:
+  - long sequences
 
 tags:
   - algebra

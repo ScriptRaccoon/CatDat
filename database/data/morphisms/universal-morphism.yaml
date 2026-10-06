@@ -5,6 +5,8 @@ associated:
   category: walking_morphism
 description: 'This is the morphism $! : 0 \to 1$ in the <a href="/category/walking_morphism">walking morphism</a> $I$, see there for details.'
 nlab_link: null
+keywords:
+  - walking morphism
 
 tags:
   - category theory

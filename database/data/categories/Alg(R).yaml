@@ -5,6 +5,8 @@ objects: algebras over a commutative ring $R \neq 0$
 morphisms: maps preserving the ring and module structure
 description: This category is a generalization of the category of rings, which we get for $R = \IZ$. We assume our rings (and algebras) to be unital. For $R = 0$ we would get the trivial category, which is why we exclude this here.
 nlab_link: https://ncatlab.org/nlab/show/Alg
+keywords:
+  - R-algebras
 
 tags:
   - algebra

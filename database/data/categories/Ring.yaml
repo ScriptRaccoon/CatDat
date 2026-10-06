@@ -6,6 +6,8 @@ morphisms: ring homomorphisms
 description: Here, rings always have a unit, and homomorphisms preserve them. This category is the special case of <a href="/category/Alg(R)">$\Alg(R)$</a> where $R = \IZ$.
 nlab_link: https://ncatlab.org/nlab/show/Ring
 parent: Alg(R)
+keywords:
+  - Z-algebras
 
 tags:
   - algebra

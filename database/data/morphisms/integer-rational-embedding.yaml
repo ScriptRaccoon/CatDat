@@ -5,6 +5,9 @@ associated:
   category: CRing
 description: 'The inclusion $\iota_{\IZ,\IQ} : \IZ \hookrightarrow \IQ$ is a typical example of a localization. It is a standard example of a mono- and epimorphism which is not an isomorphism in the category of (commutative) rings.'
 nlab_link: https://ncatlab.org/nlab/show/localization+of+a+commutative+ringlization
+keywords:
+  - integers
+  - rationals
 
 tags:
   - algebra

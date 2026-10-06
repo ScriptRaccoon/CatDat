@@ -6,6 +6,8 @@ morphisms: ring homomorphisms
 description: This category is the special case of <a href="/category/CAlg(R)">$\CAlg(R)$</a> where $R = \IZ$.
 nlab_link: https://ncatlab.org/nlab/show/CRing
 parent: CAlg(R)
+keywords:
+  - commutative Z-algebras
 
 tags:
   - algebra

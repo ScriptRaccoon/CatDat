@@ -5,6 +5,8 @@ objects: non-empty sets
 morphisms: maps
 description: This entry demonstrates that removing an object (the empty set) can drastically change the properties of a category. In particular, this category is neither complete nor cocomplete.
 nlab_link: https://ncatlab.org/nlab/show/inhabited+set
+keywords:
+  - inhabited sets
 
 tags:
   - set theory

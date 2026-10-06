@@ -5,6 +5,8 @@ associated:
   category: walking_fork
 description: 'This is the morphism $i : 0 \to 1$ from the <a href="/category/walking_fork">walking fork</a>, see details there. It provides an example of a regular monomorphism which is neither split nor effective.'
 nlab_link: null
+keywords:
+  - walking fork
 
 tags:
   - category theory

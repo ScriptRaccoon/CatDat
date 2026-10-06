@@ -5,6 +5,9 @@ associated:
   category: Grp
 description: 'This is the embedding of groups $A_3 = \langle (1 \, 2 \, 3 ) \rangle \hookrightarrow S_3$. It serves as an example of a normal monomorphism which is not split.'
 nlab_link: https://ncatlab.org/nlab/show/alternating+group
+keywords:
+  - alternating group
+  - symmetric group
 
 tags:
   - algebra

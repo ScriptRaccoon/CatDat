@@ -12,6 +12,8 @@ description: >-
 
   It turns out that this category behaves exactly like <a href="/category/Bin_refl">$\Bin_{\refl}$</a> (i.e. the category of reflexive directed graphs), and the proofs of the properties are very similar.
 nlab_link: null
+keywords:
+  - reflexive undirected graphs
 
 tags:
   - graph theory

@@ -5,6 +5,8 @@ objects: partially ordered sets (aka posets), i.e. sets equipped with a reflexiv
 morphisms: order-preserving functions
 description: Despite the many similarities with <a href="/category/PreOrd">$\PreOrd$</a>, the main difference is that the forgetful functor $\Pos \to \Set$ has no right adjoint. It is a full subcategory of <a href="/category/Bin">$\Bin$</a>.
 nlab_link: https://ncatlab.org/nlab/show/Pos
+keywords:
+  - posets
 
 tags:
   - order theory

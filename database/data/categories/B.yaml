@@ -5,6 +5,8 @@ objects: finite sets
 morphisms: bijective maps
 description: This category is also known as the permutation groupoid. It appears in the definition of a combinatorial species.
 nlab_link: https://ncatlab.org/nlab/show/permutation+groupoid
+keywords:
+  - permutation groupoid
 
 tags:
   - combinatorics

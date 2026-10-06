@@ -5,6 +5,8 @@ objects: sets with an action of a free <i>large</i> group $F(I)$
 morphisms: maps that are compatible with the action
 description: Here, $I$ is a collection that is not essentially small, and its free group is constructed in the universe of collections (cf. <a href="/content/foundations">Foundations</a>). Objects can be identified with pairs $(X,\sigma)$, where $X$ is a set and $\sigma = (\sigma_i)_{i \in I}$ is a large family of permutations of $X$, and morphisms are maps of sets that commute with the permutations. This category behaves similarly to <a href="/category/Z-Set">$\IZ{-}\Set$</a> (in particular, it is a cocomplete elementary topos), but the most important difference is that it has neither a generating collection nor a cogenerating collection.
 nlab_link: null
+keywords:
+  - group actions
 
 tags:
   - algebra

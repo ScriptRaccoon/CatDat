@@ -8,6 +8,8 @@ associated:
   right_adjoint: null
 description: This functor maps a group $G$ to its underlying set $U_{\Grp}(G)$.
 nlab_link: https://ncatlab.org/nlab/show/forgetful+functor
+keywords:
+  - underlying set functor
 
 tags:
   - algebra

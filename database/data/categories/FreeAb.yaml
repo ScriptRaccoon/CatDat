@@ -5,6 +5,9 @@ objects: free abelian groups
 morphisms: group homomorphisms
 description: This is the full subcategory of $\Ab$ consisting of the <a href="https://ncatlab.org/nlab/show/free+abelian+group" target="_blank">free abelian groups</a>. Since $\IZ$ is a principal ideal domain, these coincide with the <a href="https://ncatlab.org/nlab/show/projective+module" target="_blank">projective</a> $\IZ$-modules, so that $\FreeAb \cong \Proj(\IZ)$.
 nlab_link: null
+keywords:
+  - free modules
+  - free Z-modules
 
 tags:
   - algebra

@@ -14,6 +14,8 @@ description: >-
 
   It turns out that this category behaves exactly like <a href="/category/Bin_symm_irr">$\Bin_{\symm,\irr}$</a> (i.e. the category of undirected graphs, with loops not allowed), and the proofs of the properties are very similar.
 nlab_link: null
+keywords:
+  - loopless directed graphs
 
 tags:
   - graph theory

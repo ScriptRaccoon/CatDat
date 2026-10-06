@@ -5,6 +5,8 @@ associated:
   underlying_category: FinVect
 description: This is the full symmetric monoidal subcategory of $(\Vect_K,\otimes,K)$ (see <a href="/symmetric_monoidal_category/R-Mod_tensor_af">here</a>) spanned by the finite-dimensional vector spaces.
 nlab_link: https://ncatlab.org/nlab/show/FinDimVect
+keywords:
+  - K-vector space
 
 tags:
   - algebra

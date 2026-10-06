@@ -5,6 +5,8 @@ objects: sheaves of abelian groups on a topological space $X$
 morphisms: morphisms of sheaves
 description: Here, we assume that the topological space $X$ is neither discrete nor indiscrete, since otherwise this category is just a product of copies of $\Ab$.
 nlab_link: https://ncatlab.org/nlab/show/sheaf+of+abelian+groups
+keywords:
+  - sheaves of abelian groups
 
 tags:
   - algebraic geometry

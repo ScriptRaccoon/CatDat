@@ -7,6 +7,9 @@ morphisms: >-
   A morphism $f : (V,E) \to (V',E')$ is a pair of maps $f_V : V \to V'$ and $f_E : E \to E'$ satisfying $s \circ f_E = f_V \circ s$ and $t \circ f_E = f_V \circ t$.
 description: This category can also be described as the functor category $[\Pair,\Set]$, where $\Pair$ denotes the <a href="/category/walking_pair">walking pair</a>.
 nlab_link: https://ncatlab.org/nlab/show/Quiv
+keywords:
+  - directed multigraphs
+  - directed pseudographs
 
 tags:
   - graph theory

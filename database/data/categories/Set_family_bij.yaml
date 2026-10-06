@@ -5,6 +5,8 @@ objects: families of sets $(X_i)_{i \in I}$ indexed by a collection $I$ that is 
 morphisms: families of bijections
 description: This is the <a href="https://ncatlab.org/nlab/show/core+groupoid">core groupoid</a> of <a href="/category/Set_family">$\Set^I$</a>. It provides an example of a groupoid that is not locally essentially small.
 nlab_link: null
+keywords:
+  - bijective maps
 
 tags:
   - set theory

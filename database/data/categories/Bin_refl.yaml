@@ -12,6 +12,8 @@ description: >-
 
   This category shares many properties with $\Bin$. Two differences are that $\Bin_{\refl}$ is semi-strongly connected and has an extremal generator.
 nlab_link: null
+keywords:
+  - reflexive directed graphs
 
 tags:
   - graph theory
