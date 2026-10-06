@@ -37,7 +37,7 @@ General:
 - `pnpm cspell`: spell-check `content/` and `database/`.
 - `pnpm e2e`: run the Playwright end-to-end tests (`e2e:debug` and `e2e:ui` are variants).
 
-Database (all scripts run with `tsx` using [database/tsconfig.json](database/tsconfig.json)):
+Database (all scripts run with `tsx` and are type-checked by `pnpm check` via the root `tsconfig.json`):
 
 - `pnpm db:setup`: delete `database/catdat.db` and recreate it from the SQL schema files. It also stores a hash of the schema in `database/schema/schema.json`. Required after any schema change; `db:seed` aborts if the schema hash is outdated.
 - `pnpm db:seed`: clear all data and insert the entries parsed from the YAML files (validated with `valibot` schemas in `database/scripts/utils/seed.schemas.ts`).
