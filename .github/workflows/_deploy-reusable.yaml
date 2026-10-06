@@ -44,7 +44,6 @@ jobs:
 
       - name: Build app
         env:
-          PUBLIC_PLAYWRIGHT: ''
           PUBLIC_ADMIN_URL: ${{ vars.PUBLIC_ADMIN_URL }}
         run: pnpm build
 

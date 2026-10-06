@@ -5,6 +5,7 @@ import { get_device_type } from './utils'
 
 export async function track_visit() {
 	if (!browser) return
+	if (navigator.webdriver) return // do not track in Playwright tests
 	if (sessionStorage.getItem('visit-tracked')) return
 
 	const res = await fetch(`${PUBLIC_ADMIN_URL}/api/track`, {
