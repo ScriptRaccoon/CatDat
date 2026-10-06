@@ -6,7 +6,6 @@
 	import Nav from '#components/Nav.svelte'
 	import NavMobile from '#components/NavMobile.svelte'
 	import Popup from '#components/Popup.svelte'
-	import { PUBLIC_PLAYWRIGHT } from '$app/env/public'
 	import { track_visit } from '#lib/client/track.js'
 	import type { StructureType } from '#lib/commons/types.js'
 	import { tracking } from '#lib/states/tracking.svelte.js'
@@ -30,7 +29,7 @@
 	})
 
 	$effect(() => {
-		if (tracking.allow && !PUBLIC_PLAYWRIGHT) track_visit()
+		if (tracking.allow) track_visit()
 	})
 
 	let nav_dialog = $state<HTMLDialogElement | null>(null)
