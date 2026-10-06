@@ -1,4 +1,4 @@
-import { normalize_text } from '$shared/utils'
+import { normalize_text } from '#shared/utils.js'
 import type { Attachment } from 'svelte/attachments'
 
 export function get_device_type() {

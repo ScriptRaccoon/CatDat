@@ -1,11 +1,11 @@
 <script lang="ts">
-	import StructureList from '$components/StructureList.svelte'
-	import HelpMessage from '$components/HelpMessage.svelte'
-	import ImplicationList from '$components/ImplicationList.svelte'
-	import MetaData from '$components/MetaData.svelte'
-	import SuggestionForm from '$components/SuggestionForm.svelte'
-	import { pluralize, remove_underscores } from '$shared/utils'
-	import { get_property_url } from '$shared/property.utils'
+	import StructureList from '#components/StructureList.svelte'
+	import HelpMessage from '#components/HelpMessage.svelte'
+	import ImplicationList from '#components/ImplicationList.svelte'
+	import MetaData from '#components/MetaData.svelte'
+	import SuggestionForm from '#components/SuggestionForm.svelte'
+	import { pluralize, remove_underscores } from '#shared/utils.js'
+	import { get_property_url } from '#shared/property.utils.js'
 	import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
 	import Fa from 'svelte-fa'
 	import type {
@@ -13,9 +13,9 @@
 		PropertyDisplay,
 		StructureShort,
 		StructureType
-	} from '$lib/commons/types'
-	import { PLURALS } from '$shared/config'
-	import TagList from '$components/TagList.svelte'
+	} from '#lib/commons/types.js'
+	import { PLURALS } from '#shared/config.js'
+	import TagList from '#components/TagList.svelte'
 
 	type Props = {
 		type: StructureType

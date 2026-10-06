@@ -2,8 +2,8 @@ import type {
 	GroupedPropertyShort,
 	PropertyShort,
 	StructureType
-} from '$lib/commons/types'
-import { db } from '$lib/server/db'
+} from '#lib/commons/types.js'
+import { db } from '#lib/server/db.js'
 
 export function get_property_ids(type: StructureType) {
 	return db
@@ -18,10 +18,9 @@ export function get_property_ids(type: StructureType) {
 
 export function fetch_property_relation_dict() {
 	const rows = db
-		.prepare<
-			never[],
-			{ id: string; type: string; relation: string }
-		>(`SELECT id, type, relation FROM properties`)
+		.prepare<never[], { id: string; type: string; relation: string }>(
+			`SELECT id, type, relation FROM properties`
+		)
 		.all()
 
 	const dict: Record<string, Record<string, string>> = {}

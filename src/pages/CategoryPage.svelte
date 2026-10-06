@@ -1,7 +1,7 @@
 <script lang="ts">
-	import TextWithProof from '$components/TextWithProof.svelte'
-	import type { StructureDetails, CategorySpecificDisplay } from '$lib/commons/types'
-	import StructurePage from '$pages/StructurePage.svelte'
+	import TextWithProof from '#components/TextWithProof.svelte'
+	import type { StructureDetails, CategorySpecificDisplay } from '#lib/commons/types.js'
+	import StructurePage from '#pages/StructurePage.svelte'
 	import { faQuestion } from '@fortawesome/free-solid-svg-icons'
 	import Fa from 'svelte-fa'
 

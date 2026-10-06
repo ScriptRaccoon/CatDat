@@ -2,7 +2,7 @@
 	import { faBars } from '@fortawesome/free-solid-svg-icons'
 	import Fa from 'svelte-fa'
 	import StructureSelector from './StructureSelector.svelte'
-	import type { StructureType } from '$lib/commons/types'
+	import type { StructureType } from '#lib/commons/types.js'
 
 	type Props = {
 		open_mobile_nav: () => void

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { CommentObject } from '$lib/commons/types'
+	import type { CommentObject } from '#lib/commons/types.js'
 
 	type Props = {
 		comments: CommentObject[]

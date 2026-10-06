@@ -1,5 +1,5 @@
 <script lang="ts">
-	import PropertyPage from '$pages/PropertyPage.svelte'
+	import PropertyPage from '#pages/PropertyPage.svelte'
 
 	let { data } = $props()
 </script>

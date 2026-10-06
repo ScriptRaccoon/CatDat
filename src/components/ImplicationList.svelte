@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { ImplicationDisplay, StructureType } from '$lib/commons/types'
+	import type { ImplicationDisplay, StructureType } from '#lib/commons/types.js'
 	import ImplicationItem from './ImplicationItem.svelte'
 
 	type Props = {

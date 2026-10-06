@@ -21,7 +21,7 @@ TypeScript, SvelteKit (Svelte 5), SQLite via `better-sqlite3`, KaTeX for math re
 - [database/data/](database/data/): **the source of truth.** YAML files for all structures, properties, and implications, one folder per kind and type (e.g. `categories/`, `category-properties/`, `category-implications/`, `functors/`, ...), plus `config.yaml` (tags, relations, special object and morphism kinds), `macros.yaml` (KaTeX macros), and `special-morphism-rules.yaml`.
 - [database/schema/](database/schema/): SQL schema files, applied in order of their `NNN_` prefix.
 - [database/scripts/](database/scripts/): the `db:*` scripts (seeding, deduction, tests). `expected-data/` holds the expected property data used by `db:test`.
-- [shared/](shared/): code used by both the database scripts and the app (`$shared/*` alias), e.g. the DB client and the structure type config. `structure.history.json` records when each structure was added; `db:seed` updates it, and the homepage reads it for "Recently added structures".
+- [shared/](shared/): code used by both the database scripts and the app (`#shared/*` subpath import), e.g. the DB client and the structure type config. `structure.history.json` records when each structure was added; `db:seed` updates it, and the homepage reads it for "Recently added structures".
 - [src/](src/): the SvelteKit app. Routes are generic over the structure type (`src/routes/[type]`, `[type]-property`, `[type]-implication`, `[type]-search`, ...). Page components are in `src/pages/`, shared components in `src/components/`, server-side DB access in `src/lib/server/`.
 - [content/](content/): Markdown content pages for long proofs and reusable lemmas.
 - [tests/](tests/): Playwright end-to-end tests.

@@ -1,7 +1,7 @@
 <script lang="ts">
-	import CodeSnippet from '$components/CodeSnippet.svelte'
-	import MetaData from '$components/MetaData.svelte'
-	import { PUBLIC_ADMIN_URL } from '$env/static/public'
+	import CodeSnippet from '#components/CodeSnippet.svelte'
+	import MetaData from '#components/MetaData.svelte'
+	import { PUBLIC_ADMIN_URL } from '$app/env/public'
 
 	/**
 	 * This is (temporarily) recorded to see if this feature is used at all.

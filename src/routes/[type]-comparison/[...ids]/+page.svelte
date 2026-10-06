@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ComparisonResultPage from '$pages/ComparisonResultPage.svelte'
+	import ComparisonResultPage from '#pages/ComparisonResultPage.svelte'
 
 	let { data } = $props()
 </script>

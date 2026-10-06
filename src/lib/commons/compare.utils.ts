@@ -1,6 +1,6 @@
-import { browser } from '$app/environment'
+import { browser } from '$app/env'
 import type { StructureType } from './types'
-import { is_string_array } from '$shared/utils'
+import { is_string_array } from '#shared/utils.js'
 
 export const MAX_STRUCTURES_COMPARE = 10
 

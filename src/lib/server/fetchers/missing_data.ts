@@ -1,7 +1,7 @@
-import { db } from '$lib/server/db'
-import type { StructureShort, StructureType } from '$lib/commons/types'
-import { contradiction_worker } from '$lib/server/consistency'
-import { get_normalized_implications } from '$shared/implications'
+import { db } from '#lib/server/db.js'
+import type { StructureShort, StructureType } from '#lib/commons/types.js'
+import { contradiction_worker } from '#lib/server/consistency.js'
+import { get_normalized_implications } from '#shared/implications.js'
 
 export function fetch_missing_data(type: StructureType) {
 	const structures_with_unknown_properties = db

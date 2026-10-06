@@ -1,5 +1,5 @@
-import { is_structure_type } from '$shared/config'
-import { get_property_ids } from '$lib/server/fetchers/properties'
+import { is_structure_type } from '#shared/config.js'
+import { get_property_ids } from '#lib/server/fetchers/properties.js'
 import { error } from '@sveltejs/kit'
 
 export const load = (event) => {

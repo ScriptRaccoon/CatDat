@@ -4,23 +4,26 @@
  */
 
 import { type Database } from 'better-sqlite3'
-import { deduce_properties, refute_properties } from '$shared/deduction.utils'
-import { get_client } from '$shared/db'
+import { deduce_properties, refute_properties } from '#shared/deduction.utils.js'
+import { get_client } from '#shared/db.js'
 import {
 	get_properties_dict,
 	get_property_assignments,
 	type PropertyMeta
 } from './utils/properties'
 import { get_contradiction_string, get_proof_string } from './utils/implications'
-import { type StructureType, STRUCTURE_TYPES_WITH_DUALS } from '$shared/config'
+import { type StructureType, STRUCTURE_TYPES_WITH_DUALS } from '#shared/config.js'
 import {
 	get_structure_parent_map,
 	get_structures,
 	is_dual_structure,
 	type StructureMeta
 } from './utils/structures'
-import { get_normalized_implications, NormalizedImplication } from '$shared/implications'
-import { devlog, remove_underscores } from '$shared/utils'
+import {
+	get_normalized_implications,
+	NormalizedImplication
+} from '#shared/implications.js'
+import { devlog, remove_underscores } from '#shared/utils.js'
 
 /**
  * Deduce satisfied properties for a given structure from given ones

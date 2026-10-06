@@ -1,9 +1,9 @@
 <script lang="ts">
 	import ChipGroup from './ChipGroup.svelte'
 	import Chip from './Chip.svelte'
-	import { get_comparison_score } from '$lib/client/utils'
+	import { get_comparison_score } from '#lib/client/utils.js'
 	import type { Snippet } from 'svelte'
-	import { remove_underscores } from '$shared/utils'
+	import { remove_underscores } from '#shared/utils.js'
 
 	type Props = {
 		allowed_items: readonly string[]

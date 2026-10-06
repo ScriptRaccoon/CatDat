@@ -5,8 +5,8 @@ import type {
 	StructureShort,
 	StructureShortDictionary,
 	StructureType
-} from '$lib/commons/types'
-import { db } from '$lib/server/db'
+} from '#lib/commons/types.js'
+import { db } from '#lib/server/db.js'
 import { display_implication } from '../transforms'
 
 export function fetch_content_references(content_id: string) {

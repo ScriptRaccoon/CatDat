@@ -31,11 +31,12 @@
 
 <script lang="ts">
 	import { afterNavigate } from '$app/navigation'
-
 	import { faExpand, faXmark } from '@fortawesome/free-solid-svg-icons'
 	import Fa from 'svelte-fa'
 
-	afterNavigate(() => {
+	afterNavigate(({ shallow }) => {
+		if (shallow) return
+
 		close_popup()
 	})
 
@@ -59,7 +60,7 @@
 	}
 </script>
 
-<svelte:document onkeydown={handle_keydown} />
+<svelte:document onkeydown={handle_keydown}></svelte:document>
 <svelte:window onclick={handle_click} />
 
 <!--

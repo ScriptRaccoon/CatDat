@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { get_footer_links, get_navigation_links } from '$lib/client/nav'
-	import type { StructureType } from '$lib/commons/types'
+	import { get_footer_links, get_navigation_links } from '#lib/client/nav.js'
+	import type { StructureType } from '#lib/commons/types.js'
 	import { faXmark } from '@fortawesome/free-solid-svg-icons'
 	import Fa from 'svelte-fa'
 	import StructureSelector from './StructureSelector.svelte'

@@ -48,7 +48,7 @@ You need to have [Git](https://git-scm.com/), [NodeJS](https://nodejs.org/) and 
 Built with modern web technologies:
 
 - Language: [TypeScript](https://www.typescriptlang.org)
-- Framework: [SvelteKit](https://svelte.dev/docs/kit/introduction)
+- Framework: [SvelteKit 3](https://svelte.dev/docs/kit/introduction)
 - Database: [SQLite](https://sqlite.org/)
 - Deployment: [Netlify](https://netlify.com)
 - Math Rendering: [katex](https://www.npmjs.com/package/katex)

@@ -1,17 +1,17 @@
 <script lang="ts">
-	import { browser } from '$app/environment'
-	import HelpMessage from '$components/HelpMessage.svelte'
-	import ImplicationList from '$components/ImplicationList.svelte'
-	import MetaData from '$components/MetaData.svelte'
-	import SearchFilter from '$components/SearchFilter.svelte'
-	import SuggestionForm from '$components/SuggestionForm.svelte'
+	import { browser } from '$app/env'
+	import HelpMessage from '#components/HelpMessage.svelte'
+	import ImplicationList from '#components/ImplicationList.svelte'
+	import MetaData from '#components/MetaData.svelte'
+	import SearchFilter from '#components/SearchFilter.svelte'
+	import SuggestionForm from '#components/SuggestionForm.svelte'
 	import {
 		capitalize,
 		normalize_text,
 		pluralize,
 		remove_underscores
-	} from '$shared/utils'
-	import type { ImplicationDisplay, StructureType } from '$lib/commons/types'
+	} from '#shared/utils.js'
+	import type { ImplicationDisplay, StructureType } from '#lib/commons/types.js'
 	import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
 	import type { Snippet } from 'svelte'
 	import Fa from 'svelte-fa'

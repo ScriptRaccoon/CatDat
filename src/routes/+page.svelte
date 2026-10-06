@@ -1,6 +1,6 @@
 <script lang="ts">
-	import MetaData from '$components/MetaData.svelte'
-	import StatsCard from '$components/StatsCard.svelte'
+	import MetaData from '#components/MetaData.svelte'
+	import StatsCard from '#components/StatsCard.svelte'
 
 	let { data } = $props()
 

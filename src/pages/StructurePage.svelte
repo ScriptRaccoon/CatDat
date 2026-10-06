@@ -1,14 +1,14 @@
 <script lang="ts">
-	import CommentList from '$components/CommentList.svelte'
-	import MetaData from '$components/MetaData.svelte'
-	import PropertyAssignmentList from '$components/PropertyAssignmentList.svelte'
-	import SuggestionForm from '$components/SuggestionForm.svelte'
-	import TagList from '$components/TagList.svelte'
-	import IndistinguishableStructures from '$components/IndistinguishableStructures.svelte'
-	import StructuresBasedOn from '$components/StructuresBasedOn.svelte'
-	import type { StructureDetails } from '$lib/commons/types'
+	import CommentList from '#components/CommentList.svelte'
+	import MetaData from '#components/MetaData.svelte'
+	import PropertyAssignmentList from '#components/PropertyAssignmentList.svelte'
+	import SuggestionForm from '#components/SuggestionForm.svelte'
+	import TagList from '#components/TagList.svelte'
+	import IndistinguishableStructures from '#components/IndistinguishableStructures.svelte'
+	import StructuresBasedOn from '#components/StructuresBasedOn.svelte'
+	import type { StructureDetails } from '#lib/commons/types.js'
 	import type { Snippet } from 'svelte'
-	import { capitalize, remove_underscores } from '$shared/utils'
+	import { capitalize, remove_underscores } from '#shared/utils.js'
 
 	type Props = StructureDetails & {
 		definition?: Snippet

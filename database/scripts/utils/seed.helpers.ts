@@ -2,7 +2,7 @@ import type { Database } from 'better-sqlite3'
 import path from 'node:path'
 import fs from 'node:fs'
 import YAML from 'yaml'
-import { devlog } from '$shared/utils'
+import { devlog } from '#shared/utils.js'
 import * as v from 'valibot'
 import { structure_yaml_schema } from './seed.schemas'
 

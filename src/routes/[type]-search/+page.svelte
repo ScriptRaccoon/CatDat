@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { PLURALS } from '$shared/config'
-	import SearchPage from '$pages/SearchPage.svelte'
+	import { PLURALS } from '#shared/config.js'
+	import SearchPage from '#pages/SearchPage.svelte'
 
 	let { data } = $props()
 

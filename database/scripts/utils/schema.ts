@@ -1,4 +1,4 @@
-import { devlog } from '$shared/utils'
+import { devlog } from '#shared/utils.js'
 import { createHash } from 'node:crypto'
 import fs from 'node:fs'
 import path from 'node:path'

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { StructureShort, StructureType } from '$lib/commons/types'
+	import type { StructureShort, StructureType } from '#lib/commons/types.js'
 
 	type Props = {
 		structures: (StructureShort & { count?: number })[]

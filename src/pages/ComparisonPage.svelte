@@ -1,15 +1,15 @@
 <script lang="ts">
 	import { goto } from '$app/navigation'
 	import { navigating } from '$app/state'
-	import MetaData from '$components/MetaData.svelte'
-	import Selection from '$components/Selection.svelte'
+	import MetaData from '#components/MetaData.svelte'
+	import Selection from '#components/Selection.svelte'
 	import {
 		get_compared_structures,
 		MAX_STRUCTURES_COMPARE,
 		save_comparison
-	} from '$lib/commons/compare.utils'
-	import { PLURALS } from '$shared/config'
-	import type { StructureShort, StructureType } from '$lib/commons/types'
+	} from '#lib/commons/compare.utils.js'
+	import { PLURALS } from '#shared/config.js'
+	import type { StructureShort, StructureType } from '#lib/commons/types.js'
 
 	type Props = {
 		type: StructureType

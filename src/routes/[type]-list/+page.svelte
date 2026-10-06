@@ -1,5 +1,5 @@
 <script lang="ts">
-	import StructureListPage from '$pages/StructureListPage.svelte'
+	import StructureListPage from '#pages/StructureListPage.svelte'
 
 	let { data } = $props()
 </script>

@@ -1,10 +1,10 @@
-import { deduce_properties } from '$shared/deduction.utils'
-import type { StructureType } from '$lib/commons/types'
+import { deduce_properties } from '#shared/deduction.utils.js'
+import type { StructureType } from '#lib/commons/types.js'
 import {
 	get_normalized_implications,
 	type NormalizedImplication,
 	stringify_implication
-} from '$shared/implications'
+} from '#shared/implications.js'
 import { db } from './db'
 
 export function get_contradiction(

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Fa from 'svelte-fa'
-	import { get_footer_links } from '$lib/client/nav'
+	import { get_footer_links } from '#lib/client/nav.js'
 </script>
 
 <footer class="hint">

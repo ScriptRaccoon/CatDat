@@ -12,13 +12,13 @@ import decided_categories from './expected-data/decided-categories.json'
 import decided_functors from './expected-data/decided-functors.json'
 import decided_morphisms from './expected-data/decided-morphisms.json'
 import decided_symmetric_monoidal_categories from './expected-data/decided-symmetric-monoidal-categories.json'
-import structure_history from '$shared/structure.history.json'
-import { capitalize, devlog, remove_underscores } from '$shared/utils'
-import { get_client } from '$shared/db'
-import { STRUCTURE_TYPES, type StructureType, PLURALS } from '$shared/config'
+import structure_history from '#shared/structure.history.json'
+import { capitalize, devlog, remove_underscores } from '#shared/utils.js'
+import { get_client } from '#shared/db.js'
+import { STRUCTURE_TYPES, type StructureType, PLURALS } from '#shared/config.js'
 import fs from 'node:fs'
 import path from 'node:path'
-import { decode_property_ID } from '$shared/property.utils'
+import { decode_property_ID } from '#shared/property.utils.js'
 
 const db = get_client({ readonly: true })
 
@@ -142,10 +142,9 @@ function test_mutual_property_duals(type: StructureType) {
 	const dict: Record<string, string | null> = {}
 
 	const properties = db
-		.prepare<
-			[StructureType],
-			{ id: string; dual_property_id: string | null }
-		>(`SELECT id, dual_property_id FROM properties WHERE type = ?`)
+		.prepare<[StructureType], { id: string; dual_property_id: string | null }>(
+			`SELECT id, dual_property_id FROM properties WHERE type = ?`
+		)
 		.all(type)
 
 	for (const { id, dual_property_id } of properties) {
@@ -297,10 +296,9 @@ function check_link_targets_exist() {
 			const decoded_id = sort === 'properties' ? decode_property_ID(id) : id
 
 			const exists = db
-				.prepare<
-					[string, string],
-					string
-				>(`SELECT id FROM ${sort} WHERE id = ? AND type = ?`)
+				.prepare<[string, string], string>(
+					`SELECT id FROM ${sort} WHERE id = ? AND type = ?`
+				)
 				.get(decoded_id, type)
 
 			if (!exists) {

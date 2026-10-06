@@ -1,5 +1,5 @@
 <script lang="ts">
-	import SearchResultsPage from '$pages/SearchResultsPage.svelte'
+	import SearchResultsPage from '#pages/SearchResultsPage.svelte'
 
 	let { data } = $props()
 </script>
