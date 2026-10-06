@@ -101,6 +101,7 @@ function clear_all_tables() {
 
 		db.prepare(`DELETE FROM related_structures`).run()
 		db.prepare(`DELETE FROM structure_comments`).run()
+		db.prepare(`DELETE FROM structure_keywords`).run()
 		db.prepare(`DELETE FROM structure_tag_assignments`).run()
 		db.prepare(`DELETE FROM structure_tags`).run()
 		db.prepare(`DELETE FROM relations`).run()
@@ -238,6 +239,11 @@ function seed_structures({ type, folder }: { type: StructureType; folder: string
 		VALUES (?, ?)`
 	)
 
+	const keyword_insert = db.prepare(
+		`INSERT INTO structure_keywords (structure_id, keyword)
+		VALUES (?, ?)`
+	)
+
 	const related_insert = db.prepare(
 		`INSERT INTO related_structures (structure_id, related_structure_id, type)
 		VALUES (?, ?, ?)`
@@ -303,6 +309,10 @@ function seed_structures({ type, folder }: { type: StructureType; folder: string
 
 		for (const comment of structure.comments ?? []) {
 			comment_insert.run(structure.id, comment)
+		}
+
+		for (const keyword of structure.keywords ?? []) {
+			keyword_insert.run(structure.id, keyword)
 		}
 
 		for (const related of structure.related) {
