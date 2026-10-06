@@ -100,7 +100,9 @@ Writing and notation conventions:
 
 - Write `non-empty`, `non-unital`, `non-expansive` (with a hyphen).
 - Use `\varnothing` (not `\emptyset`), `f : X \to Y` (not `\colon`), and `\coloneqq` (not `:=`).
-- Define recurring LaTeX notation as a macro in [database/data/macros.yaml](database/data/macros.yaml) (e.g. `\IN`, `\Grp`, `\Ab`).
+- Write parallel morphisms as `f,g : A \rightrightarrows B`.
+- Never use one-off font commands such as `\mathcal`, `\mathrm`, `\mathbf`, or `\operatorname` directly. Reuse a macro from [database/data/macros.yaml](database/data/macros.yaml) (e.g. `\IN`, `\Grp`, `\Ab`, `\C`, `\Q`, `\T`) or define a new one there.
+- In displayed formulas containing `\prod` or `\coprod`, add `\textstyle` for the more compact layout, e.g. `$$\textstyle h : A \to \prod_{i \in I} Q_i$$`.
 - Run `pnpm cspell` after editing text, and add legitimate new words to `.cspell.json`.
 
 Responsible use of AI (from CONTRIBUTING.md): AI-generated code and data (including proofs) are accepted if they are readable, understandable, and checked thoroughly by the human author, who must understand every line and argument and takes responsibility for every claim, link, and citation; PR descriptions and commit messages must be written manually.
@@ -114,7 +116,7 @@ Content:
 - **Self-contained**: a reader should be able to follow the proof using only the structure's description, the property's definition, and the pages the proof links to. Prefer a direct argument to a bare citation. When citing a source, consider adding a direct argument as well ("Alternatively, here is a direct proof: ..."). Citing alone is fine for deep or standard theorems, such as the Special Adjoint Functor Theorem.
 - **Easy to understand**: state the claim or key idea first, then the details ("We claim that ... To see this, ..."). Name objects and morphisms explicitly with source and target (`f : X \to Y`). For unsatisfied properties, give a concrete counterexample (e.g. "the embedding $C_2 \hookrightarrow S_3$") rather than an existence argument, whenever possible.
 - **Complete**: do not skip steps. Phrases like "It is easy to see" or "clearly" are only for exceptional cases, namely steps that are routine for the intended reader. One-line proofs such as "This is trivial." or "This holds by definition." are only for claims that follow immediately from the definitions.
-- **Classifications and equivalences**: when one direction is immediate, prove only the other one and say so ("For the non-trivial direction, ..."), as in most special-morphism proofs. In content pages, mark the two directions with `($\Rightarrow$)` and `($\Leftarrow$)`.
+- **Classifications and equivalences**: when one direction is immediate, prove only the other one and say so ("For the non-trivial direction, ..."), as in most special-morphism proofs. In content pages, mark the two directions with `($\implies$)` and `($\impliedby$)`, and steps in a cycle of equivalences with `(1) $\implies$ (2)`.
 - **Building on known facts**: a proof may use properties of the same structure that are assigned earlier in the file or deduced from them ("We already know that ..."), as well as its classification of special morphisms ("(see below)"). Results about other structures may be used with a link to them. If a proof depends on the proof of another assignment, give that assignment a `label` of the form `<structure id>_<short description>` (e.g. `grp_no_cogenerator`) and list the label under `references`.
 - **Reuse instead of repetition**: put general lemmas in `content/` pages instead of repeating an argument in several YAML files, and apply them explicitly, e.g. "apply the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> to the forgetful functor $\Ab \to \Grp$".
 
