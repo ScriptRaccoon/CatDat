@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ImplicationListPage from '$pages/ImplicationListPage.svelte'
+	import ImplicationListPage from '#pages/ImplicationListPage.svelte'
 
 	let { data } = $props()
 </script>

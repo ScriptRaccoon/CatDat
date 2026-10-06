@@ -1,16 +1,16 @@
 <script lang="ts">
 	import { afterNavigate } from '$app/navigation'
 	import { page } from '$app/state'
-	import Footer from '$components/Footer.svelte'
-	import Header from '$components/Header.svelte'
-	import Nav from '$components/Nav.svelte'
-	import NavMobile from '$components/NavMobile.svelte'
-	import Popup from '$components/Popup.svelte'
-	import { PUBLIC_PLAYWRIGHT } from '$env/static/public'
-	import { track_visit } from '$lib/client/track'
-	import type { StructureType } from '$lib/commons/types'
-	import { tracking } from '$lib/states/tracking.svelte'
-	import { STRUCTURE_TYPES } from '$shared/config'
+	import Footer from '#components/Footer.svelte'
+	import Header from '#components/Header.svelte'
+	import Nav from '#components/Nav.svelte'
+	import NavMobile from '#components/NavMobile.svelte'
+	import Popup from '#components/Popup.svelte'
+	import { PUBLIC_PLAYWRIGHT } from '$app/env/public'
+	import { track_visit } from '#lib/client/track.js'
+	import type { StructureType } from '#lib/commons/types.js'
+	import { tracking } from '#lib/states/tracking.svelte.js'
+	import { STRUCTURE_TYPES } from '#shared/config.js'
 	import './app.css'
 
 	let { children } = $props()
@@ -23,7 +23,9 @@
 		nav_dialog?.close()
 	}
 
-	afterNavigate(() => {
+	afterNavigate(({ shallow }) => {
+		if (shallow) return
+
 		close_mobile_nav()
 	})
 

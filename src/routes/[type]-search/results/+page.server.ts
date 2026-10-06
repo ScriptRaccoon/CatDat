@@ -1,6 +1,6 @@
-import { is_structure_type } from '$shared/config'
-import { fetch_search_results } from '$lib/server/fetchers/search'
-import { cache_page } from '$lib/server/cache'
+import { is_structure_type } from '#shared/config.js'
+import { fetch_search_results } from '#lib/server/fetchers/search.js'
+import { cache_page } from '#lib/server/cache.js'
 import { error } from '@sveltejs/kit'
 
 export const prerender = false

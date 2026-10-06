@@ -1,9 +1,9 @@
-import type { StructureType } from '$lib/commons/types'
-import { db } from '$lib/server/db'
-import { render_nested_formulas } from '$lib/server/formulas'
-import { to_placeholders } from '$shared/utils'
+import type { StructureType } from '#lib/commons/types.js'
+import { db } from '#lib/server/db.js'
+import { render_nested_formulas } from '#lib/server/formulas.js'
+import { to_placeholders } from '#shared/utils.js'
 import { error } from 'node:console'
-import structure_history from '$shared/structure.history.json'
+import structure_history from '#shared/structure.history.json'
 
 const NUMBER_RECENT_STRUCTURES = 20
 

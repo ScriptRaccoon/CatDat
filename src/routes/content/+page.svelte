@@ -1,5 +1,5 @@
 <script lang="ts">
-	import MetaData from '$components/MetaData.svelte'
+	import MetaData from '#components/MetaData.svelte'
 
 	let { data } = $props()
 </script>

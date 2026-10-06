@@ -1,4 +1,4 @@
-import { are_disjoint } from '$shared/utils'
+import { are_disjoint } from '#shared/utils.js'
 import * as v from 'valibot'
 
 const distinct_strings_schema = v.pipe(

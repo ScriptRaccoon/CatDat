@@ -1,8 +1,8 @@
 <script lang="ts">
-	import MetaData from '$components/MetaData.svelte'
-	import { get_property_url } from '$shared/property.utils'
-	import { PLURALS } from '$shared/config'
-	import type { ComparisonResult, StructureType } from '$lib/commons/types'
+	import MetaData from '#components/MetaData.svelte'
+	import { get_property_url } from '#shared/property.utils.js'
+	import { PLURALS } from '#shared/config.js'
+	import type { ComparisonResult, StructureType } from '#lib/commons/types.js'
 	import {
 		faCheck,
 		faQuestion,

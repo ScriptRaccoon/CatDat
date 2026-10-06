@@ -1,12 +1,12 @@
-import { type StructureType, STRUCTURE_TYPES_WITH_DUALS } from '$shared/config'
+import { type StructureType, STRUCTURE_TYPES_WITH_DUALS } from '#shared/config.js'
 import {
 	are_equal_sets,
 	parse_nested_json_set,
 	parse_json_set,
 	devlog,
 	remove_underscores
-} from '$shared/utils'
-import { get_client } from '$shared/db'
+} from '#shared/utils.js'
+import { get_client } from '#shared/db.js'
 
 const db = get_client({ readonly: false })
 

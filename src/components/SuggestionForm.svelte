@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { browser } from '$app/environment'
+	import { browser } from '$app/env'
 	import { page } from '$app/state'
-	import { PUBLIC_ADMIN_URL } from '$env/static/public'
-	import { resize_textarea } from '$lib/client/utils'
+	import { PUBLIC_ADMIN_URL } from '$app/env/public'
+	import { resize_textarea } from '#lib/client/utils.js'
 	import { faCheckCircle, faWarning } from '@fortawesome/free-solid-svg-icons'
 	import { tick } from 'svelte'
 	import Fa from 'svelte-fa'
@@ -113,8 +113,7 @@
 					bind:value={body}
 					required
 					class="full-width"
-					aria-invalid={body.length > BODY_MAX_LENGTH}
-				></textarea>
+					aria-invalid={body.length > BODY_MAX_LENGTH}></textarea>
 			</div>
 
 			<div class="form-group">

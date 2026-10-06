@@ -7,8 +7,8 @@
 		PropertyAssignmentDisplay,
 		PropertyShort,
 		StructureType
-	} from '$lib/commons/types'
-	import { pluralize } from '$shared/utils'
+	} from '#lib/commons/types.js'
+	import { pluralize } from '#shared/utils.js'
 
 	type Props = {
 		type: StructureType

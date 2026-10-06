@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { get_property_label, get_property_url } from '$shared/property.utils'
-	import type { StructureType } from '$lib/commons/types'
+	import { get_property_label, get_property_url } from '#shared/property.utils.js'
+	import type { StructureType } from '#lib/commons/types.js'
 	import TextWithProof from './TextWithProof.svelte'
 
 	type Props = {

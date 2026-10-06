@@ -1,6 +1,6 @@
-import { get_client } from '$shared/db'
-import type { StructureType } from '$shared/config'
-import { remove_underscores } from '$shared/utils'
+import { get_client } from '#shared/db.js'
+import type { StructureType } from '#shared/config.js'
+import { remove_underscores } from '#shared/utils.js'
 
 /**
  * This script prints the combinations of the form p ∧ ¬q
@@ -43,10 +43,9 @@ if (unknown_structure_ids.length > 0) {
 }
 
 const property_duals = db
-	.prepare<
-		[StructureType],
-		{ id: string; dual_property_id: string | null }
-	>(`SELECT id, dual_property_id FROM properties WHERE type = ?`)
+	.prepare<[StructureType], { id: string; dual_property_id: string | null }>(
+		`SELECT id, dual_property_id FROM properties WHERE type = ?`
+	)
 	.all(type)
 
 const dual_property_ids = new Map(

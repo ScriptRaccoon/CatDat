@@ -1,11 +1,11 @@
 <script lang="ts">
-	import StructureList from '$components/StructureList.svelte'
-	import MetaData from '$components/MetaData.svelte'
-	import SuggestionForm from '$components/SuggestionForm.svelte'
-	import { get_property_url } from '$shared/property.utils'
-	import { PLURALS } from '$shared/config'
-	import { STRUCTURE_TYPES } from '$shared/config'
-	import { capitalize, pluralize, remove_underscores } from '$shared/utils'
+	import StructureList from '#components/StructureList.svelte'
+	import MetaData from '#components/MetaData.svelte'
+	import SuggestionForm from '#components/SuggestionForm.svelte'
+	import { get_property_url } from '#shared/property.utils.js'
+	import { PLURALS } from '#shared/config.js'
+	import { STRUCTURE_TYPES } from '#shared/config.js'
+	import { capitalize, pluralize, remove_underscores } from '#shared/utils.js'
 
 	const { data } = $props()
 </script>

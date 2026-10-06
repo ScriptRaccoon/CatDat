@@ -1,10 +1,10 @@
-import { decode_property_ID } from '$shared/property.utils'
-import { db } from '$lib/server/db'
+import { decode_property_ID } from '#shared/property.utils.js'
+import { db } from '#lib/server/db.js'
 import { error } from '@sveltejs/kit'
-import { SEARCH_SEPARATOR } from '$lib/commons/search.config'
-import { get_contradiction } from '$lib/server/consistency'
-import type { SearchResults, StructureShort, StructureType } from '$lib/commons/types'
-import { to_placeholders } from '$shared/utils'
+import { SEARCH_SEPARATOR } from '#lib/commons/search.config.js'
+import { get_contradiction } from '#lib/server/consistency.js'
+import type { SearchResults, StructureShort, StructureType } from '#lib/commons/types.js'
+import { to_placeholders } from '#shared/utils.js'
 
 export function fetch_search_results(
 	satisfied_query: string | null,

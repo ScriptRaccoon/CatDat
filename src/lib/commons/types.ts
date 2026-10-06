@@ -1,4 +1,4 @@
-import type { StructureType } from '$shared/config'
+import type { StructureType } from '#shared/config.js'
 
 export type { StructureType }
 

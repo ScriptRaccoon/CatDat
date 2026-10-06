@@ -1,6 +1,6 @@
 <script lang="ts">
-	import CategoryPage from '$pages/CategoryPage.svelte'
-	import StructurePage from '$pages/StructurePage.svelte'
+	import CategoryPage from '#pages/CategoryPage.svelte'
+	import StructurePage from '#pages/StructurePage.svelte'
 
 	let { data } = $props()
 </script>

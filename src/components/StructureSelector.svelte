@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { goto } from '$app/navigation'
 	import { page } from '$app/state'
-	import type { StructureType } from '$lib/commons/types'
-	import { STRUCTURE_TYPES, PLURALS } from '$shared/config'
+	import type { StructureType } from '#lib/commons/types.js'
+	import { STRUCTURE_TYPES, PLURALS } from '#shared/config.js'
 
 	type Props = {
 		selected_type: StructureType

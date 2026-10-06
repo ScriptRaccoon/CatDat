@@ -1,6 +1,6 @@
-import { browser } from '$app/environment'
-import { PUBLIC_ADMIN_URL } from '$env/static/public'
-import { theme } from '$lib/states/theme.svelte'
+import { browser } from '$app/env'
+import { PUBLIC_ADMIN_URL } from '$app/env/public'
+import { theme } from '#lib/states/theme.svelte.js'
 import { get_device_type } from './utils'
 
 export async function track_visit() {

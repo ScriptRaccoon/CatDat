@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { browser } from '$app/environment'
+	import { browser } from '$app/env'
 	import { faLightbulb } from '@fortawesome/free-solid-svg-icons'
 	import type { Snippet } from 'svelte'
 	import Fa from 'svelte-fa'

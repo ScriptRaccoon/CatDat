@@ -1,8 +1,8 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import { delete_database_file, get_client } from '$shared/db'
+import { delete_database_file, get_client } from '#shared/db.js'
 import { create_schema_hash, write_schema_hash } from './utils/schema'
-import { devlog } from '$shared/utils'
+import { devlog } from '#shared/utils.js'
 
 const schema_folder = path.resolve('database', 'schema')
 

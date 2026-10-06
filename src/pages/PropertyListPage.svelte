@@ -1,12 +1,12 @@
 <script lang="ts">
-	import MetaData from '$components/MetaData.svelte'
-	import SearchFilter from '$components/SearchFilter.svelte'
-	import SuggestionForm from '$components/SuggestionForm.svelte'
-	import TagList from '$components/TagList.svelte'
-	import { normalize_text, pluralize } from '$shared/utils'
-	import { get_property_label, get_property_url } from '$shared/property.utils'
-	import { PLURALS } from '$shared/config'
-	import type { GroupedPropertyShort, StructureType } from '$lib/commons/types'
+	import MetaData from '#components/MetaData.svelte'
+	import SearchFilter from '#components/SearchFilter.svelte'
+	import SuggestionForm from '#components/SuggestionForm.svelte'
+	import TagList from '#components/TagList.svelte'
+	import { normalize_text, pluralize } from '#shared/utils.js'
+	import { get_property_label, get_property_url } from '#shared/property.utils.js'
+	import { PLURALS } from '#shared/config.js'
+	import type { GroupedPropertyShort, StructureType } from '#lib/commons/types.js'
 
 	let search = $state('')
 
