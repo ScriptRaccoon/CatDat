@@ -29,7 +29,7 @@ satisfied_properties:
   - property: Malcev
     proof: This follows in the same way as for <a href="/category/Grp">$\Grp$</a>, see also Example 2.2.5 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>.
     references:
-      - grp_malcev
+      - Grp_malcev
 
 unsatisfied_properties:
   - property: skeletal
@@ -44,7 +44,7 @@ unsatisfied_properties:
   - property: cototal
     proof: Essentially the same proof as for <a href="/category/CAlg(R)">$\CAlg(R)$</a> works here.
     references:
-      - calg_not_cototal
+      - CAlg(R)_not_cototal
 
   - property: codistributive
     proof: 'If $\sqcup$ denotes the coproduct of $R$-algebras (see <a href="https://math.stackexchange.com/questions/625874" target="_blank">MSE/625874</a> for their description) and $A$ is an $R$-algebra, the canonical morphism $A \sqcup R^2 \to (A \sqcup R)^2 = A^2$ is usually no isomorphism. For example, for $A = R[X]$ the coproduct on the LHS is not commutative, it has the algebra presentation $\langle X,E : E^2=E \rangle$.'
@@ -54,12 +54,12 @@ unsatisfied_properties:
 
   - property: coregular
     proof: 'Since $R \neq 0$, there is an infinite field $K$ with a homomorphism $R \to K$. Since $K$ is infinite, we may choose some $\lambda \in K \setminus \{0,1\}$. Let $B \coloneqq M_2(K)$ and $A \coloneqq K \times K$. Then $A \to B$, $(x,y) \mapsto \diag(x,y)$ is a regular monomorphism: A direct calculation shows that a matrix is diagonal iff it commutes with $M \coloneqq \bigl(\begin{smallmatrix} 1 & 0 \\ 0 & \lambda \end{smallmatrix}\bigr)$, so that $A \to B$ is the equalizer of the identity $B \to B$ and the conjugation $B \to B$, $X \mapsto M X M^{-1}$. Consider the homomorphism $A \to K$, $(a,b) \mapsto a$. We claim that $K \to K \sqcup_A B$ is not a monomorphism, because in fact, the pushout $K \sqcup_A B$ is zero: Since $A \to K$ is surjective with kernel $0 \times K$, the pushout is $B/\langle 0 \times K \rangle$, which is $0$ because $B$ is simple (<a href="https://math.stackexchange.com/questions/22629" target="_blank">proof</a>) or via a direct calculation with elementary matrices.'
-    label: alg_not_coregular
+    label: Alg(R)_not_coregular
 
   - property: regular quotient object classifier
     proof: We may copy the proof for <a href="/category/CAlg(R)">$\CAlg(R)$</a> (since the proof there did not use that $P$ is commutative). Alternatively, any regular quotient object classifier in $\Alg(R)$ would produce one in the reflective subcategory $\CAlg(R)$ by Lemma 1 <a href="/content/subcategories">here</a> (dualized).
     references:
-      - calg_no_regular_quotient_object_classifier
+      - CAlg(R)_no_regular_quotient_object_classifier
 
   - property: cocartesian cofiltered limits
     proof: >-

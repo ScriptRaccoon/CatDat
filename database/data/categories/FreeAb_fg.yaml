@@ -38,7 +38,7 @@ satisfied_properties:
   - property: self-dual
     proof: More generally, if $R$ is a commutative ring, $\Proj_\fg(R)$ is self-dual, as proven <a href="/category/Proj_fg(Re)">here</a>.
     references:
-      - proj_fg_self-dual
+      - Proj_fg(Re)_self-dual
 
   - property: regular
     proof: We already know that the category is finitely complete and self-dual, hence also finitely cocomplete. It remains to prove that regular epimorphisms are stable under pullback. This is clear since they coincide with the surjective homomorphisms (see below).
@@ -50,7 +50,7 @@ satisfied_properties:
       More generally, if $R$ is a left Noetherian ring, then $\Proj_\fg(R)$ is $\aleph_1$-accessible, as proven <a href="/category/Proj_fg(Re)">here</a>.
     references:
       - Ab_fg_aleph1-accessible
-      - Proj_fg_aleph1-accessible
+      - Proj_fg(Re)_aleph1-accessible
 
 unsatisfied_properties:
   - property: skeletal

@@ -25,7 +25,7 @@ unsatisfied_properties:
     # This can be deduced from the parent CAlg(R), but we keep it because
     # the proof for general R is more complicated.
     proof: There is no homomorphism between $\IF_2$ and $\IF_3$.
-    label: cring_no_semi_strongly_connected
+    label: CRing_no_semi_strongly_connected
 
   - property: cofiltered-limit-stable epimorphisms
     # This can be deduced from the parent CAlg(R), but the proof for CRing is

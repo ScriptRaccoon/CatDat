@@ -20,7 +20,7 @@ satisfied_properties:
   - property: well-pointed
     proof: In fact, $K$ is a generator of $\FinVect_K$, even in $\Vect_K$.
     references:
-      - vect_extremal_generator
+      - Vect_extremal_generator
 
   - property: self-dual
     proof: From linear algebra we know that the dual vector space functor $V \mapsto V^*$ implements an equivalence $\FinVect \simeq \FinVect^{\op}$ with natural isomorphisms $K \cong K^*$ and $(V \otimes W)^* \cong V^* \otimes W^*$.

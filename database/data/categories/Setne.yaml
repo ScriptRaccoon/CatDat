@@ -20,12 +20,12 @@ satisfied_properties:
     proof: The one-point set is an extremal generator even in <a href="/category/Set">$\Set$</a>. Now use Lemma 10 <a href="/content/subcategories">here</a>.
     check_redundancy: false
     references:
-      - set_extremal_generator
+      - Set_extremal_generator
 
   - property: extremal cogenerator
     proof: The two-point set is an extremal cogenerator even in <a href="/category/Set">$\Set$</a>. Now use Lemma 10 <a href="/content/subcategories">here</a>.
     references:
-      - set_extremal_cogenerator
+      - Set_extremal_cogenerator
 
   - property: products
     proof: Take the product of non-empty sets inside of <a href="/category/Set">$\Set$</a> and observe that it is non-empty by the axiom of choice.

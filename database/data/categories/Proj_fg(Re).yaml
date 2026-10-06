@@ -41,16 +41,16 @@ satisfied_properties:
       in the other direction, and we claim that these are inverse to each other. For this, it suffices to prove that, for every $M \in \Proj_\fg(R)$, the natural homomorphism
       $$M \to \underline{\Hom}(\underline{\Hom}(M,R),R^{\op})$$
       defined by $m \mapsto (\varphi \mapsto \varphi(m))$ is an isomorphism. The collection of modules for which this is true is closed under finite direct sums and direct summands (since both sides are additive functors), and it contains $R$ by a direct calculation. Therefore, it contains every finitely generated projective left $R$-module.
-    label: proj_fg_self-dual
+    label: Proj_fg(Re)_self-dual
 
   - property: quotients of congruences
     proof: 'Let $p_1,p_2 : E \rightrightarrows M$ be a congruence in $\Proj_\fg(R)$. In particular, it is a reflexive relation in $R{-}\Mod$. Thus, there is some submodule $U \subseteq M$ such that $E$ is isomorphic to the module $\{(x,y) \in M^2 : x-y \in U\}$, where $p_1,p_2$ are the two evident projections. Since $E \cong U \oplus M$ and $E$ is finitely generated and projective, it follows that $U$ is finitely generated and projective. Moreover, the coequalizer of $p_1,p_2$ in $R{-}\Mod$ is given by $M/U$, which is clearly finitely generated, and we claim that $M/U$ is also projective. For this, it suffices to prove that the monomorphism $U \hookrightarrow M$ splits, since then $M/U$ is a direct summand of $M$. But every monomorphism splits in this category since it is self-dual and every epimorphism splits by their classification below.'
-    label: proj_dual_numbers_quotients_congruences
+    label: Proj_fg(Re)_dual_numbers_quotients_congruences
 
   - property: effective congruences
     proof: 'We saw before that every congruence $p_1,p_2 : E \rightrightarrows M$ in $\Proj_\fg(R)$ is isomorphic to $\{(x,y) \in M^2 : x-y \in U\}$ for some direct summand $U \subseteq M$, where $p_1,p_2$ are the two projections. Thus, it is the kernel pair of the projection $M \to M/U$, which indeed lies in $\Proj_\fg(R)$.'
     references:
-      - proj_dual_numbers_quotients_congruences
+      - Proj_fg(Re)_dual_numbers_quotients_congruences
 
   - property: ℵ₁-accessible
     proof: >-
@@ -60,7 +60,7 @@ satisfied_properties:
       We conclude that $M$ is finitely presentable since $R$ is left Noetherian. Since $(M_i)$ is also an $\aleph_0$-filtered diagram, it follows that $\id_M : M \to M = \colim_i M_i$ factors through some $M_i \to M$. Therefore, $M$ is a direct summand of $M_i$. Since $M_i$ is projective, it follows that $M$ is projective as well. This proves the claim that $\aleph_1$-filtered colimits exist.
 
       To finish the proof that $\Proj_\fg(R)$ is $\aleph_1$-accessible, since it is essentially small, it suffices to prove that every object is $\aleph_1$-presentable. This follows since every finitely generated $R$-module is $\aleph_0$-presentable and therefore also $\aleph_1$-presentable in $R{-}\Mod$.
-    label: Proj_fg_aleph1-accessible
+    label: Proj_fg(Re)_aleph1-accessible
     references:
       - Ab_fg_aleph1-accessible
 

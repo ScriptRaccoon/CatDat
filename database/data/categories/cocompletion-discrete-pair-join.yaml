@@ -43,7 +43,7 @@ satisfied_properties:
     proof: Colimits in every free cocompletion can be constructed objectwise by Lemma 3 <a href="/content/free-cocompletion">here</a>. Alternatively, the claim follows easily from the <a href="/content/nice-and-small-presheaves">description of small presheaves</a>.
 
   - property: terminal object
-    label: terminal_presheaf_small
+    label: cocompletion-discrete-pair-join_terminal_presheaf_small
     proof: >-
       It suffices to check that the terminal presheaf is small. This follows immediately from the <a href="/content/nice-and-small-presheaves">description of small presheaves</a>, since in fact, for every set $X$, the diagram
       $$1 ~\overset{f^*}{\underset{g^*}{\rightrightarrows}}~ 1 \xrightarrow{u_X^*} 1$$
@@ -79,7 +79,7 @@ unsatisfied_properties:
 
   - property: well-powered
     references:
-      - terminal_presheaf_small
+      - cocompletion-discrete-pair-join_terminal_presheaf_small
     proof: We already know that the terminal presheaf $1$ is small. For every set $X$, the unique morphism $\Hom(-,X) \to 1$ is a monomorphism since $X$ is subterminal in $\C$ (in fact, any morphism with codomain $X$ is the identity). For different sets $X,X'$ we have $\Hom(-,X) \not\cong \Hom(-,X')$ since there is not even a morphism $X \to X'$ in $\C$. This shows that $\Sub(1)$ is not essentially small.
 
   - property: well-copowered
@@ -91,7 +91,7 @@ unsatisfied_properties:
   - property: equalizers
     proof: >-
       By Lemma 4 <a href="/content/free-cocompletion">here</a>, it suffices to find parallel morphisms of small presheaves whose equalizer in the category of all presheaves is not small. For example, consider the morphisms $f_*,g_* : \Hom(-,A) \rightrightarrows \Hom(-,B)$. Their equalizer $E$ satisfies $E(X) = \{u_X\}$ for every set $X$, $E(A) = \varnothing$, and $E(B) = \varnothing$. In particular, $u_X^* : E(A) \to E(X)$ is never surjective. Therefore, the <a href="/content/nice-and-small-presheaves">description of small presheaves</a> shows that $E$ is not small.
-    label: free_cocompletion_no_equalizers
+    label: cocompletion-discrete-pair-join_no_equalizers
     check_redundancy: false # because the counterexample for equalizers of cokernel pairs below is more complicated
 
   - property: binary powers
@@ -116,7 +116,7 @@ unsatisfied_properties:
 
   - property: ℵ₁-cofiltered limits
     references:
-      - free_cocompletion_no_equalizers
+      - cocompletion-discrete-pair-join_no_equalizers
     proof: >-
       More generally, for every regular cardinal $\kappa$, $\kappa$-sequential and hence also $\kappa$-cofiltered limits do not exist. By Lemma 4 <a href="/content/free-cocompletion">here</a>, it suffices to find a $\kappa$-sequence in $\widehat{\C}$ whose presheaf limit is not small.
 
@@ -153,7 +153,7 @@ unsatisfied_properties:
   # and then this proof will not be redundant anymore.
   # - property: cofiltered-limit-stable epimorphisms
   #   references:
-  #     - terminal_presheaf_small
+  #     - cocompletion-discrete-pair-join_terminal_presheaf_small
   #   proof: We already know that the terminal presheaf $1$ is small. Now consider for $n \in \IN$ the copower $\IN_{\geq n} \otimes 1$ and for $n < m$ the morphism $\IN_{\geq m} \otimes 1 \to \IN_{\geq n} \otimes 1$ induced by the inclusion $\IN_{\geq m} \subseteq \IN_{\geq n}$. This sequence has a limit, the empty presheaf; this can easily be deduced from $\bigcap_{n \in \IN} \IN_{\geq n} = \varnothing$ in $\IN$. Therefore, the unique morphisms $\IN_{\geq n} \otimes 1 \to 1$ are epimorphisms, but their limit $0 \to 1$ is not.
 
   - property: concretizable
