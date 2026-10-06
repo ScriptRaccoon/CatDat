@@ -5,6 +5,8 @@ objects: rngs, that is, non-unital rings
 morphisms: maps that preserve addition and multiplication
 description: This category is a typical example of a one-sorted finitary algebraic category. It is an "additive version" of the category of semigroups $\SemiGrp$.
 nlab_link: https://ncatlab.org/nlab/show/Rng
+keywords:
+  - non-unital rings
 
 tags:
   - algebra

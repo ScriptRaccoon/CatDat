@@ -5,6 +5,8 @@ objects: finite (totally) ordered sets
 morphisms: order-preserving maps
 description: The finite ordered sets of the form $\{1 < \dotsc < n\}$ for $n \in \IN$ provide a skeleton (including the empty set for $n = 0$), the augmented simplex category.
 nlab_link: https://ncatlab.org/nlab/show/total+order
+keywords:
+  - finite ordinals
 
 tags:
   - order theory

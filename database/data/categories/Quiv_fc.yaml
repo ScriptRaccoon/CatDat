@@ -5,6 +5,9 @@ objects: quivers whose connected components are finite
 morphisms: morphisms of quivers
 description: Here, zigzags are allowed in the definition of a connected quiver (just like in the definition of a connected category). Thus, the objects are precisely the coproducts of finite quivers. We have included this category solely as an example of a category with a subobject classifier that does not have coequalizers. Note that $\Quiv_{\fc}$ is the <a href="https://ncatlab.org/nlab/show/free+coproduct+completion" target="_blank">free coproduct completion</a> of the category of finite connected quivers.
 nlab_link: null
+keywords:
+  - directed multigraphs
+  - directed pseudographs
 
 tags:
   - graph theory

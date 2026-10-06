@@ -5,6 +5,8 @@ objects: partially ordered sets that have no isolated points
 morphisms: order-preserving functions
 description: Here, a point is called isolated if it is not comparable to any other point. Thus, we consider partially ordered sets whose connected components have cardinality $\geq 2$. This category provides an example of an infinitary extensive category that is not Cauchy complete.
 nlab_link: null
+keywords:
+  - posets
 
 tags:
   - order theory

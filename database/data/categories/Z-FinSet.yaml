@@ -5,6 +5,8 @@ objects: finite sets with an action of the additive group $\IZ$, i.e. a permutat
 morphisms: maps that are compatible with the action, i.e. commute with the permutation
 description: 'This is a full subcategory of the Grothendieck topos <a href="/category/Z-Set">$\IZ{-}\Set$</a>, and provides an example of an elementary topos that has no generator and no cogenerator. Objects can be identified with pairs $(X,\sigma)$, where $X$ is a finite set and $\sigma : X \to X$ is a permutation of $X$. A morphism $(X,\sigma) \to (Y,\tau)$ is a map $f : X \to Y$ satisfying $\tau \circ f = f \circ \sigma$.'
 nlab_link: null
+keywords:
+  - permutations
 
 tags:
   - set theory

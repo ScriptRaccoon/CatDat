@@ -5,6 +5,8 @@ objects: fields of characteristic $0$
 morphisms: field homomorphisms (i.e., ring homomorphisms)
 description: This is the full subcategory of $\Fld$ consisting of fields of <a href="https://en.wikipedia.org/wiki/Characteristic_(algebra)" target="_blank">characteristic</a> $0$. It is isomorphic to the coslice category $\IQ / \Fld$.
 nlab_link: https://ncatlab.org/nlab/show/Field
+keywords:
+  - characteristic 0
 
 tags:
   - algebra

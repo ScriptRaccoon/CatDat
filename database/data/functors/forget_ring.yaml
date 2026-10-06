@@ -8,6 +8,8 @@ associated:
   right_adjoint: null
 description: This functor maps a ring $R$ to its underlying set $U_{\Ring}(R)$.
 nlab_link: https://ncatlab.org/nlab/show/forgetful+functor
+keywords:
+  - underlying set functor
 
 tags:
   - algebra

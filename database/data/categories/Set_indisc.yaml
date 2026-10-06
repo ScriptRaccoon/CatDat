@@ -5,6 +5,8 @@ objects: sets
 morphisms: for every pair of sets $X,Y$ exactly one morphism $X \to Y$
 description: This category provides an example of a large indiscrete category. More generally, every collection $I$ yields an indiscrete category $I_{\indisc}$, and it shares the same properties as this one as long as $I$ is uncountable and not small.
 nlab_link: null
+keywords:
+  - codiscrete category
 
 tags:
   - set theory

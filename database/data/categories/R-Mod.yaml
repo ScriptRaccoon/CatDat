@@ -8,6 +8,8 @@ description: |-
 nlab_link: https://ncatlab.org/nlab/show/module
 tags:
   - algebra
+keywords:
+  - R-modules
 
 related:
   - Ab

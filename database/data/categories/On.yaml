@@ -5,6 +5,8 @@ objects: ordinal numbers
 morphisms: 'a unique morphism $(\alpha,\beta): \alpha \to \beta$ if $\alpha \leq \beta$'
 description: This is the partially ordered collection $\On = (\OnColl,\leq)$, regarded as a thin category. This category is a large variant of the thin <a href="/category/N">category of natural numbers</a>.
 nlab_link: null
+keywords:
+  - poset of ordinal numbers
 
 tags:
   - set theory

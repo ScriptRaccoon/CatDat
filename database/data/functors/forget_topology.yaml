@@ -8,6 +8,8 @@ associated:
   right_adjoint: indiscrete_topology
 description: This functor maps a topological space $X$ to its underlying set $U_{\Top}(X)$.
 nlab_link: https://ncatlab.org/nlab/show/forgetful+functor
+keywords:
+  - underlying set functor
 
 tags:
   - topology

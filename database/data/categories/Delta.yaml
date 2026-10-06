@@ -5,6 +5,8 @@ objects: the non-empty ordered sets $[n] \coloneqq \{0 < \cdots < n\}$ for $n \i
 morphisms: order-preserving maps
 description: The simplex category is a skeleton of $\FinOrd \setminus \{\varnothing\}$. It plays an important role in topology and is used to define the <a href="/category/sSet">category of simplicial sets</a>.
 nlab_link: https://ncatlab.org/nlab/show/simplex+category
+keywords:
+  - non-empty finite ordinals
 
 tags:
   - combinatorics

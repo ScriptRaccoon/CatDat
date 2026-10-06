@@ -8,6 +8,8 @@ associated:
   right_adjoint: null
 description: This functor maps a ring to its underlying multiplicative monoid, which as "forgotten" the addition of the ring.
 nlab_link: https://ncatlab.org/nlab/show/forgetful+functor
+keywords:
+  - multiplicative monoid
 
 tags:
   - algebra

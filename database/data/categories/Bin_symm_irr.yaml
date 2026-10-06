@@ -12,6 +12,9 @@ description: >-
 
   It turns out that this category behaves exactly like <a href="/category/Bin_irr">$\Bin_{\irr}$</a> (i.e. the category of directed graphs without loops), and the proofs of the properties are very similar.
 nlab_link: null
+keywords:
+  - simple graphs
+  - undirected graphs
 
 tags:
   - graph theory

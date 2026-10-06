@@ -6,6 +6,8 @@ morphisms: group homomorphisms
 description: This category is the prototype of an abelian category. It is the special case of <a href="/category/R-Mod_non_ss">$R{-}\Mod$</a> where $R = \IZ$.
 nlab_link: https://ncatlab.org/nlab/show/Ab
 parent: R-Mod_non_ss
+keywords:
+  - Z-modules
 
 tags:
   - algebra

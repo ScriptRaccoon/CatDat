@@ -5,6 +5,8 @@ objects: Hausdorff spaces
 morphisms: continuous functions
 description: This is the full subcategory of $\Top$ consisting of those spaces that are <a href="https://en.wikipedia.org/wiki/Hausdorff_space" target="_blank">Hausdorff</a>.
 nlab_link: https://ncatlab.org/nlab/show/Hausdorff+space
+keywords:
+  - Hausdorff topological spaces
 
 tags:
   - topology

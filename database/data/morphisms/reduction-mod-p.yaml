@@ -5,6 +5,8 @@ associated:
   category: Ab
 description: This is the projection homomorphism $\IZ \to \IZ/p$, where $p$ is a prime number. It is a common example of an epimorphism in $\Ab$ which does not split.
 nlab_link: null
+keywords:
+  - mod-p
 
 tags:
   - algebra

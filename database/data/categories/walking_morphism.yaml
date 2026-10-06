@@ -8,6 +8,10 @@ description: >-
   $$\{0 \to 1\}$$
   It has the property that functors $I \to \C$ are the same as morphisms in $\C$, which explains its name.
 nlab_link: https://ncatlab.org/nlab/show/interval+category
+keywords:
+  - walking arrow
+  - interval category
+
 tags:
   - category theory
 

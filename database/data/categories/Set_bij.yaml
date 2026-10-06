@@ -5,6 +5,8 @@ objects: sets
 morphisms: bijective maps
 description: This is a typical example of a large groupoid, namely the <a href="https://ncatlab.org/nlab/show/core+groupoid">core groupoid</a> of the <a href="/category/Set">category of sets</a>.
 nlab_link: null
+keywords:
+  - bijective maps
 
 tags:
   - set theory

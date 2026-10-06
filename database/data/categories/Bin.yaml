@@ -12,6 +12,8 @@ description: >-
 
   The category $\Bin$ is a typical example of a quasitopos.
 nlab_link: null
+keywords:
+  - directed graphs
 
 tags:
   - graph theory
