@@ -91,3 +91,11 @@
   conclusions:
     - effective congruences
   proof: This is Thm. 4.0 in <a href="https://doi.org/10.1007/BF01224953" target="_blank">Yves Diers, Catégories Multialgébriques</a> or <a href="https://translations.thosgood.net/ADM-34-1980-193.pdf" target="_blank">its English translation</a>.
+
+- id: algebraic_cototal_criterion
+  assumptions:
+    - finitary algebraic
+    - cototal
+  conclusions:
+    - cogenerating collection
+  proof: This is the implication (1) $\implies$ (4) of Proposition 1 <a href="/content/cototal-algebraic-categories">here</a>, which is based on <a href="https://mathoverflow.net/questions/515539" target="_blank">MO/515539</a>.
