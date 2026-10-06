@@ -46,9 +46,7 @@ We use the crude monadicity theorem (see e.g. [SGL92](#references), Thm. IV.4.2)
 
 $$\Hom_{\CompHaus}\bigl(X, [0, 1]^S\bigr) \cong \Hom_{\Set}\bigl(S, \Hom_{\CompHaus}(X, [0, 1])\bigr).$$
 
-<!-- Here, I need to use f^\ast instead of f^* so that prettier does not destroy it. -->
-
-To see the functor is conservative, suppose we have a continuous function $f : X \to Y$ such that $f^\ast : \Hom(Y, [0, 1]) \to \Hom(X, [0, 1])$ is a bijection. Then for any $x_1, x_2 \in X$ with $x_1 \ne x_2$, there exists $\varphi : X \to [0, 1]$ with $\varphi(x_1) = 0$ and $\varphi(x_2) = 1$ by Urysohn's lemma. Since $f^\ast$ is surjective, there exists $\psi : Y \to [0, 1]$ with $\varphi = \psi \circ f$; thus, we must have $f(x_1) \ne f(x_2)$. Likewise, we know the image of $f$ is closed. If this image is not all of $Y$, then by Urysohn's lemma there exists non-zero $\varphi : Y \to [0, 1]$ which is zero on the image. But then $\varphi \circ f = 0 \circ f$, contradicting the injectivity of $f^\ast$. Thus, $f$ is a bijective continuous function, and therefore a homeomorphism.
+To see the functor is conservative, suppose we have a continuous function $f : X \to Y$ such that $f^* : \Hom(Y, [0, 1]) \to \Hom(X, [0, 1])$ is a bijection. Then for any $x_1, x_2 \in X$ with $x_1 \ne x_2$, there exists $\varphi : X \to [0, 1]$ with $\varphi(x_1) = 0$ and $\varphi(x_2) = 1$ by Urysohn's lemma. Since $f^*$ is surjective, there exists $\psi : Y \to [0, 1]$ with $\varphi = \psi \circ f$; thus, we must have $f(x_1) \ne f(x_2)$. Likewise, we know the image of $f$ is closed. If this image is not all of $Y$, then by Urysohn's lemma there exists non-zero $\varphi : Y \to [0, 1]$ which is zero on the image. But then $\varphi \circ f = 0 \circ f$, contradicting the injectivity of $f^*$. Thus, $f$ is a bijective continuous function, and therefore a homeomorphism.
 
 Finally, suppose we have a coreflexive equalizer pair
 
@@ -56,9 +54,9 @@ $$E \xhookrightarrow{i} A ~\overset{f}{\underset{g}{\rightrightarrows}}~ B$$
 
 with $r : B \to A$. We may assume that $i$ is a subspace inclusion map. We may use $r$ to think of $B$ as a bundle of compact spaces over $A$, with two sections $f, g$. We then need to show that
 
-$$\Hom(B, [0,1]) ~\overset{f^\ast}{\underset{g^\ast}{\rightrightarrows}}~ \Hom(A, [0, 1]) \xrightarrow{i^\ast} \Hom(E, [0, 1])$$
+$$\Hom(B, [0,1]) ~\overset{f^*}{\underset{g^*}{\rightrightarrows}}~ \Hom(A, [0, 1]) \xrightarrow{i^*} \Hom(E, [0, 1])$$
 
-is a coequalizer diagram. We first define $s : \Hom(E,[0,1]) \to \Hom(A,[0,1])$ by choosing a Tietze extension of each continuous function $E \to [0,1]$. Now, for each $\varphi \in \Hom(A,[0,1])$, we can define a continuous function on $\im(f) \cup \im(g) \subseteq B$ to be $\varphi \circ r$ on $\im(f)$, and $s(i^\ast(\varphi))\circ r$ on $\im(g)$. Note that on the overlap $\im(f)\cap \im(g) = f(E) = g(E)$, the first expression gives $f(e) \mapsto \varphi(e)$, and the second expression gives $g(e) \mapsto s(i^\ast(\varphi))(e) = \varphi(e)$, so we have indeed given a well-defined function on $\im(f)\cup\im(g)$. Choosing a Tietze extension of this function to a function $B\to [0,1]$ for each $\varphi$, we get a map $t : \Hom(A,[0,1]) \to \Hom(B,[0,1])$. By construction, we have $i^\ast s = \id$, $f^\ast t = \id$, and $g^\ast t = s i^\ast$, so we have shown that the diagram above is a split coequalizer.
+is a coequalizer diagram. We first define $s : \Hom(E,[0,1]) \to \Hom(A,[0,1])$ by choosing a Tietze extension of each continuous function $E \to [0,1]$. Now, for each $\varphi \in \Hom(A,[0,1])$, we can define a continuous function on $\im(f) \cup \im(g) \subseteq B$ to be $\varphi \circ r$ on $\im(f)$, and $s(i^*(\varphi))\circ r$ on $\im(g)$. Note that on the overlap $\im(f)\cap \im(g) = f(E) = g(E)$, the first expression gives $f(e) \mapsto \varphi(e)$, and the second expression gives $g(e) \mapsto s(i^*(\varphi))(e) = \varphi(e)$, so we have indeed given a well-defined function on $\im(f)\cup\im(g)$. Choosing a Tietze extension of this function to a function $B\to [0,1]$ for each $\varphi$, we get a map $t : \Hom(A,[0,1]) \to \Hom(B,[0,1])$. By construction, we have $i^* s = \id$, $f^* t = \id$, and $g^* t = s i^*$, so we have shown that the diagram above is a split coequalizer.
 :::
 
 This shows that $\CompHaus^{\op}$ is equivalent to the category of algebras over the monad
