@@ -39,6 +39,53 @@ test('user can navigate to a category', async ({ page }) => {
 	await expect(page).toHaveURL('/category/CRing')
 })
 
+test('user can search for a category by its name', async ({ page }) => {
+	await page.goto('/category-list', { waitUntil: 'networkidle' })
+
+	const irrelevant_names = [
+		'category of rings',
+		'category of groups',
+		'category of sets'
+	]
+
+	for (const name of irrelevant_names) {
+		await expect(page.getByRole('link', { name, exact: true })).toBeVisible()
+	}
+
+	await page.getByRole('searchbox', { name: 'search filter' }).fill('commutative ring')
+
+	await expect(
+		page.getByRole('link', {
+			name: 'category of commutative rings',
+			exact: true
+		})
+	).toBeVisible()
+
+	for (const name of irrelevant_names) {
+		await expect(page.getByRole('link', { name, exact: true })).not.toBeVisible()
+	}
+})
+
+test('user can search for a category by its keyword', async ({ page }) => {
+	await page.goto('/category-list', { waitUntil: 'networkidle' })
+
+	await page.getByRole('searchbox', { name: 'search filter' }).fill('directed graph')
+
+	await expect(
+		page.getByRole('link', {
+			name: 'category of sets equipped with a binary relation',
+			exact: true
+		})
+	).toBeVisible()
+
+	await expect(
+		page.getByRole('link', {
+			name: 'category of sets',
+			exact: true
+		})
+	).not.toBeVisible()
+})
+
 test("user can navigate to categories tagged with 'analysis' from the category list page", async ({
 	page
 }) => {
