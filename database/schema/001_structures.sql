@@ -50,6 +50,13 @@ CREATE TABLE structure_comments (
 
 CREATE INDEX idx_comments_by_structure ON structure_comments (structure_id);
 
+CREATE TABLE structure_keywords (
+    structure_id TEXT NOT NULL,
+    keyword TEXT NOT NULL,
+    PRIMARY KEY (structure_id, keyword),
+    FOREIGN KEY (structure_id) REFERENCES structures (id) ON DELETE CASCADE
+);
+
 CREATE TABLE structure_tags (
     id INTEGER PRIMARY KEY,
     tag TEXT NOT NULL,

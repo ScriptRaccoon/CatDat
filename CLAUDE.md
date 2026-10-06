@@ -78,6 +78,7 @@ Use existing files as templates: [database/data/categories/N.yaml](database/data
 - String values may contain HTML (`<a>`, `<i>`, `<ol>`, ...) and KaTeX math (`$...$`, `$$...$$`).
 - Use single quotes for values that contain `:`, and escape a literal single quote as `''`.
 - Use `>-` for multiline text rendered as one paragraph, and `|-` when line breaks should be kept (rendered as `<br>`).
+- Optional `keywords` (list of strings) on structures: alternative names a user would search for that do not already occur in the `name`, e.g. `posets` for `Pos`. Only terms that identify the structure, not related concepts. Not yet used by the app or the database.
 - Set `check_redundancy: false` on a satisfied property assignment that is redundant but deliberately kept (see below).
 
 ## Contribution guidelines
