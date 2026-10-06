@@ -21,7 +21,7 @@ import {
 } from './utils/structures'
 import {
 	get_normalized_implications,
-	NormalizedImplication
+	type NormalizedImplication
 } from '#shared/implications.js'
 import { devlog, remove_underscores } from '#shared/utils.js'
 
