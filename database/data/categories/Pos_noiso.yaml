@@ -29,12 +29,12 @@ satisfied_properties:
   - property: extremal generator
     proof: The ordered set $\{0 < 1\}$ is an extremal generator, even for <a href="/category/PreOrd">$\PreOrd$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
     references:
-      - preord_extremal_generator
+      - PreOrd_extremal_generator
 
   - property: extremal cogenerator
     proof: The ordered set $\{0 < 1\}$ is an extremal cogenerator, even for <a href="/category/Pos">$\Pos$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
     references:
-      - pos_extremal_cogenerator
+      - Pos_extremal_cogenerator
 
   - property: well-powered
     proof: This follows from the description of monomorphisms below.
@@ -71,12 +71,12 @@ unsatisfied_properties:
       $$(0,0),(1,1),(1',1'),(2,2),(1,1'),(1',1).$$
       It is easy to check that the element $(1,1')$ is isolated.
     references:
-      - pos_extremal_generator
+      - Pos_extremal_generator
 
   - property: quotients of congruences
     proof: The inclusion functor $\Pos_{\noiso} \hookrightarrow \Pos$ is cocontinuous by Lemma 1 <a href="/content/inclusion-functors">here</a>, since $\Pos_{\noiso}$ contains the extremal cogenerator $\{0 < 1\}$ of $\Pos$. Therefore, it suffices to find a congruence whose quotient in $\Pos$ has an isolated point. Take any non-empty poset $X$ without isolated points, such as $\{0 < 1\}$, and consider the maximal congruence $X \times X \rightrightarrows X$. Its quotient in $\Pos$ is just $\{\ast\}$, which therefore has an isolated point.
     references:
-      - pos_extremal_cogenerator
+      - Pos_extremal_cogenerator
 
   - property: effective cocongruences
     proof: We can reuse the proof from <a href="/category/Pos">$\Pos$</a>, since the posets considered there have no isolated points.

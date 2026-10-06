@@ -20,7 +20,7 @@ satisfied_properties:
   - property: well-pointed
     proof: We know that the singleton set is even an extremal generator of <a href="/category/Set">$\Set$</a>.
     references:
-      - set_extremal_generator
+      - Set_extremal_generator
 
 unsatisfied_properties:
   - property: trivial

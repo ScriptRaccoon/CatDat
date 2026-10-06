@@ -46,7 +46,7 @@ satisfied_properties:
   - property: extremal generator
     proof: The set $\{0\}$ is an extremal generator even in <a href="/category/Set">$\Set$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
     references:
-      - set_extremal_generator
+      - Set_extremal_generator
 
   - property: extremal cogenerator
     proof: The set $\{0,1,2\}$ is an extremal cogenerator even in <a href="/category/Set">$\Set$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.

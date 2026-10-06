@@ -72,7 +72,7 @@ satisfied_properties:
     proof: >-
       We will show that $(\Set \times \Set)_{\varnothing,\fin}$ is closed under $\aleph_1$-cofiltered limits in $\Set \times \Set$. Let $D : \I \to (\Set \times \Set)_{\varnothing,\fin}$ be an $\aleph_1$-cofiltered diagram. Write $D(i) = (A(i),B(i))$, so that $\lim(D) = (\lim(A),\lim(B))$. If some $A(i)$ is empty, then $\lim(A)$ is empty, and we are done. If not, since $D(i) \in (\Set \times \Set)_{\varnothing,\fin}$, each $B(i)$ is finite. Since we know that <a href="/category/FinSet">$\FinSet$</a> is closed under $\aleph_1$-cofiltered limits in $\Set$, we conclude that $\lim(B)$ is finite. Hence, $(\lim(A), \lim(B))$ is an object of $(\Set \times \Set)_{\varnothing,\fin}$.
     references:
-      - finset_aleph1-cofiltered-limits
+      - FinSet_aleph1-cofiltered-limits
 
 unsatisfied_properties:
   - property: skeletal

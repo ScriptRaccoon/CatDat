@@ -30,7 +30,7 @@ satisfied_properties:
   - property: ℵ₁-cofiltered limits
     proof: Since <a href="/category/FinSet">$\FinSet$</a> has $\aleph_1$-cofiltered limits, also $\Sigma_n{-}\FinSet$ has $\aleph_1$-cofiltered limits for every $n \geq 0$. Hence, $\Sp \simeq \prod_{n \geq 0} \Sigma_n{-}\FinSet$ has $\aleph_1$-cofiltered limits.
     references:
-      - finset_aleph1-cofiltered-limits
+      - FinSet_aleph1-cofiltered-limits
 
 unsatisfied_properties:
   - property: skeletal

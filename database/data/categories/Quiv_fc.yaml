@@ -65,7 +65,7 @@ satisfied_properties:
     proof: >-
       We show that $\Quiv_{\fc} \subseteq \Quiv$ is closed under $\aleph_1$-cofiltered limits. Let $D : \I \to \Quiv_{\fc}$ be an $\aleph_1$-cofiltered diagram, and let $L$ be its limit in $\Quiv$. Consider a vertex $v \in V_L$, and let $C(v) \subseteq L$ denote its connected component. For each $i \in \I$, let $C(v_i) \subseteq D(i)$ be the connected component of $v_i \in V_{D(i)}$. Each transition map $D(i \to j) : D(i) \to D(j)$ maps $C(v_i)$ into $C(v_j)$. Thus, we can construct the quiver $\lim_{i \in \I} C(v_i)$. It is finite because <a href="/category/FinSet">$\FinSet$</a> is closed under $\aleph_1$-cofiltered limits in $\Set$. Since each projection map $L \to D(i)$ maps $C(v)$ into $C(v_i)$, there is an embedding $C(v) \hookrightarrow \lim_{i \in \I} C(v_i)$. Hence, $C(v)$ is finite.
     references:
-      - finset_aleph1-cofiltered-limits
+      - FinSet_aleph1-cofiltered-limits
 
   - property: effective cocongruences
     proof: More generally, let $G \rightrightarrows H$ be a coreflexive corelation in $\Quiv_{\fc}$. Since binary coproducts exist and the inclusion functor $\Quiv_{\fc} \hookrightarrow \Quiv$ preserves epimorphisms, it is a coreflexive corelation in $\Quiv$. Since <a href="/category/Quiv">$\Quiv$</a> is co-Malcev and has effective cocongruences (by <a href=/category-implication/regular_epi-regular_extensive_consequences">this result</a>), the pair $G \rightrightarrows H$ is the cokernel pair of some morphism $E \to G$ in $\Quiv$, namely (since equalizers exist, see <a href="/content/effective-congruence-quotients">here</a>) the equalizer of $G \rightrightarrows H$. Since $G$ belongs to $\Quiv_{\fc}$, also $E$ belongs to $\Quiv_{\fc}$. It follows that $G \rightrightarrows H$ is also the cokernel pair of $E \to G$ in $\Quiv_{\fc}$.
@@ -115,7 +115,7 @@ unsatisfied_properties:
       \end{cases}$$
       Thus, $G$ is projective to $p$ if and only if $G$ has no edges, i.e. $G$ is discrete. Every discrete quiver belongs to $\Quiv_{\fc}$. This shows that the full subcategory of quivers in $\Quiv_{\fc}$ that are projective to $p$ is equivalent to $\Set$. Since <a href="/category/Set">$\Set$</a> is not coaccessible, it follows from the dual of Prop. 4.7 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a> that $\Quiv_{\fc}$ is not coaccessible.
     references:
-      - top_not_coaccessible
+      - Top_not_coaccessible
 
 special_objects:
   initial object:

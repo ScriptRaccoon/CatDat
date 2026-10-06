@@ -76,7 +76,7 @@ unsatisfied_properties:
   - property: co-Malcev
     proof: 'We can adjust the proof for <a href="/category/Top">$\Top$</a> (see <a href="https://mathoverflow.net/questions/509548" target="_blank">MO/509548</a>) as follows: Let $K$ be a residue field of $R$, let $X$ be a singleton and $Y = \{u,v\}$ be the Sierpinski space where $\{u\}$ is open, but $\{v\}$ is not. Endow both with the sheaf of locally constant functions to $K$. Thus, $\O_X(X) = K$, $\O_Y(Y) = \O_Y(\{u\}) = K$. There is a canonical morphism $p : X + X \to Y$. It is a coreflexive corelation that is not cosymmetric.'
     references:
-      - top_not_co-malcev
+      - Top_not_co-malcev
 
   - property: total
     proof: 'The adjunction between the global sections functor and the $\Spec$ functor (<a href="https://en.wikipedia.org/wiki/%C3%89l%C3%A9ments_de_g%C3%A9om%C3%A9trie_alg%C3%A9brique" target="_blank">EGA I</a> (1971), Ch. 1, Prop. 1.6.3) makes $\CAlg(R)^{\op}$ into a reflective subcategory of $\LRS_R$. Therefore, if $\LRS_R$ were total, then <a href="/category/CAlg(R)">$\CAlg(R)$</a> would be cototal by G. M. Kelly, <a href="https://www.numdam.org/item/?id=CTGDC_1986__27_2_109_0" target="_blank">A survey of totality for enriched and ordinary categories</a>, Cor. 6.2, which we know is not the case.'

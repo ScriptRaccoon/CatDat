@@ -51,7 +51,7 @@ unsatisfied_properties:
   - property: coregular
     proof: 'We already know that <a href="/category/Mon">$\Mon$</a> is not coregular; in fact we have shown that there is a regular monomorphism $M \to N$ of monoids and a morphism $M \to K$ such that $K \to K \sqcup_M N$ is not a monomorphism. The delooping functor $B : \Mon \to \Cat$ has a left adjoint (<a href="https://math.stackexchange.com/questions/574745" target="_blank">MSE/574745</a>), hence it preserves regular monomorphisms. It also preserves pushouts (<a href="https://math.stackexchange.com/questions/5130854" target="_blank">MSE/5130854</a>), and it reflects monomorphisms since it is faithful. Therefore, $B(M) \to B(N)$ provides the desired counterexample of a non-stable regular monomorphism of categories.'
     references:
-      - mon_not_coregular
+      - Mon_not_coregular
 
   - property: Malcev
     proof: Use that $\Set$ is not Malcev and consider sets as discrete categories.
@@ -68,7 +68,7 @@ unsatisfied_properties:
       $$\langle p, q \mid p^2=p,\, q^2=q,\, pq=q,\, qp=p \rangle.$$
       The induced relation on functors in $[X, \C]$ is that $F \sim G$ if and only if $F$ and $G$ send the object of $X$ to the same object of $\C$, and they send the idempotent of $X$ to idempotent morphisms $a, b$ in $\C$ satisfying $ab=b$, $ba=a$. From here, the proof that this gives a cocongruence on $\Cat$ which is not effective is similar to the one in $\Mon$.
     references:
-      - mon_no_effective_cocongruences
+      - Mon_no_effective_cocongruences
 
   - property: regular subobject classifier
     proof: >-
@@ -97,7 +97,7 @@ unsatisfied_properties:
       In fact, it is not hypercocomplete. For each infinite cardinal $\kappa$, choose a simple group $G_\kappa$ of cardinality $\kappa$ (such as the alternating group on $\kappa$). Now consider the large span diagram $1 \dottedrightrightarrows B G_\kappa$. Then for any small category $\C$, the collection of cocones $1 \dottedrightrightarrows B G_\kappa \to \C$ is essentially small: to form any such cocone, we must first choose the object $X$ of $\C$ which is the image of the object of $1$. Then, we must choose the morphisms $G_\kappa \to \End_{\C}(X)$; but for $\kappa > \card(\End_{\C}(X))$, the corresponding morphism must be zero.
 
       On the other hand, we claim that $1 \dottedrightrightarrows B G_\kappa$ does not have a pushout in $\Cat$, showing that it is not hypercocomplete. To see this, suppose we have a pushout $\C$ of $1 \dottedrightrightarrows B G_\kappa$, and choose a cardinal $\lambda > \card(\Mor(\C))$ (which is possible since $\C$ is a small category). Then the coprojection $i_\lambda : B G_\lambda \to \C$ must be split monic, since we can construct a cocone $1 \dottedrightrightarrows B G_\kappa \to B G_\lambda$ in which $B G_\kappa \to B G_\lambda$ corresponds to the zero map for $\kappa \ne \lambda$, and in which $B G_\lambda \to B G_\lambda$ is the identity. It follows that if $X$ is the image in $\C$ of the object of $B G_\lambda$ under $i_\lambda$, then $i_\lambda$ induces an injective map $G_\lambda \to \End_{\C}(X)$. This gives a contradiction since $\lambda > \card(\End_{\C}(X))$ and $G_\lambda$ has cardinality $\lambda$.
-    label: cat_not_cototal
+    label: Cat_not_cototal
 
 special_objects:
   initial object:

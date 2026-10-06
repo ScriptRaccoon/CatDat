@@ -30,7 +30,7 @@ satisfied_properties:
   - property: self-dual
     proof: More generally, if $R$ is a ring, the functor $\underline{\Hom}(-,R)$ implements an equivalence of categories between the dual of the category of finitely generated free $R$-modules and the category of finitely generated free $R^{\op}$-modules. See also the proof of self-duality <a href="/category/Proj_fg(Re)">here</a>.
     references:
-      - proj_fg_self-dual
+      - Proj_fg(Re)_self-dual
 
   - property: quotients of congruences
     proof: >-

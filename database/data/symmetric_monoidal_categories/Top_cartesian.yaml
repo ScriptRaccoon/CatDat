@@ -19,7 +19,7 @@ satisfied_properties:
   - property: well-pointed
     proof: We know that the one-point space is a generator of <a href="/category/Top">$\Top$</a>.
     references:
-      - top_generator
+      - Top_generator
 
 unsatisfied_properties:
   - property: strict

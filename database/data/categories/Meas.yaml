@@ -48,7 +48,7 @@ satisfied_properties:
       $$M \coloneqq j_*(T) \cup u_*(S \setminus \im(i))$$
       of the pushout. It is straightforward to verify that $j^*(M) = T$ and $u^*(M) = S$. Since both $T$ and $S$ are measurable, it follows that $M$ is measurable. Finally, the equality $j^*(M) = T$ shows that every measurable subset of $Y$ is the preimage of a measurable subset of the pushout. Hence $j$ is an embedding, as claimed.
     references:
-      - top_coregular
+      - Top_coregular
 
   - property: countably extensive
     proof: >-
@@ -72,7 +72,7 @@ satisfied_properties:
 
       Finally, using <a href="/content/generator_construction">this result</a>, we conclude that the product of these two measurable spaces with underlying set $2$ is an extremal cogenerator of $\Meas$.
     references:
-      - set_extremal_cogenerator
+      - Set_extremal_cogenerator
 
   - property: co-Malcev
     proof: >-
@@ -124,7 +124,7 @@ unsatisfied_properties:
   - property: effective cocongruences
     proof: 'The proof is similar to the one for <a href="/category/Top">$\Top$</a>: Use the trivial $\sigma$-algebra on a two-point set.'
     references:
-      - top_no_effective_cocongruences
+      - Top_no_effective_cocongruences
 
   - property: regular
     proof: >-
@@ -159,7 +159,7 @@ unsatisfied_properties:
       $$\Hom(G, (\kappa + 1, \M_\kappa')) \to \Hom(G, (\kappa + 1, \M_\kappa))$$
       for each $G \in S$, implying that $S$ cannot be an extremal generating collection. In fact, if $f : G \to (\kappa + 1, \M_\kappa)$ is a measurable map, since $\kappa$ is regular and $\card(G) < \kappa$, there exists an ordinal $\alpha < \kappa$ which is an upper bound for $\im(f) \cap [0, \kappa)$. Therefore, $f^*(\{\kappa\}) = f^*([\alpha + 1, \kappa])$ is measurable, implying that $f$ factors through $(\kappa + 1, \M_\kappa')$.
     references:
-      - top_no_extremal_generating_collection
+      - Top_no_extremal_generating_collection
 
   - property: infinitary distributive
     proof: >-
@@ -176,7 +176,7 @@ unsatisfied_properties:
   - property: coaccessible
     proof: 'The proof is very similar to the proof for <a href="/category/Top">$\Top$</a>. Assume $\Meas$ is coaccessible. Let $p : D \to I$ be the identity map from the two-element discrete space to the two-element indiscrete space. Then, a measurable space is discrete if and only if it is projective to the morphism $p$. This implies that the full subcategory spanned by all discrete measurable spaces, which is equivalent to $\Set$, is coaccessible by Prop. 4.7 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>. However, since <a href="/category/Set">$\Set$</a> is not coaccessible, this is a contradiction.'
     references:
-      - top_not_coaccessible
+      - Top_not_coaccessible
 
 special_objects:
   initial object:

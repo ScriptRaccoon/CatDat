@@ -64,7 +64,7 @@ unsatisfied_properties:
       $$\begin{align*} X & \coloneqq \langle p \mid p^2 = p \rangle,\\ E & \coloneqq \langle p, q \mid p^2 = p,\, q^2 = q,\, pq = q,\, qp = p \rangle, \end{align*}$$
       whose underlying sets are $\{p\}$ and $\{p,q\}$, respectively. Then $X$ represents the functor sending a semigroup $A$ to its idempotents, and $E$ represents the relation on idempotents $a, b$ of $A$ that $ab = b$, $ba = a$. It is easy to check that this defines an equivalence relation (see <a href="https://mathoverflow.net/a/510809" target="_blank">MO/510744</a> for details). Since $p \ne q$ in $E$, the equalizer of the two maps $X \rightrightarrows E$ is the empty semigroup. Therefore, if $E$ were effective, it would be isomorphic to the coproduct $X \sqcup X$, whose underlying set consists of non-empty words in $p,q$ with $p,q$ strictly alternating. In particular, in this coproduct, $pq \ne q$.
     references:
-      - mon_no_effective_cocongruences
+      - Mon_no_effective_cocongruences
 
   - property: cototal
     # TODO: refactor this once we add "hypercocomplete"
@@ -75,7 +75,7 @@ unsatisfied_properties:
 
       We now claim that $1 \dottedrightrightarrows G_\kappa$ does not have a pushout in $\SemiGrp$, showing that it is not hypercocomplete. To see this, suppose we had a pushout $A$, and let $\lambda$ be a cardinal strictly greater than $\card(U(A))$. Then the coprojection $G_\lambda\to A$ must be split monic, since we can construct a cocone $1 \dottedrightrightarrows G_\kappa \to G_\lambda$ such that the map $G_\kappa \to G_\lambda$ is the trivial (semi-)group homomorphism if $\kappa \ne \lambda$, while the map $G_\lambda \to G_\lambda$ is the identity. But this contradicts the choice of $\lambda$.
     references:
-      - cat_not_cototal
+      - Cat_not_cototal
 
   - property: parametrized natural numbers object
     proof: >-
@@ -103,7 +103,7 @@ unsatisfied_properties:
       $$K \sqcup_F M \cong \langle x,c,d,s : x s = c,\, x s = d \rangle$$
       shows that $c,d \in K$ have the same image in the pushout.
     references:
-      - mon_not_coregular
+      - Mon_not_coregular
 
   - property: regular subobject classifier
     proof: 'Assume that a regular subobject classifier $\Omega$ exists in $\SemiGrp$. The universal regular monomorphism $\top : 1 \to \Omega$ corresponds to an idempotent element $e \in \Omega$. It follows that $e \Omega e$ is a monoid with neutral element $e$. We claim that it is a regular subobject classifier in <a href="/category/Mon">$\Mon$</a>, which we know does not exist. Indeed, let $\iota : A \to B$ be a regular monomorphism of monoids. Since the forgetful functor $\Mon \to \SemiGrp$ preserves limits, we can also see $\iota$ as a regular monomorphism of semigroups. Hence, there is a unique homomorphism of semigroups $f : B \to \Omega$ with $\iota(A) = \{b \in B : f(b) = e\}$. Since $1 \in \iota(A)$, we have $f(1) = e$. Then $f$ corresponds to a unique homomorphism of monoids $f : B \to e \Omega e$ with kernel $\iota$, which proves our claim.'

@@ -79,7 +79,7 @@ satisfied_properties:
       Second remark: The category <a href="/category/Bin">$\Bin$</a> also has an extremal generating collection formed by the analogous objects $(\{a\},\varnothing)$ and $(\{a,b\},\{(a,b)\})$, but no extremal generator, and the last step of our proof does not carry over, since there is no morphism from $(\{a,b\},\{(a,b)\})$ to $(\{a\},\varnothing)$ in $\Bin$.
     label: Bin_refl_extremal_generator
     references:
-      - preord_extremal_generator
+      - PreOrd_extremal_generator
 
   - property: extremal cogenerator
     proof: >-

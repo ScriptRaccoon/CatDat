@@ -42,7 +42,7 @@ satisfied_properties:
   - property: ℵ₁-cofiltered limits
     proof: Using that <a href="/category/FinSet">$\FinSet$</a> is closed under $\aleph_1$-cofiltered limits in $\Set$, and that the forgetful functor $\IZ{-}\Set \to \Set$ is continuous, it follows immediately that $\IZ{-}\FinSet$ is closed under $\aleph_1$-cofiltered limits in $\IZ{-}\Set$.
     references:
-      - finset_aleph1-cofiltered-limits
+      - FinSet_aleph1-cofiltered-limits
 
 unsatisfied_properties:
   - property: skeletal
