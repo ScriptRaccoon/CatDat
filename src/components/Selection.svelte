@@ -4,6 +4,7 @@
 	import { get_comparison_score } from '#lib/client/utils.js'
 	import type { Snippet } from 'svelte'
 	import { remove_underscores } from '#shared/utils.js'
+	import Listbox, { get_option_id } from './Listbox.svelte'
 
 	type Props = {
 		allowed_items: readonly string[]
@@ -28,6 +29,8 @@
 	let active_index = $state(0)
 
 	const id = $props.id()
+	const input_id = `${id}-input`
+	const listbox_id = `${id}-listbox`
 
 	let suggestions = $derived.by(() => {
 		if (selected_items.length >= max) return []
@@ -86,6 +89,8 @@
 		selected_items = selected_items.filter((_item) => _item !== item)
 	}
 
+	let is_expanded = $derived(show_suggestions && suggestions.length > 0)
+
 	function handle_keydown(e: KeyboardEvent) {
 		const key = e.key
 
@@ -97,31 +102,14 @@
 				select(suggestions.at(active_index))
 				break
 			case 'ArrowUp':
-				if (active_index > 0) {
-					active_index--
-					scroll_to_option()
-				}
+				e.preventDefault()
+				if (active_index > 0) active_index--
 				break
 			case 'ArrowDown':
-				if (active_index < suggestions.length - 1) {
-					active_index++
-					scroll_to_option()
-				}
+				e.preventDefault()
+				if (active_index < suggestions.length - 1) active_index++
 				break
 		}
-	}
-
-	function scroll_to_option() {
-		document.querySelector(`#${id}-${active_index}`)?.scrollIntoView({
-			block: 'center'
-		})
-	}
-
-	let suggestions_element = $state<HTMLDivElement | null>(null)
-
-	function handle_blur(e: FocusEvent) {
-		const is_suggestion_click = suggestions_element?.contains(e.relatedTarget as Node)
-		if (!is_suggestion_click) show_suggestions = false
 	}
 </script>
 
@@ -129,35 +117,35 @@
 	{@render children?.()}
 
 	<form onsubmit={handle_submit}>
-		<div class="input-wrapper">
-			<input
-				aria-label={remove_underscores(item_label)}
-				name={item_label}
-				aria-invalid={item.trim().length > 0 && !is_valid(item)}
-				type="text"
-				bind:value={item}
-				onfocus={() => (show_suggestions = true)}
-				onblur={handle_blur}
-				oninput={handle_input}
-				onkeydown={handle_keydown}
-			/>
-		</div>
+		<input
+			id={input_id}
+			role="combobox"
+			aria-label={remove_underscores(item_label)}
+			aria-autocomplete="list"
+			aria-controls={listbox_id}
+			aria-expanded={is_expanded}
+			aria-activedescendant={is_expanded
+				? get_option_id(listbox_id, active_index)
+				: undefined}
+			name={item_label}
+			aria-invalid={item.trim().length > 0 && !is_valid(item)}
+			type="text"
+			bind:value={item}
+			onfocus={() => (show_suggestions = true)}
+			onblur={() => (show_suggestions = false)}
+			oninput={handle_input}
+			onkeydown={handle_keydown}
+		/>
 
-		{#if show_suggestions && suggestions.length > 0}
-			<div class="suggestions" tabindex="-1" bind:this={suggestions_element}>
-				{#each suggestions as allowed_item, i}
-					<button
-						id="{id}-{i}"
-						tabindex="-1"
-						class="option"
-						class:selected={i === active_index}
-						onclick={() => select(allowed_item)}
-					>
-						{allowed_item}
-					</button>
-				{/each}
-			</div>
-		{/if}
+		<Listbox
+			id={listbox_id}
+			label_id={input_id}
+			options={suggestions.map((s) => ({ value: s, label: s }))}
+			bind:active_index
+			open={is_expanded}
+			is_selected={(value) => selected_items.includes(value)}
+			onselect={select}
+		/>
 	</form>
 
 	<ChipGroup>
@@ -174,7 +162,8 @@
 		margin-block: 1.5rem;
 	}
 
-	.input-wrapper {
+	form {
+		position: relative;
 		margin-bottom: 1rem;
 
 		input {
@@ -183,34 +172,6 @@
 
 		@media (min-width: 600px) {
 			max-width: 28rem;
-		}
-	}
-
-	form {
-		position: relative;
-	}
-
-	.suggestions {
-		position: absolute;
-		z-index: 5;
-		max-height: 12rem;
-		overflow-y: scroll;
-		scrollbar-width: thin;
-		top: calc(100% + 0.25rem);
-		background-color: var(--bg-color);
-		border: 1px solid var(--outline-color);
-		border-radius: 0.4rem;
-		box-shadow: 0 0 1rem var(--shadow-color);
-		display: grid;
-	}
-
-	.option {
-		font-size: 1rem;
-		text-align: left;
-		padding: 0.25rem 1rem;
-
-		&.selected {
-			background-color: var(--secondary-bg-color);
 		}
 	}
 </style>
