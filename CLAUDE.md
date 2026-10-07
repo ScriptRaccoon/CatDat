@@ -8,7 +8,7 @@ Four types of categorical structures are supported: **categories**, **functors**
 - **Properties**: e.g. "cocomplete", "cartesian closed", "left adjoint". Each property belongs to one structure type.
 - **Implications**: e.g. "abelian ⟹ regular", each with a proof.
 
-From the implications, a **deduction system** infers further properties of each structure and **dualizes** implications and property assignments automatically. The app has detail pages for structures, properties, and implications, a search for structures by satisfied and unsatisfied properties (which also detects inconsistent combinations), a comparison of structures, and a page that lists missing data (`/missing`). Long-form proofs and lemmas are Markdown pages in [content/](content/), rendered at `/content/<name>`.
+From the implications, a **deduction system** infers further properties of each structure and **dualizes** implications and property assignments automatically. The app has detail pages for structures, properties, and implications, a search for structures by satisfied and unsatisfied properties (which also detects inconsistent combinations), a comparison of structures, and a page that lists missing data (`/missing`). Reusable lemmas and proofs that require lemmas are Markdown pages in [content/](content/), rendered at `/content/<name>`.
 
 The admin functionality is in a separate repository, [CatDatAdmin](https://github.com/ScriptRaccoon/CatDatAdmin).
 
@@ -23,7 +23,7 @@ TypeScript, SvelteKit (Svelte 5), SQLite via `better-sqlite3`, KaTeX for math re
 - [database/scripts/](database/scripts/): the `db:*` scripts (seeding, deduction, tests). `expected-data/` holds the expected property data used by `db:test`.
 - [shared/](shared/): code used by both the database scripts and the app (`#shared/*` subpath import), e.g. the DB client and the structure type config. `structure.history.json` records when each structure was added; `db:seed` updates it, and the homepage reads it for "Recently added structures".
 - [src/](src/): the SvelteKit app. Routes are generic over the structure type (`src/routes/[type]`, `[type]-property`, `[type]-implication`, `[type]-search`, ...). Page components are in `src/pages/`, shared components in `src/components/`, server-side DB access in `src/lib/server/`.
-- [content/](content/): Markdown content pages for long proofs and reusable lemmas.
+- [content/](content/): Markdown content pages for reusable lemmas and proofs that require lemmas.
 - [tests/](tests/): Playwright end-to-end tests.
 
 ## Commands
@@ -85,7 +85,7 @@ Use existing files as templates: [database/data/categories/N.yaml](database/data
 
 Full guidelines: [CONTRIBUTING.md](CONTRIBUTING.md). Contributions come in through the suggestion form on the site, GitHub issues, or pull requests from forks. The essentials for data changes:
 
-- **Proofs for every claim**: satisfied and unsatisfied properties, implications, and special morphisms all need a proof or reference. If a proof refers to another proof, make the link explicit with labels and references. Move very long proofs or reusable lemmas into a `content/` page and link to it.
+- **Proofs for every claim**: satisfied and unsatisfied properties, implications, and special morphisms all need a proof or reference. If a proof refers to another proof, make the link explicit with labels and references. Put reusable lemmas and proofs that require lemmas into a `content/` page and link to it; long proofs alone are fine in the YAML files.
 - **Reduce unknowns**: when adding a structure, decide as many of its properties as possible. When adding a property, try to decide it for all existing structures, and include implications connecting it to existing properties. For the structures in `expected-data/decided-*.json`, deciding every property is mandatory (enforced by `db:test`).
 - **No redundant assignments**: only assign properties that cannot be deduced. Redundant satisfied assignments may be kept when the proof is trivial anyway, insightful, constructs (co)limits used later, avoids an overly complex automatic deduction, or establishes an intermediate result used later. Mark them with `check_redundancy: false`. Removing redundant assignments is not required but recommended, especially for unsatisfied properties.
 - **Atomic implications**: do not add implications that follow from others, and do not add dual implications, since dualization is automatic. Prefer the "limit" variant over the "colimit" variant. When adding an implication, check whether it simplifies existing ones.
