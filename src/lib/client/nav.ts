@@ -1,4 +1,4 @@
-import type { StructureType } from '#lib/commons/types.js'
+import type { StructureType } from '#lib/commons/types.ts'
 import {
 	faArrowsSplitUpAndLeft,
 	faBook,
@@ -13,8 +13,8 @@ import {
 	faSearch,
 	type IconDefinition
 } from '@fortawesome/free-solid-svg-icons'
-import { capitalize } from '#shared/utils.js'
-import { PLURALS } from '#shared/config.js'
+import { capitalize } from '#shared/utils.ts'
+import { PLURALS } from '#shared/config.ts'
 
 type Link = {
 	href: string

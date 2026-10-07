@@ -13,12 +13,12 @@ import decided_functors from './expected-data/decided-functors.json'
 import decided_morphisms from './expected-data/decided-morphisms.json'
 import decided_symmetric_monoidal_categories from './expected-data/decided-symmetric-monoidal-categories.json'
 import structure_history from '#shared/structure.history.json'
-import { capitalize, devlog, remove_underscores } from '#shared/utils.js'
-import { get_client } from '#shared/db.js'
-import { STRUCTURE_TYPES, type StructureType, PLURALS } from '#shared/config.js'
+import { capitalize, devlog, remove_underscores } from '#shared/utils.ts'
+import { get_client } from '#shared/db.ts'
+import { STRUCTURE_TYPES, type StructureType, PLURALS } from '#shared/config.ts'
 import fs from 'node:fs'
 import path from 'node:path'
-import { decode_property_ID } from '#shared/property.utils.js'
+import { decode_property_ID } from '#shared/property.utils.ts'
 
 const db = get_client({ readonly: true })
 

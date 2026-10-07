@@ -1,14 +1,14 @@
-import { get_client } from '#shared/db.js'
+import { get_client } from '#shared/db.ts'
 import { get_property_assignments_by_deduction } from './utils/properties'
-import { STRUCTURE_TYPES, type StructureType } from '#shared/config.js'
+import { STRUCTURE_TYPES, type StructureType } from '#shared/config.ts'
 import {
 	get_normalized_implications,
 	stringify_implication,
 	type NormalizedImplication
-} from '#shared/implications.js'
-import { deduce_properties, refute_properties } from '#shared/deduction.utils.js'
+} from '#shared/implications.ts'
+import { deduce_properties, refute_properties } from '#shared/deduction.utils.ts'
 import { get_structures } from './utils/structures'
-import { remove_underscores } from '#shared/utils.js'
+import { remove_underscores } from '#shared/utils.ts'
 
 const db = get_client({ readonly: true })
 

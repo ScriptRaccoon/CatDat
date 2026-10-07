@@ -4,15 +4,15 @@
  */
 
 import { type Database } from 'better-sqlite3'
-import { deduce_properties, refute_properties } from '#shared/deduction.utils.js'
-import { get_client } from '#shared/db.js'
+import { deduce_properties, refute_properties } from '#shared/deduction.utils.ts'
+import { get_client } from '#shared/db.ts'
 import {
 	get_properties_dict,
 	get_property_assignments,
 	type PropertyMeta
 } from './utils/properties'
 import { get_contradiction_string, get_proof_string } from './utils/implications'
-import { type StructureType, STRUCTURE_TYPES_WITH_DUALS } from '#shared/config.js'
+import { type StructureType, STRUCTURE_TYPES_WITH_DUALS } from '#shared/config.ts'
 import {
 	get_structure_parent_map,
 	get_structures,
@@ -22,8 +22,8 @@ import {
 import {
 	get_normalized_implications,
 	type NormalizedImplication
-} from '#shared/implications.js'
-import { devlog, remove_underscores } from '#shared/utils.js'
+} from '#shared/implications.ts'
+import { devlog, remove_underscores } from '#shared/utils.ts'
 
 /**
  * Deduce satisfied properties for a given structure from given ones

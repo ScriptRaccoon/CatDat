@@ -3,10 +3,10 @@
 	import SearchFilter from '#components/SearchFilter.svelte'
 	import SuggestionForm from '#components/SuggestionForm.svelte'
 	import TagList from '#components/TagList.svelte'
-	import { normalize_text, pluralize } from '#shared/utils.js'
-	import { get_property_label, get_property_url } from '#shared/property.utils.js'
-	import { PLURALS } from '#shared/config.js'
-	import type { GroupedPropertyShort, StructureType } from '#lib/commons/types.js'
+	import { normalize_text, pluralize } from '#shared/utils.ts'
+	import { get_property_label, get_property_url } from '#shared/property.utils.ts'
+	import { PLURALS } from '#shared/config.ts'
+	import type { GroupedPropertyShort, StructureType } from '#lib/commons/types.ts'
 
 	let search = $state('')
 

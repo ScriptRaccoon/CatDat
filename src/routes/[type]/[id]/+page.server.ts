@@ -1,9 +1,9 @@
-import { render_nested_formulas } from '#lib/server/formulas.js'
-import { fetch_structure } from '#lib/server/fetchers/structure.js'
-import { is_structure_type } from '#shared/config.js'
+import { render_nested_formulas } from '#lib/server/formulas.ts'
+import { fetch_structure } from '#lib/server/fetchers/structure.ts'
+import { is_structure_type } from '#shared/config.ts'
 import { error } from '@sveltejs/kit'
-import { fetch_category } from '#lib/server/fetchers/category.js'
-import { adjust_functor_notation } from '#lib/server/transforms.js'
+import { fetch_category } from '#lib/server/fetchers/category.ts'
+import { adjust_functor_notation } from '#lib/server/transforms.ts'
 
 export const load = (event) => {
 	const type = event.params.type

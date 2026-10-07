@@ -1,5 +1,5 @@
-import { is_structure_type } from '#shared/config.js'
-import { fetch_grouped_properties_and_tags } from '#lib/server/fetchers/properties.js'
+import { is_structure_type } from '#shared/config.ts'
+import { fetch_grouped_properties_and_tags } from '#lib/server/fetchers/properties.ts'
 import { error } from '@sveltejs/kit'
 
 export const load = (event) => {

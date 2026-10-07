@@ -6,10 +6,10 @@
 	import Nav from '#components/Nav.svelte'
 	import NavMobile from '#components/NavMobile.svelte'
 	import Popup from '#components/Popup.svelte'
-	import { track_visit } from '#lib/client/track.js'
-	import type { StructureType } from '#lib/commons/types.js'
-	import { tracking } from '#lib/states/tracking.svelte.js'
-	import { STRUCTURE_TYPES } from '#shared/config.js'
+	import { track_visit } from '#lib/client/track.ts'
+	import type { StructureType } from '#lib/commons/types.ts'
+	import { tracking } from '#lib/states/tracking.svelte.ts'
+	import { STRUCTURE_TYPES } from '#shared/config.ts'
 	import './app.css'
 
 	let { children } = $props()

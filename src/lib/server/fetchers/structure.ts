@@ -9,10 +9,10 @@ import type {
 	StructureShortDictionary,
 	StructureType,
 	AssociatedStructure
-} from '#lib/commons/types.js'
+} from '#lib/commons/types.ts'
 import { error } from '@sveltejs/kit'
-import { db } from '#lib/server/db.js'
-import { display_property_assignment } from '#lib/server/transforms.js'
+import { db } from '#lib/server/db.ts'
+import { display_property_assignment } from '#lib/server/transforms.ts'
 
 export function fetch_structure(type: StructureType, id: string): StructureDetails {
 	const structure = db

@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { StructureShortDictionary } from '#lib/commons/types.js'
-	import { PLURALS, STRUCTURE_TYPES } from '#shared/config.js'
-	import { capitalize, pluralize, remove_underscores } from '#shared/utils.js'
+	import type { StructureShortDictionary } from '#lib/commons/types.ts'
+	import { PLURALS, STRUCTURE_TYPES } from '#shared/config.ts'
+	import { capitalize, pluralize, remove_underscores } from '#shared/utils.ts'
 	import StructureList from './StructureList.svelte'
 
 	type Props = {

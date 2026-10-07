@@ -1,10 +1,10 @@
 import { error } from '@sveltejs/kit'
-import { db } from '#lib/server/db.js'
-import { render_nested_formulas } from '#lib/server/formulas.js'
-import { MAX_STRUCTURES_COMPARE } from '#lib/commons/compare.utils.js'
-import type { ComparisonResult, StructureType } from '#lib/commons/types.js'
-import { to_placeholders } from '#shared/utils.js'
-import { PLURALS } from '#shared/config.js'
+import { db } from '#lib/server/db.ts'
+import { render_nested_formulas } from '#lib/server/formulas.ts'
+import { MAX_STRUCTURES_COMPARE } from '#lib/commons/compare.utils.ts'
+import type { ComparisonResult, StructureType } from '#lib/commons/types.ts'
+import { to_placeholders } from '#shared/utils.ts'
+import { PLURALS } from '#shared/config.ts'
 
 export function fetch_comparison_result(
 	compared_ids: string[],

@@ -2,7 +2,7 @@
 	import { browser } from '$app/env'
 	import { page } from '$app/state'
 	import { PUBLIC_ADMIN_URL } from '$app/env/public'
-	import { resize_textarea } from '#lib/client/utils.js'
+	import { resize_textarea } from '#lib/client/utils.ts'
 	import { faCheckCircle, faWarning } from '@fortawesome/free-solid-svg-icons'
 	import { tick } from 'svelte'
 	import Fa from 'svelte-fa'

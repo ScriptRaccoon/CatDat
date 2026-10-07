@@ -1,6 +1,6 @@
-import { fetch_missing_data } from '#lib/server/fetchers/missing_data.js'
-import { fetch_categories_with_missing_morphisms } from '#lib/server/fetchers/category.js'
-import { STRUCTURE_TYPES } from '#shared/config.js'
+import { fetch_missing_data } from '#lib/server/fetchers/missing_data.ts'
+import { fetch_categories_with_missing_morphisms } from '#lib/server/fetchers/category.ts'
+import { STRUCTURE_TYPES } from '#shared/config.ts'
 
 export const load = () => {
 	const categories_with_missing_morphisms = fetch_categories_with_missing_morphisms()

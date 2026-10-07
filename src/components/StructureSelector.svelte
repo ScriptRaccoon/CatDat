@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { goto } from '$app/navigation'
 	import { page } from '$app/state'
-	import type { StructureType } from '#lib/commons/types.js'
-	import { STRUCTURE_TYPES, PLURALS } from '#shared/config.js'
+	import type { StructureType } from '#lib/commons/types.ts'
+	import { STRUCTURE_TYPES, PLURALS } from '#shared/config.ts'
 	import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 	import Fa from 'svelte-fa'
 	import Listbox, { get_option_id } from './Listbox.svelte'

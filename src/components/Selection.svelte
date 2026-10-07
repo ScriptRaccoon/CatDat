@@ -1,9 +1,9 @@
 <script lang="ts">
 	import ChipGroup from './ChipGroup.svelte'
 	import Chip from './Chip.svelte'
-	import { get_comparison_score } from '#lib/client/utils.js'
+	import { get_comparison_score } from '#lib/client/utils.ts'
 	import type { Snippet } from 'svelte'
-	import { remove_underscores } from '#shared/utils.js'
+	import { remove_underscores } from '#shared/utils.ts'
 	import Listbox, { get_option_id } from './Listbox.svelte'
 
 	type Props = {

@@ -10,8 +10,8 @@
 		normalize_text,
 		pluralize,
 		remove_underscores
-	} from '#shared/utils.js'
-	import type { ImplicationDisplay, StructureType } from '#lib/commons/types.js'
+	} from '#shared/utils.ts'
+	import type { ImplicationDisplay, StructureType } from '#lib/commons/types.ts'
 	import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
 	import type { Snippet } from 'svelte'
 	import Fa from 'svelte-fa'

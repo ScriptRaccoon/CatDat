@@ -1,8 +1,8 @@
 <script lang="ts">
 	import MetaData from '#components/MetaData.svelte'
 	import SuggestionForm from '#components/SuggestionForm.svelte'
-	import { PLURALS, STRUCTURE_TYPES } from '#shared/config.js'
-	import { remove_underscores } from '#shared/utils.js'
+	import { PLURALS, STRUCTURE_TYPES } from '#shared/config.ts'
+	import { remove_underscores } from '#shared/utils.ts'
 	import StructureList from '#components/StructureList.svelte'
 	import PropertyList from '#components/PropertyList.svelte'
 	import ImplicationList from '#components/ImplicationList.svelte'

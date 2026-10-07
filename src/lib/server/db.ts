@@ -1,4 +1,4 @@
-import { get_client } from '#shared/db.js'
+import { get_client } from '#shared/db.ts'
 
 /**
  * Database client for the CatDat database holding all mathematical knowledge

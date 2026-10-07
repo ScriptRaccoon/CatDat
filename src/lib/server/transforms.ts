@@ -6,8 +6,8 @@ import type {
 	ImplicationDB,
 	ImplicationDisplay,
 	StructureDetails
-} from '#lib/commons/types.js'
-import { add_math, parse_nested_json_set, strip_math } from '#shared/utils.js'
+} from '#lib/commons/types.ts'
+import { add_math, parse_nested_json_set, strip_math } from '#shared/utils.ts'
 
 export function display_property(property: PropertyDB): PropertyDisplay {
 	return {

@@ -1,12 +1,12 @@
-import { db } from '#lib/server/db.js'
+import { db } from '#lib/server/db.ts'
 import { error } from '@sveltejs/kit'
 import type {
 	ImplicationDB,
 	TargetTypes,
 	StructureShort,
 	StructureType
-} from '#lib/commons/types.js'
-import { display_implication } from '#lib/server/transforms.js'
+} from '#lib/commons/types.ts'
+import { display_implication } from '#lib/server/transforms.ts'
 import { fetch_property_relation_dict } from './properties'
 
 export function fetch_implication(type: StructureType, id: string) {

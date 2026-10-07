@@ -1,5 +1,5 @@
-import { get_client } from '#shared/db.js'
-import type { StructureType } from '#shared/config.js'
+import { get_client } from '#shared/db.ts'
+import type { StructureType } from '#shared/config.ts'
 
 /**
  * This script prints the satisfied, unsatisfied, unknown, and undecidable

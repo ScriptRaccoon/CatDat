@@ -2,8 +2,8 @@ import type {
 	GroupedPropertyShort,
 	PropertyShort,
 	StructureType
-} from '#lib/commons/types.js'
-import { db } from '#lib/server/db.js'
+} from '#lib/commons/types.ts'
+import { db } from '#lib/server/db.ts'
 
 export function get_property_ids(type: StructureType) {
 	return db

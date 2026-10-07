@@ -1,5 +1,5 @@
-import { is_structure_type } from '#shared/config.js'
-import { fetch_structures } from '#lib/server/fetchers/structures.js'
+import { is_structure_type } from '#shared/config.ts'
+import { fetch_structures } from '#lib/server/fetchers/structures.ts'
 import { error } from '@sveltejs/kit'
 
 export const load = (event) => {

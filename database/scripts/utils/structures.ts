@@ -1,5 +1,5 @@
 import { type Database } from 'better-sqlite3'
-import { type StructureType } from '#shared/config.js'
+import { type StructureType } from '#shared/config.ts'
 
 /**
  * Type for various types of categorical structures (category, functor, ...)

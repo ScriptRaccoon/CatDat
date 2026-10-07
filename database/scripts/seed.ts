@@ -1,9 +1,9 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { get_property_assignments, seed_file, seed_files } from './utils/seed.helpers'
-import { get_client } from '#shared/db.js'
-import { STRUCTURE_TYPES, type StructureType, PLURALS } from '#shared/config.js'
-import { capitalize, devlog } from '#shared/utils.js'
+import { get_client } from '#shared/db.ts'
+import { STRUCTURE_TYPES, type StructureType, PLURALS } from '#shared/config.ts'
+import { capitalize, devlog } from '#shared/utils.ts'
 import {
 	category_yaml_schema,
 	config_yaml_schema,

@@ -1,8 +1,8 @@
 import type { PropertyMeta } from './properties'
-import { type StructureType } from '#shared/config.js'
-import { get_property_label } from '#shared/property.utils.js'
-import { type NormalizedImplication } from '#shared/implications.js'
-import { remove_underscores } from '#shared/utils.js'
+import { type StructureType } from '#shared/config.ts'
+import { get_property_label } from '#shared/property.utils.ts'
+import { type NormalizedImplication } from '#shared/implications.ts'
+import { remove_underscores } from '#shared/utils.ts'
 
 function get_assumption_string(
 	implication: NormalizedImplication,
