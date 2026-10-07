@@ -143,7 +143,7 @@ an issue when clicking two proofs in a row. So it's a <div> then.
 
 		:global(a:has(.katex)) {
 			text-decoration: none;
-			border-bottom: 1px solid var(--outline-color);
+			border-bottom: 1px solid var(--link-underline-color);
 		}
 	}
 

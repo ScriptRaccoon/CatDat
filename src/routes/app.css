@@ -23,7 +23,7 @@ body {
 	--theorem-bg-color: #eee;
 	--text-color: #111;
 	--secondary-text-color: #555;
-	--outline-color: #666;
+	--link-underline-color: #666;
 	--secondary-outline-color: #aaa;
 	--accent-color: #375886;
 	--heading-color: #000;
@@ -42,7 +42,7 @@ body[data-theme='dark'] {
 	--theorem-bg-color: #000;
 	--text-color: #fff;
 	--secondary-text-color: #999;
-	--outline-color: #aaa;
+	--link-underline-color: #aaa;
 	--secondary-outline-color: #444;
 	--accent-color: #f0dd4a;
 	--heading-color: #87ceeb;
@@ -125,7 +125,7 @@ a {
 	color: inherit;
 	text-underline-offset: 2px;
 	text-decoration-thickness: 1px;
-	text-decoration-color: var(--outline-color);
+	text-decoration-color: var(--link-underline-color);
 }
 
 a:focus-visible {
@@ -214,11 +214,16 @@ input[type='text'],
 input[type='search'],
 input[type='password'],
 textarea,
-select {
+select,
+[role='combobox'] {
 	padding: 0.25rem 0.75rem;
 	border-radius: 0.4rem;
 	outline: none;
-	border: 1px solid var(--outline-color);
+	border: 1px solid var(--secondary-outline-color);
+
+	&[aria-expanded='true'] {
+		border-color: var(--text-color);
+	}
 
 	&:focus-visible {
 		border-color: var(--text-color);
