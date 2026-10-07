@@ -33,7 +33,7 @@ test('user can select categories for comparison', async ({ page }) => {
 		})
 	).toBeVisible()
 
-	const textbox = page.getByRole('textbox', { name: 'Category' })
+	const textbox = page.getByRole('combobox', { name: 'Category' })
 
 	for (const category of ['category of rings', 'category of commutative rings']) {
 		await expect(textbox).toHaveValue('')

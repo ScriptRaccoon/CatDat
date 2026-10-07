@@ -28,7 +28,7 @@ test('user can navigate to the search page', async ({ page }) => {
 test('user can enter properties', async ({ page }) => {
 	await page.goto('/category-search')
 
-	const satisfied_textbox = page.getByRole('textbox', {
+	const satisfied_textbox = page.getByRole('combobox', {
 		name: 'Satisfied property',
 		exact: true
 	})
@@ -46,7 +46,7 @@ test('user can enter properties', async ({ page }) => {
 		await expect(satisfied_textbox).toHaveValue('')
 	}
 
-	const unsatisfied_textbox = page.getByRole('textbox', {
+	const unsatisfied_textbox = page.getByRole('combobox', {
 		name: 'Unsatisfied property',
 		exact: true
 	})
