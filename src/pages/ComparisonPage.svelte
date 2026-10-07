@@ -7,9 +7,9 @@
 		get_compared_structures,
 		MAX_STRUCTURES_COMPARE,
 		save_comparison
-	} from '#lib/commons/compare.utils.js'
-	import { PLURALS } from '#shared/config.js'
-	import type { StructureShort, StructureType } from '#lib/commons/types.js'
+	} from '#lib/commons/compare.utils.ts'
+	import { PLURALS } from '#shared/config.ts'
+	import type { StructureShort, StructureType } from '#lib/commons/types.ts'
 
 	type Props = {
 		type: StructureType

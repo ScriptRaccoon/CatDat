@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { StructureShort, StructureType } from '#lib/commons/types.js'
-	import { PLURALS } from '#shared/config.js'
+	import type { StructureShort, StructureType } from '#lib/commons/types.ts'
+	import { PLURALS } from '#shared/config.ts'
 	import StructureList from './StructureList.svelte'
 
 	type Props = {

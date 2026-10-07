@@ -1,6 +1,6 @@
-import { is_structure_type } from '#shared/config.js'
-import { fetch_comparison_result } from '#lib/server/fetchers/comparison.js'
-import { cache_page } from '#lib/server/cache.js'
+import { is_structure_type } from '#shared/config.ts'
+import { fetch_comparison_result } from '#lib/server/fetchers/comparison.ts'
+import { cache_page } from '#lib/server/cache.ts'
 import { error } from '@sveltejs/kit'
 
 export const prerender = false

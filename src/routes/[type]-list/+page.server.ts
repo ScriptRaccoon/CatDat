@@ -1,8 +1,8 @@
-import { is_structure_type } from '#shared/config.js'
-import { fetch_structures_with_tags_and_keywords } from '#lib/server/fetchers/structures.js'
+import { is_structure_type } from '#shared/config.ts'
+import { fetch_structures_with_tags_and_keywords } from '#lib/server/fetchers/structures.ts'
 import { error } from '@sveltejs/kit'
 import type { EntryGenerator } from './$types'
-import { STRUCTURE_TYPES } from '#shared/config.js'
+import { STRUCTURE_TYPES } from '#shared/config.ts'
 
 export const entries: EntryGenerator = () => {
 	return STRUCTURE_TYPES.map((type) => ({ type }))

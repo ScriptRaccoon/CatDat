@@ -3,9 +3,9 @@
 	import Fa from 'svelte-fa'
 	import Chip from '#components/Chip.svelte'
 	import ChipGroup from '#components/ChipGroup.svelte'
-	import { theme, THEMES, update_theme } from '#lib/states/theme.svelte.js'
+	import { theme, THEMES, update_theme } from '#lib/states/theme.svelte.ts'
 	import MetaData from '#components/MetaData.svelte'
-	import { set_tracking, tracking } from '#lib/states/tracking.svelte.js'
+	import { set_tracking, tracking } from '#lib/states/tracking.svelte.ts'
 
 	$effect(() => update_theme(theme.value))
 	$effect(() => set_tracking(tracking.allow))

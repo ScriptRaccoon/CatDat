@@ -2,15 +2,15 @@
 	import StructureList from '#components/StructureList.svelte'
 	import MetaData from '#components/MetaData.svelte'
 	import SuggestionForm from '#components/SuggestionForm.svelte'
-	import { pluralize, remove_underscores } from '#shared/utils.js'
-	import { get_property_label, get_property_url } from '#shared/property.utils.js'
+	import { pluralize, remove_underscores } from '#shared/utils.ts'
+	import { get_property_label, get_property_url } from '#shared/property.utils.ts'
 	import type {
 		ImplicationDisplay,
 		StructureShort,
 		TargetTypes,
 		StructureType
-	} from '#lib/commons/types.js'
-	import { PLURALS } from '#shared/config.js'
+	} from '#lib/commons/types.ts'
+	import { PLURALS } from '#shared/config.ts'
 	import Fa from 'svelte-fa'
 	import { faCircleArrowLeft, faInfoCircle } from '@fortawesome/free-solid-svg-icons'
 

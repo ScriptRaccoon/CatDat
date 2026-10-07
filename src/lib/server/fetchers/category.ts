@@ -3,8 +3,8 @@ import type {
 	SpecialMorphism,
 	SpecialObject,
 	StructureShort
-} from '#lib/commons/types.js'
-import { db } from '#lib/server/db.js'
+} from '#lib/commons/types.ts'
+import { db } from '#lib/server/db.ts'
 import { error } from '@sveltejs/kit'
 
 export function fetch_category(id: string) {

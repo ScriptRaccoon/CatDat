@@ -1,6 +1,6 @@
-import { get_client } from '#shared/db.js'
-import type { StructureType } from '#shared/config.js'
-import { remove_underscores } from '#shared/utils.js'
+import { get_client } from '#shared/db.ts'
+import type { StructureType } from '#shared/config.ts'
+import { remove_underscores } from '#shared/utils.ts'
 
 /**
  * This script prints the combinations of the form p ∧ ¬q

@@ -1,8 +1,8 @@
-import { is_structure_type } from '#shared/config.js'
-import { fetch_tagged_properties } from '#lib/server/fetchers/properties.js'
+import { is_structure_type } from '#shared/config.ts'
+import { fetch_tagged_properties } from '#lib/server/fetchers/properties.ts'
 import { error } from '@sveltejs/kit'
 import type { EntryGenerator } from './$types'
-import { fetch_property_tags } from '#lib/server/fetchers/tags.js'
+import { fetch_property_tags } from '#lib/server/fetchers/tags.ts'
 
 export const entries: EntryGenerator = () => {
 	return fetch_property_tags()

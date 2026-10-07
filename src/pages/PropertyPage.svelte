@@ -4,8 +4,8 @@
 	import ImplicationList from '#components/ImplicationList.svelte'
 	import MetaData from '#components/MetaData.svelte'
 	import SuggestionForm from '#components/SuggestionForm.svelte'
-	import { pluralize, remove_underscores } from '#shared/utils.js'
-	import { get_property_url } from '#shared/property.utils.js'
+	import { pluralize, remove_underscores } from '#shared/utils.ts'
+	import { get_property_url } from '#shared/property.utils.ts'
 	import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
 	import Fa from 'svelte-fa'
 	import type {
@@ -13,8 +13,8 @@
 		PropertyDisplay,
 		StructureShort,
 		StructureType
-	} from '#lib/commons/types.js'
-	import { PLURALS } from '#shared/config.js'
+	} from '#lib/commons/types.ts'
+	import { PLURALS } from '#shared/config.ts'
 	import TagList from '#components/TagList.svelte'
 
 	type Props = {

@@ -1,6 +1,6 @@
-import { get_rendered_content } from '#lib/server/markdown.js'
+import { get_rendered_content } from '#lib/server/markdown.ts'
 import { error } from '@sveltejs/kit'
-import { fetch_content_references } from '#lib/server/fetchers/content.js'
+import { fetch_content_references } from '#lib/server/fetchers/content.ts'
 
 export const load = (event) => {
 	const id = event.params.id

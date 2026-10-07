@@ -2,10 +2,10 @@
 	import StructureList from '#components/StructureList.svelte'
 	import MetaData from '#components/MetaData.svelte'
 	import SuggestionForm from '#components/SuggestionForm.svelte'
-	import { get_property_url } from '#shared/property.utils.js'
-	import { PLURALS } from '#shared/config.js'
-	import { STRUCTURE_TYPES } from '#shared/config.js'
-	import { capitalize, pluralize, remove_underscores } from '#shared/utils.js'
+	import { get_property_url } from '#shared/property.utils.ts'
+	import { PLURALS } from '#shared/config.ts'
+	import { STRUCTURE_TYPES } from '#shared/config.ts'
+	import { capitalize, pluralize, remove_underscores } from '#shared/utils.ts'
 
 	const { data } = $props()
 </script>

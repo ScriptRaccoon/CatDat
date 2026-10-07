@@ -1,5 +1,5 @@
-import type { StructureShort, StructureType } from '#lib/commons/types.js'
-import { db } from '#lib/server/db.js'
+import type { StructureShort, StructureType } from '#lib/commons/types.ts'
+import { db } from '#lib/server/db.ts'
 
 export function fetch_structures(type: StructureType) {
 	const structures = db

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/state'
-	import { get_navigation_links } from '#lib/client/nav.js'
-	import type { StructureType } from '#lib/commons/types.js'
+	import { get_navigation_links } from '#lib/client/nav.ts'
+	import type { StructureType } from '#lib/commons/types.ts'
 
 	import Fa from 'svelte-fa'
 

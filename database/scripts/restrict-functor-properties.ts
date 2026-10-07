@@ -1,5 +1,5 @@
-import { get_client } from '#shared/db.js'
-import { devlog } from '#shared/utils.js'
+import { get_client } from '#shared/db.ts'
+import { devlog } from '#shared/utils.ts'
 
 const db = get_client({ readonly: false })
 

@@ -1,9 +1,9 @@
 <script lang="ts">
 	import MetaData from '#components/MetaData.svelte'
-	import { pluralize } from '#shared/utils.js'
-	import type { PropertyShort, StructureType } from '#lib/commons/types.js'
+	import { pluralize } from '#shared/utils.ts'
+	import type { PropertyShort, StructureType } from '#lib/commons/types.ts'
 	import PropertyList from '#components/PropertyList.svelte'
-	import { PLURALS } from '#shared/config.js'
+	import { PLURALS } from '#shared/config.ts'
 
 	type Props = {
 		type: StructureType

@@ -1,5 +1,5 @@
-import type { StructureType } from '#lib/commons/types.js'
-import { db } from '#lib/server/db.js'
+import type { StructureType } from '#lib/commons/types.ts'
+import { db } from '#lib/server/db.ts'
 
 export function fetch_structure_tags() {
 	return db

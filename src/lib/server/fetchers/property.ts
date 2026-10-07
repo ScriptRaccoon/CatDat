@@ -3,9 +3,9 @@ import type {
 	StructureShort,
 	PropertyDB,
 	StructureType
-} from '#lib/commons/types.js'
-import { db } from '#lib/server/db.js'
-import { display_implication, display_property } from '#lib/server/transforms.js'
+} from '#lib/commons/types.ts'
+import { db } from '#lib/server/db.ts'
+import { display_implication, display_property } from '#lib/server/transforms.ts'
 import { error } from '@sveltejs/kit'
 
 export function fetch_property(type: StructureType, id: string) {

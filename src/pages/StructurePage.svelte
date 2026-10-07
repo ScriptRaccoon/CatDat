@@ -6,9 +6,9 @@
 	import TagList from '#components/TagList.svelte'
 	import IndistinguishableStructures from '#components/IndistinguishableStructures.svelte'
 	import StructuresBasedOn from '#components/StructuresBasedOn.svelte'
-	import type { StructureDetails } from '#lib/commons/types.js'
+	import type { StructureDetails } from '#lib/commons/types.ts'
 	import type { Snippet } from 'svelte'
-	import { capitalize, remove_underscores } from '#shared/utils.js'
+	import { capitalize, remove_underscores } from '#shared/utils.ts'
 
 	type Props = StructureDetails & {
 		definition?: Snippet

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { PLURALS } from '#shared/config.js'
+	import { PLURALS } from '#shared/config.ts'
 	import SearchPage from '#pages/SearchPage.svelte'
 
 	let { data } = $props()

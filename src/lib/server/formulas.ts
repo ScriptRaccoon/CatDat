@@ -1,5 +1,5 @@
 import katex from 'katex'
-import { is_object } from '#shared/utils.js'
+import { is_object } from '#shared/utils.ts'
 import YAML from 'yaml'
 import path from 'node:path'
 import fs from 'node:fs'

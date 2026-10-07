@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { StructureType } from '#lib/commons/types.js'
+	import type { StructureType } from '#lib/commons/types.ts'
 	import Fa from 'svelte-fa'
 	import Chip from './Chip.svelte'
 	import ChipGroup from './ChipGroup.svelte'

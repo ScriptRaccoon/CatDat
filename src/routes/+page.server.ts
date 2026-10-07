@@ -1,7 +1,7 @@
-import type { StructureType } from '#lib/commons/types.js'
-import { db } from '#lib/server/db.js'
-import { render_nested_formulas } from '#lib/server/formulas.js'
-import { to_placeholders } from '#shared/utils.js'
+import type { StructureType } from '#lib/commons/types.ts'
+import { db } from '#lib/server/db.ts'
+import { render_nested_formulas } from '#lib/server/formulas.ts'
+import { to_placeholders } from '#shared/utils.ts'
 import { error } from 'node:console'
 import structure_history from '#shared/structure.history.json'
 

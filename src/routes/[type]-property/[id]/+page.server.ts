@@ -1,7 +1,7 @@
-import { render_nested_formulas } from '#lib/server/formulas.js'
-import { decode_property_ID } from '#shared/property.utils.js'
-import { fetch_property } from '#lib/server/fetchers/property.js'
-import { is_structure_type } from '#shared/config.js'
+import { render_nested_formulas } from '#lib/server/formulas.ts'
+import { decode_property_ID } from '#shared/property.utils.ts'
+import { fetch_property } from '#lib/server/fetchers/property.ts'
+import { is_structure_type } from '#shared/config.ts'
 import { error } from '@sveltejs/kit'
 
 export const load = (event) => {

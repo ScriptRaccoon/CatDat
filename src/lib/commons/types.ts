@@ -1,4 +1,4 @@
-import type { StructureType } from '#shared/config.js'
+import type { StructureType } from '#shared/config.ts'
 
 export type { StructureType }
 

@@ -6,8 +6,8 @@
 		faPlus
 	} from '@fortawesome/free-solid-svg-icons'
 	import Fa from 'svelte-fa'
-	import { get_property_url } from '#shared/property.utils.js'
-	import type { ImplicationDisplay, StructureType } from '#lib/commons/types.js'
+	import { get_property_url } from '#shared/property.utils.ts'
+	import type { ImplicationDisplay, StructureType } from '#lib/commons/types.ts'
 
 	type Props = {
 		type: StructureType

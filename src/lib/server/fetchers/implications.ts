@@ -1,6 +1,6 @@
-import { db } from '#lib/server/db.js'
-import type { ImplicationDB, StructureType } from '#lib/commons/types.js'
-import { display_implication } from '#lib/server/transforms.js'
+import { db } from '#lib/server/db.ts'
+import type { ImplicationDB, StructureType } from '#lib/commons/types.ts'
+import { display_implication } from '#lib/server/transforms.ts'
 
 export function fetch_implications(type: StructureType) {
 	const implications_db = db
