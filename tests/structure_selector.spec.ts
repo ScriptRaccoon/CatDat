@@ -1,29 +1,33 @@
-import { test, expect } from '@playwright/test'
+import { test, expect, type Page } from '@playwright/test'
+
+function get_selector(page: Page) {
+	return page.getByRole('combobox', { name: 'Structure', exact: true })
+}
+
+async function select_type(page: Page, label: string) {
+	const selector = get_selector(page)
+	await selector.click()
+	await expect(selector).toHaveAttribute('aria-expanded', 'true')
+	await page.getByRole('option', { name: label, exact: true }).click()
+}
 
 test('categories are selected by default', async ({ page }) => {
 	await page.goto('/')
 
-	const selector = page.getByRole('combobox', {
-		name: 'Structure',
-		exact: true
-	})
+	const selector = get_selector(page)
 
 	await expect(selector).toBeVisible()
-	await expect(selector).toHaveValue('category')
+	await expect(selector).toHaveText('categories')
+	await expect(selector).not.toHaveText('functors')
 })
 
 test('user can switch to functors', async ({ page }) => {
 	await page.goto('/', { waitUntil: 'networkidle' })
 
-	const selector = page.getByRole('combobox', {
-		name: 'Structure',
-		exact: true
-	})
+	await select_type(page, 'functors')
 
-	await expect(selector).toBeVisible()
-	await selector.selectOption('functor')
-
-	await expect(selector).toHaveValue('functor')
+	await expect(get_selector(page)).toHaveText('functors')
+	await expect(get_selector(page)).not.toHaveText('categories')
 
 	await expect(page).toHaveURL('/functor-list')
 
@@ -38,27 +42,16 @@ test('user can switch to functors', async ({ page }) => {
 test('functors are selected on a functor route', async ({ page }) => {
 	await page.goto('/functor-properties')
 
-	const selector = page.getByRole('combobox', {
-		name: 'Structure',
-		exact: true
-	})
-
-	await expect(selector).toBeVisible()
-	await expect(selector).toHaveValue('functor')
+	await expect(get_selector(page)).toHaveText('functors')
 })
 
 test('user can switch to morphisms', async ({ page }) => {
 	await page.goto('/', { waitUntil: 'networkidle' })
 
-	const selector = page.getByRole('combobox', {
-		name: 'Structure',
-		exact: true
-	})
+	await select_type(page, 'morphisms')
 
-	await expect(selector).toBeVisible()
-	await selector.selectOption('morphism')
-
-	await expect(selector).toHaveValue('morphism')
+	await expect(get_selector(page)).toHaveText('morphisms')
+	await expect(get_selector(page)).not.toHaveText('categories')
 
 	await expect(page).toHaveURL('/morphism-list')
 
@@ -73,27 +66,16 @@ test('user can switch to morphisms', async ({ page }) => {
 test('morphisms are selected on a morphism route', async ({ page }) => {
 	await page.goto('/morphism-properties')
 
-	const selector = page.getByRole('combobox', {
-		name: 'Structure',
-		exact: true
-	})
-
-	await expect(selector).toBeVisible()
-	await expect(selector).toHaveValue('morphism')
+	await expect(get_selector(page)).toHaveText('morphisms')
 })
 
 test('user can switch to symmetric monoidal categories', async ({ page }) => {
 	await page.goto('/', { waitUntil: 'networkidle' })
 
-	const selector = page.getByRole('combobox', {
-		name: 'Structure',
-		exact: true
-	})
+	await select_type(page, 'symmetric monoidal categories')
 
-	await expect(selector).toBeVisible()
-	await selector.selectOption('symmetric_monoidal_category')
-
-	await expect(selector).toHaveValue('symmetric_monoidal_category')
+	await expect(get_selector(page)).toHaveText('symmetric monoidal categories')
+	await expect(get_selector(page)).not.toHaveText('categories')
 
 	await expect(page).toHaveURL('/symmetric_monoidal_category-list')
 
@@ -110,11 +92,21 @@ test('symmetric monoidal categories are selected on a symmetric monoidal categor
 }) => {
 	await page.goto('/symmetric_monoidal_category-properties')
 
-	const selector = page.getByRole('combobox', {
-		name: 'Structure',
-		exact: true
-	})
+	await expect(get_selector(page)).toHaveText('symmetric monoidal categories')
+})
 
-	await expect(selector).toBeVisible()
-	await expect(selector).toHaveValue('symmetric_monoidal_category')
+test('user can switch structures with the keyboard', async ({ page }) => {
+	await page.goto('/', { waitUntil: 'networkidle' })
+
+	const selector = get_selector(page)
+	await expect(selector).toHaveAttribute('aria-expanded', 'false')
+	await selector.focus()
+	await selector.press('Enter')
+	await expect(selector).toHaveAttribute('aria-expanded', 'true')
+	await selector.press('ArrowDown')
+	await selector.press('Enter')
+	await expect(selector).toHaveAttribute('aria-expanded', 'false')
+
+	await expect(selector).toHaveText('functors')
+	await expect(page).toHaveURL('/functor-list')
 })
