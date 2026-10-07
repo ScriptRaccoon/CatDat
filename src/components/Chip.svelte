@@ -49,7 +49,7 @@
 
 	.chip:hover,
 	.chip:focus-visible {
-		outline-color: var(--outline-color);
+		outline-color: var(--link-underline-color);
 	}
 
 	a.chip {
