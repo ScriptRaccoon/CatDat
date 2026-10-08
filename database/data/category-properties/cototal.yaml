@@ -5,8 +5,8 @@ description: >-
   <ol>
   <li>The contravariant Yoneda embedding
   $$y : \C^{\op} \to [\C, \Set]$$
-  has a left adjoint.
-  <li>Every <a href="https://ncatlab.org/nlab/show/discrete+opfibration">discrete opfibration</a> $D : \I \to \C$ (with $\I$ not necessarily essentially small) with the property that each fiber $D^*(\{X\}) = \{i \in \Ob(\C) : D_i = X\}$ is essentially small (bijective to a set), has a limit in $\C$.</li>
+  has a left adjoint.</li>
+  <li>Every <a href="https://ncatlab.org/nlab/show/discrete+opfibration">discrete opfibration</a> $D : \I \to \C$ (with $\I$ not necessarily essentially small) with the property that each fiber $D^*(\{X\}) = \{i \in \Ob(\I) : D_i = X\}$ is essentially small (bijective to a set), has a limit in $\C$.</li>
   <li>Let $D : \I \to \C$ be a diagram (with $\I$ not necessarily essentially small) such that for each object $X$ of $\C$, the collection $\pi_0(D \downarrow X)$ of connected components of the comma category $D \downarrow X$ is essentially small. Then $D$ has a limit in $\C$.</li>
   </ol>
   The equivalence is proven as Thm. 5.2 and 5.5 in G. M. Kelly, <a href="https://www.numdam.org/item/?id=CTGDC_1986__27_2_109_0">A survey of totality for enriched and ordinary categories</a>. Thm. 5.6 in that paper also proves that every cototal category is <i>hypercocomplete</i>, meaning that every diagram $D : \I \to \C$ with the property that for every object $X$ of $\C$ the collection of cocones $\Hom(D,\Delta(X))$ is essentially small, has a colimit.
