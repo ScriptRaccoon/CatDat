@@ -151,3 +151,25 @@ export function get_property_assignments_by_deduction(
 
 	return dict
 }
+
+/**
+ * Returns, for each structure association of the given type (e.g. "domain"),
+ * the dictionary of properties of the associated structure type.
+ */
+export function get_associated_properties_dicts(db: Database, type: StructureType) {
+	const associations = db
+		.prepare<[StructureType], { label: string; target_type: StructureType }>(
+			`SELECT label, target_type
+			FROM structure_associations
+			WHERE source_type = ?`
+		)
+		.all(type)
+
+	const dicts: Record<string, Record<string, PropertyMeta>> = {}
+
+	for (const { label, target_type } of associations) {
+		dicts[label] = get_properties_dict(db, target_type)
+	}
+
+	return dicts
+}

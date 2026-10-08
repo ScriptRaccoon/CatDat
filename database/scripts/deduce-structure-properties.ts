@@ -7,6 +7,7 @@ import { type Database } from 'better-sqlite3'
 import { deduce_properties, refute_properties } from '#shared/deduction.utils.ts'
 import { get_client } from '#shared/db.ts'
 import {
+	get_associated_properties_dicts,
 	get_properties_dict,
 	get_property_assignments,
 	type PropertyMeta
@@ -38,13 +39,14 @@ function deduce_satisfied_properties(
 	satisfied_properties: Set<string>,
 	unsatisfied_properties: Set<string>,
 	properties_dict: Record<string, PropertyMeta>,
+	associated_dicts: Record<string, Record<string, PropertyMeta>>,
 	type: StructureType
 ) {
 	const { found, proofs, stop_property } = deduce_properties(
 		satisfied_properties,
 		implications,
 		(implication) => ({
-			proof: get_proof_string(implication, properties_dict, type),
+			proof: get_proof_string(implication, properties_dict, associated_dicts, type),
 			stop: unsatisfied_properties.has(implication.conclusion)
 		}),
 		structure.associated_satisfied_properties
@@ -77,6 +79,7 @@ function deduce_unsatisfied_properties(
 	satisfied_properties: Set<string>,
 	unsatisfied_properties: Set<string>,
 	properties_dict: Record<string, PropertyMeta>,
+	associated_dicts: Record<string, Record<string, PropertyMeta>>,
 	type: StructureType
 ) {
 	const { found, proofs } = refute_properties<string>(
@@ -88,6 +91,7 @@ function deduce_unsatisfied_properties(
 				proof: get_contradiction_string(
 					implication,
 					properties_dict,
+					associated_dicts,
 					property,
 					type
 				),
@@ -200,9 +204,10 @@ function deduce_dual_properties(
 		VALUES (?, ?, ?, ?, ?, TRUE)
 	`)
 
-	const proof_satisfied = `Its dual ${type} satisfies the dual property.`
-	const proof_unsatisfied = `Its dual ${type} does not satisfy the dual property.`
-	const proof_undecidable = `The dual property is undecidable for its dual ${type}.`
+	const dual_link = `<a href="/${type}/${structure.dual}">dual ${remove_underscores(type)}</a>`
+	const proof_satisfied = `Its ${dual_link} satisfies the dual property.`
+	const proof_unsatisfied = `Its ${dual_link} does not satisfy the dual property.`
+	const proof_undecidable = `The dual property is undecidable for its ${dual_link}.`
 
 	for (const p of new_satisfied) {
 		property_insert.run(structure.id, p, type, 1, proof_satisfied)
@@ -279,7 +284,7 @@ function inherit_properties_from_parents(db: Database, type: StructureType) {
 		}
 
 		for (const [property_id, assignment] of inherited_properties) {
-			const proof = `This follows from the <a href="/${type}/${parent_id}">parent</a>.`
+			const proof = `This follows from the <a href="/${type}/${parent_id}">parent ${remove_underscores(type)}</a>.`
 			const res = property_insert.run(
 				structure_id,
 				property_id,
@@ -309,6 +314,7 @@ export function deduce_properties_for_structures(type: StructureType) {
 	const implications = get_normalized_implications(db, type)
 	const structures = get_structures(db, type)
 	const properties_dict = get_properties_dict(db, type)
+	const associated_dicts = get_associated_properties_dicts(db, type)
 	const get_assigned_properties = get_property_assignments(db, structures, type)
 
 	const deduction = db.transaction(() => {
@@ -322,6 +328,7 @@ export function deduce_properties_for_structures(type: StructureType) {
 				assigned.satisfied,
 				assigned.unsatisfied,
 				properties_dict,
+				associated_dicts,
 				type
 			)
 
@@ -332,6 +339,7 @@ export function deduce_properties_for_structures(type: StructureType) {
 				assigned.satisfied,
 				assigned.unsatisfied,
 				properties_dict,
+				associated_dicts,
 				type
 			)
 		}
@@ -368,6 +376,7 @@ export function deduce_properties_for_structures(type: StructureType) {
 				assigned.satisfied,
 				assigned.unsatisfied,
 				properties_dict,
+				associated_dicts,
 				type
 			)
 
@@ -378,6 +387,7 @@ export function deduce_properties_for_structures(type: StructureType) {
 				assigned.satisfied,
 				assigned.unsatisfied,
 				properties_dict,
+				associated_dicts,
 				type
 			)
 		}

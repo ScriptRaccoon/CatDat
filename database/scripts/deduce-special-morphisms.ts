@@ -62,7 +62,7 @@ function inherit_special_morphisms_from_parents() {
 		}
 
 		for (const [kind, entry] of inherited_morphisms) {
-			const proof = `This follows from the <a href="/category/${parent_id}">parent</a>.`
+			const proof = `This follows from the <a href="/category/${parent_id}">parent category</a>.`
 			const res = insert_special_morphism.run(
 				category_id,
 				kind,
@@ -147,7 +147,7 @@ function deduce_special_morphisms_of_dual_categories() {
                 s.dual_structure_id,
                 sm.dual,
                 sma.description,
-                'This is deduced from its dual category.',
+                'This follows from the <a href="/category/' || s.id || '">dual category</a>.',
                 TRUE
             FROM structures s
             INNER JOIN special_morphism_assignments sma ON sma.category_id = s.id
