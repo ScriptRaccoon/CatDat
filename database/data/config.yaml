@@ -52,8 +52,8 @@ morphism_property_tags:
   - misc
 
 symmetric_monoidal_category_property_tags:
-  - tensor-colimit interaction
-  - tensor-limit interaction
+  - tensor–colimit interaction
+  - tensor–limit interaction
   - degeneracy
   - misc
 
