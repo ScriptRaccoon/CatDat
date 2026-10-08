@@ -73,7 +73,7 @@
     - locally cartesian closed
   conclusions:
     - extensive
-  proof: 'The pullback functor preserves finite coproducts because it has a right adjoint. Remark: In combination with other implication, this result implies that every elementary topos is extensive.'
+  proof: 'The pullback functor preserves finite coproducts because it has a right adjoint. Remark: In combination with other implications, this result implies that every elementary topos is extensive.'
 
 - id: lcc_extensive_yields_infinitary
   assumptions:

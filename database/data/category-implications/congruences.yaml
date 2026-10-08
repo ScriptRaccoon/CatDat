@@ -64,7 +64,7 @@
     - preadditive
   conclusions:
     - quotients of congruences
-  proof: 'For any congruence $E$ on an object $X$ of a preadditive category, let $E_0$ be the kernel of $p_2 : E \to X$. The restriction of $p_1$ to $E_0$ is a monomorphism.  We can then see that $E$ must be the pullback of $p_1 - p_2 : E \to X$ and $E_0 \hookrightarrow X$.  Then the cokernel of $E_0 \hookrightarrow X$ is a quotient of $E$.'
+  proof: 'For any congruence $E$ on an object $X$ of a preadditive category, let $E_0$ be the kernel of $p_2 : E \to X$. The restriction of $p_1$ to $E_0$ is a monomorphism. We can then see that $E$ must be the pullback of $p_1 - p_2 : E \to X$ and $E_0 \hookrightarrow X$. Then the cokernel of $E_0 \hookrightarrow X$ is a quotient of $E$.'
 
 - id: core-hin_quotients
   assumptions:

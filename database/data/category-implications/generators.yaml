@@ -46,7 +46,7 @@
     - strongly connected
   conclusions:
     - generator
-  proof: We get this as a corollary of <a href="/content/generator_construction">this result.</a>
+  proof: We get this as a corollary of <a href="/content/generator_construction">this result</a>.
 
 - id: extremal_generator_via_coproduct
   assumptions:
@@ -55,7 +55,7 @@
     - strongly connected
   conclusions:
     - extremal generator
-  proof: We get this as a corollary of <a href="/content/generator_construction">this result.</a>
+  proof: We get this as a corollary of <a href="/content/generator_construction">this result</a>.
 
 - id: free-algebra-generates
   assumptions:
@@ -77,6 +77,6 @@
     $$\Ob(\C) \to \IN^S, \, X \mapsto \bigl(G \mapsto \card(\Hom(G, X))\bigr)$$
     is injective on isomorphism classes of $\Ob(\C)$. To see this, suppose two objects $X$ and $Y$ map to the same cardinality tuple. Since $\C$ is semi-strongly connected, we may assume without loss of generality that there is a morphism $f : X \to Y$. Then since $f$ is a monomorphism, for each $G \in S$ we have
     $$f \circ {-} : \Hom(G, X) \to \Hom(G, Y)$$
-    is an injective function between finite sets of equal cardinality, and therefore is also a bijection. By the assumption that $S$ is an extremal generating collection, we thus have $f$ is an isomorphism.
+    is an injective function between finite sets of equal cardinality, and therefore is also a bijection. By the assumption that $S$ is an extremal generating collection, it follows that $f$ is an isomorphism.
 
-    This shows that the collection of isomorphism classes of objects of $X$ is essentially small, i.e. isomorphic to a set. Together with the assumption that the category is locally finite, this implies the category is essentially small.
+    This shows that the collection of isomorphism classes of objects of $\C$ is essentially small, i.e. isomorphic to a set. Together with the assumption that the category is locally finite, this implies the category is essentially small.

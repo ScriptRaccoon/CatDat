@@ -13,7 +13,7 @@
     - preadditive
   conclusions:
     - finite products
-  proof: See <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician">Mac Lane</a>, VIII.2., Theorem 2.
+  proof: See <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician">Mac Lane</a>, VIII.2, Theorem 2.
 
 - id: additive_definition
   assumptions:

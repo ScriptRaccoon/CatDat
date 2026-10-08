@@ -42,7 +42,7 @@
     - one-way
   conclusions:
     - reflexive coequalizers
-  proof: 'Every reflexive pair is equal: If $f s = g s = \id$, then since $s f  = \id$ (one-way), we must have $f = s^{-1}$, and likewise $g = s^{-1}$.'
+  proof: 'The two morphisms of every reflexive pair are equal: If $f s = g s = \id$, then $s f = \id$ since the category is one-way, so we must have $f = s^{-1}$, and likewise $g = s^{-1}$.'
 
 - id: kernels_condition
   assumptions:

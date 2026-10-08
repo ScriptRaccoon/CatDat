@@ -161,7 +161,7 @@
     - thin
   conclusions:
     - powers
-  proof: This is because for non-empty set $I$ the power $X^I$ is just $X$.
+  proof: This is because for a non-empty set $I$ the power $X^I$ is just $X$.
 
 - id: thin_binary_power
   assumptions:
