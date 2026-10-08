@@ -9,9 +9,9 @@ description: >-
   To construct it, we start with the category $\C$ that has two objects $A,B$ and every set $X$ as an object. (Instead of the collection of sets, we can take any other large collection.) Apart from the identities, there are two morphisms $f,g : A \rightrightarrows B$ and, for every set $X$, a unique morphism $u_X : X \to A$ and a unique morphism $v_X : X \to B$. The composition is defined by $f \circ u_X = g \circ u_X = v_X$. There are no morphisms between distinct sets.
   $$\begin{array}{c}
   X \\[0.25ex]
-  {\raisebox{1ex}{$\scriptstyle u_X$}} \!\! \swarrow
+  {}^{u_X} \!\! \swarrow
   \qquad
-  \searrow \!\! {\raisebox{1ex}{$\scriptstyle v_X$}} \\
+  \searrow \!\! {}^{v_X} \\
   A \;\;
   \begin{array}{c}
   \xrightarrow{\quad f \quad }\\[-1.25ex]
