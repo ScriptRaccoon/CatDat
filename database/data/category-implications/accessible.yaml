@@ -33,7 +33,7 @@
     - locally finitely presentable
   conclusions:
     - exact filtered colimits
-  proof: Special case of <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adamek-Rosicky</a>, Prop. 1.59 with $\lambda = \aleph_0$.
+  proof: Special case of <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adámek–Rosický</a>, Prop. 1.59 with $\lambda = \aleph_0$.
 
 - id: finitely_accessible_stable_monos
   assumptions:
@@ -84,7 +84,7 @@
     - pushouts
   conclusions:
     - well-copowered
-  proof: See Thm. 2.49 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adamek-Rosicky</a> or Prop. 6.1.3 in <a href="https://bookstore.ams.org/conm-104">Makkai-Pare</a>.
+  proof: See Thm. 2.49 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adámek–Rosický</a> or Prop. 6.1.3 in <a href="https://bookstore.ams.org/conm-104">Makkai-Pare</a>.
 
 - id: finite_accessible
   assumptions:
@@ -100,7 +100,7 @@
     - locally presentable
   conclusions:
     - essentially small
-  proof: This follows from <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adamek-Rosicky</a>, Thm. 1.64.
+  proof: This follows from <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adámek–Rosický</a>, Thm. 1.64.
 
 - id: grothendieck_abelian_presentable
   assumptions:
@@ -119,7 +119,7 @@
     - finitary algebraic
   conclusions:
     - locally finitely presentable
-  proof: See <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adamek-Rosicky</a>, Cor. 3.7.
+  proof: See <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adámek–Rosický</a>, Cor. 3.7.
 
 - id: finitely_accessible_raise
   assumptions:
@@ -279,4 +279,4 @@
     - locally finitely multi-presentable
   conclusions:
     - filtered-colimit-stable monomorphisms
-  proof: Every locally finitely multi-presentable category is a multi-reflective full subcategory of a presheaf category closed under filtered colimits (<a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adamek-Rosicky</a>, 4.30). Since multi-reflective full subcategories are in general closed under connected limits (<a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adamek-Rosicky</a>, Thm. 4.26), in particular, we can calculate not only filtered colimits but also kernel pairs as well as in a presheaf category.
+  proof: Every locally finitely multi-presentable category is a multi-reflective full subcategory of a presheaf category closed under filtered colimits (<a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adámek–Rosický</a>, 4.30). Since multi-reflective full subcategories are in general closed under connected limits (<a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adámek–Rosický</a>, Thm. 4.26), in particular, we can calculate not only filtered colimits but also kernel pairs as well as in a presheaf category.

@@ -23,7 +23,7 @@ satisfied_properties:
     proof: There is a forgetful functor $\Pos \to \Set$ and $\Set$ is locally small.
 
   - property: locally finitely presentable
-    proof: See <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adamek-Rosicky</a>, Example 1.10.
+    proof: See <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adámek–Rosický</a>, Example 1.10.
     label: Pos_lfp
 
   - property: cartesian closed

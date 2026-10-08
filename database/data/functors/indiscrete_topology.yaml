@@ -32,7 +32,7 @@ satisfied_properties:
 
   - property: finitary
     proof: >-
-      Let $X$ be a filtered diagram of sets. We need to prove that the filtered colimit of spaces $\colim_i I(X_i)$ is indiscrete. If $X_i$ is empty for all $i$, this is trivial. Otherwise, by considering a coslice of the index category, we may assume that every $X_i$ is non-empty. A topological space $Y$ is indiscrete iff there are at most two continuous maps $Y \to S$, where $S$ is the Sierpinski space; there are exactly two when $Y$ is non-empty. We have
+      Let $X$ be a filtered diagram of sets. We need to prove that the filtered colimit of spaces $\colim_i I(X_i)$ is indiscrete. If $X_i$ is empty for all $i$, this is trivial. Otherwise, by considering a coslice of the index category, we may assume that every $X_i$ is non-empty. A topological space $Y$ is indiscrete iff there are at most two continuous maps $Y \to S$, where $S$ is the Sierpiński space; there are exactly two when $Y$ is non-empty. We have
       $$\textstyle \Hom(\colim_i I(X_i),S) \cong \lim_i \Hom(I(X_i),S) \cong \lim_i \{\varnothing, X_i\}.$$
       For every $i \to j$ the map $I(X_i) \to I(X_j)$ pulls back $\varnothing \mapsto \varnothing$ and $X_j \mapsto X_i$. Thus, the limit has exactly two elements.
 
