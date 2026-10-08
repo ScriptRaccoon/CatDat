@@ -15,7 +15,7 @@
   conclusions:
     - equalizers
     - products
-  proof: See <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, V.2, Thm. 2.
+  proof: See <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician">Mac Lane</a>, V.2, Thm. 2.
   is_equivalence: true
 
 - id: finitely_complete_characterization
@@ -24,7 +24,7 @@
   conclusions:
     - equalizers
     - finite products
-  proof: See <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, V.2, Cor. 1.
+  proof: See <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician">Mac Lane</a>, V.2, Cor. 1.
   is_equivalence: true
 
 - id: complete_criterion
@@ -33,7 +33,7 @@
     - wide pullbacks
   conclusions:
     - complete
-  proof: See the <a href="https://ncatlab.org/nlab/show/wide+pullback" target="_blank">nLab</a>.
+  proof: See the <a href="https://ncatlab.org/nlab/show/wide+pullback">nLab</a>.
 
 - id: multi-complete_generalize_limits
   assumptions:

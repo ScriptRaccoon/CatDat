@@ -31,7 +31,7 @@ satisfied_properties:
     proof: For every algebraic category the forgetful functor to the category of sets preserves filtered colimits.
 
   - property: preserves reflexive coequalizers
-    proof: This follows from Theorem 2.5 at the <a href="https://ncatlab.org/nlab/show/reflexive+coequalizer" target="_blank">nLab</a>.
+    proof: This follows from Theorem 2.5 at the <a href="https://ncatlab.org/nlab/show/reflexive+coequalizer">nLab</a>.
 
 unsatisfied_properties:
   - property: essentially injective

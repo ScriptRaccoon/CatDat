@@ -41,7 +41,7 @@
   conclusions:
     - disjoint finite coproducts
     - strict initial object
-  proof: These are Prop. 2.6 and 2.8 in <a href="https://doi.org/10.1016/0022-4049(93)90035-R" target="_blank">Introduction to extensive and distributive categories</a> by Carboni-Lack-Walters.
+  proof: These are Prop. 2.6 and 2.8 in <a href="https://doi.org/10.1016/0022-4049(93)90035-R">Introduction to extensive and distributive categories</a> by Carboni-Lack-Walters.
 
 - id: extensive_distributivity
   assumptions:
@@ -49,7 +49,7 @@
     - finite products
   conclusions:
     - distributive
-  proof: This is Prop. 4.5 in <a href="https://doi.org/10.1016/0022-4049(93)90035-R" target="_blank">Introduction to extensive and distributive categories</a> by Carboni-Lack-Walters.
+  proof: This is Prop. 4.5 in <a href="https://doi.org/10.1016/0022-4049(93)90035-R">Introduction to extensive and distributive categories</a> by Carboni-Lack-Walters.
 
 - id: infinitary_extensive_distributivity
   assumptions:
@@ -57,7 +57,7 @@
     - finite products
   conclusions:
     - infinitary distributive
-  proof: One can adjust the proof of Prop. 4.5 in <a href="https://doi.org/10.1016/0022-4049(93)90035-R" target="_blank">Introduction to extensive and distributive categories</a> by Carboni-Lack-Walters (which deals with the finite case).
+  proof: One can adjust the proof of Prop. 4.5 in <a href="https://doi.org/10.1016/0022-4049(93)90035-R">Introduction to extensive and distributive categories</a> by Carboni-Lack-Walters (which deals with the finite case).
 
 - id: countably_extensive_distributivity
   assumptions:
@@ -65,7 +65,7 @@
     - finite products
   conclusions:
     - countably distributive
-  proof: One can adjust the proof of Prop. 4.5 in <a href="https://doi.org/10.1016/0022-4049(93)90035-R" target="_blank">Introduction to extensive and distributive categories</a> by Carboni-Lack-Walters (which deals with the finite case).
+  proof: One can adjust the proof of Prop. 4.5 in <a href="https://doi.org/10.1016/0022-4049(93)90035-R">Introduction to extensive and distributive categories</a> by Carboni-Lack-Walters (which deals with the finite case).
 
 - id: lcc_implies_extensive
   assumptions:
@@ -82,4 +82,4 @@
     - locally cartesian closed
   conclusions:
     - infinitary extensive
-  proof: The pullback functor preserves coproducts because it has a right adjoint. See also Remark 2.6 at the <a href="https://ncatlab.org/nlab/show/extensive+category" target="_blank">nLab</a>.
+  proof: The pullback functor preserves coproducts because it has a right adjoint. See also Remark 2.6 at the <a href="https://ncatlab.org/nlab/show/extensive+category">nLab</a>.

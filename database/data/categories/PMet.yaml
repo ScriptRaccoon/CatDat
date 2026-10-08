@@ -41,7 +41,7 @@ satisfied_properties:
     check_redundancy: false
 
   - property: coequalizers
-    proof: See <a href="https://mathoverflow.net/questions/123739" target="_blank">MO/123739</a>.
+    proof: See <a href="https://mathoverflow.net/questions/123739">MO/123739</a>.
 
   - property: filtered colimits
     proof: 'Given a filtered diagram $(X_i)$ of pseudo-metric spaces, take the filtered colimit $X$ of the underlying sets with the following pseudo-metric: If $x,y \in X$, let $d(x,y)$ be infimum of all $d(x_i,y_i)$, where $x_i,y_i \in X_i$ are some preimages of $x,y$ in some $X_i$. The definition ensures that each $X_i \to X$ is non-expansive, and the universal property is easy to check.'
@@ -105,16 +105,16 @@ unsatisfied_properties:
     proof: 'Let $d : \IR \times \IR \to \IR_{\geq 0}$ be the usual Euclidean metric on $\IR$ and $0 : \IR \times \IR \to \IR_{\geq 0}$ be the zero pseudo-metric. Then the identity map $(\IR,d) \to (\IR,0)$ provides a counterexample.'
 
   - property: cartesian closed
-    proof: This is proven in <a href="https://math.stackexchange.com/questions/5131457" target="_blank">MSE/5131457</a>.
+    proof: This is proven in <a href="https://math.stackexchange.com/questions/5131457">MSE/5131457</a>.
 
   - property: countable powers
     proof: 'Assume that the power $P = \IR^{\IN}$ exists, where $\IR$ has the usual (pseudo-)metric. Since the forgetful functor $\PMet \to \Set$ is representable, it preserves limits, powers in particular. Thus, we may assume that $P$ is the set of sequences of numbers and that the projections $p_n : P \to \IR$ are given by $p_n(x) = x_n$. Now consider the sequences $x = (n)_n$ and $y = (0)_n$. Since each $p_n$ is non-expansive, we get $d(x,y) \geq d(p_n(x),p_n(y)) = d(n,0) = n$. But then $d(x,y) = \infty$, a contradiction.'
 
   - property: binary copowers
-    proof: The coproduct of two non-empty pseudo-metric spaces does not exist, see <a href="https://math.stackexchange.com/questions/1778408" target="_blank">MSE/1778408</a> (the proof also works for pseudo-metric spaces). For example, the copower $\IR \sqcup \IR$ does not exist. We only get coproducts when allowing $\infty$ as a distance.
+    proof: The coproduct of two non-empty pseudo-metric spaces does not exist, see <a href="https://math.stackexchange.com/questions/1778408">MSE/1778408</a> (the proof also works for pseudo-metric spaces). For example, the copower $\IR \sqcup \IR$ does not exist. We only get coproducts when allowing $\infty$ as a distance.
 
   - property: natural numbers object
-    proof: By Lemma 2 <a href="/content/natural_numbers_objects">here</a>, if $(N,z,s)$ is a natural numbers object, then $N \cong 1 \sqcup N$. Since there is a map $1 \to N$, we have $N \neq \varnothing$. However, the coproduct of two non-empty pseudo-metric spaces does not exist, see <a href="https://math.stackexchange.com/questions/1778408" target="_blank">MSE/1778408</a>.
+    proof: By Lemma 2 <a href="/content/natural_numbers_objects">here</a>, if $(N,z,s)$ is a natural numbers object, then $N \cong 1 \sqcup N$. Since there is a map $1 \to N$, we have $N \neq \varnothing$. However, the coproduct of two non-empty pseudo-metric spaces does not exist, see <a href="https://math.stackexchange.com/questions/1778408">MSE/1778408</a>.
 
   - property: effective cocongruences
     proof: 'The proof is similar to the one for <a href="/category/Top">$\Top$</a>: Equip a two-point set with the zero metric; this pseudo-metric space represents the functor taking a pseudo-metric space to the pairs of points with $d(x,y) = 0$. In this case, once you conclude $Z = \varnothing$, the map $h : Z \to 1$ does not have any cokernel pair, since that would have to be a coproduct $1+1$, which does not exist.'
@@ -122,7 +122,7 @@ unsatisfied_properties:
       - Top_no_effective_cocongruences
 
   - property: regular
-    proof: 'We can adapt Example 3.14 at the <a href="https://ncatlab.org/nlab/show/regular+category" target="_blank">nLab</a> (which disproves regularity for $\Pos$ and related categories) as follows: Consider the subspaces $X = \{0,1,2,3\}$ and $Y = \{0,1,2\}$ of $\IR$ with the usual metric. Define a surjective map $p : X \to Y$ by $p(0)=0$, $p(1)=p(2)=1$, and $p(3)=2$. Clearly, $p$ is non-expansive. Moreover, one can check that $p$ satisfies the universal property in $\PMet$ of a coequalizer of the two maps $1,2 : \{\ast\} \rightrightarrows X$. Thus, $p$ is a regular epimorphism. Now consider the subspace $Z = \{0,2\}$ of $Y$. As a set, the pullback $X \times_Y Z$ is $p^*(Z) = \{0,3\}$. Using the definition of the product metric, one can verify that $d(0,3) = 3$ in this pullback. The projection $X \times_Y Z \to Z$ identifies with the evident bijective and non-expansive map $\{0,3\} \to \{0,2\}$. It is a monomorphism and not an isomorphism (the distances do not match), hence cannot be a regular epimorphism.'
+    proof: 'We can adapt Example 3.14 at the <a href="https://ncatlab.org/nlab/show/regular+category">nLab</a> (which disproves regularity for $\Pos$ and related categories) as follows: Consider the subspaces $X = \{0,1,2,3\}$ and $Y = \{0,1,2\}$ of $\IR$ with the usual metric. Define a surjective map $p : X \to Y$ by $p(0)=0$, $p(1)=p(2)=1$, and $p(3)=2$. Clearly, $p$ is non-expansive. Moreover, one can check that $p$ satisfies the universal property in $\PMet$ of a coequalizer of the two maps $1,2 : \{\ast\} \rightrightarrows X$. Thus, $p$ is a regular epimorphism. Now consider the subspace $Z = \{0,2\}$ of $Y$. As a set, the pullback $X \times_Y Z$ is $p^*(Z) = \{0,3\}$. Using the definition of the product metric, one can verify that $d(0,3) = 3$ in this pullback. The projection $X \times_Y Z \to Z$ identifies with the evident bijective and non-expansive map $\{0,3\} \to \{0,2\}$. It is a monomorphism and not an isomorphism (the distances do not match), hence cannot be a regular epimorphism.'
     label: PMet_not_regular
 
 special_objects:
@@ -150,4 +150,4 @@ special_morphisms:
   regular epimorphisms:
     description: >-
       surjective non-expansive maps $f : X \to Y$ with the property that for all $x,x' \in X$, $d(p(x),p(x'))$ is the infimum of the sums $\sum_{i=0}^{n-1} d(y_i,x_{i+1})$, where $x=x_0$, $x_i \sim y_i$ for $0 \leq i \leq n$, and $y_n = x'$.
-    proof: This follows from the construction of the quotient pseudo-metric on $X/{\sim}$ in <a href="https://mathoverflow.net/questions/123739" target="_blank">MO/123739</a>.
+    proof: This follows from the construction of the quotient pseudo-metric on $X/{\sim}$ in <a href="https://mathoverflow.net/questions/123739">MO/123739</a>.

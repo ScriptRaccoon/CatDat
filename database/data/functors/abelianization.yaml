@@ -30,7 +30,7 @@ unsatisfied_properties:
     proof: Both the inclusion $A_3 \hookrightarrow S_3$ and the trivial homomorphism $A_3 \to S_3$ are mapped to the trivial homomorphism $A_3 \to C_2$.
 
   - property: full
-    proof: See <a href="https://math.stackexchange.com/questions/716686" target="_blank">MSE/716686</a>.
+    proof: See <a href="https://math.stackexchange.com/questions/716686">MSE/716686</a>.
 
   - property: preserves monomorphisms
     proof: The monomorphism $A_3 \hookrightarrow S_3$ is mapped to the trivial homomorphism $A_3 \to C_2$.

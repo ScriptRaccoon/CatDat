@@ -60,9 +60,9 @@ unsatisfied_properties:
 
   - property: effective cocongruences
     proof: >-
-      The proof is similar to <a href="/category/Mon">$\Mon$</a>, i.e. we adapt the counterexample from <a href="https://mathoverflow.net/a/510809" target="_blank">MO/510744</a>. Namely, consider the semigroups
+      The proof is similar to <a href="/category/Mon">$\Mon$</a>, i.e. we adapt the counterexample from <a href="https://mathoverflow.net/a/510809">MO/510744</a>. Namely, consider the semigroups
       $$\begin{align*} X & \coloneqq \langle p \mid p^2 = p \rangle,\\ E & \coloneqq \langle p, q \mid p^2 = p,\, q^2 = q,\, pq = q,\, qp = p \rangle, \end{align*}$$
-      whose underlying sets are $\{p\}$ and $\{p,q\}$, respectively. Then $X$ represents the functor sending a semigroup $A$ to its idempotents, and $E$ represents the relation on idempotents $a, b$ of $A$ that $ab = b$, $ba = a$. It is easy to check that this defines an equivalence relation (see <a href="https://mathoverflow.net/a/510809" target="_blank">MO/510744</a> for details). Since $p \ne q$ in $E$, the equalizer of the two maps $X \rightrightarrows E$ is the empty semigroup. Therefore, if $E$ were effective, it would be isomorphic to the coproduct $X \sqcup X$, whose underlying set consists of non-empty words in $p,q$ with $p,q$ strictly alternating. In particular, in this coproduct, $pq \ne q$.
+      whose underlying sets are $\{p\}$ and $\{p,q\}$, respectively. Then $X$ represents the functor sending a semigroup $A$ to its idempotents, and $E$ represents the relation on idempotents $a, b$ of $A$ that $ab = b$, $ba = a$. It is easy to check that this defines an equivalence relation (see <a href="https://mathoverflow.net/a/510809">MO/510744</a> for details). Since $p \ne q$ in $E$, the equalizer of the two maps $X \rightrightarrows E$ is the empty semigroup. Therefore, if $E$ were effective, it would be isomorphic to the coproduct $X \sqcup X$, whose underlying set consists of non-empty words in $p,q$ with $p,q$ strictly alternating. In particular, in this coproduct, $pq \ne q$.
     references:
       - Mon_no_effective_cocongruences
 
@@ -121,4 +121,4 @@ special_objects:
 special_morphisms:
   epimorphisms:
     description: 'A semigroup homomorphism $f : T \to S$ is an epimorphism iff $S$ equals the <i>dominion</i> of $U \coloneqq f(T) \subseteq S$, meaning that for every $s \in S$ we have $s \in U$ or there are $u_1,\dotsc,u_{m+1} \in U$, $v_1,\dotsc,v_m \in U$, $x_1,\dotsc,x_m \in S$ and $y_1,\dotsc,y_m \in S$ such that $s = x_1 u_1$, $u_1 = v_1 y_1$, $x_{i-1} v_{i-1} = x_i u_i$, $u_i y_{i-1} = v_i y_i$, $x_m v_m = u_{m+1}$ and $u_{m+1} y_m = s$.'
-    proof: This is <a href="https://en.wikipedia.org/wiki/Isbell's_zigzag_theorem" target="_blank">Isbell's zigzag theorem</a>, see references there.
+    proof: This is <a href="https://en.wikipedia.org/wiki/Isbell's_zigzag_theorem">Isbell's zigzag theorem</a>, see references there.

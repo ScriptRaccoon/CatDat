@@ -4,7 +4,7 @@
     - fully faithful
   conclusions:
     - equivalence
-  proof: This is standard, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. IV, Theorem 4.1.
+  proof: This is standard, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician">Mac Lane</a>, Ch. IV, Theorem 4.1.
   is_equivalence: true
 
 - id: equivalence_invertible

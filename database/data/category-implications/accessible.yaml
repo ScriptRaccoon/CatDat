@@ -33,7 +33,7 @@
     - locally finitely presentable
   conclusions:
     - exact filtered colimits
-  proof: Special case of <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>, Prop. 1.59 with $\lambda = \aleph_0$.
+  proof: Special case of <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adamek-Rosicky</a>, Prop. 1.59 with $\lambda = \aleph_0$.
 
 - id: finitely_accessible_stable_monos
   assumptions:
@@ -69,14 +69,14 @@
     - accessible
   conclusions:
     - well-powered
-  proof: See <a href="https://ncatlab.org/nlab/show/accessible+category#wellpoweredness_and_wellcopoweredness" target="_blank">nLab</a>.
+  proof: See <a href="https://ncatlab.org/nlab/show/accessible+category#wellpoweredness_and_wellcopoweredness">nLab</a>.
 
 - id: accessible_locally_small
   assumptions:
     - accessible
   conclusions:
     - locally essentially small
-  proof: See the proof of Prop. 2.1.5 in <a href="https://bookstore.ams.org/conm-104" target="_blank">Makkai-Pare</a>.
+  proof: See the proof of Prop. 2.1.5 in <a href="https://bookstore.ams.org/conm-104">Makkai-Pare</a>.
 
 - id: accessible_well-copowered
   assumptions:
@@ -84,7 +84,7 @@
     - pushouts
   conclusions:
     - well-copowered
-  proof: See Thm. 2.49 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a> or Prop. 6.1.3 in <a href="https://bookstore.ams.org/conm-104" target="_blank">Makkai-Pare</a>.
+  proof: See Thm. 2.49 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adamek-Rosicky</a> or Prop. 6.1.3 in <a href="https://bookstore.ams.org/conm-104">Makkai-Pare</a>.
 
 - id: finite_accessible
   assumptions:
@@ -92,7 +92,7 @@
     - essentially finite
   conclusions:
     - finitely accessible
-  proof: See <a href="https://mathoverflow.net/questions/509853" target="_blank">MO/509853</a>, where it is in fact shown that the ind-completion of any finite Cauchy-complete category becomes itself.
+  proof: See <a href="https://mathoverflow.net/questions/509853">MO/509853</a>, where it is in fact shown that the ind-completion of any finite Cauchy-complete category becomes itself.
 
 - id: locally_presentable_essentially_small
   assumptions:
@@ -100,7 +100,7 @@
     - locally presentable
   conclusions:
     - essentially small
-  proof: This follows from <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>, Thm. 1.64.
+  proof: This follows from <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adamek-Rosicky</a>, Thm. 1.64.
 
 - id: grothendieck_abelian_presentable
   assumptions:
@@ -109,7 +109,7 @@
   conclusions:
     - locally presentable
   proof: >-
-    See <a href="https://arxiv.org/abs/1409.7051" target="_blank">Deriving Auslander's formula</a>, Cor. 5.2, or <a href="https://arxiv.org/abs/math/0102087" target="_blank">Sheafifiable homotopy model categories</a>, Prop. 3.10.
+    See <a href="https://arxiv.org/abs/1409.7051">Deriving Auslander's formula</a>, Cor. 5.2, or <a href="https://arxiv.org/abs/math/0102087">Sheafifiable homotopy model categories</a>, Prop. 3.10.
 
 
     Remark: The assumption that the category is locally essentially small is necessary (and is implicit in most of the literature), as the example $\Ab^I$ for large $I$ shows (see <a href="/category/Ab_family">here</a>).
@@ -119,14 +119,14 @@
     - finitary algebraic
   conclusions:
     - locally finitely presentable
-  proof: See <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>, Cor. 3.7.
+  proof: See <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adamek-Rosicky</a>, Cor. 3.7.
 
 - id: finitely_accessible_raise
   assumptions:
     - finitely accessible
   conclusions:
     - ℵ₁-accessible
-  proof: This is because any regular cardinal is strictly smaller than its successor cardinal. See <a href="https://ncatlab.org/nlab/show/sharply+smaller+cardinal" target="_blank">nLab</a>.
+  proof: This is because any regular cardinal is strictly smaller than its successor cardinal. See <a href="https://ncatlab.org/nlab/show/sharply+smaller+cardinal">nLab</a>.
 
 - id: countably_accessible_special_case
   assumptions:
@@ -148,7 +148,7 @@
     - accessible
   conclusions:
     - Cauchy complete
-  proof: This is because the walking idempotent is $\kappa$-filtered for any regular cardinal $\kappa$. See also <a href="https://bookstore.ams.org/conm-104" target="_blank">Makkai-Pare</a>, Prop. 2.2.1.
+  proof: This is because the walking idempotent is $\kappa$-filtered for any regular cardinal $\kappa$. See also <a href="https://bookstore.ams.org/conm-104">Makkai-Pare</a>, Prop. 2.2.1.
 
 - id: small_accessible_characterization
   assumptions:
@@ -156,7 +156,7 @@
     - essentially small
   conclusions:
     - accessible
-  proof: See <a href="https://bookstore.ams.org/conm-104" target="_blank">Makkai-Pare</a>, Thm. 2.2.2.
+  proof: See <a href="https://bookstore.ams.org/conm-104">Makkai-Pare</a>, Thm. 2.2.2.
 
 - id: countably_accessible_criterion
   assumptions:
@@ -166,7 +166,7 @@
   conclusions:
     - ℵ₁-accessible
   proof: >-
-    The proof is similar to Thm. 2.2.2 in <a href="https://bookstore.ams.org/conm-104" target="_blank">Makkai-Pare</a> (which only establishes $\aleph_2$-accessibility) and to <a href="https://mathoverflow.net/questions/509853" target="_blank">MO/509853</a> (which concerns $\aleph_0$-accessibility in the finite case).
+    The proof is similar to Thm. 2.2.2 in <a href="https://bookstore.ams.org/conm-104">Makkai-Pare</a> (which only establishes $\aleph_2$-accessibility) and to <a href="https://mathoverflow.net/questions/509853">MO/509853</a> (which concerns $\aleph_0$-accessibility in the finite case).
 
 
     Let $\C$ be a category that is locally finite, essentially countable, and Cauchy complete. By replacing $\C$ with an equivalent category if necessary, we may assume that it is countable and that all Hom-sets are finite <i>sets</i>. Let $\I$ be an $\aleph_1$-filtered category and let $D : \I \to \C$ be a diagram. We will prove that the colimit of $D$ exists and is a retract of some $D(i)$, in fact for arbitrarily large $i$. (Note that one cannot in general prove that it is isomorphic to some $D(i)$; this is false.) It follows that $\aleph_1$-filtered colimits exist and that every object of $\C$ is $\aleph_1$-presentable.
@@ -279,4 +279,4 @@
     - locally finitely multi-presentable
   conclusions:
     - filtered-colimit-stable monomorphisms
-  proof: Every locally finitely multi-presentable category is a multi-reflective full subcategory of a presheaf category closed under filtered colimits (<a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>, 4.30). Since multi-reflective full subcategories are in general closed under connected limits (<a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>, Thm. 4.26), in particular, we can calculate not only filtered colimits but also kernel pairs as well as in a presheaf category.
+  proof: Every locally finitely multi-presentable category is a multi-reflective full subcategory of a presheaf category closed under filtered colimits (<a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adamek-Rosicky</a>, 4.30). Since multi-reflective full subcategories are in general closed under connected limits (<a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adamek-Rosicky</a>, Thm. 4.26), in particular, we can calculate not only filtered colimits but also kernel pairs as well as in a presheaf category.

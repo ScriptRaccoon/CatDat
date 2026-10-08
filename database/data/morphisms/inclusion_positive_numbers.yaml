@@ -14,11 +14,11 @@ related: []
 
 satisfied_properties:
   - property: extremal monomorphism
-    proof: See <a href="https://math.stackexchange.com/a/5146482" target="_blank">MSE/5146052</a>.
+    proof: See <a href="https://math.stackexchange.com/a/5146482">MSE/5146052</a>.
 
 unsatisfied_properties:
   - property: strong monomorphism
-    proof: See <a href="https://math.stackexchange.com/a/5146482" target="_blank">MSE/5146052</a>.
+    proof: See <a href="https://math.stackexchange.com/a/5146482">MSE/5146052</a>.
 
   - property: constant
     proof: The underlying map of sets is not constant, so that the claim follows from Lemma 2 <a href="/content/constant_morphisms">here</a>.

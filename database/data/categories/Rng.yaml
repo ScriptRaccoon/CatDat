@@ -31,7 +31,7 @@ satisfied_properties:
     proof: The zero ring is a zero object.
 
   - property: Malcev
-    proof: This follows in the same way as for <a href="/category/Grp">$\Grp$</a>, see also Example 2.2.5 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>.
+    proof: This follows in the same way as for <a href="/category/Grp">$\Grp$</a>, see also Example 2.2.5 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories">Malcev, protomodular, homological and semi-abelian categories</a>.
     references:
       - Grp_malcev
 
@@ -59,7 +59,7 @@ unsatisfied_properties:
       is not a monomorphism since $\IZ\langle X,Y \rangle_0$ is not commutative.
 
   - property: CSP
-    proof: Assume that $\coprod_n \IZ \to \prod_n \IZ$ is an epimorphism in $\Rng$. Then $((\coprod_n \IZ)^+)^{\ab} \to \prod_n \IZ$ would be an epimorphism in $\CRing$, where $(-)^+$ denotes the unitalization and $(-)^{\ab}$ the abelianization. But if $R \to S$ is an epimorphism of commutative rings, then $\card(S) \leq \card(R)$ by <a href="https://stacks.math.columbia.edu/tag/04W0" target="_blank">SP/04W0</a>. Since $((\coprod_n \IZ)^+)^{\ab}$ is countable and $\prod_n \IZ$ is not, we get a contradiction.
+    proof: Assume that $\coprod_n \IZ \to \prod_n \IZ$ is an epimorphism in $\Rng$. Then $((\coprod_n \IZ)^+)^{\ab} \to \prod_n \IZ$ would be an epimorphism in $\CRing$, where $(-)^+$ denotes the unitalization and $(-)^{\ab}$ the abelianization. But if $R \to S$ is an epimorphism of commutative rings, then $\card(S) \leq \card(R)$ by <a href="https://stacks.math.columbia.edu/tag/04W0">SP/04W0</a>. Since $((\coprod_n \IZ)^+)^{\ab}$ is countable and $\prod_n \IZ$ is not, we get a contradiction.
 
   - property: coregular
     proof: 'We can copy the proof for <a href="/category/Ring">$\Ring$</a>, i.e. the proof for <a href="/category/Alg(R)">$\Alg(R)$</a>. In short, the inclusion of diagonal matrices $\IQ^2 \hookrightarrow M_2(\IQ)$ is a regular monomorphism, but becomes zero after taking the pushout with $p_1 : \IQ^2 \twoheadrightarrow \IQ$ because $M_2(\IQ)$ is simple.'
@@ -67,7 +67,7 @@ unsatisfied_properties:
       - Alg(R)_not_coregular
 
   - property: regular quotient object classifier
-    proof: 'Assume that $\Rng$ has a regular quotient object classifier $P$. Consider the functor $N : \Ab \to \Rng$ that equips an abelian group with zero multiplication. It is fully faithful and has a left adjoint mapping a rng $R$ to the abelian group $R/R^2$. If $R$ is a rng with zero multiplication and $R \to S$ is a surjective homomorphism, then $S$ has zero multiplication. Therefore, the assumptions of Lemma 1 <a href="/content/subcategories">here</a> (dualized) apply and we conclude that $P/P^2$ is a regular quotient object classifier of $\Ab$. But we already know that <a href="/category/Ab">$\Ab$</a> has no such object (in fact, the only additive categories with such an object are trivial by <a href="https://math.stackexchange.com/questions/4086192" target="_blank">MSE/4086192</a>).'
+    proof: 'Assume that $\Rng$ has a regular quotient object classifier $P$. Consider the functor $N : \Ab \to \Rng$ that equips an abelian group with zero multiplication. It is fully faithful and has a left adjoint mapping a rng $R$ to the abelian group $R/R^2$. If $R$ is a rng with zero multiplication and $R \to S$ is a surjective homomorphism, then $S$ has zero multiplication. Therefore, the assumptions of Lemma 1 <a href="/content/subcategories">here</a> (dualized) apply and we conclude that $P/P^2$ is a regular quotient object classifier of $\Ab$. But we already know that <a href="/category/Ab">$\Ab$</a> has no such object (in fact, the only additive categories with such an object are trivial by <a href="https://math.stackexchange.com/questions/4086192">MSE/4086192</a>).'
 
   - property: cocartesian cofiltered limits
     proof: >-
@@ -80,7 +80,7 @@ unsatisfied_properties:
 
   - property: effective cocongruences
     proof: >-
-      The counterexample is similar to the one at <a href="https://mathoverflow.net/a/510809" target="_blank">MO/510744</a> for $\Ring$: in this case,
+      The counterexample is similar to the one at <a href="https://mathoverflow.net/a/510809">MO/510744</a> for $\Ring$: in this case,
       $$X \coloneqq \langle p \mid p^2 = p \rangle_{\Rng} \cong \IZ$$
       and
       $$E \coloneqq \langle p, q \mid p^2 = p, q^2 = q, pq = q, qp = p \rangle_{\Rng} \cong \begin{pmatrix} \IZ & \IZ \\ 0 & 0 \end{pmatrix}$$
@@ -94,7 +94,7 @@ special_objects:
   terminal object:
     description: zero ring
   coproducts:
-    description: see <a href="https://math.stackexchange.com/questions/4975797" target="_blank">MSE/4975797</a>
+    description: see <a href="https://math.stackexchange.com/questions/4975797">MSE/4975797</a>
   products:
     description: direct products with pointwise operations
 

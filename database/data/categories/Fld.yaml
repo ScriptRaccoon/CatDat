@@ -14,7 +14,7 @@ related:
   - Fld_0
 
 comments:
-  - Limits and colimits are discussed in <a href="https://math.stackexchange.com/questions/359352" target="_blank">MSE/359352</a>.
+  - Limits and colimits are discussed in <a href="https://math.stackexchange.com/questions/359352">MSE/359352</a>.
 
 satisfied_properties:
   - property: locally small
@@ -30,7 +30,7 @@ satisfied_properties:
     proof: Epimorphisms are the purely inseparable field extensions (see below). If $K \to L$ is purely inseparable, then for every $x \in L$ there is some $n \in \IN$ such that $x^n \in K$. An element of $K$ has at most $n$ $n$th roots. Hence, we can bound the cardinality of $L$.
 
   - property: multi-algebraic
-    proof: Example 4.3(1) in <a href="http://www.tac.mta.ca/tac/volumes/8/n3/8-03abs.html" target="_blank">[AR01]</a> presents an FPC-sketch that models fields.
+    proof: Example 4.3(1) in <a href="http://www.tac.mta.ca/tac/volumes/8/n3/8-03abs.html">[AR01]</a> presents an FPC-sketch that models fields.
 
 unsatisfied_properties:
   - property: skeletal
@@ -59,7 +59,7 @@ unsatisfied_properties:
     label: Fld_no_cogenerating_collection
 
   - property: binary powers
-    proof: 'Assume that the product $P \coloneqq \IQ(\sqrt{2}) \times \IQ(\sqrt{2})$ exists. This field is isomorphic to a subfield of $\IQ(\sqrt{2})$, hence $P \cong \IQ$ or $P \cong \IQ(\sqrt{2})$. In the first case, the two projections $P \rightrightarrows \IQ(\sqrt{2})$ must be equal, which means that every two homomorphisms $K \rightrightarrows \IQ(\sqrt{2})$ are equal, which is absurd (take $K = \IQ(\sqrt{2})$ and its two automorphisms). In the second case, the projections induce for every field $K$ a bijection $\Hom(K,\IQ(\sqrt{2})) \cong \Hom(K,\IQ(\sqrt{2}))^2$, which, however, fails for $K = \IQ(\sqrt{2})$: the left-hand side has $2$ elements, while the right-hand side has $4$ elements. A more general result about products in $\Fld$ can be found at <a href="https://math.stackexchange.com/questions/359352" target="_blank">MSE/359352</a>.'
+    proof: 'Assume that the product $P \coloneqq \IQ(\sqrt{2}) \times \IQ(\sqrt{2})$ exists. This field is isomorphic to a subfield of $\IQ(\sqrt{2})$, hence $P \cong \IQ$ or $P \cong \IQ(\sqrt{2})$. In the first case, the two projections $P \rightrightarrows \IQ(\sqrt{2})$ must be equal, which means that every two homomorphisms $K \rightrightarrows \IQ(\sqrt{2})$ are equal, which is absurd (take $K = \IQ(\sqrt{2})$ and its two automorphisms). In the second case, the projections induce for every field $K$ a bijection $\Hom(K,\IQ(\sqrt{2})) \cong \Hom(K,\IQ(\sqrt{2}))^2$, which, however, fails for $K = \IQ(\sqrt{2})$: the left-hand side has $2$ elements, while the right-hand side has $4$ elements. A more general result about products in $\Fld$ can be found at <a href="https://math.stackexchange.com/questions/359352">MSE/359352</a>.'
     label: Fld_no_binary_powers
 
   - property: locally cartesian closed
@@ -84,7 +84,7 @@ special_morphisms:
     proof: It is a full subcategory of $\CRing$, for which we know that isomorphisms are bijective homomorphisms.
   epimorphisms:
     description: purely inseparable homomorphisms
-    proof: See <a href="https://math.stackexchange.com/questions/687869" target="_blank">MSE/687869</a>.
+    proof: See <a href="https://math.stackexchange.com/questions/687869">MSE/687869</a>.
   regular monomorphisms:
-    description: A Galois extension is a regular monomorphism iff it is procyclic, and the general case can be reduced to this situation; see <a href="https://math.stackexchange.com/questions/5129895" target="_blank">MSE/5129895</a> for details.
-    proof: See <a href="https://math.stackexchange.com/questions/5129895" target="_blank">MSE/5129895</a>.
+    description: A Galois extension is a regular monomorphism iff it is procyclic, and the general case can be reduced to this situation; see <a href="https://math.stackexchange.com/questions/5129895">MSE/5129895</a> for details.
+    proof: See <a href="https://math.stackexchange.com/questions/5129895">MSE/5129895</a>.

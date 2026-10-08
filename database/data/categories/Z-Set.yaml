@@ -22,7 +22,7 @@ satisfied_properties: []
 
 unsatisfied_properties:
   - property: semi-strongly connected
-    proof: In general, if $G$ is a group and $H,K$ are subgroups of $G$, then there is a morphism of $G$-sets $G/H \to G/K$ if and only if $H$ is contained in a conjugate of $K$. In particular, if $G$ is abelian, this requires $H \subseteq K$. Thus, if $G$ is an abelian group with two subgroups that are not contained in each other, $G{-}\Set$ is not semi-strongly connected. The additive group $\IZ$ has this property; for instance, consider $2\IZ$ and $3\IZ$. See also <a href="https://math.stackexchange.com/questions/5129804" target="_blank">MSE/5129804</a>.
+    proof: In general, if $G$ is a group and $H,K$ are subgroups of $G$, then there is a morphism of $G$-sets $G/H \to G/K$ if and only if $H$ is contained in a conjugate of $K$. In particular, if $G$ is abelian, this requires $H \subseteq K$. Thus, if $G$ is an abelian group with two subgroups that are not contained in each other, $G{-}\Set$ is not semi-strongly connected. The additive group $\IZ$ has this property; for instance, consider $2\IZ$ and $3\IZ$. See also <a href="https://math.stackexchange.com/questions/5129804">MSE/5129804</a>.
     label: Z-Set_not_semi-strongly_connected
 
 special_objects: {}

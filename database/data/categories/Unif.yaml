@@ -3,7 +3,7 @@ name: category of uniform spaces
 notation: $\Unif$
 objects: uniform spaces
 morphisms: uniform maps
-description: A <i>uniform space</i> consists of a set equipped with a uniform structure, which is a collection of relations called <i>entourages</i> satisfying certain axioms; we refer to <a href="https://en.wikipedia.org/wiki/Uniform_space" target="_blank">Wikipedia</a> for the complete definition. A <i>uniform map</i> or <i>uniformly continuous map</i> is a map whose preimages of entourages are entourages. We do not assume uniform spaces to be separated. In particular, every pseudo-metric induces a uniform structure.
+description: A <i>uniform space</i> consists of a set equipped with a uniform structure, which is a collection of relations called <i>entourages</i> satisfying certain axioms; we refer to <a href="https://en.wikipedia.org/wiki/Uniform_space">Wikipedia</a> for the complete definition. A <i>uniform map</i> or <i>uniformly continuous map</i> is a map whose preimages of entourages are entourages. We do not assume uniform spaces to be separated. In particular, every pseudo-metric induces a uniform structure.
 nlab_link: https://ncatlab.org/nlab/show/uniform+space
 tags:
   - topology

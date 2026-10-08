@@ -28,14 +28,14 @@ satisfied_properties:
     proof: Take the one-sorted algebraic theory of a group.
 
   - property: mono-regular
-    proof: See Prop. 4.2 at the <a href="https://ncatlab.org/nlab/show/regular+monomorphism#Examples" target="_blank">nLab</a>.
+    proof: See Prop. 4.2 at the <a href="https://ncatlab.org/nlab/show/regular+monomorphism#Examples">nLab</a>.
 
   - property: conormal
     proof: Since epimorphisms are surjective (see below), this is the first isomorphism theorem for groups.
 
   - property: Malcev
     proof: >-
-      See Example 2.2.4 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>.
+      See Example 2.2.4 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories">Malcev, protomodular, homological and semi-abelian categories</a>.
       Alternatively, here is a direct proof: let $G$ be a group and let $U \subseteq G^2$ be a subgroup containing the diagonal. Then $N \coloneqq \{g \in G : (g,1) \in U\}$ is clearly a subgroup of $G$. It is a normal subgroup because, if $g \in N$ and $h \in G$, then $U$ contains $(h,h) (g,1) (h,h)^{-1} = (h g h^{-1},1)$, i.e. $h g h^{-1} \in N$. Moreover, $U$ contains $(g,g')$ if and only if it contains $(g,g') (g',g')^{-1} = (g g'^{-1},1)$, i.e. $g g'^{-1} \in N$. This means that $U$ is the congruence induced by the normal subgroup $N \subseteq G$ and is therefore transitive and symmetric.
     label: Grp_malcev
 
@@ -63,7 +63,7 @@ unsatisfied_properties:
     label: Grp_no_cogenerator
 
   - property: coregular
-    proof: This is because injective group homomorphisms are not stable under pushouts, see e.g. <a href="https://math.stackexchange.com/questions/601463/" target="_blank">MSE/601463</a> or <a href="https://math.stackexchange.com/questions/5088032" target="_blank">MSE/5088032</a>.
+    proof: This is because injective group homomorphisms are not stable under pushouts, see e.g. <a href="https://math.stackexchange.com/questions/601463/">MSE/601463</a> or <a href="https://math.stackexchange.com/questions/5088032">MSE/5088032</a>.
 
   - property: counital
     proof: The canonical morphism $F_2 = \IZ \sqcup \IZ \to \IZ \times \IZ$ is not a monomorphism since $F_2$ is not abelian.

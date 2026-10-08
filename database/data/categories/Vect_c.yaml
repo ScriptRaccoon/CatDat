@@ -50,7 +50,7 @@ unsatisfied_properties:
       Since the set $\{c_i : i \in I\}$ is linearly independent and has cardinality $\aleph_1$, $C$ cannot have countable dimension.
 
   - property: countable powers
-    proof: First, the inclusion functor $\Vect^\c_K \hookrightarrow \Vect_K$ is continuous since the forgetful functor $\Vect_K \to \Set$ is continuous and conservative, while the forgetful functor $\Vect^\c_K \to \Set$ is representable and hence continuous. Thus, it suffices to show that $\Vect^\c_K$ is not closed under countable powers in $\Vect_K$. Specifically, we will show that $K^{\IN}$ does not have countable dimension. If it did, it would be isomorphic to $V \coloneqq K^{\oplus \IN}$. But then $V^* \cong V$, which contradicts <a href="https://mathoverflow.net/questions/13322" target="_blank">MO/13322</a>.
+    proof: First, the inclusion functor $\Vect^\c_K \hookrightarrow \Vect_K$ is continuous since the forgetful functor $\Vect_K \to \Set$ is continuous and conservative, while the forgetful functor $\Vect^\c_K \to \Set$ is representable and hence continuous. Thus, it suffices to show that $\Vect^\c_K$ is not closed under countable powers in $\Vect_K$. Specifically, we will show that $K^{\IN}$ does not have countable dimension. If it did, it would be isomorphic to $V \coloneqq K^{\oplus \IN}$. But then $V^* \cong V$, which contradicts <a href="https://mathoverflow.net/questions/13322">MO/13322</a>.
     label: Vect_c_continuous_inclusion
 
   - property: ℵ₁-cofiltered limits

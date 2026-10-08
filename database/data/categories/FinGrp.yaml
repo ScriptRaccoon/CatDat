@@ -33,19 +33,19 @@ satisfied_properties:
     proof: The quotient group of a finite group is still finite.
 
   - property: mono-regular
-    proof: See Prop. 4.2 at the <a href="https://ncatlab.org/nlab/show/regular+monomorphism#Examples" target="_blank">nLab</a>. The proof also works for finite groups.
+    proof: See Prop. 4.2 at the <a href="https://ncatlab.org/nlab/show/regular+monomorphism#Examples">nLab</a>. The proof also works for finite groups.
 
   - property: conormal
     proof: Since epimorphisms are surjective (see below), this is the first isomorphism theorem for finite groups.
 
   - property: Malcev
-    proof: A direct argument is possible, but this can also be derived from the observation that $\FinGrp$ is the category of group objects in $(\FinSet,\times)$ and Example 2.2.16 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>.
+    proof: A direct argument is possible, but this can also be derived from the observation that $\FinGrp$ is the category of group objects in $(\FinSet,\times)$ and Example 2.2.16 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories">Malcev, protomodular, homological and semi-abelian categories</a>.
 
   - property: effective congruences
-    proof: 'Suppose we have a congruence $f, g : E \rightrightarrows X$ in $\FinGrp$. Since the embedding $\FinGrp \hookrightarrow \Grp$ preserves finite limits, it is also a congruence in $\Grp$. We already know that <a href="/category/Grp">$\Grp$</a> has effective congruences since it is algebraic. Using <a href="/content/effective-congruence-quotients">this result</a>, we see that $E$ is the kernel pair of $X \to (X/E)_{\Grp}$ in $\Grp$. Also, the quotient $(X/E)_{\Grp}$ is finite; and the forgetful functor $\FinGrp \to \Grp$ is fully faithful <a href="https://ncatlab.org/nlab/show/reflected+limit#FullSubcategoryInclusionReflectCoLimits" target="_blank">and therefore reflects limits</a>. Thus, we conclude that $E$ is the kernel pair of $X \to (X/E)_{\Grp}$ in $\FinGrp$ as well.'
+    proof: 'Suppose we have a congruence $f, g : E \rightrightarrows X$ in $\FinGrp$. Since the embedding $\FinGrp \hookrightarrow \Grp$ preserves finite limits, it is also a congruence in $\Grp$. We already know that <a href="/category/Grp">$\Grp$</a> has effective congruences since it is algebraic. Using <a href="/content/effective-congruence-quotients">this result</a>, we see that $E$ is the kernel pair of $X \to (X/E)_{\Grp}$ in $\Grp$. Also, the quotient $(X/E)_{\Grp}$ is finite; and the forgetful functor $\FinGrp \to \Grp$ is fully faithful <a href="https://ncatlab.org/nlab/show/reflected+limit#FullSubcategoryInclusionReflectCoLimits">and therefore reflects limits</a>. Thus, we conclude that $E$ is the kernel pair of $X \to (X/E)_{\Grp}$ in $\FinGrp$ as well.'
 
   - property: effective cocongruences
-    proof: 'A proof can be found in <a href="https://mathoverflow.net/questions/511516" target="_blank">MO/511516</a>. It even shows that every cocongruence in $\FinGrp$ is trivial. In short, the proof goes like this: We know that <a href="/category/Grp">$\Grp$</a> has effective cocongruences. Using the fact that amalgamated sums of finite groups are residually finite, one can can show that every cocongruence in $\FinGrp$ is also a cocongruence in $\Grp$.'
+    proof: 'A proof can be found in <a href="https://mathoverflow.net/questions/511516">MO/511516</a>. It even shows that every cocongruence in $\FinGrp$ is trivial. In short, the proof goes like this: We know that <a href="/category/Grp">$\Grp$</a> has effective cocongruences. Using the fact that amalgamated sums of finite groups are residually finite, one can can show that every cocongruence in $\FinGrp$ is also a cocongruence in $\Grp$.'
 
   - property: regular
     proof: This follows from Lemma 7 <a href="/content/subcategories">here</a> applied to the inclusion functor $\FinGrp \hookrightarrow \Grp$ into the regular category $\Grp$ and the description of regular epimorphisms below.

@@ -5,7 +5,7 @@ description: >-
 
   In a locally essentially small category with products, it is also equivalent to the condition that the canonical morphism
   $$\textstyle A \to \prod_{f\in\Hom(A,Q)} Q$$
-  is an extremal monomorphism for every object $A$, explaining the terminology (see Prop. 5.3 at the <a href="https://ncatlab.org/nlab/show/separator" target="_blank">nLab</a>).
+  is an extremal monomorphism for every object $A$, explaining the terminology (see Prop. 5.3 at the <a href="https://ncatlab.org/nlab/show/separator">nLab</a>).
 
   By definition, $Q$ is an extremal cogenerator if and only if $\{Q\}$ is an <a href="/category-property/extremal_cogenerating_collection">extremal cogenerating collection</a>.
 nlab_link: https://ncatlab.org/nlab/show/separator

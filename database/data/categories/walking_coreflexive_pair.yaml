@@ -6,7 +6,7 @@ morphisms: 'the identities, two morphisms $i,j : [0] \rightrightarrows [1]$, a m
 description: >-
   This category is equal to the truncated simplex category $\Delta^{\leq 1}$, i.e. the full subcategory of $\Delta$ spanned by $[0] = \{0\}$ and $[1] = \{0 < 1\}$; this also explains our notation of the category and its objects.
   $$[0] \begin{array}{c} \xhookrightarrow{~~i~~} \\ \xtwoheadleftarrow{~~p~~} \\ \xhookrightarrow{~~j~~} \end{array} [1]$$
-  The morphisms $i,j$ are the two inclusions, $p$ is their unique retraction, and $ip,jp : [1] \rightrightarrows [1]$ are the two constant maps. The name of this category comes from the fact that a functor $\Delta^{\leq 1} \to \C$ is the same as a <a href="https://ncatlab.org/nlab/show/reflexive+pair" target="_blank">coreflexive pair</a> in $\C$. Its dual is therefore the walking reflexive pair.
+  The morphisms $i,j$ are the two inclusions, $p$ is their unique retraction, and $ip,jp : [1] \rightrightarrows [1]$ are the two constant maps. The name of this category comes from the fact that a functor $\Delta^{\leq 1} \to \C$ is the same as a <a href="https://ncatlab.org/nlab/show/reflexive+pair">coreflexive pair</a> in $\C$. Its dual is therefore the walking reflexive pair.
 nlab_link: null
 tags:
   - category theory
@@ -61,7 +61,7 @@ satisfied_properties:
       - Delta_cosifted
 
   - property: generalized variety
-    proof: This actually holds for every truncated simplex category $\Delta^{\leq n}$. See <a href="https://mathoverflow.net/questions/510760" target="_blank">MO/510760</a> for a proof that sifted colimits exist. See <a href="https://mathoverflow.net/questions/510827" target="_blank">MO/510827</a> for a proof that every object is strongly finitely presentable.
+    proof: This actually holds for every truncated simplex category $\Delta^{\leq n}$. See <a href="https://mathoverflow.net/questions/510760">MO/510760</a> for a proof that sifted colimits exist. See <a href="https://mathoverflow.net/questions/510827">MO/510827</a> for a proof that every object is strongly finitely presentable.
 
 unsatisfied_properties:
   - property: cofiltered

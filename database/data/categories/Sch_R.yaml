@@ -16,9 +16,9 @@ related:
   - Z
 
 comments:
-  - Monomorphisms are discussed at <a href="https://mathoverflow.net/questions/56591" target="_blank">MO/56591</a>. At least the case of morphisms of locally finite type is understood.
-  - Regular monomorphisms are discussed at <a href="https://mathoverflow.net/questions/66279" target="_blank">MO/66279</a>.
-  - Epimorphisms are discussed at <a href="https://mathoverflow.net/questions/56564" target="_blank">MO/56564</a>. Probably they cannot be classified.
+  - Monomorphisms are discussed at <a href="https://mathoverflow.net/questions/56591">MO/56591</a>. At least the case of morphisms of locally finite type is understood.
+  - Regular monomorphisms are discussed at <a href="https://mathoverflow.net/questions/66279">MO/66279</a>.
+  - Epimorphisms are discussed at <a href="https://mathoverflow.net/questions/56564">MO/56564</a>. Probably they cannot be classified.
 
 satisfied_properties:
   - property: locally small
@@ -34,7 +34,7 @@ satisfied_properties:
     proof: This is because <a href="/category/LRS_R">$\LRS_R$</a> is concretizable.
 
   - property: well-powered
-    proof: See <a href="https://mathoverflow.net/questions/160681" target="_blank">MO/160681</a>.
+    proof: See <a href="https://mathoverflow.net/questions/160681">MO/160681</a>.
 
   - property: infinitary extensive
     proof: This follows from Lemma 11 <a href="/content/subcategories">here</a> since <a href="/category/LRS_R">$\LRS_R$</a> is infinitary extensive and its full subcategory $\Sch_R$ is closed under pullbacks and coproducts in $\LRS_R$.
@@ -47,7 +47,7 @@ unsatisfied_properties:
     proof: Choose a residue field $K$ of $R$. The canonical morphism $$\Spec(K[X]/X \times K[X,X^{-1}]) \longrightarrow \Spec(K[X])$$ is a mono- and an epimorphism, but no isomorphism.
 
   - property: countable powers
-    proof: While all diagrams of affine schemes have a limit in the category of schemes, one can show that an infinite product of quasi-compact non-empty schemes only exists when almost all of them are affine, see <a href="https://mathoverflow.net/questions/65506" target="_blank">MO/65506</a>. Thus, for example the power $(\IP^1_R)^{\IN}$ does not exist.
+    proof: While all diagrams of affine schemes have a limit in the category of schemes, one can show that an infinite product of quasi-compact non-empty schemes only exists when almost all of them are affine, see <a href="https://mathoverflow.net/questions/65506">MO/65506</a>. Thus, for example the power $(\IP^1_R)^{\IN}$ does not exist.
 
   - property: Malcev
     proof: Consider the subscheme $V(x-y) \cup V(y) \subseteq \IA^2_R$. It contains the diagonal but it is not symmetric.
@@ -59,10 +59,10 @@ unsatisfied_properties:
     proof: If $S$ is a generating collection of $R$-schemes, then the collection of affine opens of the schemes in $S$ would also be a generating collection. This is then also a generating collection of the category of affine $R$-schemes, corresponding to a cogenerating collection of <a href="/category/CAlg(R)">$\CAlg(R)$</a>, which we know does not exist.
 
   - property: cokernel pairs
-    proof: Choose a residue field $K$ of $R$. Then the span $\IA^1_K \leftarrow \Spec(K(t)) \rightarrow \IA^1_K$ has no pushout; see <a href="https://mathoverflow.net/questions/9961" target="_blank">MO/9961</a>.
+    proof: Choose a residue field $K$ of $R$. Then the span $\IA^1_K \leftarrow \Spec(K(t)) \rightarrow \IA^1_K$ has no pushout; see <a href="https://mathoverflow.net/questions/9961">MO/9961</a>.
 
   - property: sequential colimits
-    proof: It is shown in <a href="https://mathoverflow.net/questions/511944" target="_blank">MO/511944</a> that the diagram $$\IA^1_R \hookrightarrow \IA^2_R \hookrightarrow \IA^3_R \hookrightarrow \cdots$$ has no colimit.
+    proof: It is shown in <a href="https://mathoverflow.net/questions/511944">MO/511944</a> that the diagram $$\IA^1_R \hookrightarrow \IA^2_R \hookrightarrow \IA^3_R \hookrightarrow \cdots$$ has no colimit.
 
   - property: coequalizers of kernel pairs
     proof: >-
@@ -72,7 +72,7 @@ unsatisfied_properties:
       \downarrow & \swarrow & & \\[1ex]
       \IA^\infty_R, &&&
       \end{array}$$
-      where $\IA^n_R = \Spec(R[X_1,\dotsc,X_n])$ and $\IA^\infty_R = \Spec(R[X_1,X_2,\dotsc])$. By <a href="https://mathoverflow.net/questions/511944" target="_blank">MO/511944</a>, the sequence $\IA^1_R \hookrightarrow \IA^2_R \hookrightarrow \cdots$ has no colimit. Moreover, we already know that $\Sch_R$ is infinitary extensive. Hence, Lemma 2 <a href="/content/monic_sequential_colimits">here</a> implies that $\Sch_R$ does not have coequalizers of kernel pairs. Specifically, the kernel pair of $\coprod_{n \geq 0} \IA^n_R \to \IA^\infty_R$ has no coequalizer.
+      where $\IA^n_R = \Spec(R[X_1,\dotsc,X_n])$ and $\IA^\infty_R = \Spec(R[X_1,X_2,\dotsc])$. By <a href="https://mathoverflow.net/questions/511944">MO/511944</a>, the sequence $\IA^1_R \hookrightarrow \IA^2_R \hookrightarrow \cdots$ has no colimit. Moreover, we already know that $\Sch_R$ is infinitary extensive. Hence, Lemma 2 <a href="/content/monic_sequential_colimits">here</a> implies that $\Sch_R$ does not have coequalizers of kernel pairs. Specifically, the kernel pair of $\coprod_{n \geq 0} \IA^n_R \to \IA^\infty_R$ has no coequalizer.
 
 special_objects:
   initial object:
