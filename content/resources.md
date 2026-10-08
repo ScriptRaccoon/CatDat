@@ -13,4 +13,4 @@ This is an (incomplete) list of resources on category theory.
 - [Category theory Zulip server](https://categorytheory.zulipchat.com)
 - [n-Café](https://golem.ph.utexas.edu/category/)
 - [Mathematics › category theory](https://math.stackexchange.com/questions/tagged/category-theory)
-- [Mathoverflow › category theory](https://mathoverflow.net/questions/tagged/ct.category-theory)
+- [MathOverflow › category theory](https://mathoverflow.net/questions/tagged/ct.category-theory)

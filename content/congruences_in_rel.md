@@ -54,7 +54,7 @@ To show this, let $e\in E$, and suppose that $i_*(\{ e \}) = (S, T)$. Then $i_*(
 $$\textstyle i_*(\{ e, s_0(e) \}) = (S \cup T, S\cup T) = i_*\bigl(\bigcup_{x\in S\cup T} r_*(\{ x \})\bigr).$$
 It follows that
 $$\textstyle\bigcup_{x\in S\cup T} r_*(\{ x \}) = \{ e, s_0(e) \}.$$
-Therefore, $e \in r_*(\{ x \})$ for some $x \in X$, and by claims 2 and 3, we get the desired conclusion.
+Therefore, $e \in r_*(\{ x \})$ for some $x \in X$, and by Claims 2 and 3, we get the desired conclusion.
 
 ::: Claim 5
 For any $S, T \in P(X)$, $S \sim T$ if and only if $S\cap A = T\cap A$, where $A$ is the set of $x\in X$ such that $\{ x \} \not\sim \varnothing$.
@@ -62,7 +62,7 @@ For any $S, T \in P(X)$, $S \sim T$ if and only if $S\cap A = T\cap A$, where $A
 
 For the forward direction, suppose $(S, T) = i_*(U)$ for $U \subseteq E$. Then
 $$\textstyle (S, T) = \bigcup_{e\in U} i_*(\{ e \}).$$
-The set $i_*(\{ e \})$ satisfies the relation of having equal intersections with $A$ for each $e\in E$ in any case from claim 4; and this relation respects unions. For the reverse implication, whenever $x\notin A$, we have $\{ x \} \sim \varnothing$. Therefore, since
+The set $i_*(\{ e \})$ satisfies the relation of having equal intersections with $A$ for each $e\in E$ in any case from Claim 4; and this relation respects unions. For the reverse implication, whenever $x\notin A$, we have $\{ x \} \sim \varnothing$. Therefore, since
 $$\textstyle S = (S \cap A) \cup \bigcup_{x\in S \setminus A} \{ x \},$$
 we must have
 $$\textstyle S \sim (S \cap A) \cup \bigcup_{x\in S \setminus A} \varnothing = S \cap A.$$

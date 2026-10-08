@@ -20,5 +20,5 @@ In an elementary topos with a generator, every subterminal object is either init
 :::
 
 ::: Proof
-An elementary topos satisfies all the conditions of the lemma; and it is also mono-regular so that every subterminal object is automatically regular subterminal.
+An elementary topos satisfies all the conditions of the lemma; and it is also mono-regular, so that every subterminal object is automatically regular subterminal.
 :::
