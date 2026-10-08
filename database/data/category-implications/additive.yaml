@@ -70,7 +70,6 @@
   proof: >-
     See <a href="https://ncatlab.org/nlab/show/Categories+and+Sheaves">Kashiwara-Schapira</a>, Thm. 9.6.3.
 
-
     Remark: The assumption that the category is locally essentially small is necessary (and is implicit in most of the literature), as the example $[\On,\Ab]$ shows (see <a href="/category/TransSeqAb">here</a>).
 
 - id: additive_CIP_CSP
@@ -87,7 +86,6 @@
     is a monomorphism and an epimorphism, and therefore an isomorphism. In particular, for every object $A$ the canonical morphism
     $$\textstyle \alpha : \coprod_{n \geq 1} A \to \prod_{n \geq 1} A$$
     is an isomorphism. By <a href="/content/infinite-products-coproducts-additive-categories">this proposition</a>, this implies that $A = 0$.
-
 
     Remark: This result strengthens the well-known theorem (and is inspired by it) stating that the dual of a Grothendieck abelian category can only be Grothendieck abelian when it is trivial, which appears as exercise B on p. 116 in Freyd's book <i>Abelian categories</i>. This follows from the result we have just proved since a Grothendieck abelian category with products is additive, balanced, and satisfies CIP (by <a href="/category-implication/CIP_criterion">this result</a>).
 

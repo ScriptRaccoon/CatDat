@@ -43,11 +43,9 @@ satisfied_properties:
     proof: >-
       The proof is similar to <a href="/category/BN">$B\IN$</a>. Let $\I$ be an $\aleph_1$-filtered small category and $D : \I \to B\OnColl$ a diagram. A cocone $\lambda = (\lambda_i)_{i \in \I}$ for $D$ is a family of ordinals satisfying $\lambda_i = \lambda_j + D(f)$ for every morphism $f: i \to j$ in $\I$.
 
-
       We first observe that $D$ factors uniquely through the preorder reflection of $\I$. Indeed, any two parallel morphisms in $\I$ are coequalized by some morphism, and $B\OnColl$ is left cancellative. Thus, we may assume that $\I$ is a preordered set. Each inequality $i \leq j$ in $\I$ is mapped to an ordinal number $\alpha_{i,j} \coloneqq D(i \to j)$, and these numbers satisfy
       $$\alpha_{i,k} = \alpha_{j,k} + \alpha_{i,j}$$
       for all $i \leq j \leq k$. In particular, $\alpha_{i,j} \leq \alpha_{i,k}$.
-
 
       For fixed $i \in \I$, the collection $\{\alpha_{i,j} : j \geq i\}$ is a set of ordinals because $\I$ is small, hence bounded above in $\OnColl$. We claim that it has a maximum element. Otherwise, we can find a countable chain $i = j_0 \leq j_1 \leq j_2 \leq \dotsc$ in $\I$ such that $\alpha_{i,j_n} < \alpha_{i,j_{n+1}}$ for all $n \in \IN$. Since $\I$ is $\aleph_1$-filtered, there is an upper bound $j_\infty \in \I$ of $(j_n)_{n \in \IN}$. For each $n \in \IN$, the equation
       $$\alpha_{i,j_{n+1}} = \alpha_{j_n,j_{n+1}} + \alpha_{i,j_n}$$
@@ -74,7 +72,6 @@ satisfied_properties:
       and
       $$\lambda_i = \lambda_j + \alpha_{i,j} = \kappa + \alpha_{i,j} = \kappa + u_i.$$
       This proves the existence of the mediating morphism.
-
 
       For uniqueness, suppose $\kappa'$ is any ordinal satisfying $\lambda_i = \kappa' + u_i$ for all $i \in \I$. Evaluating at $i_0$ yields
       $$\lambda_{i_0} = \kappa' + u_{i_0} = \kappa' + 0 = \kappa',$$

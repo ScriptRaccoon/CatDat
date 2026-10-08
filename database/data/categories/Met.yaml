@@ -98,7 +98,6 @@ satisfied_properties:
       $$\varphi : X \to \IR_+,\, x \mapsto d(y, f(x)).$$
       By the assumption on $f$, there exists a non-expansive map $\psi : Y \to \IR_+$ such that $\psi \circ f = \varphi$. However, since $\psi$ (seen as a function with codomain $\IR$) and $d(y, {-})$ are two continuous functions $Y \to \IR$ which agree on the dense subset $f(X)$, they must be the same function. Thus, $\psi(y) = d(y, y) = 0$, giving a contradiction.
 
-
       Note: $\IR$ is not an extremal cogenerator. This is because for example the non-isomorphism $(0, 1) \hookrightarrow [0, 1]$ induces a bijection $\Hom([0, 1], \IR) \to \Hom((0, 1), \IR)$. To see this, suppose we have a non-expansive map $f : (0, 1) \to \IR$. Then since $f$ is uniformly continuous in particular, it is well known that $\lim_{x\to 0^+} f(x)$ and $\lim_{x\to 1^-} f(x)$ both exist and are finite. If we extend $f$ with these values at 0 and 1 respectively, then it is straightforward to check that the resulting function is still non-expansive. This shows that $\Hom([0, 1], \IR) \to \Hom((0, 1), \IR)$ is surjective; and since $(0, 1) \hookrightarrow [0, 1]$ is an epimorphism, $\Hom([0, 1], \IR) \to \Hom((0, 1), \IR)$ is also injective. (The same proof also shows that $\IR_{\ge 0}$ is not an extremal cogenerator.)
     label: Met_extremal_cogenerator
 

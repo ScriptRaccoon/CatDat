@@ -179,7 +179,6 @@
   proof: >-
     Let $\C,\D$ be categories with biproducts, and let $F : \C \to \D$ be a functor preserving finite coproducts. In particular, $F$ preserves the zero object. Since zero morphisms are precisely the morphisms that factor through the zero object, $F$ preserves zero morphisms.
 
-
     Let $A,B \in \C$ be objects with coproduct injections $i_A : A \to A \sqcup B$ and $i_B : B \to A \sqcup B$. Since $\C$ has biproducts, there are projections $p_A : A \sqcup B \to A$ and $p_B : A \sqcup B \to B$ satisfying:
     $$\begin{align*}
     p_A i_A &= \id_A\\
