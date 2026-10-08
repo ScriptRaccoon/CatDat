@@ -48,7 +48,7 @@ satisfied_properties:
     proof: In fact, every small diagram has a cocone. Simply take the colimit in <a href="/category/Pos">$\Pos$</a> and then map it to $\{0 < 1\}$ via a constant map.
 
   - property: cokernel pairs
-    proof: Let $P \to Q$ be an order-preserving map between posets without isolated points. We show that the poset $Q \sqcup_P Q$, constructed as the poset reflection of the pushout in $\PreOrd$, also has no isolated points. Notice that the inclusion maps $Q \twoheadrightarrow Q \sqcup_P Q$ are injective because the codiagonal $Q \sqcup_P Q \to Q$ provides a retraction. Every point in $Q \sqcup_P Q$ lies in the image of one of the two inclusion maps. Let us say that it comes from a point $q \in Q$ in the first copy. Since $q$ is not isolated, it is comparable to a point $q' \in Q$ distinct from $q$. Since the inclusion map into $Q \sqcup_P Q$ is injective, the images of $q$ and $q'$ are also distinct, and of course they are still comparable.
+    proof: Let $P \to Q$ be an order-preserving map between posets without isolated points. We show that the poset $Q \sqcup_P Q$, constructed as the poset reflection of the pushout in $\PreOrd$, also has no isolated points. Notice that the inclusion maps $Q \rightrightarrows Q \sqcup_P Q$ are injective because the codiagonal $Q \sqcup_P Q \to Q$ provides a retraction. Every point in $Q \sqcup_P Q$ lies in the image of one of the two inclusion maps. Let us say that it comes from a point $q \in Q$ in the first copy. Since $q$ is not isolated, it is comparable to a point $q' \in Q$ distinct from $q$. Since the inclusion map into $Q \sqcup_P Q$ is injective, the images of $q$ and $q'$ are also distinct, and of course they are still comparable.
 
 unsatisfied_properties:
   - property: skeletal

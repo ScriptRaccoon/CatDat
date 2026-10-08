@@ -44,7 +44,7 @@ satisfied_properties:
     proof: See <a href="https://mathoverflow.net/questions/123739">MO/123739</a>.
 
   - property: filtered colimits
-    proof: 'Given a filtered diagram $(X_i)$ of pseudo-metric spaces, take the filtered colimit $X$ of the underlying sets with the following pseudo-metric: If $x,y \in X$, let $d(x,y)$ be infimum of all $d(x_i,y_i)$, where $x_i,y_i \in X_i$ are some preimages of $x,y$ in some $X_i$. The definition ensures that each $X_i \to X$ is non-expansive, and the universal property is easy to check.'
+    proof: 'Given a filtered diagram $(X_i)$ of pseudo-metric spaces, take the filtered colimit $X$ of the underlying sets with the following pseudo-metric: If $x,y \in X$, let $d(x,y)$ be the infimum of all $d(x_i,y_i)$, where $x_i,y_i \in X_i$ are some preimages of $x,y$ in some $X_i$. The definition ensures that each $X_i \to X$ is non-expansive, and the universal property is easy to check.'
     check_redundancy: false
 
   - property: exact filtered colimits
@@ -65,7 +65,7 @@ satisfied_properties:
     proof: >-
       The proof will be similar to the one for <a href="/category/Met">$\Met$</a>. Namely, let $G$ be the set $\IR_{\ge 0} \sqcup \{ 0' \}$, equipped with the metric where $d(x,y) = 0$ if $x=y$ and otherwise $d(x,y) = x+y$ for $x, y \in \IR_{\ge 0}$, and $d(x, 0') = d(0', x) = x$ for $x \in \IR_{\ge 0}$. We will show $G$ is an extremal generator for $\PMet$.
 
-      First, to see $G$ is a generator, note that the one-point metric space is a generator since it represents the forgetful functor $\PMet\to \Set$ which is faithful. Since we have an epimorphism $! : G \twoheadrightarrow 1$, then $G$ is also a generator.
+      First, to see $G$ is a generator, note that the one-point metric space is a generator since it represents the forgetful functor $\PMet\to \Set$ which is faithful. Since we have an epimorphism $! : G \twoheadrightarrow 1$, $G$ is also a generator.
 
       Now, suppose that $f : X \to Y$ is a non-expansive map of pseudo-metric spaces such that $f \circ {-} : \Hom(G, X) \to \Hom(G, Y)$ is a bijection. By considering constant maps from $G$, we see that $f$ is a bijection on underlying sets. Now suppose we have $x_1, x_2 \in X$ with $d(f(x_1), f(x_2)) = \varepsilon \ge 0$. Then there is a non-expansive map $\varphi : G \to Y$ which maps $\varepsilon$ to $f(x_2)$ and every other element of $G$ to $f(x_1)$. Therefore, there is a non-expansive map $\psi : G \to X$ such that $\varphi = f \circ \psi$. Since $f$ is injective on underlying sets, we must have $\psi(\varepsilon) = x_2$ and $\psi(0') = x_1$. Hence,
       $$\begin{align*}
@@ -111,10 +111,10 @@ unsatisfied_properties:
     proof: 'Assume that the power $P = \IR^{\IN}$ exists, where $\IR$ has the usual (pseudo-)metric. Since the forgetful functor $\PMet \to \Set$ is representable, it preserves limits, powers in particular. Thus, we may assume that $P$ is the set of sequences of numbers and that the projections $p_n : P \to \IR$ are given by $p_n(x) = x_n$. Now consider the sequences $x = (n)_n$ and $y = (0)_n$. Since each $p_n$ is non-expansive, we get $d(x,y) \geq d(p_n(x),p_n(y)) = d(n,0) = n$. But then $d(x,y) = \infty$, a contradiction.'
 
   - property: binary copowers
-    proof: The coproduct of two non-empty pseudo-metric spaces does not exist, see <a href="https://math.stackexchange.com/questions/1778408">MSE/1778408</a> (the proof also works for pseudo-metric spaces). For example, the copower $\IR \sqcup \IR$ does not exist. We only get coproducts when allowing $\infty$ as a distance.
+    proof: The coproduct of two non-empty pseudo-metric spaces does not exist; see <a href="https://math.stackexchange.com/questions/1778408">MSE/1778408</a> (the proof also works for pseudo-metric spaces). For example, the copower $\IR \sqcup \IR$ does not exist. We only get coproducts when allowing $\infty$ as a distance.
 
   - property: natural numbers object
-    proof: By Lemma 2 <a href="/content/natural_numbers_objects">here</a>, if $(N,z,s)$ is a natural numbers object, then $N \cong 1 \sqcup N$. Since there is a map $1 \to N$, we have $N \neq \varnothing$. However, the coproduct of two non-empty pseudo-metric spaces does not exist, see <a href="https://math.stackexchange.com/questions/1778408">MSE/1778408</a>.
+    proof: By Lemma 2 <a href="/content/natural_numbers_objects">here</a>, if $(N,z,s)$ is a natural numbers object, then $N \cong 1 \sqcup N$. Since there is a map $1 \to N$, we have $N \neq \varnothing$. However, the coproduct of two non-empty pseudo-metric spaces does not exist; see <a href="https://math.stackexchange.com/questions/1778408">MSE/1778408</a>.
 
   - property: effective cocongruences
     proof: 'The proof is similar to the one for <a href="/category/Top">$\Top$</a>: Equip a two-point set with the zero metric; this pseudo-metric space represents the functor taking a pseudo-metric space to the pairs of points with $d(x,y) = 0$. In this case, once you conclude $Z = \varnothing$, the map $h : Z \to 1$ does not have any cokernel pair, since that would have to be a coproduct $1+1$, which does not exist.'
@@ -149,5 +149,5 @@ special_morphisms:
     proof: 'Equalizers are injective isometric maps by construction. Conversely, if $X \hookrightarrow Y$ is an injective isometric map, we may assume without loss of generality that it is the inclusion of an isometric subspace. Then it is the equalizer of the two non-expansive maps $\chi_X, 1 : Y \rightrightarrows \Omega$, where $\Omega = (\{0,1\},0)$ is equipped with the zero pseudo-metric.'
   regular epimorphisms:
     description: >-
-      surjective non-expansive maps $f : X \to Y$ with the property that for all $x,x' \in X$, $d(p(x),p(x'))$ is the infimum of the sums $\sum_{i=0}^{n-1} d(y_i,x_{i+1})$, where $x=x_0$, $x_i \sim y_i$ for $0 \leq i \leq n$, and $y_n = x'$.
+      surjective non-expansive maps $f : X \to Y$ with the property that for all $x,x' \in X$, $d(f(x),f(x'))$ is the infimum of the sums $\sum_{i=0}^{n-1} d(y_i,x_{i+1})$, where $x=x_0$, $x_i \sim y_i$ for $0 \leq i \leq n$, and $y_n = x'$.
     proof: This follows from the construction of the quotient pseudo-metric on $X/{\sim}$ in <a href="https://mathoverflow.net/questions/123739">MO/123739</a>.

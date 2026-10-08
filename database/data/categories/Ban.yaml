@@ -3,7 +3,7 @@ name: category of Banach spaces with linear contractions
 notation: $\Ban$
 objects: Banach spaces over $\IC$
 morphisms: linear contractions, i.e. linear maps of norm $\leq 1$
-description: The choice of morphisms is similar to that of $\Met$ which yields better categorical properties.
+description: The choice of morphisms is similar to that of $\Met$, which yields better categorical properties.
 nlab_link: https://ncatlab.org/nlab/show/Banach+space
 keywords:
   - complete normed space
@@ -44,7 +44,7 @@ satisfied_properties:
 
   - property: extremal cogenerator
     proof: >-
-      The Hahn-Banach theorem implies that $\IC$ is a cogenerator. We claim that it is in fact an extremal cogenerator. Thus, suppose $f : X \to Y$ is a morphism such that ${-} \circ f : \Hom(Y, \IC) \to \Hom(X, \IC)$ is bijective on the underlying sets. Then for any non-zero $x \in X$, by the Hahn-Banach theorem, there exists $\varphi \in X^*$ such that $|\varphi| = 1$ and $\varphi(x) = |x|$. Since $|\varphi| = 1$, we see that $\varphi$ is a morphism $X \to \IC$ in $\Ban$; so by the assumption, there exists a morphism $\psi : Y \to \IC$ such that $\varphi = \psi \circ f$. Therefore, $|x| = |\psi(f(x))| \le |f(x)|$; and conversely, since $f$ is a morphism, $|f(x)| \le |x|$. On the other hand, if $x = 0$, then certainly $|f(x)| = |x| = 0$. This shows that $f$ is isometric and therefore a regular monomorphism (see below). On the other hand, since $\IC$ is a cogenerator and ${-} \circ f$ is injective, we have $f$ is also an epimorphism. Hence, $f$ is an isomorphism.
+      The Hahn-Banach theorem implies that $\IC$ is a cogenerator. We claim that it is in fact an extremal cogenerator. Thus, suppose $f : X \to Y$ is a morphism such that ${-} \circ f : \Hom(Y, \IC) \to \Hom(X, \IC)$ is bijective on the underlying sets. Then for any non-zero $x \in X$, by the Hahn-Banach theorem, there exists $\varphi \in X^*$ such that $|\varphi| = 1$ and $\varphi(x) = |x|$. Since $|\varphi| = 1$, we see that $\varphi$ is a morphism $X \to \IC$ in $\Ban$; so by the assumption, there exists a morphism $\psi : Y \to \IC$ such that $\varphi = \psi \circ f$. Therefore, $|x| = |\psi(f(x))| \le |f(x)|$; and conversely, since $f$ is a morphism, $|f(x)| \le |x|$. On the other hand, if $x = 0$, then certainly $|f(x)| = |x| = 0$. This shows that $f$ is isometric and therefore a regular monomorphism (see below). On the other hand, since $\IC$ is a cogenerator and ${-} \circ f$ is injective, we see that $f$ is also an epimorphism. Hence, $f$ is an isomorphism.
 
   - property: regular
     proof: >-
@@ -90,7 +90,7 @@ satisfied_properties:
       and likewise
       $$(y,z) = \tfrac{1}{2} (z,z) + \tfrac{1}{2} (x,z)$$
       are contained in $R$. We have
-      $$|(x,y)_R| \leq \tfrac{1}{2} |x| + \tfrac{1}{2} |(x,z)|_R$$
+      $$|(x,y)|_R \leq \tfrac{1}{2} |x| + \tfrac{1}{2} |(x,z)|_R$$
       and likewise
       $$|(y,z)|_R \leq \tfrac{1}{2} |z| + \tfrac{1}{2} |(x,z)|_R$$
       Together with the transitivity bound we obtain

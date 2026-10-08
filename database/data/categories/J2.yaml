@@ -5,7 +5,7 @@ objects: 'pairs $(X,\alpha)$, where $X$ is a set and $\alpha : X \to X \times X$
 morphisms: >-
   A morphism $(X,\alpha) \to (Y,\beta)$ is a map $f : X \to Y$ satisfying
   $$(f \times f) \circ \alpha = \beta \circ f.$$
-description: This is interesting example of a category in the intersection of topos theory and algebra.
+description: This is an interesting example of a category in the intersection of topos theory and algebra.
 nlab_link: https://ncatlab.org/nlab/show/J%C3%B3nsson-Tarski+algebra
 
 tags:

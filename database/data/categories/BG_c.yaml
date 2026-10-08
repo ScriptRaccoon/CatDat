@@ -3,7 +3,7 @@ name: delooping of an infinite countable group
 notation: $BG$
 objects: a single object $*$
 morphisms: the elements of an infinite countable group $G$
-description: This is the special case of <a href="/category/BG">$BG$</a> where $G$ is an infinite countable group $G$ (such as $G = \IZ$).
+description: This is the special case of <a href="/category/BG">$BG$</a> where $G$ is an infinite countable group (such as $G = \IZ$).
 nlab_link: https://ncatlab.org/nlab/show/delooping#delooping_of_a_group_to_a_groupoid
 parent: BG
 

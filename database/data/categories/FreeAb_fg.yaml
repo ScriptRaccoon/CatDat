@@ -91,7 +91,7 @@ special_morphisms:
     description: 'homomorphisms $f : A \to B$ such that $f(A)$ is not contained in a proper direct summand of $B$'
     proof: We can copy the proof from <a href="/category/FreeAb">$\FreeAb$</a>.
   regular monomorphisms:
-    description: 'injective homomorphisms $f : A \to B$ such that $B/f(A)$ is torsion-free  (and these are automatically split monomorphisms)'
+    description: 'injective homomorphisms $f : A \to B$ such that $B/f(A)$ is torsion-free (and these are automatically split monomorphisms)'
     proof: We can copy the proof from <a href="/category/FreeAb">$\FreeAb$</a>, since a finitely generated torsion-free abelian group is free.
   regular epimorphisms:
     description: surjective homomorphisms (which are automatically split epimorphisms)

@@ -116,7 +116,7 @@ satisfied_properties:
       $$\colim_{U \in P} U \to X$$
       induced by the inclusion maps $U \hookrightarrow X$ is an isomorphism. In other words, for every $n \geq 0$, the component
       $$\colim_{U \in P} U_n \to X_n$$
-      is an isomorphism. It is injective since $(P,\leq)$ is directed and each $U_n \hookrightarrow X_n$ is injective. To show surjectivity, let $x_n \in X_n$. As before, consider the sequence $U$ defined by
+      is an isomorphism. It is injective since $(P,\subseteq)$ is directed and each $U_n \hookrightarrow X_n$ is injective. To show surjectivity, let $x_n \in X_n$. As before, consider the sequence $U$ defined by
       $$\varnothing \to \cdots \to \varnothing \to \{x_n\} \to \{x_{n+1}\} \to \cdots.$$
       It belongs to $P$, and the element $x_n \in U_n$ induces an element of $\colim_{U \in P} U_n$ that maps to $x_n \in X_n$.
 
@@ -155,7 +155,7 @@ unsatisfied_properties:
     proof: >-
       We show that the coproduct $1+1$ does not exist in $[(\IN,\leq),\Set]_{\conn}$, where $1$ denotes the terminal object, the constant sequence with value $\{\ast\}$. Since a morphism $1 \to X$ corresponds to an element of $X_0$, this would amount to a universal connected sequence of sets $X$ equipped with two elements $x,x' \in X_0$. Choose $k \geq 0$ such that their images in $X_k$ coincide. Then, by the universal property, for every connected sequence $Y$ and every pair of elements $y,y' \in Y_0$, their images in $Y_k$ must coincide. A counterexample is the sequence $Y$ defined by
       $$\{0,1\} \xrightarrow{\id} \cdots \xrightarrow{\id} \{0,1\} \xrightarrow{!} \{0\} \xrightarrow{!} \{0\} \xrightarrow{!} \cdots,$$
-      where $Y_k = \{0,1\}$ and $Y_{k+1}=\{\ast\}$. It is connected, but the elements $0,1 \in Y_0$ only become equal in $Y_{k+1}$.
+      where $Y_k = \{0,1\}$ and $Y_{k+1}=\{0\}$. It is connected, but the elements $0,1 \in Y_0$ only become equal in $Y_{k+1}$.
       Another counterexample is the subobject classifier $\Omega$, whose elements $0,k+1 \in \Omega_0$ become equal only after $k+1$ steps.
 
       Here is an alternative proof that the coproduct $1+1$, and in fact most coproducts, do not exist. The projection functor $[(\IN,\leq),\Set]_{\conn} \to \Set$, $X \mapsto X_n$, has a right adjoint that maps a set $S$ to the connected sequence
@@ -270,7 +270,7 @@ unsatisfied_properties:
 
       Morphisms $X \to B$ can be identified with maps $X_1 \to \{x,y\}$, and thus with subsets of $X_1$ by taking the fiber over $x$.
       $$\begin{CD}
-      X_0 @>>> X_1 @>>> X_2 @>>> X_2 @>>> \cdots \\
+      X_0 @>>> X_1 @>>> X_2 @>>> X_3 @>>> \cdots \\
       @VVV @VVV @VV{!}V @VV{!}V @. \\
       \{x,y\} @>{\id}>> \{x,y\} @>{!}>> \{\ast\} @>{!}>> \{\ast\} @>{!}>> \cdots
       \end{CD}$$

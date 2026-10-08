@@ -3,7 +3,7 @@ name: category of finite sets and injections
 notation: $\FI$
 objects: finite sets
 morphisms: injective maps
-description: This category is badly-behaved in itself, but plays an important role in representation theory.
+description: This category is badly behaved in itself, but plays an important role in representation theory.
 nlab_link: null
 keywords:
   - injective maps
@@ -31,7 +31,7 @@ satisfied_properties:
     proof: The one-point set is a generator since it represents the forgetful functor $\FI \to \Set$, which is faithful and conservative.
 
   - property: essentially countable
-    proof: Every finite set is isomorphic to some $\{1,\dotsc,n\}$ for some $n \in \IN$.
+    proof: Every finite set is isomorphic to $\{1,\dotsc,n\}$ for some $n \in \IN$.
 
   - property: equalizers
     proof: We construct equalizers just like in <a href="/category/FinSet">$\FinSet$</a> and observe that the universal property still holds.
@@ -46,7 +46,7 @@ satisfied_properties:
     proof: If $X,Y$ are two finite sets, we have $\card(X) \leq \card(Y)$ or $\card(Y) \leq \card(X)$. In the first case there will be an injection $X \to Y$, in the second case there will be an injection $Y \to X$.
 
   - property: locally cartesian closed
-    proof: IF $X$ is a finite set, the slice category $\FI / X$ is equivalent to the poset of subsets of $X$. This is cartesian closed because $A \cap B \subseteq C$ holds if and only if $B \subseteq (X \setminus A) \cup C$, where $A,B,C \subseteq X$.
+    proof: If $X$ is a finite set, the slice category $\FI / X$ is equivalent to the poset of subsets of $X$. This is cartesian closed because $A \cap B \subseteq C$ holds if and only if $B \subseteq (X \setminus A) \cup C$, where $A,B,C \subseteq X$.
 
 unsatisfied_properties:
   - property: small
@@ -65,10 +65,13 @@ unsatisfied_properties:
     proof: This is trivial.
 
   - property: cogenerator
-    proof: Let $Q$ be finite set. When $Q$ is empty, it is clearly no cogenerator. Otherwise, $Q + 1$ has at least two elements, so that there are two different morphisms $1 \rightrightarrows Q + 1$. But there is no morphism $Q + 1 \to Q$ at all. Hence, $Q$ is no cogenerator.
+    proof: Let $Q$ be a finite set. When $Q$ is empty, it is clearly no cogenerator. Otherwise, $Q + 1$ has at least two elements, so that there are two different morphisms $1 \rightrightarrows Q + 1$. But there is no morphism $Q + 1 \to Q$ at all. Hence, $Q$ is no cogenerator.
 
   - property: binary powers
-    proof: Assume that two finite sets $X,Y$ have a product $P$ in this category. Elements of $P$ are the same as maps $1 \to P$, and they are automatically injective. Therefore, $P \cong \Hom(1,P) \times \Hom(1,X) \times \Hom(1,Y) \cong X \times Y$, and the projections must agree as well. But they are usually not injective. In particular, the product $X \times X$ never exists when $X$ has $>1$ elements.
+    proof: >-
+      Assume that two finite sets $X,Y$ have a product $P$ in this category. Elements of $P$ are the same as maps $1 \to P$, and they are automatically injective. Therefore,
+      $$P \cong \Hom(1,P) \cong \Hom(1,X) \times \Hom(1,Y) \cong X \times Y,$$
+      and the projections must agree as well. But they are usually not injective. In particular, the product $X \times X$ never exists when $X$ has $>1$ elements.
 
   - property: sequential colimits
     proof: 'Let $X_n \coloneqq \{1,\dotsc,n\}$. Assume the sequence of inclusion maps $X_n \hookrightarrow X_{n+1}$ has a colimit $(f_n : X_n \to X)$ in this category. But $f_n$ must be an injective map, so that $\card(X) \geq n$ for all $n$. Since $X$ is finite, this is a contradiction.'

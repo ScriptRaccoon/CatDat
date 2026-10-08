@@ -95,7 +95,7 @@ unsatisfied_properties:
     proof: 'We will prove that the objects $(\{0\},\varnothing)$ and $(\varnothing,\IN)$ have no coproduct in $(\Set \times \Set)_{\varnothing,\fin}$, i.e. that there is no initial cocone. The category of cocones is isomorphic to the product category $\Set_* \times \IN / \FinSet$. If it has an initial object, then $\IN / \FinSet$ would have an initial object as well. Assume that $f : \IN \to X$ is initial in $\IN / \FinSet$. Let $n,m \in \IN$ with $n \neq m$. There is a map $g : \IN \to \{0,1\}$ with $g(n)=0$ and $g(m)=1$. Since $f$ is initial, there is a unique map $h : X \to \{0,1\}$ with $h \circ f = g$. Since $g(n) \neq g(m)$, it follows that $f(n) \neq f(m)$. Thus, $f : \IN \to X$ is injective, which contradicts the fact that $X$ is finite.'
 
   - property: generator
-    proof: Assume that $(A,B)$ is a generator. Since it has to distinguish the three endomorphisms of $(\{0,1\},\varnothing)$ (which is a valid object), we see that $A$ is non-empty and $B$ is empty. Using the object $(\varnothing,\{0,1\})$ (which is also valid), we see that $B$ is non-empty and $A$ is empty. This is a contradiction.
+    proof: Assume that $(A,B)$ is a generator. Since it has to distinguish the endomorphisms of $(\{0,1\},\varnothing)$ (which is a valid object), we see that $A$ is non-empty and $B$ is empty. Using the object $(\varnothing,\{0,1\})$ (which is also valid), we see that $B$ is non-empty and $A$ is empty. This is a contradiction.
 
   - property: natural numbers object
     proof: >-
@@ -133,7 +133,7 @@ special_morphisms:
   epimorphisms:
     description: pairs of surjective maps
     proof: >-
-      For the non-trivial direction, let $(f,g) : (A,B) \to (C,D)$ be an epimorphism. Assume for contradiction that $f : A \to C$ is not surjective. Since $\{0,1\}$ cogenerates, then there are distinct maps $u,v : C \rightrightarrows \{0,1\}$ with $u \circ f = v \circ f$. The set $C$ is non-empty, so $D$ is finite, and $(\{0,1\},D)$ is a valid object. Then
+      For the non-trivial direction, let $(f,g) : (A,B) \to (C,D)$ be an epimorphism. Assume for contradiction that $f : A \to C$ is not surjective. Since $\{0,1\}$ cogenerates, there are distinct maps $u,v : C \rightrightarrows \{0,1\}$ with $u \circ f = v \circ f$. The set $C$ is non-empty, so $D$ is finite, and $(\{0,1\},D)$ is a valid object. Then
       $$(u,\id_D), (v,\id_D) : (C,D) \rightrightarrows (\{0,1\},D)$$
       are distinct morphisms satisfying $(u,\id_D) \circ (f,g) = (v,\id_D) \circ (f,g)$. This contradicts the assumption that $(f,g)$ is an epimorphism. Thus, $f$ is surjective. Now assume that $g$ is not surjective. Then there are distinct maps $u,v : D \rightrightarrows \{0,1\}$ with $u \circ g = v \circ g$. Then
       $$(\id_C,u), (\id_C,v) : (C,D) \rightrightarrows (C,\{0,1\})$$

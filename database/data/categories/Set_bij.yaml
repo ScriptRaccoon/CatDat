@@ -18,7 +18,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: It is a full subcategory of <a href="/category/Set">$\Set$</a>, which is locally small.
+    proof: It is a subcategory of <a href="/category/Set">$\Set$</a>, which is locally small.
 
   - property: concretizable
     proof: It is a subcategory of $\Set$.

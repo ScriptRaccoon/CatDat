@@ -25,7 +25,7 @@ satisfied_properties:
     proof: It is the category of sheaves on the opposite of the one-object category associated to $M$.
 
   - property: one-sorted finitary algebraic
-    proof: Take the one-sorted algebraic theory of an $M$-sets (having a unary operation for each $m \in M$).
+    proof: Take the one-sorted algebraic theory of an $M$-set (having a unary operation for each $m \in M$).
 
 unsatisfied_properties:
   - property: skeletal
@@ -37,7 +37,7 @@ unsatisfied_properties:
 undecidable_properties:
   - property: semi-strongly connected
     # TODO: decide if we want to add separate children entries to decide this for some cases.
-    proof: If this category is semi-strongly connected depends on the choice of $M$. For $M = 1$ it is, for $M = \IZ$ it is not (see the entry for <a href="/category/Z-Set">$\IZ{-}\Set$</a>). In general, if $G$ is a group, then $G{-}\Set$ is semi-strongly connected if and only if for all subgroups $H,K \subseteq G$, $H$ is subconjugated to $K$ or $K$ is subconjugated to $H$. If $G$ is abelian, this means that the poset of subgroups is linear, in which case $G$ is either isomorphic to $\IZ/p^n$ or to $\IZ/p^{\infty}$ for a prime $p$. See also <a href="https://math.stackexchange.com/questions/5129804">MSE/5129804</a>.
+    proof: Whether this category is semi-strongly connected depends on the choice of $M$. For $M = 1$ it is, for $M = \IZ$ it is not (see the entry for <a href="/category/Z-Set">$\IZ{-}\Set$</a>). In general, if $G$ is a group, then $G{-}\Set$ is semi-strongly connected if and only if for all subgroups $H,K \subseteq G$, $H$ is subconjugate to $K$ or $K$ is subconjugate to $H$. If $G$ is abelian, this means that the poset of subgroups is linear, in which case $G$ is either isomorphic to $\IZ/p^n$ or to $\IZ/p^{\infty}$ for a prime $p$. See also <a href="https://math.stackexchange.com/questions/5129804">MSE/5129804</a>.
 
 special_objects:
   initial object:

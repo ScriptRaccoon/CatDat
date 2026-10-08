@@ -25,7 +25,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: The collection of maps between two sets $X,Y$ is a subset of $X \times Y$ and therefore a set.
+    proof: The collection of maps between two sets $X,Y$ is a subset of $P(X \times Y)$ and therefore a set.
 
   - property: one-sorted finitary algebraic
     proof: Use the empty one-sorted algebraic theory.
@@ -61,7 +61,7 @@ special_objects:
   coproducts:
     description: disjoint union
   products:
-    description: direct products with pointwise operations
+    description: direct products
 
 special_morphisms:
   isomorphisms:

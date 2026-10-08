@@ -32,7 +32,7 @@ satisfied_properties:
     proof: This is trivial.
 
   - property: essentially countable
-    proof: Every finite set is isomorphic to some $\{1,\dotsc,n\}$ for some $n \in \IN$.
+    proof: Every finite set is isomorphic to $\{1,\dotsc,n\}$ for some $n \in \IN$.
 
 unsatisfied_properties:
   - property: small

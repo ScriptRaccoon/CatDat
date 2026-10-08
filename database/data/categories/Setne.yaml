@@ -67,7 +67,7 @@ satisfied_properties:
     proof: Let $D$ be a diagram in $\Setne$, and let $L$ be a limit of $D$ in $\Set$. If $L$ is non-empty, it gives a limit in $\Setne$ as well. If $L$ is the empty set, there is no cone over $D$ in $\Setne$; hence the empty set of cones gives a multi-limit of $D$ in $\Setne$.
 
   - property: effective congruences
-    proof: 'Any cocongruence $E \rightrightarrows X$ in $\Setne$ is also a cocongruence in $\Set$, hence is the kernel pair of some map $h : X \to Z$. Since $X$ is non-empty, also $Z$ is non-empty.'
+    proof: 'Any congruence $E \rightrightarrows X$ in $\Setne$ is also a congruence in $\Set$, hence is the kernel pair of some map $h : X \to Z$. Since $X$ is non-empty, also $Z$ is non-empty.'
 
 unsatisfied_properties:
   - property: skeletal
@@ -77,7 +77,7 @@ unsatisfied_properties:
     proof: The two maps $\{0\} \rightrightarrows \{0,1\}$ are equalized by no map $X \to \{0\}$ in this category.
 
   - property: sequential limits
-    proof: Assume that the sequence of inclusions $\cdots \to \IN_{\geq 2} \to \IN_{\geq 1} \to \IN_{\geq 0} = \IN$ as a limit $X$, consisting of maps $X \to \IN_{\geq n}$. Since $X$ is non-empty, there is a map $1 \to X$. This corresponds to a family of compatible maps $ 1 \to \IN_{\geq n}$, i.e. to compatible elements in $\IN_{\geq n}$. But the set $\bigcap_{n \geq 0} \IN_{\geq n}$ is empty.
+    proof: Assume that the sequence of inclusions $\cdots \to \IN_{\geq 2} \to \IN_{\geq 1} \to \IN_{\geq 0} = \IN$ has a limit $X$, consisting of maps $X \to \IN_{\geq n}$. Since $X$ is non-empty, there is a map $1 \to X$. This corresponds to a family of compatible maps $1 \to \IN_{\geq n}$, i.e. to compatible elements in $\IN_{\geq n}$. But the set $\bigcap_{n \geq 0} \IN_{\geq n}$ is empty.
 
   - property: ℵ₁-cofiltered limits
     proof: 'Since the forgetful functor $\Setne \to \Set$ is representable, it preserves limits. Thus it suffices to find an $\aleph_1$-cofiltered diagram of non-empty sets whose limit in $\Set$ is empty. Let $R$ be an uncountable set (such as $\IR$) and consider the poset $P$ of subsets $A \subseteq R$ whose complement $R \setminus A$ is countable; in particular, every such $A$ is non-empty. Then $P$ is $\aleph_1$-cofiltered, since a countable union of countable sets is countable. The limit of the diagram $P \to \Setne$, $A \mapsto A$, in $\Set$ is the intersection $\bigcap_{A \in P} A$ in $R$, which is empty, because for every $r \in R$ we have $r \notin R \setminus \{r\} \in P$.'

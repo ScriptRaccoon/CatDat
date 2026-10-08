@@ -23,7 +23,7 @@ related:
 
 satisfied_properties:
   - property: split abelian
-    proof: That $\Vect$ is abelian is a standard fact, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician">Mac Lane</a>, Ch. VIII. Furthermore, it is a fact from linear algebra that every subspace has a complement, which is why every short exact sequence splits.
+    proof: That $\Vect$ is abelian is a standard fact; see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician">Mac Lane</a>, Ch. VIII. Furthermore, it is a fact from linear algebra that every subspace has a complement, which is why every short exact sequence splits.
 
   - property: extremal generator
     proof: The one-dimensional vector space $K$ is an extremal generator since it represents the forgetful functor $\Vect_K \to \Set$ which is faithful and conservative.

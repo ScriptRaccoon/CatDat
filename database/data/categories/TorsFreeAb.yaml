@@ -42,11 +42,11 @@ satisfied_properties:
     proof: >-
       It suffices to prove that regular monomorphisms (which are classified below) are stable under pushouts. Let $i : A \to B$ be a regular monomorphism in $\TorsFreeAb$, i.e. $i$ is injective and its $\Ab$-cokernel $B/i(A)$ is torsion-free, and let $f : B \to C$ be any morphism in $\TorsFreeAb$. Their $\Ab$-pushout is
       $$P = (B \times C)/\{(i(a),-f(a)): a \in A\}.$$
-      It is torsion-free: If $n \in \IZ \setminus \{0\}$ and $n (b,c) = (i(a),-f(a))$, there is some $a' \in A$ with $b = i(a')$ since $B/i(A)$ is torsion-free. It follows $n a' = a$, and then $c = -f(a')$ since $C$ is torsion-free. Thus, $(b,c) = (i(a'),-f(a'))$, which proves our claim. Therefore, $P$ is also the pushout in $\TorsFreeAb$. The homomorphism $j : C \to P$, $j(c) = [0,c]$ is injective (since <a href="/category/Ab">$\Ab$</a> is coregular, but a direct proof is also easy), and by the universal property of $P$ its $\Ab$-cokernel is isomorphic to the $\Ab$-cokernel of $i$, which is torsion-free.
+      It is torsion-free: If $n \in \IZ \setminus \{0\}$ and $n (b,c) = (i(a),-f(a))$, there is some $a' \in A$ with $b = i(a')$ since $B/i(A)$ is torsion-free. It follows that $n a' = a$, and then $c = -f(a')$ since $C$ is torsion-free. Thus, $(b,c) = (i(a'),-f(a'))$, which proves our claim. Therefore, $P$ is also the pushout in $\TorsFreeAb$. The homomorphism $j : C \to P$, $j(c) = [0,c]$ is injective (since <a href="/category/Ab">$\Ab$</a> is coregular, but a direct proof is also easy), and by the universal property of $P$ its $\Ab$-cokernel is isomorphic to the $\Ab$-cokernel of $i$, which is torsion-free.
 
   - property: extremal cogenerating collection
     proof: >-
-      The additive group $\IQ$ is a cogenerator since every torsion-free abelian group $A$ embeds into $A \otimes \IQ$, which is a vector space over $\IQ$, and by linear algebra $K$ is a cogenerator in the category of vector spaces over $K$.
+      The additive group $\IQ$ is a cogenerator since every torsion-free abelian group $A$ embeds into $A \otimes \IQ$, which is a vector space over $\IQ$, and by linear algebra $\IQ$ is a cogenerator in the category of vector spaces over $\IQ$.
 
       We claim that $S \coloneqq \{\IQ\} \cup \{\IZ_p : p \text{~prime}\}$ is an extremal cogenerating collection, where $\IZ_p$ is the additive group of the $p$-adic integers. To establish this, we will show that for any torsion-free group $G$, the canonical morphism $\alpha : G \to \prod_{Q\in S} \prod_{f\in\Hom(G,Q)} Q$ is in fact a regular monomorphism, and therefore an extremal monomorphism. By equivalent condition (4) in the characterization below of regular monomorphisms, this is equivalent to showing $\alpha$ is injective, and whenever we have $x\in G$ and prime $p$ such that $\alpha(x)$ is $p$-divisible in the product, then $x$ is $p$-divisible in $G$. From the above, including $\IQ$ in $S$ is already sufficient to make $\alpha$ a monomorphism, i.e. an injective homomorphism.
 
@@ -89,11 +89,11 @@ special_morphisms:
   regular monomorphisms:
     description: 'For a homomorphism $f : A \to B$ the following are equivalent: (1) $f$ is a regular monomorphism. (2) $f$ is injective and $B/f(A)$ is torsion-free, i.e., $f$ is the inclusion of a <i>saturated subgroup</i>. (3) $f$ is injective and whenever we have $n \in \IZ \setminus \{0\}$ and $a \in A$ such that $f(a)$ is $n$-divisible in $B$, then $a$ is $n$-divisible in $A$. (4) $f$ is injective and whenever we have $p$ prime and $a\in A$ such that $f(a)$ is $p$-divisible in $B$, then $a$ is $p$-divisible in $A$.'
     proof: >-
-      (1) implies (2): If $f : A \to B$ is the kernel of $g : B \to C$ in $\TorsFreeAb$, it is also the kernel of $f$ in $\Ab$, so we know that $f$ is injective with $f(A) = \{b \in B : g(b) = 0\}$. If $n \in \IZ \setminus \{0\}$ and $b\in B$ satisfy $g(n b) = 0$, then also $g(b)=0$ since $C$ is torsion-free. This shows that $B/f(A)$ is torsion-free.
+      (1) implies (2): If $f : A \to B$ is the kernel of $g : B \to C$ in $\TorsFreeAb$, it is also the kernel of $g$ in $\Ab$, so we know that $f$ is injective with $f(A) = \{b \in B : g(b) = 0\}$. If $n \in \IZ \setminus \{0\}$ and $b\in B$ satisfy $g(n b) = 0$, then also $g(b)=0$ since $C$ is torsion-free. This shows that $B/f(A)$ is torsion-free.
 
       (2) implies (1): If $f$ is injective and $B/f(A)$ is torsion-free, then $f$ is the kernel of the natural homomorphism $B \to B/f(A)$.
 
-      (2) implies (3): If $f(a)$ is $n$-divisible, say $f(a) = nb$. Then $n[b] = 0$ for $[b] \in B/f(A)$, so $[b] = 0$. This implies $b \in f(A)$; say $f(a') = b$. Then $f(na') = nb = f(a)$, so by injectivity of $f$, we get $a = na'$.
+      (2) implies (3): Suppose that $f(a)$ is $n$-divisible, say $f(a) = nb$. Then $n[b] = 0$ for $[b] \in B/f(A)$, so $[b] = 0$. This implies $b \in f(A)$; say $f(a') = b$. Then $f(na') = nb = f(a)$, so by injectivity of $f$, we get $a = na'$.
 
       (3) implies (2): Suppose we have $n \in \IZ \setminus \{0\}$ and $b \in B$ such that letting $[b] \in B/f(A)$ be the image, $n[b] = 0$. That implies $nb \in f(A)$; say $nb = f(a)$ for $a \in A$. Then $f(a)$ is $n$-divisible, so $a$ is $n$-divisible; say $a = n a'$. This gives $n f(a') = f(a) = nb$. Since $B$ is torsion-free, we conclude $f(a') = b$, so $[b] = 0$ in $B/f(A)$.
 

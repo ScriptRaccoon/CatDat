@@ -49,7 +49,7 @@ satisfied_properties:
       A more direct proof that $X \sqcup_C X$ is metrizable can be found at <a href="https://math.stackexchange.com/questions/5147463">MSE/5147463</a>.
 
   - property: effective cocongruences
-    proof: 'Suppose we have a cocongruence $f, g : X \rightrightarrows E$ in $\Met_c$. Then the image in $\Haus$ is a coreflexive corelation (since epimorphisms in both categories are continuous maps with dense image). By <a href="https://mathoverflow.net/a/509582/2841">MO/509548</a>, that implies that image is of the form $X +_S X$ for a closed subset $S$ of $X$. Since $S$ is metrizable, and the functor $\Met_c \to \Haus$ is fully faithful <a href="https://ncatlab.org/nlab/show/reflected+limit#FullSubcategoryInclusionReflectCoLimits">and therefore reflects colimits</a>, we conclude that $E$ is effective in $\Met_c$.'
+    proof: 'Suppose we have a cocongruence $f, g : X \rightrightarrows E$ in $\Met_c$. Then the image in $\Haus$ is a coreflexive corelation (since epimorphisms in both categories are continuous maps with dense image). By <a href="https://mathoverflow.net/a/509582">MO/509548</a>, that implies that image is of the form $X +_S X$ for a closed subset $S$ of $X$. Since $S$ is metrizable, and the functor $\Met_c \to \Haus$ is fully faithful <a href="https://ncatlab.org/nlab/show/reflected+limit#FullSubcategoryInclusionReflectCoLimits">and therefore reflects colimits</a>, we conclude that $E$ is effective in $\Met_c$.'
 
   - property: well-powered
     proof: This follows easily from the fact that monomorphisms are injective in this category.
@@ -62,7 +62,7 @@ satisfied_properties:
 
   - property: extremal cogenerator
     proof: >-
-      The space $\IR$ with the usual metric is a cogenerator. To see this, suppose we have $x, y \in X$ with $f(x) = f(y)$ for each continuous $f : X \to \IR$. In particular, this folds for $f(z) \coloneqq d(x, z)$, implying that
+      The space $\IR$ with the usual metric is a cogenerator. To see this, suppose we have $x, y \in X$ with $f(x) = f(y)$ for each continuous $f : X \to \IR$. In particular, this holds for $f(z) \coloneqq d(x, z)$, implying that
       $$d(x, y) = f(y) = f(x) = d(x, x) = 0,$$
       so $x = y$.
 
@@ -114,9 +114,9 @@ special_objects:
   terminal object:
     description: singleton space
   coproducts:
-    description: Given metric spaces $(X_i,d_i)$ with $d_i \leq 1$ w.l.o.g, we endow the disjoint union $\coprod_i X_i$ with the metric $d$ that extends the metrics $d_i$ and satisfies $d(x,y) = 1$ when $x,y$ are in different $X_i$.
+    description: Given metric spaces $(X_i,d_i)$ with $d_i \leq 1$ w.l.o.g., we endow the disjoint union $\coprod_i X_i$ with the metric $d$ that extends the metrics $d_i$ and satisfies $d(x,y) = 1$ when $x,y$ are in different $X_i$.
   products:
-    description: '[countable case] In the finite case, take direct products with the metric $d(x,y) = \sup_i d_i(x_i,y_i)$, but other metrics such as $d(x,y) = \sum_i d_i(x_i,y_i)$ also work. In the countable case, one can assume $d_i \leq 1$ and then define $d(x,y) = \sum_i d_i(x,y) / 2^i$.'
+    description: '[countable case] In the finite case, take direct products with the metric $d(x,y) = \sup_i d_i(x_i,y_i)$, but other metrics such as $d(x,y) = \sum_i d_i(x_i,y_i)$ also work. In the countable case, one can assume $d_i \leq 1$ and then define $d(x,y) = \sum_i d_i(x_i,y_i) / 2^i$.'
 
 special_morphisms:
   isomorphisms:

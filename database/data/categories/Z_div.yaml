@@ -26,7 +26,7 @@ satisfied_properties:
     check_redundancy: false
 
   - property: distributive
-    proof: 'We need to prove $\lcm_i \gcd(a, b_i) \cong \gcd(a, \lcm_i b_i)$ for finite families. If $x$ denotes the LHS and $y$ denotes the RHS, the relation $x \mid y$ is formal. If $v_p(-) : \IZ \to \IN_{\infty}$  denotes the multiplicity of a prime $p$, then $v_p(x)$ equals $\max_i \min(v_p(a),v_p(b_i))$, and $v_p(y)$ equals $\min(v_p(a), \max_i v_p(b_i))$. Since our family is finite, there is some $i_0$ with $\max_i v_p(b_i) = v_p(b_{i_0})$. Then $v_p(x) \geq \min(v_p(a),v_p(b_{i_0})) = v_p(y)$. This proves $y \mid x$.'
+    proof: 'We need to prove $\lcm_i \gcd(a, b_i) \cong \gcd(a, \lcm_i b_i)$ for finite families. If $x$ denotes the LHS and $y$ denotes the RHS, the relation $x \mid y$ is formal. If $v_p(-) : \IZ \to \IN_{\infty}$ denotes the multiplicity of a prime $p$, then $v_p(x)$ equals $\max_i \min(v_p(a),v_p(b_i))$, and $v_p(y)$ equals $\min(v_p(a), \max_i v_p(b_i))$. Since our family is finite, there is some $i_0$ with $\max_i v_p(b_i) = v_p(b_{i_0})$. Then $v_p(x) \geq \min(v_p(a),v_p(b_{i_0})) = v_p(y)$. This proves $y \mid x$.'
 
   - property: locally ℵ₁-presentable
     proof: Every $\aleph_1$-directed diagram is eventually constant.
@@ -39,7 +39,7 @@ unsatisfied_properties:
     proof: The only integer with infinitely many divisors (up to isomorphism) is $0$. But many integers have infinitely many multiples (up to isomorphism).
 
   - property: countably distributive
-    proof: We have $2 \times \coprod_n 3^n = \gcd(2,\lcm_n(3^n)) = \gcd(2,0) = 2$, but $\coprod_n (2 \times 3^n) = \lcm_n \gcd(2,3^n) = \lcm_n 1  = 1$.
+    proof: We have $2 \times \coprod_n 3^n = \gcd(2,\lcm_n(3^n)) = \gcd(2,0) = 2$, but $\coprod_n (2 \times 3^n) = \lcm_n \gcd(2,3^n) = \lcm_n 1 = 1$.
 
   - property: countably codistributive
     proof: If $p$ runs through all odd primes, we have $2 \sqcup \prod_p p = \lcm(2,\gcd_p p) = \lcm(2,0) = 0$, but $\prod_p (2 \sqcup p) = \gcd_p (\lcm(2,p)) = \gcd_p (2 \cdot p) = 2$.
@@ -48,7 +48,7 @@ unsatisfied_properties:
     proof: The category is equivalent to $(\IN,\mid)$, which has infinitely many non-minimal elements. Therefore, by the corollary <a href="/content/thin_extremal_generator">here</a>, an extremal generator cannot exist.
 
   - property: extremal cogenerator
-    proof: The category is equivalent to $(\IN,\mid)$, which has infinitely many non-maximal elements. Therefore, by the corollary <a href="/content/thin_extremal_generator">here</a>, an extremal generator cannot exist.
+    proof: The category is equivalent to $(\IN,\mid)$, which has infinitely many non-maximal elements. Therefore, by the corollary <a href="/content/thin_extremal_generator">here</a>, an extremal cogenerator cannot exist.
 
 special_objects:
   initial object:

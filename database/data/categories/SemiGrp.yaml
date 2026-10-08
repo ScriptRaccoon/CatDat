@@ -42,7 +42,7 @@ unsatisfied_properties:
   - property: balanced
     proof: |-
       The inclusion of additive semigroups $\IN \hookrightarrow \IZ$ is a counterexample. Indeed, if $f,g : \IZ \to G$ are semigroup homomorphisms which agree on $\IN$, the element $e \coloneqq f(0) = g(0)$ provides a neutral element for $eGe$, which therefore becomes a monoid, and $f,g$ corestrict to monoid homomorphisms $f,g : \IZ \to eGe$ which agree on $\IN$. And we already know that $f = g$ in that case (inverses are uniquely determined).
-      Another example can be found in <a href="https://mathoverflow.net/a/510442/2841">MO/510431</a>.
+      Another example can be found in <a href="https://mathoverflow.net/a/510442">MO/510431</a>.
 
   - property: Malcev
     proof: 'Consider the subsemigroup $\{(a,b) : a \leq b \}$ of $\IN^2$ under addition.'
@@ -121,4 +121,4 @@ special_objects:
 special_morphisms:
   epimorphisms:
     description: 'A semigroup homomorphism $f : T \to S$ is an epimorphism iff $S$ equals the <i>dominion</i> of $U \coloneqq f(T) \subseteq S$, meaning that for every $s \in S$ we have $s \in U$ or there are $u_1,\dotsc,u_{m+1} \in U$, $v_1,\dotsc,v_m \in U$, $x_1,\dotsc,x_m \in S$ and $y_1,\dotsc,y_m \in S$ such that $s = x_1 u_1$, $u_1 = v_1 y_1$, $x_{i-1} v_{i-1} = x_i u_i$, $u_i y_{i-1} = v_i y_i$, $x_m v_m = u_{m+1}$ and $u_{m+1} y_m = s$.'
-    proof: This is <a href="https://en.wikipedia.org/wiki/Isbell's_zigzag_theorem">Isbell's zigzag theorem</a>, see references there.
+    proof: This is <a href="https://en.wikipedia.org/wiki/Isbell's_zigzag_theorem">Isbell's zigzag theorem</a>; see references there.

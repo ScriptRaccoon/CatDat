@@ -49,10 +49,10 @@ satisfied_properties:
     proof: 'Every epimorphism has dense image, so it suffices to prove that if a Hausdorff space $X$ has a dense subset $D \subseteq X$, we can bound the cardinality of $X$ in terms of the cardinality of $D$. For $x \in X$ let $\alpha(x)$ be the set of all $U \cap D$, where $U$ is an open neighborhood of $x$. This defines a map $\alpha : X \to P(P(D))$, and we claim that it is injective: this is because $\{x\}$ is the intersection of all $\overline{U} = \overline{U \cap D}$, where $U$ runs through the open neighborhoods of $x$.'
 
   - property: co-Malcev
-    proof: See <a href="https://mathoverflow.net/a/509582/2841">MO/509548</a>.
+    proof: See <a href="https://mathoverflow.net/a/509582">MO/509548</a>.
 
   - property: effective cocongruences
-    proof: As the proof at <a href="https://mathoverflow.net/a/509582/2841">MO/509548</a> shows, in fact any coreflexive corelation on $X$ in $\Haus$ is of the form $X +_S X$ for a closed subset $S$ of $X$. Such a cocongruence is clearly effective.
+    proof: As the proof at <a href="https://mathoverflow.net/a/509582">MO/509548</a> shows, in fact any coreflexive corelation on $X$ in $\Haus$ is of the form $X +_S X$ for a closed subset $S$ of $X$. Such a cocongruence is clearly effective.
 
 unsatisfied_properties:
   - property: skeletal
@@ -93,7 +93,7 @@ unsatisfied_properties:
   - property: cototal
     # TODO: refactor this once we add "hypercocomplete"
     proof: >-
-      In fact, it is not hypercocomplete. For each cardinal $\kappa$, let $Q_\kappa$ be the product of all Hausdorff topological spaces whose underlying set is a non-empty subset of $\kappa$. By a theorem of Herrlich (<i>Wann sind alle stetigen Abbildungen in Y konstant</i>. Math. Z. 90 (1965): 152-154. <a href="http://eudml.org/doc/170472">EUMDL</a>), there is a regular Hausdorff space $X_\kappa$ with at least two points such that every continuous map $X_\kappa \to Q_\kappa$ is constant. (Note that the result there applies for general $T_1$ spaces $Q$, not just for $Q_\kappa$ as constructed above. In the reference, the author only states that $X_\kappa$ is regular, but actually, $X_\kappa$ is regular and $T_1$, hence Hausdorff.)
+      In fact, it is not hypercocomplete. For each cardinal $\kappa$, let $Q_\kappa$ be the product of all Hausdorff topological spaces whose underlying set is a non-empty subset of $\kappa$. By a theorem of Herrlich (<i>Wann sind alle stetigen Abbildungen in Y konstant</i>. Math. Z. 90 (1965): 152-154. <a href="http://eudml.org/doc/170472">EuDML</a>), there is a regular Hausdorff space $X_\kappa$ with at least two points such that every continuous map $X_\kappa \to Q_\kappa$ is constant. (Note that the result there applies for general $T_1$ spaces $Q$, not just for $Q_\kappa$ as constructed above. In the reference, the author only states that $X_\kappa$ is regular, but actually, $X_\kappa$ is regular and $T_1$, hence Hausdorff.)
 
       Choose a base point $x_\kappa \in X_\kappa$ for each $\kappa$. We can form a large span diagram $1 \dottedrightrightarrows X_\kappa$ where each morphism $1 \to X_\kappa$ corresponds to $x_\kappa$. Then for any Hausdorff space $Y$, the collection of cocones $1 \dottedrightrightarrows X_\kappa \to Y$ is essentially small: We must first choose $y \in Y$ corresponding to the morphism $1 \to Y$. Then for each $\kappa \ge \card(U(Y))$, $Y$ is homeomorphic to one of the spaces in the product forming $Q_\kappa$. Therefore, there is a morphism $Y \to Q_\kappa$ splitting the projection map $Q_\kappa \to Y$. It follows that the map $X_\kappa \to Y$ is constant, and in fact it must be the constant map with image $y$.
 
@@ -123,7 +123,7 @@ special_morphisms:
     proof: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
   epimorphisms:
     description: continuous maps with dense image
-    proof: It is clear that continuous maps with dense image are epimorphism, but the other direction is non-trivial. See <a href="https://math.stackexchange.com/questions/214045">MSE/214045</a> for a proof.
+    proof: It is clear that continuous maps with dense image are epimorphisms, but the other direction is non-trivial. See <a href="https://math.stackexchange.com/questions/214045">MSE/214045</a> for a proof.
   regular monomorphisms:
     description: embeddings with closed image
     proof: The explicit construction of equalizers shows that they are embeddings, and they have a closed image because of the well-known lemma that for a Hausdorff space the diagonal $X \to X \times X$ has closed image. For the other non-trivial direction, see <a href="https://math.stackexchange.com/questions/214045/">MSE/214045</a>.
