@@ -183,7 +183,7 @@ special_morphisms:
 
   regular monomorphisms:
     description: 'A morphism $f : X \to Y$ is a regular monomorphism if and only if $f$ is a uniform embedding, meaning that every entourage of $X$ is the preimage of an entourage of $Y$'
-    proof: 'Equalizers are uniform embeddings by their construction. Conversely, if $f : X \to Y$ is a uniform embedding, then $f$ is the equalizer of the two characteristic maps $\chi_Y, \chi_{f(X)} : Y \to \{0,1\}$, where $\{0,1\}$ carries the indiscrete uniform structure.'
+    proof: 'Equalizers are uniform embeddings by their construction. Conversely, if $f : X \to Y$ is a uniform embedding, then $f$ is the equalizer of the two characteristic maps $\chi_Y, \chi_{f(X)} : Y \rightrightarrows \{0,1\}$, where $\{0,1\}$ carries the indiscrete uniform structure.'
 
   regular epimorphisms:
     description: 'A uniform map $f : X \to Y$ is a regular epimorphism if and only if $f$ is surjective and $Y$ carries the finest uniform structure that makes $f$ uniform. Concretely, this means that if $V \subseteq Y \times Y$ is a subset for which there exists a sequence of subsets $V_1,V_2,\dotsc$ of $Y \times Y$ such that $V_1 \subseteq V$, $V_{n+1} \circ V_{n+1} \subseteq V_n$, and each $(f \times f)^*(V_n)$ is an entourage of $X$, then $V$ is an entourage of $Y$. Thus, in contrast to the situation for $\Top$ or $\Meas$, not every subset whose preimage is an entourage is an entourage in the quotient.'

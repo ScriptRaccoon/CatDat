@@ -69,7 +69,7 @@ special_morphisms:
     proof: This is an elementary fact from set theory.
   monomorphisms:
     description: injective maps
-    proof: 'For the non-trivial direction, if $f : X \to Y$ is a monomorphism of sets and $a,b \in X$ satisfy $f(a) = f(b)$, then $f \circ a = f \circ b$ when we regard $a,b$ as morphisms $a,b : 1 \to X$. Hence, $a = b$. More generally, if $\C$ is a category that admits a faithful and representable functor $U : \C \to \Set$, then the monomorphisms in $\C$ are precisely the morphisms whose $U$-image is injective.'
+    proof: 'For the non-trivial direction, if $f : X \to Y$ is a monomorphism of sets and $a,b \in X$ satisfy $f(a) = f(b)$, then $f \circ a = f \circ b$ when we regard $a,b$ as morphisms $a,b : 1 \rightrightarrows X$. Hence, $a = b$. More generally, if $\C$ is a category that admits a faithful and representable functor $U : \C \to \Set$, then the monomorphisms in $\C$ are precisely the morphisms whose $U$-image is injective.'
   epimorphisms:
     description: surjective maps
     proof: 'For the non-trivial direction, if $f : X \to Y$ is an epimorphism of sets, then in particular $f^* : \Hom(Y,2) \to \Hom(X,2)$ is injective, which identifies with $f^* : P(Y) \to P(X)$. Then for all $y \in Y$ we have $f^*(\{y\}) \neq f^*(\varnothing) = \varnothing$, so that $y$ has a preimage.'
