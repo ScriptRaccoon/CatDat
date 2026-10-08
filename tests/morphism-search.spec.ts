@@ -118,7 +118,7 @@ test('user can view search results', async ({ page }) => {
 
 	await expect(
 		page.getByRole('link', {
-			name: 'embedding of integer into rational numbers',
+			name: 'embedding of integers into rational numbers',
 			exact: true
 		})
 	).toBeVisible()
