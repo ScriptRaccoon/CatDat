@@ -28,7 +28,10 @@ satisfied_properties:
     proof: Just restrict the metric to the equalizer built from the sets.
 
   - property: countable products
-    proof: For finite products, we take the cartesian product with, say, the sup-metric. The product of a sequence of metric spaces $(X_i,d_i)_{i \geq 0}$ is given by the cartesian product $\prod_{i \geq 0} X_i$ with the metric $d(x,y) \coloneqq \sum_{i \geq 0} d_i(x_i,y_i)/(1 + d_i(x_i,y_i))$. See Engelking's book <i>General Topology</i>.
+    proof: >-
+      For finite products, we take the cartesian product with, say, the sup-metric. The product of a sequence of metric spaces $(X_i,d_i)_{i \geq 0}$ is given by the cartesian product $\prod_{i \geq 0} X_i$ with the metric
+      $$d(x,y) \coloneqq \sum_{i \geq 0} \frac{1}{2^{i+1}} \cdot \frac{d_i(x_i,y_i)}{1 + d_i(x_i,y_i)}.$$
+      See, for example, Engelking's book <i>General Topology</i>.
 
   - property: coproducts
     proof: See <a href="https://math.stackexchange.com/questions/5004389">MSE/5004389</a>.

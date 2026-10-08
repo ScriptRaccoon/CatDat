@@ -33,7 +33,7 @@ satisfied_properties:
     check_redundancy: false
 
   - property: binary products
-    proof: The product of two pseudo-metric spaces $(X,d)$, $(Y,d)$ is $(X \times Y,d)$ with $d((x_1,y_1),(x_2,x_2)) \coloneqq \sup(d(x_1,x_2),d(y_1,y_2))$.
+    proof: The product of two pseudo-metric spaces $(X,d)$, $(Y,d)$ is $(X \times Y,d)$ with $d((x_1,y_1),(x_2,y_2)) \coloneqq \sup(d(x_1,x_2),d(y_1,y_2))$.
     check_redundancy: false
 
   - property: terminal object

@@ -75,7 +75,7 @@ satisfied_properties:
       In particular, $i_1,i_2$ are injective and satisfy $Y = i_1(X) \cup i_2(X)$ as sets. Moreover, $i_1(x) = i_1(x')$ implies $x = x'$ after applying $r$. First, we show that $(i_1,i_2)$ is cosymmetric, i.e. that there is a uniform map
       $$s : Y \to Y$$
       such that
-      $$s \circ i_1 = i_2, \quad s \circ i_2 = s_1.$$
+      $$s \circ i_1 = i_2, \quad s \circ i_2 = i_1.$$
       We define the map of sets $s : Y \to Y$ by $s(i_1(x)) \coloneqq i_2(x)$ and $s(i_2(x)) \coloneqq i_1(x)$. This is well-defined by a direct calculation using the above properties of $i_1,i_2$, but we can also use the fact that <a href="/category/Set">$\Set$</a> is co-Malcev. It remains to verify that $s$ is uniform. To this end, let $V$ be an entourage of $Y$. Since $Y$ is a uniform space, there is an entourage $W$ with
       $$W \circ W \circ W \subseteq V.$$
       (This is the $\varepsilon/3$-trick in uniform space theory.) Since $i_1,i_2,r$ are uniform, the set

@@ -13,7 +13,7 @@
   conclusions:
     - cocomplete
   # TODO: refactor this once we add "hypercocomplete"
-  proof: 'If the category $\C$ is locally small and total, then the Yoneda embedding $y : \C^{\op} \to [\C, \Set]$ makes $\C^{\op}$ into a reflective subcategory of the presheaf category $[\C, \Set]$, where the latter is complete. For a general total category $\C$, use the equivalence to a locally small, total category.'
+  proof: 'If the category $\C$ is locally small and total, then the Yoneda embedding $y : \C \to [\C^{\op}, \Set]$ makes $\C$ into a reflective subcategory of the presheaf category $[\C^{\op}, \Set]$, where the latter is cocomplete. Now use that a reflective subcategory of a cocomplete category is cocomplete. For a general total category $\C$, use the equivalence to a locally small, total category.'
 
 - id: total_complete
   assumptions:

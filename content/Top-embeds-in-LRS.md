@@ -50,7 +50,7 @@ Let $R$ be any non-trivial commutative ring. Then:<br>
 (a) $\LRS_R$ is not cartesian closed.<br>
 (b) $\LRS_R$ does not have cartesian filtered colimits.<br>
 (c) $\LRS_R$ is not regular.<br>
-(d) $\LRS_R$ does not have filtered-colimit-stable epimorphisms.<br>
+(d) $\LRS_R$ does not have cofiltered-limit-stable epimorphisms.<br>
 (e) $\LRS_R$ does not have effective cocongruences.
 :::
 
