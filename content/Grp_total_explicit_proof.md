@@ -5,7 +5,7 @@ description: An explicit construction of the left adjoint to the covariant Yoned
 
 # Explicit Proof that the Category of Groups is Total
 
-The definition of a <a href="/category-property/total">total</a> category is very abstract; furthermore, it is not immediately clear how it is possible for _any_ category which is not essentially small to satisfy the definition, much less a wide variety of the algebraic and topological categories which are considered in practice. Thus, to illustrate the definition, we give an explicit construction of the functor
+The definition of a [total](/category-property/total) category is very abstract; furthermore, it is not immediately clear how it is possible for _any_ category which is not essentially small to satisfy the definition, much less a wide variety of the algebraic and topological categories which are considered in practice. Thus, to illustrate the definition, we give an explicit construction of the functor
 $$L : [\Grp^{\op},\Set] \to \Grp$$
 that is left adjoint to the Yoneda embedding $y : \Grp \hookrightarrow [\Grp^{\op},\Set]$.
 

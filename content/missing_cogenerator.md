@@ -20,5 +20,5 @@ Assume that there is a cogenerator $Y$. By assumption (2) there is an object $X 
 
 Now assume that $\C$ is hypercocomplete. Using the axiom of choice, we may assume that for each small cardinal $\kappa$, there is at most one element $X \in \F$ such that $\card(U(X)) = \kappa$. Treating $\F$ as a discrete diagram in $\C$, assumption (1) implies that for any object $Y$ of $\C$, the collection of cocones $\F \to Y$ is essentially small, since the maps $X \to Y$ with $\card(U(X)) > \card(U(Y))$ must all be zero in such a cocone. Since $\C$ is hypercocomplete, there exists a coproduct $Y$ of all elements of $\F$. But then by assumption (2), there exists $X \in \F$ such that $\card(U(X)) > \card(U(Y))$; and since $\C$ is pointed, the coprojection $X \to Y$ must be split monic and therefore non-zero. Using assumption (1), we get a contradiction.
 
-Finally, any cototal category is hypercocomplete by Thm. 5.6 in G. M. Kelly, <a href="https://www.numdam.org/item/?id=CTGDC_1986__27_2_109_0" target="_blank">A survey of totality for enriched and ordinary categories</a>.
+Finally, any cototal category is hypercocomplete by Thm. 5.6 in G. M. Kelly, [A survey of totality for enriched and ordinary categories](https://www.numdam.org/item/?id=CTGDC_1986__27_2_109_0).
 :::

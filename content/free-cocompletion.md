@@ -14,9 +14,9 @@ that are _small_. This condition can be described in many equivalent ways:
 3. There is an essentially small subcategory $\I \subseteq \C$ such that $F$ is the left Kan extension of its restriction to $\I$.
 4. The category of elements $\int F$ is [finally small](https://ncatlab.org/nlab/show/finally+small).
 
-Here, the objects of $\int F$ are pairs $(X,a)$, where $X \in \C$ and $a \in F(X)$, and a morphism $(X,a) \to (Y,b)$ is a morphism $f : X \to Y$ with $F(f)(b) = a$. The equivalence of the conditions (1), (2), (3) is proven as Proposition 4.83 in Kelly's book [Basic Concepts of Enriched Category Theory](http://www.tac.mta.ca/tac/reprints/articles/10/tr10.html). The implication (1) $\implies$ (4) is proven as Proposition 3.7 in <a href="https://doi.org/10.1007/s10485-021-09671-9">Kan Extensions are Partial Colimits</a> by Perrone-Tholen (but there must be earlier references). The implication (4) $\implies$ (1) follows from the [co-Yoneda Lemma](https://ncatlab.org/nlab/show/co-Yoneda+lemma)
+Here, the objects of $\int F$ are pairs $(X,a)$, where $X \in \C$ and $a \in F(X)$, and a morphism $(X,a) \to (Y,b)$ is a morphism $f : X \to Y$ with $F(f)(b) = a$. The equivalence of the conditions (1), (2), (3) is proven as Proposition 4.83 in Kelly's book [Basic Concepts of Enriched Category Theory](http://www.tac.mta.ca/tac/reprints/articles/10/tr10.html). The implication (1) $\implies$ (4) is proven as Proposition 3.7 in [Kan Extensions are Partial Colimits](https://doi.org/10.1007/s10485-021-09671-9) by Perrone-Tholen (but there must be earlier references). The implication (4) $\implies$ (1) follows from the [co-Yoneda Lemma](https://ncatlab.org/nlab/show/co-Yoneda+lemma)
 $$F \cong \colim_{(X,a) \in \int F} \Hom(-,X)$$
-and the fact that final functors do not "change" colimits; see Proposition 2.5.2 in <a href="https://ncatlab.org/nlab/show/Categories+and+Sheaves" target="_blank">Kashiwara-Schapira</a>.
+and the fact that final functors do not "change" colimits; see Proposition 2.5.2 in [Kashiwara-Schapira](https://ncatlab.org/nlab/show/Categories+and+Sheaves).
 
 In contrast to the full presheaf category $[\C^{\op},\Set]$, its subcategory $\widehat{\C}$ of small presheaves is always locally essentially small:
 
