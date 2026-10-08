@@ -22,7 +22,7 @@ satisfied_properties:
     proof: This is easy.
 
   - property: preserves equalizers
-    proof: 'Let $E \subseteq A$ be the equalizer of two homomorphisms $f,g : A \rightrightarrows B$. If $a \in T(A)$ is equalized by $T(f),T(g) : T(A) \rightrightarrows T(B)$, then $a \in A$ is equalized by $f,g$, so that $a \in E$. It follows $a \in T(A) \cap E = T(E)$.'
+    proof: 'Let $E \subseteq A$ be the equalizer of two homomorphisms $f,g : A \rightrightarrows B$. If $a \in T(A)$ is equalized by $T(f),T(g) : T(A) \rightrightarrows T(B)$, then $a \in A$ is equalized by $f,g$, so that $a \in E$. It follows that $a \in T(A) \cap E = T(E)$.'
 
   - property: finitary
     proof: >-

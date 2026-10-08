@@ -51,7 +51,7 @@ unsatisfied_properties:
 
   - property: left-invertible
     proof: >-
-      Assume that there is a functor $F : \Set \to \Set$ with natural isomorphisms 
+      Assume that there is a functor $F : \Set \to \Set$ with natural isomorphisms
       $$\alpha_X : X \to F(X+X).$$
       By the Yoneda lemma, there is some $u \in F(1+1)$ such that $\alpha_X$ is given by
       $$\alpha_X(x) = F((x;x) : 1+1 \to X + X)(u)$$

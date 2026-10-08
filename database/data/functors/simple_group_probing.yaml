@@ -50,7 +50,7 @@ unsatisfied_properties:
     proof: >-
       We first prove that if $G$ is a torsion-free group, then the pointed set $F(G)$ is trivial, i.e. a singleton set. In fact, our explicit choice $L_\kappa = \Alt_{\fin}(\kappa)$ implies that $L_\kappa$ is a filtered colimit of finite groups and is therefore a torsion group, which implies that every homomorphism $L_\kappa \to G$ is trivial.
 
-      Now choose a free group $G$ that admits an epimorphism $G \to L_{\alpha_0}$. The induced map $F(G) \to F(L_{\alpha_0})$ is not an epimorphism, since otherwise $F(L_{\alpha_0})$ would be trivial, but $(\id_{L_{\alpha_0}},1,1,\dotsc)$ is a non-trivial element.
+      Now choose a free group $G$ that admits an epimorphism $G \to L_{\aleph_0}$. The induced map $F(G) \to F(L_{\aleph_0})$ is not an epimorphism, since otherwise $F(L_{\aleph_0})$ would be trivial, but $(\id_{L_{\aleph_0}},1,1,\dotsc)$ is a non-trivial element.
 
   - property: full
     proof: 'We already mentioned that $F(G)$ can be regarded as a pointed set. Every homomorphism $G \to H$ induces a pointed map $F(G) \to F(H)$. (Thus, the functor should really be regarded as a functor to $\Set_*$, but in this entry, the codomain is $\Set$, which makes life easier.) Thus, it suffices to find a group $G$ with a non-pointed map $F(G) \to F(G)$, which of course exists as soon as $F(G)$ is non-trivial. But we already saw that each $F(L_\kappa)$ is non-trivial.'

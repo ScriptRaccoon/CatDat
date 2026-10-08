@@ -47,7 +47,7 @@ unsatisfied_properties:
     proof: We have $2^{0 + 0} \neq 2^0 + 2^0$.
 
   - property: full on isomorphisms
-    proof: 'If $f : X \to Y$ is any map, then $f_* : P(Y) \to P(X)$ preserves the empty set (in fact, all unions). Thus, it suffices to take any bijective map $P(X) \to P(X)$ that does not preserve $\varnothing$, such as the transposition of $\varnothing$ and $X$ (where $X$ is non-empty).'
+    proof: 'If $f : X \to Y$ is any map, then $f_* : P(X) \to P(Y)$ preserves the empty set (in fact, all unions). Thus, it suffices to take any bijective map $P(X) \to P(X)$ that does not preserve $\varnothing$, such as the transposition of $\varnothing$ and $X$ (where $X$ is non-empty).'
 
   - property: preserves reflexive coequalizers
     proof: >-

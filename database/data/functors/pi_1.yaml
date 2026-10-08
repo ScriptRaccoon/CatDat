@@ -44,7 +44,7 @@ unsatisfied_properties:
     proof: The functor $\pi_1$ maps the regular epimorphism $(\IR,0) \to (S^1,1)$, $t \mapsto e^{2 \pi i t}$, to the trivial group homomorphism $\{1\} \to \IZ$, which is not surjective.
 
   - property: preserves binary coproducts
-    proof: See <a href="https://math.stackexchange.com/questions/3991443">MSE/3991443</a> or <a href="https://math.stackexchange.com/questions/2788471">MSE/2788471</a> for counterexamples. See <a href="https://math.stackexchange.com/questions/4625240">MSE/4625240</a> for conditions which binary products are preserved.
+    proof: See <a href="https://math.stackexchange.com/questions/3991443">MSE/3991443</a> or <a href="https://math.stackexchange.com/questions/2788471">MSE/2788471</a> for counterexamples. See <a href="https://math.stackexchange.com/questions/4625240">MSE/4625240</a> for conditions under which binary coproducts are preserved.
 
   - property: finitary
     proof: >-

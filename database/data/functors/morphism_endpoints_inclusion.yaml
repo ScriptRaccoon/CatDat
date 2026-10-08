@@ -30,10 +30,10 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: left-invertible
-    proof: There are exactly two functors $\{0 \to 1\} \to \{0,1\}$, namely, the two constant functors $0,1$. Each of these does not provide a left inverse.
+    proof: There are exactly two functors $\{0 \to 1\} \to \{0,1\}$, namely, the two constant functors $0,1$. Neither of them provides a left inverse.
 
   - property: right-invertible
-    proof: There are exactly two functors $\{0 \to 1\} \to \{0,1\}$, namely, the two constant functors $0,1$. Each of these does not provide a right inverse.
+    proof: There are exactly two functors $\{0 \to 1\} \to \{0,1\}$, namely, the two constant functors $0,1$. Neither of them provides a right inverse.
 
   - property: right adjoint
     proof: This follows from Corollary 4 <a href="/content/functors_on_discrete_categories">here</a>.
