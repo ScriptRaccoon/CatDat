@@ -202,7 +202,7 @@ unsatisfied_properties:
 
   - property: coaccessible
     proof: >-
-      We will find a family of morphisms in $[(\IN,\leq),\Set]_{\conn}$ such that an object $X$ is projective to the family if and only if $X_k \to X_{k+1}$ is an isomorphism for each $k \geq 1$. Then $X_k$ is a singleton for each $k \geq 1$, and the full subcategory of such objects is equivalent to <a href="/category/Set">$\Set$</a>, which is not coaccessible. It will then follow from the dual of Prop. 4.7 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adamek-Rosicky</a> that $[(\IN,\leq),\Set]_{\conn}$ is not coaccessible.
+      We will find a family of morphisms in $[(\IN,\leq),\Set]_{\conn}$ such that an object $X$ is projective to the family if and only if $X_k \to X_{k+1}$ is an isomorphism for each $k \geq 1$. Then $X_k$ is a singleton for each $k \geq 1$, and the full subcategory of such objects is equivalent to <a href="/category/Set">$\Set$</a>, which is not coaccessible. It will then follow from the dual of Prop. 4.7 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adámek–Rosický</a> that $[(\IN,\leq),\Set]_{\conn}$ is not coaccessible.
 
       Let $k \geq 1$. Consider the monomorphism of connected sequences $U^{[k]} \hookrightarrow V^{[k]}$ defined by
       $$\begin{CD}

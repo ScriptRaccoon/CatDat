@@ -74,7 +74,7 @@ unsatisfied_properties:
     proof: This is because already the full subcategory <a href="/category/Sch_R">$\Sch_R$</a> of $R$-schemes is not Malcev.
 
   - property: co-Malcev
-    proof: 'We can adjust the proof for <a href="/category/Top">$\Top$</a> (see <a href="https://mathoverflow.net/questions/509548">MO/509548</a>) as follows: Let $K$ be a residue field of $R$, let $X$ be a singleton and $Y = \{u,v\}$ be the Sierpinski space where $\{u\}$ is open, but $\{v\}$ is not. Endow both with the sheaf of locally constant functions to $K$. Thus, $\O_X(X) = K$, $\O_Y(Y) = \O_Y(\{u\}) = K$. There is a canonical morphism $p : X + X \to Y$. It is a coreflexive corelation that is not cosymmetric.'
+    proof: 'We can adjust the proof for <a href="/category/Top">$\Top$</a> (see <a href="https://mathoverflow.net/questions/509548">MO/509548</a>) as follows: Let $K$ be a residue field of $R$, let $X$ be a singleton and $Y = \{u,v\}$ be the Sierpiński space where $\{u\}$ is open, but $\{v\}$ is not. Endow both with the sheaf of locally constant functions to $K$. Thus, $\O_X(X) = K$, $\O_Y(Y) = \O_Y(\{u\}) = K$. There is a canonical morphism $p : X + X \to Y$. It is a coreflexive corelation that is not cosymmetric.'
     references:
       - Top_not_co-malcev
 
