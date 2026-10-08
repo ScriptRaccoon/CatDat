@@ -33,7 +33,7 @@ satisfied_properties:
     proof: >-
       It is sufficient to prove that if a family of finite groups $(G_i)_{i \in I}$ has a product $P$ in $\FinGrp$, then almost all $G_i$ are trivial; then the product reduces to a finite product, which is clearly preserved. Note that it is not enough to prove that the $\Grp$-product is infinite; this argument would be circular, since it assumes that the $\FinGrp$-product is equal to the $\Grp$-product.
       Assume that there are infinitely many indices $i_1,i_2,\dotsc$ for which $G_{i_n}$ is non-trivial. Let $N \geq 1$. There is a canonical homomorphism $P \to \prod_{n=1}^{N} G_{i_n}$ to the finite product (which definitely exists), and by using trivial homomorphisms, we see that it is actually a split epimorphism. Therefore,
-      $$\textstyle\card(P) \geq \prod_{i=1}^{N} \card(G_{i_n}) \geq \prod_{i=1}^{N} 2 = 2^N.$$
+      $$\textstyle\card(P) \geq \prod_{n=1}^{N} \card(G_{i_n}) \geq \prod_{n=1}^{N} 2 = 2^N.$$
       Since this holds for all $N$, we obtain a contradiction to the finiteness of $P$.
     label: forget_finite_group_preserves_products
 
@@ -49,7 +49,7 @@ unsatisfied_properties:
     proof: This is trivial.
 
   - property: left-invertible
-    proof: 'Assume that there is a functor $F : \Grp \to \FinGrp$ with natural isomorphisms $F(G) \cong G$ for finite groups $G$. Consider the group $A \coloneqq F(\prod_{n \geq 1} \IZ/n)$. For every $n \geq 1$ there is a split monomorphism from $\IZ/n$ to $\prod_{n \geq 1} \IZ/n$. It induces a split monomorphism from $F(\IZ/n) \cong \IZ/n$ to $A$, so that $\card(A) \geq n$. But then $A$ cannot be finite.'
+    proof: 'Assume that there is a functor $F : \Grp \to \FinGrp$ with natural isomorphisms $F(G) \cong G$ for finite groups $G$. Consider the group $A \coloneqq F(\prod_{m \geq 1} \IZ/m)$. For every $n \geq 1$ there is a split monomorphism from $\IZ/n$ to $\prod_{m \geq 1} \IZ/m$. It induces a split monomorphism from $F(\IZ/n) \cong \IZ/n$ to $A$, so that $\card(A) \geq n$. But then $A$ cannot be finite.'
     label: forget_finite_group_not_left-invertible
 
   - property: finitary

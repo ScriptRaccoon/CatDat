@@ -43,4 +43,4 @@ unsatisfied_properties:
     proof: The underlying set of a trivial vector space is not empty.
 
   - property: preserves coequalizers
-    proof: 'The coequalizer of $0,i_1 : K \to K^2$ in $\Vect$ is $p_2 : K^2 \to K$, but the coequalizer in $\Set$ is $(K \times K^*) \cup \{(0,0)\}$.'
+    proof: 'The coequalizer of $0,i_1 : K \rightrightarrows K^2$ in $\Vect$ is $p_2 : K^2 \to K$, but the coequalizer in $\Set$ is $(K \times K^*) \cup \{(0,0)\}$.'

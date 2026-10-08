@@ -29,7 +29,7 @@ satisfied_properties:
     check_redundancy: false
 
   - property: conservative
-    proof: 'This is a straight forward calculation. Assume that $f : X \to Y$ is a map such that $f^2 : X^2 \to Y^2$ is bijective. For every $y \in Y$ there is some $(x_1,x_2) \in X^2$ with $(y,y) = (f(x_1),f(x_2))$, so that $y = f(x_1)$. This shows that $f$ is surjective. To show that $f$ is injective, suppose that $x_1,x_2 \in X$ satisfy $f(x_1)=f(x_2)$. Then $f^2(x_1,x_1) = f^2(x_2,x_2)$, so that $(x_1,x_1) = (x_2,x_2)$. Hence, $x_1=x_2$.'
+    proof: 'This is a straightforward calculation. Assume that $f : X \to Y$ is a map such that $f^2 : X^2 \to Y^2$ is bijective. For every $y \in Y$ there is some $(x_1,x_2) \in X^2$ with $(y,y) = (f(x_1),f(x_2))$, so that $y = f(x_1)$. This shows that $f$ is surjective. To show that $f$ is injective, suppose that $x_1,x_2 \in X$ satisfy $f(x_1)=f(x_2)$. Then $f^2(x_1,x_1) = f^2(x_2,x_2)$, so that $(x_1,x_1) = (x_2,x_2)$. Hence, $x_1=x_2$.'
 
   - property: finitary
     # TODO: refactor this once we add "preserves sifted colimits"
@@ -57,7 +57,7 @@ unsatisfied_properties:
 
   - property: left-invertible
     proof: >-
-      Assume that there is a functor $F : \Set \to \Set$ with natural isomorphisms 
+      Assume that there is a functor $F : \Set \to \Set$ with natural isomorphisms
       $$\alpha_X : X \to F(X^2).$$
       By the Yoneda lemma, there is some $u \in F(1)$ such that $\alpha_X$ is given by
       $$\alpha_X(x) = F((x,x) : 1 \to X^2)(u)$$

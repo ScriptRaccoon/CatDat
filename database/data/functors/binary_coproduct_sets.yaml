@@ -21,7 +21,7 @@ satisfied_properties:
     proof: The functor $\Set \to \Set \times \Set$, $X \mapsto (X,0)$ provides a right inverse since $X + 0 \cong X$.
 
   - property: preserves equalizers
-    proof: This can be checked with a straight forward calculation.
+    proof: This can be checked with a straightforward calculation.
 
   - property: conservative
     proof: This is easy to check.

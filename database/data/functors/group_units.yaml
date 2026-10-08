@@ -35,7 +35,7 @@ satisfied_properties:
       Let $n \geq 1$. The product $xy= x_1 \cdots x_n y_1 \cdots y_m$ would be in reduced form if $x_n$ and $y_1$ belong to different monoids; likewise, if they belong to the same monoid but $x_n y_1 \neq 1$. In that case, its free product length would be $n + m \geq 1$, so it could not evaluate to $1$. Thus, $x_n$ and $y_1$ necessarily belong to the same monoid, say $M_k$, and satisfy $x_n y_1 = 1$ in $M_k$. In particular, this implies that $m \geq 1$.
 
       Next, consider the shorter elements $\tilde{x} \coloneqq x_1 \cdots x_{n-1}$ and $\tilde{y} \coloneqq y_2 \cdots y_m$, which are still in reduced form. Since $x_n y_1 = 1$, it follows that $1 = xy = \tilde{x} \tilde{y}$. On the other hand,
-      $$\tilde{y}\tilde{x} = (x_n y_1) \tilde{y} \tilde{x} (x_n y_1)  = x_n (y x) y_1 = x_n y_1 = 1.$$
+      $$\tilde{y}\tilde{x} = (x_n y_1) \tilde{y} \tilde{x} (x_n y_1) = x_n (y x) y_1 = x_n y_1 = 1.$$
       Thus, by the induction hypothesis applied to the pair $(\tilde{x},\tilde{y})$, all $x_1,\dotsc,x_{n-1}$ are units and $n-1 = m-1$, hence $n = m$. Moreover,
       $$1 = y x = y_1 (\tilde{y} \tilde{x}) x_n = y_1 x_n,$$
       which shows that $1 = y_1 x_n$ in $M_k$. Combined with $x_n y_1 = 1$, this shows that $x_n$ is a unit as well.
