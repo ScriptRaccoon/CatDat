@@ -32,9 +32,9 @@ General:
 
 - `pnpm dev`: start the dev server.
 - `pnpm build` / `pnpm preview`: build and preview the production app.
-- `pnpm check`: run the Svelte and TypeScript checks (also runs as a pre-push hook).
-- `pnpm format` / `pnpm lint`: format with Prettier / check formatting.
-- `pnpm cspell`: spell-check `content/` and `database/`.
+- `pnpm check`: run the Svelte and TypeScript checks (also runs as a pre-push hook and in CI).
+- `pnpm format` / `pnpm lint`: format with Prettier / check formatting (`lint` also runs as a pre-push hook and in CI).
+- `pnpm cspell`: spell-check `content/` and `database/` (also runs as a pre-push hook and in CI).
 - `pnpm e2e`: run the Playwright end-to-end tests (`e2e:debug` and `e2e:ui` are variants).
 
 Database (all scripts run with `tsx` and are type-checked by `pnpm check` via the root `tsconfig.json`):
