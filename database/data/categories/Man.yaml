@@ -89,7 +89,7 @@ unsatisfied_properties:
     proof: One can show that the map $\IR \to \IR$, $x \mapsto x^2$ does not have a kernel pair, see <a href="https://math.stackexchange.com/a/322602">MSE/322485</a>.
 
   - property: cokernel pairs
-    proof: The inclusion $\{0\} \to \IR$ does not have a cokernel pair, see <a href="https://mathoverflow.net/questions/19116">MO/19916</a>.
+    proof: The inclusion $\{0\} \to \IR$ does not have a cokernel pair, see <a href="https://mathoverflow.net/questions/19916">MO/19916</a>.
 
   - property: sequential colimits
     proof: If $\Man$ had sequential colimits, then by <a href="/content/special_sequential_colimits">this lemma</a> there would be a manifold $M$ that admits a split epimorphism $M \to \IR^n$ for every $n$. But then $M$ will have an infinite-dimensional tangent space, which is a contradiction.
@@ -108,7 +108,7 @@ unsatisfied_properties:
       - Set_c_no_aleph1-cofiltered_limits
 
   - property: quotients of congruences
-    proof: If $\Man$ had quotients of congruences, then by <a href="/content/pushouts-of-monos-via-congruence-quotients">this lemma</a>, it would have a pushout of $\IR \leftarrow \{0\} \rightarrow \IR$. This contradicts <a href="https://mathoverflow.net/questions/19116">MO/19916</a>.
+    proof: If $\Man$ had quotients of congruences, then by <a href="/content/pushouts-of-monos-via-congruence-quotients">this lemma</a>, it would have a pushout of $\IR \leftarrow \{0\} \rightarrow \IR$. This contradicts <a href="https://mathoverflow.net/questions/19916">MO/19916</a>.
 
 special_objects:
   initial object:

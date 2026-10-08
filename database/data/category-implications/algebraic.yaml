@@ -12,7 +12,7 @@
     - one-sorted finitary algebraic
   conclusions:
     - well-copowered
-  proof: See <a href="https://mathoverflow.net/questions/486607">MSE/486607</a>. Alternatively, one may combine the facts that one-sorted finitary algebraic categories are locally (finitely) presentable and that locally presentable categories are well-copowered, both of which are saved in the database. But we include the direct proof here as well, since it makes it easier to deduce the property for one-sorted finitary algebraic categories appearing in practice.
+  proof: See <a href="https://mathoverflow.net/questions/486607">MO/486607</a>. Alternatively, one may combine the facts that one-sorted finitary algebraic categories are locally (finitely) presentable and that locally presentable categories are well-copowered, both of which are saved in the database. But we include the direct proof here as well, since it makes it easier to deduce the property for one-sorted finitary algebraic categories appearing in practice.
 
 - id: finitary_algebraic_implies_regular
   assumptions:
