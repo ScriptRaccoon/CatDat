@@ -1,4 +1,4 @@
-import { render_nested_formulas } from '#lib/server/formulas.ts'
+import { render_nested_text } from '#lib/server/text.ts'
 import { decode_property_ID } from '#shared/property.utils.ts'
 import { fetch_property } from '#lib/server/fetchers/property.ts'
 import { is_structure_type } from '#shared/config.ts'
@@ -10,5 +10,5 @@ export const load = (event) => {
 
 	const id = decode_property_ID(event.params.id)
 
-	return render_nested_formulas(fetch_property(type, id))
+	return render_nested_text(fetch_property(type, id))
 }

@@ -1,6 +1,6 @@
 import { error } from '@sveltejs/kit'
 import { db } from '#lib/server/db.ts'
-import { render_nested_formulas } from '#lib/server/formulas.ts'
+import { render_nested_text } from '#lib/server/text.ts'
 import { MAX_STRUCTURES_COMPARE } from '#lib/commons/compare.utils.ts'
 import type { ComparisonResult, StructureType } from '#lib/commons/types.ts'
 import { to_placeholders } from '#shared/utils.ts'
@@ -48,7 +48,7 @@ export function fetch_comparison_result(
 	callback()
 
 	return {
-		structures: render_nested_formulas(structures),
+		structures: render_nested_text(structures),
 		comparison_table,
 		type
 	}

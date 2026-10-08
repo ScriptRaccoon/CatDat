@@ -1,6 +1,6 @@
 import type { StructureType } from '#lib/commons/types.ts'
 import { db } from '#lib/server/db.ts'
-import { render_nested_formulas } from '#lib/server/formulas.ts'
+import { render_nested_text } from '#lib/server/text.ts'
 import { to_placeholders } from '#shared/utils.ts'
 import { error } from 'node:console'
 import structure_history from '#shared/structure.history.json'
@@ -84,9 +84,9 @@ export const load = () => {
 
 	example_structures_db.sort((a, b) => order.get(a.id)! - order.get(b.id)!)
 
-	const example_structures = render_nested_formulas(example_structures_db.slice(2))
+	const example_structures = render_nested_text(example_structures_db.slice(2))
 
-	const selected_structures = render_nested_formulas({
+	const selected_structures = render_nested_text({
 		Haus: example_structures_db[0],
 		FinAb: example_structures_db[1]
 	})

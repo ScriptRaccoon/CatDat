@@ -1,4 +1,4 @@
-import { render_nested_formulas } from '#lib/server/formulas.ts'
+import { render_nested_text } from '#lib/server/text.ts'
 import { fetch_structure } from '#lib/server/fetchers/structure.ts'
 import { is_structure_type } from '#shared/config.ts'
 import { error } from '@sveltejs/kit'
@@ -17,7 +17,7 @@ export const load = (event) => {
 
 	const special_structure_data = type === 'category' ? fetch_category(id) : { type }
 
-	return render_nested_formulas({
+	return render_nested_text({
 		structure_data,
 		special_structure_data
 	})
