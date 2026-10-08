@@ -185,7 +185,6 @@ AI tools may be used for both code and data in this repository, as long as a hum
 - AI-generated code and data (proofs, structures, properties, implications) are accepted as long as they are readable, understandable, and have been checked thoroughly by you.
 - You are the author: you must understand every line of code and every argument and be able to explain them, check every claim, link, and citation, and fix anything that is unclear, incomplete, or wrong before submitting it.
 - AI may also be used to improve English writing (e.g. grammar, clarity, phrasing), particularly if you are not a native speaker.
-- Pull request descriptions and commit messages must be written manually. AI-generated summaries are often superficial, meaningless, and do not tell the whole story.
 
 In summary, treat AI as a productivity tool, not as a substitute for understanding or authorship.
 

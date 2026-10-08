@@ -106,7 +106,7 @@ Writing and notation conventions:
 - In displayed formulas containing `\prod` or `\coprod`, add `\textstyle` for the more compact layout, e.g. `$$\textstyle h : A \to \prod_{i \in I} Q_i$$`.
 - Run `pnpm cspell` after editing text, and add legitimate new words to `.cspell.json`.
 
-Responsible use of AI (from CONTRIBUTING.md): AI-generated code and data (including proofs) are accepted if they are readable, understandable, and checked thoroughly by the human author, who must understand every line and argument and takes responsibility for every claim, link, and citation; PR descriptions and commit messages must be written manually.
+Responsible use of AI (from CONTRIBUTING.md): AI-generated code and data (including proofs) are accepted if they are readable, understandable, and checked thoroughly by the human author, who must understand every line and argument and takes responsibility for every claim, link, and citation.
 
 ## Writing proofs
 
