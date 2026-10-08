@@ -29,18 +29,15 @@ satisfied_properties:
     proof: This is trivial.
     check_redundancy: false
 
+  - property: semi-strongly connected
+    proof: This is trivial.
+
   - property: finitely cocomplete
     proof: Finitely many natural numbers have a supremum natural number.
     check_redundancy: false
 
-  - property: binary products
-    proof: Two natural numbers have a minimum.
-
   - property: connected limits
     proof: Every non-empty set of natural numbers has a minimum.
-
-  - property: semi-strongly connected
-    proof: This is trivial.
 
   - property: direct
     proof: This is because the natural numbers with respect to $<$ are well-founded.
@@ -58,6 +55,8 @@ unsatisfied_properties:
 special_objects:
   initial object:
     description: $0$
+  products:
+    description: '[non-empty case] minimum'
   coproducts:
     description: '[finite case] supremum'
 

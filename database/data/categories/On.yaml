@@ -25,17 +25,14 @@ satisfied_properties:
   - property: cocomplete
     proof: Every set of ordinal numbers has a supremum.
 
-  - property: binary products
-    proof: For ordinal numbers $\alpha,\beta$ their minimum exists, it is $\alpha$ when $\alpha \leq \beta$ and $\beta$ otherwise.
+  - property: semi-strongly connected
+    proof: It is well-known that for ordinals $\alpha,\beta$ we have $\alpha \leq \beta$ or $\beta \leq \alpha$.
 
   - property: connected limits
     proof: Every non-empty set of ordinal numbers has a minimum.
 
   - property: well-powered
     proof: This is because for every ordinal $\alpha$ the collection of ordinals $\leq \alpha$ is a set (namely, $\alpha + 1$).
-
-  - property: semi-strongly connected
-    proof: It is well-known that for ordinals $\alpha,\beta$ we have $\alpha \leq \beta$ or $\beta \leq \alpha$.
 
   - property: direct
     proof: This is because the ordinal numbers with respect to $<$ are well-founded (by definition).
@@ -50,6 +47,8 @@ unsatisfied_properties:
 special_objects:
   initial object:
     description: $0$
+  products:
+    description: '[non-empty case] minimum'
   coproducts:
     description: supremum
 
