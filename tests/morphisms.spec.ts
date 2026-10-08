@@ -58,7 +58,7 @@ test("user can navigate to morphisms tagged with 'algebra' from the morphism lis
 
 	await expect(
 		page.getByRole('link', {
-			name: 'embedding of integer into rational numbers',
+			name: 'embedding of integers into rational numbers',
 			exact: true
 		})
 	).toBeVisible()

@@ -18,7 +18,7 @@ satisfied_properties:
     proof: 'We have $p \circ i = \id_0$ for the other morphism $i : 0 \to 1$ in the category.'
 
   - property: zero morphism
-    proof: It factors through the zero object and is therefore the trivial homomorphism.
+    proof: It factors through the zero object $0$.
 
 unsatisfied_properties:
   - property: effective epimorphism
