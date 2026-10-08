@@ -33,4 +33,4 @@ unsatisfied_properties:
 
 undecidable_properties:
   - property: finitely complete
-    proof: This property holds if and only if every $R$-module is flat, i.e. that $R$ is <a href="https://en.wikipedia.org/wiki/Von_Neumann_regular_ring">absolutely flat</a>.
+    proof: This property holds if and only if every $R$-module is flat, i.e. if $R$ is <a href="https://en.wikipedia.org/wiki/Von_Neumann_regular_ring">absolutely flat</a>.

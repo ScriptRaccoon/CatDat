@@ -25,7 +25,7 @@ satisfied_properties:
       - Vect_extremal_generator
 
   - property: self-dual
-    proof: From linear algebra we know that the dual vector space functor $V \mapsto V^*$ implements an equivalence $\FinVect \simeq \FinVect^{\op}$ with natural isomorphisms $K \cong K^*$ and $(V \otimes W)^* \cong V^* \otimes W^*$.
+    proof: From linear algebra we know that the dual vector space functor $V \mapsto V^*$ implements an equivalence $\FinVect_K \simeq (\FinVect_K)^{\op}$ with natural isomorphisms $K \cong K^*$ and $(V \otimes W)^* \cong V^* \otimes W^*$.
 
 unsatisfied_properties:
   - property: strict
