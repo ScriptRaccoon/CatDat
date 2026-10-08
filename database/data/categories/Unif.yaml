@@ -46,7 +46,7 @@ satisfied_properties:
       - Set_extremal_cogenerator
 
   - property: regular subobject classifier
-    proof: The indiscrete two-point space $\{0,1\}$ is a regular subobject classifier since continuous maps $X \to \{0,1\}$ correspond to subsets of $X$.
+    proof: The indiscrete two-point space $\{0,1\}$ is a regular subobject classifier since uniform maps $X \to \{0,1\}$ correspond to subsets of $X$.
 
   - property: extensive
     proof: >-

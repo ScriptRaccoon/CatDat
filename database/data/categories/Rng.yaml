@@ -31,7 +31,7 @@ satisfied_properties:
     proof: The zero ring is a zero object.
 
   - property: Malcev
-    proof: This follows in the same way as for <a href="/category/Grp">$\Grp$</a>, see also Example 2.2.5 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories">Malcev, protomodular, homological and semi-abelian categories</a>.
+    proof: This follows in the same way as for <a href="/category/Grp">$\Grp$</a>; see also Example 2.2.5 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories">Malcev, protomodular, homological and semi-abelian categories</a>.
     references:
       - Grp_malcev
 
@@ -73,7 +73,7 @@ unsatisfied_properties:
     proof: >-
       Consider the ring $A = \IZ[X]$ and the sequence of rings $B_n = \IZ[Y]/(Y^{n+1})$ with projections $B_{n+1} \to B_n$, whose limit is $\IZ[[Y]]$ (both in $\Ring$ and $\Rng$). Every element in the coproduct of rngs $\IZ[X] \sqcup \IZ[[Y]]$ has a finite "free product" length. Now consider the elements
       $$w_n = (1 + XY) (1+XY^2) \cdots (1+X Y^n) - 1 \in A \sqcup B_n.$$
-      Because of $w_n \equiv w_{n-1} \bmod Y^n$ these form an element $w \in \lim_n (A \sqcup B_n)$. Expanding $w_n$, the longest term is $XY XY^2 \cdots X Y^n$ of "free product" length $2n$, which is unbounded.
+      Because of $w_n \equiv w_{n-1} \bmod Y^n$, these form an element $w \in \lim_n (A \sqcup B_n)$. Expanding $w_n$, the longest term is $XY XY^2 \cdots X Y^n$ of "free product" length $2n$, which is unbounded.
 
   - property: cofiltered-limit-stable epimorphisms
     proof: 'We know that <a href="/category/Ring">$\Ring$</a> does not have this property. Now use the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> applied to the forgetful functor $\Ring \to \Rng$. We only need to verify that it preserves epimorphisms: Let $f : R \to S$ be an epimorphism in $\Ring$ and let $g,h : S \rightrightarrows T$ be two homomorphisms of rngs with $gf = hf$. The element $e = g(1) = h(1) \in T$ is idempotent, and $g,h$ become homomorphisms of rings $S \rightrightarrows eTe$. Hence, $g=h$.'

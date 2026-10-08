@@ -28,10 +28,10 @@ satisfied_properties:
     proof: Every non-empty manifold is weakly terminal (by using constant maps).
 
   - property: essentially small
-    proof: 'This is a consequence of the <a href="https://en.wikipedia.org/wiki/Whitney_embedding_theorem">Whitney embedding theorem</a>. But there is also a more direct proof: Since a manifold is second-countable, it is Lindelöf (<a href="https://topospaces.subwiki.org/wiki/Second-countable_implies_Lindelof">proof</a>). In particular, there is a countable atlas. It is then completely determined by countable many open subsets of Euclidean spaces and the transition maps.'
+    proof: 'This is a consequence of the <a href="https://en.wikipedia.org/wiki/Whitney_embedding_theorem">Whitney embedding theorem</a>. But there is also a more direct proof: Since a manifold is second-countable, it is Lindelöf (<a href="https://topospaces.subwiki.org/wiki/Second-countable_implies_Lindelof">proof</a>). In particular, there is a countable atlas. It is then completely determined by countably many open subsets of Euclidean spaces and the transition maps.'
 
   - property: countable coproducts
-    proof: Take the usual disjoint union of spaces, which is clearly locally Euclidean and Hausdorff, and it is second countable since we are using only countable many spaces. (Without that condition, all coproducts would exist.)
+    proof: Take the usual disjoint union of spaces, which is clearly locally Euclidean and Hausdorff, and it is second-countable since we are using only countably many spaces. (Without that condition, all coproducts would exist.)
     check_redundancy: false
 
   - property: countably extensive
@@ -61,13 +61,13 @@ satisfied_properties:
     proof: >-
       The manifold $\IR$ is a cogenerator, since for every smooth manifold $M$ and points $p \neq q$ in $M$ there is a smooth function $f : M \to \IR$ with $f(p) = 1$ and $f(q) = 0$ (John Lee, Introduction to Smooth Manifolds, Prop. 2.25).
 
-      In fact, $\IR$ is an extremal cogenerator. To see this, suppose we have a smooth map $f : M \to N$ such that ${-} \circ f : \Hom(N, \IR) \to \Hom(M, \IR)$ is a bijection. Then using bump maps as before to separate points of $M$, we can see that $f$ must be injective on underlying sets. Also, since $\IR$ is a cogenerator and ${-} \circ f$ is injective, we get that $f$ is an epimorphism, so it has dense image (see below). We claim that in fact, $f$ is surjective. To see this, suppose we had $q \in N \setminus \im(f)$. Then there is a smooth function $\varphi : N \to \IR$ such that $\varphi^*(\{0\}) = \{q\}$ (John Lee, Introduction to Smooth Manifolds, Thm. 2.29). But then we can construct a smooth function $\psi : M \to \IR$ by
+      In fact, $\IR$ is an extremal cogenerator. To see this, suppose we have a smooth map $f : M \to N$ such that ${-} \circ f : \Hom(N, \IR) \to \Hom(M, \IR)$ is a bijection. Then using maps as before that separate points of $M$, we can see that $f$ must be injective on underlying sets. Also, since $\IR$ is a cogenerator and ${-} \circ f$ is injective, we get that $f$ is an epimorphism, so it has dense image (see below). We claim that in fact, $f$ is surjective. To see this, suppose we had $q \in N \setminus \im(f)$. Then there is a smooth function $\varphi : N \to \IR$ such that $\varphi^*(\{0\}) = \{q\}$ (John Lee, Introduction to Smooth Manifolds, Thm. 2.29). But then we can construct a smooth function $\psi : M \to \IR$ by
       $$\psi(p) \coloneqq \frac{1}{\varphi(f(p))}.$$
       Let $\xi : N \to \IR$ be the corresponding smooth function such that $f^* \xi = \psi$. Then $\varphi \cdot \xi$ must take value $1$ at any point in the image of $f$. Since the image of $f$ is dense, that implies that $\varphi \cdot \xi$ is the constant function with value 1, contradicting the fact that $\varphi(q) = 0$.
 
       Now, recall that the tangent space $T_p(M)$ of $M$ at a point $p$ is defined as the space of $\IR$-linear functions $\partial : C^\infty(M) \to \IR$ such that $\partial(gh) = g(p) \partial(h) + h(p) \partial(g)$; and similarly for the tangent space of $N$ at $f(p)$. Also, the push-forward $f_* : T_p(M) \to T_{f(p)}(N)$ is defined by precomposition with $f^* : C^\infty(N) \to C^\infty(M)$. But by assumption, $f^* : C^\infty(N) \to C^\infty(M)$ is a bijection. Also, $f^* : C^\infty(N) \to C^\infty(M)$ is a homomorphism of $\IR$-algebras, so its inverse function $(f^*)^{-1} : C^\infty(M) \to C^\infty(N)$ is also a homomorphism of $\IR$-algebras. Furthermore,
       $$(f^*)^{-1}(g)(f(p)) = f^*((f^*)^{-1}(g))(p) = g(p)$$
-      for each $g \in C^\infty(M)$. Therefore, we see that for each $\partial \in T_{f(p)}(N)$, $\partial \circ (f^*)^{-1} \in T_p(M)$, and this defines an inverse to $f_* : T_p(M) \to T_{f(p)}(N)$. Thus, by the   inverse function theorem, $f$ is a local diffeomorphism. Since $f$ is bijective, $f$ must be a diffeomorphism.
+      for each $g \in C^\infty(M)$. Therefore, we see that for each $\partial \in T_{f(p)}(N)$, $\partial \circ (f^*)^{-1} \in T_p(M)$, and this defines an inverse to $f_* : T_p(M) \to T_{f(p)}(N)$. Thus, by the inverse function theorem, $f$ is a local diffeomorphism. Since $f$ is bijective, $f$ must be a diffeomorphism.
 
 unsatisfied_properties:
   - property: skeletal
@@ -86,10 +86,10 @@ unsatisfied_properties:
       induced by the derivatives $d_x(\pi_n) : T_x(P) \to T_{x_n}(M_n)$. Since $T_x(P)$ is finite-dimensional and $\prod_{n \geq 0} T_{x_n}(M_n)$ is not, it cannot be surjective. But actually, it is: Choose tangent vectors $v_n \in T_{x_n}(M_n)$. Choose smooth curves $\gamma_n : \IR \to M_n$ with $\gamma_n(0)=x_n$ and ${\gamma_n}'(0) = v_n$. By the universal property there is a unique smooth curve $\gamma : \IR \to P$ with $\pi_n \gamma = \gamma_n$. In particular, $\gamma(0) = x$. The chain rule now implies that $\gamma'(0) \in T_x(P)$ is a preimage of $(v_n)$ – a contradiction.
 
   - property: kernel pairs
-    proof: One can show that the map $\IR \to \IR$, $x \mapsto x^2$ does not have a kernel pair, see <a href="https://math.stackexchange.com/a/322602">MSE/322485</a>.
+    proof: One can show that the map $\IR \to \IR$, $x \mapsto x^2$ does not have a kernel pair; see <a href="https://math.stackexchange.com/a/322602">MSE/322485</a>.
 
   - property: cokernel pairs
-    proof: The inclusion $\{0\} \to \IR$ does not have a cokernel pair, see <a href="https://mathoverflow.net/questions/19916">MO/19916</a>.
+    proof: The inclusion $\{0\} \to \IR$ does not have a cokernel pair; see <a href="https://mathoverflow.net/questions/19916">MO/19916</a>.
 
   - property: sequential colimits
     proof: If $\Man$ had sequential colimits, then by <a href="/content/special_sequential_colimits">this lemma</a> there would be a manifold $M$ that admits a split epimorphism $M \to \IR^n$ for every $n$. But then $M$ will have an infinite-dimensional tangent space, which is a contradiction.
@@ -99,7 +99,7 @@ unsatisfied_properties:
 
   - property: ℵ₁-cofiltered limits
     proof: >-
-      We continue the counterexample from <a href="/category/Set_c">$\Set_c$</a>. There, we started with an arbitrary uncountable set $R$ and constructed a diagram $X : P_{<\aleph_1}(R)^{\op} \to \Set$ by sending a countable subset $C \subseteq R$ to the pointed countable set $C \sqcup \{\ast\}$. Its limit in $\Set$ is uncountable.
+      We continue the counterexample from <a href="/category/Set_c">$\Set_\c$</a>. There, we started with an arbitrary uncountable set $R$ and constructed a diagram $X : P_{<\aleph_1}(R)^{\op} \to \Set$ by sending a countable subset $C \subseteq R$ to the pointed countable set $C \sqcup \{\ast\}$. Its limit in $\Set$ is uncountable.
       Now endow each set $C \sqcup \{\ast\}$ with the discrete topology. Each of them becomes a $0$-dimensional smooth manifold.
       Assume that there exists a limit cone $(\pi_C : M \to C \sqcup \{\ast\})$ in $\Man$. Since the forgetful functor $\Man \to \Set$ is representable, it preserves limits. In particular, the underlying set of $M$ is the limit of the underlying sets and is therefore uncountable.
       Since the codomain of $\pi_C$ is discrete, the map $\pi_C$ is locally constant. Thus, for every connected component $K \subseteq M$, the map $\pi_C$ is constant on $K$. Since the maps $\pi_C$ are jointly injective, it follows that every connected component of $M$ consists of a single point.
@@ -129,4 +129,4 @@ special_morphisms:
     proof: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
   epimorphisms:
     description: smooth maps with dense image
-    proof: 'Let $f : X \to Y$ be a smooth map which is not dense. Choose some non-empty open subset $U \subseteq Y$ that is disjoint from $f(X)$. Take any $p \in U$. There is a smooth <i>bump function</i> $g : Y \to \IR$ with $g(p) = 1$ and $\supp(g) \subseteq U$ (John Lee, Introduction to Smooth Manifolds, Prop. 2.25). Hence, $g \neq 0$ and $g \circ f = 0 = 0 \circ f$. Thus, $f$ is not an epimorphism.'
+    proof: 'Let $f : X \to Y$ be a smooth map whose image is not dense. Choose some non-empty open subset $U \subseteq Y$ that is disjoint from $f(X)$. Take any $p \in U$. There is a smooth <i>bump function</i> $g : Y \to \IR$ with $g(p) = 1$ and $\supp(g) \subseteq U$ (John Lee, Introduction to Smooth Manifolds, Prop. 2.25). Hence, $g \neq 0$ and $g \circ f = 0 = 0 \circ f$. Thus, $f$ is not an epimorphism.'

@@ -76,7 +76,7 @@ unsatisfied_properties:
       - Set_family_mostly_1_colimits
 
   - property: cofiltered-limit-stable epimorphisms
-    proof: Take some index $i \in I$ and consider the embedding $\Set \to \Set^{(I)}_1$, $T \mapsto \widetilde{T}$, defined by $\widetilde{T}_i = T$ and $\widetilde{T}_j = 1$ for indices $j \neq i$. This embedding is faithful and preserves limits and epimorphisms. Thus, by Lemma 2 <a href="/content/subcategories">here</a>, the claim follows from the fact that epimorphisms in <a href="/category/Set">$\Set$</a> are not stable under cofiltered limits.
+    proof: Take some index $i \in I$ and consider the embedding $\Set \to \Set^{(I)}_1$, $T \mapsto \widetilde{T}$, defined by $\widetilde{T}_i = T$ and $\widetilde{T}_j = 1$ for indices $j \neq i$. This embedding is faithful and preserves limits and epimorphisms. Thus, by the dual of Lemma 2 <a href="/content/subcategories">here</a>, the claim follows from the fact that epimorphisms in <a href="/category/Set">$\Set$</a> are not stable under cofiltered limits.
 
   - property: Malcev
     proof: Again, we use the embedding $\Set \to \Set^{(I)}_1$, $T \mapsto \widetilde{T}$, which extends a set by singletons. Take any set $X$ with a non-symmetric reflexive relation $R \hookrightarrow X \times X$. Then $\widetilde{R} \hookrightarrow \widetilde{X} \times \widetilde{X}$ is a non-symmetric reflexive relation.

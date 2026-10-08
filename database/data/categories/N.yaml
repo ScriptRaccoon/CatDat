@@ -50,7 +50,7 @@ unsatisfied_properties:
     proof: The poset $(\IN,\leq)$ has infinitely many non-minimal elements $1, 2, \dotsc$. Therefore, by the corollary <a href="/content/thin_extremal_generator">here</a>, an extremal generator cannot exist.
 
   - property: extremal cogenerator
-    proof: The poset $\IN$ has infinitely many non-maximal elements $0, 1, 2, \dotsc$. Therefore, by the corollary <a href="/content/thin_extremal_generator">here</a>, an extremal generator cannot exist.
+    proof: The poset $\IN$ has infinitely many non-maximal elements $0, 1, 2, \dotsc$. Therefore, by the corollary <a href="/content/thin_extremal_generator">here</a>, an extremal cogenerator cannot exist.
 
 special_objects:
   initial object:

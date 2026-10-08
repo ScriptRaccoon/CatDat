@@ -62,7 +62,7 @@ satisfied_properties:
 
   - property: cokernel pairs
     proof: >-
-      We will prove that $\Bin_{\symm,\irr} \subseteq \Bin$ is closed under cokernel pairs. Let $f : (X,R) \to (Y,S)$ be a morphism in $\Bin_{\symm,\irr}$. The pushout $(Y,S) \sqcup_{(X,R)} (Y,S)$ is constructed as $(Y \sqcup_R Y, T)$, where $T$ consists of the pairs $(\iota_1(y),\iota_1(y'))$ and $(\iota_2(y),\iota_2(y'))$ for $(y,y') \in S$. The relation $T$ is symmetric because $S$ is symmetric. It is also irreflexive since there is a morphism $(Y,S) \sqcup_{(X,R)} (Y,S) \to (Y,S)$, the codiagonal, and $S$ is irreflexive.
+      We will prove that $\Bin_{\symm,\irr} \subseteq \Bin$ is closed under cokernel pairs. Let $f : (X,R) \to (Y,S)$ be a morphism in $\Bin_{\symm,\irr}$. The pushout $(Y,S) \sqcup_{(X,R)} (Y,S)$ is constructed as $(Y \sqcup_X Y, T)$, where $T$ consists of the pairs $(\iota_1(y),\iota_1(y'))$ and $(\iota_2(y),\iota_2(y'))$ for $(y,y') \in S$. The relation $T$ is symmetric because $S$ is symmetric. It is also irreflexive since there is a morphism $(Y,S) \sqcup_{(X,R)} (Y,S) \to (Y,S)$, the codiagonal, and $S$ is irreflexive.
 
   - property: coequalizers of kernel pairs
     proof: >-
@@ -92,7 +92,7 @@ unsatisfied_properties:
     proof: >-
       The two morphisms
       $$(\{a\},\varnothing) \rightrightarrows \bigl(\{a,a'\},\{(a,a'),(a',a)\}\bigr)$$
-      in $\Bin_{\irr}$ are not coequalized by any morphism, since such a morphism would necessarily identify $a$ and $a'$, and hence would map $a$ to an element that relates to itself.
+      in $\Bin_{\symm,\irr}$ are not coequalized by any morphism, since such a morphism would necessarily identify $a$ and $a'$, and hence would map $a$ to an element that relates to itself.
 
   - property: quotients of congruences
     proof: We can copy the proof for <a href="/category/Bin_irr">$\Bin_{\irr}$</a>.

@@ -71,7 +71,7 @@ satisfied_properties:
 
   - property: cosifted
     proof: >-
-      Let $X,Y \in \Delta$. We may pick $x \in X$, $y \in Y$. Then there is a "point span" $X \xleftarrow{x} [0] \xrightarrow{y} Y$. Every span $X \xleftarrow{f} Z \xrightarrow{g} Y$ is connected to such a point span: Pick $z \in Z$. This defines a morphism of spans: 
+      Let $X,Y \in \Delta$. We may pick $x \in X$, $y \in Y$. Then there is a "point span" $X \xleftarrow{x} [0] \xrightarrow{y} Y$. Every span $X \xleftarrow{f} Z \xrightarrow{g} Y$ is connected to such a point span: Pick $z \in Z$. This defines a morphism of spans:
       $$\begin{CD} X @<{f(z)}<< [0] @>{g(z)}>> Y \\ @| @VV{z}V @| \\ X @<<{f}< Z @>>{g}> Y \end{CD}$$
       It remains to show that all point spans are connected to each other. Assume $x_0,x_1 \in X$ and $y \in Y$, w.l.o.g. $x_0 \leq x_1$. Define the map $f : [1] \to X$ by $f(0) = x_0$, $f(1) = x_1$, and the map $g : [1] \to Y$ by $g(0)=g(1)=y$. They are order-preserving and fit into a zig-zag of spans:
       $$\begin{CD} X @<{x_0}<< [0] @>{y}>> Y \\ @| @V{0}VV @| \\ X @<{f}<< [1] @>{g}>> Y \\ @| @A{1}AA @| \\ X @<{x_1}<< [0] @>{y}>> Y \end{CD}$$
@@ -79,7 +79,7 @@ satisfied_properties:
     label: Delta_cosifted
 
   - property: ℵ₁-cofiltered limits
-    proof: We already know that <a href="/category/FinOrd">$\FinOrd$</a> has $\aleph_1$-cofiltered limits and that the forgetful functors to <a href="/category/FinSet">$\FinSet$</a> and <a href="/category/Set">$\Set$</a> preserve them. Therefore, it suffices to prove that a $\aleph_1$-cofiltered limit of non-empty finite sets is also non-empty. While a direct proof is possible, we can conveniently derive this from Lemma 1 <a href="/content/comphaus_copresentable">here</a> by regarding finite sets as discrete compact Hausdorff spaces.
+    proof: We already know that <a href="/category/FinOrd">$\FinOrd$</a> has $\aleph_1$-cofiltered limits and that the forgetful functors to <a href="/category/FinSet">$\FinSet$</a> and <a href="/category/Set">$\Set$</a> preserve them. Therefore, it suffices to prove that an $\aleph_1$-cofiltered limit of non-empty finite sets is also non-empty. While a direct proof is possible, we can conveniently derive this from Lemma 1 <a href="/content/comphaus_copresentable">here</a> by regarding finite sets as discrete compact Hausdorff spaces.
     references:
       - FinSet_aleph1-cofiltered-limits
 
@@ -115,7 +115,7 @@ unsatisfied_properties:
       B & \coloneqq (I \xleftarrow{0} I \xrightarrow{\id} I) \\
       C & \coloneqq (I \xleftarrow{\id} I \xrightarrow{0} I)
       \end{align*}$$
-      There are morphisms of spans $0 : A \to B$ and $0 : A \to C$. This shows that  $B,C$ are in the same connected component. Thus, there is some index $s$ such that $B$ and $C$ admit a unique morphism to $X_s$. The morphism $B \to X_s$ maps $1 \in I$ to an element $u \in P_s$ with $a_s(u)=0$, $b_s(u)=1$. Likewise, the morphism $C \to X_s$ maps $1 \in I$ to an element $v \in P_s$ with $a_s(v)=1$, $b_s(v)=0$. But now neither $u \leq v$ nor $v \leq u$ can be true, contradicting that $P_s$ is linearly ordered.
+      There are morphisms of spans $0 : A \to B$ and $0 : A \to C$. This shows that $B,C$ are in the same connected component. Thus, there is some index $s$ such that $B$ and $C$ admit a unique morphism to $X_s$. The morphism $B \to X_s$ maps $1 \in I$ to an element $u \in P_s$ with $a_s(u)=0$, $b_s(u)=1$. Likewise, the morphism $C \to X_s$ maps $1 \in I$ to an element $v \in P_s$ with $a_s(v)=1$, $b_s(v)=0$. But now neither $u \leq v$ nor $v \leq u$ can be true, contradicting that $P_s$ is linearly ordered.
 
 special_objects: {}
 

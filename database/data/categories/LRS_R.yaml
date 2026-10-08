@@ -112,7 +112,7 @@ special_morphisms:
     description: 'A morphism $(f,f^\sharp) : (X, \O_X) \to (Y,\O_Y)$ is an isomorphism iff $f : X \to Y$ is a homeomorphism and $f^\sharp : \O_Y \to f_* \O_X$ is an isomorphism of sheaves.'
     proof: This is easy.
   epimorphisms:
-    description: 'A morphism $(f,f^\sharp) : (X, \O_X) \to (Y,\O_Y)$ is an epimorphism iff $f : X \to Y$ is surjective and $f^\sharp : \O_Y \to f_* \O_X$ is a monomorphism sheaves.'
+    description: 'A morphism $(f,f^\sharp) : (X, \O_X) \to (Y,\O_Y)$ is an epimorphism iff $f : X \to Y$ is surjective and $f^\sharp : \O_Y \to f_* \O_X$ is a monomorphism of sheaves.'
     proof: >-
       It is obvious that morphisms with this property are epimorphisms. For the opposite, assume that $(f,f^\sharp) : (X, \O_X) \to (Y,\O_Y)$ is an epimorphism. Then the codiagonal
       $$(Y,\O_Y) \sqcup_{(X,\O_X)} (Y,\O_Y) \to (Y,\O_Y)$$

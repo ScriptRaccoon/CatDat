@@ -2,7 +2,7 @@ id: FiltVect
 name: category of filtered vector spaces
 notation: $\FiltVect_K$
 objects: >-
-  A filtered vector space over a field $K$ consists of a vector space $V$ over $K$ together with an $\IZ$-indexed sequence of subspaces $F^n(V) \subseteq V$ satisfying $F^{n+1}(V) \subseteq F^n(V)$ for all $n \in \IZ$.
+  A filtered vector space over a field $K$ consists of a vector space $V$ over $K$ together with a $\IZ$-indexed sequence of subspaces $F^n(V) \subseteq V$ satisfying $F^{n+1}(V) \subseteq F^n(V)$ for all $n \in \IZ$.
   $$\cdots \subseteq F^1(V) \subseteq F^0(V) \subseteq F^{-1}(V) \subseteq \cdots \subseteq V$$
 morphisms: 'A morphism $(V,F) \to (W,G)$ is a linear map $f : V \to W$ satisfying $f_*(F^n(V)) \subseteq G^n(W)$ for all $n \in \IZ$. We call such morphisms filtered linear maps.'
 description: The definition of a <a href="https://stacks.math.columbia.edu/tag/0121">filtered object</a> is available in any abelian category; in this entry, the ambient category is $\Vect_K$. We do <i>not</i> require the filtration to be exhaustive (i.e. $V = \bigcup_n F^n(V)$) or separated (i.e. $\bigcap_n F^n(V) = 0$). In the proofs below, we will often write $F$ for the filtration regardless of the vector space on which it is defined.
@@ -53,7 +53,7 @@ satisfied_properties:
 
   - property: extremal cogenerating collection
     proof: >-
-      Let $K_n$ denote the vector space $K$ equipped with the filtration such that $F_m(K) = K$ for $m < n$ and $F_m(K) = 0$ for $m \ge n$; and similarly, let $K_\infty$ denote the vector space equipped with the filtration such that $F_m(K) = K$ for each $m$. Then $K_n$ represents the functor mapping $(V, F)$ to $F_n(V)^\perp$, i.e. the space of functionals on $V$ whose kernels contain $F_n(V)$. Also, $K_\infty$ represents the functor sending $(V, F)$ to the dual $V^*$; and the canonical epimorphism $K_\infty \twoheadrightarrow K_n$ corresponds under the Yoneda embedding to the natural inclusion $F_n(V)^\perp \hookrightarrow V^*$. We claim that $\{ K_n : n \in \IZ \} \cup \{ K_\infty \}$ is an extremal cogenerating collection of $\FiltVect_K$.
+      Let $K_n$ denote the vector space $K$ equipped with the filtration such that $F^m(K) = K$ for $m < n$ and $F^m(K) = 0$ for $m \ge n$; and similarly, let $K_\infty$ denote the vector space $K$ equipped with the filtration such that $F^m(K) = K$ for each $m$. Then $K_n$ represents the functor mapping $(V, F)$ to $F^n(V)^\perp$, i.e. the space of functionals on $V$ whose kernels contain $F^n(V)$. Also, $K_\infty$ represents the functor sending $(V, F)$ to the dual $V^*$; and the canonical epimorphism $K_\infty \twoheadrightarrow K_n$ corresponds under the Yoneda embedding to the natural inclusion $F^n(V)^\perp \hookrightarrow V^*$. We claim that $\{ K_n : n \in \IZ \} \cup \{ K_\infty \}$ is an extremal cogenerating collection of $\FiltVect_K$.
 
       First, the set includes $K_\infty$, which we have already seen above is a cogenerator of $\FiltVect_K$. Now, suppose we have a morphism $f : (V, F) \to (W, G)$ such that
       $${-} \circ f : \Hom((W, G), K_\infty) \to \Hom((V, F), K_\infty)$$
@@ -61,15 +61,15 @@ satisfied_properties:
 
       It remains to show that if $f$ also induces a bijection
       $${-} \circ f : \Hom((W, G), K_n) \to \Hom((V, F), K_n)$$
-      for each $n$, then $f$ induces an isomorphism of the filtrations. For this step, we may assume without loss of generality that $f = \id_V : V \to V$. By the observations above, this implies that $F_n(V)^\perp = G_n(V)^\perp$. By standard linear algebra, we conclude $F_n(V) = G_n(V)$.
+      for each $n$, then $f$ induces an isomorphism of the filtrations. For this step, we may assume without loss of generality that $f = \id_V : V \to V$. By the observations above, this implies that $F^n(V)^\perp = G^n(V)^\perp$. By standard linear algebra, we conclude $F^n(V) = G^n(V)$.
 
   - property: finitely accessible
     proof: >-
       Consider a filtered vector space $(V,F)$ such that $V$ is finite-dimensional and there exists some $N \in \IN$ with $F^N(V)=0$ (and hence $F^n(V)=0$ for all $n \geq N$). We claim that such an object is finitely presentable in $\FiltVect$:
 
 
-      Let $(W_i,F)$ be a filtered diagram of filtered vector spaces. Its colimit is the vector space $\colim_i W_i$ equipped with the filtration $F^n(\colim_i W_i) = \colim_i F^n(W_i)$. Let $f : (V,F) \to (\colim_i W_i,F)$ be a filtered linear map. The underlying linear map $f : V \to \colim_i W_i$ factors through some morphism $W_i \to \colim_i W_i$. Moreover, $f$ maps $F^n(V)$ into $\colim_i F^n(W_i)$ for every $n \in \IZ$. This condition is automatic when $n \geq N$, so assume that $n < N$. Since $V$ is finite-dimensional, the filtration stabilizes; that is, there exists some $M \in \IN$ such that $F^M(V) = F^n(V)$ for all $n \leq M$. Thus the filtered condition only needs to be checked in the finitely many degrees
-      $$n \in \{M,M+1,\cdots,N-1\}.$$
+      Let $(W_i,F)$ be a filtered diagram of filtered vector spaces. Its colimit is the vector space $\colim_i W_i$ equipped with the filtration $F^n(\colim_i W_i) = \colim_i F^n(W_i)$. Let $f : (V,F) \to (\colim_i W_i,F)$ be a filtered linear map. The underlying linear map $f : V \to \colim_i W_i$ factors through some morphism $W_i \to \colim_i W_i$. Moreover, $f$ maps $F^n(V)$ into $\colim_i F^n(W_i)$ for every $n \in \IZ$. This condition is automatic when $n \geq N$, so assume that $n < N$. Since $V$ is finite-dimensional, the filtration stabilizes; that is, there exists some $M \in \IZ$ such that $F^M(V) = F^n(V)$ for all $n \leq M$. Thus the filtered condition only needs to be checked in the finitely many degrees
+      $$n \in \{M,M+1,\dotsc,N-1\}.$$
       Since the index category is filtered, there exists some index $j \geq i$ such that, for every relevant degree $n$, the map $f|_{F^n(V)}$ factors through $F^n(W_j)$. It follows that $f$ factors as a filtered linear map $(V,F) \to (W_j,F)$ followed by the colimit inclusion. This factorization is essentially unique because the corresponding statement holds in $\Vect$.
 
 

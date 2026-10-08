@@ -125,9 +125,9 @@ unsatisfied_properties:
 
 special_objects:
   initial object:
-    description: $(\varnothing,\varnothing)$, which can be seen as the undirected loop-graph with no vertices and no directed edges
+    description: $(\varnothing,\varnothing)$, which can be seen as the undirected loop-graph with no vertices and no edges
   terminal object:
-    description: $(\{\ast\},\{(\ast,\ast)\})$, which can be seen as undirected loop-graph with a single vertex and a loop
+    description: $(\{\ast\},\{(\ast,\ast)\})$, which can be seen as the undirected loop-graph with a single vertex and a loop
   coproducts:
     description: The coproduct of a family $(X_i,R_i)_{i \in I}$ is $(\coprod_{i \in I} X_i, \coprod_{i \in I} R_i)$, where $\coprod_{i \in I} R_i \subseteq \coprod_{i \in I} (X_i \times X_i) \subseteq \coprod_{i \in I} X_i \times \coprod_{i \in I} X_i$.
   products:

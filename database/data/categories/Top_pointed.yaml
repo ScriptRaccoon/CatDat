@@ -81,7 +81,7 @@ unsatisfied_properties:
     proof: See Example 3.14 at the <a href="https://ncatlab.org/nlab/show/regular+category">nLab</a>. The proof also works for pointed spaces (resp. posets) by using the base points $a$ and $0$.
 
   - property: cartesian filtered colimits
-    proof: 'The functor $\IQ \times - : \Top_* \to \Top_*$ does not preserve colimits, see <a href="https://math.stackexchange.com/questions/2969372">MSE/2969372</a>. The counterexample also works for pointed spaces.'
+    proof: 'The functor $\IQ \times - : \Top_* \to \Top_*$ does not preserve colimits; see <a href="https://math.stackexchange.com/questions/2969372">MSE/2969372</a>. The counterexample also works for pointed spaces.'
 
   - property: co-Malcev
     proof: 'We can adjust the proof for <a href="/category/Top">$\Top$</a> as follows: Consider the forgetful functor $U : \Top_* \to \Set$ and the relation $R \subseteq U^2$ defined by $R(X) \coloneqq \{(x,y) \in U(X)^2 : x \in \overline{\{y\}} \}$. Both are representable: $U$ by the discrete space $\{0,1\}$ with base point $0$ and $R$ by the Sierpiński space with an isolated base point added. It is clear that $R$ is reflexive, but not symmetric.'
@@ -112,7 +112,7 @@ unsatisfied_properties:
     proof: Suppose that $\Top_*$ had effective congruences. Then by <a href="/content/coslice-effective-congruences">this result</a>, <a href="/category/Top">$\Top$</a> would also have effective congruences, which we know is not the case.
 
   - property: effective cocongruences
-    proof: 'This counterexample is adapted from the counterexample for <a href="/category/Top">$\Top$</a>. Consider the pointed topological space $I \coloneqq \{ *, a, b \}$ with topology $\{ \varnothing, \{ * \}, \{ a, b \}, \{ *, a, b \} \}$. This represents the functor which sends a pointed topological space $X$ to the pairs of indistinguishable points of $X$. Therefore, we get a cocongruence $\{ *, a \} \rightrightarrows I$ on the discrete space $\{ *, a \}$, where the maps are $*\mapsto *, a\mapsto a$ and $*\mapsto *, a\mapsto b$ respectively. However, this cannot be effective: if we have $h : Z \to \{ *, a \}$ which equalizes the cocongruence, then $h$ must be the constant function with value $*$. But that means the cokernel pair of $h$ is the discrete space on $\{ *, a, b \}$.'
+    proof: 'This counterexample is adapted from the counterexample for <a href="/category/Top">$\Top$</a>. Consider the pointed topological space $I \coloneqq \{ *, a, b \}$ with topology $\{ \varnothing, \{ * \}, \{ a, b \}, \{ *, a, b \} \}$. This represents the functor which sends a pointed topological space $X$ to the pairs of indistinguishable points of $X$. Therefore, we get a cocongruence $\{ *, a \} \rightrightarrows I$ on the discrete space $\{ *, a \}$, where the maps are $*\mapsto *, a\mapsto a$ and $*\mapsto *, a\mapsto b$, respectively. However, this cannot be effective: if we have $h : Z \to \{ *, a \}$ which equalizes the cocongruence, then $h$ must be the constant function with value $*$. But that means the cokernel pair of $h$ is the discrete space on $\{ *, a, b \}$.'
     references:
       - Top_no_effective_cocongruences
 

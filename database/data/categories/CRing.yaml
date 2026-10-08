@@ -47,4 +47,4 @@ special_objects:
 special_morphisms:
   epimorphisms:
     description: 'A ring map $f : R \to S$ is an epimorphism iff $S$ equals the <i>dominion</i> of $f(R) \subseteq S$, meaning that for every $s \in S$ there is some matrix factorization $(s) = Y X Z$ with $X \in M_{n \times n}(f(R))$, $Y \in M_{1 \times n}(S)$, $Z \in M_{n \times 1}(S)$ such that $YX \in M_{1 \times n}(f(R))$ and $XZ \in M_{n \times 1}(f(R))$.'
-    proof: See <a href="https://stacks.math.columbia.edu/tag/04VM">Stacks Project</a> ,or, for many more results, the seminar <a href="https://www.numdam.org/issues/SAC_1967-1968__2_/">Les épimorphismes d'anneaux</a>. See also <a href="https://mathoverflow.net/questions/109/">MO/109</a> for some results.
+    proof: See <a href="https://stacks.math.columbia.edu/tag/04VM">Stacks Project</a>, or, for many more results, the seminar <a href="https://www.numdam.org/issues/SAC_1967-1968__2_/">Les épimorphismes d'anneaux</a>. See also <a href="https://mathoverflow.net/questions/109/">MO/109</a> for some results.

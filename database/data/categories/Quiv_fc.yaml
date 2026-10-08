@@ -45,7 +45,7 @@ satisfied_properties:
 
   - property: extremal cogenerating collection
     proof: >-
-      We claim that the "chaotic" quiver $G = (\{a,b\},\{a,b\} \times \{a,b\})$ and the quiver $H = (\{a\},\{\ell,\ell'\})$ with one vertex and two loops form an extremal cogenerating collection. Indeed, $\Hom(-,G)$ is isomorphic to the contravariant functor $(V,E) \mapsto P(V)$, and $\Hom(-,H)$ is isomorphic to the contravariant functor $(V,E) \mapsto P(E)$. The combined functor $(V,E) \mapsto (P(V),P(E))$ is faithful and conservative because the <a href="/functor/power_set_contravariant">contravariant power set functor</a> $P : \Set^{\op} \mapsto \Set$ is faithful and conservative.
+      We claim that the "chaotic" quiver $G = (\{a,b\},\{a,b\} \times \{a,b\})$ and the quiver $H = (\{a\},\{\ell,\ell'\})$ with one vertex and two loops form an extremal cogenerating collection. Indeed, $\Hom(-,G)$ is isomorphic to the contravariant functor $(V,E) \mapsto P(V)$, and $\Hom(-,H)$ is isomorphic to the contravariant functor $(V,E) \mapsto P(E)$. The combined functor $(V,E) \mapsto (P(V),P(E))$ is faithful and conservative because the <a href="/functor/power_set_contravariant">contravariant power set functor</a> $P : \Set^{\op} \to \Set$ is faithful and conservative.
 
       Remark: The same proof works for $\Quiv$.
     label: Quiv_fc_extremal_cogenerators

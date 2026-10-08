@@ -34,7 +34,7 @@ satisfied_properties:
     proof: This is because $0$ is the only natural number with an additive inverse.
 
   - property: locally cartesian closed
-    proof: The slice category $B\IN / *$ is isomorphic to the poset $(\IN,\geq)$ (not to $(\IN,\leq)$). This category is thin and and semi-strongly connected, <a href="/category-implication/sequential_implies_lcc">hence</a> cartesian closed.
+    proof: The slice category $B\IN / *$ is isomorphic to the poset $(\IN,\geq)$ (not to $(\IN,\leq)$). This category is thin and semi-strongly connected, <a href="/category-implication/sequential_implies_lcc">hence</a> cartesian closed.
 
   - property: ℵ₁-filtered colimits
     check_redundancy: false
@@ -68,7 +68,7 @@ satisfied_properties:
     references:
       - BN_aleph1-filtered_colimits
     proof: >-
-      Since we have just proven that $\aleph_1$-filtered colimits exist, it remains to show that the unique object $*$ is $\aleph_1$-presentable, i.e. that for every $\aleph_1$-filtered diagram diagram $D : \I \to B\IN$, the canonical map
+      Since we have just proven that $\aleph_1$-filtered colimits exist, it remains to show that the unique object $*$ is $\aleph_1$-presentable, i.e. that for every $\aleph_1$-filtered diagram $D : \I \to B\IN$, the canonical map
       $$\alpha : \colim_{i \in \I} \Hom(*,D(i)) \to \Hom(*,\colim_{i \in \I} D(i))$$
       is bijective. On objects, we necessarily have $D(i)=*$ and $\colim_{i \in \I} D(i)=*$. Hence, the codomain of $\alpha$ is simply $\IN$, while the domain consists of equivalence classes $[i,n]$ of pairs $(i,n) \in \I \times \IN$, where $(i,n) \sim (j,m)$ iff there exists some $k \geq i,j$ such that
       $$D(i,k) + n = D(j,k) + m.$$
@@ -96,4 +96,4 @@ special_objects: {}
 special_morphisms:
   isomorphisms:
     description: only the number $0$
-    proof: The $0$ is the only natural number which has an additive inverse, since for $n > 0$ we have $n + m > 0$ for all $m$.
+    proof: The number $0$ is the only natural number which has an additive inverse, since for $n > 0$ we have $n + m > 0$ for all $m$.

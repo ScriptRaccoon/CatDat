@@ -54,7 +54,7 @@ unsatisfied_properties:
     proof: See <a href="https://mathoverflow.net/questions/390611">MO/390611</a> for example.
 
   - property: cartesian closed
-    proof: 'There are functors $F,G : \CRing \rightrightarrows \Set$ such that $\Hom(F,G)$ is not essentially small, see <a href="https://mathoverflow.net/questions/390611">MO/390611</a> for example. Now if the exponential $[F,G] : \CRing \to \Set$ exists, we get $[F,G](\IZ) \cong \Hom(\Hom(\IZ,-),[F,G])$ by Yoneda, which simplifies to $\Hom(1,[F,G]) \cong \Hom(1 \times F,G) \cong \Hom(F,G)$, a contradiction.'
+    proof: 'There are functors $F,G : \CRing \rightrightarrows \Set$ such that $\Hom(F,G)$ is not essentially small; see <a href="https://mathoverflow.net/questions/390611">MO/390611</a> for example. Now if the exponential $[F,G] : \CRing \to \Set$ exists, we get $[F,G](\IZ) \cong \Hom(\Hom(\IZ,-),[F,G])$ by Yoneda, which simplifies to $\Hom(1,[F,G]) \cong \Hom(1 \times F,G) \cong \Hom(F,G)$, a contradiction.'
 
   - property: well-powered
     proof: 'Consider the functor $F$ from <a href="https://mathoverflow.net/questions/390611">MO/390611</a> for example. The collection of subobjects of $F$ is not essentially small: for each infinite cardinal $\kappa$, simply cut off the construction of $F$ at $\kappa$. This yields a different subobject for each $\kappa$.'
@@ -81,4 +81,4 @@ special_morphisms:
     proof: 'If $a : F \to G$ is a monomorphism of Z-functors, then the diagonal morphism $F \to F \times_G F$ is an isomorphism, so that for every $R$ the diagonal morphism $F(R) \to F(R) \times_{G(R)} F(R)$ is an isomorphism, i.e., $a(R) : F(R) \to G(R)$ is a monomorphism. This argument works for every functor category where the codomain has fiber products.'
   epimorphisms:
     description: objectwise surjective natural transformations
-    proof: This holds in every functor category $[\C,\Set]$, here applied to the case that $\C$ has just one object.
+    proof: This holds in every functor category $[\C,\Set]$, since pushouts are constructed pointwise.

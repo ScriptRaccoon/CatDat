@@ -3,7 +3,7 @@ name: category of finite sets and surjections
 notation: $\FS$
 objects: finite sets
 morphisms: surjective maps
-description: This category is badly-behaved in itself, but it appears in representation theory. It has two connected components, consisting of the empty set and the non-empty finite sets.
+description: This category is badly behaved in itself, but it appears in representation theory. It has two connected components, consisting of the empty set and the non-empty finite sets.
 nlab_link: null
 keywords:
   - surjective maps
@@ -25,7 +25,7 @@ satisfied_properties:
     proof: There is a faithful functor $\FS \to \FinSet$ and <a href="/category/FinSet">$\FinSet$</a> is locally finite.
 
   - property: essentially countable
-    proof: Every finite set is isomorphic to some $\{1,\dotsc,n\}$ for some $n \in \IN$.
+    proof: Every finite set is isomorphic to $\{1,\dotsc,n\}$ for some $n \in \IN$.
 
   - property: right cancellative
     proof: This is trivial.
@@ -54,16 +54,16 @@ satisfied_properties:
   - property: generalized variety
     proof: 'Let $D : \I \to \FS$ be a sifted diagram. Consider the set
       $$\{\card(D(i)) : i \in \I\} \subseteq \IN.$$
-      Since $\IN$ is well-ordered and $\I$ is non-empty, it has a minimal element, say $\card(D(i_0))$. For every morphism $i_0 \to i$ then the map of finite sets $D(i_0) \to D(i)$ is an isomorphism since it is surjective and $\card(D(i_0)) \leq \card(D(i))$. Therefore, every sifted diagram is eventually constant. From Corollary 3 <a href="/content/sifted-colimits-in-groupoids">here</a> we deduce that $\FS$ is a generalized variety.'
+      Since $\IN$ is well-ordered and $\I$ is non-empty, it has a minimal element, say $\card(D(i_0))$. For every morphism $i_0 \to i$, the map of finite sets $D(i_0) \to D(i)$ is an isomorphism since it is surjective and $\card(D(i_0)) \leq \card(D(i))$. Therefore, every sifted diagram is eventually constant. From Corollary 3 <a href="/content/sifted-colimits-in-groupoids">here</a> we deduce that $\FS$ is a generalized variety.'
 
   - property: finitely accessible
-    proof: 'In the previous proof we have seen that every sifted diagram is eventually constant. From Corollary 4 <a href="/content/sifted-colimits-in-groupoids">here</a> we deduce $\FS$ is finitely accessible.'
+    proof: 'In the previous proof we have seen that every sifted diagram is eventually constant. From Corollary 4 <a href="/content/sifted-colimits-in-groupoids">here</a> we deduce that $\FS$ is finitely accessible.'
 
   - property: ℵ₁-cofiltered limits
     proof: >-
       Let $D : \I \to \FS$ be an $\aleph_1$-cofiltered diagram. We claim that the set
       $$\bigl\{\card(D(i)) : i \in \I\bigr\} \subseteq \IN$$
-      is bounded. If not, for every $n \in \IN$ there is some $i_n \in \I$ with $\card(D(i_n)) \geq n$. Choose a cone $(j \to i_n)_{j \in \I}$. For every $n \in \IN$ the set $F(j)$ surjects onto $F(i_n)$, so that $\card(F(j)) \geq n$. This contradicts the fact that $F(j)$ is finite. Hence, the maximum
+      is bounded. If not, for every $n \in \IN$ there is some $i_n \in \I$ with $\card(D(i_n)) \geq n$. Choose a cone $(j \to i_n)_{n \in \IN}$. For every $n \in \IN$ the set $D(j)$ surjects onto $D(i_n)$, so that $\card(D(j)) \geq n$. This contradicts the fact that $D(j)$ is finite. Hence, the maximum
       $$M \coloneqq \max \bigl\{\card(D(i)) : i \in \I \bigr\} \in \IN$$
       is well-defined. Let $\J \subseteq \I$ be the full subcategory of those $i \in \I$ with $\card(D(i)) = M$. Then $\J$ is non-empty, and when there is a morphism $i \to j$ with $j \in \J$ we also have $i \in \J$. Since $\I$ is cofiltered, it follows that $\J \subseteq \I$ is initial. Therefore, the limit of $D$ coincides with the limit of $D|_{\J}$.
       But this diagram is constant: for every $j \to j'$ in $\J$ the map $D(j) \to D(j')$ is a surjective map between finite sets of the same cardinality $M$, hence bijective. This implies that the limit of $D|_{\J}$ exists and is given by any $D(j)$ with $j \in \J$.
@@ -104,7 +104,7 @@ unsatisfied_properties:
       *For thin categories, the properties codistributive and distributive <a href="/category-implication/distributive_duality">are equivalent</a>.
 
   - property: multi-initial object
-    proof: If a multi-initial object exists, then the connected component consisting of non-empty finite sets has an initial object $X$. Then, any non-empty finite set cannot have a cardinality strictly greater than $X$,  which is a contradiction.
+    proof: If a multi-initial object exists, then the connected component consisting of non-empty finite sets has an initial object $X$. Then, any non-empty finite set cannot have a cardinality strictly greater than that of $X$, which is a contradiction.
 
 special_objects: {}
 

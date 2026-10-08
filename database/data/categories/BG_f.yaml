@@ -3,7 +3,7 @@ name: delooping of a non-trivial finite group
 notation: $BG$
 objects: a single object $*$
 morphisms: the elements of a non-trivial finite group $G$
-description: This is the special case of <a href="/category/BG">$BG$</a> where $G$ is a non-trivial finite group $G$ (such as $G = C_2$).
+description: This is the special case of <a href="/category/BG">$BG$</a> where $G$ is a non-trivial finite group (such as $G = C_2$).
 nlab_link: https://ncatlab.org/nlab/show/delooping#delooping_of_a_group_to_a_groupoid
 parent: BG
 

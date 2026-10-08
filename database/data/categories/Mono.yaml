@@ -52,7 +52,7 @@ satisfied_properties:
     proof: >-
       Consider the forgetful functor $U : \Mono \to \Set$, $(X, X') \mapsto X$. This has right adjoint $R : \Set \to \Mono$, $X \mapsto (X, X)$. Therefore, by the dual of Lemma 9 <a href="/content/subcategories">here</a>, $R$ preserves cogenerators; and in particular, since $\Set$ has a cogenerator, so does $\Mono$. In other words, $(\{0,1\}, \{0,1\})$ is a cogenerator of $\Mono$.
 
-      We now claim that adding $(\{0,1\}, \{1\})$ gives an extremal cogenerating collection. To see this, suppose we have $f : (X, X') \to (Y, Y')$ such that ${-} \circ f$ induces bijections of morphisms both to $(\{0,1\}, \{0,1\})$ and to $(\{0,1\}, \{0\})$. Then since the first object represents the functor taking $(X, X')$ to $\Hom_{\Set}(X, \{ 0, 1 \})$, and $\{ 0, 1 \}$ is an extremal cogenerator of <a href="/category/Set">$\Set$</a>, the bijection of morphisms for the first object implies that $f$ is a bijection $X \to Y$. On the other hand, the second object represents the functor taking $(X, X')$ to the collection of subsets of $X$ which contain $X'$; and under the Yoneda embedding, the monomorphism $(\{0,1\}, \{1\}) \hookrightarrow (\{0,1\}, \{0,1\})$ corresponds to the natural inclusion $\{ S\in P(X) : X' \subseteq S \} \hookrightarrow P(X)$. Therefore, if $f$ also induces a bijection of morphisms to the second object, then in particular there is a set $S$ with $Y' \subseteq S \subseteq Y$ with $f^*(S) = X'$. However, since $f$ is bijective, we also have $f^*(f_*(X')) = X'$ and $f^* : P(Y) \to P(X)$ is bijective, so $S = f_*(X')$. In other words,
+      We now claim that adding $(\{0,1\}, \{1\})$ gives an extremal cogenerating collection. To see this, suppose we have $f : (X, X') \to (Y, Y')$ such that ${-} \circ f$ induces bijections of morphisms both to $(\{0,1\}, \{0,1\})$ and to $(\{0,1\}, \{1\})$. Then since the first object represents the functor taking $(X, X')$ to $\Hom_{\Set}(X, \{ 0, 1 \})$, and $\{ 0, 1 \}$ is an extremal cogenerator of <a href="/category/Set">$\Set$</a>, the bijection of morphisms for the first object implies that $f$ is a bijection $X \to Y$. On the other hand, the second object represents the functor taking $(X, X')$ to the collection of subsets of $X$ which contain $X'$; and under the Yoneda embedding, the monomorphism $(\{0,1\}, \{1\}) \hookrightarrow (\{0,1\}, \{0,1\})$ corresponds to the natural inclusion $\{ S\in P(X) : X' \subseteq S \} \hookrightarrow P(X)$. Therefore, if $f$ also induces a bijection of morphisms to the second object, then in particular there is a set $S$ with $Y' \subseteq S \subseteq Y$ with $f^*(S) = X'$. However, since $f$ is bijective, we also have $f^*(f_*(X')) = X'$ and $f^* : P(Y) \to P(X)$ is bijective, so $S = f_*(X')$. In other words,
       $$Y' \subseteq S = f_*(X') \subseteq Y',$$
       so $f_*(X') = Y'$.
 
@@ -76,10 +76,10 @@ satisfied_properties:
       It is equivalent to the category of models of the finite limit sketch with a single limit cone
       $$\begin{CD}
       X @> \id >> X \\
-      @V \id VV @VV f VV \\
+      @V \id VV @VV f V \\
       X @>> f > Y.
       \end{CD}$$
-      Alternately, we already know $\Mono$ is cocomplete. We claim that both $(1, 0)$ and $(1, 1)$ are finitely presentable objects of $\Mono$. For the first, $(1, 0)$ represents the forgetful functor $(X, X') \mapsto X$; and this functor has a right adjoint $X \mapsto (X, X)$ so it preserves filtered colimits (in fact all colimits). For the second, $(1, 1)$ represents the functor $(X, X') \mapsto X'$. Now by the previous description of colimits, for a filtered diagram $((X_i, X_i'))_{i\in\I}$, first form the filtered colimit of $X_i$ in <a href="/category/Set">$\Set$</a> with cocone $c_i : X_i \to \colim_{i\in\I} X_i$. Then the filtered colimit in $\Mono$ is $(\colim_{i\in\I} X_i, \bigcup_{i\in\I} (c_i)_*(X_i'))$. This makes it easy to see that the canonical function
+      Alternatively, we already know $\Mono$ is cocomplete. We claim that both $(1, 0)$ and $(1, 1)$ are finitely presentable objects of $\Mono$. For the first, $(1, 0)$ represents the forgetful functor $(X, X') \mapsto X$; and this functor has a right adjoint $X \mapsto (X, X)$ so it preserves filtered colimits (in fact all colimits). For the second, $(1, 1)$ represents the functor $(X, X') \mapsto X'$. Now by the previous description of colimits, for a filtered diagram $((X_i, X_i'))_{i\in\I}$, first form the filtered colimit of $X_i$ in <a href="/category/Set">$\Set$</a> with cocone $c_i : X_i \to \colim_{i\in\I} X_i$. Then the filtered colimit in $\Mono$ is $(\colim_{i\in\I} X_i, \bigcup_{i\in\I} (c_i)_*(X_i'))$. This makes it easy to see that the canonical function
       $$\colim_{i\in\I} \Hom((1,1), (X_i,X_i')) \to \Hom((1,1), \colim_{i\in\I} (X_i,X_i'))$$
       is surjective. To see it is injective, use the fact that the unique morphism $(1, 0) \to (1, 1)$ is an epimorphism (see below), and we have already seen that the corresponding function for $(1,0)$ is injective.
 
@@ -141,7 +141,7 @@ special_morphisms:
 
       For the other direction, suppose we are given a morphism $f : (X, X') \to (Y, Y')$ satisfying this condition. We can then construct an equalizer diagram
       $$\begin{CD}
-      (X, X') @> f >> (Y, Y') @> \chi_{f(X)} > \top_Y > (\{ \top, \bot \}, \{ \top, \bot \}).
+      (X, X') @> f >> (Y, Y') @> \chi_{\im(f)} > \top_Y > (\{ \top, \bot \}, \{ \top, \bot \}).
       \end{CD}$$
       Here $\chi_{\im(f)} : Y \to \{ \top, \bot \}$ is the characteristic function of the subset $\im(f) \subseteq Y$, and $\top_Y$ is the constant function on $Y$ with value $\top$.
   regular epimorphisms:

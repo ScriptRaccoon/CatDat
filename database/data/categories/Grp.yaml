@@ -63,7 +63,7 @@ unsatisfied_properties:
     label: Grp_no_cogenerator
 
   - property: coregular
-    proof: This is because injective group homomorphisms are not stable under pushouts, see e.g. <a href="https://math.stackexchange.com/questions/601463/">MSE/601463</a> or <a href="https://math.stackexchange.com/questions/5088032">MSE/5088032</a>.
+    proof: This is because injective group homomorphisms are not stable under pushouts; see e.g. <a href="https://math.stackexchange.com/questions/601463/">MSE/601463</a> or <a href="https://math.stackexchange.com/questions/5088032">MSE/5088032</a>.
 
   - property: counital
     proof: The canonical morphism $F_2 = \IZ \sqcup \IZ \to \IZ \times \IZ$ is not a monomorphism since $F_2$ is not abelian.

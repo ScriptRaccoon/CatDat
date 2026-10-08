@@ -54,7 +54,7 @@ special_objects:
   terminal object:
     description: trivial group
   coproducts:
-    description: '[finite case] direct sum'
+    description: '[finite case] direct sums'
   products:
     description: '[finite case] direct products with pointwise operations'
 

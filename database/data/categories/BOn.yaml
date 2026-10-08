@@ -23,7 +23,7 @@ satisfied_properties:
     proof: It is well-known that ordinal addition satisfies $\alpha + \beta = \alpha + \gamma \implies \beta = \gamma$.
 
   - property: well-copowered
-    proof: This follows from the description of epimorphisms as finite ordinals, see <a href="https://math.stackexchange.com/questions/5029605">MSE/5029605</a>.
+    proof: This follows from the description of epimorphisms as finite ordinals; see <a href="https://math.stackexchange.com/questions/5029605">MSE/5029605</a>.
 
   - property: equalizers
     proof: See <a href="https://math.stackexchange.com/questions/5029668/">MSE/5029668</a>.
@@ -32,10 +32,10 @@ satisfied_properties:
     proof: See <a href="https://math.stackexchange.com/questions/5129138/">MSE/5129138</a>.
 
   - property: locally cartesian closed
-    proof: The slice category $B\OnColl / *$ is isomorphic to the poset $(\OnColl,\geq)$ (not to $(\OnColl,\leq)$). This category is thin and and semi-strongly connected, <a href="/category-implication/sequential_implies_lcc">hence</a> cartesian closed.
+    proof: The slice category $B\OnColl / *$ is isomorphic to the poset $(\OnColl,\geq)$ (not to $(\OnColl,\leq)$). This category is thin and semi-strongly connected, <a href="/category-implication/sequential_implies_lcc">hence</a> cartesian closed.
 
   - property: ℵ₁-cofiltered
-    proof: In fact, it is $\kappa$-cofiltered for every cardinal $\kappa$. By the dual of Theorem 2.2 at the <a href="https://ncatlab.org/nlab/show/filtered+category">nLab</a> it suffices to prove any set of objects has a cone (which is trivial in a one-object category) and that any set of parallel morphisms is equalized by some morphism. Here, this means that for every set of ordinals $A$ there is some ordinal $\beta$ such that $\alpha + \beta$ for $\alpha \in A$ does not depend on $\alpha$. Take $\beta$ to be any ordinal larger than $\sup(A)$ of the form $\omega^\gamma$. It is well-known that $\omega^\gamma$ has the property that $\alpha + \omega^\gamma = \omega^\gamma$ for all $\alpha < \omega^\gamma$ (Kunen's <i>Set Theory</i>, Exercise I.9.53), from which the claim follows.
+    proof: In fact, it is $\kappa$-cofiltered for every cardinal $\kappa$. By the dual of Theorem 2.2 at the <a href="https://ncatlab.org/nlab/show/filtered+category">nLab</a> it suffices to prove that any set of objects has a cone (which is trivial in a one-object category) and that any set of parallel morphisms is equalized by some morphism. Here, this means that for every set of ordinals $A$ there is some ordinal $\beta$ such that $\alpha + \beta$ for $\alpha \in A$ does not depend on $\alpha$. Take $\beta$ to be any ordinal larger than $\sup(A)$ of the form $\omega^\gamma$. It is well-known that $\omega^\gamma$ has the property that $\alpha + \omega^\gamma = \omega^\gamma$ for all $\alpha < \omega^\gamma$ (Kunen's <i>Set Theory</i>, Exercise I.9.53), from which the claim follows.
 
   - property: ℵ₁-filtered colimits
     references:
@@ -94,7 +94,7 @@ unsatisfied_properties:
     proof: This is because all ordinals are monomorphisms (see below) and they do not form a set.
 
   - property: sequential colimits
-    proof: Assume that the sequence $\bullet \xrightarrow{1} \bullet \xrightarrow{1} \cdots$ has a colimit. This mounts to a (universal) sequence of ordinals $\alpha_n$ with $\alpha_n = \alpha_{n+1} + 1$. But then $\alpha_{n+1} < \alpha_n$, contradicting the fact that $\alpha_0$ is well-ordered.
+    proof: Assume that the sequence $\bullet \xrightarrow{1} \bullet \xrightarrow{1} \cdots$ has a colimit. This amounts to a (universal) sequence of ordinals $\alpha_n$ with $\alpha_n = \alpha_{n+1} + 1$. But then $\alpha_{n+1} < \alpha_n$, contradicting the fact that $\alpha_0$ is well-ordered.
 
   - property: cofiltered-limit-stable epimorphisms
     proof: The epimorphisms are the finite ordinals (see below), but the limit of the sequential diagram $\cdots \xrightarrow{1} * \xrightarrow{1} *$ is the ordinal $\omega$ by <a href="https://math.stackexchange.com/questions/5129138">MSE/5129138</a>.
@@ -104,10 +104,10 @@ special_objects: {}
 special_morphisms:
   isomorphisms:
     description: only the ordinal $0$
-    proof: The $0$ is the only ordinal which has an additive inverse, since for $\alpha > 0$ we have $\alpha + \beta > 0$ for all $\beta$.
+    proof: The ordinal $0$ is the only ordinal which has an additive inverse, since for $\alpha > 0$ we have $\alpha + \beta > 0$ for all $\beta$.
   epimorphisms:
     description: finite ordinal numbers
     proof: See <a href="https://math.stackexchange.com/questions/5029605">MSE/5029605</a>.
   regular monomorphisms:
     description: ordinals of the form $\alpha \cdot \omega$, where $\alpha$ is any ordinal
-    proof: This results from the proof that equalizers exist, see <a href="https://math.stackexchange.com/questions/5029668">MSE/5029668</a>.
+    proof: This results from the proof that equalizers exist; see <a href="https://math.stackexchange.com/questions/5029668">MSE/5029668</a>.

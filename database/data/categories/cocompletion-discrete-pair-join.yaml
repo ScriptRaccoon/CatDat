@@ -6,7 +6,7 @@ morphisms: natural transformations
 description: >-
   This rather technical category has been added as an example of a cocomplete category that does not have equalizers, but it also satisfies many other interesting property combinations.
 
-  To construct it, we start with the category $\C$ that has two objects $A,B$ and every set $X$ as an object. (Instead of the collection of sets, we can take any other large collection.) Apart from the identities, there two morphisms $f,g : A \rightrightarrows B$ and, for every set $X$, a unique morphism $u_X : X \to A$ and a unique morphism $v_X : X \to B$. The composition is defined by $f \circ u_X = g \circ u_X = v_X$. There are no morphisms between distinct sets.
+  To construct it, we start with the category $\C$ that has two objects $A,B$ and every set $X$ as an object. (Instead of the collection of sets, we can take any other large collection.) Apart from the identities, there are two morphisms $f,g : A \rightrightarrows B$ and, for every set $X$, a unique morphism $u_X : X \to A$ and a unique morphism $v_X : X \to B$. The composition is defined by $f \circ u_X = g \circ u_X = v_X$. There are no morphisms between distinct sets.
   $$\begin{array}{c}
   X \\[0.25ex]
   {\raisebox{1ex}{$\scriptstyle u_X$}} \!\! \swarrow
@@ -129,7 +129,7 @@ unsatisfied_properties:
       The maps $u_X^* : F_\alpha(A) \to F_\alpha(X)$ and $v_X^* : F_\alpha(B) \to F_\alpha(X)$ are uniquely determined. The map $f^* : F_\alpha(B) \to F_\alpha(A)$ is the projection $(x,y) \mapsto x$ onto the first coordinate, while the map $g^* : F_\alpha(B) \to F_\alpha(A)$ is the projection $(x,y) \mapsto y$ onto the second coordinate. Since $F_\alpha(X)$ is a singleton, $F_\alpha$ is clearly a presheaf.
 
       In fact, it is a small presheaf: By the <a href="/content/nice-and-small-presheaves">description of small presheaves</a>, it suffices to prove that the diagram
-      $$T_\alpha \times T_\alpha ~\overset{(x,y) \mapsto x}{\underset{(x,y) \mapsto y}{\rightrightarrows}}~ T_\alpha \xrightarrow{!} \{\ast\}.$$
+      $$T_\alpha \times T_\alpha ~\overset{(x,y) \mapsto x}{\underset{(x,y) \mapsto y}{\rightrightarrows}}~ T_\alpha \xrightarrow{!} \{\ast\}$$
       is a coequalizer diagram. This is clear since $T_\alpha$ is non-empty.
 
       For $\beta \leq \alpha$, define the morphism $F_\alpha \to F_\beta$ using the inclusion $T_\alpha \to T_\beta$ at $A$, its product with itself at $B$, and the unique map at $X$. Naturality is immediate.
@@ -145,7 +145,7 @@ unsatisfied_properties:
       Therefore, $E(B) = \varnothing$, $E(A) = \{f,g\}$, and $E(X) = \{v_X\}$ for every set $X$.
 
       We now use the <a href="/content/nice-and-small-presheaves">description of small presheaves</a> to prove that $E$ is not small. It suffices to prove that for every set $X$ the diagram
-      $$\varnothing ~\overset{f^*}{\underset{g^*}{\rightrightarrows}}~ \{f,g\} \xrightarrow{u_X^*} \{v_X\}.$$
+      $$\varnothing ~\overset{f^*}{\underset{g^*}{\rightrightarrows}}~ \{f,g\} \xrightarrow{u_X^*} \{v_X\}$$
       is not a coequalizer diagram. This is clear since $f^*=g^*$, so the coequalizer of $f^*,g^*$ is just $\{f,g\}$.
 
   # We can keep this proof here because at some point we will drop
