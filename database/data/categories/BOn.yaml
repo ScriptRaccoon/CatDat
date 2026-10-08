@@ -23,7 +23,7 @@ satisfied_properties:
     proof: It is well-known that ordinal addition satisfies $\alpha + \beta = \alpha + \gamma \implies \beta = \gamma$.
 
   - property: well-copowered
-    proof: This follows from the description of epimorphisms as finite ordinals, see <a href="https://math.stackexchange.com/questions/5029605">MO/5029605</a>.
+    proof: This follows from the description of epimorphisms as finite ordinals, see <a href="https://math.stackexchange.com/questions/5029605">MSE/5029605</a>.
 
   - property: equalizers
     proof: See <a href="https://math.stackexchange.com/questions/5029668/">MSE/5029668</a>.
