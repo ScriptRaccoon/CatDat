@@ -23,13 +23,13 @@ satisfied_properties:
     proof: It is well-known that ordinal addition satisfies $\alpha + \beta = \alpha + \gamma \implies \beta = \gamma$.
 
   - property: well-copowered
-    proof: This follows from the description of epimorphisms as finite ordinals, see <a href="https://math.stackexchange.com/questions/5029605" target="_blank">MO/5029605</a>.
+    proof: This follows from the description of epimorphisms as finite ordinals, see <a href="https://math.stackexchange.com/questions/5029605">MO/5029605</a>.
 
   - property: equalizers
-    proof: See <a href="https://math.stackexchange.com/questions/5029668/" target="_blank">MSE/5029668</a>.
+    proof: See <a href="https://math.stackexchange.com/questions/5029668/">MSE/5029668</a>.
 
   - property: cofiltered limits
-    proof: See <a href="https://math.stackexchange.com/questions/5129138/" target="_blank">MSE/5129138</a>.
+    proof: See <a href="https://math.stackexchange.com/questions/5129138/">MSE/5129138</a>.
 
   - property: locally cartesian closed
     proof: The slice category $B\OnColl / *$ is isomorphic to the poset $(\OnColl,\geq)$ (not to $(\OnColl,\leq)$). This category is thin and and semi-strongly connected, <a href="/category-implication/sequential_implies_lcc">hence</a> cartesian closed.
@@ -107,7 +107,7 @@ special_morphisms:
     proof: The $0$ is the only ordinal which has an additive inverse, since for $\alpha > 0$ we have $\alpha + \beta > 0$ for all $\beta$.
   epimorphisms:
     description: finite ordinal numbers
-    proof: See <a href="https://math.stackexchange.com/questions/5029605" target="_blank">MSE/5029605</a>.
+    proof: See <a href="https://math.stackexchange.com/questions/5029605">MSE/5029605</a>.
   regular monomorphisms:
     description: ordinals of the form $\alpha \cdot \omega$, where $\alpha$ is any ordinal
-    proof: This results from the proof that equalizers exist, see <a href="https://math.stackexchange.com/questions/5029668" target="_blank">MSE/5029668</a>.
+    proof: This results from the proof that equalizers exist, see <a href="https://math.stackexchange.com/questions/5029668">MSE/5029668</a>.

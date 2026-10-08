@@ -20,10 +20,10 @@ related:
 
 satisfied_properties:
   - property: preserves products
-    proof: See the <a href="https://ncatlab.org/nlab/show/connected+space#pathcomponents_functor" target="_blank">nLab</a>.
+    proof: See the <a href="https://ncatlab.org/nlab/show/connected+space#pathcomponents_functor">nLab</a>.
 
   - property: preserves coproducts
-    proof: See the <a href="https://ncatlab.org/nlab/show/connected+space#pathcomponents_functor" target="_blank">nLab</a>.
+    proof: See the <a href="https://ncatlab.org/nlab/show/connected+space#pathcomponents_functor">nLab</a>.
 
   - property: right-invertible
     proof: 'The discrete topology functor $D : \Set \to \Top$ satisfies $\pi_0(D(X)) \cong X$.'

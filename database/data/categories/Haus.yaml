@@ -3,7 +3,7 @@ name: category of Hausdorff spaces
 notation: $\Haus$
 objects: Hausdorff spaces
 morphisms: continuous functions
-description: This is the full subcategory of $\Top$ consisting of those spaces that are <a href="https://en.wikipedia.org/wiki/Hausdorff_space" target="_blank">Hausdorff</a>.
+description: This is the full subcategory of $\Top$ consisting of those spaces that are <a href="https://en.wikipedia.org/wiki/Hausdorff_space">Hausdorff</a>.
 nlab_link: https://ncatlab.org/nlab/show/Hausdorff+space
 keywords:
   - Hausdorff topological spaces
@@ -36,7 +36,7 @@ satisfied_properties:
     check_redundancy: false
 
   - property: cocomplete
-    proof: This follows since $\Haus$ is a reflective subcategory of <a href="/category/Top">$\Top$</a>, which is cocomplete. For the reflector, see e.g. the <a href="https://ncatlab.org/nlab/show/Hausdorff+space#HausdorffReflection" target="_blank">nLab</a>. Explicitly, we construct the colimit of Hausdorff spaces by applying the reflector to the colimit of the underlying topological spaces.
+    proof: This follows since $\Haus$ is a reflective subcategory of <a href="/category/Top">$\Top$</a>, which is cocomplete. For the reflector, see e.g. the <a href="https://ncatlab.org/nlab/show/Hausdorff+space#HausdorffReflection">nLab</a>. Explicitly, we construct the colimit of Hausdorff spaces by applying the reflector to the colimit of the underlying topological spaces.
     check_redundancy: false
 
   - property: infinitary extensive
@@ -49,10 +49,10 @@ satisfied_properties:
     proof: 'Every epimorphism has dense image, so it suffices to prove that if a Hausdorff space $X$ has a dense subset $D \subseteq X$, we can bound the cardinality of $X$ in terms of the cardinality of $D$. For $x \in X$ let $\alpha(x)$ be the set of all $U \cap D$, where $U$ is an open neighborhood of $x$. This defines a map $\alpha : X \to P(P(D))$, and we claim that it is injective: this is because $\{x\}$ is the intersection of all $\overline{U} = \overline{U \cap D}$, where $U$ runs through the open neighborhoods of $x$.'
 
   - property: co-Malcev
-    proof: See <a href="https://mathoverflow.net/a/509582/2841" target="_blank">MO/509548</a>.
+    proof: See <a href="https://mathoverflow.net/a/509582/2841">MO/509548</a>.
 
   - property: effective cocongruences
-    proof: As the proof at <a href="https://mathoverflow.net/a/509582/2841" target="_blank">MO/509548</a> shows, in fact any coreflexive corelation on $X$ in $\Haus$ is of the form $X +_S X$ for a closed subset $S$ of $X$. Such a cocongruence is clearly effective.
+    proof: As the proof at <a href="https://mathoverflow.net/a/509582/2841">MO/509548</a> shows, in fact any coreflexive corelation on $X$ in $\Haus$ is of the form $X +_S X$ for a closed subset $S$ of $X$. Such a cocongruence is clearly effective.
 
 unsatisfied_properties:
   - property: skeletal
@@ -85,15 +85,15 @@ unsatisfied_properties:
 
   - property: coregular
     proof: >-
-      Let $\Gamma$ be the <a href="https://en.wikipedia.org/wiki/Moore_plane" target="_blank">Moore plane</a>. Its underlying set is $\{(x,y) \in \IR^2 : y \geq 0 \}$. The open neighborhoods of points $(x,y)$ with $y > 0$ are those of $\IR^2$ (intersected with $\Gamma$), and the basic open neighborhoods of a point $(x,0)$ are open disks centered at $(x,\varepsilon)$ with radius $\varepsilon$ for some $\varepsilon > 0$. Then $\Gamma$ is Hausdorff, and the $x$-axis $A \coloneqq \{(x,0) : x \in \IR\}$ is a closed discrete subspace of $\Gamma$. In particular, by the classification of regular monomorphisms below, the inclusion map $i : A \to \Gamma$ is a regular monomorphism.
-      Consider the two subsets $A_1 \coloneqq \{(x,0) : x \in \IQ \}$ and $A_2 \coloneqq \{(x,0) : x \in \IR \setminus \IQ \}$ of $A$. They are closed in $A$ (since $A$ is closed and discrete), disjoint, but cannot be separated by disjoint open neighborhoods in $\Gamma$; this is part of the proof of the well-known fact that $\Gamma$ is not normal (<a href="https://math.stackexchange.com/questions/2528435" target="_blank">MSE/2528435</a>).
+      Let $\Gamma$ be the <a href="https://en.wikipedia.org/wiki/Moore_plane">Moore plane</a>. Its underlying set is $\{(x,y) \in \IR^2 : y \geq 0 \}$. The open neighborhoods of points $(x,y)$ with $y > 0$ are those of $\IR^2$ (intersected with $\Gamma$), and the basic open neighborhoods of a point $(x,0)$ are open disks centered at $(x,\varepsilon)$ with radius $\varepsilon$ for some $\varepsilon > 0$. Then $\Gamma$ is Hausdorff, and the $x$-axis $A \coloneqq \{(x,0) : x \in \IR\}$ is a closed discrete subspace of $\Gamma$. In particular, by the classification of regular monomorphisms below, the inclusion map $i : A \to \Gamma$ is a regular monomorphism.
+      Consider the two subsets $A_1 \coloneqq \{(x,0) : x \in \IQ \}$ and $A_2 \coloneqq \{(x,0) : x \in \IR \setminus \IQ \}$ of $A$. They are closed in $A$ (since $A$ is closed and discrete), disjoint, but cannot be separated by disjoint open neighborhoods in $\Gamma$; this is part of the proof of the well-known fact that $\Gamma$ is not normal (<a href="https://math.stackexchange.com/questions/2528435">MSE/2528435</a>).
       Let $C \coloneqq \{1,2\}$ be the discrete two-point space. The map $f : A \to C$ defined by $f(a)=1$ for $a \in A_1$ and $f(a)=2$ for $a \in A_2$ is continuous, since $A$ is discrete.
       The pushout $C \sqcup_A \Gamma$ in $\Haus$ is the Hausdorff reflection of the pushout $Q$ in $\Top$. Notice that $Q$ is the quotient space of $\Gamma$ in which $A_1$ and $A_2$ are each collapsed to a point, denoted by $[A_1]$ and $[A_2]$. The canonical map $C \to Q$ is given by $i \mapsto [A_i]$. Now, $[A_1]$ and $[A_2]$ cannot be separated by disjoint open neighborhoods in $Q$, since such neighborhoods would pull back to disjoint open neighborhoods of $A_1$ and $A_2$ in $\Gamma$. Thus, they are identified in the Hausdorff reflection. This shows that the canonical map $C \to C \sqcup_A \Gamma$ is not injective and hence not a regular monomorphism.
 
   - property: cototal
     # TODO: refactor this once we add "hypercocomplete"
     proof: >-
-      In fact, it is not hypercocomplete. For each cardinal $\kappa$, let $Q_\kappa$ be the product of all Hausdorff topological spaces whose underlying set is a non-empty subset of $\kappa$. By a theorem of Herrlich (<i>Wann sind alle stetigen Abbildungen in Y konstant</i>. Math. Z. 90 (1965): 152-154. <a href="http://eudml.org/doc/170472" target="_blank">EUMDL</a>), there is a regular Hausdorff space $X_\kappa$ with at least two points such that every continuous map $X_\kappa \to Q_\kappa$ is constant. (Note that the result there applies for general $T_1$ spaces $Q$, not just for $Q_\kappa$ as constructed above. In the reference, the author only states that $X_\kappa$ is regular, but actually, $X_\kappa$ is regular and $T_1$, hence Hausdorff.)
+      In fact, it is not hypercocomplete. For each cardinal $\kappa$, let $Q_\kappa$ be the product of all Hausdorff topological spaces whose underlying set is a non-empty subset of $\kappa$. By a theorem of Herrlich (<i>Wann sind alle stetigen Abbildungen in Y konstant</i>. Math. Z. 90 (1965): 152-154. <a href="http://eudml.org/doc/170472">EUMDL</a>), there is a regular Hausdorff space $X_\kappa$ with at least two points such that every continuous map $X_\kappa \to Q_\kappa$ is constant. (Note that the result there applies for general $T_1$ spaces $Q$, not just for $Q_\kappa$ as constructed above. In the reference, the author only states that $X_\kappa$ is regular, but actually, $X_\kappa$ is regular and $T_1$, hence Hausdorff.)
 
       Choose a base point $x_\kappa \in X_\kappa$ for each $\kappa$. We can form a large span diagram $1 \dottedrightrightarrows X_\kappa$ where each morphism $1 \to X_\kappa$ corresponds to $x_\kappa$. Then for any Hausdorff space $Y$, the collection of cocones $1 \dottedrightrightarrows X_\kappa \to Y$ is essentially small: We must first choose $y \in Y$ corresponding to the morphism $1 \to Y$. Then for each $\kappa \ge \card(U(Y))$, $Y$ is homeomorphic to one of the spaces in the product forming $Q_\kappa$. Therefore, there is a morphism $Y \to Q_\kappa$ splitting the projection map $Q_\kappa \to Y$. It follows that the map $X_\kappa \to Y$ is constant, and in fact it must be the constant map with image $y$.
 
@@ -112,7 +112,7 @@ special_objects:
   coproducts:
     description: disjoint union with the disjoint union topology
   products:
-    description: direct product with the <a href="https://en.wikipedia.org/wiki/Product_topology" target="_blank">product topology</a>
+    description: direct product with the <a href="https://en.wikipedia.org/wiki/Product_topology">product topology</a>
 
 special_morphisms:
   isomorphisms:
@@ -123,12 +123,12 @@ special_morphisms:
     proof: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
   epimorphisms:
     description: continuous maps with dense image
-    proof: It is clear that continuous maps with dense image are epimorphism, but the other direction is non-trivial. See <a href="https://math.stackexchange.com/questions/214045" target="_blank">MSE/214045</a> for a proof.
+    proof: It is clear that continuous maps with dense image are epimorphism, but the other direction is non-trivial. See <a href="https://math.stackexchange.com/questions/214045">MSE/214045</a> for a proof.
   regular monomorphisms:
     description: embeddings with closed image
-    proof: The explicit construction of equalizers shows that they are embeddings, and they have a closed image because of the well-known lemma that for a Hausdorff space the diagonal $X \to X \times X$ has closed image. For the other non-trivial direction, see <a href="https://math.stackexchange.com/questions/214045/" target="_blank">MSE/214045</a>.
+    proof: The explicit construction of equalizers shows that they are embeddings, and they have a closed image because of the well-known lemma that for a Hausdorff space the diagonal $X \to X \times X$ has closed image. For the other non-trivial direction, see <a href="https://math.stackexchange.com/questions/214045/">MSE/214045</a>.
   regular epimorphisms:
     description: surjective quotient maps
     proof: >-
-      The coequalizer of two continuous maps $f,g : X \rightrightarrows Y$ of Hausdorff spaces is given by $Y \to Q \to Q_H$, where $Y \to Q$ is their coequalizer in $\Top$ and $Q \to Q_H$ is the Hausdorff reflection of $Q$. By the construction of coequalizers in <a href="/category/Top">$\Top$</a>, the map $Y \to Q$ is a surjective quotient map. Moreover, the construction of the Hausdorff reflection (see <a href="https://ncatlab.org/nlab/show/Hausdorff+space#HausdorffReflectionViaHomsIntoAllHausdorffSpaces" target="_blank">nLab</a>) shows that $Q \to Q_H$ is also a surjective quotient map. Hence, $Y \to Q_H$ is a surjective quotient map as well.
+      The coequalizer of two continuous maps $f,g : X \rightrightarrows Y$ of Hausdorff spaces is given by $Y \to Q \to Q_H$, where $Y \to Q$ is their coequalizer in $\Top$ and $Q \to Q_H$ is the Hausdorff reflection of $Q$. By the construction of coequalizers in <a href="/category/Top">$\Top$</a>, the map $Y \to Q$ is a surjective quotient map. Moreover, the construction of the Hausdorff reflection (see <a href="https://ncatlab.org/nlab/show/Hausdorff+space#HausdorffReflectionViaHomsIntoAllHausdorffSpaces">nLab</a>) shows that $Q \to Q_H$ is also a surjective quotient map. Hence, $Y \to Q_H$ is a surjective quotient map as well.
       Conversely, if $p : X \to Y$ is a surjective quotient map between Hausdorff spaces, we know from the classification in $\Top$ that $p$ is the coequalizer of its kernel pair $X \times_Y X \rightrightarrows X$ in $\Top$. Since $X \times_Y X$ is Hausdorff, the same universal property remains valid in $\Haus$.

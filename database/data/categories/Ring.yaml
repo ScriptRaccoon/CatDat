@@ -30,7 +30,7 @@ special_objects:
   terminal object:
     description: zero ring
   coproducts:
-    description: see <a href="https://math.stackexchange.com/questions/625874" target="_blank">MSE/625874</a>
+    description: see <a href="https://math.stackexchange.com/questions/625874">MSE/625874</a>
   products:
     description: direct products with pointwise operations
 

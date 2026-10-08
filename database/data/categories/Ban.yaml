@@ -27,7 +27,7 @@ satisfied_properties:
     proof: This is immediate from the concrete description of coproducts and products.
 
   - property: locally ℵ₁-presentable
-    proof: Example 1.48 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>.
+    proof: Example 1.48 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adamek-Rosicky</a>.
 
   - property: cartesian filtered colimits
     proof: If $X$ is a Banach space and $(Y_i)$ is a filtered diagram of Banach spaces, the canonical map $\colim_i (X \times Y_i) \to X \times \colim_i Y_i$ is the completion of the canonical map in the category of normed vector spaces with non-expansive linear maps. Now the claim follows directly from <a href="/category/Met">$\Met$</a>.
@@ -158,7 +158,7 @@ special_morphisms:
 
       (2) implies (3): The image of $f$ is complete, hence closed. The rest is clear.
 
-      (3) implies (1): If $U \subseteq Y$ is a closed subspace, then the inclusion is the kernel of the projection $Y \to Y/U$, where $Y/U$ is the <a href="https://math.stackexchange.com/questions/319867" target="_blank">well-known</a> quotient Banach space.
+      (3) implies (1): If $U \subseteq Y$ is a closed subspace, then the inclusion is the kernel of the projection $Y \to Y/U$, where $Y/U$ is the <a href="https://math.stackexchange.com/questions/319867">well-known</a> quotient Banach space.
   regular epimorphisms:
     description: >-
       For a linear contraction $f : X \to Y$ the following are equivalent: (1) $f$ is a regular epimorphism. (2) The norm on $Y$ is given by $|y| = \inf \{|x| : f(x) = y\}$. (3) $f$ maps the open unit ball of $X$ onto the open unit ball of $Y$.

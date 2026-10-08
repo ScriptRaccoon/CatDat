@@ -23,7 +23,7 @@ satisfied_properties:
     proof: 'The structure of a Jónsson-Tarski algebra on a set $X$ is equivalent to one binary operation $\mu : X^2 \to X$ and two unary operations $\lambda, \rho : X \rightrightarrows X$ such that $\mu(\lambda(x),\rho(x)) = x$, $\lambda(\mu(x,y))=x$, and $\rho(\mu(x,y))=y$.'
 
   - property: Grothendieck topos
-    proof: See the <a href="https://ncatlab.org/nlab/show/J%C3%B3nsson-Tarski+topos" target="_blank">nLab</a>.
+    proof: See the <a href="https://ncatlab.org/nlab/show/J%C3%B3nsson-Tarski+topos">nLab</a>.
 
 unsatisfied_properties:
   - property: skeletal
@@ -45,7 +45,7 @@ special_objects:
   terminal object:
     description: $(\{\ast\},!)$
   coproducts:
-    description: See <a href="https://matheplanet.de/matheplanet/nuke/html/article.php?sid=1713" target="_blank">here</a> for a description
+    description: See <a href="https://matheplanet.de/matheplanet/nuke/html/article.php?sid=1713">here</a> for a description
   products:
     description: direct products with pointwise operations
 

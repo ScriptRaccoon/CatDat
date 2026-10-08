@@ -31,7 +31,7 @@
       - finite products
   conclusions:
     - preserves finite products
-  proof: This is because finite products can be constructed recursively via $X_1 \times \cdots \times X_{n+1} = (X_1 \times \cdots \times X_n) \times X_{n+1}$. We need the assumption on the domain since otherwise $X_1 \times \cdots \times X_n$ might not exist. See <a href="https://math.stackexchange.com/questions/5142961" target="_blank">MSE/5142961</a>.
+  proof: This is because finite products can be constructed recursively via $X_1 \times \cdots \times X_{n+1} = (X_1 \times \cdots \times X_n) \times X_{n+1}$. We need the assumption on the domain since otherwise $X_1 \times \cdots \times X_n$ might not exist. See <a href="https://math.stackexchange.com/questions/5142961">MSE/5142961</a>.
 
 - id: continuous_criterion
   assumptions:
@@ -42,7 +42,7 @@
       - products
   conclusions:
     - continuous
-  proof: This follows from the construction of limits via equalizers and products, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. V, Theorem 2.2.
+  proof: This follows from the construction of limits via equalizers and products, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician">Mac Lane</a>, Ch. V, Theorem 2.2.
 
 - id: continuous_criterion_filtered
   assumptions:
@@ -53,7 +53,7 @@
       - finitely complete
   conclusions:
     - continuous
-  proof: This is because every limit can be written as a cofiltered limit of finite limits, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. IX, Theorem 1.1.
+  proof: This is because every limit can be written as a cofiltered limit of finite limits, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician">Mac Lane</a>, Ch. IX, Theorem 1.1.
 
 - id: product_criterion_filtered
   assumptions:
@@ -64,7 +64,7 @@
       - finite products
   conclusions:
     - preserves products
-  proof: This is because every product can be written as a cofiltered limit of finite products, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. IX, Theorem 1.1.
+  proof: This is because every product can be written as a cofiltered limit of finite products, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician">Mac Lane</a>, Ch. IX, Theorem 1.1.
 
 - id: exact_definition
   assumptions:
@@ -96,14 +96,14 @@
       - finite products
   conclusions:
     - left exact
-  proof: This follows from the construction of finite limits via equalizers and finite products, see  <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. V, Theorem 2.2.
+  proof: This follows from the construction of finite limits via equalizers and finite products, see  <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician">Mac Lane</a>, Ch. V, Theorem 2.2.
 
 - id: representable_is_continuous
   assumptions:
     - representable
   conclusions:
     - continuous
-  proof: This is standard, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. V, Theorem 4.1.
+  proof: This is standard, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician">Mac Lane</a>, Ch. V, Theorem 4.1.
 
 - id: equalizers_preservation_consequences
   assumptions:
@@ -152,7 +152,7 @@
       - pushouts
   conclusions:
     - preserves regular monomorphisms
-  proof: 'Let $F : \C \to \D$ be a functor preserving coreflexive equalizers, where $\C$ has pushouts; we only need that $\C$ has cokernel pairs. Let $i : X \to Y$ be a regular monomorphism in $\C$. By Prop. 3.2 at the <a href="https://ncatlab.org/nlab/show/regular+epimorphism#MorphismsWithKernelPairsAreRegularIffEffective" target="_blank">nLab</a>, $i$ is the equalizer of the two canonical morphisms $u_1,u_2 : Y \rightrightarrows Y \sqcup_X Y$ into the cokernel pair of $i$. By the universal property of the pushout, there is a morphism $\nabla : Y \sqcup_X Y \to Y$ with $\nabla u_1 = \nabla u_2 = \id_Y$. Thus, $u_1,u_2$ is a coreflexive pair. Since $F$ preserves coreflexive equalizers by assumption, $F(i)$ is the equalizer of $F(u_1), F(u_2)$. In particular, $F(i)$ is a regular monomorphism.'
+  proof: 'Let $F : \C \to \D$ be a functor preserving coreflexive equalizers, where $\C$ has pushouts; we only need that $\C$ has cokernel pairs. Let $i : X \to Y$ be a regular monomorphism in $\C$. By Prop. 3.2 at the <a href="https://ncatlab.org/nlab/show/regular+epimorphism#MorphismsWithKernelPairsAreRegularIffEffective">nLab</a>, $i$ is the equalizer of the two canonical morphisms $u_1,u_2 : Y \rightrightarrows Y \sqcup_X Y$ into the cokernel pair of $i$. By the universal property of the pushout, there is a morphism $\nabla : Y \sqcup_X Y \to Y$ with $\nabla u_1 = \nabla u_2 = \id_Y$. Thus, $u_1,u_2$ is a coreflexive pair. Since $F$ preserves coreflexive equalizers by assumption, $F(i)$ is the equalizer of $F(u_1), F(u_2)$. In particular, $F(i)$ is a regular monomorphism.'
 
 - id: zero_preserving_condition
   assumptions:

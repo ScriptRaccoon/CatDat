@@ -3,7 +3,7 @@
     - right adjoint
   conclusions:
     - continuous
-  proof: This is standard, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. V, Theorem 5.1.
+  proof: This is standard, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician">Mac Lane</a>, Ch. V, Theorem 5.1.
 
 - id: saft
   assumptions:
@@ -18,7 +18,7 @@
       - locally essentially small
   conclusions:
     - right adjoint
-  proof: This is the Special Adjoint Functor Theorem. The proof can be found, for example, at the <a href="https://ncatlab.org/nlab/show/adjoint+functor+theorem" target="_blank">nLab</a>, or in <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. V, Theorem 8.2.
+  proof: This is the Special Adjoint Functor Theorem. The proof can be found, for example, at the <a href="https://ncatlab.org/nlab/show/adjoint+functor+theorem">nLab</a>, or in <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician">Mac Lane</a>, Ch. V, Theorem 8.2.
 
 - id: reflector_consequences
   assumptions:
@@ -26,7 +26,7 @@
   conclusions:
     - left adjoint
     - right-invertible
-  proof: 'If $F : \C \to \D$ is a reflector, it is left adjoint to a fully faithful functor $G : \D \to \C$. Thus, the counit $\varepsilon : F \circ G \to \id_{\D}$ is an isomorphism (Prop. 3.4 at the <a href="https://ncatlab.org/nlab/show/adjoint+functor#FullyFaithfulAndInvertibleAdjoints" target="_blank">nLab</a>). This shows that $G$ is a right inverse of $F$.'
+  proof: 'If $F : \C \to \D$ is a reflector, it is left adjoint to a fully faithful functor $G : \D \to \C$. Thus, the counit $\varepsilon : F \circ G \to \id_{\D}$ is an isomorphism (Prop. 3.4 at the <a href="https://ncatlab.org/nlab/show/adjoint+functor#FullyFaithfulAndInvertibleAdjoints">nLab</a>). This shows that $G$ is a right inverse of $F$.'
 
 - id: representable_right_adjoint
   assumptions:

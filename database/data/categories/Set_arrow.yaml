@@ -10,7 +10,7 @@ morphisms: >-
   @V{\ell}VV @VV{r}V \\
   X' @>>{f'}> Y'
   \end{CD}$$
-description: This category is an example of the <a href="https://ncatlab.org/nlab/show/arrow+category" target="_blank">arrow category</a> $\Arr(\C)$, where $\C$ is the category of sets. It is also known as the Sierpinski topos, since it is equivalent to the category of sheaves on the Sierpinski space.
+description: This category is an example of the <a href="https://ncatlab.org/nlab/show/arrow+category">arrow category</a> $\Arr(\C)$, where $\C$ is the category of sets. It is also known as the Sierpinski topos, since it is equivalent to the category of sheaves on the Sierpinski space.
 nlab_link: https://ncatlab.org/nlab/show/Sierpinski+topos
 keywords:
   - arrow category

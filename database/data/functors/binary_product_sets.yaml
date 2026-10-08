@@ -32,7 +32,7 @@ satisfied_properties:
 
   - property: preserves reflexive coequalizers
     # TODO: refactor this once we add "preserves sifted colimits"
-    proof: See Prop. 2.4 at the <a href="https://ncatlab.org/nlab/show/reflexive+coequalizer" target="_blank">nLab</a>.
+    proof: See Prop. 2.4 at the <a href="https://ncatlab.org/nlab/show/reflexive+coequalizer">nLab</a>.
 
 unsatisfied_properties:
   - property: full

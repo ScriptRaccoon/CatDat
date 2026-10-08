@@ -124,7 +124,7 @@
     Thus, we get that a morphism $h : X+X' \to Z$ factors through $E$ if and only if $h(x) = h(x)$ for every generalized element $x \in X$; $h(y) = h(y')$ for every $y \in Y$; $h(y') = h(y)$ for every $y\in Y$; and $h(x') = h(x')$ for every $x \in X$. Clearly this is equivalent to $h(y) = h(y')$ for every $y\in Y$, so in fact $E$ is the cokernel pair of $i_1 \circ \inc_Y$ and $i_2 \circ \inc_Y$. This means that $E$ is an effective cocongruence.
 
 
-    Remark: The assumptions are satisfied in particular for every elementary topos. Therefore, every elementary topos has effective cocongruences and is co-Malcev. This special case is Example 2.2.18 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories" target="_blank">Malcev, protomodular, homological and semi-abelian categories</a>. An alternative proof of this special case is given later in A.5.17.
+    Remark: The assumptions are satisfied in particular for every elementary topos. Therefore, every elementary topos has effective cocongruences and is co-Malcev. This special case is Example 2.2.18 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories">Malcev, protomodular, homological and semi-abelian categories</a>. An alternative proof of this special case is given later in A.5.17.
 
 - id: pretopos_balanced
   assumptions:

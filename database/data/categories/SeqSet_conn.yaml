@@ -18,7 +18,7 @@ related:
   - Setne
 
 comments:
-  - This category was suggested by Jonas Frey at <a target="_blank" href="https://mathoverflow.net/questions/515206">MO/515206</a>.
+  - This category was suggested by Jonas Frey at <a href="https://mathoverflow.net/questions/515206">MO/515206</a>.
 
 satisfied_properties:
   - property: locally small
@@ -121,7 +121,7 @@ satisfied_properties:
       It belongs to $P$, and the element $x_n \in U_n$ induces an element of $\colim_{U \in P} U_n$ that maps to $x_n \in X_n$.
 
   - property: multi-complete
-    proof: 'We will prove that the inclusion functor $[(\IN,\leq),\Set]_{\conn} \hookrightarrow [(\IN,\leq),\Set]$ has a <a href="https://ncatlab.org/nlab/show/multi-adjoint" target="_blank">right multi-adjoint</a>, so that multi-limits in the category $[(\IN,\leq),\Set]_{\conn}$ can be constructed by applying this adjoint to multi-limits in the category $[(\IN,\leq),\Set]$ (which is even complete). For a sequence of sets $X$ (not necessarily connected) and an element $c \in \colim(X)$, let $X^c \subseteq X$ be the subsequence consisting of those elements that map to $c$ in the colimit. That is, if $(u_n : X_n \to \colim(X))_{n \geq 0}$ is the colimit cocone, we define $(X^c)_n \coloneqq (u_n)^*(\{c\})$. It is easy to see that $X^c$ is connected. We claim that the family of inclusion maps $(X^c \to X)_{c \in \colim(X)}$ is multi-universal, i.e. that every morphism $f : Y \to X$ from a connected sequence $Y$ to $X$ factors uniquely through $X^c \hookrightarrow X$ for a unique $c \in \colim(X)$. Indeed, $f$ induces a map $\{\ast\} = \colim(Y) \to \colim(X)$, which corresponds to an element $c \in \colim(X)$, namely $u_n(f_n(y_n))$ for any $y_n \in Y_n$ and $n \geq 0$. This element is independent of the choice of $y_n$ and $n$. Hence, we have $f_n(y_n) \in (u_n)^*(\{c\})$ for all $y_n \in Y_n$ and $n \geq 0$, so $f$ factors through $X^c \hookrightarrow X$.'
+    proof: 'We will prove that the inclusion functor $[(\IN,\leq),\Set]_{\conn} \hookrightarrow [(\IN,\leq),\Set]$ has a <a href="https://ncatlab.org/nlab/show/multi-adjoint">right multi-adjoint</a>, so that multi-limits in the category $[(\IN,\leq),\Set]_{\conn}$ can be constructed by applying this adjoint to multi-limits in the category $[(\IN,\leq),\Set]$ (which is even complete). For a sequence of sets $X$ (not necessarily connected) and an element $c \in \colim(X)$, let $X^c \subseteq X$ be the subsequence consisting of those elements that map to $c$ in the colimit. That is, if $(u_n : X_n \to \colim(X))_{n \geq 0}$ is the colimit cocone, we define $(X^c)_n \coloneqq (u_n)^*(\{c\})$. It is easy to see that $X^c$ is connected. We claim that the family of inclusion maps $(X^c \to X)_{c \in \colim(X)}$ is multi-universal, i.e. that every morphism $f : Y \to X$ from a connected sequence $Y$ to $X$ factors uniquely through $X^c \hookrightarrow X$ for a unique $c \in \colim(X)$. Indeed, $f$ induces a map $\{\ast\} = \colim(Y) \to \colim(X)$, which corresponds to an element $c \in \colim(X)$, namely $u_n(f_n(y_n))$ for any $y_n \in Y_n$ and $n \geq 0$. This element is independent of the choice of $y_n$ and $n$. Hence, we have $f_n(y_n) \in (u_n)^*(\{c\})$ for all $y_n \in Y_n$ and $n \geq 0$, so $f$ factors through $X^c \hookrightarrow X$.'
 
 unsatisfied_properties:
   - property: skeletal
@@ -178,7 +178,7 @@ unsatisfied_properties:
       - SeqSet_conn_subobject_classifier
 
   - property: ℵ₁-cofiltered limits
-    proof: Since we already know that the inclusion functor $[(\IN,\leq),\Set]_{\conn} \hookrightarrow [(\IN,\leq),\Set]$ is continuous, it suffices to construct an $\aleph_1$-cofiltered diagram of connected sequences whose limit sequence is not connected. An example is given in <a target="_blank" href="https://mathoverflow.net/questions/515431">MO/515431</a>.
+    proof: Since we already know that the inclusion functor $[(\IN,\leq),\Set]_{\conn} \hookrightarrow [(\IN,\leq),\Set]$ is continuous, it suffices to construct an $\aleph_1$-cofiltered diagram of connected sequences whose limit sequence is not connected. An example is given in <a href="https://mathoverflow.net/questions/515431">MO/515431</a>.
     references:
       - SeqSet_conn_no_countable_powers
 
@@ -202,7 +202,7 @@ unsatisfied_properties:
 
   - property: coaccessible
     proof: >-
-      We will find a family of morphisms in $[(\IN,\leq),\Set]_{\conn}$ such that an object $X$ is projective to the family if and only if $X_k \to X_{k+1}$ is an isomorphism for each $k \geq 1$. Then $X_k$ is a singleton for each $k \geq 1$, and the full subcategory of such objects is equivalent to <a href="/category/Set">$\Set$</a>, which is not coaccessible. It will then follow from the dual of Prop. 4.7 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a> that $[(\IN,\leq),\Set]_{\conn}$ is not coaccessible.
+      We will find a family of morphisms in $[(\IN,\leq),\Set]_{\conn}$ such that an object $X$ is projective to the family if and only if $X_k \to X_{k+1}$ is an isomorphism for each $k \geq 1$. Then $X_k$ is a singleton for each $k \geq 1$, and the full subcategory of such objects is equivalent to <a href="/category/Set">$\Set$</a>, which is not coaccessible. It will then follow from the dual of Prop. 4.7 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adamek-Rosicky</a> that $[(\IN,\leq),\Set]_{\conn}$ is not coaccessible.
 
       Let $k \geq 1$. Consider the monomorphism of connected sequences $U^{[k]} \hookrightarrow V^{[k]}$ defined by
       $$\begin{CD}

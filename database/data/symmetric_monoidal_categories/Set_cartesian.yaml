@@ -29,4 +29,4 @@ unsatisfied_properties:
 
   - property: strict
     # TODO: automate this with category_conclusions
-    proof: Whether the underlying monoidal category is strict depends on the specific construction of sets and their products (see also <a href="https://math.stackexchange.com/a/5144448" target="_blank">MSE/4468970</a>), but the symmetries cannot be identities, since otherwise $\Set$ would be thin (see <a href="/category-implication/core-thin_products_thin">this proof</a>).
+    proof: Whether the underlying monoidal category is strict depends on the specific construction of sets and their products (see also <a href="https://math.stackexchange.com/a/5144448">MSE/4468970</a>), but the symmetries cannot be identities, since otherwise $\Set$ would be thin (see <a href="/category-implication/core-thin_products_thin">this proof</a>).

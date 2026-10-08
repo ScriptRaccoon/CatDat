@@ -43,7 +43,7 @@
     - distributive
   conclusions:
     - strict initial object
-  proof: See the <a href="https://ncatlab.org/nlab/show/distributive+category" target="_blank">nLab</a> or Prop. 3.4 in <a href="https://doi.org/10.1016/0022-4049(93)90035-R" target="_blank">Introduction to extensive and distributive categories</a> by Carboni-Lack-Walters.
+  proof: See the <a href="https://ncatlab.org/nlab/show/distributive+category">nLab</a> or Prop. 3.4 in <a href="https://doi.org/10.1016/0022-4049(93)90035-R">Introduction to extensive and distributive categories</a> by Carboni-Lack-Walters.
 
 - id: distributive_criterion
   assumptions:
@@ -93,4 +93,4 @@
     - thin
   conclusions:
     - codistributive
-  proof: This is equivalent to the classical result that the <a href="https://en.wikipedia.org/wiki/Distributive_lattice" target="_blank">distributivity law in a lattice</a> can be defined in two ways, see e.g. Birkhoff, <i>Lattice Theory</i>, Ch. IX, Thm. 1.
+  proof: This is equivalent to the classical result that the <a href="https://en.wikipedia.org/wiki/Distributive_lattice">distributivity law in a lattice</a> can be defined in two ways, see e.g. Birkhoff, <i>Lattice Theory</i>, Ch. IX, Thm. 1.

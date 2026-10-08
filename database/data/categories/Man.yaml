@@ -28,7 +28,7 @@ satisfied_properties:
     proof: Every non-empty manifold is weakly terminal (by using constant maps).
 
   - property: essentially small
-    proof: 'This is a consequence of the <a href="https://en.wikipedia.org/wiki/Whitney_embedding_theorem" target="_blank">Whitney embedding theorem</a>. But there is also a more direct proof: Since a manifold is second-countable, it is Lindelöf (<a href="https://topospaces.subwiki.org/wiki/Second-countable_implies_Lindelof" target="_blank">proof</a>). In particular, there is a countable atlas. It is then completely determined by countable many open subsets of Euclidean spaces and the transition maps.'
+    proof: 'This is a consequence of the <a href="https://en.wikipedia.org/wiki/Whitney_embedding_theorem">Whitney embedding theorem</a>. But there is also a more direct proof: Since a manifold is second-countable, it is Lindelöf (<a href="https://topospaces.subwiki.org/wiki/Second-countable_implies_Lindelof">proof</a>). In particular, there is a countable atlas. It is then completely determined by countable many open subsets of Euclidean spaces and the transition maps.'
 
   - property: countable coproducts
     proof: Take the usual disjoint union of spaces, which is clearly locally Euclidean and Hausdorff, and it is second countable since we are using only countable many spaces. (Without that condition, all coproducts would exist.)
@@ -38,7 +38,7 @@ satisfied_properties:
     proof: 'This can be deduced from the countable extensivity of <a href="/category/Top">$\Top$</a> as follows. We already know that countable coproducts exist, and these are preserved by the forgetful functor to $\Top$. Since open embeddings pull back to open embeddings, and an open subset of a manifold carries a canonical manifold structure, it follows that $\Man$ has pullbacks along coproduct inclusions, and that the forgetful functor to $\Top$ preserves them. Since coproducts are disjoint in $\Top$ and the empty space has a unique manifold structure, it follows immediately that countable coproducts are also disjoint in $\Man$. It remains to show that coproducts are stable under pullbacks. Let $(X_i)_{i \in I}$ be a countable family of manifolds, and let $f : T \to \coprod_{i \in I} X_i$ be a smooth map. Consider the pullbacks $T_i \coloneqq f^*(X_i)$. These are precisely the preimages of the $X_i$ under $f$ and are open subsets of $T$. Since coproducts in $\Top$ are stable under pullbacks, the canonical smooth map $\coprod_{i \in I} T_i \to T$ is a homeomorphism. It is also a local diffeomorphism, since each $T_i \to T$ is an open embedding. Therefore, it is a diffeomorphism.'
 
   - property: Cauchy complete
-    proof: See Theorem 2.1 at the <a href="https://ncatlab.org/nlab/show/smooth+manifold" target="_blank">nLab</a>.
+    proof: See Theorem 2.1 at the <a href="https://ncatlab.org/nlab/show/smooth+manifold">nLab</a>.
 
   - property: coquotients of cocongruences
     proof: |-
@@ -86,7 +86,7 @@ unsatisfied_properties:
       induced by the derivatives $d_x(\pi_n) : T_x(P) \to T_{x_n}(M_n)$. Since $T_x(P)$ is finite-dimensional and $\prod_{n \geq 0} T_{x_n}(M_n)$ is not, it cannot be surjective. But actually, it is: Choose tangent vectors $v_n \in T_{x_n}(M_n)$. Choose smooth curves $\gamma_n : \IR \to M_n$ with $\gamma_n(0)=x_n$ and ${\gamma_n}'(0) = v_n$. By the universal property there is a unique smooth curve $\gamma : \IR \to P$ with $\pi_n \gamma = \gamma_n$. In particular, $\gamma(0) = x$. The chain rule now implies that $\gamma'(0) \in T_x(P)$ is a preimage of $(v_n)$ – a contradiction.
 
   - property: kernel pairs
-    proof: One can show that the map $\IR \to \IR$, $x \mapsto x^2$ does not have a kernel pair, see <a href="https://math.stackexchange.com/a/322602" target="_blank">MSE/322485</a>.
+    proof: One can show that the map $\IR \to \IR$, $x \mapsto x^2$ does not have a kernel pair, see <a href="https://math.stackexchange.com/a/322602">MSE/322485</a>.
 
   - property: cokernel pairs
     proof: The inclusion $\{0\} \to \IR$ does not have a cokernel pair, see <a href="https://mathoverflow.net/questions/19116">MO/19916</a>.
@@ -95,7 +95,7 @@ unsatisfied_properties:
     proof: If $\Man$ had sequential colimits, then by <a href="/content/special_sequential_colimits">this lemma</a> there would be a manifold $M$ that admits a split epimorphism $M \to \IR^n$ for every $n$. But then $M$ will have an infinite-dimensional tangent space, which is a contradiction.
 
   - property: ℵ₂-small copowers
-    proof: A proof can be found at <a href="https://math.stackexchange.com/a/5083683" target="_blank">MSE/5083641</a> (ignore the arguments regarding equal dimension).
+    proof: A proof can be found at <a href="https://math.stackexchange.com/a/5083683">MSE/5083641</a> (ignore the arguments regarding equal dimension).
 
   - property: ℵ₁-cofiltered limits
     proof: >-

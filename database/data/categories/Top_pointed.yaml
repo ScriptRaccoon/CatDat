@@ -46,7 +46,7 @@ satisfied_properties:
     proof: The indiscrete two-point space $\{0,1\}$ with base point $1$ is a regular subobject classifier since pointed continuous maps $X \to \{0,1\}$ correspond to pointed subsets of $X$ (by taking the fiber of $1$ as usual).
 
   - property: counital
-    proof: Since embeddings are regular monomorphisms in this category (see below) and hence strong monomorphisms, it suffices to prove that the canonical morphism $X \vee Y \hookrightarrow X \times Y$ is an embedding. For a proof, see <a href="https://math.stackexchange.com/questions/4055988" target="_blank">MSE/4055988</a>.
+    proof: Since embeddings are regular monomorphisms in this category (see below) and hence strong monomorphisms, it suffices to prove that the canonical morphism $X \vee Y \hookrightarrow X \times Y$ is an embedding. For a proof, see <a href="https://math.stackexchange.com/questions/4055988">MSE/4055988</a>.
 
   - property: CIP
     proof: This follows since <a href="/category/Set_*">$\Set_*$</a> has this property and the forgetful functor preserves products and coproducts.
@@ -78,10 +78,10 @@ unsatisfied_properties:
     proof: This is trivial.
 
   - property: regular
-    proof: See Example 3.14 at the <a href="https://ncatlab.org/nlab/show/regular+category" target="_blank">nLab</a>. The proof also works for pointed spaces (resp. posets) by using the base points $a$ and $0$.
+    proof: See Example 3.14 at the <a href="https://ncatlab.org/nlab/show/regular+category">nLab</a>. The proof also works for pointed spaces (resp. posets) by using the base points $a$ and $0$.
 
   - property: cartesian filtered colimits
-    proof: 'The functor $\IQ \times - : \Top_* \to \Top_*$ does not preserve colimits, see <a href="https://math.stackexchange.com/questions/2969372" target="_blank">MSE/2969372</a>. The counterexample also works for pointed spaces.'
+    proof: 'The functor $\IQ \times - : \Top_* \to \Top_*$ does not preserve colimits, see <a href="https://math.stackexchange.com/questions/2969372">MSE/2969372</a>. The counterexample also works for pointed spaces.'
 
   - property: co-Malcev
     proof: 'We can adjust the proof for <a href="/category/Top">$\Top$</a> as follows: Consider the forgetful functor $U : \Top_* \to \Set$ and the relation $R \subseteq U^2$ defined by $R(X) \coloneqq \{(x,y) \in U(X)^2 : x \in \overline{\{y\}} \}$. Both are representable: $U$ by the discrete space $\{0,1\}$ with base point $0$ and $R$ by the Sierpinski space with an isolated base point added. It is clear that $R$ is reflexive, but not symmetric.'
@@ -101,7 +101,7 @@ unsatisfied_properties:
       - Set_*_not_conormal
 
   - property: coaccessible
-    proof: 'We can adjust the proof for <a href="/category/Top">$\Top$</a> as follows: Assume $\Top_*$ is coaccessible. Let $S_0=\{x,*\}$ be the pointed topological space such that $\{*\}$ is the only non-trivial open set, and let $S_1=\{x,*\}$ be the pointed space such that $\{x\}$ is the only non-trivial open set. Let $p_i : S_i \to \{x,*\}$ be the identity function to the two-element indiscrete pointed space. Then, a pointed topological space is discrete if and only if it is projective to the morphisms $p_0$ and $p_1$. This implies that the full subcategory spanned by all discrete pointed spaces, which is equivalent to $\Set_*$, is coaccessible by Prop. 4.7 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>. However, since <a href="/category/Set_*">$\Set_*$</a> is not coaccessible, this is a contradiction.'
+    proof: 'We can adjust the proof for <a href="/category/Top">$\Top$</a> as follows: Assume $\Top_*$ is coaccessible. Let $S_0=\{x,*\}$ be the pointed topological space such that $\{*\}$ is the only non-trivial open set, and let $S_1=\{x,*\}$ be the pointed space such that $\{x\}$ is the only non-trivial open set. Let $p_i : S_i \to \{x,*\}$ be the identity function to the two-element indiscrete pointed space. Then, a pointed topological space is discrete if and only if it is projective to the morphisms $p_0$ and $p_1$. This implies that the full subcategory spanned by all discrete pointed spaces, which is equivalent to $\Set_*$, is coaccessible by Prop. 4.7 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adamek-Rosicky</a>. However, since <a href="/category/Set_*">$\Set_*$</a> is not coaccessible, this is a contradiction.'
     references:
       - Top_not_coaccessible
 
@@ -129,7 +129,7 @@ special_objects:
   coproducts:
     description: wedge sum, aka one-point union
   products:
-    description: direct product with the <a href="https://en.wikipedia.org/wiki/Product_topology" target="_blank">product topology</a> and the obvious base point
+    description: direct product with the <a href="https://en.wikipedia.org/wiki/Product_topology">product topology</a> and the obvious base point
 
 special_morphisms:
   isomorphisms:

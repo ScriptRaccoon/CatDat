@@ -21,7 +21,7 @@ satisfied_properties:
     proof: This is trivial.
 
   - property: right adjoint
-    proof: The Hausdorff reflection (see <a href="https://ncatlab.org/nlab/show/Hausdorff+space#HausdorffReflectionViaHomsIntoAllHausdorffSpaces" target="_blank">nLab</a>) provides a left adjoint $\Top \to \Haus$.
+    proof: The Hausdorff reflection (see <a href="https://ncatlab.org/nlab/show/Hausdorff+space#HausdorffReflectionViaHomsIntoAllHausdorffSpaces">nLab</a>) provides a left adjoint $\Top \to \Haus$.
 
   - property: preserves coproducts
     proof: This follows easily from the elementary fact that the $\Top$-coproduct of a family of Hausdorff spaces is again Hausdorff.

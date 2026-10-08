@@ -6,7 +6,7 @@ morphisms: $0 \to 1$, $0 \to 2$, and the identities
 description: >-
   This category can be pictured as:
   $$\{1 \leftarrow 0 \rightarrow 2\}$$
-  Its name comes from the fact that a functor $\Span \to \C$ is the same as a <a href="https://ncatlab.org/nlab/show/span" target="_blank">span</a> in $\C$.
+  Its name comes from the fact that a functor $\Span \to \C$ is the same as a <a href="https://ncatlab.org/nlab/show/span">span</a> in $\C$.
 nlab_link: https://ncatlab.org/nlab/show/span#the_walking_span
 tags:
   - category theory

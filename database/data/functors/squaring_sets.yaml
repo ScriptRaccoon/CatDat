@@ -37,7 +37,7 @@ satisfied_properties:
 
   - property: preserves reflexive coequalizers
     # TODO: refactor this once we add "preserves sifted colimits"
-    proof: See Prop. 2.4 at the <a href="https://ncatlab.org/nlab/show/reflexive+coequalizer" target="_blank">nLab</a>.
+    proof: See Prop. 2.4 at the <a href="https://ncatlab.org/nlab/show/reflexive+coequalizer">nLab</a>.
 
   - property: dominant
     proof: 'If $X$ is any set, the diagonal map $X \to X^2$, $x \mapsto (x,x)$ is a split monomorphism.'

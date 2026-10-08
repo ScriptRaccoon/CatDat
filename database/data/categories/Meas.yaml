@@ -147,7 +147,7 @@ unsatisfied_properties:
       Because $N$ is a countable union of sets with measure $0$, we have $\lambda(N) = 0$, and thus $\lambda([0, 1) \setminus N)=1$. For any two points $x, y \in [0, 1) \setminus N$, clearly $x \in A_n \iff y \in A_n$ for every $n$. Consequently, the sequence $(B_n)$ fails to separate $f(x)$ and $f(y)$. Hence, $x \sim y$. Since $[0, 1) \setminus N$ has measure $1$, it is uncountable. Because each equivalence class is only countable, these uncountably many points must belong to uncountably many different equivalence classes. Thus, we can easily pick $x, y \in [0, 1) \setminus N$ where $x \not\sim y$. Thus $\Sigma_Y$ is not countably separated.
 
 
-      Hence by Theorem 6.5.7 in Bogachev's <a href="https://link.springer.com/book/10.1007/978-3-540-34514-5" target="_blank">Measure theory</a> $\Delta_Y \notin \Sigma_Y \otimes \Sigma_Y$. We have identified a non-measurable subset of $Y \times Y$ whose preimage under $f \times f$ is measurable. Therefore, $f \times f$ is not a regular epimorphism.
+      Hence by Theorem 6.5.7 in Bogachev's <a href="https://link.springer.com/book/10.1007/978-3-540-34514-5">Measure theory</a> $\Delta_Y \notin \Sigma_Y \otimes \Sigma_Y$. We have identified a non-measurable subset of $Y \times Y$ whose preimage under $f \times f$ is measurable. Therefore, $f \times f$ is not a regular epimorphism.
 
   - property: extremal generating collection
     proof: >-
@@ -165,16 +165,16 @@ unsatisfied_properties:
     proof: >-
       Let $X$ be a set of cardinality $> 2^{\aleph_0}$. We equip $X$ with the discrete $\sigma$-algebra. If $1$ denotes the singleton space, we therefore have $X \cong \coprod_{x \in X} 1$ in $\Meas$. However, we claim that the canonical bijective measurable map
       $$\textstyle\coprod_{x,y \in X} 1 \to X \times X$$
-      is not an isomorphism, i.e. that $X \times X$ does not carry the discrete $\sigma$-algebra. More precisely, we will show that the diagonal $\Delta \subseteq X \times X$ is not measurable. (This is well-known and is remarked for example at the end of chapter 1 in Wengenroth's book <a href="https://doi.org/10.1515/9783110203592" target="_blank">Wahrscheinlichkeitstheorie</a>, but we include the proof nevertheless.)
+      is not an isomorphism, i.e. that $X \times X$ does not carry the discrete $\sigma$-algebra. More precisely, we will show that the diagonal $\Delta \subseteq X \times X$ is not measurable. (This is well-known and is remarked for example at the end of chapter 1 in Wengenroth's book <a href="https://doi.org/10.1515/9783110203592">Wahrscheinlichkeitstheorie</a>, but we include the proof nevertheless.)
 
-      Assume that $\Delta \subseteq X \times X$ is measurable. Then (cf. <a href="https://math.stackexchange.com/questions/61617" target="_blank">MSE/61617</a>) there is a countable family of rectangles $(A_n \times B_n)_{n \in \IN}$ such that $\Delta \in \sigma(\{A_n \times B_n : n \in \IN\})$. Consider the product of the characteristic functions
+      Assume that $\Delta \subseteq X \times X$ is measurable. Then (cf. <a href="https://math.stackexchange.com/questions/61617">MSE/61617</a>) there is a countable family of rectangles $(A_n \times B_n)_{n \in \IN}$ such that $\Delta \in \sigma(\{A_n \times B_n : n \in \IN\})$. Consider the product of the characteristic functions
       $$((\chi_{A_n})_n,(\chi_{B_n})_n) : X \to \{0,1\}^{\IN} \times \{0,1\}^{\IN}.$$
       Its kernel is an equivalence relation $\sim$ on $X$, namely, $x \sim y$ if and only if, for all $n$, we have $x \in A_n \iff y \in A_n$ and $x \in B_n \iff y \in B_n$. The set $X/{\sim}$ of equivalence classes embeds into $\{0,1\}^{\IN} \times \{0,1\}^{\IN}$ and therefore has at most $2^{\aleph_0}$ elements. By our assumption on $X$, the projection $X \to X/{\sim}$ cannot be injective. Thus, $\sim$ is not trivial.
 
       Next, consider the collection of all subsets $E \subseteq X \times X$ with the property that, whenever $x \sim y$, we have $(x,y) \in E \iff (x,x) \in E$. It is easily seen that this collection is a $\sigma$-algebra on $X \times X$. Moreover, it contains each rectangle $A_n \times B_n$. Therefore, it also contains the diagonal $\Delta$. But this means that $x \sim y$ implies $x=y$, i.e. that $\sim$ is trivial. This contradiction proves that the diagonal is not measurable.
 
   - property: coaccessible
-    proof: 'The proof is very similar to the proof for <a href="/category/Top">$\Top$</a>. Assume $\Meas$ is coaccessible. Let $p : D \to I$ be the identity map from the two-element discrete space to the two-element indiscrete space. Then, a measurable space is discrete if and only if it is projective to the morphism $p$. This implies that the full subcategory spanned by all discrete measurable spaces, which is equivalent to $\Set$, is coaccessible by Prop. 4.7 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>. However, since <a href="/category/Set">$\Set$</a> is not coaccessible, this is a contradiction.'
+    proof: 'The proof is very similar to the proof for <a href="/category/Top">$\Top$</a>. Assume $\Meas$ is coaccessible. Let $p : D \to I$ be the identity map from the two-element discrete space to the two-element indiscrete space. Then, a measurable space is discrete if and only if it is projective to the morphism $p$. This implies that the full subcategory spanned by all discrete measurable spaces, which is equivalent to $\Set$, is coaccessible by Prop. 4.7 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adamek-Rosicky</a>. However, since <a href="/category/Set">$\Set$</a> is not coaccessible, this is a contradiction.'
     references:
       - Top_not_coaccessible
 
@@ -186,7 +186,7 @@ special_objects:
   coproducts:
     description: disjoint union with the obvious $\sigma$-algebra
   products:
-    description: direct products with the <a href="https://de.wikipedia.org/wiki/Produkt-%CF%83-Algebra" target="_blank">product $\sigma$-algebra</a>
+    description: direct products with the <a href="https://de.wikipedia.org/wiki/Produkt-%CF%83-Algebra">product $\sigma$-algebra</a>
 
 special_morphisms:
   isomorphisms:

@@ -82,4 +82,4 @@ unsatisfied_properties:
 undecidable_properties:
   - property: essentially injective
     proof: >-
-      The property $P(X) \cong P(Y) \implies X \cong Y$ is undecidable in ZFC. It holds when the generalized continuum hypothesis is true, but it can fail otherwise. A more precise result is given by <a href="https://en.wikipedia.org/wiki/Easton's_theorem" target="_blank">Easton's Theorem</a>. See also <a href="https://mathoverflow.net/questions/17152" target="_blank">MO/17152</a>.
+      The property $P(X) \cong P(Y) \implies X \cong Y$ is undecidable in ZFC. It holds when the generalized continuum hypothesis is true, but it can fail otherwise. A more precise result is given by <a href="https://en.wikipedia.org/wiki/Easton's_theorem">Easton's Theorem</a>. See also <a href="https://mathoverflow.net/questions/17152">MO/17152</a>.

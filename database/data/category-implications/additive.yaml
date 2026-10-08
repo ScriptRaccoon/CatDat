@@ -13,7 +13,7 @@
     - preadditive
   conclusions:
     - finite products
-  proof: See <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, VIII.2., Theorem 2.
+  proof: See <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician">Mac Lane</a>, VIII.2., Theorem 2.
 
 - id: additive_definition
   assumptions:
@@ -29,7 +29,7 @@
     - additive
   conclusions:
     - biproducts
-  proof: This is standard, see e.g. Prop. 2.1 on the <a href="https://ncatlab.org/nlab/show/additive+category" target="_blank">nLab</a>.
+  proof: This is standard, see e.g. Prop. 2.1 on the <a href="https://ncatlab.org/nlab/show/additive+category">nLab</a>.
 
 - id: abelian_definition
   assumptions:
@@ -48,7 +48,7 @@
     - abelian
   conclusions:
     - regular
-  proof: In an abelian category, every epimorphism is regular, and epimorphisms are stable under pullbacks, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, Ch. VIII.
+  proof: In an abelian category, every epimorphism is regular, and epimorphisms are stable under pullbacks, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician">Mac Lane</a>, Ch. VIII.
 
 - id: grothendieck_abelian_definition
   assumptions:
@@ -68,7 +68,7 @@
   conclusions:
     - cogenerator
   proof: >-
-    See <a href="https://ncatlab.org/nlab/show/Categories+and+Sheaves" target="_blank">Kashiwara-Schapira</a>, Thm. 9.6.3.
+    See <a href="https://ncatlab.org/nlab/show/Categories+and+Sheaves">Kashiwara-Schapira</a>, Thm. 9.6.3.
 
 
     Remark: The assumption that the category is locally essentially small is necessary (and is implicit in most of the literature), as the example $[\On,\Ab]$ shows (see <a href="/category/TransSeqAb">here</a>).

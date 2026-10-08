@@ -77,7 +77,7 @@
     - skeletal
   conclusions:
     - direct
-  proof: See the <a href="https://ncatlab.org/nlab/show/direct+category#direct_versus_oneway_categories" target="_blank">nLab</a> for a proof.
+  proof: See the <a href="https://ncatlab.org/nlab/show/direct+category#direct_versus_oneway_categories">nLab</a> for a proof.
 
 - id: one-way_consequences
   assumptions:
@@ -93,7 +93,7 @@
     - powers
   conclusions:
     - thin
-  proof: See <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, V.2, Prop. 3. The proof works for any category with powers.
+  proof: See <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician">Mac Lane</a>, V.2, Prop. 3. The proof works for any category with powers.
 
 - id: freyd_countable
   assumptions:
@@ -101,7 +101,7 @@
     - essentially countable
   conclusions:
     - thin
-  proof: Adjust the proof of <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, V.2, Prop. 3.
+  proof: Adjust the proof of <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician">Mac Lane</a>, V.2, Prop. 3.
 
 - id: freyd_finite
   assumptions:
@@ -109,7 +109,7 @@
     - finite powers
   conclusions:
     - thin
-  proof: Adjust the proof of <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician" target="_blank">Mac Lane</a>, V.2, Prop. 3.
+  proof: Adjust the proof of <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician">Mac Lane</a>, V.2, Prop. 3.
 
 - id: thin_finite_product_reduction
   assumptions:

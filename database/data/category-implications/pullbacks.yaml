@@ -14,7 +14,7 @@
   conclusions:
     - equalizers
     - wide pullbacks
-  proof: The direction $\Rightarrow$ is trivial. The direction $\Leftarrow$ can be found at the <a href="https://ncatlab.org/nlab/show/connected+limit" target="_blank">nLab</a>.
+  proof: The direction $\Rightarrow$ is trivial. The direction $\Leftarrow$ can be found at the <a href="https://ncatlab.org/nlab/show/connected+limit">nLab</a>.
   is_equivalence: true
 
 - id: wide_pullbacks_criterion

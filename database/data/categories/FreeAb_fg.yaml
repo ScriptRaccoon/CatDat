@@ -3,7 +3,7 @@ name: category of finitely generated free abelian groups
 notation: $\FreeAb_\fg$
 objects: finitely generated free abelian groups
 morphisms: group homomorphisms
-description: This is the full subcategory of $\Ab$ consisting of the <a href="https://ncatlab.org/nlab/show/free+abelian+group" target="_blank">free abelian groups</a> that are also <a href="https://ncatlab.org/nlab/show/finitely+generated+group" target="_blank">finitely generated</a>. Equivalently, it is the category $\Proj_\fg(\IZ)$ of finitely generated <a href="https://ncatlab.org/nlab/show/projective+module" target="_blank">projective</a> $\IZ$-modules. Every object is isomorphic to $\IZ^n$ for a unique $n \in \IN$.
+description: This is the full subcategory of $\Ab$ consisting of the <a href="https://ncatlab.org/nlab/show/free+abelian+group">free abelian groups</a> that are also <a href="https://ncatlab.org/nlab/show/finitely+generated+group">finitely generated</a>. Equivalently, it is the category $\Proj_\fg(\IZ)$ of finitely generated <a href="https://ncatlab.org/nlab/show/projective+module">projective</a> $\IZ$-modules. Every object is isomorphic to $\IZ^n$ for a unique $n \in \IN$.
 nlab_link: null
 keywords:
   - finitely generated free Z-modules
@@ -47,7 +47,7 @@ satisfied_properties:
 
   - property: ℵ₁-accessible
     proof: >-
-      The proof is very similar to the proof for <a href="/category/Ab_fg">$\Ab_\fg$</a>. The inclusion $\Ab_{\fg} \hookrightarrow \Ab$ is closed under $\aleph_1$-filtered colimits by <a href="https://mathoverflow.net/questions/400763/" target="_blank">MO/400763</a>. Furthermore, the inclusion $\TorsFreeAb \hookrightarrow \Ab$ is clearly closed under $\aleph_0$-filtered colimits, and hence under $\aleph_1$-filtered colimits. Since $\FreeAb_\fg = \Ab_\fg \cap \TorsFreeAb$, it follows that $\FreeAb_\fg \hookrightarrow \Ab$ is closed under $\aleph_1$-filtered colimits. In particular, $\FreeAb_\fg$ has $\aleph_1$-filtered colimits. Every finitely generated free abelian group is isomorphic to one in the set $\{\IZ^n : n \in \IN\}$, and each $\IZ^n$ is finitely presentable in $\Ab$, hence $\aleph_1$-presentable, and therefore also $\aleph_1$-presentable in $\FreeAb_\fg$.
+      The proof is very similar to the proof for <a href="/category/Ab_fg">$\Ab_\fg$</a>. The inclusion $\Ab_{\fg} \hookrightarrow \Ab$ is closed under $\aleph_1$-filtered colimits by <a href="https://mathoverflow.net/questions/400763/">MO/400763</a>. Furthermore, the inclusion $\TorsFreeAb \hookrightarrow \Ab$ is clearly closed under $\aleph_0$-filtered colimits, and hence under $\aleph_1$-filtered colimits. Since $\FreeAb_\fg = \Ab_\fg \cap \TorsFreeAb$, it follows that $\FreeAb_\fg \hookrightarrow \Ab$ is closed under $\aleph_1$-filtered colimits. In particular, $\FreeAb_\fg$ has $\aleph_1$-filtered colimits. Every finitely generated free abelian group is isomorphic to one in the set $\{\IZ^n : n \in \IN\}$, and each $\IZ^n$ is finitely presentable in $\Ab$, hence $\aleph_1$-presentable, and therefore also $\aleph_1$-presentable in $\FreeAb_\fg$.
 
       More generally, if $R$ is a left Noetherian ring, then $\Proj_\fg(R)$ is $\aleph_1$-accessible, as proven <a href="/category/Proj_fg(Re)">here</a>.
     references:

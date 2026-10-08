@@ -4,7 +4,7 @@ notation: $\Proj_\fg(\IR[\varepsilon])$
 objects: finitely generated projective modules over $\IR[\varepsilon]$
 morphisms: $\IR[\varepsilon]$-linear maps
 description: >-
-  In this entry, $R \coloneqq \IR[\varepsilon] \coloneqq \IR[X]/\langle X^2 \rangle$ is the <a href="https://ncatlab.org/nlab/show/dual+number" target="_blank">ring of dual numbers</a> over the real numbers, and we consider the full subcategory of $R{-}\Mod$ consisting of the modules that are <a href="https://ncatlab.org/nlab/show/finitely+generated+module" target="_blank">finitely generated</a> and <a href="https://ncatlab.org/nlab/show/projective+module" target="_blank">projective</a>. Thus, the objects are the direct summands of $R^n$ for some $n \in \IN$. But actually, since $R$ is local, every projective module is already free.
+  In this entry, $R \coloneqq \IR[\varepsilon] \coloneqq \IR[X]/\langle X^2 \rangle$ is the <a href="https://ncatlab.org/nlab/show/dual+number">ring of dual numbers</a> over the real numbers, and we consider the full subcategory of $R{-}\Mod$ consisting of the modules that are <a href="https://ncatlab.org/nlab/show/finitely+generated+module">finitely generated</a> and <a href="https://ncatlab.org/nlab/show/projective+module">projective</a>. Thus, the objects are the direct summands of $R^n$ for some $n \in \IN$. But actually, since $R$ is local, every projective module is already free.
 
   Some of the properties proven here hold for every commutative ring $R$. But for the specific choice $R = \IR[\varepsilon]$, this category provides an example of an additive, normal, and conormal category which is not abelian.
 nlab_link: null
@@ -58,7 +58,7 @@ satisfied_properties:
     proof: >-
       We will prove more generally that for left Noetherian rings $R$, $\Proj_\fg(R)$ is $\aleph_1$-accessible. The proof is similar to <a href="/category/Ab_fg">$\Ab_\fg$</a>.
 
-      First, we show that the inclusion $\Proj_\fg(R) \hookrightarrow R{-}\Mod$ is closed under $\aleph_1$-filtered colimits. Assume that $(M_i)$ is an $\aleph_1$-filtered diagram of $R$-modules with colimit $M$, where each $M_i$ is finitely generated and projective. Since $R$ is left Noetherian, finitely generated modules coincide with Noetherian modules. Therefore, <a href="https://mathoverflow.net/questions/400763/" target="_blank">MO/400763</a> implies that $M$ is finitely generated.
+      First, we show that the inclusion $\Proj_\fg(R) \hookrightarrow R{-}\Mod$ is closed under $\aleph_1$-filtered colimits. Assume that $(M_i)$ is an $\aleph_1$-filtered diagram of $R$-modules with colimit $M$, where each $M_i$ is finitely generated and projective. Since $R$ is left Noetherian, finitely generated modules coincide with Noetherian modules. Therefore, <a href="https://mathoverflow.net/questions/400763/">MO/400763</a> implies that $M$ is finitely generated.
       We conclude that $M$ is finitely presentable since $R$ is left Noetherian. Since $(M_i)$ is also an $\aleph_0$-filtered diagram, it follows that $\id_M : M \to M = \colim_i M_i$ factors through some $M_i \to M$. Therefore, $M$ is a direct summand of $M_i$. Since $M_i$ is projective, it follows that $M$ is projective as well. This proves the claim that $\aleph_1$-filtered colimits exist.
 
       To finish the proof that $\Proj_\fg(R)$ is $\aleph_1$-accessible, since it is essentially small, it suffices to prove that every object is $\aleph_1$-presentable. This follows since every finitely generated $R$-module is $\aleph_0$-presentable and therefore also $\aleph_1$-presentable in $R{-}\Mod$.

@@ -23,7 +23,7 @@ satisfied_properties:
     proof: There is a forgetful functor $\Pos \to \Set$ and $\Set$ is locally small.
 
   - property: locally finitely presentable
-    proof: See <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>, Example 1.10.
+    proof: See <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adamek-Rosicky</a>, Example 1.10.
     label: Pos_lfp
 
   - property: cartesian closed
@@ -36,7 +36,7 @@ satisfied_properties:
     proof: This follows from Lemma 11 <a href="/content/subcategories">here</a> since <a href="/category/PreOrd">$\PreOrd$</a> is infinitary extensive and its full subcategory $\Pos$ is closed under pullbacks and coproducts in $\PreOrd$.
 
   - property: coregular
-    proof: See <a href="https://math.stackexchange.com/questions/5130295" target="_blank">MSE/5130295</a>.
+    proof: See <a href="https://math.stackexchange.com/questions/5130295">MSE/5130295</a>.
 
   - property: extremal generator
     proof: We have that $\{0<1\}$ is an extremal generator even in <a href="/category/PreOrd">$\PreOrd$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
@@ -59,7 +59,7 @@ unsatisfied_properties:
     proof: The inclusion $\{0,1\} \to \{0 < 1\}$ provides a counterexample (where in the domain there is no relation between $0$ and $1$).
 
   - property: regular
-    proof: See Example 3.14 at the <a href="https://ncatlab.org/nlab/show/regular+category" target="_blank">nLab</a>.
+    proof: See Example 3.14 at the <a href="https://ncatlab.org/nlab/show/regular+category">nLab</a>.
 
   - property: Malcev
     proof: 'Consider the subposet $\{(a,b) : a \leq b \}$ of $\IN^2$.'

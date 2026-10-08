@@ -6,7 +6,7 @@ morphisms: morphisms $a \to b$, $b \to d$, $a \to c$, $c \to d$, identities, and
 description: >-
   This category consists of a commutative square:
   $$\begin{CD} a @>>> b \\ @VVV @VVV \\ c @>>> d \end{CD}$$
-  Its name comes from the fact that a functor $\Square \to \C$ is the same as a <a href="https://ncatlab.org/nlab/show/commutative+square" target="_blank">commutative square</a> in $\C$. Notice that the category is isomorphic to the product category $I \times I$ of the <a href="/category/walking_morphism">walking morphism</a> with itself. Hence, most (but not all) properties are inherited from it.
+  Its name comes from the fact that a functor $\Square \to \C$ is the same as a <a href="https://ncatlab.org/nlab/show/commutative+square">commutative square</a> in $\C$. Notice that the category is isomorphic to the product category $I \times I$ of the <a href="/category/walking_morphism">walking morphism</a> with itself. Hence, most (but not all) properties are inherited from it.
 nlab_link: https://ncatlab.org/nlab/show/commutative+square
 tags:
   - category theory

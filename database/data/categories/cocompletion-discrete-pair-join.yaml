@@ -19,8 +19,8 @@ description: >-
   \end{array}
   \;\; B
   \end{array}$$
-  In other words, $\C$ is the <a href="https://ncatlab.org/nlab/show/join+of+categories" target="_blank">join</a> of a large discrete category and the <a href="/category/walking_pair">walking parallel pair</a>.
-  The category in this entry is the free cocompletion $\widehat{\C}$ consisting of <a href="https://ncatlab.org/nlab/show/small+presheaf" target="_blank">small presheaves</a> $\C^{\op} \to \Set$, i.e. those presheaves that can be written as a small colimit of representable functors. See <a href="/content/free-cocompletion">here</a> for a couple of equivalent characterizations that hold for general $\C$, as well as general results on free cocompletions, and see <a href="/content/nice-and-small-presheaves">here</a> for a concrete description of small presheaves in this specific setting.
+  In other words, $\C$ is the <a href="https://ncatlab.org/nlab/show/join+of+categories">join</a> of a large discrete category and the <a href="/category/walking_pair">walking parallel pair</a>.
+  The category in this entry is the free cocompletion $\widehat{\C}$ consisting of <a href="https://ncatlab.org/nlab/show/small+presheaf">small presheaves</a> $\C^{\op} \to \Set$, i.e. those presheaves that can be written as a small colimit of representable functors. See <a href="/content/free-cocompletion">here</a> for a couple of equivalent characterizations that hold for general $\C$, as well as general results on free cocompletions, and see <a href="/content/nice-and-small-presheaves">here</a> for a concrete description of small presheaves in this specific setting.
 nlab_link: null
 tags:
   - category theory
@@ -32,7 +32,7 @@ related:
   - Sp
 
 comments:
-  - This category was suggested by Simon Henry in <a href="https://mathoverflow.net/questions/509754" target="_blank">MO/509754</a> and further explained in <a href="https://math.stackexchange.com/questions/5137415" target="_blank">MSE/5137415</a>.
+  - This category was suggested by Simon Henry in <a href="https://mathoverflow.net/questions/509754">MO/509754</a> and further explained in <a href="https://math.stackexchange.com/questions/5137415">MSE/5137415</a>.
 
 satisfied_properties:
   - property: locally essentially small

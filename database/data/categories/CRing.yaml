@@ -18,7 +18,7 @@ related:
   - CMon
 
 comments:
-  - Regular monomorphisms are discussed in <a href="https://math.stackexchange.com/questions/695685" target="_blank">MSE/695685</a>, but probably they cannot be classified.
+  - Regular monomorphisms are discussed in <a href="https://math.stackexchange.com/questions/695685">MSE/695685</a>, but probably they cannot be classified.
 
 satisfied_properties: []
 
@@ -32,7 +32,7 @@ unsatisfied_properties:
   - property: cofiltered-limit-stable epimorphisms
     # This can be deduced from the parent CAlg(R), but the proof for CRing is
     # instructive, so we keep it.
-    proof: 'For a prime $p$ consider the sequence of projections $\cdots \to \IZ/p^2 \to \IZ/p$ and the constant sequence $\cdots \to \IZ \to \IZ$. The surjective homomorphisms $\IZ \to \IZ/p^n$ induce the homomorphism $\IZ \to \IZ_p$ in the limit, where $\IZ_p$ is the ring of $p$-adic integers. It is not surjective since $\IZ_p$ is uncountable, but this is not sufficient (at least, for this category): We need to use <a href="https://stacks.math.columbia.edu/tag/04W0" target="_blank">SP/04W0</a> to conclude that it is no epimorphism in $\CRing$.'
+    proof: 'For a prime $p$ consider the sequence of projections $\cdots \to \IZ/p^2 \to \IZ/p$ and the constant sequence $\cdots \to \IZ \to \IZ$. The surjective homomorphisms $\IZ \to \IZ/p^n$ induce the homomorphism $\IZ \to \IZ_p$ in the limit, where $\IZ_p$ is the ring of $p$-adic integers. It is not surjective since $\IZ_p$ is uncountable, but this is not sufficient (at least, for this category): We need to use <a href="https://stacks.math.columbia.edu/tag/04W0">SP/04W0</a> to conclude that it is no epimorphism in $\CRing$.'
 
 special_objects:
   initial object:
@@ -47,4 +47,4 @@ special_objects:
 special_morphisms:
   epimorphisms:
     description: 'A ring map $f : R \to S$ is an epimorphism iff $S$ equals the <i>dominion</i> of $f(R) \subseteq S$, meaning that for every $s \in S$ there is some matrix factorization $(s) = Y X Z$ with $X \in M_{n \times n}(f(R))$, $Y \in M_{1 \times n}(S)$, $Z \in M_{n \times 1}(S)$ such that $YX \in M_{1 \times n}(f(R))$ and $XZ \in M_{n \times 1}(f(R))$.'
-    proof: See <a href="https://stacks.math.columbia.edu/tag/04VM" target="_blank">Stacks Project</a> ,or, for many more results, the seminar <a href="https://www.numdam.org/issues/SAC_1967-1968__2_/">Les épimorphismes d'anneaux</a>. See also <a href="https://mathoverflow.net/questions/109/" target="_blank">MO/109</a> for some results.
+    proof: See <a href="https://stacks.math.columbia.edu/tag/04VM">Stacks Project</a> ,or, for many more results, the seminar <a href="https://www.numdam.org/issues/SAC_1967-1968__2_/">Les épimorphismes d'anneaux</a>. See also <a href="https://mathoverflow.net/questions/109/">MO/109</a> for some results.

@@ -3,7 +3,7 @@ name: category of fields of characteristic zero
 notation: $\Fld_0$
 objects: fields of characteristic $0$
 morphisms: field homomorphisms (i.e., ring homomorphisms)
-description: This is the full subcategory of $\Fld$ consisting of fields of <a href="https://en.wikipedia.org/wiki/Characteristic_(algebra)" target="_blank">characteristic</a> $0$. It is isomorphic to the coslice category $\IQ / \Fld$.
+description: This is the full subcategory of $\Fld$ consisting of fields of <a href="https://en.wikipedia.org/wiki/Characteristic_(algebra)">characteristic</a> $0$. It is isomorphic to the coslice category $\IQ / \Fld$.
 nlab_link: https://ncatlab.org/nlab/show/Field
 keywords:
   - characteristic 0
@@ -16,23 +16,23 @@ related:
   - CRing
 
 comments:
-  - Limits and colimits are discussed in <a href="https://math.stackexchange.com/questions/359352" target="_blank">MSE/359352</a>.
+  - Limits and colimits are discussed in <a href="https://math.stackexchange.com/questions/359352">MSE/359352</a>.
 
 satisfied_properties:
   - property: locally small
     proof: It is a full subcategory of <a href="/category/Fld">$\Fld$</a>, which is locally small.
 
   - property: initial object
-    proof: The field $\IQ$ is an initial object; see for example <a href="https://proofwiki.org/wiki/Field_of_Characteristic_Zero_has_Unique_Prime_Subfield" target="_blank">here</a>.
+    proof: The field $\IQ$ is an initial object; see for example <a href="https://proofwiki.org/wiki/Field_of_Characteristic_Zero_has_Unique_Prime_Subfield">here</a>.
 
   - property: left cancellative
     proof: This property is inherited from <a href="/category/Fld">$\Fld$</a>.
 
   - property: quotient-trivial
-    proof: 'An epimorphism of fields of characteristic $0$ is clearly also an epimorphism of fields, and is therefore purely inseparable by <a href="https://math.stackexchange.com/questions/687869" target="_blank">MSE/687869</a>. In characteristic $0$, a purely inseparable field homomorphism is an isomorphism.'
+    proof: 'An epimorphism of fields of characteristic $0$ is clearly also an epimorphism of fields, and is therefore purely inseparable by <a href="https://math.stackexchange.com/questions/687869">MSE/687869</a>. In characteristic $0$, a purely inseparable field homomorphism is an isomorphism.'
 
   - property: multi-algebraic
-    proof: 'Example 4.3(1) in <a href="http://www.tac.mta.ca/tac/volumes/8/n3/8-03abs.html" target="_blank">[AR01]</a> presents an FPC-sketch that models fields. It is an extension of the FP-sketch that models commutative rings. To model fields of characteristic $0$, we make the same construction with the FP-sketch that models commutative $\IQ$-algebras.'
+    proof: 'Example 4.3(1) in <a href="http://www.tac.mta.ca/tac/volumes/8/n3/8-03abs.html">[AR01]</a> presents an FPC-sketch that models fields. It is an extension of the FP-sketch that models commutative rings. To model fields of characteristic $0$, we make the same construction with the FP-sketch that models commutative $\IQ$-algebras.'
 
 unsatisfied_properties:
   - property: skeletal
@@ -64,7 +64,7 @@ unsatisfied_properties:
 
   - property: mono-regular
     proof: >-
-      The following example comes from <a href="https://math.stackexchange.com/questions/5129895" target="_blank">MSE/5129895</a>, where a more general classification of regular monomorphisms is also given. Assume that $\IQ \hookrightarrow \IR$ is a regular monomorphism, i.e. the equalizer of two field homomorphisms $f,g : \IR \rightrightarrows K$. Consider the real numbers
+      The following example comes from <a href="https://math.stackexchange.com/questions/5129895">MSE/5129895</a>, where a more general classification of regular monomorphisms is also given. Assume that $\IQ \hookrightarrow \IR$ is a regular monomorphism, i.e. the equalizer of two field homomorphisms $f,g : \IR \rightrightarrows K$. Consider the real numbers
       $$x_1 = \sqrt{2}, \quad x_2 = \sqrt{3}, \quad x_3 = \sqrt{6}.$$
       We have $x_1 x_2 = x_3$ and $f(x_i) = \pm g(x_i)$. Therefore, for some $i$ we have $f(x_i)=g(x_i)$. But $x_i \notin \IQ$.
 
@@ -80,5 +80,5 @@ special_morphisms:
     description: bijective field homomorphisms
     proof: It is a full subcategory of $\CRing$, for which we know that isomorphisms are bijective homomorphisms.
   regular monomorphisms:
-    description: A Galois extension is a regular monomorphism iff it is procyclic, and the general case can be reduced to this situation; see <a href="https://math.stackexchange.com/questions/5129895" target="_blank">MSE/5129895</a> for details.
-    proof: See <a href="https://math.stackexchange.com/questions/5129895" target="_blank">MSE/5129895</a>.
+    description: A Galois extension is a regular monomorphism iff it is procyclic, and the general case can be reduced to this situation; see <a href="https://math.stackexchange.com/questions/5129895">MSE/5129895</a> for details.
+    proof: See <a href="https://math.stackexchange.com/questions/5129895">MSE/5129895</a>.

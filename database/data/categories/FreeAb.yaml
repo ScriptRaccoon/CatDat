@@ -3,7 +3,7 @@ name: category of free abelian groups
 notation: $\FreeAb$
 objects: free abelian groups
 morphisms: group homomorphisms
-description: This is the full subcategory of $\Ab$ consisting of the <a href="https://ncatlab.org/nlab/show/free+abelian+group" target="_blank">free abelian groups</a>. Since $\IZ$ is a principal ideal domain, these coincide with the <a href="https://ncatlab.org/nlab/show/projective+module" target="_blank">projective</a> $\IZ$-modules, so that $\FreeAb \cong \Proj(\IZ)$.
+description: This is the full subcategory of $\Ab$ consisting of the <a href="https://ncatlab.org/nlab/show/free+abelian+group">free abelian groups</a>. Since $\IZ$ is a principal ideal domain, these coincide with the <a href="https://ncatlab.org/nlab/show/projective+module">projective</a> $\IZ$-modules, so that $\FreeAb \cong \Proj(\IZ)$.
 nlab_link: null
 keywords:
   - free modules
@@ -43,7 +43,7 @@ satisfied_properties:
     proof: This is clear since the monomorphisms are injective.
 
   - property: well-copowered
-    proof: See <a href="https://math.stackexchange.com/questions/5025660" target="_blank">MSE/5025660</a>.
+    proof: See <a href="https://math.stackexchange.com/questions/5025660">MSE/5025660</a>.
 
   - property: coequalizers of kernel pairs
     proof: 'Let $f : A \to B$ be a homomorphism of free abelian groups. The coequalizer of its kernel pair $A \times_B A \rightrightarrows A$ in $\Ab$ is the image $\im(f)$. As a subgroup of $B$, it is also free abelian. Then it is also the coequalizer of the kernel pair in $\FreeAb$.'
@@ -60,17 +60,17 @@ unsatisfied_properties:
     proof: This is trivial.
 
   - property: countable powers
-    proof: Assume that the power $P = \prod_{n \geq 0} \IZ$ exists in this category. The projections $P \to \IZ$ induce an isomorphism of abelian groups $\Hom(\IZ, P) \to \prod_n \Hom(\IZ, \IZ)$, hence $P \cong \IZ^{\IN}$. But it is <a href="https://groupprops.subwiki.org/wiki/Baer-Specker_group_is_not_free_abelian" target="_blank">well-known</a> that $\IZ^{\IN}$ is not free abelian.
+    proof: Assume that the power $P = \prod_{n \geq 0} \IZ$ exists in this category. The projections $P \to \IZ$ induce an isomorphism of abelian groups $\Hom(\IZ, P) \to \prod_n \Hom(\IZ, \IZ)$, hence $P \cong \IZ^{\IN}$. But it is <a href="https://groupprops.subwiki.org/wiki/Baer-Specker_group_is_not_free_abelian">well-known</a> that $\IZ^{\IN}$ is not free abelian.
 
   - property: sequential colimits
-    proof: See <a href="https://mathoverflow.net/questions/509715" target="_blank">MO/509715</a>.
+    proof: See <a href="https://mathoverflow.net/questions/509715">MO/509715</a>.
 
   - property: ℵ₁-filtered colimits
-    proof: It is shown in <a href="https://mathoverflow.net/questions/511426" target="_blank">MO/511426</a> that the $\aleph_1$-filtered diagram of countable subgroups of $\IZ^{\IN}$ does not have a colimit in $\FreeAb$.
+    proof: It is shown in <a href="https://mathoverflow.net/questions/511426">MO/511426</a> that the $\aleph_1$-filtered diagram of countable subgroups of $\IZ^{\IN}$ does not have a colimit in $\FreeAb$.
 
 undecidable_properties:
   - property: accessible
-    proof: The question if this category is accessible is undecidable in ZFC. See <a href="https://math.stackexchange.com/questions/720885" target="_blank">MSE/720885</a>.
+    proof: The question if this category is accessible is undecidable in ZFC. See <a href="https://math.stackexchange.com/questions/720885">MSE/720885</a>.
 
 special_objects:
   initial object:

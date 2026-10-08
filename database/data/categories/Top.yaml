@@ -62,7 +62,7 @@ satisfied_properties:
     proof: 'This can be deduced from the infinitary extensivity of <a href="/category/Set">$\Set$</a> as follows. We already know that coproducts and pullbacks exist, and these are preserved by the forgetful functor to $\Set$. More concretely, coproducts are disjoint unions of the underlying sets whose open subsets are unions of open subsets of the summands. Since coproducts are disjoint in $\Set$ and the empty set has a unique topology, it follows immediately that coproducts are disjoint in $\Top$ as well. It remains to show that coproducts are stable under pullbacks. Let $(X_i)_{i \in I}$ be a family of topological spaces and let $f : T \to \coprod_{i \in I} X_i$ be a continuous map. Consider the pullbacks $T_i \coloneqq f^*(X_i)$. These are just the preimages of $X_i$ under $f$, with the topology induced from $T$. Since coproducts in $\Set$ are stable under pullbacks, the canonical continuous map $\coprod_{i \in I} T_i \to T$ is bijective. It remains to show that it is an open map. By the concrete description of open subsets in the disjoint union, it suffices to prove that each $T_i \to T$ is an open map. But this is the inclusion of a subspace, which is open since $X_i$ is open in $\coprod_{i \in I} X_i$.'
 
   - property: coregular
-    proof: The category has all limits and colimits, and the regular monomorphisms are the subspace inclusions. Thus, it suffices to prove that subspace inclusions are stable under pushouts. For a proof see e.g. Lemma 3.6 at the <a href="https://ncatlab.org/nlab/show/subspace+topology#pushout" target="_blank">nLab</a>. Another proof can be found in <a href="https://math.stackexchange.com/a/2044509">MSE/2016945</a>.
+    proof: The category has all limits and colimits, and the regular monomorphisms are the subspace inclusions. Thus, it suffices to prove that subspace inclusions are stable under pushouts. For a proof see e.g. Lemma 3.6 at the <a href="https://ncatlab.org/nlab/show/subspace+topology#pushout">nLab</a>. Another proof can be found in <a href="https://math.stackexchange.com/a/2044509">MSE/2016945</a>.
     label: Top_coregular
 
 unsatisfied_properties:
@@ -77,17 +77,17 @@ unsatisfied_properties:
     proof: We already know that <a href="/category/Set">$\Set$</a> does not have this property. Now apply the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> to the functor $\Set \to \Top$ which equips a set with the indiscrete topology.
 
   - property: cartesian filtered colimits
-    proof: 'The functor $\IQ \times - : \Top \to \Top$ does not preserve sequential colimits, see <a href="https://math.stackexchange.com/questions/1255678" target="_blank">MSE/1255678</a>.'
+    proof: 'The functor $\IQ \times - : \Top \to \Top$ does not preserve sequential colimits, see <a href="https://math.stackexchange.com/questions/1255678">MSE/1255678</a>.'
 
   - property: regular
-    proof: See Example 3.14 at the <a href="https://ncatlab.org/nlab/show/regular+category" target="_blank">nLab</a>.
+    proof: See Example 3.14 at the <a href="https://ncatlab.org/nlab/show/regular+category">nLab</a>.
 
   - property: coaccessible
-    proof: 'Assume $\Top$ is coaccessible. Let $p : S \to I$ be the identity map from the Sierpinski space to the two-element indiscrete space. Then, a topological space is discrete if and only if it is projective to the morphism $p$. This implies that the full subcategory spanned by all discrete spaces, which is equivalent to $\Set$, is coaccessible by Prop. 4.7 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>. However, since <a href="/category/Set">$\Set$</a> is not coaccessible, this is a contradiction.'
+    proof: 'Assume $\Top$ is coaccessible. Let $p : S \to I$ be the identity map from the Sierpinski space to the two-element indiscrete space. Then, a topological space is discrete if and only if it is projective to the morphism $p$. This implies that the full subcategory spanned by all discrete spaces, which is equivalent to $\Set$, is coaccessible by Prop. 4.7 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adamek-Rosicky</a>. However, since <a href="/category/Set">$\Set$</a> is not coaccessible, this is a contradiction.'
     label: Top_not_coaccessible
 
   - property: co-Malcev
-    proof: 'See <a href="https://mathoverflow.net/questions/509548" target="_blank">MO/509548</a>. We can also phrase the proof as follows: Consider the forgetful functor $U : \Top \to \Set$ and the relation $R \subseteq U^2$ defined by $R(X) \coloneqq \{(x,y) \in U(X)^2 : x \in \overline{\{y\}} \}$. Both are representable: $U$ by the singleton and $R$ by the Sierpinski space. It is clear that $R$ is reflexive, but not symmetric.'
+    proof: 'See <a href="https://mathoverflow.net/questions/509548">MO/509548</a>. We can also phrase the proof as follows: Consider the forgetful functor $U : \Top \to \Set$ and the relation $R \subseteq U^2$ defined by $R(X) \coloneqq \{(x,y) \in U(X)^2 : x \in \overline{\{y\}} \}$. Both are representable: $U$ by the singleton and $R$ by the Sierpinski space. It is clear that $R$ is reflexive, but not symmetric.'
     label: Top_not_co-malcev
 
   - property: effective cocongruences
@@ -109,7 +109,7 @@ special_objects:
   coproducts:
     description: disjoint union with the disjoint union topology
   products:
-    description: direct product with the <a href="https://en.wikipedia.org/wiki/Product_topology" target="_blank">product topology</a>
+    description: direct product with the <a href="https://en.wikipedia.org/wiki/Product_topology">product topology</a>
 
 special_morphisms:
   isomorphisms:

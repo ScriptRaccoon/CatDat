@@ -23,7 +23,7 @@ satisfied_properties:
     proof: There is a forgetful functor $\PreOrd \to \Set$ and $\Set$ is locally small.
 
   - property: locally finitely presentable
-    proof: The same proof as for <a href="/category/Pos">$\Pos$</a> works, cf. <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories" target="_blank">Adamek-Rosicky</a>, Example 1.10.
+    proof: The same proof as for <a href="/category/Pos">$\Pos$</a> works, cf. <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adamek-Rosicky</a>, Example 1.10.
     references:
       - Pos_lfp
 
@@ -38,7 +38,7 @@ satisfied_properties:
     label: PreOrd_infinitary_extensive
 
   - property: coregular
-    proof: See <a href="https://math.stackexchange.com/questions/5130295" target="_blank">MSE/5130295</a>.
+    proof: See <a href="https://math.stackexchange.com/questions/5130295">MSE/5130295</a>.
 
   - property: regular subobject classifier
     proof: The set $\{0,1\}$ with the chaotic preorder $(0 \leq 1$, $1 \leq 0)$ is a regular subobject classifier since order-preserving maps $P \to \{0,1\}$ correspond to subsets of $P$.
@@ -57,7 +57,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: regular
-    proof: See Example 3.14 at the <a href="https://ncatlab.org/nlab/show/regular+category" target="_blank">nLab</a>.
+    proof: See Example 3.14 at the <a href="https://ncatlab.org/nlab/show/regular+category">nLab</a>.
 
   - property: skeletal
     proof: This is trivial.

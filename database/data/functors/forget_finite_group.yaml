@@ -69,4 +69,4 @@ unsatisfied_properties:
     label: forget_finite_group_not_cofinitary
 
   - property: right exact
-    proof: See <a href="https://mathoverflow.net/questions/513646" target="_blank">MO/513646</a>.
+    proof: See <a href="https://mathoverflow.net/questions/513646">MO/513646</a>.
