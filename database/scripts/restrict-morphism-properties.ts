@@ -36,7 +36,7 @@ function restrict_normal_morphisms(variant: 'mono' | 'epi') {
                 ?,
                 'morphism',
                 FALSE,
-                'The ' || c.name || ' has no zero morphisms.',
+                'Its category <a href="/category/' || c.id || '">' || c.notation || '</a> has no zero morphisms.',
                 TRUE,
                 FALSE
             FROM associated_structures ass

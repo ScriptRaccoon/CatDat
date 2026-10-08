@@ -415,7 +415,7 @@ test('user can open a proof for an inherited satisfied property of a category', 
 
 	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
 
-	await expect(popup).toContainText('This follows from the parent.')
+	await expect(popup).toContainText('This follows from the parent category.')
 })
 
 test('user can open a proof for an inherited unsatisfied property of a category', async ({
@@ -431,7 +431,7 @@ test('user can open a proof for an inherited unsatisfied property of a category'
 
 	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
 
-	await expect(popup).toContainText('This follows from the parent.')
+	await expect(popup).toContainText('This follows from the parent category.')
 })
 
 test('user sees functors associated with the given category', async ({ page }) => {

@@ -33,7 +33,7 @@ function restrict_representable_functors() {
                 'representable',
                 'functor',
                 FALSE,
-                'The codomain is not $\\Set$.',
+                'The codomain is not <a href="/category/Set">$\\Set$</a>.',
                 TRUE,
                 FALSE
             FROM associated_structures ass
