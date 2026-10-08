@@ -16,7 +16,7 @@
   proof: >-
     If a functor $F$ has a right inverse $R$ and a left inverse $L$, then
     $$L \cong L \circ F \circ R \cong R.$$
-    Hence, $R$ (and $L$) are (pseudo-)inverse to $F$.
+    Hence, $R$ and $L$ are (pseudo-)inverse to $F$.
   is_equivalence: true
 
 - id: equivalence_consequences

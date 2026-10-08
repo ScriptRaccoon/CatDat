@@ -26,4 +26,4 @@
   conclusions:
     - monadic
     - left-invertible
-  proof: A direct proof of monadicity is possible and straight forward. Alternatively, one can use <a href="https://ncatlab.org/nlab/show/monadicity+theorem">Beck's monadicity theorem</a>, since a fully faithful functor $U$ is conservative and creates coequalizers of $U$-split pairs. For the left adjoint $L$ the counit $L \circ U \to \id$ is an isomorphism (since $U$ is fully faithful, see Prop. 3.4 at the <a href="https://ncatlab.org/nlab/show/adjoint+functor#FullyFaithfulAndInvertibleAdjoints">nLab</a>), which shows that $U$ is left-invertible.
+  proof: A direct proof of monadicity is possible and straightforward. Alternatively, one can use <a href="https://ncatlab.org/nlab/show/monadicity+theorem">Beck's monadicity theorem</a>, since a fully faithful functor $U$ is conservative and creates coequalizers of $U$-split pairs. For the left adjoint $L$ the counit $L \circ U \to \id$ is an isomorphism (since $U$ is fully faithful, see Prop. 3.4 at the <a href="https://ncatlab.org/nlab/show/adjoint+functor#FullyFaithfulAndInvertibleAdjoints">nLab</a>), which shows that $U$ is left-invertible.

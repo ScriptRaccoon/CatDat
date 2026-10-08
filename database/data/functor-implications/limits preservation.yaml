@@ -83,7 +83,7 @@
     - preserves equalizers
     - preserves monomorphisms
   proof: >-
-    Finite products and equalizers are special cases of finite limits. Moreover, a morphism $f : X \to Y$ is a monomorphism if and only the square
+    Finite products and equalizers are special cases of finite limits. Moreover, a morphism $f : X \to Y$ is a monomorphism if and only if the square
     $$\begin{CD} X @>{\id_X}>> X \\ @V{\id_X}VV @VV{f}V \\ X @>>{f}> Y \end{CD}$$
     is a pullback square, and pullbacks are special cases of finite limits.
 
@@ -96,7 +96,7 @@
       - finite products
   conclusions:
     - left exact
-  proof: This follows from the construction of finite limits via equalizers and finite products, see  <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician">Mac Lane</a>, Ch. V, Theorem 2.2.
+  proof: This follows from the construction of finite limits via equalizers and finite products, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician">Mac Lane</a>, Ch. V, Theorem 2.2.
 
 - id: representable_is_continuous
   assumptions:
@@ -221,7 +221,7 @@
       - trivial
   conclusions:
     - continuous
-  proof: 'We need to show that for every category $\C$ the unique functor $!_{\C} : \C \to 1$ into the trivial category is continuous. This easy to verify directly because in the trivial category every limit is, well, trivial. More generally, for every category $\C$ and every set $S$ the diagonal functor $\Delta : \C \to \C^S$ is continuous. Here we apply this to $S = \varnothing$ so that $\C^S$ is the trivial category.'
+  proof: 'We need to show that for every category $\C$ the unique functor $!_{\C} : \C \to 1$ into the trivial category is continuous. This is easy to verify directly because in the trivial category every limit is, well, trivial. More generally, for every category $\C$ and every set $S$ the diagonal functor $\Delta : \C \to \C^S$ is continuous. Here we apply this to $S = \varnothing$ so that $\C^S$ is the trivial category.'
 
 - id: automatically_preserve_equalizers
   assumptions: []
