@@ -71,7 +71,7 @@
     - multi-algebraic
   conclusions:
     - locally finitely multi-presentable
-  proof: This is because that every (finite product, coproduct)-sketch is clearly a (finite limit, coproduct)-sketch.
+  proof: This is because every (finite product, coproduct)-sketch is clearly a (finite limit, coproduct)-sketch.
 
 - id: algebraic_implies_multi-algebraic
   assumptions:
@@ -86,7 +86,7 @@
   conclusions:
     - generalized variety
     - multi-cocomplete
-  proof: This follows from one of equivalent formulations of multi-algebraic categories.
+  proof: This follows from one of the equivalent formulations of multi-algebraic categories.
   is_equivalence: true
 
 - id: multi-algebraic_implies_effective_congruences

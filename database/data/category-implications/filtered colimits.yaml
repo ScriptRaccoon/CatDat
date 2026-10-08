@@ -6,7 +6,7 @@
     - directed colimits
   conclusions:
     - filtered colimits
-  proof: This is Theorem 1.5. in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adámek–Rosický</a>.
+  proof: This is Theorem 1.5 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adámek–Rosický</a>.
   is_equivalence: true
 
 - id: sequential_colimits_consequence

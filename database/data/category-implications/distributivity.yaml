@@ -51,7 +51,7 @@
     - finite coproducts
   conclusions:
     - distributive
-  proof: Each functor $A \times -$ is left adjoint and hence preserves finite coproducts (in fact, all colimits).
+  proof: Each functor $A \times -$ is a left adjoint and hence preserves finite coproducts (in fact, all colimits).
 
 - id: countably_distributive_criterion
   assumptions:
@@ -59,7 +59,7 @@
     - countable coproducts
   conclusions:
     - countably distributive
-  proof: Each functor $A \times -$ is left adjoint and hence preserves countable coproducts (in fact, all colimits).
+  proof: Each functor $A \times -$ is a left adjoint and hence preserves countable coproducts (in fact, all colimits).
 
 - id: infinitary_distributive_criterion
   assumptions:
@@ -67,7 +67,7 @@
     - coproducts
   conclusions:
     - infinitary distributive
-  proof: Each functor $A \times -$ is left adjoint and hence preserves coproducts (in fact, all colimits).
+  proof: Each functor $A \times -$ is a left adjoint and hence preserves coproducts (in fact, all colimits).
 
 - id: infinite_distributive_filtered_criterion
   assumptions:

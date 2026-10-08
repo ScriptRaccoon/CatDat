@@ -40,7 +40,7 @@
     - complete
   conclusions:
     - multi-complete
-  proof: Limits are precisely multi-limits such that the set of cones is singleton.
+  proof: Limits are precisely multi-limits such that the set of cones is a singleton.
 
 - id: multi-terminal_special_case
   assumptions:

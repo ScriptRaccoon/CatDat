@@ -19,7 +19,7 @@
     - epi-regular
     - finitely cocomplete
     - locally cartesian closed
-  proof: See <a href="https://ncatlab.org/nlab/show/Sheaves+in+Geometry+and+Logic">Mac Lane & Moerdijk</a>, Cor. IV.5.4, Cor. IV.10.5, Thm. 4.7.8; and <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant">Johnstone</a>, Part A, Prop. 2.4.1 and Cor. 2.3.4.
+  proof: See <a href="https://ncatlab.org/nlab/show/Sheaves+in+Geometry+and+Logic">Mac Lane & Moerdijk</a>, Cor. IV.5.4, Cor. IV.10.5, Thm. IV.7.8; and <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant">Johnstone</a>, Part A, Prop. 2.4.1 and Cor. 2.3.4.
 
 - id: topos_well-copowered_criterion
   assumptions:
@@ -55,7 +55,7 @@
     - exact filtered colimits
     - infinitary extensive
     - locally presentable
-  proof: A Grothendieck topos is locally presentable by Prop. 3.4.16 in <a href="https://www.cambridge.org/core/books/handbook-of-categorical-algebra/5033A02442342401E7BCC26A042DAB94">Handbook of Categorical Algebra Vol. 3</a>, has a cogenerator (see <a href="https://ncatlab.org/nlab/show/cogenerator">nLab</a>) and is infinitary extensive by <a href="https://ncatlab.org/nlab/show/Giraud%27s+theorem">Giraud's Theorem</a>. To show that it has exact filtered colimits, first observe that this is clearly true in every presheaf topos (since $\Set$ has the property). Every Grothendieck topos is a full reflective subcategory of a presheaf topos such that the reflector preserves finite limits (<a href="https://ncatlab.org/nlab/show/sheaf+toposes+are+equivalently+the+left+exact+reflective+subcategories+of+presheaf+toposes">nLab</a>), so we conclude with Lemma 3 <a href="/content/subcategories">here</a>.
+  proof: A Grothendieck topos is locally presentable by <a href="https://www.cambridge.org/core/books/handbook-of-categorical-algebra/5033A02442342401E7BCC26A042DAB94">Borceux</a>, Vol. 3, Prop. 3.4.16, has a cogenerator (see <a href="https://ncatlab.org/nlab/show/cogenerator">nLab</a>) and is infinitary extensive by <a href="https://ncatlab.org/nlab/show/Giraud%27s+theorem">Giraud's Theorem</a>. To show that it has exact filtered colimits, first observe that this is clearly true in every presheaf topos (since $\Set$ has the property). Every Grothendieck topos is a full reflective subcategory of a presheaf topos such that the reflector preserves finite limits (<a href="https://ncatlab.org/nlab/show/sheaf+toposes+are+equivalently+the+left+exact+reflective+subcategories+of+presheaf+toposes">nLab</a>), so we conclude with Lemma 3 <a href="/content/subcategories">here</a>.
 
 - id: topos_no_stable_epis
   assumptions:

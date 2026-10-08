@@ -23,7 +23,7 @@
   conclusions:
     - cofiltered limits
     - pullbacks
-  proof: To prove $\Leftarrow$, a wide pullback can be constructed as a cofiltered limit of finite pullbacks, and finite pullbacks can be reduced to binary pullbacks (the empty-indexed pullback always exists). Conversely, assume that wide pullbacks exist in $\C$. For every object $A$ then the slice category $\C / A$ has wide pullbacks and a terminal object, hence is complete. Since a cofiltered limit can be finally reduced to such a slice, we are done.
+  proof: To prove $\Leftarrow$, a wide pullback can be constructed as a cofiltered limit of finite pullbacks, and finite pullbacks can be reduced to binary pullbacks (the empty-indexed pullback always exists). Conversely, assume that wide pullbacks exist in $\C$. Then for every object $A$ the slice category $\C / A$ has wide pullbacks and a terminal object, hence is complete. Since a cofiltered limit can be reduced to a limit in such a slice by restricting the diagram along an initial functor, we are done.
   is_equivalence: true
 
 - id: wide_pullbacks_finite
@@ -96,7 +96,7 @@
     - left cancellative
   proof: >-
     Let $f : X \to Y$ be a morphism with kernel pair $E \rightrightarrows X$. The diagonal $X \to E$ is a split monomorphism. By assumption on the category, it is also an epimorphism. Thus, it is an isomorphism. Therefore,
-    $$\begin{CD} X @>{\id_X}>> X \\ @V{\id_X}VV @VV{f}V \\ X @>>{f}> Y. \end{CD}$$
+    $$\begin{CD} X @>{\id_X}>> X \\ @V{\id_X}VV @VV{f}V \\ X @>>{f}> Y \end{CD}$$
     is a pullback, so $f$ is a monomorphism.
 
 - id: additive_kernel_pairs

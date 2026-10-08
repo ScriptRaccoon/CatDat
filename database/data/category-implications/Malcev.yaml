@@ -21,7 +21,7 @@
     - finitely complete
   conclusions:
     - Malcev
-  proof: See Prop. 2.2.13. in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories">Malcev, protomodular, homological and semi-abelian categories</a>.
+  proof: See Prop. 2.2.13 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories">Malcev, protomodular, homological and semi-abelian categories</a>.
 
 - id: malcev_implies_unital
   assumptions:

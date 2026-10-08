@@ -6,7 +6,7 @@
   conclusions:
     - finitely complete
     - mono-regular
-  proof: 'The first part holds by convention, and the second part: any monomorphism $U \to X$ is the equalizer of $\chi_U,\chi_X : X \rightrightarrows \Omega$.'
+  proof: 'The first part holds by convention. For the second part, note that any monomorphism $U \to X$ is the equalizer of $\chi_U,\chi_X : X \rightrightarrows \Omega$.'
 
 - id: subobject_classifier_well-powered
   assumptions:

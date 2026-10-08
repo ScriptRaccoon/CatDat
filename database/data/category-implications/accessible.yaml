@@ -7,7 +7,7 @@
   conclusions:
     - cocomplete
     - finitely accessible
-  proof: This follows from one of equivalent formulations of locally finitely presentable categories.
+  proof: This follows from one of the equivalent formulations of locally finitely presentable categories.
   is_equivalence: true
 
 - id: locally_presentable_definition_countable
@@ -16,7 +16,7 @@
   conclusions:
     - cocomplete
     - ℵ₁-accessible
-  proof: This follows from one of equivalent formulations of locally ℵ₁-presentable categories.
+  proof: This follows from one of the equivalent formulations of locally ℵ₁-presentable categories.
   is_equivalence: true
 
 - id: locally_presentable_definition
@@ -25,7 +25,7 @@
   conclusions:
     - accessible
     - cocomplete
-  proof: This follows from one of equivalent formulations of locally presentable categories.
+  proof: This follows from one of the equivalent formulations of locally presentable categories.
   is_equivalence: true
 
 - id: locally_finitely_presentable_consequence
@@ -92,7 +92,7 @@
     - essentially finite
   conclusions:
     - finitely accessible
-  proof: See <a href="https://mathoverflow.net/questions/509853">MO/509853</a>, where it is in fact shown that the ind-completion of any finite Cauchy-complete category becomes itself.
+  proof: See <a href="https://mathoverflow.net/questions/509853">MO/509853</a>, where it is in fact shown that the ind-completion of any finite Cauchy-complete category is equivalent to the category itself.
 
 - id: locally_presentable_essentially_small
   assumptions:
@@ -217,7 +217,7 @@
     - complete
   conclusions:
     - locally presentable
-  proof: This follows from one of equivalent formulations of locally presentable categories.
+  proof: This follows from one of the equivalent formulations of locally presentable categories.
   is_equivalence: true
 
 - id: locally_strongly_finitely_presentable_characterization
@@ -235,7 +235,7 @@
   conclusions:
     - accessible
     - connected limits
-  proof: This follows from one of equivalent formulations of locally multi-presentable categories.
+  proof: This follows from one of the equivalent formulations of locally multi-presentable categories.
   is_equivalence: true
 
 - id: locally_multi-presentable_another_definition
@@ -244,7 +244,7 @@
   conclusions:
     - accessible
     - multi-cocomplete
-  proof: This follows from one of equivalent formulations of locally multi-presentable categories.
+  proof: This follows from one of the equivalent formulations of locally multi-presentable categories.
   is_equivalence: true
 
 - id: locally_finitely_multi-presentable_definition
@@ -253,7 +253,7 @@
   conclusions:
     - connected limits
     - finitely accessible
-  proof: This follows from one of equivalent formulations of locally finitely multi-presentable categories.
+  proof: This follows from one of the equivalent formulations of locally finitely multi-presentable categories.
   is_equivalence: true
 
 - id: locally_finitely_multi-presentable_another_definition
@@ -262,7 +262,7 @@
   conclusions:
     - finitely accessible
     - multi-cocomplete
-  proof: This follows from one of equivalent formulations of locally finitely multi-presentable categories.
+  proof: This follows from one of the equivalent formulations of locally finitely multi-presentable categories.
   is_equivalence: true
 
 - id: locally_poly-presentable_definition
@@ -279,4 +279,4 @@
     - locally finitely multi-presentable
   conclusions:
     - filtered-colimit-stable monomorphisms
-  proof: Every locally finitely multi-presentable category is a multi-reflective full subcategory of a presheaf category closed under filtered colimits (<a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adámek–Rosický</a>, 4.30). Since multi-reflective full subcategories are in general closed under connected limits (<a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adámek–Rosický</a>, Thm. 4.26), in particular, we can calculate not only filtered colimits but also kernel pairs as well as in a presheaf category.
+  proof: Every locally finitely multi-presentable category is a multi-reflective full subcategory of a presheaf category closed under filtered colimits (<a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adámek–Rosický</a>, 4.30). Since multi-reflective full subcategories are in general closed under connected limits (<a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adámek–Rosický</a>, Thm. 4.26), we can in particular calculate not only filtered colimits but also kernel pairs as in a presheaf category.
