@@ -59,7 +59,7 @@ If $\C$ is a locally small category, then $\widehat{\C}$ is cocomplete. Colimits
 This follows from cocompleteness of $[\C^{\op},\Set]$ with objectwise constructed colimits and the third characterization of small presheaves above. Details can be found as Proposition 5.34 in Kelly's book.
 :::
 
-The existence of limits in $\widehat{\C}$ is a much more complicated issue, see the paper [_Limits of small functors_](https://arxiv.org/pdf/math/0610439) by Day-Lack. The following result is useful in this regard. Namely, it shows that $\widehat{\C}$ has limits of a given type if and only if small functors are closed under these limits taken in the category of all presheaves.
+The existence of limits in $\widehat{\C}$ is a much more complicated issue; see the paper [_Limits of small functors_](https://arxiv.org/pdf/math/0610439) by Day-Lack. The following result is useful in this regard. Namely, it shows that $\widehat{\C}$ has limits of a given type if and only if small functors are closed under these limits taken in the category of all presheaves.
 
 ::: Lemma 4
 For every $X \in \C$ the evaluation functor $\ev_X : \widehat{\C} \to \Set$, $F \mapsto F(X)$ is continuous. In particular, the inclusion functor $\widehat{\C} \hookrightarrow [\C^{\op},\Set]$ is continuous, and every limit that exists in $\widehat{\C}$ is an objectwise limit.
@@ -94,7 +94,7 @@ We need to prove that for a family of small presheaves $(P_i)_{i \in I}$ the cop
 $$\textstyle \prod_{i \in I} \widehat{\C} / P_i \to \widehat{\C}/\coprod_{i \in I} P_i$$
 is an equivalence of categories. Since $\Set$ is infinitary extensive, also $[\C^{\op},\Set]$ is infinitary extensive, so that the coproduct functor
 $$\textstyle \prod_{i \in I} [\C^{\op},\Set] / P_i \to [\C^{\op},\Set]/\coprod_{i \in I} P_i$$
-is an equivalence of categories. Since $\widehat{\C}$ is a full subcategory of $[\C^{\op},\Set]$ that is closed under coproducts, it remains to prove that if a coproduct of presheaves $\coprod_{i \in I} F_i$ is small, then each $F_i$ is small. For this, it suffices to prove for two presheaves $F,G$ for which $F+G$ is small, that $F$ is small. The category of elements $\int (F+G)$ identifies with $\int F + \int G$. Thus, the claim follows from the next lemma.
+is an equivalence of categories. Since $\widehat{\C}$ is a full subcategory of $[\C^{\op},\Set]$ that is closed under coproducts, it remains to prove that if a coproduct of presheaves $\coprod_{i \in I} F_i$ is small, then each $F_i$ is small. For this, it suffices to prove, for two presheaves $F,G$ such that $F+G$ is small, that $F$ is small. The category of elements $\int (F+G)$ identifies with $\int F + \int G$. Thus, the claim follows from the next lemma.
 :::
 
 ::: Lemma 8
@@ -117,7 +117,7 @@ This follows since $\Set$ is co-Malcev and since finite colimits are objectwise.
 Let $\C$ be a locally small category. Then $\widehat{\C}$ is epi-regular.
 :::
 
-Notice that this would be easy if $\widehat{\C}$ has pullbacks. In that case, every epimorphism would even be effective since this is the case for $\Set$. But in general, $\widehat{\C}$ may fail to have pullbacks. This is why the proof is more complicated.
+Notice that this would be easy if $\widehat{\C}$ had pullbacks. In that case, every epimorphism would even be effective since this is the case for $\Set$. But in general, $\widehat{\C}$ may fail to have pullbacks. This is why the proof is more complicated.
 
 ::: Proof
 First, notice that the Yoneda Lemma and the description of epimorphisms (see Lemma 5) imply that representable functors are [projective objects](https://ncatlab.org/nlab/show/projective+object). Therefore, also coproducts of representable functors are projective.

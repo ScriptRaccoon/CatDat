@@ -1,9 +1,9 @@
 ---
-title: Explicit Proof that the Category of Groups is Total
+title: Explicit proof that the category of groups is total
 description: An explicit construction of the left adjoint to the covariant Yoneda embedding on the category of groups
 ---
 
-# Explicit Proof that the Category of Groups is Total
+# Explicit proof that the category of groups is total
 
 The definition of a [total](/category-property/total) category is very abstract; furthermore, it is not immediately clear how it is possible for _any_ category which is not essentially small to satisfy the definition, much less a wide variety of the algebraic and topological categories which are considered in practice. Thus, to illustrate the definition, we give an explicit construction of the functor
 $$L : [\Grp^{\op},\Set] \to \Grp$$
@@ -31,7 +31,7 @@ T(\IZ * \IZ') @>>> T(\IZ)
 \end{CD}
 $$
 
-where on the bottom we use $T\mu, Ti_1, Ti_2$, and on the right we use $h h', h, h'$. Applying this to $x\in TH$, we get $Th(x)$, $Th'(x)$, and $T(h h')(x)$, respectively. Thus, the relation $e(T\mu(y)) = e(Ti_1(y)) \cdot e(Ti_2(y))$ with $y \coloneqq T(h h')(x)$ implies
+where on the bottom we use $T\mu, Ti_1, Ti_2$, and on the right we use $h h', h, h'$. Applying this to $x\in TH$, we get $T(h h')(x)$, $Th(x)$, and $Th'(x)$, respectively. Thus, the relation $e(T\mu(y)) = e(Ti_1(y)) \cdot e(Ti_2(y))$ with $y \coloneqq T(h h')(x)$ implies
 $$e(T(hh')(x)) = e(Th(x)) \cdot e(Th'(x)),$$
 as required. Similar proofs show that the map $H \to L(T)$ respects inverses and the identity. We leave it as an exercise for the reader to show this is natural in $H$.
 
@@ -39,7 +39,7 @@ We now need to show that for each group $G$ and natural transformation $\alpha :
 $$\alpha = y_{\varphi} \circ \eta_T : T \to \Hom({-}, L(T)) \to \Hom({-}, G).$$
 We start with uniqueness: suppose $x \in T\IZ$. Then by hypothesis,
 $$\alpha_{\IZ} = (y_{\varphi})_{\IZ} \circ (\eta_T)_{\IZ} : T\IZ \to \Hom(\IZ, L(T)) \to \Hom(\IZ, G).$$
-For each $x \in T\IZ$, the first step on the right hand side maps $x \mapsto (1 \mapsto e(x))$, and the second step then maps this to $1 \mapsto \varphi(e(x))$. Therefore,
+For each $x \in T\IZ$, the first step on the right-hand side maps $x \mapsto (1 \mapsto e(x))$, and the second step then maps this to $1 \mapsto \varphi(e(x))$. Therefore,
 $$\varphi(e(x)) = \alpha_{\IZ}(x)(1)$$
 for each $x$, which establishes the uniqueness of $\varphi$.
 
@@ -53,7 +53,7 @@ T(\IZ) @> \alpha_{\IZ} >> \Hom(\IZ, G) @> \simeq >> UG
 \end{CD}
 $$
 
-applying naturality to $\mu, i_1, i_2 : \IZ \to \IZ * \IZ'$. On the right hand side, we get multiplication, first projection, and second projection respectively. From this, we conclude that the images of $e(T\mu(x))$ and $e(Ti_1(x)) \cdot e(Ti_2(x))$ in $UG$ agree for any element $x \in T(\IZ * \IZ')$. Similar proofs show that the other relations are also satisfied.
+applying naturality to $\mu, i_1, i_2 : \IZ \to \IZ * \IZ'$. On the right-hand side, we get multiplication, first projection, and second projection, respectively. From this, we conclude that the images of $e(T\mu(x))$ and $e(Ti_1(x)) \cdot e(Ti_2(x))$ in $UG$ agree for any element $x \in T(\IZ * \IZ')$. Similar proofs show that the other relations are also satisfied.
 
 Finally, we need to show $\alpha = y_{\varphi} \circ \eta_T$, i.e. $\alpha_H = (y_{\varphi})_H \circ (\eta_T)_H$ for each group $H$. By definition, for each $x \in TH$, the first step gives the homomorphism $h \mapsto e(Th(x))$; then the second step is formed by composition with $\varphi$. By the specification of $\varphi$, this gives the homomorphism $h \mapsto \alpha_{\IZ}(Th(x))(1)$. However, by the assumption that $\alpha$ is a natural transformation, for each $h \in H$ we have a commutative diagram
 

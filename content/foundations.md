@@ -33,7 +33,7 @@ In our framework, there is no way to group all hypercollections into a single ma
 
 Let us call a collection $X$ _essentially small_ if it is isomorphic to a set $S$, i.e., if there is a bijection between $X$ and $S$. (An alternative terminology suggested [here](https://ncatlab.org/nlab/show/small+category) is _structurally small_.) For most parts of category theory, $X$ can then simply be replaced with $S$ and assumed to be small itself, i.e., a set.
 
-For example, the collection $\{\SetColl\}$ is not small, but essentially small, since it is isomorphic to the set $\{0\}$. This example shows that the three levels are not defined by cardinality alone. It also shows that the elements of a collection are not necessarily sets, which is yet another fundamental difference to classes.
+For example, the collection $\{\SetColl\}$ is not small, but essentially small, since it is isomorphic to the set $\{0\}$. This example shows that the three levels are not defined by cardinality alone. It also shows that the elements of a collection are not necessarily sets, which is yet another fundamental difference from classes.
 
 If a collection $X$ admits a surjective map from a set $S$, then it is also essentially small, since by the axiom of choice $X$ is isomorphic to a subset of $S$.
 
@@ -99,7 +99,7 @@ It is better to state explicitly when the assumption of being locally small is n
 
 Equivalences of categories are defined [as usual](https://en.wikipedia.org/wiki/Equivalence_of_categories). A category is _essentially small_ if it is equivalent to a small category. A collection $X$ is essentially small if and only if the associated discrete category $X_{\disc}$ (which has only identity morphisms) is essentially small. In this sense, the two notions are compatible.
 
-## Representable Functors
+## Representable functors
 
 If $\C$ is any category and $A \in \C$, we have the Hom-functor
 
@@ -111,7 +111,7 @@ Adjunctions are defined as usual via natural isomorphisms
 $$\Hom(F(A),B) \cong \Hom(A,G(B))$$
 of functors valued in $\Set^+$. No local smallness assumption is required. Equivalently, they can be defined via morphisms of functors $\id \to G \circ F$ and $F \circ G \to \id$ satisfying the triangle identities.
 
-## Limits and Colimits
+## Limits and colimits
 
 Let $\C$ be a category. If $D : \I \to \C$ is a functor (in this context called a _diagram_), a _cone_ over $D$ is an object $X \in \C$ equipped with morphisms $p_i : X \to D(i)$ for all $i \in \I$ such that for every morphism $i \to j$ the evident triangle commutes. Cones form a category, and a terminal object in this category is called a _limit_ of $D$. The dual notion is a _colimit_.
 

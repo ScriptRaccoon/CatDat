@@ -10,7 +10,7 @@ Let $\C$ be a category with finite powers, including a terminal object $1$. Let 
 :::
 
 ::: Proof
-Let $m \geq 0$ be fixed. For $n \geq 0$ we define a morphism $u_n : X^n \to X^m$ as follows: It is the projection on the first $m$ factors for $m \leq n$, and $(X^n,a^{m-n})$ for $m \geq n$ (for $m=n$ these agree). With generalized elements this says:
+Let $m \geq 0$ be fixed. For $n \geq 0$ we define a morphism $u_n : X^n \to X^m$ as follows: It is the projection onto the first $m$ factors for $m \leq n$, and $(X^n,a^{m-n})$ for $m \geq n$ (for $m=n$ these agree). With generalized elements this says:
 $$u_n(x_1,\dotsc,x_n) = \begin{cases} (x_1,\dotsc,x_m) & m \leq n \\ (x_1,\dotsc,x_n,a,\dotsc,a) & m \geq n \end{cases}$$
 We claim that $u_n = u_{n+1} \circ (X^n,a)$, i.e.
 $$u_n(x_1,\dotsc,x_n) = u_{n+1}(x_1,\dotsc,x_n,a).$$

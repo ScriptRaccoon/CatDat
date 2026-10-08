@@ -26,7 +26,7 @@ Since $\prod_{i \in \I} X_i$ is compact, that implies that the intersection of a
 :::
 
 ::: Lemma 2
-Suppose we have a cofiltered limit $X = \lim_{i\in \I} X_i$ in $\Top$. Note the topology on $X$ is the weak topology for the projections $p_i : X \to X_i$. Then the canonical subbasis of this topology on $X$ is closed under finite intersections. Thus, it agrees with the canonical basis of the topology on $X$.
+Suppose we have a cofiltered limit $X = \lim_{i\in \I} X_i$ in $\Top$. Note that the topology on $X$ is the weak topology for the projections $p_i : X \to X_i$. Then the canonical subbasis of this topology on $X$ is closed under finite intersections. Thus, it agrees with the canonical basis of the topology on $X$.
 :::
 
 ::: Proof
@@ -34,7 +34,7 @@ Suppose we have a finite collection of subbasic open sets of the form $U_n = p_{
 
 $$\bigcap_{n=1}^N U_n = p_j^{-1} \left( \bigcap_{n=1}^N X_{f_n}^{-1}(V_n) \right),$$
 
-where the right hand side is again in the canonical subbasis.
+where the right-hand side is again in the canonical subbasis.
 :::
 
 ::: Proposition 3
@@ -46,7 +46,7 @@ We use the crude monadicity theorem (see e.g. [SGL92](#references), Thm. IV.4.2)
 
 $$\Hom_{\CompHaus}\bigl(X, [0, 1]^S\bigr) \cong \Hom_{\Set}\bigl(S, \Hom_{\CompHaus}(X, [0, 1])\bigr).$$
 
-To see the functor is conservative, suppose we have a continuous function $f : X \to Y$ such that $f^* : \Hom(Y, [0, 1]) \to \Hom(X, [0, 1])$ is a bijection. Then for any $x_1, x_2 \in X$ with $x_1 \ne x_2$, there exists $\varphi : X \to [0, 1]$ with $\varphi(x_1) = 0$ and $\varphi(x_2) = 1$ by Urysohn's lemma. Since $f^*$ is surjective, there exists $\psi : Y \to [0, 1]$ with $\varphi = \psi \circ f$; thus, we must have $f(x_1) \ne f(x_2)$. Likewise, we know the image of $f$ is closed. If this image is not all of $Y$, then by Urysohn's lemma there exists non-zero $\varphi : Y \to [0, 1]$ which is zero on the image. But then $\varphi \circ f = 0 \circ f$, contradicting the injectivity of $f^*$. Thus, $f$ is a bijective continuous function, and therefore a homeomorphism.
+To see the functor is conservative, suppose we have a continuous function $f : X \to Y$ such that $f^* : \Hom(Y, [0, 1]) \to \Hom(X, [0, 1])$ is a bijection. Then for any $x_1, x_2 \in X$ with $x_1 \ne x_2$, there exists $\varphi : X \to [0, 1]$ with $\varphi(x_1) = 0$ and $\varphi(x_2) = 1$ by Urysohn's lemma. Since $f^*$ is surjective, there exists $\psi : Y \to [0, 1]$ with $\varphi = \psi \circ f$; thus, we must have $f(x_1) \ne f(x_2)$. Likewise, we know the image of $f$ is closed. If this image is not all of $Y$, then by Urysohn's lemma there exists a non-zero $\varphi : Y \to [0, 1]$ which is zero on the image. But then $\varphi \circ f = 0 \circ f$, contradicting the injectivity of $f^*$. Thus, $f$ is a bijective continuous function, and therefore a homeomorphism.
 
 Finally, suppose we have a coreflexive equalizer pair
 

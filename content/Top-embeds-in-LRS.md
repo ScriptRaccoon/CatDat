@@ -8,7 +8,7 @@ description: Describes a functor which makes the category of topological spaces 
 For much of this development, we will be dealing with the case of $\LRS_k$ where $k$ is a field. We begin by describing $\Top$ as a reflective subcategory of $\LRS_k$.
 
 ::: Lemma 1
-The forgetful functor $U : \LRS_k \to \Top$ has a right adjoint $K : \Top \to \LRS_k$ of equipping a topological space $X$ with the constant sheaf $\underline{k}$. Furthermore, the functor $K$ is fully faithful, thus making $\Top$ into a reflective subcategory of $\LRS_k$.
+The forgetful functor $U : \LRS_k \to \Top$ has a right adjoint $K : \Top \to \LRS_k$ given by equipping a topological space $X$ with the constant sheaf $\underline{k}$. Furthermore, the functor $K$ is fully faithful, thus making $\Top$ into a reflective subcategory of $\LRS_k$.
 :::
 
 ::: Proof
@@ -38,7 +38,7 @@ $$\textstyle X_0 \cap V(f) = \bigcap_{a \in k^\times} (X_0 \cap D(f-a)),$$
 which is already open in the subspace topology. Therefore, in this case, $X_0$ is given exactly the subspace topology.
 
 ::: Corollary 3
-For any non-trivial commutative ring $R$, fix a quotient field $k$. Then the functor $K_R : \Top \to \LRS_R$ of equipping a topological space with the constant sheaf $\underline{k}$ is fully faithful; has a right adjoint; and preserves all inhabited limits.
+For any non-trivial commutative ring $R$, fix a quotient field $k$ of $R$. Then the functor $K_R : \Top \to \LRS_R$ given by equipping a topological space with the constant sheaf $\underline{k}$ is fully faithful; has a right adjoint; and preserves all inhabited limits.
 :::
 
 ::: Proof
@@ -55,5 +55,5 @@ Let $R$ be any non-trivial commutative ring. Then:<br>
 :::
 
 ::: Proof
-We already know that $\Top$ does not satisfy any of these properties. In order to conclude that $\LRS_R$ does not satisfy any of them either, we fix a quotient field of $R$ as above and consider the functor $K_R$. In each case, this is an easy application of a contrapositive of a result from [here](/content/subcategories) to the functor $K_R$. Namely, (a) follows from Lemma 5; (b) from Lemma 4; (c) from Lemma 7; (d) from the dual of Lemma 2 with the observation that $K_R$ preserves epimorphisms since it has a right adjoint; and (e) from the dual of Lemma 8.
+We already know that $\Top$ does not satisfy any of these properties. In order to conclude that $\LRS_R$ does not satisfy any of them either, we fix a quotient field of $R$ as above and consider the functor $K_R$. In each case, this is an easy application of the contrapositive of a result from [here](/content/subcategories) to the functor $K_R$. Namely, (a) follows from Lemma 5; (b) from Lemma 4; (c) from Lemma 7; (d) from the dual of Lemma 2 with the observation that $K_R$ preserves epimorphisms since it has a right adjoint; and (e) from the dual of Lemma 8.
 :::
