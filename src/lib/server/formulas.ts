@@ -1,5 +1,4 @@
 import katex from 'katex'
-import { is_object } from '#shared/utils.ts'
 import YAML from 'yaml'
 import path from 'node:path'
 import fs from 'node:fs'
@@ -21,7 +20,7 @@ export function render_formula(
 	})
 }
 
-function render_formulas(txt: string): string {
+export function render_formulas(txt: string): string {
 	return txt.replace(MATH_REGEX, (_, display_formula, inline_formula) => {
 		if (display_formula !== undefined) {
 			return render_formula(display_formula, { displayMode: true })
@@ -29,27 +28,4 @@ function render_formulas(txt: string): string {
 
 		return render_formula(inline_formula, { displayMode: false })
 	})
-}
-
-export function render_nested_formulas<T>(obj: T): T {
-	if (!obj) return obj
-
-	if (typeof obj === 'string') {
-		const with_line_breaks = obj.replaceAll('\n', '<br>')
-		return render_formulas(with_line_breaks) as T
-	}
-
-	if (Array.isArray(obj)) {
-		return obj.map(render_nested_formulas) as T
-	}
-
-	if (is_object(obj)) {
-		const result: Record<string, unknown> = {}
-		for (const key in obj) {
-			result[key] = render_nested_formulas(obj[key])
-		}
-		return result as T
-	}
-
-	return obj
 }
