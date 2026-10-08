@@ -32,6 +32,12 @@ jobs:
       - name: Install Dependencies
         run: pnpm i
 
+      - name: Static checks
+        run: |
+          pnpm check
+          pnpm lint
+          pnpm cspell
+
       - name: Test database
         run: |
           pnpm db:setup
