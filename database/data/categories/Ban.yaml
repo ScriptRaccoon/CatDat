@@ -42,7 +42,7 @@ satisfied_properties:
   - property: regular
     proof: >-
       It suffices to prove that regular epimorphisms are stable under pullbacks. We will use their classification via open unit balls below.
-      So let $f : X \to Y$ be a regular epimorphism and let $g : T \to Y$ be any morphism. We need to show that the projection $X \times_Y T \to X$ is a regular epimorphism.
+      So let $f : X \to Y$ be a regular epimorphism and let $g : T \to Y$ be any morphism. We need to show that the projection $X \times_Y T \to T$ is a regular epimorphism.
       Let $t \in T$ be an element of norm $<1$. Since $g$ is a linear contraction, $g(t)$ has norm $<1$. Since $f$ is a regular epimorphism, there is some $x \in X$ with norm $<1$ and $f(x) = g(t)$.
       Then $(x,t) \in X \times_Y T$ is a preimage of $t$ with norm $\max(|x|,|t|) < 1$.
 
