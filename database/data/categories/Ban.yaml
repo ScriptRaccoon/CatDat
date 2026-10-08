@@ -33,7 +33,14 @@ satisfied_properties:
     proof: If $X$ is a Banach space and $(Y_i)$ is a filtered diagram of Banach spaces, the canonical map $\colim_i (X \times Y_i) \to X \times \colim_i Y_i$ is the completion of the canonical map in the category of normed vector spaces with non-expansive linear maps. Now the claim follows directly from <a href="/category/Met">$\Met$</a>.
 
   - property: cocartesian cofiltered limits
-    proof: 'If $X$ is a Banach space and $(Y_i)$ is a cofiltered diagram of Banach spaces, the canonical map $X \oplus \lim_i Y_i \to \lim_i (X \oplus Y_i)$ is an isomorphism: Since the forgetful functor $\Ban \to \Vect$ preserves finite coproducts and all limits, and $\Vect$ has the claimed property (see <a href="/category-implication/biproducts_cartesian_filtered_colimits">here</a>), the canonical map is bijective. It remains to show that it is isometric. For $(x,y) \in X \oplus \lim_i Y_i$ the norm in the domain is $|x| + \sup_i |y_i|$, and the norm in the codomain is $\sup_i (|x| + |y_i|)$, and these clearly agree.'
+    proof: >-
+      Recall that the limit of a small diagram $(Y_i)$ in $\Ban$ is the space of compatible families $(y_i) \in \prod_i Y_i$ with $\sup_i |y_i| < \infty$, endowed with the norm $|(y_i)| \coloneqq \sup_i |y_i|$, and that the coproduct $X \oplus Y$ of two Banach spaces is their direct sum with the norm $|(x,y)| \coloneqq |x| + |y|$.
+
+      Now let $X$ be a Banach space and $(Y_i)$ be a cofiltered diagram of Banach spaces. We claim that the canonical map
+      $$\textstyle X \oplus \lim_i Y_i \to \lim_i (X \oplus Y_i), \quad (x,(y_i)) \mapsto ((x,y_i))_i,$$
+      is an isometric isomorphism. An element of the codomain is a compatible family $((x_i,y_i))_i$ with bounded norms. Since the transition maps are of the form ${\id_X} \oplus f$, we have $x_i = x_j$ whenever there is a morphism $i \to j$ in the index category. Since the index category is connected, there is some $x \in X$ with $x_i = x$ for all $i$. Moreover, $(y_i)$ is a compatible family, and $\sup_i (|x| + |y_i|) < \infty$ holds if and only if $\sup_i |y_i| < \infty$. This shows that the canonical map is bijective. It is isometric since
+      $$\textstyle \sup_i (|x| + |y_i|) = |x| + \sup_i |y_i|.$$
+      Notice that this argument only uses that the index category is connected. Hence, $X \oplus -$ even preserves all connected limits.
 
   - property: extremal cogenerator
     proof: >-
