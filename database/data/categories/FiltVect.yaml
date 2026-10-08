@@ -67,11 +67,9 @@ satisfied_properties:
     proof: >-
       Consider a filtered vector space $(V,F)$ such that $V$ is finite-dimensional and there exists some $N \in \IN$ with $F^N(V)=0$ (and hence $F^n(V)=0$ for all $n \geq N$). We claim that such an object is finitely presentable in $\FiltVect$:
 
-
       Let $(W_i,F)$ be a filtered diagram of filtered vector spaces. Its colimit is the vector space $\colim_i W_i$ equipped with the filtration $F^n(\colim_i W_i) = \colim_i F^n(W_i)$. Let $f : (V,F) \to (\colim_i W_i,F)$ be a filtered linear map. The underlying linear map $f : V \to \colim_i W_i$ factors through some morphism $W_i \to \colim_i W_i$. Moreover, $f$ maps $F^n(V)$ into $\colim_i F^n(W_i)$ for every $n \in \IZ$. This condition is automatic when $n \geq N$, so assume that $n < N$. Since $V$ is finite-dimensional, the filtration stabilizes; that is, there exists some $M \in \IZ$ such that $F^M(V) = F^n(V)$ for all $n \leq M$. Thus the filtered condition only needs to be checked in the finitely many degrees
       $$n \in \{M,M+1,\dotsc,N-1\}.$$
       Since the index category is filtered, there exists some index $j \geq i$ such that, for every relevant degree $n$, the map $f|_{F^n(V)}$ factors through $F^n(W_j)$. It follows that $f$ factors as a filtered linear map $(V,F) \to (W_j,F)$ followed by the colimit inclusion. This factorization is essentially unique because the corresponding statement holds in $\Vect$.
-
 
       It remains to prove that every filtered vector space $(V,F)$ is a filtered colimit of such objects. First, it is clearly the filtered colimit of the subspaces $(V',F)$, where $V' \subseteq V$ is a finite-dimensional subspace equipped with the induced filtration.
       Second, every filtered vector space $(V,F)$ is the filtered colimit of the spaces $(V,F_{< N})$ for $N \in \IN$, where
@@ -81,7 +79,6 @@ satisfied_properties:
   - property: regular
     proof: >-
       It remains to prove that regular epimorphisms are stable under pullbacks. This follows immediately from their classification below, from the fact that $F^n$ preserves limits, and from the regularity of $\Vect$.
-
 
       In more detail, if $(V,F) \to (W,F)$ is a regular epimorphism and $(U,F) \to (W,F)$ is any morphism, then $(V,F) \times_{(W,F)} (U,F) \to (U,F)$ is a regular epimorphism, since $V \times_W U \to U$ is surjective and, for every $n \in \IZ$, the restricted map
       $$F^n(V \times_W U) = F^n(V) \times_{F^n(W)} F^n(U) \to F^n(U)$$

@@ -44,11 +44,9 @@ satisfied_properties:
       $$D(j,k) + D(i,j) = D(i,k)$$
       for all $i \leq j \leq k$. In particular, $D(i,j) \leq D(i,k)$.
 
-
       Let $i \in \I$. The set of natural numbers $\{D(i,k) : k \geq i\}$ is bounded above. Otherwise, for every $n \in \IN$ we could find $k_n \in \I$ with $k_n \geq i$ and $D(i,k_n) \geq n$. Since $\I$ is $\aleph_1$-filtered, the family $(k_n)_{n \in \IN}$ has an upper bound $k_\infty \in \I$. But then
       $$D(i, k_\infty) = D(k_n,k_\infty) + D(i, k_n) \geq D(i, k_n) \geq n$$
       for all $n \in \IN$, contradicting the fact that $D(i,k_\infty) \in \IN$.
-
 
       Therefore, the maximum
       $$u_i \coloneqq \max \{D(i,k) : k \geq i\} \in \IN$$
@@ -77,7 +75,6 @@ satisfied_properties:
       (1) <strong>The map $\alpha$ is surjective:</strong> Pick some $i \in \I$. Choose $j \geq i$ such that $u_i = D(i,j)$. For all $k \geq j$ we then have
       $$u_i \geq D(i,k) = D(j,k) + D(i,j) = D(j,k) + u_i,$$
       hence $D(j,k)=0$. Therefore, $u_j=0$, and thus $\alpha([j,n]) = n$ for all $n \in \IN$.
-
 
       (2) <strong>The map $\alpha$ is injective:</strong> Assume that $[i,n]$ and $[j,m]$ have the same image. Since $\I$ is filtered, we may assume $i=j$. The condition then becomes $u_i + n = u_i + m$, and therefore $n=m$. This completes the proof.
 
