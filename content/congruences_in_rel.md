@@ -69,7 +69,7 @@ $$\textstyle S \sim (S \cap A) \cup \bigcup_{x\in S \setminus A} \varnothing = S
 Similarly, $T \sim T \cap A$, so if $S\cap A = T\cap A$, then $S \sim T$.
 
 ::: Claim 6
-Let $E'$ be the set pushout $X +_A X$ with inclusion maps $i_1, i_2 : X \to E'$. Define a morphism $E' \to X \times X$ in $\Rel$ given by the inverse relation of the graph $i_1 + i_2 : X + X \to E'$. Then the congruences $E$ and $E'$ are equivalent.
+Let $E'$ be the set pushout $X +_A X$ with inclusion maps $i_1, i_2 : X \rightrightarrows E'$. Define a morphism $E' \to X \times X$ in $\Rel$ given by the inverse relation of the graph $i_1 + i_2 : X + X \to E'$. Then the congruences $E$ and $E'$ are equivalent.
 :::
 
 We can define a bijection $E \to E'$ as follows: let $e \in E$. If $i_*(\{ e \}) = (\{ x \}, \varnothing)$ with $x\notin A$, then send $e \mapsto i_1(x)$; if $i_*(\{ e \}) = (\varnothing, \{ x \})$ with $x\notin A$, then send $e \mapsto i_2(x)$; and if $i_*(\{ e \}) = (\{ x \}, \{ x \})$ with $x \in A$, then send $e \mapsto i_1(x) = i_2(x)$. Transferring the congruence to $E'$, we see that it is exactly of the given form.
@@ -96,5 +96,5 @@ $$
 :::
 
 ::: Proof
-Suppose we have generalized elements $x_1, x_2 : U \to X$ with $e x_1 = e x_2$. Then $f t x_1 = x_1$ and $g t x_1 = s e x_1$, so the pair $x_1, s e x_1$ factors through $E$. Similarly, the pair $x_2, s e x_2$ factors through $E$. However, by the assumption, we also have $s e x_1 = s e x_2$. Therefore, since $E$ is a congruence, we conclude that the pair $x_1, x_2$ factors through $E$.
+Suppose we have generalized elements $x_1, x_2 : U \rightrightarrows X$ with $e x_1 = e x_2$. Then $f t x_1 = x_1$ and $g t x_1 = s e x_1$, so the pair $x_1, s e x_1$ factors through $E$. Similarly, the pair $x_2, s e x_2$ factors through $E$. However, by the assumption, we also have $s e x_1 = s e x_2$. Therefore, since $E$ is a congruence, we conclude that the pair $x_1, x_2$ factors through $E$.
 :::

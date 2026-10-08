@@ -99,7 +99,7 @@ special_morphisms:
     proof: This is easy.
   monomorphisms:
     description: injective order-preserving functions
-    proof: 'For the non-trivial direction, assume that $f : P \to Q$ is a monomorphism and $a,b \in P$ satisfy $f(a)=f(b)$. Consider the two constant maps $c_a, c_b : \{0 < 1\} \to P$ with values $a$ and $b$. These are valid morphisms in $\Pos_{\noiso}$. Then $f \circ c_a = f \circ c_b$, so $c_a = c_b$, which means that $a = b$.'
+    proof: 'For the non-trivial direction, assume that $f : P \to Q$ is a monomorphism and $a,b \in P$ satisfy $f(a)=f(b)$. Consider the two constant maps $c_a, c_b : \{0 < 1\} \rightrightarrows P$ with values $a$ and $b$. These are valid morphisms in $\Pos_{\noiso}$. Then $f \circ c_a = f \circ c_b$, so $c_a = c_b$, which means that $a = b$.'
   epimorphisms:
     description: surjective order-preserving functions
     proof: We can use the same proof as for <a href="/category/Pos">$\Pos$</a>.

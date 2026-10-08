@@ -41,7 +41,7 @@ unsatisfied_properties:
 
   - property: balanced
     proof: |-
-      The inclusion of additive semigroups $\IN \hookrightarrow \IZ$ is a counterexample. Indeed, if $f,g : \IZ \to G$ are semigroup homomorphisms which agree on $\IN$, the element $e \coloneqq f(0) = g(0)$ provides a neutral element for $eGe$, which therefore becomes a monoid, and $f,g$ corestrict to monoid homomorphisms $f,g : \IZ \to eGe$ which agree on $\IN$. And we already know that $f = g$ in that case (inverses are uniquely determined).
+      The inclusion of additive semigroups $\IN \hookrightarrow \IZ$ is a counterexample. Indeed, if $f,g : \IZ \rightrightarrows G$ are semigroup homomorphisms which agree on $\IN$, the element $e \coloneqq f(0) = g(0)$ provides a neutral element for $eGe$, which therefore becomes a monoid, and $f,g$ corestrict to monoid homomorphisms $f,g : \IZ \rightrightarrows eGe$ which agree on $\IN$. And we already know that $f = g$ in that case (inverses are uniquely determined).
       Another example can be found in <a href="https://mathoverflow.net/a/510442">MO/510431</a>.
 
   - property: Malcev

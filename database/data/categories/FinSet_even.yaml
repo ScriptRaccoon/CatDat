@@ -109,7 +109,7 @@ special_morphisms:
     proof: It is a full subcategory of $\Set$, in which isomorphisms are bijective maps.
   monomorphisms:
     description: injective maps
-    proof: 'For the non-trivial direction, assume that $f : X \to Y$ is a monomorphism and let $a,b \in X$ satisfy $f(a)=f(b)$. Consider the constant maps $a,b : \{0,1\} \to X$ with values $a$ and $b$, respectively. Then $f \circ a = f \circ b$. Thus, $a = b$.'
+    proof: 'For the non-trivial direction, assume that $f : X \to Y$ is a monomorphism and let $a,b \in X$ satisfy $f(a)=f(b)$. Consider the constant maps $a,b : \{0,1\} \rightrightarrows X$ with values $a$ and $b$, respectively. Then $f \circ a = f \circ b$. Thus, $a = b$.'
   epimorphisms:
     description: surjective maps
     proof: Use the same proof as for (finite) sets since there we have only used an auxiliary two-element set, which thus belongs to the given category.

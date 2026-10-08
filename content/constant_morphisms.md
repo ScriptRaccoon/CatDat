@@ -10,7 +10,7 @@ A [constant morphism](/morphism-property/constant) in $\Set$ is the same as a co
 :::
 
 ::: Proof
-Let $X,Y$ be two sets and let $f : X \to Y$ be a map. If $f$ is a constant morphism, then, in particular, for all morphisms $x_1,x_2 : 1 \to X$, we have $f \circ x_1 = f \circ x_2$. Therefore, $f(x_1) = f(x_2)$ for all $x_1,x_2 \in X$, so $f$ is a constant map. Conversely, if $f$ is a constant map and $x_1,x_2 : T \rightrightarrows X$ are two maps, then $f \circ x_1 = f \circ x_2$, since for all $t \in T$ we have $f(x_1(t)) = f(x_2(t))$.
+Let $X,Y$ be two sets and let $f : X \to Y$ be a map. If $f$ is a constant morphism, then, in particular, for all morphisms $x_1,x_2 : 1 \rightrightarrows X$, we have $f \circ x_1 = f \circ x_2$. Therefore, $f(x_1) = f(x_2)$ for all $x_1,x_2 \in X$, so $f$ is a constant map. Conversely, if $f$ is a constant map and $x_1,x_2 : T \rightrightarrows X$ are two maps, then $f \circ x_1 = f \circ x_2$, since for all $t \in T$ we have $f(x_1(t)) = f(x_2(t))$.
 :::
 
 ::: Lemma 2
