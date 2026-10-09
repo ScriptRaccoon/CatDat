@@ -83,7 +83,7 @@ We can also conclude that $E$ is the kernel pair of this quotient, by the genera
 ::: Lemma
 Suppose we have a congruence $f, g : E \rightrightarrows X$ with a contractible coequalizer
 $$ E \, \overset{f}{\underset{g}{\rightrightarrows}} \, X \overset{e}{\rightarrow} Q $$
-with maps in the reverse direction $s : Q \to X$ and $t : X \to E$. Then $E$ is the kernel pair of this quotient, i.e. we have a cartesian square
+with maps in the reverse direction $s : Q \to X$ and $t : X \to E$. Then $E$ is the kernel pair of this quotient, i.e. we have a pullback square
 
 $$
 \begin{CD}
