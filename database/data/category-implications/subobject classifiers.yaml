@@ -14,7 +14,7 @@
     - subobject classifier
   conclusions:
     - well-powered
-  proof: See <a href="https://ncatlab.org/nlab/show/Sheaves+in+Geometry+and+Logic">Mac Lane & Moerdijk</a>, Prop. I.3.1.
+  proof: See <a href="https://ncatlab.org/nlab/show/Sheaves+in+Geometry+and+Logic">Mac Lane–Moerdijk</a>, Prop. I.3.1.
 
 - id: subobject_classifier_pointed_case
   assumptions:

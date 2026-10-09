@@ -68,7 +68,7 @@
   conclusions:
     - cogenerator
   proof: >-
-    See <a href="https://ncatlab.org/nlab/show/Categories+and+Sheaves">Kashiwara-Schapira</a>, Thm. 9.6.3.
+    See <a href="https://ncatlab.org/nlab/show/Categories+and+Sheaves">Kashiwara–Schapira</a>, Thm. 9.6.3.
 
     Remark: The assumption that the category is locally essentially small is necessary (and is implicit in most of the literature), as the example $[\On,\Ab]$ shows (see <a href="/category/TransSeqAb">here</a>).
 

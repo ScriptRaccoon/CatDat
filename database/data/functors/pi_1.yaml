@@ -6,7 +6,7 @@ associated:
   codomain: Grp
   left_adjoint: null
   right_adjoint: null
-description: The fundamental group $\pi_1(X,x_0)$ of a pointed topological space $(X,x_0)$ is the group of homotopy classes of loops at $x_0$. The group operation is concatenation of paths. For example, we have $\pi_1(S^1,1) \cong \IZ$ (see Hatcher's <a href="https://pi.math.cornell.edu/~hatcher/AT/ATpage.html">Algebraic Topology</a>, Theorem 1.7).
+description: The fundamental group $\pi_1(X,x_0)$ of a pointed topological space $(X,x_0)$ is the group of homotopy classes of loops at $x_0$. The group operation is concatenation of paths. For example, we have $\pi_1(S^1,1) \cong \IZ$ (see <a href="https://pi.math.cornell.edu/~hatcher/AT/ATpage.html">Hatcher</a>, Theorem 1.7).
 nlab_link: https://ncatlab.org/nlab/show/fundamental+group
 keywords:
   - pi_1
@@ -19,10 +19,10 @@ related:
 
 satisfied_properties:
   - property: preserves products
-    proof: This is straightforward to check. A reference for binary products is Theorem III.2.6 in Bredon's <a href="https://doi.org/10.1007/978-1-4757-6848-0">Topology and Geometry</a>. The general case works exactly the same.
+    proof: This is straightforward to check. A reference for binary products is <a href="https://doi.org/10.1007/978-1-4757-6848-0">Bredon</a>, Theorem III.2.6. The general case works exactly the same.
 
   - property: right-invertible
-    proof: The classifying space $BG$ of a group $G$ is functorial in $G$ and satisfies $\pi_1(BG) \cong G$; see Hatcher's <a href="https://pi.math.cornell.edu/~hatcher/AT/ATpage.html">Algebraic Topology</a>, Example 1B.7.
+    proof: See <a href="https://pi.math.cornell.edu/~hatcher/AT/ATpage.html">Hatcher</a>, Example 1B.7.
 
 unsatisfied_properties:
   - property: conservative

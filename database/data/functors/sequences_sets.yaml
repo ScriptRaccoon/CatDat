@@ -25,7 +25,7 @@ satisfied_properties:
     proof: This is obvious.
 
   - property: monadic
-    proof: This is a special case of Theorem 1 in <a href="https://arxiv.org/abs/math/0407251">State monads and their algebras</a> by F. Métayer.
+    proof: This is a special case of <a href="https://arxiv.org/abs/math/0407251">Métayer</a>, Theorem 1.
 
   - property: representable
     proof: We have $X^{\IN} \cong \Hom(\IN,X)$.

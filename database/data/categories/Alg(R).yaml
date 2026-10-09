@@ -29,7 +29,7 @@ satisfied_properties:
     proof: 'Let $A,B$ be two $R$-algebras. To show that $A \sqcup_{A \times B} B$ is trivial, let $T$ be an $R$-algebra which admits homomorphisms $f : A \to T$, $g : B \to T$ with $f(p_1(a,b))=g(p_2(a,b))$ for all $(a,b) \in A \times B$, i.e. $f(a)=g(b)$. Applying this to $a=1$, $b=0$ yields $1=0$ in $T$. Hence, $T = 0$.'
 
   - property: Malcev
-    proof: This follows in the same way as for <a href="/category/Grp">$\Grp$</a>; see also Example 2.2.5 in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories">Malcev, protomodular, homological and semi-abelian categories</a>.
+    proof: This follows in the same way as for <a href="/category/Grp">$\Grp$</a>; see also <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories">Borceux–Bourn</a>, Example 2.2.5.
     references:
       - Grp_malcev
 

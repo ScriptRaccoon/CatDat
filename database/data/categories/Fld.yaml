@@ -30,7 +30,7 @@ satisfied_properties:
     proof: Epimorphisms are the purely inseparable field extensions (see below). If $K \to L$ is purely inseparable, then for every $x \in L$ there is some $n \in \IN$ such that $x^n \in K$. An element of $K$ has at most $n$ $n$th roots. Hence, we can bound the cardinality of $L$.
 
   - property: multi-algebraic
-    proof: Example 4.3(1) in <a href="http://www.tac.mta.ca/tac/volumes/8/n3/8-03abs.html">[AR01]</a> presents an FPC-sketch that models fields.
+    proof: An FPC-sketch that models fields is presented in <a href="http://www.tac.mta.ca/tac/volumes/8/n3/8-03abs.html">Adámek–Rosický</a>, Example 4.3(1).
 
 unsatisfied_properties:
   - property: skeletal

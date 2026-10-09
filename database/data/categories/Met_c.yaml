@@ -130,4 +130,4 @@ special_morphisms:
     proof: See <a href="https://math.stackexchange.com/questions/937387">MSE/937387</a>.
   regular monomorphisms:
     description: embeddings of closed subspaces
-    proof: A reference is Example 7.58 (3) in <a href="https://ncatlab.org/nlab/show/Abstract+and+Concrete+Categories">Joy of Cats</a>, but a proof is missing there.
+    proof: A reference is <a href="https://ncatlab.org/nlab/show/Abstract+and+Concrete+Categories">Adámek–Herrlich–Strecker</a>, Example 7.58 (3), but a proof is missing there.

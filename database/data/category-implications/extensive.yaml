@@ -41,7 +41,7 @@
   conclusions:
     - disjoint finite coproducts
     - strict initial object
-  proof: These are Prop. 2.6 and 2.8 in <a href="https://doi.org/10.1016/0022-4049(93)90035-R">Introduction to extensive and distributive categories</a> by Carboni-Lack-Walters.
+  proof: See <a href="https://doi.org/10.1016/0022-4049(93)90035-R">Carboni–Lack–Walters</a>, Prop. 2.6 and 2.8.
 
 - id: extensive_distributivity
   assumptions:
@@ -49,7 +49,7 @@
     - finite products
   conclusions:
     - distributive
-  proof: This is Prop. 4.5 in <a href="https://doi.org/10.1016/0022-4049(93)90035-R">Introduction to extensive and distributive categories</a> by Carboni-Lack-Walters.
+  proof: See <a href="https://doi.org/10.1016/0022-4049(93)90035-R">Carboni–Lack–Walters</a>, Prop. 4.5.
 
 - id: infinitary_extensive_distributivity
   assumptions:
@@ -57,7 +57,7 @@
     - finite products
   conclusions:
     - infinitary distributive
-  proof: One can adjust the proof of Prop. 4.5 in <a href="https://doi.org/10.1016/0022-4049(93)90035-R">Introduction to extensive and distributive categories</a> by Carboni-Lack-Walters (which deals with the finite case).
+  proof: One can adjust the proof of <a href="https://doi.org/10.1016/0022-4049(93)90035-R">Carboni–Lack–Walters</a>, Prop. 4.5 (which deals with the finite case).
 
 - id: countably_extensive_distributivity
   assumptions:
@@ -65,7 +65,7 @@
     - finite products
   conclusions:
     - countably distributive
-  proof: One can adjust the proof of Prop. 4.5 in <a href="https://doi.org/10.1016/0022-4049(93)90035-R">Introduction to extensive and distributive categories</a> by Carboni-Lack-Walters (which deals with the finite case).
+  proof: One can adjust the proof of <a href="https://doi.org/10.1016/0022-4049(93)90035-R">Carboni–Lack–Walters</a>, Prop. 4.5 (which deals with the finite case).
 
 - id: lcc_implies_extensive
   assumptions:

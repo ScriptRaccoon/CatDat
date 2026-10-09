@@ -19,7 +19,7 @@ satisfied_properties: []
 
 unsatisfied_properties:
   - property: split abelian
-    proof: By assumption, $R$ is not semisimple, which means that there is a short exact sequence that does not split; see Theorem 2.5 in Lam's <a href="https://doi.org/10.1007/978-1-4419-8616-0">A First Course in Noncommutative Rings</a>.
+    proof: By assumption, $R$ is not semisimple, which means that there is a short exact sequence that does not split; see <a href="https://doi.org/10.1007/978-1-4419-8616-0">Lam</a>, Theorem 2.5.
 
 special_objects: {}
 

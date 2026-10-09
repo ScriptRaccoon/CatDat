@@ -39,7 +39,7 @@ unsatisfied_properties:
 
 undecidable_properties:
   - property: split abelian
-    proof: The category $R{-}\Mod$ is split abelian if and only if $R$ is semisimple. See Theorem 2.5 in Lam's <a href="https://doi.org/10.1007/978-1-4419-8616-0">A First Course in Noncommutative Rings</a>. For example, <a href="/category/Vect">$\Vect_K$</a> is split abelian, while <a href="/category/Ab">$\Ab$</a> is not.
+    proof: The category $R{-}\Mod$ is split abelian if and only if $R$ is semisimple. See <a href="https://doi.org/10.1007/978-1-4419-8616-0">Lam</a>, Theorem 2.5. For example, <a href="/category/Vect">$\Vect_K$</a> is split abelian, while <a href="/category/Ab">$\Ab$</a> is not.
 
 special_objects:
   initial object:

@@ -25,7 +25,7 @@ satisfied_properties:
     proof: This is easy.
 
   - property: Grothendieck abelian
-    proof: This is standard; see for example Theorem 18.1.6 in <a href="https://ncatlab.org/nlab/show/Categories+and+Sheaves">Kashiwara-Schapira</a>.
+    proof: This is standard; see for example <a href="https://ncatlab.org/nlab/show/Categories+and+Sheaves">Kashiwara–Schapira</a>, Theorem 18.1.6.
 
 unsatisfied_properties:
   - property: skeletal
