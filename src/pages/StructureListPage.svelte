@@ -41,9 +41,8 @@
 		<!-- TODO: remove this later -->
 		<p>
 			<Fa icon={faInfoCircle} />
-			The {remove_underscores(type)} application is still in its early stages. More {PLURALS[
-				type
-			]} will be added soon.
+			Support for {PLURALS[type]} is still in its early stages. More {PLURALS[type]} will
+			be added soon.
 		</p>
 	{/if}
 

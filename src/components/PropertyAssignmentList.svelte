@@ -34,7 +34,7 @@
 
 <div class="two-columns">
 	<section>
-		<h2 class="sticky-heading">Satisfied Properties</h2>
+		<h2 class="sticky-heading">Satisfied properties</h2>
 
 		<p class="hint">Assigned properties</p>
 		<PropertyList
@@ -52,7 +52,7 @@
 	</section>
 
 	<section>
-		<h2 class="sticky-heading">Unsatisfied Properties</h2>
+		<h2 class="sticky-heading">Unsatisfied properties</h2>
 
 		<p class="hint">Assigned properties</p>
 		<PropertyList
@@ -78,11 +78,12 @@
 	{#if unknown_properties.length > 0}
 		<p class="hint">
 			{pluralize(unknown_properties.length, {
-				one: "There is {count} property for which the database doesn't have an answer if it is satisfied or not.",
-				other: "There are {count} properties for which the database doesn't have an answer if they are satisfied or not."
+				one: 'There is {count} property for which the database has no information on whether it is satisfied.',
+				other: 'There are {count} properties for which the database has no information on whether they are satisfied.'
 			})}
 
-			Please help to <a href="/content/contribute">contribute</a> the data!
+			Please help us fill in the gaps by
+			<a href="/content/contribute">contributing</a> to this project.
 		</p>
 	{/if}
 
@@ -96,8 +97,8 @@
 		{#if undecidable_properties.length > 0}
 			<p class="hint">
 				{pluralize(undecidable_properties.length, {
-					one: 'There is {count} property for which it cannot be decided if it is satisfied or not.',
-					other: 'There are {count} properties for which it cannot be decided if they are satisfied or not.'
+					one: 'There is {count} property for which it cannot be decided whether it is satisfied.',
+					other: 'There are {count} properties for which it cannot be decided whether they are satisfied.'
 				})}
 			</p>
 		{/if}

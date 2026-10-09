@@ -41,7 +41,7 @@
 	Download CatDat database
 </a>
 
-<h2>Example Queries</h2>
+<h2>Example queries</h2>
 
 <CodeSnippet language="sql" title="List of tables" code={'.tables'} />
 
@@ -205,7 +205,7 @@ AND is_equivalence = TRUE;`}
 
 <CodeSnippet
 	language="sql"
-	title="Top 5 implications of categories with the most assumptions"
+	title="Top 5 category implications with the most assumptions"
 	code={`SELECT assumptions, conclusions
 FROM implications_view
 WHERE type = 'category'
@@ -251,7 +251,7 @@ DESC LIMIT 10;`}
 
 <CodeSnippet
 	language="sql"
-	title="Properties which cannot be decided for a given structure"
+	title="Undecidable property assignments"
 	code={`SELECT structure_id, type, property_id, proof
 FROM property_assignments
 WHERE is_satisfied IS NULL;`}

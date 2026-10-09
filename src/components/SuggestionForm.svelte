@@ -79,7 +79,7 @@
 	{#if hide_form}
 		<button class="button" onclick={show_form}>Make a suggestion</button>
 	{:else}
-		<h2>Suggestion Form</h2>
+		<h2>Suggestion form</h2>
 
 		<p class="hint">
 			Use the form below to report missing data, submit an issue, or make a

@@ -34,7 +34,10 @@
 	}: Props = $props()
 </script>
 
-<MetaData title={structure.name} description="Discover the properties of this {type}" />
+<MetaData
+	title={structure.name}
+	description="Discover the properties of this {remove_underscores(type)}"
+/>
 
 <h1>{structure.name}</h1>
 
@@ -101,7 +104,7 @@
 	{#if structure.nlab_link}
 		<strong>External</strong>
 		<span>
-			<a href={structure.nlab_link} target="_blank">nLab Link</a>
+			<a href={structure.nlab_link} target="_blank">nLab link</a>
 		</span>
 	{/if}
 

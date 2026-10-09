@@ -28,7 +28,7 @@
 	{:else if data.type === 'morphism'}
 		For example, you can
 		<a href={sample_links.morphism}>look</a>
-		for morphisms that are monomorphisms and epimorphisms, but no isomorphisms.
+		for morphisms that are monomorphisms and epimorphisms, but not isomorphisms.
 	{:else if data.type === 'symmetric_monoidal_category'}
 		For example, you can
 		<a href={sample_links.symmetric_monoidal_category}>look</a>

@@ -30,10 +30,10 @@
 	)
 </script>
 
-<MetaData title="Implication Details" />
+<MetaData title="Implication details" />
 
 <header>
-	<h1>Implication Details</h1>
+	<h1>Implication details</h1>
 
 	<button onclick={() => window.history.back()} aria-label="go back">
 		<Fa icon={faCircleArrowLeft} />

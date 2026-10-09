@@ -88,7 +88,7 @@
 
 		{#if property.nlab_link}
 			<strong>External</strong>
-			<span><a href={property.nlab_link} target="_blank">nLab Link</a></span>
+			<span><a href={property.nlab_link} target="_blank">nLab link</a></span>
 		{/if}
 	</div>
 {/if}
@@ -132,8 +132,8 @@
 
 	<p class="hint">
 		{pluralize(undecidable_structures.length, {
-			one: `There is {count} ${remove_underscores(type)} for which it cannot be decided if this property is satisfied or not.`,
-			other: `There are {count} ${PLURALS[type]} for which it cannot be decided if this property is satisfied or not.`
+			one: `There is {count} ${remove_underscores(type)} for which it cannot be decided whether this property is satisfied.`,
+			other: `There are {count} ${PLURALS[type]} for which it cannot be decided whether this property is satisfied.`
 		})}
 	</p>
 

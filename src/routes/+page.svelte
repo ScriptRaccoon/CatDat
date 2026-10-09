@@ -83,7 +83,7 @@
 </section>
 
 <section>
-	<h2>Structures, Properties, Implications</h2>
+	<h2>Structures, properties, implications</h2>
 
 	<p>
 		<i>CatDat</i> currently supports four types of categorical structures:
@@ -138,7 +138,7 @@
 		<li>
 			<a
 				href="/category-search/results?satisfied=finitely_cocomplete&unsatisfied=terminal_object~cocomplete"
-				>finitely cocomplete categories that have neither a terminal object nor
+				>finitely cocomplete categories that neither have a terminal object nor
 				are cocomplete</a
 			>
 		</li>
@@ -180,18 +180,18 @@
 			<a href="/category-comparison/CRing/Ring">rings with commutative rings</a>
 		</li>
 		<li>
-			<a href="/category-comparison/FinSet/Set_c/Set"
-				>finite sets and countable sets with all sets
+			<a href="/category-comparison/FinSet/Set_c/Set">
+				finite sets and countable sets with all sets
 			</a>
 		</li>
 		<li>
-			<a href="/category-comparison/grAb/Ch(Ab)"
-				>graded modules with cochain complexes</a
-			>
+			<a href="/category-comparison/grAb/Ch(Ab)">
+				graded abelian groups with cochain complexes
+			</a>
 		</li>
 		<li>
-			<a href="/functor-comparison/power_set_contravariant/power_set_covariant"
-				>the contravariant power set functor with the covariant power set functor
+			<a href="/functor-comparison/power_set_contravariant/power_set_covariant">
+				the contravariant power set functor with the covariant power set functor
 			</a>
 		</li>
 	</ul>
@@ -213,8 +213,6 @@
 		fill in
 		<a href="/missing">missing information</a> in the database.
 	</p>
-
-	<p></p>
 
 	<p>
 		See <a class="accent" href="/content/contribute">how to contribute</a> for more information.
