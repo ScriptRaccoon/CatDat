@@ -34,9 +34,9 @@
   conclusions:
     - ℵ₁-accessible
   proof: >-
-    See <a href="http://www.tac.mta.ca/tac/volumes/8/n3/8-03abs.html">[AR01, Remark 4.8(2)]</a>.
+    See <a href="http://www.tac.mta.ca/tac/volumes/8/n3/8-03abs.html">Adámek–Rosický</a>, Rem. 4.8(2).
 
-    Remark: A generalized variety is not necessarily finitely accessible, see <a href="https://arxiv.org/abs/2610.08548">Cocompletion under sifted colimits need not be finitely accessible</a> by Kawase.
+    Remark: A generalized variety is not necessarily finitely accessible, see <a href="https://arxiv.org/abs/2610.08548">Kawase</a>.
 
 - id: groupoids_are_generalized_varieties
   assumptions:
@@ -93,7 +93,7 @@
     - multi-algebraic
   conclusions:
     - effective congruences
-  proof: This is Thm. 4.0 in <a href="https://doi.org/10.1007/BF01224953">Yves Diers, Catégories Multialgébriques</a> or <a href="https://translations.thosgood.net/ADM-34-1980-193.pdf">its English translation</a>.
+  proof: See <a href="https://doi.org/10.1007/BF01224953">Diers</a>, Thm. 4.0, or <a href="https://translations.thosgood.net/ADM-34-1980-193.pdf">its English translation</a>.
 
 - id: algebraic_cototal_criterion
   assumptions:

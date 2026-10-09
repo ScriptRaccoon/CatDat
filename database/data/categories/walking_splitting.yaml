@@ -51,7 +51,7 @@ satisfied_properties:
     check_redundancy: false
 
   - property: generalized variety
-    proof: Again we work with $\Vect^{\leq 1}_{\IF_2}$. We already know that it has sifted colimits and that the embedding to $\Vect_{\IF_2}$ preserves them. The object $0$ is initial and hence strongly finitely presentable. The object $\IF_2$ is strongly finitely presentable in $\Vect^{\leq 1}_{\IF_2}$ since its hom-functor is the composition of the embedding and the forgetful functor $\Vect_{\IF_2} \to \Set$, and the latter preserves sifted colimits by <a href="http://www.tac.mta.ca/tac/volumes/8/n3/8-03abs.html">[AR01, Lemma 3.3]</a> applied to $\IF_2 \in \Vect_{\IF_2}$.
+    proof: Again we work with $\Vect^{\leq 1}_{\IF_2}$. We already know that it has sifted colimits and that the embedding to $\Vect_{\IF_2}$ preserves them. The object $0$ is initial and hence strongly finitely presentable. The object $\IF_2$ is strongly finitely presentable in $\Vect^{\leq 1}_{\IF_2}$ since its hom-functor is the composition of the embedding and the forgetful functor $\Vect_{\IF_2} \to \Set$, and the latter preserves sifted colimits by <a href="http://www.tac.mta.ca/tac/volumes/8/n3/8-03abs.html">Adámek–Rosický</a>, Lemma 3.3, applied to $\IF_2 \in \Vect_{\IF_2}$.
 
 unsatisfied_properties:
   - property: one-way

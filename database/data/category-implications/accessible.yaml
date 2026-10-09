@@ -76,7 +76,7 @@
     - accessible
   conclusions:
     - locally essentially small
-  proof: See the proof of Prop. 2.1.5 in <a href="https://bookstore.ams.org/conm-104">Makkai-Pare</a>.
+  proof: See <a href="https://bookstore.ams.org/conm-104">Makkai–Paré</a>, proof of Prop. 2.1.5.
 
 - id: accessible_well-copowered
   assumptions:
@@ -84,7 +84,7 @@
     - pushouts
   conclusions:
     - well-copowered
-  proof: See Thm. 2.49 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adámek–Rosický</a> or Prop. 6.1.3 in <a href="https://bookstore.ams.org/conm-104">Makkai-Pare</a>.
+  proof: See <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adámek–Rosický</a>, Thm. 2.49, or <a href="https://bookstore.ams.org/conm-104">Makkai–Paré</a>, Prop. 6.1.3.
 
 - id: finite_accessible
   assumptions:
@@ -109,7 +109,7 @@
   conclusions:
     - locally presentable
   proof: >-
-    See <a href="https://arxiv.org/abs/1409.7051">Deriving Auslander's formula</a>, Cor. 5.2, or <a href="https://arxiv.org/abs/math/0102087">Sheafifiable homotopy model categories</a>, Prop. 3.10.
+    See <a href="https://arxiv.org/abs/1409.7051">Krause</a>, Cor. 5.2, or <a href="https://arxiv.org/abs/math/0102087">Beke</a>, Prop. 3.10.
 
     Remark: The assumption that the category is locally essentially small is necessary (and is implicit in most of the literature), as the example $\Ab^I$ for large $I$ shows (see <a href="/category/Ab_family">here</a>).
 
@@ -147,7 +147,7 @@
     - accessible
   conclusions:
     - Cauchy complete
-  proof: This is because the walking idempotent is $\kappa$-filtered for any regular cardinal $\kappa$. See also <a href="https://bookstore.ams.org/conm-104">Makkai-Pare</a>, Prop. 2.2.1.
+  proof: This is because the walking idempotent is $\kappa$-filtered for any regular cardinal $\kappa$. See also <a href="https://bookstore.ams.org/conm-104">Makkai–Paré</a>, Prop. 2.2.1.
 
 - id: small_accessible_characterization
   assumptions:
@@ -155,7 +155,7 @@
     - essentially small
   conclusions:
     - accessible
-  proof: See <a href="https://bookstore.ams.org/conm-104">Makkai-Pare</a>, Thm. 2.2.2.
+  proof: See <a href="https://bookstore.ams.org/conm-104">Makkai–Paré</a>, Thm. 2.2.2.
 
 - id: countably_accessible_criterion
   assumptions:
@@ -165,7 +165,7 @@
   conclusions:
     - ℵ₁-accessible
   proof: >-
-    The proof is similar to Thm. 2.2.2 in <a href="https://bookstore.ams.org/conm-104">Makkai-Pare</a> (which only establishes $\aleph_2$-accessibility) and to <a href="https://mathoverflow.net/questions/509853">MO/509853</a> (which concerns $\aleph_0$-accessibility in the finite case).
+    The proof is similar to <a href="https://bookstore.ams.org/conm-104">Makkai–Paré</a>, Thm. 2.2.2 (which only establishes $\aleph_2$-accessibility) and to <a href="https://mathoverflow.net/questions/509853">MO/509853</a> (which concerns $\aleph_0$-accessibility in the finite case).
 
     Let $\C$ be a category that is locally finite, essentially countable, and Cauchy complete. By replacing $\C$ with an equivalent category if necessary, we may assume that it is countable and that all Hom-sets are finite <i>sets</i>. Let $\I$ be an $\aleph_1$-filtered category and let $D : \I \to \C$ be a diagram. We will prove that the colimit of $D$ exists and is a retract of some $D(i)$, in fact for arbitrarily large $i$. (Note that one cannot in general prove that it is isomorphic to some $D(i)$; this is false.) It follows that $\aleph_1$-filtered colimits exist and that every object of $\C$ is $\aleph_1$-presentable.
 

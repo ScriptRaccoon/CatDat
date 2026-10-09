@@ -6,7 +6,7 @@
     - directed colimits
   conclusions:
     - filtered colimits
-  proof: This is Theorem 1.5 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adámek–Rosický</a>.
+  proof: See <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adámek–Rosický</a>, Theorem 1.5.
   is_equivalence: true
 
 - id: sequential_colimits_consequence
@@ -68,7 +68,7 @@
     - ℵ₁-filtered colimits
   conclusions:
     - Cauchy complete
-  proof: More generally, if $\kappa$ is any infinite regular cardinal, a category with $\kappa$-filtered colimits must be Cauchy cocomplete. This is because the <a href="/category/walking_idempotent">walking idempotent</a> is $\kappa$-filtered. See also <a href="https://bookstore.ams.org/conm-104">Makkai-Pare</a>, Prop. 2.2.1.
+  proof: More generally, if $\kappa$ is any infinite regular cardinal, a category with $\kappa$-filtered colimits must be Cauchy cocomplete. This is because the <a href="/category/walking_idempotent">walking idempotent</a> is $\kappa$-filtered. See also <a href="https://bookstore.ams.org/conm-104">Makkai–Paré</a>, Prop. 2.2.1.
 
 - id: sifted_categories_are_connected
   assumptions:
@@ -92,7 +92,7 @@
     - reflexive coequalizers
   conclusions:
     - sifted colimits
-  proof: See Cor. 5.2 in <a href="http://www.tac.mta.ca/tac/volumes/37/35/37-35abs.html">Chen's paper</a>.
+  proof: See <a href="http://www.tac.mta.ca/tac/volumes/37/35/37-35abs.html">Chen</a>, Cor. 5.2.
 
 - id: sifted_colimits_left_cancellative
   assumptions:

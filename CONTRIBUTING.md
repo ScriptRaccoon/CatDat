@@ -176,6 +176,24 @@ As a practical guideline, avoid introducing more than four properties (or four c
 4. For definitions, use `\coloneqq` instead of `:=`.
 5. For LaTeX symbols that are used repeatedly, in particular category-theoretic notation, define a LaTeX macro in [macros.yaml](database/data/macros.yaml).
 
+### Citations
+
+When citing a book or paper, follow these rules:
+
+1. The link text is the author's last name, not the title of the work.
+2. The location (theorem, proposition, section, etc.) comes after the link, separated by a comma.
+3. Multiple authors are joined with an en-dash (`–`), not a hyphen.
+
+For example:
+
+```yaml
+proof: See <a href="https://doi.org/10.1016/0022-4049(93)90035-R">Carboni–Lack–Walters</a>, Prop. 4.5.
+```
+
+```yaml
+proof: See <a href="https://pi.math.cornell.edu/~hatcher/AT/ATpage.html">Hatcher</a>, Example 1B.7.
+```
+
 ### Responsible use of AI
 
 AI tools may be used for both code and data in this repository, as long as a human author takes full responsibility for the result.

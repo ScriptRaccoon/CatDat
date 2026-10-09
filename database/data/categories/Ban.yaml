@@ -27,7 +27,7 @@ satisfied_properties:
     proof: This is immediate from the concrete description of coproducts and products.
 
   - property: locally ℵ₁-presentable
-    proof: Example 1.48 in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adámek–Rosický</a>.
+    proof: See <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adámek–Rosický</a>, Example 1.48.
 
   - property: cartesian filtered colimits
     proof: If $X$ is a Banach space and $(Y_i)$ is a filtered diagram of Banach spaces, the canonical map $\colim_i (X \times Y_i) \to X \times \colim_i Y_i$ is the completion of the canonical map in the category of normed vector spaces with non-expansive linear maps. Now the claim follows directly from <a href="/category/Met">$\Met$</a>.

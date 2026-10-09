@@ -41,7 +41,7 @@ unsatisfied_properties:
   - property: essentially injective
     proof: See <a href="https://math.stackexchange.com/questions/5139806">MSE/5139806</a>.
     # use this proof when group rings are added.
-    # proof: There are finite non-isomorphic groups whose group rings are isomorphic. The first example has been constructed by M. Hertweck, <a href="https://doi.org/10.2307/3062112">A Counterexample to the Isomorphism Problem for Integral Group Rings</a>.
+    # proof: There are finite non-isomorphic groups whose group rings are isomorphic. The first example has been constructed by <a href="https://doi.org/10.2307/3062112">Hertweck</a>.
 
   - property: dominant
     proof: Every monoid ring is torsion-free as an abelian group (in fact, the underlying additive group is free abelian), and a subring of a torsion-free ring is again torsion-free. In particular, the ring $\IZ/2$ is not a retract of a monoid ring.

@@ -40,6 +40,8 @@
 		"axiomatization",
 		"Baer",
 		"Baire",
+		"Barnea",
+		"Beke",
 		"bijection",
 		"bijections",
 		"bijective",
@@ -60,6 +62,13 @@
 		"catdat",
 		"Catégories",
 		"cauchy",
+		"Dieudonné",
+		"Krause",
+		"Kurz",
+		"Paré",
+		"Shelah",
+		"Strecker",
+		"Séminaire",
 		"Čech",
 		"characterisation",
 		"clopen",
@@ -410,10 +419,5 @@
 		"todo.txt",
 		"*.svg"
 	],
-	"ignoreRegExpList": [
-		"\\$[^$]*\\$",
-		"\\$\\$[^$]*\\$\\$",
-		"Wann sind alle stetigen Abbildungen in Y konstant",
-		"Wahrscheinlichkeitstheorie"
-	]
+	"ignoreRegExpList": ["\\$[^$]*\\$", "\\$\\$[^$]*\\$\\$", "Wahrscheinlichkeitstheorie"]
 }

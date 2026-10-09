@@ -46,4 +46,4 @@ unsatisfied_properties:
       in $\CompHaus$ is not empty by Lemma 1 <a href="/content/comphaus_copresentable">here</a>.
 
   - property: preserves binary products
-    proof: The canonical map $\beta(\IN \times \IN) \to \beta(\IN) \times \beta(\IN)$, where $\IN$ carries the discrete topology, is not a homeomorphism. See Glicksberg, <a href="https://doi.org/10.1090/S0002-9947-1959-0105667-4">Stone-Čech compactifications of products</a>, where it is shown for infinite completely regular spaces $X,Y$ that $\beta(X \times Y) \to \beta(X) \times \beta(Y)$ is a homeomorphism if and only if $X \times Y$ is <a href="https://en.wikipedia.org/wiki/Pseudocompact_space">pseudo-compact</a>.
+    proof: The canonical map $\beta(\IN \times \IN) \to \beta(\IN) \times \beta(\IN)$, where $\IN$ carries the discrete topology, is not a homeomorphism. See <a href="https://doi.org/10.1090/S0002-9947-1959-0105667-4">Glicksberg</a>, where it is shown for infinite completely regular spaces $X,Y$ that $\beta(X \times Y) \to \beta(X) \times \beta(Y)$ is a homeomorphism if and only if $X \times Y$ is <a href="https://en.wikipedia.org/wiki/Pseudocompact_space">pseudo-compact</a>.

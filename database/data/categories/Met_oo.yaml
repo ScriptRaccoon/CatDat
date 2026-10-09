@@ -21,7 +21,7 @@ satisfied_properties:
     proof: Every non-empty metric space is weakly terminal (by using constant maps).
 
   - property: locally ℵ₁-presentable
-    proof: This is Example 4.5 in <a href="https://arxiv.org/abs/1504.02660">Metric abstract elementary classes as accessible categories</a>.
+    proof: See <a href="https://arxiv.org/abs/1504.02660">Lieberman–Rosický</a>, Example 4.5.
 
   - property: cartesian filtered colimits
     proof: We can use the same proof as for <a href="/category/Met">$\Met$</a> since the equation $\inf_i \max(r, s_i) = \max(r, \inf_i s_i)$ also holds for $r, s_i \in \IR \cup \{\infty\}$.
