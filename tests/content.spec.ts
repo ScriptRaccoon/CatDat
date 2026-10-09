@@ -62,13 +62,13 @@ test('user can access a content page from the list page', async ({ page }) => {
 		})
 	).toBeVisible()
 
-	await page.getByRole('link', { name: 'Cocongruences on groups' }).click()
+	await page.getByRole('link', { name: 'Cocongruences of groups' }).click()
 
 	await expect(page).toHaveURL('/content/cocongruences_of_groups')
 
 	await expect(
 		page.getByRole('heading', {
-			name: 'Cocongruences on groups'
+			name: 'Cocongruences of groups'
 		})
 	).toBeVisible()
 
