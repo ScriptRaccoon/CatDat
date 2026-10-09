@@ -15,15 +15,15 @@ The CatDat SQLite database `catdat.db` is deployed as a file alongside the web a
 
 However, the SQLite database `app.db` (used for user submissions and page visits) requires writes and is hosted remotely on [Turso](https://turso.tech).
 
-## Deployment Process
+## Deployment process
 
 Follow these steps to deploy to production:
 
-1. **Preview Deployment.** On [GitHub's Actions page](https://github.com/ScriptRaccoon/CatDat/actions), manually trigger the preview pipeline [deploy-preview.yaml](.github/workflows/deploy-preview.yaml).
+1. **Preview deployment.** On [GitHub's Actions page](https://github.com/ScriptRaccoon/CatDat/actions), manually trigger the preview pipeline [deploy-preview.yaml](.github/workflows/deploy-preview.yaml).
 
     It creates the database via `pnpm db:update`, builds the application, and creates a [deployment preview](https://docs.netlify.com/deploy/deploy-types/deploy-previews/) on Netlify. For testing purposes, this step can also be used on branches other than `main`.
 
-2. **Production Deployment.** If the deployment preview looks correct, on [GitHub's Actions page](https://github.com/ScriptRaccoon/CatDat/actions), manually trigger the pipeline [deploy-prod.yaml](.github/workflows/deploy-prod.yaml).
+2. **Production deployment.** If the deployment preview looks correct, on [GitHub's Actions page](https://github.com/ScriptRaccoon/CatDat/actions), manually trigger the pipeline [deploy-prod.yaml](.github/workflows/deploy-prod.yaml).
 
     This pipeline creates the database via `pnpm db:update`, builds the application, and deploys it on Netlify. The previous deployment preview is no longer live. Moreover, a tag is created on GitHub.
 

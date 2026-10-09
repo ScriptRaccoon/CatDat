@@ -31,7 +31,7 @@ Functor implications may also depend on properties of the domain or codomain cat
 
 Additional tables are available. For a complete overview, see the diagram below.
 
-## Schema vs. Data
+## Schema vs. data
 
 The schema defines the structure of the database: tables, views, indexes, and triggers. It is specified in several SQL files located in the subfolder [/database/schema](/database/schema/). The command
 
@@ -57,7 +57,7 @@ pnpm db:text
 
 This compares structure YAML text with the existing database and updates changed names, notations, descriptions, nLab links, and proofs without changing relations or running deductions. Properties and implications are currently not included. Pass `--watch` to keep the command running and update whenever a structure YAML file changes.
 
-## Derived Data
+## Derived data
 
 From the defined satisfied properties of a given categorical structure, new properties can be automatically deduced using the implications. (For example, when a category has equalizers and products, we can infer that it is complete.) The same applies to unsatisfied properties.
 
@@ -71,7 +71,7 @@ pnpm db:deduce
 
 deduces implications, satisfied properties, and unsatisfied properties.
 
-## Test Data
+## Test data
 
 The command
 
@@ -89,7 +89,7 @@ Use the command
 pnpm db:update
 ```
 
-to run all the commands in sequence: `pnpm db:seed`,`pnpm db:deduce`, and `pnpm db:test`. This also creates a copy of the local database in the `/static` folder.
+to run all the commands in sequence: `pnpm db:seed`, `pnpm db:deduce`, and `pnpm db:test`. This also creates a copy of the local database in the `/static` folder.
 
 Pass `--watch` to rerun the update whenever a file in the data folder changes:
 

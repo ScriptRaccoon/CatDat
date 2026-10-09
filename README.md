@@ -11,15 +11,15 @@ _CatDat_ provides a growing collection of categorical structures such as categor
 
 ## Features
 
-- **Four Types of Categorical Structures**: Supports categories, functors, morphisms, and symmetric monoidal categories.
-- **Structure Detail Pages**: Each categorical structure has a dedicated page with its definition, satisfied and unsatisfied properties, and related structures.
-- **Property Detail Pages**: Explore the definition of a property and view categorical structures that satisfy it and those that don't.
-- **Proofs and References**: Each property and implication includes a proof or reference, forming a data-driven knowledge base for category theory.
-- **Deduction System**: Automatically infers properties of categorical structures from existing ones using a database of implications.
-- **Automatic Dualization**: Automatically dualizes implications and property assignments.
-- **Searchable Database**: Find categorical structures based on satisfied properties and unsatisfied properties.
-- **Comparison Feature**: Compare multiple categorical structures to identify their differences and similarities.
-- **Intuitive User Interface**: Usable on both mobile and desktop. Supports Light/dark mode.
+- **Four types of categorical structures**: Supports categories, functors, morphisms, and symmetric monoidal categories.
+- **Structure detail pages**: Each categorical structure has a dedicated page with its definition, satisfied and unsatisfied properties, and related structures.
+- **Property detail pages**: Explore the definition of a property and view categorical structures that satisfy it and those that don't.
+- **Proofs and references**: Each property and implication includes a proof or reference, forming a data-driven knowledge base for category theory.
+- **Deduction system**: Automatically infers properties of categorical structures from existing ones using a database of implications.
+- **Automatic dualization**: Automatically dualizes implications and property assignments.
+- **Searchable database**: Find categorical structures based on satisfied and unsatisfied properties.
+- **Comparison feature**: Compare multiple categorical structures to identify their differences and similarities.
+- **Intuitive user interface**: Usable on both mobile and desktop. Supports light/dark mode.
 
 ## How to contribute
 
@@ -29,11 +29,11 @@ This project is a **community effort**. Whether you're a mathematician spotting 
 
 - [The database of _CatDat_](DATABASE.md)
 - [Deployment](DEPLOYMENT.md)
-- [Status Page](https://catdat.openstatus.dev/)
+- [Status page](https://catdat.openstatus.dev/)
 
-## Local Setup
+## Local setup
 
-You need to have [Git](https://git-scm.com/), [NodeJS](https://nodejs.org/) and [pnpm](https://pnpm.io/) installed.
+You need to have [Git](https://git-scm.com/), [Node.js](https://nodejs.org/) and [pnpm](https://pnpm.io/) installed.
 
 1. Fork `ScriptRaccoon/CatDat` on GitHub.
 2. Clone your fork with `git clone https://github.com/{your_username}/CatDat.git`.
@@ -43,7 +43,7 @@ You need to have [Git](https://git-scm.com/), [NodeJS](https://nodejs.org/) and 
 6. Update the local database with `pnpm db:update`.
 7. Start the local development server with `pnpm dev`.
 
-## Tech Stack
+## Tech stack
 
 Built with modern web technologies:
 
@@ -51,7 +51,7 @@ Built with modern web technologies:
 - Framework: [SvelteKit 3](https://svelte.dev/docs/kit/introduction)
 - Database: [SQLite](https://sqlite.org/)
 - Deployment: [Netlify](https://netlify.com)
-- Math Rendering: [katex](https://www.npmjs.com/package/katex)
+- Math rendering: [KaTeX](https://www.npmjs.com/package/katex)
 - End-to-end testing: [Playwright](https://playwright.dev)
 
 ## Admin application
@@ -67,11 +67,11 @@ _CatDat_ draws inspiration from and complements other resources in category theo
 - **[nLab](https://ncatlab.org)**: A wiki for (higher) category theory. _CatDat_ refers to nLab pages for detailed information on its entries.
 - **[Clowder Project](https://clowderproject.com)**: A new online reference for category theory. Unlike _CatDat_, which is data-based, Clowder follows a textbook-based approach.
 - **[Database of Ring Theory](https://ringtheory.herokuapp.com/)**: This database focuses on ring theory and module theory rather than category theory, but is very similar in nature and was a major inspiration for _CatDat_.
-- **[pi-Base](https://topology.pi-base.org/)**: This is a database of examples and counterexamples in topology. Just like _CatDat_ it uses three types of entries (objects, properties, and theorems) and automatically derives properties from the theorems.
+- **[pi-Base](https://topology.pi-base.org/)**: This is a database of examples and counterexamples in topology. Just like _CatDat_, it uses three types of entries (objects, properties, and theorems) and automatically derives properties from the theorems.
 
-**[MathBases](https://mathbases.org/)** lists many other databases for other kinds of mathematical structure.
+**[MathBases](https://mathbases.org/)** lists many other databases for other kinds of mathematical structures.
 
-## Financial Support
+## Financial support
 
 If you find this project useful, you can support its development:
 

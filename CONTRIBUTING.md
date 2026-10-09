@@ -1,30 +1,30 @@
-# How to Contribute
+# How to contribute
 
 [Watch the YouTube video](https://youtu.be/NoZWdMFfQfg)
 
 There are three ways to contribute:
 
-- [Use the Suggestion Form](#option-1-use-the-suggestion-form)
-- [Create an Issue](#option-2-create-an-issue)
-- [Create a Pull Request](#option-3-create-a-pull-request)
+- [Use the suggestion form](#option-1-use-the-suggestion-form)
+- [Create an issue](#option-2-create-an-issue)
+- [Create a pull request](#option-3-create-a-pull-request)
 
-## Option 1: Use the Suggestion Form
+## Option 1: Use the suggestion form
 
-On most pages of CatDat, you will find a suggestion form at the bottom. Use it to contribute new data, report an issue, or make a suggestion. Submissions are reviewed before automatically creating a GitHub issue, which we then try to resolve or implement.
+On most pages of CatDat, you will find a suggestion form at the bottom. Use it to contribute new data, report an issue, or make a suggestion. Submissions are reviewed before a GitHub issue is created automatically, which we then try to resolve or implement.
 
 This option does not require any knowledge of GitHub or coding, making it accessible to everyone. It also does not require following any guidelines for adding new data (see below).
 
-## Option 2: Create an Issue
+## Option 2: Create an issue
 
 If you want to report a bug or submit a feature request, you can [**create an issue**](https://github.com/ScriptRaccoon/CatDat/issues/new). You will need a GitHub account.
 
-## Option 3: Create a Pull Request
+## Option 3: Create a pull request
 
 Create a [**pull request**](https://github.com/ScriptRaccoon/CatDat/pulls). You will need a GitHub account.
 
 ### New to open source?
 
-If you have not contributed to an open source project before, start by forking the repository on GitHub. A _fork_ is your own copy of the project under your GitHub account. It lets you make changes safely without affecting the original repository. A _pull request_ is a way to propose changes to the project and have them reviewed before they are merged into the original repository.
+If you have not contributed to an open-source project before, start by forking the repository on GitHub. A _fork_ is your own copy of the project under your GitHub account. It lets you make changes safely without affecting the original repository. A _pull request_ is a way to propose changes to the project and have them reviewed before they are merged into the original repository.
 
 The typical process is:
 
@@ -39,9 +39,9 @@ More info can be found in GitHub's help section:
 
 - [Collaborating with pull requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests)
 
-### Local Setup
+### Local setup
 
-You need to have [Git](https://git-scm.com/), [NodeJS](https://nodejs.org/) and [pnpm](https://pnpm.io/) installed.
+You need to have [Git](https://git-scm.com/), [Node.js](https://nodejs.org/) and [pnpm](https://pnpm.io/) installed.
 
 1. Fork `ScriptRaccoon/CatDat` on GitHub.
 2. Clone your fork with `git clone https://github.com/{your_username}/CatDat.git`.
@@ -51,9 +51,9 @@ You need to have [Git](https://git-scm.com/), [NodeJS](https://nodejs.org/) and 
 6. Update the local database with `pnpm db:update`.
 7. Start the local development server with `pnpm dev`.
 
-### Updating the Database
+### Updating the database
 
-All updates to the database are made by modifying the YAML files in the folder [/database/data](database/data). See [DATABASE.md](/DATABASE.md) for an overview of the database structure, and see [below](#authoring-of-yaml-files) for some tips how to edit YAML files.
+All updates to the database are made by modifying the YAML files in the folder [/database/data](database/data). See [DATABASE.md](/DATABASE.md) for an overview of the database structure, and see [below](#authoring-of-yaml-files) for some tips on how to edit YAML files.
 
 Apply the updates using:
 
@@ -67,16 +67,14 @@ To continuously run the update when a file in the data folder changes, use
 pnpm db:update --watch
 ```
 
-For text-only changes to existing structures (names, notations, descriptions, nLab
-links, or proofs), use `pnpm db:text`. It detects and updates changed fields without
-rebuilding relations or running deductions. Add `--watch` to keep it running and update whenever a structure YAML file changes.
+For text-only changes to existing structures (names, notations, descriptions, nLab links, or proofs), use `pnpm db:text`. It detects and updates changed fields without rebuilding relations or running deductions. Add `--watch` to keep it running and update whenever a structure YAML file changes.
 
 ### Troubleshooting
 
 - If the local database is corrupted, or its schema has changed, recreate it using `pnpm db:setup`.
 - If the `pnpm db:update` command fails, examine the error message to determine the cause. It could be due to malformed YAML, a contradictory property, or a failing test in the `pnpm db:test` script (which also runs as part of the update command), as explained below.
 
-### Tests for Data Quality
+### Tests for data quality
 
 The `pnpm db:test` command runs several tests to ensure the data behaves as expected and maintains good quality:
 
@@ -89,53 +87,53 @@ Similar checks are done for functors and other categorical structures. If any of
 
 **For maintainers:** The command `pnpm e2e` executes end-to-end tests via Playwright.
 
-### Example Pull Requests
+### Example pull requests
 
 - [Add category of compact Hausdorff spaces](https://github.com/ScriptRaccoon/CatDat/pull/160)
 - [Add new property: locally finite](https://github.com/ScriptRaccoon/CatDat/pull/180)
 - [Add the category of countable groups](https://github.com/ScriptRaccoon/CatDat/pull/171)
 
-### Guidelines for Adding New Data
+### Guidelines for adding new data
 
 When contributing new data (categories, functors, properties, implications, etc.), please follow these guidelines:
 
 - **Consistency**: Stick to the format indicated by the existing data. This is enforced by the database definition.
 
-- **Reduce Unknowns**: Try to reduce the number of unknown properties of categories, in particular when adding a new category. Use the category detail page to see its unknown properties. Use the [page with missing data](https://catdat.app/missing) to identify categories with unknown properties. The same remarks apply to functors and other categorical structures.
+- **Reduce unknowns**: Try to reduce the number of unknown properties of categories, in particular when adding a new category. Use the category detail page to see its unknown properties. Use the [page with missing data](https://catdat.app/missing) to identify categories with unknown properties. The same remarks apply to functors and other categorical structures.
 
 - **Avoid redundant assignments**: Only assign properties (satisfied or not) to a category or any other categorical structure if they cannot be deduced from other assignments. For example, if a category is complete by a direct proof, record that it is complete, but do not also record that it has a terminal object; the application infers this automatically. Redundant assignments can be identified using the redundancy script described below.
 
-- **References and Labels**: If a proof refers to another proof, use references and labels to make this connection explicit. See [this PR](https://github.com/ScriptRaccoon/CatDat/pull/319) for details.
+- **References and labels**: If a proof refers to another proof, use references and labels to make this connection explicit. See [this PR](https://github.com/ScriptRaccoon/CatDat/pull/319) for details.
 
 - **No dual categories**: Instead of adding the dual of a category already in the database, consider adding properties to the original category (use the corresponding dual properties).
 
 - **No equivalent categories**: Do not add categories that are equivalent or even isomorphic to categories already in the database. If the equivalence is non-trivial, mention it in the description of the original category. Some exceptions are allowed, since certain properties (such as being skeletal) are not invariant under equivalence.
 
-- **Special Objects and Morphisms**: For each new category, try to specify its special objects (terminal object, initial object, etc.) in the corresponding table. Also try to specify its special morphisms (isomorphisms, monomorphisms, epimorphisms, regular monomorphisms, regular epimorphisms).
+- **Special objects and morphisms**: For each new category, try to specify its special objects (terminal object, initial object, etc.) in the corresponding table. Also try to specify its special morphisms (isomorphisms, monomorphisms, epimorphisms, regular monomorphisms, regular epimorphisms).
 
-- **Proofs for New Properties**: For every new property of categories, for each existing category, try to find a proof for whether it has this property or not, in case this has not already been deduced automatically via some implication. Use the property detail page to check unknown cases. These proofs may also refer to other categories, in which case you may add links to their corresponding pages. As mentioned in the section on tests, for a list of selected categories it is actually mandatory to decide their properties. The same remarks apply to functors and other categorical structures.
+- **Proofs for new properties**: For every new property of categories, for each existing category, try to find a proof for whether it has this property or not, in case this has not already been deduced automatically via some implication. Use the property detail page to check unknown cases. These proofs may also refer to other categories, in which case you may add links to their corresponding pages. As mentioned in the section on tests, for a list of selected categories it is actually mandatory to decide their properties. The same remarks apply to functors and other categorical structures.
 
 - **Counterexamples**: For any added property of categories, ensure that at least one category does not satisfy it. If no existing category fits, add a new category that does not have the new property. The same remarks apply to properties of functors and other categorical structures.
 
 - **Easy properties first**: The order in which properties are assigned to a category (or any other categorical structure) will also be shown on its page. For this reason, prefer an order in which the trivial and easy assignments appear first. More technical properties should usually appear later. Assignments of closely related properties should also be grouped together whenever possible.
 
-- **Positive Properties**: Do not add negated properties to the database. For example, do not add "large" as the negation of "small". Instead, add "small" to the list of unsatisfied properties for a category. Every registered property of categories should be satisfied at least by the trivial category. Similarly, every property of functors should be satisfied at least by the identity functor.
+- **Positive properties**: Do not add negated properties to the database. For example, do not add "large" as the negation of "small". Instead, add "small" to the list of unsatisfied properties for a category. Every registered property of categories should be satisfied at least by the trivial category. Similarly, every property of functors should be satisfied at least by the identity functor.
 
-- **Proofs for Claims**: Provide proofs for all new claims (satisfied properties, unsatisfied properties, implications, special morphisms).
+- **Proofs for claims**: Provide proofs for all new claims (satisfied properties, unsatisfied properties, implications, special morphisms).
 
-- **Atomic Implications**: Do not add implications that can be deduced from others. For example, do not add "complete => finite products" since it can be deduced from "complete => finitely complete" and "finitely complete => finite products". These are combined automatically.
+- **Atomic implications**: Do not add implications that can be deduced from others. For example, do not add "complete => finite products" since it can be deduced from "complete => finitely complete" and "finitely complete => finite products". These are combined automatically.
 
-- **No dual implications**: Implications are dualized automatically when applicable. For this reason, adding the category implication "finitely cocomplete => pushouts" is not necessary when "finitely complete => pullbacks" has already been added. Similarly, the functor implication "comonadic => left adjoint" is automatically dualized from "monadic => right adjoint". When an implication can be phrased both in a "limit" or "colimit" variant, prefer the "limit" variant (unless the literature focusses on the "colimit" variant).
+- **No dual implications**: Implications are dualized automatically when applicable. For this reason, adding the category implication "finitely cocomplete => pushouts" is not necessary when "finitely complete => pullbacks" has already been added. Similarly, the functor implication "comonadic => left adjoint" is automatically dualized from "monadic => right adjoint". When an implication can be phrased in either a "limit" or a "colimit" variant, prefer the "limit" variant (unless the literature focusses on the "colimit" variant).
 
-- **Relevant implications**: When adding a new property, include implications involving this property and existing properties. For example, when adding the property of categories of having "countable products", also add the implication "countable products => finite products". Refactor existing implications if necessary. Ensure that for most categorical structures, it will be inferred if the property holds or not.
+- **Relevant implications**: When adding a new property, include implications involving this property and existing properties. For example, when adding the property of categories of having "countable products", also add the implication "countable products => finite products". Refactor existing implications if necessary. Ensure that for most categorical structures, it will be inferred whether the property holds or not.
 
-- **Simplify Implications**: When adding a new implication, check if it simplifies existing implications and if it deduces some previously non-deduced properties.
+- **Simplify implications**: When adding a new implication, check if it simplifies existing implications and if it deduces some previously non-deduced properties.
 
-- **Content pages**: Use markdown-generated content pages for reusable lemmas that apply to multiple property assignments, and for proofs that require their own lemmas. Long proofs that do not fall into these cases can stay in the YAML files. Content pages are located in the [`/content`](/content/) folder. For example, `/content/subcategories.md` is rendered at [`/content/subcategories`](https://catdat.app/content/subcategories).
+- **Content pages**: Use Markdown-generated content pages for reusable lemmas that apply to multiple property assignments, and for proofs that require their own lemmas. Long proofs that do not fall into these cases can stay in the YAML files. Content pages are located in the [`/content`](/content/) folder. For example, `/content/subcategories.md` is rendered at [`/content/subcategories`](https://catdat.app/content/subcategories).
 
-- **New Combinations**: Add new categories that satisfy combinations of satisfied properties and unsatisfied properties and not yet in the database. For example, you may add a category that is abelian but neither cocomplete nor essentially small (if it is not already present). The [page with missing data](https://catdat.app/missing) lists consistent combinations of the form $p \land \neg q$ that are not yet witnessed by a category in the database. The same remarks apply to functors and other categorical structures.
+- **New combinations**: Add new categories that satisfy combinations of satisfied and unsatisfied properties that are not yet in the database. For example, you may add a category that is abelian but neither cocomplete nor essentially small (if it is not already present). The [page with missing data](https://catdat.app/missing) lists consistent combinations of the form $p \land \neg q$ that are not yet witnessed by a category in the database. The same remarks apply to functors and other categorical structures.
 
-### Redundancy Script
+### Redundancy script
 
 As noted above, avoid redundant property assignments to a categorical structure. To detect redundancies, run `pnpm db:redundancies`.
 
@@ -145,7 +143,7 @@ Removing redundant assignments is not required, but it is recommended, especiall
 
 In particular, it often makes sense to **keep** a redundant assignment of a satisfied property in the following cases:
 
-- The proof for the property is straight forward anyway (e.g. showing that a category is pointed).
+- The proof for the property is straightforward anyway (e.g. showing that a category is pointed).
 - The proof provides useful insight.
 - The proof constructs objects (especially limits or colimits) that are used later.
 - Removing the assignment would lead to an overly complex deduction generated by _CatDat_.
@@ -155,7 +153,7 @@ For example, you may first prove that a category has zero morphisms, and then pr
 
 Every redundant assignment of a satisfied property that is intentionally kept must be explicitly marked to skip the redundancy check. See [`N.yaml`](/database/data/categories/N.yaml) for an example.
 
-### Keep Pull Requests Focused
+### Keep pull requests focused
 
 Please keep each pull request limited in scope. Large pull requests are harder to review, more likely to conflict with ongoing changes on the main branch, and more difficult to merge cleanly.
 
@@ -165,7 +163,7 @@ Examples of appropriate pull requests include:
 
 - adding a single category property and determining it for several categories in the database,
 - adding a single category together with its properties,
-- adding a single missing proof
+- adding a single missing proof,
 - clarifying definitions, explanations, or documentation.
 
 As a practical guideline, avoid introducing more than four properties (or four categories) in a single pull request.
@@ -174,11 +172,11 @@ As a practical guideline, avoid introducing more than four properties (or four c
 
 1. Write `non-empty`, not `nonempty`. Same for `non-unital`, `non-expansive`, etc.
 2. Use `\varnothing` to display the empty set, not `\emptyset`.
-3. For declarations of functions or morphisms use `f : X \to Y`, not `f \colon X \to Y`.
-4. For definitions use `\coloneqq` instead of `:=`.
+3. For declarations of functions or morphisms, use `f : X \to Y`, not `f \colon X \to Y`.
+4. For definitions, use `\coloneqq` instead of `:=`.
 5. For LaTeX symbols that are used repeatedly, in particular category-theoretic notation, define a LaTeX macro in [macros.yaml](database/data/macros.yaml).
 
-### Responsible Use of AI
+### Responsible use of AI
 
 AI tools may be used for both code and data in this repository, as long as a human author takes full responsibility for the result.
 
