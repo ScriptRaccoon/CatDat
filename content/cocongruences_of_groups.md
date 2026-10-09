@@ -1,11 +1,11 @@
 ---
-title: Cocongruences on groups are effective
+title: Cocongruences of groups are effective
 description: This result will be proved more generally for categories in which pushouts and monomorphisms interact in a suitable way.
 ---
 
-# Cocongruences on groups are effective
+# Cocongruences of groups are effective
 
-Our goal is to prove that every cocongruence in $\Grp$ is effective. We will establish a more general result for categories in which pushouts and monomorphisms interact in a suitable way.
+Our goal is to prove that every cocongruence (see definition [here](/category-property/coquotients_of_cocongruences)) in $\Grp$ is effective. We will establish a more general result for categories in which pushouts and monomorphisms interact in a suitable way.
 
 We shall say that a category $\C$ has _good pushouts of monomorphisms_ if it has pushouts of monomorphisms and if, for every diagram of monomorphisms
 
@@ -104,4 +104,8 @@ Thus, $a$ is simply a morphism equalizing $i_1$ and $i_2$, so it factors uniquel
 
 ::: Corollary 3
 Every cocongruence in the category $\Grp$ is effective.
+:::
+
+::: Proof
+We know that $\Grp$ is balanced (since it is mono-regular, see [here](/category/Grp) for the proofs) and has equalizers. Moreover, it has good pushouts of monomorphisms by Proposition 1. Thus, the claim follows from Proposition 2.
 :::
