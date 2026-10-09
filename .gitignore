@@ -27,3 +27,6 @@ thoughts.txt
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
+
+# Local proof review log (findings are tracked in GitHub issues)
+proof-review.md
