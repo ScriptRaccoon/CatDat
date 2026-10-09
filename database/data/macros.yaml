@@ -95,6 +95,7 @@
 \Open: \operatorname{Open}
 \Id: \operatorname{Id}
 \Br: \operatorname{Br}
+\dom: \operatorname{dom}
 \rightrightrightarrows: \mathrel{\substack{\rightarrow\\[-0.6ex]\rightarrow\\[-0.6ex]\rightarrow}}
 \dottedrightrightarrows: \mathrel{\substack{\rightarrow\\[-0.6ex]\cdots\\[-0.6ex]\rightarrow}}
 
@@ -171,3 +172,4 @@
 \Mono: \mathbf{Mono}
 \Sh: \mathbf{Sh}
 \Proj: \mathbf{Proj}
+\omegaSet: \omega{-}\Set
