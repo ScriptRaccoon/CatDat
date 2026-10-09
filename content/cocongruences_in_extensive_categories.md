@@ -109,7 +109,7 @@ To see this, note that since $j_1$ is a (split) monomorphism, we have a pullback
 $$
 \begin{CD}
 X @> \id >> X \\
-@V \id VV @V j_1 VV \\
+@V \id VV @VV j_1 V \\
 X @>> j_1 > E.
 \end{CD}
 $$
@@ -119,7 +119,7 @@ Similarly, since $e$ is formed as a coreflexive equalizer, we have a pullback di
 $$
 \begin{CD}
 Y @> e >> X \\
-@V e VV @V j_1 VV \\
+@V e VV @VV j_1 V \\
 X @>> j_2 > E.
 \end{CD}
 $$
@@ -131,7 +131,7 @@ Combining these using Lemma 2, we get a pullback diagram
 $$
 \begin{CD}
 X+Y @> (\id; e) >> X \\
-@V \id + e VV @V j_1 VV \\
+@V \id + e VV @VV j_1 V \\
 X+X @>> (j_1; j_2) > E.
 \end{CD}
 $$
@@ -141,7 +141,7 @@ Similarly, we get a pullback diagram
 $$
 \begin{CD}
 Y+X @> (e; \id) >> X \\
-@V e + \id VV @V j_2 VV \\
+@V e + \id VV @VV j_2 V \\
 X+X @>> (j_1; j_2) > E.
 \end{CD}
 $$
@@ -151,7 +151,7 @@ Now, combining those two using Lemma 2 (transposed), we get a pullback diagram
 $$
 \begin{CD}
 (X+Y)+(Y+X) @> (\id; e) + (e; \id) >> X+X \\
-@V (\id+e; e+\id) VV @V (j_1; j_2) VV \\
+@V (\id+e; e+\id) VV @VV (j_1; j_2) V \\
 X+X @>> (j_1; j_2) > E.
 \end{CD}
 $$
