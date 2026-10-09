@@ -167,7 +167,7 @@ satisfied_properties:
       Finally, since $\nabla 2$ and $(P(\IN) \setminus \{ \varnothing \}, {\in}_{\IN})$ both have non-empty underlying sets, they form a strongly connected family (see the proof above that $\omegaSet$ is semi-strongly connected). Therefore, by <a href="/content/generator_construction">this result</a>, the product of these two objects is an extremal cogenerator.
     references:
       - omega_Set_ssc
-      - set_extremal_cogenerator
+      - Set_extremal_cogenerator
 
   - property: parametrized natural numbers object
     proof: >-
