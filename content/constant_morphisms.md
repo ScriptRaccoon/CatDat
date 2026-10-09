@@ -5,8 +5,10 @@ description: We prove some results that help determine whether a morphism in a c
 
 # Results on constant morphisms
 
+Recall that a map of sets $f : X \to Y$ is called constant if $f(x_1)=f(x_2)$ for all $x_1,x_2 \in X$. There is also another definition, which requires $f$ to factor through a singleton set, but we will not use it here. Hence, the unique map $\varnothing \to \varnothing$ is regarded as constant.
+
 ::: Lemma 1
-A [constant morphism](/morphism-property/constant) in $\Set$ is the same as a constant map in the usual sense.
+A [constant morphism](/morphism-property/constant) in $\Set$ is the same as a constant map.
 :::
 
 ::: Proof
