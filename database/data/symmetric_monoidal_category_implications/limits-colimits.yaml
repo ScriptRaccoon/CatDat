@@ -44,7 +44,7 @@
   proof: This is just the definition of an infinitary distributive category.
   # TODO: make this an equivalence when we have category_conclusions
 
-- id: cartesian_never_complete
+- id: cartesian_never_codistributive
   assumptions:
     - cartesian
     - codistributive

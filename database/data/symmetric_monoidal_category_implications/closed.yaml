@@ -60,4 +60,4 @@
       - locally essentially small
   conclusions:
     - closed
-  proof: This follows by applying the dualized <a href="https://ncatlab.org/nlab/show/adjoint+functor+theorem">Special Adjoint Functor Theorem</a> to each functor $A \otimes -$.
+  proof: This follows by applying the dual of the <a href="/functor-implication/saft">Special Adjoint Functor Theorem</a> to each functor $A \otimes -$.
