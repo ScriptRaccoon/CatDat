@@ -194,6 +194,23 @@ proof: See <a href="https://doi.org/10.1016/0022-4049(93)90035-R">Carboni–Lack
 proof: See <a href="https://pi.math.cornell.edu/~hatcher/AT/ATpage.html">Hatcher</a>, Example 1B.7.
 ```
 
+For posts on [Mathematics Stack Exchange](https://math.stackexchange.com) and [MathOverflow](https://mathoverflow.net), follow these rules:
+
+1. The link text is `MSE/<question id>` or `MO/<question id>`, not the title of the question.
+2. To cite the question as a whole, link to `https://math.stackexchange.com/questions/<question id>` (resp. `https://mathoverflow.net/questions/<question id>`), without the title slug.
+3. To cite a specific answer, link to `https://math.stackexchange.com/a/<answer id>` (resp. `https://mathoverflow.net/a/<answer id>`), but keep the question ID in the link text.
+4. Remove the user ID that the "Share" button appends to answer links (e.g. `/a/511519/2841` becomes `/a/511519`).
+
+For example:
+
+```yaml
+proof: See <a href="https://math.stackexchange.com/questions/601463">MSE/601463</a>.
+```
+
+```yaml
+proof: This is shown in <a href="https://mathoverflow.net/a/510809">MO/510744</a>.
+```
+
 ### Responsible use of AI
 
 AI tools may be used for both code and data in this repository, as long as a human author takes full responsibility for the result.
