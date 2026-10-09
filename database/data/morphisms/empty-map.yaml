@@ -18,7 +18,7 @@ satisfied_properties:
     proof: It is vacuously injective.
 
   - property: constant
-    proof: The map is clearly constant, and by Lemma 1 <a href="/content/constant_morphisms">here</a> this means that the morphism in $\Set$ is constant.
+    proof: The map is vacuously constant, and by Lemma 1 <a href="/content/constant_morphisms">here</a> this means that the morphism in $\Set$ is constant.
 
   - property: coconstant
     proof: This is because $\varnothing$ is initial; see also the dual of Lemma 4 <a href="/content/constant_morphisms">here</a>.
