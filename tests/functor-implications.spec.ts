@@ -30,7 +30,7 @@ test('user can navigate to a functor implication', async ({ page }) => {
 
 	await expect(
 		page.getByRole('heading', {
-			name: 'Implication Details',
+			name: 'Implication details',
 			exact: true
 		})
 	).toBeVisible()
@@ -43,7 +43,7 @@ test('user can see the details of an implication', async ({ page }) => {
 
 	await expect(
 		page.getByRole('heading', {
-			name: 'Implication Details',
+			name: 'Implication details',
 			exact: true
 		})
 	).toBeVisible()

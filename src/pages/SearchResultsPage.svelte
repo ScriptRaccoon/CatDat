@@ -51,7 +51,7 @@
 </script>
 
 <MetaData
-	title="Search Results"
+	title="Search results"
 	description="{PLURALS[
 		type
 	]} that satisfy a specific set of properties while simultaneously not satisfying another set of properties."
@@ -91,7 +91,7 @@
 			one: `Found {count} ${remove_underscores(type)}`,
 			other:
 				found_structures.length === 0
-					? `Found {count} ${PLURALS[type]}. Try to dualize the search.`
+					? `Found {count} ${PLURALS[type]}. Try dualizing the search.`
 					: `Found {count} ${PLURALS[type]}`
 		})}
 	</p>

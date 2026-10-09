@@ -29,12 +29,14 @@
 		<h2>{capitalize(PLURALS[type])} with unknown properties</h2>
 
 		<p class="hint">
-			There are {structures.length}
-			{PLURALS[type]}
-			where at least one property is unknown.
+			{pluralize(structures.length, {
+				one: `There is {count} ${remove_underscores(type)} with at least one unknown property.`,
+				other: `There are {count} ${PLURALS[type]} with at least one unknown property.`
+			})}
 
 			{#if total > 0}
-				In total, there are {total} unknown ({type}, property)-pairs.
+				In total, there are {total} unknown ({remove_underscores(type)}, property)
+				pairs.
 			{:else}
 				🎉
 			{/if}
@@ -48,8 +50,10 @@
 	<h2>Categories with unknown special morphisms</h2>
 
 	<p class="hint">
-		There are {data.categories_with_missing_morphisms.length} categories where at least
-		one kind of special morphism is unknown.
+		{pluralize(data.categories_with_missing_morphisms.length, {
+			one: 'There is {count} category with at least one unknown kind of special morphism.',
+			other: 'There are {count} categories with at least one unknown kind of special morphism.'
+		})}
 	</p>
 
 	<StructureList structures={data.categories_with_missing_morphisms} type="category" />

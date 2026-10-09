@@ -76,8 +76,9 @@
 
 <MetaData
 	title="Property combo search"
-	description="Search for {PLURALS[type]}
-	that satisfy a specific set of properties while simultaneously not satisfying another set of properties. "
+	description="Search for {PLURALS[
+		type
+	]} that satisfy a specific set of properties while simultaneously not satisfying another set of properties."
 />
 
 <h1>Property combo search</h1>
