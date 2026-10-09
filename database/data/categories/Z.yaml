@@ -4,7 +4,7 @@ notation: $[\CRing, \Set]$
 objects: Z-functors, i.e. functors from commutative rings to sets
 morphisms: natural transformations
 description: This category is used in functorial algebraic geometry. It also provides a typical example of a functor category that is not locally small, but nevertheless relevant. Most of its properties are directly derived from the category of sets, so other functor categories $[\C, \Set]$ for large categories $\C$ will be similar.
-nlab_link: null
+nlab_link: https://ncatlab.org/nlab/show/Z-functor
 
 tags:
   - algebraic geometry
@@ -46,7 +46,7 @@ unsatisfied_properties:
     proof: Any counterexample for <a href="/category/Set">$\Set$</a> (i.e., any non-symmetric reflexive relation) yields one for this category by taking constant functors.
 
   - property: semi-strongly connected
-    proof: This is because already the full subcategory of representable functors is not semi-strongly connected, because <a href="/category/CRing">$\CRing$</a> is not semi-strongly connected. Specifically, there is no morphism between $\Hom(\IF_2,-)$ and $\Hom(\IF_3,-)$.
+    proof: This is because already the full subcategory of representable functors is not semi-strongly connected, since <a href="/category/CRing">$\CRing$</a> is not semi-strongly connected. Specifically, there is no morphism between $\Hom(\IF_2,-)$ and $\Hom(\IF_3,-)$.
     references:
       - CRing_no_semi_strongly_connected
 
@@ -56,17 +56,34 @@ unsatisfied_properties:
   - property: cartesian closed
     proof: 'There are functors $F,G : \CRing \rightrightarrows \Set$ such that $\Hom(F,G)$ is not essentially small; see <a href="https://mathoverflow.net/questions/390611">MO/390611</a> for example. Now if the exponential $[F,G] : \CRing \to \Set$ exists, we get $[F,G](\IZ) \cong \Hom(\Hom(\IZ,-),[F,G])$ by Yoneda, which simplifies to $\Hom(1,[F,G]) \cong \Hom(1 \times F,G) \cong \Hom(F,G)$, a contradiction.'
 
-  - property: well-powered
-    proof: 'Consider the functor $F$ from <a href="https://mathoverflow.net/questions/390611">MO/390611</a> for example. The collection of subobjects of $F$ is not essentially small: for each infinite cardinal $\kappa$, simply cut off the construction of $F$ at $\kappa$. This yields a different subobject for each $\kappa$.'
-
   - property: cofiltered-limit-stable epimorphisms
     proof: We already know that <a href="/category/Set">$\Set$</a> does not have this property. Now apply the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> to the functor $\Set \to [\CRing, \Set]$ that maps a set to its constant functor.
+
+  - property: well-powered
+    proof: 'Let $T$ denote the terminal object, i.e. the constant functor with value $\{\ast\}$. For infinite cardinals $\kappa$ we define a subfunctor $T_\kappa \subseteq T$ as follows: If $R$ is a commutative ring that has a homomorphism $K \to R$ from a field $K$ of cardinality at least $\kappa$, then $T_\kappa(R) = \{\ast\}$. Otherwise, we put $T_\kappa(R) = \varnothing$. Note that if $R \neq 0$ has cardinality strictly less than $\kappa$, then $T_\kappa(R) = \varnothing$. Since homomorphisms $K \to R \to S$ compose to a homomorphism $K \to S$, we see that $T_\kappa$ is indeed a subfunctor of $T$. For $\kappa < \lambda$ the subfunctors $T_\kappa$ and $T_\lambda$ are not isomorphic, because there is a field $K$ of cardinality $\kappa$, and then $T_\lambda(K) = \varnothing$, while $T_\kappa(K) = \{\ast\}$. This shows that the collection $\Sub(T)$ is not essentially small.'
+    label: Z_well-powered
+
+  - property: subobject classifier
+    proof: >-
+      Let $T$ denote the terminal object, i.e. the constant functor with value $\{\ast\}$. Assume for contradiction that a subobject classifier $\Omega$ exists. Then
+      $$\Sub(T) \cong \Hom(T,\Omega) \cong \Hom(\Hom(\IZ,-),\Omega) \cong \Omega(\IZ)$$
+      shows that $\Sub(T)$ is essentially small. In the proof that the category is not well-powered, we have seen that this is not the case.
+    references:
+      - Z_well-powered
+
+  - property: generating collection
+    proof: Assume that $S$ is a generating collection; in particular, $S$ is essentially small. For each $F \in S$ that is non-empty at some non-zero ring, choose some $R_F \neq 0$ with $F(R_F) \neq \varnothing$. Let $\kappa$ be an infinite cardinal larger than all $\card(R_F)$ for such $F \in S$. Let $T_\kappa$ be the functor constructed in the proof that the category is not well-powered. Also, consider the functor $G$ defined by $G(R) \coloneqq \{0,1\}$ for $R \neq 0$ and $G(0) \coloneqq \{\ast\}$, with the obvious maps on ring maps. There are two morphisms $T_\kappa \rightrightarrows G$ defined by mapping every element to $0$ (resp. $1$) at non-zero rings, and of course mapping everything to $\ast$ at the zero ring. They are distinct because $T_\kappa(K)$ is a singleton for a field $K$ of cardinality $\kappa$. By assumption, there is some $F \in S$ and a morphism $F \to T_\kappa$ that distinguishes the two morphisms. Since the two morphisms agree at the zero ring, $F$ must be non-empty at some non-zero ring. But then we have $F(R_F) \neq \varnothing$, hence $T_\kappa(R_F) \neq \varnothing$, which by definition of $T_\kappa$ requires $R_F$ to have cardinality at least $\kappa$, which is a contradiction.
+    references:
+      - Z_well-powered
+
+  - property: cogenerator
+    proof: 'Assume that $Q$ is a cogenerator. Let $U : \CRing \to \Set$ denote the forgetful functor. For infinite cardinals $\kappa$ let $E_\kappa \subseteq U \times U$ be the following congruence: If $R \in \CRing$ has a homomorphism from a field of cardinality at least $\kappa$, then $E_\kappa(R) = U(R) \times U(R)$ is the maximal congruence. Otherwise, $E_\kappa(R) = \Delta_{U(R)}$ is the minimal congruence. The quotient functor $U/E_\kappa$ maps $R \in \CRing$ in the first case to a singleton, and in the second case to $U(R)$. The collection of morphisms $U \to Q$ is essentially small, since by the Yoneda lemma it is isomorphic to the set $Q(\IZ[T])$. In particular, the collection of morphisms $U \to Q$ that factor through $U \to U/E_\kappa$ is essentially small. Since the collection of infinite cardinals is not essentially small, there are infinite cardinals $\kappa < \lambda$ such that a morphism $U \to Q$ factors through $U \to U/E_\kappa$ if and only if it factors through $U \to U/E_\lambda$. Now choose a field $K$ of cardinality $\kappa$. Then $(U/E_\lambda)(K) = U(K)$ has two distinct elements $0,1$, which correspond to two distinct morphisms $\Hom(K,-) \rightrightarrows U \to U/E_\lambda$. Since $Q$ is a cogenerator, there is a morphism $U/E_\lambda \to Q$ that distinguishes these, i.e. the two morphisms $\Hom(K,-) \rightrightarrows Q$ are distinct. The composition $U \to U/E_\lambda \to Q$ factors through $U \to U/E_\kappa$ (by our choice of $\kappa$ and $\lambda$). But then the two morphisms to $Q$ factor as $\Hom(K,-) \rightrightarrows U \to U/E_\kappa \to Q$, which cannot be distinct since $(U/E_\kappa)(K)$ is a singleton.'
 
 special_objects:
   initial object:
     description: constant functor with value $\varnothing$
   terminal object:
-    description: constant functor with value $1$
+    description: constant functor with value $\{\ast\}$
   coproducts:
     description: pointwise disjoint union
   products:
@@ -80,5 +97,5 @@ special_morphisms:
     description: pointwise injective natural transformations
     proof: 'If $a : F \to G$ is a monomorphism of Z-functors, then the diagonal morphism $F \to F \times_G F$ is an isomorphism, so that for every $R$ the diagonal morphism $F(R) \to F(R) \times_{G(R)} F(R)$ is an isomorphism, i.e., $a(R) : F(R) \to G(R)$ is a monomorphism. This argument works for every functor category where the codomain has fiber products.'
   epimorphisms:
-    description: objectwise surjective natural transformations
+    description: pointwise surjective natural transformations
     proof: This holds in every functor category $[\C,\Set]$, since pushouts are constructed pointwise.
