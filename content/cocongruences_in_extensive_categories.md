@@ -92,9 +92,11 @@ j_2(s_{21}) & = j_1(s_{21}'), \\
 j_2(s_{22}) & = j_2(s_{22}').
 \end{align*}$$
 Applying the coreflexivity morphism $r : E \to X$ to both sides of each equation, we have $s_{11} = s_{11}'$, and similarly for the other pairs. Furthermore, since $j_1(s_{12}) = j_2(s_{12}') = j_2(s_{12})$, we have that $s_{12}$ factors through $e$, and similarly for $s_{21}$. Therefore, we get a generalized element
-$$s_{11} + s_{12} + s_{21} + s_{22} = s_{11}' + s_{12}' + s_{21}' + s_{22}'\\
+$$\begin{gathered}
+s_{11} + s_{12} + s_{21} + s_{22} = s_{11}' + s_{12}' + s_{21}' + s_{22}'\\
 \in \Hom(T_{11} + T_{12} + T_{21} + T_{22}, X + Y + Y + X)\\
-\cong \Hom(T, X + Y + Y + X)$$
+\cong \Hom(T, X + Y + Y + X)
+\end{gathered}$$
 with the required images in $X + X$.
 
 Therefore, since $(j_1; j_2) : X + X \to E$ is a regular epimorphism, it is a coequalizer of this kernel pair. However, this coequalizer is exactly the congruence quotient in the construction <a href="/content/pushouts-of-monos-via-congruence-quotients">here</a> of $X +_Y X$. Thus, we see that the original corelation is equivalent to the cokernel pair of $e$.
