@@ -96,7 +96,7 @@ Let $e : Y \hookrightarrow X$ be the equalizer of $j_1$ and $j_2$. We will prove
 
 $$
 \begin{align*}
-(i_1; i_1 \circ e; i_2 \circ e; i_2), & \\
+(i_1; i_1 \circ e; i_2 \circ e; i_2) & ,\\
 (i_1; i_2 \circ e; i_1 \circ e; i_2) & : X + Y + Y + X \rightrightarrows X + X.
 \end{align*}
 $$
