@@ -102,34 +102,64 @@ $$
 $$
 
 is a kernel pair of $(j_1; j_2) : X + X \to E$.
-Informally, we can think of this as the subobject of $(X + X)^2 \cong \sum_{i,j=1}^2 X$ which is the diagonal of $X$ in the first and fourth quadrants, and the diagonal of $Y$ in the second and third quadrants. In particular, if we have two morphisms $s, s' : T \to X + X$ such that $(j_1; j_2) \circ s = (j_1; j_2) \circ s'$, then we can use extensivity to decompose $s$ into a sum of morphisms $s_1 : T_1 \to X$ and $s_2 : T_2 \to X$ where $T \cong T_1 + T_2$. Then, we can decompose $s' |_{T_1}$ into a sum of morphisms $s_{11}' : T_{11} \to X$ and $s_{12}' : T_{12} \to X$ where $T_1 \cong T_{11} + T_{12}$, and similarly for $s' |_{T_2}$. In parallel, define $s_{11} \coloneqq s_1 |_{T_{11}}$, $s_{12} \coloneqq s_1 |_{T_{12}}$, $s_{21} \coloneqq s_2 |_{T_{21}}$, and $s_{22} \coloneqq s_2 |_{T_{22}}$. We thus get a decomposition
-$$T \cong T_{11} + T_{12} + T_{21} + T_{22}$$
-where
-$$s = (i_1 \circ s_{11}; i_1 \circ s_{12}; i_2 \circ s_{21}; i_2 \circ s_{22})$$
-and
-$$s' = (i_1 \circ s_{11}'; i_2 \circ s_{12}'; i_1 \circ s_{21}'; i_2 \circ s_{22}').$$
-From the condition that $(j_1, j_2) \circ s = (j_1, j_2) \circ s'$ as generalized elements of $E$, we see that
+Informally, we can think of this as the subobject of $(X + X)^2 \cong \sum_{i,j=1}^2 X^2$ which is the diagonal of $X$ in the first and fourth quadrants, and the diagonal of $Y$ in the second and third quadrants.
+
+To see this, note that since $j_1$ is a (split) monomorphism, we have a pullback diagram
 
 $$
-\begin{align*}
-j_1(s_{11}) & = j_1(s_{11}'), \\
-j_1(s_{12}) & = j_2(s_{12}'), \\
-j_2(s_{21}) & = j_1(s_{21}'), \\
-j_2(s_{22}) & = j_2(s_{22}').
-\end{align*}
+\begin{CD}
+X @> \id >> X \\
+@V \id VV @V j_1 VV \\
+X @>> j_1 > E.
+\end{CD}
 $$
 
-Applying the coreflexivity morphism $r : E \to X$ to both sides of each equation, we have $s_{11} = s_{11}'$, and similarly for the other pairs. Furthermore, since $j_1(s_{12}) = j_2(s_{12}') = j_2(s_{12})$, we have that $s_{12}$ factors through $e$, and similarly for $s_{21}$. Therefore, we get a generalized element
+Similarly, since $e$ is formed as a coreflexive equalizer, we have a pullback diagram
 
 $$
-\begin{gathered}
-s_{11} + s_{12} + s_{21} + s_{22} = s_{11}' + s_{12}' + s_{21}' + s_{22}'\\
-\in \Hom(T_{11} + T_{12} + T_{21} + T_{22}, X + Y + Y + X)\\
-\cong \Hom(T, X + Y + Y + X)
-\end{gathered}
+\begin{CD}
+Y @> e >> X \\
+@V e VV @V j_1 VV \\
+X @>> j_2 > E.
+\end{CD}
 $$
 
-with the required images in $X + X$.
+(See <a href="/category-implication/pullbacks_imply_coreflexive_equalizers">here</a>.)
+
+Combining these using Lemma 2, we get a pullback diagram
+
+$$
+\begin{CD}
+X+Y @> (\id; e) >> X \\
+@V \id + e VV @V j_1 VV \\
+X+X @>> (j_1; j_2) > E.
+\end{CD}
+$$
+
+Similarly, we get a pullback diagram
+
+$$
+\begin{CD}
+Y+X @> (e; \id) >> X \\
+@V e + \id VV @V j_2 VV \\
+X+X @>> (j_1; j_2) > E.
+\end{CD}
+$$
+
+Now, combining those two using Lemma 2 (transposed), we get a pullback diagram
+
+$$
+\begin{CD}
+(X+Y)+(Y+X) @> (\id; e) + (e; \id) >> X+X \\
+@V (\id+e; e+\id) VV @V (j_1; j_2) VV \\
+X+X @>> (j_1; j_2) > E.
+\end{CD}
+$$
+
+However, under the canonical isomorphism $(X+Y)+(Y+X) \cong X+Y+Y+X$, we see that $(\id; e) + (e; \id)$ corresponds to
+$$(i_1; i_1\circ e; i_2\circ e; i_2) : X+Y+Y+X \to X+X,$$
+whereas $(\id+e; e+\id)$ corresponds to
+$$(i_1; i_2\circ e; i_1\circ e; i_2) : X+Y+Y+X \to X+X.$$
 
 Therefore, since $(j_1; j_2) : X + X \to E$ is a regular epimorphism, it is a coequalizer of this kernel pair. However, this coequalizer is exactly the congruence quotient in the construction <a href="/content/pushouts-of-monos-via-congruence-quotients">here</a> of $X +_Y X$. Thus, we see that the original corelation is equivalent to the cokernel pair of $e$.
 :::
