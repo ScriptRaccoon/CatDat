@@ -9,7 +9,8 @@ We start with a general fact which is easier to visualize for the dual case of c
 
 ::: Lemma 1
 Let $q_1, q_2 : E \rightrightarrows X$ be a congruence such that the pullback $E \times_X E$ of $q_2$ and $q_1$ exists, and let $t : E \times_X E \to E$ be the transitivity morphism. Then we have pushout diagrams
-$$\begin{CD}
+
+$$ \begin{CD}
 E \times_X E @> p_1 >> E @. \quad @. E \times_X E @> p_2 >> E \\
 @V t VV @VV q_1 V @. @V t VV @VV q_2 V \\
 E @> q_1 >> X @. \quad @. E @> q_2 >> X.
@@ -109,3 +110,4 @@ In an extensive and regular category with quotients of congruences, every cocong
 ::: Proof
 This follows by combining Corollary 3 and Lemma 4, using the existence of quotients of congruences so that $E +_X E$ always exists by <a href="/content/pushouts-of-monos-via-congruence-quotients">this result</a>.
 :::
+$$
