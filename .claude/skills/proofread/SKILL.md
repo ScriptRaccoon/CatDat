@@ -24,6 +24,7 @@ Name the proofread file or folder in the response. Always proofread whole files,
 
 - Correct genuine spelling, grammar, punctuation, and typographical mistakes in prose, comments, and human-readable string values.
 - Support common source formats such as YAML, Markdown, Svelte, and TypeScript. In structured or code files, edit only human-language text and obvious text typos; preserve keys, identifiers, APIs, program behavior, markup, links, interpolation, and syntax.
+- Do fix violations of the project's writing and format conventions (see CLAUDE.md and CONTRIBUTING.md), even in markup and links: for example citation link texts (authors' last names, not titles, with the location after the link), `target="_blank"` on links, and notation conventions such as `\varnothing` and `\coloneqq`. Keep link targets unchanged.
 - In mathematical notation, correct only an obvious local typo, such as a variable name that inconsistently changes from `$a$` to `$x$` where the surrounding text makes the intended symbol unambiguous. Preserve formulas and claims otherwise.
 - Do not assess or correct the mathematical validity of proofs. That is the role of `/check-proofs`. Language mistakes inside proof text may still be corrected without changing the mathematical argument.
 - Make stylistic changes sparingly. Only adjust wording when it is clearly awkward or ambiguous and a small change improves readability while preserving the author's meaning and voice. Prefer leaving acceptable personal style alone.
