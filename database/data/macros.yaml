@@ -32,7 +32,7 @@
 \p: \mathfrak{p}
 \m: \mathfrak{m}
 
-# abbreviations
+# upright symbols
 \op: \mathrm{op}
 \c: \mathrm{c}
 \ff: \mathrm{ff}
@@ -48,13 +48,11 @@
 \bij: \mathrm{bij}
 \noiso: \mathrm{noiso}
 \conn: \mathrm{conn}
-
-# standard collections
-\SetColl: \mathrm{Set}
-\TopColl: \mathrm{Top}
-\GrpColl: \mathrm{Grp}
-\CatColl: \mathrm{Cat}
-\OnColl: \mathrm{On}
+\id: \mathrm{id}
+\ev: \mathrm{ev}
+\inc: \mathrm{inc}
+\disc: \mathrm{disc}
+\indisc: \mathrm{indisc}
 
 # operators
 \Mor: \operatorname{Mor}
@@ -64,9 +62,7 @@
 \Aut: \operatorname{Aut}
 \Bilin: \operatorname{Bilin}
 \Ob: \operatorname{Ob}
-\id: \operatorname{id}
 \adj: \operatorname{adj}
-\ev: \operatorname{ev}
 \even: \operatorname{even}
 \odd: \operatorname{odd}
 \card: \operatorname{card}
@@ -78,13 +74,10 @@
 \Spec: \operatorname{Spec}
 \ord: \operatorname{ord}
 \diag: \operatorname{diag}
-\disc: \operatorname{disc}
-\indisc: \operatorname{indisc}
 \Sub: \operatorname{Sub}
 \Quot: \operatorname{Quot}
 \supp: \operatorname{supp}
 \Coexp: \operatorname{Coexp}
-\inc: \operatorname{inc}
 \eq: \operatorname{eq}
 \coeq: \operatorname{coeq}
 \cod: \operatorname{cod}
@@ -95,8 +88,13 @@
 \Open: \operatorname{Open}
 \Id: \operatorname{Id}
 \Br: \operatorname{Br}
-\rightrightrightarrows: \mathrel{\substack{\rightarrow\\[-0.6ex]\rightarrow\\[-0.6ex]\rightarrow}}
-\dottedrightrightarrows: \mathrel{\substack{\rightarrow\\[-0.6ex]\cdots\\[-0.6ex]\rightarrow}}
+
+# standard collections
+\SetColl: \mathrm{Set}
+\TopColl: \mathrm{Top}
+\GrpColl: \mathrm{Grp}
+\CatColl: \mathrm{Cat}
+\OnColl: \mathrm{On}
 
 # categories
 \Set: \mathbf{Set}
@@ -171,3 +169,7 @@
 \Mono: \mathbf{Mono}
 \Sh: \mathbf{Sh}
 \Proj: \mathbf{Proj}
+
+# arrows
+\rightrightrightarrows: \mathrel{\substack{\rightarrow\\[-0.6ex]\rightarrow\\[-0.6ex]\rightarrow}}
+\dottedrightrightarrows: \mathrel{\substack{\rightarrow\\[-0.6ex]\cdots\\[-0.6ex]\rightarrow}}

@@ -21,7 +21,7 @@
     - epimorphism
   conclusions:
     - isomorphism
-  proof: 'Assume that $m : A \to B$ is a split monomorphism, and choose a morphism $e : B \to A$ with $e \circ m = \id_A$. Then $m \circ e \circ m = m = {\id_B} \circ m$. Thus, if $m$ is also an epimorphism, we conclude $m \circ e = \id_B$, showing that $m$ is an isomorphism with inverse $e$.'
+  proof: 'Assume that $m : A \to B$ is a split monomorphism, and choose a morphism $e : B \to A$ with $e \circ m = \id_A$. Then $m \circ e \circ m = m = \id_B \circ m$. Thus, if $m$ is also an epimorphism, we conclude $m \circ e = \id_B$, showing that $m$ is an isomorphism with inverse $e$.'
 
 - id: mono_is_iso
   assumptions:

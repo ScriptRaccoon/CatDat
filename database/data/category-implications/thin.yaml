@@ -177,4 +177,4 @@
   conclusions:
     - binary products
   proof: >-
-    Let $A,B$ be two objects. Since the category is semi-strongly connected, we may assume without loss of generality that there is a morphism $f : A \to B$. We claim that $A$ together with $\id_A : A \to A$ and $f : A \to B$ is a product of $A$ and $B$. Indeed, if $T$ is an object with morphisms $g : T \to A$ and $h : T \to B$, then $g : T \to A$ satisfies ${\id_A} \circ g = g$ and $f \circ g = h$, the latter since the category is thin. Uniqueness is also clear since the category is thin.
+    Let $A,B$ be two objects. Since the category is semi-strongly connected, we may assume without loss of generality that there is a morphism $f : A \to B$. We claim that $A$ together with $\id_A : A \to A$ and $f : A \to B$ is a product of $A$ and $B$. Indeed, if $T$ is an object with morphisms $g : T \to A$ and $h : T \to B$, then $g : T \to A$ satisfies $\id_A \circ g = g$ and $f \circ g = h$, the latter since the category is thin. Uniqueness is also clear since the category is thin.

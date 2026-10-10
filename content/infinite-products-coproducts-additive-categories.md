@@ -37,7 +37,7 @@ $$
 x & = \nabla \circ \alpha^{-1} \circ \Delta \\
 & = \begin{pmatrix} \id_A & \nabla' \end{pmatrix} \circ \begin{pmatrix} \id_A & 0 \\ 0 & \alpha'^{-1} \end{pmatrix} \circ \begin{pmatrix} \id_A \\ \Delta' \end{pmatrix} \\
 & = \begin{pmatrix} \id_A & \nabla' \end{pmatrix} \circ \begin{pmatrix} \id_A \\ \alpha'^{-1} \circ \Delta' \end{pmatrix} \\
-& = {\id_A} \,+\, \nabla' \circ \alpha'^{-1} \circ \Delta'.
+& = \id_A + \nabla' \circ \alpha'^{-1} \circ \Delta'.
 \end{align*}
 $$
 
