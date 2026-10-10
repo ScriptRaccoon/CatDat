@@ -7,7 +7,7 @@ description: We construct an ℵ₁-cofiltered diagram of finitely generated gro
 
 We construct a diagram $\Delta : \omega_1^{\op} \to \Grp$ in which every group is isomorphic to a fixed finitely generated group $G$, but whose limit is uncountable, and hence not finitely generated. Here, $\omega_1$ denotes the poset of countable ordinals.
 
-Throughout, we fix a non-trivial finitely generated group $G$ with $G \cong G \times G$. Such a group has been constructed by J. M. Tyrer Jones in [Direct products and the Hopf property](https://doi.org/10.1017/S144678870001675X) (1974), Theorem B.
+Throughout, we fix a non-trivial finitely generated group $G$ with $G \cong G \times G$. Such a group has been constructed by [Tyrer Jones](https://doi.org/10.1017/S144678870001675X) (1974), Theorem B.
 
 **Definition.** A _good pair_ $(p,s) : A \rightleftarrows B$ consists of two homomorphisms $p : A \to B$ and $s : B \to A$ such that
 
