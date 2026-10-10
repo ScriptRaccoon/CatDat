@@ -1,0 +1,16 @@
+id: effective regular cocongruences
+relation: has
+description: >-
+  Say a cocongruence $j_1, j_2 : X \rightrightarrows E$ in a category with binary copowers is <i>regular</i> if the epimorphism $(j_1; j_2) : X + X \twoheadrightarrow E$ is in fact a regular epimorphism.
+
+  A category <i>has effective regular congruences</i> if it has binary copowers, and every regular cocongruence in the category is effective (see <a href="/category-property/effective cocongruences">here</a> for definition).
+nlab_link: null
+dual: effective regular congruences
+invariant_under_equivalences: true
+
+related:
+  - effective cocongruences
+  - cokernel pairs
+
+tags:
+  - congruences

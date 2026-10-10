@@ -127,6 +127,15 @@
 
     Remark: The assumptions are satisfied in particular for every elementary topos. Therefore, every elementary topos has effective cocongruences and is co-Malcev. This special case is treated in <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories">Borceux–Bourn</a>, Example 2.2.18. An alternative proof of this special case is given later in A.5.17.
 
+- id: regular_extensive_consequences
+  assumptions:
+    - regular
+    - extensive
+    - quotients of congruences
+  conclusions:
+    - effective regular cocongruences
+  proof: (For now, will leave this as a placeholder for a reference to the proof to be merged in from PR 373.)
+
 - id: pretopos_balanced
   assumptions:
     - effective congruences
@@ -153,3 +162,26 @@
     - effective congruences
   proof: This holds by definition.
   is_equivalence: true
+
+- id: effective_regular_congruences_definition
+  assumptions:
+    - effective regular congruences
+  conclusions:
+    - binary powers
+  proof: This is part of the definition.
+
+- id: effective_congruences_imply_regular_effective_congruences
+  assumptions:
+    - effective congruences
+    - binary powers
+  conclusions:
+    - effective regular congruences
+  proof: This is trivial.
+
+- id: regular_effective_congruences_epi-regular_imply_effective_congruences
+  assumptions:
+    - effective regular congruences
+    - epi-regular
+  conclusions:
+    - effective congruences
+  proof: This is trivial.
