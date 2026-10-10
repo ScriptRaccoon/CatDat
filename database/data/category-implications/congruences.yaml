@@ -116,7 +116,7 @@
   proof: >-
     Suppose we have a coreflexive corelation
     $$X+X' \xtwoheadrightarrow{p} E \xtwoheadrightarrow{r} X$$
-    on $X$, where we let $X'$ be an isomorphic copy of $X$ for clarity below. Let $Y$ be the equalizer of $p\circ i_1, p\circ i_2 : X \rightrightarrows E$. That means that for a generalized element $x \in X(T)$, $x \in Y(T)$ if and only if $p(x) = p(x')$. Then by the assumptions $p$ is a regular epimorphism. By regularity, $p$ is the coequalizer of its kernel pair, which can be expressed as the equalizer $K$ of
+    on $X$, where we let $X'$ be an isomorphic copy of $X$ for clarity below. Let $Y$ be the equalizer of $p\circ i_1, p\circ i_2 : X \rightrightarrows E$. That means that for a generalized element $x \in X(T)$, $x \in Y(T)$ if and only if $p(x) = p(x')$. Then by the assumptions $p$ is a regular epimorphism. By <a href="/content/regular-epis-kernel-pairs">this lemma</a>, $p$ is the coequalizer of its kernel pair, which can be expressed as the equalizer $K$ of
     $$p \circ \pi_1,\, p\circ \pi_2 : (X+X') \times (X+X') \rightrightarrows E,$$
     where $\pi_1, \pi_2$ are the projections. By distributivity and extensivity, it is sufficient to calculate the equalizer on each "quadrant" of $(X+X') \times (X+X')$, i.e. the four copies of $X \times X$.
 
