@@ -42,6 +42,7 @@ satisfied_properties:
 
   - property: coequalizers of kernel pairs
     proof: 'Let $f : G \to H$ be a morphism in $\Quiv_{\fc}$. In $\Quiv$, the coequalizer of the kernel pair of $f$ is simply the image of $f$. Since $\Quiv_{\fc} \subseteq \Quiv$ is closed under subquivers, this image belongs to $\Quiv_{\fc}$. The universal property of a coequalizer persists in $\Quiv_{\fc}$.'
+    check_redundancy: false
 
   - property: extremal cogenerating collection
     proof: >-
@@ -50,11 +51,12 @@ satisfied_properties:
       Remark: The same proof works for $\Quiv$.
     label: Quiv_fc_extremal_cogenerators
 
-  - property: well-copowered
-    proof: This follows immediately from the description of epimorphisms below.
-
   - property: epi-regular
     proof: Any epimorphism $f = (f_V,f_E)$ in $\Quiv_{\fc}$ has surjective components $f_V,f_E$ by the classification below. Hence, it is the coequalizer of its kernel pair in $\Quiv$. Since the kernel pair belongs to $\Quiv_{\fc}$, it is also the coequalizer in $\Quiv_{\fc}$.
+    check_redundancy: false
+
+  - property: regular
+    proof: We already know that $\Quiv_{\fc}$ is finitely complete, has coequalizers of kernel pairs, and that every epimorphism is regular. So it remains to show that epimorphisms are stable under pullbacks. Pullbacks in $\Quiv_{\fc}$ are computed as in <a href="/category/Quiv">$\Quiv$</a> (see the proofs above), i.e. separately on vertices and edges. By the classification below, the epimorphisms are the morphisms $f = (f_V,f_E)$ with surjective components $f_V,f_E$. Since surjective maps are stable under pullbacks in $\Set$, the claim follows.
 
   - property: ℵ₁-accessible
     proof: >-
