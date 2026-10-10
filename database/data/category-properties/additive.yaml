@@ -1,6 +1,6 @@
 id: additive
 relation: is
-description: A category is <i>additive</i> if it is preadditive and has finite products (equivalently, finite coproducts). Note that in the context of finite products, the preadditive structure <a href="/content/preadditive_structure_unique">is unique</a>.
+description: A category is <i>additive</i> if it is preadditive and has finite products. It then also has finite coproducts (see Lemma 1 <a href="/content/preadditive_structure_unique">here</a>), which explains why this property is self-dual. Moreover, the preadditive structure is uniquely determined (see Lemma 2 <a href="/content/preadditive_structure_unique">here</a>).
 nlab_link: https://ncatlab.org/nlab/show/additive+category
 dual: additive
 invariant_under_equivalences: true
