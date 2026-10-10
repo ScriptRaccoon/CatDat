@@ -11,14 +11,21 @@ import { display_implication } from '../transforms'
 
 export function fetch_content_references(content_id: string) {
 	const structures_via_proofs = db
-		.prepare<[string], StructureShort & { type: StructureType }>(
-			`SELECT DISTINCT s.id, s.name, s.type
-	        FROM property_assignments pa
-	        INNER JOIN structures s ON s.id = pa.structure_id
-	        WHERE pa.proof LIKE '%/content/' || ? || '%'
-			ORDER BY s.name`
+		.prepare<[string, string], StructureShort & { type: StructureType }>(
+			`SELECT id, name, type FROM (
+				SELECT s.id, s.name, s.type
+				FROM property_assignments pa
+				INNER JOIN structures s ON s.id = pa.structure_id
+				WHERE pa.proof LIKE '%/content/' || ? || '%'
+				UNION
+				SELECT s.id, s.name, s.type
+				FROM special_morphism_assignments sma
+				INNER JOIN structures s ON s.id = sma.category_id
+				WHERE sma.proof LIKE '%/content/' || ? || '%'
+			)
+			ORDER BY lower(name)`
 		)
-		.all(content_id)
+		.all(content_id, content_id)
 
 	const structures_via_description = db
 		.prepare<[string], StructureShort & { type: StructureType }>(
