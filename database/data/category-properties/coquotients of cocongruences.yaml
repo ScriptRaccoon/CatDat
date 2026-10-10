@@ -1,6 +1,19 @@
 id: coquotients of cocongruences
 relation: has
-description: 'A <i>cocongruence</i> (or internal equivalence corelation) on an object $X$ of a category is a parallel pair $i_1, i_2 : X \rightrightarrows E$ which is jointly epimorphic, and such that for every object $T$, the image of $({-} \circ i_1, {-} \circ i_2) : \Hom(E, T) \to \Hom(X, T)^2$ is an equivalence relation. The category has <i>coquotients of cocongruences</i> if for each such cocongruence, there exists an equalizer of $i_1$ and $i_2$. Note that in the case of a category with binary copowers, the corresponding quotients of $X + X$ are also commonly referred to as cocongruences, or as internal equivalence corelations.'
+description: >-
+  A <i>cocongruence</i> (or internal equivalence corelation) on an object $X$ of a category is a parallel pair $j_1, j_2 : X \rightrightarrows E$ which is jointly epimorphic, and such that for every object $T$, the image of $({-} \circ j_1, {-} \circ j_2) : \Hom(E, T) \to \Hom(X, T)^2$ is an equivalence relation. If pushouts exist (or at least the pushout displayed below), the latter condition is equivalent to the existence of morphisms
+  $$\begin{align*}
+  r & : E \to X & \quad \text{(coreflexivity)} \\
+  s & : E \to E & \quad \text{(cosymmetry)} \\
+  t & : E \to E \sqcup_{j_2,X,j_1} E & \quad \text{(cotransitivity)}
+  \end{align*}$$
+  satisfying the following equations:
+  $$\begin{align*}
+  r \circ j_1 & = \id_X & r \circ j_2 & = \id_X \\
+  s \circ j_1 & = j_2 & s \circ j_2 & = j_1 \\
+  t \circ j_1 & = \iota_1 \circ j_1 & t \circ j_2 & = \iota_2 \circ j_2
+  \end{align*}$$
+  In particular, $j_1,j_2$ is a coreflexive pair. A <i>coquotient</i> of $j_1,j_2$ is an equalizer of $j_1,j_2$. We say that a category has <i>coquotients of cocongruences</i> if every cocongruence has a coquotient. Note that in the case of a category with binary copowers, the corresponding quotient objects $X + X \twoheadrightarrow E$ are also commonly referred to as cocongruences, or as internal equivalence corelations.
 nlab_link: null
 dual: quotients of congruences
 invariant_under_equivalences: true

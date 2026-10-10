@@ -6,7 +6,7 @@ description: >-
   f \circ (g + h) &= f \circ g + f \circ h \\
   (f + g) \circ h &= f \circ h + g \circ h.
   \end{align*}$$
-  Note that being preadditive is an extra structure. The property here merely says that a preadditive structure exists. Furthermore, since categories are not assumed to be locally small (see <a href="/content/foundations">Foundations</a>), the abelian group $\Hom(A,B)$ is not necessarily a set. In contrast, a locally small preadditive category is precisely an $(\Ab,\otimes)$-enriched category.
+  Note that being preadditive is an extra structure. The property here merely says that a preadditive structure exists. Furthermore, since categories are not assumed to be locally small (see <a href="/content/foundations">Foundations</a>), the collection $\Hom(A,B)$ with abelian group structure is not necessarily a set. In contrast, a locally small preadditive category is precisely an $(\Ab,\otimes)$-enriched category.
 nlab_link: https://ncatlab.org/nlab/show/Ab-enriched+category
 dual: preadditive
 invariant_under_equivalences: true

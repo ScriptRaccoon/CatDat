@@ -1,8 +1,8 @@
 id: effective congruences
 relation: has
 description: >-
-  A congruence $f, g : E \rightrightarrows X$ (see definition <a href="/category-property/quotients_of_congruences">here</a>) is <i>effective</i> if it is the kernel pair of some morphism, i.e. if there is a morphism $h : X \to Y$ such that we have a cartesian square
-  $$\begin{CD} E @> f >> X \\ @V g VV @VV h V \\ X @>> h > Y. \end{CD}$$
+  A congruence $q_1, q_2 : E \rightrightarrows X$ (see definition <a href="/category-property/quotients_of_congruences">here</a>) is <i>effective</i> if it is the kernel pair of some morphism, i.e. if there is a morphism $h : X \to Y$ such that we have a pullback square
+  $$\begin{CD} E @> q_1 >> X \\ @V q_2 VV @VV h V \\ X @>> h > Y. \end{CD}$$
   A category <i>has effective congruences</i> if every congruence in the category is effective.
 nlab_link: https://ncatlab.org/nlab/show/congruence
 dual: effective cocongruences
