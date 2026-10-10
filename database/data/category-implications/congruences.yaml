@@ -110,10 +110,12 @@
     - epi-regular
     - extensive
     - regular
+    - finitely cocomplete
   conclusions:
     - co-Malcev
     - effective cocongruences
   proof: >-
+    We need to show that every coreflexive corelation is an effective cocongruence.
     Suppose we have a coreflexive corelation
     $$X+X' \xtwoheadrightarrow{p} E \xtwoheadrightarrow{r} X$$
     on $X$, where we let $X'$ be an isomorphic copy of $X$ for clarity below. Let $Y$ be the equalizer of $p\circ i_1, p\circ i_2 : X \rightrightarrows E$. That means that for a generalized element $x \in X(T)$, $x \in Y(T)$ if and only if $p(x) = p(x')$. Then by the assumptions $p$ is a regular epimorphism. By <a href="/content/regular-epis-kernel-pairs">this lemma</a>, $p$ is the coequalizer of its kernel pair, which can be expressed as the equalizer $K$ of
