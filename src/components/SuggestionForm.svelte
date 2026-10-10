@@ -83,7 +83,13 @@
 
 		<p class="hint">
 			Use the form below to report missing data, submit an issue, or make a
-			suggestion.
+			suggestion. If you have a GitHub account, it is better to create an <a
+				href="https://github.com/ScriptRaccoon/CatDat/issues/new"
+				target="_blank"
+			>
+				issue
+			</a>
+			directly.
 		</p>
 
 		<form onsubmit={create_issue}>
