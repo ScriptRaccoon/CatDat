@@ -74,7 +74,7 @@ unsatisfied_properties:
     references:
       - Grp_no_cocartesian_cofiltered_limits
 
-  - property: effective cocongruences
+  - property: effective regular cocongruences
     proof: >-
       We adapt the counterexample from <a href="https://mathoverflow.net/a/510809">MO/510744</a> for $\Ring$. Namely, consider the monoids
       $$\begin{align*} X & \coloneqq \langle p \mid p^2 = p \rangle \cong (\{ 0, 1 \}, \cdot),\\ E & \coloneqq \langle p, q \mid p^2 = p,\, q^2 = q,\, pq = q,\, qp = p \rangle. \end{align*}$$
