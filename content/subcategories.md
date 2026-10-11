@@ -48,6 +48,7 @@ $$
 \end{align*}
 $$
 
+It is routine to check that the composite is the natural morphism.
 :::
 
 ::: Lemma 4
