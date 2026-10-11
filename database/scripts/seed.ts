@@ -54,11 +54,11 @@ function seed() {
 
 	seed_properties({
 		type: 'symmetric_monoidal_category',
-		folder: 'symmetric_monoidal_category_properties'
+		folder: 'symmetric_monoidal_category-properties'
 	})
 	seed_implications({
 		type: 'symmetric_monoidal_category',
-		folder: 'symmetric_monoidal_category_implications'
+		folder: 'symmetric_monoidal_category-implications'
 	})
 	seed_structures({
 		type: 'symmetric_monoidal_category',
