@@ -114,13 +114,16 @@ is an isomorphism. This is the precise connection to countable distributivity.
 Let $F : \C \to \D$ be left adjoint to $G : \D \to \C$. Assume that $1_{\C}$ is a terminal object of $\C$ such that $1_{\D} \coloneqq F(1_{\C})$ is a terminal object of $\D$. Then $F$ preserves natural numbers objects. That is, if $(N,z,s)$ is a natural numbers object in $\C$, then its image $(F(N),F(z),F(s))$ is a natural numbers object in $\D$.
 :::
 
+A direct proof is possible, but we give a proof that reduces the lemma to the well-known fact that left adjoints preserve initial objects.
+
 ::: Proof
 For a category $\C$ with a terminal object $1_{\C}$, let $R(\C)$ denote the category of diagrams
 $$1_{\C} \xrightarrow{x_0} X \xrightarrow{r} X$$
-in $\C$. A natural numbers object in $\C$ is precisely an initial object of $R(\C)$. Suppose that $H : \C \to \D$ is a functor between categories with terminal objects that preserves terminal objects. Then $H$ induces a functor $R(H) : R(\C) \to R(\D)$ that maps
+in $\C$. A morphism $(X,x_0,r) \to (Y,y_0,s)$ in $R(\C)$ is a morphism $f : X \to Y$ such that $f \circ x_0 = y_0$ and $s \circ f = f \circ r$. A natural numbers object in $\C$ is precisely an initial object of $R(\C)$. Suppose that $H : \C \to \D$ is a functor between categories with terminal objects that preserves terminal objects, and let $u : 1_{\D} \to H(1_{\C})$ be the unique isomorphism. Then $H$ induces a functor $R(H) : R(\C) \to R(\D)$ that maps
 $$1_{\C} \xrightarrow{x_0} X \xrightarrow{r} X$$
-to its image
-$$1_{\D} \cong H(1_{\C}) \xrightarrow{H(x_0)} H(X) \xrightarrow{H(r)} H(X).$$
+to
+$$1_{\D} \xrightarrow{H(x_0) \circ u} H(X) \xrightarrow{H(r)} H(X)$$
+and a morphism $f$ to $H(f)$.
 
 In the situation of the lemma, we therefore have two functors
 
@@ -131,13 +134,19 @@ R(G) & : R(\D) \to R(\C).
 \end{align*}
 $$
 
-Notice that $G$ preserves terminal objects since it is a right adjoint.
+Notice that $G$ preserves terminal objects since it is a right adjoint. Since $1_{\D} = F(1_{\C})$, the isomorphism $u$ for $F$ is the identity, so that $R(F)(X,x_0,r) = (F(X),F(x_0),F(r))$. The isomorphism $u : 1_{\C} \to G(1_{\D}) = G(F(1_{\C}))$ for $G$ is the unit $\eta_{1_{\C}}$, because both are morphisms into the terminal object $G(1_{\D})$. Hence,
+$$R(G)(Y,y_0,s) = (G(Y), G(y_0) \circ \eta_{1_{\C}}, G(s)).$$
 
-We claim that $R(F)$ is left adjoint to $R(G)$. Indeed, for objects $(X,x_0,r) \in R(\C)$ and $(Y,y_0,s) \in R(\D)$, a morphism $R(F)(X,x_0,r) \to (Y,y_0,s)$ is the same as a morphism $f : F(X) \to Y$ such that
+We claim that $R(F)$ is left adjoint to $R(G)$. Let
+$$\varphi : \Hom(F(X),Y) \to \Hom(X,G(Y)), \quad f \mapsto G(f) \circ \eta_X$$
+denote the natural bijection of the adjunction $F \dashv G$. Now let $(X,x_0,r) \in R(\C)$ and $(Y,y_0,s) \in R(\D)$. A morphism $R(F)(X,x_0,r) \to (Y,y_0,s)$ is a morphism $f : F(X) \to Y$ such that
 $$f \circ F(x_0) = y_0, \quad s \circ f = f \circ F(r).$$
-Under the adjunction $F \dashv G$, it corresponds to a morphism $\widetilde{f} : X \to G(Y)$ such that
-$$\widetilde{f} \circ x_0 = G(y_0), \quad G(s) \circ \widetilde{f} = \widetilde{f} \circ r.$$
-This is precisely a morphism $(X,x_0,r) \to R(G)(Y,y_0,s)$.
+Since $\varphi$ is bijective, the first equation is equivalent to $\varphi(f \circ F(x_0)) = \varphi(y_0)$. By naturality of $\varphi$ in the first argument, the left-hand side is $\varphi(f) \circ x_0$, and by definition of $\varphi$, the right-hand side is $G(y_0) \circ \eta_{1_{\C}}$. So the first equation means
+$$\varphi(f) \circ x_0 = G(y_0) \circ \eta_{1_{\C}}.$$
+Similarly, the second equation is equivalent to $\varphi(s \circ f) = \varphi(f \circ F(r))$, which by naturality of $\varphi$ in the second and in the first argument means
+$$G(s) \circ \varphi(f) = \varphi(f) \circ r.$$
+These two equations say precisely that $\varphi(f)$ is a morphism $(X,x_0,r) \to R(G)(Y,y_0,s)$. Thus, $\varphi$ restricts to a natural bijection
+$$\Hom\bigl(R(F)(X,x_0,r),(Y,y_0,s)\bigr) \cong \Hom\bigl((X,x_0,r),R(G)(Y,y_0,s)\bigr).$$
 
 Since $R(F)$ is a left adjoint, it preserves initial objects. This is precisely the statement that $F$ preserves natural numbers objects.
 :::
