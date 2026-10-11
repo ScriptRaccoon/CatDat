@@ -1,6 +1,6 @@
 import chokidar from 'chokidar'
 import * as v from 'valibot'
-import { get_client } from '#shared/db.ts'
+import { get_client, mark_database_update } from '#shared/db.ts'
 import { STRUCTURE_TYPES, type StructureType } from '#shared/config.ts'
 import { get_property_assignments, parse_folder } from './utils/seed.helpers'
 import {
@@ -106,6 +106,7 @@ function run_text_update() {
 
 		if (update_txt) {
 			console.info(`Updated text: ${update_txt}.`)
+			mark_database_update()
 		} else {
 			console.info('Text is up to date.')
 		}

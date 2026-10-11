@@ -1,6 +1,7 @@
 import chokidar from 'chokidar'
 import { run_command } from './utils/commands'
 import { DATA_FOLDER } from './utils/folders'
+import { mark_database_update } from '#shared/db.ts'
 
 const watch_mode = process.argv.includes('--watch')
 const update_commands = ['db:seed', 'db:deduce', 'db:test', 'db:snapshot']
@@ -20,6 +21,7 @@ async function run_update() {
 	for (const command of update_commands) {
 		await run_command(command)
 	}
+	mark_database_update()
 }
 
 function watch() {

@@ -69,6 +69,8 @@ pnpm db:update --watch
 
 For text-only changes to existing structures, properties, or implications (such as descriptions or proofs), use `pnpm db:text`. It updates changed texts without rebuilding relations or running deductions. Add `--watch` to keep it running and update whenever a YAML file changes.
 
+While `pnpm dev` is running, the browser reloads automatically after `pnpm db:update` or `pnpm db:text` has changed the database. Combined with `--watch`, saving a YAML file thus updates the open page.
+
 ### Troubleshooting
 
 - If the local database is corrupted, or its schema has changed, recreate it using `pnpm db:setup`.

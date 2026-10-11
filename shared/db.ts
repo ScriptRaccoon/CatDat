@@ -13,3 +13,9 @@ export function get_client(options: { readonly: boolean }) {
 export function delete_database_file() {
 	fs.rmSync(db_path, { force: true })
 }
+
+export const UPDATE_MARKER_PATH = path.resolve('database', '.last-update')
+
+export function mark_database_update() {
+	fs.writeFileSync(UPDATE_MARKER_PATH, new Date().toISOString())
+}
