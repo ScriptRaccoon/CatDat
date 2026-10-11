@@ -71,6 +71,15 @@ export function parse_file<Schema extends v.GenericSchema>(file: string, schema:
 	return output
 }
 
+export function parse_folder<Schema extends v.GenericSchema>(
+	folder: string,
+	schema: Schema
+) {
+	return get_yaml_files(folder).map((file) =>
+		parse_file(path.join(folder, file), schema)
+	)
+}
+
 export function seed_files<Schema extends v.GenericSchema>(
 	db: Database,
 	label: string,

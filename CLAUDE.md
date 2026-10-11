@@ -45,7 +45,7 @@ Database (all scripts run with `tsx` and are type-checked by `pnpm check` via th
 - `pnpm db:test`: check data quality: properties and their duals are mutual, structures and their duals are mutual, all properties are decided for the structures listed in `expected-data/decided-*.json`, and the properties of selected structures (`Set`, `Ab`, `Top`, ...) exactly match `expected-data/`.
 - `pnpm db:snapshot`: copy the database to `static/databases/catdat-snapshot.db` for the download page.
 - `pnpm db:update`: run `db:seed`, `db:deduce`, `db:test`, and `db:snapshot` in sequence. **This is the standard command after editing any YAML data.** Use `--watch` to rerun it whenever a file in `database/data/` changes.
-- `pnpm db:text`: fast path for text-only changes to existing structures (names, notations, descriptions, nLab links, proofs). It updates changed fields without rebuilding relations or running deductions. Properties and implications are not covered. Supports `--watch`.
+- `pnpm db:text`: fast path for text-only changes to existing structures (names, notations, alternative notations, descriptions, nLab links, comments, keywords, objects and morphisms of categories, proofs of property assignments), properties (descriptions, nLab links), and implications (proofs). It updates changed fields without rebuilding relations or running deductions. Special objects, special morphisms, and special morphism rules are not covered. Supports `--watch`.
 - `pnpm db:redundancies`: report property assignments that could already be deduced from others. It reports at most one per structure and kind, so rerun it after each removal. Not part of `db:update`.
 - `pnpm db:combinations <id> [<id> ...]`: list the combinations p ∧ ¬q that the given structures (or their duals) witness and that no other structure in the database witnesses. Needs only the IDs, not the type (all IDs must have the same type). Useful to judge whether a structure adds new information.
 - `pnpm db:structure <id> [group]`: print the property IDs of a structure, grouped into `satisfied`, `unsatisfied`, `unknown`, and `undecidable` with counts (a terminal version of the structure detail page). An optional group argument restricts the output to that group, e.g. `pnpm db:structure Ab unsatisfied`. Needs only the ID, not the type.
@@ -131,6 +131,6 @@ Format:
 ## Workflow after changing data
 
 1. Edit the YAML files in `database/data/` (or the `content/` pages).
-2. Run `pnpm db:update`, or `pnpm db:text` for text-only structure changes. If the schema changed, run `pnpm db:setup` first.
+2. Run `pnpm db:update`, or `pnpm db:text` for text-only changes to existing structures, properties, and implications. If the schema changed, run `pnpm db:setup` first.
 3. If `db:update` fails, the cause is usually malformed YAML or a schema validation error, a contradiction found during deduction, or a failing data-quality test.
 4. Optionally run `pnpm db:redundancies`, and run `pnpm cspell`.

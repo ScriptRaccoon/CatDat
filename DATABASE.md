@@ -49,13 +49,13 @@ pnpm db:seed
 
 rebuilds the database by clearing all existing data and then parsing and inserting the entries defined in these YAML files.
 
-For text-only changes to existing structures, use
+For text-only changes to existing structures, properties, and implications, use
 
 ```
 pnpm db:text
 ```
 
-This compares structure YAML text with the existing database and updates changed names, notations, descriptions, nLab links, and proofs without changing relations or running deductions. Properties and implications are currently not included. Pass `--watch` to keep the command running and update whenever a structure YAML file changes.
+This compares the YAML text with the existing database and updates changed texts (such as descriptions and proofs) without changing relations or running deductions. Pass `--watch` to keep the command running and update whenever a YAML file changes.
 
 ## Derived data
 
