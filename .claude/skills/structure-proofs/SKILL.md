@@ -16,7 +16,7 @@ Arguments: `$ARGUMENTS`
 
 - If the arguments contain a path to a YAML file under `database/data/<structure folder>/`, use it. If they contain a bare structure ID, locate the file with Glob (`database/data/*/<ID>.yaml`).
 - Otherwise, use the current file, i.e. the file most recently opened or selected in the IDE. If there is none, or it is not a structure file, ask the user.
-- The structure type follows from the folder (`categories/`, `functors/`, `morphisms/`, `symmetric_monoidal_categories/`), and the property and implication folders follow from the type (e.g. `category-properties/`, `category-implications/`; for symmetric monoidal categories `symmetric_monoidal_category_properties/` and `symmetric_monoidal_category_implications/`).
+- The structure type follows from the folder (`categories/`, `functors/`, `morphisms/`, `symmetric_monoidal_categories/`), and the property and implication folders follow from the type (e.g. `category-properties/`, `category-implications/`; for symmetric monoidal categories `symmetric_monoidal_category-properties/` and `symmetric_monoidal_category-implications/`).
 - A time limit such as `30m`, `90m`, or `2h` may be given; the default is **60 minutes**. Record the start time with `date +%s` before the first decision and check it with `date +%s` before every new pick. Once the limit is exceeded, finish the property currently being written (or drop it if the proof is not yet complete), and go to the redundancy phase.
 
 State the target file, structure type, and time limit at the start.
