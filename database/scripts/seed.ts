@@ -14,10 +14,9 @@ import {
 } from './utils/seed.schemas'
 import * as v from 'valibot'
 import { check_schema } from './utils/schema'
+import { DATA_FOLDER, get_data_folders } from './utils/folders'
 
 const db = get_client({ readonly: false })
-
-const data_folder = path.resolve('database', 'data')
 
 const structure_history_file = path.resolve('shared', 'structure.history.json')
 const structure_history: string[] = JSON.parse(
@@ -38,32 +37,13 @@ function seed() {
 	clear_all_tables()
 	seed_config()
 
-	seed_properties({ type: 'category', folder: 'category-properties' })
-	seed_special_morphism_rules()
-	seed_implications({ type: 'category', folder: 'category-implications' })
-	seed_structures({ type: 'category', folder: 'categories' })
-	seed_special_category_data({ folder: 'categories' })
-
-	seed_properties({ type: 'functor', folder: 'functor-properties' })
-	seed_implications({ type: 'functor', folder: 'functor-implications' })
-	seed_structures({ type: 'functor', folder: 'functors' })
-
-	seed_properties({ type: 'morphism', folder: 'morphism-properties' })
-	seed_implications({ type: 'morphism', folder: 'morphism-implications' })
-	seed_structures({ type: 'morphism', folder: 'morphisms' })
-
-	seed_properties({
-		type: 'symmetric_monoidal_category',
-		folder: 'symmetric_monoidal_category-properties'
-	})
-	seed_implications({
-		type: 'symmetric_monoidal_category',
-		folder: 'symmetric_monoidal_category-implications'
-	})
-	seed_structures({
-		type: 'symmetric_monoidal_category',
-		folder: 'symmetric_monoidal_categories'
-	})
+	for (const type of STRUCTURE_TYPES) {
+		seed_properties(type)
+		if (type === 'category') seed_special_morphism_rules()
+		seed_implications(type)
+		seed_structures(type)
+		if (type === 'category') seed_special_category_data()
+	}
 
 	if (structure_history_changed) {
 		fs.writeFileSync(
@@ -173,7 +153,7 @@ function seed_config() {
 	seed_file(
 		db,
 		'config',
-		path.join(data_folder, 'config.yaml'),
+		path.join(DATA_FOLDER, 'config.yaml'),
 		config_yaml_schema,
 		insert_config
 	)
@@ -200,7 +180,7 @@ function seed_special_morphism_rules() {
 	seed_file(
 		db,
 		'special morphism rules',
-		path.join(data_folder, 'special-morphism-rules.yaml'),
+		path.join(DATA_FOLDER, 'special-morphism-rules.yaml'),
 		special_morphism_rule_yaml_schema,
 		insert_rules
 	)
@@ -210,7 +190,7 @@ function seed_special_morphism_rules() {
  * Seeds all structures from YAML files of a given type,
  * including their property assignments.
  */
-function seed_structures({ type, folder }: { type: StructureType; folder: string }) {
+function seed_structures(type: StructureType) {
 	const structure_associations = db
 		.prepare<
 			[StructureType],
@@ -341,7 +321,7 @@ function seed_structures({ type, folder }: { type: StructureType; folder: string
 	seed_files(
 		db,
 		PLURALS[type],
-		path.join(data_folder, folder),
+		get_data_folders(type).structures,
 		structure_yaml_schema,
 		insert_structure
 	)
@@ -361,7 +341,7 @@ function record_structure_addition(id: string) {
 /**
  * Inserts data of categories that is specific to categories.
  */
-function seed_special_category_data({ folder }: { folder: string }) {
+function seed_special_category_data() {
 	const category_insert = db.prepare(
 		`INSERT INTO categories (
 	        id, objects, morphisms
@@ -395,7 +375,7 @@ function seed_special_category_data({ folder }: { folder: string }) {
 	seed_files(
 		db,
 		'special category data',
-		path.join(data_folder, folder),
+		get_data_folders('category').structures,
 		category_yaml_schema,
 		insert_category
 	)
@@ -404,7 +384,7 @@ function seed_special_category_data({ folder }: { folder: string }) {
 /**
  * Seeds all properties of a given type from YAML files.
  */
-function seed_properties({ type, folder }: { type: StructureType; folder: string }) {
+function seed_properties(type: StructureType) {
 	const property_insert = db.prepare(`
 		INSERT INTO properties (
 			id, type, relation, description,
@@ -447,7 +427,7 @@ function seed_properties({ type, folder }: { type: StructureType; folder: string
 	seed_files(
 		db,
 		`properties of ${PLURALS[type]}`,
-		path.join(data_folder, folder),
+		get_data_folders(type).properties,
 		property_yaml_schema,
 		insert_property
 	)
@@ -456,7 +436,7 @@ function seed_properties({ type, folder }: { type: StructureType; folder: string
 /**
  * Seeds all implications of a given type from YAML files.
  */
-function seed_implications({ type, folder }: { type: StructureType; folder: string }) {
+function seed_implications(type: StructureType) {
 	const structure_associations = db
 		.prepare<[StructureType], { label: string; target_type: StructureType }>(
 			`SELECT label, target_type
@@ -521,7 +501,7 @@ function seed_implications({ type, folder }: { type: StructureType; folder: stri
 	seed_files(
 		db,
 		`${type} implications`,
-		path.join(data_folder, folder),
+		get_data_folders(type).implications,
 		implications_yaml_schema,
 		insert_implications
 	)

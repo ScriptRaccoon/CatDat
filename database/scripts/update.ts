@@ -1,8 +1,7 @@
-import path from 'node:path'
 import chokidar from 'chokidar'
 import { run_command } from './utils/commands'
+import { DATA_FOLDER } from './utils/folders'
 
-const data_folder = path.resolve('database', 'data')
 const watch_mode = process.argv.includes('--watch')
 const update_commands = ['db:seed', 'db:deduce', 'db:test', 'db:snapshot']
 
@@ -40,12 +39,12 @@ function watch() {
 		update_timer = setTimeout(() => void run_watched_update(), 150)
 	}
 
-	const watcher = chokidar.watch(data_folder, {
+	const watcher = chokidar.watch(DATA_FOLDER, {
 		persistent: true,
 		ignoreInitial: true,
 		awaitWriteFinish: { stabilityThreshold: 200, pollInterval: 50 }
 	})
 
 	watcher.on('add', on_change).on('change', on_change).on('unlink', on_change)
-	console.info(`Watching folder: ${data_folder}`)
+	console.info(`Watching folder: ${DATA_FOLDER}`)
 }
