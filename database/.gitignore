@@ -3,3 +3,4 @@
 **/*.db-shm
 **/*.db-journal
 **/schema.json
+.last-update
