@@ -30,6 +30,9 @@ unsatisfied_properties:
   - property: countable
     proof: This is trivial.
 
+  - property: skeletal
+    proof: This is trivial.
+
 special_objects: {}
 
 special_morphisms: {}

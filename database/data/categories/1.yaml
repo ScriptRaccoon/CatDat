@@ -19,6 +19,9 @@ satisfied_properties:
   - property: trivial
     proof: This is trivial.
 
+  - property: small
+    proof: This is trivial (as long as we model the unique object and the unique morphism as sets).
+
   - property: finite
     proof: This is trivial.
 
