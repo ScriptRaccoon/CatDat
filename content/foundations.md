@@ -97,7 +97,9 @@ If $\C, \D$ are categories, we can therefore construct the functor category $[\C
 
 It is better to state explicitly when the assumption of being locally small is needed.
 
-Equivalences of categories are defined [as usual](https://en.wikipedia.org/wiki/Equivalence_of_categories). A category is _essentially small_ if it is equivalent to a small category. A collection $X$ is essentially small if and only if the associated discrete category $X_{\disc}$ (which has only identity morphisms) is essentially small. In this sense, the two notions are compatible.
+Equivalences of categories are defined [as usual](https://en.wikipedia.org/wiki/Equivalence_of_categories). A category is _essentially small_ if it is equivalent to a small category. A collection $S$ is essentially small if and only if the associated discrete category $S_{\disc}$ (which has only identity morphisms) is essentially small. In this sense, the two notions are compatible.
+
+However, a collection of objects $S \subseteq \Ob(\C)$ of a category $\C$ must not be identified with the full subcategory of $\C$ spanned by $S$: they are different kinds of objects, and their notions of being essentially small differ. For example, the collection of all singletons in $\Set$ is not essentially small, since it is isomorphic to the collection of all sets, whereas the full subcategory of $\Set$ spanned by the singletons is essentially small, since it is equivalent to the trivial category $\1$. For instance, a [generating collection](/category-property/generating_collection) is required to be essentially small as a collection, i.e., isomorphic to a set.
 
 ## Representable functors
 
