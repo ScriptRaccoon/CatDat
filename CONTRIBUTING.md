@@ -67,7 +67,7 @@ To continuously run the update when a file in the data folder changes, use
 pnpm db:update --watch
 ```
 
-For text-only changes to existing structures (names, notations, descriptions, nLab links, or proofs), use `pnpm db:text`. It detects and updates changed fields without rebuilding relations or running deductions. Add `--watch` to keep it running and update whenever a structure YAML file changes.
+For text-only changes to existing structures, properties, or implications (such as descriptions or proofs), use `pnpm db:text`. It updates changed texts without rebuilding relations or running deductions. Add `--watch` to keep it running and update whenever a YAML file changes.
 
 ### Troubleshooting
 
