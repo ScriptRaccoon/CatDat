@@ -82,6 +82,7 @@
 		"cocongruences",
 		"coconstant",
 		"cocontinuous",
+		"codescent",
 		"codiagonal",
 		"codirected",
 		"codiscrete",
@@ -241,6 +242,7 @@
 		"irreflexive",
 		"Isbell",
 		"isos",
+		"Janelidze",
 		"Johnstone",
 		"Jónsson",
 		"Kashiwara",
@@ -412,6 +414,7 @@
 		"well-copowered",
 		"Wengenroth",
 		"Yoneda",
+		"Zangurashvili",
 		"Zulip"
 	],
 	"ignorePaths": [
