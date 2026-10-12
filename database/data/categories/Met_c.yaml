@@ -108,6 +108,18 @@ unsatisfied_properties:
   - property: coequalizers of kernel pairs
     proof: The sequence of embeddings $\IR^1 \hookrightarrow \IR^2 \hookrightarrow \IR^3 \hookrightarrow \cdots$, where each map appends a zero coordinate, has no colimit by <a href="https://mathoverflow.net/questions/510316">MO/510316</a>. It has a cocone consisting of the embeddings $\IR^n \hookrightarrow \ell^2$, $x \mapsto (x,0,0,\dotsc)$, where $\ell^2$ is the Hilbert space of square-summable sequences. Since $\Met_c$ is infinitary extensive, it follows from Lemma 2 <a href="/content/monic_sequential_colimits">here</a> that $\Met_c$ does not have coequalizers of kernel pairs.
 
+  - property: pullback-stable regular epimorphisms
+    proof: >-
+      Let $K \coloneqq \{1/n : n \geq 1\} \subseteq \IR$. Consider the coproduct $X \coloneqq (\IR \setminus K) \sqcup (\IR \setminus \{0\})$, where both summands carry the metric from $\IR$, and let $f : X \to \IR$ be the map that is the inclusion on both summands. It is continuous and surjective.
+
+      We claim that $f$ is a regular epimorphism. By the classification of regular epimorphisms (see below), we need to show that a map $g : \IR \to Z$ into a metric space $Z$ is continuous whenever $g \circ f$ is continuous, that is, whenever the restrictions of $g$ to $\IR \setminus K$ and to $\IR \setminus \{0\}$ are continuous. Since $\IR \setminus \{0\}$ is open in $\IR$, the map $g$ is continuous at every point $x \neq 0$. For continuity at $0$, let $\varepsilon > 0$. Since the restriction of $g$ to $\IR \setminus K$ is continuous at $0$, there is some $\delta > 0$ such that $d(g(x),g(0)) < \varepsilon$ for all $x \in (-\delta,\delta) \setminus K$. Every $1/n \in K$ with $1/n < \delta$ is the limit of a sequence $(x_k)$ in $(-\delta,\delta) \setminus K$, and since $g$ is continuous at $1/n$, we get
+      $$d(g(1/n),g(0)) = \lim_{k \to \infty} d(g(x_k),g(0)) \leq \varepsilon.$$
+      Thus, $d(g(x),g(0)) \leq \varepsilon$ for all $x \in (-\delta,\delta)$, and $g$ is continuous at $0$. 
+
+      (Notice that $f$ is not a quotient map of topological spaces: the preimage $f^*(K) = K \subseteq \IR \setminus \{0\}$ is closed in $X$, but $K$ is not closed in $\IR$.)
+
+      Now consider the subspace $Y' \coloneqq K \cup \{0\}$ of $\IR$. Since finite limits in $\Met_c$ are computed as in $\Top$, the pullback of the inclusion $Y' \hookrightarrow \IR$ along $f$ is the subspace $X' \coloneqq f^*(Y') = \{0\} \sqcup K$ of $X$, and the pullback of $f$ is the restriction $f' : X' \to Y'$. This map is bijective, hence a monomorphism. If it were a regular epimorphism, it would be an isomorphism. But this is not the case: $X'$ is the coproduct of the one-point space $\{0\} \subseteq \IR \setminus K$ and the discrete space $K \subseteq \IR \setminus \{0\}$, so $X'$ is discrete, whereas $0$ is not isolated in $Y'$. Hence, $f'$ is not a regular epimorphism.
+
 special_objects:
   initial object:
     description: empty metric space
