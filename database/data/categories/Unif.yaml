@@ -106,6 +106,9 @@ satisfied_properties:
       $$(y_3(a),y_3(b)) = (u(x),w(x')) \in W \circ W \circ W \subseteq E.$$
       This completes the proof.
 
+  - property: pushout-stable regular monomorphisms
+    proof: By the classification of regular monomorphisms, we need to show that uniform embeddings are stable under pushouts. Since the uniform structure of a pushout is not given by a simple formula, the proof requires some work with chains of entourages. See Proposition 2 <a href="/content/uniform-embeddings-pushouts">here</a>.
+
 unsatisfied_properties:
   - property: skeletal
     proof: This is trivial.
