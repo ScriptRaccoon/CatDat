@@ -14,6 +14,9 @@ description: >-
 
   Note that in several of the properties below, we will fix a choice of a total recursive pairing function $\langle {-}, {-} \rangle : \IN^2 \to \IN$ with total recursive inverses $p_1, p_2 : \IN \to \IN$. (Standard examples of such a pairing function include $\langle m, n \rangle \coloneqq \binom{m+n+1}{2} + m$, or the function intertwining the binary representations of $m$ and $n$.)
 nlab_link: https://ncatlab.org/nlab/show/assembly
+keywords:
+  - omega-set
+  - assembly
 tags:
   - logic
 
