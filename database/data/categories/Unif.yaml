@@ -106,6 +106,9 @@ satisfied_properties:
       $$(y_3(a),y_3(b)) = (u(x),w(x')) \in W \circ W \circ W \subseteq E.$$
       This completes the proof.
 
+  - property: pushout-stable regular monomorphisms
+    proof: By the classification of regular monomorphisms, we need to show that uniform embeddings are stable under pushouts. Since the uniform structure of a pushout is not given by a simple formula, the proof requires some work with chains of entourages. See Proposition 2 <a href="/content/uniform-embeddings-pushouts">here</a>.
+
 unsatisfied_properties:
   - property: skeletal
     proof: This is trivial.
@@ -116,6 +119,22 @@ unsatisfied_properties:
 
   - property: cofiltered-limit-stable epimorphisms
     proof: We already know that <a href="/category/Set">$\Set$</a> does not have this property. Now apply the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> to the functor $\Set \to \Unif$ which equips a set $X$ with the indiscrete uniform structure having $X \times X$ as its only entourage. This functor is right adjoint to the forgetful functor and therefore preserves cofiltered limits.
+
+  - property: pullback-stable regular epimorphisms
+    proof: >-
+      Every metric space $(M,d)$ carries a uniform structure in the usual way: for $\varepsilon > 0$, we have the basic entourage $U_{\varepsilon} \coloneqq \{(x,y) \in M^2 : d(x,y) < \varepsilon\}$. Let $X \coloneqq \{a_n, b_n : n \geq 1\}$ be the metric space with $d(a_n,b_n) \coloneqq 1/n$ and distance $1$ between any two other distinct points (the triangle inequality is easily verified). Let $Y \coloneqq \{0\} \cup \{1/n : n \geq 1\}$ with the metric from $\IR$. The map $q : X \to Y$ defined by
+      $$q(a_n) \coloneqq 0, \quad q(b_n) \coloneqq 1/n$$
+      is non-expansive, hence uniform.
+
+      We claim that $q$ is a regular epimorphism. Since $q$ is surjective, it is the coequalizer of its kernel pair in <a href="/category/Set">$\Set$</a>. Since the forgetful functor $\Unif \to \Set$ preserves pullbacks, it therefore suffices to show that a map $g : Y \to T$ into a uniform space $T$ is uniform whenever $g \circ q : X \to T$ is uniform. Let $V$ be an entourage of $T$, and choose a symmetric entourage $W$ of $T$ with $W \circ W \subseteq V$. Since $g \circ q$ is uniform, there is some $\delta > 0$ such that $(g(q(x)),g(q(y))) \in W$ for all $(x,y) \in U_{\delta}$. Choose $N \geq 1$ with $1/N \leq \delta$. For $n > N$, we have $(a_n,b_n) \in U_{\delta}$, and hence $(g(0),g(1/n)) \in W$. Since $W$ is symmetric and contains the diagonal, it follows that $(g(y),g(y')) \in W \circ W \subseteq V$ for all $y,y'$ in the tail
+      $$Y_N \coloneqq \{0\} \cup \{1/n : n > N\}.$$
+      The points of $Y \setminus Y_N$ are the numbers $1/k$ with $1 \leq k \leq N$, and the distance from $1/k$ to any other point of $Y$ is at least
+      $$\frac{1}{k} - \frac{1}{k+1} = \frac{1}{k(k+1)} \geq \frac{1}{N(N+1)}.$$
+      Thus, for $\varepsilon \coloneqq 1/(N(N+1))$, every pair $(y,y') \in U_{\varepsilon}$ satisfies $y = y'$ or $y,y' \in Y_N$. In both cases, $(g(y),g(y')) \in V$. This shows $U_{\varepsilon} \subseteq (g \times g)^*(V)$, so $g$ is uniform.
+
+      Now consider the subspace $Y' \coloneqq Y \setminus \{0\}$ of $Y$. As explained in the proof of extensivity above, the pullback of the inclusion $Y' \hookrightarrow Y$ along $q$ is the subspace $X' \coloneqq q^*(Y') = \{b_n : n \geq 1\}$ of $X$, and the pullback of $q$ is the restriction
+      $$q' : X' \to Y', \quad b_n \mapsto 1/n.$$
+      This map is bijective, hence a monomorphism. If it were a regular epimorphism, it would be an isomorphism. But this is not the case: since $d(b_n,b_m) = 1$ for $n \neq m$, the diagonal is an entourage of $X'$, whereas the diagonal is not an entourage of $Y'$, since every basic entourage $U_{\varepsilon} \cap (Y' \times Y')$ of $Y'$ contains the pair $(1/n,1/(n+1))$ for large $n$. Hence, $q'$ is not a regular epimorphism.
 
   - property: effective cocongruences
     proof: 'The proof is very similar to <a href="/category/Top">$\Top$</a>. Consider the indiscrete uniform space $I$ on two points whose only entourage is $I \times I$. This represents the functor which maps a uniform space $X$ to the set of pairs of points $(x,y) \in X$ that are indistinguishable, i.e. every entourage of $X$ contains $(x,y)$. This is an equivalence relation on $X$. Therefore, we get a cocongruence $1 \rightrightarrows I$, where the maps are the two possible functions. However, this cannot be effective: If a uniform map $h : Z \to 1$ equalizes the two maps, then $Z$ must be empty. But that means the cokernel pair of $h$ is the discrete uniform space on two points.'

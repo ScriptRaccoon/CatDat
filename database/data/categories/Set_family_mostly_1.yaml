@@ -43,6 +43,9 @@ satisfied_properties:
   - property: mono-regular
     proof: We claim that every monomorphism $X \to Y$ is the equalizer of its cokernel pair $Y \rightrightarrows Y \sqcup_X Y$. This is because every component $X_i \to Y_i$ is injective (see the classification of monomorphisms below), the statement holds in <a href="/category/Set">$\Set$</a>, and equalizers and pushouts are constructed pointwise.
 
+  - property: pushout-stable regular monomorphisms
+    proof: Based on the pointwise descriptions of regular monomorphisms and pushouts, this follows from the corresponding property of <a href="/category/Set">$\Set$</a>.
+
   - property: well-copowered
     proof: The epimorphisms $X \to Y$ are precisely the morphisms that are pointwise surjective (see below). If $X_i \to Y_i$ is surjective and $X_i \cong 1$, then also $Y_i \cong 1$. It follows that the collection $\Quot(X) \cong \prod_{i \in S(X)} \Quot(X_i)$ is essentially small.
 

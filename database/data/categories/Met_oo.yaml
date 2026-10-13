@@ -41,6 +41,22 @@ satisfied_properties:
     references:
       - Met_extremal_cogenerator
 
+  - property: pushout-stable regular monomorphisms
+    proof: >-
+      We already know that pushouts exist. Let $i : A \to X$ be a regular monomorphism and $f : A \to Z$ be a non-expansive map. Consider the pushout $P \coloneqq Z \sqcup_A X$ with the morphisms $j : Z \to P$ and $k : X \to P$. By the classification of regular monomorphisms (see below), we may assume that $A \subseteq X$ is a closed subset with the induced metric, and we need to show that $j$ is an isometric embedding with closed image. We will use the metric space $[0,\infty]$ from the classification of regular monomorphisms. Instead of computing the metric of $P$, we will construct non-expansive maps $P \to [0,\infty]$ via the universal property of $P$.
+
+      First, $j$ is isometric: Let $z_0, z \in Z$. Consider the non-expansive map $d(z_0,-) : Z \to [0,\infty]$ and the map $h : X \to [0,\infty]$ defined by
+      $$\textstyle h(x) \coloneqq \inf_{a \in A} \bigl(d(z_0,f(a)) + d(a,x)\bigr).$$
+      The map $h$ is non-expansive since it is an infimum of non-expansive maps. For $a' \in A$ we have $h(a') = d(z_0,f(a'))$: the inequality $\leq$ follows by taking $a = a'$, and $\geq$ follows from the inequality
+      $$d(z_0,f(a)) + d(a,a') \geq d(z_0,f(a)) + d(f(a),f(a')) \geq d(z_0,f(a')),$$
+      which holds for all $a \in A$ since $f$ is non-expansive. Hence, there is a non-expansive map $g : P \to [0,\infty]$ with $g \circ j = d(z_0,-)$ and $g \circ k = h$. It follows that
+      $$d(j(z_0),j(z)) \geq d(g(j(z_0)),g(j(z))) = d(0,d(z_0,z)) = d(z_0,z).$$
+      The reverse inequality holds since $j$ is non-expansive.
+
+      Next, the image of $j$ is closed: The subspace $j(Z) \cup k(X) \subseteq P$ satisfies the universal property of the pushout as well (restrict the codomains of $j$ and $k$), which implies that $j$ and $k$ are jointly surjective. Now let $p \in P \setminus j(Z)$ be fixed. Since $k(a) = j(f(a))$ for $a \in A$, we can write $p = k(x)$ for some $x \in X \setminus A$. Consider the constant map $0 : Z \to [0,\infty]$ and the non-expansive map $d(A,-) : X \to [0,\infty]$. They agree on $A$, so there is a non-expansive map $g : P \to [0,\infty]$ with $g \circ j = 0$ and $g \circ k = d(A,-)$. For every $z \in Z$ we get
+      $$d(p,j(z)) \geq d(g(p),g(j(z))) = d(d(A,x),0) = d(A,x).$$
+      Since $A$ is closed and $x \notin A$, we have $d(A,x) > 0$. Thus, the open ball around $p$ of radius $d(A,x)$ is disjoint from $j(Z)$, which shows that $j(Z)$ is closed.
+
 unsatisfied_properties:
   - property: skeletal
     proof: This is trivial.
@@ -70,7 +86,7 @@ unsatisfied_properties:
     references:
       - Met_no_effective_cocongruences
 
-  - property: regular
+  - property: pullback-stable regular epimorphisms
     proof: We can take the same counterexample as for <a href="/category/PMet">$\PMet$</a>.
     references:
       - PMet_not_regular
@@ -100,3 +116,9 @@ special_morphisms:
   epimorphisms:
     description: non-expansive maps with dense image
     proof: See <a href="https://math.stackexchange.com/questions/937387">MSE/937387</a>.
+  regular monomorphisms:
+    description: isometric embeddings with closed image
+    proof: >-
+      The proof is similar to the one for <a href="/category/Met_c">$\Met_c$</a>. Equalizers are constructed as in $\Set$, equipped with the induced metric, so they are isometric embeddings. Since metric spaces are Hausdorff and non-expansive maps are continuous, an equalizer of two morphisms $X \rightrightarrows Y$ is a closed subset of $X$. Conversely, let $A \subseteq X$ be a closed subset with the induced metric. Let $[0,\infty]$ be the metric space that extends the usual metric on $[0,\infty)$ by $d(r,\infty) \coloneqq \infty$ for $r \in [0,\infty)$. The map
+      $$\textstyle d(A,-) : X \to [0,\infty], \quad x \mapsto \inf_{a \in A} d(a,x)$$
+      is non-expansive since it is an infimum of non-expansive maps, and it vanishes precisely on $A$ since $A$ is closed. (If $A$ is empty, it is constant with value $\infty$.) Therefore, $A$ is the equalizer of $d(A,-)$ and the constant map $0 : X \to [0,\infty]$.

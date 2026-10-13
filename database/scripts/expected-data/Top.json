@@ -91,6 +91,7 @@
 	"concretizable": true,
 	"total": true,
 	"cototal": true,
+	"pushout-stable regular monomorphisms": true,
 
 	"abelian": false,
 	"additive": false,
@@ -187,5 +188,6 @@
 	"regular-quotient-trivial": false,
 	"core-connected": false,
 	"extremal generator": false,
-	"extremal generating collection": false
+	"extremal generating collection": false,
+	"pullback-stable regular epimorphisms": false
 }
