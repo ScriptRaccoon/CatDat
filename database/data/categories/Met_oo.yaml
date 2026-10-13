@@ -100,3 +100,6 @@ special_morphisms:
   epimorphisms:
     description: non-expansive maps with dense image
     proof: See <a href="https://math.stackexchange.com/questions/937387">MSE/937387</a>.
+  regular monomorphisms:
+    description: isometric embeddings with closed image
+    proof: The same proof as for <a href="/category/Met_c">$\Met_c$</a> works, with two differences. First, equalizers in $\Met_{\infty}$ are equipped with the induced metric, so they are isometric embeddings. Second, for the converse, the map $d(A,-)$ may now take the value $\infty$. Therefore, we regard it as a map $X \to [0,\infty]$, where $[0,\infty]$ is the metric space that extends the usual metric on $[0,\infty)$ by $d(r,\infty) \coloneqq \infty$ for $r \in [0,\infty)$. This map is non-expansive, and so are the constant maps $X \to \IR$.
