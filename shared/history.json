@@ -907,6 +907,10 @@
 		{
 			"type": "category",
 			"id": "Ord"
+		},
+		{
+			"type": "category",
+			"id": "SemiNormVect"
 		}
 	],
 	"properties": [

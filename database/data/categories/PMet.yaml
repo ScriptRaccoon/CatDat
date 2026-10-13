@@ -18,6 +18,7 @@ related:
   - Met
   - Met_c
   - Met_oo
+  - SemiNormVect
 
 satisfied_properties:
   - property: locally small
