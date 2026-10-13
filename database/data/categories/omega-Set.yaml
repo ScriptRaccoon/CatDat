@@ -89,7 +89,6 @@ satisfied_properties:
       $$\lambda_h : U \to \Hom_{\omegaSet}((X, R_X), (Y, R_Y)).$$
       Furthermore, $\code{\lambda_h}$ is a compatible realizer tracker for $\lambda_h$, so in fact we get a morphism
       $$\lambda_h : (U, R_U) \to [(X, R_X), (Y, R_Y)].$$
-
       From here, it is straightforward to show that $\lambda_h$ is the unique morphism such that $ev \circ (\lambda_h \times \id_X) = h$.
     check_redundancy: false
 
@@ -97,13 +96,12 @@ satisfied_properties:
     proof: >-
       This proof will be an adaptation of the proof above that the category is cartesian closed. As in the previous proof, we first fix an <a href="https://en.wikipedia.org/wiki/Admissible_numbering">admissible numbering</a> $(\varphi_n)_{n \in \IN}$ of the partial recursive functions.
 
-      As a preliminary, suppose we have a morphism $f : (X, R_X) \to (Z, R_Z)$ and an element $z\in Z$. Then we will define $f_z$ to be the $\omega$-set with underlying set $f^*(\{ z \})$ and with realization relation $R_X \cap (\IN \times f^*(\{ z \}))$.
+      As a preliminary, suppose we have a morphism $f : (X, R_X) \to (Z, R_Z)$ and an element $z\in Z$. Then we will define $f_z$ to be the $\omega$-set with underlying set $X_z = f^*(\{ z \})$ and with realization relation $R_X \cap (\IN \times f^*(\{ z \}))$.
 
       As another preliminary, suppose we have a span
       $$(X, R_X) \xrightarrow{f} (Z, R_Z) \xleftarrow{g} (Y, R_Y).$$
       Then from the above descriptions of binary products and equalizers, we can describe the pullback in $\omegaSet$ as having underlying set given by the pullback of underlying sets $f \times_Z g$, with realization relation
       $$\{ (\langle n, m \rangle, (x, y)) \mid f(x) = g(y) \land (n, x) \in R_X \land (m, y) \in R_Y \}.$$
-
       Now, suppose we have two morphisms $f : (X, R_X) \to (Z, R_Z)$ and $g : (Y, R_Y) \to (Z, R_Z)$. Then the relative exponential $[f, g]_Z$ will have underlying set
       $$\bigsqcup_{z\in Z} \Hom_{\omegaSet}(f_z, g_z).$$
       The realization relation will be that $\langle n, p \rangle$ realizes $\alpha \in \Hom_{\omegaSet}(f_z, g_z)$ if $n$ realizes $z$, and $p$ is the code for a unary partial recursive function $\varphi_p : \IN \dashrightarrow \IN$ which is a realizer tracker compatible with $\alpha$.
@@ -113,7 +111,7 @@ satisfied_properties:
       The next step is to define an evaluation morphism
       $$\ev_Z : [f, g]_Z \times_{(Z, R_Z)} (X, R_X) \to (Y, R_Y).$$
       We will define this as the function
-      $$\bigsqcup_{z\in Z} \left( \Hom(f_z, g_z) \times X_z \right) \to Y, (z, (\alpha, x)) \mapsto \alpha(x).$$
+      $$\bigsqcup_{z\in Z} \left( \Hom(f_z, g_z) \times X_z \right) \to Y, \quad (z, (\alpha, x)) \mapsto \alpha(x).$$
       The fact that this is a morphism of $\omega$-sets follows from the fact that using the evaluation axiom of the admissible numbering, there is a partial recursive function $\IN \dashrightarrow \IN$ which sends $\langle \langle n, p \rangle, m \rangle \rangle$ to $\varphi_p(m)$ if the latter exists; and it gives a compatible realizer tracker.
 
       Finally, suppose we have a morphism $h : (U, R_U) \to (Z, R_Z)$ and a morphism $j : h \times_{(Z, R_Z)} f \to g$ in $\omegaSet / (Z, R_Z)$. Choose realizer trackers $\code{h} : \IN \dashrightarrow \IN$ and $\code{j} : \IN \dashrightarrow \IN$ compatible with $h$ and $j$, respectively. We can then use the currying axiom of the admissible numbering to construct a total recursive function $\code{\lambda_j} : \IN \to \IN$, such that $\varphi_{\code{\lambda_j}(n)}(m)$ exists if and only if $\code{j}(\langle n, m \rangle)$ exists, and in that case
