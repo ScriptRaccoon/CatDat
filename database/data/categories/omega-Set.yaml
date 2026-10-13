@@ -4,13 +4,13 @@ notation: $\omegaSet$
 objects: pairs $(X, R_X)$ where $X$ is a set and $R_X \subseteq \IN \times X$ is a "realization" relation such that $(p_2)_*(R_X) = X$
 morphisms: 'a morphism $(X, R_X) \to (Y, R_Y)$ is a function $f : X \to Y$ such that there exists a <i>realizer tracker compatible with $f$</i>: this is a <a href="https://ncatlab.org/nlab/show/partial+recursive+function">partial recursive function</a> $\code{f} : \IN \dashrightarrow \IN$ such that for every $(n,x) \in R_X$, the value $\code{f}(n)$ is defined and $(\code{f}(n),f(x)) \in R_Y$'
 description: >-
-  An $\omega$-set represents a mathematical set with computational encodings of its elements; and similarly, a morphism of $\omega$-sets is a mathematical function such that roughly speaking, there is a computer program which translates encodings in the domain to encodings in the codomain (at least theoretically, if run on a computer with unlimited storage capacity and given an unlimited though finite time to work). In particular, if we consider $(n, x) \in R_X$ roughly to express a notion of $n$ being a serialization of a valid representation of $x$, then:
+  An $\omega$-set represents a mathematical set with computational encodings of its elements; and similarly, a morphism of $\omega$-sets is a mathematical function such that, roughly speaking, there is a computer program which translates encodings in the domain to encodings in the codomain (at least theoretically, if run on a computer with unlimited storage capacity and given an unlimited though finite time to work). In particular, if we consider $(n, x) \in R_X$ roughly to express a notion of $n$ being a serialization of a valid representation of $x$, then:
   <ul>
-  <li>We do not require $R_X$ to be total on the first coordinate, i.e. we allow for some objects which are not valid representations of any element of $X$.</li>
+  <li>We do not require $R_X$ to be total on the first coordinate, i.e. we allow for some natural numbers which are not valid representations of any element of $X$.</li>
   <li>We do not require $R_X$ to be the inverse of a partial functional relation, i.e. we allow for some elements of $X$ to have multiple valid representations.</li>
   <li>We do not require $R_X$ to be a partial functional relation. This allows the category to express notions of "uniform computability", where some pieces of information in the codomain can be derived given only partial information about the value in the domain.</li>
   </ul>
-  In many of the proofs to follow, we will use the phrase "$n$ realizes $x$" to mean $(n, x) \in R_X$. Also, we will fix a choice of a total recursive pairing function $\langle {-}, {-} \rangle : \IN^2 \to \IN$ with total recursive inverses $p_1, p_2 : \IN \rightrightarrows \IN$. (Standard examples of such a pairing function include $\langle m, n \rangle \coloneqq \binom{m+n+1}{2} + m$, or the function intertwining the binary representations of $m$ and $n$.)
+  In many of the proofs to follow, we will use the phrase "$n$ realizes $x$" to mean $(n, x) \in R_X$. Also, we will fix a choice of a total recursive pairing function $\langle {-}, {-} \rangle : \IN^2 \to \IN$ with total recursive inverses $p_1, p_2 : \IN \rightrightarrows \IN$. (Standard examples of such a pairing function include $\langle m, n \rangle \coloneqq \binom{m+n+1}{2} + m$, or the function interleaving the binary representations of $m$ and $n$.)
 
   The forgetful functor $U : \omegaSet \to \Set$ has a right adjoint $\nabla : \Set \to \omegaSet$ mapping a set $X$ to the $\omega$-set $(X, \IN \times X)$.
 nlab_link: https://ncatlab.org/nlab/show/assembly
@@ -46,14 +46,14 @@ satisfied_properties:
 
   - property: binary products
     proof: >-
-      We claim that for $\omega$-sets $(X, R_X)$ and $(Y, R_Y)$, then $(X \times Y, R_{X\times Y})$ is a binary product where
+      We claim that for $\omega$-sets $(X, R_X)$ and $(Y, R_Y)$, $(X \times Y, R_{X\times Y})$ is a binary product where
       $$R_{X\times Y} \coloneqq \{ (\langle n, m \rangle, (x, y)) \mid (n, x) \in R_X \land (m, y) \in R_Y \}$$
       and the two projections are the standard set-level projections $\pi_1 : X\times Y \to X$ and $\pi_2 : X\times Y \to Y$. First, those projections are indeed morphisms of $\omega$-sets, since $p_1, p_2 : \IN \rightrightarrows \IN$ are assumed to be total recursive functions. Also, for any two morphisms $f : (U, R_U) \to (X, R_X)$ and $g : (U, R_U) \to (Y, R_Y)$, let $\code{f}, \code{g} : \IN \dashrightarrow \IN$ be realizer trackers compatible with $f$ and $g$, respectively. Then $\langle {-}, {-} \rangle \circ (\code{f}, \code{g})$ is a realizer tracker compatible with $(f, g) : U \to X \times Y$, showing that $(f, g)$ induces a morphism $(U, R_U) \to (X\times Y, R_{X\times Y})$.
     check_redundancy: false
 
   - property: equalizers
     proof: >-
-      Let $f, g : (X, R_X) \rightrightarrows (Y, R_Y)$ be two parallel morphisms, and let $E \subseteq X$ be the equalizer of the underlying functions. We then claim that $(E, R_X \cap (\IN \times E))$ is an equalizer of $f$ and $g$, with the morphism $(E, R_X \cap (\IN \times E)) \hookrightarrow (X, R_X)$ being the inclusion map. First, to see this indeed gives a morphism of $\omega$-sets, note that the identity function is a compatible realizer tracker. Now, if we have $h : (U, R_U) \to (X, R_X)$ such that $h \circ f = h \circ g$, then it is easy to see that the induced function $\bar h : U \to E$ to the equalizer in $\Set$ induces a morphism $(U, R_U) \to (E, R_X \cap (\IN \times X'))$ since any realizer tracker compatible with $h$ is also compatible with $\bar h$.
+      Let $f, g : (X, R_X) \rightrightarrows (Y, R_Y)$ be two parallel morphisms, and let $E \subseteq X$ be the equalizer of the underlying functions. We then claim that $(E, R_X \cap (\IN \times E))$ is an equalizer of $f$ and $g$, with the morphism $(E, R_X \cap (\IN \times E)) \hookrightarrow (X, R_X)$ being the inclusion map. First, to see this indeed gives a morphism of $\omega$-sets, note that the identity function is a compatible realizer tracker. Now, if we have $h : (U, R_U) \to (X, R_X)$ such that $f \circ h = g \circ h$, then it is easy to see that the induced function $\bar h : U \to E$ to the equalizer in $\Set$ induces a morphism $(U, R_U) \to (E, R_X \cap (\IN \times E))$ since any realizer tracker compatible with $h$ is also compatible with $\bar h$.
     check_redundancy: false
 
   - property: initial object
@@ -62,7 +62,7 @@ satisfied_properties:
 
   - property: binary coproducts
     proof: >-
-      We claim that for $\omega$-sets $(X, R_X)$ and $(Y, R_Y)$, then $(X \sqcup Y, R_{X\sqcup Y})$ is a binary coproduct where
+      We claim that for $\omega$-sets $(X, R_X)$ and $(Y, R_Y)$, $(X \sqcup Y, R_{X\sqcup Y})$ is a binary coproduct where
       $$R_{X\sqcup Y} \coloneqq \{ (2n, x) \mid (n, x) \in R_X \} \cup \{ (2n+1, y) \mid (n, y) \in R_Y \}$$
       and the two coprojections are the standard set-level coprojections $i_1 : X \hookrightarrow X \sqcup Y$ and $i_2 : Y \hookrightarrow X \sqcup Y$. First, those coprojections are indeed morphisms of $\omega$-sets, since the functions $n \mapsto 2n$ and $n \mapsto 2n+1$ are total recursive functions $\IN \to \IN$. Also, for any two morphisms $f : (X, R_X) \to (Z, R_Z)$ and $g : (Y, R_Y) \to (Z, R_Z)$, let $\code{f}, \code{g} : \IN \dashrightarrow \IN$ be realizer trackers compatible with $f$ and $g$, respectively. Then there is a unique partial recursive function which sends $2n \mapsto \code{f}(n)$ (if the latter exists) and $2n+1 \mapsto \code{g}(n)$ (if the latter exists), and it forms a realizer tracker compatible with $(f; g) : X\sqcup Y \to Z$. Therefore, $(f; g)$ induces a morphism $(X\sqcup Y, R_{X\sqcup Y}) \to (Z, R_Z)$.
     check_redundancy: false
@@ -81,7 +81,7 @@ satisfied_properties:
 
       In order to check that this is indeed an exponential in $\omegaSet$, we first define the evaluation morphism
       $$\ev : [(X, R_X), (Y, R_Y)] \times (X, R_X) \to (Y, R_Y), \quad (f, x) \mapsto f(x).$$
-      To show that this is in fact a morphism of $\omega$-sets, note that using the evaluation axiom of the admissible numbering, there is a partial recursive function $\varepsilon : \IN \dashrightarrow \IN$ such that $\varepsilon(\langle p, n \rangle)$ exists if and only $\varphi_p(n)$ exists, and in this case $\varepsilon(\langle p, n \rangle) = \varphi_p(n)$. This $\varepsilon$ is then a realizer tracker compatible with $\ev$.
+      To show that this is in fact a morphism of $\omega$-sets, note that using the evaluation axiom of the admissible numbering, there is a partial recursive function $\varepsilon : \IN \dashrightarrow \IN$ such that $\varepsilon(\langle p, n \rangle)$ exists if and only if $\varphi_p(n)$ exists, and in this case $\varepsilon(\langle p, n \rangle) = \varphi_p(n)$. This $\varepsilon$ is then a realizer tracker compatible with $\ev$.
 
       Now, suppose we have a morphism $h : (U, R_U) \times (X, R_X) \to (Y, R_Y)$, with compatible realizer tracker $\code{h} : \IN \dashrightarrow \IN$. Using the currying axiom of the admissible numbering, we can then curry $\code{h}$ into a total recursive function $\code{\lambda_h} : \IN \to \IN$, such that each $\varphi_{\code{\lambda_h}(n)}$ is unary; $\varphi_{\code{\lambda_h}(n)}(m)$ exists if and only if $\code{h}(\langle n, m \rangle)$ exists; and in that case
       $$\varphi_{\code{\lambda_h}(n)}(m) = \code{h}(\langle n, m \rangle).$$
@@ -89,7 +89,7 @@ satisfied_properties:
       $$\lambda_h : U \to \Hom_{\omegaSet}((X, R_X), (Y, R_Y)).$$
       Furthermore, $\code{\lambda_h}$ is a compatible realizer tracker for $\lambda_h$, so in fact we get a morphism
       $$\lambda_h : (U, R_U) \to [(X, R_X), (Y, R_Y)].$$
-      From here, it is straightforward to show that $\lambda_h$ is the unique morphism such that $ev \circ (\lambda_h \times \id_X) = h$.
+      From here, it is straightforward to show that $\lambda_h$ is the unique morphism such that $\ev \circ (\lambda_h \times \id_X) = h$.
     check_redundancy: false
 
   - property: locally cartesian closed
@@ -112,7 +112,7 @@ satisfied_properties:
       $$\ev_Z : [f, g]_Z \times_{(Z, R_Z)} (X, R_X) \to (Y, R_Y).$$
       We will define this as the function
       $$\bigsqcup_{z\in Z} \left( \Hom(f_z, g_z) \times X_z \right) \to Y, \quad (z, (\alpha, x)) \mapsto \alpha(x).$$
-      The fact that this is a morphism of $\omega$-sets follows from the fact that using the evaluation axiom of the admissible numbering, there is a partial recursive function $\IN \dashrightarrow \IN$ which sends $\langle \langle n, p \rangle, m \rangle \rangle$ to $\varphi_p(m)$ if the latter exists; and it gives a compatible realizer tracker.
+      The fact that this is a morphism of $\omega$-sets follows from the fact that using the evaluation axiom of the admissible numbering, there is a partial recursive function $\IN \dashrightarrow \IN$ which sends $\langle \langle n, p \rangle, m \rangle$ to $\varphi_p(m)$ if the latter exists; and it gives a compatible realizer tracker.
 
       Finally, suppose we have a morphism $h : (U, R_U) \to (Z, R_Z)$ and a morphism $j : h \times_{(Z, R_Z)} f \to g$ in $\omegaSet / (Z, R_Z)$. Choose realizer trackers $\code{h} : \IN \dashrightarrow \IN$ and $\code{j} : \IN \dashrightarrow \IN$ compatible with $h$ and $j$, respectively. We can then use the currying axiom of the admissible numbering to construct a total recursive function $\code{\lambda_j} : \IN \to \IN$, such that $\varphi_{\code{\lambda_j}(n)}(m)$ exists if and only if $\code{j}(\langle n, m \rangle)$ exists, and in that case
       $$\varphi_{\code{\lambda_j}(n)}(m) = \code{j}(\langle n, m \rangle).$$
@@ -127,10 +127,10 @@ satisfied_properties:
       We claim that $\Omega \coloneqq (2, \IN \times 2)$ is a regular subobject classifier, with $\top : 1 \to \Omega$ being the morphism whose underlying set function is $0 \mapsto 1$. To see this, note that from the construction of equalizers above, any regular subobject of $(X, R_X)$ is equivalent to $(X', R_X \cap (\IN \times X'))$ for some $X' \subseteq X$. It is then straightforward to check that the characteristic function $\chi_{X'} : X \to 2$ induces a morphism $(X, R_X) \to \Omega$, and that $(X', R_X \cap (\IN \times X'))$ is also the pullback of $\chi_{X'}$ and $\top$.
 
   - property: disjoint finite coproducts
-    proof: This follows from the fact that the forgetful functor $\omegaSet \to \Set$ preserves finite coproducts from the construction above; the fact that finite coproducts are disjoint in $\Set$; and the fact that the forgetful functor reflects initial objects.
+    proof: This follows from the fact that the forgetful functor $\omegaSet \to \Set$ preserves finite coproducts by the construction above; the fact that finite coproducts are disjoint in $\Set$; and the fact that the forgetful functor reflects initial objects.
 
   - property: generator
-    proof: The terminal object $(1, \IN \times 1)$ represents the forgetful functor $\omegaSet \to \Set$ which is clearly faithful. (For the nontrivial direction of the isomorphism between $\Hom_{\omegaSet}((1, \IN \times 1), (X, R_X))$ and $X$, suppose we have $x \in X$. Then there exists $n \in \IN$ such that $n$ realizes $x$; therefore, the total recursive function given by the constant function with image $n$ forms a realizer tracker compatible with the corresponding function $1 \to X$.)
+    proof: The terminal object $(1, \IN \times 1)$ represents the forgetful functor $\omegaSet \to \Set$ which is clearly faithful. (For the non-trivial direction of the isomorphism between $\Hom_{\omegaSet}((1, \IN \times 1), (X, R_X))$ and $X$, suppose we have $x \in X$. Then there exists $n \in \IN$ such that $n$ realizes $x$; therefore, the total recursive function given by the constant function with image $n$ forms a realizer tracker compatible with the corresponding function $1 \to X$.)
 
   - property: extremal generating collection
     proof: >-
@@ -193,25 +193,25 @@ unsatisfied_properties:
       is infinite.
 
   - property: balanced
-    proof: 'The identity map $\IN \to \IN$ induces a morphism of $\omega$-sets $N \to \nabla \IN$, since the identity map is also a compatible realizer tracker. It is both a monomorphism and an epimorphism by the characterizations below. However, it is not an isomorphism: an inverse $\nabla \IN \to N$ would have to have the identity map $\IN \to \IN$ as its underlying function. But for any compatible realizer tracker $\psi$, we have that $0$ realizes both $0$ and $1$ in $\nabla \IN$. Therefore, $\psi(0)$ would have to exist and realize both $0$ and $1$ in $N$, which is impossible. (Alternately, $\Hom_{\omegaSet}(\nabla \IN, \nabla \IN) \cong \Hom_{\Set}(\IN, \IN)$ is uncountable. On the other hand, it is easy to see that $\Hom_{\omegaSet}(N, N)$ is exactly the total recursive functions, since a compatible realizer tracker would have to agree with the underlying function. Therefore, $\Hom_{\omegaSet}(N, N)$ is countable.)'
+    proof: 'The identity map $\IN \to \IN$ induces a morphism of $\omega$-sets $N \to \nabla \IN$, since the identity map is also a compatible realizer tracker. It is both a monomorphism and an epimorphism by the characterizations below. However, it is not an isomorphism: an inverse $\nabla \IN \to N$ would have to have the identity map $\IN \to \IN$ as its underlying function. But for any compatible realizer tracker $\psi$, we have that $0$ realizes both $0$ and $1$ in $\nabla \IN$. Therefore, $\psi(0)$ would have to exist and realize both $0$ and $1$ in $N$, which is impossible. (Alternatively, $\Hom_{\omegaSet}(\nabla \IN, \nabla \IN) \cong \Hom_{\Set}(\IN, \IN)$ is uncountable. On the other hand, it is easy to see that $\Hom_{\omegaSet}(N, N)$ is exactly the total recursive functions, since a compatible realizer tracker would have to agree with the underlying function. Therefore, $\Hom_{\omegaSet}(N, N)$ is countable.)'
     check_redundancy: false
 
   - property: co-Malcev
-    proof: 'Consider the two possible morphisms $f, g : \nabla 1 \rightrightarrows \nabla 2$. This defines a cocongruence representing the functor which to $(X, E_X)$ assigns the binary relation on $X$ of two elements having a common realizer. That shows that this cocongruence is coreflexive, since by definition any element of an $\omega$-set has a realizer. However, it is easy to see that it is not cotransitive; for example, in $(3, \{ (0, 0), (0, 1), (1, 1), (1, 2) \})$, $0$ and $1$ have a common realizer, as do $1$ and $2$; but $0$ and $2$ do not have a common realizer.'
+    proof: 'Consider the two possible morphisms $f, g : \nabla 1 \rightrightarrows \nabla 2$. This defines a cocongruence representing the functor which to $(X, R_X)$ assigns the binary relation on $X$ of two elements having a common realizer. That shows that this cocongruence is coreflexive, since by definition any element of an $\omega$-set has a realizer. However, it is easy to see that it is not cotransitive; for example, in $(3, \{ (0, 0), (0, 1), (1, 1), (1, 2) \})$, $0$ and $1$ have a common realizer, as do $1$ and $2$; but $0$ and $2$ do not have a common realizer.'
 
   - property: countable powers
     proof: >-
-      Let $N \coloneqq (\IN, \Delta_{\IN})$ be the natural numbers object. For any $\omega$-set $(X, R_X)$ with a sequence of morphisms $f_n : (X, R_X) \to N$, we can define a function $g : X \to \IN^{\IN}$ which sends $x \in X$ to the sequence $(f_n(x))_{n\in \IN}$. We claim that $g$ has countable image. To see this, suppose $x\in X$. Then there exists $m\in \IN$ such that $m$ realizes $x$. We can also choose realizer trackers $\code{f_n} : \IN \dashrightarrow \IN$ compatible with $f_n$. It follows that $\code{f_n}(m)$ is defined and $\code{f_n}(m) = f_n(x)$ for each $n$. Therefore, the image of $g$ is contained in the set of sequences $(\code{f_n}(m))_{n\in N}$ where $m \in \IN$ is such that $\code{f_n}(m)$ is defined for each $n$.
+      Let $N \coloneqq (\IN, \Delta_{\IN})$ be the natural numbers object. For any $\omega$-set $(X, R_X)$ with a sequence of morphisms $f_n : (X, R_X) \to N$, we can define a function $g : X \to \IN^{\IN}$ which sends $x \in X$ to the sequence $(f_n(x))_{n\in \IN}$. We claim that $g$ has countable image. To see this, suppose $x\in X$. Then there exists $m\in \IN$ such that $m$ realizes $x$. We can also choose realizer trackers $\code{f_n} : \IN \dashrightarrow \IN$ compatible with $f_n$. It follows that $\code{f_n}(m)$ is defined and $\code{f_n}(m) = f_n(x)$ for each $n$. Therefore, the image of $g$ is contained in the set of sequences $(\code{f_n}(m))_{n\in \IN}$ where $m \in \IN$ is such that $\code{f_n}(m)$ is defined for each $n$.
 
-      From this, we see that there can be no $\aleph_0$-indexed power of $N$. Indeed, if $X$ were such a power, then for any sequence $(a_n) \in \IN^{\IN}$, we would have a corresponding sequence of morphisms $1 \to \IN$, inducing a morphism $1 \to X$ and thus an element $x$ of the underlying set. The corresponding function $g : X \to \IN^{\IN}$ would then have to have value $g(x) = (a_n)$. Thus, $g$ would be surjective, contradicting the previous paragraph.
+      From this, we see that there can be no $\aleph_0$-indexed power of $N$. Indeed, if $X$ were such a power, then for any sequence $(a_n) \in \IN^{\IN}$, we would have a corresponding sequence of morphisms $1 \to N$, inducing a morphism $1 \to X$ and thus an element $x$ of the underlying set. The corresponding function $g : X \to \IN^{\IN}$ would then have to have value $g(x) = (a_n)$. Thus, $g$ would be surjective, contradicting the previous paragraph.
 
   - property: ℵ₁-filtered colimits
     proof: >-
-      This counterexample is inspired by the construction in <a href="https://www.sciencedirect.com/science/article/pii/S0022404905001593">Jaap van Oosten, <i>Filtered colimits in the effective topos</i></a>. Here, first choose an $\omega_1$-Aronszajn sequence: this is a sequence $(s_\alpha)_{\alpha \in \omega_1}$ of injective functions $\alpha \to \IN$ such that whenever $\beta < \alpha < \omega_1$, then $s_\beta$ and $s_\alpha |_\beta$ agree except at finitely many points. We then let $X_\alpha$ be the $\omega$-set whose underlying set is $\alpha$, equipped with the realization relation that $n$ realizes $\beta \in \alpha$ if and only if $s_\alpha(\beta) = n$.
+      This counterexample is inspired by the construction in <a href="https://www.sciencedirect.com/science/article/pii/S0022404905001593">van Oosten</a>. Here, we first choose an $\omega_1$-Aronszajn sequence: this is a sequence $(s_\alpha)_{\alpha \in \omega_1}$ of injective functions $\alpha \to \IN$ such that whenever $\beta < \alpha < \omega_1$, then $s_\beta$ and $s_\alpha |_\beta$ agree except at finitely many points. We then let $X_\alpha$ be the $\omega$-set whose underlying set is $\alpha$, equipped with the realization relation that $n$ realizes $\beta \in \alpha$ if and only if $s_\alpha(\beta) = n$.
 
       Whenever $\beta < \alpha$, the inclusion map $\beta \hookrightarrow \alpha$ induces a morphism $X_\beta \to X_\alpha$. This is because by the above condition, a compatible realizer tracker only needs to "reassign" finitely many realizers, which is certainly possible to achieve with a total recursive function. It is easy to see that this makes $(X_\alpha)_{\alpha \in \omega_1}$ into an ℵ₁-filtered diagram.
 
-      However, this diagram cannot have a colimit. If it did have a colimit $Y$, it would have to have underlying set equivalent to $\omega_1$, since the forgetful functor $\omegaSet \to \Set$ is a left adjoint. Thus, we may assume $Y$ has underlying set equal to $\omega_1$, with the cocone maps $X_\alpha \to Y$ being the inclusion maps. Also, for any $\gamma_0 \in \omega_1$, we can construct morphisms $X_\alpha \to N$ such that $\beta \mapsto 0$ except that $\gamma_0 \mapsto 1$ if $\gamma_0 \in \alpha$. To see this, if $\gamma_0 \not\in \alpha$, then we can use the constant function with value 0 as the compatible realizer tracker. On the other hand, if $\gamma_0 \in \alpha$, then we can use the total recursive function which sends all natural numbers to 0, except that it sends $s_\alpha(\gamma_0)$ to 1. It is easy to see that this gives a cocone of $(X_\alpha)_{\alpha \in \omega_1}$, so it induces a morphism $f : Y \to N$. Furthermore, we must have $f(\gamma_0) = 1$ while $f(\gamma ') = 0$ for $\gamma ' \ne \gamma_0$.
+      However, this diagram cannot have a colimit. If it did have a colimit $Y$, its underlying set would have to be in bijection with $\omega_1$, since the forgetful functor $\omegaSet \to \Set$ is a left adjoint. Thus, we may assume $Y$ has underlying set equal to $\omega_1$, with the cocone maps $X_\alpha \to Y$ being the inclusion maps. Also, for any $\gamma_0 \in \omega_1$, we can construct morphisms $X_\alpha \to N$ such that $\beta \mapsto 0$ except that $\gamma_0 \mapsto 1$ if $\gamma_0 \in \alpha$. To see this, if $\gamma_0 \not\in \alpha$, then we can use the constant function with value 0 as the compatible realizer tracker. On the other hand, if $\gamma_0 \in \alpha$, then we can use the total recursive function which sends all natural numbers to 0, except that it sends $s_\alpha(\gamma_0)$ to 1. It is easy to see that this gives a cocone of $(X_\alpha)_{\alpha \in \omega_1}$, so it induces a morphism $f : Y \to N$. Furthermore, we must have $f(\gamma_0) = 1$ while $f(\gamma ') = 0$ for $\gamma ' \ne \gamma_0$.
 
       From this, examining the conditions on a compatible realizer tracker for $f$, we can conclude that for $\gamma ' \ne \gamma_0$, $\gamma_0$ and $\gamma '$ cannot have any common realizers in $Y$. Thus, the realization relation on $Y$ induces a surjective function from a subset of $\IN$ to $\omega_1$, giving a contradiction.
 
@@ -221,7 +221,7 @@ unsatisfied_properties:
 
       <b>Step 1:</b> We construct an $\omega$-set $(T, R_T)$ such that $T$ is infinite, but any morphism $(G, R_G) \to (T, R_T)$ has finite image.
 
-      In order to do this, first let $\Gamma \coloneqq (p_1)_*(R_G)$ be the set of realizers of elements of $G$. Also fix an enumeration $(\varphi_n)_{n\in \IN}$ of the unary partial recursive morphisms $\IN \dashrightarrow \IN$ (which does not need to be an admissible numbering for this application). We will then construct an increasing sequence of finite subsets $I_n, O_n \subseteq \IN$ such that $I_n \cap O_n = \varnothing$ for each $n$. We start with $I_0 = O_0 = \varnothing$. Now for each $n$, if $(\varphi_n)_*(\Gamma) \subseteq I_n \cup O_n$, then we set $O_{n+1} \coloneqq O_n$; otherwise, we let $O_{n+1} \coloneqq O_n \cup \{ b_n \}$ where we choose
+      In order to do this, first let $\Gamma \coloneqq (p_1)_*(R_G)$ be the set of realizers of elements of $G$. Also fix an enumeration $(\varphi_n)_{n\in \IN}$ of the unary partial recursive functions $\IN \dashrightarrow \IN$ (which does not need to be an admissible numbering for this application). We will then construct an increasing sequence of finite subsets $I_n, O_n \subseteq \IN$ such that $I_n \cap O_n = \varnothing$ for each $n$. We start with $I_0 = O_0 = \varnothing$. Now for each $n$, if $(\varphi_n)_*(\Gamma) \subseteq I_n \cup O_n$, then we set $O_{n+1} \coloneqq O_n$; otherwise, we let $O_{n+1} \coloneqq O_n \cup \{ b_n \}$ where we choose
       $$b_n \in (\varphi_n)_*(\Gamma) \setminus (I_n \cup O_n).$$
       We then let $I_{n+1} \coloneqq I_n \cup \{ a_n \}$ where we choose
       $$a_n \in \IN \setminus (I_n \cup O_{n+1}).$$
@@ -229,13 +229,13 @@ unsatisfied_properties:
 
       <b>Step 2:</b> Proof that $(T, R_T)$ has the properties stated in Step 1.
 
-      First, since $\card(I_{n+1}) = n$ for each $n$, then $T$ must certainly be infinite. Now, suppose we have a morphism $f : (G, R_G) \to (T, R_T)$, and choose $n$ such that $\varphi_n$ is a compatible realizer tracker. Then whenever $m$ realizes $x \in X$, we must have $f(x) = \varphi_n(m)$; from this fact, it is easy to see that the image of $f$ is equal to $(\varphi_n)_*(\Gamma)$. However, if we had the second case at stage $n$ in the above construction, then we would have $b_n \in O_m$ whenever $m > n$; hence $b_n \notin T$. On the other hand, $b_n \in (\varphi_n)_*(\Gamma)$ by construction, and $(\varphi_n)_*(\Gamma) \subseteq T$, giving a contradiction.
+      First, since $\card(I_n) = n$ for each $n$, $T$ must certainly be infinite. Now, suppose we have a morphism $f : (G, R_G) \to (T, R_T)$, and choose $n$ such that $\varphi_n$ is a compatible realizer tracker. Then whenever $m$ realizes $x \in G$, we must have $f(x) = \varphi_n(m)$; from this fact, it is easy to see that the image of $f$ is equal to $(\varphi_n)_*(\Gamma)$. However, if we had the second case at stage $n$ in the above construction, then we would have $b_n \in O_m$ whenever $m > n$; hence $b_n \notin T$. On the other hand, $b_n \in (\varphi_n)_*(\Gamma)$ by construction, and $(\varphi_n)_*(\Gamma) \subseteq T$, giving a contradiction.
 
       Thus, we must have had the first case at stage $n$ in the above construction. In other words, $(\varphi_n)_*(\Gamma) \subseteq I_n \cup O_n$, and the latter is finite.
 
       <b>Step 3:</b> Construction of a function $c : T \to \IN$ which is not the restriction of any partial recursive function $\IN \dashrightarrow \IN$.
 
-      This is an easy adaptation of the standard diagonalization construction of a non-recursive function. We use the enumeration $(\varphi_n)_{n\in \IN}$ of the unary partial recursive morphisms as above, along with an enumeration $(t_n)_{n\in \IN}$ of the countably infinite set $T$. We now set
+      This is an easy adaptation of the standard diagonalization construction of a non-recursive function. We use the enumeration $(\varphi_n)_{n\in \IN}$ of the unary partial recursive functions as above, along with an enumeration $(t_n)_{n\in \IN}$ of the countably infinite set $T$. We now set
       $$c(t_n) \coloneqq \begin{cases}
       1, & t_n\in \dom(\varphi_n) \land \varphi_n(t_n) = 0, \\
       0, & \mathrm{otherwise}.
@@ -252,7 +252,7 @@ unsatisfied_properties:
 
       Since $f$ is a monomorphism, certainly
       $$f \circ {-} : \Hom((G, R_G), (T, R_T ')) \to \Hom((G, R_G), (T, R_T))$$
-      must be injective. To see it is surjective, suppose we have a morphism $g : (G, R_G) \to (T, R_T)$, and choose a compatible realizer tracker $\code{g}$. By the construction above, $g$ must have finite image. Therefore, there is a partial recursive function $c' : \IN \dashrightarrow \IN$ such that $c' |_{\im(g)} = c |_{\im(g)}$, which we could implement in any Turing-complete programming language using a lookup table for example. Now we let $h : (G, R_G) \to (T, R_T ')$ have the same underlying function as $g$. This also forms a morphism of $\omega$-sets because
+      must be injective. To see it is surjective, suppose we have a morphism $g : (G, R_G) \to (T, R_T)$, and choose a compatible realizer tracker $\code{g}$. By the construction above, $g$ must have finite image. Therefore, there is a partial recursive function $c' : \IN \dashrightarrow \IN$ such that $c' |_{\im(g)} = c |_{\im(g)}$, which we could implement in any Turing-complete programming language using a lookup table, for example. Now we let $h : (G, R_G) \to (T, R_T ')$ have the same underlying function as $g$. This also forms a morphism of $\omega$-sets because
       $$\code{h} \coloneqq n \mapsto \langle \code{g}(n), c'(\code{g}(n)) \rangle$$
       is a compatible realizer tracker. Furthermore, we certainly have $f \circ h = g$.
 
@@ -278,7 +278,7 @@ special_morphisms:
     proof: 'Following the constructions above, we can see that for any morphism $f : (X, R_X) \to (Y, R_Y)$, the equalizer of the cokernel pair of $f$ is $(\im(f), R_Y \cap (\IN \times \im(f)))$; and the condition above is equivalent to the condition that the canonical map $X \to \im(f)$ induces an isomorphism of $\omega$-sets $(X, R_X) \to (\im(f), R_Y \cap (\IN \times \im(f)))$.'
   epimorphisms:
     description: Morphisms of $\omega$-sets whose underlying set function is surjective
-    proof: Sufficiency of this condition is trivial. For necessity, use the fact that the forgetful functor $\omegaSet$ is a left adjoint, and therefore preserves epimorphisms.
+    proof: Sufficiency of this condition is trivial. For necessity, use the fact that the forgetful functor $\omegaSet \to \Set$ is a left adjoint, and therefore preserves epimorphisms.
   regular epimorphisms:
     description: 'A morphism $f : (X, R_X) \to (Y, R_Y)$ is a regular epimorphism if and only if there exists a partial recursive function $\psi : \IN \dashrightarrow \IN$ such that whenever we have $n\in \IN$ and $y\in Y$ such that $n$ realizes $y$, then $\psi(n)$ exists, and there exists $x\in X$ such that $f(x) = y$ and $\psi(n)$ realizes $x$'
     proof: 'Following the constructions above, we can see that for any morphism $f : (X, R_X) \to (Y, R_Y)$, the coequalizer of the kernel pair of $f$ is $(\im(f), ({\id_{\IN}} \times f)_*(R_X))$; and the condition above is equivalent to the condition that the canonical map $\im(f) \to Y$ induces an isomorphism of $\omega$-sets $(\im(f), (\id_{\IN} \times f)_*(R_X)) \to (Y, R_Y)$.'

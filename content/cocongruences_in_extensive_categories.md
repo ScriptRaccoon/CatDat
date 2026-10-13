@@ -97,7 +97,7 @@ Let $e : Y \hookrightarrow X$ be the equalizer of $j_1$ and $j_2$. We will prove
 $$
 \begin{align*}
 (i_1; i_1 \circ e; i_2 \circ e; i_2) & ,\\
-(i_1; i_2 \circ e; i_1 \circ e; i_2) & : X + Y + Y + X \rightrightarrows X + X.
+(i_1; i_2 \circ e; i_1 \circ e; i_2) & : X + Y + Y + X \rightrightarrows X + X
 \end{align*}
 $$
 
@@ -161,7 +161,7 @@ $$(i_1; i_1\circ e; i_2\circ e; i_2) : X+Y+Y+X \to X+X,$$
 whereas $(\id+e; e+\id)$ corresponds to
 $$(i_1; i_2\circ e; i_1\circ e; i_2) : X+Y+Y+X \to X+X.$$
 
-Therefore, since $(j_1; j_2) : X + X \to E$ is a regular epimorphism, it is a coequalizer of this kernel pair. However, this coequalizer is exactly the congruence quotient in the construction <a href="/content/pushouts-of-monos-via-congruence-quotients">here</a> of $X +_Y X$. Thus, we see that the original corelation is equivalent to the cokernel pair of $e$.
+Therefore, since $(j_1; j_2) : X + X \to E$ is a regular epimorphism, it is a coequalizer of this kernel pair. However, this coequalizer is exactly the congruence quotient in the construction of $X +_Y X$ <a href="/content/pushouts-of-monos-via-congruence-quotients">here</a>. Thus, we see that the original corelation is equivalent to the cokernel pair of $e$.
 :::
 
 ::: Corollary 5
