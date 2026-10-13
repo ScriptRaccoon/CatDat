@@ -189,3 +189,6 @@ special_morphisms:
   epimorphisms:
     description: non-expansive maps with dense image
     proof: See <a href="https://math.stackexchange.com/questions/937387">MSE/937387</a>.
+  regular monomorphisms:
+    description: isometric embeddings with closed image
+    proof: 'The same proof as for <a href="/category/Met_c">$\Met_c$</a> works. The only difference is that equalizers in $\Met$ are equipped with the induced metric, so they are isometric embeddings. For the converse, note that the maps used there, the constant maps $X \to \IR$ and $d(A,-) : X \to \IR$, are non-expansive.'
