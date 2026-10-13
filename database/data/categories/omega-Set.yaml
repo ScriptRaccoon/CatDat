@@ -11,6 +11,8 @@ description: >-
   <li>We do not require $R_X$ to be a partial functional relation. This allows the category to express notions of "uniform computability", where some pieces of information in the codomain can be derived given only partial information about the value in the domain.</li>
   </ul>
   In many of the proofs to follow, we will use the phrase "$n$ realizes $x$" to mean $(n, x) \in R_X$. Also, we will fix a choice of a total recursive pairing function $\langle {-}, {-} \rangle : \IN^2 \to \IN$ with total recursive inverses $p_1, p_2 : \IN \to \IN$. (Standard examples of such a pairing function include $\langle m, n \rangle \coloneqq \binom{m+n+1}{2} + m$, or the function intertwining the binary representations of $m$ and $n$.)
+
+  The forgetful functor $U : \omegaSet \to \Set$ has a right adjoint $\nabla : \Set \to \omegaSet$ mapping a set $X$ to the $\omega$-set $(X, \IN \times X)$.
 nlab_link: https://ncatlab.org/nlab/show/assembly
 keywords:
   - omega-set
@@ -23,7 +25,6 @@ related:
 
 comments:
   - 'Note that the realizer tracker $\ulcorner f \urcorner$ is <i>not</i> part of the data of a morphism $f : (X, R_X) \to (Y, R_Y)$; only the existence of at least one realizer tracker is required.'
-  - 'The forgetful functor $U : \omegaSet \to \Set$ has a right adjoint $\nabla : \Set \to \omegaSet$ mapping a set $X$ to the $\omega$-set $(X, \IN \times X)$.'
 
 satisfied_properties:
   - property: locally small
