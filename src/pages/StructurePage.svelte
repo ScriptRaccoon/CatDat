@@ -121,7 +121,7 @@
 	{/if}
 </section>
 
-<p>{@html structure.description}</p>
+<div class="description">{@html structure.description}</div>
 
 <PropertyAssignmentList
 	{type}
@@ -146,6 +146,10 @@
 <SuggestionForm />
 
 <style>
+	.description {
+		margin-block: 1rem;
+	}
+
 	.information-table {
 		margin-top: 1.5rem;
 	}

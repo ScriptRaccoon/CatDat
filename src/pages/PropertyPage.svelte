@@ -48,7 +48,7 @@
 
 <TagList {tags} {type} sort="property" />
 
-<p>
+<div class="description">
 	{@html property.description}
 
 	{#if property.invariant_under_equivalences === false}
@@ -57,7 +57,7 @@
 			target="_blank">invariant under equivalences</a
 		>.
 	{/if}
-</p>
+</div>
 
 {#if property.dual_property_id || related_properties.length || property.nlab_link}
 	<div class="information-table">
@@ -156,3 +156,9 @@
 <StructureList structures={unknown_structures} {type} />
 
 <SuggestionForm />
+
+<style>
+	.description {
+		margin-block: 1rem;
+	}
+</style>

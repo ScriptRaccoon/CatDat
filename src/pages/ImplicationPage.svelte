@@ -91,10 +91,10 @@
 	{/each}
 </p>
 
-<p>
+<div class="proof">
 	<strong>Proof:</strong>
 	{@html implication.proof}
-</p>
+</div>
 
 {#if implication.dual_implication_id}
 	<p>
@@ -132,5 +132,9 @@
 		button {
 			color: var(--secondary-text-color);
 		}
+	}
+
+	.proof {
+		margin-block: 1rem;
 	}
 </style>
