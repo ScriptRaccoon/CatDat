@@ -89,6 +89,7 @@
 \Id: \operatorname{Id}
 \Br: \operatorname{Br}
 \dom: \operatorname{dom}
+\code: '\ulcorner #1 \urcorner'
 
 # standard collections
 \SetColl: \mathrm{Set}
