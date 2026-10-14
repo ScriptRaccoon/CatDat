@@ -215,5 +215,6 @@
 	"Bin_symm_refl",
 	"Set_bij",
 	"Set_family_bij",
-	"Grp_fg"
+	"Grp_fg",
+	"omega-Set"
 ]
