@@ -72,6 +72,7 @@
   conclusions:
     - effective congruences
     - quotients of congruences
+  # TODO: rename congruences consistently to q_1, q_2 (and cocongruences to j_1, j_2)
   proof: 'If $p_1, p_2 : E \rightrightarrows X$ is a congruence, the symmetry morphism $s : E \to E$ is an automorphism of $E$, hence equal to $\id_E$ by assumption. But then $p_1 = p_2 \circ s = p_2$, and simply $\id_X$ is a coequalizer. Also, for the reflexivity morphism $r : X \to E$, we have $p_1 \circ r = \id$. For the reverse composition, $p_1 \circ r \circ p_1 = p_1 \circ \id$ and $p_2 \circ r \circ p_1 = p_2 \circ \id$, so since $p_1, p_2$ are jointly monomorphic, we get $r \circ p_1 = \id$. Therefore, $p_1 = p_2$ is an isomorphism, so $E$ is the kernel pair of $\id_X$.'
 
 - id: preadditive_kernels_normal_imply_effective_congruences
@@ -86,7 +87,7 @@
 
     To see this, suppose we have a pair of generalized elements $x_1, x_2 \in X(T)$. Then we have
     $$\begin{align*} (x_1,x_2) \in E & \iff (x_1 - x_2,0) \in E \\ & \iff x_1 - x_2 \in E_0 \\ & \iff h(x_1 - x_2) = 0 \\ & \iff h(x_1) = h(x_2). \end{align*}$$
-    In particular, applying the forward implications in the case $T \coloneqq E$, $x_1 \coloneqq f$, $x_2 \coloneqq g$, we conclude that $h \circ f = h \circ g$, so we get the required commutative diagram. From there, the reverse implications show this diagram is a cartesian square.
+    In particular, applying the forward implications in the case $T \coloneqq E$, $x_1 \coloneqq f$, $x_2 \coloneqq g$, we conclude that $h \circ f = h \circ g$, so we get the required commutative diagram. From there, the reverse implications show this diagram is a pullback square.
 
 - id: additive_effective_congruences_imply_normal
   assumptions:
