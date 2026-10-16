@@ -9,6 +9,7 @@ dual: effective congruences
 invariant_under_equivalences: true
 
 related:
+  - effective regular cocongruences
   - conormal
   - coquotients of cocongruences
   - epi-regular

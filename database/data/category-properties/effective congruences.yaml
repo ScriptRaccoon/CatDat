@@ -9,6 +9,7 @@ dual: effective cocongruences
 invariant_under_equivalences: true
 
 related:
+  - effective regular congruences
   - mono-regular
   - normal
   - quotients of congruences

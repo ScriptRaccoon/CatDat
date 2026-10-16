@@ -1,0 +1,16 @@
+id: effective regular congruences
+relation: has
+description: >-
+  Say a congruence $q_1, q_2 : E \rightrightarrows X$ in a category with binary powers is <i>regular</i> if the monomorphism $(q_1, q_2) : E \hookrightarrow X \times X$ is in fact a regular monomorphism.
+
+  A category <i>has effective regular congruences</i> if it has binary powers, and every regular congruence in the category is effective (see <a href="/category-property/effective congruences">here</a> for definition).
+nlab_link: null
+dual: effective regular cocongruences
+invariant_under_equivalences: true
+
+related:
+  - effective congruences
+  - kernel pairs
+
+tags:
+  - congruences

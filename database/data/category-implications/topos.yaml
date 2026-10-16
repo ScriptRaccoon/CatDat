@@ -85,3 +85,14 @@
     - regular subobject classifier
   proof: This is true by definition.
   is_equivalence: true
+
+- id: quasitopos_effective_regular_congruences
+  assumptions:
+    - regular subobject classifier
+    - cartesian closed
+  conclusions:
+    - effective regular congruences
+  proof: >-
+    Let $E \hookrightarrow X \times X$ be the regular monomorphism corresponding to a regular congruence $q_1, q_2 : E \rightrightarrows X$. This further corresponds to a characteristic morphism $X\times X \to \Omega$, and furthermore to a morphism $X \to [X, \Omega]$ which we will call $[\cdot]_E$. (In the case of $\Set$ this corresponds to the function sending $x\in X$ to its equivalence class with respect to $E$.)
+
+    As in the case of $\Set$, we can show that $q_1, q_2 : E \rightrightarrows X$ is the kernel pair of $[\cdot]_E$.
