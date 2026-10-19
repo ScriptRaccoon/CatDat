@@ -4,8 +4,10 @@ import { render_nested_text } from '#lib/server/text.ts'
 import { to_placeholders } from '#shared/utils.ts'
 import { error } from 'node:console'
 import structure_history from '#shared/structure.history.json'
+import property_history from '#shared/property.history.json'
 
 const NUMBER_RECENT_STRUCTURES = 20
+const NUMBER_RECENT_PROPERTIES = 20
 
 export const load = () => {
 	const structure_number = db
@@ -107,6 +109,10 @@ export const load = () => {
 				recent_structures_ids.indexOf(a.id) - recent_structures_ids.indexOf(b.id)
 		)
 
+	const recent_properties = (property_history as { type: StructureType; id: string }[])
+		.slice(-NUMBER_RECENT_PROPERTIES)
+		.reverse()
+
 	return {
 		stats: {
 			structure_number,
@@ -117,6 +123,7 @@ export const load = () => {
 		},
 		example_structures,
 		selected_structures,
-		recent_structures
+		recent_structures,
+		recent_properties
 	}
 }

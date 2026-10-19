@@ -13,6 +13,7 @@ import decided_functors from './expected-data/decided-functors.json'
 import decided_morphisms from './expected-data/decided-morphisms.json'
 import decided_symmetric_monoidal_categories from './expected-data/decided-symmetric-monoidal-categories.json'
 import structure_history from '#shared/structure.history.json'
+import property_history from '#shared/property.history.json'
 import { capitalize, devlog, remove_underscores } from '#shared/utils.ts'
 import { get_client } from '#shared/db.ts'
 import { STRUCTURE_TYPES, type StructureType, PLURALS } from '#shared/config.ts'
@@ -36,6 +37,9 @@ function execute_tests() {
 
 		devlog('\n--- Test structure history ---')
 		test_structure_history_ids_exist()
+
+		devlog('\n--- Test property history ---')
+		test_property_history_ids_exist()
 
 		devlog('\n--- Test categories ---')
 
@@ -179,6 +183,31 @@ function test_structure_history_ids_exist() {
 	}
 
 	devlog('✅ All structure IDs in the history exist')
+}
+
+/**
+ * Tests that every entry in the property history refers to an existing property.
+ * If this test fails, a property has probably been renamed or deleted.
+ */
+function test_property_history_ids_exist() {
+	const property_keys = new Set(
+		db
+			.prepare<never[], string>(`SELECT type || '/' || id FROM properties`)
+			.pluck()
+			.all()
+	)
+
+	const unknown_entries = property_history.filter(
+		({ type, id }) => !property_keys.has(`${type}/${id}`)
+	)
+
+	if (unknown_entries.length > 0) {
+		throw new Error(
+			`❌ Found unknown properties in property.history.json:\n${unknown_entries.map(({ type, id }) => `${id} (${type})`).join(', ')}`
+		)
+	}
+
+	devlog('✅ All properties in the history exist')
 }
 
 /**
