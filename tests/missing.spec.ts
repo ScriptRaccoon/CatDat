@@ -1,5 +1,10 @@
 import { test, expect } from '@playwright/test'
 
+// The page loads slowly in the dev server (several seconds of synchronous work),
+// so parallel requests to it queue up and exceed the timeouts. Hence, we run the
+// tests in this file sequentially in one worker.
+test.describe.configure({ mode: 'default' })
+
 test('user can navigate to the page with missing data', async ({ page }) => {
 	await page.goto('/')
 
@@ -15,7 +20,7 @@ test('user can navigate to the page with missing data', async ({ page }) => {
 			name: 'Missing data',
 			exact: true
 		})
-	).toBeVisible()
+	).toBeVisible({ timeout: 10_000 })
 
 	await expect(page).toHaveURL('/missing')
 })
