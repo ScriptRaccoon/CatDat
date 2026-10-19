@@ -12,8 +12,7 @@ import decided_categories from './expected-data/decided-categories.json'
 import decided_functors from './expected-data/decided-functors.json'
 import decided_morphisms from './expected-data/decided-morphisms.json'
 import decided_symmetric_monoidal_categories from './expected-data/decided-symmetric-monoidal-categories.json'
-import structure_history from '#shared/structure.history.json'
-import property_history from '#shared/property.history.json'
+import { history } from '#shared/history.ts'
 import { capitalize, devlog, remove_underscores } from '#shared/utils.ts'
 import { get_client } from '#shared/db.ts'
 import { STRUCTURE_TYPES, type StructureType, PLURALS } from '#shared/config.ts'
@@ -35,11 +34,8 @@ function execute_tests() {
 		devlog('\n--- Test link targets ---')
 		check_link_targets_exist()
 
-		devlog('\n--- Test structure history ---')
-		test_structure_history_ids_exist()
-
-		devlog('\n--- Test property history ---')
-		test_property_history_ids_exist()
+		devlog('\n--- Test history ---')
+		test_history_entries_exist()
 
 		devlog('\n--- Test categories ---')
 
@@ -166,48 +162,37 @@ function test_mutual_property_duals(type: StructureType) {
 }
 
 /**
- * Tests that every ID in the structure history refers to an existing structure.
- * If this test fails, a structure has probably been renamed or deleted.
+ * Tests that every entry in the history refers to an existing structure or property,
+ * and that the history has as many entries as there are structures and properties.
+ * If this test fails, a structure or property has probably been renamed or deleted.
  */
-function test_structure_history_ids_exist() {
-	const structure_ids = new Set(
-		db.prepare<never[], string>(`SELECT id FROM structures`).pluck().all()
-	)
-
-	const unknown_ids = structure_history.filter((id) => !structure_ids.has(id))
-
-	if (unknown_ids.length > 0) {
-		throw new Error(
-			`❌ Found unknown structure IDs in structure.history.json:\n${unknown_ids.join(', ')}`
+function test_history_entries_exist() {
+	for (const kind of ['structures', 'properties'] as const) {
+		const keys = new Set(
+			db
+				.prepare<never[], string>(`SELECT type || '/' || id FROM ${kind}`)
+				.pluck()
+				.all()
 		)
+
+		const unknown_entries = history[kind].filter(
+			({ type, id }) => !keys.has(`${type}/${id}`)
+		)
+
+		if (unknown_entries.length > 0) {
+			throw new Error(
+				`❌ Found unknown ${kind} in history.json:\n${unknown_entries.map(({ type, id }) => `${id} (${type})`).join(', ')}`
+			)
+		}
+
+		if (history[kind].length !== keys.size) {
+			throw new Error(
+				`❌ The history has ${history[kind].length} ${kind}, but the database has ${keys.size}.`
+			)
+		}
 	}
 
-	devlog('✅ All structure IDs in the history exist')
-}
-
-/**
- * Tests that every entry in the property history refers to an existing property.
- * If this test fails, a property has probably been renamed or deleted.
- */
-function test_property_history_ids_exist() {
-	const property_keys = new Set(
-		db
-			.prepare<never[], string>(`SELECT type || '/' || id FROM properties`)
-			.pluck()
-			.all()
-	)
-
-	const unknown_entries = property_history.filter(
-		({ type, id }) => !property_keys.has(`${type}/${id}`)
-	)
-
-	if (unknown_entries.length > 0) {
-		throw new Error(
-			`❌ Found unknown properties in property.history.json:\n${unknown_entries.map(({ type, id }) => `${id} (${type})`).join(', ')}`
-		)
-	}
-
-	devlog('✅ All properties in the history exist')
+	devlog('✅ All entries in the history exist, and their number is correct')
 }
 
 /**

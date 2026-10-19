@@ -3,11 +3,10 @@ import { db } from '#lib/server/db.ts'
 import { render_nested_text } from '#lib/server/text.ts'
 import { to_placeholders } from '#shared/utils.ts'
 import { error } from 'node:console'
-import structure_history from '#shared/structure.history.json'
-import property_history from '#shared/property.history.json'
+import { history } from '#shared/history.ts'
+import { get_property_url } from '#shared/property.utils.ts'
 
-const NUMBER_RECENT_STRUCTURES = 20
-const NUMBER_RECENT_PROPERTIES = 20
+const NUMBER_RECENT = 20
 
 export const load = () => {
 	const structure_number = db
@@ -93,25 +92,24 @@ export const load = () => {
 		FinAb: example_structures_db[1]
 	})
 
-	const recent_structures_ids = structure_history
-		.slice(-NUMBER_RECENT_STRUCTURES)
-		.reverse()
-
-	const recent_structures = db
-		.prepare<string[], { id: string; type: StructureType; name: string }>(
-			`SELECT id, type, name
-			FROM structures
-			WHERE id IN ${to_placeholders(recent_structures_ids)}`
+	const structure_name_query = db
+		.prepare<[string, StructureType], string>(
+			`SELECT name FROM structures WHERE id = ? AND type = ?`
 		)
-		.all(...recent_structures_ids)
-		.sort(
-			(a, b) =>
-				recent_structures_ids.indexOf(a.id) - recent_structures_ids.indexOf(b.id)
-		)
+		.pluck()
 
-	const recent_properties = (property_history as { type: StructureType; id: string }[])
-		.slice(-NUMBER_RECENT_PROPERTIES)
+	const recent_structures = history.structures
+		.slice(-NUMBER_RECENT)
 		.reverse()
+		.map(({ type, id }) => ({
+			href: `/${type}/${id}`,
+			label: structure_name_query.get(id, type)!
+		}))
+
+	const recent_properties = history.properties
+		.slice(-NUMBER_RECENT)
+		.reverse()
+		.map(({ type, id }) => ({ href: get_property_url(id, type), label: id }))
 
 	return {
 		stats: {

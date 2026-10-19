@@ -87,7 +87,7 @@ The `pnpm db:test` command runs several tests to ensure the data behaves as expe
 5. For a selection of structures, every property matches precisely the expected properties defined in the [/database/scripts/expected-data](/database/scripts/expected-data/) folder.
 6. Adjoint functors are recorded on both sides (left and right adjoint), and their domains and codomains match.
 7. All links in proofs point to existing structures, properties, implications, and content pages.
-8. Every entry of the history files [structure.history.json](/shared/structure.history.json) and [property.history.json](/shared/property.history.json) exists. When you rename a structure or property, rename it in the history file as well (new entries are added automatically by `pnpm db:seed`).
+8. Every entry of the history file [history.json](/shared/history.json) exists. When you rename a structure or property, rename it in the history file as well (new entries are added automatically by `pnpm db:seed`).
 
 If any of these tests fail, adjust the data accordingly.
 

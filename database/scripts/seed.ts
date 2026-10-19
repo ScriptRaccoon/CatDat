@@ -1,4 +1,3 @@
-import fs from 'node:fs'
 import path from 'node:path'
 import { get_property_assignments, seed_file, seed_files } from './utils/seed.helpers'
 import { get_client } from '#shared/db.ts'
@@ -15,22 +14,9 @@ import {
 import * as v from 'valibot'
 import { check_schema } from './utils/schema'
 import { DATA_FOLDER, get_data_folders } from './utils/folders'
+import { record_addition, save_history } from '#shared/history.ts'
 
 const db = get_client({ readonly: false })
-
-const structure_history_file = path.resolve('shared', 'structure.history.json')
-const structure_history: string[] = JSON.parse(
-	fs.readFileSync(structure_history_file, 'utf8')
-)
-
-let structure_history_changed = false
-
-const property_history_file = path.resolve('shared', 'property.history.json')
-const property_history: { type: StructureType; id: string }[] = JSON.parse(
-	fs.readFileSync(property_history_file, 'utf8')
-)
-
-let property_history_changed = false
 
 seed()
 
@@ -52,19 +38,7 @@ function seed() {
 		if (type === 'category') seed_special_category_data()
 	}
 
-	if (structure_history_changed) {
-		fs.writeFileSync(
-			structure_history_file,
-			`${JSON.stringify(structure_history, null, '\t')}\n`
-		)
-	}
-
-	if (property_history_changed) {
-		fs.writeFileSync(
-			property_history_file,
-			`${JSON.stringify(property_history, null, '\t')}\n`
-		)
-	}
+	save_history()
 }
 
 /**
@@ -276,7 +250,7 @@ function seed_structures(type: StructureType) {
 			structure.parent || null
 		)
 
-		record_structure_addition(structure.id)
+		record_addition('structures', type, structure.id)
 
 		for (const { label, target_type, required } of structure_associations) {
 			if (required && !structure.associated?.[label]) {
@@ -339,17 +313,6 @@ function seed_structures(type: StructureType) {
 		structure_yaml_schema,
 		insert_structure
 	)
-}
-
-/**
- * Appends the structure to the history in case it is new.
- * The history lists structure ids in the order they were added.
- */
-function record_structure_addition(id: string) {
-	if (structure_history.includes(id)) return
-
-	structure_history.push(id)
-	structure_history_changed = true
 }
 
 /**
@@ -429,7 +392,7 @@ function seed_properties(type: StructureType) {
 			Number(property.invariant_under_equivalences)
 		)
 
-		record_property_addition(property.id, type)
+		record_addition('properties', type, property.id)
 
 		for (const related of property.related) {
 			related_insert.run(property.id, related, type)
@@ -447,17 +410,6 @@ function seed_properties(type: StructureType) {
 		property_yaml_schema,
 		insert_property
 	)
-}
-
-/**
- * Appends the property to the history in case it is new.
- * The history lists properties in the order they were added.
- */
-function record_property_addition(id: string, type: StructureType) {
-	if (property_history.some((entry) => entry.id === id && entry.type === type)) return
-
-	property_history.push({ type, id })
-	property_history_changed = true
 }
 
 /**
