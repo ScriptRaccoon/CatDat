@@ -74,6 +74,24 @@ unsatisfied_properties:
       \end{array}$$
       where $\IA^n_R = \Spec(R[X_1,\dotsc,X_n])$ and $\IA^\infty_R = \Spec(R[X_1,X_2,\dotsc])$. By <a href="https://mathoverflow.net/questions/511944">MO/511944</a>, the sequence $\IA^1_R \hookrightarrow \IA^2_R \hookrightarrow \cdots$ has no colimit. Moreover, we already know that $\Sch_R$ is infinitary extensive. Hence, Lemma 2 <a href="/content/monic_sequential_colimits">here</a> implies that $\Sch_R$ does not have coequalizers of kernel pairs. Specifically, the kernel pair of $\coprod_{n \geq 0} \IA^n_R \to \IA^\infty_R$ has no coequalizer.
 
+  - property: pullback-stable regular epimorphisms
+    proof: >-
+      Let $A \coloneqq R[t^2,t^3]$, $B \coloneqq R[t]$, so that $A \subseteq B$ consists of the polynomials $b = \sum_n b_n t^n$ with $b_1 = 0$. Let $X = \Spec(B)$, $Y = \Spec(A)$, and let $p : X \to Y$ be the morphism induced by the inclusion $A \hookrightarrow B$. For a field $R$, this is the normalization of the cuspidal cubic curve. We claim that $p$ is a regular epimorphism, but that its pullback along some closed immersion is not even an epimorphism.
+
+      First, we show that $A$ is the equalizer of the two homomorphisms $B \rightrightarrows B \otimes_A B$, $b \mapsto b \otimes 1$ and $b \mapsto 1 \otimes b$. Let $R[\varepsilon]$ be the algebra of dual numbers, where $\varepsilon^2 = 0$. The two homomorphisms $\alpha_0,\alpha_1 : B \rightrightarrows R[\varepsilon]$ defined by $\alpha_0(t) \coloneqq 0$ and $\alpha_1(t) \coloneqq \varepsilon$ both map $t^2$ and $t^3$ to $0$, so they agree on $A$. Hence, they induce a homomorphism $\alpha : B \otimes_A B \to R[\varepsilon]$ with $\alpha(b \otimes b') = \alpha_0(b) \, \alpha_1(b')$. If $b \in B$ satisfies $b \otimes 1 = 1 \otimes b$, then
+      $$b_0 = \alpha_0(b) = \alpha(b \otimes 1) = \alpha(1 \otimes b) = \alpha_1(b) =  b_0 + b_1 \varepsilon,$$
+      hence $b_1 = 0$, i.e. $b \in A$.
+
+      Next, we show that $p$ is the coequalizer of its kernel pair
+      $$p_1,p_2 : X \times_Y X = \Spec(B \otimes_A B) \rightrightarrows X$$
+      in <a href="/category/LRS_R">$\LRS_R$</a>, and hence also in its full subcategory $\Sch_R$. Recall from the proof of cocompleteness of $\LRS_R$ that coequalizers in $\LRS_R$ are computed as in ringed spaces: the underlying space is the coequalizer of the underlying spaces, and the structure sheaf is the equalizer of the push-forwards of the structure sheaves. Since $B$ is integral over $A$, the continuous map $p$ is surjective and closed by the lying over and going up theorems (<a href="https://stacks.math.columbia.edu/tag/00GQ">SP/00GQ</a>, <a href="https://stacks.math.columbia.edu/tag/00GU">SP/00GU</a>, <a href="https://stacks.math.columbia.edu/tag/00HZ">SP/00HZ</a>), hence a quotient map. If $x_1,x_2 \in X$ satisfy $p(x_1) = p(x_2)$, then there is some $z \in X \times_Y X$ with $p_1(z) = x_1$ and $p_2(z) = x_2$ by <a href="https://stacks.math.columbia.edu/tag/01JT">SP/01JT</a>. Hence, $p$ is the coequalizer of $p_1,p_2$ in <a href="/category/Top">$\Top$</a>. Let $q \coloneqq p \circ p_1 = p \circ p_2$. Since $p$ and $q$ are affine, the diagram of sheaves
+      $$\O_Y \to p_* \O_X \rightrightarrows q_* \O_{X \times_Y X}$$
+      is the one associated with the diagram of $A$-modules $A \to B \rightrightarrows B \otimes_A B$. Since the functor $M \mapsto \widetilde{M}$ is exact, the first step implies that it is an equalizer diagram. This shows that $p$ is a regular epimorphism.
+
+      Finally, let $I \coloneqq t^2 A$. The pullback of $p$ along the closed immersion $\Spec(A/I) \hookrightarrow Y$ is the morphism $p' : \Spec(B/IB) \to \Spec(A/I)$ induced by the canonical homomorphism
+      $$j : A/I \to B/IB.$$
+      We claim that $p'$ is not an epimorphism. In fact, since the functor $\Spec : \CAlg(R)^{\op} \to \Sch_R$ is right adjoint to the global sections functor $\Gamma : \Sch_R \to \CAlg(R)^{\op}$, the latter preserves epimorphisms. So if $p'$ were an epimorphism, then $\Gamma(p') = j$ would be a monomorphism in $\CAlg(R)$, i.e. injective. But every element of $I$ has a vanishing coefficient at $t^3$, so $t^3 \notin I$, whereas $t^3 = t^2 \cdot t \in IB$. Thus, $[t^3] \in A/I$ a non-zero element in $\ker(j)$.
+
 special_objects:
   initial object:
     description: empty scheme
