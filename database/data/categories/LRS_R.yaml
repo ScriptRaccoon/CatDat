@@ -97,6 +97,34 @@ unsatisfied_properties:
   - property: effective cocongruences
     proof: This is Corollary 4(e) <a href="/content/Top-embeds-in-LRS">here</a>.
 
+  - property: pushout-stable regular monomorphisms
+    proof: >-
+      Choose a maximal ideal $\m$ of $R$ and let $K \coloneqq R/\m$. We first reduce the claim to $\LRS_K$, which is the full subcategory of $\LRS_R$ consisting of those $X$ with $\m \O_X = 0$. Equivalently, $X$ admits a morphism $X \to \Spec(K)$ in $\LRS_R$, which is then unique. It follows that $\LRS_K$ is closed under pushouts in $\LRS_R$, and that every $T$ with a morphism $T \to X \in \LRS_K$ lies in $\LRS_K$. Hence, pushouts and equalizers in $\LRS_K$ are the same as in $\LRS_R$, and therefore also regular monomorphisms, since these are the equalizers of their cokernel pairs (by the dual of <a href="/content/regular-epis-kernel-pairs">this lemma</a>). So if $\LRS_R$ had pushout-stable regular monomorphisms, then so would $\LRS_K$.
+
+      So it suffices to construct, for every field $K$, a counterexample in $\LRS_K$. In fact, we will find a regular monomorphism $i : X \to Y$ which is the identity on underlying spaces, and a morphism $f : X \to Z$ to a one-point space such that $Z \to Y \sqcup_X Z$ is not a regular monomorphism. The idea is that $\O_Y$ has an infinitesimal direction over two open subsets which cannot be glued to a global section, whereas $\O_X$ has a global section in this direction. Collapsing the space to a point only keeps the global sections, so this direction gets lost.
+
+      Let $K[\varepsilon]$ be the commutative algebra of dual numbers, where $\varepsilon^2 = 0$, and let $L \coloneqq K[\varepsilon_1,\varepsilon_2]$ be the commutative algebra where $\varepsilon_1^2 = \varepsilon_1 \varepsilon_2 = \varepsilon_2^2 = 0$, so that $1,\varepsilon_1,\varepsilon_2$ is a basis of $L$ over $K$.
+
+      Let $S \coloneqq \{x,y_1,y_2\}$ be the space whose open subsets are
+      $$\varnothing, \quad \{x\}, \quad U_1 \coloneqq \{x,y_1\}, \quad U_2 \coloneqq \{x,y_2\}, \quad S.$$
+      Since $\{x\}$, $U_1$, $U_2$ are the smallest open neighborhoods of $x$, $y_1$, $y_2$, respectively, the stalks of a sheaf $F$ of $K$-algebras on $S$ are $F_x = F(\{x\})$, $F_{y_1} = F(U_1)$, $F_{y_2} = F(U_2)$. Every open cover of a non-empty open subset $U \subseteq S$ contains $U$ itself, unless $U = S$ and the cover contains $U_1$ and $U_2$. Hence, besides $F(\varnothing) = 0$, which is forced by the empty cover of $\varnothing$, the sheaf condition only needs to be checked for the cover $S = U_1 \cup U_2$ with $U_1 \cap U_2 = \{x\}$. It follows that a sheaf $F$ of $K$-algebras on $S$ is determined by the cospan of restriction maps
+      $$F(U_1) \xrightarrow{\rho_1} F(\{x\}) \xleftarrow{\rho_2} F(U_2)$$
+      via $F(S) = F(U_1) \times_{F(\{x\})} F(U_2)$, and that a morphism of such sheaves is the same as a family of homomorphisms on $U_1$, $U_2$, $\{x\}$ that is compatible with the restriction maps.
+
+      Let $X \coloneqq (S,\O_X)$ and $Y \coloneqq (S,\O_Y)$, where $\O_X$ and $\O_Y$ are the sheaves given by the cospans
+      $$K[\varepsilon] \xrightarrow{\id} K[\varepsilon] \xleftarrow{\id} K[\varepsilon], \qquad K[\varepsilon] \xrightarrow{\rho_1} L \xleftarrow{\rho_2} K[\varepsilon],$$
+      respectively, with $\rho_1(\varepsilon) \coloneqq \varepsilon_1$ and $\rho_2(\varepsilon) \coloneqq \varepsilon_2$. Both are locally ringed spaces since their stalks $K[\varepsilon]$ and $L$ are local rings. We have $\O_X(S) = K[\varepsilon]$. A pair $(\lambda_1 + \mu_1 \varepsilon, \lambda_2 + \mu_2 \varepsilon) \in K[\varepsilon]^2$ lies in $\O_Y(S) = K[\varepsilon] \times_L K[\varepsilon]$ iff
+      $$\lambda_1 + \mu_1 \varepsilon_1 = \lambda_2 + \mu_2 \varepsilon_2 \quad \text{in } L,$$
+      i.e. iff $\lambda_1 = \lambda_2$ and $\mu_1 = \mu_2 = 0$. Hence, $\O_Y(S) \cong K$ consists only of the constants: unlike in $\O_X$, the sections $\varepsilon$ over $U_1$ and $U_2$ do not glue.
+
+      Define the morphism $i \coloneqq (\id_S,\pi) : X \to Y$, where $\pi : \O_Y \to \O_X$ is the identity on $U_1$ and $U_2$, and on $\{x\}$ it is the homomorphism
+      $$\pi_x : L \to K[\varepsilon], \quad \pi_x(\varepsilon_1) \coloneqq \pi_x(\varepsilon_2) \coloneqq \varepsilon.$$
+      This is compatible with the restriction maps since $\pi_x \circ \rho_1 = \pi_x \circ \rho_2 = \id$. On global sections, $\pi$ is the inclusion $K \hookrightarrow K[\varepsilon]$. The stalk maps of $i$ are surjective homomorphisms of local rings, hence local. Since $i$ is the identity on underlying spaces and its stalk maps are surjective, $i$ is a regular monomorphism by the classification of regular monomorphisms (see below).
+
+      Let $Z \coloneqq \Spec(K[\varepsilon])$, and let $f : X \to Z$ be the morphism corresponding to the identity $K[\varepsilon] \to \O_X(S) = K[\varepsilon]$. Recall from the proof of cocompleteness that pushouts in $\LRS_K$ are computed as in ringed spaces: the underlying space is the pushout of the underlying spaces, and the structure sheaf is the fiber product of the push-forwards of the structure sheaves. Hence, the underlying space of $P \coloneqq Y \sqcup_X Z$ is the pushout of $\id_S$ and $S \to Z$, which is a point, and its algebra of global sections is
+      $$\O_Y(S) \times_{\O_X(S)} \O_Z(Z) = K \times_{K[\varepsilon]} K[\varepsilon] \cong K.$$
+      So $P \cong \Spec(K)$, and the stalk map of the morphism $j : Z \to P$ is the inclusion $K \hookrightarrow K[\varepsilon]$. Since it is not surjective, $j$ is not a regular monomorphism by the classification of regular monomorphisms.
+
 special_objects:
   initial object:
     description: empty space
