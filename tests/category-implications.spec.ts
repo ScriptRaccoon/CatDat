@@ -73,7 +73,7 @@ test('user can navigate to the dual implication', async ({ page }) => {
 	await page.goto('/category-implication/abelian_implies_regular')
 
 	await expect(page.locator('body')).toContainText(
-		'If a category is abelian, then it is regular.'
+		'If a category is abelian, then it has pullback-stable regular epimorphisms.'
 	)
 
 	await page.getByRole('link', { name: 'dual' }).click()
@@ -81,16 +81,20 @@ test('user can navigate to the dual implication', async ({ page }) => {
 	await expect(page).toHaveURL('/category-implication/dual_abelian_implies_regular')
 
 	await expect(page.locator('body')).toContainText(
-		'If a category is abelian, then it is coregular.'
+		'If a category is abelian, then it has pushout-stable regular monomorphisms.'
 	)
 })
 
 test('user can open the list of deduced implications', async ({ page }) => {
 	await page.goto('/category-implications', { waitUntil: 'networkidle' })
 
-	await expect(page.locator('li', { hasText: /abelian.+regular/ })).toBeVisible()
+	await expect(
+		page.locator('li', { hasText: /accessible.+well-powered/ })
+	).toBeVisible()
 
-	await expect(page.locator('li', { hasText: /abelian.+coregular/ })).toHaveCount(0)
+	await expect(
+		page.locator('li', { hasText: /coaccessible.+well-copowered/ })
+	).toHaveCount(0)
 
 	await page
 		.getByRole('button', {
@@ -99,5 +103,7 @@ test('user can open the list of deduced implications', async ({ page }) => {
 		})
 		.click()
 
-	await expect(page.locator('li', { hasText: /abelian.+coregular/ })).toBeVisible()
+	await expect(
+		page.locator('li', { hasText: /coaccessible.+well-copowered/ })
+	).toBeVisible()
 })
