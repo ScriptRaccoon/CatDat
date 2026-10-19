@@ -1,11 +1,19 @@
 <script lang="ts">
 	import MetaData from '#components/MetaData.svelte'
 	import StatsCard from '#components/StatsCard.svelte'
+	import { get_property_url } from '#shared/property.utils.ts'
 
 	let { data } = $props()
 
-	let show_more_recent = $state(false)
-	let number_recent = $derived(show_more_recent ? data.recent_structures.length : 5)
+	let show_more_recent_structures = $state(false)
+	let number_recent_structures = $derived(
+		show_more_recent_structures ? data.recent_structures.length : 5
+	)
+
+	let show_more_recent_properties = $state(false)
+	let number_recent_properties = $derived(
+		show_more_recent_properties ? data.recent_properties.length : 5
+	)
 </script>
 
 <MetaData />
@@ -66,18 +74,38 @@
 	<h2>Recently added structures</h2>
 
 	<ul class="with-margins">
-		{#each data.recent_structures.slice(0, number_recent) as structure (structure.id)}
+		{#each data.recent_structures.slice(0, number_recent_structures) as structure (structure.id)}
 			<li>
 				<a href="/{structure.type}/{structure.id}">{structure.name}</a>
 			</li>
 		{/each}
 	</ul>
 
-	{#if !show_more_recent}
+	{#if !show_more_recent_structures}
 		<p>
-			<button class="button" onclick={() => (show_more_recent = true)}
-				>Show more</button
-			>
+			<button class="button" onclick={() => (show_more_recent_structures = true)}>
+				Show more
+			</button>
+		</p>
+	{/if}
+</section>
+
+<section>
+	<h2>Recently added properties</h2>
+
+	<ul class="with-margins">
+		{#each data.recent_properties.slice(0, number_recent_properties) as { type, id } (`${type}/${id}`)}
+			<li>
+				<a href={get_property_url(id, type)}>{id}</a>
+			</li>
+		{/each}
+	</ul>
+
+	{#if !show_more_recent_properties}
+		<p>
+			<button class="button" onclick={() => (show_more_recent_properties = true)}>
+				Show more
+			</button>
 		</p>
 	{/if}
 </section>

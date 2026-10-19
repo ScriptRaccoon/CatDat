@@ -25,6 +25,13 @@ const structure_history: string[] = JSON.parse(
 
 let structure_history_changed = false
 
+const property_history_file = path.resolve('shared', 'property.history.json')
+const property_history: { type: StructureType; id: string }[] = JSON.parse(
+	fs.readFileSync(property_history_file, 'utf8')
+)
+
+let property_history_changed = false
+
 seed()
 
 /**
@@ -49,6 +56,13 @@ function seed() {
 		fs.writeFileSync(
 			structure_history_file,
 			`${JSON.stringify(structure_history, null, '\t')}\n`
+		)
+	}
+
+	if (property_history_changed) {
+		fs.writeFileSync(
+			property_history_file,
+			`${JSON.stringify(property_history, null, '\t')}\n`
 		)
 	}
 }
@@ -415,6 +429,8 @@ function seed_properties(type: StructureType) {
 			Number(property.invariant_under_equivalences)
 		)
 
+		record_property_addition(property.id, type)
+
 		for (const related of property.related) {
 			related_insert.run(property.id, related, type)
 		}
@@ -431,6 +447,17 @@ function seed_properties(type: StructureType) {
 		property_yaml_schema,
 		insert_property
 	)
+}
+
+/**
+ * Appends the property to the history in case it is new.
+ * The history lists properties in the order they were added.
+ */
+function record_property_addition(id: string, type: StructureType) {
+	if (property_history.some((entry) => entry.id === id && entry.type === type)) return
+
+	property_history.push({ type, id })
+	property_history_changed = true
 }
 
 /**

@@ -80,12 +80,16 @@ While `pnpm dev` is running, the browser reloads automatically after `pnpm db:up
 
 The `pnpm db:test` command runs several tests to ensure the data behaves as expected and maintains good quality:
 
-1. Properties and their duals are mutual.
+1. Properties of categories and functors and their duals are mutual.
 2. Categories and their duals are mutual.
-3. For a specified list of categories (see [decided-categories.json](/database/scripts/expected-data/decided-categories.json)), all properties have been decided.
-4. Every property of the categories `Set`, `Ab`, `Top` matches precisely the expected properties defined in the [/database/scripts/expected-data](/database/scripts/expected-data/) folder.
+3. A selection of trivial structures has no unsatisfied properties, i.e. all properties are positive (see the guidelines below).
+4. For a selection of structures of each type, all properties have been decided (see the `decided-*.json` files in the [/database/scripts/expected-data](/database/scripts/expected-data/) folder).
+5. For a selection of structures, every property matches precisely the expected properties defined in the [/database/scripts/expected-data](/database/scripts/expected-data/) folder.
+6. Adjoint functors are recorded on both sides (left and right adjoint), and their domains and codomains match.
+7. All links in proofs point to existing structures, properties, implications, and content pages.
+8. Every entry of the history files [structure.history.json](/shared/structure.history.json) and [property.history.json](/shared/property.history.json) exists. When you rename a structure or property, rename it in the history file as well (new entries are added automatically by `pnpm db:seed`).
 
-Similar checks are done for functors and other categorical structures. If any of these tests fail, adjust the data accordingly.
+If any of these tests fail, adjust the data accordingly.
 
 **For maintainers:** The command `pnpm e2e` executes end-to-end tests via Playwright.
 

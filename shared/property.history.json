@@ -1,0 +1,1078 @@
+[
+	{
+		"type": "category",
+		"id": "abelian"
+	},
+	{
+		"type": "category",
+		"id": "accessible"
+	},
+	{
+		"type": "category",
+		"id": "additive"
+	},
+	{
+		"type": "category",
+		"id": "balanced"
+	},
+	{
+		"type": "category",
+		"id": "binary copowers"
+	},
+	{
+		"type": "category",
+		"id": "binary coproducts"
+	},
+	{
+		"type": "category",
+		"id": "binary powers"
+	},
+	{
+		"type": "category",
+		"id": "binary products"
+	},
+	{
+		"type": "category",
+		"id": "biproducts"
+	},
+	{
+		"type": "category",
+		"id": "cartesian closed"
+	},
+	{
+		"type": "category",
+		"id": "cartesian filtered colimits"
+	},
+	{
+		"type": "category",
+		"id": "Cauchy complete"
+	},
+	{
+		"type": "category",
+		"id": "CIP"
+	},
+	{
+		"type": "category",
+		"id": "co-Malcev"
+	},
+	{
+		"type": "category",
+		"id": "coaccessible"
+	},
+	{
+		"type": "category",
+		"id": "cocartesian coclosed"
+	},
+	{
+		"type": "category",
+		"id": "cocartesian cofiltered limits"
+	},
+	{
+		"type": "category",
+		"id": "cocomplete"
+	},
+	{
+		"type": "category",
+		"id": "codistributive"
+	},
+	{
+		"type": "category",
+		"id": "coequalizers"
+	},
+	{
+		"type": "category",
+		"id": "coextensive"
+	},
+	{
+		"type": "category",
+		"id": "cofiltered"
+	},
+	{
+		"type": "category",
+		"id": "cofiltered limits"
+	},
+	{
+		"type": "category",
+		"id": "cofiltered-limit-stable epimorphisms"
+	},
+	{
+		"type": "category",
+		"id": "cogenerating collection"
+	},
+	{
+		"type": "category",
+		"id": "cogenerator"
+	},
+	{
+		"type": "category",
+		"id": "cokernels"
+	},
+	{
+		"type": "category",
+		"id": "complete"
+	},
+	{
+		"type": "category",
+		"id": "connected"
+	},
+	{
+		"type": "category",
+		"id": "connected colimits"
+	},
+	{
+		"type": "category",
+		"id": "connected limits"
+	},
+	{
+		"type": "category",
+		"id": "conormal"
+	},
+	{
+		"type": "category",
+		"id": "copowers"
+	},
+	{
+		"type": "category",
+		"id": "coproducts"
+	},
+	{
+		"type": "category",
+		"id": "coquotients of cocongruences"
+	},
+	{
+		"type": "category",
+		"id": "core-thin"
+	},
+	{
+		"type": "category",
+		"id": "coreflexive equalizers"
+	},
+	{
+		"type": "category",
+		"id": "coregular"
+	},
+	{
+		"type": "category",
+		"id": "cosifted"
+	},
+	{
+		"type": "category",
+		"id": "cosifted limits"
+	},
+	{
+		"type": "category",
+		"id": "counital"
+	},
+	{
+		"type": "category",
+		"id": "countable"
+	},
+	{
+		"type": "category",
+		"id": "countable copowers"
+	},
+	{
+		"type": "category",
+		"id": "countable coproducts"
+	},
+	{
+		"type": "category",
+		"id": "countable powers"
+	},
+	{
+		"type": "category",
+		"id": "countable products"
+	},
+	{
+		"type": "category",
+		"id": "countably codistributive"
+	},
+	{
+		"type": "category",
+		"id": "countably distributive"
+	},
+	{
+		"type": "category",
+		"id": "CSP"
+	},
+	{
+		"type": "category",
+		"id": "direct"
+	},
+	{
+		"type": "category",
+		"id": "directed colimits"
+	},
+	{
+		"type": "category",
+		"id": "directed limits"
+	},
+	{
+		"type": "category",
+		"id": "discrete"
+	},
+	{
+		"type": "category",
+		"id": "disjoint coproducts"
+	},
+	{
+		"type": "category",
+		"id": "disjoint finite coproducts"
+	},
+	{
+		"type": "category",
+		"id": "disjoint finite products"
+	},
+	{
+		"type": "category",
+		"id": "disjoint products"
+	},
+	{
+		"type": "category",
+		"id": "distributive"
+	},
+	{
+		"type": "category",
+		"id": "effective cocongruences"
+	},
+	{
+		"type": "category",
+		"id": "effective congruences"
+	},
+	{
+		"type": "category",
+		"id": "elementary topos"
+	},
+	{
+		"type": "category",
+		"id": "epi-regular"
+	},
+	{
+		"type": "category",
+		"id": "equalizers"
+	},
+	{
+		"type": "category",
+		"id": "essentially countable"
+	},
+	{
+		"type": "category",
+		"id": "essentially discrete"
+	},
+	{
+		"type": "category",
+		"id": "essentially finite"
+	},
+	{
+		"type": "category",
+		"id": "essentially small"
+	},
+	{
+		"type": "category",
+		"id": "exact cofiltered limits"
+	},
+	{
+		"type": "category",
+		"id": "exact filtered colimits"
+	},
+	{
+		"type": "category",
+		"id": "extensive"
+	},
+	{
+		"type": "category",
+		"id": "filtered"
+	},
+	{
+		"type": "category",
+		"id": "filtered colimits"
+	},
+	{
+		"type": "category",
+		"id": "filtered-colimit-stable monomorphisms"
+	},
+	{
+		"type": "category",
+		"id": "finitary algebraic"
+	},
+	{
+		"type": "category",
+		"id": "finite"
+	},
+	{
+		"type": "category",
+		"id": "finite copowers"
+	},
+	{
+		"type": "category",
+		"id": "finite coproducts"
+	},
+	{
+		"type": "category",
+		"id": "finite powers"
+	},
+	{
+		"type": "category",
+		"id": "finite products"
+	},
+	{
+		"type": "category",
+		"id": "finitely accessible"
+	},
+	{
+		"type": "category",
+		"id": "finitely cocomplete"
+	},
+	{
+		"type": "category",
+		"id": "finitely complete"
+	},
+	{
+		"type": "category",
+		"id": "gaunt"
+	},
+	{
+		"type": "category",
+		"id": "generalized variety"
+	},
+	{
+		"type": "category",
+		"id": "generating collection"
+	},
+	{
+		"type": "category",
+		"id": "generator"
+	},
+	{
+		"type": "category",
+		"id": "Grothendieck abelian"
+	},
+	{
+		"type": "category",
+		"id": "Grothendieck topos"
+	},
+	{
+		"type": "category",
+		"id": "groupoid"
+	},
+	{
+		"type": "category",
+		"id": "infinitary codistributive"
+	},
+	{
+		"type": "category",
+		"id": "infinitary coextensive"
+	},
+	{
+		"type": "category",
+		"id": "infinitary distributive"
+	},
+	{
+		"type": "category",
+		"id": "infinitary extensive"
+	},
+	{
+		"type": "category",
+		"id": "inhabited"
+	},
+	{
+		"type": "category",
+		"id": "initial object"
+	},
+	{
+		"type": "category",
+		"id": "inverse"
+	},
+	{
+		"type": "category",
+		"id": "kernels"
+	},
+	{
+		"type": "category",
+		"id": "left cancellative"
+	},
+	{
+		"type": "category",
+		"id": "locally cartesian closed"
+	},
+	{
+		"type": "category",
+		"id": "locally cocartesian coclosed"
+	},
+	{
+		"type": "category",
+		"id": "locally copresentable"
+	},
+	{
+		"type": "category",
+		"id": "locally essentially small"
+	},
+	{
+		"type": "category",
+		"id": "locally finitely multi-presentable"
+	},
+	{
+		"type": "category",
+		"id": "locally finitely presentable"
+	},
+	{
+		"type": "category",
+		"id": "locally multi-presentable"
+	},
+	{
+		"type": "category",
+		"id": "locally poly-presentable"
+	},
+	{
+		"type": "category",
+		"id": "locally presentable"
+	},
+	{
+		"type": "category",
+		"id": "locally small"
+	},
+	{
+		"type": "category",
+		"id": "locally ℵ₁-presentable"
+	},
+	{
+		"type": "category",
+		"id": "Malcev"
+	},
+	{
+		"type": "category",
+		"id": "mono-regular"
+	},
+	{
+		"type": "category",
+		"id": "multi-algebraic"
+	},
+	{
+		"type": "category",
+		"id": "multi-cocomplete"
+	},
+	{
+		"type": "category",
+		"id": "multi-complete"
+	},
+	{
+		"type": "category",
+		"id": "multi-initial object"
+	},
+	{
+		"type": "category",
+		"id": "multi-terminal object"
+	},
+	{
+		"type": "category",
+		"id": "normal"
+	},
+	{
+		"type": "category",
+		"id": "one-sorted finitary algebraic"
+	},
+	{
+		"type": "category",
+		"id": "one-way"
+	},
+	{
+		"type": "category",
+		"id": "parametrized natural numbers object"
+	},
+	{
+		"type": "category",
+		"id": "pointed"
+	},
+	{
+		"type": "category",
+		"id": "powers"
+	},
+	{
+		"type": "category",
+		"id": "preadditive"
+	},
+	{
+		"type": "category",
+		"id": "products"
+	},
+	{
+		"type": "category",
+		"id": "pullbacks"
+	},
+	{
+		"type": "category",
+		"id": "pushouts"
+	},
+	{
+		"type": "category",
+		"id": "quotient object classifier"
+	},
+	{
+		"type": "category",
+		"id": "quotient-trivial"
+	},
+	{
+		"type": "category",
+		"id": "quotients of congruences"
+	},
+	{
+		"type": "category",
+		"id": "reflexive coequalizers"
+	},
+	{
+		"type": "category",
+		"id": "regular"
+	},
+	{
+		"type": "category",
+		"id": "regular quotient object classifier"
+	},
+	{
+		"type": "category",
+		"id": "regular subobject classifier"
+	},
+	{
+		"type": "category",
+		"id": "right cancellative"
+	},
+	{
+		"type": "category",
+		"id": "self-dual"
+	},
+	{
+		"type": "category",
+		"id": "semi-strongly connected"
+	},
+	{
+		"type": "category",
+		"id": "sequential colimits"
+	},
+	{
+		"type": "category",
+		"id": "sequential limits"
+	},
+	{
+		"type": "category",
+		"id": "sifted"
+	},
+	{
+		"type": "category",
+		"id": "sifted colimits"
+	},
+	{
+		"type": "category",
+		"id": "skeletal"
+	},
+	{
+		"type": "category",
+		"id": "small"
+	},
+	{
+		"type": "category",
+		"id": "split abelian"
+	},
+	{
+		"type": "category",
+		"id": "strict initial object"
+	},
+	{
+		"type": "category",
+		"id": "strict terminal object"
+	},
+	{
+		"type": "category",
+		"id": "strongly connected"
+	},
+	{
+		"type": "category",
+		"id": "subobject classifier"
+	},
+	{
+		"type": "category",
+		"id": "subobject-trivial"
+	},
+	{
+		"type": "category",
+		"id": "terminal object"
+	},
+	{
+		"type": "category",
+		"id": "thin"
+	},
+	{
+		"type": "category",
+		"id": "trivial"
+	},
+	{
+		"type": "category",
+		"id": "unital"
+	},
+	{
+		"type": "category",
+		"id": "well-copowered"
+	},
+	{
+		"type": "category",
+		"id": "well-powered"
+	},
+	{
+		"type": "category",
+		"id": "wide pullbacks"
+	},
+	{
+		"type": "category",
+		"id": "wide pushouts"
+	},
+	{
+		"type": "category",
+		"id": "zero morphisms"
+	},
+	{
+		"type": "category",
+		"id": "ℵ₁-accessible"
+	},
+	{
+		"type": "functor",
+		"id": "cocontinuous"
+	},
+	{
+		"type": "functor",
+		"id": "cofinitary"
+	},
+	{
+		"type": "functor",
+		"id": "comonadic"
+	},
+	{
+		"type": "functor",
+		"id": "conservative"
+	},
+	{
+		"type": "functor",
+		"id": "continuous"
+	},
+	{
+		"type": "functor",
+		"id": "equivalence"
+	},
+	{
+		"type": "functor",
+		"id": "essentially surjective"
+	},
+	{
+		"type": "functor",
+		"id": "exact"
+	},
+	{
+		"type": "functor",
+		"id": "faithful"
+	},
+	{
+		"type": "functor",
+		"id": "finitary"
+	},
+	{
+		"type": "functor",
+		"id": "full"
+	},
+	{
+		"type": "functor",
+		"id": "left adjoint"
+	},
+	{
+		"type": "functor",
+		"id": "left exact"
+	},
+	{
+		"type": "functor",
+		"id": "monadic"
+	},
+	{
+		"type": "functor",
+		"id": "preserves coequalizers"
+	},
+	{
+		"type": "functor",
+		"id": "preserves coproducts"
+	},
+	{
+		"type": "functor",
+		"id": "preserves epimorphisms"
+	},
+	{
+		"type": "functor",
+		"id": "preserves equalizers"
+	},
+	{
+		"type": "functor",
+		"id": "preserves finite coproducts"
+	},
+	{
+		"type": "functor",
+		"id": "preserves finite products"
+	},
+	{
+		"type": "functor",
+		"id": "preserves initial objects"
+	},
+	{
+		"type": "functor",
+		"id": "preserves monomorphisms"
+	},
+	{
+		"type": "functor",
+		"id": "preserves products"
+	},
+	{
+		"type": "functor",
+		"id": "preserves terminal objects"
+	},
+	{
+		"type": "functor",
+		"id": "representable"
+	},
+	{
+		"type": "functor",
+		"id": "right adjoint"
+	},
+	{
+		"type": "functor",
+		"id": "right exact"
+	},
+	{
+		"type": "category",
+		"id": "locally finite"
+	},
+	{
+		"type": "category",
+		"id": "Barr-coexact"
+	},
+	{
+		"type": "category",
+		"id": "Barr-exact"
+	},
+	{
+		"type": "category",
+		"id": "ℵ₁-filtered"
+	},
+	{
+		"type": "category",
+		"id": "ℵ₁-filtered colimits"
+	},
+	{
+		"type": "category",
+		"id": "ℵ₂-small copowers"
+	},
+	{
+		"type": "category",
+		"id": "ℵ₂-small coproducts"
+	},
+	{
+		"type": "category",
+		"id": "ℵ₂-small powers"
+	},
+	{
+		"type": "category",
+		"id": "ℵ₂-small products"
+	},
+	{
+		"type": "category",
+		"id": "ℵ₁-cofiltered"
+	},
+	{
+		"type": "category",
+		"id": "ℵ₁-cofiltered limits"
+	},
+	{
+		"type": "functor",
+		"id": "preserves coreflexive equalizers"
+	},
+	{
+		"type": "functor",
+		"id": "preserves reflexive coequalizers"
+	},
+	{
+		"type": "category",
+		"id": "pretopos"
+	},
+	{
+		"type": "functor",
+		"id": "essentially injective"
+	},
+	{
+		"type": "functor",
+		"id": "left-invertible"
+	},
+	{
+		"type": "functor",
+		"id": "coreflector"
+	},
+	{
+		"type": "functor",
+		"id": "dominant"
+	},
+	{
+		"type": "functor",
+		"id": "full on isomorphisms"
+	},
+	{
+		"type": "functor",
+		"id": "fully faithful"
+	},
+	{
+		"type": "functor",
+		"id": "preserves binary coproducts"
+	},
+	{
+		"type": "functor",
+		"id": "preserves binary products"
+	},
+	{
+		"type": "functor",
+		"id": "pseudomonic"
+	},
+	{
+		"type": "functor",
+		"id": "reflector"
+	},
+	{
+		"type": "functor",
+		"id": "right-invertible"
+	},
+	{
+		"type": "functor",
+		"id": "isomorphism"
+	},
+	{
+		"type": "functor",
+		"id": "preserves regular epimorphisms"
+	},
+	{
+		"type": "functor",
+		"id": "preserves regular monomorphisms"
+	},
+	{
+		"type": "functor",
+		"id": "coregular"
+	},
+	{
+		"type": "functor",
+		"id": "regular"
+	},
+	{
+		"type": "morphism",
+		"id": "epimorphism"
+	},
+	{
+		"type": "morphism",
+		"id": "isomorphism"
+	},
+	{
+		"type": "morphism",
+		"id": "monomorphism"
+	},
+	{
+		"type": "morphism",
+		"id": "regular epimorphism"
+	},
+	{
+		"type": "morphism",
+		"id": "regular monomorphism"
+	},
+	{
+		"type": "morphism",
+		"id": "split epimorphism"
+	},
+	{
+		"type": "morphism",
+		"id": "split monomorphism"
+	},
+	{
+		"type": "category",
+		"id": "quasitopos"
+	},
+	{
+		"type": "category",
+		"id": "regular-quotient-trivial"
+	},
+	{
+		"type": "category",
+		"id": "regular-subobject-trivial"
+	},
+	{
+		"type": "category",
+		"id": "core-connected"
+	},
+	{
+		"type": "morphism",
+		"id": "effective epimorphism"
+	},
+	{
+		"type": "morphism",
+		"id": "effective monomorphism"
+	},
+	{
+		"type": "morphism",
+		"id": "strict epimorphism"
+	},
+	{
+		"type": "morphism",
+		"id": "strict monomorphism"
+	},
+	{
+		"type": "morphism",
+		"id": "normal epimorphism"
+	},
+	{
+		"type": "morphism",
+		"id": "normal monomorphism"
+	},
+	{
+		"type": "morphism",
+		"id": "strong epimorphism"
+	},
+	{
+		"type": "morphism",
+		"id": "strong monomorphism"
+	},
+	{
+		"type": "category",
+		"id": "extremal cogenerating collection"
+	},
+	{
+		"type": "category",
+		"id": "extremal cogenerator"
+	},
+	{
+		"type": "category",
+		"id": "extremal generating collection"
+	},
+	{
+		"type": "category",
+		"id": "extremal generator"
+	},
+	{
+		"type": "category",
+		"id": "countably coextensive"
+	},
+	{
+		"type": "category",
+		"id": "countably extensive"
+	},
+	{
+		"type": "morphism",
+		"id": "extremal epimorphism"
+	},
+	{
+		"type": "morphism",
+		"id": "extremal monomorphism"
+	},
+	{
+		"type": "symmetric_monoidal_category",
+		"id": "cartesian"
+	},
+	{
+		"type": "symmetric_monoidal_category",
+		"id": "closed"
+	},
+	{
+		"type": "symmetric_monoidal_category",
+		"id": "cocartesian"
+	},
+	{
+		"type": "symmetric_monoidal_category",
+		"id": "coclosed"
+	},
+	{
+		"type": "symmetric_monoidal_category",
+		"id": "cocomplete"
+	},
+	{
+		"type": "symmetric_monoidal_category",
+		"id": "codistributive"
+	},
+	{
+		"type": "symmetric_monoidal_category",
+		"id": "complete"
+	},
+	{
+		"type": "symmetric_monoidal_category",
+		"id": "distributive"
+	},
+	{
+		"type": "symmetric_monoidal_category",
+		"id": "finitely cocomplete"
+	},
+	{
+		"type": "symmetric_monoidal_category",
+		"id": "finitely complete"
+	},
+	{
+		"type": "symmetric_monoidal_category",
+		"id": "infinitary codistributive"
+	},
+	{
+		"type": "symmetric_monoidal_category",
+		"id": "infinitary distributive"
+	},
+	{
+		"type": "symmetric_monoidal_category",
+		"id": "self-dual"
+	},
+	{
+		"type": "symmetric_monoidal_category",
+		"id": "strict"
+	},
+	{
+		"type": "symmetric_monoidal_category",
+		"id": "trivial"
+	},
+	{
+		"type": "symmetric_monoidal_category",
+		"id": "well-pointed"
+	},
+	{
+		"type": "morphism",
+		"id": "coconstant"
+	},
+	{
+		"type": "morphism",
+		"id": "constant"
+	},
+	{
+		"type": "morphism",
+		"id": "zero morphism"
+	},
+	{
+		"type": "category",
+		"id": "natural numbers object"
+	},
+	{
+		"type": "category",
+		"id": "cokernel pairs"
+	},
+	{
+		"type": "category",
+		"id": "kernel pairs"
+	},
+	{
+		"type": "category",
+		"id": "coequalizers of kernel pairs"
+	},
+	{
+		"type": "category",
+		"id": "equalizers of cokernel pairs"
+	},
+	{
+		"type": "category",
+		"id": "concretizable"
+	},
+	{
+		"type": "category",
+		"id": "cototal"
+	},
+	{
+		"type": "category",
+		"id": "total"
+	}
+]
