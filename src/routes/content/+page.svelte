@@ -6,15 +6,12 @@
 
 <MetaData
 	title="Content pages"
-	description="For long-form content, particularly longer proofs and reusable lemmas, we use content pages."
+	description="For long-form content and reusable lemmas, we use content pages."
 />
 
 <h1>Content pages</h1>
 
-<p class="hint">
-	For long-form content, particularly longer proofs and reusable lemmas, we use content
-	pages.
-</p>
+<p class="hint">For long-form content and reusable lemmas, we use content pages.</p>
 
 <ul>
 	{#each data.pages as page}
