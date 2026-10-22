@@ -1,6 +1,6 @@
 id: locally copresentable
 relation: is
-description: A category is <i>locally copresentable</i> if its opposite category is locally presentable.
+description: A category is <i>locally copresentable</i> if its opposite category is locally presentable. Equivalently, it is coaccessible and complete. This is also equivalent to being coaccessible and cocomplete.
 nlab_link: null
 dual: locally presentable
 invariant_under_equivalences: true
@@ -9,6 +9,7 @@ related:
   - coaccessible
   - complete
   - cototal
+  - locally ℵ₁-copresentable
 
 tags:
   - accessibility
