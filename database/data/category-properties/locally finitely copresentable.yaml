@@ -6,8 +6,10 @@ dual: locally finitely presentable
 invariant_under_equivalences: true
 
 related:
+  - locally copresentable
   - complete
   - finitely coaccessible
+  - locally ℵ₁-copresentable
 
 tags:
   - accessibility

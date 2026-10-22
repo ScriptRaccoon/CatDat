@@ -1961,6 +1961,14 @@
 		{
 			"type": "category",
 			"id": "locally finitely copresentable"
+		},
+		{
+			"type": "category",
+			"id": "ℵ₁-coaccessible"
+		},
+		{
+			"type": "category",
+			"id": "locally ℵ₁-copresentable"
 		}
 	]
 }
