@@ -25,7 +25,7 @@ We first need to define a natural transformation
 $$\eta_T : T \to \Hom({-}, L(T)).$$
 For each group $H$ we define the function $\eta_T(H) : T(H) \to \Hom(H, L(T))$ by sending $x \in T(H)$ to the map
 $$H \to L(T), \quad h \mapsto e(T(\widetilde{h})(x)),$$
-where $\widetilde{h} : \IZ \to H$ denotes the homomorphism mapping $1 \mapsto h$, so that $T(\widetilde{h}) : T(H) \to T(\IZ)$. To see that this defines a group homomorphism from $H$ to $L(T)$, for $h,h' \in H$ we define the homomorphism $[h,h'] : \IZ * \IZ' \to H$ by $[h,h'] \circ \iota_1 = \widetilde{h}$ and $[h,h'] \circ \iota_2 = \widetilde{h'}$. Note that $[h,h'] \circ \mu = \widetilde{hh'}$. Hence,
+where $\widetilde{h} : \IZ \to H$ denotes the homomorphism mapping $1 \mapsto h$, so that $T(\widetilde{h}) : T(H) \to T(\IZ)$. To see that this defines a group homomorphism from $H$ to $L(T)$, for $h,h' \in H$ we define the homomorphism $[h,h'] : \IZ * \IZ' \to H$ by $[h,h'] \circ \iota_1 = \widetilde{h}$ and $[h,h'] \circ \iota_2 = \widetilde{h'}$. Note that $[h,h'] \circ \mu = \widetilde{hh'}$. Hence,
 
 $$
 \begin{align*}
