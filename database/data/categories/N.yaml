@@ -32,13 +32,6 @@ satisfied_properties:
   - property: semi-strongly connected
     proof: This is trivial.
 
-  - property: finitely cocomplete
-    proof: Finitely many natural numbers have a supremum natural number.
-    check_redundancy: false
-
-  - property: connected limits
-    proof: Every non-empty set of natural numbers has a minimum.
-
   - property: direct
     proof: This is because the natural numbers with respect to $<$ are well-founded.
 

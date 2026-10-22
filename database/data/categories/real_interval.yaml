@@ -34,12 +34,6 @@ unsatisfied_properties:
   - property: essentially countable
     proof: This is trivial.
 
-  - property: direct
-    proof: Consider the strictly decreasing sequence $1/2^n$ for $n \geq 0$.
-
-  - property: inverse
-    proof: Consider the strictly increasing sequence $1 - 1/2^n$ for $n \geq 0$.
-
   - property: extremal generator
     proof: The poset has infinitely many non-minimal elements $(0, 1]$. Therefore, by the corollary <a href="/content/thin_extremal_generator">here</a>, an extremal generator cannot exist.
 
