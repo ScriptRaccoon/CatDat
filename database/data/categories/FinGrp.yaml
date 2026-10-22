@@ -50,11 +50,6 @@ satisfied_properties:
   - property: regular
     proof: This follows from Lemma 7 <a href="/content/subcategories">here</a> applied to the inclusion functor $\FinGrp \hookrightarrow \Grp$ into the regular category $\Grp$ and the description of regular epimorphisms below.
 
-  - property: ℵ₁-cofiltered limits
-    proof: For <a href="/category/FinSet">$\FinSet$</a>, we know that the embedding $\FinSet \hookrightarrow \Set$ is closed under $\aleph_1$-cofiltered limits. From this and the fact that the forgetful functor $\Grp \to \Set$ preserves limits it follows that $\FinGrp \hookrightarrow \Grp$ is closed under $\aleph_1$-cofiltered limits.
-    references:
-      - FinSet_aleph1-cofiltered-limits
-
 unsatisfied_properties:
   - property: small
     proof: Even the collection of trivial groups is not small.
