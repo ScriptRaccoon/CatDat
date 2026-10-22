@@ -340,3 +340,17 @@ label {
 .formula-group {
 	display: inline-block;
 }
+
+/* punctuation after an inline formula (see formulas.ts), in the font of the text */
+.formula-suffix {
+	font-family: var(--text-font);
+	font-size: calc(1em / 1.21); /* undo the font size of .katex */
+}
+
+:is(i, em) .formula-suffix {
+	font-style: italic;
+}
+
+:is(h1, h2, h3) .formula-suffix {
+	font-family: var(--mono-font);
+}
