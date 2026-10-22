@@ -11,7 +11,7 @@ description: >-
   For the equivalence of the conditions above, see <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adámek–Rosický</a>, Cor. 2.47, Thm. 1.46, and Cor. 1.52. This is the same as being locally $\aleph_0$-presentable.
 
 nlab_link: https://ncatlab.org/nlab/show/locally+finitely+presentable+category
-dual: null
+dual: locally finitely copresentable
 invariant_under_equivalences: true
 
 related:

@@ -45,17 +45,6 @@
     - sequential limits
   proof: Assume that $\cdots \to A_2 \to A_1 \to A_0$ is a sequence of morphisms. We will prove that almost all of them are identities, so that the sequence is eventually constant and the limit exists. Assume the opposite, i.e. that there are infinitely many $A_k \to A_{k-1}$ which are not the identity. Pick some $n_1$ such that $A_{n_1} \to A_{n_1 - 1}$ is not the identity, and let $n_0 \coloneqq n_1 - 1$. If $A_{n_i} \to A_{n_{i-1}}$ has been constructed, there is some $n_{i+1} > n_i$ such that the composite $A_{n_{i+1}} \to A_{n_i}$ is not the identity, because otherwise it would follow inductively that all $A_{k+1} \to A_k$, $k \geq n_i$ would be identities, which would contradict our infiniteness assumption. This way we construct an infinite sequence of non-identity morphisms $A_{n_{i+1}} \to A_{n_i}$, a contradiction.
 
-- id: finite_filtered_colimits
-  # TODO: combine this with the implication with ID "finite_accessible"
-  # once its dual is added to the database. cf. #364
-  assumptions:
-    - Cauchy complete
-    - essentially finite
-  conclusions:
-    - filtered colimits
-    - filtered-colimit-stable monomorphisms
-  proof: We may assume that the category $\C$ is finite and Cauchy complete. The answer at <a href="https://mathoverflow.net/questions/509853">MO/509853</a> shows that every filtered colimit in $\C$ exists, in fact it is a retract of one of the objects in the diagram. Now apply this to the morphism category of $\C$. It follows that for every filtered diagram of morphisms $X_i \to Y_i$ their colimit $X_\infty \to Y_\infty$ exists, which is a retract of one of the $X_i \to Y_i$. Therefore, if every $X_i \to Y_i$ is a monomorphism, also $X_\infty \to Y_\infty$ is a monomorphism.
-
 - id: aleph1-filtered-colimits-include-filtered-colimits
   assumptions:
     - filtered colimits

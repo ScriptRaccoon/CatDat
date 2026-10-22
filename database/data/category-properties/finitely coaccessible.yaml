@@ -1,0 +1,14 @@
+id: finitely coaccessible
+relation: is
+description: A category is <i>finitely coaccessible</i> if its opposite category is finitely accessible. That is, it has cofiltered limits and there is an essentially small collection $G$ of finitely copresentable objects such that every object is a cofiltered limit of objects in $G$.
+nlab_link: null
+dual: finitely accessible
+invariant_under_equivalences: true
+
+related:
+  - coaccessible
+  - cofiltered limits
+  - locally finitely copresentable
+
+tags:
+  - accessibility
