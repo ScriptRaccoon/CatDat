@@ -1953,6 +1953,14 @@
 		{
 			"type": "category",
 			"id": "pushout-stable regular monomorphisms"
+		},
+		{
+			"type": "category",
+			"id": "finitely coaccessible"
+		},
+		{
+			"type": "category",
+			"id": "locally finitely copresentable"
 		}
 	]
 }
