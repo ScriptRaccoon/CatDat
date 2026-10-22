@@ -170,3 +170,26 @@
     - binary products
   proof: >-
     Let $A,B$ be two objects. Since the category is semi-strongly connected, we may assume without loss of generality that there is a morphism $f : A \to B$. We claim that $A$ together with $\id_A : A \to A$ and $f : A \to B$ is a product of $A$ and $B$. Indeed, if $T$ is an object with morphisms $g : T \to A$ and $h : T \to B$, then $g : T \to A$ satisfies $\id_A \circ g = g$ and $f \circ g = h$, the latter since the category is thin. Uniqueness is also clear since the category is thin.
+
+- id: thin_direct_implies_cofiltered_limits
+  assumptions:
+    - thin
+    - direct
+  conclusions:
+    - cofiltered limits
+  proof: >-
+    Since the category is thin and skeletal (being direct), it is a poset, and being direct means that it is well-founded, i.e. every non-empty subset has a minimal element. Let $D : I \to \C$ be a cofiltered diagram. We claim that the set $S$ of objects $D(i)$ has a minimum, which then is the limit of $D$.
+
+    Since $I$ is non-empty, $S$ is non-empty and hence has a minimal element $D(i)$. Let $j \in I$. Since $I$ is cofiltered, there is some $k \in I$ with morphisms $k \to i$ and $k \to j$, so that $D(k) \leq D(i)$ and $D(k) \leq D(j)$. By minimality, $D(k) = D(i)$, and hence $D(i) \leq D(j)$.
+
+- id: thin_direct_implies_finitely_coaccessible
+  assumptions:
+    - thin
+    - direct
+    - essentially small
+  conclusions:
+    - finitely coaccessible
+  proof: >-
+    By the <a href="/category-implication/thin_direct_implies_cofiltered_limits">proof of this implication</a>, the category has cofiltered limits, and the limit of a cofiltered diagram is one of its objects. We claim that every object $X$ is finitely copresentable. Then the claim follows by taking $G$ to be a collection of representatives of all objects up to isomorphism, which is essentially small by assumption, since every object is trivially a cofiltered limit of objects in $G$.
+
+    Since the category is thin, $X$ is finitely copresentable if and only if for every cofiltered diagram whose limit $L$ satisfies $L \leq X$, there is an object $Y$ of the diagram with $Y \leq X$. Since $L$ is an object of the diagram, we may take $Y \coloneqq L$.
