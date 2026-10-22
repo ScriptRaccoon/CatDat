@@ -41,11 +41,6 @@ satisfied_properties:
   - property: subobject classifier
     proof: 'We already know that finite limits exist. By the description of monomorphisms below, the subobjects of $(X,\sigma)$ are the objects $(U,\sigma|_U)$, where $U \subseteq X$ is a subset such that $\sigma_*(U)=U$, and $\sigma|_U : U \to U$ is the restricted permutation. The subset corresponds to a map of sets $f : X \to \{0,1\}$ with $f^*(\{1\}) = U$, and the condition $\sigma_*(U) = U$ is equivalent to $f$ being a morphism $(X,\sigma) \to (\{0,1\},\id)$. This shows that $(\{0,1\},\id)$ is a subobject classifier in both $\IZ{-}\FinSet$ and $\IZ{-}\Set$.'
 
-  - property: ℵ₁-cofiltered limits
-    proof: Using that <a href="/category/FinSet">$\FinSet$</a> is closed under $\aleph_1$-cofiltered limits in $\Set$, and that the forgetful functor $\IZ{-}\Set \to \Set$ is continuous, it follows immediately that $\IZ{-}\FinSet$ is closed under $\aleph_1$-cofiltered limits in $\IZ{-}\Set$.
-    references:
-      - FinSet_aleph1-cofiltered-limits
-
 unsatisfied_properties:
   - property: skeletal
     proof: The two terminal objects $(\{0\},\id)$ and $(\{1\},\id)$ are isomorphic, but not equal.
