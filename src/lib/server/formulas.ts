@@ -7,7 +7,10 @@ const MACROS = YAML.parse(
 	fs.readFileSync(path.resolve('database', 'data', 'macros.yaml'), 'utf8')
 ) as Record<string, string>
 
-export const MATH_REGEX = /\$\$(.*?)\$\$|\$(.*?)\$/gs
+// The third group is the punctuation directly after an inline formula
+// (see append_suffix). It does not include ], which would break the syntax
+// of Markdown links.
+export const MATH_REGEX = /\$\$(.*?)\$\$|\$(.*?)\$([.,;:)-]*)/gs
 
 const HTML_START = '<span class="katex-html" aria-hidden="true">'
 
@@ -19,9 +22,14 @@ type Chunk = {
 	is_break_point: boolean
 }
 
+/**
+ * Renders a formula with KaTeX. The optional suffix is punctuation that
+ * directly follows an inline formula in the text, such as a period.
+ */
 export function render_formula(
 	formula: string,
-	options: { displayMode: boolean } = { displayMode: false }
+	options: { displayMode: boolean } = { displayMode: false },
+	suffix = ''
 ): string {
 	const html = katex.renderToString(formula, {
 		throwOnError: true,
@@ -29,16 +37,34 @@ export function render_formula(
 		...options
 	})
 
-	return group_chunks(html)
+	const html_start = html.indexOf(HTML_START)
+	if (html_start === -1) return html + suffix
+
+	const start = html_start + HTML_START.length
+
+	// the unbreakable pieces of the formula (.katex-base), each marked as to
+	// whether a line break after it is preferred, and the index where they end
+	const { chunks, end } = parse_chunks(html, start)
+
+	let head = html.slice(0, start)
+
+	if (suffix) {
+		append_suffix(chunks, suffix)
+		// .katex-html is hidden from screen readers, which read the MathML instead
+		head = head.replace('</math>', `</math>${suffix}`)
+	}
+
+	// replace the content of .katex-html
+	return head + group_chunks(chunks) + html.slice(end)
 }
 
 export function render_formulas(txt: string): string {
-	return txt.replace(MATH_REGEX, (_, display_formula, inline_formula) => {
+	return txt.replace(MATH_REGEX, (_, display_formula, inline_formula, suffix) => {
 		if (display_formula !== undefined) {
 			return render_formula(display_formula, { displayMode: true })
 		}
 
-		return render_formula(inline_formula, { displayMode: false })
+		return render_formula(inline_formula, { displayMode: false }, suffix)
 	})
 }
 
@@ -51,26 +77,17 @@ export function render_formulas(txt: string): string {
  * line. An explicit `\allowbreak` counts like a relation. This applies to
  * inline and display formulas.
  *
- * Takes the HTML output of KaTeX and returns it with the parts between two
- * relations wrapped into `.formula-group` elements. If there is nothing to
- * group, the HTML is returned unchanged.
+ * Takes the chunks of the HTML output of KaTeX and returns their markup
+ * with the chunks between two relations wrapped into `.formula-group`
+ * elements.
  */
-function group_chunks(html: string): string {
-	const html_start = html.indexOf(HTML_START)
-	if (html_start === -1) return html
-
-	const start = html_start + HTML_START.length
-
-	// the unbreakable pieces of the formula (.katex-base), each marked as to
-	// whether a line break after it is preferred, and the index where they end
-	const { chunks, end } = parse_chunks(html, start)
-
+function group_chunks(chunks: Chunk[]): string {
 	// without a break point before the last chunk, all chunks would form a
 	// single group, which is pointless since .katex is an inline block anyway
 	const has_inner_break_point = chunks
 		.slice(0, -1)
 		.some((chunk) => chunk.is_break_point)
-	if (!has_inner_break_point) return html
+	if (!has_inner_break_point) return chunks.map((chunk) => chunk.markup).join('')
 
 	// KaTeX ends a chunk after each relation and binary operator and allows
 	// a line break between any two chunks. We wrap the chunks between two
@@ -104,8 +121,27 @@ function group_chunks(html: string): string {
 
 	close_group()
 
-	// replace the content of .katex-html
-	return html.slice(0, start) + parts.join('') + html.slice(end)
+	return parts.join('')
+}
+
+/**
+ * Browsers allow a line break between an inline block, such as .katex, and
+ * the next character. So punctuation directly after a formula may start a
+ * new line, which always happens when the formula is wider than the line.
+ * To prevent this, the punctuation is moved into the last chunk of the
+ * formula, which is unbreakable. Its font is adjusted in app.css.
+ */
+function append_suffix(chunks: Chunk[], suffix: string) {
+	const markup = `<span class="formula-suffix">${suffix}</span>`
+	const last_chunk = chunks.at(-1)
+
+	if (last_chunk?.is_base) {
+		const closing_tag = '</span>'
+		last_chunk.markup =
+			last_chunk.markup.slice(0, -closing_tag.length) + markup + closing_tag
+	} else {
+		chunks.push({ markup, is_base: false, is_break_point: false })
+	}
 }
 
 /**

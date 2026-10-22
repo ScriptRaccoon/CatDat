@@ -130,19 +130,21 @@ md.block.ruler.before(
 
 /**
  * Replaces the math formulas in a markdown text with placeholders and
- * returns a dictionary with the rendered formulas.
+ * returns a dictionary with the rendered formulas. The placeholder of an
+ * inline formula also replaces the punctuation directly after it, which
+ * is rendered with the formula.
  */
 function preprocess_math(content: string) {
 	const formulas: Record<string, string> = {}
 
 	const with_placeholders = content.replace(
 		MATH_REGEX,
-		(_, display_formula, inline_formula) => {
+		(_, display_formula, inline_formula, suffix) => {
 			const placeholder = `@@MATH-${Object.keys(formulas).length}@@`
 
 			formulas[placeholder] =
 				display_formula === undefined
-					? render_formula(inline_formula, { displayMode: false })
+					? render_formula(inline_formula, { displayMode: false }, suffix)
 					: render_formula(display_formula, { displayMode: true })
 
 			return placeholder
