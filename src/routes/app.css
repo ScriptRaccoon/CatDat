@@ -318,12 +318,25 @@ label {
 }
 
 /* cf. https://katex.org/docs/issues */
+
+/* allow line breaks in display formulas (KaTeX sets nowrap) */
 .katex-display > .katex {
 	white-space: normal;
 }
-.katex-display > .katex > .katex-html > .katex-base {
+
+/* add space between the lines of a broken display formula */
+.katex-display > .katex > .katex-html > .katex-base,
+.katex-display .formula-group > .katex-base {
 	margin: 0.25em 0;
 }
+
+/* compensate by reducing the space around display formulas (KaTeX uses 1em) */
 .katex-display {
 	margin: 0.5em 0;
+}
+
+/* keep formulas and groups of formulas (see formulas.ts) on one line if possible */
+.katex,
+.formula-group {
+	display: inline-block;
 }
