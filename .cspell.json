@@ -22,7 +22,8 @@
 		"tikzcd",
 		"Unif",
 		"Vect",
-		"Xmark"
+		"Xmark",
+		"allowbreak"
 	],
 	"words": [
 		"abelian",
