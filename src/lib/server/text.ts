@@ -8,7 +8,7 @@ function open_external_links_in_new_tab(txt: string): string {
 }
 
 function render_text(txt: string): string {
-	const with_line_breaks = txt.replaceAll('\n', '<br>')
+	const with_line_breaks = txt.replaceAll('\n', '<span class="paragraph-break"></span>')
 	const with_link_targets = open_external_links_in_new_tab(with_line_breaks)
 	return render_formulas(with_link_targets)
 }
