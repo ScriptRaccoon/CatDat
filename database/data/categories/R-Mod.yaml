@@ -3,8 +3,7 @@ name: category of left modules over a ring
 notation: $R{-}\Mod$
 objects: left $R$-modules
 morphisms: $R$-linear maps
-description: |-
-  This is the prototype of an abelian category. The category of right modules is the same with the opposite ring $R^{\op}$, hence not listed here. We assume $R \neq 0$ since otherwise the category would be trivial.
+description: This is the prototype of an abelian category. The category of right modules is the same with the opposite ring $R^{\op}$, hence not listed here. We assume $R \neq 0$ since otherwise the category would be trivial.
 nlab_link: https://ncatlab.org/nlab/show/module
 tags:
   - algebra
