@@ -38,11 +38,11 @@ satisfied_properties:
     proof: >-
       In fact, we will show that the embedding $\Ab_\fg \hookrightarrow \Ab$ is closed under $\aleph_1$-cofiltered limits. Let $D : \I \to \Ab$ be an $\aleph_1$-cofiltered diagram such that each $D(i)$ is finitely generated. We will show that its limit is finitely generated as well. The proof proceeds in three steps:
 
-      1. Reduce to the case where every morphism $D(i \to j) : D(i) \to D(j)$ is surjective.
-
-      2. Reduce further to the case where the groups $D(i)$ all have the same rank.
-
-      3. Reduce further to the case where the torsion subgroups $T(i)$ all have the same cardinality.
+      <ol>
+      <li>Reduce to the case where every morphism $D(i \to j) : D(i) \to D(j)$ is surjective.</li>
+      <li>Reduce further to the case where the groups $D(i)$ all have the same rank.</li>
+      <li>Reduce further to the case where the torsion subgroups $T(i)$ all have the same cardinality.</li>
+      </ol>
 
       In case (3), we will see that all morphisms $D(i \to j)$ are bijective, from which the claim follows immediately.
 
