@@ -234,7 +234,7 @@ If you are not familiar with YAML, a short beginner-friendly introduction can be
 1. It is recommended to enable word wrap in your editor when working with YAML files.
 2. HTML may be used inside string values, for example for links (`<a>`), italic text (`<i>`), and ordered lists (`<ol>`).
 3. Use single-quoted strings (`'...'`) for values containing `:`. See [`Cat.yaml`](/database/data/categories/Cat.yaml) for an example. Inside single-quoted strings, a literal single quote must be escaped as `''`. See [`Man.yaml`](/database/data/categories/Man.yaml) for an example.
-4. Use `>-` for multiline text that should be rendered as a single paragraph without line breaks. This is particularly useful for improving readability of longer texts or HTML lists in the YAML file itself. See [`core-thin.yaml`](/database/data/category-properties/core-thin.yaml) for an example.
-5. Use `|-` for multiline text where line breaks should be preserved. These line breaks are automatically converted to `<br>` when rendered. See [`FreeAb.yaml`](/database/data/categories/FreeAb.yaml) for an example.
+4. Use `>-` for multiline text. Single line breaks are ignored when rendered, which is useful for improving readability of longer texts or HTML lists in the YAML file itself. See [`core-thin.yaml`](/database/data/category-properties/core-thin.yaml) for an example.
+5. In a `>-` block, an empty line starts a new paragraph when rendered. See [`Ab_fg.yaml`](/database/data/categories/Ab_fg.yaml) for an example. Do not use `|-`.
 
 The command `pnpm cspell` checks for spelling mistakes. It runs automatically before every push and in the CI. If it reports a legitimate word (for example, the name of an author), add it to [`.cspell.json`](/.cspell.json).
