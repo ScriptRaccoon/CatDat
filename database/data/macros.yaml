@@ -88,6 +88,8 @@
 \Open: \operatorname{Open}
 \Id: \operatorname{Id}
 \Br: \operatorname{Br}
+\dom: \operatorname{dom}
+\code: '\ulcorner #1 \urcorner'
 
 # standard collections
 \SetColl: \mathrm{Set}
@@ -169,6 +171,7 @@
 \Mono: \mathbf{Mono}
 \Sh: \mathbf{Sh}
 \Proj: \mathbf{Proj}
+\omegaSet: \omega{-}\Set
 
 # arrows
 \rightrightrightarrows: \mathrel{\substack{\rightarrow\\[-0.6ex]\rightarrow\\[-0.6ex]\rightarrow}}

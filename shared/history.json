@@ -867,6 +867,10 @@
 		{
 			"type": "category",
 			"id": "Grp_fg"
+		},
+		{
+			"type": "category",
+			"id": "omega-Set"
 		}
 	],
 	"properties": [
