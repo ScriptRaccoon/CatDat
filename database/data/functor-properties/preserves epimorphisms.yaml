@@ -1,8 +1,6 @@
 id: preserves epimorphisms
 relation: preserves
-description: |-
-  A functor $F : \C \to \D$ <i>preserves epimorphisms</i> if every epimorphism in $\C$ is mapped to an epimorphism in $\D$.
-  This property is useful to rule out some adjunctions.
+description: 'A functor $F : \C \to \D$ <i>preserves epimorphisms</i> if every epimorphism in $\C$ is mapped to an epimorphism in $\D$. This property is useful to rule out some adjunctions.'
 nlab_link: https://ncatlab.org/nlab/show/epimorphism
 invariant_under_equivalences: true
 dual: preserves monomorphisms
