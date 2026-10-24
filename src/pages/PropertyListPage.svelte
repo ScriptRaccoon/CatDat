@@ -16,22 +16,22 @@
 		total: number
 		grouped_total: number
 		tags: string[]
+		keywords: Record<string, string[]>
 	}
 
-	let { type, grouped_properties, total, grouped_total, tags }: Props = $props()
+	let { type, grouped_properties, total, grouped_total, tags, keywords }: Props =
+		$props()
 
-	let searched_properties = $derived(
-		search
-			? grouped_properties.filter(
-					(property) =>
-						normalize_text(property.id).includes(normalize_text(search)) ||
-						(!!property.dual_property_id &&
-							normalize_text(property.dual_property_id).includes(
-								normalize_text(search)
-							))
-				)
-			: grouped_properties
-	)
+	let searched_properties = $derived.by(() => {
+		if (!search) return grouped_properties
+		const query = normalize_text(search)
+		return grouped_properties.filter(({ id, dual_property_id }) =>
+			[id, dual_property_id]
+				.filter((property_id) => property_id !== null)
+				.flatMap((property_id) => [property_id, ...(keywords[property_id] ?? [])])
+				.some((text) => normalize_text(text).includes(query))
+		)
+	})
 </script>
 
 <MetaData title="Properties of {PLURALS[type]}" />

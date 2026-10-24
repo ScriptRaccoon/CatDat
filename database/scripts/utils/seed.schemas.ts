@@ -112,6 +112,7 @@ export const property_yaml_schema = v.strictObject({
 	nlab_link: v.nullable(v.string()),
 	dual: v.nullable(v.string()),
 	invariant_under_equivalences: v.boolean(),
+	keywords: v.optional(distinct_strings_schema),
 	related: distinct_strings_schema,
 	tags: v.pipe(distinct_strings_schema, v.minLength(1))
 })

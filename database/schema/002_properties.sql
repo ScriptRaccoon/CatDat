@@ -33,6 +33,15 @@ CREATE TABLE related_properties (
         REFERENCES properties (id, type) ON DELETE CASCADE
 );
 
+CREATE TABLE property_keywords (
+    property_id TEXT NOT NULL,
+    type TEXT NOT NULL,
+    keyword TEXT NOT NULL,
+    PRIMARY KEY (property_id, type, keyword),
+    FOREIGN KEY (property_id, type)
+        REFERENCES properties (id, type) ON DELETE CASCADE
+);
+
 CREATE TABLE property_assignments (
     id INTEGER PRIMARY KEY,
     structure_id TEXT NOT NULL,
