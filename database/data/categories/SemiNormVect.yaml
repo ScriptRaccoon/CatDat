@@ -1,0 +1,231 @@
+id: SemiNormVect
+name: category of semi-normed vector spaces with linear contractions
+notation: $\SemiNormVect$
+objects: semi-normed vector spaces over $\IC$
+morphisms: linear maps $f$ satisfying $|f(x)| \leq |x|$ for every $x$
+description: >-
+  A semi-norm need not satisfy $|x|=0 \implies x=0$. Equipping a vector space with the zero semi-norm defines a right adjoint to the forgetful functor $\SemiNormVect \to \Vect_{\IC}$.
+  The choice of morphisms is similar to that of $\PMet$.
+nlab_link: null
+
+tags:
+  - analysis
+
+related:
+  - Vect
+  - PMet
+
+satisfied_properties:
+  - property: locally small
+    proof: The forgetful functor to $\Vect_{\IC}$ is faithful, and $\Vect_{\IC}$ is locally small.
+
+  - property: equalizers
+    proof: Take the equalizer of the underlying linear maps and restrict the semi-norm. This has the required universal property.
+    check_redundancy: false
+
+  - property: products
+    proof: >-
+      For a family $(V_i)_{i \in I}$, take the subspace $\{v \in \prod_i V_i : \sup_i |v_i| < \infty\}$ with semi-norm $|v| \coloneqq \sup_i |v_i|$.
+      If $f_i : T \to V_i$ are contractions, then $\sup_i |f_i(t)| \leq |t|$, so the induced linear map lands in this subspace and is a contraction.
+    check_redundancy: false
+
+  - property: coproducts
+    proof: >-
+      Take the vector space direct sum $\bigoplus_i V_i$ with semi-norm $|v| \coloneqq \sum_i |v_i|$.
+      A family of contractions $f_i : V_i \to T$ induces the linear map $f(v)=\sum_i f_i(v_i)$, which is a contraction since $|f(v)| \leq \sum_i |f_i(v_i)| \leq \sum_i |v_i|$.
+    check_redundancy: false
+
+  - property: coequalizers
+    proof: >-
+      For $f,g : V \rightrightarrows W$, let $U \coloneqq \im(f-g)$ and equip $W/U$ with the quotient semi-norm $|w+U| \coloneqq \inf_{u \in U}|w+u|$.
+      Every contraction $h : W \to T$ annihilating $U$ factors uniquely through a linear map $\bar h : W/U \to T$, and $|\bar h(w+U)|=|h(w+u)| \leq |w+u|$ for all $u \in U$. Taking the infimum shows that $\bar h$ is a contraction.
+    check_redundancy: false
+
+  - property: CIP
+    proof: The canonical map from a direct sum to the bounded product is injective, hence a monomorphism.
+
+  - property: extremal generator
+    proof: >-
+      We will show that the space $\IC$ with its usual norm is an extremal generator. The set $\Hom(\IC,X)$ is in natural bijection with points of the closed unit ball of $X$.
+      If two maps agree on the closed unit ball then they agree everywhere. So $\IC$ is a generator.
+      We also need to show that for any $f : A \to B$ such that the function $f\circ{-} : \Hom(\IC,A)\to\Hom(\IC,B)$ is a bijection, $f$ is an isomorphism. Since $f$ induces a bijection of closed unit balls, by scaling up, $f$ is a bijection, and $|f(x)|\leq r$ iff $|x|\leq r$. So $f$ is an isomorphism.
+    check_redundancy: false
+
+  - property: extremal cogenerator
+    proof: >-
+      We will show that the space $Q \coloneqq \IC_1\times \IC_0$ is an extremal cogenerator, where $\IC_1$ is $\IC$ with the usual norm, and $\IC_0$ is $\IC$ with the zero semi-norm. So $|(x,y)|=|x|$, and $\Hom(-,Q) \cong \Hom(-,\IC_1) \times \Hom(-,\IC_0)$. Every linear functional is a contraction into $\IC_0$, so $\Hom(X,\IC_0)$ is the algebraic dual of the underlying vector space of $X$. Since $\IC$ is an extremal cogenerator of <a href="/category/Vect">$\Vect_{\IC}$</a>, it follows that $\Hom(-,\IC_0)$ is faithful, hence so is $\Hom(-,Q)$.
+
+      Now let $f : X \to Y$ be a morphism such that $\Hom(f,Q)$ is a bijection. Since all hom-sets are non-empty (they contain $0$), both components $\Hom(f,\IC_1)$ and $\Hom(f,\IC_0)$ are bijections. Since $\IC$ is an extremal cogenerator of $\Vect_{\IC}$, the latter implies that $f$ is a linear isomorphism. It remains to show that $f$ is isometric, since bijective linear isometries are isomorphisms (see below).
+
+      The argument is similar to <a href="/category/Ban">$\Ban$</a>. Given $x\in X$, the Hahn-Banach theorem gives a linear contraction $g : X\to \IC_1$ with $g(x)=|x|$. Since $\Hom(f,\IC_1)$ is surjective, we have $g=g'\circ f$ for some $g' : Y\to\IC_1$. Hence $|x|=|g(x)|=|g'(f(x))|\leq |f(x)|$. Since $f$ is a contraction, we conclude that $|x|=|f(x)|$.
+
+  - property: ℵ₁-accessible
+    proof: >-
+      (The following argument follows <a href="https://mathoverflow.net/questions/511025">MO/511025</a>, which also has other viewpoints.)
+
+      Let $U : \SemiNormVect \to \Set$ be the underlying set functor. For $n \geq 1$ and $c \in \IQ(i)^n$, define a subfunctor $D_c \subseteq U^n$ by
+
+      $$
+      D_c(X) \coloneqq \left\{(x_1,\ldots,x_n) \in U(X)^n : \left|\sum_{j=1}^n c_jx_j\right| \leq 1\right\}.
+      $$
+
+      We will need the fact that $U$ preserves $\aleph_1$-filtered colimits and so does each $D_c$. Filtered colimits are computed by taking the colimit as vector spaces, with the infimum semi-norm. In particular, $U$ preserves filtered colimits. For an $\aleph_1$-filtered diagram, the infimum semi-norm of an element is attained: choose countably many representatives whose semi-norms approach the infimum, and take a cocone over these objects where furthermore the representatives become equal. The image at its vertex has semi-norm equal to the infimum. Likewise, a tuple satisfying the inequality defining $D_c$ in the colimit has a representative satisfying the same inequality in one of the spaces. This gives surjectivity of the comparison map for $D_c$; injectivity follows since $D_c$ is a subfunctor of $U^n$.
+
+      Let $\K$ be the collection of spaces of at most countable algebraic dimension. This collection is obviously essentially small. Every space is the colimit of its subspaces in $\K$ ordered by inclusion, and this diagram is $\aleph_1$-filtered. It therefore remains to show that each $K \in \K$ is $\aleph_1$-presentable.
+
+      Fix a basis $G$ of $K$. We will show that for any map of sets $f : G \to X$ its unique linear extension $K \to X$ is a contraction if and only if it preserves all the relations $D_c$ on tuples of basis vectors. This condition is clearly necessary. For sufficiency, by using homogeneity of semi-norms and density of $\IQ$ in $\IR$, preservation of all relations $D_c$ is easily seen to be equivalent to
+
+      $$
+      \left|\sum_{j=1}^n c_j f(g_j)\right| \leq \left|\sum_{j=1}^n c_j g_j\right|\tag{1}
+      $$
+
+      for all $n \geq 1$, $c \in \IQ(i)^n$, and $(g_1,\ldots,g_n) \in G^n$. Now consider an arbitrary $k\in K$. It lies in the $\IC$-linear span $W$ of some finite subset of $G$. If we temporarily give $W$ and $f[W]$ the usual (Euclidean) topology, then $f|_W$ and both semi-norms are continuous. So the set of $x\in W$ satisfying $|f(x)|\leq |x|$ is closed. But it is also dense by (1). Thus the linear extension of $f$ is a contraction.
+
+      From here the argument is purely formal, and standard. Define the countable index set
+
+      $$
+      T \coloneqq \left\{(n,c,g) : n \geq 1,\ c \in \IQ(i)^n,\ g \in G^n,\ \left|\sum_{j=1}^n c_jg_j\right| \leq 1\right\}.
+      $$
+
+      We obtain a natural isomorphism
+
+      $$
+      \Hom(K,X) \cong \Set(G,U(X)) \times_{V(X)} \prod_{(n,c,g)\in T} D_c(X),
+      \qquad V(X) \coloneqq \prod_{(n,c,g)\in T} U(X)^n.
+      $$
+
+      The $t=(n,c,g)$ component of the first pullback map is evaluation, $f \mapsto (f(g_1),\ldots,f(g_n))$, and the corresponding component of the second map is the inclusion $D_c(X) \hookrightarrow U(X)^n$.
+
+      Since $G$ and $T$ are countable, this expresses $\Hom(K,-)$ as a countable limit of functors preserving $\aleph_1$-filtered colimits. Countable limits commute with $\aleph_1$-filtered colimits in $\Set$, so $K$ is $\aleph_1$-presentable. Hence $\SemiNormVect$ is $\aleph_1$-accessible.
+
+  - property: effective congruences
+    proof: The midpoint argument for <a href="/category/Ban">$\Ban$</a> works here, except that we skip the step of showing $R$ is closed.
+
+  - property: pullback-stable regular epimorphisms
+    proof: >-
+      The argument is the same as for <a href="/category/Ban">$\Ban$</a>.
+
+  - property: pushout-stable regular monomorphisms
+    proof: >-
+      We adapt the argument for <a href="/category/Ban">$\Ban$</a>, where we additionally need to show that the canonical map to the pushout is injective.
+
+      We will use the classification of regular monomorphisms as isometric injective linear maps below.
+      So let $i : X \to Y$ be an isometric injective linear map and let $f : X \to T$ be any morphism. We need to show that the linear contraction $\iota : T \to T \sqcup_X Y$ is isometric and injective as well. The pushout can be constructed as the quotient of the direct sum $T \oplus Y$ modulo the subspace containing all $(-f(x),i(x))$ for $x \in X$, equipped with the semi-norm $|(t,y)|=\inf_{x\in X}(|t - f(x)| + |y + i(x)|)$.
+      For $t \in T$ the semi-norm of $\iota(t) = [(t,0)]$ is $\inf_{x\in X}(|t - f(x)| + |i(x)|)$.
+      By taking $x=0$ we see that the infimum is $\leq |t|$.
+      On the other hand, for any $x \in X$ we compute
+      $$\begin{align*}
+      |(t - f(x), i(x))| & = |t - f(x)| + |i(x)| \\
+      & = |t - f(x)| + |x| \\
+      & \geq |t - f(x)| + |f(x)| \geq |t|.
+      \end{align*}$$
+      This shows that the infimum is precisely $|t|$.
+      Finally, $\iota(t)$ is only zero if $(t,0)\in T \oplus Y$ is of the form $(-f(x), i(x))$. Because $i$ is injective, this only happens for $x=0$, and hence $t=0$. So $\iota$ is injective.
+
+  - property: exact filtered colimits
+    proof: >-
+      The forgetful functor to vector spaces preserves finite limits and filtered colimits. We just need to show that the semi-norms agree. The case of empty limits is trivial. Now consider filtered diagrams $(X_i)$ and $(Y_i)$ with the same index category.
+
+      For equalizers, consider maps $f_i, g_i : X_i \to Y_i$ with equalizers $E_i\subseteq X_i$, and an element $x\in\colim_i E_i$. So $|x|$ is the infimum of $|x_i|_{X_i}$ taken over its representatives $x_i\in X_i$ such that $f_i(x_i)=g_i(x_i)$. Since the diagram is filtered, this is the same as the infimum over all representatives, which gives the semi-norm in $\colim_i X_i$. Hence the semi-norm agrees with that of the equalizer of $\colim_i f_i$ and $\colim_i g_i$.
+
+      For binary products, consider an element $(x,y) \in \colim_i (X_i \times Y_i)$. Its semi-norm is the infimum of $\max(|x_i|,|y_i|)$ over all representatives $(x_i,y_i) \in X_i \times Y_i$ of $(x,y)$, which is at least $\max(|x|,|y|)$, the semi-norm in $\colim_i X_i \times \colim_i Y_i$. Conversely, let $\varepsilon > 0$ and choose representatives $x_i \in X_i$ of $x$ and $y_j \in Y_j$ of $y$ with $|x_i| < |x| + \varepsilon$ and $|y_j| < |y| + \varepsilon$. By taking a cocone over $i$ and $j$ and using the fact that transition maps are contractions, we can take $i=j$. This gives $\max(|x_i|,|y_i|) < \max(|x|,|y|) + \varepsilon$.
+
+  - property: cocartesian cofiltered limits
+    proof: >-
+      By the descriptions of products and equalizers, the limit of a diagram $(Y_i)$ is the space of compatible families $(y_i) \in \prod_i Y_i$ with $\sup_i |y_i| < \infty$, with the semi-norm $|(y_i)| \coloneqq \sup_i |y_i|$. Now let $X$ be an object and let $(Y_i)$ be a cofiltered diagram. We need to show that the canonical map
+
+      $$
+      X \oplus \lim_i Y_i \to \lim_i (X \oplus Y_i), \quad (x,(y_i)) \mapsto ((x,y_i))_i
+      $$
+
+      is an isomorphism. An element of the codomain is a compatible family $((x_i,y_i))_i$ with bounded semi-norms. Since the index category is connected and the transition maps are the identity on the $X$ component, there is some $x \in X$ with $x_i = x$ for all $i$. Moreover, $(y_i)$ is a compatible family, and we have $|x| + \sup_i |y_i| = \sup_i (|x| + |y_i|)$. This shows that the canonical map is an isometric bijection.
+
+unsatisfied_properties:
+  - property: CSP
+    proof: >-
+      For the constant countable family $V_n=\IC$ with the usual norm, the canonical map from the coproduct to the product is the inclusion $\IC^{(\IN)} \hookrightarrow \ell^\infty$ of the finitely supported sequences into the bounded sequences.
+      It is not surjective, hence not an epimorphism by the classification below.
+
+  - property: balanced
+    proof: The contraction $\IC \to \IC$, $z \mapsto z/2$, is bijective, hence both monic and epic, but its inverse is not a contraction.
+
+  - property: unital
+    proof: >-
+      For $V=W=\IC$ with the usual norm, the canonical map $V \sqcup W \to V \times W$ is the identity on $\IC^2$, from the sum norm to the maximum norm.
+      It is a monomorphism but not an isomorphism, since $(1,1)$ has norms $2$ and $1$, respectively. Therefore, it is not a strong epimorphism.
+
+  - property: counital
+    proof: >-
+      For $V=W=\IC$ with the usual norm, the canonical map $V \sqcup W \to V \times W$ is the identity on $\IC^2$, from the sum norm to the maximum norm.
+      It is an epimorphism but not an isomorphism, since $(1,1)$ has norms $2$ and $1$, respectively. Therefore, it is not a strong monomorphism.
+
+  - property: finitely accessible
+    proof: >-
+      We will show that finitely presentable objects are zero-dimensional, which obviously implies that no non-trivial space is a colimit of finitely presentable objects.
+      Consider a finitely presentable $X$ and $0\neq x\in X$. Let $\IC_r$ be $\IC$ with norm $|z|_r=r|z|$.
+      Using Hahn-Banach for $|x|\neq 0$ or the algebraic dual for $|x|=0$, there is a linear contraction $\phi : X\to \IC_{|x|}$ taking $x$ to $1$.
+      But $\IC_{|x|}$ is the colimit of $\IC_{|x|+1/n}$ with the identity maps as transition maps.
+      So $\phi$ factors through some linear contraction $\phi' : X\to \IC_{|x|+1/n}$, which is impossible because $|\phi'(x)|_{|x|+1/n}=|x|+1/n>|x|$.
+
+  - property: effective cocongruences
+    proof: >-
+      Take $X=\IC$ with the usual norm and $E=\IC\times \IC$ with semi-norm $|(x,y)|_E \coloneqq |x+y|$,
+      and the usual inclusions $p,q : X \rightrightarrows E$ (defined by $p(x)=(x,0)$ and $q(x)=(0,x)$). They are jointly epimorphic since their images span $E$.
+      For an object $T$, a linear map $h : E \to T$ is determined by $a \coloneqq h(1,0)$ and $b \coloneqq h(0,1)$, and it is a contraction if and only if $|a|\leq 1$ and $|a-b|=0$: for necessity evaluate at $(1,0)$ and $(1,-1)$, and for sufficiency use $|ax+by| = |a(x+y)+(b-a)y| = |a|\cdot |x+y| \leq |x+y|$.
+      Identifying $\Hom(X,T)$ with the closed unit ball of $T$, the image of $\Hom(E,T) \to \Hom(X,T)^2$ is therefore the equivalence relation $a \sim b \iff |a-b|=0$. So $(p,q)$ is a cocongruence.
+
+      If $(p,q)$ were the cokernel pair of some morphism $h : Y \to X$, it would also be the cokernel pair of the equalizer $e$ of $p$ and $q$: since $p \circ h = q \circ h$, we have $h = e \circ h'$ for some $h'$, so every pair $u,v$ with $u \circ e = v \circ e$ also satisfies $u \circ h = v \circ h$ and therefore factors uniquely through $(p,q)$.
+      The equalizer of $p$ and $q$ is $e : \{0\} \to X$, and its cokernel pair is the coproduct $X \sqcup X$, i.e. $\IC^2$ with the sum norm, with the inclusions. The comparison map $X \sqcup X \to E$ is the identity of $\IC^2$, which is not an isomorphism since $|(1,-1)|_E=0\neq 1+1$.
+
+  - property: cofiltered-limit-stable epimorphisms
+    proof: >-
+      Epimorphisms are not stable under sequential limits. For $n \geq 1$ let $X_n$ be $\IC$ with norm $|z|_n=n|z|$, and let $Y_n$ be $\IC$ with the usual norm.
+      Take all the transition maps $X_n\to X_m$ and $Y_n\to Y_m$ to be the identity, for $n\geq m$.
+      The limit $\lim_n X_n$ is zero because any non-zero $z$ has $\sup_n|z|_n=\infty$. The limit $\lim_n Y_n$ is obviously $\IC$.
+      So the identity maps $X_n\to Y_n$ are epimorphisms, but their limit is not an epimorphism.
+
+  - property: regular subobject classifier
+    proof: >-
+      $\IC$ with its usual norm has exactly two regular subobjects, $\{0\}$ and $\IC$. If an object $\Omega$ classified regular subobjects, then $\Hom(\IC, \Omega)$ would have cardinality $2$. But this is impossible: if it contains $f \neq 0$, then it contains the distinct elements $0,f/2,f$.
+
+  - property: regular quotient object classifier
+    proof: >-
+      $\IC$ with its usual norm has exactly two regular quotients, $\{0\}$ and $\IC$. If an object $\Psi$ classified regular quotients, then $\Hom(\Psi, \IC)$ would have cardinality $2$. But this is impossible: if it contains $f \neq 0$, then it contains the distinct elements $0,f/2,f$.
+
+  - property: skeletal
+    proof: This is trivial.
+
+special_objects:
+  initial object:
+    description: trivial vector space with its unique semi-norm
+  terminal object:
+    description: trivial vector space with its unique semi-norm
+  coproducts:
+    description: direct sums with semi-norm $|v| \coloneqq \sum_i |v_i|$
+  products:
+    description: 'bounded products $\{v \in \prod_i V_i : \sup_i |v_i| < \infty\}$ with semi-norm $|v| \coloneqq \sup_i |v_i|$'
+
+special_morphisms:
+  isomorphisms:
+    description: bijective linear isometries
+    proof: A bijective linear map and its inverse are both contractions if and only if the map preserves the semi-norm.
+  monomorphisms:
+    description: injective linear contractions
+    proof: >-
+      Injective contractions are monomorphisms since the forgetful functor is faithful. Conversely, if $f(v)=0$, put $a \coloneqq \max(1,|v|)$.
+      The contraction $h : \IC \to V$ with $h(1)=v/a$ satisfies $f \circ h=0$. If $f$ is monic, then $h=0$, hence $v=0$.
+  epimorphisms:
+    description: surjective linear contractions
+    proof: >-
+      Surjective contractions are epimorphisms since the forgetful functor is faithful. If $f : V \to W$ is not surjective, there is a non-zero linear functional $\varphi : W \to \IC$ annihilating $f(V)$.
+      As a map into $\IC$ with the zero semi-norm, this functional is a contraction. Then $\varphi \circ f=0 \circ f$ but $\varphi \neq 0$, so $f$ is not an epimorphism.
+  regular monomorphisms:
+    description: >-
+      For a linear contraction $f : X \to Y$ the following are equivalent: (1) $f$ is a regular monomorphism. (2) $f$ is isometric and injective. (3) $f$ is isomorphic to the inclusion of a subspace of $Y$.
+    proof: >-
+      The argument is the same as for <a href="/category/Ban">$\Ban$</a>, replacing "isometric" by "isometric and injective", and removing any conditions that spaces be closed or complete.
+  regular epimorphisms:
+    description: >-
+      For a linear contraction $f : X \to Y$ the following are equivalent: (1) $f$ is a regular epimorphism. (2) The semi-norm on $Y$ is given by $|y| = \inf \{|x| : f(x) = y\}$. (3) $f$ maps the open unit ball of $X$ onto the open unit ball of $Y$.
+    proof: >-
+      The argument is the same as for <a href="/category/Ban">$\Ban$</a>, removing any conditions that spaces be closed or complete.
