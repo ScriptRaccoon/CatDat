@@ -28,9 +28,6 @@ satisfied_properties:
   - property: semi-strongly connected
     proof: It is well-known that for ordinals $\alpha,\beta$ we have $\alpha \leq \beta$ or $\beta \leq \alpha$.
 
-  - property: connected limits
-    proof: Every non-empty set of ordinal numbers has a minimum.
-
   - property: well-powered
     proof: This is because for every ordinal $\alpha$ the collection of ordinals $\leq \alpha$ is a set (namely, $\alpha + 1$).
 

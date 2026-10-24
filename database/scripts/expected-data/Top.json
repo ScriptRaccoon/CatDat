@@ -189,5 +189,9 @@
 	"core-connected": false,
 	"extremal generator": false,
 	"extremal generating collection": false,
-	"pullback-stable regular epimorphisms": false
+	"pullback-stable regular epimorphisms": false,
+	"finitely coaccessible": false,
+	"locally finitely copresentable": false,
+	"ℵ₁-coaccessible": false,
+	"locally ℵ₁-copresentable": false
 }

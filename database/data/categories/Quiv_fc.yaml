@@ -109,19 +109,6 @@ unsatisfied_properties:
     references:
       - Quiv_fc_no_sequential_colimits
 
-  - property: coaccessible
-    proof: >-
-      The proof is very similar to the proof for <a href="/category/Top">$\Top$</a>. Let $D$ be the quiver with vertices $0,1$ and no edges, and let $I$ be the quiver with vertices $0,1$ and the four edges $i \to j$ for $i,j \in \{0,1\}$. There is a canonical morphism $p : D \to I$. By definition, a quiver $G = (V,E)$ is projective to $p$ if the map
-      $$p_* : \Hom(G,D) \to \Hom(G,I)$$
-      is surjective. Note that $\Hom(G,I) \cong \Hom(V,\{0,1\})$ and that
-      $$\Hom(G,D) \cong \begin{cases}
-      \Hom(V,\{0,1\}) & E = \varnothing \\
-      \varnothing & E \neq \varnothing.
-      \end{cases}$$
-      Thus, $G$ is projective to $p$ if and only if $G$ has no edges, i.e. $G$ is discrete. Every discrete quiver belongs to $\Quiv_{\fc}$. This shows that the full subcategory of quivers in $\Quiv_{\fc}$ that are projective to $p$ is equivalent to $\Set$. Since <a href="/category/Set">$\Set$</a> is not coaccessible, it follows from the dual of <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adámek–Rosický</a>, Prop. 4.7, that $\Quiv_{\fc}$ is not coaccessible.
-    references:
-      - Top_not_coaccessible
-
 special_objects:
   initial object:
     description: the quiver with no vertices and hence no edges

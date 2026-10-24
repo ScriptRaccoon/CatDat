@@ -189,5 +189,9 @@
 	"quasitopos": false,
 	"regular-subobject-trivial": false,
 	"regular-quotient-trivial": false,
-	"core-connected": false
+	"core-connected": false,
+	"finitely coaccessible": false,
+	"locally finitely copresentable": false,
+	"ℵ₁-coaccessible": false,
+	"locally ℵ₁-copresentable": false
 }

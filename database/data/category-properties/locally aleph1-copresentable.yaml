@@ -1,0 +1,18 @@
+id: locally ℵ₁-copresentable
+relation: is
+description: A category is locally $\aleph_1$-copresentable if its opposite category is locally $\aleph_1$-presentable. Equivalently, it is $\aleph_1$-coaccessible and complete.
+nlab_link: null
+dual: locally ℵ₁-presentable
+invariant_under_equivalences: true
+
+keywords:
+  - locally aleph1-copresentable
+
+related:
+  - complete
+  - locally finitely copresentable
+  - locally copresentable
+  - ℵ₁-coaccessible
+
+tags:
+  - accessibility

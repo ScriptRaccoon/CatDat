@@ -98,9 +98,6 @@ unsatisfied_properties:
   - property: skeletal
     proof: This is trivial.
 
-  - property: essentially small
-    proof: This is trivial.
-
   - property: locally finite
     proof: This is obvious.
 
@@ -127,6 +124,11 @@ unsatisfied_properties:
   - property: pullback-stable regular epimorphisms
     proof: 'We can adapt Example 3.14 at the <a href="https://ncatlab.org/nlab/show/regular+category">nLab</a> (which provides non-stable regular epimorphisms in $\Pos$ and related categories) as follows: Consider the subspaces $X = \{0,1,2,3\}$ and $Y = \{0,1,2\}$ of $\IR$ with the usual metric. Define a surjective map $p : X \to Y$ by $p(0)=0$, $p(1)=p(2)=1$, and $p(3)=2$. Clearly, $p$ is non-expansive. Moreover, one can check that $p$ satisfies the universal property in $\PMet$ of a coequalizer of the two maps $1,2 : \{\ast\} \rightrightarrows X$. Thus, $p$ is a regular epimorphism. Now consider the subspace $Z = \{0,2\}$ of $Y$. As a set, the pullback $X \times_Y Z$ is $p^*(Z) = \{0,3\}$. Using the definition of the product metric, one can verify that $d(0,3) = 3$ in this pullback. The projection $X \times_Y Z \to Z$ identifies with the evident bijective and non-expansive map $\{0,3\} \to \{0,2\}$. It is a monomorphism and not an isomorphism (the distances do not match), hence cannot be a regular epimorphism.'
     label: PMet_not_regular
+
+  - property: coaccessible
+    proof: The proof for <a href="/category/Met">$\Met$</a> also works for pseudo-metric spaces. The diagram $D$ used there takes values in $\Met$, and its limit $L$ in $\Met$ is also its limit in $\PMet$, since the inclusion $\Met \hookrightarrow \PMet$ has a left adjoint (mapping $X$ to $X/{\sim}$, where $x \sim y \iff d(x,y) = 0$) and therefore preserves limits.
+    references:
+      - Met_not_coaccessible
 
 special_objects:
   initial object:

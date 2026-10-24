@@ -79,11 +79,6 @@ satisfied_properties:
       This shows that the choice of $x \in X$ does not matter, and for $y \in Y$ the proof is the same.
     label: Delta_cosifted
 
-  - property: ℵ₁-cofiltered limits
-    proof: We already know that <a href="/category/FinOrd">$\FinOrd$</a> has $\aleph_1$-cofiltered limits and that the forgetful functors to <a href="/category/FinSet">$\FinSet$</a> and <a href="/category/Set">$\Set$</a> preserve them. Therefore, it suffices to prove that an $\aleph_1$-cofiltered limit of non-empty finite sets is also non-empty. While a direct proof is possible, we can conveniently derive this from Lemma 1 <a href="/content/comphaus_copresentable">here</a> by regarding finite sets as discrete compact Hausdorff spaces.
-    references:
-      - FinSet_aleph1-cofiltered-limits
-
 unsatisfied_properties:
   - property: cofiltered
     proof: 'The two maps $d^0,d^1 : [0] \rightrightarrows [1]$ are not equalized by any morphism.'

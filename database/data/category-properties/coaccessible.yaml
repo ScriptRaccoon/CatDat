@@ -6,7 +6,9 @@ dual: accessible
 invariant_under_equivalences: true
 
 related:
+  - finitely coaccessible
   - locally copresentable
+  - ℵ₁-coaccessible
 
 tags:
   - accessibility

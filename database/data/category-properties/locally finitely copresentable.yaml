@@ -1,0 +1,15 @@
+id: locally finitely copresentable
+relation: is
+description: A category is <i>locally finitely copresentable</i> if its opposite category is locally finitely presentable. Equivalently, it is finitely coaccessible and complete. This is also equivalent to being finitely coaccessible and cocomplete.
+nlab_link: https://ncatlab.org/nlab/show/locally+finitely+presentable+category
+dual: locally finitely presentable
+invariant_under_equivalences: true
+
+related:
+  - locally copresentable
+  - complete
+  - finitely coaccessible
+  - locally ℵ₁-copresentable
+
+tags:
+  - accessibility

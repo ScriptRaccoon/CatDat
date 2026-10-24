@@ -1,0 +1,18 @@
+id: ℵ₁-coaccessible
+relation: is
+description: A category is <i>$\aleph_1$-coaccessible</i> if its opposite category is $\aleph_1$-accessible. Concretely, this means that it has $\aleph_1$-cofiltered limits and there is an essentially small collection $G$ of $\aleph_1$-copresentable objects such that every object is an $\aleph_1$-cofiltered colimit of objects in $G$.
+nlab_link: null
+dual: ℵ₁-accessible
+invariant_under_equivalences: true
+
+keywords:
+  - aleph1-coaccessible
+
+related:
+  - coaccessible
+  - finitely coaccessible
+  - locally ℵ₁-copresentable
+  - ℵ₁-cofiltered limits
+
+tags:
+  - accessibility

@@ -36,19 +36,35 @@ satisfied_properties:
     proof: The inclusion $\Ab_{\fg} \hookrightarrow \Ab$ is closed under $\aleph_1$-filtered colimits by <a href="https://mathoverflow.net/questions/400763/">MO/400763</a>. In particular, $\Ab_{\fg}$ has $\aleph_1$-filtered colimits. Since $\Ab_{\fg}$ is essentially small, there is a set $G$ such that every f.g. abelian group is isomorphic to one in $G$. So trivially it is also an $\aleph_1$-filtered colimit of such objects (take the constant diagram). Finally, every object of $\Ab_{\fg} = \Ab_{\fp}$ is finitely presentable in $\Ab$, a fortiori $\aleph_1$-presentable, and hence also $\aleph_1$-presentable in $\Ab_{\fg}$.
     label: Ab_fg_aleph1-accessible
 
-  - property: ℵ₁-cofiltered limits
+  - property: ℵ₁-coaccessible
     proof: >-
-      In fact, we will show that the embedding $\Ab_\fg \hookrightarrow \Ab$ is closed under $\aleph_1$-cofiltered limits. Let $D : \I \to \Ab$ be an $\aleph_1$-cofiltered diagram such that each $D(i)$ is finitely generated. We will show that its limit is finitely generated as well. The proof proceeds in three steps:
+      We will show that the inclusion $\Ab_\fg \hookrightarrow \Ab$ is closed under $\aleph_1$-cofiltered limits and that every object of $\Ab_\fg$ is $\aleph_1$-copresentable. This suffices: since $\Ab_\fg$ is essentially small, there is a set $G$ such that every finitely generated abelian group is isomorphic to one in $G$, and then every object is trivially an $\aleph_1$-cofiltered limit of objects in $G$ (take the constant diagram).
+
+      Let $D : \I \to \Ab_\fg$ be an $\aleph_1$-cofiltered diagram, and let $(p_i : L \to D(i))_{i \in \I}$ be a limit cone of $D$ in $\Ab$. Everything follows from these two facts, which we prove at the end:
 
       <ol>
-      <li>Reduce to the case where every morphism $D(i \to j) : D(i) \to D(j)$ is surjective.</li>
-      <li>Reduce further to the case where the groups $D(i)$ all have the same rank.</li>
-      <li>Reduce further to the case where the torsion subgroups $T(i)$ all have the same cardinality.</li>
+      <li>For every $i \in \I$ there is a morphism $i_\infty \to i$ such that $p_i(L) = \im(D(i_\infty \to i))$.</li>
+      <li>There is some $j \in \I$ for which $p_j : L \to D(j)$ is injective.</li>
       </ol>
 
-      In case (3), we will see that all morphisms $D(i \to j)$ are bijective, from which the claim follows immediately.
+      By (2), $L$ is isomorphic to a subgroup of the finitely generated abelian group $D(j)$, and hence is finitely generated. Since $\Ab_\fg$ is a full subcategory of $\Ab$, it follows that $(p_i)_{i \in \I}$ is also a limit cone in $\Ab_\fg$.
 
-      For $i \in \I$ let
+      Now let $A$ be a finitely generated abelian group. We need to show that the canonical homomorphism
+      $$\Phi : \colim_{i \in \I^{\op}} \Hom(D(i),A) \to \Hom(L,A), \quad [g : D(i) \to A] \mapsto g \circ p_i$$
+      is bijective. Since $\I^{\op}$ is filtered, the colimit may be computed in $\Set$ as well as in $\Ab$.
+
+      Injectivity: Since $\Phi$ is a homomorphism, it suffices to show that its kernel is trivial. Let $g : D(i) \to A$ be a homomorphism with $g \circ p_i = 0$. By (1), $g$ vanishes on $\im(D(i_\infty \to i))$, i.e. $g \circ D(i_\infty \to i) = 0$. Hence $[g] = 0$.
+
+      Surjectivity: Let $f : L \to A$ be a homomorphism. By (2), there is some $j \in \I$ such that $p_j$ is injective. Let $k \coloneqq j_\infty$ and $K \coloneqq \ker(D(k \to j)) \subseteq D(k)$. Then $p_k$ is injective as well, since $p_j = D(k \to j) \circ p_k$. We claim that
+      $$D(k) = p_k(L) \oplus K.$$
+      Let $x \in D(k)$. By (1), we have $D(k \to j)(x) \in p_j(L)$, so there is some $y \in L$ with
+      $$D(k \to j)(x) = p_j(y) = D(k \to j)(p_k(y)).$$
+      Hence $x - p_k(y) \in K$, showing $x \in p_k(L) + K$. If $y \in L$ satisfies $p_k(y) \in K$, then $p_j(y) = 0$, so $y = 0$ since $p_j$ is injective. This proves the claim. Since $p_k$ corestricts to an isomorphism $L \to p_k(L)$, the claim yields a homomorphism $r : D(k) \to L$ with $r \circ p_k = \id_L$. Then $g \coloneqq f \circ r : D(k) \to A$ satisfies
+      $$\Phi([g]) = f \circ r \circ p_k = f.$$
+
+      It remains to prove (1) and (2). We proceed in three steps.
+
+      <strong>Step 1: minimal images.</strong> For $i \in \I$ let
       $$S_i \coloneqq \{\im(D(j \to i)) : j \to i\}.$$
       This is a set of subgroups of $D(i)$. Since every subgroup of $D(i)$ is finitely generated, $D(i)$ has only countably many subgroups. Hence $S_i$ is countable as well. For every $H \in S_i$, choose a morphism $i_H \to i$ such that $H = \im(D(i_H \to i))$. Since $\I$ is $\aleph_1$-cofiltered, the diagram consisting of the morphisms $i_H \to i$ admits a cone. That is, there exists a morphism $i_\infty \to i$ together with morphisms $i_\infty \to i_H$ over $i$ for every $H \in S_i$. Now consider the subgroup
       $$M(i) \coloneqq \im(D(i_\infty \to i)) \subseteq D(i).$$
@@ -58,43 +74,38 @@ satisfied_properties:
       $$M(i) = \im(D(k \to i)),$$
       since the inclusion $\supseteq$ is obvious, while $\subseteq$ follows from the minimality just established.
 
-      Now let $i \to j$ be a morphism. We claim that $D(i) \to D(j)$ maps $M(i)$ onto $M(j)$. Since $\I$ is cofiltered, we can find a commutative diagram
+      Now let $u : i \to j$ be a morphism. We claim that $D(u)$ maps $M(i)$ onto $M(j)$. Since $\I$ is cofiltered, we can find a commutative diagram
       $$\begin{CD}
       k @>>> i_\infty @>>> i \\
-      @V{=}VV @. @VVV \\
+      @V{=}VV @. @VV{u}V \\
       k @>>> j_\infty @>>> j.
       \end{CD}$$
       Hence
-      $$M(j) = \im(D(k \to j)) = D(i \to j)(\im(D(k \to i))) = D(i \to j)(M(i)).$$
-      The canonical injective homomorphism
-      $$\textstyle \lim_{i \in \I} M(i) \hookrightarrow \lim_{i \in \I} D(i)$$
-      is an isomorphism. Indeed, for every $x \in \lim_{i \in \I} D(i)$, we have $x_j = D(i \to j)(x_i)$ for all $i \to j$, showing that $x_j \in M(j)$. Thus, we may replace $D$ by the diagram $M$.
+      $$M(j) = \im(D(k \to j)) = D(u)(\im(D(k \to i))) = D(u)(M(i)).$$
+      We denote the surjective homomorphism $M(i) \to M(j)$ induced by $D(u)$ by $M(u)$. Finally, if $(q_i : X \to D(i))_{i \in \I}$ is a cone over $D$, then $q_i = D(i_\infty \to i) \circ q_{i_\infty}$ shows $q_i(X) \subseteq M(i)$. Hence cones over $D$ correspond to cones over $M : \I \to \Ab$. In particular, $p_i(L) \subseteq M(i)$, and $L$ together with the corestrictions $L \to M(i)$ of the $p_i$ is a limit of $M$.
 
-      In other words, we may assume from now on that for every morphism $i \to j$ the induced morphism $D(i) \to D(j)$ is surjective. Then
-      $$\rank(D(i)) \geq \rank(D(j))$$
-      for every morphism $i \to j$. It follows that the set
-      $$\{\rank(D(i)) : i \in \I\}$$
-      is bounded. Indeed, otherwise for every $n \in \IN$ we could choose an object $i_n \in \I$ such that $D(i_n)$ has rank at least $n$. Choosing a cone $(j \to i_n)_{n \in \IN}$, we would obtain a group $D(j)$ of infinite rank, a contradiction.
-
-      Therefore the natural number
-      $$R \coloneqq \max\{\rank(D(i)) : i \in \I\}$$
-      is well-defined. Let $\J \subseteq \I$ be the full subcategory consisting of those objects $i \in \I$ for which $D(i)$ has rank $R$. If $i \to j$ is a morphism and $j \in \J$, then necessarily $i \in \J$ as well. Since $\I$ is cofiltered, it follows from this property that $\J$ is an initial subcategory of $\I$, i.e. that $\J/i$ is connected for every $i \in \I$. Hence the limit of $D$ coincides with the limit of $D|_{\J}$.
-
-      Thus, we may assume from now on that all groups $D(i)$ have the same rank $R$. Let $T(i) \subseteq D(i)$ denote the torsion subgroup, which is finite, and let $F(i) \coloneqq D(i)/T(i)$, which is a finitely generated free abelian group. For a morphism $i \to j$ consider the commutative diagram with exact rows:
+      <strong>Step 2: maximal rank and torsion.</strong> For $i \in \I$ let $T(i) \subseteq M(i)$ denote the torsion subgroup, which is finite, and let $F(i) \coloneqq M(i)/T(i)$, which is a finitely generated free abelian group. For a morphism $u : i \to j$ consider the commutative diagram with exact rows:
       $$\begin{CD}
-      0 @>>> T(i) @>>> D(i) @>>> F(i) @>>> 0 \\
-      @. @VVV @VVV @VVV @. \\
-      0 @>>> T(j) @>>> D(j) @>>> F(j) @>>> 0
+      0 @>>> T(i) @>>> M(i) @>>> F(i) @>>> 0 \\
+      @. @VVV @VV{M(u)}V @VVV @. \\
+      0 @>>> T(j) @>>> M(j) @>>> F(j) @>>> 0
       \end{CD}$$
-      The homomorphism $F(i) \to F(j)$ is surjective, since $D(i) \to D(j)$ is surjective. Since it is a surjective homomorphism between finitely generated free abelian groups of the same rank, it is an isomorphism. Applying the snake lemma to the diagram above, we conclude that $T(i) \to T(j)$ is surjective.
+      Since $M(u)$ is surjective, so is $F(i) \to F(j)$, and hence $\rank(M(i)) \geq \rank(M(j))$. If moreover $\rank(M(i)) = \rank(M(j))$, then $F(i) \to F(j)$ is a surjective homomorphism between finitely generated free abelian groups of the same rank, hence an isomorphism, and the snake lemma shows that $T(i) \to T(j)$ is surjective, so that $\card(T(i)) \geq \card(T(j))$.
 
-      As before, it follows that the natural number
-      $$N \coloneqq \max\{\card(T(i)) : i \in \I\}$$
-      is well-defined, and that the full subcategory consisting of those objects $i \in \I$ for which $\card(T(i)) = N$ is initial. Hence we may assume that all groups $T(i)$ have the same cardinality.
+      The set $\{\rank(M(i)) : i \in \I\}$ is bounded. Indeed, otherwise for every $n \in \IN$ we could choose an object $i_n \in \I$ such that $\rank(M(i_n)) \geq n$. Choosing a cone $(k \to i_n)_{n \in \IN}$, we would obtain $\rank(M(k)) \geq n$ for all $n$, which is impossible since $M(k)$ is finitely generated. Therefore the natural number
+      $$R \coloneqq \max\{\rank(M(i)) : i \in \I\}$$
+      is well-defined. Similarly, the set $\{\card(T(i)) : i \in \I, \, \rank(M(i)) = R\}$ is bounded: otherwise we could choose objects $i_n$ with $\rank(M(i_n)) = R$ and $\card(T(i_n)) \geq n$, and a cone $(k \to i_n)_{n \in \IN}$. Then $\rank(M(k)) = R$ by maximality of $R$, hence $\card(T(k)) \geq n$ for all $n$, which is impossible since $T(k)$ is finite. Therefore the natural number
+      $$N \coloneqq \max\{\card(T(i)) : i \in \I, \, \rank(M(i)) = R\}$$
+      is well-defined. Let $\J \subseteq \I$ be the full subcategory of those objects $i \in \I$ with $\rank(M(i)) = R$ and $\card(T(i)) = N$. It is non-empty. We claim:
 
-      Now for every morphism $i \to j$ the induced homomorphism $T(i) \to T(j)$ is a surjective map between finite sets of the same cardinality, and is therefore bijective. Applying the snake lemma once more to the diagram above, we conclude that $D(i) \to D(j)$ is an isomorphism.
+      $(\ast)$ If $u : k \to j$ is a morphism with $j \in \J$, then $k \in \J$ and $M(u) : M(k) \to M(j)$ is an isomorphism.
 
-      In this case, the limit of $D$ is simply given by any of the groups $D(i)$, and is therefore finitely generated.
+      Indeed, we have $\rank(M(k)) \geq \rank(M(j)) = R$, so $\rank(M(k)) = R$ by maximality of $R$. Then $\card(T(k)) \geq \card(T(j)) = N$, so $\card(T(k)) = N$ by maximality of $N$. Thus $k \in \J$. Moreover, $T(k) \to T(j)$ is a surjective map between finite sets of the same cardinality, hence bijective. Since also $F(k) \to F(j)$ is bijective, the snake lemma shows that $M(u)$ is bijective.
+
+      <strong>Step 3: proof of (1) and (2).</strong> Let $j \in \J$. We claim that $p_j$ corestricts to an isomorphism $L \to M(j)$. This proves (2), and also (1) for $i = j$. Since $\I$ is cofiltered, it is cosifted, and by $(\ast)$, the morphism $M(u)$ is an isomorphism for every morphism $u : k \to j$. Hence, by the dual of Lemma 1 <a href="/content/sifted-colimits-in-groupoids">here</a>, $M(j)$ is a limit of $M : \I \to \Ab$, where the projection to $M(j)$ is the identity. By Step 1, $L$ together with the corestrictions $L \to M(i)$ of the $p_i$ is also a limit of $M$. Thus, the comparison isomorphism between the two limits is the corestriction of $p_j$ to $L \to M(j)$.
+
+      To prove (1) in general, let $i \in \I$. Choose some $j_0 \in \J$. Since $\I$ is cofiltered, there are morphisms $j \to j_0$ and $j \to i$, and $j \in \J$ by $(\ast)$. Since $M(j \to i)$ is surjective by Step 1, we conclude
+      $$M(i) = D(j \to i)(M(j)) = D(j \to i)(p_j(L)) = p_i(L).$$
 
 unsatisfied_properties:
   - property: small

@@ -44,8 +44,17 @@
     - essentially small
   conclusions:
     - generalized variety
+  proof: This is proven as Corollary 3 <a href="/content/sifted-colimits-in-groupoids">here</a>.
+
+# This needs to be a separate implication from "groupoids_are_generalized_varieties"
+# as long as "generalized variety" is not dualized yet
+- id: groupoids_are_finitely_accessible
+  assumptions:
+    - groupoid
+    - essentially small
+  conclusions:
     - finitely accessible
-  proof: This is proven <a href="/content/sifted-colimits-in-groupoids">here</a>.
+  proof: This is proven as Corollary 4 <a href="/content/sifted-colimits-in-groupoids">here</a>.
 
 - id: generalized_variety_left_cancellative
   assumptions:
