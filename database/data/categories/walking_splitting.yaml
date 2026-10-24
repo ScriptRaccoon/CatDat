@@ -8,6 +8,10 @@ description: >-
 
   The walking splitting can be interpreted as a skeleton of the category of $\IF_2$-vector spaces of dimension $\leq 1$.
 nlab_link: null
+keywords:
+  - walking split idempotent
+  - walking section
+  - walking retraction
 tags:
   - category theory
 

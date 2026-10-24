@@ -3,10 +3,11 @@ name: category of Hausdorff spaces
 notation: $\Haus$
 objects: Hausdorff spaces
 morphisms: continuous functions
-description: This is the full subcategory of $\Top$ consisting of those spaces that are <a href="https://en.wikipedia.org/wiki/Hausdorff_space">Hausdorff</a>.
+description: This is the full subcategory of $\Top$ consisting of those spaces that are <a href="https://en.wikipedia.org/wiki/Hausdorff_space">Hausdorff</a> (also called $T_2$).
 nlab_link: https://ncatlab.org/nlab/show/Hausdorff+space
 keywords:
   - Hausdorff topological spaces
+  - T2 spaces
 
 tags:
   - topology

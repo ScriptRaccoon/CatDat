@@ -2,9 +2,12 @@ id: PMet
 name: category of pseudo-metric spaces with non-expansive maps
 notation: $\PMet$
 objects: pseudo-metric spaces
-morphisms: non-expansive maps $f$, meaning $d(f(x),f(y)) \leq d(x,y)$ for all $x,y$
+morphisms: non-expansive maps $f$ (also called short maps or $1$-Lipschitz maps), meaning $d(f(x),f(y)) \leq d(x,y)$ for all $x,y$
 description: In contrast to metric spaces, we do not demand $d(x,y)=0 \implies x=y$ here.
 nlab_link: null
+keywords:
+  - short maps
+  - 1-Lipschitz maps
 
 tags:
   - analysis
