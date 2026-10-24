@@ -10,7 +10,7 @@ While the combination of [this result](/category-implication/groupoid_consequenc
 Let $D : \I \to \C$ be a [sifted](/category-property/sifted) diagram in a category and $i_0 \in \I$. We call $D$ _constant after_ $i_0$ when for all morphisms $i_0 \to i$ the morphism $D(i_0) \to D(i)$ is an isomorphism. Of course, in a groupoid, this is satisfied for every $i_0 \in \I$. If such an object $i_0$ exists, we call $D$ _eventually constant_.
 
 ::: Lemma 1
-Let $\C$ be a category. Let $D : \I \to \C$ be a sifted diagram which is constant after $i_0$. Then $D(i_0)$ is a colimit object of $D$.
+Let $\C$ be a category. Let $D : \I \to \C$ be a sifted diagram which is constant after $i_0$. Then $D(i_0)$ is a colimit object of $D$, where the colimit morphism $D(i_0) \to D(i_0)$ is the identity.
 :::
 
 In particular, every groupoid has sifted colimits.
