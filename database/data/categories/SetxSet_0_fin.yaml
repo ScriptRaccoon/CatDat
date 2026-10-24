@@ -108,10 +108,10 @@ unsatisfied_properties:
       Assume that the category is $\kappa$-coaccessible for a regular cardinal $\kappa$. In particular, every object is a limit of $\kappa$-copresentable objects. We claim that every $\kappa$-copresentable object $(A,B)$ satisfies $A \cong \{\ast\}$, so that a limit of such objects also has this property (since the projection functor is continuous, as shown before), and hence does not include every object.
 
       Assume that $(A,B)$ is $\kappa$-copresentable. Since $\kappa$ is regular, $(\kappa,\leq)$ is $\kappa$-filtered, so its dual $(\kappa,\geq)$ is $\kappa$-cofiltered. Consider the diagram $D : (\kappa,\geq) \to (\Set \times \Set)_{\varnothing,\fin}$ defined by $D(\alpha) = ({[\alpha,\kappa[}, \varnothing)$ on objects. If $\alpha \geq \beta$, the morphism $D(\alpha) \to D(\beta)$ is induced by the inclusion map ${[\alpha,\kappa[} \subseteq {[\beta,\kappa[}$. We have $\lim_\alpha D(\alpha) = (\varnothing,\varnothing)$. Since $(A,B)$ is $\kappa$-copresentable, the canonical map
-      $$\textstyle \Hom(\lim_\alpha D(\alpha),(A,B)) \to \lim_\alpha \Hom(D(\alpha),(A,B))$$
+      $$\textstyle \colim_\alpha \Hom(D(\alpha),(A,B)) \to \Hom(\lim_\alpha D(\alpha),(A,B))$$
       is an isomorphism. Thus,
-      $$\textstyle \{\ast\} \cong \lim_\alpha \Hom({[\alpha,\kappa[},A).$$
-      Since $A$ embeds into $\Hom({[\alpha,\kappa[},A)$ via constant functions, and hence into the limit, we see that $\card(A) \leq 1$. But $A = \varnothing$ is not possible, since then the limit would also be empty. Thus, $A \cong \{\ast\}$.
+      $$\textstyle \colim_\alpha \Hom({[\alpha,\kappa[},A) \cong \{\ast\}.$$
+      Since $A$ embeds into each $\Hom({[\alpha,\kappa[},A)$ via constant functions, compatibly with the restriction maps, and restrictions of distinct constant functions remain distinct, $A$ embeds into the colimit. Hence $\card(A) \leq 1$. But $A = \varnothing$ is not possible, since then each $\Hom({[\alpha,\kappa[},A)$ and hence the colimit would be empty. Thus, $A \cong \{\ast\}$.
     references:
       - SetxSet_0_fin_countable_powers
 
