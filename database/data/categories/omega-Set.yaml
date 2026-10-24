@@ -12,7 +12,7 @@ description: >-
   </ul>
   In many of the proofs to follow, we will use the phrase "$n$ realizes $x$" to mean $(n, x) \in R_X$. Also, we will fix a choice of a total recursive pairing function $\langle {-}, {-} \rangle : \IN^2 \to \IN$ with total recursive inverses $p_1, p_2 : \IN \rightrightarrows \IN$. (Standard examples of such a pairing function include $\langle m, n \rangle \coloneqq \binom{m+n+1}{2} + m$, or the function interleaving the binary representations of $m$ and $n$.)
 
-  The forgetful functor $U : \omegaSet \to \Set$ has a right adjoint $\nabla : \Set \to \omegaSet$ mapping a set $X$ to the $\omega$-set $(X, \IN \times X)$.
+  The forgetful functor $U : \omegaSet \to \Set$ has a right adjoint $\nabla : \Set \to \omegaSet$ mapping a set $X$ to the $\omega$-set $(X, \IN \times X)$. Also, $U(\nabla X) = X$, and it is easy to see that the counit $\varepsilon_X : U(\nabla X) \to X$ is the identity function. Therefore, the counit of the adjunction is an isomorphism, so $\nabla$ is fully faithful.
 nlab_link: https://ncatlab.org/nlab/show/assembly
 keywords:
   - omega-set
@@ -77,7 +77,7 @@ satisfied_properties:
     proof: >-
       First, fix an <a href="https://en.wikipedia.org/wiki/Admissible_numbering">admissible numbering</a> $(\varphi_n)_{n \in \IN}$ of the partial recursive functions.
 
-      Let $(X, R_X)$ and $(Y, R_Y)$ be two $\omega$-sets. We will define the exponential $[(X, R_X), (Y, R_Y)]$ to have underlying set $\Hom_{\omegaSet}((X, R_X), (Y, R_Y))$. The realization relation will be that $p \in \IN$ realizes $f : (X, R_X) \to (Y, R_Y)$ if and only if the $p$th partial recursive function $\varphi_p$ is unary and is a realizer tracker compatible with $f$.
+      Let $(X, R_X)$ and $(Y, R_Y)$ be two $\omega$-sets. We will define the exponential $[(X, R_X), (Y, R_Y)]$ to have underlying set $\Hom_{\omegaSet}((X, R_X), (Y, R_Y))$. The realization relation will be that $p \in \IN$ realizes $f : (X, R_X) \to (Y, R_Y)$ if and only if the $p$th partial recursive function $\varphi_p$ is unary and is a realizer tracker compatible with $f$. Note that this is indeed an $\omega$-set: by definition, each element $f$ of $\Hom_{\omegaSet}((X, R_X), (Y, R_Y))$ has a compatible realizer tracker $\code{f} : \IN \dashrightarrow \IN$, and by the surjectivity axiom of the admissible numbering, there exists $p\in \IN$ such that $\varphi_p = \code{f}$.
 
       In order to check that this is indeed an exponential in $\omegaSet$, we first define the evaluation morphism
       $$\ev : [(X, R_X), (Y, R_Y)] \times (X, R_X) \to (Y, R_Y), \quad (f, x) \mapsto f(x).$$
@@ -104,7 +104,7 @@ satisfied_properties:
       $$\{ (\langle n, m \rangle, (x, y)) \mid f(x) = g(y) \land (n, x) \in R_X \land (m, y) \in R_Y \}.$$
       Now, suppose we have two morphisms $f : (X, R_X) \to (Z, R_Z)$ and $g : (Y, R_Y) \to (Z, R_Z)$. Then the relative exponential $[f, g]_Z$ will have underlying set
       $$\bigsqcup_{z\in Z} \Hom_{\omegaSet}(f_z, g_z).$$
-      The realization relation will be that $\langle n, p \rangle$ realizes $\alpha \in \Hom_{\omegaSet}(f_z, g_z)$ if $n$ realizes $z$, and $p$ is the code for a unary partial recursive function $\varphi_p : \IN \dashrightarrow \IN$ which is a realizer tracker compatible with $\alpha$.
+      The realization relation will be that $\langle n, p \rangle$ realizes $\alpha \in \Hom_{\omegaSet}(f_z, g_z)$ if $n$ realizes $z$, and $p$ is the code for a unary partial recursive function $\varphi_p : \IN \dashrightarrow \IN$ which is a realizer tracker compatible with $\alpha$. Note that this is indeed an $\omega$-set: by definition, for any element $(z, \alpha) \in \bigsqcup_{z\in Z} \Hom_{\omegaSet}(f_z, g_z)$, $z$ must have a realizer $n$ since $(Z, R_Z)$ is an $\omega$-set. Also, $\alpha \in \Hom_{\omegaSet}(f_z, g_z)$ must have a compatible realizer tracker $\code{alpha} : \IN \dashrightarrow \IN$, and by the surjectivity axiom of the admissible numbering, there exists $p\in \IN$ such that $\varphi_p = \code{\alpha}$.
 
       First, it is easy to see that the projection to $Z$ is a morphism of $\omega$-sets $[f, g]_Z \to (Z, R_Z)$, since $p_1 : \IN \to \IN$ is a compatible realizer tracker. This is the morphism we will use to consider $[f, g]_Z$ as an object of $\omegaSet / (Z, R_Z)$.
 
@@ -124,10 +124,13 @@ satisfied_properties:
 
   - property: regular subobject classifier
     proof: >-
-      We claim that $\Omega \coloneqq (2, \IN \times 2)$ is a regular subobject classifier, with $\top : 1 \to \Omega$ being the morphism whose underlying set function is $0 \mapsto 1$. To see this, note that from the construction of equalizers above, any regular subobject of $(X, R_X)$ is equivalent to $(X', R_X \cap (\IN \times X'))$ for some $X' \subseteq X$. It is then straightforward to check that the characteristic function $\chi_{X'} : X \to 2$ induces a morphism $(X, R_X) \to \Omega$, and that $(X', R_X \cap (\IN \times X'))$ is also the pullback of $\chi_{X'}$ and $\top$.
+      We claim that $\Omega \coloneqq \nabla 2 = (2, \IN \times 2)$ is a regular subobject classifier, with $\top : 1 \to \Omega$ being the morphism whose underlying set function is $0 \mapsto 1$. To see this, note that from the construction of equalizers above, any regular subobject of $(X, R_X)$ is equivalent to $(X', R_X \cap (\IN \times X'))$ for some $X' \subseteq X$. It is then straightforward to check that the characteristic function $\chi_{X'} : X \to 2$ induces a morphism $(X, R_X) \to \Omega$, and that $(X', R_X \cap (\IN \times X'))$ is also the pullback of $\chi_{X'}$ and $\top$. For the uniqueness of $\chi_{X'}$, observe that for each morphism $\chi : X \to \Omega$, the pullback of $\chi$ and $\top$ has underlying set $\chi^*(\{ 1 \})$ and the morphism to $(X, R_X)$ is the inclusion map. Thus, each morphism $\chi : (X, R_X) \to \Omega$ induces a distinct subobject of $X$ as the pullback of $\chi$ and $\top$.
 
   - property: disjoint finite coproducts
-    proof: This follows from the fact that the forgetful functor $\omegaSet \to \Set$ preserves finite coproducts by the construction above; the fact that finite coproducts are disjoint in $\Set$; and the fact that the forgetful functor reflects initial objects.
+    proof: >-
+      Consider two $\omega$-sets $(X, R_X)$ and $(Y, R_Y)$. We then need to show that the pullback of the coprojections $p_1 : (X, R_X) \to (X+Y, R_{X+Y})$ and $p_2 : (Y, R_Y) \to (X+Y, R_{X+Y})$ is initial. However, by the constructions above of binary coproducts, binary products, and equalizers, we easily see that this pullback has underlying set $\varnothing$. That then forces the realizability relation on the pullback also to be empty. Thus, the pullback is exactly the initial object as constructed above.
+
+      We also need to check that the coprojections $p_1 : (X, R_X) \to (X+Y, R_{X+Y})$ and $p_2 : (Y, R_Y) \to (X+Y, R_{X+Y})$ are monomorphisms. However, this is easy using the characterization below of monomorphisms, since the underlying functions are just the inclusion maps $X \to X+Y$ and $Y \to X+Y$ of the coproduct in $\Set$, which are injective.
 
   - property: generator
     proof: The terminal object $(1, \IN \times 1)$ represents the forgetful functor $\omegaSet \to \Set$ which is clearly faithful. (For the non-trivial direction of the isomorphism between $\Hom_{\omegaSet}((1, \IN \times 1), (X, R_X))$ and $X$, suppose we have $x \in X$. Then there exists $n \in \IN$ such that $n$ realizes $x$; therefore, the total recursive function given by the constant function with image $n$ forms a realizer tracker compatible with the corresponding function $1 \to X$.)
@@ -184,7 +187,7 @@ unsatisfied_properties:
     proof: Consider $(X, \IN \times X)$ and $(Y, \IN \times Y)$ for $X$ and $Y$ bijective but unequal sets.
 
   - property: essentially small
-    proof: 'The right adjoint $\nabla : \Set \to \omegaSet$ to the forgetful functor is fully faithful, and therefore conservative.'
+    proof: 'The right adjoint $\nabla : \Set \to \omegaSet$ to the forgetful functor is fully faithful, and therefore induces an injective function on isomorphism classes of objects. Thus, if $\omegaSet$ were essentially small, then <a href="/category/Set">$\Set$</a> would be as well, which we know is not the case.'
 
   - property: locally finite
     proof: >-
@@ -201,6 +204,15 @@ unsatisfied_properties:
       Consider the two possible morphisms $f, g : \nabla 1 \rightrightarrows \nabla 2$. This defines a corelation representing the functor which to $(X, R_X)$ assigns the binary relation on $X$ of two elements having a common realizer. That shows that this corelation is coreflexive, since by definition any element of an $\omega$-set has a realizer. However, it is easy to see that it is not cotransitive; for example, in the $\omega$-set
       $$\bigl(\{0,1,2\}, \{ (0, 0), (0, 1), (1, 1), (1, 2) \}\bigr),$$
       the elements $0$ and $1$ have a common realizer, as do $1$ and $2$; but $0$ and $2$ do not have a common realizer.
+
+  - property: countable copowers
+    proof: >-
+      Let $N \coloneqq (\IN, \Delta_{\IN})$ be the natural numbers object. Then for any $\omega$-set $(X, R_X)$, we claim $\Hom_{\omegaSet}((X, R_X), N)$ is countable. This follows from the fact that any unary partial recursive function $\varphi : \IN \dashrightarrow \IN$ can be a compatible realizer tracker for at most one function $f : X \to \IN$, since any $x\in X$ is realized by some $n\in \IN$, and then we must have that $\varphi(n)$ is defined and $f(x) = \varphi(n)$. Therefore, we get a surjective function from a subset of the unary partial recursive functions to $\Hom_{\omegaSet}((X, R_X), N)$.
+
+      From this, we see that there is no $\IN$-indexed copower of $1$, since if $(X, R_X)$ were such a copower, we would have
+      $$\Hom_{\omegaSet}((X, R_X), N) \cong \prod_{n\in\IN} \Hom_{\omegaSet}(1, N) \cong \IN^{\IN}$$
+      is uncountable.
+    check_redundancy: false
 
   - property: countable powers
     proof: >-
