@@ -2,9 +2,12 @@ id: Met
 name: category of metric spaces with non-expansive maps
 notation: $\Met$
 objects: metric spaces
-morphisms: non-expansive maps $f$, meaning $d(f(x),f(y)) \leq d(x,y)$ for all $x,y$
+morphisms: non-expansive maps $f$ (also called short maps or $1$-Lipschitz maps), meaning $d(f(x),f(y)) \leq d(x,y)$ for all $x,y$
 description: In contrast to continuous maps, which only refer to the induced topology, non-expansive maps are more closely related to the metrics themselves. This category is badly behaved, though, especially when compared with $\Met_{\infty}$.
 nlab_link: https://ncatlab.org/nlab/show/Met
+keywords:
+  - short maps
+  - 1-Lipschitz maps
 
 tags:
   - analysis

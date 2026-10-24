@@ -5,6 +5,8 @@ objects: finitely generated abelian groups
 morphisms: group homomorphisms
 description: This is the full subcategory of $\Ab$ that consists of the finitely generated abelian groups.
 nlab_link: https://ncatlab.org/nlab/show/finitely+generated+module
+keywords:
+  - finitely generated Z-modules
 
 tags:
   - algebra

@@ -1,10 +1,13 @@
 id: Met_oo
-name: category of metric spaces with ∞ allowed
+name: category of extended metric spaces
 notation: $\Met_{\infty}$
-objects: metric spaces, where the metric is allowed to assume the value $\infty$
-morphisms: non-expansive maps $f$, meaning $d(f(x),f(y)) \leq d(x,y)$ for all $x,y$
+objects: extended metric spaces, i.e. metric spaces where the metric is allowed to assume the value $\infty$
+morphisms: non-expansive maps $f$ (also called short maps or $1$-Lipschitz maps), meaning $d(f(x),f(y)) \leq d(x,y)$ for all $x,y$
 description: The fact that we allow $\infty$ means that universal constructions work much better when compared to $\Met$.
 nlab_link: https://ncatlab.org/nlab/show/Met
+keywords:
+  - short maps
+  - 1-Lipschitz maps
 
 tags:
   - analysis

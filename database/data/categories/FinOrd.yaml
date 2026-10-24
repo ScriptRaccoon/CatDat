@@ -7,6 +7,7 @@ description: The finite ordered sets of the form $\{1 < \dotsc < n\}$ for $n \in
 nlab_link: https://ncatlab.org/nlab/show/total+order
 keywords:
   - finite ordinals
+  - augmented simplex category
 
 tags:
   - order theory
