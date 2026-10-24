@@ -8,6 +8,9 @@ nlab_link: https://ncatlab.org/nlab/show/powering
 dual: ℵ₂-small copowers
 invariant_under_equivalences: true
 
+keywords:
+  - aleph2-small powers
+
 related:
   - powers
   - countable powers

@@ -1,9 +1,12 @@
 id: comonadic
 relation: is
-description: 'A functor $F : \C \to \D$ is <i>comonadic</i> when there is a comonad $T$ on $\D$ such that $F$ is equivalent to the forgetful functor $U^T : \CoAlg(T) \to \D$.'
+description: 'A functor $F : \C \to \D$ is <i>comonadic</i> when there is a comonad $T$ on $\D$ such that $F$ is equivalent to the forgetful functor $U^T : \CoAlg(T) \to \D$. In older literature, where comonads are called cotriples, comonadic functors are called <i>cotripleable</i>.'
 nlab_link: https://ncatlab.org/nlab/show/comonadic+functor
 invariant_under_equivalences: true
 dual: monadic
+keywords:
+  - cotripleable
+
 related:
   - left adjoint
   - faithful

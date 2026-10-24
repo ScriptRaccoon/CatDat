@@ -1,9 +1,12 @@
 id: monadic
 relation: is
-description: 'A functor $F : \C \to \D$ is <i>monadic</i> when there is a monad $T$ on $\D$ such that $F$ is equivalent to the forgetful functor $U^T : \Alg(T) \to \D$.'
+description: 'A functor $F : \C \to \D$ is <i>monadic</i> when there is a monad $T$ on $\D$ such that $F$ is equivalent to the forgetful functor $U^T : \Alg(T) \to \D$. In older literature, where monads are called triples, monadic functors are called <i>tripleable</i>.'
 nlab_link: https://ncatlab.org/nlab/show/monadic+functor
 invariant_under_equivalences: true
 dual: comonadic
+keywords:
+  - tripleable
+
 related:
   - right adjoint
   - faithful

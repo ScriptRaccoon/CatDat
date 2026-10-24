@@ -5,6 +5,9 @@ nlab_link: https://ncatlab.org/nlab/show/filtered+colimit
 dual: ℵ₁-cofiltered limits
 invariant_under_equivalences: true
 
+keywords:
+  - aleph1-filtered colimits
+
 related:
   - cocomplete
   - filtered colimits

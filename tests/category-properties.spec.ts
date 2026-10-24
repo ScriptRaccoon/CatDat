@@ -143,6 +143,40 @@ test('user sees no unknown categories for the property of being additive', async
 	)
 })
 
+test('user can search for a category property by its keyword', async ({ page }) => {
+	await page.goto('/category-properties', { waitUntil: 'networkidle' })
+
+	await page.getByRole('searchbox', { name: 'search filter' }).fill('aleph1-accessible')
+
+	await expect(
+		page.getByRole('link', { name: 'ℵ₁-accessible', exact: true })
+	).toBeVisible()
+
+	await expect(
+		page.getByRole('link', { name: 'accessible', exact: true })
+	).not.toBeVisible()
+})
+
+test('user can search for a category property by a keyword of its dual', async ({
+	page
+}) => {
+	await page.goto('/category-properties', { waitUntil: 'networkidle' })
+
+	await page.getByRole('searchbox', { name: 'search filter' }).fill('inverse limits')
+
+	await expect(
+		page.getByRole('link', { name: 'directed colimits', exact: true })
+	).toBeVisible()
+
+	await expect(
+		page.getByRole('link', { name: 'directed limits', exact: true })
+	).toBeVisible()
+
+	await expect(
+		page.getByRole('link', { name: 'inverse', exact: true })
+	).not.toBeVisible()
+})
+
 test("user can navigate to properties tagged with 'colimits' from the property list page", async ({
 	page
 }) => {

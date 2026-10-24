@@ -1,9 +1,13 @@
 id: left exact
 relation: is
-description: A functor is <i>left exact</i> when it preserves finite limits.
+description: A functor is <i>left exact</i> when it preserves finite limits. Such functors are also called <i>lex</i>.
 nlab_link: https://ncatlab.org/nlab/show/exact+functor
 invariant_under_equivalences: true
 dual: right exact
+keywords:
+  - preserves finite limits
+  - lex
+
 related:
   - exact
   - continuous

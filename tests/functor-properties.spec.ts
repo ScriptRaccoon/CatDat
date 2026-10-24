@@ -131,6 +131,18 @@ test('user can navigate to the dual property', async ({ page }) => {
 	await expect(page).toHaveURL('/functor-property/right_exact')
 })
 
+test('user can search for a functor property by its keyword', async ({ page }) => {
+	await page.goto('/functor-properties', { waitUntil: 'networkidle' })
+
+	await page.getByRole('searchbox', { name: 'search filter' }).fill('tripleable')
+
+	await expect(page.getByRole('link', { name: 'monadic', exact: true })).toBeVisible()
+
+	await expect(
+		page.getByRole('link', { name: 'faithful', exact: true })
+	).not.toBeVisible()
+})
+
 test("user can navigate to properties tagged with 'adjunctions' from the property list page", async ({
 	page
 }) => {

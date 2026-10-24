@@ -1,9 +1,12 @@
 id: finitely cocomplete
 relation: is
-description: A category is <i>finitely cocomplete</i> when every finite diagram has a colimit.
+description: A category is <i>finitely cocomplete</i> when every finite diagram has a colimit. Such categories are also called <i>rex</i> categories.
 nlab_link: https://ncatlab.org/nlab/show/finitely+cocomplete+category
 dual: finitely complete
 invariant_under_equivalences: true
+
+keywords:
+  - rex
 
 related:
   - cocomplete
