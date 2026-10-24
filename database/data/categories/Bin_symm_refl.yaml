@@ -87,9 +87,6 @@ satisfied_properties:
     references:
       - Bin_extremal_cogenerator
 
-  - property: effective cocongruences
-    proof: This follows from the corresponding fact for <a href="/category/Bin">$\Bin$</a> and the dual of Lemma 8 <a href="/content/subcategories">here</a>.
-
 unsatisfied_properties:
   - property: skeletal
     proof: This is trivial.
