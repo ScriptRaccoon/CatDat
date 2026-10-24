@@ -63,6 +63,7 @@ function clear_all_tables() {
 
 		db.prepare(`DELETE FROM property_assignments`).run()
 		db.prepare(`DELETE FROM related_properties`).run()
+		db.prepare(`DELETE FROM property_keywords`).run()
 		db.prepare(`DELETE FROM property_tag_assignments`).run()
 		db.prepare(`DELETE FROM property_tags`).run()
 		db.prepare(`DELETE FROM properties`).run()
@@ -381,6 +382,12 @@ function seed_properties(type: StructureType) {
 		VALUES (?, ?, ?)`
 	)
 
+	const keyword_insert = db.prepare(
+		`INSERT INTO property_keywords
+			(property_id, type, keyword)
+		VALUES (?, ?, ?)`
+	)
+
 	function insert_property(property: v.InferOutput<typeof property_yaml_schema>) {
 		property_insert.run(
 			property.id,
@@ -400,6 +407,10 @@ function seed_properties(type: StructureType) {
 
 		for (const tag of property.tags) {
 			tag_insert.run(property.id, tag, type)
+		}
+
+		for (const keyword of property.keywords ?? []) {
+			keyword_insert.run(property.id, type, keyword)
 		}
 	}
 

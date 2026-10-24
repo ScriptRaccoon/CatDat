@@ -18,18 +18,19 @@ const db = get_client({ readonly: false })
  * Labels of the counted updates, in the order they are reported
  */
 const UPDATE_LABELS = [
-	'names',
-	'notations',
-	'alternative notations',
-	'descriptions',
-	'nLab links',
-	'comments',
-	'keywords',
+	'structure names',
+	'structure notations',
+	'structure alternative notations',
+	'structure descriptions',
+	'structure nLab links',
+	'structure comments',
+	'structure keywords',
 	'object descriptions',
 	'morphism descriptions',
 	'proofs',
 	'property descriptions',
 	'property nLab links',
+	'property keywords',
 	'implication proofs'
 ] as const
 
@@ -145,15 +146,15 @@ function update_structure(
 	}
 
 	const fields: [keyof typeof existing_structure, string | null, UpdateLabel][] = [
-		['name', structure.name, 'names'],
-		['notation', structure.notation, 'notations'],
+		['name', structure.name, 'structure names'],
+		['notation', structure.notation, 'structure notations'],
 		[
 			'alternative_notation',
 			structure.alternative_notation || null,
-			'alternative notations'
+			'structure alternative notations'
 		],
-		['description', structure.description, 'descriptions'],
-		['nlab_link', structure.nlab_link, 'nLab links']
+		['description', structure.description, 'structure descriptions'],
+		['nlab_link', structure.nlab_link, 'structure nLab links']
 	]
 
 	for (const [column, value, label] of fields) {
@@ -185,7 +186,7 @@ function update_structure(
 		for (const comment of comments) {
 			comment_insert.run(structure.id, comment)
 		}
-		record('comments')
+		record('structure comments')
 	}
 
 	const existing_keywords = db
@@ -208,7 +209,7 @@ function update_structure(
 		for (const keyword of keywords) {
 			keyword_insert.run(structure.id, keyword)
 		}
-		record('keywords')
+		record('structure keywords')
 	}
 
 	for (const assignment of get_property_assignments(structure)) {
@@ -275,7 +276,7 @@ function update_category(
 }
 
 /**
- * Updates the description and nLab link of a property
+ * Updates the description, nLab link, and keywords of a property
  */
 function update_property(
 	type: StructureType,
@@ -310,6 +311,29 @@ function update_property(
 			type
 		)
 		record('property nLab links')
+	}
+
+	const existing_keywords = db
+		.prepare<[string, StructureType], { keyword: string }>(
+			`SELECT keyword FROM property_keywords
+			WHERE property_id = ? AND type = ? ORDER BY rowid`
+		)
+		.all(property.id, type)
+		.map(({ keyword }) => keyword)
+
+	const keywords = property.keywords ?? []
+
+	if (!are_equal_lists(existing_keywords, keywords)) {
+		db.prepare(
+			`DELETE FROM property_keywords WHERE property_id = ? AND type = ?`
+		).run(property.id, type)
+		const keyword_insert = db.prepare(
+			`INSERT INTO property_keywords (property_id, type, keyword) VALUES (?, ?, ?)`
+		)
+		for (const keyword of keywords) {
+			keyword_insert.run(property.id, type, keyword)
+		}
+		record('property keywords')
 	}
 }
 

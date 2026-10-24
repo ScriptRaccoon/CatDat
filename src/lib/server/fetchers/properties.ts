@@ -57,6 +57,21 @@ export function fetch_grouped_properties_and_tags(type: StructureType) {
 		.pluck()
 		.all(type)
 
+	const keywords_db = db
+		.prepare<[StructureType], { property_id: string; keyword: string }>(
+			`SELECT property_id, keyword
+			FROM property_keywords
+			WHERE type = ?`
+		)
+		.all(type)
+
+	const keywords: Record<string, string[]> = {}
+
+	for (const { property_id, keyword } of keywords_db) {
+		keywords[property_id] ??= []
+		keywords[property_id].push(keyword)
+	}
+
 	const seen = new Set()
 
 	const grouped_properties: typeof properties = []
@@ -84,7 +99,7 @@ export function fetch_grouped_properties_and_tags(type: StructureType) {
 	const total = properties.length
 	const grouped_total = grouped_properties.length
 
-	return { type, grouped_properties, total, grouped_total, tags }
+	return { type, grouped_properties, total, grouped_total, tags, keywords }
 }
 
 export function fetch_tagged_properties(type: StructureType, tag: string) {

@@ -45,7 +45,7 @@ Database (all scripts run with `tsx` and are type-checked by `pnpm check` via th
 - `pnpm db:test`: check data quality: properties and their duals are mutual, categories and their duals are mutual, `1`, `id_Set`, and `1_tensor` have no unsatisfied properties (positivity), all properties are decided for the structures listed in `expected-data/decided-*.json`, the properties of selected structures (`Set`, `Ab`, `Top`, `forget_vector`) exactly match `expected-data/`, adjoint functors are recorded on both sides with matching domains and codomains, links in proofs point to existing entries, and all entries of the history file exist.
 - `pnpm db:snapshot`: copy the database to `static/databases/catdat-snapshot.db` for the download page.
 - `pnpm db:update`: run `db:seed`, `db:deduce`, `db:test`, and `db:snapshot` in sequence. **This is the standard command after editing any YAML data.** Use `--watch` to rerun it whenever a file in `database/data/` changes.
-- `pnpm db:text`: fast path for text-only changes to existing structures (names, notations, alternative notations, descriptions, nLab links, comments, keywords, objects and morphisms of categories, proofs of property assignments), properties (descriptions, nLab links), and implications (proofs). It updates changed fields without rebuilding relations or running deductions. Special objects, special morphisms, and special morphism rules are not covered. Supports `--watch`.
+- `pnpm db:text`: fast path for text-only changes to existing structures (names, notations, alternative notations, descriptions, nLab links, comments, keywords, objects and morphisms of categories, proofs of property assignments), properties (descriptions, nLab links, keywords), and implications (proofs). It updates changed fields without rebuilding relations or running deductions. Special objects, special morphisms, and special morphism rules are not covered. Supports `--watch`.
 - After `db:update`, and after `db:text` when it changed something, the script writes a timestamp to `database/.last-update` (gitignored). A Vite plugin in [vite.config.ts](vite.config.ts) watches this file and the Markdown files in `content/`, and reloads the browser when one of them changes while `pnpm dev` is running.
 - `pnpm db:redundancies`: report property assignments that could already be deduced from others. It reports at most one per structure and kind, so rerun it after each removal. Not part of `db:update`.
 - `pnpm db:combinations <id> [<id> ...]`: list the combinations p ∧ ¬q that the given structures (or their duals) witness and that no other structure in the database witnesses. Needs only the IDs, not the type (all IDs must have the same type). Useful to judge whether a structure adds new information.
@@ -68,7 +68,7 @@ Main tables (full schema in [database/schema/](database/schema/)):
 - `implications`, `assumptions`, `conclusions`: implications between properties of one type, with `is_equivalence`, `is_deduced`, and `dual_implication_id`. The `implications_view` view combines them into JSON arrays.
 - `associated_assumptions`: implication assumptions about associated structures, e.g. a functor implication that requires the domain category to be complete.
 - `special_objects` / `special_object_assignments` and `special_morphisms` / `special_morphism_assignments` / `special_morphism_rules`: special objects (terminal, initial, products, coproducts) and special morphisms (isos, monos, epis, regular monos and epis) of categories.
-- Additional tables: tags (`structure_tags`, `property_tags`, and their assignment tables), `related_structures`, `related_properties`, `structure_comments`, `relations`.
+- Additional tables: tags (`structure_tags`, `property_tags`, and their assignment tables), `related_structures`, `related_properties`, `structure_comments`, `structure_keywords`, `property_keywords`, `relations`.
 
 The YAML files never contain derived data. Everything marked `is_deduced` is produced by `db:deduce`.
 
@@ -79,7 +79,7 @@ Use existing files as templates: [database/data/categories/N.yaml](database/data
 - String values may contain HTML (`<a>`, `<i>`, `<ol>`, ...) and KaTeX math (`$...$`, `$$...$$`).
 - Use single quotes for values that contain `:`, and escape a literal single quote as `''`.
 - Use `>-` for multiline text; an empty line in it starts a new paragraph when rendered. Do not use `|-`.
-- Optional `keywords` (list of strings) on structures: alternative names a user would search for that do not already occur in the `name`, e.g. `posets` for `Pos`. Only terms that identify the structure, not related concepts. Not yet used by the app or the database.
+- Optional `keywords` (list of strings) on structures and properties: alternative names a user would search for that do not already occur in the `name` (for properties: the ID), e.g. `posets` for `Pos`, `aleph1-accessible` for `ℵ₁-accessible` (no special characters needed), or `tripleable` for `monadic`. Only terms that identify the structure or property, not related concepts. The search filters on the list pages match them.
 - Set `check_redundancy: false` on a satisfied property assignment that is redundant but deliberately kept (see below).
 
 ## Contribution guidelines
