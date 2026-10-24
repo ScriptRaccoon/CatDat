@@ -8,6 +8,8 @@ associated:
   right_adjoint: null
 description: This functor maps a set $X$ to the countable power $X^{\IN}$, i.e. the set of sequences in $X$. It is an example of a polynomial functor. It is also an example of a monadic functor for which the crude monadicity theorem does not apply.
 nlab_link: null
+keywords:
+  - countable power functor
 
 tags:
   - set theory

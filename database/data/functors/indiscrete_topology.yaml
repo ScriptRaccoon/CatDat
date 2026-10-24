@@ -6,10 +6,11 @@ associated:
   codomain: Top
   left_adjoint: forget_topology
   right_adjoint: null
-description: This functor maps a set $X$ to the indiscrete topological space $I(X) \coloneqq (X, \{\varnothing,X\})$ in which only the empty set and $X$ are open.
+description: This functor maps a set $X$ to the indiscrete topological space $I(X) \coloneqq (X, \{\varnothing,X\})$ in which only the empty set and $X$ are open. The indiscrete topology is also called the <i>trivial</i> or <i>codiscrete</i> topology.
 nlab_link: https://ncatlab.org/nlab/show/discrete+and+indiscrete+topology
 keywords:
   - trivial topology
+  - codiscrete topology
 
 tags:
   - topology

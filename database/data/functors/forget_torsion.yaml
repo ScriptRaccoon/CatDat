@@ -8,6 +8,8 @@ associated:
   right_adjoint: null
 description: 'This is the inclusion functor $\TorsAb \hookrightarrow \Ab$. It can also be viewed as a forgetful functor that forgets the property of being torsion. It is a typical example of a fully faithful functor that preserves finite products but does not preserve infinite products.'
 nlab_link: https://ncatlab.org/nlab/show/forgetful+functor
+keywords:
+  - inclusion functor
 
 tags:
   - algebra
