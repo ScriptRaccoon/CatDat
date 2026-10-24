@@ -1,9 +1,13 @@
 id: right exact
 relation: is
-description: A functor is <i>right exact</i> when it preserves finite colimits.
+description: A functor is <i>right exact</i> when it preserves finite colimits. Such functors are also called <i>rex</i>.
 nlab_link: https://ncatlab.org/nlab/show/exact+functor
 invariant_under_equivalences: true
 dual: left exact
+keywords:
+  - preserves finite colimits
+  - rex
+
 related:
   - exact
   - cocontinuous

@@ -8,6 +8,9 @@ nlab_link: https://ncatlab.org/nlab/show/quasitopos
 dual: null
 invariant_under_equivalences: true
 
+keywords:
+  - quasi-topos
+
 related:
   - finitely complete
   - finitely cocomplete

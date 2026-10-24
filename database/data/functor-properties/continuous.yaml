@@ -4,6 +4,10 @@ description: A functor is <i>continuous</i> when it preserves limits (which are 
 nlab_link: https://ncatlab.org/nlab/show/continuous+functor
 invariant_under_equivalences: true
 dual: cocontinuous
+keywords:
+  - preserves limits
+  - limit-preserving
+
 related:
   - preserves products
   - left exact

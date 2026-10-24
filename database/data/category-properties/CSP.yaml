@@ -9,6 +9,9 @@ nlab_link: null
 dual: CIP
 invariant_under_equivalences: true
 
+keywords:
+  - coproducts surject onto products
+
 related:
   - cofiltered-limit-stable epimorphisms
   - coproducts

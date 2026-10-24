@@ -5,6 +5,9 @@ nlab_link: https://ncatlab.org/nlab/show/locally+presentable+category
 dual: null
 invariant_under_equivalences: true
 
+keywords:
+  - locally aleph1-presentable
+
 related:
   - cocomplete
   - locally finitely presentable

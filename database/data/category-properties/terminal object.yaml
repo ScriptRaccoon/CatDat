@@ -5,6 +5,9 @@ nlab_link: https://ncatlab.org/nlab/show/terminal+object
 dual: initial object
 invariant_under_equivalences: true
 
+keywords:
+  - final object
+
 related:
   - finite products
   - multi-terminal object

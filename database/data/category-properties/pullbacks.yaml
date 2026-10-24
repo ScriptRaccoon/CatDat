@@ -5,6 +5,10 @@ nlab_link: https://ncatlab.org/nlab/show/pullback
 dual: pushouts
 invariant_under_equivalences: true
 
+keywords:
+  - fiber products
+  - fibered products
+
 related:
   - binary products
   - finitely complete

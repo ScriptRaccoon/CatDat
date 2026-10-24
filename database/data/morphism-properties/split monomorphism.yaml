@@ -1,9 +1,13 @@
 id: split monomorphism
 relation: is a
-description: 'A morphism $m : A \to B$ is a <i>split monomorphism</i> if there is a morphism $e : B \to A$ with $e \circ m = \id_A$.'
+description: 'A morphism $m : A \to B$ is a <i>split monomorphism</i> if there is a morphism $e : B \to A$ with $e \circ m = \id_A$. Split monomorphisms are also called <i>sections</i> or <i>coretractions</i>.'
 nlab_link: https://ncatlab.org/nlab/show/split+monomorphism
 invariant_under_equivalences: true
 dual: split epimorphism
+keywords:
+  - section
+  - coretraction
+
 related:
   - monomorphism
   - isomorphism

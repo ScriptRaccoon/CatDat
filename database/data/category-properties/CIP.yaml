@@ -9,6 +9,9 @@ nlab_link: null
 dual: CSP
 invariant_under_equivalences: true
 
+keywords:
+  - coproducts inject into products
+
 related:
   - coproducts
   - counital

@@ -5,6 +5,10 @@ nlab_link: https://ncatlab.org/nlab/show/inhabited+set
 dual: inhabited
 invariant_under_equivalences: true
 
+keywords:
+  - non-empty
+  - nonempty
+
 related:
   - connected
 

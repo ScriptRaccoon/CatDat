@@ -10,6 +10,9 @@ nlab_link: https://ncatlab.org/nlab/show/natural+numbers+object
 dual: null
 invariant_under_equivalences: true
 
+keywords:
+  - parametrized NNO
+
 related:
   - natural numbers object
   - elementary topos

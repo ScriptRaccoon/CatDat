@@ -4,6 +4,9 @@ description: 'A morphism $e : A \to B$ is an <i>epimorphism</i> if it is right-c
 nlab_link: https://ncatlab.org/nlab/show/epimorphism
 invariant_under_equivalences: true
 dual: monomorphism
+keywords:
+  - epic
+
 related:
   - isomorphism
   - regular epimorphism

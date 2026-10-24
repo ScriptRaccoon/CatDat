@@ -5,13 +5,19 @@ description: >-
   $$(\Hom(-,Q))_{Q \in S} : \C^{\op} \to (\Set^+)^S$$
   is faithful. If $\C$ is locally essentially small and has products, this is also equivalent to the condition that the canonical morphism
   $$A \to \textstyle\prod_{Q\in S} \prod_{f\in\Hom(A,Q)} Q$$
-  is a monomorphism for every object $A$.
+  is a monomorphism for every object $A$. Some authors say <i>coseparating</i> instead of <i>cogenerating</i>.
 
   The condition that $S$ is essentially small is important since, without it, every category would have a cogenerating collection, namely its collection of all objects. Notice that $S$ is not assumed to be a set "on the nose", since its objects do not need to be sets; see our <a href="/content/foundations">foundations</a> for more background. This is why we have not adopted the more common terminology of a "cogenerating set". We did not choose "essentially small cogenerating collection" either since it is too cumbersome and diverges too much from the literature.
 
 nlab_link: https://ncatlab.org/nlab/show/cogenerator
 dual: generating collection
 invariant_under_equivalences: true
+
+keywords:
+  - cogenerating set
+  - cogenerating family
+  - coseparating set
+  - coseparating family
 
 related:
   - cogenerator

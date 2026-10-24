@@ -5,6 +5,9 @@ nlab_link: https://ncatlab.org/nlab/show/cofiltered+category
 dual: ℵ₁-filtered
 invariant_under_equivalences: true
 
+keywords:
+  - aleph1-cofiltered
+
 related:
   - cofiltered
   - complete

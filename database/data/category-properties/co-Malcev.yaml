@@ -10,6 +10,10 @@ nlab_link: null
 dual: Malcev
 invariant_under_equivalences: true
 
+keywords:
+  - co-Mal'cev
+  - co-Maltsev
+
 related:
   - finitely cocomplete
 
