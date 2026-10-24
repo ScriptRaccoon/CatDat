@@ -1,5 +1,5 @@
 id: multiply-2
-name: multiplication with 2
+name: multiplication by 2
 notation: $2$
 associated:
   category: TorsFreeAb

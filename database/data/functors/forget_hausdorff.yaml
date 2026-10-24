@@ -8,6 +8,8 @@ associated:
   right_adjoint: null
 description: This is the inclusion functor $\Haus \hookrightarrow \Top$ that maps a Hausdorff space to itself. It can also be viewed as a forgetful functor, since Hausdorff spaces "forget" that they are Hausdorff.
 nlab_link: https://ncatlab.org/nlab/show/forgetful+functor
+keywords:
+  - inclusion functor
 
 tags:
   - topology

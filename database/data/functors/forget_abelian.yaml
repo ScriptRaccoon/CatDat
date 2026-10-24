@@ -8,6 +8,8 @@ associated:
   right_adjoint: null
 description: This functor maps an abelian group to itself, considered merely as a group.
 nlab_link: https://ncatlab.org/nlab/show/forgetful+functor
+keywords:
+  - inclusion functor
 
 tags:
   - algebra

@@ -8,6 +8,8 @@ associated:
   right_adjoint: null
 description: 'This is the inclusion functor $\FinGrp \hookrightarrow \Grp$. It can also be viewed as a forgetful functor that forgets the property of being finite. Among other things, it provides an example of a fully faithful functor that is neither finitary nor cofinitary.'
 nlab_link: https://ncatlab.org/nlab/show/forgetful+functor
+keywords:
+  - inclusion functor
 
 tags:
   - algebra
