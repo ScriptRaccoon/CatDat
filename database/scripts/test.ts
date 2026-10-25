@@ -7,6 +7,9 @@
 import Set_expected from './expected-data/Set.json'
 import Ab_expected from './expected-data/Ab.json'
 import Top_expected from './expected-data/Top.json'
+import FinSet_expected from './expected-data/FinSet.json'
+import walking_morphism_expected from './expected-data/walking_morphism.json'
+import N_expected from './expected-data/N.json'
 import forget_vector_expected from './expected-data/forget_vector.json'
 import decided_categories from './expected-data/decided-categories.json'
 import decided_functors from './expected-data/decided-functors.json'
@@ -21,6 +24,24 @@ import path from 'node:path'
 import { decode_property_ID } from '#shared/property.utils.ts'
 
 const db = get_client({ readonly: true })
+
+/**
+ * Selected structures whose properties must match exactly
+ * the respective JSON files in the subfolder "expected-data".
+ */
+const EXPECTED_PROPERTIES = {
+	category: {
+		Set: Set_expected,
+		Ab: Ab_expected,
+		Top: Top_expected,
+		FinSet: FinSet_expected,
+		walking_morphism: walking_morphism_expected,
+		N: N_expected
+	},
+	functor: {
+		forget_vector: forget_vector_expected
+	}
+} satisfies Partial<Record<StructureType, Record<string, Record<string, boolean>>>>
 
 execute_tests()
 
@@ -43,20 +64,14 @@ function execute_tests() {
 		test_positivity('1', 'category')
 		test_mutual_property_duals('category')
 		test_decided_structures(decided_categories, 'category')
-		test_properties_of_selected_structures(
-			{ Set: Set_expected, Ab: Ab_expected, Top: Top_expected },
-			'category'
-		)
+		test_properties_of_selected_structures(EXPECTED_PROPERTIES.category, 'category')
 
 		devlog('\n--- Test functors ---')
 
 		test_positivity('id_Set', 'functor')
 		test_mutual_property_duals('functor')
 		test_decided_structures(decided_functors, 'functor')
-		test_properties_of_selected_structures(
-			{ forget_vector: forget_vector_expected },
-			'functor'
-		)
+		test_properties_of_selected_structures(EXPECTED_PROPERTIES.functor, 'functor')
 		test_adjoint_functor_relationships()
 
 		devlog('\n--- Test morphisms ---')
