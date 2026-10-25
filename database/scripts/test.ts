@@ -41,7 +41,12 @@ const EXPECTED_PROPERTIES = {
 	functor: {
 		forget_vector: forget_vector_expected
 	}
-} satisfies Partial<Record<StructureType, Record<string, Record<string, boolean>>>>
+} satisfies Partial<Record<StructureType, Record<string, ExpectedProperties>>>
+
+type ExpectedProperties = {
+	satisfied: string[]
+	unsatisfied: string[]
+}
 
 execute_tests()
 
@@ -245,7 +250,7 @@ function test_decided_structures(structure_ids: string[], type: StructureType) {
  * We exclude undecidable properties here.
  */
 function test_properties_of_selected_structures(
-	expected: Record<string, Record<string, boolean>>,
+	expected: Record<string, ExpectedProperties>,
 	type: StructureType
 ) {
 	const property_query = db.prepare<
@@ -258,9 +263,13 @@ function test_properties_of_selected_structures(
 
 	for (const structure_id in expected) {
 		const properties = property_query.all(type, structure_id)
+		const satisfied = new Set(expected[structure_id].satisfied)
+		const unsatisfied = new Set(expected[structure_id].unsatisfied)
 
 		for (const { property_id, is_satisfied } of properties) {
-			const ok = Boolean(is_satisfied) === expected[structure_id][property_id]
+			const ok = is_satisfied
+				? satisfied.has(property_id)
+				: unsatisfied.has(property_id)
 			if (ok) continue
 			throw new Error(`❌ Incorrect property of ${structure_id}: ${property_id}`)
 		}
