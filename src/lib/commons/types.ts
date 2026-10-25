@@ -63,6 +63,7 @@ export type PropertyAssignmentDB = {
 	proof: string
 	relation: string
 	is_deduced: 0 | 1
+	is_inherited: 0 | 1
 	is_satisfied: 0 | 1 | null
 }
 
@@ -71,6 +72,7 @@ export type PropertyAssignmentDisplay = {
 	proof: string
 	relation: string
 	is_deduced: boolean
+	is_inherited: boolean
 }
 
 export type CategoryDefinition = {

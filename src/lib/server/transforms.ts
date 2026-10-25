@@ -27,6 +27,7 @@ export function display_property_assignment(
 		id: property.id,
 		proof: property.proof,
 		is_deduced: Boolean(property.is_deduced),
+		is_inherited: Boolean(property.is_inherited),
 		relation: property.relation
 	}
 }

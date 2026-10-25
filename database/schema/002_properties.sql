@@ -53,9 +53,12 @@ CREATE TABLE property_assignments (
     proof TEXT NOT NULL CHECK (length(proof) > 0),
     is_deduced INTEGER NOT NULL DEFAULT FALSE
         CHECK (is_deduced in (TRUE, FALSE)),
+    is_inherited INTEGER NOT NULL DEFAULT FALSE
+        CHECK (is_inherited in (TRUE, FALSE)),
     check_redundancy INTEGER NOT NULL DEFAULT TRUE
         CHECK (check_redundancy in (TRUE, FALSE)),
     label TEXT UNIQUE,
+    CHECK (NOT is_inherited OR is_deduced),
     UNIQUE (structure_id, property_id),
     FOREIGN KEY (structure_id, type)
         REFERENCES structures (id, type) ON DELETE CASCADE,

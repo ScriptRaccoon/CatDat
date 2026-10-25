@@ -332,6 +332,55 @@ test('user can navigate to a parent category', async ({ page }) => {
 	await expect(page).toHaveURL('/category/Alg(R)')
 })
 
+test('user sees the properties from the parent category separately', async ({ page }) => {
+	await page.goto('/category/Ab', { waitUntil: 'networkidle' })
+
+	const satisfied_section = page.locator('section', {
+		has: page.getByRole('heading', {
+			name: 'Satisfied properties',
+			exact: true
+		})
+	})
+
+	await expect(
+		satisfied_section.getByRole('list', {
+			name: 'Properties from parent',
+			exact: true
+		})
+	).toContainText('is abelian')
+
+	await expect(
+		satisfied_section.getByRole('list', {
+			name: 'Deduced properties',
+			exact: true
+		})
+	).not.toContainText('is abelian')
+
+	await satisfied_section
+		.getByRole('link', {
+			name: 'parent',
+			exact: true
+		})
+		.click()
+
+	await expect(
+		page.getByRole('heading', {
+			name: 'category of left modules over a non-semisimple ring',
+			exact: true
+		})
+	).toBeVisible()
+
+	await expect(page).toHaveURL('/category/R-Mod_non_ss')
+})
+
+test('user sees no properties from a parent for a category without parent', async ({
+	page
+}) => {
+	await page.goto('/category/Set')
+
+	await expect(page.getByText('Properties from parent')).toHaveCount(0)
+})
+
 test('user can open and close a proof for a property of a category', async ({ page }) => {
 	await page.goto('/category/Grp', { waitUntil: 'networkidle' })
 
@@ -415,7 +464,7 @@ test('user can open a proof for an inherited satisfied property of a category', 
 
 	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
 
-	await expect(popup).toContainText('This follows from the parent category.')
+	await expect(popup).toContainText('This is inherited from the parent category.')
 })
 
 test('user can open a proof for an inherited unsatisfied property of a category', async ({
@@ -431,7 +480,7 @@ test('user can open a proof for an inherited unsatisfied property of a category'
 
 	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
 
-	await expect(popup).toContainText('This follows from the parent category.')
+	await expect(popup).toContainText('This is inherited from the parent category.')
 })
 
 test('user sees functors associated with the given category', async ({ page }) => {

@@ -12,6 +12,7 @@
 
 	type Props = {
 		type: StructureType
+		parent_id: string | null
 		satisfied_properties: PropertyAssignmentDisplay[]
 		unsatisfied_properties: PropertyAssignmentDisplay[]
 		undecidable_properties: PropertyAssignmentDisplay[]
@@ -20,6 +21,7 @@
 
 	let {
 		type,
+		parent_id,
 		satisfied_properties,
 		unsatisfied_properties,
 		undecidable_properties,
@@ -40,13 +42,29 @@
 		<PropertyList
 			properties={satisfied_properties.filter((p) => !p.is_deduced)}
 			{type}
+			label="Assigned properties"
 			no_bullets={true}
 		/>
 
+		{#if parent_id}
+			<p class="hint">
+				Properties from <a href="/{type}/{parent_id}">parent</a>
+			</p>
+			<PropertyList
+				properties={satisfied_properties.filter((p) => p.is_inherited)}
+				{type}
+				label="Properties from parent"
+				no_bullets={true}
+			/>
+		{/if}
+
 		<p class="hint">Deduced properties</p>
 		<PropertyList
-			properties={satisfied_properties.filter((p) => p.is_deduced)}
+			properties={satisfied_properties.filter(
+				(p) => p.is_deduced && !p.is_inherited
+			)}
 			{type}
+			label="Deduced properties"
 			no_bullets={true}
 		/>
 	</section>
@@ -58,13 +76,29 @@
 		<PropertyList
 			properties={unsatisfied_properties.filter((p) => !p.is_deduced)}
 			{type}
+			label="Assigned properties"
 			no_bullets={true}
 		/>
 
+		{#if parent_id}
+			<p class="hint">
+				Properties from <a href="/{type}/{parent_id}">parent</a>
+			</p>
+			<PropertyList
+				properties={unsatisfied_properties.filter((p) => p.is_inherited)}
+				{type}
+				label="Properties from parent"
+				no_bullets={true}
+			/>
+		{/if}
+
 		<p class="hint">Deduced properties*</p>
 		<PropertyList
-			properties={unsatisfied_properties.filter((p) => p.is_deduced)}
+			properties={unsatisfied_properties.filter(
+				(p) => p.is_deduced && !p.is_inherited
+			)}
 			{type}
+			label="Deduced properties"
 			no_bullets={true}
 		/>
 
@@ -87,7 +121,7 @@
 		</p>
 	{/if}
 
-	<PropertyList properties={unknown_properties} {type} />
+	<PropertyList properties={unknown_properties} {type} label="Unknown properties" />
 </section>
 
 {#if undecidable_properties.length > 0}
@@ -103,7 +137,12 @@
 			</p>
 		{/if}
 
-		<PropertyList properties={undecidable_properties} {type} no_bullets={true} />
+		<PropertyList
+			properties={undecidable_properties}
+			{type}
+			label="Undecidable properties"
+			no_bullets={true}
+		/>
 	</section>
 {/if}
 

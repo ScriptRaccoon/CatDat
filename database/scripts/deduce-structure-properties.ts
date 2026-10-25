@@ -259,9 +259,10 @@ function inherit_properties_from_parents(db: Database, type: StructureType) {
 	)
 
 	const property_insert = db.prepare(
-		`INSERT INTO property_assignments
-			(structure_id, property_id, type, is_satisfied, proof, is_deduced)
-		VALUES (?, ?, ?, ?, ?, TRUE)
+		`INSERT INTO property_assignments (
+			structure_id, property_id, type, is_satisfied,
+			proof, is_deduced, is_inherited
+		) VALUES (?, ?, ?, ?, ?, TRUE, TRUE)
 		ON CONFLICT (structure_id, property_id) DO NOTHING`
 	)
 
@@ -284,7 +285,7 @@ function inherit_properties_from_parents(db: Database, type: StructureType) {
 		}
 
 		for (const [property_id, assignment] of inherited_properties) {
-			const proof = `This follows from the <a href="/${type}/${parent_id}">parent ${remove_underscores(type)}</a>.`
+			const proof = `This is inherited from the <a href="/${type}/${parent_id}">parent ${remove_underscores(type)}</a>.`
 			const res = property_insert.run(
 				structure_id,
 				property_id,
