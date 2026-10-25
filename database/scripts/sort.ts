@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { format, resolveConfig } from 'prettier'
-import { deep_sort } from '#shared/utils.ts'
+import { deep_sort, devlog } from '#shared/utils.ts'
 
 /**
  * Sorts the arrays and keys in the JSON files of the test data alphabetically,
@@ -31,4 +31,4 @@ for (const folder of JSON_FOLDERS) {
 	}
 }
 
-console.info('✅ Sorted JSON files')
+devlog('✅ Sorted JSON files')
