@@ -1,0 +1,1 @@
+The JSON files in this folder list, for each structure type, various structures whose properties need to be decided. If a new property is added to the database, make sure to decide it _at least_ for these structures.
