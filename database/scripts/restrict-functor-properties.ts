@@ -45,6 +45,7 @@ function restrict_representable_functors() {
             DO UPDATE SET
                 proof = excluded.proof,
                 is_deduced = excluded.is_deduced,
+                is_inherited = FALSE,
                 check_redundancy = excluded.check_redundancy`
 		)
 		.run()

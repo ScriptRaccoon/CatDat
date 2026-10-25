@@ -11,13 +11,14 @@
 		}[]
 		type: StructureType
 		no_bullets?: boolean
+		label?: string
 	}
 
-	let { properties, type, no_bullets = false }: Props = $props()
+	let { properties, type, no_bullets = false, label }: Props = $props()
 </script>
 
 {#if properties.length}
-	<ul class:no-bullets={no_bullets} class="with-margins">
+	<ul class:no-bullets={no_bullets} class="with-margins" aria-label={label}>
 		{#each properties as { id, relation, proof }}
 			<li>
 				<TextWithProof {proof}>

@@ -117,6 +117,7 @@ export function fetch_structure(type: StructureType, id: string): StructureDetai
                 pa.is_satisfied,
                 pa.proof,
                 pa.is_deduced,
+                pa.is_inherited,
                 CASE
                     WHEN pa.is_satisfied = FALSE THEN r.negation
                     ELSE p.relation
