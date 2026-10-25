@@ -89,6 +89,8 @@ The `pnpm db:test` command runs several tests to ensure the data behaves as expe
 7. All links in proofs point to existing structures, properties, implications, and content pages.
 8. Every entry of the history file [history.json](/shared/history.json) exists. When you rename a structure or property, rename it in the history file as well (new entries are added automatically by `pnpm db:seed`).
 
+When you add a property to the JSON files in these two folders, you can insert it anywhere: `pnpm db:update` sorts them alphabetically.
+
 If any of these tests fail, adjust the data accordingly.
 
 **For maintainers:** The command `pnpm e2e` executes end-to-end tests via Playwright.

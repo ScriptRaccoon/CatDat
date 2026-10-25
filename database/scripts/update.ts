@@ -4,7 +4,7 @@ import { DATA_FOLDER } from './utils/folders'
 import { mark_database_update } from '#shared/db.ts'
 
 const watch_mode = process.argv.includes('--watch')
-const update_commands = ['db:seed', 'db:deduce', 'db:test', 'db:snapshot']
+const update_commands = ['db:sort', 'db:seed', 'db:deduce', 'db:test', 'db:snapshot']
 
 if (watch_mode) {
 	watch()
@@ -13,8 +13,9 @@ if (watch_mode) {
 }
 
 /**
- * Recreates and updates the complete database by seeding the data,
- * deducing properties, testing the results, and creating a snapshot file.
+ * Recreates and updates the complete database by sorting the test data,
+ * seeding the data, deducing properties, testing the results,
+ * and creating a snapshot file.
  */
 async function run_update() {
 	console.info('\n--- Update CatDat database ---')

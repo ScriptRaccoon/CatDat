@@ -89,7 +89,7 @@ Use the command
 pnpm db:update
 ```
 
-to run all the commands in sequence: `pnpm db:seed`, `pnpm db:deduce`, and `pnpm db:test`. This also creates a copy of the local database in the `/static` folder.
+to run all the commands in sequence: `pnpm db:sort` (which sorts the JSON files used by the tests), `pnpm db:seed`, `pnpm db:deduce`, and `pnpm db:test`. This also creates a copy of the local database in the `/static` folder.
 
 Pass `--watch` to rerun the update whenever a file in the data folder changes:
 
