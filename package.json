@@ -22,6 +22,7 @@
 		"db:deduce": "tsx database/scripts/deduce.ts",
 		"db:test": "tsx database/scripts/test.ts",
 		"db:snapshot": "tsx database/scripts/snapshot.ts",
+		"db:sort": "tsx database/scripts/sort.ts",
 		"db:update": "tsx database/scripts/update.ts",
 		"db:redundancies": "tsx database/scripts/redundancies.ts",
 		"db:combinations": "tsx database/scripts/combinations.ts",

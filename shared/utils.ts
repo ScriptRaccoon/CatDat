@@ -6,6 +6,23 @@ export function is_object(obj: unknown): obj is Record<string, unknown> {
 	return obj != null && obj.constructor.name === 'Object'
 }
 
+/**
+ * Recursively sorts arrays of strings and the keys of objects alphabetically.
+ */
+export function deep_sort(data: unknown): unknown {
+	const { compare } = new Intl.Collator('en')
+	if (is_string_array(data)) return data.toSorted(compare)
+	if (Array.isArray(data)) return data.map(deep_sort)
+	if (is_object(data)) {
+		return Object.fromEntries(
+			Object.entries(data)
+				.toSorted(([a], [b]) => compare(a, b))
+				.map(([key, value]) => [key, deep_sort(value)])
+		)
+	}
+	return data
+}
+
 export function are_equal_sets<T>(a: Set<T>, b: Set<T>) {
 	return a.size === b.size && [...a].every((el) => b.has(el))
 }
