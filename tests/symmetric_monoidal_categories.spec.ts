@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test'
+import { get_property_list } from './utils'
 
 // This test file does not cover all features of symmetric monoidal categories,
 // but only a selection. The other features are covered sufficiently by the
@@ -54,10 +55,18 @@ test('user can view symmetric monoidal category details', async ({ page }) => {
 	const body = page.locator('body')
 
 	await expect(body).toContainText('tensor product of abelian groups')
-	await expect(body).toContainText('is closed')
-	await expect(body).toContainText('is cocomplete')
-	await expect(body).toContainText('is not strict')
-	await expect(body).toContainText('is not cartesian')
+	await expect(
+		get_property_list(page, 'Satisfied properties', 'Properties from parent')
+	).toContainText('is closed')
+	await expect(
+		get_property_list(page, 'Satisfied properties', 'Deduced properties')
+	).toContainText('is cocomplete')
+	await expect(
+		get_property_list(page, 'Unsatisfied properties', 'Properties from parent')
+	).toContainText('is not strict')
+	await expect(
+		get_property_list(page, 'Unsatisfied properties', 'Deduced properties')
+	).toContainText('is not cartesian')
 })
 
 test('user can navigate to the underlying category', async ({ page }) => {

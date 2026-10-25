@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test'
+import { get_property_list } from './utils'
 
 test('user can navigate to a morphism', async ({ page }) => {
 	await page.goto('/')
@@ -104,19 +105,26 @@ test('user can view morphism details', async ({ page }) => {
 	const body = page.locator('body')
 
 	await expect(body).toContainText('basic example of a split epimorphism')
-	await expect(body).toContainText('is a split epimorphism')
-	await expect(body).toContainText('is a regular epimorphism')
-	await expect(body).toContainText('is not an effective epimorphism')
-	await expect(body).toContainText('is not an isomorphism')
+	await expect(
+		get_property_list(page, 'Satisfied properties', 'Assigned properties')
+	).toContainText('is a split epimorphism')
+	await expect(
+		get_property_list(page, 'Satisfied properties', 'Deduced properties')
+	).toContainText('is a regular epimorphism')
+	await expect(
+		get_property_list(page, 'Unsatisfied properties', 'Assigned properties')
+	).toContainText('is not an effective epimorphism')
+	await expect(
+		get_property_list(page, 'Unsatisfied properties', 'Deduced properties')
+	).toContainText('is not an isomorphism')
 })
 
 test('user sees no unknown properties for the terminal map', async ({ page }) => {
 	await page.goto('/morphism/terminal-map')
 
-	const unknown_properties_section = page.locator('section', {
-		hasText: 'Unknown properties'
-	})
-	await expect(unknown_properties_section.locator('li')).toHaveCount(0)
+	await expect(
+		page.getByRole('list', { name: 'Unknown properties', exact: true })
+	).toHaveCount(0)
 })
 
 test('user can navigate to a related morphism', async ({ page }) => {
@@ -164,7 +172,9 @@ test('user can navigate to the ambient category', async ({ page }) => {
 test('user can open and close a proof for a property of a morphism', async ({ page }) => {
 	await page.goto('/morphism/A3-S3-embedding', { waitUntil: 'networkidle' })
 
-	const claim = page.locator('li', { hasText: 'is a normal monomorphism' })
+	const claim = get_property_list(page, 'Satisfied properties', 'Assigned properties')
+		.getByRole('listitem')
+		.filter({ hasText: 'is a normal monomorphism' })
 
 	await expect(claim).toBeVisible()
 
@@ -200,7 +210,9 @@ test('user can open a proof for a deduced satisfied property of a morphism', asy
 }) => {
 	await page.goto('/morphism/terminal-map', { waitUntil: 'networkidle' })
 
-	const claim = page.locator('li', { hasText: 'is a strict epimorphism' })
+	const claim = get_property_list(page, 'Satisfied properties', 'Deduced properties')
+		.getByRole('listitem')
+		.filter({ hasText: 'is a strict epimorphism' })
 
 	await expect(claim).toBeVisible()
 
@@ -218,7 +230,9 @@ test('user can open a proof for a deduced unsatisfied property of a morphism', a
 }) => {
 	await page.goto('/morphism/multiply-2', { waitUntil: 'networkidle' })
 
-	const claim = page.locator('li', { hasText: 'is not a regular monomorphism' })
+	const claim = get_property_list(page, 'Unsatisfied properties', 'Deduced properties')
+		.getByRole('listitem')
+		.filter({ hasText: 'is not a regular monomorphism' })
 
 	await expect(claim).toBeVisible()
 

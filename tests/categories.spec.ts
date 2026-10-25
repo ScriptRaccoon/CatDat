@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test'
+import { get_property_list } from './utils'
 
 test('user can navigate to a category', async ({ page }) => {
 	await page.goto('/')
@@ -155,10 +156,18 @@ test('user can view category details', async ({ page }) => {
 	await expect(body).toContainText('Objects commutative rings')
 	await expect(body).toContainText('Morphisms ring homomorphisms')
 	await expect(page.getByRole('link', { name: 'nLab link' })).toBeVisible()
-	await expect(body).toContainText('is cocomplete')
-	await expect(body).toContainText('is locally finitely presentable')
-	await expect(body).toContainText('is not additive')
-	await expect(body).toContainText('is not balanced')
+	await expect(
+		get_property_list(page, 'Satisfied properties', 'Deduced properties')
+	).toContainText('is cocomplete')
+	await expect(
+		get_property_list(page, 'Satisfied properties', 'Deduced properties')
+	).toContainText('is locally finitely presentable')
+	await expect(
+		get_property_list(page, 'Unsatisfied properties', 'Deduced properties')
+	).toContainText('is not additive')
+	await expect(
+		get_property_list(page, 'Unsatisfied properties', 'Properties from parent')
+	).toContainText('is not balanced')
 	await expect(body).toContainText('terminal object: zero ring')
 	await expect(body).toContainText('coproducts: tensor products')
 	await expect(body).toContainText('regular epimorphisms: surjective morphisms')
@@ -167,10 +176,9 @@ test('user can view category details', async ({ page }) => {
 test('user sees no unknown properties for the category of sets', async ({ page }) => {
 	await page.goto('/category/Set')
 
-	const unknown_properties_section = page.locator('section', {
-		hasText: 'Unknown properties'
-	})
-	await expect(unknown_properties_section.locator('li')).toHaveCount(0)
+	await expect(
+		page.getByRole('list', { name: 'Unknown properties', exact: true })
+	).toHaveCount(0)
 })
 
 // this can be changed as soon as all properties have been decided for Sh(X)
@@ -184,11 +192,10 @@ test('user may see unknown properties', async ({ page }) => {
 		})
 	).toBeVisible()
 
-	const unknown_properties_section = page.locator('section', {
-		hasText: 'Unknown properties'
-	})
-
-	const link = unknown_properties_section.locator('li').first()
+	const link = page
+		.getByRole('list', { name: 'Unknown properties', exact: true })
+		.getByRole('listitem')
+		.first()
 
 	await expect(link).toBeVisible()
 })
@@ -203,14 +210,12 @@ test('user may see undecidable properties', async ({ page }) => {
 		})
 	).toBeVisible()
 
-	const undecidable_properties_section = page.locator('section', {
-		hasText: 'Undecidable properties'
-	})
-
-	const link = undecidable_properties_section.getByRole('link', {
-		name: 'accessible',
-		exact: true
-	})
+	const link = page
+		.getByRole('list', { name: 'Undecidable properties', exact: true })
+		.getByRole('link', {
+			name: 'accessible',
+			exact: true
+		})
 
 	await expect(link).toBeVisible()
 })
@@ -227,14 +232,12 @@ test('user may see properties that cannot be determined in a family of categorie
 		})
 	).toBeVisible()
 
-	const undecidable_properties_section = page.locator('section', {
-		hasText: 'Undecidable properties'
-	})
-
-	const link = undecidable_properties_section.getByRole('link', {
-		name: 'finite',
-		exact: true
-	})
+	const link = page
+		.getByRole('list', { name: 'Undecidable properties', exact: true })
+		.getByRole('link', {
+			name: 'finite',
+			exact: true
+		})
 
 	await expect(link).toBeVisible()
 })
@@ -343,17 +346,11 @@ test('user sees the properties from the parent category separately', async ({ pa
 	})
 
 	await expect(
-		satisfied_section.getByRole('list', {
-			name: 'Properties from parent',
-			exact: true
-		})
+		get_property_list(page, 'Satisfied properties', 'Properties from parent')
 	).toContainText('is abelian')
 
 	await expect(
-		satisfied_section.getByRole('list', {
-			name: 'Deduced properties',
-			exact: true
-		})
+		get_property_list(page, 'Satisfied properties', 'Deduced properties')
 	).not.toContainText('is abelian')
 
 	await satisfied_section
@@ -384,7 +381,9 @@ test('user sees no properties from a parent for a category without parent', asyn
 test('user can open and close a proof for a property of a category', async ({ page }) => {
 	await page.goto('/category/Grp', { waitUntil: 'networkidle' })
 
-	const claim = page.locator('li', { hasText: 'is mono-regular' })
+	const claim = get_property_list(page, 'Satisfied properties', 'Assigned properties')
+		.getByRole('listitem')
+		.filter({ hasText: 'is mono-regular' })
 
 	await expect(claim).toBeVisible()
 
@@ -420,7 +419,9 @@ test('user can open a proof for a deduced satisfied property of category', async
 }) => {
 	await page.goto('/category/Ring', { waitUntil: 'networkidle' })
 
-	const claim = page.locator('li', { hasText: 'has an extremal generator' })
+	const claim = get_property_list(page, 'Satisfied properties', 'Deduced properties')
+		.getByRole('listitem')
+		.filter({ hasText: 'has an extremal generator' })
 
 	await expect(claim).toBeVisible()
 
@@ -438,7 +439,9 @@ test('user can open a proof for a deduced unsatisfied property of a category', a
 }) => {
 	await page.goto('/category/Ab', { waitUntil: 'networkidle' })
 
-	const claim = page.locator('li', { hasText: 'is not cartesian closed' })
+	const claim = get_property_list(page, 'Unsatisfied properties', 'Deduced properties')
+		.getByRole('listitem')
+		.filter({ hasText: 'is not cartesian closed' })
 
 	await expect(claim).toBeVisible()
 
@@ -456,7 +459,13 @@ test('user can open a proof for an inherited satisfied property of a category', 
 }) => {
 	await page.goto('/category/Ab', { waitUntil: 'networkidle' })
 
-	const claim = page.locator('li', { hasText: 'is abelian' })
+	const claim = get_property_list(
+		page,
+		'Satisfied properties',
+		'Properties from parent'
+	)
+		.getByRole('listitem')
+		.filter({ hasText: 'is abelian' })
 
 	await expect(claim).toBeVisible()
 
@@ -472,7 +481,13 @@ test('user can open a proof for an inherited unsatisfied property of a category'
 }) => {
 	await page.goto('/category/BG_f', { waitUntil: 'networkidle' })
 
-	const claim = page.locator('li', { hasText: 'is not thin' })
+	const claim = get_property_list(
+		page,
+		'Unsatisfied properties',
+		'Properties from parent'
+	)
+		.getByRole('listitem')
+		.filter({ hasText: 'is not thin' })
 
 	await expect(claim).toBeVisible()
 

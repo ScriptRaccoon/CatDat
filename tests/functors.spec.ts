@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test'
+import { get_property_list } from './utils'
 
 test('user can navigate to a functor', async ({ page }) => {
 	await page.goto('/')
@@ -151,19 +152,26 @@ test('user can view functor details', async ({ page }) => {
 
 	await expect(body).toContainText('group of homotopy classes of loops')
 	await expect(page.getByRole('link', { name: 'nLab link' })).toBeVisible()
-	await expect(body).toContainText('preserves products')
-	await expect(body).toContainText('is essentially surjective')
-	await expect(body).toContainText('is not faithful')
-	await expect(body).toContainText('does not preserve binary coproducts')
+	await expect(
+		get_property_list(page, 'Satisfied properties', 'Assigned properties')
+	).toContainText('preserves products')
+	await expect(
+		get_property_list(page, 'Satisfied properties', 'Deduced properties')
+	).toContainText('is essentially surjective')
+	await expect(
+		get_property_list(page, 'Unsatisfied properties', 'Assigned properties')
+	).toContainText('is not faithful')
+	await expect(
+		get_property_list(page, 'Unsatisfied properties', 'Assigned properties')
+	).toContainText('does not preserve binary coproducts')
 })
 
 test('user sees no unknown properties for a forgetful functor', async ({ page }) => {
 	await page.goto('/functor/forget_vector')
 
-	const unknown_properties_section = page.locator('section', {
-		hasText: 'Unknown properties'
-	})
-	await expect(unknown_properties_section.locator('li')).toHaveCount(0)
+	await expect(
+		page.getByRole('list', { name: 'Unknown properties', exact: true })
+	).toHaveCount(0)
 })
 
 test('user may see undecidable properties', async ({ page }) => {
@@ -176,14 +184,12 @@ test('user may see undecidable properties', async ({ page }) => {
 		})
 	).toBeVisible()
 
-	const undecidable_properties_section = page.locator('section', {
-		hasText: 'Undecidable properties'
-	})
-
-	const link = undecidable_properties_section.getByRole('link', {
-		name: 'essentially injective',
-		exact: true
-	})
+	const link = page
+		.getByRole('list', { name: 'Undecidable properties', exact: true })
+		.getByRole('link', {
+			name: 'essentially injective',
+			exact: true
+		})
 
 	await expect(link).toBeVisible()
 })
@@ -296,7 +302,9 @@ test('user can navigate to the right adjoint functor', async ({ page }) => {
 test('user can open and close a proof for a property of a functor', async ({ page }) => {
 	await page.goto('/functor/forget_ring', { waitUntil: 'networkidle' })
 
-	const claim = page.locator('li', { hasText: 'is monadic' })
+	const claim = get_property_list(page, 'Satisfied properties', 'Assigned properties')
+		.getByRole('listitem')
+		.filter({ hasText: 'is monadic' })
 
 	await expect(claim).toBeVisible()
 
@@ -332,7 +340,9 @@ test('user can open a proof for a deduced satisfied property of functor', async 
 }) => {
 	await page.goto('/functor/free_group', { waitUntil: 'networkidle' })
 
-	const claim = page.locator('li', { hasText: 'is cocontinuous' })
+	const claim = get_property_list(page, 'Satisfied properties', 'Deduced properties')
+		.getByRole('listitem')
+		.filter({ hasText: 'is cocontinuous' })
 
 	await expect(claim).toBeVisible()
 
@@ -348,7 +358,9 @@ test('user can open a proof for a deduced unsatisfied property of a functor', as
 }) => {
 	await page.goto('/functor/pi_1', { waitUntil: 'networkidle' })
 
-	const claim = page.locator('li', { hasText: 'is not continuous' })
+	const claim = get_property_list(page, 'Unsatisfied properties', 'Deduced properties')
+		.getByRole('listitem')
+		.filter({ hasText: 'is not continuous' })
 
 	await expect(claim).toBeVisible()
 
