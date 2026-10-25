@@ -1,8 +1,8 @@
 [
-	"id_Set",
-	"diagonal_sets",
 	"binary_product_sets",
-	"forget_vector",
+	"diagonal_sets",
 	"forget_group",
-	"forget_topology"
+	"forget_topology",
+	"forget_vector",
+	"id_Set"
 ]
