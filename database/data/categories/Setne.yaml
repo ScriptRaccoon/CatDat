@@ -69,9 +69,6 @@ satisfied_properties:
   - property: multi-complete
     proof: Let $D$ be a diagram in $\Setne$, and let $L$ be a limit of $D$ in $\Set$. If $L$ is non-empty, it gives a limit in $\Setne$ as well. If $L$ is the empty set, there is no cone over $D$ in $\Setne$; hence the empty set of cones gives a multi-limit of $D$ in $\Setne$.
 
-  - property: effective congruences
-    proof: 'Any congruence $E \rightrightarrows X$ in $\Setne$ is also a congruence in $\Set$, hence is the kernel pair of some map $h : X \to Z$. Since $X$ is non-empty, also $Z$ is non-empty.'
-
 unsatisfied_properties:
   - property: skeletal
     proof: This is trivial.
