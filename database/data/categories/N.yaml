@@ -27,7 +27,6 @@ satisfied_properties:
 
   - property: thin
     proof: This is trivial.
-    check_redundancy: false
 
   - property: semi-strongly connected
     proof: This is trivial.

@@ -159,7 +159,7 @@ In particular, it often makes sense to **keep** a redundant assignment of a sati
 
 For example, you may first prove that a category has zero morphisms, and then prove that it is normal. Although the database contains the implication "normal => zero morphisms", in practice the latter is used as a prerequisite. Similarly, when proving that a category is extensive, it is often clearer to first show that finite coproducts exist, rather than relying on the implication "extensive => finite coproducts". Also, an explicit description of finite coproducts is useful for deciding other properties involving coproducts.
 
-Every redundant assignment of a satisfied property that is intentionally kept must be explicitly marked to skip the redundancy check. See [`N.yaml`](/database/data/categories/N.yaml) for an example.
+Every redundant assignment of a satisfied property that is intentionally kept must be explicitly marked to skip the redundancy check. See [`Man.yaml`](/database/data/categories/Man.yaml) for an example.
 
 ### Keep pull requests focused
 

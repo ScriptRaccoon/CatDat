@@ -42,7 +42,6 @@ satisfied_properties:
 
   - property: coequalizers of kernel pairs
     proof: 'Let $f : G \to H$ be a morphism in $\Quiv_{\fc}$. In $\Quiv$, the coequalizer of the kernel pair of $f$ is simply the image of $f$. Since $\Quiv_{\fc} \subseteq \Quiv$ is closed under subquivers, this image belongs to $\Quiv_{\fc}$. The universal property of a coequalizer persists in $\Quiv_{\fc}$.'
-    check_redundancy: false
 
   - property: extremal cogenerating collection
     proof: >-
