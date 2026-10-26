@@ -7,7 +7,7 @@ import {
 	type NormalizedImplication
 } from '#shared/implications.ts'
 import { deduce_properties, refute_properties } from '#shared/deduction.utils.ts'
-import { get_structures } from './structures'
+import { get_structure_parent_map, get_structures } from './structures'
 import { capitalize, devlog, remove_underscores } from '#shared/utils.ts'
 
 /**
@@ -44,6 +44,7 @@ function get_redundant_assignment_errors(db: Database, type: StructureType): str
 
 	const assignments = get_property_assignments_by_deduction(db, structures, type)
 	const ignore_dict = get_ignored_redundant_assignments(db, type)
+	const inherited_dict = get_inherited_assignments(db, type)
 
 	const ignore_count = Object.keys(ignore_dict).reduce(
 		(count, id) => count + ignore_dict[id].size,
@@ -57,6 +58,7 @@ function get_redundant_assignment_errors(db: Database, type: StructureType): str
 			assignments[structure.id].satisfied.non_deduced,
 			implications,
 			ignore_dict[structure.id],
+			inherited_dict[structure.id]?.satisfied,
 			structure.associated_satisfied_properties
 		)
 
@@ -76,6 +78,7 @@ function get_redundant_assignment_errors(db: Database, type: StructureType): str
 			assignments[structure.id].unsatisfied.non_deduced,
 			implications,
 			ignore_dict[structure.id],
+			inherited_dict[structure.id]?.unsatisfied,
 			structure.associated_satisfied_properties
 		)
 
@@ -96,24 +99,27 @@ function get_redundant_assignment_errors(db: Database, type: StructureType): str
 }
 
 /**
- * From a given set of properties, returns a property that can be
- * deduced from the other properties in this set, based on a list
- * of normalized implications.
+ * From a given set of properties, returns a property that is inherited
+ * from the parent structure or can be deduced from the other properties
+ * in this set and the inherited ones, based on a list of normalized implications.
  * If no such property exists, null is returned.
  */
 function get_redundant_satisfied_property(
 	satisfied_properties: Set<string>,
 	implications: NormalizedImplication[],
 	ignored: Set<string> = new Set(),
+	inherited_properties: Set<string> = new Set(),
 	associated_satisfied_properties?: Partial<Record<string, Set<string>>>
 ) {
 	for (const p of [...satisfied_properties]) {
 		if (ignored.has(p)) continue
 
+		if (inherited_properties.has(p)) return p
+
 		satisfied_properties.delete(p)
 
 		const { deduced_satisfied_properties } = deduce_properties(
-			satisfied_properties,
+			new Set([...satisfied_properties, ...inherited_properties]),
 			implications,
 			(implication) => ({
 				proof: stringify_implication(implication),
@@ -132,7 +138,8 @@ function get_redundant_satisfied_property(
 
 /**
  * From a given set of satisfied and unsatisfied properties,
- * returns a unsatisfied property that can be deduced from these,
+ * returns a unsatisfied property that is inherited from the parent structure
+ * or can be deduced from these and the inherited ones,
  * based on a list of normalized implications.
  * If no such property exists, null is returned.
  */
@@ -141,16 +148,19 @@ function get_redundant_unsatisfied_property(
 	unsatisfied_properties: Set<string>,
 	implications: NormalizedImplication[],
 	ignored: Set<string> = new Set(),
+	inherited_properties: Set<string> = new Set(),
 	associated_satisfied_properties?: Partial<Record<string, Set<string>>>
 ) {
 	for (const p of [...unsatisfied_properties]) {
 		if (ignored.has(p)) continue
 
+		if (inherited_properties.has(p)) return p
+
 		unsatisfied_properties.delete(p)
 
 		const { deduced_unsatisfied_properties } = refute_properties(
 			satisfied_properties,
-			unsatisfied_properties,
+			new Set([...unsatisfied_properties, ...inherited_properties]),
 			implications,
 			(implication, property) => ({
 				proof: stringify_implication(implication),
@@ -188,4 +198,50 @@ function get_ignored_redundant_assignments(db: Database, type: StructureType) {
 	}
 
 	return grouped
+}
+
+/**
+ * Returns a dictionary mapping a structure to the satisfied and unsatisfied
+ * properties assigned (not deduced) to any of its ancestors.
+ */
+function get_inherited_assignments(db: Database, type: StructureType) {
+	const parent_map = get_structure_parent_map(db, type)
+
+	const get_assignments = db.prepare<
+		[string],
+		{ property_id: string; is_satisfied: 0 | 1 }
+	>(
+		`SELECT property_id, is_satisfied
+		FROM property_assignments
+		WHERE structure_id = ? AND is_deduced = FALSE AND is_satisfied IS NOT NULL`
+	)
+
+	const own_cache = new Map<string, { property_id: string; is_satisfied: 0 | 1 }[]>()
+
+	const inherited: Record<
+		string,
+		{ satisfied: Set<string>; unsatisfied: Set<string> }
+	> = {}
+
+	for (const [id, parent_id] of parent_map) {
+		if (!parent_id) continue
+
+		inherited[id] = { satisfied: new Set(), unsatisfied: new Set() }
+
+		let ancestor_id: string | null = parent_id
+
+		while (ancestor_id) {
+			if (!own_cache.has(ancestor_id)) {
+				own_cache.set(ancestor_id, get_assignments.all(ancestor_id))
+			}
+
+			for (const { property_id, is_satisfied } of own_cache.get(ancestor_id)!) {
+				inherited[id][is_satisfied ? 'satisfied' : 'unsatisfied'].add(property_id)
+			}
+
+			ancestor_id = parent_map.get(ancestor_id) ?? null
+		}
+	}
+
+	return inherited
 }

@@ -30,6 +30,7 @@ satisfied_properties: []
 unsatisfied_properties:
   - property: split abelian
     proof: The short exact sequence $0 \xrightarrow{} \IZ \xrightarrow{p} \IZ \xrightarrow{} \IZ/p \xrightarrow{} 0$ does not split.
+    check_redundancy: false
 
 special_objects:
   initial object:

@@ -21,3 +21,4 @@ unsatisfied_properties:
   - property: finitely complete
     proof: 'The functor $\IZ/2\IZ \otimes - : \Ab \to \Ab$ does not preserve monomorphisms (see <a href="/functor/modulo-p">here</a>). For example, the injective homomorphism $2 : \IZ \to \IZ$ is mapped to the zero homomorphism $0 : \IZ/2\IZ \to \IZ/2\IZ$.'
     label: Ab_tensor_not_fc
+    check_redundancy: false
