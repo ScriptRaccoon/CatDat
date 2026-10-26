@@ -15,6 +15,7 @@ tags:
   - algebra
 
 related:
+  - BD
   - BN
   - BG_c
 
@@ -53,6 +54,7 @@ satisfied_properties:
   - property: ℵ₁-accessible
     proof: >-
       We apply Theorem 4 <a href="/content/deloopings-aleph1-accessible">here</a>. We already know that $C$ is countable and that $BC$ is Cauchy complete. It remains to show that $C$ satisfies the ascending chain condition on principal right ideals. Every principal right ideal of $C$ has the form $q^n p^m C = q^n C$, since $p^m q^m = 1$ implies $p^m C = C$. If $q^n C \subseteq q^{n'} C$, then $n \geq n'$. Otherwise, write $q^n = q^{n'} x$ with $x \in C$. Since $q^n$ is a monomorphism, we get $1 = q^{n'-n} x$, so that $q^{n'-n}$ is a split epimorphism, which contradicts the classification of epimorphisms below. Therefore, every ascending chain $q^{n_0} C \subseteq q^{n_1} C \subseteq \cdots$ satisfies $n_0 \geq n_1 \geq \cdots$ and hence becomes stationary.
+    label: BC_aleph1-accessible
 
 unsatisfied_properties:
   - property: locally finite
@@ -77,6 +79,7 @@ unsatisfied_properties:
       Consider the homomorphism $\deg : C \to (\IZ,+,0)$ defined by $\deg(p)=1$ and $\deg(q)=-1$. To every cospan $(x,y)$ (over the unique pair of objects in $BC$) we associate the number $\deg(x) - \deg(y)$. If a cospan $(x,y)$ has a morphism to another cospan $(u,v)$, i.e. there is some element $t$ with $tx=u$ and $ty=v$, then
       $$\deg(u) - \deg(v) = (\deg(t)+\deg(x)) - (\deg(t)+\deg(y)) = \deg(x) - \deg(y).$$
       Therefore, all cospans in a connected component have the same associated number. In particular, the cospans $(1,1)$ and $(p,1)$ do not lie in the same connected component.
+    label: BC_not_sifted
 
   - property: sequential colimits
     proof: >-
@@ -96,6 +99,7 @@ unsatisfied_properties:
       Next, we evaluate the cocone equality $(1)$ at $n=m+1$. We get
       $$p = c_{m+1} = h x_{m+1} = q (h' x_{m+1}).$$
       Since $p$ is an epimorphism, this implies that $q$ is also an epimorphism, which is a contradiction.
+    label: BC_no_sequential_colimits
 
 special_objects: {}
 

@@ -14,6 +14,7 @@ related:
   - BG_c
   - BOn
   - BC
+  - BD
 
 satisfied_properties:
   - property: small
