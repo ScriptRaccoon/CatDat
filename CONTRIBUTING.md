@@ -88,6 +88,7 @@ The `pnpm db:test` command runs several tests to ensure the data behaves as expe
 6. Adjoint functors are recorded on both sides (left and right adjoint), and their domains and codomains match.
 7. All links in proofs point to existing structures, properties, implications, and content pages.
 8. Every entry of the history file [history.json](/shared/history.json) exists. When you rename a structure or property, rename it in the history file as well (new entries are added automatically by `pnpm db:seed`).
+9. There are no redundant property assignments (see [below](#redundant-assignments)).
 
 When you add a property to the JSON files in these two folders, you can insert it anywhere: `pnpm db:update` sorts them alphabetically.
 
@@ -109,7 +110,7 @@ When contributing new data (categories, functors, properties, implications, etc.
 
 - **Reduce unknowns**: Try to reduce the number of unknown properties of categories, in particular when adding a new category. Use the category detail page to see its unknown properties. Use the [page with missing data](https://catdat.app/missing) to identify categories with unknown properties. The same remarks apply to functors and other categorical structures.
 
-- **Avoid redundant assignments**: Only assign properties (satisfied or not) to a category or any other categorical structure if they cannot be deduced from other assignments. For example, if a category is complete by a direct proof, record that it is complete, but do not also record that it has a terminal object; the application infers this automatically. Redundant assignments can be identified using the redundancy script described below.
+- **Avoid redundant assignments**: Only assign properties (satisfied or not) to a category or any other categorical structure if they cannot be deduced from other assignments or inherited from a parent structure. For example, if a category is complete by a direct proof, record that it is complete, but do not also record that it has a terminal object; the application infers this automatically. Redundant assignments are reported by `pnpm db:test`, see below.
 
 - **References and labels**: If a proof refers to another proof, use references and labels to make this connection explicit. See [this PR](https://github.com/ScriptRaccoon/CatDat/pull/319) for details.
 
@@ -141,13 +142,11 @@ When contributing new data (categories, functors, properties, implications, etc.
 
 - **New combinations**: Add new categories that satisfy combinations of satisfied and unsatisfied properties that are not yet in the database. For example, you may add a category that is abelian but neither cocomplete nor essentially small (if it is not already present). The [page with missing data](https://catdat.app/missing) lists consistent combinations of the form $p \land \neg q$ that are not yet witnessed by a category in the database. The same remarks apply to functors and other categorical structures.
 
-### Redundancy script
+### Redundant assignments
 
-As noted above, avoid redundant property assignments to a categorical structure. To detect redundancies, run `pnpm db:redundancies`.
+As noted above, avoid redundant property assignments to a categorical structure. They are reported by `pnpm db:test`, which runs as part of `pnpm db:update`.
 
-The script reports at most one redundant assignment per structure for each of satisfied and unsatisfied properties, even if multiple exist. After removing an assignment, run the script again to ensure that all remaining redundancies are handled.
-
-Removing redundant assignments is not required, but it is recommended, especially for all unsatisfied properties. For satisfied properties, removal depends on context: keep them if the proof is meaningful, otherwise consider removing them if it is purely technical or uninformative.
+Redundant assignments must be removed, or, if they are deliberately kept, marked with `check_redundancy: false`. For unsatisfied properties, removal is almost always the right choice. For satisfied properties, it depends on context: keep them if the proof is meaningful, otherwise remove them if it is purely technical or uninformative.
 
 In particular, it often makes sense to **keep** a redundant assignment of a satisfied property in the following cases:
 
@@ -159,7 +158,7 @@ In particular, it often makes sense to **keep** a redundant assignment of a sati
 
 For example, you may first prove that a category has zero morphisms, and then prove that it is normal. Although the database contains the implication "normal => zero morphisms", in practice the latter is used as a prerequisite. Similarly, when proving that a category is extensive, it is often clearer to first show that finite coproducts exist, rather than relying on the implication "extensive => finite coproducts". Also, an explicit description of finite coproducts is useful for deciding other properties involving coproducts.
 
-Every redundant assignment of a satisfied property that is intentionally kept must be explicitly marked to skip the redundancy check. See [`Man.yaml`](/database/data/categories/Man.yaml) for an example.
+Every redundant assignment that is intentionally kept must be explicitly marked to skip the redundancy check. See [`Man.yaml`](/database/data/categories/Man.yaml) for an example.
 
 ### Keep pull requests focused
 
