@@ -66,3 +66,22 @@
   conclusions:
     - equalizers
   proof: The equalizer of $f,g$ is the kernel of $f-g$.
+
+- id: kernels_terminal_object
+  assumptions:
+    - kernels
+    - inhabited
+  conclusions:
+    - terminal object
+  proof: >-
+    Choose an object $A$ and a kernel $k : K \to A$ of $\id_A$. Then $k = \id_A \circ k = 0_{A,A} \circ k = 0_{K,A}$. For every object $T$, the zero morphism $0_{T,K}$ provides a morphism $T \to K$. Conversely, if $f : T \to K$ is any morphism, then $k \circ f = k \circ 0_{T,K}$ since $k$ is a zero morphism, hence $f = 0_{T,K}$, using that $k$ is also a monomorphism. Thus, $K$ is a terminal object.
+
+    Remark: With <a href="/category-implication/dual_pointed_characterization">this result</a> it follows that $K$ is even a zero object.
+
+- id: kernels_multi-terminal
+  assumptions:
+    - kernels
+  conclusions:
+    - multi-terminal object
+    - multi-initial object
+  proof: If the category is empty, both properties hold trivially. Otherwise, it has a zero object $0$ by <a href="/category-implication/kernels_terminal_object">this result</a>, and $\{0\}$ is a multi-terminal object and a multi-initial object.

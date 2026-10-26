@@ -6,7 +6,7 @@
   conclusions:
     - initial object
     - zero morphisms
-  proof: This is easy.
+  proof: 'If a category has a zero object, then this object is both initial and terminal, and zero morphisms can be defined as those morphisms that factor through the zero object. Conversely, let $I$ be an initial object in a category with zero morphisms. Since $I$ is initial, we have $\id_I = 0_{I,I}$. Then $I$ is terminal, since for every object $X$ there is a morphism $0_{X,I} : X \to I$, and any other morphism $f : X \to I$ satisfies $f = \id_I \circ f = 0_{I,I} \circ f = 0_{X,I}$. Thus, $I$ is a zero object.'
   is_equivalence: true
 
 - id: strict_initial_consequence

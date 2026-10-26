@@ -35,6 +35,7 @@ satisfied_properties:
 
   - property: pointed
     proof: The object $0$ is initial and terminal. This also means that $\id_0, i, p, ip$ are zero morphisms. The only non-zero morphism is $\id_1$.
+    check_redundancy: false
 
   - property: equalizers
     proof: 'The only parallel pair of non-equal morphisms is $\id_1, ip : 1 \rightrightarrows 1$, and their equalizer is $i$.'
