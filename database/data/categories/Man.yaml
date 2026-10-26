@@ -22,7 +22,6 @@ satisfied_properties:
   - property: finite products
     # TODO: give a reference or explain this in more detail
     proof: In short, this follows from the corresponding statement for topological spaces and $\IR^n \times \IR^m \cong \IR^{n+m}$.
-    check_redundancy: false
 
   - property: semi-strongly connected
     proof: Every non-empty manifold is weakly terminal (by using constant maps).
