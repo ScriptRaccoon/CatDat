@@ -1,5 +1,5 @@
-import { get_client } from '#shared/db.ts'
-import { get_property_assignments_by_deduction } from './utils/properties'
+import type { Database } from 'better-sqlite3'
+import { get_property_assignments_by_deduction } from './properties'
 import { STRUCTURE_TYPES, type StructureType } from '#shared/config.ts'
 import {
 	get_normalized_implications,
@@ -7,30 +7,29 @@ import {
 	type NormalizedImplication
 } from '#shared/implications.ts'
 import { deduce_properties, refute_properties } from '#shared/deduction.utils.ts'
-import { get_structures } from './utils/structures'
-import { remove_underscores } from '#shared/utils.ts'
-
-const db = get_client({ readonly: true })
-
-check_redundancies()
+import { get_structures } from './structures'
+import { capitalize, devlog, remove_underscores } from '#shared/utils.ts'
 
 /**
- * Checks for redundancies in the database.
- * If redundancies are found, an error is thrown.
+ * Tests that there are no redundant (structure, property)-assignments,
+ * except for those marked with check_redundancy: false.
+ * All redundancies are collected before an error is thrown.
  */
-function check_redundancies() {
+export function test_no_redundant_assignments(db: Database) {
 	const errors: string[] = []
 
 	for (const type of STRUCTURE_TYPES) {
-		errors.push(...check_redundant_property_assignments(type))
+		errors.push(...get_redundant_assignment_errors(db, type))
 	}
 
 	if (errors.length > 0) {
-		console.error(`\n--- Found ${errors.length} redundant assignments ---`)
-		for (const error of errors) {
-			console.error(`❌ ${error}`)
-		}
-		process.exit(1)
+		const hint = [
+			'',
+			'Remove each redundant assignment from its YAML file.',
+			'Only keep it if there is a good reason, e.g. the proof is insightful or',
+			'establishes a result used later, and then mark it with check_redundancy: false.'
+		]
+		throw new Error([...errors, ...hint].join('\n'))
 	}
 }
 
@@ -38,17 +37,13 @@ function check_redundancies() {
  * Checks for redundant (structure, property)-assignments and returns
  * one error message per structure and kind (satisfied or unsatisfied).
  */
-function check_redundant_property_assignments(type: StructureType): string[] {
-	console.info(
-		`\n--- Check redundant ${remove_underscores(type)} property assignments ---`
-	)
-
+function get_redundant_assignment_errors(db: Database, type: StructureType): string[] {
 	const implications = get_normalized_implications(db, type)
 
 	const structures = get_structures(db, type)
 
 	const assignments = get_property_assignments_by_deduction(db, structures, type)
-	const ignore_dict = get_ignored_redundant_assignments(type)
+	const ignore_dict = get_ignored_redundant_assignments(db, type)
 
 	const ignore_count = Object.keys(ignore_dict).reduce(
 		(count, id) => count + ignore_dict[id].size,
@@ -67,7 +62,7 @@ function check_redundant_property_assignments(type: StructureType): string[] {
 
 		if (redundant_satisfied_property) {
 			errors.push(
-				`Redundant satisfied property for ${structure.id}: "${redundant_satisfied_property}" is implied by others.`
+				`❌ Redundant satisfied property for ${structure.id}: "${redundant_satisfied_property}" is implied by others.`
 			)
 		}
 
@@ -86,19 +81,15 @@ function check_redundant_property_assignments(type: StructureType): string[] {
 
 		if (redundant_unsatisfied_property) {
 			errors.push(
-				`Redundant unsatisfied property for ${structure.id}: "${redundant_unsatisfied_property}" is implied by others.`
+				`❌ Redundant unsatisfied property for ${structure.id}: "${redundant_unsatisfied_property}" is implied by others.`
 			)
 		}
 	}
 
 	if (errors.length === 0) {
-		console.info('✅ No redundant assignments found')
-	} else {
-		console.info(`🔴 Found ${errors.length} redundant assignments`)
-	}
-
-	if (ignore_count > 0) {
-		console.info(`${ignore_count} redundant assignments have been ignored`)
+		devlog(
+			`✅ ${capitalize(remove_underscores(type))} property assignments are not redundant (${ignore_count} ignored)`
+		)
 	}
 
 	return errors
@@ -180,7 +171,7 @@ function get_redundant_unsatisfied_property(
  * properties (satisfied or unsatisfied) that should not be checked
  * by the redundancy check script.
  */
-function get_ignored_redundant_assignments(type: StructureType) {
+function get_ignored_redundant_assignments(db: Database, type: StructureType) {
 	const rows = db
 		.prepare<[StructureType], { structure_id: string; property_id: string }>(
 			`SELECT structure_id, property_id
