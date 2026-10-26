@@ -15,6 +15,7 @@ related:
   - BOn
   - BC
   - BD
+  - Set_c_inf
 
 satisfied_properties:
   - property: small

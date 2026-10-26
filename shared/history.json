@@ -879,6 +879,10 @@
 		{
 			"type": "category",
 			"id": "BD"
+		},
+		{
+			"type": "category",
+			"id": "Set_c_inf"
 		}
 	],
 	"properties": [

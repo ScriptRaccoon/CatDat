@@ -1,0 +1,86 @@
+id: Set_c_inf
+name: category of countably infinite sets
+notation: $\Set_{\c,\infty}$
+objects: countably infinite sets
+morphisms: maps
+description: This is the full subcategory of the <a href="/category/Set_c">category of countable sets</a> consisting of the infinite ones. Since every object is isomorphic to $\IN$, it is equivalent to the one-object category $BM$ for the monoid $M$ of all maps $\IN \to \IN$. This entry provides an example of a non-trivial core-connected category with binary products (and binary coproducts).
+nlab_link: null
+
+tags:
+  - set theory
+
+related:
+  - Set_c
+  - Set
+  - Setne
+  - BN
+
+satisfied_properties:
+  - property: locally small
+    proof: It is a full subcategory of <a href="/category/Set">$\Set$</a>, which is locally small.
+
+  - property: core-connected
+    proof: Every object is isomorphic to $\IN$.
+
+  - property: binary products
+    proof: If $X,Y$ are countably infinite sets, then so is $X \times Y$. Hence, the product of $X,Y$ in <a href="/category/Set">$\Set$</a> is also a product in the full subcategory $\Set_{\c,\infty}$.
+
+  - property: binary coproducts
+    proof: If $X,Y$ are countably infinite sets, then so is $X \sqcup Y$. Hence, the coproduct of $X,Y$ in <a href="/category/Set">$\Set$</a> is also a coproduct in the full subcategory $\Set_{\c,\infty}$.
+
+  - property: kernel pairs
+    proof: 'Let $f : X \to Y$ be a map of countably infinite sets. Its kernel pair in <a href="/category/Set">$\Set$</a> is $X \times_Y X = \{(x,x'') \in X \times X : f(x) = f(x'')\}$. It is countable as a subset of $X \times X$, and infinite since it contains the diagonal. Hence, it is also a kernel pair in the full subcategory $\Set_{\c,\infty}$.'
+
+  - property: cokernel pairs
+    proof: 'Let $f : X \to Y$ be a map of countably infinite sets. Its cokernel pair in <a href="/category/Set">$\Set$</a> is $Y \sqcup_X Y$. It is countable as a quotient of $Y \sqcup Y$, and infinite since the coprojections $Y \rightrightarrows Y \sqcup_X Y$ are injective, having the codiagonal $Y \sqcup_X Y \to Y$ as a left inverse. Hence, it is also a cokernel pair in the full subcategory $\Set_{\c,\infty}$.'
+
+  - property: effective congruences
+    proof: 'Let $q_1,q_2 : E \rightrightarrows X$ be a congruence. Since $q_1,q_2$ are jointly monomorphic, the map $(q_1,q_2) : E \to X \times X$ is a monomorphism, hence injective (see below). Using constant maps $\IN \to X$, we see that its image $R \subseteq X \times X$ is an equivalence relation on $X$. Let $h : X \to (X/R) \sqcup \IN$ be the composite of the projection $X \to X/R$ with the coproduct inclusion (we add $\IN$ since $X/R$ may be finite). Its kernel pair in <a href="/category/Set">$\Set$</a> is $R \cong E$, hence also in the full subcategory $\Set_{\c,\infty}$.'
+
+  - property: ℵ₁-filtered
+    proof: 'Every diagram $(X_i)_{i \in I}$ in $\Set_{\c,\infty}$ admits a cocone with vertex $\IN$, given by the constant maps $X_i \to \IN$ with value $0$.'
+
+  - property: mono-regular
+    proof: 'Let $f : X \to Y$ be a monomorphism. It is injective (see below), hence a split monomorphism in <a href="/category/Setne">$\Setne$</a>. Since $\Set_{\c,\infty}$ is a full subcategory of $\Setne$, $f$ is a split monomorphism in $\Set_{\c,\infty}$ and therefore a regular monomorphism.'
+
+  - property: epi-regular
+    proof: 'Let $f : X \to Y$ be an epimorphism. It is surjective (see below), hence has a right inverse $s : Y \to X$ (as in <a href="/category/Set">$\Set$</a>). Thus, $f$ is a split epimorphism and therefore a regular epimorphism.'
+
+unsatisfied_properties:
+  - property: skeletal
+    proof: The sets $\IN$ and $\IZ$ are isomorphic, but different.
+
+  - property: small
+    proof: Even the collection of all sets $\IN \times \{x\}$, where $x$ is a set, is not a set.
+
+  - property: essentially countable
+    proof: The hom-set $\Hom(\IN,\IN)$ is uncountable.
+
+  - property: Cauchy complete
+    proof: 'The constant map $e : \IN \to \IN$, $n \mapsto 0$ is idempotent and does not split in $\Set_{\c,\infty}$, since a splitting $\IN \to X \to \IN$ would also be a splitting in <a href="/category/Set">$\Set$</a>, making $X$ isomorphic to $\im(e) = \{0\}$, which is finite.'
+
+  - property: zero morphisms
+    proof: 'Assume that there is a zero morphism $0 : \IN \to \IN$. For $n \in \IN$, let $c_n : \IN \to \IN$ be the constant map with value $n$. Then $c_0 = c_0 \circ 0 = 0 = c_1 \circ 0 = c_1$, a contradiction.'
+
+  - property: cofiltered
+    proof: 'The constant maps $\IN \rightrightarrows \IN$ with values $0$ and $1$ are equalized by no map $X \to \IN$ in this category.'
+
+  - property: effective cocongruences
+    proof: 'The coproduct inclusions $i_1,i_2 : \IN \rightrightarrows \IN \sqcup \IN$ form a cocongruence. It is not effective, since there is no map $h : Y \to \IN$ in this category with $i_1 \circ h = i_2 \circ h$.'
+
+special_objects:
+  coproducts:
+    description: '[non-empty, countable case] disjoint union'
+  products:
+    description: '[non-empty, finite case] direct products'
+
+special_morphisms:
+  isomorphisms:
+    description: bijective maps
+    proof: It is a full subcategory of $\Set$, for which we know that isomorphisms are bijective maps.
+  monomorphisms:
+    description: injective maps
+    proof: 'For the non-trivial direction, let $f : X \to Y$ be a monomorphism and $x,x'' \in X$ with $f(x) = f(x'')$. Let $c_x, c_{x''} : \IN \rightrightarrows X$ be the constant maps with values $x, x''$. Then $f \circ c_x = f \circ c_{x''}$, hence $c_x = c_{x''}$, i.e. $x = x''$.'
+  epimorphisms:
+    description: surjective maps
+    proof: 'For the non-trivial direction, let $f : X \to Y$ be an epimorphism and assume that some $y \in Y$ is not in the image of $f$. Since $Y$ is infinite, there is some $y'' \in Y$ with $y'' \neq y$. Let $g : Y \to Y$ be the map with $g(y) \coloneqq y''$ and $g(z) \coloneqq z$ for $z \neq y$. Then $g \circ f = \id_Y \circ f$, hence $g = \id_Y$, which contradicts $g(y) = y'' \neq y$.'
