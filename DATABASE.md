@@ -99,16 +99,6 @@ pnpm db:update --watch
 
 While `pnpm dev` is running, the browser reloads automatically after `pnpm db:update` or `pnpm db:text` has changed the database.
 
-## Redundancies
-
-There is another script that intentionally does not run with each update. Use the command
-
-```
-pnpm db:redundancies
-```
-
-to check for redundant assignments of properties to categorical structures.
-
 ## Properties of a structure
 
 Use the command

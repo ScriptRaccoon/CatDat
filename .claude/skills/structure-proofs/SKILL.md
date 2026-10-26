@@ -3,7 +3,7 @@ name: structure-proofs
 description: Decide the unknown properties (and, for categories, the special objects and special morphisms) of an existing CatDat structure YAML file by proving or disproving them one at a time, then clean up redundant assignments and summarize. Use when asked to fill in, decide, or prove the properties of a structure.
 argument-hint: '[structure file or ID] [optional time limit, e.g. 30m or 2h (default 60m)] (defaults to the current file)'
 disable-model-invocation: true
-allowed-tools: Read, Edit, Write, Grep, Glob, Bash(pnpm db:update), Bash(pnpm db:structure *), Bash(pnpm db:redundancies), Bash(pnpm db:redundancies *), Bash(pnpm cspell), Bash(date *), Bash(grep *), Bash(sqlite3 database/catdat.db *)
+allowed-tools: Read, Edit, Write, Grep, Glob, Bash(pnpm db:update), Bash(pnpm db:structure *), Bash(pnpm cspell), Bash(date *), Bash(grep *), Bash(sqlite3 database/catdat.db *)
 ---
 
 # Structure Proofs
@@ -26,7 +26,7 @@ State the target file, structure type, and time limit at the start.
 1. Read the structure file in full. Understand the definition precisely: what the objects and morphisms are, how composition works, and any parameters (for parametrized structures such as `BG` or `R-Mod`, properties may depend on the parameter).
 2. Read the files of the structures listed under `related`, `dual`, `parent`, and `associated`. Their proofs are templates for style and often for content (a proof for a similar category can frequently be adapted, or a property can be transferred along a functor via a lemma in `content/`).
 3. Skim [database/data/macros.yaml](../../../database/data/macros.yaml) for available KaTeX macros and the file names in `content/` for reusable lemmas (e.g. `missing_cogenerator`, `subcategories`, `relationships-epis-monos`, `thin_extremal_generator`).
-4. Run `pnpm db:update`, so that the database reflects the current YAML (a new structure only exists in the database after this). If it fails, stop and report the error to the user; do not start editing on a broken database.
+4. Run `pnpm db:update`, so that the database reflects the current YAML (a new structure only exists in the database after this). If it fails, stop and report the error to the user; do not start editing on a broken database. A failure caused only by redundancies of the target structure (reported by the last test of `db:test`) is not a broken database: continue, and handle them in the redundancy phase.
 5. Run `pnpm db:structure <ID>` to see all groups and counts. For categories, also check which special objects and special morphisms are known, including deduced ones (from rules, parents, and dual categories):
 
     ```
@@ -71,12 +71,12 @@ Repeat until no unknown properties (and, for categories, no open special morphis
     - satisfied → `satisfied_properties`; unsatisfied → `unsatisfied_properties`;
     - `undecidable_properties` (rare): only with a proof that the answer depends on the parameters of the structure (e.g. "This holds if and only if $G$ is countable.") or that the question is independent of ZFC.
     - Insert the entry at a sensible position: easy and trivial properties first, closely related properties grouped together (see "Order of assignments" in CLAUDE.md), not necessarily at the end. Create the list key if it does not exist yet (e.g. `unsatisfied_properties: []` must become a proper list).
-    - Do not add `check_redundancy: false` when recording an entry, even if the template you adapted has it. The flag is only set in the redundancy phase, for an assignment that the redundancy script actually reports.
+    - Do not add `check_redundancy: false` when recording an entry, even if the template you adapted has it. The flag is only set in the redundancy phase, for an assignment that `db:test` actually reports as redundant.
     - Use `>-` with blank lines between paragraphs for long proofs, single quotes for values containing `:`, existing macros, and the notation conventions from CLAUDE.md (`\varnothing`, `f : X \to Y`, `\coloneqq`, `non-empty`). Very long or reusable arguments may go into a new `content/` page, but prefer proofs inside the YAML file.
-7. **Run `pnpm db:update` after every single proof**, so that new properties are deduced before the next pick. Then continue with step 1; deduction often decides many further properties at once.
+7. **Run `pnpm db:update` after every single proof**, so that new properties are deduced before the next pick. Then continue with step 1; deduction often decides many further properties at once. The last test of `db:test` reports redundant assignments; those of the target structure are handled in the redundancy phase, so continue despite them.
     - If seeding fails, fix the YAML syntax or schema error.
     - If deduction reports a **contradiction**, the new claim conflicts with the existing data. Remove the new entry, re-examine the argument, and re-run `pnpm db:update`. If you remain convinced the new claim is right, leave it out and report the suspected inconsistency (with the conflicting implications or assignments) to the user instead of changing other files.
-    - If `db:test` fails because of this structure, report it; do not edit `expected-data/`.
+    - If `db:test` fails because of this structure (other than redundancies), report it; do not edit `expected-data/`.
 8. Whenever a new (co)limit property is proven, also add the corresponding special object description (see above). Steps 3 to 7 apply in the same way to special morphism classifications.
 
 Edit only the target structure file, plus new `content/` pages if really needed and `.cspell.json` for legitimate new words. Never edit other structures, properties, implications, or `expected-data/`, and never edit the database directly. Do not commit.
@@ -85,12 +85,12 @@ Edit only the target structure file, plus new `content/` pages if really needed 
 
 After the loop ends (also when the time limit was reached, since this phase is quick and leaves the file clean):
 
-1. Run `pnpm db:redundancies` and look for lines mentioning this structure (`for <ID>:`). The script reports at most one redundant satisfied and one redundant unsatisfied assignment per structure.
+1. Run `pnpm db:update` and look for redundancy errors mentioning this structure (`for <ID>:`). The test reports at most one redundant satisfied and one redundant unsatisfied assignment per structure.
 2. For a redundant **satisfied** assignment: keep it with `check_redundancy: false` if the proof is illuminating, constructs (co)limits used later, establishes an intermediate result used by later proofs, or avoids an overly complex deduction (see "No redundant assignments" in CLAUDE.md). Otherwise remove it.
 3. For a redundant **unsatisfied** assignment: almost always remove it.
 4. Before removing an entry, grep the file for its `label` and for phrases like "we already know"; if another proof relies on it, either keep the entry (with `check_redundancy: false`) or adjust the dependent proof and its `references`.
-5. Run `pnpm db:update`, then `pnpm db:redundancies` again. Repeat until no redundancy for this structure is reported.
-6. Test every `check_redundancy: false` flag in the file, one at a time: remove the flag, run `pnpm db:update` and `pnpm db:redundancies`. If the script does not report that assignment as redundant, the flag was unnecessary: keep it removed. Only restore the flag if the assignment is reported and should be kept (see step 2).
+5. Run `pnpm db:update` again. Repeat until no redundancy for this structure is reported.
+6. Test every `check_redundancy: false` flag in the file, one at a time: remove the flag and run `pnpm db:update`. If the test does not report that assignment as redundant, the flag was unnecessary: keep it removed. Only restore the flag if the assignment is reported and should be kept (see step 2).
 
 Finally, run `pnpm cspell` and fix spelling issues in the target file (add legitimate mathematical terms to `.cspell.json`).
 
