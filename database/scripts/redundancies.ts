@@ -16,20 +16,29 @@ check_redundancies()
 
 /**
  * Checks for redundancies in the database.
- * No error is thrown intentionally.
+ * If redundancies are found, an error is thrown.
  */
 function check_redundancies() {
+	const errors: string[] = []
+
 	for (const type of STRUCTURE_TYPES) {
-		check_redundant_property_assignments(type)
+		errors.push(...check_redundant_property_assignments(type))
+	}
+
+	if (errors.length > 0) {
+		console.error(`\n--- Found ${errors.length} redundant assignments ---`)
+		for (const error of errors) {
+			console.error(`❌ ${error}`)
+		}
+		process.exit(1)
 	}
 }
 
 /**
- * Checks for redundant (structure, property)-assignments and logs
- * one per structure if any are found (satisfied or unsatisfied).
- * No error is thrown intentionally.
+ * Checks for redundant (structure, property)-assignments and returns
+ * one error message per structure and kind (satisfied or unsatisfied).
  */
-function check_redundant_property_assignments(type: StructureType) {
+function check_redundant_property_assignments(type: StructureType): string[] {
 	console.info(
 		`\n--- Check redundant ${remove_underscores(type)} property assignments ---`
 	)
@@ -46,7 +55,7 @@ function check_redundant_property_assignments(type: StructureType) {
 		0
 	)
 
-	let redundancy_count = 0
+	const errors: string[] = []
 
 	for (const structure of structures) {
 		const redundant_satisfied_property = get_redundant_satisfied_property(
@@ -57,11 +66,9 @@ function check_redundant_property_assignments(type: StructureType) {
 		)
 
 		if (redundant_satisfied_property) {
-			console.warn(
-				`🟠 Redundant satisfied property for ${structure.id}: "${redundant_satisfied_property}" is implied by others.`
+			errors.push(
+				`Redundant satisfied property for ${structure.id}: "${redundant_satisfied_property}" is implied by others.`
 			)
-
-			redundancy_count++
 		}
 
 		const all_satisfied_properties = new Set([
@@ -78,23 +85,23 @@ function check_redundant_property_assignments(type: StructureType) {
 		)
 
 		if (redundant_unsatisfied_property) {
-			console.warn(
-				`🟡 Redundant unsatisfied property for ${structure.id}: "${redundant_unsatisfied_property}" is implied by others.`
+			errors.push(
+				`Redundant unsatisfied property for ${structure.id}: "${redundant_unsatisfied_property}" is implied by others.`
 			)
-
-			redundancy_count++
 		}
 	}
 
-	if (redundancy_count === 0) {
+	if (errors.length === 0) {
 		console.info('✅ No redundant assignments found')
 	} else {
-		console.info(`Found ${redundancy_count} redundant assignments`)
+		console.info(`🔴 Found ${errors.length} redundant assignments`)
 	}
 
 	if (ignore_count > 0) {
 		console.info(`${ignore_count} redundant assignments have been ignored`)
 	}
+
+	return errors
 }
 
 /**
