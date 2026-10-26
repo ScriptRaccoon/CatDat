@@ -24,7 +24,6 @@
 		"db:snapshot": "tsx database/scripts/snapshot.ts",
 		"db:sort": "tsx database/scripts/sort.ts",
 		"db:update": "tsx database/scripts/update.ts",
-		"db:redundancies": "tsx database/scripts/redundancies.ts",
 		"db:combinations": "tsx database/scripts/combinations.ts",
 		"db:structure": "tsx database/scripts/structure.ts",
 		"e2e": "pnpm exec playwright test",
