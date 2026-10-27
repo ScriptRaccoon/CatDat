@@ -1,0 +1,20 @@
+id: quasicotopos
+relation: is a
+description: >-
+  A <i>quasicotopos</i> is a category whose opposite is a quasitopos. This means that it is finitely complete, finitely cocomplete, locally cocartesian coclosed, and has a regular quotient object classifier. This terminology is not standard.
+nlab_link: null
+dual: quasitopos
+invariant_under_equivalences: true
+
+keywords:
+  - quasi-cotopos
+
+related:
+  - finitely complete
+  - finitely cocomplete
+  - locally cocartesian coclosed
+  - regular quotient object classifier
+  - elementary cotopos
+
+tags:
+  - topos theory
