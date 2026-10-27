@@ -1,0 +1,14 @@
+id: elementary cotopos
+relation: is an
+description: An <i>elementary cotopos</i> is a category whose dual category is an elementary topos, i.e. a cocartesian coclosed category with finite colimits and a quotient object classifier.
+nlab_link: https://ncatlab.org/nlab/show/cotopos
+dual: elementary topos
+invariant_under_equivalences: true
+
+related:
+  - cocartesian coclosed
+  - finitely cocomplete
+  - quotient object classifier
+
+tags:
+  - topos theory

@@ -165,6 +165,7 @@
 		"cospans",
 		"cosymmetric",
 		"cosymmetry",
+		"cotopos",
 		"cototal",
 		"cotransitive",
 		"cotransitivity",
@@ -453,5 +454,9 @@
 		"todo.txt",
 		"*.svg"
 	],
-	"ignoreRegExpList": ["\\$[^$]*\\$", "\\$\\$[^$]*\\$\\$", "Wahrscheinlichkeitstheorie"]
+	"ignoreRegExpList": [
+		"\\$[^$]*\\$",
+		"\\$\\$[^$]*\\$\\$",
+		"Wahrscheinlichkeitstheorie"
+	]
 }

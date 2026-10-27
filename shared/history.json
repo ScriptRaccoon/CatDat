@@ -1985,6 +1985,10 @@
 		{
 			"type": "category",
 			"id": "locally ℵ₁-copresentable"
+		},
+		{
+			"type": "category",
+			"id": "elementary cotopos"
 		}
 	]
 }
