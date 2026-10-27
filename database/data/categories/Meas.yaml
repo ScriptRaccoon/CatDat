@@ -76,41 +76,41 @@ satisfied_properties:
 
   - property: co-Malcev
     proof: >-
-      Let $j_1,j_2 : X \rightrightarrows R$ be a coreflexive corelation of measurable spaces. Thus, $j_1,j_2$ are jointly surjective measurable maps with a common retraction $r : R \twoheadrightarrow X$.
-      To show that $(j_1,j_2)$ is cosymmetric, define the map of sets $s : R \to R$ by
+      Let $j_1,j_2 : X \rightrightarrows C$ be a coreflexive corelation of measurable spaces. Thus, $j_1,j_2$ are jointly surjective measurable maps with a common retraction $r : C \twoheadrightarrow X$.
+      To show that $(j_1,j_2)$ is cosymmetric, define the map of sets $s : C \to C$ by
       $$s(j_1(x)) \coloneqq j_2(x), \quad s(j_2(x)) \coloneqq j_1(x).$$
-      This is well-defined by a direct calculation or by using the fact that <a href="/category/Set">$\Set$</a> is co-Malcev. We need to show that $s$ is measurable. To this end, let $B \subseteq R$ be a measurable subset. Its preimages
+      This is well-defined by a direct calculation or by using the fact that <a href="/category/Set">$\Set$</a> is co-Malcev. We need to show that $s$ is measurable. To this end, let $B \subseteq C$ be a measurable subset. Its preimages
       $$A_1 \coloneqq j_1^*(B), \quad A_2 \coloneqq j_2^*(B)$$
       are measurable subsets of $X$. We claim that
       $$s^*(B) = \bigl((r^*(A_1) \cup r^*(A_2)) \setminus B\bigr) \cup r^*(A_1 \cap A_2), \tag{1}$$
-      which will prove in particular that $s^*(B)$ is measurable, as required. Let $y \in R$. Since $R = j_1(X) \cup j_2(X)$, we may assume without loss of generality that $y = j_1(x)$ for some $x \in X$. The following are equivalent:
+      which will prove in particular that $s^*(B)$ is measurable, as required. Let $y \in C$. Since $C = j_1(X) \cup j_2(X)$, we may assume without loss of generality that $y = j_1(x)$ for some $x \in X$. The following are equivalent:
       $$y \in (r^*(A_1) \cup r^*(A_2)) \setminus B \iff x \in (A_1 \cup A_2) \setminus A_1,$$
       $$y \in r^*(A_1 \cap A_2) \iff x \in A_1 \cap A_2.$$
       Hence, $y$ lies in the RHS of $(1)$ if and only if
       $$x \in ((A_1 \cup A_2) \setminus A_1) \cup (A_1 \cap A_2) = A_2 = j_2^*(B),$$
       which means that $s(y) = j_2(x)$ lies in $B$. This proves $(1)$.
 
-      It remains to show that $(j_1,j_2)$ is cotransitive. We adopt the functorial point of view (simply to avoid talking about pushouts) and show that the subfunctor $\Hom(R,-) \hookrightarrow \Hom(X,-)^2$ is transitive. That is, given three measurable maps $u,v,w : X \rightrightrightarrows T$ into some measurable space $T$ and two measurable maps $f,g : R \rightrightarrows T$ such that
+      It remains to show that $(j_1,j_2)$ is cotransitive. We adopt the functorial point of view (simply to avoid talking about pushouts) and show that the subfunctor $\Hom(C,-) \hookrightarrow \Hom(X,-)^2$ is transitive. That is, given three measurable maps $u,v,w : X \rightrightrightarrows T$ into some measurable space $T$ and two measurable maps $f,g : C \rightrightarrows T$ such that
       $$f j_1 = u, \quad f j_2 = v = g j_1, \quad g j_2 = w,$$
-      we need to show that there is a measurable map $h : R \to T$ with $h j_1 = u$ and $h j_2 = w$. We can certainly define $h$ as a map of sets by
+      we need to show that there is a measurable map $h : C \to T$ with $h j_1 = u$ and $h j_2 = w$. We can certainly define $h$ as a map of sets by
       $$h(j_1(x)) \coloneqq u(x), \quad h(j_2(x)) \coloneqq w(x),$$
-      which is well-defined by a direct calculation or again by using the fact that $\Set$ is co-Malcev. We need to show that $h$ is measurable. Let $C \subseteq T$ be a measurable subset. Its preimages
-      $$B_1 \coloneqq f^*(C), \quad B_2 \coloneqq g^*(C)$$
-      are measurable subsets of $R$. Notice that $f j_2 = g j_1$ implies
+      which is well-defined by a direct calculation or again by using the fact that $\Set$ is co-Malcev. We need to show that $h$ is measurable. Let $M \subseteq T$ be a measurable subset. Its preimages
+      $$B_1 \coloneqq f^*(M), \quad B_2 \coloneqq g^*(M)$$
+      are measurable subsets of $C$. Notice that $f j_2 = g j_1$ implies
       $$A \coloneqq j_2^*(B_1) = j_1^*(B_2) \subseteq X.$$
       We claim that
-      $$h^*(C) = \bigl((B_1 \cup B_2) \setminus r^*(A)\bigr) \cup (B_1 \cap B_2), \tag{2}$$
-      which will prove that $h^*(C)$ is measurable. Let $y \in R$. There are two cases to consider.
+      $$h^*(M) = \bigl((B_1 \cup B_2) \setminus r^*(A)\bigr) \cup (B_1 \cap B_2), \tag{2}$$
+      which will prove that $h^*(M)$ is measurable. Let $y \in C$. There are two cases to consider.
 
       Case 1: We have $y = j_1(x)$ for some $x \in X$. The following are equivalent:
-      $$y \in (B_1 \cup B_2) \setminus r^*(A) \iff (u(x) \in C \vee v(x) \in C) \wedge v(x) \notin C,$$
-      $$y \in B_1 \cap B_2 \iff (u(x) \in C \wedge v(x) \in C).$$
-      Hence, $y$ lies in the RHS of $(2)$ if and only if $h(y) = u(x) \in C$, i.e. $y \in h^*(C)$.
+      $$y \in (B_1 \cup B_2) \setminus r^*(A) \iff (u(x) \in M \vee v(x) \in M) \wedge v(x) \notin M,$$
+      $$y \in B_1 \cap B_2 \iff (u(x) \in M \wedge v(x) \in M).$$
+      Hence, $y$ lies in the RHS of $(2)$ if and only if $h(y) = u(x) \in M$, i.e. $y \in h^*(M)$.
 
       Case 2: We have $y = j_2(x)$ for some $x \in X$. The following are equivalent:
-      $$y \in (B_1 \cup B_2) \setminus r^*(A) \iff (v(x) \in C \vee w(x) \in C) \wedge v(x) \notin C,$$
-      $$y \in B_1 \cap B_2 \iff (v(x) \in C \wedge w(x) \in C).$$
-      Hence, $y$ lies in the RHS of $(2)$ if and only if $h(y) = w(x) \in C$, i.e. $y \in h^*(C)$.
+      $$y \in (B_1 \cup B_2) \setminus r^*(A) \iff (v(x) \in M \vee w(x) \in M) \wedge v(x) \notin M,$$
+      $$y \in B_1 \cap B_2 \iff (v(x) \in M \wedge w(x) \in M).$$
+      Hence, $y$ lies in the RHS of $(2)$ if and only if $h(y) = w(x) \in M$, i.e. $y \in h^*(M)$.
 
       This proves $(2)$. We conclude that the corelation $(j_1,j_2)$ is both cosymmetric and cotransitive.
 

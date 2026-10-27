@@ -5,17 +5,17 @@ description: If an effective congruence has a quotient, it is the kernel pair of
 
 # Quotients of effective congruences
 
-Recall that a congruence $E \rightrightarrows X$ is called effective if it is the kernel pair of some morphism with domain $X$. The next result shows that, in many situations, this morphism can be chosen canonically, namely as the quotient of the congruence, provided that it exists.
+Recall that a congruence $R \rightrightarrows X$ is called effective if it is the kernel pair of some morphism with domain $X$. The next result shows that, in many situations, this morphism can be chosen canonically, namely as the quotient of the congruence, provided that it exists.
 
 ::: Lemma
-An effective congruence whose coequalizer exists is the kernel pair of its coequalizer. More precisely, let $q_1,q_2 : E \rightrightarrows X$ be an effective congruence. If $q_1,q_2$ have a coequalizer $p : X \to X/E$, then $q_1,q_2$ is the kernel pair of $p$. That is, the square
-$$\begin{CD} E @> q_1 >> X \\ @V q_2 VV @VV p V \\ X @>> p > X/E \end{CD}$$
+An effective congruence whose coequalizer exists is the kernel pair of its coequalizer. More precisely, let $q_1,q_2 : R \rightrightarrows X$ be an effective congruence. If $q_1,q_2$ have a coequalizer $p : X \to X/R$, then $q_1,q_2$ is the kernel pair of $p$. That is, the square
+$$\begin{CD} R @> q_1 >> X \\ @V q_2 VV @VV p V \\ X @>> p > X/R \end{CD}$$
 is a pullback.
 :::
 
 ::: Proof
 Let $h : X \to Z$ be a morphism such that $q_1,q_2$ is the kernel pair of $h$. By the universal property of the coequalizer, there is a unique morphism
-$$\bar h : X/E \to Z$$
+$$\bar h : X/R \to Z$$
 such that $h = \bar h \circ p$. Now suppose we have morphisms $a, b : T \rightrightarrows X$ such that $p \circ a = p \circ b$. Then
 $$h \circ a = \bar h \circ p \circ a = \bar h \circ p \circ b = h \circ b.$$
 Since $q_1,q_2$ is the kernel pair of $h$, this means that the pair $a, b$ factors uniquely through the pair $q_1,q_2$.

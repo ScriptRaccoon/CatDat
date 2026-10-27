@@ -67,7 +67,7 @@ satisfied_properties:
 
   - property: effective cocongruences
     proof: >-
-      Let $G + G \twoheadrightarrow H$ be a cocongruence in $\Grp_\c$. Since $\Grp_\c \hookrightarrow \Grp$ is closed under finite colimits, this is the same as a cocongruence in $\Grp$ where $G,H \in \Grp$ happen to be countable groups. Since we already know that <a href="/category/Grp">$\Grp$</a> has effective cocongruences, the cocongruence is the cokernel pair of some homomorphism of groups $K \to H$. If $K' \subseteq H$ denotes the image of $K$, it is then also the cokernel pair of the inclusion $K' \hookrightarrow H$, and $K'$ is countable.
+      Let $G + G \twoheadrightarrow C$ be a cocongruence in $\Grp_\c$. Since $\Grp_\c \hookrightarrow \Grp$ is closed under finite colimits, this is the same as a cocongruence in $\Grp$ where $G,C \in \Grp$ happen to be countable groups. Since we already know that <a href="/category/Grp">$\Grp$</a> has effective cocongruences, the cocongruence is the cokernel pair of some homomorphism of groups $K \to C$. If $K' \subseteq C$ denotes the image of $K$, it is then also the cokernel pair of the inclusion $K' \hookrightarrow C$, and $K'$ is countable.
 
 unsatisfied_properties:
   - property: skeletal

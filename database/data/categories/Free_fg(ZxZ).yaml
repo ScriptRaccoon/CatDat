@@ -36,17 +36,17 @@ satisfied_properties:
     proof: >-
       Since $(\IZ \times \IZ){-}\Mod$ is equivalent to $\Ab \times \Ab$ via $M \mapsto ((1,0) M, (0,1) M)$, and the equivalence maps $(\IZ \times \IZ)^n$ to $(\IZ^n,\IZ^n)$, the category $\Free_{\fg}(\IZ \times \IZ)$ is equivalent to the full subcategory of $\FreeAb_{\fg} \times \FreeAb_{\fg}$ consisting of those pairs of finitely generated free abelian groups $(A,B)$ such that $\rank(A)=\rank(B)$, i.e. $A \cong B$. We denote these equivalences by $M \mapsto (M_1,M_2)$.
 
-      Let $E \rightrightarrows M$ be a congruence in $\Free_{\fg}(\IZ \times \IZ)$. By applying the definition to the test object $\IZ \times \IZ$, we see that it is a congruence in $(\IZ \times \IZ){-}\Mod$. Thus, we have
-      $$E = \{(x,y) \in M \times M : x - y \in U\}$$
+      Let $R \rightrightarrows M$ be a congruence in $\Free_{\fg}(\IZ \times \IZ)$. By applying the definition to the test object $\IZ \times \IZ$, we see that it is a congruence in $(\IZ \times \IZ){-}\Mod$. Thus, we have
+      $$R = \{(x,y) \in M \times M : x - y \in U\}$$
       for some $\IZ \times \IZ$-submodule $U \subseteq M$ (up to isomorphism), namely
-      $$U = \{x \in M : (x,0) \in E\}.$$
+      $$U = \{x \in M : (x,0) \in R\}.$$
       This implies
-      $$E \cong M \oplus U.$$
-      The pair $(U_1,U_2)$ of $\IZ$-modules corresponding to $U$ therefore satisfies $E_i \cong M_i \oplus U_i$ for $i=1,2$. Since $E_i$ is finitely generated and free, we see that $U_i$ is a finitely generated projective $\IZ$-module, which is therefore free. Moreover, the rank of $U_i$ is
-      $$\rank(U_i) = \rank(E_i) - \rank(M_i).$$
-      Since $\rank(E_1) = \rank(E_2)$ and $\rank(M_1) = \rank(M_2)$, we conclude that $\rank(U_1) = \rank(U_2)$. We have shown that $U$ belongs to $\Free_{\fg}(\IZ \times \IZ)$.
+      $$R \cong M \oplus U.$$
+      The pair $(U_1,U_2)$ of $\IZ$-modules corresponding to $U$ therefore satisfies $R_i \cong M_i \oplus U_i$ for $i=1,2$. Since $R_i$ is finitely generated and free, we see that $U_i$ is a finitely generated projective $\IZ$-module, which is therefore free. Moreover, the rank of $U_i$ is
+      $$\rank(U_i) = \rank(R_i) - \rank(M_i).$$
+      Since $\rank(R_1) = \rank(R_2)$ and $\rank(M_1) = \rank(M_2)$, we conclude that $\rank(U_1) = \rank(U_2)$. We have shown that $U$ belongs to $\Free_{\fg}(\IZ \times \IZ)$.
 
-      The quotient of the congruence $E \rightrightarrows M$ in $(\IZ \times \IZ){-}\Mod$ is $M/U$, but this will <i>not</i> be the quotient in the subcategory of free modules. Instead, consider the congruences $E_i \rightrightarrows M_i$ for $i=1,2$ in $\Ab$, whose quotients in $\TorsFreeAb$ and hence also in $\FreeAb_{\fg}$ are the torsion-free reflections $(M_i / U_i) / T(M_i / U_i)$. The rank of this abelian group is $\rank(M_i) - \rank(U_i)$, which therefore does not depend on $i$. Thus, the pair of these quotients belongs to $\Free_{\fg}(\IZ \times \IZ)$.
+      The quotient of the congruence $R \rightrightarrows M$ in $(\IZ \times \IZ){-}\Mod$ is $M/U$, but this will <i>not</i> be the quotient in the subcategory of free modules. Instead, consider the congruences $R_i \rightrightarrows M_i$ for $i=1,2$ in $\Ab$, whose quotients in $\TorsFreeAb$ and hence also in $\FreeAb_{\fg}$ are the torsion-free reflections $(M_i / U_i) / T(M_i / U_i)$. The rank of this abelian group is $\rank(M_i) - \rank(U_i)$, which therefore does not depend on $i$. Thus, the pair of these quotients belongs to $\Free_{\fg}(\IZ \times \IZ)$.
 
 unsatisfied_properties:
   - property: skeletal

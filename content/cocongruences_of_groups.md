@@ -50,25 +50,25 @@ Let $\C$ be a balanced category with good pushouts of monomorphisms and equalize
 :::
 
 ::: Proof
-Let $X \in \C$ be an object, and let $j_1,j_2 : X \rightrightarrows Y$ be a cocongruence. Since it is coreflexive, there exists a morphism $r : Y \to X$ satisfying
+Let $X \in \C$ be an object, and let $j_1,j_2 : X \rightrightarrows C$ be a cocongruence. Since it is coreflexive, there exists a morphism $r : C \to X$ satisfying
 
 $$r \circ j_1 = \id_X, \quad r \circ j_2 = \id_X.$$
 
 In particular, $j_1$ and $j_2$ are monomorphisms. Since the cocongruence is cotransitive, there exists a morphism
 
-$$c : Y \to Y \sqcup_{j_2,X,j_1} Y$$
+$$t : C \to C \sqcup_{j_2,X,j_1} C$$
 
 satisfying
 
-$$c \circ j_1 = u_1 \circ j_1, \quad c \circ j_2 = u_2 \circ j_2,$$
+$$t \circ j_1 = u_1 \circ j_1, \quad t \circ j_2 = u_2 \circ j_2,$$
 
-where $u_1,u_2 : Y \rightrightarrows Y \sqcup_{j_2,X,j_1} Y$ are the pushout inclusions satisfying $u_1 j_2 = u_2 j_1$. We will not use the fact that the cocongruence is cosymmetric; this will follow automatically. Consider the equalizer
+where $u_1,u_2 : C \rightrightarrows C \sqcup_{j_2,X,j_1} C$ are the pushout inclusions satisfying $u_1 j_2 = u_2 j_1$. We will not use the fact that the cocongruence is cosymmetric; this will follow automatically. Consider the equalizer
 
 $$e : E \hookrightarrow X$$
 
 of $j_1$ and $j_2$. Since $j_1$ and $j_2$ agree on $E$, there exists a unique morphism
 
-$$\varphi : X \sqcup_E X \to Y$$
+$$\varphi : X \sqcup_E X \to C$$
 
 defined by $\varphi \circ i_1 = j_1$ and $\varphi \circ i_2 = j_2$, where $i_1,i_2 : X \rightrightarrows X \sqcup_E X$ are the two inclusions.
 
@@ -76,26 +76,26 @@ We must show that $\varphi$ is an isomorphism. It is clearly an epimorphism, sin
 
 We will show that even the morphism
 
-$$\gamma \coloneqq c \circ \varphi : X \sqcup_E X \to Y \sqcup_{j_2,X,j_1} Y$$
+$$\gamma \coloneqq t \circ \varphi : X \sqcup_E X \to C \sqcup_{j_2,X,j_1} C$$
 
 is a monomorphism. It is characterized by
 
-$$\gamma \circ i_1 = c \circ \varphi \circ i_1 = c \circ j_1 = u_1 \circ j_1,$$
-$$\gamma \circ i_2 = c \circ \varphi \circ i_2 = c \circ j_2 = u_2 \circ j_2.$$
+$$\gamma \circ i_1 = t \circ \varphi \circ i_1 = t \circ j_1 = u_1 \circ j_1,$$
+$$\gamma \circ i_2 = t \circ \varphi \circ i_2 = t \circ j_2 = u_2 \circ j_2.$$
 
 In other words, $\gamma$ is induced by the diagram of monomorphisms
 
 $$
 \begin{CD}
-X @>{j_1}>> Y \\
+X @>{j_1}>> C \\
 @A{e}AA @AA{j_2}A \\
 E @>>{e}> X \\
 @V{e}VV @VV{j_1}V \\
-X @>>{j_2}> Y
+X @>>{j_2}> C
 \end{CD}
 $$
 
-Since $\C$ has good pushouts of monomorphisms, it suffices to verify that both squares are pullbacks. Observe that the two squares are symmetric, so it is enough to consider one of them. To verify the universal property, let $a : T \to X$ and $b : T \to X$ be morphisms satisfying $j_1 \circ a = j_2 \circ b$. Applying $r : Y \to X$, we obtain
+Since $\C$ has good pushouts of monomorphisms, it suffices to verify that both squares are pullbacks. Observe that the two squares are symmetric, so it is enough to consider one of them. To verify the universal property, let $a : T \to X$ and $b : T \to X$ be morphisms satisfying $j_1 \circ a = j_2 \circ b$. Applying $r : C \to X$, we obtain
 
 $$a = r \circ j_1 \circ a = r \circ j_2 \circ b = b.$$
 

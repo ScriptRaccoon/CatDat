@@ -84,8 +84,8 @@
     $$Y : \C \to [G^{\op},\Set], \quad X \mapsto \Hom(-,X)|_{G^{\op}}.$$
     It preserves all limits and, since the objects of $G$ are strongly finitely presentable, all sifted colimits. By <a href="http://www.tac.mta.ca/tac/volumes/8/n3/8-03abs.html">Adámek–Rosický</a>, Lemma 3.8, $Y$ is fully faithful.
 
-    Now let $q_1, q_2 : E \rightrightarrows X$ be a congruence in $\C$. In particular, it is a reflexive pair. Since $\C$ has sifted colimits, it has reflexive coequalizers. In particular, $q_1, q_2$ have a coequalizer $h : X \to Q$. Let $T \in G$. Since $Y$ preserves this coequalizer and colimits in $[G^{\op},\Set]$ are computed pointwise, the map $h_* : \Hom(T,X) \to \Hom(T,Q)$ is a coequalizer of
-    $$(q_1)_*, (q_2)_* : \Hom(T,E) \rightrightarrows \Hom(T,X)$$
+    Now let $q_1, q_2 : R \rightrightarrows X$ be a congruence in $\C$. In particular, it is a reflexive pair. Since $\C$ has sifted colimits, it has reflexive coequalizers. In particular, $q_1, q_2$ have a coequalizer $h : X \to Q$. Let $T \in G$. Since $Y$ preserves this coequalizer and colimits in $[G^{\op},\Set]$ are computed pointwise, the map $h_* : \Hom(T,X) \to \Hom(T,Q)$ is a coequalizer of
+    $$(q_1)_*, (q_2)_* : \Hom(T,R) \rightrightarrows \Hom(T,X)$$
     in $\Set$. By definition of a congruence, $(q_1)_*, (q_2)_*$ are jointly injective and their image in $\Hom(T,X)^2$ is an equivalence relation, i.e. they form a congruence in $\Set$. Since <a href="/category/Set">$\Set$</a> has effective congruences, <a href="/content/effective-congruence-quotients">this lemma</a> shows that $(q_1)_*, (q_2)_*$ is a kernel pair of $h_*$. Since $T \in G$ was arbitrary and limits in $[G^{\op},\Set]$ are computed pointwise, $Y(q_1), Y(q_2)$ is a kernel pair of $Y(h)$. Since $Y$ is fully faithful, it reflects limits. Hence, $q_1, q_2$ is a kernel pair of $h$.
 
     Remark: For multi-algebraic categories, this result is also proven in <a href="https://doi.org/10.1007/BF01224953">Diers</a>, Thm. 4.0 (see also <a href="https://translations.thosgood.net/ADM-34-1980-193.pdf">its English translation</a>).
