@@ -205,7 +205,7 @@ unsatisfied_properties:
 
   - property: co-Malcev
     proof: >-
-      Consider the two possible morphisms $f, g : \nabla 1 \rightrightarrows \nabla 2$. This defines a corelation representing the functor which to $(X, R_X)$ assigns the binary relation on $X$ of two elements having a common realizer. That shows that this corelation is coreflexive, since by definition any element of an $\omega$-set has a realizer. However, it is easy to see that it is not cotransitive; for example, in the $\omega$-set
+      Consider the two possible morphisms $j_1, j_2 : \nabla 1 \rightrightarrows \nabla 2$. This defines a corelation representing the functor which to $(X, R_X)$ assigns the binary relation on $X$ of two elements having a common realizer. That shows that this corelation is coreflexive, since by definition any element of an $\omega$-set has a realizer. However, it is easy to see that it is not cotransitive; for example, in the $\omega$-set
       $$\bigl(\{0,1,2\}, \{ (0, 0), (0, 1), (1, 1), (1, 2) \}\bigr),$$
       the elements $0$ and $1$ have a common realizer, as do $1$ and $2$; but $0$ and $2$ do not have a common realizer.
 

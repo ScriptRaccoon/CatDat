@@ -51,25 +51,25 @@ satisfied_properties:
 
   - property: effective cocongruences
     proof: >-
-      Let $i_1,i_2 : X \rightrightarrows E$ be a coreflexive corelation in $\Euclidsqcup$. (We will not need to assume cosymmetry or cotransitivity, as both properties will follow.) This means that the induced map $(i_1;i_2) : X \sqcup X \to E$ is an epimorphism, i.e. has dense image, and that there is a continuous map $r : E \to X$ satisfying
-      $$r \circ i_1 = r \circ i_2 = \id_X.$$
-      It follows that, in $\Top$, $i_1$ is the equalizer of $\id_E$ and $i_1 \circ r : E \rightrightarrows E$. Since $E$ is Hausdorff, this implies that $i_1$ is an embedding with closed image $i_1(X)$. Likewise, $i_2$ is an embedding with closed image $i_2(X)$. Their union $i_1(X) \cup i_2(X)$ is also closed. On the other hand, since $(i_1;i_2)$ has dense image, $i_1(X) \cup i_2(X)$ is dense. Thus,
-      $$E = i_1(X) \cup i_2(X),$$
-      i.e. $i_1,i_2$ are jointly surjective. It follows that the underlying maps of $i_1,i_2$ form a coreflexive corelation in $\Set$. Therefore, by <a href="/category-implication/regular_epi-regular_extensive_consequences">this result</a>, if we define the equalizer
-      $$U \coloneqq \{x \in X : i_1(x) = i_2(x)\},$$
+      Let $j_1,j_2 : X \rightrightarrows E$ be a coreflexive corelation in $\Euclidsqcup$. (We will not need to assume cosymmetry or cotransitivity, as both properties will follow.) This means that the induced map $(j_1;j_2) : X \sqcup X \to E$ is an epimorphism, i.e. has dense image, and that there is a continuous map $r : E \to X$ satisfying
+      $$r \circ j_1 = r \circ j_2 = \id_X.$$
+      It follows that, in $\Top$, $j_1$ is the equalizer of $\id_E$ and $j_1 \circ r : E \rightrightarrows E$. Since $E$ is Hausdorff, this implies that $j_1$ is an embedding with closed image $j_1(X)$. Likewise, $j_2$ is an embedding with closed image $j_2(X)$. Their union $j_1(X) \cup j_2(X)$ is also closed. On the other hand, since $(j_1;j_2)$ has dense image, $j_1(X) \cup j_2(X)$ is dense. Thus,
+      $$E = j_1(X) \cup j_2(X),$$
+      i.e. $j_1,j_2$ are jointly surjective. It follows that the underlying maps of $j_1,j_2$ form a coreflexive corelation in $\Set$. Therefore, by <a href="/category-implication/regular_epi-regular_extensive_consequences">this result</a>, if we define the equalizer
+      $$U \coloneqq \{x \in X : j_1(x) = j_2(x)\},$$
       then the induced continuous map
       $$X \sqcup_U X \to E$$
-      is a bijection. Since the maps $i_1,i_2$ are closed embeddings, $(i_1;i_2) : X + X \to E$ is closed, and therefore a quotient map. It follows that $X \sqcup_U X \cong E$ is an isomorphism of topological spaces. In other words, $i_1,i_2$ is the cokernel pair of $U \hookrightarrow X$ in $\Top$.
+      is a bijection. Since the maps $j_1,j_2$ are closed embeddings, $(j_1;j_2) : X + X \to E$ is closed, and therefore a quotient map. It follows that $X \sqcup_U X \cong E$ is an isomorphism of topological spaces. In other words, $j_1,j_2$ is the cokernel pair of $U \hookrightarrow X$ in $\Top$.
 
-      It remains to prove that $U$ belongs to $\Euclidsqcup$, since then $i_1,i_2$ is also a cokernel pair in $\Euclidsqcup$. In fact, we will prove that $U$ is a union of connected components of $X$.
+      It remains to prove that $U$ belongs to $\Euclidsqcup$, since then $j_1,j_2$ is also a cokernel pair in $\Euclidsqcup$. In fact, we will prove that $U$ is a union of connected components of $X$.
 
-      Suppose that $U$ intersects a connected component $X' \subseteq X$. Choose a point $x \in U \cap X'$ and let $e \coloneqq i_1(x) = i_2(x)$. Let $E' \subseteq E$ be the connected component containing $e$. Then $i_1(X') \subseteq E'$ and $i_2(X') \subseteq E'$. Since $r(e)=x$, we also have $r(E') \subseteq X'$. We claim that
-      $$E' = i_1(X') \cup i_2(X').$$
-      The inclusion $\supseteq$ is clear. To show the inclusion $\subseteq$, pick any point $p \in E'$. We have either $p \in i_1(X)$ or $p \in i_2(X)$. Assume without loss of generality that $p \in i_1(X)$, say $p = i_1(y)$ for some $y \in X$. Then $y = r(p) \in r(E') \subseteq X'$, and hence $p \in i_1(X')$.
+      Suppose that $U$ intersects a connected component $X' \subseteq X$. Choose a point $x \in U \cap X'$ and let $e \coloneqq j_1(x) = j_2(x)$. Let $E' \subseteq E$ be the connected component containing $e$. Then $j_1(X') \subseteq E'$ and $j_2(X') \subseteq E'$. Since $r(e)=x$, we also have $r(E') \subseteq X'$. We claim that
+      $$E' = j_1(X') \cup j_2(X').$$
+      The inclusion $\supseteq$ is clear. To show the inclusion $\subseteq$, pick any point $p \in E'$. We have either $p \in j_1(X)$ or $p \in j_2(X)$. Assume without loss of generality that $p \in j_1(X)$, say $p = j_1(y)$ for some $y \in X$. Then $y = r(p) \in r(E') \subseteq X'$, and hence $p \in j_1(X')$.
 
-      The space $E'$ is Euclidean and therefore a Baire space. Thus, it cannot be the union of two closed sets with empty interior. Assume without loss of generality that $i_1(X')$ has non-empty interior in $E'$. Since $i_1(X') \cong X'$ is also Euclidean, the Invariance of Domain theorem implies that $X'$ and $E'$ have the same dimension and that $i_1(X')$ is open in $E'$. Since $i_1$ is a closed embedding, $i_1(X')$ is also closed in $E'$, and it is non-empty. Since $E'$ is connected, this implies
-      $$i_1(X') = E'.$$
-      Hence, for every $y \in X'$, we have $i_2(y) = i_1(z)$ for some $z \in X'$. Applying $r$, we obtain $y=z$, and hence $y \in U$. This proves that $U$ contains the entire component $X'$ and finishes the proof.
+      The space $E'$ is Euclidean and therefore a Baire space. Thus, it cannot be the union of two closed sets with empty interior. Assume without loss of generality that $j_1(X')$ has non-empty interior in $E'$. Since $j_1(X') \cong X'$ is also Euclidean, the Invariance of Domain theorem implies that $X'$ and $E'$ have the same dimension and that $j_1(X')$ is open in $E'$. Since $j_1$ is a closed embedding, $j_1(X')$ is also closed in $E'$, and it is non-empty. Since $E'$ is connected, this implies
+      $$j_1(X') = E'.$$
+      Hence, for every $y \in X'$, we have $j_2(y) = j_1(z)$ for some $z \in X'$. Applying $r$, we obtain $y=z$, and hence $y \in U$. This proves that $U$ contains the entire component $X'$ and finishes the proof.
     label: Euclid_coprod_cocongruence_classification
 
   - property: coquotients of cocongruences

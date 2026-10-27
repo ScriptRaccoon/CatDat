@@ -7,12 +7,12 @@ description: The classification will prove in particular that the category of se
 
 We will give a classification of congruences in $\Rel$, the [category of sets and relations](/category/Rel). This classification will prove in particular that $\Rel$ has quotients of congruences and that congruences are effective.
 
-Let $i : E \hookrightarrow X \times X$ be a congruence in $\Rel$. Recall that products in $\Rel$ are actually given by disjoint unions at the level of underlying sets. Also, recall that a morphism $R : X \to Y$ in $\Rel$ is a monomorphism if and only if
+Let $q_1, q_2 : E \rightrightarrows X$ be a congruence in $\Rel$, and let $i \coloneqq (q_1,q_2) : E \hookrightarrow X \times X$ be the induced monomorphism. Recall that products in $\Rel$ are actually given by disjoint unions at the level of underlying sets. Also, recall that a morphism $R : X \to Y$ in $\Rel$ is a monomorphism if and only if
 $$R_* : P(X) \to P(Y),\, S \mapsto \bigl\{ y\in Y \mid \exists x\in S, (x, y) \in R \bigr\}$$
 is injective, and it is an isomorphism if and only if $R$ is the graph of a bijection $X \to Y$ in $\Set$.
 In particular, we get
 $$i_* : P(E) \to P(X + X) \cong P(X) \times P(X)$$
-which must be injective. It must also preserve arbitrary unions and in particular be inclusion-preserving. From the assumption that $i$ is a congruence, since the functor $(P, {-}_*) : \Rel \to \Set$ is representable by the object 1, we see that $i_*$ must have image given by an equivalence relation $\sim$ on $P(X)$. Note also that since $i_*$ preserves arbitrary unions, we must have that $\sim$ respects arbitrary unions.
+which must be injective. It must also preserve arbitrary unions and in particular be inclusion-preserving. From the assumption that $q_1, q_2$ is a congruence, since the functor $(P, {-}_*) : \Rel \to \Set$ is representable by the object 1, we see that $i_*$ must have image given by an equivalence relation $\sim$ on $P(X)$. Note also that since $i_*$ preserves arbitrary unions, we must have that $\sim$ respects arbitrary unions.
 
 Since the symmetry morphism $s : E \to E$ satisfies $s^2 = \id$, it must be the graph of an involution $s_0$ on $E$, where $s_0$ is a morphism in $\Set$.
 
@@ -76,19 +76,19 @@ We can define a bijection $E \to E'$ as follows: let $e \in E$. If $i_*(\{ e \})
 
 Now, without loss of generality we will assume from now on that the congruence is of exactly this form.
 
-With this classification, we can show that $A$ is a quotient for the congruence, with quotient morphism $\Delta_A \subseteq A \times A \subseteq X \times A$. In fact, we can define a morphism $\Delta_A^\circ : A \to X$ as the inverse relation to $\Delta_A$, and a morphism $X \to E$ as the graph of $i_1$. It is then straightforward to verify that these maps together make $A$ a split coequalizer of $p_1 \circ i$ and $p_2 \circ i$.
+With this classification, we can show that $A$ is a quotient for the congruence, with quotient morphism $\Delta_A \subseteq A \times A \subseteq X \times A$. In fact, we can define a morphism $\Delta_A^\circ : A \to X$ as the inverse relation to $\Delta_A$, and a morphism $X \to E$ as the graph of $i_1$. It is then straightforward to verify that these maps together make $A$ a split coequalizer of $q_1$ and $q_2$.
 
 We can also conclude that $E$ is the kernel pair of this quotient, by the general result below.
 
 ::: Lemma
-Suppose we have a congruence $f, g : E \rightrightarrows X$ with a contractible coequalizer
-$$ E \, \overset{f}{\underset{g}{\rightrightarrows}} \, X \overset{e}{\rightarrow} Q $$
+Suppose we have a congruence $q_1, q_2 : E \rightrightarrows X$ with a contractible coequalizer
+$$ E \, \overset{q_1}{\underset{q_2}{\rightrightarrows}} \, X \overset{e}{\rightarrow} Q $$
 with maps in the reverse direction $s : Q \to X$ and $t : X \to E$. Then $E$ is the kernel pair of this quotient, i.e. we have a pullback square
 
 $$
 \begin{CD}
-E @> f >> X \\
-@V g VV @V e VV \\
+E @> q_1 >> X \\
+@V q_2 VV @V e VV \\
 X @> e >> Q.
 \end{CD}
 $$
@@ -96,5 +96,5 @@ $$
 :::
 
 ::: Proof
-Suppose we have generalized elements $x_1, x_2 : U \rightrightarrows X$ with $e x_1 = e x_2$. Then $f t x_1 = x_1$ and $g t x_1 = s e x_1$, so the pair $x_1, s e x_1$ factors through $E$. Similarly, the pair $x_2, s e x_2$ factors through $E$. However, by the assumption, we also have $s e x_1 = s e x_2$. Therefore, since $E$ is a congruence, we conclude that the pair $x_1, x_2$ factors through $E$.
+Suppose we have generalized elements $x_1, x_2 : U \rightrightarrows X$ with $e x_1 = e x_2$. Then $q_1 t x_1 = x_1$ and $q_2 t x_1 = s e x_1$, so the pair $x_1, s e x_1$ factors through $E$. Similarly, the pair $x_2, s e x_2$ factors through $E$. However, by the assumption, we also have $s e x_1 = s e x_2$. Therefore, since $E$ is a congruence, we conclude that the pair $x_1, x_2$ factors through $E$.
 :::

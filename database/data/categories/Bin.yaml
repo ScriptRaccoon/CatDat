@@ -114,7 +114,7 @@ unsatisfied_properties:
 
   - property: co-Malcev
     proof: >-
-      Consider the set $X = \{x\}$ with the relation $R_X = \{(x,x)\}$ and the set $Y = \{x,x'\}$ with the relation $R_Y = \{(x,x),(x',x'),(x,x')\}$. There are two canonical morphisms $q,q' : (X,R_X) \rightrightarrows (Y,R_Y)$ defined by $q(x)=x$ and $q'(x)=x'$. They are jointly surjective and have a common retraction $(Y,R_Y) \to (X,R_X)$, namely the unique map $Y \to X$ sending both $x$ and $x'$ to $x$. Thus, $q,q'$ form a coreflexive corelation. It is not cosymmetric, since otherwise there would be a morphism $s : (Y,R_Y) \to (Y,R_Y)$ satisfying $s(x)=x'$ and $s(x')=x$, which would imply $(x',x) \in R_Y$, contrary to the definition of $R_Y$.
+      Consider the set $X = \{x\}$ with the relation $R_X = \{(x,x)\}$ and the set $Y = \{x,x'\}$ with the relation $R_Y = \{(x,x),(x',x'),(x,x')\}$. There are two canonical morphisms $j_1,j_2 : (X,R_X) \rightrightarrows (Y,R_Y)$ defined by $j_1(x)=x$ and $j_2(x)=x'$. They are jointly surjective and have a common retraction $(Y,R_Y) \to (X,R_X)$, namely the unique map $Y \to X$ sending both $x$ and $x'$ to $x$. Thus, $j_1,j_2$ form a coreflexive corelation. It is not cosymmetric, since otherwise there would be a morphism $s : (Y,R_Y) \to (Y,R_Y)$ satisfying $s(x)=x'$ and $s(x')=x$, which would imply $(x',x) \in R_Y$, contrary to the definition of $R_Y$.
     label: Bin_not_co-Malcev
 
 special_objects:
