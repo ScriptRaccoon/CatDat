@@ -6,13 +6,13 @@ dual: elementary cotopos
 invariant_under_equivalences: true
 
 related:
-  - Grothendieck topos
   - cartesian closed
   - finitely complete
-  - parametrized natural numbers object
   - subobject classifier
+  - Grothendieck topos
   - pretopos
   - quasitopos
+  - parametrized natural numbers object
 
 tags:
   - topos theory
