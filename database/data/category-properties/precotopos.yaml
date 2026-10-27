@@ -1,0 +1,16 @@
+id: precotopos
+relation: is a
+description: A <i>precotopos</i> is a category whose opposite is a pretopos. Equivalently, it is Barr-coexact and coextensive. This terminology is not standard.
+nlab_link: null
+dual: pretopos
+invariant_under_equivalences: true
+
+related:
+  - Barr-coexact
+  - coextensive
+  - elementary cotopos
+  - epi-regular
+
+tags:
+  - topos theory
+  - limit–colimit interaction
