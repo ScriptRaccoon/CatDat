@@ -99,6 +99,57 @@ satisfied_properties:
 
       Since $R \hookrightarrow X \times X$ is an isometry, $R$ is a closed subspace of $X \times X$. It follows that also $U$ is a closed subspace of $X$. Finally, $R$ is the kernel pair of the projection $X \to X/U$ since this is true by construction on the level of vector spaces and the kernel pair carries the $\max$-norm, just like $R$.
 
+  - property: effective cocongruences
+    proof: >-
+      <strong>Idea.</strong> For congruences, we could reduce to vector spaces, where a congruence is just the relation "the difference lies in a subspace". Cocongruences are much harder to grasp directly, but they turn into congruences after dualizing: applying $\Hom(-,\IC)$ to a cocongruence on $X$ yields an equivalence relation on the unit ball of $X^*$, and by the Hahn-Banach theorem a Banach space and its norm are determined by its functionals. So we try to mimic the argument for congruences on the dual side. The equivalence relation is convex, which suggests that it is again given by a subspace of $X^*$, and this subspace should be the annihilator of the equalizer of the cocongruence. Two obstacles have to be overcome: the relation only lives on the unit ball, not on a vector space, so we can only move in small steps; and in order to get back from $X^*$ to $X$, the subspace has to be weak-$*$ closed. This is where the compactness of the unit ball and the Krein–Šmulian theorem enter.
+
+      Let $j_1,j_2 : X \rightrightarrows C$ be a cocongruence in $\Ban$. Let $U \coloneqq \{x \in X : j_1(x) = j_2(x)\}$ be their equalizer, and let $\iota_1,\iota_2 : X \rightrightarrows Z$ be the cokernel pair of the inclusion $U \hookrightarrow X$. Since $j_1,j_2$ agree on $U$, there is a unique morphism $h : Z \to C$ with $h \circ \iota_1 = j_1$ and $h \circ \iota_2 = j_2$. We show that $h$ is an isomorphism, which proves that $j_1,j_2$ is effective.
+
+      Since $j_1,j_2$ are jointly epimorphic and factor through $h$, the morphism $h$ is an epimorphism, i.e. it has dense image (see below). Since an isometric linear map between Banach spaces has closed image, it suffices to prove that $h$ is isometric. For this, it suffices to show that every morphism $\psi : Z \to \IC$ factors as $\psi = \varphi \circ h$ for some morphism $\varphi : C \to \IC$. Indeed, then $|\psi(z)| = |\varphi(h(z))| \leq |h(z)|$ for all $z \in Z$, and since by the Hahn-Banach theorem $|z|$ is the supremum of all $|\psi(z)|$, we get $|z| \leq |h(z)|$. The reverse inequality holds since $h$ is a contraction.
+
+      By the universal property of $Z$, morphisms $Z \to \IC$ correspond to pairs of morphisms $a,b : X \rightrightarrows \IC$ with $a|_U = b|_U$, and $\varphi \circ h$ corresponds to the pair $(\varphi \circ j_1, \varphi \circ j_2)$. Let $B \coloneqq \Hom(X,\IC)$, which is the closed unit ball of the dual space $X^*$, and let
+      $$E \coloneqq \{(\varphi \circ j_1, \varphi \circ j_2) : \varphi \in \Hom(C,\IC)\} \subseteq B \times B.$$
+      We need to show that $(a,b) \in E$ for all $a,b \in B$ with $a|_U = b|_U$.
+
+      By the definition of a cocongruence, $E$ is an equivalence relation on $B$. Since $E$ is the image of the closed unit ball of $C^*$ under the linear map $C^* \to X^* \times X^*$, $\varphi \mapsto (\varphi \circ j_1, \varphi \circ j_2)$, it is convex and satisfies $\lambda E \subseteq E$ for all $\lambda \in \IC$ with $|\lambda| \leq 1$. Since this map is continuous with respect to the weak-$*$ topologies and the closed unit ball of $C^*$ is weak-$*$ compact by the <a href="https://en.wikipedia.org/wiki/Banach%E2%80%93Alaoglu_theorem">Banach–Alaoglu theorem</a>, $E$ is weak-$*$ compact. In particular, $E$ is weak-$*$ closed and norm closed. Now consider
+      $$\begin{align*}
+      D & \coloneqq \{d \in X^* : (d,0) \in E\} \subseteq B, \\
+      N & \coloneqq \textstyle \bigcup_{t > 0} t D \subseteq X^*.
+      \end{align*}$$
+      Then $D$ is convex, weak-$*$ closed, and satisfies $\lambda D \subseteq D$ for $|\lambda| \leq 1$.
+
+      <strong>Claim 1.</strong> $N$ is a linear subspace of $X^*$.
+
+      It contains $0 \in D$. If $f = t d$ with $t > 0$ and $d \in D$, and $\lambda \in \IC$ is non-zero, then $\lambda f = (|\lambda| t) \cdot (\lambda/|\lambda|) d \in N$ since $(\lambda/|\lambda|) d \in D$. If $f = s d$ and $g = t e$ with $s,t > 0$ and $d,e \in D$, then
+      $$f + g = (s + t) \cdot \bigl(\tfrac{s}{s+t} d + \tfrac{t}{s+t} e\bigr) \in N$$
+      since $\tfrac{s}{s+t} d + \tfrac{t}{s+t} e \in D$ by convexity.
+
+      <strong>Claim 2.</strong> For $a,b \in B$ we have $(a,b) \in E$ if and only if $a - b \in N$.
+
+      If $(a,b) \in E$, then also $(-b,-b) \in E$ by reflexivity, and convexity yields
+      $$\bigl(\tfrac{1}{2}(a-b), 0\bigr) = \tfrac{1}{2} (a,b) + \tfrac{1}{2} (-b,-b) \in E.$$
+      Hence $\tfrac{1}{2}(a-b) \in D$ and $a - b \in N$. Conversely, assume $a - b = t d$ with $t > 0$ and $d \in D$. Let $0 < r < 1$. Choose an integer $n \geq 1$ with $\delta \coloneqq rt/n \leq 1 - r$, and define
+      $$z_k \coloneqq r b + k \delta d \in X^*$$
+      for $0 \leq k \leq n$. Then $z_0 = rb$ and $z_n = rb + rtd = ra$. Since
+      $$z_k = rb + \tfrac{k}{n} (ra - rb) = (1 - \tfrac{k}{n}) rb + \tfrac{k}{n} ra,$$
+      we have $|z_k| \leq r \leq 1 - \delta$. Hence $z_k/(1-\delta) \in B$, so that $(z_k/(1-\delta), z_k/(1-\delta)) \in E$ by reflexivity. For $0 \leq k < n$, convexity yields
+      $$(z_{k+1}, z_k) = \delta (d,0) + (1-\delta) \bigl(\tfrac{z_k}{1-\delta}, \tfrac{z_k}{1-\delta}\bigr) \in E.$$
+      By transitivity, $(ra, rb) = (z_n, z_0) \in E$. Since $E$ is norm closed, letting $r \to 1$ gives $(a,b) \in E$.
+
+      <strong>Claim 3.</strong> $N$ is weak-$*$ closed.
+
+      For $b = 0$, Claim 2 says that $N \cap B = D$. Since $N$ is a linear subspace (Claim 1), we get $N \cap tB = t(N \cap B) = tD$ for all $t > 0$, which is weak-$*$ closed. By the <a href="https://en.wikipedia.org/wiki/Krein%E2%80%93Smulian_theorem">Krein–Šmulian theorem</a>, a convex subset of $X^*$ is weak-$*$ closed if its intersections with all closed balls $tB$ are weak-$*$ closed. Hence, $N$ is weak-$*$ closed.
+
+      <strong>Claim 4.</strong> $U = \{x \in X : f(x) = 0 \text{ for all } f \in N\}$.
+
+      Let $x \in U$ and $f \in N$, say $f = t d$ with $t > 0$ and $d \in D$. Since $(d,0) \in E$, there is a morphism $\varphi : C \to \IC$ with $d = \varphi \circ j_1$ and $0 = \varphi \circ j_2$. Hence
+      $$d(x) = \varphi(j_1(x)) = \varphi(j_2(x)) = 0,$$
+      and therefore $f(x) = t d(x) = 0$.
+
+      Conversely, let $x \in X$ with $f(x) = 0$ for all $f \in N$, and let $\varphi : C \to \IC$ be a morphism. Since $(\varphi \circ j_1, \varphi \circ j_2) \in E$, Claim 2 shows that $\varphi \circ j_1 - \varphi \circ j_2 \in N$. Hence $\varphi(j_1(x)) - \varphi(j_2(x)) = 0$. Since this holds for every $\varphi \in \Hom(C,\IC)$, the Hahn-Banach theorem gives $j_1(x) = j_2(x)$, i.e. $x \in U$.
+
+      Now we can finish the proof. Recall that for every linear subspace $M \subseteq X^*$, the functionals on $X$ vanishing on $\{x \in X : f(x) = 0 \text{ for all } f \in M\}$ form the weak-$*$ closure of $M$ (see <a href="https://arxiv.org/abs/2112.11166v8">van Neerven</a>, Prop. 4.49). Since $N$ is weak-$*$ closed (Claim 3), it consists of all functionals on $X$ vanishing on $U$ by Claim 4. Now let $a,b \in B$ with $a|_U = b|_U$. Then $a - b$ vanishes on $U$, so $a - b \in N$, and Claim 2 gives $(a,b) \in E$.
+
 unsatisfied_properties:
   - property: skeletal
     proof: This is trivial.
