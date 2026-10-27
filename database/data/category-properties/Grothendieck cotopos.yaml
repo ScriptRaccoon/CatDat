@@ -1,0 +1,12 @@
+id: Grothendieck cotopos
+relation: is a
+description: A <i>Grothendieck cotopos</i> is a category whose opposite is a Grothendieck topos.
+nlab_link: https://ncatlab.org/nlab/show/cotopos
+dual: Grothendieck topos
+invariant_under_equivalences: true
+
+related:
+  - elementary cotopos
+
+tags:
+  - topos theory
