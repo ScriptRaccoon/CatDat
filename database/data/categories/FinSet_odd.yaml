@@ -80,13 +80,13 @@ unsatisfied_properties:
     proof: 'The map $e : \{0,1,2\} \to \{0,1,2\}$, $0 \mapsto 0$, $1 \mapsto 1$, $2 \mapsto 1$ is idempotent and does not split in $\FinSet_{\odd}$, since a splitting $\{0,1,2\} \to X \to \{0,1,2\}$ would also be a splitting in $\FinSet$, making $X$ isomorphic to $\im(e) = \{0,1\}$.'
 
   - property: cofiltered
-    proof: 'The maps $0,1 : \{\ast\} \rightrightarrows \{0,1,2\}$ are not equalized by any morphism, since this would amount to a set $X$ in $\FinSet_{\odd}$ such that $! : X \to \{*\}$ factors through $\varnothing$, i.e. $X = \varnothing$, which is not a valid object of $\FinSet_{\odd}$.'
+    proof: 'The maps $0,1 : \{\ast\} \rightrightarrows \{0,1,2\}$ are not equalized by any morphism, since this would amount to a set $X$ in $\FinSet_{\odd}$ such that $! : X \to \{\ast\}$ factors through $\varnothing$, i.e. $X = \varnothing$, which is not a valid object of $\FinSet_{\odd}$.'
 
   - property: binary copowers
     proof: A direct proof is possible, but it is best to first establish that the inclusion functor $\FinSet_{\odd} \hookrightarrow \Set$ is cocontinuous. This follows from Lemma 1 <a href="/content/inclusion-functors">here</a> since $\FinSet_{\odd}$ contains the extremal cogenerator $\{0,1,2\}$ of $\Set$. Therefore, binary copowers exist only if $\FinSet_{\odd}$ is closed under binary copowers in $\Set$. But $\{0\} \sqcup \{0\}$ does not have odd cardinality.
 
   - property: natural numbers object
-    proof: By Lemma 2 <a href="/content/natural_numbers_objects">here</a>, if $(N,z,s)$ is a natural numbers object, then $N \cong 1 \sqcup N$. But there is no finite set with this property.
+    proof: By Lemma 2 <a href="/content/natural_numbers_objects">here</a>, if $(N,z,s)$ is a natural numbers object, then $N \cong \{\ast\} \sqcup N$. But there is no finite set with this property.
 
 special_objects:
   terminal object:

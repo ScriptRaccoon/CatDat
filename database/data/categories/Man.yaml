@@ -53,7 +53,7 @@ satisfied_properties:
 
   - property: extremal generator
     proof: >-
-      The $0$-dimensional one-point manifold is a generator since it represents the forgetful functor $\Man \to \Set$. Since we have an epimorphism $\IR \to 1$, we see that $\IR$ is also a generator.
+      The $0$-dimensional one-point manifold is a generator since it represents the forgetful functor $\Man \to \Set$. Since we have an epimorphism $\IR \to \{\ast\}$, we see that $\IR$ is also a generator.
 
       We claim that in fact, $\IR$ is an extremal generator. To see this, suppose we have a smooth map $f : M \to N$ which induces a bijection of smooth curves on $M$ to smooth curves on $N$. By considering constant curves, we must have that $f$ is a bijection on the underlying sets. Now for any point $p \in M$ and any tangent vector $v \in T_{f(p)}(N)$, there exists a smooth curve $\gamma : \IR \to N$ such that $\gamma(0) = f(p)$ and $\gamma'(0) = v$. By the assumption on $f$, there exists a smooth curve $\beta : \IR \to M$ such that $\gamma = f \circ \beta$. By the injectivity of $f$, we must have $\beta(0) = p$, so $\beta'(0) \in T_p(M)$ and $f_*(\beta'(0)) = \gamma'(0) = v$. This shows that $f_* : T_p(M) \to T_{f(p)}(N)$ is surjective, hence $f$ is a submersion whose fibers are singletons. Therefore, by the submersion theorem, $f$ is a local diffeomorphism. Since $f$ is bijective, $f$ must be a diffeomorphism.
 

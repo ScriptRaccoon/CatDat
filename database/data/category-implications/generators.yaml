@@ -62,7 +62,7 @@
     - one-sorted finitary algebraic
   conclusions:
     - extremal generator
-  proof: Pick an algebraic theory that represents the category. The free algebra $F(1)$ on one generator is an extremal generator since it represents the underlying set functor, which is faithful and conservative.
+  proof: Pick an algebraic theory that represents the category. The free algebra $F(\{\ast\})$ on one generator is an extremal generator since it represents the underlying set functor, which is faithful and conservative.
 
 - id: locally-finite_left-cancellative_semi-strongly-connected_extremal-generating-set
   assumptions:

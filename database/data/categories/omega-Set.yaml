@@ -41,7 +41,7 @@ satisfied_properties:
     proof: If $(X, R_X) \twoheadrightarrow (Y, R_Y)$ is an epimorphism, then by the description below, this implies the underlying function $X \to Y$ is surjective. Therefore, if $E$ is the kernel pair of this underlying function, then we can find an equivalent quotient object $(X / E, R_{X / E})$ by transporting $R_X$ to $X / E$. The collection of possible equivalence relations $E$ is then small, and for each $E$, the collection of possible $R_{X / E}$ is also small.
 
   - property: terminal object
-    proof: 'The $\omega$-set $\nabla 1 = (1, \IN \times 1)$ is terminal, since $\nabla$ is a right adjoint and therefore preserves terminal objects.'
+    proof: 'The $\omega$-set $\nabla \{\ast\} = (\{\ast\}, \IN \times \{\ast\})$ is terminal, since $\nabla$ is a right adjoint and therefore preserves terminal objects.'
     check_redundancy: false
 
   - property: binary products
@@ -124,7 +124,7 @@ satisfied_properties:
 
   - property: regular subobject classifier
     proof: >-
-      We claim that $\Omega \coloneqq \nabla 2 = (2, \IN \times 2)$ is a regular subobject classifier, with $\top : 1 \to \Omega$ being the morphism whose underlying set function is $0 \mapsto 1$. To see this, note that from the construction of equalizers above, any regular subobject of $(X, R_X)$ is equivalent to $(X', R_X \cap (\IN \times X'))$ for some $X' \subseteq X$. It is then straightforward to check that the characteristic function $\chi_{X'} : X \to 2$ induces a morphism $(X, R_X) \to \Omega$, and that $(X', R_X \cap (\IN \times X'))$ is also the pullback of $\chi_{X'}$ and $\top$. For the uniqueness of $\chi_{X'}$, observe that for each morphism $\chi : X \to \Omega$, the pullback of $\chi$ and $\top$ has underlying set $\chi^*(\{ 1 \})$ and the morphism to $(X, R_X)$ is the inclusion map. Thus, each morphism $\chi : (X, R_X) \to \Omega$ induces a distinct subobject of $X$ as the pullback of $\chi$ and $\top$.
+      We claim that $\Omega \coloneqq \nabla \{0,1\} = (\{0,1\}, \IN \times \{0,1\})$ is a regular subobject classifier, with $\top : \nabla \{\ast\} \to \Omega$ being the morphism whose underlying set function is $\ast \mapsto 1$. To see this, note that from the construction of equalizers above, any regular subobject of $(X, R_X)$ is equivalent to $(X', R_X \cap (\IN \times X'))$ for some $X' \subseteq X$. It is then straightforward to check that the characteristic function $\chi_{X'} : X \to \{0,1\}$ induces a morphism $(X, R_X) \to \Omega$, and that $(X', R_X \cap (\IN \times X'))$ is also the pullback of $\chi_{X'}$ and $\top$. For the uniqueness of $\chi_{X'}$, observe that for each morphism $\chi : X \to \Omega$, the pullback of $\chi$ and $\top$ has underlying set $\chi^*(\{ 1 \})$ and the morphism to $(X, R_X)$ is the inclusion map. Thus, each morphism $\chi : (X, R_X) \to \Omega$ induces a distinct subobject of $X$ as the pullback of $\chi$ and $\top$.
 
   - property: disjoint finite coproducts
     proof: >-
@@ -137,7 +137,7 @@ satisfied_properties:
       which is empty since the images of $\iota_1$ and $\iota_2$ are disjoint. Since the realization relation of an $\omega$-set is a subset of $\IN$ times its underlying set, the realization relation of the pullback is empty as well. Hence the pullback is the initial object $(\varnothing, \varnothing)$ constructed above.
 
   - property: generator
-    proof: The terminal object $(1, \IN \times 1)$ represents the forgetful functor $\omegaSet \to \Set$ which is clearly faithful. (For the non-trivial direction of the isomorphism between $\Hom_{\omegaSet}((1, \IN \times 1), (X, R_X))$ and $X$, suppose we have $x \in X$. Then there exists $n \in \IN$ such that $n$ realizes $x$; therefore, the total recursive function given by the constant function with image $n$ forms a realizer tracker compatible with the corresponding function $1 \to X$.)
+    proof: The terminal object $(\{\ast\}, \IN \times \{\ast\})$ represents the forgetful functor $\omegaSet \to \Set$ which is clearly faithful. (For the non-trivial direction of the isomorphism between $\Hom_{\omegaSet}((\{\ast\}, \IN \times \{\ast\}), (X, R_X))$ and $X$, suppose we have $x \in X$. Then there exists $n \in \IN$ such that $n$ realizes $x$; therefore, the total recursive function given by the constant function with image $n$ forms a realizer tracker compatible with the corresponding function $\{\ast\} \to X$.)
 
   - property: extremal generating collection
     proof: >-
@@ -155,15 +155,15 @@ satisfied_properties:
 
   - property: extremal cogenerator
     proof: >-
-      We first claim that $\nabla 2$ and $(P(\IN) \setminus \{ \varnothing \}, {\in}_{\IN})$ form an extremal cogenerating collection. To see this, we first consider morphisms to the first member $\nabla 2$ of the family. Note that
-      $$\Hom_{\omegaSet}({-}, \nabla 2) \cong \Hom_{\Set}(U{-}, 2),$$
-      where $U : \omegaSet \to \Set$ is the forgetful functor. Therefore, $\Hom_{\omegaSet}({-}, \nabla 2)$ is isomorphic to the composition of $U$ and the power set functor $P : \Set^{\op} \to \Set$, both of which are faithful. This shows that $\nabla 2$ is a cogenerator, so the collection is also a cogenerating collection.
+      We first claim that $\nabla \{0,1\}$ and $(P(\IN) \setminus \{ \varnothing \}, {\in}_{\IN})$ form an extremal cogenerating collection. To see this, we first consider morphisms to the first member $\nabla \{0,1\}$ of the family. Note that
+      $$\Hom_{\omegaSet}({-}, \nabla \{0,1\}) \cong \Hom_{\Set}(U{-}, \{0,1\}),$$
+      where $U : \omegaSet \to \Set$ is the forgetful functor. Therefore, $\Hom_{\omegaSet}({-}, \nabla \{0,1\})$ is isomorphic to the composition of $U$ and the power set functor $P : \Set^{\op} \to \Set$, both of which are faithful. This shows that $\nabla \{0,1\}$ is a cogenerator, so the collection is also a cogenerating collection.
 
       To show the collection is an extremal cogenerating collection, suppose we have a morphism $f : (X, R_X) \to (Y, R_Y)$ such that ${-} \circ f$ induces bijections of morphism sets to both members of the collection. From the first assumption that
-      $${-} \circ f : \Hom((Y, R_Y), \nabla 2) \to \Hom((X, R_X), \nabla 2)$$
+      $${-} \circ f : \Hom((Y, R_Y), \nabla \{0,1\}) \to \Hom((X, R_X), \nabla \{0,1\})$$
       is a bijection, we see that
-      $${-} \circ f : \Hom_{\Set}(Y, 2) \to \Hom_{\Set}(X, 2)$$
-      is a bijection. Since $2$ is an extremal cogenerator of <a href="/category/Set">$\Set$</a>, we conclude that the underlying function of $f$ is a bijection.
+      $${-} \circ f : \Hom_{\Set}(Y, \{0,1\}) \to \Hom_{\Set}(X, \{0,1\})$$
+      is a bijection. Since $\{0,1\}$ is an extremal cogenerator of <a href="/category/Set">$\Set$</a>, we conclude that the underlying function of $f$ is a bijection.
 
       Now, consider the morphism
       $$g : (X, R_X) \to (P(\IN) \setminus \{ \varnothing \}, {\in}_{\IN})$$
@@ -171,14 +171,14 @@ satisfied_properties:
       $$h : (Y, R_Y) \to (P(\IN) \setminus \{ \varnothing \}, {\in}_{\IN})$$
       such that $g = h \circ f$. Choose a compatible realizer tracker $\code{h} : \IN \dashrightarrow \IN$. Then for any $x\in X$, if $n$ realizes $f(x)$, then $\code{h}(n)$ exists and $\code{h}(n)$ realizes $h(f(x)) = g(x)$. Thus, by definition of $g$, $\code{h}(n)$ is in the set of realizers of $x$, i.e. $\code{h}(n)$ realizes $x$. From the characterization of isomorphisms below, this implies that $f$ is an isomorphism.
 
-      Finally, since $\nabla 2$ and $(P(\IN) \setminus \{ \varnothing \}, {\in}_{\IN})$ both have non-empty underlying sets, they form a strongly connected family (see the proof above that $\omegaSet$ is semi-strongly connected). Therefore, by <a href="/content/generator_construction">this result</a>, the product of these two objects is an extremal cogenerator.
+      Finally, since $\nabla \{0,1\}$ and $(P(\IN) \setminus \{ \varnothing \}, {\in}_{\IN})$ both have non-empty underlying sets, they form a strongly connected family (see the proof above that $\omegaSet$ is semi-strongly connected). Therefore, by <a href="/content/generator_construction">this result</a>, the product of these two objects is an extremal cogenerator.
     references:
       - omega_Set_ssc
       - Set_extremal_cogenerator
 
   - property: parametrized natural numbers object
     proof: >-
-      We claim that $N \coloneqq (\IN, \Delta_{\IN})$, where $\Delta_{\IN}$ is the diagonal, is a parametrized natural numbers object. (In other words, the realization relation is that $m$ realizes $n$ if and only if $m = n$.) First, the zero function $z : 1 \to \IN$ and the successor function $s : \IN \to \IN$ clearly induce morphisms of $\omega$-sets $z : 1 \to N$ and $s : N \to N$. Now, suppose we have $f : (A, R_A) \to (X, R_X)$ and $g : (X, R_X) \to (X, R_X)$. Choose compatible realizer trackers $\code{f}, \code{g} : \IN \dashrightarrow \IN$. Also, let $\Phi : A \times \IN \to X$ be the function $(a, n) \mapsto g^n(f(a))$. Then since the collection of partial recursive functions is closed under primitive recursion, we can also construct a partial recursive function $\code{\Phi}$ such that
+      We claim that $N \coloneqq (\IN, \Delta_{\IN})$, where $\Delta_{\IN}$ is the diagonal, is a parametrized natural numbers object. (In other words, the realization relation is that $m$ realizes $n$ if and only if $m = n$.) First, the zero function $z : \{\ast\} \to \IN$ and the successor function $s : \IN \to \IN$ clearly induce morphisms of $\omega$-sets $z : \nabla \{\ast\} \to N$ and $s : N \to N$. Now, suppose we have $f : (A, R_A) \to (X, R_X)$ and $g : (X, R_X) \to (X, R_X)$. Choose compatible realizer trackers $\code{f}, \code{g} : \IN \dashrightarrow \IN$. Also, let $\Phi : A \times \IN \to X$ be the function $(a, n) \mapsto g^n(f(a))$. Then since the collection of partial recursive functions is closed under primitive recursion, we can also construct a partial recursive function $\code{\Phi}$ such that
       $$\code{\Phi}(\langle b, 0 \rangle) = \code{f}(b)$$
       and
       $$\code{\Phi}(\langle b, n+1 \rangle) = \code{g}(\code{\Phi}(\langle b, n \rangle)).$$
@@ -196,7 +196,7 @@ unsatisfied_properties:
   - property: locally finite
     proof: >-
       The right adjoint $\nabla : \Set \to \omegaSet$ to the forgetful functor is fully faithful. Therefore, for example,
-      $$\Hom_{\omegaSet}(\nabla 1, \nabla \IN) \cong \Hom_{\Set}(1, \IN)$$
+      $$\Hom_{\omegaSet}(\nabla \{\ast\}, \nabla \IN) \cong \Hom_{\Set}(\{\ast\}, \IN)$$
       is infinite.
 
   - property: balanced
@@ -205,7 +205,7 @@ unsatisfied_properties:
 
   - property: co-Malcev
     proof: >-
-      Consider the two possible morphisms $j_1, j_2 : \nabla 1 \rightrightarrows \nabla 2$. This defines a corelation representing the functor which to $(X, R_X)$ assigns the binary relation on $X$ of two elements having a common realizer. That shows that this corelation is coreflexive, since by definition any element of an $\omega$-set has a realizer. However, it is easy to see that it is not cotransitive; for example, in the $\omega$-set
+      Consider the two possible morphisms $j_1, j_2 : \nabla \{\ast\} \rightrightarrows \nabla \{0,1\}$. This defines a corelation representing the functor which to $(X, R_X)$ assigns the binary relation on $X$ of two elements having a common realizer. That shows that this corelation is coreflexive, since by definition any element of an $\omega$-set has a realizer. However, it is easy to see that it is not cotransitive; for example, in the $\omega$-set
       $$\bigl(\{0,1,2\}, \{ (0, 0), (0, 1), (1, 1), (1, 2) \}\bigr),$$
       the elements $0$ and $1$ have a common realizer, as do $1$ and $2$; but $0$ and $2$ do not have a common realizer.
 
@@ -213,8 +213,8 @@ unsatisfied_properties:
     proof: >-
       Let $N \coloneqq (\IN, \Delta_{\IN})$ be the natural numbers object. Then for any $\omega$-set $(X, R_X)$, we claim $\Hom_{\omegaSet}((X, R_X), N)$ is countable. This follows from the fact that any unary partial recursive function $\varphi : \IN \dashrightarrow \IN$ can be a compatible realizer tracker for at most one function $f : X \to \IN$, since any $x\in X$ is realized by some $n\in \IN$, and then we must have that $\varphi(n)$ is defined and $f(x) = \varphi(n)$. Therefore, we get a surjective function from a subset of the unary partial recursive functions to $\Hom_{\omegaSet}((X, R_X), N)$.
 
-      From this, we see that for every infinite set $S$, there is no $S$-indexed copower of $1$, since if $(X, R_X)$ were such a copower, we would have
-      $$\textstyle\Hom_{\omegaSet}((X, R_X), N) \cong \prod_{s \in S} \Hom_{\omegaSet}(1, N) \cong \IN^S,$$
+      From this, we see that for every infinite set $S$, there is no $S$-indexed copower of $\nabla \{\ast\}$, since if $(X, R_X)$ were such a copower, we would have
+      $$\textstyle\Hom_{\omegaSet}((X, R_X), N) \cong \prod_{s \in S} \Hom_{\omegaSet}(\nabla \{\ast\}, N) \cong \IN^S,$$
       which is uncountable.
     check_redundancy: false
 
@@ -222,7 +222,7 @@ unsatisfied_properties:
     proof: >-
       Let $N \coloneqq (\IN, \Delta_{\IN})$ be the natural numbers object. For any $\omega$-set $(X, R_X)$ with a sequence of morphisms $f_n : (X, R_X) \to N$, we can define a function $g : X \to \IN^{\IN}$ which sends $x \in X$ to the sequence $(f_n(x))_{n\in \IN}$. We claim that $g$ has countable image. To see this, choose realizer trackers $\code{f_n} : \IN \dashrightarrow \IN$ compatible with $f_n$. Now let $x \in X$. Then there exists $m \in \IN$ such that $m$ realizes $x$. It follows that $\code{f_n}(m)$ is defined and $\code{f_n}(m) = f_n(x)$ for each $n$. Therefore, the image of $g$ is contained in the set of sequences $(\code{f_n}(m))_{n\in \IN}$ where $m \in \IN$ is such that $\code{f_n}(m)$ is defined for each $n$.
 
-      From this, we see that there is no $\IN$-indexed power of $N$. Suppose $(X, R_X)$ were such a power, with projections $p_n : (X, R_X) \to N$, and let $g : X \to \IN^{\IN}$ be the function associated to $(p_n)_{n \in \IN}$ as above. For any sequence $(a_n) \in \IN^{\IN}$, the morphisms $a_n : 1 \to N$ induce a morphism $1 \to (X, R_X)$, that is, an element $x \in X$ with $p_n(x) = a_n$ for all $n$. Then $g(x) = (a_n)$. Thus, $g$ is surjective, which contradicts the countability of its image, since $\IN^{\IN}$ is uncountable.
+      From this, we see that there is no $\IN$-indexed power of $N$. Suppose $(X, R_X)$ were such a power, with projections $p_n : (X, R_X) \to N$, and let $g : X \to \IN^{\IN}$ be the function associated to $(p_n)_{n \in \IN}$ as above. For any sequence $(a_n) \in \IN^{\IN}$, the morphisms $a_n : \nabla \{\ast\} \to N$ induce a morphism $\nabla \{\ast\} \to (X, R_X)$, that is, an element $x \in X$ with $p_n(x) = a_n$ for all $n$. Then $g(x) = (a_n)$. Thus, $g$ is surjective, which contradicts the countability of its image, since $\IN^{\IN}$ is uncountable.
 
   - property: ℵ₁-filtered colimits
     proof: >-
@@ -290,7 +290,7 @@ special_objects:
   initial object:
     description: $(\varnothing, \varnothing)$
   terminal object:
-    description: $(1, \IN \times 1)$
+    description: $(\{\ast\}, \IN \times \{\ast\})$
   coproducts:
     description: '[binary case] The binary coproduct of $(X, R_X)$ and $(Y, R_Y)$ is $X \sqcup Y$ with realization relation $$R_{X\sqcup Y} \coloneqq \{ (2n, x) \mid (n, x) \in R_X \} \cup \{ (2n+1, y) \mid (n, y) \in R_Y \}.$$'
   products:
@@ -302,7 +302,7 @@ special_morphisms:
     proof: This is easy, since the condition on the existence of $\psi$ just says that the set-level inverse of $f$ is also a morphism in $\omegaSet$.
   monomorphisms:
     description: Morphisms of $\omega$-sets whose underlying set function is injective
-    proof: This follows from the fact that the forgetful functor $\omegaSet \to \Set$ is clearly faithful, and it is representable by the terminal object $(1, \IN \times 1)$.
+    proof: This follows from the fact that the forgetful functor $\omegaSet \to \Set$ is clearly faithful, and it is representable by the terminal object $(\{\ast\}, \IN \times \{\ast\})$.
   regular monomorphisms:
     description: 'A morphism $f : (X, R_X) \to (Y, R_Y)$ is a regular monomorphism if and only if the underlying function $X \to Y$ is injective, and there exists a partial recursive function $\psi : \IN \dashrightarrow \IN$ such that whenever we have $n\in \IN$ and $x\in X$ such that $n$ realizes $f(x) \in Y$, then $\psi(n)$ exists and $\psi(n)$ realizes $x\in X$'
     proof: 'Following the constructions above, we can see that for any morphism $f : (X, R_X) \to (Y, R_Y)$, the equalizer of the cokernel pair of $f$ is $(\im(f), R_Y \cap (\IN \times \im(f)))$; and the condition above is equivalent to the condition that the canonical map $X \to \im(f)$ induces an isomorphism of $\omega$-sets $(X, R_X) \to (\im(f), R_Y \cap (\IN \times \im(f)))$.'

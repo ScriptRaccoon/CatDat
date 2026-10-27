@@ -73,7 +73,7 @@ unsatisfied_properties:
     proof: Its core is <a href="/category/B">$\IB$</a>, which we know is not thin.
 
   - property: generator
-    proof: Let $G$ be a finite set. There are at least two morphisms $G + 2 \rightrightarrows 2$, but there is no morphism $G \to G + 2$ at all. Hence, $G$ is not a generator.
+    proof: Let $G$ be a finite set. There are at least two morphisms $G \sqcup \{0,1\} \rightrightarrows \{0,1\}$, but there is no morphism $G \to G \sqcup \{0,1\}$ at all. Hence, $G$ is not a generator.
 
   - property: connected
     proof: 'If $f : \varnothing \to X$ is surjective, then $X = \varnothing$, and if $f : X \to \varnothing$ is any map, then also $X = \varnothing$. This shows that $\{ \varnothing \}$ is a connected component in this category. (The other connected component consists of all non-empty finite sets.)'
@@ -82,7 +82,7 @@ unsatisfied_properties:
     proof: 'Let $X_n \coloneqq \{1,\dotsc,n\}$. We define the truncation $p_n : X_{n+1} \to X_n$ by extending the identity of $X_n$ with $p_n(n+1) \coloneqq n$. Assume the sequence of truncations $\cdots \to X_2 \to X_1$ has a limit $(f_n : X \to X_n)$ in this category. But $f_n$ is surjective, so that $\card(X) \geq n$ for all $n$. Since $X$ is finite, this is a contradiction.'
 
   - property: binary copowers
-    proof: Assume that the copower $X \coloneqq 2+2$ exists. Since we have a surjective map $2 \to X$, the set $X$ has at most $2$ elements. The codiagonal $X \to 2$ shows that $X$ has at least $2$ elements. Thus, $X \cong 2$. For all finite sets $Y$ we get a bijection $\Hom(2,Y) \cong \Hom(2,Y)^2$, in particular the cardinalities are the same. For $Y=2$ this gives the contradiction $2 = 4$.
+    proof: Let $T \coloneqq \{0,1\}$ and assume that the copower $X \coloneqq T + T$ exists. Since we have a surjective map $T \to X$, the set $X$ has at most $2$ elements. The codiagonal $X \to T$ shows that $X$ has at least $2$ elements. Thus, $X \cong T$. For all finite sets $Y$ we get a bijection $\Hom(T,Y) \cong \Hom(T,Y)^2$, in particular the cardinalities are the same. For $Y = T$ this gives the contradiction $2 = 4$.
 
   - property: locally cocartesian coclosed
     proof: >-

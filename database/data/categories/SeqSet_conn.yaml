@@ -62,7 +62,7 @@ satisfied_properties:
     proof: >-
       Define the map ("truncated subtraction") $s : \IN \to \IN$ by $s(k) = \max(0,k-1)$. We claim that the sequence
       $$\Omega = \bigl(\IN \xrightarrow{s} \IN \xrightarrow{s} \IN \xrightarrow{s} \cdots\bigr)$$
-      is a subobject classifier, where $\top : 1 \to \Omega$ is given by the elements $0 \in \IN$ in every degree. Clearly, $\Omega$ is connected. Consider a monomorphism $U \to X$. By the classification of monomorphisms below, we may assume that $U \subseteq X$ is a subsequence, i.e. $U_n \subseteq X_n$ for each $n$, and the transition maps $X_n \to X_{n+1}$ restrict to the transition maps $U_n \to U_{n+1}$.
+      is a subobject classifier, where $\top : T \to \Omega$ is defined on the terminal object $T$, the constant sequence with value $\{\ast\}$, by the elements $0 \in \IN$ in every degree. Clearly, $\Omega$ is connected. Consider a monomorphism $U \to X$. By the classification of monomorphisms below, we may assume that $U \subseteq X$ is a subsequence, i.e. $U_n \subseteq X_n$ for each $n$, and the transition maps $X_n \to X_{n+1}$ restrict to the transition maps $U_n \to U_{n+1}$.
 
       For $x_n \in X_n$, we claim that there is some $k \geq 0$ such that its image $x_{n+k} \in X_{n+k}$ belongs to $U_{n+k}$. In fact, there is some $r \geq 0$ such that an element $u_{n+r} \in U_{n+r}$ exists, and connectedness of $X$ yields some $k \geq r$ such that the image of $u_{n+r}$ in $X_{n+k}$ is equal to $x_{n+k}$. This image belongs to $U_{n+k}$. Therefore, the map
       $$\chi_n : X_n \to \IN, \quad x_n \mapsto \min \{k \geq 0 : x_{n+k} \in U_{n+k}\}$$
@@ -74,7 +74,7 @@ satisfied_properties:
       \end{CD}$$
       commutes. In other words, if $k$ is the smallest number such that $x_{n+k} \in U_{n+k}$, then $s(k)$ is the smallest number $k'$ such that $x_{n+1+k'} \in U_{n+1+k'}$. If $k=0$, then $x_n \in U_n$, hence $x_{n+1} \in U_{n+1}$, so that $k'=0=s(k)$. Now assume $k > 0$, so that $s(k)=k-1$. Then $k'=k-1$, since $x_{n+1+(k-1)} \in U_{n+1+(k-1)}$ and, if $\ell < k-1$, then $\ell+1 < k$, so $x_{n+1+\ell} = x_{n+(\ell+1)} \notin U_{n+(\ell+1)}$ by the definition of $k$.
 
-      Thus, $\chi = (\chi_n) : X \to \Omega$ is a well-defined morphism of sequences. Since $\chi_n^*(\{0\}) = U_n$ for each $n$, the canonical morphism $U \to X \times_{\Omega} 1$ is an isomorphism. It remains to show that $\chi$ is unique with this property.
+      Thus, $\chi = (\chi_n) : X \to \Omega$ is a well-defined morphism of sequences. Since $\chi_n^*(\{0\}) = U_n$ for each $n$, the canonical morphism $U \to X \times_{\Omega} T$ is an isomorphism. It remains to show that $\chi$ is unique with this property.
 
       Let $\alpha : X \to \Omega$ be another morphism of sequences with $\alpha_n^*(\{0\}) = U_n$ for every $n$, and in particular $(\alpha_n)|_{U_n} = 0$. If $x_n \in X_n$ is any element, choose $k \geq 0$ minimal such that $x_{n+k} \in U_{n+k}$, where $x_{n+k}$ denotes the image of $x_n$ as before. We claim that
       $$\alpha_n(x_n) = k.$$
@@ -156,7 +156,7 @@ unsatisfied_properties:
 
   - property: binary copowers
     proof: >-
-      We show that the coproduct $1+1$ does not exist in $[(\IN,\leq),\Set]_{\conn}$, where $1$ denotes the terminal object, the constant sequence with value $\{\ast\}$. Since a morphism $1 \to X$ corresponds to an element of $X_0$, this would amount to a universal connected sequence of sets $X$ equipped with two elements $x,x' \in X_0$. Choose $k \geq 0$ such that their images in $X_k$ coincide. Then, by the universal property, for every connected sequence $Y$ and every pair of elements $y,y' \in Y_0$, their images in $Y_k$ must coincide. A counterexample is the sequence $Y$ defined by
+      We show that the coproduct $T+T$ does not exist in $[(\IN,\leq),\Set]_{\conn}$, where $T$ denotes the terminal object, the constant sequence with value $\{\ast\}$. Since a morphism $T \to X$ corresponds to an element of $X_0$, this would amount to a universal connected sequence of sets $X$ equipped with two elements $x,x' \in X_0$. Choose $k \geq 0$ such that their images in $X_k$ coincide. Then, by the universal property, for every connected sequence $Y$ and every pair of elements $y,y' \in Y_0$, their images in $Y_k$ must coincide. A counterexample is the sequence $Y$ defined by
       $$\{0,1\} \xrightarrow{\id} \cdots \xrightarrow{\id} \{0,1\} \xrightarrow{!} \{0\} \xrightarrow{!} \{0\} \xrightarrow{!} \cdots,$$
       where $Y_k = \{0,1\}$ and $Y_{k+1}=\{0\}$. It is connected, but the elements $0,1 \in Y_0$ only become equal in $Y_{k+1}$.
       Another counterexample is the subobject classifier $\Omega$, whose elements $0,k+1 \in \Omega_0$ become equal only after $k+1$ steps.
@@ -187,7 +187,7 @@ unsatisfied_properties:
 
   - property: natural numbers object
     proof: >-
-      Assume that a natural numbers object $(N,z,s)$ exists in $[(\IN,\leq),\Set]_{\conn}$. The morphism $z : 1 \to N$ corresponds to an element $z \in N_0$. The functor
+      Assume that a natural numbers object $(N,z,s)$ exists in $[(\IN,\leq),\Set]_{\conn}$. The morphism $z : T \to N$, where $T$ denotes the terminal object, the constant sequence with value $\{\ast\}$, corresponds to an element $z \in N_0$. The functor
       $$[(\IN,\leq),\Set]_{\conn} \to \Set, \quad X \mapsto X_0$$
       has a right adjoint mapping a set $S$ to the connected sequence
       $$S \xrightarrow{!} \{\ast\} \xrightarrow{!} \{\ast\} \xrightarrow{!} \cdots,$$
@@ -195,7 +195,7 @@ unsatisfied_properties:
 
       For every $k \geq 0$ consider the connected sequence $X$ defined by
       $$N_0 \xrightarrow{\id} \cdots \xrightarrow{\id} N_0 \xrightarrow{!} \{\ast\} \xrightarrow{!} \{\ast\} \xrightarrow{!} \cdots,$$
-      where the singleton sets start at index $k+1$. The element $z \in N_0 = X_0$ induces a morphism $z : 1 \to X$. We define the endomorphism $r : X \to X$ by using the map $s_0 : N_0 \to N_0$ at indices $0,\dotsc,k$ and the unique maps at indices $> k$. Since $(N,z,s)$ is a natural numbers object, there is a unique morphism of sequences $f : N \to X$ such that $f_0(z)=z$ and $r \circ f = f \circ s$. Evaluating this equation at index $0$ yields $s_0 \circ f_0 = f_0 \circ s_0$, so that $f_0 = \id_{N_0}$. Furthermore, naturality of $f : N \to X$ for $0 \to k$ shows that the diagram
+      where the singleton sets start at index $k+1$. The element $z \in N_0 = X_0$ induces a morphism $z : T \to X$. We define the endomorphism $r : X \to X$ by using the map $s_0 : N_0 \to N_0$ at indices $0,\dotsc,k$ and the unique maps at indices $> k$. Since $(N,z,s)$ is a natural numbers object, there is a unique morphism of sequences $f : N \to X$ such that $f_0(z)=z$ and $r \circ f = f \circ s$. Evaluating this equation at index $0$ yields $s_0 \circ f_0 = f_0 \circ s_0$, so that $f_0 = \id_{N_0}$. Furthermore, naturality of $f : N \to X$ for $0 \to k$ shows that the diagram
       $$\begin{CD}
       N_0 @>{N_{0 \to k}}>> N_k \\
       @V{\id}VV @VV{f_k}V \\

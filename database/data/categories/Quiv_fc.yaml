@@ -30,8 +30,8 @@ satisfied_properties:
 
   - property: subobject classifier
     proof: >-
-      The previous proofs show that $\Quiv_{\fc} \subseteq \Quiv$ is closed under finite limits. The subobject classifier $\Omega$ of <a href="/category/Quiv">$\Quiv$</a> is finite; see <a href="https://ncatlab.org/nlab/show/Quiv">nLab</a> for a detailed description. Hence, $\top : 1 \to \Omega$ is a morphism in $\Quiv_{\fc}$. If $X \hookrightarrow Y$ is a monomorphism in $\Quiv_{\fc}$, it is also a monomorphism in $\Quiv$ since the inclusion functor preserves pullbacks. Hence, there is a unique morphism of quivers $Y \to \Omega$ such that
-      $$\begin{CD} X @>>> Y \\ @V{!}VV @VVV \\ 1 @>>> \Omega \end{CD}$$
+      The previous proofs show that $\Quiv_{\fc} \subseteq \Quiv$ is closed under finite limits. The subobject classifier $\Omega$ of <a href="/category/Quiv">$\Quiv$</a> is finite; see <a href="https://ncatlab.org/nlab/show/Quiv">nLab</a> for a detailed description. Hence, $\top : T \to \Omega$ is a morphism in $\Quiv_{\fc}$, where $T$ denotes the terminal quiver (having one vertex and one loop). If $X \hookrightarrow Y$ is a monomorphism in $\Quiv_{\fc}$, it is also a monomorphism in $\Quiv$ since the inclusion functor preserves pullbacks. Hence, there is a unique morphism of quivers $Y \to \Omega$ such that
+      $$\begin{CD} X @>>> Y \\ @V{!}VV @VVV \\ T @>>> \Omega \end{CD}$$
       is a pullback square in $\Quiv$, i.e. a pullback square in $\Quiv_{\fc}$.
 
   - property: infinitary extensive

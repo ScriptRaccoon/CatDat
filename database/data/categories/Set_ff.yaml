@@ -89,7 +89,7 @@ unsatisfied_properties:
     proof: This is trivial.
 
   - property: locally finite
-    proof: If $X$ is an infinite set, there are infinitely many maps $1 \to X$. They are injective and hence finite-to-one.
+    proof: If $X$ is an infinite set, there are infinitely many maps $\{\ast\} \to X$. They are injective and hence finite-to-one.
 
   - property: strongly connected
     proof: Already $\Set$ is not strongly connected.
@@ -98,7 +98,7 @@ unsatisfied_properties:
     proof: 'More generally, if $X,Y$ are two non-empty sets such that $X \times Y$ exists in $\Set_\ff$, then both $X$ and $Y$ must be finite. In fact, the forgetful functor to $\Set$ is representable, so it must preserve products. This means we can assume $X \times Y$ is the usual cartesian product with the usual projections. Since $p_1 : X \times Y \to X$ is finite-to-one and $X$ is non-empty, $Y$ is finite. By symmetry, also $X$ is finite. (Conversely, if $X$ and $Y$ are finite, or one of them is empty, then indeed $X \times Y$ exists.)'
 
   - property: countable copowers
-    proof: 'Assume that the copower $X \coloneqq \IN \otimes 1$ exists, where $1$ is the singleton set. This is a set with a map $i : \IN \to X$ (not necessarily finite-to-one) such that for every other such map $j : \IN \to Y$ there is a unique finite-to-one map $f : X \to Y$ with $f \circ i = j$. Applying this to $j : \IN \to 1$, we see that $X$ is finite. Applying the universal property to maps $j : \IN \to \{0,1\}$, we see that for every subset $E \subseteq \IN$ there is a unique finite subset $F \subseteq X$ with $i^*(F) = E$. But finiteness of $F$ is automatic, so $i^* : P(X) \to P(\IN)$ is bijective. But then $P(\IN)$ is finite, which is absurd.'
+    proof: 'Assume that the copower $X \coloneqq \IN \otimes \{\ast\}$ exists. This is a set with a map $i : \IN \to X$ (not necessarily finite-to-one) such that for every other such map $j : \IN \to Y$ there is a unique finite-to-one map $f : X \to Y$ with $f \circ i = j$. Applying this to $j : \IN \to \{\ast\}$, we see that $X$ is finite. Applying the universal property to maps $j : \IN \to \{0,1\}$, we see that for every subset $E \subseteq \IN$ there is a unique finite subset $F \subseteq X$ with $i^*(F) = E$. But finiteness of $F$ is automatic, so $i^* : P(X) \to P(\IN)$ is bijective. But then $P(\IN)$ is finite, which is absurd.'
 
   - property: filtered
     proof: 'Consider the maps $f,g : \IN \rightrightarrows \IN$ defined by $f(x)=x$ and $g(x)=2x$. They are injective, hence finite-to-one. If a map $h : \IN \to X$ coequalizes them, we have $h(x)=h(2x)$, in particular $h(1)=h(2^n)$ for all $n \in \IN$. Thus, $h$ is not finite-to-one.'
@@ -107,7 +107,7 @@ unsatisfied_properties:
     proof: Consider the set $[n] \coloneqq \{0,\dotsc,n\}$ for $n \in \IN$. The forgetful functor to $\Set$ is representable (by the singleton set), hence preserves all limits. Thus, if the diagram of truncation maps $\cdots \twoheadrightarrow [2] \twoheadrightarrow [1] \twoheadrightarrow [0]$ has a limit in $\Set_\ff$, its underlying set is isomorphic to the limit taken in $\Set$, which is $\IN \cup \{\infty\}$. But there is no finite-to-one map $\IN \cup \{\infty\} \to [0]$.
 
   - property: cogenerating collection
-    proof: 'Suppose that $S$ is an essentially small collection of objects of $\Set_\ff$, and let $\kappa$ be an uncountable cardinal greater than $\card(Q)$ for each $Q \in S$. Then for each $Q \in S$, $\Hom(\kappa, Q) = \varnothing$ (or else we would have $\kappa = \card(\kappa) \le \aleph_0 \cdot \card(Q) = \max(\aleph_0, \card(Q)) < \kappa$, giving a contradiction). This makes it impossible for any morphisms from $\kappa$ to an object of $S$ to distinguish the two morphisms $0, 1 : 1 \rightrightarrows \kappa$.'
+    proof: 'Suppose that $S$ is an essentially small collection of objects of $\Set_\ff$, and let $\kappa$ be an uncountable cardinal greater than $\card(Q)$ for each $Q \in S$. Then for each $Q \in S$, $\Hom(\kappa, Q) = \varnothing$ (or else we would have $\kappa = \card(\kappa) \le \aleph_0 \cdot \card(Q) = \max(\aleph_0, \card(Q)) < \kappa$, giving a contradiction). This makes it impossible for any morphisms from $\kappa$ to an object of $S$ to distinguish the two morphisms $0, 1 : \{\ast\} \rightrightarrows \kappa$.'
 
 special_objects:
   initial object:
@@ -124,4 +124,4 @@ special_morphisms:
     proof: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the singleton), hence preserves monomorphisms.
   epimorphisms:
     description: surjective maps with finite fibers
-    proof: 'For the non-trivial direction, if $f : X \to Y$ is an epimorphism in this category, then in particular $f^* : \Hom(Y,2) \to \Hom(X,2)$ is injective, which identifies with $f^* : E(Y) \to E(X)$, where $E(-)$ denotes the set of finite subsets. Then for all $y \in Y$ we have $f^*(\{y\}) \neq f^*(\varnothing) = \varnothing$, so that $y$ has a preimage.'
+    proof: 'For the non-trivial direction, if $f : X \to Y$ is an epimorphism in this category, then in particular $f^* : \Hom(Y,\{0,1\}) \to \Hom(X,\{0,1\})$ is injective, which identifies with $f^* : E(Y) \to E(X)$, where $E(-)$ denotes the set of finite subsets. Then for all $y \in Y$ we have $f^*(\{y\}) \neq f^*(\varnothing) = \varnothing$, so that $y$ has a preimage.'

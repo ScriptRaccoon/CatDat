@@ -7,14 +7,14 @@ description: We describe which functors on discrete categories are continuous or
 
 Let $\S$ be a discrete category. Thus, a functor $F : \S \to \C$ is the same as a family of objects $F(s) \in \C$ indexed by the objects $s \in \S$. Here, we want to determine under which conditions $F$ is continuous (or cocontinuous). The case $\S = \varnothing$ is rather boring, which is why we assume from now on that $\S \neq \varnothing$, i.e. that $\S$ is inhabited.
 
-First, we consider the trivial case $\S = 1$.
+First, we consider the trivial case $\S = \1$.
 
 ::: Lemma 1
-Consider the trivial category $1 = \{0\}$ with a unique object $0$. Let $F : 1 \to \C$ be a functor corresponding to an object $F(0) \in \C$. Then $F$ is continuous if and only if $F(0)$ is a terminal object in $\C$.
+Consider the trivial category $\1$ with a unique object $0$. Let $F : \1 \to \C$ be a functor corresponding to an object $F(0) \in \C$. Then $F$ is continuous if and only if $F(0)$ is a terminal object in $\C$.
 :::
 
 ::: Proof
-If $F$ is continuous, it preserves terminal objects. Since $0 \in 1$ is terminal, it follows that $F(0) \in \C$ is terminal. Conversely, suppose that $F(0) \in \C$ is terminal. Then $F$ is continuous: for every index category $\I$, there is a unique diagram $D : \I \to 1$, namely $D(i) = 0$ and $D(i \to j) = \id_0$. Its limit is $0$, with the universal cone $(\id_0 : 0 \to D(i))_{i \in \I}$. We need to show that $(\id_{F(0)} : F(0) \to F(0))_{i \in \I}$ is a universal cone in $\C$. This is easy to see using that $F(0)$ is terminal.
+If $F$ is continuous, it preserves terminal objects. Since $0 \in \1$ is terminal, it follows that $F(0) \in \C$ is terminal. Conversely, suppose that $F(0) \in \C$ is terminal. Then $F$ is continuous: for every index category $\I$, there is a unique diagram $D : \I \to \1$, namely $D(i) = 0$ and $D(i \to j) = \id_0$. Its limit is $0$, with the universal cone $(\id_0 : 0 \to D(i))_{i \in \I}$. We need to show that $(\id_{F(0)} : F(0) \to F(0))_{i \in \I}$ is a universal cone in $\C$. This is easy to see using that $F(0)$ is terminal.
 :::
 
 ::: Lemma 2

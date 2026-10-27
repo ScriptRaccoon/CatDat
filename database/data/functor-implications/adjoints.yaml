@@ -48,7 +48,7 @@
       - trivial
   conclusions:
     - coreflector
-  proof: 'Let $F : \C \to 1$ be the unique functor into the trivial category, and assume that $\C$ has an initial object $X$. Then the constant functor $X : 1 \to \C$ is fully faithful and left adjoint to $F$ because $\Hom(X(*),Y) \cong * \cong \Hom(*,F(Y))$.'
+  proof: 'Let $F : \C \to \1$ be the unique functor into the trivial category, and assume that $\C$ has an initial object $X$. Then the constant functor $X : \1 \to \C$ is fully faithful and left adjoint to $F$ because $\Hom(X(*),Y) \cong * \cong \Hom(*,F(Y))$.'
 
 - id: reflector_preserves_terminal_objects
   assumptions:

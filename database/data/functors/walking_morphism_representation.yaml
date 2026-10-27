@@ -6,7 +6,7 @@ associated:
   codomain: Set
   left_adjoint: null
   right_adjoint: null
-description: This is the functor $I \to \Set$ that maps the universal morphism $0 \to 1$ to the unique map $\varnothing \to \{*\}$ in $\Set$. It provides a very simple example of a functor that preserves coequalizers (and hence regular epimorphisms) but does not preserve epimorphisms.
+description: This is the functor $I \to \Set$ that maps the universal morphism $0 \to 1$ to the unique map $\varnothing \to \{\ast\}$ in $\Set$. It provides a very simple example of a functor that preserves coequalizers (and hence regular epimorphisms) but does not preserve epimorphisms.
 nlab_link: null
 
 tags:
@@ -29,7 +29,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: preserves epimorphisms
-    proof: The universal morphism $0 \to 1$ is an epimorphism in $I$ (simply because $I$ is thin), but its image $\varnothing \to \{*\}$ in $\Set$ is not an epimorphism.
+    proof: The universal morphism $0 \to 1$ is an epimorphism in $I$ (simply because $I$ is thin), but its image $\varnothing \to \{\ast\}$ in $\Set$ is not an epimorphism.
 
   - property: dominant
     proof: This is trivial.

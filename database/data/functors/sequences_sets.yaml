@@ -40,7 +40,7 @@ unsatisfied_properties:
     proof: A finite set with at least $2$ elements is not contained in the essential image.
 
   - property: essentially injective
-    proof: There is an isomorphism $2^{\IN} \cong 2^{2 \cdot \IN} \cong 4^{\IN}$. There are also counterexamples for infinite sets, such as $\IN^{\IN} \cong 2^{\IN} \cong \IR \cong \IR^{\IN}$.
+    proof: We have $\{0,1\}^{\IN} \cong \{0,1\}^{\IN \sqcup \IN} \cong (\{0,1\} \times \{0,1\})^{\IN}$, but $\{0,1\} \not\cong \{0,1\} \times \{0,1\}$. There are also counterexamples for infinite sets, such as $\IN^{\IN} \cong \{0,1\}^{\IN} \cong \IR \cong \IR^{\IN}$, but $\IN \not\cong \IR$.
 
   - property: finitary
     proof: >-

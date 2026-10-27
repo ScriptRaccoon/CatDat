@@ -68,7 +68,7 @@ satisfied_properties:
     proof: >-
       The proof will be similar to the one for <a href="/category/Met">$\Met$</a>. Namely, let $G$ be the set $\IR_{\ge 0} \sqcup \{ 0' \}$, equipped with the metric where $d(x,y) = 0$ if $x=y$ and otherwise $d(x,y) = x+y$ for $x, y \in \IR_{\ge 0}$, and $d(x, 0') = d(0', x) = x$ for $x \in \IR_{\ge 0}$. We will show $G$ is an extremal generator for $\PMet$.
 
-      First, to see $G$ is a generator, note that the one-point metric space is a generator since it represents the forgetful functor $\PMet\to \Set$ which is faithful. Since we have an epimorphism $! : G \twoheadrightarrow 1$, $G$ is also a generator.
+      First, to see $G$ is a generator, note that the one-point metric space is a generator since it represents the forgetful functor $\PMet\to \Set$ which is faithful. Since we have an epimorphism $! : G \twoheadrightarrow \{\ast\}$, $G$ is also a generator.
 
       Now, suppose that $f : X \to Y$ is a non-expansive map of pseudo-metric spaces such that $f \circ {-} : \Hom(G, X) \to \Hom(G, Y)$ is a bijection. By considering constant maps from $G$, we see that $f$ is a bijection on underlying sets. Now suppose we have $x_1, x_2 \in X$ with $d(f(x_1), f(x_2)) = \varepsilon \ge 0$. Then there is a non-expansive map $\varphi : G \to Y$ which maps $\varepsilon$ to $f(x_2)$ and every other element of $G$ to $f(x_1)$. Therefore, there is a non-expansive map $\psi : G \to X$ such that $\varphi = f \circ \psi$. Since $f$ is injective on underlying sets, we must have $\psi(\varepsilon) = x_2$ and $\psi(0') = x_1$. Hence,
       $$\begin{align*}
@@ -114,10 +114,10 @@ unsatisfied_properties:
     proof: The coproduct of two non-empty pseudo-metric spaces does not exist; see <a href="https://math.stackexchange.com/questions/1778408">MSE/1778408</a> (the proof also works for pseudo-metric spaces). For example, the copower $\IR \sqcup \IR$ does not exist. We only get coproducts when allowing $\infty$ as a distance.
 
   - property: natural numbers object
-    proof: By Lemma 2 <a href="/content/natural_numbers_objects">here</a>, if $(N,z,s)$ is a natural numbers object, then $N \cong 1 \sqcup N$. Since there is a map $1 \to N$, we have $N \neq \varnothing$. However, the coproduct of two non-empty pseudo-metric spaces does not exist; see <a href="https://math.stackexchange.com/questions/1778408">MSE/1778408</a>.
+    proof: By Lemma 2 <a href="/content/natural_numbers_objects">here</a>, if $(N,z,s)$ is a natural numbers object, then $N \cong \{\ast\} \sqcup N$. Since there is a map $\{\ast\} \to N$, we have $N \neq \varnothing$. However, the coproduct of two non-empty pseudo-metric spaces does not exist; see <a href="https://math.stackexchange.com/questions/1778408">MSE/1778408</a>.
 
   - property: effective cocongruences
-    proof: 'The proof is similar to the one for <a href="/category/Top">$\Top$</a>: Equip a two-point set with the zero metric; this pseudo-metric space represents the functor taking a pseudo-metric space to the pairs of points with $d(x,y) = 0$. In this case, once you conclude $Z = \varnothing$, the map $h : Z \to 1$ does not have any cokernel pair, since that would have to be a coproduct $1+1$, which does not exist.'
+    proof: 'The proof is similar to the one for <a href="/category/Top">$\Top$</a>: Equip a two-point set with the zero metric; this pseudo-metric space represents the functor taking a pseudo-metric space to the pairs of points with $d(x,y) = 0$. In this case, once you conclude $Z = \varnothing$, the map $h : Z \to \{\ast\}$ does not have any cokernel pair, since that would have to be a coproduct $\{\ast\} \sqcup \{\ast\}$, which does not exist.'
     references:
       - Top_no_effective_cocongruences
 

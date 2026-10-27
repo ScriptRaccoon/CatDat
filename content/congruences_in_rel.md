@@ -12,7 +12,7 @@ $$R_* : P(X) \to P(Y),\, S \mapsto \bigl\{ y\in Y \mid \exists x\in S, (x, y) \i
 is injective, and it is an isomorphism if and only if $R$ is the graph of a bijection $X \to Y$ in $\Set$.
 In particular, we get
 $$i_* : P(E) \to P(X + X) \cong P(X) \times P(X)$$
-which must be injective. It must also preserve arbitrary unions and in particular be inclusion-preserving. From the assumption that $q_1, q_2$ is a congruence, since the functor $(P, {-}_*) : \Rel \to \Set$ is representable by the object 1, we see that $i_*$ must have image given by an equivalence relation $\sim$ on $P(X)$. Note also that since $i_*$ preserves arbitrary unions, we must have that $\sim$ respects arbitrary unions.
+which must be injective. It must also preserve arbitrary unions and in particular be inclusion-preserving. From the assumption that $q_1, q_2$ is a congruence, since the functor $(P, {-}_*) : \Rel \to \Set$ is representable by the object $\{\ast\}$, we see that $i_*$ must have image given by an equivalence relation $\sim$ on $P(X)$. Note also that since $i_*$ preserves arbitrary unions, we must have that $\sim$ respects arbitrary unions.
 
 Since the symmetry morphism $s : E \to E$ satisfies $s^2 = \id$, it must be the graph of an involution $s_0$ on $E$, where $s_0$ is a morphism in $\Set$.
 

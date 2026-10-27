@@ -1,6 +1,6 @@
 id: Set_cartesian
 name: cartesian symmetric monoidal category of sets
-notation: $(\Set,\times,1)$
+notation: $(\Set,\times,\{\ast\})$
 associated:
   underlying_category: Set
 description: Every category with finite products (also called a cartesian category) can be endowed with a symmetric monoidal structure, where $1$ is the terminal object and $\otimes$ is the product $\times$. In this case, we apply this to the category $\Set$.

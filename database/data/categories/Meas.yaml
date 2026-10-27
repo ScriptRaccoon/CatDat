@@ -66,11 +66,11 @@ satisfied_properties:
 
   - property: extremal cogenerator
     proof: >-
-      First, take the two-element set $2$ endowed with the trivial $\sigma$-algebra (where only $\varnothing$ and $2$ are measurable), and use that $2$ is a cogenerator for $\Set$ to show that $2$ with the trivial $\sigma$-algebra is a cogenerator for $\Meas$.
+      First, take the set $\{0,1\}$ endowed with the trivial $\sigma$-algebra (where only $\varnothing$ and $\{0,1\}$ are measurable), and use that $\{0,1\}$ is a cogenerator for $\Set$ to show that $\{0,1\}$ with the trivial $\sigma$-algebra is a cogenerator for $\Meas$.
 
-      Now, we claim that adding the two-element set $2$ endowed with the discrete $\sigma$-algebra (where every subset is measurable) gives an extremal cogenerating collection. To see this, suppose we have a morphism $f : (X, \M_X) \to (Y, \M_Y)$ such that ${-} \circ f : \Hom(Y, Q) \to \Hom(X, Q)$ is a bijection if $Q$ is either measurable space. Since $2$ with the trivial $\sigma$-algebra represents taking the power set of the underlying set, and <a href="/functor/power_set_contravariant">the contravariant power set functor on $\Set$</a> is conservative, we conclude that $f$ is a bijection on the underlying sets. Also, since $2$ with the discrete $\sigma$-algebra represents the functor $(X, \M_X) \mapsto \M_X$, we see that $f^* : \M_Y \to \M_X$ is also a bijection. This shows that $f$ is an isomorphism of measurable spaces.
+      Now, we claim that adding the set $\{0,1\}$ endowed with the discrete $\sigma$-algebra (where every subset is measurable) gives an extremal cogenerating collection. To see this, suppose we have a morphism $f : (X, \M_X) \to (Y, \M_Y)$ such that ${-} \circ f : \Hom(Y, Q) \to \Hom(X, Q)$ is a bijection if $Q$ is either measurable space. Since $\{0,1\}$ with the trivial $\sigma$-algebra represents taking the power set of the underlying set, and <a href="/functor/power_set_contravariant">the contravariant power set functor on $\Set$</a> is conservative, we conclude that $f$ is a bijection on the underlying sets. Also, since $\{0,1\}$ with the discrete $\sigma$-algebra represents the functor $(X, \M_X) \mapsto \M_X$, we see that $f^* : \M_Y \to \M_X$ is also a bijection. This shows that $f$ is an isomorphism of measurable spaces.
 
-      Finally, using <a href="/content/generator_construction">this result</a>, we conclude that the product of these two measurable spaces with underlying set $2$ is an extremal cogenerator of $\Meas$.
+      Finally, using <a href="/content/generator_construction">this result</a>, we conclude that the product of these two measurable spaces with underlying set $\{0,1\}$ is an extremal cogenerator of $\Meas$.
     references:
       - Set_extremal_cogenerator
 
@@ -140,8 +140,8 @@ unsatisfied_properties:
 
   - property: infinitary distributive
     proof: >-
-      Let $X$ be a set of cardinality $> 2^{\aleph_0}$. We equip $X$ with the discrete $\sigma$-algebra. If $1$ denotes the singleton space, we therefore have $X \cong \coprod_{x \in X} 1$ in $\Meas$. However, we claim that the canonical bijective measurable map
-      $$\textstyle\coprod_{x,y \in X} 1 \to X \times X$$
+      Let $X$ be a set of cardinality $> 2^{\aleph_0}$. We equip $X$ with the discrete $\sigma$-algebra. Therefore, $X \cong \coprod_{x \in X} \{\ast\}$ in $\Meas$. However, we claim that the canonical bijective measurable map
+      $$\textstyle\coprod_{x,y \in X} \{\ast\} \to X \times X$$
       is not an isomorphism, i.e. that $X \times X$ does not carry the discrete $\sigma$-algebra. More precisely, we will show that the diagonal $\Delta \subseteq X \times X$ is not measurable. (This is well-known and is remarked for example in <a href="https://doi.org/10.1515/9783110203592">Wengenroth</a>, end of Ch. 1, but we include the proof nevertheless.)
 
       Assume that $\Delta \subseteq X \times X$ is measurable. Then (cf. <a href="https://math.stackexchange.com/questions/61617">MSE/61617</a>) there is a countable family of rectangles $(A_n \times B_n)_{n \in \IN}$ such that $\Delta \in \sigma(\{A_n \times B_n : n \in \IN\})$. Consider the product of the characteristic functions
@@ -174,7 +174,7 @@ special_morphisms:
     proof: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
   epimorphisms:
     description: surjective measurable maps
-    proof: Use the same proof as for sets, where $2 = \{0,1\}$ is endowed with the trivial $\sigma$-algebra.
+    proof: Use the same proof as for sets, where $\{0,1\}$ is endowed with the trivial $\sigma$-algebra.
   regular monomorphisms:
     description: embeddings
     proof: '(This is the same proof as for <a href="/category/Top">$\Top$</a>.) Equalizers are embeddings by their construction. Conversely, if $f : X \to Y$ is an embedding, then $f$ is the equalizer of the two characteristic maps $\chi_Y, \chi_{f(X)} : Y \rightrightarrows \{0,1\}$, where $\{0,1\}$ carries the trivial $\sigma$-algebra.'
