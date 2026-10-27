@@ -1989,6 +1989,10 @@
 		{
 			"type": "category",
 			"id": "elementary cotopos"
+		},
+		{
+			"type": "category",
+			"id": "Grothendieck cotopos"
 		}
 	]
 }
