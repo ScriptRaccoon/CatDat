@@ -46,11 +46,11 @@ satisfied_properties:
     label: Proj_fg(Re)_self-dual
 
   - property: quotients of congruences
-    proof: 'Let $p_1,p_2 : E \rightrightarrows M$ be a congruence in $\Proj_\fg(R)$. In particular, it is a reflexive relation in $R{-}\Mod$. Thus, there is some submodule $U \subseteq M$ such that $E$ is isomorphic to the module $\{(x,y) \in M^2 : x-y \in U\}$, where $p_1,p_2$ are the two evident projections. Since $E \cong U \oplus M$ and $E$ is finitely generated and projective, it follows that $U$ is finitely generated and projective. Moreover, the coequalizer of $p_1,p_2$ in $R{-}\Mod$ is given by $M/U$, which is clearly finitely generated, and we claim that $M/U$ is also projective. For this, it suffices to prove that the monomorphism $U \hookrightarrow M$ splits, since then $M/U$ is a direct summand of $M$. But every monomorphism splits in this category since it is self-dual and every epimorphism splits by their classification below.'
+    proof: 'Let $q_1,q_2 : E \rightrightarrows M$ be a congruence in $\Proj_\fg(R)$. In particular, it is a reflexive relation in $R{-}\Mod$. Thus, there is some submodule $U \subseteq M$ such that $E$ is isomorphic to the module $\{(x,y) \in M^2 : x-y \in U\}$, where $q_1,q_2$ are the two evident projections. Since $E \cong U \oplus M$ and $E$ is finitely generated and projective, it follows that $U$ is finitely generated and projective. Moreover, the coequalizer of $q_1,q_2$ in $R{-}\Mod$ is given by $M/U$, which is clearly finitely generated, and we claim that $M/U$ is also projective. For this, it suffices to prove that the monomorphism $U \hookrightarrow M$ splits, since then $M/U$ is a direct summand of $M$. But every monomorphism splits in this category since it is self-dual and every epimorphism splits by their classification below.'
     label: Proj_fg(Re)_dual_numbers_quotients_congruences
 
   - property: effective congruences
-    proof: 'We saw before that every congruence $p_1,p_2 : E \rightrightarrows M$ in $\Proj_\fg(R)$ is isomorphic to $\{(x,y) \in M^2 : x-y \in U\}$ for some direct summand $U \subseteq M$, where $p_1,p_2$ are the two projections. Thus, it is the kernel pair of the projection $M \to M/U$, which indeed lies in $\Proj_\fg(R)$.'
+    proof: 'We saw before that every congruence $q_1,q_2 : E \rightrightarrows M$ in $\Proj_\fg(R)$ is isomorphic to $\{(x,y) \in M^2 : x-y \in U\}$ for some direct summand $U \subseteq M$, where $q_1,q_2$ are the two projections. Thus, it is the kernel pair of the projection $M \to M/U$, which indeed lies in $\Proj_\fg(R)$.'
     references:
       - Proj_fg(Re)_dual_numbers_quotients_congruences
 

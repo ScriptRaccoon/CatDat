@@ -50,56 +50,56 @@ Let $\C$ be a balanced category with good pushouts of monomorphisms and equalize
 :::
 
 ::: Proof
-Let $X \in \C$ be an object, and let $i_1,i_2 : X \rightrightarrows Y$ be a cocongruence. Since it is coreflexive, there exists a morphism $r : Y \to X$ satisfying
+Let $X \in \C$ be an object, and let $j_1,j_2 : X \rightrightarrows Y$ be a cocongruence. Since it is coreflexive, there exists a morphism $r : Y \to X$ satisfying
 
-$$r \circ i_1 = \id_X, \quad r \circ i_2 = \id_X.$$
+$$r \circ j_1 = \id_X, \quad r \circ j_2 = \id_X.$$
 
-In particular, $i_1$ and $i_2$ are monomorphisms. Since the cocongruence is cotransitive, there exists a morphism
+In particular, $j_1$ and $j_2$ are monomorphisms. Since the cocongruence is cotransitive, there exists a morphism
 
-$$c : Y \to Y \sqcup_{i_2,X,i_1} Y$$
+$$c : Y \to Y \sqcup_{j_2,X,j_1} Y$$
 
 satisfying
 
-$$c \circ i_1 = u_1 \circ i_1, \quad c \circ i_2 = u_2 \circ i_2,$$
+$$c \circ j_1 = u_1 \circ j_1, \quad c \circ j_2 = u_2 \circ j_2,$$
 
-where $u_1,u_2 : Y \rightrightarrows Y \sqcup_{i_2,X,i_1} Y$ are the pushout inclusions satisfying $u_1 i_2 = u_2 i_1$. We will not use the fact that the cocongruence is cosymmetric; this will follow automatically. Consider the equalizer
+where $u_1,u_2 : Y \rightrightarrows Y \sqcup_{j_2,X,j_1} Y$ are the pushout inclusions satisfying $u_1 j_2 = u_2 j_1$. We will not use the fact that the cocongruence is cosymmetric; this will follow automatically. Consider the equalizer
 
 $$e : E \hookrightarrow X$$
 
-of $i_1$ and $i_2$. Since $i_1$ and $i_2$ agree on $E$, there exists a unique morphism
+of $j_1$ and $j_2$. Since $j_1$ and $j_2$ agree on $E$, there exists a unique morphism
 
 $$\varphi : X \sqcup_E X \to Y$$
 
-defined by $\varphi \circ j_1 = i_1$ and $\varphi \circ j_2 = i_2$, where $j_1,j_2 : X \rightrightarrows X \sqcup_E X$ are the two inclusions.
+defined by $\varphi \circ i_1 = j_1$ and $\varphi \circ i_2 = j_2$, where $i_1,i_2 : X \rightrightarrows X \sqcup_E X$ are the two inclusions.
 
-We must show that $\varphi$ is an isomorphism. It is clearly an epimorphism, since $i_1$ and $i_2$ are jointly epimorphic by assumption. Since $\C$ is balanced, it therefore suffices to prove that $\varphi$ is a monomorphism.
+We must show that $\varphi$ is an isomorphism. It is clearly an epimorphism, since $j_1$ and $j_2$ are jointly epimorphic by assumption. Since $\C$ is balanced, it therefore suffices to prove that $\varphi$ is a monomorphism.
 
 We will show that even the morphism
 
-$$\gamma \coloneqq c \circ \varphi : X \sqcup_E X \to Y \sqcup_{i_2,X,i_1} Y$$
+$$\gamma \coloneqq c \circ \varphi : X \sqcup_E X \to Y \sqcup_{j_2,X,j_1} Y$$
 
 is a monomorphism. It is characterized by
 
-$$\gamma \circ j_1 = c \circ \varphi \circ j_1 = c \circ i_1 = u_1 \circ i_1,$$
-$$\gamma \circ j_2 = c \circ \varphi \circ j_2 = c \circ i_2 = u_2 \circ i_2.$$
+$$\gamma \circ i_1 = c \circ \varphi \circ i_1 = c \circ j_1 = u_1 \circ j_1,$$
+$$\gamma \circ i_2 = c \circ \varphi \circ i_2 = c \circ j_2 = u_2 \circ j_2.$$
 
 In other words, $\gamma$ is induced by the diagram of monomorphisms
 
 $$
 \begin{CD}
-X @>{i_1}>> Y \\
-@A{e}AA @AA{i_2}A \\
+X @>{j_1}>> Y \\
+@A{e}AA @AA{j_2}A \\
 E @>>{e}> X \\
-@V{e}VV @VV{i_1}V \\
-X @>>{i_2}> Y
+@V{e}VV @VV{j_1}V \\
+X @>>{j_2}> Y
 \end{CD}
 $$
 
-Since $\C$ has good pushouts of monomorphisms, it suffices to verify that both squares are pullbacks. Observe that the two squares are symmetric, so it is enough to consider one of them. To verify the universal property, let $a : T \to X$ and $b : T \to X$ be morphisms satisfying $i_1 \circ a = i_2 \circ b$. Applying $r : Y \to X$, we obtain
+Since $\C$ has good pushouts of monomorphisms, it suffices to verify that both squares are pullbacks. Observe that the two squares are symmetric, so it is enough to consider one of them. To verify the universal property, let $a : T \to X$ and $b : T \to X$ be morphisms satisfying $j_1 \circ a = j_2 \circ b$. Applying $r : Y \to X$, we obtain
 
-$$a = r \circ i_1 \circ a = r \circ i_2 \circ b = b.$$
+$$a = r \circ j_1 \circ a = r \circ j_2 \circ b = b.$$
 
-Thus, $a$ is simply a morphism equalizing $i_1$ and $i_2$, so it factors uniquely through $e$.
+Thus, $a$ is simply a morphism equalizing $j_1$ and $j_2$, so it factors uniquely through $e$.
 :::
 
 ::: Corollary 3
