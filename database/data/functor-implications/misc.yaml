@@ -110,7 +110,7 @@
       - trivial
   conclusions:
     - right-invertible
-  proof: 'Let $\C$ be an inhabited category and let $F : \C \to 1$ be the unique functor to the trivial category. Choose any object $X \in \C$. Then the constant functor $X : 1 \to \C$ satisfies $F \circ X = \id_1$.'
+  proof: 'Let $\C$ be an inhabited category and let $F : \C \to \1$ be the unique functor to the trivial category. Choose any object $X \in \C$. Then the constant functor $X : \1 \to \C$ satisfies $F \circ X = \id_{\1}$.'
 
 - id: full_functor_to_trivial_category
   # TODO: add the converse once we have category_conclusions
@@ -122,7 +122,7 @@
       - trivial
   conclusions:
     - full
-  proof: 'Let $\C$ be a strongly connected category. Then the unique functor $F : \C \to 1$ to the trivial category is full: for all $X,Y \in \C$ the map $\Hom(X,Y) \to \Hom(F(X),F(Y))$ is surjective since its domain is non-empty and its codomain is a singleton set.'
+  proof: 'Let $\C$ be a strongly connected category. Then the unique functor $F : \C \to \1$ to the trivial category is full: for all $X,Y \in \C$ the map $\Hom(X,Y) \to \Hom(F(X),F(Y))$ is surjective since its domain is non-empty and its codomain is a singleton set.'
 
 - id: functor_conservative_on_groupoids
   assumptions: []

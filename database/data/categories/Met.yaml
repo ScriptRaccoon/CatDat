@@ -68,7 +68,7 @@ satisfied_properties:
     proof: >-
       Let $G$ be the metric space with underlying set $\IR_{\ge 0}$ equipped with the metric where $d(x,y) = 0$ if $x=y$, and otherwise $d(x,y) = x+y$. We claim that $G$ is an extremal generator.
 
-      First, to see that $G$ is a generator, note that the one-point metric space $1$ is a generator since it represents the forgetful functor $\Met \to \Set$ which is faithful. Since we have an epimorphism $! : G \twoheadrightarrow 1$, $G$ is also a generator.
+      First, to see that $G$ is a generator, note that the one-point metric space $\{\ast\}$ is a generator since it represents the forgetful functor $\Met \to \Set$ which is faithful. Since we have an epimorphism $! : G \twoheadrightarrow \{\ast\}$, $G$ is also a generator.
 
       Now, suppose that $f : X \to Y$ is a non-expansive map of metric spaces such that $f \circ {-} : \Hom(G, X) \to \Hom(G, Y)$ is a bijection. By considering constant maps from $G$, we see that $f$ is a bijection on underlying sets. Now suppose we have $x_1, x_2 \in X$ with $d(f(x_1), f(x_2)) = \varepsilon > 0$. Then there is a non-expansive map $\varphi : G \to Y$ which maps $\varepsilon$ to $f(x_2)$ and every other element of $\IR_{\ge 0}$ to $f(x_1)$. Therefore, there is a non-expansive map $\psi : G \to X$ such that $\varphi = f \circ \psi$. Since $f$ is injective on underlying sets, we must have $\psi(\varepsilon) = x_2$ and $\psi(0) = x_1$. Hence,
       $$\begin{align*}
@@ -144,7 +144,7 @@ unsatisfied_properties:
     label: Met_no_filtered_colimit_stable_monos
 
   - property: natural numbers object
-    proof: By Lemma 2 <a href="/content/natural_numbers_objects">here</a>, if $(N,z,s)$ is a natural numbers object, then $N \cong 1 \sqcup N$. Since there is a map $1 \to N$, we have $N \neq \varnothing$. However, the coproduct of two non-empty metric spaces does not exist; see <a href="https://math.stackexchange.com/questions/1778408">MSE/1778408</a>.
+    proof: By Lemma 2 <a href="/content/natural_numbers_objects">here</a>, if $(N,z,s)$ is a natural numbers object, then $N \cong \{\ast\} \sqcup N$. Since there is a map $\{\ast\} \to N$, we have $N \neq \varnothing$. However, the coproduct of two non-empty metric spaces does not exist; see <a href="https://math.stackexchange.com/questions/1778408">MSE/1778408</a>.
 
   - property: effective congruences
     proof: 'Any kernel pair of $h : X \to Z$ in $\Met$ corresponds to a closed subset of $X\times X$. However, there are plenty of non-closed congruences, such as $\Delta \cup (\IQ \times \IQ) \subseteq \IR \times \IR$ with the subspace metric.'
@@ -166,14 +166,14 @@ unsatisfied_properties:
 
   - property: regular subobject classifier
     proof: >-
-      Assume that $\top : 1 \to \Omega$ is a regular subobject classifier. We can identify $\top$ with a point $\top \in \Omega$, and for every regular monomorphism $Y \hookrightarrow X$ there is a unique non-expansive map $f : X \to \Omega$ such that $f^*(\{\top\}) = Y$ as metric spaces, and hence as topological spaces.
+      Assume that $\top : \{\ast\} \to \Omega$ is a regular subobject classifier. We can identify $\top$ with a point $\top \in \Omega$, and for every regular monomorphism $Y \hookrightarrow X$ there is a unique non-expansive map $f : X \to \Omega$ such that $f^*(\{\top\}) = Y$ as metric spaces, and hence as topological spaces.
 
-      The underlying set of $\Omega$ is identified with $\Hom(1,\Omega) \cong \Sub_{\reg}(1)$. There are two regular subobjects of $1 = \{\ast\}$, namely $\{\ast\} \subseteq \{\ast\}$ and $\varnothing \subseteq \{\ast\}$ (the latter being the equalizer of, say, two maps $\{\ast\} \rightrightarrows \{0,1\}$). Thus, $\Omega$ has exactly two points and is therefore discrete. In particular, $\top : 1 \to \Omega$ is a clopen inclusion. The universal property then implies that every regular monomorphism is a clopen inclusion. But this is not the case: for example, the inclusion $[0,\infty) \hookrightarrow \IR$ is the equalizer of $\id : \IR \to \IR$ and the absolute value function $|{-}| : \IR \to \IR$, where $\IR$ is equipped with the standard metric.
+      The underlying set of $\Omega$ is identified with $\Hom(\{\ast\},\Omega) \cong \Sub_{\reg}(\{\ast\})$. There are two regular subobjects of $\{\ast\}$, namely $\{\ast\} \subseteq \{\ast\}$ and $\varnothing \subseteq \{\ast\}$ (the latter being the equalizer of, say, two maps $\{\ast\} \rightrightarrows \{0,1\}$). Thus, $\Omega$ has exactly two points and is therefore discrete. In particular, $\top : \{\ast\} \to \Omega$ is a clopen inclusion. The universal property then implies that every regular monomorphism is a clopen inclusion. But this is not the case: for example, the inclusion $[0,\infty) \hookrightarrow \IR$ is the equalizer of $\id : \IR \to \IR$ and the absolute value function $|{-}| : \IR \to \IR$, where $\IR$ is equipped with the standard metric.
     label: Met_no_regular_subobject_classifier
 
   - property: coaccessible
     proof: >-
-      Assume that $\Met$ is $\kappa$-coaccessible for a regular cardinal $\kappa$. In particular, every metric space is a limit of $\kappa$-copresentable metric spaces. We claim that every $\kappa$-copresentable metric space has at most one point. Since the forgetful functor $\Met \to \Set$ is representable (by $1$), it preserves limits, so that every limit of such metric spaces also has at most one point. This is a contradiction, since there are metric spaces with two points.
+      Assume that $\Met$ is $\kappa$-coaccessible for a regular cardinal $\kappa$. In particular, every metric space is a limit of $\kappa$-copresentable metric spaces. We claim that every $\kappa$-copresentable metric space has at most one point. Since the forgetful functor $\Met \to \Set$ is representable (by $\{\ast\}$), it preserves limits, so that every limit of such metric spaces also has at most one point. This is a contradiction, since there are metric spaces with two points.
 
       To prove the claim, let $X$ be a $\kappa$-copresentable metric space and $a,b \in X$. We will show that $a = b$. Choose a real number $\delta > 0$ with $d(a,b) \leq \delta$. Fix a set $I$ with $\card(I) \geq \kappa$, and let $P$ be the set of all subsets $S \subseteq I$ with $\card(S) < \kappa$, ordered by inclusion. Since $\kappa$ is regular, a union of fewer than $\kappa$ elements of $P$ belongs to $P$ again, so that $P$ is $\kappa$-directed. For $S \in P$ let $D(S)$ be the set $\{0,1\}^S$ equipped with the metric $d(x,y) \coloneqq \delta$ for $x \neq y$. For $S \subseteq T$ in $P$, the restriction map $D(T) \to D(S)$ is non-expansive. This defines a $\kappa$-cofiltered diagram $D : P^{\op} \to \Met$.
 

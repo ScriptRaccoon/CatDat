@@ -6,7 +6,7 @@ associated:
   codomain: '1'
   left_adjoint: null
   right_adjoint: null
-description: 'Every category $\C$ has a unique functor $!_{\C} : \C \to 1$ into the trivial category. Here, we specify that $\C$ is the category of groups. It is a basic example of a full functor which is not faithful.'
+description: 'Every category $\C$ has a unique functor $!_{\C} : \C \to \1$ into the trivial category. Here, we specify that $\C$ is the category of groups. It is a basic example of a full functor which is not faithful.'
 nlab_link: null
 
 tags:

@@ -31,7 +31,7 @@ satisfied_properties:
 unsatisfied_properties:
   - property: preserves regular epimorphisms
     proof: >-
-      Consider the thin categories $\C = \{0 \to 1, \, 1' \to 2\}$ and $\D = \{0 \to 1 \to 2\}$. There is a regular epimorphism $P : \C \to \D$ that identifies $1$ with $1'$. In fact, it is the coequalizer of the two functors $\{*\} \rightrightarrows \C$ whose images are $1$ and $1'$, respectively.
+      Consider the thin categories $\C = \{0 \to 1, \, 1' \to 2\}$ and $\D = \{0 \to 1 \to 2\}$. There is a regular epimorphism $P : \C \to \D$ that identifies $1$ with $1'$. In fact, it is the coequalizer of the two functors $\{\ast\} \rightrightarrows \C$ whose images are $1$ and $1'$, respectively.
       Notice that the map $\Mor(P) : \Mor(\C) \to \Mor(\D)$ is not surjective, as the morphism $0 \to 2$ in $\D$ has no preimage in $\C$. In other words, the map $N_1(P) : N_1(\C) \to N_1(\D)$ is not surjective. Therefore, $N(P)$ is not an epimorphism.
 
   - property: dominant

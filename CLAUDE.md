@@ -102,6 +102,7 @@ Writing and notation conventions:
 
 - Write `non-empty`, `non-unital`, `non-expansive` (with a hyphen).
 - Use `\varnothing` (not `\emptyset`), `f : X \to Y` (not `\colon`), and `\coloneqq` (not `:=`).
+- Write concrete sets as `\varnothing`, `\{\ast\}`, `\{0,1\}` (or `\{a,b\}`), never as `0`, `1`, `2`. This also applies to the initial and terminal objects of a specific category (e.g. `x : \{\ast\} \to X` in `\Set`, the trivial category `\1`, or "the terminal object $T$" of a presheaf category). Only abstract initial and terminal objects in statements about arbitrary categories, monoidal units, and the zero and trivial objects of algebra (the zero module $0$, the trivial group $1$) may be called `0` and `1`.
 - Write parallel morphisms as `f,g : A \rightrightarrows B`.
 - Never use one-off font commands such as `\mathcal`, `\mathrm`, `\mathbf`, or `\operatorname` directly. Reuse a macro from [database/data/macros.yaml](database/data/macros.yaml) (e.g. `\IN`, `\Grp`, `\Ab`, `\C`, `\Q`, `\T`) or define a new one there.
 - In displayed formulas containing `\prod` or `\coprod`, add `\textstyle` for the more compact layout, e.g. `$$\textstyle h : A \to \prod_{i \in I} Q_i$$`.

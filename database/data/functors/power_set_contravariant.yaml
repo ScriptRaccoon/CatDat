@@ -19,7 +19,7 @@ related:
 
 satisfied_properties:
   - property: representable
-    proof: This is because there are natural bijections $P(X) \cong \Hom(X,2)$, sending a subset to its characteristic function.
+    proof: This is because there are natural bijections $P(X) \cong \Hom(X,\{0,1\})$, sending a subset to its characteristic function.
 
   - property: conservative
     proof: >-
@@ -71,7 +71,7 @@ unsatisfied_properties:
     proof: Consider the sequence of truncation maps $\cdots \twoheadrightarrow \{0,1\}^2 \twoheadrightarrow \{0,1\}^1$. Its limit in $\Set$ (i.e. colimit in $\Set^{\op}$) is $\{0,1\}^{\IN}$, which is uncountable, so that $P(\{0,1\}^{\IN})$ is also uncountable. But the colimit of the induced diagram $P(\{0,1\}^1) \hookrightarrow P(\{0,1\}^2) \hookrightarrow \cdots$ is countable since each set $P(\{0,1\}^n)$ is finite.
 
   - property: left-invertible
-    proof: 'Assume for a contradiction that there is a functor $F : \Set \to \Set^{\op}$ with (natural) isomorphisms $X \cong F(P(X))$. For any non-empty set $X$ there is a map $1 \to X$, which yields a map $F(X) \to F(1)$. Since $F(1) \cong F(P(0)) \cong 0$ is empty, it follows that also $F(X)$ is empty. Since this holds for every non-empty set, it also follows that $X \cong F(P(X)) \cong 0$, which is a contradiction.'
+    proof: 'Assume for a contradiction that there is a functor $F : \Set \to \Set^{\op}$ with (natural) isomorphisms $X \cong F(P(X))$. For any non-empty set $X$ there is a map $\{\ast\} \to X$, which yields a map $F(X) \to F(\{\ast\})$. Since $F(\{\ast\}) \cong F(P(\varnothing)) \cong \varnothing$ is empty, it follows that also $F(X)$ is empty. Since this holds for every non-empty set, it also follows that $X \cong F(P(X)) \cong \varnothing$, which is a contradiction.'
 
 undecidable_properties:
   - property: essentially injective

@@ -3,7 +3,7 @@ name: map into the singleton set
 notation: $!$
 associated:
   category: Set
-description: 'For every set $X$ there is a unique map $! : X \to 1$, where $1$ is the singleton set. In this entry, we require that $X$ has at least $2$ elements.'
+description: 'For every set $X$ there is a unique map $! : X \to \{\ast\}$. In this entry, we require that $X$ has at least $2$ elements.'
 nlab_link: null
 keywords:
   - terminal map
@@ -15,14 +15,14 @@ related: []
 
 satisfied_properties:
   - property: split epimorphism
-    proof: 'Take any element $x \in X$. The corresponding map $x : 1 \to X$ is a section of $! : X \to 1$.'
+    proof: 'Take any element $x \in X$. The corresponding map $x : \{\ast\} \to X$ is a section of $! : X \to \{\ast\}$.'
 
   - property: constant
-    proof: This is clear because $1$ is terminal; see also Lemma 4 <a href="/content/constant_morphisms">here</a>.
+    proof: This is clear because $\{\ast\}$ is terminal; see also Lemma 4 <a href="/content/constant_morphisms">here</a>.
 
 unsatisfied_properties:
   - property: monomorphism
     proof: Since $X$ has two different elements by assumption, which trivially have the same image, the map is not injective.
 
   - property: coconstant
-    proof: 'A direct proof is possible, but we can also argue as follows: Since the map is an epimorphism, if it were coconstant, by the dual of Lemma 5 <a href="/content/constant_morphisms">here</a>, $1$ would be co-subterminal, which is absurd.'
+    proof: 'A direct proof is possible, but we can also argue as follows: Since the map is an epimorphism, if it were coconstant, by the dual of Lemma 5 <a href="/content/constant_morphisms">here</a>, $\{\ast\}$ would be co-subterminal, which is absurd.'

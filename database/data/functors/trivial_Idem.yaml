@@ -6,7 +6,7 @@ associated:
   codomain: '1'
   left_adjoint: null
   right_adjoint: null
-description: 'Every category $\C$ has a unique functor $!_{\C} : \C \to 1$ into the trivial category. Here, we specify that $\C$ is the walking idempotent. It is a basic example of an essentially injective functor which is not conservative.'
+description: 'Every category $\C$ has a unique functor $!_{\C} : \C \to \1$ into the trivial category. Here, we specify that $\C$ is the walking idempotent. It is a basic example of an essentially injective functor which is not conservative.'
 nlab_link: null
 
 tags:
@@ -25,8 +25,8 @@ unsatisfied_properties:
 
   - property: left adjoint
     # TODO: refactor this once functor implications support category_conclusions
-    proof: A functor $1 \to \Idem$ which is right adjoint to $\Idem \to 1$ provides a terminal object in <a href="/category/walking_idempotent">$\Idem$</a>, which does not exist.
+    proof: A functor $\1 \to \Idem$ which is right adjoint to $\Idem \to \1$ provides a terminal object in <a href="/category/walking_idempotent">$\Idem$</a>, which does not exist.
 
   - property: right adjoint
     # TODO: refactor this once functor implications support category_conclusions
-    proof: A functor $1 \to \Idem$ which is left adjoint to $\Idem \to 1$ provides an initial object in <a href="/category/walking_idempotent">$\Idem$</a>, which does not exist.
+    proof: A functor $\1 \to \Idem$ which is left adjoint to $\Idem \to \1$ provides an initial object in <a href="/category/walking_idempotent">$\Idem$</a>, which does not exist.

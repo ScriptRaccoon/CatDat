@@ -42,7 +42,7 @@ special_objects:
   initial object:
     description: simplicial set $X$ with $X_n = \varnothing$
   terminal object:
-    description: simplicial set $X$ with $X_n = 1$
+    description: simplicial set $X$ with $X_n = \{\ast\}$
   coproducts:
     description: pointwise disjoint union
   products:

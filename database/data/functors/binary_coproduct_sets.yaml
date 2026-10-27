@@ -20,7 +20,7 @@ related:
 
 satisfied_properties:
   - property: right-invertible
-    proof: The functor $\Set \to \Set \times \Set$, $X \mapsto (X,0)$ provides a right inverse since $X + 0 \cong X$.
+    proof: The functor $\Set \to \Set \times \Set$, $X \mapsto (X,\varnothing)$ provides a right inverse since $X + \varnothing \cong X$.
 
   - property: preserves equalizers
     proof: This can be checked with a straightforward calculation.
@@ -44,4 +44,4 @@ unsatisfied_properties:
     proof: The canonical map $(X_1 \times X_2) + (Y_1 \times Y_2) \to (X_1 + Y_1) \times (X_2 + Y_2)$ is injective, but misses the "mixed terms" $X_1 \times Y_2$ and $Y_1 \times X_2$ in the codomain, hence is not surjective when $X_1,Y_2$ (or $Y_1,X_2$) are non-empty.
 
   - property: essentially injective
-    proof: Both $(1,0)$ and $(0,1)$ are mapped to $1$.
+    proof: Both $(\{\ast\},\varnothing)$ and $(\varnothing,\{\ast\})$ are mapped to $\{\ast\}$.

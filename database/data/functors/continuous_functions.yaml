@@ -34,8 +34,8 @@ unsatisfied_properties:
   - property: full
     proof: >-
       Every continuous function $\omega_1 \to \IR$ is eventually constant, where $\omega_1$ denotes the first uncountable ordinal equipped with the order topology. We obtain a homomorphism
-      $$\varphi : C(\omega_1) \to \IR \cong C(1)$$
-      mapping each continuous function $\omega_1 \to \IR$ to its eventual value. Assume that it is induced by a continuous map $1 \to \omega_1$. This corresponds to an ordinal $\alpha < \omega_1$ such that $\varphi(u) = u(\alpha)$ for all $u \in C(\omega_1)$. But the continuous function
+      $$\varphi : C(\omega_1) \to \IR \cong C(\{\ast\})$$
+      mapping each continuous function $\omega_1 \to \IR$ to its eventual value. Assume that it is induced by a continuous map $\{\ast\} \to \omega_1$. This corresponds to an ordinal $\alpha < \omega_1$ such that $\varphi(u) = u(\alpha)$ for all $u \in C(\omega_1)$. But the continuous function
       $$u(\beta) \coloneqq \begin{cases} 0 & \beta \leq \alpha \\ 1 & \beta > \alpha \end{cases}$$
       satisfies $\varphi(u) = u(\alpha + 1) \neq u(\alpha)$.
 

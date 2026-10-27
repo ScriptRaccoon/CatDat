@@ -20,7 +20,7 @@ related:
 
 satisfied_properties:
   - property: right-invertible
-    proof: The functor $\Set \to \Set \times \Set$, $X \mapsto (X,1)$ provides a right inverse since $X \times 1 \cong X$.
+    proof: The functor $\Set \to \Set \times \Set$, $X \mapsto (X,\{\ast\})$ provides a right inverse since $X \times \{\ast\} \cong X$.
 
   - property: preserves initial objects
     proof: This is obvious.
@@ -44,7 +44,7 @@ unsatisfied_properties:
     proof: 'If $f,g : A \rightrightarrows B$ are two maps, we always have $f \times \id_{\varnothing} = g \times \id_{\varnothing} : A \times \varnothing \rightrightarrows B \times \varnothing$.'
 
   - property: essentially injective
-    proof: Both $(1,0)$ and $(0,1)$ are mapped to $0$.
+    proof: Both $(\{\ast\},\varnothing)$ and $(\varnothing,\{\ast\})$ are mapped to $\varnothing$.
 
   - property: preserves coequalizers
     proof: 'Since the diagonal functor $\Delta : \Set \to \Set \times \Set$ preserves coequalizers (in fact, all colimits), it would follow that the composition $\Set \to \Set$, $X \mapsto X^2$ preserves coequalizers. But this is the <a href="/functor/squaring_sets">squaring functor</a>, of which we already know that it does not preserve coequalizers.'

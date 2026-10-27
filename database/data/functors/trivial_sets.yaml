@@ -6,7 +6,7 @@ associated:
   codomain: '1'
   left_adjoint: null
   right_adjoint: null
-description: 'Every category $\C$ has a unique functor $!_{\C} : \C \to 1$ into the trivial category. Here, we specify that $\C$ is the category of sets.'
+description: 'Every category $\C$ has a unique functor $!_{\C} : \C \to \1$ into the trivial category. Here, we specify that $\C$ is the category of sets.'
 nlab_link: null
 
 tags:

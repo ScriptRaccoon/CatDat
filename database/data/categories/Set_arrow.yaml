@@ -46,13 +46,13 @@ unsatisfied_properties:
 
   - property: generator
     proof: >-
-      Suppose $\Set^{\rightarrow}$ had a generator. Then by <a href="/content/topos-with-generator">this result</a>, every subterminal object would be either initial or terminal. However, in fact, $0 \to 1$ is a subterminal object which is isomorphic to neither the initial object $0 \to 0$ nor the terminal object $1 \to 1$.
+      Suppose $\Set^{\rightarrow}$ had a generator. Then by <a href="/content/topos-with-generator">this result</a>, every subterminal object would be either initial or terminal. However, in fact, $\varnothing \to \{\ast\}$ is a subterminal object which is isomorphic to neither the initial object $\varnothing \to \varnothing$ nor the terminal object $\{\ast\} \to \{\ast\}$.
 
 special_objects:
   initial object:
-    description: the unique function $0 \to 0$
+    description: the unique function $\varnothing \to \varnothing$
   terminal object:
-    description: the unique function $1 \to 1$
+    description: the unique function $\{\ast\} \to \{\ast\}$
   coproducts:
     description: component-wise defined disjoint union, equipped with the disjoint union of the functions
   products:
@@ -64,7 +64,7 @@ special_morphisms:
     proof: This is easy.
   monomorphisms:
     description: pairs $(\ell, r)$ where $\ell$ and $r$ are both injective
-    proof: For the non-trivial direction, use the fact that the domain functor taking an object $(X, Y, f)$ to $X$ and a morphism $(\ell, r)$ to $\ell$ is representable by $1 \to 1$; and moreover, the codomain functor taking an object $(X, Y, f)$ to $Y$ and a morphism $(\ell, r)$ to $r$ is representable by $0 \to 1$.
+    proof: For the non-trivial direction, use the fact that the domain functor taking an object $(X, Y, f)$ to $X$ and a morphism $(\ell, r)$ to $\ell$ is representable by $\{\ast\} \to \{\ast\}$; and moreover, the codomain functor taking an object $(X, Y, f)$ to $Y$ and a morphism $(\ell, r)$ to $r$ is representable by $\varnothing \to \{\ast\}$.
   epimorphisms:
     description: pairs $(\ell, r)$ where $\ell$ and $r$ are both surjective
     proof: For the non-trivial direction, use the fact that the category is epi-regular, so any epimorphism is a coequalizer; and the fact that coequalizers can be calculated component-wise.

@@ -220,7 +220,7 @@
       - trivial
   conclusions:
     - continuous
-  proof: 'We need to show that for every category $\C$ the unique functor $!_{\C} : \C \to 1$ into the trivial category is continuous. This is easy to verify directly because in the trivial category every limit is, well, trivial. More generally, for every category $\C$ and every set $S$ the diagonal functor $\Delta : \C \to \C^S$ is continuous. Here we apply this to $S = \varnothing$ so that $\C^S$ is the trivial category.'
+  proof: 'We need to show that for every category $\C$ the unique functor $!_{\C} : \C \to \1$ into the trivial category is continuous. This is easy to verify directly because in the trivial category every limit is, well, trivial. More generally, for every category $\C$ and every set $S$ the diagonal functor $\Delta : \C \to \C^S$ is continuous. Here we apply this to $S = \varnothing$ so that $\C^S$ is the trivial category.'
 
 - id: automatically_preserve_equalizers
   assumptions: []

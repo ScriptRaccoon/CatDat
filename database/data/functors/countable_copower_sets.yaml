@@ -36,7 +36,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: preserves terminal objects
-    proof: We have $\IN \times 1 \cong \IN \not\cong 1$.
+    proof: We have $\IN \times \{\ast\} \cong \IN \not\cong \{\ast\}$.
 
   - property: preserves binary products
     proof: The canonical map $\IN \times (X \times Y) \to (\IN \times X) \times (\IN \times Y)$ is given by $(n,(x,y)) \mapsto ((n,x),(n,y))$. It is clearly not surjective when $X$ and $Y$ are non-empty.

@@ -36,13 +36,13 @@ unsatisfied_properties:
 
   - property: generator
     proof: >-
-      Suppose the category of sequences had a generator. Then, by <a href="/content/topos-with-generator">this result</a>, every subterminal object would be either initial or terminal. However, $0 \to 1 \to 1 \to \cdots$ is a subterminal object which is isomorphic to neither the initial object $0 \to 0 \to 0 \to \cdots$ nor the terminal object $1 \to 1 \to 1 \to \cdots$.
+      Suppose the category of sequences had a generator. Then, by <a href="/content/topos-with-generator">this result</a>, every subterminal object would be either initial or terminal. However, $\varnothing \to \{\ast\} \to \{\ast\} \to \cdots$ is a subterminal object which is isomorphic to neither the initial object $\varnothing \to \varnothing \to \varnothing \to \cdots$ nor the terminal object $\{\ast\} \to \{\ast\} \to \{\ast\} \to \cdots$.
 
 special_objects:
   initial object:
-    description: the constant sequence $0 \to 0 \to \cdots$
+    description: the constant sequence $\varnothing \to \varnothing \to \cdots$
   terminal object:
-    description: the constant sequence $1 \to 1 \to \cdots$
+    description: the constant sequence $\{\ast\} \to \{\ast\} \to \cdots$
   coproducts:
     description: component-wise defined disjoint union
   products:

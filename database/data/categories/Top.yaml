@@ -92,7 +92,7 @@ unsatisfied_properties:
     label: Top_not_co-malcev
 
   - property: effective cocongruences
-    proof: 'Consider the indiscrete topological space $I$ on two points. This represents the functor which takes a topological space $X$ to the pairs of indistinguishable points of $X$. Therefore, we get a cocongruence $1 \rightrightarrows I$, where the maps are the two possible functions. However, this cannot be effective: if we have $h : Z\to 1$ which equalizes the two maps, then $Z$ must be empty. But that means the cokernel pair of $h$ is the discrete space on two points.'
+    proof: 'Consider the indiscrete topological space $I$ on two points. This represents the functor which takes a topological space $X$ to the pairs of indistinguishable points of $X$. Therefore, we get a cocongruence $\{\ast\} \rightrightarrows I$, where the maps are the two possible functions. However, this cannot be effective: if we have $h : Z \to \{\ast\}$ which equalizes the two maps, then $Z$ must be empty. But that means the cokernel pair of $h$ is the discrete space on two points.'
     label: Top_no_effective_cocongruences
 
   - property: extremal generating collection
@@ -121,7 +121,7 @@ special_morphisms:
     proof: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
   epimorphisms:
     description: surjective continuous maps
-    proof: The proof works exactly as for the category of sets, where we endow $2$ with the indiscrete topology.
+    proof: The proof works exactly as for the category of sets, where we endow $\{0,1\}$ with the indiscrete topology.
   regular monomorphisms:
     description: embeddings
     proof: 'Equalizers are embeddings by their construction. Conversely, if $f : X \to Y$ is an embedding, then $f$ is the equalizer of the two characteristic maps $\chi_Y, \chi_{f(X)} : Y \rightrightarrows \{0,1\}$, where $\{0,1\}$ carries the indiscrete topology.'
