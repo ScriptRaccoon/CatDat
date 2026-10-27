@@ -328,6 +328,7 @@
 		"precomposed",
 		"precomposing",
 		"precomposition",
+		"precotopos",
 		"preimage",
 		"preimages",
 		"preorder",
@@ -454,9 +455,5 @@
 		"todo.txt",
 		"*.svg"
 	],
-	"ignoreRegExpList": [
-		"\\$[^$]*\\$",
-		"\\$\\$[^$]*\\$\\$",
-		"Wahrscheinlichkeitstheorie"
-	]
+	"ignoreRegExpList": ["\\$[^$]*\\$", "\\$\\$[^$]*\\$\\$", "Wahrscheinlichkeitstheorie"]
 }
