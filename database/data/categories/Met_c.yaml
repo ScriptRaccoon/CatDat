@@ -49,7 +49,7 @@ satisfied_properties:
       A more direct proof that $X \sqcup_C X$ is metrizable can be found at <a href="https://math.stackexchange.com/questions/5147463">MSE/5147463</a>.
 
   - property: effective cocongruences
-    proof: 'Suppose we have a cocongruence $X \rightrightarrows E$ in $\Met_c$. Then the image in $\Haus$ is a coreflexive corelation (since epimorphisms in both categories are continuous maps with dense image). By <a href="https://mathoverflow.net/a/509582">MO/509548</a>, that implies that image is of the form $X +_S X$ for a closed subset $S$ of $X$. Since $S$ is metrizable, and the functor $\Met_c \to \Haus$ is fully faithful <a href="https://ncatlab.org/nlab/show/reflected+limit#FullSubcategoryInclusionReflectCoLimits">and therefore reflects colimits</a>, we conclude that $E$ is effective in $\Met_c$.'
+    proof: 'Suppose we have a cocongruence $X \rightrightarrows C$ in $\Met_c$. Then the image in $\Haus$ is a coreflexive corelation (since epimorphisms in both categories are continuous maps with dense image). By <a href="https://mathoverflow.net/a/509582">MO/509548</a>, that implies that image is of the form $X +_S X$ for a closed subset $S$ of $X$. Since $S$ is metrizable, and the functor $\Met_c \to \Haus$ is fully faithful <a href="https://ncatlab.org/nlab/show/reflected+limit#FullSubcategoryInclusionReflectCoLimits">and therefore reflects colimits</a>, we conclude that $C$ is effective in $\Met_c$.'
 
   - property: well-powered
     proof: This follows easily from the fact that monomorphisms are injective in this category.

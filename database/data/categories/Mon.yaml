@@ -77,11 +77,11 @@ unsatisfied_properties:
   - property: effective cocongruences
     proof: >-
       We adapt the counterexample from <a href="https://mathoverflow.net/a/510809">MO/510744</a> for $\Ring$. Namely, consider the monoids
-      $$\begin{align*} X & \coloneqq \langle p \mid p^2 = p \rangle \cong (\{ 0, 1 \}, \cdot),\\ E & \coloneqq \langle p, q \mid p^2 = p,\, q^2 = q,\, pq = q,\, qp = p \rangle. \end{align*}$$
-      Then $X$ represents the functor sending a monoid $M$ to its idempotents, and $E$ represents the relation on idempotents $a, b$ of $M$ that $ab = b$, $ba = a$. The equations are equivalent to $aM = bM$, showing that the relation is indeed an equivalence relation.
+      $$\begin{align*} X & \coloneqq \langle p \mid p^2 = p \rangle \cong (\{ 0, 1 \}, \cdot),\\ C & \coloneqq \langle p, q \mid p^2 = p,\, q^2 = q,\, pq = q,\, qp = p \rangle. \end{align*}$$
+      Then $X$ represents the functor sending a monoid $M$ to its idempotents, and $C$ represents the relation on idempotents $a, b$ of $M$ that $ab = b$, $ba = a$. The equations are equivalent to $aM = bM$, showing that the relation is indeed an equivalence relation.
       On the other hand, using the multiplicative map
-      $$E \to M_{2\times 2}(\IZ), \quad p \mapsto \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix},\quad q \mapsto \begin{pmatrix} 1 & 1 \\ 0 & 0 \end{pmatrix},$$
-      we can see that $p \ne q$ in $E$, so the equalizer of the two maps $X \rightrightarrows E$ is the trivial submonoid $\{ 1 \}$. Therefore, if $E$ were effective, it would be isomorphic to the coproduct $X \sqcup X$, whose underlying set consists of words in $p,q$ with $p,q$ strictly alternating. In particular, in this coproduct, $pq \ne q$.
+      $$C \to M_{2\times 2}(\IZ), \quad p \mapsto \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix},\quad q \mapsto \begin{pmatrix} 1 & 1 \\ 0 & 0 \end{pmatrix},$$
+      we can see that $p \ne q$ in $C$, so the equalizer of the two maps $X \rightrightarrows C$ is the trivial submonoid $\{ 1 \}$. Therefore, if $C$ were effective, it would be isomorphic to the coproduct $X \sqcup X$, whose underlying set consists of words in $p,q$ with $p,q$ strictly alternating. In particular, in this coproduct, $pq \ne q$.
     label: Mon_no_effective_cocongruences
 
 special_objects:

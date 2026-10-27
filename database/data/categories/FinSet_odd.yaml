@@ -52,13 +52,13 @@ satisfied_properties:
     proof: The set $\{0,1,2\}$ is an extremal cogenerator even in <a href="/category/Set">$\Set$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
 
   - property: effective congruences
-    proof: Let $E \rightrightarrows X$ be a congruence in $\FinSet_{\odd}$. By applying the (functorial) definition to the test object $T = \{\ast\}$, we see that it is a congruence in $\Set$, i.e. an equivalence relation, such that $E$ and $X$ are finite sets of odd cardinality. The finite set $X/E$ embeds into a finite set $Q$ of odd cardinality (either $X/E$ or $X/E + \{\ast\}$). Then $E \rightrightarrows X$ is the kernel pair of $X \twoheadrightarrow X/E \hookrightarrow Q$ in $\FinSet_{\odd}$.
+    proof: Let $R \rightrightarrows X$ be a congruence in $\FinSet_{\odd}$. By applying the (functorial) definition to the test object $T = \{\ast\}$, we see that it is a congruence in $\Set$, i.e. an equivalence relation, such that $R$ and $X$ are finite sets of odd cardinality. The finite set $X/R$ embeds into a finite set $Q$ of odd cardinality (either $X/R$ or $X/R + \{\ast\}$). Then $R \rightrightarrows X$ is the kernel pair of $X \twoheadrightarrow X/R \hookrightarrow Q$ in $\FinSet_{\odd}$.
 
   - property: effective cocongruences
     proof: >-
-      Let $X \rightrightarrows Q$ be a cocongruence in $\FinSet_{\odd}$. The induced map
-      $$\Hom(Q,\{0,1,2\}) \to \Hom(X,\{0,1,2\})^2 \cong \Hom(X+X, \{0,1,2\})$$
-      is injective, which implies that $X+X \to Q$ is surjective (where $X+X$ denotes the coproduct in $\Set$, which does not exist in $\FinSet_{\odd}$). It follows that $X \rightrightarrows Q$ is a coreflexive corelation in $\Set$. Since <a href="/category/Set">$\Set$</a> is co-Malcev and has effective cocongruences (by <a href="/category-implication/regular_epi-regular_extensive_consequences">this result</a>), there is a subset $Y \subseteq X$ such that $Q \cong X \sqcup_Y X$ in $\Set$, with $X \rightrightarrows Q$ corresponding to the two pushout inclusions. We have $\card(Q) = 2 \card(X) - \card(Y)$, so $\card(Y)$ is odd. Hence, $Q \cong X \sqcup_Y X$ remains true in $\FinSet_{\odd}$.
+      Let $X \rightrightarrows C$ be a cocongruence in $\FinSet_{\odd}$. The induced map
+      $$\Hom(C,\{0,1,2\}) \to \Hom(X,\{0,1,2\})^2 \cong \Hom(X+X, \{0,1,2\})$$
+      is injective, which implies that $X+X \to C$ is surjective (where $X+X$ denotes the coproduct in $\Set$, which does not exist in $\FinSet_{\odd}$). It follows that $X \rightrightarrows C$ is a coreflexive corelation in $\Set$. Since <a href="/category/Set">$\Set$</a> is co-Malcev and has effective cocongruences (by <a href="/category-implication/regular_epi-regular_extensive_consequences">this result</a>), there is a subset $Y \subseteq X$ such that $C \cong X \sqcup_Y X$ in $\Set$, with $X \rightrightarrows C$ corresponding to the two pushout inclusions. We have $\card(C) = 2 \card(X) - \card(Y)$, so $\card(Y)$ is odd. Hence, $C \cong X \sqcup_Y X$ remains true in $\FinSet_{\odd}$.
     label: FinSet_odd_effective_cocongruences
 
   - property: coquotients of cocongruences

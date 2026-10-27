@@ -63,8 +63,8 @@ unsatisfied_properties:
   - property: effective cocongruences
     proof: >-
       The proof is similar to <a href="/category/Mon">$\Mon$</a>, i.e. we adapt the counterexample from <a href="https://mathoverflow.net/a/510809">MO/510744</a>. Namely, consider the semigroups
-      $$\begin{align*} X & \coloneqq \langle p \mid p^2 = p \rangle,\\ E & \coloneqq \langle p, q \mid p^2 = p,\, q^2 = q,\, pq = q,\, qp = p \rangle, \end{align*}$$
-      whose underlying sets are $\{p\}$ and $\{p,q\}$, respectively. Then $X$ represents the functor sending a semigroup $A$ to its idempotents, and $E$ represents the relation on idempotents $a, b$ of $A$ that $ab = b$, $ba = a$. It is easy to check that this defines an equivalence relation (see <a href="https://mathoverflow.net/a/510809">MO/510744</a> for details). Since $p \ne q$ in $E$, the equalizer of the two maps $X \rightrightarrows E$ is the empty semigroup. Therefore, if $E$ were effective, it would be isomorphic to the coproduct $X \sqcup X$, whose underlying set consists of non-empty words in $p,q$ with $p,q$ strictly alternating. In particular, in this coproduct, $pq \ne q$.
+      $$\begin{align*} X & \coloneqq \langle p \mid p^2 = p \rangle,\\ C & \coloneqq \langle p, q \mid p^2 = p,\, q^2 = q,\, pq = q,\, qp = p \rangle, \end{align*}$$
+      whose underlying sets are $\{p\}$ and $\{p,q\}$, respectively. Then $X$ represents the functor sending a semigroup $A$ to its idempotents, and $C$ represents the relation on idempotents $a, b$ of $A$ that $ab = b$, $ba = a$. It is easy to check that this defines an equivalence relation (see <a href="https://mathoverflow.net/a/510809">MO/510744</a> for details). Since $p \ne q$ in $C$, the equalizer of the two maps $X \rightrightarrows C$ is the empty semigroup. Therefore, if $C$ were effective, it would be isomorphic to the coproduct $X \sqcup X$, whose underlying set consists of non-empty words in $p,q$ with $p,q$ strictly alternating. In particular, in this coproduct, $pq \ne q$.
     references:
       - Mon_no_effective_cocongruences
 

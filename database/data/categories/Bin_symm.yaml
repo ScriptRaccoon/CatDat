@@ -106,7 +106,7 @@ unsatisfied_properties:
       Consider these two objects of $\Bin_{\symm}$:
       $$\begin{align*}
       G & = (\{a,b\},\{(a,b),(b,a)\}) \\
-      H & = (\{a,b,a',b'\},\{(a,b),(b,a),(a',b'),(b',a'),(a,b'),(b',a)\})
+      C & = (\{a,b,a',b'\},\{(a,b),(b,a),(a',b'),(b',a'),(a,b'),(b',a)\})
       \end{align*}$$
       As undirected (loop-)graphs, these look as follows:
       $$\begin{array}{cccc}
@@ -114,10 +114,10 @@ unsatisfied_properties:
       \end{array}$$
       $$\begin{array}{cccc}
       & a & \longleftrightarrow & b \\[1ex]
-      H : & & \searrow \!\!\!\!\!\! \nwarrow & \\[1ex]
+      C : & & \searrow \!\!\!\!\!\! \nwarrow & \\[1ex]
       & a' & \longleftrightarrow & b' \\
       \end{array}$$
-      There are two canonical morphisms $G \rightrightarrows H$. They are jointly epimorphic and have a common retraction $H \to G$ mapping $a,a' \mapsto a$ and $b,b' \mapsto b$. Thus, $G \rightrightarrows H$ is a coreflexive corelation. But it is not cosymmetric, since there is no edge $a' \leftrightarrow b$ in $H$.
+      There are two canonical morphisms $G \rightrightarrows C$. They are jointly epimorphic and have a common retraction $C \to G$ mapping $a,a' \mapsto a$ and $b,b' \mapsto b$. Thus, $G \rightrightarrows C$ is a coreflexive corelation. But it is not cosymmetric, since there is no edge $a' \leftrightarrow b$ in $C$.
     label: Bin_symm_not_co-Malcev
 
 special_objects:

@@ -70,17 +70,17 @@ satisfied_properties:
 
   - property: co-Malcev
     proof: >-
-      Let $j_1,j_2 : X \rightrightarrows Y$ be a coreflexive corelation of uniform spaces, i.e. $j_1,j_2$ are jointly surjective uniform maps and there is a uniform map $r : Y \to X$ satisfying
+      Let $j_1,j_2 : X \rightrightarrows C$ be a coreflexive corelation of uniform spaces, i.e. $j_1,j_2$ are jointly surjective uniform maps and there is a uniform map $r : C \to X$ satisfying
       $$r \circ j_1 = r \circ j_2 = \id_X.$$
-      In particular, $j_1,j_2$ are injective and satisfy $Y = j_1(X) \cup j_2(X)$ as sets. Moreover, $j_1(x) = j_1(x')$ implies $x = x'$ after applying $r$. First, we show that $(j_1,j_2)$ is cosymmetric, i.e. that there is a uniform map
-      $$s : Y \to Y$$
+      In particular, $j_1,j_2$ are injective and satisfy $C = j_1(X) \cup j_2(X)$ as sets. Moreover, $j_1(x) = j_1(x')$ implies $x = x'$ after applying $r$. First, we show that $(j_1,j_2)$ is cosymmetric, i.e. that there is a uniform map
+      $$s : C \to C$$
       such that
       $$s \circ j_1 = j_2, \quad s \circ j_2 = j_1.$$
-      We define the map of sets $s : Y \to Y$ by $s(j_1(x)) \coloneqq j_2(x)$ and $s(j_2(x)) \coloneqq j_1(x)$. This is well-defined by a direct calculation using the above properties of $j_1,j_2$, but we can also use the fact that <a href="/category/Set">$\Set$</a> is co-Malcev. It remains to verify that $s$ is uniform. To this end, let $V$ be an entourage of $Y$. Since $Y$ is a uniform space, there is an entourage $W$ with
+      We define the map of sets $s : C \to C$ by $s(j_1(x)) \coloneqq j_2(x)$ and $s(j_2(x)) \coloneqq j_1(x)$. This is well-defined by a direct calculation using the above properties of $j_1,j_2$, but we can also use the fact that <a href="/category/Set">$\Set$</a> is co-Malcev. It remains to verify that $s$ is uniform. To this end, let $V$ be an entourage of $C$. Since $C$ is a uniform space, there is an entourage $W$ with
       $$W \circ W \circ W \subseteq V.$$
       (This is the $\varepsilon/3$-trick in uniform space theory.) Since $j_1,j_2,r$ are uniform, the set
       $$U \coloneqq W^{\op} \cap (r \times r)^*(j_1 \times j_1)^*(W) \cap (r \times r)^*(j_2 \times j_2)^*(W)$$
-      is an entourage of $Y$. We claim that $U \subseteq (s \times s)^*(V)$, which will establish that $(s \times s)^*(V)$ is an entourage, as required. For the proof, let $(a,b) \in U$. Up to symmetry, there are two cases to consider:
+      is an entourage of $C$. We claim that $U \subseteq (s \times s)^*(V)$, which will establish that $(s \times s)^*(V)$ is an entourage, as required. For the proof, let $(a,b) \in U$. Up to symmetry, there are two cases to consider:
 
       Case 1: We have $a = j_1(x)$ and $b = j_1(x')$ for some $x,x' \in X$. Since $(a,b) \in U$, we have $(a,b) \in (r \times r)^*(j_2 \times j_2)^*(W)$. Thus, $W$ contains the pair
       $$(j_2(r(a)),j_2(r(b))) = (j_2(x),j_2(x')) = (s(a),s(b)).$$
@@ -90,13 +90,13 @@ satisfied_properties:
       $$j_2(x) \; W \; j_2(x') \; W \; j_1(x) \; W \; j_1(x')$$
       which shows that
       $$(s(a),s(b)) = (j_2(x),j_1(x')) \in W \circ W \circ W \subseteq V.$$
-      It remains to prove that $(j_1,j_2)$ is cotransitive. We adopt the functorial point of view and prove that the representable subfunctor $\Hom(Y,-) \hookrightarrow \Hom(X,-)^2$ is transitive. This means that for every uniform space $T$ and every triple of uniform maps $u,v,w : X \rightrightrightarrows T$ such that there are uniform maps $y_1,y_2 : Y \rightrightarrows T$ with
+      It remains to prove that $(j_1,j_2)$ is cotransitive. We adopt the functorial point of view and prove that the representable subfunctor $\Hom(C,-) \hookrightarrow \Hom(X,-)^2$ is transitive. This means that for every uniform space $T$ and every triple of uniform maps $u,v,w : X \rightrightrightarrows T$ such that there are uniform maps $y_1,y_2 : C \rightrightarrows T$ with
       $$y_1 j_1 = u, \quad y_1 j_2 = v = y_2 j_1, \quad y_2 j_2 = w,$$
-      there is a uniform map $y_3 : Y \to T$ with $y_3 j_1 = u$ and $y_3 j_2 = w$. As before, we can easily define $y_3$ as a map of sets by
+      there is a uniform map $y_3 : C \to T$ with $y_3 j_1 = u$ and $y_3 j_2 = w$. As before, we can easily define $y_3$ as a map of sets by
       $$y_3(j_1(x)) \coloneqq u(x), \quad y_3(j_2(x)) \coloneqq w(x)$$
       and verify that $y_3$ is well-defined, either by a direct calculation or using the fact that $\Set$ is co-Malcev. To prove that $y_3$ is uniform, let $E$ be an entourage of $T$. As in the proof of symmetry, choose an entourage $W$ of $T$ with $W \circ W \circ W \subseteq E$. Then
       $$V \coloneqq (y_1 \times y_1)^*(W) \cap (y_2 \times y_2)^*(W) \cap (r \times r)^* (v \times v)^*(W)^{\op}$$
-      is an entourage of $Y$, and we claim that $V \subseteq (y_3 \times y_3)^*(E)$, which will prove, as required, that $(y_3 \times y_3)^*(E)$ is an entourage. If $(a,b) \in V$, there are again two cases to consider:
+      is an entourage of $C$, and we claim that $V \subseteq (y_3 \times y_3)^*(E)$, which will prove, as required, that $(y_3 \times y_3)^*(E)$ is an entourage. If $(a,b) \in V$, there are again two cases to consider:
 
       Case 1: We have $a = j_1(x)$ and $b = j_1(x')$ for some $x,x' \in X$. Since $(a,b) \in V \subseteq (y_1 \times y_1)^*(W)$, we have $(y_1(a),y_1(b)) \in W$. Then
       $$(y_3(a),y_3(b)) = (u(x),u(x')) = (y_1(a), y_1(b)) \in W \subseteq E.$$

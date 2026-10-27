@@ -161,7 +161,7 @@ Let $\C$ be a locally small category. Then $\widehat{\C}$ has effective congruen
 :::
 
 ::: Proof
-Let $q_1,q_2 : F \rightrightarrows G$ be a congruence in $\widehat{\C}$. Let $p : G \twoheadrightarrow Q$ be its quotient (i.e. coequalizer) in $\widehat{\C}$, which is constructed objectwise. Applying the functorial definition of a congruence to representable functors in $\widehat{\C}$, we see that for every object $X \in \C$, $q_1(X),q_2(X) : F(X) \rightrightarrows G(X)$ is a congruence in $\Set$. Since congruences in $\Set$ are effective, $q_1(X),q_2(X)$ is the kernel pair of $p(X)$; we are also using [this result](/content/effective-congruence-quotients). Therefore, $q_1,q_2$ is the kernel pair of $p$ in the category of all presheaves, _a fortiori_ in the category of small presheaves.
+Let $q_1,q_2 : R \rightrightarrows G$ be a congruence in $\widehat{\C}$. Let $p : G \twoheadrightarrow Q$ be its quotient (i.e. coequalizer) in $\widehat{\C}$, which is constructed objectwise. Applying the functorial definition of a congruence to representable functors in $\widehat{\C}$, we see that for every object $X \in \C$, $q_1(X),q_2(X) : R(X) \rightrightarrows G(X)$ is a congruence in $\Set$. Since congruences in $\Set$ are effective, $q_1(X),q_2(X)$ is the kernel pair of $p(X)$; we are also using [this result](/content/effective-congruence-quotients). Therefore, $q_1,q_2$ is the kernel pair of $p$ in the category of all presheaves, _a fortiori_ in the category of small presheaves.
 :::
 
 ::: Proposition 12

@@ -8,13 +8,13 @@ description: This gives some results on cocongruences in extensive categories wi
 We start with a general fact which is easier to visualize for the dual case of congruences.
 
 ::: Lemma 1
-Let $q_1, q_2 : E \rightrightarrows X$ be a congruence such that the pullback $E \times_X E$ of $q_2$ and $q_1$ exists, and let $t : E \times_X E \to E$ be the transitivity morphism. Then we have pushout diagrams
+Let $q_1, q_2 : R \rightrightarrows X$ be a congruence such that the pullback $R \times_X R$ of $q_2$ and $q_1$ exists, and let $t : R \times_X R \to R$ be the transitivity morphism. Then we have pushout diagrams
 
 $$
 \begin{CD}
-E \times_X E @> p_1 >> E @. \quad @. E \times_X E @> p_2 >> E \\
+R \times_X R @> p_1 >> R @. \quad @. R \times_X R @> p_2 >> R \\
 @V t VV @VV q_1 V @. @V t VV @VV q_2 V \\
-E @> q_1 >> X @. \quad @. E @> q_2 >> X.
+R @> q_1 >> X @. \quad @. R @> q_2 >> X.
 \end{CD}
 $$
 
@@ -25,17 +25,17 @@ Suppose we have a commutative square
 
 $$
 \begin{CD}
-E \times_X E @> p_1 >> E \\
+R \times_X R @> p_1 >> R \\
 @V t VV @VV f V \\
-E @> g >> T.
+R @> g >> T.
 \end{CD}
 $$
 
-Then for any generalized element $(x, y)$ of $E$, consider the generalized elements $((x, x), (x, y))$ and $((x, y), (y, y))$ of $E \times_X E$. From the commutativity of the square acting on these generalized elements, we have
+Then for any generalized element $(x, y)$ of $R$, consider the generalized elements $((x, x), (x, y))$ and $((x, y), (y, y))$ of $R \times_X R$. From the commutativity of the square acting on these generalized elements, we have
 $$f(x, x) = g(x, y)$$
 and
 $$f(x, y) = g(x, y).$$
-Therefore, if we define $h : X \to T$ on generalized elements by $h(x) \coloneqq f(x, x)$, we must have $f = h \circ q_1$ and $g = h \circ q_1$. Conversely, if $h$ is a morphism with $f = h \circ q_1$, we have $h(x)=f(x,y)$ for all $(x,y) \in E$, which for $y=x$ yields $h(x)=f(x,x)$.
+Therefore, if we define $h : X \to T$ on generalized elements by $h(x) \coloneqq f(x, x)$, we must have $f = h \circ q_1$ and $g = h \circ q_1$. Conversely, if $h$ is a morphism with $f = h \circ q_1$, we have $h(x)=f(x,y)$ for all $(x,y) \in R$, which for $y=x$ yields $h(x)=f(x,x)$.
 
 This concludes the proof that the first diagram is a pushout diagram; the proof for the second is similar.
 :::
@@ -80,27 +80,27 @@ On the other hand, from $(f_1; f_2)(s) = (f_1; f_2)(s')$, we conclude $f_1(a_1) 
 :::
 
 ::: Corollary 3
-Let $j_1, j_2 : X \rightrightarrows E$ be a cocongruence in an extensive category such that the pushout $E +_X E$ of $j_2$ and $j_1$ exists, and let $t : E \to E +_X E$ be the corresponding cotransitivity morphism. Then we have a pullback diagram
+Let $j_1, j_2 : X \rightrightarrows C$ be a cocongruence in an extensive category such that the pushout $C +_X C$ of $j_2$ and $j_1$ exists, and let $t : C \to C +_X C$ be the corresponding cotransitivity morphism. Then we have a pullback diagram
 
 $$
 \begin{CD}
-X + X @> (j_1; j_2) >> E \\
+X + X @> (j_1; j_2) >> C \\
 @V j_1 + j_2 VV @VV t V \\
-E + E @>>> E +_X E.
+C + C @>>> C +_X C.
 \end{CD}
 $$
 
-In particular, if the category also has pullback-stable regular epimorphisms, then for any cocongruence $j_1, j_2 : X \rightrightarrows E$ such that the pushout of $j_2$ and $j_1$ exists, the corresponding morphism $(j_1; j_2) : X + X \to E$ is a regular epimorphism.
+In particular, if the category also has pullback-stable regular epimorphisms, then for any cocongruence $j_1, j_2 : X \rightrightarrows C$ such that the pushout of $j_2$ and $j_1$ exists, the corresponding morphism $(j_1; j_2) : X + X \to C$ is a regular epimorphism.
 :::
 
 ::: Proof
-The pullback diagram comes from using Lemma 2 on the two pullback diagrams from the dual of Lemma 1. For the other conclusion, all we need to establish is that $E + E \to E +_X E$ is a regular epimorphism. However, this is immediate from the fact that the pushout $E +_X E$ is also a coequalizer of $i_1 \circ j_2, i_2 \circ j_1 : X \rightrightarrows E + E$ (cf. [this implication](/category-implication/dual_pullbacks_criterion)).
+The pullback diagram comes from using Lemma 2 on the two pullback diagrams from the dual of Lemma 1. For the other conclusion, all we need to establish is that $C + C \to C +_X C$ is a regular epimorphism. However, this is immediate from the fact that the pushout $C +_X C$ is also a coequalizer of $i_1 \circ j_2, i_2 \circ j_1 : X \rightrightarrows C + C$ (cf. [this implication](/category-implication/dual_pullbacks_criterion)).
 :::
 
-In the following results, define a <i>regular corelation</i> to be a corelation $j_1, j_2 : X \rightrightarrows E$ such that the binary copower of $X$ exists, and $(j_1; j_2) : X + X \to E$ is a regular epimorphism.
+In the following results, define a <i>regular corelation</i> to be a corelation $j_1, j_2 : X \rightrightarrows C$ such that the binary copower of $X$ exists, and $(j_1; j_2) : X + X \to C$ is a regular epimorphism.
 
 ::: Lemma 4
-In an extensive category, every regular coreflexive corelation $j_1, j_2 : X \rightrightarrows E$ such that the equalizer of $j_1$ and $j_2$ exists is an effective cocongruence.
+In an extensive category, every regular coreflexive corelation $j_1, j_2 : X \rightrightarrows C$ such that the equalizer of $j_1$ and $j_2$ exists is an effective cocongruence.
 :::
 
 ::: Proof
@@ -113,7 +113,7 @@ $$
 \end{align*}
 $$
 
-is a kernel pair of $(j_1; j_2) : X + X \to E$.
+is a kernel pair of $(j_1; j_2) : X + X \to C$.
 Informally, we can think of this as the subobject of $(X + X)^2 \cong \sum_{i,j=1}^2 X^2$ which is the diagonal of $X$ in the first and fourth quadrants, and the diagonal of $Y$ in the second and third quadrants.
 
 To see this, note that since $j_1$ is a (split) monomorphism, we have a pullback diagram
@@ -122,7 +122,7 @@ $$
 \begin{CD}
 X @> \id >> X \\
 @V \id VV @VV j_1 V \\
-X @>> j_1 > E.
+X @>> j_1 > C.
 \end{CD}
 $$
 
@@ -132,11 +132,11 @@ $$
 \begin{CD}
 Y @> e >> X \\
 @V e VV @VV j_1 V \\
-X @>> j_2 > E.
+X @>> j_2 > C.
 \end{CD}
 $$
 
-To see this, suppose we have two generalized elements $x_1, x_2 \in X(T)$ such that $j_1(x_1) = j_2(x_2)$. Then letting $r : E \to X$ be the coreflexivity morphism, we see
+To see this, suppose we have two generalized elements $x_1, x_2 \in X(T)$ such that $j_1(x_1) = j_2(x_2)$. Then letting $r : C \to X$ be the coreflexivity morphism, we see
 $$x_1 = r(j_1(x_1)) = r(j_2(x_2)) = x_2$$
 and
 $$j_1(x_1) = j_2(x_2) = j_2(x_1),$$
@@ -148,7 +148,7 @@ $$
 \begin{CD}
 X+Y @> (\id; e) >> X \\
 @V \id + e VV @VV j_1 V \\
-X+X @>> (j_1; j_2) > E.
+X+X @>> (j_1; j_2) > C.
 \end{CD}
 $$
 
@@ -158,7 +158,7 @@ $$
 \begin{CD}
 Y+X @> (e; \id) >> X \\
 @V e + \id VV @VV j_2 V \\
-X+X @>> (j_1; j_2) > E.
+X+X @>> (j_1; j_2) > C.
 \end{CD}
 $$
 
@@ -168,7 +168,7 @@ $$
 \begin{CD}
 (X+Y)+(Y+X) @> (\id; e) + (e; \id) >> X+X \\
 @V (\id+e; e+\id) VV @VV (j_1; j_2) V \\
-X+X @>> (j_1; j_2) > E.
+X+X @>> (j_1; j_2) > C.
 \end{CD}
 $$
 
@@ -176,9 +176,9 @@ However, under the canonical isomorphism $(X+Y)+(Y+X) \cong X+Y+Y+X$, we see tha
 $$(i_1; i_1\circ e; i_2\circ e; i_2) : X+Y+Y+X \to X+X,$$
 whereas $(\id+e; e+\id)$ corresponds to
 $$(i_1; i_2\circ e; i_1\circ e; i_2) : X+Y+Y+X \to X+X.$$
-This completes the proof that these two morphisms form a kernel pair of $(j_1; j_2) : X + X \to E$.
+This completes the proof that these two morphisms form a kernel pair of $(j_1; j_2) : X + X \to C$.
 
-Therefore, since $(j_1; j_2) : X + X \to E$ is a regular epimorphism, by [this result](/content/regular-epis-kernel-pairs), it is a coequalizer of this kernel pair. However, this coequalizer is exactly the congruence quotient in the construction of $X +_Y X$ [here](/content/pushouts-of-monos-via-congruence-quotients). Thus, we see that the original corelation is equivalent to the cokernel pair of $e$.
+Therefore, since $(j_1; j_2) : X + X \to C$ is a regular epimorphism, by [this result](/content/regular-epis-kernel-pairs), it is a coequalizer of this kernel pair. However, this coequalizer is exactly the congruence quotient in the construction of $X +_Y X$ [here](/content/pushouts-of-monos-via-congruence-quotients). Thus, we see that the original corelation is equivalent to the cokernel pair of $e$.
 :::
 
 ::: Corollary 5
@@ -186,5 +186,5 @@ In an extensive and regular category with quotients of congruences, every cocong
 :::
 
 ::: Proof
-This follows by combining Corollary 3 and Lemma 4, using the existence of quotients of congruences so that $E +_X E$ always exists by [this result](/content/pushouts-of-monos-via-congruence-quotients).
+This follows by combining Corollary 3 and Lemma 4, using the existence of quotients of congruences so that $C +_X C$ always exists by [this result](/content/pushouts-of-monos-via-congruence-quotients).
 :::

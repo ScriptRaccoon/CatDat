@@ -5,7 +5,7 @@
     - reflexive coequalizers
   conclusions:
     - quotients of congruences
-  proof: A congruence $E \rightrightarrows X$ has a common section $X \to E$ given by the reflexivity morphism.
+  proof: A congruence $R \rightrightarrows X$ has a common section $X \to R$ given by the reflexivity morphism.
 
 - id: congruences_include_kernel_pairs
   assumptions:
@@ -40,7 +40,7 @@
   conclusions:
     - quotients of congruences
   proof: >-
-    Let $q_1, q_2 : E \rightrightarrows X$ be a congruence, let $k : E_0 \hookrightarrow E$ be the kernel of $q_2$, and let $m \coloneqq q_1 \circ k : E_0 \to X$. We claim that the cokernel of $m$ is a coequalizer of $q_1, q_2$. If $h \circ q_1 = h \circ q_2$, then $h \circ m = h \circ q_2 \circ k = 0$. Conversely, the image of $\Hom(E,E) \to \Hom(E,X)^2$, $e \mapsto (q_1 \circ e, q_2 \circ e)$ is a subgroup containing $(q_1, q_2)$ and, by reflexivity, $(q_2, q_2)$, hence also $(q_1 - q_2, 0)$. So $q_1 - q_2 = q_1 \circ e$ for some $e : E \to E$ with $q_2 \circ e = 0$. Then $e$ factors through $k$, so $q_1 - q_2$ factors through $m$, and $h \circ m = 0$ implies $h \circ q_1 = h \circ q_2$.
+    Let $q_1, q_2 : R \rightrightarrows X$ be a congruence, let $k : R_0 \hookrightarrow R$ be the kernel of $q_2$, and let $m \coloneqq q_1 \circ k : R_0 \to X$. We claim that the cokernel of $m$ is a coequalizer of $q_1, q_2$. If $h \circ q_1 = h \circ q_2$, then $h \circ m = h \circ q_2 \circ k = 0$. Conversely, the image of $\Hom(R,R) \to \Hom(R,X)^2$, $e \mapsto (q_1 \circ e, q_2 \circ e)$ is a subgroup containing $(q_1, q_2)$ and, by reflexivity, $(q_2, q_2)$, hence also $(q_1 - q_2, 0)$. So $q_1 - q_2 = q_1 \circ e$ for some $e : R \to R$ with $q_2 \circ e = 0$. Then $e$ factors through $k$, so $q_1 - q_2$ factors through $m$, and $h \circ m = 0$ implies $h \circ q_1 = h \circ q_2$.
 
 - id: core-thin_quotients
   assumptions:
@@ -48,7 +48,7 @@
   conclusions:
     - effective congruences
     - quotients of congruences
-  proof: 'If $q_1, q_2 : E \rightrightarrows X$ is a congruence, the symmetry morphism $s : E \to E$ is an automorphism of $E$, hence equal to $\id_E$ by assumption. But then $q_1 = q_2 \circ s = q_2$, and simply $\id_X$ is a coequalizer. Also, for the reflexivity morphism $r : X \to E$, we have $q_1 \circ r = \id$. For the reverse composition, $q_1 \circ r \circ q_1 = q_1 \circ \id$ and $q_2 \circ r \circ q_1 = q_2 \circ \id$, so since $q_1, q_2$ are jointly monomorphic, we get $r \circ q_1 = \id$. Therefore, $q_1 = q_2$ is an isomorphism, so $E$ is the kernel pair of $\id_X$.'
+  proof: 'If $q_1, q_2 : R \rightrightarrows X$ is a congruence, the symmetry morphism $s : R \to R$ is an automorphism of $R$, hence equal to $\id_R$ by assumption. But then $q_1 = q_2 \circ s = q_2$, and simply $\id_X$ is a coequalizer. Also, for the reflexivity morphism $r : X \to R$, we have $q_1 \circ r = \id$. For the reverse composition, $q_1 \circ r \circ q_1 = q_1 \circ \id$ and $q_2 \circ r \circ q_1 = q_2 \circ \id$, so since $q_1, q_2$ are jointly monomorphic, we get $r \circ q_1 = \id$. Therefore, $q_1 = q_2$ is an isomorphism, so $R$ is the kernel pair of $\id_X$.'
 
 - id: core-connected_locally_finite_congruences
   assumptions:
@@ -59,7 +59,7 @@
     - quotients of congruences
   # TODO: refactor this once we add "split-mono-trivial", cf. #383
   proof: >-
-    Let $q_1, q_2 : E \rightrightarrows X$ be a congruence. Since the category is core-connected, we may assume $E = X$. The reflexivity morphism $r : X \to X$ satisfies $q_1 \circ r = q_2 \circ r = \id_X$. Since the monoid $\End(X)$ is finite, every right inverse in it is a two-sided inverse (see the remark below), so that $q_1 = r^{-1} = q_2$. It follows that $\id_X$ is a coequalizer of $q_1, q_2$, and that $q_1, q_2$ is a kernel pair of $\id_X$, since $\id_X, \id_X$ is one.
+    Let $q_1, q_2 : R \rightrightarrows X$ be a congruence. Since the category is core-connected, we may assume $R = X$. The reflexivity morphism $r : X \to X$ satisfies $q_1 \circ r = q_2 \circ r = \id_X$. Since the monoid $\End(X)$ is finite, every right inverse in it is a two-sided inverse (see the remark below), so that $q_1 = r^{-1} = q_2$. It follows that $\id_X$ is a coequalizer of $q_1, q_2$, and that $q_1, q_2$ is a kernel pair of $\id_X$, since $\id_X, \id_X$ is one.
 
     Remark: In a finite monoid $M$, every right inverse is a two-sided inverse. Indeed, let $x,y \in M$ with $xy = 1$. The map $M \to M$, $z \mapsto yz$ is injective, since $x(yz) = (xy)z = z$. Since $M$ is finite, it is also surjective, so there is some $z \in M$ with $yz = 1$. Then $x = x(yz) = (xy)z = z$, and hence $yx = yz = 1$.
 
@@ -71,11 +71,11 @@
   conclusions:
     - effective congruences
   proof: >-
-    Let $q_1, q_2 : E \rightrightarrows X$ be a congruence. Then let $E_0$ be the kernel of $q_2$. We see that $q_1|_{E_0} : E_0 \to X$ is a monomorphism. Let $q_1|_{E_0}$ be the kernel of a morphism $h : X \to Y$. We claim that $E$ is also the kernel pair of $h$.
+    Let $q_1, q_2 : R \rightrightarrows X$ be a congruence. Then let $R_0$ be the kernel of $q_2$. We see that $q_1|_{R_0} : R_0 \to X$ is a monomorphism. Let $q_1|_{R_0}$ be the kernel of a morphism $h : X \to Y$. We claim that $R$ is also the kernel pair of $h$.
 
     To see this, suppose we have a pair of generalized elements $x_1, x_2 \in X(T)$. Then we have
-    $$\begin{align*} (x_1,x_2) \in E & \iff (x_1 - x_2,0) \in E \\ & \iff x_1 - x_2 \in E_0 \\ & \iff h(x_1 - x_2) = 0 \\ & \iff h(x_1) = h(x_2). \end{align*}$$
-    In particular, applying the forward implications in the case $T \coloneqq E$, $x_1 \coloneqq q_1$, $x_2 \coloneqq q_2$, we conclude that $h \circ q_1 = h \circ q_2$, so we get the required commutative diagram. From there, the reverse implications show this diagram is a pullback square.
+    $$\begin{align*} (x_1,x_2) \in R & \iff (x_1 - x_2,0) \in R \\ & \iff x_1 - x_2 \in R_0 \\ & \iff h(x_1 - x_2) = 0 \\ & \iff h(x_1) = h(x_2). \end{align*}$$
+    In particular, applying the forward implications in the case $T \coloneqq R$, $x_1 \coloneqq q_1$, $x_2 \coloneqq q_2$, we conclude that $h \circ q_1 = h \circ q_2$, so we get the required commutative diagram. From there, the reverse implications show this diagram is a pullback square.
 
 - id: additive_effective_congruences_imply_normal
   assumptions:
@@ -84,7 +84,7 @@
   conclusions:
     - normal
   proof: >-
-    Let $i : Y \hookrightarrow X$ be a monomorphism. Then we define a relation on $X$ via $E \coloneqq X \times Y$ with maps $q_1, q_2 : E \rightrightarrows X$ defined by $q_1 : (x, y) \mapsto x+i(y)$ and $q_2 : (x, y) \mapsto x$. It is straightforward to check that $q_1$ and $q_2$ are jointly monomorphic. Now $E$ is a congruence because for generalized elements $x_1, x_2 \in X(T)$, $(x_1, x_2)$ factors through $E$ if and only if $x_1 - x_2$ factors through $Y$. In other words, the relation on $X(T)$ is exactly $x_1 \equiv x_2 \pmod{Y(T)}$, which is an equivalence relation on $X(T)$ (and in fact a congruence in $\Ab$). Now by assumption, $E$ is the kernel pair of some morphism $h : X \to Z$; in other words, $(x_1, x_2)$ factors through $E$ if and only if $h(x_1) = h(x_2)$. In particular, for $x \in X(T)$, $x$ factors through $Y$ if and only if $(x, 0)$ factors through $E$, which is equivalent to $h(x) = h(0) = 0$. We have thus shown that $Y$ is the kernel of $h$.
+    Let $i : Y \hookrightarrow X$ be a monomorphism. Then we define a relation on $X$ via $R \coloneqq X \times Y$ with maps $q_1, q_2 : R \rightrightarrows X$ defined by $q_1 : (x, y) \mapsto x+i(y)$ and $q_2 : (x, y) \mapsto x$. It is straightforward to check that $q_1$ and $q_2$ are jointly monomorphic. Now $R$ is a congruence because for generalized elements $x_1, x_2 \in X(T)$, $(x_1, x_2)$ factors through $R$ if and only if $x_1 - x_2$ factors through $Y$. In other words, the relation on $X(T)$ is exactly $x_1 \equiv x_2 \pmod{Y(T)}$, which is an equivalence relation on $X(T)$ (and in fact a congruence in $\Ab$). Now by assumption, $R$ is the kernel pair of some morphism $h : X \to Z$; in other words, $(x_1, x_2)$ factors through $R$ if and only if $h(x_1) = h(x_2)$. In particular, for $x \in X(T)$, $x$ factors through $Y$ if and only if $(x, 0)$ factors through $R$, which is equivalent to $h(x) = h(0) = 0$. We have thus shown that $Y$ is the kernel of $h$.
 
 # TODO: The "finitely cocomplete" assumption is only needed to satisfy the preconditions of co-Malcev; thus, if we
 # revise the definition of "Malcev" not to require a finitely complete category, then that condition can be dropped.
@@ -122,12 +122,12 @@
     - mono-regular
   proof: >-
     Let $\alpha : A \hookrightarrow B$ be a monomorphism. Let $B'$ be a copy of $B$, and likewise let $A'$ be a copy of $A$. Consider the congruence on $B + B'$ generated by $y \sim y'$ for $y \in A$. Formally, we define
-    $$E \coloneqq B + B' + A + A'$$
+    $$R \coloneqq B + B' + A + A'$$
     and define the two morphisms
-    $$q_1, q_2 : E \rightrightarrows B + B'$$
+    $$q_1, q_2 : R \rightrightarrows B + B'$$
     by extending the identity on $B + B'$ and 
     $$\begin{align*}
     q_1(y) & = \alpha(y), & q_1(y') & = \alpha(y)', \\
     q_2(y) & = \alpha(y)', & q_2(y') & = \alpha(y),
     \end{align*}$$
-    on generalized elements. Extensivity can be used to show that $q_1, q_2$ are jointly monomorphic. Clearly, the pair $q_1, q_2$ is reflexive and symmetric. For transitivity, one once again uses extensivity. By assumption, there is a morphism $h : B + B' \to C$ such that $q_1, q_2$ is the kernel pair of $h$, that is, two generalized elements $x, y \in B + B'$ satisfy $h(x) = h(y)$ if and only if $x = q_1(e)$, $y = q_2(e)$ for some $e \in E$. In particular, for $x \in B$, we have $h(x) = h(x')$ if and only if $x = q_1(e)$, $x' = q_2(e)$ for some $e \in E$. By disjointness of coproducts, we must necessarily have $e \in A$, and $x = \alpha(e)$. This shows that $\alpha$ is the equalizer of $h \circ i_1, h \circ i_2 : B \rightrightarrows C$.
+    on generalized elements. Extensivity can be used to show that $q_1, q_2$ are jointly monomorphic. Clearly, the pair $q_1, q_2$ is reflexive and symmetric. For transitivity, one once again uses extensivity. By assumption, there is a morphism $h : B + B' \to C$ such that $q_1, q_2$ is the kernel pair of $h$, that is, two generalized elements $x, y \in B + B'$ satisfy $h(x) = h(y)$ if and only if $x = q_1(e)$, $y = q_2(e)$ for some $e \in R$. In particular, for $x \in B$, we have $h(x) = h(x')$ if and only if $x = q_1(e)$, $x' = q_2(e)$ for some $e \in R$. By disjointness of coproducts, we must necessarily have $e \in A$, and $x = \alpha(e)$. This shows that $\alpha$ is the equalizer of $h \circ i_1, h \circ i_2 : B \rightrightarrows C$.
