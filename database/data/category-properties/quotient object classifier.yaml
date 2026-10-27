@@ -12,6 +12,7 @@ invariant_under_equivalences: true
 related:
   - finitely cocomplete
   - regular quotient object classifier
+  - elementary cotopos
 
 tags:
   - topos theory
