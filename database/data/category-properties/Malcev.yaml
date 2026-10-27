@@ -1,6 +1,7 @@
 id: Malcev
 relation: is
-description: A category is <i>Malcev</i> (also spelled <i>Mal'cev</i> or <i>Maltsev</i>) when it has finite limits and every internal reflexive relation is an internal equivalence relation. That is, if $R \subseteq X^2$ is a subobject with $\Delta_X \subseteq R$, then $R$ is symmetric and transitive.
+description: >-
+  A category is <i>Malcev</i> (also spelled <i>Mal'cev</i> or <i>Maltsev</i>) when it has finite limits and every internal reflexive relation is an internal equivalence relation. That is, if $q_1, q_2 : R \rightrightarrows X$ is a jointly monomorphic pair with a common section $X \to R$, then $q_1, q_2$ is also symmetric and transitive, i.e. a congruence (see the definition <a href="/category-property/quotients_of_congruences">here</a>).
 nlab_link: https://ncatlab.org/nlab/show/Malcev+category
 dual: co-Malcev
 invariant_under_equivalences: true

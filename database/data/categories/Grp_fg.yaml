@@ -48,7 +48,7 @@ satisfied_properties:
 
   - property: effective congruences
     proof: >-
-      Let $q_1,q_2 : R \rightrightarrows G$ be a congruence in $\Grp_\fg$. Since the pair is jointly monomorphic, the induced homomorphism $(q_1,q_2) : R \to G \times G$ is a monomorphism, hence injective (see below). Thus, we may assume that $R \subseteq G \times G$ is a subgroup and that $q_1,q_2$ are the two projections. By reflexivity, $R$ contains the diagonal of $G$. We know from the proof that <a href="/category/Grp">$\Grp$</a> is Malcev that $R$ is the congruence induced by the normal subgroup $N \coloneqq \{x \in G : (x,1) \in R\}$, i.e. $R$ is the kernel pair of the projection $h : G \to G/N$ in $\Grp$. Since $G/N$ and $R$ are finitely generated and $\Grp_\fg \hookrightarrow \Grp$ is fully faithful, $R$ is also the kernel pair of $h$ in $\Grp_\fg$.
+      Let $q_1,q_2 : R \rightrightarrows G$ be a congruence in $\Grp_\fg$. Since the induced homomorphism $(q_1,q_2) : R \to G \times G$ is a monomorphism, hence injective (see below). Thus, we may assume that $R \subseteq G \times G$ is a subgroup and that $q_1,q_2$ are the two projections. By reflexivity, $R$ contains the diagonal of $G$. We know from the proof that <a href="/category/Grp">$\Grp$</a> is Malcev that $R$ is the congruence induced by the normal subgroup $N \coloneqq \{x \in G : (x,1) \in R\}$, i.e. $R$ is the kernel pair of the projection $h : G \to G/N$ in $\Grp$. Since $G/N$ and $R$ are finitely generated and $\Grp_\fg \hookrightarrow \Grp$ is fully faithful, $R$ is also the kernel pair of $h$ in $\Grp_\fg$.
     references:
       - Grp_malcev
 
