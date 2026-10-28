@@ -190,9 +190,6 @@ unsatisfied_properties:
   - property: skeletal
     proof: Consider $(X, \IN \times X)$ and $(Y, \IN \times Y)$ for $X$ and $Y$ bijective but unequal sets.
 
-  - property: essentially small
-    proof: 'The right adjoint $\nabla : \Set \to \omegaSet$ to the forgetful functor is fully faithful, and therefore induces an injective function on isomorphism classes of objects. Thus, if $\omegaSet$ were essentially small, then <a href="/category/Set">$\Set$</a> would be as well, which we know is not the case.'
-
   - property: locally finite
     proof: >-
       The right adjoint $\nabla : \Set \to \omegaSet$ to the forgetful functor is fully faithful. Therefore, for example,
@@ -242,6 +239,38 @@ unsatisfied_properties:
       From this, we conclude that for $\gamma' \ne \gamma$, the elements $\gamma$ and $\gamma'$ have no common realizer in $Y$. In fact, if $m$ is a common realizer, then $\code{f}(m)$ is defined and realizes both $f(\gamma) = 1$ and $f(\gamma') = 0$ in $N$. Since the realization relation of $N$ is the diagonal, this means $\code{f}(m) = 1$ and $\code{f}(m) = 0$, a contradiction.
 
       Since $\gamma \in \omega_1$ was arbitrary, every $m \in \IN$ realizes at most one element of $Y$. Hence, if $D \subseteq \IN$ denotes the set of all realizers of elements of $Y$, the realization relation of $Y$ is the graph of a function $D \to \omega_1$. This function is surjective since every element of $Y$ has a realizer. But $D$ is countable and $\omega_1$ is uncountable, a contradiction.
+    label: omega_Set_no_aleph1-filtered_colimits
+
+  - property: ℵ₁-cofiltered limits
+    proof: >-
+      We dualize the counterexample above showing that $\omegaSet$ does not have ℵ₁-filtered colimits. Let $(s_\alpha)_{\alpha \in \omega_1}$ be an $\omega_1$-Aronszajn sequence as in that proof, i.e. a sequence of injective functions $s_\alpha : \alpha \to \IN$ such that whenever $\beta < \alpha < \omega_1$, then $s_\beta$ and $s_\alpha |_\beta$ agree except at finitely many points. For $\alpha \in \omega_1$, let $X_\alpha$ be the $\omega$-set whose underlying set is $\alpha + 1 = \{ \gamma \mid \gamma \leq \alpha \}$, where $n$ realizes $\gamma < \alpha$ if and only if $s_\alpha(\gamma) = n$, and every $n \in \IN$ realizes $\alpha$.
+
+      Whenever $\alpha \leq \beta < \omega_1$, the function $r : \beta + 1 \to \alpha + 1$, $\gamma \mapsto \min(\gamma, \alpha)$ induces a morphism $X_\beta \to X_\alpha$. To see this, consider the set
+      $$F \coloneqq \{ \gamma \in \alpha \mid s_\alpha(\gamma) \ne s_\beta(\gamma) \},$$
+      which is finite by the condition on the Aronszajn sequence. As in that proof, the function $\code{r} : \IN \to \IN$ defined by
+      $$\code{r}(n) \coloneqq \begin{cases}
+      s_\alpha(\gamma), & n = s_\beta(\gamma) \text{ with } \gamma \in F, \\
+      n, & n \notin s_\beta(F)
+      \end{cases}$$
+      is well-defined and total recursive. It is a compatible realizer tracker: let $n$ realize $\gamma$ in $X_\beta$. If $\gamma \geq \alpha$, then $r(\gamma) = \alpha$ is realized by every natural number, in particular by $\code{r}(n)$. Now let $\gamma < \alpha$, so that $r(\gamma) = \gamma$ and $n = s_\beta(\gamma)$. We claim that $\code{r}(n) = s_\alpha(\gamma)$, which means that $\code{r}(n)$ realizes $\gamma$ in $X_\alpha$. If $\gamma \in F$, this holds by definition of $\code{r}$. If $\gamma \notin F$, then $n \notin s_\beta(F)$ by injectivity of $s_\beta$, hence $\code{r}(n) = n = s_\beta(\gamma) = s_\alpha(\gamma)$. Since $\min(\min(\gamma, \beta), \alpha) = \min(\gamma, \alpha)$ for $\alpha \leq \beta$, these morphisms form an ℵ₁-cofiltered diagram $X : (\omega_1, \leq)^{\op} \to \omegaSet$.
+
+      Assume that the diagram $X$ has a limit $Y$ with projections $p_\alpha : Y \to X_\alpha$. Since the forgetful functor $\omegaSet \to \Set$ is representable (by the terminal object), it preserves limits. For every $\gamma \in \omega_1$, the elements $\min(\gamma, \alpha) \in X_\alpha$ are compatible with the transition maps, so there is a unique $y_\gamma \in Y$ with $p_\alpha(y_\gamma) = \min(\gamma, \alpha)$ for all $\alpha \in \omega_1$.
+
+      We claim that for $\gamma \ne \delta$ in $\omega_1$, the elements $y_\gamma$ and $y_\delta$ have no common realizer in $Y$. Let $\alpha \coloneqq \max(\gamma, \delta) + 1$ and let $\code{p_\alpha}$ be a realizer tracker compatible with $p_\alpha$. If $m$ is a common realizer, then $\code{p_\alpha}(m)$ realizes both $p_\alpha(y_\gamma) = \gamma$ and $p_\alpha(y_\delta) = \delta$ in $X_\alpha$. Since $\gamma, \delta < \alpha$, this means $s_\alpha(\gamma) = \code{p_\alpha}(m) = s_\alpha(\delta)$, which contradicts the injectivity of $s_\alpha$.
+
+      Hence, the sets of realizers of the elements $y_\gamma$ for $\gamma \in \omega_1$ are non-empty and pairwise disjoint subsets of $\IN$. This is a contradiction, since $\omega_1$ is uncountable.
+    references:
+      - omega_Set_no_aleph1-filtered_colimits
+
+  - property: coaccessible
+    proof: >-
+      Assume that $\omegaSet$ is $\kappa$-coaccessible for a regular cardinal $\kappa$. In particular, every $\omega$-set is a limit of $\kappa$-copresentable $\omega$-sets. We claim that every $\kappa$-copresentable $\omega$-set has at most one element. Since the forgetful functor $\omegaSet \to \Set$ is representable (by the terminal object), it preserves limits, so that every limit of $\omega$-sets with at most one element has at most one element. This is a contradiction, since $\nabla \{0,1\}$ has two elements.
+
+      To prove the claim, let $(Q, R_Q)$ be a $\kappa$-copresentable $\omega$-set. For $\alpha < \kappa$, let $D(\alpha) \coloneqq \nabla \{ \beta \mid \alpha \leq \beta < \kappa \}$. Since $\kappa$ is regular, $(\kappa,\leq)$ is $\kappa$-filtered, so that the inclusions $D(\alpha') \hookrightarrow D(\alpha)$ for $\alpha \leq \alpha'$ form a $\kappa$-cofiltered diagram $D : (\kappa,\leq)^{\op} \to \omegaSet$. Since $\nabla$ is a right adjoint, it preserves limits, so that the limit of $D$ is $\nabla$ applied to the intersection $\bigcap_{\alpha < \kappa} \{ \beta \mid \alpha \leq \beta < \kappa \} = \varnothing$, which is the initial object $(\varnothing, \varnothing)$.
+
+      Since $(Q, R_Q)$ is $\kappa$-copresentable, we have
+      $$\textstyle \colim_{\alpha < \kappa} \Hom(D(\alpha),(Q, R_Q)) \cong \Hom((\varnothing, \varnothing),(Q, R_Q)) = \{\ast\}.$$
+      For $q \in Q$, let $c_q : D(0) \to (Q, R_Q)$ be the constant map with value $q$, which is a morphism of $\omega$-sets since every constant function whose value realizes $q$ is a compatible realizer tracker. The map $Q \to \colim_{\alpha < \kappa} \Hom(D(\alpha),(Q, R_Q))$ sending $q$ to the class of $c_q$ is injective: since the colimit is filtered, if $c_q$ and $c_{q'}$ have the same class, then their restrictions to some $D(\alpha)$ agree, so that $q = c_q(\alpha) = c_{q'}(\alpha) = q'$. Hence, $Q$ has at most one element.
 
   - property: extremal generator
     proof: >-
