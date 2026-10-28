@@ -35,9 +35,6 @@ satisfied_properties:
   - property: extremal generator
     proof: The one-point set is an extremal generator even in <a href="/category/Set">$\Set$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
 
-  - property: extremal cogenerator
-    proof: The two-element set is an extremal cogenerator even in <a href="/category/Set">$\Set$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
-
   - property: semi-strongly connected
     proof: Every non-empty finite set is weakly terminal (by using constant maps).
 
