@@ -97,10 +97,6 @@ unsatisfied_properties:
   - property: skeletal
     proof: Consider the objects $(X, X)$ and $(Y, Y)$ for isomorphic but non-equal sets $X$ and $Y$.
 
-  - property: cofiltered-limit-stable epimorphisms
-    proof: >-
-      We already know that <a href="/category/Set">$\Set$</a> does not have this property. Now apply the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> to the functor $\Set \to \Mono$ which sends a set $X$ to the pair $(X, X)$.
-
   - property: extremal generator
     proof: >-
       Let $(G, G')$ be any object. Then if $G'$ is empty, the unique morphism $(1, 0) \to (1, 1)$ induces a bijection

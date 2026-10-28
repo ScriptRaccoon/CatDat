@@ -118,9 +118,6 @@ unsatisfied_properties:
   - property: skeletal
     proof: This is trivial.
 
-  - property: cofiltered-limit-stable epimorphisms
-    proof: We already know that <a href="/category/Set">$\Set$</a> does not have this property. Now apply the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> to the functor $\Set \to \Meas$ which equips a set with the trivial $\sigma$-algebra.
-
   - property: effective cocongruences
     proof: 'The proof is similar to the one for <a href="/category/Top">$\Top$</a>: Use the trivial $\sigma$-algebra on a two-point set.'
     references:

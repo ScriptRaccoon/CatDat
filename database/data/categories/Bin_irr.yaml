@@ -108,11 +108,6 @@ unsatisfied_properties:
       Assume that a cogenerating collection $S$ exists in $\Bin_{\irr}$. Let $\kappa \geq 2$ be a cardinal that is greater than all $\card(Y)$ for $(Y,R) \in S$. Let $X$ be a set of cardinality $\kappa$. Then $(X, (X \times X) \setminus \Delta_X)$ is a valid object of $\Bin_{\irr}$. Any non-trivial permutation of $X$ induces a non-trivial automorphism of it. In particular, there must be a morphism $(X, (X \times X) \setminus \Delta_X) \to (Y,R)$ for some $(Y,R) \in S$. This is a map of sets $f : X \to Y$ such that for all $x \neq x'$ the pair $(f(x),f(x'))$ belongs to $R$, which requires $f(x) \neq f(x')$. Therefore, $f : X \to Y$ is injective, and we obtain the contradiction $\card(X) \leq \card(Y) < \kappa$.
     label: Bin_irr_no_cogenerating_collection
 
-  - property: cofiltered-limit-stable epimorphisms
-    proof: We can copy the proof from <a href="/category/Bin">$\Bin$</a>.
-    references:
-      - Bin_no_cofiltered-limit-stable_epis
-
 special_objects:
   initial object:
     description: $(\varnothing,\varnothing)$, which can be seen as the directed graph with no vertices and no edges

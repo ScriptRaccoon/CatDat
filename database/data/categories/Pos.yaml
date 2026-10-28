@@ -68,9 +68,6 @@ unsatisfied_properties:
   - property: regular subobject classifier
     proof: Assume that there is a regular subobject classifier $\Omega$, so that (by the classification of regular monomorphisms) $\Hom(P,\Omega)$ is isomorphic to the set of subsets of $P$. By taking $P = \{0\}$ we see that $\Omega$ has $2$ elements, so that either $\Omega \cong \{0,1\}$ (discrete) or $\Omega \cong \{0 < 1\}$. By taking $P = \{0 < 1\}$ we see that $\Omega$ has four pairs $(x,y)$ with $x \leq y$. But $\{0,1\}$ has only two and $\{0 < 1\}$ has only three such pairs.
 
-  - property: cofiltered-limit-stable epimorphisms
-    proof: Pick any poset $X$ which has a decreasing sequence of non-empty sets $X = X_0 \supseteq X_1 \supseteq \cdots$ with empty intersection, such as $X_n = \IN_{\geq n}$ with the natural ordering. The unique maps $X_n \to \{\ast\}$ are surjective, but their limit $\varnothing \to \{\ast\}$ is not surjective.
-
   - property: effective cocongruences
     proof: >-
       Let $X$ be $\IR$ with the standard (total) order, and let $C$ be the poset with underlying set $\IR \times \{ 0, 1 \}$ and partial order such that $(x, m) \le (y, n)$ if and only if $x < y$ or $(x, m) = (y, n)$. The two maps $\IR \rightrightarrows C$ will be $x \mapsto (x, 0)$ and $x \mapsto (x, 1)$ respectively. For any partial order $(\IP, \le)$, the induced equivalence relation on the set of order-preserving functions $\IR \to \IP$ is that $f \sim g$ if and only if $f(x) \le g(y)$ and $g(x) \le f(y)$ whenever $x < y$. This relation is clearly reflexive and symmetric; for transitivity, if $f \sim g$ and $g \sim h$, then whenever $x < y$, we have $f(x) \le g(\frac{x+y}{2}) \le h(y)$ and similarly $h(x) \le g(\frac{x+y}{2}) \le f(y)$, showing that $f \sim h$.

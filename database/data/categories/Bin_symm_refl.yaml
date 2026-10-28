@@ -91,9 +91,6 @@ unsatisfied_properties:
   - property: skeletal
     proof: This is trivial.
 
-  - property: cofiltered-limit-stable epimorphisms
-    proof: 'We already know that <a href="/category/Set">$\Set$</a> does not have this property. Now apply the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> to the functor $\Set \to \Bin_{\symm,\refl}$, $X \mapsto (X,\Delta_X)$. It preserves limits because it is right adjoint to $\pi_0 : \Bin_{\symm,\refl} \to \Set$, $(X,R) \mapsto \coeq(R \rightrightarrows X)$.'
-
   - property: co-Malcev
     proof: >-
       We can take the same counterexample as for <a href="/category/Bin_symm">$\Bin_{\symm}$</a> by adding loops to each vertex.

@@ -88,9 +88,6 @@ unsatisfied_properties:
   - property: cartesian filtered colimits
     proof: This is Corollary 4(b) <a href="/content/Top-embeds-in-LRS">here</a>.
 
-  - property: cofiltered-limit-stable epimorphisms
-    proof: This is Corollary 4(d) <a href="/content/Top-embeds-in-LRS">here</a>.
-
   - property: effective cocongruences
     proof: This is Corollary 4(e) <a href="/content/Top-embeds-in-LRS">here</a>.
 

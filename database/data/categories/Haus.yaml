@@ -69,9 +69,6 @@ unsatisfied_properties:
   - property: cartesian filtered colimits
     proof: 'It is shown in <a href="https://math.stackexchange.com/questions/1255678">MSE/1255678</a> that $\IQ \times - : \Top \to \Top$ does not preserve sequential colimits (so that it cannot be a left adjoint). The same example also works in $\Haus$: Surely $\IQ$ is Hausdorff, $X_n$ is Hausdorff, as is their colimit $X$, and the colimit (taken in $\Top$) of the $X_n \times \IQ$ admits a bijective continuous map to a Hausdorff space, therefore is also Hausdorff, meaning it is also the colimit taken in $\Haus$.'
 
-  - property: cofiltered-limit-stable epimorphisms
-    proof: 'The following is a basic counterexample for sets: The unique maps $\IN_{\geq n} \to \{\ast\}$ are surjective, but their limit $\varnothing = \bigcap_{n \geq 0} \IN_{\geq n} \to \{\ast\}$ is not. This also works in $\Haus$ by using discrete topologies. We could also apply a variant of (the dual of) Lemma 2 <a href="/content/subcategories">here</a> to the discrete topology functor $\Set \to \Haus$, which does not preserve all cofiltered limits, but does preserve intersections.'
-
   - property: filtered-colimit-stable monomorphisms
     proof: >-
       The proof is similar to <a href="/category/Met">$\Met$</a>. For $n \geq 1$ let $X_n$ be the pushout of

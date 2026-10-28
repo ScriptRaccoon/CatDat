@@ -98,9 +98,6 @@ unsatisfied_properties:
     references:
       - Bin_no_extremal_generator
 
-  - property: cofiltered-limit-stable epimorphisms
-    proof: 'We already know that <a href="/category/Set">$\Set$</a> does not have this property. Now apply the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> to the functor $\Set \to \Bin_{\symm}$, $X \mapsto (X,\varnothing)$.'
-
   - property: co-Malcev
     proof: >-
       Consider these two objects of $\Bin_{\symm}$:
