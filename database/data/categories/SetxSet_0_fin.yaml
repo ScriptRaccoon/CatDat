@@ -89,7 +89,6 @@ unsatisfied_properties:
       The first projection functor $(\Set \times \Set)_{\varnothing,\fin} \to \Set$ mapping $(A,B)$ to $A$ is right adjoint to $A \mapsto (A,\varnothing)$ (which is a valid object), and hence preserves limits. Likewise, the second projection functor $(\Set \times \Set)_{\varnothing,\fin} \to \Set$ mapping $(A,B)$ to $B$ is right adjoint to $B \mapsto (\varnothing,B)$ (which is a valid object), and hence preserves limits. It follows that any limits in $(\Set \times \Set)_{\varnothing,\fin}$, if they exist, are computed pointwise.
 
       Therefore, to show that countable powers do not exist, it suffices to note that $(\{0\},\{0,1\})$ is a valid object, whereas $(\{0\},\{0,1\})^{\IN} = (\{0\}^{\IN},\{0,1\}^{\IN})$ is not, since $\{0,1\}^{\IN}$ is infinite.
-    label: SetxSet_0_fin_countable_powers
 
   - property: binary coproducts
     proof: 'We will prove that the objects $(\{0\},\varnothing)$ and $(\varnothing,\IN)$ have no coproduct in $(\Set \times \Set)_{\varnothing,\fin}$, i.e. that there is no initial cocone. The category of cocones is isomorphic to the product category $\Set_* \times \IN / \FinSet$. If it has an initial object, then $\IN / \FinSet$ would have an initial object as well. Assume that $f : \IN \to X$ is initial in $\IN / \FinSet$. Let $n,m \in \IN$ with $n \neq m$. There is a map $g : \IN \to \{0,1\}$ with $g(n)=0$ and $g(m)=1$. Since $f$ is initial, there is a unique map $h : X \to \{0,1\}$ with $h \circ f = g$. Since $g(n) \neq g(m)$, it follows that $f(n) \neq f(m)$. Thus, $f : \IN \to X$ is injective, which contradicts the fact that $X$ is finite.'
@@ -105,15 +104,7 @@ unsatisfied_properties:
 
   - property: coaccessible
     proof: >-
-      Assume that the category is $\kappa$-coaccessible for a regular cardinal $\kappa$. In particular, every object is a limit of $\kappa$-copresentable objects. We claim that every $\kappa$-copresentable object $(A,B)$ satisfies $A \cong \{\ast\}$, so that a limit of such objects also has this property (since the projection functor is continuous, as shown before), and hence does not include every object.
-
-      Assume that $(A,B)$ is $\kappa$-copresentable. Since $\kappa$ is regular, $(\kappa,\leq)$ is $\kappa$-filtered, so its dual $(\kappa,\geq)$ is $\kappa$-cofiltered. Consider the diagram $D : (\kappa,\geq) \to (\Set \times \Set)_{\varnothing,\fin}$ defined by $D(\alpha) = ({[\alpha,\kappa[}, \varnothing)$ on objects. If $\alpha \geq \beta$, the morphism $D(\alpha) \to D(\beta)$ is induced by the inclusion map ${[\alpha,\kappa[} \subseteq {[\beta,\kappa[}$. We have $\lim_\alpha D(\alpha) = (\varnothing,\varnothing)$. Since $(A,B)$ is $\kappa$-copresentable, the canonical map
-      $$\textstyle \colim_\alpha \Hom(D(\alpha),(A,B)) \to \Hom(\lim_\alpha D(\alpha),(A,B))$$
-      is an isomorphism. Thus,
-      $$\textstyle \colim_\alpha \Hom({[\alpha,\kappa[},A) \cong \{\ast\}.$$
-      Since $A$ embeds into each $\Hom({[\alpha,\kappa[},A)$ via constant functions, compatibly with the restriction maps, and restrictions of distinct constant functions remain distinct, $A$ embeds into the colimit. Hence $\card(A) \leq 1$. But $A = \varnothing$ is not possible, since then each $\Hom({[\alpha,\kappa[},A)$ and hence the colimit would be empty. Thus, $A \cong \{\ast\}$.
-    references:
-      - SetxSet_0_fin_countable_powers
+      Assume that the category is $\kappa$-coaccessible for a regular cardinal $\kappa$. For $\alpha < \kappa$, let $D(\alpha) \coloneqq (\{ \beta \mid \alpha \leq \beta < \kappa \}, \varnothing)$. The inclusions $D(\alpha') \hookrightarrow D(\alpha)$ for $\alpha \leq \alpha'$ form a diagram $D : (\kappa,\geq) \to (\Set \times \Set)_{\varnothing,\fin}$. Its limit in $\Set \times \Set$ is $(\bigcap_{\alpha < \kappa} \{ \beta \mid \alpha \leq \beta < \kappa \}, \varnothing) = (\varnothing,\varnothing)$, which belongs to the full subcategory and is therefore also the limit there. It is the initial object. Let $p : D(0) \to (\{\ast\},\varnothing)$ be the unique morphism. For every $\alpha < \kappa$, the composite $D(\alpha) \hookrightarrow D(0) \to (\{\ast\},\varnothing)$ is a split epimorphism, since its composite with the morphism $(\{\ast\},\varnothing) \to D(\alpha)$ with value $\alpha$ is the identity. By the lemma <a href="/content/decreasing-chains-coaccessible">here</a>, $(\{\ast\},\varnothing)$ is initial. This is a contradiction, since there is no morphism $(\{\ast\},\varnothing) \to (\varnothing,\varnothing)$.
 
 special_objects:
   initial object:

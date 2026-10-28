@@ -87,7 +87,8 @@ unsatisfied_properties:
     proof: The two maps $\{0\} \rightrightarrows \{0,1\}$ form a cocongruence on $\{0\}$ &mdash; namely the cofull cocongruence on $\{0\}$ &mdash; but they do not have an equalizer.
 
   - property: coaccessible
-    proof: If $\Setne$ is coaccessible, then by the dual of <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adámek–Rosický</a>, Cor. 2.44, also the coslice category $\{\ast\} / \Setne$ would be coaccessible. But this category is isomorphic to <a href="/category/Set_*">$\Set_*$</a>, from which we know that it is not coaccessible (namely, because of Thm. 1.64 in op. cit.).
+    proof: >-
+      Assume that $\Setne$ is $\kappa$-coaccessible for a regular cardinal $\kappa$. In particular, $\Setne$ has $\kappa$-cofiltered limits. For $\alpha < \kappa$, let $D(\alpha) \coloneqq \{ \beta \mid \alpha \leq \beta < \kappa \}$, which is non-empty. The inclusions $D(\alpha') \subseteq D(\alpha)$ for $\alpha \leq \alpha'$ form a diagram $D : (\kappa,\geq) \to \Setne$, which is $\kappa$-cofiltered since $\kappa$ is regular. It has no limit, since it does not even admit a cone: if $(f_\alpha : Y \to D(\alpha))_{\alpha < \kappa}$ is a cone, then every $f_\alpha$ agrees with $f_0$ as a map to $D(0)$, so that the image of $f_0$ is contained in $\bigcap_{\alpha < \kappa} D(\alpha) = \varnothing$, which is impossible since $Y$ is non-empty.
 
 special_objects:
   terminal object:
