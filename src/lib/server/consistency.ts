@@ -30,7 +30,7 @@ export function get_contradiction(
 	return { contradiction }
 }
 
-export function contradiction_worker(
+function contradiction_worker(
 	satisfied_properties: Set<string>,
 	unsatisfied_properties: Set<string>,
 	implications: NormalizedImplication[]
