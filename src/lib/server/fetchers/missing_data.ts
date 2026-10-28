@@ -1,6 +1,6 @@
 import { db } from '#lib/server/db.ts'
 import type { StructureShort, StructureType } from '#lib/commons/types.ts'
-import { contradiction_worker } from '#lib/server/consistency.ts'
+import { deduce_properties } from '#shared/deduction.utils.ts'
 import { get_normalized_implications } from '#shared/implications.ts'
 
 export function fetch_missing_data(type: StructureType) {
@@ -58,19 +58,14 @@ export function fetch_missing_data(type: StructureType) {
 		)
 		.all(type)
 
-	const witnessed_pairs = db
-		.prepare<[StructureType], { p: string; q: string }>(
-			`SELECT DISTINCT
-                a.property_id AS p,
-                an.property_id AS q
-            FROM property_assignments a
-            INNER JOIN property_assignments an
-            ON a.structure_id = an.structure_id
-            WHERE
-                a.type = ?
-                AND an.type = a.type
-                AND a.is_satisfied = TRUE
-                AND an.is_satisfied = FALSE`
+	const assignments = db
+		.prepare<
+			[StructureType],
+			{ structure_id: string; property_id: string; is_satisfied: 0 | 1 }
+		>(
+			`SELECT structure_id, property_id, is_satisfied
+			FROM property_assignments
+			WHERE type = ? AND is_satisfied IS NOT NULL`
 		)
 		.all(type)
 
@@ -83,31 +78,60 @@ export function fetch_missing_data(type: StructureType) {
 		(impl) => !impl.associated_assumptions
 	)
 
-	const witnessed_pairs_set = new Set(witnessed_pairs.map(({ p, q }) => `${p}|${q}`))
+	const assignments_by_structure: Record<
+		string,
+		{ satisfied: string[]; unsatisfied: string[] }
+	> = {}
+
+	for (const { structure_id, property_id, is_satisfied } of assignments) {
+		assignments_by_structure[structure_id] ??= { satisfied: [], unsatisfied: [] }
+		const { satisfied, unsatisfied } = assignments_by_structure[structure_id]
+		if (is_satisfied) satisfied.push(property_id)
+		else unsatisfied.push(property_id)
+	}
+
+	// maps p to the set of all q such that some structure witnesses p ∧ ¬q
+	const witnessed_pairs = new Map<string, Set<string>>()
+
+	for (const { satisfied, unsatisfied } of Object.values(assignments_by_structure)) {
+		for (const p of satisfied) {
+			let witnessed_qs = witnessed_pairs.get(p)
+			if (!witnessed_qs) {
+				witnessed_qs = new Set()
+				witnessed_pairs.set(p, witnessed_qs)
+			}
+			for (const q of unsatisfied) witnessed_qs.add(q)
+		}
+	}
+
+	const is_witnessed = (p: string, q: string) => witnessed_pairs.get(p)?.has(q) ?? false
 
 	const missing_combinations: [string, string][] = []
 
 	for (const p of properties) {
+		// p ∧ ¬q is contradictory iff q can be deduced from p
+		const { deduced_satisfied_properties: deducible_properties } = deduce_properties(
+			new Set([p.id]),
+			implications,
+			() => ({ proof: null, stop: false })
+		)
+
 		for (const q of properties) {
 			if (p.id === q.id) continue
 
-			if (witnessed_pairs_set.has(`${p.id}|${q.id}`)) continue
+			if (is_witnessed(p.id, q.id)) continue
 
 			if (
 				p.dual_property_id &&
 				q.dual_property_id &&
-				witnessed_pairs_set.has(`${p.dual_property_id}|${q.dual_property_id}`)
+				is_witnessed(p.dual_property_id, q.dual_property_id)
 			) {
 				continue
 			}
 
-			const contradiction = contradiction_worker(
-				new Set([p.id]),
-				new Set([q.id]),
-				implications
-			)
+			if (deducible_properties.has(q.id)) continue
 
-			if (!contradiction) missing_combinations.push([p.id, q.id])
+			missing_combinations.push([p.id, q.id])
 		}
 	}
 
