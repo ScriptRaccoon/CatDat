@@ -30,6 +30,7 @@ satisfied_properties:
 
   - property: complete
     proof: The forgetful functor $F(I){-}\Set \to \Set$ creates limits, and <a href="/category/Set">$\Set$</a> is complete.
+    check_redundancy: false
 
   - property: cocomplete
     proof: The forgetful functor $F(I){-}\Set \to \Set$ creates colimits, and <a href="/category/Set">$\Set$</a> is cocomplete.
@@ -43,6 +44,9 @@ satisfied_properties:
 
   - property: cartesian closed
     proof: If $G$ is a group and $(X,\sigma),(Y,\tau)$ are two $G$-sets, their exponential is $\Hom(X,Y)$ equipped with the $G$-action $(g f)(x) = g f(g^{-1} x)$. The same proof works when $G$ is a large group.
+
+  - property: cototal
+    proof: This follows from Proposition 3 <a href="/content/cototal-algebraic-categories">here</a>.
 
 unsatisfied_properties:
   - property: skeletal
@@ -65,10 +69,6 @@ unsatisfied_properties:
       is essentially small since the map $I_X \to \Aut(X)$, $i \mapsto \sigma_i$, is injective, and for every $i \notin I_X$ we have just seen that $f_i \equiv \ast$ is constant. Thus, the collection of cones is isomorphic to the collection of cones over the essentially small family $(T_i)_{i \in I_X}$, proving the claim.
 
       We will now prove that the family $(T_i)_{i \in I}$ has no product, showing that the category is not hypercomplete. Assume that $(p_i : (X,\sigma) \to T_i)_{i \in I}$ is a product. By what we have seen before, there is an essentially small collection $I_X \subseteq I$ such that $p_i \equiv \ast$ for all $i \in I \setminus I_X$. Since $I$ is not essentially small, we may choose an index $k \in I \setminus I_X$. For every $i \in I$, $i \neq k$, the constant map $\ast : \{0,1,\ast\} \to \{0,1,\ast\}$ lifts to a morphism $T_k \to T_i$, since the maps $t^i_j$ and $t^k_j$ preserve $\ast$. Thus, by the universal property of the product, there is a morphism $f : T_k \to (X,\sigma)$ such that $p_k \circ f = \id_{T_k}$ and $p_i \circ f = \ast$ for $i \neq k$. The first equation shows that $p_k$ is surjective, which contradicts $p_k \equiv \ast$.
-
-  # TODO: decide if this category is cototal.
-
-  # TODO: once adding "hypercocomplete", add a proof that this category is hypercocomplete.
 
 special_objects:
   initial object:
