@@ -22,7 +22,8 @@ satisfied_properties:
     proof: See <a href="https://arxiv.org/abs/1103.2139">Gillam</a>. See also <a href="https://math.stackexchange.com/questions/1033675">MSE/1033675</a>.
 
   - property: cocomplete
-    proof: See Demazure-Gabriel's "Groupes algébriques", I. §1. 1.6. Specifically, the forgetful functor from locally ringed spaces to ringed spaces preserves colimits, and colimits of ringed spaces are built from colimits of topological spaces and limits of commutative rings, see <a href="https://math.stackexchange.com/questions/1646202">MSE/1646202</a>.
+    proof: >-
+      Colimits are computed as in ringed spaces: for a diagram $(X_i,\O_{X_i})_{i \in I}$ in $\LRS_R$, let $X \coloneqq \colim_i X_i$ be the colimit of the underlying spaces with colimit maps $u_i : X_i \to X$, and let $\O_X \coloneqq \lim_i (u_i)_* \O_{X_i}$ be the limit of the push-forwards of the structure sheaves. Then $(X,\O_X)$ is a locally ringed space, the morphisms $(u_i, \O_X \to (u_i)_* \O_{X_i})$ have local stalk maps, and they form a colimit in $\LRS_R$. See Demazure–Gabriel, <i>Groupes algébriques</i>, Tome I, Ch. I, §1, 1.6. See also <a href="https://math.stackexchange.com/questions/1646202">MSE/1646202</a>.
     check_redundancy: false
 
   - property: infinitary extensive
@@ -135,6 +136,20 @@ unsatisfied_properties:
       Let $Z \coloneqq \Spec(K[\varepsilon])$, and let $f : X \to Z$ be the morphism corresponding to the identity $K[\varepsilon] \to \O_X(S) = K[\varepsilon]$. Recall from the proof of cocompleteness that pushouts in $\LRS_K$ are computed as in ringed spaces: the underlying space is the pushout of the underlying spaces, and the structure sheaf is the fiber product of the push-forwards of the structure sheaves. Hence, the underlying space of $P \coloneqq Y \sqcup_X Z$ is the pushout of $\id_S$ and $S \to Z$, which is a point, and its algebra of global sections is
       $$\O_Y(S) \times_{\O_X(S)} \O_Z(Z) = K \times_{K[\varepsilon]} K[\varepsilon] \cong K.$$
       So $P \cong \Spec(K)$, and the stalk map of the morphism $j : Z \to P$ is the inclusion $K \hookrightarrow K[\varepsilon]$. Since it is not surjective, $j$ is not a regular monomorphism by the classification of regular monomorphisms.
+
+  - property: filtered-colimit-stable monomorphisms
+    proof: >-
+      Choose a residue field $K$ of $R$. Let $V \coloneqq K^{(\IN)}$ with basis $(e_m)_{m \in \IN}$, and let $V_n \subseteq V$ be the subspace spanned by the $e_m$ with $m \geq n$. Then $V_0 \supseteq V_1 \supseteq \cdots$ and $\bigcap_{n \in \IN} V_n = 0$. Let $\sigma : V \to K$ be the linear map with $\sigma(e_m) = 1$ for all $m$, which sums the coefficients.
+
+      For a $K$-vector space $W$, let $K \oplus W$ be its square-zero extension. It is a local ring with nilpotent maximal ideal $W$, and it is functorial in $W$: a linear map $f : W \to W'$ induces the homomorphism $K \oplus W \to K \oplus W'$, $(\lambda,w) \mapsto (\lambda,f(w))$. For example, $K \oplus K$ is isomorphic to the algebra $K[\varepsilon]$ of dual numbers, where $\varepsilon^2 = 0$, via $(\lambda,\mu) \mapsto \lambda + \mu \varepsilon$.
+
+      Let $A_n \coloneqq K \oplus V_n$. Then $\Spec(A_n)$ is a one-point space with the ring $A_n$. The inclusions $V_{n+1} \hookrightarrow V_n$ induce inclusions $A_{n+1} \hookrightarrow A_n$, hence morphisms $\Spec(A_n) \to \Spec(A_{n+1})$, which form a filtered diagram indexed by $\IN$. The restriction $V_n \to K$ of $\sigma$ induces the homomorphism
+      $$p_n : A_n \to K[\varepsilon], \quad (\lambda,v) \mapsto \lambda + \sigma(v) \varepsilon.$$
+      It is surjective since $\sigma(e_n) = 1$, and $p_{n+1}$ is the restriction of $p_n$ to $A_{n+1}$ by functoriality. Hence, the morphisms $\Spec(p_n) : \Spec(K[\varepsilon]) \to \Spec(A_n)$ form a morphism from the constant diagram $(\Spec(K[\varepsilon]))_n$ to the diagram $(\Spec(A_n))_n$. Each $\Spec(p_n)$ is a monomorphism by the classification of monomorphisms (see below): its underlying map is a map between one-point spaces, and its stalk map $p_n$ is surjective, hence an epimorphism of local commutative rings.
+
+      The colimit of the constant diagram is $\Spec(K[\varepsilon])$. Recall from the proof of cocompleteness that colimits in $\LRS_R$ are computed as in ringed spaces: the underlying space is the colimit of the underlying spaces, and the structure sheaf is the limit of the push-forwards of the structure sheaves. Hence, the colimit of the diagram $(\Spec(A_n))_n$ is a one-point space with the ring
+      $$\textstyle \lim_n A_n = \bigcap_{n \in \IN} A_n = K \oplus \bigcap_{n \in \IN} V_n = K,$$
+      i.e. it is $\Spec(K)$, and the induced morphism $\Spec(K[\varepsilon]) \to \Spec(K)$ corresponds to the inclusion $K \hookrightarrow K[\varepsilon]$. This inclusion is not an epimorphism of local commutative rings, since the identity of $K[\varepsilon]$ and the local homomorphism $K[\varepsilon] \to K[\varepsilon]$, $\varepsilon \mapsto 0$, agree on $K$. Hence, the morphism $\Spec(K[\varepsilon]) \to \Spec(K)$ is not a monomorphism by the classification of monomorphisms.
 
 special_objects:
   initial object:
