@@ -108,10 +108,6 @@ unsatisfied_properties:
     proof: Let $(X,R) \in \Bin$. We will prove that $\Hom((X,R),-)$ is not conservative. If $R$ is non-empty, consider the unique morphism from $(\varnothing,\varnothing)$ to $(\{\ast\},\varnothing)$. It is not an isomorphism, but since $(X,R)$ has no morphism to either object, the functor $\Hom((X,R),-)$ maps it to an isomorphism between empty sets. If $R$ is empty, consider the unique morphism from $(\{\ast\},\varnothing)$ to $(\{\ast\},\{(\ast,\ast)\})$. It is not an isomorphism, but since $(X,R) = (X,\varnothing)$ has a unique morphism to each of these objects, the functor $\Hom((X,R),-)$ maps it to an isomorphism between singleton sets.
     label: Bin_no_extremal_generator
 
-  - property: cofiltered-limit-stable epimorphisms
-    proof: We already know that <a href="/category/Set">$\Set$</a> does not have this property. Now apply the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> to the functor $\Set \to \Bin$, $X \mapsto (X,\varnothing)$.
-    label: Bin_no_cofiltered-limit-stable_epis
-
   - property: co-Malcev
     proof: >-
       Consider the set $X = \{x\}$ with the relation $R_X = \{(x,x)\}$ and the set $C = \{x,x'\}$ with the relation $R_C = \{(x,x),(x',x'),(x,x')\}$. There are two canonical morphisms $j_1,j_2 : (X,R_X) \rightrightarrows (C,R_C)$ defined by $j_1(x)=x$ and $j_2(x)=x'$. They are jointly surjective and have a common retraction $(C,R_C) \to (X,R_X)$, namely the unique map $C \to X$ sending both $x$ and $x'$ to $x$. Thus, $j_1,j_2$ form a coreflexive corelation. It is not cosymmetric, since otherwise there would be a morphism $s : (C,R_C) \to (C,R_C)$ satisfying $s(x)=x'$ and $s(x')=x$, which would imply $(x',x) \in R_C$, contrary to the definition of $R_C$.

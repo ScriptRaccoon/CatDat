@@ -77,12 +77,21 @@
 
 - id: lcc_extensive_yields_infinitary
   assumptions:
-    - cocomplete
+    - coproducts
     - extensive
     - locally cartesian closed
   conclusions:
     - infinitary extensive
   proof: The pullback functor preserves coproducts because it has a right adjoint. See also Remark 2.6 at the <a href="https://ncatlab.org/nlab/show/extensive+category">nLab</a>.
+
+- id: lcc_extensive_yields_countable
+  assumptions:
+    - countable coproducts
+    - extensive
+    - locally cartesian closed
+  conclusions:
+    - countably extensive
+  proof: The pullback functor preserves countable coproducts because it has a right adjoint.
 
 - id: infinitary_extensive_not_coaccessible
   assumptions:
@@ -96,3 +105,16 @@
     To prove the claim, let $T_\beta$ be the summand with index $\beta$ of the coproduct $\coprod_{\beta < \kappa} T$, and for $\alpha < \kappa$ let
     $$\textstyle D(\alpha) \coloneqq \coprod_{\alpha \leq \beta < \kappa} T_\beta.$$
     The canonical morphisms $D(\alpha') \to D(\alpha)$ for $\alpha \leq \alpha'$ form a diagram $D : (\kappa,\geq) \to \C$, which is $\kappa$-cofiltered since $\kappa$ is regular. Since $\C$ has $\kappa$-cofiltered limits, $D$ has a limit, which is initial by <a href="/content/tail-coproducts-extensive">this lemma</a>. Let $p : D(0) \to T$ be the codiagonal. For every $\alpha < \kappa$, the composite $D(\alpha) \to D(0) \to T$ is the codiagonal of $D(\alpha)$, which is a split epimorphism, since its composite with the coproduct inclusion $T_\alpha \hookrightarrow D(\alpha)$ is the identity. By the lemma <a href="/content/decreasing-chains-coaccessible">here</a>, $T$ is initial.
+
+- id: countably_extensive_no_stable_epis
+  assumptions:
+    - countably extensive
+    - cofiltered-limit-stable epimorphisms
+  conclusions:
+    - trivial
+  proof: >-
+    Let $\C$ be a countably extensive category with cofiltered-limit-stable epimorphisms. We show that $\C$ is thin. Since $\C$ has disjoint finite coproducts, it is then trivial by <a href="/category-implication/disjoint_coproducts_thin_trivial">this implication</a>.
+
+    Let $T$ be an object, let $T_m$ be the summand with index $m$ of the coproduct $\coprod_{m \in \IN} T$, and for $n \in \IN$ let
+    $$\textstyle D(n) \coloneqq \coprod_{m \geq n} T_m.$$
+    The canonical morphisms $D(n') \to D(n)$ for $n \leq n'$ form a cofiltered diagram $D : (\IN,\geq) \to \C$, whose limit is initial by <a href="/content/tail-coproducts-extensive">this lemma</a>. For every $n \in \IN$, the codiagonal $D(n) \to T$ is an epimorphism, since its composite with the coproduct inclusion $T_n \hookrightarrow D(n)$ is the identity. Together, they form a morphism from $D$ to the constant diagram with value $T$, whose limit is $T$. By assumption, their limit $0 \to T$ is an epimorphism. Since $0$ is initial, it follows that any two morphisms $T \rightrightarrows Y$ coincide. Thus, $\C$ is thin.

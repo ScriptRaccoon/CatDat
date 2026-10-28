@@ -56,9 +56,6 @@ unsatisfied_properties:
   - property: cartesian closed
     proof: 'There are functors $F,G : \CRing \rightrightarrows \Set$ such that $\Hom(F,G)$ is not essentially small; see <a href="https://mathoverflow.net/questions/390611">MO/390611</a> for example. Now if the exponential $[F,G] : \CRing \to \Set$ exists, we get $[F,G](\IZ) \cong \Hom(\Hom(\IZ,-),[F,G])$ by Yoneda. Since $\Hom(\IZ,-)$ is the terminal object $T$, this simplifies to $\Hom(T,[F,G]) \cong \Hom(T \times F,G) \cong \Hom(F,G)$, a contradiction.'
 
-  - property: cofiltered-limit-stable epimorphisms
-    proof: We already know that <a href="/category/Set">$\Set$</a> does not have this property. Now apply the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> to the functor $\Set \to [\CRing, \Set]$ that maps a set to its constant functor.
-
   - property: well-powered
     proof: 'Let $T$ denote the terminal object, i.e. the constant functor with value $\{\ast\}$. For infinite cardinals $\kappa$ we define a subfunctor $T_\kappa \subseteq T$ as follows: If $R$ is a commutative ring that has a homomorphism $K \to R$ from a field $K$ of cardinality at least $\kappa$, then $T_\kappa(R) = \{\ast\}$. Otherwise, we put $T_\kappa(R) = \varnothing$. Note that if $R \neq 0$ has cardinality strictly less than $\kappa$, then $T_\kappa(R) = \varnothing$. Since homomorphisms $K \to R \to S$ compose to a homomorphism $K \to S$, we see that $T_\kappa$ is indeed a subfunctor of $T$. For $\kappa < \lambda$ the subfunctors $T_\kappa$ and $T_\lambda$ are not isomorphic, because there is a field $K$ of cardinality $\kappa$, and then $T_\lambda(K) = \varnothing$, while $T_\kappa(K) = \{\ast\}$. This shows that the collection $\Sub(T)$ is not essentially small.'
     label: Z_well-powered
