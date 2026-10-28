@@ -23,9 +23,7 @@ satisfied_properties:
 
   - property: cocomplete
     proof: See Demazure-Gabriel's "Groupes algébriques", I. §1. 1.6. Specifically, the forgetful functor from locally ringed spaces to ringed spaces preserves colimits, and colimits of ringed spaces are built from colimits of topological spaces and limits of commutative rings, see <a href="https://math.stackexchange.com/questions/1646202">MSE/1646202</a>.
-
-  - property: well-copowered
-    proof: This follows from the characterization of epimorphisms below.
+    check_redundancy: false
 
   - property: infinitary extensive
     proof: >-
@@ -69,6 +67,15 @@ satisfied_properties:
       Now let $(f,f^\sharp) : X \to Y$ be a morphism such that precomposition with it is bijective, so that $\alpha_f$ and $\beta_f$ are bijective. Since $\{0,1\}$ is an extremal cogenerator of $\Set$, $f$ is bijective. Since every pair $(U,0)$ lies in the image of $\beta_f$, every open subset of $X$ has the form $f^*(V)$ for an open subset $V \subseteq Y$, so $f$ is a homeomorphism. Finally, $\beta_f$ is the disjoint union of the maps $f^\sharp : \O_Y(V) \to \O_X(f^*(V))$, and $V \mapsto f^*(V)$ is a bijection between the open subsets of $Y$ and $X$. Hence, each of these maps is bijective. This shows that $f^\sharp : \O_Y \to f_* \O_X$ is an isomorphism, so that $(f,f^\sharp)$ is an isomorphism of ringed spaces.
     references:
       - Set_extremal_cogenerator
+
+  - property: well-copowered
+    proof: This follows from the characterization of epimorphisms below.
+
+  - property: well-powered
+    proof: >-
+      Let $(f,f^\sharp) : (X,\O_X) \to (Y,\O_Y)$ be a monomorphism. By the classification of monomorphisms (see below), $f : X \to Y$ is injective, and the stalk maps $f^\sharp_x : \O_{Y,f(x)} \to \O_{X,x}$ are epimorphisms in the category of local commutative rings. By <a href="/content/local-ring-epimorphisms">this lemma</a>, every stalk of $\O_X$ has cardinality at most
+      $$\textstyle \lambda \coloneqq \max\bigl(\aleph_0, \sup_{y \in Y} |\O_{Y,y}|\bigr).$$
+      Fix a set $S$ of cardinality $\lambda$, and choose injective maps $\O_{X,x} \to S$. Since a section of $\O_X$ is determined by its germs, we obtain injective maps $\O_X(U) \to S^U$ for all open subsets $U \subseteq X$, which are compatible with the restriction maps. Transporting the structure along these maps and along $f$, we see that $(X,\O_X)$ is isomorphic to a locally ringed space $(X',\O_{X'})$ with $X' \subseteq Y$ and $\O_{X'}(U) \subseteq S^U$ for all open subsets $U \subseteq X'$, such that the restriction maps are the projections. These locally ringed spaces form a set, and for each of them there is only a set of morphisms $(X',\O_{X'}) \to (Y,\O_Y)$. Hence, $\Sub(Y,\O_Y)$ is essentially small.
 
 unsatisfied_properties:
   - property: skeletal
