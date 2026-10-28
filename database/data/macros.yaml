@@ -59,6 +59,7 @@
 \Hom: \operatorname{Hom}
 \HomInternal: \underline{\operatorname{Hom}}
 \End: \operatorname{End}
+\Ext: \operatorname{Ext}
 \Aut: \operatorname{Aut}
 \Bilin: \operatorname{Bilin}
 \Ob: \operatorname{Ob}

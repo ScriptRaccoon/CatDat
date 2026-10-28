@@ -36,9 +36,6 @@ satisfied_properties:
     references:
       - Grp_extremal_generator
 
-  - property: cogenerator
-    proof: It is easy to check that $\IZ$ is a cogenerator for free abelian groups.
-
   - property: well-powered
     proof: This is clear since the monomorphisms are injective.
 
@@ -50,6 +47,30 @@ satisfied_properties:
 
   - property: pullback-stable regular epimorphisms
     proof: This is clear since regular epimorphisms coincide with the surjective homomorphisms (see below).
+
+  - property: extremal cogenerator
+    proof: >-
+      We show that $\IZ$ is an extremal cogenerator. For every free abelian group $A$, the coordinate functionals $A \to \IZ$ with respect to a basis of $A$ separate the elements of $A$. In particular, $\IZ$ is a cogenerator.
+
+      Now let $f : A \to B$ be a homomorphism of free abelian groups such that
+      $${-} \circ f : \Hom(B,\IZ) \to \Hom(A,\IZ)$$
+      is bijective. We need to show that $f$ is bijective. If $a \in A$ satisfies $f(a) = 0$, then every homomorphism $\varphi : A \to \IZ$ has the form $\varphi = \psi \circ f$, so that $\varphi(a) = \psi(f(a)) = 0$. Hence, $a = 0$, and $f$ is injective. Let $C \coloneqq B / f(A)$. Applying $\Hom(-,\IZ)$ to the short exact sequence
+      $$0 \to A \xrightarrow{f} B \to C \to 0$$
+      yields the exact sequence
+      $$0 \to \Hom(C,\IZ) \to \Hom(B,\IZ) \xrightarrow{{-} \circ f} \Hom(A,\IZ) \to \Ext^1(C,\IZ) \to \Ext^1(B,\IZ),$$
+      where $\Ext^1(B,\IZ) = 0$ since $B$ is free. Since ${-} \circ f$ is bijective, we get
+      $$\Hom(C,\IZ) = 0 \quad \text{and} \quad \Ext^1(C,\IZ) = 0.$$
+      It remains to show that $C = 0$. We will use that $\Ext^2(-,\IZ) = 0$ since subgroups of free abelian groups are free, so that $\Ext^1(-,\IZ)$ maps injective homomorphisms to surjective ones.
+
+      <strong>Claim 1.</strong> Every abelian group $D$ with $\Ext^1(D,\IZ) = 0$ is torsion-free. Otherwise, $D$ contains a subgroup isomorphic to $\IZ/p$ for some prime $p$, so that $\Ext^1(D,\IZ) \to \Ext^1(\IZ/p,\IZ) \cong \IZ/p$ is surjective, a contradiction.
+
+      <strong>Claim 2.</strong> $C$ is divisible. Let $p$ be a prime. Applying $\Hom(C,-)$ to the short exact sequence $0 \to \IZ \xrightarrow{p} \IZ \to \IZ/p \to 0$ yields the exact sequence
+      $$\Hom(C,\IZ) \to \Hom(C,\IZ/p) \to \Ext^1(C,\IZ),$$
+      so that $\Hom(C,\IZ/p) = 0$. Hence, the $\IF_p$-vector space $C/pC$ admits no non-zero linear map to $\IF_p$, which means $C = pC$.
+
+      <strong>Claim 3.</strong> Every $\IQ$-vector space $D$ with $\Ext^1(D,\IZ) = 0$ is zero. Otherwise, $D$ contains a subgroup isomorphic to $\IQ$, so that $\Ext^1(D,\IZ) \to \Ext^1(\IQ,\IZ)$ is surjective. But $\Ext^1(\IQ,\IZ) \cong (\prod_p \IZ_p)/\IZ$ by <a href="https://ncatlab.org/nlab/show/An+Introduction+to+Homological+Algebra">Weibel</a>, Exercise 3.5.3, where $\IZ_p$ denotes the $p$-adic integers. This group is non-zero since $\prod_p \IZ_p$ is uncountable, a contradiction. For other proofs that $\Ext^1(\IQ,\IZ) \neq 0$, see <a href="https://mathoverflow.net/questions/105269">MO/105269</a> and <a href="https://math.stackexchange.com/questions/212099">MSE/212099</a>.
+
+      By Claims 1 and 2, $C$ is a $\IQ$-vector space, so that $C = 0$ by Claim 3. Hence, $f$ is bijective and therefore an isomorphism.
 
 unsatisfied_properties:
   - property: balanced
