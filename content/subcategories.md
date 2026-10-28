@@ -117,20 +117,16 @@ Finally, to prove the parenthetical remark, assume that $\C$ has binary products
 :::
 
 ::: Lemma 9
-Let $L$ be a functor which is left adjoint to a faithful functor $U$. Then $L$ preserves generating collections. (Thus in particular, any reflective subcategory of a category with a generating collection also has a generating collection; and similarly for a single generator.)
+Let $U : \C \to \D$ be a faithful functor with a left adjoint $L : \D \to \C$. Then $L$ preserves generating collections. If $U$ is also conservative, then $L$ preserves extremal generating collections. (Thus in particular, any reflective subcategory of a category with a generating collection also has a generating collection; and similarly for a single generator.)
 :::
 
 ::: Proof
-If $S$ is a generating collection,
+Let $S$ be a collection of objects of $\D$. By the adjunction, the functor
+$$(\Hom(L(G),-))_{G \in S} : \C \to (\Set^+)^S$$
+is isomorphic to the composition of $U : \C \to \D$ followed by
+$$(\Hom(G,-))_{G \in S} : \D \to (\Set^+)^S.$$
 
-$$
-\begin{align*}
-\prod_{G\in S} \Hom(L(G),-) & \cong \prod_{G\in S} \Hom(G,U(-)) \\
-& \cong \left( \prod_{G\in S} \Hom(G,-) \right) \circ U
-\end{align*}
-$$
-
-is a composition of faithful functors, hence faithful.
+If $S$ is a generating collection, this is a composition of faithful functors, hence faithful. If $S$ is an extremal generating collection and $U$ is conservative, this is a composition of faithful conservative functors, hence faithful and conservative.
 :::
 
 ::: Lemma 10
