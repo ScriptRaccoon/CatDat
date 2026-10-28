@@ -51,12 +51,6 @@ unsatisfied_properties:
   - property: countable
     proof: For every set $X$ this category contains the terminal object $(\{X\},\id)$.
 
-  - property: generator
-    proof: >-
-      Assume that $(G,\gamma)$ is a generator of $\IZ{-}\FinSet$. Then $G$ cannot be empty, since otherwise $\IZ{-}\FinSet$ would be thin, which is absurd. Choose an element $g \in G$. Since $\gamma$ is a permutation of a finite set, there is some $n \geq 2$ with $\gamma^n(g)=g$.
-
-      Choose a natural number $m \geq 2$ that does not divide $n$ (for example, $m=n+1$), and consider the finite set $X = \{0,1,\dotsc,m-1\}$ equipped with the permutation $\sigma$ defined by $\sigma(x) = (x+1) \bmod m$. Since $(X,\sigma)$ has a non-trivial endomorphism, for example $\sigma$, and $(G,\gamma)$ is a generator, there is a morphism $(G,\gamma) \to (X,\sigma)$. If $x \in X$ denotes the image of $g \in G$, we conclude that $\sigma^n(x)=x$. By construction of $\sigma$, this implies $m \mid n$, which contradicts our assumption on $m$.
-
   - property: cogenerator
     proof: >-
       Assume that $(Q,\rho)$ is a cogenerator of $\IZ{-}\FinSet$. Choose $k \geq 1$ with $\rho^k = \id_Q$. Now consider the finite set $X = \{0,1,\dotsc,2k-1\}$ equipped with the permutation $\sigma$ defined by $\sigma(x) = (x+1) \bmod 2k$. The object $(X,\sigma)$ has a non-trivial endomorphism $g$ defined by $g(x) = (x+k) \bmod 2k$, i.e. $g = \sigma^k$. Since $(Q,\rho)$ is a cogenerator, there is a morphism $f : (X,\sigma) \to (Q,\rho)$ with $f \circ g \neq f$. But since $f$ is a morphism, we have
