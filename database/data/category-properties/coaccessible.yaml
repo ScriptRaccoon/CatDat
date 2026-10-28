@@ -1,6 +1,6 @@
 id: coaccessible
 relation: is
-description: A category is <i>coaccessible</i> if its opposite category is accessible.
+description: A category is <i>coaccessible</i> if its opposite category is accessible. That is, for some regular cardinal $\kappa$, it has $\kappa$-cofiltered limits and there is an essentially small collection $G$ of $\kappa$-copresentable objects such that every object is a $\kappa$-cofiltered limit of objects in $G$.
 nlab_link: null
 dual: accessible
 invariant_under_equivalences: true

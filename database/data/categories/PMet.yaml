@@ -126,7 +126,7 @@ unsatisfied_properties:
     label: PMet_not_regular
 
   - property: coaccessible
-    proof: The proof for <a href="/category/Met">$\Met$</a> also works for pseudo-metric spaces. The diagram $D$ used there takes values in $\Met$, and its limit $L$ in $\Met$ is also its limit in $\PMet$, since the inclusion $\Met \hookrightarrow \PMet$ has a left adjoint (mapping $X$ to $X/{\sim}$, where $x \sim y \iff d(x,y) = 0$) and therefore preserves limits.
+    proof: The proof for <a href="/category/Met">$\Met$</a> also works for pseudo-metric spaces. The diagram $D$ used there takes values in $\PMet$, and the same argument shows that its limit in $\PMet$ is the empty space.
     references:
       - Met_not_coaccessible
 
