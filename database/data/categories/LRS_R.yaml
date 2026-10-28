@@ -30,20 +30,6 @@ satisfied_properties:
   - property: well-copowered
     proof: This follows from the characterization of epimorphisms below.
 
-  - property: concretizable
-    proof: >-
-      Consider the functor $F : \LRS_R \to \Set \times \Set^{\op}$ defined on objects by
-      $$\textstyle F(X,\O_X) \coloneqq \bigl(|X|,\coprod_{U \subseteq X} |\O_X(U)|\bigr),$$
-      where $U$ runs through the open subsets of $X$ and $|{-}|$ denotes the underlying set of a topological space or ring, respectively. If $(f,f^\sharp) : (X,\O_X) \to (Y,\O_Y)$ is a morphism of locally ringed spaces, then we get a map of sets $|f| : |X| \to |Y|$, and the ring homomorphisms $f^\sharp(V) : \O_Y(V) \to \O_X(f^*(V))$ for opens $V \subseteq Y$ induce a map of sets
-      $$\textstyle \alpha : \coprod_{V \subseteq Y} \O_Y(V) \to \coprod_{U \subseteq X} \O_X(U)$$
-      defined by $\alpha \circ \iota_V = \iota_{f^*(V)} \circ f^\sharp(V)$. We let $F(f,f^\sharp) \coloneqq (|f|,\alpha)$. It is easy to verify that $F$ is a functor.
-
-      To show that $F$ is faithful, assume that $(f,f^\sharp)$ and $(g,g^\sharp)$ are two morphisms with the same image under $F$. Then $|f| = |g|$, hence $f = g$. Also, we have
-      $$\iota_{f^*(V)} \circ f^\sharp(V) = \iota_{g^*(V)} \circ g^\sharp(V)$$
-      for every open subset $V \subseteq Y$. Since $\iota_{f^*(V)} = \iota_{g^*(V)}$ is a monomorphism of sets, we conclude that $f^\sharp(V) = g^\sharp(V)$. Thus, $f^\sharp = g^\sharp$. We have shown $(f,f^\sharp) = (g,g^\sharp)$, as required.
-
-      Since <a href="/category/Set_op">$\Set^{\op}$</a> is concretizable (say, via the contravariant power set functor), and <a href="/category/SetxSet">$\Set \times \Set$</a> is also concretizable (because it is locally small and has a generating collection), it follows that $\LRS_R$ is concretizable.
-
   - property: infinitary extensive
     proof: >-
       The proof works for both ringed and locally ringed spaces and relies on the fact that <a href="/category/Top">$\Top$</a> is infinitary extensive.
@@ -59,6 +45,33 @@ satisfied_properties:
       It remains to prove that coproducts are stable under pullbacks. To this end, let $(f,f^\sharp) : (T,\O_T) \to \coprod_i (X_i,\O_{X_i})$ be a morphism. Then $T_i \coloneqq f^*(X_i) \subseteq T$ is an open subset, and for $i \neq j$ we have $T_i \cap T_j = \varnothing$ because $X_i \cap X_j = \varnothing$ in the coproduct. We must show that the canonical morphism $(g,g^\sharp) : \coprod_i (T_i,\O_{T_i}) \to (T,\O_T)$ is an isomorphism. The underlying continuous map $g$ is a homeomorphism because coproducts in $\Top$ are stable under pullbacks. It therefore remains to show that $g^\sharp : \O_T \to g_* \O$, where $\O$ denotes the structure sheaf of the coproduct, is an isomorphism. Equivalently, for every open subset $U \subseteq T$, we must show that the canonical ring homomorphism
       $$\textstyle \O_T(U) \to \prod_{i \in I} \O_{T_i}(U \cap T_i) = \prod_{i \in I} \O_T(U \cap T_i)$$
       is an isomorphism. This is precisely the sheaf axiom applied to the open cover of $U$ by the pairwise disjoint open subsets $U \cap T_i$.
+
+  - property: extremal cogenerator
+    proof: >-
+      Let $\RS_R$ be the category of ringed spaces over $R$, which is defined like $\LRS_R$, but without the conditions on stalks and stalk maps. By <a href="https://arxiv.org/abs/1103.2139">Gillam</a>, Cor. 6 (stated there for $R = \IZ$, but the proof works verbatim for every $R$), the inclusion functor $\LRS_R \to \RS_R$ has a right adjoint $L : \RS_R \to \LRS_R$. The inclusion functor is faithful, and it is conservative since the inverse of an isomorphism of ringed spaces has bijective, hence local, stalk maps. By the dual of Lemma 9 <a href="/content/subcategories">here</a>, $L$ maps extremal cogenerators of $\RS_R$ to extremal cogenerators of $\LRS_R$. So it suffices to find an extremal cogenerator of $\RS_R$.
+
+      Let $Q$ be the ringed space over $R$ whose underlying space is $\{0,1\}^2$ with the open subsets
+      $$\varnothing,\quad W \coloneqq \{0,1\} \times \{1\},\quad \{0,1\}^2,$$
+      and whose structure sheaf is given by
+      $$\begin{align*}
+      \O_Q(\{0,1\}^2) & \coloneqq R, \\
+      \O_Q(W) & \coloneqq R[T], \\
+      \O_Q(\varnothing) & \coloneqq 0,
+      \end{align*}$$
+      with the inclusion $R \hookrightarrow R[T]$ as the restriction map. This is a sheaf since every open cover of a non-empty open subset contains this subset. We claim that $Q$ is an extremal cogenerator of $\RS_R$.
+
+      A morphism $X \to Q$ in $\RS_R$ consists of a function $(h,k) : X \to \{0,1\}^2$ such that $U \coloneqq k^*(\{1\})$ is open, together with $R$-algebra homomorphisms $R \to \O_X(X)$ and $R[T] \to \O_X(U)$ that are compatible with the restriction maps. The first homomorphism is unique, the second one is determined by the image $s \in \O_X(U)$ of $T$, and the compatibility is automatic. Let $S(X)$ be the set of pairs $(U,s)$ with $U \subseteq X$ open and $s \in \O_X(U)$. We obtain a bijection
+      $$\Hom_{\RS_R}(X,Q) \cong \Hom_{\Set}(X,\{0,1\}) \times S(X).$$
+      Under this bijection, precomposition with a morphism $(f,f^\sharp) : X \to Y$ is the product of the maps
+      $$\alpha_f : \Hom_{\Set}(Y,\{0,1\}) \to \Hom_{\Set}(X,\{0,1\}), \quad h \mapsto h \circ f,$$
+      $$\beta_f : S(Y) \to S(X), \quad (V,s) \mapsto (f^*(V), f^\sharp(s)).$$
+      All four sets are non-empty, since they contain the constant function with value $0$ and the pair $(\varnothing,0)$, respectively. Hence, the product map determines $\alpha_f$ and $\beta_f$, and it is bijective if and only if $\alpha_f$ and $\beta_f$ are.
+
+      To show that $Q$ is a cogenerator, let $(f,f^\sharp),(g,g^\sharp) : X \rightrightarrows Y$ be two morphisms that induce the same map by precomposition, so that $\alpha_f = \alpha_g$ and $\beta_f = \beta_g$. Since $\{0,1\}$ is a cogenerator of <a href="/category/Set">$\Set$</a>, the first equation implies $f = g$. The second equation means $f^\sharp(s) = g^\sharp(s)$ for all open subsets $V \subseteq Y$ and $s \in \O_Y(V)$, i.e. $f^\sharp = g^\sharp$.
+
+      Now let $(f,f^\sharp) : X \to Y$ be a morphism such that precomposition with it is bijective, so that $\alpha_f$ and $\beta_f$ are bijective. Since $\{0,1\}$ is an extremal cogenerator of $\Set$, $f$ is bijective. Since every pair $(U,0)$ lies in the image of $\beta_f$, every open subset of $X$ has the form $f^*(V)$ for an open subset $V \subseteq Y$, so $f$ is a homeomorphism. Finally, $\beta_f$ is the disjoint union of the maps $f^\sharp : \O_Y(V) \to \O_X(f^*(V))$, and $V \mapsto f^*(V)$ is a bijection between the open subsets of $Y$ and $X$. Hence, each of these maps is bijective. This shows that $f^\sharp : \O_Y \to f_* \O_X$ is an isomorphism, so that $(f,f^\sharp)$ is an isomorphism of ringed spaces.
+    references:
+      - Set_extremal_cogenerator
 
 unsatisfied_properties:
   - property: skeletal
