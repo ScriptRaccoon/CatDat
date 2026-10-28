@@ -25,27 +25,27 @@ export function fetch_missing_data(type: StructureType) {
 			[StructureType],
 			{ id1: string; name1: string; id2: string; name2: string }
 		>(
-			`SELECT
+			`WITH signatures AS (
+				SELECT
+					s.id,
+					s.name,
+					group_concat(coalesce(pa.is_satisfied, '?'), '' ORDER BY p.id) AS signature
+				FROM structures s
+				JOIN properties p ON p.type = s.type
+				LEFT JOIN property_assignments pa
+				ON pa.structure_id = s.id AND pa.property_id = p.id
+				WHERE s.type = ?
+				GROUP BY s.id
+			)
+			SELECT
 				s1.id AS id1,
 				s1.name AS name1,
 				s2.id AS id2,
 				s2.name AS name2
-			FROM structures s1
-			JOIN structures s2
-			ON s1.id < s2.id AND s2.type = s1.type
-			JOIN properties p ON p.type = s1.type
-			LEFT JOIN property_assignments pa1
-			ON pa1.structure_id = s1.id AND pa1.property_id = p.id
-			LEFT JOIN property_assignments pa2
-			ON pa2.structure_id = s2.id AND pa2.property_id = p.id
-			WHERE s1.type = ?
-			GROUP BY s1.id, s1.name, s2.id, s2.name
-			HAVING SUM(
-				CASE
-					WHEN pa1.is_satisfied IS pa2.is_satisfied THEN 0
-					ELSE 1
-				END
-			) = 0`
+			FROM signatures s1
+			JOIN signatures s2
+			ON s1.id < s2.id AND s1.signature = s2.signature
+			ORDER BY s1.id, s2.id`
 		)
 		.all(type)
 
