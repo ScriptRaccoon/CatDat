@@ -2,7 +2,7 @@ id: LRS_R
 name: category of locally ringed spaces
 notation: $\LRS_R$
 objects: locally ringed spaces over $R \neq 0$, i.e. pairs $(X,\O_X)$ consisting of a topological space and a sheaf of commutative $R$-algebras on it whose stalks are local rings
-morphisms: 'A morphism $(f,f^\sharp) : (X,\O_X) \to (Y,\O_Y)$ consists of a continuous map $f : X \to Y$ and a homomorphism $f^\sharp : \O_Y \to f_* \O_X$ of sheaves of $R$-algebras such that for every $x \in X$ the induced map on stalks $f_x : \O_{Y,f(x)} \to \O_{X,x}$ is local.'
+morphisms: 'A morphism $(f,f^\sharp) : (X,\O_X) \to (Y,\O_Y)$ consists of a continuous map $f : X \to Y$ and a homomorphism $f^\sharp : \O_Y \to f_* \O_X$ of sheaves of $R$-algebras such that for every $x \in X$ the induced map on stalks $f^\sharp_x : \O_{Y,f(x)} \to \O_{X,x}$ is local.'
 description: Here, $R$ is a fixed non-trivial commutative ring. The general properties of this category will not depend on the choice of $R$. For $R = \IZ$ we obtain the category $\LRS$ of locally ringed spaces.
 nlab_link: https://ncatlab.org/nlab/show/locally+ringed+topological+space
 
@@ -13,9 +13,6 @@ related:
   - Sch_R
   - Top
   - CAlg(R)
-
-comments:
-  - Monomorphisms $X \to Y$ can be formally described by the condition that the diagonal morphism $X \to X \times_Y X$ is an isomorphism. Since the fiber product of locally ringed spaces has a concrete description (<a href="https://math.stackexchange.com/questions/1033675">MSE/1033675</a>), we thus have a description of the monomorphisms, albeit a very complicated one. At least, we can say that every monomorphism is injective.
 
 satisfied_properties:
   - property: locally small
@@ -146,6 +143,16 @@ special_morphisms:
   isomorphisms:
     description: 'A morphism $(f,f^\sharp) : (X, \O_X) \to (Y,\O_Y)$ is an isomorphism iff $f : X \to Y$ is a homeomorphism and $f^\sharp : \O_Y \to f_* \O_X$ is an isomorphism of sheaves.'
     proof: This is easy.
+  monomorphisms:
+    description: 'A morphism $(f,f^\sharp) : (X,\O_X) \to (Y,\O_Y)$ is a monomorphism iff $f : X \to Y$ is injective and for every $x \in X$ the stalk map $f^\sharp_x : \O_{Y,f(x)} \to \O_{X,x}$ is an epimorphism in the category of local commutative rings and local homomorphisms.'
+    proof: >-
+      For a local commutative $R$-algebra $T$, let $(\{\ast\},T)$ denote the one-point space with the ring $T$. A morphism $(\{\ast\},T) \to (X,\O_X)$ is the same as a point $x \in X$ together with a local homomorphism of $R$-algebras $\O_{X,x} \to T$, and its composite with $(f,f^\sharp)$ corresponds to the point $f(x)$ together with the composite $\O_{Y,f(x)} \xrightarrow{f^\sharp_x} \O_{X,x} \to T$.
+
+      Assume that $(f,f^\sharp)$ is a monomorphism. To show that $f$ is injective, let $x_1,x_2 \in X$ with $f(x_1) = f(x_2) \eqqcolon y$. The residue fields $\kappa(x_1)$ and $\kappa(x_2)$ are extensions of $\kappa(y)$. Since $\kappa(x_1) \otimes_{\kappa(y)} \kappa(x_2) \neq 0$, it has a quotient field $K$, which comes with homomorphisms $\kappa(x_i) \to K$ that agree on $\kappa(y)$. For $i = 1,2$, the point $x_i$ and the local homomorphism $\O_{X,x_i} \to \kappa(x_i) \to K$ define a morphism $(\{\ast\},K) \to (X,\O_X)$. Its composite with $(f,f^\sharp)$ corresponds to the point $y$ and the local homomorphism
+      $$\O_{Y,y} \to \O_{X,x_i} \to \kappa(x_i) \to K,$$
+      which equals $\O_{Y,y} \to \kappa(y) \to \kappa(x_i) \to K$ and therefore does not depend on $i$. Since $(f,f^\sharp)$ is a monomorphism, the two morphisms $(\{\ast\},K) \to (X,\O_X)$ agree, so that $x_1 = x_2$. Thus, $f$ is injective. Next, let $x \in X$, $y \coloneqq f(x)$, and let $u,v : \O_{X,x} \rightrightarrows T$ be local homomorphisms into a local commutative ring $T$ with $u \circ f^\sharp_x = v \circ f^\sharp_x$. We regard $T$ as an $R$-algebra via $u$, which is the same as via $v$, since $R \to \O_{X,x}$ factors through $f^\sharp_x$. The morphisms $(\{\ast\},T) \to (X,\O_X)$ corresponding to $(x,u)$ and $(x,v)$ have the same composite with $(f,f^\sharp)$, namely the one corresponding to $(y,u \circ f^\sharp_x)$. Since $(f,f^\sharp)$ is a monomorphism, we get $u = v$. Thus, $f^\sharp_x$ is an epimorphism of local commutative rings.
+
+      Conversely, assume that $(f,f^\sharp)$ satisfies the two conditions, and let $(g,g^\sharp),(h,h^\sharp) : (Z,\O_Z) \rightrightarrows (X,\O_X)$ be two morphisms with $(f,f^\sharp) \circ (g,g^\sharp) = (f,f^\sharp) \circ (h,h^\sharp)$. Since $f$ is injective, $f \circ g = f \circ h$ implies $g = h$. For $z \in Z$ and $x \coloneqq g(z)$, the stalk maps $g^\sharp_z, h^\sharp_z : \O_{X,x} \rightrightarrows \O_{Z,z}$ are local homomorphisms with $g^\sharp_z \circ f^\sharp_x = h^\sharp_z \circ f^\sharp_x$, which implies $g^\sharp_z = h^\sharp_z$. So for every open subset $U \subseteq X$ and $s \in \O_X(U)$, the sections $g^\sharp(s), h^\sharp(s) \in \O_Z(g^*(U))$ have the same germs, which means $g^\sharp(s) = h^\sharp(s)$. Hence, $(g,g^\sharp) = (h,h^\sharp)$.
   epimorphisms:
     description: 'A morphism $(f,f^\sharp) : (X, \O_X) \to (Y,\O_Y)$ is an epimorphism iff $f : X \to Y$ is surjective and $f^\sharp : \O_Y \to f_* \O_X$ is a monomorphism of sheaves.'
     proof: >-
