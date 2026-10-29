@@ -116,10 +116,16 @@
 
 				<ul class="combinations with-margins">
 					{#each combinations as [p, q]}
-						<li class="combination">
-							<a href={get_property_url(p, type)}>{p}</a> &and; &not;<a
-								href={get_property_url(q, type)}>{q}</a
+						<li>
+							<a href={get_property_url(p, type)} class="no-underline">
+								{p}
+							</a>
+							&and; &not;<a
+								href={get_property_url(q, type)}
+								class="no-underline"
 							>
+								{q}
+							</a>
 						</li>
 					{/each}
 				</ul>
@@ -141,9 +147,5 @@
 <style>
 	.combinations {
 		margin-top: 0.5rem;
-
-		a {
-			text-decoration: none;
-		}
 	}
 </style>

@@ -104,8 +104,19 @@
 	</p>
 
 	<ol class="hint">
-		{#each contradiction as segment}
-			<li>{segment}</li>
+		{#each contradiction as step}
+			<li>
+				{#if step.implication_id}
+					<a
+						href="/{type}-implication/{step.implication_id}"
+						class="no-underline"
+					>
+						{step.statement}
+					</a>
+				{:else}
+					{step.statement}
+				{/if}
+			</li>
 		{/each}
 	</ol>
 {/if}

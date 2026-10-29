@@ -114,8 +114,13 @@ export type ImplicationDisplay = Replace<
 	}
 >
 
+export type ContradictionStep = {
+	implication_id: string | null
+	statement: string
+}
+
 export type SearchResults = {
-	contradiction: string[] | null
+	contradiction: ContradictionStep[] | null
 	satisfied_properties: string[]
 	unsatisfied_properties: string[]
 	dual_satisfied_properties: (string | null)[]
