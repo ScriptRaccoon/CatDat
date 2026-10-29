@@ -2,9 +2,10 @@ import { decode_property_ID } from '#shared/property.utils.ts'
 import { db } from '#lib/server/db.ts'
 import { error } from '@sveltejs/kit'
 import { SEARCH_SEPARATOR } from '#lib/commons/search.config.ts'
-import { get_contradiction } from '#lib/server/consistency.ts'
 import type { SearchResults, StructureShort, StructureType } from '#lib/commons/types.ts'
 import { to_placeholders } from '#shared/utils.ts'
+import { find_deduction } from '#shared/deduction.utils.ts'
+import { get_normalized_implications, stringify_implication } from '#shared/implications.ts'
 
 export function fetch_search_results(
 	satisfied_query: string | null,
@@ -67,7 +68,7 @@ export function fetch_search_results(
 		dual_satisfied_properties.every(Boolean) &&
 		dual_unsatisfied_properties.every(Boolean)
 
-	const { contradiction } = get_contradiction(
+	const contradiction = get_contradiction(
 		new Set(satisfied_properties),
 		new Set(unsatisfied_properties),
 		type
@@ -143,4 +144,29 @@ export function fetch_search_results(
 		found_structures,
 		type
 	}
+}
+
+/**
+ * Returns a deduction of a property that is required to be unsatisfied
+ * from the properties that are required to be satisfied, as a list of
+ * implications, or null if the requirements are consistent.
+ */
+function get_contradiction(
+	satisfied_properties: Set<string>,
+	unsatisfied_properties: Set<string>,
+	type: StructureType
+): string[] | null {
+	for (const p of satisfied_properties) {
+		if (unsatisfied_properties.has(p)) return [`${p} ⟹ ${p}`]
+	}
+
+	const implications = get_normalized_implications(db, type).filter(
+		(impl) => !impl.associated_assumptions
+	)
+
+	const deduction = find_deduction(satisfied_properties, implications, (p) =>
+		unsatisfied_properties.has(p)
+	)
+
+	return deduction?.map(stringify_implication) ?? null
 }
