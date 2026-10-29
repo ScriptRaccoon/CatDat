@@ -151,6 +151,25 @@ unsatisfied_properties:
       $$\textstyle \lim_n A_n = \bigcap_{n \in \IN} A_n = K \oplus \bigcap_{n \in \IN} V_n = K,$$
       i.e. it is $\Spec(K)$, and the induced morphism $\Spec(K[\varepsilon]) \to \Spec(K)$ corresponds to the inclusion $K \hookrightarrow K[\varepsilon]$. This inclusion is not an epimorphism of local commutative rings, since the identity of $K[\varepsilon]$ and the local homomorphism $K[\varepsilon] \to K[\varepsilon]$, $\varepsilon \mapsto 0$, agree on $K$. Hence, the morphism $\Spec(K[\varepsilon]) \to \Spec(K)$ is not a monomorphism by the classification of monomorphisms.
 
+  - property: regular subobject classifier
+    proof: >-
+      The idea is the same as for <a href="/category/CAlg(R)">$\CAlg(R)$</a>: a classifying morphism is invariant under automorphisms that preserve the subobject. Instead of the polynomial ring $K[X,Y]$ used there, we work with the local Artinian ring $K[X,Y]/\langle X,Y \rangle^2$, since its spectrum is a one-point space, and morphisms from such a space into a locally ringed space are described by a single point and a stalk map.
+
+      Assume that $\top : \Spec(R) \to \Omega$ is a regular subobject classifier. Let $K$ be a residue field of $R$, and let $A \coloneqq K[X,Y]/\langle X,Y \rangle^2$, whose elements can be written uniquely as $a + bX + cY$ with $a,b,c \in K$. The projection $\pi : A \to K$, $a + bX + cY \mapsto a$ is surjective, hence a regular epimorphism in $\CAlg(R)$. Since $\Spec : \CAlg(R)^{\op} \to \LRS_R$ is fully faithful and a right adjoint, $\Spec(\pi) : \Spec(K) \to \Spec(A)$ is a regular monomorphism. So there is a unique morphism $\chi : \Spec(A) \to \Omega$ such that the square
+      $$\begin{CD} \Spec(K) @>{\Spec(\pi)}>> \Spec(A) \\ @V{!}VV @VV{\chi}V \\ \Spec(R) @>>{\top}> \Omega \end{CD}$$
+      is a pullback. Let $p \in \Omega$ be the image of the unique point of $\Spec(A)$, and let $\varphi : \O_{\Omega,p} \to A$ be the stalk map of $\chi$.
+
+      Let $\sigma : A \to A$ be the automorphism that swaps $X$ and $Y$. Since $\pi \circ \sigma = \pi$, the square
+      $$\begin{CD} \Spec(K) @>{\Spec(\pi)}>> \Spec(A) \\ @V{\id}VV @VV{\Spec(\sigma)}V \\ \Spec(K) @>>{\Spec(\pi)}> \Spec(A) \end{CD}$$
+      commutes, and it is a pullback since $\Spec(\sigma)$ is an isomorphism. Pasting it on top of the first square shows that $\chi \circ \Spec(\sigma)$ also classifies $\Spec(\pi)$, so that $\chi \circ \Spec(\sigma) = \chi$ by uniqueness. On stalks, this means $\sigma \circ \varphi = \varphi$, i.e. $\varphi$ takes values in the fixed ring
+      $$A^\sigma = \{a + b(X+Y) : a,b \in K\}.$$
+      Now let $u : A \to A/\langle X+Y \rangle$ be the quotient map, and let $v : A \to A/\langle X+Y \rangle$ map $a + bX + cY$ to the class of $a$, so that $v$ factors through $\pi$. Both $u$ and $v$ map $a + b(X+Y)$ to the class of $a$, so they agree on $A^\sigma$. A morphism from the one-point space $\Spec(A/\langle X+Y \rangle)$ to $\Omega$ is the same as a point of $\Omega$ together with a local homomorphism from its stalk to $A/\langle X+Y \rangle$. For $\chi \circ \Spec(u)$ and $\chi \circ \Spec(v)$, these are $p$ together with $u \circ \varphi$ and $v \circ \varphi$, which coincide since $\varphi$ takes values in $A^\sigma$. Since $\Spec(v)$ factors through $\Spec(\pi)$, it follows that
+      $$\chi \circ \Spec(u) = \chi \circ \Spec(v) = \top \circ {!}.$$
+      Since the first square is a pullback, $\Spec(u)$ factors through $\Spec(\pi)$. Since $\Spec$ is fully faithful, $u$ factors through $\pi$. But then $X \in \ker(\pi) \subseteq \ker(u) = \langle X+Y \rangle$, which is a contradiction.
+    label: LRS_R_no_regular_subobject_classifier
+    references:
+      - CAlg(R)_no_regular_quotient_object_classifier
+
 special_objects:
   initial object:
     description: empty space
