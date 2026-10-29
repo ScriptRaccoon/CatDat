@@ -132,3 +132,61 @@ function is_applicable(
 		})
 	)
 }
+
+/**
+ * Deduces properties from the satisfied ones until one of them satisfies
+ * the given predicate. Returns the implications used for its deduction,
+ * in the order in which they are applied, or null if no such property
+ * can be deduced.
+ */
+export function find_deduction(
+	satisfied_properties: Set<string>,
+	implications: NormalizedImplication[],
+	is_target: (property: string) => boolean,
+	associated_satisfied_properties?: Partial<Record<string, Set<string>>>
+): NormalizedImplication[] | null {
+	const { proofs, stop_property } = deduce_properties(
+		satisfied_properties,
+		implications,
+		(implication) => ({
+			proof: implication,
+			stop: is_target(implication.conclusion)
+		}),
+		associated_satisfied_properties
+	)
+
+	if (!stop_property) return null
+
+	return trace_deduction(satisfied_properties, proofs, stop_property)
+}
+
+/**
+ * Traces back the deduction of a property from the satisfied properties
+ * and returns the implications used, in the order in which they are applied.
+ */
+function trace_deduction(
+	satisfied_properties: Set<string>,
+	proofs: Partial<Record<string, NormalizedImplication>>,
+	target_property: string
+) {
+	const used_implications: NormalizedImplication[] = []
+
+	const visited_properties = new Set<string>()
+
+	function derive(property: string) {
+		if (visited_properties.has(property)) return
+		if (satisfied_properties.has(property)) return
+		visited_properties.add(property)
+
+		const implication = proofs[property]
+		if (!implication) throw new Error(`Missing deduction for property: ${property}`)
+
+		for (const p of implication.assumptions) derive(p)
+
+		used_implications.push(implication)
+	}
+
+	derive(target_property)
+
+	return used_implications
+}
