@@ -186,5 +186,8 @@ test('contradictions are detected', async ({ page }) => {
 	const body = page.locator('body')
 
 	await expect(body).toContainText('the requirements are inconsistent')
-	await expect(body).toContainText('isomorphism ⟹ split epimorphism')
+
+	await expect(
+		page.getByRole('link', { name: 'isomorphism ⟹ split epimorphism' })
+	).toHaveAttribute('href', '/morphism-implication/dual_iso_is_mono')
 })

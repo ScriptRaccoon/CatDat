@@ -277,6 +277,10 @@ a.button {
 	display: inline-block;
 }
 
+a.no-underline {
+	text-decoration: none;
+}
+
 label {
 	display: block;
 	margin-bottom: 0.1rem;

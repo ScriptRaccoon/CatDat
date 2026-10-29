@@ -205,5 +205,8 @@ test('contradictions are detected', async ({ page }) => {
 
 	const body = page.locator('body')
 	await expect(body).toContainText('the requirements are inconsistent')
-	await expect(body).toContainText('equalizers ∧ products ⟹ complete')
+
+	await expect(
+		page.getByRole('link', { name: 'equalizers ∧ products ⟹ complete' })
+	).toHaveAttribute('href', '/category-implication/complete_characterization')
 })

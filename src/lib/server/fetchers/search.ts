@@ -2,10 +2,18 @@ import { decode_property_ID } from '#shared/property.utils.ts'
 import { db } from '#lib/server/db.ts'
 import { error } from '@sveltejs/kit'
 import { SEARCH_SEPARATOR } from '#lib/commons/search.config.ts'
-import type { SearchResults, StructureShort, StructureType } from '#lib/commons/types.ts'
+import type {
+	ContradictionStep,
+	SearchResults,
+	StructureShort,
+	StructureType
+} from '#lib/commons/types.ts'
 import { to_placeholders } from '#shared/utils.ts'
 import { find_deduction } from '#shared/deduction.utils.ts'
-import { get_normalized_implications, stringify_implication } from '#shared/implications.ts'
+import {
+	get_normalized_implications,
+	stringify_implication
+} from '#shared/implications.ts'
 
 export function fetch_search_results(
 	satisfied_query: string | null,
@@ -155,9 +163,11 @@ function get_contradiction(
 	satisfied_properties: Set<string>,
 	unsatisfied_properties: Set<string>,
 	type: StructureType
-): string[] | null {
+): ContradictionStep[] | null {
 	for (const p of satisfied_properties) {
-		if (unsatisfied_properties.has(p)) return [`${p} ⟹ ${p}`]
+		if (unsatisfied_properties.has(p)) {
+			return [{ implication_id: null, statement: `${p} ⟹ ${p}` }]
+		}
 	}
 
 	const implications = get_normalized_implications(db, type).filter(
@@ -168,5 +178,10 @@ function get_contradiction(
 		unsatisfied_properties.has(p)
 	)
 
-	return deduction?.map(stringify_implication) ?? null
+	return deduction
+		? deduction.map((implication) => ({
+				implication_id: implication.id,
+				statement: stringify_implication(implication)
+			}))
+		: null
 }

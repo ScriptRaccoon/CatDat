@@ -192,9 +192,21 @@ test('contradictions are detected', async ({ page }) => {
 	const body = page.locator('body')
 
 	await expect(body).toContainText('the requirements are inconsistent')
-	await expect(body).toContainText('continuous ⟹ preserves products')
-	await expect(body).toContainText('preserves products ⟹ preserves finite products')
-	await expect(body).toContainText(
-		'preserves finite products ⟹ preserves terminal objects'
+
+	await expect(
+		page.getByRole('link', { name: 'continuous ⟹ preserves products' })
+	).toHaveAttribute('href', '/functor-implication/continuous_consequences')
+
+	await expect(
+		page.getByRole('link', { name: 'preserves products ⟹ preserves finite products' })
+	).toHaveAttribute('href', '/functor-implication/products_consequences')
+
+	await expect(
+		page.getByRole('link', {
+			name: 'preserves finite products ⟹ preserves terminal objects'
+		})
+	).toHaveAttribute(
+		'href',
+		'/functor-implication/preserve_finite_products_consequences'
 	)
 })
