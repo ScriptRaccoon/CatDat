@@ -5,6 +5,8 @@ CREATE TABLE implications (
     is_equivalence INTEGER NOT NULL DEFAULT FALSE
         CHECK (is_equivalence IN (TRUE, FALSE)),
     is_deduced INTEGER NOT NULL DEFAULT FALSE,
+    check_redundancy INTEGER NOT NULL DEFAULT TRUE
+        CHECK (check_redundancy in (TRUE, FALSE)),
     dual_implication_id TEXT,
     UNIQUE (id, type),
     FOREIGN KEY (type) REFERENCES structure_types (type) ON DELETE RESTRICT,

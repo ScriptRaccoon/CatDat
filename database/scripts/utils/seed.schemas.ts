@@ -127,7 +127,8 @@ export const implications_yaml_schema = v.array(
 				v.record(v.string(), distinct_strings_schema)
 			),
 			proof: v.string(),
-			is_equivalence: v.optional(v.literal(true))
+			is_equivalence: v.optional(v.literal(true)),
+			check_redundancy: v.optional(v.literal(false))
 		}),
 		v.check(
 			(impl) =>

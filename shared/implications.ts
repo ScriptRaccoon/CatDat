@@ -89,6 +89,45 @@ export function get_normalized_implications(
 	return implications
 }
 
+/**
+ * Returns a dictionary mapping each label of a structure association
+ * of the given type (e.g. "domain" for functors) to the normalized
+ * implications of the associated structure type.
+ */
+export function get_associated_implications(db: Database, type: StructureType) {
+	const associations = db
+		.prepare<[StructureType], { label: string; target_type: StructureType }>(
+			`SELECT label, target_type
+			FROM structure_associations WHERE source_type = ?`
+		)
+		.all(type)
+
+	const cache = new Map<StructureType, NormalizedImplication[]>()
+	const result: Record<string, NormalizedImplication[]> = {}
+
+	for (const { label, target_type } of associations) {
+		if (!cache.has(target_type)) {
+			cache.set(target_type, get_normalized_implications(db, target_type))
+		}
+		result[label] = cache.get(target_type)!
+	}
+
+	return result
+}
+
 export function stringify_implication(implication: NormalizedImplication) {
 	return `${[...implication.assumptions].join(' ∧ ')} ⟹ ${implication.conclusion}`
+}
+
+export function has_associated_assumptions(implication: NormalizedImplication) {
+	return implication.associated_assumptions !== undefined
+}
+
+/**
+ * Stringifies the implication and marks it with an asterisk
+ * if it has assumptions about associated structures.
+ */
+export function stringify_with_asterisk(implication: NormalizedImplication) {
+	const asterisk = has_associated_assumptions(implication) ? ' *' : ''
+	return stringify_implication(implication) + asterisk
 }

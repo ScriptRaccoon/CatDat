@@ -436,8 +436,8 @@ function seed_implications(type: StructureType) {
 
 	const implication_insert = db.prepare(
 		`INSERT INTO implications (
-	        id, type, proof, is_equivalence
-		) VALUES (?, ?, ?, ?)`
+	        id, type, proof, is_equivalence, check_redundancy
+		) VALUES (?, ?, ?, ?, ?)`
 	)
 
 	const assumption_insert = db.prepare(
@@ -462,7 +462,13 @@ function seed_implications(type: StructureType) {
 		implications: v.InferOutput<typeof implications_yaml_schema>
 	) {
 		for (const impl of implications) {
-			implication_insert.run(impl.id, type, impl.proof, impl.is_equivalence ? 1 : 0)
+			implication_insert.run(
+				impl.id,
+				type,
+				impl.proof,
+				impl.is_equivalence ? 1 : 0,
+				impl.check_redundancy === false ? 0 : 1
+			)
 
 			for (const assumption of impl.assumptions) {
 				assumption_insert.run(impl.id, assumption, type)

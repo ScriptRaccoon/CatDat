@@ -22,7 +22,8 @@ import { STRUCTURE_TYPES, type StructureType, PLURALS } from '#shared/config.ts'
 import fs from 'node:fs'
 import path from 'node:path'
 import { decode_property_ID } from '#shared/property.utils.ts'
-import { test_no_redundant_assignments } from './utils/redundancies'
+import { test_no_redundant_assignments } from './utils/redundant-assignments'
+import { test_no_redundant_implications } from './utils/redundant-implications'
 
 const db = get_client({ readonly: true })
 
@@ -94,6 +95,7 @@ function execute_tests() {
 
 		devlog('\n--- Test redundancies ---')
 
+		test_no_redundant_implications(db)
 		test_no_redundant_assignments(db)
 	} catch (err) {
 		if (err instanceof Error) {
