@@ -190,3 +190,28 @@ function trace_deduction(
 
 	return used_implications
 }
+
+/**
+ * Returns the given associated assumptions (e.g. "the domain
+ * is complete"), each closed under the implications of the associated
+ * structure type (e.g. "the domain has products").
+ */
+export function close_associated_assumptions(
+	associated_assumptions: Partial<Record<string, Set<string>>> | undefined,
+	associated_implications: Record<string, NormalizedImplication[]>
+) {
+	if (!associated_assumptions) return undefined
+
+	const closed: Partial<Record<string, Set<string>>> = {}
+
+	for (const [label, properties] of Object.entries(associated_assumptions)) {
+		if (!properties) continue
+		closed[label] = deduce_properties(
+			properties,
+			associated_implications[label] ?? [],
+			() => ({ proof: null, stop: false })
+		).deduced_satisfied_properties
+	}
+
+	return closed
+}

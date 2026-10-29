@@ -88,7 +88,7 @@ The `pnpm db:test` command runs several tests to ensure the data behaves as expe
 6. Adjoint functors are recorded on both sides (left and right adjoint), and their domains and codomains match.
 7. All links in proofs point to existing structures, properties, implications, and content pages.
 8. Every entry of the history file [history.json](/shared/history.json) exists. When you rename a structure or property, rename it in the history file as well (new entries are added automatically by `pnpm db:seed`).
-9. There are no redundant property assignments (see [below](#redundant-assignments)).
+9. There are no redundant property assignments (see [below](#redundant-assignments)) and no redundant implications (see [below](#redundant-implications)).
 
 When you add a property to the JSON files in these two folders, you can insert it anywhere: `pnpm db:update` sorts them alphabetically.
 
@@ -130,7 +130,7 @@ When contributing new data (categories, functors, properties, implications, etc.
 
 - **Proofs for claims**: Provide proofs for all new claims (satisfied properties, unsatisfied properties, implications, special morphisms).
 
-- **Atomic implications**: Do not add implications that can be deduced from others. For example, do not add "complete => finite products" since it can be deduced from "complete => finitely complete" and "finitely complete => finite products". These are combined automatically.
+- **Atomic implications**: Do not add implications that can be deduced from others. For example, do not add "complete => finite products" since it can be deduced from "complete => finitely complete" and "finitely complete => finite products". These are combined automatically. This also applies to single conclusions of an implication and to single directions of an equivalence. Redundant implications are reported by `pnpm db:test`, see below.
 
 - **No dual implications**: Implications are dualized automatically when applicable. For this reason, adding the category implication "finitely cocomplete => pushouts" is not necessary when "finitely complete => pullbacks" has already been added. Similarly, the functor implication "comonadic => left adjoint" is automatically dualized from "monadic => right adjoint". When an implication can be phrased in either a "limit" or a "colimit" variant, prefer the "limit" variant (unless the literature focusses on the "colimit" variant).
 
@@ -159,6 +159,19 @@ In particular, it often makes sense to **keep** a redundant assignment of a sati
 For example, you may first prove that a category has zero morphisms, and then prove that it is normal. Although the database contains the implication "normal => zero morphisms", in practice the latter is used as a prerequisite. Similarly, when proving that a category is extensive, it is often clearer to first show that finite coproducts exist, rather than relying on the implication "extensive => finite coproducts". Also, an explicit description of finite coproducts is useful for deciding other properties involving coproducts.
 
 Every redundant assignment that is intentionally kept must be explicitly marked to skip the redundancy check. See [`Man.yaml`](/database/data/categories/Man.yaml) for an example.
+
+### Redundant implications
+
+As noted above, implications should be atomic. `pnpm db:test` reports an implication if one of its conclusions (or one direction of an equivalence) can be deduced from the other implications.
+
+Redundant implications must be removed, or, if they are deliberately kept, marked with `check_redundancy: false`. Usually, removal is the right choice, since _CatDat_ combines implications automatically. It makes sense to **keep** a redundant implication in the following cases:
+
+- It states a definition or a standard characterization from the literature, even if one of its conclusions follows from the others.
+- Removing it would lead to an overly complex deduction, typically when the deduction needs a long chain or a detour through unrelated notions, while the implication has a short direct proof.
+
+For example, the implication "cartesian closed + strict terminal object => thin" can be deduced via natural numbers objects, one-way categories, and core-thin categories. Its direct proof takes three lines, and it is used for many deductions, such as that **Set** has no strict terminal object. Without it, these deductions would go through the long chain.
+
+Every redundant implication that is intentionally kept must be explicitly marked to skip the redundancy check. See [`accessible.yaml`](/database/data/category-implications/accessible.yaml) for some examples.
 
 ### Keep pull requests focused
 
