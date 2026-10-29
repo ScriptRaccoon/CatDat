@@ -92,6 +92,11 @@ unsatisfied_properties:
       $$j : A/I \to B/IB.$$
       We claim that $p'$ is not an epimorphism. In fact, since the functor $\Spec : \CAlg(R)^{\op} \to \Sch_R$ is right adjoint to the global sections functor $\Gamma : \Sch_R \to \CAlg(R)^{\op}$, the latter preserves epimorphisms. So if $p'$ were an epimorphism, then $\Gamma(p') = j$ would be a monomorphism in $\CAlg(R)$, i.e. injective. But every element of $I$ has a vanishing coefficient at $t^3$, so $t^3 \notin I$, whereas $t^3 = t^2 \cdot t \in IB$. Thus, $[t^3] \in A/I$ a non-zero element in $\ker(j)$.
 
+  - property: regular subobject classifier
+    proof: The proof for <a href="/category/LRS_R">$\LRS_R$</a> translates verbatim to $\Sch_R$.
+    references:
+      - LRS_R_no_regular_subobject_classifier
+
 special_objects:
   initial object:
     description: empty scheme
