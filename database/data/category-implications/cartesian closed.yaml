@@ -30,6 +30,7 @@
   conclusions:
     - thin
   proof: If a morphism $X \to Y$ exists, we get a morphism $1 \to [X,Y]$, which forces $[X,Y]$ to be a terminal object by assumption. But then any two morphisms $1 \rightrightarrows [X,Y]$ are equal, so that any two morphisms $X \rightrightarrows Y$ are equal.
+  check_redundancy: false
 
 - id: power_construction
   assumptions:
@@ -69,15 +70,6 @@
   conclusions:
     - cartesian closed
   proof: The slice over the terminal object is the category itself.
-
-- id: lcc_implies_regular
-  assumptions:
-    - coequalizers
-    - finitely complete
-    - locally cartesian closed
-  conclusions:
-    - regular
-  proof: See <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant">Johnstone</a>, Lemma A1.5.13. From this it follows also that every elementary topos is regular.
 
 - id: cartesian_closed_thin_criterion
   assumptions:

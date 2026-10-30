@@ -9,6 +9,7 @@
     - finitely accessible
   proof: This follows from one of the equivalent formulations of locally finitely presentable categories.
   is_equivalence: true
+  check_redundancy: false
 
 - id: locally_presentable_definition_countable
   assumptions:
@@ -18,6 +19,7 @@
     - ℵ₁-accessible
   proof: This follows from one of the equivalent formulations of locally ℵ₁-presentable categories.
   is_equivalence: true
+  check_redundancy: false
 
 - id: locally_presentable_definition
   assumptions:
@@ -27,6 +29,7 @@
     - cocomplete
   proof: This follows from one of the equivalent formulations of locally presentable categories.
   is_equivalence: true
+  check_redundancy: false
 
 - id: locally_finitely_presentable_consequence
   assumptions:
@@ -41,20 +44,6 @@
   conclusions:
     - filtered-colimit-stable monomorphisms
   proof: 'Let $\C$ be a finitely accessible category and let $G$ be an essentially small collection of finitely presentable objects which generates $\C$ under filtered colimits. Consider $G$ as a full subcategory and consider the restricted Yoneda embedding $\C \hookrightarrow [G^{\op},\Set]$. It preserves filtered colimits (essentially by the definition of a finitely presentable object) and all limits, in particular monomorphisms. It also reflects monomorphisms since $G$ is a generating collection. Therefore, since $\Set$ and hence the functor category has filtered-colimit-stable monomorphisms, this is also true for $\C$.'
-
-- id: locally_finitely_presentable_raise
-  assumptions:
-    - locally finitely presentable
-  conclusions:
-    - locally ℵ₁-presentable
-  proof: This is trivial.
-
-- id: locally_countably_presentable_raise
-  assumptions:
-    - locally ℵ₁-presentable
-  conclusions:
-    - locally presentable
-  proof: This is trivial.
 
 - id: accessible_trivial_consequence
   assumptions:
@@ -119,6 +108,7 @@
   conclusions:
     - locally finitely presentable
   proof: See <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adámek–Rosický</a>, Cor. 3.7.
+  check_redundancy: false
 
 - id: finitely_accessible_raise
   assumptions:
@@ -141,6 +131,7 @@
   conclusions:
     - filtered colimits
   proof: This holds by definition.
+  check_redundancy: false
 
 - id: accessible_require_Cauchy_complete
   assumptions:
@@ -212,6 +203,7 @@
     - locally presentable
   proof: This follows from one of the equivalent formulations of locally presentable categories.
   is_equivalence: true
+  check_redundancy: false
 
 - id: locally_strongly_finitely_presentable_characterization
   assumptions:
@@ -221,6 +213,7 @@
     - generalized variety
   proof: This follows from the equivalence between finitary algebraic categories and locally strongly finitely presentable categories.
   is_equivalence: true
+  check_redundancy: false
 
 - id: locally_multi-presentable_definition
   assumptions:
@@ -230,6 +223,7 @@
     - connected limits
   proof: This follows from one of the equivalent formulations of locally multi-presentable categories.
   is_equivalence: true
+  check_redundancy: false
 
 - id: locally_multi-presentable_another_definition
   assumptions:
@@ -239,6 +233,7 @@
     - multi-cocomplete
   proof: This follows from one of the equivalent formulations of locally multi-presentable categories.
   is_equivalence: true
+  check_redundancy: false
 
 - id: locally_finitely_multi-presentable_definition
   assumptions:
@@ -248,6 +243,7 @@
     - finitely accessible
   proof: This follows from one of the equivalent formulations of locally finitely multi-presentable categories.
   is_equivalence: true
+  check_redundancy: false
 
 - id: locally_finitely_multi-presentable_another_definition
   assumptions:
@@ -257,6 +253,7 @@
     - multi-cocomplete
   proof: This follows from one of the equivalent formulations of locally finitely multi-presentable categories.
   is_equivalence: true
+  check_redundancy: false
 
 - id: locally_poly-presentable_definition
   assumptions:
@@ -266,10 +263,3 @@
     - wide pullbacks
   proof: This holds by definition.
   is_equivalence: true
-
-- id: locally-finitely-multi-presentable_stable-monos
-  assumptions:
-    - locally finitely multi-presentable
-  conclusions:
-    - filtered-colimit-stable monomorphisms
-  proof: Every locally finitely multi-presentable category is a multi-reflective full subcategory of a presheaf category closed under filtered colimits (<a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adámek–Rosický</a>, 4.30). Since multi-reflective full subcategories are in general closed under connected limits (<a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adámek–Rosický</a>, Thm. 4.26), we can in particular calculate not only filtered colimits but also kernel pairs as in a presheaf category.

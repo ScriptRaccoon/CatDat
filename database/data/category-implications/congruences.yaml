@@ -32,16 +32,6 @@
     - cokernels
   proof: 'By the regularity assumption, it suffices to consider cokernels of subobjects. Given a subobject $Y$ of $X$, we have the congruence on $X$ given by the pullback of ${-} : X \times X \to X$ and $Y$. The quotient of this congruence is a cokernel of $Y \hookrightarrow X$.'
 
-- id: congruence_quotients_via_cokernels
-  assumptions:
-    - cokernels
-    - kernels
-    - preadditive
-  conclusions:
-    - quotients of congruences
-  proof: >-
-    Let $q_1, q_2 : R \rightrightarrows X$ be a congruence, let $k : R_0 \hookrightarrow R$ be the kernel of $q_2$, and let $m \coloneqq q_1 \circ k : R_0 \to X$. We claim that the cokernel of $m$ is a coequalizer of $q_1, q_2$. If $h \circ q_1 = h \circ q_2$, then $h \circ m = h \circ q_2 \circ k = 0$. Conversely, the image of $\Hom(R,R) \to \Hom(R,X)^2$, $e \mapsto (q_1 \circ e, q_2 \circ e)$ is a subgroup containing $(q_1, q_2)$ and, by reflexivity, $(q_2, q_2)$, hence also $(q_1 - q_2, 0)$. So $q_1 - q_2 = q_1 \circ e$ for some $e : R \to R$ with $q_2 \circ e = 0$. Then $e$ factors through $k$, so $q_1 - q_2$ factors through $m$, and $h \circ m = 0$ implies $h \circ q_1 = h \circ q_2$.
-
 - id: core-thin_quotients
   assumptions:
     - core-thin

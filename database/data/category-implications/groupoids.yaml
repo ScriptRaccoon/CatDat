@@ -6,10 +6,7 @@
   conclusions:
     - directed limits
     - left cancellative
-    - mono-regular
-    - pullbacks
     - self-dual
-    - well-powered
   proof: This is easy.
 
 - id: groupoid_criterion
@@ -35,24 +32,6 @@
   conclusions:
     - locally cartesian closed
   proof: Every slice category is a trivial category.
-
-- id: groupoid_generator
-  assumptions:
-    - groupoid
-    - generator
-  conclusions:
-    - extremal generator
-  proof: This is trivial.
-
-- id: groupoid_generating_collection
-  # redundant because of "generating_collection_balanced_consequence",
-  # but we can keep it, because the proof is simpler.
-  assumptions:
-    - groupoid
-    - generating collection
-  conclusions:
-    - extremal generating collection
-  proof: This is trivial.
 
 - id: groupoid_with_multi-terminal
   assumptions:

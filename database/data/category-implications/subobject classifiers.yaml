@@ -1,12 +1,19 @@
 # results on subobject classifiers and regular subobject classifiers
 
-- id: subobject_classifier_consequence
+- id: subobject_classifier_assumption
   assumptions:
     - subobject classifier
   conclusions:
     - finitely complete
+  proof: This holds by definition of a subobject classifier. We assume that finite limits exist.
+  check_redundancy: false
+
+- id: subobject_classifier_consequence
+  assumptions:
+    - subobject classifier
+  conclusions:
     - mono-regular
-  proof: 'The first part holds by convention. For the second part, note that any monomorphism $U \to X$ is the equalizer of $\chi_U,\chi_X : X \rightrightarrows \Omega$.'
+  proof: 'Any monomorphism $U \to X$ is the equalizer of $\chi_U,\chi_X : X \rightrightarrows \Omega$.'
 
 - id: subobject_classifier_well-powered
   assumptions:
@@ -24,14 +31,6 @@
     - normal
   proof: 'The universal property of $\top : 0 \to \Omega$ precisely says that every monomorphism $A \to B$ is the kernel of a unique morphism $B \to \Omega$, so it is normal.'
 
-- id: additive_trivial_condition
-  assumptions:
-    - additive
-    - regular subobject classifier
-  conclusions:
-    - trivial
-  proof: See <a href="https://math.stackexchange.com/a/5132767">MSE/4086192</a>.
-
 - id: regular_subobjects_trivial
   assumptions:
     - finitely complete
@@ -47,12 +46,12 @@
     - regular subobject classifier
   proof: This is obvious.
 
-- id: regular_subobject_assumption
+- id: regular_subobject_classifier_assumption
   assumptions:
     - regular subobject classifier
   conclusions:
     - finitely complete
-  proof: This holds by definition.
+  proof: This holds by definition of a regular subobject classifier. We assume that finite limits exist.
 
 - id: regular_subobjects_suffice
   assumptions:

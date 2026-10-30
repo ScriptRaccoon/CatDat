@@ -119,6 +119,7 @@
   conclusions:
     - products
   proof: The category is equivalent to a finite preordered set. But then products are just infima, so that repetitions of objects do not matter, and every product can be reduced to a finite one.
+  check_redundancy: false
 
 - id: thin_countable_product_reduction
   assumptions:
@@ -128,6 +129,7 @@
   conclusions:
     - products
   proof: The category is equivalent to a countable preordered set. But then products are just infima, so that repetitions of objects do not matter, and every product can be reduced to a countable one.
+  check_redundancy: false
 
 - id: cocomplete_thin_criterion
   assumptions:
@@ -137,15 +139,7 @@
   conclusions:
     - cocomplete
   proof: The supremum of a subset in a preordered set is the infimum of the set of upper bounds.
-
-- id: thin_zero_trivial
-  assumptions:
-    - inhabited
-    - thin
-    - zero morphisms
-  conclusions:
-    - trivial
-  proof: This is easy.
+  check_redundancy: false
 
 - id: thin_power
   assumptions:

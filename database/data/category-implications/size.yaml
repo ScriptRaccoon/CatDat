@@ -14,7 +14,12 @@
   conclusions:
     - extremal generating collection
     - locally essentially small
-    - well-copowered
+  proof: This is trivial.
+
+- id: essentially_small_well-powered
+  assumptions:
+    - essentially small
+  conclusions:
     - well-powered
   proof: This is trivial.
 

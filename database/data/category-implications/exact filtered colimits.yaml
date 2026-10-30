@@ -8,6 +8,7 @@
     - filtered colimits
     - finitely complete
   proof: This holds by definition.
+  check_redundancy: false
 
 - id: exact_filtered_colimits_monos
   assumptions:

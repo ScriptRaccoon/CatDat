@@ -13,13 +13,7 @@
   conclusions:
     - well-copowered
   proof: See <a href="https://mathoverflow.net/questions/486607">MO/486607</a>. Alternatively, one may combine the facts that one-sorted finitary algebraic categories are locally (finitely) presentable and that locally presentable categories are well-copowered, both of which are saved in the database. But we include the direct proof here as well, since it makes it easier to deduce the property for one-sorted finitary algebraic categories appearing in practice.
-
-- id: finitary_algebraic_implies_regular
-  assumptions:
-    - finitary algebraic
-  conclusions:
-    - pullback-stable regular epimorphisms
-  proof: The regular epimorphisms are precisely the sort-wise surjective homomorphisms, which are clearly stable under pullbacks.
+  check_redundancy: false
 
 - id: generalized_variety_require_sifted_colimit
   assumptions:
@@ -38,23 +32,13 @@
 
     Remark: A generalized variety is not necessarily finitely accessible, see <a href="https://arxiv.org/abs/2610.08548">Kawase</a>.
 
-- id: groupoids_are_generalized_varieties
-  assumptions:
-    - groupoid
-    - essentially small
-  conclusions:
-    - generalized variety
-  proof: This is proven as Corollary 3 <a href="/content/sifted-colimits-in-groupoids">here</a>.
-
-# This needs to be a separate implication from "groupoids_are_generalized_varieties"
-# as long as "generalized variety" is not dualized yet
 - id: groupoids_are_finitely_accessible
   assumptions:
     - groupoid
     - essentially small
   conclusions:
     - finitely accessible
-  proof: This is proven as Corollary 4 <a href="/content/sifted-colimits-in-groupoids">here</a>.
+  proof: This follows from Corollary 4 <a href="/content/sifted-colimits-in-groupoids">here</a>.
 
 - id: generalized_variety_left_cancellative
   assumptions:
@@ -103,6 +87,7 @@
   conclusions:
     - multi-algebraic
   proof: This is because every finite-product-sketch is clearly a (finite product, coproduct)-sketch.
+  check_redundancy: false
 
 - id: multi-algebraic_another_definition
   assumptions:
@@ -112,6 +97,7 @@
     - multi-cocomplete
   proof: This follows from one of the equivalent formulations of multi-algebraic categories.
   is_equivalence: true
+  check_redundancy: false
 
 - id: algebraic_cototal_criterion
   assumptions:

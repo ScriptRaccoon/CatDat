@@ -11,6 +11,7 @@
     - self-dual
     - split abelian
   proof: This is trivial.
+  check_redundancy: false
 
 - id: discrete_consequences
   assumptions:
@@ -19,7 +20,6 @@
     - direct
     - essentially discrete
     - locally small
-    - skeletal
   proof: This is trivial.
 
 - id: essentially_discrete_characterization
@@ -30,6 +30,7 @@
     - thin
   proof: This is trivial.
   is_equivalence: true
+  check_redundancy: false
 
 - id: essentially_discrete_consequence
   assumptions:
@@ -38,14 +39,7 @@
     - connected limits
     - locally essentially small
   proof: This is trivial.
-
-- id: essentially_discrete_trivial
-  assumptions:
-    - connected
-    - essentially discrete
-  conclusions:
-    - trivial
-  proof: This is trivial.
+  check_redundancy: false
 
 - id: discrete_multi_initial
   assumptions:
@@ -62,3 +56,4 @@
   conclusions:
     - essentially small
   proof: This is trivial.
+  check_redundancy: false
