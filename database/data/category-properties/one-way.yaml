@@ -9,6 +9,7 @@ related:
   - core-thin
   - direct
   - inverse
+  - retract-trivial
 
 tags:
   - morphism behavior

@@ -81,9 +81,6 @@ unsatisfied_properties:
   - property: sequential limits
     proof: 'Let $X_n \coloneqq \{1,\dotsc,n\}$. We define the truncation $p_n : X_{n+1} \to X_n$ by extending the identity of $X_n$ with $p_n(n+1) \coloneqq n$. Assume the sequence of truncations $\cdots \to X_2 \to X_1$ has a limit $(f_n : X \to X_n)$ in this category. But $f_n$ is surjective, so that $\card(X) \geq n$ for all $n$. Since $X$ is finite, this is a contradiction.'
 
-  - property: binary copowers
-    proof: Let $T \coloneqq \{0,1\}$ and assume that the copower $X \coloneqq T + T$ exists. Since we have a surjective map $T \to X$, the set $X$ has at most $2$ elements. The codiagonal $X \to T$ shows that $X$ has at least $2$ elements. Thus, $X \cong T$. For all finite sets $Y$ we get a bijection $\Hom(T,Y) \cong \Hom(T,Y)^2$, in particular the cardinalities are the same. For $Y = T$ this gives the contradiction $2 = 4$.
-
   - property: locally cocartesian coclosed
     proof: >-
       If $X$ is a finite set, the coslice category $X / \FS$ is thin and in fact equivalent to the lattice of equivalence relations on $X$. If $X$ has $\geq 3$ elements, it is not codistributive* and <a href="/category-implication/dual_distributive_criterion">hence</a> not cocartesian coclosed: For simplicity assume $X = \{a,b,c\}$. The bottom element $\bot$ corresponds to the partition $\{\{a\},\{b\},\{c\}\}$, the top element $\top$ to the partition $\{\{a,b,c\}\}$. Now consider the three equivalence relations $E_1,E_2,E_3$ corresponding to the three partitions

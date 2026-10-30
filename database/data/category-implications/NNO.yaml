@@ -68,14 +68,6 @@
     - natural numbers object
   proof: 'If $0$ is a zero object, then $(0,\id_0,\id_0)$ is readily seen to be a natural numbers object; alternatively, this follows from Lemma 3 <a href="/content/natural_numbers_objects">here</a>.'
 
-- id: one_way_implies_nno
-  assumptions:
-    - terminal object
-    - one-way
-  conclusions:
-    - natural numbers object
-  proof: This follows from Lemma 3 <a href="/content/natural_numbers_objects">here</a>.
-
 - id: one_way_implies_parametrized_nno
   assumptions:
     - finite products

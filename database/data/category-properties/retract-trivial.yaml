@@ -1,0 +1,29 @@
+id: retract-trivial
+relation: is
+description: >-
+  We call a category <i>retract-trivial</i> if it satisfies one of the following equivalent conditions:
+  <ol>
+  <li>If $f : X \to Y$, $g : Y \to X$ are morphisms with $f \circ g = \id_Y$, then $g \circ f = \id_X$.</li>
+  <li>Every split monomorphism is an isomorphism.</li>
+  <li>Every split epimorphism is an isomorphism.</li>
+  <li>Every split idempotent is the identity.</li>
+  </ol>
+  The equivalence of these conditions is easy to prove, and the first one reveals that being "retract-trivial" is self-dual. The second condition precisely says that every retract is trivial. Note that this property is not standard terminology. We have added it to the database since it clarifies the relationship between several related properties. A one-object category is retract-trivial precisely when the corresponding monoid is <a href="https://en.wikipedia.org/wiki/Dedekind-finite_ring">Dedekind-finite</a>.
+nlab_link: https://ncatlab.org/nlab/show/retract # not precise but good enough
+dual: retract-trivial
+invariant_under_equivalences: true
+keywords:
+  - trivial split monomorphisms
+  - trivial split epimorphisms
+  - trivial retractions
+  - trivial sections
+  - trivial coretractions
+  - Dedekind-finite
+
+related:
+  - regular-subobject-trivial
+  - regular-quotient-trivial
+  - one-way
+
+tags:
+  - morphism behavior

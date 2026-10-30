@@ -40,19 +40,6 @@
     - quotients of congruences
   proof: 'If $q_1, q_2 : R \rightrightarrows X$ is a congruence, the symmetry morphism $s : R \to R$ is an automorphism of $R$, hence equal to $\id_R$ by assumption. But then $q_1 = q_2 \circ s = q_2$, and simply $\id_X$ is a coequalizer. Also, for the reflexivity morphism $r : X \to R$, we have $q_1 \circ r = \id$. For the reverse composition, $q_1 \circ r \circ q_1 = q_1 \circ \id$ and $q_2 \circ r \circ q_1 = q_2 \circ \id$, so since $q_1, q_2$ are jointly monomorphic, we get $r \circ q_1 = \id$. Therefore, $q_1 = q_2$ is an isomorphism, so $R$ is the kernel pair of $\id_X$.'
 
-- id: core-connected_locally_finite_congruences
-  assumptions:
-    - core-connected
-    - locally finite
-  conclusions:
-    - effective congruences
-    - quotients of congruences
-  # TODO: refactor this once we add "split-mono-trivial", cf. #383
-  proof: >-
-    Let $q_1, q_2 : R \rightrightarrows X$ be a congruence. Since the category is core-connected, we may assume $R = X$. The reflexivity morphism $r : X \to X$ satisfies $q_1 \circ r = q_2 \circ r = \id_X$. Since the monoid $\End(X)$ is finite, every right inverse in it is a two-sided inverse (see the remark below), so that $q_1 = r^{-1} = q_2$. It follows that $\id_X$ is a coequalizer of $q_1, q_2$, and that $q_1, q_2$ is a kernel pair of $\id_X$, since $\id_X, \id_X$ is one.
-
-    Remark: In a finite monoid $M$, every right inverse is a two-sided inverse. Indeed, let $x,y \in M$ with $xy = 1$. The map $M \to M$, $z \mapsto yz$ is injective, since $x(yz) = (xy)z = z$. Since $M$ is finite, it is also surjective, so there is some $z \in M$ with $yz = 1$. Then $x = x(yz) = (xy)z = z$, and hence $yx = yz = 1$.
-
 - id: preadditive_kernels_normal_imply_effective_congruences
   assumptions:
     - kernels

@@ -57,14 +57,11 @@ satisfied_properties:
     label: BC_aleph1-accessible
 
 unsatisfied_properties:
-  - property: locally finite
-    proof: This is because $C$ is infinite.
+  - property: retract-trivial
+    proof: We have $pq=1$, but $qp \neq 1$.
 
   - property: zero morphisms
     proof: We need to show that $C$ has no absorbing element. Assume that $q^n p^m$ is an absorbing element. Then $q^{n+1} p^m = q (q^n p^m) = q^n p^m$ implies $n+1=n$, a contradiction.
-
-  - property: subobject-trivial
-    proof: The monomorphism $q$ is not an isomorphism.
 
   - property: cokernel pairs
     proof: >-

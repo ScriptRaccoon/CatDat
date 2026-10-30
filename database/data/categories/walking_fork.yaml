@@ -36,9 +36,6 @@ satisfied_properties:
   - property: cogenerator
     proof: It is easy to check that $2$ is a cogenerator.
 
-  - property: left cancellative
-    proof: It is easy to check that $i,f,g$ are monomorphisms.
-
   - property: equalizers
     proof: The only pair of distinct parallel morphisms is $f,g$, and their equalizer is $i$.
 

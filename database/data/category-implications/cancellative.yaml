@@ -1,21 +1,5 @@
 # results on left cancellative and right cancellative categories
 
-- id: zero-no-mono
-  assumptions:
-    - left cancellative
-    - zero morphisms
-  conclusions:
-    - thin
-  proof: 'If $f,g : A \rightrightarrows B$ are two morphisms, then $0_{B,B} \circ f = 0_{A,B} = 0_{B,B} \circ g$, so that $f = g$.'
-
-- id: codiagonal-no-mono
-  assumptions:
-    - binary copowers
-    - left cancellative
-  conclusions:
-    - thin
-  proof: 'For every object $A$ the codiagonal $A + A \to A$ is a split epimorphism, and by assumption a monomorphism, hence an isomorphism. Hence, the two inclusions $i_1,i_2 : A \rightrightarrows A + A$ coincide. Now, if $f, g : A \rightrightarrows B$ are two morphisms, consider the induced morphism $h : A + A \to B$ and compute $f = h \circ i_1 = h \circ i_2 = g$.'
-
 - id: cauchy_complete_criterion
   assumptions:
     - left cancellative
@@ -23,3 +7,23 @@
     - Cauchy complete
   proof: Any idempotent monomorphism must be the identity and therefore splits.
   check_redundancy: false
+
+- id: left_cancellative_kernel_pairs
+  assumptions:
+    - left cancellative
+  conclusions:
+    - kernel pairs
+  proof: >-
+    In general, the kernel pair of a monomorphism $f : X \to Y$ exists and is given by
+    $$\begin{CD} X @>{\id_X}>> X \\ @V{\id_X}VV @VV{f}V \\ X @>>{f}> Y. \end{CD}$$
+
+- id: retract-trivial_kernel_pairs
+  assumptions:
+    - retract-trivial
+    - kernel pairs
+  conclusions:
+    - left cancellative
+  proof: >-
+    Let $f : X \to Y$ be a morphism with kernel pair $E \rightrightarrows X$. The diagonal $X \to E$ is a split monomorphism. By assumption on the category, it is an isomorphism. Therefore,
+    $$\begin{CD} X @>{\id_X}>> X \\ @V{\id_X}VV @VV{f}V \\ X @>>{f}> Y \end{CD}$$
+    is a pullback, so $f$ is a monomorphism.

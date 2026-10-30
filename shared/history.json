@@ -2001,6 +2001,10 @@
 		{
 			"type": "category",
 			"id": "quasicotopos"
+		},
+		{
+			"type": "category",
+			"id": "retract-trivial"
 		}
 	]
 }

@@ -27,6 +27,7 @@ satisfied_properties:
 
   - property: left cancellative
     proof: This property is inherited from <a href="/category/Fld">$\Fld$</a>.
+    check_redundancy: false
 
   - property: quotient-trivial
     proof: 'An epimorphism of fields of characteristic $0$ is clearly also an epimorphism of fields, and is therefore purely inseparable by <a href="https://math.stackexchange.com/questions/687869">MSE/687869</a>. In characteristic $0$, a purely inseparable field homomorphism is an isomorphism.'
@@ -51,11 +52,6 @@ unsatisfied_properties:
     proof: We can copy the proof from <a href="/category/Fld">$\Fld$</a>.
     references:
       - Fld_no_cogenerating_collection
-
-  - property: binary powers
-    proof: We can copy the proof from <a href="/category/Fld">$\Fld$</a> that the product $\IQ(\sqrt{2}) \times \IQ(\sqrt{2})$ does not exist.
-    references:
-      - Fld_no_binary_powers
 
   - property: locally cartesian closed
     proof: We can copy the proof from <a href="/category/Fld">$\Fld$</a> that $\Fld_0 / \IQ(\sqrt{2}, \sqrt{3})$ is not cartesian closed.
