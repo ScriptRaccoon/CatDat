@@ -100,14 +100,48 @@ unsatisfied_properties:
     proof: 'The adjunction between the global sections functor and the $\Spec$ functor (<a href="https://en.wikipedia.org/wiki/%C3%89l%C3%A9ments_de_g%C3%A9om%C3%A9trie_alg%C3%A9brique">Grothendieck–Dieudonné</a>, EGA I (1971), Ch. 1, Prop. 1.6.3) makes $\CAlg(R)^{\op}$ into a reflective subcategory of $\LRS_R$. Therefore, if $\LRS_R$ were total, then <a href="/category/CAlg(R)">$\CAlg(R)$</a> would be cototal by <a href="https://www.numdam.org/item/?id=CTGDC_1986__27_2_109_0">Kelly</a>, Cor. 6.2, which we know is not the case.'
 
   - property: cartesian filtered colimits
-    proof: This is Corollary 4(b) <a href="/content/Top-embeds-in-LRS">here</a>.
+    proof: >-
+      We embed <a href="/category/Top">$\Top$</a> into $\LRS_R$ and use that $\Top$ does not have cartesian filtered colimits. Choose a maximal ideal $\m$ of $R$ and let $K \coloneqq R/\m$. For a topological space $T$, let $\underline{K}_T$ be the constant sheaf with value $K$ on $T$, whose sections over an open subset $V \subseteq T$ are the locally constant functions $V \to K$, i.e. the continuous maps $V \to K$ for the discrete topology on $K$. Its stalks are isomorphic to $K$, so we obtain a locally ringed space $\Delta(T)$ with $|\Delta(T)| \coloneqq T$ and $\O_{\Delta(T)} \coloneqq \underline{K}_T$. A continuous map $u : T \to T'$ induces a morphism $\Delta(u) : \Delta(T) \to \Delta(T')$ with $|\Delta(u)| \coloneqq u$ whose sheaf map is given by $s \mapsto s \circ u$. This defines a functor
+      $$\Delta : \Top \to \LRS_R.$$
+      We say that a locally ringed space $X$ is defined over $K$ if the unique morphism $X \to \Spec(R)$ factors through $\Spec(K)$, i.e. if $\m \, \O_X = 0$. For example, $\Delta(T)$ is defined over $K$ since $\m$ annihilates $\underline{K}_T$.
+
+      <strong>Claim 1.</strong> Let $X$ be a locally ringed space and $T$ be a topological space. If $X$ is defined over $K$, then the map $\Hom(X,\Delta(T)) \to \Hom(|X|,T)$, $g \mapsto |g|$ is bijective. Otherwise, $\Hom(X,\Delta(T)) = \varnothing$.
+
+      If there is a morphism $X \to \Delta(T)$, then $X$ is defined over $K$ since $\Delta(T)$ is. Conversely, assume that $X$ is defined over $K$, and let $u : |X| \to T$ be a continuous map. The morphisms $g : X \to \Delta(T)$ with $|g| = u$ correspond to the morphisms of sheaves of $R$-algebras $\underline{K}_T \to u_* \O_X$ with local stalk maps. By the adjunction $u^{-1} \dashv u_*$, morphisms $\underline{K}_T \to u_* \O_X$ correspond to morphisms $u^{-1} \underline{K}_T = \underline{K}_{|X|} \to \O_X$, and these correspond to $R$-algebra homomorphisms $K \to \O_X(|X|)$, since $\underline{K}_{|X|}$ is the constant sheaf with value $K$. There is exactly one such homomorphism, since $K = R/\m$ and $\m \, \O_X = 0$. The stalk maps $K \to \O_{X,x}$ of the resulting morphism $g$ are local since $K$ is a field. This proves Claim 1.
+
+      <strong>Claim 2.</strong> The functor $\Delta$ is fully faithful and preserves non-empty limits.
+
+      Let $T,T'$ be topological spaces. Since $\Delta(T')$ is defined over $K$, Claim 1 shows that the map $\Hom(\Delta(T'),\Delta(T)) \to \Hom(T',T)$, $g \mapsto |g|$ is bijective. Since $|\Delta(u)| = u$, its inverse is $u \mapsto \Delta(u)$. Hence, $\Delta$ is fully faithful. Now let $(T_i)_{i \in I}$ be a diagram in $\Top$ with $I \neq \varnothing$, with limit $T$ and limit projections $p_i : T \to T_i$. For a locally ringed space $X$ defined over $K$, Claim 1 identifies the map
+      $$\textstyle \Hom(X,\Delta(T)) \to \lim_{i \in I} \Hom(X,\Delta(T_i)), \quad g \mapsto (\Delta(p_i) \circ g)_{i \in I}$$
+      with the bijection $\Hom(|X|,T) \to \lim_{i \in I} \Hom(|X|,T_i)$. For every other locally ringed space $X$, both sides are empty, the right side because $I \neq \varnothing$. Hence, the morphisms $\Delta(p_i)$ form a limit cone in $\LRS_R$.
+
+      <strong>Claim 3.</strong> The functor $\Delta$ preserves colimits.
+
+      Let $(T_i)_{i \in I}$ be a diagram in $\Top$ with colimit $T$ and colimit maps $u_i : T_i \to T$. Recall from the proof of cocompleteness that colimits in $\LRS_R$ are computed as in ringed spaces: the underlying space is the colimit of the underlying spaces, and the structure sheaf is the limit of the push-forwards of the structure sheaves. Hence, the colimit of the diagram $(\Delta(T_i))_{i \in I}$ has the underlying space $T$ and the structure sheaf $\O \coloneqq \lim_{i \in I} (u_i)_* \underline{K}_{T_i}$, and its colimit maps consist of the $u_i$ and the limit projections. Let $V \subseteq T$ be an open subset. Then $V$ is the colimit of the open subspaces $u_i^*(V) \subseteq T_i$ in $\Top$. Indeed, this holds for the underlying sets, since colimits in $\Set$ are stable under pullbacks. And if $W \subseteq V$ is a subset such that each $u_i^*(W)$ is open in $u_i^*(V)$, hence in $T_i$, then $W$ is open in $T$ since $T$ carries the final topology, hence $W$ is open in $V$. Since the sections of $\underline{K}_T$ and $\underline{K}_{T_i}$ are the continuous maps to the discrete space $K$, it follows that the map
+      $$\textstyle \underline{K}_T(V) \to \O(V) = \lim_{i \in I} \underline{K}_{T_i}(u_i^*(V)), \quad s \mapsto (s \circ u_i)_{i \in I}$$
+      is bijective. These maps form an isomorphism of sheaves $\underline{K}_T \to \O$ under which the limit projections become the sheaf maps of the morphisms $\Delta(u_i)$. Hence, the morphisms $\Delta(u_i)$ form a colimit cocone in $\LRS_R$.
+
+      In particular, $\Delta$ is fully faithful and preserves binary products and filtered colimits. Since $\Top$ does not have cartesian filtered colimits, the contrapositive of Lemma 4 <a href="/content/subcategories">here</a> applied to $\Delta$ shows that $\LRS_R$ does not have cartesian filtered colimits either.
+
+      Explicitly, if $S$ is a topological space and $(T_i)_{i \in I}$ is a filtered diagram in $\Top$ such that the canonical continuous map
+      $$\alpha : \colim_{i \in I} (S \times T_i) \to S \times \colim_{i \in I} T_i$$
+      is not a homeomorphism, then, since $\Delta$ preserves binary products and colimits, the canonical morphism
+      $$\colim_{i \in I} \bigl(\Delta(S) \times \Delta(T_i)\bigr) \to \Delta(S) \times \colim_{i \in I} \Delta(T_i)$$
+      in $\LRS_R$ identifies with $\Delta(\alpha)$, which is not an isomorphism since its underlying continuous map is $\alpha$.
+    label: LRS_R_embedding_of_Top
 
   - property: effective cocongruences
-    proof: This is Corollary 4(e) <a href="/content/Top-embeds-in-LRS">here</a>.
+    proof: >-
+      Consider the functor $\Delta : \Top \to \LRS_R$ from the proof above. It is fully faithful and preserves non-empty limits and all colimits, in particular equalizers, pushouts, and binary coproducts. Since <a href="/category/Top">$\Top$</a> does not have effective cocongruences, the contrapositive of the dual of Lemma 8 <a href="/content/subcategories">here</a> applied to $\Delta$ shows that $\LRS_R$ does not have effective cocongruences either.
+
+      Concretely, this argument transports the counterexample from the proof for <a href="/category/Top">$\Top$</a> along $\Delta$: if $I$ denotes the indiscrete topological space with two points, then the two morphisms $\Spec(K) \rightrightarrows \Delta(I)$ corresponding to the two points of $I$ form a cocongruence in $\LRS_R$ that is not effective. Here, $\Delta(I)$ is the locally ringed space with underlying space $I$ and $\O_{\Delta(I)}(I) = K$.
+    references:
+      - LRS_R_embedding_of_Top
+      - Top_no_effective_cocongruences
 
   - property: pushout-stable regular monomorphisms
     proof: >-
-      Choose a maximal ideal $\m$ of $R$ and let $K \coloneqq R/\m$. We first reduce the claim to $\LRS_K$, which is the full subcategory of $\LRS_R$ consisting of those $X$ with $\m \O_X = 0$. Equivalently, $X$ admits a morphism $X \to \Spec(K)$ in $\LRS_R$, which is then unique. It follows that $\LRS_K$ is closed under pushouts in $\LRS_R$, and that every $T$ with a morphism $T \to X \in \LRS_K$ lies in $\LRS_K$. Hence, pushouts and equalizers in $\LRS_K$ are the same as in $\LRS_R$, and therefore also regular monomorphisms, since these are the equalizers of their cokernel pairs (by the dual of <a href="/content/regular-epis-kernel-pairs">this lemma</a>). So if $\LRS_R$ had pushout-stable regular monomorphisms, then so would $\LRS_K$.
+      Choose a maximal ideal $\m$ of $R$ and let $K \coloneqq R/\m$. We first reduce the claim to $\LRS_K$, which is the full subcategory of $\LRS_R$ consisting of those $X$ that are defined over $K$, i.e. for which the unique morphism $X \to \Spec(R)$ factors through $\Spec(K)$, i.e. $\m \, \O_X = 0$. In this case, the morphism $X \to \Spec(K)$ is unique. It follows that $\LRS_K$ is closed under pushouts in $\LRS_R$, and that every $T$ with a morphism $T \to X \in \LRS_K$ lies in $\LRS_K$. Hence, pushouts and equalizers in $\LRS_K$ are the same as in $\LRS_R$, and therefore also regular monomorphisms, since these are the equalizers of their cokernel pairs (by the dual of <a href="/content/regular-epis-kernel-pairs">this lemma</a>). So if $\LRS_R$ had pushout-stable regular monomorphisms, then so would $\LRS_K$.
 
       So it suffices to construct, for every field $K$, a counterexample in $\LRS_K$. In fact, we will find a regular monomorphism $i : X \to Y$ which is the identity on underlying spaces, and a morphism $f : X \to Z$ to a locally ringed space $Z$ with a single point such that $Z \to Y \sqcup_X Z$ is not a regular monomorphism. The idea is that $\O_Y$ has an infinitesimal direction over two open subsets which cannot be glued to a global section, whereas $\O_X$ has a global section in this direction. Collapsing the space to a point only keeps the global sections, so this direction gets lost.
 
