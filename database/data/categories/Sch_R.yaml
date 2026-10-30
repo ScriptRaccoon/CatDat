@@ -16,9 +16,8 @@ related:
   - Z
 
 comments:
-  - Monomorphisms are discussed at <a href="https://mathoverflow.net/questions/56591">MO/56591</a>. At least the case of morphisms of locally finite type is understood.
   - Regular monomorphisms are discussed at <a href="https://mathoverflow.net/questions/66279">MO/66279</a>.
-  - Epimorphisms are discussed at <a href="https://mathoverflow.net/questions/56564">MO/56564</a>. Probably they cannot be classified.
+  - Epimorphisms are discussed at <a href="https://mathoverflow.net/questions/56564">MO/56564</a>. It is not clear if they can be classified.
 
 satisfied_properties:
   - property: locally small
@@ -111,3 +110,17 @@ special_morphisms:
   isomorphisms:
     description: 'A morphism $f : X \to Y$ is an isomorphism iff $|f| : |X| \to |Y|$ is a homeomorphism and $f^\sharp : \O_Y \to |f|_* \O_X$ is an isomorphism of sheaves.'
     proof: This description is inherited from <a href="/category/LRS_R">$\LRS_R$</a>.
+  monomorphisms:
+    description: 'A morphism $f : X \to Y$ is a monomorphism iff $|f| : |X| \to |Y|$ is injective and for every $x \in |X|$ the stalk map $f^\sharp_x : \O_{Y,|f|(x)} \to \O_{X,x}$ is an epimorphism of commutative rings.'
+    proof: >-
+      Assume that $f$ satisfies the two conditions. Then every stalk map $f^\sharp_x$ is also an epimorphism in the category of local commutative rings and local homomorphisms. By the classification of monomorphisms in <a href="/category/LRS_R">$\LRS_R$</a>, $f$ is a monomorphism in $\LRS_R$, hence also in its full subcategory $\Sch_R$.
+
+      Conversely, assume that $f$ is a monomorphism. The proof for $\LRS_R$ shows that $|f|$ is injective, since the locally ringed spaces with a single point and a field $F$ as stalk used there are the schemes $\Spec(F)$. Now let $x \in |X|$ and $y \coloneqq |f|(x)$. Recall that there is a canonical morphism $\iota_x : \Spec(\O_{X,x}) \to X$, and that the square
+      $$\begin{CD} \Spec(\O_{X,x}) @>{\iota_x}>> X \\ @V{\Spec(f^\sharp_x)}VV @VV{f}V \\ \Spec(\O_{Y,y}) @>>{\iota_y}> Y \end{CD}$$
+      commutes. We claim that $\iota_x$ is a monomorphism. Indeed, choose an affine open neighborhood $U \cong \Spec(A)$ of $x$, and let $\p \subseteq A$ be the prime ideal corresponding to $x$, so that $\O_{X,x} \cong A_\p$. Then $\iota_x$ is the composite of $\Spec(A_\p) \to \Spec(A)$ and the open embedding $U \hookrightarrow X$. The former is a monomorphism since the localization $A \to A_\p$ is an epimorphism of $R$-algebras and $\Spec : \CAlg(R)^{\op} \to \Sch_R$ is a right adjoint (of the global sections functor), and open embeddings are monomorphisms.
+
+      Hence, $f \circ \iota_x = \iota_y \circ \Spec(f^\sharp_x)$ is a monomorphism, and therefore $\Spec(f^\sharp_x)$ is a monomorphism. Since $\Spec : \CAlg(R)^{\op} \to \Sch_R$ is fully faithful, $f^\sharp_x$ is an epimorphism in $\CAlg(R)$. This means that it is an epimorphism of commutative rings, since $\CAlg(R)$ is the coslice category of the category of commutative rings under $R$, and epimorphisms in a coslice category are the same as in the underlying category.
+
+      The same classification is proven in <a href="https://math.stackexchange.com/questions/1650634/a/5145540">MSE/1650634</a>. For a classification of monomorphisms locally of finite type, see <a href="https://en.wikipedia.org/wiki/%C3%89l%C3%A9ments_de_g%C3%A9om%C3%A9trie_alg%C3%A9brique">Grothendieck–Dieudonné</a>, EGA IV<sub>4</sub> (1967), Prop. 17.2.6.
+
+      Alternatively, the inclusion functor $\Sch_R \to \LRS_R$ preserves pullbacks (<a href="https://stacks.math.columbia.edu/tag/01JN">SP/01JN</a>), hence monomorphisms. Since it is also faithful, the monomorphisms in $\Sch_R$ are exactly the morphisms of schemes that are monomorphisms in $\LRS_R$, i.e. those $f$ for which $|f|$ is injective and the stalk maps are epimorphisms in the category of local commutative rings. This description only looks weaker than the one above: in general, an epimorphism of local commutative rings need not be an epimorphism of commutative rings (see the example in $\LRS_R$), but for the stalk maps of a morphism of schemes with injective underlying map, both notions agree by the proof above.
