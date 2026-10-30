@@ -99,10 +99,6 @@ unsatisfied_properties:
   - property: total
     proof: 'The adjunction between the global sections functor and the $\Spec$ functor (<a href="https://en.wikipedia.org/wiki/%C3%89l%C3%A9ments_de_g%C3%A9om%C3%A9trie_alg%C3%A9brique">Grothendieck–Dieudonné</a>, EGA I (1971), Ch. 1, Prop. 1.6.3) makes $\CAlg(R)^{\op}$ into a reflective subcategory of $\LRS_R$. Therefore, if $\LRS_R$ were total, then <a href="/category/CAlg(R)">$\CAlg(R)$</a> would be cototal by <a href="https://www.numdam.org/item/?id=CTGDC_1986__27_2_109_0">Kelly</a>, Cor. 6.2, which we know is not the case.'
 
-  - property: cartesian closed
-    proof: This is Corollary 4(a) <a href="/content/Top-embeds-in-LRS">here</a>.
-    check_redundancy: false
-
   - property: cartesian filtered colimits
     proof: This is Corollary 4(b) <a href="/content/Top-embeds-in-LRS">here</a>.
 
