@@ -13,8 +13,7 @@
     - regular-subobject-trivial
   conclusions:
     - thin
-  proof: 'For the forward direction, if $f,g : X \rightrightarrows Y$ are morphisms, their equalizer is a regular monomorphism $E \hookrightarrow X$, hence an isomorphism. But this means $f = g$. The reverse implication is trivial.'
-  is_equivalence: true
+  proof: 'If $f,g : X \rightrightarrows Y$ are morphisms, their equalizer is a regular monomorphism $E \hookrightarrow X$, hence an isomorphism. But this means $f = g$.'
 
 - id: subobject-trivial_characterization
   assumptions:
@@ -62,14 +61,6 @@
   conclusions:
     - trivial
   proof: 'For any object $X$, the unique morphism $! : 0 \to X$ is a regular monomorphism, as the equalizer of the two coprojections $X \rightrightarrows X \sqcup X$. Therefore, it is an isomorphism.'
-
-- id: disjoint_finite_coproducts_disallows_regular-quotient-trivial
-  assumptions:
-    - disjoint finite coproducts
-    - regular-quotient-trivial
-  conclusions:
-    - trivial
-  proof: 'For any object $X$, the coequalizer of the two coprojections $X \rightrightarrows X \sqcup X$ is the codiagonal $\nabla : X \sqcup X \to X$. Therefore, these two coprojections are equal. But their equalizer is also the unique morphism $! : 0 \to X$. It follows that $! : 0 \to X$ is an isomorphism.'
 
 - id: regular_subobject_trivial_congruences
   # TODO: refactor this once we add "split-mono-trivial", cf. #383

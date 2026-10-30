@@ -30,6 +30,7 @@
     - terminal object
   proof: The non-trivial direction follows since finite products can be constructed recursively via $X_1 \times \cdots \times X_{n+1} = (X_1 \times \cdots \times X_n) \times X_{n+1}$.
   is_equivalence: true
+  check_redundancy: false
 
 - id: products_criterion
   assumptions:
@@ -38,6 +39,7 @@
   conclusions:
     - products
   proof: The product $\prod_{i \in I} X_i$ is the cofiltered limit of the finite partial products $\prod_{i \in E} X_i$ where $E$ ranges over the finite subsets of $I$.
+  check_redundancy: false
 
 - id: products_criterion_countable
   assumptions:
@@ -129,6 +131,7 @@
   conclusions:
     - copowers
   proof: Let $\C$ be a category with filtered colimits and finite copowers. Let $X \in \C$ be an object and $I$ be a set. The poset $P_{<\aleph_0}(I)$ of finite subsets of $I$ is filtered, and we have a diagram $P_{<\aleph_0}(I) \to \C$, $A \mapsto A \otimes X$. Its colimit is the copower $I \otimes X$.
+  check_redundancy: false
 
 - id: copowers_criterion_countable
   assumptions:

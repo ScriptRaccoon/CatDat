@@ -16,14 +16,6 @@
     - finite coproducts
   proof: This holds by definition.
 
-- id: disjoint_coproducts_thin_trivial
-  assumptions:
-    - disjoint finite coproducts
-    - thin
-  conclusions:
-    - trivial
-  proof: For every object $A$ the two inclusions $A \rightrightarrows A + A$ must be equal, so their equalizer is $A$, but also $0$ since the coproduct is disjoint. Hence $A = 0$.
-
 - id: disjoint_coproducts_strict
   assumptions:
     - disjoint finite coproducts

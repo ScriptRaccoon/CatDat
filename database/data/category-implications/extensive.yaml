@@ -6,6 +6,7 @@
   conclusions:
     - finite coproducts
   proof: This holds by definition.
+  check_redundancy: false
 
 - id: countably_extensive_assumption
   assumptions:
@@ -111,9 +112,9 @@
     - countably extensive
     - cofiltered-limit-stable epimorphisms
   conclusions:
-    - trivial
+    - thin
   proof: >-
-    Let $\C$ be a countably extensive category with cofiltered-limit-stable epimorphisms. We show that $\C$ is thin. Since $\C$ has disjoint finite coproducts, it is then trivial by <a href="/category-implication/disjoint_coproducts_thin_trivial">this implication</a>.
+    Let $\C$ be a countably extensive category with cofiltered-limit-stable epimorphisms. We show that $\C$ is thin. (With other results, one can further deduce that $\C$ is trivial.)
 
     Let $T$ be an object, let $T_m$ be the summand with index $m$ of the coproduct $\coprod_{m \in \IN} T$, and for $n \in \IN$ let
     $$\textstyle D(n) \coloneqq \coprod_{m \geq n} T_m.$$

@@ -9,6 +9,7 @@
     - subobject classifier
   proof: This holds by definition.
   is_equivalence: true
+  check_redundancy: false
 
 - id: topos_consequences
   assumptions:
@@ -16,18 +17,9 @@
   conclusions:
     - disjoint finite coproducts
     - effective congruences
-    - epi-regular
     - finitely cocomplete
     - locally cartesian closed
-  proof: See <a href="https://ncatlab.org/nlab/show/Sheaves+in+Geometry+and+Logic">Mac Lane–Moerdijk</a>, Cor. IV.5.4, Cor. IV.10.5, Thm. IV.7.8; and <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant">Johnstone</a>, Part A, Prop. 2.4.1 and Cor. 2.3.4.
-
-- id: topos_well-copowered_criterion
-  assumptions:
-    - elementary topos
-    - locally essentially small
-  conclusions:
-    - well-copowered
-  proof: This follows from <a href="https://ncatlab.org/nlab/show/Sheaves+in+Geometry+and+Logic">Mac Lane–Moerdijk</a>, Theorem IV.7.8 (and Prop. I.3.1).
+  proof: See <a href="https://ncatlab.org/nlab/show/Sheaves+in+Geometry+and+Logic">Mac Lane–Moerdijk</a>, Cor. IV.5.4 (finite cocompleteness), Cor. IV.10.5 (disjoint finite coproducts); and <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant">Johnstone</a>, Part A, Cor. 2.3.4 (locally cartesian closed) and Prop. 2.4.1 (effective congruences).
 
 - id: topos_implies_coregular
   assumptions:
@@ -45,6 +37,7 @@
   conclusions:
     - cocomplete
   proof: 'This follows from the fact that for an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is monadic (<a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, 2.2.7), and therefore creates limits (i.e. it creates colimits in $\T$ from limits in $\T$).'
+  check_redundancy: false
 
 - id: topos_monadic_over_itself_powers
   assumptions:
@@ -77,6 +70,7 @@
   conclusions:
     - coproducts
   proof: 'This follows from the fact that for an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is monadic (<a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, 2.2.7), and therefore creates limits (i.e. it creates colimits in $\T$ from limits in $\T$).'
+  check_redundancy: false
 
 - id: topos_monadic_over_itself_countable_products
   assumptions:
@@ -85,6 +79,7 @@
   conclusions:
     - countable coproducts
   proof: 'This follows from the fact that for an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is monadic (<a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, 2.2.7), and therefore creates limits (i.e. it creates colimits in $\T$ from limits in $\T$).'
+  check_redundancy: false
 
 - id: topos_monadic_over_itself_aleph2_products
   assumptions:
@@ -101,6 +96,7 @@
   conclusions:
     - sequential colimits
   proof: 'This follows from the fact that for an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is monadic (<a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, 2.2.7), and therefore creates limits (i.e. it creates colimits in $\T$ from limits in $\T$).'
+  check_redundancy: false
 
 - id: topos_monadic_over_itself_sifted
   assumptions:
@@ -109,6 +105,7 @@
   conclusions:
     - sifted colimits
   proof: 'This follows from the fact that for an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is monadic (<a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, 2.2.7), and therefore creates limits (i.e. it creates colimits in $\T$ from limits in $\T$).'
+  check_redundancy: false
 
 - id: topos_monadic_over_itself_filtered
   assumptions:
@@ -117,6 +114,7 @@
   conclusions:
     - filtered colimits
   proof: 'This follows from the fact that for an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is monadic (<a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, 2.2.7), and therefore creates limits (i.e. it creates colimits in $\T$ from limits in $\T$).'
+  check_redundancy: false
 
 - id: topos_monadic_over_itself_aleph1_filtered
   assumptions:
@@ -133,6 +131,7 @@
   conclusions:
     - connected colimits
   proof: 'This follows from the fact that for an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is monadic (<a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, 2.2.7), and therefore creates limits (i.e. it creates colimits in $\T$ from limits in $\T$).'
+  check_redundancy: false
 
 - id: topos_monadic_over_itself_wide_pullbacks
   assumptions:
@@ -141,6 +140,7 @@
   conclusions:
     - wide pushouts
   proof: 'This follows from the fact that for an elementary topos $\T$, the power object functor $P : \T^{\op} \to \T$ is monadic (<a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant" target="_blank">Johnstone</a>, 2.2.7), and therefore creates limits (i.e. it creates colimits in $\T$ from limits in $\T$).'
+  check_redundancy: false
 
 - id: topos_generator_implies_cogenerator
   assumptions:
@@ -160,26 +160,25 @@
 
 # ---- end of consequences of the monadicity of P ----
 
-- id: grothendieck_topos_definition
+- id: grothendieck_topos_criterion
   assumptions:
-    - Grothendieck topos
-  conclusions:
     - coproducts
     - elementary topos
     - generating collection
     - locally essentially small
+  conclusions:
+    - Grothendieck topos
   proof: See <a href="https://ncatlab.org/nlab/show/Sheaves+in+Geometry+and+Logic">Mac Lane–Moerdijk</a>, Appendix, Prop. 4.4.
-  is_equivalence: true
 
 - id: grothendieck_topos_consequence
   assumptions:
     - Grothendieck topos
   conclusions:
-    - cogenerator
-    - exact filtered colimits
-    - infinitary extensive
     - locally presentable
-  proof: A Grothendieck topos is locally presentable by <a href="https://www.cambridge.org/core/books/handbook-of-categorical-algebra/5033A02442342401E7BCC26A042DAB94">Borceux</a>, Vol. 3, Prop. 3.4.16, has a cogenerator (see <a href="https://ncatlab.org/nlab/show/cogenerator">nLab</a>) and is infinitary extensive by <a href="https://ncatlab.org/nlab/show/Giraud%27s+theorem">Giraud's Theorem</a>. To show that it has exact filtered colimits, first observe that this is clearly true in every presheaf topos (since $\Set$ has the property). Every Grothendieck topos is a full reflective subcategory of a presheaf topos such that the reflector preserves finite limits (<a href="https://ncatlab.org/nlab/show/sheaf+toposes+are+equivalently+the+left+exact+reflective+subcategories+of+presheaf+toposes">nLab</a>), so we conclude with Lemma 3 <a href="/content/subcategories">here</a>.
+    - subobject classifier
+    - cartesian closed
+    - exact filtered colimits
+  proof: A Grothendieck topos is locally presentable by <a href="https://www.cambridge.org/core/books/handbook-of-categorical-algebra/5033A02442342401E7BCC26A042DAB94">Borceux</a>, Vol. 3, Prop. 3.4.16. It is cartesian closed by <a href="https://ncatlab.org/nlab/show/Sheaves+in+Geometry+and+Logic">Mac Lane–Moerdijk</a>, Prop. III.6.1 (or Borceux, Prop. 3.4.17), and it has a subobject classifier by Prop. III.7.3 in op. cit. To show that it has exact filtered colimits, first observe that this is clearly true in every presheaf topos (since $\Set$ has the property). By Theorem III.5.1 in op. cit., every Grothendieck topos is a full reflective subcategory of a presheaf topos such that the reflector preserves finite limits, so we conclude with Lemma 3 <a href="/content/subcategories">here</a>.
 
 - id: pretopos_definition
   assumptions:
@@ -200,3 +199,4 @@
     - regular subobject classifier
   proof: This is true by definition.
   is_equivalence: true
+  check_redundancy: false

@@ -6,6 +6,7 @@
     - equivalence
   proof: This is standard, see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician">Mac Lane</a>, Ch. IV, Theorem 4.1.
   is_equivalence: true
+  check_redundancy: false
 
 - id: equivalence_invertible
   assumptions:
@@ -18,6 +19,7 @@
     $$L \cong L \circ F \circ R \cong R.$$
     Hence, $R$ and $L$ are (pseudo-)inverse to $F$.
   is_equivalence: true
+  check_redundancy: false
 
 - id: equivalence_consequences
   assumptions:
@@ -26,6 +28,7 @@
     - monadic
     - reflector
   proof: This is easy.
+  check_redundancy: false
 
 - id: isomorphism_is_equivalence
   assumptions:

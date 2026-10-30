@@ -5,35 +5,28 @@
   assumptions:
     - complete
   conclusions:
+    - products
     - connected limits
     - finitely complete
   proof: This is trivial.
+  check_redundancy: false
 
 - id: complete_characterization
   assumptions:
-    - complete
-  conclusions:
     - equalizers
     - products
+  conclusions:
+    - complete
   proof: See <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician">Mac Lane</a>, V.2, Thm. 2.
-  is_equivalence: true
 
 - id: finitely_complete_characterization
   assumptions:
-    - finitely complete
-  conclusions:
-    - equalizers
     - finite products
+    - equalizers
+  conclusions:
+    - finitely complete
   proof: See <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician">Mac Lane</a>, V.2, Cor. 1.
   is_equivalence: true
-
-- id: complete_criterion
-  assumptions:
-    - terminal object
-    - wide pullbacks
-  conclusions:
-    - complete
-  proof: See the <a href="https://ncatlab.org/nlab/show/wide+pullback">nLab</a>.
 
 - id: multi-complete_generalize_limits
   assumptions:
@@ -49,6 +42,13 @@
     - multi-terminal object
   proof: This is trivial.
 
+- id: terminal_is_multi-terminal
+  assumptions:
+    - terminal object
+  conclusions:
+    - multi-terminal object
+  proof: This is trivial.
+
 - id: multi-terminal_with_connected
   assumptions:
     - connected
@@ -56,7 +56,6 @@
   conclusions:
     - terminal object
   proof: Let $(T_i)_{i\in I}$ be a multi-terminal object in a connected category $\C$. By definition of multi-terminal objects, for each object $C$, there are a unique index $i_C\in I$ and a unique morphism $C \to T_{i_C}$. Since the index $i_C$ is invariant under connected components, $I$ must be a singleton. The converse is trivial.
-  is_equivalence: true
 
 - id: multi-complete_with_initial_object
   assumptions:

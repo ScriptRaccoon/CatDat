@@ -14,6 +14,7 @@
   conclusions:
     - finite products
   proof: See <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician">Mac Lane</a>, VIII.2, Theorem 2.
+  check_redundancy: false
 
 - id: additive_definition
   assumptions:
@@ -23,6 +24,7 @@
     - preadditive
   proof: This holds by definition.
   is_equivalence: true
+  check_redundancy: false
 
 - id: additive_biproducts
   assumptions:
@@ -42,6 +44,7 @@
     - normal
   proof: This holds by definition.
   is_equivalence: true
+  check_redundancy: false
 
 - id: abelian_implies_regular
   assumptions:
@@ -60,6 +63,7 @@
     - generator
   proof: This holds by definition.
   is_equivalence: true
+  check_redundancy: false
 
 - id: grothendieck_abelian_cogenerator
   assumptions:
