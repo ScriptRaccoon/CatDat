@@ -3,7 +3,7 @@ name: category of locally ringed spaces
 notation: $\LRS_R$
 objects: locally ringed spaces $X$ over $R \neq 0$, each consisting of a topological space $|X|$ and a sheaf $\O_X$ of commutative $R$-algebras on $|X|$ whose stalks are local rings
 morphisms: 'A morphism $f : X \to Y$ consists of a continuous map $|f| : |X| \to |Y|$ and a homomorphism $f^\sharp : \O_Y \to |f|_* \O_X$ of sheaves of $R$-algebras such that for every $x \in |X|$ the induced map on stalks $f^\sharp_x : \O_{Y,|f|(x)} \to \O_{X,x}$ is local.'
-description: Here, $R$ is a fixed non-trivial commutative ring. The general properties of this category will not depend on the choice of $R$. For $R = \IZ$ we obtain the category $\LRS$ of locally ringed spaces.
+description: Here, $R$ is a fixed non-trivial commutative ring. The general properties of this category will not depend on the choice of $R$. For $R = \IZ$ we obtain the category $\LRS$ of locally ringed spaces. We exclude $R=0$ because this yields the trivial category.
 nlab_link: https://ncatlab.org/nlab/show/locally+ringed+topological+space
 
 tags:
@@ -202,13 +202,14 @@ unsatisfied_properties:
 
 special_objects:
   initial object:
-    description: empty locally ringed space
+    description: empty locally ringed space $X$, given by $|X| \coloneqq \varnothing$ and $\O_X(\varnothing) \coloneqq 0$
   terminal object:
-    description: $\Spec(R)$
+    description: affine scheme $\Spec(R)$
   coproducts:
-    description: disjoint union with the product sheaf
+    description: The coproduct $X$ of a family $(X_i)_{i \in I}$ is given by $|X| \coloneqq \coprod_{i \in I} |X_i|$ and $\O_X(U) \coloneqq \prod_{i \in I} \O_{X_i}(U \cap |X_i|)$ for open subsets $U \subseteq |X|$.
   products:
-    description: See <a href="https://arxiv.org/abs/1103.2139">Gillam</a>. See also <a href="https://math.stackexchange.com/questions/1033675">MSE/1033675</a>.
+    description: >-
+      Let $X$ be the product of a family $(X_i)_{i \in I}$. For a family $x = (x_i)_{i \in I}$ of points $x_i \in |X_i|$, let $A_x \coloneqq \bigotimes_{i \in I} \O_{X_i,x_i}$ be the tensor product of $R$-algebras. The points of $|X|$ are the pairs $(x,\p)$ of such a family $x$ and a prime ideal $\p \subseteq A_x$ whose preimage in each $\O_{X_i,x_i}$ is its maximal ideal. For a family $U = (U_i)_{i \in I}$ of open subsets $U_i \subseteq |X_i|$ with $U_i = |X_i|$ for all but finitely many $i$ and an element $s \in \bigotimes_{i \in I} \O_{X_i}(U_i)$, let $D(U,s)$ be the set of points $(x,\p)$ with $x_i \in U_i$ for all $i$ and $s_x \notin \p$, where $s_x \in A_x$ is the image of $s$. These sets form a basis of the topology. The stalk of $\O_X$ at $(x,\p)$ is the localization $(A_x)_\p$, and the sections over an open subset $W \subseteq |X|$ are the families in $\prod_{(x,\p) \in W} (A_x)_\p$ that are locally of the form $(x,\p) \mapsto a_x/s_x$ on some $D(U,s) \subseteq W$ with $a \in \bigotimes_{i \in I} \O_{X_i}(U_i)$. The projection $X \to X_i$ maps $(x,\p)$ to $x_i$, and its stalk maps are the canonical local homomorphisms $\O_{X_i,x_i} \to (A_x)_\p$.
 
 special_morphisms:
   isomorphisms:

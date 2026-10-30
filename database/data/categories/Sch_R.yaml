@@ -99,13 +99,13 @@ unsatisfied_properties:
 
 special_objects:
   initial object:
-    description: empty scheme
+    description: empty scheme $X \cong \Spec(0)$, given by $|X| \coloneqq \varnothing$ and $\O_X(\varnothing) \coloneqq 0$
   terminal object:
-    description: $\Spec(R)$
+    description: affine scheme $\Spec(R)$
   coproducts:
-    description: disjoint union with the product sheaf
+    description: The coproduct $X$ of a family $(X_i)_{i \in I}$ is given by $|X| \coloneqq \coprod_{i \in I} |X_i|$ and $\O_X(U) \coloneqq \prod_{i \in I} \O_{X_i}(U \cap |X_i|)$ for open subsets $U \subseteq |X|$.
   products:
-    description: '[finite case] The idea is to use $\Spec(A) \times \Spec(B) = \Spec(A \otimes_R B)$ and then to glue affine pieces together. See EGA I, Chap. I, Thm. 3.2.1.'
+    description: '[finite case] There are two descriptions. (a) The product in <a href="/category/LRS_R">$\LRS_R$</a> (see there) is a scheme. (b) The idea is to use $\Spec(A) \times \Spec(B) = \Spec(A \otimes_R B)$ and then to glue affine pieces together. See <a href="https://en.wikipedia.org/wiki/%C3%89l%C3%A9ments_de_g%C3%A9om%C3%A9trie_alg%C3%A9brique">Grothendieck–Dieudonné</a>, EGA I (1971), Ch. I, Thm. 3.2.1.'
 
 special_morphisms:
   isomorphisms:
