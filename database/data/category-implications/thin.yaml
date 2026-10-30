@@ -60,14 +60,15 @@
     - skeletal
   proof: 'The category is one-way since any non-identity endomorphism yields an infinite sequence of equal non-identity morphisms. The category is skeletal since any non-identity isomorphism $f : A \to B$ yields the infinite sequence $\dotsc,f^{-1},f,f^{-1},f$.'
 
-- id: one-way_zero
+- id: thin_via_identity_zero-morphisms
   assumptions:
-    - one-way
     - zero morphisms
+    - retract-trivial
+    - Cauchy complete
   conclusions:
     - thin
   proof: >-
-    If $f,g : A \rightrightarrows B$ are two morphisms, then since $0_{B,B} = \id_B$ we have 
+    For any object $B$, the zero morphism $0_{B,B}$ is idempotent, hence a split idempotent by Cauchy completeness. Since it is retract-trivial, meaning all split idempotents are identities, we obtain $0_{B,B} = \id_B$. Now if $f,g : A \rightrightarrows B$ are two morphisms, we conclude
     $$f = 0_{B,B} \circ f = 0_{A,B} = 0_{B,B} \circ g = g.$$
 
 - id: direct_criterion

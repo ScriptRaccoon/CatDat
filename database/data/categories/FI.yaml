@@ -67,12 +67,6 @@ unsatisfied_properties:
   - property: cogenerator
     proof: Let $Q$ be a finite set. When $Q$ is empty, it is clearly no cogenerator. Otherwise, $Q \sqcup \{\ast\}$ has at least two elements, so that there are two different morphisms $\{\ast\} \rightrightarrows Q \sqcup \{\ast\}$. But there is no morphism $Q \sqcup \{\ast\} \to Q$ at all. Hence, $Q$ is no cogenerator.
 
-  - property: binary powers
-    proof: >-
-      Assume that two finite sets $X,Y$ have a product $P$ in this category. Elements of $P$ are the same as maps $\{\ast\} \to P$, and they are automatically injective. Therefore,
-      $$P \cong \Hom(\{\ast\},P) \cong \Hom(\{\ast\},X) \times \Hom(\{\ast\},Y) \cong X \times Y,$$
-      and the projections must agree as well. But they are usually not injective. In particular, the product $X \times X$ never exists when $X$ has $>1$ elements.
-
   - property: sequential colimits
     proof: 'Let $X_n \coloneqq \{1,\dotsc,n\}$. Assume the sequence of inclusion maps $X_n \hookrightarrow X_{n+1}$ has a colimit $(f_n : X_n \to X)$ in this category. But $f_n$ must be an injective map, so that $\card(X) \geq n$ for all $n$. Since $X$ is finite, this is a contradiction.'
 

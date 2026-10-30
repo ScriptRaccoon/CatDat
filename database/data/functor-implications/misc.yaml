@@ -153,16 +153,15 @@
     - full on isomorphisms
   proof: This is trivial.
 
-- id: thin_dominant_functor
-  # TODO: rework this once we add "split-mono-trivial", cf. #383
+- id: dominant_functor_is_surjective
   assumptions:
     - dominant
   associated_assumptions:
     codomain:
-      - regular-subobject-trivial
+      - retract-trivial
   conclusions:
     - essentially surjective
-  proof: This is trivial since every split monomorphism in the codomain is an isomorphism.
+  proof: This is trivial.
 
 - id: automatic_preserves_mono
   assumptions: []

@@ -1,4 +1,4 @@
-# results on subobject-trivial categories
+# results on subobject-trivial categories and related notions
 
 - id: well_powered_trivial_criterion
   assumptions:
@@ -44,7 +44,7 @@
     - right cancellative
   conclusions:
     - regular-subobject-trivial
-  proof: This is because any regular monomorphism is also an epimorphism, and therefore an isomorphism.
+  proof: This follows from the fact that every epimorphism that is also a regular monomorphism is an isomorphism.
 
 - id: regular_subobject_classifier_disallows_malcev
   assumptions:
@@ -62,38 +62,6 @@
     - trivial
   proof: 'For any object $X$, the unique morphism $! : 0 \to X$ is a regular monomorphism, as the equalizer of the two coprojections $X \rightrightarrows X \sqcup X$. Therefore, it is an isomorphism.'
 
-- id: regular_subobject_trivial_congruences
-  # TODO: refactor this once we add "split-mono-trivial", cf. #383
-  assumptions:
-    - regular-subobject-trivial
-  conclusions:
-    - effective congruences
-  proof: 'Let $q_1,q_2 : R \rightrightarrows X$ be a congruence. In particular, there is a morphism $r : X \to R$ with $q_1 r = q_2 r = \id_X$. Since $r$ is a split monomorphism, it is a regular monomorphism. By assumption, $r$ must be an isomorphism. Thus, $q_1 = q_2 = r^{-1}$, and $q_1,q_2$ is a kernel pair of $\id_X$.'
-
-- id: regular_subobject_trivial_reflexive_coequalizers
-  # TODO: refactor this once we add "split-mono-trivial", cf. #383
-  assumptions:
-    - regular-subobject-trivial
-  conclusions:
-    - reflexive coequalizers
-  proof: 'Let $f,g : X \rightrightarrows Y$ be a reflexive pair, i.e. there is a morphism $r : Y \to X$ with $f r = g r = \id_Y$. Since $r$ is a split monomorphism, it is a regular monomorphism. By assumption, $r$ must be an isomorphism. Thus, $f = g = r^{-1}$, and $\id_Y$ is a coequalizer of $f,g$.'
-
-- id: regular_subobject_trivial_cocongruences
-  # TODO: refactor this once we add "split-mono-trivial", cf. #383
-  assumptions:
-    - regular-subobject-trivial
-  conclusions:
-    - effective cocongruences
-  proof: 'Let $j_1,j_2 : X \rightrightarrows C$ be a cocongruence. In particular, there is a morphism $r : C \to X$ with $r j_1 = r j_2 = \id_X$. Since $j_1$ is a split monomorphism, it is a regular monomorphism. By assumption, $j_1$ must be an isomorphism. Then $r j_1 = \id_X$ implies that $r = j_1^{-1}$, and $r j_2 = \id_X$ implies $j_2 = j_1$. Hence, $j_1,j_2$ is a cokernel pair of $\id_X$.'
-
-- id: regular_subobject_trivial_coreflexive_equalizers
-  # TODO: refactor this once we add "split-mono-trivial", cf. #383
-  assumptions:
-    - regular-subobject-trivial
-  conclusions:
-    - coreflexive equalizers
-  proof: 'Let $f,g : X \rightrightarrows Y$ be a coreflexive pair, i.e. there is a morphism $r : Y \to X$ with $r f = r g = \id_X$. Since $f$ is a split monomorphism, it is a regular monomorphism. By assumption, $f$ must be an isomorphism. Then $r f = \id_X$ implies that $r = f^{-1}$, and $r g = \id_X$ implies $g = f$. Hence, $\id_X$ is an equalizer of $f,g$.'
-
 - id: isos_are_stable
   assumptions:
     - regular-quotient-trivial
@@ -101,3 +69,47 @@
   conclusions:
     - pullback-stable regular epimorphisms
   proof: Regular epimorphisms are isomorphisms by assumption, and isomorphisms are clearly stable under pullback.
+
+- id: regular-object-trivial_implies_retract_trivial
+  assumptions:
+    - regular-subobject-trivial
+  conclusions:
+    - retract-trivial
+  proof: This follows from the fact that every split monomorphism is a regular monomorphism.
+
+- id: retract_trivial_coreflexive_equalizers
+  assumptions:
+    - retract-trivial
+  conclusions:
+    - reflexive coequalizers
+  proof: 'Let $f,g : X \rightrightarrows Y$ be a reflexive pair, i.e. there is a morphism $r : Y \to X$ with $f r = g r = \id_Y$. Since $r$ is a split monomorphism, $r$ must be an isomorphism. Thus, $f = g = r^{-1}$, and $\id_Y$ is a coequalizer of $f,g$.'
+
+- id: retract-trivial_trivial_congruences
+  assumptions:
+    - retract-trivial
+  conclusions:
+    - effective congruences
+  proof: 'Let $q_1,q_2 : R \rightrightarrows X$ be a congruence. In particular, there is a morphism $r : X \to R$ with $q_1 r = q_2 r = \id_X$. Since $r$ is a split monomorphism, $r$ must be an isomorphism. Thus, $q_1 = q_2 = r^{-1}$, and $q_1,q_2$ is a kernel pair of $\id_X$.'
+
+- id: retract-trivial_monoids
+  assumptions:
+    - core-connected
+    - locally finite
+  conclusions:
+    - retract-trivial
+  proof: A core-connected locally finite category is equivalent to $BM$ for a finite monoid $M$. A finite monoid $M$ satisfies the property $xy=1 \implies yx=1$. In fact, when $xy=1$ holds, the map $m \mapsto xm$ is surjective, hence injective. Thus, $x(yx)=x=x(1)$ implies $yx=1$.
+
+- id: one-way_implies_retract-trivial
+  assumptions:
+    - one-way
+  conclusions:
+    - retract-trivial
+  proof: This is trivial.
+
+- id: codiagonal-iso
+  assumptions:
+    - retract-trivial
+    - binary copowers
+  conclusions:
+    - thin
+  proof: 'For every object $A$ the codiagonal $A + A \to A$ is a split epimorphism, hence an isomorphism. Hence, the two inclusions $i_1,i_2 : A \rightrightarrows A + A$ coincide. Now, if $f, g : A \rightrightarrows B$ are two morphisms, consider the induced morphism $h : A + A \to B$ and compute $f = h \circ i_1 = h \circ i_2 = g$.'

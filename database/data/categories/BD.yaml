@@ -74,9 +74,6 @@ satisfied_properties:
       Now let $D w_0 \subseteq D w_1 \subseteq \cdots$ be an ascending chain of principal left ideals, where every $w_i$ is a word in $f,g$. By the claim, $w_{i+1}$ is a suffix of $w_i$ for all $i \geq 0$. Hence, the lengths of the words $w_i$ form a decreasing sequence of natural numbers, which becomes stationary. Once the lengths are equal, the suffix $w_{i+1}$ of $w_i$ equals $w_i$. Therefore, the chain becomes stationary.
 
 unsatisfied_properties:
-  - property: locally finite
-    proof: This is because $D$ is infinite.
-
   - property: zero morphisms
     proof: We need to show that $D$ has no absorbing element. Assume that $s^n w$ is an absorbing element. Then $s^{n+1} w = s (s^n w) = s^n w$ implies $n+1=n$ by the uniqueness of the normal form, a contradiction.
 

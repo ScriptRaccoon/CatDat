@@ -27,7 +27,7 @@
 - id: strict_initial_left_criterion
   assumptions:
     - initial object
-    - left cancellative
+    - retract-trivial
   conclusions:
     - strict initial object
-  proof: 'It suffices to prove that in general any monomorphism $f : A \to 0$ into an initial object is an isomorphism. If $g : 0 \to A$ is the unique morphism, then $f \circ g = \id_0$ since $0$ is initial. But then $f$ is a split epimorphism and a monomorphism, hence an isomorphism.'
+  proof: 'Let $f : A \to 0$ be any morphism into the initial object $0$. If $g : 0 \to A$ is the unique morphism, then $f \circ g = \id_0$ since $0$ is initial. In particular, $f$ is a split epimorphism. Since the category is retract-trivial, this shows that $f$ is an isomorphism.'

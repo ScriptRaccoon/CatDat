@@ -5,9 +5,16 @@
     - groupoid
   conclusions:
     - directed limits
-    - left cancellative
     - self-dual
   proof: This is easy.
+
+- id: groupoid_all_isos
+  assumptions:
+    - groupoid
+  conclusions:
+    - left cancellative
+  proof: This is trivial.
+  check_redundancy: false
 
 - id: groupoid_criterion
   assumptions:
