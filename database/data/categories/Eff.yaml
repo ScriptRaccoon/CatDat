@@ -79,7 +79,7 @@ special_objects:
     description: The binary product of $(X, E_X)$ and $(Y, E_Y)$ is $X \times Y$ with the PER given by $\{ (\langle n, m \rangle, (x_1, y_1), (x_2, y_2)) \mid (n, x_1, x_2) \in E_X \land (m, y_1, y_2) \in E_Y \}$.
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: For an effective functional relation $f \subseteq \IN \times X \times Y$, the equivalence class of $f$ is an isomorphism if and only if the inverse relation $f^{-1} \subseteq \IN \times Y \times X$ is also an effective functional relation; or equivalently, if $[f]$ is both a monomorphism and an epimorphism (see below).
     proof: >-
       The equivalence to $f$ being a monomorphism and an epimorphism follows from the fact that the effective topos is an elementary topos, and therefore balanced.
@@ -91,7 +91,7 @@ special_morphisms:
       ($\Leftarrow$) The effective topos being an elementary topos and therefore balanced, it is sufficient to show $f$ is a monomorphism and an epimorphism. The fact that $f$ is a monomorphism follows from the uniqueness of image condition for $f^{-1}$ and the description of monomorphisms below. Similarly, the fact that $f$ is an epimorphism follows from the totality condition for $f^{-1}$ and the description of epimorphisms below.
 
       Alternately, assuming $f^{-1}$ is effective functional, then it is straightforward to show that $f \circ f^{-1}$ and $f^{-1} \circ f$ are equivalent to the identities, so that $[f^{-1}]$ forms an inverse to $[f]$.
-  monomorphisms:
+  monomorphism:
     description: 'For an effective functional relation $f \subseteq \IN \times X \times Y$, the equivalence class of $f$ is a monomorphism if and only if there is a partial recursive function $i : \IN^2 \dashrightarrow \IN$ such that whenever $n \Vdash x_1 \xmapsto{f} y$ and $m \Vdash x_2 \xmapsto{f} y$, then $i(n, m)$ is defined and $i(n, m) \Vdash x_1 \equiv x_2$.'
     proof: >-
       ($\Rightarrow$) We can define a kernel pair $E$ of $f$ with underlying set $X\times X$, and partial equivalence relation $\{ (\langle n, m, p, q \rangle, (x_1, x_2), (x_3, x_4)) \mid \exists y\in Y, (n \Vdash x_1 \equiv x_3) \land (m \Vdash x_2 \equiv x_4) \land (p \Vdash x_1 \xmapsto{f} y) \land (q \Vdash x_2 \xmapsto{f} y) \}$. We can also construct $[\pi_1], [\pi_2] : E \rightrightarrows (X, E_X)$ where $\pi_1$ is the effective functional relation $\{ (\langle n, m, p\rangle, (x_1, x_2), x_3) \mid \exists y\in Y, (n \Vdash x_1 \xmapsto{f} y) \land (m \Vdash x_2 \xmapsto{f} y) \land (p \Vdash x_1 \equiv x_3) \}$, and similarly for $\pi_2$ with the last condition replaced with $p \Vdash x_2 \equiv x_3$. We can then check $[f] \circ [\pi_1] = [f] \circ [\pi_2]$. Since $[f]$ is a monomorphism, we conclude $[\pi_1] = [\pi_2]$. Say we have a witness $e_{\pi_1, \pi_2}$ to the equivalence of $\pi_1$ and $\pi_2$.
@@ -139,7 +139,7 @@ special_morphisms:
       $$
 
       It is now easy to write a program which transforms $n$ into $n_8$ according to the steps in the right column, giving the required witness $e_{g,h}$ to establish $[g] = [h]$.
-  epimorphisms:
+  epimorphism:
     description: 'For an effective functional relation $f \subseteq \IN \times X \times Y$, the equivalence class of $f$ is an epimorphism if and only if there is a partial recursive function $s : \IN \dashrightarrow \IN$ such that whenever $n \Vdash y \equiv y$, then $s(n)$ is defined and there exists $x \in X$ such that $s(n) \Vdash x \xmapsto{f} y$.'
     proof: >-
       ($\Rightarrow$) We will define $Z$ to be $Y \sqcup \{ * \}$ with every member of the image of $f$ identified with $*$; namely,
