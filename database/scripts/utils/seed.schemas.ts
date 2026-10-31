@@ -36,12 +36,7 @@ export const config_yaml_schema = v.strictObject({
 		})
 	),
 
-	special_morphisms: v.array(
-		v.strictObject({
-			kind: v.string(),
-			dual: v.string()
-		})
-	)
+	special_morphisms: distinct_strings_schema
 })
 
 export const special_morphism_rule_yaml_schema = v.array(

@@ -87,9 +87,9 @@ export type SpecialObject = {
 
 export type SpecialMorphism = {
 	kind: string
-	// null when the morphisms of this type have not been determined
+	// description and proof are null when the morphisms of this type have not been determined
 	description: string | null
-	proof: string
+	proof: string | null
 }
 
 export type ImplicationDB = {

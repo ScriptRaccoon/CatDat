@@ -1,8 +1,10 @@
 CREATE TABLE special_morphisms (
     id INTEGER PRIMARY KEY,
     kind TEXT NOT NULL UNIQUE,
-    dual TEXT,
-    FOREIGN KEY (dual) REFERENCES special_morphisms (kind) ON DELETE SET NULL
+    property_type TEXT NOT NULL DEFAULT 'morphism'
+        CHECK (property_type = 'morphism'),
+    FOREIGN KEY (kind, property_type)
+        REFERENCES properties (id, type) ON DELETE RESTRICT
 );
 
 CREATE TABLE special_morphism_assignments (

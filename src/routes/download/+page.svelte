@@ -133,7 +133,7 @@ WHERE s.type = 'category'
 AND NOT EXISTS (
     SELECT 1 FROM special_morphism_assignments a
     WHERE a.category_id = s.id
-    AND a.type = 'regular epimorphisms'
+    AND a.kind = 'regular epimorphism'
 );`}
 />
 
