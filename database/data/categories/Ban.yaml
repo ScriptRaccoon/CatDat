@@ -195,16 +195,16 @@ special_objects:
     description: 'The product of a family of Banach spaces $(X_i,|{-}|)_{i \in I}$ is the subspace $\bigl\{x \in \prod_{i \in I} X_i : \sup_{i \in I} |x_i| < \infty\bigr\}$ of their vector space product equipped with the $\sup$-norm $|x|_\infty \coloneqq \sup_{i \in I} |x_i|$.'
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: bijective linear isometries
     proof: This is easy.
-  monomorphisms:
+  monomorphism:
     description: injective linear contractions
     proof: 'The unit ball functor $U : \Ban \to \Set$ is faithful and representable (by $\IC$), hence reflects and preserves monomorphisms.'
-  epimorphisms:
+  epimorphism:
     description: linear contractions with dense image
     proof: 'Let $f : X \to Y$ be an epimorphism of Banach spaces. The subspace $U \coloneqq \overline{f(X)} \subseteq Y$ is closed. It is well-known that the quotient $Y/U$ is also a Banach space with a projection $p : Y \to Y/U$. Since $p \circ f = 0 = 0 \circ f$, we infer $p = 0$, so that $U = Y$.'
-  regular monomorphisms:
+  regular monomorphism:
     description: >-
       For a linear contraction $f : X \to Y$ the following are equivalent: (1) $f$ is a regular monomorphism. (2) $f$ is isometric. (3) $f$ is isomorphic to the inclusion of a closed subspace of $Y$.
     proof: >-
@@ -213,7 +213,7 @@ special_morphisms:
       (2) implies (3): The image of $f$ is complete, hence closed. The rest is clear.
 
       (3) implies (1): If $U \subseteq Y$ is a closed subspace, then the inclusion is the kernel of the projection $Y \to Y/U$, where $Y/U$ is the <a href="https://math.stackexchange.com/questions/319867">well-known</a> quotient Banach space.
-  regular epimorphisms:
+  regular epimorphism:
     description: >-
       For a linear contraction $f : X \to Y$ the following are equivalent: (1) $f$ is a regular epimorphism. (2) The norm on $Y$ is given by $|y| = \inf \{|x| : f(x) = y\}$. (3) $f$ maps the open unit ball of $X$ onto the open unit ball of $Y$.
     proof: >-

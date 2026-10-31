@@ -116,12 +116,12 @@ special_objects:
     description: '[finite case] disjoint union'
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: bijective maps
     proof: This is easy.
-  monomorphisms:
+  monomorphism:
     description: injective maps
     proof: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the singleton), hence preserves monomorphisms.
-  epimorphisms:
+  epimorphism:
     description: surjective maps with finite fibers
     proof: 'For the non-trivial direction, if $f : X \to Y$ is an epimorphism in this category, then in particular $f^* : \Hom(Y,\{0,1\}) \to \Hom(X,\{0,1\})$ is injective, which identifies with $f^* : E(Y) \to E(X)$, where $E(-)$ denotes the set of finite subsets. Then for all $y \in Y$ we have $f^*(\{y\}) \neq f^*(\varnothing) = \varnothing$, so that $y$ has a preimage.'

@@ -152,12 +152,12 @@ unsatisfied_properties:
 special_objects: {}
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: only the neutral element $1$
     proof: We have shown this in the proof that the category is core-thin.
-  monomorphisms:
+  monomorphism:
     description: the elements $s^n$ for $n \geq 0$
     proof: Since $fs = 1$, the element $s$ is a split monomorphism, and hence so is $s^n$. Conversely, let $x = s^n w$ be a monomorphism and assume that the word $w$ is non-empty. Then $w$ ends with $f$ or $g$, say $w = w' f$ (the case of $g$ is analogous). Since $x = s^n w' f$, the element $f$ is also a monomorphism. From $fs = 1$ we get $f (sf) = f = f \cdot 1$, hence $sf = 1$. But $sf \neq 1$ by the uniqueness of the normal form, which is a contradiction.
-  epimorphisms:
+  epimorphism:
     description: the words in $f,g$, i.e. the elements $s^0 w$
     proof: Since $fs = gs = 1$, the elements $f$ and $g$ are split epimorphisms, and hence so is every word in $f,g$. Conversely, let $x = s^n w$ be an epimorphism and assume that $n > 0$. Since $x = s (s^{n-1} w)$, the element $s$ is also an epimorphism. From $fs = 1$ we get $(sf) s = s = 1 \cdot s$, hence $sf = 1$, which is a contradiction as before.

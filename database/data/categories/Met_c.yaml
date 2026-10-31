@@ -131,19 +131,19 @@ special_objects:
     description: '[countable case] In the finite case, take direct products with the metric $d(x,y) = \sup_i d_i(x_i,y_i)$, but other metrics such as $d(x,y) = \sum_i d_i(x_i,y_i)$ also work. In the countable case, one can assume $d_i \leq 1$ and then define $d(x,y) = \sum_i d_i(x_i,y_i) / 2^i$.'
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: homeomorphisms
     proof: This works as for topological spaces.
-  monomorphisms:
+  monomorphism:
     description: injective continuous maps
     proof: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
-  epimorphisms:
+  epimorphism:
     description: continuous maps with dense image
     proof: See <a href="https://math.stackexchange.com/questions/937387">MSE/937387</a>.
-  regular monomorphisms:
+  regular monomorphism:
     description: closed embeddings
     proof: 'Regular monomorphisms are closed embeddings by the concrete construction of equalizers and the fact that metric spaces are Hausdorff. Conversely, let $A$ be a closed subset of a metric space $X$. If $A$ is empty, then it is the equalizer of the two constant maps $0,1 : X \rightrightarrows \IR$. If $A$ is non-empty, then it is the equalizer of the function $d(A,-) : X \to \IR$, $x \mapsto \inf_{a \in A} d(a,x)$, and the zero function $0 : X \to \IR$. The function $d(A,-)$ is non-expansive and hence continuous.'
-  regular epimorphisms:
+  regular epimorphism:
     description: 'A continuous map $f : X \to Y$ of metric spaces is a regular epimorphism if and only if $f$ is surjective and $Y$ carries the "final metric topology" with respect to $f$; by this we mean that, for every metric space $Z$ (not necessarily every topological space) and every set map $g : Y \to Z$ such that $g \circ f$ is continuous, $g$ is continuous. Furthermore, it is sufficient to demand this for $Z = \IR$.'
     proof: >-
       Assume first that $f$ is surjective and that $Y$ carries the final metric topology. Then it is straightforward to check, using the corresponding fact for $\Set$, that $f$ is the coequalizer of its kernel pair $X \times_Y X \rightrightarrows X$.

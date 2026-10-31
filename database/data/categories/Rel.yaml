@@ -73,12 +73,12 @@ special_objects:
     description: disjoint unions (!)
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: bijective functions
     proof: 'For the non-trivial direction, assume that $R : A \to B$ is a relation which has an inverse relation $S : B \to A$. For every $a \in A$ we have $(a,a) \in \id_A = S \circ R$, so there is some $b \in B$ with $(a,b) \in R$ (and $(b,a) \in S$). This shows that $R$ is left-total, and for right-total the argument is similar. By symmetry, this also holds for $S$. To show that $R$ is a function, assume $(a,b_1), (a,b_2) \in R$. Choose some $b_3 \in B$ with $(b_3,a) \in S$. It follows that $(b_3,b_1) \in R \circ S = \id_B$, so $b_3 = b_1$. Similarly, $(b_3,b_2) \in R \circ S = \id_B$, so $b_3 = b_2$. This shows that $R$ is a function, i.e. left-unique. That $R$ is injective, i.e. right-unique, follows by symmetry. Finally, $R$ is surjective since it is right-total.'
-  monomorphisms:
+  monomorphism:
     description: 'A relation $R : A \to B$ is a monomorphism iff the map $R_* : P(A) \to P(B)$ defined by $T \mapsto \{b \in B : \exists \, a \in T: (a,b) \in R \}$ is injective.'
     proof: See <a href="https://math.stackexchange.com/questions/350716/">MSE/350716</a>.
-  epimorphisms:
+  epimorphism:
     description: 'A relation $R : A \to B$ is an epimorphism iff the map $R^* : P(B) \to P(A)$ defined by $S \mapsto \{a \in A : \exists \, b \in S: (a,b) \in R \}$ is injective.'
     proof: See <a href="https://math.stackexchange.com/questions/350716/">MSE/350716</a>.

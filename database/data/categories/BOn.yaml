@@ -56,12 +56,12 @@ unsatisfied_properties:
 special_objects: {}
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: only the ordinal $0$
     proof: The ordinal $0$ is the only ordinal which has an additive inverse, since for $\alpha > 0$ we have $\alpha + \beta > 0$ for all $\beta$.
-  epimorphisms:
+  epimorphism:
     description: finite ordinal numbers
     proof: See <a href="https://math.stackexchange.com/questions/5029605">MSE/5029605</a>.
-  regular monomorphisms:
+  regular monomorphism:
     description: ordinals of the form $\alpha \cdot \omega$, where $\alpha$ is any ordinal
     proof: This results from the proof that equalizers exist; see <a href="https://math.stackexchange.com/questions/5029668">MSE/5029668</a>.

@@ -306,12 +306,12 @@ special_objects:
     description: '[finite case] component-wise defined direct product'
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: morphisms $f = (f_n)_{n \geq 0}$ for which every $f_n$ is bijective
     proof: It is a full subcategory of the <a href="/category/SeqSet">category of sequences of sets</a>, where isomorphisms are characterized as stated.
-  monomorphisms:
+  monomorphism:
     description: morphisms $f = (f_n)_{n \geq 0}$ for which every $f_n$ is injective
     proof: Morphisms with injective components are clearly monomorphisms. Conversely, the inclusion functor into the <a href="/category/SeqSet">category of sequences of sets</a> preserves finite limits (by their construction), hence preserves monomorphisms. Since monomorphisms in the category of sequences have injective components, every monomorphism in $[(\IN,\leq),\Set]_{\conn}$ has injective components.
-  epimorphisms:
+  epimorphism:
     description: morphisms $f = (f_n)_{n \geq 0}$ for which every $f_n$ is surjective
     proof: Morphisms with surjective components are clearly epimorphisms. Conversely, the inclusion functor into the <a href="/category/SeqSet">category of sequences of sets</a> preserves connected colimits (by their construction), and hence pushouts in particular. It therefore preserves epimorphisms. Since epimorphisms in the category of sequences have surjective components, every epimorphism in $[(\IN,\leq),\Set]_{\conn}$ has surjective components.

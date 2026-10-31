@@ -81,12 +81,12 @@ special_objects:
     description: direct product with the obvious action
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: bijective morphisms
     proof: This is easy to check.
-  monomorphisms:
+  monomorphism:
     description: injective morphisms
     proof: Injective morphisms are clearly monomorphisms. The converse follows since the forgetful functor to $\Set$ preserves limits, pullbacks in particular, and therefore preserves monomorphisms.
-  epimorphisms:
+  epimorphism:
     description: surjective morphisms
     proof: Surjective morphisms are clearly epimorphisms. The converse follows since the forgetful functor to $\Set$ preserves colimits, pushouts in particular, and therefore preserves epimorphisms.

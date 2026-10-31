@@ -107,10 +107,10 @@ special_objects:
     description: '[finite case] There are two descriptions. (a) The product in <a href="/category/LRS_R">$\LRS_R$</a> (see there) is a scheme. (b) The idea is to use $\Spec(A) \times \Spec(B) = \Spec(A \otimes_R B)$ and then to glue affine pieces together. See <a href="https://en.wikipedia.org/wiki/%C3%89l%C3%A9ments_de_g%C3%A9om%C3%A9trie_alg%C3%A9brique">Grothendieck–Dieudonné</a>, EGA I (1971), Ch. I, Thm. 3.2.1.'
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: 'A morphism $f : X \to Y$ is an isomorphism iff $|f| : |X| \to |Y|$ is a homeomorphism and $f^\sharp : \O_Y \to |f|_* \O_X$ is an isomorphism of sheaves.'
     proof: This description is inherited from <a href="/category/LRS_R">$\LRS_R$</a>.
-  monomorphisms:
+  monomorphism:
     description: 'A morphism $f : X \to Y$ is a monomorphism iff $|f| : |X| \to |Y|$ is injective and for every $x \in |X|$ the stalk map $f^\sharp_x : \O_{Y,|f|(x)} \to \O_{X,x}$ is an epimorphism of commutative rings.'
     proof: >-
       Assume that $f$ satisfies the two conditions. Then every stalk map $f^\sharp_x$ is also an epimorphism in the category of local commutative rings and local homomorphisms. By the classification of monomorphisms in <a href="/category/LRS_R">$\LRS_R$</a>, $f$ is a monomorphism in $\LRS_R$, hence also in its full subcategory $\Sch_R$.

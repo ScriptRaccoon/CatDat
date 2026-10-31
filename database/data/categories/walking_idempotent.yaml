@@ -47,18 +47,18 @@ unsatisfied_properties:
 special_objects: {}
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: the identity
     proof: This is trivial.
-  monomorphisms:
+  monomorphism:
     description: the identity
     proof: This is trivial.
-  epimorphisms:
+  epimorphism:
     description: the identity
     proof: This is trivial.
-  regular monomorphisms:
+  regular monomorphism:
     description: the identity
     proof: This is trivial.
-  regular epimorphisms:
+  regular epimorphism:
     description: the identity
     proof: This is trivial.

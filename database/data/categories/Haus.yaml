@@ -113,19 +113,19 @@ special_objects:
     description: direct product with the <a href="https://en.wikipedia.org/wiki/Product_topology">product topology</a>
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: homeomorphisms
     proof: This is easy.
-  monomorphisms:
+  monomorphism:
     description: injective continuous maps
     proof: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
-  epimorphisms:
+  epimorphism:
     description: continuous maps with dense image
     proof: It is clear that continuous maps with dense image are epimorphisms, but the other direction is non-trivial. See <a href="https://math.stackexchange.com/questions/214045">MSE/214045</a> for a proof.
-  regular monomorphisms:
+  regular monomorphism:
     description: embeddings with closed image
     proof: The explicit construction of equalizers shows that they are embeddings, and they have a closed image because of the well-known lemma that for a Hausdorff space the diagonal $X \to X \times X$ has closed image. For the other non-trivial direction, see <a href="https://math.stackexchange.com/questions/214045/">MSE/214045</a>.
-  regular epimorphisms:
+  regular epimorphism:
     description: surjective quotient maps
     proof: >-
       The coequalizer of two continuous maps $f,g : X \rightrightarrows Y$ of Hausdorff spaces is given by $Y \to Q \to Q_H$, where $Y \to Q$ is their coequalizer in $\Top$ and $Q \to Q_H$ is the Hausdorff reflection of $Q$. By the construction of coequalizers in <a href="/category/Top">$\Top$</a>, the map $Y \to Q$ is a surjective quotient map. Moreover, the construction of the Hausdorff reflection (see <a href="https://ncatlab.org/nlab/show/Hausdorff+space#HausdorffReflectionViaHomsIntoAllHausdorffSpaces">nLab</a>) shows that $Q \to Q_H$ is also a surjective quotient map. Hence, $Y \to Q_H$ is a surjective quotient map as well.

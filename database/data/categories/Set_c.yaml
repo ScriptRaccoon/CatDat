@@ -93,12 +93,12 @@ special_objects:
     description: '[finite case] direct products'
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: bijective maps
     proof: It is a full subcategory of $\Set$, for which we know that isomorphisms are bijective maps.
-  monomorphisms:
+  monomorphism:
     description: injective maps
     proof: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
-  epimorphisms:
+  epimorphism:
     description: surjective maps
     proof: 'For the non-trivial direction, if $f : X \to Y$ is an epimorphism of countable sets, then in particular $f^* : \Hom(Y,\{0,1\}) \to \Hom(X,\{0,1\})$ is injective, which identifies with $f^* : P(Y) \to P(X)$. Then for all $y \in Y$ we have $f^*(\{y\}) \neq f^*(\varnothing) = \varnothing$, so that $y$ has a preimage.'

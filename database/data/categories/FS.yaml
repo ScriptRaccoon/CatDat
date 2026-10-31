@@ -97,9 +97,9 @@ unsatisfied_properties:
 special_objects: {}
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: bijective maps
     proof: This follows exactly as for sets.
-  monomorphisms:
+  monomorphism:
     description: bijective maps
     proof: 'Assume that $f : X \to Y$ is a monomorphism in this category. If $a,b \in X$ are such that $a \neq b$ but $f(a) = f(b)$, let $h : X \to X$ be the transposition that swaps $a$, $b$. Then $f \circ \id_X = f = f \circ h$, so by assumption $\id_X = h$, a contradiction. This shows that $f$ is bijective.'

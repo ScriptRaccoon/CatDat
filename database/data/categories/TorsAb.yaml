@@ -62,12 +62,12 @@ special_objects:
     description: torsion subgroup of the direct product
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: bijective group homomorphisms
     proof: It is a full subcategory of $\Ab$, for which we know that isomorphisms are bijective homomorphisms.
-  monomorphisms:
+  monomorphism:
     description: injective group homomorphisms
     proof: 'For the non-trivial direction, assume $f : A \to B$ is a monomorphism and $a \in A$ satisfies $f(a)=0$. Choose $n \geq 1$ with $n a = 0$. Then $a$ corresponds to a homomorphism of torsion abelian groups $\tilde{a} : \IZ/n \to A$ satisfying $f \circ \tilde{a} = 0$. Hence, $\tilde{a} = 0$, which means $a = 0$.'
-  epimorphisms:
+  epimorphism:
     description: surjective homomorphisms
     proof: Clearly, surjective homomorphisms are epimorphisms. The converse follows since the forgetful functor $\TorsAb \to \Ab$ has a right adjoint, hence preserves epimorphisms.

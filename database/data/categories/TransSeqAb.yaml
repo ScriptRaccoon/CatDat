@@ -110,12 +110,12 @@ special_objects:
     description: pointwise defined direct products
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: morphisms that are pointwise bijective
     proof: This is trivial.
-  monomorphisms:
+  monomorphism:
     description: morphisms that are pointwise injective
     proof: The category is abelian and hence has kernels, constructed pointwise. Thus, a morphism $f = (f_\alpha)$ is a monomorphism if and only if $\ker(f_\alpha) = 0$ for all $\alpha$, i.e. each $f_\alpha$ is a monomorphism.
-  epimorphisms:
+  epimorphism:
     description: morphisms that are pointwise surjective
     proof: The category is abelian and hence has cokernels, constructed pointwise. Thus, a morphism $f = (f_\alpha)$ is an epimorphism if and only if $\coker(f_\alpha) = 0$ for all $\alpha$, i.e. each $f_\alpha$ is an epimorphism.

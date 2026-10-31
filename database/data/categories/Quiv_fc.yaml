@@ -119,13 +119,13 @@ special_objects:
     description: '[finite case] just as in <a href="/category/Quiv">$\Quiv$</a>'
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: morphisms $f = (f_V, f_E)$ such that $f_V$ and $f_E$ are bijective
     proof: This description holds in <a href="/category/Quiv">$\Quiv$</a>.
-  monomorphisms:
+  monomorphism:
     description: morphisms $f = (f_V, f_E)$ such that $f_V$ and $f_E$ are injective
     proof: For the non-trivial direction, the construction of finite limits shows that the forgetful functor $\Quiv_{\fc} \to \Quiv$ preserves finite limits and hence preserves monomorphisms. The monomorphisms in $\Quiv$ have the stated description.
-  epimorphisms:
+  epimorphism:
     description: morphisms $f = (f_V, f_E)$ such that $f_V$ and $f_E$ are surjective
     proof: >-
       For the non-trivial direction, let $f = (f_V,f_E) : (V,E) \to (V',E')$ be an epimorphism. Consider the "chaotic" quiver $G = (\{a,b\},\{a,b\} \times \{a,b\})$. It is finite, so the map $f^* : \Hom((V',E'),G) \to \Hom((V,E),G)$ is injective. This map identifies with $(f_V)^* : \Hom(V',\{0,1\}) \to \Hom(V,\{0,1\})$. Hence, $f_V$ is surjective. Now consider the quiver $H = (\{a\},\{\ell,\ell'\})$ with one vertex and two loops. It is finite, so the map $f^* : \Hom((V',E'),H) \to \Hom((V,E),H)$ is injective. This map identifies with $(f_E)^* : \Hom(E',\{\ell,\ell'\}) \to \Hom(E,\{\ell,\ell'\})$. Hence, $f_E$ is surjective.

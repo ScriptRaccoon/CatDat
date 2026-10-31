@@ -178,12 +178,12 @@ special_objects:
     description: objectwise defined disjoint union of presheaves
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: natural isomorphisms
     proof: This is trivial.
-  monomorphisms:
+  monomorphism:
     description: natural transformations that are injective at every object
     proof: See Lemma 5 <a href="/content/free-cocompletion">here</a>.
-  epimorphisms:
+  epimorphism:
     description: natural transformations that are surjective at every object
     proof: See Lemma 5 <a href="/content/free-cocompletion">here</a>.

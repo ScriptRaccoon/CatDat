@@ -95,12 +95,12 @@ special_objects:
     description: '[finite case] direct products'
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: bijective maps
     proof: It is a full subcategory of $\Set$, in which isomorphisms are bijective maps.
-  monomorphisms:
+  monomorphism:
     description: injective maps
     proof: 'The non-trivial direction follows since the inclusion functor to $\Set$ is representable (by the singleton set), and hence preserves monomorphisms.'
-  epimorphisms:
+  epimorphism:
     description: surjective maps
     proof: For the non-trivial direction, the inclusion functor to $\Set$ is cocontinuous by Lemma 1 <a href="/content/inclusion-functors">here</a> since $\FinSet_{\odd}$ contains the extremal cogenerator $\{0,1,2\}$ of $\Set$. In particular, it preserves epimorphisms.

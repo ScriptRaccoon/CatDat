@@ -104,12 +104,12 @@ special_objects:
     description: direct products
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: bijective linear maps
     proof: This is trivial.
-  monomorphisms:
+  monomorphism:
     description: injective linear maps
     proof: The non-trivial direction follows from the observation that $K$-linear maps $K \to V$ can be identified with the elements of the underlying set of $V$.
-  epimorphisms:
+  epimorphism:
     description: surjective linear maps
     proof: 'Surjective linear maps are clearly epimorphisms. Conversely, if $f : V \to W$ is an epimorphism, this means that its cokernel vanishes, which we have constructed as $W/\im(f)$. Thus, $W = \im(f)$.'

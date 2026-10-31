@@ -145,12 +145,12 @@ special_objects:
     description: '[finite case] direct product'
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: homeomorphisms
     proof: This is easy.
-  monomorphisms:
+  monomorphism:
     description: injective continuous maps
     proof: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
-  epimorphisms:
+  epimorphism:
     description: continuous maps with dense image
     proof: 'A continuous map with dense image is an epimorphism in $\Haus$ and therefore also in $\Euclidsqcup$. Conversely, assume that $f : X \to Y$ is an epimorphism in $\Euclidsqcup$. Assume that there is a point $y \in Y \setminus \overline{f(X)}$. Consider the Euclidean component $\IR^n \subseteq Y$ containing $y$. Then $y \in \IR^n$ is not contained in the closed subset $\overline{f(X)} \cap \IR^n$. Since $\IR^n$ is a metric space and hence completely regular, there is a continuous map $\varphi : \IR^n \to \IR$ with $\varphi(y)=1$ and $\varphi \equiv 0$ on $\overline{f(X)} \cap \IR^n$. We may extend $\varphi$ to a continuous function $\psi : Y \to \IR$ by mapping every other component to $0$. Since $\psi$ is not the zero map and $f$ is an epimorphism, also $\psi \circ f$ is not the zero map. Choose $x \in X$ such that $\psi(f(x)) \neq 0$. Since $\psi$ maps every component to $0$ except for the mentioned $\IR^n$, we must have $f(x) \in \IR^n$. But then $\psi(f(x)) = \varphi(f(x))=0$ by construction of $\varphi$. This is a contradiction.'

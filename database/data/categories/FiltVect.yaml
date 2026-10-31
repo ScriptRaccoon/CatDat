@@ -110,19 +110,19 @@ special_objects:
     description: direct products of the underlying vector spaces equipped with the filtration $F^n(\prod_i V_i) \coloneqq \prod_i F^n(V_i)$
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: 'A filtered linear map $f : (V,F) \to (W,G)$ is an isomorphism if $f : V \to W$ is bijective and $f_*(F^n(V)) = G^n(W)$ for all $n \in \IZ$.'
     proof: This is straightforward to verify.
-  monomorphisms:
+  monomorphism:
     description: injective filtered linear maps
     proof: For the non-trivial direction, the forgetful functor $\FiltVect \to \Set$ is representable (by $K$ equipped with the trivial filtration), and therefore preserves monomorphisms.
-  epimorphisms:
+  epimorphism:
     description: surjective filtered linear maps
     proof: We saw above that the category has cokernels, and that these are preserved by the forgetful functor to $\Vect$. Moreover, a morphism is an epimorphism if and only if its cokernel is zero, and a filtered vector space is zero if and only if its underlying vector space is zero. Therefore, the claim follows from the classification of epimorphisms in $\Vect$.
-  regular monomorphisms:
+  regular monomorphism:
     description: 'A filtered linear map $f : (V,F) \to (W,G)$ is a regular monomorphism if and only if $f : V \to W$ is injective and $F^n(V) = f^*(G^n(W))$ for all $n \in \IZ$.'
     proof: 'Every kernel (and hence every equalizer) satisfies this property by the construction of kernels. Conversely, suppose that $f : (V,F) \to (W,G)$ is a filtered linear map satisfying this condition. Then $f$ induces an isomorphism between $(V,F)$ and $(U,G)$, where $U \coloneqq \im(f) \subseteq W$ is equipped with the induced filtration $G^n(U) \coloneqq U \cap G^n(W)$. Endow $W/U$ with the induced filtration $G^n(W/U) \coloneqq \pi_*(G^n(W))$, where $\pi : W \to W/U$ is the quotient map. Then $\pi : (W,G) \to (W/U,G)$ is a filtered linear map, and by the general construction of kernels, its kernel is the vector space $U$ equipped with the induced filtration. Hence, $f : (V,F) \to (W,G)$ is a kernel of $\pi : (W,G) \to (W/U,G)$.'
-  regular epimorphisms:
+  regular epimorphism:
     description: 'A filtered linear map $f : (V,F) \to (W,G)$ is a regular epimorphism if and only if $f : V \to W$ is surjective and $G^n(W) = f_*(F^n(V))$ for all $n \in \IZ$.'
     proof: >-
       Every cokernel (and hence every coequalizer) satisfies this property by the construction of cokernels. Conversely, suppose that $f : (V,F) \to (W,G)$ is a filtered linear map satisfying this condition. Let $U \subseteq V$ be the kernel of the underlying linear map $f : V \to W$, equipped with the induced filtration $F^n(U) \coloneqq U \cap F^n(V)$. The inclusion $(U,F) \to (V,F)$ is a filtered linear map. By the general construction of cokernels, its cokernel is $(V/U,F)$, where $F^n(V/U) \coloneqq \pi_*(F^n(V))$ and $\pi : V \to V/U$ is the quotient map. It remains to observe that the induced isomorphism of vector spaces $h : V/U \to W$, characterized by $h \circ \pi = f$, is in fact an isomorphism of filtered vector spaces. Indeed,

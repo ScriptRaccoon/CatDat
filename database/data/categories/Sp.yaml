@@ -66,12 +66,12 @@ special_objects:
     description: '[finite case] pointwise defined direct product'
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: natural isomorphisms
     proof: This is true for every functor category.
-  monomorphisms:
+  monomorphism:
     description: pointwise injective natural transformations
     proof: This holds in every functor category $[\C,\Set]$ since pullbacks can be constructed pointwise.
-  epimorphisms:
+  epimorphism:
     description: pointwise surjective natural transformations
     proof: This holds in every functor category $[\C,\Set]$ since pushouts can be constructed pointwise.

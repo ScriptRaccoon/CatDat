@@ -50,6 +50,6 @@ special_objects:
     description: direct product with the obvious action
 
 special_morphisms:
-  epimorphisms:
+  epimorphism:
     description: surjective morphisms
     proof: More generally, epimorphisms in functor categories $[\C,\Set]$ can be detected pointwise, since pushouts can be constructed pointwise. This is applied here to the one-object category corresponding to a monoid.

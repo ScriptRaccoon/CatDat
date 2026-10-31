@@ -37,18 +37,18 @@ unsatisfied_properties:
 special_objects: {}
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: none
     proof: This is trivial.
-  monomorphisms:
+  monomorphism:
     description: none
     proof: This is trivial.
-  epimorphisms:
+  epimorphism:
     description: none
     proof: This is trivial.
-  regular monomorphisms:
+  regular monomorphism:
     description: none
     proof: This is trivial.
-  regular epimorphisms:
+  regular epimorphism:
     description: none
     proof: This is trivial.

@@ -156,16 +156,16 @@ special_objects:
     description: '[finite case] direct products with pointwise operations'
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: bijective homomorphisms
     proof: It is a full subcategory of $\Grp$, for which we know that isomorphisms are bijective homomorphisms.
-  monomorphisms:
+  monomorphism:
     description: injective homomorphisms
     proof: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the finitely generated group $\IZ$), hence preserves monomorphisms.
-  epimorphisms:
+  epimorphism:
     description: surjective homomorphisms
     proof: 'This is the same argument as for <a href="/category/Grp_c">$\Grp_\c$</a>. For the non-trivial direction, if $f : G \to H$ is an epimorphism, we may factor it as $G \to f(G) \to H$, where $f(G)$ is finitely generated as a quotient of $G$. Then $f(G) \to H$ is still an epimorphism, but also an inclusion and hence a monomorphism. Since we already know that the category is mono-regular, $f(G) \to H$ must be an isomorphism.'
-  regular epimorphisms:
+  regular epimorphism:
     description: surjective homomorphisms whose kernel is the normal closure of finitely many elements
     proof: >-
       If $f : G \to H$ is a regular epimorphism, it is the coequalizer of some pair $a,b : K \rightrightarrows G$ in $\Grp_\fg$. We already know that coequalizers in $\Grp_\fg$ are computed as in $\Grp$. Therefore, $f$ is surjective, and its kernel $N$ is the normal closure of $\{a(k) b(k)^{-1} : k \in K\}$. Let $k_1,\dotsc,k_n$ be generators of $K$, and let $M \subseteq N$ be the normal closure of $a(k_1) b(k_1)^{-1}, \dotsc, a(k_n) b(k_n)^{-1}$. The two homomorphisms $K \rightrightarrows G \to G/M$ agree on the generators $k_i$, hence they are equal, which means $a(k) b(k)^{-1} \in M$ for all $k \in K$. Thus, $N = M$. This proves that $N$ is the normal closure of finitely many elements.

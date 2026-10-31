@@ -131,18 +131,18 @@ special_objects:
     description: direct product with the <a href="https://en.wikipedia.org/wiki/Product_topology">product topology</a> and the obvious base point
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: pointed homeomorphisms
     proof: This is easy.
-  monomorphisms:
+  monomorphism:
     description: injective pointed continuous maps
     proof: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the discrete two-point space), hence preserves monomorphisms.
-  epimorphisms:
+  epimorphism:
     description: surjective pointed continuous maps
     proof: 'For the non-trivial direction: The forgetful functor $\Top_* \to \Top$ preserves pushouts and hence also epimorphisms, and we already know the epimorphisms in $\Top$.'
-  regular monomorphisms:
+  regular monomorphism:
     description: embeddings
     proof: 'Equalizers are embeddings by their construction. Conversely, if $f : X \to Y$ is an embedding, then $f$ is the equalizer of the two characteristic maps $\chi_Y, \chi_{f(X)} : Y \rightrightarrows \{0,1\}$, where $\{0,1\}$ carries the indiscrete topology and $1$ is the base point.'
-  regular epimorphisms:
+  regular epimorphism:
     description: surjective pointed quotient maps
     proof: 'Regular epimorphisms are surjective pointed quotient maps by the explicit construction of coequalizers. Conversely, if $q : X \to Y$ is a surjective pointed quotient map, then one checks that $q$ is the coequalizer of its kernel pair $X \times_Y X \rightrightarrows X$: This is true for the underlying pointed sets, and continuity of the induced morphism follows since $q$ is a quotient map.'

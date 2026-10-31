@@ -102,16 +102,16 @@ special_objects:
     description: direct products with the metric $d(x,y) = \sup_i d_i(x_i,y_i)$
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: bijective isometries
     proof: This is easy.
-  monomorphisms:
+  monomorphism:
     description: injective non-expansive maps
     proof: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
-  epimorphisms:
+  epimorphism:
     description: non-expansive maps with dense image
     proof: See <a href="https://math.stackexchange.com/questions/937387">MSE/937387</a>.
-  regular monomorphisms:
+  regular monomorphism:
     description: isometric embeddings with closed image
     proof: >-
       The proof is similar to the one for <a href="/category/Met_c">$\Met_c$</a>. Equalizers are constructed as in $\Set$, equipped with the induced metric, so they are isometric embeddings. Since metric spaces are Hausdorff and non-expansive maps are continuous, an equalizer of two morphisms $X \rightrightarrows Y$ is a closed subset of $X$. Conversely, let $A \subseteq X$ be a closed subset with the induced metric. Let $[0,\infty]$ be the metric space that extends the usual metric on $[0,\infty)$ by $d(r,\infty) \coloneqq \infty$ for $r \in [0,\infty)$. The map

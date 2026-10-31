@@ -66,9 +66,9 @@ special_objects:
     description: $0$
 
 special_morphisms:
-  epimorphisms:
+  epimorphism:
     description: the identities and $f,g$
     proof: This is easily checked.
-  regular monomorphisms:
+  regular monomorphism:
     description: the identities and $i$
     proof: First, $i$ is the equalizer of $f,g$. The morphism $f$ is an epimorphism (and a monomorphism), but no isomorphism, hence cannot be a regular monomorphism. The same holds for $g$.

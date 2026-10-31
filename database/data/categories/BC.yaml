@@ -101,18 +101,18 @@ unsatisfied_properties:
 special_objects: {}
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: only the neutral element $1$
     proof: We have shown this in the proof that the category is core-thin.
-  monomorphisms:
+  monomorphism:
     description: the elements $q^n$ for $n \geq 0$
     proof: Since $q$ is a split monomorphism, also $q^n$ is a split monomorphism. For $m > 0$ the element $q^n p^m$ is not a monomorphism, since otherwise $p$ would be a monomorphism, from which we would obtain the contradiction $qp=1$ from $pq=1$.
-  epimorphisms:
+  epimorphism:
     description: the elements $p^m$ for $m \geq 0$
     proof: The proof is identical to the proof for monomorphisms. This is also because $C$ is self-dual.
-  regular monomorphisms:
+  regular monomorphism:
     description: the elements $q^n$ for $n \geq 0$
     proof: We already know that these are precisely the monomorphisms. They are split monomorphisms because $q$ is a split monomorphism, and every split monomorphism is a regular monomorphism.
-  regular epimorphisms:
+  regular epimorphism:
     description: the elements $p^m$ for $m \geq 0$
     proof: We already know that these are precisely the epimorphisms. They are split epimorphisms because $p$ is a split epimorphism, and every split epimorphism is a regular epimorphism.
