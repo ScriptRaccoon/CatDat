@@ -67,7 +67,7 @@ Main tables (full schema in [database/schema/](database/schema/)):
 - `property_assignments`: links structures to properties with `is_satisfied` (TRUE, FALSE, or NULL for undecidable), `proof`, `is_deduced`, `is_inherited` (deduced from the parent structure), `check_redundancy`, and an optional `label`. Proofs can cite labeled assignments, recorded in `proof_references`.
 - `implications`, `assumptions`, `conclusions`: implications between properties of one type, with `is_equivalence`, `is_deduced`, `check_redundancy`, and `dual_implication_id`. The `implications_view` view combines them into JSON arrays.
 - `associated_assumptions`: implication assumptions about associated structures, e.g. a functor implication that requires the domain category to be complete.
-- `special_objects` / `special_object_assignments` and `special_morphisms` / `special_morphism_assignments` / `special_morphism_rules`: special objects (terminal, initial, products, coproducts) and special morphisms (isos, monos, epis, regular monos and epis) of categories.
+- `special_objects` / `special_object_assignments` and `special_morphisms` / `special_morphism_assignments` / `special_morphism_rules`: special objects (terminal, initial, products, coproducts) and special morphisms of categories. The kinds of special morphisms are morphism properties (isomorphism, monomorphism, epimorphism, regular monomorphism, regular epimorphism), and their duals are the dual properties. A special morphism assignment classifies the morphisms of a category with this property. The rules assign such a classification to every category with a given property.
 - Additional tables: tags (`structure_tags`, `property_tags`, and their assignment tables), `related_structures`, `related_properties`, `structure_comments`, `structure_keywords`, `property_keywords`, `relations`.
 
 The YAML files never contain derived data. Everything marked `is_deduced` is produced by `db:deduce`.
@@ -81,6 +81,7 @@ Use existing files as templates: [database/data/categories/N.yaml](database/data
 - Use `>-` for multiline text; an empty line in it starts a new paragraph when rendered. Do not use `|-`.
 - Optional `keywords` (list of strings) on structures and properties: alternative names a user would search for that do not already occur in the `name` (for properties: the ID), e.g. `posets` for `Pos`, `aleph1-accessible` for `ℵ₁-accessible` (no special characters needed), or `tripleable` for `monadic`. Only terms that identify the structure or property, not related concepts. The search filters on the list pages match them.
 - Set `check_redundancy: false` on a property assignment or implication that is redundant but deliberately kept (see below).
+- The keys under `special_morphisms` of a category are the morphism property IDs listed in `config.yaml`, e.g. `regular monomorphism`.
 
 ## Contribution guidelines
 

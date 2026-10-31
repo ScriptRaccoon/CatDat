@@ -37,3 +37,7 @@ export function get_property_url(id: string, type: StructureType) {
 export function get_property_label(id: string) {
 	return id.replace(/^preserves\s/, '')
 }
+
+export function get_special_morphism_plural(kind: string) {
+	return `${kind}s`
+}

@@ -1,5 +1,6 @@
 import { get_client } from '#shared/db.ts'
 import { devlog } from '#shared/utils.ts'
+import { get_special_morphism_plural } from '#shared/property.utils.ts'
 import { get_structure_parent_map } from './utils/structures'
 
 const db = get_client({ readonly: false })
@@ -122,7 +123,7 @@ function deduce_special_morphisms_by_rules() {
 			.run(kind, description, proof, property_id)
 
 		devlog(
-			`Deduced ${res.changes} descriptions of ${kind} in ${property_id} categories`
+			`Deduced ${res.changes} descriptions of ${get_special_morphism_plural(kind)} in ${property_id} categories`
 		)
 	}
 }
@@ -145,13 +146,13 @@ function deduce_special_morphisms_of_dual_categories() {
             )
             SELECT
                 s.dual_structure_id,
-                sm.dual,
+                p.dual_property_id,
                 sma.description,
                 'This follows from the <a href="/category/' || s.id || '">dual category</a>.',
                 TRUE
             FROM structures s
             INNER JOIN special_morphism_assignments sma ON sma.category_id = s.id
-            INNER JOIN special_morphisms sm ON sm.kind = sma.kind
+            INNER JOIN properties p ON p.id = sma.kind AND p.type = 'morphism'
             WHERE s.type = 'category' AND s.dual_structure_id IS NOT NULL
             ON CONFLICT (category_id, kind) DO NOTHING`
 		)

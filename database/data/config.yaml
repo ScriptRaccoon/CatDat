@@ -94,14 +94,10 @@ special_objects:
   - kind: coproducts
     dual: products
 
+# morphism properties; the dual of each one must be listed as well
 special_morphisms:
-  - kind: isomorphisms
-    dual: isomorphisms
-  - kind: monomorphisms
-    dual: epimorphisms
-  - kind: epimorphisms
-    dual: monomorphisms
-  - kind: regular monomorphisms
-    dual: regular epimorphisms
-  - kind: regular epimorphisms
-    dual: regular monomorphisms
+  - isomorphism
+  - monomorphism
+  - epimorphism
+  - regular monomorphism
+  - regular epimorphism

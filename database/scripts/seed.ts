@@ -32,11 +32,14 @@ function seed() {
 
 	for (const type of STRUCTURE_TYPES) {
 		seed_properties(type)
-		if (type === 'category') seed_special_morphism_rules()
 		seed_implications(type)
 		seed_structures(type)
-		if (type === 'category') seed_special_category_data()
 	}
+
+	// special morphisms are morphism properties, so they are seeded afterwards
+	seed_special_morphisms()
+	seed_special_morphism_rules()
+	seed_special_category_data()
 
 	save_history()
 }
@@ -107,10 +110,6 @@ function seed_config() {
 		`INSERT INTO special_objects (kind, dual) VALUES (?, ?)`
 	)
 
-	const special_morphism_insert = db.prepare(
-		`INSERT INTO special_morphisms (kind, dual) VALUES (?, ?)`
-	)
-
 	function insert_config(config: v.InferOutput<typeof config_yaml_schema>) {
 		for (const type of STRUCTURE_TYPES) {
 			for (const tag of config.structure_tags) {
@@ -133,10 +132,6 @@ function seed_config() {
 		for (const { kind, dual } of config.special_objects) {
 			special_object_insert.run(kind, dual)
 		}
-
-		for (const { kind, dual } of config.special_morphisms) {
-			special_morphism_insert.run(kind, dual)
-		}
 	}
 
 	seed_file(
@@ -145,33 +140,6 @@ function seed_config() {
 		path.join(DATA_FOLDER, 'config.yaml'),
 		config_yaml_schema,
 		insert_config
-	)
-}
-
-/**
- * Seeds special morphism deduction rules from a YAML file.
- */
-function seed_special_morphism_rules() {
-	const rule_insert = db.prepare(
-		`INSERT INTO special_morphism_rules
-			(property_id, kind, description, proof)
-		VALUES (?, ?, ?, ?)`
-	)
-
-	function insert_rules(
-		rules: v.InferOutput<typeof special_morphism_rule_yaml_schema>
-	) {
-		for (const { property, kind, description, proof } of rules) {
-			rule_insert.run(property, kind, description, proof)
-		}
-	}
-
-	seed_file(
-		db,
-		'special morphism rules',
-		path.join(DATA_FOLDER, 'special-morphism-rules.yaml'),
-		special_morphism_rule_yaml_schema,
-		insert_rules
 	)
 }
 
@@ -500,5 +468,55 @@ function seed_implications(type: StructureType) {
 		get_data_folders(type).implications,
 		implications_yaml_schema,
 		insert_implications
+	)
+}
+
+/**
+ * Seeds the kinds of special morphisms from the global config file `config.yaml`.
+ */
+function seed_special_morphisms() {
+	const special_morphism_insert = db.prepare(
+		`INSERT INTO special_morphisms (kind) VALUES (?)`
+	)
+
+	function insert_special_morphisms(config: v.InferOutput<typeof config_yaml_schema>) {
+		for (const kind of config.special_morphisms) {
+			special_morphism_insert.run(kind)
+		}
+	}
+
+	seed_file(
+		db,
+		'special morphisms',
+		path.join(DATA_FOLDER, 'config.yaml'),
+		config_yaml_schema,
+		insert_special_morphisms
+	)
+}
+
+/**
+ * Seeds special morphism deduction rules from a YAML file.
+ */
+function seed_special_morphism_rules() {
+	const rule_insert = db.prepare(
+		`INSERT INTO special_morphism_rules
+			(property_id, kind, description, proof)
+		VALUES (?, ?, ?, ?)`
+	)
+
+	function insert_rules(
+		rules: v.InferOutput<typeof special_morphism_rule_yaml_schema>
+	) {
+		for (const { property, kind, description, proof } of rules) {
+			rule_insert.run(property, kind, description, proof)
+		}
+	}
+
+	seed_file(
+		db,
+		'special morphism rules',
+		path.join(DATA_FOLDER, 'special-morphism-rules.yaml'),
+		special_morphism_rule_yaml_schema,
+		insert_rules
 	)
 }
