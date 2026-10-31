@@ -50,7 +50,14 @@ unsatisfied_properties:
       - CAlg(R)_not_cototal
 
   - property: codistributive
-    proof: 'If $\sqcup$ denotes the coproduct of $R$-algebras (see <a href="https://math.stackexchange.com/questions/625874">MSE/625874</a> for their description) and $A$ is an $R$-algebra, the canonical morphism $A \sqcup R^2 \to (A \sqcup R)^2 = A^2$ is usually not an isomorphism. For example, for $A = R[X]$ the coproduct on the LHS is not commutative; it has the algebra presentation $\langle X,E : E^2=E \rangle$.'
+    proof: 'If $\sqcup$ denotes the coproduct of $R$-algebras (see <a href="https://math.stackexchange.com/questions/625874">MSE/625874</a> for their description) and $A$ is an $R$-algebra, the canonical morphism $A \sqcup R^2 \to (A \sqcup R)^2 = A^2$ is not necessarily an isomorphism. For example, for $A = R[X]$, the coproduct on the left-hand side has the algebra presentation $\langle X,E : E^2=E \rangle$ and is therefore not commutative: the homomorphism to $M_2(R)$ defined by $X \mapsto \bigl(\begin{smallmatrix} 0 & 1 \\ 0 & 0 \end{smallmatrix}\bigr)$ and $E \mapsto \bigl(\begin{smallmatrix} 1 & 0 \\ 0 & 0 \end{smallmatrix}\bigr)$ maps $XE$ to $0$ and $EX$ to $\bigl(\begin{smallmatrix} 0 & 1 \\ 0 & 0 \end{smallmatrix}\bigr) \neq 0$.'
+    label: Alg(R)_not_codistributive
+
+  - property: coparametrized conatural numbers object
+    proof: >-
+      By the dual of Lemma 4 <a href="/content/natural_numbers_objects">here</a>, it suffices to show that for some $R$-algebra $A$ the canonical homomorphism $A \sqcup R^{\IN} \to A^{\IN}$ is not an isomorphism. We take $A \coloneqq R[X]$. Since $A^{\IN}$ is commutative, it suffices to show that $R[X] \sqcup R^{\IN}$ is not commutative. The surjective homomorphism $R^{\IN} \to R^2$, $(r_n)_n \mapsto (r_0,r_1)$ induces a surjective homomorphism $R[X] \sqcup R^{\IN} \to R[X] \sqcup R^2$. Since $R[X] \sqcup R^2$ is not commutative (see the proof above that $\Alg(R)$ is not codistributive), neither is $R[X] \sqcup R^{\IN}$.
+    references:
+      - Alg(R)_not_codistributive
 
   - property: co-Malcev
     proof: 'See <a href="https://mathoverflow.net/questions/509552">MO/509552</a>: Consider the forgetful functor $U : \Alg(R) \to \Set$ and the relation $E \subseteq U^2$ defined by $E(A) \coloneqq \{(a,b) \in U(A)^2 : ab = a^2\}$. Both are representable: $U$ by $R[X]$ and $E$ by $R \langle X,Y \rangle / \langle XY-X^2 \rangle$. It is clear that $E$ is reflexive, but not symmetric.'

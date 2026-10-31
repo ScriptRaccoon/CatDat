@@ -1,0 +1,23 @@
+id: coparametrized conatural numbers object
+relation: has a
+description: >-
+  A <i>coparametrized conatural numbers object</i> in a category with finite coproducts is a parametrized natural numbers object in the opposite category. This is not standard terminology and should not be confused with the <a href="https://www.cl.cam.ac.uk/archive/mjcg/plans/Coinduction.pdf">set of conatural numbers</a> studied in computer science, which dualizes natural numbers in a different way. Explicitly, a coparametrized conatural numbers object is a triple
+  $$(N,\, z : N \to 0,\, s : N \to N)$$
+  satisfying the following universal property: for all $f : X \to A$, $g : X \to X$ there is a unique $\Phi : X \to A \sqcup N$ such that the diagram below commutes.
+  $$\begin{CD}
+  X @>{g}>> X @>{f}>> A \\
+  @V{\Phi} VV @VV{\Phi}V @V{i_1}V{\sim}V  \\
+  A \sqcup N @>>{\id_A \sqcup s}> A \sqcup N @>>{\id_A \sqcup z}> A \sqcup 0
+  \end{CD}$$
+nlab_link: null
+dual: parametrized natural numbers object
+invariant_under_equivalences: true
+
+related:
+  - conatural numbers object
+  - elementary cotopos
+  - finite coproducts
+
+tags:
+  - topos theory
+  - object behavior

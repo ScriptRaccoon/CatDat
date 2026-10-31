@@ -2005,6 +2005,14 @@
 		{
 			"type": "category",
 			"id": "retract-trivial"
+		},
+		{
+			"type": "category",
+			"id": "conatural numbers object"
+		},
+		{
+			"type": "category",
+			"id": "coparametrized conatural numbers object"
 		}
 	]
 }
