@@ -21,7 +21,10 @@ import { get_client } from '#shared/db.ts'
 import { STRUCTURE_TYPES, type StructureType, PLURALS } from '#shared/config.ts'
 import fs from 'node:fs'
 import path from 'node:path'
-import { decode_property_ID } from '#shared/property.utils.ts'
+import {
+	decode_property_ID,
+	get_special_morphism_plural
+} from '#shared/property.utils.ts'
 import { test_no_redundant_assignments } from './utils/redundant-assignments'
 import { test_no_redundant_implications } from './utils/redundant-implications'
 
@@ -319,6 +322,20 @@ function check_link_targets_exist() {
 			.map((x) => ({
 				proof: x.proof,
 				error_prefix: `❌ The proof of the implication (${x.id})`
+			})),
+		...db
+			.prepare<never[], { category: string; kind: string; proof: string }>(
+				`SELECT
+					category_id AS category,
+					kind,
+					proof
+				FROM special_morphism_assignments
+				WHERE is_deduced = FALSE`
+			)
+			.all()
+			.map((x) => ({
+				proof: x.proof,
+				error_prefix: `❌ The proof describing the ${get_special_morphism_plural(x.kind)} in ${x.category}`
 			}))
 	]
 
