@@ -65,12 +65,12 @@ special_objects:
     description: direct products
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: bijective maps
     proof: This is an elementary fact from set theory.
-  monomorphisms:
+  monomorphism:
     description: injective maps
     proof: 'For the non-trivial direction, if $f : X \to Y$ is a monomorphism of sets and $a,b \in X$ satisfy $f(a) = f(b)$, then $f \circ a = f \circ b$ when we regard $a,b$ as morphisms $a,b : \{\ast\} \rightrightarrows X$. Hence, $a = b$. More generally, if $\C$ is a category that admits a faithful and representable functor $U : \C \to \Set$, then the monomorphisms in $\C$ are precisely the morphisms whose $U$-image is injective.'
-  epimorphisms:
+  epimorphism:
     description: surjective maps
     proof: 'For the non-trivial direction, if $f : X \to Y$ is an epimorphism of sets, then in particular $f^* : \Hom(Y,\{0,1\}) \to \Hom(X,\{0,1\})$ is injective, which identifies with $f^* : P(Y) \to P(X)$. Then for all $y \in Y$ we have $f^*(\{y\}) \neq f^*(\varnothing) = \varnothing$, so that $y$ has a preimage.'

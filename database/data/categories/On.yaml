@@ -50,6 +50,6 @@ special_objects:
     description: supremum
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: only the identities
     proof: This is true for every partially ordered collection (regarded as a thin category).

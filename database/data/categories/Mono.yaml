@@ -116,21 +116,21 @@ special_objects:
     description: component-wise defined cartesian product
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: >-
       morphisms $f : (X, X') \to (Y, Y')$ such that $f$ is a bijection between $X$ and $Y$, and $f_*(X') = Y'$
     proof: This is easy.
-  monomorphisms:
+  monomorphism:
     description: >-
       morphisms $f : (X, X') \to (Y, Y')$ such that $f$ is an injective function from $X$ to $Y$
     proof: >-
       For the non-trivial direction, use the fact that the functor taking an object $(X, X')$ to $X$ and a morphism $f : (X, X') \to (Y, Y')$ to the function $f : X \to Y$ is representable by $(1, 0)$.
-  epimorphisms:
+  epimorphism:
     description: >-
       morphisms $f : (X, X') \to (Y, Y')$ such that $f$ is a surjective function from $X$ to $Y$
     proof: >-
       For the non-trivial direction, use the fact that the forgetful functor $\Mono \to \Set$, $(X, X') \mapsto X$, has a right adjoint given by $X \mapsto (X, X)$. Therefore, the forgetful functor preserves epimorphisms; so if $f : (X, X') \to (Y, Y')$ is an epimorphism in $\Mono$, then $f : X \to Y$ is an epimorphism in <a href="/category/Set">$\Set$</a> and therefore surjective.
-  regular monomorphisms:
+  regular monomorphism:
     description: >-
       morphisms $f : (X, X') \to (Y, Y')$ such that $f$ is an injective function from $X$ to $Y$, and $f^*(Y') = X'$ (in particular, if $f : X \to Y$ is an inclusion map, then this is equivalent to $X' = X \cap Y'$)
     proof: >-
@@ -141,7 +141,7 @@ special_morphisms:
       (X, X') @> f >> (Y, Y') @> \chi_{\im(f)} > \top_Y > (\{ \top, \bot \}, \{ \top, \bot \}).
       \end{CD}$$
       Here $\chi_{\im(f)} : Y \to \{ \top, \bot \}$ is the characteristic function of the subset $\im(f) \subseteq Y$, and $\top_Y$ is the constant function on $Y$ with value $\top$.
-  regular epimorphisms:
+  regular epimorphism:
     description: >-
       morphisms $f : (X, X') \to (Y, Y')$ such that $f$ is a surjective function from $X$ to $Y$, and $f_*(X') = Y'$
     proof: >-

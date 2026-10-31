@@ -212,10 +212,10 @@ special_objects:
       Let $X$ be the product of a family $(X_i)_{i \in I}$. For a family $x = (x_i)_{i \in I}$ of points $x_i \in |X_i|$, let $A_x \coloneqq \bigotimes_{i \in I} \O_{X_i,x_i}$ be the tensor product of $R$-algebras. The points of $|X|$ are the pairs $(x,\p)$ of such a family $x$ and a prime ideal $\p \subseteq A_x$ whose preimage in each $\O_{X_i,x_i}$ is its maximal ideal. For a family $U = (U_i)_{i \in I}$ of open subsets $U_i \subseteq |X_i|$ with $U_i = |X_i|$ for all but finitely many $i$ and an element $s \in \bigotimes_{i \in I} \O_{X_i}(U_i)$, let $D(U,s)$ be the set of points $(x,\p)$ with $x_i \in U_i$ for all $i$ and $s_x \notin \p$, where $s_x \in A_x$ is the image of $s$. These sets form a basis of the topology. The stalk of $\O_X$ at $(x,\p)$ is the localization $(A_x)_\p$, and the sections over an open subset $W \subseteq |X|$ are the families in $\prod_{(x,\p) \in W} (A_x)_\p$ that are locally of the form $(x,\p) \mapsto a_x/s_x$ on some $D(U,s) \subseteq W$ with $a \in \bigotimes_{i \in I} \O_{X_i}(U_i)$. The projection $X \to X_i$ maps $(x,\p)$ to $x_i$, and its stalk maps are the canonical local homomorphisms $\O_{X_i,x_i} \to (A_x)_\p$.
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: 'A morphism $f : X \to Y$ is an isomorphism iff $|f| : |X| \to |Y|$ is a homeomorphism and $f^\sharp : \O_Y \to |f|_* \O_X$ is an isomorphism of sheaves.'
     proof: This is easy.
-  monomorphisms:
+  monomorphism:
     description: 'A morphism $f : X \to Y$ is a monomorphism iff $|f| : |X| \to |Y|$ is injective and for every $x \in |X|$ the stalk map $f^\sharp_x : \O_{Y,|f|(x)} \to \O_{X,x}$ is an epimorphism in the category of local commutative rings and local homomorphisms. (This is weaker than being an epimorphism of commutative rings.)'
     proof: >-
       For a local commutative $R$-algebra $T$, let $P_T$ denote the locally ringed space with a single point whose stalk is $T$. A morphism $P_T \to X$ is the same as a point $x \in |X|$ together with a local homomorphism of $R$-algebras $\O_{X,x} \to T$, and its composite with $f$ corresponds to the point $|f|(x)$ together with the composite $\O_{Y,|f|(x)} \xrightarrow{f^\sharp_x} \O_{X,x} \to T$.
@@ -233,7 +233,7 @@ special_morphisms:
       Since $a,b \in \m_T$, the element $a + b - 1$ is a unit, so that $a = b$. Hence, $u$ and $v$ agree on $K[Y]$, and therefore on its localization $B$. But $\varphi$ is not an epimorphism of commutative rings: the inclusion $B \hookrightarrow K(Y)$ and its composite with the automorphism of $K(Y)$ that maps $Y$ to $1 - Y$ are different, but they agree on $\varphi(A)$ since
       $$(1 - Y)\bigl((1 - Y) - 1\bigr) = (1 - Y)(-Y) = Y(Y - 1).$$
       So the morphism $P_B \to P_A$ with stalk map $\varphi$ is a monomorphism in $\LRS_R$, but its stalk map is not an epimorphism of commutative rings. In contrast, for morphisms of schemes, both conditions on the stalk maps are equivalent (see <a href="/category/Sch_R">$\Sch_R$</a>).
-  epimorphisms:
+  epimorphism:
     description: 'A morphism $f : X \to Y$ is an epimorphism iff $|f| : |X| \to |Y|$ is surjective and $f^\sharp : \O_Y \to |f|_* \O_X$ is a monomorphism of sheaves.'
     proof: >-
       It is obvious that morphisms with this property are epimorphisms. For the opposite, assume that $f : X \to Y$ is an epimorphism. Then the codiagonal
@@ -241,7 +241,7 @@ special_morphisms:
       is an isomorphism. By construction of the pushout, its underlying space $|Y \sqcup_X Y|$ is the pushout $|Y| \sqcup_{|X|} |Y|$ of $|f|$ with itself in $\Top$. Hence, $|f|$ is an epimorphism in $\Top$, i.e. it is surjective. For open subsets $V \subseteq |Y|$ the preimage in $|Y| \sqcup_{|X|} |Y|$ is $V \sqcup_{|f|^*(V)} V$, and its ring of sections is the pullback $\O_Y(V) \times_{\O_X(|f|^*(V))} \O_Y(V)$. Since the diagonal
       $$\O_Y(V) \to \O_Y(V) \times_{\O_X(|f|^*(V))} \O_Y(V)$$
       is an isomorphism, the map $f^\sharp : \O_Y(V) \to \O_X(|f|^*(V))$ is a monomorphism. Hence, $f^\sharp$ is a monomorphism of sheaves.
-  regular monomorphisms:
+  regular monomorphism:
     description: 'A morphism $f : X \to Y$ is a regular monomorphism iff $|f| : |X| \to |Y|$ is an embedding and the stalk maps $f^\sharp_x : \O_{Y,|f|(x)} \to \O_{X,x}$ are surjective for all $x \in |X|$.'
     proof: >-
       Recall that for a morphism $\varphi : T \to Y$, a point $t \in |T|$, and a local section $b$ of $\O_Y$, the germ of $\varphi^\sharp(b)$ at $t$ is $\varphi^\sharp_t(b_{|\varphi|(t)})$. We will use the following simple fact twice: if $\alpha : A \to B$ is a surjective homomorphism of local rings and $\beta : B \to C$ is a homomorphism into a local ring such that $\beta \circ \alpha$ is local, then $\beta$ is local, since every non-unit of $B$ is the image of a non-unit of $A$.
@@ -259,7 +259,7 @@ special_morphisms:
       Clearly, $u_1 \circ i = u_2 \circ i$. Now let $\varphi : T \to Y$ be a morphism with $u_1 \circ \varphi = u_2 \circ \varphi$. Since the forgetful functor $\Top \to \Set$ is a left adjoint, it preserves pushouts. Hence, the underlying set of $|W|$ is the quotient of $|Y| \sqcup |Y|$ that identifies the two copies of each $z \in |Z|$ and nothing else (this is already an equivalence relation). So $|u_1|(y) = |u_2|(y)$ only holds for $y \in |Z|$, and we get $|\varphi|(|T|) \subseteq |Z|$. Let $t \in |T|$, let $z \coloneqq |\varphi|(t)$, and let $a \in \ker(i^\sharp_z)$. After shrinking, $a$ is the germ of a section $s \in \O_Y(V)$ over an open neighborhood $V$ of $z$ such that $i^\sharp(s) = 0$ in $\O_Z(|Z| \cap V)$. Thus, $(s,0)$ is a section of $\O_W$ over $(V,V)$. Since $u_1 \circ \varphi$ and $u_2 \circ \varphi$ have the same sheaf map, the two composites
       $$\O_W(V,V) \rightrightarrows \O_Y(V) \xrightarrow{\varphi^\sharp} \O_T(|\varphi|^*(V))$$
       agree, so that $\varphi^\sharp(s) = \varphi^\sharp(0) = 0$. Taking germs at $t$, we get $\varphi^\sharp_t(a) = \varphi^\sharp_t(s_z) = \varphi^\sharp(s)_t = 0$. By the factorization criterion, $\varphi$ factors uniquely through $i$.
-  regular epimorphisms:
+  regular epimorphism:
     description: 'A morphism $f : X \to Y$ with kernel pair $p_1,p_2 : X \times_Y X \rightrightarrows X$ is a regular epimorphism iff $|f| : |X| \to |Y|$ is a surjective quotient map, $f^\sharp : \O_Y \to |f|_* \O_X$ is a monomorphism of sheaves, and for every open subset $V \subseteq |Y|$, every section $s \in \O_X(|f|^*(V))$ with $p_1^\sharp(s) = p_2^\sharp(s)$ lies in the image of $f^\sharp : \O_Y(V) \to \O_X(|f|^*(V))$. Moreover, a morphism $\Spec(\varphi) : \Spec(B) \to \Spec(A)$ of affine schemes is a regular epimorphism iff $\varphi : A \to B$ is a regular monomorphism in $\CAlg(R)$ and $|\Spec(\varphi)|$ is a surjective quotient map.'
     proof: >-
       Let $f : X \to Y$ be a morphism. Since $\LRS_R$ is complete, $f$ has a kernel pair $p_1,p_2 : X \times_Y X \rightrightarrows X$, and by <a href="/content/regular-epis-kernel-pairs">this lemma</a>, $f$ is a regular epimorphism iff it is the coequalizer of $p_1,p_2$. Recall from the proof of cocompleteness that colimits in $\LRS_R$ are computed as in ringed spaces: the underlying space is the colimit of the underlying spaces, and the structure sheaf is the limit of the push-forwards of the structure sheaves. Hence, the coequalizer $q : X \to Q$ of $p_1,p_2$ looks as follows. The underlying space $|Q|$ is the coequalizer of $|p_1|,|p_2|$ in $\Top$, the structure sheaf is given by

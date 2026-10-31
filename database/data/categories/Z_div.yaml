@@ -61,6 +61,6 @@ special_objects:
     description: greatest common divisor
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: 'the identities $(a,a) : a \to a$ and the isomorphisms $(a,-a) : a \to -a$ for $a \in \IZ$'
     proof: This is trivial.

@@ -51,6 +51,6 @@ special_objects:
     description: direct products with pointwise operations
 
 special_morphisms:
-  epimorphisms:
+  epimorphism:
     description: surjective morphisms
     proof: The forgetful functor to abelian groups is faithful and preserves colimits, hence reflects and preserves epimorphisms. Alternatively, use the same proof as for abelian groups.

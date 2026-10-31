@@ -55,12 +55,12 @@ special_objects:
     description: degree-wise defined direct products
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: morphisms that are bijective in each degree
     proof: This is straightforward to check.
-  monomorphisms:
+  monomorphism:
     description: morphisms that are injective in each degree
     proof: 'A graded linear map that is injective in each degree is clearly a monomorphism. Conversely, a monomorphism $f : M \to N$ has trivial kernel. Since limits are computed degree-wise, the kernel is computed degree-wise as well. It follows that each component $f_n : M_n \to N_n$ has trivial kernel, i.e. is injective.'
-  epimorphisms:
+  epimorphism:
     description: morphisms that are surjective in each degree
     proof: 'A graded linear map that is surjective in each degree is clearly an epimorphism. Conversely, an epimorphism $f : M \to N$ has trivial cokernel. Since colimits are computed degree-wise, the cokernel is computed degree-wise as well. It follows that each component $f_n : M_n \to N_n$ has trivial cokernel, i.e. is surjective.'

@@ -63,12 +63,12 @@ special_objects:
     description: pointwise defined direct products
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: families of bijective maps
     proof: This is trivial.
-  monomorphisms:
+  monomorphism:
     description: families of injective maps
     proof: 'The non-trivial direction follows from the observation that each evaluation functor $\ev_i : \Set^I \to \Set$ preserves pullbacks by the pointwise description of limits, and hence preserves monomorphisms.'
-  epimorphisms:
+  epimorphism:
     description: families of surjective maps
     proof: 'The non-trivial direction follows from the observation that each evaluation functor $\ev_i : \Set^I \to \Set$ preserves pushouts by the pointwise description of colimits, and hence preserves epimorphisms.'

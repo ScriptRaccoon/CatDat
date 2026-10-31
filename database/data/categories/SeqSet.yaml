@@ -49,12 +49,12 @@ special_objects:
     description: component-wise defined direct product
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: morphisms $f = (f_n)_{n \geq 0}$ where every $f_n$ is bijective
     proof: This is easy to check. It can also be deduced from the fact that isomorphisms in functor categories coincide with natural isomorphisms.
-  monomorphisms:
+  monomorphism:
     description: morphisms $f = (f_n)_{n \geq 0}$ where every $f_n$ is injective
     proof: This holds in every functor category $[\C,\Set]$ because the evaluation functors are continuous.
-  epimorphisms:
+  epimorphism:
     description: morphisms $f = (f_n)_{n \geq 0}$ where every $f_n$ is surjective
     proof: This holds in every functor category $[\C,\Set]$ because the evaluation functors are cocontinuous.

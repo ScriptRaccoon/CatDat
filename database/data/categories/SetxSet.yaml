@@ -52,12 +52,12 @@ special_objects:
     description: component-wise direct product
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: pairs of bijective maps
     proof: This is easy.
-  monomorphisms:
+  monomorphism:
     description: pairs of injective maps
     proof: This follows from the fact for the category of sets.
-  epimorphisms:
+  epimorphism:
     description: pairs of surjective maps
     proof: This follows from the fact for the category of sets.

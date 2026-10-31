@@ -71,12 +71,12 @@ special_objects:
     description: '[finite case] direct products'
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: bijective linear maps
     proof: It is a full subcategory of $\Vect_K$, in which the isomorphisms are known to be the bijective linear maps.
-  monomorphisms:
+  monomorphism:
     description: injective linear maps
     proof: The non-trivial direction follows since the forgetful functor to $\Set$ is representable (by $K$).
-  epimorphisms:
+  epimorphism:
     description: surjective linear maps
     proof: By construction of the finite colimits, the inclusion functor to $\Vect_K$ preserves finite colimits. Hence, it preserves epimorphisms. Since it is faithful, it also reflects epimorphisms. Therefore, the description of epimorphisms in $\Vect_K$ carries over to this subcategory.

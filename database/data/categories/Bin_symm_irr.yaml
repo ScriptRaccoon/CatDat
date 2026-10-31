@@ -118,19 +118,19 @@ special_objects:
     description: '[non-empty case] The product of a <i>non-empty</i> family $(X_i,R_i)_{i \in I}$ in $\Bin_{\symm,\irr}$ is $(\prod_{i \in I} X_i, \prod_{i \in I} R_i)$, where $\prod_{i \in I} R_i \subseteq \prod_{i \in I} (X_i \times X_i) \cong \prod_i X_i \times \prod_i X_i$.'
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: bijective maps that preserve and reflect the relation
     proof: This is easy to check.
-  monomorphisms:
+  monomorphism:
     description: injective relation-preserving maps
     proof: The proof is identical to <a href="/category/Bin_irr">$\Bin_{\irr}$</a>.
-  epimorphisms:
+  epimorphism:
     description: surjective relation-preserving maps
     proof: The proof is identical to <a href="/category/Bin_irr">$\Bin_{\irr}$</a>.
-  regular monomorphisms:
+  regular monomorphism:
     description: injective maps that reflect and preserve the relation
     proof: The proof is identical to <a href="/category/Bin_irr">$\Bin_{\irr}$</a>.
-  regular epimorphisms:
+  regular epimorphism:
     description: >-
       morphisms $f : (X,R) \to (Y,S)$ such that $f : X \to Y$ is surjective and $S = \{(f(x),f(x')) : (x,x') \in R\}$
     proof: The proof is identical to <a href="/category/Bin_irr">$\Bin_{\irr}$</a>.

@@ -75,12 +75,12 @@ special_objects:
     description: '[non-empty, finite case] direct products'
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: bijective maps
     proof: It is a full subcategory of $\Set$, for which we know that isomorphisms are bijective maps.
-  monomorphisms:
+  monomorphism:
     description: injective maps
     proof: 'For the non-trivial direction, let $f : X \to Y$ be a monomorphism and $x,x'' \in X$ with $f(x) = f(x'')$. Let $c_x, c_{x''} : \IN \rightrightarrows X$ be the constant maps with values $x, x''$. Then $f \circ c_x = f \circ c_{x''}$, hence $c_x = c_{x''}$, i.e. $x = x''$.'
-  epimorphisms:
+  epimorphism:
     description: surjective maps
     proof: 'For the non-trivial direction, let $f : X \to Y$ be an epimorphism and assume that some $y \in Y$ is not in the image of $f$. Since $Y$ is infinite, there is some $y'' \in Y$ with $y'' \neq y$. Let $g : Y \to Y$ be the map with $g(y) \coloneqq y''$ and $g(z) \coloneqq z$ for $z \neq y$. Then $g \circ f = \id_Y \circ f$, hence $g = \id_Y$, which contradicts $g(y) = y'' \neq y$.'

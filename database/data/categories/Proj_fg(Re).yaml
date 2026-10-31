@@ -93,12 +93,12 @@ special_objects:
     description: '[finite case] direct sums'
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: bijective linear maps
     proof: This follows from the corresponding fact for <a href="/category/R-Mod">$R{-}\Mod$</a>.
-  monomorphisms:
+  monomorphism:
     description: injective linear maps
     proof: The non-trivial direction follows from the observation that the forgetful functor to $\Set$ is representable (by the free module of rank $1$) and therefore preserves monomorphisms.
-  epimorphisms:
+  epimorphism:
     description: surjective linear maps (which are automatically split epimorphisms)
     proof: 'Surjective linear maps are clearly epimorphisms, and they split because their codomain is projective. Conversely, assume that $f : M \to N$ is an epimorphism in $\Proj_\fg(R)$. If $f$ is not surjective, $Q \coloneqq N/f(M)$ is a non-zero finitely generated $R$-module. Therefore, it has a simple quotient. Since $R$ is a local commutative ring with residue field $\IR$, the only simple $R$-module is $\IR$, on which $\varepsilon$ acts as zero. Thus, there is a surjective linear map $\varphi : Q \to \IR$. Composing this with the injective linear map $\IR \to R$, $r \mapsto r \varepsilon$, and the projection $N \twoheadrightarrow Q$, we get a non-zero linear map $\psi : N \to R$ with $\psi \circ f = 0$, which contradicts the assumption that $f$ is an epimorphism.'

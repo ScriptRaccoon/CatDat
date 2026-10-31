@@ -87,12 +87,12 @@ special_objects:
     description: pointwise defined direct product
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: natural isomorphisms
     proof: This is true for all functor categories.
-  monomorphisms:
+  monomorphism:
     description: pointwise injective natural transformations
     proof: 'If $a : F \to G$ is a monomorphism of Z-functors, then the diagonal morphism $F \to F \times_G F$ is an isomorphism, so that for every $R$ the diagonal morphism $F(R) \to F(R) \times_{G(R)} F(R)$ is an isomorphism, i.e., $a(R) : F(R) \to G(R)$ is a monomorphism. This argument works for every functor category where the codomain has fiber products.'
-  epimorphisms:
+  epimorphism:
     description: pointwise surjective natural transformations
     proof: This holds in every functor category $[\C,\Set]$, since pushouts are constructed pointwise.

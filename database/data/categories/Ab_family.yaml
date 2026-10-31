@@ -62,12 +62,12 @@ special_objects:
     description: pointwise defined direct products
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: families of bijective homomorphisms
     proof: This is trivial.
-  monomorphisms:
+  monomorphism:
     description: families of injective homomorphisms
     proof: The category is abelian and hence has kernels, constructed pointwise. Thus, a homomorphism $f = (f_i)_{i \in I}$ is a monomorphism if and only if $\ker(f_i) = 0$ for all $i$, i.e. each $f_i$ is a monomorphism.
-  epimorphisms:
+  epimorphism:
     description: families of surjective homomorphisms
     proof: The category is abelian and hence has cokernels, constructed pointwise. Thus, a homomorphism $f = (f_i)_{i \in I}$ is an epimorphism if and only if $\coker(f_i) = 0$ for all $i$, i.e. each $f_i$ is an epimorphism.

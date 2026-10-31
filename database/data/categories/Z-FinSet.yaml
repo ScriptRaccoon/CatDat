@@ -77,12 +77,12 @@ special_objects:
     description: '[finite case] direct product with the obvious action'
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: bijective morphisms
     proof: This is inherited from <a href="/category/Z-Set">$\IZ{-}\Set$</a>.
-  monomorphisms:
+  monomorphism:
     description: injective morphisms
     proof: The non-trivial direction follows from the fact that the inclusion functor to <a href="/category/Z-Set">$\IZ{-}\Set$</a> preserves finite limits (by their construction), hence preserves monomorphisms, and the description of monomorphisms in $\IZ{-}\Set$.
-  epimorphisms:
+  epimorphism:
     description: surjective morphisms
     proof: The non-trivial direction follows from the fact that the inclusion functor to <a href="/category/Z-Set">$\IZ{-}\Set$</a> preserves finite colimits (by their construction), hence preserves epimorphisms, and the description of epimorphisms in $\IZ{-}\Set$.

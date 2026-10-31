@@ -57,12 +57,12 @@ special_objects:
     description: The product of a family of quivers $(V_i,E_i,s_i,t_i)$ is $(\prod_i V_i, \prod_i E_i, \prod_i s_i, \prod_i t_i)$.
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: morphisms $f = (f_V, f_E)$ where $f_V$ and $f_E$ are bijective
     proof: This is easy to check. It can also be deduced from the fact that isomorphisms in functor categories coincide with natural isomorphisms.
-  monomorphisms:
+  monomorphism:
     description: morphisms $f = (f_V, f_E)$ where $f_V$ and $f_E$ are injective
     proof: This holds in every functor category $[\C,\Set]$ because the evaluation functors are continuous.
-  epimorphisms:
+  epimorphism:
     description: morphisms $f = (f_V, f_E)$ where $f_V$ and $f_E$ are surjective
     proof: This holds in every functor category $[\C,\Set]$ because the evaluation functors are cocontinuous.

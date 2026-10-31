@@ -320,18 +320,18 @@ special_objects:
     description: '[binary case] The binary product of $(X, R_X)$ and $(Y, R_Y)$ is $X \times Y$ with realization relation $$R_{X\times Y} \coloneqq \{ (\langle n, m \rangle, (x, y)) \mid (n, x) \in R_X \land (m, y) \in R_Y \}.$$'
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: 'A morphism $f : (X, R_X) \to (Y, R_Y)$ is an isomorphism if and only if the underlying function $X \to Y$ is a bijection, and there also exists a partial recursive function $\psi : \IN \dashrightarrow \IN$ such that whenever we have $n\in\IN, x\in X$ such that $n$ realizes $f(x)\in Y$, then $\psi(n)$ exists and $\psi(n)$ realizes $x\in X$'
     proof: This is easy, since the condition on the existence of $\psi$ just says that the set-level inverse of $f$ is also a morphism in $\omegaSet$.
-  monomorphisms:
+  monomorphism:
     description: Morphisms of $\omega$-sets whose underlying set function is injective
     proof: This follows from the fact that the forgetful functor $\omegaSet \to \Set$ is clearly faithful, and it is representable by the terminal object $(\{\ast\}, \IN \times \{\ast\})$.
-  regular monomorphisms:
+  regular monomorphism:
     description: 'A morphism $f : (X, R_X) \to (Y, R_Y)$ is a regular monomorphism if and only if the underlying function $X \to Y$ is injective, and there exists a partial recursive function $\psi : \IN \dashrightarrow \IN$ such that whenever we have $n\in \IN$ and $x\in X$ such that $n$ realizes $f(x) \in Y$, then $\psi(n)$ exists and $\psi(n)$ realizes $x\in X$'
     proof: 'Following the constructions above, we can see that for any morphism $f : (X, R_X) \to (Y, R_Y)$, the equalizer of the cokernel pair of $f$ is $(\im(f), R_Y \cap (\IN \times \im(f)))$; and the condition above is equivalent to the condition that the canonical map $X \to \im(f)$ induces an isomorphism of $\omega$-sets $(X, R_X) \to (\im(f), R_Y \cap (\IN \times \im(f)))$.'
-  epimorphisms:
+  epimorphism:
     description: Morphisms of $\omega$-sets whose underlying set function is surjective
     proof: Sufficiency of this condition is trivial. For necessity, use the fact that the forgetful functor $\omegaSet \to \Set$ is a left adjoint, and therefore preserves epimorphisms.
-  regular epimorphisms:
+  regular epimorphism:
     description: 'A morphism $f : (X, R_X) \to (Y, R_Y)$ is a regular epimorphism if and only if there exists a partial recursive function $\psi : \IN \dashrightarrow \IN$ such that whenever we have $n\in \IN$ and $y\in Y$ such that $n$ realizes $y$, then $\psi(n)$ exists, and there exists $x\in X$ such that $f(x) = y$ and $\psi(n)$ realizes $x$'
     proof: 'Following the constructions above, we can see that for any morphism $f : (X, R_X) \to (Y, R_Y)$, the coequalizer of the kernel pair of $f$ is $(\im(f), (\id_{\IN} \times f)_*(R_X))$; and the condition above is equivalent to the condition that the canonical map $\im(f) \to Y$ induces an isomorphism of $\omega$-sets $(\im(f), (\id_{\IN} \times f)_*(R_X)) \to (Y, R_Y)$.'

@@ -84,12 +84,12 @@ special_objects:
     description: '[finite case] direct products with pointwise operations'
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: bijective homomorphisms
     proof: It is a full subcategory of $\Grp$, for which we know that isomorphisms are bijective homomorphisms.
-  monomorphisms:
+  monomorphism:
     description: injective homomorphisms
     proof: 'Let $f : A \to B$ be a monomorphism of finite groups. Let $a \in A$ be in the kernel of $f$, say of order $n$. Then we may view $a$ as a morphism $a : C_n \to A$ with $f \circ a = 1$ (the trivial homomorphism), and $C_n$ is finite. Hence, $a = 1$.'
-  epimorphisms:
+  epimorphism:
     description: surjective homomorphisms
     proof: 'For the non-trivial direction, if $f : G \to H$ is an epimorphism, we may factor it as $G \to f(G) \to H$, and $f(G) \to H$ is still an epimorphism, but also an inclusion and hence a monomorphism. Since we already know that the category is mono-regular, $f(G) \to H$ must be an isomorphism.'

@@ -62,6 +62,6 @@ special_objects:
     description: infimum
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: only the identity morphisms
     proof: This is true for every poset (regarded as a thin category).

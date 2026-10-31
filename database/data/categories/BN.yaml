@@ -52,6 +52,6 @@ unsatisfied_properties:
 special_objects: {}
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: only the number $0$
     proof: The number $0$ is the only natural number which has an additive inverse, since for $n > 0$ we have $n + m > 0$ for all $m$.

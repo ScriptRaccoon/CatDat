@@ -116,12 +116,12 @@ unsatisfied_properties:
 special_objects: {}
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: bijective order-preserving maps
     proof: This is easy. Notice that bijective order-preserving maps automatically also reflect the order (because we work with totally ordered sets).
-  monomorphisms:
+  monomorphism:
     description: injective order-preserving maps
     proof: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
-  epimorphisms:
+  epimorphism:
     description: surjective order-preserving maps
     proof: We can use the same proof as for <a href="/category/FinOrd">$\FinOrd$</a> since this has merely used the non-empty ordered set $\{0 < 1\}$.

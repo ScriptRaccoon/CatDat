@@ -41,18 +41,18 @@ special_objects:
     description: $0 \times 0 = 0$
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: every morphism
     proof: This is trivial.
-  monomorphisms:
+  monomorphism:
     description: every morphism
     proof: This is trivial.
-  epimorphisms:
+  epimorphism:
     description: every morphism
     proof: This is trivial.
-  regular monomorphisms:
+  regular monomorphism:
     description: every morphism
     proof: This is trivial.
-  regular epimorphisms:
+  regular epimorphism:
     description: every morphism
     proof: This is trivial.

@@ -59,12 +59,12 @@ special_objects:
     description: component-wise defined cartesian product, equipped with the product function
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: pairs $(\ell, r)$ where $\ell$ and $r$ are both bijections
     proof: This is easy.
-  monomorphisms:
+  monomorphism:
     description: pairs $(\ell, r)$ where $\ell$ and $r$ are both injective
     proof: For the non-trivial direction, use the fact that the domain functor taking an object $(X, Y, f)$ to $X$ and a morphism $(\ell, r)$ to $\ell$ is representable by $\{\ast\} \to \{\ast\}$; and moreover, the codomain functor taking an object $(X, Y, f)$ to $Y$ and a morphism $(\ell, r)$ to $r$ is representable by $\varnothing \to \{\ast\}$.
-  epimorphisms:
+  epimorphism:
     description: pairs $(\ell, r)$ where $\ell$ and $r$ are both surjective
     proof: For the non-trivial direction, use the fact that the category is epi-regular, so any epimorphism is a coequalizer; and the fact that coequalizers can be calculated component-wise.

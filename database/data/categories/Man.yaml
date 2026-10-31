@@ -121,12 +121,12 @@ special_objects:
     description: '[finite case] direct products $X \times Y$ with the product topology and the charts $\IR^{n + m} = \IR^n \times \IR^m \cong U \times V \hookrightarrow X \times Y$ for charts $\IR^n \cong U \hookrightarrow X$ and $\IR^m \cong V \hookrightarrow Y$'
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: diffeomorphisms
     proof: This holds by definition.
-  monomorphisms:
+  monomorphism:
     description: injective smooth maps
     proof: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
-  epimorphisms:
+  epimorphism:
     description: smooth maps with dense image
     proof: 'Let $f : X \to Y$ be a smooth map whose image is not dense. Choose some non-empty open subset $U \subseteq Y$ that is disjoint from $f(X)$. Take any $p \in U$. There is a smooth <i>bump function</i> $g : Y \to \IR$ with $g(p) = 1$ and $\supp(g) \subseteq U$ (John Lee, Introduction to Smooth Manifolds, Prop. 2.25). Hence, $g \neq 0$ and $g \circ f = 0 = 0 \circ f$. Thus, $f$ is not an epimorphism.'

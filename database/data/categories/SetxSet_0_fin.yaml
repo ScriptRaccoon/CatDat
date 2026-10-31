@@ -115,13 +115,13 @@ special_objects:
     description: '[finite case] component-wise direct product'
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: pairs of bijective maps
     proof: This is trivial.
-  monomorphisms:
+  monomorphism:
     description: pairs of injective maps
     proof: For the non-trivial direction, the construction of finite limits shows that the two projection functors to $\Set$ preserve finite limits and hence preserve monomorphisms.
-  epimorphisms:
+  epimorphism:
     description: pairs of surjective maps
     proof: >-
       For the non-trivial direction, let $(f,g) : (A,B) \to (C,D)$ be an epimorphism. Assume for contradiction that $f : A \to C$ is not surjective. Since $\{0,1\}$ cogenerates, there are distinct maps $u,v : C \rightrightarrows \{0,1\}$ with $u \circ f = v \circ f$. The set $C$ is non-empty, so $D$ is finite, and $(\{0,1\},D)$ is a valid object. Then

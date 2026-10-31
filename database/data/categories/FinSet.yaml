@@ -71,12 +71,12 @@ special_objects:
     description: '[finite case] direct products'
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: bijective maps
     proof: It is a full subcategory of $\Set$, for which we know that isomorphisms are bijective maps.
-  monomorphisms:
+  monomorphism:
     description: injective maps
     proof: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
-  epimorphisms:
+  epimorphism:
     description: surjective maps
     proof: Use the same proof as for sets.

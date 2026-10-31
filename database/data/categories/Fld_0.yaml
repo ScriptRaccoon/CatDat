@@ -72,9 +72,9 @@ special_objects:
     description: $\IQ$
 
 special_morphisms:
-  isomorphisms:
+  isomorphism:
     description: bijective field homomorphisms
     proof: It is a full subcategory of $\CRing$, for which we know that isomorphisms are bijective homomorphisms.
-  regular monomorphisms:
+  regular monomorphism:
     description: A Galois extension is a regular monomorphism iff it is procyclic, and the general case can be reduced to this situation; see <a href="https://math.stackexchange.com/questions/5129895">MSE/5129895</a> for details.
     proof: See <a href="https://math.stackexchange.com/questions/5129895">MSE/5129895</a>.

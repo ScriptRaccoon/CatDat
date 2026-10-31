@@ -135,6 +135,6 @@ special_objects:
     description: $A$
 
 special_morphisms:
-  epimorphisms:
+  epimorphism:
     description: all morphisms except for the three non-identity morphisms with codomain $D$, namely $g$, $m$, and the diagonal $g \circ e$
     proof: 'Every one of the three non-identity morphisms with codomain $D$ equalizes $u,v$, and thus cannot be an epimorphism. Conversely, the identity morphisms are of course epimorphisms, and if a morphism does not have codomain $D$, then it is an epimorphism because the only parallel pair of distinct morphisms is $u,v : D \rightrightarrows E$.'
