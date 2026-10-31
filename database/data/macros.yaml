@@ -174,6 +174,7 @@
 \Sh: \mathbf{Sh}
 \Proj: \mathbf{Proj}
 \omegaSet: \omega{-}\Set
+\Eff: \mathbf{Eff}
 
 # arrows
 \rightrightrightarrows: \mathrel{\substack{\rightarrow\\[-0.6ex]\rightarrow\\[-0.6ex]\rightarrow}}

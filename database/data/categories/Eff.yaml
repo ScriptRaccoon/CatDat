@@ -1,0 +1,217 @@
+id: Eff
+name: effective topos
+notation: $\Eff$
+objects: A set $X$ along with a subset $E_X \subseteq \IN \times X \times X$ giving an effective partial equivalence relation (see <a href="https://ncatlab.org/nlab/show/effective+topos">here</a> for precise definition)
+morphisms: A morphism $(X, E_X) \to (Y, E_Y)$ is a subset $f \subseteq \IN \times X \times Y$ giving an effective functional relation, modulo a certain equivalence relation (see <a href="https://ncatlab.org/nlab/show/effective+topos">here</a> for precise definitions)
+description: >-
+  The effective topos gives a "realizability" model of first-order intuitionistic logic roughly matching the principles of <a href="https://ncatlab.org/nlab/show/BHK+interpretation">the BHK interpretation of intuitionistic logic and constructive mathematics</a> &mdash; for example, that a proof of existence requires a computable function on the inputs whose output is a witness of the property, and similarly that a proof of a disjunction requires a computation (based on inputs from the context) of which branch of the disjunction holds. For instance, in this model, every total function $\IN \to \IN$ is (internally) recursive. Similarly, in the resulting model of constructive analysis, it turns out that every total function $\IR \to \IR$ on the constructive reals is continuous; and the Intermediate Value Theorem fails.
+
+  The effective topos can also be described as the <a href="https://ncatlab.org/nlab/show/regular+and+exact+completion#the_exreg_completion">ex/reg completion</a> of <a href="/category/omega-Set">$\omegaSet$</a>.
+
+nlab_link: https://ncatlab.org/nlab/show/effective+topos
+
+tags:
+  - logic
+
+related:
+  - Set
+  - omega-Set
+
+satisfied_properties:
+  - property: locally small
+    proof: This is trivial.
+
+  - property: elementary topos
+    proof: This is a special case of the fact that from any <a href="https://ncatlab.org/nlab/show/tripos">tripos</a> we can construct a topos. See for example <a href="https://www.cl.cam.ac.uk/~amp12/papers/thet/thet.pdf">A. M. Pitts, <i>The Theory of Triposes</i></a>, with the definition of effective tripos in section 1.5 on p. 16, and the construction of a topos corresponding to a tripos as Thm. 2.3.
+
+  - property: semi-strongly connected
+    proof: Suppose we have two objects $(X, E_X)$ and $(Y, E_Y)$. If $E_Y$ is non-empty, then we can find $n_0\in \IN, y_0\in Y$ such that $n_0 \Vdash y_0 \equiv y_0$. Then $\{ (\langle n, m \rangle, x, y) \mid (n \Vdash x \equiv x) \land (m \Vdash y \equiv y_0) \}$ gives an effective functional relation which induces a morphism $(X, E_X) \to (Y, E_Y)$. (This represents a constant morphism with value $y_0$.) Otherwise, if $E_Y$ is empty, then $\varnothing$ induces a morphism $(Y, E_Y) \to (X, E_X)$.
+
+  - property: natural numbers object
+    proof: 'We claim that $N \coloneqq (\IN, \{ (n, n, n) \mid n \in \IN \})$ is a natural numbers object. To see this, suppose we have an object $(X, E_X)$ with morphisms $x : 1 \to X$ and $f : X \to X$. Then we can find $n_0 \in \IN, x_0 \in X$ such that $n_0 \Vdash * \xmapsto{x} x_0$; also, let $c_f$ and $t_f$ be witnesses to the codomain property and totality of $f$, respectively. We can then define an "iteration of $c_f\circ t_f$" program $i$, such that $i(n)$ represents the result of the $n$-fold iteration of $t_f$ followed by $c_f$, starting with $c_f(n_0)$. We can also find a sequence $x_n \in X$ extending $x_0$ such that $t_f(i(n)) \Vdash x_n \xmapsto{f} x_{n+1}$. We can then show that $\{ (\langle n, m \rangle, n, y) \mid (m \Vdash x_n \equiv y) \}$ is an effective functional relation which induces a morphism $N \to X$, and this morphism has the required properties. Likewise, the uniqueness of this morphism is straightforward to establish.'
+
+  - property: generating collection
+    proof: >-
+      We claim that the collection of all $(X, E_X)$ with $X \subseteq \IN$ forms a generating collection. To see this, suppose we have two effective functional relations $f, g$ between $(X, E_X)$ and $(Y, E_Y)$ such that $[f] \ne [g]$. Then there is no witness $e_{f,g}$ for the equivalence of $f$ and $g$. That means that for each unary partial recursive function $e : \IN \dashrightarrow \IN$, we can find $n_e \in \IN$ and $x_e \in X$, $y_e \in Y$ such that $n_e \Vdash x_e \xmapsto{f} y_e$ but either $e(n_e)$ is not defined or $e(n_e) \not\Vdash x_e \xmapsto{g} y_e$. In either case, make one such choice for each $e$, and let $X' \coloneqq \{ x_e \mid e : \IN \dashrightarrow \IN\mathrm{~partial~recursive} \}$, and $E_{X'} \coloneqq E_X \cap (\IN \times X' \times X')$. We can then check that $E_{X'}$ is an effective PER; and $i \coloneqq E_X \cap (\IN \times X' \times X)$ is an effective functional relation inducing a morphism $[i] : (X', E_{X'}) \to (X, E_X)$.
+
+      We now claim $[f] \circ [i] \ne [g] \circ [i]$. Suppose to the contrary that $f\circ i$ and $g\circ i$ were equivalent, with witness $e_{f\circ i, g\circ i}$. Then whenever $x' \in X'$, and $n \Vdash x' \xmapsto{f} y$, we have:
+
+      $$
+      \begin{align*}
+      & n_1 \Vdash x' \equiv x' & n_1 & \coloneqq d_f(n) \\
+      \implies & n_2 \Vdash x' \xmapsto{i} x' & n_2 & \coloneqq n_1 \\
+      \implies & n_3 \Vdash x' \xmapsto{f\circ i} y & n_3 & \coloneqq \langle n_2, n \rangle \\
+      \implies & n_4 \Vdash x' \xmapsto{g\circ i} y & n_4 & \coloneqq e_{f\circ i, g\circ i}(n_3) \\
+      \implies \exists x_2\in X, ~ & n_5 \Vdash x' \xmapsto{i} x_2, & n_5 & \coloneqq p_1(n_4) \\
+      & n_6 \Vdash x_2 \xmapsto{g} y & n_6 & \coloneqq p_2(n_4) \\
+      \implies & n_7 \Vdash x' \equiv x_2 & n_7 & \coloneqq n_5 \\
+      \implies & n_8 \Vdash x' \xmapsto{g} y & n_8 & \coloneqq r_g(n_6, s_X(n_7), c_f(n)).
+      \end{align*}
+      $$
+
+      Therefore, if we let $e$ be the partial recursive function representing the transformation from $n$ to $n_8$ in the right column, then $n_e \Vdash x_e \xmapsto{f} y_e$; $e(n_e)$ is defined; and $e(n_e) \Vdash x_e \xmapsto{g} y_e$. This contradicts the choice of $x_e$ and $y_e$.
+
+      On the other hand, $(X', E_{X'})$ is isomorphic to an object with $X' \subseteq \IN$ (in fact, structurally isomorphic, not just isomorphic in $\Eff$).
+
+      (Also, note that if $(X, E_X)$ is an object with $X \subseteq \IN$, then $(\IN, E_X)$ is also an object which is isomorphic to $(X, E_X)$; therefore, in the generating collection, we can in fact require that $X = \IN$.)
+
+unsatisfied_properties:
+  - property: skeletal
+    proof: Consider $(X, \IN \times \Delta_X)$ and $(Y, \IN \times \Delta_Y)$ for bijective but unequal sets $X, Y$.
+
+  - property: countable copowers
+    proof: If there were an $\aleph_0$-indexed copower of the terminal object, it would be isomorphic to the natural numbers object $N$ by <a href="/category-implication/nno_criterion">this result</a>, and any function $\IN \to \IN$ would induce a morphism $N \to N$. However, every morphism $N \to N$ in fact induces a total recursive function $\IN \to \IN$ on the global sections (in fact, the function on global sections agrees with the witness $t$ of totality for a representative of the equivalence class). We therefore get a contradiction from the fact that not every function $\IN \to \IN$ is recursive.
+
+  - property: essentially small
+    proof: 'There is a fully faithful functor $\Set \to \Eff$ which sends $X$ to $(X, \IN \times \Delta_X)$, and which sends $f : X \to Y$ to the equivalence class of $\IN \times \Gamma_f$ where $\Gamma_f$ is the graph of $f$. Therefore, this functor induces an injection on the isomorphism classes, so if $\Eff$ were essentially small, $\Set$ would also be essentially small, which we know is not the case.'
+
+  - property: locally finite
+    proof: For example, $\Hom(1, N)$ is countably infinite where $N$ is the natural numbers object.
+
+special_objects:
+  initial object:
+    description: $(\varnothing, \varnothing)$
+  terminal object:
+    description: $(\{ * \}, \{ (n, *, *) \mid n \in \IN \})$
+  coproducts:
+    description: The binary coproduct of $(X, E_X)$ and $(Y, E_Y)$ is $X \sqcup Y$ with the PER given by $\{ (2n, x_1, x_2) \in \IN \times X \times X \mid (n, x_1, x_2) \in E_X \} \cup \{ (2n+1, y_1, y_2) \in \IN \times Y \times Y \mid (n, y_1, y_2) \in E_Y \}$.
+  products:
+    description: The binary product of $(X, E_X)$ and $(Y, E_Y)$ is $X \times Y$ with the PER given by $\{ (\langle n, m \rangle, (x_1, y_1), (x_2, y_2)) \mid (n, x_1, x_2) \in E_X \land (m, y_1, y_2) \in E_Y \}$.
+
+special_morphisms:
+  isomorphism:
+    description: For an effective functional relation $f \subseteq \IN \times X \times Y$, the equivalence class of $f$ is an isomorphism if and only if the inverse relation $f^{-1} \subseteq \IN \times Y \times X$ is also an effective functional relation; or equivalently, if $[f]$ is both a monomorphism and an epimorphism (see below).
+    proof: >-
+      The equivalence to $f$ being a monomorphism and an epimorphism follows from the fact that the effective topos is an elementary topos, and therefore balanced.
+
+      ($\Rightarrow$) Most of the conditions for $f^{-1}$ being an effective functional relation are automatic. In establishing the uniqueness of image condition for $f^{-1}$, we use the fact that $f$ is a monomorphism and the description below. Similarly, in establishing the totality condition for $f^{-1}$, we use the fact that $f$ is an epimorphism and the description below.
+
+      Alternately, if $[g]$ is an inverse to $[f]$, so that $f \circ g$ and $g \circ f$ are equivalent to the identities, it is straightforward to show that $f^{-1}$ satisfies the definition of being equivalent to $g$ (ignoring for the moment that we haven't yet established $f^{-1}$ is effective functional), and then use this along with the fact that $g$ is effective functional to show $f^{-1}$ is also effective functional.
+
+      ($\Leftarrow$) The effective topos being an elementary topos and therefore balanced, it is sufficient to show $f$ is a monomorphism and an epimorphism. The fact that $f$ is a monomorphism follows from the uniqueness of image condition for $f^{-1}$ and the description of monomorphisms below. Similarly, the fact that $f$ is an epimorphism follows from the totality condition for $f^{-1}$ and the description of epimorphisms below.
+
+      Alternately, assuming $f^{-1}$ is effective functional, then it is straightforward to show that $f \circ f^{-1}$ and $f^{-1} \circ f$ are equivalent to the identities, so that $[f^{-1}]$ forms an inverse to $[f]$.
+  monomorphism:
+    description: 'For an effective functional relation $f \subseteq \IN \times X \times Y$, the equivalence class of $f$ is a monomorphism if and only if there is a partial recursive function $i : \IN^2 \dashrightarrow \IN$ such that whenever $n \Vdash x_1 \xmapsto{f} y$ and $m \Vdash x_2 \xmapsto{f} y$, then $i(n, m)$ is defined and $i(n, m) \Vdash x_1 \equiv x_2$.'
+    proof: >-
+      ($\Rightarrow$) We can define a kernel pair $E$ of $f$ with underlying set $X\times X$, and partial equivalence relation $\{ (\langle n, m, p, q \rangle, (x_1, x_2), (x_3, x_4)) \mid \exists y\in Y, (n \Vdash x_1 \equiv x_3) \land (m \Vdash x_2 \equiv x_4) \land (p \Vdash x_1 \xmapsto{f} y) \land (q \Vdash x_2 \xmapsto{f} y) \}$. We can also construct $[\pi_1], [\pi_2] : E \rightrightarrows (X, E_X)$ where $\pi_1$ is the effective functional relation $\{ (\langle n, m, p\rangle, (x_1, x_2), x_3) \mid \exists y\in Y, (n \Vdash x_1 \xmapsto{f} y) \land (m \Vdash x_2 \xmapsto{f} y) \land (p \Vdash x_1 \equiv x_3) \}$, and similarly for $\pi_2$ with the last condition replaced with $p \Vdash x_2 \equiv x_3$. We can then check $[f] \circ [\pi_1] = [f] \circ [\pi_2]$. Since $[f]$ is a monomorphism, we conclude $[\pi_1] = [\pi_2]$. Say we have a witness $e_{\pi_1, \pi_2}$ to the equivalence of $\pi_1$ and $\pi_2$.
+
+      Now, suppose we have $n \Vdash x_1 \xmapsto{f} y$ and $m \Vdash x_2 \xmapsto{f} y$. Then
+
+      $$
+      \begin{align*}
+      & n_1 \Vdash (x_1, x_2) \xmapsto{\pi_1} x_1 & n_1 & \coloneqq \langle n, m, d_f(n) \rangle \\
+      \implies & n_2 \Vdash (x_1, x_2) \xmapsto{\pi_2} x_1 & n_2 & \coloneqq e_{\pi_1, \pi_2}(n_1) \\
+      \implies & n_3 \Vdash x_2 \equiv x_1 & n_3 & \coloneqq p_2(n_2) \\
+      \implies & n_4 \Vdash x_1 \equiv x_2 & n_4 & \coloneqq s_X(n_3).
+      \end{align*}
+      $$
+
+      It is now easy to write a program which transforms $(n, m)$ into $n_4$ following the steps in the right column, giving the required $i$.
+
+      ($\Leftarrow$) Essentially, we adapt the proof that an injective function is a monomorphism in $\Set$, and carry along realizers through the proof, verifying in the end that the transformation of realizers is computable. In detail, suppose we have an object $(Z, E_Z)$ and morphisms $[g], [h] : (Z, E_Z) \to (X, E_X)$ such that $[f] \circ [g] = [f] \circ [h]$ with witness $e_{f\circ g, f\circ h}$. Then whenever $n \Vdash z \xmapsto{g} x$, we have
+
+      $$
+      \begin{align*}
+      & n_1 \Vdash x \equiv x & n_1 & \coloneqq c_g(n).
+      \end{align*}
+      $$
+
+      Thus, there exists $y \in Y$ such that
+
+      $$
+      \begin{align*}
+      & n_2 \Vdash x \xmapsto{f} y & n_2 & \coloneqq t_f(n_1) \\
+      \implies & n_3 \Vdash z \xmapsto{f\circ g} y & n_3 & \coloneqq \langle n, n_2 \rangle \\
+      \implies & n_4 \Vdash z \xmapsto{f\circ h} y & n_4 & \coloneqq e_{f\circ g, f\circ h}(n_3).
+      \end{align*}
+      $$
+
+      By the definition of $f \circ h$, there exists $x' \in X$ such that
+
+      $$
+      \begin{align*}
+      & n_5 \Vdash z \xmapsto{h} x', & n_5 & \coloneqq p_1(n_4) \\
+      & n_6 \Vdash x' \xmapsto{f} y & n_6 & \coloneqq p_2(n_4) \\
+      \implies & n_7 \Vdash x' \equiv x & n_7 & \coloneqq i(n_6, n_2) \rangle \\
+      \implies & n_8 \Vdash z \xmapsto{h} x & n_8 & \coloneqq r_h(n_5, d_g(n), n_7).
+      \end{align*}
+      $$
+
+      It is now easy to write a program which transforms $n$ into $n_8$ according to the steps in the right column, giving the required witness $e_{g,h}$ to establish $[g] = [h]$.
+  epimorphism:
+    description: 'For an effective functional relation $f \subseteq \IN \times X \times Y$, the equivalence class of $f$ is an epimorphism if and only if there is a partial recursive function $s : \IN \dashrightarrow \IN$ such that whenever $n \Vdash y \equiv y$, then $s(n)$ is defined and there exists $x \in X$ such that $s(n) \Vdash x \xmapsto{f} y$.'
+    proof: >-
+      ($\Rightarrow$) We will define $Z$ to be $Y \sqcup \{ * \}$ with every member of the image of $f$ identified with $*$; namely,
+
+      $$
+      \begin{align*}
+      E_Z \coloneqq & \{ (0, *, *) \} \cup\\
+      & \{ (4n+1, y_1, y_2) \mid n \Vdash y_1 \equiv y_2 \} \cup\\
+      & \{ (4n+2, y_1, *) \mid \exists x\in X, n \Vdash x \xmapsto{f} y_1 \} \cup\\
+      & \{ (4n+3, *, y_2) \mid \exists x\in X, n \Vdash x \xmapsto{f} y_2 \} \cup\\
+      & \{ (4 \langle n, m \rangle + 4, y_1, y_2) \mid \exists x_1, x_2\in X, (n \Vdash x_1 \xmapsto{f} y_1) \land (m \Vdash x_2 \xmapsto{f} y_2) \}.
+      \end{align*}
+      $$
+
+      We can also define two effective functional relations $g$ and $h$ representing the inclusion map and the constant map with value *, respectively. Namely, $g \coloneqq \{ (n, y, z) \mid n \Vdash y \equiv_Z z \}$ and $h \coloneqq \{ (\langle n, m \rangle, y, z) \mid (n \Vdash y \equiv_Y y) \land (m \Vdash z \equiv_Z *) \}$. We can check that $[g] \circ [f] = [h] \circ [f]$. Therefore, since $[f]$ is an epimorphism, we have $[g] = [h]$. Say we have witness $e_{g,h}$ to the equivalence of $g$ and $h$.
+
+      Now, suppose we have $n \Vdash y \equiv_Y y$. Then
+
+      $$
+      \begin{align*}
+      & n_1 \Vdash y \xmapsto{g} y & n_1 & \coloneqq n \\
+      \implies & n_2 \Vdash y \xmapsto{h} y & n_2 & \coloneqq e_{g,h}(n_1).
+      \end{align*}
+      $$
+
+      We also have
+
+      $$
+      \begin{align*}
+      & n_3 \Vdash y \xmapsto{h} * & n_3 & \coloneqq \langle n, 0 \rangle \\
+      \implies & n_4 \Vdash y \equiv * & n_4 & \coloneqq u(n_2, n_3) \rangle.
+      \end{align*}
+      $$
+
+      In this last statement, the only possibility for $y$ to be identified with $*$ in $Z$ is for $n_4$ to be of the form $4n_5 + 2$, with the existence of $x\in X$ such that
+
+      $$
+      \begin{align*}
+      & n_5 \Vdash x \xmapsto{f} y & n_5 & \coloneqq \frac{n_4-2}{4}.
+      \end{align*}
+      $$
+
+      It is now easy to write a program which transforms $n$ into $n_5$ following the steps in the right column (in case $n_4$ is not of the required form, we can have the program either signal an error, intentionally enter an infinite loop, or proceed with an arbitrary value for $n_5$). This program gives the required $s$.
+
+      ($\Leftarrow$) Essentially, we adapt the proof that a surjective function is an epimorphism in $\Set$, and carry along realizers through the proof, verifying in the end that the transformation of realizers is computable. In detail, suppose we have an object $(Z, E_Z)$ and morphisms $[g], [h] : (Y, E_Y) \to (Z, E_Z)$ such that $[g] \circ [f] = [h] \circ [f]$ with witness $e_{g\circ f, h\circ f}$. Then whenever $n \Vdash y \xmapsto{g} z$, we have
+
+      $$
+      \begin{align*}
+      & n_1 \Vdash y \equiv y & n_1 & \coloneqq d_g(n).
+      \end{align*}
+      $$
+
+      Thus, by assumption there exists $x\in X$ such that
+
+      $$
+      \begin{align*}
+      & n_2 \Vdash x \xmapsto{f} y & n_2 & \coloneqq s(n_1) \\
+      \implies & n_3 \Vdash x \xmapsto{g\circ f} z & n_3 & \coloneqq \langle n_2, n \rangle \\
+      \implies & n_4 \Vdash x \xmapsto{h\circ f} z & n_4 & \coloneqq e_{g\circ f, h\circ h}(n_3).
+      \end{align*}
+      $$
+
+      By definition of $h\circ f$, then, there exists $y' \in Y$ such that
+
+      $$
+      \begin{align*}
+      & n_5 \Vdash x \xmapsto{f} y', & n_5 & \coloneqq p_1(n_4) \\
+      & n_6 \Vdash y' \xmapsto{h} z & n_6 & \coloneqq p_2(n_4) \\
+      \implies & n_7 \Vdash y' \equiv y & n_7 & \coloneqq u_f(n_5, n_2) \\
+      \implies & n_8 \Vdash z \equiv z & n_8 & \coloneqq c_g(n) \\
+      \implies & n_9 \Vdash y \xmapsto{h} z & n_9 & \coloneqq r_h(n_6, n_7, n_8) \rangle.
+      \end{align*}
+      $$
+
+      It is now easy to write a program which transforms $n$ into $n_9$ according to the steps in the right column, giving the required partial recursive function $e_{g,h}$.
