@@ -57,9 +57,6 @@ unsatisfied_properties:
   - property: balanced
     proof: Take a prime ideal $P \subseteq R$ and consider the commutative $R$-algebra $A \coloneqq R/P$ (which is an integral domain). Then the inclusion $A \hookrightarrow Q(A)$ is a counterexample.
 
-  - property: countably codistributive
-    proof: 'The canonical homomorphism $A \otimes_R R^{\IN} \to A^{\IN}$ is given by $a \otimes (r_n)_n \mapsto (r_n a)_n$ and does not have to be surjective: Since $R \neq 0$, there is a commutative $R$-algebra $K$ which is a field. Now take $A \coloneqq K[X]$ and consider the sequence $(X^n)_{n} \in A^{\IN}$.'
-
   - property: semi-strongly connected
     proof: Choose a maximal ideal $\m$ of $R$, so $K \coloneqq R/\m$ is a field. If $\CAlg(R)$ is semi-strongly connected, then also $\CAlg(K)$ is semi-strongly connected. This has been disproven in <a href="https://math.stackexchange.com/questions/5129689">MSE/5129689</a>.
 
@@ -82,6 +79,17 @@ unsatisfied_properties:
       \cdots @>>> K[X]/\langle X^3 \rangle @>>> K[X]/\langle X^2 \rangle @>>> K[X]/\langle X \rangle
       \end{CD}$$
       In the limit, it induces the inclusion $K[X] \hookrightarrow K[[X]]$, where $K[[X]]$ is the algebra of formal power series over $K$. It is clearly not surjective, but this is not sufficient; we need to argue that it is not an epimorphism in $\CAlg(R)$, or equivalently, in $\CRing$. For a proof, see <a href="https://math.stackexchange.com/questions/2391187">MSE/2391187</a>.
+
+  - property: coparametrized conatural numbers object
+    proof: >-
+      By the dual of Lemma 4 <a href="/content/natural_numbers_objects">here</a>, it suffices to show that the canonical homomorphism $\delta : A \otimes_R R^{\IN} \to A^{\IN}$ given by $a \otimes (r_n)_n \mapsto (r_n a)_n$ is not necessarily an isomorphism (which will show in particular that $\CAlg(R)$ is not countably codistributive). Since $R \neq 0$, there is a commutative $R$-algebra $K$ which is a field. Now let $A$ be any commutative $K$-algebra which is infinite-dimensional as a $K$-vector space, for example $A = K[X]$. We claim that the image of $\delta$ is contained in the union of the subsets $V^{\IN} \subseteq A^{\IN}$, where $V$ runs through the finite-dimensional $K$-linear subspaces of $A$. This implies that $\delta$ is not surjective: choose a sequence $(a_n)_n \in A^{\IN}$ of linearly independent elements, for example $a_n \coloneqq X^n$ in $K[X]$. If $(a_n)_n \in V^{\IN}$ for some $K$-linear subspace $V \subseteq A$, then $V$ contains infinitely many linearly independent elements, so $V$ is not finite-dimensional.
+
+      To prove the claim, note that the definition of $\delta$ makes sense for every $R$-module $M$ and gives an $R$-linear map $\delta_M : M \otimes_R R^{\IN} \to M^{\IN}$ which is natural in $M$, with $\delta = \delta_A$. Every element of $A \otimes_R R^{\IN}$ is a finite sum of elementary tensors $b \otimes (r_n)_n$, hence lies in the image of $V \otimes_R R^{\IN} \to A \otimes_R R^{\IN}$, where $V \subseteq A$ is the $K$-linear subspace spanned by the finitely many elements $b \in A$ occurring in the sum. It is finite-dimensional, and it is an $R$-submodule since $R$ acts on $A$ via the structure homomorphism $R \to K$. The claim now follows from the commutative diagram
+      $$\begin{CD}
+      V \otimes_R R^{\IN} @>{\delta_V}>> V^{\IN} \\
+      @VVV @VVV \\
+      A \otimes_R R^{\IN} @>>{\delta_A}> A^{\IN}.
+      \end{CD}$$
 
   - property: cototal
     # TODO: refactor this once we add "hypercocomplete"

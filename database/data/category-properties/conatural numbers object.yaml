@@ -1,0 +1,20 @@
+id: conatural numbers object
+relation: has a
+description: >-
+  A <i>conatural numbers object</i> in a category with an initial object is a natural numbers object in the opposite category. This is not standard terminology and should not be confused with the <a href="https://www.cl.cam.ac.uk/archive/mjcg/plans/Coinduction.pdf">set of conatural numbers</a> studied in computer science, which dualizes natural numbers in a different way. Explicitly, if $0$ denotes the initial object, a conatural numbers object is a triple
+  $$(N,\, z : N \to 0,\, s : N \to N)$$
+  satisfying the following universal property: for all $a : X \to 0$, $g : X \to X$ there is a unique $\Phi : X \to N$ such that $z \circ \Phi = a$ and $s \circ \Phi = \Phi \circ g$.
+
+  By the proof of <a href="/category-implication/dual_nno_criterion">this result</a>, if countable powers exist, the object $\prod_{n \in \IN} 0$ carries the structure of a conatural numbers object, which simplifies to $0$ in many categories. This is why this notion is not very interesting.
+nlab_link: null
+dual: natural numbers object
+invariant_under_equivalences: true
+
+related:
+  - coparametrized conatural numbers object
+  - elementary cotopos
+  - initial object
+
+tags:
+  - topos theory
+  - object behavior

@@ -7,7 +7,7 @@ description: >-
 
   This concept is an abstraction of the set of natural numbers, which indeed provides a natural numbers object for the category of sets. There is also a <a href="/category-property/parametrized_natural_numbers_object">parametrized version</a>, which is more useful in categories that are not cartesian closed. Also, <a href="/category-implication/nno_criterion">this result</a> indicates that "too many" categories have a natural numbers object.
 nlab_link: https://ncatlab.org/nlab/show/natural+numbers+object
-dual: null
+dual: conatural numbers object
 invariant_under_equivalences: true
 
 keywords:
