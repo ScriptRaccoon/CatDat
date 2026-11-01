@@ -6,8 +6,11 @@ dual: filtered
 invariant_under_equivalences: true
 
 related:
+  - ℵ₁-cofiltered
   - cofiltered limits
+  - complete
   - finitely complete
+  - cosifted
 
 tags:
   - morphism behavior
