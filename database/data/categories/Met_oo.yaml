@@ -23,8 +23,28 @@ satisfied_properties:
   - property: semi-strongly connected
     proof: Every non-empty metric space is weakly terminal (by using constant maps).
 
-  - property: locally ℵ₁-presentable
-    proof: See <a href="https://arxiv.org/abs/1504.02660">Lieberman–Rosický</a>, Example 4.5.
+  # TODO: add the category PMet_oo of extended pseudo-metric spaces, and simplify this proof
+  - property: cocomplete
+    proof: >-
+      Let $D : \I \to \Met_\infty$ be a small diagram with $D(i) = (X_i,d_i)$, and let $(u_i : X_i \to C)_{i \in \I}$ be the colimit of the underlying sets. We call an extended pseudo-metric $\delta$ on $C$ <i>admissible</i> if $\delta(u_i(x),u_i(y)) \leq d_i(x,y)$ for all $i \in \I$ and $x,y \in X_i$. The zero pseudo-metric is admissible, and the pointwise supremum of admissible extended pseudo-metrics is again an admissible extended pseudo-metric. This is where we need the value $\infty$. Hence, there is a largest admissible extended pseudo-metric $\rho$ on $C$. Let $q : C \to C'$ be the quotient map onto $C' \coloneqq C/{\sim}$, where $c \sim c' \iff \rho(c,c') = 0$. By the triangle inequality, there is a well-defined extended metric $d'$ on $C'$ with $d'(q(c),q(c')) \coloneqq \rho(c,c')$. Since $\rho$ is admissible, the maps $q \circ u_i : (X_i,d_i) \to (C',d')$ are non-expansive, and they form a cocone.
+
+      We claim that this cocone is a colimit of $D$. Let $(g_i : (X_i,d_i) \to (Z,d_Z))_{i \in \I}$ be a cocone in $\Met_\infty$, and let $h : C \to Z$ be the unique map with $h \circ u_i = g_i$ for all $i \in \I$. The extended pseudo-metric $\delta(c,c') \coloneqq d_Z(h(c),h(c'))$ on $C$ is admissible, since
+      $$\delta(u_i(x),u_i(y)) = d_Z(g_i(x),g_i(y)) \leq d_i(x,y).$$
+      Hence, $d_Z(h(c),h(c')) \leq \rho(c,c')$ for all $c,c' \in C$. Since $d_Z$ is an extended metric, this shows that $h$ maps equivalent elements to the same element, so that $h = k \circ q$ for a unique map $k : C' \to Z$. The inequality also shows that $k : (C',d') \to (Z,d_Z)$ is non-expansive, and it satisfies $k \circ q \circ u_i = g_i$ for all $i \in \I$. It is unique: if $k' : C' \to Z$ is another such map, then $k' \circ q \circ u_i = g_i$ for all $i \in \I$, so $k' \circ q = h$ by the universal property of $C$, and hence $k' = k$ since $q$ is surjective.
+
+      Conceptually, this proof shows that the category of extended pseudo-metric spaces is cocomplete, the colimit of $D$ being $(C,\rho)$, and that $\Met_\infty$ is a reflective subcategory of it, the reflection of an extended pseudo-metric space being its quotient by the relation of having distance zero. A reflective subcategory of a cocomplete category is cocomplete.
+    label: Met_oo_cocomplete
+    check_redundancy: false
+
+  - property: ℵ₁-accessible
+    proof: >-
+      Let $D : \I \to \Met_\infty$ be a filtered diagram, and let $X_i$, $d_i$, $C$, $u_i$, and $\rho$ be as in the construction of colimits above. Then $\rho(c,c')$ is the infimum of all $d_i(x,y)$, where $i \in \I$ and $x,y \in X_i$ satisfy $u_i(x) = c$ and $u_i(y) = c'$. Indeed, since $\I$ is filtered, this infimum defines an extended pseudo-metric on $C$. It is admissible, and every admissible extended pseudo-metric is bounded by it. Thus, filtered colimits are constructed as for <a href="/category/PMet">$\PMet$</a>, followed by the identification of points at distance zero, as for <a href="/category/Met">$\Met$</a>. Therefore, the proofs of $\aleph_1$-accessibility for $\PMet$ and $\Met$ work verbatim for extended metric spaces. They never use that distances are finite; when $d(x,y) = \infty$, the estimate $d(x_i,y_i) \leq d(x,y) + 1/n$ in the proof for $\PMet$ holds for all preimages.
+
+      Alternatively, <a href="https://arxiv.org/abs/1504.02660">Lieberman–Rosický</a>, Examples 4.5 (3), show that $\Met_\infty$ is even locally $\aleph_1$-presentable by identifying it with the category of models of a universal Horn theory in $L_{\omega_1,\omega}$. This proof is more abstract and does not identify the $\aleph_1$-presentable objects, whereas the proof above shows that every countable extended metric space is $\aleph_1$-presentable.
+    references:
+      - Met_oo_cocomplete
+      - PMet_aleph1_accessible
+      - Met_aleph1_accessible
 
   - property: cartesian filtered colimits
     proof: We can use the same proof as for <a href="/category/Met">$\Met$</a> since the equation $\inf_i \max(r, s_i) = \max(r, \inf_i s_i)$ also holds for $r, s_i \in \IR \cup \{\infty\}$.
