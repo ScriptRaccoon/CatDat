@@ -142,6 +142,16 @@ unsatisfied_properties:
     references:
       - Met_not_coaccessible
 
+  - property: finitely accessible
+    proof: >-
+      We show that a pseudo-metric space is finitely presentable if and only if it has at most one point. Then $\PMet$ is not finitely accessible: since the underlying set of a filtered colimit is the filtered colimit of the underlying sets, a filtered colimit of pseudo-metric spaces with at most one point has at most one point as well.
+
+      The empty space is finitely presentable since it is initial. The one-point space is finitely presentable since it represents the forgetful functor $\PMet \to \Set$, which preserves filtered colimits by their construction above.
+
+      Conversely, let $(A,d_A)$ be a pseudo-metric space with at least two points. For $n \geq 1$, let $d_n$ be the pseudo-metric on $A$ defined by $d_n(x,y) \coloneqq d_A(x,y) + 1/n$ for $x \neq y$ and $d_n(x,x) \coloneqq 0$. The identity maps $(A,d_n) \to (A,d_{n+1})$ are non-expansive. By the construction of filtered colimits above, the colimit of this sequence is $(A,d_A)$ with the identity maps $(A,d_n) \to (A,d_A)$ as colimit maps, since $\inf_n d_n(x,y) = d_A(x,y)$ for all $x,y \in A$. If $(A,d_A)$ were finitely presentable, the identity of $(A,d_A)$ would factor through some $(A,d_n)$. That is, there would be a non-expansive map $f : (A,d_A) \to (A,d_n)$ whose composite with the identity map $(A,d_n) \to (A,d_A)$ is the identity. Then $f$ is the identity map, so that $d_A(x,y) + 1/n = d_n(x,y) \leq d_A(x,y)$ for distinct $x,y \in A$, which is a contradiction.
+
+      In <a href="/category/Met">$\Met$</a>, the situation is different: by <a href="https://doi.org/10.1016/j.jpaa.2021.106974">Adámek–Rosický</a>, Rem. 2.7, the empty space is the only finitely presentable object, so that even the one-point space is not finitely presentable. Their argument fails injectivity instead of surjectivity: the colimit in $\Met$ of the sequence of two-point spaces with distance $1/n$ (and identity maps) is a one-point space, so two distinct constant maps from a non-empty metric space to the first two-point space become equal in the colimit, but not at any finite stage. This does not carry over to $\PMet$, where the colimit of this sequence is a two-point space with distance $0$.
+
 special_objects:
   initial object:
     description: empty pseudo-metric space
