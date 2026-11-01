@@ -45,8 +45,14 @@ satisfied_properties:
   - property: locally cartesian closed
     proof: If $X$ is a finite set, the slice category $\FI / X$ is equivalent to the poset of subsets of $X$. This is cartesian closed because $A \cap B \subseteq C$ holds if and only if $B \subseteq (X \setminus A) \cup C$, where $A,B,C \subseteq X$.
 
+  - property: dual generalized variety
+    proof: 'Let $D : \I \to \FI$ be a cosifted diagram. Since $\IN$ is well-ordered and $\I$ is non-empty, the set $\{\card(D(i)) : i \in \I\} \subseteq \IN$ has a minimal element, say $\card(D(i_0))$. For every morphism $i \to i_0$ in $\I$, the map of finite sets $D(i) \to D(i_0)$ is an isomorphism since it is injective and $\card(D(i_0)) \leq \card(D(i))$. Thus, the diagram $D^{\op} : \I^{\op} \to \FI^{\op}$ is eventually constant in the sense of <a href="/content/sifted-colimits-in-groupoids">this page</a>. By the dual of Corollary 3 there, $\FI$ is a dual generalized variety.'
+    label: FI_cosifted_diagrams
+
   - property: finitely coaccessible
-    proof: 'By the dual of Corollary 4 <a href="/content/sifted-colimits-in-groupoids">here</a>, it suffices to show that every cosifted diagram is eventually constant. Let $D : \I \to \FI$ be a cosifted diagram. Since $\IN$ is well-ordered and $\I$ is non-empty, the set $\{\card(D(i)) : i \in \I\} \subseteq \IN$ has a minimal element, say $\card(D(i_0))$. For every morphism $i \to i_0$, the map of finite sets $D(i) \to D(i_0)$ is an isomorphism since it is injective and $\card(D(i_0)) \leq \card(D(i))$.'
+    proof: 'In the previous proof we have seen that for every cosifted diagram $D : \I \to \FI$ the diagram $D^{\op} : \I^{\op} \to \FI^{\op}$ is eventually constant. By the dual of Corollary 4 <a href="/content/sifted-colimits-in-groupoids">here</a>, $\FI$ is finitely coaccessible.'
+    references:
+      - FI_cosifted_diagrams
 
 unsatisfied_properties:
   - property: small
