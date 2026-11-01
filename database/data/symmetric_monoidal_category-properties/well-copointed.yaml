@@ -1,0 +1,10 @@
+id: well-copointed
+relation: is
+description: 'A symmetric monoidal category $(\C,\otimes,1)$ is called <i>well-copointed</i> if the monoidal unit $1$ is a cogenerator. Equivalently, the functor $\Hom(-,1) : \C^{\op} \to \Set^+$ is faithful.'
+nlab_link: null
+invariant_under_equivalences: true
+dual: well-pointed
+related: []
+
+tags:
+  - misc

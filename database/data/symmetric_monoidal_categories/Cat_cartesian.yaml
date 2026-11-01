@@ -23,3 +23,7 @@ unsatisfied_properties:
 
   - property: well-pointed
     proof: 'The terminal category is not a generator of $\Cat$ as it represents the functor $\Ob : \Cat \to \Set$, which is not faithful: A functor is not fully determined by its action on objects.'
+
+  - property: well-copointed
+    # TODO: automate this with category_conclusions
+    proof: The monoidal unit $\1$ is a terminal object, so that $\Hom(-,\1)$ is constant with value a singleton. It is not faithful since $\Cat$ is not thin.

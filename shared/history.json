@@ -887,6 +887,10 @@
 		{
 			"type": "category",
 			"id": "Ab_op"
+		},
+		{
+			"type": "symmetric_monoidal_category",
+			"id": "Vect_tensor"
 		}
 	],
 	"properties": [
@@ -2049,6 +2053,10 @@
 		{
 			"type": "category",
 			"id": "dually multi-algebraic"
+		},
+		{
+			"type": "symmetric_monoidal_category",
+			"id": "well-copointed"
 		}
 	]
 }

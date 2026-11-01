@@ -42,3 +42,8 @@ unsatisfied_properties:
   - property: infinitary codistributive
     # TODO: automate this with category_conclusions
     proof: This is because <a href="/category/Ab_fg">$\Ab_{\fg}$</a> does not have products.
+
+  - property: well-copointed
+    proof: The same counterexample as for <a href="/symmetric_monoidal_category/Ab_tensor">$(\Ab,\otimes,\IZ)$</a> works here.
+    references:
+      - Ab_tensor_not_well-copointed
