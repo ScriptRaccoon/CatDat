@@ -6,6 +6,11 @@ import { type StructureType } from '#shared/config.ts'
  */
 export const DATA_FOLDER = path.resolve('database', 'data')
 
+/**
+ * Folder containing the configuration and expected data of the tests.
+ */
+export const TEST_DATA_FOLDER = path.resolve('database', 'test-data')
+
 const STRUCTURE_FOLDERS: Record<StructureType, string> = {
 	category: 'categories',
 	functor: 'functors',
@@ -23,4 +28,12 @@ export function get_data_folders(type: StructureType) {
 		properties: path.join(DATA_FOLDER, `${type}-properties`),
 		implications: path.join(DATA_FOLDER, `${type}-implications`)
 	}
+}
+
+/**
+ * Returns the folder with the JSON files of the expected properties
+ * of selected structures of a given type.
+ */
+export function get_expected_data_folder(type: StructureType) {
+	return path.join(TEST_DATA_FOLDER, 'expected', STRUCTURE_FOLDERS[type])
 }

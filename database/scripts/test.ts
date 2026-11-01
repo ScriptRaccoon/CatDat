@@ -4,17 +4,6 @@
  * If not, an error is thrown, which must be fixed.
  */
 
-import Set_expected from './expected-data/Set.json'
-import Ab_expected from './expected-data/Ab.json'
-import Top_expected from './expected-data/Top.json'
-import FinSet_expected from './expected-data/FinSet.json'
-import walking_morphism_expected from './expected-data/walking_morphism.json'
-import N_expected from './expected-data/N.json'
-import forget_vector_expected from './expected-data/forget_vector.json'
-import decided_categories from './decided-structures/decided-categories.json'
-import decided_functors from './decided-structures/decided-functors.json'
-import decided_morphisms from './decided-structures/decided-morphisms.json'
-import decided_symmetric_monoidal_categories from './decided-structures/decided-symmetric-monoidal-categories.json'
 import { history } from '#shared/history.ts'
 import { capitalize, devlog, remove_underscores } from '#shared/utils.ts'
 import { get_client } from '#shared/db.ts'
@@ -27,38 +16,27 @@ import {
 } from '#shared/property.utils.ts'
 import { test_no_redundant_assignments } from './utils/redundant-assignments'
 import { test_no_redundant_implications } from './utils/redundant-implications'
+import test_config from '../test-data/config.json'
+import { get_expected_data_folder } from './utils/folders'
 
 const db = get_client({ readonly: true })
 
 /**
- * Selected structures whose properties must match exactly
- * the respective JSON files in the subfolder "expected-data".
+ * Test configuration for a structure type, see database/test-data/config.json.
  */
-const EXPECTED_PROPERTIES = {
-	category: {
-		Set: Set_expected,
-		Ab: Ab_expected,
-		Top: Top_expected,
-		FinSet: FinSet_expected,
-		walking_morphism: walking_morphism_expected,
-		N: N_expected
-	},
-	functor: {
-		forget_vector: forget_vector_expected
-	}
-} satisfies Partial<Record<StructureType, Record<string, ExpectedProperties>>>
-
-/**
- * Properties that have no dual. Every other property must have one.
- */
-const PROPERTIES_WITHOUT_DUAL: Partial<Record<StructureType, string[]>> = {
-	functor: ['representable']
+type TestConfig = {
+	/** Structures that must satisfy every property (positivity). */
+	positive_structures: string[]
+	/**
+	 * Structures for which every property must be decided.
+	 * A new property must be decided at least for these structures.
+	 */
+	decided_structures: string[]
+	/** Properties that have no dual. Every other property must have one. */
+	properties_without_dual: string[]
 }
 
-type ExpectedProperties = {
-	satisfied: string[]
-	unsatisfied: string[]
-}
+const TEST_CONFIG: Record<StructureType, TestConfig> = test_config
 
 execute_tests()
 
@@ -75,38 +53,14 @@ function execute_tests() {
 		devlog('\n--- Test history ---')
 		test_history_entries_exist()
 
-		devlog('\n--- Test categories ---')
+		for (const type of STRUCTURE_TYPES) {
+			test_structure_type(type)
+		}
 
-		test_mutual_structure_duals('category')
-		test_positivity('1', 'category')
-		test_property_duals('category')
-		test_decided_structures(decided_categories, 'category')
-		test_properties_of_selected_structures(EXPECTED_PROPERTIES.category, 'category')
-
-		devlog('\n--- Test functors ---')
-
-		test_positivity('id_Set', 'functor')
-		test_property_duals('functor')
-		test_decided_structures(decided_functors, 'functor')
-		test_properties_of_selected_structures(EXPECTED_PROPERTIES.functor, 'functor')
+		devlog('\n--- Test adjoint functors ---')
 		test_adjoint_functor_relationships()
 
-		devlog('\n--- Test morphisms ---')
-
-		test_property_duals('morphism')
-		test_decided_structures(decided_morphisms, 'morphism')
-
-		devlog('\n--- Test symmetric monoidal categories ---')
-
-		test_positivity('1_tensor', 'symmetric_monoidal_category')
-		test_property_duals('symmetric_monoidal_category')
-		test_decided_structures(
-			decided_symmetric_monoidal_categories,
-			'symmetric_monoidal_category'
-		)
-
 		devlog('\n--- Test redundancies ---')
-
 		test_no_redundant_implications(db)
 		test_no_redundant_assignments(db)
 	} catch (err) {
@@ -120,18 +74,40 @@ function execute_tests() {
 }
 
 /**
+ * Runs all tests that apply to every structure type.
+ */
+function test_structure_type(type: StructureType) {
+	const config = TEST_CONFIG[type]
+
+	devlog(`\n--- Test ${PLURALS[type]} ---`)
+
+	test_mutual_structure_duals(type)
+
+	for (const structure_id of config.positive_structures) {
+		test_positivity(structure_id, type)
+	}
+
+	test_property_duals(type, config.properties_without_dual)
+	test_decided_structures(type, config.decided_structures)
+	test_properties_of_selected_structures(type)
+}
+
+/**
  * Tests for all structures of a given type C,D that if
  * C is dual to D, then D is dual to C.
  */
 function test_mutual_structure_duals(type: StructureType) {
-	const dict: Record<string, string | null> = {}
+	const dict: Record<string, string> = {}
 
 	const structures_with_duals = db
-		.prepare<[StructureType], { id: string; dual: string | null }>(
+		.prepare<[StructureType], { id: string; dual: string }>(
 			`SELECT id, dual_structure_id AS dual
-			FROM structures WHERE type = ?`
+			FROM structures
+			WHERE type = ? AND dual_structure_id IS NOT NULL`
 		)
 		.all(type)
+
+	if (structures_with_duals.length === 0) return
 
 	for (const { id, dual } of structures_with_duals) {
 		dict[id] = dual
@@ -139,7 +115,7 @@ function test_mutual_structure_duals(type: StructureType) {
 
 	for (const id in dict) {
 		const dual = dict[id]
-		if (dual && dict[dual] !== id) {
+		if (dict[dual] !== id) {
 			throw new Error(
 				`❌ Found non-mutual ${remove_underscores(type)} duality: ${id}, ${dual}`
 			)
@@ -175,12 +151,11 @@ function test_positivity(structure_id: string, type: StructureType) {
 
 /**
  * Tests that every property of a given type has a dual
- * (except those in PROPERTIES_WITHOUT_DUAL), and that
+ * (except the specified exceptions), and that
  * for all properties p,q, if p is dual to q, then q is dual to p.
  */
-function test_property_duals(type: StructureType) {
+function test_property_duals(type: StructureType, exceptions: string[]) {
 	const dict: Record<string, string | null> = {}
-	const exceptions = PROPERTIES_WITHOUT_DUAL[type] ?? []
 
 	const properties = db
 		.prepare<[StructureType], { id: string; dual_property_id: string | null }>(
@@ -195,14 +170,17 @@ function test_property_duals(type: StructureType) {
 	for (const id in dict) {
 		const dual = dict[id]
 		const is_exception = exceptions.includes(id)
+
 		if (!dual && !is_exception) {
 			throw new Error(`❌ Found property without dual: ${id}`)
 		}
+
 		if (dual && is_exception) {
 			throw new Error(
-				`❌ Found property with dual in PROPERTIES_WITHOUT_DUAL: ${id}`
+				`❌ Found property with dual in properties_without_dual: ${id}`
 			)
 		}
+
 		if (dual && dict[dual] !== id) {
 			throw new Error(`❌ Found non-mutual property duality: ${id}, ${dual}`)
 		}
@@ -249,7 +227,7 @@ function test_history_entries_exist() {
  * Tests that for a specified list of structures all properties have
  * been decided. If this test fails, property assignments or implications are missing.
  */
-function test_decided_structures(structure_ids: string[], type: StructureType) {
+function test_decided_structures(type: StructureType, structure_ids: string[]) {
 	const unknown_query = db
 		.prepare<[StructureType, StructureType, string], string>(
 			`SELECT p.id FROM properties p WHERE type = ? AND NOT EXISTS
@@ -276,13 +254,16 @@ function test_decided_structures(structure_ids: string[], type: StructureType) {
 /**
  * Tests if selected structures behave as expected:
  * All of their properties in the database have to match those in the
- * respective JSON files in the subfolder "expected-data".
+ * respective JSON files in database/test-data/expected.
  * We exclude undecidable properties here.
  */
-function test_properties_of_selected_structures(
-	expected: Record<string, ExpectedProperties>,
-	type: StructureType
-) {
+function test_properties_of_selected_structures(type: StructureType) {
+	const structure_query = db
+		.prepare<[StructureType, string], string>(
+			`SELECT id FROM structures WHERE type = ? AND id = ?`
+		)
+		.pluck()
+
 	const property_query = db.prepare<
 		[StructureType, string],
 		{ property_id: string; is_satisfied: 0 | 1 }
@@ -291,10 +272,26 @@ function test_properties_of_selected_structures(
 		WHERE type = ? AND structure_id = ? AND is_satisfied IS NOT NULL`
 	)
 
-	for (const structure_id in expected) {
+	const folder = get_expected_data_folder(type)
+	const files = fs.readdirSync(folder).filter((file) => file.endsWith('.json'))
+
+	for (const file of files) {
+		const structure_id = path.basename(file, '.json')
+
+		if (!structure_query.get(type, structure_id)) {
+			throw new Error(
+				`❌ Found expected properties of unknown ${remove_underscores(type)}: ${structure_id}`
+			)
+		}
+
+		const content = fs.readFileSync(path.join(folder, file), 'utf8')
+		const expected = JSON.parse(content) as {
+			satisfied: string[]
+			unsatisfied: string[]
+		}
 		const properties = property_query.all(type, structure_id)
-		const satisfied = new Set(expected[structure_id].satisfied)
-		const unsatisfied = new Set(expected[structure_id].unsatisfied)
+		const satisfied = new Set(expected.satisfied)
+		const unsatisfied = new Set(expected.unsatisfied)
 
 		for (const { property_id, is_satisfied } of properties) {
 			const ok = is_satisfied

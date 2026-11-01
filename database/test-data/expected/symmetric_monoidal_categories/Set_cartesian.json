@@ -1,0 +1,23 @@
+{
+	"satisfied": [
+		"cartesian",
+		"closed",
+		"cocomplete",
+		"distributive",
+		"finitely cocomplete",
+		"infinitary distributive",
+		"well-pointed"
+	],
+	"unsatisfied": [
+		"cocartesian",
+		"coclosed",
+		"codistributive",
+		"complete",
+		"finitely complete",
+		"infinitary codistributive",
+		"self-dual",
+		"strict",
+		"trivial",
+		"well-copointed"
+	]
+}
