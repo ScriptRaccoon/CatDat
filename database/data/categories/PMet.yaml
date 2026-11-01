@@ -151,6 +151,17 @@ unsatisfied_properties:
       Conversely, let $(A,d_A)$ be a pseudo-metric space with at least two points. For $n \geq 1$, let $d_n$ be the pseudo-metric on $A$ defined by $d_n(x,y) \coloneqq d_A(x,y) + 1/n$ for $x \neq y$ and $d_n(x,x) \coloneqq 0$. The identity maps $(A,d_n) \to (A,d_{n+1})$ are non-expansive. By the construction of filtered colimits above, the colimit of this sequence is $(A,d_A)$ with the identity maps $(A,d_n) \to (A,d_A)$ as colimit maps, since $\inf_n d_n(x,y) = d_A(x,y)$ for all $x,y \in A$. If $(A,d_A)$ were finitely presentable, the identity of $(A,d_A)$ would factor through some $(A,d_n)$. That is, there would be a non-expansive map $f : (A,d_A) \to (A,d_n)$ whose composite with the identity map $(A,d_n) \to (A,d_A)$ is the identity. Then $f$ is the identity map, so that $d_A(x,y) + 1/n = d_n(x,y) \leq d_A(x,y)$ for distinct $x,y \in A$, which is a contradiction.
 
       In <a href="/category/Met">$\Met$</a>, the situation is different: by <a href="https://doi.org/10.1016/j.jpaa.2021.106974">Adámek–Rosický</a>, Rem. 2.7, the empty space is the only finitely presentable object, so that even the one-point space is not finitely presentable. Their argument fails injectivity instead of surjectivity: the colimit in $\Met$ of the sequence of two-point spaces with distance $1/n$ (and identity maps) is a one-point space, so two distinct constant maps from a non-empty metric space to the first two-point space become equal in the colimit, but not at any finite stage. This does not carry over to $\PMet$, where the colimit of this sequence is a two-point space with distance $0$.
+    label: PMet_finitely_presentable_objects
+
+  - property: generalized variety
+    proof: >-
+      Assume that $\PMet$ is a generalized variety. Every strongly finitely presentable object is finitely presentable, since filtered colimits are sifted. Hence, by the proof that $\PMet$ is not finitely accessible, every strongly finitely presentable object is empty or a one-point space. By <a href="http://www.tac.mta.ca/tac/volumes/8/n3/8-03abs.html">Adámek–Rosický</a>, Lemma 3.8, the strongly finitely presentable objects form a dense full subcategory. Thus, the full subcategory $G$ on the objects $\varnothing$ and $\{\ast\}$ is dense as well, since every strongly finitely presentable object is isomorphic to an object of $G$. This means that the restricted Yoneda functor
+      $$E : \PMet \to [G^{\op},\Set], \quad E(X) \coloneqq \Hom(-,X)|_G$$
+      is fully faithful, and hence reflects isomorphisms.
+
+      The category $G$ has a single non-identity morphism $\varnothing \to \{\ast\}$. Hence, presheaves on $G$ are maps of sets $F(\{\ast\}) \to F(\varnothing)$, and $E$ maps $X$ to the unique map $U(X) \to \{\ast\}$, where $U : \PMet \to \Set$ is the forgetful functor. In particular, $E$ factors through $U$. But $U$ does not reflect isomorphisms: if $d$ is the metric on $\{0,1\}$ with $d(0,1) = 1$, then the identity map $(\{0,1\},d) \to (\{0,1\},0)$ is not an isomorphism, although $U$ maps it to an isomorphism.
+    references:
+      - PMet_finitely_presentable_objects
 
 special_objects:
   initial object:
