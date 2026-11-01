@@ -1,1 +1,0 @@
-The JSON files in this folder specify precisely which properties are satisfied and which are unsatisfied by a small selection of categories or functors, as two arrays `satisfied` and `unsatisfied`. If a new property is added to the database, make sure to add it to the correct array here.

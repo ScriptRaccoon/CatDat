@@ -81,10 +81,10 @@ While `pnpm dev` is running, the browser reloads automatically after `pnpm db:up
 The `pnpm db:test` command runs several tests to ensure the data behaves as expected and maintains good quality:
 
 1. Every property has a dual property (except for a small whitelist), and properties and their duals are mutual.
-2. Categories and their duals are mutual.
+2. Structures and their duals are mutual.
 3. A selection of trivial structures has no unsatisfied properties, i.e. all properties are positive (see the guidelines below).
-4. For a selection of structures of each type, all properties have been decided (see the JSON files in the [/database/scripts/decided-structures](/database/scripts/decided-structures/) folder).
-5. For a selection of structures, every property matches precisely the expected properties defined in the [/database/scripts/expected-data](/database/scripts/expected-data/) folder.
+4. For a selection of structures of each type, all properties have been decided (see `decided_structures` in [config.json](/database/test-data/config.json)).
+5. For a selection of structures, every property matches precisely the expected properties defined in the [/database/test-data/expected](/database/test-data/expected/) folder.
 6. Adjoint functors are recorded on both sides (left and right adjoint), and their domains and codomains match.
 7. All links in proofs point to existing structures, properties, implications, and content pages.
 8. Every entry of the history file [history.json](/shared/history.json) exists. When you rename a structure or property, rename it in the history file as well (new entries are added automatically by `pnpm db:seed`).

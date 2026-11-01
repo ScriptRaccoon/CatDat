@@ -1,0 +1,69 @@
+{
+	"category": {
+		"decided_structures": [
+			"0",
+			"1",
+			"2",
+			"Ab",
+			"Ab_op",
+			"BG",
+			"BG_c",
+			"BG_f",
+			"BG_u",
+			"Bin",
+			"CMon",
+			"CRing",
+			"Delta",
+			"FinSet",
+			"FinVect",
+			"FinVect_c",
+			"FinVect_f",
+			"FinVect_u",
+			"Grp",
+			"M-Set",
+			"Mon",
+			"N",
+			"Pos",
+			"R-Mod",
+			"R-Mod_div",
+			"R-Mod_non_ss",
+			"Ring",
+			"Set",
+			"Set_*",
+			"Set_disc",
+			"Set_op",
+			"SetxSet",
+			"sSet",
+			"Top",
+			"Top_*",
+			"Top_op",
+			"Vect",
+			"walking_morphism",
+			"walking_pair"
+		],
+		"positive_structures": ["1"],
+		"properties_without_dual": []
+	},
+	"functor": {
+		"decided_structures": [
+			"binary_product_sets",
+			"diagonal_sets",
+			"forget_group",
+			"forget_topology",
+			"forget_vector",
+			"id_Set"
+		],
+		"positive_structures": ["id_Set"],
+		"properties_without_dual": ["representable"]
+	},
+	"morphism": {
+		"decided_structures": ["empty-map", "id_G", "id_X", "terminal-map"],
+		"positive_structures": [],
+		"properties_without_dual": []
+	},
+	"symmetric_monoidal_category": {
+		"decided_structures": ["Ab_tensor", "N+", "Set_cartesian", "Vect_tensor"],
+		"positive_structures": ["1_tensor"],
+		"properties_without_dual": []
+	}
+}

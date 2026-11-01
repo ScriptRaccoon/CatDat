@@ -1,0 +1,26 @@
+{
+	"satisfied": [
+		"effective epimorphism",
+		"epimorphism",
+		"extremal epimorphism",
+		"normal epimorphism",
+		"regular epimorphism",
+		"strict epimorphism",
+		"strong epimorphism"
+	],
+	"unsatisfied": [
+		"coconstant",
+		"constant",
+		"effective monomorphism",
+		"extremal monomorphism",
+		"isomorphism",
+		"monomorphism",
+		"normal monomorphism",
+		"regular monomorphism",
+		"split epimorphism",
+		"split monomorphism",
+		"strict monomorphism",
+		"strong monomorphism",
+		"zero morphism"
+	]
+}

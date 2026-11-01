@@ -76,10 +76,10 @@ Repeat until no unknown properties (and, for categories, no open special morphis
 7. **Run `pnpm db:update` after every single proof**, so that new properties are deduced before the next pick. Then continue with step 1; deduction often decides many further properties at once. The last test of `db:test` reports redundant assignments; those of the target structure are handled in the redundancy phase, so continue despite them.
     - If seeding fails, fix the YAML syntax or schema error.
     - If deduction reports a **contradiction**, the new claim conflicts with the existing data. Remove the new entry, re-examine the argument, and re-run `pnpm db:update`. If you remain convinced the new claim is right, leave it out and report the suspected inconsistency (with the conflicting implications or assignments) to the user instead of changing other files.
-    - If `db:test` fails because of this structure (other than redundancies), report it; do not edit `expected-data/`.
+    - If `db:test` fails because of this structure (other than redundancies), report it; do not edit `database/test-data/expected/`.
 8. Whenever a new (co)limit property is proven, also add the corresponding special object description (see above). Steps 3 to 7 apply in the same way to special morphism classifications.
 
-Edit only the target structure file, plus new `content/` pages if really needed and `.cspell.json` for legitimate new words. Never edit other structures, properties, implications, or `expected-data/`, and never edit the database directly. Do not commit.
+Edit only the target structure file, plus new `content/` pages if really needed and `.cspell.json` for legitimate new words. Never edit other structures, properties, implications, or `database/test-data/expected/`, and never edit the database directly. Do not commit.
 
 ## Redundancy phase
 
