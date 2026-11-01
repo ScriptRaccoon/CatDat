@@ -27,6 +27,7 @@ The description says **what** has changed, not **how**. The "Files changed" tab 
 - Leave out renamed variables, refactored functions, moved or extracted components, internal helpers, type changes, and similar details, unless the refactoring is the point of the PR. In that case, state its purpose and effect in a sentence or two.
 - Name files, commands, folders, or settings only when the reader needs them, e.g. a new `pnpm` script, a new folder contributors must use, or a new YAML field.
 - For data changes, list what was added (structures, properties, implications) and the notable new results, e.g. which properties are now decided for which structures, or which redundant assignments were removed. Use the structures' notations in bold (`**Set**`) or their IDs in code formatting.
+- Never prove or sketch mathematical results in the description, and do not say how they are derived (no "by the dual of Corollary 3", "since it is finitely coaccessible and thin", "via cardinalities"). Proofs are part of the changes. State results only: "every direct category has cosifted limits", "**FI** is a dual generalized variety, but not a generalized variety".
 - For UI changes, add a placeholder `<!-- screenshots -->` where screenshots would help, since the user adds them manually.
 
 ## Style
