@@ -1,0 +1,16 @@
+id: dually finitary algebraic
+relation: is
+description: A category is <i>dually finitary algebraic</i> if its dual is <a href="/category-property/finitary_algebraic">finitary algebraic</a>, i.e. if it is equivalent to the opposite of the category of models of a many-sorted finitary algebraic theory. We avoid the term "coalgebraic" since this notion is unrelated to coalgebras for a functor or comonad, which typically still have underlying sets.
+nlab_link: null
+dual: finitary algebraic
+invariant_under_equivalences: true
+
+related:
+  - dually one-sorted finitary algebraic
+  - dual generalized variety
+  - locally finitely copresentable
+  - dually multi-algebraic
+
+tags:
+  - algebraicity
+  - accessibility

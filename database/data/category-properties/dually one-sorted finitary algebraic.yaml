@@ -1,0 +1,15 @@
+id: dually one-sorted finitary algebraic
+relation: is
+description: A category is <i>dually one-sorted finitary algebraic</i> if its dual is <a href="/category-property/one-sorted_finitary_algebraic">one-sorted finitary algebraic</a>, i.e. if it is equivalent to the opposite of the category of models of a one-sorted finitary algebraic theory. We avoid the term "coalgebraic" since this notion is unrelated to coalgebras for a functor or comonad, which typically still have an underlying set.
+nlab_link: null
+dual: one-sorted finitary algebraic
+invariant_under_equivalences: true
+
+keywords:
+  - dual of a variety
+
+related:
+  - dually finitary algebraic
+
+tags:
+  - algebraicity
