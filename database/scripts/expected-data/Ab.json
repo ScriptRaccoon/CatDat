@@ -135,6 +135,7 @@
 	],
 	"unsatisfied": [
 		"cartesian closed",
+		"co-Grothendieck abelian",
 		"coaccessible",
 		"cocartesian coclosed",
 		"codistributive",
