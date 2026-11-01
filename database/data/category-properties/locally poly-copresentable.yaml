@@ -1,0 +1,15 @@
+id: locally poly-copresentable
+relation: is
+description: A category is <i>locally poly-copresentable</i> if its opposite category is locally poly-presentable, i.e. if it is coaccessible and has wide pushouts.
+nlab_link: null
+dual: locally poly-presentable
+invariant_under_equivalences: true
+
+related:
+  - coaccessible
+  - locally multi-copresentable
+  - locally copresentable
+  - wide pushouts
+
+tags:
+  - accessibility

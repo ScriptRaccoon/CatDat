@@ -2021,6 +2021,18 @@
 		{
 			"type": "category",
 			"id": "co-Grothendieck abelian"
+		},
+		{
+			"type": "category",
+			"id": "locally finitely multi-copresentable"
+		},
+		{
+			"type": "category",
+			"id": "locally multi-copresentable"
+		},
+		{
+			"type": "category",
+			"id": "locally poly-copresentable"
 		}
 	]
 }
