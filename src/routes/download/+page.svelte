@@ -151,10 +151,17 @@ ORDER BY tagged_categories DESC;`}
 
 <CodeSnippet
 	language="sql"
-	title="Properties without a dual"
-	code={`SELECT id, type
-FROM properties
-WHERE dual_property_id IS NULL;`}
+	title="Properties distinguishing Set from its dual"
+	code={`SELECT a.property_id
+FROM property_assignments a
+INNER JOIN properties p
+ON p.id = a.property_id AND p.type = a.type
+INNER JOIN property_assignments b
+ON b.structure_id = a.structure_id
+AND b.property_id = p.dual_property_id
+WHERE a.structure_id = 'Set'
+AND a.is_satisfied = TRUE
+AND b.is_satisfied = FALSE;`}
 />
 
 <CodeSnippet
