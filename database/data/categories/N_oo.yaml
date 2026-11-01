@@ -45,16 +45,16 @@ unsatisfied_properties:
     proof: This is trivial.
 
   - property: self-dual
-    proof: This is because every upper set is infinite, but every lower set is finite.
+    proof: The minimum $0$ has an immediate successor, but the maximum $\infty$ has no immediate predecessor.
 
   - property: inverse
     proof: Consider the strictly increasing sequence $0 < 1 < 2 < \cdots$.
 
   - property: extremal generator
-    proof: The poset $\IN_\infty$ has infinitely many non-minimal elements $1, 2, \dotsc, \infty$. Therefore, by the corollary <a href="/content/thin_extremal_generator">here</a>, an extremal generator cannot exist.
+    proof: The poset $\IN \cup \{\infty\}$ has infinitely many non-minimal elements $1, 2, \dotsc, \infty$. Therefore, by the corollary <a href="/content/thin_extremal_generator">here</a>, an extremal generator cannot exist.
 
   - property: extremal cogenerator
-    proof: The poset $\IN_\infty$ has infinitely many non-maximal elements $0, 1, 2, \dotsc$. Therefore, by the corollary <a href="/content/thin_extremal_generator">here</a>, an extremal cogenerator cannot exist.
+    proof: The poset $\IN \cup \{\infty\}$ has infinitely many non-maximal elements $0, 1, 2, \dotsc$. Therefore, by the corollary <a href="/content/thin_extremal_generator">here</a>, an extremal cogenerator cannot exist.
 
 special_objects:
   initial object:
