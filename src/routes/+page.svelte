@@ -56,7 +56,8 @@
 	<StatsCard number={data.stats.implication_number} title="Implications">
 		e.g. <a href="/category-implication/pullbacks_criterion"
 			>binary products ∧ equalizers ⟹ pullbacks</a
-		>, <a href="/category-implication/abelian_implies_regular">abelian ⟹ regular</a> ...
+		>,
+		<a href="/category-implication/algebraic_implies_lfp">finitary algebraic ⟹ lfp</a> ...
 	</StatsCard>
 </section>
 
