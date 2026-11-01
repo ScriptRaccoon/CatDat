@@ -48,6 +48,13 @@ const EXPECTED_PROPERTIES = {
 	}
 } satisfies Partial<Record<StructureType, Record<string, ExpectedProperties>>>
 
+/**
+ * Properties that have no dual. Every other property must have one.
+ */
+const PROPERTIES_WITHOUT_DUAL: Partial<Record<StructureType, string[]>> = {
+	functor: ['representable']
+}
+
 type ExpectedProperties = {
 	satisfied: string[]
 	unsatisfied: string[]
@@ -72,25 +79,27 @@ function execute_tests() {
 
 		test_mutual_structure_duals('category')
 		test_positivity('1', 'category')
-		test_mutual_property_duals('category')
+		test_property_duals('category')
 		test_decided_structures(decided_categories, 'category')
 		test_properties_of_selected_structures(EXPECTED_PROPERTIES.category, 'category')
 
 		devlog('\n--- Test functors ---')
 
 		test_positivity('id_Set', 'functor')
-		test_mutual_property_duals('functor')
+		test_property_duals('functor')
 		test_decided_structures(decided_functors, 'functor')
 		test_properties_of_selected_structures(EXPECTED_PROPERTIES.functor, 'functor')
 		test_adjoint_functor_relationships()
 
 		devlog('\n--- Test morphisms ---')
 
+		test_property_duals('morphism')
 		test_decided_structures(decided_morphisms, 'morphism')
 
 		devlog('\n--- Test symmetric monoidal categories ---')
 
 		test_positivity('1_tensor', 'symmetric_monoidal_category')
+		test_property_duals('symmetric_monoidal_category')
 		test_decided_structures(
 			decided_symmetric_monoidal_categories,
 			'symmetric_monoidal_category'
@@ -165,11 +174,13 @@ function test_positivity(structure_id: string, type: StructureType) {
 }
 
 /**
- * Tests for all properties p,q of structures that
- * if p is dual to q, then q is dual to p.
+ * Tests that every property of a given type has a dual
+ * (except those in PROPERTIES_WITHOUT_DUAL), and that
+ * for all properties p,q, if p is dual to q, then q is dual to p.
  */
-function test_mutual_property_duals(type: StructureType) {
+function test_property_duals(type: StructureType) {
 	const dict: Record<string, string | null> = {}
+	const exceptions = PROPERTIES_WITHOUT_DUAL[type] ?? []
 
 	const properties = db
 		.prepare<[StructureType], { id: string; dual_property_id: string | null }>(
@@ -183,12 +194,21 @@ function test_mutual_property_duals(type: StructureType) {
 
 	for (const id in dict) {
 		const dual = dict[id]
+		const is_exception = exceptions.includes(id)
+		if (!dual && !is_exception) {
+			throw new Error(`❌ Found property without dual: ${id}`)
+		}
+		if (dual && is_exception) {
+			throw new Error(
+				`❌ Found property with dual in PROPERTIES_WITHOUT_DUAL: ${id}`
+			)
+		}
 		if (dual && dict[dual] !== id) {
 			throw new Error(`❌ Found non-mutual property duality: ${id}, ${dual}`)
 		}
 	}
 
-	devlog(`✅ ${capitalize(remove_underscores(type))} properties are mutually dual`)
+	devlog(`✅ ${capitalize(remove_underscores(type))} properties have mutual duals`)
 }
 
 /**

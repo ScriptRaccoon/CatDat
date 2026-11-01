@@ -80,7 +80,7 @@ While `pnpm dev` is running, the browser reloads automatically after `pnpm db:up
 
 The `pnpm db:test` command runs several tests to ensure the data behaves as expected and maintains good quality:
 
-1. Properties of categories and functors and their duals are mutual.
+1. Every property has a dual property (except for a small whitelist), and properties and their duals are mutual.
 2. Categories and their duals are mutual.
 3. A selection of trivial structures has no unsatisfied properties, i.e. all properties are positive (see the guidelines below).
 4. For a selection of structures of each type, all properties have been decided (see the JSON files in the [/database/scripts/decided-structures](/database/scripts/decided-structures/) folder).
@@ -121,6 +121,8 @@ When contributing new data (categories, functors, properties, implications, etc.
 - **Special objects and morphisms**: For each new category, try to specify its special objects (terminal object, initial object, etc.) in the corresponding table. Also try to specify its special morphisms (isomorphisms, monomorphisms, epimorphisms, regular monomorphisms, regular epimorphisms).
 
 - **Proofs for new properties**: For every new property of categories, for each existing category, try to find a proof for whether it has this property or not, in case this has not already been deduced automatically via some implication. Use the property detail page to check unknown cases. These proofs may also refer to other categories, in which case you may add links to their corresponding pages. As mentioned in the section on tests, for a list of selected categories it is actually mandatory to decide their properties. The same remarks apply to functors and other categorical structures.
+
+- **Dual properties**: Every new property needs a dual property, which may be the property itself. If the dual is not in the database yet, add it as well.
 
 - **Counterexamples**: For any added property of categories, ensure that at least one category does not satisfy it. If no existing category fits, add a new category that does not have the new property. The same remarks apply to properties of functors and other categorical structures.
 
