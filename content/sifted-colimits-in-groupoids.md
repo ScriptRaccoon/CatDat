@@ -56,7 +56,7 @@ Moreover, $h$ is uniquely determined: if $v_i = h u_i$ for all $i \in \I$, then 
 :::
 
 ::: Corollary 2
-Let $\C$ be a category with the property that every sifted diagram is eventually constant (for example, a groupoid). Then every object $X \in \C$ is strongly finitely presentable, i.e. the functor $\Hom(X,-) : \C \to \Set$ preserves sifted colimits.
+Let $\C$ be a category with the property that every sifted diagram is eventually constant (for example, a groupoid). Then every object $X \in \C$ is strongly finitely presentable, i.e. the functor $\Hom(X,-) : \C \to \Set^+$ preserves sifted colimits.
 :::
 
 ::: Proof
@@ -70,7 +70,7 @@ $$
 \end{CD}
 $$
 
-The top horizontal map is the identity. By Lemma 1 applied to $D$, the right vertical map is an isomorphism. By Lemma 1 applied to the diagram $\Hom(X,D(-))$ in $\Set$, the left vertical map is an isomorphism. Hence the bottom horizontal map is an isomorphism.
+The top horizontal map is the identity. By Lemma 1 applied to $D$, the right vertical map is an isomorphism. By Lemma 1 applied to the diagram $\Hom(X,D(-))$ in $\Set^+$, the left vertical map is an isomorphism. Hence the bottom horizontal map is an isomorphism.
 :::
 
 ::: Corollary 3

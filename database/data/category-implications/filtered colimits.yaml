@@ -38,12 +38,13 @@
     - sequential limits
   proof: See <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician">Mac Lane</a>, V.2, Prop. 3. The proof can easily be adapted to this case. Namely, the limit of $\cdots \to X_2 \to X_1 \to X_0$ is the equalizer of two suitable endomorphisms of $\prod_{n \geq 0} X_n$.
 
-- id: direct_implies_sequential_limits
+- id: direct_implies_cosifted_limits
   assumptions:
     - direct
   conclusions:
-    - sequential limits
-  proof: Assume that $\cdots \to A_2 \to A_1 \to A_0$ is a sequence of morphisms. We will prove that almost all of them are identities, so that the sequence is eventually constant and the limit exists. Assume the opposite, i.e. that there are infinitely many $A_k \to A_{k-1}$ which are not the identity. Pick some $n_1$ such that $A_{n_1} \to A_{n_1 - 1}$ is not the identity, and let $n_0 \coloneqq n_1 - 1$. If $A_{n_i} \to A_{n_{i-1}}$ has been constructed, there is some $n_{i+1} > n_i$ such that the composite $A_{n_{i+1}} \to A_{n_i}$ is not the identity, because otherwise it would follow inductively that all $A_{k+1} \to A_k$, $k \geq n_i$ would be identities, which would contradict our infiniteness assumption. This way we construct an infinite sequence of non-identity morphisms $A_{n_{i+1}} \to A_{n_i}$, a contradiction.
+    - cosifted limits
+  proof: >-
+    Let $D : \I \to \C$ be a cosifted diagram in a direct category $\C$. Assume that for every $i \in \I$ there is a morphism $j \to i$ in $\I$ such that $D(j) \to D(i)$ is not an identity. Since $\I$ is non-empty, this yields an infinite sequence of non-identity morphisms $\cdots \to D(i_2) \to D(i_1) \to D(i_0)$, a contradiction. Thus, there is some $i_0 \in \I$ such that $D(j) \to D(i_0)$ is an identity for every morphism $j \to i_0$. By the dual of Lemma 1 <a href="/content/sifted-colimits-in-groupoids">here</a>, $D(i_0)$ is a limit object of $D$.
 
 - id: aleph1-filtered-colimits-include-filtered-colimits
   assumptions:
