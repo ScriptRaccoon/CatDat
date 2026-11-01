@@ -1,0 +1,14 @@
+id: dual generalized variety
+relation: is a
+description: 'A category is a <i>dual generalized variety</i> if its dual is a <a href="/category-property/generalized_variety">generalized variety</a>. Explicitly, a category $\C$ is a dual generalized variety if it has cosifted limits and there is an essentially small collection $G$ of strongly finitely copresentable objects such that every object is a cosifted limit of objects from $G$. Here, an object $X$ is <i>strongly finitely copresentable</i> if the functor $\Hom(-,X) : \C^{\op} \to \Set^+$ maps cosifted limits in $\C$ to colimits in $\Set^+$. We avoid the term "covariety" since it is already used for categories of coalgebras.'
+nlab_link: null
+dual: generalized variety
+invariant_under_equivalences: true
+
+related:
+  - dually finitary algebraic
+  - dually multi-algebraic
+  - cosifted limits
+
+tags:
+  - algebraicity

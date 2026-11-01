@@ -2033,6 +2033,22 @@
 		{
 			"type": "category",
 			"id": "locally poly-copresentable"
+		},
+		{
+			"type": "category",
+			"id": "dually one-sorted finitary algebraic"
+		},
+		{
+			"type": "category",
+			"id": "dually finitary algebraic"
+		},
+		{
+			"type": "category",
+			"id": "dual generalized variety"
+		},
+		{
+			"type": "category",
+			"id": "dually multi-algebraic"
 		}
 	]
 }

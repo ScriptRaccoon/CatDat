@@ -1,0 +1,16 @@
+id: dually multi-algebraic
+relation: is
+description: A category is <i>dually multi-algebraic</i> if its dual is <a href="/category-property/multi-algebraic">multi-algebraic</a>. Equivalently, it is a multi-complete dual generalized variety.
+nlab_link: null
+dual: multi-algebraic
+invariant_under_equivalences: true
+
+related:
+  - dually finitary algebraic
+  - dual generalized variety
+  - locally finitely multi-copresentable
+  - multi-complete
+  - cosifted limits
+
+tags:
+  - algebraicity
