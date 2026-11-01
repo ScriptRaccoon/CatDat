@@ -8,6 +8,7 @@ nlab_link: https://ncatlab.org/nlab/show/Ab
 parent: R-Mod_non_ss
 keywords:
   - Z-modules
+dual: Ab_op
 
 tags:
   - algebra

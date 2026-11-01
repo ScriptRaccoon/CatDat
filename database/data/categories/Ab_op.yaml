@@ -1,0 +1,25 @@
+id: Ab_op
+name: dual of the category of abelian groups
+notation: $\Ab^{\op}$
+objects: abelian groups
+morphisms: A morphism $A \to B$ is a group homomorphism $B \to A$.
+description: By definition, this category is the dual (or opposite) of the category <a href="/category/Ab">$\Ab$</a>. By <a href="https://ncatlab.org/nlab/show/Pontrjagin+dual">Pontryagin duality</a>, it is equivalent to the category $\CompHausAb$ of compact Hausdorff abelian groups with continuous homomorphisms. The equivalence maps an abelian group $A$ to its character group $\Hom(A,\IR/\IZ)$, equipped with the topology of pointwise convergence, and a compact Hausdorff abelian group $K$ to the group of continuous homomorphisms $K \to \IR/\IZ$.
+nlab_link: https://ncatlab.org/nlab/show/opposite+category
+keywords:
+  - opposite of the category of abelian groups
+  - compact abelian groups
+  - compact Hausdorff abelian groups
+dual: Ab
+
+tags:
+  - algebra
+
+related: []
+
+satisfied_properties: []
+
+unsatisfied_properties: []
+
+special_objects: {}
+
+special_morphisms: {}
