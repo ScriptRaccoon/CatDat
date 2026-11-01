@@ -34,3 +34,9 @@ unsatisfied_properties:
 undecidable_properties:
   - property: finitely complete
     proof: This property holds if and only if every $R$-module is flat, i.e. if $R$ is <a href="https://en.wikipedia.org/wiki/Von_Neumann_regular_ring">absolutely flat</a>.
+
+  - property: well-copointed
+    proof: This property holds if and only if $R$ is a cogenerator of $R{-}\Mod$. For example, it holds when $R$ is a field (see <a href="/symmetric_monoidal_category/Vect_tensor">here</a>), but not for $R = \IZ$ (see <a href="/symmetric_monoidal_category/Ab_tensor">here</a>).
+    references:
+      - Vect_tensor_well-copointed
+      - Ab_tensor_not_well-copointed

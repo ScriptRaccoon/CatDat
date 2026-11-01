@@ -8,13 +8,6 @@
     - closed
     - cocomplete
     - self-dual
-  proof: This is trivial.
-
-- id: trivial_is_well_pointed
-  # we need this separately since well-pointed currently has no dual
-  assumptions:
-    - trivial
-  conclusions:
     - well-pointed
   proof: This is trivial.
 

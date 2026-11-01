@@ -3,13 +3,12 @@ name: symmetric monoidal category of modules over an absolutely flat commutative
 notation: $(R{-}\Mod,\otimes,R)$
 associated:
   underlying_category: R-Mod
-description: This is the special case of <a href="/symmetric_monoidal_category/R-Mod_tensor">this entry</a> where we assume that $R$ is <a href="https://en.wikipedia.org/wiki/Von_Neumann_regular_ring">absolutely flat</a> (also called von Neumann regular) and non-zero. For example, every field has this property, so that this entry also includes the symmetric monoidal category of vector spaces.
+description: This is the special case of <a href="/symmetric_monoidal_category/R-Mod_tensor">this entry</a> where we assume that $R$ is <a href="https://en.wikipedia.org/wiki/Von_Neumann_regular_ring">absolutely flat</a> (also called von Neumann regular) and non-zero. For example, every field has this property, see <a href="/symmetric_monoidal_category/Vect_tensor">$(\Vect_K,\otimes,K)$</a>.
 nlab_link: https://ncatlab.org/nlab/show/tensor+product+of+modules
 parent: R-Mod_tensor
 keywords:
   - R-modules
   - von Neumann regular
-  - vector spaces
 
 tags:
   - algebra
@@ -22,3 +21,12 @@ satisfied_properties:
     proof: The underlying category is of course finitely complete. Apart from that, this property is exactly the assumption that $R$ is absolutely flat, meaning that every $R$-module $M$ is flat, so that $M \otimes -$ is left exact.
 
 unsatisfied_properties: []
+
+undecidable_properties:
+  - property: well-copointed
+    proof: >-
+      This property holds if and only if $R$ is a cogenerator of $R{-}\Mod$. This is the case when $R$ is a field, see <a href="/symmetric_monoidal_category/Vect_tensor">$(\Vect_K,\otimes,K)$</a>.
+
+      However, it fails for the absolutely flat ring $R \coloneqq \prod_{n \in \IN} K$, where $K$ is a field. Let $\m \subseteq R$ be a maximal ideal containing the ideal $\bigoplus_{n \in \IN} K$ of finitely supported sequences. Every homomorphism $h : R/\m \to R$ satisfies $e_n h(1) = h(e_n) = 0$ for the unit vectors $e_n \in \m$, so that $h(1) = 0$ and $h = 0$. Hence, $\Hom(-,R)$ does not distinguish the identity and the zero endomorphism of the non-zero module $R/\m$.
+    references:
+      - Vect_tensor_well-copointed

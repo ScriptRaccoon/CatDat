@@ -1,0 +1,25 @@
+id: Vect_tensor
+name: symmetric monoidal category of vector spaces
+notation: $(\Vect_K,\otimes,K)$
+associated:
+  underlying_category: Vect
+description: This is the special case of <a href="/symmetric_monoidal_category/R-Mod_tensor_af">$(R{-}\Mod,\otimes,R)$</a> where $R$ is a field $K$.
+nlab_link: null
+parent: R-Mod_tensor_af
+keywords:
+  - K-vector spaces
+
+tags:
+  - algebra
+
+related:
+  - FinVect_tensor
+
+satisfied_properties:
+  - property: well-copointed
+    proof: We know that $K$ is even an extremal cogenerator of <a href="/category/Vect">$\Vect_K$</a>.
+    references:
+      - Vect_extremal_cogenerator
+    label: Vect_tensor_well-copointed
+
+unsatisfied_properties: []

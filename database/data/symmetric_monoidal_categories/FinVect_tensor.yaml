@@ -3,7 +3,7 @@ name: symmetric monoidal category of finite-dimensional vector spaces
 notation: $(\FinVect_K,\otimes,K)$
 associated:
   underlying_category: FinVect
-description: This is the full symmetric monoidal subcategory of $(\Vect_K,\otimes,K)$ (see <a href="/symmetric_monoidal_category/R-Mod_tensor_af">here</a>) spanned by the finite-dimensional vector spaces.
+description: This is the full symmetric monoidal subcategory of $(\Vect_K,\otimes,K)$ (see <a href="/symmetric_monoidal_category/Vect_tensor">here</a>) spanned by the finite-dimensional vector spaces.
 nlab_link: https://ncatlab.org/nlab/show/FinDimVect
 keywords:
   - K-vector spaces
@@ -13,7 +13,7 @@ tags:
 
 related:
   - Ab_fg_tensor
-  - R-Mod_tensor_af
+  - Vect_tensor
 
 satisfied_properties:
   - property: closed

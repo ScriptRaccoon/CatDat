@@ -19,3 +19,12 @@ satisfied_properties: []
 unsatisfied_properties:
   - property: finitely complete
     proof: Since we assume that $R$ is not absolutely flat, there is some $R$-module $M$ that is not flat. This means that the endofunctor $M \otimes -$ is not left exact.
+
+undecidable_properties:
+  - property: well-copointed
+    proof: >-
+      This property holds if and only if $R$ is a cogenerator of $R{-}\Mod$. It fails for $R = \IZ$, see <a href="/symmetric_monoidal_category/Ab_tensor">$(\Ab,\otimes,\IZ)$</a>.
+
+      However, it holds for $R \coloneqq \IZ/4\IZ$, which is not absolutely flat since $2 \neq 2^2 y = 0$ for all $y \in R$. First, $R$ is injective as a module over itself by Baer's criterion: the only non-trivial case is a homomorphism $2R \to R$, which maps $2$ to an element annihilated by $2$, i.e. to $0$ or $2$, and therefore extends to $R$ by mapping $1$ to $0$ or $1$. Now let $f,g : A \rightrightarrows B$ be distinct homomorphisms of $R$-modules, and choose $a \in A$ with $b \coloneqq f(a) - g(a) \neq 0$. The cyclic submodule $Rb \subseteq B$ is isomorphic to $\IZ/2\IZ$ or $\IZ/4\IZ$, and hence there is an injective homomorphism $j : Rb \to R$. Since $R$ is injective, applying $\Hom(-,R)$ to the inclusion $Rb \hookrightarrow B$ yields a surjective map, so that $j$ extends to a homomorphism $h : B \to R$. Then $h(f(a)) - h(g(a)) = h(b) = j(b) \neq 0$, i.e. $h f \neq h g$.
+    references:
+      - Ab_tensor_not_well-copointed
