@@ -25,9 +25,6 @@ satisfied_properties:
   - property: semi-strongly connected
     proof: Every non-empty pseudo-metric space is weakly terminal (by using constant maps).
 
-  - property: well-powered
-    proof: This follows since monomorphisms are injective (see below).
-
   - property: well-copowered
     proof: This follows since epimorphisms are surjective (see below).
 
@@ -57,6 +54,21 @@ satisfied_properties:
     proof: The proof is identical to the one for <a href="/category/Met">$\Met$</a>.
     references:
       - Met_aleph1_cofiltered_limits
+
+  - property: ℵ₁-accessible
+    proof: >-
+      We already know that $\PMet$ has filtered colimits. Let $(X_i)_{i \in I}$ be a diagram in $\PMet$ indexed by an $\aleph_1$-directed poset $I$, with transition maps $f_{ij} : X_i \to X_j$ for $i \leq j$, and let $(u_i : X_i \to X)_{i \in I}$ be its colimit. Recall that $X$ is the colimit of the underlying sets, and that $d(x,y)$ is the infimum of all $d(x_i,y_i)$, where $i \in I$ and $x_i,y_i \in X_i$ satisfy $u_i(x_i) = x$ and $u_i(y_i) = y$.
+
+      <strong>Claim.</strong> For every countable subset $S \subseteq X$ there are an index $k \in I$ and a map $s : S \to X_k$ such that $u_k(s(x)) = x$ and $d(s(x),s(y)) = d(x,y)$ for all $x,y \in S$. In other words, the infima defining the distances in $S$ are attained simultaneously at a single stage.
+
+      To see this, choose for all $x,y \in S$ and $n \geq 1$ an index $i \in I$ and preimages $x_i,y_i \in X_i$ of $x,y$ with $d(x_i,y_i) \leq d(x,y) + 1/n$. This gives countably many elements in various stages $X_i$. Any two chosen preimages of the same point of $S$ are mapped to the same element at some later stage, since the underlying set of $X$ is the colimit in $\Set$. These are countably many pairs, so since $I$ is $\aleph_1$-directed, there is an index $k$ above all the indices involved such that all chosen preimages of a point $x \in S$ have the same image in $X_k$. We call this image $s(x)$. Since the transition maps are non-expansive, we get $d(s(x),s(y)) \leq d(x,y) + 1/n$ for all $n \geq 1$, hence $d(s(x),s(y)) \leq d(x,y)$. Conversely, $d(x,y) \leq d(s(x),s(y))$ holds since $u_k$ is non-expansive.
+
+      Now let $A$ be a countable pseudo-metric space. We show that $A$ is $\aleph_1$-presentable, i.e. that the canonical map $\colim_{i \in I} \Hom(A,X_i) \to \Hom(A,X)$ is bijective. For injectivity, let $g,h : A \rightrightarrows X_i$ be non-expansive maps with $u_i \circ g = u_i \circ h$. For every $a \in A$ there is some $j_a \geq i$ with $f_{i j_a}(g(a)) = f_{i j_a}(h(a))$. An upper bound $j$ of the countably many indices $j_a$ satisfies $f_{ij} \circ g = f_{ij} \circ h$. For surjectivity, let $g : A \to X$ be a non-expansive map. We apply the claim to the countable subset $S \coloneqq g(A)$ and obtain $k \in I$ and $s : S \to X_k$. Then the map $h : A \to X_k$, $h(a) \coloneqq s(g(a))$ satisfies $u_k \circ h = g$, and $h$ is non-expansive because
+      $$d(h(a),h(b)) = d(g(a),g(b)) \leq d(a,b)$$
+      for all $a,b \in A$.
+
+      Finally, every pseudo-metric space $Y$ is the $\aleph_1$-directed colimit of its countable subspaces (with the restricted pseudo-metric): the underlying set of the colimit is the union $Y$, and the infimum defining the distance of two points is just their distance in $Y$, since all inclusions are isometric. Since every countable pseudo-metric space is isomorphic to one whose underlying set is a subset of $\IN$, there is only a set of them up to isomorphism. Hence, $\PMet$ is $\aleph_1$-accessible.
+    label: PMet_aleph1_accessible
 
   - property: regular subobject classifier
     proof: >-
