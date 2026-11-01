@@ -10,13 +10,14 @@ description: >-
   For the equivalence of the conditions above, see <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adámek–Rosický</a>, Thm. 4.30, Thm. 4.32, and the remark following it.
 
 nlab_link: https://ncatlab.org/nlab/show/locally+multipresentable+category
-dual: null
+dual: locally finitely multi-copresentable
 invariant_under_equivalences: true
 
 related:
   - connected limits
   - filtered colimits
   - finitely accessible
+  - locally finitely presentable
   - locally multi-presentable
   - multi-algebraic
   - multi-cocomplete

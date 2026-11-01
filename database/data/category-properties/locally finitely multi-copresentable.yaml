@@ -1,0 +1,17 @@
+id: locally finitely multi-copresentable
+relation: is
+description: A category is <i>locally finitely multi-copresentable</i> if its opposite category is locally finitely multi-presentable. Equivalently, it is finitely coaccessible and multi-complete. This is also equivalent to being finitely coaccessible and having connected colimits.
+nlab_link: null
+dual: locally finitely multi-presentable
+invariant_under_equivalences: true
+
+related:
+  - cofiltered limits
+  - connected colimits
+  - finitely coaccessible
+  - locally finitely copresentable
+  - locally multi-copresentable
+  - multi-complete
+
+tags:
+  - accessibility

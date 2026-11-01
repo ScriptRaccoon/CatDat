@@ -1,0 +1,17 @@
+id: locally multi-copresentable
+relation: is
+description: A category is <i>locally multi-copresentable</i> if its opposite category is locally multi-presentable. Equivalently, it is coaccessible and multi-complete. This is also equivalent to being coaccessible and having connected colimits.
+nlab_link: null
+dual: locally multi-presentable
+invariant_under_equivalences: true
+
+related:
+  - coaccessible
+  - connected colimits
+  - locally copresentable
+  - locally finitely multi-copresentable
+  - locally poly-copresentable
+  - multi-complete
+
+tags:
+  - accessibility

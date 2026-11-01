@@ -102,17 +102,6 @@ unsatisfied_properties:
   - property: natural numbers object
     proof: Any natural numbers object in $\FinOrd \setminus \{\varnothing\}$ would also be a natural numbers object in <a href="/category/FinOrd">$\FinOrd$</a>, which we know does not exist.
 
-  - property: multi-complete
-    proof: >-
-      We will prove that the multi-product of $I \coloneqq \{0 < 1\}$ with itself does not exist in $\FinOrd \setminus \{\varnothing\}$. Assume that it does, i.e. there is a family of spans
-      $$X_s = (I \xleftarrow{a_s} P_s \xrightarrow{b_s} I)$$
-      such that every span admits a unique morphism into exactly one of these. Now consider the following three spans:
-      $$\begin{align*} A & \coloneqq (I \xleftarrow{0} \{0\} \xrightarrow{0} I) \\
-      B & \coloneqq (I \xleftarrow{0} I \xrightarrow{\id} I) \\
-      C & \coloneqq (I \xleftarrow{\id} I \xrightarrow{0} I)
-      \end{align*}$$
-      There are morphisms of spans $0 : A \to B$ and $0 : A \to C$. This shows that $B,C$ are in the same connected component. Thus, there is some index $s$ such that $B$ and $C$ admit a unique morphism to $X_s$. The morphism $B \to X_s$ maps $1 \in I$ to an element $u \in P_s$ with $a_s(u)=0$, $b_s(u)=1$. Likewise, the morphism $C \to X_s$ maps $1 \in I$ to an element $v \in P_s$ with $a_s(v)=1$, $b_s(v)=0$. But now neither $u \leq v$ nor $v \leq u$ can be true, contradicting that $P_s$ is linearly ordered.
-
 special_objects: {}
 
 special_morphisms:

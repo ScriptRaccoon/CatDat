@@ -7,6 +7,7 @@ invariant_under_equivalences: true
 
 related:
   - locally copresentable
+  - locally finitely multi-copresentable
   - complete
   - finitely coaccessible
   - locally ℵ₁-copresentable
