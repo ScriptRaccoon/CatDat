@@ -33,7 +33,12 @@ satisfied_properties:
     proof: >-
       Since every subset of $\IN \cup \{\infty\}$ has a supremum, all coproducts, and hence all colimits exist. Every natural number is strongly finitely presentable, and $\infty$ is the colimit of all $n < \infty$. This shows that the category is locally strongly finitely presentable, which is equivalent to being finitary algebraic.
 
-      Alternatively, we can use the finitary algebraic theory with sorts $(S_n)_{n \in \IN}$, unary operations $S_n \to S_{n+1}$, and equations $x = y$ for all elements $x,y$ of each sort $S_n$. The models of this theory are the objects $(0,\dotsc,0,1,1,\dotsc)$, where $1$ starts at some index $n \in \IN$, together with $(0,0,\dotsc)$, which corresponds to $\infty$.
+      Alternatively, we can use the finitary algebraic theory with sorts $(S_n)_{n \in \IN}$, unary operations $S_{n+1} \to S_n$, and equations $x = y$ for all elements $x,y$ of each sort $S_n$. In a model $M$, every set $M_n$ has at most one element, and the set $\{k \in \IN : M_k \neq \varnothing\}$ is a lower set of $\IN$. Hence, it is either $\{k \in \IN : k < n\}$ for some $n \in \IN$, or all of $\IN$, which corresponds to $\infty$. A morphism of models $M \to M'$ exists if and only if $M_k \neq \varnothing$ implies $M'_k \neq \varnothing$ for all $k$, and it is then unique. Thus, the category of models is isomorphic to $\IN \cup \{\infty\}$ with the order $\leq$.
+
+  - property: dually finitary algebraic
+    proof: >-
+      We show that the dual category $(\IN \cup \{\infty\}, \geq)$ is equivalent to the category of models of a finitary algebraic theory. The theory has sorts $(S_n)_{n \in \IN}$, unary operations $S_n \to S_{n+1}$, and equations $x = y$ for all elements $x,y$ of each sort $S_n$. In a model $M$, every set $M_n$ has at most one element, and the set $\{k \in \IN : M_k \neq \varnothing\}$ is an upper set of $\IN$. Hence, it is either $\{k \in \IN : k \geq n\}$ for some $n \in \IN$, or empty, which corresponds to $\infty$. A morphism of models $M \to M'$ exists if and only if $M_k \neq \varnothing$ implies $M'_k \neq \varnothing$ for all $k$, and it is then unique. Thus, the category of models is isomorphic to $\IN \cup \{\infty\}$ with the order $\geq$.
+    check_redundancy: false
 
 unsatisfied_properties:
   - property: essentially finite
