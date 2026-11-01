@@ -2013,6 +2013,10 @@
 		{
 			"type": "category",
 			"id": "coparametrized conatural numbers object"
+		},
+		{
+			"type": "category",
+			"id": "co-Grothendieck abelian"
 		}
 	]
 }

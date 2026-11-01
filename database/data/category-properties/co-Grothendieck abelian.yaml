@@ -1,0 +1,19 @@
+id: co-Grothendieck abelian
+relation: is
+description: A category is <i>co-Grothendieck abelian</i> if its dual is Grothendieck abelian, i.e. if it is abelian, has products (and is therefore complete), a cogenerator, and cofiltered limits commute with finite colimits. Such a category is also called a <i>co-Grothendieck category</i>. They are not very common; for example, <a href="/category-implication/additive_CIP_CSP">this result</a> implies that a Grothendieck category which is also co-Grothendieck is necessarily trivial.
+nlab_link: null
+dual: Grothendieck abelian
+invariant_under_equivalences: true
+
+keywords:
+  - co-Grothendieck category
+  - coGrothendieck
+
+related:
+  - abelian
+  - complete
+  - exact cofiltered limits
+  - cogenerator
+
+tags:
+  - abelian
