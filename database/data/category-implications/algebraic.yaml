@@ -40,6 +40,16 @@
     - finitely accessible
   proof: This follows from Corollary 4 <a href="/content/sifted-colimits-in-groupoids">here</a>.
 
+- id: direct_implies_dual_generalized_variety
+  assumptions:
+    - direct
+    - essentially small
+  conclusions:
+    - dual generalized variety
+    - finitely coaccessible
+  proof: >-
+    Let $\C$ be an essentially small direct category. The <a href="/category-implication/direct_implies_cosifted_limits">proof of this implication</a> shows that for every cosifted diagram $D : \I \to \C$ there is an object $i_0 \in \I$ such that $D(a)$ is an isomorphism (even an identity) for every morphism $a : i \to i_0$ in $\I$. In other words, the diagram $D^{\op} : \I^{\op} \to \C^{\op}$ is eventually constant in the sense of <a href="/content/sifted-colimits-in-groupoids">this page</a>. Therefore, the claim follows from the duals of Corollaries 3 and 4 there.
+
 - id: generalized_variety_left_cancellative
   assumptions:
     - left cancellative
