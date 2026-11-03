@@ -25,9 +25,6 @@ satisfied_properties:
   - property: semi-strongly connected
     proof: Every non-empty pseudo-metric space is weakly terminal (by using constant maps).
 
-  - property: well-powered
-    proof: This follows since monomorphisms are injective (see below).
-
   - property: well-copowered
     proof: This follows since epimorphisms are surjective (see below).
 
@@ -57,6 +54,21 @@ satisfied_properties:
     proof: The proof is identical to the one for <a href="/category/Met">$\Met$</a>.
     references:
       - Met_aleph1_cofiltered_limits
+
+  - property: ℵ₁-accessible
+    proof: >-
+      We already know that $\PMet$ has filtered colimits. Let $(X_i)_{i \in I}$ be a diagram in $\PMet$ indexed by an $\aleph_1$-directed poset $I$, with transition maps $f_{ij} : X_i \to X_j$ for $i \leq j$, and let $(u_i : X_i \to X)_{i \in I}$ be its colimit. Recall that $X$ is the colimit of the underlying sets, and that $d(x,y)$ is the infimum of all $d(x_i,y_i)$, where $i \in I$ and $x_i,y_i \in X_i$ satisfy $u_i(x_i) = x$ and $u_i(y_i) = y$.
+
+      <strong>Claim.</strong> For every countable subset $S \subseteq X$ there are an index $k \in I$ and a map $s : S \to X_k$ such that $u_k(s(x)) = x$ and $d(s(x),s(y)) = d(x,y)$ for all $x,y \in S$. In other words, the infima defining the distances in $S$ are attained simultaneously at a single stage.
+
+      To see this, choose for all $x,y \in S$ and $n \geq 1$ an index $i \in I$ and preimages $x_i,y_i \in X_i$ of $x,y$ with $d(x_i,y_i) \leq d(x,y) + 1/n$. This gives countably many elements in various stages $X_i$. Any two chosen preimages of the same point of $S$ are mapped to the same element at some later stage, since the underlying set of $X$ is the colimit in $\Set$. These are countably many pairs, so since $I$ is $\aleph_1$-directed, there is an index $k$ above all the indices involved such that all chosen preimages of a point $x \in S$ have the same image in $X_k$. We call this image $s(x)$. Since the transition maps are non-expansive, we get $d(s(x),s(y)) \leq d(x,y) + 1/n$ for all $n \geq 1$, hence $d(s(x),s(y)) \leq d(x,y)$. Conversely, $d(x,y) \leq d(s(x),s(y))$ holds since $u_k$ is non-expansive.
+
+      Now let $A$ be a countable pseudo-metric space. We show that $A$ is $\aleph_1$-presentable, i.e. that the canonical map $\colim_{i \in I} \Hom(A,X_i) \to \Hom(A,X)$ is bijective. For injectivity, let $g,h : A \rightrightarrows X_i$ be non-expansive maps with $u_i \circ g = u_i \circ h$. For every $a \in A$ there is some $j_a \geq i$ with $f_{i j_a}(g(a)) = f_{i j_a}(h(a))$. An upper bound $j$ of the countably many indices $j_a$ satisfies $f_{ij} \circ g = f_{ij} \circ h$. For surjectivity, let $g : A \to X$ be a non-expansive map. We apply the claim to the countable subset $S \coloneqq g(A)$ and obtain $k \in I$ and $s : S \to X_k$. Then the map $h : A \to X_k$, $h(a) \coloneqq s(g(a))$ satisfies $u_k \circ h = g$, and $h$ is non-expansive because
+      $$d(h(a),h(b)) = d(g(a),g(b)) \leq d(a,b)$$
+      for all $a,b \in A$.
+
+      Finally, every pseudo-metric space $Y$ is the $\aleph_1$-directed colimit of its countable subspaces (with the restricted pseudo-metric): the underlying set of the colimit is the union $Y$, and the infimum defining the distance of two points is just their distance in $Y$, since all inclusions are isometric. Since every countable pseudo-metric space is isomorphic to one whose underlying set is a subset of $\IN$, there is only a set of them up to isomorphism. Hence, $\PMet$ is $\aleph_1$-accessible.
+    label: PMet_aleph1_accessible
 
   - property: regular subobject classifier
     proof: >-
@@ -116,6 +128,19 @@ unsatisfied_properties:
   - property: natural numbers object
     proof: By Lemma 2 <a href="/content/natural_numbers_objects">here</a>, if $(N,z,s)$ is a natural numbers object, then $N \cong \{\ast\} \sqcup N$. Since there is a map $\{\ast\} \to N$, we have $N \neq \varnothing$. However, the coproduct of two non-empty pseudo-metric spaces does not exist; see <a href="https://math.stackexchange.com/questions/1778408">MSE/1778408</a>.
 
+  - property: effective congruences
+    proof: >-
+      Recall that finite limits in $\PMet$ are computed on the underlying sets, equipped with the supremum of the pseudo-metrics of the components. Let $X \coloneqq \{0,1\}$ and $d_X(0,1) \coloneqq 1$. Let $d_R$ be the metric on $X \times X$ with $d_R((0,0),(1,1)) \coloneqq 1$ and $d_R(a,b) \coloneqq 2$ for all other pairs of distinct points $a,b$. It satisfies the triangle inequality since distinct points have distance $1$ or $2$. The projections $p_1,p_2 : (X \times X,d_R) \rightrightarrows (X,d_X)$ are non-expansive and jointly injective. We claim that they form a congruence.
+
+      Reflexivity: the diagonal $(X,d_X) \to (X \times X,d_R)$ is isometric, since $d_R((0,0),(1,1)) = 1$.
+
+      Symmetry: the swap map $(X \times X,d_R) \to (X \times X,d_R)$, $(x,y) \mapsto (y,x)$ is isometric.
+
+      Transitivity: the pullback of $p_2$ and $p_1$ consists of the pairs $((x,y),(y,z))$, with the maximum of the distances of the components. We need to show that the composition map $((x,y),(y,z)) \mapsto (x,z)$ is non-expansive. Let $r$ be the distance of $((x,y),(y,z))$ and $((x',y'),(y',z'))$. Since $d_R$ only takes the values $0$, $1$, and $2$, the same holds for $r$. If $r = 2$, there is nothing to show, since $d_R \leq 2$. Otherwise, $r \leq 1$, so that $d_R((x,y),(x',y')) \leq 1$ and $d_R((y,z),(y',z')) \leq 1$. Since $(0,0)$ and $(1,1)$ are the only distinct points with distance $1$, each of the sets $\{(x,y),(x',y')\}$ and $\{(y,z),(y',z')\}$ is either a singleton or equal to $\{(0,0),(1,1)\}$. If $y = y'$, neither set can be $\{(0,0),(1,1)\}$, so $(x,y) = (x',y')$ and $(y,z) = (y',z')$, and hence $(x,z) = (x',z')$, so that $d_R((x,z),(x',z')) = 0 \leq r$. If $y \neq y'$, both sets are $\{(0,0),(1,1)\}$, so $x = y = z$ and $x' = y' = z'$ with $x \neq x'$. Then $\{(x,z),(x',z')\} = \{(0,0),(1,1)\}$, and hence $d_R((x,z),(x',z')) = 1 \leq r$.
+
+      The congruence is not effective. Assume that it is the kernel pair of a non-expansive map $f : (X,d_X) \to (Y,d_Y)$. The underlying set of the kernel pair is $\{(x,x') \in X \times X : f(x) = f(x')\}$, which then must be $X \times X$, so that $f$ is constant. But then the kernel pair is $X \times X$ with the supremum metric, in which $(0,1)$ and $(1,0)$ have distance $1$, whereas $d_R((0,1),(1,0)) = 2$.
+    label: PMet_no_effective_congruences
+
   - property: effective cocongruences
     proof: 'The proof is similar to the one for <a href="/category/Top">$\Top$</a>: Equip a two-point set with the zero metric; this pseudo-metric space represents the functor taking a pseudo-metric space to the pairs of points with $d(x,y) = 0$. In this case, once you conclude $Z = \varnothing$, the map $h : Z \to \{\ast\}$ does not have any cokernel pair, since that would have to be a coproduct $\{\ast\} \sqcup \{\ast\}$, which does not exist.'
     references:
@@ -129,6 +154,16 @@ unsatisfied_properties:
     proof: The proof for <a href="/category/Met">$\Met$</a> also works for pseudo-metric spaces. The diagram $D$ used there takes values in $\PMet$, and the same argument shows that its limit in $\PMet$ is the empty space.
     references:
       - Met_not_coaccessible
+
+  - property: finitely accessible
+    proof: >-
+      We show that a pseudo-metric space is finitely presentable if and only if it has at most one point. Then $\PMet$ is not finitely accessible: since the underlying set of a filtered colimit is the filtered colimit of the underlying sets, a filtered colimit of pseudo-metric spaces with at most one point has at most one point as well.
+
+      The empty space is finitely presentable since it is initial. The one-point space is finitely presentable since it represents the forgetful functor $\PMet \to \Set$, which preserves filtered colimits by their construction above.
+
+      Conversely, let $(A,d_A)$ be a pseudo-metric space with at least two points. For $n \geq 1$, let $d_n$ be the pseudo-metric on $A$ defined by $d_n(x,y) \coloneqq d_A(x,y) + 1/n$ for $x \neq y$ and $d_n(x,x) \coloneqq 0$. The identity maps $(A,d_n) \to (A,d_{n+1})$ are non-expansive. By the construction of filtered colimits above, the colimit of this sequence is $(A,d_A)$ with the identity maps $(A,d_n) \to (A,d_A)$ as colimit maps, since $\inf_n d_n(x,y) = d_A(x,y)$ for all $x,y \in A$. If $(A,d_A)$ were finitely presentable, the identity of $(A,d_A)$ would factor through some $(A,d_n)$. That is, there would be a non-expansive map $f : (A,d_A) \to (A,d_n)$ whose composite with the identity map $(A,d_n) \to (A,d_A)$ is the identity. Then $f$ is the identity map, so that $d_A(x,y) + 1/n = d_n(x,y) \leq d_A(x,y)$ for distinct $x,y \in A$, which is a contradiction.
+
+      In <a href="/category/Met">$\Met$</a>, the situation is different: by <a href="https://doi.org/10.1016/j.jpaa.2021.106974">Adámek–Rosický</a>, Rem. 2.7, the empty space is the only finitely presentable object, so that even the one-point space is not finitely presentable. Their argument fails injectivity instead of surjectivity: the colimit in $\Met$ of the sequence of two-point spaces with distance $1/n$ (and identity maps) is a one-point space, so two distinct constant maps from a non-empty metric space to the first two-point space become equal in the colimit, but not at any finite stage. This does not carry over to $\PMet$, where the colimit of this sequence is a two-point space with distance $0$.
 
 special_objects:
   initial object:
