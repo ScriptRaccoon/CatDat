@@ -78,7 +78,7 @@ The YAML files never contain derived data. Everything marked `is_deduced` is pro
 Use existing files as templates: [database/data/categories/N.yaml](database/data/categories/N.yaml) for categories, [database/data/functors/abelianization.yaml](database/data/functors/abelianization.yaml) for functors, `category-properties/*.yaml` for properties (one property per file), and `category-implications/*.yaml` for implications (a list of related implications per file). Property and structure references in YAML use the human-readable property ID, e.g. `finitely cocomplete`.
 
 - String values may contain HTML (`<a>`, `<i>`, `<ol>`, ...) and KaTeX math (`$...$`, `$$...$$`).
-- Use single quotes for values that contain `:`, and escape a literal single quote as `''`.
+- Use single quotes for values that contain `:`. If such a value also contains a single quote (e.g. `x'`), use a `>-` block instead of escaping it as `''`, which is hard to read and to copy elsewhere.
 - Use `>-` for multiline text; an empty line in it starts a new paragraph when rendered. Do not use `|-`.
 - Optional `keywords` (list of strings) on structures and properties: alternative names a user would search for that do not already occur in the `name` (for properties: the ID), e.g. `posets` for `Pos`, `aleph1-accessible` for `ℵ₁-accessible` (no special characters needed), or `tripleable` for `monadic`. Only terms that identify the structure or property, not related concepts. The search filters on the list pages match them.
 - Set `check_redundancy: false` on a property assignment or implication that is redundant but deliberately kept (see below).
