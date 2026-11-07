@@ -1,0 +1,13 @@
+id: Grothendieck quasitopos
+relation: is a
+description: A <i>Grothendieck quasitopos</i> is a category that is equivalent to the category of biseparated presheaves on a bisite, i.e. sheaves on a site that are also separated with respect to a second Grothendieck topology on the same category.
+nlab_link: https://ncatlab.org/nlab/show/Grothendieck+quasitopos
+dual: Grothendieck quasicotopos
+invariant_under_equivalences: true
+
+related:
+  - quasitopos
+  - Grothendieck topos
+
+tags:
+  - topos theory

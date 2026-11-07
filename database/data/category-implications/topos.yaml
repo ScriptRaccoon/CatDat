@@ -200,3 +200,22 @@
   proof: This is true by definition.
   is_equivalence: true
   check_redundancy: false
+
+- id: grothendieck_quasitopos_criterion
+  assumptions:
+    - coproducts
+    - quasitopos
+    - extremal generating collection
+    - locally essentially small
+  conclusions:
+    - Grothendieck quasitopos
+  is_equivalence: true
+  proof: See <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant">Johnstone</a>, Part C, Theorem 2.2.13, $(ii)\Leftrightarrow(iii)$.
+  check_redundancy: false
+
+- id: grothendieck_quasitopos_consequence
+  assumptions:
+    - Grothendieck quasitopos
+  conclusions:
+    - locally presentable
+  proof: Local presentability is part of <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant">Johnstone</a>, Part C, Theorem 2.2.13, $(ii)\Leftrightarrow(iv)$.
