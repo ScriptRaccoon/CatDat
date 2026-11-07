@@ -1,0 +1,13 @@
+id: Grothendieck quasicotopos
+relation: is a
+description: A <i>Grothendieck quasicotopos</i> is a category whose opposite is a Grothendieck quasitopos.
+nlab_link: null
+dual: Grothendieck quasitopos
+invariant_under_equivalences: true
+
+related:
+  - quasicotopos
+  - Grothendieck cotopos
+
+tags:
+  - topos theory

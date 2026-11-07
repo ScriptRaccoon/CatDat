@@ -2189,6 +2189,14 @@
 		{
 			"type": "category",
 			"id": "infinitary biproducts"
+		},
+		{
+			"type": "category",
+			"id": "Grothendieck quasicotopos"
+		},
+		{
+			"type": "category",
+			"id": "Grothendieck quasitopos"
 		}
 	]
 }
