@@ -2057,6 +2057,14 @@
 		{
 			"type": "symmetric_monoidal_category",
 			"id": "well-copointed"
+		},
+		{
+			"type": "category",
+			"id": "Grothendieck quasicotopos"
+		},
+		{
+			"type": "category",
+			"id": "Grothendieck quasitopos"
 		}
 	]
 }
