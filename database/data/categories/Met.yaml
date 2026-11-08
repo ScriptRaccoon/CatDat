@@ -1,9 +1,11 @@
 id: Met
 name: category of metric spaces with non-expansive maps
 notation: $\Met$
-objects: metric spaces
-morphisms: non-expansive maps $f$ (also called short maps or $1$-Lipschitz maps), meaning $d(f(x),f(y)) \leq d(x,y)$ for all $x,y$
-description: In contrast to continuous maps, which only refer to the induced topology, non-expansive maps are more closely related to the metrics themselves. This category is badly behaved, though, especially when compared with $\Met_{\infty}$.
+objects: >-
+  A metric space is a pair $(X,d_X)$ consisting of a set $X$ and a map $d_X : X \times X \to [0,\infty)$ such that $d_X(x,y) = 0$ holds if and only if $x = y$, $d_X(x,y) = d_X(y,x)$, and $d_X(x,z) \leq d_X(x,y) + d_X(y,z)$ for all $x,y,z \in X$.
+morphisms: >-
+  A morphism $(X,d_X) \to (Y,d_Y)$ is a non-expansive map (also called short map or $1$-Lipschitz map), i.e. a map $f : X \to Y$ such that $d_Y(f(x),f(x')) \leq d_X(x,x')$ for all $x,x' \in X$.
+description: 'In contrast to continuous maps, which only refer to the induced topology, non-expansive maps are more closely related to the metrics themselves. This category is badly behaved, though, especially when compared with $\Met_{\infty}$: since the distance $\infty$ is not allowed, it lacks, for example, binary coproducts (where points in different summands would have distance $\infty$) and countable products (where the supremum of the distances may be $\infty$).'
 nlab_link: https://ncatlab.org/nlab/show/Met
 keywords:
   - short maps
@@ -23,7 +25,7 @@ satisfied_properties:
     proof: There is a forgetful functor $\Met \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
 
   - property: strict initial object
-    proof: The empty metric space is initial and clearly strict.
+    proof: The empty set $\varnothing$ with its unique metric is initial and clearly strict.
 
   - property: semi-strongly connected
     proof: Every non-empty metric space is weakly terminal (by using constant maps).
@@ -32,38 +34,38 @@ satisfied_properties:
     proof: Just restrict the metric to the equalizer built from the sets.
 
   - property: binary products
-    proof: The product of two metric spaces $(X,d)$, $(Y,d)$ is $(X \times Y,d)$ with $d((x_1,y_1),(x_2,y_2)) \coloneqq \sup(d(x_1,x_2),d(y_1,y_2))$.
+    proof: The product of two metric spaces $(X,d_X)$, $(Y,d_Y)$ is $(X \times Y,d)$ with $d((x_1,y_1),(x_2,y_2)) \coloneqq \sup(d_X(x_1,x_2),d_Y(y_1,y_2))$.
     check_redundancy: false
 
   - property: terminal object
-    proof: The one-point metric space $\{\ast\}$ is terminal.
+    proof: The one-point set $\{\ast\}$ with its unique metric is terminal. We denote this metric space by $\{\ast\}$ as well.
     check_redundancy: false
 
   - property: coequalizers
-    proof: This is because the category of pseudo-metric spaces <a href="/category/PMet">$\PMet$</a> has coequalizers and $\Met \hookrightarrow \PMet$ has a left adjoint, mapping a pseudo-metric space $X$ to $X /{\sim}$ where $x \sim y \iff d(x,y)=0$. Concretely, we take the coequalizer in the category of pseudo-metric spaces and then identify points with distance zero.
+    proof: This is because the category of pseudo-metric spaces <a href="/category/PMet">$\PMet$</a> has coequalizers and $\Met \hookrightarrow \PMet$ has a left adjoint, mapping a pseudo-metric space $(X,d)$ to the metric space $(X/{\sim},\bar{d})$, where $x \sim y \iff d(x,y)=0$ and $\bar{d}([x],[y]) \coloneqq d(x,y)$. Concretely, we take the coequalizer in the category of pseudo-metric spaces and then identify points with distance zero.
 
   - property: filtered colimits
-    proof: This is because the category of pseudo-metric spaces <a href="/category/PMet">$\PMet$</a> has filtered colimits and $\Met \hookrightarrow \PMet$ has a left adjoint, mapping a pseudo-metric space $X$ to $X /{\sim}$ where $x \sim y \iff d(x,y)=0$. Concretely, we take the filtered colimit in the category of pseudo-metric spaces and then identify points with distance zero.
+    proof: This is because the category of pseudo-metric spaces <a href="/category/PMet">$\PMet$</a> has filtered colimits and $\Met \hookrightarrow \PMet$ has a left adjoint, mapping a pseudo-metric space $(X,d)$ to the metric space $(X/{\sim},\bar{d})$, where $x \sim y \iff d(x,y)=0$ and $\bar{d}([x],[y]) \coloneqq d(x,y)$. Concretely, we take the filtered colimit in the category of pseudo-metric spaces and then identify points with distance zero.
     check_redundancy: false
 
   - property: cartesian filtered colimits
     proof: >-
-      We already saw that filtered colimits and finite products exist. The canonical map $\colim_i (X \times Y_i) \to X \times \colim_i Y_i$ is an isomorphism for filtered diagrams $(Y_i)$: It is surjective by the concrete description of filtered colimits. It is isometric because of the elementary observation
+      We already saw that filtered colimits and finite products exist. The canonical map $\colim_i (M \times N_i) \to M \times \colim_i N_i$ is an isomorphism for filtered diagrams $(N_i)$: It is surjective by the concrete description of filtered colimits. It is isometric because of the elementary observation
       $$\textstyle\inf_i \max(r, s_i) = \max(r, \inf_i s_i)$$
       for $r, s_i \in \IR$, where $i \leq j \implies s_i \geq s_j$.
     label: Met_cartesian_filtered_colimits
 
   - property: ℵ₁-cofiltered limits
     proof: >-
-      Let $D : \I \to \Met$ be an $\aleph_1$-cofiltered diagram. This diagram has a limit in the complete category <a href="/category/Met_oo">$\Met_\infty$</a>, obtained by equipping the limit of the underlying sets with the supremum metric $d(x,y) = \sup_i d(x_i,y_i)$. It remains to show that $d(x,y) < \infty$.
-      Suppose otherwise. Then for every $n \in \IN$ there exists an object $i_n \in \I$ such that $d(x_{i_n},y_{i_n}) \geq n$. Since $\I$ is $\aleph_1$-cofiltered, there exists a cone $(j \to i_n)_{n \in \IN}$. Since the maps $D(j) \to D(i_n)$ are non-expansive, we have
-      $$d(x_j,y_j) \geq d(x_{i_n},y_{i_n}) \geq n$$
-      for every $n \in \IN$. This is impossible since the metric on $D(j)$ takes only finite values.
+      Let $D : \I \to \Met$ be an $\aleph_1$-cofiltered diagram with $D(i) = (X_i,d_i)$. This diagram has a limit in the complete category <a href="/category/Met_oo">$\Met_\infty$</a>, namely $(X,d)$, where $X$ is the limit of the sets $X_i$ and $d$ is the supremum metric $d(x,y) = \sup_i d_i(x_i,y_i)$. It remains to show that $d(x,y) < \infty$ for all $x,y \in X$.
+      Suppose otherwise. Then for every $n \in \IN$ there exists an object $i_n \in \I$ such that $d_{i_n}(x_{i_n},y_{i_n}) \geq n$. Since $\I$ is $\aleph_1$-cofiltered, there exists a cone $(j \to i_n)_{n \in \IN}$. Since the maps $D(j) \to D(i_n)$ are non-expansive, we have
+      $$d_j(x_j,y_j) \geq d_{i_n}(x_{i_n},y_{i_n}) \geq n$$
+      for every $n \in \IN$. This is impossible since $d_j$ takes only finite values.
     label: Met_aleph1_cofiltered_limits
 
   - property: ℵ₁-accessible
     proof: >-
-      We use the proof for <a href="/category/PMet">$\PMet$</a>. Let $(X_i)_{i \in I}$ be a diagram of metric spaces indexed by an $\aleph_1$-directed poset $I$, and let $(u_i : X_i \to X)_{i \in I}$ be its colimit in $\PMet$. We claim that $X$ is a metric space. Let $x,y \in X$ with $d(x,y) = 0$. By the claim in the proof for $\PMet$, applied to $S \coloneqq \{x,y\}$, there are $k \in I$ and preimages $x_k,y_k \in X_k$ of $x,y$ with $d(x_k,y_k) = d(x,y) = 0$. Since $X_k$ is a metric space, we get $x_k = y_k$, and hence $x = y$. Since $\Met$ is a full subcategory of $\PMet$, it follows that $X$ is also the colimit in $\Met$. (This fails for $\aleph_0$-directed colimits, see the example for filtered-colimit-stable monomorphisms below.)
+      We use the proof for <a href="/category/PMet">$\PMet$</a>. Let $(X_i,d_i)_{i \in I}$ be a diagram of metric spaces indexed by an $\aleph_1$-directed poset $I$, and let $(u_i : (X_i,d_i) \to (X,d))_{i \in I}$ be its colimit in $\PMet$. We claim that $d$ is a metric. Let $x,y \in X$ with $d(x,y) = 0$. By the claim in the proof for $\PMet$, applied to $S \coloneqq \{x,y\}$, there are $k \in I$ and preimages $x_k,y_k \in X_k$ of $x,y$ with $d_k(x_k,y_k) = d(x,y) = 0$. Since $d_k$ is a metric, we get $x_k = y_k$, and hence $x = y$. Since $\Met$ is a full subcategory of $\PMet$, it follows that $(X,d)$ is also the colimit in $\Met$. (This fails for $\aleph_0$-directed colimits, see the example for filtered-colimit-stable monomorphisms below.)
 
       Consequently, every countable metric space is $\aleph_1$-presentable in $\Met$, since it is $\aleph_1$-presentable in $\PMet$. Likewise, every metric space is the $\aleph_1$-directed colimit of its countable subspaces in $\Met$, since this holds in $\PMet$. Hence, $\Met$ is $\aleph_1$-accessible.
     label: Met_aleph1_accessible
@@ -72,46 +74,50 @@ satisfied_properties:
       - Met_no_filtered_colimit_stable_monos
 
   - property: well-copowered
-    proof: 'If $f : X \to Y$ is an epimorphism, then $f(X)$ is dense in $Y$ (see below). Hence, there is an injective map $Y \to X^{\IN}$, which bounds the size of $Y$.'
+    proof: 'If $f : (X,d_X) \to (Y,d_Y)$ is an epimorphism, then $f(X)$ is dense in $Y$ (see below). Hence, there is an injective map $Y \to X^{\IN}$, which bounds the size of $Y$.'
 
   - property: extremal generator
     proof: >-
-      Let $G$ be the metric space with underlying set $\IR_{\ge 0}$ equipped with the metric where $d(x,y) = 0$ if $x=y$, and otherwise $d(x,y) = x+y$. We claim that $G$ is an extremal generator.
+      Consider $(G,d_G)$, where $G \coloneqq \IR_{\ge 0}$ and $d_G$ is the metric with $d_G(x,y) = 0$ if $x=y$, and otherwise $d_G(x,y) = x+y$. We claim that $(G,d_G)$ is an extremal generator.
 
-      First, to see that $G$ is a generator, note that the one-point metric space $\{\ast\}$ is a generator since it represents the forgetful functor $\Met \to \Set$ which is faithful. Since we have an epimorphism $! : G \twoheadrightarrow \{\ast\}$, $G$ is also a generator.
+      First, to see that $(G,d_G)$ is a generator, note that the terminal object $\{\ast\}$ is a generator since it represents the forgetful functor $\Met \to \Set$ which is faithful. Since we have an epimorphism $! : (G,d_G) \twoheadrightarrow \{\ast\}$, $(G,d_G)$ is also a generator.
 
-      Now, suppose that $f : X \to Y$ is a non-expansive map of metric spaces such that $f \circ {-} : \Hom(G, X) \to \Hom(G, Y)$ is a bijection. By considering constant maps from $G$, we see that $f$ is a bijection on underlying sets. Now suppose we have $x_1, x_2 \in X$ with $d(f(x_1), f(x_2)) = \varepsilon > 0$. Then there is a non-expansive map $\varphi : G \to Y$ which maps $\varepsilon$ to $f(x_2)$ and every other element of $\IR_{\ge 0}$ to $f(x_1)$. Therefore, there is a non-expansive map $\psi : G \to X$ such that $\varphi = f \circ \psi$. Since $f$ is injective on underlying sets, we must have $\psi(\varepsilon) = x_2$ and $\psi(0) = x_1$. Hence,
+      Now, suppose that $f : (X,d_X) \to (Y,d_Y)$ is a morphism such that
+      $$f \circ {-} : \Hom((G,d_G), (X,d_X)) \to \Hom((G,d_G), (Y,d_Y))$$
+      is a bijection. By considering constant maps from $(G,d_G)$, we see that $f : X \to Y$ is bijective. Now suppose we have $x_1, x_2 \in X$ with $d_Y(f(x_1), f(x_2)) = \varepsilon > 0$. Then there is a morphism $\varphi : (G,d_G) \to (Y,d_Y)$ which maps $\varepsilon$ to $f(x_2)$ and every other element of $G$ to $f(x_1)$. Therefore, there is a morphism $\psi : (G,d_G) \to (X,d_X)$ such that $\varphi = f \circ \psi$. Since $f$ is injective, we must have $\psi(\varepsilon) = x_2$ and $\psi(0) = x_1$. Hence,
       $$\begin{align*}
-      d(x_1, x_2) &= d(\psi(0), \psi(\varepsilon)) \\
-      & \le d(0, \varepsilon) \\
+      d_X(x_1, x_2) &= d_X(\psi(0), \psi(\varepsilon)) \\
+      & \le d_G(0, \varepsilon) \\
       & = \varepsilon \\
-      & = d(f(x_1), f(x_2)) \\
-      & \le d(x_1, x_2).
+      & = d_Y(f(x_1), f(x_2)) \\
+      & \le d_X(x_1, x_2).
       \end{align*}$$
       This shows that $f$ is isometric.
     label: Met_extremal_generator
 
   - property: extremal cogenerator
     proof: >-
-      We claim that $\IR_+$ (where $0 \notin \IR_+$) with metric inherited from the usual metric on $\IR$ is a cogenerator. Let $a,b \in X$ be two points of a metric space such that $f(a)=f(b)$ for all non-expansive maps $f : X \to \IR_+$. This applies in particular to $f(x) \coloneqq d(a,x)+1$ and shows that $1=d(a,a)+1=d(a,b)+1$, so that $a=b$.
+      Let $d$ be the usual metric on $\IR$ and its restrictions to subsets of $\IR$. We claim that $(\IR_+,d)$ (where $0 \notin \IR_+$) is a cogenerator. Let $(X,d_X)$ be a metric space and $a,b \in X$ be two points such that $f(a)=f(b)$ for all morphisms $f : (X,d_X) \to (\IR_+,d)$. This applies in particular to $f(x) \coloneqq d_X(a,x)+1$ and shows that $1=d_X(a,a)+1=d_X(a,b)+1$, so that $a=b$.
 
-      In fact, $\IR_+$ is an extremal cogenerator. To see this, suppose that $f : X \to Y$ is a non-expansive map of metric spaces such that ${-} \circ f : \Hom(Y, \IR_+) \to \Hom(X, \IR_+)$ is a bijection. First of all, since ${-} \circ f$ is injective and $\IR_+$ is a cogenerator, $f$ is an epimorphism, so it has dense image (see below). Now for each $x \in X$, we have a non-expansive map
-      $$\varphi : X \to \IR_+, \,x' \mapsto d(x, x') + 1.$$
-      By the assumption, there exists a non-expansive map $\psi : Y \to \IR_+$ such that $\psi \circ f = \varphi$. Therefore,
+      In fact, $(\IR_+,d)$ is an extremal cogenerator. To see this, suppose that $f : (X,d_X) \to (Y,d_Y)$ is a morphism such that
+      $${-} \circ f : \Hom((Y,d_Y), (\IR_+,d)) \to \Hom((X,d_X), (\IR_+,d))$$
+      is a bijection. First of all, since ${-} \circ f$ is injective and $(\IR_+,d)$ is a cogenerator, $f$ is an epimorphism, so it has dense image (see below). Now for each $x \in X$, we have a morphism
+      $$\varphi : (X,d_X) \to (\IR_+,d), \quad x' \mapsto d_X(x, x') + 1.$$
+      By the assumption, there exists a morphism $\psi : (Y,d_Y) \to (\IR_+,d)$ such that $\psi \circ f = \varphi$. Therefore,
       $$\begin{align*}
-      d(x, x') &= |d(x, x') - d(x, x)| \\
+      d_X(x, x') &= |d_X(x, x') - d_X(x, x)| \\
       & = |\varphi(x') - \varphi(x)| \\
       & = |\psi(f(x')) - \psi(f(x))| \\
-      & \le d(f(x), f(x')) \\
-      & \le d(x,x').
+      & \le d_Y(f(x), f(x')) \\
+      & \le d_X(x,x').
       \end{align*}$$
-      This shows that $f$ is isometric, which in particular implies $f$ is injective on underlying sets.
+      This shows that $f$ is isometric, which in particular implies that $f : X \to Y$ is injective.
 
-      It remains to show $f$ is surjective on underlying sets. To see this, suppose to the contrary that we have $y \in Y \setminus f(X)$. Then we have a non-expansive map
-      $$\varphi : X \to \IR_+,\, x \mapsto d(y, f(x)).$$
-      By the assumption on $f$, there exists a non-expansive map $\psi : Y \to \IR_+$ such that $\psi \circ f = \varphi$. However, since $\psi$ (seen as a function with codomain $\IR$) and $d(y, {-})$ are two continuous functions $Y \to \IR$ which agree on the dense subset $f(X)$, they must be the same function. Thus, $\psi(y) = d(y, y) = 0$, giving a contradiction.
+      It remains to show that $f : X \to Y$ is surjective. To see this, suppose to the contrary that we have $y \in Y \setminus f(X)$. Then we have a morphism
+      $$\varphi : (X,d_X) \to (\IR_+,d), \quad x \mapsto d_Y(y, f(x)).$$
+      By the assumption on $f$, there exists a morphism $\psi : (Y,d_Y) \to (\IR_+,d)$ such that $\psi \circ f = \varphi$. However, since $\psi$ (seen as a function with codomain $\IR$) and $d_Y(y, {-})$ are two continuous functions $Y \to \IR$ which agree on the dense subset $f(X)$, they must be the same function. Thus, $\psi(y) = d_Y(y, y) = 0$, giving a contradiction.
 
-      Note: $\IR$ is not an extremal cogenerator. This is because for example the non-isomorphism $(0, 1) \hookrightarrow [0, 1]$ induces a bijection $\Hom([0, 1], \IR) \to \Hom((0, 1), \IR)$. To see this, suppose we have a non-expansive map $f : (0, 1) \to \IR$. Then since $f$ is uniformly continuous in particular, it is well known that $\lim_{x\to 0^+} f(x)$ and $\lim_{x\to 1^-} f(x)$ both exist and are finite. If we extend $f$ with these values at 0 and 1 respectively, then it is straightforward to check that the resulting function is still non-expansive. This shows that $\Hom([0, 1], \IR) \to \Hom((0, 1), \IR)$ is surjective; and since $(0, 1) \hookrightarrow [0, 1]$ is an epimorphism, $\Hom([0, 1], \IR) \to \Hom((0, 1), \IR)$ is also injective. (The same proof also shows that $\IR_{\ge 0}$ is not an extremal cogenerator.)
+      Note: $(\IR,d)$ is not an extremal cogenerator. For example, the inclusion $((0, 1),d) \hookrightarrow ([0, 1],d)$ is not an isomorphism, but every non-expansive map $((0, 1),d) \to (\IR,d)$ extends uniquely to a non-expansive map $([0, 1],d) \to (\IR,d)$. To see this, let $f : ((0, 1),d) \to (\IR,d)$ be a non-expansive map. Then since $f$ is uniformly continuous in particular, it is well known that $\lim_{x\to 0^+} f(x)$ and $\lim_{x\to 1^-} f(x)$ both exist and are finite. If we extend $f$ with these values at 0 and 1 respectively, then it is straightforward to check that the resulting function is still non-expansive. The extension is unique since $(0, 1)$ is dense in $[0, 1]$. (The same proof also shows that $(\IR_{\ge 0},d)$ is not an extremal cogenerator.)
     label: Met_extremal_cogenerator
 
 unsatisfied_properties:
@@ -122,16 +128,16 @@ unsatisfied_properties:
     proof: This is obvious.
 
   - property: balanced
-    proof: The inclusion $\IQ \hookrightarrow \IR$ is a counterexample; it is an epimorphism since $\IQ$ is dense in $\IR$. Alternatively, consider the identity map $(X,2d) \to (X,d)$ for any non-trivial metric space $(X,d)$.
+    proof: Let $d$ be the usual metric on $\IR$ and its restriction to $\IQ$. The inclusion $(\IQ,d) \hookrightarrow (\IR,d)$ is a counterexample; it is an epimorphism since $\IQ$ is dense in $\IR$. Alternatively, consider the identity map $(X,2d) \to (X,d)$ for any non-trivial metric space $(X,d)$.
 
   - property: Malcev
-    proof: 'Consider the metric subspace $\{(a,b) \in \IR^2 : a \leq b\}$ of $\IR^2$.'
+    proof: 'Let $d$ be the usual metric on $\IR$. Consider the relation $(S,d_S)$ on $(\IR,d)$, where $S \coloneqq \{(a,b) \in \IR^2 : a \leq b\}$ and $d_S$ is the restriction of the product metric.'
 
   - property: countable powers
-    proof: 'Assume that the power $P = \IR^{\IN}$ exists, where $\IR$ has the usual metric. Since the forgetful functor $\Met \to \Set$ is representable, it preserves limits, powers in particular. Thus, we may assume that $P$ is the set of sequences of numbers and that the projections $p_n : P \to \IR$ are given by $p_n(x) = x_n$. Now consider the sequences $x = (n)_n$ and $y = (0)_n$. Since each $p_n$ is non-expansive, we get $d(x,y) \geq d(p_n(x),p_n(y)) = d(n,0) = n$. But then $d(x,y) = \infty$, a contradiction.'
+    proof: 'Let $d$ be the usual metric on $\IR$, and assume that the power $(P,d_P)$ of countably many copies of $(\IR,d)$ exists. Since the forgetful functor $\Met \to \Set$ is representable, it preserves limits, powers in particular. Thus, we may assume that $P = \IR^{\IN}$ is the set of sequences of numbers and that the projections $p_n : (P,d_P) \to (\IR,d)$ are given by $p_n(x) = x_n$. Now consider the sequences $x = (n)_n$ and $y = (0)_n$. Since each $p_n$ is non-expansive, we get $d_P(x,y) \geq d(p_n(x),p_n(y)) = d(n,0) = n$. But then $d_P(x,y) = \infty$, a contradiction.'
 
   - property: binary copowers
-    proof: The coproduct of two non-empty metric spaces does not exist; see <a href="https://math.stackexchange.com/questions/1778408">MSE/1778408</a>. For example, the copower $\IR \sqcup \IR$ does not exist. We only get coproducts when allowing $\infty$ as a distance, as in <a href="/category/Met_oo">$\Met_{\infty}$</a>.
+    proof: The coproduct of two non-empty metric spaces does not exist; see <a href="https://math.stackexchange.com/questions/1778408">MSE/1778408</a>. For example, the binary copower of $(\IR,d)$, where $d$ is the usual metric, does not exist. We only get coproducts when allowing $\infty$ as a distance, as in <a href="/category/Met_oo">$\Met_{\infty}$</a>.
 
   - property: cartesian closed
     proof: This is proven in <a href="https://math.stackexchange.com/questions/5131457">MSE/5131457</a>.
@@ -146,18 +152,18 @@ unsatisfied_properties:
     proof: By Lemma 2 <a href="/content/natural_numbers_objects">here</a>, if $(N,z,s)$ is a natural numbers object, then $N \cong \{\ast\} \sqcup N$. Since there is a map $\{\ast\} \to N$, we have $N \neq \varnothing$. However, the coproduct of two non-empty metric spaces does not exist; see <a href="https://math.stackexchange.com/questions/1778408">MSE/1778408</a>.
 
   - property: effective congruences
-    proof: 'Any kernel pair of $h : X \to Z$ in $\Met$ corresponds to a closed subset of $X\times X$. However, there are plenty of non-closed congruences, such as $\Delta \cup (\IQ \times \IQ) \subseteq \IR \times \IR$ with the subspace metric. Alternatively, the proof for <a href="/category/PMet">$\PMet$</a> works verbatim, since all spaces involved there are metric spaces.'
+    proof: 'Any kernel pair of a morphism $h : (X,d_X) \to (Z,d_Z)$ in $\Met$ corresponds to a closed subset of $X \times X$. However, there are plenty of non-closed congruences, such as $(R,d_R)$ on $(\IR,d)$, where $d$ is the usual metric, $R \coloneqq \Delta \cup (\IQ \times \IQ) \subseteq \IR \times \IR$, and $d_R$ is the restriction of the product metric. Alternatively, the proof for <a href="/category/PMet">$\PMet$</a> works verbatim, since all spaces involved there are metric spaces.'
     references:
       - PMet_no_effective_congruences
 
   - property: effective cocongruences
     proof: >-
-      We will define a cocongruence on the interval $(0,1) \subseteq \IR$ where $C \coloneqq (-1, 0) \cup (0, 1) \subseteq \IR$, and the two maps $(0, 1) \rightrightarrows C$ are the inclusion map and $x \mapsto -x$. Then for any metric space $X$, the induced relation on non-expansive maps $(0, 1) \to X$ is that $f \sim g$ if and only if
-      $$d(f(x), g(y)) \le x+y$$
-      for each $x, y \in (0, 1)$. This is reflexive since $d(f(x), f(y)) \le |x-y| < x+y$, and it is clearly symmetric. For transitivity, suppose $f\sim g$ and $g\sim h$. Then for any $\varepsilon > 0$, we have
-      $$d(f(x), h(y)) \le d(f(x), g(\varepsilon)) + d(g(\varepsilon), h(y)) \le (x + \varepsilon) + (y + \varepsilon).$$
-      Since this holds for every $\varepsilon > 0$, we conclude $d(f(x), h(y)) \le x+y$.
-      On the other hand, if this cocongruence were effective, then by the dual of <a href="/content/effective-congruence-quotients">this result</a>, it would be the cokernel pair of the equalizer of the two inclusion maps. However, that equalizer is empty, so $C$ would have to be a binary copower of $(0,1)$, which does not exist in $\Met$.
+      Let $d$ be the usual metric on $\IR$ and its restrictions to subsets of $\IR$. We will define a cocongruence on $((0,1),d)$ given by $(C,d)$, where $C \coloneqq (-1, 0) \cup (0, 1) \subseteq \IR$, and the two maps $((0, 1),d) \rightrightarrows (C,d)$ are the inclusion map and $x \mapsto -x$. Then for any metric space $(X,d_X)$, the induced relation on non-expansive maps $((0, 1),d) \to (X,d_X)$ is that $f \sim g$ if and only if
+      $$d_X(f(x), g(y)) \le x+y$$
+      for each $x, y \in (0, 1)$. This is reflexive since $d_X(f(x), f(y)) \le |x-y| < x+y$, and it is clearly symmetric. For transitivity, suppose $f\sim g$ and $g\sim h$. Then for any $\varepsilon > 0$, we have
+      $$d_X(f(x), h(y)) \le d_X(f(x), g(\varepsilon)) + d_X(g(\varepsilon), h(y)) \le (x + \varepsilon) + (y + \varepsilon).$$
+      Since this holds for every $\varepsilon > 0$, we conclude $d_X(f(x), h(y)) \le x+y$.
+      On the other hand, if this cocongruence were effective, then by the dual of <a href="/content/effective-congruence-quotients">this result</a>, it would be the cokernel pair of the equalizer of the two inclusion maps. However, that equalizer is empty, so $(C,d)$ would have to be a binary copower of $((0,1),d)$, which does not exist in $\Met$.
     label: Met_no_effective_cocongruences
 
   - property: pullback-stable regular epimorphisms
@@ -167,23 +173,23 @@ unsatisfied_properties:
 
   - property: regular subobject classifier
     proof: >-
-      Assume that $\top : \{\ast\} \to \Omega$ is a regular subobject classifier. We can identify $\top$ with a point $\top \in \Omega$, and for every regular monomorphism $Y \hookrightarrow X$ there is a unique non-expansive map $f : X \to \Omega$ such that $f^*(\{\top\}) = Y$ as metric spaces, and hence as topological spaces.
+      Assume that $\top : \{\ast\} \to (\Omega,d_\Omega)$ is a regular subobject classifier. We can identify $\top$ with a point $\top \in \Omega$. Then for every metric space $(X,d_X)$ and every regular monomorphism into it, which we may assume to be an inclusion $(Y,d_Y) \hookrightarrow (X,d_X)$, where $Y \subseteq X$ and $d_Y$ is the restriction of $d_X$, there is a unique morphism $f : (X,d_X) \to (\Omega,d_\Omega)$ such that $f^*(\{\top\}) = Y$.
 
-      The underlying set of $\Omega$ is identified with $\Hom(\{\ast\},\Omega) \cong \Sub_{\reg}(\{\ast\})$. There are two regular subobjects of $\{\ast\}$, namely $\{\ast\} \subseteq \{\ast\}$ and $\varnothing \subseteq \{\ast\}$ (the latter being the equalizer of, say, two maps $\{\ast\} \rightrightarrows \{0,1\}$). Thus, $\Omega$ has exactly two points and is therefore discrete. In particular, $\top : \{\ast\} \to \Omega$ is a clopen inclusion. The universal property then implies that every regular monomorphism is a clopen inclusion. But this is not the case: for example, the inclusion $[0,\infty) \hookrightarrow \IR$ is the equalizer of $\id : \IR \to \IR$ and the absolute value function $|{-}| : \IR \to \IR$, where $\IR$ is equipped with the standard metric.
+      The set $\Omega$ is identified with $\Hom(\{\ast\},(\Omega,d_\Omega)) \cong \Sub_{\reg}(\{\ast\})$. There are two regular subobjects of $\{\ast\}$, namely $\{\ast\} \subseteq \{\ast\}$ and $\varnothing \subseteq \{\ast\}$ (the latter being the equalizer of, say, two maps $\{\ast\} \rightrightarrows \{0,1\}$). Thus, $\Omega$ has exactly two points, so that $d_\Omega$ induces the discrete topology. In particular, $\{\top\}$ is clopen in $\Omega$. Since $f$ is continuous, the universal property then implies that every subset $Y \subseteq X$ as above is clopen in $X$. But this is not the case: for example, with the standard metric $d$ on $\IR$, the inclusion $([0,\infty),d) \hookrightarrow (\IR,d)$ is the equalizer of $\id : (\IR,d) \to (\IR,d)$ and the absolute value function $|{-}| : (\IR,d) \to (\IR,d)$.
     label: Met_no_regular_subobject_classifier
 
   - property: coaccessible
     proof: >-
-      Assume that $\Met$ is $\kappa$-coaccessible for a regular cardinal $\kappa$. For $\alpha < \kappa$, let $D(\alpha)$ be the set $\{ \beta \mid \alpha \leq \beta < \kappa \}$ equipped with the discrete metric $d(x,y) \coloneqq 1$ for $x \neq y$. The inclusions $D(\alpha') \hookrightarrow D(\alpha)$ for $\alpha \leq \alpha'$ are non-expansive and form a diagram $D : (\kappa,\geq) \to \Met$. Its limit is the empty metric space, which is the initial object. Indeed, if $(f_\alpha : Y \to D(\alpha))_{\alpha < \kappa}$ is a cone, then every $f_\alpha$ agrees with $f_0$ as a map to $D(0)$, so that the image of $f_0$ is contained in $\bigcap_{\alpha < \kappa} D(\alpha) = \varnothing$, and hence $Y = \varnothing$. Let $p : D(0) \to \{\ast\}$ be the map to the terminal object. For every $\alpha < \kappa$, the composite $D(\alpha) \hookrightarrow D(0) \to \{\ast\}$ is surjective, since $D(\alpha)$ is non-empty, and hence an epimorphism. By the lemma <a href="/content/decreasing-chains-coaccessible">here</a>, every metric space admits at most one non-expansive map from $\{\ast\}$, which means that it has at most one point. This is a contradiction.
+      Assume that $\Met$ is $\kappa$-coaccessible for a regular cardinal $\kappa$. For $\alpha < \kappa$, let $X_\alpha \coloneqq \{ \beta \mid \alpha \leq \beta < \kappa \}$ be equipped with the discrete metric $d_\alpha$ given by $d_\alpha(x,y) \coloneqq 1$ for $x \neq y$, and let $D(\alpha) \coloneqq (X_\alpha,d_\alpha)$. The inclusions $D(\alpha') \hookrightarrow D(\alpha)$ for $\alpha \leq \alpha'$ are non-expansive and form a diagram $D : (\kappa,\geq) \to \Met$. Its limit is the empty set with its unique metric, which is the initial object. Indeed, if $(f_\alpha : (Y,d_Y) \to D(\alpha))_{\alpha < \kappa}$ is a cone, then every $f_\alpha$ agrees with $f_0$ as a map to $X_0$, so that the image of $f_0$ is contained in $\bigcap_{\alpha < \kappa} X_\alpha = \varnothing$, and hence $Y = \varnothing$. Let $p : D(0) \to \{\ast\}$ be the map to the terminal object. For every $\alpha < \kappa$, the composite $D(\alpha) \hookrightarrow D(0) \to \{\ast\}$ is surjective, since $X_\alpha$ is non-empty, and hence an epimorphism. By the lemma <a href="/content/decreasing-chains-coaccessible">here</a>, every metric space admits at most one non-expansive map from $\{\ast\}$, which means that it has at most one point. This is a contradiction.
     label: Met_not_coaccessible
 
 special_objects:
   initial object:
-    description: empty metric space
+    description: empty set with its unique metric
   terminal object:
-    description: singleton space
+    description: one-point set with its unique metric
   products:
-    description: '[finite case] direct products with the metric $d(x,y) = \sup_i d_i(x_i,y_i)$'
+    description: '[finite case] $(\prod_i X_i,d)$ for metric spaces $(X_i,d_i)$, where $d(x,y) = \sup_i d_i(x_i,y_i)$'
 
 special_morphisms:
   isomorphism:
@@ -197,4 +203,4 @@ special_morphisms:
     proof: See <a href="https://math.stackexchange.com/questions/937387">MSE/937387</a>.
   regular monomorphism:
     description: isometric embeddings with closed image
-    proof: 'The same proof as for <a href="/category/Met_c">$\Met_c$</a> works. The only difference is that equalizers in $\Met$ are equipped with the induced metric, so they are isometric embeddings. For the converse, note that the maps used there, the constant maps $X \to \IR$ and $d(A,-) : X \to \IR$, are non-expansive.'
+    proof: 'The same proof as for <a href="/category/Met_c">$\Met_c$</a> works. The only difference is that the equalizer of two morphisms $(X,d_X) \rightrightarrows (Y,d_Y)$ in $\Met$ is $(E,d_E)$, where $E \subseteq X$ is the equalizer of the underlying maps and $d_E$ is the restriction of $d_X$, so equalizers are isometric embeddings. For the converse, note that the maps used there, the constant maps $X \to \IR$ and $d_X(A,-) : X \to \IR$ are non-expansive with respect to the usual metric on $\IR$.'

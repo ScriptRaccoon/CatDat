@@ -1,9 +1,11 @@
 id: PMet
 name: category of pseudo-metric spaces with non-expansive maps
 notation: $\PMet$
-objects: pseudo-metric spaces
-morphisms: non-expansive maps $f$ (also called short maps or $1$-Lipschitz maps), meaning $d(f(x),f(y)) \leq d(x,y)$ for all $x,y$
-description: In contrast to metric spaces, we do not demand $d(x,y)=0 \implies x=y$ here.
+objects: >-
+  A pseudo-metric space is a pair $(X,d_X)$ consisting of a set $X$ and a map $d_X : X \times X \to [0,\infty)$ such that $d_X(x,x) = 0$, $d_X(x,y) = d_X(y,x)$, and $d_X(x,z) \leq d_X(x,y) + d_X(y,z)$ for all $x,y,z \in X$.
+morphisms: >-
+  A morphism $(X,d_X) \to (Y,d_Y)$ is a non-expansive map (also called short map or $1$-Lipschitz map), i.e. a map $f : X \to Y$ such that $d_Y(f(x),f(x')) \leq d_X(x,x')$ for all $x,x' \in X$.
+description: In contrast to metric spaces, we do not demand that $d_X(x,y) = 0$ implies $x = y$.
 nlab_link: null
 keywords:
   - short maps
@@ -20,7 +22,7 @@ satisfied_properties:
     proof: There is a forgetful functor $\PMet \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
 
   - property: strict initial object
-    proof: The empty (pseudo-)metric space is initial and clearly strict.
+    proof: The empty set $\varnothing$ with its unique pseudo-metric is initial and clearly strict.
 
   - property: semi-strongly connected
     proof: Every non-empty pseudo-metric space is weakly terminal (by using constant maps).
@@ -33,22 +35,25 @@ satisfied_properties:
     check_redundancy: false
 
   - property: binary products
-    proof: The product of two pseudo-metric spaces $(X,d)$, $(Y,d)$ is $(X \times Y,d)$ with $d((x_1,y_1),(x_2,y_2)) \coloneqq \sup(d(x_1,x_2),d(y_1,y_2))$.
+    proof: The product of two pseudo-metric spaces $(X,d_X)$, $(Y,d_Y)$ is $(X \times Y,d)$ with $d((x_1,y_1),(x_2,y_2)) \coloneqq \sup(d_X(x_1,x_2),d_Y(y_1,y_2))$.
     check_redundancy: false
 
   - property: terminal object
-    proof: The one-point (pseudo-)metric space $\{\ast\}$ is terminal.
+    proof: The one-point set $\{\ast\}$ with its unique pseudo-metric is terminal. We denote this pseudo-metric space by $\{\ast\}$ as well.
     check_redundancy: false
 
   - property: coequalizers
     proof: See <a href="https://mathoverflow.net/questions/123739">MO/123739</a>.
 
   - property: filtered colimits
-    proof: 'Given a filtered diagram $(X_i)$ of pseudo-metric spaces, take the filtered colimit $X$ of the underlying sets with the following pseudo-metric: If $x,y \in X$, let $d(x,y)$ be the infimum of all $d(x_i,y_i)$, where $x_i,y_i \in X_i$ are some preimages of $x,y$ in some $X_i$. The definition ensures that each $X_i \to X$ is non-expansive, and the universal property is easy to check.'
+    proof: 'Given a filtered diagram of pseudo-metric spaces $(X_i,d_i)$, take the filtered colimit $X$ of the sets $X_i$, with maps $u_i : X_i \to X$, and equip it with the following pseudo-metric $d$: If $x,y \in X$, let $d(x,y)$ be the infimum of all $d_i(x_i,y_i)$, where $x_i,y_i \in X_i$ are some preimages of $x,y$ under some $u_i$. The definition ensures that each $u_i : (X_i,d_i) \to (X,d)$ is non-expansive, and the universal property is easy to check.'
     check_redundancy: false
 
   - property: exact filtered colimits
-    proof: 'We already saw that finite limits and filtered colimits exist. Now let $\I$ be a finite category and $\J$ be a small filtered category, w.l.o.g. a directed poset. Let $X : \I \times \J \to \PMet$ be a diagram. We need to show that the canonical map $\colim_{j \in \J} \lim_{i \in \I} X(i,j) \to \lim_{i \in \I} \colim_{j \in \J}  X(i,j)$ is an isomorphism. It is bijective since the forgetful functor to $\Set$ preserves finite limits and filtered colimits and since <a href="/category/Set">$\Set$</a> has exact filtered colimits. That the map is isometric can easily be reduced to the following lemma: If $d_{i,j} \in \IR_{\geq 0}$ are numbers for $i \in \I$, $j \in \J$ with $j \leq k \implies d_{i,k} \leq d_{i,j}$, then $\inf_j \sup_i d_{i,j} = \sup_i \inf_j d_{i,j}$. This can be proven directly. Alternatively, use that the thin category $(\IR_{\geq 0} \cup \{\infty\},\leq)$ is isomorphic to $([0,1],\leq)$, and we already know that <a href="/category/real_interval">it has exact filtered colimits</a>.'
+    proof: >-
+      We already saw that finite limits and filtered colimits exist. Now let $\I$ be a finite category and $\J$ be a small filtered category, w.l.o.g. a directed poset. Let $D : \I \times \J \to \PMet$ be a diagram. We need to show that the canonical map
+      $$\textstyle\colim_{j \in \J} \lim_{i \in \I} D(i,j) \to \lim_{i \in \I} \colim_{j \in \J} D(i,j)$$
+      is an isomorphism. It is bijective since the forgetful functor to $\Set$ preserves finite limits and filtered colimits and since <a href="/category/Set">$\Set$</a> has exact filtered colimits. That the map is isometric can easily be reduced to the following lemma: If $r_{i,j} \in \IR_{\geq 0}$ are numbers for $i \in \I$, $j \in \J$ with $j \leq k \implies r_{i,k} \leq r_{i,j}$, then $\inf_j \sup_i r_{i,j} = \sup_i \inf_j r_{i,j}$. This can be proven directly. Alternatively, use that the thin category $(\IR_{\geq 0} \cup \{\infty\},\leq)$ is isomorphic to $([0,1],\leq)$, and we already know that <a href="/category/real_interval">it has exact filtered colimits</a>.
 
   - property: ℵ₁-cofiltered limits
     proof: The proof is identical to the one for <a href="/category/Met">$\Met$</a>.
@@ -57,38 +62,42 @@ satisfied_properties:
 
   - property: ℵ₁-accessible
     proof: >-
-      We already know that $\PMet$ has filtered colimits. Let $(X_i)_{i \in I}$ be a diagram in $\PMet$ indexed by an $\aleph_1$-directed poset $I$, with transition maps $f_{ij} : X_i \to X_j$ for $i \leq j$, and let $(u_i : X_i \to X)_{i \in I}$ be its colimit. Recall that $X$ is the colimit of the underlying sets, and that $d(x,y)$ is the infimum of all $d(x_i,y_i)$, where $i \in I$ and $x_i,y_i \in X_i$ satisfy $u_i(x_i) = x$ and $u_i(y_i) = y$.
+      We already know that $\PMet$ has filtered colimits. Let $(X_i,d_i)_{i \in I}$ be a diagram in $\PMet$ indexed by an $\aleph_1$-directed poset $I$, with transition maps $f_{ij} : (X_i,d_i) \to (X_j,d_j)$ for $i \leq j$, and let $(u_i : (X_i,d_i) \to (X,d))_{i \in I}$ be its colimit. Recall that $X$ is the colimit of the sets $X_i$, and that $d(x,y)$ is the infimum of all $d_i(x_i,y_i)$, where $i \in I$ and $x_i,y_i \in X_i$ satisfy $u_i(x_i) = x$ and $u_i(y_i) = y$.
 
-      <strong>Claim.</strong> For every countable subset $S \subseteq X$ there are an index $k \in I$ and a map $s : S \to X_k$ such that $u_k(s(x)) = x$ and $d(s(x),s(y)) = d(x,y)$ for all $x,y \in S$. In other words, the infima defining the distances in $S$ are attained simultaneously at a single stage.
+      <strong>Claim.</strong> For every countable subset $S \subseteq X$ there are an index $k \in I$ and a map $s : S \to X_k$ such that $u_k(s(x)) = x$ and $d_k(s(x),s(y)) = d(x,y)$ for all $x,y \in S$. In other words, the infima defining the distances in $S$ are attained simultaneously at a single stage.
 
-      To see this, choose for all $x,y \in S$ and $n \geq 1$ an index $i \in I$ and preimages $x_i,y_i \in X_i$ of $x,y$ with $d(x_i,y_i) \leq d(x,y) + 1/n$. This gives countably many elements in various stages $X_i$. Any two chosen preimages of the same point of $S$ are mapped to the same element at some later stage, since the underlying set of $X$ is the colimit in $\Set$. These are countably many pairs, so since $I$ is $\aleph_1$-directed, there is an index $k$ above all the indices involved such that all chosen preimages of a point $x \in S$ have the same image in $X_k$. We call this image $s(x)$. Since the transition maps are non-expansive, we get $d(s(x),s(y)) \leq d(x,y) + 1/n$ for all $n \geq 1$, hence $d(s(x),s(y)) \leq d(x,y)$. Conversely, $d(x,y) \leq d(s(x),s(y))$ holds since $u_k$ is non-expansive.
+      To see this, choose for all $x,y \in S$ and $n \geq 1$ an index $i \in I$ and preimages $x_i,y_i \in X_i$ of $x,y$ with $d_i(x_i,y_i) \leq d(x,y) + 1/n$. This gives countably many elements in various stages $X_i$. Any two chosen preimages of the same point of $S$ are mapped to the same element at some later stage, since the underlying set of $X$ is the colimit in $\Set$. These are countably many pairs, so since $I$ is $\aleph_1$-directed, there is an index $k$ above all the indices involved such that all chosen preimages of a point $x \in S$ have the same image in $X_k$. We call this image $s(x)$. Since the transition maps are non-expansive, we get $d_k(s(x),s(y)) \leq d(x,y) + 1/n$ for all $n \geq 1$, hence $d_k(s(x),s(y)) \leq d(x,y)$. Conversely, $d(x,y) \leq d_k(s(x),s(y))$ holds since $u_k$ is non-expansive.
 
-      Now let $A$ be a countable pseudo-metric space. We show that $A$ is $\aleph_1$-presentable, i.e. that the canonical map $\colim_{i \in I} \Hom(A,X_i) \to \Hom(A,X)$ is bijective. For injectivity, let $g,h : A \rightrightarrows X_i$ be non-expansive maps with $u_i \circ g = u_i \circ h$. For every $a \in A$ there is some $j_a \geq i$ with $f_{i j_a}(g(a)) = f_{i j_a}(h(a))$. An upper bound $j$ of the countably many indices $j_a$ satisfies $f_{ij} \circ g = f_{ij} \circ h$. For surjectivity, let $g : A \to X$ be a non-expansive map. We apply the claim to the countable subset $S \coloneqq g(A)$ and obtain $k \in I$ and $s : S \to X_k$. Then the map $h : A \to X_k$, $h(a) \coloneqq s(g(a))$ satisfies $u_k \circ h = g$, and $h$ is non-expansive because
-      $$d(h(a),h(b)) = d(g(a),g(b)) \leq d(a,b)$$
+      Now let $(A,d_A)$ be a countable pseudo-metric space. We show that $(A,d_A)$ is $\aleph_1$-presentable, i.e. that the canonical map
+      $$\colim_{i \in I} \Hom((A,d_A),(X_i,d_i)) \to \Hom((A,d_A),(X,d))$$
+      is bijective. For injectivity, let $g,h : (A,d_A) \rightrightarrows (X_i,d_i)$ be morphisms with $u_i \circ g = u_i \circ h$. For every $a \in A$ there is some $j_a \geq i$ with $f_{i j_a}(g(a)) = f_{i j_a}(h(a))$. An upper bound $j$ of the countably many indices $j_a$ satisfies $f_{ij} \circ g = f_{ij} \circ h$. For surjectivity, let $g : (A,d_A) \to (X,d)$ be a morphism. We apply the claim to the countable subset $S \coloneqq g(A)$ and obtain $k \in I$ and $s : S \to X_k$. Then the map $h : A \to X_k$, $h(a) \coloneqq s(g(a))$ satisfies $u_k \circ h = g$, and $h$ is non-expansive because
+      $$d_k(h(a),h(b)) = d(g(a),g(b)) \leq d_A(a,b)$$
       for all $a,b \in A$.
 
-      Finally, every pseudo-metric space $Y$ is the $\aleph_1$-directed colimit of its countable subspaces (with the restricted pseudo-metric): the underlying set of the colimit is the union $Y$, and the infimum defining the distance of two points is just their distance in $Y$, since all inclusions are isometric. Since every countable pseudo-metric space is isomorphic to one whose underlying set is a subset of $\IN$, there is only a set of them up to isomorphism. Hence, $\PMet$ is $\aleph_1$-accessible.
+      Finally, every pseudo-metric space $(Y,d_Y)$ is the $\aleph_1$-directed colimit of its countable subspaces $(S,d_S)$, where $S \subseteq Y$ is countable and $d_S$ is the restriction of $d_Y$: the underlying set of the colimit is the union $Y$, and the infimum defining the distance of two points is just their distance w.r.t. $d_Y$, since all inclusions are isometric. Since every countable pseudo-metric space is isomorphic to one whose underlying set is a subset of $\IN$, there is only a set of them up to isomorphism. Hence, $\PMet$ is $\aleph_1$-accessible.
     label: PMet_aleph1_accessible
 
   - property: regular subobject classifier
     proof: >-
-      Consider the pseudo-metric space $\Omega = (\{0,1\},0)$, equipped with the zero pseudo-metric. We know that the regular monomorphisms are precisely the injective isometric maps (see below), and hence are, up to isomorphism, inclusions of isometric subspaces. In particular, the map $\top : \{\ast\} \to \Omega$, $\ast \mapsto 1$, is a regular monomorphism. If $Y \subseteq X$ is an isometric subspace, its characteristic function $\chi_Y : X \to \Omega$ is non-expansive for trivial reasons and satisfies $X \times_{\Omega} \{\ast\} = Y$. Indeed, the underlying set of the pullback $X \times_{\Omega} \{\ast\}$ identifies with the preimage $(\chi_Y)^*(\{1\}) = Y$, and the metric on the pullback is
-      $d((x,\ast),(x',\ast)) = \sup(d(x,x'),d(\ast,\ast)) = d(x,x')$,
-      i.e. the metric induced from $X$.
+      Consider the pseudo-metric space $\Omega = (\{0,1\},0)$, equipped with the zero pseudo-metric. We know that the regular monomorphisms are precisely the injective isometric maps (see below), and hence are, up to isomorphism, inclusions $(Y,d_Y) \hookrightarrow (X,d_X)$, where $Y \subseteq X$ and $d_Y$ is the restriction of $d_X$. In particular, the map $\top : \{\ast\} \to \Omega$, $\ast \mapsto 1$, is a regular monomorphism. Let $(X,d_X)$ be a pseudo-metric space, $Y \subseteq X$ be a subset, and $d_Y$ be the restriction of $d_X$. The characteristic function $\chi_Y : X \to \{0,1\}$ is non-expansive since all distances in $\Omega$ are $0$, and the pullback of $\top$ along $\chi_Y$ is $(Y,d_Y)$. Indeed, the underlying set of the pullback identifies with the preimage $(\chi_Y)^*(\{1\}) = Y$, and its pseudo-metric is
+      $d((x,\ast),(x',\ast)) = \sup(d_X(x,x'),0) = d_X(x,x')$,
+      i.e. the restriction of $d_X$.
 
   - property: extremal generator
     proof: >-
-      The proof will be similar to the one for <a href="/category/Met">$\Met$</a>. Namely, let $G$ be the set $\IR_{\ge 0} \sqcup \{ 0' \}$, equipped with the metric where $d(x,y) = 0$ if $x=y$ and otherwise $d(x,y) = x+y$ for $x, y \in \IR_{\ge 0}$, and $d(x, 0') = d(0', x) = x$ for $x \in \IR_{\ge 0}$. We will show $G$ is an extremal generator for $\PMet$.
+      The proof will be similar to the one for <a href="/category/Met">$\Met$</a>. Namely, consider $(G,d_G)$, where $G \coloneqq \IR_{\ge 0} \sqcup \{ 0' \}$ and $d_G$ is the pseudo-metric with $d_G(x,y) = 0$ if $x=y$ and otherwise $d_G(x,y) = x+y$ for $x, y \in \IR_{\ge 0}$, and $d_G(x, 0') = d_G(0', x) = x$ for $x \in \IR_{\ge 0}$. We will show $(G,d_G)$ is an extremal generator for $\PMet$.
 
-      First, to see $G$ is a generator, note that the one-point metric space is a generator since it represents the forgetful functor $\PMet\to \Set$ which is faithful. Since we have an epimorphism $! : G \twoheadrightarrow \{\ast\}$, $G$ is also a generator.
+      First, to see $(G,d_G)$ is a generator, note that the one-point space is a generator since it represents the forgetful functor $\PMet\to \Set$ which is faithful. Since we have an epimorphism $! : (G,d_G) \twoheadrightarrow \{\ast\}$, $(G,d_G)$ is also a generator.
 
-      Now, suppose that $f : X \to Y$ is a non-expansive map of pseudo-metric spaces such that $f \circ {-} : \Hom(G, X) \to \Hom(G, Y)$ is a bijection. By considering constant maps from $G$, we see that $f$ is a bijection on underlying sets. Now suppose we have $x_1, x_2 \in X$ with $d(f(x_1), f(x_2)) = \varepsilon \ge 0$. Then there is a non-expansive map $\varphi : G \to Y$ which maps $\varepsilon$ to $f(x_2)$ and every other element of $G$ to $f(x_1)$. Therefore, there is a non-expansive map $\psi : G \to X$ such that $\varphi = f \circ \psi$. Since $f$ is injective on underlying sets, we must have $\psi(\varepsilon) = x_2$ and $\psi(0') = x_1$. Hence,
+      Now, suppose that $f : (X,d_X) \to (Y,d_Y)$ is a morphism such that
+      $$f \circ {-} : \Hom((G,d_G), (X,d_X)) \to \Hom((G,d_G), (Y,d_Y))$$
+      is a bijection. By considering constant maps from $(G,d_G)$, we see that $f : X \to Y$ is bijective. Now suppose we have $x_1, x_2 \in X$ with $d_Y(f(x_1), f(x_2)) = \varepsilon \ge 0$. Then there is a morphism $\varphi : (G,d_G) \to (Y,d_Y)$ which maps $\varepsilon$ to $f(x_2)$ and every other element of $G$ to $f(x_1)$. Therefore, there is a morphism $\psi : (G,d_G) \to (X,d_X)$ such that $\varphi = f \circ \psi$. Since $f$ is injective, we must have $\psi(\varepsilon) = x_2$ and $\psi(0') = x_1$. Hence,
       $$\begin{align*}
-      d(x_1, x_2) &= d(\psi(0'), \psi(\varepsilon)) \\
-      & \le d(0', \varepsilon) \\
+      d_X(x_1, x_2) &= d_X(\psi(0'), \psi(\varepsilon)) \\
+      & \leq d_G(0', \varepsilon) \\
       & = \varepsilon \\
-      & = d(f(x_1), f(x_2)) \\
-      & \le d(x_1, x_2).
+      & = d_Y(f(x_1), f(x_2)) \\
+      & \leq d_X(x_1, x_2).
       \end{align*}$$
       This shows that $f$ is isometric.
     references:
@@ -96,13 +105,15 @@ satisfied_properties:
 
   - property: extremal cogenerator
     proof: >-
-      Let $Q$ be the set $\IR_{\ge 0} \sqcup \{ 0' \}$, equipped with the metric extending the usual metric on $\IR_{\ge 0}$ with $d(x, 0') = x$ for $x \in \IR_{\ge 0}$. Then $Q$ is an extremal cogenerator.
+      Consider $(Q,d_Q)$, where $Q \coloneqq \IR_{\ge 0} \sqcup \{ 0' \}$ and $d_Q$ is the pseudo-metric extending the usual metric on $\IR_{\ge 0}$ with $d_Q(x, 0') = x$ for $x \in \IR_{\ge 0}$. Then $(Q,d_Q)$ is an extremal cogenerator.
 
-      First, to see $Q$ is a cogenerator, note that the subspace $\{ 0, 0' \}$ is a cogenerator since every map into it is automatically non-expansive and since $\{0,0'\}$ is a cogenerator in <a href="/category/Set">$\Set$</a>. Therefore, since $\{ 0, 0' \} \hookrightarrow Q$ is a monomorphism, we have that $Q$ is also a cogenerator.
+      First, to see $(Q,d_Q)$ is a cogenerator, note that $d_Q$ restricts to the zero pseudo-metric on $\{ 0, 0' \}$, and that $(\{ 0, 0' \},0)$ is a cogenerator since every map into it is automatically non-expansive and since $\{0,0'\}$ is a cogenerator in <a href="/category/Set">$\Set$</a>. Therefore, since the inclusion $(\{ 0, 0' \},0) \hookrightarrow (Q,d_Q)$ is a monomorphism, we have that $(Q,d_Q)$ is also a cogenerator.
 
-      To see $Q$ is in fact an extremal cogenerator, suppose we have a non-expansive map $f : X \to Y$ such that ${-} \circ f : \Hom(Y, Q) \to \Hom(X, Q)$ is a bijection. First of all, any function $Y \to Q$ which factors through $\{ 0, 0' \}$ is automatically non-expansive; and the injectivity of $f^*$ on such maps implies that $f$ is surjective on underlying sets, since $\{ 0, 0' \}$ is a cogenerator of <a href="/category/Set">$\Set$</a>. From this, we can conclude that $f^*$ in fact induces a bijection on the functions $Y\to Q$ and $X\to Q$, respectively, which factor through $\{ 0, 0' \}$. Since $\{ 0, 0' \}$ is in fact an extremal cogenerator of $\Set$, we conclude that in fact, $f$ is a bijection on underlying sets.
+      To see $(Q,d_Q)$ is in fact an extremal cogenerator, suppose we have a morphism $f : (X,d_X) \to (Y,d_Y)$ such that
+      $${-} \circ f : \Hom((Y,d_Y), (Q,d_Q)) \to \Hom((X,d_X), (Q,d_Q))$$
+      is a bijection. First of all, any function $Y \to Q$ which factors through $\{ 0, 0' \}$ is automatically non-expansive; and the injectivity of ${-} \circ f$ on such maps implies that $f : X \to Y$ is surjective, since $\{ 0, 0' \}$ is a cogenerator of <a href="/category/Set">$\Set$</a>. From this, we can conclude that ${-} \circ f$ in fact induces a bijection on the functions $Y \to Q$ and $X \to Q$, respectively, which factor through $\{ 0, 0' \}$. Since $\{ 0, 0' \}$ is in fact an extremal cogenerator of $\Set$, we conclude that in fact, $f$ is bijective.
 
-      From here, the proof that $f$ is isometric is similar to the one for <a href="/category/Met">$\Met$</a>, using the fact that $d(x, {-}) : X \to \IR_{\ge 0} \hookrightarrow Q$ induces a non-expansive map $Y \to Q$.
+      From here, the proof that $f$ is isometric is similar to the one for <a href="/category/Met">$\Met$</a>, using the fact that for every $x \in X$, the morphism $d_X(x, {-}) : (X,d_X) \to (Q,d_Q)$ extends along $f$ to a morphism $(Y,d_Y) \to (Q,d_Q)$.
     references:
       - Met_extremal_cogenerator
 
@@ -120,10 +131,10 @@ unsatisfied_properties:
     proof: This is proven in <a href="https://math.stackexchange.com/questions/5131457">MSE/5131457</a>.
 
   - property: countable powers
-    proof: 'Assume that the power $P = \IR^{\IN}$ exists, where $\IR$ has the usual (pseudo-)metric. Since the forgetful functor $\PMet \to \Set$ is representable, it preserves limits, powers in particular. Thus, we may assume that $P$ is the set of sequences of numbers and that the projections $p_n : P \to \IR$ are given by $p_n(x) = x_n$. Now consider the sequences $x = (n)_n$ and $y = (0)_n$. Since each $p_n$ is non-expansive, we get $d(x,y) \geq d(p_n(x),p_n(y)) = d(n,0) = n$. But then $d(x,y) = \infty$, a contradiction.'
+    proof: 'Let $d$ be the usual metric on $\IR$, and assume that the power $(P,d_P)$ of countably many copies of $(\IR,d)$ exists. Since the forgetful functor $\PMet \to \Set$ is representable, it preserves limits, powers in particular. Thus, we may assume that $P = \IR^{\IN}$ is the set of sequences of numbers and that the projections $p_n : (P,d_P) \to (\IR,d)$ are given by $p_n(x) = x_n$. Now consider the sequences $x = (n)_n$ and $y = (0)_n$. Since each $p_n$ is non-expansive, we get $d_P(x,y) \geq d(p_n(x),p_n(y)) = d(n,0) = n$. But then $d_P(x,y) = \infty$, a contradiction.'
 
   - property: binary copowers
-    proof: The coproduct of two non-empty pseudo-metric spaces does not exist; see <a href="https://math.stackexchange.com/questions/1778408">MSE/1778408</a> (the proof also works for pseudo-metric spaces). For example, the copower $\IR \sqcup \IR$ does not exist. We only get coproducts when allowing $\infty$ as a distance.
+    proof: The coproduct of two non-empty pseudo-metric spaces does not exist; see <a href="https://math.stackexchange.com/questions/1778408">MSE/1778408</a> (the proof also works for pseudo-metric spaces). For example, the binary copower of $(\IR,d)$, where $d$ is the usual metric, does not exist. We only get coproducts when allowing $\infty$ as a distance.
 
   - property: natural numbers object
     proof: By Lemma 2 <a href="/content/natural_numbers_objects">here</a>, if $(N,z,s)$ is a natural numbers object, then $N \cong \{\ast\} \sqcup N$. Since there is a map $\{\ast\} \to N$, we have $N \neq \varnothing$. However, the coproduct of two non-empty pseudo-metric spaces does not exist; see <a href="https://math.stackexchange.com/questions/1778408">MSE/1778408</a>.
@@ -138,16 +149,17 @@ unsatisfied_properties:
 
       Transitivity: the pullback of $p_2$ and $p_1$ consists of the pairs $((x,y),(y,z))$, with the maximum of the distances of the components. We need to show that the composition map $((x,y),(y,z)) \mapsto (x,z)$ is non-expansive. Let $r$ be the distance of $((x,y),(y,z))$ and $((x',y'),(y',z'))$. Since $d_R$ only takes the values $0$, $1$, and $2$, the same holds for $r$. If $r = 2$, there is nothing to show, since $d_R \leq 2$. Otherwise, $r \leq 1$, so that $d_R((x,y),(x',y')) \leq 1$ and $d_R((y,z),(y',z')) \leq 1$. Since $(0,0)$ and $(1,1)$ are the only distinct points with distance $1$, each of the sets $\{(x,y),(x',y')\}$ and $\{(y,z),(y',z')\}$ is either a singleton or equal to $\{(0,0),(1,1)\}$. If $y = y'$, neither set can be $\{(0,0),(1,1)\}$, so $(x,y) = (x',y')$ and $(y,z) = (y',z')$, and hence $(x,z) = (x',z')$, so that $d_R((x,z),(x',z')) = 0 \leq r$. If $y \neq y'$, both sets are $\{(0,0),(1,1)\}$, so $x = y = z$ and $x' = y' = z'$ with $x \neq x'$. Then $\{(x,z),(x',z')\} = \{(0,0),(1,1)\}$, and hence $d_R((x,z),(x',z')) = 1 \leq r$.
 
-      The congruence is not effective. Assume that it is the kernel pair of a non-expansive map $f : (X,d_X) \to (Y,d_Y)$. The underlying set of the kernel pair is $\{(x,x') \in X \times X : f(x) = f(x')\}$, which then must be $X \times X$, so that $f$ is constant. But then the kernel pair is $X \times X$ with the supremum metric, in which $(0,1)$ and $(1,0)$ have distance $1$, whereas $d_R((0,1),(1,0)) = 2$.
+      The congruence is not effective. Assume that it is the kernel pair of a morphism $f : (X,d_X) \to (Y,d_Y)$. The underlying set of the kernel pair is $\{(x,x') \in X \times X : f(x) = f(x')\}$, which then must be $X \times X$, so that $f$ is constant. But then the kernel pair is $(X \times X,d)$ with the supremum metric $d((x,y),(x',y')) = \sup(d_X(x,x'),d_X(y,y'))$, so that $d((0,1),(1,0)) = 1$, whereas $d_R((0,1),(1,0)) = 2$.
     label: PMet_no_effective_congruences
 
   - property: effective cocongruences
-    proof: 'The proof is similar to the one for <a href="/category/Top">$\Top$</a>: Equip a two-point set with the zero metric; this pseudo-metric space represents the functor taking a pseudo-metric space to the pairs of points with $d(x,y) = 0$. In this case, once you conclude $Z = \varnothing$, the map $h : Z \to \{\ast\}$ does not have any cokernel pair, since that would have to be a coproduct $\{\ast\} \sqcup \{\ast\}$, which does not exist.'
+    proof: 'The proof is similar to the one for <a href="/category/Top">$\Top$</a>: The pseudo-metric space $(\{0,1\},0)$ represents the functor taking a pseudo-metric space to the pairs of points with $d(x,y) = 0$. In this case, once you conclude $Z = \varnothing$, the map $h : Z \to \{\ast\}$ does not have any cokernel pair, since that would have to be a coproduct $\{\ast\} \sqcup \{\ast\}$, which does not exist.'
     references:
       - Top_no_effective_cocongruences
 
   - property: pullback-stable regular epimorphisms
-    proof: 'We can adapt Example 3.14 at the <a href="https://ncatlab.org/nlab/show/regular+category">nLab</a> (which provides non-stable regular epimorphisms in $\Pos$ and related categories) as follows: Consider the subspaces $X = \{0,1,2,3\}$ and $Y = \{0,1,2\}$ of $\IR$ with the usual metric. Define a surjective map $p : X \to Y$ by $p(0)=0$, $p(1)=p(2)=1$, and $p(3)=2$. Clearly, $p$ is non-expansive. Moreover, one can check that $p$ satisfies the universal property in $\PMet$ of a coequalizer of the two maps $1,2 : \{\ast\} \rightrightarrows X$. Thus, $p$ is a regular epimorphism. Now consider the subspace $Z = \{0,2\}$ of $Y$. As a set, the pullback $X \times_Y Z$ is $p^*(Z) = \{0,3\}$. Using the definition of the product metric, one can verify that $d(0,3) = 3$ in this pullback. The projection $X \times_Y Z \to Z$ identifies with the evident bijective and non-expansive map $\{0,3\} \to \{0,2\}$. It is a monomorphism and not an isomorphism (the distances do not match), hence cannot be a regular epimorphism.'
+    proof: >-
+      We can adapt Example 3.14 at the <a href="https://ncatlab.org/nlab/show/regular+category">nLab</a> (which provides non-stable regular epimorphisms in $\Pos$ and related categories) as follows: Let $d$ be the usual metric on $\IR$ and its restrictions to subsets of $\IR$. Consider $X \coloneqq \{0,1,2,3\}$ and $Y \coloneqq \{0,1,2\}$. Define a surjective map $p : X \to Y$ by $p(0)=0$, $p(1)=p(2)=1$, and $p(3)=2$. Clearly, $p$ is non-expansive. Moreover, one can check that it satisfies the universal property in $\PMet$ of a coequalizer of the two maps $\{\ast\} \rightrightarrows (X,d)$ with images $1$ and $2$. Thus, it is a regular epimorphism. Now consider $Z \coloneqq \{0,2\} \subseteq Y$. As a set, the pullback of $(Z,d) \hookrightarrow (Y,d)$ along $p$ is $p^*(Z) = \{0,3\}$, and its pseudo-metric $d'$ satisfies $d'(0,3) = \sup(d(0,3),d(p(0),p(3))) = \sup(3,2) = 3$. The projection of the pullback to $(Z,d)$ identifies with the evident bijective and non-expansive map $(\{0,3\},d') \to (\{0,2\},d)$. It is a monomorphism and not an isomorphism (the distances do not match), hence cannot be a regular epimorphism.
     label: PMet_not_regular
 
   - property: coaccessible
@@ -161,17 +173,17 @@ unsatisfied_properties:
 
       The empty space is finitely presentable since it is initial. The one-point space is finitely presentable since it represents the forgetful functor $\PMet \to \Set$, which preserves filtered colimits by their construction above.
 
-      Conversely, let $(A,d_A)$ be a pseudo-metric space with at least two points. For $n \geq 1$, let $d_n$ be the pseudo-metric on $A$ defined by $d_n(x,y) \coloneqq d_A(x,y) + 1/n$ for $x \neq y$ and $d_n(x,x) \coloneqq 0$. The identity maps $(A,d_n) \to (A,d_{n+1})$ are non-expansive. By the construction of filtered colimits above, the colimit of this sequence is $(A,d_A)$ with the identity maps $(A,d_n) \to (A,d_A)$ as colimit maps, since $\inf_n d_n(x,y) = d_A(x,y)$ for all $x,y \in A$. If $(A,d_A)$ were finitely presentable, the identity of $(A,d_A)$ would factor through some $(A,d_n)$. That is, there would be a non-expansive map $f : (A,d_A) \to (A,d_n)$ whose composite with the identity map $(A,d_n) \to (A,d_A)$ is the identity. Then $f$ is the identity map, so that $d_A(x,y) + 1/n = d_n(x,y) \leq d_A(x,y)$ for distinct $x,y \in A$, which is a contradiction.
+      Conversely, let $(A,d_A)$ be a pseudo-metric space with at least two points. For $n \geq 1$, let $d_n$ be the pseudo-metric on $A$ defined by $d_n(x,y) \coloneqq d_A(x,y) + 1/n$ for $x \neq y$ and $d_n(x,x) \coloneqq 0$. The identity maps $(A,d_n) \to (A,d_{n+1})$ are non-expansive. By the construction of filtered colimits above, the colimit of this sequence is $(A,d_A)$ with the identity maps $(A,d_n) \to (A,d_A)$ as colimit maps, since $\inf_n d_n(x,y) = d_A(x,y)$ for all $x,y \in A$. If $(A,d_A)$ were finitely presentable, the identity of $(A,d_A)$ would factor through some $(A,d_n)$. That is, there would be a morphism $f : (A,d_A) \to (A,d_n)$ whose composite with the identity map $(A,d_n) \to (A,d_A)$ is the identity. Then $f$ is the identity map, so that $d_A(x,y) + 1/n = d_n(x,y) \leq d_A(x,y)$ for distinct $x,y \in A$, which is a contradiction.
 
       In <a href="/category/Met">$\Met$</a>, the situation is different: by <a href="https://doi.org/10.1016/j.jpaa.2021.106974">Adámek–Rosický</a>, Rem. 2.7, the empty space is the only finitely presentable object, so that even the one-point space is not finitely presentable. Their argument fails injectivity instead of surjectivity: the colimit in $\Met$ of the sequence of two-point spaces with distance $1/n$ (and identity maps) is a one-point space, so two distinct constant maps from a non-empty metric space to the first two-point space become equal in the colimit, but not at any finite stage. This does not carry over to $\PMet$, where the colimit of this sequence is a two-point space with distance $0$.
 
 special_objects:
   initial object:
-    description: empty pseudo-metric space
+    description: empty set with its unique pseudo-metric
   terminal object:
-    description: singleton space
+    description: one-point set with its unique pseudo-metric
   products:
-    description: '[finite case] direct products with the pseudo-metric $d(x,y) = \sup_i d_i(x_i,y_i)$'
+    description: '[finite case] $(\prod_i X_i,d)$ for pseudo-metric spaces $(X_i,d_i)$, where $d(x,y) = \sup_i d_i(x_i,y_i)$'
 
 special_morphisms:
   isomorphism:
@@ -183,11 +195,11 @@ special_morphisms:
   epimorphism:
     description: surjective non-expansive maps
     proof: >-
-      Let $f : X \to Y$ be a non-expansive map that is not surjective. Choose $y_0 \in Y \setminus f(X)$. We extend the pseudo-metric from $Y$ to $Z \coloneqq Y \sqcup \{y'_0\}$ via $d(y,y'_0) \coloneqq d(y,y_0)$, i.e., we make $y_0,y'_0$ indistinguishable. Let $g : Y \to Z$ be the inclusion and $h : Y \to Z$ be the map that composes $g$ with the swap between $y_0$ and $y'_0$. Both are isometric and satisfy $g \circ f = h \circ f$. Therefore, $f$ is not an epimorphism.
+      Let $f : (X,d_X) \to (Y,d_Y)$ be a morphism that is not surjective. Choose $y_0 \in Y \setminus f(X)$. We extend $d_Y$ to a pseudo-metric $d_Z$ on $Z \coloneqq Y \sqcup \{y'_0\}$ via $d_Z(y,y'_0) \coloneqq d_Y(y,y_0)$, i.e., we make $y_0,y'_0$ indistinguishable. Let $g : Y \to Z$ be the inclusion and $h : Y \to Z$ be the map that composes $g$ with the swap between $y_0$ and $y'_0$. Both are isometric maps $(Y,d_Y) \to (Z,d_Z)$ and satisfy $g \circ f = h \circ f$. Therefore, $f$ is not an epimorphism.
   regular monomorphism:
     description: injective isometric maps
-    proof: 'Equalizers are injective isometric maps by construction. Conversely, if $X \hookrightarrow Y$ is an injective isometric map, we may assume without loss of generality that it is the inclusion of an isometric subspace. Then it is the equalizer of the two non-expansive maps $\chi_X, 1 : Y \rightrightarrows \Omega$, where $\Omega = (\{0,1\},0)$ is equipped with the zero pseudo-metric.'
+    proof: 'Equalizers are injective isometric maps by construction. Conversely, if $(X,d_X) \to (Y,d_Y)$ is an injective isometric map, we may assume without loss of generality that $X \subseteq Y$ and that $d_X$ is the restriction of $d_Y$. Then the inclusion is the equalizer of the two morphisms $\chi_X, 1 : (Y,d_Y) \rightrightarrows \Omega$, where $\Omega = (\{0,1\},0)$ is equipped with the zero pseudo-metric.'
   regular epimorphism:
     description: >-
-      surjective non-expansive maps $f : X \to Y$ with the property that for all $x,x' \in X$, $d(f(x),f(x'))$ is the infimum of the sums $\sum_{i=0}^{n-1} d(y_i,x_{i+1})$, where $x=x_0$, $x_i \sim y_i$ for $0 \leq i \leq n$, and $y_n = x'$.
+      surjective morphisms $f : (X,d_X) \to (Y,d_Y)$ with the property that for all $x,x' \in X$, $d_Y(f(x),f(x'))$ is the infimum of the sums $\sum_{i=0}^{n-1} d_X(y_i,x_{i+1})$, where $x=x_0$, $f(x_i) = f(y_i)$ for $0 \leq i \leq n$, and $y_n = x'$.
     proof: This follows from the construction of the quotient pseudo-metric on $X/{\sim}$ in <a href="https://mathoverflow.net/questions/123739">MO/123739</a>.
