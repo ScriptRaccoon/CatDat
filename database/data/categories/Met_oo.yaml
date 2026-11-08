@@ -1,8 +1,10 @@
 id: Met_oo
 name: category of extended metric spaces
 notation: $\Met_{\infty}$
-objects: extended metric spaces, i.e. metric spaces where the metric is allowed to assume the value $\infty$
-morphisms: non-expansive maps $f$ (also called short maps or $1$-Lipschitz maps), meaning $d(f(x),f(y)) \leq d(x,y)$ for all $x,y$
+objects: >-
+  An extended metric space is a pair $(X,d_X)$ consisting of a set $X$ and a map $d_X : X \times X \to [0,\infty]$ such that $d_X(x,y) = 0$ holds if and only if $x = y$, $d_X(x,y) = d_X(y,x)$, and $d_X(x,z) \leq d_X(x,y) + d_X(y,z)$ for all $x,y,z \in X$.
+morphisms: >-
+  A morphism $(X,d_X) \to (Y,d_Y)$ is a non-expansive map (also called short map or $1$-Lipschitz map), i.e. a map $f : X \to Y$ such that $d_Y(f(x),f(x')) \leq d_X(x,x')$ for all $x,x' \in X$.
 description: The fact that we allow $\infty$ means that universal constructions work much better when compared to $\Met$.
 nlab_link: https://ncatlab.org/nlab/show/Met
 keywords:
@@ -38,7 +40,7 @@ satisfied_properties:
 
   - property: ℵ₁-accessible
     proof: >-
-      Let $D : \I \to \Met_\infty$ be a filtered diagram, and let $X_i$, $d_i$, $C$, $u_i$, and $\rho$ be as in the construction of colimits above. Then $\rho(c,c')$ is the infimum of all $d_i(x,y)$, where $i \in \I$ and $x,y \in X_i$ satisfy $u_i(x) = c$ and $u_i(y) = c'$. Indeed, since $\I$ is filtered, this infimum defines an extended pseudo-metric on $C$. It is admissible, and every admissible extended pseudo-metric is bounded by it. Thus, filtered colimits are constructed as for <a href="/category/PMet">$\PMet$</a>, followed by the identification of points at distance zero, as for <a href="/category/Met">$\Met$</a>. Therefore, the proofs of $\aleph_1$-accessibility for $\PMet$ and $\Met$ work verbatim for extended metric spaces. They never use that distances are finite; when $d(x,y) = \infty$, the estimate $d(x_i,y_i) \leq d(x,y) + 1/n$ in the proof for $\PMet$ holds for all preimages.
+      Let $D : \I \to \Met_\infty$ be a filtered diagram, and let $X_i$, $d_i$, $C$, $u_i$, and $\rho$ be as in the construction of colimits above. Then $\rho(c,c')$ is the infimum of all $d_i(x,y)$, where $i \in \I$ and $x,y \in X_i$ satisfy $u_i(x) = c$ and $u_i(y) = c'$. Indeed, since $\I$ is filtered, this infimum defines an extended pseudo-metric on $C$. It is admissible, and every admissible extended pseudo-metric is bounded by it. Thus, filtered colimits are constructed as for <a href="/category/PMet">$\PMet$</a>, followed by the identification of points at distance zero, as for <a href="/category/Met">$\Met$</a>. Therefore, the proofs of $\aleph_1$-accessibility for $\PMet$ and $\Met$ work verbatim for extended metric spaces. They never use that distances are finite; when $d(x,y) = \infty$, the estimate $d_i(x_i,y_i) \leq d(x,y) + 1/n$ in the proof for $\PMet$ holds for all preimages.
 
       Alternatively, <a href="https://arxiv.org/abs/1504.02660">Lieberman–Rosický</a>, Examples 4.5 (3), show that $\Met_\infty$ is even locally $\aleph_1$-presentable by identifying it with the category of models of a universal Horn theory in $L_{\omega_1,\omega}$. This proof is more abstract and does not identify the $\aleph_1$-presentable objects, whereas the proof above shows that every countable extended metric space is $\aleph_1$-presentable.
     references:
@@ -52,46 +54,46 @@ satisfied_properties:
       - Met_cartesian_filtered_colimits
 
   - property: infinitary extensive
-    proof: 'This can be deduced from the infinitary extensivity of <a href="/category/Set">$\Set$</a> as follows. We already know that coproducts and pullbacks exist, and these are preserved by the forgetful functor to $\Set$. More concretely, coproducts are disjoint unions of the underlying sets equipped with the metric that extends the given metrics and assigns distance $\infty$ to points in different summands. Since coproducts are disjoint in $\Set$ and the empty set has a unique metric, it follows immediately that coproducts are disjoint in $\Met_\infty$ as well. It remains to show that coproducts are stable under pullbacks. Let $(X_i)_{i \in I}$ be a family of metric spaces and let $f : T \to \coprod_{i \in I} X_i$ be a non-expansive map. Consider the pullbacks $T_i \coloneqq f^*(X_i)$. These are just the preimages of $X_i$ under $f$, with the metric induced from $T$. Since coproducts in $\Set$ are stable under pullbacks, the canonical non-expansive map $\coprod_{i \in I} T_i \to T$ is bijective. It remains to show that it is isometric. Since each $T_i \to T$ is isometric, it suffices to prove that for $a \in T_i$ and $b \in T_j$, where $i \neq j$, we have $d_T(a,b) = \infty$. Indeed, since $f(a) \in X_i$ and $f(b) \in X_j$, we have $\infty = d_{\coprod_i X_i}(f(a),f(b)) \leq d_T(a,b)$.'
+    proof: 'This can be deduced from the infinitary extensivity of <a href="/category/Set">$\Set$</a> as follows. We already know that coproducts and pullbacks exist, and these are preserved by the forgetful functor to $\Set$. More concretely, the coproduct of extended metric spaces $(X_i,d_i)$ is $(\coprod_i X_i,d)$, where $d$ extends the metrics $d_i$ and assigns the distance $\infty$ to points in different summands. Since coproducts are disjoint in $\Set$ and the empty set has a unique metric, it follows immediately that coproducts are disjoint in $\Met_\infty$ as well. It remains to show that coproducts are stable under pullbacks. Let $(X_i,d_i)_{i \in I}$ be a family of extended metric spaces, let $(X,d_X)$ be its coproduct with $X = \coprod_{i \in I} X_i$, and let $f : (T,d_T) \to (X,d_X)$ be a morphism. Consider the pullbacks of the coproduct inclusions along $f$. These are just $(T_i,d_{T_i})$, where $T_i \coloneqq f^*(X_i)$ and $d_{T_i}$ is the restriction of $d_T$. Since coproducts in $\Set$ are stable under pullbacks, the canonical non-expansive map from the coproduct of these spaces to $(T,d_T)$ is bijective. It remains to show that it is isometric. Since each $d_{T_i}$ is the restriction of $d_T$, it suffices to prove that for $a \in T_i$ and $b \in T_j$, where $i \neq j$, we have $d_T(a,b) = \infty$. Indeed, since $f(a) \in X_i$ and $f(b) \in X_j$, we have $\infty = d_X(f(a),f(b)) \leq d_T(a,b)$.'
 
   - property: extremal generator
-    proof: A similar proof to the one for <a href="/category/Met">$\Met$</a> shows that $[0, \infty]$, equipped with the metric where $d(x,y) = 0$ if $x=y$ and otherwise $d(x,y) = x+y$, is an extremal generator for $\Met_{\infty}$.
+    proof: A similar proof to the one for <a href="/category/Met">$\Met$</a> shows that $([0, \infty],d)$, where $d(x,y) = 0$ if $x=y$ and otherwise $d(x,y) = x+y$, is an extremal generator for $\Met_{\infty}$.
     references:
       - Met_extremal_generator
 
   - property: extremal cogenerator
-    proof: 'The proof is similar to $\Met$: an extremal cogenerator is given by $\IR_+ \cup \{\infty\}$ with the metric extending the usual metric on $\IR_+$ by defining $d(a,\infty) \coloneqq \infty$ for $a \in \IR_+$. Then one checks that the maps $1 + d(a,{-}) : X \to \IR_+ \cup \{\infty\}$ (assigning the value $\infty$ if $d(a,x) = \infty$) are non-expansive and finishes as for <a href="/category/Met">$\Met$</a>.'
+    proof: 'The proof is similar to $\Met$: an extremal cogenerator is given by $(\IR_+ \cup \{\infty\},d)$, where $d$ extends the usual metric on $\IR_+$ by $d(a,\infty) \coloneqq \infty$ for $a \in \IR_+$. Then one checks that for every extended metric space $(X,d_X)$ and $a \in X$ the map $1 + d_X(a,{-}) : X \to \IR_+ \cup \{\infty\}$ (assigning the value $\infty$ if $d_X(a,x) = \infty$) is non-expansive and finishes as for <a href="/category/Met">$\Met$</a>.'
     references:
       - Met_extremal_cogenerator
 
   - property: pushout-stable regular monomorphisms
     proof: >-
-      We already know that pushouts exist. Let $i : A \to X$ be a regular monomorphism and $f : A \to Z$ be a non-expansive map. Consider the pushout $P \coloneqq Z \sqcup_A X$ with the morphisms $j : Z \to P$ and $k : X \to P$. By the classification of regular monomorphisms (see below), we may assume that $A \subseteq X$ is a closed subset with the induced metric, and we need to show that $j$ is an isometric embedding with closed image. We will use the metric space $[0,\infty]$ from the classification of regular monomorphisms. Instead of computing the metric of $P$, we will construct non-expansive maps $P \to [0,\infty]$ via the universal property of $P$.
+      We already know that pushouts exist. Let $i : (A,d_A) \to (X,d_X)$ be a regular monomorphism and $f : (A,d_A) \to (Z,d_Z)$ be a morphism. Consider their pushout $(P,d_P)$ with the morphisms $j : (Z,d_Z) \to (P,d_P)$ and $k : (X,d_X) \to (P,d_P)$. By the classification of regular monomorphisms (see below), we may assume that $A \subseteq X$ is a closed subset and that $d_A$ is the restriction of $d_X$, and we need to show that $j$ is an isometric embedding with closed image. We will use the extended metric space $E = ([0,\infty],d_E)$ from the classification of regular monomorphisms. Instead of computing $d_P$, we will construct morphisms $(P,d_P) \to E$ via the universal property of the pushout.
 
-      First, $j$ is isometric: Let $z_0, z \in Z$. Consider the non-expansive map $d(z_0,-) : Z \to [0,\infty]$ and the map $h : X \to [0,\infty]$ defined by
-      $$\textstyle h(x) \coloneqq \inf_{a \in A} \bigl(d(z_0,f(a)) + d(a,x)\bigr).$$
-      The map $h$ is non-expansive since it is an infimum of non-expansive maps. For $a' \in A$ we have $h(a') = d(z_0,f(a'))$: the inequality $\leq$ follows by taking $a = a'$, and $\geq$ follows from the inequality
-      $$d(z_0,f(a)) + d(a,a') \geq d(z_0,f(a)) + d(f(a),f(a')) \geq d(z_0,f(a')),$$
-      which holds for all $a \in A$ since $f$ is non-expansive. Hence, there is a non-expansive map $g : P \to [0,\infty]$ with $g \circ j = d(z_0,-)$ and $g \circ k = h$. It follows that
-      $$d(j(z_0),j(z)) \geq d(g(j(z_0)),g(j(z))) = d(0,d(z_0,z)) = d(z_0,z).$$
+      First, $j$ is isometric: Let $z_0, z \in Z$. Consider the morphism $d_Z(z_0,-) : (Z,d_Z) \to E$ and the map $h : X \to [0,\infty]$ defined by
+      $$\textstyle h(x) \coloneqq \inf_{a \in A} \bigl(d_Z(z_0,f(a)) + d_X(a,x)\bigr).$$
+      The map $h : X \to [0,\infty]$ is non-expansive since it is an infimum of non-expansive maps. For $a' \in A$ we have $h(a') = d_Z(z_0,f(a'))$: the inequality $\leq$ follows by taking $a = a'$, and $\geq$ follows from the inequality
+      $$d_Z(z_0,f(a)) + d_X(a,a') \geq d_Z(z_0,f(a)) + d_Z(f(a),f(a')) \geq d_Z(z_0,f(a')),$$
+      which holds for all $a \in A$ since $f$ is non-expansive. Hence, there is a morphism $g : (P,d_P) \to E$ with $g \circ j = d_Z(z_0,-)$ and $g \circ k = h$. It follows that
+      $$d_P(j(z_0),j(z)) \geq d_E(g(j(z_0)),g(j(z))) = d_E(0,d_Z(z_0,z)) = d_Z(z_0,z).$$
       The reverse inequality holds since $j$ is non-expansive.
 
-      Next, the image of $j$ is closed: The subspace $j(Z) \cup k(X) \subseteq P$ satisfies the universal property of the pushout as well (restrict the codomains of $j$ and $k$), which implies that $j$ and $k$ are jointly surjective. Now let $p \in P \setminus j(Z)$ be fixed. Since $k(a) = j(f(a))$ for $a \in A$, we can write $p = k(x)$ for some $x \in X \setminus A$. Consider the constant map $0 : Z \to [0,\infty]$ and the non-expansive map $d(A,-) : X \to [0,\infty]$. They agree on $A$, so there is a non-expansive map $g : P \to [0,\infty]$ with $g \circ j = 0$ and $g \circ k = d(A,-)$. For every $z \in Z$ we get
-      $$d(p,j(z)) \geq d(g(p),g(j(z))) = d(d(A,x),0) = d(A,x).$$
-      Since $A$ is closed and $x \notin A$, we have $d(A,x) > 0$. Thus, the open ball around $p$ of radius $d(A,x)$ is disjoint from $j(Z)$, which shows that $j(Z)$ is closed.
+      Next, the image of $j$ is closed: The pair $(P',d_{P'})$, where $P' \coloneqq j(Z) \cup k(X)$ and $d_{P'}$ is the restriction of $d_P$, satisfies the universal property of the pushout as well (restrict the codomains of $j$ and $k$), which implies that $j$ and $k$ are jointly surjective. Now let $p \in P \setminus j(Z)$ be fixed. Since $k(a) = j(f(a))$ for $a \in A$, we can write $p = k(x)$ for some $x \in X \setminus A$. Consider the constant morphism $0 : (Z,d_Z) \to E$ and the morphism $d_X(A,-) : (X,d_X) \to E$. They agree on $A$, so there is a morphism $g : (P,d_P) \to E$ with $g \circ j = 0$ and $g \circ k = d_X(A,-)$. For every $z \in Z$ we get
+      $$d_P(p,j(z)) \geq d_E(g(p),g(j(z))) = d_E(d_X(A,x),0) = d_X(A,x).$$
+      Since $A$ is closed and $x \notin A$, we have $d_X(A,x) > 0$. Thus, the open ball around $p$ of radius $d_X(A,x)$ is disjoint from $j(Z)$, which shows that $j(Z)$ is closed.
 
 unsatisfied_properties:
   - property: skeletal
     proof: The extended metric spaces with underlying sets $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.
 
   - property: balanced
-    proof: The inclusion $\IQ \hookrightarrow \IR$ provides a counterexample. Alternatively, consider the identity map $(X,2d) \to (X,d)$ for any non-trivial metric space $(X,d)$.
+    proof: Let $d$ be the usual metric on $\IR$ and its restriction to $\IQ$. The inclusion $(\IQ,d) \hookrightarrow (\IR,d)$ provides a counterexample. Alternatively, consider the identity map $(X,2d) \to (X,d)$ for any non-trivial metric space $(X,d)$.
 
   - property: Malcev
-    proof: 'Consider the metric subspace $\{(a,b) \in \IR^2 : a \leq b\}$ of $\IR^2$.'
+    proof: 'Let $d$ be the usual metric on $\IR$. Consider the relation $(S,d_S)$ on $(\IR,d)$, where $S \coloneqq \{(a,b) \in \IR^2 : a \leq b\}$ and $d_S$ is the restriction of the product metric.'
 
   - property: co-Malcev
-    proof: 'See <a href="https://mathoverflow.net/questions/509552">MO/509552</a>: Consider the forgetful functor $U : \Met_{\infty} \to \Set$ and the relation $R \subseteq U^2$ defined by $R(X) \coloneqq \{(a,b) \in U(X)^2 : d(a,b) \leq 1 \}$. Both are representable: $U$ by the singleton metric space and $R$ by the metric space $\{ 0,1 \}$ where $d(0,1) \coloneqq 1$. It is clear that $R$ is reflexive, but not transitive.'
+    proof: 'See <a href="https://mathoverflow.net/questions/509552">MO/509552</a>: Consider the forgetful functor $U : \Met_{\infty} \to \Set$ and the relation $R \subseteq U^2$ defined by $R(X,d_X) \coloneqq \{(a,b) \in X^2 : d_X(a,b) \leq 1 \}$. Both are representable: $U$ by the one-point set with its unique metric and $R$ by $(\{ 0,1 \},d)$ where $d(0,1) \coloneqq 1$. It is clear that $R$ is reflexive, but not transitive.'
 
   - property: cartesian closed
     proof: This is proven in <a href="https://math.stackexchange.com/questions/5131457">MSE/5131457</a>.
@@ -102,7 +104,7 @@ unsatisfied_properties:
       - Met_no_filtered_colimit_stable_monos
 
   - property: effective cocongruences
-    proof: The same counterexample as for <a href="/category/Met">$\Met$</a> works here. The difference in this case is that a binary copower of two copies of $(0,1)$ does exist in $\Met_\infty$. However, this would assign a distance of $\infty$ between points in $(-1,0)$ and points in $(0,1)$, which does not agree with the chosen subspace metric on $(-1,0) \cup (0,1)$.
+    proof: The same counterexample as for <a href="/category/Met">$\Met$</a> works here. The difference in this case is that a binary copower of $((0,1),d)$ does exist in $\Met_\infty$. However, its metric assigns the distance $\infty$ to points in different summands, whereas $d$ takes only finite values on $C = (-1,0) \cup (0,1)$.
     references:
       - Met_no_effective_cocongruences
 
@@ -113,13 +115,13 @@ unsatisfied_properties:
 
 special_objects:
   initial object:
-    description: empty metric space
+    description: empty set with its unique metric
   terminal object:
-    description: singleton space
+    description: one-point set with its unique metric
   coproducts:
-    description: disjoint union with the metric that extends the given ones and gives points in different spaces the distance $\infty$
+    description: $(\coprod_i X_i,d)$ for extended metric spaces $(X_i,d_i)$, where $d$ extends the metrics $d_i$ and assigns the distance $\infty$ to points in different summands
   products:
-    description: direct products with the metric $d(x,y) = \sup_i d_i(x_i,y_i)$
+    description: '$(\prod_i X_i,d)$ for extended metric spaces $(X_i,d_i)$, where $d(x,y) = \sup_i d_i(x_i,y_i)$'
 
 special_morphisms:
   isomorphism:
@@ -134,6 +136,6 @@ special_morphisms:
   regular monomorphism:
     description: isometric embeddings with closed image
     proof: >-
-      The proof is similar to the one for <a href="/category/Met_c">$\Met_c$</a>. Equalizers are constructed as in $\Set$, equipped with the induced metric, so they are isometric embeddings. Since metric spaces are Hausdorff and non-expansive maps are continuous, an equalizer of two morphisms $X \rightrightarrows Y$ is a closed subset of $X$. Conversely, let $A \subseteq X$ be a closed subset with the induced metric. Let $[0,\infty]$ be the metric space that extends the usual metric on $[0,\infty)$ by $d(r,\infty) \coloneqq \infty$ for $r \in [0,\infty)$. The map
-      $$\textstyle d(A,-) : X \to [0,\infty], \quad x \mapsto \inf_{a \in A} d(a,x)$$
-      is non-expansive since it is an infimum of non-expansive maps, and it vanishes precisely on $A$ since $A$ is closed. (If $A$ is empty, it is constant with value $\infty$.) Therefore, $A$ is the equalizer of $d(A,-)$ and the constant map $0 : X \to [0,\infty]$.
+      The proof is similar to the one for <a href="/category/Met_c">$\Met_c$</a>. The equalizer of two morphisms $(X,d_X) \rightrightarrows (Y,d_Y)$ is $(A,d_A)$, where $A \subseteq X$ is the equalizer in $\Set$ and $d_A$ is the restriction of $d_X$, so equalizers are isometric embeddings. Since metric spaces are Hausdorff and non-expansive maps are continuous, an equalizer of two morphisms $(X,d_X) \rightrightarrows (Y,d_Y)$ is a closed subset of $X$. Conversely, let $(X,d_X)$ be an extended metric space, let $A \subseteq X$ be a closed subset, and let $d_A$ be the restriction of $d_X$. Let $d_E$ be the extended metric on $[0,\infty]$ that extends the usual metric on $[0,\infty)$ by $d_E(r,\infty) \coloneqq \infty$ for $r \in [0,\infty)$, and let $E \coloneqq ([0,\infty],d_E)$. The map
+      $$\textstyle d_X(A,-) : X \to [0,\infty], \quad x \mapsto \inf_{a \in A} d_X(a,x)$$
+      is non-expansive since it is an infimum of non-expansive maps, and it vanishes precisely on $A$ since $A$ is closed. (If $A$ is empty, it is constant with value $\infty$.) Therefore, $(A,d_A)$ is the equalizer of $d_X(A,-)$ and the constant morphism $0 : (X,d_X) \to E$.
