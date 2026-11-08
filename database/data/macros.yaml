@@ -18,6 +18,7 @@
 \D: \mathcal{D}
 \E: \mathcal{E}
 \F: \mathcal{F}
+\G: \mathcal{G}
 \I: \mathcal{I}
 \J: \mathcal{J}
 \K: \mathcal{K}
@@ -176,6 +177,7 @@
 \Arr: \mathbf{Arr}
 \Mono: \mathbf{Mono}
 \Sh: \mathbf{Sh}
+\BiSep: \mathbf{BiSep}
 \Proj: \mathbf{Proj}
 \omegaSet: \omega{-}\Set
 
