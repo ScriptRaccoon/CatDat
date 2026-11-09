@@ -8,6 +8,7 @@ invariant_under_equivalences: true
 related:
   - pushouts
   - coregular
+  - finite-coproduct-stable monomorphisms
 
 tags:
   - limit–colimit interaction

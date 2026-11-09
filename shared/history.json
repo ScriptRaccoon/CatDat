@@ -2101,6 +2101,22 @@
 		{
 			"type": "category",
 			"id": "all monomorphisms split"
+		},
+		{
+			"type": "category",
+			"id": "coproduct-stable monomorphisms"
+		},
+		{
+			"type": "category",
+			"id": "finite-coproduct-stable monomorphisms"
+		},
+		{
+			"type": "category",
+			"id": "finite-product-stable epimorphisms"
+		},
+		{
+			"type": "category",
+			"id": "product-stable epimorphisms"
 		}
 	]
 }

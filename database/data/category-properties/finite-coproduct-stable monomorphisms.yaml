@@ -1,0 +1,22 @@
+id: finite-coproduct-stable monomorphisms
+relation: has
+description: >-
+  A category has <i>finite-coproduct-stable monomorphisms</i> if it has finite coproducts and the following equivalent conditions hold:
+  <ol>
+  <li>For every finite family of monomorphisms $(X_i \to Y_i)_{i \in I}$, the coproduct morphism $\coprod_{i \in I} X_i \to \coprod_{i \in I} Y_i$ is a monomorphism.</li>
+  <li>For all monomorphisms $X_1 \to Y_1$ and $X_2 \to Y_2$, the morphism $X_1 \sqcup X_2 \to Y_1 \sqcup Y_2$ is a monomorphism.</li>
+  <li>For every monomorphism $f : X \to Y$ and every object $T$, the morphism $\id_T \sqcup f : T \sqcup X \to T \sqcup Y$ is a monomorphism.</li>
+  </ol>
+  Condition (1) implies (2) as a special case, and (2) implies (3) since $\id_T$ is a monomorphism. Conversely, (3) implies (2) since $f_1 \sqcup f_2 = (\id_{Y_1} \sqcup f_2) \circ (f_1 \sqcup \id_{X_2})$ is a composite of two monomorphisms, and (2) implies (1) by induction on the size of the family (the empty coproduct morphism is the identity of the initial object).
+nlab_link: null
+dual: finite-product-stable epimorphisms
+invariant_under_equivalences: true
+
+related:
+  - finite coproducts
+  - coproduct-stable monomorphisms
+  - pushout-stable regular monomorphisms
+
+tags:
+  - morphism behavior
+  - limit–colimit interaction

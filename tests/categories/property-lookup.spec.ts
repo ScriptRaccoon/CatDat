@@ -85,11 +85,13 @@ test('user sees properties matching by keyword after the other properties in the
 
 	await expect(results.getByRole('listitem')).toHaveText([
 		'has coproducts',
+		'has coproduct-stable monomorphisms',
 		'has binary coproducts',
 		'has countable coproducts',
 		'has disjoint coproducts',
 		'has disjoint finite coproducts',
 		'has finite coproducts',
+		'has finite-coproduct-stable monomorphisms',
 		'has ℵ₂-small coproducts',
 		'does not satisfy CIP',
 		'does not satisfy CSP',
