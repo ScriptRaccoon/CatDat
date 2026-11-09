@@ -21,6 +21,7 @@
   conclusions:
     - coproducts
   proof: This holds by definition.
+  check_redundancy: false
 
 - id: infinitary_extensive_countable
   assumptions:
@@ -119,3 +120,20 @@
     Let $T$ be an object, let $T_m$ be the summand with index $m$ of the coproduct $\coprod_{m \in \IN} T$, and for $n \in \IN$ let
     $$\textstyle D(n) \coloneqq \coprod_{m \geq n} T_m.$$
     The canonical morphisms $D(n') \to D(n)$ for $n \leq n'$ form a cofiltered diagram $D : (\IN,\geq) \to \C$, whose limit is initial by <a href="/content/tail-coproducts-extensive">this lemma</a>. For every $n \in \IN$, the codiagonal $D(n) \to T$ is an epimorphism, since its composite with the coproduct inclusion $T_n \hookrightarrow D(n)$ is the identity. Together, they form a morphism from $D$ to the constant diagram with value $T$, whose limit is $T$. By assumption, their limit $0 \to T$ is an epimorphism. Since $0$ is initial, it follows that any two morphisms $T \rightrightarrows Y$ coincide. Thus, $\C$ is thin.
+
+- id: extensive_finite-coproduct-stable_monos
+  assumptions:
+    - extensive
+  conclusions:
+    - finite-coproduct-stable monomorphisms
+  proof: >-
+    Let $f_1 : X_1 \to Y_1$ and $f_2 : X_2 \to Y_2$ be monomorphisms. We regard $f_k$ as a morphism $(X_k, f_k) \to (Y_k, \id_{Y_k})$ in $\C / Y_k$. It is a monomorphism there, since a morphism in a slice category is a monomorphism if its underlying morphism is one. Hence, $(f_1,f_2)$ is a monomorphism in $\C / Y_1 \times \C / Y_2$. The equivalence of categories
+    $$\C / Y_1 \times \C / Y_2 \to \C / (Y_1 + Y_2)$$
+    maps it to $f_1 + f_2 : (X_1 + X_2, f_1 + f_2) \to (Y_1 + Y_2, \id_{Y_1 + Y_2})$, which is therefore a monomorphism in $\C / (Y_1 + Y_2)$. Since the forgetful functor $\C / (Y_1 + Y_2) \to \C$ preserves monomorphisms (in fact, it preserves connected limits, hence pullbacks), $f_1 + f_2$ is a monomorphism in $\C$.
+
+- id: infinitary_extensive_coproduct-stable_monos
+  assumptions:
+    - infinitary extensive
+  conclusions:
+    - coproduct-stable monomorphisms
+  proof: The proof of <a href="/category-implication/extensive_finite-coproduct-stable_monos">this result</a> works verbatim for arbitrary families of monomorphisms, using the equivalence $\prod_{i \in I} \C / Y_i \to \C / \coprod_{i \in I} Y_i$.

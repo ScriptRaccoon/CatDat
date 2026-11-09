@@ -17,6 +17,15 @@
     - pullbacks
   proof: This holds by definition.
 
+- id: stable_regular_epis_finite_products
+  assumptions:
+    - pullback-stable regular epimorphisms
+    - epi-regular
+    - finite products
+  conclusions:
+    - finite-product-stable epimorphisms
+  proof: 'Let $f : X \to Y$ be an epimorphism and $T$ be an object. Then $\id_T \times f : T \times X \to T \times Y$ is the pullback of $f$ along the projection $T \times Y \to Y$. Since $f$ is a regular epimorphism, so is $\id_T \times f$.'
+
 - id: regular_well-powered_well-copowered
   assumptions:
     - regular
