@@ -1,0 +1,19 @@
+id: coproduct-stable monomorphisms
+relation: has
+description: A category has <i>coproduct-stable monomorphisms</i> if it has coproducts and for every family of monomorphisms $(X_i \to Y_i)$ also their coproduct morphism $\coprod_i X_i \to \coprod_i Y_i$ is a monomorphism. In the context of <a href="/category-property/abelian">abelian</a> categories, this property is also known as AB4.
+nlab_link: null
+dual: product-stable epimorphisms
+invariant_under_equivalences: true
+keywords:
+  - AB4
+
+related:
+  - finite-coproduct-stable monomorphisms
+  - exact filtered colimits
+  - coproducts
+  - filtered-colimit-stable monomorphisms
+  - pushout-stable regular monomorphisms
+
+tags:
+  - morphism behavior
+  - limit–colimit interaction

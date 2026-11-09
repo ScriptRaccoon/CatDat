@@ -14,8 +14,9 @@ invariant_under_equivalences: true
 related:
   - cartesian filtered colimits
   - filtered colimits
-  - filtered-colimit-stable monomorphisms
   - finitely complete
+  - filtered-colimit-stable monomorphisms
+  - coproduct-stable monomorphisms
 
 tags:
   - limit–colimit interaction
