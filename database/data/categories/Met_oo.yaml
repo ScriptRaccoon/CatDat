@@ -17,6 +17,7 @@ tags:
 related:
   - Met
   - Met_c
+  - PMet
 
 satisfied_properties:
   - property: locally small
@@ -25,7 +26,8 @@ satisfied_properties:
   - property: semi-strongly connected
     proof: Every non-empty metric space is weakly terminal (by using constant maps).
 
-  # TODO: add the category PMet_oo of extended pseudo-metric spaces, and simplify this proof
+  # TODO: perhaps add the category PMet_oo of extended pseudo-metric spaces,
+  # and simplify this proof accordingly
   - property: cocomplete
     proof: >-
       Let $D : \I \to \Met_\infty$ be a small diagram with $D(i) = (X_i,d_i)$, and let $(u_i : X_i \to C)_{i \in \I}$ be the colimit of the underlying sets. We call an extended pseudo-metric $\delta$ on $C$ <i>admissible</i> if $\delta(u_i(x),u_i(y)) \leq d_i(x,y)$ for all $i \in \I$ and $x,y \in X_i$. The zero pseudo-metric is admissible, and the pointwise supremum of admissible extended pseudo-metrics is again an admissible extended pseudo-metric. This is where we need the value $\infty$. Hence, there is a largest admissible extended pseudo-metric $\rho$ on $C$. Let $q : C \to C'$ be the quotient map onto $C' \coloneqq C/{\sim}$, where $c \sim c' \iff \rho(c,c') = 0$. By the triangle inequality, there is a well-defined extended metric $d'$ on $C'$ with $d'(q(c),q(c')) \coloneqq \rho(c,c')$. Since $\rho$ is admissible, the maps $q \circ u_i : (X_i,d_i) \to (C',d')$ are non-expansive, and they form a cocone.
@@ -57,9 +59,9 @@ satisfied_properties:
     proof: 'This can be deduced from the infinitary extensivity of <a href="/category/Set">$\Set$</a> as follows. We already know that coproducts and pullbacks exist, and these are preserved by the forgetful functor to $\Set$. More concretely, the coproduct of extended metric spaces $(X_i,d_i)$ is $(\coprod_i X_i,d)$, where $d$ extends the metrics $d_i$ and assigns the distance $\infty$ to points in different summands. Since coproducts are disjoint in $\Set$ and the empty set has a unique metric, it follows immediately that coproducts are disjoint in $\Met_\infty$ as well. It remains to show that coproducts are stable under pullbacks. Let $(X_i,d_i)_{i \in I}$ be a family of extended metric spaces, let $(X,d_X)$ be its coproduct with $X = \coprod_{i \in I} X_i$, and let $f : (T,d_T) \to (X,d_X)$ be a morphism. Consider the pullbacks of the coproduct inclusions along $f$. These are just $(T_i,d_{T_i})$, where $T_i \coloneqq f^*(X_i)$ and $d_{T_i}$ is the restriction of $d_T$. Since coproducts in $\Set$ are stable under pullbacks, the canonical non-expansive map from the coproduct of these spaces to $(T,d_T)$ is bijective. It remains to show that it is isometric. Since each $d_{T_i}$ is the restriction of $d_T$, it suffices to prove that for $a \in T_i$ and $b \in T_j$, where $i \neq j$, we have $d_T(a,b) = \infty$. Indeed, since $f(a) \in X_i$ and $f(b) \in X_j$, we have $\infty = d_X(f(a),f(b)) \leq d_T(a,b)$.'
 
   - property: extremal generator
-    proof: A similar proof to the one for <a href="/category/Met">$\Met$</a> shows that $([0, \infty],d)$, where $d(x,y) = 0$ if $x=y$ and otherwise $d(x,y) = x+y$, is an extremal generator for $\Met_{\infty}$.
+    proof: A similar proof to the one for <a href="/category/PMet">$\PMet$</a> shows that $([0, \infty],d)$, where $d(x,y) = 0$ if $x=y$ and otherwise $d(x,y) = x+y$, is an extremal generator for $\Met_{\infty}$.
     references:
-      - Met_extremal_generator
+      - PMet_extremal_generator
 
   - property: extremal cogenerator
     proof: 'The proof is similar to $\Met$: an extremal cogenerator is given by $(\IR_+ \cup \{\infty\},d)$, where $d$ extends the usual metric on $\IR_+$ by $d(a,\infty) \coloneqq \infty$ for $a \in \IR_+$. Then one checks that for every extended metric space $(X,d_X)$ and $a \in X$ the map $1 + d_X(a,{-}) : X \to \IR_+ \cup \{\infty\}$ (assigning the value $\infty$ if $d_X(a,x) = \infty$) is non-expansive and finishes as for <a href="/category/Met">$\Met$</a>.'
@@ -87,10 +89,14 @@ unsatisfied_properties:
     proof: The extended metric spaces with underlying sets $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.
 
   - property: balanced
-    proof: Let $d$ be the usual metric on $\IR$ and its restriction to $\IQ$. The inclusion $(\IQ,d) \hookrightarrow (\IR,d)$ provides a counterexample. Alternatively, consider the identity map $(X,2d) \to (X,d)$ for any non-trivial metric space $(X,d)$.
+    proof: The counterexamples for <a href="/category/Met">$\Met$</a> work here as well.
+    references:
+      - Met_not_balanced
 
   - property: Malcev
-    proof: 'Let $d$ be the usual metric on $\IR$. Consider the relation $(S,d_S)$ on $(\IR,d)$, where $S \coloneqq \{(a,b) \in \IR^2 : a \leq b\}$ and $d_S$ is the restriction of the product metric.'
+    proof: The counterexample for <a href="/category/Met">$\Met$</a> works here as well.
+    references:
+      - Met_not_malcev
 
   - property: co-Malcev
     proof: 'See <a href="https://mathoverflow.net/questions/509552">MO/509552</a>: Consider the forgetful functor $U : \Met_{\infty} \to \Set$ and the relation $R \subseteq U^2$ defined by $R(X,d_X) \coloneqq \{(a,b) \in X^2 : d_X(a,b) \leq 1 \}$. Both are representable: $U$ by the one-point set with its unique metric and $R$ by $(\{ 0,1 \},d)$ where $d(0,1) \coloneqq 1$. It is clear that $R$ is reflexive, but not transitive.'
