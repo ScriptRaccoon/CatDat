@@ -16,6 +16,8 @@ tags:
 
 related:
   - Met
+  - Met_c
+  - Met_oo
 
 satisfied_properties:
   - property: locally small
@@ -56,9 +58,15 @@ satisfied_properties:
       is an isomorphism. It is bijective since the forgetful functor to $\Set$ preserves finite limits and filtered colimits and since <a href="/category/Set">$\Set$</a> has exact filtered colimits. That the map is isometric can easily be reduced to the following lemma: If $r_{i,j} \in \IR_{\geq 0}$ are numbers for $i \in \I$, $j \in \J$ with $j \leq k \implies r_{i,k} \leq r_{i,j}$, then $\inf_j \sup_i r_{i,j} = \sup_i \inf_j r_{i,j}$. This can be proven directly. Alternatively, use that the thin category $(\IR_{\geq 0} \cup \{\infty\},\leq)$ is isomorphic to $([0,1],\leq)$, and we already know that <a href="/category/real_interval">it has exact filtered colimits</a>.
 
   - property: ℵ₁-cofiltered limits
-    proof: The proof is identical to the one for <a href="/category/Met">$\Met$</a>.
-    references:
-      - Met_aleph1_cofiltered_limits
+    proof: >-
+      Let $D : \I \to \PMet$ be an $\aleph_1$-cofiltered diagram with $D(i) = (X_i,d_i)$, and let $X$ be the limit of the sets $X_i$, with projections $p_i : X \to X_i$. For $x,y \in X$ we define
+      $$\textstyle d(x,y) \coloneqq \sup_{i \in \I} d_i(p_i(x),p_i(y)).$$
+      We claim that $d(x,y) < \infty$. Suppose otherwise. Then for every $n \in \IN$ there exists an object $i_n \in \I$ such that $d_{i_n}(p_{i_n}(x),p_{i_n}(y)) \geq n$. Since $\I$ is $\aleph_1$-cofiltered, there exists a cone $(j \to i_n)_{n \in \IN}$. Since the maps $D(j) \to D(i_n)$ are non-expansive, we have
+      $$d_j(p_j(x),p_j(y)) \geq d_{i_n}(p_{i_n}(x),p_{i_n}(y)) \geq n$$
+      for every $n \in \IN$. This is impossible since $d_j$ takes only finite values.
+
+      Hence, $d$ is a pseudo-metric on $X$. It satisfies the triangle inequality since $d_i(p_i(x),p_i(z)) \leq d(x,y) + d(y,z)$ holds for all $i \in \I$ and $x,y,z \in X$. By construction, the maps $p_i : (X,d) \to (X_i,d_i)$ are non-expansive. They form a limit cone: if $(g_i : (Y,d_Y) \to (X_i,d_i))_{i \in \I}$ is a cone, then the unique map $g : Y \to X$ with $p_i \circ g = g_i$ for all $i \in \I$ is non-expansive, since $d_i(g_i(y),g_i(y')) \leq d_Y(y,y')$ for all $i \in \I$ implies $d(g(y),g(y')) \leq d_Y(y,y')$.
+    label: PMet_aleph1_cofiltered_limits
 
   - property: ℵ₁-accessible
     proof: >-
@@ -85,7 +93,7 @@ satisfied_properties:
 
   - property: extremal generator
     proof: >-
-      The proof will be similar to the one for <a href="/category/Met">$\Met$</a>. Namely, consider $(G,d_G)$, where $G \coloneqq \IR_{\ge 0} \sqcup \{ 0' \}$ and $d_G$ is the pseudo-metric with $d_G(x,y) = 0$ if $x=y$ and otherwise $d_G(x,y) = x+y$ for $x, y \in \IR_{\ge 0}$, and $d_G(x, 0') = d_G(0', x) = x$ for $x \in \IR_{\ge 0}$. We will show $(G,d_G)$ is an extremal generator for $\PMet$.
+      Consider $(G,d_G)$, where $G \coloneqq \IR_{\ge 0} \sqcup \{ 0' \}$ and $d_G$ is the pseudo-metric with $d_G(x,y) = 0$ if $x=y$ and otherwise $d_G(x,y) = x+y$ for $x, y \in \IR_{\ge 0}$, and $d_G(x, 0') = d_G(0', x) = x$ for $x \in \IR_{\ge 0}$. We will show $(G,d_G)$ is an extremal generator for $\PMet$.
 
       First, to see $(G,d_G)$ is a generator, note that the one-point space is a generator since it represents the forgetful functor $\PMet\to \Set$ which is faithful. Since we have an epimorphism $! : (G,d_G) \twoheadrightarrow \{\ast\}$, $(G,d_G)$ is also a generator.
 
@@ -100,8 +108,7 @@ satisfied_properties:
       & \leq d_X(x_1, x_2).
       \end{align*}$$
       This shows that $f$ is isometric.
-    references:
-      - Met_extremal_generator
+    label: PMet_extremal_generator
 
   - property: extremal cogenerator
     proof: >-
@@ -113,9 +120,14 @@ satisfied_properties:
       $${-} \circ f : \Hom((Y,d_Y), (Q,d_Q)) \to \Hom((X,d_X), (Q,d_Q))$$
       is a bijection. First of all, any function $Y \to Q$ which factors through $\{ 0, 0' \}$ is automatically non-expansive; and the injectivity of ${-} \circ f$ on such maps implies that $f : X \to Y$ is surjective, since $\{ 0, 0' \}$ is a cogenerator of <a href="/category/Set">$\Set$</a>. From this, we can conclude that ${-} \circ f$ in fact induces a bijection on the functions $Y \to Q$ and $X \to Q$, respectively, which factor through $\{ 0, 0' \}$. Since $\{ 0, 0' \}$ is in fact an extremal cogenerator of $\Set$, we conclude that in fact, $f$ is bijective.
 
-      From here, the proof that $f$ is isometric is similar to the one for <a href="/category/Met">$\Met$</a>, using the fact that for every $x \in X$, the morphism $d_X(x, {-}) : (X,d_X) \to (Q,d_Q)$ extends along $f$ to a morphism $(Y,d_Y) \to (Q,d_Q)$.
-    references:
-      - Met_extremal_cogenerator
+      It remains to show that $f$ is isometric. Let $x,x' \in X$. The map $\varphi \coloneqq d_X(x,{-}) : X \to \IR_{\geq 0} \subseteq Q$ is a morphism $(X,d_X) \to (Q,d_Q)$ by the triangle inequality. By assumption, there is a morphism $\psi : (Y,d_Y) \to (Q,d_Q)$ with $\psi \circ f = \varphi$. Since $\varphi(x) = 0$, we get
+      $$\begin{align*}
+      d_X(x,x') &= d_Q(\varphi(x),\varphi(x')) \\
+      & = d_Q(\psi(f(x)),\psi(f(x'))) \\
+      & \leq d_Y(f(x),f(x')) \\
+      & \leq d_X(x,x').
+      \end{align*}$$
+      Hence, $f$ is isometric.
 
 unsatisfied_properties:
   - property: skeletal
@@ -132,6 +144,7 @@ unsatisfied_properties:
 
   - property: countable powers
     proof: 'Let $d$ be the usual metric on $\IR$, and assume that the power $(P,d_P)$ of countably many copies of $(\IR,d)$ exists. Since the forgetful functor $\PMet \to \Set$ is representable, it preserves limits, powers in particular. Thus, we may assume that $P = \IR^{\IN}$ is the set of sequences of numbers and that the projections $p_n : (P,d_P) \to (\IR,d)$ are given by $p_n(x) = x_n$. Now consider the sequences $x = (n)_n$ and $y = (0)_n$. Since each $p_n$ is non-expansive, we get $d_P(x,y) \geq d(p_n(x),p_n(y)) = d(n,0) = n$. But then $d_P(x,y) = \infty$, a contradiction.'
+    label: PMet_no_countable_powers
 
   - property: binary copowers
     proof: The coproduct of two non-empty pseudo-metric spaces does not exist; see <a href="https://math.stackexchange.com/questions/1778408">MSE/1778408</a> (the proof also works for pseudo-metric spaces). For example, the binary copower of $(\IR,d)$, where $d$ is the usual metric, does not exist. We only get coproducts when allowing $\infty$ as a distance.
@@ -163,9 +176,9 @@ unsatisfied_properties:
     label: PMet_not_regular
 
   - property: coaccessible
-    proof: The proof for <a href="/category/Met">$\Met$</a> also works for pseudo-metric spaces. The diagram $D$ used there takes values in $\PMet$, and the same argument shows that its limit in $\PMet$ is the empty space.
-    references:
-      - Met_not_coaccessible
+    proof: >-
+      Assume that $\PMet$ is $\kappa$-coaccessible for a regular cardinal $\kappa$. For $\alpha < \kappa$, let $X_\alpha \coloneqq \{ \beta \mid \alpha \leq \beta < \kappa \}$ be equipped with the discrete metric $d_\alpha$ given by $d_\alpha(x,y) \coloneqq 1$ for $x \neq y$, and let $D(\alpha) \coloneqq (X_\alpha,d_\alpha)$. The inclusions $D(\alpha') \hookrightarrow D(\alpha)$ for $\alpha \leq \alpha'$ are non-expansive and form a diagram $D : (\kappa,\geq) \to \PMet$. Its limit is the empty set with its unique pseudo-metric, which is the initial object. Indeed, if $(f_\alpha : (Y,d_Y) \to D(\alpha))_{\alpha < \kappa}$ is a cone, then every $f_\alpha$ agrees with $f_0$ as a map to $X_0$, so that the image of $f_0$ is contained in $\bigcap_{\alpha < \kappa} X_\alpha = \varnothing$, and hence $Y = \varnothing$. Let $p : D(0) \to \{\ast\}$ be the map to the terminal object. For every $\alpha < \kappa$, the composite $D(\alpha) \hookrightarrow D(0) \to \{\ast\}$ is surjective, since $X_\alpha$ is non-empty, and hence an epimorphism. By the lemma <a href="/content/decreasing-chains-coaccessible">here</a>, every pseudo-metric space admits at most one non-expansive map from $\{\ast\}$, which means that it has at most one point. This is a contradiction.
+    label: PMet_not_coaccessible
 
   - property: finitely accessible
     proof: >-

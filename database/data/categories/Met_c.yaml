@@ -13,6 +13,7 @@ related:
   - Haus
   - Met
   - Met_oo
+  - PMet
   - Top
   - Unif
   - Euclid_coprod
@@ -121,6 +122,8 @@ unsatisfied_properties:
       (Notice that $f$ is not a quotient map of topological spaces: the preimage $f^*(K) = K \subseteq \IR \setminus \{0\}$ is closed in $X$, but $K$ is not closed in $\IR$.)
 
       Now consider the subspace $Y' \coloneqq K \cup \{0\}$ of $\IR$. Since finite limits in $\Met_c$ are computed as in $\Top$, the pullback of the inclusion $Y' \hookrightarrow \IR$ along $f$ is the subspace $X' \coloneqq f^*(Y') = \{0\} \sqcup K$ of $X$, and the pullback of $f$ is the restriction $f' : X' \to Y'$. This map is bijective, hence a monomorphism. If it were a regular epimorphism, it would be an isomorphism. But this is not the case: $X'$ is the coproduct of the one-point space $\{0\} \subseteq \IR \setminus K$ and the discrete space $K \subseteq \IR \setminus \{0\}$, so $X'$ is discrete, whereas $0$ is not isolated in $Y'$. Hence, $f'$ is not a regular epimorphism.
+
+# TODO: add proof that accessibility of Met_c is undecidable in ZFC
 
 special_objects:
   initial object:

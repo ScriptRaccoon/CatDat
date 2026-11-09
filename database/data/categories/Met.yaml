@@ -5,7 +5,10 @@ objects: >-
   A metric space is a pair $(X,d_X)$ consisting of a set $X$ and a map $d_X : X \times X \to [0,\infty)$ such that $d_X(x,y) = 0$ holds if and only if $x = y$, $d_X(x,y) = d_X(y,x)$, and $d_X(x,z) \leq d_X(x,y) + d_X(y,z)$ for all $x,y,z \in X$.
 morphisms: >-
   A morphism $(X,d_X) \to (Y,d_Y)$ is a non-expansive map (also called short map or $1$-Lipschitz map), i.e. a map $f : X \to Y$ such that $d_Y(f(x),f(x')) \leq d_X(x,x')$ for all $x,x' \in X$.
-description: 'In contrast to continuous maps, which only refer to the induced topology, non-expansive maps are more closely related to the metrics themselves. This category is badly behaved, though, especially when compared with $\Met_{\infty}$: since the distance $\infty$ is not allowed, it lacks, for example, binary coproducts (where points in different summands would have distance $\infty$) and countable products (where the supremum of the distances may be $\infty$).'
+description: >-
+  In contrast to continuous maps, which only refer to the induced topology, non-expansive maps are more closely related to the metrics themselves. This category is badly behaved, though, especially when compared with $\Met_{\infty}$: since the distance $\infty$ is not allowed, it lacks, for example, binary coproducts (where points in different summands would have distance $\infty$) and countable products (where the supremum of the distances may be $\infty$).
+
+  The inclusion of $\Met$ into the category <a href="/category/PMet">$\PMet$</a> of pseudo-metric spaces has a left adjoint $L : \PMet \to \Met$. It maps a pseudo-metric space $(X,d_X)$ to the metric space $(X/{\sim},\bar{d}_X)$, where $x \sim y \iff d_X(x,y) = 0$ and $\bar{d}_X([x],[y]) \coloneqq d_X(x,y)$.
 nlab_link: https://ncatlab.org/nlab/show/Met
 keywords:
   - short maps
@@ -42,10 +45,10 @@ satisfied_properties:
     check_redundancy: false
 
   - property: coequalizers
-    proof: This is because the category of pseudo-metric spaces <a href="/category/PMet">$\PMet$</a> has coequalizers and $\Met \hookrightarrow \PMet$ has a left adjoint, mapping a pseudo-metric space $(X,d)$ to the metric space $(X/{\sim},\bar{d})$, where $x \sim y \iff d(x,y)=0$ and $\bar{d}([x],[y]) \coloneqq d(x,y)$. Concretely, we take the coequalizer in the category of pseudo-metric spaces and then identify points with distance zero.
+    proof: This is because <a href="/category/PMet">$\PMet$</a> has coequalizers and the inclusion $\Met \hookrightarrow \PMet$ has the left adjoint $L$ (see the description). Concretely, we take the coequalizer in $\PMet$ and then apply $L$, i.e. identify points with distance $0$.
 
   - property: filtered colimits
-    proof: This is because the category of pseudo-metric spaces <a href="/category/PMet">$\PMet$</a> has filtered colimits and $\Met \hookrightarrow \PMet$ has a left adjoint, mapping a pseudo-metric space $(X,d)$ to the metric space $(X/{\sim},\bar{d})$, where $x \sim y \iff d(x,y)=0$ and $\bar{d}([x],[y]) \coloneqq d(x,y)$. Concretely, we take the filtered colimit in the category of pseudo-metric spaces and then identify points with distance zero.
+    proof: This is because <a href="/category/PMet">$\PMet$</a> has filtered colimits and the inclusion $\Met \hookrightarrow \PMet$ has the left adjoint $L$ (see the description). Concretely, we take the filtered colimit in $\PMet$ and then apply $L$, i.e. identify points with distance $0$.
     check_redundancy: false
 
   - property: cartesian filtered colimits
@@ -57,11 +60,9 @@ satisfied_properties:
 
   - property: ℵ₁-cofiltered limits
     proof: >-
-      Let $D : \I \to \Met$ be an $\aleph_1$-cofiltered diagram with $D(i) = (X_i,d_i)$. This diagram has a limit in the complete category <a href="/category/Met_oo">$\Met_\infty$</a>, namely $(X,d)$, where $X$ is the limit of the sets $X_i$ and $d$ is the supremum metric $d(x,y) = \sup_i d_i(x_i,y_i)$. It remains to show that $d(x,y) < \infty$ for all $x,y \in X$.
-      Suppose otherwise. Then for every $n \in \IN$ there exists an object $i_n \in \I$ such that $d_{i_n}(x_{i_n},y_{i_n}) \geq n$. Since $\I$ is $\aleph_1$-cofiltered, there exists a cone $(j \to i_n)_{n \in \IN}$. Since the maps $D(j) \to D(i_n)$ are non-expansive, we have
-      $$d_j(x_j,y_j) \geq d_{i_n}(x_{i_n},y_{i_n}) \geq n$$
-      for every $n \in \IN$. This is impossible since $d_j$ takes only finite values.
-    label: Met_aleph1_cofiltered_limits
+      Let $D : \I \to \Met$ be an $\aleph_1$-cofiltered diagram with $D(i) = (X_i,d_i)$. By the proof for <a href="/category/PMet">$\PMet$</a>, its limit in $\PMet$ is $(X,d)$, where $X$ is the limit of the sets $X_i$, with projections $p_i : X \to X_i$, and $d(x,y) = \sup_{i \in \I} d_i(p_i(x),p_i(y))$. This is a metric: if $d(x,y) = 0$, then $d_i(p_i(x),p_i(y)) = 0$, hence $p_i(x) = p_i(y)$ for all $i \in \I$, which means $x = y$. Since $\Met$ is a full subcategory of $\PMet$, it follows that $(X,d)$ is also the limit in $\Met$.
+    references:
+      - PMet_aleph1_cofiltered_limits
 
   - property: ℵ₁-accessible
     proof: >-
@@ -78,22 +79,9 @@ satisfied_properties:
 
   - property: extremal generator
     proof: >-
-      Consider $(G,d_G)$, where $G \coloneqq \IR_{\ge 0}$ and $d_G$ is the metric with $d_G(x,y) = 0$ if $x=y$, and otherwise $d_G(x,y) = x+y$. We claim that $(G,d_G)$ is an extremal generator.
-
-      First, to see that $(G,d_G)$ is a generator, note that the terminal object $\{\ast\}$ is a generator since it represents the forgetful functor $\Met \to \Set$ which is faithful. Since we have an epimorphism $! : (G,d_G) \twoheadrightarrow \{\ast\}$, $(G,d_G)$ is also a generator.
-
-      Now, suppose that $f : (X,d_X) \to (Y,d_Y)$ is a morphism such that
-      $$f \circ {-} : \Hom((G,d_G), (X,d_X)) \to \Hom((G,d_G), (Y,d_Y))$$
-      is a bijection. By considering constant maps from $(G,d_G)$, we see that $f : X \to Y$ is bijective. Now suppose we have $x_1, x_2 \in X$ with $d_Y(f(x_1), f(x_2)) = \varepsilon > 0$. Then there is a morphism $\varphi : (G,d_G) \to (Y,d_Y)$ which maps $\varepsilon$ to $f(x_2)$ and every other element of $G$ to $f(x_1)$. Therefore, there is a morphism $\psi : (G,d_G) \to (X,d_X)$ such that $\varphi = f \circ \psi$. Since $f$ is injective, we must have $\psi(\varepsilon) = x_2$ and $\psi(0) = x_1$. Hence,
-      $$\begin{align*}
-      d_X(x_1, x_2) &= d_X(\psi(0), \psi(\varepsilon)) \\
-      & \le d_G(0, \varepsilon) \\
-      & = \varepsilon \\
-      & = d_Y(f(x_1), f(x_2)) \\
-      & \le d_X(x_1, x_2).
-      \end{align*}$$
-      This shows that $f$ is isometric.
-    label: Met_extremal_generator
+      The extremal generator of <a href="/category/PMet">$\PMet$</a> is $\IR_{\geq 0} \sqcup \{0'\}$, where distinct $x,y \in \IR_{\geq 0}$ have distance $x+y$ and $x$ has distance $x$ to $0'$. The inclusion $\Met \hookrightarrow \PMet$ is fully faithful and has the left adjoint $L$ (see the description). By Lemma 9 <a href="/content/subcategories">here</a>, $L$ maps the extremal generator of $\PMet$ to an extremal generator of $\Met$. It identifies $0$ and $0'$, which yields $\IR_{\geq 0}$, where distinct $x,y$ have distance $x+y$.
+    references:
+      - PMet_extremal_generator
 
   - property: extremal cogenerator
     proof: >-
@@ -129,12 +117,16 @@ unsatisfied_properties:
 
   - property: balanced
     proof: Let $d$ be the usual metric on $\IR$ and its restriction to $\IQ$. The inclusion $(\IQ,d) \hookrightarrow (\IR,d)$ is a counterexample; it is an epimorphism since $\IQ$ is dense in $\IR$. Alternatively, consider the identity map $(X,2d) \to (X,d)$ for any non-trivial metric space $(X,d)$.
+    label: Met_not_balanced
 
   - property: Malcev
     proof: 'Let $d$ be the usual metric on $\IR$. Consider the relation $(S,d_S)$ on $(\IR,d)$, where $S \coloneqq \{(a,b) \in \IR^2 : a \leq b\}$ and $d_S$ is the restriction of the product metric.'
+    label: Met_not_malcev
 
   - property: countable powers
-    proof: 'Let $d$ be the usual metric on $\IR$, and assume that the power $(P,d_P)$ of countably many copies of $(\IR,d)$ exists. Since the forgetful functor $\Met \to \Set$ is representable, it preserves limits, powers in particular. Thus, we may assume that $P = \IR^{\IN}$ is the set of sequences of numbers and that the projections $p_n : (P,d_P) \to (\IR,d)$ are given by $p_n(x) = x_n$. Now consider the sequences $x = (n)_n$ and $y = (0)_n$. Since each $p_n$ is non-expansive, we get $d_P(x,y) \geq d(p_n(x),p_n(y)) = d(n,0) = n$. But then $d_P(x,y) = \infty$, a contradiction.'
+    proof: The inclusion $\Met \hookrightarrow \PMet$ has the left adjoint $L$ (see the description), hence preserves limits. Let $d$ be the usual metric on $\IR$. If a power of countably many copies of $(\IR,d)$ existed in $\Met$, it would also be a power in <a href="/category/PMet">$\PMet$</a>. But the proof for $\PMet$ shows that this power does not exist.
+    references:
+      - PMet_no_countable_powers
 
   - property: binary copowers
     proof: The coproduct of two non-empty metric spaces does not exist; see <a href="https://math.stackexchange.com/questions/1778408">MSE/1778408</a>. For example, the binary copower of $(\IR,d)$, where $d$ is the usual metric, does not exist. We only get coproducts when allowing $\infty$ as a distance, as in <a href="/category/Met_oo">$\Met_{\infty}$</a>.
@@ -180,8 +172,9 @@ unsatisfied_properties:
 
   - property: coaccessible
     proof: >-
-      Assume that $\Met$ is $\kappa$-coaccessible for a regular cardinal $\kappa$. For $\alpha < \kappa$, let $X_\alpha \coloneqq \{ \beta \mid \alpha \leq \beta < \kappa \}$ be equipped with the discrete metric $d_\alpha$ given by $d_\alpha(x,y) \coloneqq 1$ for $x \neq y$, and let $D(\alpha) \coloneqq (X_\alpha,d_\alpha)$. The inclusions $D(\alpha') \hookrightarrow D(\alpha)$ for $\alpha \leq \alpha'$ are non-expansive and form a diagram $D : (\kappa,\geq) \to \Met$. Its limit is the empty set with its unique metric, which is the initial object. Indeed, if $(f_\alpha : (Y,d_Y) \to D(\alpha))_{\alpha < \kappa}$ is a cone, then every $f_\alpha$ agrees with $f_0$ as a map to $X_0$, so that the image of $f_0$ is contained in $\bigcap_{\alpha < \kappa} X_\alpha = \varnothing$, and hence $Y = \varnothing$. Let $p : D(0) \to \{\ast\}$ be the map to the terminal object. For every $\alpha < \kappa$, the composite $D(\alpha) \hookrightarrow D(0) \to \{\ast\}$ is surjective, since $X_\alpha$ is non-empty, and hence an epimorphism. By the lemma <a href="/content/decreasing-chains-coaccessible">here</a>, every metric space admits at most one non-expansive map from $\{\ast\}$, which means that it has at most one point. This is a contradiction.
-    label: Met_not_coaccessible
+      We use the proof for <a href="/category/PMet">$\PMet$</a>. The diagram $D$ defined there takes values in $\Met$, and its limit in $\PMet$, the empty space, is a metric space. Since $\Met$ is a full subcategory of $\PMet$, it is also the limit in $\Met$. The rest of the proof is identical.
+    references:
+      - PMet_not_coaccessible
 
 special_objects:
   initial object:
