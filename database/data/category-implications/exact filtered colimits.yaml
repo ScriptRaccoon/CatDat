@@ -101,6 +101,7 @@
     - products
     - zero morphisms
   proof: This is true by definition.
+  check_redundancy: false
 
 - id: CIP_criterion
   assumptions:
@@ -111,3 +112,52 @@
   conclusions:
     - CIP
   proof: Let $(X_i)_{i \in I}$ be a family of objects. For every finite subset $E \subseteq I$ the canonical morphism $\coprod_{i \in E} X_i = \prod_{i \in E} X_i \to \prod_{i \in I} X_i$ is a (split) monomorphism. Hence, their colimit is also a monomorphism, which is the canonical morphism $\coprod_{i \in I} X_i \to \prod_{i \in I} X_i$.
+
+- id: CIP_coproduct-stable_monos
+  assumptions:
+    - CIP
+  conclusions:
+    - coproduct-stable monomorphisms
+  proof: >-
+    Let $(f_i : X_i \to Y_i)_{i \in I}$ be a family of monomorphisms. Consider the commutative diagram
+    $$\begin{CD} {\textstyle \coprod_{i \in I} X_i} @>{\alpha_X}>> {\textstyle \prod_{i \in I} X_i} \\ @V{\coprod_{i \in I} f_i}VV @VV{\prod_{i \in I} f_i}V \\ {\textstyle \coprod_{i \in I} Y_i} @>>{\alpha_Y}> {\textstyle \prod_{i \in I} Y_i,} \end{CD}$$
+    where $\alpha_X$ and $\alpha_Y$ are the canonical morphisms. The composite along the top and right is a monomorphism, since $\alpha_X$ is a monomorphism by assumption and products of monomorphisms are monomorphisms. Hence, $\coprod_{i \in I} f_i$ is a monomorphism.
+
+- id: coproduct-stable_monos_assumption
+  assumptions:
+    - coproduct-stable monomorphisms
+  conclusions:
+    - coproducts
+  proof: This holds by definition.
+
+- id: finite-coproduct-stable_monos_assumption
+  assumptions:
+    - finite-coproduct-stable monomorphisms
+  conclusions:
+    - finite coproducts
+  proof: This holds by definition.
+
+- id: finite-coproduct-stable_monos_trivial
+  assumptions:
+    - finite coproducts
+    - left cancellative
+  conclusions:
+    - finite-coproduct-stable monomorphisms
+  proof: This is trivial.
+
+- id: coproduct-stable_monos_includes_finite_coproducts
+  assumptions:
+    - coproduct-stable monomorphisms
+  conclusions:
+    - finite-coproduct-stable monomorphisms
+  proof: This is trivial.
+
+- id: coproduct_mono_finite_reduction
+  assumptions:
+    - finite-coproduct-stable monomorphisms
+    - filtered-colimit-stable monomorphisms
+  conclusions:
+    - coproduct-stable monomorphisms
+  proof: >-
+    The category has finite coproducts and filtered colimits, hence all coproducts by <a href="/category-implication/dual_products_criterion">this result</a>. Namely, the coproduct of a family $(X_i)_{i \in I}$ can be expressed as the filtered colimit of the finite coproducts $\coprod_{i \in E} X_i$, where $E$ is a finite subset of $I$.
+    Now, if $(f_i : X_i \to Y_i)_{i \in I}$ is a family of monomorphisms, then by assumption each $\coprod_{i \in E} f_i : \coprod_{i \in E} X_i \to \coprod_{i \in E} Y_i$ is a monomorphism, and thus also their filtered colimit $\coprod_{i \in I} X_i \to \coprod_{i \in I} Y_i$.

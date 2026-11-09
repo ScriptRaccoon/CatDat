@@ -18,13 +18,13 @@ The same proof works for regular subobjects.
 :::
 
 ::: Lemma 2
-Let $\C$ be a category with filtered colimits. Assume that $U : \C \to \D$ is a faithful functor that preserves monomorphisms and filtered colimits. If monomorphisms in $\D$ are stable under filtered colimits, then the same is true in $\C$.
+Let $\C$ be a category with filtered colimits (resp. coproducts, finite coproducts). Assume that $U : \C \to \D$ is a faithful functor that preserves monomorphisms and filtered colimits (resp. coproducts, finite coproducts). If monomorphisms in $\D$ are stable under filtered colimits (resp. coproducts, finite coproducts), then the same is true in $\C$.
 :::
 
-For the record, here is the dual statement: let $\C$ be a category with cofiltered limits. Assume that $U : \C \to \D$ is a faithful functor that preserves epimorphisms and cofiltered limits. If epimorphisms in $\D$ are stable under cofiltered limits, then the same is true in $\C$.
+For the record, here is the dual statement: let $\C$ be a category with cofiltered limits (resp. products, finite products). Assume that $U : \C \to \D$ is a faithful functor that preserves epimorphisms and cofiltered limits (resp. products, finite products). If epimorphisms in $\D$ are stable under cofiltered limits (resp. products, finite products), then the same is true in $\C$. In particular, if $\C$ has products and $U : \C \to \Set$ is a faithful functor that preserves products and maps epimorphisms to surjective maps, then $\C$ has [product-stable epimorphisms](/category-property/product-stable_epimorphisms), since [$\Set$](/category/Set) has this property.
 
 ::: Proof
-If $(f_i : X_i \to Y_i)$ is a filtered diagram of monomorphisms in $\C$, it induces a filtered diagram $(U(f_i) : U(X_i) \to U(Y_i))$ of monomorphisms in $\D$. Hence, its colimit
+If $(f_i : X_i \to Y_i)$ is a filtered diagram (resp. a family, a finite family) of monomorphisms in $\C$, it induces a filtered diagram (resp. a family, a finite family) $(U(f_i) : U(X_i) \to U(Y_i))$ of monomorphisms in $\D$. Hence, its colimit
 $\colim_i U(f_i) : \colim_i U(X_i) \to \colim_i U(Y_i)$
 is a monomorphism in $\D$. This morphism is isomorphic to
 $U(\colim_i f_i) : U(\colim_i X_i) \to U(\colim_i Y_i)$.

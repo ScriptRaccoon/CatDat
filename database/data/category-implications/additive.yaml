@@ -110,3 +110,11 @@
     - finite products
     - zero morphisms
   proof: This holds by definition of biproducts.
+  check_redundancy: false
+
+- id: biproducts_mono_stability
+  assumptions:
+    - biproducts
+  conclusions:
+    - finite-coproduct-stable monomorphisms
+  proof: This is because monomorphisms are always stable under products, and finite coproducts coincide with finite products here.
