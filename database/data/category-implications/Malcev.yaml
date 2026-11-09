@@ -39,6 +39,26 @@
     - unital
   proof: For all objects $X,Y$ the canonical morphism $X \sqcup Y \to X \times Y$ is an isomorphism, hence a strong epimorphism.
 
+- id: unital_finite-product-stable_epis
+  assumptions:
+    - unital
+  conclusions:
+    - finite-product-stable epimorphisms
+  proof: >-
+    Let $f : X \to Y$ be an epimorphism and $T$ be an object. It suffices to show that $\id_T \times f : T \times X \to T \times Y$ is an epimorphism. Let $g,h : T \times Y \rightrightarrows A$ be morphisms with $g \circ (\id_T \times f) = h \circ (\id_T \times f)$, and let $e : E \to T \times Y$ be their equalizer. We have
+    $$\begin{align*}
+    g \circ (\id_T,0) & = g \circ (\id_T \times f) \circ (\id_T,0) \\
+    & = h \circ (\id_T \times f) \circ (\id_T,0) \\
+    & = h \circ (\id_T,0),
+    \end{align*}$$
+    so $(\id_T,0) : T \to T \times Y$ factors through $e$. Moreover, we have
+    $$\begin{align*}
+    g \circ (0,\id_Y) \circ f & = g \circ (\id_T \times f) \circ (0,\id_X) \\
+    & = h \circ (\id_T \times f) \circ (0,\id_X) \\
+    & = h \circ (0,\id_Y) \circ f,
+    \end{align*}$$
+    so $g \circ (0,\id_Y) = h \circ (0,\id_Y)$ because $f$ is an epimorphism. Hence, also $(0,\id_Y) : Y \to T \times Y$ factors through $e$. Since $(\id_T,0)$ and $(0,\id_Y)$ are jointly strongly epimorphic and $e$ is a monomorphism, $e$ is an isomorphism, so $g = h$.
+
 - id: unital_assumptions
   assumptions:
     - unital

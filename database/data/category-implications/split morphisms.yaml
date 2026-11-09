@@ -40,6 +40,14 @@
   proof: >-
     Every regular epimorphism is an epimorphism and therefore split by assumption. Hence, it suffices to show that split epimorphisms are stable under pullback, since every split epimorphism is a regular epimorphism by the dual of <a href="/morphism-implication/split_mono_is_regular_mono">this result</a>. Let $p : X \to Y$ be a morphism with a section $s : Y \to X$, and let $g : Z \to Y$ be a morphism. Since $p \circ (s \circ g) = g \circ \id_Z$, the morphisms $s \circ g : Z \to X$ and $\id_Z : Z \to Z$ induce a morphism $Z \to X \times_Y Z$, which is a section of the projection $X \times_Y Z \to Z$.
 
+- id: all_epis_split_product-stable_epis
+  assumptions:
+    - all epimorphisms split
+    - products
+  conclusions:
+    - product-stable epimorphisms
+  proof: 'Let $(f_i : X_i \to Y_i)_{i \in I}$ be a family of epimorphisms. By assumption, they have sections $s_i : Y_i \to X_i$. Then $\prod_{i \in I} s_i$ is a section of $\prod_{i \in I} f_i$, which is therefore an epimorphism.'
+
 - id: strict_initial_all_monos_split
   assumptions:
     - strict initial object

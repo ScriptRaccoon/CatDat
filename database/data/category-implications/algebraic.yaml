@@ -108,6 +108,15 @@
     - cogenerating collection
   proof: This is the implication (1) $\implies$ (4) of Proposition 1 <a href="/content/cototal-algebraic-categories">here</a>, which is based on <a href="https://mathoverflow.net/questions/515539">MO/515539</a>.
 
+- id: algebraic_product-stable_epis
+  assumptions:
+    - finitary algebraic
+    - epi-regular
+  conclusions:
+    - product-stable epimorphisms
+  proof: >-
+    We may assume that $\C$ is the category of finite-product-preserving functors $\L \to \Set$ for a small category $\L$ with finite products. Products in $\C$ are computed pointwise, since products commute with finite products in $\Set$. By the proof of <a href="/category-implication/multi-algebraic_classification_regular_epis">this result</a>, the regular epimorphisms in $\C$ are precisely the pointwise surjective morphisms. Since $\C$ is epi-regular, the same holds for the epimorphisms. Since products of surjective maps are surjective, the claim follows.
+
 - id: multi-algebraic_classification_regular_epis
   assumptions:
     - multi-algebraic
