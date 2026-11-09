@@ -8,6 +8,7 @@ invariant_under_equivalences: true
 related:
   - pullbacks
   - regular
+  - finite-product-stable epimorphisms
 
 tags:
   - limit–colimit interaction

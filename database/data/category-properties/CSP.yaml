@@ -13,11 +13,12 @@ keywords:
   - coproducts surject onto products
 
 related:
-  - cofiltered-limit-stable epimorphisms
   - coproducts
   - products
-  - unital
   - zero morphisms
+  - unital
+  - cofiltered-limit-stable epimorphisms
+  - product-stable epimorphisms
 
 tags:
   - limit–colimit interaction

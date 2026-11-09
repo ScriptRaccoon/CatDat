@@ -8,6 +8,7 @@ invariant_under_equivalences: true
 related:
   - exact filtered colimits
   - filtered colimits
+  - coproduct-stable monomorphisms
 
 tags:
   - morphism behavior

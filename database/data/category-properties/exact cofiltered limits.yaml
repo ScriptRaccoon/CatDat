@@ -14,8 +14,9 @@ invariant_under_equivalences: true
 related:
   - cocartesian cofiltered limits
   - cofiltered limits
-  - cofiltered-limit-stable epimorphisms
   - finitely cocomplete
+  - cofiltered-limit-stable epimorphisms
+  - product-stable epimorphisms
 
 tags:
   - limit–colimit interaction
