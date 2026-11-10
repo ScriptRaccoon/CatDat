@@ -1,6 +1,6 @@
 id: Met_c
 name: category of metric spaces with continuous maps
-notation: $\Met_c$
+notation: $\Met_\c$
 objects: metric spaces
 morphisms: continuous maps
 description: This category is equivalent to the subcategory of $\Top$ (or $\Haus$) that consists of metrizable topological spaces. Hence, the metrics only play a secondary role here. Accordingly, proofs that only use the topology work with metrizable spaces $X$, and proofs that use a metric write metric spaces as pairs $(X,d_X)$. Since a metric $d_X$ on $X$ induces the same topology as the metric $\min(d_X,1)$, we may always assume $d_X \leq 1$.
@@ -20,7 +20,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\Met_c \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
+    proof: There is a forgetful functor $\Met_\c \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
 
   - property: semi-strongly connected
     proof: Every non-empty metric space is weakly terminal (by using constant maps).
@@ -39,7 +39,7 @@ satisfied_properties:
     check_redundancy: false
 
   - property: infinitary extensive
-    proof: This follows from Lemma 11 <a href="/content/subcategories">here</a> since <a href="/category/Top">$\Top$</a> is infinitary extensive and its full subcategory $\Met_c$ of metrizable topological spaces is closed under pullbacks and coproducts in $\Top$.
+    proof: This follows from Lemma 11 <a href="/content/subcategories">here</a> since <a href="/category/Top">$\Top$</a> is infinitary extensive and its full subcategory $\Met_\c$ of metrizable topological spaces is closed under pullbacks and coproducts in $\Top$.
 
   - property: cokernel pairs
     proof: >-
@@ -50,7 +50,7 @@ satisfied_properties:
       A more direct proof that $X \sqcup_C X$ is metrizable can be found at <a href="https://math.stackexchange.com/questions/5147463">MSE/5147463</a>.
 
   - property: effective cocongruences
-    proof: 'Suppose we have a cocongruence $X \rightrightarrows C$ in $\Met_c$. Then the image in $\Haus$ is a coreflexive corelation (since epimorphisms in both categories are continuous maps †with dense image). By <a href="https://mathoverflow.net/a/509582">MO/509548</a>, that implies that image is of the form $X +_S X$ for a closed subset $S$ of $X$. Since $S$ is metrizable, and the functor $\Met_c \to \Haus$ is fully faithful <a href="https://ncatlab.org/nlab/show/reflected+limit#FullSubcategoryInclusionReflectCoLimits">and therefore reflects colimits</a>, we conclude that $C$ is effective in $\Met_c$.'
+    proof: 'Suppose we have a cocongruence $X \rightrightarrows C$ in $\Met_\c$. Then the image in $\Haus$ is a coreflexive corelation (since epimorphisms in both categories are continuous maps †with dense image). By <a href="https://mathoverflow.net/a/509582">MO/509548</a>, that implies that image is of the form $X +_S X$ for a closed subset $S$ of $X$. Since $S$ is metrizable, and the functor $\Met_\c \to \Haus$ is fully faithful <a href="https://ncatlab.org/nlab/show/reflected+limit#FullSubcategoryInclusionReflectCoLimits">and therefore reflects colimits</a>, we conclude that $C$ is effective in $\Met_\c$.'
 
   - property: well-powered
     proof: This follows easily from the fact that monomorphisms are injective in this category.
@@ -59,7 +59,7 @@ satisfied_properties:
     proof: 'If $f : X \to Y$ is an epimorphism, then $f(X)$ is dense in $Y$ (see below). Hence, there is an injective map $Y \to X^{\IN}$, which bounds the size of $Y$.'
 
   - property: extremal generator
-    proof: 'We claim that the subspace $G \coloneqq \{ 1/n : n \in \IN_{> 0} \} \cup \{ 0 \}$ of $\IR$ is an extremal generator. First, the one-point space is a generator since it represents the forgetful functor $\Met_c \to \Set$; and since we have an epimorphism $! : G \to \{\ast\}$, it follows that $G$ is a generator as well. Now, suppose we have a continuous map $f : X \to Y$ of metrizable spaces such that $f \circ {-} : \Hom(G, X) \to \Hom(G, Y)$ is a bijection. Then since $G$ is a generator, we can conclude that $f$ is a monomorphism, i.e. injective on the underlying sets. Also, considering a constant function $G \to Y$ with image $y$, we see that $f$ is surjective on the underlying sets. Finally, the fact that $f$ induces a bijection between $\Hom(G, X)$ and $\Hom(G, Y)$ implies that a sequence $(x_n)_{n\in \IN}$ in $X$ has limit $L$ if and only if $(f(x_n))_{n\in \IN}$ has limit $f(L)$ in $Y$. This shows that $f$ is a homeomorphism.'
+    proof: 'We claim that the subspace $G \coloneqq \{ 1/n : n \in \IN_{> 0} \} \cup \{ 0 \}$ of $\IR$ is an extremal generator. First, the one-point space is a generator since it represents the forgetful functor $\Met_\c \to \Set$; and since we have an epimorphism $! : G \to \{\ast\}$, it follows that $G$ is a generator as well. Now, suppose we have a continuous map $f : X \to Y$ of metrizable spaces such that $f \circ {-} : \Hom(G, X) \to \Hom(G, Y)$ is a bijection. Then since $G$ is a generator, we can conclude that $f$ is a monomorphism, i.e. injective on the underlying sets. Also, considering a constant function $G \to Y$ with image $y$, we see that $f$ is surjective on the underlying sets. Finally, the fact that $f$ induces a bijection between $\Hom(G, X)$ and $\Hom(G, Y)$ implies that a sequence $(x_n)_{n\in \IN}$ in $X$ has limit $L$ if and only if $(f(x_n))_{n\in \IN}$ has limit $f(L)$ in $Y$. This shows that $f$ is a homeomorphism.'
 
   - property: extremal cogenerator
     proof: >-
@@ -103,13 +103,13 @@ unsatisfied_properties:
       - Haus_no_regular_subobject_classifier
 
   - property: sequential colimits
-    proof: See <a href="https://mathoverflow.net/questions/510316">MO/510316</a> for a proof that the diagram $\IN \to \Met_c$, $n \mapsto \IR^n$ does not have a colimit.
+    proof: See <a href="https://mathoverflow.net/questions/510316">MO/510316</a> for a proof that the diagram $\IN \to \Met_\c$, $n \mapsto \IR^n$ does not have a colimit.
 
   - property: ℵ₁-filtered colimits
-    proof: See <a href="https://mathoverflow.net/questions/511433">MO/511433</a> for a proof that the diagram $\omega_1 \to \Met_c$, $\alpha \mapsto \IR^\alpha$ does not have a colimit.
+    proof: See <a href="https://mathoverflow.net/questions/511433">MO/511433</a> for a proof that the diagram $\omega_1 \to \Met_\c$, $\alpha \mapsto \IR^\alpha$ does not have a colimit.
 
   - property: coequalizers of kernel pairs
-    proof: The sequence of embeddings $\IR^1 \hookrightarrow \IR^2 \hookrightarrow \IR^3 \hookrightarrow \cdots$, where each map appends a zero coordinate, has no colimit by <a href="https://mathoverflow.net/questions/510316">MO/510316</a>. It has a cocone consisting of the embeddings $\IR^n \hookrightarrow \ell^2$, $x \mapsto (x,0,0,\dotsc)$, where $\ell^2$ is the Hilbert space of square-summable sequences. Since $\Met_c$ is infinitary extensive, it follows from Lemma 2 <a href="/content/monic_sequential_colimits">here</a> that $\Met_c$ does not have coequalizers of kernel pairs.
+    proof: The sequence of embeddings $\IR^1 \hookrightarrow \IR^2 \hookrightarrow \IR^3 \hookrightarrow \cdots$, where each map appends a zero coordinate, has no colimit by <a href="https://mathoverflow.net/questions/510316">MO/510316</a>. It has a cocone consisting of the embeddings $\IR^n \hookrightarrow \ell^2$, $x \mapsto (x,0,0,\dotsc)$, where $\ell^2$ is the Hilbert space of square-summable sequences. Since $\Met_\c$ is infinitary extensive, it follows from Lemma 2 <a href="/content/monic_sequential_colimits">here</a> that $\Met_\c$ does not have coequalizers of kernel pairs.
 
   - property: pullback-stable regular epimorphisms
     proof: >-
@@ -121,7 +121,7 @@ unsatisfied_properties:
 
       (Notice that $f$ is not a quotient map of topological spaces: the preimage $f^*(K) = K \subseteq \IR \setminus \{0\}$ is closed in $X$, but $K$ is not closed in $\IR$.)
 
-      Now consider the subspace $Y' \coloneqq K \cup \{0\}$ of $\IR$. Since finite limits in $\Met_c$ are computed as in $\Top$, the pullback of the inclusion $Y' \hookrightarrow \IR$ along $f$ is the subspace $X' \coloneqq f^*(Y') = \{0\} \sqcup K$ of $X$, and the pullback of $f$ is the restriction $f' : X' \to Y'$. This map is bijective, hence a monomorphism. If it were a regular epimorphism, it would be an isomorphism. But this is not the case: $X'$ is the coproduct of the one-point space $\{0\} \subseteq \IR \setminus K$ and the discrete space $K \subseteq \IR \setminus \{0\}$, so $X'$ is discrete, whereas $0$ is not isolated in $Y'$. Hence, $f'$ is not a regular epimorphism.
+      Now consider the subspace $Y' \coloneqq K \cup \{0\}$ of $\IR$. Since finite limits in $\Met_\c$ are computed as in $\Top$, the pullback of the inclusion $Y' \hookrightarrow \IR$ along $f$ is the subspace $X' \coloneqq f^*(Y') = \{0\} \sqcup K$ of $X$, and the pullback of $f$ is the restriction $f' : X' \to Y'$. This map is bijective, hence a monomorphism. If it were a regular epimorphism, it would be an isomorphism. But this is not the case: $X'$ is the coproduct of the one-point space $\{0\} \subseteq \IR \setminus K$ and the discrete space $K \subseteq \IR \setminus \{0\}$, so $X'$ is discrete, whereas $0$ is not isolated in $Y'$. Hence, $f'$ is not a regular epimorphism.
 
 # TODO: add proof that accessibility of Met_c is undecidable in ZFC
 

@@ -45,7 +45,7 @@ satisfied_properties:
       mapping $0 \mapsto y$ and $1/k \mapsto y_k$. Using linear interpolation, it extends to a continuous map $[0,1] \to \IR^n$. We further extend this to a continuous map $\IR \to \IR^n$ by mapping every number $<0$ to $y$ and every number $>1$ to $y_1$. Thus, we obtain a continuous map $h : \IR \to Y$ with $h(0)=y$ and $h(1/k) = y_k$. By assumption, the map $f^{-1} \circ h : \IR \to X$ is also continuous. In particular, its restriction to $\{0\} \cup \{1/k : k \geq 1\}$ is continuous. This means that $(f^{-1}(y_k))_{k \geq 1} \to f^{-1}(y)$.
 
   - property: extremal cogenerator
-    proof: The category $\Euclidsqcup$ is a full subcategory of <a href="/category/Met_c">$\Met_c$</a>, in which $\IR$ is an extremal cogenerator. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
+    proof: The category $\Euclidsqcup$ is a full subcategory of <a href="/category/Met_c">$\Met_\c$</a>, in which $\IR$ is an extremal cogenerator. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
     references:
       - Met_c_cogenerator
 
@@ -109,7 +109,7 @@ unsatisfied_properties:
 
   - property: kernel pairs
     proof: >-
-      First, we remark that the inclusion functor $\Euclidsqcup \hookrightarrow \Met_c$ preserves finite limits by Lemma 1 <a href="/content/inclusion-functors">here</a>, since $\Euclidsqcup$ contains the extremal cogenerator $\IR$ of $\Met_c$. The inclusion functor $\Met_c \hookrightarrow \Top$ clearly preserves finite limits. Hence, the inclusion functor $\Euclidsqcup \hookrightarrow \Top$ preserves finite limits. Therefore, $\Euclidsqcup$ has kernel pairs if and only if it is closed under kernel pairs taken in $\Top$.
+      First, we remark that the inclusion functor $\Euclidsqcup \hookrightarrow \Met_\c$ preserves finite limits by Lemma 1 <a href="/content/inclusion-functors">here</a>, since $\Euclidsqcup$ contains the extremal cogenerator $\IR$ of $\Met_\c$. The inclusion functor $\Met_\c \hookrightarrow \Top$ clearly preserves finite limits. Hence, the inclusion functor $\Euclidsqcup \hookrightarrow \Top$ preserves finite limits. Therefore, $\Euclidsqcup$ has kernel pairs if and only if it is closed under kernel pairs taken in $\Top$.
 
       Now consider the continuous map $f : \IR \to \IR$, $x \mapsto x^2$. Its kernel pair in $\Top$ is
       $$\{(x,y) \in \IR^2 : x^2=y^2\} = \{(x,x) : x \in \IR\} \cup \{(x,-x) : x \in \IR\}.$$
