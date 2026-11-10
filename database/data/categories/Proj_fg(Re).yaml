@@ -68,10 +68,10 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is trivial.
+    proof: The zero modules with underlying sets $\{0\}$ and $\{1\}$ are zero objects, hence isomorphic, but not equal.
 
   - property: small
-    proof: Even the collection of trivial modules is not a set.
+    proof: Even the collection of trivial modules is not a set, since every set $X$ yields a trivial module with underlying set $\{X\}$.
 
   - property: essentially countable
     proof: The set $\Hom(R,R) \cong R = \IR[\varepsilon]$ is not countable.

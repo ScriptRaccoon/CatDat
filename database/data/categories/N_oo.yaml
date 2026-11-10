@@ -18,13 +18,13 @@ related:
 
 satisfied_properties:
   - property: small
-    proof: This is trivial.
+    proof: The objects form the set $\IN \cup \{\infty\}$, and the morphisms form a subset of $(\IN \cup \{\infty\})^2$.
 
   - property: countable
-    proof: This is trivial.
+    proof: The objects form the countable set $\IN \cup \{\infty\}$, and the morphisms form a subset of the countable set $(\IN \cup \{\infty\})^2$.
 
   - property: semi-strongly connected
-    proof: This is trivial.
+    proof: For all $n,m \in \IN \cup \{\infty\}$ we have $n \leq m$ or $m \leq n$, hence there is a morphism $n \to m$ or $m \to n$.
 
   - property: direct
     proof: This is because the natural numbers with $\infty$ with respect to $<$ are well-founded.

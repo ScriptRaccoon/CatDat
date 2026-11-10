@@ -15,13 +15,13 @@ related:
 
 satisfied_properties:
   - property: discrete
-    proof: This is trivial.
+    proof: The only morphisms are the identities.
 
   - property: finite
-    proof: This is trivial.
+    proof: There are $2$ objects and $2$ morphisms.
 
   - property: small
-    proof: This is trivial.
+    proof: The objects and morphisms form finite sets.
 
   - property: inhabited
     proof: This is trivial.

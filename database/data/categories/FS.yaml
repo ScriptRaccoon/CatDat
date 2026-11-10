@@ -19,7 +19,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\FS \to \Set$ and $\Set$ is locally small.
+    proof: There is a forgetful functor $\FS \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
 
   - property: locally finite
     proof: There is a faithful functor $\FS \to \FinSet$ and <a href="/category/FinSet">$\FinSet$</a> is locally finite.
@@ -64,13 +64,13 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: small
-    proof: Even the collection of all singletons is not small.
-
-  - property: skeletal
-    proof: This is trivial.
+    proof: Even the collection of all singletons is not small, since every set $X$ yields the singleton $\{X\}$.
 
   - property: countable
-    proof: This is trivial.
+    proof: Even the collection of all singletons is not countable, since every set $X$ yields the singleton $\{X\}$.
+
+  - property: skeletal
+    proof: The category contains the non-skeletal category <a href="/category/B">$\IB$</a> as a subcategory.
 
   - property: core-thin
     proof: Its core is <a href="/category/B">$\IB$</a>, which we know is not thin.

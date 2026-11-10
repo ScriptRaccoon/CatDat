@@ -17,14 +17,14 @@ related:
 
 satisfied_properties:
   - property: inhabited
-    proof: This is trivial.
+    proof: For example, the constant family $(\varnothing)_{i \in I}$ is an object.
 
   - property: groupoid
-    proof: This is trivial.
+    proof: The inverse of a family of bijections $(f_i)_{i \in I}$ is the family of bijections $(f_i^{-1})_{i \in I}$.
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is trivial.
+    proof: The constant families $(\{0\})_{i \in I}$ and $(\{1\})_{i \in I}$ are isomorphic but not equal.
 
   - property: strongly connected
     proof: 'There is no morphism from $(\varnothing)_{i \in I}$ to $(\{\ast\})_{i \in I}$.'

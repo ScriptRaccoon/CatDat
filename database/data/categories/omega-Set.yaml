@@ -28,7 +28,7 @@ comments:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\omegaSet \to \Set$ and $\Set$ is locally small.
+    proof: There is a forgetful functor $\omegaSet \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
 
   - property: semi-strongly connected
     proof: 'Suppose we have two objects $(X, R_X)$ and $(Y, R_Y)$. If $Y$ is non-empty, suppose $y_0 \in Y$, and find $n_0 \in \IN$ such that $n_0$ realizes $y_0$. Then it is easy to see that the constant function with value $y_0$ is a morphism in $\Hom_{\omegaSet}((X, R_X), (Y, R_Y))$, where we can choose the compatible realizer tracker $\code{y_0} : \IN \dashrightarrow \IN$ to be the total recursive function with constant value $n_0$. Otherwise, if $Y$ is empty, then the unique function $Y \to X$ is a morphism in $\Hom_{\omegaSet}((Y, R_Y), (X, R_X))$, and in fact any partial recursive function $\IN \dashrightarrow \IN$ is a compatible realizer tracker.'

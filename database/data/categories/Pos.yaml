@@ -21,7 +21,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\Pos \to \Set$ and $\Set$ is locally small.
+    proof: There is a forgetful functor $\Pos \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
 
   - property: locally finitely presentable
     proof: See <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adámek–Rosický</a>, Example 1.10.
@@ -54,7 +54,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is trivial.
+    proof: The posets with underlying sets $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.
 
   - property: balanced
     proof: The inclusion $\{0,1\} \to \{0 < 1\}$ provides a counterexample (where in the domain there is no relation between $0$ and $1$).

@@ -91,7 +91,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is straightforward.
+    proof: The zero vector spaces with underlying sets $\{0\}$ and $\{1\}$, each equipped with the zero filtration, are zero objects, hence isomorphic, but not equal.
 
   - property: balanced
     proof: 'Take any non-trivial vector space $V$ and consider the two filtrations defined by $F^n(V) \coloneqq 0$ and $G^n(V) \coloneqq V$ for all $n \in \IZ$. Then $\id_V : (V,F) \to (V,G)$ is both a monomorphism and an epimorphism of filtered vector spaces, but it is not an isomorphism.'

@@ -20,34 +20,34 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\IB \to \Set$ and $\Set$ is locally small.
+    proof: There is a forgetful functor $\IB \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
 
   - property: locally finite
     proof: There is a faithful functor $\IB \to \FinSet$ and <a href="/category/FinSet">$\FinSet$</a> is locally finite.
 
   - property: inhabited
-    proof: This is trivial.
+    proof: For example, $\varnothing$ is an object.
 
   - property: groupoid
-    proof: This is trivial.
+    proof: The inverse of a bijection is a bijection.
 
   - property: essentially countable
     proof: Every finite set is isomorphic to $\{1,\dotsc,n\}$ for some $n \in \IN$.
 
 unsatisfied_properties:
   - property: small
-    proof: Even the collection of singletons is not small.
+    proof: Even the collection of singletons is not small, since every set $X$ yields the singleton $\{X\}$.
+
+  - property: countable
+    proof: Even the collection of all singletons is not countable, since every set $X$ yields the singleton $\{X\}$.
 
   - property: skeletal
-    proof: This is trivial.
+    proof: The sets $\{0\}$ and $\{1\}$ are isomorphic but not equal.
 
   - property: generator
     proof: This is trivial.
 
   - property: essentially finite
-    proof: This is trivial.
-
-  - property: countable
     proof: This is trivial.
 
   - property: connected

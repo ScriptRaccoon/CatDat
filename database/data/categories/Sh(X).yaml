@@ -23,7 +23,7 @@ comments:
 
 satisfied_properties:
   - property: locally small
-    proof: This is easy.
+    proof: The collection of morphisms $F \to G$ is a subcollection of $\prod_{U} \Hom(F(U),G(U))$, where $U$ runs through the set of open subsets of $X$, and this is a set since <a href="/category/Set">$\Set$</a> is locally small.
 
   - property: Grothendieck topos
     proof: This holds by definition of a Grothendieck topos.

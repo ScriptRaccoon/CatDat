@@ -50,13 +50,13 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is trivial.
+    proof: The zero modules with underlying sets $\{0\}$ and $\{1\}$ are zero objects, hence isomorphic, but not equal.
 
   - property: small
-    proof: Even the collection of trivial modules is not a set.
+    proof: Even the collection of trivial modules is not a set, since every set $X$ yields a trivial module with underlying set $\{X\}$.
 
   - property: countable
-    proof: Even the collection of trivial modules is not countable.
+    proof: Even the collection of trivial modules is not countable, since every set $X$ yields a trivial module with underlying set $\{X\}$.
 
   - property: locally finite
     proof: The set $\Hom(\IZ \times \IZ,\IZ \times \IZ) \cong \IZ \times \IZ$ is not finite.

@@ -49,10 +49,10 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is trivial.
+    proof: The sets $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.
 
-  - property: trivial
-    proof: This is trivial.
+  - property: strongly connected
+    proof: There is no map from $\{0\}$ to $\varnothing$.
 
 special_objects:
   initial object:

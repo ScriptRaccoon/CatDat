@@ -39,7 +39,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is trivial.
+    proof: The constant families of the zero vector spaces with underlying sets $\{0\}$ and $\{1\}$ are zero objects, hence isomorphic, but not equal.
 
   - property: locally small
     proof: >-

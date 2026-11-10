@@ -76,7 +76,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is trivial.
+    proof: Fix some $i_0 \in I$. The families $X$ and $Y$ with $X_{i_0} = \{0\}$, $Y_{i_0} = \{1\}$, and $X_i = Y_i = \varnothing$ for $i \neq i_0$ are isomorphic but not equal.
 
   - property: semi-strongly connected
     proof: This is because <a href="/category/SetxSet">$\Set \times \Set$</a> can be embedded into $\Set^{(I)}_0$ by extending each pair of sets with empty sets, and we know that $\Set \times \Set$ is not semi-strongly connected.

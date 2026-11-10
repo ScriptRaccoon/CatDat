@@ -17,7 +17,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\Man \to \Set$ and $\Set$ is locally small.
+    proof: There is a forgetful functor $\Man \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
 
   - property: finite products
     # TODO: give a reference or explain this in more detail
@@ -71,10 +71,10 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is trivial.
+    proof: The manifolds with underlying sets $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.
 
   - property: small
-    proof: Even the collection of all singletons is not a set.
+    proof: Even the collection of all singletons is not a set, since every set $X$ yields a one-point manifold with underlying set $\{X\}$.
 
   - property: balanced
     proof: The irrational winding of a torus $\IR \to S^1 \times S^1$, $t \mapsto (e^{i t}, \, e^{i \alpha t})$, where $\alpha \in \IR \setminus \IQ$, provides a counterexample. It is injective and has a dense image. Hence, it is a mono- and an epimorphism. But it is not surjective, hence no isomorphism.

@@ -16,7 +16,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\Set_* \to \Set$ and $\Set$ is locally small.
+    proof: There is a forgetful functor $\Set_* \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
 
   - property: pointed
     proof: The singleton set is a zero object.
@@ -52,7 +52,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is trivial.
+    proof: The pointed sets $(\{0\},0)$ and $(\{1\},1)$ are zero objects, hence isomorphic, but not equal.
 
   - property: unital
     proof: 'The joint image of $X \to X \times Y \leftarrow Y$ is just $\{(x,0) : x \in X\} \cup \{(0,y) : y \in Y\}$ (where $0$ denotes the base point), which is clearly a proper subset of $X \times Y$ when both $X,Y$ are non-trivial.'

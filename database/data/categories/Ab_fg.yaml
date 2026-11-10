@@ -20,7 +20,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\Ab_{\fg} \to \Set$ and $\Set$ is locally small.
+    proof: There is a forgetful functor $\Ab_{\fg} \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
 
   - property: abelian
     proof: This follows from the corresponding fact for abelian groups and from the fact that subgroups of finitely generated abelian groups are also finitely generated.
@@ -109,16 +109,16 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: small
-    proof: Even the collection of trivial groups is not small.
+    proof: Even the collection of trivial groups is not small, since every set $X$ yields a trivial group with underlying set $\{X\}$.
+
+  - property: countable
+    proof: Even the collection of trivial groups is not countable, since every set $X$ yields a trivial group with underlying set $\{X\}$.
 
   - property: locally finite
     proof: The group $\Hom(\IZ,\IZ) \cong \IZ$ is not finite.
 
   - property: skeletal
-    proof: This is trivial.
-
-  - property: countable
-    proof: This is trivial.
+    proof: The trivial groups with underlying sets $\{0\}$ and $\{1\}$ are zero objects, hence isomorphic, but not equal.
 
   - property: split abelian
     proof: The short exact sequence $0 \xrightarrow{} \IZ \xrightarrow{p} \IZ \xrightarrow{} \IZ/p \xrightarrow{} 0$ does not split.

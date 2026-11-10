@@ -17,7 +17,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\Set_\ff \to \Set$ and $\Set$ is locally small.
+    proof: There is a forgetful functor $\Set_\ff \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
 
   - property: extremal generator
     proof: The singleton set (which is <i>not</i> terminal) is an extremal generator as it represents the forgetful functor $\Set_\ff \to \Set$ which is faithful and conservative.
@@ -86,7 +86,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is trivial.
+    proof: The category contains the non-skeletal category <a href="/category/B">$\IB$</a> as a subcategory.
 
   - property: locally finite
     proof: If $X$ is an infinite set, there are infinitely many maps $\{\ast\} \to X$. They are injective and hence finite-to-one.

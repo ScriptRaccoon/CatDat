@@ -15,7 +15,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\Unif \to \Set$, and $\Set$ is locally small.
+    proof: There is a forgetful functor $\Unif \to \Set$, and <a href="/category/Set">$\Set$</a> is locally small.
 
   - property: complete
     proof: 'Take the limit of the underlying sets and endow it with the coarsest uniform structure making all projections uniform; cf. Bourbaki, <i>General Topology</i> (Part 1), Chapter II, § 3, no. 3 on initial uniformities. More concretely, products are described below on this page, and the equalizer of two uniform maps $f,g : (X,\Phi) \rightrightarrows (Y,\Psi)$ is the subset $E \coloneqq \{x \in X : f(x) = g(x)\}$ equipped with the uniform structure $\{U \cap (E \times E) : U \in \Phi\}$.'
@@ -111,7 +111,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is trivial.
+    proof: The uniform spaces with underlying sets $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.
 
   - property: balanced
     proof: If $X$ is a set, consider the discrete uniform space $X_d$ on $X$ (all reflexive relations are entourages) and the indiscrete space $X_i$ on $X$ (the relation $X \times X$ is the only entourage). The identity map $X \to X$ lifts to a uniform map $X_d \to X_i$, which is bijective and therefore both a monomorphism and an epimorphism, but it is not an isomorphism unless $X$ has at most one element.

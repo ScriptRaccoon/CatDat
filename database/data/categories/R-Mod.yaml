@@ -21,7 +21,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $R{-}\Mod \to \Set$ and $\Set$ is locally small.
+    proof: There is a forgetful functor $R{-}\Mod \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
 
   - property: abelian
     proof: This is standard; see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician">Mac Lane</a>, Ch. VIII.
@@ -31,7 +31,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is trivial.
+    proof: The zero modules with underlying sets $\{0\}$ and $\{1\}$ are zero objects, hence isomorphic, but not equal.
 
   - property: CSP
     proof: The canonical homomorphism $\bigoplus_{n \geq 0} R \to \prod_{n \geq 0} R$ is not surjective, hence no epimorphism.

@@ -35,7 +35,7 @@ comments:
 
 satisfied_properties:
   - property: locally small
-    proof: This is obvious.
+    proof: There is a forgetful functor $\Bin \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
 
   - property: complete
     proof: If $\I \to \Bin$, $i \mapsto (X_i,R_i)$ is a diagram, its limit is $(\lim_{i \in \I} X_i,R)$, where $R$ consists of pairs $(x,y)$ such that $(x_i,y_i) \in R_i$ for every $i \in \I$. The universal property is easy to check.
@@ -92,7 +92,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is trivial.
+    proof: The objects $(\{0\},\{(0,0)\})$ and $(\{1\},\{(1,1)\})$ are terminal objects, hence isomorphic, but not equal.
 
   - property: semi-strongly connected
     proof: >-

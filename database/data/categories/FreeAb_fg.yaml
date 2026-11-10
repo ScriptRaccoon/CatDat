@@ -56,13 +56,13 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is trivial.
+    proof: The trivial groups with underlying sets $\{0\}$ and $\{1\}$ are zero objects, hence isomorphic, but not equal.
 
   - property: small
-    proof: Even the collection of trivial groups is not a set.
+    proof: Even the collection of trivial groups is not a set, since every set $X$ yields a trivial group with underlying set $\{X\}$.
 
   - property: countable
-    proof: Even the collection of trivial groups is not countable.
+    proof: Even the collection of trivial groups is not countable, since every set $X$ yields a trivial group with underlying set $\{X\}$.
 
   - property: locally finite
     proof: The set $\Hom(\IZ,\IZ) \cong \IZ$ is not finite.

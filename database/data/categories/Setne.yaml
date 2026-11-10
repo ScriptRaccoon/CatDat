@@ -17,7 +17,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\Setne \to \Set$ and $\Set$ is locally small.
+    proof: There is a forgetful functor $\Setne \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
 
   - property: extremal generator
     proof: The one-point set is an extremal generator even in <a href="/category/Set">$\Set$</a>. Now use Lemma 10 <a href="/content/subcategories">here</a>.
@@ -72,7 +72,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is trivial.
+    proof: The sets $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.
 
   - property: cofiltered
     proof: The two maps $\{0\} \rightrightarrows \{0,1\}$ are equalized by no map $X \to \{0\}$ in this category.

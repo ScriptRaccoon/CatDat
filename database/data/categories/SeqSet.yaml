@@ -18,7 +18,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: This is obvious.
+    proof: The collection of morphisms $X \to Y$ is a subcollection of $\prod_{n \in \IN} \Hom(X_n,Y_n)$, which is a set since <a href="/category/Set">$\Set$</a> is locally small.
 
   - property: Grothendieck topos
     proof: This follows from the description as a functor category $[(\IN,\leq),\Set]$.
@@ -32,7 +32,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is trivial.
+    proof: The constant sequences with values $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.
 
   - property: generator
     proof: >-

@@ -18,7 +18,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\FinAb \to \Set$ and $\Set$ is locally small.
+    proof: There is a forgetful functor $\FinAb \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
 
   - property: locally finite
     proof: There is a faithful functor $\FinAb \to \FinSet$ and <a href="/category/FinSet">$\FinSet$</a> is locally finite.
@@ -34,13 +34,13 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: small
-    proof: Even the collection of trivial groups is not small.
-
-  - property: skeletal
-    proof: There are many trivial and hence isomorphic groups which are not equal.
+    proof: Even the collection of trivial groups is not small, since every set $X$ yields a trivial group with underlying set $\{X\}$.
 
   - property: countable
-    proof: This is trivial.
+    proof: Even the collection of trivial groups is not countable, since every set $X$ yields a trivial group with underlying set $\{X\}$.
+
+  - property: skeletal
+    proof: The trivial groups with underlying sets $\{0\}$ and $\{1\}$ are zero objects, hence isomorphic, but not equal.
 
   - property: split abelian
     proof: The sequence $0 \to \IZ/2 \to \IZ/4 \to \IZ/2 \to 0$ does not split.

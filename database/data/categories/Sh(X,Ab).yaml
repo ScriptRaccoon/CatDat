@@ -22,7 +22,7 @@ comments:
 
 satisfied_properties:
   - property: locally small
-    proof: This is easy.
+    proof: The collection of morphisms $F \to G$ is a subcollection of $\prod_{U} \Hom(F(U),G(U))$, where $U$ runs through the set of open subsets of $X$, and this is a set since $\Ab$ is locally small.
 
   - property: Grothendieck abelian
     proof: This is standard; see for example <a href="https://ncatlab.org/nlab/show/Categories+and+Sheaves">Kashiwara–Schapira</a>, Theorem 18.1.6.

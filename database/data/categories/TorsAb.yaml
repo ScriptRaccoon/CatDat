@@ -40,7 +40,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is trivial.
+    proof: The trivial groups with underlying sets $\{0\}$ and $\{1\}$ are zero objects, hence isomorphic, but not equal.
 
   - property: split abelian
     proof: The sequence $0 \to \IZ/2 \to \IZ/4 \to \IZ/2 \to 0$ does not split.

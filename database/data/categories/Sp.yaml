@@ -32,7 +32,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is trivial.
+    proof: The constant species with values $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.
 
   - property: locally finite
     proof: If $T$ denotes the terminal species, there are infinitely many morphisms $T \to T \sqcup T$ since they correspond to functions $\IN \to \{1,2\}$.

@@ -75,7 +75,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is trivial.
+    proof: The pointed one-point spaces $(\{0\},0)$ and $(\{1\},1)$ are zero objects, hence isomorphic, but not equal.
 
   - property: pullback-stable regular epimorphisms
     proof: See Example 3.14 at the <a href="https://ncatlab.org/nlab/show/regular+category">nLab</a>. The proof also works for pointed spaces (resp. posets) by using the base points $a$ and $0$.

@@ -28,7 +28,8 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: This is easy.
+    proof: >-
+      The collection of morphisms $(X,Y,f) \to (X',Y',f')$ is a subcollection of $\Hom(X,X') \times \Hom(Y,Y')$, which is a set since <a href="/category/Set">$\Set$</a> is locally small.
 
   - property: semi-strongly connected
     proof: >-

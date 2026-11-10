@@ -41,7 +41,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is trivial.
+    proof: The constant families $(\{0\})_{i \in I}$ and $(\{1\})_{i \in I}$ are terminal objects, hence isomorphic, but not equal.
 
   - property: semi-strongly connected
     proof: This is because <a href="/category/SetxSet">$\Set \times \Set$</a> can be embedded into $\Set^I$ by extending each pair of sets with empty sets, and we know that $\Set \times \Set$ is not semi-strongly connected.

@@ -64,7 +64,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is trivial.
+    proof: The spaces with underlying sets $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.
 
   - property: Malcev
     proof: This is clear since <a href="/category/FinSet">$\FinSet$</a> is not Malcev and can be interpreted as the subcategory of finite discrete spaces.

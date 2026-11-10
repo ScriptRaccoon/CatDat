@@ -24,14 +24,14 @@ satisfied_properties:
     proof: It is a subcategory of $\Set$.
 
   - property: inhabited
-    proof: This is trivial.
+    proof: For example, $\varnothing$ is an object.
 
   - property: groupoid
-    proof: This is trivial.
+    proof: The inverse of a bijection is a bijection.
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is trivial.
+    proof: The category contains the non-skeletal category <a href="/category/B">$\IB$</a> as a subcategory.
 
   - property: strongly connected
     proof: For example, there is no morphism from the empty set to a singleton set.

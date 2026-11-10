@@ -19,7 +19,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $M{-}\Set \to \Set$ and $\Set$ is locally small.
+    proof: There is a forgetful functor $M{-}\Set \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
 
   - property: Grothendieck topos
     proof: It is the category of sheaves on the opposite of the one-object category associated to $M$.
@@ -29,10 +29,10 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is trivial.
+    proof: The $M$-sets with underlying sets $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.
 
-  - property: trivial
-    proof: This is trivial.
+  - property: strongly connected
+    proof: There is no morphism from the $M$-set $\{0\}$ to the empty $M$-set.
 
 undecidable_properties:
   - property: semi-strongly connected

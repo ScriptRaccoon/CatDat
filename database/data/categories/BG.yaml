@@ -15,10 +15,10 @@ related:
 
 satisfied_properties:
   - property: small
-    proof: This is trivial.
+    proof: The objects form the set $\{*\}$, and the morphisms form the set $G$.
 
   - property: groupoid
-    proof: This is trivial.
+    proof: Every element of $G$ has an inverse.
 
   - property: core-connected
     proof: The category has exactly one object.

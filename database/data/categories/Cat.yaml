@@ -40,7 +40,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is trivial.
+    proof: The categories with a single object $0$, respectively $1$, and only the identity morphism are terminal objects, hence isomorphic, but not equal.
 
   - property: balanced
     proof: Since we know that <a href="/category/Mon">$\Mon$</a> is not balanced, there is a monoid map $M \to N$ which is a monomorphism and an epimorphism, but not an isomorphism. Then $B(M) \to B(N)$ has the corresponding properties.

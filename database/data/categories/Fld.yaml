@@ -18,10 +18,10 @@ comments:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\Fld \to \Set$, and $\Set$ is locally small.
+    proof: There is a forgetful functor $\Fld \to \Set$, and <a href="/category/Set">$\Set$</a> is locally small.
 
   - property: inhabited
-    proof: This is trivial.
+    proof: For example, $\IQ$ is a field.
 
   - property: left cancellative
     proof: It is well-known that every field homomorphism is injective and hence a monomorphism.
@@ -34,7 +34,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is trivial.
+    proof: The category contains the non-skeletal category <a href="/category/Fld_0">$\Fld_0$</a> as a subcategory.
 
   - property: locally finite
     proof: There are infinitely many homomorphisms $\IQ(X) \to \IQ(X)$, $X \mapsto X^k$.

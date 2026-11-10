@@ -50,7 +50,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is trivial.
+    proof: The $F(I)$-sets with underlying sets $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.
 
   - property: semi-strongly connected
     proof: Choose an element $i_0 \in I$. There is a fully faithful functor $\IZ{-}\Set \to F(I){-}\Set$ that maps $(X,\sigma) \mapsto (X,\widetilde{\sigma})$, where $\widetilde{\sigma}_{i_0} = \sigma$ and $\widetilde{\sigma}_i = \id_X$ for $i \neq i_0$. Since <a href="/category/Z-Set">$\IZ{-}\Set$</a> is not semi-strongly connected, it follows that $F(I){-}\Set$ is not semi-strongly connected.

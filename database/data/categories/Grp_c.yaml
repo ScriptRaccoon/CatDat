@@ -71,10 +71,10 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is trivial.
+    proof: The trivial groups with underlying sets $\{0\}$ and $\{1\}$ are zero objects, hence isomorphic, but not equal.
 
   - property: small
-    proof: Even the collection of all trivial groups is not a set.
+    proof: Even the collection of all trivial groups is not a set, since every set $X$ yields a trivial group with underlying set $\{X\}$.
 
   - property: normal
     proof: Every non-normal subgroup of a countable group (such as $C_2 \hookrightarrow S_3$) provides a counterexample.
