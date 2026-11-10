@@ -75,10 +75,10 @@ unsatisfied_properties:
     proof: The two sets $\{0,1\}$ and $\{2,3\}$ are isomorphic but not equal.
 
   - property: small
-    proof: Even the collection of all two-element sets is not a set.
+    proof: Even the collection of all two-element sets is not a set, since every non-empty set $X$ yields the two-element set $\{\varnothing, X\}$.
 
   - property: countable
-    proof: Even the collection of all two-element sets is not countable.
+    proof: Even the collection of all two-element sets is not countable, since every non-empty set $X$ yields the two-element set $\{\varnothing, X\}$.
 
   - property: strongly connected
     proof: There is no map $\{0,1\} \to \varnothing$.

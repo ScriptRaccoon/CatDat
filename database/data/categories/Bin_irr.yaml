@@ -31,7 +31,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: This is obvious.
+    proof: There is a forgetful functor $\Bin_{\irr} \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
 
   - property: connected limits
     proof: In fact, $\Bin_{\irr}$ is closed under all non-empty limits in <a href="/category/Bin">$\Bin$</a>. If $\I \to \Bin$, $i \mapsto (X_i,R_i)$ is a non-empty diagram, its limit is $(\lim_{i \in \I} X_i,R)$, where $R$ consists of pairs $(x,y)$ such that $(x_i,y_i) \in R_i$ for every $i \in \I$. If each $R_i$ is irreflexive, then $R$ is irreflexive, because if $(x,x) \in R$, we may choose any $i \in \I$ and obtain the contradiction $(x_i,x_i) \in R_i$.
@@ -76,7 +76,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is trivial.
+    proof: The category contains the non-skeletal category <a href="/category/Bin_symm_irr">$\Bin_{\symm,\irr}$</a> as a subcategory.
 
   - property: semi-strongly connected
     proof: >-

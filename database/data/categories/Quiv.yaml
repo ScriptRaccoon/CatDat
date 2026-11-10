@@ -23,7 +23,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: This is obvious.
+    proof: There is a forgetful functor $\Quiv \to \Set \times \Set$, and $\Set \times \Set$ is locally small.
 
   - property: Grothendieck topos
     proof: This follows from the description as a functor category $[\Pair,\Set]$.
@@ -33,7 +33,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is trivial.
+    proof: The quivers whose vertex set and edge set are both $\{0\}$, respectively both $\{1\}$, are terminal objects, hence isomorphic, but not equal.
 
   - property: generator
     proof: >-

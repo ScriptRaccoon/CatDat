@@ -19,7 +19,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: This is trivial.
+    proof: There is a forgetful functor $\J_2 \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
 
   - property: one-sorted finitary algebraic
     proof: 'The structure of a Jónsson-Tarski algebra on a set $X$ is equivalent to one binary operation $\mu : X^2 \to X$ and two unary operations $\lambda, \rho : X \rightrightarrows X$ such that $\mu(\lambda(x),\rho(x)) = x$, $\lambda(\mu(x,y))=x$, and $\rho(\mu(x,y))=y$.'
@@ -29,7 +29,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is trivial.
+    proof: The sets $\{0\}$ and $\{1\}$, each equipped with the unique map to its square, are terminal objects, hence isomorphic, but not equal.
 
   - property: semi-strongly connected
     proof: >-

@@ -20,7 +20,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: This is obvious.
+    proof: The collection of morphisms $(A,B) \to (C,D)$ is $\Hom(A,C) \times \Hom(B,D)$, which is a set since <a href="/category/Set">$\Set$</a> is locally small.
 
   - property: Grothendieck topos
     proof: It is equivalent to the category of sheaves on a discrete space with two points.
@@ -30,7 +30,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is trivial.
+    proof: The objects $(\{0\},\{0\})$ and $(\{1\},\{1\})$ are terminal objects, hence isomorphic, but not equal.
 
   - property: semi-strongly connected
     proof: When $X$ is non-empty, there is no morphism between $(\varnothing,X)$ and $(X,\varnothing)$.

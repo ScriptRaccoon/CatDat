@@ -40,7 +40,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is trivial.
+    proof: For $c \in \{0,1\}$, let $E_c$ be the empty space equipped with the sheaf whose value on $\varnothing$ is the zero $R$-algebra with underlying set $\{c\}$. Then $E_0$ and $E_1$ are initial objects, hence isomorphic, but not equal.
 
   - property: balanced
     proof: Choose a residue field $K$ of $R$. The canonical morphism $$\Spec(K[X]/X \times K[X,X^{-1}]) \longrightarrow \Spec(K[X])$$ is a mono- and an epimorphism, but no isomorphism.

@@ -32,7 +32,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is trivial.
+    proof: The zero graded modules with underlying sets $\{0\}$ and $\{1\}$ are zero objects, hence isomorphic, but not equal.
 
   - property: CSP
     proof: By using the multiplication in $R$, we regard $R$ as a graded $R$-module. Then the canonical graded linear map $\bigoplus_{n \geq 0} R \to \prod_{n \geq 0} R$ is not an epimorphism in $\grMod_G(R)$. In fact, if it were an epimorphism, it would be surjective in every degree, and in particular the group homomorphism $\bigoplus_{n \geq 0} R_0 \to \prod_{n \geq 0} R_0$ would be surjective. But this is only possible when $R_0 = 0$, which would imply $R = 0$.

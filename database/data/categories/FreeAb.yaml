@@ -19,7 +19,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\FreeAb \to \Set$ and $\Set$ is locally small.
+    proof: There is a forgetful functor $\FreeAb \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
 
   - property: additive
     proof: The embedding $\FreeAb \hookrightarrow \Ab$ is closed under (finite) direct sums, and <a href="/category/Ab">$\Ab$</a> is additive.
@@ -77,7 +77,7 @@ unsatisfied_properties:
     proof: 'The homomorphism $2 : \IZ \to \IZ$ is a counterexample.'
 
   - property: skeletal
-    proof: This is trivial.
+    proof: The trivial groups with underlying sets $\{0\}$ and $\{1\}$ are zero objects, hence isomorphic, but not equal.
 
   - property: countable powers
     proof: First, the inclusion functor $\FreeAb \hookrightarrow \Ab$ is continuous since the forgetful functor $\Ab \to \Set$ is continuous and conservative, while the forgetful functor $\FreeAb \to \Set$ is representable (by $\IZ$) and hence continuous. Thus, if the power $\IZ^{\IN}$ exists in $\FreeAb$, it is isomorphic to the power $\IZ^{\IN}$ in $\Ab$. But it is <a href="https://groupprops.subwiki.org/wiki/Baer-Specker_group_is_not_free_abelian">well-known</a> that $\IZ^{\IN}$ is not free abelian.

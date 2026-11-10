@@ -17,7 +17,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\PMet \to \Set$ and $\Set$ is locally small.
+    proof: There is a forgetful functor $\PMet \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
 
   - property: strict initial object
     proof: The empty (pseudo-)metric space is initial and clearly strict.
@@ -96,7 +96,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is trivial.
+    proof: The pseudo-metric spaces with underlying sets $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.
 
   - property: locally finite
     proof: This is obvious.

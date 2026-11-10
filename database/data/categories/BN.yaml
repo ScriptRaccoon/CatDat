@@ -19,10 +19,10 @@ related:
 
 satisfied_properties:
   - property: small
-    proof: This is trivial.
+    proof: The objects form a singleton set, and the morphisms form the set $\IN$.
 
   - property: countable
-    proof: This is trivial.
+    proof: The objects form a singleton set, and the morphisms form the countable set $\IN$.
 
   - property: core-connected
     proof: The category has exactly one object.

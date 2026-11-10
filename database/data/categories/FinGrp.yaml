@@ -52,13 +52,13 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: small
-    proof: Even the collection of trivial groups is not small.
-
-  - property: skeletal
-    proof: This is trivial.
+    proof: Even the collection of trivial groups is not small, since every set $X$ yields a trivial group with underlying set $\{X\}$.
 
   - property: countable
-    proof: This is trivial.
+    proof: Even the collection of trivial groups is not countable, since every set $X$ yields a trivial group with underlying set $\{X\}$.
+
+  - property: skeletal
+    proof: The trivial groups with underlying sets $\{0\}$ and $\{1\}$ are zero objects, hence isomorphic, but not equal.
 
   - property: normal
     proof: Every non-normal subgroup of a finite group (such as $C_2 \hookrightarrow S_3$) provides a counterexample.

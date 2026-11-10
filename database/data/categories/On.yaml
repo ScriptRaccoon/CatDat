@@ -16,11 +16,11 @@ related:
 
 satisfied_properties:
   - property: thin
-    proof: This is trivial.
+    proof: By definition, there is at most one morphism between any two objects.
     check_redundancy: false
 
   - property: locally small
-    proof: This is trivial.
+    proof: By definition, $\Hom(\alpha,\beta)$ is either empty or the set $\{(\alpha,\beta)\}$.
 
   - property: cocomplete
     proof: Every set of ordinal numbers has a supremum.

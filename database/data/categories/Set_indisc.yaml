@@ -26,13 +26,13 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: small
-    proof: This is trivial.
+    proof: The collection of all sets is not a set.
 
   - property: countable
-    proof: This is trivial.
+    proof: The objects are all sets, and the collection of all sets is not countable.
 
   - property: skeletal
-    proof: This is trivial.
+    proof: Every object is terminal. In particular, the sets $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.
 
 special_objects: {}
 

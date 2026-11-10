@@ -17,13 +17,13 @@ related:
 
 satisfied_properties:
   - property: small
-    proof: This is trivial.
+    proof: The objects and morphisms form finite sets.
 
   - property: finite
-    proof: This is trivial.
+    proof: There are $3$ objects and $5$ morphisms.
 
   - property: thin
-    proof: This is trivial.
+    proof: Between any two objects there is at most one morphism, since the only non-identity morphisms are $0 \to 1$ and $0 \to 2$.
 
   - property: skeletal
     proof: The three objects are not isomorphic.

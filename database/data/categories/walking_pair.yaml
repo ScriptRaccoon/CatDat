@@ -23,22 +23,22 @@ related:
 
 satisfied_properties:
   - property: small
-    proof: This is trivial.
+    proof: The objects and morphisms form finite sets.
 
   - property: finite
-    proof: This is trivial.
+    proof: There are $2$ objects and $4$ morphisms.
 
   - property: self-dual
-    proof: This is trivial.
+    proof: There is an isomorphism $\Pair^\op \to \Pair$ defined by $0 \mapsto 1$, $1 \mapsto 0$, which maps each of the two non-identity morphisms to itself.
 
   - property: semi-strongly connected
-    proof: This is trivial.
+    proof: There is a morphism $0 \to 1$.
 
   - property: skeletal
     proof: The two objects are not isomorphic.
 
   - property: one-way
-    proof: This is trivial.
+    proof: Both non-identity morphisms go from $0$ to $1$.
 
   - property: extremal generator
     proof: It is easy to check that $0$ is an extremal generator.

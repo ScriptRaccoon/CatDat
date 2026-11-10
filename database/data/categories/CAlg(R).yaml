@@ -17,7 +17,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\CAlg(R) \to \Set$ and $\Set$ is locally small.
+    proof: There is a forgetful functor $\CAlg(R) \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
 
   - property: one-sorted finitary algebraic
     proof: Take the one-sorted algebraic theory of a commutative $R$-algebra.
@@ -52,7 +52,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is trivial.
+    proof: The zero $R$-algebras with underlying sets $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.
 
   - property: balanced
     proof: Take a prime ideal $P \subseteq R$ and consider the commutative $R$-algebra $A \coloneqq R/P$ (which is an integral domain). Then the inclusion $A \hookrightarrow Q(A)$ is a counterexample.

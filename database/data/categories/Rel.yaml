@@ -54,7 +54,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is trivial.
+    proof: The category contains the non-skeletal category <a href="/category/Set">$\Set$</a> as a subcategory, by identifying maps with their graphs.
 
   - property: Cauchy complete
     proof: See <a href="https://math.stackexchange.com/a/5030380">MSE/1931577</a>.

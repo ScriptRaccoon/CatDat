@@ -128,7 +128,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is trivial.
+    proof: The constant sequences with values $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.
 
   - property: locally finite
     proof: The endomorphisms of the sequence $\IN \to \{\ast\} \to \{\ast\} \to \cdots$ correspond to the endomorphisms of the set $\IN$.

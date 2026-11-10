@@ -52,7 +52,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is trivial.
+    proof: The posets $\{0 < 1\}$ and $\{2 < 3\}$ are isomorphic but not equal.
 
   - property: terminal object
     proof: Assume that there is a terminal object $P$. In particular, there is exactly one order-preserving map $\{0 < 1\} \to P$. Since every constant map is order-preserving, it follows that $P$ has exactly one element. But then $P$ has an isolated point.

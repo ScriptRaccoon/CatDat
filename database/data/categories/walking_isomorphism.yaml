@@ -20,10 +20,10 @@ related:
 
 satisfied_properties:
   - property: small
-    proof: This is trivial.
+    proof: The objects and morphisms form finite sets.
 
   - property: finite
-    proof: This is trivial.
+    proof: There are $2$ objects and $4$ morphisms.
 
   - property: trivial
     proof: The inclusion $\{0\} \hookrightarrow \Isom$ is an equivalence.

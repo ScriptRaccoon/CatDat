@@ -19,7 +19,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\FI \to \Set$ and $\Set$ is locally small.
+    proof: There is a forgetful functor $\FI \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
 
   - property: locally finite
     proof: There is a faithful functor $\FI \to \FinSet$ and <a href="/category/FinSet">$\FinSet$</a> is locally finite.
@@ -56,19 +56,19 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: small
-    proof: Even the collection of all singletons is not small.
+    proof: Even the collection of all singletons is not small, since every set $X$ yields the singleton $\{X\}$.
+
+  - property: countable
+    proof: Even the collection of all singletons is not countable, since every set $X$ yields the singleton $\{X\}$.
 
   - property: skeletal
-    proof: This is trivial.
+    proof: The category contains the non-skeletal category <a href="/category/B">$\IB$</a> as a subcategory.
 
   - property: core-thin
     proof: Its core is <a href="/category/B">$\IB$</a>, which we know is not thin.
 
   - property: strongly connected
     proof: There is no map from a non-empty set to the empty set.
-
-  - property: countable
-    proof: This is trivial.
 
   - property: cogenerator
     proof: Let $Q$ be a finite set. When $Q$ is empty, it is clearly no cogenerator. Otherwise, $Q \sqcup \{\ast\}$ has at least two elements, so that there are two different morphisms $\{\ast\} \rightrightarrows Q \sqcup \{\ast\}$. But there is no morphism $Q \sqcup \{\ast\} \to Q$ at all. Hence, $Q$ is no cogenerator.

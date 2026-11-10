@@ -37,7 +37,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is trivial.
+    proof: The field $\IQ(T)$ and its subfield $\IQ(T^2)$ are isomorphic (via $T \mapsto T^2$) but not equal.
 
   - property: locally finite
     proof: There are infinitely many homomorphisms $\IQ(X) \to \IQ(X)$, $X \mapsto X^k$.

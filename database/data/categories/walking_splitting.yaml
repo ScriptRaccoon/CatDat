@@ -22,10 +22,10 @@ related:
 
 satisfied_properties:
   - property: small
-    proof: This is trivial.
+    proof: The objects and morphisms form finite sets.
 
   - property: finite
-    proof: This is trivial.
+    proof: There are $2$ objects and $5$ morphisms, namely $\id_0$, $\id_1$, $i$, $p$, $ip$.
 
   - property: gaunt
     proof: This is obvious.

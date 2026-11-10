@@ -16,7 +16,7 @@ related:
 
 satisfied_properties:
   - property: small
-    proof: This is trivial.
+    proof: 'The objects form the set $[0,1]$, and the morphisms form the set $\{(s,t) \in [0,1]^2 : s \leq t\}$.'
 
   - property: self-dual
     proof: Take $t \mapsto 1-t$.
@@ -25,7 +25,7 @@ satisfied_properties:
     proof: The relation $\leq$ is antisymmetric.
 
   - property: semi-strongly connected
-    proof: This is trivial.
+    proof: For all $s,t \in [0,1]$ we have $s \leq t$ or $t \leq s$, hence there is a morphism $s \to t$ or $t \to s$.
 
   - property: locally ℵ₁-presentable
     proof: See <a href="https://math.stackexchange.com/questions/4481902/locally-presentable-vs-compactly-presentable-categories#comment9399784_4482185">MSE/4481902</a>.

@@ -61,10 +61,10 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: small
-    proof: Even the collection of all singletons is not a set.
+    proof: Even the collection of all singletons is not a set, since every set $X$ yields the singleton $\{X\}$.
 
   - property: skeletal
-    proof: This is trivial.
+    proof: The sets $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.
 
   - property: countable powers
     proof: Since the forgetful functor $\Set_\c \to \Set$ is representable, it preserves (countable) products. Therefore, if the power $\{0,1\}^{\IN}$ exists in $\Set_\c$, it must be the ordinary cartesian product, which however is uncountable.

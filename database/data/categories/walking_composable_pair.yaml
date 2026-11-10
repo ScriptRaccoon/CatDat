@@ -17,19 +17,19 @@ related:
 
 satisfied_properties:
   - property: small
-    proof: This is trivial.
+    proof: The objects and morphisms form finite sets.
 
   - property: finite
-    proof: This is trivial.
+    proof: There are $3$ objects and $6$ morphisms, one for each pair $i \leq j$ in $\{0,1,2\}$.
 
   - property: skeletal
-    proof: This is trivial.
+    proof: Every morphism goes from some $i$ to some $j$ with $i \leq j$. Hence, for distinct objects $i,j$ there cannot be morphisms $i \to j$ and $j \to i$.
 
   - property: semi-strongly connected
-    proof: This is trivial.
+    proof: For all $i,j \in \{0,1,2\}$ we have $i \leq j$ or $j \leq i$, hence there is a morphism $i \to j$ or $j \to i$.
 
   - property: self-dual
-    proof: This is trivial.
+    proof: There is an isomorphism $\Comp^\op \to \Comp$ defined by $0 \mapsto 2$, $1 \mapsto 1$, $2 \mapsto 0$ (on morphisms it is determined uniquely, since $\Comp$ is thin).
 
   - property: finitary algebraic
     proof: 'Take the two-sorted finitary algebraic theory with exactly one unary operation between them and the equation $x=y$ for each sort. Up to isomorphism, there are exactly three models of this theory: the identities on the empty set and on the singleton, and the map from the empty set to the singleton. Hence we get the equivalence to $\{0 \to 1 \to 2\}$.'

@@ -76,7 +76,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is trivial.
+    proof: The quivers whose vertex set and edge set are both $\{0\}$, respectively both $\{1\}$, are terminal objects, hence isomorphic, but not equal.
 
   - property: semi-strongly connected
     proof: We can recycle the proof from <a href="/category/Quiv">$\Quiv$</a>, which only uses finite auxiliary quivers.

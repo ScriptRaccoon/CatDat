@@ -40,7 +40,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is trivial.
+    proof: The constant functors with values $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.
 
   - property: Malcev
     proof: Any counterexample for <a href="/category/Set">$\Set$</a> (i.e., any non-symmetric reflexive relation) yields one for this category by taking constant functors.

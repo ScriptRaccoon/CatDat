@@ -17,16 +17,16 @@ related:
 
 satisfied_properties:
   - property: trivial
-    proof: This is trivial.
+    proof: This holds by definition, since $\1$ is the trivial category.
 
   - property: small
-    proof: This is trivial (as long as we model the unique object and the unique morphism as sets).
+    proof: The objects and morphisms both form a singleton set (as long as we model the unique object and the unique morphism as sets).
 
   - property: finite
-    proof: This is trivial.
+    proof: There is one object and one morphism.
 
   - property: discrete
-    proof: This is trivial.
+    proof: The only morphism is the identity.
 
 unsatisfied_properties: []
 

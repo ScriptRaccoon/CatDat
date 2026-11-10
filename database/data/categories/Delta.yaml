@@ -23,13 +23,13 @@ related:
 
 satisfied_properties:
   - property: small
-    proof: This is trivial.
+    proof: 'The objects form the set $\{[n] : n \in \IN\}$. The morphisms $[n] \to [m]$ form a subset of the set of all maps $[n] \to [m]$, so the collection of all morphisms is a countable union of sets, hence a set.'
+
+  - property: countable
+    proof: The objects $[n]$ are indexed by $n \in \IN$, and for all $n,m \in \IN$ there are only finitely many maps $[n] \to [m]$. Thus, the collection of all morphisms is countable as a countable union of finite sets.
 
   - property: locally finite
     proof: There is a faithful functor $\Delta \to \FinSet$ and <a href="/category/FinSet">$\FinSet$</a> is locally finite.
-
-  - property: countable
-    proof: This is obvious.
 
   - property: terminal object
     proof: The ordered set $[0] = \{0\}$ is terminal.

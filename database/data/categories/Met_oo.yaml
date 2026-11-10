@@ -18,7 +18,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\Met_{\infty} \to \Set$ and $\Set$ is locally small.
+    proof: There is a forgetful functor $\Met_{\infty} \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
 
   - property: semi-strongly connected
     proof: Every non-empty metric space is weakly terminal (by using constant maps).
@@ -62,7 +62,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is trivial.
+    proof: The extended metric spaces with underlying sets $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.
 
   - property: balanced
     proof: The inclusion $\IQ \hookrightarrow \IR$ provides a counterexample. Alternatively, consider the identity map $(X,2d) \to (X,d)$ for any non-trivial metric space $(X,d)$.

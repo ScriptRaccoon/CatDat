@@ -21,7 +21,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\FinOrd \to \Set$ and $\Set$ is locally small.
+    proof: There is a forgetful functor $\FinOrd \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
 
   - property: locally finite
     proof: There is a faithful functor $\FinOrd \to \FinSet$ and <a href="/category/FinSet">$\FinSet$</a> is locally finite.
@@ -67,13 +67,13 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: small
-    proof: Even the collection of all singleton orders is not small.
-
-  - property: skeletal
-    proof: This is trivial.
+    proof: Even the collection of all singleton orders is not small, since every set $X$ yields a singleton order with underlying set $\{X\}$.
 
   - property: countable
-    proof: This is trivial.
+    proof: Even the collection of singleton orders is not countable, since every set $X$ yields a singleton order with underlying set $\{X\}$.
+
+  - property: skeletal
+    proof: The ordered sets with underlying sets $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.
 
   - property: sequential limits
     proof: Consider the (non-empty) ordered set $[n] \coloneqq \{0 < \cdots < n\}$ for $n \in \IN$. The forgetful functor to $\Set$ is representable, hence preserves all limits. Thus, if the diagram of truncation maps $\cdots \twoheadrightarrow [2] \twoheadrightarrow [1] \twoheadrightarrow [0]$ has a limit in $\FinOrd$, its underlying set is isomorphic to the limit taken in $\Set$, which is $\IN \cup \{\infty\}$. But this is not a finite set.

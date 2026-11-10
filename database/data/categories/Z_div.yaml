@@ -16,13 +16,13 @@ related:
 
 satisfied_properties:
   - property: small
-    proof: This is trivial.
+    proof: 'The objects form the set $\IZ$, and the morphisms form the set $\{(a,b) \in \IZ^2 : a \mid b\}$.'
 
   - property: countable
-    proof: This is trivial.
+    proof: 'The objects form the countable set $\IZ$, and the morphisms form the set $\{(a,b) \in \IZ^2 : a \mid b\}$, which is countable as a subset of $\IZ^2$.'
 
   - property: thin
-    proof: This is trivial.
+    proof: By definition, there is at most one morphism between any two objects.
     check_redundancy: false
 
   - property: distributive

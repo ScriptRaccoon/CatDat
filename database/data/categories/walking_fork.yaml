@@ -19,19 +19,19 @@ related:
 
 satisfied_properties:
   - property: small
-    proof: This is trivial.
+    proof: The objects and morphisms form finite sets.
 
   - property: finite
-    proof: This is trivial.
+    proof: There are $3$ objects and $7$ morphisms, namely $3$ identities and $i$, $f$, $g$, $f \circ i$.
 
   - property: semi-strongly connected
-    proof: This is obvious.
+    proof: For all $i,j \in \{0,1,2\}$ with $i < j$ there is a morphism $i \to j$.
 
   - property: skeletal
-    proof: The three objects are clearly not isomorphic.
+    proof: Every morphism goes from some $i$ to some $j$ with $i \leq j$. Hence, for distinct objects $i,j$ there cannot be morphisms $i \to j$ and $j \to i$.
 
   - property: one-way
-    proof: This is trivial.
+    proof: Every non-identity morphism goes from some $i$ to some $j$ with $i < j$.
 
   - property: cogenerator
     proof: It is easy to check that $2$ is a cogenerator.

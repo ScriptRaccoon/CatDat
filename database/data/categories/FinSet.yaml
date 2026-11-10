@@ -24,7 +24,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\FinSet \to \Set$ and $\Set$ is locally small.
+    proof: There is a forgetful functor $\FinSet \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
 
   - property: locally finite
     proof: This is trivial.
@@ -48,13 +48,13 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: small
-    proof: Even the collection of all singletons is not a set.
-
-  - property: skeletal
-    proof: This is trivial.
+    proof: Even the collection of all singletons is not a set, since every set $X$ yields the singleton $\{X\}$.
 
   - property: countable
-    proof: This is trivial.
+    proof: Even the collection of all singletons is not countable, since every set $X$ yields the singleton $\{X\}$.
+
+  - property: skeletal
+    proof: The sets $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.
 
   - property: natural numbers object
     proof: By Lemma 2 <a href="/content/natural_numbers_objects">here</a>, if $(N,z,s)$ is a natural numbers object, then $N \cong \{\ast\} \sqcup N$. But there is no finite set with this property.

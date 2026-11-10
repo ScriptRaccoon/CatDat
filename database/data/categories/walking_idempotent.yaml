@@ -17,16 +17,16 @@ related:
 
 satisfied_properties:
   - property: small
-    proof: This is trivial.
+    proof: The objects and morphisms form finite sets.
 
   - property: finite
-    proof: This is trivial.
+    proof: There is $1$ object and there are $2$ morphisms.
 
   - property: gaunt
     proof: This is obvious.
 
   - property: self-dual
-    proof: This is obvious.
+    proof: Since $\Idem$ has a single object and its monoid of endomorphisms $\{\id_0,e\}$ is commutative, the identity map defines an isomorphism $\Idem^\op \to \Idem$.
 
   - property: core-connected
     proof: The category has exactly one object.

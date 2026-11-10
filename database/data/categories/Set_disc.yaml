@@ -17,10 +17,10 @@ related:
 
 satisfied_properties:
   - property: discrete
-    proof: This is trivial.
+    proof: The only morphisms are the identities.
 
   - property: inhabited
-    proof: This is trivial.
+    proof: For example, $\varnothing$ is an object.
 
 unsatisfied_properties:
   - property: essentially small

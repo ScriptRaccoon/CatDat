@@ -37,16 +37,16 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is trivial.
+    proof: The zero vector spaces with underlying sets $\{0\}$ and $\{1\}$ are zero objects, hence isomorphic, but not equal.
 
   - property: small
-    proof: This is trivial.
+    proof: Even the collection of zero vector spaces is not a set, since every set $X$ yields a zero vector space with underlying set $\{X\}$.
 
   - property: countable
-    proof: This is trivial.
+    proof: Even the collection of zero vector spaces is not countable, since every set $X$ yields a zero vector space with underlying set $\{X\}$.
 
   - property: thin
-    proof: This is clear.
+    proof: The identity and the zero map $K \to K$ are distinct morphisms.
 
 undecidable_properties:
   - property: essentially countable

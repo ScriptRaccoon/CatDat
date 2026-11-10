@@ -72,7 +72,9 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is trivial.
+    references:
+      - cocompletion-discrete-pair-join_terminal_presheaf_small
+    proof: We already know that the terminal presheaf is small. Thus, the constant presheaves with values $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.
 
   - property: locally small
     proof: Since $\C$ is not small, this follows from Lemma 2 <a href="/content/free-cocompletion">here</a>; however, this result is not really relevant for category theory, and all that matters is that $\widehat{\C}$ is locally essentially small.

@@ -58,7 +58,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is trivial.
+    proof: The trivial groups with underlying sets $\{0\}$ and $\{1\}$ are zero objects, hence isomorphic, but not equal.
 
   - property: balanced
     proof: 'It can be checked directly that $2 : \IZ \to \IZ$ is both a monomorphism and an epimorphism, but no isomorphism (see also <a href="/morphism/multiply-2">here</a>). This also follows from the general classification of mono- and epimorphisms below.'

@@ -76,7 +76,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is trivial.
+    proof: The objects $(\{0\},\{0\})$ and $(\{1\},\{1\})$ are terminal objects, hence isomorphic, but not equal.
 
   - property: locally finite
     proof: The object $(\IN,\varnothing)$ is valid and has infinitely many endomorphisms.

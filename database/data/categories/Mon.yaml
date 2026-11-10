@@ -18,7 +18,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\Mon \to \Set$ and $\Set$ is locally small.
+    proof: There is a forgetful functor $\Mon \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
 
   - property: pointed
     proof: The trivial monoid is a zero object.
@@ -32,7 +32,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is trivial.
+    proof: The trivial monoids with underlying sets $\{0\}$ and $\{1\}$ are zero objects, hence isomorphic, but not equal.
 
   - property: balanced
     proof: The inclusion of additive monoids $\IN \hookrightarrow \IZ$ is a counterexample.

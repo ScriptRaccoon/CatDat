@@ -71,10 +71,10 @@ unsatisfied_properties:
     proof: The two sets $\{0\}$ and $\{1\}$ are isomorphic but not equal.
 
   - property: small
-    proof: Even the collection of all singleton sets is not a set.
+    proof: Even the collection of all singleton sets is not a set, since every set $X$ yields the singleton $\{X\}$.
 
   - property: countable
-    proof: Even the collection of all singleton sets is not countable.
+    proof: Even the collection of all singletons is not countable, since every set $X$ yields the singleton $\{X\}$.
 
   - property: Cauchy complete
     proof: 'The map $e : \{0,1,2\} \to \{0,1,2\}$, $0 \mapsto 0$, $1 \mapsto 1$, $2 \mapsto 1$ is idempotent and does not split in $\FinSet_{\odd}$, since a splitting $\{0,1,2\} \to X \to \{0,1,2\}$ would also be a splitting in $\FinSet$, making $X$ isomorphic to $\im(e) = \{0,1\}$.'

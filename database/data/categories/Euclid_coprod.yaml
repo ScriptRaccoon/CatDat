@@ -82,7 +82,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: This is trivial.
+    proof: The spaces with underlying sets $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.
 
   - property: balanced
     proof: 'The space $\IR \setminus \{0\}$ belongs to $\Euclidsqcup$ because it is the coproduct of $\IR^+$ and $\IR^-$, both of which are isomorphic to $\IR$; for example, $\exp : \IR \to \IR^+$ is an isomorphism in $\Top$. Now consider the inclusion map $\IR \setminus \{0\} \hookrightarrow \IR$. It has dense image, hence is an epimorphism in $\Haus$, a fortiori in $\Euclidsqcup$. It is also injective and therefore a monomorphism. But it is not an isomorphism since it is not bijective.'
