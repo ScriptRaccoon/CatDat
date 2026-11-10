@@ -11,7 +11,7 @@ Let $\T$ be an elementary topos with a <a href="https://ncatlab.org/nlab/show/La
 ## Reflective Subcategory
 
 ::: Lemma 1
-Let $\T$ be an elementary topos with a <a href="https://ncatlab.org/nlab/show/Lawvere-Tierney+topology" target="_blank">Lawvere-Tierney topology</a> $j$. Then for each object $X$ of $\T$, $\cl_{j,X\times X}(\Delta_X)$ is a congruence whose quotient $X_{\sep}$ is $j$-separated. Moreover, this operation forms a reflector functor making the full subcategory $\Sep(j)$ of $j$-separated objects a reflective category; and this reflector functor preserves finite products and monomorphisms.
+Let $\T$ be an elementary topos with a <a href="https://ncatlab.org/nlab/show/Lawvere-Tierney+topology" target="_blank">Lawvere-Tierney topology</a> $j$. Then for each object $X$ of $\T$, $\cl_{j,X\times X}(\Delta_X)$ is a congruence whose quotient $X_{\sep}$ is $j$-separated. Moreover, this operation forms a reflector functor making the full subcategory $\Sep(j)$ of $j$-separated objects a reflective subcategory; and this reflector functor preserves finite products and monomorphisms.
 :::
 
 ::: Proof
