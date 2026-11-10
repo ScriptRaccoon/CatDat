@@ -197,3 +197,12 @@ special_morphisms:
   regular monomorphism:
     description: isometric embeddings with closed image
     proof: 'The same proof as for <a href="/category/Met_c">$\Met_\c$</a> works. The only difference is that the equalizer of two morphisms $(X,d_X) \rightrightarrows (Y,d_Y)$ in $\Met$ is $(E,d_E)$, where $E \subseteq X$ is the equalizer of the underlying maps and $d_E$ is the restriction of $d_X$, so equalizers are isometric embeddings. For the converse, note that the maps used there, the constant maps $X \to \IR$ and $d_X(A,-) : X \to \IR$ are non-expansive with respect to the usual metric on $\IR$.'
+  # TODO: perhaps add the category PMet_oo of extended pseudo-metric spaces,
+  # and simplify this proof accordingly
+  regular epimorphism:
+    description: >-
+      For a morphism $f : (X,d_X) \to (Y,d_Y)$ the following are equivalent: (1) $f$ is a regular epimorphism. (2) $f$ is surjective and $d_Y$ is the largest metric on $Y$ for which $f$ is non-expansive. (3) $f$ is surjective and for all $x,x' \in X$, $d_Y(f(x),f(x'))$ is the infimum of the sums $\sum_{i=0}^{n-1} d_X(x'_i,x_{i+1})$, where $n \geq 0$ and $x_0,\dotsc,x_n,x'_0,\dotsc,x'_n \in X$ satisfy $f(x_0) = f(x)$, $f(x_i) = f(x'_i)$ for $0 \leq i \leq n$, and $f(x'_n) = f(x')$.
+    proof: >-
+      (1) $\iff$ (2): The proof for <a href="/category/Met_oo">$\Met_\infty$</a> works verbatim with (pseudo-)metrics instead of extended (pseudo-)metrics. The only additional point is that the supremum $\rho$ of all pseudo-metrics on $Y$ for which a surjective morphism $f : (X,d_X) \to (Y,d_Y)$ is non-expansive takes finite values, since $\rho(f(x),f(x')) \leq d_X(x,x')$. Every coequalizer in $\Met$ is surjective by the construction of coequalizers above.
+
+      (2) $\iff$ (3): As in the proof for $\Met_\infty$, (2) means precisely that $d_Y = \rho$. The proof for <a href="/category/PMet">$\PMet$</a> shows that $\rho(f(x),f(x'))$ is the infimum in (3).
