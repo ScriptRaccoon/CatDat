@@ -40,6 +40,8 @@ satisfied_properties:
     label: Met_oo_cocomplete
     check_redundancy: false
 
+  # TODO: perhaps add the category PMet_oo of extended pseudo-metric spaces,
+  # and simplify this proof accordingly
   - property: ℵ₁-accessible
     proof: >-
       Let $D : \I \to \Met_\infty$ be a filtered diagram, and let $X_i$, $d_i$, $C$, $u_i$, and $\rho$ be as in the construction of colimits above. Then $\rho(c,c')$ is the infimum of all $d_i(x,y)$, where $i \in \I$ and $x,y \in X_i$ satisfy $u_i(x) = c$ and $u_i(y) = c'$. Indeed, since $\I$ is filtered, this infimum defines an extended pseudo-metric on $C$. It is admissible, and every admissible extended pseudo-metric is bounded by it. Thus, filtered colimits are constructed as for <a href="/category/PMet">$\PMet$</a>, followed by the identification of points at distance zero, as for <a href="/category/Met">$\Met$</a>. Therefore, the proofs of $\aleph_1$-accessibility for $\PMet$ and $\Met$ work verbatim for extended metric spaces. They never use that distances are finite; when $d(x,y) = \infty$, the estimate $d_i(x_i,y_i) \leq d(x,y) + 1/n$ in the proof for $\PMet$ holds for all preimages.
@@ -145,3 +147,22 @@ special_morphisms:
       The proof is similar to the one for <a href="/category/Met_c">$\Met_\c$</a>. The equalizer of two morphisms $(X,d_X) \rightrightarrows (Y,d_Y)$ is $(A,d_A)$, where $A \subseteq X$ is the equalizer in $\Set$ and $d_A$ is the restriction of $d_X$, so equalizers are isometric embeddings. Since metric spaces are Hausdorff and non-expansive maps are continuous, an equalizer of two morphisms $(X,d_X) \rightrightarrows (Y,d_Y)$ is a closed subset of $X$. Conversely, let $(X,d_X)$ be an extended metric space, let $A \subseteq X$ be a closed subset, and let $d_A$ be the restriction of $d_X$. Let $d_E$ be the extended metric on $[0,\infty]$ that extends the usual metric on $[0,\infty)$ by $d_E(r,\infty) \coloneqq \infty$ for $r \in [0,\infty)$, and let $E \coloneqq ([0,\infty],d_E)$. The map
       $$\textstyle d_X(A,-) : X \to [0,\infty], \quad x \mapsto \inf_{a \in A} d_X(a,x)$$
       is non-expansive since it is an infimum of non-expansive maps, and it vanishes precisely on $A$ since $A$ is closed. (If $A$ is empty, it is constant with value $\infty$.) Therefore, $(A,d_A)$ is the equalizer of $d_X(A,-)$ and the constant morphism $0 : (X,d_X) \to E$.
+  # TODO: perhaps add the category PMet_oo of extended pseudo-metric spaces,
+  # and simplify this proof accordingly
+  regular epimorphism:
+    description: >-
+      For a morphism $f : (X,d_X) \to (Y,d_Y)$ the following are equivalent: (1) $f$ is a regular epimorphism. (2) $f$ is surjective and $d_Y$ is the largest extended metric on $Y$ for which $f$ is non-expansive. (3) $f$ is surjective and for all $x,x' \in X$, $d_Y(f(x),f(x'))$ is the infimum (in $[0,\infty]$) of the sums $\sum_{i=0}^{n-1} d_X(x'_i,x_{i+1})$, where $n \geq 0$ and $x_0,\dotsc,x_n,x'_0,\dotsc,x'_n \in X$ satisfy $f(x_0) = f(x)$, $f(x_i) = f(x'_i)$ for $0 \leq i \leq n$, and $f(x'_n) = f(x')$.
+    proof: >-
+      By the construction of colimits above, every coequalizer is surjective, so every regular epimorphism is surjective. Now let $f : (X,d_X) \to (Y,d_Y)$ be a surjective morphism. The pointwise supremum of all extended pseudo-metrics on $Y$ for which $f$ is non-expansive is again such an extended pseudo-metric. This is the largest one, which we denote by $\rho$. Since $f : (X,d_X) \to (Y,d_Y)$ is non-expansive, we have $d_Y \leq \rho$. We claim that (2) means precisely that $\rho \leq d_Y$. If $\rho \leq d_Y$, then $d_Y = \rho$ is the largest extended pseudo-metric on $Y$ for which $f$ is non-expansive, in particular the largest such extended metric. Conversely, assume (2). Since $d_Y$ is an extended metric, so is $\max(\rho,d_Y)$, and $f$ is non-expansive for it. Hence, $\max(\rho,d_Y) \leq d_Y$ by (2), i.e. $\rho \leq d_Y$.
+
+      (1) $\implies$ (2): Let $f$ be a coequalizer of a pair of morphisms $g,h$. Let $Y' \coloneqq Y/{\sim}$, where $y \sim y' \iff \rho(y,y') = 0$, let $\pi : Y \to Y'$ be the projection, and let $\rho'$ be the extended metric on $Y'$ with $\rho'(\pi(y),\pi(y')) = \rho(y,y')$. Then $\pi \circ f : (X,d_X) \to (Y',\rho')$ is non-expansive and satisfies $\pi \circ f \circ g = \pi \circ f \circ h$. Hence, there is a morphism $k : (Y,d_Y) \to (Y',\rho')$ with $k \circ f = \pi \circ f$. Since $f$ is surjective, we get $k = \pi$, so that
+      $$\rho(y,y') = \rho'(\pi(y),\pi(y')) = \rho'(k(y),k(y')) \leq d_Y(y,y')$$
+      for all $y,y' \in Y$.
+
+      (2) $\implies$ (1): Assume $\rho \leq d_Y$. We show that $f$ is a coequalizer of its kernel pair $p_1,p_2 : (K,d_K) \rightrightarrows (X,d_X)$, where $K = \{(a,b) \in X \times X : f(a) = f(b)\}$. Let $h : (X,d_X) \to (Z,d_Z)$ be a morphism with $h \circ p_1 = h \circ p_2$, i.e. $f(a) = f(b)$ implies $h(a) = h(b)$ for all $a,b \in X$. Since $f$ is surjective, there is a unique map $\overline{h} : Y \to Z$ with $\overline{h} \circ f = h$. The extended pseudo-metric $\delta$ on $Y$ defined by
+      $$\delta(y,y') \coloneqq \max\bigl(d_Y(y,y'), d_Z(\overline{h}(y),\overline{h}(y'))\bigr)$$
+      makes $f$ non-expansive, since $d_Y(f(x),f(x')) \leq d_X(x,x')$ and $d_Z(\overline{h}(f(x)),\overline{h}(f(x'))) = d_Z(h(x),h(x')) \leq d_X(x,x')$. By the maximality of $\rho$ and the assumption, we get $\delta \leq \rho \leq d_Y$. Hence, for all $y,y' \in Y$ we have
+      $$d_Z(\overline{h}(y),\overline{h}(y')) \leq \delta(y,y') \leq \rho(y,y') \leq d_Y(y,y'),$$
+      i.e. $\overline{h} : (Y,d_Y) \to (Z,d_Z)$ is non-expansive.
+
+      (2) $\iff$ (3): The proof for <a href="/category/PMet">$\PMet$</a>, including the construction of coequalizers there, works verbatim for extended pseudo-metrics and shows that $\rho(f(x),f(x'))$ is the infimum in (3).
