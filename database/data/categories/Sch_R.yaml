@@ -18,6 +18,8 @@ related:
 comments:
   - Regular monomorphisms are discussed at <a href="https://mathoverflow.net/questions/66279">MO/66279</a>.
   - Epimorphisms are discussed at <a href="https://mathoverflow.net/questions/56564">MO/56564</a>. It is not clear if they can be classified.
+  - >-
+    For $R = \IZ$, this category does not have <a href="/category-property/finite-product-stable_epimorphisms">finite-product-stable epimorphisms</a>, since the counterexample in the comment for <a href="/category/LRS_R">$\LRS_R$</a> also works here: all objects involved are schemes, $\Sch_R$ is closed under finite products in $\LRS_R$, and the resulting morphism $\Spec(\IF_2) \to \Spec(\IZ/4)$ is no epimorphism in $\Sch_R$ either: otherwise, it would be an epimorphism in the full subcategory of affine schemes, so that $\IZ/4 \to \IF_2$ would be a monomorphism in <a href="/category/CRing">$\CRing$</a>, i.e. injective. It is not known to us if this works for every $R$, for example a field.
 
 satisfied_properties:
   - property: locally small
