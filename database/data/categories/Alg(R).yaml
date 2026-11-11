@@ -29,6 +29,16 @@ satisfied_properties:
   - property: disjoint finite products
     proof: 'Let $A,B$ be two $R$-algebras. To show that $A \sqcup_{A \times B} B$ is trivial, let $T$ be an $R$-algebra which admits homomorphisms $f : A \to T$, $g : B \to T$ with $f(p_1(a,b))=g(p_2(a,b))$ for all $(a,b) \in A \times B$, i.e. $f(a)=g(b)$. Applying this to $a=1$, $b=0$ yields $1=0$ in $T$. Hence, $T = 0$.'
 
+  - property: finite-product-stable epimorphisms
+    proof: >-
+      For $R = \IZ$, this is <a href="https://eudml.org/doc/139538">Storrer</a>, Cor. 2.3. Here is a direct proof for arbitrary $R$.
+
+      Let $f : A \to B$ be an epimorphism and $T$ be an $R$-algebra. It suffices to show that $\id_T \times f : T \times A \to T \times B$ is an epimorphism. Let $g,h : T \times B \rightrightarrows C$ be algebra homomorphisms with $g \circ (\id_T \times f) = h \circ (\id_T \times f)$. The central idempotent $e' \coloneqq (0,1)$ of $T \times B$ lies in the image of $\id_T \times f$, so $\varepsilon' \coloneqq g(e') = h(e')$ is an idempotent of $C$ (not necessarily central, but this is not needed). Since $(0,b) = e' \cdot (0,b) \cdot e'$ for all $b \in B$, we have $g(0,b) = \varepsilon' \cdot g(0,b) \cdot \varepsilon'$, and hence the map
+      $$g' : B \to \varepsilon' C \varepsilon', \quad b \mapsto g(0,b)$$
+      is an algebra homomorphism into the corner algebra $\varepsilon' C \varepsilon'$ with unit $\varepsilon'$. In the same way, $h' : B \to \varepsilon' C \varepsilon'$, $b \mapsto h(0,b)$ is an algebra homomorphism. Since $g' \circ f = h' \circ f$ and $f$ is an epimorphism, we get $g' = h'$. For all $t \in T$ and $b \in B$, we conclude
+      $$g(t,b) = g(t,0) + g'(b) = h(t,0) + h'(b) = h(t,b),$$
+      where $g(t,0) = h(t,0)$ holds because $(t,0)$ lies in the image of $\id_T \times f$.
+
   - property: Malcev
     proof: This follows in the same way as for <a href="/category/Grp">$\Grp$</a>; see also <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories">Borceux–Bourn</a>, Example 2.2.5.
     references:
