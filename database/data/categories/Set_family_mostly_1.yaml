@@ -23,6 +23,7 @@ satisfied_properties:
 
   - property: complete
     proof: 'Since $\Set$ is complete (<a href="/category/Set?proof=complete" data-allow-deduced>proof</a>), the product category $\Set^I$ is complete with pointwise limits. (The size of the index collection does not matter.) Thus, it only remains to check that $\Set^{(I)}_1$ is closed under limits, which are small by convention. Let $D : \J \to \Set^{(I)}_1$ be a small diagram and let $L$ be its limit in $\Set^I$. Thus, $L_i = \lim_{j \in \J} D(j)_i$. Consider the collection $\bigcup_{j \in \J} S(D(j))$, which is essentially small. For any index $i$ outside this collection, $L_i$ is a limit of singletons and hence a singleton. Thus, $S(L) \subseteq \bigcup_{j \in \J} S(D(j))$, and hence $S(L)$ is essentially small.'
+    check_redundancy: false
 
   - property: locally cartesian closed
     proof: >-

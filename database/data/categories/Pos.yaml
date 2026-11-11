@@ -38,6 +38,9 @@ satisfied_properties:
   - property: pushout-stable regular monomorphisms
     proof: See <a href="https://math.stackexchange.com/questions/5130295">MSE/5130295</a>.
 
+  - property: product-stable epimorphisms
+    proof: Apply the dual of Lemma 2 <a href="/content/subcategories">here</a> to the forgetful functor $\Pos \to \Set$, which preserves products, being representable by $\{\ast\}$, and epimorphisms (<a href="/category/Pos?proof=epimorphism">proof</a>).
+
   - property: extremal generator
     proof: We have that $\{0<1\}$ is an extremal generator even in $\PreOrd$ (<a href="/category/PreOrd?proof=extremal_generator">proof</a>). Now apply Lemma 10 <a href="/content/subcategories">here</a>.
 
