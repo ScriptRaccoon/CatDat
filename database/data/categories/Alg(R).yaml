@@ -93,6 +93,19 @@ unsatisfied_properties:
   - property: effective cocongruences
     proof: '<a href="https://mathoverflow.net/a/510809">MO/510744</a> presents a counterexample for $\Ring$, and it can be easily generalized to $\Alg(R)$: Let $X \coloneqq R[p] / (p^2-p)$ with cocongruence $C \coloneqq R \langle p, q \rangle / (p^2-p, q^2-q, pq-q, qp-p)$.'
 
+undecidable_properties:
+  - property: coproduct-stable monomorphisms
+    proof: >-
+      This depends on $R$. For $R = \IZ$, even finite-coproduct-stable monomorphisms fail, see <a href="/category/Ring">$\Ring$</a>.
+
+      Now let $R = K$ be a field. Monomorphisms are injective homomorphisms. Let $(f_i : A_i \to B_i)_{i \in I}$ be a family of injective homomorphisms of $K$-algebras. If some $A_i$ is zero, then so is $B_i$, and both coproducts are zero. Otherwise, choose for each $i$ a $K$-basis of $A_i$ of the form $\{1\} \cup T_i$. Since $f_i$ is injective, $\{1\} \cup f_i(T_i)$ is linearly independent in $B_i$, and we may extend it to a $K$-basis $\{1\} \cup T'_i$ of $B_i$ with $f_i(T_i) \subseteq T'_i$. By <a href="https://math.berkeley.edu/~gbergman/papers/coproducts1.pdf">Bergman</a>, Prop. 4.1 (applied to the standard module $N = \coprod_{i \in I} A_i$ with $N_0 = K$ and $N_i = 0$), the coproduct $\coprod_{i \in I} A_i$ has a $K$-basis consisting of the products $t_1 \cdots t_n$ with $n \geq 0$, $t_k \in T_{i_k}$, and $i_k \neq i_{k+1}$, and similarly for $\coprod_{i \in I} B_i$. The coproduct homomorphism maps $t_1 \cdots t_n$ to $f_{i_1}(t_1) \cdots f_{i_n}(t_n)$, which is again such a basis element of $\coprod_{i \in I} B_i$. Since each $f_i$ is injective on $T_i$, distinct basis elements are mapped to distinct basis elements. Hence, the coproduct homomorphism is injective.
+    label: Alg(R)_coproduct-stable_monos
+
+  - property: finite-coproduct-stable monomorphisms
+    proof: This depends on $R$. For $R = \IZ$ it fails, see <a href="/category/Ring">$\Ring$</a>. For a field $R = K$ it holds, since even coproduct-stable monomorphisms hold (see above).
+    references:
+      - Alg(R)_coproduct-stable_monos
+
 special_objects:
   initial object:
     description: $R$

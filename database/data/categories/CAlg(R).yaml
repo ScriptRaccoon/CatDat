@@ -131,6 +131,21 @@ unsatisfied_properties:
 
       Together with Claim 1, this shows that $\CAlg(R)$ does not have product-stable epimorphisms.
 
+undecidable_properties:
+  - property: coproduct-stable monomorphisms
+    proof: >-
+      This depends on $R$. For $R = \IZ$, even finite-coproduct-stable monomorphisms fail, see <a href="/category/CRing">$\CRing$</a>.
+
+      Now let $R = K$ be a field. Monomorphisms are injective homomorphisms. Let $(f_i : A_i \to B_i)_{i \in I}$ be a family of injective homomorphisms of commutative $K$-algebras. For every finite subset $F \subseteq I$, the homomorphism
+      $$\textstyle \bigotimes_{i \in F} f_i : \bigotimes_{i \in F} A_i \to \bigotimes_{i \in F} B_i$$
+      is injective, since it is a composite of homomorphisms of the form $f_j \otimes \id_C$ and $\id_C \otimes f_j$, which are injective because every $K$-module is flat. The coproduct homomorphism $\coprod_{i \in I} f_i$ is the filtered colimit of these homomorphisms over the finite subsets $F \subseteq I$. Since filtered colimits of commutative $K$-algebras are computed on the underlying sets and filtered colimits of injective maps are injective, $\coprod_{i \in I} f_i$ is injective.
+    label: CAlg(R)_coproduct-stable_monos
+
+  - property: finite-coproduct-stable monomorphisms
+    proof: This depends on $R$. For $R = \IZ$ it fails, see <a href="/category/CRing">$\CRing$</a>. For a field $R = K$ it holds, since even coproduct-stable monomorphisms hold (see above).
+    references:
+      - CAlg(R)_coproduct-stable_monos
+
 special_objects:
   initial object:
     description: $R$
