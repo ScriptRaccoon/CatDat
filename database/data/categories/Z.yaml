@@ -18,6 +18,7 @@ related:
 satisfied_properties:
   - property: complete
     proof: This follows immediately from the fact that $\Set$ is complete (<a href="/category/Set?proof=complete" data-allow-deduced>proof</a>). Limits are constructed pointwise.
+    check_redundancy: false
 
   - property: cocomplete
     proof: This follows immediately from the fact that $\Set$ is cocomplete (<a href="/category/Set?proof=cocomplete" data-allow-deduced>proof</a>). Colimits are constructed pointwise.
@@ -28,6 +29,9 @@ satisfied_properties:
 
   - property: exact filtered colimits
     proof: This follows immediately from the fact that $\Set$ has exact filtered colimits (<a href="/category/Set?proof=exact_filtered_colimits" data-allow-deduced>proof</a>).
+
+  - property: product-stable epimorphisms
+    proof: Since products (<a href="/category/Z?proof=complete">proof</a>) and epimorphisms (<a href="/category/Z?proof=epimorphism">proof</a>) are computed pointwise, this follows from the fact that $\Set$ has this property (<a href="/category/Set?proof=product-stable_epimorphisms" data-allow-deduced>proof</a>).
 
   - property: regular
     proof: This follows immediately from the fact that $\Set$ is regular (<a href="/category/Set?proof=regular" data-allow-deduced>proof</a>).

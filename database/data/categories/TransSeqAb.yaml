@@ -27,9 +27,13 @@ satisfied_properties:
 
   - property: complete
     proof: This property is immediately inherited from $\Ab$, which is complete (<a href="/category/Ab?proof=complete" data-allow-deduced>proof</a>). Limits are defined pointwise.
+    check_redundancy: false
 
   - property: exact filtered colimits
     proof: This property is immediately inherited from $\Ab$, which has exact filtered colimits (<a href="/category/Ab?proof=exact_filtered_colimits" data-allow-deduced>proof</a>).
+
+  - property: product-stable epimorphisms
+    proof: Since products (<a href="/category/TransSeqAb?proof=complete">proof</a>) and epimorphisms (<a href="/category/TransSeqAb?proof=epimorphism">proof</a>) are computed pointwise, this follows from the fact that $\Ab$ has this property (<a href="/category/Ab?proof=product-stable_epimorphisms" data-allow-deduced>proof</a>).
 
   - property: normal
     proof: This property is immediately inherited from $\Ab$, which is normal (<a href="/category/Ab?proof=normal" data-allow-deduced>proof</a>).

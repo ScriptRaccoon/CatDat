@@ -22,6 +22,7 @@ related:
 satisfied_properties:
   - property: complete
     proof: This follows immediately from the fact that $\Set$ is complete (<a href="/category/Set?proof=complete" data-allow-deduced>proof</a>). Limits are constructed pointwise.
+    check_redundancy: false
 
   - property: cocomplete
     proof: This follows immediately from the fact that $\Set$ is cocomplete (<a href="/category/Set?proof=cocomplete" data-allow-deduced>proof</a>). Colimits are constructed pointwise.

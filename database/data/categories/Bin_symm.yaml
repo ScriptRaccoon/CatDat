@@ -79,6 +79,9 @@ satisfied_properties:
       $$(3,3) = (h(x),h(x)) = (g(f(x)),g(f(x))) \in R_Q,$$
       which is a contradiction.
 
+  - property: product-stable epimorphisms
+    proof: Apply the dual of Lemma 2 <a href="/content/subcategories">here</a> to the forgetful functor $\Bin_{\symm} \to \Set$, which preserves products (<a href="/category/Bin_symm?proof=complete">proof</a>) and epimorphisms (<a href="/category/Bin_symm?proof=epimorphism">proof</a>).
+
 unsatisfied_properties:
   - property: skeletal
     proof: The objects $(\{0\},\{(0,0)\})$ and $(\{1\},\{(1,1)\})$ are terminal objects, hence isomorphic, but not equal.

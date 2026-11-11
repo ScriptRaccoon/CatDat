@@ -39,6 +39,9 @@ satisfied_properties:
   - property: pushout-stable regular monomorphisms
     proof: See <a href="https://math.stackexchange.com/questions/5130295">MSE/5130295</a>.
 
+  - property: product-stable epimorphisms
+    proof: Apply the dual of Lemma 2 <a href="/content/subcategories">here</a> to the forgetful functor $\PreOrd \to \Set$, which preserves products, being representable by $\{\ast\}$, and epimorphisms (<a href="/category/PreOrd?proof=epimorphism">proof</a>).
+
   - property: regular subobject classifier
     proof: The <a href="/category/Bin?proof=regular_subobject_classifier">proof</a> for $\Bin$ works verbatim, since its regular subobject classifier $\Omega \coloneqq (\{0,1\},\{0,1\} \times \{0,1\})$ is a preordered set, and the regular monomorphisms in $\PreOrd$ are also the embeddings (<a href="/category/PreOrd?proof=regular_monomorphism">proof</a>).
 
