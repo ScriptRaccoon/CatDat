@@ -24,7 +24,7 @@ satisfied_properties:
     proof: There is a forgetful functor $\Met_{\infty} \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
 
   - property: semi-strongly connected
-    proof: Every non-empty metric space is weakly terminal (by using constant maps).
+    proof: Every non-empty extended metric space is weakly terminal (by using constant maps).
 
   # TODO: perhaps add the category PMet_oo of extended pseudo-metric spaces,
   # and simplify this proof accordingly
@@ -117,9 +117,9 @@ unsatisfied_properties:
       - Met_no_effective_cocongruences
 
   - property: regular subobject classifier
-    proof: The same proof as for <a href="/category/Met">$\Met$</a> works.
+    proof: The same proof as for <a href="/category/Met_c">$\Met_\c$</a> works, since non-expansive maps are continuous and, by the classification of regular monomorphisms (see below), the regular subobjects of an extended metric space $(X,d_X)$ correspond to the closed subsets of $X$.
     references:
-      - Met_no_regular_subobject_classifier
+      - Met_c_no_regular_subobject_classifier
 
 special_objects:
   initial object:

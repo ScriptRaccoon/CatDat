@@ -29,9 +29,6 @@ satisfied_properties:
   - property: semi-strongly connected
     proof: Every non-empty pseudo-metric space is weakly terminal (by using constant maps).
 
-  - property: well-copowered
-    proof: This follows since epimorphisms are surjective (see below).
-
   - property: equalizers
     proof: Just restrict the pseudo-metric to the equalizer built from the sets.
     check_redundancy: false
@@ -139,23 +136,27 @@ satisfied_properties:
 
       To see $(Q,d_Q)$ is in fact an extremal cogenerator, suppose we have a morphism $f : (X,d_X) \to (Y,d_Y)$ such that
       $${-} \circ f : \Hom((Y,d_Y), (Q,d_Q)) \to \Hom((X,d_X), (Q,d_Q))$$
-      is a bijection. First of all, any function $Y \to Q$ which factors through $\{ 0, 0' \}$ is automatically non-expansive; and the injectivity of ${-} \circ f$ on such maps implies that $f : X \to Y$ is surjective, since $\{ 0, 0' \}$ is a cogenerator of <a href="/category/Set">$\Set$</a>. From this, we can conclude that ${-} \circ f$ in fact induces a bijection on the functions $Y \to Q$ and $X \to Q$, respectively, which factor through $\{ 0, 0' \}$. Since $\{ 0, 0' \}$ is in fact an extremal cogenerator of $\Set$, we conclude that in fact, $f$ is bijective.
+      is a bijection. Since $(Q,d_Q)$ is a cogenerator, it follows that $f$ is both a monomorphism and an epimorphism, i.e. $f$ is bijective (see below).
 
       It remains to show that $f$ is isometric. Let $x,x' \in X$. The map $\varphi \coloneqq d_X(x,{-}) : X \to \IR_{\geq 0} \subseteq Q$ is a morphism $(X,d_X) \to (Q,d_Q)$ by the triangle inequality. By assumption, there is a morphism $\psi : (Y,d_Y) \to (Q,d_Q)$ with $\psi \circ f = \varphi$. Since $\varphi(x) = 0$, we get
       $$\begin{align*}
-      d_X(x,x') &= d_Q(\varphi(x),\varphi(x')) \\
+      d_X(x,x') &= \varphi(x') \\
+      & = d_Q(\varphi(x),\varphi(x')) \\
       & = d_Q(\psi(f(x)),\psi(f(x'))) \\
       & \leq d_Y(f(x),f(x')) \\
       & \leq d_X(x,x').
       \end{align*}$$
       Hence, $f$ is isometric.
 
+  - property: well-copowered
+    proof: This follows since epimorphisms are surjective (see below).
+
 unsatisfied_properties:
   - property: skeletal
     proof: The pseudo-metric spaces with underlying sets $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.
 
   - property: locally finite
-    proof: This is obvious.
+    proof: Its subcategory <a href="/category/Met">$\Met$</a> is not locally finite.
 
   - property: balanced
     proof: 'Let $d : \IR \times \IR \to \IR_{\geq 0}$ be the usual Euclidean metric on $\IR$ and $0 : \IR \times \IR \to \IR_{\geq 0}$ be the zero pseudo-metric. Then the identity map $(\IR,d) \to (\IR,0)$ provides a counterexample.'
@@ -172,6 +173,7 @@ unsatisfied_properties:
 
   - property: natural numbers object
     proof: By Lemma 2 <a href="/content/natural_numbers_objects">here</a>, if $(N,z,s)$ is a natural numbers object, then $N \cong \{\ast\} \sqcup N$. Since there is a map $\{\ast\} \to N$, we have $N \neq \varnothing$. However, the coproduct of two non-empty pseudo-metric spaces does not exist; see <a href="https://math.stackexchange.com/questions/1778408">MSE/1778408</a>.
+    label: PMet_no_NNO
 
   - property: effective congruences
     proof: >-
