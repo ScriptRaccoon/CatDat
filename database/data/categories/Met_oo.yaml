@@ -75,6 +75,9 @@ satisfied_properties:
       $$d_P(p,j(z)) \geq d_E(g(p),g(j(z))) = d_E(d_X(A,x),0) = d_X(A,x).$$
       Since $A$ is closed and $x \notin A$, we have $d_X(A,x) > 0$. Thus, the open ball around $p$ of radius $d_X(A,x)$ is disjoint from $j(Z)$, which shows that $j(Z)$ is closed.
 
+  - property: product-stable epimorphisms
+    proof: The <a href="/category/Met?proof=finite-product-stable_epimorphisms">proof</a> for $\Met$ works verbatim for arbitrary families, since the supremum of extended metrics is an extended metric.
+
 unsatisfied_properties:
   - property: skeletal
     proof: The extended metric spaces with underlying sets $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.
