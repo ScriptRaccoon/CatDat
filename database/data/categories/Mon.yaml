@@ -30,6 +30,11 @@ satisfied_properties:
   - property: unital
     proof: If a submonoid of $X \times Y$ contains $X \times \{1\}$ and $\{1\} \times Y$, then for all $x \in X$ and $y \in Y$ it also contains $(x,1) \cdot (1,y) = (x,y)$.
 
+  - property: coproduct-stable monomorphisms
+    proof: The proof for <a href="/category/Grp">$\Grp$</a> works verbatim, since free products of monoids have the same normal form as free products of groups.
+    references:
+      - Grp_coproduct-stable_monos
+
 unsatisfied_properties:
   - property: skeletal
     proof: The trivial monoids with underlying sets $\{0\}$ and $\{1\}$ are zero objects, hence isomorphic, but not equal.

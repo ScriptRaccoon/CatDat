@@ -27,6 +27,11 @@ satisfied_properties:
   - property: disjoint coproducts
     proof: This follows easily from the concrete description of coproducts as (a variant of) free products.
 
+  - property: coproduct-stable monomorphisms
+    proof: The proof for <a href="/category/Grp">$\Grp$</a> works verbatim, since every element of a free product of semigroups can be written uniquely as a word $s_1 \cdots s_n$ with $n \geq 1$, $s_k \in S_{i_k}$, and $i_k \neq i_{k+1}$.
+    references:
+      - Grp_coproduct-stable_monos
+
   - property: cocartesian cofiltered limits
     proof: >-
       We need to prove that for two cofiltered diagrams of semigroups $(B_i)$, $(C_i)$ the canonical map
