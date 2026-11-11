@@ -190,12 +190,6 @@ unsatisfied_properties:
   - property: skeletal
     proof: Consider $(X, \IN \times X)$ and $(Y, \IN \times Y)$ for $X$ and $Y$ bijective but unequal sets.
 
-  - property: locally finite
-    proof: >-
-      The right adjoint $\nabla : \Set \to \omegaSet$ to the forgetful functor is fully faithful. Therefore, for example,
-      $$\Hom_{\omegaSet}(\nabla \{\ast\}, \nabla \IN) \cong \Hom_{\Set}(\{\ast\}, \IN)$$
-      is infinite.
-
   - property: balanced
     proof: 'If $N \coloneqq (\IN, \Delta_{\IN})$ denotes the natural numbers object, the identity map $\IN \to \IN$ induces a morphism of $\omega$-sets $N \to \nabla \IN$, since the identity map is also a compatible realizer tracker. It is both a monomorphism and an epimorphism by the characterizations below. However, it is not an isomorphism: an inverse $\nabla \IN \to N$ would have to have the identity map $\IN \to \IN$ as its underlying function. But for any compatible realizer tracker $\psi$, we have that $0$ realizes both $0$ and $1$ in $\nabla \IN$. Therefore, $\psi(0)$ would have to exist and realize both $0$ and $1$ in $N$, which is impossible. (Alternatively, $\Hom_{\omegaSet}(\nabla \IN, \nabla \IN) = \Hom_{\Set}(\IN, \IN)$ is uncountable. On the other hand, it is easy to see that $\Hom_{\omegaSet}(N, N)$ is exactly the set of total recursive functions, since a compatible realizer tracker would have to agree with the underlying function. Therefore, $\Hom_{\omegaSet}(N, N)$ is countable.)'
     check_redundancy: false

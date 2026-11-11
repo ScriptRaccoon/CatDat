@@ -67,6 +67,17 @@
     - locally essentially small
   proof: This is trivial.
 
+- id: locally_finite_cogenerator_essentially_small
+  assumptions:
+    - locally finite
+    - cogenerator
+    - finite powers
+    - well-powered
+  conclusions:
+    - essentially small
+  proof: >-
+    Let $\C$ be a category with these properties and let $Q$ be a cogenerator. For an object $X$, the collection $\Hom(X,Q)$ is finite, so the power $Q^{\Hom(X,Q)}$ exists, and the canonical morphism $X \to Q^{\Hom(X,Q)}$ is a monomorphism since $Q$ is a cogenerator. Since $Q^{\Hom(X,Q)} \cong Q^n$ for some $n \in \IN$, every object is isomorphic to the domain of a subobject of some $Q^n$. Since $\C$ is well-powered, the collection of subobjects of each $Q^n$ is essentially small, and hence so is the collection of all subobjects of all $Q^n$ with $n \in \IN$. Therefore, the collection of isomorphism classes of objects is essentially small. Since $\C$ is also locally finite, it is essentially small.
+
 - id: concretizable_is_locally_essentially_small
   assumptions:
     - concretizable

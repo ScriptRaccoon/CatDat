@@ -110,9 +110,6 @@ unsatisfied_properties:
   - property: skeletal
     proof: The metric spaces with underlying sets $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.
 
-  - property: locally finite
-    proof: Let $d$ be the usual metric on $\IR$. Every map $\{\ast\} \to \IR$ is a non-expansive map $(\{\ast\},0) \to (\IR,d)$, so that $\Hom((\{\ast\},0),(\IR,d))$ is in bijection with $\IR$, hence infinite.
-
   - property: balanced
     proof: Let $d$ be the usual metric on $\IR$ and its restriction to $\IQ$. The inclusion $(\IQ,d) \hookrightarrow (\IR,d)$ is a counterexample; it is an epimorphism since $\IQ$ is dense in $\IR$. Alternatively, consider the identity map $(X,2d) \to (X,d)$ for any non-trivial metric space $(X,d)$.
     label: Met_not_balanced

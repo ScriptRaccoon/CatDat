@@ -88,9 +88,6 @@ unsatisfied_properties:
   - property: skeletal
     proof: The category contains the non-skeletal category <a href="/category/B">$\IB$</a> as a subcategory.
 
-  - property: locally finite
-    proof: If $X$ is an infinite set, there are infinitely many maps $\{\ast\} \to X$. They are injective and hence finite-to-one.
-
   - property: strongly connected
     proof: Already $\Set$ is not strongly connected.
 
