@@ -23,7 +23,9 @@ comments:
 
 satisfied_properties: []
 
-unsatisfied_properties: []
+unsatisfied_properties:
+  - property: finite-coproduct-stable monomorphisms
+    proof: The same <a href="/category/CRing?proof=finite-coproduct-stable_monomorphisms">counterexample</a> as for $\CRing$ works.
 
 special_objects:
   initial object:
