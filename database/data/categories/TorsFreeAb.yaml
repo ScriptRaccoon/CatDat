@@ -63,8 +63,9 @@ unsatisfied_properties:
   - property: balanced
     proof: 'It can be checked directly that $2 : \IZ \to \IZ$ is both a monomorphism and an epimorphism, but no isomorphism (see also <a href="/morphism/multiply-2">here</a>). This also follows from the general classification of mono- and epimorphisms below.'
 
-  - property: CSP
-    proof: The canonical homomorphism $\bigoplus_{n \geq 0} \IZ \to \prod_{n \geq 0} \IZ$ is injective, but not an epimorphism, since the quotient $\prod_{n \geq 0} \IZ / \bigoplus_{n \geq 0} \IZ$ is not torsion. In fact, it is torsion-free and non-zero.
+  - property: product-stable epimorphisms
+    proof: >-
+      For $n \geq 1$ the homomorphism $f_n : \IZ \to \IZ$, $x \mapsto n x$ is an epimorphism, since $\IZ/n\IZ$ is torsion (see below). Their product is the homomorphism $f : \prod_{n \geq 1} \IZ \to \prod_{n \geq 1} \IZ$, $x \mapsto (n x_n)_{n \geq 1}$ with cokernel $\prod_{n \geq 1} \IZ/n\IZ$ in $\Ab$. This group is not torsion: for every $k \geq 1$, the element $k \cdot ([1],[1],\dotsc)$ has the non-zero component $[k] \in \IZ/(k+1)\IZ$. Hence, $f$ is not an epimorphism.
 
 special_objects:
   initial object:
