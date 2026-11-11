@@ -36,6 +36,10 @@ unsatisfied_properties:
     proof: 'For a prime $p$ consider the sequence of projections $\cdots \to \IZ/p^2 \to \IZ/p$ and the constant sequence $\cdots \to \IZ \to \IZ$. The surjective homomorphisms $\IZ \to \IZ/p^n$ induce the homomorphism $\IZ \to \IZ_p$ in the limit, where $\IZ_p$ is the ring of $p$-adic integers. It is not surjective since $\IZ_p$ is uncountable, but this is not sufficient (at least, for this category): We need to use <a href="https://stacks.math.columbia.edu/tag/04W0">SP/04W0</a> to conclude that it is no epimorphism in $\CRing$.'
     check_redundancy: false
 
+  - property: finite-coproduct-stable monomorphisms
+    proof: 'The ring homomorphisms $\IZ \to \IQ$ and $\id : \IZ/2 \to \IZ/2$ are injective, but their coproduct is a ring homomorphism $\IZ/2 \to \IQ \sqcup \IZ/2 = 0$, which is not injective.'
+    label: CRing_no_finite-coproduct-stable_monos
+
 special_objects:
   initial object:
     description: ring of integers
