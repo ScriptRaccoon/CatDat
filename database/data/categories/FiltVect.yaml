@@ -89,6 +89,9 @@ satisfied_properties:
       Let $i : (U,F) \to (V,F)$ be a regular monomorphism, i.e. $i$ is injective and $F^n(U) = i^*(F^n(V))$. Let $f : (U,F) \to (W,F)$ be any morphism. We must prove that the canonical morphism $(W,F) \to (V,F) \oplus_{(U,F)} (W,F)$ is a regular monomorphism. It is certainly injective since the forgetful functor to $\Vect$ preserves colimits and $\Vect$ has the claimed property. Now suppose that $w \in W$ is an element whose image $[0,w] \in V \oplus_U W$ lies in $F^n(V \oplus_U W)$; we must show that $w \in F^n(W)$.
       Since, by the construction of colimits in $\FiltVect$, the subspace $F^n(V \oplus_U W)$ is the sum of the images of $F^n(V)$ and $F^n(W)$, there exist $v \in F^n(V)$ and $w' \in F^n(W)$ such that $[0,w] = [v,w']$. This means that there exists some $u \in U$ with $v = i(u)$ and $w = f(u) + w'$. Then $u \in F^n(U)$ because $i(u) \in F^n(V)$. Hence $f(u) \in F^n(W)$, and therefore $w = f(u) + w' \in F^n(W)$.
 
+  - property: product-stable epimorphisms
+    proof: Apply the dual of Lemma 2 <a href="/content/subcategories">here</a> to the forgetful functor $\FiltVect_K \to \Set$, which preserves products and epimorphisms (see below).
+
 unsatisfied_properties:
   - property: skeletal
     proof: The zero vector spaces with underlying sets $\{0\}$ and $\{1\}$, each equipped with the zero filtration, are zero objects, hence isomorphic, but not equal.

@@ -62,6 +62,9 @@ satisfied_properties:
   - property: filtered-colimit-stable monomorphisms
     proof: This follows from Lemma 2 <a href="/content/subcategories">here</a> applied to the forgetful functor to $\Set$.
 
+  - property: product-stable epimorphisms
+    proof: Apply the dual of Lemma 2 <a href="/content/subcategories">here</a> to the forgetful functor $\Top_* \to \Set$, which preserves products and epimorphisms (see below).
+
   - property: coregular
     proof: This follows from the dual of Lemma 7 <a href="/content/subcategories">here</a> applied to the forgetful functor $\Top_* \to \Top$, using that $\Top$ is coregular and the description of regular monomorphisms below.
 

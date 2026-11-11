@@ -25,9 +25,13 @@ satisfied_properties:
 
   - property: complete
     proof: This property is immediately inherited from <a href="/category/Ab">$\Ab$</a>. Limits are defined pointwise.
+    check_redundancy: false
 
   - property: exact filtered colimits
     proof: This property is immediately inherited from <a href="/category/Ab">$\Ab$</a>.
+
+  - property: product-stable epimorphisms
+    proof: Since products and epimorphisms are computed pointwise (see below), this follows from the fact that <a href="/category/Ab">$\Ab$</a> has this property.
 
   - property: normal
     proof: This property is immediately inherited from <a href="/category/Ab">$\Ab$</a>.

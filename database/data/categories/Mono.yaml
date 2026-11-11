@@ -93,6 +93,9 @@ satisfied_properties:
     proof: 'See the proof that $\Mono$ is co-Malcev: It shows that in fact any coreflexive corelation is equivalent to an effective cocongruence $X \rightrightarrows X \sqcup_Y X$.'
     check_redundancy: false
 
+  - property: product-stable epimorphisms
+    proof: Apply the dual of Lemma 2 <a href="/content/subcategories">here</a> to the forgetful functor $\Mono \to \Set$, $(X,X') \mapsto X$, which preserves products and epimorphisms (see below).
+
 unsatisfied_properties:
   - property: skeletal
     proof: Consider the objects $(X, X)$ and $(Y, Y)$ for isomorphic but non-equal sets $X$ and $Y$.

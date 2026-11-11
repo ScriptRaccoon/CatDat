@@ -65,6 +65,9 @@ satisfied_properties:
     proof: We need to show that embeddings are stable under pushouts. For a proof see e.g. Lemma 3.6 at the <a href="https://ncatlab.org/nlab/show/subspace+topology#pushout">nLab</a>. Another proof can be found in <a href="https://math.stackexchange.com/a/2044509">MSE/2016945</a>.
     label: Top_coregular
 
+  - property: product-stable epimorphisms
+    proof: Apply the dual of Lemma 2 <a href="/content/subcategories">here</a> to the forgetful functor $\Top \to \Set$, which preserves products and epimorphisms (see below).
+
 unsatisfied_properties:
   - property: skeletal
     proof: The spaces with underlying sets $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.

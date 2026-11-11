@@ -109,6 +109,9 @@ satisfied_properties:
   - property: pushout-stable regular monomorphisms
     proof: By the classification of regular monomorphisms, we need to show that uniform embeddings are stable under pushouts. Since the uniform structure of a pushout is not given by a simple formula, the proof requires some work with chains of entourages. See Proposition 2 <a href="/content/uniform-embeddings-pushouts">here</a>.
 
+  - property: product-stable epimorphisms
+    proof: Apply the dual of Lemma 2 <a href="/content/subcategories">here</a> to the forgetful functor $\Unif \to \Set$, which preserves products and epimorphisms (see below).
+
 unsatisfied_properties:
   - property: skeletal
     proof: The uniform spaces with underlying sets $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.
