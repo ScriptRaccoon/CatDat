@@ -137,7 +137,7 @@ unsatisfied_properties:
 
   - property: extremal generating collection
     proof: >-
-      The proof is very similar to <a href="/category/Top">$\Top$</a>. Let $S$ be a set of uniform spaces. Let $\kappa$ be an infinite regular cardinal strictly greater than $\card(G)$ for every $G \in S$. Equip the ordinal $\kappa + 1$ with the order topology. As a compact Hausdorff space, it admits a unique compatible uniform structure (Theorem 8.3.13 in Engelking's <i>General Topology</i>). We equip the subset $\kappa$ with the induced uniform structure and the set $\kappa \sqcup \{\kappa\}$ with the coproduct uniform structure. Then the evident bijection
+      The proof is very similar to <a href="/category/Top">$\Top$</a>. Let $S$ be a set of uniform spaces. Let $\kappa$ be an infinite regular cardinal strictly greater than $\card(G)$ for every $G \in S$. Equip the ordinal $\kappa + 1$ with the order topology. As a compact Hausdorff space, it admits a unique compatible uniform structure (see <a href="https://www.heldermann.de/SSPM/SSPM06/sspm06.htm">Engelking</a>, Theorem 8.3.13). We equip the subset $\kappa$ with the induced uniform structure and the set $\kappa \sqcup \{\kappa\}$ with the coproduct uniform structure. Then the evident bijection
       $$\kappa \sqcup \{\kappa\} \to \kappa + 1$$
       is uniform, but not a uniform isomorphism (not even a topological isomorphism). However, we claim that for every $G \in S$ the induced map
       $$\Hom(G,\kappa \sqcup \{\kappa\}) \to \Hom(G,\kappa + 1),$$

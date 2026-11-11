@@ -8,7 +8,7 @@ morphisms: >-
 description: >-
   In contrast to continuous maps, which only refer to the induced topology, non-expansive maps are more closely related to the metrics themselves. This category is badly behaved, though, especially when compared with $\Met_{\infty}$: since the distance $\infty$ is not allowed, it lacks, for example, binary coproducts (where points in different summands would have distance $\infty$) and countable products (where the supremum of the distances may be $\infty$).
 
-  The inclusion of $\Met$ into the category <a href="/category/PMet">$\PMet$</a> of pseudo-metric spaces has a left adjoint $L : \PMet \to \Met$. It maps a pseudo-metric space $(X,d_X)$ to the metric space $(X/{\sim},\bar{d}_X)$, where $x \sim y \iff d_X(x,y) = 0$ and $\bar{d}_X([x],[y]) \coloneqq d_X(x,y)$.
+  The inclusion of $\Met$ into the category <a href="/category/PMet">$\PMet$</a> of pseudo-metric spaces has a left adjoint $L : \PMet \to \Met$ that maps a pseudo-metric space $(X,d_X)$ to the metric space $(X/{\sim},\bar{d}_X)$, where $x \sim y \iff d_X(x,y) = 0$ and $\bar{d}_X([x],[y]) \coloneqq d_X(x,y)$.
 nlab_link: https://ncatlab.org/nlab/show/Met
 keywords:
   - short maps
@@ -45,17 +45,15 @@ satisfied_properties:
     check_redundancy: false
 
   - property: coequalizers
-    proof: This is because <a href="/category/PMet">$\PMet$</a> has coequalizers and the inclusion $\Met \hookrightarrow \PMet$ has the left adjoint $L$ (see the description). Concretely, we take the coequalizer in $\PMet$ and then apply $L$, i.e. identify points with distance $0$.
+    proof: This is because <a href="/category/PMet">$\PMet$</a> has coequalizers and the inclusion $\Met \hookrightarrow \PMet$ has the left adjoint $L$ that identifies points with zero distance. Concretely, we take the coequalizer in $\PMet$ and then apply $L$.
 
   - property: filtered colimits
-    proof: This is because <a href="/category/PMet">$\PMet$</a> has filtered colimits and the inclusion $\Met \hookrightarrow \PMet$ has the left adjoint $L$ (see the description). Concretely, we take the filtered colimit in $\PMet$ and then apply $L$, i.e. identify points with distance $0$.
+    proof: This is because <a href="/category/PMet">$\PMet$</a> has filtered colimits and the inclusion $\Met \hookrightarrow \PMet$ has the left adjoint $L$ that identifies points with zero distance. Concretely, we take the filtered colimit in $\PMet$ and then apply $L$.
     check_redundancy: false
 
   - property: cartesian filtered colimits
     proof: >-
-      We already saw that filtered colimits and finite products exist. The canonical map $\colim_i (M \times N_i) \to M \times \colim_i N_i$ is an isomorphism for filtered diagrams $(N_i)$: It is surjective by the concrete description of filtered colimits. It is isometric because of the elementary observation
-      $$\textstyle\inf_i \max(r, s_i) = \max(r, \inf_i s_i)$$
-      for $r, s_i \in \IR$, where $i \leq j \implies s_i \geq s_j$.
+      We already saw that filtered colimits and finite products exist. The canonical map $\colim_i (M \times N_i) \to M \times \colim_i N_i$ is an isomorphism for filtered diagrams $(N_i)$: It is surjective by the concrete description of filtered colimits. It is isometric because of the elementary observation $\inf_i \max(r, s_i) = \max(r, \inf_i s_i)$ for $r, s_i \in \IR$, where $i \leq j \implies s_i \geq s_j$.
     label: Met_cartesian_filtered_colimits
 
   - property: ℵ₁-cofiltered limits
@@ -79,7 +77,7 @@ satisfied_properties:
 
   - property: extremal generator
     proof: >-
-      The extremal generator of <a href="/category/PMet">$\PMet$</a> is $\IR_{\geq 0} \sqcup \{0'\}$, where distinct $x,y \in \IR_{\geq 0}$ have distance $x+y$ and $x$ has distance $x$ to $0'$. The inclusion $\Met \hookrightarrow \PMet$ is fully faithful and has the left adjoint $L$ (see the description). By Lemma 9 <a href="/content/subcategories">here</a>, $L$ maps the extremal generator of $\PMet$ to an extremal generator of $\Met$. It identifies $0$ and $0'$, which yields $\IR_{\geq 0}$, where distinct $x,y$ have distance $x+y$.
+      The extremal generator of <a href="/category/PMet">$\PMet$</a> is $\IR_{\geq 0} \sqcup \{0'\}$, where distinct $x,y \in \IR_{\geq 0}$ have distance $x+y$ and $x$ has distance $x$ to $0'$. The inclusion $\Met \hookrightarrow \PMet$ is fully faithful and has the left adjoint $L$ that identifies points with zero distance. By Lemma 9 <a href="/content/subcategories">here</a>, $L$ maps the extremal generator of $\PMet$ to an extremal generator of $\Met$. It identifies $0$ and $0'$, which yields $\IR_{\geq 0}$, where distinct $x,y$ have distance $x+y$.
     references:
       - PMet_extremal_generator
 
@@ -113,7 +111,7 @@ unsatisfied_properties:
     proof: The metric spaces with underlying sets $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.
 
   - property: locally finite
-    proof: This is obvious.
+    proof: Let $d$ be the usual metric on $\IR$. Every map $\{\ast\} \to \IR$ is a non-expansive map $(\{\ast\},0) \to (\IR,d)$, so that $\Hom((\{\ast\},0),(\IR,d))$ is in bijection with $\IR$, hence infinite.
 
   - property: balanced
     proof: Let $d$ be the usual metric on $\IR$ and its restriction to $\IQ$. The inclusion $(\IQ,d) \hookrightarrow (\IR,d)$ is a counterexample; it is an epimorphism since $\IQ$ is dense in $\IR$. Alternatively, consider the identity map $(X,2d) \to (X,d)$ for any non-trivial metric space $(X,d)$.
@@ -124,7 +122,7 @@ unsatisfied_properties:
     label: Met_not_malcev
 
   - property: countable powers
-    proof: The inclusion $\Met \hookrightarrow \PMet$ has the left adjoint $L$ (see the description), hence preserves limits. Let $d$ be the usual metric on $\IR$. If a power of countably many copies of $(\IR,d)$ existed in $\Met$, it would also be a power in <a href="/category/PMet">$\PMet$</a>. But the proof for $\PMet$ shows that this power does not exist.
+    proof: The inclusion $\Met \hookrightarrow \PMet$ has the left adjoint $L$ that identifies points with zero distance, hence preserves limits. Let $d$ be the usual metric on $\IR$. If a power of countably many copies of $(\IR,d)$ existed in $\Met$, it would also be a power in <a href="/category/PMet">$\PMet$</a>. But the proof for $\PMet$ shows that this power does not exist.
     references:
       - PMet_no_countable_powers
 
@@ -141,7 +139,9 @@ unsatisfied_properties:
     label: Met_no_filtered_colimit_stable_monos
 
   - property: natural numbers object
-    proof: By Lemma 2 <a href="/content/natural_numbers_objects">here</a>, if $(N,z,s)$ is a natural numbers object, then $N \cong \{\ast\} \sqcup N$. Since there is a map $\{\ast\} \to N$, we have $N \neq \varnothing$. However, the coproduct of two non-empty metric spaces does not exist; see <a href="https://math.stackexchange.com/questions/1778408">MSE/1778408</a>.
+    proof: We may copy the proof from <a href="/category/PMet">$\PMet$</a>.
+    references:
+      - PMet_no_NNO
 
   - property: effective congruences
     proof: 'Any kernel pair of a morphism $h : (X,d_X) \to (Z,d_Z)$ in $\Met$ corresponds to a closed subset of $X \times X$. However, there are plenty of non-closed congruences, such as $(R,d_R)$ on $(\IR,d)$, where $d$ is the usual metric, $R \coloneqq \Delta \cup (\IQ \times \IQ) \subseteq \IR \times \IR$, and $d_R$ is the restriction of the product metric. Alternatively, the proof for <a href="/category/PMet">$\PMet$</a> works verbatim, since all spaces involved there are metric spaces.'
@@ -152,7 +152,7 @@ unsatisfied_properties:
     proof: >-
       Let $d$ be the usual metric on $\IR$ and its restrictions to subsets of $\IR$. We will define a cocongruence on $((0,1),d)$ given by $(C,d)$, where $C \coloneqq (-1, 0) \cup (0, 1) \subseteq \IR$, and the two maps $((0, 1),d) \rightrightarrows (C,d)$ are the inclusion map and $x \mapsto -x$. Then for any metric space $(X,d_X)$, the induced relation on non-expansive maps $((0, 1),d) \to (X,d_X)$ is that $f \sim g$ if and only if
       $$d_X(f(x), g(y)) \le x+y$$
-      for each $x, y \in (0, 1)$. This is reflexive since $d_X(f(x), f(y)) \le |x-y| < x+y$, and it is clearly symmetric. For transitivity, suppose $f\sim g$ and $g\sim h$. Then for any $\varepsilon > 0$, we have
+      for each $x, y \in (0, 1)$. This is reflexive since $d_X(f(x), f(y)) \le |x-y| < x+y$, and it is clearly symmetric. For transitivity, suppose $f\sim g$ and $g\sim h$. Then for any $0 < \varepsilon < 1$, we have
       $$d_X(f(x), h(y)) \le d_X(f(x), g(\varepsilon)) + d_X(g(\varepsilon), h(y)) \le (x + \varepsilon) + (y + \varepsilon).$$
       Since this holds for every $\varepsilon > 0$, we conclude $d_X(f(x), h(y)) \le x+y$.
       On the other hand, if this cocongruence were effective, then by the dual of <a href="/content/effective-congruence-quotients">this result</a>, it would be the cokernel pair of the equalizer of the two inclusion maps. However, that equalizer is empty, so $(C,d)$ would have to be a binary copower of $((0,1),d)$, which does not exist in $\Met$.
@@ -164,11 +164,9 @@ unsatisfied_properties:
       - PMet_not_regular
 
   - property: regular subobject classifier
-    proof: >-
-      Assume that $\top : \{\ast\} \to (\Omega,d_\Omega)$ is a regular subobject classifier. We can identify $\top$ with a point $\top \in \Omega$. Then for every metric space $(X,d_X)$ and every regular monomorphism into it, which we may assume to be an inclusion $(Y,d_Y) \hookrightarrow (X,d_X)$, where $Y \subseteq X$ and $d_Y$ is the restriction of $d_X$, there is a unique morphism $f : (X,d_X) \to (\Omega,d_\Omega)$ such that $f^*(\{\top\}) = Y$.
-
-      The set $\Omega$ is identified with $\Hom(\{\ast\},(\Omega,d_\Omega)) \cong \Sub_{\reg}(\{\ast\})$. There are two regular subobjects of $\{\ast\}$, namely $\{\ast\} \subseteq \{\ast\}$ and $\varnothing \subseteq \{\ast\}$ (the latter being the equalizer of, say, two maps $\{\ast\} \rightrightarrows \{0,1\}$). Thus, $\Omega$ has exactly two points, so that $d_\Omega$ induces the discrete topology. In particular, $\{\top\}$ is clopen in $\Omega$. Since $f$ is continuous, the universal property then implies that every subset $Y \subseteq X$ as above is clopen in $X$. But this is not the case: for example, with the standard metric $d$ on $\IR$, the inclusion $([0,\infty),d) \hookrightarrow (\IR,d)$ is the equalizer of $\id : (\IR,d) \to (\IR,d)$ and the absolute value function $|{-}| : (\IR,d) \to (\IR,d)$.
-    label: Met_no_regular_subobject_classifier
+    proof: The same proof as for <a href="/category/Met_c">$\Met_\c$</a> works, since non-expansive maps are continuous and, by the classification of regular monomorphisms (see below), the regular subobjects of a metric space $(X,d_X)$ correspond to the closed subsets of $X$.
+    references:
+      - Met_c_no_regular_subobject_classifier
 
   - property: coaccessible
     proof: >-
