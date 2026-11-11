@@ -130,9 +130,6 @@ unsatisfied_properties:
   - property: skeletal
     proof: The constant sequences with values $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.
 
-  - property: locally finite
-    proof: The endomorphisms of the sequence $\IN \to \{\ast\} \to \{\ast\} \to \cdots$ correspond to the endomorphisms of the set $\IN$.
-
   - property: disjoint finite products
     proof: >-
       If $X,Y$ are connected sequences with $X_0 = \varnothing$ and $Y_0 \neq \varnothing$, for example

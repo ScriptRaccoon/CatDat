@@ -78,9 +78,6 @@ unsatisfied_properties:
   - property: skeletal
     proof: The objects $(\{0\},\{0\})$ and $(\{1\},\{1\})$ are terminal objects, hence isomorphic, but not equal.
 
-  - property: locally finite
-    proof: The object $(\IN,\varnothing)$ is valid and has infinitely many endomorphisms.
-
   - property: semi-strongly connected
     proof: If $X$ is a non-empty set, there is no map between $(\varnothing,X)$ and $(X,\varnothing)$.
 

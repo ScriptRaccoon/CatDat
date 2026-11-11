@@ -155,9 +155,6 @@ unsatisfied_properties:
   - property: skeletal
     proof: The pseudo-metric spaces with underlying sets $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.
 
-  - property: locally finite
-    proof: Its subcategory <a href="/category/Met">$\Met$</a> is not locally finite.
-
   - property: balanced
     proof: 'Let $d : \IR \times \IR \to \IR_{\geq 0}$ be the usual Euclidean metric on $\IR$ and $0 : \IR \times \IR \to \IR_{\geq 0}$ be the zero pseudo-metric. Then the identity map $(\IR,d) \to (\IR,0)$ provides a counterexample.'
 
