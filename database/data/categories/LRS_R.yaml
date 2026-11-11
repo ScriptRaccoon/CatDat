@@ -14,6 +14,10 @@ related:
   - Top
   - CAlg(R)
 
+comments:
+  - >-
+    For $R = \IZ$, this category does not have <a href="/category-property/finite-product-stable_epimorphisms">finite-product-stable epimorphisms</a>: The canonical morphism $f : \Spec(\IQ) \sqcup \Spec(\IF_2) \to \Spec(\IZ_{(2)})$ is an epimorphism by their classification, since it is surjective and the maps $\IZ_{(2)} \to \IQ \times \IF_2$ and $\IQ \to \IQ$ are injective. Since products distribute over coproducts (by infinitary extensivity) and $\Spec$ preserves limits, the product of $f$ with $\Spec(\IZ/4)$ is the morphism $\Spec(\IF_2) \to \Spec(\IZ/4)$, using $\IQ \otimes \IZ/4 = 0$. It is no epimorphism since $\IZ/4 \to \IF_2$ is not injective. It is not known to us if this works for every $R$, for example a field.
+
 satisfied_properties:
   - property: locally small
     proof: For two ringed spaces $X,Y$, the collection of morphisms $X \to Y$ of ringed spaces is the collection $\coprod_{u \in \Hom(|X|,|Y|)} \Hom(\O_Y,u_* \O_X)$, where $u$ runs through the continuous maps $|X| \to |Y|$. This is a set since $\Hom(|X|,|Y|)$ is a set and each $\Hom(\O_Y,u_* \O_X)$ is a set.
