@@ -27,7 +27,7 @@ test('user can view category details', async ({ page }) => {
 	).toContainText('is not additive')
 	await expect(
 		get_property_list(page, 'Unsatisfied properties', 'Properties from parent')
-	).toContainText('is not balanced')
+	).toContainText('is not coregular')
 	await expect(body).toContainText('terminal object: zero ring')
 	await expect(body).toContainText('coproducts: tensor products')
 	await expect(body).toContainText('regular epimorphisms: surjective morphisms')
