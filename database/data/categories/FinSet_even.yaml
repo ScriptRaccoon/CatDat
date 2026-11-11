@@ -30,6 +30,9 @@ satisfied_properties:
   - property: disjoint finite coproducts
     proof: A finite disjoint union of finite sets of even cardinality is again finite and has even cardinality, since a finite sum of even natural numbers is even. Moreover, coproducts are disjoint just as in <a href="/category/FinSet">$\FinSet$</a>.
 
+  - property: finite-coproduct-stable monomorphisms
+    proof: Apply Lemma 2 <a href="/content/subcategories">here</a> to the inclusion functor $\FinSet_{\even} \to \Set$, which preserves finite coproducts (see above) and monomorphisms (see below), since <a href="/category/Set">$\Set$</a> has coproduct-stable monomorphisms.
+
   - property: binary products
     proof: This follows from the fact that the product of two even natural numbers is again even.
 
