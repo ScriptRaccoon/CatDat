@@ -36,6 +36,9 @@ satisfied_properties:
     proof: This follows from the corresponding fact for <a href="/category/Top">$\Top$</a> since products of Hausdorff spaces are again Hausdorff.
     check_redundancy: false
 
+  - property: product-stable epimorphisms
+    proof: Since epimorphisms are the continuous maps with dense image (see below), this follows from the topological fact that a product of dense subsets is dense in the product topology, since the closure of a product of subsets is the product of their closures.
+
   - property: cocomplete
     proof: This follows since $\Haus$ is a reflective subcategory of <a href="/category/Top">$\Top$</a>, which is cocomplete. For the reflector, see e.g. the <a href="https://ncatlab.org/nlab/show/Hausdorff+space#HausdorffReflection">nLab</a>. Explicitly, we construct the colimit of Hausdorff spaces by applying the reflector to the colimit of the underlying topological spaces.
     check_redundancy: false

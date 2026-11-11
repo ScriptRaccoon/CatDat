@@ -53,6 +53,11 @@ satisfied_properties:
       Let $t \in T$ be an element of norm $<1$. Since $g$ is a linear contraction, $g(t)$ has norm $<1$. Since $f$ is a regular epimorphism, there is some $x \in X$ with norm $<1$ and $f(x) = g(t)$.
       Then $(x,t) \in X \times_Y T$ is a preimage of $t$ with norm $\max(|x|,|t|) < 1$.
 
+  - property: finite-product-stable epimorphisms
+    proof: Since finite products are direct products with the $\sup$-norm and epimorphisms are the linear contractions with dense image (see below), the proof for <a href="/category/Met">$\Met$</a> works verbatim. Here, it is important that every finite family of vectors is bounded.
+    references:
+      - Met_finite-product-stable_epis
+
   - property: pushout-stable regular monomorphisms
     proof: >-
       We will use the classification of regular monomorphisms as isometric linear maps below.
@@ -157,9 +162,6 @@ unsatisfied_properties:
   - property: balanced
     proof: The linear map $\IC \to \IC$, $x \mapsto x/2$ with the usual norm on $\IC$ is a counterexample. It is bijective, hence a mono- and epimorphism, but not isometric and therefore no isomorphism.
 
-  - property: CSP
-    proof: By using the concrete description of products and coproducts, for the constant family $X_n = \IC$ equipped with the usual norm, the canonical morphism $\coprod_n X_n \to \prod_n X_n$ becomes the canonical inclusion map $\ell^1 \hookrightarrow \ell^\infty$. This is not an epimorphism (i.e., has no dense image) since the closure of the image is precisely $c_0$. So for example, $(1,1,\dotsc)$ is not contained in the closure of the image.
-
   - property: regular subobject classifier
     proof: If $\Omega$ is a regular subobject classifier, then by the classification of regular monomorphisms, $\Hom(X,\Omega)$ is isomorphic to the set of closed subspaces of $X$ for any Banach space $X$. For $X = \IC$ this implies that there are exactly two vectors in $\Omega$ with norm $\leq 1$, which is absurd. (For $\Omega = 0$ there is just one, and for $\Omega \neq 0$ there are infinitely many.)
 
@@ -181,8 +183,11 @@ unsatisfied_properties:
     references:
       - Met_no_filtered_colimit_stable_monos
 
-  - property: cofiltered-limit-stable epimorphisms
-    proof: 'We show that epimorphisms are not stable under sequential limits. Let $X_n = Y_n = \IC$ for all $n \geq 0$, equipped with the usual norm. The transition morphism $Y_{n+1} \to Y_n$ is the identity, and the transition morphism $X_{n+1} \to X_n$ is $x \mapsto x/2$. The morphisms $X_n \to Y_n$, $x \mapsto x/2^n$ are compatible with the transitions, and they are surjective, hence epimorphisms. Now we check $\lim_n X_n = 0$: An element $(x_n) \in \lim_n X_n$ is a family of complex numbers satisfying $x_n = x_{n+1}/2$ <i>and</i> $\sup_n |x_n| < \infty$. But then $x_n = 2^n x_0$ and this can only be bounded when $x_0=0$. Hence, $0 = \lim_n X_n \to \lim_n Y_n = \IC$ is no epimorphism.'
+  - property: product-stable epimorphisms
+    proof: >-
+      For $n \geq 1$ the linear contraction $f_n : \IC \to \IC$, $z \mapsto z/n$ is surjective, hence an epimorphism. By the description of products (see below), their product is the map
+      $$\textstyle f : \ell^\infty \to \ell^\infty, \quad x \mapsto (x_n/n)_{n \geq 1},$$
+      where $\ell^\infty$ is the space of bounded sequences $(x_n)_{n \geq 1}$ in $\IC$ with the norm $|x|_\infty = \sup_{n \geq 1} |x_n|$. Every element $y = f(x)$ of the image satisfies $|y_n| \leq |x|_\infty/n$, hence $\lim_{n \to \infty} y_n = 0$. It follows that $|y - e|_\infty \geq 1$ for $e \coloneqq (1,1,\dotsc)$. Hence, $f$ does not have dense image and is not an epimorphism (see below).
 
 special_objects:
   initial object:

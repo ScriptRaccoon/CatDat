@@ -84,6 +84,9 @@ satisfied_properties:
       Finally, since we have shown $f$ is bijective, to show $f$ is a homeomorphism, it suffices to show that $f$ is closed. Thus, let $F \subseteq X$ be closed. Then $d_X({-}, F) : X \to \IR$ is a continuous function, so there exists $\varphi : Y \to \IR$ such that $\varphi(f(x)) = d_X(x, F)$ for each $x\in X$. That implies that $f_*(F) = \{ y \in Y : \varphi(y) = 0 \}$ is closed.
     label: Met_c_cogenerator
 
+  - property: finite-product-stable epimorphisms
+    proof: Apply the dual of Lemma 2 <a href="/content/subcategories">here</a> to the inclusion functor $\Met_\c \to \Haus$, which preserves finite products and epimorphisms (see below), since <a href="/category/Haus">$\Haus$</a> has product-stable epimorphisms.
+
 unsatisfied_properties:
   - property: skeletal
     proof: The metric spaces with underlying sets $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.

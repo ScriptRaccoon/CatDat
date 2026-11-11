@@ -106,6 +106,15 @@ satisfied_properties:
       Note: $(\IR,d)$ is not an extremal cogenerator. For example, the inclusion $((0, 1),d) \hookrightarrow ([0, 1],d)$ is not an isomorphism, but every non-expansive map $((0, 1),d) \to (\IR,d)$ extends uniquely to a non-expansive map $([0, 1],d) \to (\IR,d)$. To see this, let $f : ((0, 1),d) \to (\IR,d)$ be a non-expansive map. Then since $f$ is uniformly continuous in particular, it is well known that $\lim_{x\to 0^+} f(x)$ and $\lim_{x\to 1^-} f(x)$ both exist and are finite. If we extend $f$ with these values at 0 and 1 respectively, then it is straightforward to check that the resulting function is still non-expansive. The extension is unique since $(0, 1)$ is dense in $[0, 1]$. (The same proof also shows that $(\IR_{\ge 0},d)$ is not an extremal cogenerator.)
     label: Met_extremal_cogenerator
 
+  - property: finite-product-stable epimorphisms
+    proof: >-
+      Let $(f_i : (X_i,d_{X_i}) \to (Y_i,d_{Y_i}))_{i \in I}$ be a finite family of epimorphisms, i.e. non-expansive maps with dense image (see below). Their product is the map $f \coloneqq \prod_{i \in I} f_i : (\prod_{i \in I} X_i, d_X) \to (\prod_{i \in I} Y_i, d_Y)$, where $d_X$ and $d_Y$ are the supremum metrics, for example
+      $$\textstyle d_Y(y,y') \coloneqq \sup_{i \in I} d_{Y_i}(y_i,y'_i).$$
+      Let $y \in \prod_{i \in I} Y_i$ and $\varepsilon > 0$. There is some $x \in \prod_{i \in I} X_i$ with $d_{Y_i}(f_i(x_i),y_i) < \varepsilon/2$ for all $i \in I$. Then
+      $$\textstyle d_Y(f(x),y) = \sup_{i \in I} d_{Y_i}(f_i(x_i),y_i) \leq \varepsilon/2 < \varepsilon.$$
+      Hence, $f$ has dense image.
+    label: Met_finite-product-stable_epis
+
 unsatisfied_properties:
   - property: skeletal
     proof: The metric spaces with underlying sets $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.
