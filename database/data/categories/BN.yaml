@@ -43,9 +43,6 @@ satisfied_properties:
     proof: We apply Theorem 4 <a href="/content/deloopings-aleph1-accessible">here</a>. We already know that $B\IN$ is left cancellative and Cauchy complete. The principal right ideals of $\IN$ are the sets $n + \IN$ for $n \in \IN$. If $n + \IN \subseteq n' + \IN$, then $n \in n' + \IN$, i.e. $n \geq n'$. Hence, every ascending chain $n_0 + \IN \subseteq n_1 + \IN \subseteq \cdots$ satisfies $n_0 \geq n_1 \geq \cdots$ and therefore becomes stationary.
 
 unsatisfied_properties:
-  - property: locally finite
-    proof: This is trivial.
-
   - property: sequential limits
     proof: Assume that the sequence $\cdots \xrightarrow{1}  \bullet \xrightarrow{1} \bullet \xrightarrow{1} \bullet$ has a limit. This is a (universal) sequence of natural numbers $n_0,n_1,\dotsc$ satisfying $n_i = n_{i+1} + 1$. But then $n_i = n_0 - i$, and in particular $n_{n_0 + 1} = - 1$, a contradiction.
 

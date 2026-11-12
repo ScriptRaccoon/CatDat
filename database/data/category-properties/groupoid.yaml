@@ -10,6 +10,7 @@ related:
   - quotient-trivial
   - right cancellative
   - subobject-trivial
+  - EI-category
 
 tags:
   - morphism behavior

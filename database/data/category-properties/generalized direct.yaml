@@ -12,6 +12,7 @@ related:
   - direct
   - groupoid
   - one-way
+  - EI-category
 
 tags:
   - morphism behavior

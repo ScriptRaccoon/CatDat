@@ -24,6 +24,7 @@ related:
   - regular-subobject-trivial
   - regular-quotient-trivial
   - one-way
+  - EI-category
 
 tags:
   - morphism behavior
