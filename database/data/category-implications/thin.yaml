@@ -1,4 +1,5 @@
-# results on thin categories and related notions: one-way, core-thin, direct, generalized direct
+# results on thin categories and related notions: one-way, core-thin,
+# direct, generalized direct, EI-category
 
 - id: thin_consequences
   assumptions:
@@ -79,23 +80,39 @@
 - id: generalized_direct_criterion
   assumptions:
     - essentially finite
-    - one-way
+    - EI-category
   conclusions:
     - generalized direct
   proof: >-
-    Let $\C$ be an essentially finite one-way category. First, if $f : A \to B$ and $g : B \to A$ are morphisms in $\C$, then $g \circ f = \id_A$ and $f \circ g = \id_B$ since $\C$ is one-way, so $f$ is an isomorphism.
+    Let $\C$ be an essentially finite EI-category. First, if $f : A \to B$ and $g : B \to A$ are morphisms in $\C$, then the endomorphisms $g \circ f$ and $f \circ g$ are isomorphisms. Thus $f$ is a split monomorphism and a split epimorphism, i.e. an isomorphism.
 
     Now assume that there is an infinite sequence of non-isomorphisms $f_k : A_{k+1} \to A_k$ for $k \geq 0$. Since $\C$ has only finitely many objects up to isomorphism, there are $m < n$ with an isomorphism $u : A_m \to A_n$. Then
     $$f_{m+1} \circ \cdots \circ f_{n-1} \circ u : A_m \to A_{m+1}$$
     is a morphism in the opposite direction of $f_m : A_{m+1} \to A_m$ (for $n = m+1$, it is just $u$). By the first step, $f_m$ is an isomorphism, a contradiction. See also the <a href="https://ncatlab.org/nlab/show/direct+category#direct_versus_oneway_categories">nLab</a>.
 
-- id: one-way_consequences
+- id: one-way_characterization
   assumptions:
     - one-way
   conclusions:
     - core-thin
-    - Cauchy complete
-  proof: This is trivial.
+    - EI-category
+  proof: For the non-trivial direction, let $\C$ be a core-thin EI-category. Every endomorphism in $\C$ is an automorphism and therefore the identity.
+  is_equivalence: true
+
+- id: EI-category_criterion
+  assumptions:
+    - locally finite
+    - left cancellative
+  conclusions:
+    - EI-category
+  proof: 'Let $f : X \to X$ be an endomorphism. Since $f$ is a monomorphism, the map $f \circ - : \Hom(X,X) \to \Hom(X,X)$ is injective, hence bijective since $\Hom(X,X)$ is finite. Thus, there is some $g : X \to X$ with $f \circ g = \id_X$. Then $f$ is a split epimorphism and a monomorphism, hence an isomorphism.'
+
+- id: generalized_direct_implies_EI-category
+  assumptions:
+    - generalized direct
+  conclusions:
+    - EI-category
+  proof: 'Every non-invertible endomorphism $f : A \to A$ yields the infinite sequence of non-isomorphisms $\cdots \xrightarrow{f} A \xrightarrow{f} A$.'
 
 - id: freyd_small
   assumptions:

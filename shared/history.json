@@ -2065,6 +2065,10 @@
 		{
 			"type": "category",
 			"id": "generalized inverse"
+		},
+		{
+			"type": "category",
+			"id": "EI-category"
 		}
 	]
 }

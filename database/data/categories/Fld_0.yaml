@@ -39,11 +39,13 @@ unsatisfied_properties:
   - property: skeletal
     proof: The field $\IQ(T)$ and its subfield $\IQ(T^2)$ are isomorphic (via $T \mapsto T^2$) but not equal.
 
-  - property: locally finite
-    proof: There are infinitely many homomorphisms $\IQ(X) \to \IQ(X)$, $X \mapsto X^k$.
-
   - property: core-thin
     proof: If this category were core-thin, Galois theory would not exist. Specifically, the conjugation $\IC \to \IC$, $z \mapsto \overline{z}$ is a non-trivial automorphism.
+
+  - property: EI-category
+    proof: The example from <a href="/category/Fld">$\Fld$</a> also works here.
+    references:
+      - Fld_not_EI
 
   - property: semi-strongly connected
     proof: There is no homomorphism from $\IQ(\sqrt{2})$ to $\IQ(\sqrt{3})$, since a direct calculation shows that $\IQ(\sqrt{3})$ has no element $a$ with $a^2=2$. Similarly, there is no homomorphism from $\IQ(\sqrt{3})$ to $\IQ(\sqrt{2})$. See also <a href="https://math.stackexchange.com/questions/1069387">MSE/1069387</a>.

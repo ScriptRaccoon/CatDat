@@ -29,6 +29,7 @@ satisfied_properties:
 
   - property: right cancellative
     proof: This is trivial.
+    check_redundancy: false
 
   - property: coequalizers
     proof: We construct coequalizers as in <a href="/category/FinSet">$\FinSet$</a> (or $\Set$) and observe that the universal property still holds when we restrict to surjective maps.

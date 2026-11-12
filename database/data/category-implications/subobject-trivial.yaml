@@ -99,12 +99,14 @@
     - retract-trivial
   proof: A core-connected locally finite category is equivalent to $BM$ for a finite monoid $M$. A finite monoid $M$ satisfies the property $xy=1 \implies yx=1$. In fact, when $xy=1$ holds, the map $m \mapsto xm$ is surjective, hence injective. Thus, $x(yx)=x=x(1)$ implies $yx=1$.
 
-- id: one-way_implies_retract-trivial
+- id: EI-category_consequences
   assumptions:
-    - one-way
+    - EI-category
   conclusions:
+    - Cauchy complete
     - retract-trivial
-  proof: This is trivial.
+  proof: >-
+    Every idempotent $e : X \to X$ is an isomorphism and therefore the identity, so it splits. If $f : X \to Y$ and $g : Y \to X$ are morphisms with $f \circ g = \id_Y$, then $g \circ f$ is an idempotent endomorphism of $X$, hence $g \circ f = \id_X$.
 
 - id: codiagonal-iso
   assumptions:

@@ -36,9 +36,6 @@ unsatisfied_properties:
   - property: skeletal
     proof: The category contains the non-skeletal category <a href="/category/Fld_0">$\Fld_0$</a> as a subcategory.
 
-  - property: locally finite
-    proof: There are infinitely many homomorphisms $\IQ(X) \to \IQ(X)$, $X \mapsto X^k$.
-
   - property: connected
     proof: A field of characteristic $0$ cannot be connected to a field of characteristic $p > 0$. In fact, the connected components of $\Fld$ are the subcategories $\Fld_p$ of fields of characteristic $p$, where $p$ is a prime or $0$.
 
@@ -47,6 +44,10 @@ unsatisfied_properties:
 
   - property: core-thin
     proof: If this category were core-thin, Galois theory would not exist. Specifically, the conjugation $\IC \to \IC$, $z \mapsto \overline{z}$ is a non-trivial automorphism.
+
+  - property: EI-category
+    proof: 'The endomorphism $\IQ(T) \to \IQ(T)$, $T \mapsto T^2$ is not an isomorphism, since its image $\IQ(T^2)$ does not contain $T$.'
+    label: Fld_not_EI
 
   - property: multi-terminal object
     proof: Every field has a non-trivial extension, for instance, the rational function field in one variable over itself. Hence, a multi-terminal object never exists.

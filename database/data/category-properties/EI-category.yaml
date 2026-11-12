@@ -1,0 +1,19 @@
+id: EI-category
+relation: is an
+description: A category is an <i>EI-category</i> if every endomorphism in it is an isomorphism.
+nlab_link: https://ncatlab.org/nlab/show/EI-category
+dual: EI-category
+invariant_under_equivalences: true
+
+keywords:
+  - endomorphisms are isomorphisms
+
+related:
+  - generalized direct
+  - generalized inverse
+  - groupoid
+  - one-way
+  - retract-trivial
+
+tags:
+  - morphism behavior

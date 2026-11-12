@@ -8,6 +8,7 @@ invariant_under_equivalences: true
 related:
   - core-thin
   - direct
+  - EI-category
   - inverse
   - retract-trivial
 
