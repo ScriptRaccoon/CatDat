@@ -5,7 +5,7 @@ description: A description of sifted colimits in groupoids, yielding a proof tha
 
 # Sifted colimits in groupoids
 
-While the combination of [this result](/category-implication/groupoid_consequence) and [this result](/category-implication/sifted_colimits_criterion) already implies that groupoids have sifted colimits, we can make these colimits more explicit and also prove their existence without using any non-trivial theorem. We also do this in a more general setting.
+We make sifted colimits in groupoids explicit and prove their existence without using any non-trivial theorem. We also do this in a more general setting, which also covers [generalized inverse](/category-property/generalized_inverse) categories.
 
 Let $D : \I \to \C$ be a [sifted](/category-property/sifted) diagram in a category and $i_0 \in \I$. We call $D$ _constant after_ $i_0$ when for all morphisms $i_0 \to i$ the morphism $D(i_0) \to D(i)$ is an isomorphism. Of course, in a groupoid, this is satisfied for every $i_0 \in \I$. If such an object $i_0$ exists, we call $D$ _eventually constant_.
 
@@ -88,4 +88,16 @@ Then $\C$ is [finitely accessible](/category-property/finitely_accessible).
 
 ::: Proof
 Since sifted colimits exist, filtered colimits also exist. Moreover, every object is strongly finitely presentable and therefore also finitely presentable.
+:::
+
+Besides groupoids, the following categories satisfy the assumption of Lemma 1 for every sifted diagram.
+
+::: Lemma 5
+Let $\C$ be a [generalized inverse](/category-property/generalized_inverse) category. Then every sifted diagram $D : \I \to \C$ is eventually constant.
+:::
+
+::: Proof
+Assume that for every $i \in \I$ there is a morphism $i \to j$ in $\I$ such that $D(i) \to D(j)$ is not an isomorphism. Since $\I$ is non-empty, this yields an infinite sequence of non-isomorphisms
+$$D(i_0) \to D(i_1) \to D(i_2) \to \cdots,$$
+a contradiction. Thus, there is some $i_0 \in \I$ such that $D(i_0) \to D(j)$ is an isomorphism for every morphism $i_0 \to j$, that is, $D$ is constant after $i_0$.
 :::

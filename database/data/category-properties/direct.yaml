@@ -9,6 +9,7 @@ dual: inverse
 invariant_under_equivalences: false
 
 related:
+  - generalized direct
   - one-way
   - skeletal
 

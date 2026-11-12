@@ -41,12 +41,6 @@ satisfied_properties:
     check_redundancy: false
 
 unsatisfied_properties:
-  - property: essentially finite
-    proof: This is trivial.
-
-  - property: self-dual
-    proof: The minimum $0$ has an immediate successor, but the maximum $\infty$ has no immediate predecessor.
-
   - property: inverse
     proof: Consider the strictly increasing sequence $0 < 1 < 2 < \cdots$.
 

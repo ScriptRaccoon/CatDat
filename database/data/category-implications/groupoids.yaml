@@ -4,7 +4,7 @@
   assumptions:
     - groupoid
   conclusions:
-    - directed limits
+    - generalized direct
     - self-dual
   proof: This is easy.
 

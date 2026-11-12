@@ -1,0 +1,17 @@
+id: generalized direct
+relation: is
+description: >-
+  A category is <i>generalized direct</i> if it contains no infinite sequence of non-isomorphisms of the form
+  $$\cdots \to A_2 \to A_1 \to A_0.$$
+  In contrast to being direct, this property is invariant under equivalences of categories. For example, every groupoid is generalized direct.
+nlab_link: https://ncatlab.org/nlab/show/direct+category#allowing_automorphisms
+dual: generalized inverse
+invariant_under_equivalences: true
+
+related:
+  - direct
+  - groupoid
+  - one-way
+
+tags:
+  - morphism behavior
