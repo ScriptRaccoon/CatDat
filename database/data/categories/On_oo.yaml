@@ -1,0 +1,65 @@
+id: On_oo
+name: partially ordered collection of extended ordinal numbers
+notation: $(\OnColl \cup \{\infty\}, \leq)$
+objects: ordinal numbers and $\infty$
+morphisms: 'a unique morphism $(\alpha,\beta) : \alpha \to \beta$ if $\alpha \leq \beta$, where $\alpha \leq \infty$ for all $\alpha$'
+description: This is the partially ordered collection of ordinal numbers with a largest element $\infty$ added, regarded as a thin category. Here, $\infty$ is not an ordinal number (in contrast to $\omega$), but an abstract symbol declared to be larger than all ordinal numbers. It is a completed version of the thin <a href="/category/On">category of ordinal numbers</a>, just like the <a href="/category/N_oo">extended natural numbers</a> are a completed version of the <a href="/category/N">natural numbers</a>.
+nlab_link: null
+keywords:
+  - poset of extended ordinal numbers
+
+tags:
+  - set theory
+
+related:
+  - N_oo
+  - omega1
+  - On
+
+satisfied_properties:
+  - property: thin
+    proof: By definition, there is at most one morphism between any two objects.
+    check_redundancy: false
+
+  - property: locally small
+    proof: By definition, $\Hom(\alpha,\beta)$ is either empty or the set $\{(\alpha,\beta)\}$.
+
+  - property: semi-strongly connected
+    proof: For ordinals $\alpha,\beta$ we have $\alpha \leq \beta$ or $\beta \leq \alpha$, and $\infty$ is comparable with every element.
+
+  - property: direct
+    proof: An infinite strictly descending sequence contains at most one $\infty$, and after removing it, we obtain an infinite strictly descending sequence of ordinals, which does not exist since the ordinals are well-founded.
+
+  - property: total
+    proof: >-
+      Every collection $S$ of elements has a supremum, which is $\infty$ if $\infty \in S$ or if $S$ contains arbitrarily large ordinals, and otherwise the supremum of the set of ordinals $S$. Hence, every diagram, even one indexed by a large category, has a colimit. In particular, the third characterization of total categories is satisfied.
+
+      Alternatively, we can describe the left adjoint $L$ of the Yoneda embedding $y : \C \to [\C^{\op},\Set]$ explicitly, where $\C$ denotes this category. For a presheaf $F$, let $L(F)$ be the supremum of the collection $\{\alpha : F(\alpha) \neq \varnothing\}$. For every object $\beta$, the set $y(\beta)(\alpha) = \Hom(\alpha,\beta)$ has at most one element, and it is non-empty if and only if $\alpha \leq \beta$. Hence, there is at most one natural transformation $F \to y(\beta)$, and it exists if and only if $F(\alpha) \neq \varnothing$ implies $\alpha \leq \beta$, that is, if and only if $L(F) \leq \beta$. Since both sides have at most one element, this yields a bijection $\Hom(F, y(\beta)) \cong \Hom(L(F), \beta)$, natural in $F$ and $\beta$.
+
+  - property: cototal
+    proof: >-
+      Every non-empty collection of elements has a minimum since the ordinals are well-ordered, and the empty collection has the infimum $\infty$. Hence, every diagram, even one indexed by a large category, has a limit. In particular, the dual of the third characterization of cototal categories is satisfied.
+
+      Alternatively, we can describe the right adjoint $R$ of the dual Yoneda embedding $\C \to [\C,\Set]^{\op}$, $\beta \mapsto \Hom(\beta,-)$ explicitly, where $\C$ denotes this category. For a functor $G : \C \to \Set$, let $R(G)$ be the infimum of the collection $\{\alpha : G(\alpha) \neq \varnothing\}$. For every object $\beta$, there is at most one natural transformation $G \to \Hom(\beta,-)$, and it exists if and only if $G(\alpha) \neq \varnothing$ implies $\beta \leq \alpha$, that is, if and only if $\beta \leq R(G)$. Since both sides have at most one element, this yields a bijection $\Hom(G, \Hom(\beta,-)) \cong \Hom(\beta, R(G))$, natural in $G$ and $\beta$.
+
+unsatisfied_properties:
+  - property: well-powered
+    proof: Since every morphism in a thin category is a monomorphism, the subobjects of $\infty$ correspond to all elements. But the ordinals do not form a set.
+
+  - property: inverse
+    proof: Consider the strictly increasing sequence $0 < 1 < 2 < \cdots$.
+
+special_objects:
+  initial object:
+    description: $0$
+  terminal object:
+    description: $\infty$
+  products:
+    description: minimum
+  coproducts:
+    description: supremum
+
+special_morphisms:
+  isomorphism:
+    description: only the identities
+    proof: This is true for every partially ordered collection (regarded as a thin category).

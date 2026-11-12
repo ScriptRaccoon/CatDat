@@ -17,6 +17,7 @@ related:
   - N
   - N_oo
   - On
+  - On_oo
 
 satisfied_properties:
   - property: thin
