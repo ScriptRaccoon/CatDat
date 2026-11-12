@@ -66,7 +66,7 @@ satisfied_properties:
       - PMet_extremal_generator
 
   - property: extremal cogenerator
-    proof: 'The proof is similar to $\Met$: an extremal cogenerator is given by $(\IR_+ \cup \{\infty\},d)$, where $d$ extends the usual metric on $\IR_+$ by $d(a,\infty) \coloneqq \infty$ for $a \in \IR_+$. Then one checks that for every extended metric space $(X,d_X)$ and $a \in X$ the map $1 + d_X(a,{-}) : X \to \IR_+ \cup \{\infty\}$ (assigning the value $\infty$ if $d_X(a,x) = \infty$) is non-expansive and finishes as for <a href="/category/Met">$\Met$</a>.'
+    proof: 'The proof is similar to $\Met$: an extremal cogenerator is given by $(\IR_{>0} \cup \{\infty\},d)$, where $d$ extends the usual metric on $\IR_{>0}$ by $d(a,\infty) \coloneqq \infty$ for $a \in \IR_{>0}$. Then one checks that for every extended metric space $(X,d_X)$ and $a \in X$ the map $1 + d_X(a,{-}) : X \to \IR_{>0} \cup \{\infty\}$ (assigning the value $\infty$ if $d_X(a,x) = \infty$) is non-expansive and finishes as for <a href="/category/Met">$\Met$</a>.'
     references:
       - Met_extremal_cogenerator
 
