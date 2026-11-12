@@ -8,6 +8,7 @@ dual: direct
 invariant_under_equivalences: false
 
 related:
+  - generalized inverse
   - one-way
   - skeletal
 

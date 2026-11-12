@@ -83,15 +83,15 @@
     - filtered-colimit-stable monomorphisms
   proof: This is trivial.
 
-- id: direct_stable_epis
+- id: generalized_inverse_stable_monos
   assumptions:
-    - direct
+    - generalized inverse
   conclusions:
-    - cofiltered-limit-stable epimorphisms
+    - filtered-colimit-stable monomorphisms
   proof: >-
-    Let $\C$ be a direct category. By <a href="/category-implication/direct_implies_cosifted_limits">this implication</a>, $\C$ has cosifted limits. We show more generally that epimorphisms in $\C$ are stable under cosifted limits. Let $\alpha : D \to E$ be a morphism of cosifted diagrams $D, E : \I \rightrightarrows \C$ such that every $\alpha_i : D(i) \to E(i)$ is an epimorphism.
+    Let $\C$ be a generalized inverse category. By Lemmas 1 and 5 <a href="/content/sifted-colimits-in-groupoids">here</a>, $\C$ has sifted colimits. We show more generally that monomorphisms in $\C$ are stable under sifted colimits. Let $\alpha : D \to E$ be a morphism of sifted diagrams $D, E : \I \rightrightarrows \C$ such that every $\alpha_i : D(i) \to E(i)$ is a monomorphism, and denote the colimit morphisms by $u_i : D(i) \to \colim D$ and $v_i : E(i) \to \colim E$.
 
-    The proof of the implication above shows that there is some $i_0 \in \I$ such that $D(a)$ is an identity for every morphism $a : j \to i_0$, and likewise some $i_1 \in \I$ for $E$. Since $\I$ is cosifted, there is a span $i_0 \leftarrow i \rightarrow i_1$ in $\I$. Then $i$ has the same property for both $D$ and $E$: for a morphism $c : i \to i_0$ and every morphism $a : j \to i$, both $D(c)$ and $D(c a) = D(c) D(a)$ are identities, hence so is $D(a)$. By the dual of Lemma 1 <a href="/content/sifted-colimits-in-groupoids">here</a>, $D(i)$ and $E(i)$ are limit objects of $D$ and $E$ whose limit projections at $i$ are identities. Hence, $\lim \alpha = \alpha_i$, which is an epimorphism.
+    By Lemma 5, $D$ is constant after some $i_0 \in \I$, so that $u_{i_0}$ is an isomorphism by Lemma 1. Likewise, $E$ is constant after some $i_1 \in \I$, and $v_{i_1}$ is an isomorphism. Since $\I$ is sifted, there are morphisms $a : i_0 \to i$ and $b : i_1 \to i$ in $\I$. Then $u_i = u_{i_0} \circ D(a)^{-1}$ and $v_i = v_{i_1} \circ E(b)^{-1}$ are isomorphisms. Since $\colim \alpha \circ u_i = v_i \circ \alpha_i$, we conclude that $\colim \alpha = v_i \circ \alpha_i \circ u_i^{-1}$ is a monomorphism.
 
 - id: CIP_assumption
   assumptions:

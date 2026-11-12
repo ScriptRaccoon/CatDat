@@ -1,0 +1,16 @@
+id: generalized inverse
+relation: is
+description: >-
+  A category is <i>generalized inverse</i> if its dual is generalized direct, i.e., if it contains no infinite sequence of non-isomorphisms of the form
+  $$A_0 \to A_1 \to A_2 \to \cdots.$$
+nlab_link: https://ncatlab.org/nlab/show/direct+category#allowing_automorphisms
+dual: generalized direct
+invariant_under_equivalences: true
+
+related:
+  - groupoid
+  - inverse
+  - one-way
+
+tags:
+  - morphism behavior
