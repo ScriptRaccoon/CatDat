@@ -45,14 +45,8 @@ satisfied_properties:
   - property: locally cartesian closed
     proof: If $X$ is a finite set, the slice category $\FI / X$ is equivalent to the poset of subsets of $X$. This is cartesian closed because $A \cap B \subseteq C$ holds if and only if $B \subseteq (X \setminus A) \cup C$, where $A,B,C \subseteq X$.
 
-  - property: dual generalized variety
-    proof: 'Let $D : \I \to \FI$ be a cosifted diagram. Since $\IN$ is well-ordered and $\I$ is non-empty, the set $\{\card(D(i)) : i \in \I\} \subseteq \IN$ has a minimal element, say $\card(D(i_0))$. For every morphism $i \to i_0$ in $\I$, the map of finite sets $D(i) \to D(i_0)$ is an isomorphism since it is injective and $\card(D(i_0)) \leq \card(D(i))$. Thus, the diagram $D^{\op} : \I^{\op} \to \FI^{\op}$ is eventually constant in the sense of <a href="/content/sifted-colimits-in-groupoids">this page</a>. By the dual of Corollary 3 there, $\FI$ is a dual generalized variety.'
-    label: FI_cosifted_diagrams
-
-  - property: finitely coaccessible
-    proof: 'In the previous proof we have seen that for every cosifted diagram $D : \I \to \FI$ the diagram $D^{\op} : \I^{\op} \to \FI^{\op}$ is eventually constant. By the dual of Corollary 4 <a href="/content/sifted-colimits-in-groupoids">here</a>, $\FI$ is finitely coaccessible.'
-    references:
-      - FI_cosifted_diagrams
+  - property: generalized direct
+    proof: 'If $A \to B$ is a non-bijective injective map of finite sets, then $\card(A) < \card(B)$. Hence, an infinite sequence of non-isomorphisms $\cdots \to A_2 \to A_1 \to A_0$ would yield an infinite strictly decreasing sequence $\cdots < \card(A_2) < \card(A_1) < \card(A_0)$ of natural numbers, which is impossible.'
 
 unsatisfied_properties:
   - property: small
