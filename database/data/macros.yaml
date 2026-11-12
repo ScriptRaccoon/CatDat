@@ -18,6 +18,7 @@
 \D: \mathcal{D}
 \E: \mathcal{E}
 \F: \mathcal{F}
+\G: \mathcal{G}
 \I: \mathcal{I}
 \J: \mathcal{J}
 \K: \mathcal{K}
@@ -54,6 +55,7 @@
 \inc: \mathrm{inc}
 \disc: \mathrm{disc}
 \indisc: \mathrm{indisc}
+\sep: \mathrm{sep}
 
 # operators
 \Mor: \operatorname{Mor}
@@ -92,6 +94,7 @@
 \Br: \operatorname{Br}
 \dom: \operatorname{dom}
 \code: '\ulcorner #1 \urcorner'
+\cl: \operatorname{cl}
 
 # standard collections
 \SetColl: \mathrm{Set}
@@ -173,6 +176,8 @@
 \Arr: \mathbf{Arr}
 \Mono: \mathbf{Mono}
 \Sh: \mathbf{Sh}
+\Sep: \mathbf{Sep}
+\BiSep: \mathbf{BiSep}
 \Proj: \mathbf{Proj}
 \omegaSet: \omega{-}\Set
 

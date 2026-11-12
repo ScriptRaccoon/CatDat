@@ -7,6 +7,7 @@ invariant_under_equivalences: true
 
 related:
   - elementary cotopos
+  - Grothendieck quasicotopos
 
 tags:
   - topos theory
