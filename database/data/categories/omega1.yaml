@@ -1,0 +1,59 @@
+id: omega1
+name: partially ordered set of countable ordinals
+notation: $(\omega_1,\leq)$
+objects: countable ordinal numbers
+morphisms: 'a unique morphism $(\alpha,\beta) : \alpha \to \beta$ if $\alpha \leq \beta$'
+description: This is the first uncountable ordinal $\omega_1$, i.e. the well-ordered set of countable ordinals, regarded as a thin category. It is a small full subcategory of the thin <a href="/category/On">category of ordinal numbers</a>.
+nlab_link: https://ncatlab.org/nlab/show/countable+ordinal
+keywords:
+  - first uncountable ordinal
+  - poset of countable ordinals
+  - omega1
+
+tags:
+  - set theory
+
+related:
+  - N
+  - N_oo
+  - On
+
+satisfied_properties:
+  - property: thin
+    proof: This property is inherited from <a href="/category/On">$\On$</a>.
+    check_redundancy: false
+
+  - property: small
+    proof: The objects form the set $\omega_1$, and the morphisms form a subset of $\omega_1 \times \omega_1$.
+
+  - property: semi-strongly connected
+    proof: This property is inherited from <a href="/category/On">$\On$</a>.
+
+  - property: direct
+    proof: This property is inherited from <a href="/category/On">$\On$</a>.
+
+  - property: countable coproducts
+    proof: The supremum of a countable set of countable ordinals is a countable union of countable sets and hence countable.
+
+unsatisfied_properties:
+  - property: ℵ₂-small coproducts
+    proof: The family of all objects of $\omega_1$ has $\aleph_1$ members, but its coproduct would be a largest element of $\omega_1$.
+
+  - property: extremal generator
+    proof: The poset $(\omega_1,\leq)$ has infinitely many non-minimal elements. Therefore, by the corollary <a href="/content/thin_extremal_generator">here</a>, an extremal generator cannot exist.
+
+  - property: extremal cogenerator
+    proof: The poset $(\omega_1,\leq)$ has infinitely many non-maximal elements. Therefore, by the corollary <a href="/content/thin_extremal_generator">here</a>, an extremal cogenerator cannot exist.
+
+special_objects:
+  initial object:
+    description: $0$
+  products:
+    description: '[non-empty case] minimum'
+  coproducts:
+    description: '[countable case] supremum'
+
+special_morphisms:
+  isomorphism:
+    description: only the identities
+    proof: This is true for every partially ordered set (regarded as a thin category).

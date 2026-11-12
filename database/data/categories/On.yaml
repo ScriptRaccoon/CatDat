@@ -13,6 +13,8 @@ tags:
 
 related:
   - N
+  - N_oo
+  - omega1
 
 satisfied_properties:
   - property: thin
@@ -22,7 +24,7 @@ satisfied_properties:
   - property: locally small
     proof: By definition, $\Hom(\alpha,\beta)$ is either empty or the set $\{(\alpha,\beta)\}$.
 
-  - property: cocomplete
+  - property: coproducts
     proof: Every set of ordinal numbers has a supremum.
 
   - property: semi-strongly connected

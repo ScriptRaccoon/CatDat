@@ -891,6 +891,10 @@
 		{
 			"type": "symmetric_monoidal_category",
 			"id": "Vect_tensor"
+		},
+		{
+			"type": "category",
+			"id": "omega1"
 		}
 	],
 	"properties": [
