@@ -79,7 +79,7 @@ unsatisfied_properties:
       - Met_no_filtered_colimit_stable_monos
 
   - property: pullback-stable regular epimorphisms
-    proof: In a category with pullback-regular epimorphisms and products, for every regular epimorphism $X \to Y$ and every object $Z$, the induced morphism $X \times Z \to Y \times Z$ is again a regular epimorphism, since it can be seen as $X \times_Y (Y \times Z) \to Y \times Z$. This is not the case in $\Haus$ (or $\Top$, for that matter). The standard example is the quotient map $\IR \to \IR / \IZ^+$, for which the induced map $\IR \times \IQ \to \IR/\IZ^+ \times \IQ$ is not a quotient map (<a href="https://math.stackexchange.com/questions/1907972/">MSE/1907972</a>).
+    proof: In a category with pullback-regular epimorphisms and products, for every regular epimorphism $X \to Y$ and every object $Z$, the induced morphism $X \times Z \to Y \times Z$ is again a regular epimorphism, since it can be seen as $X \times_Y (Y \times Z) \to Y \times Z$. This is not the case in $\Haus$ (or $\Top$, for that matter). The standard example is the quotient map $\IR \to \IR / \IZ_{>0}$, for which the induced map $\IR \times \IQ \to \IR/\IZ_{>0} \times \IQ$ is not a quotient map (<a href="https://math.stackexchange.com/questions/1907972/">MSE/1907972</a>).
 
   - property: pushout-stable regular monomorphisms
     proof: >-

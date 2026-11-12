@@ -85,7 +85,7 @@ unsatisfied_properties:
     proof: The spaces with underlying sets $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.
 
   - property: balanced
-    proof: 'The space $\IR \setminus \{0\}$ belongs to $\Euclidsqcup$ because it is the coproduct of $\IR^+$ and $\IR^-$, both of which are isomorphic to $\IR$; for example, $\exp : \IR \to \IR^+$ is an isomorphism in $\Top$. Now consider the inclusion map $\IR \setminus \{0\} \hookrightarrow \IR$. It has dense image, hence is an epimorphism in $\Haus$, a fortiori in $\Euclidsqcup$. It is also injective and therefore a monomorphism. But it is not an isomorphism since it is not bijective.'
+    proof: 'The space $\IR \setminus \{0\}$ belongs to $\Euclidsqcup$ because it is the coproduct of $\IR_{>0}$ and $\IR_{<0}$, both of which are isomorphic to $\IR$; for example, $\exp : \IR \to \IR_{>0}$ is an isomorphism in $\Top$. Now consider the inclusion map $\IR \setminus \{0\} \hookrightarrow \IR$. It has dense image, hence is an epimorphism in $\Haus$, a fortiori in $\Euclidsqcup$. It is also injective and therefore a monomorphism. But it is not an isomorphism since it is not bijective.'
 
   - property: Cauchy complete
     proof: >-
@@ -99,9 +99,9 @@ unsatisfied_properties:
 
   - property: countable powers
     proof: >-
-      Assume that the power $P \coloneqq \IR^{\IN^+}$ exists in $\Euclidsqcup$ with projection map $p_n : P \to \IR$ for $n \in \IN^+$. Notice that we <i>cannot</i> assume that its underlying space identifies with the power in $\Top$. By applying the universal property to $1 \in \Euclidsqcup$, we merely see that the underlying set of $P$ is the cartesian product $\IR^{\IN^+}$ and $p_n(x)=x_n$. But knowing the underlying set is not sufficient.
+      Assume that the power $P \coloneqq \IR^{\IN_{>0}}$ exists in $\Euclidsqcup$ with projection map $p_n : P \to \IR$ for $n \in \IN_{>0}$. Notice that we <i>cannot</i> assume that its underlying space identifies with the power in $\Top$. By applying the universal property to $1 \in \Euclidsqcup$, we merely see that the underlying set of $P$ is the cartesian product $\IR^{\IN_{>0}}$ and $p_n(x)=x_n$. But knowing the underlying set is not sufficient.
 
-      We first prove that $P$ is path-connected, and thus connected. The space $P$ is clearly non-empty, for example by our description of the underlying set. Take two points $x,y \in P$. For every $n \in \IN^+$, there is a continuous map $f_n : \IR \to \IR$ with $f_n(0) = p_n(x)$ and $f_n(1) = p_n(y)$; for example, we may take the affine-linear function through the points $(0,p_n(x))$ and $(1,p_n(y))$. By the universal property of $P$, there is a continuous map $f : \IR \to P$ with $p_n \circ f = f_n$ for every $n \in \IN^+$. Since the maps $p_n$ are jointly injective, it follows that $f(0)=x$ and $f(1)=y$. Thus, $f|_{[0,1]}$ is a continuous path from $x$ to $y$.
+      We first prove that $P$ is path-connected, and thus connected. The space $P$ is clearly non-empty, for example by our description of the underlying set. Take two points $x,y \in P$. For every $n \in \IN_{>0}$, there is a continuous map $f_n : \IR \to \IR$ with $f_n(0) = p_n(x)$ and $f_n(1) = p_n(y)$; for example, we may take the affine-linear function through the points $(0,p_n(x))$ and $(1,p_n(y))$. By the universal property of $P$, there is a continuous map $f : \IR \to P$ with $p_n \circ f = f_n$ for every $n \in \IN_{>0}$. Since the maps $p_n$ are jointly injective, it follows that $f(0)=x$ and $f(1)=y$. Thus, $f|_{[0,1]}$ is a continuous path from $x$ to $y$.
 
       Since $P$ is connected and belongs to $\Euclidsqcup$, it is isomorphic to $\IR^k$ for some $k \in \IN$.
 
