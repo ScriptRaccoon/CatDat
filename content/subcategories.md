@@ -154,3 +154,15 @@ Let $p_1,p_2 : E \rightrightarrows X$ be the kernel pair of $f$ in $\C$. Then $U
 
 For the second statement, assume that $\C$ has kernel pairs and that $U$ maps epimorphisms to regular epimorphisms. By the first statement, every epimorphism of $\C$ is regular, i.e. $\C$ is epi-regular.
 :::
+
+::: Lemma 13
+Let $U : \C \to \D$ be a fully faithful functor between categories with finite limits, and assume that $U$ preserves finite limits. If $\D$ is Malcev, then so is $\C$.
+:::
+
+::: Proof
+Let $q_1,q_2 : R \rightrightarrows X$ be a reflexive relation in $\C$. Since $U$ preserves binary products and monomorphisms, the pair $U(q_1),U(q_2) : U(R) \rightrightarrows U(X)$ is jointly monomorphic, and it is reflexive since $U$ maps a common section of $q_1,q_2$ to a common section of $U(q_1),U(q_2)$. Since $\D$ is Malcev, it is a congruence. Now let $T$ be an object of $\C$. Since $U$ is fully faithful, the map
+$$\Hom(T,R) \to \Hom(T,X)^2, \quad h \mapsto (q_1 \circ h, q_2 \circ h)$$
+identifies with the map
+$$\Hom(U(T),U(R)) \to \Hom(U(T),U(X))^2, \quad h \mapsto (U(q_1) \circ h, U(q_2) \circ h),$$
+whose image is an equivalence relation. Hence, $q_1,q_2$ is a congruence.
+:::

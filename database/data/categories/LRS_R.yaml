@@ -89,7 +89,7 @@ unsatisfied_properties:
     proof: This is because already the full subcategory <a href="/category/Sch_R">$\Sch_R$</a> of $R$-schemes is not semi-strongly connected.
 
   - property: Malcev
-    proof: This is because already the full subcategory <a href="/category/Sch_R">$\Sch_R$</a> of $R$-schemes is not Malcev.
+    proof: 'Apply the contrapositive of Lemma 13 <a href="/content/subcategories">here</a> to the inclusion $\Sch_R \to \LRS_R$, which preserves finite limits (see <a href="/category/Sch_R">$\Sch_R$</a>). Here, we use that $\Sch_R$ is not Malcev.'
 
   - property: co-Malcev
     proof: 'We can adjust the proof for <a href="/category/Top">$\Top$</a> (see <a href="https://mathoverflow.net/questions/509548">MO/509548</a>) as follows: Let $K$ be a residue field of $R$, let $X$ be the locally ringed space whose underlying space $|X|$ is a singleton, and let $C$ be the locally ringed space whose underlying space $|C| = \{u,v\}$ is the Sierpiński space where $\{u\}$ is open, but $\{v\}$ is not. Both have the sheaf of locally constant functions to $K$ as structure sheaf. Thus, $\O_X(|X|) = K$, $\O_C(|C|) = \O_C(\{u\}) = K$. Let $j_1, j_2 : X \rightrightarrows C$ be the two canonical morphisms such that $|j_1|$ and $|j_2|$ have the images $\{u\}$ and $\{v\}$, respectively. They form a coreflexive corelation that is not cosymmetric.'

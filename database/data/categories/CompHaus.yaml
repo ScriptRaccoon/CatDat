@@ -67,7 +67,7 @@ unsatisfied_properties:
     proof: The spaces with underlying sets $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.
 
   - property: Malcev
-    proof: This is clear since <a href="/category/FinSet">$\FinSet$</a> is not Malcev and can be interpreted as the subcategory of finite discrete spaces.
+    proof: 'Apply the contrapositive of Lemma 13 <a href="/content/subcategories">here</a> to the inclusion of finite discrete spaces $\FinSet \to \CompHaus$, which is fully faithful and preserves finite limits. Here, we use that <a href="/category/FinSet">$\FinSet$</a> is not Malcev.'
 
   - property: regular subobject classifier
     proof: The proof is almost identical to the one for <a href="/category/Haus">$\Haus$</a>.
