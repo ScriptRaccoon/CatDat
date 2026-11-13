@@ -59,7 +59,7 @@ satisfied_properties:
     proof: Since filtered colimits are constructed pointwise and the monomorphisms are precisely the morphisms that are pointwise injective (see below), this property is inherited from <a href="/category/Set">$\Set$</a>.
 
   - property: pushout-stable regular monomorphisms
-    proof: Based on the descriptions of pushouts and regular monomorphisms, this property is inherited from <a href="/category/Set">$\Set$</a>.
+    proof: 'Apply Lemma 14 <a href="/content/subcategories">here</a> to the inclusion $\Set^{(I)}_0 \to \Set^I$, which preserves pushouts and regular monomorphisms by their pointwise descriptions. Here, we use that <a href="/category/Set_family">$\Set^I$</a> has pushout-stable regular monomorphisms.'
 
   - property: cocartesian cofiltered limits
     proof: This property is inherited from <a href="/category/Set">$\Set$</a> since binary coproducts (in fact, all colimits) and cofiltered limits (in fact, all non-empty limits) are constructed pointwise.

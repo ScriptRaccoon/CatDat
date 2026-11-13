@@ -54,7 +54,7 @@ satisfied_properties:
       - SetxSet_0_fin_finite_products
 
   - property: pullback-stable regular epimorphisms
-    proof: Since every epimorphism is regular, epimorphisms are pairs of surjective maps, and pullbacks are constructed pointwise, this follows immediately from the corresponding property of <a href="/category/Set">$\Set$</a>.
+    proof: 'Apply the dual of Lemma 14 <a href="/content/subcategories">here</a> to the inclusion $(\Set \times \Set)_{\varnothing,\fin} \to \Set \times \Set$. It preserves pullbacks since they are constructed pointwise, and it preserves regular epimorphisms since these are the pairs of surjective maps in both categories (see below). Here, we use that <a href="/category/SetxSet">$\Set \times \Set$</a> has pullback-stable regular epimorphisms.'
 
   - property: effective congruences
     proof: Let $(R,S) \rightrightarrows (A,B)$ be a congruence in $(\Set \times \Set)_{\varnothing,\fin}$. Since finite limits are constructed pointwise, it is also a congruence in $\Set \times \Set$, and therefore a pair of congruences in $\Set$. Thus, the congruence is the kernel pair of $(A,B) \to (A/R,B/S)$ in $\Set \times \Set$. It remains to show that $(A/R,B/S)$ belongs to $(\Set \times \Set)_{\varnothing,\fin}$. If $A$ is empty, then $A/R$ is empty, and the claim holds. Otherwise, $B$ is finite, and hence $B/S$ is finite.

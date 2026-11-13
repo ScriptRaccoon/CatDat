@@ -166,3 +166,11 @@ identifies with the map
 $$\Hom(U(T),U(R)) \to \Hom(U(T),U(X))^2, \quad h \mapsto (U(q_1) \circ h, U(q_2) \circ h),$$
 whose image is an equivalence relation. Hence, $q_1,q_2$ is a congruence.
 :::
+
+::: Lemma 14
+Let $U : \C \to \D$ be a fully faithful functor between categories with pushouts. Assume that $U$ preserves pushouts and regular monomorphisms. If $\D$ has pushout-stable regular monomorphisms, then so does $\C$.
+:::
+
+::: Proof
+Let $m : X \to Y$ be a regular monomorphism and $X \to Z$ a morphism in $\C$, and let $m' : Z \to Z \sqcup_X Y$ be the induced morphism. Since $U$ preserves pushouts, $U(m')$ is the pushout of the regular monomorphism $U(m)$ along $U(X) \to U(Z)$, hence a regular monomorphism. Since $U$ preserves pushouts, it preserves cokernel pairs. By the dual of Lemma 12, $m'$ is a regular monomorphism.
+:::

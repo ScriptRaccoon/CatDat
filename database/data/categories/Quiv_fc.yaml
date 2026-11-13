@@ -55,7 +55,7 @@ satisfied_properties:
     check_redundancy: false
 
   - property: pullback-stable regular epimorphisms
-    proof: We already know that every epimorphism is regular. So it suffices to show that epimorphisms are stable under pullbacks. Pullbacks in $\Quiv_{\fc}$ are computed as in <a href="/category/Quiv">$\Quiv$</a> (see the proofs above), i.e. separately on vertices and edges. By the classification below, the epimorphisms are the morphisms $f = (f_V,f_E)$ with surjective components $f_V,f_E$. Since surjective maps are stable under pullbacks in $\Set$, the claim follows.
+    proof: 'Apply the dual of Lemma 14 <a href="/content/subcategories">here</a> to the inclusion $\Quiv_{\fc} \to \Quiv$. It preserves pullbacks (see the proofs above), and it preserves regular epimorphisms since these are the morphisms with surjective components in both categories (see below). Here, we use that <a href="/category/Quiv">$\Quiv$</a> has pullback-stable regular epimorphisms.'
 
   - property: ℵ₁-accessible
     proof: >-

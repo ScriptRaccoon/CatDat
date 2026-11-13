@@ -46,9 +46,7 @@ unsatisfied_properties:
     proof: Since we know that <a href="/category/Mon">$\Mon$</a> is not balanced, there is a monoid map $M \to N$ which is a monomorphism and an epimorphism, but not an isomorphism. Then $B(M) \to B(N)$ has the corresponding properties.
 
   - property: pushout-stable regular monomorphisms
-    proof: 'We already know that <a href="/category/Mon">$\Mon$</a> has a regular monomorphism $M \to N$ and a morphism $M \to K$ such that $K \to K \sqcup_M N$ is not a monomorphism. The delooping functor $B : \Mon \to \Cat$ has a left adjoint (<a href="https://math.stackexchange.com/questions/574745">MSE/574745</a>), hence it preserves regular monomorphisms. It also preserves pushouts (<a href="https://math.stackexchange.com/questions/5130854">MSE/5130854</a>), and it reflects monomorphisms since it is faithful. Therefore, $B(M) \to B(N)$ provides the desired counterexample of a non-stable regular monomorphism of categories.'
-    references:
-      - Mon_not_coregular
+    proof: 'Apply the contrapositive of Lemma 14 <a href="/content/subcategories">here</a> to the delooping functor $B : \Mon \to \Cat$. It is fully faithful, it preserves regular monomorphisms since it has a left adjoint (<a href="https://math.stackexchange.com/questions/574745">MSE/574745</a>), and it preserves pushouts (<a href="https://math.stackexchange.com/questions/5130854">MSE/5130854</a>). Here, we use that <a href="/category/Mon">$\Mon$</a> does not have pushout-stable regular monomorphisms.'
 
   - property: Malcev
     proof: 'Apply the contrapositive of Lemma 13 <a href="/content/subcategories">here</a> to the inclusion of discrete categories $\Set \to \Cat$, which is fully faithful and preserves finite limits. Here, we use that <a href="/category/Set">$\Set$</a> is not Malcev.'

@@ -46,7 +46,7 @@ satisfied_properties:
     proof: 'Let $f : A \to B$ be a homomorphism of free abelian groups. The coequalizer of its kernel pair $A \times_B A \rightrightarrows A$ in $\Ab$ is the image $\im(f)$. As a subgroup of $B$, it is also free abelian. Then it is also the coequalizer of the kernel pair in $\FreeAb$.'
 
   - property: pullback-stable regular epimorphisms
-    proof: This is clear since regular epimorphisms coincide with the surjective homomorphisms (see below).
+    proof: 'Apply the dual of Lemma 14 <a href="/content/subcategories">here</a> to the inclusion $\FreeAb \to \Ab$. It preserves pullbacks since subgroups of free abelian groups are free, and it preserves regular epimorphisms since these are the surjective homomorphisms in both categories (see below). Here, we use that <a href="/category/Ab">$\Ab$</a> has pullback-stable regular epimorphisms.'
 
   - property: extremal cogenerator
     proof: >-
