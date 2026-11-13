@@ -109,3 +109,17 @@ Every cocongruence in the category $\Grp$ is effective.
 ::: Proof
 We know that $\Grp$ is balanced (since it is mono-regular, see [here](/category/Grp) for the proofs) and has equalizers. Moreover, it has good pushouts of monomorphisms by Proposition 1. Thus, the claim follows from Proposition 2.
 :::
+
+::: Lemma 4
+Let $S : \C \to \D$ be a faithful functor that preserves monomorphisms, pullbacks of pairs of monomorphisms, and pushouts of pairs of monomorphisms. If $\C$ has pushouts of monomorphisms and $\D$ has good pushouts of monomorphisms, then $\C$ has good pushouts of monomorphisms.
+:::
+
+::: Proof
+Consider a diagram of monomorphisms in $\C$ as in the definition, in which each square is a pullback. Since $S$ preserves monomorphisms and pullbacks of pairs of monomorphisms, it maps this diagram to a diagram of monomorphisms in $\D$ in which each square is a pullback. Since $\D$ has good pushouts of monomorphisms, the induced morphism
+
+$$S(B) \sqcup_{S(A)} S(C) \to S(B') \sqcup_{S(A')} S(C')$$
+
+is a monomorphism. Since $S$ preserves pushouts of pairs of monomorphisms, it is the image under $S$ of the induced morphism $B \sqcup_A C \to B' \sqcup_{A'} C'$. Since $S$ is faithful, it reflects monomorphisms. Hence, $B \sqcup_A C \to B' \sqcup_{A'} C'$ is a monomorphism.
+:::
+
+For example, Lemma 4 is used [here](/category/GrpAct) to show that the category $\GrpAct$ of group actions has good pushouts of monomorphisms, and hence effective cocongruences.
