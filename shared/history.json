@@ -899,6 +899,10 @@
 		{
 			"type": "category",
 			"id": "On_oo"
+		},
+		{
+			"type": "category",
+			"id": "GrpAct"
 		}
 	],
 	"properties": [
