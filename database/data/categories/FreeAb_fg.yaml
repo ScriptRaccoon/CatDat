@@ -43,7 +43,7 @@ satisfied_properties:
       - Proj_fg(Re)_self-dual
 
   - property: pullback-stable regular epimorphisms
-    proof: This is clear since regular epimorphisms coincide with the surjective homomorphisms (see below).
+    proof: 'Apply the dual of Lemma 14 <a href="/content/subcategories">here</a> to the inclusion $\FreeAb_\fg \to \Ab$. It preserves pullbacks since subgroups of finitely generated free abelian groups are finitely generated and free, and it preserves regular epimorphisms since these are the surjective homomorphisms in both categories (see below). Here, we use that <a href="/category/Ab">$\Ab$</a> has pullback-stable regular epimorphisms.'
 
   - property: ℵ₁-accessible
     proof: >-
