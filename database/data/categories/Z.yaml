@@ -43,7 +43,7 @@ unsatisfied_properties:
     proof: The constant functors with values $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.
 
   - property: Malcev
-    proof: Any counterexample for <a href="/category/Set">$\Set$</a> (i.e., any non-symmetric reflexive relation) yields one for this category by taking constant functors.
+    proof: 'Apply the contrapositive of Lemma 13 <a href="/content/subcategories">here</a> to the functor $\Set \to [\CRing,\Set]$ that maps a set to the constant functor with that value. It is fully faithful since $\CRing$ is connected, and it preserves limits since they are computed pointwise. Here, we use that <a href="/category/Set">$\Set$</a> is not Malcev.'
 
   - property: semi-strongly connected
     proof: This is because already the full subcategory of representable functors is not semi-strongly connected, since <a href="/category/CRing">$\CRing$</a> is not semi-strongly connected. Specifically, there is no morphism between $\Hom(\IF_2,-)$ and $\Hom(\IF_3,-)$.

@@ -60,7 +60,7 @@ unsatisfied_properties:
     proof: The spaces with underlying sets $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.
 
   - property: Malcev
-    proof: This is clear since <a href="/category/Set">$\Set$</a> is not Malcev and can be interpreted as the subcategory of discrete spaces (which are Hausdorff).
+    proof: 'Apply the contrapositive of Lemma 13 <a href="/content/subcategories">here</a> to the inclusion of discrete spaces $\Set \to \Haus$, which is fully faithful and preserves finite limits. Here, we use that <a href="/category/Set">$\Set$</a> is not Malcev.'
 
   - property: regular subobject classifier
     proof: Assume that there is a regular subobject classifier $\Omega$. By the classification of regular monomorphisms, we would have an isomorphism between $\Hom(X,\Omega)$ and the set of closed subsets of $X$ for any Hausdorff space $X$. If we take $X = \{\ast\}$, we see that $\Omega$ has two points. Since $\Omega$ is Hausdorff, it must be discrete. But then $\Hom(X,\Omega)$ is isomorphic to the set of all clopen subsets of $X$, of which there are usually far fewer than closed subsets (consider $X = [0,1]$).

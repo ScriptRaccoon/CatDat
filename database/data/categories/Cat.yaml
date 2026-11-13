@@ -51,7 +51,7 @@ unsatisfied_properties:
       - Mon_not_coregular
 
   - property: Malcev
-    proof: Use that $\Set$ is not Malcev and consider sets as discrete categories.
+    proof: 'Apply the contrapositive of Lemma 13 <a href="/content/subcategories">here</a> to the inclusion of discrete categories $\Set \to \Cat$, which is fully faithful and preserves finite limits. Here, we use that <a href="/category/Set">$\Set$</a> is not Malcev.'
 
   - property: co-Malcev
     proof: 'We can adapt the counterexample for monoids (cf. <a href="https://mathoverflow.net/questions/509552">MO/509552</a>) as follows: Consider the functor $U : \Cat \to \Set^+$ sending a category $\C$ to the (large) set $\{(x,u) : x \in \Ob(\C) ,\, u \in \End(x) \}$. It is represented by $B \IN$, the one-object category associated to the free monoid on one generator. Consider the relation $R \subseteq U^2$ consisting of those pairs $((x,u),(y,v))$ where $x = y$ and $uv = u^2$. This is also representable, namely by the one-object category associated to the monoid with the presentation $\langle u,v : uv = u^2 \rangle$. Clearly, $R$ is reflexive, but not symmetric.'
