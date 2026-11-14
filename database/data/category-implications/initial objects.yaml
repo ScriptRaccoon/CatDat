@@ -1,4 +1,5 @@
-# results on initial objects, zero objects, and strict initial objects
+# results on initial objects, zero objects, strict initial objects,
+# and quasi-pointed categories
 
 - id: pointed_characterization
   assumptions:
@@ -25,6 +26,39 @@
   conclusions:
     - trivial
   proof: If $0$ is the zero object, then for every object $A$ the unique morphism $A \to 0$ is an isomorphism by assumption.
+
+- id: quasi_pointed_consequence
+  assumptions:
+    - quasi-pointed
+  conclusions:
+    - initial object
+    - terminal object
+  proof: This holds by definition.
+  check_redundancy: false
+
+- id: pointed_quasi_pointed
+  assumptions:
+    - pointed
+  conclusions:
+    - quasi-pointed
+  proof: A zero object is terminal, hence subterminal.
+
+- id: strict_initial_quasi_pointed
+  assumptions:
+    - strict initial object
+    - terminal object
+  conclusions:
+    - quasi-pointed
+  proof: 'Let $0$ be a strict initial object. We show that $0$ is subterminal. If $f : X \to 0$ is a morphism, then $f$ is an isomorphism, so $X$ is initial. Hence, $f$ is the only morphism $X \to 0$.'
+
+- id: quasi_pointed_balanced
+  assumptions:
+    - quasi-pointed
+    - co-quasi-pointed
+    - balanced
+  conclusions:
+    - pointed
+  proof: The unique morphism $0 \to 1$ is a monomorphism and an epimorphism, hence an isomorphism since the category is balanced. Thus, $0$ is a zero object.
 
 - id: strict_initial_left_criterion
   assumptions:

@@ -135,10 +135,6 @@ unsatisfied_properties:
     references:
       - GrpAct_no_cogenerating_collection
 
-  - property: coparametrized conatural numbers object
-    proof: >-
-      Assume that there is a coparametrized conatural numbers object. Then, by the dual of Lemma 4 <a href="/content/natural_numbers_objects">here</a>, for every object $A$ the canonical morphism $A \sqcup \prod_{n \in \IN} 0 \to \prod_{n \in \IN} A$ is an isomorphism, where $0 = (1,\varnothing)$ is the initial object. For $A \coloneqq (\IZ,\varnothing)$, we have $A \sqcup \prod_{n \in \IN} 0 = A \sqcup 0 = (\IZ,\varnothing)$ and $\prod_{n \in \IN} A = (\IZ^{\IN},\varnothing)$. But $\IZ^{\IN}$ is uncountable, so it is not isomorphic to $\IZ$.
-
 special_objects:
   terminal object:
     description: the trivial group acting on a singleton set $(1,\{\ast\})$

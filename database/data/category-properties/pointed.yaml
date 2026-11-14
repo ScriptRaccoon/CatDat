@@ -11,6 +11,8 @@ keywords:
 related:
   - initial object
   - terminal object
+  - quasi-pointed
+  - co-quasi-pointed
 
 tags:
   - limit–colimit interaction

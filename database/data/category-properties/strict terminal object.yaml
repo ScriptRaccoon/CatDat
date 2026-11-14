@@ -7,6 +7,7 @@ invariant_under_equivalences: true
 
 related:
   - terminal object
+  - co-quasi-pointed
 
 tags:
   - limits

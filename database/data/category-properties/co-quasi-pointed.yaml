@@ -1,0 +1,15 @@
+id: co-quasi-pointed
+relation: is
+description: 'A category is <i>co-quasi-pointed</i> if it has an initial object $0$ and a terminal object $1$ such that the unique morphism $0 \to 1$ is an epimorphism, i.e. $1$ is co-subterminal: for every object $X$ there is at most one morphism $1 \to X$. This terminology is not standard.'
+nlab_link: null
+dual: quasi-pointed
+invariant_under_equivalences: true
+
+related:
+  - initial object
+  - terminal object
+  - pointed
+  - strict terminal object
+
+tags:
+  - limit–colimit interaction
