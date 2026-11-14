@@ -90,6 +90,9 @@ satisfied_properties:
       which is a contradiction.
     label: Bin_extremal_cogenerator
 
+  - property: product-stable epimorphisms
+    proof: Apply the dual of Lemma 2 <a href="/content/subcategories">here</a> to the forgetful functor $\Bin \to \Set$, which preserves products and epimorphisms (see below).
+
 unsatisfied_properties:
   - property: skeletal
     proof: The objects $(\{0\},\{(0,0)\})$ and $(\{1\},\{(1,1)\})$ are terminal objects, hence isomorphic, but not equal.

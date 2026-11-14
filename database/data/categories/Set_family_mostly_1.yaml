@@ -23,6 +23,7 @@ satisfied_properties:
 
   - property: complete
     proof: 'Since <a href="/category/Set">$\Set$</a> is complete, the product category $\Set^I$ is complete with pointwise limits. (The size of the index collection does not matter.) Thus, it only remains to check that $\Set^{(I)}_1$ is closed under limits, which are small by convention. Let $D : \J \to \Set^{(I)}_1$ be a small diagram and let $L$ be its limit in $\Set^I$. Thus, $L_i = \lim_{j \in \J} D(j)_i$. Consider the collection $\bigcup_{j \in \J} S(D(j))$, which is essentially small. For any index $i$ outside this collection, $L_i$ is a limit of singletons and hence a singleton. Thus, $S(L) \subseteq \bigcup_{j \in \J} S(D(j))$, and hence $S(L)$ is essentially small.'
+    check_redundancy: false
 
   - property: locally cartesian closed
     proof: >-
@@ -45,6 +46,11 @@ satisfied_properties:
 
   - property: pushout-stable regular monomorphisms
     proof: 'Apply Lemma 14 <a href="/content/subcategories">here</a> to the inclusion $\Set^{(I)}_1 \to \Set^I$, which preserves pushouts and regular monomorphisms by their pointwise descriptions. Here, we use that <a href="/category/Set_family">$\Set^I$</a> has pushout-stable regular monomorphisms.'
+
+  - property: product-stable epimorphisms
+    proof: Since products and epimorphisms are computed pointwise (see below), this follows from the fact that <a href="/category/Set">$\Set$</a> has this property.
+    references:
+      - Set_product-stable_epis
 
   - property: well-copowered
     proof: The epimorphisms $X \to Y$ are precisely the morphisms that are pointwise surjective (see below). If $X_i \to Y_i$ is surjective and $X_i$ is a singleton, then $Y_i$ is a singleton as well. It follows that the collection $\Quot(X) \cong \prod_{i \in S(X)} \Quot(X_i)$ is essentially small.

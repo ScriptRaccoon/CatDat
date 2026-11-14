@@ -26,6 +26,10 @@ satisfied_properties:
 
   - property: coproducts
     proof: This is because free abelian groups are closed under direct sums of abelian groups.
+    check_redundancy: false
+
+  - property: coproduct-stable monomorphisms
+    proof: Apply Lemma 2 <a href="/content/subcategories">here</a> to the inclusion functor $\FreeAb \to \Ab$, which preserves coproducts (see above) and monomorphisms (since they are injective, see below), and use that <a href="/category/Ab">$\Ab$</a> has coproduct-stable monomorphisms.
 
   - property: equalizers
     proof: This follows from the fact that a subgroup of a free abelian group is again free abelian.

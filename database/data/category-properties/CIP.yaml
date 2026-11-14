@@ -14,10 +14,11 @@ keywords:
 
 related:
   - coproducts
-  - counital
-  - filtered-colimit-stable monomorphisms
   - products
   - zero morphisms
+  - counital
+  - filtered-colimit-stable monomorphisms
+  - coproduct-stable monomorphisms
 
 tags:
   - limit–colimit interaction

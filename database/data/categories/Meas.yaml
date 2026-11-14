@@ -61,6 +61,9 @@ satisfied_properties:
   - property: filtered-colimit-stable monomorphisms
     proof: This follows from Lemma 2 <a href="/content/subcategories">here</a> applied to the forgetful functor to $\Set$.
 
+  - property: product-stable epimorphisms
+    proof: Apply the dual of Lemma 2 <a href="/content/subcategories">here</a> to the forgetful functor $\Meas \to \Set$, which preserves products and epimorphisms (see below).
+
   - property: regular subobject classifier
     proof: The set $\{0,1\}$ with the trivial $\sigma$-algebra is a regular subobject classifier since measurable maps $X \to \{0,1\}$ correspond to subsets of $X$.
 

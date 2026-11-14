@@ -42,14 +42,9 @@ unsatisfied_properties:
   - property: skeletal
     proof: The trivial groups with underlying sets $\{0\}$ and $\{1\}$ are zero objects, hence isomorphic, but not equal.
 
-  - property: split abelian
-    proof: The sequence $0 \to \IZ/2 \to \IZ/4 \to \IZ/2 \to 0$ does not split.
-
-  - property: finitary algebraic
+  - property: product-stable epimorphisms
     proof: >-
-      Assume that it is the category of models of a many-sorted finitary algebraic theory. For each sort $s$ let $F_s$ be the free algebra on one generator of sort $s$. One of them must be non-trivial, since otherwise the category would be thin. So assume $F_s \neq 0$. It is finitely presentable, hence a finite abelian group, and regular projective. Any direct summand will have the same properties. So we find that some $\IZ/p^k$ (with $k \geq 1$ and $p$ prime) is regular projective. However, the exact sequence in $\TorsAb$
-      $$0 \to \IZ/p \to \IZ/p^{k+1} \to \IZ/p^k \to 0$$
-      does not split.
+      For $n \geq 1$ consider the surjective homomorphism $f_n : \IZ/2^n \to \IZ/2$. The product of the $f_n$ in $\TorsAb$ is the restriction of $\prod_{n \geq 1} f_n$ to the torsion subgroups. The element $y \coloneqq (1,1,\dotsc) \in \prod_{n \geq 1} \IZ/2$ is torsion, since $2y = 0$. Every preimage $x \in \prod_{n \geq 1} \IZ/2^n$ of $y$ has odd components $x_n \in \IZ/2^n$, which have order $2^n$, so that $x$ is not torsion. Hence, the product morphism is not surjective, hence not an epimorphism (see below).
 
 special_objects:
   initial object:

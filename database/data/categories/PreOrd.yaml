@@ -41,6 +41,9 @@ satisfied_properties:
   - property: pushout-stable regular monomorphisms
     proof: See <a href="https://math.stackexchange.com/questions/5130295">MSE/5130295</a>.
 
+  - property: product-stable epimorphisms
+    proof: Apply the dual of Lemma 2 <a href="/content/subcategories">here</a> to the forgetful functor $\PreOrd \to \Set$, which preserves products and epimorphisms (see below).
+
   - property: regular subobject classifier
     proof: The set $\{0,1\}$ with the chaotic preorder $(0 \leq 1$, $1 \leq 0)$ is a regular subobject classifier since order-preserving maps $P \to \{0,1\}$ correspond to subsets of $P$.
 

@@ -22,6 +22,10 @@ satisfied_properties:
   - property: finite products
     # TODO: give a reference or explain this in more detail
     proof: In short, this follows from the corresponding statement for topological spaces and $\IR^n \times \IR^m \cong \IR^{n+m}$.
+    check_redundancy: false
+
+  - property: finite-product-stable epimorphisms
+    proof: Apply the dual of Lemma 2 <a href="/content/subcategories">here</a> to the forgetful functor $\Man \to \Haus$, which preserves finite products (see above) and epimorphisms (see below), since <a href="/category/Haus">$\Haus$</a> has product-stable epimorphisms.
 
   - property: semi-strongly connected
     proof: Every non-empty manifold is weakly terminal (by using constant maps).

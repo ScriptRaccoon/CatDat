@@ -47,6 +47,14 @@ satisfied_properties:
     check_redundancy: false
     label: Set_extremal_cogenerator
 
+  - property: product-stable epimorphisms
+    proof: >-
+      Let $(f_i : X_i \to Y_i)_{i \in I}$ be a family of surjective maps, and let $y \in \prod_{i \in I} Y_i$. By the axiom of choice, there is some $x \in \prod_{i \in I} X_i$ with $x_i \in f_i^*(\{y_i\})$ for all $i \in I$, which means $(\prod_{i \in I} f_i)(x) = y$.
+
+      Conversely, this property implies the axiom of choice: if $(X_i)_{i \in I}$ is a family of non-empty sets, the maps $X_i \to \{\ast\}$ are epimorphisms, so their product $\prod_{i \in I} X_i \to \{\ast\}$ is an epimorphism, hence surjective (the proof below that epimorphisms are surjective does not use the axiom of choice). This means that $\prod_{i \in I} X_i$ is non-empty.
+    check_redundancy: false
+    label: Set_product-stable_epis
+
 unsatisfied_properties:
   - property: skeletal
     proof: The sets $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.

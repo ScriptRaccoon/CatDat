@@ -91,6 +91,30 @@ unsatisfied_properties:
       $$j : A/I \to B/IB.$$
       We claim that $p'$ is not an epimorphism. In fact, since the functor $\Spec : \CAlg(R)^{\op} \to \Sch_R$ is right adjoint to the global sections functor $\Gamma : \Sch_R \to \CAlg(R)^{\op}$, the latter preserves epimorphisms. So if $p'$ were an epimorphism, then $\Gamma(p') = j$ would be a monomorphism in $\CAlg(R)$, i.e. injective. But every element of $I$ has a vanishing coefficient at $t^3$, so $t^3 \notin I$, whereas $t^3 = t^2 \cdot t \in IB$. Thus, $[t^3] \in A/I$ a non-zero element in $\ker(j)$.
 
+  - property: finite-product-stable epimorphisms
+    proof: >-
+      Choose a maximal ideal $\m$ of $R$, and let $K \coloneqq R/\m$. Let $X \coloneqq \IA^1_K = \Spec(K[T])$, let $M$ be the set of maximal ideals of $K[T]$, i.e. of closed points of $|X|$, and let
+      $$\textstyle \pi : X' \coloneqq \coprod_{\p \in M} \Spec(K[T]/\p) \to X$$
+      be the morphism induced by the projections $K[T] \to K[T]/\p$.
+
+      <strong>Claim 1.</strong> The morphism $\pi$ is an epimorphism.
+
+      Every non-empty open subset of $|X|$ has the form $D(f)$ for some non-zero $f \in K[T]$. We first show that the homomorphism
+      $$\textstyle \pi^\sharp : K[T][f^{-1}] = \O_X(D(f)) \to \O_{X'}(|\pi|^*(D(f))) = \prod_{\p \in M \cap D(f)} K[T]/\p$$
+      is injective. An element $a/f^k$ lies in its kernel iff $a \in \p$ for all $\p \in M \cap D(f)$. Since $K[T]$ has infinitely many maximal ideals and a non-zero polynomial lies in only finitely many of them, the set $M \cap D(f)$ is infinite, and we get $a = 0$.
+
+      Now let $g,h : X \rightrightarrows Z$ be two morphisms with $g \circ \pi = h \circ \pi$, and let $\p \in M$. Since $\pi$ maps the component $\Spec(K[T]/\p)$ to the point $\p$, we have $|g|(\p) = |h|(\p)$. Choose an affine open subset $W \subseteq |Z|$ containing $|g|(\p)$. Then $|g|^*(W) \cap |h|^*(W) = D(f)$ for some non-zero $f \in K[T]$ with $\p \in D(f)$. Since $W$ is affine, the restrictions of $g$ and $h$ to $D(f)$ correspond to two homomorphisms $\O_Z(W) \rightrightarrows K[T][f^{-1}]$. Their composites with the injective homomorphism $\pi^\sharp$ from above agree, since $g \circ \pi = h \circ \pi$. Hence, $g$ and $h$ agree on $D(f)$. These open subsets cover all closed points of $|X|$, and every non-empty open subset contains the generic point, so they cover $|X|$. Hence, $g = h$.
+
+      <strong>Remark.</strong> In contrast, $\pi$ is not an epimorphism in <a href="/category/LRS_R">$\LRS_R$</a> by the classification of epimorphisms there, since $|\pi|$ is not surjective: it misses the generic point of $|X|$.
+
+      <strong>Claim 2.</strong> Let $P \coloneqq \Spec(K(S))$. The morphism $\id_P \times \pi : P \times X' \to P \times X$ is not an epimorphism.
+
+      Since $R \to K$ is surjective, we have $P \times X = \Spec(K(S) \otimes_R K[T]) = \Spec(K(S)[T])$. Let $z \in |P \times X|$ be the closed point corresponding to the maximal ideal $\langle T - S \rangle$. It lies over the generic point of $|X|$, i.e. $\langle T - S \rangle \cap K[T] = 0$: every $a \in K[T]$ divisible by $T - S$ satisfies $a(S) = 0$, hence $a = 0$. On the other hand, let $p : P \times X \to X$ and $p' : P \times X' \to X'$ be the projections. Then $p \circ (\id_P \times \pi) = \pi \circ p'$. Since $|\pi|$ maps every point of $|X'|$ to a closed point of $|X|$, every point in the image of $|\id_P \times \pi|$ lies over a closed point of $|X|$. Hence, $z$ does not lie in this image, and $\id_P \times \pi$ factors through the open subscheme of $P \times X$ on $|P \times X| \setminus \{z\}$. Now the claim follows from the next claim.
+
+      <strong>Claim 3.</strong> If an epimorphism $\varphi : Y' \to Y$ in $\Sch_R$ factors through an open subscheme $U$ of $Y$, then $U = Y$.
+
+      Since $\varphi$ factors through the open immersion $j : U \to Y$, also $j$ is an epimorphism. But $j$ is also a regular monomorphism: let $Y \sqcup_U Y$ be the scheme obtained by gluing two copies of $Y$ along $U$, and let $u_1,u_2 : Y \rightrightarrows Y \sqcup_U Y$ be the two inclusions. We claim that $j$ is the equalizer of $u_1,u_2$. By construction of the gluing, $u_1 \circ j = u_2 \circ j$. If $\psi : V \to Y$ is a morphism with $u_1 \circ \psi = u_2 \circ \psi$, then the image of $|\psi|$ is contained in $|U|$, since $u_1$ and $u_2$ map every point of $|Y| \setminus |U|$ to different points. Hence, $\psi$ factors uniquely through $j$. Being an epimorphism and a regular monomorphism, $j$ is an isomorphism, i.e. $U = Y$.
+
   - property: regular subobject classifier
     proof: The proof for <a href="/category/LRS_R">$\LRS_R$</a> translates verbatim to $\Sch_R$.
     references:

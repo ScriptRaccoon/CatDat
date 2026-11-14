@@ -29,6 +29,11 @@ satisfied_properties:
   - property: one-sorted finitary algebraic
     proof: Take the one-sorted algebraic theory of a group.
 
+  - property: coproduct-stable monomorphisms
+    proof: >-
+      Let $(f_i : G_i \to H_i)_{i \in I}$ be a family of injective homomorphisms. By the normal form for free products, every element of $\coprod_{i \in I} G_i$ can be written uniquely as a reduced word $g_1 \cdots g_n$, meaning that $n \geq 0$, $g_k \in G_{i_k} \setminus \{1\}$ for indices $i_k \in I$, and $i_k \neq i_{k+1}$. The coproduct morphism maps $g_1 \cdots g_n$ to $f_{i_1}(g_1) \cdots f_{i_n}(g_n)$, which is again a reduced word, since $f_{i_k}(g_k) \neq 1$ by injectivity of $f_{i_k}$. Since reduced words in $\coprod_{i \in I} H_i$ are unique and each $f_i$ is injective, distinct reduced words in $\coprod_{i \in I} G_i$ are mapped to distinct reduced words. Hence, the coproduct morphism is injective.
+    label: Grp_coproduct-stable_monos
+
   - property: mono-regular
     proof: See Prop. 4.2 at the <a href="https://ncatlab.org/nlab/show/regular+monomorphism#Examples">nLab</a>.
 

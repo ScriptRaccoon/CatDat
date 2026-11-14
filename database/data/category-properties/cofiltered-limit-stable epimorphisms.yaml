@@ -8,6 +8,7 @@ invariant_under_equivalences: true
 related:
   - cofiltered limits
   - exact cofiltered limits
+  - product-stable epimorphisms
 
 tags:
   - morphism behavior

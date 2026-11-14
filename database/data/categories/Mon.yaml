@@ -30,12 +30,19 @@ satisfied_properties:
   - property: unital
     proof: If a submonoid of $X \times Y$ contains $X \times \{1\}$ and $\{1\} \times Y$, then for all $x \in X$ and $y \in Y$ it also contains $(x,1) \cdot (1,y) = (x,y)$.
 
+  - property: coproduct-stable monomorphisms
+    proof: The proof for <a href="/category/Grp">$\Grp$</a> works verbatim, since free products of monoids have the same normal form as free products of groups.
+    references:
+      - Grp_coproduct-stable_monos
+
 unsatisfied_properties:
   - property: skeletal
     proof: The trivial monoids with underlying sets $\{0\}$ and $\{1\}$ are zero objects, hence isomorphic, but not equal.
 
   - property: balanced
+    # This can be deduced, but the direct counterexample is instructive
     proof: The inclusion of additive monoids $\IN \hookrightarrow \IZ$ is a counterexample.
+    check_redundancy: false
 
   - property: Malcev
     proof: 'Consider the submonoid $\{(a,b) : a \leq b \}$ of $\IN^2$.'
@@ -50,12 +57,12 @@ unsatisfied_properties:
     # TODO: remove duplication with "counital" proof, cf. #382
     proof: The canonical morphism $\IN \sqcup \IN \to \IN \times \IN$ is not a monomorphism since $\IN \sqcup \IN$ is not commutative.
 
-  - property: CSP
-    proof: If $M \to N$ is an epimorphism in $\Mon$ and $M$ is infinite, then $\card(N) \leq \card(M)$ (see <a href="https://mathoverflow.net/questions/510431/">MO/510431</a>). This implies that in $\Mon$ the canonical homomorphism $\coprod_{n \geq 0} \IN \to \prod_{n \geq 0} \IN$ is not an epimorphism because its domain is countable and its codomain is uncountable.
-
   - property: pushout-stable regular monomorphisms
     proof: 'Consider the monoid $M \coloneqq \langle x_0, x_1, s : x_0 s = x_1 s = 1 \rangle$. Notice that every element in $M$ has a unique expression as $s^k \cdot u$ with $k \in \IN$ and $u \in \langle x_0,x_1 \rangle_M$. Moreover, the canonical homomorphism $\iota : \langle x_0, x_1 \rangle \to M$ (from the free monoid) is injective. We will prove that it is a regular monomorphism, which however is not stable under pushouts. Consider $N \coloneqq \langle x_0, x_1, s_0, s_1 : x_i s_j = 1 \rangle$ and define $f_i : M \to N$ for $i=0,1$ by $f_i(x_j) = x_j$ and $f_i(s) = s_i$. Then $\iota$ is the equalizer of $f_0,f_1$. Now consider $g : \langle x_0,x_1 \rangle \to \langle y_0 \rangle$ defined by $g(x_0) = y_0$, $g(x_1) = 1$. The pushout of $\iota$ with $g$ is given by $\langle x_0, x_1, s, y_0 : x_0 s = x_1 s = 1 , \, x_0 = y_0, \, x_1 = 1 \rangle$, which simplifies to $\langle x_0, s : x_0 s = s = 1 \rangle$, which is trivial.'
     label: Mon_not_coregular
+
+  - property: product-stable epimorphisms
+    proof: We apply the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> to the inclusion functor $\CMon \to \Mon$, since <a href="/category/CMon">$\CMon$</a> does not have product-stable epimorphisms. The inclusion preserves products, and it preserves epimorphisms by <a href="https://math.stackexchange.com/a/5133596">MSE/5133488</a>.
 
   - property: regular subobject classifier
     proof: 'Assume that $\Omega$ is a regular subobject classifier. Since the trivial monoid is a zero object, every regular submonoid $U \subseteq M$ of any monoid $M$ would have the form $\{m \in M : h(m) = 1 \}$ for some homomorphism $M \to \Omega$. Now take any monoid $M$ with zero that has two different homomorphisms with zero $f,g : M \rightrightarrows N$ (for example, let $M = N = \{0\} \cup \{x^n : n \geq 0\}$ be the free monoid with zero on one generator, $f(x) = 0$, and $g(x) = x$). Take their equalizer $U \subseteq M$, and choose a homomorphism $h : M \to \Omega$ with $U = \{m \in M : h(m) = 1\}$. Since $0 \in U$, we have $h(0)=1$. But then for all $m \in M$ we have $h(m) = h(m) h(0) = h(m 0) = h(0) = 1$, i.e. $U = M$, which yields the contradiction $f = g$.'
@@ -65,9 +72,6 @@ unsatisfied_properties:
     proof: We can just copy the proof for <a href="/category/CMon">$\CMon$</a>. Alternatively, we may use Lemma 1 <a href="/content/subcategories">here</a> (dualized) applied to the forgetful functor $\CMon \to \Mon$.
     references:
       - CMon_no_regular_quotient_object_classifier
-
-  - property: cofiltered-limit-stable epimorphisms
-    proof: We already know that <a href="/category/Grp">$\Grp$</a> does not have this property. Now apply the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> to the forgetful functor $\Grp \to \Mon$. It preserves epimorphisms since it has a right adjoint, the unit group functor.
 
   - property: cocartesian cofiltered limits
     proof: 'We know that <a href="/category/Grp">$\Grp$</a> fails to satisfy this property. The same counterexample works here since the inclusion $\Grp \hookrightarrow \Mon$ preserves limits and colimits (it has a left and a right adjoint) and is conservative. A similar counterexample is given by the free monoids $N_n = \langle x_1,\dotsc,x_n \rangle$ and the Boolean monoid $M = \langle e : e^2=e \rangle$ with the maps $N_{n+1} \to N_n$, $x_{n+1} \mapsto 1$. Then the element $(x_1 e \cdots x_n e) \in \lim_n (M \sqcup N_n)$ does not come from $M \sqcup \lim_n N_n$ because its components have unbounded free product length.'

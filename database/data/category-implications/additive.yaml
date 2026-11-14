@@ -100,6 +100,14 @@
     - abelian
   proof: This holds by definition.
 
+- id: split_abelian_product-stable_epis
+  assumptions:
+    - split abelian
+    - products
+  conclusions:
+    - product-stable epimorphisms
+  proof: 'In a split abelian category, every epimorphism is split. If $(f_i : X_i \to Y_i)_{i \in I}$ is a family of epimorphisms with sections $s_i : Y_i \to X_i$, then $\prod_{i \in I} s_i$ is a section of $\prod_{i \in I} f_i$, which is therefore an epimorphism.'
+
 - id: biproducts_definition_consequences
   assumptions:
     - biproducts
@@ -108,3 +116,11 @@
     - finite products
     - zero morphisms
   proof: This holds by definition of biproducts.
+  check_redundancy: false
+
+- id: biproducts_mono_stability
+  assumptions:
+    - biproducts
+  conclusions:
+    - finite-coproduct-stable monomorphisms
+  proof: This is because monomorphisms are always stable under products, and finite coproducts coincide with finite products here.

@@ -151,6 +151,9 @@ satisfied_properties:
   - property: well-copowered
     proof: This follows since epimorphisms are surjective (see below).
 
+  - property: finite-product-stable epimorphisms
+    proof: Apply the dual of Lemma 2 <a href="/content/subcategories">here</a> to the forgetful functor $\PMet \to \Set$, which preserves finite products and epimorphisms (see below).
+
 unsatisfied_properties:
   - property: skeletal
     proof: The pseudo-metric spaces with underlying sets $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.

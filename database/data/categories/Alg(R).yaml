@@ -29,6 +29,16 @@ satisfied_properties:
   - property: disjoint finite products
     proof: 'Let $A,B$ be two $R$-algebras. To show that $A \sqcup_{A \times B} B$ is trivial, let $T$ be an $R$-algebra which admits homomorphisms $f : A \to T$, $g : B \to T$ with $f(p_1(a,b))=g(p_2(a,b))$ for all $(a,b) \in A \times B$, i.e. $f(a)=g(b)$. Applying this to $a=1$, $b=0$ yields $1=0$ in $T$. Hence, $T = 0$.'
 
+  - property: finite-product-stable epimorphisms
+    proof: >-
+      For $R = \IZ$, this is <a href="https://eudml.org/doc/139538">Storrer</a>, Cor. 2.3. Here is a direct proof for arbitrary $R$.
+
+      Let $f : A \to B$ be an epimorphism and $T$ be an $R$-algebra. It suffices to show that $\id_T \times f : T \times A \to T \times B$ is an epimorphism. Let $g,h : T \times B \rightrightarrows C$ be algebra homomorphisms with $g \circ (\id_T \times f) = h \circ (\id_T \times f)$. The central idempotent $e' \coloneqq (0,1)$ of $T \times B$ lies in the image of $\id_T \times f$, so $\varepsilon' \coloneqq g(e') = h(e')$ is an idempotent of $C$ (not necessarily central, but this is not needed). Since $(0,b) = e' \cdot (0,b) \cdot e'$ for all $b \in B$, we have $g(0,b) = \varepsilon' \cdot g(0,b) \cdot \varepsilon'$, and hence the map
+      $$g' : B \to \varepsilon' C \varepsilon', \quad b \mapsto g(0,b)$$
+      is an algebra homomorphism into the corner algebra $\varepsilon' C \varepsilon'$ with unit $\varepsilon'$. In the same way, $h' : B \to \varepsilon' C \varepsilon'$, $b \mapsto h(0,b)$ is an algebra homomorphism. Since $g' \circ f = h' \circ f$ and $f$ is an epimorphism, we get $g' = h'$. For all $t \in T$ and $b \in B$, we conclude
+      $$g(t,b) = g(t,0) + g'(b) = h(t,0) + h'(b) = h(t,b),$$
+      where $g(t,0) = h(t,0)$ holds because $(t,0)$ lies in the image of $\id_T \times f$.
+
   - property: Malcev
     proof: This follows in the same way as for <a href="/category/Grp">$\Grp$</a>; see also <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories">Borceux–Bourn</a>, Example 2.2.5.
     references:
@@ -37,9 +47,6 @@ satisfied_properties:
 unsatisfied_properties:
   - property: skeletal
     proof: The zero $R$-algebras with underlying sets $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.
-
-  - property: balanced
-    proof: Take a prime ideal $P \subseteq R$ and consider the $R$-algebra $A \coloneqq R/P$ (which is an integral domain). Then the inclusion $A \hookrightarrow Q(A)$ is a counterexample.
 
   - property: semi-strongly connected
     proof: This is because already the full subcategory <a href="/category/CAlg(R)">$\CAlg(R)$</a> of commutative algebras is not semi-strongly connected.
@@ -77,11 +84,27 @@ unsatisfied_properties:
       $$w_n = (1 + XY) (1+XY^2) \cdots (1+X Y^n) \in A \sqcup B_n.$$
       Because of $w_n \equiv w_{n-1} \bmod Y^n$, these form an element $w \in \lim_n (A \sqcup B_n)$. Expanding $w_n$, the longest term is $XY XY^2 \cdots X Y^n$ of "free product" length $2n$, which is unbounded.
 
-  - property: cofiltered-limit-stable epimorphisms
-    proof: We already know that <a href="/category/CAlg(R)">$\CAlg(R)$</a> does not have this property. Now apply the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> to the forgetful functor $\CAlg(R) \to \Alg(R)$. It preserves epimorphisms by <a href="https://math.stackexchange.com/questions/5133488">MSE/5133488</a>.
+  - property: product-stable epimorphisms
+    proof: >-
+      We already know that <a href="/category/CAlg(R)">$\CAlg(R)$</a> does not have this property. Now apply the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> to the forgetful functor $\CAlg(R) \to \Alg(R)$. It preserves products, and it preserves epimorphisms by <a href="https://math.stackexchange.com/a/5133596">MSE/5133488</a>.
+
+      For $R = \IZ$, an alternative counterexample is given in the remarks after Cor. 2.3 in <a href="https://eudml.org/doc/139538">Storrer</a>.
 
   - property: effective cocongruences
     proof: '<a href="https://mathoverflow.net/a/510809">MO/510744</a> presents a counterexample for $\Ring$, and it can be easily generalized to $\Alg(R)$: Let $X \coloneqq R[p] / (p^2-p)$ with cocongruence $C \coloneqq R \langle p, q \rangle / (p^2-p, q^2-q, pq-q, qp-p)$.'
+
+undecidable_properties:
+  - property: coproduct-stable monomorphisms
+    proof: >-
+      This depends on $R$. For $R = \IZ$, even finite-coproduct-stable monomorphisms fail, see <a href="/category/Ring">$\Ring$</a>.
+
+      Now let $R = K$ be a field. Monomorphisms are injective homomorphisms. Let $(f_i : A_i \to B_i)_{i \in I}$ be a family of injective homomorphisms of $K$-algebras. If some $A_i$ is zero, then so is $B_i$, and both coproducts are zero. Otherwise, choose for each $i$ a $K$-basis of $A_i$ of the form $\{1\} \cup T_i$. Since $f_i$ is injective, $\{1\} \cup f_i(T_i)$ is linearly independent in $B_i$, and we may extend it to a $K$-basis $\{1\} \cup T'_i$ of $B_i$ with $f_i(T_i) \subseteq T'_i$. By <a href="https://math.berkeley.edu/~gbergman/papers/coproducts1.pdf">Bergman</a>, Prop. 4.1 (applied to the standard module $N = \coprod_{i \in I} A_i$ with $N_0 = K$ and $N_i = 0$), the coproduct $\coprod_{i \in I} A_i$ has a $K$-basis consisting of the products $t_1 \cdots t_n$ with $n \geq 0$, $t_k \in T_{i_k}$, and $i_k \neq i_{k+1}$, and similarly for $\coprod_{i \in I} B_i$. The coproduct homomorphism maps $t_1 \cdots t_n$ to $f_{i_1}(t_1) \cdots f_{i_n}(t_n)$, which is again such a basis element of $\coprod_{i \in I} B_i$. Since each $f_i$ is injective on $T_i$, distinct basis elements are mapped to distinct basis elements. Hence, the coproduct homomorphism is injective.
+    label: Alg(R)_coproduct-stable_monos
+
+  - property: finite-coproduct-stable monomorphisms
+    proof: This depends on $R$. For $R = \IZ$ it fails, see <a href="/category/Ring">$\Ring$</a>. For a field $R = K$ it holds, since even coproduct-stable monomorphisms hold (see above).
+    references:
+      - Alg(R)_coproduct-stable_monos
 
 special_objects:
   initial object:

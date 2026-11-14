@@ -1,0 +1,22 @@
+id: finite-product-stable epimorphisms
+relation: has
+description: >-
+  A category has <i>finite-product-stable epimorphisms</i> if it has finite products and the following equivalent conditions hold:
+  <ol>
+  <li>For every finite family of epimorphisms $(X_i \to Y_i)_{i \in I}$, the product morphism $\prod_{i \in I} X_i \to \prod_{i \in I} Y_i$ is an epimorphism.</li>
+  <li>For all epimorphisms $X_1 \to Y_1$ and $X_2 \to Y_2$, the morphism $X_1 \times X_2 \to Y_1 \times Y_2$ is an epimorphism.</li>
+  <li>For every epimorphism $f : X \to Y$ and every object $T$, the morphism $\id_T \times f : T \times X \to T \times Y$ is an epimorphism.</li>
+  </ol>
+  Condition (1) implies (2) as a special case, and (2) implies (3) since $\id_T$ is an epimorphism. Conversely, (3) implies (2) since $f_1 \times f_2 = (f_1 \times \id_{Y_2}) \circ (\id_{X_1} \times f_2)$ is a composite of two epimorphisms, and (2) implies (1) by induction on the size of the family (the empty product morphism is the identity of the terminal object).
+nlab_link: null
+dual: finite-coproduct-stable monomorphisms
+invariant_under_equivalences: true
+
+related:
+  - finite products
+  - product-stable epimorphisms
+  - pullback-stable regular epimorphisms
+
+tags:
+  - morphism behavior
+  - limit–colimit interaction

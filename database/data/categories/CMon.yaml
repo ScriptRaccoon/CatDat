@@ -35,7 +35,10 @@ unsatisfied_properties:
     proof: The trivial monoids with underlying sets $\{0\}$ and $\{1\}$ are zero objects, hence isomorphic, but not equal.
 
   - property: balanced
+    # This can be deduced, but the direct counterexample is instructive and
+    # important for many readers.
     proof: The inclusion of additive monoids $\IN \hookrightarrow \IZ$ is a counterexample.
+    check_redundancy: false
 
   - property: Malcev
     proof: 'Consider the submonoid $\{(a,b) : a \leq b \}$ of $\IN^2$.'
@@ -100,8 +103,50 @@ unsatisfied_properties:
     proof: 'If $P \in \CMon$ is a regular quotient object classifier, this means that every surjective homomorphism of commutative monoids $A \to B$ is the cokernel of a unique homomorphism $P \to A$. But there are many surjective homomorphisms which are not cokernels at all: Consider the Boolean monoid $(\{0,1\},\vee)$ with $1 \vee 1 = 1$ and the surjective homomorphism $f : (\IN,+) \to (\{0,1\},\vee)$ defined by $f(0)=0$ and $f(n)=1$ for $n \geq 1$. It has trivial kernel, but is not an isomorphism, so it cannot be a cokernel.'
     label: CMon_no_regular_quotient_object_classifier
 
-  - property: CSP
-    proof: First of all, epimorphisms in $\CMon$ are preserved and reflected by the forgetful functor to $\Mon$ (see below). Furthermore, if $M \to N$ is an epimorphism in $\Mon$ and $M$ is infinite, then $\card(N) \leq \card(M)$ (see <a href="https://mathoverflow.net/questions/510431/">MO/510431</a>). This implies that in $\CMon$ the canonical homomorphism $\bigoplus_{n \geq 0} \IN \to \prod_{n \geq 0} \IN$ is not an epimorphism because its domain is countable and its codomain is uncountable.
+  - property: product-stable epimorphisms
+    proof: >-
+      We will find an epimorphism $U \hookrightarrow S$ of commutative monoids such that the product of countably many copies of it, $U^{\IN} \hookrightarrow S^{\IN}$, is not an epimorphism. We write commutative monoids additively.
+
+      By the classification of epimorphisms (see below), the inclusion $U \hookrightarrow S$ of a submonoid is an epimorphism if and only if every $d \in S$ has a chain $(p_0,q_0),\dotsc,(p_k,q_k)$ over $U$, i.e. a sequence in $S \times S$ from $(d,0)$ to $(0,d)$ such that each step replaces a pair $(p+u,q)$ by $(p,q+u)$, or $(p,q+u)$ by $(p+u,q)$, for some $p,q \in S$ and $u \in U$. The number $k$ is called the <i>length</i> of the chain. Since $p_0 + q_0 = d$ and each step preserves the sum of the two entries, we have $p_j + q_j = d$ for all $j$.
+
+      If $S$ is cancellative, the criterion simplifies: then $p_j$ is uniquely determined by $q_j$, and a chain for $d$ over $U$ is the same as a sequence $q_0,\dotsc,q_k \in S$ with $q_0 = 0$ and $q_k = d$ such that each $q_j$ is a summand of $d$ (i.e. $d = p_j + q_j$ for some $p_j \in S$) and for each $j < k$ there is some $u \in U$ with $q_{j+1} = q_j + u$ or $q_j = q_{j+1} + u$. Indeed, if $q_{j+1} = q_j + u$, then
+      $$p_{j+1} + u + q_j = p_{j+1} + q_{j+1} = d = p_j + q_j,$$
+      hence $p_j = p_{j+1} + u$ by cancellation, so the $j$-th step replaces $(p_{j+1} + u, q_j)$ by $(p_{j+1}, q_j + u)$. The case $q_j = q_{j+1} + u$ is symmetric.
+
+      Now consider $\sigma : \IQ^2 \to \IQ$, $\sigma(x,y) \coloneqq x + y$, the submonoid
+      $$S \coloneqq \{s \in \IQ^2 : \sigma(s) > 0\} \cup \{(0,0)\}$$
+      of $\IQ^2$, and its submonoid $U \coloneqq \IQ_{\geq 0}^2$. Notice that $\sigma(s) \geq 0$ for all $s \in S$. Since $S$ is cancellative, a chain for $d \in S$ over $U$ is the same as a sequence $q_0,\dotsc,q_k \in S$ with $q_0 = 0$, $q_k = d$, $d - q_j \in S$, and $q_{j+1} - q_j \in U \cup (-U)$ for all $j < k$.
+
+      <strong>Claim 1.</strong> The inclusion $U \hookrightarrow S$ is an epimorphism.
+
+      By the classification of epimorphisms, we need to find a chain for every $d = (x,y) \in S$. If $d \in U$, then $q_0 \coloneqq 0$, $q_1 \coloneqq d$ is a chain. Otherwise, since swapping the coordinates preserves $S$ and $U$, we may assume $y < 0$. Let $r \coloneqq -y > 0$ and $e \coloneqq \sigma(d)/3 > 0$, so that $x = r + 3e$. Let $i \geq 1$ be the integer with $(i-1) e < r \leq i e$. We will construct a chain $q_0,\dotsc,q_{2i+2}$ of length $2i+2$. Every intermediate point $q_j$ must satisfy $0 < \sigma(q_j) < 3e$. Therefore, we walk down a staircase between the lines $\sigma = e$ and $\sigma = 2e$, as in the following picture, where each arrow is labeled with the difference of its endpoints:
+      $$\begin{CD}
+      q_0 @>{(2e,0)}>> q_1 \\
+      @. @VV{(0,-e)}V \\
+      @. q_2 @>{(e,0)}>> q_3 \\
+      @. @. @VV{(0,-e)}V \\
+      @. @. q_4 @. \smash{\begin{array}{c} \\ \\ \\ \ddots \end{array}} \\
+      @. @. @. @. \\
+      @. @. @. @. q_{2i+1} @>{d - q_{2i+1}}>> d
+      \end{CD}$$
+      The last arrow is drawn horizontally for simplicity, but it usually also goes up (see below). Explicitly, let $q_0 \coloneqq (0,0)$,
+      $$\begin{align*}
+      q_{2j-1} & \coloneqq ((j+1)e, -(j-1)e) && (1 \leq j \leq i+1), \\
+      q_{2j} & \coloneqq ((j+1)e, -je) && (1 \leq j \leq i),
+      \end{align*}$$
+      and $q_{2i+2} \coloneqq d$. The steps are in $U \cup (-U)$: we have $q_1 - q_0 = (2e,0)$, $q_{2j} - q_{2j-1} = (0,-e)$, $q_{2j+1} - q_{2j} = (e,0)$, and finally
+      $$d - q_{2i+1} = (r + 3e - (i+2)e, \, -r + ie) = (r - (i-1)e, \, ie - r) \in U.$$
+      For $1 \leq j \leq 2i+1$ we have $\sigma(q_j) \in \{e,2e\}$, hence also $\sigma(d - q_j) = 3e - \sigma(q_j) \in \{e,2e\}$, so that $q_j, d - q_j \in S$. For $j = 0$ we have $q_0 = 0$ and $d - q_0 = d$, and for $j = 2i+2$ we have $q_{2i+2} = d$ and $d - q_{2i+2} = 0$. This is a chain for $d$.
+
+      <strong>Claim 2.</strong> For $n \in \IN$, the element $d_n \coloneqq (n+1,-n) \in S$ has no chain over $U$ of length $\leq n$.
+
+      The idea is that $d_n$ is far away from $0$, while the band $0 \leq \sigma \leq \sigma(d_n) = 1$ containing the chain is narrow, so that every step is short. In detail, let $q_0,\dotsc,q_k$ be a chain for $d_n$. Since $q_j \in S$ and $d_n - q_j \in S$, we have $\sigma(q_j) \geq 0$ and $1 - \sigma(q_j) = \sigma(d_n - q_j) \geq 0$, so that $0 \leq \sigma(q_j) \leq 1$. Write $q_{j+1} - q_j = \pm (a,b)$ with $(a,b) \in U$, so that $a,b \geq 0$. Since $\sigma$ is linear, we have
+      $$\sigma(q_{j+1}) - \sigma(q_j) = \sigma(q_{j+1} - q_j) = \pm (a + b).$$
+      Since $\sigma(q_j)$ and $\sigma(q_{j+1})$ both lie in $[0,1]$, their distance is $\leq 1$. Hence, we get
+      $$a \leq a + b = |\sigma(q_{j+1}) - \sigma(q_j)| \leq 1.$$
+      Thus the first coordinate changes by at most $1$ in each step. Since it changes from $0$ to $n+1$, we get $k \geq n+1$.
+
+      Finally, assume that $U^{\IN} \hookrightarrow S^{\IN}$ is an epimorphism. Since products in $\CMon$ are direct products with pointwise operations, $U^{\IN}$ is a submonoid of $S^{\IN}$, and the classification of epimorphisms provides a chain of some length $k$ for $(d_n)_{n \in \IN}$ over $U^{\IN}$. Its projection to the $n$-th coordinate is a chain of length $k$ for $d_n$ over $U$. By Claim 2, $k \geq n+1$ for all $n \in \IN$, a contradiction. Together with Claim 1, this shows that $\CMon$ does not have product-stable epimorphisms.
 
   - property: effective cocongruences
     proof: A counterexample, based on the counterexample for <a href="/category/Pos">$\Pos$</a>, is given at <a href="https://mathoverflow.net/questions/511792">MO/511792</a>.
@@ -120,5 +165,11 @@ special_objects:
 
 special_morphisms:
   epimorphism:
-    description: A morphism in $\CMon$ is an epimorphism iff it is an epimorphism in $\Mon$, which in turn can be characterized by <a href="https://en.wikipedia.org/wiki/Isbell's_zigzag_theorem">Isbell's zigzag theorem</a>.
-    proof: 'If $f : M \to N$ is a homomorphism of commutative monoids which is an epimorphism in $\Mon$, then it is trivially also an epimorphism in $\CMon$. The converse requires a proof, which can be found at <a href="https://math.stackexchange.com/a/5133596">MSE/5133488</a>.'
+    description: >-
+      For a homomorphism $f : T \to S$ of commutative monoids, written additively, the following are equivalent: (1) $f$ is an epimorphism in $\CMon$. (2) $f$ is an epimorphism in $\Mon$, which in turn can be characterized by <a href="https://en.wikipedia.org/wiki/Isbell's_zigzag_theorem">Isbell's zigzag theorem</a>. (3) Every $d \in S$ has a <i>chain</i> over $U \coloneqq f(T)$, meaning a sequence $(p_0,q_0),\dotsc,(p_k,q_k)$ in $S \times S$ with $(p_0,q_0) = (d,0)$ and $(p_k,q_k) = (0,d)$ such that each step replaces a pair $(p+u,q)$ by $(p,q+u)$, or $(p,q+u)$ by $(p+u,q)$, for some $p,q \in S$ and $u \in U$.
+    proof: >-
+      The implication (2) $\implies$ (1) is trivial. The implication (1) $\implies$ (2) requires a proof, which can be found at <a href="https://math.stackexchange.com/a/5133596">MSE/5133488</a>.
+
+      For (1) $\iff$ (3), notice first that $f$ is an epimorphism iff the inclusion $U \hookrightarrow S$ is one, since the corestriction $T \to U$ of $f$ is surjective, hence an epimorphism. Moreover, $U \hookrightarrow S$ is an epimorphism iff the two coprojections $i_1,i_2 : S \rightrightarrows S \sqcup_U S$ are equal. Since coproducts in $\CMon$ are direct sums, we have $S \sqcup_U S = (S \times S)/{\sim}$ with $i_1(s) = [(s,0)]$ and $i_2(s) = [(0,s)]$, where $\sim$ is the congruence generated by $(u,0) \sim (0,u)$ for $u \in U$. We claim that $\sim$ is the equivalence relation generated by
+      $$(p+u,q) \sim (p,q+u) \quad (p,q \in S, \, u \in U).$$
+      Indeed, these relations are the translates of the relations $(u,0) \sim (0,u)$ by the elements $(p,q) \in S \times S$, so they hold in every congruence that contains $(u,0) \sim (0,u)$. Conversely, the equivalence relation generated by them is invariant under translation (apply the translation to each step), hence a congruence, since $x \sim x'$ and $y \sim y'$ imply $x + y \sim x' + y \sim x' + y'$. This proves the claim. It follows that $(d,0) \sim (0,d)$ holds iff $d$ has a chain over $U$. Hence, $i_1 = i_2$ holds iff every $d \in S$ has a chain over $U$.

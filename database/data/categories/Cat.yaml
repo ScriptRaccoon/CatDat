@@ -48,6 +48,10 @@ unsatisfied_properties:
   - property: pushout-stable regular monomorphisms
     proof: 'Apply the contrapositive of Lemma 14 <a href="/content/subcategories">here</a> to the delooping functor $B : \Mon \to \Cat$. It is fully faithful, it preserves regular monomorphisms since it has a left adjoint (<a href="https://math.stackexchange.com/questions/574745">MSE/574745</a>), and it preserves pushouts (<a href="https://math.stackexchange.com/questions/5130854">MSE/5130854</a>). Here, we use that <a href="/category/Mon">$\Mon$</a> does not have pushout-stable regular monomorphisms.'
 
+  - property: product-stable epimorphisms
+    proof: >-
+      We apply the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> to the delooping functor $B : \Mon \to \Cat$, since <a href="/category/Mon">$\Mon$</a> does not have product-stable epimorphisms. The functor $B$ is faithful, and it preserves products, since a product of one-object categories $B(M_i)$ is the one-object category $B(\prod_i M_i)$. It remains to show that $B$ preserves epimorphisms. Let $f : M \to N$ be an epimorphism of monoids, and let $F,G : B(N) \rightrightarrows \C$ be functors with $F \circ B(f) = G \circ B(f)$. Since $B(f)$ is bijective on objects, $F$ and $G$ map the unique object of $B(N)$ to the same object $X$ of $\C$. Then $F$ and $G$ correspond to monoid homomorphisms $N \rightrightarrows \End_{\C}(X)$ which agree after precomposition with $f$. Hence, they are equal, i.e. $F = G$.
+
   - property: Malcev
     proof: 'Apply the contrapositive of Lemma 13 <a href="/content/subcategories">here</a> to the inclusion of discrete categories $\Set \to \Cat$, which is fully faithful and preserves finite limits. Here, we use that <a href="/category/Set">$\Set$</a> is not Malcev.'
 
