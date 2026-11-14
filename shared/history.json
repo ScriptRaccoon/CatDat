@@ -2081,6 +2081,14 @@
 		{
 			"type": "category",
 			"id": "EI-category"
+		},
+		{
+			"type": "category",
+			"id": "co-quasi-pointed"
+		},
+		{
+			"type": "category",
+			"id": "quasi-pointed"
 		}
 	]
 }

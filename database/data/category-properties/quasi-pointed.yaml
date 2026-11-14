@@ -1,0 +1,15 @@
+id: quasi-pointed
+relation: is
+description: 'A category is <i>quasi-pointed</i> if it has an initial object $0$ and a terminal object $1$ such that the unique morphism $0 \to 1$ is a monomorphism, i.e. $0$ is <a href="https://ncatlab.org/nlab/show/subterminal+object">subterminal</a>: for every object $X$ there is at most one morphism $X \to 0$.'
+nlab_link: https://ncatlab.org/nlab/show/quasi-pointed+category
+dual: co-quasi-pointed
+invariant_under_equivalences: true
+
+related:
+  - initial object
+  - terminal object
+  - pointed
+  - strict initial object
+
+tags:
+  - limit–colimit interaction

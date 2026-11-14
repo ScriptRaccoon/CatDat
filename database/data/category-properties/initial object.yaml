@@ -8,6 +8,8 @@ invariant_under_equivalences: true
 related:
   - finite coproducts
   - multi-initial object
+  - strict initial object
+  - pointed
 
 tags:
   - colimits

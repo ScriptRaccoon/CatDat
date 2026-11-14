@@ -16,13 +16,21 @@
     - finite coproducts
   proof: This holds by definition.
 
-- id: disjoint_coproducts_strict
+- id: disjoint_coproducts_quasi_pointed
   assumptions:
     - disjoint finite coproducts
-    - strict terminal object
+    - terminal object
   conclusions:
-    - thin
-  proof: 'Let $1$ be the strict terminal object, and let $A$ be any object. Then $1 \to A + 1$ is an isomorphism, since $1$ is strict. Also, $A \to A + 1$ is a monomorphism by assumption. It follows that the unique morphism $u : A \to 1$ is a monomorphism. For all $f,g : B \rightrightarrows A$ we have $uf = ug$ (since $1$ is terminal), hence $f = g$.'
+    - quasi-pointed
+  proof: 'More generally, for every object $A$ the unique morphism $0 \to A$ is a monomorphism, since it is the coproduct inclusion $0 \to 0 + A \cong A$.'
+
+- id: disjoint_coproducts_co_quasi_pointed
+  assumptions:
+    - disjoint finite coproducts
+    - co-quasi-pointed
+  conclusions:
+    - pointed
+  proof: 'Let $i_1, i_2 : 1 \rightrightarrows 1 + 1$ be the coproduct inclusions. Since there is at most one morphism $1 \to 1 + 1$, we have $i_1 = i_2$. Since $i_1$ is a monomorphism, the pullback of $i_1$ and $i_2 = i_1$ is $1$ with the identity morphisms as projections. By disjointness, this pullback is also given by $0$. Hence, $0 \cong 1$ is a zero object.'
 
 - id: strongly_connected_disjoint_products
   assumptions:
