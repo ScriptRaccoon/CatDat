@@ -130,6 +130,21 @@ unsatisfied_properties:
   - property: skeletal
     proof: The constant sequences with values $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.
 
+  - property: all epimorphisms split
+    proof: >-
+      Consider the connected sequences
+      $$\begin{align*}
+      X & \coloneqq (\{0,1\} \xrightarrow{\id} \{0,1\} \to \{\ast\} \to \{\ast\} \to \cdots), \\
+      Y & \coloneqq (\{0,1\} \to \{\ast\} \to \{\ast\} \to \cdots)
+      \end{align*}$$
+      and the morphism $p : X \to Y$ with $p_0 = \id_{\{0,1\}}$ and $p_n$ the unique map for $n \geq 1$. It is an epimorphism, since every $p_n$ is surjective. If $s : Y \to X$ were a section, then $s_0 = \id_{\{0,1\}}$, and the commutative square in degree $0$ would give $\id_{\{0,1\}} = s_1 \circ {!}$ for the unique map $! : \{0,1\} \to \{\ast\}$, which is impossible.
+
+  - property: all monomorphisms split
+    proof: >-
+      The morphism $(\varnothing \to \{\ast\} \to \{\ast\} \to \cdots) \to (\{\ast\} \to \{\ast\} \to \{\ast\} \to \cdots)$ between connected sequences is a monomorphism, since every component is injective. It has no retraction, since there is no map $\{\ast\} \to \varnothing$.
+
+      Alternatively, the functor $\Set \to [(\IN,\leq),\Set]_{\conn}$, $X \mapsto (X \to \{\ast\} \to \{\ast\} \to \cdots)$ is fully faithful and preserves monomorphisms (by their classification below). Hence, the claim follows from the contrapositive of the dual of Lemma 15 <a href="/content/subcategories">here</a>, since <a href="/category/Set">$\Set$</a> does not have all monomorphisms split.
+
   - property: disjoint finite products
     proof: >-
       If $X,Y$ are connected sequences with $X_0 = \varnothing$ and $Y_0 \neq \varnothing$, for example
