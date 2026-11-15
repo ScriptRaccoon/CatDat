@@ -2089,6 +2089,14 @@
 		{
 			"type": "category",
 			"id": "quasi-pointed"
+		},
+		{
+			"type": "category",
+			"id": "all epimorphisms split"
+		},
+		{
+			"type": "category",
+			"id": "all monomorphisms split"
 		}
 	]
 }

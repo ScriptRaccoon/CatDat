@@ -1,12 +1,23 @@
 id: split abelian
 relation: is
-description: A category is <i>split abelian</i> if it is abelian and every short exact sequence splits. Equivalently, every object is projective. Equivalently, every object is injective.
+description: >-
+  An abelian category is <i>split abelian</i> if it satisfies the following equivalent conditions:
+  <ol>
+  <li>Every short exact sequence splits.</li>
+  <li>Every object is projective.</li>
+  <li>Every object is injective.</li>
+  <li>Every epimorphism is split.</li>
+  <li>Every monomorphism is split.</li>
+  </ol>
 nlab_link: https://ncatlab.org/nlab/show/split+exact+sequence
 dual: split abelian
 invariant_under_equivalences: true
 
 related:
   - abelian
+  - all epimorphisms split
+  - all monomorphisms split
 
 tags:
   - abelian
+  - morphism behavior
