@@ -65,6 +65,7 @@ satisfied_properties:
 
   - property: regular subobject classifier
     proof: By the description of regular monomorphisms below, the poset of regular subobjects of $(X,R)$ is isomorphic to the poset of subsets of $X$. The subsets of $X$ correspond to morphisms from $(X,R)$ into the object $\Omega \coloneqq (\{0,1\}, \{0,1\} \times \{0,1\})$, which shows that $\Omega$ is a regular subobject classifier.
+    label: Bin_regular_subobject_classifier
 
   - property: generator
     proof: The object $(\{\ast\},\varnothing)$ is a generator because it represents the forgetful functor $\Bin \to \Set$, $(X,R) \mapsto X$, which is faithful.

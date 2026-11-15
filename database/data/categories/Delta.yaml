@@ -62,7 +62,7 @@ satisfied_properties:
       - FinOrd_mono-regular
 
   - property: coequalizers
-    proof: Assume that $X \rightrightarrows Y$ are morphisms in $\FinOrd \setminus \{\varnothing\}$. Since <a href="/category/FinOrd">$\FinOrd$</a> has coequalizers, we have a coequalizer $Y \to Q$. Since $Y$ is non-empty, $Q$ is non-empty as well, and clearly $Y \to Q$ is then also the coequalizer in $\FinOrd \setminus \{\varnothing\}$.
+    proof: 'Assume that $f,g : (X,\leq) \rightrightarrows (Y,\leq)$ are morphisms in $\FinOrd \setminus \{\varnothing\}$. Since <a href="/category/FinOrd">$\FinOrd$</a> has coequalizers, they have a coequalizer $q : (Y,\leq) \to (C,\leq)$ in $\FinOrd$. Since $Y$ is non-empty, $C$ is non-empty as well, and clearly $q$ is then also the coequalizer in $\FinOrd \setminus \{\varnothing\}$.'
     label: Delta_coequalizers
 
   - property: core-thin
@@ -70,10 +70,12 @@ satisfied_properties:
 
   - property: cosifted
     proof: >-
-      Let $X,Y \in \Delta$. We may pick $x \in X$, $y \in Y$. Then there is a "point span" $X \xleftarrow{x} [0] \xrightarrow{y} Y$. Every span $X \xleftarrow{f} Z \xrightarrow{g} Y$ is connected to such a point span: Pick $z \in Z$. This defines a morphism of spans:
-      $$\begin{CD} X @<{f(z)}<< [0] @>{g(z)}>> Y \\ @| @VV{z}V @| \\ X @<<{f}< Z @>>{g}> Y \end{CD}$$
-      It remains to show that all point spans are connected to each other. Assume $x_0,x_1 \in X$ and $y \in Y$, w.l.o.g. $x_0 \leq x_1$. Define the map $f : [1] \to X$ by $f(0) = x_0$, $f(1) = x_1$, and the map $g : [1] \to Y$ by $g(0)=g(1)=y$. They are order-preserving and fit into a zig-zag of spans:
-      $$\begin{CD} X @<{x_0}<< [0] @>{y}>> Y \\ @| @V{0}VV @| \\ X @<{f}<< [1] @>{g}>> Y \\ @| @A{1}AA @| \\ X @<{x_1}<< [0] @>{y}>> Y \end{CD}$$
+      We identify an element $x$ of a finite ordered set $(X,\leq)$ with the morphism $[0] \to (X,\leq)$, $0 \mapsto x$.
+
+      Let $(X,\leq),(Y,\leq) \in \Delta$. We may pick $x \in X$, $y \in Y$. Then there is a "point span" $(X,\leq) \xleftarrow{x} [0] \xrightarrow{y} (Y,\leq)$. Every span $(X,\leq) \xleftarrow{f} (Z,\leq) \xrightarrow{g} (Y,\leq)$ is connected to such a point span: Pick $z \in Z$. This defines a morphism of spans:
+      $$\begin{CD} (X,\leq) @<{f(z)}<< [0] @>{g(z)}>> (Y,\leq) \\ @| @VV{z}V @| \\ (X,\leq) @<<{f}< (Z,\leq) @>>{g}> (Y,\leq) \end{CD}$$
+      It remains to show that all point spans are connected to each other. Assume $x_0,x_1 \in X$ and $y \in Y$, w.l.o.g. $x_0 \leq x_1$. Define the map $f : [1] \to (X,\leq)$ by $f(0) = x_0$, $f(1) = x_1$, and the map $g : [1] \to (Y,\leq)$ by $g(0)=g(1)=y$. They are order-preserving and fit into a zig-zag of spans:
+      $$\begin{CD} (X,\leq) @<{x_0}<< [0] @>{y}>> (Y,\leq) \\ @| @V{0}VV @| \\ (X,\leq) @<{f}<< [1] @>{g}>> (Y,\leq) \\ @| @A{1}AA @| \\ (X,\leq) @<{x_1}<< [0] @>{y}>> (Y,\leq) \end{CD}$$
       This shows that the choice of $x \in X$ does not matter, and for $y \in Y$ the proof is the same.
     label: Delta_cosifted
 
@@ -85,7 +87,7 @@ unsatisfied_properties:
     proof: 'The two maps $d^0,d^1 : [0] \rightrightarrows [1]$ have a common left inverse, the unique map $s^0 : [1] \to [0]$, but are not equalized by any morphism.'
 
   - property: cokernel pairs
-    proof: Assume that the inclusion $\{0\} \to \{0 < 1\}$ has a cokernel pair in $\FinOrd \setminus \{\varnothing\}$. This would be a universal finite ordered set $X$ with three elements $0,1,2$ satisfying $0 \leq 1$ and $0 \leq 2$. Assume w.l.o.g. $1 \leq 2$ (the case $2 \leq 1$ is similar). The universal property yields an order-preserving map $X \to \{a < b < c\}$ with $0 \mapsto a$, $1 \mapsto c$, $2 \mapsto b$. But then $c \leq b$, which is a contradiction.
+    proof: Assume that the inclusion $\{0\} \to \{0 < 1\}$ has a cokernel pair in $\FinOrd \setminus \{\varnothing\}$. This would be a universal finite ordered set $(X,\leq)$ with three elements $0,1,2 \in X$ satisfying $0 \leq 1$ and $0 \leq 2$. Assume w.l.o.g. $1 \leq 2$ (the case $2 \leq 1$ is similar). The universal property yields an order-preserving map $(X,\leq) \to \{a < b < c\}$ with $0 \mapsto a$, $1 \mapsto c$, $2 \mapsto b$. But then $c \leq b$, which is a contradiction.
 
   - property: sequential colimits
     proof: We can just copy the proof for <a href="/category/FinOrd">$\FinOrd$</a> to show that the sequence of inclusions $[0] \hookrightarrow [1] \hookrightarrow [2] \hookrightarrow \cdots$ has no colimit.
