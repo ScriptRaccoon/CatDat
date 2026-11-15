@@ -120,8 +120,10 @@ unsatisfied_properties:
   - property: skeletal
     proof: The trivial groups with underlying sets $\{0\}$ and $\{1\}$ are zero objects, hence isomorphic, but not equal.
 
-  - property: split abelian
-    proof: The short exact sequence $0 \xrightarrow{} \IZ \xrightarrow{p} \IZ \xrightarrow{} \IZ/p \xrightarrow{} 0$ does not split.
+  - property: all epimorphisms split
+    proof: The quotient homomorphism $\IZ \to \IZ/2$, which does not split by the proof for <a href="/category/Ab">$\Ab$</a>, is a morphism in $\Ab_\fg$.
+    references:
+      - Ab_non-split_epimorphism
 
   - property: cogenerator
     proof: Let $Q$ be a finitely generated abelian group. By their well-known classification, we have $Q = F \oplus T$ for a free abelian group $F$ and a finite abelian group $T$. Let $p$ be a prime number which does not divide the order of $T$. Then $\Hom(\IZ/p, Q) = 0$, but $\IZ/p \neq 0$. Therefore, $Q$ is not a cogenerator.

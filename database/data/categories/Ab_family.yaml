@@ -45,8 +45,8 @@ unsatisfied_properties:
   - property: skeletal
     proof: The constant families of the trivial groups with underlying sets $\{0\}$ and $\{1\}$ are zero objects, hence isomorphic, but not equal.
 
-  - property: split abelian
-    proof: Since there is an exact embedding $\Ab \to \Ab^I$ which inserts an abelian group at some index, this follows from the fact that <a href="/category/Ab">$\Ab$</a> is not split abelian.
+  - property: all epimorphisms split
+    proof: Choose an index $i \in I$. The functor $\Ab \to \Ab^I$ that inserts an abelian group at the index $i$ (and $0$ at all other indices) is fully faithful and exact. Hence, the claim follows from the contrapositive of Lemma 15 <a href="/content/subcategories">here</a>, since <a href="/category/Ab">$\Ab$</a> does not have all epimorphisms split.
 
   - property: well-powered
     proof: The collection of subobjects of the constant family $(\IZ/2)_{i \in I}$ identifies with the collection $P(I)$, which is not essentially small.

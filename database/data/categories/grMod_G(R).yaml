@@ -38,8 +38,14 @@ unsatisfied_properties:
     proof: By using the multiplication in $R$, we regard $R$ as a graded $R$-module. Then the canonical graded linear map $\bigoplus_{n \geq 0} R \to \prod_{n \geq 0} R$ is not an epimorphism in $\grMod_G(R)$. In fact, if it were an epimorphism, it would be surjective in every degree, and in particular the group homomorphism $\bigoplus_{n \geq 0} R_0 \to \prod_{n \geq 0} R_0$ would be surjective. But this is only possible when $R_0 = 0$, which would imply $R = 0$.
 
 undecidable_properties:
+  - property: all epimorphisms split
+    proof: This depends on the choice of the graded ring $R$ and the monoid $G$. For a trivial example, when $G = 0$, $R$ is just a ring and $\grMod_G(R) = \Mod(R)$ has all epimorphisms split if and only if $R$ is semisimple. For a slightly more interesting example, let $G = \IZ$, let $k$ be a ring, and consider the $\IZ$-graded ring $R \coloneqq (k)_{n \in \IZ}$ with multiplication induced by the multiplication on $k$ (that is, the associated ring is the Laurent polynomial ring $k[T,T^{-1}]$). Then $\grMod_G(R) \simeq \Mod(k)$ has all epimorphisms split if and only if $k$ is semisimple.
+
   - property: split abelian
-    proof: This depends on the choice of the graded ring $R$ and the monoid $G$. For a trivial example, when $G = 0$, $R$ is just a ring and $\grMod_G(R) = \Mod(R)$ is split abelian if and only if $R$ is semisimple. For a slightly more interesting example, let $G = \IZ$, let $k$ be a ring, and consider the $\IZ$-graded ring $R \coloneqq (k)_{n \in \IZ}$ with multiplication induced by the multiplication on $k$ (that is, the associated ring is the Laurent polynomial ring $k[T,T^{-1}]$). Then $\grMod_G(R) \simeq \Mod(k)$ is split abelian if and only if $k$ is semisimple.
+    proof: Since the category is abelian, this is equivalent to having all epimorphisms split, which is undecidable.
+
+  - property: all monomorphisms split
+    proof: Since the category is abelian, this is equivalent to having all epimorphisms split, which is undecidable.
 
   - property: one-sorted finitary algebraic
     proof: This depends on the choice of the graded ring $R$ and the monoid $G$. For example, if $k$ is a ring and we take the $\IZ$-graded ring $R \coloneqq (k)_{n \in \IZ}$ with multiplication induced by the multiplication on $k$ (that is, the associated ring is the Laurent polynomial ring $k[T,T^{-1}]$), then $\grMod_{\IZ}(R) \simeq \Mod(k)$ is one-sorted finitary algebraic. On the other hand, when $R$ has the trivial $\IZ$-grading, with $R_n = 0$ for $n \neq 0$ and $k \coloneqq R_0$, we have $\grMod_{\IZ}(R) \simeq \prod_{n \in \IZ} \Mod(k)$, which is not one-sorted finitary algebraic when $k \neq 0$. To see this, note that every one-sorted finitary algebraic category has a finitely presentable (regular-projective) generator, namely the free algebra on one generator. A finitely presentable object in $\prod_{n \in \IZ} \Mod(k)$ is concentrated in finitely many degrees and therefore cannot be a generator.

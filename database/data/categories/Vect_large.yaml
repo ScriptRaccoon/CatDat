@@ -54,8 +54,8 @@ satisfied_properties:
     references:
       - Vect_large_equalizers
 
-  - property: split abelian
-    proof: The previous assignments already show that the category is abelian. Since the inclusion functor $\Vect^s_K \hookrightarrow \Vect_K$ is exact, the claim follows from the fact that $\Vect_K$ is split abelian (which we know in the <a href="/category/Vect">small case</a> and therefore also holds in the large case).
+  - property: all epimorphisms split
+    proof: The inclusion functor $\Vect^s_K \hookrightarrow \Vect_K$ is fully faithful and preserves epimorphisms, which are surjective linear maps in both categories (see below). Hence, the claim follows from Lemma 15 <a href="/content/subcategories">here</a> and the fact that $\Vect_K$ has all epimorphisms split (which we know in the <a href="/category/Vect">small case</a> and therefore also holds in the large case).
 
   - property: generator
     proof: Since $K$ is a generator of $\Vect_K$ that is contained in $\Vect^s_K$, it is a generator of $\Vect^s_K$.

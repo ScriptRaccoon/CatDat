@@ -42,8 +42,8 @@ unsatisfied_properties:
   - property: skeletal
     proof: The trivial groups with underlying sets $\{0\}$ and $\{1\}$ are zero objects, hence isomorphic, but not equal.
 
-  - property: split abelian
-    proof: The sequence $0 \to \IZ/2 \to \IZ/4 \to \IZ/2 \to 0$ does not split.
+  - property: all epimorphisms split
+    proof: Apply the contrapositive of Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\FinAb \hookrightarrow \TorsAb$, which preserves epimorphisms since these are surjective in both categories (see below), and use that <a href="/category/FinAb">$\FinAb$</a> does not have all epimorphisms split.
 
   - property: finitary algebraic
     proof: >-

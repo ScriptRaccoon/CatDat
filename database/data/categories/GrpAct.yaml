@@ -82,6 +82,9 @@ unsatisfied_properties:
   - property: skeletal
     proof: 'The objects $(\IZ,\varnothing)$ and $(2\IZ,\varnothing)$ are distinct but isomorphic.'
 
+  - property: all epimorphisms split
+    proof: 'Apply the contrapositive of Lemma 15 <a href="/content/subcategories">here</a> to the fully faithful functor $L : \Grp \to \GrpAct$, $G \mapsto (G,\varnothing)$, which preserves epimorphisms since it is a left adjoint, and use that <a href="/category/Grp">$\Grp$</a> does not have all epimorphisms split.'
+
   - property: strict initial object
     proof: 'The initial object is $(1,\varnothing)$, the empty set with the action of the trivial group. For every non-trivial group $G$, the unique morphism $(G,\varnothing) \to (1,\varnothing)$ is not an isomorphism.'
 

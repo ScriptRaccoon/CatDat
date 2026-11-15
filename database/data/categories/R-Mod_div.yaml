@@ -17,8 +17,8 @@ related:
   - M-Set
 
 satisfied_properties:
-  - property: split abelian
-    proof: It is a standard fact that the category of $R$-modules is abelian for any ring $R$; see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician">Mac Lane</a>, Ch. VIII. If $R$ is a division ring, then by linear algebra every $R$-module has a basis, hence is projective, so that every short exact sequence splits.
+  - property: all epimorphisms split
+    proof: If $R$ is a division ring, then by linear algebra every $R$-module has a basis, hence is projective. Therefore, every epimorphism, i.e. every surjective linear map, splits.
 
 unsatisfied_properties: []
 

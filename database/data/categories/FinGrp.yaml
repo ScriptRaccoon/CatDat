@@ -60,6 +60,12 @@ unsatisfied_properties:
   - property: skeletal
     proof: The trivial groups with underlying sets $\{0\}$ and $\{1\}$ are zero objects, hence isomorphic, but not equal.
 
+  - property: all epimorphisms split
+    proof: Apply the contrapositive of Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\FinAb \hookrightarrow \FinGrp$, which preserves epimorphisms since these are surjective in both categories (see below), and use that <a href="/category/FinAb">$\FinAb$</a> does not have all epimorphisms split.
+
+  - property: all monomorphisms split
+    proof: Apply the contrapositive of the dual of Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\FinAb \hookrightarrow \FinGrp$, which preserves monomorphisms since these are injective in both categories (see below), and use that <a href="/category/FinAb">$\FinAb$</a> does not have all monomorphisms split.
+
   - property: normal
     proof: Every non-normal subgroup of a finite group (such as $C_2 \hookrightarrow S_3$) provides a counterexample.
 
