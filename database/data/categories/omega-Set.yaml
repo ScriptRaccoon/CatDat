@@ -5,11 +5,11 @@ objects: pairs $(X, R_X)$ where $X$ is a set and $R_X \subseteq \IN \times X$ is
 morphisms: 'a morphism $(X, R_X) \to (Y, R_Y)$ is a function $f : X \to Y$ such that there exists a <i>realizer tracker compatible with $f$</i>: this is a <a href="https://ncatlab.org/nlab/show/partial+recursive+function">partial recursive function</a> $\code{f} : \IN \dashrightarrow \IN$ such that for every $(n,x) \in R_X$, the value $\code{f}(n)$ is defined and $(\code{f}(n),f(x)) \in R_Y$'
 description: >-
   An $\omega$-set represents a mathematical set with computational encodings of its elements; and similarly, a morphism of $\omega$-sets is a mathematical function such that, roughly speaking, there is a computer program which translates encodings in the domain to encodings in the codomain (at least theoretically, if run on a computer with unlimited storage capacity and given an unlimited though finite time to work). In particular, if we consider $(n, x) \in R_X$ roughly to express a notion of $n$ being a serialization of a valid representation of $x$, then:
-  <ul>
+  <ol>
   <li>We do not require $R_X$ to be total on the first coordinate, i.e. we allow for some natural numbers which are not valid representations of any element of $X$.</li>
   <li>We do not require $R_X$ to be the inverse of a partial functional relation, i.e. we allow for some elements of $X$ to have multiple valid representations.</li>
   <li>We do not require $R_X$ to be a partial functional relation. This allows the category to express notions of "uniform computability", where some pieces of information in the codomain can be derived given only partial information about the value in the domain.</li>
-  </ul>
+  </ol>
   In many of the proofs to follow, we will use the phrase "$n$ realizes $x$" to mean $(n, x) \in R_X$. Also, we will fix a choice of a total recursive pairing function $\langle {-}, {-} \rangle : \IN^2 \to \IN$ with total recursive inverses $p_1, p_2 : \IN \rightrightarrows \IN$. (Standard examples of such a pairing function include $\langle m, n \rangle \coloneqq \binom{m+n+1}{2} + m$, or the function interleaving the binary representations of $m$ and $n$.)
 
   In the proofs of properties, we use that the forgetful functor $U : \omegaSet \to \Set$ has a fully faithful right adjoint $\nabla : \Set \to \omegaSet$, $X \mapsto (X, \IN \times X)$.

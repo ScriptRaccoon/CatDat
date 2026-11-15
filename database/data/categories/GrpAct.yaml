@@ -7,10 +7,10 @@ description: >-
   This category combines the categories $G{-}\Set$ for all groups $G$ (see <a href="/category/M-Set">$M{-}\Set$</a>). More precisely, it is the Grothendieck construction of the functor $\Grp^{\op} \to \Cat^+$ that maps a group $G$ to $G{-}\Set$ and a homomorphism to the restriction functor.
 
   In the proofs of properties, we use the following adjunctions:
-  <ul>
+  <ol>
   <li>The functor $L : \Grp \to \GrpAct$, $G \mapsto (G,\varnothing)$ is fully faithful and left adjoint to the forgetful functor $U : \GrpAct \to \Grp$, $(G,X) \mapsto G$, which in turn is left adjoint to the fully faithful functor $\Grp \to \GrpAct$, $G \mapsto (G,\{\ast\})$. Moreover, $L$ preserves connected limits, since limits in $\GrpAct$ are computed component-wise and a connected limit of empty sets is empty.</li>
   <li>The functor $I : \Set \to \GrpAct$, $Y \mapsto (1,Y)$ is fully faithful, right adjoint to the orbit functor $\GrpAct \to \Set$, $(G,X) \mapsto G \backslash X$, and left adjoint to the forgetful functor $\GrpAct \to \Set$, $(G,X) \mapsto X$.</li>
-  </ul>
+  </ol>
 nlab_link: null
 keywords:
   - G-sets
