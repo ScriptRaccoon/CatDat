@@ -11,7 +11,8 @@
     - split monomorphism
   conclusions:
     - regular monomorphism
-  proof: 'Let $m : A \to B$ be a split monomorphism, and choose a morphism $e : B \to A$ with $e \circ m = \id_A$. Then it is easy to check that $m$ is an equalizer of $\id_B$ and the idempotent morphism $m \circ e : B \to B$.'
+  proof: >-
+    Let $m : A \to B$ be a split monomorphism, and choose a morphism $r : B \to A$ with $r \circ m = \id_A$. We claim that $m$ is an equalizer of $\id_B$ and the morphism $e \coloneqq m \circ r : B \to B$, which is idempotent since $e \circ e = m \circ (r \circ m) \circ r = e$. First, we have $e \circ m = m \circ (r \circ m) = m$. If $h : T \to B$ is a morphism with $e \circ h = h$, then $h = m \circ (r \circ h)$, and this factorization through $m$ is unique since $m$ is a monomorphism.
 
 - id: split_mono_epi_is_iso
   # This implication follows strictly from the others, but we add it

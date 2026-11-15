@@ -48,9 +48,6 @@ satisfied_properties:
   - property: CIP
     proof: The canonical morphism from the coproduct to the product is the identity.
 
-  - property: well-powered
-    proof: 'Any relation $R : A \to B$ induces an injective map $P(A) \to P(B)$, so that in particular there is an injective map $A \to P(B)$.'
-
   - property: quotients of congruences
     proof: A proof can be found <a href="/content/congruences_in_rel">here</a>.
 
