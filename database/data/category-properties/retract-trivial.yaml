@@ -25,6 +25,8 @@ related:
   - regular-quotient-trivial
   - one-way
   - EI-category
+  - all epimorphisms split
+  - all monomorphisms split
 
 tags:
   - morphism behavior

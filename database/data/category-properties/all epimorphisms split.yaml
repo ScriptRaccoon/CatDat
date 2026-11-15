@@ -1,0 +1,19 @@
+id: all epimorphisms split
+relation: has
+description: >-
+  A category <i>has all epimorphisms split</i> if every epimorphism $p : X \to Y$ is split, i.e. there is a morphism $s : Y \to X$ with $p \circ s = \id_Y$. For the category of sets, this is equivalent to the axiom of choice. Hence, in topos theory, this property is also called the <i>axiom of choice</i>; see the <a href="https://ncatlab.org/nlab/show/axiom+of+choice">nLab</a>.
+nlab_link: https://ncatlab.org/nlab/show/split+epimorphism
+dual: all monomorphisms split
+invariant_under_equivalences: true
+
+keywords:
+  - split epimorphism
+  - axiom of choice
+
+related:
+  - epi-regular
+  - retract-trivial
+  - split abelian
+
+tags:
+  - morphism behavior

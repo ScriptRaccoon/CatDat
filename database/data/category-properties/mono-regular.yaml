@@ -6,6 +6,7 @@ dual: epi-regular
 invariant_under_equivalences: true
 
 related:
+  - all monomorphisms split
   - effective congruences
   - normal
   - subobject-trivial
