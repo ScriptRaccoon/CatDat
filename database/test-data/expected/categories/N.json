@@ -100,6 +100,8 @@
 	"unsatisfied": [
 		"abelian",
 		"additive",
+		"all epimorphisms split",
+		"all monomorphisms split",
 		"balanced",
 		"Barr-exact",
 		"biproducts",

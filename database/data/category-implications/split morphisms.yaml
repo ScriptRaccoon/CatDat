@@ -1,0 +1,41 @@
+# results on categories in which all monomorphisms (or epimorphisms) split
+
+- id: all_monos_split_mono-regular
+  assumptions:
+    - all monomorphisms split
+  conclusions:
+    - mono-regular
+  proof: This follows from the fact that every split monomorphism is a regular monomorphism; see <a href="/morphism-implication/split_mono_is_regular_mono">this result</a>.
+
+- id: subobject-trivial_all_monos_split
+  assumptions:
+    - subobject-trivial
+  conclusions:
+    - all monomorphisms split
+  proof: This is trivial, since every isomorphism is a split monomorphism.
+
+- id: subobject-trivial_criterion_via_split_monos
+  assumptions:
+    - all monomorphisms split
+    - retract-trivial
+  conclusions:
+    - subobject-trivial
+  proof: Every monomorphism is split by assumption, hence an isomorphism since the category is retract-trivial.
+
+- id: all_epis_split_pullback_stable
+  assumptions:
+    - all epimorphisms split
+    - pullbacks
+  conclusions:
+    - pullback-stable regular epimorphisms
+  proof: >-
+    Every regular epimorphism is an epimorphism and therefore split by assumption. Hence, it suffices to show that split epimorphisms are stable under pullback, since every split epimorphism is a regular epimorphism by the dual of <a href="/morphism-implication/split_mono_is_regular_mono">this result</a>. Let $p : X \to Y$ be a morphism with a section $s : Y \to X$, and let $g : Z \to Y$ be a morphism. Since $p \circ (s \circ g) = g \circ \id_Z$, the morphisms $s \circ g : Z \to X$ and $\id_Z : Z \to Z$ induce a morphism $Z \to X \times_Y Z$, which is a section of the projection $X \times_Y Z \to Z$.
+
+- id: strict_initial_all_monos_split
+  assumptions:
+    - strict initial object
+    - all monomorphisms split
+  conclusions:
+    - trivial
+  proof: >-
+    Let $X$ be an object. Since the initial object $0$ is strict, the unique morphism $0 \to X$ is a monomorphism: if $f,g : A \rightrightarrows 0$ are morphisms, then $f$ is an isomorphism by strictness, so $A$ is initial and $f = g$. By assumption, $0 \to X$ has a retraction $X \to 0$, which is an isomorphism by strictness. Hence, $X$ is initial, and the unique morphism $0 \to X$ is an isomorphism.

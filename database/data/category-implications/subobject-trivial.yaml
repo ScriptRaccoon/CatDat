@@ -15,14 +15,20 @@
     - thin
   proof: 'If $f,g : X \rightrightarrows Y$ are morphisms, their equalizer is a regular monomorphism $E \hookrightarrow X$, hence an isomorphism. But this means $f = g$.'
 
-- id: subobject-trivial_characterization
+- id: subobject-trivial_regular
   assumptions:
     - subobject-trivial
   conclusions:
-    - mono-regular
     - regular-subobject-trivial
   proof: This is trivial.
-  is_equivalence: true
+
+- id: subobject-trivial_characterization
+  assumptions:
+    - mono-regular
+    - regular-subobject-trivial
+  conclusions:
+    - subobject-trivial
+  proof: This is trivial.
 
 - id: subobject-trivial_groupoids
   assumptions:
