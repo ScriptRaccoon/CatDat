@@ -31,6 +31,12 @@ satisfied_properties:
   - property: skeletal
     proof: The category has exactly one object.
 
+  - property: all epimorphisms split
+    proof: Every epimorphism is a word $w$ in $f,g$ (see below). If $w$ has length $n$, then $w s^n = 1$ since $fs = gs = 1$.
+
+  - property: all monomorphisms split
+    proof: Every monomorphism is of the form $s^n$ (see below), which has the retraction $f^n$ since $fs = 1$.
+
   - property: Cauchy complete
     proof: >-
       We need to show that every idempotent of $D$ splits. For a word $u$ in $f,g$ of length $k$, we have $u s^k = 1$, since every letter of $u$ is a left inverse of $s$.
@@ -42,12 +48,6 @@ satisfied_properties:
 
   - property: core-thin
     proof: We need to prove that $1$ is the only invertible element of $D$. Every isomorphism is a monomorphism and an epimorphism. By the classification of monomorphisms and epimorphisms (see below), the only element that is both is $s^0 = 1$.
-
-  - property: mono-regular
-    proof: By our description of monomorphisms below, every monomorphism has the form $s^n$. Since $s$ is a split monomorphism, so is $s^n$. Every split monomorphism is a regular monomorphism.
-
-  - property: epi-regular
-    proof: By our description of epimorphisms below, every epimorphism is a word in $f,g$. Since $f$ and $g$ are split epimorphisms, so is every word in $f,g$. Every split epimorphism is a regular epimorphism.
 
   - property: coreflexive equalizers
     proof: >-

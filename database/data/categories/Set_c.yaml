@@ -23,6 +23,9 @@ satisfied_properties:
   - property: essentially small
     proof: Every countable set is isomorphic to a subset of $\IN$.
 
+  - property: all epimorphisms split
+    proof: Apply Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\Set_\c \hookrightarrow \Set$, which preserves epimorphisms since these are surjective in both categories (see below), and use that <a href="/category/Set">$\Set$</a> has all epimorphisms split.
+
   - property: finitely complete
     proof: The embedding $\Set_\c \hookrightarrow \Set$ is closed under finite products and equalizers, hence under finite limits.
     check_redundancy: false
@@ -52,9 +55,6 @@ satisfied_properties:
 
   - property: effective congruences
     proof: 'Let $R \rightrightarrows X$ be a congruence in $\Set_\c$. Then using $\{\ast\}$ as a test object, we see that this induces an equivalence relation on $X$. We already know that <a href="/category/Set">$\Set$</a> has effective congruences (as does every topos). Using <a href="/content/effective-congruence-quotients">this result</a>, we see that $R$ is the kernel pair of $X \to (X/R)_{\Set}$ in $\Set$. Also, the quotient $(X/R)_{\Set}$ is countable; and the forgetful functor $\Set_\c \to \Set$ is fully faithful <a href="https://ncatlab.org/nlab/show/reflected+limit#FullSubcategoryInclusionReflectCoLimits">and therefore reflects limits</a>. Thus, we conclude that $R$ is the kernel pair of $X \to (X/R)_{\Set}$ in $\Set_\c$ as well.'
-
-  - property: regular
-    proof: This follows from Lemma 7 <a href="/content/subcategories">here</a> applied to the inclusion functor $\Set_\c \hookrightarrow \Set$ into the regular category $\Set$ and the description of regular epimorphisms below.
 
   - property: coregular
     proof: This follows from the dual of Lemma 7 <a href="/content/subcategories">here</a> applied to the inclusion functor $\Set_\c \hookrightarrow \Set$ into the coregular category $\Set$ and the description of regular monomorphisms below.

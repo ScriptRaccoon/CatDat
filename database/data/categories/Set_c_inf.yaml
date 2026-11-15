@@ -22,6 +22,12 @@ satisfied_properties:
   - property: core-connected
     proof: Every object is isomorphic to $\IN$.
 
+  - property: all epimorphisms split
+    proof: Apply Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\Set_{\c,\infty} \hookrightarrow \Set$, which preserves epimorphisms since these are surjective in both categories (see below), and use that <a href="/category/Set">$\Set$</a> has all epimorphisms split.
+
+  - property: all monomorphisms split
+    proof: Apply the dual of Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\Set_{\c,\infty} \hookrightarrow \Setne$, which preserves monomorphisms since these are injective in both categories (see below), and use that <a href="/category/Setne">$\Setne$</a> has all monomorphisms split.
+
   - property: binary products
     proof: If $X,Y$ are countably infinite sets, then so is $X \times Y$. Hence, the product of $X,Y$ in <a href="/category/Set">$\Set$</a> is also a product in the full subcategory $\Set_{\c,\infty}$.
 
@@ -40,12 +46,6 @@ satisfied_properties:
 
   - property: ℵ₁-filtered
     proof: 'Every diagram $(X_i)_{i \in I}$ in $\Set_{\c,\infty}$ admits a cocone with vertex $\IN$, given by the constant maps $X_i \to \IN$ with value $0$.'
-
-  - property: mono-regular
-    proof: 'Let $f : X \to Y$ be a monomorphism. It is injective (see below), hence a split monomorphism in <a href="/category/Setne">$\Setne$</a>. Since $\Set_{\c,\infty}$ is a full subcategory of $\Setne$, $f$ is a split monomorphism in $\Set_{\c,\infty}$ and therefore a regular monomorphism.'
-
-  - property: epi-regular
-    proof: 'Let $f : X \to Y$ be an epimorphism. It is surjective (see below), hence has a right inverse $s : Y \to X$ (as in <a href="/category/Set">$\Set$</a>). Thus, $f$ is a split epimorphism and therefore a regular epimorphism.'
 
 unsatisfied_properties:
   - property: skeletal

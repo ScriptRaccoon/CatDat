@@ -27,14 +27,14 @@ satisfied_properties:
   - property: strongly connected
     proof: Use constant maps.
 
+  - property: all epimorphisms split
+    proof: Apply Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\FinSet_{3^\bullet} \hookrightarrow \Set$, which preserves epimorphisms since these are surjective in both categories (see below), and use that <a href="/category/Set">$\Set$</a> has all epimorphisms split.
+
+  - property: all monomorphisms split
+    proof: Apply the dual of Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\FinSet_{3^\bullet} \hookrightarrow \Setne$, which preserves monomorphisms since these are injective in both categories (see below), and use that <a href="/category/Setne">$\Setne$</a> has all monomorphisms split.
+
   - property: cartesian closed
     proof: 'We use that <a href="/category/FinSet">$\FinSet$</a> is cartesian closed. Since $\{3^n : n \geq 0\}$ is closed under finite products (we have $3^0=1$ and $3^n 3^m = 3^{n+m}$) and thus under exponentiation, it follows that $\FinSet_{3^\bullet}$ is closed under finite cartesian products and exponential objects in $\FinSet$.'
-
-  - property: mono-regular
-    proof: 'If $f : X \to Y$ is a monomorphism in $\FinSet_{3^\bullet}$, i.e. an injective map (see below), then $f$ is the equalizer of two maps $Y \rightrightarrows \{0,1\}$ in $\Set$, and therefore also of two maps $Y \rightrightarrows \{0,1,2\}$, which thus belong to $\FinSet_{3^\bullet}$.'
-
-  - property: epi-regular
-    proof: 'Let $f : X \to Y$ be an epimorphism in $\FinSet_{3^\bullet}$, i.e. a surjective map (see below). In $\FinSet$, we know that $f$ is the coequalizer of its kernel pair $E \rightrightarrows X$. Since $X$ is non-empty, $E$ is also non-empty. Thus, there is a finite set $F$ whose cardinality is a power of $3$ with a surjection $F \twoheadrightarrow E$. Then $f$ is the coequalizer of $F \rightrightarrows X$ in $\FinSet$, and hence also in $\FinSet_{3^\bullet}$.'
 
   - property: extremal generator
     proof: The set $\{0,1,2\}$ is an extremal generator even in <a href="/category/Set">$\Set$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.

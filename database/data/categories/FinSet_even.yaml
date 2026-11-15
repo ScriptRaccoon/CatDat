@@ -39,15 +39,12 @@ satisfied_properties:
   - property: kernel pairs
     proof: >-
       If $f : X \to Y$ is a map of finite sets with even cardinality, then we claim that its kernel pair in $\FinSet$, the set $\{(x,x') \in X \times X : f(x) = f(x')\}$, also has even cardinality. It decomposes into the diagonal $\{(x,x): x \in X\} \cong X$, which has even cardinality, and the set of pairs $(x,x')$ with $x \neq x'$ and $f(x) = f(x')$. The latter has even cardinality since $C_2$ acts on it via $(x,x') \mapsto (x',x)$ without fixed points.
-    label: FinSet_even_kernel_pairs
-
-  - property: epi-regular
-    proof: The epimorphisms are the surjective maps (see below). In $\FinSet$, a surjective map is the coequalizer of its kernel pair, and we have just seen that $\FinSet_{\even}$ is closed under kernel pairs in $\FinSet$.
-    references:
-      - FinSet_even_kernel_pairs
 
   - property: mono-regular
     proof: 'If $f : X \to Y$ is a monomorphism, i.e. an injective map (see below), then $f$ is the equalizer of two maps $Y \rightrightarrows \{0,1\}$ in $\Set$, and therefore also in $\FinSet_{\even}$.'
+
+  - property: all epimorphisms split
+    proof: Apply Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\FinSet_{\even} \hookrightarrow \Set$, which preserves epimorphisms since these are surjective in both categories (see below), and use that <a href="/category/Set">$\Set$</a> has all epimorphisms split.
 
   - property: extremal generator
     proof: The two-element set is an extremal generator even in <a href="/category/Set">$\Set$</a> because the <a href="/functor/squaring_sets">squaring functor</a> $X \mapsto X^2$ is faithful and conservative. Now apply Lemma 10 <a href="/content/subcategories">here</a>.

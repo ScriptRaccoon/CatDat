@@ -21,6 +21,9 @@ satisfied_properties:
   - property: locally essentially small
     proof: For two families $X$ and $Y$, the collection $\Hom(X,Y) = \prod_{i \in I} \Hom(X_i,Y_i)$ is isomorphic to $\prod_{i \in S(Y)} \Hom(X_i,Y_i)$, which is essentially small since $S(Y)$ and each $\Hom(X_i,Y_i)$ are essentially small.
 
+  - property: all epimorphisms split
+    proof: Every epimorphism is a family of surjective maps (see below) and therefore has a section by the axiom of choice.
+
   - property: complete
     proof: 'Since <a href="/category/Set">$\Set$</a> is complete, the product category $\Set^I$ is complete with pointwise limits. (The size of the index collection does not matter.) Thus, it only remains to check that $\Set^{(I)}_1$ is closed under limits, which are small by convention. Let $D : \J \to \Set^{(I)}_1$ be a small diagram and let $L$ be its limit in $\Set^I$. Thus, $L_i = \lim_{j \in \J} D(j)_i$. Consider the collection $\bigcup_{j \in \J} S(D(j))$, which is essentially small. For any index $i$ outside this collection, $L_i$ is a limit of singletons and hence a singleton. Thus, $S(L) \subseteq \bigcup_{j \in \J} S(D(j))$, and hence $S(L)$ is essentially small.'
 
@@ -61,6 +64,9 @@ unsatisfied_properties:
 
   - property: semi-strongly connected
     proof: This is because <a href="/category/SetxSet">$\Set \times \Set$</a> can be embedded into $\Set^{(I)}_1$ by extending each pair of sets with singletons, and we know that $\Set \times \Set$ is not semi-strongly connected.
+
+  - property: all monomorphisms split
+    proof: Choose an index $j \in I$, and let $X$ be the family with $X_j = \varnothing$ and $X_i = \{\ast\}$ for $i \neq j$. The unique morphism from $X$ to the terminal family $(\{\ast\})_{i \in I}$ is a monomorphism (see below). It has no retraction, since there is no map $\{\ast\} \to \varnothing$.
 
   - property: locally small
     proof: The proof is identical to the proof for <a href="/category/Vect_family_mostly_0">$\Vect^{(I)}$</a>. However, this result is not relevant for category theory; only the fact that the category is locally essentially small matters.

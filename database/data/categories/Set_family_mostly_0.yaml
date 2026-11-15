@@ -25,6 +25,9 @@ satisfied_properties:
   - property: concretizable
     proof: The functor $\Set^{(I)}_0 \to \Set^+$, $X \mapsto \coprod_{i \in I} X_i$ is faithful. Since $\coprod_{i \in I} X_i \cong \coprod_{i \in \supp(X)} X_i$ is essentially small, it yields a faithful functor $\Set^{(I)}_0 \to \Set$.
 
+  - property: all epimorphisms split
+    proof: Every epimorphism is a family of surjective maps (see below) and therefore has a section by the axiom of choice.
+
   - property: cocomplete
     proof: 'Since <a href="/category/Set">$\Set$</a> is cocomplete, the product category $\Set^I$ is cocomplete with pointwise colimits. (The size of the index collection does not matter.) Thus, it only remains to check that $\Set^{(I)}_0$ is closed under colimits, which are small by convention. Let $D : \J \to \Set^{(I)}_0$ be a small diagram and let $C$ be its colimit in $\Set^I$. Thus, $C_i = \colim_{j \in \J} D(j)_i$. Consider the collection $\bigcup_{j \in \J} \supp(D(j))$, which is essentially small. For any index $i$ outside this collection, $C_i$ is a colimit of empty sets and hence empty. Thus, $\supp(C) \subseteq \bigcup_{j \in \J} \supp(D(j))$, and hence $\supp(C)$ is essentially small.'
     check_redundancy: false
@@ -51,9 +54,6 @@ satisfied_properties:
       We see
       $$\supp([Y \to X, Z \to X]) \subseteq \supp(X).$$
       In particular, if $\supp(X)$ is essentially small, then $\supp([Y \to X, Z \to X])$ is also essentially small. Thus, if $X \in \Set^{(I)}_0$, then the full subcategory $\Set^{(I)}_0 / X$ of $\Set^I / X$ is closed under exponentials and is therefore also cartesian closed.
-
-  - property: epi-regular
-    proof: We claim that every epimorphism $X \to Y$ is the coequalizer of its kernel pair $X \times_Y X \rightrightarrows X$. This is because every component $X_i \to Y_i$ is surjective (see the classification of epimorphisms below), the statement holds in <a href="/category/Set">$\Set$</a>, and coequalizers and pullbacks are constructed pointwise.
 
   - property: filtered-colimit-stable monomorphisms
     proof: Since filtered colimits are constructed pointwise and the monomorphisms are precisely the morphisms that are pointwise injective (see below), this property is inherited from <a href="/category/Set">$\Set$</a>.

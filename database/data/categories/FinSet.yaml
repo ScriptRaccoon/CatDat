@@ -32,6 +32,9 @@ satisfied_properties:
   - property: essentially countable
     proof: Every finite set is isomorphic to $\{1,\dotsc,n\}$ for some $n \in \IN$.
 
+  - property: all epimorphisms split
+    proof: Apply Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\FinSet \hookrightarrow \Set$, which preserves epimorphisms since these are surjective in both categories (see below), and use that <a href="/category/Set">$\Set$</a> has all epimorphisms split.
+
   - property: extremal generator
     proof: The one-point set is an extremal generator even in <a href="/category/Set">$\Set$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
 

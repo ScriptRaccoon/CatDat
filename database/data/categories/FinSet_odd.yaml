@@ -24,6 +24,12 @@ satisfied_properties:
   - property: essentially countable
     proof: This property is inherited from <a href="/category/FinSet">$\FinSet$</a>.
 
+  - property: all epimorphisms split
+    proof: Apply Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\FinSet_{\odd} \hookrightarrow \Set$, which preserves epimorphisms since these are surjective in both categories (see below), and use that <a href="/category/Set">$\Set$</a> has all epimorphisms split.
+
+  - property: all monomorphisms split
+    proof: Apply the dual of Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\FinSet_{\odd} \hookrightarrow \Setne$, which preserves monomorphisms since these are injective in both categories (see below), and use that <a href="/category/Setne">$\Setne$</a> has all monomorphisms split.
+
   - property: strongly connected
     proof: Use constant maps.
 
@@ -33,15 +39,6 @@ satisfied_properties:
   - property: kernel pairs
     proof: >-
       If $f : X \to Y$ is a map of finite sets with odd cardinality, then we claim that its kernel pair in $\FinSet$, the set $\{(x,x') \in X \times X : f(x) = f(x')\}$, also has odd cardinality. It decomposes into the diagonal $\{(x,x): x \in X\} \cong X$, which has odd cardinality, and the set of pairs $(x,x')$ with $x \neq x'$ and $f(x) = f(x')$. The latter has even cardinality since $C_2$ acts on it via $(x,x') \mapsto (x',x)$ without fixed points. Now use that "odd + even = odd".
-    label: FinSet_odd_kernel_pairs
-
-  - property: epi-regular
-    proof: The epimorphisms are the surjective maps (see below). In $\FinSet$, a surjective map is the coequalizer of its kernel pair, and we have just seen that $\FinSet_{\odd}$ is closed under kernel pairs in $\FinSet$.
-    references:
-      - FinSet_odd_kernel_pairs
-
-  - property: mono-regular
-    proof: 'If $f : X \to Y$ is a monomorphism in $\FinSet_{\odd}$, i.e. an injective map (see below), then $f$ is the equalizer of two maps $Y \rightrightarrows \{0,1\}$ in $\Set$, and therefore also of two maps $Y \rightrightarrows \{0,1,2\}$, which thus belong to $\FinSet_{\odd}$.'
 
   - property: extremal generator
     proof: The set $\{0\}$ is an extremal generator even in <a href="/category/Set">$\Set$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
