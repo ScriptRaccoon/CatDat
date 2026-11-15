@@ -24,6 +24,8 @@
 		tags: string[]
 		examples: StructureShort[]
 		counterexamples: StructureShort[]
+		deduced_examples_count: number
+		deduced_counterexamples_count: number
 		unknown_structures: StructureShort[]
 		undecidable_structures: StructureShort[]
 		relevant_implications: ImplicationDisplay[]
@@ -36,10 +38,18 @@
 		tags,
 		examples,
 		counterexamples,
+		deduced_examples_count,
+		deduced_counterexamples_count,
 		unknown_structures,
 		undecidable_structures,
 		relevant_implications
 	}: Props = $props()
+
+	function deduced_note(total: number, deduced: number) {
+		if (total === 0) return ''
+		if (deduced < total) return ` (${deduced} deduced)`
+		return total === 1 ? ' (deduced)' : ' (all deduced)'
+	}
 </script>
 
 <MetaData title={property.id} description="Discover this property of {PLURALS[type]}" />
@@ -109,8 +119,8 @@
 
 <p class="hint">
 	{pluralize(examples.length, {
-		one: `There is {count} ${remove_underscores(type)} with this property.`,
-		other: `There are {count} ${PLURALS[type]} with this property.`
+		one: `There is {count} ${remove_underscores(type)} with this property${deduced_note(examples.length, deduced_examples_count)}.`,
+		other: `There are {count} ${PLURALS[type]} with this property${deduced_note(examples.length, deduced_examples_count)}.`
 	})}
 </p>
 
@@ -120,8 +130,8 @@
 
 <p class="hint">
 	{pluralize(counterexamples.length, {
-		one: `There is {count} ${remove_underscores(type)} without this property.`,
-		other: `There are {count} ${PLURALS[type]} without this property.`
+		one: `There is {count} ${remove_underscores(type)} without this property${deduced_note(counterexamples.length, deduced_counterexamples_count)}.`,
+		other: `There are {count} ${PLURALS[type]} without this property${deduced_note(counterexamples.length, deduced_counterexamples_count)}.`
 	})}
 </p>
 
