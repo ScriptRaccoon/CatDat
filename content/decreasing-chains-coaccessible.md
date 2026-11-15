@@ -22,3 +22,15 @@ Now let $Y$ be any object. Since $\C$ is $\kappa$-coaccessible, $Y$ is a limit o
 $$\textstyle \Hom(T,Y) \cong \lim_i \Hom(T,X_i).$$
 By the first part, each $\Hom(T,X_i)$ has at most one element (exactly one element if every $p \circ d_\alpha$ is a split epimorphism), and hence so does their limit.
 :::
+
+In many applications, the diagram $D$ is the image of the tails of $\kappa$ under a functor defined on $\Set$. For a regular cardinal $\kappa$ and $\alpha < \kappa$, we write $\kappa_{\geq \alpha} \coloneqq \{\beta < \kappa : \beta \geq \alpha\}$.
+
+::: Corollary
+Let $\C$ be a coaccessible category, and let $F : \Set \to \C$ be a functor. Assume that for every regular cardinal $\kappa$, if the diagram $(\kappa,\geq) \to \C$, $\alpha \mapsto F(\kappa_{\geq \alpha})$ with the images of the inclusions has a limit, then this limit is an initial object. Then $F(\{\ast\})$ is initial.
+:::
+
+The assumption on the limits holds, for example, if $F$ preserves limits of this shape and $F(\varnothing)$ is initial, since the limit of the sets $\kappa_{\geq \alpha}$ in $\Set$ is $\bigcap_{\alpha < \kappa} \kappa_{\geq \alpha} = \varnothing$.
+
+::: Proof
+Let $\kappa$ be a regular cardinal such that $\C$ is $\kappa$-coaccessible, and let $D : (\kappa,\geq) \to \C$ be the diagram $\alpha \mapsto F(\kappa_{\geq \alpha})$. Since $\C$ has $\kappa$-cofiltered limits, $D$ has a limit, which is initial by assumption. Let $p : D(0) \to F(\{\ast\})$ be the image under $F$ of the unique map $\kappa \to \{\ast\}$. For $\alpha < \kappa$, the composite $p \circ d_\alpha$ is the image under $F$ of the unique map $\kappa_{\geq \alpha} \to \{\ast\}$. This map is a split epimorphism in $\Set$ since $\kappa_{\geq \alpha}$ is non-empty, and every functor preserves split epimorphisms. By the lemma, $F(\{\ast\})$ is initial.
+:::

@@ -258,7 +258,7 @@ unsatisfied_properties:
 
   - property: coaccessible
     proof: >-
-      Assume that $\omegaSet$ is $\kappa$-coaccessible for a regular cardinal $\kappa$. For $\alpha < \kappa$, let $D(\alpha) \coloneqq \nabla \{ \beta \mid \alpha \leq \beta < \kappa \}$. The inclusions $D(\alpha') \hookrightarrow D(\alpha)$ for $\alpha \leq \alpha'$ form a diagram $D : (\kappa,\geq) \to \omegaSet$. Since $\nabla : \Set \to \omegaSet$ is a right adjoint, it preserves limits, so that the limit of $D$ is $\nabla$ applied to the intersection $\bigcap_{\alpha < \kappa} \{ \beta \mid \alpha \leq \beta < \kappa \} = \varnothing$, which is the initial object $(\varnothing, \varnothing)$. Let $p : D(0) \to \nabla \{\ast\}$ be the morphism to the terminal object. For every $\alpha < \kappa$, the composite $D(\alpha) \hookrightarrow D(0) \to \nabla \{\ast\}$ has a surjective underlying function, since $D(\alpha)$ is non-empty, and hence is an epimorphism (see below). By the lemma <a href="/content/decreasing-chains-coaccessible">here</a>, every $\omega$-set admits at most one morphism from the terminal object. Since the forgetful functor $\omegaSet \to \Set$ is representable by the terminal object, this means that every $\omega$-set has at most one element. This is a contradiction.
+      Apply the corollary <a href="/content/decreasing-chains-coaccessible">here</a> to the functor $\nabla : \Set \to \omegaSet$. It preserves limits since it is a right adjoint, and $\nabla(\varnothing) = (\varnothing,\varnothing)$ is initial. Moreover, $\nabla \{\ast\}$ is not initial.
 
   - property: extremal generator
     proof: >-

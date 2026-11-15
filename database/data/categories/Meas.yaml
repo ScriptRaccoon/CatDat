@@ -149,7 +149,7 @@ unsatisfied_properties:
 
   - property: coaccessible
     proof: >-
-      Assume that $\Meas$ is $\kappa$-coaccessible for a regular cardinal $\kappa$. For $\alpha < \kappa$, let $D(\alpha)$ be the set $\{ \beta \mid \alpha \leq \beta < \kappa \}$ equipped with the discrete $\sigma$-algebra. The inclusions $D(\alpha') \hookrightarrow D(\alpha)$ for $\alpha \leq \alpha'$ form a diagram $D : (\kappa,\geq) \to \Meas$. Its limit is the empty measurable space, which is the initial object. Indeed, if $(f_\alpha : Y \to D(\alpha))_{\alpha < \kappa}$ is a cone, then every $f_\alpha$ agrees with $f_0$ as a map to $D(0)$, so that the image of $f_0$ is contained in $\bigcap_{\alpha < \kappa} D(\alpha) = \varnothing$, and hence $Y = \varnothing$. Let $p : D(0) \to \{\ast\}$ be the map to the terminal object. For every $\alpha < \kappa$, the composite $D(\alpha) \hookrightarrow D(0) \to \{\ast\}$ is surjective, since $D(\alpha)$ is non-empty, and hence an epimorphism. By the lemma <a href="/content/decreasing-chains-coaccessible">here</a>, every measurable space admits at most one measurable map from $\{\ast\}$, which means that it has at most one point. This is a contradiction.
+      Apply the corollary <a href="/content/decreasing-chains-coaccessible">here</a> to the functor $F : \Set \to \Meas$ that equips a set with the discrete $\sigma$-algebra. Here, $F(\{\ast\})$ is not initial. Let $\kappa$ be a regular cardinal. Since $\Meas$ is complete and the forgetful functor $\Meas \to \Set$ preserves limits, the limit of the measurable spaces $F(\kappa_{\geq \alpha})$ has the underlying set $\bigcap_{\alpha < \kappa} \kappa_{\geq \alpha} = \varnothing$. Hence, it is the empty measurable space, which is initial.
 
 special_objects:
   initial object:
