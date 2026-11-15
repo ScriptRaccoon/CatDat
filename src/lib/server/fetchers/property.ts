@@ -85,9 +85,9 @@ export function fetch_property(type: StructureType, id: string) {
 	const known_structures = db
 		.prepare<
 			[StructureType, string],
-			StructureShort & { is_satisfied: 0 | 1 | null }
+			StructureShort & { is_satisfied: 0 | 1 | null; is_deduced: 0 | 1 }
 		>(
-			`SELECT s.id, s.name, pa.is_satisfied
+			`SELECT s.id, s.name, pa.is_satisfied, pa.is_deduced
             FROM property_assignments pa
             INNER JOIN structures s ON s.id = pa.structure_id
             WHERE s.type = ? AND pa.property_id = ?
@@ -110,6 +110,11 @@ export function fetch_property(type: StructureType, id: string) {
 	const counterexamples = known_structures.filter((f) => f.is_satisfied === 0)
 	const undecidable_structures = known_structures.filter((f) => f.is_satisfied === null)
 
+	const deduced_examples_count = examples.filter((f) => f.is_deduced).length
+	const deduced_counterexamples_count = counterexamples.filter(
+		(f) => f.is_deduced
+	).length
+
 	for (const impl of relevant_implications) {
 		if (!impl.is_equivalence && impl.conclusions.includes(id)) {
 			impl.conclusions = [id]
@@ -123,6 +128,8 @@ export function fetch_property(type: StructureType, id: string) {
 		tags,
 		examples,
 		counterexamples,
+		deduced_examples_count,
+		deduced_counterexamples_count,
 		unknown_structures,
 		undecidable_structures,
 		relevant_implications
