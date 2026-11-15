@@ -150,6 +150,7 @@
 \Pos: \mathbf{Pos}
 \PreOrd: \mathbf{PreOrd}
 \FinOrd: \mathbf{FinOrd}
+\Ord: \mathbf{Ord}
 \FinSet: \mathbf{FinSet}
 \FI: \mathbf{FI}
 \FS: \mathbf{FS}

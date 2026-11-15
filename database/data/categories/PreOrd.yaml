@@ -15,6 +15,7 @@ tags:
 
 related:
   - Pos
+  - Ord
   - Cat
   - Bin
   - Bin_refl
