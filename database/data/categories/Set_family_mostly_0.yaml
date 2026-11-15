@@ -68,9 +68,6 @@ satisfied_properties:
     proof: The monomorphisms $X \to Y$ are precisely the morphisms that are pointwise injective (see below). If $X_i \to Y_i$ is injective and $Y_i = \varnothing$, then also $X_i = \varnothing$. It follows that the collection $\Sub(Y) \cong \prod_{i \in \supp(Y)} \Sub(Y_i)$ is essentially small.
     check_redundancy: false
 
-  - property: well-copowered
-    proof: The epimorphisms $X \to Y$ are precisely the morphisms that are pointwise surjective (see below). If $X_i \to Y_i$ is surjective and $X_i = \varnothing$, then also $Y_i = \varnothing$. It follows that the collection $\Quot(X) \cong \prod_{i \in \supp(X)} \Quot(X_i)$ is essentially small.
-
   - property: effective congruences
     proof: Let $R \rightrightarrows X$ be a congruence in $\Set^{(I)}_0$. We claim that it is the kernel pair of its coequalizer $X \twoheadrightarrow X/R$. This certainly holds in <a href="/category/Set">$\Set$</a>, and for every $i \in I$, the pair $R_i \rightrightarrows X_i$ is a congruence in $\Set$. Therefore, the claim follows since kernel pairs (in fact, all connected limits) and coequalizers (in fact, all colimits) are constructed pointwise.
 

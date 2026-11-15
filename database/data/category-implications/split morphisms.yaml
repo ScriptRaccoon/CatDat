@@ -7,6 +7,15 @@
     - mono-regular
   proof: This follows from the fact that every split monomorphism is a regular monomorphism; see <a href="/morphism-implication/split_mono_is_regular_mono">this result</a>.
 
+- id: all_monos_split_well-powered
+  assumptions:
+    - locally essentially small
+    - all monomorphisms split
+  conclusions:
+    - well-powered
+  proof: >-
+    Let $X$ be an object. By assumption and <a href="/morphism-implication/split_mono_is_regular_mono">this result</a> and its proof, every monomorphism with codomain $X$ is an equalizer of $\id_X$ and some idempotent morphism $X \to X$. Since $\Hom(X,X)$ is essentially small, it follows that the collection of subobjects of $X$ is essentially small.
+
 - id: subobject-trivial_all_monos_split
   assumptions:
     - subobject-trivial

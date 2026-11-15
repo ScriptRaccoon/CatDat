@@ -49,9 +49,6 @@ satisfied_properties:
   - property: pushout-stable regular monomorphisms
     proof: 'Apply Lemma 14 <a href="/content/subcategories">here</a> to the inclusion $\Set^{(I)}_1 \to \Set^I$, which preserves pushouts and regular monomorphisms by their pointwise descriptions. Here, we use that <a href="/category/Set_family">$\Set^I$</a> has pushout-stable regular monomorphisms.'
 
-  - property: well-copowered
-    proof: The epimorphisms $X \to Y$ are precisely the morphisms that are pointwise surjective (see below). If $X_i \to Y_i$ is surjective and $X_i$ is a singleton, then $Y_i$ is a singleton as well. It follows that the collection $\Quot(X) \cong \prod_{i \in S(X)} \Quot(X_i)$ is essentially small.
-
   - property: effective congruences
     proof: Let $R \rightrightarrows X$ be a congruence in $\Set^{(I)}_1$. We claim that it is the kernel pair of its coequalizer $X \twoheadrightarrow X/R$. This certainly holds in <a href="/category/Set">$\Set$</a>, and for every $i \in I$, the pair $R_i \rightrightarrows X_i$ is a congruence in $\Set$. Therefore, the claim follows since kernel pairs (in fact, all limits) and coequalizers (in fact, all connected colimits) are constructed pointwise.
 
@@ -64,9 +61,6 @@ unsatisfied_properties:
 
   - property: semi-strongly connected
     proof: This is because <a href="/category/SetxSet">$\Set \times \Set$</a> can be embedded into $\Set^{(I)}_1$ by extending each pair of sets with singletons, and we know that $\Set \times \Set$ is not semi-strongly connected.
-
-  - property: all monomorphisms split
-    proof: Choose an index $j \in I$, and let $X$ be the family with $X_j = \varnothing$ and $X_i = \{\ast\}$ for $i \neq j$. The unique morphism from $X$ to the terminal family $(\{\ast\})_{i \in I}$ is a monomorphism (see below). It has no retraction, since there is no map $\{\ast\} \to \varnothing$.
 
   - property: locally small
     proof: The proof is identical to the proof for <a href="/category/Vect_family_mostly_0">$\Vect^{(I)}$</a>. However, this result is not relevant for category theory; only the fact that the category is locally essentially small matters.
