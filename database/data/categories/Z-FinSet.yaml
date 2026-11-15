@@ -51,6 +51,9 @@ unsatisfied_properties:
   - property: countable
     proof: For every set $X$ this category contains the terminal object $(\{X\},\id)$.
 
+  - property: all epimorphisms split
+    proof: 'Let $\sigma : \{0,1\} \to \{0,1\}$ be the permutation that swaps $0$ and $1$. The unique morphism $(\{0,1\},\sigma) \to (\{\ast\},\id)$ is surjective, hence an epimorphism (see below). It has no section, since $\sigma$ has no fixed point.'
+
   - property: cogenerator
     proof: >-
       Assume that $(Q,\rho)$ is a cogenerator of $\IZ{-}\FinSet$. Choose $k \geq 1$ with $\rho^k = \id_Q$. Now consider the finite set $X = \{0,1,\dotsc,2k-1\}$ equipped with the permutation $\sigma$ defined by $\sigma(x) = (x+1) \bmod 2k$. The object $(X,\sigma)$ has a non-trivial endomorphism $g$ defined by $g(x) = (x+k) \bmod 2k$, i.e. $g = \sigma^k$. Since $(Q,\rho)$ is a cogenerator, there is a morphism $f : (X,\sigma) \to (Q,\rho)$ with $f \circ g \neq f$. But since $f$ is a morphism, we have

@@ -3,8 +3,7 @@ name: category of Jónsson-Tarski algebras
 notation: $\J_2$
 objects: 'pairs $(X,\alpha)$, where $X$ is a set and $\alpha : X \to X \times X$ is an isomorphism'
 morphisms: >-
-  A morphism $(X,\alpha) \to (Y,\beta)$ is a map $f : X \to Y$ satisfying
-  $$(f \times f) \circ \alpha = \beta \circ f.$$
+  A morphism $(X,\alpha) \to (Y,\beta)$ is a map $f : X \to Y$ satisfying $(f \times f) \circ \alpha = \beta \circ f$.
 description: Jónsson-Tarski algebras are also known as <i>Cantor algebras</i>. This is an interesting example of a category in the intersection of topos theory and algebra.
 nlab_link: https://ncatlab.org/nlab/show/J%C3%B3nsson-Tarski+algebra
 keywords:
@@ -40,6 +39,12 @@ unsatisfied_properties:
       Then $\alpha(0)=(0,1)$, i.e. $\lambda(0)=0$. The function $\rho$ has no fixed point, i.e. $\alpha^{-1}(n,m) \neq m$ for all $n,m$. Namely, if $(n,m)=(0,0)$, then $\alpha^{-1}(n,m)=2 \neq m$. If $(n,m)=(0,1)$, then $\alpha^{-1}(n,m)=0 \neq m$. Otherwise,
       $$\alpha^{-1}(n,m) = 2^n (2m+1) - 1 \geq (2m+1)-1 = 2m \geq m,$$
       and equality can only hold if $m=0$ and $n=0$, which we already excluded.
+    label: J2_bijection_without_fixed_point
+
+  - property: all epimorphisms split
+    proof: 'Let $\alpha = (\lambda,\rho) : \IN \to \IN \times \IN$ be the bijection from the proof that $\J_2$ is not semi-strongly connected, for which $\rho$ has no fixed point. The unique morphism $(\IN,\alpha) \to (\{\ast\},!)$ is surjective, hence an epimorphism (see below). A section would be given by an element $x \in \IN$ with $\alpha(x) = (x,x)$, which is impossible since $\rho(x) \neq x$.'
+    references:
+      - J2_bijection_without_fixed_point
 
 special_objects:
   initial object:

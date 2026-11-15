@@ -46,6 +46,9 @@ unsatisfied_properties:
   - property: semi-strongly connected
     proof: 'For $n \geq 0$ let $E_n$ be the combinatorial species of $n$-sets: $E_n(A) = \{A\}$ when $A$ has cardinality $n$, otherwise $E_n(A) = \varnothing$. Then there is no morphism between $E_n$ and $E_m$ unless $n = m$.'
 
+  - property: all epimorphisms split
+    proof: 'Let $L$ be the species with $L(A)$ the set of linear orders on $A$ if $A$ has two elements and $L(A) = \varnothing$ otherwise, and let $E$ be the species with $E(A) = \{\ast\}$ if $A$ has two elements and $E(A) = \varnothing$ otherwise. The unique morphism $L \to E$ is pointwise surjective, hence an epimorphism (see below). A section $s : E \to L$ would give a linear order $s(\ast)$ on $\{0,1\}$ that is invariant under the transposition of $0$ and $1$ by naturality, which is impossible.'
+
   - property: generator
     proof: >-
       Assume that a generator $G$ exists. For $n \geq 0$ let $F_n$ be the combinatorial species of sets of cardinality $\neq n$: $F_n(A) = \varnothing$ when $A$ has cardinality $n$, otherwise $F_n(A) = \{A\}$. There are two different morphisms $F_n \rightrightarrows F_n \sqcup F_n$. Hence, there must be at least one morphism $G \to F_n$. If $A$ has cardinality $n$, this implies $G(A) = \varnothing$. Since this holds for all $n$, $G$ is the initial object. But this is clearly no generator (it would mean that the category is thin).

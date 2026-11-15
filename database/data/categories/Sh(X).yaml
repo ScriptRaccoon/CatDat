@@ -38,6 +38,10 @@ unsatisfied_properties:
       $$y_U(V) = \begin{cases} \{\ast\}, & V \subseteq U; \\ \varnothing & \text{otherwise} \end{cases}$$
       with the unique restriction maps; and $y_U$ represents the functor $\Gamma(U, {-})$ of sections over $U$.) Therefore, the lemma implies that every open set of $X$ is either $\varnothing$ or $X$, contradicting our assumption that $X$ does not have the indiscrete topology.
 
+undecidable_properties:
+  - property: all epimorphisms split
+    proof: This depends on the space $X$. If $X$ is the Sierpiński space, then $\Sh(X)$ is equivalent to <a href="/category/Set_arrow">$\Set^{\rightarrow}$</a>, which does not have all epimorphisms split. If $X = \{0,1,2\}$ with the open sets $\varnothing, \{0,1\}, \{2\}, X$, then a sheaf $F$ on $X$ is determined by $F(\{0,1\})$ and $F(\{2\})$, so that $\Sh(X) \simeq \Set \times \Set$, which has all epimorphisms split.
+
 special_objects:
   initial object:
     description: constant sheaf with value $\varnothing$, sending all non-empty open sets to $\varnothing$ and the empty set to a singleton

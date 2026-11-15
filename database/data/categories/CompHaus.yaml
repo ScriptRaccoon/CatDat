@@ -66,6 +66,9 @@ unsatisfied_properties:
   - property: skeletal
     proof: The spaces with underlying sets $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.
 
+  - property: all epimorphisms split
+    proof: 'The continuous map $\{0,1\}^\IN \to [0,1]$, $(a_n)_{n \in \IN} \mapsto \sum_{n \in \IN} a_n 2^{-(n+1)}$ is surjective, since every real number in $[0,1)$ has a binary expansion (see <a href="https://proofwiki.org/wiki/Existence_of_Base-N_Representation">ProofWiki</a>) and $1$ is the image of the constant sequence with value $1$, hence an epimorphism (see below). It has no section: every continuous map $[0,1] \to \{0,1\}^\IN$ is constant, since $[0,1]$ is connected and $\{0,1\}^\IN$ is totally disconnected.'
+
   - property: Malcev
     proof: 'Apply the contrapositive of Lemma 13 <a href="/content/subcategories">here</a> to the inclusion of finite discrete spaces $\FinSet \to \CompHaus$, which is fully faithful and preserves finite limits. Here, we use that <a href="/category/FinSet">$\FinSet$</a> is not Malcev.'
 

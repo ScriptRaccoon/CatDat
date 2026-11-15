@@ -78,6 +78,9 @@ unsatisfied_properties:
   - property: skeletal
     proof: The quivers whose vertex set and edge set are both $\{0\}$, respectively both $\{1\}$, are terminal objects, hence isomorphic, but not equal.
 
+  - property: all epimorphisms split
+    proof: Let $Q$ be the quiver with two vertices and one edge between them, and let $T$ be the terminal quiver, which has one vertex and one loop. The unique morphism $Q \to T$ is surjective on vertices and edges, hence an epimorphism (see below). It has no section, since $Q$ has no loop.
+
   - property: semi-strongly connected
     proof: We can recycle the proof from <a href="/category/Quiv">$\Quiv$</a>, which only uses finite auxiliary quivers.
     references:
