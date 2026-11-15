@@ -77,6 +77,8 @@ A morphism $\alpha : F \to G$ in $\widehat{\C}$ is a monomorphism (resp. epimorp
 The direction $\impliedby$ is trivial in each case. For the direction $\implies$, the evaluation functor $\ev_X : \widehat{\C} \to \Set$ is continuous by Lemma 4 and therefore preserves monomorphisms. Furthermore, it is also cocontinuous by Lemma 3 and therefore preserves epimorphisms.
 :::
 
+**Remark.** By [this lemma](/content/split-epis-functor-categories), every epimorphism in $\widehat{\C}$ is split only if $\C$ is essentially discrete.
+
 ::: Lemma 6
 If $\C$ is a locally small category, then $\widehat{\C}$ is mono-regular. Actually, every monomorphism is an effective monomorphism. Moreover, monomorphisms are stable under filtered colimits and pushouts.
 :::
