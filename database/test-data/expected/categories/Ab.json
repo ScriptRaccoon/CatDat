@@ -136,6 +136,8 @@
 		"ℵ₂-small products"
 	],
 	"unsatisfied": [
+		"all epimorphisms split",
+		"all monomorphisms split",
 		"cartesian closed",
 		"co-Grothendieck abelian",
 		"coaccessible",

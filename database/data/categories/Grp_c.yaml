@@ -76,6 +76,9 @@ unsatisfied_properties:
   - property: small
     proof: Even the collection of all trivial groups is not a set, since every set $X$ yields a trivial group with underlying set $\{X\}$.
 
+  - property: all epimorphisms split
+    proof: Apply the contrapositive of Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\Ab_\fg \hookrightarrow \Grp_\c$, which preserves epimorphisms since these are surjective in both categories (see below), and use that <a href="/category/Ab_fg">$\Ab_\fg$</a> does not have all epimorphisms split.
+
   - property: normal
     proof: Every non-normal subgroup of a countable group (such as $C_2 \hookrightarrow S_3$) provides a counterexample.
 

@@ -29,6 +29,9 @@ satisfied_properties:
   - property: additive
     proof: The category is closed under finite direct sums in <a href="/category/R-Mod">$R{-}\Mod$</a>, which is additive.
 
+  - property: all epimorphisms split
+    proof: This holds by the classification of epimorphisms (see below).
+
   - property: extremal generator
     proof: The module $R$ is an extremal generator, even in <a href="/category/R-Mod">$R{-}\Mod$</a>.
 

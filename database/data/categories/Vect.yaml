@@ -22,8 +22,8 @@ related:
   - Vect_family_mostly_0
 
 satisfied_properties:
-  - property: split abelian
-    proof: That $\Vect$ is abelian is a standard fact; see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician">Mac Lane</a>, Ch. VIII. Furthermore, it is a fact from linear algebra that every subspace has a complement, which is why every short exact sequence splits.
+  - property: all monomorphisms split
+    proof: Every monomorphism is an injective linear map, which splits since its image has a complement by linear algebra.
     check_redundancy: false
 
   - property: extremal generator

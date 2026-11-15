@@ -29,9 +29,10 @@ related:
 satisfied_properties: []
 
 unsatisfied_properties:
-  - property: split abelian
-    proof: The short exact sequence $0 \xrightarrow{} \IZ \xrightarrow{p} \IZ \xrightarrow{} \IZ/p \xrightarrow{} 0$ does not split.
+  - property: all epimorphisms split
+    proof: The quotient homomorphism $\IZ \to \IZ/2$ does not split, since every homomorphism $\IZ/2 \to \IZ$ is trivial.
     check_redundancy: false
+    label: Ab_non-split_epimorphism
 
 special_objects:
   initial object:

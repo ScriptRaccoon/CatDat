@@ -57,6 +57,9 @@ unsatisfied_properties:
   - property: skeletal
     proof: The trivial groups with underlying sets $\{0\}$ and $\{1\}$ are zero objects, hence isomorphic, but not equal.
 
+  - property: all epimorphisms split
+    proof: Apply the contrapositive of Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\Ab \hookrightarrow \Grp$, which preserves epimorphisms since these are surjective in both categories (see below), and use that <a href="/category/Ab">$\Ab$</a> does not have all epimorphisms split.
+
   - property: normal
     proof: Every non-normal subgroup (such as $C_2 \hookrightarrow S_3$) provides a counterexample.
 

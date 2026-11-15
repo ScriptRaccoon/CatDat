@@ -37,8 +37,14 @@ unsatisfied_properties:
     proof: The canonical homomorphism $\bigoplus_{n \geq 0} R \to \prod_{n \geq 0} R$ is not surjective, hence no epimorphism.
 
 undecidable_properties:
+  - property: all epimorphisms split
+    proof: The category $R{-}\Mod$ has all epimorphisms split if and only if every $R$-module is projective, i.e. $R$ is semisimple; see <a href="https://doi.org/10.1007/978-1-4419-8616-0">Lam</a>, Theorem 2.5. For example, <a href="/category/Vect">$\Vect_K$</a> has all epimorphisms split, while <a href="/category/Ab">$\Ab$</a> does not.
+
   - property: split abelian
-    proof: The category $R{-}\Mod$ is split abelian if and only if $R$ is semisimple. See <a href="https://doi.org/10.1007/978-1-4419-8616-0">Lam</a>, Theorem 2.5. For example, <a href="/category/Vect">$\Vect_K$</a> is split abelian, while <a href="/category/Ab">$\Ab$</a> is not.
+    proof: Since the category is abelian, this is equivalent to having all epimorphisms split, which is undecidable.
+
+  - property: all monomorphisms split
+    proof: Since the category is abelian, this is equivalent to having all epimorphisms split, which is undecidable.
 
 special_objects:
   initial object:
