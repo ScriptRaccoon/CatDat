@@ -174,3 +174,11 @@ Let $U : \C \to \D$ be a fully faithful functor between categories with pushouts
 ::: Proof
 Let $m : X \to Y$ be a regular monomorphism and $X \to Z$ a morphism in $\C$, and let $m' : Z \to Z \sqcup_X Y$ be the induced morphism. Since $U$ preserves pushouts, $U(m')$ is the pushout of the regular monomorphism $U(m)$ along $U(X) \to U(Z)$, hence a regular monomorphism. Since $U$ preserves pushouts, it preserves cokernel pairs. By the dual of Lemma 12, $m'$ is a regular monomorphism.
 :::
+
+::: Lemma 15
+Let $U : \C \to \D$ be a fully faithful functor that preserves epimorphisms. If every epimorphism in $\D$ is split, then the same holds in $\C$.
+:::
+
+::: Proof
+If $p$ is an epimorphism in $\C$, then $U(p)$ is an epimorphism in $\D$ and therefore has a section. Since $U$ is fully faithful, this section is the image of a section of $p$.
+:::

@@ -22,6 +22,12 @@ satisfied_properties:
     proof: The singleton set is a zero object.
     check_redundancy: false
 
+  - property: all epimorphisms split
+    proof: 'Let $p : X \to Y$ be an epimorphism, i.e. a surjective pointed map (see below). Choose a section $s : Y \to X$ of the underlying map with $s(\ast_Y) = \ast_X$, which is possible since $p(\ast_X) = \ast_Y$. Then $s$ is a pointed map.'
+
+  - property: all monomorphisms split
+    proof: 'Let $i : X \to Y$ be a monomorphism, i.e. an injective pointed map (see below). Then the map $r : Y \to X$ with $r(i(x)) = x$ for $x \in X$ and $r(y) = \ast_X$ for $y \notin i(X)$ is pointed and satisfies $r \circ i = \id_X$.'
+
   - property: one-sorted finitary algebraic
     proof: Take the one-sorted algebraic theory with just one constant.
 

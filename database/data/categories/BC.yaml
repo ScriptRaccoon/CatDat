@@ -35,15 +35,15 @@ satisfied_properties:
   - property: self-dual
     proof: The monoid $C$ is isomorphic to its dual $C^{\op}$ by mapping $p \mapsto q$, $q \mapsto p$.
 
+  - property: all monomorphisms split
+    proof: Every monomorphism is of the form $q^n$ (see below), which has the retraction $p^n$ since $pq = 1$.
+
   - property: Cauchy complete
     proof: We need to show that every idempotent of $C$ splits. Assume that $e = q^n p^m$ is idempotent. Thus, $e^2 = q^n p^m q^n p^m$. If $m \geq n$, then $p^m q^n = p^{m-n}$, so that $e^2 = q^n p^{2m-n}$. Thus, $m=2m-n$, i.e. $m=n$. If $m \leq n$, then $p^m q^n = q^{n-m}$, so that $e^2 = q^{2n-m} p^m$. Thus, $n=2n-m$, and again we get $m=n$. Every idempotent therefore has the form $e = q^n p^n$ for some $n \geq 0$. It splits because $p^n q^n = 1$.
     check_redundancy: false
 
   - property: core-thin
     proof: We need to show that $1$ is the only invertible element of $C$. Assume that $f = q^n p^m$ is invertible. If $m > 0$, then $f = f'p$ for some $f'$, so that $p$ is a split monomorphism. Because of $pq=1$, it is also a split epimorphism. Hence, it must be an isomorphism. But then $pq=1$ implies $qp=1$, which is not correct. Therefore, we must have $m=0$. Then $f=q^n$ is not an isomorphism for $n>0$ since otherwise $q$ would be an isomorphism, from which again $qp=1$ would follow.
-
-  - property: mono-regular
-    proof: This follows from our descriptions of monomorphisms and regular monomorphisms below. It shows that in fact, every monomorphism splits.
 
   - property: reflexive coequalizers
     proof: >-

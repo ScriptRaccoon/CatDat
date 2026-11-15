@@ -42,6 +42,9 @@ unsatisfied_properties:
   - property: skeletal
     proof: The constant functors with values $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.
 
+  - property: all epimorphisms split
+    proof: This follows from <a href="/content/split-epis-functor-categories">this lemma</a> since $\CRing$ is not essentially discrete.
+
   - property: Malcev
     proof: 'Apply the contrapositive of Lemma 13 <a href="/content/subcategories">here</a> to the functor $\Set \to [\CRing,\Set]$ that maps a set to the constant functor with that value. It is fully faithful since $\CRing$ is connected, and it preserves limits since they are computed pointwise. Here, we use that <a href="/category/Set">$\Set$</a> is not Malcev.'
 

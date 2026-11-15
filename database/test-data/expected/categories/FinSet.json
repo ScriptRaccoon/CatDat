@@ -1,6 +1,7 @@
 {
 	"satisfied": [
 		"accessible",
+		"all epimorphisms split",
 		"balanced",
 		"Barr-coexact",
 		"Barr-exact",
@@ -87,6 +88,7 @@
 	"unsatisfied": [
 		"abelian",
 		"additive",
+		"all monomorphisms split",
 		"biproducts",
 		"cartesian filtered colimits",
 		"CIP",

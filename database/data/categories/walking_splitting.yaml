@@ -37,11 +37,11 @@ satisfied_properties:
     proof: The object $0$ is initial and terminal. This also means that $\id_0, i, p, ip$ are zero morphisms. The only non-zero morphism is $\id_1$.
     check_redundancy: false
 
+  - property: all monomorphisms split
+    proof: The only non-identity monomorphism is $i$ (see below), and $p i = \id_0$.
+
   - property: equalizers
     proof: 'The only parallel pair of non-equal morphisms is $\id_1, ip : 1 \rightrightarrows 1$, and their equalizer is $i$.'
-
-  - property: normal
-    proof: 'The only non-identity monomorphism is $i : 0 \to 1$, which is the kernel of $\id_1$.'
 
   - property: extremal generator
     proof: 'The object $1$ is a generator, since the only parallel pair of non-equal morphisms is $\id_1, ip : 1 \rightrightarrows 1$ with domain $1$. It is also an extremal generator since the sets $\Hom(1, 0) = \{ p \}$ and $\Hom(1, 1) = \{ \id_1, ip \}$ are not isomorphic. The only other non-isomorphism to check is $ip : 1 \to 1$, where left multiplication by the non-unit $ip$ cannot induce a bijection on $\End(1)$.'

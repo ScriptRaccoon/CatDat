@@ -30,6 +30,12 @@ satisfied_properties:
     references:
       - Set_extremal_cogenerator
 
+  - property: all epimorphisms split
+    proof: Apply Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\Setne \hookrightarrow \Set$, which preserves epimorphisms since these are surjective in both categories (see below), and use that <a href="/category/Set">$\Set$</a> has all epimorphisms split.
+
+  - property: all monomorphisms split
+    proof: 'Let $i : X \to Y$ be a monomorphism, i.e. an injective map (see below). Since $X$ is non-empty, we may choose an element $x_0 \in X$. Then the map $r : Y \to X$ with $r(i(x)) = x$ for $x \in X$ and $r(y) = x_0$ for $y \notin i(X)$ satisfies $r \circ i = \id_X$.'
+
   - property: products
     proof: Take the product of non-empty sets inside of <a href="/category/Set">$\Set$</a> and observe that it is non-empty by the axiom of choice.
 
@@ -45,15 +51,6 @@ satisfied_properties:
 
   - property: equalizers of cokernel pairs
     proof: 'Let $f : X \to Y$ be a map of non-empty sets. The cokernel pair $i_1,i_2 : Y \rightrightarrows Y \sqcup_X Y$ in <a href="/category/Set">$\Set$</a> is clearly also a cokernel pair in $\Setne$. Moreover, the equalizer of $i_1,i_2$ in $\Set$ is non-empty because it contains the elements of $X$.'
-
-  - property: mono-regular
-    proof: This follows easily from the fact that <a href="/category/Set">$\Set$</a> is mono-regular.
-
-  - property: epi-regular
-    proof: This follows easily from the fact that <a href="/category/Set">$\Set$</a> is epi-regular.
-
-  - property: pushout-stable regular monomorphisms
-    proof: 'Apply Lemma 14 <a href="/content/subcategories">here</a> to the inclusion $\Setne \to \Set$. It preserves pushouts, since a pushout of non-empty sets is non-empty, and it preserves regular monomorphisms, since these are the injective maps in both categories. Here, we use that <a href="/category/Set">$\Set$</a> has pushout-stable regular monomorphisms.'
 
   - property: strongly connected
     proof: Use constant maps.

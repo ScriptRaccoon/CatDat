@@ -27,6 +27,9 @@ satisfied_properties:
     proof: This follows immediately from the fact that <a href="/category/Set">$\Set$</a> is cocomplete. Colimits are constructed pointwise.
     check_redundancy: false
 
+  - property: all epimorphisms split
+    proof: Every epimorphism is a family of surjective maps (see below) and therefore has a section by the axiom of choice.
+
   - property: exact filtered colimits
     proof: This follows immediately from the corresponding property of <a href="/category/Set">$\Set$</a>.
 

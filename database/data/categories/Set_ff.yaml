@@ -25,6 +25,9 @@ satisfied_properties:
   - property: semi-strongly connected
     proof: From set theory it is known that for all sets $X,Y$ there is an injective map $X \to Y$ or an injective map $Y \to X$, and injective maps are finite-to-one.
 
+  - property: all epimorphisms split
+    proof: Every epimorphism is a surjective map with finite fibers (see below). By the axiom of choice, it has a section, which is injective and therefore has finite fibers.
+
   - property: equalizers
     proof: 'Equalizers can be constructed as in <a href="/category/Set">$\Set$</a> because of the following trivial observation: if $f : X \to Y$ is a finite-to-one map and $E \subseteq Y$ is a subset with $f(X) \subseteq E$, then the induced map $f^E : X \to E$ is also finite-to-one.'
 
@@ -48,18 +51,6 @@ satisfied_properties:
 
   - property: extensive
     proof: We have already seen that finite coproducts exist in $\Set_\ff$, and pullbacks exist since the category is locally cartesian closed, although a direct argument is also possible. The forgetful functor $\Set_\ff \to \Set$ preserves finite coproducts and pullbacks, and is clearly faithful and conservative (but not full). Therefore, the claim follows from the extensivity of $\Set$ and Lemma 11 <a href="/content/subcategories">here</a>.
-
-  - property: epi-regular
-    proof: 'If $f : X \to Y$ is an epimorphism in $\Set_\ff$, i.e. a surjective finite-to-one map, it is a coequalizer of the two maps $p_1, p_2 : X \times_Y X \rightrightarrows X$ in $\Set$. These maps are finite-to-one since $p_i^*(\{x\}) \cong f^*(\{f(x)\})$ for $i=1,2$, and their coequalizer is also $f$ in $\Set_\ff$: It suffices to observe that if $h : Y \to T$ is a map such that $h \circ f$ is finite-to-one, then $h$ is finite-to-one as well. In fact, surjectivity of $f$ implies $h^*(\{t\}) = f_*((h \circ f)^*(\{t\}))$ for $t \in T$.'
-    label: Set_ff_epi_regular
-    references:
-      - Set_ff_pullbacks
-
-  - property: pullback-stable regular epimorphisms
-    proof: We have seen that a morphism is a regular epimorphism if and only if it is surjective and that pullbacks can be constructed just like in $\Set$. Therefore, the claim follows from the corresponding property of <a href="/category/Set">$\Set$</a>.
-    references:
-      - Set_ff_epi_regular
-      - Set_ff_pullbacks
 
   - property: well-copowered
     proof: This is clear since the epimorphisms are surjective.
