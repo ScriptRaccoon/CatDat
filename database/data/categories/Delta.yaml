@@ -53,22 +53,20 @@ satisfied_properties:
   - property: skeletal
     proof: 'If $f : [n] \to [m]$ is an isomorphism, then $n + 1 = m + 1$ by comparing the cardinalities, hence $n = m$.'
 
+  - property: all epimorphisms split
+    proof: Apply Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\Delta \hookrightarrow \FinOrd$, which preserves epimorphisms since these are surjective order-preserving maps in both categories (see below), and use that <a href="/category/FinOrd">$\FinOrd$</a> has all epimorphisms split.
+
+  - property: all monomorphisms split
+    proof: The proof for <a href="/category/FinOrd">$\FinOrd$</a> shows that every monomorphism with non-empty domain splits.
+    references:
+      - FinOrd_mono-regular
+
   - property: coequalizers
     proof: Assume that $X \rightrightarrows Y$ are morphisms in $\FinOrd \setminus \{\varnothing\}$. Since <a href="/category/FinOrd">$\FinOrd$</a> has coequalizers, we have a coequalizer $Y \to Q$. Since $Y$ is non-empty, $Q$ is non-empty as well, and clearly $Y \to Q$ is then also the coequalizer in $\FinOrd \setminus \{\varnothing\}$.
     label: Delta_coequalizers
 
   - property: core-thin
     proof: The category $\FinOrd \setminus \{\varnothing\}$ is core-thin because already <a href="/category/FinOrd">$\FinOrd$</a> is core-thin.
-
-  - property: mono-regular
-    proof: The proof for <a href="/category/FinOrd">$\FinOrd$</a> also works for $\FinOrd \setminus \{\varnothing\}$.
-    references:
-      - FinOrd_mono-regular
-
-  - property: epi-regular
-    proof: The proof for <a href="/category/FinOrd">$\FinOrd$</a> also works for $\FinOrd \setminus \{\varnothing\}$.
-    references:
-      - FinOrd_epi-regular
 
   - property: cosifted
     proof: >-
