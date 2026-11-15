@@ -102,6 +102,8 @@
 		"abelian",
 		"accessible",
 		"additive",
+		"all epimorphisms split",
+		"all monomorphisms split",
 		"balanced",
 		"Barr-coexact",
 		"Barr-exact",

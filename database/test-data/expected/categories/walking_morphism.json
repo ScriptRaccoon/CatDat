@@ -172,6 +172,8 @@
 	"unsatisfied": [
 		"abelian",
 		"additive",
+		"all epimorphisms split",
+		"all monomorphisms split",
 		"balanced",
 		"biproducts",
 		"CIP",

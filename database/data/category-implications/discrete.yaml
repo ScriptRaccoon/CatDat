@@ -9,7 +9,7 @@
     - one-sorted finitary algebraic
     - Grothendieck topos
     - self-dual
-    - split abelian
+    - abelian
   proof: This is trivial.
   check_redundancy: false
 

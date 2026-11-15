@@ -93,12 +93,14 @@
 
     Remark: This result strengthens the well-known theorem (and is inspired by it) stating that the dual of a Grothendieck abelian category can only be Grothendieck abelian when it is trivial, which appears as exercise B on p. 116 in Freyd's book <i>Abelian categories</i>. This follows from the result we have just proved since a Grothendieck abelian category with products is additive, balanced, and satisfies CIP (by <a href="/category-implication/CIP_criterion">this result</a>).
 
-- id: split_abelian_condition
+- id: split_abelian_characterization
   assumptions:
     - split abelian
   conclusions:
     - abelian
-  proof: This holds by definition.
+    - all epimorphisms split
+  proof: 'In an abelian category, every epimorphism $p : B \to C$ is the cokernel of its kernel $i : A \to B$, so it is part of a short exact sequence $0 \to A \to B \to C \to 0$, and every short exact sequence arises in this way. By the splitting lemma, this sequence splits if and only if $p$ is a split epimorphism.'
+  is_equivalence: true
 
 - id: biproducts_definition_consequences
   assumptions:
