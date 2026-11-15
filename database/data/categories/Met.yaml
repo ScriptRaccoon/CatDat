@@ -167,7 +167,7 @@ unsatisfied_properties:
 
   - property: coaccessible
     proof: >-
-      We use the proof for <a href="/category/PMet">$\PMet$</a>. The diagram $D$ defined there takes values in $\Met$, and its limit in $\PMet$, the empty space, is a metric space. Since $\Met$ is a full subcategory of $\PMet$, it is also the limit in $\Met$. The rest of the proof is identical.
+      We use the proof for <a href="/category/PMet">$\PMet$</a>. The functor $F$ defined there takes values in $\Met$, and the limit of each diagram considered there is the empty space, which is a metric space. Since $\Met$ is a full subcategory of $\PMet$, it is also the limit in $\Met$. The rest of the proof is identical.
     references:
       - PMet_not_coaccessible
 

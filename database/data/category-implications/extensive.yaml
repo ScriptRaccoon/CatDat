@@ -101,11 +101,9 @@
   conclusions:
     - trivial
   proof: >-
-    Let $\C$ be an infinitary extensive category which is $\kappa$-coaccessible for a regular cardinal $\kappa$. We claim that every object $T$ is initial. Since $\C$ has an object, namely $0$, it follows that $\C$ is trivial.
+    Let $\C$ be an infinitary extensive category which is coaccessible, and let $T$ be an object. We claim that $T$ is initial. Since $\C$ has an object, namely $0$, it follows that $\C$ is trivial.
 
-    To prove the claim, let $T_\beta$ be the summand with index $\beta$ of the coproduct $\coprod_{\beta < \kappa} T$, and for $\alpha < \kappa$ let
-    $$\textstyle D(\alpha) \coloneqq \coprod_{\alpha \leq \beta < \kappa} T_\beta.$$
-    The canonical morphisms $D(\alpha') \to D(\alpha)$ for $\alpha \leq \alpha'$ form a diagram $D : (\kappa,\geq) \to \C$, which is $\kappa$-cofiltered since $\kappa$ is regular. Since $\C$ has $\kappa$-cofiltered limits, $D$ has a limit, which is initial by <a href="/content/tail-coproducts-extensive">this lemma</a>. Let $p : D(0) \to T$ be the codiagonal. For every $\alpha < \kappa$, the composite $D(\alpha) \to D(0) \to T$ is the codiagonal of $D(\alpha)$, which is a split epimorphism, since its composite with the coproduct inclusion $T_\alpha \hookrightarrow D(\alpha)$ is the identity. By the lemma <a href="/content/decreasing-chains-coaccessible">here</a>, $T$ is initial.
+    To prove the claim, consider the functor $F : \Set \to \C$, $X \mapsto \coprod_{x \in X} T$. For a regular cardinal $\kappa$ and $\alpha < \kappa$, the object $F(\{\beta < \kappa : \beta \geq \alpha\})$ is the tail coproduct $\coprod_{\alpha \leq \beta < \kappa} T_\beta$ from <a href="/content/tail-coproducts-extensive">this lemma</a>, which shows that the limit of these objects, if it exists, is initial. By the corollary <a href="/content/decreasing-chains-coaccessible">here</a>, $F(\{\ast\}) \cong T$ is initial.
 
 - id: countably_extensive_no_stable_epis
   assumptions:
