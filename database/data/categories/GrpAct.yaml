@@ -5,6 +5,12 @@ objects: pairs $(G,X)$ consisting of a group $G$ and a set $X$ with a left actio
 morphisms: 'A morphism $(G,X) \to (H,Y)$ is a pair $(\varphi,f)$ consisting of a group homomorphism $\varphi : G \to H$ and a map $f : X \to Y$ such that $f(g \cdot x) = \varphi(g) \cdot f(x)$ for all $g \in G$ and $x \in X$.'
 description: >-
   This category combines the categories $G{-}\Set$ for all groups $G$ (see <a href="/category/M-Set">$M{-}\Set$</a>). More precisely, it is the Grothendieck construction of the functor $\Grp^{\op} \to \Cat^+$ that maps a group $G$ to $G{-}\Set$ and a homomorphism to the restriction functor.
+
+  In the proofs of properties, we use the following adjunctions:
+  <ul>
+  <li>The functor $L : \Grp \to \GrpAct$, $G \mapsto (G,\varnothing)$ is fully faithful and left adjoint to the forgetful functor $U : \GrpAct \to \Grp$, $(G,X) \mapsto G$, which in turn is left adjoint to the fully faithful functor $\Grp \to \GrpAct$, $G \mapsto (G,\{\ast\})$. Moreover, $L$ preserves connected limits, since limits in $\GrpAct$ are computed component-wise and a connected limit of empty sets is empty.</li>
+  <li>The functor $I : \Set \to \GrpAct$, $Y \mapsto (1,Y)$ is fully faithful, right adjoint to the orbit functor $\GrpAct \to \Set$, $(G,X) \mapsto G \backslash X$, and left adjoint to the forgetful functor $\GrpAct \to \Set$, $(G,X) \mapsto X$.</li>
+  </ul>
 nlab_link: null
 keywords:
   - G-sets
@@ -81,59 +87,41 @@ unsatisfied_properties:
 
   - property: generator
     proof: >-
-      Assume that $(G,X)$ is a generator. The functor $\Set \to \GrpAct$, $Y \mapsto (1,Y)$ is fully faithful and right adjoint to the functor $\GrpAct \to \Set$ that maps $(G,X)$ to the set of orbits $G \backslash X$, since a morphism $(G,X) \to (1,Y)$ is a map $X \to Y$ that is constant on the orbits of $G$. By Lemma 9 <a href="/content/subcategories">here</a>, $G \backslash X$ is a generator of <a href="/category/Set">$\Set$</a>, so that $X \neq \varnothing$. But then there is no morphism $(G,X) \to (\IZ,\varnothing)$. Therefore, $(G,X)$ does not distinguish the two distinct morphisms $(\id_\IZ,\id_\varnothing), (0,\id_\varnothing) : (\IZ,\varnothing) \rightrightarrows (\IZ,\varnothing)$, where $0 : \IZ \to \IZ$ is the trivial homomorphism.
-    label: GrpAct_no_generator
+      Assume that $(G,X)$ is a generator. By Lemma 9 <a href="/content/subcategories">here</a>, applied to the fully faithful right adjoint $I : \Set \to \GrpAct$, $Y \mapsto (1,Y)$ of the orbit functor $(G,X) \mapsto G \backslash X$, $G \backslash X$ is a generator of <a href="/category/Set">$\Set$</a>, so that $X \neq \varnothing$. But then there is no morphism $(G,X) \to (\IZ,\varnothing)$. Therefore, $(G,X)$ does not distinguish the two distinct morphisms $(\id_\IZ,\id_\varnothing), (0,\id_\varnothing) : (\IZ,\varnothing) \rightrightarrows (\IZ,\varnothing)$, where $0 : \IZ \to \IZ$ is the trivial homomorphism.
 
   - property: cogenerating collection
     proof: >-
-      The functor $L : \Grp \to \GrpAct$, $G \mapsto (G,\varnothing)$ is fully faithful and left adjoint to the forgetful functor $U : \GrpAct \to \Grp$, $(G,X) \mapsto G$, since every homomorphism $G \to H$ extends uniquely to a morphism $(G,\varnothing) \to (H,Y)$. By the dual of Lemma 9 <a href="/content/subcategories">here</a>, $U$ maps a cogenerating collection of $\GrpAct$ to a cogenerating collection of $\Grp$. But <a href="/category/Grp">$\Grp$</a> has no cogenerating collection.
-    label: GrpAct_no_cogenerating_collection
+      By the dual of Lemma 9 <a href="/content/subcategories">here</a>, applied to the fully faithful left adjoint $L : \Grp \to \GrpAct$, $G \mapsto (G,\varnothing)$ of the forgetful functor $U : \GrpAct \to \Grp$, the functor $U$ maps a cogenerating collection of $\GrpAct$ to a cogenerating collection of $\Grp$. But <a href="/category/Grp">$\Grp$</a> has no cogenerating collection.
 
   - property: Malcev
-    proof: 'Apply the contrapositive of Lemma 13 <a href="/content/subcategories">here</a> to the fully faithful functor $\Set \to \GrpAct$, $Y \mapsto (1,Y)$ from the proof for generators, which preserves finite limits as a right adjoint. Here, we use that <a href="/category/Set">$\Set$</a> is not Malcev.'
-    references:
-      - GrpAct_no_generator
+    proof: 'Apply the contrapositive of Lemma 13 <a href="/content/subcategories">here</a> to the fully faithful functor $I : \Set \to \GrpAct$, $Y \mapsto (1,Y)$, which preserves finite limits as a right adjoint. Here, we use that <a href="/category/Set">$\Set$</a> is not Malcev.'
 
   - property: co-Malcev
-    proof: 'Apply the contrapositive of the dual of Lemma 13 <a href="/content/subcategories">here</a> to the fully faithful functor $L : \Grp \to \GrpAct$, $G \mapsto (G,\varnothing)$ from the proof for cogenerating collections, which preserves finite colimits as a left adjoint. Here, we use that <a href="/category/Grp">$\Grp$</a> is not co-Malcev.'
-    references:
-      - GrpAct_no_cogenerating_collection
+    proof: 'Apply the contrapositive of the dual of Lemma 13 <a href="/content/subcategories">here</a> to the fully faithful functor $L : \Grp \to \GrpAct$, $G \mapsto (G,\varnothing)$, which preserves finite colimits as a left adjoint. Here, we use that <a href="/category/Grp">$\Grp$</a> is not co-Malcev.'
 
   - property: regular subobject classifier
     proof: >-
-      Apply the contrapositive of Lemma 1 <a href="/content/subcategories">here</a> to the fully faithful functor $L : \Grp \to \GrpAct$, $G \mapsto (G,\varnothing)$ from the proof for cogenerating collections, which is left adjoint to the forgetful functor $U$. By the classification of monomorphisms (see below), every monomorphism into $(G,\varnothing)$ is, up to isomorphism, the image under $L$ of a subgroup inclusion $H \hookrightarrow G$, which is a regular monomorphism since <a href="/category/Grp">$\Grp$</a> is mono-regular. Here, we use that $\Grp$ does not have a regular subobject classifier.
-    references:
-      - GrpAct_no_cogenerating_collection
+      Apply the contrapositive of Lemma 1 <a href="/content/subcategories">here</a> to the fully faithful functor $L : \Grp \to \GrpAct$, $G \mapsto (G,\varnothing)$, which is left adjoint to the forgetful functor $U : \GrpAct \to \Grp$. By the classification of monomorphisms (see below), every monomorphism into $(G,\varnothing)$ is, up to isomorphism, the image under $L$ of a subgroup inclusion $H \hookrightarrow G$, which is a regular monomorphism since <a href="/category/Grp">$\Grp$</a> is mono-regular. Here, we use that $\Grp$ does not have a regular subobject classifier.
 
   - property: regular quotient object classifier
     proof: >-
-      Apply the contrapositive of the dual of Lemma 1 <a href="/content/subcategories">here</a> to the fully faithful functor $\Set \to \GrpAct$, $Y \mapsto (1,Y)$ from the proof for generators, which is right adjoint to the orbit functor. By the classification of epimorphisms (see below), every epimorphism $(1,X) \to (H,Y)$ is surjective in both components, so that $H = 1$. Hence, every epimorphism with domain $(1,X)$ is, up to isomorphism, the image of a surjective map $X \to Y$, which is a regular epimorphism in $\Set$. Here, we use that <a href="/category/Set">$\Set$</a> does not have a regular quotient object classifier.
-    references:
-      - GrpAct_no_generator
+      Apply the contrapositive of the dual of Lemma 1 <a href="/content/subcategories">here</a> to the fully faithful functor $I : \Set \to \GrpAct$, $Y \mapsto (1,Y)$, which is right adjoint to the orbit functor. By the classification of epimorphisms (see below), every epimorphism $(1,X) \to (H,Y)$ is surjective in both components, so that $H = 1$. Hence, every epimorphism with domain $(1,X)$ is, up to isomorphism, the image of a surjective map $X \to Y$, which is a regular epimorphism in $\Set$. Here, we use that <a href="/category/Set">$\Set$</a> does not have a regular quotient object classifier.
 
   - property: cofiltered-limit-stable epimorphisms
     proof: >-
-      Apply the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> to the faithful functor $L : \Grp \to \GrpAct$, $G \mapsto (G,\varnothing)$ from the proof for cogenerating collections. As a left adjoint, it preserves epimorphisms. It also preserves connected limits, in particular cofiltered limits, since limits in $\GrpAct$ are computed component-wise and a connected limit of empty sets is empty. Here, we use that <a href="/category/Grp">$\Grp$</a> does not have cofiltered-limit-stable epimorphisms.
-    references:
-      - GrpAct_no_cogenerating_collection
+      Apply the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> to the faithful functor $L : \Grp \to \GrpAct$, $G \mapsto (G,\varnothing)$. As a left adjoint, it preserves epimorphisms, and it preserves connected limits, in particular cofiltered limits. Here, we use that <a href="/category/Grp">$\Grp$</a> does not have cofiltered-limit-stable epimorphisms.
 
   - property: cocartesian cofiltered limits
     proof: >-
-      Apply the contrapositive of the dual of Lemma 4 <a href="/content/subcategories">here</a> to the fully faithful functor $L : \Grp \to \GrpAct$, $G \mapsto (G,\varnothing)$ from the proof for cogenerating collections. As a left adjoint, it preserves binary coproducts. It also preserves connected limits, in particular cofiltered limits, since limits in $\GrpAct$ are computed component-wise and a connected limit of empty sets is empty. Here, we use that <a href="/category/Grp">$\Grp$</a> does not have cocartesian cofiltered limits.
-    references:
-      - GrpAct_no_cogenerating_collection
+      Apply the contrapositive of the dual of Lemma 4 <a href="/content/subcategories">here</a> to the fully faithful functor $L : \Grp \to \GrpAct$, $G \mapsto (G,\varnothing)$. As a left adjoint, it preserves binary coproducts, and it preserves connected limits, in particular cofiltered limits. Here, we use that <a href="/category/Grp">$\Grp$</a> does not have cocartesian cofiltered limits.
 
   - property: pushout-stable regular monomorphisms
     proof: >-
-      Apply the contrapositive of Lemma 14 <a href="/content/subcategories">here</a> to the fully faithful functor $L : \Grp \to \GrpAct$, $G \mapsto (G,\varnothing)$ from the proof for cogenerating collections. As a left adjoint, it preserves pushouts. It also preserves connected limits, in particular equalizers, since limits in $\GrpAct$ are computed component-wise and a connected limit of empty sets is empty. Hence, it preserves regular monomorphisms. Here, we use that <a href="/category/Grp">$\Grp$</a> does not have pushout-stable regular monomorphisms.
-    references:
-      - GrpAct_no_cogenerating_collection
+      Apply the contrapositive of Lemma 14 <a href="/content/subcategories">here</a> to the fully faithful functor $L : \Grp \to \GrpAct$, $G \mapsto (G,\varnothing)$. As a left adjoint, it preserves pushouts, and it preserves connected limits, in particular equalizers. Hence, it preserves regular monomorphisms. Here, we use that <a href="/category/Grp">$\Grp$</a> does not have pushout-stable regular monomorphisms.
 
   - property: parametrized natural numbers object
     proof: >-
-      Assume that there is a parametrized natural numbers object. Then, by Lemma 4 <a href="/content/natural_numbers_objects">here</a>, for every object $A$ the canonical morphism $\coprod_{n \in \IN} A \to A \times \coprod_{n \in \IN} 1$ is an isomorphism, where $1 = (1,\{\ast\})$ is the terminal object. For $A \coloneqq (\IZ,\varnothing)$, we have $\coprod_{n \in \IN} A = (F,\varnothing)$, where $F$ is the free group on countably many generators, since the functor $L : \Grp \to \GrpAct$, $G \mapsto (G,\varnothing)$ from the proof for cogenerating collections is a left adjoint. Similarly, $\coprod_{n \in \IN} 1 = (1,\IN)$, since the functor $\Set \to \GrpAct$, $Y \mapsto (1,Y)$ is left adjoint to $(G,X) \mapsto X$. Hence, $A \times \coprod_{n \in \IN} 1 = (\IZ,\varnothing) \times (1,\IN) = (\IZ,\varnothing)$. But $F$ is not isomorphic to $\IZ$, since it is not even abelian.
-    references:
-      - GrpAct_no_cogenerating_collection
+      Assume that there is a parametrized natural numbers object. Then, by Lemma 4 <a href="/content/natural_numbers_objects">here</a>, for every object $A$ the canonical morphism $\coprod_{n \in \IN} A \to A \times \coprod_{n \in \IN} 1$ is an isomorphism, where $1 = (1,\{\ast\})$ is the terminal object. For $A \coloneqq (\IZ,\varnothing)$, we have $\coprod_{n \in \IN} A = (F,\varnothing)$, where $F$ is the free group on countably many generators, since the functor $L : \Grp \to \GrpAct$, $G \mapsto (G,\varnothing)$ is a left adjoint. Similarly, $\coprod_{n \in \IN} 1 = (1,\IN)$, since the functor $I : \Set \to \GrpAct$, $Y \mapsto (1,Y)$ is a left adjoint. Hence, $A \times \coprod_{n \in \IN} 1 = (\IZ,\varnothing) \times (1,\IN) = (\IZ,\varnothing)$. But $F$ is not isomorphic to $\IZ$, since it is not even abelian.
 
 special_objects:
   terminal object:
