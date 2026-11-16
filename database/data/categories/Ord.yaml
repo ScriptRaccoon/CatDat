@@ -33,18 +33,13 @@ satisfied_properties:
 
   - property: extremal generator
     proof: The ordered set $\{0 < 1\}$ is an extremal generator, even for <a href="/category/PreOrd">$\PreOrd$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
-    references:
-      - PreOrd_extremal_generator
 
   - property: extremal cogenerator
     proof: The ordered set $\{0 < 1\}$ is an extremal cogenerator, even for <a href="/category/Pos">$\Pos$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
-    references:
-      - Pos_extremal_cogenerator
 
   - property: equalizers
     proof: >-
       The equalizer of two order-preserving maps $f,g : (X,\leq) \rightrightarrows (Y,\leq)$ in <a href="/category/Pos">$\Pos$</a> is $(E,\leq)$, where $E \coloneqq \{x \in X : f(x) = g(x)\}$ carries the restricted order, which is an ordered set. Since the inclusion $\Ord \hookrightarrow \Pos$ is fully faithful, it is also the equalizer in $\Ord$.
-    label: Ord_equalizers
 
   - property: coequalizers
     proof: >-
@@ -55,7 +50,6 @@ satisfied_properties:
       More generally, let $\I$ be a small category such that for all objects $i,j \in \I$ there is an object $k \in \I$ with morphisms $k \to i$ and $k \to j$. Then every diagram $D : \I \to \Ord$, $i \mapsto (X_i,\leq)$ has a limit, which is computed as in <a href="/category/Pos">$\Pos$</a>. Since the inclusion $\Ord \hookrightarrow \Pos$ is fully faithful, it suffices to show that the limit $(L,\leq)$ of $D$ in $\Pos$ is an ordered set.
 
       Recall that $L$ is the set of compatible families $x = (x_i)_{i \in \I}$ with $x_i \in X_i$, where $x \leq y$ if and only if $x_i \leq y_i$ for all $i \in \I$. Let $x,y \in L$ with $x \not\leq y$. Then there is some $i \in \I$ with $x_i \not\leq y_i$, i.e. $y_i < x_i$. Let $j \in \I$, and choose morphisms $u : k \to i$ and $v : k \to j$. If $x_k \leq y_k$, then $x_i = D(u)(x_k) \leq D(u)(y_k) = y_i$, a contradiction. Hence, $y_k \leq x_k$, and therefore $y_j = D(v)(y_k) \leq D(v)(x_k) = x_j$. Since $j$ was arbitrary, this shows $y \leq x$.
-    label: Ord_cosifted_limits
 
   - property: sifted colimits
     proof: >-
@@ -70,7 +64,6 @@ satisfied_properties:
       We claim that $\leq$ is a total order on $X$. By (1), it is total and in particular reflexive. If $x \leq y$ and $y \leq x$, then $(x,y) = \sigma(x,y) = \sigma(y,x) = (y,x)$ by (3) and (2), so that $x = y$. For transitivity, let $x \leq y \leq z$, where we may assume $x \neq y \neq z$. Since the maps $\iota_i \times \iota_i \times \iota_i : X_i^3 \to X^3$ form a colimit, they are jointly surjective. Hence, there are $i \in \I$ and $u,v,w \in X_i$ with $x = \iota_i(u)$, $y = \iota_i(v)$, and $z = \iota_i(w)$. If $v < u$, then $\sigma(x,y) = (\iota_i(v),\iota_i(u)) = (y,x)$, but also $\sigma(x,y) = (x,y)$ by (3), which contradicts $x \neq y$. Hence, $u \leq v$, and similarly $v \leq w$. Then $u \leq w$, which shows $x \leq z$.
 
       By definition of $\leq$, every map $\iota_i : (X_i,\leq) \to (X,\leq)$ is order-preserving. Let $(f_i : (X_i,\leq) \to (Y,\leq))_{i \in \I}$ be a cocone in $\Ord$, and let $f : X \to Y$ be the unique map with $f \circ \iota_i = f_i$ for all $i$. If $x \leq y$ in $X$, choose $u \leq v$ in some $X_i$ as in the definition; then $f(x) = f_i(u) \leq f_i(v) = f(y)$. Hence, $f$ is order-preserving, and $(X,\leq)$ with the maps $\iota_i$ is the colimit of $D$ in $\Ord$.
-    label: Ord_sifted_colimits
     check_redundancy: false
 
   - property: finitely accessible
@@ -82,30 +75,22 @@ satisfied_properties:
       is a retract of the canonical map $\colim_i Y_i^n \to C^n$, which is bijective. Hence, it is bijective as well.
 
       The finite ordered sets form an essentially small collection. Finally, every ordered set $(X,\leq)$ is the filtered colimit of the ordered sets $(F,\leq)$, where $F$ runs through the finite subsets of $X$ with the restricted order. This can be seen directly, but it also follows from our construction of sifted colimits.
-    label: Ord_finitely_accessible
-    references:
-      - Ord_sifted_colimits
 
   - property: generalized variety
     proof: >-
       We already know that $\Ord$ has sifted colimits. By the claim in the proof of finite accessibility, the finite ordered sets are strongly finitely presentable, and every ordered set is a filtered colimit, hence a sifted colimit, of finite ordered sets.
 
       <strong>Remark.</strong> In <a href="http://www.tac.mta.ca/tac/volumes/8/n3/8-03abs.html">Adámek–Rosický</a>, Example 4.3(3), $\Ord$ is said to be <a href="/category-property/multi-algebraic">multi-algebraic</a>, in particular to have connected limits, by giving an FPC-sketch for it. This is not correct, since it does not even have binary products, which are pullbacks over the terminal object. The models of this sketch are the ordered sets, but its morphisms are the strictly increasing maps, since they have to preserve the strict order relation. The sketch in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adámek–Rosický</a>, Example 2.57, cited there, does describe $\Ord$, but it is not an FPC-sketch, since it includes a pushout cocone.
-    references:
-      - Ord_finitely_accessible
 
   - property: mono-regular
     proof: >-
       Let $i : (X,\leq) \to (Y,\leq)$ be a monomorphism, i.e. an injective order-preserving map (see below). Since $i$ is strictly increasing, it reflects the order, so we may assume that $X \subseteq Y$ is a subset with the restricted order and that $i$ is the inclusion. Consider the set $C \coloneqq Y \times \{0,1\}$ with the lexicographic order, and define $f,g : (Y,\leq) \rightrightarrows (C,\leq)$ by $f(y) \coloneqq (y,0)$ and
       $$g(y) \coloneqq \begin{cases} (y,0) & y \in X, \\ (y,1) & y \notin X. \end{cases}$$
       Both maps are order-preserving, since $y < y'$ implies $(y,m) < (y',n)$ for all $m,n \in \{0,1\}$. By the proof for equalizers, the equalizer of $f,g$ in $\Ord$ is computed as in $\Pos$, so it is $(X,\leq)$, since $\{y \in Y : f(y) = g(y)\} = X$. Hence, $i$ is a regular monomorphism.
-    references:
-      - Ord_equalizers
 
   - property: all epimorphisms split
     proof: >-
       Let $p : (X,\leq) \to (Y,\leq)$ be an epimorphism, i.e. a surjective order-preserving map (see below). Choose a map $s : Y \to X$ with $s(y) \in p^*(\{y\})$ for all $y \in Y$, so that $p \circ s = \id_Y$. To see that $s$ is order-preserving, let $y < y'$ in $Y$. If $s(y') \leq s(y)$, then $y' = p(s(y')) \leq p(s(y)) = y$, a contradiction. Hence, $s(y) < s(y')$.
-    label: Ord_all_epis_split
 
   - property: effective cocongruences
     proof: >-
@@ -132,19 +117,14 @@ unsatisfied_properties:
   - property: natural numbers object
     proof: >-
       Assume that the ordered set $(N,\leq)$ with an element $z \in N$ and an order-preserving map $s : (N,\leq) \to (N,\leq)$ is a natural numbers object. If $z \leq s(z)$, consider $a \coloneqq 1$ in $\{0 < 1\}$ and the constant map $g : \{0 < 1\} \to \{0 < 1\}$ with value $0$. The induced order-preserving map $\Phi : (N,\leq) \to \{0 < 1\}$ satisfies $\Phi(z) = 1$ and $\Phi(s(z)) = g(1) = 0$, which contradicts $z \leq s(z)$. If $s(z) \leq z$, the same argument with $a \coloneqq 0$ and the constant map with value $1$ yields $\Phi(z) = 0$ and $\Phi(s(z)) = 1$, which contradicts $s(z) \leq z$.
-    label: Ord_no_NNO
 
   - property: cofiltered-limit-stable epimorphisms
     proof: >-
       For $n \in \IN$ consider the set $X_n \coloneqq \{k \in \IN : k \geq n\}$ with the usual order, and the inclusions $(X_{n+1},\leq) \hookrightarrow (X_n,\leq)$. The maps $(X_n,\leq) \to \{\ast\}$ are surjective, hence epimorphisms (see below), and they form a morphism from this sequence to the constant sequence with value $\{\ast\}$. By the proof for cosifted limits, limits of such sequences are computed as in <a href="/category/Pos">$\Pos$</a>, hence on the underlying sets as in $\Set$. Therefore, the limit of the $(X_n,\leq)$ is the ordered set with underlying set $\bigcap_{n \in \IN} X_n = \varnothing$, and the limit of the constant sequence is $\{\ast\}$. The induced map $\varnothing \to \{\ast\}$ is not an epimorphism.
-    references:
-      - Ord_cosifted_limits
 
   - property: coaccessible
     proof: >-
       Assume that $\Ord$ is $\kappa$-coaccessible for a regular cardinal $\kappa$. For $\alpha < \kappa$ consider the set $X_\alpha \coloneqq \{\beta < \kappa : \beta \geq \alpha\}$ of ordinals with the usual order, and the inclusions $(X_{\alpha'},\leq) \hookrightarrow (X_\alpha,\leq)$ for $\alpha \leq \alpha'$. By the proof for cosifted limits, the limit of this diagram $D : (\kappa,\geq) \to \Ord$, $\alpha \mapsto (X_\alpha,\leq)$ is computed as in <a href="/category/Pos">$\Pos$</a>, hence on the underlying sets as in $\Set$. Thus, its underlying set is $\bigcap_{\alpha < \kappa} X_\alpha = \varnothing$, so it is the initial object. Every map $(X_\alpha,\leq) \to \{\ast\}$ is a split epimorphism, since $X_\alpha$ is non-empty. By the lemma <a href="/content/decreasing-chains-coaccessible">here</a>, applied to the unique morphism $! : (X_0,\leq) \to \{\ast\}$, the ordered set $\{\ast\}$ is initial, a contradiction.
-    references:
-      - Ord_cosifted_limits
 
 special_objects:
   initial object:

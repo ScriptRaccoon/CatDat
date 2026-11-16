@@ -18,8 +18,5 @@ related:
 satisfied_properties:
   - property: well-copointed
     proof: We know that $K$ is even an extremal cogenerator of <a href="/category/Vect">$\Vect_K$</a>.
-    references:
-      - Vect_extremal_cogenerator
-    label: Vect_tensor_well-copointed
 
 unsatisfied_properties: []

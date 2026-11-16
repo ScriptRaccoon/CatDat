@@ -26,31 +26,24 @@ satisfied_properties:
 
   - property: locally finitely presentable
     proof: The same proof as for <a href="/category/Pos">$\Pos$</a> works, cf. <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adámek–Rosický</a>, Example 1.10.
-    references:
-      - Pos_lfp
 
   - property: cartesian closed
     proof: For preordered sets $(P,\leq),(Q,\leq)$ we endow $H \coloneqq \Hom((P,\leq),(Q,\leq))$ with the preorder in which $f \leq g$ holds iff $f(p) \leq g(p)$ for all $p \in P$. The universal evaluation map is $(H,\leq) \times (P,\leq) \to (Q,\leq)$, $(f,p) \mapsto f(p)$, it is order-preserving, and it satisfies the universal property.
-    label: PreOrd_cartesian_closed
 
   - property: semi-strongly connected
     proof: Every non-empty preordered set is weakly terminal (by using constant maps).
 
   - property: infinitary extensive
     proof: 'This can be deduced from the infinitary extensivity of <a href="/category/Set">$\Set$</a> as follows. We already know that coproducts and pullbacks exist, and these are preserved by the forgetful functor to $\Set$. More concretely, coproducts are disjoint unions of the underlying sets equipped with the evident preorder that leaves the distinct summands incomparable. Since coproducts are disjoint in $\Set$ and the empty set has a unique preorder, it follows immediately that coproducts are disjoint in $\PreOrd$ as well. It remains to show that coproducts are stable under pullbacks. Let $(P_i,\leq)_{i \in I}$ be a family of preordered sets with coproduct $(P,\leq)$, where $P = \coprod_{i \in I} P_i$, and let $f : (T,\leq) \to (P,\leq)$ be an order-preserving map. Consider the pullbacks $(T_i,\leq)$ of the coprojections $(P_i,\leq) \to (P,\leq)$ along $f$. Here, $T_i = f^*(P_i)$ is the preimage of $P_i$ under $f$, with the preorder induced from $T$. Since coproducts in $\Set$ are stable under pullbacks, the canonical order-preserving map $\coprod_{i \in I} (T_i,\leq) \to (T,\leq)$ is bijective. It remains to show that it is order-reflecting. Since each inclusion $T_i \hookrightarrow T$ is order-reflecting, this amounts to proving that, for $x \in T_i$ and $y \in T_j$ with $i \neq j$, we never have $x \leq y$ in $T$. But such a relation would imply $f(x) \leq f(y)$ in $P$, where $f(x) \in P_i$ and $f(y) \in P_j$, which contradicts the concrete description of the coproduct.'
-    label: PreOrd_infinitary_extensive
 
   - property: pushout-stable regular monomorphisms
     proof: See <a href="https://math.stackexchange.com/questions/5130295">MSE/5130295</a>.
 
   - property: regular subobject classifier
     proof: The proof for <a href="/category/Bin">$\Bin$</a> works verbatim, since its regular subobject classifier $\Omega \coloneqq (\{0,1\},\{0,1\} \times \{0,1\})$ is a preordered set, and the regular monomorphisms in $\PreOrd$ are also the embeddings (see below).
-    references:
-      - Bin_regular_subobject_classifier
 
   - property: extremal generator
     proof: 'We claim that $\{ 0 < 1 \}$ is an extremal generator. First, the singleton preordered set $\{\ast\}$ is a generator, since it represents the forgetful functor $\PreOrd \to \Set$ which is faithful. Since we have an epimorphism $\{ 0 < 1 \} \to \{\ast\}$, it follows that $\{ 0 < 1 \}$ is also a generator. Now, suppose we have a morphism $f : (P,\leq) \to (Q,\leq)$ such that $f \circ {-} : \Hom(\{0<1\}, (P,\leq)) \to \Hom(\{0<1\}, (Q,\leq))$ is a bijection. Then considering constant functions, we can see that $f : P \to Q$ must be a bijection. Now, suppose we have $p_1, p_2 \in P$ such that $f(p_1) \le f(p_2)$. Then that induces a morphism $\{0<1\} \to (Q,\leq)$ with $0 \mapsto f(p_1), 1 \mapsto f(p_2)$. The corresponding morphism $\{0<1\}\to (P,\leq)$ must send $0\mapsto p_1, 1 \mapsto p_2$, showing that $p_1 \le p_2$. It follows that $f$ is an isomorphism.'
-    label: PreOrd_extremal_generator
 
   - property: extremal cogenerator
     proof: >-
@@ -66,7 +59,6 @@ unsatisfied_properties:
 
   - property: co-Malcev
     proof: 'See <a href="https://mathoverflow.net/questions/509552">MO/509552</a>: Consider the forgetful functor $U : \PreOrd \to \Set$ and the relation $R \subseteq U^2$ defined by $R(P,\leq) \coloneqq \{(a,b) \in P^2 : a \leq b\}$. Both are representable: $U$ by the singleton preordered set and $R$ by $\{0 < 1 \}$. It is clear that $R$ is reflexive, but not symmetric.'
-    label: PreOrd_not_co-Malcev
 
   - property: effective cocongruences
     proof: 'Consider the chaotic preordered set $(C,C \times C)$, where $C \coloneqq \{ a, b \}$. It represents the functor which sends a preordered set to the pairs of elements $x,y$ with $x \le y$ and $y \le x$. Therefore, it defines a cocongruence $\{\ast\} \rightrightarrows (C,C \times C)$, where the maps are the two possible functions. However, this cannot be effective: for any order-preserving map $h : (Z,\leq) \to \{\ast\}$ which equalizes the two functions, $Z$ must be empty. But that means the cokernel pair of $h$ is the discrete preordered set $(C,=)$.'

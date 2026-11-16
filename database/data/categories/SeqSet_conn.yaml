@@ -85,7 +85,6 @@ satisfied_properties:
       For any $i \geq 1$, the only preimage of $i$ under $s$ is $i+1$. Hence, by induction on $i \in \{1,\dotsc,k\}$, we obtain
       $$\alpha_{n+k-i}(x_{n+k-i})=i,$$
       which for $i=k$ gives the desired result.
-    label: SeqSet_conn_subobject_classifier
 
   - property: cogenerator
     proof: >-
@@ -98,8 +97,6 @@ satisfied_properties:
       Y_k & k > n.
       \end{cases}$$
       Since $U_k = Y_k$ for $k > n$ and $Y$ is connected, it follows that $U$ is connected. Since $f_n(x_n) \notin U_n$, the set $f^*(U)_n = (f_n)^*(U_n)$ does not contain $x_n$. On the other hand, $g^*(U)_n = (g_n)^*(U_n)$ does contain $x_n$ because $g_n(x_n) \in U_n$. Hence, $f^*(U) \neq g^*(U)$.
-    references:
-      - SeqSet_conn_subobject_classifier
 
   - property: finitely accessible
     proof: >-
@@ -176,8 +173,6 @@ unsatisfied_properties:
       Here is an alternative proof that the coproduct $1+1$, and in fact most coproducts, do not exist. The projection functor $[(\IN,\leq),\Set]_{\conn} \to \Set$, $X \mapsto X_n$, has a right adjoint that maps a set $S$ to the connected sequence
       $$S \xrightarrow{\id} \cdots \xrightarrow{\id} S \xrightarrow{!} \{\ast\} \xrightarrow{!} \{\ast\} \xrightarrow{!} \cdots,$$
       where the singleton sets start at index $n+1$, because a morphism from $X$ to this sequence corresponds to a map $X_n \to S$. In particular, the projection functor is cocontinuous. Hence, any colimit, if it exists, must be computed pointwise. Since the pointwise coproduct $1+1$ is not connected, it does not exist in $[(\IN,\leq),\Set]_{\conn}$.
-    references:
-      - SeqSet_conn_subobject_classifier
 
   - property: countable powers
     proof: >-
@@ -188,14 +183,9 @@ unsatisfied_properties:
       Thus, it suffices to prove that connected sequences are not closed under countable powers, which are defined pointwise. Consider the subobject classifier
       $$\Omega = \bigl(\IN \xrightarrow{s} \IN \xrightarrow{s} \IN \xrightarrow{s} \cdots\bigr)$$
       with $s(k) = \max(0,k-1)$. We will prove that $\Omega^{\IN}$ is not connected. For the two elements $n,0 \in \Omega_0 = \IN$, their images in $\Omega_k = \IN$ coincide if and only if $k \geq n$. It follows that the two elements $(0,1,2,\dotsc)$ and $(0,0,\dotsc)$ of $\Omega_0^{\IN}$ have the same image in $\Omega_k^{\IN}$ if and only if $k \geq n$ for every $n \geq 0$. Thus, no such $k$ exists, and $\Omega^{\IN}$ is not connected.
-    label: SeqSet_conn_no_countable_powers
-    references:
-      - SeqSet_conn_subobject_classifier
 
   - property: ℵ₁-cofiltered limits
     proof: Since we already know that the inclusion functor $[(\IN,\leq),\Set]_{\conn} \hookrightarrow [(\IN,\leq),\Set]$ is continuous, it suffices to construct an $\aleph_1$-cofiltered diagram of connected sequences whose limit sequence is not connected. An example is given in <a href="https://mathoverflow.net/questions/515431">MO/515431</a>.
-    references:
-      - SeqSet_conn_no_countable_powers
 
   - property: natural numbers object
     proof: >-

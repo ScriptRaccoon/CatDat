@@ -51,14 +51,11 @@ unsatisfied_properties:
 
   - property: countable powers
     proof: First, the inclusion functor $\Vect^\c_K \hookrightarrow \Vect_K$ is continuous since the forgetful functor $\Vect_K \to \Set$ is continuous and conservative, while the forgetful functor $\Vect^\c_K \to \Set$ is representable and hence continuous. Thus, it suffices to show that $\Vect^\c_K$ is not closed under countable powers in $\Vect_K$. Specifically, we will show that $K^{\IN}$ does not have countable dimension. If it did, it would be isomorphic to $V \coloneqq K^{\oplus \IN}$. But then $V^* \cong V$, which contradicts <a href="https://mathoverflow.net/questions/13322">MO/13322</a>.
-    label: Vect_c_continuous_inclusion
 
   - property: ℵ₁-cofiltered limits
     proof: >-
       We have already seen that the inclusion functor $\Vect^\c_K \hookrightarrow \Vect_K$ is continuous, so it suffices to prove that $\Vect^\c_K$ is not closed under $\aleph_1$-cofiltered limits. Pick any uncountable set $I$ and consider the poset $P_{<\aleph_1}(I)$ of countable subsets of $I$. This is $\aleph_1$-filtered, so its dual is $\aleph_1$-cofiltered. Define the diagram $P_{<\aleph_1}(I)^{\op} \to \Vect^\c_K$ by sending a countable subset $C \subseteq I$ to $K^{\oplus C}$ and an inclusion $C \subseteq D$ to the projection $K^{\oplus D} \to K^{\oplus C}$ that discards the coordinates in $D \setminus C$.
       The limit of this diagram is a subspace of $K^I$ consisting of those functions $f : I \to K$ such that, for every countable subset $C \subseteq I$, the restriction $f|_C : C \to K$ has finite support. It follows that $f$ has finite support, because otherwise there would be an infinite countable subset $C \subseteq I$ such that $f(c)$ is non-zero for all $c \in C$, and then $f|_C$ would not have finite support. Therefore, the limit is just $K^{\oplus I}$, which does not have countable dimension.
-    references:
-      - Vect_c_continuous_inclusion
 
 special_objects:
   initial object:

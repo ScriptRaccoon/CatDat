@@ -48,9 +48,6 @@ satisfied_properties:
       First, we claim that $\Bin_{\irr} \subseteq \Bin$ is closed under filtered colimits. In fact, the colimit of a filtered diagram $i \mapsto (X_i,R_i)$ in <a href="/category/Bin">$\Bin$</a> is $(\colim_i X_i, R)$, where $R$ consists of all pairs $(\iota_i(x),\iota_i(y))$ for some index $i$ and some $(x,y) \in R_i$. If each $R_i$ is irreflexive, then $R$ is irreflexive as well, because otherwise there would be some index $i$ and some $(x,y) \in R_i$ such that $\iota_i(x)=\iota_i(y)$ in the colimit. Hence, there is some morphism $i \to j$ such that $x$ and $y$ have the same image in $X_j$. If $z \in X_j$ denotes this common image, we obtain $(z,z) \in R_j$, a contradiction.
 
       The rest of the proof is the same as for the finite accessibility of <a href="/category/Bin">$\Bin$</a>.
-    label: Bin_irr_finitely_accessible
-    references:
-      - Bin_finitely_accessible
 
   - property: locally cartesian closed
     proof: If $X \to Y$ is a morphism in $\Bin$ and $Y \in \Bin_{\irr}$, then $X \in \Bin_{\irr}$ as well (since any element in $X$ that relates to itself is mapped to an element in $Y$ that relates to itself). Thus, if $Y$ is any object of $\Bin_{\irr}$, then $\Bin_{\irr} / Y = \Bin / Y$. Hence, the claim follows since <a href="/category/Bin">$\Bin$</a> is locally cartesian closed.
@@ -85,8 +82,6 @@ unsatisfied_properties:
       C_2 & = \bigl(\{0,1\}, \{(0,1),(1,0)\}\bigr) \\
       C_3 & = \bigl(\{0,1,2\}, \{(0,1),(1,2),(2,0)\}\bigr)
       \end{align*}$$
-    references:
-      - Quiv_not_semi-strongly_connected
 
   - property: filtered
     proof: >-
@@ -97,16 +92,13 @@ unsatisfied_properties:
   - property: quotients of congruences
     proof: >-
       Consider any object $(X,R)$ with $R \neq \varnothing$. The maximal congruence $(X,R) \times (X,R) \rightrightarrows (X,R)$ has no quotient in $\Bin_{\irr}$. In fact, it is not even coequalized by any morphism $f : (X,R) \to (Y,S)$ in $\Bin_{\irr}$. This would be a map $f : X \to Y$ such that $f(x)=f(x')$ for all $(x,x') \in X \times X$ and $(f(x),f(x')) \in S$ for all $(x,x') \in R$. Pick some $(x,x') \in R$. Then $(f(x),f(x)) = (f(x),f(x')) \in S$, which is a contradiction.
-    label: Bin_irr_no_quotients_congruences
 
   - property: extremal generator
     proof: Let $(X,R)$ be any object of $\Bin_{\irr}$. We will prove that $\Hom((X,R),-)$ is not conservative. If $R$ is non-empty, consider the unique morphism from $(\varnothing,\varnothing)$ to $(\{\ast\},\varnothing)$. It is not an isomorphism, but since $(X,R)$ has no morphism to either object, the functor $\Hom((X,R),-)$ maps it to an isomorphism between empty sets. If $R$ is empty, consider the canonical bijective morphism from $(\{a,b\},\varnothing)$ to $(\{a,b\},\{(a,b)\})$. It is not an isomorphism, but $\Hom((X,R),-)$ maps it to the identity of $\Hom(X,\{a,b\})$.
-    label: Bin_irr_no_extremal_generator
 
   - property: cogenerating collection
     proof: >-
       Assume that a cogenerating collection $S$ exists in $\Bin_{\irr}$. Let $\kappa \geq 2$ be a cardinal that is greater than all $\card(Y)$ for $(Y,R) \in S$. Let $X$ be a set of cardinality $\kappa$. Then $(X, (X \times X) \setminus \Delta_X)$ is a valid object of $\Bin_{\irr}$. Any non-trivial permutation of $X$ induces a non-trivial automorphism of it. In particular, there must be a morphism $(X, (X \times X) \setminus \Delta_X) \to (Y,R)$ for some $(Y,R) \in S$. This is a map of sets $f : X \to Y$ such that for all $x \neq x'$ the pair $(f(x),f(x'))$ belongs to $R$, which requires $f(x) \neq f(x')$. Therefore, $f : X \to Y$ is injective, and we obtain the contradiction $\card(X) \leq \card(Y) < \kappa$.
-    label: Bin_irr_no_cogenerating_collection
 
 special_objects:
   initial object:

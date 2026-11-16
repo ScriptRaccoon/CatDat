@@ -46,8 +46,6 @@ satisfied_properties:
 
   - property: extremal cogenerator
     proof: The category $\Euclidsqcup$ is a full subcategory of <a href="/category/Met_c">$\Met_\c$</a>, in which $\IR$ is an extremal cogenerator. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
-    references:
-      - Met_c_cogenerator
 
   - property: effective cocongruences
     proof: >-
@@ -70,15 +68,12 @@ satisfied_properties:
       The space $C'$ is Euclidean and therefore a Baire space. Thus, it cannot be the union of two closed sets with empty interior. Assume without loss of generality that $j_1(X')$ has non-empty interior in $C'$. Since $j_1(X') \cong X'$ is also Euclidean, the Invariance of Domain theorem implies that $X'$ and $C'$ have the same dimension and that $j_1(X')$ is open in $C'$. Since $j_1$ is a closed embedding, $j_1(X')$ is also closed in $C'$, and it is non-empty. Since $C'$ is connected, this implies
       $$j_1(X') = C'.$$
       Hence, for every $y \in X'$, we have $j_2(y) = j_1(z)$ for some $z \in X'$. Applying $r$, we obtain $y=z$, and hence $y \in U$. This proves that $U$ contains the entire component $X'$ and finishes the proof.
-    label: Euclid_coprod_cocongruence_classification
 
   - property: coquotients of cocongruences
     proof: >-
       We have proved above that every cocongruence in $\Euclidsqcup$ is isomorphic to
       $$X \rightrightarrows X \sqcup_U X$$
       for some subset $U \subseteq X$ which is a union of connected components of $X$. Since $U \hookrightarrow X$ is the equalizer of $X \rightrightarrows X \sqcup_U X$ in $\Top$, this remains true in $\Euclidsqcup$.
-    references:
-      - Euclid_coprod_cocongruence_classification
 
 unsatisfied_properties:
   - property: skeletal
@@ -114,8 +109,6 @@ unsatisfied_properties:
       Now consider the continuous map $f : \IR \to \IR$, $x \mapsto x^2$. Its kernel pair in $\Top$ is
       $$\{(x,y) \in \IR^2 : x^2=y^2\} = \{(x,x) : x \in \IR\} \cup \{(x,-x) : x \in \IR\}.$$
       But this space does not belong to $\Euclidsqcup$. In fact, since it is connected, it would have to be isomorphic to $\IR^n$. Removing $(0,0)$ from this space yields a space with four connected components. However, $\IR^n$ minus a point is connected for $n > 1$, while $\IR$ minus a point has two connected components.
-    references:
-      - Met_c_cogenerator
 
   - property: cokernel pairs
     proof: >-
@@ -126,13 +119,10 @@ unsatisfied_properties:
       We claim that $p$ is an embedding of topological spaces. To this end, consider the standard embedding $i : W \to \IR^2$ that maps $x \in \IR$ in the first copy to $(x,0)$ and $y \in \IR$ in the second copy to $(0,y)$. Since $\IR^2$ is Euclidean, there is a continuous map $j : P \to \IR^2$ with $j \circ p = i$. Since $i$ is an embedding, we conclude that $p$ is an embedding.
 
       We have shown that $W$ is isomorphic to a subspace of $\IR^n$ with dense image. Since $W$ is locally compact and $\IR^n$ is Hausdorff, this subspace is locally closed. Since it is locally closed and dense, it is open. But it is well known that $W$ is not a topological manifold, since $W \setminus \{(0,0)\}$ has too many connected components.
-    label: Euclid_coprod_no_cokernel_pairs
     check_redundancy: false
 
   - property: quotients of congruences
     proof: Since the category is extensive, if it had quotients of congruences, by <a href="/content/pushouts-of-monos-via-congruence-quotients">this lemma</a> it would have pushouts of monomorphisms. But we have seen before that $\IR \sqcup_{0} \IR$ does not exist.
-    references:
-      - Euclid_coprod_no_cokernel_pairs
 
 special_objects:
   initial object:

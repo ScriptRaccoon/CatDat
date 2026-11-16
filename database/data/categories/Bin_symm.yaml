@@ -48,15 +48,10 @@ satisfied_properties:
 
   - property: finitely accessible
     proof: The proof is the same as for the finite accessibility of <a href="/category/Bin">$\Bin$</a>.
-    references:
-      - Bin_finitely_accessible
 
   - property: locally cartesian closed
     proof: >-
       We know that <a href="/category/Bin">$\Bin$</a> is locally cartesian closed, and that $\Bin_{\symm} \subseteq \Bin$ is closed under pullbacks. Therefore, it suffices to show that $\Bin_{\symm} \subseteq \Bin$ is closed under relative exponentials. Recall that for two objects $(Y,R_Y) \to (X,R_X)$ and $(Z,R_Z) \to (X,R_X)$ in $\Bin / (X,R_X)$, their exponential is the set $F = \coprod_{x \in X} \Hom(Y_x,Z_x)$ equipped with the following relation $R_F$: for maps $f : Y_x \to Z_x$ and $g : Y_{x'} \to Z_{x'}$ we have $(f,g) \in R_F$ when $(x,x') \in R_X$ and, for all $y \in Y_x$ and $y' \in Y_{x'}$, if $(y,y') \in R_Y$, then $(f(y),g(y')) \in R_Z$. Now assume that $R_X,R_Y,R_Z$ are symmetric. Then it is obvious that $R_F$ is symmetric.
-    label: Bin_symm_exponentials
-    references:
-      - Bin_exponentials
 
   - property: regular subobject classifier
     proof: By the description of regular monomorphisms below, the poset of regular subobjects of $(X,R)$ is isomorphic to the poset of subsets of $X$. The subsets of $X$ correspond to morphisms from $(X,R)$ into $\Omega \coloneqq (\{0,1\}, \{0,1\} \times \{0,1\})$, which belongs to $\Bin_{\symm}$, showing that $\Omega$ is a regular subobject classifier.
@@ -83,8 +78,6 @@ satisfied_properties:
       <strong>Case 2:</strong> $x = x'$. Define the map $h : X \to Q$ by $h(x)=3$ and $h(p)=2$ for $p \neq x$. Then $h : (X,R) \to (Q,R_Q)$ is a morphism since the only pair in $X \times X$ whose image is not in $R_Q$ is the pair $(x,x)$, which is not contained in $R$. By assumption, there is a morphism $g : (Y,S) \to (Q,R_Q)$ such that $g \circ f = h$. Since $(f(x),f(x)) \in S$, it follows that
       $$(3,3) = (h(x),h(x)) = (g(f(x)),g(f(x))) \in R_Q,$$
       which is a contradiction.
-    references:
-      - Bin_extremal_cogenerator
 
 unsatisfied_properties:
   - property: skeletal
@@ -95,8 +88,6 @@ unsatisfied_properties:
 
   - property: extremal generator
     proof: We may copy the proof from <a href="/category/Bin">$\Bin$</a>.
-    references:
-      - Bin_no_extremal_generator
 
   - property: co-Malcev
     proof: >-
@@ -115,7 +106,6 @@ unsatisfied_properties:
       & a' & \longleftrightarrow & b' \\
       \end{array}$$
       There are two canonical morphisms $G \rightrightarrows C$. They are jointly epimorphic and have a common retraction $C \to G$ mapping $a,a' \mapsto a$ and $b,b' \mapsto b$. Thus, $G \rightrightarrows C$ is a coreflexive corelation. But it is not cosymmetric, since there is no edge $a' \leftrightarrow b$ in $C$.
-    label: Bin_symm_not_co-Malcev
 
 special_objects:
   initial object:

@@ -31,8 +31,6 @@ satisfied_properties:
 
   - property: Malcev
     proof: This follows in the same way as for <a href="/category/Grp">$\Grp$</a>; see also <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories">Borceux–Bourn</a>, Example 2.2.5.
-    references:
-      - Grp_malcev
 
 unsatisfied_properties:
   - property: skeletal
@@ -46,30 +44,22 @@ unsatisfied_properties:
 
   - property: cototal
     proof: Essentially the same proof as for <a href="/category/CAlg(R)">$\CAlg(R)$</a> works here.
-    references:
-      - CAlg(R)_not_cototal
 
   - property: codistributive
     proof: 'If $\sqcup$ denotes the coproduct of $R$-algebras (see <a href="https://math.stackexchange.com/questions/625874">MSE/625874</a> for their description) and $A$ is an $R$-algebra, the canonical morphism $A \sqcup R^2 \to (A \sqcup R)^2 = A^2$ is not necessarily an isomorphism. For example, for $A = R[X]$, the coproduct on the left-hand side has the algebra presentation $\langle X,E : E^2=E \rangle$ and is therefore not commutative: the homomorphism to $M_2(R)$ defined by $X \mapsto \bigl(\begin{smallmatrix} 0 & 1 \\ 0 & 0 \end{smallmatrix}\bigr)$ and $E \mapsto \bigl(\begin{smallmatrix} 1 & 0 \\ 0 & 0 \end{smallmatrix}\bigr)$ maps $XE$ to $0$ and $EX$ to $\bigl(\begin{smallmatrix} 0 & 1 \\ 0 & 0 \end{smallmatrix}\bigr) \neq 0$.'
-    label: Alg(R)_not_codistributive
 
   - property: coparametrized conatural numbers object
     proof: >-
       By the dual of Lemma 4 <a href="/content/natural_numbers_objects">here</a>, it suffices to show that for some $R$-algebra $A$ the canonical homomorphism $A \sqcup R^{\IN} \to A^{\IN}$ is not an isomorphism. We take $A \coloneqq R[X]$. Since $A^{\IN}$ is commutative, it suffices to show that $R[X] \sqcup R^{\IN}$ is not commutative. The surjective homomorphism $R^{\IN} \to R^2$, $(r_n)_n \mapsto (r_0,r_1)$ induces a surjective homomorphism $R[X] \sqcup R^{\IN} \to R[X] \sqcup R^2$. Since $R[X] \sqcup R^2$ is not commutative (see the proof above that $\Alg(R)$ is not codistributive), neither is $R[X] \sqcup R^{\IN}$.
-    references:
-      - Alg(R)_not_codistributive
 
   - property: co-Malcev
     proof: 'See <a href="https://mathoverflow.net/questions/509552">MO/509552</a>: Consider the forgetful functor $U : \Alg(R) \to \Set$ and the relation $E \subseteq U^2$ defined by $E(A) \coloneqq \{(a,b) \in U(A)^2 : ab = a^2\}$. Both are representable: $U$ by $R[X]$ and $E$ by $R \langle X,Y \rangle / \langle XY-X^2 \rangle$. It is clear that $E$ is reflexive, but not symmetric.'
 
   - property: pushout-stable regular monomorphisms
     proof: 'Since $R \neq 0$, there is an infinite field $K$ with a homomorphism $R \to K$. Since $K$ is infinite, we may choose some $\lambda \in K \setminus \{0,1\}$. Let $B \coloneqq M_2(K)$ and $A \coloneqq K \times K$. Then $A \to B$, $(x,y) \mapsto \diag(x,y)$ is a regular monomorphism: A direct calculation shows that a matrix is diagonal iff it commutes with $M \coloneqq \bigl(\begin{smallmatrix} 1 & 0 \\ 0 & \lambda \end{smallmatrix}\bigr)$, so that $A \to B$ is the equalizer of the identity $B \to B$ and the conjugation $B \to B$, $X \mapsto M X M^{-1}$. Consider the homomorphism $A \to K$, $(a,b) \mapsto a$. We claim that $K \to K \sqcup_A B$ is not a monomorphism, because in fact, the pushout $K \sqcup_A B$ is zero: Since $A \to K$ is surjective with kernel $0 \times K$, the pushout is $B/\langle 0 \times K \rangle$, which is $0$ because $B$ is simple (<a href="https://math.stackexchange.com/questions/22629">proof</a>) or via a direct calculation with elementary matrices.'
-    label: Alg(R)_not_coregular
 
   - property: regular quotient object classifier
     proof: We may copy the proof for <a href="/category/CAlg(R)">$\CAlg(R)$</a> (since the proof there did not use that $P$ is commutative). Alternatively, any regular quotient object classifier in $\Alg(R)$ would produce one in the reflective subcategory $\CAlg(R)$ by Lemma 1 <a href="/content/subcategories">here</a> (dualized).
-    references:
-      - CAlg(R)_no_regular_quotient_object_classifier
 
   - property: cocartesian cofiltered limits
     proof: >-

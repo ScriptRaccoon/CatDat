@@ -48,7 +48,6 @@ satisfied_properties:
       We claim that the "chaotic" quiver $G = (\{a,b\},\{a,b\} \times \{a,b\})$ and the quiver $H = (\{a\},\{\ell,\ell'\})$ with one vertex and two loops form an extremal cogenerating collection. Indeed, $\Hom(-,G)$ is isomorphic to the contravariant functor $(V,E) \mapsto P(V)$, and $\Hom(-,H)$ is isomorphic to the contravariant functor $(V,E) \mapsto P(E)$. The combined functor $(V,E) \mapsto (P(V),P(E))$ is faithful and conservative because the <a href="/functor/power_set_contravariant">contravariant power set functor</a> $P : \Set^{\op} \to \Set$ is faithful and conservative.
 
       Remark: The same proof works for $\Quiv$.
-    label: Quiv_fc_extremal_cogenerators
 
   - property: epi-regular
     proof: Any epimorphism $f = (f_V,f_E)$ in $\Quiv_{\fc}$ has surjective components $f_V,f_E$ by the classification below. Hence, it is the coequalizer of its kernel pair in $\Quiv$. Since the kernel pair belongs to $\Quiv_{\fc}$, it is also the coequalizer in $\Quiv_{\fc}$.
@@ -68,8 +67,6 @@ satisfied_properties:
   - property: ℵ₁-cofiltered limits
     proof: >-
       We show that $\Quiv_{\fc} \subseteq \Quiv$ is closed under $\aleph_1$-cofiltered limits. Let $D : \I \to \Quiv_{\fc}$ be an $\aleph_1$-cofiltered diagram, and let $L$ be its limit in $\Quiv$. Consider a vertex $v \in V_L$, and let $C(v) \subseteq L$ denote its connected component. For each $i \in \I$, let $C(v_i) \subseteq D(i)$ be the connected component of $v_i \in V_{D(i)}$. Each transition map $D(i \to j) : D(i) \to D(j)$ maps $C(v_i)$ into $C(v_j)$. Thus, we can construct the quiver $\lim_{i \in \I} C(v_i)$. It is finite because <a href="/category/FinSet">$\FinSet$</a> is closed under $\aleph_1$-cofiltered limits in $\Set$. Since each projection map $L \to D(i)$ maps $C(v)$ into $C(v_i)$, there is an embedding $C(v) \hookrightarrow \lim_{i \in \I} C(v_i)$. Hence, $C(v)$ is finite.
-    references:
-      - FinSet_aleph1-cofiltered-limits
 
   - property: effective cocongruences
     proof: More generally, let $G \rightrightarrows C$ be a coreflexive corelation in $\Quiv_{\fc}$. Since binary coproducts exist and the inclusion functor $\Quiv_{\fc} \hookrightarrow \Quiv$ preserves epimorphisms, it is a coreflexive corelation in $\Quiv$. Since <a href="/category/Quiv">$\Quiv$</a> is co-Malcev and has effective cocongruences (by <a href="/category-implication/regular_epi-regular_extensive_consequences">this result</a>), the pair $G \rightrightarrows C$ is the cokernel pair of some morphism $E \to G$ in $\Quiv$, namely (since equalizers exist, see <a href="/content/effective-congruence-quotients">here</a>) the equalizer of $G \rightrightarrows C$. Since $G$ belongs to $\Quiv_{\fc}$, also $E$ belongs to $\Quiv_{\fc}$. It follows that $G \rightrightarrows C$ is also the cokernel pair of $E \to G$ in $\Quiv_{\fc}$.
@@ -83,13 +80,9 @@ unsatisfied_properties:
 
   - property: semi-strongly connected
     proof: We can recycle the proof from <a href="/category/Quiv">$\Quiv$</a>, which only uses finite auxiliary quivers.
-    references:
-      - Quiv_not_semi-strongly_connected
 
   - property: generator
     proof: We can recycle the proof from <a href="/category/Quiv">$\Quiv$</a>, which only uses finite auxiliary quivers.
-    references:
-      - Quiv_no_generator
 
   - property: countable powers
     proof: >-
@@ -102,14 +95,9 @@ unsatisfied_properties:
       First, note that the inclusion functor $\Quiv_{\fc} \to \Quiv$ preserves colimits. This is because $\Quiv$ is cocomplete, $\Quiv_{\fc}$ contains an extremal cogenerating collection of $\Quiv$ (by our proof that $\Quiv_{\fc}$ has one), and Lemma 1 <a href="/content/inclusion-functors">here</a>. Thus, it suffices to show that $\Quiv_{\fc}$ is not closed under sequential colimits in $\Quiv$.
 
       Consider the path quiver $P_n$ with $n$ vertices and $n-1$ edges. It is finite, hence belongs to $\Quiv_{\fc}$, and there is a canonical embedding $P_n \hookrightarrow P_{n+1}$. The colimit of this sequence in $\Quiv$ is the path quiver $P_\infty$ with infinitely many vertices. It is connected but not finite, hence does not belong to $\Quiv_{\fc}$.
-    label: Quiv_fc_no_sequential_colimits
-    references:
-      - Quiv_fc_extremal_cogenerators
 
   - property: quotients of congruences
     proof: Since the category is infinitary extensive and we have just identified a sequence of monomorphisms without a colimit, there is a congruence without a quotient by Lemma 1 <a href="/content/monic_sequential_colimits">here</a>.
-    references:
-      - Quiv_fc_no_sequential_colimits
 
 special_objects:
   initial object:

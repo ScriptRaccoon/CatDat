@@ -43,7 +43,6 @@ unsatisfied_properties:
       Disclaimer: This result and its proof are not relevant for category theory and also depend on implementation details of set theory. Only the fact that the category is locally essentially small matters.
 
       The collection $\Hom(0,0)$ is not a set, since otherwise its unique element, the $I$-indexed family of identities $\id_0 : 0 \to 0$, would also be a set. But this is modelled as the collection of Kuratowski pairs $(i,\id_0) = \{\{i\},\{i,\id_0\}\}$ for $i \in I$. Since $I$ is not a set, this is not a set.
-    label: Vect_family_mostly_0_not_locally_small
 
   - property: generator
     proof: Assume that a generator $G$ exists. Since $\supp(G)$ is essentially small, but $I$ is not, we may pick $i \in I \setminus \supp(G)$. Consider the family $V$ with $\supp(V)=\{i\}$ and $V_i = K$. Then $V \neq 0$, but $\Hom(G,V) \cong \Hom(G_i,V_i) = 0$.
@@ -56,13 +55,10 @@ unsatisfied_properties:
   - property: cototal
     # TODO: refactor this once we add "hypercocomplete"
     proof: In fact, it is not hypercocomplete. For $i \in I$ define $E^i \in \Vect^{(I)}_K$ by $E^i_j = 0$ for $j \neq i$ and $E^i_i = K$. This yields a discrete diagram $(E^i)_{i \in I}$. For every $V \in \Vect^{(I)}_K$ the collection of cocones $(E^i \to V)_{i \in I}$ is essentially small, since for $i \notin \supp(V)$ every morphism $E^i \to V$ is zero, so the indices may be restricted to the collection $\supp(V)$, which is essentially small. Assuming $\Vect^{(I)}_K$ is hypercocomplete, the coproduct $S \coloneqq \coprod_{i \in I} E^i$ would exist in $\Vect^{(I)}_K$. Since each $E^i$ is a retract of $S$ and $E^i_i \neq 0$, we see that $\supp(S) = I$, which however is not essentially small.
-    label: Vect_family_mostly_0_not_cototal
 
   - property: total
     # TODO: refactor this once we add "hypercomplete"
     proof: We can almost repeat the previous proof that the category is not cototal. The collection of cones $(V \to E^i)_{i \in I}$ is essentially small for every $V$, but $\prod_{i \in I} E^i$ does not exist since it would have support $I$.
-    references:
-      - Vect_family_mostly_0_not_cototal
 
 special_objects:
   initial object:

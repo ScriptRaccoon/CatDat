@@ -51,7 +51,6 @@ satisfied_properties:
       Now let $(H,Y) \hookrightarrow (G,X)$ be a monomorphism. By the classification of monomorphisms (see below), we may assume that $H \subseteq G$ is a subgroup and $Y \subseteq X$ is an $H$-invariant subset. Then $S$ maps it to the inclusion of the subgroup $F(Y) \rtimes H \subseteq F(X) \rtimes G$, which is a regular monomorphism since <a href="/category/Grp">$\Grp$</a> is mono-regular. As a right adjoint, $R$ preserves equalizers and hence regular monomorphisms. By naturality of the unit, we have a commutative square
       $$\begin{CD} (H,Y) @>>> (F(Y) \rtimes H,\, F(Y) \rtimes H) \\ @VVV @VVV \\ (G,X) @>>> (F(X) \rtimes G,\, F(X) \rtimes G) \end{CD}$$
       whose right morphism is therefore a regular monomorphism. The square is a pullback: since limits are computed component-wise, this amounts to $G \cap (F(Y) \rtimes H) = H$ and $X \cap (F(Y) \rtimes H) = X \cap F(Y) = Y$ inside $F(X) \rtimes G$, which holds by construction of the semidirect product. Since regular monomorphisms are stable under pullback, the inclusion $(H,Y) \hookrightarrow (G,X)$ is a regular monomorphism.
-    label: GrpAct_mono_regular
 
   - property: effective cocongruences
     proof: >-
@@ -75,8 +74,6 @@ satisfied_properties:
       &= F(X_1 \cap X_2) \rtimes (G_1 \cap G_2).
       \end{align*}$$
       Here, $F(X_1) \cap F(X_2) = F(X_1 \cap X_2)$ holds since every element of $F(X)$ is represented by a unique reduced word, and it lies in $F(X_i)$ if and only if all letters of this word lie in $X_i$.
-    references:
-      - GrpAct_mono_regular
 
 unsatisfied_properties:
   - property: skeletal

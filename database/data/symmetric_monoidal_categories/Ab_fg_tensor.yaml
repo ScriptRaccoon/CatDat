@@ -21,19 +21,13 @@ satisfied_properties:
 
   - property: well-pointed
     proof: In fact, $\IZ$ is even an extremal generator of <a href="/category/Ab_fg">$\Ab_{\fg}$</a>.
-    references:
-      - Ab_fg_extremal_generator
 
 unsatisfied_properties:
   - property: finitely complete
     proof: The same counterexample as for <a href="/symmetric_monoidal_category/Ab_tensor">$(\Ab,\otimes,\IZ)$</a> works here.
-    references:
-      - Ab_tensor_not_fc
 
   - property: strict
     proof: The same argument as for <a href="/symmetric_monoidal_category/R-Mod_tensor">$(R{-}\Mod,\otimes,R)$</a> works here.
-    references:
-      - R-Mod_tensor_not_strict
 
   - property: infinitary distributive
     # TODO: automate this with category_conclusions
@@ -45,5 +39,3 @@ unsatisfied_properties:
 
   - property: well-copointed
     proof: The same counterexample as for <a href="/symmetric_monoidal_category/Ab_tensor">$(\Ab,\otimes,\IZ)$</a> works here.
-    references:
-      - Ab_tensor_not_well-copointed

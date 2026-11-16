@@ -34,7 +34,6 @@ satisfied_properties:
   - property: pullbacks
     proof: 'Pullbacks can be constructed as in <a href="/category/Set">$\Set$</a>. Namely, for two finite-to-one maps $f : X \to S$ and $g : Y \to S$, the projections from $X \times_S Y = \{(x,y) \in X \times Y : f(x)=g(y)\}$ to $X$ resp. $Y$ are finite-to-one since the fiber over $x \in X$ identifies with $g^*(\{f(x)\})$ and the fiber over $y \in Y$ identifies with $f^*(\{g(y)\})$. Moreover, if $h : T \to X \times_S Y$ is a map whose components $h_X : T \to X$ and $h_Y : T \to Y$ are finite-to-one, then $h$ is finite-to-one because of $h^*(\{x\}) = (h_X)^*(\{(x,y)\}) \cap (h_Y)^*(\{y\})$ for $(x,y) \in X \times_S Y$.'
     check_redundancy: false
-    label: Set_ff_pullbacks
 
   - property: locally cartesian closed
     proof: If $X$ is a set, the equivalence $\Set/X \simeq \Set^X$, $f \mapsto (f^*(\{x\}))_{x \in X}$ restricts to an equivalence $\Set_\ff / X \simeq \FinSet^X$. This category is cartesian closed since <a href="/category/FinSet">$\FinSet$</a> is cartesian closed and products of cartesian closed categories are cartesian closed.
@@ -54,12 +53,9 @@ satisfied_properties:
 
   - property: quotients of congruences
     proof: 'A congruence on a set $X$ in $\Set_\ff$ is the same as an equivalence relation $R$ on $X$ whose equivalence classes are finite. In that case, the usual quotient map $p : X \to X/R$ is finite-to-one. Moreover, if $h : X/R \to Y$ is a map such that $h \circ p : X \to Y$ is finite-to-one, then $h$ is finite-to-one as well because $h^*(\{y\}) \subseteq p^*((h \circ p)^*(\{y\}))$ for all $y \in Y$. Therefore, $p$ is also the quotient in $\Set_\ff$.'
-    label: Set_ff_quotients_congruences
 
   - property: effective congruences
     proof: 'Let $q_1, q_2 : R \rightrightarrows X$ be a congruence in $\Set_\ff$. From the proof on quotients of congruences in $\Set_\ff$, we have a quotient map $p : X \to X/R$ in $\Set_\ff$, and $R$ is the kernel pair of $p$ in $\Set$. It remains to see that $R$ is also the kernel pair of $p$ in $\Set_\ff$. Thus, suppose we have $x_1, x_2 : T \rightrightarrows X$ with $p \circ x_1 = p \circ x_2$. Then there is a unique $e : T \to R$ in $\Set$ with $x_1 = q_1 \circ e$ and $x_2 = q_2 \circ e$. Since $q_1 \circ e$ is finite-to-one, $e$ must be finite-to-one as well.'
-    references:
-      - Set_ff_quotients_congruences
 
   - property: effective cocongruences
     proof: 'Suppose we have a cocongruence $j_1, j_2 : X \rightrightarrows C$ in $\Set_\ff$. Then it is a coreflexive corelation in $\Set$. Since <a href="/category/Set">$\Set$</a> is co-Malcev and has effective cocongruences, that implies $C$ is the cokernel pair of some function $h : Z \to X$ in $\Set$. By the dual of <a href="/content/effective-congruence-quotients">this result</a>, if $\inc_Y : Y \hookrightarrow X$ is the equalizer of $j_1$ and $j_2$, then $C$ is also the cokernel pair of $\inc_Y$ in $\Set$. It remains to see that $C$ is the cokernel pair of $\inc_Y$ in $\Set_\ff$ as well. Thus, suppose $a, b : X \rightrightarrows T$ are such that $a |_Y = b |_Y$. Then there is a unique $u : C \to T$ in $\Set$ with $a = u \circ j_1$ and $b = u \circ j_2$. Since $(j_1;j_2) : X + X \to C$ is surjective and $u \circ (j_1;j_2) = (a;b)$ is finite-to-one, we see that $u$ is finite-to-one as well.'
@@ -69,8 +65,6 @@ satisfied_properties:
 
   - property: ℵ₁-cofiltered limits
     proof: 'We derive this from the fact that <a href="/category/FinSet">$\FinSet$</a> is closed under $\aleph_1$-cofiltered limits in $\Set$. Let $D : \I \to \Set_\ff$ be an $\aleph_1$-cofiltered diagram. Let $(p_i : L \to D(i))_{i \in \I}$ be the limit cone in $\Set$. Each $p_i$ is finite-to-one, because the fiber over $d \in D(i)$ is the limit of the $\aleph_1$-cofiltered diagram $\tilde{D} : \I/i \to \FinSet$ which maps $j \to i$ to $D(j \to i)^*(\{d\})$. To verify the universal property, let $(f_i : T \to D(i))_{i \in \I}$ be a cone in $\Set_\ff$. There is a unique map $f : T \to L$ such that $p_i f = f_i$ for every $i \in \I$, and it remains to prove that $f$ is finite-to-one. Choose any $i \in \I$. Then for every $x \in L$ we have $f^*(\{x\}) \subseteq f_i^*(\{p_i(x)\})$, and the latter set is finite.'
-    references:
-      - FinSet_aleph1-cofiltered-limits
 
 unsatisfied_properties:
   - property: skeletal

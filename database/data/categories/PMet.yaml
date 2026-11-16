@@ -84,7 +84,6 @@ satisfied_properties:
       for every $n \in \IN$. This is impossible since $d_j$ takes only finite values.
 
       Hence, $d$ is a pseudo-metric on $X$. It satisfies the triangle inequality since $d_i(p_i(x),p_i(z)) \leq d(x,y) + d(y,z)$ holds for all $i \in \I$ and $x,y,z \in X$. By construction, the maps $p_i : (X,d) \to (X_i,d_i)$ are non-expansive. They form a limit cone: if $(g_i : (Y,d_Y) \to (X_i,d_i))_{i \in \I}$ is a cone, then the unique map $g : Y \to X$ with $p_i \circ g = g_i$ for all $i \in \I$ is non-expansive, since $d_i(g_i(y),g_i(y')) \leq d_Y(y,y')$ for all $i \in \I$ implies $d(g(y),g(y')) \leq d_Y(y,y')$.
-    label: PMet_aleph1_cofiltered_limits
 
   - property: ℵ₁-accessible
     proof: >-
@@ -101,7 +100,6 @@ satisfied_properties:
       for all $a,b \in A$.
 
       Finally, every pseudo-metric space $(Y,d_Y)$ is the $\aleph_1$-directed colimit of its countable subspaces $(S,d_S)$, where $S \subseteq Y$ is countable and $d_S$ is the restriction of $d_Y$: the underlying set of the colimit is the union $Y$, and the infimum defining the distance of two points is just their distance w.r.t. $d_Y$, since all inclusions are isometric. Since every countable pseudo-metric space is isomorphic to one whose underlying set is a subset of $\IN$, there is only a set of them up to isomorphism. Hence, $\PMet$ is $\aleph_1$-accessible.
-    label: PMet_aleph1_accessible
 
   - property: regular subobject classifier
     proof: >-
@@ -126,7 +124,6 @@ satisfied_properties:
       & \leq d_X(x_1, x_2).
       \end{align*}$$
       This shows that $f$ is isometric.
-    label: PMet_extremal_generator
 
   - property: extremal cogenerator
     proof: >-
@@ -163,14 +160,12 @@ unsatisfied_properties:
 
   - property: countable powers
     proof: 'Let $d$ be the usual metric on $\IR$, and assume that the power $(P,d_P)$ of countably many copies of $(\IR,d)$ exists. Since the forgetful functor $\PMet \to \Set$ is representable, it preserves limits, powers in particular. Thus, we may assume that $P = \IR^{\IN}$ is the set of sequences of numbers and that the projections $p_n : (P,d_P) \to (\IR,d)$ are given by $p_n(x) = x_n$. Now consider the sequences $x = (n)_n$ and $y = (0)_n$. Since each $p_n$ is non-expansive, we get $d_P(x,y) \geq d(p_n(x),p_n(y)) = d(n,0) = n$. But then $d_P(x,y) = \infty$, a contradiction.'
-    label: PMet_no_countable_powers
 
   - property: binary copowers
     proof: The coproduct of two non-empty pseudo-metric spaces does not exist; see <a href="https://math.stackexchange.com/questions/1778408">MSE/1778408</a> (the proof also works for pseudo-metric spaces). For example, the binary copower of $(\IR,d)$, where $d$ is the usual metric, does not exist. We only get coproducts when allowing $\infty$ as a distance.
 
   - property: natural numbers object
     proof: By Lemma 2 <a href="/content/natural_numbers_objects">here</a>, if $(N,z,s)$ is a natural numbers object, then $N \cong \{\ast\} \sqcup N$. Since there is a map $\{\ast\} \to N$, we have $N \neq \varnothing$. However, the coproduct of two non-empty pseudo-metric spaces does not exist; see <a href="https://math.stackexchange.com/questions/1778408">MSE/1778408</a>.
-    label: PMet_no_NNO
 
   - property: effective congruences
     proof: >-
@@ -183,22 +178,17 @@ unsatisfied_properties:
       Transitivity: the pullback of $p_2$ and $p_1$ consists of the pairs $((x,y),(y,z))$, with the maximum of the distances of the components. We need to show that the composition map $((x,y),(y,z)) \mapsto (x,z)$ is non-expansive. Let $r$ be the distance of $((x,y),(y,z))$ and $((x',y'),(y',z'))$. Since $d_R$ only takes the values $0$, $1$, and $2$, the same holds for $r$. If $r = 2$, there is nothing to show, since $d_R \leq 2$. Otherwise, $r \leq 1$, so that $d_R((x,y),(x',y')) \leq 1$ and $d_R((y,z),(y',z')) \leq 1$. Since $(0,0)$ and $(1,1)$ are the only distinct points with distance $1$, each of the sets $\{(x,y),(x',y')\}$ and $\{(y,z),(y',z')\}$ is either a singleton or equal to $\{(0,0),(1,1)\}$. If $y = y'$, neither set can be $\{(0,0),(1,1)\}$, so $(x,y) = (x',y')$ and $(y,z) = (y',z')$, and hence $(x,z) = (x',z')$, so that $d_R((x,z),(x',z')) = 0 \leq r$. If $y \neq y'$, both sets are $\{(0,0),(1,1)\}$, so $x = y = z$ and $x' = y' = z'$ with $x \neq x'$. Then $\{(x,z),(x',z')\} = \{(0,0),(1,1)\}$, and hence $d_R((x,z),(x',z')) = 1 \leq r$.
 
       The congruence is not effective. Assume that it is the kernel pair of a morphism $f : (X,d_X) \to (Y,d_Y)$. The underlying set of the kernel pair is $\{(x,x') \in X \times X : f(x) = f(x')\}$, which then must be $X \times X$, so that $f$ is constant. But then the kernel pair is $(X \times X,d)$ with the supremum metric $d((x,y),(x',y')) = \sup(d_X(x,x'),d_X(y,y'))$, so that $d((0,1),(1,0)) = 1$, whereas $d_R((0,1),(1,0)) = 2$.
-    label: PMet_no_effective_congruences
 
   - property: effective cocongruences
     proof: 'The proof is similar to the one for <a href="/category/Top">$\Top$</a>: The pseudo-metric space $(\{0,1\},0)$ represents the functor taking a pseudo-metric space to the pairs of points with $d(x,y) = 0$. In this case, once you conclude $Z = \varnothing$, the map $h : Z \to \{\ast\}$ does not have any cokernel pair, since that would have to be a coproduct $\{\ast\} \sqcup \{\ast\}$, which does not exist.'
-    references:
-      - Top_no_effective_cocongruences
 
   - property: pullback-stable regular epimorphisms
     proof: >-
       We can adapt Example 3.14 at the <a href="https://ncatlab.org/nlab/show/regular+category">nLab</a> (which provides non-stable regular epimorphisms in $\Pos$ and related categories) as follows: Let $d$ be the usual metric on $\IR$ and its restrictions to subsets of $\IR$. Consider $X \coloneqq \{0,1,2,3\}$ and $Y \coloneqq \{0,1,2\}$. Define a surjective map $p : X \to Y$ by $p(0)=0$, $p(1)=p(2)=1$, and $p(3)=2$. Clearly, $p$ is non-expansive. Moreover, one can check that it satisfies the universal property in $\PMet$ of a coequalizer of the two maps $\{\ast\} \rightrightarrows (X,d)$ with images $1$ and $2$. Thus, it is a regular epimorphism. Now consider $Z \coloneqq \{0,2\} \subseteq Y$. As a set, the pullback of $(Z,d) \hookrightarrow (Y,d)$ along $p$ is $p^*(Z) = \{0,3\}$, and its pseudo-metric $d'$ satisfies $d'(0,3) = \sup(d(0,3),d(p(0),p(3))) = \sup(3,2) = 3$. The projection of the pullback to $(Z,d)$ identifies with the evident bijective and non-expansive map $(\{0,3\},d') \to (\{0,2\},d)$. It is a monomorphism and not an isomorphism (the distances do not match), hence cannot be a regular epimorphism.
-    label: PMet_not_regular
 
   - property: coaccessible
     proof: >-
       Apply the corollary <a href="/content/decreasing-chains-coaccessible">here</a> to the functor $F : \Set \to \PMet$ that equips a set $X$ with the discrete metric $d_X$ given by $d_X(x,y) \coloneqq 1$ for $x \neq y$. Here, $F(\{\ast\})$ is not initial. Let $\kappa$ be a regular cardinal. The limit of the pseudo-metric spaces $F(\kappa_{\geq \alpha})$ is the empty space, which is initial: for every cone with vertex $(Y,d_Y)$, the underlying maps form a cone in $\Set$ over the sets $\kappa_{\geq \alpha}$, whose limit is $\bigcap_{\alpha < \kappa} \kappa_{\geq \alpha} = \varnothing$, so that $Y = \varnothing$.
-    label: PMet_not_coaccessible
 
   - property: finitely accessible
     proof: >-

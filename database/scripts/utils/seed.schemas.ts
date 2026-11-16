@@ -51,9 +51,7 @@ export const special_morphism_rule_yaml_schema = v.array(
 const property_entry_schema = v.strictObject({
 	property: v.string(),
 	proof: v.string(),
-	check_redundancy: v.optional(v.literal(false)),
-	label: v.optional(v.string()),
-	references: v.optional(distinct_strings_schema)
+	check_redundancy: v.optional(v.literal(false))
 })
 
 export const structure_yaml_schema = v.pipe(

@@ -32,7 +32,6 @@ satisfied_properties:
 
   - property: semi-strongly connected
     proof: 'Suppose we have two objects $(X, R_X)$ and $(Y, R_Y)$. If $Y$ is non-empty, suppose $y_0 \in Y$, and find $n_0 \in \IN$ such that $n_0$ realizes $y_0$. Then it is easy to see that the constant function with value $y_0$ is a morphism in $\Hom_{\omegaSet}((X, R_X), (Y, R_Y))$, where we can choose the compatible realizer tracker $\code{y_0} : \IN \dashrightarrow \IN$ to be the total recursive function with constant value $n_0$. Otherwise, if $Y$ is empty, then the unique function $Y \to X$ is a morphism in $\Hom_{\omegaSet}((Y, R_Y), (X, R_X))$, and in fact any partial recursive function $\IN \dashrightarrow \IN$ is a compatible realizer tracker.'
-    label: omega_Set_ssc
 
   - property: well-powered
     proof: If $(X, R_X) \hookrightarrow (Y, R_Y)$ is a monomorphism, then by the description below, this implies the underlying function $X \to Y$ is injective. Therefore, we can find an equivalent subobject $(X, R_X) \cong (Y', R_{Y'})$ where $Y' \subseteq Y$ by transporting $R_X$ to the image of the underlying function. The collection of possible $Y'$ is then small, and for each $Y'$, the collection of possible $R_{Y'}$ is also small.
@@ -172,9 +171,6 @@ satisfied_properties:
       such that $g = h \circ f$. Choose a compatible realizer tracker $\code{h} : \IN \dashrightarrow \IN$. Then for any $x\in X$, if $n$ realizes $f(x)$, then $\code{h}(n)$ exists and $\code{h}(n)$ realizes $h(f(x)) = g(x)$. Thus, by definition of $g$, $\code{h}(n)$ is in the set of realizers of $x$, i.e. $\code{h}(n)$ realizes $x$. From the characterization of isomorphisms below, this implies that $f$ is an isomorphism.
 
       Finally, since $\nabla \{0,1\}$ and $(P(\IN) \setminus \{ \varnothing \}, {\in}_{\IN})$ both have non-empty underlying sets, they form a strongly connected family (see the proof above that $\omegaSet$ is semi-strongly connected). Therefore, by <a href="/content/generator_construction">this result</a>, the product of these two objects is an extremal cogenerator.
-    references:
-      - omega_Set_ssc
-      - Set_extremal_cogenerator
 
   - property: parametrized natural numbers object
     proof: >-
@@ -233,7 +229,6 @@ unsatisfied_properties:
       From this, we conclude that for $\gamma' \ne \gamma$, the elements $\gamma$ and $\gamma'$ have no common realizer in $Y$. In fact, if $m$ is a common realizer, then $\code{f}(m)$ is defined and realizes both $f(\gamma) = 1$ and $f(\gamma') = 0$ in $N$. Since the realization relation of $N$ is the diagonal, this means $\code{f}(m) = 1$ and $\code{f}(m) = 0$, a contradiction.
 
       Since $\gamma \in \omega_1$ was arbitrary, every $m \in \IN$ realizes at most one element of $Y$. Hence, if $D \subseteq \IN$ denotes the set of all realizers of elements of $Y$, the realization relation of $Y$ is the graph of a function $D \to \omega_1$. This function is surjective since every element of $Y$ has a realizer. But $D$ is countable and $\omega_1$ is uncountable, a contradiction.
-    label: omega_Set_no_aleph1-filtered_colimits
 
   - property: ℵ₁-cofiltered limits
     proof: >-
@@ -253,8 +248,6 @@ unsatisfied_properties:
       We claim that for $\gamma \ne \delta$ in $\omega_1$, the elements $y_\gamma$ and $y_\delta$ have no common realizer in $Y$. Let $\alpha \coloneqq \max(\gamma, \delta) + 1$ and let $\code{p_\alpha}$ be a realizer tracker compatible with $p_\alpha$. If $m$ is a common realizer, then $\code{p_\alpha}(m)$ realizes both $p_\alpha(y_\gamma) = \gamma$ and $p_\alpha(y_\delta) = \delta$ in $X_\alpha$. Since $\gamma, \delta < \alpha$, this means $s_\alpha(\gamma) = \code{p_\alpha}(m) = s_\alpha(\delta)$, which contradicts the injectivity of $s_\alpha$.
 
       Hence, the sets of realizers of the elements $y_\gamma$ for $\gamma \in \omega_1$ are non-empty and pairwise disjoint subsets of $\IN$. This is a contradiction, since $\omega_1$ is uncountable.
-    references:
-      - omega_Set_no_aleph1-filtered_colimits
 
   - property: coaccessible
     proof: >-

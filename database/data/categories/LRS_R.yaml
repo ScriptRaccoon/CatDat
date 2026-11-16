@@ -66,8 +66,6 @@ satisfied_properties:
       To show that $Q$ is a cogenerator, let $f,g : X \rightrightarrows Y$ be two morphisms that induce the same map by precomposition, so that $\alpha_f = \alpha_g$ and $\beta_f = \beta_g$. Since $\{0,1\}$ is a cogenerator of <a href="/category/Set">$\Set$</a>, the first equation implies $|f| = |g|$. The second equation means $f^\sharp(s) = g^\sharp(s)$ for all open subsets $V \subseteq |Y|$ and $s \in \O_Y(V)$, i.e. $f^\sharp = g^\sharp$. Hence, $f = g$.
 
       Now let $f : X \to Y$ be a morphism such that precomposition with it is bijective, so that $\alpha_f$ and $\beta_f$ are bijective. Since $\{0,1\}$ is an extremal cogenerator of $\Set$, $|f|$ is bijective. Since every pair $(U,0)$ lies in the image of $\beta_f$, every open subset of $|X|$ has the form $|f|^*(V)$ for an open subset $V \subseteq |Y|$, so $|f|$ is a homeomorphism. Finally, $\beta_f$ is the disjoint union of the maps $f^\sharp : \O_Y(V) \to \O_X(|f|^*(V))$, and $V \mapsto |f|^*(V)$ is a bijection between the open subsets of $|Y|$ and $|X|$. Hence, each of these maps is bijective. This shows that $f^\sharp : \O_Y \to |f|_* \O_X$ is an isomorphism, so that $f$ is an isomorphism of ringed spaces.
-    references:
-      - Set_extremal_cogenerator
 
   - property: well-copowered
     proof: This follows from the characterization of epimorphisms below.
@@ -93,8 +91,6 @@ unsatisfied_properties:
 
   - property: co-Malcev
     proof: 'We can adjust the proof for <a href="/category/Top">$\Top$</a> (see <a href="https://mathoverflow.net/questions/509548">MO/509548</a>) as follows: Let $K$ be a residue field of $R$, let $X$ be the locally ringed space whose underlying space $|X|$ is a singleton, and let $C$ be the locally ringed space whose underlying space $|C| = \{u,v\}$ is the Sierpiński space where $\{u\}$ is open, but $\{v\}$ is not. Both have the sheaf of locally constant functions to $K$ as structure sheaf. Thus, $\O_X(|X|) = K$, $\O_C(|C|) = \O_C(\{u\}) = K$. Let $j_1, j_2 : X \rightrightarrows C$ be the two canonical morphisms such that $|j_1|$ and $|j_2|$ have the images $\{u\}$ and $\{v\}$, respectively. They form a coreflexive corelation that is not cosymmetric.'
-    references:
-      - Top_not_co-malcev
 
   - property: total
     proof: 'The adjunction between the global sections functor and the $\Spec$ functor (<a href="https://en.wikipedia.org/wiki/%C3%89l%C3%A9ments_de_g%C3%A9om%C3%A9trie_alg%C3%A9brique">Grothendieck–Dieudonné</a>, EGA I (1971), Ch. 1, Prop. 1.6.3) makes $\CAlg(R)^{\op}$ into a reflective subcategory of $\LRS_R$. Therefore, if $\LRS_R$ were total, then <a href="/category/CAlg(R)">$\CAlg(R)$</a> would be cototal by <a href="https://www.numdam.org/item/?id=CTGDC_1986__27_2_109_0">Kelly</a>, Cor. 6.2, which we know is not the case.'
@@ -128,16 +124,12 @@ unsatisfied_properties:
       is not a homeomorphism, then, since $\Delta$ preserves binary products and colimits, the canonical morphism
       $$\colim_{i \in I} \bigl(\Delta(S) \times \Delta(T_i)\bigr) \to \Delta(S) \times \colim_{i \in I} \Delta(T_i)$$
       in $\LRS_R$ identifies with $\Delta(\alpha)$, which is not an isomorphism since its underlying continuous map is $\alpha$.
-    label: LRS_R_embedding_of_Top
 
   - property: effective cocongruences
     proof: >-
       Consider the functor $\Delta : \Top \to \LRS_R$ from the proof above. It is fully faithful and preserves non-empty limits and all colimits, in particular equalizers, pushouts, and binary coproducts. Since <a href="/category/Top">$\Top$</a> does not have effective cocongruences, the contrapositive of the dual of Lemma 8 <a href="/content/subcategories">here</a> applied to $\Delta$ shows that $\LRS_R$ does not have effective cocongruences either.
 
       Concretely, this argument transports the counterexample from the proof for <a href="/category/Top">$\Top$</a> along $\Delta$: if $I$ denotes the indiscrete topological space with two points, then the two morphisms $\Spec(K) \rightrightarrows \Delta(I)$ corresponding to the two points of $I$ form a cocongruence in $\LRS_R$ that is not effective. Here, $\Delta(I)$ is the locally ringed space with underlying space $I$ and $\O_{\Delta(I)}(I) = K$.
-    references:
-      - LRS_R_embedding_of_Top
-      - Top_no_effective_cocongruences
 
   - property: pushout-stable regular monomorphisms
     proof: >-
@@ -196,9 +188,6 @@ unsatisfied_properties:
       Now let $u : A \to A/\langle X+Y \rangle$ be the quotient map, and let $v : A \to A/\langle X+Y \rangle$ map $a + bX + cY$ to the class of $a$, so that $v$ factors through $\pi$. Both $u$ and $v$ map $a + b(X+Y)$ to the class of $a$, so they agree on $A^\sigma$. Since $\Spec(A/\langle X+Y \rangle)$ has a single point, a morphism from it to $\Omega$ is the same as a point of $|\Omega|$ together with a local homomorphism from its stalk to $A/\langle X+Y \rangle$. For $\chi \circ \Spec(u)$ and $\chi \circ \Spec(v)$, these are $p$ together with $u \circ \varphi$ and $v \circ \varphi$, which coincide since $\varphi$ takes values in $A^\sigma$. Since $\Spec(v)$ factors through $\Spec(\pi)$, it follows that
       $$\chi \circ \Spec(u) = \chi \circ \Spec(v) = \top \circ {!}.$$
       Since the first square is a pullback, $\Spec(u)$ factors through $\Spec(\pi)$. Since $\Spec$ is fully faithful, $u$ factors through $\pi$. But then $X \in \ker(\pi) \subseteq \ker(u) = \langle X+Y \rangle$, which is a contradiction.
-    label: LRS_R_no_regular_subobject_classifier
-    references:
-      - CAlg(R)_no_regular_quotient_object_classifier
 
 special_objects:
   initial object:

@@ -31,12 +31,9 @@ satisfied_properties:
     proof: There are $5$ objects and $15$ morphisms.
 
   - property: skeletal
-    label: forked_commutative_square_rank
     proof: Assign the rank $0$ to $A$, $1$ to $B$ and $C$, $2$ to $D$, and $3$ to $E$. Every generating morphism strictly increases the rank, hence so does every non-identity morphism. Thus, for distinct objects $X,Y$ there cannot be morphisms $X \to Y$ and $Y \to X$.
 
   - property: one-way
-    references:
-      - forked_commutative_square_rank
     proof: We already know that every non-identity morphism strictly increases the rank (see above). In particular, it is not an endomorphism.
 
   - property: strict initial object
@@ -53,8 +50,6 @@ satisfied_properties:
 
   - property: regular-subobject-trivial
     proof: 'The only parallel pair of distinct morphisms is $u,v : D \rightrightarrows E$, so it suffices to prove that they do not have an equalizer. This is proven in the list of unsatisfied properties.'
-    references:
-      - forked_commutative_square_no_equalizers
 
 unsatisfied_properties:
   - property: semi-strongly connected
@@ -62,12 +57,9 @@ unsatisfied_properties:
 
   - property: equalizers
     proof: 'The morphisms $u,v : D \rightrightarrows E$ do not have an equalizer: the four morphisms with codomain $D$ are $g$, $m$, $g \circ e = m \circ f$, and $\id_D$. But $\id_D$ does not equalize $u,v$. The other three morphisms equalize $u,v$, but they are not universal: $m$ is not universal since $g$ does not factor through it, $g$ is not universal since $m$ does not factor through it, and $g \circ e$ is not universal since $g$ does not factor through it.'
-    label: forked_commutative_square_no_equalizers
 
   - property: pullbacks
     proof: 'Any two parallel morphisms with codomain $D$ are equal. It follows that a pullback of the cospan $D \xrightarrow{u} E \xleftarrow{v} D$ would be an equalizer of $u,v : D \rightrightarrows E$, which we know does not exist.'
-    references:
-      - forked_commutative_square_no_equalizers
 
   - property: extremal generator
     proof: 'Since both $m$ and $g$ equalize $u,v$, it is easy to see that $D$ is the only generator. But it is not extremal since $e$ induces a bijection $e_* : \Hom(D,A) \to \Hom(D,B)$ (both sets are empty), without $e$ being an isomorphism.'

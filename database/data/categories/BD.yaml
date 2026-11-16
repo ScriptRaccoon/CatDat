@@ -62,8 +62,6 @@ satisfied_properties:
   - property: ℵ₁-accessible
     proof: >-
       The proof is very similar to the one for <a href="/category/BC">$BC$</a>. We apply Theorem 4 <a href="/content/deloopings-aleph1-accessible">here</a>. We already know that $D$ is countable and that $BD$ is Cauchy complete. It remains to show that $D$ satisfies the ascending chain condition on principal right ideals. Every principal right ideal of $D$ has the form $s^n w D = s^n D$, where $w$ is a word in $f,g$, since $w$ is a split epimorphism and hence $w D = D$. If $s^n D \subseteq s^{n'} D$, then $n \geq n'$. Otherwise, write $s^n = s^{n'} x$ with $x \in D$. Since $s^n$ is a monomorphism, we get $1 = s^{n'-n} x$, so that $s^{n'-n}$ is a split epimorphism, which contradicts the classification of epimorphisms below. Therefore, every ascending chain $s^{n_0} D \subseteq s^{n_1} D \subseteq \cdots$ satisfies $n_0 \geq n_1 \geq \cdots$ and hence becomes stationary.
-    references:
-      - BC_aleph1-accessible
 
   - property: ℵ₁-coaccessible
     proof: >-
@@ -82,17 +80,12 @@ unsatisfied_properties:
       The proof is very similar to the one for <a href="/category/BC">$BC$</a>. Consider the homomorphism $\deg : D \to (\IZ,+,0)$ defined by $\deg(s)=1$ and $\deg(f)=\deg(g)=-1$. It is well-defined since $\deg(fs) = \deg(gs) = 0 = \deg(1)$. To every cospan $(x,y)$ (over the unique pair of objects in $BD$) we associate the number $\deg(x) - \deg(y)$. If a cospan $(x,y)$ has a morphism to another cospan $(u,v)$, i.e. there is some element $t$ with $tx=u$ and $ty=v$, then
       $$\deg(u) - \deg(v) = (\deg(t)+\deg(x)) - (\deg(t)+\deg(y)) = \deg(x) - \deg(y).$$
       Therefore, all cospans in a connected component have the same associated number. In particular, the cospans $(1,1)$ and $(s,1)$ do not lie in the same connected component.
-    label: BD_not_sifted
-    references:
-      - BC_not_sifted
 
   - property: cosifted
     proof: >-
       We use the homomorphism $\deg : D \to \IZ$ from the proof that $BD$ is not sifted. To every span $(x,y)$ we associate the number $\deg(x) - \deg(y)$. If a span $(u,v)$ has a morphism to another span $(x,y)$, i.e. there is some element $t$ with $u=xt$ and $v=yt$, then
       $$\deg(u) - \deg(v) = (\deg(x)+\deg(t)) - (\deg(y)+\deg(t)) = \deg(x) - \deg(y).$$
       Therefore, all spans in a connected component have the same associated number. In particular, the spans $(1,1)$ and $(s,1)$ do not lie in the same connected component.
-    references:
-      - BD_not_sifted
 
   - property: reflexive coequalizers
     proof: The pair $f,g$ is reflexive since $fs = gs = 1$. We claim that it is not coequalized by any morphism, so that in particular it has no coequalizer. Let $x = s^n w$ be an element of $D$, where $w$ is a word in $f,g$. Then $xf = s^n (wf)$ and $xg = s^n (wg)$ are in normal form, and the words $wf$ and $wg$ are different. By the uniqueness of the normal form, we get $xf \neq xg$.
@@ -131,8 +124,6 @@ unsatisfied_properties:
       Next, we evaluate the cocone equality $(1)$ at $n=m+1$. We get
       $$f = c_{m+1} = h x_{m+1} = s (h' x_{m+1}).$$
       Since $f$ is an epimorphism, this implies that $s$ is also an epimorphism, which contradicts the classification of epimorphisms below.
-    references:
-      - BC_no_sequential_colimits
 
   - property: sequential limits
     proof: >-
