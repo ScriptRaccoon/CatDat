@@ -2,29 +2,40 @@
 	import Fa from 'svelte-fa'
 	import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
 	import type { Snippet } from 'svelte'
-	import { popup_state, show_popup } from './Popup.svelte'
+	import {
+		open_proof,
+		popup_state,
+		register_proof,
+		unregister_proof
+	} from './Popup.svelte'
 
 	type Props = {
 		children: Snippet
 		proof?: string | null
+		proof_key: string
 	}
 
-	let { children, proof }: Props = $props()
+	let { children, proof, proof_key }: Props = $props()
 
 	const id = $props.id()
 
+	let wrapper = $state<HTMLElement | null>(null)
+
+	$effect(() => {
+		if (!proof || !wrapper) return
+		const key = proof_key
+		register_proof(key, { id, proof, element: wrapper })
+		return () => unregister_proof(key, id)
+	})
+
 	function show_proof(e: MouseEvent) {
 		e.stopPropagation()
-		show_popup({
-			id,
-			heading: 'Proof',
-			text: proof!
-		})
+		open_proof(proof_key)
 	}
 </script>
 
 {#if proof}
-	<span class="wrapper" class:expanded={popup_state?.id === id}>
+	<span class="wrapper" class:expanded={popup_state?.id === id} bind:this={wrapper}>
 		<button onclick={show_proof} aria-label="Show proof">
 			<Fa icon={faInfoCircle} />
 		</button>
@@ -42,6 +53,7 @@
 		display: inline-flex;
 		align-items: start;
 		gap: 0.35rem;
+		scroll-margin-top: 25dvh;
 
 		&.expanded {
 			color: var(--accent-color);

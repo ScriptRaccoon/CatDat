@@ -3,6 +3,7 @@
 	import type { StructureDetails, CategorySpecificDisplay } from '#lib/commons/types.ts'
 	import StructurePage from '#pages/StructurePage.svelte'
 	import {
+		encode_property_ID,
 		get_property_url,
 		get_special_morphism_plural
 	} from '#shared/property.utils.ts'
@@ -42,14 +43,17 @@
 			<h2>Special morphisms</h2>
 
 			<ul class="with-margins no-bullets underline-formula-links">
-				{#each data.special_morphisms as morph}
+				{#each data.special_morphisms as morphism}
 					<li>
-						<TextWithProof proof={morph.proof}>
-							<a href={get_property_url(morph.kind, 'morphism')}>
-								{get_special_morphism_plural(morph.kind)}
+						<TextWithProof
+							proof={morphism.proof}
+							proof_key={encode_property_ID(morphism.kind)}
+						>
+							<a href={get_property_url(morphism.kind, 'morphism')}>
+								{get_special_morphism_plural(morphism.kind)}
 							</a>:
-							{#if morph.description}
-								{@html morph.description}
+							{#if morphism.description}
+								{@html morphism.description}
 							{:else}
 								<Fa icon={faQuestion} scale={0.825} />
 							{/if}
