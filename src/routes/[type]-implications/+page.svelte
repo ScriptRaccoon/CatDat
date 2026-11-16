@@ -8,7 +8,7 @@
 	{#snippet hints()}
 		{#if data.type === 'category'}
 			<p class="hint">
-				*Deductions from these implications are automatically incorporated into
+				Deductions from these implications are automatically incorporated into
 				each category whenever applicable. For instance, if a category is
 				identified as complete, the property of having a terminal object is
 				automatically inferred and added.
@@ -30,7 +30,7 @@
 			</p>
 		{:else if data.type === 'functor'}
 			<p class="hint">
-				*Deductions from these implications are automatically incorporated into
+				Deductions from these implications are automatically incorporated into
 				each functor whenever applicable. For instance, if a functor is identified
 				as monadic, the property of being continuous is automatically inferred and
 				added.
@@ -43,7 +43,7 @@
 			</p>
 		{:else if data.type === 'morphism'}
 			<p class="hint">
-				*Deductions from these implications are automatically incorporated into
+				Deductions from these implications are automatically incorporated into
 				each morphism whenever applicable. Moreover, implications are
 				automatically dualized when the corresponding dual properties exist.
 			</p>
@@ -55,7 +55,7 @@
 			</p>
 		{:else if data.type === 'symmetric_monoidal_category'}
 			<p class="hint">
-				*Deductions from these implications are automatically incorporated into
+				Deductions from these implications are automatically incorporated into
 				each symmetric monoidal category whenever applicable. Moreover,
 				implications are automatically dualized when the corresponding dual
 				properties exist.

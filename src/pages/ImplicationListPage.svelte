@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { browser } from '$app/env'
 	import HelpMessage from '#components/HelpMessage.svelte'
 	import ImplicationList from '#components/ImplicationList.svelte'
 	import MetaData from '#components/MetaData.svelte'
@@ -19,7 +18,7 @@
 	type Props = {
 		implications: ImplicationDisplay[]
 		type: StructureType
-		hints?: Snippet
+		hints: Snippet
 	}
 
 	let { implications, type, hints }: Props = $props()
@@ -28,7 +27,6 @@
 
 	function toggle() {
 		show_deduced_implications = !show_deduced_implications
-		if (browser) window.scrollTo({ top: 0, behavior: 'smooth' })
 	}
 
 	let displayed_implications = $derived(
@@ -52,22 +50,43 @@
 	let deduced_implications_count = $derived(
 		implications.filter((implication) => implication.is_deduced).length
 	)
+
+	let deduced_note = $derived(
+		search || show_deduced_implications
+			? ''
+			: `plus ${deduced_implications_count} deduced, `
+	)
+
+	let toggle_label = $derived(
+		show_deduced_implications
+			? 'Hide deduced implications'
+			: 'Show deduced implications'
+	)
+
+	let toggle_text = $derived(
+		show_deduced_implications ? 'hide deduced' : search ? 'show deduced' : 'show them'
+	)
 </script>
 
 <MetaData title="{capitalize(remove_underscores(type))} implications" />
 
 <h1>{capitalize(remove_underscores(type))} implications</h1>
 
+<details>
+	<summary class="hint">How are implications used?</summary>
+	{@render hints()}
+</details>
+
 <SearchFilter bind:search />
 
 <p class="hint">
 	{pluralize(filtered_implications.length, {
-		one: 'Found {count} implication*',
-		other: 'Found {count} implications*'
+		one: 'Found {count} implication',
+		other: 'Found {count} implications'
 	})}
-	{#if !search && !show_deduced_implications}
-		(plus {deduced_implications_count} deduced)
-	{/if}
+	({deduced_note}<button class="toggle-btn" onclick={toggle} aria-label={toggle_label}
+		>{toggle_text}</button
+	>)
 </p>
 
 <HelpMessage id="implication-link">
@@ -76,16 +95,10 @@
 
 <ImplicationList implications={filtered_implications} {type} />
 
-{#if hints}
-	{@render hints()}
-{/if}
-
-<button class="button" onclick={toggle}>
-	{#if show_deduced_implications}
-		Hide deduced implications
-	{:else}
-		Show deduced implications
-	{/if}
-</button>
-
 <SuggestionForm />
+
+<style>
+	.toggle-btn {
+		text-decoration: underline;
+	}
+</style>
