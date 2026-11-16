@@ -48,6 +48,10 @@
 				)
 			: displayed_implications
 	)
+
+	let deduced_implications_count = $derived(
+		implications.filter((implication) => implication.is_deduced).length
+	)
 </script>
 
 <MetaData title="{capitalize(remove_underscores(type))} implications" />
@@ -61,6 +65,9 @@
 		one: 'Found {count} implication*',
 		other: 'Found {count} implications*'
 	})}
+	{#if !search && !show_deduced_implications}
+		(plus {deduced_implications_count} deduced)
+	{/if}
 </p>
 
 <HelpMessage id="implication-link">
