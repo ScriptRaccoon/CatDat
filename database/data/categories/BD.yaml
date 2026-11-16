@@ -61,7 +61,7 @@ satisfied_properties:
 
   - property: ℵ₁-accessible
     proof: >-
-      The proof is very similar to the one for <a href="/category/BC">$BC$</a>. We apply Theorem 4 <a href="/content/deloopings-aleph1-accessible">here</a>. We already know that $D$ is countable and that $BD$ is Cauchy complete. It remains to show that $D$ satisfies the ascending chain condition on principal right ideals. Every principal right ideal of $D$ has the form $s^n w D = s^n D$, where $w$ is a word in $f,g$, since $w$ is a split epimorphism and hence $w D = D$. If $s^n D \subseteq s^{n'} D$, then $n \geq n'$. Otherwise, write $s^n = s^{n'} x$ with $x \in D$. Since $s^n$ is a monomorphism, we get $1 = s^{n'-n} x$, so that $s^{n'-n}$ is a split epimorphism, which contradicts the classification of epimorphisms below. Therefore, every ascending chain $s^{n_0} D \subseteq s^{n_1} D \subseteq \cdots$ satisfies $n_0 \geq n_1 \geq \cdots$ and hence becomes stationary.
+      The argument is very similar to the <a href="/category/BC?proof=aleph1-accessible">proof</a> for $BC$. We apply Theorem 4 <a href="/content/deloopings-aleph1-accessible">here</a>. We already know that $D$ is countable and that $BD$ is Cauchy complete. It remains to show that $D$ satisfies the ascending chain condition on principal right ideals. Every principal right ideal of $D$ has the form $s^n w D = s^n D$, where $w$ is a word in $f,g$, since $w$ is a split epimorphism and hence $w D = D$. If $s^n D \subseteq s^{n'} D$, then $n \geq n'$. Otherwise, write $s^n = s^{n'} x$ with $x \in D$. Since $s^n$ is a monomorphism, we get $1 = s^{n'-n} x$, so that $s^{n'-n}$ is a split epimorphism, which contradicts the classification of epimorphisms below. Therefore, every ascending chain $s^{n_0} D \subseteq s^{n_1} D \subseteq \cdots$ satisfies $n_0 \geq n_1 \geq \cdots$ and hence becomes stationary.
 
   - property: ℵ₁-coaccessible
     proof: >-
@@ -77,13 +77,13 @@ unsatisfied_properties:
 
   - property: sifted
     proof: >-
-      The proof is very similar to the one for <a href="/category/BC">$BC$</a>. Consider the homomorphism $\deg : D \to (\IZ,+,0)$ defined by $\deg(s)=1$ and $\deg(f)=\deg(g)=-1$. It is well-defined since $\deg(fs) = \deg(gs) = 0 = \deg(1)$. To every cospan $(x,y)$ (over the unique pair of objects in $BD$) we associate the number $\deg(x) - \deg(y)$. If a cospan $(x,y)$ has a morphism to another cospan $(u,v)$, i.e. there is some element $t$ with $tx=u$ and $ty=v$, then
+      The argument is very similar to the <a href="/category/BC?proof=sifted">proof</a> for $BC$. Consider the homomorphism $\deg : D \to (\IZ,+,0)$ defined by $\deg(s)=1$ and $\deg(f)=\deg(g)=-1$. It is well-defined since $\deg(fs) = \deg(gs) = 0 = \deg(1)$. To every cospan $(x,y)$ (over the unique pair of objects in $BD$) we associate the number $\deg(x) - \deg(y)$. If a cospan $(x,y)$ has a morphism to another cospan $(u,v)$, i.e. there is some element $t$ with $tx=u$ and $ty=v$, then
       $$\deg(u) - \deg(v) = (\deg(t)+\deg(x)) - (\deg(t)+\deg(y)) = \deg(x) - \deg(y).$$
       Therefore, all cospans in a connected component have the same associated number. In particular, the cospans $(1,1)$ and $(s,1)$ do not lie in the same connected component.
 
   - property: cosifted
     proof: >-
-      We use the homomorphism $\deg : D \to \IZ$ from the proof that $BD$ is not sifted. To every span $(x,y)$ we associate the number $\deg(x) - \deg(y)$. If a span $(u,v)$ has a morphism to another span $(x,y)$, i.e. there is some element $t$ with $u=xt$ and $v=yt$, then
+      We use the homomorphism $\deg : D \to \IZ$ from the <a href="/category/BD?proof=sifted">proof</a> that $BD$ is not sifted. To every span $(x,y)$ we associate the number $\deg(x) - \deg(y)$. If a span $(u,v)$ has a morphism to another span $(x,y)$, i.e. there is some element $t$ with $u=xt$ and $v=yt$, then
       $$\deg(u) - \deg(v) = (\deg(x)+\deg(t)) - (\deg(y)+\deg(t)) = \deg(x) - \deg(y).$$
       Therefore, all spans in a connected component have the same associated number. In particular, the spans $(1,1)$ and $(s,1)$ do not lie in the same connected component.
 
@@ -108,7 +108,7 @@ unsatisfied_properties:
 
   - property: sequential colimits
     proof: >-
-      The proof is very similar to the one for <a href="/category/BC">$BC$</a>. We will show that the sequence
+      The argument is very similar to the <a href="/category/BC?proof=sequential_colimits">proof</a> for $BC$. We will show that the sequence
       $$* \xrightarrow{s} * \xrightarrow{s} * \xrightarrow{s} \cdots$$
       has no colimit. A cocone is a sequence of elements $(c_n)$ with $c_{n+1} s = c_n$ for all $n \geq 0$. Assume that the sequence has a colimit, i.e. a universal cocone $x=(x_n)$. Write $x_0 = s^a w$, where $w$ is a word in $f,g$. Choose some $m > a$ and define the sequence of elements $(c_n)$ by
       $$c_n \coloneqq \begin{cases}

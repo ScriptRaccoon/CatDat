@@ -25,7 +25,7 @@ satisfied_properties:
     proof: There is a forgetful functor $\PreOrd \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
 
   - property: locally finitely presentable
-    proof: The same proof as for <a href="/category/Pos">$\Pos$</a> works, cf. <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adámek–Rosický</a>, Example 1.10.
+    proof: The same <a href="/category/Pos?proof=locally_finitely_presentable">proof</a> as for $\Pos$ works, cf. <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adámek–Rosický</a>, Example 1.10.
 
   - property: cartesian closed
     proof: For preordered sets $(P,\leq),(Q,\leq)$ we endow $H \coloneqq \Hom((P,\leq),(Q,\leq))$ with the preorder in which $f \leq g$ holds iff $f(p) \leq g(p)$ for all $p \in P$. The universal evaluation map is $(H,\leq) \times (P,\leq) \to (Q,\leq)$, $(f,p) \mapsto f(p)$, it is order-preserving, and it satisfies the universal property.
@@ -40,7 +40,7 @@ satisfied_properties:
     proof: See <a href="https://math.stackexchange.com/questions/5130295">MSE/5130295</a>.
 
   - property: regular subobject classifier
-    proof: The proof for <a href="/category/Bin">$\Bin$</a> works verbatim, since its regular subobject classifier $\Omega \coloneqq (\{0,1\},\{0,1\} \times \{0,1\})$ is a preordered set, and the regular monomorphisms in $\PreOrd$ are also the embeddings (see below).
+    proof: The <a href="/category/Bin?proof=regular_subobject_classifier">proof</a> for $\Bin$ works verbatim, since its regular subobject classifier $\Omega \coloneqq (\{0,1\},\{0,1\} \times \{0,1\})$ is a preordered set, and the regular monomorphisms in $\PreOrd$ are also the embeddings (see below).
 
   - property: extremal generator
     proof: 'We claim that $\{ 0 < 1 \}$ is an extremal generator. First, the singleton preordered set $\{\ast\}$ is a generator, since it represents the forgetful functor $\PreOrd \to \Set$ which is faithful. Since we have an epimorphism $\{ 0 < 1 \} \to \{\ast\}$, it follows that $\{ 0 < 1 \}$ is also a generator. Now, suppose we have a morphism $f : (P,\leq) \to (Q,\leq)$ such that $f \circ {-} : \Hom(\{0<1\}, (P,\leq)) \to \Hom(\{0<1\}, (Q,\leq))$ is a bijection. Then considering constant functions, we can see that $f : P \to Q$ must be a bijection. Now, suppose we have $p_1, p_2 \in P$ such that $f(p_1) \le f(p_2)$. Then that induces a morphism $\{0<1\} \to (Q,\leq)$ with $0 \mapsto f(p_1), 1 \mapsto f(p_2)$. The corresponding morphism $\{0<1\}\to (P,\leq)$ must send $0\mapsto p_1, 1 \mapsto p_2$, showing that $p_1 \le p_2$. It follows that $f$ is an isomorphism.'
@@ -79,7 +79,7 @@ special_morphisms:
     proof: This is easy.
   monomorphism:
     description: injective order-preserving functions
-    proof: The same proof as for <a href="/category/Set">$\Set$</a> can be used.
+    proof: The same <a href="/category/Set?proof=monomorphism">proof</a> as for $\Set$ can be used.
   epimorphism:
     description: surjective order-preserving functions
     proof: Clearly, surjective maps are epimorphisms. The converse follows since, as mentioned, the forgetful functor $\PreOrd \to \Set$ has a right adjoint and hence preserves epimorphisms.

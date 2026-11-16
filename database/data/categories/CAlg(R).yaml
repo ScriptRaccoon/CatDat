@@ -27,7 +27,7 @@ satisfied_properties:
     check_redundancy: false
 
   - property: Malcev
-    proof: This follows in the same way as for <a href="/category/Grp">$\Grp$</a>; see also <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories">Borceux–Bourn</a>, Example 2.2.5.
+    proof: This follows in the same way as for $\Grp$ (<a href="/category/Grp?proof=Malcev">proof</a>); see also <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories">Borceux–Bourn</a>, Example 2.2.5.
 
   - property: coextensive
     proof: >-

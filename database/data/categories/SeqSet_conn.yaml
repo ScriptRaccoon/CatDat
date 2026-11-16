@@ -88,7 +88,7 @@ satisfied_properties:
 
   - property: cogenerator
     proof: >-
-      We claim that the subobject classifier $\Omega$ constructed above is a cogenerator. In other words, if $f,g : X \rightrightarrows Y$ are distinct morphisms of connected sequences, then there is a subobject $U \subseteq Y$ such that $f^*(U) \neq g^*(U)$ as subobjects of $X$.
+      We claim that the subobject classifier $\Omega$ from the <a href="/category/SeqSet_conn?proof=subobject_classifier">construction</a> above is a cogenerator. In other words, if $f,g : X \rightrightarrows Y$ are distinct morphisms of connected sequences, then there is a subobject $U \subseteq Y$ such that $f^*(U) \neq g^*(U)$ as subobjects of $X$.
 
       Choose some $n \geq 0$ and $x_n \in X_n$ such that $f_n(x_n) \neq g_n(x_n)$ in $Y_n$. Define the subsequence $U \subseteq Y$ by
       $$U_k = \begin{cases}
@@ -168,7 +168,7 @@ unsatisfied_properties:
       We show that the coproduct $T+T$ does not exist in $[(\IN,\leq),\Set]_{\conn}$, where $T$ denotes the terminal object, the constant sequence with value $\{\ast\}$. Since a morphism $T \to X$ corresponds to an element of $X_0$, this would amount to a universal connected sequence of sets $X$ equipped with two elements $x,x' \in X_0$. Choose $k \geq 0$ such that their images in $X_k$ coincide. Then, by the universal property, for every connected sequence $Y$ and every pair of elements $y,y' \in Y_0$, their images in $Y_k$ must coincide. A counterexample is the sequence $Y$ defined by
       $$\{0,1\} \xrightarrow{\id} \cdots \xrightarrow{\id} \{0,1\} \xrightarrow{!} \{0\} \xrightarrow{!} \{0\} \xrightarrow{!} \cdots,$$
       where $Y_k = \{0,1\}$ and $Y_{k+1}=\{0\}$. It is connected, but the elements $0,1 \in Y_0$ only become equal in $Y_{k+1}$.
-      Another counterexample is the subobject classifier $\Omega$, whose elements $0,k+1 \in \Omega_0$ become equal only after $k+1$ steps.
+      Another counterexample is the subobject classifier $\Omega$ (<a href="/category/SeqSet_conn?proof=subobject_classifier">proof</a>), whose elements $0,k+1 \in \Omega_0$ become equal only after $k+1$ steps.
 
       Here is an alternative proof that the coproduct $1+1$, and in fact most coproducts, do not exist. The projection functor $[(\IN,\leq),\Set]_{\conn} \to \Set$, $X \mapsto X_n$, has a right adjoint that maps a set $S$ to the connected sequence
       $$S \xrightarrow{\id} \cdots \xrightarrow{\id} S \xrightarrow{!} \{\ast\} \xrightarrow{!} \{\ast\} \xrightarrow{!} \cdots,$$
@@ -180,12 +180,12 @@ unsatisfied_properties:
       $$\varnothing \to \cdots \to \varnothing \to \{\ast\} \to \{\ast\} \to \cdots,$$
       where $\{\ast\}$ starts at index $n$, and this sequence is clearly connected. The claim now follows from the dual of Lemma 1 <a href="/content/inclusion-functors">here</a>. Alternatively, each projection functor $[(\IN,\leq),\Set]_{\conn} \to \Set$, $X \mapsto X_n$, is representable by the sequence just described and hence continuous.
 
-      Thus, it suffices to prove that connected sequences are not closed under countable powers, which are defined pointwise. Consider the subobject classifier
+      Thus, it suffices to prove that connected sequences are not closed under countable powers, which are defined pointwise. Consider the subobject classifier (<a href="/category/SeqSet_conn?proof=subobject_classifier">proof</a>)
       $$\Omega = \bigl(\IN \xrightarrow{s} \IN \xrightarrow{s} \IN \xrightarrow{s} \cdots\bigr)$$
       with $s(k) = \max(0,k-1)$. We will prove that $\Omega^{\IN}$ is not connected. For the two elements $n,0 \in \Omega_0 = \IN$, their images in $\Omega_k = \IN$ coincide if and only if $k \geq n$. It follows that the two elements $(0,1,2,\dotsc)$ and $(0,0,\dotsc)$ of $\Omega_0^{\IN}$ have the same image in $\Omega_k^{\IN}$ if and only if $k \geq n$ for every $n \geq 0$. Thus, no such $k$ exists, and $\Omega^{\IN}$ is not connected.
 
   - property: ℵ₁-cofiltered limits
-    proof: Since we already know that the inclusion functor $[(\IN,\leq),\Set]_{\conn} \hookrightarrow [(\IN,\leq),\Set]$ is continuous, it suffices to construct an $\aleph_1$-cofiltered diagram of connected sequences whose limit sequence is not connected. An example is given in <a href="https://mathoverflow.net/questions/515431">MO/515431</a>.
+    proof: Since we already know that the inclusion functor $[(\IN,\leq),\Set]_{\conn} \hookrightarrow [(\IN,\leq),\Set]$ is continuous (<a href="/category/SeqSet_conn?proof=countable_powers">proof</a>), it suffices to construct an $\aleph_1$-cofiltered diagram of connected sequences whose limit sequence is not connected. An example is given in <a href="https://mathoverflow.net/questions/515431">MO/515431</a>.
 
   - property: natural numbers object
     proof: >-

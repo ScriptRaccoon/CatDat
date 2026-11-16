@@ -46,7 +46,7 @@ satisfied_properties:
       Now, since the pushforward maps of tangent spaces compose to the identity, we see that $(j_1;j_2)$ must be a local immersion and $r$ must be a submersion. Also, since the fibers of $r$ have one or two points each, we see that the dimension of $C$ must locally be the same as the dimension of $X$. This implies that in fact $(j_1;j_2)$ and $r$ are local diffeomorphisms. Therefore, the cardinality of the fiber of $r$ is locally constant. Thus, if $U$ is the subset of $X$ where $r$ has fiber of a single point, with the subspace topology, then $U$ is a clopen submanifold of $X$ which serves as the equalizer of $j_1$ and $j_2$.
 
   - property: effective cocongruences
-    proof: 'From the proof that $\Man$ has coquotients of cocongruences, we know that for any cocongruence $X \rightrightarrows C$, there is a clopen submanifold $U$ of $X$ such that the fibers of $r : C \twoheadrightarrow X$ have one point on $U$, and two points on $X \setminus U$. Therefore, $C$ is the cokernel pair of the inclusion map $U \hookrightarrow X$.'
+    proof: 'From the <a href="/category/Man?proof=coquotients_of_cocongruences">proof</a> that $\Man$ has coquotients of cocongruences, we know that for any cocongruence $X \rightrightarrows C$, there is a clopen submanifold $U$ of $X$ such that the fibers of $r : C \twoheadrightarrow X$ have one point on $U$, and two points on $X \setminus U$. Therefore, $C$ is the cokernel pair of the inclusion map $U \hookrightarrow X$.'
 
   - property: extremal generator
     proof: >-
@@ -96,7 +96,7 @@ unsatisfied_properties:
 
   - property: ℵ₁-cofiltered limits
     proof: >-
-      We continue the counterexample from <a href="/category/Set_c">$\Set_\c$</a>. There, we started with an arbitrary uncountable set $R$ and constructed a diagram $X : P_{<\aleph_1}(R)^{\op} \to \Set$ by sending a countable subset $C \subseteq R$ to the pointed countable set $C \sqcup \{\ast\}$. Its limit in $\Set$ is uncountable.
+      We continue the <a href="/category/Set_c?proof=aleph1-cofiltered_limits">counterexample</a> from $\Set_\c$. There, we started with an arbitrary uncountable set $R$ and constructed a diagram $X : P_{<\aleph_1}(R)^{\op} \to \Set$ by sending a countable subset $C \subseteq R$ to the pointed countable set $C \sqcup \{\ast\}$. Its limit in $\Set$ is uncountable.
       Now endow each set $C \sqcup \{\ast\}$ with the discrete topology. Each of them becomes a $0$-dimensional smooth manifold.
       Assume that there exists a limit cone $(\pi_C : M \to C \sqcup \{\ast\})$ in $\Man$. Since the forgetful functor $\Man \to \Set$ is representable, it preserves limits. In particular, the underlying set of $M$ is the limit of the underlying sets and is therefore uncountable.
       Since the codomain of $\pi_C$ is discrete, the map $\pi_C$ is locally constant. Thus, for every connected component $K \subseteq M$, the map $\pi_C$ is constant on $K$. Since the maps $\pi_C$ are jointly injective, it follows that every connected component of $M$ consists of a single point.

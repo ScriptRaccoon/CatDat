@@ -28,7 +28,7 @@ satisfied_properties:
     check_redundancy: false
 
   - property: extremal generator
-    proof: The countable group $\IZ$ is an extremal generator even in <a href="/category/Grp">$\Grp$</a>. Now use Lemma 10 <a href="/content/subcategories">here</a>.
+    proof: The countable group $\IZ$ is an extremal generator even in $\Grp$ (<a href="/category/Grp?proof=extremal_generator">proof</a>). Now use Lemma 10 <a href="/content/subcategories">here</a>.
 
   - property: finite products
     proof: This is because <a href="/category/Grp">$\Grp$</a> has finite (in fact, all) products, and $\Grp_\c \hookrightarrow \Grp$ is closed under finite products. This is because a finite product of countable sets is again countable.
@@ -52,13 +52,13 @@ satisfied_properties:
     proof: 'If $f : G \to H$ is an epimorphism in $\Grp_\c$, i.e. a surjective homomorphism of countable groups, then $f$ is the cokernel of $K \hookrightarrow G$ in $\Grp$, where $K$ is the kernel of $f$. Since $K$ is countable, it is also the cokernel in $\Grp_\c$.'
 
   - property: Malcev
-    proof: We can use the same proof as for <a href="/category/Grp">$\Grp$</a>.
+    proof: We can use the same <a href="/category/Grp?proof=Malcev">proof</a> as for $\Grp$.
 
   - property: regular
     proof: This follows from Lemma 7 <a href="/content/subcategories">here</a> applied to the inclusion functor $\Grp_\c \hookrightarrow \Grp$ into the regular category $\Grp$ and the description of regular epimorphisms below.
 
   - property: effective congruences
-    proof: 'Let $q_1,q_2 : R \rightrightarrows G$ be a congruence in $\Grp_\c$. Since the induced homomorphism $(q_1,q_2) : R \to G \times G$ is a monomorphism, hence injective (see below). Thus, we may assume that $R \subseteq G \times G$ is a subgroup and that $q_1,q_2$ are the two projections. By reflexivity, $R$ contains the diagonal of $G$. We know from the proof that <a href="/category/Grp">$\Grp$</a> is Malcev that $R = \{(g,h) \in G^2 : g^{-1} h \in N \}$ for some normal subgroup $N \subseteq G$. It is the kernel pair of the projection $p : G \twoheadrightarrow G/N$ in $\Grp$, but also in $\Grp_\c$ since $G/N$ is countable.'
+    proof: 'Let $q_1,q_2 : R \rightrightarrows G$ be a congruence in $\Grp_\c$. Since the induced homomorphism $(q_1,q_2) : R \to G \times G$ is a monomorphism, hence injective (see below). Thus, we may assume that $R \subseteq G \times G$ is a subgroup and that $q_1,q_2$ are the two projections. By reflexivity, $R$ contains the diagonal of $G$. We know from the <a href="/category/Grp?proof=Malcev">proof</a> that $\Grp$ is Malcev that $R = \{(g,h) \in G^2 : g^{-1} h \in N \}$ for some normal subgroup $N \subseteq G$. It is the kernel pair of the projection $p : G \twoheadrightarrow G/N$ in $\Grp$, but also in $\Grp_\c$ since $G/N$ is countable.'
 
   - property: effective cocongruences
     proof: >-
@@ -87,7 +87,7 @@ unsatisfied_properties:
     proof: 'Assume that the copower $G \coloneqq I \otimes \IZ$ exists in $\Grp_\c$. We will prove that $I$ is countable; in particular, $\aleph_1 \otimes \IZ$ does not exist. The copower is a countable group $G$ with a universal family of elements $(x_i)_{i \in I}$. For every $i \in I$ there is a homomorphism $G \to \IZ$ defined by $x_i \mapsto 1$ and $x_j \mapsto 0$ for $j \neq i$. In particular, $x_i \neq x_j$ whenever $i \neq j$. Thus, $x : I \to G$ is an injective map, which proves that $I$ is countable.'
 
   - property: regular quotient object classifier
-    proof: We can copy the proof from <a href="/category/Grp">$\Grp$</a>.
+    proof: We can copy the <a href="/category/Grp?proof=regular_quotient_object_classifier">proof</a> from $\Grp$.
 
   - property: pushout-stable regular monomorphisms
     proof: The regular monomorphisms are precisely the injective homomorphisms. Pushouts of injective homomorphisms between countable groups do not need to be injective, see <a href="https://math.stackexchange.com/questions/5088032">MSE/5088032</a>.
@@ -97,7 +97,7 @@ unsatisfied_properties:
 
   - property: ℵ₁-cofiltered limits
     proof: >-
-      The proof is similar to <a href="/category/Set_c">$\Set_\c$</a>. Since the forgetful functor $\Grp_\c \to \Set$ is representable, it preserves limits. Moreover, $\Grp \to \Set$ preserves limits. Therefore, it suffices to construct an $\aleph_1$-cofiltered diagram of countable groups whose $\Grp$-limit is not countable.
+      The argument is similar to the <a href="/category/Set_c?proof=aleph1-cofiltered_limits">proof</a> for $\Set_\c$. Since the forgetful functor $\Grp_\c \to \Set$ is representable, it preserves limits. Moreover, $\Grp \to \Set$ preserves limits. Therefore, it suffices to construct an $\aleph_1$-cofiltered diagram of countable groups whose $\Grp$-limit is not countable.
       Let $R$ be an uncountable set (such as $\IR$) and consider the poset $P_{<\aleph_1}(R)$ of countable subsets of $R$. It is $\aleph_1$-filtered, so its opposite is $\aleph_1$-cofiltered.
       Define a diagram $X : P_{<\aleph_1}(R)^{\op} \to \Grp_\c$ by mapping a countable subset $C \subseteq R$ to the free abelian group $F(C)$ on $C$ and an inclusion $C \subseteq D$ to the canonical epimorphism $F(D) \to F(C)$ which sends each element of $C$ to itself and sends all elements of $D \setminus C$ to $0$.
       For $r \in R$ we define $\varepsilon(r) \in \lim(X)$ by

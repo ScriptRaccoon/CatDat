@@ -17,6 +17,6 @@ related:
 
 satisfied_properties:
   - property: well-copointed
-    proof: We know that $K$ is even an extremal cogenerator of <a href="/category/Vect">$\Vect_K$</a>.
+    proof: We know that $K$ is even an extremal cogenerator of $\Vect_K$ (<a href="/category/Vect?proof=extremal_cogenerator">proof</a>).
 
 unsatisfied_properties: []

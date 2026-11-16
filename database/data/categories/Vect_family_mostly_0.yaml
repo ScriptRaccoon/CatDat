@@ -58,7 +58,7 @@ unsatisfied_properties:
 
   - property: total
     # TODO: refactor this once we add "hypercomplete"
-    proof: We can almost repeat the previous proof that the category is not cototal. The collection of cones $(V \to E^i)_{i \in I}$ is essentially small for every $V$, but $\prod_{i \in I} E^i$ does not exist since it would have support $I$.
+    proof: We can almost repeat the previous <a href="/category/Vect_family_mostly_0?proof=cototal">proof</a> that the category is not cototal. The collection of cones $(V \to E^i)_{i \in I}$ is essentially small for every $V$, but $\prod_{i \in I} E^i$ does not exist since it would have support $I$.
 
 special_objects:
   initial object:

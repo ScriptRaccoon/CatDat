@@ -52,7 +52,7 @@ satisfied_properties:
       is injective, which implies that $X+X \to C$ is surjective (where $X+X$ denotes the coproduct in $\Set$, which does not exist in $\FinSet_{3^\bullet}$). It follows that $X \rightrightarrows C$ is a coreflexive corelation in $\Set$. Since <a href="/category/Set">$\Set$</a> is co-Malcev and has effective cocongruences (by <a href="/category-implication/regular_epi-regular_extensive_consequences">this result</a>), there is a subset $Y \subseteq X$ such that $C \cong X \sqcup_Y X$ in $\Set$, with $X \rightrightarrows C$ corresponding to the two pushout inclusions. If $X$ has cardinality $3^n$, the cardinality of $C$ lies in the interval $[3^n,2 \cdot 3^n]$ and is a power of $3$. Thus, $C$ also has cardinality $3^n$. It follows that $Y=X$ and that the cocongruence is isomorphic to $\id_X,\id_X : X \rightrightarrows X$. In particular, it is the cokernel pair of $\id_X : X \to X$.
 
   - property: coquotients of cocongruences
-    proof: We have just seen that every cocongruence is trivial and therefore has a coquotient.
+    proof: We have just seen that every cocongruence is trivial and therefore has a coquotient (<a href="/category/FinSet_power_3?proof=effective_cocongruences">proof</a>).
 
 unsatisfied_properties:
   - property: skeletal
@@ -87,7 +87,7 @@ unsatisfied_properties:
     proof: >-
       Partition a finite set $X$ of cardinality $9$ into sets of cardinalities $1,1,3,4$. This yields an equivalence relation $R \subseteq X \times X$ with
       $$\card(R) = 1^2 + 1^2 + 3^2 + 4^2 = 27 = 3^3.$$
-      Thus, $R \rightrightarrows X$ is a congruence in $\FinSet_{3^\bullet}$. We already know that the inclusion functor $\FinSet_{3^\bullet} \hookrightarrow \Set$ is cocontinuous, so a quotient in $\FinSet_{3^\bullet}$ must be the quotient taken in $\Set$. However, since there are $4$ equivalence classes, the set $X/R$ has cardinality $4$. Thus, the quotient does not exist in $\FinSet_{3^\bullet}$.
+      Thus, $R \rightrightarrows X$ is a congruence in $\FinSet_{3^\bullet}$. We already know that the inclusion functor $\FinSet_{3^\bullet} \hookrightarrow \Set$ is cocontinuous (<a href="/category/FinSet_power_3?proof=binary_copowers">proof</a>), so a quotient in $\FinSet_{3^\bullet}$ must be the quotient taken in $\Set$. However, since there are $4$ equivalence classes, the set $X/R$ has cardinality $4$. Thus, the quotient does not exist in $\FinSet_{3^\bullet}$.
 
   - property: natural numbers object
     proof: By Lemma 2 <a href="/content/natural_numbers_objects">here</a>, if $(N,z,s)$ is a natural numbers object, then $N \cong \{\ast\} \sqcup N$. But there is no finite set with this property.

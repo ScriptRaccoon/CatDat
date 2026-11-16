@@ -53,7 +53,7 @@ satisfied_properties:
 
   - property: cocartesian cofiltered limits
     proof: >-
-      We continue the proof for <a href="/category/Set_*">$\Set_*$</a> by showing that the natural bijective map
+      We continue the <a href="/category/Set_*?proof=cocartesian_cofiltered_limits">proof</a> for $\Set_*$ by showing that the natural bijective map
       $$\textstyle \alpha : X \vee \lim_i Y_i \to \lim_i (X \vee Y_i)$$
       is open. It suffices to consider open sets of two types: (1) If $U \subseteq X$ is open, the $\alpha$-image of $U \vee \lim_i Y_i$ is $p_{i_0}^*(U \vee Y_{i_0})$ for any chosen index $i_0$, hence open. (2) If $i$ is an index and $V_i \subseteq Y_i$ is open, then the $\alpha$-image of $X \vee (p_i^*(V_i) \cap \lim_i Y_i)$ is $p_i^*(X \vee V_i)$, hence open.
 
@@ -65,7 +65,7 @@ satisfied_properties:
 
   - property: extremal cogenerator
     proof: >-
-      It is easily checked that the indiscrete two-point space $\{0,1\}$ with base point $1$ is a cogenerator, using the fact that the pointed set $\{0,1\}$ with base point $1$ is a cogenerator of <a href="/category/Set_*">$\Set_*$</a>. If $S$ is the Sierpiński space on $\{0,1\}$, we claim that adding $(S, 0)$ and $(S, 1)$ gives an extremal cogenerating collection. To see this, let $f : X \to Y$ be a continuous function. Then $f$ inducing a bijection on maps to $(\{0,1\},1)$ implies that the underlying function of $f$ is bijective. In particular, because $f$ is injective, we see that for $V$ an open subset of $Y$, $f^*(V)$ contains the base point of $X$ if and only if $V$ contains the base point of $Y$. Also, $f$ inducing a bijection on maps to $(S, 1)$ implies that $f^* : \Open(Y) \to \Open(X)$ is bijective on the open sets containing the base points, and $f$ inducing a bijection on maps to $(S, 0)$ implies that $f^* : \Open(Y) \to \Open(X)$ is bijective on the open sets not containing the base points. From these observations, we can conclude that $f$ is a homeomorphism.
+      It is easily checked that the indiscrete two-point space $\{0,1\}$ with base point $1$ is a cogenerator, using the fact that the pointed set $\{0,1\}$ with base point $1$ is a cogenerator of $\Set_*$ (<a href="/category/Set_*?proof=cogenerator">proof</a>). If $S$ is the Sierpiński space on $\{0,1\}$, we claim that adding $(S, 0)$ and $(S, 1)$ gives an extremal cogenerating collection. To see this, let $f : X \to Y$ be a continuous function. Then $f$ inducing a bijection on maps to $(\{0,1\},1)$ implies that the underlying function of $f$ is bijective. In particular, because $f$ is injective, we see that for $V$ an open subset of $Y$, $f^*(V)$ contains the base point of $X$ if and only if $V$ contains the base point of $Y$. Also, $f$ inducing a bijection on maps to $(S, 1)$ implies that $f^* : \Open(Y) \to \Open(X)$ is bijective on the open sets containing the base points, and $f$ inducing a bijection on maps to $(S, 0)$ implies that $f^* : \Open(Y) \to \Open(X)$ is bijective on the open sets not containing the base points. From these observations, we can conclude that $f$ is a homeomorphism.
 
       Now, by <a href="/content/generator_construction">this result</a>, we get that the product of these three pointed topological spaces is an extremal cogenerator of $\Top_*$.
 
@@ -80,7 +80,7 @@ unsatisfied_properties:
     proof: 'The functor $\IQ \times - : \Top_* \to \Top_*$ does not preserve colimits; see <a href="https://math.stackexchange.com/questions/2969372">MSE/2969372</a>. The counterexample also works for pointed spaces.'
 
   - property: co-Malcev
-    proof: 'We can adjust the proof for <a href="/category/Top">$\Top$</a> as follows: Consider the forgetful functor $U : \Top_* \to \Set$ and the relation $R \subseteq U^2$ defined by $R(X) \coloneqq \{(x,y) \in U(X)^2 : x \in \overline{\{y\}} \}$. Both are representable: $U$ by the discrete space $\{0,1\}$ with base point $0$ and $R$ by the Sierpiński space with an isolated base point added. It is clear that $R$ is reflexive, but not symmetric.'
+    proof: 'We can adjust the <a href="/category/Top?proof=co-Malcev">proof</a> for $\Top$ as follows: Consider the forgetful functor $U : \Top_* \to \Set$ and the relation $R \subseteq U^2$ defined by $R(X) \coloneqq \{(x,y) \in U(X)^2 : x \in \overline{\{y\}} \}$. Both are representable: $U$ by the discrete space $\{0,1\}$ with base point $0$ and $R$ by the Sierpiński space with an isolated base point added. It is clear that $R$ is reflexive, but not symmetric.'
 
   - property: unital
     proof: 'The joint image of $X \to X \times Y \leftarrow Y$ is just $\{(x,0) : x \in X\} \cup \{(0,y) : y \in Y\}$ (where $0$ denotes the base point), which is clearly a proper subset of $X \times Y$ when both $X,Y$ are non-trivial.'
@@ -90,7 +90,7 @@ unsatisfied_properties:
     proof: 'The image of $X \vee Y$ in $X \times Y$ is just $\{(x,0) : x \in X\} \cup \{(0,y) : y \in Y\}$ (where $0$ denotes the base point), which is clearly a proper subset when both $X,Y$ are non-trivial.'
 
   - property: regular quotient object classifier
-    proof: 'If there were a regular quotient object classifier, every regular epimorphism would be a cokernel. By considering discrete spaces, it would follow that every surjective pointed map between pointed sets is a cokernel, i.e. that <a href="/category/Set_*">$\Set_*$</a> is conormal. But we already know that this is not the case, since cokernels are "injective away from the base point".'
+    proof: 'If there were a regular quotient object classifier, every regular epimorphism would be a cokernel. By considering discrete spaces, it would follow that every surjective pointed map between pointed sets is a cokernel, i.e. that $\Set_*$ is conormal (<a href="/category/Set_*?proof=conormal">proof</a>). But we already know that this is not the case, since cokernels are "injective away from the base point".'
 
   - property: coaccessible
     proof: >-
@@ -103,10 +103,10 @@ unsatisfied_properties:
     proof: Suppose that $\Top_*$ had effective congruences. Then by <a href="/content/coslice-effective-congruences">this result</a>, <a href="/category/Top">$\Top$</a> would also have effective congruences, which we know is not the case.
 
   - property: effective cocongruences
-    proof: 'This counterexample is adapted from the counterexample for <a href="/category/Top">$\Top$</a>. Consider the pointed topological space $I \coloneqq \{ \ast, a, b \}$ with topology $\{ \varnothing, \{ \ast \}, \{ a, b \}, \{ \ast, a, b \} \}$. This represents the functor which sends a pointed topological space $X$ to the pairs of indistinguishable points of $X$. Therefore, we get a cocongruence $\{ \ast, a \} \rightrightarrows I$ on the discrete space $\{ \ast, a \}$, where the maps are $\ast \mapsto \ast, a \mapsto a$ and $\ast \mapsto \ast, a \mapsto b$, respectively. However, this cannot be effective: if we have $h : Z \to \{ \ast, a \}$ which equalizes the cocongruence, then $h$ must be the constant function with value $\ast$. But that means the cokernel pair of $h$ is the discrete space on $\{ \ast, a, b \}$.'
+    proof: 'This counterexample is adapted from the <a href="/category/Top?proof=effective_cocongruences">counterexample</a> for $\Top$. Consider the pointed topological space $I \coloneqq \{ \ast, a, b \}$ with topology $\{ \varnothing, \{ \ast \}, \{ a, b \}, \{ \ast, a, b \} \}$. This represents the functor which sends a pointed topological space $X$ to the pairs of indistinguishable points of $X$. Therefore, we get a cocongruence $\{ \ast, a \} \rightrightarrows I$ on the discrete space $\{ \ast, a \}$, where the maps are $\ast \mapsto \ast, a \mapsto a$ and $\ast \mapsto \ast, a \mapsto b$, respectively. However, this cannot be effective: if we have $h : Z \to \{ \ast, a \}$ which equalizes the cocongruence, then $h$ must be the constant function with value $\ast$. But that means the cokernel pair of $h$ is the discrete space on $\{ \ast, a, b \}$.'
 
   - property: extremal generating collection
-    proof: 'The proof is similar to the one for <a href="/category/Top">$\Top$</a>: if $S$ is a set of pointed topological spaces and $\kappa$ is an infinite regular cardinal greater than $\card(G)$ for every $G\in S$, we show as before that morphisms from $S$ cannot detect the failure of $(\kappa \sqcup \{ \kappa \}, 0) \to (\kappa + 1, 0)$ to be an isomorphism (where as before, we use the standard order topology on both $\kappa$ and $\kappa + 1$).'
+    proof: 'The argument is similar to the <a href="/category/Top?proof=extremal_generating_collection">proof</a> for $\Top$: if $S$ is a set of pointed topological spaces and $\kappa$ is an infinite regular cardinal greater than $\card(G)$ for every $G\in S$, we show as before that morphisms from $S$ cannot detect the failure of $(\kappa \sqcup \{ \kappa \}, 0) \to (\kappa + 1, 0)$ to be an isomorphism (where as before, we use the standard order topology on both $\kappa$ and $\kappa + 1$).'
 
 special_objects:
   initial object:

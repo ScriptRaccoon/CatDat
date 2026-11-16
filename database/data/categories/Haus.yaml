@@ -70,7 +70,7 @@ unsatisfied_properties:
 
   - property: filtered-colimit-stable monomorphisms
     proof: >-
-      The proof is similar to <a href="/category/Met">$\Met$</a>. For $n \geq 1$ let $X_n$ be the pushout of
+      The argument is similar to the <a href="/category/Met?proof=filtered-colimit-stable_monomorphisms">proof</a> for $\Met$. For $n \geq 1$ let $X_n$ be the pushout of
       $$(-\infty, -1/n] \cup [1/n, \infty) \hookrightarrow \IR$$
       with itself. That is, $X_n$ is the union of two lines $\IR \times \{1\}$ and $\IR \times \{2\}$ where we identify $(x,1) \equiv (x,2)$ when $|x| \geq 1/n$. Then $X_n$ is Hausdorff, and there is a canonical surjective continuous map $X_n \to X_{n+1}$. The colimit in $\Top$ is the union of two lines where we identify $(x,1) \equiv (x,2)$ when $|x| \geq 1/n$ for some $n$, i.e. when $x \neq 0$. This is the line with the double origin, which is not Hausdorff. Its Hausdorff reflection is the line $\IR$ where all points of both lines are identified, and it provides the colimit in $\Haus$. Now, the injective continuous maps $\{1,2\} \to X_n$, $i \mapsto (0,i)$ (where $\{1,2\}$ is discrete) become the constant map $0 : \{1,2\} \to \IR$ in the colimit, which is not a monomorphism.
 
@@ -94,7 +94,7 @@ unsatisfied_properties:
       On the other hand, we claim that $\{\ast\} \dottedrightrightarrows X_\kappa$ does not have a pushout in $\Haus$, showing that it is not hypercocomplete. To see this, suppose we had a pushout $Y$, and let $\lambda \coloneqq \card(U(Y))$. Then the coprojection $X_\lambda \to Y$ is split monic, since we can construct a cocone $\{\ast\} \dottedrightrightarrows X_\kappa \to X_\lambda$ where the map $X_\kappa \to X_\lambda$ is the constant map with image $x_\lambda$ when $\kappa \ne \lambda$, and the map $X_\lambda \to X_\lambda$ is the identity. But similarly to the previous paragraph, we can show any morphism $X_\lambda \to Y$ must be constant, giving a contradiction since $X_\lambda$ has at least two points.
 
   - property: extremal generating collection
-    proof: The proof is the same as the one for <a href="/category/Top">$\Top$</a>; there the test spaces we use are of the form $\kappa \sqcup \{ \kappa \}$ and $\kappa + 1$, which are both Hausdorff spaces.
+    proof: The argument is the same as in the <a href="/category/Top?proof=extremal_generating_collection">proof</a> for $\Top$; there the test spaces we use are of the form $\kappa \sqcup \{ \kappa \}$ and $\kappa + 1$, which are both Hausdorff spaces.
 
 special_objects:
   initial object:
@@ -122,5 +122,5 @@ special_morphisms:
   regular epimorphism:
     description: surjective quotient maps
     proof: >-
-      The coequalizer of two continuous maps $f,g : X \rightrightarrows Y$ of Hausdorff spaces is given by $Y \to Q \to Q_H$, where $Y \to Q$ is their coequalizer in $\Top$ and $Q \to Q_H$ is the Hausdorff reflection of $Q$. By the construction of coequalizers in <a href="/category/Top">$\Top$</a>, the map $Y \to Q$ is a surjective quotient map. Moreover, the construction of the Hausdorff reflection (see <a href="https://ncatlab.org/nlab/show/Hausdorff+space#HausdorffReflectionViaHomsIntoAllHausdorffSpaces">nLab</a>) shows that $Q \to Q_H$ is also a surjective quotient map. Hence, $Y \to Q_H$ is a surjective quotient map as well.
+      The coequalizer of two continuous maps $f,g : X \rightrightarrows Y$ of Hausdorff spaces is given by $Y \to Q \to Q_H$, where $Y \to Q$ is their coequalizer in $\Top$ and $Q \to Q_H$ is the Hausdorff reflection of $Q$. By the <a href="/category/Top?proof=cocomplete">construction</a> of coequalizers in $\Top$, the map $Y \to Q$ is a surjective quotient map. Moreover, the construction of the Hausdorff reflection (see <a href="https://ncatlab.org/nlab/show/Hausdorff+space#HausdorffReflectionViaHomsIntoAllHausdorffSpaces">nLab</a>) shows that $Q \to Q_H$ is also a surjective quotient map. Hence, $Y \to Q_H$ is a surjective quotient map as well.
       Conversely, if $p : X \to Y$ is a surjective quotient map between Hausdorff spaces, we know from the classification in $\Top$ that $p$ is the coequalizer of its kernel pair $X \times_Y X \rightrightarrows X$ in $\Top$. Since $X \times_Y X$ is Hausdorff, the same universal property remains valid in $\Haus$.

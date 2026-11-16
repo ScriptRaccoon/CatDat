@@ -37,7 +37,7 @@ satisfied_properties:
     check_redundancy: false
 
   - property: binary products
-    proof: We have just proved that non-empty limits exist. Concretely, we have $(X \times Y)_i = X_i \times Y_i$ with $\supp(X \times Y) = \supp(X) \cap \supp(Y)$.
+    proof: We have just proved that non-empty limits exist (<a href="/category/Set_family_mostly_0?proof=connected_limits">proof</a>). Concretely, we have $(X \times Y)_i = X_i \times Y_i$ with $\supp(X \times Y) = \supp(X) \cap \supp(Y)$.
 
   - property: infinitary extensive
     proof: Since <a href="/category/Set">$\Set$</a> is infinitary extensive, $\Set^I$ is also infinitary extensive. We can now apply Lemma 11 <a href="/content/subcategories">here</a> to the inclusion functor $\Set^{(I)}_0 \hookrightarrow \Set^I$.
@@ -76,7 +76,7 @@ unsatisfied_properties:
     proof: This is because <a href="/category/SetxSet">$\Set \times \Set$</a> can be embedded into $\Set^{(I)}_0$ by extending each pair of sets with empty sets, and we know that $\Set \times \Set$ is not semi-strongly connected.
 
   - property: locally small
-    proof: The proof is identical to the proof for <a href="/category/Vect_family_mostly_0">$\Vect^{(I)}$</a>. However, this result is not relevant for category theory; only the fact that the category is locally essentially small matters.
+    proof: The proof is identical to the <a href="/category/Vect_family_mostly_0?proof=locally_small">proof</a> for $\Vect^{(I)}$. However, this result is not relevant for category theory; only the fact that the category is locally essentially small matters.
 
   - property: terminal object
     proof: Assume that a terminal object $X$ exists. For $i \in I$, define the family $Y$ by $Y_i = \{\ast\}$ and $Y_j = \varnothing$ for $j \neq i$. Then $\supp(Y) = \{i\}$, so $Y$ belongs to $\Set^{(I)}_0$. By assumption, there is a morphism $Y \to X$. In particular, we see that $X_i$ is non-empty. But then $\supp(X) = I$, which is not essentially small.

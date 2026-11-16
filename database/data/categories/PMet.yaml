@@ -180,7 +180,7 @@ unsatisfied_properties:
       The congruence is not effective. Assume that it is the kernel pair of a morphism $f : (X,d_X) \to (Y,d_Y)$. The underlying set of the kernel pair is $\{(x,x') \in X \times X : f(x) = f(x')\}$, which then must be $X \times X$, so that $f$ is constant. But then the kernel pair is $(X \times X,d)$ with the supremum metric $d((x,y),(x',y')) = \sup(d_X(x,x'),d_X(y,y'))$, so that $d((0,1),(1,0)) = 1$, whereas $d_R((0,1),(1,0)) = 2$.
 
   - property: effective cocongruences
-    proof: 'The proof is similar to the one for <a href="/category/Top">$\Top$</a>: The pseudo-metric space $(\{0,1\},0)$ represents the functor taking a pseudo-metric space to the pairs of points with $d(x,y) = 0$. In this case, once you conclude $Z = \varnothing$, the map $h : Z \to \{\ast\}$ does not have any cokernel pair, since that would have to be a coproduct $\{\ast\} \sqcup \{\ast\}$, which does not exist.'
+    proof: 'The argument is similar to the <a href="/category/Top?proof=effective_cocongruences">proof</a> for $\Top$: The pseudo-metric space $(\{0,1\},0)$ represents the functor taking a pseudo-metric space to the pairs of points with $d(x,y) = 0$. In this case, once you conclude $Z = \varnothing$, the map $h : Z \to \{\ast\}$ does not have any cokernel pair, since that would have to be a coproduct $\{\ast\} \sqcup \{\ast\}$, which does not exist.'
 
   - property: pullback-stable regular epimorphisms
     proof: >-

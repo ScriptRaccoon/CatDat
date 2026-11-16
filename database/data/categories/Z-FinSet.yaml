@@ -60,10 +60,10 @@ unsatisfied_properties:
       $$f \circ g = f \circ \sigma^k = \rho^k \circ f = f.$$
 
   - property: semi-strongly connected
-    proof: The same reasoning as for <a href="/category/Z-Set">$\IZ{-}\Set$</a> shows that if an abelian group $G$ has two subgroups of finite index that are not contained in each other, then $G{-}\FinSet$ is not semi-strongly connected. Since $\IZ$ has such subgroups, e.g. $2\IZ$ and $3\IZ$, the category $\IZ{-}\FinSet$ is not semi-strongly connected.
+    proof: The same <a href="/category/Z-Set?proof=semi-strongly_connected">proof</a> as for $\IZ{-}\Set$ shows that if an abelian group $G$ has two subgroups of finite index that are not contained in each other, then $G{-}\FinSet$ is not semi-strongly connected. Since $\IZ$ has such subgroups, e.g. $2\IZ$ and $3\IZ$, the category $\IZ{-}\FinSet$ is not semi-strongly connected.
 
   - property: natural numbers object
-    proof: We can copy the proof from <a href="/category/FinSet">$\FinSet$</a>.
+    proof: We can copy the <a href="/category/FinSet?proof=natural_numbers_object">proof</a> from $\FinSet$.
 
 special_objects:
   initial object:

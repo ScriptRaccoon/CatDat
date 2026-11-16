@@ -46,7 +46,7 @@ satisfied_properties:
     check_redundancy: false
 
   - property: infinitary extensive
-    proof: We can copy the proof for <a href="/category/PreOrd">$\PreOrd$</a>.
+    proof: We can copy the <a href="/category/PreOrd?proof=infinitary_extensive">proof</a> for $\PreOrd$.
 
   - property: finitely accessible
     proof: Using the description of colimits, it is easy to see that $(X,R)$ is finitely presentable when $X$ is a finite set. The collection of such objects, up to isomorphism, is essentially small. Moreover, every object $(X,R)$ can be written as the filtered colimit of $(F,R|_F)$, where $F$ runs through the finite subsets of $X$.
@@ -91,7 +91,7 @@ unsatisfied_properties:
 
   - property: semi-strongly connected
     proof: >-
-      Interpreting the objects of $\Bin$ as directed graphs, we may use the same counterexample as for <a href="/category/Quiv">$\Quiv$</a>, since directed cycles have no multiple edges. Concretely, there is no morphism between these two objects:
+      Interpreting the objects of $\Bin$ as directed graphs, we may use the same <a href="/category/Quiv?proof=semi-strongly_connected">counterexample</a> as for $\Quiv$, since directed cycles have no multiple edges. Concretely, there is no morphism between these two objects:
       $$\begin{align*}
       C_2 & = \bigl(\{0,1\}, \{(0,1),(1,0)\}\bigr) \\
       C_3 & = \bigl(\{0,1,2\}, \{(0,1),(1,2),(2,0)\}\bigr)
@@ -133,4 +133,4 @@ special_morphisms:
     proof: >-
       The coequalizer of two morphisms $f,g : (X,R) \rightrightarrows (Y,S)$ in $\Bin$ can be constructed as $\pi : (Y,S) \twoheadrightarrow (C,T)$, where $\pi : Y \twoheadrightarrow C$ is the coequalizer of $f,g : X \rightrightarrows Y$ in $\Set$ and $T = \{(\pi(y),\pi(y')) : (y,y') \in S\}$. Thus, $\pi : (Y,S) \twoheadrightarrow (C,T)$ has the claimed property.
 
-      Conversely, assume that $f : (X,R) \to (Y,S)$ is a morphism such that $f$ is surjective and $S = \{(f(x),f(x')) : (x,x') \in R\}$. This property of $S$ means that a map on $Y$ is relation-preserving whenever its composition with $f$ is relation-preserving on $X$. (The situation is completely analogous to <a href="/category/Top">$\Top$</a>, but much simpler.) Then $f : (X,R) \to (Y,S)$ is the coequalizer of its kernel pair $(X,R) \times_{(Y,S)} (X,R) \rightrightarrows (X,R)$ because of the corresponding statement in $\Set$.
+      Conversely, assume that $f : (X,R) \to (Y,S)$ is a morphism such that $f$ is surjective and $S = \{(f(x),f(x')) : (x,x') \in R\}$. This property of $S$ means that a map on $Y$ is relation-preserving whenever its composition with $f$ is relation-preserving on $X$. (The situation is completely analogous to $\Top$ (<a href="/category/Top?proof=regular_epimorphism">proof</a>), but much simpler.) Then $f : (X,R) \to (Y,S)$ is the coequalizer of its kernel pair $(X,R) \times_{(Y,S)} (X,R) \rightrightarrows (X,R)$ because of the corresponding statement in $\Set$.

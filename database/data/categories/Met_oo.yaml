@@ -43,21 +43,21 @@ satisfied_properties:
   # and simplify this proof accordingly
   - property: ℵ₁-accessible
     proof: >-
-      Let $D : \I \to \Met_\infty$ be a filtered diagram, and let $X_i$, $d_i$, $C$, $u_i$, and $\rho$ be as in the construction of colimits above. Then $\rho(c,c')$ is the infimum of all $d_i(x,y)$, where $i \in \I$ and $x,y \in X_i$ satisfy $u_i(x) = c$ and $u_i(y) = c'$. Indeed, since $\I$ is filtered, this infimum defines an extended pseudo-metric on $C$. It is admissible, and every admissible extended pseudo-metric is bounded by it. Thus, filtered colimits are constructed as for <a href="/category/PMet">$\PMet$</a>, followed by the identification of points at distance zero, as for <a href="/category/Met">$\Met$</a>. Therefore, the proofs of $\aleph_1$-accessibility for $\PMet$ and $\Met$ work verbatim for extended metric spaces. They never use that distances are finite; when $d(x,y) = \infty$, the estimate $d_i(x_i,y_i) \leq d(x,y) + 1/n$ in the proof for $\PMet$ holds for all preimages.
+      Let $D : \I \to \Met_\infty$ be a filtered diagram, and let $X_i$, $d_i$, $C$, $u_i$, and $\rho$ be as in the <a href="/category/Met_oo?proof=cocomplete">construction</a> of colimits above. Then $\rho(c,c')$ is the infimum of all $d_i(x,y)$, where $i \in \I$ and $x,y \in X_i$ satisfy $u_i(x) = c$ and $u_i(y) = c'$. Indeed, since $\I$ is filtered, this infimum defines an extended pseudo-metric on $C$. It is admissible, and every admissible extended pseudo-metric is bounded by it. Thus, filtered colimits are constructed as for $\PMet$ (<a href="/category/PMet?proof=aleph1-accessible">proof</a>), followed by the identification of points at distance zero, as for $\Met$ (<a href="/category/Met?proof=aleph1-accessible">proof</a>). Therefore, the proofs of $\aleph_1$-accessibility for $\PMet$ and $\Met$ work verbatim for extended metric spaces. They never use that distances are finite; when $d(x,y) = \infty$, the estimate $d_i(x_i,y_i) \leq d(x,y) + 1/n$ in the proof for $\PMet$ holds for all preimages.
 
       Alternatively, <a href="https://arxiv.org/abs/1504.02660">Lieberman–Rosický</a>, Examples 4.5 (3), show that $\Met_\infty$ is even locally $\aleph_1$-presentable by identifying it with the category of models of a universal Horn theory in $L_{\omega_1,\omega}$. This proof is more abstract and does not identify the $\aleph_1$-presentable objects, whereas the proof above shows that every countable extended metric space is $\aleph_1$-presentable.
 
   - property: cartesian filtered colimits
-    proof: We can use the same proof as for <a href="/category/Met">$\Met$</a> since the equation $\inf_i \max(r, s_i) = \max(r, \inf_i s_i)$ also holds for $r, s_i \in \IR \cup \{\infty\}$.
+    proof: We can use the same <a href="/category/Met?proof=cartesian_filtered_colimits">proof</a> as for $\Met$ since the equation $\inf_i \max(r, s_i) = \max(r, \inf_i s_i)$ also holds for $r, s_i \in \IR \cup \{\infty\}$.
 
   - property: infinitary extensive
     proof: 'This can be deduced from the infinitary extensivity of <a href="/category/Set">$\Set$</a> as follows. We already know that coproducts and pullbacks exist, and these are preserved by the forgetful functor to $\Set$. More concretely, the coproduct of extended metric spaces $(X_i,d_i)$ is $(\coprod_i X_i,d)$, where $d$ extends the metrics $d_i$ and assigns the distance $\infty$ to points in different summands. Since coproducts are disjoint in $\Set$ and the empty set has a unique metric, it follows immediately that coproducts are disjoint in $\Met_\infty$ as well. It remains to show that coproducts are stable under pullbacks. Let $(X_i,d_i)_{i \in I}$ be a family of extended metric spaces, let $(X,d_X)$ be its coproduct with $X = \coprod_{i \in I} X_i$, and let $f : (T,d_T) \to (X,d_X)$ be a morphism. Consider the pullbacks of the coproduct inclusions along $f$. These are just $(T_i,d_{T_i})$, where $T_i \coloneqq f^*(X_i)$ and $d_{T_i}$ is the restriction of $d_T$. Since coproducts in $\Set$ are stable under pullbacks, the canonical non-expansive map from the coproduct of these spaces to $(T,d_T)$ is bijective. It remains to show that it is isometric. Since each $d_{T_i}$ is the restriction of $d_T$, it suffices to prove that for $a \in T_i$ and $b \in T_j$, where $i \neq j$, we have $d_T(a,b) = \infty$. Indeed, since $f(a) \in X_i$ and $f(b) \in X_j$, we have $\infty = d_X(f(a),f(b)) \leq d_T(a,b)$.'
 
   - property: extremal generator
-    proof: A similar proof to the one for <a href="/category/PMet">$\PMet$</a> shows that $([0, \infty],d)$, where $d(x,y) = 0$ if $x=y$ and otherwise $d(x,y) = x+y$, is an extremal generator for $\Met_{\infty}$.
+    proof: An argument similar to the <a href="/category/PMet?proof=extremal_generator">proof</a> for $\PMet$ shows that $([0, \infty],d)$, where $d(x,y) = 0$ if $x=y$ and otherwise $d(x,y) = x+y$, is an extremal generator for $\Met_{\infty}$.
 
   - property: extremal cogenerator
-    proof: 'The proof is similar to $\Met$: an extremal cogenerator is given by $(\IR_{>0} \cup \{\infty\},d)$, where $d$ extends the usual metric on $\IR_{>0}$ by $d(a,\infty) \coloneqq \infty$ for $a \in \IR_{>0}$. Then one checks that for every extended metric space $(X,d_X)$ and $a \in X$ the map $1 + d_X(a,{-}) : X \to \IR_{>0} \cup \{\infty\}$ (assigning the value $\infty$ if $d_X(a,x) = \infty$) is non-expansive and finishes as for <a href="/category/Met">$\Met$</a>.'
+    proof: 'The proof is similar to $\Met$: an extremal cogenerator is given by $(\IR_{>0} \cup \{\infty\},d)$, where $d$ extends the usual metric on $\IR_{>0}$ by $d(a,\infty) \coloneqq \infty$ for $a \in \IR_{>0}$. Then one checks that for every extended metric space $(X,d_X)$ and $a \in X$ the map $1 + d_X(a,{-}) : X \to \IR_{>0} \cup \{\infty\}$ (assigning the value $\infty$ if $d_X(a,x) = \infty$) is non-expansive and finishes as for $\Met$ (<a href="/category/Met?proof=extremal_cogenerator">proof</a>).'
 
   - property: pushout-stable regular monomorphisms
     proof: >-
@@ -80,10 +80,10 @@ unsatisfied_properties:
     proof: The extended metric spaces with underlying sets $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.
 
   - property: balanced
-    proof: The counterexamples for <a href="/category/Met">$\Met$</a> work here as well.
+    proof: The <a href="/category/Met?proof=balanced">counterexamples</a> for $\Met$ work here as well.
 
   - property: Malcev
-    proof: The counterexample for <a href="/category/Met">$\Met$</a> works here as well.
+    proof: The <a href="/category/Met?proof=Malcev">counterexample</a> for $\Met$ works here as well.
 
   - property: co-Malcev
     proof: 'See <a href="https://mathoverflow.net/questions/509552">MO/509552</a>: Consider the forgetful functor $U : \Met_{\infty} \to \Set$ and the relation $R \subseteq U^2$ defined by $R(X,d_X) \coloneqq \{(a,b) \in X^2 : d_X(a,b) \leq 1 \}$. Both are representable: $U$ by the one-point set with its unique metric and $R$ by $(\{ 0,1 \},d)$ where $d(0,1) \coloneqq 1$. It is clear that $R$ is reflexive, but not transitive.'
@@ -92,13 +92,13 @@ unsatisfied_properties:
     proof: This is proven in <a href="https://math.stackexchange.com/questions/5131457">MSE/5131457</a>.
 
   - property: filtered-colimit-stable monomorphisms
-    proof: We can copy the proof from <a href="/category/Met">$\Met$</a>.
+    proof: We can copy the <a href="/category/Met?proof=filtered-colimit-stable_monomorphisms">proof</a> from $\Met$.
 
   - property: effective cocongruences
-    proof: The same counterexample as for <a href="/category/Met">$\Met$</a> works here. The difference in this case is that a binary copower of $((0,1),d)$ does exist in $\Met_\infty$. However, its metric assigns the distance $\infty$ to points in different summands, whereas $d$ takes only finite values on $C = (-1,0) \cup (0,1)$.
+    proof: The same <a href="/category/Met?proof=effective_cocongruences">counterexample</a> as for $\Met$ works here. The difference in this case is that a binary copower of $((0,1),d)$ does exist in $\Met_\infty$. However, its metric assigns the distance $\infty$ to points in different summands, whereas $d$ takes only finite values on $C = (-1,0) \cup (0,1)$.
 
   - property: regular subobject classifier
-    proof: The same proof as for <a href="/category/Met_c">$\Met_\c$</a> works, since non-expansive maps are continuous and, by the classification of regular monomorphisms (see below), the regular subobjects of an extended metric space $(X,d_X)$ correspond to the closed subsets of $X$.
+    proof: The same <a href="/category/Met_c?proof=regular_subobject_classifier">proof</a> as for $\Met_\c$ works, since non-expansive maps are continuous and, by the classification of regular monomorphisms (see below), the regular subobjects of an extended metric space $(X,d_X)$ correspond to the closed subsets of $X$.
 
 special_objects:
   initial object:
@@ -123,7 +123,7 @@ special_morphisms:
   regular monomorphism:
     description: isometric embeddings with closed image
     proof: >-
-      The proof is similar to the one for <a href="/category/Met_c">$\Met_\c$</a>. The equalizer of two morphisms $(X,d_X) \rightrightarrows (Y,d_Y)$ is $(A,d_A)$, where $A \subseteq X$ is the equalizer in $\Set$ and $d_A$ is the restriction of $d_X$, so equalizers are isometric embeddings. Since metric spaces are Hausdorff and non-expansive maps are continuous, an equalizer of two morphisms $(X,d_X) \rightrightarrows (Y,d_Y)$ is a closed subset of $X$. Conversely, let $(X,d_X)$ be an extended metric space, let $A \subseteq X$ be a closed subset, and let $d_A$ be the restriction of $d_X$. Let $d_E$ be the extended metric on $[0,\infty]$ that extends the usual metric on $[0,\infty)$ by $d_E(r,\infty) \coloneqq \infty$ for $r \in [0,\infty)$, and let $E \coloneqq ([0,\infty],d_E)$. The map
+      The argument is similar to the <a href="/category/Met_c?proof=regular_monomorphism">proof</a> for $\Met_\c$. The equalizer of two morphisms $(X,d_X) \rightrightarrows (Y,d_Y)$ is $(A,d_A)$, where $A \subseteq X$ is the equalizer in $\Set$ and $d_A$ is the restriction of $d_X$, so equalizers are isometric embeddings. Since metric spaces are Hausdorff and non-expansive maps are continuous, an equalizer of two morphisms $(X,d_X) \rightrightarrows (Y,d_Y)$ is a closed subset of $X$. Conversely, let $(X,d_X)$ be an extended metric space, let $A \subseteq X$ be a closed subset, and let $d_A$ be the restriction of $d_X$. Let $d_E$ be the extended metric on $[0,\infty]$ that extends the usual metric on $[0,\infty)$ by $d_E(r,\infty) \coloneqq \infty$ for $r \in [0,\infty)$, and let $E \coloneqq ([0,\infty],d_E)$. The map
       $$\textstyle d_X(A,-) : X \to [0,\infty], \quad x \mapsto \inf_{a \in A} d_X(a,x)$$
       is non-expansive since it is an infimum of non-expansive maps, and it vanishes precisely on $A$ since $A$ is closed. (If $A$ is empty, it is constant with value $\infty$.) Therefore, $(A,d_A)$ is the equalizer of $d_X(A,-)$ and the constant morphism $0 : (X,d_X) \to E$.
   # TODO: perhaps add the category PMet_oo of extended pseudo-metric spaces,
@@ -144,4 +144,4 @@ special_morphisms:
       $$d_Z(\overline{h}(y),\overline{h}(y')) \leq \delta(y,y') \leq \rho(y,y') \leq d_Y(y,y'),$$
       i.e. $\overline{h} : (Y,d_Y) \to (Z,d_Z)$ is non-expansive.
 
-      (2) $\iff$ (3): The proof for <a href="/category/PMet">$\PMet$</a>, including the construction of coequalizers there, works verbatim for extended pseudo-metrics and shows that $\rho(f(x),f(x'))$ is the infimum in (3).
+      (2) $\iff$ (3): The <a href="/category/PMet?proof=regular_epimorphism">proof</a> for $\PMet$, including the construction of coequalizers there, works verbatim for extended pseudo-metrics and shows that $\rho(f(x),f(x'))$ is the infimum in (3).

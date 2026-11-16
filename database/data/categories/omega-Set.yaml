@@ -162,7 +162,7 @@ satisfied_properties:
       $${-} \circ f : \Hom((Y, R_Y), \nabla \{0,1\}) \to \Hom((X, R_X), \nabla \{0,1\})$$
       is a bijection, we see that
       $${-} \circ f : \Hom_{\Set}(Y, \{0,1\}) \to \Hom_{\Set}(X, \{0,1\})$$
-      is a bijection. Since $\{0,1\}$ is an extremal cogenerator of <a href="/category/Set">$\Set$</a>, we conclude that the underlying function of $f$ is a bijection.
+      is a bijection. Since $\{0,1\}$ is an extremal cogenerator of $\Set$ (<a href="/category/Set?proof=extremal_cogenerator">proof</a>), we conclude that the underlying function of $f$ is a bijection.
 
       Now, consider the morphism
       $$g : (X, R_X) \to (P(\IN) \setminus \{ \varnothing \}, {\in}_{\IN})$$
@@ -170,7 +170,7 @@ satisfied_properties:
       $$h : (Y, R_Y) \to (P(\IN) \setminus \{ \varnothing \}, {\in}_{\IN})$$
       such that $g = h \circ f$. Choose a compatible realizer tracker $\code{h} : \IN \dashrightarrow \IN$. Then for any $x\in X$, if $n$ realizes $f(x)$, then $\code{h}(n)$ exists and $\code{h}(n)$ realizes $h(f(x)) = g(x)$. Thus, by definition of $g$, $\code{h}(n)$ is in the set of realizers of $x$, i.e. $\code{h}(n)$ realizes $x$. From the characterization of isomorphisms below, this implies that $f$ is an isomorphism.
 
-      Finally, since $\nabla \{0,1\}$ and $(P(\IN) \setminus \{ \varnothing \}, {\in}_{\IN})$ both have non-empty underlying sets, they form a strongly connected family (see the proof above that $\omegaSet$ is semi-strongly connected). Therefore, by <a href="/content/generator_construction">this result</a>, the product of these two objects is an extremal cogenerator.
+      Finally, since $\nabla \{0,1\}$ and $(P(\IN) \setminus \{ \varnothing \}, {\in}_{\IN})$ both have non-empty underlying sets, they form a strongly connected family (see the <a href="/category/omega-Set?proof=semi-strongly_connected">proof</a> above that $\omegaSet$ is semi-strongly connected). Therefore, by <a href="/content/generator_construction">this result</a>, the product of these two objects is an extremal cogenerator.
 
   - property: parametrized natural numbers object
     proof: >-
@@ -232,7 +232,7 @@ unsatisfied_properties:
 
   - property: ℵ₁-cofiltered limits
     proof: >-
-      We dualize the counterexample above showing that $\omegaSet$ does not have ℵ₁-filtered colimits. Let $(s_\alpha)_{\alpha \in \omega_1}$ be an $\omega_1$-Aronszajn sequence as in that proof, i.e. a sequence of injective functions $s_\alpha : \alpha \to \IN$ such that whenever $\beta < \alpha < \omega_1$, then $s_\beta$ and $s_\alpha |_\beta$ agree except at finitely many points. For $\alpha \in \omega_1$, let $X_\alpha$ be the $\omega$-set whose underlying set is $\alpha + 1 = \{ \gamma \mid \gamma \leq \alpha \}$, where $n$ realizes $\gamma < \alpha$ if and only if $s_\alpha(\gamma) = n$, and every $n \in \IN$ realizes $\alpha$.
+      We dualize the <a href="/category/omega-Set?proof=aleph1-filtered_colimits">counterexample</a> above showing that $\omegaSet$ does not have ℵ₁-filtered colimits. Let $(s_\alpha)_{\alpha \in \omega_1}$ be an $\omega_1$-Aronszajn sequence as in that proof, i.e. a sequence of injective functions $s_\alpha : \alpha \to \IN$ such that whenever $\beta < \alpha < \omega_1$, then $s_\beta$ and $s_\alpha |_\beta$ agree except at finitely many points. For $\alpha \in \omega_1$, let $X_\alpha$ be the $\omega$-set whose underlying set is $\alpha + 1 = \{ \gamma \mid \gamma \leq \alpha \}$, where $n$ realizes $\gamma < \alpha$ if and only if $s_\alpha(\gamma) = n$, and every $n \in \IN$ realizes $\alpha$.
 
       Whenever $\alpha \leq \beta < \omega_1$, the function $r : \beta + 1 \to \alpha + 1$, $\gamma \mapsto \min(\gamma, \alpha)$ induces a morphism $X_\beta \to X_\alpha$. To see this, consider the set
       $$F \coloneqq \{ \gamma \in \alpha \mid s_\alpha(\gamma) \ne s_\beta(\gamma) \},$$

@@ -47,7 +47,7 @@ satisfied_properties:
     proof: >-
       First, we claim that $\Bin_{\irr} \subseteq \Bin$ is closed under filtered colimits. In fact, the colimit of a filtered diagram $i \mapsto (X_i,R_i)$ in <a href="/category/Bin">$\Bin$</a> is $(\colim_i X_i, R)$, where $R$ consists of all pairs $(\iota_i(x),\iota_i(y))$ for some index $i$ and some $(x,y) \in R_i$. If each $R_i$ is irreflexive, then $R$ is irreflexive as well, because otherwise there would be some index $i$ and some $(x,y) \in R_i$ such that $\iota_i(x)=\iota_i(y)$ in the colimit. Hence, there is some morphism $i \to j$ such that $x$ and $y$ have the same image in $X_j$. If $z \in X_j$ denotes this common image, we obtain $(z,z) \in R_j$, a contradiction.
 
-      The rest of the proof is the same as for the finite accessibility of <a href="/category/Bin">$\Bin$</a>.
+      The rest of the proof is the same as for the finite accessibility of $\Bin$ (<a href="/category/Bin?proof=finitely_accessible">proof</a>).
 
   - property: locally cartesian closed
     proof: If $X \to Y$ is a morphism in $\Bin$ and $Y \in \Bin_{\irr}$, then $X \in \Bin_{\irr}$ as well (since any element in $X$ that relates to itself is mapped to an element in $Y$ that relates to itself). Thus, if $Y$ is any object of $\Bin_{\irr}$, then $\Bin_{\irr} / Y = \Bin / Y$. Hence, the claim follows since <a href="/category/Bin">$\Bin$</a> is locally cartesian closed.
@@ -77,7 +77,7 @@ unsatisfied_properties:
 
   - property: semi-strongly connected
     proof: >-
-      Interpreting the objects of $\Bin_{\irr}$ as directed graphs without loops, we may use the same counterexample as for <a href="/category/Quiv">$\Quiv$</a>, since directed cycles have no multiple edges and no loops. Concretely, there is no morphism between these two objects:
+      Interpreting the objects of $\Bin_{\irr}$ as directed graphs without loops, we may use the same <a href="/category/Quiv?proof=semi-strongly_connected">counterexample</a> as for $\Quiv$, since directed cycles have no multiple edges and no loops. Concretely, there is no morphism between these two objects:
       $$\begin{align*}
       C_2 & = \bigl(\{0,1\}, \{(0,1),(1,0)\}\bigr) \\
       C_3 & = \bigl(\{0,1,2\}, \{(0,1),(1,2),(2,0)\}\bigr)

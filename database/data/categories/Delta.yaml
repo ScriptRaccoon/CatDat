@@ -38,10 +38,10 @@ satisfied_properties:
     proof: For all $n,m$ there are morphisms $[n] \to [0] \to [m]$.
 
   - property: extremal generator
-    proof: The ordered set $[1] = \{0 < 1\}$ is an extremal generator, even for <a href="/category/PreOrd">$\PreOrd$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
+    proof: The ordered set $[1] = \{0 < 1\}$ is an extremal generator, even for $\PreOrd$ (<a href="/category/PreOrd?proof=extremal_generator">proof</a>). Now apply Lemma 10 <a href="/content/subcategories">here</a>.
 
   - property: extremal cogenerator
-    proof: The ordered set $[1] = \{0 < 1\}$ is an extremal cogenerator, even for <a href="/category/Pos">$\Pos$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
+    proof: The ordered set $[1] = \{0 < 1\}$ is an extremal cogenerator, even for $\Pos$ (<a href="/category/Pos?proof=extremal_cogenerator">proof</a>). Now apply Lemma 10 <a href="/content/subcategories">here</a>.
 
   - property: skeletal
     proof: 'If $f : [n] \to [m]$ is an isomorphism, then $n + 1 = m + 1$ by comparing the cardinalities, hence $n = m$.'
@@ -50,7 +50,7 @@ satisfied_properties:
     proof: Apply Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\Delta \hookrightarrow \FinOrd$, which preserves epimorphisms since these are surjective order-preserving maps in both categories (see below), and use that <a href="/category/FinOrd">$\FinOrd$</a> has all epimorphisms split.
 
   - property: all monomorphisms split
-    proof: The proof for <a href="/category/FinOrd">$\FinOrd$</a> shows that every monomorphism with non-empty domain splits.
+    proof: The <a href="/category/FinOrd?proof=mono-regular">proof</a> for $\FinOrd$ shows that every monomorphism with non-empty domain splits.
 
   - property: coequalizers
     proof: 'Assume that $f,g : (X,\leq) \rightrightarrows (Y,\leq)$ are morphisms in $\FinOrd \setminus \{\varnothing\}$. Since <a href="/category/FinOrd">$\FinOrd$</a> has coequalizers, they have a coequalizer $q : (Y,\leq) \to (C,\leq)$ in $\FinOrd$. Since $Y$ is non-empty, $C$ is non-empty as well, and clearly $q$ is then also the coequalizer in $\FinOrd \setminus \{\varnothing\}$.'
@@ -79,10 +79,10 @@ unsatisfied_properties:
     proof: Assume that the inclusion $\{0\} \to \{0 < 1\}$ has a cokernel pair in $\FinOrd \setminus \{\varnothing\}$. This would be a universal finite ordered set $(X,\leq)$ with three elements $0,1,2 \in X$ satisfying $0 \leq 1$ and $0 \leq 2$. Assume w.l.o.g. $1 \leq 2$ (the case $2 \leq 1$ is similar). The universal property yields an order-preserving map $(X,\leq) \to \{a < b < c\}$ with $0 \mapsto a$, $1 \mapsto c$, $2 \mapsto b$. But then $c \leq b$, which is a contradiction.
 
   - property: sequential colimits
-    proof: We can just copy the proof for <a href="/category/FinOrd">$\FinOrd$</a> to show that the sequence of inclusions $[0] \hookrightarrow [1] \hookrightarrow [2] \hookrightarrow \cdots$ has no colimit.
+    proof: We can just copy the <a href="/category/FinOrd?proof=sequential_colimits">proof</a> for $\FinOrd$ to show that the sequence of inclusions $[0] \hookrightarrow [1] \hookrightarrow [2] \hookrightarrow \cdots$ has no colimit.
 
   - property: sequential limits
-    proof: We can just copy the proof for <a href="/category/FinOrd">$\FinOrd$</a> to show that the sequence of truncations $\cdots \twoheadrightarrow [2] \twoheadrightarrow [1] \twoheadrightarrow [0]$ has no limit.
+    proof: We can just copy the <a href="/category/FinOrd?proof=sequential_limits">proof</a> for $\FinOrd$ to show that the sequence of truncations $\cdots \twoheadrightarrow [2] \twoheadrightarrow [1] \twoheadrightarrow [0]$ has no limit.
 
   - property: natural numbers object
     proof: Any natural numbers object in $\FinOrd \setminus \{\varnothing\}$ would also be a natural numbers object in <a href="/category/FinOrd">$\FinOrd$</a>, which we know does not exist.
@@ -98,4 +98,4 @@ special_morphisms:
     proof: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
   epimorphism:
     description: surjective order-preserving maps
-    proof: We can use the same proof as for <a href="/category/FinOrd">$\FinOrd$</a> since this has merely used the non-empty ordered set $\{0 < 1\}$.
+    proof: We can use the same <a href="/category/FinOrd?proof=epimorphism">proof</a> as for $\FinOrd$ since this has merely used the non-empty ordered set $\{0 < 1\}$.
