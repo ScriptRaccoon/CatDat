@@ -351,6 +351,30 @@ label {
 	display: inline-block;
 }
 
+/*
+ * KaTeX renders a formula as inline blocks (.katex and its children .katex-base).
+ * Text decorations do not propagate into inline blocks, so the underline of a link
+ * does not reach a formula inside it (https://www.w3.org/TR/css-text-decor-3/#line-decoration).
+ * Therefore, we draw the underline of a formula in a link as a background line. It is
+ * aligned with the underline of the text: the box of .katex ends 0.284em below the
+ * baseline (due to the font metrics of KaTeX and its line height), and the underline
+ * of the text ends 3px below the baseline (its offset 2px plus its thickness 1px).
+ * We use this only for text from the database and content pages, since underlined
+ * formulas look too busy in lists of links such as related structures.
+ */
+.underline-formula-links a {
+	.katex {
+		background-image: linear-gradient(var(--link-underline-color) 0 0);
+		background-position: 0 calc(100% - 0.284em + 3px);
+		background-size: 100% 1px;
+		background-repeat: no-repeat;
+	}
+
+	&:is(.accent, :active) .katex {
+		background-image: linear-gradient(currentColor 0 0);
+	}
+}
+
 /* punctuation after an inline formula (see formulas.ts), in the font of the text */
 .formula-suffix {
 	font-family: var(--text-font);

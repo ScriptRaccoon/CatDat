@@ -17,10 +17,10 @@
 <StructurePage {...data}>
 	{#snippet definition()}
 		<strong>Objects</strong>
-		<span> {@html data.objects}</span>
+		<span class="underline-formula-links"> {@html data.objects}</span>
 
 		<strong>Morphisms</strong>
-		<span>{@html data.morphisms}</span>
+		<span class="underline-formula-links">{@html data.morphisms}</span>
 	{/snippet}
 
 	{#snippet specials()}
@@ -28,7 +28,7 @@
 			<h2>Special objects</h2>
 
 			{#if data.special_objects.length}
-				<ul class="with-margins">
+				<ul class="with-margins underline-formula-links">
 					{#each data.special_objects as obj}
 						<li>{obj.kind}: {@html obj.description}</li>
 					{/each}
@@ -41,7 +41,7 @@
 		<section>
 			<h2>Special morphisms</h2>
 
-			<ul class="with-margins no-bullets">
+			<ul class="with-margins no-bullets underline-formula-links">
 				{#each data.special_morphisms as morph}
 					<li>
 						<TextWithProof proof={morph.proof}>

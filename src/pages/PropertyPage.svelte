@@ -58,7 +58,7 @@
 
 <TagList {tags} {type} sort="property" />
 
-<div class="description">
+<div class="description underline-formula-links">
 	{@html property.description}
 
 	{#if property.invariant_under_equivalences === false}

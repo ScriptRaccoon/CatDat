@@ -74,7 +74,7 @@ an issue when clicking two proofs in a row. So it's a <div> then.
 	class:expanded={popup_state.expanded}
 	bind:this={popup}
 >
-	<div class="content">
+	<div class="content underline-formula-links">
 		<header>
 			<h2>{popup_state.heading}</h2>
 
@@ -140,11 +140,6 @@ an issue when clicking two proofs in a row. So it's a <div> then.
 	.popup .content {
 		max-width: 800px;
 		margin: 0 auto;
-
-		:global(a:has(.katex)) {
-			text-decoration: none;
-			border-bottom: 1px solid var(--link-underline-color);
-		}
 	}
 
 	.popup header {

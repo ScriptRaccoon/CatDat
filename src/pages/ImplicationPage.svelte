@@ -91,7 +91,7 @@
 	{/each}
 </p>
 
-<div class="proof">
+<div class="proof underline-formula-links">
 	<strong>Proof:</strong>
 	{@html implication.proof}
 </div>
