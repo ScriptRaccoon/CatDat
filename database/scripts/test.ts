@@ -309,14 +309,16 @@ function test_properties_of_selected_structures(type: StructureType) {
 /**
  * Checks the query of a link to a proof on a structure page. A link with
  * "?proof=<key>" cites the argument of a proof, so the proof must be
- * assigned (not deduced). The key is the ID of a property or, for
- * categories, the kind of a special morphism.
+ * assigned (not deduced). A link marked with "data-allow-deduced" cites
+ * only the statement, so its target may also be deduced. The key is the
+ * ID of a property or, for categories, the kind of a special morphism.
  */
 function check_proof_link_target(
 	structure_id: string,
 	type: StructureType,
 	params: URLSearchParams,
-	error_prefix: string
+	error_prefix: string,
+	allow_deduced: boolean
 ) {
 	const keys = [...params.keys()]
 
@@ -353,9 +355,9 @@ function check_proof_link_target(
 		)
 	}
 
-	if (target.is_deduced) {
+	if (target.is_deduced && !allow_deduced) {
 		throw new Error(
-			`${error_prefix} links to the proof of "${proof_key}" for "${structure_id}", which is deduced. Rewrite the citing proof.`
+			`${error_prefix} links to the proof of "${proof_key}" for "${structure_id}", which is deduced. Rewrite the citing proof, or add data-allow-deduced to the link if it cites only the statement.`
 		)
 	}
 }
@@ -435,7 +437,7 @@ function check_link_targets_exist() {
 
 	for (const { proof, error_prefix } of proofs) {
 		const link_regex = new RegExp(
-			`<a\\s+href="\\/(${STRUCTURE_TYPES.join('|')})(?:-(implication|property))?\\/([^"?]+)(?:\\?([^"]*))?"`,
+			`<a\\s+href="\\/(${STRUCTURE_TYPES.join('|')})(?:-(implication|property))?\\/([^"?]+)(?:\\?([^"]*))?"([^>]*)>`,
 			'g'
 		)
 
@@ -443,6 +445,7 @@ function check_link_targets_exist() {
 			const type = match[1] as StructureType
 			const id = match[3]
 			const query = match[4]
+			const allow_deduced = /\sdata-allow-deduced(?=[\s=]|$)/.test(match[5])
 			const sort =
 				match[2] === 'implication'
 					? 'implications'
@@ -464,7 +467,14 @@ function check_link_targets_exist() {
 				)
 			}
 
-			if (query === undefined) continue
+			if (query === undefined) {
+				if (allow_deduced) {
+					throw new Error(
+						`${error_prefix} has a link to "${id}" with data-allow-deduced, but without "?proof=":\n"${proof}"`
+					)
+				}
+				continue
+			}
 
 			if (sort !== 'structures') {
 				throw new Error(
@@ -472,7 +482,13 @@ function check_link_targets_exist() {
 				)
 			}
 
-			check_proof_link_target(id, type, new URLSearchParams(query), error_prefix)
+			check_proof_link_target(
+				id,
+				type,
+				new URLSearchParams(query),
+				error_prefix,
+				allow_deduced
+			)
 		}
 
 		const content_link_regex = /<a\s+href="\/content\/([^"]+)"/g
