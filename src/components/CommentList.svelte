@@ -12,7 +12,7 @@
 	<section>
 		<h2>Comments</h2>
 
-		<ul class="with-margins">
+		<ul class="with-margins underline-formula-links">
 			{#each comments as { id, comment } (id)}
 				<li class="hint">{@html comment}</li>
 			{/each}

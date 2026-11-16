@@ -121,7 +121,7 @@
 	{/if}
 </section>
 
-<div class="description">{@html structure.description}</div>
+<div class="description underline-formula-links">{@html structure.description}</div>
 
 <PropertyAssignmentList
 	{type}
