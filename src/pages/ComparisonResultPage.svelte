@@ -21,6 +21,12 @@
 		unknown: faQuestion
 	}
 
+	let difference_count = $derived(
+		comparison_table.filter(
+			([_, ...values]) => values.includes('yes') && values.includes('no')
+		).length
+	)
+
 	let paragraph_element = $state<HTMLElement | null>(null)
 	let show_thead_outline = $state(false)
 
@@ -45,6 +51,9 @@
 <p class="hint" bind:this={paragraph_element}>
 	Selected:
 	{structures.map((c) => c.name).join(', ')}.
+	{#if structures.length > 1}
+		They differ in {difference_count} of {comparison_table.length} properties.
+	{/if}
 	<a href="/{type}-comparison">Choose different {PLURALS[type]}</a>.
 </p>
 
