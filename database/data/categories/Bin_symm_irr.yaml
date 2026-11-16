@@ -50,15 +50,10 @@ satisfied_properties:
   - property: finitely accessible
     proof: >-
       First, we claim that $\Bin_{\symm,\irr} \subseteq \Bin$ is closed under filtered colimits. In fact, the colimit of a filtered diagram $i \mapsto (X_i,R_i)$ in <a href="/category/Bin">$\Bin$</a> is $(\colim_i X_i, R)$, where $R$ consists of all pairs $(\iota_i(x),\iota_i(y))$ for some index $i$ and some $(x,y) \in R_i$. If each $R_i$ is symmetric, then $R$ is symmetric. If each $R_i$ is irreflexive, then $R$ is irreflexive as well, as we have seen in the proof for <a href="/category/Bin_irr">$\Bin_{\irr}$</a>. The rest of the proof is the same as for the finite accessibility of <a href="/category/Bin">$\Bin$</a>.
-    references:
-      - Bin_irr_finitely_accessible
-      - Bin_finitely_accessible
 
   - property: locally cartesian closed
     proof: >-
       We know that <a href="/category/Bin">$\Bin$</a> is locally cartesian closed, and that $\Bin_{\symm,\irr} \subseteq \Bin$ is closed under pullbacks. Therefore, it suffices to show that $\Bin_{\symm,\irr} \subseteq \Bin$ is closed under relative exponentials. Recall that for two objects $(Y,R_Y) \to (X,R_X)$ and $(Z,R_Z) \to (X,R_X)$ in $\Bin / (X,R_X)$, their exponential is the set $F = \coprod_{x \in X} \Hom(Y_x,Z_x)$ equipped with the following relation $R_F$: for maps $f : Y_x \to Z_x$ and $g : Y_{x'} \to Z_{x'}$ we have $(f,g) \in R_F$ when $(x,x') \in R_X$ and, for all $y \in Y_x$ and $y' \in Y_{x'}$, if $(y,y') \in R_Y$, then $(f(y),g(y')) \in R_Z$. Now assume that $R_X,R_Y,R_Z$ are symmetric and irreflexive. Then $R_F$ is irreflexive since $R_X$ is irreflexive, and $R_F$ is symmetric since $R_X$, $R_Y$, and $R_Z$ are symmetric.
-    references:
-      - Bin_exponentials
 
   - property: cokernel pairs
     proof: >-
@@ -96,18 +91,12 @@ unsatisfied_properties:
 
   - property: quotients of congruences
     proof: We can copy the proof for <a href="/category/Bin_irr">$\Bin_{\irr}$</a>.
-    references:
-      - Bin_irr_no_quotients_congruences
 
   - property: extremal generator
     proof: The proof for <a href="/category/Bin_irr">$\Bin_{\irr}$</a> can be easily adjusted.
-    references:
-      - Bin_irr_no_extremal_generator
 
   - property: cogenerating collection
     proof: We can copy the proof for <a href="/category/Bin_irr">$\Bin_{\irr}$</a>.
-    references:
-      - Bin_irr_no_cogenerating_collection
 
 special_objects:
   initial object:

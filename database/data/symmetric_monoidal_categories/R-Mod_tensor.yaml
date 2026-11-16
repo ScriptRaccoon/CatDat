@@ -29,7 +29,6 @@ unsatisfied_properties:
 
   - property: strict
     proof: 'Whether the underlying monoidal category is strict depends on the specific construction of modules and their tensor products, but the symmetries cannot be identities. In fact, if $A$ is a finitely generated free $R$-module, then the symmetry $\sigma_{A,A} : A \otimes A \to A \otimes A$ is the identity if and only if $A$ has rank $\leq 1$.'
-    label: R-Mod_tensor_not_strict
 
 undecidable_properties:
   - property: finitely complete
@@ -37,6 +36,3 @@ undecidable_properties:
 
   - property: well-copointed
     proof: This property holds if and only if $R$ is a cogenerator of $R{-}\Mod$. For example, it holds when $R$ is a field (see <a href="/symmetric_monoidal_category/Vect_tensor">here</a>), but not for $R = \IZ$ (see <a href="/symmetric_monoidal_category/Ab_tensor">here</a>).
-    references:
-      - Vect_tensor_well-copointed
-      - Ab_tensor_not_well-copointed

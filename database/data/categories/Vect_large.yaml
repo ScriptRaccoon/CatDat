@@ -34,25 +34,19 @@ satisfied_properties:
 
   - property: coequalizers
     proof: Since the hypercategory $\Vect_K$ has coequalizers constructed just like in the small case, it suffices to prove that if $V \to W$ is a surjective linear map in $\Vect_K$ and $V \in \Vect^s_K$, then also $W \in \Vect^s_K$. Choose a set $X$ with $V \cong K^{\oplus X}$ and a collection $Y$ with $W \cong K^{\oplus Y}$. By standard infinite-dimensional linear algebra (developed in the ZFC-model of collections), there is a surjective map $X \to Y$. Hence, there is a subcollection $X' \subseteq X$ with $X' \cong Y$. Since $X$ is a set, $X'$ is also a set. Hence, $W \cong K^{\oplus X'}$ lies in $\Vect^s_K$.
-    label: Vect_large_coequalizers
     check_redundancy: false
 
   - property: equalizers
     proof: Since the hypercategory $\Vect_K$ has equalizers constructed just like in the small case, it suffices to prove that if $V \to W$ is an injective linear map in $\Vect_K$ and $W \in \Vect^s_K$, then also $V \in \Vect^s_K$. Choose a collection $X$ with $V \cong K^{\oplus X}$ and a set $Y$ with $W \cong K^{\oplus Y}$. By standard infinite-dimensional linear algebra (developed in the ZFC-model of collections), there is an injective map $X \to Y$. Hence, there is a subcollection $Y' \subseteq Y$ with $X \cong Y'$. Since $Y$ is a set, $Y'$ is also a set. Hence, $V \cong K^{\oplus Y'}$ lies in $\Vect^s_K$.
-    label: Vect_large_equalizers
     check_redundancy: false
 
   - property: normal
     proof: 'A monomorphism $f : V \to W$ in $\Vect^s_K$ is an injective linear map, hence a kernel of $W \to W/\im(f)$ in $\Vect_K$. Since $W$ belongs to $\Vect^s_K$, also $W/\im(f)$ belongs to $\Vect^s_K$ (see our proof for coequalizers).'
     check_redundancy: false
-    references:
-      - Vect_large_coequalizers
 
   - property: conormal
     proof: 'An epimorphism $f : V \to W$ in $\Vect^s_K$ is a surjective linear map, hence a cokernel of $\ker(f) \hookrightarrow V$ in $\Vect_K$. Since $V$ belongs to $\Vect^s_K$, also its subspace $\ker(f)$ belongs to $\Vect^s_K$ (see our proof for equalizers).'
     check_redundancy: false
-    references:
-      - Vect_large_equalizers
 
   - property: all epimorphisms split
     proof: The inclusion functor $\Vect^s_K \hookrightarrow \Vect_K$ is fully faithful and preserves epimorphisms, which are surjective linear maps in both categories (see below). Hence, the claim follows from Lemma 15 <a href="/content/subcategories">here</a> and the fact that $\Vect_K$ has all epimorphisms split (which we know in the <a href="/category/Vect">small case</a> and therefore also holds in the large case).
@@ -68,8 +62,6 @@ satisfied_properties:
 
   - property: well-powered
     proof: In contrast to the other properties mentioned before, this does <i>not</i> follow from the hypercategory $\Vect_K$, since the subobjects of a large vector space merely form a collection. Instead, notice that the subobjects of $K^{\oplus X}$, where $X$ is a set, are isomorphic to $K^{\oplus Y}$ for subsets $Y \subseteq X$ (see our proof for equalizers). Since the subsets of $X$ form a set, the subobjects form a set.
-    references:
-      - Vect_large_equalizers
 
   - property: ℵ₁-cofiltered limits
     proof: >-
@@ -78,8 +70,6 @@ satisfied_properties:
       We now prove that $\Vect^s_K$ is closed under $\aleph_1$-cofiltered limits in $\Vect_K$. To this end, let $D : \I \to \Vect^s_K$ be an $\aleph_1$-cofiltered diagram, and let $(\pi_i : V \to D(i))_{i \in \I}$ be its limit in $\Vect_K$. For each $i \in \I$, choose a set basis $B_i$ of $D(i)$. Let $\Lambda$ be the set of all families $S=(S_i)_{i \in \I}$ of finite subsets $S_i \subseteq B_i$. Since $\Ob(\I)$ and each $B_i$ are sets, $\Lambda$ is indeed a set. For $S \in \Lambda$, let $V_S \subseteq V$ be the subspace consisting of those vectors $v \in V$ such that $\pi_i(v) \in \langle S_i \rangle$ for every $i \in \I$. Clearly, $V = \bigcup_{S \in \Lambda} V_S$. In particular, there is an epimorphism $\bigoplus_{S \in \Lambda} V_S \to V$. Thus, it suffices to prove that each $V_S$ is finite-dimensional, since then $V \in \Vect^s_K$, using that $\Vect^s_K$ is closed under quotients.
 
       Define a diagram $E : \I \to \FinVect_K$ by $E(i) = \pi_i(V_S)$. Since $\pi_i(V_S) \subseteq \langle S_i \rangle \subseteq D(i)$ and $S_i$ is finite, each $E(i)$ is finite-dimensional. If $i \to j$ is a morphism in $\I$, then the map $D(i \to j) : D(i) \to D(j)$ satisfies $D(i \to j) \circ \pi_i = \pi_j$ and therefore restricts to a map $E(i \to j) : E(i) \to E(j)$. By the preliminary observation, $\lim(E)$ is finite-dimensional. The maps $\pi_i : V_S \to E(i)$ induce a map $V_S \to \lim(E)$, which is clearly injective. Hence $V_S$ is finite-dimensional as well.
-    references:
-      - Vect_large_coequalizers
 
 unsatisfied_properties:
   - property: skeletal

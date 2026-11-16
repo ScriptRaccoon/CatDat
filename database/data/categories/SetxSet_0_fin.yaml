@@ -21,12 +21,10 @@ satisfied_properties:
   - property: finite products
     proof: We show that the category is closed under finite products in <a href="/category/SetxSet">$\Set \times \Set$</a>. Let $(A_i,B_i)_{i \in I}$ be a finite family in $(\Set \times \Set)_{\varnothing,\fin}$. The product in $\Set \times \Set$ is $(\prod_{i \in I} A_i, \prod_{i \in I} B_i)$. If $\prod_{i \in I} A_i$ is non-empty, every $A_i$ is non-empty. Hence, every $B_i$ is finite, and therefore $\prod_{i \in I} B_i$ is finite.
     check_redundancy: false
-    label: SetxSet_0_fin_finite_products
 
   - property: equalizers
     proof: In fact, $(\Set \times \Set)_{\varnothing,\fin}$ is closed under subobjects in <a href="/category/SetxSet">$\Set \times \Set$</a>, which has equalizers. Let $(C,D) \hookrightarrow (A,B)$ be a monomorphism in $\Set \times \Set$ with $(A,B) \in (\Set \times \Set)_{\varnothing,\fin}$. If $C$ is non-empty, then $A$ is non-empty, so $B$ is finite, and hence $D$, which injects into $B$, is finite.
     check_redundancy: false
-    label: SetxSet_0_fin_equalizers
 
   - property: coequalizers
     proof: In fact, $(\Set \times \Set)_{\varnothing,\fin}$ is closed under quotients in <a href="/category/SetxSet">$\Set \times \Set$</a>, which has coequalizers. Let $(A,B) \twoheadrightarrow (C,D)$ be an epimorphism in $\Set \times \Set$ with $(A,B) \in (\Set \times \Set)_{\varnothing,\fin}$. If $C$ is non-empty, then $A$ is non-empty since $A \to C$ is surjective. Thus, $B$ is finite. Since $B \to D$ is surjective, it follows that $D$ is finite.
@@ -64,8 +62,6 @@ satisfied_properties:
   - property: ℵ₁-cofiltered limits
     proof: >-
       We will show that $(\Set \times \Set)_{\varnothing,\fin}$ is closed under $\aleph_1$-cofiltered limits in $\Set \times \Set$. Let $D : \I \to (\Set \times \Set)_{\varnothing,\fin}$ be an $\aleph_1$-cofiltered diagram. Write $D(i) = (A(i),B(i))$, so that $\lim(D) = (\lim(A),\lim(B))$. If some $A(i)$ is empty, then $\lim(A)$ is empty, and we are done. If not, since $D(i) \in (\Set \times \Set)_{\varnothing,\fin}$, each $B(i)$ is finite. Since we know that <a href="/category/FinSet">$\FinSet$</a> is closed under $\aleph_1$-cofiltered limits in $\Set$, we conclude that $\lim(B)$ is finite. Hence, $(\lim(A), \lim(B))$ is an object of $(\Set \times \Set)_{\varnothing,\fin}$.
-    references:
-      - FinSet_aleph1-cofiltered-limits
 
 unsatisfied_properties:
   - property: skeletal

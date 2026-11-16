@@ -23,8 +23,6 @@ unsatisfied_properties:
 
   - property: one-sorted finitary algebraic
     proof: The proof is very similar to the one for <a href="/category/grAb">$\grAb$</a>, which is the special case in which all differentials are zero. Every finitely presentable complex is concentrated in finitely many degrees and therefore cannot be a generator.
-    references:
-      - grAb_not_one-sorted_finitary_algebraic
 
 special_objects:
   initial object:

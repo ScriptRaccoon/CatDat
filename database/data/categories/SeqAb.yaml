@@ -37,8 +37,6 @@ unsatisfied_properties:
       \cdots @>>> 0 @>>> \IZ @>{\id}>> \IZ @>{\id}>> \cdots
       \end{CD}$$
       Since $P[N+1] \neq 0$, it follows that $A$ is not a generator.
-    references:
-      - grAb_not_one-sorted_finitary_algebraic
 
 special_objects:
   initial object:

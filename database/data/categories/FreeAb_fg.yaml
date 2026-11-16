@@ -39,8 +39,6 @@ satisfied_properties:
 
   - property: self-dual
     proof: More generally, if $R$ is a commutative ring, $\Proj_\fg(R)$ is self-dual, as proven <a href="/category/Proj_fg(Re)">here</a>.
-    references:
-      - Proj_fg(Re)_self-dual
 
   - property: pullback-stable regular epimorphisms
     proof: 'Apply the dual of Lemma 14 <a href="/content/subcategories">here</a> to the inclusion $\FreeAb_\fg \to \Ab$. It preserves pullbacks since subgroups of finitely generated free abelian groups are finitely generated and free, and it preserves regular epimorphisms since these are the surjective homomorphisms in both categories (see below). Here, we use that <a href="/category/Ab">$\Ab$</a> has pullback-stable regular epimorphisms.'
@@ -50,9 +48,6 @@ satisfied_properties:
       The proof is very similar to the proof for <a href="/category/Ab_fg">$\Ab_\fg$</a>. The inclusion $\Ab_{\fg} \hookrightarrow \Ab$ is closed under $\aleph_1$-filtered colimits by <a href="https://mathoverflow.net/questions/400763/">MO/400763</a>. Furthermore, the inclusion $\TorsFreeAb \hookrightarrow \Ab$ is clearly closed under $\aleph_0$-filtered colimits, and hence under $\aleph_1$-filtered colimits. Since $\FreeAb_\fg = \Ab_\fg \cap \TorsFreeAb$, it follows that $\FreeAb_\fg \hookrightarrow \Ab$ is closed under $\aleph_1$-filtered colimits. In particular, $\FreeAb_\fg$ has $\aleph_1$-filtered colimits. Every finitely generated free abelian group is isomorphic to one in the set $\{\IZ^n : n \in \IN\}$, and each $\IZ^n$ is finitely presentable in $\Ab$, hence $\aleph_1$-presentable, and therefore also $\aleph_1$-presentable in $\FreeAb_\fg$.
 
       More generally, if $R$ is a left Noetherian ring, then $\Proj_\fg(R)$ is $\aleph_1$-accessible, as proven <a href="/category/Proj_fg(Re)">here</a>.
-    references:
-      - Ab_fg_aleph1-accessible
-      - Proj_fg(Re)_aleph1-accessible
 
 unsatisfied_properties:
   - property: skeletal

@@ -33,22 +33,15 @@ satisfied_properties:
 
   - property: terminal object
     proof: The ordered set $[0] = \{0\}$ is terminal.
-    label: Delta_terminal_object
 
   - property: strongly connected
     proof: For all $n,m$ there are morphisms $[n] \to [0] \to [m]$.
 
   - property: extremal generator
     proof: The ordered set $[1] = \{0 < 1\}$ is an extremal generator, even for <a href="/category/PreOrd">$\PreOrd$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
-    label: Delta_extremal_generator
-    references:
-      - PreOrd_extremal_generator
 
   - property: extremal cogenerator
     proof: The ordered set $[1] = \{0 < 1\}$ is an extremal cogenerator, even for <a href="/category/Pos">$\Pos$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
-    label: Delta_extremal_cogenerator
-    references:
-      - Pos_extremal_cogenerator
 
   - property: skeletal
     proof: 'If $f : [n] \to [m]$ is an isomorphism, then $n + 1 = m + 1$ by comparing the cardinalities, hence $n = m$.'
@@ -58,12 +51,9 @@ satisfied_properties:
 
   - property: all monomorphisms split
     proof: The proof for <a href="/category/FinOrd">$\FinOrd$</a> shows that every monomorphism with non-empty domain splits.
-    references:
-      - FinOrd_mono-regular
 
   - property: coequalizers
     proof: 'Assume that $f,g : (X,\leq) \rightrightarrows (Y,\leq)$ are morphisms in $\FinOrd \setminus \{\varnothing\}$. Since <a href="/category/FinOrd">$\FinOrd$</a> has coequalizers, they have a coequalizer $q : (Y,\leq) \to (C,\leq)$ in $\FinOrd$. Since $Y$ is non-empty, $C$ is non-empty as well, and clearly $q$ is then also the coequalizer in $\FinOrd \setminus \{\varnothing\}$.'
-    label: Delta_coequalizers
 
   - property: core-thin
     proof: The category $\FinOrd \setminus \{\varnothing\}$ is core-thin because already <a href="/category/FinOrd">$\FinOrd$</a> is core-thin.
@@ -77,7 +67,6 @@ satisfied_properties:
       It remains to show that all point spans are connected to each other. Assume $x_0,x_1 \in X$ and $y \in Y$, w.l.o.g. $x_0 \leq x_1$. Define the map $f : [1] \to (X,\leq)$ by $f(0) = x_0$, $f(1) = x_1$, and the map $g : [1] \to (Y,\leq)$ by $g(0)=g(1)=y$. They are order-preserving and fit into a zig-zag of spans:
       $$\begin{CD} (X,\leq) @<{x_0}<< [0] @>{y}>> (Y,\leq) \\ @| @V{0}VV @| \\ (X,\leq) @<{f}<< [1] @>{g}>> (Y,\leq) \\ @| @A{1}AA @| \\ (X,\leq) @<{x_1}<< [0] @>{y}>> (Y,\leq) \end{CD}$$
       This shows that the choice of $x \in X$ does not matter, and for $y \in Y$ the proof is the same.
-    label: Delta_cosifted
 
 unsatisfied_properties:
   - property: cofiltered
@@ -91,13 +80,9 @@ unsatisfied_properties:
 
   - property: sequential colimits
     proof: We can just copy the proof for <a href="/category/FinOrd">$\FinOrd$</a> to show that the sequence of inclusions $[0] \hookrightarrow [1] \hookrightarrow [2] \hookrightarrow \cdots$ has no colimit.
-    references:
-      - FinOrd_no_sequential_colimits
 
   - property: sequential limits
     proof: We can just copy the proof for <a href="/category/FinOrd">$\FinOrd$</a> to show that the sequence of truncations $\cdots \twoheadrightarrow [2] \twoheadrightarrow [1] \twoheadrightarrow [0]$ has no limit.
-    references:
-      - FinOrd_no_sequential_limits
 
   - property: natural numbers object
     proof: Any natural numbers object in $\FinOrd \setminus \{\varnothing\}$ would also be a natural numbers object in <a href="/category/FinOrd">$\FinOrd$</a>, which we know does not exist.

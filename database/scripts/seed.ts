@@ -189,14 +189,8 @@ function seed_structures(type: StructureType) {
 	const property_assignment_insert = db.prepare(
 		`INSERT INTO property_assignments (
 			structure_id, property_id, type, is_satisfied,
-			proof, check_redundancy, label
-		) VALUES (?, ?, ?, ?, ?, ?, ?)`
-	)
-
-	const proof_reference_insert = db.prepare(
-		`INSERT INTO proof_references (
-			structure_id, property_id, type, reference
-		) VALUES (?, ?, ?, ?)`
+			proof, check_redundancy
+		) VALUES (?, ?, ?, ?, ?, ?)`
 	)
 
 	const associated_structure_insert = db.prepare(
@@ -265,13 +259,8 @@ function seed_structures(type: StructureType) {
 				type,
 				entry.is_satisfied,
 				entry.proof,
-				entry.check_redundancy === false ? 0 : 1,
-				entry.label || null
+				entry.check_redundancy === false ? 0 : 1
 			)
-
-			for (const ref of entry.references ?? []) {
-				proof_reference_insert.run(structure.id, entry.property, type, ref)
-			}
 		}
 	}
 

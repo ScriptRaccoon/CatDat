@@ -82,7 +82,6 @@ satisfied_properties:
       This makes it impossible for $\varphi$ to be continuous at $y$, giving a contradiction.
 
       Finally, since we have shown $f$ is bijective, to show $f$ is a homeomorphism, it suffices to show that $f$ is closed. Thus, let $F \subseteq X$ be closed. Then $d_X({-}, F) : X \to \IR$ is a continuous function, so there exists $\varphi : Y \to \IR$ such that $\varphi(f(x)) = d_X(x, F)$ for each $x\in X$. That implies that $f_*(F) = \{ y \in Y : \varphi(y) = 0 \}$ is closed.
-    label: Met_c_cogenerator
 
 unsatisfied_properties:
   - property: skeletal
@@ -99,9 +98,6 @@ unsatisfied_properties:
 
   - property: regular subobject classifier
     proof: 'We recycle the proof from <a href="/category/Haus">$\Haus$</a>: Assume that there is a regular subobject classifier $\Omega$. By the classification of regular monomorphisms, we would have an isomorphism between $\Hom(X,\Omega)$ and the set of closed subsets of $X$ for any metrizable space $X$. If we take $X = \{\ast\}$, we see that $\Omega$ has two points. Since $\Omega$ is Hausdorff, it must be discrete. But then $\Hom(X,\Omega)$ is isomorphic to the set of all clopen subsets of $X$, of which there are usually far fewer than closed subsets (consider $X = [0,1]$).'
-    label: Met_c_no_regular_subobject_classifier
-    references:
-      - Haus_no_regular_subobject_classifier
 
   - property: sequential colimits
     proof: See <a href="https://mathoverflow.net/questions/510316">MO/510316</a> for a proof that the diagram $\IN \to \Met_\c$, $n \mapsto \IR^n$ does not have a colimit.

@@ -46,7 +46,6 @@ satisfied_properties:
 
   - property: ℵ₁-cofiltered limits
     proof: 'Let $D : \I \to \FinSet$ be an $\aleph_1$-cofiltered diagram. Let $(p_i : P \to D(i))_{i \in \I}$ be a limit cone of the corresponding diagram in $\Set$. We only need to show that $P$ is finite. If not, then it contains a sequence of pairwise distinct elements $x_1,x_2,\dotsc$. For all $n \neq m$ there is some $i_{n,m} \in \I$ with $p_{i_{n,m}}(x_n) \neq p_{i_{n,m}}(x_m)$. Since $\I$ is $\aleph_1$-cofiltered, it contains a cone $(j \to i_{m,n})$. Then $p_j(x_n) \neq p_j(x_m)$ for all $n \neq m$. This is not possible since $D(j)$ is a finite set.'
-    label: FinSet_aleph1-cofiltered-limits
     check_redundancy: false
 
 unsatisfied_properties:
@@ -61,7 +60,6 @@ unsatisfied_properties:
 
   - property: natural numbers object
     proof: By Lemma 2 <a href="/content/natural_numbers_objects">here</a>, if $(N,z,s)$ is a natural numbers object, then $N \cong \{\ast\} \sqcup N$. But there is no finite set with this property.
-    label: FinSet_no_NNO
 
 special_objects:
   initial object:

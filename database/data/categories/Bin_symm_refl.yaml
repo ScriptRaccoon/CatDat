@@ -50,26 +50,18 @@ satisfied_properties:
 
   - property: finitely accessible
     proof: The proof is the same as for the finite accessibility of <a href="/category/Bin">$\Bin$</a>.
-    references:
-      - Bin_finitely_accessible
 
   - property: locally cartesian closed
     proof: >-
       The proof is similar to the proof for <a href="/category/Bin_refl">$\Bin_{\refl}$</a>. We know that <a href="/category/Bin_symm">$\Bin_{\symm}$</a> is locally cartesian closed, and $\Bin_{\symm,\refl} \subseteq \Bin_{\symm}$ is closed under pullbacks, but it is <i>not</i> closed under exponentials. However, $\Bin_{\symm,\refl} \subseteq \Bin_{\symm}$ is a coreflective subcategory with coreflector $\Bin_{\symm} \to \Bin_{\symm,\refl}$ mapping $(X,R)$ to $(\tilde{X},R|_{\tilde{X}})$, where $\tilde{X} = \{x \in X : (x,x) \in R\}$. It follows that, for every object $A \in \Bin_{\symm,\refl}$, also $\Bin_{\symm,\refl} / A$ is a coreflective subcategory of $\Bin_{\symm} / A$. Since $\Bin_{\symm} / A$ is cartesian closed, it follows from Lemma 5 <a href="/content/subcategories">here</a> that $\Bin_{\symm,\refl} / A$ is cartesian closed, as claimed.
 
       Concretely, relative exponentials look as follows: Let $(X,R)$ be a fixed object of $\Bin_{\symm,\refl}$. We say that $x$ relates to $x'$ when $(x,x') \in R$ and suppress the relation set $R$ from the notation. For two objects $Y \to X$ and $Z \to X$ in $\Bin_{\symm,\refl} / X$, we define their exponential to be the subset $\coprod_{x \in X} \Hom_{\Bin_{\symm,\refl}}(Y_x,Z_x)$ of the exponential $\coprod_{x \in X} \Hom(Y_x,Z_x)$ in $\Set / X$, where $Y_x$ denotes the fiber over $x$ with the induced relation, equipped with the following relation: a relation-preserving map $f : Y_x \to Z_x$ relates to a relation-preserving map $g : Y_{x'} \to Z_{x'}$ when $x$ relates to $x'$ and, for all $y \in Y_x$ and $y' \in Y_{x'}$, if $y$ relates to $y'$, then $f(y)$ relates to $g(y')$. This relation is reflexive since each $f : Y_x \to Z_x$ is relation-preserving by construction, and it is symmetric since the relations on $X,Y,Z$ are symmetric.
-    references:
-      - Bin_refl_exponentials
-      - Bin_symm_exponentials
-      - Bin_exponentials
 
   - property: regular subobject classifier
     proof: By the description of regular monomorphisms below, the poset of regular subobjects of $(X,R)$ is isomorphic to the poset of subsets of $X$. The subsets of $X$ correspond to morphisms from $(X,R)$ into $\Omega \coloneqq (\{0,1\}, \{0,1\} \times \{0,1\})$, which belongs to $\Bin_{\symm,\refl}$, showing that $\Omega$ is a regular subobject classifier.
 
   - property: extremal generator
     proof: An argument similar to the proof for <a href="/category/Bin_refl">$\Bin_{\refl}$</a> shows that the two objects $T = (\{a\},\{(a,a)\})$ and $E = (\{a,b\},\{(a,a),(b,b),(a,b),(b,a)\})$ form an extremal generating collection. Since there are morphisms $T \to E$ and $E \to T$, we conclude with <a href="/content/generator_construction">this result</a> that $T \sqcup E$ is an extremal generator.
-    references:
-      - Bin_refl_extremal_generator
 
   - property: extremal cogenerator
     proof: >-
@@ -84,8 +76,6 @@ satisfied_properties:
       Assume for contradiction that $x,x' \in X$ satisfy $(f(x),f(x')) \in S$, but $(x,x') \notin R$. Since $R$ is symmetric, we also have $(x',x) \notin R$, and since $R$ is reflexive, we have $x \neq x'$. Define the map $h : X \to Q$ by $h(x)=0$, $h(x')=1$, and $h(p)=2$ for $p \neq x,x'$. Then $h : (X,R) \to (Q,R_Q)$ is a morphism since the only pairs in $X \times X$ whose image is not in $R_Q$ are the pairs $(x,x')$ and $(x',x)$, which are not contained in $R$. By assumption, there is a morphism $g : (Y,S) \to (Q,R_Q)$ such that $g \circ f = h$. Since $(f(x),f(x')) \in S$, it follows that
       $$(0,1) = (h(x),h(x')) = (g(f(x)),g(f(x'))) \in R_Q,$$
       which is a contradiction.
-    references:
-      - Bin_extremal_cogenerator
 
 unsatisfied_properties:
   - property: skeletal
@@ -94,8 +84,6 @@ unsatisfied_properties:
   - property: co-Malcev
     proof: >-
       We can take the same counterexample as for <a href="/category/Bin_symm">$\Bin_{\symm}$</a> by adding loops to each vertex.
-    references:
-      - Bin_symm_not_co-Malcev
 
 special_objects:
   initial object:

@@ -34,13 +34,10 @@ satisfied_properties:
 
   - property: connected limits
     proof: 'In fact, all non-empty limits exist. Since <a href="/category/Set">$\Set$</a> is complete, the product category $\Set^I$ is also complete with pointwise limits. It suffices to prove that $\Set^{(I)}_0$ is closed under non-empty limits, which are small by convention. Let $D : \J \to \Set^{(I)}_0$ be a small non-empty diagram and let $L$ be its limit in $\Set^I$. Thus, $L_i = \lim_{j \in \J} D(j)_i$. Consider the collection $\bigcup_{j \in \J} \supp(D(j))$, which is essentially small. For any index $i$ outside this collection, $L_i$ is a limit of empty sets indexed by the non-empty category $\J$ and hence empty. Thus, $\supp(L) \subseteq \bigcup_{j \in \J} \supp(D(j))$, and hence $\supp(L)$ is essentially small.'
-    label: Set_family_mostly_0_non_empty_limits
     check_redundancy: false
 
   - property: binary products
     proof: We have just proved that non-empty limits exist. Concretely, we have $(X \times Y)_i = X_i \times Y_i$ with $\supp(X \times Y) = \supp(X) \cap \supp(Y)$.
-    references:
-      - Set_family_mostly_0_non_empty_limits
 
   - property: infinitary extensive
     proof: Since <a href="/category/Set">$\Set$</a> is infinitary extensive, $\Set^I$ is also infinitary extensive. We can now apply Lemma 11 <a href="/content/subcategories">here</a> to the inclusion functor $\Set^{(I)}_0 \hookrightarrow \Set^I$.
@@ -80,8 +77,6 @@ unsatisfied_properties:
 
   - property: locally small
     proof: The proof is identical to the proof for <a href="/category/Vect_family_mostly_0">$\Vect^{(I)}$</a>. However, this result is not relevant for category theory; only the fact that the category is locally essentially small matters.
-    references:
-      - Vect_family_mostly_0_not_locally_small
 
   - property: terminal object
     proof: Assume that a terminal object $X$ exists. For $i \in I$, define the family $Y$ by $Y_i = \{\ast\}$ and $Y_j = \varnothing$ for $j \neq i$. Then $\supp(Y) = \{i\}$, so $Y$ belongs to $\Set^{(I)}_0$. By assumption, there is a morphism $Y \to X$. In particular, we see that $X_i$ is non-empty. But then $\supp(X) = I$, which is not essentially small.

@@ -25,12 +25,9 @@ satisfied_properties:
 
   - property: locally finitely presentable
     proof: See <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adámek–Rosický</a>, Example 1.10.
-    label: Pos_lfp
 
   - property: cartesian closed
     proof: The proof for <a href="/category/PreOrd">$\PreOrd$</a> works verbatim, since for posets $(P,\leq),(Q,\leq)$ the pointwise preorder on $\Hom((P,\leq),(Q,\leq))$ is antisymmetric.
-    references:
-      - PreOrd_cartesian_closed
 
   - property: semi-strongly connected
     proof: Every non-empty poset is weakly terminal (by using constant maps).
@@ -43,9 +40,6 @@ satisfied_properties:
 
   - property: extremal generator
     proof: We have that $\{0<1\}$ is an extremal generator even in <a href="/category/PreOrd">$\PreOrd$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
-    label: Pos_extremal_generator
-    references:
-      - PreOrd_extremal_generator
 
   - property: extremal cogenerator
     proof: >-
@@ -54,7 +48,6 @@ satisfied_properties:
       Now, suppose we have a morphism $f : (P,\leq) \to (Q,\leq)$ such that
       $${-} \circ f : \Hom((Q,\leq), \{0<1\}) \to \Hom((P,\leq), \{0<1\})$$
       is a bijection. Since it is injective and $\{0<1\}$ is a cogenerator, we get that $f$ is an epimorphism and therefore $f : P \to Q$ is surjective (see below). On the other hand, the fact that $f$ induces a bijection of upper sets implies that $f : P \to Q$ is also injective, and also that $f(a_1) \le f(a_2)$ implies $a_1 \le a_2$. Therefore, $f$ is an isomorphism.
-    label: Pos_extremal_cogenerator
 
 unsatisfied_properties:
   - property: skeletal
@@ -68,8 +61,6 @@ unsatisfied_properties:
 
   - property: co-Malcev
     proof: The proof for <a href="/category/PreOrd">$\PreOrd$</a> works verbatim, with the forgetful functor $\Pos \to \Set$.
-    references:
-      - PreOrd_not_co-Malcev
 
   - property: regular subobject classifier
     proof: Assume that there is a regular subobject classifier $(\Omega,\leq)$, so that (by the classification of regular monomorphisms) $\Hom((P,\leq),(\Omega,\leq))$ is isomorphic to the set of subsets of $P$ for every poset $(P,\leq)$. By taking $P = \{\ast\}$ we see that $\Omega$ has $2$ elements, so that either $(\Omega,\leq) \cong (\{0,1\},=)$ or $(\Omega,\leq) \cong \{0 < 1\}$. By taking $(P,\leq) = \{0 < 1\}$ we see that $\Omega$ has four pairs $(x,y)$ with $x \leq y$. But $(\{0,1\},=)$ has only two and $\{0 < 1\}$ has only three such pairs.
@@ -79,7 +70,6 @@ unsatisfied_properties:
       Consider $(\IR,\leq)$ with the standard order, and let $C \coloneqq \IR \times \{ 0, 1 \}$ with the partial order such that $(x, m) \le (y, n)$ if and only if $x < y$ or $(x, m) = (y, n)$. The two maps $(\IR,\leq) \rightrightarrows (C,\leq)$ will be $x \mapsto (x, 0)$ and $x \mapsto (x, 1)$ respectively. For any poset $(P, \leq)$, the induced equivalence relation on the set of order-preserving functions $(\IR,\leq) \to (P,\leq)$ is that $f \sim g$ if and only if $f(x) \le g(y)$ and $g(x) \le f(y)$ whenever $x < y$. This relation is clearly reflexive and symmetric; for transitivity, if $f \sim g$ and $g \sim h$, then whenever $x < y$, we have $f(x) \le g(\frac{x+y}{2}) \le h(y)$ and similarly $h(x) \le g(\frac{x+y}{2}) \le f(y)$, showing that $f \sim h$.
 
       On the other hand, if this cocongruence on $(\IR,\leq)$ were effective, i.e. the cokernel pair of some order-preserving map $(P,\leq) \to (\IR,\leq)$, then $P$ must be empty since the two maps $\IR \rightrightarrows C$ agree nowhere. So $(C,\leq)$ would have to be the coproduct $(\IR,\leq) \sqcup (\IR,\leq)$, giving a contradiction.
-    label: Pos_no_effective_cocongruences
 
 special_objects:
   initial object:

@@ -47,12 +47,9 @@ satisfied_properties:
 
   - property: infinitary extensive
     proof: We can copy the proof for <a href="/category/PreOrd">$\PreOrd$</a>.
-    references:
-      - PreOrd_infinitary_extensive
 
   - property: finitely accessible
     proof: Using the description of colimits, it is easy to see that $(X,R)$ is finitely presentable when $X$ is a finite set. The collection of such objects, up to isomorphism, is essentially small. Moreover, every object $(X,R)$ can be written as the filtered colimit of $(F,R|_F)$, where $F$ runs through the finite subsets of $X$.
-    label: Bin_finitely_accessible
 
   - property: locally cartesian closed
     proof: >-
@@ -61,11 +58,9 @@ satisfied_properties:
       Let us check the universal property of an exponential. Given an object $A \to X$ in $\Bin / X$, a morphism $\alpha : A \to \coprod_{x \in X} \Hom(Y_x,Z_x)$ over $X$ is in particular a morphism in $\Set / X$ and thus corresponds to a morphism $\beta : A \times_X Y \to Z$ in $\Set / X$ via $\beta(a,y) = \alpha(a)(y)$. It remains to check that $\alpha$ is relation-preserving if and only if $\beta$ is relation-preserving.
 
       That $\alpha$ is relation-preserving means that if $a \in A_x$ relates to $a' \in A_{x'}$, then the map $\alpha(a) : Y_x \to Z_x$ relates to the map $\alpha(a') : Y_{x'} \to Z_{x'}$, i.e., that $x$ relates to $x'$ (which is automatic since $a$ relates to $a'$ and $A \to X$ is relation-preserving) and that if $y \in Y_x$ relates to $y' \in Y_{x'}$, then $\alpha(a)(y)$ relates to $\alpha(a')(y')$. In other words, if $(a,y)$ relates to $(a',y')$ in the pullback $A \times_X Y$, then $\beta(a,y)$ relates to $\beta(a',y')$. This is precisely the statement that $\beta$ is relation-preserving.
-    label: Bin_exponentials
 
   - property: regular subobject classifier
     proof: By the description of regular monomorphisms below, the poset of regular subobjects of $(X,R)$ is isomorphic to the poset of subsets of $X$. The subsets of $X$ correspond to morphisms from $(X,R)$ into the object $\Omega \coloneqq (\{0,1\}, \{0,1\} \times \{0,1\})$, which shows that $\Omega$ is a regular subobject classifier.
-    label: Bin_regular_subobject_classifier
 
   - property: generator
     proof: The object $(\{\ast\},\varnothing)$ is a generator because it represents the forgetful functor $\Bin \to \Set$, $(X,R) \mapsto X$, which is faithful.
@@ -89,7 +84,6 @@ satisfied_properties:
       <strong>Case 2:</strong> $x = x'$. Define the map $h : X \to Q$ by $h(x)=3$ and $h(p)=2$ for $p \neq x$. Then $h : (X,R) \to (Q,R_Q)$ is a morphism since the only pair in $X \times X$ whose image is not in $R_Q$ is the pair $(x,x)$, which is not contained in $R$. By assumption, there is a morphism $g : (Y,S) \to (Q,R_Q)$ such that $g \circ f = h$. Since $(f(x),f(x)) \in S$, it follows that
       $$(3,3) = (h(x),h(x)) = (g(f(x)),g(f(x))) \in R_Q,$$
       which is a contradiction.
-    label: Bin_extremal_cogenerator
 
 unsatisfied_properties:
   - property: skeletal
@@ -102,17 +96,13 @@ unsatisfied_properties:
       C_2 & = \bigl(\{0,1\}, \{(0,1),(1,0)\}\bigr) \\
       C_3 & = \bigl(\{0,1,2\}, \{(0,1),(1,2),(2,0)\}\bigr)
       \end{align*}$$
-    references:
-      - Quiv_not_semi-strongly_connected
 
   - property: extremal generator
     proof: Let $(X,R) \in \Bin$. We will prove that $\Hom((X,R),-)$ is not conservative. If $R$ is non-empty, consider the unique morphism from $(\varnothing,\varnothing)$ to $(\{\ast\},\varnothing)$. It is not an isomorphism, but since $(X,R)$ has no morphism to either object, the functor $\Hom((X,R),-)$ maps it to an isomorphism between empty sets. If $R$ is empty, consider the unique morphism from $(\{\ast\},\varnothing)$ to $(\{\ast\},\{(\ast,\ast)\})$. It is not an isomorphism, but since $(X,R) = (X,\varnothing)$ has a unique morphism to each of these objects, the functor $\Hom((X,R),-)$ maps it to an isomorphism between singleton sets.
-    label: Bin_no_extremal_generator
 
   - property: co-Malcev
     proof: >-
       Consider the set $X = \{x\}$ with the relation $R_X = \{(x,x)\}$ and the set $C = \{x,x'\}$ with the relation $R_C = \{(x,x),(x',x'),(x,x')\}$. There are two canonical morphisms $j_1,j_2 : (X,R_X) \rightrightarrows (C,R_C)$ defined by $j_1(x)=x$ and $j_2(x)=x'$. They are jointly surjective and have a common retraction $(C,R_C) \to (X,R_X)$, namely the unique map $C \to X$ sending both $x$ and $x'$ to $x$. Thus, $j_1,j_2$ form a coreflexive corelation. It is not cosymmetric, since otherwise there would be a morphism $s : (C,R_C) \to (C,R_C)$ satisfying $s(x)=x'$ and $s(x')=x$, which would imply $(x',x) \in R_C$, contrary to the definition of $R_C$.
-    label: Bin_not_co-Malcev
 
 special_objects:
   initial object:

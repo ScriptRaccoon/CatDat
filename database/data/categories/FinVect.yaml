@@ -23,8 +23,6 @@ satisfied_properties:
 
   - property: extremal generator
     proof: The one-dimensional vector space $K$ is an extremal generator even in <a href="/category/Vect">$\Vect_K$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
-    references:
-      - Vect_extremal_generator
 
   - property: split abelian
     proof: The category is a full subcategory of <a href="/category/Vect">$\Vect_K$</a> that is closed under finite direct sums, kernels, and cokernels. Hence, it is abelian since $\Vect_K$ is. Every epimorphism is a surjective linear map (see below), which splits since $\Vect_K$ has all epimorphisms split.

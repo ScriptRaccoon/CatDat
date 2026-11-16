@@ -93,8 +93,6 @@ unsatisfied_properties:
 
   - property: regular subobject classifier
     proof: The proof for <a href="/category/LRS_R">$\LRS_R$</a> translates verbatim to $\Sch_R$.
-    references:
-      - LRS_R_no_regular_subobject_classifier
 
 special_objects:
   initial object:

@@ -42,8 +42,6 @@ satisfied_properties:
 
   - property: extremal generator
     proof: The set $\{0\}$ is an extremal generator even in <a href="/category/Set">$\Set$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
-    references:
-      - Set_extremal_generator
 
   - property: extremal cogenerator
     proof: The set $\{0,1,2\}$ is an extremal cogenerator even in <a href="/category/Set">$\Set$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
@@ -56,12 +54,9 @@ satisfied_properties:
       Let $X \rightrightarrows C$ be a cocongruence in $\FinSet_{\odd}$. The induced map
       $$\Hom(C,\{0,1,2\}) \to \Hom(X,\{0,1,2\})^2 \cong \Hom(X+X, \{0,1,2\})$$
       is injective, which implies that $X+X \to C$ is surjective (where $X+X$ denotes the coproduct in $\Set$, which does not exist in $\FinSet_{\odd}$). It follows that $X \rightrightarrows C$ is a coreflexive corelation in $\Set$. Since <a href="/category/Set">$\Set$</a> is co-Malcev and has effective cocongruences (by <a href="/category-implication/regular_epi-regular_extensive_consequences">this result</a>), there is a subset $Y \subseteq X$ such that $C \cong X \sqcup_Y X$ in $\Set$, with $X \rightrightarrows C$ corresponding to the two pushout inclusions. We have $\card(C) = 2 \card(X) - \card(Y)$, so $\card(Y)$ is odd. Hence, $C \cong X \sqcup_Y X$ remains true in $\FinSet_{\odd}$.
-    label: FinSet_odd_effective_cocongruences
 
   - property: coquotients of cocongruences
     proof: We have just seen that every cocongruence in $\FinSet_{\odd}$ is of the form $X \rightrightarrows X \sqcup_Y X$ for some subset $Y \subseteq X$ of odd cardinality. The equalizer in $\Set$ is the inclusion $Y \hookrightarrow X$. Since this morphism lies in $\FinSet_{\odd}$, it is also the equalizer in $\FinSet_{\odd}$.
-    references:
-      - FinSet_odd_effective_cocongruences
 
 unsatisfied_properties:
   - property: skeletal
