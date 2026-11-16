@@ -112,7 +112,7 @@ When contributing new data (categories, functors, properties, implications, etc.
 
 - **Avoid redundant assignments**: Only assign properties (satisfied or not) to a category or any other categorical structure if they cannot be deduced from other assignments or inherited from a parent structure. For example, if a category is complete by a direct proof, record that it is complete, but do not also record that it has a terminal object; the application infers this automatically. Redundant assignments are reported by `pnpm db:test`, see below.
 
-- **References and labels**: If a proof refers to another proof, use references and labels to make this connection explicit. See [this PR](https://github.com/ScriptRaccoon/CatDat/pull/319) for details.
+- **Links to proofs**: If a proof refers to another assigned proof, link to it, e.g. `<a href="/category/Ab?proof=all_epimorphisms_split">proof</a>`. When you change a proof, check the proofs that link to it.
 
 - **No dual categories**: Instead of adding the dual of a category already in the database, consider adding properties to the original category (use the corresponding dual properties).
 
