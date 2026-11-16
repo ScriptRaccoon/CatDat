@@ -48,6 +48,7 @@ function execute_tests() {
 		console.info('--- Database Tests ---')
 
 		devlog('\n--- Test link targets ---')
+		check_proof_keys_distinct()
 		check_link_targets_exist()
 
 		devlog('\n--- Test history ---')
@@ -306,6 +307,82 @@ function test_properties_of_selected_structures(type: StructureType) {
 }
 
 /**
+ * Checks the query of a link to a proof on a structure page. A link with
+ * "?proof=<key>" cites the argument of a proof, so the proof must be
+ * assigned (not deduced). The key is the ID of a property or, for
+ * categories, the kind of a special morphism.
+ */
+function check_proof_link_target(
+	structure_id: string,
+	type: StructureType,
+	params: URLSearchParams,
+	error_prefix: string
+) {
+	const keys = [...params.keys()]
+
+	if (keys.length !== 1 || keys[0] !== 'proof') {
+		throw new Error(
+			`${error_prefix} has a link to "${structure_id}" with an invalid query "${params}"`
+		)
+	}
+
+	const proof_key = decode_property_ID(params.get('proof')!)
+
+	const assignment = db
+		.prepare<[string, string, StructureType], { is_deduced: number }>(
+			`SELECT is_deduced FROM property_assignments
+			WHERE structure_id = ? AND property_id = ? AND type = ?`
+		)
+		.get(structure_id, proof_key, type)
+
+	const special_morphism =
+		type === 'category'
+			? db
+					.prepare<[string, string], { is_deduced: number }>(
+						`SELECT is_deduced FROM special_morphism_assignments
+						WHERE category_id = ? AND kind = ?`
+					)
+					.get(structure_id, proof_key)
+			: undefined
+
+	const target = assignment ?? special_morphism
+
+	if (!target) {
+		throw new Error(
+			`${error_prefix} links to the proof of "${proof_key}" for "${structure_id}", which does not exist`
+		)
+	}
+
+	if (target.is_deduced) {
+		throw new Error(
+			`${error_prefix} links to the proof of "${proof_key}" for "${structure_id}", which is deduced. Rewrite the citing proof.`
+		)
+	}
+}
+
+/**
+ * Checks that the IDs of category properties and the kinds of special
+ * morphisms are distinct, since both are used as "?proof=" keys on
+ * category pages.
+ */
+function check_proof_keys_distinct() {
+	const collisions = db
+		.prepare<never[], string>(
+			`SELECT p.id FROM properties p
+			INNER JOIN special_morphisms s ON s.kind = p.id
+			WHERE p.type = 'category'`
+		)
+		.pluck()
+		.all()
+
+	if (collisions.length) {
+		throw new Error(
+			`❌ Category properties and special morphisms share the IDs: ${collisions.join(', ')}`
+		)
+	}
+}
+
+/**
  * Checks if all links in proofs refer to existing entries.
  */
 function check_link_targets_exist() {
@@ -358,13 +435,14 @@ function check_link_targets_exist() {
 
 	for (const { proof, error_prefix } of proofs) {
 		const link_regex = new RegExp(
-			`<a\\s+href="\\/(${STRUCTURE_TYPES.join('|')})(?:-(implication|property))?\\/([^"]+)"`,
+			`<a\\s+href="\\/(${STRUCTURE_TYPES.join('|')})(?:-(implication|property))?\\/([^"?]+)(?:\\?([^"]*))?"`,
 			'g'
 		)
 
 		for (const match of proof.matchAll(link_regex)) {
-			const type = match[1]
+			const type = match[1] as StructureType
 			const id = match[3]
+			const query = match[4]
 			const sort =
 				match[2] === 'implication'
 					? 'implications'
@@ -385,6 +463,16 @@ function check_link_targets_exist() {
 					`${error_prefix} has a link to "${id}" which does not exist:\n"${proof}"`
 				)
 			}
+
+			if (query === undefined) continue
+
+			if (sort !== 'structures') {
+				throw new Error(
+					`${error_prefix} has a link to "${id}" with a query, which is only supported for structures:\n"${proof}"`
+				)
+			}
+
+			check_proof_link_target(id, type, new URLSearchParams(query), error_prefix)
 		}
 
 		const content_link_regex = /<a\s+href="\/content\/([^"]+)"/g

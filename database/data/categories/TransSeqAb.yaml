@@ -78,7 +78,7 @@ unsatisfied_properties:
     proof: >-
       Consider the functor $G : \On \to \Ab$ defined by
       $$\textstyle G(\alpha) \coloneqq \bigoplus_{\gamma \leq \alpha} \IZ \, e_\gamma,$$
-      which we have already identified as a generator. For every ordinal $\kappa$, consider the subfunctor $A^\kappa \subseteq G$ defined by
+      which we have already identified as a generator (<a href="/category/TransSeqAb?proof=generator">proof</a>). For every ordinal $\kappa$, consider the subfunctor $A^\kappa \subseteq G$ defined by
       $$\textstyle (A^\kappa)_\alpha \coloneqq \bigoplus_{\gamma \leq \min(\alpha,\kappa)} \IZ \, e_\gamma.$$
       For $\kappa < \lambda$, the subfunctors $A^\kappa$ and $A^{\lambda}$ are distinct because $(A^\kappa)_{\lambda} = \bigoplus_{\gamma \leq \kappa} \IZ \, e_\gamma$ and $(A^\lambda)_{\lambda} = \bigoplus_{\gamma \leq \lambda} \IZ \, e_\gamma$ are distinct subgroups of $G_{\lambda}$.
 

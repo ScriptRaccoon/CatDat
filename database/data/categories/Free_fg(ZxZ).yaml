@@ -28,7 +28,7 @@ satisfied_properties:
     proof: For every ring $R$, we know that $R$ is an extremal generator of $R{-}\Mod$, and hence also an extremal generator of the category of finitely generated free $R$-modules.
 
   - property: self-dual
-    proof: More generally, if $R$ is a ring, the functor $\underline{\Hom}(-,R)$ implements an equivalence of categories between the dual of the category of finitely generated free $R$-modules and the category of finitely generated free $R^{\op}$-modules. See also the proof of self-duality <a href="/category/Proj_fg(Re)">here</a>.
+    proof: More generally, if $R$ is a ring, the functor $\underline{\Hom}(-,R)$ implements an equivalence of categories between the dual of the category of finitely generated free $R$-modules and the category of finitely generated free $R^{\op}$-modules. See also the <a href="/category/Proj_fg(Re)?proof=self-dual">proof</a> of self-duality for $\Proj_\fg(\IR[\varepsilon])$.
 
   - property: quotients of congruences
     proof: >-

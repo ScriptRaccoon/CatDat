@@ -56,7 +56,7 @@ satisfied_properties:
     proof: >-
       We apply Proposition 2 <a href="/content/cocongruences_of_groups">here</a>. We already know that $\GrpAct$ has equalizers, and it is balanced since it is mono-regular. It remains to show that $\GrpAct$ has good pushouts of monomorphisms, as defined on that page.
 
-      To this end, we apply Lemma 4 on that page to the functor $S : \GrpAct \to \Grp$, $(G,X) \mapsto F(X) \rtimes G$ from the proof of mono-regularity. Here, $\GrpAct$ is cocomplete, $\Grp$ has good pushouts of monomorphisms by Proposition 1 on that page, and $S$ preserves pushouts as a left adjoint. We verify the remaining assumptions of the lemma in the following claims.
+      To this end, we apply Lemma 4 on that page to the functor $S : \GrpAct \to \Grp$, $(G,X) \mapsto F(X) \rtimes G$ from the <a href="/category/GrpAct?proof=mono-regular">proof</a> of mono-regularity. Here, $\GrpAct$ is cocomplete, $\Grp$ has good pushouts of monomorphisms by Proposition 1 on that page, and $S$ preserves pushouts as a left adjoint. We verify the remaining assumptions of the lemma in the following claims.
 
       <strong>Claim 1.</strong> $S$ is faithful.
 
@@ -64,7 +64,7 @@ satisfied_properties:
 
       <strong>Claim 2.</strong> $S$ preserves monomorphisms.
 
-      This is elementary and was already remarked in the proof of mono-regularity.
+      This is elementary and was already remarked in the <a href="/category/GrpAct?proof=mono-regular">proof</a> of mono-regularity.
 
       <strong>Claim 3.</strong> $S$ preserves pullbacks of pairs of monomorphisms.
 

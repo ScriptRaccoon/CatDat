@@ -17,7 +17,7 @@ satisfied_properties:
     proof: This holds by definition.
 
   - property: well-pointed
-    proof: We know that the one-point space is a generator of <a href="/category/Top">$\Top$</a>.
+    proof: We know that the one-point space is a generator of $\Top$ (<a href="/category/Top?proof=generator">proof</a>).
 
 unsatisfied_properties:
   - property: strict

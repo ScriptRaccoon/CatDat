@@ -62,7 +62,7 @@ satisfied_properties:
     proof: Let $X \rightrightarrows C$ be a cocongruence in $\FinSet_{\even}$. In particular, it is a coreflexive corelation. Then $X+X \to C$ is an epimorphism, hence surjective. It follows that $X \rightrightarrows C$ is also a coreflexive corelation in $\Set$. Since <a href="/category/Set">$\Set$</a> is co-Malcev and has effective cocongruences (by <a href="/category-implication/regular_epi-regular_extensive_consequences">this result</a>), there is a subset $Y \subseteq X$ such that $C \cong X \sqcup_Y X$ in $\Set$, with $X \rightrightarrows C$ corresponding to the two pushout inclusions. We have $\card(C) = 2 \card(X) - \card(Y)$, so $\card(Y)$ is even. Hence, $C \cong X \sqcup_Y X$ remains true in $\FinSet_{\even}$.
 
   - property: coquotients of cocongruences
-    proof: We have just seen that every cocongruence in $\FinSet_{\even}$ is of the form $X \rightrightarrows X \sqcup_Y X$ for some subset $Y \subseteq X$ of even cardinality. The equalizer in $\Set$ is the inclusion $Y \hookrightarrow X$. Since this morphism lies in $\FinSet_{\even}$, it is also the equalizer in $\FinSet_{\even}$.
+    proof: We have just seen that every cocongruence in $\FinSet_{\even}$ is of the form $X \rightrightarrows X \sqcup_Y X$ for some subset $Y \subseteq X$ of even cardinality (<a href="/category/FinSet_even?proof=effective_cocongruences">proof</a>). The equalizer in $\Set$ is the inclusion $Y \hookrightarrow X$. Since this morphism lies in $\FinSet_{\even}$, it is also the equalizer in $\FinSet_{\even}$.
 
 unsatisfied_properties:
   - property: skeletal

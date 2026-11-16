@@ -47,11 +47,11 @@ satisfied_properties:
     proof: We already know that $\Bin_{\symm} \subseteq \Bin$ is closed under coproducts and pullbacks. Since <a href="/category/Bin">$\Bin$</a> is infinitary extensive, the claim therefore follows from Lemma 11 <a href="/content/subcategories">here</a>.
 
   - property: finitely accessible
-    proof: The proof is the same as for the finite accessibility of <a href="/category/Bin">$\Bin$</a>.
+    proof: The proof is the same as for the finite accessibility of $\Bin$ (<a href="/category/Bin?proof=finitely_accessible">proof</a>).
 
   - property: locally cartesian closed
     proof: >-
-      We know that <a href="/category/Bin">$\Bin$</a> is locally cartesian closed, and that $\Bin_{\symm} \subseteq \Bin$ is closed under pullbacks. Therefore, it suffices to show that $\Bin_{\symm} \subseteq \Bin$ is closed under relative exponentials. Recall that for two objects $(Y,R_Y) \to (X,R_X)$ and $(Z,R_Z) \to (X,R_X)$ in $\Bin / (X,R_X)$, their exponential is the set $F = \coprod_{x \in X} \Hom(Y_x,Z_x)$ equipped with the following relation $R_F$: for maps $f : Y_x \to Z_x$ and $g : Y_{x'} \to Z_{x'}$ we have $(f,g) \in R_F$ when $(x,x') \in R_X$ and, for all $y \in Y_x$ and $y' \in Y_{x'}$, if $(y,y') \in R_Y$, then $(f(y),g(y')) \in R_Z$. Now assume that $R_X,R_Y,R_Z$ are symmetric. Then it is obvious that $R_F$ is symmetric.
+      We know that $\Bin$ is locally cartesian closed (<a href="/category/Bin?proof=locally_cartesian_closed">proof</a>), and that $\Bin_{\symm} \subseteq \Bin$ is closed under pullbacks. Therefore, it suffices to show that $\Bin_{\symm} \subseteq \Bin$ is closed under relative exponentials. Recall that for two objects $(Y,R_Y) \to (X,R_X)$ and $(Z,R_Z) \to (X,R_X)$ in $\Bin / (X,R_X)$, their exponential is the set $F = \coprod_{x \in X} \Hom(Y_x,Z_x)$ equipped with the following relation $R_F$: for maps $f : Y_x \to Z_x$ and $g : Y_{x'} \to Z_{x'}$ we have $(f,g) \in R_F$ when $(x,x') \in R_X$ and, for all $y \in Y_x$ and $y' \in Y_{x'}$, if $(y,y') \in R_Y$, then $(f(y),g(y')) \in R_Z$. Now assume that $R_X,R_Y,R_Z$ are symmetric. Then it is obvious that $R_F$ is symmetric.
 
   - property: regular subobject classifier
     proof: By the description of regular monomorphisms below, the poset of regular subobjects of $(X,R)$ is isomorphic to the poset of subsets of $X$. The subsets of $X$ correspond to morphisms from $(X,R)$ into $\Omega \coloneqq (\{0,1\}, \{0,1\} \times \{0,1\})$, which belongs to $\Bin_{\symm}$, showing that $\Omega$ is a regular subobject classifier.
@@ -61,7 +61,7 @@ satisfied_properties:
 
   - property: extremal cogenerator
     proof: >-
-      The proof is very similar to the proof for <a href="/category/Bin">$\Bin$</a>. We claim that the set $Q \coloneqq \{0,1,2,3\}$ equipped with the symmetric relation
+      The proof is very similar to the <a href="/category/Bin?proof=extremal_cogenerator">proof</a> for $\Bin$. We claim that the set $Q \coloneqq \{0,1,2,3\}$ equipped with the symmetric relation
       $$R_Q \coloneqq (Q \times Q) \setminus \{(0,1),(1,0),(3,3)\}$$
       is an extremal cogenerator of $\Bin_{\symm}$. First, to show that it is a cogenerator, assume that $f,g : (X,R) \rightrightarrows (Y,S)$ are distinct morphisms. Choose $x \in X$ with $f(x) \neq g(x)$. Define the map $h : Y \to Q$ by $h(f(x))=0$ and $h(y)=2$ for $y \neq f(x)$. Since $1,3 \notin \im(h)$, we obtain a morphism $h : (Y,S) \to (Q,R_Q)$, and it satisfies $h \circ f \neq h \circ g$ since $h(f(x)) = 0$, while $h(g(x)) = 2$.
 
@@ -87,7 +87,7 @@ unsatisfied_properties:
     proof: Even the full subcategory <a href="/category/Bin_symm_irr">$\Bin_{\symm,\irr}$</a> is not semi-strongly connected.
 
   - property: extremal generator
-    proof: We may copy the proof from <a href="/category/Bin">$\Bin$</a>.
+    proof: We may copy the <a href="/category/Bin?proof=extremal_generator">proof</a> from $\Bin$.
 
   - property: co-Malcev
     proof: >-
@@ -129,8 +129,8 @@ special_morphisms:
     proof: For the non-trivial direction, the construction of colimits shows that the forgetful functor $\Bin_{\symm} \to \Set$ is cocontinuous, so that it preserves epimorphisms in particular. Another explanation for this fact is that the forgetful functor is left adjoint to the functor mapping a set $X$ to $(X,X \times X)$.
   regular monomorphism:
     description: injective maps that reflect and preserve the relation
-    proof: The proof is identical to <a href="/category/Bin">$\Bin$</a>.
+    proof: The argument is identical to the <a href="/category/Bin?proof=regular_monomorphism">proof</a> for $\Bin$.
   regular epimorphism:
     description: >-
       morphisms $f : (X,R) \to (Y,S)$ such that $f : X \to Y$ is surjective and $S = \{(f(x),f(x')) : (x,x') \in R\}$
-    proof: The proof is identical to <a href="/category/Bin">$\Bin$</a>.
+    proof: The argument is identical to the <a href="/category/Bin?proof=regular_epimorphism">proof</a> for $\Bin$.

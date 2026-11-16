@@ -29,10 +29,10 @@ satisfied_properties:
     proof: This property is inherited from <a href="/category/Pos">$\Pos$</a>.
 
   - property: extremal generator
-    proof: The ordered set $\{0 < 1\}$ is an extremal generator, even for <a href="/category/PreOrd">$\PreOrd$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
+    proof: The ordered set $\{0 < 1\}$ is an extremal generator, even for $\PreOrd$ (<a href="/category/PreOrd?proof=extremal_generator">proof</a>). Now apply Lemma 10 <a href="/content/subcategories">here</a>.
 
   - property: extremal cogenerator
-    proof: The ordered set $\{0 < 1\}$ is an extremal cogenerator, even for <a href="/category/Pos">$\Pos$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
+    proof: The ordered set $\{0 < 1\}$ is an extremal cogenerator, even for $\Pos$ (<a href="/category/Pos?proof=extremal_cogenerator">proof</a>). Now apply Lemma 10 <a href="/content/subcategories">here</a>.
 
   - property: well-powered
     proof: This follows from the description of monomorphisms below.
@@ -64,16 +64,16 @@ unsatisfied_properties:
 
   - property: kernel pairs
     proof: >-
-      First, we observe that the inclusion functor $\Pos_{\noiso} \hookrightarrow \Pos$ is continuous. This follows from the dual of Lemma 1 <a href="/content/inclusion-functors">here</a>, since $\Pos_{\noiso}$ contains the extremal generator $\{0 < 1\}$ of $\Pos$. Therefore, it suffices to find a morphism in $\Pos_{\noiso}$ whose kernel pair in $\Pos$ has an isolated point.
+      First, we observe that the inclusion functor $\Pos_{\noiso} \hookrightarrow \Pos$ is continuous. This follows from the dual of Lemma 1 <a href="/content/inclusion-functors">here</a>, since $\Pos_{\noiso}$ contains the extremal generator $\{0 < 1\}$ of $\Pos$ (<a href="/category/Pos?proof=extremal_generator">proof</a>). Therefore, it suffices to find a morphism in $\Pos_{\noiso}$ whose kernel pair in $\Pos$ has an isolated point.
       Consider the epimorphism $f : \{0 < 1\} \sqcup \{1' < 2\} \to \{0 < 1 < 2\}$ that identifies $1$ and $1'$. The kernel pair has the elements
       $$(0,0),(1,1),(1',1'),(2,2),(1,1'),(1',1).$$
       It is easy to check that the element $(1,1')$ is isolated.
 
   - property: quotients of congruences
-    proof: The inclusion functor $\Pos_{\noiso} \hookrightarrow \Pos$ is cocontinuous by Lemma 1 <a href="/content/inclusion-functors">here</a>, since $\Pos_{\noiso}$ contains the extremal cogenerator $\{0 < 1\}$ of $\Pos$. Therefore, it suffices to find a congruence whose quotient in $\Pos$ has an isolated point. Take any non-empty poset $X$ without isolated points, such as $\{0 < 1\}$, and consider the maximal congruence $X \times X \rightrightarrows X$. Its quotient in $\Pos$ is just $\{\ast\}$, which therefore has an isolated point.
+    proof: The inclusion functor $\Pos_{\noiso} \hookrightarrow \Pos$ is cocontinuous by Lemma 1 <a href="/content/inclusion-functors">here</a>, since $\Pos_{\noiso}$ contains the extremal cogenerator $\{0 < 1\}$ of $\Pos$ (<a href="/category/Pos?proof=extremal_cogenerator">proof</a>). Therefore, it suffices to find a congruence whose quotient in $\Pos$ has an isolated point. Take any non-empty poset $X$ without isolated points, such as $\{0 < 1\}$, and consider the maximal congruence $X \times X \rightrightarrows X$. Its quotient in $\Pos$ is just $\{\ast\}$, which therefore has an isolated point.
 
   - property: effective cocongruences
-    proof: We can reuse the proof from <a href="/category/Pos">$\Pos$</a>, since the posets considered there have no isolated points.
+    proof: We can reuse the <a href="/category/Pos?proof=effective_cocongruences">proof</a> from $\Pos$, since the posets considered there have no isolated points.
 
 special_objects:
   initial object:
@@ -92,7 +92,7 @@ special_morphisms:
     proof: 'For the non-trivial direction, assume that $f : P \to Q$ is a monomorphism and $a,b \in P$ satisfy $f(a)=f(b)$. Consider the two constant maps $c_a, c_b : \{0 < 1\} \rightrightarrows P$ with values $a$ and $b$. These are valid morphisms in $\Pos_{\noiso}$. Then $f \circ c_a = f \circ c_b$, so $c_a = c_b$, which means that $a = b$.'
   epimorphism:
     description: surjective order-preserving functions
-    proof: We can use the same proof as for <a href="/category/Pos">$\Pos$</a>.
+    proof: We can use the same <a href="/category/Pos?proof=epimorphism">proof</a> as for $\Pos$.
   regular monomorphism:
     description: embeddings
     proof: 'We use the fact that the regular monomorphisms in <a href="/category/Pos">$\Pos$</a> are precisely the embeddings, but we have to be a little careful since $\Pos_{\noiso}$ does not have all finite (co-)limits. If $P \to Q$ is an embedding of posets without isolated points, we have seen in the proof for $\Pos$ that it is the equalizer of its cokernel pair $Q \rightrightarrows Q \sqcup_P Q$ in $\Pos$. Moreover, we have seen above that this cokernel pair has no isolated points. It follows that $P \to Q$ is a regular monomorphism in $\Pos_{\noiso}$. Conversely, suppose that $P \to Q$ is a regular monomorphism in $\Pos_{\noiso}$. Since we already know that the inclusion functor $\Pos_{\noiso} \hookrightarrow \Pos$ is continuous, it follows that $P \to Q$ is also a regular monomorphism in $\Pos$. Therefore, it is an embedding.'

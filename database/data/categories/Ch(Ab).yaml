@@ -22,7 +22,7 @@ unsatisfied_properties:
     proof: The functor $\Ab \to \Ch(\Ab)$ that maps an abelian group to the complex concentrated in degree $0$ is fully faithful and exact. Hence, the claim follows from the contrapositive of Lemma 15 <a href="/content/subcategories">here</a>, since <a href="/category/Ab">$\Ab$</a> does not have all epimorphisms split.
 
   - property: one-sorted finitary algebraic
-    proof: The proof is very similar to the one for <a href="/category/grAb">$\grAb$</a>, which is the special case in which all differentials are zero. Every finitely presentable complex is concentrated in finitely many degrees and therefore cannot be a generator.
+    proof: The argument is very similar to the <a href="/category/grAb?proof=one-sorted_finitary_algebraic">proof</a> for $\grAb$, which is the special case in which all differentials are zero. Every finitely presentable complex is concentrated in finitely many degrees and therefore cannot be a generator.
 
 special_objects:
   initial object:

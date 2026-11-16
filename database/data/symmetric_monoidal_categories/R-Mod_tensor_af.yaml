@@ -25,6 +25,6 @@ unsatisfied_properties: []
 undecidable_properties:
   - property: well-copointed
     proof: >-
-      This property holds if and only if $R$ is a cogenerator of $R{-}\Mod$. This is the case when $R$ is a field, see <a href="/symmetric_monoidal_category/Vect_tensor">$(\Vect_K,\otimes,K)$</a>.
+      This property holds if and only if $R$ is a cogenerator of $R{-}\Mod$. This is the case when $R$ is a field, see $(\Vect_K,\otimes,K)$ (<a href="/symmetric_monoidal_category/Vect_tensor?proof=well-copointed">proof</a>).
 
       However, it fails for the absolutely flat ring $R \coloneqq \prod_{n \in \IN} K$, where $K$ is a field. Let $\m \subseteq R$ be a maximal ideal containing the ideal $\bigoplus_{n \in \IN} K$ of finitely supported sequences. Every homomorphism $h : R/\m \to R$ satisfies $e_n h(1) = h(e_n) = 0$ for the unit vectors $e_n \in \m$, so that $h(1) = 0$ and $h = 0$. Hence, $\Hom(-,R)$ does not distinguish the identity and the zero endomorphism of the non-zero module $R/\m$.

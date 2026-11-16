@@ -18,7 +18,7 @@ satisfied_properties:
     proof: This holds by definition.
 
   - property: well-pointed
-    proof: We know that the singleton set is even an extremal generator of <a href="/category/Set">$\Set$</a>.
+    proof: We know that the singleton set is even an extremal generator of $\Set$ (<a href="/category/Set?proof=extremal_generator">proof</a>).
 
 unsatisfied_properties:
   - property: strict

@@ -41,7 +41,7 @@ satisfied_properties:
       If $f : X \to Y$ is a map of finite sets with odd cardinality, then we claim that its kernel pair in $\FinSet$, the set $\{(x,x') \in X \times X : f(x) = f(x')\}$, also has odd cardinality. It decomposes into the diagonal $\{(x,x): x \in X\} \cong X$, which has odd cardinality, and the set of pairs $(x,x')$ with $x \neq x'$ and $f(x) = f(x')$. The latter has even cardinality since $C_2$ acts on it via $(x,x') \mapsto (x',x)$ without fixed points. Now use that "odd + even = odd".
 
   - property: extremal generator
-    proof: The set $\{0\}$ is an extremal generator even in <a href="/category/Set">$\Set$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
+    proof: The set $\{0\}$ is an extremal generator even in $\Set$ (<a href="/category/Set?proof=extremal_generator">proof</a>). Now apply Lemma 10 <a href="/content/subcategories">here</a>.
 
   - property: extremal cogenerator
     proof: The set $\{0,1,2\}$ is an extremal cogenerator even in <a href="/category/Set">$\Set$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
@@ -56,7 +56,7 @@ satisfied_properties:
       is injective, which implies that $X+X \to C$ is surjective (where $X+X$ denotes the coproduct in $\Set$, which does not exist in $\FinSet_{\odd}$). It follows that $X \rightrightarrows C$ is a coreflexive corelation in $\Set$. Since <a href="/category/Set">$\Set$</a> is co-Malcev and has effective cocongruences (by <a href="/category-implication/regular_epi-regular_extensive_consequences">this result</a>), there is a subset $Y \subseteq X$ such that $C \cong X \sqcup_Y X$ in $\Set$, with $X \rightrightarrows C$ corresponding to the two pushout inclusions. We have $\card(C) = 2 \card(X) - \card(Y)$, so $\card(Y)$ is odd. Hence, $C \cong X \sqcup_Y X$ remains true in $\FinSet_{\odd}$.
 
   - property: coquotients of cocongruences
-    proof: We have just seen that every cocongruence in $\FinSet_{\odd}$ is of the form $X \rightrightarrows X \sqcup_Y X$ for some subset $Y \subseteq X$ of odd cardinality. The equalizer in $\Set$ is the inclusion $Y \hookrightarrow X$. Since this morphism lies in $\FinSet_{\odd}$, it is also the equalizer in $\FinSet_{\odd}$.
+    proof: We have just seen that every cocongruence in $\FinSet_{\odd}$ is of the form $X \rightrightarrows X \sqcup_Y X$ for some subset $Y \subseteq X$ of odd cardinality (<a href="/category/FinSet_odd?proof=effective_cocongruences">proof</a>). The equalizer in $\Set$ is the inclusion $Y \hookrightarrow X$. Since this morphism lies in $\FinSet_{\odd}$, it is also the equalizer in $\FinSet_{\odd}$.
 
 unsatisfied_properties:
   - property: skeletal

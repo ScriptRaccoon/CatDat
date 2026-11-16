@@ -28,7 +28,7 @@ satisfied_properties:
     proof: The forgetful functor is right adjoint to the functor $\Ab \to \TorsFreeAb$ that sends an abelian group to its torsion-free reflection $A/T(A)$, where $T(A)$ is the torsion subgroup of $A$.
 
   - property: finitary
-    proof: This comes out of the construction of filtered colimits in <a href="/category/TorsFreeAb">$\TorsFreeAb$</a>.
+    proof: This comes out of the <a href="/category/TorsFreeAb?proof=cocomplete">construction</a> of filtered colimits in $\TorsFreeAb$.
 
   - property: preserves regular epimorphisms
     proof: In both $\Ab$ and $\TorsFreeAb$, regular epimorphisms are exactly the surjective group homomorphisms.

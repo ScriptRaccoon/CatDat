@@ -26,7 +26,7 @@ unsatisfied_properties:
 
   - property: one-sorted finitary algebraic
     proof: >-
-      The proof is similar to the one for <a href="/category/grAb">$\grAb$</a>, which is the special case in which all transition maps are zero. We will show that there is no finitely presentable generator.
+      The argument is similar to the <a href="/category/grAb?proof=one-sorted_finitary_algebraic">proof</a> for $\grAb$, which is the special case in which all transition maps are zero. We will show that there is no finitely presentable generator.
 
       First, notice that $[(\IN,\leq),\Ab]$ is the category of models of the many-sorted algebraic theory with one sort $S_n$ for each $n \in \IN$, one unary operation $T : S_n \to S_{n+1}$ for each $n \in \IN$, and the theory of an abelian group on each $S_n$. The free algebra on one generator of sort $S_n$ is the object $P[n]$ defined by
       $$0 \to \cdots \to 0 \to \IZ \xrightarrow{\id} \IZ \xrightarrow{\id} \cdots,$$

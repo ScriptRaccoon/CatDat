@@ -40,10 +40,10 @@ satisfied_properties:
     proof: Every non-empty totally ordered set is weakly terminal (by using constant maps).
 
   - property: extremal generator
-    proof: The ordered set $\{0 < 1\}$ is an extremal generator, even for <a href="/category/PreOrd">$\PreOrd$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
+    proof: The ordered set $\{0 < 1\}$ is an extremal generator, even for $\PreOrd$ (<a href="/category/PreOrd?proof=extremal_generator">proof</a>). Now apply Lemma 10 <a href="/content/subcategories">here</a>.
 
   - property: extremal cogenerator
-    proof: The ordered set $\{0 < 1\}$ is an extremal cogenerator, even for <a href="/category/Pos">$\Pos$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
+    proof: The ordered set $\{0 < 1\}$ is an extremal cogenerator, even for $\Pos$ (<a href="/category/Pos?proof=extremal_cogenerator">proof</a>). Now apply Lemma 10 <a href="/content/subcategories">here</a>.
 
   - property: equalizers
     proof: Take the equalizer in <a href="/category/FinSet">$\FinSet$</a> and restrict the order.
@@ -64,7 +64,7 @@ satisfied_properties:
 
   - property: all epimorphisms split
     proof: >-
-      Apply Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\FinOrd \hookrightarrow \Ord$. It is fully faithful, and it preserves epimorphisms, since in both categories these are the surjective order-preserving maps (see below). Here, we use that all epimorphisms in <a href="/category/Ord">$\Ord$</a> split.
+      Apply Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\FinOrd \hookrightarrow \Ord$. It is fully faithful, and it preserves epimorphisms, since in both categories these are the surjective order-preserving maps (see below). Here, we use that all epimorphisms in $\Ord$ split (<a href="/category/Ord?proof=all_epimorphisms_split">proof</a>).
 
       The proof for $\Ord$ uses the axiom of choice, which is not needed here: for an epimorphism $p : (X,\leq) \to (Y,\leq)$ in $\FinOrd$, the map $s : Y \to X$, $s(y) \coloneqq \min p^*(\{y\})$ is a section of $p$, and it is order-preserving by the same argument as for $\Ord$.
 
@@ -91,7 +91,7 @@ unsatisfied_properties:
     proof: >-
       Assume that the finite ordered set $(N,\leq)$ with an element $z \in N$ and an order-preserving map $s : (N,\leq) \to (N,\leq)$ is a natural numbers object. Let $d \coloneqq \card(N)$. Consider the set $X \coloneqq \{1,\dotsc,d+1\}$ with the usual order and the order-preserving map $g : (X,\leq) \to (X,\leq)$ defined by $g(k) \coloneqq k + 1$ for $k \leq d$ and $g(d+1) \coloneqq d+1$. By the universal property of the natural numbers object, there is a unique order-preserving map $\Phi : (N,\leq) \to (X,\leq)$ such that $\Phi(z) = 1$ and $\Phi(s(n)) = g(\Phi(n))$ for all $n \in N$. We then have $\Phi(s(z)) = 2$, $\Phi(s^2(z)) = 3$, and so on. Formally, an induction shows that $\Phi(s^n(z)) = n+1$ for every $0 \leq n \leq d$. Thus, $\Phi$ is surjective, contradicting $\card(N) < \card(X)$.
 
-      Alternatively, the proof for <a href="/category/Ord">$\Ord$</a> works verbatim, since it only uses the finite ordered set $\{0 < 1\}$.
+      Alternatively, the <a href="/category/Ord?proof=natural_numbers_object">proof</a> for $\Ord$ works verbatim, since it only uses the finite ordered set $\{0 < 1\}$.
 
 special_objects:
   initial object:
@@ -110,4 +110,4 @@ special_morphisms:
     proof: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
   epimorphism:
     description: surjective order-preserving maps
-    proof: The proof for <a href="/category/Pos">$\Pos$</a> works verbatim, since it only uses order-preserving maps into $\{0 < 1\}$.
+    proof: The <a href="/category/Pos?proof=epimorphism">proof</a> for $\Pos$ works verbatim, since it only uses order-preserving maps into $\{0 < 1\}$.

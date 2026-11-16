@@ -34,7 +34,7 @@ satisfied_properties:
     proof: Assign the rank $0$ to $A$, $1$ to $B$ and $C$, $2$ to $D$, and $3$ to $E$. Every generating morphism strictly increases the rank, hence so does every non-identity morphism. Thus, for distinct objects $X,Y$ there cannot be morphisms $X \to Y$ and $Y \to X$.
 
   - property: one-way
-    proof: We already know that every non-identity morphism strictly increases the rank (see above). In particular, it is not an endomorphism.
+    proof: We already know that every non-identity morphism strictly increases the rank (<a href="/category/forked_commutative_square?proof=skeletal">proof</a>). In particular, it is not an endomorphism.
 
   - property: strict initial object
     proof: Clearly, $A$ is an initial object. Since $\id_A$ is the only morphism with codomain $A$, it is strict.
@@ -49,7 +49,7 @@ satisfied_properties:
     proof: 'The only parallel pair of distinct morphisms is $u,v : D \rightrightarrows E$. Thus, it is sufficient to prove that every morphism with domain $E$ is a monomorphism. But there is only one such morphism, namely $\id_E$.'
 
   - property: regular-subobject-trivial
-    proof: 'The only parallel pair of distinct morphisms is $u,v : D \rightrightarrows E$, so it suffices to prove that they do not have an equalizer. This is proven in the list of unsatisfied properties.'
+    proof: 'The only parallel pair of distinct morphisms is $u,v : D \rightrightarrows E$, so it suffices to prove that they do not have an equalizer. This is proven in the list of unsatisfied properties (<a href="/category/forked_commutative_square?proof=equalizers">proof</a>).'
 
 unsatisfied_properties:
   - property: semi-strongly connected
@@ -59,7 +59,7 @@ unsatisfied_properties:
     proof: 'The morphisms $u,v : D \rightrightarrows E$ do not have an equalizer: the four morphisms with codomain $D$ are $g$, $m$, $g \circ e = m \circ f$, and $\id_D$. But $\id_D$ does not equalize $u,v$. The other three morphisms equalize $u,v$, but they are not universal: $m$ is not universal since $g$ does not factor through it, $g$ is not universal since $m$ does not factor through it, and $g \circ e$ is not universal since $g$ does not factor through it.'
 
   - property: pullbacks
-    proof: 'Any two parallel morphisms with codomain $D$ are equal. It follows that a pullback of the cospan $D \xrightarrow{u} E \xleftarrow{v} D$ would be an equalizer of $u,v : D \rightrightarrows E$, which we know does not exist.'
+    proof: 'Any two parallel morphisms with codomain $D$ are equal. It follows that a pullback of the cospan $D \xrightarrow{u} E \xleftarrow{v} D$ would be an equalizer of $u,v : D \rightrightarrows E$, which we know does not exist (<a href="/category/forked_commutative_square?proof=equalizers">proof</a>).'
 
   - property: extremal generator
     proof: 'Since both $m$ and $g$ equalize $u,v$, it is easy to see that $D$ is the only generator. But it is not extremal since $e$ induces a bijection $e_* : \Hom(D,A) \to \Hom(D,B)$ (both sets are empty), without $e$ being an isomorphism.'

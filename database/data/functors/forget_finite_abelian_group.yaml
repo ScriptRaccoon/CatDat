@@ -27,7 +27,7 @@ satisfied_properties:
     proof: This follows from the construction of finite limits and colimits in $\FinAb$.
 
   - property: preserves products
-    proof: The proof is identical to the proof that the <a href="/functor/forget_finite_group">inclusion functor $\FinGrp \hookrightarrow \Grp$</a> preserves products.
+    proof: The proof is identical to the <a href="/functor/forget_finite_group?proof=preserves_products">proof</a> that the inclusion functor $\FinGrp \hookrightarrow \Grp$ preserves products.
 
   - property: preserves coproducts
     proof: The proof is a minor variation of the proof that products are preserved, using the fact that finite coproducts and finite products coincide. Namely, one can show that a family of finite abelian groups has a coproduct in $\FinAb$ if and only if almost all groups are trivial.
@@ -37,10 +37,10 @@ unsatisfied_properties:
     proof: This is trivial.
 
   - property: finitary
-    proof: We can take the same counterexample as for the <a href="/functor/forget_finite_group">inclusion functor $\FinGrp \hookrightarrow \Grp$</a>, which only involves abelian groups.
+    proof: We can take the same <a href="/functor/forget_finite_group?proof=finitary">counterexample</a> as for the inclusion functor $\FinGrp \hookrightarrow \Grp$, which only involves abelian groups.
 
   - property: cofinitary
-    proof: We can take the same counterexample as for the <a href="/functor/forget_finite_group">inclusion functor $\FinGrp \hookrightarrow \Grp$</a>, which only involves abelian groups.
+    proof: We can take the same <a href="/functor/forget_finite_group?proof=cofinitary">counterexample</a> as for the inclusion functor $\FinGrp \hookrightarrow \Grp$, which only involves abelian groups.
 
   - property: left-invertible
-    proof: We can use the same proof as for the <a href="/functor/forget_finite_group">inclusion functor $\FinGrp \hookrightarrow \Grp$</a>.
+    proof: We can use the same <a href="/functor/forget_finite_group?proof=left-invertible">proof</a> as for the inclusion functor $\FinGrp \hookrightarrow \Grp$.

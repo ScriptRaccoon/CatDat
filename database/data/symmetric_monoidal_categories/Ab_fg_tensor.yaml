@@ -20,14 +20,14 @@ satisfied_properties:
     proof: Since <a href="/symmetric_monoidal_category/Ab_tensor">$(\Ab,\otimes,\IZ)$</a> is closed, it suffices to prove that for abelian groups $A,B$ with internal Hom $[A,B]$, if $A$ and $B$ are finitely generated, then $[A,B]$ is finitely generated. Since there is an epimorphism $\IZ^n \to A$, there is a monomorphism $[A,B] \to [\IZ^n,B] \cong B^n$. Since $B^n$ is finitely generated, the claim follows from the fact that subgroups of finitely generated abelian groups are finitely generated. (This also shows that the corresponding statement for finitely generated modules over a ring holds only when the ring is Noetherian.)
 
   - property: well-pointed
-    proof: In fact, $\IZ$ is even an extremal generator of <a href="/category/Ab_fg">$\Ab_{\fg}$</a>.
+    proof: In fact, $\IZ$ is even an extremal generator of $\Ab_{\fg}$ (<a href="/category/Ab_fg?proof=extremal_generator">proof</a>).
 
 unsatisfied_properties:
   - property: finitely complete
-    proof: The same counterexample as for <a href="/symmetric_monoidal_category/Ab_tensor">$(\Ab,\otimes,\IZ)$</a> works here.
+    proof: The same <a href="/symmetric_monoidal_category/Ab_tensor?proof=finitely_complete">counterexample</a> as for $(\Ab,\otimes,\IZ)$ works here.
 
   - property: strict
-    proof: The same argument as for <a href="/symmetric_monoidal_category/R-Mod_tensor">$(R{-}\Mod,\otimes,R)$</a> works here.
+    proof: The same <a href="/symmetric_monoidal_category/R-Mod_tensor?proof=strict">proof</a> as for $(R{-}\Mod,\otimes,R)$ works here.
 
   - property: infinitary distributive
     # TODO: automate this with category_conclusions
@@ -38,4 +38,4 @@ unsatisfied_properties:
     proof: This is because <a href="/category/Ab_fg">$\Ab_{\fg}$</a> does not have products.
 
   - property: well-copointed
-    proof: The same counterexample as for <a href="/symmetric_monoidal_category/Ab_tensor">$(\Ab,\otimes,\IZ)$</a> works here.
+    proof: The same <a href="/symmetric_monoidal_category/Ab_tensor?proof=well-copointed">counterexample</a> as for $(\Ab,\otimes,\IZ)$ works here.

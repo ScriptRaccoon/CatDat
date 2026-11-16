@@ -41,7 +41,7 @@ satisfied_properties:
     proof: The one-point uniform space is a generator since it represents the forgetful functor $\Unif \to \Set$.
 
   - property: cogenerator
-    proof: The indiscrete (aka trivial) uniform space $\{0,1\}$ (i.e. $\{0,1\} \times \{0,1\}$ is the only entourage) is a cogenerator because every map into $\{0,1\}$ is automatically uniform and because $\{0,1\}$ is a cogenerator in <a href="/category/Set">$\Set$</a>.
+    proof: The indiscrete (aka trivial) uniform space $\{0,1\}$ (i.e. $\{0,1\} \times \{0,1\}$ is the only entourage) is a cogenerator because every map into $\{0,1\}$ is automatically uniform and because $\{0,1\}$ is a cogenerator in $\Set$ (<a href="/category/Set?proof=extremal_cogenerator">proof</a>).
 
   - property: regular subobject classifier
     proof: The indiscrete two-point space $\{0,1\}$ is a regular subobject classifier since uniform maps $X \to \{0,1\}$ correspond to subsets of $X$.
@@ -119,7 +119,7 @@ unsatisfied_properties:
     proof: We already know that <a href="/category/Set">$\Set$</a> does not have this property. Now apply the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> to the functor $\Set \to \Unif$ which equips a set $X$ with the indiscrete uniform structure having $X \times X$ as its only entourage. This functor is right adjoint to the forgetful functor and therefore preserves cofiltered limits.
 
   - property: effective cocongruences
-    proof: 'The proof is very similar to <a href="/category/Top">$\Top$</a>. Consider the indiscrete uniform space $I$ on two points whose only entourage is $I \times I$. This represents the functor which maps a uniform space $X$ to the set of pairs of points $(x,y) \in X$ that are indistinguishable, i.e. every entourage of $X$ contains $(x,y)$. This is an equivalence relation on $X$. Therefore, we get a cocongruence $\{\ast\} \rightrightarrows I$, where the maps are the two possible functions. However, this cannot be effective: If a uniform map $h : Z \to \{\ast\}$ equalizes the two maps, then $Z$ must be empty. But that means the cokernel pair of $h$ is the discrete uniform space on two points.'
+    proof: 'The argument is very similar to the <a href="/category/Top?proof=effective_cocongruences">proof</a> for $\Top$. Consider the indiscrete uniform space $I$ on two points whose only entourage is $I \times I$. This represents the functor which maps a uniform space $X$ to the set of pairs of points $(x,y) \in X$ that are indistinguishable, i.e. every entourage of $X$ contains $(x,y)$. This is an equivalence relation on $X$. Therefore, we get a cocongruence $\{\ast\} \rightrightarrows I$, where the maps are the two possible functions. However, this cannot be effective: If a uniform map $h : Z \to \{\ast\}$ equalizes the two maps, then $Z$ must be empty. But that means the cokernel pair of $h$ is the discrete uniform space on two points.'
 
   - property: parametrized natural numbers object
     proof: >-
@@ -133,7 +133,7 @@ unsatisfied_properties:
 
   - property: extremal generating collection
     proof: >-
-      The proof is very similar to <a href="/category/Top">$\Top$</a>. Let $S$ be a set of uniform spaces. Let $\kappa$ be an infinite regular cardinal strictly greater than $\card(G)$ for every $G \in S$. Equip the ordinal $\kappa + 1$ with the order topology. As a compact Hausdorff space, it admits a unique compatible uniform structure (see <a href="https://www.heldermann.de/SSPM/SSPM06/sspm06.htm">Engelking</a>, Theorem 8.3.13). We equip the subset $\kappa$ with the induced uniform structure and the set $\kappa \sqcup \{\kappa\}$ with the coproduct uniform structure. Then the evident bijection
+      The argument is very similar to the <a href="/category/Top?proof=extremal_generating_collection">proof</a> for $\Top$. Let $S$ be a set of uniform spaces. Let $\kappa$ be an infinite regular cardinal strictly greater than $\card(G)$ for every $G \in S$. Equip the ordinal $\kappa + 1$ with the order topology. As a compact Hausdorff space, it admits a unique compatible uniform structure (see <a href="https://www.heldermann.de/SSPM/SSPM06/sspm06.htm">Engelking</a>, Theorem 8.3.13). We equip the subset $\kappa$ with the induced uniform structure and the set $\kappa \sqcup \{\kappa\}$ with the coproduct uniform structure. Then the evident bijection
       $$\kappa \sqcup \{\kappa\} \to \kappa + 1$$
       is uniform, but not a uniform isomorphism (not even a topological isomorphism). However, we claim that for every $G \in S$ the induced map
       $$\Hom(G,\kappa \sqcup \{\kappa\}) \to \Hom(G,\kappa + 1),$$

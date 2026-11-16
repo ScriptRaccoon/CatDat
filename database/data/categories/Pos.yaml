@@ -27,7 +27,7 @@ satisfied_properties:
     proof: See <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adámek–Rosický</a>, Example 1.10.
 
   - property: cartesian closed
-    proof: The proof for <a href="/category/PreOrd">$\PreOrd$</a> works verbatim, since for posets $(P,\leq),(Q,\leq)$ the pointwise preorder on $\Hom((P,\leq),(Q,\leq))$ is antisymmetric.
+    proof: The <a href="/category/PreOrd?proof=cartesian_closed">proof</a> for $\PreOrd$ works verbatim, since for posets $(P,\leq),(Q,\leq)$ the pointwise preorder on $\Hom((P,\leq),(Q,\leq))$ is antisymmetric.
 
   - property: semi-strongly connected
     proof: Every non-empty poset is weakly terminal (by using constant maps).
@@ -39,7 +39,7 @@ satisfied_properties:
     proof: See <a href="https://math.stackexchange.com/questions/5130295">MSE/5130295</a>.
 
   - property: extremal generator
-    proof: We have that $\{0<1\}$ is an extremal generator even in <a href="/category/PreOrd">$\PreOrd$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
+    proof: We have that $\{0<1\}$ is an extremal generator even in $\PreOrd$ (<a href="/category/PreOrd?proof=extremal_generator">proof</a>). Now apply Lemma 10 <a href="/content/subcategories">here</a>.
 
   - property: extremal cogenerator
     proof: >-
@@ -60,7 +60,7 @@ unsatisfied_properties:
     proof: 'Consider the subposet $\{(a,b) \in \IN^2 : a \leq b \}$ of $(\IN,\leq)^2$.'
 
   - property: co-Malcev
-    proof: The proof for <a href="/category/PreOrd">$\PreOrd$</a> works verbatim, with the forgetful functor $\Pos \to \Set$.
+    proof: The <a href="/category/PreOrd?proof=co-Malcev">proof</a> for $\PreOrd$ works verbatim, with the forgetful functor $\Pos \to \Set$.
 
   - property: regular subobject classifier
     proof: Assume that there is a regular subobject classifier $(\Omega,\leq)$, so that (by the classification of regular monomorphisms) $\Hom((P,\leq),(\Omega,\leq))$ is isomorphic to the set of subsets of $P$ for every poset $(P,\leq)$. By taking $P = \{\ast\}$ we see that $\Omega$ has $2$ elements, so that either $(\Omega,\leq) \cong (\{0,1\},=)$ or $(\Omega,\leq) \cong \{0 < 1\}$. By taking $(P,\leq) = \{0 < 1\}$ we see that $\Omega$ has four pairs $(x,y)$ with $x \leq y$. But $(\{0,1\},=)$ has only two and $\{0 < 1\}$ has only three such pairs.
@@ -87,10 +87,10 @@ special_morphisms:
     proof: This is easy.
   monomorphism:
     description: injective order-preserving functions
-    proof: The same proof as for <a href="/category/Set">$\Set$</a> can be used.
+    proof: The same <a href="/category/Set?proof=monomorphism">proof</a> as for $\Set$ can be used.
   epimorphism:
     description: surjective order-preserving functions
     proof: 'Clearly, surjective maps are epimorphisms. Conversely, assume that $f : (P,\leq) \to (Q,\leq)$ is an order-preserving map which is not surjective. Choose $q \in Q \setminus f(P)$. The order-preserving maps $(Q,\leq) \to \{0 < 1\}$ correspond to the upper sets in $Q$, and composing them with $f$ corresponds to taking their $f$-preimages. Consider the two upper sets $Q_{> q}$ and $Q_{\geq q}$. Their $f$-preimages are the same since $q \notin f(P)$. Therefore, $f$ is not an epimorphism.'
   regular monomorphism:
     description: embeddings
-    proof: The proof for <a href="/category/PreOrd">$\PreOrd$</a> works verbatim, with "partial order" in place of "preorder".
+    proof: The <a href="/category/PreOrd?proof=regular_monomorphism">proof</a> for $\PreOrd$ works verbatim, with "partial order" in place of "preorder".
