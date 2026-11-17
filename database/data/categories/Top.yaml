@@ -32,10 +32,10 @@ satisfied_properties:
     check_redundancy: false
 
   - property: well-powered
-    proof: This is clear from the classification of monomorphisms as injective continuous maps.
+    proof: This is clear since the monomorphisms are the injective continuous maps (<a href="/category/Top?proof=monomorphism">proof</a>).
 
   - property: well-copowered
-    proof: This is clear from the classification of epimorphisms as surjective continuous maps.
+    proof: This is clear since the epimorphisms are the surjective continuous maps (<a href="/category/Top?proof=epimorphism">proof</a>).
 
   - property: filtered-colimit-stable monomorphisms
     proof: This follows from Lemma 2 <a href="/content/subcategories">here</a> applied to the forgetful functor to $\Set$.

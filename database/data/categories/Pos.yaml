@@ -47,7 +47,7 @@ satisfied_properties:
 
       Now, suppose we have a morphism $f : (P,\leq) \to (Q,\leq)$ such that
       $${-} \circ f : \Hom((Q,\leq), \{0<1\}) \to \Hom((P,\leq), \{0<1\})$$
-      is a bijection. Since it is injective and $\{0<1\}$ is a cogenerator, we get that $f$ is an epimorphism and therefore $f : P \to Q$ is surjective (see below). On the other hand, the fact that $f$ induces a bijection of upper sets implies that $f : P \to Q$ is also injective, and also that $f(a_1) \le f(a_2)$ implies $a_1 \le a_2$. Therefore, $f$ is an isomorphism.
+      is a bijection. Since it is injective and $\{0<1\}$ is a cogenerator, we get that $f$ is an epimorphism and therefore $f : P \to Q$ is surjective (<a href="/category/Pos?proof=epimorphism">proof</a>). On the other hand, the fact that $f$ induces a bijection of upper sets implies that $f : P \to Q$ is also injective, and also that $f(a_1) \le f(a_2)$ implies $a_1 \le a_2$. Therefore, $f$ is an isomorphism.
 
 unsatisfied_properties:
   - property: skeletal
@@ -63,7 +63,7 @@ unsatisfied_properties:
     proof: The <a href="/category/PreOrd?proof=co-Malcev">proof</a> for $\PreOrd$ works verbatim, with the forgetful functor $\Pos \to \Set$.
 
   - property: regular subobject classifier
-    proof: Assume that there is a regular subobject classifier $(\Omega,\leq)$, so that (by the classification of regular monomorphisms) $\Hom((P,\leq),(\Omega,\leq))$ is isomorphic to the set of subsets of $P$ for every poset $(P,\leq)$. By taking $P = \{\ast\}$ we see that $\Omega$ has $2$ elements, so that either $(\Omega,\leq) \cong (\{0,1\},=)$ or $(\Omega,\leq) \cong \{0 < 1\}$. By taking $(P,\leq) = \{0 < 1\}$ we see that $\Omega$ has four pairs $(x,y)$ with $x \leq y$. But $(\{0,1\},=)$ has only two and $\{0 < 1\}$ has only three such pairs.
+    proof: Assume that there is a regular subobject classifier $(\Omega,\leq)$, so that, since the regular monomorphisms are the embeddings (<a href="/category/Pos?proof=regular_monomorphism">proof</a>), $\Hom((P,\leq),(\Omega,\leq))$ is isomorphic to the set of subsets of $P$ for every poset $(P,\leq)$. By taking $P = \{\ast\}$ we see that $\Omega$ has $2$ elements, so that either $(\Omega,\leq) \cong (\{0,1\},=)$ or $(\Omega,\leq) \cong \{0 < 1\}$. By taking $(P,\leq) = \{0 < 1\}$ we see that $\Omega$ has four pairs $(x,y)$ with $x \leq y$. But $(\{0,1\},=)$ has only two and $\{0 < 1\}$ has only three such pairs.
 
   - property: effective cocongruences
     proof: >-

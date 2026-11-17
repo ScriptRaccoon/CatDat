@@ -62,7 +62,7 @@ satisfied_properties:
     proof: >-
       Define the map ("truncated subtraction") $s : \IN \to \IN$ by $s(k) = \max(0,k-1)$. We claim that the sequence
       $$\Omega = \bigl(\IN \xrightarrow{s} \IN \xrightarrow{s} \IN \xrightarrow{s} \cdots\bigr)$$
-      is a subobject classifier, where $\top : T \to \Omega$ is defined on the terminal object $T$, the constant sequence with value $\{\ast\}$, by the elements $0 \in \IN$ in every degree. Clearly, $\Omega$ is connected. Consider a monomorphism $U \to X$. By the classification of monomorphisms below, we may assume that $U \subseteq X$ is a subsequence, i.e. $U_n \subseteq X_n$ for each $n$, and the transition maps $X_n \to X_{n+1}$ restrict to the transition maps $U_n \to U_{n+1}$.
+      is a subobject classifier, where $\top : T \to \Omega$ is defined on the terminal object $T$, the constant sequence with value $\{\ast\}$, by the elements $0 \in \IN$ in every degree. Clearly, $\Omega$ is connected. Consider a monomorphism $U \to X$. Since monomorphisms are injective in every degree (<a href="/category/SeqSet_conn?proof=monomorphism">proof</a>), we may assume that $U \subseteq X$ is a subsequence, i.e. $U_n \subseteq X_n$ for each $n$, and the transition maps $X_n \to X_{n+1}$ restrict to the transition maps $U_n \to U_{n+1}$.
 
       For $x_n \in X_n$, we claim that there is some $k \geq 0$ such that its image $x_{n+k} \in X_{n+k}$ belongs to $U_{n+k}$. In fact, there is some $r \geq 0$ such that an element $u_{n+r} \in U_{n+r}$ exists, and connectedness of $X$ yields some $k \geq r$ such that the image of $u_{n+r}$ in $X_{n+k}$ is equal to $x_{n+k}$. This image belongs to $U_{n+k}$. Therefore, the map
       $$\chi_n : X_n \to \IN, \quad x_n \mapsto \min \{k \geq 0 : x_{n+k} \in U_{n+k}\}$$
@@ -140,7 +140,7 @@ unsatisfied_properties:
     proof: >-
       The morphism $(\varnothing \to \{\ast\} \to \{\ast\} \to \cdots) \to (\{\ast\} \to \{\ast\} \to \{\ast\} \to \cdots)$ between connected sequences is a monomorphism, since every component is injective. It has no retraction, since there is no map $\{\ast\} \to \varnothing$.
 
-      Alternatively, the functor $\Set \to [(\IN,\leq),\Set]_{\conn}$, $X \mapsto (X \to \{\ast\} \to \{\ast\} \to \cdots)$ is fully faithful and preserves monomorphisms (by their classification below). Hence, the claim follows from the contrapositive of the dual of Lemma 15 <a href="/content/subcategories">here</a>, since <a href="/category/Set">$\Set$</a> does not have all monomorphisms split.
+      Alternatively, the functor $\Set \to [(\IN,\leq),\Set]_{\conn}$, $X \mapsto (X \to \{\ast\} \to \{\ast\} \to \cdots)$ is fully faithful and preserves monomorphisms, which are the morphisms that are injective in every degree (<a href="/category/SeqSet_conn?proof=monomorphism">proof</a>). Hence, the claim follows from the contrapositive of the dual of Lemma 15 <a href="/content/subcategories">here</a>, since <a href="/category/Set">$\Set$</a> does not have all monomorphisms split.
 
   - property: disjoint finite products
     proof: >-
@@ -149,7 +149,7 @@ unsatisfied_properties:
       X & = \bigl(\varnothing \to \{\ast\} \to \{\ast\} \to \cdots\bigr), \\
       Y & = \bigl(\{\ast\} \to \{\ast\} \to \{\ast\} \to \cdots\bigr),
       \end{align*}$$
-      then the projection $X \times Y \to Y$ is not an epimorphism. Indeed, by the classification of epimorphisms below, this would require $X_0 \times Y_0 \to Y_0$ to be surjective, which is not the case.
+      then the projection $X \times Y \to Y$ is not an epimorphism. Indeed, since epimorphisms are surjective in every degree (<a href="/category/SeqSet_conn?proof=epimorphism">proof</a>), this would require $X_0 \times Y_0 \to Y_0$ to be surjective, which is not the case.
 
   - property: generator
     proof: >-

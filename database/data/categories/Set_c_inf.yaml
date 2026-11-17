@@ -23,10 +23,10 @@ satisfied_properties:
     proof: Every object is isomorphic to $\IN$.
 
   - property: all epimorphisms split
-    proof: Apply Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\Set_{\c,\infty} \hookrightarrow \Set$, which preserves epimorphisms since these are surjective in both categories (see below), and use that <a href="/category/Set">$\Set$</a> has all epimorphisms split.
+    proof: Apply Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\Set_{\c,\infty} \hookrightarrow \Set$, which preserves epimorphisms since these are surjective in both categories (<a href="/category/Set_c_inf?proof=epimorphism">proof</a> for $\Set_{\c,\infty}$ and <a href="/category/Set?proof=epimorphism">proof</a> for $\Set$), and use that <a href="/category/Set">$\Set$</a> has all epimorphisms split.
 
   - property: all monomorphisms split
-    proof: Apply the dual of Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\Set_{\c,\infty} \hookrightarrow \Setne$, which preserves monomorphisms since these are injective in both categories (see below), and use that <a href="/category/Setne">$\Setne$</a> has all monomorphisms split.
+    proof: Apply the dual of Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\Set_{\c,\infty} \hookrightarrow \Setne$, which preserves monomorphisms since these are injective in both categories (<a href="/category/Set_c_inf?proof=monomorphism">proof</a> for $\Set_{\c,\infty}$ and <a href="/category/Setne?proof=monomorphism">proof</a> for $\Setne$), and use that <a href="/category/Setne">$\Setne$</a> has all monomorphisms split.
 
   - property: binary products
     proof: If $X,Y$ are countably infinite sets, then so is $X \times Y$. Hence, the product of $X,Y$ in <a href="/category/Set">$\Set$</a> is also a product in the full subcategory $\Set_{\c,\infty}$.
@@ -42,7 +42,7 @@ satisfied_properties:
     proof: 'Let $f : X \to Y$ be a map of countably infinite sets. Its cokernel pair in <a href="/category/Set">$\Set$</a> is $Y \sqcup_X Y$. It is countable as a quotient of $Y \sqcup Y$, and infinite since the coprojections $Y \rightrightarrows Y \sqcup_X Y$ are injective, having the codiagonal $Y \sqcup_X Y \to Y$ as a left inverse. Hence, it is also a cokernel pair in the full subcategory $\Set_{\c,\infty}$.'
 
   - property: effective congruences
-    proof: 'Let $q_1,q_2 : R \rightrightarrows X$ be a congruence. Since $q_1,q_2$ are jointly monomorphic, the map $(q_1,q_2) : R \to X \times X$ is a monomorphism, hence injective (see below). Thus, we may assume that $R \subseteq X \times X$ and that $q_1,q_2$ are the two projections. Using constant maps $\IN \to X$, we see that $R$ is an equivalence relation on $X$. Let $h : X \to (X/R) \sqcup \IN$ be the composite of the projection $X \to X/R$ with the coproduct inclusion (we add $\IN$ since $X/R$ may be finite). Its kernel pair in <a href="/category/Set">$\Set$</a> is $R$, hence also in the full subcategory $\Set_{\c,\infty}$.'
+    proof: 'Let $q_1,q_2 : R \rightrightarrows X$ be a congruence. Since $q_1,q_2$ are jointly monomorphic, the map $(q_1,q_2) : R \to X \times X$ is a monomorphism, hence injective (<a href="/category/Set_c_inf?proof=monomorphism">proof</a>). Thus, we may assume that $R \subseteq X \times X$ and that $q_1,q_2$ are the two projections. Using constant maps $\IN \to X$, we see that $R$ is an equivalence relation on $X$. Let $h : X \to (X/R) \sqcup \IN$ be the composite of the projection $X \to X/R$ with the coproduct inclusion (we add $\IN$ since $X/R$ may be finite). Its kernel pair in <a href="/category/Set">$\Set$</a> is $R$, hence also in the full subcategory $\Set_{\c,\infty}$.'
 
   - property: ℵ₁-filtered
     proof: 'Every diagram $(X_i)_{i \in I}$ in $\Set_{\c,\infty}$ admits a cocone with vertex $\IN$, given by the constant maps $X_i \to \IN$ with value $0$.'

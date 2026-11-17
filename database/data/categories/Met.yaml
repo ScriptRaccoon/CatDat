@@ -66,7 +66,7 @@ satisfied_properties:
       Consequently, every countable metric space is $\aleph_1$-presentable in $\Met$, since it is $\aleph_1$-presentable in $\PMet$. Likewise, every metric space is the $\aleph_1$-directed colimit of its countable subspaces in $\Met$, since this holds in $\PMet$. Hence, $\Met$ is $\aleph_1$-accessible.
 
   - property: well-copowered
-    proof: 'If $f : (X,d_X) \to (Y,d_Y)$ is an epimorphism, then $f(X)$ is dense in $Y$ (see below). Hence, there is an injective map $Y \to X^{\IN}$, which bounds the size of $Y$.'
+    proof: 'If $f : (X,d_X) \to (Y,d_Y)$ is an epimorphism, then $f(X)$ is dense in $Y$ (<a href="/category/Met?proof=epimorphism">proof</a>). Hence, there is an injective map $Y \to X^{\IN}$, which bounds the size of $Y$.'
 
   - property: extremal generator
     proof: >-
@@ -78,7 +78,7 @@ satisfied_properties:
 
       In fact, $(\IR_{>0},d)$ is an extremal cogenerator. To see this, suppose that $f : (X,d_X) \to (Y,d_Y)$ is a morphism such that
       $${-} \circ f : \Hom((Y,d_Y), (\IR_{>0},d)) \to \Hom((X,d_X), (\IR_{>0},d))$$
-      is a bijection. First of all, since ${-} \circ f$ is injective and $(\IR_{>0},d)$ is a cogenerator, $f$ is an epimorphism, so it has dense image (see below). Now for each $x \in X$, we have a morphism
+      is a bijection. First of all, since ${-} \circ f$ is injective and $(\IR_{>0},d)$ is a cogenerator, $f$ is an epimorphism, so it has dense image (<a href="/category/Met?proof=epimorphism">proof</a>). Now for each $x \in X$, we have a morphism
       $$\varphi : (X,d_X) \to (\IR_{>0},d), \quad x' \mapsto d_X(x, x') + 1.$$
       By the assumption, there exists a morphism $\psi : (Y,d_Y) \to (\IR_{>0},d)$ such that $\psi \circ f = \varphi$. Therefore,
       $$\begin{align*}
@@ -139,7 +139,7 @@ unsatisfied_properties:
     proof: We can take the same <a href="/category/PMet?proof=pullback-stable_regular_epimorphisms">counterexample</a> as for $\PMet$.
 
   - property: regular subobject classifier
-    proof: The same <a href="/category/Met_c?proof=regular_subobject_classifier">proof</a> as for $\Met_\c$ works, since non-expansive maps are continuous and, by the classification of regular monomorphisms (see below), the regular subobjects of a metric space $(X,d_X)$ correspond to the closed subsets of $X$.
+    proof: The same <a href="/category/Met_c?proof=regular_subobject_classifier">proof</a> as for $\Met_\c$ works, since non-expansive maps are continuous and, since the regular monomorphisms are the isometric embeddings with closed image (<a href="/category/Met?proof=regular_monomorphism">proof</a>), the regular subobjects of a metric space $(X,d_X)$ correspond to the closed subsets of $X$.
 
   - property: coaccessible
     proof: >-

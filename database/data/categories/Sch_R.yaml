@@ -111,7 +111,7 @@ special_morphisms:
   monomorphism:
     description: 'A morphism $f : X \to Y$ is a monomorphism iff $|f| : |X| \to |Y|$ is injective and for every $x \in |X|$ the stalk map $f^\sharp_x : \O_{Y,|f|(x)} \to \O_{X,x}$ is an epimorphism of commutative rings.'
     proof: >-
-      Assume that $f$ satisfies the two conditions. Then every stalk map $f^\sharp_x$ is also an epimorphism in the category of local commutative rings and local homomorphisms. By the classification of monomorphisms in <a href="/category/LRS_R">$\LRS_R$</a>, $f$ is a monomorphism in $\LRS_R$, hence also in its full subcategory $\Sch_R$.
+      Assume that $f$ satisfies the two conditions. Then every stalk map $f^\sharp_x$ is also an epimorphism in the category of local commutative rings and local homomorphisms. Hence, $f$ is a monomorphism in $\LRS_R$ (<a href="/category/LRS_R?proof=monomorphism">proof</a>), hence also in its full subcategory $\Sch_R$.
 
       Conversely, assume that $f$ is a monomorphism. The proof for $\LRS_R$ shows that $|f|$ is injective, since the locally ringed spaces with a single point and a field $F$ as stalk used there are the schemes $\Spec(F)$. Now let $x \in |X|$ and $y \coloneqq |f|(x)$. Recall that there is a canonical morphism $\iota_x : \Spec(\O_{X,x}) \to X$, and that the square
       $$\begin{CD} \Spec(\O_{X,x}) @>{\iota_x}>> X \\ @V{\Spec(f^\sharp_x)}VV @VV{f}V \\ \Spec(\O_{Y,y}) @>>{\iota_y}> Y \end{CD}$$

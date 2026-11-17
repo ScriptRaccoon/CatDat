@@ -25,7 +25,7 @@ satisfied_properties:
     proof: The one-dimensional vector space $K$ is an extremal generator even in $\Vect_K$ (<a href="/category/Vect?proof=extremal_generator">proof</a>). Now apply Lemma 10 <a href="/content/subcategories">here</a>.
 
   - property: split abelian
-    proof: The category is a full subcategory of <a href="/category/Vect">$\Vect_K$</a> that is closed under finite direct sums, kernels, and cokernels. Hence, it is abelian since $\Vect_K$ is. Every epimorphism is a surjective linear map (see below), which splits since $\Vect_K$ has all epimorphisms split.
+    proof: The category is a full subcategory of <a href="/category/Vect">$\Vect_K$</a> that is closed under finite direct sums, kernels, and cokernels. Hence, it is abelian since $\Vect_K$ is. Every epimorphism is a surjective linear map (<a href="/category/FinVect?proof=epimorphism">proof</a>), which splits since $\Vect_K$ has all epimorphisms split.
 
   - property: self-dual
     proof: The functor $V \mapsto V^*$ defines an equivalence of categories $\FinVect_K^{\op} \simeq \FinVect_K$. In fact, the natural map $V \to V^{**}$, $v \mapsto (\omega \mapsto \omega(v))$ is an isomorphism by standard linear algebra.

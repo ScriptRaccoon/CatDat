@@ -53,7 +53,7 @@ unsatisfied_properties:
     proof: The $F(I)$-sets with underlying sets $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.
 
   - property: all epimorphisms split
-    proof: Let $\sigma$ be the action of $F(I)$ on $\{0,1\}$ for which every generator $i \in I$ swaps $0$ and $1$. The unique morphism $(\{0,1\},\sigma) \to \{\ast\}$ to the terminal object is surjective, hence an epimorphism (see below). It has no section, since no element of $\{0,1\}$ is fixed by the action.
+    proof: Let $\sigma$ be the action of $F(I)$ on $\{0,1\}$ for which every generator $i \in I$ swaps $0$ and $1$. The unique morphism $(\{0,1\},\sigma) \to \{\ast\}$ to the terminal object is surjective, hence an epimorphism. It has no section, since no element of $\{0,1\}$ is fixed by the action.
 
   - property: semi-strongly connected
     proof: Choose an element $i_0 \in I$. There is a fully faithful functor $\IZ{-}\Set \to F(I){-}\Set$ that maps $(X,\sigma) \mapsto (X,\widetilde{\sigma})$, where $\widetilde{\sigma}_{i_0} = \sigma$ and $\widetilde{\sigma}_i = \id_X$ for $i \neq i_0$. Since <a href="/category/Z-Set">$\IZ{-}\Set$</a> is not semi-strongly connected, it follows that $F(I){-}\Set$ is not semi-strongly connected.

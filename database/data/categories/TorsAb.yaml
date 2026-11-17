@@ -30,10 +30,10 @@ satisfied_properties:
     proof: It is a full subcategory of the preadditive category <a href="/category/Ab">$\Ab$</a>.
 
   - property: normal
-    proof: 'If $f : A \to B$ is a monomorphism, it is injective (see below). In <a href="/category/Ab">$\Ab$</a> it is then the kernel of $B \to B/f(A)$. Since $B/f(A)$ is torsion, it is also the kernel in $\TorsAb$.'
+    proof: 'If $f : A \to B$ is a monomorphism, it is injective (<a href="/category/TorsAb?proof=monomorphism">proof</a>). In <a href="/category/Ab">$\Ab$</a> it is then the kernel of $B \to B/f(A)$. Since $B/f(A)$ is torsion, it is also the kernel in $\TorsAb$.'
 
   - property: conormal
-    proof: 'If $f : A \to B$ is an epimorphism, it is surjective (see below). In <a href="/category/Ab">$\Ab$</a> it is then the cokernel of its kernel $K \hookrightarrow A$. Since $K$ is torsion, it is also the cokernel in $\TorsAb$.'
+    proof: 'If $f : A \to B$ is an epimorphism, it is surjective (<a href="/category/TorsAb?proof=epimorphism">proof</a>). In <a href="/category/Ab">$\Ab$</a> it is then the cokernel of its kernel $K \hookrightarrow A$. Since $K$ is torsion, it is also the cokernel in $\TorsAb$.'
 
   - property: finitely accessible
     proof: We already know that (filtered) colimits exist and are preserved by the forgetful functor to $\Ab$. Every torsion abelian group is the filtered colimit of its finitely generated subgroups (which are finite). These are finitely presentable in $\Ab$, hence also in $\TorsAb$.
@@ -43,7 +43,7 @@ unsatisfied_properties:
     proof: The trivial groups with underlying sets $\{0\}$ and $\{1\}$ are zero objects, hence isomorphic, but not equal.
 
   - property: all epimorphisms split
-    proof: Apply the contrapositive of Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\FinAb \hookrightarrow \TorsAb$, which preserves epimorphisms since these are surjective in both categories (see below), and use that <a href="/category/FinAb">$\FinAb$</a> does not have all epimorphisms split.
+    proof: Apply the contrapositive of Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\FinAb \hookrightarrow \TorsAb$, which preserves epimorphisms since these are surjective in both categories (<a href="/category/FinAb?proof=epimorphism">proof</a> for $\FinAb$ and <a href="/category/TorsAb?proof=epimorphism">proof</a> for $\TorsAb$), and use that <a href="/category/FinAb">$\FinAb$</a> does not have all epimorphisms split.
 
   - property: finitary algebraic
     proof: >-

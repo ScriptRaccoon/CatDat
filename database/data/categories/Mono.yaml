@@ -29,7 +29,7 @@ satisfied_properties:
 
   - property: generator
     proof: >-
-      The object $(1, 0)$ is a generator. This is because it represents the functor taking an object $(X, X')$ to $X$, and taking a morphism $f : (X, X') \to (Y, Y')$ to the function $f : X \to Y$.
+      The object $(\{\ast\}, \varnothing)$ is a generator. This is because it represents the functor taking an object $(X, X')$ to $X$, and taking a morphism $f : (X, X') \to (Y, Y')$ to the function $f : X \to Y$.
 
   - property: complete
     proof: >-
@@ -69,7 +69,8 @@ satisfied_properties:
       It is easy to check these give inverse operations which are natural in $U$ (in fact, the details are exactly the same as the details of an explicit proof that $\Set$ is locally cartesian closed), completing the proof.
 
   - property: regular subobject classifier
-    proof: 'The object $(\{ \top, \bot \}, \{ \top, \bot \})$ is a regular subobject classifier, with $\top : (1, 1) \to (\{ \top, \bot \}, \{ \top, \bot \})$ consisting of the function with image $\top$. This follows from the description of regular monomorphisms below.'
+    proof: >-
+      The object $(\{ \top, \bot \}, \{ \top, \bot \})$ is a regular subobject classifier, with $\top : (\{\ast\}, \{\ast\}) \to (\{ \top, \bot \}, \{ \top, \bot \})$ consisting of the function with image $\top$. This follows since the regular monomorphisms are the morphisms $f : (X, X') \to (Y, Y')$ such that $f : X \to Y$ is injective and $f^*(Y') = X'$ (<a href="/category/Mono?proof=regular_monomorphism">proof</a>).
 
   - property: locally finitely presentable
     proof: >-
@@ -79,11 +80,11 @@ satisfied_properties:
       @V \id VV @VV f V \\
       X @>> f > Y.
       \end{CD}$$
-      Alternatively, we already know $\Mono$ is cocomplete. We claim that both $(1, 0)$ and $(1, 1)$ are finitely presentable objects of $\Mono$. For the first, $(1, 0)$ represents the forgetful functor $(X, X') \mapsto X$; and this functor has a right adjoint $X \mapsto (X, X)$ so it preserves filtered colimits (in fact all colimits). For the second, $(1, 1)$ represents the functor $(X, X') \mapsto X'$. Now by the previous description of colimits, for a filtered diagram $((X_i, X_i'))_{i\in\I}$, first form the filtered colimit of $X_i$ in <a href="/category/Set">$\Set$</a> with cocone $c_i : X_i \to \colim_{i\in\I} X_i$. Then the filtered colimit in $\Mono$ is $(\colim_{i\in\I} X_i, \bigcup_{i\in\I} (c_i)_*(X_i'))$. This makes it easy to see that the canonical function
-      $$\colim_{i\in\I} \Hom((1,1), (X_i,X_i')) \to \Hom((1,1), \colim_{i\in\I} (X_i,X_i'))$$
-      is surjective. To see it is injective, use the fact that the unique morphism $(1, 0) \to (1, 1)$ is an epimorphism (see below), and we have already seen that the corresponding function for $(1,0)$ is injective.
+      Alternatively, we already know $\Mono$ is cocomplete. We claim that both $(\{\ast\}, \varnothing)$ and $(\{\ast\}, \{\ast\})$ are finitely presentable objects of $\Mono$. For the first, $(\{\ast\}, \varnothing)$ represents the forgetful functor $(X, X') \mapsto X$; and this functor has a right adjoint $X \mapsto (X, X)$ so it preserves filtered colimits (in fact all colimits). For the second, $(\{\ast\}, \{\ast\})$ represents the functor $(X, X') \mapsto X'$. Now by the previous description of colimits, for a filtered diagram $((X_i, X_i'))_{i\in\I}$, first form the filtered colimit of $X_i$ in <a href="/category/Set">$\Set$</a> with cocone $c_i : X_i \to \colim_{i\in\I} X_i$. Then the filtered colimit in $\Mono$ is $(\colim_{i\in\I} X_i, \bigcup_{i\in\I} (c_i)_*(X_i'))$. This makes it easy to see that the canonical function
+      $$\colim_{i\in\I} \Hom((\{\ast\}, \{\ast\}), (X_i,X_i')) \to \Hom((\{\ast\}, \{\ast\}), \colim_{i\in\I} (X_i,X_i'))$$
+      is surjective. To see it is injective, use the fact that the unique morphism $(\{\ast\}, \varnothing) \to (\{\ast\}, \{\ast\})$ is an epimorphism (<a href="/category/Mono?proof=epimorphism">proof</a>), and we have already seen that the corresponding function for $(\{\ast\}, \varnothing)$ is injective.
 
-      Therefore, any finite coproduct of $(1, 0)$ and $(1, 1)$ is finitely presentable; this means any object of the form $([n], [m])$ with $m, n \in \IN$ and $m \le n$ is finitely presentable. All such objects form a set. Moreover, any object $(X,X')$ of $\Mono$ is a filtered colimit of the subobjects $(F, F \cap X')$ where $F$ is a finite subset of $X$, and each $(F, F \cap X')$ is isomorphic to some $([n], [m])$.
+      Therefore, any finite coproduct of $(\{\ast\}, \varnothing)$ and $(\{\ast\}, \{\ast\})$ is finitely presentable; this means any object of the form $([n], [m])$ with $m, n \in \IN$ and $m \le n$ is finitely presentable. All such objects form a set. Moreover, any object $(X,X')$ of $\Mono$ is a filtered colimit of the subobjects $(F, F \cap X')$ where $F$ is a finite subset of $X$, and each $(F, F \cap X')$ is isomorphic to some $([n], [m])$.
 
   - property: co-Malcev
     proof: >-
@@ -99,17 +100,17 @@ unsatisfied_properties:
 
   - property: extremal generator
     proof: >-
-      Let $(G, G')$ be any object. Then if $G'$ is empty, the unique morphism $(1, 0) \to (1, 1)$ induces a bijection
-      $$\Hom((G, G'), (1, 0)) \to \Hom((G, G'), (1, 1))$$
-      because both sides are singletons. On the other hand, if $G'$ is non-empty, then for either choice of morphism $(1, 0) \to (2, 0)$, the induced map
-      $$\Hom((G, G'), (1, 0)) \to \Hom((G, G'), (2, 0))$$
+      Let $(G, G')$ be any object. Then if $G'$ is empty, the unique morphism $(\{\ast\}, \varnothing) \to (\{\ast\}, \{\ast\})$ induces a bijection
+      $$\Hom((G, G'), (\{\ast\}, \varnothing)) \to \Hom((G, G'), (\{\ast\}, \{\ast\}))$$
+      because both sides are singletons. On the other hand, if $G'$ is non-empty, then for either choice of morphism $(\{\ast\}, \varnothing) \to (\{0,1\}, \varnothing)$, the induced map
+      $$\Hom((G, G'), (\{\ast\}, \varnothing)) \to \Hom((G, G'), (\{0,1\}, \varnothing))$$
       is bijective because both sides are empty. Thus, in either case, $(G,G')$ is not an extremal generator.
 
 special_objects:
   initial object:
-    description: $(0, 0)$
+    description: $(\varnothing, \varnothing)$
   terminal object:
-    description: $(1, 1)$
+    description: $(\{\ast\}, \{\ast\})$
   coproducts:
     description: component-wise defined disjoint union
   products:
@@ -124,7 +125,7 @@ special_morphisms:
     description: >-
       morphisms $f : (X, X') \to (Y, Y')$ such that $f$ is an injective function from $X$ to $Y$
     proof: >-
-      For the non-trivial direction, use the fact that the functor taking an object $(X, X')$ to $X$ and a morphism $f : (X, X') \to (Y, Y')$ to the function $f : X \to Y$ is representable by $(1, 0)$.
+      For the non-trivial direction, use the fact that the functor taking an object $(X, X')$ to $X$ and a morphism $f : (X, X') \to (Y, Y')$ to the function $f : X \to Y$ is representable by $(\{\ast\}, \varnothing)$.
   epimorphism:
     description: >-
       morphisms $f : (X, X') \to (Y, Y')$ such that $f$ is a surjective function from $X$ to $Y$

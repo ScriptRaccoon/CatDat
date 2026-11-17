@@ -50,11 +50,11 @@ satisfied_properties:
       Remark: The same proof works for $\Quiv$.
 
   - property: epi-regular
-    proof: Any epimorphism $f = (f_V,f_E)$ in $\Quiv_{\fc}$ has surjective components $f_V,f_E$ by the classification below. Hence, it is the coequalizer of its kernel pair in $\Quiv$. Since the kernel pair belongs to $\Quiv_{\fc}$, it is also the coequalizer in $\Quiv_{\fc}$.
+    proof: Any epimorphism $f = (f_V,f_E)$ in $\Quiv_{\fc}$ has surjective components $f_V,f_E$ (<a href="/category/Quiv_fc?proof=epimorphism">proof</a>). Hence, it is the coequalizer of its kernel pair in $\Quiv$. Since the kernel pair belongs to $\Quiv_{\fc}$, it is also the coequalizer in $\Quiv_{\fc}$.
     check_redundancy: false
 
   - property: pullback-stable regular epimorphisms
-    proof: 'Apply the dual of Lemma 14 <a href="/content/subcategories">here</a> to the inclusion $\Quiv_{\fc} \to \Quiv$. It preserves pullbacks (see the proofs above), and it preserves regular epimorphisms since these are the morphisms with surjective components in both categories (see below). Here, we use that <a href="/category/Quiv">$\Quiv$</a> has pullback-stable regular epimorphisms.'
+    proof: 'Apply the dual of Lemma 14 <a href="/content/subcategories">here</a> to the inclusion $\Quiv_{\fc} \to \Quiv$. It preserves pullbacks (see the proofs above), and it preserves regular epimorphisms since these are the morphisms with surjective components in both categories (<a href="/category/Quiv_fc?proof=regular_epimorphism" data-allow-deduced>proof</a> for $\Quiv_{\fc}$ and <a href="/category/Quiv?proof=regular_epimorphism" data-allow-deduced>proof</a> for $\Quiv$). Here, we use that <a href="/category/Quiv">$\Quiv$</a> has pullback-stable regular epimorphisms.'
 
   - property: ℵ₁-accessible
     proof: >-
@@ -76,7 +76,7 @@ unsatisfied_properties:
     proof: The quivers whose vertex set and edge set are both $\{0\}$, respectively both $\{1\}$, are terminal objects, hence isomorphic, but not equal.
 
   - property: all epimorphisms split
-    proof: Let $Q$ be the quiver with two vertices and one edge between them, and let $T$ be the terminal quiver, which has one vertex and one loop. The unique morphism $Q \to T$ is surjective on vertices and edges, hence an epimorphism (see below). It has no section, since $Q$ has no loop.
+    proof: Let $Q$ be the quiver with two vertices and one edge between them, and let $T$ be the terminal quiver, which has one vertex and one loop. The unique morphism $Q \to T$ is surjective on vertices and edges, hence an epimorphism. It has no section, since $Q$ has no loop.
 
   - property: semi-strongly connected
     proof: We can recycle the <a href="/category/Quiv?proof=semi-strongly_connected">proof</a> from $\Quiv$, which only uses finite auxiliary quivers.

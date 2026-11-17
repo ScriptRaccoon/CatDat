@@ -84,13 +84,13 @@ satisfied_properties:
 
   - property: mono-regular
     proof: >-
-      Let $i : (X,\leq) \to (Y,\leq)$ be a monomorphism, i.e. an injective order-preserving map (see below). Since $i$ is strictly increasing, it reflects the order, so we may assume that $X \subseteq Y$ is a subset with the restricted order and that $i$ is the inclusion. Consider the set $C \coloneqq Y \times \{0,1\}$ with the lexicographic order, and define $f,g : (Y,\leq) \rightrightarrows (C,\leq)$ by $f(y) \coloneqq (y,0)$ and
+      Let $i : (X,\leq) \to (Y,\leq)$ be a monomorphism, i.e. an injective order-preserving map (<a href="/category/Ord?proof=monomorphism">proof</a>). Since $i$ is strictly increasing, it reflects the order, so we may assume that $X \subseteq Y$ is a subset with the restricted order and that $i$ is the inclusion. Consider the set $C \coloneqq Y \times \{0,1\}$ with the lexicographic order, and define $f,g : (Y,\leq) \rightrightarrows (C,\leq)$ by $f(y) \coloneqq (y,0)$ and
       $$g(y) \coloneqq \begin{cases} (y,0) & y \in X, \\ (y,1) & y \notin X. \end{cases}$$
       Both maps are order-preserving, since $y < y'$ implies $(y,m) < (y',n)$ for all $m,n \in \{0,1\}$. By the <a href="/category/Ord?proof=equalizers">proof</a> for equalizers, the equalizer of $f,g$ in $\Ord$ is computed as in $\Pos$, so it is $(X,\leq)$, since $\{y \in Y : f(y) = g(y)\} = X$. Hence, $i$ is a regular monomorphism.
 
   - property: all epimorphisms split
     proof: >-
-      Let $p : (X,\leq) \to (Y,\leq)$ be an epimorphism, i.e. a surjective order-preserving map (see below). Choose a map $s : Y \to X$ with $s(y) \in p^*(\{y\})$ for all $y \in Y$, so that $p \circ s = \id_Y$. To see that $s$ is order-preserving, let $y < y'$ in $Y$. If $s(y') \leq s(y)$, then $y' = p(s(y')) \leq p(s(y)) = y$, a contradiction. Hence, $s(y) < s(y')$.
+      Let $p : (X,\leq) \to (Y,\leq)$ be an epimorphism, i.e. a surjective order-preserving map (<a href="/category/Ord?proof=epimorphism">proof</a>). Choose a map $s : Y \to X$ with $s(y) \in p^*(\{y\})$ for all $y \in Y$, so that $p \circ s = \id_Y$. To see that $s$ is order-preserving, let $y < y'$ in $Y$. If $s(y') \leq s(y)$, then $y' = p(s(y')) \leq p(s(y)) = y$, a contradiction. Hence, $s(y) < s(y')$.
 
   - property: effective cocongruences
     proof: >-
@@ -120,7 +120,7 @@ unsatisfied_properties:
 
   - property: cofiltered-limit-stable epimorphisms
     proof: >-
-      For $n \in \IN$ consider the set $X_n \coloneqq \{k \in \IN : k \geq n\}$ with the usual order, and the inclusions $(X_{n+1},\leq) \hookrightarrow (X_n,\leq)$. The maps $(X_n,\leq) \to \{\ast\}$ are surjective, hence epimorphisms (see below), and they form a morphism from this sequence to the constant sequence with value $\{\ast\}$. By the <a href="/category/Ord?proof=cosifted_limits">proof</a> for cosifted limits, limits of such sequences are computed as in <a href="/category/Pos">$\Pos$</a>, hence on the underlying sets as in $\Set$. Therefore, the limit of the $(X_n,\leq)$ is the ordered set with underlying set $\bigcap_{n \in \IN} X_n = \varnothing$, and the limit of the constant sequence is $\{\ast\}$. The induced map $\varnothing \to \{\ast\}$ is not an epimorphism.
+      For $n \in \IN$ consider the set $X_n \coloneqq \{k \in \IN : k \geq n\}$ with the usual order, and the inclusions $(X_{n+1},\leq) \hookrightarrow (X_n,\leq)$. The maps $(X_n,\leq) \to \{\ast\}$ are surjective, hence epimorphisms, and they form a morphism from this sequence to the constant sequence with value $\{\ast\}$. By the <a href="/category/Ord?proof=cosifted_limits">proof</a> for cosifted limits, limits of such sequences are computed as in <a href="/category/Pos">$\Pos$</a>, hence on the underlying sets as in $\Set$. Therefore, the limit of the $(X_n,\leq)$ is the ordered set with underlying set $\bigcap_{n \in \IN} X_n = \varnothing$, and the limit of the constant sequence is $\{\ast\}$. The induced map $\varnothing \to \{\ast\}$ is not an epimorphism.
 
   - property: coaccessible
     proof: >-

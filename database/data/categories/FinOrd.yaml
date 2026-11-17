@@ -58,13 +58,13 @@ satisfied_properties:
 
   - property: mono-regular
     proof: >-
-      Let $i : (X,\leq) \to (Y,\leq)$ be a monomorphism, i.e. an injective order-preserving map (see below). If $X$ is empty, then $i$ is the equalizer of the two constant maps $(Y,\leq) \rightrightarrows \{0 < 1\}$. Otherwise, we claim that $i$ is a split monomorphism, hence a regular monomorphism. We define $r : (Y,\leq) \to (X,\leq)$ by
+      Let $i : (X,\leq) \to (Y,\leq)$ be a monomorphism, i.e. an injective order-preserving map (<a href="/category/FinOrd?proof=monomorphism">proof</a>). If $X$ is empty, then $i$ is the equalizer of the two constant maps $(Y,\leq) \rightrightarrows \{0 < 1\}$. Otherwise, we claim that $i$ is a split monomorphism, hence a regular monomorphism. We define $r : (Y,\leq) \to (X,\leq)$ by
       $$r(y) \coloneqq \max \bigl(\{\min X\} \cup \{x \in X : i(x) \leq y\}\bigr).$$
       Here, the element $\min X$ ensures that the maximum is taken over a non-empty set, which is needed when $y < i(x)$ for all $x \in X$. The map $r$ is order-preserving, since this set grows with $y$. Since $i$ is injective and order-preserving, it is strictly increasing, so for $x, x' \in X$ we have $i(x') \leq i(x)$ if and only if $x' \leq x$. Hence, $r(i(x)) = x$.
 
   - property: all epimorphisms split
     proof: >-
-      Apply Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\FinOrd \hookrightarrow \Ord$. It is fully faithful, and it preserves epimorphisms, since in both categories these are the surjective order-preserving maps (see below). Here, we use that all epimorphisms in $\Ord$ split (<a href="/category/Ord?proof=all_epimorphisms_split">proof</a>).
+      Apply Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\FinOrd \hookrightarrow \Ord$. It is fully faithful, and it preserves epimorphisms, since in both categories these are the surjective order-preserving maps (<a href="/category/FinOrd?proof=epimorphism">proof</a> for $\FinOrd$ and <a href="/category/Ord?proof=epimorphism">proof</a> for $\Ord$). Here, we use that all epimorphisms in $\Ord$ split (<a href="/category/Ord?proof=all_epimorphisms_split">proof</a>).
 
       The proof for $\Ord$ uses the axiom of choice, which is not needed here: for an epimorphism $p : (X,\leq) \to (Y,\leq)$ in $\FinOrd$, the map $s : Y \to X$, $s(y) \coloneqq \min p^*(\{y\})$ is a section of $p$, and it is order-preserving by the same argument as for $\Ord$.
 

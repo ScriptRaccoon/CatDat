@@ -47,7 +47,7 @@ satisfied_properties:
     proof: 'If $f : [n] \to [m]$ is an isomorphism, then $n + 1 = m + 1$ by comparing the cardinalities, hence $n = m$.'
 
   - property: all epimorphisms split
-    proof: Apply Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\Delta \hookrightarrow \FinOrd$, which preserves epimorphisms since these are surjective order-preserving maps in both categories (see below), and use that <a href="/category/FinOrd">$\FinOrd$</a> has all epimorphisms split.
+    proof: Apply Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\Delta \hookrightarrow \FinOrd$, which preserves epimorphisms since these are surjective order-preserving maps in both categories (<a href="/category/Delta?proof=epimorphism">proof</a> for $\Delta$ and <a href="/category/FinOrd?proof=epimorphism">proof</a> for $\FinOrd$), and use that <a href="/category/FinOrd">$\FinOrd$</a> has all epimorphisms split.
 
   - property: all monomorphisms split
     proof: The <a href="/category/FinOrd?proof=mono-regular">proof</a> for $\FinOrd$ shows that every monomorphism with non-empty domain splits.

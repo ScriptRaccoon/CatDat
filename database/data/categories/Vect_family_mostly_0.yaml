@@ -25,8 +25,11 @@ satisfied_properties:
   - property: complete
     proof: Since <a href="/category/Vect">$\Vect_K$</a> is complete, the product category $\Vect_K^I$ is complete with pointwise limits. (The size of the index collection does not matter.) Since our limits are small by convention, it is easy to check that its full subcategory $\Vect^{(I)}_K$ is closed under limits.
 
-  - property: split abelian
-    proof: Finite direct sums, kernels, and cokernels exist and are computed component-wise. Hence, the category is abelian since <a href="/category/Vect">$\Vect_K$</a> is. Every epimorphism is a family of surjective linear maps (see below), each of which splits since $\Vect_K$ has all epimorphisms split.
+  - property: abelian
+    proof: Finite direct sums, kernels, and cokernels exist and are computed component-wise. Hence, the category is abelian since <a href="/category/Vect">$\Vect_K$</a> is.
+
+  - property: all epimorphisms split
+    proof: Every epimorphism is a family of surjective linear maps (<a href="/category/Vect_family_mostly_0?proof=epimorphism">proof</a>), each of which splits since $\Vect_K$ has all epimorphisms split.
 
   - property: exact filtered colimits
     proof: This follows easily from the fact that <a href="/category/Vect">$\Vect_K$</a> has exact filtered colimits.

@@ -24,7 +24,7 @@ satisfied_properties:
     proof: Every countable set is isomorphic to a subset of $\IN$.
 
   - property: all epimorphisms split
-    proof: Apply Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\Set_\c \hookrightarrow \Set$, which preserves epimorphisms since these are surjective in both categories (see below), and use that <a href="/category/Set">$\Set$</a> has all epimorphisms split.
+    proof: Apply Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\Set_\c \hookrightarrow \Set$, which preserves epimorphisms since these are surjective in both categories (<a href="/category/Set_c?proof=epimorphism">proof</a> for $\Set_\c$ and <a href="/category/Set?proof=epimorphism">proof</a> for $\Set$), and use that <a href="/category/Set">$\Set$</a> has all epimorphisms split.
 
   - property: finitely complete
     proof: The embedding $\Set_\c \hookrightarrow \Set$ is closed under finite products and equalizers, hence under finite limits.
@@ -53,7 +53,7 @@ satisfied_properties:
     proof: 'Let $R \rightrightarrows X$ be a congruence in $\Set_\c$. Then using $\{\ast\}$ as a test object, we see that this induces an equivalence relation on $X$. We already know that <a href="/category/Set">$\Set$</a> has effective congruences (as does every topos). Using <a href="/content/effective-congruence-quotients">this result</a>, we see that $R$ is the kernel pair of $X \to (X/R)_{\Set}$ in $\Set$. Also, the quotient $(X/R)_{\Set}$ is countable; and the forgetful functor $\Set_\c \to \Set$ is fully faithful <a href="https://ncatlab.org/nlab/show/reflected+limit#FullSubcategoryInclusionReflectCoLimits">and therefore reflects limits</a>. Thus, we conclude that $R$ is the kernel pair of $X \to (X/R)_{\Set}$ in $\Set_\c$ as well.'
 
   - property: coregular
-    proof: This follows from the dual of Lemma 7 <a href="/content/subcategories">here</a> applied to the inclusion functor $\Set_\c \hookrightarrow \Set$ into the coregular category $\Set$ and the description of regular monomorphisms below.
+    proof: This follows from the dual of Lemma 7 <a href="/content/subcategories">here</a> applied to the inclusion functor $\Set_\c \hookrightarrow \Set$ into the coregular category $\Set$ and the fact that the regular monomorphisms in $\Set_\c$ are the monomorphisms (<a href="/category/Set_c?proof=regular_monomorphism" data-allow-deduced>proof</a>).
 
 unsatisfied_properties:
   - property: small

@@ -32,10 +32,10 @@ satisfied_properties:
     proof: The category has exactly one object.
 
   - property: all epimorphisms split
-    proof: Every epimorphism is a word $w$ in $f,g$ (see below). If $w$ has length $n$, then $w s^n = 1$ since $fs = gs = 1$.
+    proof: Every epimorphism is a word $w$ in $f,g$ (<a href="/category/BD?proof=epimorphism">proof</a>). If $w$ has length $n$, then $w s^n = 1$ since $fs = gs = 1$.
 
   - property: all monomorphisms split
-    proof: Every monomorphism is of the form $s^n$ (see below), which has the retraction $f^n$ since $fs = 1$.
+    proof: Every monomorphism is of the form $s^n$ (<a href="/category/BD?proof=monomorphism">proof</a>), which has the retraction $f^n$ since $fs = 1$.
 
   - property: Cauchy complete
     proof: >-
@@ -47,11 +47,11 @@ satisfied_properties:
     check_redundancy: false
 
   - property: core-thin
-    proof: We need to prove that $1$ is the only invertible element of $D$. Every isomorphism is a monomorphism and an epimorphism. By the classification of monomorphisms and epimorphisms (see below), the only element that is both is $s^0 = 1$.
+    proof: We need to prove that $1$ is the only invertible element of $D$. Every isomorphism is a monomorphism and an epimorphism. Since the monomorphisms are the elements $s^n$ (<a href="/category/BD?proof=monomorphism">proof</a>) and the epimorphisms are the words in $f,g$ (<a href="/category/BD?proof=epimorphism">proof</a>), the only element that is both is $s^0 = 1$.
 
   - property: coreflexive equalizers
     proof: >-
-      It suffices to prove that every coreflexive pair $x,y$ satisfies $x=y$. Algebraically, this means that right inverses are uniquely determined in $D$. So assume that $r x = r y = 1$ for some $r,x,y \in D$. In particular, $r$ is an epimorphism, so that $r$ is a word in $f,g$ of some length $m$ by the classification of epimorphisms below. We claim that $x = s^m$; by symmetry, then also $y = s^m$.
+      It suffices to prove that every coreflexive pair $x,y$ satisfies $x=y$. Algebraically, this means that right inverses are uniquely determined in $D$. So assume that $r x = r y = 1$ for some $r,x,y \in D$. In particular, $r$ is an epimorphism, so that $r$ is a word in $f,g$ of some length $m$ (<a href="/category/BD?proof=epimorphism">proof</a>). We claim that $x = s^m$; by symmetry, then also $y = s^m$.
 
       Write $x = s^n w$, where $w$ is a word in $f,g$. Since every letter of $r$ is a left inverse of $s$, we have $r s^m = 1$. If $n \geq m$, it follows that
       $$1 = r x = r s^m s^{n-m} w = s^{n-m} w,$$
@@ -61,7 +61,7 @@ satisfied_properties:
 
   - property: ℵ₁-accessible
     proof: >-
-      The argument is very similar to the <a href="/category/BC?proof=aleph1-accessible">proof</a> for $BC$. We apply Theorem 4 <a href="/content/deloopings-aleph1-accessible">here</a>. We already know that $D$ is countable and that $BD$ is Cauchy complete. It remains to show that $D$ satisfies the ascending chain condition on principal right ideals. Every principal right ideal of $D$ has the form $s^n w D = s^n D$, where $w$ is a word in $f,g$, since $w$ is a split epimorphism and hence $w D = D$. If $s^n D \subseteq s^{n'} D$, then $n \geq n'$. Otherwise, write $s^n = s^{n'} x$ with $x \in D$. Since $s^n$ is a monomorphism, we get $1 = s^{n'-n} x$, so that $s^{n'-n}$ is a split epimorphism, which contradicts the classification of epimorphisms below. Therefore, every ascending chain $s^{n_0} D \subseteq s^{n_1} D \subseteq \cdots$ satisfies $n_0 \geq n_1 \geq \cdots$ and hence becomes stationary.
+      The argument is very similar to the <a href="/category/BC?proof=aleph1-accessible">proof</a> for $BC$. We apply Theorem 4 <a href="/content/deloopings-aleph1-accessible">here</a>. We already know that $D$ is countable and that $BD$ is Cauchy complete. It remains to show that $D$ satisfies the ascending chain condition on principal right ideals. Every principal right ideal of $D$ has the form $s^n w D = s^n D$, where $w$ is a word in $f,g$, since $w$ is a split epimorphism and hence $w D = D$. If $s^n D \subseteq s^{n'} D$, then $n \geq n'$. Otherwise, write $s^n = s^{n'} x$ with $x \in D$. Since $s^n$ is a monomorphism, we get $1 = s^{n'-n} x$, so that $s^{n'-n}$ is a split epimorphism, which contradicts the fact that every epimorphism is a word in $f,g$ (<a href="/category/BD?proof=epimorphism">proof</a>). Therefore, every ascending chain $s^{n_0} D \subseteq s^{n_1} D \subseteq \cdots$ satisfies $n_0 \geq n_1 \geq \cdots$ and hence becomes stationary.
 
   - property: ℵ₁-coaccessible
     proof: >-
@@ -94,7 +94,7 @@ unsatisfied_properties:
     proof: >-
       We show that $f$ does not have a kernel pair, i.e. that there is no universal pair of elements $(x,y) \in D^2$ with $fx=fy$; the universal property means that any other such pair $(u,v)$ factors as $u=xt$, $v=yt$ for a unique $t \in D$.
 
-      Assume that $(x,y)$ is a universal pair. Since $(1,1)$ is a valid pair, there is a unique $t \in D$ with $1=xt$ and $1=yt$. In particular, $x$ and $y$ are epimorphisms. By their classification below, $x$ and $y$ are words in $f,g$. Then $fx$ and $fy$ are words in $f,g$ as well, so that $fx = fy$ implies $x=y$ by the uniqueness of the normal form.
+      Assume that $(x,y)$ is a universal pair. Since $(1,1)$ is a valid pair, there is a unique $t \in D$ with $1=xt$ and $1=yt$. In particular, $x$ and $y$ are epimorphisms, hence words in $f,g$ (<a href="/category/BD?proof=epimorphism">proof</a>). Then $fx$ and $fy$ are words in $f,g$ as well, so that $fx = fy$ implies $x=y$ by the uniqueness of the normal form.
 
       Since $f(sf) = f = f \cdot 1$, also $(sf,1)$ is a valid pair. Hence, there is some $t \in D$ with $sf=xt$ and $1=yt$. Since $x=y$, we obtain the contradiction $sf=1$.
 
@@ -102,7 +102,7 @@ unsatisfied_properties:
     proof: >-
       We show that $s$ does not have a cokernel pair, i.e. that there is no universal pair of elements $(x,y) \in D^2$ with $xs=ys$; the universal property means that any other such pair $(u,v)$ factors as $u=tx$, $v=ty$ for a unique $t \in D$.
 
-      Assume that $(x,y)$ is a universal pair. Since $(1,1)$ is a valid pair, there is a unique $t \in D$ with $1=tx$ and $1=ty$. In particular, $x$ and $y$ are monomorphisms. By their classification below, we get $x=s^n$, $y=s^k$ for some $n,k \geq 0$. Since $xs=ys$, we have $s^{n+1} = s^{k+1}$, so that $n=k$, i.e. $x=y$.
+      Assume that $(x,y)$ is a universal pair. Since $(1,1)$ is a valid pair, there is a unique $t \in D$ with $1=tx$ and $1=ty$. In particular, $x$ and $y$ are monomorphisms, so that $x=s^n$, $y=s^k$ for some $n,k \geq 0$ (<a href="/category/BD?proof=monomorphism">proof</a>). Since $xs=ys$, we have $s^{n+1} = s^{k+1}$, so that $n=k$, i.e. $x=y$.
 
       Since $fs = gs$, also $(f,g)$ is a valid pair. Hence, there is some $t \in D$ with $f=tx$ and $g=ty$. Since $x=y$, we obtain the contradiction $f=g$.
 
@@ -123,7 +123,7 @@ unsatisfied_properties:
 
       Next, we evaluate the cocone equality $(1)$ at $n=m+1$. We get
       $$f = c_{m+1} = h x_{m+1} = s (h' x_{m+1}).$$
-      Since $f$ is an epimorphism, this implies that $s$ is also an epimorphism, which contradicts the classification of epimorphisms below.
+      Since $f$ is an epimorphism, this implies that $s$ is also an epimorphism, which contradicts the fact that every epimorphism is a word in $f,g$ (<a href="/category/BD?proof=epimorphism">proof</a>).
 
   - property: sequential limits
     proof: >-
@@ -138,7 +138,7 @@ unsatisfied_properties:
       \end{cases}$$
       This is a cone: for $n < m$ we have $f y_{n+1} = f f^{m-n-1} = f^{m-n} = y_n$, and for $n \geq m$ we have $f y_{n+1} = f s s^{n-m} = s^{n-m} = y_n$. By universality, there is some $h \in D$ such that $y_n = x_n h$ for all $n \geq 0$. For $n = m$, this means $1 = x_m h$, so that $x_m$ is a split epimorphism.
 
-      By the classification of epimorphisms below, every $x_n$ is therefore a word in $f,g$. By induction, we have $x_0 = f^n x_n$ for all $n \geq 0$, so that the word $x_0$ has length at least $n$ for all $n \geq 0$, which is impossible.
+      Every $x_n$ is therefore a word in $f,g$ (<a href="/category/BD?proof=epimorphism">proof</a>). By induction, we have $x_0 = f^n x_n$ for all $n \geq 0$, so that the word $x_0$ has length at least $n$ for all $n \geq 0$, which is impossible.
 
 special_objects: {}
 

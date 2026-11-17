@@ -54,7 +54,7 @@ satisfied_properties:
       We know that $\Bin$ is locally cartesian closed (<a href="/category/Bin?proof=locally_cartesian_closed">proof</a>), and that $\Bin_{\symm} \subseteq \Bin$ is closed under pullbacks. Therefore, it suffices to show that $\Bin_{\symm} \subseteq \Bin$ is closed under relative exponentials. Recall that for two objects $(Y,R_Y) \to (X,R_X)$ and $(Z,R_Z) \to (X,R_X)$ in $\Bin / (X,R_X)$, their exponential is the set $F = \coprod_{x \in X} \Hom(Y_x,Z_x)$ equipped with the following relation $R_F$: for maps $f : Y_x \to Z_x$ and $g : Y_{x'} \to Z_{x'}$ we have $(f,g) \in R_F$ when $(x,x') \in R_X$ and, for all $y \in Y_x$ and $y' \in Y_{x'}$, if $(y,y') \in R_Y$, then $(f(y),g(y')) \in R_Z$. Now assume that $R_X,R_Y,R_Z$ are symmetric. Then it is obvious that $R_F$ is symmetric.
 
   - property: regular subobject classifier
-    proof: By the description of regular monomorphisms below, the poset of regular subobjects of $(X,R)$ is isomorphic to the poset of subsets of $X$. The subsets of $X$ correspond to morphisms from $(X,R)$ into $\Omega \coloneqq (\{0,1\}, \{0,1\} \times \{0,1\})$, which belongs to $\Bin_{\symm}$, showing that $\Omega$ is a regular subobject classifier.
+    proof: Since the regular monomorphisms are the injective maps that reflect and preserve the relation (<a href="/category/Bin_symm?proof=regular_monomorphism">proof</a>), the poset of regular subobjects of $(X,R)$ is isomorphic to the poset of subsets of $X$. The subsets of $X$ correspond to morphisms from $(X,R)$ into $\Omega \coloneqq (\{0,1\}, \{0,1\} \times \{0,1\})$, which belongs to $\Bin_{\symm}$, showing that $\Omega$ is a regular subobject classifier.
 
   - property: generator
     proof: The object $(\{\ast\},\varnothing)$ is a generator because it represents the forgetful functor $\Bin_{\symm} \to \Set$, $(X,R) \mapsto X$, which is faithful.
@@ -67,7 +67,7 @@ satisfied_properties:
 
       To show that $(Q,R_Q)$ is extremal, let $f : (X,R) \to (Y,S)$ be a morphism such that
       $$f^* : \Hom((Y,S),(Q,R_Q)) \to \Hom((X,R),(Q,R_Q))$$
-      is bijective. Since $(Q,R_Q)$ is a cogenerator, it follows that $f$ is both a monomorphism and an epimorphism. By the classification of monomorphisms and epimorphisms below, this means that $f : X \to Y$ is bijective. It remains to show that $f$ is relation-reflecting.
+      is bijective. Since $(Q,R_Q)$ is a cogenerator, it follows that $f$ is both a monomorphism and an epimorphism. Since monomorphisms are injective (<a href="/category/Bin_symm?proof=monomorphism">proof</a>) and epimorphisms are surjective (<a href="/category/Bin_symm?proof=epimorphism">proof</a>), this means that $f : X \to Y$ is bijective. It remains to show that $f$ is relation-reflecting.
 
       Assume for contradiction that $x,x' \in X$ satisfy $(f(x),f(x')) \in S$, but $(x,x') \notin R$. Since $R$ is symmetric, we also have $(x',x) \notin R$. There are two cases to consider.
 

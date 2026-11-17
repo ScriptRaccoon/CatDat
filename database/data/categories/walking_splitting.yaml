@@ -38,7 +38,7 @@ satisfied_properties:
     check_redundancy: false
 
   - property: all monomorphisms split
-    proof: The only non-identity monomorphism is $i$ (see below), and $p i = \id_0$.
+    proof: The only non-identity monomorphism is $i$ (<a href="/category/walking_splitting?proof=monomorphism">proof</a>), and $p i = \id_0$.
 
   - property: equalizers
     proof: 'The only parallel pair of non-equal morphisms is $\id_1, ip : 1 \rightrightarrows 1$, and their equalizer is $i$.'
