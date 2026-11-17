@@ -29,10 +29,10 @@ satisfied_properties:
     proof: This follows from Lemma 2 <a href="/content/subcategories">here</a>, applied to the forgetful functor to $\Set$.
 
   - property: well-powered
-    proof: This is clear from the classification of monomorphisms as injective uniform maps.
+    proof: This is clear since the monomorphisms are the injective uniform maps (<a href="/category/Unif?proof=monomorphism">proof</a>).
 
   - property: well-copowered
-    proof: This is clear from the classification of epimorphisms as surjective uniform maps.
+    proof: This is clear since the epimorphisms are the surjective uniform maps (<a href="/category/Unif?proof=epimorphism">proof</a>).
 
   - property: semi-strongly connected
     proof: Every non-empty uniform space is weakly terminal, since constant maps are uniform.
@@ -105,7 +105,7 @@ satisfied_properties:
       This completes the proof.
 
   - property: pushout-stable regular monomorphisms
-    proof: By the classification of regular monomorphisms, we need to show that uniform embeddings are stable under pushouts. Since the uniform structure of a pushout is not given by a simple formula, the proof requires some work with chains of entourages. See Proposition 2 <a href="/content/uniform-embeddings-pushouts">here</a>.
+    proof: Since the regular monomorphisms are the uniform embeddings (<a href="/category/Unif?proof=regular_monomorphism">proof</a>), we need to show that uniform embeddings are stable under pushouts. Since the uniform structure of a pushout is not given by a simple formula, the proof requires some work with chains of entourages. See Proposition 2 <a href="/content/uniform-embeddings-pushouts">here</a>.
 
 unsatisfied_properties:
   - property: skeletal

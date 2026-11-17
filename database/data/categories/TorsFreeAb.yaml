@@ -35,7 +35,7 @@ satisfied_properties:
     proof: It is a full subcategory of the preadditive category <a href="/category/Ab">$\Ab$</a>.
 
   - property: regular
-    proof: This follows from Lemma 7 <a href="/content/subcategories">here</a> applied to the inclusion functor $\TorsFreeAb \hookrightarrow \Ab$ into the regular category $\Ab$ and the description of regular epimorphisms below.
+    proof: This follows from Lemma 7 <a href="/content/subcategories">here</a> applied to the inclusion functor $\TorsFreeAb \hookrightarrow \Ab$ into the regular category $\Ab$ and the fact that the regular epimorphisms are the surjective homomorphisms (<a href="/category/TorsFreeAb?proof=regular_epimorphism">proof</a>).
 
   - property: pushout-stable regular monomorphisms
     proof: >-
@@ -47,7 +47,7 @@ satisfied_properties:
     proof: >-
       The additive group $\IQ$ is a cogenerator since every torsion-free abelian group $A$ embeds into $A \otimes \IQ$, which is a vector space over $\IQ$, and by linear algebra $\IQ$ is a cogenerator in the category of vector spaces over $\IQ$.
 
-      We claim that $S \coloneqq \{\IQ\} \cup \{\IZ_p : p \text{~prime}\}$ is an extremal cogenerating collection, where $\IZ_p$ is the additive group of the $p$-adic integers. To establish this, we will show that for any torsion-free group $G$, the canonical morphism $\alpha : G \to \prod_{Q\in S} \prod_{f\in\Hom(G,Q)} Q$ is in fact a regular monomorphism, and therefore an extremal monomorphism. By equivalent condition (4) in the characterization below of regular monomorphisms, this is equivalent to showing $\alpha$ is injective, and whenever we have $x\in G$ and prime $p$ such that $\alpha(x)$ is $p$-divisible in the product, then $x$ is $p$-divisible in $G$. From the above, including $\IQ$ in $S$ is already sufficient to make $\alpha$ a monomorphism, i.e. an injective homomorphism.
+      We claim that $S \coloneqq \{\IQ\} \cup \{\IZ_p : p \text{~prime}\}$ is an extremal cogenerating collection, where $\IZ_p$ is the additive group of the $p$-adic integers. To establish this, we will show that for any torsion-free group $G$, the canonical morphism $\alpha : G \to \prod_{Q\in S} \prod_{f\in\Hom(G,Q)} Q$ is in fact a regular monomorphism, and therefore an extremal monomorphism. Since a homomorphism $f : A \to B$ is a regular monomorphism if and only if $f$ is injective and, whenever $f(a)$ is $p$-divisible in $B$ for a prime $p$ and $a \in A$, then $a$ is $p$-divisible in $A$ (<a href="/category/TorsFreeAb?proof=regular_monomorphism">proof</a>), this is equivalent to showing $\alpha$ is injective, and whenever we have $x\in G$ and prime $p$ such that $\alpha(x)$ is $p$-divisible in the product, then $x$ is $p$-divisible in $G$. From the above, including $\IQ$ in $S$ is already sufficient to make $\alpha$ a monomorphism, i.e. an injective homomorphism.
 
       We will prove the second part of this condition by establishing the contrapositive for each prime $p$; thus, suppose we have $x\in G$ which is not $p$-divisible. Let $\{y_i : i \in I\}$ be a subset of $G$ including $x = y_{i_0}$ whose images in $G / pG$ form a basis for this $\IZ / p \IZ$-vector space. We will now prove by induction that for each $n$, $G / p^n G$ is a free $\IZ / p^n \IZ$-module with basis given by the images of $y_i$. The base case $n=1$ is true by assumption. Now for the inductive step from $n$ to $n+1$, for $g \in G$ we can find $a_i \in \IZ$ (all but finitely many equal to zero) such that $g \in \sum_{i\in I} a_i y_i + p^n G$. Since $G$ is torsion-free, there exists a unique $h$ such that $g = \sum_{i\in I} a_i y_i + p^n h$. Now projecting $h$ into $G / pG$, we can find $b_i \in \IZ$ such that $h \in \sum_{i\in I} b_i y_i + pG$. Hence, $g \in \sum_{i\in I} (a_i + p^n b_i) y_i + p^{n+1} G$. The uniqueness of the coefficients up to congruence modulo $p^{n+1}$ follows from the fact that there are unique choices of $a_i$ with $0 \le a_i < p^n$, and then the $b_i$ are unique up to congruence modulo $p$.
 
@@ -60,7 +60,7 @@ unsatisfied_properties:
     proof: The trivial groups with underlying sets $\{0\}$ and $\{1\}$ are zero objects, hence isomorphic, but not equal.
 
   - property: balanced
-    proof: 'It can be checked directly that $2 : \IZ \to \IZ$ is both a monomorphism and an epimorphism, but no isomorphism (see also <a href="/morphism/multiply-2">here</a>). This also follows from the general classification of mono- and epimorphisms below.'
+    proof: 'It can be checked directly that $2 : \IZ \to \IZ$ is both a monomorphism and an epimorphism, but no isomorphism (see also <a href="/morphism/multiply-2">here</a>). This also follows since $2 : \IZ \to \IZ$ is injective and the epimorphisms are the homomorphisms $f : A \to B$ such that $B/f(A)$ is a torsion group (<a href="/category/TorsFreeAb?proof=epimorphism">proof</a>).'
 
   - property: CSP
     proof: The canonical homomorphism $\bigoplus_{n \geq 0} \IZ \to \prod_{n \geq 0} \IZ$ is injective, but not an epimorphism, since the quotient $\prod_{n \geq 0} \IZ / \bigoplus_{n \geq 0} \IZ$ is not torsion. In fact, it is torsion-free and non-zero.

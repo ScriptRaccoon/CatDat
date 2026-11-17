@@ -34,10 +34,10 @@ satisfied_properties:
     check_redundancy: false
 
   - property: well-powered
-    proof: This is clear from the classification of monomorphisms as injective pointed continuous maps.
+    proof: This is clear since the monomorphisms are the injective pointed continuous maps (<a href="/category/Top_*?proof=monomorphism">proof</a>).
 
   - property: well-copowered
-    proof: This is clear from the classification of epimorphisms as surjective pointed continuous maps.
+    proof: This is clear since the epimorphisms are the surjective pointed continuous maps (<a href="/category/Top_*?proof=epimorphism">proof</a>).
 
   - property: generator
     proof: The discrete space $\{0,1\}$ with base point $0$ is a generator since it represents the forgetful functor $\Top_* \to \Set$.
@@ -46,7 +46,7 @@ satisfied_properties:
     proof: The indiscrete two-point space $\{0,1\}$ with base point $1$ is a regular subobject classifier since pointed continuous maps $X \to \{0,1\}$ correspond to pointed subsets of $X$ (by taking the fiber of $1$ as usual).
 
   - property: counital
-    proof: Since embeddings are regular monomorphisms in this category (see below) and hence strong monomorphisms, it suffices to prove that the canonical morphism $X \vee Y \hookrightarrow X \times Y$ is an embedding. For a proof, see <a href="https://math.stackexchange.com/questions/4055988">MSE/4055988</a>.
+    proof: Since embeddings are regular monomorphisms in this category (<a href="/category/Top_*?proof=regular_monomorphism">proof</a>) and hence strong monomorphisms, it suffices to prove that the canonical morphism $X \vee Y \hookrightarrow X \times Y$ is an embedding. For a proof, see <a href="https://math.stackexchange.com/questions/4055988">MSE/4055988</a>.
 
   - property: CIP
     proof: This follows since <a href="/category/Set_*">$\Set_*$</a> has this property and the forgetful functor preserves products and coproducts.
@@ -61,7 +61,7 @@ satisfied_properties:
     proof: This follows from Lemma 2 <a href="/content/subcategories">here</a> applied to the forgetful functor to $\Set$.
 
   - property: coregular
-    proof: This follows from the dual of Lemma 7 <a href="/content/subcategories">here</a> applied to the forgetful functor $\Top_* \to \Top$, using that $\Top$ is coregular and the description of regular monomorphisms below.
+    proof: This follows from the dual of Lemma 7 <a href="/content/subcategories">here</a> applied to the forgetful functor $\Top_* \to \Top$, using that $\Top$ is coregular and that the regular monomorphisms in $\Top_*$ are the embeddings (<a href="/category/Top_*?proof=regular_monomorphism">proof</a>).
 
   - property: extremal cogenerator
     proof: >-

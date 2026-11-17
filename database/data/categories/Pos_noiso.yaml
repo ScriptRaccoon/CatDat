@@ -35,10 +35,10 @@ satisfied_properties:
     proof: The ordered set $\{0 < 1\}$ is an extremal cogenerator, even for $\Pos$ (<a href="/category/Pos?proof=extremal_cogenerator">proof</a>). Now apply Lemma 10 <a href="/content/subcategories">here</a>.
 
   - property: well-powered
-    proof: This follows from the description of monomorphisms below.
+    proof: This follows since the monomorphisms are the injective order-preserving maps (<a href="/category/Pos_noiso?proof=monomorphism">proof</a>).
 
   - property: well-copowered
-    proof: This follows from the description of epimorphisms below.
+    proof: This follows since the epimorphisms are the surjective order-preserving maps (<a href="/category/Pos_noiso?proof=epimorphism">proof</a>).
 
   - property: ℵ₁-filtered
     proof: In fact, every small diagram has a cocone. Simply take the colimit in <a href="/category/Pos">$\Pos$</a> and then map it to $\{0 < 1\}$ via a constant map.

@@ -39,7 +39,7 @@ satisfied_properties:
 
   - property: all monomorphisms split
     proof: >-
-      Let $R : A \to B$ be a monomorphism. Then the map $R_* : P(A) \to P(B)$ is injective (see below). Let $S : B \to A$ be the relation consisting of all pairs $(b,a)$ such that $a$ is the only element of $A$ related to $b$, i.e. $(a,b) \in R$ and $(a',b) \notin R$ for all $a' \in A \setminus \{a\}$. We claim that $S \circ R = \id_A$.
+      Let $R : A \to B$ be a monomorphism. Then the map $R_* : P(A) \to P(B)$ is injective (<a href="/category/Rel?proof=monomorphism">proof</a>). Let $S : B \to A$ be the relation consisting of all pairs $(b,a)$ such that $a$ is the only element of $A$ related to $b$, i.e. $(a,b) \in R$ and $(a',b) \notin R$ for all $a' \in A \setminus \{a\}$. We claim that $S \circ R = \id_A$.
 
       Let $a \in A$. The injectivity of $R_*$ implies $R_*(A \setminus \{a\}) \subsetneq R_*(A)$, so there is some $b \in R_*(A) \setminus R_*(A \setminus \{a\})$. This means that $b$ is related to some element of $A$, but not to any element of $A \setminus \{a\}$. Hence, $a$ is the only element of $A$ related to $b$, i.e. $(b,a) \in S$. Since also $(a,b) \in R$, we get $(a,a) \in S \circ R$.
 

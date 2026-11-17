@@ -103,7 +103,7 @@ satisfied_properties:
 
   - property: regular subobject classifier
     proof: >-
-      Consider the pseudo-metric space $\Omega = (\{0,1\},0)$, equipped with the zero pseudo-metric. We know that the regular monomorphisms are precisely the injective isometric maps (see below), and hence are, up to isomorphism, inclusions $(Y,d_Y) \hookrightarrow (X,d_X)$, where $Y \subseteq X$ and $d_Y$ is the restriction of $d_X$. In particular, the map $\top : \{\ast\} \to \Omega$, $\ast \mapsto 1$, is a regular monomorphism. Let $(X,d_X)$ be a pseudo-metric space, $Y \subseteq X$ be a subset, and $d_Y$ be the restriction of $d_X$. The characteristic function $\chi_Y : X \to \{0,1\}$ is non-expansive since all distances in $\Omega$ are $0$, and the pullback of $\top$ along $\chi_Y$ is $(Y,d_Y)$. Indeed, the underlying set of the pullback identifies with the preimage $(\chi_Y)^*(\{1\}) = Y$, and its pseudo-metric is
+      Consider the pseudo-metric space $\Omega = (\{0,1\},0)$, equipped with the zero pseudo-metric. We know that the regular monomorphisms are precisely the injective isometric maps (<a href="/category/PMet?proof=regular_monomorphism">proof</a>), and hence are, up to isomorphism, inclusions $(Y,d_Y) \hookrightarrow (X,d_X)$, where $Y \subseteq X$ and $d_Y$ is the restriction of $d_X$. In particular, the map $\top : \{\ast\} \to \Omega$, $\ast \mapsto 1$, is a regular monomorphism. Let $(X,d_X)$ be a pseudo-metric space, $Y \subseteq X$ be a subset, and $d_Y$ be the restriction of $d_X$. The characteristic function $\chi_Y : X \to \{0,1\}$ is non-expansive since all distances in $\Omega$ are $0$, and the pullback of $\top$ along $\chi_Y$ is $(Y,d_Y)$. Indeed, the underlying set of the pullback identifies with the preimage $(\chi_Y)^*(\{1\}) = Y$, and its pseudo-metric is
       $d((x,\ast),(x',\ast)) = \sup(d_X(x,x'),0) = d_X(x,x')$,
       i.e. the restriction of $d_X$.
 
@@ -133,7 +133,7 @@ satisfied_properties:
 
       To see $(Q,d_Q)$ is in fact an extremal cogenerator, suppose we have a morphism $f : (X,d_X) \to (Y,d_Y)$ such that
       $${-} \circ f : \Hom((Y,d_Y), (Q,d_Q)) \to \Hom((X,d_X), (Q,d_Q))$$
-      is a bijection. Since $(Q,d_Q)$ is a cogenerator, it follows that $f$ is both a monomorphism and an epimorphism, i.e. $f$ is bijective (see below).
+      is a bijection. Since $(Q,d_Q)$ is a cogenerator, it follows that $f$ is both a monomorphism and an epimorphism, i.e. $f$ is injective (<a href="/category/PMet?proof=monomorphism">proof</a>) and surjective (<a href="/category/PMet?proof=epimorphism">proof</a>).
 
       It remains to show that $f$ is isometric. Let $x,x' \in X$. The map $\varphi \coloneqq d_X(x,{-}) : X \to \IR_{\geq 0} \subseteq Q$ is a morphism $(X,d_X) \to (Q,d_Q)$ by the triangle inequality. By assumption, there is a morphism $\psi : (Y,d_Y) \to (Q,d_Q)$ with $\psi \circ f = \varphi$. Since $\varphi(x) = 0$, we get
       $$\begin{align*}
@@ -146,7 +146,7 @@ satisfied_properties:
       Hence, $f$ is isometric.
 
   - property: well-copowered
-    proof: This follows since epimorphisms are surjective (see below).
+    proof: This follows since epimorphisms are surjective (<a href="/category/PMet?proof=epimorphism">proof</a>).
 
 unsatisfied_properties:
   - property: skeletal
@@ -226,7 +226,7 @@ special_morphisms:
     description: >-
       For a morphism $f : (X,d_X) \to (Y,d_Y)$ the following are equivalent: (1) $f$ is a regular epimorphism. (2) $f$ is surjective and $d_Y$ is the largest pseudo-metric on $Y$ for which $f$ is non-expansive. (3) $f$ is surjective and for all $x,x' \in X$, $d_Y(f(x),f(x'))$ is the infimum of the sums $\sum_{i=0}^{n-1} d_X(x'_i,x_{i+1})$, where $n \geq 0$ and $x_0,\dotsc,x_n,x'_0,\dotsc,x'_n \in X$ satisfy $f(x_0) = f(x)$, $f(x_i) = f(x'_i)$ for $0 \leq i \leq n$, and $f(x'_n) = f(x')$.
     proof: >-
-      Every regular epimorphism is an epimorphism, hence surjective (see above). So we may assume that $f$ is surjective. Let $p_1,p_2 : (K,d_K) \rightrightarrows (X,d_X)$ be the kernel pair of $f$, where $K = \{(a,b) \in X \times X : f(a) = f(b)\}$. The relation ${\sim}$ on $X$ defined by $a \sim b \iff f(a) = f(b)$ is already an equivalence relation, and $f$ induces a bijection $X/{\sim} \to Y$. Via this bijection, the construction of coequalizers above yields a pseudo-metric $\rho$ on $Y$ such that $f : (X,d_X) \to (Y,\rho)$ is a coequalizer of $p_1,p_2$, where $\rho(f(x),f(x'))$ is the infimum in (3). Thus, (3) means precisely that $d_Y = \rho$. Moreover, $\rho$ is the largest pseudo-metric on $Y$ for which $f$ is non-expansive: if $\delta$ is such a pseudo-metric, then $f : (X,d_X) \to (Y,\delta)$ satisfies $f \circ p_1 = f \circ p_2$, so the universal property of $f : (X,d_X) \to (Y,\rho)$ shows that $\id_Y : (Y,\rho) \to (Y,\delta)$ is non-expansive, i.e. $\delta \leq \rho$. Hence, (2) also means precisely that $d_Y = \rho$, so that (2) and (3) are equivalent.
+      Every regular epimorphism is an epimorphism, hence surjective (<a href="/category/PMet?proof=epimorphism">proof</a>). So we may assume that $f$ is surjective. Let $p_1,p_2 : (K,d_K) \rightrightarrows (X,d_X)$ be the kernel pair of $f$, where $K = \{(a,b) \in X \times X : f(a) = f(b)\}$. The relation ${\sim}$ on $X$ defined by $a \sim b \iff f(a) = f(b)$ is already an equivalence relation, and $f$ induces a bijection $X/{\sim} \to Y$. Via this bijection, the construction of coequalizers above yields a pseudo-metric $\rho$ on $Y$ such that $f : (X,d_X) \to (Y,\rho)$ is a coequalizer of $p_1,p_2$, where $\rho(f(x),f(x'))$ is the infimum in (3). Thus, (3) means precisely that $d_Y = \rho$. Moreover, $\rho$ is the largest pseudo-metric on $Y$ for which $f$ is non-expansive: if $\delta$ is such a pseudo-metric, then $f : (X,d_X) \to (Y,\delta)$ satisfies $f \circ p_1 = f \circ p_2$, so the universal property of $f : (X,d_X) \to (Y,\rho)$ shows that $\id_Y : (Y,\rho) \to (Y,\delta)$ is non-expansive, i.e. $\delta \leq \rho$. Hence, (2) also means precisely that $d_Y = \rho$, so that (2) and (3) are equivalent.
 
       (1) $\implies$ (2): Let $f$ be a coequalizer of a pair of morphisms $g,h$. Let $\delta$ be a pseudo-metric on $Y$ for which $f : (X,d_X) \to (Y,\delta)$ is non-expansive. Since this morphism also satisfies $f \circ g = f \circ h$, the universal property shows that $\id_Y : (Y,d_Y) \to (Y,\delta)$ is non-expansive, i.e. $\delta \leq d_Y$.
 

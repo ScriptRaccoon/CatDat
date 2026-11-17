@@ -41,7 +41,7 @@ unsatisfied_properties:
       and equality can only hold if $m=0$ and $n=0$, which we already excluded.
 
   - property: all epimorphisms split
-    proof: 'Let $\alpha = (\lambda,\rho) : \IN \to \IN \times \IN$ be the bijection from the <a href="/category/J2?proof=semi-strongly_connected">proof</a> that $\J_2$ is not semi-strongly connected, for which $\rho$ has no fixed point. The unique morphism $(\IN,\alpha) \to (\{\ast\},!)$ is surjective, hence an epimorphism (see below). A section would be given by an element $x \in \IN$ with $\alpha(x) = (x,x)$, which is impossible since $\rho(x) \neq x$.'
+    proof: 'Let $\alpha = (\lambda,\rho) : \IN \to \IN \times \IN$ be the bijection from the <a href="/category/J2?proof=semi-strongly_connected">proof</a> that $\J_2$ is not semi-strongly connected, for which $\rho$ has no fixed point. The unique morphism $(\IN,\alpha) \to (\{\ast\},!)$ is surjective, hence an epimorphism. A section would be given by an element $x \in \IN$ with $\alpha(x) = (x,x)$, which is impossible since $\rho(x) \neq x$.'
 
 special_objects:
   initial object:

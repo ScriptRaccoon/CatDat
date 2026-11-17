@@ -44,18 +44,18 @@ satisfied_properties:
 
   - property: extremal cogenerator
     proof: >-
-      The Hahn-Banach theorem implies that $\IC$ is a cogenerator. We claim that it is in fact an extremal cogenerator. Thus, suppose $f : X \to Y$ is a morphism such that ${-} \circ f : \Hom(Y, \IC) \to \Hom(X, \IC)$ is bijective on the underlying sets. Then for any non-zero $x \in X$, by the Hahn-Banach theorem, there exists $\varphi \in X^*$ such that $|\varphi| = 1$ and $\varphi(x) = |x|$. Since $|\varphi| = 1$, we see that $\varphi$ is a morphism $X \to \IC$ in $\Ban$; so by the assumption, there exists a morphism $\psi : Y \to \IC$ such that $\varphi = \psi \circ f$. Therefore, $|x| = |\psi(f(x))| \le |f(x)|$; and conversely, since $f$ is a morphism, $|f(x)| \le |x|$. On the other hand, if $x = 0$, then certainly $|f(x)| = |x| = 0$. This shows that $f$ is isometric and therefore a regular monomorphism (see below). On the other hand, since $\IC$ is a cogenerator and ${-} \circ f$ is injective, we see that $f$ is also an epimorphism. Hence, $f$ is an isomorphism.
+      The Hahn-Banach theorem implies that $\IC$ is a cogenerator. We claim that it is in fact an extremal cogenerator. Thus, suppose $f : X \to Y$ is a morphism such that ${-} \circ f : \Hom(Y, \IC) \to \Hom(X, \IC)$ is bijective on the underlying sets. Then for any non-zero $x \in X$, by the Hahn-Banach theorem, there exists $\varphi \in X^*$ such that $|\varphi| = 1$ and $\varphi(x) = |x|$. Since $|\varphi| = 1$, we see that $\varphi$ is a morphism $X \to \IC$ in $\Ban$; so by the assumption, there exists a morphism $\psi : Y \to \IC$ such that $\varphi = \psi \circ f$. Therefore, $|x| = |\psi(f(x))| \le |f(x)|$; and conversely, since $f$ is a morphism, $|f(x)| \le |x|$. On the other hand, if $x = 0$, then certainly $|f(x)| = |x| = 0$. This shows that $f$ is isometric and therefore a regular monomorphism (<a href="/category/Ban?proof=regular_monomorphism">proof</a>). On the other hand, since $\IC$ is a cogenerator and ${-} \circ f$ is injective, we see that $f$ is also an epimorphism. Hence, $f$ is an isomorphism.
 
   - property: pullback-stable regular epimorphisms
     proof: >-
-      We will use the classification of regular epimorphisms via open unit balls below.
+      We will use that a linear contraction is a regular epimorphism if and only if it maps the open unit ball onto the open unit ball (<a href="/category/Ban?proof=regular_epimorphism">proof</a>).
       So let $f : X \to Y$ be a regular epimorphism and let $g : T \to Y$ be any morphism. We need to show that the projection $X \times_Y T \to T$ is a regular epimorphism.
       Let $t \in T$ be an element of norm $<1$. Since $g$ is a linear contraction, $g(t)$ has norm $<1$. Since $f$ is a regular epimorphism, there is some $x \in X$ with norm $<1$ and $f(x) = g(t)$.
       Then $(x,t) \in X \times_Y T$ is a preimage of $t$ with norm $\max(|x|,|t|) < 1$.
 
   - property: pushout-stable regular monomorphisms
     proof: >-
-      We will use the classification of regular monomorphisms as isometric linear maps below.
+      We will use that the regular monomorphisms are the isometric linear maps (<a href="/category/Ban?proof=regular_monomorphism">proof</a>).
       So let $i : X \to Y$ be an isometric linear map and let $f : X \to T$ be any morphism. We need to show that the linear contraction $\iota : T \to T \sqcup_X Y$ is isometric as well. The pushout can be constructed as the quotient of the direct sum $T \oplus Y$, equipped with the $1$-norm, modulo the closure of the subspace containing all $(-f(x),i(x))$ for $x \in X$. Using that $i$ is an isometry, it is easily checked that this subspace is already closed.
       For $t \in T$ the norm of $\iota(t) = [(t,0)]$ is the infimum of the norms of $(t,0) + (-f(x),i(x)) = (t - f(x), i(x))$ for $x \in X$.
       By taking $x=0$ we see that the infimum is $\leq |t|$.
@@ -105,7 +105,7 @@ satisfied_properties:
 
       Let $j_1,j_2 : X \rightrightarrows C$ be a cocongruence in $\Ban$. Let $U \coloneqq \{x \in X : j_1(x) = j_2(x)\}$ be their equalizer, and let $\iota_1,\iota_2 : X \rightrightarrows Z$ be the cokernel pair of the inclusion $U \hookrightarrow X$. Since $j_1,j_2$ agree on $U$, there is a unique morphism $h : Z \to C$ with $h \circ \iota_1 = j_1$ and $h \circ \iota_2 = j_2$. We show that $h$ is an isomorphism, which proves that $j_1,j_2$ is effective.
 
-      Since $j_1,j_2$ are jointly epimorphic and factor through $h$, the morphism $h$ is an epimorphism, i.e. it has dense image (see below). Since an isometric linear map between Banach spaces has closed image, it suffices to prove that $h$ is isometric. For this, it suffices to show that every morphism $\psi : Z \to \IC$ factors as $\psi = \varphi \circ h$ for some morphism $\varphi : C \to \IC$. Indeed, then $|\psi(z)| = |\varphi(h(z))| \leq |h(z)|$ for all $z \in Z$, and since by the Hahn-Banach theorem $|z|$ is the supremum of all $|\psi(z)|$, we get $|z| \leq |h(z)|$. The reverse inequality holds since $h$ is a contraction.
+      Since $j_1,j_2$ are jointly epimorphic and factor through $h$, the morphism $h$ is an epimorphism, i.e. it has dense image (<a href="/category/Ban?proof=epimorphism">proof</a>). Since an isometric linear map between Banach spaces has closed image, it suffices to prove that $h$ is isometric. For this, it suffices to show that every morphism $\psi : Z \to \IC$ factors as $\psi = \varphi \circ h$ for some morphism $\varphi : C \to \IC$. Indeed, then $|\psi(z)| = |\varphi(h(z))| \leq |h(z)|$ for all $z \in Z$, and since by the Hahn-Banach theorem $|z|$ is the supremum of all $|\psi(z)|$, we get $|z| \leq |h(z)|$. The reverse inequality holds since $h$ is a contraction.
 
       By the universal property of $Z$, morphisms $Z \to \IC$ correspond to pairs of morphisms $a,b : X \rightrightarrows \IC$ with $a|_U = b|_U$, and $\varphi \circ h$ corresponds to the pair $(\varphi \circ j_1, \varphi \circ j_2)$. Let $B \coloneqq \Hom(X,\IC)$, which is the closed unit ball of the dual space $X^*$, and let
       $$E \coloneqq \{(\varphi \circ j_1, \varphi \circ j_2) : \varphi \in \Hom(C,\IC)\} \subseteq B \times B.$$
@@ -161,7 +161,7 @@ unsatisfied_properties:
     proof: By using the concrete description of products and coproducts, for the constant family $X_n = \IC$ equipped with the usual norm, the canonical morphism $\coprod_n X_n \to \prod_n X_n$ becomes the canonical inclusion map $\ell^1 \hookrightarrow \ell^\infty$. This is not an epimorphism (i.e., has no dense image) since the closure of the image is precisely $c_0$. So for example, $(1,1,\dotsc)$ is not contained in the closure of the image.
 
   - property: regular subobject classifier
-    proof: If $\Omega$ is a regular subobject classifier, then by the classification of regular monomorphisms, $\Hom(X,\Omega)$ is isomorphic to the set of closed subspaces of $X$ for any Banach space $X$. For $X = \IC$ this implies that there are exactly two vectors in $\Omega$ with norm $\leq 1$, which is absurd. (For $\Omega = 0$ there is just one, and for $\Omega \neq 0$ there are infinitely many.)
+    proof: If $\Omega$ is a regular subobject classifier, then, since the regular monomorphisms are, up to isomorphism, the inclusions of closed subspaces (<a href="/category/Ban?proof=regular_monomorphism">proof</a>), $\Hom(X,\Omega)$ is isomorphic to the set of closed subspaces of $X$ for any Banach space $X$. For $X = \IC$ this implies that there are exactly two vectors in $\Omega$ with norm $\leq 1$, which is absurd. (For $\Omega = 0$ there is just one, and for $\Omega \neq 0$ there are infinitely many.)
 
   - property: regular quotient object classifier
     proof: >-

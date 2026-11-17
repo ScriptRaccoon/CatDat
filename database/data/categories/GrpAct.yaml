@@ -36,7 +36,7 @@ satisfied_properties:
 
   - property: disjoint coproducts
     proof: >-
-      Let $(G_i,X_i)_{i \in I}$ be a family of objects and $G \coloneqq \coprod_{i \in I} G_i$. We use the description of the coproduct below. The coproduct inclusion $(G_i,X_i) \to (G, \coprod_{j \in I} G \times_{G_j} X_j)$ consists of the inclusion $G_i \to G$, which is injective, and the map $X_i \to G \times_{G_i} X_i$, $x \mapsto [1,x]$, which is injective as well: if $[1,x] = [1,x']$, there is some $g \in G_i$ with $(1,x') = (g^{-1}, g \cdot x)$, so $g = 1$ and $x = x'$. Hence, the inclusions are monomorphisms (see below). For $i \neq j$, the pullback of the two inclusions is computed component-wise. Its group is $G_i \cap G_j = 1$ inside the free product $G$, and its set is empty since the images of $X_i$ and $X_j$ lie in different summands. So the pullback is the initial object $(1,\varnothing)$.
+      Let $(G_i,X_i)_{i \in I}$ be a family of objects and $G \coloneqq \coprod_{i \in I} G_i$. We use the description of the coproduct below. The coproduct inclusion $(G_i,X_i) \to (G, \coprod_{j \in I} G \times_{G_j} X_j)$ consists of the inclusion $G_i \to G$, which is injective, and the map $X_i \to G \times_{G_i} X_i$, $x \mapsto [1,x]$, which is injective as well: if $[1,x] = [1,x']$, there is some $g \in G_i$ with $(1,x') = (g^{-1}, g \cdot x)$, so $g = 1$ and $x = x'$. Hence, the inclusions are monomorphisms. For $i \neq j$, the pullback of the two inclusions is computed component-wise. Its group is $G_i \cap G_j = 1$ inside the free product $G$, and its set is empty since the images of $X_i$ and $X_j$ lie in different summands. So the pullback is the initial object $(1,\varnothing)$.
 
   - property: mono-regular
     proof: >-
@@ -48,7 +48,7 @@ satisfied_properties:
 
       By the universal property of the semidirect product, a homomorphism $F(X) \rtimes G \to K$ corresponds to a pair of homomorphisms $\alpha : F(X) \to K$ and $\psi : G \to K$ satisfying $\alpha(g \cdot w) = \psi(g) \, \alpha(w) \, \psi(g)^{-1}$ for all $g \in G$ and $w \in F(X)$, namely its restrictions. Since both sides are homomorphisms in $w$, it suffices to require this for $w \in X$. Hence, such a homomorphism corresponds to a pair of a homomorphism $\psi : G \to K$ and a map $h : X \to K$ satisfying $h(g \cdot x) = \psi(g) \, h(x) \, \psi(g)^{-1}$, which is precisely a morphism $(\psi,h) : (G,X) \to (K,K)$. Here, $\psi$ and $h$ are the restrictions of the homomorphism to $G$ and $X$. For the identity of $F(X) \rtimes G$, these are the inclusions.
 
-      Now let $(H,Y) \hookrightarrow (G,X)$ be a monomorphism. By the classification of monomorphisms (see below), we may assume that $H \subseteq G$ is a subgroup and $Y \subseteq X$ is an $H$-invariant subset. Then $S$ maps it to the inclusion of the subgroup $F(Y) \rtimes H \subseteq F(X) \rtimes G$, which is a regular monomorphism since <a href="/category/Grp">$\Grp$</a> is mono-regular. As a right adjoint, $R$ preserves equalizers and hence regular monomorphisms. By naturality of the unit, we have a commutative square
+      Now let $(H,Y) \hookrightarrow (G,X)$ be a monomorphism. Since monomorphisms are injective in both components (<a href="/category/GrpAct?proof=monomorphism">proof</a>), we may assume that $H \subseteq G$ is a subgroup and $Y \subseteq X$ is an $H$-invariant subset. Then $S$ maps it to the inclusion of the subgroup $F(Y) \rtimes H \subseteq F(X) \rtimes G$, which is a regular monomorphism since <a href="/category/Grp">$\Grp$</a> is mono-regular. As a right adjoint, $R$ preserves equalizers and hence regular monomorphisms. By naturality of the unit, we have a commutative square
       $$\begin{CD} (H,Y) @>>> (F(Y) \rtimes H,\, F(Y) \rtimes H) \\ @VVV @VVV \\ (G,X) @>>> (F(X) \rtimes G,\, F(X) \rtimes G) \end{CD}$$
       whose right morphism is therefore a regular monomorphism. The square is a pullback: since limits are computed component-wise, this amounts to $G \cap (F(Y) \rtimes H) = H$ and $X \cap (F(Y) \rtimes H) = X \cap F(Y) = Y$ inside $F(X) \rtimes G$, which holds by construction of the semidirect product. Since regular monomorphisms are stable under pullback, the inclusion $(H,Y) \hookrightarrow (G,X)$ is a regular monomorphism.
 
@@ -68,7 +68,7 @@ satisfied_properties:
 
       <strong>Claim 3.</strong> $S$ preserves pullbacks of pairs of monomorphisms.
 
-      By the classification of monomorphisms (see below), it suffices to consider two subobjects $(G_1,X_1), (G_2,X_2) \subseteq (G,X)$, where $G_i \subseteq G$ is a subgroup and $X_i \subseteq X$ is a $G_i$-invariant subset. Since limits are computed component-wise, their pullback is $(G_1 \cap G_2, X_1 \cap X_2)$. Inside $F(X) \rtimes G$, whose underlying set is $F(X) \times G$, we have
+      Since monomorphisms are injective in both components (<a href="/category/GrpAct?proof=monomorphism">proof</a>), it suffices to consider two subobjects $(G_1,X_1), (G_2,X_2) \subseteq (G,X)$, where $G_i \subseteq G$ is a subgroup and $X_i \subseteq X$ is a $G_i$-invariant subset. Since limits are computed component-wise, their pullback is $(G_1 \cap G_2, X_1 \cap X_2)$. Inside $F(X) \rtimes G$, whose underlying set is $F(X) \times G$, we have
       $$\begin{align*}
       (F(X_1) \rtimes G_1) \cap (F(X_2) \rtimes G_2) &= (F(X_1) \cap F(X_2)) \rtimes (G_1 \cap G_2) \\
       &= F(X_1 \cap X_2) \rtimes (G_1 \cap G_2).
@@ -101,11 +101,11 @@ unsatisfied_properties:
 
   - property: regular subobject classifier
     proof: >-
-      Apply the contrapositive of Lemma 1 <a href="/content/subcategories">here</a> to the fully faithful functor $L : \Grp \to \GrpAct$, $G \mapsto (G,\varnothing)$, which is left adjoint to the forgetful functor $U : \GrpAct \to \Grp$. By the classification of monomorphisms (see below), every monomorphism into $(G,\varnothing)$ is, up to isomorphism, the image under $L$ of a subgroup inclusion $H \hookrightarrow G$, which is a regular monomorphism since <a href="/category/Grp">$\Grp$</a> is mono-regular. Here, we use that $\Grp$ does not have a regular subobject classifier.
+      Apply the contrapositive of Lemma 1 <a href="/content/subcategories">here</a> to the fully faithful functor $L : \Grp \to \GrpAct$, $G \mapsto (G,\varnothing)$, which is left adjoint to the forgetful functor $U : \GrpAct \to \Grp$. Since monomorphisms are injective in both components (<a href="/category/GrpAct?proof=monomorphism">proof</a>), every monomorphism into $(G,\varnothing)$ is, up to isomorphism, the image under $L$ of a subgroup inclusion $H \hookrightarrow G$, which is a regular monomorphism since <a href="/category/Grp">$\Grp$</a> is mono-regular. Here, we use that $\Grp$ does not have a regular subobject classifier.
 
   - property: regular quotient object classifier
     proof: >-
-      Apply the contrapositive of the dual of Lemma 1 <a href="/content/subcategories">here</a> to the fully faithful functor $I : \Set \to \GrpAct$, $Y \mapsto (1,Y)$, which is right adjoint to the orbit functor. By the classification of epimorphisms (see below), every epimorphism $(1,X) \to (H,Y)$ is surjective in both components, so that $H = 1$. Hence, every epimorphism with domain $(1,X)$ is, up to isomorphism, the image of a surjective map $X \to Y$, which is a regular epimorphism in $\Set$. Here, we use that <a href="/category/Set">$\Set$</a> does not have a regular quotient object classifier.
+      Apply the contrapositive of the dual of Lemma 1 <a href="/content/subcategories">here</a> to the fully faithful functor $I : \Set \to \GrpAct$, $Y \mapsto (1,Y)$, which is right adjoint to the orbit functor. Every epimorphism $(1,X) \to (H,Y)$ is surjective in both components (<a href="/category/GrpAct?proof=epimorphism">proof</a>), so that $H = 1$. Hence, every epimorphism with domain $(1,X)$ is, up to isomorphism, the image of a surjective map $X \to Y$, which is a regular epimorphism in $\Set$. Here, we use that <a href="/category/Set">$\Set$</a> does not have a regular quotient object classifier.
 
   - property: cofiltered-limit-stable epimorphisms
     proof: >-

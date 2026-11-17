@@ -27,10 +27,10 @@ satisfied_properties:
     proof: The <a href="https://ncatlab.org/nlab/show/free+coproduct+completion">free coproduct completion</a> of any category is infinitary extensive; for the finite case see <a href="https://doi.org/10.1016/0022-4049(93)90035-R">Carboni–Lack–Walters</a>, Proposition 2.4.
 
   - property: well-powered
-    proof: This is clear from the classification of monomorphisms as injective continuous maps.
+    proof: This is clear since the monomorphisms are the injective continuous maps (<a href="/category/Euclid_coprod?proof=monomorphism">proof</a>).
 
   - property: well-copowered
-    proof: The classification of epimorphisms below shows that every epimorphism is also an epimorphism in <a href="/category/Haus">$\Haus$</a>, so that the claim follows from the fact that $\Haus$ is well-copowered.
+    proof: Every epimorphism has dense image (<a href="/category/Euclid_coprod?proof=epimorphism">proof</a>) and is therefore also an epimorphism in <a href="/category/Haus">$\Haus$</a>, so that the claim follows from the fact that $\Haus$ is well-copowered.
 
   - property: semi-strongly connected
     proof: This property is inherited from <a href="/category/Top">$\Top$</a>.
@@ -114,7 +114,7 @@ unsatisfied_properties:
     proof: >-
       Consider the inclusion map $\{0\} \hookrightarrow \IR$. We claim that the pushout $P = \IR \sqcup_{0} \IR$ does not exist in $\Euclidsqcup$. To prove this, let $W = \IR \sqcup_{0} \IR$ be the pushout in $\Top$. Then there is a continuous map
       $$p : W \to P,$$
-      which is in fact the universal continuous map from $W$ to a space in $\Euclidsqcup$. Since the map $\IR \sqcup \IR \to P$ is an epimorphism in $\Euclidsqcup$, it has dense image (by the classification below). Therefore, $p : W \to P$ also has dense image. Since $W$ is connected, it follows that $P$ is connected as well. Thus, $P \cong \IR^n$ for some $n \in \IN$.
+      which is in fact the universal continuous map from $W$ to a space in $\Euclidsqcup$. Since the map $\IR \sqcup \IR \to P$ is an epimorphism in $\Euclidsqcup$, it has dense image (<a href="/category/Euclid_coprod?proof=epimorphism">proof</a>). Therefore, $p : W \to P$ also has dense image. Since $W$ is connected, it follows that $P$ is connected as well. Thus, $P \cong \IR^n$ for some $n \in \IN$.
 
       We claim that $p$ is an embedding of topological spaces. To this end, consider the standard embedding $i : W \to \IR^2$ that maps $x \in \IR$ in the first copy to $(x,0)$ and $y \in \IR$ in the second copy to $(0,y)$. Since $\IR^2$ is Euclidean, there is a continuous map $j : P \to \IR^2$ with $j \circ p = i$. Since $i$ is an embedding, we conclude that $p$ is an embedding.
 

@@ -33,10 +33,10 @@ satisfied_properties:
     proof: The object $[0]$ is terminal since it is already terminal in $\Delta$ (<a href="/category/Delta?proof=terminal_object">proof</a>).
 
   - property: all epimorphisms split
-    proof: The only non-identity epimorphism is $p$ (see below), and $p i = \id_{[0]}$.
+    proof: The only non-identity epimorphism is $p$ (<a href="/category/walking_coreflexive_pair?proof=epimorphism">proof</a>), and $p i = \id_{[0]}$.
 
   - property: all monomorphisms split
-    proof: The only non-identity monomorphisms are $i$ and $j$ (see below), and $p i = p j = \id_{[0]}$.
+    proof: The only non-identity monomorphisms are $i$ and $j$ (<a href="/category/walking_coreflexive_pair?proof=monomorphism">proof</a>), and $p i = p j = \id_{[0]}$.
 
   - property: extremal generator
     proof: The object $[1]$ is an extremal generator even in $\Delta$ (<a href="/category/Delta?proof=extremal_generator">proof</a>); now use Lemma 10 <a href="/content/subcategories">here</a>. A direct proof is also possible.

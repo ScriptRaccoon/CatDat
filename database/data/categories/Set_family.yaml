@@ -28,7 +28,7 @@ satisfied_properties:
     check_redundancy: false
 
   - property: all epimorphisms split
-    proof: Every epimorphism is a family of surjective maps (see below) and therefore has a section by the axiom of choice.
+    proof: Every epimorphism is a family of surjective maps (<a href="/category/Set_family?proof=epimorphism">proof</a>) and therefore has a section by the axiom of choice.
 
   - property: exact filtered colimits
     proof: This follows immediately from the corresponding property of <a href="/category/Set">$\Set$</a>.
@@ -37,7 +37,7 @@ satisfied_properties:
     proof: This follows immediately from the fact that <a href="/category/Set">$\Set$</a> is cartesian closed. Exponentials are constructed pointwise.
 
   - property: subobject classifier
-    proof: Since monomorphisms in $\Set^I$ are families of monomorphisms in $\Set$ (see below) and the set $\{0,1\}$ is a subobject classifier for <a href="/category/Set">$\Set$</a>, the family $(\{0,1\})_{i \in I}$ is a subobject classifier for $\Set^I$.
+    proof: Since monomorphisms in $\Set^I$ are families of monomorphisms in $\Set$ (<a href="/category/Set_family?proof=monomorphism">proof</a>) and the set $\{0,1\}$ is a subobject classifier for <a href="/category/Set">$\Set$</a>, the family $(\{0,1\})_{i \in I}$ is a subobject classifier for $\Set^I$.
 
   - property: cogenerator
     proof: The set $\{0,1\}$ is a cogenerator of $\Set$, which is weakly terminal. Hence, <a href="/content/cogenerators_in_product_categories">this lemma</a> implies that the family $(\{0,1\})_{i \in I}$ is a cogenerator of $\Set^I$.

@@ -36,7 +36,7 @@ satisfied_properties:
     proof: The monoid $C$ is isomorphic to its dual $C^{\op}$ by mapping $p \mapsto q$, $q \mapsto p$.
 
   - property: all monomorphisms split
-    proof: Every monomorphism is of the form $q^n$ (see below), which has the retraction $p^n$ since $pq = 1$.
+    proof: Every monomorphism is of the form $q^n$ (<a href="/category/BC?proof=monomorphism">proof</a>), which has the retraction $p^n$ since $pq = 1$.
 
   - property: Cauchy complete
     proof: We need to show that every idempotent of $C$ splits. Assume that $e = q^n p^m$ is idempotent. Thus, $e^2 = q^n p^m q^n p^m$. If $m \geq n$, then $p^m q^n = p^{m-n}$, so that $e^2 = q^n p^{2m-n}$. Thus, $m=2m-n$, i.e. $m=n$. If $m \leq n$, then $p^m q^n = q^{n-m}$, so that $e^2 = q^{2n-m} p^m$. Thus, $n=2n-m$, and again we get $m=n$. Every idempotent therefore has the form $e = q^n p^n$ for some $n \geq 0$. It splits because $p^n q^n = 1$.
@@ -47,13 +47,13 @@ satisfied_properties:
 
   - property: reflexive coequalizers
     proof: >-
-      It suffices to prove that every reflexive pair $f,g$ satisfies $f=g$. Algebraically, this means that left inverses are uniquely determined in $C$. So assume that $xy=1$ for some $x,y \in C$. In particular, $x$ is an epimorphism and $y$ is a monomorphism. By the classification of these morphisms below, we have $x=p^m$ for some $m \geq 0$ and $y=q^n$ for some $n \geq 0$. If $n > m$, then
+      It suffices to prove that every reflexive pair $f,g$ satisfies $f=g$. Algebraically, this means that left inverses are uniquely determined in $C$. So assume that $xy=1$ for some $x,y \in C$. In particular, $x$ is an epimorphism and $y$ is a monomorphism. Since every epimorphism is of the form $p^m$ (<a href="/category/BC?proof=epimorphism">proof</a>) and every monomorphism is of the form $q^n$ (<a href="/category/BC?proof=monomorphism">proof</a>), we have $x=p^m$ for some $m \geq 0$ and $y=q^n$ for some $n \geq 0$. If $n > m$, then
       $$1 = xy = p^m q^n = q^{n-m}$$
       is a contradiction. Likewise, if $n < m$, we obtain the contradiction $1 = p^{m-n}$. Therefore, $m=n$. Thus, $x$ is uniquely determined by $y$.
 
   - property: ℵ₁-accessible
     proof: >-
-      We apply Theorem 4 <a href="/content/deloopings-aleph1-accessible">here</a>. We already know that $C$ is countable and that $BC$ is Cauchy complete. It remains to show that $C$ satisfies the ascending chain condition on principal right ideals. Every principal right ideal of $C$ has the form $q^n p^m C = q^n C$, since $p^m q^m = 1$ implies $p^m C = C$. If $q^n C \subseteq q^{n'} C$, then $n \geq n'$. Otherwise, write $q^n = q^{n'} x$ with $x \in C$. Since $q^n$ is a monomorphism, we get $1 = q^{n'-n} x$, so that $q^{n'-n}$ is a split epimorphism, which contradicts the classification of epimorphisms below. Therefore, every ascending chain $q^{n_0} C \subseteq q^{n_1} C \subseteq \cdots$ satisfies $n_0 \geq n_1 \geq \cdots$ and hence becomes stationary.
+      We apply Theorem 4 <a href="/content/deloopings-aleph1-accessible">here</a>. We already know that $C$ is countable and that $BC$ is Cauchy complete. It remains to show that $C$ satisfies the ascending chain condition on principal right ideals. Every principal right ideal of $C$ has the form $q^n p^m C = q^n C$, since $p^m q^m = 1$ implies $p^m C = C$. If $q^n C \subseteq q^{n'} C$, then $n \geq n'$. Otherwise, write $q^n = q^{n'} x$ with $x \in C$. Since $q^n$ is a monomorphism, we get $1 = q^{n'-n} x$, so that $q^{n'-n}$ is a split epimorphism, which contradicts the fact that every epimorphism is of the form $p^m$ (<a href="/category/BC?proof=epimorphism">proof</a>). Therefore, every ascending chain $q^{n_0} C \subseteq q^{n_1} C \subseteq \cdots$ satisfies $n_0 \geq n_1 \geq \cdots$ and hence becomes stationary.
 
 unsatisfied_properties:
   - property: retract-trivial
@@ -66,7 +66,7 @@ unsatisfied_properties:
     proof: >-
       We show that $q$ does not have a cokernel pair, i.e. that there is no universal pair of elements $(x,y) \in C^2$ with $xq=yq$; the universal property means that any other such pair $(u,v)$ factors as $u=tx$, $v=ty$ for a unique $t \in C$.
 
-      Assume that $(x,y)$ is a universal pair. Since $(1,1)$ is a valid pair, there is a unique $t \in C$ with $1=tx$ and $1=ty$. In particular, $x$ and $y$ are monomorphisms. By their classification below, we get $x=q^n$, $y=q^k$ for some $n,k \geq 0$. Since $xq=yq$, we actually have $k=n$, i.e. $x=y$.
+      Assume that $(x,y)$ is a universal pair. Since $(1,1)$ is a valid pair, there is a unique $t \in C$ with $1=tx$ and $1=ty$. In particular, $x$ and $y$ are monomorphisms, so that $x=q^n$, $y=q^k$ for some $n,k \geq 0$ (<a href="/category/BC?proof=monomorphism">proof</a>). Since $xq=yq$, we actually have $k=n$, i.e. $x=y$.
 
       Since $(qp)q=q$, also $(qp,1)$ is a valid pair. Hence, there is a unique $t \in C$ with $qp=tx$ and $1=ty$. Since $x=y$, we obtain the contradiction $qp=1$.
 

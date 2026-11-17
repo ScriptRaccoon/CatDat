@@ -60,7 +60,7 @@ satisfied_properties:
       That $\alpha$ is relation-preserving means that if $a \in A_x$ relates to $a' \in A_{x'}$, then the map $\alpha(a) : Y_x \to Z_x$ relates to the map $\alpha(a') : Y_{x'} \to Z_{x'}$, i.e., that $x$ relates to $x'$ (which is automatic since $a$ relates to $a'$ and $A \to X$ is relation-preserving) and that if $y \in Y_x$ relates to $y' \in Y_{x'}$, then $\alpha(a)(y)$ relates to $\alpha(a')(y')$. In other words, if $(a,y)$ relates to $(a',y')$ in the pullback $A \times_X Y$, then $\beta(a,y)$ relates to $\beta(a',y')$. This is precisely the statement that $\beta$ is relation-preserving.
 
   - property: regular subobject classifier
-    proof: By the description of regular monomorphisms below, the poset of regular subobjects of $(X,R)$ is isomorphic to the poset of subsets of $X$. The subsets of $X$ correspond to morphisms from $(X,R)$ into the object $\Omega \coloneqq (\{0,1\}, \{0,1\} \times \{0,1\})$, which shows that $\Omega$ is a regular subobject classifier.
+    proof: Since the regular monomorphisms are the injective maps that reflect and preserve the relation (<a href="/category/Bin?proof=regular_monomorphism">proof</a>), the poset of regular subobjects of $(X,R)$ is isomorphic to the poset of subsets of $X$. The subsets of $X$ correspond to morphisms from $(X,R)$ into the object $\Omega \coloneqq (\{0,1\}, \{0,1\} \times \{0,1\})$, which shows that $\Omega$ is a regular subobject classifier.
 
   - property: generator
     proof: The object $(\{\ast\},\varnothing)$ is a generator because it represents the forgetful functor $\Bin \to \Set$, $(X,R) \mapsto X$, which is faithful.
@@ -73,7 +73,7 @@ satisfied_properties:
 
       To show that $(Q,R_Q)$ is extremal, let $f : (X,R) \to (Y,S)$ be a morphism such that
       $$f^* : \Hom((Y,S),(Q,R_Q)) \to \Hom((X,R),(Q,R_Q))$$
-      is bijective. Since $(Q,R_Q)$ is a cogenerator, it follows that $f$ is both a monomorphism and an epimorphism. By the classification of monomorphisms and epimorphisms below, this means that $f : X \to Y$ is bijective. It remains to show that $f$ is relation-reflecting.
+      is bijective. Since $(Q,R_Q)$ is a cogenerator, it follows that $f$ is both a monomorphism and an epimorphism. Since monomorphisms are injective (<a href="/category/Bin?proof=monomorphism">proof</a>) and epimorphisms are surjective (<a href="/category/Bin?proof=epimorphism">proof</a>), this means that $f : X \to Y$ is bijective. It remains to show that $f$ is relation-reflecting.
 
       Assume for contradiction that $x,x' \in X$ satisfy $(f(x),f(x')) \in S$, but $(x,x') \notin R$. There are two cases to consider.
 

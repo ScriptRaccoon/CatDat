@@ -26,7 +26,7 @@ satisfied_properties:
     proof: From set theory it is known that for all sets $X,Y$ there is an injective map $X \to Y$ or an injective map $Y \to X$, and injective maps are finite-to-one.
 
   - property: all epimorphisms split
-    proof: Every epimorphism is a surjective map with finite fibers (see below). By the axiom of choice, it has a section, which is injective and therefore has finite fibers.
+    proof: Every epimorphism is a surjective map with finite fibers (<a href="/category/Set_ff?proof=epimorphism">proof</a>). By the axiom of choice, it has a section, which is injective and therefore has finite fibers.
 
   - property: equalizers
     proof: 'Equalizers can be constructed as in <a href="/category/Set">$\Set$</a> because of the following trivial observation: if $f : X \to Y$ is a finite-to-one map and $E \subseteq Y$ is a subset with $f(X) \subseteq E$, then the induced map $f^E : X \to E$ is also finite-to-one.'

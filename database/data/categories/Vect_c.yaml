@@ -25,8 +25,11 @@ satisfied_properties:
   - property: countable coproducts
     proof: This follows from the fact that a countable union of countable sets is countable.
 
-  - property: split abelian
-    proof: The category is a full subcategory of <a href="/category/Vect">$\Vect_K$</a> that is closed under finite direct sums, kernels, and cokernels. Hence, it is abelian since $\Vect_K$ is. Every epimorphism is a surjective linear map (see below), which splits since $\Vect_K$ has all epimorphisms split.
+  - property: abelian
+    proof: The category is a full subcategory of <a href="/category/Vect">$\Vect_K$</a> that is closed under finite direct sums, kernels, and cokernels. Hence, it is abelian since $\Vect_K$ is.
+
+  - property: all epimorphisms split
+    proof: Every epimorphism is a surjective linear map (<a href="/category/Vect_c?proof=epimorphism">proof</a>), which splits since $\Vect_K$ has all epimorphisms split.
 
   - property: generator
     proof: We know that $K$ is a generator even in <a href="/category/Vect">$\Vect_K$</a>.
@@ -76,4 +79,4 @@ special_morphisms:
     proof: The non-trivial direction follows since the forgetful functor to $\Set$ is representable (by $K$).
   epimorphism:
     description: surjective linear maps
-    proof: By construction of the finite colimits, the inclusion functor to $\Vect_K$ preserves finite colimits. Hence, it preserves epimorphisms. Since it is faithful, it also reflects epimorphisms. Therefore, the description of epimorphisms in $\Vect_K$ carries over to this subcategory.
+    proof: By construction of the finite colimits, the inclusion functor to $\Vect_K$ preserves finite colimits. Hence, it preserves epimorphisms. Since it is faithful, it also reflects epimorphisms. Therefore, the epimorphisms are the surjective linear maps, as in $\Vect_K$ (<a href="/category/Vect?proof=epimorphism" data-allow-deduced>proof</a>).

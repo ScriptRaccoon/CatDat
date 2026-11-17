@@ -61,7 +61,7 @@ satisfied_properties:
 
   - property: pushout-stable regular monomorphisms
     proof: >-
-      We already know that pushouts exist. Let $i : (A,d_A) \to (X,d_X)$ be a regular monomorphism and $f : (A,d_A) \to (Z,d_Z)$ be a morphism. Consider their pushout $(P,d_P)$ with the morphisms $j : (Z,d_Z) \to (P,d_P)$ and $k : (X,d_X) \to (P,d_P)$. By the classification of regular monomorphisms (see below), we may assume that $A \subseteq X$ is a closed subset and that $d_A$ is the restriction of $d_X$, and we need to show that $j$ is an isometric embedding with closed image. We will use the extended metric space $E = ([0,\infty],d_E)$ from the classification of regular monomorphisms. Instead of computing $d_P$, we will construct morphisms $(P,d_P) \to E$ via the universal property of the pushout.
+      We already know that pushouts exist. Let $i : (A,d_A) \to (X,d_X)$ be a regular monomorphism and $f : (A,d_A) \to (Z,d_Z)$ be a morphism. Consider their pushout $(P,d_P)$ with the morphisms $j : (Z,d_Z) \to (P,d_P)$ and $k : (X,d_X) \to (P,d_P)$. Since the regular monomorphisms are the isometric embeddings with closed image (<a href="/category/Met_oo?proof=regular_monomorphism">proof</a>), we may assume that $A \subseteq X$ is a closed subset and that $d_A$ is the restriction of $d_X$, and we need to show that $j$ is an isometric embedding with closed image. We will use the extended metric space $E = ([0,\infty],d_E)$ from the <a href="/category/Met_oo?proof=regular_monomorphism">proof</a> of the classification of regular monomorphisms. Instead of computing $d_P$, we will construct morphisms $(P,d_P) \to E$ via the universal property of the pushout.
 
       First, $j$ is isometric: Let $z_0, z \in Z$. Consider the morphism $d_Z(z_0,-) : (Z,d_Z) \to E$ and the map $h : X \to [0,\infty]$ defined by
       $$\textstyle h(x) \coloneqq \inf_{a \in A} \bigl(d_Z(z_0,f(a)) + d_X(a,x)\bigr).$$
@@ -98,7 +98,7 @@ unsatisfied_properties:
     proof: The same <a href="/category/Met?proof=effective_cocongruences">counterexample</a> as for $\Met$ works here. The difference in this case is that a binary copower of $((0,1),d)$ does exist in $\Met_\infty$. However, its metric assigns the distance $\infty$ to points in different summands, whereas $d$ takes only finite values on $C = (-1,0) \cup (0,1)$.
 
   - property: regular subobject classifier
-    proof: The same <a href="/category/Met_c?proof=regular_subobject_classifier">proof</a> as for $\Met_\c$ works, since non-expansive maps are continuous and, by the classification of regular monomorphisms (see below), the regular subobjects of an extended metric space $(X,d_X)$ correspond to the closed subsets of $X$.
+    proof: The same <a href="/category/Met_c?proof=regular_subobject_classifier">proof</a> as for $\Met_\c$ works, since non-expansive maps are continuous and, since the regular monomorphisms are the isometric embeddings with closed image (<a href="/category/Met_oo?proof=regular_monomorphism">proof</a>), the regular subobjects of an extended metric space $(X,d_X)$ correspond to the closed subsets of $X$.
 
 special_objects:
   initial object:

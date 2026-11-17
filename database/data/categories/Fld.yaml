@@ -27,7 +27,7 @@ satisfied_properties:
     proof: It is well-known that every field homomorphism is injective and hence a monomorphism.
 
   - property: well-copowered
-    proof: Epimorphisms are the purely inseparable field extensions (see below). If $K \to L$ is purely inseparable, then for every $x \in L$ there is some $n \in \IN$ such that $x^n \in K$. An element of $K$ has at most $n$ $n$th roots. Hence, we can bound the cardinality of $L$.
+    proof: Epimorphisms are the purely inseparable field extensions (<a href="/category/Fld?proof=epimorphism">proof</a>). If $K \to L$ is purely inseparable, then for every $x \in L$ there is some $n \in \IN$ such that $x^n \in K$. An element of $K$ has at most $n$ $n$th roots. Hence, we can bound the cardinality of $L$.
 
   - property: multi-algebraic
     proof: An FPC-sketch that models fields is presented in <a href="http://www.tac.mta.ca/tac/volumes/8/n3/8-03abs.html">Adámek–Rosický</a>, Example 4.3(1).
@@ -40,7 +40,7 @@ unsatisfied_properties:
     proof: A field of characteristic $0$ cannot be connected to a field of characteristic $p > 0$. In fact, the connected components of $\Fld$ are the subcategories $\Fld_p$ of fields of characteristic $p$, where $p$ is a prime or $0$.
 
   - property: balanced
-    proof: Every non-trivial purely inseparable field extension, such as $\IF_p(X^p) \to \IF_p(X)$, provides a counterexample by the descriptions of special morphisms below.
+    proof: 'Every non-trivial purely inseparable field extension, such as $\IF_p(X^p) \to \IF_p(X)$, provides a counterexample: every morphism is a monomorphism (<a href="/category/Fld?proof=monomorphism" data-allow-deduced>proof</a>), every purely inseparable field extension is an epimorphism (<a href="/category/Fld?proof=epimorphism">proof</a>), and the isomorphisms are the bijective field homomorphisms (<a href="/category/Fld?proof=isomorphism">proof</a>).'
 
   - property: core-thin
     proof: If this category were core-thin, Galois theory would not exist. Specifically, the conjugation $\IC \to \IC$, $z \mapsto \overline{z}$ is a non-trivial automorphism.

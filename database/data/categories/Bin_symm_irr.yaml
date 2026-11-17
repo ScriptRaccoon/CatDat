@@ -70,7 +70,7 @@ satisfied_properties:
     proof: The object $(\{\ast\},\varnothing)$ is a generator because it represents the forgetful functor $\Bin_{\symm,\irr} \to \Set$, $(X,R) \mapsto X$, which is faithful.
 
   - property: well-copowered
-    proof: This follows easily from the description of epimorphisms below.
+    proof: This follows easily since the epimorphisms are the surjective relation-preserving maps (<a href="/category/Bin_symm_irr?proof=epimorphism">proof</a>).
 
   - property: effective cocongruences
     proof: >-

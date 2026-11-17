@@ -36,7 +36,7 @@ satisfied_properties:
     proof: See Prop. 4.2 at the <a href="https://ncatlab.org/nlab/show/regular+monomorphism#Examples">nLab</a>. The proof also works for finite groups.
 
   - property: conormal
-    proof: Since epimorphisms are surjective (see below), this is the first isomorphism theorem for finite groups.
+    proof: Since epimorphisms are surjective (<a href="/category/FinGrp?proof=epimorphism">proof</a>), this is the first isomorphism theorem for finite groups.
 
   - property: Malcev
     proof: A direct argument is possible, but this can also be derived from the observation that $\FinGrp$ is the category of group objects in $(\FinSet,\times)$ and <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories">Borceux–Bourn</a>, Example 2.2.16.
@@ -48,7 +48,7 @@ satisfied_properties:
     proof: 'A proof can be found in <a href="https://mathoverflow.net/questions/511516">MO/511516</a>. It even shows that every cocongruence in $\FinGrp$ is trivial. In short, the proof goes like this: We know that <a href="/category/Grp">$\Grp$</a> has effective cocongruences. Using the fact that amalgamated sums of finite groups are residually finite, one can show that every cocongruence in $\FinGrp$ is also a cocongruence in $\Grp$.'
 
   - property: regular
-    proof: This follows from Lemma 7 <a href="/content/subcategories">here</a> applied to the inclusion functor $\FinGrp \hookrightarrow \Grp$ into the regular category $\Grp$ and the description of regular epimorphisms below.
+    proof: This follows from Lemma 7 <a href="/content/subcategories">here</a> applied to the inclusion functor $\FinGrp \hookrightarrow \Grp$ into the regular category $\Grp$ and the fact that the regular epimorphisms in $\FinGrp$ are the epimorphisms (<a href="/category/FinGrp?proof=regular_epimorphism" data-allow-deduced>proof</a>), i.e. the surjective homomorphisms (<a href="/category/FinGrp?proof=epimorphism">proof</a>).
 
 unsatisfied_properties:
   - property: small
@@ -61,10 +61,10 @@ unsatisfied_properties:
     proof: The trivial groups with underlying sets $\{0\}$ and $\{1\}$ are zero objects, hence isomorphic, but not equal.
 
   - property: all epimorphisms split
-    proof: Apply the contrapositive of Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\FinAb \hookrightarrow \FinGrp$, which preserves epimorphisms since these are surjective in both categories (see below), and use that <a href="/category/FinAb">$\FinAb$</a> does not have all epimorphisms split.
+    proof: Apply the contrapositive of Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\FinAb \hookrightarrow \FinGrp$, which preserves epimorphisms since these are surjective in both categories (<a href="/category/FinAb?proof=epimorphism">proof</a> for $\FinAb$ and <a href="/category/FinGrp?proof=epimorphism">proof</a> for $\FinGrp$), and use that <a href="/category/FinAb">$\FinAb$</a> does not have all epimorphisms split.
 
   - property: all monomorphisms split
-    proof: Apply the contrapositive of the dual of Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\FinAb \hookrightarrow \FinGrp$, which preserves monomorphisms since these are injective in both categories (see below), and use that <a href="/category/FinAb">$\FinAb$</a> does not have all monomorphisms split.
+    proof: Apply the contrapositive of the dual of Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\FinAb \hookrightarrow \FinGrp$, which preserves monomorphisms since these are injective in both categories (<a href="/category/FinAb?proof=monomorphism">proof</a> for $\FinAb$ and <a href="/category/FinGrp?proof=monomorphism">proof</a> for $\FinGrp$), and use that <a href="/category/FinAb">$\FinAb$</a> does not have all monomorphisms split.
 
   - property: normal
     proof: Every non-normal subgroup of a finite group (such as $C_2 \hookrightarrow S_3$) provides a counterexample.

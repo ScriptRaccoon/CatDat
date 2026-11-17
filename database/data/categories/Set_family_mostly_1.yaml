@@ -21,9 +21,6 @@ satisfied_properties:
   - property: locally essentially small
     proof: For two families $X$ and $Y$, the collection $\Hom(X,Y) = \prod_{i \in I} \Hom(X_i,Y_i)$ is isomorphic to $\prod_{i \in S(Y)} \Hom(X_i,Y_i)$, which is essentially small since $S(Y)$ and each $\Hom(X_i,Y_i)$ are essentially small.
 
-  - property: all epimorphisms split
-    proof: Every epimorphism is a family of surjective maps (see below) and therefore has a section by the axiom of choice.
-
   - property: complete
     proof: 'Since <a href="/category/Set">$\Set$</a> is complete, the product category $\Set^I$ is complete with pointwise limits. (The size of the index collection does not matter.) Thus, it only remains to check that $\Set^{(I)}_1$ is closed under limits, which are small by convention. Let $D : \J \to \Set^{(I)}_1$ be a small diagram and let $L$ be its limit in $\Set^I$. Thus, $L_i = \lim_{j \in \J} D(j)_i$. Consider the collection $\bigcup_{j \in \J} S(D(j))$, which is essentially small. For any index $i$ outside this collection, $L_i$ is a limit of singletons and hence a singleton. Thus, $S(L) \subseteq \bigcup_{j \in \J} S(D(j))$, and hence $S(L)$ is essentially small.'
 
@@ -40,11 +37,14 @@ satisfied_properties:
   - property: connected colimits
     proof: 'Since <a href="/category/Set">$\Set$</a> is cocomplete, the product category $\Set^I$ is also cocomplete with pointwise colimits. It suffices to prove that $\Set^{(I)}_1$ is closed under connected colimits, which are small by convention. Let $D : \J \to \Set^{(I)}_1$ be a small connected diagram and let $C$ be its colimit in $\Set^I$. Thus, $C_i = \colim_{j \in \J} D(j)_i$. Consider the collection $\bigcup_{j \in \J} S(D(j))$, which is essentially small. For any index $i$ outside this collection, $C_i$ is a colimit of singletons indexed by the connected category $\J$ and hence a singleton. Thus, $S(C) \subseteq \bigcup_{j \in \J} S(D(j))$, and hence $S(C)$ is essentially small.'
 
+  - property: all epimorphisms split
+    proof: Every epimorphism is a family of surjective maps (<a href="/category/Set_family_mostly_1?proof=epimorphism">proof</a>) and therefore has a section by the axiom of choice.
+
   - property: exact filtered colimits
     proof: We already know that the category has connected, hence filtered, colimits, and that it has finite limits. These (co)limits are defined pointwise. Hence, the claim follows from the corresponding property of <a href="/category/Set">$\Set$</a>.
 
   - property: mono-regular
-    proof: We claim that every monomorphism $X \to Y$ is the equalizer of its cokernel pair $Y \rightrightarrows Y \sqcup_X Y$. This is because every component $X_i \to Y_i$ is injective (see the classification of monomorphisms below), the statement holds in <a href="/category/Set">$\Set$</a>, and equalizers and pushouts are constructed pointwise.
+    proof: We claim that every monomorphism $X \to Y$ is the equalizer of its cokernel pair $Y \rightrightarrows Y \sqcup_X Y$. This is because every component $X_i \to Y_i$ is injective (<a href="/category/Set_family_mostly_1?proof=monomorphism">proof</a>), the statement holds in <a href="/category/Set">$\Set$</a>, and equalizers and pushouts are constructed pointwise.
 
   - property: pushout-stable regular monomorphisms
     proof: 'Apply Lemma 14 <a href="/content/subcategories">here</a> to the inclusion $\Set^{(I)}_1 \to \Set^I$, which preserves pushouts and regular monomorphisms by their pointwise descriptions. Here, we use that <a href="/category/Set_family">$\Set^I$</a> has pushout-stable regular monomorphisms.'
@@ -80,7 +80,7 @@ unsatisfied_properties:
     proof: 'Take some index $i \in I$ and consider the embedding $\Set \to \Set^{(I)}_1$, $T \mapsto \widetilde{T}$, defined by $\widetilde{T}_i = T$ and $\widetilde{T}_j = \{\ast\}$ for indices $j \neq i$. It is fully faithful, and it preserves limits since it is right adjoint to $\ev_i$ (<a href="/category/Set_family_mostly_1?proof=binary_copowers">proof</a>). Hence, we may apply the contrapositive of Lemma 13 <a href="/content/subcategories">here</a>, using that <a href="/category/Set">$\Set$</a> is not Malcev.'
 
   - property: disjoint finite products
-    proof: Take some index $i \in I$ and consider the embedding $\Set \to \Set^{(I)}_1$, $T \mapsto \widetilde{T}$, defined by $\widetilde{T}_i = T$ and $\widetilde{T}_j = \{\ast\}$ for indices $j \neq i$. This embedding preserves products (in fact, it is right adjoint to $\ev_i$, see the <a href="/category/Set_family_mostly_1?proof=binary_copowers">proof</a> above). Take a non-empty set $T$. The projection $T \times \varnothing \to T$ is not surjective. It follows that the projection $\widetilde{T} \times \widetilde{\varnothing} \to \widetilde{T}$ is not an epimorphism, using the description of epimorphisms below.
+    proof: Take some index $i \in I$ and consider the embedding $\Set \to \Set^{(I)}_1$, $T \mapsto \widetilde{T}$, defined by $\widetilde{T}_i = T$ and $\widetilde{T}_j = \{\ast\}$ for indices $j \neq i$. This embedding preserves products (in fact, it is right adjoint to $\ev_i$, see the <a href="/category/Set_family_mostly_1?proof=binary_copowers">proof</a> above). Take a non-empty set $T$. The projection $T \times \varnothing \to T$ is not surjective. It follows that the projection $\widetilde{T} \times \widetilde{\varnothing} \to \widetilde{T}$ is not an epimorphism, since the epimorphisms are the families of surjective maps (<a href="/category/Set_family_mostly_1?proof=epimorphism">proof</a>).
 
   - property: well-powered
     proof: Let $T$ be the terminal object, given by $T_i = \{\ast\}$ for all $i \in I$. The collection $\Sub(T)$ is isomorphic to the collection of essentially small subcollections of $I$. In fact, if $J \subseteq I$ is an essentially small subcollection, we define $X \subseteq T$ by $X_i = \varnothing$ for $i \in J$ and $X_i = \{\ast\}$ for $i \notin J$. Every subobject of $T$ has this form. Since for every $i \in I$ the collection $\{i\} \subseteq I$ is essentially small, we conclude that $\Sub(T)$ is not essentially small.
