@@ -21,17 +21,17 @@ related:
 
 satisfied_properties:
   - property: thin
-    proof: This property is inherited from <a href="/category/On">$\On$</a>.
+    proof: This property is inherited from $\On$, which is thin (<a href="/category/On?proof=thin" data-allow-deduced>proof</a>).
     check_redundancy: false
 
   - property: small
     proof: The objects form the set $\omega_1$, and the morphisms form a subset of $\omega_1 \times \omega_1$.
 
   - property: semi-strongly connected
-    proof: This property is inherited from <a href="/category/On">$\On$</a>.
+    proof: This property is inherited from $\On$, which is semi-strongly connected (<a href="/category/On?proof=semi-strongly_connected" data-allow-deduced>proof</a>).
 
   - property: direct
-    proof: This property is inherited from <a href="/category/On">$\On$</a>.
+    proof: This property is inherited from $\On$, which is direct (<a href="/category/On?proof=direct" data-allow-deduced>proof</a>).
 
   - property: countable coproducts
     proof: The supremum of a countable set of countable ordinals is a countable union of countable sets and hence countable.

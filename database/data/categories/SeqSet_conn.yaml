@@ -22,33 +22,33 @@ comments:
 
 satisfied_properties:
   - property: locally small
-    proof: It is a full subcategory of the <a href="/category/SeqSet">category of sequences of sets</a>, which is locally small.
+    proof: It is a full subcategory of the category $[(\IN,\leq),\Set]$ of sequences of sets, which is locally small (<a href="/category/SeqSet?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: semi-strongly connected
-    proof: It is a full subcategory of the <a href="/category/SeqSet">category of sequences of sets</a>, which is semi-strongly connected.
+    proof: It is a full subcategory of the category $[(\IN,\leq),\Set]$ of sequences of sets, which is semi-strongly connected (<a href="/category/SeqSet?proof=semi-strongly_connected" data-allow-deduced>proof</a>).
 
   - property: finitely complete
-    proof: 'The <a href="/category/SeqSet">category of sequences of sets</a> has (finite) limits, defined pointwise. A sequence of sets $X$ is connected if and only if the unique maps $! : X_n \to \{\ast\}$ induce an isomorphism on colimits. Since filtered colimits commute with finite limits in <a href="/category/Set">$\Set$</a>, a finite limit of connected sequences is again connected.'
+    proof: 'The category $[(\IN,\leq),\Set]$ of sequences of sets has (finite) limits, defined pointwise (<a href="/category/SeqSet?proof=complete" data-allow-deduced>proof</a>). A sequence of sets $X$ is connected if and only if the unique maps $! : X_n \to \{\ast\}$ induce an isomorphism on colimits. Since filtered colimits commute with finite limits in $\Set$ (<a href="/category/Set?proof=exact_filtered_colimits" data-allow-deduced>proof</a>), a finite limit of connected sequences is again connected.'
     check_redundancy: false
 
   - property: connected colimits
-    proof: 'The <a href="/category/SeqSet">category of sequences of sets</a> has (connected) colimits, defined pointwise. A sequence of sets $X$ is connected if and only if the unique maps $! : X_n \to \{\ast\}$ induce an isomorphism on colimits. Since colimits commute with colimits and a connected colimit of singleton sets is a singleton set, a connected colimit of connected sequences is again connected.'
+    proof: 'The category $[(\IN,\leq),\Set]$ of sequences of sets has (connected) colimits, defined pointwise (<a href="/category/SeqSet?proof=cocomplete" data-allow-deduced>proof</a>). A sequence of sets $X$ is connected if and only if the unique maps $! : X_n \to \{\ast\}$ induce an isomorphism on colimits. Since colimits commute with colimits and a connected colimit of singleton sets is a singleton set, a connected colimit of connected sequences is again connected.'
 
   - property: exact filtered colimits
-    proof: Since the subcategory of connected sequences is closed under filtered colimits and finite limits, this follows from the corresponding property of the <a href="/category/SeqSet">category of sequences of sets</a>.
+    proof: Since the subcategory of connected sequences is closed under filtered colimits and finite limits, this follows from the corresponding property of the category $[(\IN,\leq),\Set]$ of sequences of sets (<a href="/category/SeqSet?proof=exact_filtered_colimits" data-allow-deduced>proof</a>).
 
   - property: pushout-stable regular monomorphisms
-    proof: 'Apply Lemma 14 <a href="/content/subcategories">here</a> to the inclusion $[(\IN,\leq),\Set]_{\conn} \to [(\IN,\leq),\Set]$, which preserves pushouts and regular monomorphisms by their pointwise descriptions. Here, we use that <a href="/category/SeqSet">$[(\IN,\leq),\Set]$</a> has pushout-stable regular monomorphisms.'
+    proof: 'Apply Lemma 14 <a href="/content/subcategories">here</a> to the inclusion $[(\IN,\leq),\Set]_{\conn} \to [(\IN,\leq),\Set]$, which preserves pushouts and regular monomorphisms by their pointwise descriptions. Here, we use that $[(\IN,\leq),\Set]$ has pushout-stable regular monomorphisms (<a href="/category/SeqSet?proof=pushout-stable_regular_monomorphisms" data-allow-deduced>proof</a>).'
 
   - property: regular
-    proof: We already know that the category has finite limits and coequalizers, and that the inclusion functor into the regular <a href="/category/SeqSet">category of sequences of sets</a> is fully faithful and preserves finite limits and coequalizers. Thus, the claim follows from Lemma 7 <a href="/content/subcategories">here</a>.
+    proof: We already know that the category has finite limits (<a href="/category/SeqSet_conn?proof=finitely_complete">proof</a>) and coequalizers (<a href="/category/SeqSet_conn?proof=connected_colimits">proof</a>), and that the inclusion functor into the category $[(\IN,\leq),\Set]$ of sequences of sets, which is regular (<a href="/category/SeqSet?proof=regular" data-allow-deduced>proof</a>), is fully faithful and preserves finite limits and coequalizers. Thus, the claim follows from Lemma 7 <a href="/content/subcategories">here</a>.
 
   - property: effective congruences
-    proof: Since the <a href="/category/SeqSet">category of sequences of sets</a> has effective congruences, finite limits, and coequalizers, and the full subcategory of connected sequences is closed under finite limits and coequalizers, this follows from Lemma 8 <a href="/content/subcategories">here</a>.
+    proof: Since the category $[(\IN,\leq),\Set]$ of sequences of sets has effective congruences (<a href="/category/SeqSet?proof=effective_congruences" data-allow-deduced>proof</a>), finite limits, and coequalizers, and the full subcategory of connected sequences is closed under finite limits and coequalizers, this follows from Lemma 8 <a href="/content/subcategories">here</a>.
 
   - property: effective cocongruences
     proof: >-
-      Since the <a href="/category/SeqSet">category of sequences of sets</a> $[(\IN,\leq),\Set]$ has effective cocongruences, pushouts, and equalizers, and the full subcategory $[(\IN,\leq),\Set]_{\conn}$ is closed under pushouts and equalizers, this follows from Lemma 8 <a href="/content/subcategories">here</a> as long as we can prove that the inclusion functor
+      Since the category $[(\IN,\leq),\Set]$ of sequences of sets has effective cocongruences (<a href="/category/SeqSet?proof=effective_cocongruences" data-allow-deduced>proof</a>), pushouts, and equalizers, and the full subcategory $[(\IN,\leq),\Set]_{\conn}$ is closed under pushouts and equalizers, this follows from Lemma 8 <a href="/content/subcategories">here</a> as long as we can prove that the inclusion functor
       $$[(\IN,\leq),\Set]_{\conn} \hookrightarrow [(\IN,\leq),\Set]$$
       preserves jointly epimorphic parallel pairs. This is not immediate because connected sequences are not closed under binary coproducts. In fact, we can prove the stronger statement that the inclusion preserves jointly epimorphic pairs, not necessarily parallel ones.
 
@@ -140,7 +140,7 @@ unsatisfied_properties:
     proof: >-
       The morphism $(\varnothing \to \{\ast\} \to \{\ast\} \to \cdots) \to (\{\ast\} \to \{\ast\} \to \{\ast\} \to \cdots)$ between connected sequences is a monomorphism, since every component is injective. It has no retraction, since there is no map $\{\ast\} \to \varnothing$.
 
-      Alternatively, the functor $\Set \to [(\IN,\leq),\Set]_{\conn}$, $X \mapsto (X \to \{\ast\} \to \{\ast\} \to \cdots)$ is fully faithful and preserves monomorphisms, which are the morphisms that are injective in every degree (<a href="/category/SeqSet_conn?proof=monomorphism">proof</a>). Hence, the claim follows from the contrapositive of the dual of Lemma 15 <a href="/content/subcategories">here</a>, since <a href="/category/Set">$\Set$</a> does not have all monomorphisms split.
+      Alternatively, the functor $\Set \to [(\IN,\leq),\Set]_{\conn}$, $X \mapsto (X \to \{\ast\} \to \{\ast\} \to \cdots)$ is fully faithful and preserves monomorphisms, which are the morphisms that are injective in every degree (<a href="/category/SeqSet_conn?proof=monomorphism">proof</a>). Hence, the claim follows from the contrapositive of the dual of Lemma 15 <a href="/content/subcategories">here</a>, since $\Set$ does not have all monomorphisms split (<a href="/category/Set?proof=all_monomorphisms_split" data-allow-deduced>proof</a>).
 
   - property: disjoint finite products
     proof: >-
@@ -207,7 +207,7 @@ unsatisfied_properties:
 
   - property: coaccessible
     proof: >-
-      We will find a family of morphisms in $[(\IN,\leq),\Set]_{\conn}$ such that an object $X$ is projective to the family if and only if $X_k \to X_{k+1}$ is an isomorphism for each $k \geq 1$. Then $X_k$ is a singleton for each $k \geq 1$, and the full subcategory of such objects is equivalent to <a href="/category/Set">$\Set$</a>, which is not coaccessible. It will then follow from the dual of <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adámek–Rosický</a>, Prop. 4.7, that $[(\IN,\leq),\Set]_{\conn}$ is not coaccessible.
+      We will find a family of morphisms in $[(\IN,\leq),\Set]_{\conn}$ such that an object $X$ is projective to the family if and only if $X_k \to X_{k+1}$ is an isomorphism for each $k \geq 1$. Then $X_k$ is a singleton for each $k \geq 1$, and the full subcategory of such objects is equivalent to $\Set$, which is not coaccessible (<a href="/category/Set?proof=coaccessible" data-allow-deduced>proof</a>). It will then follow from the dual of <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adámek–Rosický</a>, Prop. 4.7, that $[(\IN,\leq),\Set]_{\conn}$ is not coaccessible.
 
       Let $k \geq 1$. Consider the monomorphism of connected sequences $U^{[k]} \hookrightarrow V^{[k]}$ defined by
       $$\begin{CD}
@@ -310,10 +310,10 @@ special_objects:
 special_morphisms:
   isomorphism:
     description: morphisms $f = (f_n)_{n \geq 0}$ for which every $f_n$ is bijective
-    proof: It is a full subcategory of the <a href="/category/SeqSet">category of sequences of sets</a>, where isomorphisms are characterized as stated.
+    proof: It is a full subcategory of the category $[(\IN,\leq),\Set]$ of sequences of sets, where isomorphisms are characterized as stated (<a href="/category/SeqSet?proof=isomorphism" data-allow-deduced>proof</a>).
   monomorphism:
     description: morphisms $f = (f_n)_{n \geq 0}$ for which every $f_n$ is injective
-    proof: Morphisms with injective components are clearly monomorphisms. Conversely, the inclusion functor into the <a href="/category/SeqSet">category of sequences of sets</a> preserves finite limits (by their construction), hence preserves monomorphisms. Since monomorphisms in the category of sequences have injective components, every monomorphism in $[(\IN,\leq),\Set]_{\conn}$ has injective components.
+    proof: Morphisms with injective components are clearly monomorphisms. Conversely, the inclusion functor into the <a href="/category/SeqSet">category of sequences of sets</a> preserves finite limits (by their construction), hence preserves monomorphisms. Since monomorphisms in the category of sequences have injective components (<a href="/category/SeqSet?proof=monomorphism" data-allow-deduced>proof</a>), every monomorphism in $[(\IN,\leq),\Set]_{\conn}$ has injective components.
   epimorphism:
     description: morphisms $f = (f_n)_{n \geq 0}$ for which every $f_n$ is surjective
-    proof: Morphisms with surjective components are clearly epimorphisms. Conversely, the inclusion functor into the <a href="/category/SeqSet">category of sequences of sets</a> preserves connected colimits (by their construction), and hence pushouts in particular. It therefore preserves epimorphisms. Since epimorphisms in the category of sequences have surjective components, every epimorphism in $[(\IN,\leq),\Set]_{\conn}$ has surjective components.
+    proof: Morphisms with surjective components are clearly epimorphisms. Conversely, the inclusion functor into the <a href="/category/SeqSet">category of sequences of sets</a> preserves connected colimits (by their construction), and hence pushouts in particular. It therefore preserves epimorphisms. Since epimorphisms in the category of sequences have surjective components (<a href="/category/SeqSet?proof=epimorphism" data-allow-deduced>proof</a>), every epimorphism in $[(\IN,\leq),\Set]_{\conn}$ has surjective components.

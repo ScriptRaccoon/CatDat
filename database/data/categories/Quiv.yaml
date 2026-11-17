@@ -23,7 +23,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\Quiv \to \Set \times \Set$, and $\Set \times \Set$ is locally small.
+    proof: There is a forgetful functor $\Quiv \to \Set \times \Set$, and $\Set \times \Set$ is locally small (<a href="/category/SetxSet?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: Grothendieck topos
     proof: This follows from the description as a functor category $[\Pair,\Set]$.
@@ -36,7 +36,7 @@ unsatisfied_properties:
     proof: The quivers whose vertex set and edge set are both $\{0\}$, respectively both $\{1\}$, are terminal objects, hence isomorphic, but not equal.
 
   - property: all epimorphisms split
-    proof: This follows from <a href="/content/split-epis-functor-categories">this lemma</a> since $\Pair$ is not essentially discrete.
+    proof: This follows from <a href="/content/split-epis-functor-categories">this lemma</a> since $\Pair$ is not essentially discrete (<a href="/category/walking_pair?proof=essentially_discrete" data-allow-deduced>proof</a>).
 
   - property: generator
     proof: >-

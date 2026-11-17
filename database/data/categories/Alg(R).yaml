@@ -18,7 +18,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\Alg(R) \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
+    proof: There is a forgetful functor $\Alg(R) \to \Set$, and $\Set$ is locally small (<a href="/category/Set?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: one-sorted finitary algebraic
     proof: Take the one-sorted algebraic theory of an $R$-algebra.
@@ -40,7 +40,7 @@ unsatisfied_properties:
     proof: Take a prime ideal $P \subseteq R$ and consider the $R$-algebra $A \coloneqq R/P$ (which is an integral domain). Then the inclusion $A \hookrightarrow Q(A)$ is a counterexample.
 
   - property: semi-strongly connected
-    proof: This is because already the full subcategory <a href="/category/CAlg(R)">$\CAlg(R)$</a> of commutative algebras is not semi-strongly connected.
+    proof: This is because already the full subcategory $\CAlg(R)$ of commutative algebras is not semi-strongly connected (<a href="/category/CAlg(R)?proof=semi-strongly_connected" data-allow-deduced>proof</a>).
 
   - property: cototal
     proof: Essentially the same <a href="/category/CAlg(R)?proof=cototal">proof</a> as for $\CAlg(R)$ works here.
@@ -50,7 +50,7 @@ unsatisfied_properties:
 
   - property: coparametrized conatural numbers object
     proof: >-
-      By the dual of Lemma 4 <a href="/content/natural_numbers_objects">here</a>, it suffices to show that for some $R$-algebra $A$ the canonical homomorphism $A \sqcup R^{\IN} \to A^{\IN}$ is not an isomorphism. We take $A \coloneqq R[X]$. Since $A^{\IN}$ is commutative, it suffices to show that $R[X] \sqcup R^{\IN}$ is not commutative. The surjective homomorphism $R^{\IN} \to R^2$, $(r_n)_n \mapsto (r_0,r_1)$ induces a surjective homomorphism $R[X] \sqcup R^{\IN} \to R[X] \sqcup R^2$. Since $R[X] \sqcup R^2$ is not commutative (see the <a href="/category/Alg(R)?proof=codistributive">proof</a> above that $\Alg(R)$ is not codistributive), neither is $R[X] \sqcup R^{\IN}$.
+      By the dual of Lemma 4 <a href="/content/natural_numbers_objects">here</a>, it suffices to show that for some $R$-algebra $A$ the canonical homomorphism $A \sqcup R^{\IN} \to A^{\IN}$ is not an isomorphism. We take $A \coloneqq R[X]$. Since $A^{\IN}$ is commutative, it suffices to show that $R[X] \sqcup R^{\IN}$ is not commutative. The surjective homomorphism $R^{\IN} \to R^2$, $(r_n)_n \mapsto (r_0,r_1)$ induces a surjective homomorphism $R[X] \sqcup R^{\IN} \to R[X] \sqcup R^2$. Since $R[X] \sqcup R^2$ is not commutative, as shown in the <a href="/category/Alg(R)?proof=codistributive">proof</a> that $\Alg(R)$ is not codistributive, neither is $R[X] \sqcup R^{\IN}$.
 
   - property: co-Malcev
     proof: 'See <a href="https://mathoverflow.net/questions/509552">MO/509552</a>: Consider the forgetful functor $U : \Alg(R) \to \Set$ and the relation $E \subseteq U^2$ defined by $E(A) \coloneqq \{(a,b) \in U(A)^2 : ab = a^2\}$. Both are representable: $U$ by $R[X]$ and $E$ by $R \langle X,Y \rangle / \langle XY-X^2 \rangle$. It is clear that $E$ is reflexive, but not symmetric.'
@@ -68,7 +68,7 @@ unsatisfied_properties:
       Because of $w_n \equiv w_{n-1} \bmod Y^n$, these form an element $w \in \lim_n (A \sqcup B_n)$. Expanding $w_n$, the longest term is $XY XY^2 \cdots X Y^n$ of "free product" length $2n$, which is unbounded.
 
   - property: cofiltered-limit-stable epimorphisms
-    proof: We already know that <a href="/category/CAlg(R)">$\CAlg(R)$</a> does not have this property. Now apply the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> to the forgetful functor $\CAlg(R) \to \Alg(R)$. It preserves epimorphisms by <a href="https://math.stackexchange.com/questions/5133488">MSE/5133488</a>.
+    proof: We already know that $\CAlg(R)$ does not have this property (<a href="/category/CAlg(R)?proof=cofiltered-limit-stable_epimorphisms" data-allow-deduced>proof</a>). Now apply the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> to the forgetful functor $\CAlg(R) \to \Alg(R)$. It preserves epimorphisms by <a href="https://math.stackexchange.com/questions/5133488">MSE/5133488</a>.
 
   - property: effective cocongruences
     proof: '<a href="https://mathoverflow.net/a/510809">MO/510744</a> presents a counterexample for $\Ring$, and it can be easily generalized to $\Alg(R)$: Let $X \coloneqq R[p] / (p^2-p)$ with cocongruence $C \coloneqq R \langle p, q \rangle / (p^2-p, q^2-q, pq-q, qp-p)$.'

@@ -20,7 +20,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\Ab_{\fg} \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
+    proof: There is a forgetful functor $\Ab_{\fg} \to \Set$, and $\Set$ is locally small (<a href="/category/Set?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: abelian
     proof: This follows from the corresponding fact for abelian groups and from the fact that subgroups of finitely generated abelian groups are also finitely generated.
@@ -32,11 +32,11 @@ satisfied_properties:
     proof: Every finitely generated abelian group is isomorphic to a group of the form $\IZ^n / U$, where $n \in \IN$ and $U$ is a subgroup of $\IZ^n$. Since $\IZ^n$ is Noetherian as a $\IZ$-module, $U$ is finitely generated, hence the category $\Ab_\fg$ has only countably many objects up to isomorphism. Furthermore, for any objects $A \cong \IZ^n / U$ and $B \cong \IZ^m / T$, the hom-set $\Hom(A,B)$ is countable. Indeed, precomposition with the quotient map yields an injection $\Hom(A,B) \hookrightarrow \Hom(\IZ^n, B) \cong B^n$, and $B^n$ is countable.
 
   - property: ℵ₁-accessible
-    proof: The inclusion $\Ab_{\fg} \hookrightarrow \Ab$ is closed under $\aleph_1$-filtered colimits by <a href="https://mathoverflow.net/questions/400763/">MO/400763</a>. In particular, $\Ab_{\fg}$ has $\aleph_1$-filtered colimits. Since $\Ab_{\fg}$ is essentially small, there is a set $G$ such that every f.g. abelian group is isomorphic to one in $G$. So trivially it is also an $\aleph_1$-filtered colimit of such objects (take the constant diagram). Finally, every object of $\Ab_{\fg} = \Ab_{\fp}$ is finitely presentable in $\Ab$, a fortiori $\aleph_1$-presentable, and hence also $\aleph_1$-presentable in $\Ab_{\fg}$.
+    proof: The inclusion $\Ab_{\fg} \hookrightarrow \Ab$ is closed under $\aleph_1$-filtered colimits by <a href="https://mathoverflow.net/questions/400763/">MO/400763</a>. In particular, $\Ab_{\fg}$ has $\aleph_1$-filtered colimits. Since $\Ab_{\fg}$ is essentially small (<a href="/category/Ab_fg?proof=essentially_small" data-allow-deduced>proof</a>), there is a set $G$ such that every f.g. abelian group is isomorphic to one in $G$. So trivially it is also an $\aleph_1$-filtered colimit of such objects (take the constant diagram). Finally, every object of $\Ab_{\fg} = \Ab_{\fp}$ is finitely presentable in $\Ab$, a fortiori $\aleph_1$-presentable, and hence also $\aleph_1$-presentable in $\Ab_{\fg}$.
 
   - property: ℵ₁-coaccessible
     proof: >-
-      We will show that the inclusion $\Ab_\fg \hookrightarrow \Ab$ is closed under $\aleph_1$-cofiltered limits and that every object of $\Ab_\fg$ is $\aleph_1$-copresentable. This suffices: since $\Ab_\fg$ is essentially small, there is a set $G$ such that every finitely generated abelian group is isomorphic to one in $G$, and then every object is trivially an $\aleph_1$-cofiltered limit of objects in $G$ (take the constant diagram).
+      We will show that the inclusion $\Ab_\fg \hookrightarrow \Ab$ is closed under $\aleph_1$-cofiltered limits and that every object of $\Ab_\fg$ is $\aleph_1$-copresentable. This suffices: since $\Ab_\fg$ is essentially small (<a href="/category/Ab_fg?proof=essentially_small" data-allow-deduced>proof</a>), there is a set $G$ such that every finitely generated abelian group is isomorphic to one in $G$, and then every object is trivially an $\aleph_1$-cofiltered limit of objects in $G$ (take the constant diagram).
 
       Let $D : \I \to \Ab_\fg$ be an $\aleph_1$-cofiltered diagram, and let $(p_i : L \to D(i))_{i \in \I}$ be a limit cone of $D$ in $\Ab$. Everything follows from these two facts, which we prove at the end:
 
@@ -137,7 +137,7 @@ special_objects:
 special_morphisms:
   isomorphism:
     description: bijective homomorphisms
-    proof: It is a full subcategory of $\Ab$, for which we know that isomorphisms are bijective homomorphisms.
+    proof: It is a full subcategory of $\Ab$, for which isomorphisms are bijective homomorphisms (<a href="/category/Ab?proof=isomorphism" data-allow-deduced>proof</a>).
   monomorphism:
     description: injective homomorphisms
     proof: 'Let $f : A \to B$ be a monomorphism of finitely generated abelian groups. Let $a \in A$ be in the kernel of $f$. Then we may view $a$ as a morphism $a : \IZ \to A$ with $f \circ a = 0$, and $\IZ$ is finitely generated. Hence, $a = 0$.'

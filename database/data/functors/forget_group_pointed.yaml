@@ -22,7 +22,7 @@ satisfied_properties:
     proof: A left adjoint can be constructed by mapping a pointed set $(X,x_0)$ to the free group $F(X)$ modulo $x_0 = 1$.
 
   - property: conservative
-    proof: 'We already know that the forgetful functor $U_{\Grp} : \Grp \to \Set$ is conservative.'
+    proof: 'The forgetful functor $U_{\Grp} : \Grp \to \Set$ is conservative (<a href="/functor/forget_group?proof=conservative" data-allow-deduced>proof</a>) and factors through $U_{\Grp,\Set_*}$.'
 
   - property: finitary
     proof: 'Since the forgetful functor $U_{\Set_*} : \Set_* \to \Set$ is finitary and conservative, it suffices to prove that the composition $U_{\Set_*} \circ U_{\Grp,\Set_*} : \Grp \to \Set$ is finitary. This is just the forgetful functor $U_{\Grp} : \Grp \to \Set$ and therefore finitary.'

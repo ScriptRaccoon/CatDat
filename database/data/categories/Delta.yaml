@@ -29,7 +29,7 @@ satisfied_properties:
     proof: The objects $[n]$ are indexed by $n \in \IN$, and for all $n,m \in \IN$ there are only finitely many maps $[n] \to [m]$. Thus, the collection of all morphisms is countable as a countable union of finite sets.
 
   - property: locally finite
-    proof: There is a faithful functor $\Delta \to \FinSet$ and <a href="/category/FinSet">$\FinSet$</a> is locally finite.
+    proof: There is a faithful functor $\Delta \to \FinSet$, and $\FinSet$ is locally finite (<a href="/category/FinSet?proof=locally_finite" data-allow-deduced>proof</a>).
 
   - property: terminal object
     proof: The ordered set $[0] = \{0\}$ is terminal.
@@ -47,16 +47,16 @@ satisfied_properties:
     proof: 'If $f : [n] \to [m]$ is an isomorphism, then $n + 1 = m + 1$ by comparing the cardinalities, hence $n = m$.'
 
   - property: all epimorphisms split
-    proof: Apply Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\Delta \hookrightarrow \FinOrd$, which preserves epimorphisms since these are surjective order-preserving maps in both categories (<a href="/category/Delta?proof=epimorphism">proof</a> for $\Delta$ and <a href="/category/FinOrd?proof=epimorphism">proof</a> for $\FinOrd$), and use that <a href="/category/FinOrd">$\FinOrd$</a> has all epimorphisms split.
+    proof: Apply Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\Delta \hookrightarrow \FinOrd$, which preserves epimorphisms since these are surjective order-preserving maps in $\Delta$ (<a href="/category/Delta?proof=epimorphism">proof</a>) and in $\FinOrd$ (<a href="/category/FinOrd?proof=epimorphism">proof</a>), and use that $\FinOrd$ has all epimorphisms split (<a href="/category/FinOrd?proof=all_epimorphisms_split" data-allow-deduced>proof</a>).
 
   - property: all monomorphisms split
     proof: The <a href="/category/FinOrd?proof=mono-regular">proof</a> for $\FinOrd$ shows that every monomorphism with non-empty domain splits.
 
   - property: coequalizers
-    proof: 'Assume that $f,g : (X,\leq) \rightrightarrows (Y,\leq)$ are morphisms in $\FinOrd \setminus \{\varnothing\}$. Since <a href="/category/FinOrd">$\FinOrd$</a> has coequalizers, they have a coequalizer $q : (Y,\leq) \to (C,\leq)$ in $\FinOrd$. Since $Y$ is non-empty, $C$ is non-empty as well, and clearly $q$ is then also the coequalizer in $\FinOrd \setminus \{\varnothing\}$.'
+    proof: 'Assume that $f,g : (X,\leq) \rightrightarrows (Y,\leq)$ are morphisms in $\FinOrd \setminus \{\varnothing\}$. Since $\FinOrd$ has coequalizers (<a href="/category/FinOrd?proof=coequalizers" data-allow-deduced>proof</a>), they have a coequalizer $q : (Y,\leq) \to (C,\leq)$ in $\FinOrd$. Since $Y$ is non-empty, $C$ is non-empty as well, and clearly $q$ is then also the coequalizer in $\FinOrd \setminus \{\varnothing\}$.'
 
   - property: core-thin
-    proof: The category $\FinOrd \setminus \{\varnothing\}$ is core-thin because already <a href="/category/FinOrd">$\FinOrd$</a> is core-thin.
+    proof: The category $\FinOrd \setminus \{\varnothing\}$ is core-thin because already $\FinOrd$ is core-thin (<a href="/category/FinOrd?proof=core-thin" data-allow-deduced>proof</a>).
 
   - property: cosifted
     proof: >-
@@ -85,7 +85,7 @@ unsatisfied_properties:
     proof: We can just copy the <a href="/category/FinOrd?proof=sequential_limits">proof</a> for $\FinOrd$ to show that the sequence of truncations $\cdots \twoheadrightarrow [2] \twoheadrightarrow [1] \twoheadrightarrow [0]$ has no limit.
 
   - property: natural numbers object
-    proof: Any natural numbers object in $\FinOrd \setminus \{\varnothing\}$ would also be a natural numbers object in <a href="/category/FinOrd">$\FinOrd$</a>, which we know does not exist.
+    proof: Any natural numbers object in $\FinOrd \setminus \{\varnothing\}$ would also be a natural numbers object in $\FinOrd$, which does not exist (<a href="/category/FinOrd?proof=natural_numbers_object" data-allow-deduced>proof</a>).
 
 special_objects: {}
 

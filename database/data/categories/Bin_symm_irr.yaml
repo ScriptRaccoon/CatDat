@@ -34,7 +34,7 @@ comments:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\Bin_{\symm,\irr} \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
+    proof: There is a forgetful functor $\Bin_{\symm,\irr} \to \Set$ and $\Set$ is locally small (<a href="/category/Set?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: connected limits
     proof: >-
@@ -42,10 +42,10 @@ satisfied_properties:
     check_redundancy: false
 
   - property: binary products
-    proof: We have just seen that all non-empty limits exist.
+    proof: We have just seen that all non-empty limits exist (<a href="/category/Bin_symm_irr?proof=connected_limits">proof</a>).
 
   - property: infinitary extensive
-    proof: It is easy to check that $\Bin_{\symm,\irr} \subseteq \Bin$ is closed under coproducts (see below for their concrete description), and we already know that it is also closed under pullbacks. Since <a href="/category/Bin">$\Bin$</a> is infinitary extensive, the claim therefore follows from Lemma 11 <a href="/content/subcategories">here</a>.
+    proof: It is easy to check that $\Bin_{\symm,\irr} \subseteq \Bin$ is closed under coproducts (see below for their concrete description), and we already know that it is also closed under pullbacks (<a href="/category/Bin_symm_irr?proof=connected_limits">proof</a>). Since $\Bin$ is infinitary extensive (<a href="/category/Bin?proof=infinitary_extensive" data-allow-deduced>proof</a>), the claim therefore follows from Lemma 11 <a href="/content/subcategories">here</a>.
 
   - property: finitely accessible
     proof: >-
@@ -53,7 +53,7 @@ satisfied_properties:
 
   - property: locally cartesian closed
     proof: >-
-      We know that $\Bin$ is locally cartesian closed (<a href="/category/Bin?proof=locally_cartesian_closed">proof</a>), and that $\Bin_{\symm,\irr} \subseteq \Bin$ is closed under pullbacks. Therefore, it suffices to show that $\Bin_{\symm,\irr} \subseteq \Bin$ is closed under relative exponentials. Recall that for two objects $(Y,R_Y) \to (X,R_X)$ and $(Z,R_Z) \to (X,R_X)$ in $\Bin / (X,R_X)$, their exponential is the set $F = \coprod_{x \in X} \Hom(Y_x,Z_x)$ equipped with the following relation $R_F$: for maps $f : Y_x \to Z_x$ and $g : Y_{x'} \to Z_{x'}$ we have $(f,g) \in R_F$ when $(x,x') \in R_X$ and, for all $y \in Y_x$ and $y' \in Y_{x'}$, if $(y,y') \in R_Y$, then $(f(y),g(y')) \in R_Z$. Now assume that $R_X,R_Y,R_Z$ are symmetric and irreflexive. Then $R_F$ is irreflexive since $R_X$ is irreflexive, and $R_F$ is symmetric since $R_X$, $R_Y$, and $R_Z$ are symmetric.
+      We know that $\Bin$ is locally cartesian closed (<a href="/category/Bin?proof=locally_cartesian_closed">proof</a>), and that $\Bin_{\symm,\irr} \subseteq \Bin$ is closed under pullbacks (<a href="/category/Bin_symm_irr?proof=connected_limits">proof</a>). Therefore, it suffices to show that $\Bin_{\symm,\irr} \subseteq \Bin$ is closed under relative exponentials. Recall that for two objects $(Y,R_Y) \to (X,R_X)$ and $(Z,R_Z) \to (X,R_X)$ in $\Bin / (X,R_X)$, their exponential is the set $F = \coprod_{x \in X} \Hom(Y_x,Z_x)$ equipped with the following relation $R_F$: for maps $f : Y_x \to Z_x$ and $g : Y_{x'} \to Z_{x'}$ we have $(f,g) \in R_F$ when $(x,x') \in R_X$ and, for all $y \in Y_x$ and $y' \in Y_{x'}$, if $(y,y') \in R_Y$, then $(f(y),g(y')) \in R_Z$. Now assume that $R_X,R_Y,R_Z$ are symmetric and irreflexive. Then $R_F$ is irreflexive since $R_X$ is irreflexive, and $R_F$ is symmetric since $R_X$, $R_Y$, and $R_Z$ are symmetric.
 
   - property: cokernel pairs
     proof: >-
@@ -61,10 +61,10 @@ satisfied_properties:
 
   - property: coequalizers of kernel pairs
     proof: >-
-      We already know that kernel pairs exist; in fact, $\Bin_{\symm,\irr} \subseteq \Bin$ is closed under kernel pairs. Moreover, <a href="/category/Bin">$\Bin$</a> has coequalizers. If $f : (X,R) \to (Y,S)$ is a morphism in $\Bin_{\symm,\irr}$ and $p : (X,R) \to (C,T)$ is the coequalizer of its kernel pair in $\Bin$, then there is a morphism $\overline{f} : (C,T) \to (Y,S)$ (since $f$ coequalizes its kernel pair). Since $S$ is irreflexive, it follows that $T$ is irreflexive. Moreover, $T$ is the set of pairs $(p(x),p(x'))$ for $(x,x') \in R$. Since $R$ is symmetric, it follows that $T$ is symmetric. Thus, $(C,T)$ belongs to $\Bin_{\symm,\irr}$. We conclude that $(X,R) \to (C,T)$ is also the coequalizer of the kernel pair in $\Bin_{\symm,\irr}$.
+      We already know that kernel pairs exist (<a href="/category/Bin_symm_irr?proof=connected_limits">proof</a>); in fact, $\Bin_{\symm,\irr} \subseteq \Bin$ is closed under kernel pairs. Moreover, $\Bin$ has coequalizers (<a href="/category/Bin?proof=coequalizers" data-allow-deduced>proof</a>). If $f : (X,R) \to (Y,S)$ is a morphism in $\Bin_{\symm,\irr}$ and $p : (X,R) \to (C,T)$ is the coequalizer of its kernel pair in $\Bin$, then there is a morphism $\overline{f} : (C,T) \to (Y,S)$ (since $f$ coequalizes its kernel pair). Since $S$ is irreflexive, it follows that $T$ is irreflexive. Moreover, $T$ is the set of pairs $(p(x),p(x'))$ for $(x,x') \in R$. Since $R$ is symmetric, it follows that $T$ is symmetric. Thus, $(C,T)$ belongs to $\Bin_{\symm,\irr}$. We conclude that $(X,R) \to (C,T)$ is also the coequalizer of the kernel pair in $\Bin_{\symm,\irr}$.
 
   - property: cocartesian cofiltered limits
-    proof: This follows from the corresponding property of <a href="/category/Bin">$\Bin$</a> because the inclusion functor $\Bin_{\symm,\irr} \to \Bin$ is fully faithful and preserves binary coproducts and cofiltered limits (in fact, all coproducts and all non-empty limits).
+    proof: $\Bin$ has cocartesian cofiltered limits (<a href="/category/Bin?proof=cocartesian_cofiltered_limits" data-allow-deduced>proof</a>), and this property is inherited because the inclusion functor $\Bin_{\symm,\irr} \to \Bin$ is fully faithful and preserves binary coproducts and cofiltered limits (in fact, all coproducts and all non-empty limits).
 
   - property: generator
     proof: The object $(\{\ast\},\varnothing)$ is a generator because it represents the forgetful functor $\Bin_{\symm,\irr} \to \Set$, $(X,R) \mapsto X$, which is faithful.
@@ -74,7 +74,7 @@ satisfied_properties:
 
   - property: effective cocongruences
     proof: >-
-      Let $j_1, j_2 : X \rightrightarrows C$ be a cocongruence in $\Bin_{\symm,\irr}$. Then $(j_1;j_2) : X \sqcup X \to C$ is an epimorphism, i.e. surjective on underlying sets, and hence an epimorphism in $\Bin$. The pushout $C \sqcup_{j_2,X,j_1} C$ in $\Bin$ belongs to $\Bin_{\irr}$ since, using the common retraction $C \to X$ of $j_1,j_2$ (the coreflexivity morphism), it admits a morphism to $X$. It also belongs to $\Bin_{\symm}$ since $C$ belongs to $\Bin_{\symm}$ and every relation comes from one of the two copies of $C$. Therefore, we obtain coreflexivity, cosymmetry, and cotransitivity morphisms in $\Bin_{\symm,\irr}$, and these are also such morphisms in $\Bin$. Hence, $j_1, j_2 : X \rightrightarrows C$ is a cocongruence in $\Bin$. Since <a href="/category/Bin">$\Bin$</a> has effective cocongruences and equalizers, there is a monomorphism $T \to X$ whose cokernel pair is $X \rightrightarrows C$ in $\Bin$. Since $T$ admits a monomorphism to $X \in \Bin_{\symm,\irr}$, we have $T \in \Bin_{\symm,\irr}$. It follows that $T \to X$ also has cokernel pair $X \rightrightarrows C$ in $\Bin_{\symm,\irr}$.
+      Let $j_1, j_2 : X \rightrightarrows C$ be a cocongruence in $\Bin_{\symm,\irr}$. Then $(j_1;j_2) : X \sqcup X \to C$ is an epimorphism, i.e. surjective on underlying sets, and hence an epimorphism in $\Bin$. The pushout $C \sqcup_{j_2,X,j_1} C$ in $\Bin$ belongs to $\Bin_{\irr}$ since, using the common retraction $C \to X$ of $j_1,j_2$ (the coreflexivity morphism), it admits a morphism to $X$. It also belongs to $\Bin_{\symm}$ since $C$ belongs to $\Bin_{\symm}$ and every relation comes from one of the two copies of $C$. Therefore, we obtain coreflexivity, cosymmetry, and cotransitivity morphisms in $\Bin_{\symm,\irr}$, and these are also such morphisms in $\Bin$. Hence, $j_1, j_2 : X \rightrightarrows C$ is a cocongruence in $\Bin$. Since $\Bin$ has effective cocongruences (<a href="/category/Bin?proof=effective_cocongruences" data-allow-deduced>proof</a>) and equalizers (<a href="/category/Bin?proof=equalizers" data-allow-deduced>proof</a>), there is a monomorphism $T \to X$ whose cokernel pair is $X \rightrightarrows C$ in $\Bin$. Since $T$ admits a monomorphism to $X \in \Bin_{\symm,\irr}$, we have $T \in \Bin_{\symm,\irr}$. It follows that $T \to X$ also has cokernel pair $X \rightrightarrows C$ in $\Bin_{\symm,\irr}$.
 
 unsatisfied_properties:
   - property: skeletal

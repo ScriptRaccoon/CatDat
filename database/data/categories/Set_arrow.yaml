@@ -29,11 +29,11 @@ related:
 satisfied_properties:
   - property: locally small
     proof: >-
-      The collection of morphisms $(X,Y,f) \to (X',Y',f')$ is a subcollection of $\Hom(X,X') \times \Hom(Y,Y')$, which is a set since <a href="/category/Set">$\Set$</a> is locally small.
+      The collection of morphisms $(X,Y,f) \to (X',Y',f')$ is a subcollection of $\Hom(X,X') \times \Hom(Y,Y')$, which is a set since $\Set$ is locally small (<a href="/category/Set?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: semi-strongly connected
     proof: >-
-      Consider two objects $(X, Y, f)$ and $(X', Y', f')$. If $X'$ is non-empty with element $x'$, we can construct a morphism $(\ell, r) : (X, Y, f) \to (X', Y', f')$ where $\ell$ is the constant function with value $x'$, and $r$ is the constant function with value $f'(x')$; and similarly if $X$ is non-empty we can construct a morphism $(X', Y', f') \to (X, Y, f)$. Otherwise, if $X$ and $X'$ are both empty, we can reduce to the fact that $\Set$ is semi-strongly connected to find $r$ in one direction, and fill in $\ell$ as the unique function $\varnothing \to \varnothing$.
+      Consider two objects $(X, Y, f)$ and $(X', Y', f')$. If $X'$ is non-empty with element $x'$, we can construct a morphism $(\ell, r) : (X, Y, f) \to (X', Y', f')$ where $\ell$ is the constant function with value $x'$, and $r$ is the constant function with value $f'(x')$; and similarly if $X$ is non-empty we can construct a morphism $(X', Y', f') \to (X, Y, f)$. Otherwise, if $X$ and $X'$ are both empty, we can reduce to the fact that $\Set$ is semi-strongly connected (<a href="/category/Set?proof=semi-strongly_connected" data-allow-deduced>proof</a>) to find $r$ in one direction, and fill in $\ell$ as the unique function $\varnothing \to \varnothing$.
 
   - property: Grothendieck topos
     proof: It is equivalent to the category of presheaves on <a href="/category/walking_morphism">the walking morphism</a>.
@@ -71,4 +71,4 @@ special_morphisms:
     proof: For the non-trivial direction, use the fact that the domain functor taking an object $(X, Y, f)$ to $X$ and a morphism $(\ell, r)$ to $\ell$ is representable by $\{\ast\} \to \{\ast\}$; and moreover, the codomain functor taking an object $(X, Y, f)$ to $Y$ and a morphism $(\ell, r)$ to $r$ is representable by $\varnothing \to \{\ast\}$.
   epimorphism:
     description: pairs $(\ell, r)$ where $\ell$ and $r$ are both surjective
-    proof: For the non-trivial direction, use the fact that the category is epi-regular, so any epimorphism is a coequalizer; and the fact that coequalizers can be calculated component-wise.
+    proof: For the non-trivial direction, use the fact that the category is epi-regular (<a href="/category/Set_arrow?proof=epi-regular" data-allow-deduced>proof</a>), so any epimorphism is a coequalizer; and the fact that coequalizers can be calculated component-wise.

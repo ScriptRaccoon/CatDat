@@ -20,11 +20,11 @@ comments:
 satisfied_properties:
   - property: preserves terminal objects
     # TODO: automate this with category_conclusion
-    proof: This is trivial since $\Fld$ has no terminal object.
+    proof: This is trivial since $\Fld$ has no terminal object (<a href="/category/Fld?proof=terminal_object" data-allow-deduced>proof</a>).
 
   - property: preserves initial objects
     # TODO: automate this with category_conclusions
-    proof: This is trivial since $\Fld$ has no initial object.
+    proof: This is trivial since $\Fld$ has no initial object (<a href="/category/Fld?proof=initial_object" data-allow-deduced>proof</a>).
 
   - property: finitary
     proof: >-

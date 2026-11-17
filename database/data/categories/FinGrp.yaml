@@ -17,10 +17,10 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: It is a full subcategory of $\Grp$, which is locally small.
+    proof: It is a full subcategory of $\Grp$, which is locally small (<a href="/category/Grp?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: locally finite
-    proof: There is a faithful functor $\FinGrp \to \FinSet$ and <a href="/category/FinSet">$\FinSet$</a> is locally finite.
+    proof: There is a faithful functor $\FinGrp \to \FinSet$, and $\FinSet$ is locally finite (<a href="/category/FinSet?proof=locally_finite" data-allow-deduced>proof</a>).
 
   - property: pointed
     proof: The trivial group is a zero object.
@@ -42,10 +42,10 @@ satisfied_properties:
     proof: A direct argument is possible, but this can also be derived from the observation that $\FinGrp$ is the category of group objects in $(\FinSet,\times)$ and <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories">Borceux–Bourn</a>, Example 2.2.16.
 
   - property: effective congruences
-    proof: 'Suppose we have a congruence $R \rightrightarrows X$ in $\FinGrp$. Since the embedding $\FinGrp \hookrightarrow \Grp$ preserves finite limits, it is also a congruence in $\Grp$. We already know that <a href="/category/Grp">$\Grp$</a> has effective congruences since it is algebraic. Using <a href="/content/effective-congruence-quotients">this result</a>, we see that $R$ is the kernel pair of $X \to (X/R)_{\Grp}$ in $\Grp$. Also, the quotient $(X/R)_{\Grp}$ is finite; and the forgetful functor $\FinGrp \to \Grp$ is fully faithful <a href="https://ncatlab.org/nlab/show/reflected+limit#FullSubcategoryInclusionReflectCoLimits">and therefore reflects limits</a>. Thus, we conclude that $R$ is the kernel pair of $X \to (X/R)_{\Grp}$ in $\FinGrp$ as well.'
+    proof: 'Suppose we have a congruence $R \rightrightarrows X$ in $\FinGrp$. Since the embedding $\FinGrp \hookrightarrow \Grp$ preserves finite limits, it is also a congruence in $\Grp$. We already know that $\Grp$ has effective congruences (<a href="/category/Grp?proof=effective_congruences" data-allow-deduced>proof</a>). Using <a href="/content/effective-congruence-quotients">this result</a>, we see that $R$ is the kernel pair of $X \to (X/R)_{\Grp}$ in $\Grp$. Also, the quotient $(X/R)_{\Grp}$ is finite; and the forgetful functor $\FinGrp \to \Grp$ is fully faithful <a href="https://ncatlab.org/nlab/show/reflected+limit#FullSubcategoryInclusionReflectCoLimits">and therefore reflects limits</a>. Thus, we conclude that $R$ is the kernel pair of $X \to (X/R)_{\Grp}$ in $\FinGrp$ as well.'
 
   - property: effective cocongruences
-    proof: 'A proof can be found in <a href="https://mathoverflow.net/questions/511516">MO/511516</a>. It even shows that every cocongruence in $\FinGrp$ is trivial. In short, the proof goes like this: We know that <a href="/category/Grp">$\Grp$</a> has effective cocongruences. Using the fact that amalgamated sums of finite groups are residually finite, one can show that every cocongruence in $\FinGrp$ is also a cocongruence in $\Grp$.'
+    proof: 'A proof can be found in <a href="https://mathoverflow.net/questions/511516">MO/511516</a>. It even shows that every cocongruence in $\FinGrp$ is trivial. In short, the proof goes like this: We know that $\Grp$ has effective cocongruences (<a href="/category/Grp?proof=effective_cocongruences" data-allow-deduced>proof</a>). Using the fact that amalgamated sums of finite groups are residually finite, one can show that every cocongruence in $\FinGrp$ is also a cocongruence in $\Grp$.'
 
   - property: regular
     proof: This follows from Lemma 7 <a href="/content/subcategories">here</a> applied to the inclusion functor $\FinGrp \hookrightarrow \Grp$ into the regular category $\Grp$ and the fact that the regular epimorphisms in $\FinGrp$ are the epimorphisms (<a href="/category/FinGrp?proof=regular_epimorphism" data-allow-deduced>proof</a>), i.e. the surjective homomorphisms (<a href="/category/FinGrp?proof=epimorphism">proof</a>).
@@ -61,10 +61,10 @@ unsatisfied_properties:
     proof: The trivial groups with underlying sets $\{0\}$ and $\{1\}$ are zero objects, hence isomorphic, but not equal.
 
   - property: all epimorphisms split
-    proof: Apply the contrapositive of Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\FinAb \hookrightarrow \FinGrp$, which preserves epimorphisms since these are surjective in both categories (<a href="/category/FinAb?proof=epimorphism">proof</a> for $\FinAb$ and <a href="/category/FinGrp?proof=epimorphism">proof</a> for $\FinGrp$), and use that <a href="/category/FinAb">$\FinAb$</a> does not have all epimorphisms split.
+    proof: Apply the contrapositive of Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\FinAb \hookrightarrow \FinGrp$, which preserves epimorphisms since these are surjective in $\FinAb$ (<a href="/category/FinAb?proof=epimorphism">proof</a>) and in $\FinGrp$ (<a href="/category/FinGrp?proof=epimorphism">proof</a>), and use that $\FinAb$ does not have all epimorphisms split (<a href="/category/FinAb?proof=all_epimorphisms_split" data-allow-deduced>proof</a>).
 
   - property: all monomorphisms split
-    proof: Apply the contrapositive of the dual of Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\FinAb \hookrightarrow \FinGrp$, which preserves monomorphisms since these are injective in both categories (<a href="/category/FinAb?proof=monomorphism">proof</a> for $\FinAb$ and <a href="/category/FinGrp?proof=monomorphism">proof</a> for $\FinGrp$), and use that <a href="/category/FinAb">$\FinAb$</a> does not have all monomorphisms split.
+    proof: Apply the contrapositive of the dual of Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\FinAb \hookrightarrow \FinGrp$, which preserves monomorphisms since these are injective in $\FinAb$ (<a href="/category/FinAb?proof=monomorphism">proof</a>) and in $\FinGrp$ (<a href="/category/FinGrp?proof=monomorphism">proof</a>), and use that $\FinAb$ does not have all monomorphisms split (<a href="/category/FinAb?proof=all_monomorphisms_split" data-allow-deduced>proof</a>).
 
   - property: normal
     proof: Every non-normal subgroup of a finite group (such as $C_2 \hookrightarrow S_3$) provides a counterexample.
@@ -92,10 +92,10 @@ special_objects:
 special_morphisms:
   isomorphism:
     description: bijective homomorphisms
-    proof: It is a full subcategory of $\Grp$, for which we know that isomorphisms are bijective homomorphisms.
+    proof: It is a full subcategory of $\Grp$, for which isomorphisms are bijective homomorphisms (<a href="/category/Grp?proof=isomorphism" data-allow-deduced>proof</a>).
   monomorphism:
     description: injective homomorphisms
     proof: 'Let $f : A \to B$ be a monomorphism of finite groups. Let $a \in A$ be in the kernel of $f$, say of order $n$. Then we may view $a$ as a morphism $a : C_n \to A$ with $f \circ a = 1$ (the trivial homomorphism), and $C_n$ is finite. Hence, $a = 1$.'
   epimorphism:
     description: surjective homomorphisms
-    proof: 'For the non-trivial direction, if $f : G \to H$ is an epimorphism, we may factor it as $G \to f(G) \to H$, and $f(G) \to H$ is still an epimorphism, but also an inclusion and hence a monomorphism. Since we already know that the category is mono-regular, $f(G) \to H$ must be an isomorphism.'
+    proof: 'For the non-trivial direction, if $f : G \to H$ is an epimorphism, we may factor it as $G \to f(G) \to H$, and $f(G) \to H$ is still an epimorphism, but also an inclusion and hence a monomorphism. Since the category is mono-regular (<a href="/category/FinGrp?proof=mono-regular" data-allow-deduced>proof</a>), $f(G) \to H$ must be an isomorphism.'

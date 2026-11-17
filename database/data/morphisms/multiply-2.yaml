@@ -16,7 +16,7 @@ satisfied_properties:
     proof: The map is clearly injective.
 
   - property: epimorphism
-    proof: 'We know that a homomorphism $f : A \to B$ in <a href="/category/TorsFreeAb">$\TorsFreeAb$</a> is an epimorphism if and only if $B/f(A)$ is torsion. Since $\IZ/2$ is torsion, the claim follows.'
+    proof: 'We know that a homomorphism $f : A \to B$ in $\TorsFreeAb$ is an epimorphism if and only if $B/f(A)$ is torsion (<a href="/category/TorsFreeAb?proof=epimorphism" data-allow-deduced>proof</a>). Since $\IZ/2$ is torsion, the claim follows.'
 
 unsatisfied_properties:
   - property: isomorphism

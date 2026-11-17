@@ -17,7 +17,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\Ban \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
+    proof: There is a forgetful functor $\Ban \to \Set$, and $\Set$ is locally small (<a href="/category/Set?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: pointed
     proof: The trivial Banach space $\{0\}$ is a zero object.
@@ -30,7 +30,7 @@ satisfied_properties:
     proof: See <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adámek–Rosický</a>, Example 1.48.
 
   - property: cartesian filtered colimits
-    proof: If $X$ is a Banach space and $(Y_i)$ is a filtered diagram of Banach spaces, the canonical map $\colim_i (X \times Y_i) \to X \times \colim_i Y_i$ is the completion of the canonical map in the category of normed vector spaces with non-expansive linear maps. Now the claim follows directly from <a href="/category/Met">$\Met$</a>.
+    proof: If $X$ is a Banach space and $(Y_i)$ is a filtered diagram of Banach spaces, the canonical map $\colim_i (X \times Y_i) \to X \times \colim_i Y_i$ is the completion of the canonical map in the category of normed vector spaces with non-expansive linear maps. Now the claim follows directly from the fact that $\Met$ has cartesian filtered colimits (<a href="/category/Met?proof=cartesian_filtered_colimits" data-allow-deduced>proof</a>).
 
   - property: cocartesian cofiltered limits
     proof: >-
@@ -167,7 +167,7 @@ unsatisfied_properties:
     proof: >-
       Assume that $\Psi$ is a regular quotient object classifier in $\Ban$. For a Banach space $X$ let $S(X)$ be the set of closed subspaces of $X$. Then for any Banach space $X$ the map
       $$\Hom(\Psi,X) \to S(X), \quad f \mapsto \overline{\im(f)}$$
-      is bijective. In particular, there is a morphism $f : \Psi \to X$ with dense image, i.e. an epimorphism. But this contradicts the already established fact that $\Ban$ is well-copowered (since it is locally presentable).
+      is bijective. In particular, there is a morphism $f : \Psi \to X$ with dense image, i.e. an epimorphism. But this contradicts the fact that $\Ban$ is well-copowered, which holds since it is locally presentable (<a href="/category/Ban?proof=locally_presentable" data-allow-deduced>proof</a>).
       Alternatively, we may use that for every cardinal $\kappa$ the Banach space $\ell^2(\kappa^+)$ has no dense subset of size $\kappa$.
 
   - property: unital

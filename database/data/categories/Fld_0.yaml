@@ -20,13 +20,13 @@ comments:
 
 satisfied_properties:
   - property: locally small
-    proof: It is a full subcategory of <a href="/category/Fld">$\Fld$</a>, which is locally small.
+    proof: It is a full subcategory of $\CRing$, which is locally small (<a href="/category/CRing?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: initial object
     proof: The field $\IQ$ is an initial object; see for example <a href="https://proofwiki.org/wiki/Field_of_Characteristic_Zero_has_Unique_Prime_Subfield">here</a>.
 
   - property: left cancellative
-    proof: This property is inherited from <a href="/category/Fld">$\Fld$</a>.
+    proof: This property is inherited from $\Fld$, which is left cancellative (<a href="/category/Fld?proof=left_cancellative" data-allow-deduced>proof</a>).
     check_redundancy: false
 
   - property: quotient-trivial
@@ -70,7 +70,7 @@ special_objects:
 special_morphisms:
   isomorphism:
     description: bijective field homomorphisms
-    proof: It is a full subcategory of $\CRing$, for which we know that isomorphisms are bijective homomorphisms.
+    proof: It is a full subcategory of $\CRing$, for which isomorphisms are bijective homomorphisms (<a href="/category/CRing?proof=isomorphism" data-allow-deduced>proof</a>).
   regular monomorphism:
     description: A Galois extension is a regular monomorphism iff it is procyclic, and the general case can be reduced to this situation; see <a href="https://math.stackexchange.com/questions/5129895">MSE/5129895</a> for details.
     proof: See <a href="https://math.stackexchange.com/questions/5129895">MSE/5129895</a>.

@@ -21,7 +21,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\PMet \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
+    proof: There is a forgetful functor $\PMet \to \Set$, and $\Set$ is locally small (<a href="/category/Set?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: strict initial object
     proof: The empty set $\varnothing$ with its unique pseudo-metric is initial and clearly strict.
@@ -73,7 +73,7 @@ satisfied_properties:
     proof: >-
       We already saw that finite limits and filtered colimits exist. Now let $\I$ be a finite category and $\J$ be a small filtered category, w.l.o.g. a directed poset. Let $D : \I \times \J \to \PMet$ be a diagram. We need to show that the canonical map
       $$\textstyle\colim_{j \in \J} \lim_{i \in \I} D(i,j) \to \lim_{i \in \I} \colim_{j \in \J} D(i,j)$$
-      is an isomorphism. It is bijective since the forgetful functor to $\Set$ preserves finite limits and filtered colimits and since <a href="/category/Set">$\Set$</a> has exact filtered colimits. That the map is isometric can easily be reduced to the following lemma: If $r_{i,j} \in \IR_{\geq 0}$ are numbers for $i \in \I$, $j \in \J$ with $j \leq k \implies r_{i,k} \leq r_{i,j}$, then $\inf_j \sup_i r_{i,j} = \sup_i \inf_j r_{i,j}$. This can be proven directly. Alternatively, use that the thin category $(\IR_{\geq 0} \cup \{\infty\},\leq)$ is isomorphic to $([0,1],\leq)$, and we already know that <a href="/category/real_interval">it has exact filtered colimits</a>.
+      is an isomorphism. It is bijective since the forgetful functor to $\Set$ preserves finite limits and filtered colimits and since $\Set$ has exact filtered colimits (<a href="/category/Set?proof=exact_filtered_colimits" data-allow-deduced>proof</a>). That the map is isometric can easily be reduced to the following lemma: If $r_{i,j} \in \IR_{\geq 0}$ are numbers for $i \in \I$, $j \in \J$ with $j \leq k \implies r_{i,k} \leq r_{i,j}$, then $\inf_j \sup_i r_{i,j} = \sup_i \inf_j r_{i,j}$. This can be proven directly. Alternatively, use that the thin category $(\IR_{\geq 0} \cup \{\infty\},\leq)$ is isomorphic to $([0,1],\leq)$, and we already know that it has exact filtered colimits (<a href="/category/real_interval?proof=exact_filtered_colimits" data-allow-deduced>proof</a>).
 
   - property: ℵ₁-cofiltered limits
     proof: >-
@@ -87,7 +87,7 @@ satisfied_properties:
 
   - property: ℵ₁-accessible
     proof: >-
-      We already know that $\PMet$ has filtered colimits. Let $(X_i,d_i)_{i \in I}$ be a diagram in $\PMet$ indexed by an $\aleph_1$-directed poset $I$, with transition maps $f_{ij} : (X_i,d_i) \to (X_j,d_j)$ for $i \leq j$, and let $(u_i : (X_i,d_i) \to (X,d))_{i \in I}$ be its colimit. Recall that $X$ is the colimit of the sets $X_i$, and that $d(x,y)$ is the infimum of all $d_i(x_i,y_i)$, where $i \in I$ and $x_i,y_i \in X_i$ satisfy $u_i(x_i) = x$ and $u_i(y_i) = y$.
+      We already know that $\PMet$ has filtered colimits (<a href="/category/PMet?proof=filtered_colimits" data-allow-deduced>proof</a>). Let $(X_i,d_i)_{i \in I}$ be a diagram in $\PMet$ indexed by an $\aleph_1$-directed poset $I$, with transition maps $f_{ij} : (X_i,d_i) \to (X_j,d_j)$ for $i \leq j$, and let $(u_i : (X_i,d_i) \to (X,d))_{i \in I}$ be its colimit. Recall that $X$ is the colimit of the sets $X_i$, and that $d(x,y)$ is the infimum of all $d_i(x_i,y_i)$, where $i \in I$ and $x_i,y_i \in X_i$ satisfy $u_i(x_i) = x$ and $u_i(y_i) = y$.
 
       <strong>Claim.</strong> For every countable subset $S \subseteq X$ there are an index $k \in I$ and a map $s : S \to X_k$ such that $u_k(s(x)) = x$ and $d_k(s(x),s(y)) = d(x,y)$ for all $x,y \in S$. In other words, the infima defining the distances in $S$ are attained simultaneously at a single stage.
 
@@ -129,7 +129,7 @@ satisfied_properties:
     proof: >-
       Consider $(Q,d_Q)$, where $Q \coloneqq \IR_{\ge 0} \sqcup \{ 0' \}$ and $d_Q$ is the pseudo-metric extending the usual metric on $\IR_{\ge 0}$ with $d_Q(x, 0') = x$ for $x \in \IR_{\ge 0}$. Then $(Q,d_Q)$ is an extremal cogenerator.
 
-      First, to see $(Q,d_Q)$ is a cogenerator, note that $d_Q$ restricts to the zero pseudo-metric on $\{ 0, 0' \}$, and that $(\{ 0, 0' \},0)$ is a cogenerator since every map into it is automatically non-expansive and since $\{0,0'\}$ is a cogenerator in <a href="/category/Set">$\Set$</a>. Therefore, since the inclusion $(\{ 0, 0' \},0) \hookrightarrow (Q,d_Q)$ is a monomorphism, we have that $(Q,d_Q)$ is also a cogenerator.
+      First, to see $(Q,d_Q)$ is a cogenerator, note that $d_Q$ restricts to the zero pseudo-metric on $\{ 0, 0' \}$, and that $(\{ 0, 0' \},0)$ is a cogenerator since every map into it is automatically non-expansive and since $\{0,0'\}$ is a cogenerator in $\Set$ (<a href="/category/Set?proof=extremal_cogenerator">proof</a>). Therefore, since the inclusion $(\{ 0, 0' \},0) \hookrightarrow (Q,d_Q)$ is a monomorphism, we have that $(Q,d_Q)$ is also a cogenerator.
 
       To see $(Q,d_Q)$ is in fact an extremal cogenerator, suppose we have a morphism $f : (X,d_X) \to (Y,d_Y)$ such that
       $${-} \circ f : \Hom((Y,d_Y), (Q,d_Q)) \to \Hom((X,d_X), (Q,d_Q))$$

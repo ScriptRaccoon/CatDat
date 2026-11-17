@@ -17,7 +17,7 @@ related:
 
 satisfied_properties:
   - property: closed
-    proof: Since <a href="/symmetric_monoidal_category/Ab_tensor">$(\Ab,\otimes,\IZ)$</a> is closed, it suffices to prove that for abelian groups $A,B$ with internal Hom $[A,B]$, if $A$ and $B$ are finitely generated, then $[A,B]$ is finitely generated. Since there is an epimorphism $\IZ^n \to A$, there is a monomorphism $[A,B] \to [\IZ^n,B] \cong B^n$. Since $B^n$ is finitely generated, the claim follows from the fact that subgroups of finitely generated abelian groups are finitely generated. (This also shows that the corresponding statement for finitely generated modules over a ring holds only when the ring is Noetherian.)
+    proof: Since $(\Ab,\otimes,\IZ)$ is closed (<a href="/symmetric_monoidal_category/Ab_tensor?proof=closed" data-allow-deduced>proof</a>), it suffices to prove that for abelian groups $A,B$ with internal Hom $[A,B]$, if $A$ and $B$ are finitely generated, then $[A,B]$ is finitely generated. Since there is an epimorphism $\IZ^n \to A$, there is a monomorphism $[A,B] \to [\IZ^n,B] \cong B^n$. Since $B^n$ is finitely generated, the claim follows from the fact that subgroups of finitely generated abelian groups are finitely generated. (This also shows that the corresponding statement for finitely generated modules over a ring holds only when the ring is Noetherian.)
 
   - property: well-pointed
     proof: In fact, $\IZ$ is even an extremal generator of $\Ab_{\fg}$ (<a href="/category/Ab_fg?proof=extremal_generator">proof</a>).
@@ -31,11 +31,11 @@ unsatisfied_properties:
 
   - property: infinitary distributive
     # TODO: automate this with category_conclusions
-    proof: This is because <a href="/category/Ab_fg">$\Ab_{\fg}$</a> does not have coproducts.
+    proof: This is because $\Ab_{\fg}$ does not have coproducts (<a href="/category/Ab_fg?proof=coproducts" data-allow-deduced>proof</a>).
 
   - property: infinitary codistributive
     # TODO: automate this with category_conclusions
-    proof: This is because <a href="/category/Ab_fg">$\Ab_{\fg}$</a> does not have products.
+    proof: This is because $\Ab_{\fg}$ does not have products (<a href="/category/Ab_fg?proof=products" data-allow-deduced>proof</a>).
 
   - property: well-copointed
     proof: The same <a href="/symmetric_monoidal_category/Ab_tensor?proof=well-copointed">counterexample</a> as for $(\Ab,\otimes,\IZ)$ works here.

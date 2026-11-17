@@ -61,11 +61,11 @@ satisfied_properties:
 
   - property: ℵ₁-accessible
     proof: >-
-      The argument is very similar to the <a href="/category/BC?proof=aleph1-accessible">proof</a> for $BC$. We apply Theorem 4 <a href="/content/deloopings-aleph1-accessible">here</a>. We already know that $D$ is countable and that $BD$ is Cauchy complete. It remains to show that $D$ satisfies the ascending chain condition on principal right ideals. Every principal right ideal of $D$ has the form $s^n w D = s^n D$, where $w$ is a word in $f,g$, since $w$ is a split epimorphism and hence $w D = D$. If $s^n D \subseteq s^{n'} D$, then $n \geq n'$. Otherwise, write $s^n = s^{n'} x$ with $x \in D$. Since $s^n$ is a monomorphism, we get $1 = s^{n'-n} x$, so that $s^{n'-n}$ is a split epimorphism, which contradicts the fact that every epimorphism is a word in $f,g$ (<a href="/category/BD?proof=epimorphism">proof</a>). Therefore, every ascending chain $s^{n_0} D \subseteq s^{n_1} D \subseteq \cdots$ satisfies $n_0 \geq n_1 \geq \cdots$ and hence becomes stationary.
+      The argument is very similar to the <a href="/category/BC?proof=aleph1-accessible">proof</a> for $BC$. We apply Theorem 4 <a href="/content/deloopings-aleph1-accessible">here</a>. We already know that $BD$ is Cauchy complete (<a href="/category/BD?proof=Cauchy_complete" data-allow-deduced>proof</a>), and $D$ is countable. It remains to show that $D$ satisfies the ascending chain condition on principal right ideals. Every principal right ideal of $D$ has the form $s^n w D = s^n D$, where $w$ is a word in $f,g$, since $w$ is a split epimorphism and hence $w D = D$. If $s^n D \subseteq s^{n'} D$, then $n \geq n'$. Otherwise, write $s^n = s^{n'} x$ with $x \in D$. Since $s^n$ is a monomorphism, we get $1 = s^{n'-n} x$, so that $s^{n'-n}$ is a split epimorphism, which contradicts the fact that every epimorphism is a word in $f,g$ (<a href="/category/BD?proof=epimorphism">proof</a>). Therefore, every ascending chain $s^{n_0} D \subseteq s^{n_1} D \subseteq \cdots$ satisfies $n_0 \geq n_1 \geq \cdots$ and hence becomes stationary.
 
   - property: ℵ₁-coaccessible
     proof: >-
-      We apply Theorem 4 <a href="/content/deloopings-aleph1-accessible">here</a> to the opposite monoid $D^{\op}$, whose delooping is $(BD)^{\op}$. We already know that $D^{\op}$ is countable and that $(BD)^{\op}$ is Cauchy complete. It remains to show that $D^{\op}$ satisfies the ascending chain condition on principal right ideals, i.e. that $D$ satisfies the ascending chain condition on principal left ideals.
+      We apply Theorem 4 <a href="/content/deloopings-aleph1-accessible">here</a> to the opposite monoid $D^{\op}$, whose delooping is $(BD)^{\op}$. We already know that $(BD)^{\op}$ is Cauchy complete (<a href="/category/BD?proof=Cauchy_complete" data-allow-deduced>proof</a>), and $D$ is countable. It remains to show that $D^{\op}$ satisfies the ascending chain condition on principal right ideals, i.e. that $D$ satisfies the ascending chain condition on principal left ideals.
 
       Every principal left ideal of $D$ has the form $D s^n w = D w$, where $w$ is a word in $f,g$, since $s^n$ is a split monomorphism and hence $D s^n = D$. We claim that $D w \subseteq D w'$ implies that $w'$ is a suffix of $w$. To see this, write $w = t w'$ with $t \in D$ and write $t = s^k v$, where $v$ is a word in $f,g$. Then $w = s^k (v w')$, where $v w'$ is a word in $f,g$. By the uniqueness of the normal form, we get $k = 0$ and $w = v w'$.
 
@@ -145,7 +145,7 @@ special_objects: {}
 special_morphisms:
   isomorphism:
     description: only the neutral element $1$
-    proof: We have shown this in the proof that the category is core-thin.
+    proof: We have shown this in the <a href="/category/BD?proof=core-thin">proof</a> that the category is core-thin.
   monomorphism:
     description: the elements $s^n$ for $n \geq 0$
     proof: Since $fs = 1$, the element $s$ is a split monomorphism, and hence so is $s^n$. Conversely, let $x = s^n w$ be a monomorphism and assume that the word $w$ is non-empty. Then $w$ ends with $f$ or $g$, say $w = w' f$ (the case of $g$ is analogous). Since $x = s^n w' f$, the element $f$ is also a monomorphism. From $fs = 1$ we get $f (sf) = f = f \cdot 1$, hence $sf = 1$. But $sf \neq 1$ by the uniqueness of the normal form, which is a contradiction.

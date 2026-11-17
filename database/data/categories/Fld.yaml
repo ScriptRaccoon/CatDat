@@ -18,7 +18,7 @@ comments:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\Fld \to \Set$, and <a href="/category/Set">$\Set$</a> is locally small.
+    proof: It is a full subcategory of $\CRing$, which is locally small (<a href="/category/CRing?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: inhabited
     proof: For example, $\IQ$ is a field.
@@ -34,7 +34,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: The category contains the non-skeletal category <a href="/category/Fld_0">$\Fld_0$</a> as a subcategory.
+    proof: The category contains $\Fld_0$ as a subcategory, which is not skeletal (<a href="/category/Fld_0?proof=skeletal" data-allow-deduced>proof</a>).
 
   - property: connected
     proof: A field of characteristic $0$ cannot be connected to a field of characteristic $p > 0$. In fact, the connected components of $\Fld$ are the subcategories $\Fld_p$ of fields of characteristic $p$, where $p$ is a prime or $0$.
@@ -75,7 +75,7 @@ special_objects: {}
 special_morphisms:
   isomorphism:
     description: bijective field homomorphisms
-    proof: It is a full subcategory of $\CRing$, for which we know that isomorphisms are bijective homomorphisms.
+    proof: It is a full subcategory of $\CRing$, for which isomorphisms are bijective homomorphisms (<a href="/category/CRing?proof=isomorphism" data-allow-deduced>proof</a>).
   epimorphism:
     description: purely inseparable homomorphisms
     proof: See <a href="https://math.stackexchange.com/questions/687869">MSE/687869</a>.

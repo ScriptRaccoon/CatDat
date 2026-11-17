@@ -18,10 +18,10 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: It is a full subcategory of <a href="/category/Top">$\Top$</a>, which is locally small.
+    proof: It is a full subcategory of $\Top$, which is locally small (<a href="/category/Top?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: finite products
-    proof: This follows since $\Top$ is infinitary distributive and Euclidean spaces are closed under finite products. Namely, $\IR^0 = \{0\}$ and $\IR^n \times \IR^m \cong \IR^{n+m}$.
+    proof: This follows since $\Top$ is infinitary distributive (<a href="/category/Top?proof=infinitary_distributive" data-allow-deduced>proof</a>) and Euclidean spaces are closed under finite products. Namely, $\IR^0 = \{0\}$ and $\IR^n \times \IR^m \cong \IR^{n+m}$.
 
   - property: infinitary extensive
     proof: The <a href="https://ncatlab.org/nlab/show/free+coproduct+completion">free coproduct completion</a> of any category is infinitary extensive; for the finite case see <a href="https://doi.org/10.1016/0022-4049(93)90035-R">Carboni–Lack–Walters</a>, Proposition 2.4.
@@ -30,10 +30,10 @@ satisfied_properties:
     proof: This is clear since the monomorphisms are the injective continuous maps (<a href="/category/Euclid_coprod?proof=monomorphism">proof</a>).
 
   - property: well-copowered
-    proof: Every epimorphism has dense image (<a href="/category/Euclid_coprod?proof=epimorphism">proof</a>) and is therefore also an epimorphism in <a href="/category/Haus">$\Haus$</a>, so that the claim follows from the fact that $\Haus$ is well-copowered.
+    proof: Every epimorphism has dense image (<a href="/category/Euclid_coprod?proof=epimorphism">proof</a>) and is therefore also an epimorphism in $\Haus$ (<a href="/category/Haus?proof=epimorphism" data-allow-deduced>proof</a>), so that the claim follows from the fact that $\Haus$ is well-copowered (<a href="/category/Haus?proof=well-copowered" data-allow-deduced>proof</a>).
 
   - property: semi-strongly connected
-    proof: This property is inherited from <a href="/category/Top">$\Top$</a>.
+    proof: This property is inherited from $\Top$, which is semi-strongly connected (<a href="/category/Top?proof=semi-strongly_connected" data-allow-deduced>proof</a>).
 
   - property: extremal generator
     proof: >-
@@ -122,7 +122,7 @@ unsatisfied_properties:
     check_redundancy: false
 
   - property: quotients of congruences
-    proof: Since the category is extensive, if it had quotients of congruences, by <a href="/content/pushouts-of-monos-via-congruence-quotients">this lemma</a> it would have pushouts of monomorphisms. But we have seen before that $\IR \sqcup_{0} \IR$ does not exist (<a href="/category/Euclid_coprod?proof=cokernel_pairs">proof</a>).
+    proof: Since the category is extensive (<a href="/category/Euclid_coprod?proof=extensive" data-allow-deduced>proof</a>), if it had quotients of congruences, by <a href="/content/pushouts-of-monos-via-congruence-quotients">this lemma</a> it would have pushouts of monomorphisms. But we have seen before that $\IR \sqcup_{0} \IR$ does not exist (<a href="/category/Euclid_coprod?proof=cokernel_pairs">proof</a>).
 
 special_objects:
   initial object:

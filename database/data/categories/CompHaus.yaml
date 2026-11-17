@@ -15,10 +15,10 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: It is a full subcategory of $\Top$, which is locally small.
+    proof: It is a full subcategory of $\Top$, which is locally small (<a href="/category/Top?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: semi-strongly connected
-    proof: This is already true for <a href="/category/Top">$\Top$</a>.
+    proof: Already $\Top$ is semi-strongly connected (<a href="/category/Top?proof=semi-strongly_connected" data-allow-deduced>proof</a>).
 
   - property: products
     proof: By the Tychonoff product theorem, a product in <a href="/category/Top">$\Top$</a> of compact Hausdorff spaces is compact; it is also clearly Hausdorff. Since the forgetful functor from $\CompHaus$ to $\Top$ is fully faithful, this limit is reflected in $\CompHaus$ as well.
@@ -54,7 +54,7 @@ satisfied_properties:
       with $i : A \hookrightarrow B$ a monomorphism. Then for any pair of distinct elements $c, c' \in C$, by Urysohn's lemma there exists $\gamma : C \to [0, 1]$ with $\gamma(c) = 0$ and $\gamma(c') = 1$. Also, by Tietze's extension theorem, there exists $\beta : B \to [0, 1]$ such that $\beta \circ i = \gamma \circ f$. By the pushout property, there is a unique $\delta : D \to [0, 1]$ such that $\delta \circ g = \beta$ and $\delta \circ j = \gamma$. Since $\delta(j(c)) \ne \delta(j(c'))$, we conclude that $j(c) \ne j(c')$. This shows that $j$ is injective, so it is a regular monomorphism.
 
   - property: extensive
-    proof: This follows from Lemma 11 <a href="/content/subcategories">here</a> since <a href="/category/Top">$\Top$</a> is infinitary extensive and its full subcategory $\CompHaus$ is closed under pullbacks and finite coproducts in $\Top$.
+    proof: This follows from Lemma 11 <a href="/content/subcategories">here</a> since $\Top$ is infinitary extensive (<a href="/category/Top?proof=infinitary_extensive" data-allow-deduced>proof</a>) and its full subcategory $\CompHaus$ is closed under pullbacks and finite coproducts in $\Top$.
 
   - property: cofiltered-limit-stable epimorphisms
     proof: 'Suppose we have a cofiltered diagram of epimorphisms $(f_i : X_i \to Y_i)$, and $y = (y_i) \in \lim_i Y_i$. Then by Lemma 1 <a href="/content/comphaus_copresentable">here</a>, the limit of $f_i^{-1}(\{ y_i \})$ is non-empty. If $x$ is in this limit, that implies that $(\lim_i f_i)(x) = y$.'
@@ -70,7 +70,7 @@ unsatisfied_properties:
     proof: 'The continuous map $\{0,1\}^\IN \to [0,1]$, $(a_n)_{n \in \IN} \mapsto \sum_{n \in \IN} a_n 2^{-(n+1)}$ is surjective, since every real number in $[0,1)$ has a binary expansion (see <a href="https://proofwiki.org/wiki/Existence_of_Base-N_Representation">ProofWiki</a>) and $1$ is the image of the constant sequence with value $1$, hence an epimorphism. It has no section: every continuous map $[0,1] \to \{0,1\}^\IN$ is constant, since $[0,1]$ is connected and $\{0,1\}^\IN$ is totally disconnected.'
 
   - property: Malcev
-    proof: 'Apply the contrapositive of Lemma 13 <a href="/content/subcategories">here</a> to the inclusion of finite discrete spaces $\FinSet \to \CompHaus$, which is fully faithful and preserves finite limits. Here, we use that <a href="/category/FinSet">$\FinSet$</a> is not Malcev.'
+    proof: 'Apply the contrapositive of Lemma 13 <a href="/content/subcategories">here</a> to the inclusion of finite discrete spaces $\FinSet \to \CompHaus$, which is fully faithful and preserves finite limits. Here, we use that $\FinSet$ is not Malcev (<a href="/category/FinSet?proof=Malcev" data-allow-deduced>proof</a>).'
 
   - property: regular subobject classifier
     proof: The argument is almost identical to the <a href="/category/Haus?proof=regular_subobject_classifier">proof</a> for $\Haus$.
@@ -111,7 +111,7 @@ special_objects:
 special_morphisms:
   isomorphism:
     description: homeomorphisms
-    proof: It is a full subcategory of $\Top$, for which isomorphisms are known to be homeomorphisms.
+    proof: It is a full subcategory of $\Top$, for which isomorphisms are known to be homeomorphisms (<a href="/category/Top?proof=isomorphism" data-allow-deduced>proof</a>).
   monomorphism:
     description: injective continuous maps (which are automatically closed embeddings)
     proof: 'For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms. To prove the parenthetical remark, given an injective continuous function $f : X \to Y$ between compact Hausdorff spaces, the image of $f$ is a closed subset. Also, the induced map from $X$ to $\im(f)$ with the subspace topology is a bijective continuous map between compact Hausdorff spaces, so it is a homeomorphism.'

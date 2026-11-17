@@ -25,8 +25,8 @@ unsatisfied_properties:
     proof: Whether the underlying monoidal category is strict depends on the specific construction of topological spaces and their products, but the symmetries cannot be identities, since otherwise $\Top$ would be thin (see <a href="/category-implication/core-thin_products_thin">this proof</a>).
 
   - property: finitely cocomplete
-    proof: 'The functor $\IQ \times - : \Top \to \Top$ does not preserve coequalizers, see <a href="/functor/rational_product">here</a> or <a href="https://math.stackexchange.com/questions/2969372">MSE/2969372</a>.'
+    proof: 'The functor $\IQ \times - : \Top \to \Top$ does not preserve coequalizers (<a href="/functor/rational_product?proof=preserves_coequalizers" data-allow-deduced>proof</a>); see also <a href="https://math.stackexchange.com/questions/2969372">MSE/2969372</a>.'
 
   - property: well-copointed
     # TODO: automate this with category_conclusions
-    proof: The monoidal unit $\{\ast\}$ is a terminal object, so that $\Hom(-,\{\ast\})$ is constant with value a singleton. It is not faithful since $\Top$ is not thin.
+    proof: The monoidal unit $\{\ast\}$ is a terminal object, so that $\Hom(-,\{\ast\})$ is constant with value a singleton. It is not faithful since $\Top$ is not thin (<a href="/category/Top?proof=thin" data-allow-deduced>proof</a>).

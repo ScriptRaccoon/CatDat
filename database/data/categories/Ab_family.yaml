@@ -18,35 +18,35 @@ related:
 
 satisfied_properties:
   - property: preadditive
-    proof: This property is immediately inherited from <a href="/category/Ab">$\Ab$</a>, because we may define the preadditive structure pointwise via $(f+g)_i \coloneqq f_i + g_i$. Note that for two families $A,B$, the collection $\Hom(A,B)$ is a <i>possibly large</i> abelian group, which is compatible with our definition of a preadditive category.
+    proof: $\Ab$ is preadditive (<a href="/category/Ab?proof=preadditive" data-allow-deduced>proof</a>), and this property is immediately inherited, because we may define the preadditive structure pointwise via $(f+g)_i \coloneqq f_i + g_i$. Note that for two families $A,B$, the collection $\Hom(A,B)$ is a <i>possibly large</i> abelian group, which is compatible with our definition of a preadditive category.
 
   - property: cocomplete
-    proof: This property is immediately inherited from <a href="/category/Ab">$\Ab$</a>. Colimits are defined pointwise.
+    proof: This property is immediately inherited from $\Ab$, which is cocomplete (<a href="/category/Ab?proof=cocomplete" data-allow-deduced>proof</a>). Colimits are defined pointwise.
 
   - property: complete
-    proof: This property is immediately inherited from <a href="/category/Ab">$\Ab$</a>. Limits are defined pointwise.
+    proof: This property is immediately inherited from $\Ab$, which is complete (<a href="/category/Ab?proof=complete" data-allow-deduced>proof</a>). Limits are defined pointwise.
 
   - property: exact filtered colimits
-    proof: This property is immediately inherited from <a href="/category/Ab">$\Ab$</a>.
+    proof: This property is immediately inherited from $\Ab$, which has exact filtered colimits (<a href="/category/Ab?proof=exact_filtered_colimits" data-allow-deduced>proof</a>).
 
   - property: normal
-    proof: This property is immediately inherited from <a href="/category/Ab">$\Ab$</a>.
+    proof: This property is immediately inherited from $\Ab$, which is normal (<a href="/category/Ab?proof=normal" data-allow-deduced>proof</a>).
 
   - property: conormal
-    proof: This property is immediately inherited from <a href="/category/Ab">$\Ab$</a>.
+    proof: This property is immediately inherited from $\Ab$, which is conormal (<a href="/category/Ab?proof=conormal" data-allow-deduced>proof</a>).
 
   - property: generator
-    proof: We know that <a href="/category/Ab">$\Ab$</a> has a generator $G$, for example $G = \IZ$. Then the constant family $(G)_{i \in I}$ is a generator of $\Ab^I$.
+    proof: We know that $\Ab$ has a generator $G$ (<a href="/category/Ab?proof=generator" data-allow-deduced>proof</a>), for example $G = \IZ$. Then the constant family $(G)_{i \in I}$ is a generator of $\Ab^I$.
 
   - property: cogenerator
-    proof: We know that <a href="/category/Ab">$\Ab$</a> has a cogenerator $Q$, for example $Q = \IQ / \IZ$. Then the constant family $(Q)_{i \in I}$ is a cogenerator of $\Ab^I$.
+    proof: We know that $\Ab$ has a cogenerator $Q$ (<a href="/category/Ab?proof=cogenerator" data-allow-deduced>proof</a>), for example $Q = \IQ / \IZ$. Then the constant family $(Q)_{i \in I}$ is a cogenerator of $\Ab^I$.
 
 unsatisfied_properties:
   - property: skeletal
     proof: The constant families of the trivial groups with underlying sets $\{0\}$ and $\{1\}$ are zero objects, hence isomorphic, but not equal.
 
   - property: all epimorphisms split
-    proof: Choose an index $i \in I$. The functor $\Ab \to \Ab^I$ that inserts an abelian group at the index $i$ (and $0$ at all other indices) is fully faithful and exact. Hence, the claim follows from the contrapositive of Lemma 15 <a href="/content/subcategories">here</a>, since <a href="/category/Ab">$\Ab$</a> does not have all epimorphisms split.
+    proof: Choose an index $i \in I$. The functor $\Ab \to \Ab^I$ that inserts an abelian group at the index $i$ (and $0$ at all other indices) is fully faithful and exact. Hence, the claim follows from the contrapositive of Lemma 15 <a href="/content/subcategories">here</a>, since $\Ab$ does not have all epimorphisms split (<a href="/category/Ab?proof=all_epimorphisms_split" data-allow-deduced>proof</a>).
 
   - property: well-powered
     proof: The collection of subobjects of the constant family $(\IZ/2)_{i \in I}$ identifies with the collection $P(I)$, which is not essentially small.
@@ -67,7 +67,7 @@ special_morphisms:
     proof: This is trivial.
   monomorphism:
     description: families of injective homomorphisms
-    proof: The category is abelian and hence has kernels, constructed pointwise. Thus, a homomorphism $f = (f_i)_{i \in I}$ is a monomorphism if and only if $\ker(f_i) = 0$ for all $i$, i.e. each $f_i$ is a monomorphism.
+    proof: The category is abelian (<a href="/category/Ab_family?proof=abelian" data-allow-deduced>proof</a>) and hence has kernels, constructed pointwise. Thus, a homomorphism $f = (f_i)_{i \in I}$ is a monomorphism if and only if $\ker(f_i) = 0$ for all $i$, i.e. each $f_i$ is a monomorphism.
   epimorphism:
     description: families of surjective homomorphisms
-    proof: The category is abelian and hence has cokernels, constructed pointwise. Thus, a homomorphism $f = (f_i)_{i \in I}$ is an epimorphism if and only if $\coker(f_i) = 0$ for all $i$, i.e. each $f_i$ is an epimorphism.
+    proof: The category is abelian (<a href="/category/Ab_family?proof=abelian" data-allow-deduced>proof</a>) and hence has cokernels, constructed pointwise. Thus, a homomorphism $f = (f_i)_{i \in I}$ is an epimorphism if and only if $\coker(f_i) = 0$ for all $i$, i.e. each $f_i$ is an epimorphism.

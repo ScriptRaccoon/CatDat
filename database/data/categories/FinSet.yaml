@@ -24,7 +24,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\FinSet \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
+    proof: There is a forgetful functor $\FinSet \to \Set$, and $\Set$ is locally small (<a href="/category/Set?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: locally finite
     proof: This is trivial.
@@ -33,10 +33,10 @@ satisfied_properties:
     proof: Every finite set is isomorphic to $\{1,\dotsc,n\}$ for some $n \in \IN$.
 
   - property: all epimorphisms split
-    proof: Apply Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\FinSet \hookrightarrow \Set$, which preserves epimorphisms since these are surjective in both categories (<a href="/category/FinSet?proof=epimorphism">proof</a> for $\FinSet$ and <a href="/category/Set?proof=epimorphism">proof</a> for $\Set$), and use that <a href="/category/Set">$\Set$</a> has all epimorphisms split.
+    proof: Apply Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\FinSet \hookrightarrow \Set$, which preserves epimorphisms since these are surjective in $\FinSet$ (<a href="/category/FinSet?proof=epimorphism">proof</a>) and in $\Set$ (<a href="/category/Set?proof=epimorphism">proof</a>), and use that $\Set$ has all epimorphisms split (<a href="/category/Set?proof=all_epimorphisms_split" data-allow-deduced>proof</a>).
 
   - property: extremal generator
-    proof: The one-point set is an extremal generator even in <a href="/category/Set">$\Set$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
+    proof: The one-point set is an extremal generator even in $\Set$ (<a href="/category/Set?proof=extremal_generator">proof</a>). Now apply Lemma 10 <a href="/content/subcategories">here</a>.
 
   - property: semi-strongly connected
     proof: Every non-empty finite set is weakly terminal (by using constant maps).
@@ -74,7 +74,7 @@ special_objects:
 special_morphisms:
   isomorphism:
     description: bijective maps
-    proof: It is a full subcategory of $\Set$, for which we know that isomorphisms are bijective maps.
+    proof: It is a full subcategory of $\Set$, for which isomorphisms are bijective maps (<a href="/category/Set?proof=isomorphism" data-allow-deduced>proof</a>).
   monomorphism:
     description: injective maps
     proof: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.

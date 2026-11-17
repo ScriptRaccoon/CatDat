@@ -16,7 +16,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: It is a full subcategory of $(\IZ \times \IZ){-}\Mod$, which is locally small.
+    proof: It is a full subcategory of $(\IZ \times \IZ){-}\Mod$, which is locally small (<a href="/category/R-Mod?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: essentially countable
     proof: Every object is isomorphic to one of the countably many modules $(\IZ \times \IZ)^n$, and the set $\Hom((\IZ \times \IZ)^n,(\IZ \times \IZ)^m) \cong M_{m \times n}(\IZ \times \IZ)$ is countable.
@@ -25,7 +25,7 @@ satisfied_properties:
     proof: The category is closed under finite direct sums in $(\IZ \times \IZ){-}\Mod$, which is additive.
 
   - property: extremal generator
-    proof: For every ring $R$, we know that $R$ is an extremal generator of $R{-}\Mod$, and hence also an extremal generator of the category of finitely generated free $R$-modules.
+    proof: For every ring $R$, the $R$-module $R$ is an extremal generator of $R{-}\Mod$, and hence also an extremal generator of the category of finitely generated free $R$-modules.
 
   - property: self-dual
     proof: More generally, if $R$ is a ring, the functor $\underline{\Hom}(-,R)$ implements an equivalence of categories between the dual of the category of finitely generated free $R$-modules and the category of finitely generated free $R^{\op}$-modules. See also the <a href="/category/Proj_fg(Re)?proof=self-dual">proof</a> of self-duality for $\Proj_\fg(\IR[\varepsilon])$.
@@ -78,7 +78,7 @@ special_objects:
 special_morphisms:
   isomorphism:
     description: bijective homomorphisms
-    proof: It is a full subcategory of $R{-}\Mod$ for $R = \IZ \times \IZ$, and we already know that the isomorphisms in $R{-}\Mod$ are the bijective homomorphisms.
+    proof: It is a full subcategory of $R{-}\Mod$ for $R = \IZ \times \IZ$, in which isomorphisms are bijective homomorphisms (<a href="/category/R-Mod?proof=isomorphism" data-allow-deduced>proof</a>).
   monomorphism:
     description: injective homomorphisms
     proof: For the non-trivial direction, the forgetful functor to $\Set$ is representable, hence preserves monomorphisms.

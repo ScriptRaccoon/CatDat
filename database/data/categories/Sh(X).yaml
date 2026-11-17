@@ -25,7 +25,7 @@ comments:
 
 satisfied_properties:
   - property: locally small
-    proof: The collection of morphisms $F \to G$ is a subcollection of $\prod_{U} \Hom(F(U),G(U))$, where $U$ runs through the set of open subsets of $X$, and this is a set since <a href="/category/Set">$\Set$</a> is locally small.
+    proof: The collection of morphisms $F \to G$ is a subcollection of $\prod_{U} \Hom(F(U),G(U))$, where $U$ runs through the set of open subsets of $X$, and this is a set since $\Set$ is locally small (<a href="/category/Set?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: Grothendieck topos
     proof: This holds by definition of a Grothendieck topos.
@@ -42,7 +42,7 @@ unsatisfied_properties:
 
 undecidable_properties:
   - property: all epimorphisms split
-    proof: This depends on the space $X$. If $X$ is the Sierpiński space, then $\Sh(X)$ is equivalent to <a href="/category/Set_arrow">$\Set^{\rightarrow}$</a>, which does not have all epimorphisms split. If $X = \{0,1,2\}$ with the open sets $\varnothing, \{0,1\}, \{2\}, X$, then a sheaf $F$ on $X$ is determined by $F(\{0,1\})$ and $F(\{2\})$, so that $\Sh(X) \simeq \Set \times \Set$, which has all epimorphisms split.
+    proof: This depends on the space $X$. If $X$ is the Sierpiński space, then $\Sh(X)$ is equivalent to $\Set^{\rightarrow}$, which does not have all epimorphisms split (<a href="/category/Set_arrow?proof=all_epimorphisms_split" data-allow-deduced>proof</a>). If $X = \{0,1,2\}$ with the open sets $\varnothing, \{0,1\}, \{2\}, X$, then a sheaf $F$ on $X$ is determined by $F(\{0,1\})$ and $F(\{2\})$, so that $\Sh(X) \simeq \Set \times \Set$, which has all epimorphisms split.
 
 special_objects:
   initial object:

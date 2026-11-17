@@ -20,22 +20,22 @@ related:
 
 satisfied_properties:
   - property: preadditive
-    proof: This property is immediately inherited from <a href="/category/Ab">$\Ab$</a>, because we may define the preadditive structure pointwise via $(f+g)_\alpha \coloneqq f_\alpha + g_\alpha$. Note that for two transfinite sequences $A,B$, the collection $\Hom(A,B)$ is a <i>possibly large</i> abelian group, which is compatible with our definition of a preadditive category.
+    proof: $\Ab$ is preadditive (<a href="/category/Ab?proof=preadditive" data-allow-deduced>proof</a>), and this property is immediately inherited, because we may define the preadditive structure pointwise via $(f+g)_\alpha \coloneqq f_\alpha + g_\alpha$. Note that for two transfinite sequences $A,B$, the collection $\Hom(A,B)$ is a <i>possibly large</i> abelian group, which is compatible with our definition of a preadditive category.
 
   - property: cocomplete
-    proof: This property is immediately inherited from <a href="/category/Ab">$\Ab$</a>. Colimits are defined pointwise.
+    proof: This property is immediately inherited from $\Ab$, which is cocomplete (<a href="/category/Ab?proof=cocomplete" data-allow-deduced>proof</a>). Colimits are defined pointwise.
 
   - property: complete
-    proof: This property is immediately inherited from <a href="/category/Ab">$\Ab$</a>. Limits are defined pointwise.
+    proof: This property is immediately inherited from $\Ab$, which is complete (<a href="/category/Ab?proof=complete" data-allow-deduced>proof</a>). Limits are defined pointwise.
 
   - property: exact filtered colimits
-    proof: This property is immediately inherited from <a href="/category/Ab">$\Ab$</a>.
+    proof: This property is immediately inherited from $\Ab$, which has exact filtered colimits (<a href="/category/Ab?proof=exact_filtered_colimits" data-allow-deduced>proof</a>).
 
   - property: normal
-    proof: This property is immediately inherited from <a href="/category/Ab">$\Ab$</a>.
+    proof: This property is immediately inherited from $\Ab$, which is normal (<a href="/category/Ab?proof=normal" data-allow-deduced>proof</a>).
 
   - property: conormal
-    proof: This property is immediately inherited from <a href="/category/Ab">$\Ab$</a>.
+    proof: This property is immediately inherited from $\Ab$, which is conormal (<a href="/category/Ab?proof=conormal" data-allow-deduced>proof</a>).
 
   - property: generator
     proof: >-
@@ -72,7 +72,7 @@ unsatisfied_properties:
     proof: The constant sequences of the trivial groups with underlying sets $\{0\}$ and $\{1\}$ are zero objects, hence isomorphic, but not equal.
 
   - property: all epimorphisms split
-    proof: The diagonal functor $\Ab \hookrightarrow [\On,\Ab]$ is fully faithful and exact. Hence, the claim follows from the contrapositive of Lemma 15 <a href="/content/subcategories">here</a>, since <a href="/category/Ab">$\Ab$</a> does not have all epimorphisms split.
+    proof: The diagonal functor $\Ab \hookrightarrow [\On,\Ab]$ is fully faithful and exact. Hence, the claim follows from the contrapositive of Lemma 15 <a href="/content/subcategories">here</a>, since $\Ab$ does not have all epimorphisms split (<a href="/category/Ab?proof=all_epimorphisms_split" data-allow-deduced>proof</a>).
 
   - property: well-powered
     proof: >-
@@ -112,7 +112,7 @@ special_morphisms:
     proof: This is trivial.
   monomorphism:
     description: morphisms that are pointwise injective
-    proof: The category is abelian and hence has kernels, constructed pointwise. Thus, a morphism $f = (f_\alpha)$ is a monomorphism if and only if $\ker(f_\alpha) = 0$ for all $\alpha$, i.e. each $f_\alpha$ is a monomorphism.
+    proof: The category is abelian (<a href="/category/TransSeqAb?proof=abelian" data-allow-deduced>proof</a>) and hence has kernels, constructed pointwise. Thus, a morphism $f = (f_\alpha)$ is a monomorphism if and only if $\ker(f_\alpha) = 0$ for all $\alpha$, i.e. each $f_\alpha$ is a monomorphism.
   epimorphism:
     description: morphisms that are pointwise surjective
-    proof: The category is abelian and hence has cokernels, constructed pointwise. Thus, a morphism $f = (f_\alpha)$ is an epimorphism if and only if $\coker(f_\alpha) = 0$ for all $\alpha$, i.e. each $f_\alpha$ is an epimorphism.
+    proof: The category is abelian (<a href="/category/TransSeqAb?proof=abelian" data-allow-deduced>proof</a>) and hence has cokernels, constructed pointwise. Thus, a morphism $f = (f_\alpha)$ is an epimorphism if and only if $\coker(f_\alpha) = 0$ for all $\alpha$, i.e. each $f_\alpha$ is an epimorphism.

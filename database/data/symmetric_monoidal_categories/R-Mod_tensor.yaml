@@ -35,4 +35,4 @@ undecidable_properties:
     proof: This property holds if and only if every $R$-module is flat, i.e. if $R$ is <a href="https://en.wikipedia.org/wiki/Von_Neumann_regular_ring">absolutely flat</a>.
 
   - property: well-copointed
-    proof: This property holds if and only if $R$ is a cogenerator of $R{-}\Mod$. For example, it holds when $R$ is a field (see the <a href="/symmetric_monoidal_category/Vect_tensor?proof=well-copointed">proof</a> for $(\Vect_K,\otimes,K)$), but not for $R = \IZ$ (see the <a href="/symmetric_monoidal_category/Ab_tensor?proof=well-copointed">proof</a> for $(\Ab,\otimes,\IZ)$).
+    proof: This property holds if and only if $R$ is a cogenerator of $R{-}\Mod$. For example, it holds when $R$ is a field, since $(\Vect_K,\otimes,K)$ is well-copointed (<a href="/symmetric_monoidal_category/Vect_tensor?proof=well-copointed">proof</a>), but not for $R = \IZ$, since $(\Ab,\otimes,\IZ)$ is not well-copointed (<a href="/symmetric_monoidal_category/Ab_tensor?proof=well-copointed">proof</a>).

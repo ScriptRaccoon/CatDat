@@ -19,23 +19,23 @@ related:
 
 satisfied_properties:
   - property: cocomplete
-    proof: Since <a href="/category/Vect">$\Vect_K$</a> is cocomplete, the product category $\Vect_K^I$ is cocomplete with pointwise colimits. (The size of the index collection does not matter.) Since our colimits are small by convention, it is easy to check that its full subcategory $\Vect^{(I)}_K$ is closed under colimits.
+    proof: Since $\Vect_K$ is cocomplete (<a href="/category/Vect?proof=cocomplete" data-allow-deduced>proof</a>), the product category $\Vect_K^I$ is cocomplete with pointwise colimits. (The size of the index collection does not matter.) Since our colimits are small by convention, it is easy to check that its full subcategory $\Vect^{(I)}_K$ is closed under colimits.
     check_redundancy: false
 
   - property: complete
-    proof: Since <a href="/category/Vect">$\Vect_K$</a> is complete, the product category $\Vect_K^I$ is complete with pointwise limits. (The size of the index collection does not matter.) Since our limits are small by convention, it is easy to check that its full subcategory $\Vect^{(I)}_K$ is closed under limits.
+    proof: Since $\Vect_K$ is complete (<a href="/category/Vect?proof=complete" data-allow-deduced>proof</a>), the product category $\Vect_K^I$ is complete with pointwise limits. (The size of the index collection does not matter.) Since our limits are small by convention, it is easy to check that its full subcategory $\Vect^{(I)}_K$ is closed under limits.
 
   - property: abelian
-    proof: Finite direct sums, kernels, and cokernels exist and are computed component-wise. Hence, the category is abelian since <a href="/category/Vect">$\Vect_K$</a> is.
+    proof: Finite direct sums, kernels, and cokernels exist and are computed component-wise. Hence, the category is abelian since $\Vect_K$ is.
 
   - property: all epimorphisms split
-    proof: Every epimorphism is a family of surjective linear maps (<a href="/category/Vect_family_mostly_0?proof=epimorphism">proof</a>), each of which splits since $\Vect_K$ has all epimorphisms split.
+    proof: Every epimorphism is a family of surjective linear maps (<a href="/category/Vect_family_mostly_0?proof=epimorphism">proof</a>), each of which splits since $\Vect_K$ has all epimorphisms split (<a href="/category/Vect?proof=all_epimorphisms_split" data-allow-deduced>proof</a>).
 
   - property: exact filtered colimits
-    proof: This follows easily from the fact that <a href="/category/Vect">$\Vect_K$</a> has exact filtered colimits.
+    proof: This follows easily from the fact that $\Vect_K$ has exact filtered colimits (<a href="/category/Vect?proof=exact_filtered_colimits" data-allow-deduced>proof</a>).
 
   - property: concretizable
-    proof: The functor $\Vect^{(I)}_K \to \Vect_K$, $(V_i)_{i \in I} \mapsto \bigoplus_{i \in I} V_i$ is well-defined (since we may discard all indices $i$ for which $V_i=0$) and faithful. Since $\Vect_K$ is concretizable, so is $\Vect^{(I)}_K$.
+    proof: The functor $\Vect^{(I)}_K \to \Vect_K$, $(V_i)_{i \in I} \mapsto \bigoplus_{i \in I} V_i$ is well-defined (since we may discard all indices $i$ for which $V_i=0$) and faithful. Since $\Vect_K$ is concretizable (<a href="/category/Vect?proof=concretizable" data-allow-deduced>proof</a>), so is $\Vect^{(I)}_K$.
 
 unsatisfied_properties:
   - property: skeletal
@@ -79,7 +79,7 @@ special_morphisms:
     proof: This is trivial.
   monomorphism:
     description: families of injective linear maps
-    proof: The category is abelian and hence has kernels, constructed pointwise. Thus, a homomorphism $f = (f_i)_{i \in I}$ is a monomorphism if and only if $\ker(f_i) = 0$ for all $i$, i.e. each $f_i$ is a monomorphism.
+    proof: The category is abelian (<a href="/category/Vect_family_mostly_0?proof=abelian" data-allow-deduced>proof</a>) and hence has kernels, constructed pointwise. Thus, a homomorphism $f = (f_i)_{i \in I}$ is a monomorphism if and only if $\ker(f_i) = 0$ for all $i$, i.e. each $f_i$ is a monomorphism.
   epimorphism:
     description: families of surjective linear maps
-    proof: The category is abelian and hence has cokernels, constructed pointwise. Thus, a homomorphism $f = (f_i)_{i \in I}$ is an epimorphism if and only if $\coker(f_i) = 0$ for all $i$, i.e. each $f_i$ is an epimorphism.
+    proof: The category is abelian (<a href="/category/Vect_family_mostly_0?proof=abelian" data-allow-deduced>proof</a>) and hence has cokernels, constructed pointwise. Thus, a homomorphism $f = (f_i)_{i \in I}$ is an epimorphism if and only if $\coker(f_i) = 0$ for all $i$, i.e. each $f_i$ is an epimorphism.

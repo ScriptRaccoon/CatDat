@@ -35,7 +35,7 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: preserves epimorphisms
-    proof: 'The homomorphism $2 : \IZ \to \IZ$ is an epimorphism in $\TorsFreeAb$, but its image in $\Ab$ is not an epimorphism. See the pages for these categories for descriptions of their epimorphisms.'
+    proof: 'The homomorphism $2 : \IZ \to \IZ$ is an epimorphism in $\TorsFreeAb$, since $\IZ/2$ is torsion (<a href="/category/TorsFreeAb?proof=epimorphism" data-allow-deduced>proof</a>), but it is not an epimorphism in $\Ab$, since it is not surjective (<a href="/category/Ab?proof=epimorphism" data-allow-deduced>proof</a>).'
 
   - property: dominant
     proof: Not every abelian group is torsion-free, and every subgroup of a torsion-free abelian group is torsion-free.

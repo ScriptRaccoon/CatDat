@@ -19,10 +19,10 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\FI \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
+    proof: There is a forgetful functor $\FI \to \Set$, and $\Set$ is locally small (<a href="/category/Set?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: locally finite
-    proof: There is a faithful functor $\FI \to \FinSet$ and <a href="/category/FinSet">$\FinSet$</a> is locally finite.
+    proof: There is a faithful functor $\FI \to \FinSet$, and $\FinSet$ is locally finite (<a href="/category/FinSet?proof=locally_finite" data-allow-deduced>proof</a>).
 
   - property: left cancellative
     proof: This is trivial.
@@ -57,10 +57,10 @@ unsatisfied_properties:
     proof: Even the collection of all singletons is not countable, since every set $X$ yields the singleton $\{X\}$.
 
   - property: skeletal
-    proof: The category contains the non-skeletal category <a href="/category/B">$\IB$</a> as a subcategory.
+    proof: The category contains $\IB$ as a subcategory, which is not skeletal (<a href="/category/B?proof=skeletal" data-allow-deduced>proof</a>).
 
   - property: core-thin
-    proof: Its core is <a href="/category/B">$\IB$</a>, which we know is not thin.
+    proof: Its core is $\IB$, which is not thin (<a href="/category/B?proof=thin" data-allow-deduced>proof</a>).
 
   - property: strongly connected
     proof: There is no map from a non-empty set to the empty set.

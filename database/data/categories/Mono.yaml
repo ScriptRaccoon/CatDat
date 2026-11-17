@@ -22,10 +22,10 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\Mono \to \Set$, $(X, X') \mapsto X$, and <a href="/category/Set">$\Set$</a> is locally small.
+    proof: There is a forgetful functor $\Mono \to \Set$, $(X, X') \mapsto X$, and $\Set$ is locally small (<a href="/category/Set?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: semi-strongly connected
-    proof: This is immediate from the fact that $\Mono$ is equivalent to a full subcategory of <a href="/category/Set_arrow">$\Set^{\rightarrow}$</a>, and the latter is semi-strongly connected.
+    proof: This is immediate from the fact that $\Mono$ is equivalent to a full subcategory of $\Set^{\rightarrow}$, and the latter is semi-strongly connected (<a href="/category/Set_arrow?proof=semi-strongly_connected" data-allow-deduced>proof</a>).
 
   - property: generator
     proof: >-
@@ -40,19 +40,19 @@ satisfied_properties:
 
   - property: cocomplete
     proof: >-
-      We have that $\Mono$ is a reflective subcategory of $\Set^{\rightarrow}$, with the reflector taking a function $f : X \to Y$ to the pair $(Y, \im(f))$. Therefore, the result follows from the fact that <a href="/category/Set_arrow">$\Set^{\rightarrow}$</a> is cocomplete.
+      We have that $\Mono$ is a reflective subcategory of $\Set^{\rightarrow}$, with the reflector taking a function $f : X \to Y$ to the pair $(Y, \im(f))$. Therefore, the result follows from the fact that $\Set^{\rightarrow}$ is cocomplete (<a href="/category/Set_arrow?proof=cocomplete" data-allow-deduced>proof</a>).
 
       More concretely, suppose we have a diagram $((X_i, X_i'))_{i \in \I}$, with colimit cone $c_i : X_i \to \colim_{i\in\I} X_i$ in <a href="/category/Set">$\Set$</a>. Then the colimit in $\Mono$ is $(\colim_{i\in\I} X_i, \bigcup_{i\in\I} (c_i)_*(X_i'))$. (It is easy to see that in the subset component, we can also restrict $i$ to range over a <a href="https://ncatlab.org/nlab/show/weak+multilimit">weakly terminal</a> set of objects of $\I$.)
     check_redundancy: false
 
   - property: disjoint coproducts
-    proof: This follows from the fact that coproducts in $\Mono$ can be computed component-wise, along with the fact that <a href="/category/Set">$\Set$</a> has disjoint coproducts.
+    proof: This follows from the fact that coproducts in $\Mono$ can be computed component-wise, along with the fact that $\Set$ has disjoint coproducts (<a href="/category/Set?proof=disjoint_coproducts" data-allow-deduced>proof</a>).
 
   - property: extremal cogenerator
     proof: >-
-      Consider the forgetful functor $U : \Mono \to \Set$, $(X, X') \mapsto X$. This has right adjoint $R : \Set \to \Mono$, $X \mapsto (X, X)$. Therefore, by the dual of Lemma 9 <a href="/content/subcategories">here</a>, $R$ preserves cogenerators; and in particular, since $\Set$ has a cogenerator, so does $\Mono$. In other words, $(\{0,1\}, \{0,1\})$ is a cogenerator of $\Mono$.
+      Consider the forgetful functor $U : \Mono \to \Set$, $(X, X') \mapsto X$. This has right adjoint $R : \Set \to \Mono$, $X \mapsto (X, X)$. Therefore, by the dual of Lemma 9 <a href="/content/subcategories">here</a>, $R$ preserves cogenerators. Since $\{0,1\}$ is a cogenerator of $\Set$ (<a href="/category/Set?proof=extremal_cogenerator">proof</a>), it follows that $R(\{0,1\}) = (\{0,1\},\{0,1\})$ is a cogenerator of $\Mono$.
 
-      We now claim that adding $(\{0,1\}, \{1\})$ gives an extremal cogenerating collection. To see this, suppose we have $f : (X, X') \to (Y, Y')$ such that ${-} \circ f$ induces bijections of morphisms both to $(\{0,1\}, \{0,1\})$ and to $(\{0,1\}, \{1\})$. Then since the first object represents the functor taking $(X, X')$ to $\Hom_{\Set}(X, \{ 0, 1 \})$, and $\{ 0, 1 \}$ is an extremal cogenerator of <a href="/category/Set">$\Set$</a>, the bijection of morphisms for the first object implies that $f$ is a bijection $X \to Y$. On the other hand, the second object represents the functor taking $(X, X')$ to the collection of subsets of $X$ which contain $X'$; and under the Yoneda embedding, the monomorphism $(\{0,1\}, \{1\}) \hookrightarrow (\{0,1\}, \{0,1\})$ corresponds to the natural inclusion $\{ S\in P(X) : X' \subseteq S \} \hookrightarrow P(X)$. Therefore, if $f$ also induces a bijection of morphisms to the second object, then in particular there is a set $S$ with $Y' \subseteq S \subseteq Y$ with $f^*(S) = X'$. However, since $f$ is bijective, we also have $f^*(f_*(X')) = X'$ and $f^* : P(Y) \to P(X)$ is bijective, so $S = f_*(X')$. In other words,
+      We now claim that adding $(\{0,1\}, \{1\})$ gives an extremal cogenerating collection. To see this, suppose we have $f : (X, X') \to (Y, Y')$ such that ${-} \circ f$ induces bijections of morphisms both to $(\{0,1\}, \{0,1\})$ and to $(\{0,1\}, \{1\})$. Then since the first object represents the functor taking $(X, X')$ to $\Hom_{\Set}(X, \{0,1\})$, and $\{0,1\}$ is an extremal cogenerator of $\Set$ (<a href="/category/Set?proof=extremal_cogenerator">proof</a>), the bijection of morphisms for the first object implies that $f$ is a bijection $X \to Y$. On the other hand, the second object represents the functor taking $(X, X')$ to the collection of subsets of $X$ which contain $X'$; and under the Yoneda embedding, the monomorphism $(\{0,1\}, \{1\}) \hookrightarrow (\{0,1\}, \{0,1\})$ corresponds to the natural inclusion $\{ S\in P(X) : X' \subseteq S \} \hookrightarrow P(X)$. Therefore, if $f$ also induces a bijection of morphisms to the second object, then in particular there is a set $S$ with $Y' \subseteq S \subseteq Y$ with $f^*(S) = X'$. However, since $f$ is bijective, we also have $f^*(f_*(X')) = X'$ and $f^* : P(Y) \to P(X)$ is bijective, so $S = f_*(X')$. In other words,
       $$Y' \subseteq S = f_*(X') \subseteq Y',$$
       so $f_*(X') = Y'$.
 
@@ -80,7 +80,7 @@ satisfied_properties:
       @V \id VV @VV f V \\
       X @>> f > Y.
       \end{CD}$$
-      Alternatively, we already know $\Mono$ is cocomplete. We claim that both $(\{\ast\}, \varnothing)$ and $(\{\ast\}, \{\ast\})$ are finitely presentable objects of $\Mono$. For the first, $(\{\ast\}, \varnothing)$ represents the forgetful functor $(X, X') \mapsto X$; and this functor has a right adjoint $X \mapsto (X, X)$ so it preserves filtered colimits (in fact all colimits). For the second, $(\{\ast\}, \{\ast\})$ represents the functor $(X, X') \mapsto X'$. Now by the previous description of colimits, for a filtered diagram $((X_i, X_i'))_{i\in\I}$, first form the filtered colimit of $X_i$ in <a href="/category/Set">$\Set$</a> with cocone $c_i : X_i \to \colim_{i\in\I} X_i$. Then the filtered colimit in $\Mono$ is $(\colim_{i\in\I} X_i, \bigcup_{i\in\I} (c_i)_*(X_i'))$. This makes it easy to see that the canonical function
+      Alternatively, we already know $\Mono$ is cocomplete (<a href="/category/Mono?proof=cocomplete" data-allow-deduced>proof</a>). We claim that both $(\{\ast\}, \varnothing)$ and $(\{\ast\}, \{\ast\})$ are finitely presentable objects of $\Mono$. For the first, $(\{\ast\}, \varnothing)$ represents the forgetful functor $(X, X') \mapsto X$; and this functor has a right adjoint $X \mapsto (X, X)$ so it preserves filtered colimits (in fact all colimits). For the second, $(\{\ast\}, \{\ast\})$ represents the functor $(X, X') \mapsto X'$. Now by the previous description of colimits, for a filtered diagram $((X_i, X_i'))_{i\in\I}$, first form the filtered colimit of $X_i$ in <a href="/category/Set">$\Set$</a> with cocone $c_i : X_i \to \colim_{i\in\I} X_i$. Then the filtered colimit in $\Mono$ is $(\colim_{i\in\I} X_i, \bigcup_{i\in\I} (c_i)_*(X_i'))$. This makes it easy to see that the canonical function
       $$\colim_{i\in\I} \Hom((\{\ast\}, \{\ast\}), (X_i,X_i')) \to \Hom((\{\ast\}, \{\ast\}), \colim_{i\in\I} (X_i,X_i'))$$
       is surjective. To see it is injective, use the fact that the unique morphism $(\{\ast\}, \varnothing) \to (\{\ast\}, \{\ast\})$ is an epimorphism (<a href="/category/Mono?proof=epimorphism">proof</a>), and we have already seen that the corresponding function for $(\{\ast\}, \varnothing)$ is injective.
 
@@ -88,10 +88,10 @@ satisfied_properties:
 
   - property: co-Malcev
     proof: >-
-      Suppose we have a coreflexive corelation $j_1, j_2 : (X, X') \rightrightarrows (C, C')$ with coreflexivity morphism $r : (C, C') \to (X, X')$. From the assumption that $(j_1;j_2)$ is an epimorphism, we have that $(j_1;j_2) : X \sqcup X \to C$ is a surjective function. Since <a href="/category/Set">$\Set$</a> is co-Malcev, it follows that we may assume $C = X \sqcup_Y X$ for some subset $Y \subseteq X$, where $j_1, j_2$ are the two inclusions. It remains to show that $C' = j_1(X') \cup j_2(X')$. Certainly, since $j_1, j_2$ are morphisms in $\Mono$, we have $j_1(X') \cup j_2(X') \subseteq C'$. On the other hand, any element of $C'$ is an element of $C$ and hence is equal to either $j_1(x)$ or $j_2(x)$ for $x \in X$. In the first case, we must have $x = r(j_1(x)) \in X'$, so $j_1(x) \in j_1(X')$; and similarly for the second case.
+      Suppose we have a coreflexive corelation $j_1, j_2 : (X, X') \rightrightarrows (C, C')$ with coreflexivity morphism $r : (C, C') \to (X, X')$. From the assumption that $(j_1;j_2)$ is an epimorphism, we have that $(j_1;j_2) : X \sqcup X \to C$ is a surjective function. Since $\Set$ is co-Malcev (<a href="/category/Set?proof=co-Malcev" data-allow-deduced>proof</a>), it follows that we may assume $C = X \sqcup_Y X$ for some subset $Y \subseteq X$, where $j_1, j_2$ are the two inclusions. It remains to show that $C' = j_1(X') \cup j_2(X')$. Certainly, since $j_1, j_2$ are morphisms in $\Mono$, we have $j_1(X') \cup j_2(X') \subseteq C'$. On the other hand, any element of $C'$ is an element of $C$ and hence is equal to either $j_1(x)$ or $j_2(x)$ for $x \in X$. In the first case, we must have $x = r(j_1(x)) \in X'$, so $j_1(x) \in j_1(X')$; and similarly for the second case.
 
   - property: effective cocongruences
-    proof: 'See the proof that $\Mono$ is co-Malcev: It shows that in fact any coreflexive corelation is equivalent to an effective cocongruence $X \rightrightarrows X \sqcup_Y X$.'
+    proof: 'See the <a href="/category/Mono?proof=co-Malcev">proof</a> that $\Mono$ is co-Malcev: It shows that in fact any coreflexive corelation is equivalent to an effective cocongruence $X \rightrightarrows X \sqcup_Y X$.'
     check_redundancy: false
 
 unsatisfied_properties:
@@ -130,12 +130,12 @@ special_morphisms:
     description: >-
       morphisms $f : (X, X') \to (Y, Y')$ such that $f$ is a surjective function from $X$ to $Y$
     proof: >-
-      For the non-trivial direction, use the fact that the forgetful functor $\Mono \to \Set$, $(X, X') \mapsto X$, has a right adjoint given by $X \mapsto (X, X)$. Therefore, the forgetful functor preserves epimorphisms; so if $f : (X, X') \to (Y, Y')$ is an epimorphism in $\Mono$, then $f : X \to Y$ is an epimorphism in <a href="/category/Set">$\Set$</a> and therefore surjective.
+      For the non-trivial direction, use the fact that the forgetful functor $\Mono \to \Set$, $(X, X') \mapsto X$, has a right adjoint given by $X \mapsto (X, X)$. Therefore, the forgetful functor preserves epimorphisms; so if $f : (X, X') \to (Y, Y')$ is an epimorphism in $\Mono$, then $f : X \to Y$ is an epimorphism in $\Set$ and therefore surjective (<a href="/category/Set?proof=epimorphism" data-allow-deduced>proof</a>).
   regular monomorphism:
     description: >-
       morphisms $f : (X, X') \to (Y, Y')$ such that $f$ is an injective function from $X$ to $Y$, and $f^*(Y') = X'$ (in particular, if $f : X \to Y$ is an inclusion map, then this is equivalent to $X' = X \cap Y'$)
     proof: >-
-      To show any regular monomorphism satisfies this condition, suppose we have a parallel pair $g, h : (Y, Y') \rightrightarrows (Z, Z')$. To form the equalizer in $\Mono$, first we form the equalizer $f : X \hookrightarrow Y$ in $\Set$ of the underlying functions $g$ and $h$. Then by the construction of limits in the proof of completeness above, the equalizer in $\Mono$ is $(X, f^*(Y'))$. Thus, we see that $f^*(Y') = X'$.
+      To show any regular monomorphism satisfies this condition, suppose we have a parallel pair $g, h : (Y, Y') \rightrightarrows (Z, Z')$. To form the equalizer in $\Mono$, first we form the equalizer $f : X \hookrightarrow Y$ in $\Set$ of the underlying functions $g$ and $h$. Then by the construction of limits in the <a href="/category/Mono?proof=complete">proof</a> of completeness above, the equalizer in $\Mono$ is $(X, f^*(Y'))$. Thus, we see that $f^*(Y') = X'$.
 
       For the other direction, suppose we are given a morphism $f : (X, X') \to (Y, Y')$ satisfying this condition. We can then construct an equalizer diagram
       $$\begin{CD}
@@ -146,6 +146,6 @@ special_morphisms:
     description: >-
       morphisms $f : (X, X') \to (Y, Y')$ such that $f$ is a surjective function from $X$ to $Y$, and $f_*(X') = Y'$
     proof: >-
-      To show any regular epimorphism satisfies this condition, suppose we have a parallel pair $g, h : (Z, Z') \rightrightarrows (X, X')$. To form the coequalizer in $\Mono$, first we form the coequalizer $f : X \twoheadrightarrow Y$ in $\Set$ of the underlying functions $g$ and $h$. Then by the construction of colimits in the proof of cocompleteness above, the coequalizer in $\Mono$ is $(Y, f_*(X'))$. Thus, we see that $f_*(X') = Y'$.
+      To show any regular epimorphism satisfies this condition, suppose we have a parallel pair $g, h : (Z, Z') \rightrightarrows (X, X')$. To form the coequalizer in $\Mono$, first we form the coequalizer $f : X \twoheadrightarrow Y$ in $\Set$ of the underlying functions $g$ and $h$. Then by the construction of colimits in the <a href="/category/Mono?proof=cocomplete">proof</a> of cocompleteness above, the coequalizer in $\Mono$ is $(Y, f_*(X'))$. Thus, we see that $f_*(X') = Y'$.
 
       To show any morphism $f : (X, X') \to (Y, Y')$ satisfying this condition is a regular epimorphism, note that the kernel pair of $f$ can be computed component-wise. Therefore, in general the coequalizer of the kernel pair of $f$ is $(\im(f), f_*(X'))$; and with the given assumptions on $f$, this is isomorphic to $(Y, Y')$.

@@ -49,7 +49,7 @@ satisfied_properties:
     check_redundancy: false
 
   - property: all epimorphisms split
-    proof: The inclusion functor $\Vect^s_K \hookrightarrow \Vect_K$ is fully faithful and preserves epimorphisms, which are surjective linear maps in both categories (<a href="/category/Vect_large?proof=epimorphism">proof</a> for $\Vect^s_K$ and <a href="/category/Vect?proof=epimorphism" data-allow-deduced>proof</a> for $\Vect_K$). Hence, the claim follows from Lemma 15 <a href="/content/subcategories">here</a> and the fact that $\Vect_K$ has all epimorphisms split (which we know in the <a href="/category/Vect">small case</a> and therefore also holds in the large case).
+    proof: The inclusion functor $\Vect^s_K \hookrightarrow \Vect_K$ is fully faithful and preserves epimorphisms, which are surjective linear maps in $\Vect^s_K$ (<a href="/category/Vect_large?proof=epimorphism">proof</a>) and in $\Vect_K$ (<a href="/category/Vect?proof=epimorphism" data-allow-deduced>proof</a>). Hence, the claim follows from Lemma 15 <a href="/content/subcategories">here</a> and the fact that $\Vect_K$ has all epimorphisms split (which we know in the small case (<a href="/category/Vect?proof=all_epimorphisms_split" data-allow-deduced>proof</a>) and therefore also holds in the large case).
 
   - property: generator
     proof: Since $K$ is a generator of $\Vect_K$ that is contained in $\Vect^s_K$, it is a generator of $\Vect^s_K$.
@@ -58,14 +58,14 @@ satisfied_properties:
     proof: Since $K$ is a cogenerator of $\Vect_K$ that is contained in $\Vect^s_K$, it is a cogenerator of $\Vect^s_K$.
 
   - property: exact filtered colimits
-    proof: Since the inclusion functor $\Vect^s_K \hookrightarrow \Vect_K$ is exact, preserves colimits, and is fully faithful, this follows from the corresponding fact for $\Vect_K$ (where finite limits even commute with large filtered colimits).
+    proof: Since the inclusion functor $\Vect^s_K \hookrightarrow \Vect_K$ is exact, preserves colimits, and is fully faithful, this follows from the fact that $\Vect_K$ has exact filtered colimits (<a href="/category/Vect?proof=exact_filtered_colimits" data-allow-deduced>proof</a>); in fact, finite limits even commute with large filtered colimits in $\Vect_K$.
 
   - property: well-powered
     proof: In contrast to the other properties mentioned before, this does <i>not</i> follow from the hypercategory $\Vect_K$, since the subobjects of a large vector space merely form a collection. Instead, notice that the subobjects of $K^{\oplus X}$, where $X$ is a set, are isomorphic to $K^{\oplus Y}$ for subsets $Y \subseteq X$ (see our <a href="/category/Vect_large?proof=equalizers">proof</a> for equalizers). Since the subsets of $X$ form a set, the subobjects form a set.
 
   - property: ℵ₁-cofiltered limits
     proof: >-
-      First, <a href="/category/FinVect">$\FinVect_K$</a> has $\aleph_1$-filtered colimits by <a href="https://mathoverflow.net/a/511519">MO/400763</a>. Since it is self-dual, it also has $\aleph_1$-cofiltered limits. (The result has been proved for small fields, but the same proofs work for arbitrary fields.) Moreover, the inclusion functor $\FinVect_K \hookrightarrow \Vect_K$ is cocontinuous by Lemma 1 <a href="/content/inclusion-functors">here</a>, since $\FinVect_K$ contains the extremal cogenerator $K$ of $\Vect_K$. It follows that $\FinVect_K$ is closed under $\aleph_1$-cofiltered limits in $\Vect_K$.
+      First, $\FinVect_K$ has $\aleph_1$-cofiltered limits (<a href="/category/FinVect?proof=aleph1-cofiltered_limits" data-allow-deduced>proof</a>). This has been proved for small fields, but the same proof works for the large field $K$. Moreover, the inclusion functor $\FinVect_K \hookrightarrow \Vect_K$ preserves all limits by the dual of Lemma 1 <a href="/content/inclusion-functors">here</a>, since $\FinVect_K$ contains $K$, which is an extremal generator of $\Vect_K$ (the <a href="/category/Vect?proof=extremal_generator">proof</a> for small fields works verbatim). It follows that $\FinVect_K$ is closed under $\aleph_1$-cofiltered limits in $\Vect_K$.
 
       We now prove that $\Vect^s_K$ is closed under $\aleph_1$-cofiltered limits in $\Vect_K$. To this end, let $D : \I \to \Vect^s_K$ be an $\aleph_1$-cofiltered diagram, and let $(\pi_i : V \to D(i))_{i \in \I}$ be its limit in $\Vect_K$. For each $i \in \I$, choose a set basis $B_i$ of $D(i)$. Let $\Lambda$ be the set of all families $S=(S_i)_{i \in \I}$ of finite subsets $S_i \subseteq B_i$. Since $\Ob(\I)$ and each $B_i$ are sets, $\Lambda$ is indeed a set. For $S \in \Lambda$, let $V_S \subseteq V$ be the subspace consisting of those vectors $v \in V$ such that $\pi_i(v) \in \langle S_i \rangle$ for every $i \in \I$. Clearly, $V = \bigcup_{S \in \Lambda} V_S$. In particular, there is an epimorphism $\bigoplus_{S \in \Lambda} V_S \to V$. Thus, it suffices to prove that each $V_S$ is finite-dimensional, since then $V \in \Vect^s_K$, using that $\Vect^s_K$ is closed under quotients (<a href="/category/Vect_large?proof=coequalizers">proof</a>).
 

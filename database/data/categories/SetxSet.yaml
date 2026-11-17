@@ -20,7 +20,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: The collection of morphisms $(A,B) \to (C,D)$ is $\Hom(A,C) \times \Hom(B,D)$, which is a set since <a href="/category/Set">$\Set$</a> is locally small.
+    proof: The collection of morphisms $(A,B) \to (C,D)$ is $\Hom(A,C) \times \Hom(B,D)$, which is a set since $\Set$ is locally small (<a href="/category/Set?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: all epimorphisms split
     proof: Every epimorphism is a pair of surjective maps (<a href="/category/SetxSet?proof=epimorphism">proof</a>) and therefore has a section by the axiom of choice.

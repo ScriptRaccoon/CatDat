@@ -17,16 +17,16 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: It is a full subcategory of <a href="/category/Set">$\Set$</a>, which is locally small.
+    proof: It is a full subcategory of $\Set$, which is locally small (<a href="/category/Set?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: core-connected
     proof: Every object is isomorphic to $\IN$.
 
   - property: all epimorphisms split
-    proof: Apply Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\Set_{\c,\infty} \hookrightarrow \Set$, which preserves epimorphisms since these are surjective in both categories (<a href="/category/Set_c_inf?proof=epimorphism">proof</a> for $\Set_{\c,\infty}$ and <a href="/category/Set?proof=epimorphism">proof</a> for $\Set$), and use that <a href="/category/Set">$\Set$</a> has all epimorphisms split.
+    proof: Apply Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\Set_{\c,\infty} \hookrightarrow \Set$, which preserves epimorphisms since these are surjective in $\Set_{\c,\infty}$ (<a href="/category/Set_c_inf?proof=epimorphism">proof</a>) and in $\Set$ (<a href="/category/Set?proof=epimorphism">proof</a>), and use that $\Set$ has all epimorphisms split (<a href="/category/Set?proof=all_epimorphisms_split" data-allow-deduced>proof</a>).
 
   - property: all monomorphisms split
-    proof: Apply the dual of Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\Set_{\c,\infty} \hookrightarrow \Setne$, which preserves monomorphisms since these are injective in both categories (<a href="/category/Set_c_inf?proof=monomorphism">proof</a> for $\Set_{\c,\infty}$ and <a href="/category/Setne?proof=monomorphism">proof</a> for $\Setne$), and use that <a href="/category/Setne">$\Setne$</a> has all monomorphisms split.
+    proof: Apply the dual of Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\Set_{\c,\infty} \hookrightarrow \Setne$, which preserves monomorphisms since these are injective in $\Set_{\c,\infty}$ (<a href="/category/Set_c_inf?proof=monomorphism">proof</a>) and in $\Setne$ (<a href="/category/Setne?proof=monomorphism">proof</a>), and use that $\Setne$ has all monomorphisms split (<a href="/category/Setne?proof=all_monomorphisms_split" data-allow-deduced>proof</a>).
 
   - property: binary products
     proof: If $X,Y$ are countably infinite sets, then so is $X \times Y$. Hence, the product of $X,Y$ in <a href="/category/Set">$\Set$</a> is also a product in the full subcategory $\Set_{\c,\infty}$.
@@ -78,7 +78,7 @@ special_objects:
 special_morphisms:
   isomorphism:
     description: bijective maps
-    proof: It is a full subcategory of $\Set$, for which we know that isomorphisms are bijective maps.
+    proof: It is a full subcategory of $\Set$, for which isomorphisms are bijective maps (<a href="/category/Set?proof=isomorphism" data-allow-deduced>proof</a>).
   monomorphism:
     description: injective maps
     proof: >-

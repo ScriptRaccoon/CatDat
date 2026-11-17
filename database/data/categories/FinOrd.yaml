@@ -22,10 +22,10 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\FinOrd \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
+    proof: There is a forgetful functor $\FinOrd \to \Set$, and $\Set$ is locally small (<a href="/category/Set?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: locally finite
-    proof: There is a faithful functor $\FinOrd \to \FinSet$ and <a href="/category/FinSet">$\FinSet$</a> is locally finite.
+    proof: There is a faithful functor $\FinOrd \to \FinSet$, and $\FinSet$ is locally finite (<a href="/category/FinSet?proof=locally_finite" data-allow-deduced>proof</a>).
 
   - property: essentially countable
     proof: Every finite ordered set is isomorphic to $\{0 < \cdots < n-1 \}$ for some $n \in \IN$.
@@ -64,7 +64,7 @@ satisfied_properties:
 
   - property: all epimorphisms split
     proof: >-
-      Apply Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\FinOrd \hookrightarrow \Ord$. It is fully faithful, and it preserves epimorphisms, since in both categories these are the surjective order-preserving maps (<a href="/category/FinOrd?proof=epimorphism">proof</a> for $\FinOrd$ and <a href="/category/Ord?proof=epimorphism">proof</a> for $\Ord$). Here, we use that all epimorphisms in $\Ord$ split (<a href="/category/Ord?proof=all_epimorphisms_split">proof</a>).
+      Apply Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\FinOrd \hookrightarrow \Ord$. It is fully faithful, and it preserves epimorphisms, since these are the surjective order-preserving maps in $\FinOrd$ (<a href="/category/FinOrd?proof=epimorphism">proof</a>) and in $\Ord$ (<a href="/category/Ord?proof=epimorphism">proof</a>). Here, we use that all epimorphisms in $\Ord$ split (<a href="/category/Ord?proof=all_epimorphisms_split">proof</a>).
 
       The proof for $\Ord$ uses the axiom of choice, which is not needed here: for an epimorphism $p : (X,\leq) \to (Y,\leq)$ in $\FinOrd$, the map $s : Y \to X$, $s(y) \coloneqq \min p^*(\{y\})$ is a section of $p$, and it is order-preserving by the same argument as for $\Ord$.
 
@@ -104,7 +104,7 @@ special_objects:
 special_morphisms:
   isomorphism:
     description: bijective order-preserving maps
-    proof: This follows from the classification for <a href="/category/Ord">$\Ord$</a>, since the inclusion $\FinOrd \hookrightarrow \Ord$ is fully faithful.
+    proof: This follows from the fact that the isomorphisms in $\Ord$ are the bijective order-preserving maps (<a href="/category/Ord?proof=isomorphism" data-allow-deduced>proof</a>), since the inclusion $\FinOrd \hookrightarrow \Ord$ is fully faithful.
   monomorphism:
     description: injective order-preserving maps
     proof: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.

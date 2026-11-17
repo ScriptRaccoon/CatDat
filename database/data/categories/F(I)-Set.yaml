@@ -29,15 +29,15 @@ satisfied_properties:
     proof: The forgetful functor $F(I){-}\Set \to \Set$, $(X,\sigma) \mapsto X$, is faithful.
 
   - property: complete
-    proof: The forgetful functor $F(I){-}\Set \to \Set$ creates limits, and <a href="/category/Set">$\Set$</a> is complete.
+    proof: The forgetful functor $F(I){-}\Set \to \Set$ creates limits, and $\Set$ is complete (<a href="/category/Set?proof=complete" data-allow-deduced>proof</a>).
     check_redundancy: false
 
   - property: cocomplete
-    proof: The forgetful functor $F(I){-}\Set \to \Set$ creates colimits, and <a href="/category/Set">$\Set$</a> is cocomplete.
+    proof: The forgetful functor $F(I){-}\Set \to \Set$ creates colimits, and $\Set$ is cocomplete (<a href="/category/Set?proof=cocomplete" data-allow-deduced>proof</a>).
     check_redundancy: false
 
   - property: exact filtered colimits
-    proof: This property is inherited from <a href="/category/Set">$\Set$</a> since the forgetful functor to $\Set$ is continuous, cocontinuous, and conservative.
+    proof: $\Set$ has exact filtered colimits (<a href="/category/Set?proof=exact_filtered_colimits" data-allow-deduced>proof</a>), and this property is inherited since the forgetful functor to $\Set$ is continuous, cocontinuous, and conservative.
 
   - property: subobject classifier
     proof: If $G$ is any group, then $\{0,1\}$ equipped with the trivial $G$-action is a subobject classifier of $G{-}\Set$, because a map of sets $X \to \{0,1\}$ lifts to a morphism of $G$-sets if and only if the fiber at $1$ is $G$-stable. The same proof works when $G$ is a large group.
@@ -56,7 +56,7 @@ unsatisfied_properties:
     proof: Let $\sigma$ be the action of $F(I)$ on $\{0,1\}$ for which every generator $i \in I$ swaps $0$ and $1$. The unique morphism $(\{0,1\},\sigma) \to \{\ast\}$ to the terminal object is surjective, hence an epimorphism. It has no section, since no element of $\{0,1\}$ is fixed by the action.
 
   - property: semi-strongly connected
-    proof: Choose an element $i_0 \in I$. There is a fully faithful functor $\IZ{-}\Set \to F(I){-}\Set$ that maps $(X,\sigma) \mapsto (X,\widetilde{\sigma})$, where $\widetilde{\sigma}_{i_0} = \sigma$ and $\widetilde{\sigma}_i = \id_X$ for $i \neq i_0$. Since <a href="/category/Z-Set">$\IZ{-}\Set$</a> is not semi-strongly connected, it follows that $F(I){-}\Set$ is not semi-strongly connected.
+    proof: Choose an element $i_0 \in I$. There is a fully faithful functor $\IZ{-}\Set \to F(I){-}\Set$ that maps $(X,\sigma) \mapsto (X,\widetilde{\sigma})$, where $\widetilde{\sigma}_{i_0} = \sigma$ and $\widetilde{\sigma}_i = \id_X$ for $i \neq i_0$. Since $\IZ{-}\Set$ is not semi-strongly connected (<a href="/category/Z-Set?proof=semi-strongly_connected" data-allow-deduced>proof</a>), it follows that $F(I){-}\Set$ is not semi-strongly connected.
 
   - property: cogenerator
     proof: >-

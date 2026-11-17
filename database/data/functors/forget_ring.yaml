@@ -41,7 +41,7 @@ unsatisfied_properties:
     proof: There is no ring $R$ with a split monomorphism $\varnothing \hookrightarrow U(R)$ since $U(R)$ is non-empty.
 
   - property: preserves epimorphisms
-    proof: This follows from the classifications of epimorphisms in <a href="/category/Ring">$\Ring$</a> and in <a href="/category/Set">$\Set$</a>. Namely, the unique homomorphism $\IZ \to \IQ$ is an epimorphism in $\Ring$, but its underlying map of sets is not surjective, and hence no epimorphism in $\Set$.
+    proof: 'The unique homomorphism $\IZ \to \IQ$ is an epimorphism in $\Ring$, since every ring homomorphism $g : \IQ \to T$ satisfies $g(a/n) = g(a) \, g(n)^{-1}$ and is therefore determined by its restriction to $\IZ$. But its underlying map of sets is not surjective, and hence no epimorphism in $\Set$ (<a href="/category/Set?proof=epimorphism" data-allow-deduced>proof</a>).'
 
   - property: preserves initial objects
     proof: The initial object of $\Ring$ is $\IZ$, whose underlying set is not empty.

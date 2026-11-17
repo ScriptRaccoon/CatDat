@@ -17,7 +17,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: It is a full subcategory of <a href="/category/Vect">$\Vect_K$</a>, which is locally small.
+    proof: It is a full subcategory of $\Vect_K$, which is locally small (<a href="/category/Vect?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: essentially small
     proof: 'Every object is isomorphic to one of the vector spaces in the set $\{K^n : n \in \IN\} \cup \{K^{\oplus \IN}\}$.'
@@ -29,13 +29,13 @@ satisfied_properties:
     proof: The category is a full subcategory of <a href="/category/Vect">$\Vect_K$</a> that is closed under finite direct sums, kernels, and cokernels. Hence, it is abelian since $\Vect_K$ is.
 
   - property: all epimorphisms split
-    proof: Every epimorphism is a surjective linear map (<a href="/category/Vect_c?proof=epimorphism">proof</a>), which splits since $\Vect_K$ has all epimorphisms split.
+    proof: Every epimorphism is a surjective linear map (<a href="/category/Vect_c?proof=epimorphism">proof</a>), which splits since $\Vect_K$ has all epimorphisms split (<a href="/category/Vect?proof=all_epimorphisms_split" data-allow-deduced>proof</a>).
 
   - property: generator
-    proof: We know that $K$ is a generator even in <a href="/category/Vect">$\Vect_K$</a>.
+    proof: We know that $K$ is a generator even in $\Vect_K$ (<a href="/category/Vect?proof=extremal_generator">proof</a>).
 
   - property: cogenerator
-    proof: We know that $K$ is a cogenerator even in <a href="/category/Vect">$\Vect_K$</a>.
+    proof: We know that $K$ is a cogenerator even in $\Vect_K$ (<a href="/category/Vect?proof=extremal_cogenerator">proof</a>).
 
 unsatisfied_properties:
   - property: small
@@ -73,7 +73,7 @@ special_objects:
 special_morphisms:
   isomorphism:
     description: bijective linear maps
-    proof: It is a full subcategory of $\Vect_K$, in which the isomorphisms are known to be the bijective linear maps.
+    proof: It is a full subcategory of $\Vect_K$, in which the isomorphisms are known to be the bijective linear maps (<a href="/category/Vect?proof=isomorphism" data-allow-deduced>proof</a>).
   monomorphism:
     description: injective linear maps
     proof: The non-trivial direction follows since the forgetful functor to $\Set$ is representable (by $K$).

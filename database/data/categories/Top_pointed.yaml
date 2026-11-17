@@ -15,22 +15,22 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\Top_* \to \Set_*$ and $\Set_*$ is locally small.
+    proof: There is a faithful forgetful functor $\Top_* \to \Set_*$, and $\Set_*$ is locally small (<a href="/category/Set_*?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: pointed
     proof: The singleton space $\{0\}$ with base point $0$ is a zero object.
     check_redundancy: false
 
   - property: complete
-    proof: This follows from $\Top_* \cong 1 / \Top$ and the fact that <a href="/category/Top">$\Top$</a> is complete. Concretely, the limit of pointed spaces $(X_i,x_i)$ is the limit of the underlying spaces $X_i$ equipped with the base point that projects down to each $x_i$.
+    proof: This follows from $\Top_* \cong 1 / \Top$ and the fact that $\Top$ is complete (<a href="/category/Top?proof=complete" data-allow-deduced>proof</a>). Concretely, the limit of pointed spaces $(X_i,x_i)$ is the limit of the underlying spaces $X_i$ equipped with the base point that projects down to each $x_i$.
     check_redundancy: false
 
   - property: coequalizers
-    proof: This follows immediately from the fact that <a href="/category/Top">$\Top$</a> has coequalizers.
+    proof: This follows immediately from the fact that $\Top$ has coequalizers (<a href="/category/Top?proof=coequalizers" data-allow-deduced>proof</a>).
     check_redundancy: false
 
   - property: coproducts
-    proof: This follows from $\Top_* \cong 1 / \Top$ and the fact that <a href="/category/Top">$\Top$</a> has wide pushouts.
+    proof: This follows from $\Top_* \cong 1 / \Top$ and the fact that $\Top$ has wide pushouts (<a href="/category/Top?proof=wide_pushouts" data-allow-deduced>proof</a>).
     check_redundancy: false
 
   - property: well-powered
@@ -49,7 +49,7 @@ satisfied_properties:
     proof: Since embeddings are regular monomorphisms in this category (<a href="/category/Top_*?proof=regular_monomorphism">proof</a>) and hence strong monomorphisms, it suffices to prove that the canonical morphism $X \vee Y \hookrightarrow X \times Y$ is an embedding. For a proof, see <a href="https://math.stackexchange.com/questions/4055988">MSE/4055988</a>.
 
   - property: CIP
-    proof: This follows since <a href="/category/Set_*">$\Set_*$</a> has this property and the forgetful functor preserves products and coproducts.
+    proof: This follows since $\Set_*$ has this property (<a href="/category/Set_*?proof=CIP" data-allow-deduced>proof</a>) and the forgetful functor preserves products and coproducts.
 
   - property: cocartesian cofiltered limits
     proof: >-
@@ -61,7 +61,7 @@ satisfied_properties:
     proof: This follows from Lemma 2 <a href="/content/subcategories">here</a> applied to the forgetful functor to $\Set$.
 
   - property: coregular
-    proof: This follows from the dual of Lemma 7 <a href="/content/subcategories">here</a> applied to the forgetful functor $\Top_* \to \Top$, using that $\Top$ is coregular and that the regular monomorphisms in $\Top_*$ are the embeddings (<a href="/category/Top_*?proof=regular_monomorphism">proof</a>).
+    proof: This follows from the dual of Lemma 7 <a href="/content/subcategories">here</a> applied to the forgetful functor $\Top_* \to \Top$, using that $\Top$ is coregular (<a href="/category/Top?proof=coregular" data-allow-deduced>proof</a>) and that the regular monomorphisms in $\Top_*$ are the embeddings (<a href="/category/Top_*?proof=regular_monomorphism">proof</a>).
 
   - property: extremal cogenerator
     proof: >-
@@ -94,13 +94,13 @@ unsatisfied_properties:
 
   - property: coaccessible
     proof: >-
-      Apply the corollary <a href="/content/decreasing-chains-coaccessible">here</a> to the functor $F : \Set \to \Top_*$ that maps a set $X$ to the discrete space $X_+ \coloneqq \{\ast\} \sqcup X$ with base point $\ast$. Here, $F(\{\ast\})$ is not initial. Let $\kappa$ be a regular cardinal. Since $\Top_*$ is complete and the forgetful functor $\Top_* \to \Set$ preserves limits, the limit of the pointed spaces $F(\kappa_{\geq \alpha})$ has the underlying set $\{\ast\} \sqcup \bigcap_{\alpha < \kappa} \kappa_{\geq \alpha} = \{\ast\}$. Hence, it is the zero object.
+      Apply the corollary <a href="/content/decreasing-chains-coaccessible">here</a> to the functor $F : \Set \to \Top_*$ that maps a set $X$ to the discrete space $X_+ \coloneqq \{\ast\} \sqcup X$ with base point $\ast$. Here, $F(\{\ast\})$ is not initial. Let $\kappa$ be a regular cardinal. Since $\Top_*$ is complete (<a href="/category/Top_*?proof=complete" data-allow-deduced>proof</a>) and the forgetful functor $\Top_* \to \Set$ preserves limits, the limit of the pointed spaces $F(\kappa_{\geq \alpha})$ has the underlying set $\{\ast\} \sqcup \bigcap_{\alpha < \kappa} \kappa_{\geq \alpha} = \{\ast\}$. Hence, it is the zero object.
 
   - property: cofiltered-limit-stable epimorphisms
-    proof: We already know that <a href="/category/Set_*">$\Set_*$</a> does not have this property. Now apply the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> to the functor $\Set_* \to \Top_*$ that equips a pointed set with the indiscrete topology.
+    proof: We already know that $\Set_*$ does not have this property (<a href="/category/Set_*?proof=cofiltered-limit-stable_epimorphisms" data-allow-deduced>proof</a>). Now apply the contrapositive of the dual of Lemma 2 <a href="/content/subcategories">here</a> to the functor $\Set_* \to \Top_*$ that equips a pointed set with the indiscrete topology.
 
   - property: effective congruences
-    proof: Suppose that $\Top_*$ had effective congruences. Then by <a href="/content/coslice-effective-congruences">this result</a>, <a href="/category/Top">$\Top$</a> would also have effective congruences, which we know is not the case.
+    proof: Suppose that $\Top_*$ had effective congruences. Then by <a href="/content/coslice-effective-congruences">this result</a>, $\Top$ would also have effective congruences, which is not the case (<a href="/category/Top?proof=effective_congruences" data-allow-deduced>proof</a>).
 
   - property: effective cocongruences
     proof: 'This counterexample is adapted from the <a href="/category/Top?proof=effective_cocongruences">counterexample</a> for $\Top$. Consider the pointed topological space $I \coloneqq \{ \ast, a, b \}$ with topology $\{ \varnothing, \{ \ast \}, \{ a, b \}, \{ \ast, a, b \} \}$. This represents the functor which sends a pointed topological space $X$ to the pairs of indistinguishable points of $X$. Therefore, we get a cocongruence $\{ \ast, a \} \rightrightarrows I$ on the discrete space $\{ \ast, a \}$, where the maps are $\ast \mapsto \ast, a \mapsto a$ and $\ast \mapsto \ast, a \mapsto b$, respectively. However, this cannot be effective: if we have $h : Z \to \{ \ast, a \}$ which equalizes the cocongruence, then $h$ must be the constant function with value $\ast$. But that means the cokernel pair of $h$ is the discrete space on $\{ \ast, a, b \}$.'
@@ -127,7 +127,7 @@ special_morphisms:
     proof: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the discrete two-point space), hence preserves monomorphisms.
   epimorphism:
     description: surjective pointed continuous maps
-    proof: 'For the non-trivial direction: The forgetful functor $\Top_* \to \Top$ preserves pushouts and hence also epimorphisms, and we already know the epimorphisms in $\Top$.'
+    proof: 'For the non-trivial direction: The forgetful functor $\Top_* \to \Top$ preserves pushouts and hence also epimorphisms, and the epimorphisms in $\Top$ are surjective (<a href="/category/Top?proof=epimorphism" data-allow-deduced>proof</a>).'
   regular monomorphism:
     description: embeddings
     proof: 'Equalizers are embeddings by their construction. Conversely, if $f : X \to Y$ is an embedding, then $f$ is the equalizer of the two characteristic maps $\chi_Y, \chi_{f(X)} : Y \rightrightarrows \{0,1\}$, where $\{0,1\}$ carries the indiscrete topology and $1$ is the base point.'
