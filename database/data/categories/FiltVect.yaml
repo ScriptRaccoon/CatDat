@@ -22,10 +22,10 @@ comments:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\FiltVect \to \Vect$, and $\Vect$ is locally small.
+    proof: There is a forgetful functor $\FiltVect \to \Vect$, and $\Vect$ is locally small (<a href="/category/Vect?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: preadditive
-    proof: We know that $\Vect$ is preadditive with pointwise operations. It is easy to check that the sum of two filtered linear maps is again a filtered linear map. Moreover, the additive inverse of a filtered linear map is again a filtered linear map.
+    proof: We know that $\Vect$ is preadditive (<a href="/category/Vect?proof=preadditive" data-allow-deduced>proof</a>) with pointwise operations. It is easy to check that the sum of two filtered linear maps is again a filtered linear map. Moreover, the additive inverse of a filtered linear map is again a filtered linear map.
 
   - property: kernels
     proof: 'Let $f : (V,F) \to (W,F)$ be a filtered linear map. Equip the kernel $U \subseteq V$ of the underlying linear map $f : V \to W$ with the induced filtration $F^n(U) \coloneqq U \cap F^n(V)$. Then $(U,F)$ is a filtered vector space together with a filtered linear map $\iota : (U,F) \to (V,F)$, which is clearly the kernel of $f$ in $\FiltVect$.'
@@ -55,7 +55,7 @@ satisfied_properties:
     proof: >-
       Let $K_n$ denote the vector space $K$ equipped with the filtration such that $F^m(K) = K$ for $m < n$ and $F^m(K) = 0$ for $m \ge n$; and similarly, let $K_\infty$ denote the vector space $K$ equipped with the filtration such that $F^m(K) = K$ for each $m$. Then $K_n$ represents the functor mapping $(V, F)$ to $F^n(V)^\perp$, i.e. the space of functionals on $V$ whose kernels contain $F^n(V)$. Also, $K_\infty$ represents the functor sending $(V, F)$ to the dual $V^*$; and the canonical epimorphism $K_\infty \twoheadrightarrow K_n$ corresponds under the Yoneda embedding to the natural inclusion $F^n(V)^\perp \hookrightarrow V^*$. We claim that $\{ K_n : n \in \IZ \} \cup \{ K_\infty \}$ is an extremal cogenerating collection of $\FiltVect_K$.
 
-      First, the set includes $K_\infty$, which we have already seen above is a cogenerator of $\FiltVect_K$. Now, suppose we have a morphism $f : (V, F) \to (W, G)$ such that
+      First, the set includes $K_\infty$, which we have already seen above is a cogenerator of $\FiltVect_K$ (<a href="/category/FiltVect?proof=cogenerator">proof</a>). Now, suppose we have a morphism $f : (V, F) \to (W, G)$ such that
       $${-} \circ f : \Hom((W, G), K_\infty) \to \Hom((V, F), K_\infty)$$
       is a bijection. This implies that $f^* : W^* \to V^*$ is a bijection of the dual vector spaces, and therefore an isomorphism. By standard linear algebra, this implies that $f : V \to W$ is an isomorphism of vector spaces.
 
@@ -86,7 +86,7 @@ satisfied_properties:
 
   - property: pushout-stable regular monomorphisms
     proof: >-
-      Let $i : (U,F) \to (V,F)$ be a regular monomorphism, i.e. $i$ is injective and $F^n(U) = i^*(F^n(V))$. Let $f : (U,F) \to (W,F)$ be any morphism. We must prove that the canonical morphism $(W,F) \to (V,F) \oplus_{(U,F)} (W,F)$ is a regular monomorphism. It is certainly injective since the forgetful functor to $\Vect$ preserves colimits and $\Vect$ has the claimed property. Now suppose that $w \in W$ is an element whose image $[0,w] \in V \oplus_U W$ lies in $F^n(V \oplus_U W)$; we must show that $w \in F^n(W)$.
+      Let $i : (U,F) \to (V,F)$ be a regular monomorphism, i.e. $i$ is injective and $F^n(U) = i^*(F^n(V))$. Let $f : (U,F) \to (W,F)$ be any morphism. We must prove that the canonical morphism $(W,F) \to (V,F) \oplus_{(U,F)} (W,F)$ is a regular monomorphism. It is certainly injective since the forgetful functor to $\Vect$ preserves colimits and $\Vect$ has the claimed property (<a href="/category/Vect?proof=pushout-stable_regular_monomorphisms" data-allow-deduced>proof</a>). Now suppose that $w \in W$ is an element whose image $[0,w] \in V \oplus_U W$ lies in $F^n(V \oplus_U W)$; we must show that $w \in F^n(W)$.
       Since, by the construction of colimits in $\FiltVect$, the subspace $F^n(V \oplus_U W)$ is the sum of the images of $F^n(V)$ and $F^n(W)$, there exist $v \in F^n(V)$ and $w' \in F^n(W)$ such that $[0,w] = [v,w']$. This means that there exists some $u \in U$ with $v = i(u)$ and $w = f(u) + w'$. Then $u \in F^n(U)$ because $i(u) \in F^n(V)$. Hence $f(u) \in F^n(W)$, and therefore $w = f(u) + w' \in F^n(W)$.
 
 unsatisfied_properties:
@@ -118,7 +118,7 @@ special_morphisms:
     proof: For the non-trivial direction, the forgetful functor $\FiltVect \to \Set$ is representable (by $K$ equipped with the trivial filtration), and therefore preserves monomorphisms.
   epimorphism:
     description: surjective filtered linear maps
-    proof: We saw above that the category has cokernels, and that these are preserved by the forgetful functor to $\Vect$. Moreover, a morphism is an epimorphism if and only if its cokernel is zero, and a filtered vector space is zero if and only if its underlying vector space is zero. Therefore, the claim follows since the epimorphisms in $\Vect$ are the surjective linear maps (<a href="/category/Vect?proof=epimorphism" data-allow-deduced>proof</a>).
+    proof: We saw above that the category has cokernels, and that these are preserved by the forgetful functor to $\Vect$ (<a href="/category/FiltVect?proof=cokernels">proof</a>). Moreover, a morphism is an epimorphism if and only if its cokernel is zero, and a filtered vector space is zero if and only if its underlying vector space is zero. Therefore, the claim follows since the epimorphisms in $\Vect$ are the surjective linear maps (<a href="/category/Vect?proof=epimorphism" data-allow-deduced>proof</a>).
   regular monomorphism:
     description: 'A filtered linear map $f : (V,F) \to (W,G)$ is a regular monomorphism if and only if $f : V \to W$ is injective and $F^n(V) = f^*(G^n(W))$ for all $n \in \IZ$.'
     proof: 'Every kernel (and hence every equalizer) satisfies this property by the construction of kernels. Conversely, suppose that $f : (V,F) \to (W,G)$ is a filtered linear map satisfying this condition. Then $f$ induces an isomorphism between $(V,F)$ and $(U,G)$, where $U \coloneqq \im(f) \subseteq W$ is equipped with the induced filtration $G^n(U) \coloneqq U \cap G^n(W)$. Endow $W/U$ with the induced filtration $G^n(W/U) \coloneqq \pi_*(G^n(W))$, where $\pi : W \to W/U$ is the quotient map. Then $\pi : (W,G) \to (W/U,G)$ is a filtered linear map, and by the general construction of kernels, its kernel is the vector space $U$ equipped with the induced filtration. Hence, $f : (V,F) \to (W,G)$ is a kernel of $\pi : (W,G) \to (W/U,G)$.'

@@ -24,7 +24,7 @@ satisfied_properties:
     proof: Every countable set is isomorphic to a subset of $\IN$.
 
   - property: all epimorphisms split
-    proof: Apply Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\Set_\c \hookrightarrow \Set$, which preserves epimorphisms since these are surjective in both categories (<a href="/category/Set_c?proof=epimorphism">proof</a> for $\Set_\c$ and <a href="/category/Set?proof=epimorphism">proof</a> for $\Set$), and use that <a href="/category/Set">$\Set$</a> has all epimorphisms split.
+    proof: Apply Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\Set_\c \hookrightarrow \Set$, which preserves epimorphisms since these are surjective in $\Set_\c$ (<a href="/category/Set_c?proof=epimorphism">proof</a>) and in $\Set$ (<a href="/category/Set?proof=epimorphism">proof</a>), and use that $\Set$ has all epimorphisms split (<a href="/category/Set?proof=all_epimorphisms_split" data-allow-deduced>proof</a>).
 
   - property: finitely complete
     proof: The embedding $\Set_\c \hookrightarrow \Set$ is closed under finite products and equalizers, hence under finite limits.
@@ -44,13 +44,13 @@ satisfied_properties:
     proof: The two-point set is an extremal cogenerator even in $\Set$ (<a href="/category/Set?proof=extremal_cogenerator">proof</a>). Now apply Lemma 10 <a href="/content/subcategories">here</a>.
 
   - property: semi-strongly connected
-    proof: This is because the larger category <a href="/category/Set">$\Set$</a> has this property.
+    proof: This is because the larger category $\Set$ has this property (<a href="/category/Set?proof=semi-strongly_connected" data-allow-deduced>proof</a>).
 
   - property: countably extensive
-    proof: This follows from Lemma 11 <a href="/content/subcategories">here</a> since <a href="/category/Set">$\Set$</a> is countably extensive (even infinitary extensive) and its full subcategory $\Set_\c$ is closed under pullbacks and countable coproducts in $\Set$.
+    proof: This follows from Lemma 11 <a href="/content/subcategories">here</a> since $\Set$ is countably extensive, even infinitary extensive (<a href="/category/Set?proof=infinitary_extensive" data-allow-deduced>proof</a>), and its full subcategory $\Set_\c$ is closed under pullbacks and countable coproducts in $\Set$.
 
   - property: effective congruences
-    proof: 'Let $R \rightrightarrows X$ be a congruence in $\Set_\c$. Then using $\{\ast\}$ as a test object, we see that this induces an equivalence relation on $X$. We already know that <a href="/category/Set">$\Set$</a> has effective congruences (as does every topos). Using <a href="/content/effective-congruence-quotients">this result</a>, we see that $R$ is the kernel pair of $X \to (X/R)_{\Set}$ in $\Set$. Also, the quotient $(X/R)_{\Set}$ is countable; and the forgetful functor $\Set_\c \to \Set$ is fully faithful <a href="https://ncatlab.org/nlab/show/reflected+limit#FullSubcategoryInclusionReflectCoLimits">and therefore reflects limits</a>. Thus, we conclude that $R$ is the kernel pair of $X \to (X/R)_{\Set}$ in $\Set_\c$ as well.'
+    proof: 'Let $R \rightrightarrows X$ be a congruence in $\Set_\c$. Then using $\{\ast\}$ as a test object, we see that this induces an equivalence relation on $X$. We already know that $\Set$ has effective congruences, as does every topos (<a href="/category/Set?proof=effective_congruences" data-allow-deduced>proof</a>). Using <a href="/content/effective-congruence-quotients">this result</a>, we see that $R$ is the kernel pair of $X \to (X/R)_{\Set}$ in $\Set$. Also, the quotient $(X/R)_{\Set}$ is countable; and the forgetful functor $\Set_\c \to \Set$ is fully faithful <a href="https://ncatlab.org/nlab/show/reflected+limit#FullSubcategoryInclusionReflectCoLimits">and therefore reflects limits</a>. Thus, we conclude that $R$ is the kernel pair of $X \to (X/R)_{\Set}$ in $\Set_\c$ as well.'
 
   - property: coregular
     proof: This follows from the dual of Lemma 7 <a href="/content/subcategories">here</a> applied to the inclusion functor $\Set_\c \hookrightarrow \Set$ into the coregular category $\Set$ and the fact that the regular monomorphisms in $\Set_\c$ are the monomorphisms (<a href="/category/Set_c?proof=regular_monomorphism" data-allow-deduced>proof</a>).
@@ -90,7 +90,7 @@ special_objects:
 special_morphisms:
   isomorphism:
     description: bijective maps
-    proof: It is a full subcategory of $\Set$, for which we know that isomorphisms are bijective maps.
+    proof: It is a full subcategory of $\Set$, for which isomorphisms are bijective maps (<a href="/category/Set?proof=isomorphism" data-allow-deduced>proof</a>).
   monomorphism:
     description: injective maps
     proof: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.

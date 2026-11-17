@@ -26,13 +26,13 @@ satisfied_properties:
     proof: 'In any category $\C$, for every object $Q$, the functor $- \times Q : \C \to \C$ preserves monomorphisms. This is straightforward to check.'
 
   - property: preserves coproducts
-    proof: This is because <a href="/category/Top">$\Top$</a> is infinitary extensive.
+    proof: This is because $\Top$ is infinitary extensive (<a href="/category/Top?proof=infinitary_extensive" data-allow-deduced>proof</a>).
 
   - property: dominant
     proof: For every space $X$ there is a split monomorphism $X \hookrightarrow X \times \IQ$, $x \mapsto (x,0)$.
 
   - property: preserves epimorphisms
-    proof: 'Since $\Set$ is cartesian closed, the functor $- \times \IQ : \Set \to \Set$ is a left adjoint and therefore preserves epimorphisms (of course, a direct calculation is also possible). Since the <a href="/functor/forget_topology">forgetful functor $\Top \to \Set$</a> preserves binary products and preserves and reflects epimorphisms, it follows that $- \times \IQ : \Top \to \Top$ also preserves epimorphisms.'
+    proof: 'Since $\Set$ is cartesian closed (<a href="/category/Set?proof=cartesian_closed" data-allow-deduced>proof</a>), the functor $- \times \IQ : \Set \to \Set$ is a left adjoint and therefore preserves epimorphisms (of course, a direct calculation is also possible). Since the forgetful functor $\Top \to \Set$ preserves binary products (<a href="/functor/forget_topology?proof=preserves_binary_products" data-allow-deduced>proof</a>) and preserves and reflects epimorphisms (<a href="/functor/forget_topology?proof=preserves_epimorphisms" data-allow-deduced>proof</a>), it follows that $- \times \IQ : \Top \to \Top$ also preserves epimorphisms.'
 
   - property: conservative
     proof: >-

@@ -47,7 +47,7 @@ unsatisfied_properties:
     proof: Both $(\{\ast\},\varnothing)$ and $(\varnothing,\{\ast\})$ are mapped to $\varnothing$.
 
   - property: preserves coequalizers
-    proof: 'Since the diagonal functor $\Delta : \Set \to \Set \times \Set$ preserves coequalizers (in fact, all colimits), it would follow that the composition $\Set \to \Set$, $X \mapsto X^2$ preserves coequalizers. But this is the <a href="/functor/squaring_sets">squaring functor</a>, of which we already know that it does not preserve coequalizers.'
+    proof: 'Since the diagonal functor $\Delta : \Set \to \Set \times \Set$ preserves coequalizers (in fact, all colimits), it would follow that the composition $\Set \to \Set$, $X \mapsto X^2$ preserves coequalizers. But this is the squaring functor, which does not preserve coequalizers (<a href="/functor/squaring_sets?proof=preserves_coequalizers" data-allow-deduced>proof</a>).'
 
   - property: coreflector
     proof: 'Its left adjoint, the diagonal functor $\Delta : \Set \to \Set \times \Set$, is faithful, but not full.'

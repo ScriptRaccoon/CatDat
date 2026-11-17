@@ -16,25 +16,25 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: It is a full subcategory of <a href="/category/FinSet">$\FinSet$</a>, which is locally small.
+    proof: It is a full subcategory of $\FinSet$, which is locally small (<a href="/category/FinSet?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: locally finite
-    proof: This property is inherited from <a href="/category/FinSet">$\FinSet$</a>.
+    proof: This property is inherited from $\FinSet$, which is locally finite (<a href="/category/FinSet?proof=locally_finite" data-allow-deduced>proof</a>).
 
   - property: essentially countable
-    proof: This property is inherited from <a href="/category/FinSet">$\FinSet$</a>.
+    proof: This property is inherited from $\FinSet$, which is essentially countable (<a href="/category/FinSet?proof=essentially_countable" data-allow-deduced>proof</a>).
 
   - property: semi-strongly connected
-    proof: This property is inherited from <a href="/category/FinSet">$\FinSet$</a>.
+    proof: This property is inherited from $\FinSet$, which is semi-strongly connected (<a href="/category/FinSet?proof=semi-strongly_connected" data-allow-deduced>proof</a>).
 
   - property: disjoint finite coproducts
-    proof: A finite disjoint union of finite sets of even cardinality is again finite and has even cardinality, since a finite sum of even natural numbers is even. Moreover, coproducts are disjoint just as in <a href="/category/FinSet">$\FinSet$</a>.
+    proof: A finite disjoint union of finite sets of even cardinality is again finite and has even cardinality, since a finite sum of even natural numbers is even. Moreover, coproducts are disjoint just as in $\FinSet$ (<a href="/category/FinSet?proof=disjoint_finite_coproducts" data-allow-deduced>proof</a>).
 
   - property: binary products
     proof: This follows from the fact that the product of two even natural numbers is again even.
 
   - property: strict initial object
-    proof: The empty set is clearly a strict initial object, just as in <a href="/category/FinSet">$\FinSet$</a>.
+    proof: The empty set is clearly a strict initial object, just as in $\FinSet$ (<a href="/category/FinSet?proof=strict_initial_object" data-allow-deduced>proof</a>).
 
   - property: kernel pairs
     proof: >-
@@ -44,13 +44,13 @@ satisfied_properties:
     proof: 'If $f : X \to Y$ is a monomorphism, i.e. an injective map (<a href="/category/FinSet_even?proof=monomorphism">proof</a>), then $f$ is the equalizer of two maps $Y \rightrightarrows \{0,1\}$ in $\Set$, and therefore also in $\FinSet_{\even}$.'
 
   - property: all epimorphisms split
-    proof: Apply Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\FinSet_{\even} \hookrightarrow \Set$, which preserves epimorphisms since these are surjective in both categories (<a href="/category/FinSet_even?proof=epimorphism">proof</a> for $\FinSet_{\even}$ and <a href="/category/Set?proof=epimorphism">proof</a> for $\Set$), and use that <a href="/category/Set">$\Set$</a> has all epimorphisms split.
+    proof: Apply Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\FinSet_{\even} \hookrightarrow \Set$, which preserves epimorphisms since these are surjective in $\FinSet_{\even}$ (<a href="/category/FinSet_even?proof=epimorphism">proof</a>) and in $\Set$ (<a href="/category/Set?proof=epimorphism">proof</a>), and use that $\Set$ has all epimorphisms split (<a href="/category/Set?proof=all_epimorphisms_split" data-allow-deduced>proof</a>).
 
   - property: extremal generator
     proof: The two-element set is an extremal generator even in <a href="/category/Set">$\Set$</a> because the <a href="/functor/squaring_sets">squaring functor</a> $X \mapsto X^2$ is faithful and conservative. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
 
   - property: extremal cogenerator
-    proof: The two-element set is an extremal cogenerator even in <a href="/category/Set">$\Set$</a>. Now apply Lemma 10 <a href="/content/subcategories">here</a>.
+    proof: The two-element set is an extremal cogenerator even in $\Set$ (<a href="/category/Set?proof=extremal_cogenerator">proof</a>). Now apply Lemma 10 <a href="/content/subcategories">here</a>.
 
   - property: ℵ₁-filtered
     proof: In fact, every small diagram has a cocone in $\FinSet_{\even}$. We take the colimit in $\Set$ and then map it to $\{0,1\}$ via a constant map.
@@ -59,7 +59,7 @@ satisfied_properties:
     proof: Let $R \rightrightarrows X$ be a congruence in $\FinSet_{\even}$. This means that the induced map of sets $R \to X \times X$ is a monomorphism, i.e. injective, and that for every test object $T$ of $\FinSet_{\even}$, the induced injective map $\Hom(T,R) \to \Hom(T,X) \times \Hom(T,X)$ is an equivalence relation in $\Set$. By applying this to $T = \{0,1\}$ and constant maps, it is easy to check that $R \rightrightarrows X$ is a congruence in $\Set$. It is therefore the kernel pair of the projection $X \twoheadrightarrow X/R$ in $\Set$, and hence also in $\FinSet$. If $X/R$ has even cardinality, this remains true in $\FinSet_{\even}$, and we are done. If not, we simply compose the projection with the inclusion $X/R \hookrightarrow X/R + \{\ast\}$. The resulting map $X \to X/R + \{\ast\}$ is a morphism in $\FinSet_{\even}$ with kernel pair $R \rightrightarrows X$. (The last step is also an indication that quotients of congruences do not exist in general, which we will see later.)
 
   - property: effective cocongruences
-    proof: Let $X \rightrightarrows C$ be a cocongruence in $\FinSet_{\even}$. In particular, it is a coreflexive corelation. Then $X+X \to C$ is an epimorphism, hence surjective. It follows that $X \rightrightarrows C$ is also a coreflexive corelation in $\Set$. Since <a href="/category/Set">$\Set$</a> is co-Malcev and has effective cocongruences (by <a href="/category-implication/regular_epi-regular_extensive_consequences">this result</a>), there is a subset $Y \subseteq X$ such that $C \cong X \sqcup_Y X$ in $\Set$, with $X \rightrightarrows C$ corresponding to the two pushout inclusions. We have $\card(C) = 2 \card(X) - \card(Y)$, so $\card(Y)$ is even. Hence, $C \cong X \sqcup_Y X$ remains true in $\FinSet_{\even}$.
+    proof: Let $X \rightrightarrows C$ be a cocongruence in $\FinSet_{\even}$. In particular, it is a coreflexive corelation. Then $X+X \to C$ is an epimorphism, hence surjective. It follows that $X \rightrightarrows C$ is also a coreflexive corelation in $\Set$. Since $\Set$ is co-Malcev (<a href="/category/Set?proof=co-Malcev" data-allow-deduced>proof</a>) and has effective cocongruences (by <a href="/category-implication/regular_epi-regular_extensive_consequences">this result</a>), there is a subset $Y \subseteq X$ such that $C \cong X \sqcup_Y X$ in $\Set$, with $X \rightrightarrows C$ corresponding to the two pushout inclusions. We have $\card(C) = 2 \card(X) - \card(Y)$, so $\card(Y)$ is even. Hence, $C \cong X \sqcup_Y X$ remains true in $\FinSet_{\even}$.
 
   - property: coquotients of cocongruences
     proof: We have just seen that every cocongruence in $\FinSet_{\even}$ is of the form $X \rightrightarrows X \sqcup_Y X$ for some subset $Y \subseteq X$ of even cardinality (<a href="/category/FinSet_even?proof=effective_cocongruences">proof</a>). The equalizer in $\Set$ is the inclusion $Y \hookrightarrow X$. Since this morphism lies in $\FinSet_{\even}$, it is also the equalizer in $\FinSet_{\even}$.
@@ -100,7 +100,7 @@ special_objects:
 special_morphisms:
   isomorphism:
     description: bijective maps
-    proof: It is a full subcategory of $\Set$, in which isomorphisms are bijective maps.
+    proof: It is a full subcategory of $\Set$, in which isomorphisms are bijective maps (<a href="/category/Set?proof=isomorphism" data-allow-deduced>proof</a>).
   monomorphism:
     description: injective maps
     proof: 'For the non-trivial direction, assume that $f : X \to Y$ is a monomorphism and let $a,b \in X$ satisfy $f(a)=f(b)$. Consider the constant maps $a,b : \{0,1\} \rightrightarrows X$ with values $a$ and $b$, respectively. Then $f \circ a = f \circ b$. Thus, $a = b$.'

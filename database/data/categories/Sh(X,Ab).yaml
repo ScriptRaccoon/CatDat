@@ -23,7 +23,7 @@ comments:
 
 satisfied_properties:
   - property: locally small
-    proof: The collection of morphisms $F \to G$ is a subcollection of $\prod_{U} \Hom(F(U),G(U))$, where $U$ runs through the set of open subsets of $X$, and this is a set since $\Ab$ is locally small.
+    proof: The collection of morphisms $F \to G$ is a subcollection of $\prod_{U} \Hom(F(U),G(U))$, where $U$ runs through the set of open subsets of $X$, and this is a set since $\Ab$ is locally small (<a href="/category/Ab?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: Grothendieck abelian
     proof: This is standard; see for example <a href="https://ncatlab.org/nlab/show/Categories+and+Sheaves">Kashiwara–Schapira</a>, Theorem 18.1.6.
@@ -33,7 +33,7 @@ unsatisfied_properties:
     proof: Consider constant sheaves for isomorphic but non-equal abelian groups.
 
   - property: all epimorphisms split
-    proof: 'Choose a point $x \in X$. The skyscraper sheaf functor $x_* : \Ab \to \Sh(X,\Ab)$ is exact. It is right adjoint to the stalk functor $x^* : \Sh(X,\Ab) \to \Ab$, and the counit $x^* x_* \to \id_{\Ab}$ is an isomorphism, so $x_*$ is fully faithful. Hence, the claim follows from the contrapositive of Lemma 15 <a href="/content/subcategories">here</a>, since <a href="/category/Ab">$\Ab$</a> does not have all epimorphisms split.'
+    proof: 'Choose a point $x \in X$. The skyscraper sheaf functor $x_* : \Ab \to \Sh(X,\Ab)$ is exact. It is right adjoint to the stalk functor $x^* : \Sh(X,\Ab) \to \Ab$, and the counit $x^* x_* \to \id_{\Ab}$ is an isomorphism, so $x_*$ is fully faithful. Hence, the claim follows from the contrapositive of Lemma 15 <a href="/content/subcategories">here</a>, since $\Ab$ does not have all epimorphisms split (<a href="/category/Ab?proof=all_epimorphisms_split" data-allow-deduced>proof</a>).'
 
 special_objects:
   initial object:

@@ -20,7 +20,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $M{-}\Set \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
+    proof: There is a forgetful functor $M{-}\Set \to \Set$, and $\Set$ is locally small (<a href="/category/Set?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: Grothendieck topos
     proof: It is the category of sheaves on the opposite of the one-object category associated to $M$.
@@ -38,7 +38,7 @@ unsatisfied_properties:
 undecidable_properties:
   - property: semi-strongly connected
     # TODO: decide if we want to add separate children entries to decide this for some cases.
-    proof: Whether this category is semi-strongly connected depends on the choice of $M$. For $M = 1$ it is, for $M = \IZ$ it is not (see the entry for <a href="/category/Z-Set">$\IZ{-}\Set$</a>). In general, if $G$ is a group, then $G{-}\Set$ is semi-strongly connected if and only if for all subgroups $H,K \subseteq G$, $H$ is subconjugate to $K$ or $K$ is subconjugate to $H$. If $G$ is abelian, this means that the poset of subgroups is linear, in which case $G$ is either isomorphic to $\IZ/p^n$ or to $\IZ/p^{\infty}$ for a prime $p$. See also <a href="https://math.stackexchange.com/questions/5129804">MSE/5129804</a>.
+    proof: Whether this category is semi-strongly connected depends on the choice of $M$. For $M = 1$ it is, for $M = \IZ$ it is not (<a href="/category/Z-Set?proof=semi-strongly_connected" data-allow-deduced>proof</a> for $\IZ{-}\Set$). In general, if $G$ is a group, then $G{-}\Set$ is semi-strongly connected if and only if for all subgroups $H,K \subseteq G$, $H$ is subconjugate to $K$ or $K$ is subconjugate to $H$. If $G$ is abelian, this means that the poset of subgroups is linear, in which case $G$ is either isomorphic to $\IZ/p^n$ or to $\IZ/p^{\infty}$ for a prime $p$. See also <a href="https://math.stackexchange.com/questions/5129804">MSE/5129804</a>.
 
 special_objects:
   initial object:

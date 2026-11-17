@@ -17,7 +17,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: It is a full subcategory of <a href="/category/Pos">$\Pos$</a>, which is locally small.
+    proof: It is a full subcategory of $\Pos$, which is locally small (<a href="/category/Pos?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: binary products
     proof: Let $P,Q$ be two posets without isolated points. Then $P \times Q$ has no isolated points, because if a point $(p,q) \in P \times Q$ is isolated, it is easy to check that $p$ is isolated as well.
@@ -26,7 +26,7 @@ satisfied_properties:
     proof: 'It is easy to check that $\Pos_{\noiso} \hookrightarrow \Pos$ is closed under coproducts. If $f : X \to P + Q$ is an order-preserving map, where $X,P,Q$ have no isolated points, then the preimage $f^*(P)$ also has no isolated points. In fact, if $x \in f^*(P)$, then there is some $y \neq x$ in $X$ that is comparable to $x$, since $X$ has no isolated points. Then $f(x) \in P$ and $f(y)$ is comparable to $f(x)$. It follows that $f(y) \in P$, and hence $y \in f^*(P)$. We conclude the proof with Lemma 11 <a href="/content/subcategories">here</a>.'
 
   - property: semi-strongly connected
-    proof: This property is inherited from <a href="/category/Pos">$\Pos$</a>.
+    proof: This property is inherited from $\Pos$, which is semi-strongly connected (<a href="/category/Pos?proof=semi-strongly_connected" data-allow-deduced>proof</a>).
 
   - property: extremal generator
     proof: The ordered set $\{0 < 1\}$ is an extremal generator, even for $\PreOrd$ (<a href="/category/PreOrd?proof=extremal_generator">proof</a>). Now apply Lemma 10 <a href="/content/subcategories">here</a>.
@@ -95,4 +95,4 @@ special_morphisms:
     proof: We can use the same <a href="/category/Pos?proof=epimorphism">proof</a> as for $\Pos$.
   regular monomorphism:
     description: embeddings
-    proof: 'We use the fact that the regular monomorphisms in <a href="/category/Pos">$\Pos$</a> are precisely the embeddings, but we have to be a little careful since $\Pos_{\noiso}$ does not have all finite (co-)limits. If $P \to Q$ is an embedding of posets without isolated points, we have seen in the proof for $\Pos$ that it is the equalizer of its cokernel pair $Q \rightrightarrows Q \sqcup_P Q$ in $\Pos$. Moreover, we have seen above that this cokernel pair has no isolated points. It follows that $P \to Q$ is a regular monomorphism in $\Pos_{\noiso}$. Conversely, suppose that $P \to Q$ is a regular monomorphism in $\Pos_{\noiso}$. Since we already know that the inclusion functor $\Pos_{\noiso} \hookrightarrow \Pos$ is continuous, it follows that $P \to Q$ is also a regular monomorphism in $\Pos$. Therefore, it is an embedding.'
+    proof: 'We use the fact that the regular monomorphisms in $\Pos$ are precisely the embeddings (<a href="/category/Pos?proof=regular_monomorphism" data-allow-deduced>proof</a>), but we have to be a little careful since $\Pos_{\noiso}$ does not have all finite (co-)limits. If $P \to Q$ is an embedding of posets without isolated points, we have seen in the <a href="/category/Pos?proof=regular_monomorphism">proof</a> for $\Pos$ that it is the equalizer of its cokernel pair $Q \rightrightarrows Q \sqcup_P Q$ in $\Pos$. Moreover, we have seen above that this cokernel pair has no isolated points (<a href="/category/Pos_noiso?proof=cokernel_pairs">proof</a>). It follows that $P \to Q$ is a regular monomorphism in $\Pos_{\noiso}$. Conversely, suppose that $P \to Q$ is a regular monomorphism in $\Pos_{\noiso}$. Since the inclusion functor $\Pos_{\noiso} \hookrightarrow \Pos$ is continuous (<a href="/category/Pos_noiso?proof=kernel_pairs">proof</a>), it follows that $P \to Q$ is also a regular monomorphism in $\Pos$. Therefore, it is an embedding.'

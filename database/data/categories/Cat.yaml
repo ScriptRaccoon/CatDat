@@ -18,7 +18,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\Cat \to \Set \times \Set$, $\C \mapsto (\Ob(\C),\Mor(\C))$, and $\Set \times \Set$ is locally small.
+    proof: There is a forgetful functor $\Cat \to \Set \times \Set$, $\C \mapsto (\Ob(\C),\Mor(\C))$, and $\Set \times \Set$ is locally small (<a href="/category/SetxSet?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: cartesian closed
     proof: See <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician">Mac Lane</a>, p. 98.
@@ -36,20 +36,20 @@ satisfied_properties:
       In fact, $I$ is an extremal generator: suppose $F : \C \to \D$ is a functor which induces a bijection $\Mor(\C) \to \Mor(\D)$. By considering the images of identity morphisms in $\C$, we see that $F$ is injective on objects; and then by considering the preimages of identity morphisms in $\D$, we see that $F$ is surjective on objects. By assumption, $F$ is also bijective on morphisms, so $F$ is an isomorphism of categories.
 
   - property: infinitary extensive
-    proof: 'We have just seen that the walking morphism is an extremal generator, which means that the functor $\Mor : \Cat \to \Set$ is faithful and conservative. Moreover, $\Cat$ has coproducts and pullbacks, since it is locally finitely presentable. The functor $\Mor$ preserves coproducts by their concrete description and, being representable, also preserves pullbacks. Therefore, the claim follows from the extensivity of $\Set$ and Lemma 11 <a href="/content/subcategories">here</a>.'
+    proof: 'We have just seen that the walking morphism is an extremal generator (<a href="/category/Cat?proof=extremal_generator">proof</a>), which means that the functor $\Mor : \Cat \to \Set$ is faithful and conservative. Moreover, $\Cat$ has coproducts and pullbacks, since it is locally finitely presentable (<a href="/category/Cat?proof=locally_finitely_presentable" data-allow-deduced>proof</a>). The functor $\Mor$ preserves coproducts by their concrete description and, being representable, also preserves pullbacks. Therefore, the claim follows from the extensivity of $\Set$ and Lemma 11 <a href="/content/subcategories">here</a>.'
 
 unsatisfied_properties:
   - property: skeletal
     proof: The categories with a single object $0$, respectively $1$, and only the identity morphism are terminal objects, hence isomorphic, but not equal.
 
   - property: balanced
-    proof: Since we know that <a href="/category/Mon">$\Mon$</a> is not balanced, there is a monoid map $M \to N$ which is a monomorphism and an epimorphism, but not an isomorphism. Then $B(M) \to B(N)$ has the corresponding properties.
+    proof: Since we know that $\Mon$ is not balanced (<a href="/category/Mon?proof=balanced" data-allow-deduced>proof</a>), there is a monoid map $M \to N$ which is a monomorphism and an epimorphism, but not an isomorphism. Then $B(M) \to B(N)$ has the corresponding properties.
 
   - property: pushout-stable regular monomorphisms
-    proof: 'Apply the contrapositive of Lemma 14 <a href="/content/subcategories">here</a> to the delooping functor $B : \Mon \to \Cat$. It is fully faithful, it preserves regular monomorphisms since it has a left adjoint (<a href="https://math.stackexchange.com/questions/574745">MSE/574745</a>), and it preserves pushouts (<a href="https://math.stackexchange.com/questions/5130854">MSE/5130854</a>). Here, we use that <a href="/category/Mon">$\Mon$</a> does not have pushout-stable regular monomorphisms.'
+    proof: 'Apply the contrapositive of Lemma 14 <a href="/content/subcategories">here</a> to the delooping functor $B : \Mon \to \Cat$. It is fully faithful, it preserves regular monomorphisms since it has a left adjoint (<a href="https://math.stackexchange.com/questions/574745">MSE/574745</a>), and it preserves pushouts (<a href="https://math.stackexchange.com/questions/5130854">MSE/5130854</a>). Here, we use that $\Mon$ does not have pushout-stable regular monomorphisms (<a href="/category/Mon?proof=pushout-stable_regular_monomorphisms" data-allow-deduced>proof</a>).'
 
   - property: Malcev
-    proof: 'Apply the contrapositive of Lemma 13 <a href="/content/subcategories">here</a> to the inclusion of discrete categories $\Set \to \Cat$, which is fully faithful and preserves finite limits. Here, we use that <a href="/category/Set">$\Set$</a> is not Malcev.'
+    proof: 'Apply the contrapositive of Lemma 13 <a href="/content/subcategories">here</a> to the inclusion of discrete categories $\Set \to \Cat$, which is fully faithful and preserves finite limits. Here, we use that $\Set$ is not Malcev (<a href="/category/Set?proof=Malcev" data-allow-deduced>proof</a>).'
 
   - property: co-Malcev
     proof: 'We can adapt the counterexample for monoids (cf. <a href="https://mathoverflow.net/questions/509552">MO/509552</a>) as follows: Consider the functor $U : \Cat \to \Set^+$ sending a category $\C$ to the (large) set $\{(x,u) : x \in \Ob(\C) ,\, u \in \End(x) \}$. It is represented by $B \IN$, the one-object category associated to the free monoid on one generator. Consider the relation $R \subseteq U^2$ consisting of those pairs $((x,u),(y,v))$ where $x = y$ and $uv = u^2$. This is also representable, namely by the one-object category associated to the monoid with the presentation $\langle u,v : uv = u^2 \rangle$. Clearly, $R$ is reflexive, but not symmetric.'

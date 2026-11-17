@@ -17,7 +17,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\Set_\ff \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
+    proof: There is a forgetful functor $\Set_\ff \to \Set$, and $\Set$ is locally small (<a href="/category/Set?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: extremal generator
     proof: The singleton set (which is <i>not</i> terminal) is an extremal generator as it represents the forgetful functor $\Set_\ff \to \Set$ which is faithful and conservative.
@@ -36,7 +36,7 @@ satisfied_properties:
     check_redundancy: false
 
   - property: locally cartesian closed
-    proof: If $X$ is a set, the equivalence $\Set/X \simeq \Set^X$, $f \mapsto (f^*(\{x\}))_{x \in X}$ restricts to an equivalence $\Set_\ff / X \simeq \FinSet^X$. This category is cartesian closed since <a href="/category/FinSet">$\FinSet$</a> is cartesian closed and products of cartesian closed categories are cartesian closed.
+    proof: If $X$ is a set, the equivalence $\Set/X \simeq \Set^X$, $f \mapsto (f^*(\{x\}))_{x \in X}$ restricts to an equivalence $\Set_\ff / X \simeq \FinSet^X$. This category is cartesian closed since $\FinSet$ is cartesian closed (<a href="/category/FinSet?proof=cartesian_closed" data-allow-deduced>proof</a>) and products of cartesian closed categories are cartesian closed.
 
   - property: finite coproducts
     proof: 'The disjoint union $X+Y$ of two sets $X,Y$ with the inclusion maps $X \rightarrow X+Y \leftarrow Y$ is a coproduct: The inclusions are injective, hence finite-to-one. If $f : X \to T$, $g : Y \to T$ are finite-to-one maps, the induced map $(f;g) : X + Y \to T$ is finite-to-one since the fiber of $t \in T$ is $f^*(\{t\}) + g^*(\{t\})$, which is finite.'
@@ -49,7 +49,7 @@ satisfied_properties:
       and the right-hand side is finite.
 
   - property: extensive
-    proof: We have already seen that finite coproducts exist in $\Set_\ff$, and pullbacks exist since the category is locally cartesian closed, although a direct argument is also possible. The forgetful functor $\Set_\ff \to \Set$ preserves finite coproducts and pullbacks, and is clearly faithful and conservative (but not full). Therefore, the claim follows from the extensivity of $\Set$ and Lemma 11 <a href="/content/subcategories">here</a>.
+    proof: We have already seen that finite coproducts exist in $\Set_\ff$ (<a href="/category/Set_ff?proof=finite_coproducts">proof</a>), and pullbacks exist since the category is locally cartesian closed (<a href="/category/Set_ff?proof=locally_cartesian_closed" data-allow-deduced>proof</a>), although a direct argument is also possible. The forgetful functor $\Set_\ff \to \Set$ preserves finite coproducts and pullbacks, and is clearly faithful and conservative (but not full). Therefore, the claim follows from the extensivity of $\Set$ and Lemma 11 <a href="/content/subcategories">here</a>.
 
   - property: quotients of congruences
     proof: 'A congruence on a set $X$ in $\Set_\ff$ is the same as an equivalence relation $R$ on $X$ whose equivalence classes are finite. In that case, the usual quotient map $p : X \to X/R$ is finite-to-one. Moreover, if $h : X/R \to Y$ is a map such that $h \circ p : X \to Y$ is finite-to-one, then $h$ is finite-to-one as well because $h^*(\{y\}) \subseteq p^*((h \circ p)^*(\{y\}))$ for all $y \in Y$. Therefore, $p$ is also the quotient in $\Set_\ff$.'
@@ -58,7 +58,7 @@ satisfied_properties:
     proof: 'Let $q_1, q_2 : R \rightrightarrows X$ be a congruence in $\Set_\ff$. From the <a href="/category/Set_ff?proof=quotients_of_congruences">proof</a> on quotients of congruences in $\Set_\ff$, we have a quotient map $p : X \to X/R$ in $\Set_\ff$, and $R$ is the kernel pair of $p$ in $\Set$. It remains to see that $R$ is also the kernel pair of $p$ in $\Set_\ff$. Thus, suppose we have $x_1, x_2 : T \rightrightarrows X$ with $p \circ x_1 = p \circ x_2$. Then there is a unique $e : T \to R$ in $\Set$ with $x_1 = q_1 \circ e$ and $x_2 = q_2 \circ e$. Since $q_1 \circ e$ is finite-to-one, $e$ must be finite-to-one as well.'
 
   - property: effective cocongruences
-    proof: 'Suppose we have a cocongruence $j_1, j_2 : X \rightrightarrows C$ in $\Set_\ff$. Then it is a coreflexive corelation in $\Set$. Since <a href="/category/Set">$\Set$</a> is co-Malcev and has effective cocongruences, that implies $C$ is the cokernel pair of some function $h : Z \to X$ in $\Set$. By the dual of <a href="/content/effective-congruence-quotients">this result</a>, if $\inc_Y : Y \hookrightarrow X$ is the equalizer of $j_1$ and $j_2$, then $C$ is also the cokernel pair of $\inc_Y$ in $\Set$. It remains to see that $C$ is the cokernel pair of $\inc_Y$ in $\Set_\ff$ as well. Thus, suppose $a, b : X \rightrightarrows T$ are such that $a |_Y = b |_Y$. Then there is a unique $u : C \to T$ in $\Set$ with $a = u \circ j_1$ and $b = u \circ j_2$. Since $(j_1;j_2) : X + X \to C$ is surjective and $u \circ (j_1;j_2) = (a;b)$ is finite-to-one, we see that $u$ is finite-to-one as well.'
+    proof: 'Suppose we have a cocongruence $j_1, j_2 : X \rightrightarrows C$ in $\Set_\ff$. Then it is a coreflexive corelation in $\Set$. Since $\Set$ is co-Malcev (<a href="/category/Set?proof=co-Malcev" data-allow-deduced>proof</a>) and has effective cocongruences (<a href="/category/Set?proof=effective_cocongruences" data-allow-deduced>proof</a>), that implies $C$ is the cokernel pair of some function $h : Z \to X$ in $\Set$. By the dual of <a href="/content/effective-congruence-quotients">this result</a>, if $\inc_Y : Y \hookrightarrow X$ is the equalizer of $j_1$ and $j_2$, then $C$ is also the cokernel pair of $\inc_Y$ in $\Set$. It remains to see that $C$ is the cokernel pair of $\inc_Y$ in $\Set_\ff$ as well. Thus, suppose $a, b : X \rightrightarrows T$ are such that $a |_Y = b |_Y$. Then there is a unique $u : C \to T$ in $\Set$ with $a = u \circ j_1$ and $b = u \circ j_2$. Since $(j_1;j_2) : X + X \to C$ is surjective and $u \circ (j_1;j_2) = (a;b)$ is finite-to-one, we see that $u$ is finite-to-one as well.'
 
   - property: ℵ₁-accessible
     proof: 'We first show that $\aleph_1$-directed colimits exist and are preserved by the forgetful functor to $\Set$. Let $(X_i)_{i \in I}$ be a diagram in $\Set_\ff$ indexed by an $\aleph_1$-directed poset $I$. Let $(u_i : X_i \to X)$ be the colimit in $\Set$. Each map $u_i$ is finite-to-one: Otherwise, some fiber $u_i^*(\{x\}) \subseteq X_i$ contains infinitely many elements $a_1,a_2,\dotsc$. For every $n \geq 1$ we find $i_n \geq i$ such that $a_1,a_n$ have the same image in $X_{i_n}$. Let $i_\infty \in I$ be an upper bound of all $i_n$. Then all $a_n$ have the same image in $X_{i_\infty}$. This is a contradiction since $X_i \to X_{i_\infty}$ is finite-to-one. Now if $f : X \to Y$ is a map such that each $f \circ u_i$ is finite-to-one, then $f$ is finite-to-one as well: If a fiber $f^*(\{y\})$ contains infinitely many distinct elements $x_1,x_2,\dotsc$, there is some index $i$ such that all have a preimage in $X_i$, but then $(f \circ u_i)^*(\{y\})$ would be infinite. This concludes the proof that $\aleph_1$-directed colimits exist. In $\Set$, every set $X$ is the $\aleph_1$-directed colimit of its countable subsets. This remains true in $\Set_\ff$ because a map $X \to Y$ is finite-to-one as long as each restriction to a countable subset of $X$ is finite-to-one. Moreover, every countable set is $\aleph_1$-presentable in $\Set$, but also in $\Set_\ff$.'
@@ -68,10 +68,10 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: skeletal
-    proof: The category contains the non-skeletal category <a href="/category/B">$\IB$</a> as a subcategory.
+    proof: The category contains $\IB$ as a subcategory, which is not skeletal (<a href="/category/B?proof=skeletal" data-allow-deduced>proof</a>).
 
   - property: strongly connected
-    proof: Already $\Set$ is not strongly connected.
+    proof: Already $\Set$ is not strongly connected (<a href="/category/Set?proof=strongly_connected" data-allow-deduced>proof</a>).
 
   - property: binary powers
     proof: 'More generally, if $X,Y$ are two non-empty sets such that $X \times Y$ exists in $\Set_\ff$, then both $X$ and $Y$ must be finite. In fact, the forgetful functor to $\Set$ is representable, so it must preserve products. This means we can assume $X \times Y$ is the usual cartesian product with the usual projections. Since $p_1 : X \times Y \to X$ is finite-to-one and $X$ is non-empty, $Y$ is finite. By symmetry, also $X$ is finite. (Conversely, if $X$ and $Y$ are finite, or one of them is empty, then indeed $X \times Y$ exists.)'

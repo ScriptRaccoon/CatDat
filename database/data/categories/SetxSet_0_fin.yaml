@@ -16,21 +16,21 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: It is a full subcategory of <a href="/category/SetxSet">$\Set \times \Set$</a>, which is locally small.
+    proof: It is a full subcategory of $\Set \times \Set$, which is locally small (<a href="/category/SetxSet?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: finite products
     proof: We show that the category is closed under finite products in <a href="/category/SetxSet">$\Set \times \Set$</a>. Let $(A_i,B_i)_{i \in I}$ be a finite family in $(\Set \times \Set)_{\varnothing,\fin}$. The product in $\Set \times \Set$ is $(\prod_{i \in I} A_i, \prod_{i \in I} B_i)$. If $\prod_{i \in I} A_i$ is non-empty, every $A_i$ is non-empty. Hence, every $B_i$ is finite, and therefore $\prod_{i \in I} B_i$ is finite.
     check_redundancy: false
 
   - property: equalizers
-    proof: In fact, $(\Set \times \Set)_{\varnothing,\fin}$ is closed under subobjects in <a href="/category/SetxSet">$\Set \times \Set$</a>, which has equalizers. Let $(C,D) \hookrightarrow (A,B)$ be a monomorphism in $\Set \times \Set$ with $(A,B) \in (\Set \times \Set)_{\varnothing,\fin}$. If $C$ is non-empty, then $A$ is non-empty, so $B$ is finite, and hence $D$, which injects into $B$, is finite.
+    proof: In fact, $(\Set \times \Set)_{\varnothing,\fin}$ is closed under subobjects in $\Set \times \Set$, which has equalizers (<a href="/category/SetxSet?proof=equalizers" data-allow-deduced>proof</a>). Let $(C,D) \hookrightarrow (A,B)$ be a monomorphism in $\Set \times \Set$ with $(A,B) \in (\Set \times \Set)_{\varnothing,\fin}$. If $C$ is non-empty, then $A$ is non-empty, so $B$ is finite, and hence $D$, which injects into $B$, is finite.
     check_redundancy: false
 
   - property: coequalizers
-    proof: In fact, $(\Set \times \Set)_{\varnothing,\fin}$ is closed under quotients in <a href="/category/SetxSet">$\Set \times \Set$</a>, which has coequalizers. Let $(A,B) \twoheadrightarrow (C,D)$ be an epimorphism in $\Set \times \Set$ with $(A,B) \in (\Set \times \Set)_{\varnothing,\fin}$. If $C$ is non-empty, then $A$ is non-empty since $A \to C$ is surjective. Thus, $B$ is finite. Since $B \to D$ is surjective, it follows that $D$ is finite.
+    proof: In fact, $(\Set \times \Set)_{\varnothing,\fin}$ is closed under quotients in $\Set \times \Set$, which has coequalizers (<a href="/category/SetxSet?proof=coequalizers" data-allow-deduced>proof</a>). Let $(A,B) \twoheadrightarrow (C,D)$ be an epimorphism in $\Set \times \Set$ with $(A,B) \in (\Set \times \Set)_{\varnothing,\fin}$. If $C$ is non-empty, then $A$ is non-empty since $A \to C$ is surjective. Thus, $B$ is finite. Since $B \to D$ is surjective, it follows that $D$ is finite.
 
   - property: strict initial object
-    proof: Since $(\varnothing, \varnothing)$ is clearly a strict initial object of <a href="/category/SetxSet">$\Set \times \Set$</a> and belongs to $(\Set \times \Set)_{\varnothing,\fin}$, it is also a strict initial object of $(\Set \times \Set)_{\varnothing,\fin}$.
+    proof: Since $(\varnothing, \varnothing)$ is clearly a strict initial object of $\Set \times \Set$ (<a href="/category/SetxSet?proof=strict_initial_object" data-allow-deduced>proof</a>) and belongs to $(\Set \times \Set)_{\varnothing,\fin}$, it is also a strict initial object of $(\Set \times \Set)_{\varnothing,\fin}$.
 
   - property: finite copowers
     proof: In fact, $(\Set \times \Set)_{\varnothing,\fin}$ is closed under finite copowers in <a href="/category/SetxSet">$\Set \times \Set$</a>. That is, if $(A,B) \in (\Set \times \Set)_{\varnothing,\fin}$ and $I$ is a finite set, then $\coprod_{i \in I} (A,B) = (\coprod_{i \in I} A, \coprod_{i \in I} B)$ belongs to $(\Set \times \Set)_{\varnothing,\fin}$. Namely, if $\coprod_{i \in I} A$ is non-empty, then $A$ is non-empty, so $B$ is finite, and hence $\coprod_{i \in I} B$ is finite.
@@ -45,13 +45,13 @@ satisfied_properties:
     proof: The pair $(\{0,1\}, \{0,1\})$ is a cogenerator of <a href="/category/SetxSet">$\Set \times \Set$</a> by <a href="/content/cogenerators_in_product_categories">this lemma</a> and belongs to $(\Set \times \Set)_{\varnothing,\fin}$.
 
   - property: all epimorphisms split
-    proof: Apply Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $(\Set \times \Set)_{\varnothing,\fin} \hookrightarrow \Set \times \Set$, which preserves epimorphisms since these are pairs of surjective maps in both categories (<a href="/category/SetxSet_0_fin?proof=epimorphism">proof</a> for $(\Set \times \Set)_{\varnothing,\fin}$ and <a href="/category/SetxSet?proof=epimorphism">proof</a> for $\Set \times \Set$), and use that <a href="/category/SetxSet">$\Set \times \Set$</a> has all epimorphisms split.
+    proof: Apply Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $(\Set \times \Set)_{\varnothing,\fin} \hookrightarrow \Set \times \Set$, which preserves epimorphisms since these are pairs of surjective maps in $(\Set \times \Set)_{\varnothing,\fin}$ (<a href="/category/SetxSet_0_fin?proof=epimorphism">proof</a>) and in $\Set \times \Set$ (<a href="/category/SetxSet?proof=epimorphism">proof</a>), and use that $\Set \times \Set$ has all epimorphisms split (<a href="/category/SetxSet?proof=all_epimorphisms_split" data-allow-deduced>proof</a>).
 
   - property: effective congruences
     proof: Let $(R,S) \rightrightarrows (A,B)$ be a congruence in $(\Set \times \Set)_{\varnothing,\fin}$. Since finite limits are constructed pointwise, it is also a congruence in $\Set \times \Set$, and therefore a pair of congruences in $\Set$. Thus, the congruence is the kernel pair of $(A,B) \to (A/R,B/S)$ in $\Set \times \Set$. It remains to show that $(A/R,B/S)$ belongs to $(\Set \times \Set)_{\varnothing,\fin}$. If $A$ is empty, then $A/R$ is empty, and the claim holds. Otherwise, $B$ is finite, and hence $B/S$ is finite.
 
   - property: effective cocongruences
-    proof: More generally, let $(A,B) \rightrightarrows (C,D)$ be a coreflexive corelation in $(\Set \times \Set)_{\varnothing,\fin}$. Since binary copowers exist and the forgetful functor to $\Set \times \Set$ preserves epimorphisms, which are the pairs of surjective maps in both categories (<a href="/category/SetxSet_0_fin?proof=epimorphism">proof</a> for $(\Set \times \Set)_{\varnothing,\fin}$ and <a href="/category/SetxSet?proof=epimorphism">proof</a> for $\Set \times \Set$), it is a coreflexive corelation in $\Set \times \Set$. Any coreflexive corelation in $\Set \times \Set$ is an effective cocongruence (by <a href="/category-implication/regular_epi-regular_extensive_consequences">this result</a>). Therefore, using <a href="/content/effective-congruence-quotients">this result</a>, $(A,B) \rightrightarrows (C,D)$ is the cokernel pair of its equalizer. Since the equalizer belongs to $(\Set \times \Set)_{\varnothing,\fin}$, we are done.
+    proof: More generally, let $(A,B) \rightrightarrows (C,D)$ be a coreflexive corelation in $(\Set \times \Set)_{\varnothing,\fin}$. Since binary copowers exist and the forgetful functor to $\Set \times \Set$ preserves epimorphisms, which are the pairs of surjective maps in $(\Set \times \Set)_{\varnothing,\fin}$ (<a href="/category/SetxSet_0_fin?proof=epimorphism">proof</a>) and in $\Set \times \Set$ (<a href="/category/SetxSet?proof=epimorphism">proof</a>), it is a coreflexive corelation in $\Set \times \Set$. Any coreflexive corelation in $\Set \times \Set$ is an effective cocongruence (by <a href="/category-implication/regular_epi-regular_extensive_consequences">this result</a>). Therefore, using <a href="/content/effective-congruence-quotients">this result</a>, $(A,B) \rightrightarrows (C,D)$ is the cokernel pair of its equalizer. Since the equalizer belongs to $(\Set \times \Set)_{\varnothing,\fin}$, we are done.
 
   - property: ℵ₁-accessible
     proof: >-
@@ -84,7 +84,7 @@ unsatisfied_properties:
 
   - property: natural numbers object
     proof: >-
-      Assume that $N = (N_A,N_B)$ is a natural numbers object of $(\Set \times \Set)_{\varnothing,\fin}$ equipped with morphisms $z : (1,1) \to N$ and $s : N \to N$, i.e. elements $z_A \in N_A$, $z_B \in N_B$, and maps $s_A : N_A \to N_A$ and $s_B : N_B \to N_B$. Since $N_A$ is non-empty, $N_B$ is finite. We claim that $(N_B, z_B, s_B)$ is a natural numbers object of <a href="/category/FinSet">$\FinSet$</a>, which we know does not exist.
+      Assume that $N = (N_A,N_B)$ is a natural numbers object of $(\Set \times \Set)_{\varnothing,\fin}$ equipped with morphisms $z : (1,1) \to N$ and $s : N \to N$, i.e. elements $z_A \in N_A$, $z_B \in N_B$, and maps $s_A : N_A \to N_A$ and $s_B : N_B \to N_B$. Since $N_A$ is non-empty, $N_B$ is finite. We claim that $(N_B, z_B, s_B)$ is a natural numbers object of $\FinSet$, which does not exist (<a href="/category/FinSet?proof=natural_numbers_object" data-allow-deduced>proof</a>).
 
       Let $X$ be a finite set, $x_0 \in X$, and $r : X \to X$ be a map. Then $(N_A,X)$ is a valid object of $(\Set \times \Set)_{\varnothing,\fin}$, and we have morphisms $(z_A,x_0) : (1,1) \to (N_A,X)$ and $(s_A,r) : (N_A,X) \to (N_A,X)$. Since $(N_A,N_B)$ is a natural numbers object, there is a unique pair of maps $(f,g) : (N_A,N_B) \to (N_A,X)$ such that $f$ satisfies $f(z_A) = z_A$ and $f \circ s_A = s_A \circ f$, and $g$ satisfies $g(z_B) = x_0$ and $g \circ s_B = r \circ g$. These conditions are independent, and a cartesian product $P \times Q$ is a singleton if and only if both $P$ and $Q$ are singletons. Thus, there is a unique map $g : N_B \to X$ satisfying $g(z_B) = x_0$ and $g \circ s_B = r \circ g$. This proves that $(N_B, z_B, s_B)$ is a natural numbers object, as claimed.
 

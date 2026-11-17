@@ -16,19 +16,19 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: It is a full subcategory of <a href="/category/FinSet">$\FinSet$</a>, which is locally small.
+    proof: It is a full subcategory of $\FinSet$, which is locally small (<a href="/category/FinSet?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: locally finite
-    proof: This property is inherited from <a href="/category/FinSet">$\FinSet$</a>.
+    proof: This property is inherited from $\FinSet$, which is locally finite (<a href="/category/FinSet?proof=locally_finite" data-allow-deduced>proof</a>).
 
   - property: essentially countable
-    proof: This property is inherited from <a href="/category/FinSet">$\FinSet$</a>.
+    proof: This property is inherited from $\FinSet$, which is essentially countable (<a href="/category/FinSet?proof=essentially_countable" data-allow-deduced>proof</a>).
 
   - property: all epimorphisms split
-    proof: Apply Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\FinSet_{\odd} \hookrightarrow \Set$, which preserves epimorphisms since these are surjective in both categories (<a href="/category/FinSet_odd?proof=epimorphism">proof</a> for $\FinSet_{\odd}$ and <a href="/category/Set?proof=epimorphism">proof</a> for $\Set$), and use that <a href="/category/Set">$\Set$</a> has all epimorphisms split.
+    proof: Apply Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\FinSet_{\odd} \hookrightarrow \Set$, which preserves epimorphisms since these are surjective in $\FinSet_{\odd}$ (<a href="/category/FinSet_odd?proof=epimorphism">proof</a>) and in $\Set$ (<a href="/category/Set?proof=epimorphism">proof</a>), and use that $\Set$ has all epimorphisms split (<a href="/category/Set?proof=all_epimorphisms_split" data-allow-deduced>proof</a>).
 
   - property: all monomorphisms split
-    proof: Apply the dual of Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\FinSet_{\odd} \hookrightarrow \Setne$, which preserves monomorphisms since these are injective in both categories (<a href="/category/FinSet_odd?proof=monomorphism">proof</a> for $\FinSet_{\odd}$ and <a href="/category/Setne?proof=monomorphism">proof</a> for $\Setne$), and use that <a href="/category/Setne">$\Setne$</a> has all monomorphisms split.
+    proof: Apply the dual of Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\FinSet_{\odd} \hookrightarrow \Setne$, which preserves monomorphisms since these are injective in $\FinSet_{\odd}$ (<a href="/category/FinSet_odd?proof=monomorphism">proof</a>) and in $\Setne$ (<a href="/category/Setne?proof=monomorphism">proof</a>), and use that $\Setne$ has all monomorphisms split (<a href="/category/Setne?proof=all_monomorphisms_split" data-allow-deduced>proof</a>).
 
   - property: strongly connected
     proof: Use constant maps.
@@ -53,7 +53,7 @@ satisfied_properties:
     proof: >-
       Let $X \rightrightarrows C$ be a cocongruence in $\FinSet_{\odd}$. The induced map
       $$\Hom(C,\{0,1,2\}) \to \Hom(X,\{0,1,2\})^2 \cong \Hom(X+X, \{0,1,2\})$$
-      is injective, which implies that $X+X \to C$ is surjective (where $X+X$ denotes the coproduct in $\Set$, which does not exist in $\FinSet_{\odd}$). It follows that $X \rightrightarrows C$ is a coreflexive corelation in $\Set$. Since <a href="/category/Set">$\Set$</a> is co-Malcev and has effective cocongruences (by <a href="/category-implication/regular_epi-regular_extensive_consequences">this result</a>), there is a subset $Y \subseteq X$ such that $C \cong X \sqcup_Y X$ in $\Set$, with $X \rightrightarrows C$ corresponding to the two pushout inclusions. We have $\card(C) = 2 \card(X) - \card(Y)$, so $\card(Y)$ is odd. Hence, $C \cong X \sqcup_Y X$ remains true in $\FinSet_{\odd}$.
+      is injective, which implies that $X+X \to C$ is surjective (where $X+X$ denotes the coproduct in $\Set$, which does not exist in $\FinSet_{\odd}$). It follows that $X \rightrightarrows C$ is a coreflexive corelation in $\Set$. Since $\Set$ is co-Malcev (<a href="/category/Set?proof=co-Malcev" data-allow-deduced>proof</a>) and has effective cocongruences (by <a href="/category-implication/regular_epi-regular_extensive_consequences">this result</a>), there is a subset $Y \subseteq X$ such that $C \cong X \sqcup_Y X$ in $\Set$, with $X \rightrightarrows C$ corresponding to the two pushout inclusions. We have $\card(C) = 2 \card(X) - \card(Y)$, so $\card(Y)$ is odd. Hence, $C \cong X \sqcup_Y X$ remains true in $\FinSet_{\odd}$.
 
   - property: coquotients of cocongruences
     proof: We have just seen that every cocongruence in $\FinSet_{\odd}$ is of the form $X \rightrightarrows X \sqcup_Y X$ for some subset $Y \subseteq X$ of odd cardinality (<a href="/category/FinSet_odd?proof=effective_cocongruences">proof</a>). The equalizer in $\Set$ is the inclusion $Y \hookrightarrow X$. Since this morphism lies in $\FinSet_{\odd}$, it is also the equalizer in $\FinSet_{\odd}$.
@@ -89,7 +89,7 @@ special_objects:
 special_morphisms:
   isomorphism:
     description: bijective maps
-    proof: It is a full subcategory of $\Set$, in which isomorphisms are bijective maps.
+    proof: It is a full subcategory of $\Set$, in which isomorphisms are bijective maps (<a href="/category/Set?proof=isomorphism" data-allow-deduced>proof</a>).
   monomorphism:
     description: injective maps
     proof: 'The non-trivial direction follows since the inclusion functor to $\Set$ is representable (by the singleton set), and hence preserves monomorphisms.'

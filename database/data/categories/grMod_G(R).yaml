@@ -14,18 +14,18 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\grMod_G(R) \to \Ab^{G}$, and $\Ab^{G}$ is locally small since $\Ab$ is locally small.
+    proof: There is a forgetful functor $\grMod_G(R) \to \Ab^{G}$, and $\Ab^{G}$ is locally small since $\Ab$ is locally small (<a href="/category/Ab?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: complete
-    proof: 'This follows formally since <a href="/category/Ab">$\Ab$</a> is complete and limits are computed degree-wise. In more detail, if $D : \I \to \grMod_G(R)$ is a small diagram and we write $D(i) = (D_n(i))_{n \in G}$, then each $D_n : \I \to \Ab$ is a diagram and therefore has a limit $L_n \in \Ab$. The multiplication maps $R_n \times D_m(i) \to D_{n+m}(i)$ induce a multiplication map $R_n \times L_m \to L_{n+m}$ on the limits. These maps make $(L_n)_{n \in G}$ into a graded module, and one can check that it satisfies the universal property of a limit of $D$.'
+    proof: 'This follows formally since $\Ab$ is complete (<a href="/category/Ab?proof=complete" data-allow-deduced>proof</a>) and limits are computed degree-wise. In more detail, if $D : \I \to \grMod_G(R)$ is a small diagram and we write $D(i) = (D_n(i))_{n \in G}$, then each $D_n : \I \to \Ab$ is a diagram and therefore has a limit $L_n \in \Ab$. The multiplication maps $R_n \times D_m(i) \to D_{n+m}(i)$ induce a multiplication map $R_n \times L_m \to L_{n+m}$ on the limits. These maps make $(L_n)_{n \in G}$ into a graded module, and one can check that it satisfies the universal property of a limit of $D$.'
     check_redundancy: false
 
   - property: cocomplete
-    proof: 'This follows formally since <a href="/category/Ab">$\Ab$</a> is cocomplete and colimits are computed degree-wise. In more detail, if $D : \I \to \grMod_G(R)$ is a small diagram and we write $D(i) = (D_n(i))_{n \in G}$, then each $D_n : \I \to \Ab$ is a diagram and therefore has a colimit $L_n \in \Ab$. The linear multiplication maps $R_n \otimes D_m(i) \to D_{n+m}(i)$ induce a linear multiplication map $R_n \otimes L_m \to L_{n+m}$ on the colimits; here we use that $R_n \otimes -$ preserves colimits. These maps make $(L_n)_{n \in G}$ into a graded module, and one can check that it satisfies the universal property of a colimit of $D$.'
+    proof: 'This follows formally since $\Ab$ is cocomplete (<a href="/category/Ab?proof=cocomplete" data-allow-deduced>proof</a>) and colimits are computed degree-wise. In more detail, if $D : \I \to \grMod_G(R)$ is a small diagram and we write $D(i) = (D_n(i))_{n \in G}$, then each $D_n : \I \to \Ab$ is a diagram and therefore has a colimit $L_n \in \Ab$. The linear multiplication maps $R_n \otimes D_m(i) \to D_{n+m}(i)$ induce a linear multiplication map $R_n \otimes L_m \to L_{n+m}$ on the colimits; here we use that $R_n \otimes -$ preserves colimits. These maps make $(L_n)_{n \in G}$ into a graded module, and one can check that it satisfies the universal property of a colimit of $D$.'
     check_redundancy: false
 
   - property: abelian
-    proof: 'The sum of two graded linear maps is defined degree-wise. Since we already know that limits and colimits exist and are computed degree-wise, kernels and cokernels exist in particular, and they are computed degree-wise. If $f : M \to N$ is a graded linear map, then the canonical morphism $\coim(f) \to \im(f)$ is an isomorphism since this is true in every degree.'
+    proof: 'The sum of two graded linear maps is defined degree-wise. Since we already know that limits (<a href="/category/grMod_G(R)?proof=complete">proof</a>) and colimits (<a href="/category/grMod_G(R)?proof=cocomplete">proof</a>) exist and are computed degree-wise, kernels and cokernels exist in particular, and they are computed degree-wise. If $f : M \to N$ is a graded linear map, then the canonical morphism $\coim(f) \to \im(f)$ is an isomorphism since this is true in every degree.'
 
   - property: finitary algebraic
     proof: 'We can model graded modules using a many-sorted finitary algebraic theory with sorts $(S_n)_{n \in G}$, unary operations $r : S_m \to S_{n+m}$ for $r \in R_n$, the algebraic theory of an abelian group on each $S_n$, and the obvious equations.'
@@ -42,10 +42,10 @@ undecidable_properties:
     proof: This depends on the choice of the graded ring $R$ and the monoid $G$. For a trivial example, when $G = 0$, $R$ is just a ring and $\grMod_G(R) = \Mod(R)$ has all epimorphisms split if and only if $R$ is semisimple. For a slightly more interesting example, let $G = \IZ$, let $k$ be a ring, and consider the $\IZ$-graded ring $R \coloneqq (k)_{n \in \IZ}$ with multiplication induced by the multiplication on $k$ (that is, the associated ring is the Laurent polynomial ring $k[T,T^{-1}]$). Then $\grMod_G(R) \simeq \Mod(k)$ has all epimorphisms split if and only if $k$ is semisimple.
 
   - property: split abelian
-    proof: Since the category is abelian, this is equivalent to having all epimorphisms split, which is undecidable.
+    proof: Since the category is abelian (<a href="/category/grMod_G(R)?proof=abelian" data-allow-deduced>proof</a>), this is equivalent to having all epimorphisms split, which is undecidable (<a href="/category/grMod_G(R)?proof=all_epimorphisms_split" data-allow-deduced>proof</a>).
 
   - property: all monomorphisms split
-    proof: Since the category is abelian, this is equivalent to having all epimorphisms split, which is undecidable.
+    proof: Since the category is abelian (<a href="/category/grMod_G(R)?proof=abelian" data-allow-deduced>proof</a>), this is equivalent to having all epimorphisms split, which is undecidable (<a href="/category/grMod_G(R)?proof=all_epimorphisms_split" data-allow-deduced>proof</a>).
 
   - property: one-sorted finitary algebraic
     proof: This depends on the choice of the graded ring $R$ and the monoid $G$. For example, if $k$ is a ring and we take the $\IZ$-graded ring $R \coloneqq (k)_{n \in \IZ}$ with multiplication induced by the multiplication on $k$ (that is, the associated ring is the Laurent polynomial ring $k[T,T^{-1}]$), then $\grMod_{\IZ}(R) \simeq \Mod(k)$ is one-sorted finitary algebraic. On the other hand, when $R$ has the trivial $\IZ$-grading, with $R_n = 0$ for $n \neq 0$ and $k \coloneqq R_0$, we have $\grMod_{\IZ}(R) \simeq \prod_{n \in \IZ} \Mod(k)$, which is not one-sorted finitary algebraic when $k \neq 0$. To see this, note that every one-sorted finitary algebraic category has a finitely presentable (regular-projective) generator, namely the free algebra on one generator. A finitely presentable object in $\prod_{n \in \IZ} \Mod(k)$ is concentrated in finitely many degrees and therefore cannot be a generator.

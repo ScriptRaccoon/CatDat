@@ -34,7 +34,7 @@ satisfied_properties:
       $$\Hom(A + B,X) \cong \Hom(A,X) \times \Hom(B,X) \cong \Hom((A,B),(X,X)).$$
 
   - property: cofinitary
-    proof: We already know that <a href="/category/Set">$\Set$</a> has cocartesian cofiltered limits; this is a consequence of <a href="/category-implication/extensive_cocartesian_cofiltered_limits">this result</a>.
+    proof: We already know that $\Set$ has cocartesian cofiltered limits (<a href="/category/Set?proof=cocartesian_cofiltered_limits" data-allow-deduced>proof</a>); this is a consequence of <a href="/category-implication/extensive_cocartesian_cofiltered_limits">this result</a>.
 
 unsatisfied_properties:
   - property: preserves terminal objects

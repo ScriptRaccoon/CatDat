@@ -20,7 +20,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: It is a full subcategory of <a href="/category/Top">$\Top$</a>, which is locally small.
+    proof: It is a full subcategory of $\Top$, which is locally small (<a href="/category/Top?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: generator
     proof: The one-point space is a generator since it represents the forgetful functor $\Haus \to \Set$.
@@ -29,19 +29,19 @@ satisfied_properties:
     proof: Every non-empty Hausdorff space is weakly terminal (by using constant maps).
 
   - property: equalizers
-    proof: This follows from the corresponding fact for <a href="/category/Top">$\Top$</a> since subspaces of Hausdorff spaces are again Hausdorff.
+    proof: $\Top$ has equalizers (<a href="/category/Top?proof=equalizers" data-allow-deduced>proof</a>), and the claim follows since subspaces of Hausdorff spaces are again Hausdorff.
     check_redundancy: false
 
   - property: products
-    proof: This follows from the corresponding fact for <a href="/category/Top">$\Top$</a> since products of Hausdorff spaces are again Hausdorff.
+    proof: $\Top$ has products (<a href="/category/Top?proof=products" data-allow-deduced>proof</a>), and the claim follows since products of Hausdorff spaces are again Hausdorff.
     check_redundancy: false
 
   - property: cocomplete
-    proof: This follows since $\Haus$ is a reflective subcategory of <a href="/category/Top">$\Top$</a>, which is cocomplete. For the reflector, see e.g. the <a href="https://ncatlab.org/nlab/show/Hausdorff+space#HausdorffReflection">nLab</a>. Explicitly, we construct the colimit of Hausdorff spaces by applying the reflector to the colimit of the underlying topological spaces.
+    proof: This follows since $\Haus$ is a reflective subcategory of $\Top$, which is cocomplete (<a href="/category/Top?proof=cocomplete" data-allow-deduced>proof</a>). For the reflector, see e.g. the <a href="https://ncatlab.org/nlab/show/Hausdorff+space#HausdorffReflection">nLab</a>. Explicitly, we construct the colimit of Hausdorff spaces by applying the reflector to the colimit of the underlying topological spaces.
     check_redundancy: false
 
   - property: infinitary extensive
-    proof: This follows from Lemma 11 <a href="/content/subcategories">here</a> since <a href="/category/Top">$\Top$</a> is infinitary extensive and its full subcategory $\Haus$ is closed under pullbacks and coproducts in $\Top$.
+    proof: This follows from Lemma 11 <a href="/content/subcategories">here</a> since $\Top$ is infinitary extensive (<a href="/category/Top?proof=infinitary_extensive" data-allow-deduced>proof</a>) and its full subcategory $\Haus$ is closed under pullbacks and coproducts in $\Top$.
 
   - property: well-powered
     proof: This is clear since the monomorphisms are the injective continuous maps (<a href="/category/Haus?proof=monomorphism">proof</a>).
@@ -60,7 +60,7 @@ unsatisfied_properties:
     proof: The spaces with underlying sets $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.
 
   - property: Malcev
-    proof: 'Apply the contrapositive of Lemma 13 <a href="/content/subcategories">here</a> to the inclusion of discrete spaces $\Set \to \Haus$, which is fully faithful and preserves finite limits. Here, we use that <a href="/category/Set">$\Set$</a> is not Malcev.'
+    proof: 'Apply the contrapositive of Lemma 13 <a href="/content/subcategories">here</a> to the inclusion of discrete spaces $\Set \to \Haus$, which is fully faithful and preserves finite limits. Here, we use that $\Set$ is not Malcev (<a href="/category/Set?proof=Malcev" data-allow-deduced>proof</a>).'
 
   - property: regular subobject classifier
     proof: Assume that there is a regular subobject classifier $\Omega$. Since the regular monomorphisms are the embeddings with closed image (<a href="/category/Haus?proof=regular_monomorphism">proof</a>), we would have an isomorphism between $\Hom(X,\Omega)$ and the set of closed subsets of $X$ for any Hausdorff space $X$. If we take $X = \{\ast\}$, we see that $\Omega$ has two points. Since $\Omega$ is Hausdorff, it must be discrete. But then $\Hom(X,\Omega)$ is isomorphic to the set of all clopen subsets of $X$, of which there are usually far fewer than closed subsets (consider $X = [0,1]$).
@@ -123,4 +123,4 @@ special_morphisms:
     description: surjective quotient maps
     proof: >-
       The coequalizer of two continuous maps $f,g : X \rightrightarrows Y$ of Hausdorff spaces is given by $Y \to Q \to Q_H$, where $Y \to Q$ is their coequalizer in $\Top$ and $Q \to Q_H$ is the Hausdorff reflection of $Q$. By the <a href="/category/Top?proof=cocomplete">construction</a> of coequalizers in $\Top$, the map $Y \to Q$ is a surjective quotient map. Moreover, the construction of the Hausdorff reflection (see <a href="https://ncatlab.org/nlab/show/Hausdorff+space#HausdorffReflectionViaHomsIntoAllHausdorffSpaces">nLab</a>) shows that $Q \to Q_H$ is also a surjective quotient map. Hence, $Y \to Q_H$ is a surjective quotient map as well.
-      Conversely, if $p : X \to Y$ is a surjective quotient map between Hausdorff spaces, we know from the classification in $\Top$ that $p$ is the coequalizer of its kernel pair $X \times_Y X \rightrightarrows X$ in $\Top$. Since $X \times_Y X$ is Hausdorff, the same universal property remains valid in $\Haus$.
+      Conversely, if $p : X \to Y$ is a surjective quotient map between Hausdorff spaces, then $p$ is the coequalizer of its kernel pair $X \times_Y X \rightrightarrows X$ in $\Top$, since the regular epimorphisms in $\Top$ are the surjective quotient maps (<a href="/category/Top?proof=regular_epimorphism" data-allow-deduced>proof</a>). Since $X \times_Y X$ is Hausdorff, the same universal property remains valid in $\Haus$.

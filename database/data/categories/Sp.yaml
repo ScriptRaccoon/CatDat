@@ -16,19 +16,19 @@ related:
 
 satisfied_properties:
   - property: essentially small
-    proof: This holds because <a href="/category/FinSet">$\FinSet$</a> and <a href="/category/B">$\IB$</a> are essentially small.
+    proof: This holds because $\FinSet$ is essentially small (<a href="/category/FinSet?proof=essentially_small" data-allow-deduced>proof</a>) and $\IB$ is essentially small (<a href="/category/B?proof=essentially_small" data-allow-deduced>proof</a>).
 
   - property: elementary topos
-    proof: The category is equivalent to $\prod_{n \geq 0} \Sigma_n{-}\FinSet$ (where $\Sigma_n$ denotes the symmetric group of degree $n$), and each $\Sigma_n{-}\FinSet$ is an elementary topos since <a href="/category/FinSet">$\FinSet$</a> is an elementary topos and $\Sigma_n$ is a finite group, cf. <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant">Johnstone</a>, Part B, Corollary 2.3.18.
+    proof: The category is equivalent to $\prod_{n \geq 0} \Sigma_n{-}\FinSet$ (where $\Sigma_n$ denotes the symmetric group of degree $n$), and each $\Sigma_n{-}\FinSet$ is an elementary topos since $\FinSet$ is an elementary topos (<a href="/category/FinSet?proof=elementary_topos" data-allow-deduced>proof</a>) and $\Sigma_n$ is a finite group, cf. <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant">Johnstone</a>, Part B, Corollary 2.3.18.
 
   - property: cogenerator
     proof: 'This follows from $\Sp \simeq \prod_{n \geq 0} \Sigma_n{-}\FinSet$, <a href="/content/cogenerators_in_product_categories">this lemma</a>, and the fact that if $G$ is a (finite) group, the power set $P(G)$ with the evident $G$-action is a weakly terminal cogenerator in $G{-}\Set$ (resp. $G{-}\FinSet$). For the proof, notice that $\varnothing,G \in P(G)$ are fixed points, yielding two $G$-maps $\{\ast\} \rightrightarrows P(G)$. In particular, $P(G)$ is weakly terminal. If $X$ is a $G$-set with distinct points $x,y$, we construct a $G$-map $f : X \to P(G)$ that separates $x,y$: First, $X$ is a coproduct of orbits. If $x,y$ lie in different orbits, let $f|_{Gx}$ be constant $\varnothing$, $f|_{Gy}$ be constant $G$, and, say, $f$ be constant $\varnothing$ on all other orbits. If $x,y$ lie in the same orbit, say $y = g_0 x$, define $f|_{Gx} : Gx \to P(G)$ by $f(x) = G_x$ (stabilizer), which is well-defined, and choose $f$ to be $\varnothing$ on all other orbits. Then $f(y) = g_0 G_x \neq G_x = f(x)$.'
 
   - property: ℵ₁-accessible
-    proof: We know that <a href="/category/FinSet">$\FinSet$</a> has $\aleph_1$-filtered colimits and that every object is $\aleph_1$-presentable; see <a href="/category-implication/countably_accessible_criterion">here</a>. It follows that for every $n \in \IN$ also $\Sigma_n{-}\FinSet$ has $\aleph_1$-filtered colimits and that every object is $\aleph_1$-presentable. From this it follows formally that $\Sp \simeq \prod_{n \geq 0} \Sigma_n{-}\FinSet$ also has these properties. In particular, $\Sp$ is $\aleph_1$-accessible.
+    proof: We know that $\FinSet$ has $\aleph_1$-filtered colimits (<a href="/category/FinSet?proof=aleph1-filtered_colimits" data-allow-deduced>proof</a>) and that every object is $\aleph_1$-presentable; see <a href="/category-implication/countably_accessible_criterion">here</a>. It follows that for every $n \in \IN$ also $\Sigma_n{-}\FinSet$ has $\aleph_1$-filtered colimits and that every object is $\aleph_1$-presentable. From this it follows formally that $\Sp \simeq \prod_{n \geq 0} \Sigma_n{-}\FinSet$ also has these properties. In particular, $\Sp$ is $\aleph_1$-accessible.
 
   - property: ℵ₁-coaccessible
-    proof: We know that <a href="/category/FinSet">$\FinSet$</a> has $\aleph_1$-cofiltered limits and that every object is $\aleph_1$-copresentable; see <a href="/category-implication/dual_countably_accessible_criterion">here</a>. It follows that for every $n \in \IN$ also $\Sigma_n{-}\FinSet$ has $\aleph_1$-cofiltered limits and that every object is $\aleph_1$-copresentable. From this it follows formally that $\Sp \simeq \prod_{n \geq 0} \Sigma_n{-}\FinSet$ also has these properties. In particular, $\Sp$ is $\aleph_1$-coaccessible.
+    proof: We know that $\FinSet$ has $\aleph_1$-cofiltered limits (<a href="/category/FinSet?proof=aleph1-cofiltered_limits" data-allow-deduced>proof</a>) and that every object is $\aleph_1$-copresentable; see <a href="/category-implication/dual_countably_accessible_criterion">here</a>. It follows that for every $n \in \IN$ also $\Sigma_n{-}\FinSet$ has $\aleph_1$-cofiltered limits and that every object is $\aleph_1$-copresentable. From this it follows formally that $\Sp \simeq \prod_{n \geq 0} \Sigma_n{-}\FinSet$ also has these properties. In particular, $\Sp$ is $\aleph_1$-coaccessible.
 
 unsatisfied_properties:
   - property: skeletal
@@ -38,7 +38,7 @@ unsatisfied_properties:
     proof: If $T$ denotes the terminal species, there are infinitely many morphisms $T \to T \sqcup T$ since they correspond to functions $\IN \to \{1,2\}$.
 
   - property: locally small
-    proof: Since $\FinSet$ is not small, this follows exactly like Lemma 2 <a href="/content/free-cocompletion">here</a>; but this result is not really relevant; all that matters is that $\Sp$ is locally essentially small.
+    proof: Since $\FinSet$ is not small (<a href="/category/FinSet?proof=small" data-allow-deduced>proof</a>), this follows exactly like Lemma 2 <a href="/content/free-cocompletion">here</a>; but this result is not really relevant; all that matters is that $\Sp$ is locally essentially small.
 
   - property: essentially countable
     proof: 'Any function $f : \IN \to \IN$ can be regarded as a combinatorial species with trivial actions, and distinct functions yield non-isomorphic species.'

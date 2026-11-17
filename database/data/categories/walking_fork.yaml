@@ -48,7 +48,7 @@ satisfied_properties:
       From this, it is easy to see that $\Hom(1, {-})$ is faithful and conservative, so $1$ is an extremal generator.
 
   - property: locally cartesian closed
-    proof: We need to check that every slice category is cartesian closed. The slice category over $0$ is the <a href="/category/1">trivial category</a>. The slice category over $1$ is the <a href="/category/walking_morphism">walking morphism</a>. Finally, the slice category over $2$ is the <a href="/category/walking_commutative_square">walking commutative square</a>. All of these are cartesian closed, see their pages for details.
+    proof: We need to check that every slice category is cartesian closed. The slice category over $0$ is the trivial category, which is cartesian closed (<a href="/category/1?proof=cartesian_closed" data-allow-deduced>proof</a>). The slice category over $1$ is the walking morphism, which is cartesian closed (<a href="/category/walking_morphism?proof=cartesian_closed" data-allow-deduced>proof</a>). Finally, the slice category over $2$ is the walking commutative square, which is cartesian closed (<a href="/category/walking_commutative_square?proof=cartesian_closed" data-allow-deduced>proof</a>).
 
 unsatisfied_properties:
   - property: strongly connected

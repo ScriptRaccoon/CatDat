@@ -18,14 +18,14 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: It is a full subcategory of <a href="/category/Quiv">$\Quiv$</a>, which is locally small.
+    proof: It is a full subcategory of $\Quiv$, which is locally small (<a href="/category/Quiv?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: finite products
-    proof: The category <a href="/category/Quiv">$\Quiv$</a> has finite products. The full subcategory $\Quiv_{\fc} \subseteq \Quiv$ is closed under finite products because every object of $\Quiv_{\fc}$ is a coproduct of finite quivers, $\Quiv$ is infinitary distributive, and finite products of finite quivers are finite.
+    proof: The category $\Quiv$ has finite products (<a href="/category/Quiv?proof=finite_products" data-allow-deduced>proof</a>). The full subcategory $\Quiv_{\fc} \subseteq \Quiv$ is closed under finite products because every object of $\Quiv_{\fc}$ is a coproduct of finite quivers, $\Quiv$ is infinitary distributive (<a href="/category/Quiv?proof=infinitary_distributive" data-allow-deduced>proof</a>), and finite products of finite quivers are finite.
     check_redundancy: false
 
   - property: equalizers
-    proof: This follows because <a href="/category/Quiv">$\Quiv$</a> has equalizers and $\Quiv_{\fc} \subseteq \Quiv$ is closed under subquivers. Namely, every subquiver of a coproduct of finite quivers decomposes as a coproduct of subquivers of these finite quivers, and a subquiver of a finite quiver is finite.
+    proof: This follows because $\Quiv$ has equalizers (<a href="/category/Quiv?proof=equalizers" data-allow-deduced>proof</a>) and $\Quiv_{\fc} \subseteq \Quiv$ is closed under subquivers. Namely, every subquiver of a coproduct of finite quivers decomposes as a coproduct of subquivers of these finite quivers, and a subquiver of a finite quiver is finite.
     check_redundancy: false
 
   - property: subobject classifier
@@ -35,17 +35,17 @@ satisfied_properties:
       is a pullback square in $\Quiv$, i.e. a pullback square in $\Quiv_{\fc}$.
 
   - property: infinitary extensive
-    proof: Since <a href="/category/Quiv">$\Quiv$</a> is infinitary extensive and $\Quiv_{\fc} \subseteq \Quiv$ is closed under coproducts and pullbacks, this follows from Lemma 11 <a href="/content/subcategories">here</a>.
+    proof: Since $\Quiv$ is infinitary extensive (<a href="/category/Quiv?proof=infinitary_extensive" data-allow-deduced>proof</a>) and $\Quiv_{\fc} \subseteq \Quiv$ is closed under coproducts and pullbacks, this follows from Lemma 11 <a href="/content/subcategories">here</a>.
 
   - property: cokernel pairs
-    proof: 'We will show that $\Quiv_{\fc} \subseteq \Quiv$ is closed under cokernel pairs. More generally, let $f : G \to H$ be a morphism of quivers with $H \in \Quiv_{\fc}$. Write $H = \coprod_i H_i$ as a coproduct of finite quivers. Since $\Quiv$ is infinitary extensive, we have $G = \coprod_i f^*(H_i)$, and $f$ decomposes as a coproduct of morphisms $f_i : f^*(H_i) \to H_i$. Then $H \sqcup_G H = \coprod_i (H_i \sqcup_{f^*(H_i)} H_i)$. Each quiver $H_i \sqcup_{f^*(H_i)} H_i$ is finite because it is a quotient of the finite quiver $H_i \sqcup H_i$. Thus, $H \sqcup_G H$ belongs to $\Quiv_{\fc}$.'
+    proof: 'We will show that $\Quiv_{\fc} \subseteq \Quiv$ is closed under cokernel pairs. More generally, let $f : G \to H$ be a morphism of quivers with $H \in \Quiv_{\fc}$. Write $H = \coprod_i H_i$ as a coproduct of finite quivers. Since $\Quiv$ is infinitary extensive (<a href="/category/Quiv?proof=infinitary_extensive" data-allow-deduced>proof</a>), we have $G = \coprod_i f^*(H_i)$, and $f$ decomposes as a coproduct of morphisms $f_i : f^*(H_i) \to H_i$. Then $H \sqcup_G H = \coprod_i (H_i \sqcup_{f^*(H_i)} H_i)$. Each quiver $H_i \sqcup_{f^*(H_i)} H_i$ is finite because it is a quotient of the finite quiver $H_i \sqcup H_i$. Thus, $H \sqcup_G H$ belongs to $\Quiv_{\fc}$.'
 
   - property: coequalizers of kernel pairs
     proof: 'Let $f : G \to H$ be a morphism in $\Quiv_{\fc}$. In $\Quiv$, the coequalizer of the kernel pair of $f$ is simply the image of $f$. Since $\Quiv_{\fc} \subseteq \Quiv$ is closed under subquivers, this image belongs to $\Quiv_{\fc}$. The universal property of a coequalizer persists in $\Quiv_{\fc}$.'
 
   - property: extremal cogenerating collection
     proof: >-
-      We claim that the "chaotic" quiver $G = (\{a,b\},\{a,b\} \times \{a,b\})$ and the quiver $H = (\{a\},\{\ell,\ell'\})$ with one vertex and two loops form an extremal cogenerating collection. Indeed, $\Hom(-,G)$ is isomorphic to the contravariant functor $(V,E) \mapsto P(V)$, and $\Hom(-,H)$ is isomorphic to the contravariant functor $(V,E) \mapsto P(E)$. The combined functor $(V,E) \mapsto (P(V),P(E))$ is faithful and conservative because the <a href="/functor/power_set_contravariant">contravariant power set functor</a> $P : \Set^{\op} \to \Set$ is faithful and conservative.
+      We claim that the "chaotic" quiver $G = (\{a,b\},\{a,b\} \times \{a,b\})$ and the quiver $H = (\{a\},\{\ell,\ell'\})$ with one vertex and two loops form an extremal cogenerating collection. Indeed, $\Hom(-,G)$ is isomorphic to the contravariant functor $(V,E) \mapsto P(V)$, and $\Hom(-,H)$ is isomorphic to the contravariant functor $(V,E) \mapsto P(E)$. The combined functor $(V,E) \mapsto (P(V),P(E))$ is faithful and conservative because the contravariant power set functor $P : \Set^{\op} \to \Set$ is faithful (<a href="/functor/power_set_contravariant?proof=faithful" data-allow-deduced>proof</a>) and conservative (<a href="/functor/power_set_contravariant?proof=conservative" data-allow-deduced>proof</a>).
 
       Remark: The same proof works for $\Quiv$.
 
@@ -54,7 +54,7 @@ satisfied_properties:
     check_redundancy: false
 
   - property: pullback-stable regular epimorphisms
-    proof: 'Apply the dual of Lemma 14 <a href="/content/subcategories">here</a> to the inclusion $\Quiv_{\fc} \to \Quiv$. It preserves pullbacks (see the proofs above), and it preserves regular epimorphisms since these are the morphisms with surjective components in both categories (<a href="/category/Quiv_fc?proof=regular_epimorphism" data-allow-deduced>proof</a> for $\Quiv_{\fc}$ and <a href="/category/Quiv?proof=regular_epimorphism" data-allow-deduced>proof</a> for $\Quiv$). Here, we use that <a href="/category/Quiv">$\Quiv$</a> has pullback-stable regular epimorphisms.'
+    proof: 'Apply the dual of Lemma 14 <a href="/content/subcategories">here</a> to the inclusion $\Quiv_{\fc} \to \Quiv$. It preserves pullbacks (see the proofs for <a href="/category/Quiv_fc?proof=finite_products">finite products</a> and <a href="/category/Quiv_fc?proof=equalizers">equalizers</a>), and it preserves regular epimorphisms since these are the morphisms with surjective components in $\Quiv_{\fc}$ (<a href="/category/Quiv_fc?proof=regular_epimorphism" data-allow-deduced>proof</a>) and in $\Quiv$ (<a href="/category/Quiv?proof=regular_epimorphism" data-allow-deduced>proof</a>). Here, we use that $\Quiv$ has pullback-stable regular epimorphisms (<a href="/category/Quiv?proof=pullback-stable_regular_epimorphisms" data-allow-deduced>proof</a>).'
 
   - property: ℵ₁-accessible
     proof: >-
@@ -69,7 +69,7 @@ satisfied_properties:
       We show that $\Quiv_{\fc} \subseteq \Quiv$ is closed under $\aleph_1$-cofiltered limits. Let $D : \I \to \Quiv_{\fc}$ be an $\aleph_1$-cofiltered diagram, and let $L$ be its limit in $\Quiv$. Consider a vertex $v \in V_L$, and let $C(v) \subseteq L$ denote its connected component. For each $i \in \I$, let $C(v_i) \subseteq D(i)$ be the connected component of $v_i \in V_{D(i)}$. Each transition map $D(i \to j) : D(i) \to D(j)$ maps $C(v_i)$ into $C(v_j)$. Thus, we can construct the quiver $\lim_{i \in \I} C(v_i)$. It is finite because $\FinSet$ is closed under $\aleph_1$-cofiltered limits in $\Set$ (<a href="/category/FinSet?proof=aleph1-cofiltered_limits">proof</a>). Since each projection map $L \to D(i)$ maps $C(v)$ into $C(v_i)$, there is an embedding $C(v) \hookrightarrow \lim_{i \in \I} C(v_i)$. Hence, $C(v)$ is finite.
 
   - property: effective cocongruences
-    proof: More generally, let $G \rightrightarrows C$ be a coreflexive corelation in $\Quiv_{\fc}$. Since binary coproducts exist and the inclusion functor $\Quiv_{\fc} \hookrightarrow \Quiv$ preserves epimorphisms, it is a coreflexive corelation in $\Quiv$. Since <a href="/category/Quiv">$\Quiv$</a> is co-Malcev and has effective cocongruences (by <a href="/category-implication/regular_epi-regular_extensive_consequences">this result</a>), the pair $G \rightrightarrows C$ is the cokernel pair of some morphism $E \to G$ in $\Quiv$, namely (since equalizers exist, see <a href="/content/effective-congruence-quotients">here</a>) the equalizer of $G \rightrightarrows C$. Since $G$ belongs to $\Quiv_{\fc}$, also $E$ belongs to $\Quiv_{\fc}$. It follows that $G \rightrightarrows C$ is also the cokernel pair of $E \to G$ in $\Quiv_{\fc}$.
+    proof: More generally, let $G \rightrightarrows C$ be a coreflexive corelation in $\Quiv_{\fc}$. Since binary coproducts exist and the inclusion functor $\Quiv_{\fc} \hookrightarrow \Quiv$ preserves epimorphisms, since these are the morphisms with surjective components in $\Quiv_{\fc}$ (<a href="/category/Quiv_fc?proof=epimorphism">proof</a>) and in $\Quiv$ (<a href="/category/Quiv?proof=epimorphism">proof</a>), it is a coreflexive corelation in $\Quiv$. Since $\Quiv$ is co-Malcev (<a href="/category/Quiv?proof=co-Malcev" data-allow-deduced>proof</a>) and has effective cocongruences (by <a href="/category-implication/regular_epi-regular_extensive_consequences">this result</a>), the pair $G \rightrightarrows C$ is the cokernel pair of some morphism $E \to G$ in $\Quiv$, namely (since equalizers exist, see <a href="/content/effective-congruence-quotients">here</a>) the equalizer of $G \rightrightarrows C$. Since $G$ belongs to $\Quiv_{\fc}$, also $E$ belongs to $\Quiv_{\fc}$. It follows that $G \rightrightarrows C$ is also the cokernel pair of $E \to G$ in $\Quiv_{\fc}$.
 
 unsatisfied_properties:
   - property: skeletal
@@ -92,12 +92,12 @@ unsatisfied_properties:
 
   - property: sequential colimits
     proof: >-
-      First, note that the inclusion functor $\Quiv_{\fc} \to \Quiv$ preserves colimits. This is because $\Quiv$ is cocomplete, $\Quiv_{\fc}$ contains an extremal cogenerating collection of $\Quiv$ (by our <a href="/category/Quiv_fc?proof=extremal_cogenerating_collection">proof</a> that $\Quiv_{\fc}$ has one), and Lemma 1 <a href="/content/inclusion-functors">here</a>. Thus, it suffices to show that $\Quiv_{\fc}$ is not closed under sequential colimits in $\Quiv$.
+      First, note that the inclusion functor $\Quiv_{\fc} \to \Quiv$ preserves colimits. This is because $\Quiv$ is cocomplete (<a href="/category/Quiv?proof=cocomplete" data-allow-deduced>proof</a>), $\Quiv_{\fc}$ contains an extremal cogenerating collection of $\Quiv$ (by our <a href="/category/Quiv_fc?proof=extremal_cogenerating_collection">proof</a> that $\Quiv_{\fc}$ has one), and Lemma 1 <a href="/content/inclusion-functors">here</a>. Thus, it suffices to show that $\Quiv_{\fc}$ is not closed under sequential colimits in $\Quiv$.
 
       Consider the path quiver $P_n$ with $n$ vertices and $n-1$ edges. It is finite, hence belongs to $\Quiv_{\fc}$, and there is a canonical embedding $P_n \hookrightarrow P_{n+1}$. The colimit of this sequence in $\Quiv$ is the path quiver $P_\infty$ with infinitely many vertices. It is connected but not finite, hence does not belong to $\Quiv_{\fc}$.
 
   - property: quotients of congruences
-    proof: Since the category is infinitary extensive and we have just identified a sequence of monomorphisms without a colimit (<a href="/category/Quiv_fc?proof=sequential_colimits">proof</a>), there is a congruence without a quotient by Lemma 1 <a href="/content/monic_sequential_colimits">here</a>.
+    proof: Since the category is infinitary extensive (<a href="/category/Quiv_fc?proof=infinitary_extensive" data-allow-deduced>proof</a>) and we have just identified a sequence of monomorphisms without a colimit (<a href="/category/Quiv_fc?proof=sequential_colimits">proof</a>), there is a congruence without a quotient by Lemma 1 <a href="/content/monic_sequential_colimits">here</a>.
 
 special_objects:
   initial object:
@@ -112,10 +112,10 @@ special_objects:
 special_morphisms:
   isomorphism:
     description: morphisms $f = (f_V, f_E)$ such that $f_V$ and $f_E$ are bijective
-    proof: This description holds in <a href="/category/Quiv">$\Quiv$</a>.
+    proof: This description holds in $\Quiv$ (<a href="/category/Quiv?proof=isomorphism" data-allow-deduced>proof</a>).
   monomorphism:
     description: morphisms $f = (f_V, f_E)$ such that $f_V$ and $f_E$ are injective
-    proof: For the non-trivial direction, the construction of finite limits shows that the forgetful functor $\Quiv_{\fc} \to \Quiv$ preserves finite limits and hence preserves monomorphisms. The monomorphisms in $\Quiv$ have the stated description.
+    proof: For the non-trivial direction, the construction of finite limits shows that the forgetful functor $\Quiv_{\fc} \to \Quiv$ preserves finite limits and hence preserves monomorphisms. The monomorphisms in $\Quiv$ have the stated description (<a href="/category/Quiv?proof=monomorphism" data-allow-deduced>proof</a>).
   epimorphism:
     description: morphisms $f = (f_V, f_E)$ such that $f_V$ and $f_E$ are surjective
     proof: >-

@@ -35,7 +35,7 @@ comments:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\Bin \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
+    proof: There is a forgetful functor $\Bin \to \Set$, and $\Set$ is locally small (<a href="/category/Set?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: complete
     proof: If $\I \to \Bin$, $i \mapsto (X_i,R_i)$ is a diagram, its limit is $(\lim_{i \in \I} X_i,R)$, where $R$ consists of pairs $(x,y)$ such that $(x_i,y_i) \in R_i$ for every $i \in \I$. The universal property is easy to check.

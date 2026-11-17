@@ -23,11 +23,11 @@ satisfied_properties:
 unsatisfied_properties:
   - property: cartesian
     # TODO: automate this with category_conclusions
-    proof: This is simply because its underlying category <a href="/category/N">$(\IN,\leq)$</a> does not have finite products; it has no terminal object.
+    proof: This is simply because its underlying category $(\IN,\leq)$ does not have finite products (<a href="/category/N?proof=finite_products" data-allow-deduced>proof</a>); it has no terminal object.
 
   - property: codistributive
     # TODO: automate this with category_conclusions
-    proof: This is simply because its underlying category <a href="/category/N">$(\IN,\leq)$</a> does not have finite products; it has no terminal object.
+    proof: This is simply because its underlying category $(\IN,\leq)$ does not have finite products (<a href="/category/N?proof=finite_products" data-allow-deduced>proof</a>); it has no terminal object.
 
   - property: distributive
     proof: The functor $x \mapsto x \otimes 1 = x + 1$ does not preserve the initial object $0$.

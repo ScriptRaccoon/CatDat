@@ -53,7 +53,7 @@ satisfied_properties:
 
   - property: ℵ₁-accessible
     proof: >-
-      We apply Theorem 4 <a href="/content/deloopings-aleph1-accessible">here</a>. We already know that $C$ is countable and that $BC$ is Cauchy complete. It remains to show that $C$ satisfies the ascending chain condition on principal right ideals. Every principal right ideal of $C$ has the form $q^n p^m C = q^n C$, since $p^m q^m = 1$ implies $p^m C = C$. If $q^n C \subseteq q^{n'} C$, then $n \geq n'$. Otherwise, write $q^n = q^{n'} x$ with $x \in C$. Since $q^n$ is a monomorphism, we get $1 = q^{n'-n} x$, so that $q^{n'-n}$ is a split epimorphism, which contradicts the fact that every epimorphism is of the form $p^m$ (<a href="/category/BC?proof=epimorphism">proof</a>). Therefore, every ascending chain $q^{n_0} C \subseteq q^{n_1} C \subseteq \cdots$ satisfies $n_0 \geq n_1 \geq \cdots$ and hence becomes stationary.
+      We apply Theorem 4 <a href="/content/deloopings-aleph1-accessible">here</a>. We already know that $BC$ is Cauchy complete (<a href="/category/BC?proof=Cauchy_complete" data-allow-deduced>proof</a>), and $C$ is countable. It remains to show that $C$ satisfies the ascending chain condition on principal right ideals. Every principal right ideal of $C$ has the form $q^n p^m C = q^n C$, since $p^m q^m = 1$ implies $p^m C = C$. If $q^n C \subseteq q^{n'} C$, then $n \geq n'$. Otherwise, write $q^n = q^{n'} x$ with $x \in C$. Since $q^n$ is a monomorphism, we get $1 = q^{n'-n} x$, so that $q^{n'-n}$ is a split epimorphism, which contradicts the fact that every epimorphism is of the form $p^m$ (<a href="/category/BC?proof=epimorphism">proof</a>). Therefore, every ascending chain $q^{n_0} C \subseteq q^{n_1} C \subseteq \cdots$ satisfies $n_0 \geq n_1 \geq \cdots$ and hence becomes stationary.
 
 unsatisfied_properties:
   - property: retract-trivial
@@ -100,16 +100,16 @@ special_objects: {}
 special_morphisms:
   isomorphism:
     description: only the neutral element $1$
-    proof: We have shown this in the proof that the category is core-thin.
+    proof: We have shown this in the <a href="/category/BC?proof=core-thin">proof</a> that the category is core-thin.
   monomorphism:
     description: the elements $q^n$ for $n \geq 0$
     proof: Since $q$ is a split monomorphism, also $q^n$ is a split monomorphism. For $m > 0$ the element $q^n p^m$ is not a monomorphism, since otherwise $p$ would be a monomorphism, from which we would obtain the contradiction $qp=1$ from $pq=1$.
   epimorphism:
     description: the elements $p^m$ for $m \geq 0$
-    proof: The proof is identical to the proof for monomorphisms. This is also because $C$ is self-dual.
+    proof: The proof is identical to the <a href="/category/BC?proof=monomorphism">proof</a> for monomorphisms. This is also because $C$ is self-dual (<a href="/category/BC?proof=self-dual" data-allow-deduced>proof</a>).
   regular monomorphism:
     description: the elements $q^n$ for $n \geq 0$
-    proof: We already know that these are precisely the monomorphisms. They are split monomorphisms because $q$ is a split monomorphism, and every split monomorphism is a regular monomorphism.
+    proof: We already know that these are precisely the monomorphisms (<a href="/category/BC?proof=monomorphism" data-allow-deduced>proof</a>). They are split monomorphisms because $q$ is a split monomorphism, and every split monomorphism is a regular monomorphism.
   regular epimorphism:
     description: the elements $p^m$ for $m \geq 0$
-    proof: We already know that these are precisely the epimorphisms. They are split epimorphisms because $p$ is a split epimorphism, and every split epimorphism is a regular epimorphism.
+    proof: We already know that these are precisely the epimorphisms (<a href="/category/BC?proof=epimorphism" data-allow-deduced>proof</a>). They are split epimorphisms because $p$ is a split epimorphism, and every split epimorphism is a regular epimorphism.

@@ -22,13 +22,13 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: The category is a full subcategory of $\Ab$, which is locally small.
+    proof: The category is a full subcategory of $\Ab$, which is locally small (<a href="/category/Ab?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: essentially countable
     proof: Every object is isomorphic to one of the countably many groups $\IZ^n$, and the set $\Hom(\IZ^n,\IZ^m) \cong M_{m \times n}(\IZ)$ is countable.
 
   - property: additive
-    proof: The category is closed under finite direct sums in $\Ab$, which is additive.
+    proof: The category is closed under finite direct sums in $\Ab$, which is additive (<a href="/category/Ab?proof=additive" data-allow-deduced>proof</a>).
 
   - property: equalizers
     proof: This follows from the standard fact that every subgroup of a finitely generated free abelian group is again finitely generated and free abelian.
@@ -41,7 +41,7 @@ satisfied_properties:
     proof: More generally, if $R$ is a commutative ring, $\Proj_\fg(R)$ is self-dual, as shown in the <a href="/category/Proj_fg(Re)?proof=self-dual">proof</a> for $\Proj_\fg(\IR[\varepsilon])$.
 
   - property: pullback-stable regular epimorphisms
-    proof: 'Apply the dual of Lemma 14 <a href="/content/subcategories">here</a> to the inclusion $\FreeAb_\fg \to \Ab$. It preserves pullbacks since subgroups of finitely generated free abelian groups are finitely generated and free, and it preserves regular epimorphisms since these are the surjective homomorphisms in both categories (<a href="/category/FreeAb_fg?proof=regular_epimorphism">proof</a> for $\FreeAb_\fg$ and <a href="/category/Ab?proof=regular_epimorphism" data-allow-deduced>proof</a> for $\Ab$). Here, we use that <a href="/category/Ab">$\Ab$</a> has pullback-stable regular epimorphisms.'
+    proof: 'Apply the dual of Lemma 14 <a href="/content/subcategories">here</a> to the inclusion $\FreeAb_\fg \to \Ab$. It preserves pullbacks since subgroups of finitely generated free abelian groups are finitely generated and free, and it preserves regular epimorphisms since these are the surjective homomorphisms in $\FreeAb_\fg$ (<a href="/category/FreeAb_fg?proof=regular_epimorphism">proof</a>) and in $\Ab$ (<a href="/category/Ab?proof=regular_epimorphism" data-allow-deduced>proof</a>). Here, we use that $\Ab$ has pullback-stable regular epimorphisms (<a href="/category/Ab?proof=pullback-stable_regular_epimorphisms" data-allow-deduced>proof</a>).'
 
   - property: ℵ₁-accessible
     proof: >-

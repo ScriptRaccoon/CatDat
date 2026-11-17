@@ -17,7 +17,7 @@ related:
 
 satisfied_properties:
   - property: closed
-    proof: This is because $(\Vect_K,\otimes,K)$ is closed and for finite-dimensional vector spaces $V,W$ also the vector space $[V,W]$ of linear maps is finite-dimensional (by elementary linear algebra).
+    proof: This is because $(\Vect_K,\otimes,K)$ is closed (<a href="/symmetric_monoidal_category/Vect_tensor?proof=closed" data-allow-deduced>proof</a>) and for finite-dimensional vector spaces $V,W$ also the vector space $[V,W]$ of linear maps is finite-dimensional (by elementary linear algebra).
 
   - property: well-pointed
     proof: In fact, $K$ is a generator of $\FinVect_K$, even in $\Vect_K$ (<a href="/category/Vect?proof=extremal_generator">proof</a>).

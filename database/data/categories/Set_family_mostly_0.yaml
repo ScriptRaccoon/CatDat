@@ -26,25 +26,25 @@ satisfied_properties:
     proof: The functor $\Set^{(I)}_0 \to \Set^+$, $X \mapsto \coprod_{i \in I} X_i$ is faithful. Since $\coprod_{i \in I} X_i \cong \coprod_{i \in \supp(X)} X_i$ is essentially small, it yields a faithful functor $\Set^{(I)}_0 \to \Set$.
 
   - property: cocomplete
-    proof: 'Since <a href="/category/Set">$\Set$</a> is cocomplete, the product category $\Set^I$ is cocomplete with pointwise colimits. (The size of the index collection does not matter.) Thus, it only remains to check that $\Set^{(I)}_0$ is closed under colimits, which are small by convention. Let $D : \J \to \Set^{(I)}_0$ be a small diagram and let $C$ be its colimit in $\Set^I$. Thus, $C_i = \colim_{j \in \J} D(j)_i$. Consider the collection $\bigcup_{j \in \J} \supp(D(j))$, which is essentially small. For any index $i$ outside this collection, $C_i$ is a colimit of empty sets and hence empty. Thus, $\supp(C) \subseteq \bigcup_{j \in \J} \supp(D(j))$, and hence $\supp(C)$ is essentially small.'
+    proof: 'Since $\Set$ is cocomplete (<a href="/category/Set?proof=cocomplete" data-allow-deduced>proof</a>), the product category $\Set^I$ is cocomplete with pointwise colimits. (The size of the index collection does not matter.) Thus, it only remains to check that $\Set^{(I)}_0$ is closed under colimits, which are small by convention. Let $D : \J \to \Set^{(I)}_0$ be a small diagram and let $C$ be its colimit in $\Set^I$. Thus, $C_i = \colim_{j \in \J} D(j)_i$. Consider the collection $\bigcup_{j \in \J} \supp(D(j))$, which is essentially small. For any index $i$ outside this collection, $C_i$ is a colimit of empty sets and hence empty. Thus, $\supp(C) \subseteq \bigcup_{j \in \J} \supp(D(j))$, and hence $\supp(C)$ is essentially small.'
     check_redundancy: false
 
   - property: all epimorphisms split
     proof: Every epimorphism is a family of surjective maps (<a href="/category/Set_family_mostly_0?proof=epimorphism">proof</a>) and therefore has a section by the axiom of choice.
 
   - property: connected limits
-    proof: 'In fact, all non-empty limits exist. Since <a href="/category/Set">$\Set$</a> is complete, the product category $\Set^I$ is also complete with pointwise limits. It suffices to prove that $\Set^{(I)}_0$ is closed under non-empty limits, which are small by convention. Let $D : \J \to \Set^{(I)}_0$ be a small non-empty diagram and let $L$ be its limit in $\Set^I$. Thus, $L_i = \lim_{j \in \J} D(j)_i$. Consider the collection $\bigcup_{j \in \J} \supp(D(j))$, which is essentially small. For any index $i$ outside this collection, $L_i$ is a limit of empty sets indexed by the non-empty category $\J$ and hence empty. Thus, $\supp(L) \subseteq \bigcup_{j \in \J} \supp(D(j))$, and hence $\supp(L)$ is essentially small.'
+    proof: 'In fact, all non-empty limits exist. Since $\Set$ is complete (<a href="/category/Set?proof=complete" data-allow-deduced>proof</a>), the product category $\Set^I$ is also complete with pointwise limits. It suffices to prove that $\Set^{(I)}_0$ is closed under non-empty limits, which are small by convention. Let $D : \J \to \Set^{(I)}_0$ be a small non-empty diagram and let $L$ be its limit in $\Set^I$. Thus, $L_i = \lim_{j \in \J} D(j)_i$. Consider the collection $\bigcup_{j \in \J} \supp(D(j))$, which is essentially small. For any index $i$ outside this collection, $L_i$ is a limit of empty sets indexed by the non-empty category $\J$ and hence empty. Thus, $\supp(L) \subseteq \bigcup_{j \in \J} \supp(D(j))$, and hence $\supp(L)$ is essentially small.'
     check_redundancy: false
 
   - property: binary products
     proof: We have just proved that non-empty limits exist (<a href="/category/Set_family_mostly_0?proof=connected_limits">proof</a>). Concretely, we have $(X \times Y)_i = X_i \times Y_i$ with $\supp(X \times Y) = \supp(X) \cap \supp(Y)$.
 
   - property: infinitary extensive
-    proof: Since <a href="/category/Set">$\Set$</a> is infinitary extensive, $\Set^I$ is also infinitary extensive. We can now apply Lemma 11 <a href="/content/subcategories">here</a> to the inclusion functor $\Set^{(I)}_0 \hookrightarrow \Set^I$.
+    proof: Since $\Set$ is infinitary extensive (<a href="/category/Set?proof=infinitary_extensive" data-allow-deduced>proof</a>), $\Set^I$ is also infinitary extensive. We can now apply Lemma 11 <a href="/content/subcategories">here</a> to the inclusion functor $\Set^{(I)}_0 \hookrightarrow \Set^I$.
 
   - property: locally cartesian closed
     proof: >-
-      First of all, <a href="/category/Set">$\Set$</a> is locally cartesian closed, i.e. each slice $\Set / X$ is cartesian closed, with exponentials
+      First of all, $\Set$ is locally cartesian closed (<a href="/category/Set?proof=locally_cartesian_closed" data-allow-deduced>proof</a>), i.e. each slice $\Set / X$ is cartesian closed, with exponentials
       $$\textstyle [Y \to X, Z \to X] = \coprod_{x \in X} \Hom(Y_x,Z_x),$$
       where $Y_x$ denotes the fiber of $Y \to X$ over $x \in X$. It follows formally that, for every collection $I$, $\Set^I$ is also locally cartesian closed, with exponentials
       $$\textstyle [Y \to X, Z \to X]_i = \coprod_{x \in X_i} \Hom((Y_i)_x,(Z_i)_x).$$
@@ -53,27 +53,27 @@ satisfied_properties:
       In particular, if $\supp(X)$ is essentially small, then $\supp([Y \to X, Z \to X])$ is also essentially small. Thus, if $X \in \Set^{(I)}_0$, then the full subcategory $\Set^{(I)}_0 / X$ of $\Set^I / X$ is closed under exponentials and is therefore also cartesian closed.
 
   - property: filtered-colimit-stable monomorphisms
-    proof: Since filtered colimits are constructed pointwise and the monomorphisms are precisely the morphisms that are pointwise injective (<a href="/category/Set_family_mostly_0?proof=monomorphism">proof</a>), this property is inherited from <a href="/category/Set">$\Set$</a>.
+    proof: Since filtered colimits are constructed pointwise and the monomorphisms are precisely the morphisms that are pointwise injective (<a href="/category/Set_family_mostly_0?proof=monomorphism">proof</a>), this property is inherited from $\Set$, which has filtered-colimit-stable monomorphisms (<a href="/category/Set?proof=filtered-colimit-stable_monomorphisms" data-allow-deduced>proof</a>).
 
   - property: pushout-stable regular monomorphisms
-    proof: 'Apply Lemma 14 <a href="/content/subcategories">here</a> to the inclusion $\Set^{(I)}_0 \to \Set^I$, which preserves pushouts and regular monomorphisms by their pointwise descriptions. Here, we use that <a href="/category/Set_family">$\Set^I$</a> has pushout-stable regular monomorphisms.'
+    proof: 'Apply Lemma 14 <a href="/content/subcategories">here</a> to the inclusion $\Set^{(I)}_0 \to \Set^I$, which preserves pushouts and regular monomorphisms by their pointwise descriptions. Here, we use that $\Set^I$ has pushout-stable regular monomorphisms (<a href="/category/Set_family?proof=pushout-stable_regular_monomorphisms" data-allow-deduced>proof</a>).'
 
   - property: cocartesian cofiltered limits
-    proof: This property is inherited from <a href="/category/Set">$\Set$</a> since binary coproducts (in fact, all colimits) and cofiltered limits (in fact, all non-empty limits) are constructed pointwise.
+    proof: $\Set$ has cocartesian cofiltered limits (<a href="/category/Set?proof=cocartesian_cofiltered_limits" data-allow-deduced>proof</a>), and this property is inherited since binary coproducts (in fact, all colimits) and cofiltered limits (in fact, all non-empty limits) are constructed pointwise.
 
   - property: well-powered
     proof: The monomorphisms $X \to Y$ are precisely the morphisms that are pointwise injective (<a href="/category/Set_family_mostly_0?proof=monomorphism">proof</a>). If $X_i \to Y_i$ is injective and $Y_i = \varnothing$, then also $X_i = \varnothing$. It follows that the collection $\Sub(Y) \cong \prod_{i \in \supp(Y)} \Sub(Y_i)$ is essentially small.
     check_redundancy: false
 
   - property: effective congruences
-    proof: Let $R \rightrightarrows X$ be a congruence in $\Set^{(I)}_0$. We claim that it is the kernel pair of its coequalizer $X \twoheadrightarrow X/R$. This certainly holds in <a href="/category/Set">$\Set$</a>, and for every $i \in I$, the pair $R_i \rightrightarrows X_i$ is a congruence in $\Set$. Therefore, the claim follows since kernel pairs (in fact, all connected limits) and coequalizers (in fact, all colimits) are constructed pointwise.
+    proof: Let $R \rightrightarrows X$ be a congruence in $\Set^{(I)}_0$. We claim that it is the kernel pair of its coequalizer $X \twoheadrightarrow X/R$. This holds in $\Set$, which has effective congruences (<a href="/category/Set?proof=effective_congruences" data-allow-deduced>proof</a>), and for every $i \in I$, the pair $R_i \rightrightarrows X_i$ is a congruence in $\Set$. Therefore, the claim follows since kernel pairs (in fact, all connected limits) and coequalizers (in fact, all colimits) are constructed pointwise.
 
 unsatisfied_properties:
   - property: skeletal
     proof: Fix some $i_0 \in I$. The families $X$ and $Y$ with $X_{i_0} = \{0\}$, $Y_{i_0} = \{1\}$, and $X_i = Y_i = \varnothing$ for $i \neq i_0$ are isomorphic but not equal.
 
   - property: semi-strongly connected
-    proof: This is because <a href="/category/SetxSet">$\Set \times \Set$</a> can be embedded into $\Set^{(I)}_0$ by extending each pair of sets with empty sets, and we know that $\Set \times \Set$ is not semi-strongly connected.
+    proof: This is because <a href="/category/SetxSet">$\Set \times \Set$</a> can be embedded into $\Set^{(I)}_0$ by extending each pair of sets with empty sets, and we know that $\Set \times \Set$ is not semi-strongly connected (<a href="/category/SetxSet?proof=semi-strongly_connected" data-allow-deduced>proof</a>).
 
   - property: locally small
     proof: The proof is identical to the <a href="/category/Vect_family_mostly_0?proof=locally_small">proof</a> for $\Vect^{(I)}$. However, this result is not relevant for category theory; only the fact that the category is locally essentially small matters.

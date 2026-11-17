@@ -26,4 +26,4 @@ satisfied_properties:
 
 unsatisfied_properties:
   - property: preserves terminal objects
-    proof: The terminal object is mapped to $\omega$, which is not terminal. In fact, $\On$ has no terminal object at all.
+    proof: The terminal object is mapped to $\omega$, which is not terminal. In fact, $\On$ has no terminal object at all (<a href="/category/On?proof=terminal_object" data-allow-deduced>proof</a>).

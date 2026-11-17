@@ -31,17 +31,17 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\Bin_{\irr} \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
+    proof: There is a forgetful functor $\Bin_{\irr} \to \Set$, and $\Set$ is locally small (<a href="/category/Set?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: connected limits
     proof: In fact, $\Bin_{\irr}$ is closed under all non-empty limits in <a href="/category/Bin">$\Bin$</a>. If $\I \to \Bin$, $i \mapsto (X_i,R_i)$ is a non-empty diagram, its limit is $(\lim_{i \in \I} X_i,R)$, where $R$ consists of pairs $(x,y)$ such that $(x_i,y_i) \in R_i$ for every $i \in \I$. If each $R_i$ is irreflexive, then $R$ is irreflexive, because if $(x,x) \in R$, we may choose any $i \in \I$ and obtain the contradiction $(x_i,x_i) \in R_i$.
     check_redundancy: false
 
   - property: binary products
-    proof: We have just seen that all non-empty limits exist.
+    proof: We have just seen that all non-empty limits exist (<a href="/category/Bin_irr?proof=connected_limits">proof</a>).
 
   - property: infinitary extensive
-    proof: It is easy to check that $\Bin_{\irr} \subseteq \Bin$ is closed under coproducts (see below for their concrete description), and we already know that it is also closed under pullbacks. Since <a href="/category/Bin">$\Bin$</a> is infinitary extensive, the claim therefore follows from Lemma 11 <a href="/content/subcategories">here</a>.
+    proof: It is easy to check that $\Bin_{\irr} \subseteq \Bin$ is closed under coproducts (see below for their concrete description), and we already know that it is also closed under pullbacks (<a href="/category/Bin_irr?proof=connected_limits">proof</a>). Since $\Bin$ is infinitary extensive (<a href="/category/Bin?proof=infinitary_extensive" data-allow-deduced>proof</a>), the claim therefore follows from Lemma 11 <a href="/content/subcategories">here</a>.
 
   - property: finitely accessible
     proof: >-
@@ -50,16 +50,16 @@ satisfied_properties:
       The rest of the proof is the same as for the finite accessibility of $\Bin$ (<a href="/category/Bin?proof=finitely_accessible">proof</a>).
 
   - property: locally cartesian closed
-    proof: If $X \to Y$ is a morphism in $\Bin$ and $Y \in \Bin_{\irr}$, then $X \in \Bin_{\irr}$ as well (since any element in $X$ that relates to itself is mapped to an element in $Y$ that relates to itself). Thus, if $Y$ is any object of $\Bin_{\irr}$, then $\Bin_{\irr} / Y = \Bin / Y$. Hence, the claim follows since <a href="/category/Bin">$\Bin$</a> is locally cartesian closed.
+    proof: If $X \to Y$ is a morphism in $\Bin$ and $Y \in \Bin_{\irr}$, then $X \in \Bin_{\irr}$ as well (since any element in $X$ that relates to itself is mapped to an element in $Y$ that relates to itself). Thus, if $Y$ is any object of $\Bin_{\irr}$, then $\Bin_{\irr} / Y = \Bin / Y$. Hence, the claim follows since $\Bin$ is locally cartesian closed (<a href="/category/Bin?proof=locally_cartesian_closed" data-allow-deduced>proof</a>).
 
   - property: cokernel pairs
     proof: 'If $X \to Y$ is a morphism in $\Bin$ and $Y \in \Bin_{\irr}$, then $X \in \Bin_{\irr}$ as well. Using this, we can show that $\Bin_{\irr} \subseteq \Bin$ is closed under cokernel pairs. In fact, if $f : X \to Y$ is a morphism in $\Bin_{\irr}$ and $Y \sqcup_X Y$ is the pushout in <a href="/category/Bin">$\Bin$</a>, then the codiagonal $\nabla : Y \sqcup_X Y \to Y$ shows that $Y \sqcup_X Y$ belongs to $\Bin_{\irr}$.'
 
   - property: coequalizers of kernel pairs
-    proof: We already know that kernel pairs exist; in fact, $\Bin_{\irr} \subseteq \Bin$ is closed under kernel pairs. Moreover, <a href="/category/Bin">$\Bin$</a> has coequalizers. We again use the fact that if $X \to Y$ is a morphism in $\Bin$ and $Y \in \Bin_{\irr}$, then $X \in \Bin_{\irr}$ as well. Namely, if $X \to Y$ is a morphism in $\Bin_{\irr}$ and $X \to C$ is the coequalizer of its kernel pair in $\Bin$, then there is a morphism $C \to Y$ (since $X \to Y$ coequalizes its kernel pair), so $C \in \Bin_{\irr}$. We conclude that $X \to C$ is also the coequalizer of the kernel pair in $\Bin_{\irr}$.
+    proof: We already know that kernel pairs exist (<a href="/category/Bin_irr?proof=connected_limits">proof</a>); in fact, $\Bin_{\irr} \subseteq \Bin$ is closed under kernel pairs. Moreover, $\Bin$ has coequalizers (<a href="/category/Bin?proof=coequalizers" data-allow-deduced>proof</a>). We again use the fact that if $X \to Y$ is a morphism in $\Bin$ and $Y \in \Bin_{\irr}$, then $X \in \Bin_{\irr}$ as well. Namely, if $X \to Y$ is a morphism in $\Bin_{\irr}$ and $X \to C$ is the coequalizer of its kernel pair in $\Bin$, then there is a morphism $C \to Y$ (since $X \to Y$ coequalizes its kernel pair), so $C \in \Bin_{\irr}$. We conclude that $X \to C$ is also the coequalizer of the kernel pair in $\Bin_{\irr}$.
 
   - property: cocartesian cofiltered limits
-    proof: This follows from the corresponding property of <a href="/category/Bin">$\Bin$</a> because the inclusion functor $\Bin_{\irr} \hookrightarrow \Bin$ is fully faithful and preserves binary coproducts and cofiltered limits (in fact, all coproducts and all non-empty limits).
+    proof: $\Bin$ has cocartesian cofiltered limits (<a href="/category/Bin?proof=cocartesian_cofiltered_limits" data-allow-deduced>proof</a>), and this property is inherited because the inclusion functor $\Bin_{\irr} \hookrightarrow \Bin$ is fully faithful and preserves binary coproducts and cofiltered limits (in fact, all coproducts and all non-empty limits).
 
   - property: generator
     proof: The object $(\{\ast\},\varnothing)$ is a generator because it represents the forgetful functor $\Bin_{\irr} \to \Set$, $(X,R) \mapsto X$, which is faithful.
@@ -69,11 +69,11 @@ satisfied_properties:
 
   - property: effective cocongruences
     proof: >-
-      Let $j_1, j_2 : X \rightrightarrows C$ be a cocongruence in $\Bin_{\irr}$. Then $(j_1;j_2) : X \sqcup X \to C$ is an epimorphism, i.e. surjective on underlying sets, and hence an epimorphism in $\Bin$. The pushout $C \sqcup_{j_2,X,j_1} C$ in $\Bin$ has no loops since, using the common retraction $C \to X$ of $j_1,j_2$ (the coreflexivity morphism), it admits a morphism to $X$. Therefore, we obtain coreflexivity, cosymmetry, and cotransitivity morphisms in $\Bin_{\irr}$, and these are also such morphisms in $\Bin$. Hence, $j_1, j_2 : X \rightrightarrows C$ is a cocongruence in $\Bin$. Since <a href="/category/Bin">$\Bin$</a> has effective cocongruences, there is a morphism $T \to X$ whose cokernel pair is $X \rightrightarrows C$ in $\Bin$. Since $T$ admits a morphism to $X \in \Bin_{\irr}$, we have $T \in \Bin_{\irr}$. It follows that $T \to X$ also has cokernel pair $X \rightrightarrows C$ in $\Bin_{\irr}$.
+      Let $j_1, j_2 : X \rightrightarrows C$ be a cocongruence in $\Bin_{\irr}$. Then $(j_1;j_2) : X \sqcup X \to C$ is an epimorphism, i.e. surjective on underlying sets, and hence an epimorphism in $\Bin$. The pushout $C \sqcup_{j_2,X,j_1} C$ in $\Bin$ has no loops since, using the common retraction $C \to X$ of $j_1,j_2$ (the coreflexivity morphism), it admits a morphism to $X$. Therefore, we obtain coreflexivity, cosymmetry, and cotransitivity morphisms in $\Bin_{\irr}$, and these are also such morphisms in $\Bin$. Hence, $j_1, j_2 : X \rightrightarrows C$ is a cocongruence in $\Bin$. Since $\Bin$ has effective cocongruences (<a href="/category/Bin?proof=effective_cocongruences" data-allow-deduced>proof</a>), there is a morphism $T \to X$ whose cokernel pair is $X \rightrightarrows C$ in $\Bin$. Since $T$ admits a morphism to $X \in \Bin_{\irr}$, we have $T \in \Bin_{\irr}$. It follows that $T \to X$ also has cokernel pair $X \rightrightarrows C$ in $\Bin_{\irr}$.
 
 unsatisfied_properties:
   - property: skeletal
-    proof: The category contains the non-skeletal category <a href="/category/Bin_symm_irr">$\Bin_{\symm,\irr}$</a> as a subcategory.
+    proof: The category contains $\Bin_{\symm,\irr}$ as a subcategory, which is not skeletal (<a href="/category/Bin_symm_irr?proof=skeletal" data-allow-deduced>proof</a>).
 
   - property: semi-strongly connected
     proof: >-
@@ -114,19 +114,19 @@ special_morphisms:
     proof: This is easy to check.
   monomorphism:
     description: injective relation-preserving maps
-    proof: For the non-trivial direction, the construction of pullbacks (or, more generally, all non-empty limits) shows that the forgetful functor $\Bin_{\irr} \to \Bin$ preserves pullbacks, and hence preserves monomorphisms. Moreover, the monomorphisms in <a href="/category/Bin">$\Bin$</a> have already been identified as being injective.
+    proof: For the non-trivial direction, the construction of pullbacks (or, more generally, all non-empty limits) shows that the forgetful functor $\Bin_{\irr} \to \Bin$ preserves pullbacks, and hence preserves monomorphisms. Moreover, the monomorphisms in $\Bin$ are injective (<a href="/category/Bin?proof=monomorphism" data-allow-deduced>proof</a>).
   epimorphism:
     description: surjective relation-preserving maps
-    proof: 'For the non-trivial direction, the construction of cokernel pairs shows that the forgetful functor $\Bin_{\irr} \to \Bin$ preserves cokernel pairs, and hence preserves epimorphisms (using the general fact that $f : X \to Y$ is an epimorphism if and only if $\nabla : Y \sqcup_X Y \to Y$ is an isomorphism). Moreover, the epimorphisms in <a href="/category/Bin">$\Bin$</a> have already been identified as being surjective.'
+    proof: 'For the non-trivial direction, the construction of cokernel pairs shows that the forgetful functor $\Bin_{\irr} \to \Bin$ preserves cokernel pairs, and hence preserves epimorphisms (using the general fact that $f : X \to Y$ is an epimorphism if and only if $\nabla : Y \sqcup_X Y \to Y$ is an isomorphism). Moreover, the epimorphisms in $\Bin$ are surjective (<a href="/category/Bin?proof=epimorphism" data-allow-deduced>proof</a>).'
   regular monomorphism:
     description: injective maps that reflect and preserve the relation
-    proof: 'First of all, we know that the regular monomorphisms in <a href="/category/Bin">$\Bin$</a> have this description. The forgetful functor $\Bin_{\irr} \to \Bin$ preserves equalizers, in fact all non-empty limits (by their construction), and hence preserves regular monomorphisms. This proves one direction. Now assume that $X \to Y$ is a morphism in $\Bin_{\irr}$ that is injective and reflects the relation, i.e. is an embedding. Then it is a regular monomorphism in $\Bin$. Since $\Bin$ has cokernel pairs, it follows that $X \to Y$ is the equalizer of its cokernel pair $Y \rightrightarrows Y \sqcup_X Y$ by <a href="/content/regular-epis-kernel-pairs">this lemma</a>. Since $Y \sqcup_X Y \in \Bin_{\irr}$ (see our proof that cokernel pairs exist), we conclude that $X \to Y$ is also the equalizer of its cokernel pair in $\Bin_{\irr}$.'
+    proof: 'First of all, the regular monomorphisms in $\Bin$ have this description (<a href="/category/Bin?proof=regular_monomorphism" data-allow-deduced>proof</a>). The forgetful functor $\Bin_{\irr} \to \Bin$ preserves equalizers, in fact all non-empty limits (by their construction), and hence preserves regular monomorphisms. This proves one direction. Now assume that $X \to Y$ is a morphism in $\Bin_{\irr}$ that is injective and reflects the relation, i.e. is an embedding. Then it is a regular monomorphism in $\Bin$. Since $\Bin$ has cokernel pairs (<a href="/category/Bin?proof=cokernel_pairs" data-allow-deduced>proof</a>), it follows that $X \to Y$ is the equalizer of its cokernel pair $Y \rightrightarrows Y \sqcup_X Y$ by <a href="/content/regular-epis-kernel-pairs">this lemma</a>. Since $Y \sqcup_X Y \in \Bin_{\irr}$ (see our <a href="/category/Bin_irr?proof=cokernel_pairs">proof</a> that cokernel pairs exist), we conclude that $X \to Y$ is also the equalizer of its cokernel pair in $\Bin_{\irr}$.'
   regular epimorphism:
     description: >-
       morphisms $f : (X,R) \to (Y,S)$ such that $f : X \to Y$ is surjective and $S = \{(f(x),f(x')) : (x,x') \in R\}$
     proof: >-
-      Assume first that $f : (X,R) \to (Y,S)$ is a morphism in $\Bin_{\irr}$ such that $f$ is surjective and $S = \{(f(x),f(x')) : (x,x') \in R\}$. Then we already know that $f$ is the coequalizer of its kernel pair in <a href="/category/Bin">$\Bin$</a>. Since the kernel pair is contained in $\Bin_{\irr}$, it is also a coequalizer in $\Bin_{\irr}$.
+      Assume first that $f : (X,R) \to (Y,S)$ is a morphism in $\Bin_{\irr}$ such that $f$ is surjective and $S = \{(f(x),f(x')) : (x,x') \in R\}$. Then $f$ is the coequalizer of its kernel pair in $\Bin$ (<a href="/category/Bin?proof=regular_epimorphism" data-allow-deduced>proof</a>). Since the kernel pair is contained in $\Bin_{\irr}$, it is also a coequalizer in $\Bin_{\irr}$.
 
-      Conversely, assume that $f : (X,R) \to (Y,S)$ is a regular epimorphism in $\Bin_{\irr}$. In particular, it is an epimorphism, so that $f : X \to Y$ is surjective by what we have seen before. We may factor $f$ in $\Bin_{\irr}$ as
+      Conversely, assume that $f : (X,R) \to (Y,S)$ is a regular epimorphism in $\Bin_{\irr}$. In particular, it is an epimorphism, so that $f : X \to Y$ is surjective (<a href="/category/Bin_irr?proof=epimorphism" data-allow-deduced>proof</a>). We may factor $f$ in $\Bin_{\irr}$ as
       $$(X,R) \to (Y,S') \hookrightarrow (Y,S),$$
       where $S' \coloneqq \{(f(x),f(x')) : (x,x') \in R\} \subseteq S$. Here, $(Y,S') \hookrightarrow (Y,S)$ is a monomorphism since the underlying map $\id_Y : Y \to Y$ is injective. Since $f$ is a regular epimorphism, hence an extremal epimorphism, $(Y,S') \hookrightarrow (Y,S)$ must be an isomorphism. That is, we have $S' = S$, as required.

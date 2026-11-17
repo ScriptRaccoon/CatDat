@@ -20,7 +20,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\Met_\c \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
+    proof: There is a forgetful functor $\Met_\c \to \Set$, and $\Set$ is locally small (<a href="/category/Set?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: semi-strongly connected
     proof: Every non-empty metric space is weakly terminal (by using constant maps).
@@ -40,7 +40,7 @@ satisfied_properties:
     check_redundancy: false
 
   - property: infinitary extensive
-    proof: This follows from Lemma 11 <a href="/content/subcategories">here</a> since <a href="/category/Top">$\Top$</a> is infinitary extensive and its full subcategory $\Met_\c$ of metrizable topological spaces is closed under pullbacks and coproducts in $\Top$.
+    proof: This follows from Lemma 11 <a href="/content/subcategories">here</a> since $\Top$ is infinitary extensive (<a href="/category/Top?proof=infinitary_extensive" data-allow-deduced>proof</a>) and its full subcategory $\Met_\c$ of metrizable topological spaces is closed under pullbacks and coproducts in $\Top$.
 
   - property: cokernel pairs
     proof: >-
@@ -51,7 +51,7 @@ satisfied_properties:
       A more direct proof that $X \sqcup_C X$ is metrizable can be found at <a href="https://math.stackexchange.com/questions/5147463">MSE/5147463</a>.
 
   - property: effective cocongruences
-    proof: 'Suppose we have a cocongruence $X \rightrightarrows C$ in $\Met_\c$. Then the image in $\Haus$ is a coreflexive corelation (since epimorphisms in both categories are continuous maps with dense image). By <a href="https://mathoverflow.net/a/509582">MO/509548</a>, that implies that image is of the form $X +_S X$ for a closed subset $S$ of $X$. Since $S$ is metrizable, and the functor $\Met_\c \to \Haus$ is fully faithful <a href="https://ncatlab.org/nlab/show/reflected+limit#FullSubcategoryInclusionReflectCoLimits">and therefore reflects colimits</a>, we conclude that $C$ is effective in $\Met_\c$.'
+    proof: 'Suppose we have a cocongruence $X \rightrightarrows C$ in $\Met_\c$. Then the image in $\Haus$ is a coreflexive corelation, since the epimorphisms are the continuous maps with dense image in $\Met_\c$ (<a href="/category/Met_c?proof=epimorphism" data-allow-deduced>proof</a>) and in $\Haus$ (<a href="/category/Haus?proof=epimorphism" data-allow-deduced>proof</a>). By <a href="https://mathoverflow.net/a/509582">MO/509548</a>, that implies that image is of the form $X +_S X$ for a closed subset $S$ of $X$. Since $S$ is metrizable, and the functor $\Met_\c \to \Haus$ is fully faithful <a href="https://ncatlab.org/nlab/show/reflected+limit#FullSubcategoryInclusionReflectCoLimits">and therefore reflects colimits</a>, we conclude that $C$ is effective in $\Met_\c$.'
 
   - property: well-powered
     proof: This follows easily from the fact that monomorphisms are injective in this category.
@@ -106,7 +106,7 @@ unsatisfied_properties:
     proof: See <a href="https://mathoverflow.net/questions/511433">MO/511433</a> for a proof that the diagram $\omega_1 \to \Met_\c$, $\alpha \mapsto \IR^\alpha$ does not have a colimit.
 
   - property: coequalizers of kernel pairs
-    proof: The sequence of embeddings $\IR^1 \hookrightarrow \IR^2 \hookrightarrow \IR^3 \hookrightarrow \cdots$, where each map appends a zero coordinate, has no colimit by <a href="https://mathoverflow.net/questions/510316">MO/510316</a>. It has a cocone consisting of the embeddings $\IR^n \hookrightarrow \ell^2$, $x \mapsto (x,0,0,\dotsc)$, where $\ell^2$ is the Hilbert space of square-summable sequences. Since $\Met_\c$ is infinitary extensive, it follows from Lemma 2 <a href="/content/monic_sequential_colimits">here</a> that $\Met_\c$ does not have coequalizers of kernel pairs.
+    proof: The sequence of embeddings $\IR^1 \hookrightarrow \IR^2 \hookrightarrow \IR^3 \hookrightarrow \cdots$, where each map appends a zero coordinate, has no colimit by <a href="https://mathoverflow.net/questions/510316">MO/510316</a>. It has a cocone consisting of the embeddings $\IR^n \hookrightarrow \ell^2$, $x \mapsto (x,0,0,\dotsc)$, where $\ell^2$ is the Hilbert space of square-summable sequences. Since $\Met_\c$ is infinitary extensive (<a href="/category/Met_c?proof=infinitary_extensive" data-allow-deduced>proof</a>), it follows from Lemma 2 <a href="/content/monic_sequential_colimits">here</a> that $\Met_\c$ does not have coequalizers of kernel pairs.
 
   - property: pullback-stable regular epimorphisms
     proof: >-
@@ -148,7 +148,7 @@ special_morphisms:
   regular epimorphism:
     description: 'A continuous map $f : X \to Y$ of metrizable spaces is a regular epimorphism if and only if $f$ is surjective and $Y$ carries the "final metric topology" with respect to $f$; by this we mean that, for every metrizable space $Z$ (not necessarily every topological space) and every set map $g : Y \to Z$ such that $g \circ f$ is continuous, $g$ is continuous. Furthermore, it is sufficient to demand this for $Z = \IR$.'
     proof: >-
-      Assume first that $f$ is surjective and that $Y$ carries the final metric topology. Then it is straightforward to check, using the corresponding fact for $\Set$, that $f$ is the coequalizer of its kernel pair $X \times_Y X \rightrightarrows X$.
+      Assume first that $f$ is surjective and that $Y$ carries the final metric topology. Then it is straightforward to check, using that surjective maps are regular epimorphisms in $\Set$ (<a href="/category/Set?proof=regular_epimorphism" data-allow-deduced>proof</a>), that $f$ is the coequalizer of its kernel pair $X \times_Y X \rightrightarrows X$.
 
       Conversely, assume that $f : X \to Y$ is the coequalizer of $u,v : U \rightrightarrows X$. Let $Y' \subseteq Y$ be the image of $f$, equipped with the subspace topology, which is metrizable. Then $f$ factors through the inclusion $i : Y' \hookrightarrow Y$, which is a monomorphism. Since every regular epimorphism is extremal, $i$ is an isomorphism, so $f$ is surjective.
 

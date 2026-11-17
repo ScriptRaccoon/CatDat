@@ -19,10 +19,10 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\FreeAb \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
+    proof: There is a forgetful functor $\FreeAb \to \Set$, and $\Set$ is locally small (<a href="/category/Set?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: additive
-    proof: The embedding $\FreeAb \hookrightarrow \Ab$ is closed under (finite) direct sums, and <a href="/category/Ab">$\Ab$</a> is additive.
+    proof: The embedding $\FreeAb \hookrightarrow \Ab$ is closed under (finite) direct sums, and $\Ab$ is additive (<a href="/category/Ab?proof=additive" data-allow-deduced>proof</a>).
 
   - property: coproducts
     proof: This is because free abelian groups are closed under direct sums of abelian groups.
@@ -44,7 +44,7 @@ satisfied_properties:
     proof: 'Let $f : A \to B$ be a homomorphism of free abelian groups. The coequalizer of its kernel pair $A \times_B A \rightrightarrows A$ in $\Ab$ is the image $\im(f)$. As a subgroup of $B$, it is also free abelian. Then it is also the coequalizer of the kernel pair in $\FreeAb$.'
 
   - property: pullback-stable regular epimorphisms
-    proof: 'Apply the dual of Lemma 14 <a href="/content/subcategories">here</a> to the inclusion $\FreeAb \to \Ab$. It preserves pullbacks since subgroups of free abelian groups are free, and it preserves regular epimorphisms since these are the surjective homomorphisms in both categories (<a href="/category/FreeAb?proof=regular_epimorphism">proof</a> for $\FreeAb$ and <a href="/category/Ab?proof=regular_epimorphism" data-allow-deduced>proof</a> for $\Ab$). Here, we use that <a href="/category/Ab">$\Ab$</a> has pullback-stable regular epimorphisms.'
+    proof: 'Apply the dual of Lemma 14 <a href="/content/subcategories">here</a> to the inclusion $\FreeAb \to \Ab$. It preserves pullbacks since subgroups of free abelian groups are free, and it preserves regular epimorphisms since these are the surjective homomorphisms in $\FreeAb$ (<a href="/category/FreeAb?proof=regular_epimorphism">proof</a>) and in $\Ab$ (<a href="/category/Ab?proof=regular_epimorphism" data-allow-deduced>proof</a>). Here, we use that $\Ab$ has pullback-stable regular epimorphisms (<a href="/category/Ab?proof=pullback-stable_regular_epimorphisms" data-allow-deduced>proof</a>).'
 
   - property: extremal cogenerator
     proof: >-
@@ -145,7 +145,7 @@ special_objects:
 special_morphisms:
   isomorphism:
     description: bijective homomorphisms
-    proof: It is a full subcategory of $\Ab$, for which we know that isomorphisms are bijective homomorphisms.
+    proof: It is a full subcategory of $\Ab$, for which isomorphisms are bijective homomorphisms (<a href="/category/Ab?proof=isomorphism" data-allow-deduced>proof</a>).
   monomorphism:
     description: injective homomorphisms
     proof: The non-trivial direction follows from the observation that the forgetful functor to $\Set$ is representable (by $\IZ$), hence preserves monomorphisms.

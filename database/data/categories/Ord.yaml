@@ -20,7 +20,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\Ord \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
+    proof: There is a forgetful functor $\Ord \to \Set$, and $\Set$ is locally small (<a href="/category/Set?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: semi-strongly connected
     proof: Every non-empty ordered set is weakly terminal (by using constant maps).
@@ -70,7 +70,7 @@ satisfied_properties:
     proof: >-
       We claim that every finite ordered set $(X,\leq)$ is strongly finitely presentable, i.e. $\Hom((X,\leq),-) : \Ord \to \Set$ preserves sifted colimits. In particular, every finite ordered set is finitely presentable.
 
-      To see this, let $n$ be the number of elements of $X$, and let $U : \Ord \to \Set$ be the forgetful functor. We may identify $\Hom((X,\leq),-)$ with the subfunctor of $U^n$ of increasing $n$-tuples. Sorting $n$-tuples defines a retraction $U^n \to \Hom((X,\leq),-)$ of the inclusion, which is natural since order-preserving maps commute with sorting. The functor $U^n$ preserves sifted colimits, since $U$ does (see the <a href="/category/Ord?proof=sifted_colimits">proof</a> for sifted colimits) and sifted colimits commute with finite products in $\Set$. Now, for a sifted diagram $D : \I \to \Ord$, $i \mapsto (Y_i,\leq)$ with colimit $(C,\leq)$, the canonical map
+      To see this, let $n$ be the number of elements of $X$, and let $U : \Ord \to \Set$ be the forgetful functor. We may identify $\Hom((X,\leq),-)$ with the subfunctor of $U^n$ of increasing $n$-tuples. Sorting $n$-tuples defines a retraction $U^n \to \Hom((X,\leq),-)$ of the inclusion, which is natural since order-preserving maps commute with sorting. The functor $U^n$ preserves sifted colimits, since $U$ does (<a href="/category/Ord?proof=sifted_colimits">proof</a>) and sifted colimits commute with finite products in $\Set$. Now, for a sifted diagram $D : \I \to \Ord$, $i \mapsto (Y_i,\leq)$ with colimit $(C,\leq)$, the canonical map
       $$\colim_i \Hom((X,\leq),(Y_i,\leq)) \to \Hom((X,\leq),(C,\leq))$$
       is a retract of the canonical map $\colim_i Y_i^n \to C^n$, which is bijective. Hence, it is bijective as well.
 
@@ -78,7 +78,7 @@ satisfied_properties:
 
   - property: generalized variety
     proof: >-
-      We already know that $\Ord$ has sifted colimits. By the claim in the <a href="/category/Ord?proof=finitely_accessible">proof</a> of finite accessibility, the finite ordered sets are strongly finitely presentable, and every ordered set is a filtered colimit, hence a sifted colimit, of finite ordered sets.
+      We already know that $\Ord$ has sifted colimits (<a href="/category/Ord?proof=sifted_colimits" data-allow-deduced>proof</a>). By the claim in the <a href="/category/Ord?proof=finitely_accessible">proof</a> of finite accessibility, the finite ordered sets are strongly finitely presentable, and every ordered set is a filtered colimit, hence a sifted colimit, of finite ordered sets.
 
       <strong>Remark.</strong> In <a href="http://www.tac.mta.ca/tac/volumes/8/n3/8-03abs.html">Adámek–Rosický</a>, Example 4.3(3), $\Ord$ is said to be <a href="/category-property/multi-algebraic">multi-algebraic</a>, in particular to have connected limits, by giving an FPC-sketch for it. This is not correct, since it does not even have binary products, which are pullbacks over the terminal object. The models of this sketch are the ordered sets, but its morphisms are the strictly increasing maps, since they have to preserve the strict order relation. The sketch in <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adámek–Rosický</a>, Example 2.57, cited there, does describe $\Ord$, but it is not an FPC-sketch, since it includes a pushout cocone.
 

@@ -27,4 +27,4 @@ unsatisfied_properties:
 
   - property: well-copointed
     # TODO: automate this with category_conclusions
-    proof: The monoidal unit $\{\ast\}$ is a terminal object, so that $\Hom(-,\{\ast\})$ is constant with value a singleton. It is not faithful since $\Set$ is not thin.
+    proof: The monoidal unit $\{\ast\}$ is a terminal object, so that $\Hom(-,\{\ast\})$ is constant with value a singleton. It is not faithful since $\Set$ is not thin (<a href="/category/Set?proof=thin" data-allow-deduced>proof</a>).

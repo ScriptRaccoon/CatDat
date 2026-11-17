@@ -21,7 +21,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\Pos \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
+    proof: There is a forgetful functor $\Pos \to \Set$, and $\Set$ is locally small (<a href="/category/Set?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: locally finitely presentable
     proof: See <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adámek–Rosický</a>, Example 1.10.
@@ -33,7 +33,7 @@ satisfied_properties:
     proof: Every non-empty poset is weakly terminal (by using constant maps).
 
   - property: infinitary extensive
-    proof: This follows from Lemma 11 <a href="/content/subcategories">here</a> since <a href="/category/PreOrd">$\PreOrd$</a> is infinitary extensive and its full subcategory $\Pos$ is closed under pullbacks and coproducts in $\PreOrd$.
+    proof: This follows from Lemma 11 <a href="/content/subcategories">here</a> since $\PreOrd$ is infinitary extensive (<a href="/category/PreOrd?proof=infinitary_extensive" data-allow-deduced>proof</a>) and its full subcategory $\Pos$ is closed under pullbacks and coproducts in $\PreOrd$.
 
   - property: pushout-stable regular monomorphisms
     proof: See <a href="https://math.stackexchange.com/questions/5130295">MSE/5130295</a>.

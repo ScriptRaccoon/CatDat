@@ -25,7 +25,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\Met \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
+    proof: There is a forgetful functor $\Met \to \Set$, and $\Set$ is locally small (<a href="/category/Set?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: strict initial object
     proof: The empty set $\varnothing$ with its unique metric is initial and clearly strict.
@@ -45,10 +45,10 @@ satisfied_properties:
     check_redundancy: false
 
   - property: coequalizers
-    proof: This is because <a href="/category/PMet">$\PMet$</a> has coequalizers and the inclusion $\Met \hookrightarrow \PMet$ has the left adjoint $L$ that identifies points with zero distance. Concretely, we take the coequalizer in $\PMet$ and then apply $L$.
+    proof: This is because $\PMet$ has coequalizers (<a href="/category/PMet?proof=coequalizers" data-allow-deduced>proof</a>) and the inclusion $\Met \hookrightarrow \PMet$ has the left adjoint $L$ that identifies points with zero distance. Concretely, we take the coequalizer in $\PMet$ and then apply $L$.
 
   - property: filtered colimits
-    proof: This is because <a href="/category/PMet">$\PMet$</a> has filtered colimits and the inclusion $\Met \hookrightarrow \PMet$ has the left adjoint $L$ that identifies points with zero distance. Concretely, we take the filtered colimit in $\PMet$ and then apply $L$.
+    proof: This is because $\PMet$ has filtered colimits (<a href="/category/PMet?proof=filtered_colimits" data-allow-deduced>proof</a>) and the inclusion $\Met \hookrightarrow \PMet$ has the left adjoint $L$ that identifies points with zero distance. Concretely, we take the filtered colimit in $\PMet$ and then apply $L$.
     check_redundancy: false
 
   - property: cartesian filtered colimits
@@ -61,7 +61,7 @@ satisfied_properties:
 
   - property: ℵ₁-accessible
     proof: >-
-      We use the <a href="/category/PMet?proof=aleph1-accessible">proof</a> for $\PMet$. Let $(X_i,d_i)_{i \in I}$ be a diagram of metric spaces indexed by an $\aleph_1$-directed poset $I$, and let $(u_i : (X_i,d_i) \to (X,d))_{i \in I}$ be its colimit in $\PMet$. We claim that $d$ is a metric. Let $x,y \in X$ with $d(x,y) = 0$. By the claim in the proof for $\PMet$, applied to $S \coloneqq \{x,y\}$, there are $k \in I$ and preimages $x_k,y_k \in X_k$ of $x,y$ with $d_k(x_k,y_k) = d(x,y) = 0$. Since $d_k$ is a metric, we get $x_k = y_k$, and hence $x = y$. Since $\Met$ is a full subcategory of $\PMet$, it follows that $(X,d)$ is also the colimit in $\Met$. (This fails for $\aleph_0$-directed colimits, see the <a href="/category/Met?proof=filtered-colimit-stable_monomorphisms">proof</a> for filtered-colimit-stable monomorphisms below.)
+      We use the <a href="/category/PMet?proof=aleph1-accessible">proof</a> for $\PMet$. Let $(X_i,d_i)_{i \in I}$ be a diagram of metric spaces indexed by an $\aleph_1$-directed poset $I$, and let $(u_i : (X_i,d_i) \to (X,d))_{i \in I}$ be its colimit in $\PMet$. We claim that $d$ is a metric. Let $x,y \in X$ with $d(x,y) = 0$. By the claim in the proof for $\PMet$, applied to $S \coloneqq \{x,y\}$, there are $k \in I$ and preimages $x_k,y_k \in X_k$ of $x,y$ with $d_k(x_k,y_k) = d(x,y) = 0$. Since $d_k$ is a metric, we get $x_k = y_k$, and hence $x = y$. Since $\Met$ is a full subcategory of $\PMet$, it follows that $(X,d)$ is also the colimit in $\Met$. (This fails for $\aleph_0$-directed colimits, as the <a href="/category/Met?proof=filtered-colimit-stable_monomorphisms">counterexample</a> for filtered-colimit-stable monomorphisms shows.)
 
       Consequently, every countable metric space is $\aleph_1$-presentable in $\Met$, since it is $\aleph_1$-presentable in $\PMet$. Likewise, every metric space is the $\aleph_1$-directed colimit of its countable subspaces in $\Met$, since this holds in $\PMet$. Hence, $\Met$ is $\aleph_1$-accessible.
 
@@ -172,6 +172,6 @@ special_morphisms:
     description: >-
       For a morphism $f : (X,d_X) \to (Y,d_Y)$ the following are equivalent: (1) $f$ is a regular epimorphism. (2) $f$ is surjective and $d_Y$ is the largest metric on $Y$ for which $f$ is non-expansive. (3) $f$ is surjective and for all $x,x' \in X$, $d_Y(f(x),f(x'))$ is the infimum of the sums $\sum_{i=0}^{n-1} d_X(x'_i,x_{i+1})$, where $n \geq 0$ and $x_0,\dotsc,x_n,x'_0,\dotsc,x'_n \in X$ satisfy $f(x_0) = f(x)$, $f(x_i) = f(x'_i)$ for $0 \leq i \leq n$, and $f(x'_n) = f(x')$.
     proof: >-
-      (1) $\iff$ (2): The <a href="/category/Met_oo?proof=regular_epimorphism">proof</a> for $\Met_\infty$ works verbatim with (pseudo-)metrics instead of extended (pseudo-)metrics. The only additional point is that the supremum $\rho$ of all pseudo-metrics on $Y$ for which a surjective morphism $f : (X,d_X) \to (Y,d_Y)$ is non-expansive takes finite values, since $\rho(f(x),f(x')) \leq d_X(x,x')$. Every coequalizer in $\Met$ is surjective by the construction of coequalizers above.
+      (1) $\iff$ (2): The <a href="/category/Met_oo?proof=regular_epimorphism">proof</a> for $\Met_\infty$ works verbatim with (pseudo-)metrics instead of extended (pseudo-)metrics. The only additional point is that the supremum $\rho$ of all pseudo-metrics on $Y$ for which a surjective morphism $f : (X,d_X) \to (Y,d_Y)$ is non-expansive takes finite values, since $\rho(f(x),f(x')) \leq d_X(x,x')$. Every coequalizer in $\Met$ is surjective by the <a href="/category/Met?proof=coequalizers">construction of coequalizers</a> above.
 
-      (2) $\iff$ (3): As in the proof for $\Met_\infty$, (2) means precisely that $d_Y = \rho$. The <a href="/category/PMet?proof=regular_epimorphism">proof</a> for $\PMet$ shows that $\rho(f(x),f(x'))$ is the infimum in (3).
+      (2) $\iff$ (3): As in the <a href="/category/Met_oo?proof=regular_epimorphism">proof</a> for $\Met_\infty$, (2) means precisely that $d_Y = \rho$. The <a href="/category/PMet?proof=regular_epimorphism">proof</a> for $\PMet$ shows that $\rho(f(x),f(x'))$ is the infimum in (3).

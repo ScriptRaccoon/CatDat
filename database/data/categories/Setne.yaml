@@ -17,7 +17,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\Setne \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
+    proof: There is a forgetful functor $\Setne \to \Set$, and $\Set$ is locally small (<a href="/category/Set?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: extremal generator
     proof: The one-point set is an extremal generator even in $\Set$ (<a href="/category/Set?proof=extremal_generator">proof</a>). Now use Lemma 10 <a href="/content/subcategories">here</a>.
@@ -27,7 +27,7 @@ satisfied_properties:
     proof: The two-point set is an extremal cogenerator even in $\Set$ (<a href="/category/Set?proof=extremal_cogenerator">proof</a>). Now use Lemma 10 <a href="/content/subcategories">here</a>.
 
   - property: all epimorphisms split
-    proof: Apply Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\Setne \hookrightarrow \Set$, which preserves epimorphisms since these are surjective in both categories (<a href="/category/Setne?proof=epimorphism">proof</a> for $\Setne$ and <a href="/category/Set?proof=epimorphism">proof</a> for $\Set$), and use that <a href="/category/Set">$\Set$</a> has all epimorphisms split.
+    proof: Apply Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\Setne \hookrightarrow \Set$, which preserves epimorphisms since these are surjective in $\Setne$ (<a href="/category/Setne?proof=epimorphism">proof</a>) and in $\Set$ (<a href="/category/Set?proof=epimorphism">proof</a>), and use that $\Set$ has all epimorphisms split (<a href="/category/Set?proof=all_epimorphisms_split" data-allow-deduced>proof</a>).
 
   - property: all monomorphisms split
     proof: 'Let $i : X \to Y$ be a monomorphism, i.e. an injective map (<a href="/category/Setne?proof=monomorphism">proof</a>). Since $X$ is non-empty, we may choose an element $x_0 \in X$. Then the map $r : Y \to X$ with $r(i(x)) = x$ for $x \in X$ and $r(y) = x_0$ for $y \notin i(X)$ satisfies $r \circ i = \id_X$.'
@@ -36,11 +36,11 @@ satisfied_properties:
     proof: Take the product of non-empty sets inside of <a href="/category/Set">$\Set$</a> and observe that it is non-empty by the axiom of choice.
 
   - property: cartesian closed
-    proof: This is because <a href="/category/Set">$\Set$</a> is cartesian closed and since for non-empty sets $X,Y$ there is at least one function $X \to Y$.
+    proof: This is because $\Set$ is cartesian closed (<a href="/category/Set?proof=cartesian_closed" data-allow-deduced>proof</a>) and since for non-empty sets $X,Y$ there is at least one function $X \to Y$.
 
   - property: kernel pairs
     proof: >-
-      This is because <a href="/category/Set">$\Set$</a> has kernel pairs and for a map $f : X \to Y$ between non-empty sets $X,Y$ the kernel pair $\{(x,x') \in X \times X : f(x) = f(x')\}$ is also non-empty.
+      This is because $\Set$ has kernel pairs (<a href="/category/Set?proof=kernel_pairs" data-allow-deduced>proof</a>), and for a map $f : X \to Y$ between non-empty sets $X,Y$ the kernel pair $\{(x,x') \in X \times X : f(x) = f(x')\}$ is also non-empty.
 
   - property: binary coproducts
     proof: The disjoint union of two non-empty sets is non-empty.
@@ -92,7 +92,7 @@ special_objects:
 special_morphisms:
   isomorphism:
     description: bijective maps
-    proof: It is a full subcategory of $\Set$, for which we know that isomorphisms are bijective maps.
+    proof: It is a full subcategory of $\Set$, for which isomorphisms are bijective maps (<a href="/category/Set?proof=isomorphism" data-allow-deduced>proof</a>).
   monomorphism:
     description: injective maps
     proof: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.

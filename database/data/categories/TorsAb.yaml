@@ -16,18 +16,18 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\TorsAb \to \Ab$ and $\Ab$ is locally small.
+    proof: There is a forgetful functor $\TorsAb \to \Ab$, and $\Ab$ is locally small (<a href="/category/Ab?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: cocomplete
-    proof: The embedding $\TorsAb \hookrightarrow \Ab$ is closed under colimits and <a href="/category/Ab">$\Ab$</a> is cocomplete.
+    proof: The embedding $\TorsAb \hookrightarrow \Ab$ is closed under colimits, and $\Ab$ is cocomplete (<a href="/category/Ab?proof=cocomplete" data-allow-deduced>proof</a>).
     check_redundancy: false
 
   - property: complete
-    proof: The embedding $\TorsAb \hookrightarrow \Ab$ has a right adjoint, sending an abelian group $A$ to its torsion subgroup $T(A)$. Since <a href="/category/Ab">$\Ab$</a> is complete, $\TorsAb$ is complete as well. The limit of a diagram of torsion abelian groups is the torsion subgroup of the limit of the underlying abelian groups. Notice that the torsion subgroup is not required in the case of equalizers, since a subgroup of a torsion abelian group is already torsion. Also, a <i>finite</i> product of torsion abelian groups is already torsion.
+    proof: The embedding $\TorsAb \hookrightarrow \Ab$ has a right adjoint, sending an abelian group $A$ to its torsion subgroup $T(A)$. Since $\Ab$ is complete (<a href="/category/Ab?proof=complete" data-allow-deduced>proof</a>), $\TorsAb$ is complete as well. The limit of a diagram of torsion abelian groups is the torsion subgroup of the limit of the underlying abelian groups. Notice that the torsion subgroup is not required in the case of equalizers, since a subgroup of a torsion abelian group is already torsion. Also, a <i>finite</i> product of torsion abelian groups is already torsion.
     check_redundancy: false
 
   - property: preadditive
-    proof: It is a full subcategory of the preadditive category <a href="/category/Ab">$\Ab$</a>.
+    proof: It is a full subcategory of the preadditive category $\Ab$.
 
   - property: normal
     proof: 'If $f : A \to B$ is a monomorphism, it is injective (<a href="/category/TorsAb?proof=monomorphism">proof</a>). In <a href="/category/Ab">$\Ab$</a> it is then the kernel of $B \to B/f(A)$. Since $B/f(A)$ is torsion, it is also the kernel in $\TorsAb$.'
@@ -36,14 +36,14 @@ satisfied_properties:
     proof: 'If $f : A \to B$ is an epimorphism, it is surjective (<a href="/category/TorsAb?proof=epimorphism">proof</a>). In <a href="/category/Ab">$\Ab$</a> it is then the cokernel of its kernel $K \hookrightarrow A$. Since $K$ is torsion, it is also the cokernel in $\TorsAb$.'
 
   - property: finitely accessible
-    proof: We already know that (filtered) colimits exist and are preserved by the forgetful functor to $\Ab$. Every torsion abelian group is the filtered colimit of its finitely generated subgroups (which are finite). These are finitely presentable in $\Ab$, hence also in $\TorsAb$.
+    proof: We already know that (filtered) colimits exist and are preserved by the forgetful functor to $\Ab$ (<a href="/category/TorsAb?proof=cocomplete">proof</a>). Every torsion abelian group is the filtered colimit of its finitely generated subgroups (which are finite). These are finitely presentable in $\Ab$, hence also in $\TorsAb$.
 
 unsatisfied_properties:
   - property: skeletal
     proof: The trivial groups with underlying sets $\{0\}$ and $\{1\}$ are zero objects, hence isomorphic, but not equal.
 
   - property: all epimorphisms split
-    proof: Apply the contrapositive of Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\FinAb \hookrightarrow \TorsAb$, which preserves epimorphisms since these are surjective in both categories (<a href="/category/FinAb?proof=epimorphism">proof</a> for $\FinAb$ and <a href="/category/TorsAb?proof=epimorphism">proof</a> for $\TorsAb$), and use that <a href="/category/FinAb">$\FinAb$</a> does not have all epimorphisms split.
+    proof: Apply the contrapositive of Lemma 15 <a href="/content/subcategories">here</a> to the inclusion $\FinAb \hookrightarrow \TorsAb$, which preserves epimorphisms since these are surjective in $\FinAb$ (<a href="/category/FinAb?proof=epimorphism">proof</a>) and in $\TorsAb$ (<a href="/category/TorsAb?proof=epimorphism">proof</a>), and use that $\FinAb$ does not have all epimorphisms split (<a href="/category/FinAb?proof=all_epimorphisms_split" data-allow-deduced>proof</a>).
 
   - property: finitary algebraic
     proof: >-
@@ -64,7 +64,7 @@ special_objects:
 special_morphisms:
   isomorphism:
     description: bijective group homomorphisms
-    proof: It is a full subcategory of $\Ab$, for which we know that isomorphisms are bijective homomorphisms.
+    proof: It is a full subcategory of $\Ab$, for which isomorphisms are bijective homomorphisms (<a href="/category/Ab?proof=isomorphism" data-allow-deduced>proof</a>).
   monomorphism:
     description: injective group homomorphisms
     proof: 'For the non-trivial direction, assume $f : A \to B$ is a monomorphism and $a \in A$ satisfies $f(a)=0$. Choose $n \geq 1$ with $n a = 0$. Then $a$ corresponds to a homomorphism of torsion abelian groups $\tilde{a} : \IZ/n \to A$ satisfying $f \circ \tilde{a} = 0$. Hence, $\tilde{a} = 0$, which means $a = 0$.'

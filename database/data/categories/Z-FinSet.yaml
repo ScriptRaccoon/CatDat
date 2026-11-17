@@ -20,26 +20,26 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: It is a full subcategory of <a href="/category/Z-Set">$\IZ{-}\Set$</a>, which is locally small.
+    proof: It is a full subcategory of $\IZ{-}\Set$, which is locally small (<a href="/category/Z-Set?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: locally finite
-    proof: This follows easily from the fact that <a href="/category/FinSet">$\FinSet$</a> is locally finite.
+    proof: This follows easily from the fact that $\FinSet$ is locally finite (<a href="/category/FinSet?proof=locally_finite" data-allow-deduced>proof</a>).
 
   - property: essentially countable
-    proof: This is because the category is locally small and every object is isomorphic to an object of the form $(\{1,\dotsc,n\},\sigma)$, where $n \in \IN$ and $\sigma$ is a permutation of $\{1,\dotsc,n\}$.
+    proof: This is because the category is locally small (<a href="/category/Z-FinSet?proof=locally_small" data-allow-deduced>proof</a>) and every object is isomorphic to an object of the form $(\{1,\dotsc,n\},\sigma)$, where $n \in \IN$ and $\sigma$ is a permutation of $\{1,\dotsc,n\}$.
 
   - property: finitely complete
     proof: >-
-      The category is the functor category $[B\IZ,\FinSet]$, so this follows from the fact that <a href="/category/FinSet">$\FinSet$</a> is finitely complete. Concretely, a finite limit of finite $\IZ$-sets $(X_i,\sigma_i)$ is constructed using the finite limit of the underlying finite sets $X_i$, equipped with the obvious permutation induced by the $\sigma_i$.
+      The category is the functor category $[B\IZ,\FinSet]$, so this follows from the fact that $\FinSet$ is finitely complete (<a href="/category/FinSet?proof=finitely_complete" data-allow-deduced>proof</a>). Concretely, a finite limit of finite $\IZ$-sets $(X_i,\sigma_i)$ is constructed using the finite limit of the underlying finite sets $X_i$, equipped with the obvious permutation induced by the $\sigma_i$.
 
       Remark: The same works with finite colimits.
     check_redundancy: false
 
   - property: cartesian closed
-    proof: 'We already know that finite products exist. Exponentials exist because <a href="/category/Z-Set">$\IZ{-}\Set$</a> is cartesian closed, and the full subcategory $\IZ{-}\FinSet$ is closed under exponentials. Concretely, the exponential of two $\IZ$-sets $(X,\sigma)$ and $(Y,\tau)$ is $(\Hom(X,Y),\rho)$, where $\Hom(X,Y)$ is the set of maps $f : X \to Y$ and $\rho(f) = \tau \circ f \circ \sigma^{-1}$. If $X,Y$ are finite, then $\Hom(X,Y)$ is finite as well.'
+    proof: 'We already know that finite products exist (<a href="/category/Z-FinSet?proof=finite_products" data-allow-deduced>proof</a>). Exponentials exist because $\IZ{-}\Set$ is cartesian closed (<a href="/category/Z-Set?proof=cartesian_closed" data-allow-deduced>proof</a>), and the full subcategory $\IZ{-}\FinSet$ is closed under exponentials. Concretely, the exponential of two $\IZ$-sets $(X,\sigma)$ and $(Y,\tau)$ is $(\Hom(X,Y),\rho)$, where $\Hom(X,Y)$ is the set of maps $f : X \to Y$ and $\rho(f) = \tau \circ f \circ \sigma^{-1}$. If $X,Y$ are finite, then $\Hom(X,Y)$ is finite as well.'
 
   - property: subobject classifier
-    proof: 'We already know that finite limits exist. Since the monomorphisms are the injective morphisms (<a href="/category/Z-FinSet?proof=monomorphism">proof</a>), the subobjects of $(X,\sigma)$ are the objects $(U,\sigma|_U)$, where $U \subseteq X$ is a subset such that $\sigma_*(U)=U$, and $\sigma|_U : U \to U$ is the restricted permutation. The subset corresponds to a map of sets $f : X \to \{0,1\}$ with $f^*(\{1\}) = U$, and the condition $\sigma_*(U) = U$ is equivalent to $f$ being a morphism $(X,\sigma) \to (\{0,1\},\id)$. This shows that $(\{0,1\},\id)$ is a subobject classifier in both $\IZ{-}\FinSet$ and $\IZ{-}\Set$.'
+    proof: 'We already know that finite limits exist (<a href="/category/Z-FinSet?proof=finitely_complete" data-allow-deduced>proof</a>). Since the monomorphisms are the injective morphisms (<a href="/category/Z-FinSet?proof=monomorphism">proof</a>), the subobjects of $(X,\sigma)$ are the objects $(U,\sigma|_U)$, where $U \subseteq X$ is a subset such that $\sigma_*(U)=U$, and $\sigma|_U : U \to U$ is the restricted permutation. The subset corresponds to a map of sets $f : X \to \{0,1\}$ with $f^*(\{1\}) = U$, and the condition $\sigma_*(U) = U$ is equivalent to $f$ being a morphism $(X,\sigma) \to (\{0,1\},\id)$. This shows that $(\{0,1\},\id)$ is a subobject classifier in both $\IZ{-}\FinSet$ and $\IZ{-}\Set$.'
 
 unsatisfied_properties:
   - property: skeletal
@@ -78,7 +78,7 @@ special_objects:
 special_morphisms:
   isomorphism:
     description: bijective morphisms
-    proof: This is inherited from <a href="/category/Z-Set">$\IZ{-}\Set$</a>.
+    proof: This is inherited from $\IZ{-}\Set$, where the isomorphisms are the bijective morphisms (<a href="/category/Z-Set?proof=isomorphism" data-allow-deduced>proof</a>).
   monomorphism:
     description: injective morphisms
     proof: The non-trivial direction follows from the fact that the inclusion functor to <a href="/category/Z-Set">$\IZ{-}\Set$</a> preserves finite limits (by their construction), hence preserves monomorphisms, and that the monomorphisms in $\IZ{-}\Set$ are injective (<a href="/category/Z-Set?proof=monomorphism" data-allow-deduced>proof</a>).

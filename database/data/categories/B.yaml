@@ -20,10 +20,10 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\IB \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
+    proof: There is a forgetful functor $\IB \to \Set$, and $\Set$ is locally small (<a href="/category/Set?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: locally finite
-    proof: There is a faithful functor $\IB \to \FinSet$ and <a href="/category/FinSet">$\FinSet$</a> is locally finite.
+    proof: There is a faithful functor $\IB \to \FinSet$, and $\FinSet$ is locally finite (<a href="/category/FinSet?proof=locally_finite" data-allow-deduced>proof</a>).
 
   - property: inhabited
     proof: For example, $\varnothing$ is an object.

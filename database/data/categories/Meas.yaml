@@ -18,7 +18,7 @@ comments:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\Meas \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
+    proof: There is a forgetful functor $\Meas \to \Set$, and $\Set$ is locally small (<a href="/category/Set?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: semi-strongly connected
     proof: Every non-empty measurable space is weakly terminal (by using constant maps).
@@ -44,13 +44,13 @@ satisfied_properties:
     proof: >-
       The proof is similar to the <a href="/category/Top?proof=pushout-stable_regular_monomorphisms">proof</a> for $\Top$. Let $i : A \to X$ be an embedding and let $f : A \to Y$ be any measurable map. We claim that the induced measurable map
       $$j : Y \to Y \sqcup_A X$$
-      is again an embedding. It is certainly injective, since <a href="/category/Set">$\Set$</a> has the claimed property. More precisely, the underlying set of $Y \sqcup_A X$ can be identified with $Y \sqcup (X \setminus \im(i))$. Now let $T \subseteq Y$ be a measurable subset. Then its preimage $f^*(T) \subseteq A$ is measurable. Since $i$ is an embedding, there exists a measurable subset $S \subseteq X$ such that $i^*(S) = f^*(T)$. Let $u : X \to Y \sqcup_A X$ denote the canonical map, so that $u \circ i = j \circ f$, and consider the subset
+      is again an embedding. It is certainly injective, since $\Set$ has the claimed property (<a href="/category/Set?proof=pushout-stable_regular_monomorphisms" data-allow-deduced>proof</a>). More precisely, the underlying set of $Y \sqcup_A X$ can be identified with $Y \sqcup (X \setminus \im(i))$. Now let $T \subseteq Y$ be a measurable subset. Then its preimage $f^*(T) \subseteq A$ is measurable. Since $i$ is an embedding, there exists a measurable subset $S \subseteq X$ such that $i^*(S) = f^*(T)$. Let $u : X \to Y \sqcup_A X$ denote the canonical map, so that $u \circ i = j \circ f$, and consider the subset
       $$M \coloneqq j_*(T) \cup u_*(S \setminus \im(i))$$
       of the pushout. It is straightforward to verify that $j^*(M) = T$ and $u^*(M) = S$. Since both $T$ and $S$ are measurable, it follows that $M$ is measurable. Finally, the equality $j^*(M) = T$ shows that every measurable subset of $Y$ is the preimage of a measurable subset of the pushout. Hence $j$ is an embedding, as claimed.
 
   - property: countably extensive
     proof: >-
-      This follows from the countable extensivity of <a href="/category/Set">$\Set$</a> as follows. We already know that coproducts and pullbacks exist, and that they are preserved by the forgetful functor to $\Set$. More concretely, coproducts are disjoint unions of the underlying sets, with measurable subsets given by unions of measurable subsets of the summands. Since coproducts are disjoint in $\Set$ and the empty set has a unique $\sigma$-algebra, it follows immediately that coproducts are disjoint in $\Meas$ as well.
+      This follows from the countable extensivity of $\Set$ (<a href="/category/Set?proof=countably_extensive" data-allow-deduced>proof</a>) as follows. We already know that coproducts (<a href="/category/Meas?proof=cocomplete">proof</a>) and pullbacks (<a href="/category/Meas?proof=complete">proof</a>) exist, and that they are preserved by the forgetful functor to $\Set$. More concretely, coproducts are disjoint unions of the underlying sets, with measurable subsets given by unions of measurable subsets of the summands. Since coproducts are disjoint in $\Set$ and the empty set has a unique $\sigma$-algebra, it follows immediately that coproducts are disjoint in $\Meas$ as well.
 
       It remains to show that <i>countable</i> coproducts are stable under pullbacks. Let $(X_i)_{i \in I}$ be a countable family of measurable spaces and let $f : T \to \coprod_{i \in I} X_i$ be a measurable map. Consider the pullbacks $T_i \coloneqq f^*(X_i)$. These are simply the preimages of $X_i$ under $f$, equipped with the $\sigma$-algebra induced from $T$. Since coproducts in $\Set$ are stable under pullbacks, the canonical measurable map $\coprod_{i \in I} T_i \to T$ is bijective. It remains to show that it maps measurable sets to measurable sets.
 
@@ -66,7 +66,7 @@ satisfied_properties:
     proof: >-
       First, take the set $\{0,1\}$ endowed with the trivial $\sigma$-algebra (where only $\varnothing$ and $\{0,1\}$ are measurable), and use that $\{0,1\}$ is a cogenerator for $\Set$ (<a href="/category/Set?proof=extremal_cogenerator">proof</a>) to show that $\{0,1\}$ with the trivial $\sigma$-algebra is a cogenerator for $\Meas$.
 
-      Now, we claim that adding the set $\{0,1\}$ endowed with the discrete $\sigma$-algebra (where every subset is measurable) gives an extremal cogenerating collection. To see this, suppose we have a morphism $f : (X, \M_X) \to (Y, \M_Y)$ such that ${-} \circ f : \Hom(Y, Q) \to \Hom(X, Q)$ is a bijection if $Q$ is either measurable space. Since $\{0,1\}$ with the trivial $\sigma$-algebra represents taking the power set of the underlying set, and <a href="/functor/power_set_contravariant">the contravariant power set functor on $\Set$</a> is conservative, we conclude that $f$ is a bijection on the underlying sets. Also, since $\{0,1\}$ with the discrete $\sigma$-algebra represents the functor $(X, \M_X) \mapsto \M_X$, we see that $f^* : \M_Y \to \M_X$ is also a bijection. This shows that $f$ is an isomorphism of measurable spaces.
+      Now, we claim that adding the set $\{0,1\}$ endowed with the discrete $\sigma$-algebra (where every subset is measurable) gives an extremal cogenerating collection. To see this, suppose we have a morphism $f : (X, \M_X) \to (Y, \M_Y)$ such that ${-} \circ f : \Hom(Y, Q) \to \Hom(X, Q)$ is a bijection if $Q$ is either measurable space. Since $\{0,1\}$ with the trivial $\sigma$-algebra represents taking the power set of the underlying set, and the contravariant power set functor on $\Set$ is conservative (<a href="/functor/power_set_contravariant?proof=conservative" data-allow-deduced>proof</a>), we conclude that $f$ is a bijection on the underlying sets. Also, since $\{0,1\}$ with the discrete $\sigma$-algebra represents the functor $(X, \M_X) \mapsto \M_X$, we see that $f^* : \M_Y \to \M_X$ is also a bijection. This shows that $f$ is an isomorphism of measurable spaces.
 
       Finally, using <a href="/content/generator_construction">this result</a>, we conclude that the product of these two measurable spaces with underlying set $\{0,1\}$ is an extremal cogenerator of $\Meas$.
 
@@ -75,7 +75,7 @@ satisfied_properties:
       Let $j_1,j_2 : X \rightrightarrows C$ be a coreflexive corelation of measurable spaces. Thus, $j_1,j_2$ are jointly surjective measurable maps with a common retraction $r : C \twoheadrightarrow X$.
       To show that $(j_1,j_2)$ is cosymmetric, define the map of sets $s : C \to C$ by
       $$s(j_1(x)) \coloneqq j_2(x), \quad s(j_2(x)) \coloneqq j_1(x).$$
-      This is well-defined by a direct calculation or by using the fact that <a href="/category/Set">$\Set$</a> is co-Malcev. We need to show that $s$ is measurable. To this end, let $B \subseteq C$ be a measurable subset. Its preimages
+      This is well-defined by a direct calculation or by using the fact that $\Set$ is co-Malcev (<a href="/category/Set?proof=co-Malcev" data-allow-deduced>proof</a>). We need to show that $s$ is measurable. To this end, let $B \subseteq C$ be a measurable subset. Its preimages
       $$A_1 \coloneqq j_1^*(B), \quad A_2 \coloneqq j_2^*(B)$$
       are measurable subsets of $X$. We claim that
       $$s^*(B) = \bigl((r^*(A_1) \cup r^*(A_2)) \setminus B\bigr) \cup r^*(A_1 \cap A_2), \tag{1}$$
@@ -141,7 +141,7 @@ unsatisfied_properties:
 
   - property: coaccessible
     proof: >-
-      Apply the corollary <a href="/content/decreasing-chains-coaccessible">here</a> to the functor $F : \Set \to \Meas$ that equips a set with the discrete $\sigma$-algebra. Here, $F(\{\ast\})$ is not initial. Let $\kappa$ be a regular cardinal. Since $\Meas$ is complete and the forgetful functor $\Meas \to \Set$ preserves limits, the limit of the measurable spaces $F(\kappa_{\geq \alpha})$ has the underlying set $\bigcap_{\alpha < \kappa} \kappa_{\geq \alpha} = \varnothing$. Hence, it is the empty measurable space, which is initial.
+      Apply the corollary <a href="/content/decreasing-chains-coaccessible">here</a> to the functor $F : \Set \to \Meas$ that equips a set with the discrete $\sigma$-algebra. Here, $F(\{\ast\})$ is not initial. Let $\kappa$ be a regular cardinal. Since $\Meas$ is complete (<a href="/category/Meas?proof=complete" data-allow-deduced>proof</a>) and the forgetful functor $\Meas \to \Set$ preserves limits, the limit of the measurable spaces $F(\kappa_{\geq \alpha})$ has the underlying set $\bigcap_{\alpha < \kappa} \kappa_{\geq \alpha} = \varnothing$. Hence, it is the empty measurable space, which is initial.
 
 special_objects:
   initial object:

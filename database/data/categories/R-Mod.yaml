@@ -21,7 +21,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $R{-}\Mod \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
+    proof: There is a forgetful functor $R{-}\Mod \to \Set$, and $\Set$ is locally small (<a href="/category/Set?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: abelian
     proof: This is standard; see <a href="https://ncatlab.org/nlab/show/Categories+for+the+Working+Mathematician">Mac Lane</a>, Ch. VIII.
@@ -38,13 +38,13 @@ unsatisfied_properties:
 
 undecidable_properties:
   - property: all epimorphisms split
-    proof: The category $R{-}\Mod$ has all epimorphisms split if and only if every $R$-module is projective, i.e. $R$ is semisimple; see <a href="https://doi.org/10.1007/978-1-4419-8616-0">Lam</a>, Theorem 2.5. For example, <a href="/category/Vect">$\Vect_K$</a> has all epimorphisms split, while <a href="/category/Ab">$\Ab$</a> does not.
+    proof: The category $R{-}\Mod$ has all epimorphisms split if and only if every $R$-module is projective, i.e. $R$ is semisimple; see <a href="https://doi.org/10.1007/978-1-4419-8616-0">Lam</a>, Theorem 2.5. For example, $\Vect_K$ has all epimorphisms split (<a href="/category/Vect?proof=all_epimorphisms_split" data-allow-deduced>proof</a>), while $\Ab$ does not (<a href="/category/Ab?proof=all_epimorphisms_split" data-allow-deduced>proof</a>).
 
   - property: split abelian
-    proof: Since the category is abelian, this is equivalent to having all epimorphisms split, which is undecidable.
+    proof: Since the category is abelian (<a href="/category/R-Mod?proof=abelian" data-allow-deduced>proof</a>), this is equivalent to having all epimorphisms split, which is undecidable (<a href="/category/R-Mod?proof=all_epimorphisms_split" data-allow-deduced>proof</a>).
 
   - property: all monomorphisms split
-    proof: Since the category is abelian, this is equivalent to having all epimorphisms split, which is undecidable.
+    proof: Since the category is abelian (<a href="/category/R-Mod?proof=abelian" data-allow-deduced>proof</a>), this is equivalent to having all epimorphisms split, which is undecidable (<a href="/category/R-Mod?proof=all_epimorphisms_split" data-allow-deduced>proof</a>).
 
 special_objects:
   initial object:

@@ -28,7 +28,7 @@ comments:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\omegaSet \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
+    proof: There is a forgetful functor $\omegaSet \to \Set$, and $\Set$ is locally small (<a href="/category/Set?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: semi-strongly connected
     proof: 'Suppose we have two objects $(X, R_X)$ and $(Y, R_Y)$. If $Y$ is non-empty, suppose $y_0 \in Y$, and find $n_0 \in \IN$ such that $n_0$ realizes $y_0$. Then it is easy to see that the constant function with value $y_0$ is a morphism in $\Hom_{\omegaSet}((X, R_X), (Y, R_Y))$, where we can choose the compatible realizer tracker $\code{y_0} : \IN \dashrightarrow \IN$ to be the total recursive function with constant value $n_0$. Otherwise, if $Y$ is empty, then the unique function $Y \to X$ is a morphism in $\Hom_{\omegaSet}((Y, R_Y), (X, R_X))$, and in fact any partial recursive function $\IN \dashrightarrow \IN$ is a compatible realizer tracker.'
@@ -93,7 +93,7 @@ satisfied_properties:
 
   - property: locally cartesian closed
     proof: >-
-      This proof will be an adaptation of the proof above that the category is cartesian closed. As in the previous proof, we first fix an <a href="https://en.wikipedia.org/wiki/Admissible_numbering">admissible numbering</a> $(\varphi_n)_{n \in \IN}$ of the partial recursive functions.
+      This proof will be an adaptation of the <a href="/category/omega-Set?proof=cartesian_closed">proof</a> that the category is cartesian closed. As in the previous proof, we first fix an <a href="https://en.wikipedia.org/wiki/Admissible_numbering">admissible numbering</a> $(\varphi_n)_{n \in \IN}$ of the partial recursive functions.
 
       As a preliminary, suppose we have a morphism $f : (X, R_X) \to (Z, R_Z)$ and an element $z\in Z$. Then we will define $f_z$ to be the $\omega$-set with underlying set $X_z = f^*(\{ z \})$ and with realization relation $R_X \cap (\IN \times f^*(\{ z \}))$.
 
@@ -131,7 +131,7 @@ satisfied_properties:
 
       The underlying functions of $\iota_1$ and $\iota_2$ are the coprojections $X \hookrightarrow X \sqcup Y$ and $Y \hookrightarrow X \sqcup Y$ in $\Set$, which are injective. Hence, $\iota_1$ and $\iota_2$ are monomorphisms.
 
-      By the construction of pullbacks in the proof above that $\omegaSet$ is locally cartesian closed, the underlying set of the pullback of $\iota_1$ and $\iota_2$ is the pullback in $\Set$, namely
+      By the construction of pullbacks in the <a href="/category/omega-Set?proof=locally_cartesian_closed">proof</a> that $\omegaSet$ is locally cartesian closed, the underlying set of the pullback of $\iota_1$ and $\iota_2$ is the pullback in $\Set$, namely
       $$\{ (x, y) \in X \times Y \mid \iota_1(x) = \iota_2(y) \},$$
       which is empty since the images of $\iota_1$ and $\iota_2$ are disjoint. Since the realization relation of an $\omega$-set is a subset of $\IN$ times its underlying set, the realization relation of the pullback is empty as well. Hence the pullback is the initial object $(\varnothing, \varnothing)$ constructed above.
 
@@ -140,7 +140,7 @@ satisfied_properties:
 
   - property: extremal generating collection
     proof: >-
-      We claim that the collection of $\omega$-sets $(U, R_U)$ with $U\subseteq \IN$ is an extremal generating collection. To see this, note that the terminal object is isomorphic to the object $(\{ 0 \}, \IN \times \{ 0 \})$, and we saw above that it is a generator, so the given collection is certainly a generating collection.
+      We claim that the collection of $\omega$-sets $(U, R_U)$ with $U\subseteq \IN$ is an extremal generating collection. To see this, note that the terminal object is isomorphic to the object $(\{ 0 \}, \IN \times \{ 0 \})$, and we saw above that it is a generator (<a href="/category/omega-Set?proof=generator">proof</a>), so the given collection is certainly a generating collection.
 
       To see it is extremal, suppose we have a morphism $f : (X, R_X) \to (Y, R_Y)$ which is not an isomorphism. If this is because the underlying function $f : X \to Y$ is not a bijection, then that implies
       $$f \circ {-} : \Hom((\{0\}, \IN\times\{0\}), (X, R_X)) \to \Hom((\{0\}, \IN\times\{0\}), (Y, R_Y))$$
@@ -170,7 +170,7 @@ satisfied_properties:
       $$h : (Y, R_Y) \to (P(\IN) \setminus \{ \varnothing \}, {\in}_{\IN})$$
       such that $g = h \circ f$. Choose a compatible realizer tracker $\code{h} : \IN \dashrightarrow \IN$. Then for any $x\in X$, if $n$ realizes $f(x)$, then $\code{h}(n)$ exists and $\code{h}(n)$ realizes $h(f(x)) = g(x)$. Thus, by definition of $g$, $\code{h}(n)$ is in the set of realizers of $x$, i.e. $\code{h}(n)$ realizes $x$. This implies that $f$ is an isomorphism (<a href="/category/omega-Set?proof=isomorphism">proof</a>).
 
-      Finally, since $\nabla \{0,1\}$ and $(P(\IN) \setminus \{ \varnothing \}, {\in}_{\IN})$ both have non-empty underlying sets, they form a strongly connected family (see the <a href="/category/omega-Set?proof=semi-strongly_connected">proof</a> above that $\omegaSet$ is semi-strongly connected). Therefore, by <a href="/content/generator_construction">this result</a>, the product of these two objects is an extremal cogenerator.
+      Finally, since $\nabla \{0,1\}$ and $(P(\IN) \setminus \{ \varnothing \}, {\in}_{\IN})$ both have non-empty underlying sets, they form a strongly connected family, as shown in the <a href="/category/omega-Set?proof=semi-strongly_connected">proof</a> that $\omegaSet$ is semi-strongly connected. Therefore, by <a href="/content/generator_construction">this result</a>, the product of these two objects is an extremal cogenerator.
 
   - property: parametrized natural numbers object
     proof: >-

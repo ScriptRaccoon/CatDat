@@ -16,7 +16,7 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\FinVect_K \to \Vect_K$, and $\Vect_K$ is locally small.
+    proof: There is a forgetful functor $\FinVect_K \to \Vect_K$, and $\Vect_K$ is locally small (<a href="/category/Vect?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: essentially small
     proof: Every object is isomorphic to $K^n$ for some $n \in \IN$, and $\Hom(K^n,K^m) \cong M_{m \times n}(K)$ is a set.
@@ -25,7 +25,7 @@ satisfied_properties:
     proof: The one-dimensional vector space $K$ is an extremal generator even in $\Vect_K$ (<a href="/category/Vect?proof=extremal_generator">proof</a>). Now apply Lemma 10 <a href="/content/subcategories">here</a>.
 
   - property: split abelian
-    proof: The category is a full subcategory of <a href="/category/Vect">$\Vect_K$</a> that is closed under finite direct sums, kernels, and cokernels. Hence, it is abelian since $\Vect_K$ is. Every epimorphism is a surjective linear map (<a href="/category/FinVect?proof=epimorphism">proof</a>), which splits since $\Vect_K$ has all epimorphisms split.
+    proof: The category is a full subcategory of <a href="/category/Vect">$\Vect_K$</a> that is closed under finite direct sums, kernels, and cokernels. Hence, it is abelian since $\Vect_K$ is abelian (<a href="/category/Vect?proof=abelian" data-allow-deduced>proof</a>). Every epimorphism is a surjective linear map (<a href="/category/FinVect?proof=epimorphism">proof</a>), which splits since $\Vect_K$ has all epimorphisms split (<a href="/category/Vect?proof=all_epimorphisms_split" data-allow-deduced>proof</a>).
 
   - property: self-dual
     proof: The functor $V \mapsto V^*$ defines an equivalence of categories $\FinVect_K^{\op} \simeq \FinVect_K$. In fact, the natural map $V \to V^{**}$, $v \mapsto (\omega \mapsto \omega(v))$ is an isomorphism by standard linear algebra.
@@ -66,10 +66,10 @@ special_objects:
 special_morphisms:
   isomorphism:
     description: bijective linear maps
-    proof: It is a full subcategory of $\Vect_K$, for which we know that isomorphisms are bijective linear maps.
+    proof: It is a full subcategory of $\Vect_K$, for which isomorphisms are bijective linear maps (<a href="/category/Vect?proof=isomorphism" data-allow-deduced>proof</a>).
   monomorphism:
     description: injective linear maps
     proof: For the non-trivial direction, the forgetful functor $\FinVect_K \to \Set$ is representable (by $K$), and therefore preserves monomorphisms.
   epimorphism:
     description: surjective linear maps
-    proof: 'For the non-trivial direction, it suffices to observe that every epimorphism in $\FinVect_K$ is also an epimorphism in $\Vect_K$, where epimorphisms are already classified. Namely, let $f : V \to W$ be an epimorphism in $\FinVect_K$ and let $g : W \to T$ be a linear map with $g \circ f = 0$. Then $g$ factors as $g = i \circ h$, where $i : \im(g) \hookrightarrow T$ is the inclusion of the image and $h : W \twoheadrightarrow \im(g)$ is the corestriction of $g$. Then $h \circ f = 0$, and since $\im(g)$ is finite-dimensional, it follows that $h = 0$. Hence $g = 0$.'
+    proof: 'For the non-trivial direction, it suffices to observe that every epimorphism in $\FinVect_K$ is also an epimorphism in $\Vect_K$, where epimorphisms are surjective (<a href="/category/Vect?proof=epimorphism" data-allow-deduced>proof</a>). Namely, let $f : V \to W$ be an epimorphism in $\FinVect_K$ and let $g : W \to T$ be a linear map with $g \circ f = 0$. Then $g$ factors as $g = i \circ h$, where $i : \im(g) \hookrightarrow T$ is the inclusion of the image and $h : W \twoheadrightarrow \im(g)$ is the corestriction of $g$. Then $h \circ f = 0$, and since $\im(g)$ is finite-dimensional, it follows that $h = 0$. Hence $g = 0$.'

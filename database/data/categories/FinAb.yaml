@@ -18,16 +18,16 @@ related:
 
 satisfied_properties:
   - property: locally small
-    proof: There is a forgetful functor $\FinAb \to \Set$ and <a href="/category/Set">$\Set$</a> is locally small.
+    proof: There is a forgetful functor $\FinAb \to \Set$, and $\Set$ is locally small (<a href="/category/Set?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: locally finite
-    proof: There is a faithful functor $\FinAb \to \FinSet$ and <a href="/category/FinSet">$\FinSet$</a> is locally finite.
+    proof: There is a faithful functor $\FinAb \to \FinSet$, and $\FinSet$ is locally finite (<a href="/category/FinSet?proof=locally_finite" data-allow-deduced>proof</a>).
 
   - property: essentially countable
     proof: The underlying set of a finite structure can be chosen to be a subset of $\IN$.
 
   - property: abelian
-    proof: This follows from the fact for <a href="/category/Ab">$\Ab$</a>.
+    proof: This follows from the fact that $\Ab$ is abelian (<a href="/category/Ab?proof=abelian" data-allow-deduced>proof</a>).
 
   - property: self-dual
     proof: 'This is a simple special case of Pontryagin duality: The functor $\Hom(-,\IQ/\IZ)$ provides the equivalence.'
@@ -61,7 +61,7 @@ special_objects:
 special_morphisms:
   isomorphism:
     description: bijective homomorphisms
-    proof: It is a full subcategory of $\Ab$, for which we know that isomorphisms are bijective homomorphisms.
+    proof: It is a full subcategory of $\Ab$, for which isomorphisms are bijective homomorphisms (<a href="/category/Ab?proof=isomorphism" data-allow-deduced>proof</a>).
   monomorphism:
     description: injective homomorphisms
     proof: 'Let $f : A \to B$ be a monomorphism of finite abelian groups. Let $a \in A$ be in the kernel of $f$, say of order $n$. Then we may view $a$ as a morphism $a : \IZ/n \to A$ with $f \circ a = 0$, and $\IZ/n$ is finite. Hence, $a = 0$.'
