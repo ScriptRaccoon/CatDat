@@ -45,13 +45,10 @@ unsatisfied_properties:
     proof: The sets $\{0\}$ and $\{1\}$ are isomorphic but not equal.
 
   - property: generator
-    proof: This is trivial.
+    proof: 'We show more generally that if a groupoid has a generator $G$, then every object $X$ with a non-trivial automorphism $\sigma$ is isomorphic to $G$. Since $\sigma, \id_X : X \rightrightarrows X$ are distinct, there is a morphism $h : G \to X$ with $\sigma \circ h \neq h$, and $h$ is an isomorphism. Now $\IB$ is a groupoid, and the non-isomorphic objects $\{0,1\}$ and $\{0,1,2\}$ both have non-trivial automorphisms.'
 
   - property: essentially finite
     proof: This is trivial.
-
-  - property: connected
-    proof: For every $n \geq 0$ there is a connected component of sets of size $n$.
 
 special_objects: {}
 

@@ -26,9 +26,6 @@ unsatisfied_properties:
   - property: skeletal
     proof: The constant families $(\{0\})_{i \in I}$ and $(\{1\})_{i \in I}$ are isomorphic but not equal.
 
-  - property: strongly connected
-    proof: 'There is no morphism from $(\varnothing)_{i \in I}$ to $(\{\ast\})_{i \in I}$.'
-
   - property: locally essentially small
     proof: If $X$ is a two-element set, the collection of endomorphisms of $(X)_{i \in I}$ is isomorphic to the collection $P(I)$ of all subsets of $I$, which is not essentially small, since $I$ is assumed to be not essentially small.
 

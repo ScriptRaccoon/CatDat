@@ -30,7 +30,7 @@
     - connected
     - groupoid
   conclusions:
-    - strongly connected
+    - core-connected
   proof: This is trivial.
 
 - id: groupoid_lcc

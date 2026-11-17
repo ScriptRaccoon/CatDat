@@ -67,13 +67,6 @@
     $$f \circ {-} : \Hom(T, X) \to \Hom(T, Y)$$
     is a bijection since $T \cong G$, and the Yoneda embedding of $f$ is a natural transformation $\Hom({-}, X) \to \Hom({-}, Y)$. By the Yoneda lemma, $f$ is therefore an isomorphism.
 
-- id: trivial_is_core-connected
-  assumptions:
-    - trivial
-  conclusions:
-    - core-connected
-  proof: This is trivial.
-
 - id: core_connected_becomes_trivial
   assumptions:
     - core-connected

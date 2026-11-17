@@ -33,9 +33,6 @@ unsatisfied_properties:
   - property: skeletal
     proof: The category contains the non-skeletal category <a href="/category/B">$\IB$</a> as a subcategory.
 
-  - property: strongly connected
-    proof: For example, there is no morphism from the empty set to a singleton set.
-
   - property: locally finite
     proof: There are infinitely many bijections $\IN \to \IN$, for example, the countably many transpositions.
 
