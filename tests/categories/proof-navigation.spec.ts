@@ -111,3 +111,51 @@ for (const via of ['back button', 'browser']) {
 		await expect.poll(() => popup.evaluate((el) => el.scrollTop)).toBe(scroll_top)
 	})
 }
+
+test('following a link to a nearby proof does not scroll to the top', async ({
+	page
+}) => {
+	await page.goto('/category/BC?proof=regular_monomorphism', {
+		waitUntil: 'networkidle'
+	})
+
+	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
+	await expect(popup).toContainText('precisely the monomorphisms')
+
+	const scroll_y = await page.evaluate(() => window.scrollY)
+	expect(scroll_y).toBeGreaterThan(0)
+
+	await page.evaluate(() => {
+		const w = window as unknown as { scroll_samples: number[] }
+		w.scroll_samples = []
+		const sample = () => {
+			w.scroll_samples.push(window.scrollY)
+			requestAnimationFrame(sample)
+		}
+		sample()
+	})
+
+	await popup.locator('a[href="/category/BC?proof=monomorphism"]').click()
+
+	await expect(page).toHaveURL('/category/BC?proof=monomorphism')
+	await expect(popup).not.toContainText('precisely the monomorphisms')
+
+	// wait until the page has stopped scrolling
+	await page.evaluate(
+		() =>
+			new Promise<void>((resolve) => {
+				let timer = setTimeout(resolve, 300)
+				window.addEventListener('scroll', () => {
+					clearTimeout(timer)
+					timer = setTimeout(resolve, 300)
+				})
+			})
+	)
+
+	await expect(page.locator('.wrapper.expanded')).toBeInViewport()
+
+	const samples = await page.evaluate(
+		() => (window as unknown as { scroll_samples: number[] }).scroll_samples
+	)
+	expect(Math.min(...samples)).toBeGreaterThan(scroll_y / 2)
+})
