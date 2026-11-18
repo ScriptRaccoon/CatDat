@@ -1,0 +1,15 @@
+# implications P ===> Q that can neither be proven nor refuted in ZFC
+# (they are not used for deductions; duals are listed by hand)
+
+category:
+  - id: accessible_well-copowered_undecidable
+    assumption: accessible
+    conclusion: well-copowered
+    proof: >-
+      If Vopěnka's principle holds, then every accessible category is well-copowered (<a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adámek–Rosický</a>, Cor. 6.8). Hence, if Vopěnka's principle is consistent with ZFC, ZFC does not prove that some accessible category is not well-copowered. Conversely, if every accessible category is well-copowered, then there are arbitrarily large measurable cardinals (<a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adámek–Rosický</a>, Example A.19). Since it is consistent with ZFC that there are no measurable cardinals (for example, there are none in Gödel's constructible universe $L$), ZFC does not prove that every accessible category is well-copowered. See also <a href="https://mathoverflow.net/questions/323744">MO/323744</a> and the section on well-copoweredness at the <a href="https://ncatlab.org/nlab/show/accessible+category">nLab</a>.
+
+  - id: coaccessible_well-powered_undecidable
+    assumption: coaccessible
+    conclusion: well-powered
+    proof: >-
+      By duality, this is equivalent to the <a href="/category-implications?proof=accessible_well-copowered_undecidable">undecidable implication</a> that every accessible category is well-copowered.

@@ -87,8 +87,9 @@ The `pnpm db:test` command runs several tests to ensure the data behaves as expe
 5. For a selection of structures, every property matches precisely the expected properties defined in the [/database/test-data/expected](/database/test-data/expected/) folder.
 6. Adjoint functors are recorded on both sides (left and right adjoint), and their domains and codomains match.
 7. All links in proofs point to existing structures, properties, implications, and content pages.
-8. Every entry of the history file [history.json](/shared/history.json) exists. When you rename a structure or property, rename it in the history file as well (new entries are added automatically by `pnpm db:seed`).
-9. There are no redundant property assignments (see [below](#redundant-assignments)) and no redundant implications (see [below](#redundant-implications)).
+8. No undecidable implication can be deduced from the implications or is refuted by a structure.
+9. Every entry of the history file [history.json](/shared/history.json) exists. When you rename a structure or property, rename it in the history file as well (new entries are added automatically by `pnpm db:seed`).
+10. There are no redundant property assignments (see [below](#redundant-assignments)) and no redundant implications (see [below](#redundant-implications)).
 
 When you add a property to the JSON files in these two folders, you can insert it anywhere: `pnpm db:update` sorts them alphabetically.
 
@@ -135,6 +136,8 @@ When contributing new data (categories, functors, properties, implications, etc.
 - **Atomic implications**: Do not add implications that can be deduced from others. For example, do not add "complete => finite products" since it can be deduced from "complete => finitely complete" and "finitely complete => finite products". These are combined automatically. This also applies to single conclusions of an implication and to single directions of an equivalence. Redundant implications are reported by `pnpm db:test`, see below.
 
 - **No dual implications**: Implications are dualized automatically when applicable. For this reason, adding the category implication "finitely cocomplete => pushouts" is not necessary when "finitely complete => pullbacks" has already been added. Similarly, the functor implication "comonadic => left adjoint" is automatically dualized from "monadic => right adjoint". When an implication can be phrased in either a "limit" or a "colimit" variant, prefer the "limit" variant (unless the literature focusses on the "colimit" variant).
+
+- **Undecidable implications**: Implications "P => Q" that can neither be proven nor refuted in ZFC go into [undecidable-implications.yaml](/database/data/undecidable-implications.yaml), with one assumption, one conclusion, and a proof of the independence. They are not used for deductions. Unlike ordinary implications, they are not dualized automatically: add the dual by hand, with a proof that links to the original one.
 
 - **Relevant implications**: When adding a new property, include implications involving this property and existing properties. For example, when adding the property of categories of having "countable products", also add the implication "countable products => finite products". Refactor existing implications if necessary. Ensure that for most categorical structures, it will be inferred whether the property holds or not.
 

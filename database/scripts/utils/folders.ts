@@ -7,6 +7,14 @@ import { type StructureType } from '#shared/config.ts'
 export const DATA_FOLDER = path.resolve('database', 'data')
 
 /**
+ * YAML file containing the undecidable implications of all structure types.
+ */
+export const UNDECIDABLE_IMPLICATIONS_FILE = path.join(
+	DATA_FOLDER,
+	'undecidable-implications.yaml'
+)
+
+/**
  * Folder containing the configuration and expected data of the tests.
  */
 export const TEST_DATA_FOLDER = path.resolve('database', 'test-data')
