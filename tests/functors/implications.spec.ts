@@ -69,6 +69,18 @@ test('user can see the details of an implication', async ({ page }) => {
 	await expect(page.locator('body')).toContainText(/Proof:.+follows that/)
 })
 
+test('user can see the assumptions on the domain of an implication', async ({ page }) => {
+	await page.goto('/functor-implication/faithful-via-equalizers')
+
+	await expect(page.locator('body')).toContainText(
+		'Given a functor whose domain has equalizers, if it is conservative and preserves equalizers, then it is faithful.'
+	)
+
+	await expect(page.locator('a[href="/category-property/equalizers"]')).toHaveText(
+		'equalizers'
+	)
+})
+
 test('user can navigate to the dual implication', async ({ page }) => {
 	await page.goto('/functor-implication/equivalence_consequences')
 
