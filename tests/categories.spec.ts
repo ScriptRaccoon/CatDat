@@ -67,6 +67,31 @@ test('user can search for a category by its name', async ({ page }) => {
 	}
 })
 
+test('user can search for a category without its hyphens', async ({ page }) => {
+	await page.goto('/category-list', { waitUntil: 'networkidle' })
+
+	// cspell:disable-next-line
+	await page.getByRole('searchbox', { name: 'search filter' }).fill('pseudometric')
+
+	await expect(
+		page.getByRole('link', {
+			name: 'category of pseudo-metric spaces with non-expansive maps',
+			exact: true
+		})
+	).toBeVisible()
+
+	await page
+		.getByRole('searchbox', { name: 'search filter' })
+		.fill('finite dimensional vector spaces')
+
+	await expect(
+		page.getByRole('link', {
+			name: 'category of finite-dimensional vector spaces',
+			exact: true
+		})
+	).toBeVisible()
+})
+
 test('user can search for a category by its keyword', async ({ page }) => {
 	await page.goto('/category-list', { waitUntil: 'networkidle' })
 
@@ -693,6 +718,17 @@ test('user can look up a property by typing only a part of it', async ({ page })
 	await lookup.fill('split ab')
 
 	await expect(results.getByRole('listitem')).toHaveText(['is not split abelian'])
+})
+
+test('user can look up a property without its hyphens', async ({ page }) => {
+	await page.goto('/category/Set', { waitUntil: 'networkidle' })
+
+	const lookup = page.getByRole('searchbox', { name: 'look up a property' })
+	const results = page.getByRole('list', { name: 'Property lookup results' })
+
+	await lookup.fill('multi complete')
+
+	await expect(results.getByRole('listitem')).toHaveText(['is multi-complete'])
 })
 
 test('user sees unknown and undecidable properties marked in the property lookup', async ({

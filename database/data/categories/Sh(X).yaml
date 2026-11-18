@@ -5,6 +5,8 @@ objects: sheaves of sets on a topological space $X$
 morphisms: morphisms of sheaves
 description: Here, we assume that the topological space $X$ is neither discrete nor indiscrete, since otherwise this category is just a product of copies of $\Set$. Another valid notation is $\Sh(X,\Set)$.
 nlab_link: https://ncatlab.org/nlab/show/category+of+sheaves
+keywords:
+  - sheaf
 
 tags:
   - algebraic geometry

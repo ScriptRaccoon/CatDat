@@ -6,9 +6,6 @@ nlab_link: null
 dual: quasitopos
 invariant_under_equivalences: true
 
-keywords:
-  - quasi-cotopos
-
 related:
   - finitely complete
   - finitely cocomplete

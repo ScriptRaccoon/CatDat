@@ -61,13 +61,15 @@ export function pluralize(count: number, forms: { one: string; other: string }) 
 }
 
 /**
- * Removes accents from letters and transforms to lowercase
+ * Transforms to lowercase and removes accents, spaces, apostrophes, hyphens,
+ * and dashes, so that e.g. "finite dimensional" and "Malcev" match
+ * "finite-dimensional" and "Mal'cev" in searches
  */
 export function normalize_text(txt: string) {
 	return txt
 		.toLowerCase()
 		.normalize('NFD')
-		.replace(/\p{Diacritic}/gu, '')
+		.replace(/[\s'’\p{Diacritic}\p{Dash_Punctuation}]/gu, '')
 }
 
 export function remove_underscores(txt: string) {
