@@ -1,4 +1,5 @@
 import { normalize_text } from '#shared/utils.ts'
+import type { PropertyLookupItem, PropertyShort } from '#lib/commons/types.ts'
 import type { Attachment } from 'svelte/attachments'
 
 export function get_device_type() {
@@ -16,6 +17,37 @@ export function get_comparison_score(value: string, query: string) {
 	if (v.startsWith(q)) return 2
 	if (v.includes(q)) return 1
 	return 0
+}
+
+/**
+ * Returns the items with a positive score, sorted by descending score
+ * and then alphabetically by their label.
+ */
+export function rank_by_score<T>(
+	items: readonly T[],
+	get_score: (item: T) => number,
+	get_label: (item: T) => string
+): T[] {
+	return items
+		.map((item) => ({ item, score: get_score(item) }))
+		.filter(({ score }) => score > 0)
+		.sort(
+			(a, b) =>
+				b.score - a.score || get_label(a.item).localeCompare(get_label(b.item))
+		)
+		.map(({ item }) => item)
+}
+
+export function to_property_lookup_item(
+	property: PropertyShort & { proof?: string },
+	status: PropertyLookupItem['status']
+): PropertyLookupItem {
+	return {
+		id: property.id,
+		relation: property.relation,
+		proof: property.proof ?? null,
+		status
+	}
 }
 
 export const resize_textarea: Attachment = (textarea) => {
