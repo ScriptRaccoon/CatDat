@@ -123,6 +123,13 @@ export type ImplicationDisplay = Replace<
 	}
 >
 
+export type UndecidableImplication = {
+	id: string
+	assumption: string
+	conclusion: string
+	proof: string
+}
+
 export type ContradictionStep = {
 	implication_id: string | null
 	statement: string

@@ -2,6 +2,7 @@
 	import StructureList from '#components/StructureList.svelte'
 	import HelpMessage from '#components/HelpMessage.svelte'
 	import ImplicationList from '#components/ImplicationList.svelte'
+	import UndecidableImplicationList from '#components/UndecidableImplicationList.svelte'
 	import MetaData from '#components/MetaData.svelte'
 	import SuggestionForm from '#components/SuggestionForm.svelte'
 	import { pluralize, remove_underscores } from '#shared/utils.ts'
@@ -12,7 +13,8 @@
 		ImplicationDisplay,
 		PropertyDisplay,
 		StructureShort,
-		StructureType
+		StructureType,
+		UndecidableImplication
 	} from '#lib/commons/types.ts'
 	import { PLURALS } from '#shared/config.ts'
 	import TagList from '#components/TagList.svelte'
@@ -31,6 +33,7 @@
 		undecidable_structures: StructureShort[]
 		structure_keywords: Record<string, string[]>
 		relevant_implications: ImplicationDisplay[]
+		undecidable_implications: UndecidableImplication[]
 	}
 
 	let {
@@ -45,7 +48,8 @@
 		unknown_structures,
 		undecidable_structures,
 		structure_keywords,
-		relevant_implications
+		relevant_implications,
+		undecidable_implications
 	}: Props = $props()
 
 	function deduced_note(total: number, deduced: number) {
@@ -117,6 +121,18 @@
 	highlighted_property={property.id}
 	{type}
 />
+
+{#if undecidable_implications.length}
+	<h2 class="sticky-heading">Undecidable implications</h2>
+
+	<p class="hint">It is undecidable in ZFC whether these implications hold.</p>
+
+	<UndecidableImplicationList
+		implications={undecidable_implications}
+		highlighted_property={property.id}
+		{type}
+	/>
+{/if}
 
 <StructureLookup
 	{type}

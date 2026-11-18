@@ -64,6 +64,13 @@ test('user can view category property details', async ({ page }) => {
 			exact: true
 		})
 	).toBeVisible()
+
+	await expect(
+		page.getByRole('heading', {
+			name: 'Undecidable implications',
+			exact: true
+		})
+	).toHaveCount(0)
 })
 
 test('user can navigate to the dual property', async ({ page }) => {
@@ -102,4 +109,30 @@ test('user sees no unknown categories for the property of being additive', async
 	await expect(page.locator('body')).toContainText(
 		'There are 0 categories for which the database has no information on whether they satisfy this property'
 	)
+})
+
+test('user can view undecidable implications of a category property', async ({
+	page
+}) => {
+	await page.goto('/category-property/accessible', { waitUntil: 'networkidle' })
+
+	const implications = page.getByRole('list', { name: 'Undecidable implications' })
+
+	const item = implications.getByRole('listitem').filter({
+		hasText: /^\s*accessible\s+implies\s+well-copowered\s*$/
+	})
+
+	await expect(
+		item.getByRole('link', { name: 'accessible', exact: true })
+	).toBeVisible()
+
+	await item.getByRole('button', { name: 'Show proof' }).click()
+
+	await expect(page).toHaveURL(
+		'/category-property/accessible?proof=accessible_well-copowered_undecidable'
+	)
+
+	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
+
+	await expect(popup).toContainText('Vopěnka')
 })

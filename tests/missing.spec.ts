@@ -152,6 +152,25 @@ test('user can see missing category combinations', async ({ page }) => {
 	).toBeVisible()
 })
 
+test('user cannot see category combinations of undecidable implications', async ({
+	page
+}) => {
+	await page.goto('/missing', { waitUntil: 'networkidle' })
+
+	const combinations_section = page.locator('section', {
+		has: page.getByRole('heading', {
+			name: 'Missing category combinations',
+			exact: true
+		})
+	})
+
+	await expect(
+		combinations_section.locator('li', {
+			hasText: /^\s*accessible\s+∧\s+¬well-copowered\s*$/
+		})
+	).toHaveCount(0)
+})
+
 // this can be adjusted if at some point a functor combination is not witnessed
 test('user cannot see any missing functor combinations', async ({ page }) => {
 	await page.goto('/missing', { waitUntil: 'networkidle' })

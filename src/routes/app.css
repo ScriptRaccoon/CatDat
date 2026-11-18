@@ -327,6 +327,22 @@ label {
 	white-space: nowrap;
 }
 
+/* implications (ImplicationItem and UndecidableImplicationList) */
+
+.implication-property:not(.highlighted) {
+	text-decoration: none;
+}
+
+.implication-property.highlighted {
+	text-decoration-style: dashed;
+	text-underline-offset: 4px;
+}
+
+.implication-operator {
+	margin-inline: 0.25rem;
+	color: var(--secondary-text-color);
+}
+
 /* cf. https://katex.org/docs/issues */
 
 /* allow line breaks in display formulas (KaTeX sets nowrap) */

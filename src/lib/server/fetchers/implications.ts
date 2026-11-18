@@ -1,6 +1,7 @@
 import { db } from '#lib/server/db.ts'
 import type { ImplicationDB, StructureType } from '#lib/commons/types.ts'
 import { display_implication } from '#lib/server/transforms.ts'
+import { fetch_undecidable_implications } from '#lib/server/fetchers/undecidable_implications.ts'
 
 export function fetch_implications(type: StructureType) {
 	const implications_db = db
@@ -21,5 +22,7 @@ export function fetch_implications(type: StructureType) {
 
 	const implications = implications_db.map(display_implication)
 
-	return { type, implications }
+	const undecidable_implications = fetch_undecidable_implications(type)
+
+	return { type, implications, undecidable_implications }
 }

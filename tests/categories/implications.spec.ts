@@ -89,11 +89,11 @@ test('user can open the list of deduced implications', async ({ page }) => {
 	await page.goto('/category-implications', { waitUntil: 'networkidle' })
 
 	await expect(
-		page.locator('li', { hasText: /accessible.+well-powered/ })
+		page.locator('li', { hasText: /finitely accessible.+ℵ₁-accessible/ })
 	).toBeVisible()
 
 	await expect(
-		page.locator('li', { hasText: /coaccessible.+well-copowered/ })
+		page.locator('li', { hasText: /finitely coaccessible.+ℵ₁-coaccessible/ })
 	).toHaveCount(0)
 
 	await page
@@ -104,6 +104,18 @@ test('user can open the list of deduced implications', async ({ page }) => {
 		.click()
 
 	await expect(
-		page.locator('li', { hasText: /coaccessible.+well-copowered/ })
+		page.locator('li', { hasText: /finitely coaccessible.+ℵ₁-coaccessible/ })
+	).toBeVisible()
+})
+
+test('user can see undecidable category implications', async ({ page }) => {
+	await page.goto('/category-implications')
+
+	const implications = page.getByRole('list', { name: 'Undecidable implications' })
+
+	await expect(
+		implications
+			.getByRole('listitem')
+			.filter({ hasText: /accessible.+well-copowered/ })
 	).toBeVisible()
 })

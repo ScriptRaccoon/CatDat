@@ -7,6 +7,7 @@ import type {
 import { db } from '#lib/server/db.ts'
 import { display_implication, display_property } from '#lib/server/transforms.ts'
 import { fetch_structure_keywords } from '#lib/server/fetchers/structures.ts'
+import { fetch_undecidable_implications } from '#lib/server/fetchers/undecidable_implications.ts'
 import { error } from '@sveltejs/kit'
 
 export function fetch_property(type: StructureType, id: string) {
@@ -83,6 +84,8 @@ export function fetch_property(type: StructureType, id: string) {
 
 	const relevant_implications = relevant_implications_db.map(display_implication)
 
+	const undecidable_implications = fetch_undecidable_implications(type, id)
+
 	const known_structures = db
 		.prepare<
 			[StructureType, string],
@@ -136,6 +139,7 @@ export function fetch_property(type: StructureType, id: string) {
 		unknown_structures,
 		undecidable_structures,
 		structure_keywords,
-		relevant_implications
+		relevant_implications,
+		undecidable_implications
 	}
 }
