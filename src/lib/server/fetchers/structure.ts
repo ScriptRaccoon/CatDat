@@ -13,6 +13,7 @@ import type {
 import { error } from '@sveltejs/kit'
 import { db } from '#lib/server/db.ts'
 import { display_property_assignment } from '#lib/server/transforms.ts'
+import { fetch_property_keywords } from '#lib/server/fetchers/properties.ts'
 
 export function fetch_structure(type: StructureType, id: string): StructureDetails {
 	const structure = db
@@ -172,6 +173,8 @@ export function fetch_structure(type: StructureType, id: string): StructureDetai
 		)
 		.all(id)
 
+	const property_keywords = fetch_property_keywords(type)
+
 	const satisfied_properties = properties_db
 		.filter((obj) => obj.is_satisfied === 1)
 		.map(display_property_assignment)
@@ -196,6 +199,7 @@ export function fetch_structure(type: StructureType, id: string): StructureDetai
 		unsatisfied_properties,
 		unknown_properties,
 		undecidable_properties,
+		property_keywords,
 		indistinguishable_structures,
 		comments
 	}

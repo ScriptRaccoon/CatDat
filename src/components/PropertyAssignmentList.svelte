@@ -3,6 +3,7 @@
 	import HelpMessage from './HelpMessage.svelte'
 	import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
 	import PropertyList from './PropertyList.svelte'
+	import PropertyLookup from './PropertyLookup.svelte'
 	import type {
 		PropertyAssignmentDisplay,
 		PropertyShort,
@@ -17,6 +18,7 @@
 		unsatisfied_properties: PropertyAssignmentDisplay[]
 		undecidable_properties: PropertyAssignmentDisplay[]
 		unknown_properties: PropertyShort[]
+		property_keywords: Record<string, string[]>
 	}
 
 	let {
@@ -25,7 +27,8 @@
 		satisfied_properties,
 		unsatisfied_properties,
 		undecidable_properties,
-		unknown_properties
+		unknown_properties,
+		property_keywords
 	}: Props = $props()
 
 	let satisfied_assigned = $derived(satisfied_properties.filter((p) => !p.is_deduced))
@@ -62,6 +65,15 @@
 	New here? Click any <Fa icon={faInfoCircle} />
 	icon to view the proof for that property.
 </HelpMessage>
+
+<PropertyLookup
+	{type}
+	{satisfied_properties}
+	{unsatisfied_properties}
+	{undecidable_properties}
+	{unknown_properties}
+	keywords={property_keywords}
+/>
 
 <div class="two-columns">
 	<section>

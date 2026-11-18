@@ -1,7 +1,7 @@
 <script lang="ts">
 	import ChipGroup from './ChipGroup.svelte'
 	import Chip from './Chip.svelte'
-	import { get_comparison_score } from '#lib/client/utils.ts'
+	import { get_comparison_score, rank_by_score } from '#lib/client/utils.ts'
 	import type { Snippet } from 'svelte'
 	import { remove_underscores } from '#shared/utils.ts'
 	import Listbox, { get_option_id } from './Listbox.svelte'
@@ -36,12 +36,11 @@
 		if (selected_items.length >= max) return []
 		const q = item.trim()
 		if (!q) return allowed_items
-		return allowed_items
-			.filter((a) => !selected_items.includes(a))
-			.map((a) => ({ a, r: get_comparison_score(a, q) }))
-			.filter((x) => x.r > 0)
-			.sort((x, y) => y.r - x.r || x.a.localeCompare(y.a))
-			.map((x) => x.a)
+		return rank_by_score(
+			allowed_items.filter((a) => !selected_items.includes(a)),
+			(a) => get_comparison_score(a, q),
+			(a) => a
+		)
 	})
 
 	function is_valid(item: string) {

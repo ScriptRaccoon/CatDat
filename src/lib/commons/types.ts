@@ -53,6 +53,11 @@ export type PropertyDisplay = Replace<
 
 export type PropertyShort = Pick<PropertyDB, 'id' | 'relation'>
 
+export type PropertyLookupItem = PropertyShort & {
+	proof: string | null
+	status: 'satisfied' | 'unsatisfied' | 'undecidable' | 'unknown'
+}
+
 export type GroupedPropertyShort = Pick<
 	PropertyDB,
 	'id' | 'relation' | 'dual_property_id'
@@ -148,6 +153,7 @@ export type StructureDetails = {
 	unsatisfied_properties: PropertyAssignmentDisplay[]
 	unknown_properties: PropertyShort[]
 	undecidable_properties: PropertyAssignmentDisplay[]
+	property_keywords: Record<string, string[]>
 	indistinguishable_structures: StructureShort[]
 	comments: CommentObject[]
 }

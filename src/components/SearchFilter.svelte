@@ -2,7 +2,19 @@
 	import { faSearch, faXmark } from '@fortawesome/free-solid-svg-icons'
 	import Fa from 'svelte-fa'
 
-	let { search = $bindable() }: { search: string } = $props()
+	type Props = {
+		search: string
+		label?: string
+		placeholder?: string
+		full_width?: boolean
+	}
+
+	let {
+		search = $bindable(),
+		label = 'search filter',
+		placeholder = 'Search...',
+		full_width = false
+	}: Props = $props()
 
 	let search_actual = $state('')
 
@@ -11,18 +23,22 @@
 	})
 </script>
 
-<div class="search-filter">
+<div class="search-filter" class:full-width={full_width}>
 	<div class="input-container">
 		<input
 			type="search"
 			id="search"
-			aria-label="search filter"
+			aria-label={label}
 			bind:value={search_actual}
-			placeholder="Search..."
+			{placeholder}
 		/>
 
 		{#if search}
-			<button class="clear" onclick={() => (search = '')}>
+			<button
+				class="clear"
+				onclick={() => (search_actual = '')}
+				aria-label="clear search"
+			>
 				<Fa icon={faXmark} color="var(--secondary-text-color)" scale={0.875} />
 			</button>
 		{/if}
@@ -39,6 +55,10 @@
 		gap: 1rem;
 		align-items: center;
 		margin-bottom: 0.5rem;
+
+		&.full-width {
+			width: 100%;
+		}
 	}
 
 	.input-container {

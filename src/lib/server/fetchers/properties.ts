@@ -33,6 +33,25 @@ export function fetch_property_relation_dict() {
 	return dict
 }
 
+export function fetch_property_keywords(type: StructureType) {
+	const keywords_db = db
+		.prepare<[StructureType], { property_id: string; keyword: string }>(
+			`SELECT property_id, keyword
+			FROM property_keywords
+			WHERE type = ?`
+		)
+		.all(type)
+
+	const keywords: Record<string, string[]> = {}
+
+	for (const { property_id, keyword } of keywords_db) {
+		keywords[property_id] ??= []
+		keywords[property_id].push(keyword)
+	}
+
+	return keywords
+}
+
 export function fetch_grouped_properties_and_tags(type: StructureType) {
 	const properties = db
 		.prepare<[StructureType], GroupedPropertyShort>(
@@ -57,20 +76,7 @@ export function fetch_grouped_properties_and_tags(type: StructureType) {
 		.pluck()
 		.all(type)
 
-	const keywords_db = db
-		.prepare<[StructureType], { property_id: string; keyword: string }>(
-			`SELECT property_id, keyword
-			FROM property_keywords
-			WHERE type = ?`
-		)
-		.all(type)
-
-	const keywords: Record<string, string[]> = {}
-
-	for (const { property_id, keyword } of keywords_db) {
-		keywords[property_id] ??= []
-		keywords[property_id].push(keyword)
-	}
+	const keywords = fetch_property_keywords(type)
 
 	const seen = new Set()
 

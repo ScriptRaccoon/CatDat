@@ -13,16 +13,17 @@
 		children: Snippet
 		proof?: string | null
 		proof_key: string
+		is_duplicate?: boolean
 	}
 
-	let { children, proof, proof_key }: Props = $props()
+	let { children, proof, proof_key, is_duplicate = false }: Props = $props()
 
 	const id = $props.id()
 
 	let wrapper = $state<HTMLElement | null>(null)
 
 	$effect(() => {
-		if (!proof || !wrapper) return
+		if (is_duplicate || !proof || !wrapper) return
 		const key = proof_key
 		register_proof(key, { id, proof, element: wrapper })
 		return () => unregister_proof(key, id)

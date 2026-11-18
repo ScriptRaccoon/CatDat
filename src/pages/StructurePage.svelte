@@ -27,6 +27,7 @@
 		unsatisfied_properties,
 		unknown_properties,
 		undecidable_properties,
+		property_keywords,
 		indistinguishable_structures,
 		comments,
 		definition,
@@ -130,6 +131,7 @@
 	{unsatisfied_properties}
 	{unknown_properties}
 	{undecidable_properties}
+	{property_keywords}
 />
 
 {@render specials?.()}
@@ -148,7 +150,7 @@
 
 <style>
 	.description {
-		margin-block: 1rem;
+		margin-block: 1rem 2rem;
 	}
 
 	.information-table {
