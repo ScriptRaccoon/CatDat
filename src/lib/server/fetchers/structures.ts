@@ -38,6 +38,12 @@ export function fetch_structures_with_tags_and_keywords(type: StructureType) {
 		.pluck()
 		.all(type)
 
+	const keywords = fetch_structure_keywords(type)
+
+	return { type, structures, tags, keywords }
+}
+
+export function fetch_structure_keywords(type: StructureType) {
 	const keywords_db = db
 		.prepare<[StructureType], { structure_id: string; keyword: string }>(
 			`SELECT k.structure_id, k.keyword
@@ -55,7 +61,7 @@ export function fetch_structures_with_tags_and_keywords(type: StructureType) {
 		keywords[structure_id].push(keyword)
 	}
 
-	return { type, structures, tags, keywords }
+	return keywords
 }
 
 export function fetch_tagged_structures(type: StructureType, tag: string) {

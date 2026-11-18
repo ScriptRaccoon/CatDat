@@ -4,12 +4,16 @@ export type { StructureType }
 
 type Replace<T, R extends Partial<Record<keyof T, any>>> = Omit<T, keyof R> & R
 
+export type AssignmentStatus = 'satisfied' | 'unsatisfied' | 'undecidable' | 'unknown'
+
 export type StructureShort = {
 	id: string
 	name: string
 }
 
 export type StructureShortDictionary = Partial<Record<StructureType, StructureShort[]>>
+
+export type StructureLookupItem = StructureShort & { status: AssignmentStatus }
 
 export type RelatedStructure = StructureShort & { notation: string }
 
@@ -55,7 +59,7 @@ export type PropertyShort = Pick<PropertyDB, 'id' | 'relation'>
 
 export type PropertyLookupItem = PropertyShort & {
 	proof: string | null
-	status: 'satisfied' | 'unsatisfied' | 'undecidable' | 'unknown'
+	status: AssignmentStatus
 }
 
 export type GroupedPropertyShort = Pick<

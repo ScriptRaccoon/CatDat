@@ -1,5 +1,11 @@
 import { normalize_text } from '#shared/utils.ts'
-import type { PropertyLookupItem, PropertyShort } from '#lib/commons/types.ts'
+import type {
+	AssignmentStatus,
+	PropertyLookupItem,
+	PropertyShort,
+	StructureLookupItem,
+	StructureShort
+} from '#lib/commons/types.ts'
 import type { Attachment } from 'svelte/attachments'
 
 export function get_device_type() {
@@ -40,7 +46,7 @@ export function rank_by_score<T>(
 
 export function to_property_lookup_item(
 	property: PropertyShort & { proof?: string },
-	status: PropertyLookupItem['status']
+	status: AssignmentStatus
 ): PropertyLookupItem {
 	return {
 		id: property.id,
@@ -48,6 +54,30 @@ export function to_property_lookup_item(
 		proof: property.proof ?? null,
 		status
 	}
+}
+
+export function to_structure_lookup_item(
+	structure: StructureShort,
+	status: AssignmentStatus
+): StructureLookupItem {
+	return { id: structure.id, name: structure.name, status }
+}
+
+/**
+ * Returns the structures whose name or one of whose keywords contains the
+ * search text.
+ */
+export function search_structures<T extends StructureShort>(
+	structures: T[],
+	search: string,
+	keywords: Record<string, string[]>
+): T[] {
+	const query = normalize_text(search)
+	return structures.filter((structure) =>
+		[structure.name, ...(keywords[structure.id] ?? [])].some((text) =>
+			normalize_text(text).includes(query)
+		)
+	)
 }
 
 export const resize_textarea: Attachment = (textarea) => {

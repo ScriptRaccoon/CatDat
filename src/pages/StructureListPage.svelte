@@ -2,7 +2,8 @@
 	import MetaData from '#components/MetaData.svelte'
 	import SearchFilter from '#components/SearchFilter.svelte'
 	import SuggestionForm from '#components/SuggestionForm.svelte'
-	import { normalize_text, pluralize, remove_underscores } from '#shared/utils.ts'
+	import { pluralize, remove_underscores } from '#shared/utils.ts'
+	import { search_structures } from '#lib/client/utils.ts'
 	import StructureList from '#components/StructureList.svelte'
 	import type { StructureShort, StructureType } from '#lib/commons/types.ts'
 	import { PLURALS } from '#shared/config.ts'
@@ -21,15 +22,7 @@
 
 	let search = $state('')
 
-	let searched_structures = $derived.by(() => {
-		if (!search) return structures
-		const query = normalize_text(search)
-		return structures.filter((s) =>
-			[s.name, ...(keywords[s.id] ?? [])].some((text) =>
-				normalize_text(text).includes(query)
-			)
-		)
-	})
+	let searched_structures = $derived(search_structures(structures, search, keywords))
 </script>
 
 <MetaData title="List of {PLURALS[type]}" />

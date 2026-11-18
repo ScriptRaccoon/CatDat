@@ -16,6 +16,7 @@
 	} from '#lib/commons/types.ts'
 	import { PLURALS } from '#shared/config.ts'
 	import TagList from '#components/TagList.svelte'
+	import StructureLookup from '#components/StructureLookup.svelte'
 
 	type Props = {
 		type: StructureType
@@ -28,6 +29,7 @@
 		deduced_counterexamples_count: number
 		unknown_structures: StructureShort[]
 		undecidable_structures: StructureShort[]
+		structure_keywords: Record<string, string[]>
 		relevant_implications: ImplicationDisplay[]
 	}
 
@@ -42,6 +44,7 @@
 		deduced_counterexamples_count,
 		unknown_structures,
 		undecidable_structures,
+		structure_keywords,
 		relevant_implications
 	}: Props = $props()
 
@@ -113,6 +116,15 @@
 	implications={relevant_implications}
 	highlighted_property={property.id}
 	{type}
+/>
+
+<StructureLookup
+	{type}
+	{examples}
+	{counterexamples}
+	{undecidable_structures}
+	{unknown_structures}
+	keywords={structure_keywords}
 />
 
 <h2 class="sticky-heading">Examples</h2>
