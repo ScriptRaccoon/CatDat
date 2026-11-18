@@ -7,6 +7,7 @@ description: Here, we assume that the topological space $X$ is neither discrete 
 nlab_link: https://ncatlab.org/nlab/show/sheaf+of+abelian+groups
 keywords:
   - sheaves of abelian groups
+  - sheaf
 
 tags:
   - algebraic geometry

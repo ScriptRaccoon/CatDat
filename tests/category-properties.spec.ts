@@ -277,6 +277,21 @@ test('user can look up a category by its keyword on a property page', async ({
 	])
 })
 
+test('user can look up a category without its hyphens on a property page', async ({
+	page
+}) => {
+	await page.goto('/category-property/cartesian_closed', { waitUntil: 'networkidle' })
+
+	const lookup = page.getByRole('searchbox', { name: 'look up a category' })
+	const results = page.getByRole('list', { name: 'Category lookup results' })
+
+	await lookup.fill('nonempty sets')
+
+	await expect(results.getByRole('listitem')).toHaveText([
+		'category of non-empty sets (satisfied)'
+	])
+})
+
 test('user sees unknown and undecidable categories marked in the category lookup', async ({
 	page
 }) => {
