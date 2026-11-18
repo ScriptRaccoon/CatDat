@@ -2,6 +2,7 @@ import { db } from '#lib/server/db.ts'
 import type { StructureShort, StructureType } from '#lib/commons/types.ts'
 import { deduce_properties } from '#shared/deduction.utils.ts'
 import { get_normalized_implications } from '#shared/implications.ts'
+import { fetch_undecidable_implications } from '#lib/server/fetchers/undecidable_implications.ts'
 
 export function fetch_missing_data(type: StructureType) {
 	const structures_with_unknown_properties = db
@@ -78,6 +79,18 @@ export function fetch_missing_data(type: StructureType) {
 		(impl) => !impl.associated_assumptions
 	)
 
+	// maps p to the set of all q such that p ===> q is recorded as undecidable
+	const undecidable_pairs = new Map<string, Set<string>>()
+
+	for (const { assumption, conclusion } of fetch_undecidable_implications(type)) {
+		let conclusions = undecidable_pairs.get(assumption)
+		if (!conclusions) {
+			conclusions = new Set()
+			undecidable_pairs.set(assumption, conclusions)
+		}
+		conclusions.add(conclusion)
+	}
+
 	const assignments_by_structure: Record<
 		string,
 		{ satisfied: string[]; unsatisfied: string[] }
@@ -130,6 +143,8 @@ export function fetch_missing_data(type: StructureType) {
 			}
 
 			if (deducible_properties.has(q.id)) continue
+
+			if (undecidable_pairs.get(p.id)?.has(q.id)) continue
 
 			missing_combinations.push([p.id, q.id])
 		}

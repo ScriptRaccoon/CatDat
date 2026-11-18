@@ -1,6 +1,7 @@
 <script lang="ts">
 	import HelpMessage from '#components/HelpMessage.svelte'
 	import ImplicationList from '#components/ImplicationList.svelte'
+	import UndecidableImplicationList from '#components/UndecidableImplicationList.svelte'
 	import MetaData from '#components/MetaData.svelte'
 	import SearchFilter from '#components/SearchFilter.svelte'
 	import SuggestionForm from '#components/SuggestionForm.svelte'
@@ -10,18 +11,23 @@
 		pluralize,
 		remove_underscores
 	} from '#shared/utils.ts'
-	import type { ImplicationDisplay, StructureType } from '#lib/commons/types.ts'
+	import type {
+		ImplicationDisplay,
+		StructureType,
+		UndecidableImplication
+	} from '#lib/commons/types.ts'
 	import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
 	import type { Snippet } from 'svelte'
 	import Fa from 'svelte-fa'
 
 	type Props = {
 		implications: ImplicationDisplay[]
+		undecidable_implications: UndecidableImplication[]
 		type: StructureType
 		hints: Snippet
 	}
 
-	let { implications, type, hints }: Props = $props()
+	let { implications, undecidable_implications, type, hints }: Props = $props()
 
 	let show_deduced_implications = $state(false)
 
@@ -94,6 +100,17 @@
 </HelpMessage>
 
 <ImplicationList implications={filtered_implications} {type} />
+
+{#if undecidable_implications.length}
+	<h2>Undecidable implications</h2>
+
+	<p class="hint">
+		It is undecidable in ZFC whether these implications hold. They are not used for
+		deductions.
+	</p>
+
+	<UndecidableImplicationList implications={undecidable_implications} {type} />
+{/if}
 
 <SuggestionForm />
 

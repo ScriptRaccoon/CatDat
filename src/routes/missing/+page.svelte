@@ -106,7 +106,8 @@
 					type
 				)} in the database or its dual. If some of these combinations <i>are</i>
 				inconsistent, this indicates that some
-				<a href="/{type}-implications">implication</a> is missing.
+				<a href="/{type}-implications">implication</a> is missing. Combinations whose
+				existence is undecidable in ZFC are not listed.
 			</p>
 
 			<details>
