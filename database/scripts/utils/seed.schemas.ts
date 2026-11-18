@@ -132,3 +132,19 @@ export const implications_yaml_schema = v.array(
 		)
 	)
 )
+
+const undecidable_implications_list_schema = v.array(
+	v.strictObject({
+		id: v.string(),
+		assumption: v.string(),
+		conclusion: v.string(),
+		proof: v.string()
+	})
+)
+
+export const undecidable_implications_yaml_schema = v.strictObject({
+	category: v.optional(undecidable_implications_list_schema),
+	functor: v.optional(undecidable_implications_list_schema),
+	morphism: v.optional(undecidable_implications_list_schema),
+	symmetric_monoidal_category: v.optional(undecidable_implications_list_schema)
+})

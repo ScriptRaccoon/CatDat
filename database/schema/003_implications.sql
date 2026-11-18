@@ -92,3 +92,18 @@ CREATE VIEW implications_view AS
         ) AS associated_assumptions
     FROM implications i
 ;
+
+CREATE TABLE undecidable_implications (
+    id TEXT PRIMARY KEY,
+    type TEXT NOT NULL,
+    assumption_id TEXT NOT NULL,
+    conclusion_id TEXT NOT NULL,
+    proof TEXT NOT NULL CHECK (length(proof) > 0),
+    CHECK (assumption_id != conclusion_id),
+    UNIQUE (type, assumption_id, conclusion_id),
+    FOREIGN KEY (type) REFERENCES structure_types (type) ON DELETE RESTRICT,
+    FOREIGN KEY (assumption_id, type)
+        REFERENCES properties (id, type) ON DELETE CASCADE,
+    FOREIGN KEY (conclusion_id, type)
+        REFERENCES properties (id, type) ON DELETE CASCADE
+);
