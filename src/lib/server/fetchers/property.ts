@@ -6,6 +6,7 @@ import type {
 } from '#lib/commons/types.ts'
 import { db } from '#lib/server/db.ts'
 import { display_implication, display_property } from '#lib/server/transforms.ts'
+import { fetch_structure_keywords } from '#lib/server/fetchers/structures.ts'
 import { error } from '@sveltejs/kit'
 
 export function fetch_property(type: StructureType, id: string) {
@@ -121,6 +122,8 @@ export function fetch_property(type: StructureType, id: string) {
 		}
 	}
 
+	const structure_keywords = fetch_structure_keywords(type)
+
 	return {
 		type,
 		property,
@@ -132,6 +135,7 @@ export function fetch_property(type: StructureType, id: string) {
 		deduced_counterexamples_count,
 		unknown_structures,
 		undecidable_structures,
+		structure_keywords,
 		relevant_implications
 	}
 }
