@@ -28,6 +28,7 @@ The description says **what** has changed, not **how**. The "Files changed" tab 
 - Name files, commands, folders, or settings only when the reader needs them, e.g. a new `pnpm` script, a new folder contributors must use, or a new YAML field.
 - For data changes, list what was added (structures, properties, implications) and the notable new results, e.g. which properties are now decided for which structures, or which redundant assignments were removed. Use the structures' notations in bold (`**Set**`) or their IDs in code formatting.
 - Never prove or sketch mathematical results in the description, and do not say how they are derived (no "by the dual of Corollary 3", "since it is finitely coaccessible and thin", "via cardinalities"). Proofs are part of the changes. State results only: "every direct category has cosifted limits", "**FI** is a dual generalized variety, but not a generalized variety".
+- Do not mention documentation updates (`CLAUDE.md`, `CONTRIBUTING.md`, `DATABASE.md`, ...) that merely describe the PR's own changes, since new features are always documented. Mention documentation only when it is the point of the PR or states a new rule or convention.
 - For UI changes, add a placeholder `<!-- screenshots -->` where screenshots would help, since the user adds them manually.
 
 ## Style
@@ -35,10 +36,10 @@ The description says **what** has changed, not **how**. The "Files changed" tab 
 Match the style of previous PRs in this repository (`gh pr list --state merged --limit 10 --json title,body` shows examples):
 
 - **Title:** short, in sentence case, describing the change, without a trailing period and without prefixes such as `feat:`.
-- **Description:** start with one or two sentences, usually beginning with "This PR ...", that state the overall change and, if applicable, the issue it fixes or the PR it continues (`fixes #135`, `continues #424`).
-- For a small PR, those sentences are the whole description. For a larger one, add sections with `###` headings in sentence case, and bullet lists, optionally with bold labels in sentence case (`- **New script:** ...`).
+- **Description:** start with one or two sentences, usually beginning with "This PR ...", that state the overall change and, if applicable, the issue it resolves or the PR it continues. Write `fixes #135` only for a bug or an urgent issue; for a feature request, write e.g. "This PR resolves #392 and adds ...". For a continued PR, write `continues #424`.
+- For a small PR, those sentences are the whole description. For a larger one, add sections with `##` headings (the highest level; `###` only for subsections) in sentence case, and bullet lists, optionally with bold labels in sentence case (`- **New script:** ...`).
 - Be concise. Do not pad the description with motivation the reader already knows, test instructions, or checklists. Do not mention that the description was generated.
 
 ## Output
 
-Print the title and then the description in a single fenced `markdown` code block, ready to paste into GitHub. Do not create the PR, push, or edit any files.
+Print the title in its own fenced `text` code block, so that it can be copied separately, and then the description in a fenced `markdown` code block, ready to paste into GitHub. Never put the title into the description. Do not create the PR, push, or edit any files.
