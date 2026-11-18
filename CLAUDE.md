@@ -25,7 +25,7 @@ TypeScript, SvelteKit (Svelte 5), SQLite via `better-sqlite3`, KaTeX for math re
 - [shared/](shared/): code used by both the database scripts and the app (`#shared/*` subpath import), e.g. the DB client and the structure type config. `history.json` records the order in which structures and properties were added (each entry with type and ID); `db:seed` appends new entries, and the homepage reads it for "Recently added structures" and "Recently added properties". When renaming a structure or property, rename it in the history as well (`db:test` checks that all entries exist).
 - [src/](src/): the SvelteKit app. Routes are generic over the structure type (`src/routes/[type]`, `[type]-property`, `[type]-implication`, `[type]-search`, ...). Page components are in `src/pages/`, shared components in `src/components/`, server-side DB access in `src/lib/server/`.
 - [content/](content/): Markdown content pages for reusable lemmas and proofs that require lemmas.
-- [tests/](tests/): Playwright end-to-end tests.
+- [tests/](tests/): Playwright end-to-end tests: one folder per structure type with one file per feature (e.g. `categories/proof-navigation.spec.ts`, `functors/property-lookup.spec.ts`), and top-level files for type-independent pages (homepage, missing data, content pages, structure selector). Tag pages are tested in `list.spec.ts` and `property-list.spec.ts`. Keep files below about 200 lines and split by feature when one grows; shared helpers go to `tests/utils.ts`. `symmetric-monoidal-categories/` covers only a selection, since the generic features are tested with the other types.
 
 ## Commands
 

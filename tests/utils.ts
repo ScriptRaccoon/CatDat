@@ -11,3 +11,8 @@ export function get_property_list(page: Page, section: string, list: string) {
 		})
 		.getByRole('list', { name: list, exact: true })
 }
+
+/**
+ * The encoded delimiter between property IDs in the URLs of search results.
+ */
+export const encoded_delimiter = '%7E'
