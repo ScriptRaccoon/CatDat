@@ -11,7 +11,7 @@
 
 	type Props = {
 		children: Snippet
-		proof?: string | null
+		proof: string
 		proof_key: string
 		is_duplicate?: boolean
 	}
@@ -23,7 +23,7 @@
 	let wrapper = $state<HTMLElement | null>(null)
 
 	$effect(() => {
-		if (is_duplicate || !proof || !wrapper) return
+		if (is_duplicate || !wrapper) return
 		const key = proof_key
 		register_proof(key, { id, proof, element: wrapper })
 		return () => unregister_proof(key, id)
@@ -35,19 +35,13 @@
 	}
 </script>
 
-{#if proof}
-	<span class="wrapper" class:expanded={popup_state?.id === id} bind:this={wrapper}>
-		<button onclick={show_proof} aria-label="Show proof">
-			<Fa icon={faInfoCircle} />
-		</button>
+<span class="wrapper" class:expanded={popup_state?.id === id} bind:this={wrapper}>
+	<button onclick={show_proof} aria-label="Show proof">
+		<Fa icon={faInfoCircle} />
+	</button>
 
-		<span>{@render children()}</span>
-	</span>
-{:else}
-	<span>
-		{@render children()}
-	</span>
-{/if}
+	<span>{@render children()}</span>
+</span>
 
 <style>
 	.wrapper {

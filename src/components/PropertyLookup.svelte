@@ -92,19 +92,27 @@
 			<ul class="no-bullets with-margins" aria-label="Property lookup results">
 				{#each results as { id, relation, proof, status } (id)}
 					<li>
-						<TextWithProof
-							{proof}
-							proof_key={encode_property_ID(id)}
-							is_duplicate={true}
-						>
+						{#if proof}
+							<TextWithProof
+								{proof}
+								proof_key={encode_property_ID(id)}
+								is_duplicate={true}
+							>
+								{relation}
+								<a href={get_property_url(id, type)}>
+									{get_property_label(id)}
+								</a>
+								{#if status === 'undecidable'}
+									<span class="status">({status})</span>
+								{/if}
+							</TextWithProof>
+						{:else}
 							{relation}
 							<a href={get_property_url(id, type)}>
 								{get_property_label(id)}
 							</a>
-							{#if status === 'unknown' || status === 'undecidable'}
-								<span class="status">({status})</span>
-							{/if}
-						</TextWithProof>
+							<span class="status">({status})</span>
+						{/if}
 					</li>
 				{/each}
 			</ul>

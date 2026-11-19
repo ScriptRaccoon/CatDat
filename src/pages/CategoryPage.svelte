@@ -45,19 +45,22 @@
 			<ul class="with-margins no-bullets underline-formula-links">
 				{#each data.special_morphisms as morphism}
 					<li>
-						<TextWithProof
-							proof={morphism.proof}
-							proof_key={encode_property_ID(morphism.kind)}
-						>
+						{#if morphism.proof}
+							<TextWithProof
+								proof={morphism.proof}
+								proof_key={encode_property_ID(morphism.kind)}
+							>
+								<a href={get_property_url(morphism.kind, 'morphism')}>
+									{get_special_morphism_plural(morphism.kind)}
+								</a>:
+								{@html morphism.description}
+							</TextWithProof>
+						{:else}
 							<a href={get_property_url(morphism.kind, 'morphism')}>
 								{get_special_morphism_plural(morphism.kind)}
 							</a>:
-							{#if morphism.description}
-								{@html morphism.description}
-							{:else}
-								<Fa icon={faQuestion} scale={0.825} />
-							{/if}
-						</TextWithProof>
+							<Fa icon={faQuestion} scale={0.825} />
+						{/if}
 					</li>
 				{/each}
 			</ul>
