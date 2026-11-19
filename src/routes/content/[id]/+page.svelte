@@ -28,7 +28,11 @@
 	{#each STRUCTURE_TYPES as type}
 		{#if data.structures_by_type?.[type]?.length}
 			<p class="hint">This page is referenced by the following {PLURALS[type]}.</p>
-			<StructureList structures={data.structures_by_type[type]} {type} />
+			<StructureList
+				structures={data.structures_by_type[type]}
+				{type}
+				label="Referencing {PLURALS[type]}"
+			/>
 		{/if}
 
 		{#if data.properties_by_type?.[type]?.length}
@@ -36,7 +40,11 @@
 				This page is referenced by the following properties of {PLURALS[type]}.
 			</p>
 
-			<PropertyList properties={data.properties_by_type[type]} {type} />
+			<PropertyList
+				properties={data.properties_by_type[type]}
+				{type}
+				label="Referencing properties of {PLURALS[type]}"
+			/>
 		{/if}
 
 		{#if data.implications_by_type?.[type]?.length}
@@ -44,7 +52,11 @@
 				This page is referenced by the following {remove_underscores(type)} implications.
 			</p>
 
-			<ImplicationList implications={data.implications_by_type[type]} {type} />
+			<ImplicationList
+				implications={data.implications_by_type[type]}
+				{type}
+				label="Referencing {remove_underscores(type)} implications"
+			/>
 		{/if}
 	{/each}
 {/if}

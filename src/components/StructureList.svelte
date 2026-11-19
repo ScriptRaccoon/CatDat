@@ -4,13 +4,14 @@
 	type Props = {
 		structures: (StructureShort & { count?: number })[]
 		type: StructureType
+		label?: string
 	}
 
-	let { structures, type }: Props = $props()
+	let { structures, type, label }: Props = $props()
 </script>
 
 {#if structures.length}
-	<ul class="with-margins">
+	<ul class="with-margins" aria-label={label}>
 		{#each structures as structure}
 			<li>
 				<a href="/{type}/{structure.id}">

@@ -85,15 +85,13 @@ test('user can view referencing categories on a content page', async ({ page }) 
 		'This page is referenced by the following categories.'
 	)
 
-	const context = page
-		.getByRole('heading', {
-			name: 'Context',
-			exact: true
-		})
-		.locator('xpath=following-sibling::ul')
+	const structures = page.getByRole('list', {
+		name: 'Referencing categories',
+		exact: true
+	})
 
 	await expect(
-		context.getByRole('link', {
+		structures.getByRole('link', {
 			name: 'category of groups',
 			exact: true
 		})
