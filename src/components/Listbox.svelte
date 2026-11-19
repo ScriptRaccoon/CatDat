@@ -12,24 +12,24 @@
 
 	type Props = {
 		id: string
+		label_id: string
 		options: Option[]
 		active_index: number
 		open: boolean
 		onselect: (value: string) => void
 		is_selected?: (value: string) => boolean
 		align?: 'left' | 'right'
-		label_id?: string
 	}
 
 	let {
 		id,
+		label_id,
 		options,
 		active_index = $bindable(),
 		open,
 		onselect,
 		is_selected = () => false,
-		align = 'left',
-		label_id
+		align = 'left'
 	}: Props = $props()
 
 	let listbox = $state<HTMLDivElement | null>(null)
