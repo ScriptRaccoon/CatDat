@@ -2,28 +2,22 @@
 	import type { Snippet } from 'svelte'
 
 	type Props = {
-		handle_click?: () => void
 		children: Snippet
+		handle_click?: () => void
 		size?: 'small' | 'medium'
 		selected?: boolean
 		link?: string
 	}
 
-	let {
-		handle_click,
-		children,
-		size = 'medium',
-		selected = false,
-		link
-	}: Props = $props()
+	let { children, handle_click, size = 'medium', selected, link }: Props = $props()
 </script>
 
 {#if link}
-	<a href={link} class="chip {size}" onclick={handle_click} aria-current={selected}>
+	<a href={link} class="chip {size}">
 		{@render children()}
 	</a>
 {:else if handle_click}
-	<button class="chip {size}" onclick={handle_click} aria-current={selected}>
+	<button class="chip {size}" onclick={handle_click} aria-pressed={selected}>
 		{@render children()}
 	</button>
 {/if}
