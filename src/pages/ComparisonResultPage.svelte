@@ -74,6 +74,7 @@
 		</button>
 	{/if}
 	<a class="button" href="/{type}-comparison">Choose different {PLURALS[type]}</a>
+	<a class="button" href="#legend">Legend</a>
 </div>
 
 <table>
@@ -106,6 +107,19 @@
 		{/each}
 	</tbody>
 </table>
+
+<section class="legend" id="legend">
+	<h2 id="legend-heading">Legend</h2>
+
+	<ul class="no-bullets" aria-labelledby="legend-heading">
+		{#each Object.entries(icon_config) as [value, icon]}
+			<li>
+				<span class={value}><Fa {icon} /></span>
+				{value}
+			</li>
+		{/each}
+	</ul>
+</section>
 
 <style>
 	.actions {
@@ -159,20 +173,35 @@
 		text-align: center;
 	}
 
-	td.yes {
+	.yes {
 		color: var(--success-color);
 	}
 
-	td.no {
+	.no {
 		color: var(--error-color);
 	}
 
-	td.unknown {
+	.unknown,
+	.undecidable {
 		color: var(--secondary-text-color);
 	}
 
 	tr.highlight {
 		background-color: var(--secondary-bg-color);
+	}
+
+	.legend {
+		margin-top: 2rem;
+	}
+
+	.legend ul {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem 1.5rem;
+	}
+
+	.legend span {
+		margin-right: 0.25rem;
 	}
 
 	@media (max-width: 600px) {
