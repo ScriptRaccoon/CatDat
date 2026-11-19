@@ -48,6 +48,14 @@ export const special_morphism_rule_yaml_schema = v.array(
 	})
 )
 
+export const subcategory_closed_properties_yaml_schema = v.array(
+	v.strictObject({
+		property: v.string(),
+		requires_full: v.optional(v.boolean(), false),
+		requires_inhabited: v.optional(v.boolean(), false)
+	})
+)
+
 const property_entry_schema = v.strictObject({
 	property: v.string(),
 	proof: v.string(),

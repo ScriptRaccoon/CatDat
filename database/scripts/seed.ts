@@ -10,6 +10,7 @@ import {
 	property_yaml_schema,
 	special_morphism_rule_yaml_schema,
 	structure_yaml_schema,
+	subcategory_closed_properties_yaml_schema,
 	undecidable_implications_yaml_schema
 } from './utils/seed.schemas'
 import * as v from 'valibot'
@@ -47,6 +48,8 @@ function seed() {
 	seed_special_morphisms()
 	seed_special_morphism_rules()
 	seed_special_category_data()
+
+	seed_subcategory_closed_properties()
 
 	save_history()
 }
@@ -321,6 +324,37 @@ function seed_special_category_data() {
 		get_data_folders('category').structures,
 		category_yaml_schema,
 		insert_category
+	)
+}
+
+/**
+ * Seeds the category properties that are inherited by every subcategory.
+ */
+function seed_subcategory_closed_properties() {
+	const property_insert = db.prepare(
+		`INSERT INTO subcategory_closed_properties
+			(property_id, requires_full, requires_inhabited)
+		VALUES (?, ?, ?)`
+	)
+
+	function insert_properties(
+		properties: v.InferOutput<typeof subcategory_closed_properties_yaml_schema>
+	) {
+		for (const { property, requires_full, requires_inhabited } of properties) {
+			property_insert.run(
+				property,
+				Number(requires_full),
+				Number(requires_inhabited)
+			)
+		}
+	}
+
+	seed_file(
+		db,
+		'subcategory-closed properties',
+		path.join(DATA_FOLDER, 'subcategory-closed-properties.yaml'),
+		subcategory_closed_properties_yaml_schema,
+		insert_properties
 	)
 }
 
