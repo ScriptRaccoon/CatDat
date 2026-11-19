@@ -21,11 +21,17 @@
 		unknown: faQuestion
 	}
 
-	let difference_count = $derived(
-		comparison_table.filter(
-			([_, ...values]) => values.includes('yes') && values.includes('no')
-		).length
+	function is_difference(values: string[]) {
+		return values.includes('yes') && values.includes('no')
+	}
+
+	let differences = $derived(
+		comparison_table.filter(([_, ...values]) => is_difference(values))
 	)
+
+	let show_only_differences = $state(false)
+
+	let displayed_rows = $derived(show_only_differences ? differences : comparison_table)
 
 	let paragraph_element = $state<HTMLElement | null>(null)
 	let show_thead_outline = $state(false)
@@ -52,10 +58,21 @@
 	Selected:
 	{structures.map((c) => c.name).join(', ')}.
 	{#if structures.length > 1}
-		They differ in {difference_count} of {comparison_table.length} properties.
+		They differ in {differences.length} of {comparison_table.length} properties.
 	{/if}
-	<a href="/{type}-comparison">Choose different {PLURALS[type]}</a>.
 </p>
+
+<div class="actions">
+	{#if structures.length > 1}
+		<button
+			class="button"
+			onclick={() => (show_only_differences = !show_only_differences)}
+		>
+			{show_only_differences ? 'Show all properties' : 'Show only differences'}
+		</button>
+	{/if}
+	<a class="button" href="/{type}-comparison">Choose different {PLURALS[type]}</a>
+</div>
 
 <table>
 	<thead class:outlined={show_thead_outline}>
@@ -72,7 +89,7 @@
 	</thead>
 
 	<tbody>
-		{#each comparison_table as [property, ...values]}
+		{#each displayed_rows as [property, ...values]}
 			{@const is_different = new Set(values).size > 1}
 			<tr class:highlight={is_different}>
 				<td>
@@ -90,6 +107,13 @@
 </table>
 
 <style>
+	.actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		margin-bottom: 1rem;
+	}
+
 	table {
 		border-collapse: collapse;
 		width: 100%;
