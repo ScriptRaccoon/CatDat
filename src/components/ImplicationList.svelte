@@ -6,13 +6,14 @@
 		implications: ImplicationDisplay[]
 		highlighted_property?: string
 		type: StructureType
+		label?: string
 	}
 
-	let { implications, highlighted_property, type }: Props = $props()
+	let { implications, highlighted_property, type, label }: Props = $props()
 </script>
 
 {#if implications.length}
-	<ul class="no-bullets with-margins">
+	<ul class="no-bullets with-margins" aria-label={label}>
 		{#each implications as implication}
 			<li>
 				<ImplicationItem {implication} {highlighted_property} {type} />
