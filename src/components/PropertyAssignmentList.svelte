@@ -3,6 +3,7 @@
 	import HelpMessage from './HelpMessage.svelte'
 	import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
 	import PropertyList from './PropertyList.svelte'
+	import PropertyListWithProofs from './PropertyListWithProofs.svelte'
 	import PropertyLookup from './PropertyLookup.svelte'
 	import type {
 		PropertyAssignmentDisplay,
@@ -80,11 +81,10 @@
 		<h2 class="sticky-heading">Satisfied properties</h2>
 
 		<p class="hint">Assigned properties ({satisfied_assigned.length})</p>
-		<PropertyList
+		<PropertyListWithProofs
 			properties={satisfied_assigned}
 			{type}
 			label="Assigned properties"
-			no_bullets={true}
 		/>
 
 		{#if parent_id}
@@ -92,20 +92,18 @@
 				Properties from <a href="/{type}/{parent_id}">parent</a>
 				({satisfied_inherited.length})
 			</p>
-			<PropertyList
+			<PropertyListWithProofs
 				properties={satisfied_inherited}
 				{type}
 				label="Properties from parent"
-				no_bullets={true}
 			/>
 		{/if}
 
 		<p class="hint">Deduced properties ({satisfied_deduced.length})</p>
-		<PropertyList
+		<PropertyListWithProofs
 			properties={satisfied_deduced}
 			{type}
 			label="Deduced properties"
-			no_bullets={true}
 		/>
 	</section>
 
@@ -113,11 +111,10 @@
 		<h2 class="sticky-heading">Unsatisfied properties</h2>
 
 		<p class="hint">Assigned properties ({unsatisfied_assigned.length})</p>
-		<PropertyList
+		<PropertyListWithProofs
 			properties={unsatisfied_assigned}
 			{type}
 			label="Assigned properties"
-			no_bullets={true}
 		/>
 
 		{#if parent_id}
@@ -125,20 +122,18 @@
 				Properties from <a href="/{type}/{parent_id}">parent</a>
 				({unsatisfied_inherited.length})
 			</p>
-			<PropertyList
+			<PropertyListWithProofs
 				properties={unsatisfied_inherited}
 				{type}
 				label="Properties from parent"
-				no_bullets={true}
 			/>
 		{/if}
 
 		<p class="hint">Deduced properties ({unsatisfied_deduced.length})*</p>
-		<PropertyList
+		<PropertyListWithProofs
 			properties={unsatisfied_deduced}
 			{type}
 			label="Deduced properties"
-			no_bullets={true}
 		/>
 
 		<p class="hint">*This also uses the deduced satisfied properties.</p>
@@ -184,11 +179,10 @@
 			</p>
 		{/if}
 
-		<PropertyList
+		<PropertyListWithProofs
 			properties={undecidable_properties}
 			{type}
 			label="Undecidable properties"
-			no_bullets={true}
 		/>
 	</section>
 {/if}
