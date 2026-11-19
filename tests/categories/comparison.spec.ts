@@ -102,3 +102,23 @@ test('user can view comparison table', async ({ page }) => {
 		await expect(row.locator('td').nth(2)).toHaveAttribute('aria-label', value_2)
 	}
 })
+
+test('user can show only the differences', async ({ page }) => {
+	await page.goto('/category-comparison/Ring/CRing', { waitUntil: 'networkidle' })
+
+	const table = page.getByRole('table')
+	const abelian_link = table.getByRole('link', { name: 'abelian', exact: true })
+	const coextensive_link = table.getByRole('link', { name: 'coextensive', exact: true })
+
+	await expect(abelian_link).toBeVisible()
+	await expect(coextensive_link).toBeVisible()
+
+	await page.getByRole('button', { name: 'Show only differences', exact: true }).click()
+
+	await expect(abelian_link).toBeHidden()
+	await expect(coextensive_link).toBeVisible()
+
+	await page.getByRole('button', { name: 'Show all properties', exact: true }).click()
+
+	await expect(abelian_link).toBeVisible()
+})
