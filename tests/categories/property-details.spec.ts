@@ -136,3 +136,19 @@ test('user can view undecidable implications of a category property', async ({
 
 	await expect(popup).toContainText('Vopěnka')
 })
+
+test('user can see which subcategories inherit a category property', async ({ page }) => {
+	const inheritance = page.locator('strong:has-text("Inheritance") + span')
+
+	await page.goto('/category-property/thin')
+	await expect(inheritance).toHaveText('is inherited by subcategories')
+
+	await page.goto('/category-property/groupoid')
+	await expect(inheritance).toHaveText('is inherited by full subcategories')
+
+	await page.goto('/category-property/strongly_connected')
+	await expect(inheritance).toHaveText('is inherited by inhabited full subcategories')
+
+	await page.goto('/category-property/complete')
+	await expect(inheritance).toHaveCount(0)
+})
