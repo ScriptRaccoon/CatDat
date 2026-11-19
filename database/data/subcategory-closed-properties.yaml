@@ -1,0 +1,90 @@
+# Category properties that are inherited by subcategories:
+# if C is a subcategory of D and D has the property, then C has it as well.
+# Some properties are only inherited by full subcategories (requires_full,
+# with a non-full counterexample in a comment),
+# some only by inhabited ones (requires_inhabited).
+#
+# This information is displayed on the property pages.
+# It is not used for deductions.
+
+- property: small
+
+- property: countable
+
+- property: finite
+
+- property: locally small
+
+- property: locally finite
+
+- property: locally essentially small
+
+- property: thin
+
+- property: discrete
+
+- property: skeletal
+
+- property: gaunt
+
+- property: core-thin
+
+- property: one-way
+
+- property: left cancellative
+
+- property: right cancellative
+
+- property: retract-trivial
+
+- property: direct
+
+- property: inverse
+
+- property: concretizable
+
+- property: essentially small
+  requires_full: true # Set_disc ⊆ Set_indisc
+
+- property: essentially countable
+  requires_full: true # Set_disc ⊆ Set_indisc
+
+- property: essentially finite
+  requires_full: true # Set_disc ⊆ Set_indisc
+
+- property: groupoid
+  requires_full: true # BN ⊆ BZ
+
+- property: EI-category
+  requires_full: true # BN ⊆ BZ
+
+- property: essentially discrete
+  requires_full: true # walking morphism ⊆ walking isomorphism
+
+- property: generalized direct
+  requires_full: true # BN ⊆ BZ
+
+- property: generalized inverse
+  requires_full: true # BN ⊆ BZ
+
+- property: zero morphisms
+  requires_full: true # discrete {0,1} ⊆ walking isomorphism
+
+- property: preadditive
+  requires_full: true # discrete {0,1} ⊆ walking isomorphism
+
+- property: strongly connected
+  requires_full: true # discrete {0,1} ⊆ walking isomorphism
+  requires_inhabited: true
+
+- property: semi-strongly connected
+  requires_full: true # discrete {0,1} ⊆ walking isomorphism
+  requires_inhabited: true
+
+- property: core-connected
+  requires_full: true # discrete {0,1} ⊆ walking isomorphism
+  requires_inhabited: true
+
+- property: trivial
+  requires_full: true # discrete {0,1} ⊆ walking isomorphism
+  requires_inhabited: true

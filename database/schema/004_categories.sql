@@ -15,3 +15,15 @@ BEGIN
             THEN RAISE(ABORT, 'Categories must have type "category"')
         END;
 END;
+
+CREATE TABLE subcategory_closed_properties (
+    property_id TEXT PRIMARY KEY,
+    property_type TEXT NOT NULL DEFAULT 'category'
+        CHECK (property_type = 'category'),
+    requires_full INTEGER NOT NULL DEFAULT FALSE
+        CHECK (requires_full IN (TRUE, FALSE)),
+    requires_inhabited INTEGER NOT NULL DEFAULT FALSE
+        CHECK (requires_inhabited IN (TRUE, FALSE)),
+    FOREIGN KEY (property_id, property_type)
+        REFERENCES properties (id, type) ON DELETE CASCADE
+);
