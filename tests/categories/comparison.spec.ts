@@ -122,3 +122,16 @@ test('user can show only the differences', async ({ page }) => {
 
 	await expect(abelian_link).toBeVisible()
 })
+
+test('comparison table distinguishes unknown and undecidable values', async ({
+	page
+}) => {
+	await page.goto('/category-comparison/FreeAb/Met_c')
+
+	const row = page.getByRole('table').locator('tbody tr', {
+		has: page.getByRole('link', { name: 'accessible', exact: true })
+	})
+
+	await expect(row.locator('td').nth(1)).toHaveAttribute('aria-label', 'undecidable')
+	await expect(row.locator('td').nth(2)).toHaveAttribute('aria-label', 'unknown')
+})

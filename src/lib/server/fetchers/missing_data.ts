@@ -30,7 +30,14 @@ export function fetch_missing_data(type: StructureType) {
 				SELECT
 					s.id,
 					s.name,
-					group_concat(coalesce(pa.is_satisfied, '?'), '' ORDER BY p.id) AS signature
+					group_concat(
+						CASE
+							WHEN pa.structure_id IS NULL THEN '?'
+							WHEN pa.is_satisfied IS NULL THEN 'u'
+							ELSE pa.is_satisfied
+						END,
+						'' ORDER BY p.id
+					) AS signature
 				FROM structures s
 				JOIN properties p ON p.type = s.type
 				LEFT JOIN property_assignments pa
