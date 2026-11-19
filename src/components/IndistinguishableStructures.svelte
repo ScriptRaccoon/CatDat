@@ -22,6 +22,6 @@
 			distinguishing property may be missing from the database.
 		</p>
 
-		<StructureList {structures} {type} />
+		<StructureList {structures} {type} label="Indistinguishable {PLURALS[type]}" />
 	</section>
 {/if}
