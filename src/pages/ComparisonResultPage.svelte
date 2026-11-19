@@ -5,6 +5,7 @@
 	import type { ComparisonResult, StructureType } from '#lib/commons/types.ts'
 	import {
 		faCheck,
+		faCircleHalfStroke,
 		faQuestion,
 		faXmark,
 		type IconDefinition
@@ -18,11 +19,12 @@
 	const icon_config: Record<string, IconDefinition> = {
 		yes: faCheck,
 		no: faXmark,
-		unknown: faQuestion
+		unknown: faQuestion,
+		undecidable: faCircleHalfStroke
 	}
 
 	function is_difference(values: string[]) {
-		return values.includes('yes') && values.includes('no')
+		return new Set(values).size > 1
 	}
 
 	let differences = $derived(
@@ -90,8 +92,7 @@
 
 	<tbody>
 		{#each displayed_rows as [property, ...values]}
-			{@const is_different = new Set(values).size > 1}
-			<tr class:highlight={is_different}>
+			<tr class:highlight={is_difference(values)}>
 				<td>
 					<a href={get_property_url(property, type)}>{property}</a>
 				</td>

@@ -60,6 +60,7 @@ function get_comparison_query(compared_ids: string[]) {
 			`CASE 
 				WHEN a${i}.is_satisfied = TRUE THEN 'yes'
 				WHEN a${i}.is_satisfied = FALSE THEN 'no'
+				WHEN a${i}.structure_id IS NOT NULL THEN 'undecidable'
 				ELSE 'unknown'
 			END AS struct${i}`
 	)

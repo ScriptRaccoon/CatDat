@@ -159,7 +159,9 @@ export function fetch_structure(type: StructureType, id: string): StructureDetai
             GROUP BY u.id, u.name
             HAVING SUM(
                 CASE
-                    WHEN pa.is_satisfied IS up.is_satisfied THEN 0
+                    WHEN pa.is_satisfied IS up.is_satisfied
+                    AND (pa.structure_id IS NULL) = (up.structure_id IS NULL)
+					THEN 0
                     ELSE 1
                 END
             ) = 0`
