@@ -53,6 +53,8 @@ export function fetch_property(type: StructureType, id: string) {
 		.pluck()
 		.all(type, id)
 
+	const subcategory_inheritance = fetch_subcategory_inheritance(type, id)
+
 	const relevant_implications_db = db
 		.prepare<string[], ImplicationDB>(
 			`SELECT
@@ -132,6 +134,7 @@ export function fetch_property(type: StructureType, id: string) {
 		property,
 		related_properties,
 		tags,
+		subcategory_inheritance,
 		examples,
 		counterexamples,
 		deduced_examples_count,
@@ -142,4 +145,25 @@ export function fetch_property(type: StructureType, id: string) {
 		relevant_implications,
 		undecidable_implications
 	}
+}
+
+function fetch_subcategory_inheritance(type: StructureType, id: string) {
+	if (type !== 'category') return null
+
+	const row = db
+		.prepare<[string], { requires_full: 0 | 1; requires_inhabited: 0 | 1 }>(
+			`SELECT requires_full, requires_inhabited
+			FROM subcategory_closed_properties
+			WHERE property_id = ?`
+		)
+		.get(id)
+
+	if (!row) return null
+
+	const adjectives = [
+		row.requires_inhabited ? 'inhabited' : '',
+		row.requires_full ? 'full' : ''
+	].filter(Boolean)
+
+	return [...adjectives, 'subcategories'].join(' ')
 }

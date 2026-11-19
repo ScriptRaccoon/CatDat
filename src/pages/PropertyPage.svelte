@@ -25,6 +25,7 @@
 		property: PropertyDisplay
 		related_properties: string[]
 		tags: string[]
+		subcategory_inheritance: string | null
 		examples: StructureShort[]
 		counterexamples: StructureShort[]
 		deduced_examples_count: number
@@ -41,6 +42,7 @@
 		property,
 		related_properties,
 		tags,
+		subcategory_inheritance,
 		examples,
 		counterexamples,
 		deduced_examples_count,
@@ -76,7 +78,7 @@
 	{/if}
 </div>
 
-{#if property.dual_property_id || related_properties.length || property.nlab_link}
+{#if property.dual_property_id || related_properties.length || property.nlab_link || subcategory_inheritance}
 	<div class="information-table">
 		{#if property.dual_property_id}
 			<strong><a href="/content/dual-properties">Dual</a></strong>
@@ -101,6 +103,11 @@
 					{/if}
 				{/each}
 			</span>
+		{/if}
+
+		{#if subcategory_inheritance}
+			<strong>Inheritance</strong>
+			<span>is inherited by {subcategory_inheritance}</span>
 		{/if}
 
 		{#if property.nlab_link}
