@@ -1,0 +1,15 @@
+id: discretely cofiltered
+relation: is
+description: A category is <i>discretely cofiltered</i> if every finite discrete diagram admits a cone, i.e. for all finitely many objects $X_1,\dotsc,X_n$ there is an object $P$ with morphisms $P \to X_i$. Equivalently, it is inhabited and for every two objects $X,Y$ there is a span $X \leftarrow P \rightarrow Y$. A thin category is discretely cofiltered if and only if it is a codirected preorder.
+nlab_link: null
+dual: discretely filtered
+invariant_under_equivalences: true
+
+related:
+  - cofiltered
+  - cosifted
+  - connected
+  - inhabited
+
+tags:
+  - morphism behavior

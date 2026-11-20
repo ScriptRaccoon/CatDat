@@ -14,13 +14,6 @@
     - semi-strongly connected
   proof: This is immediate from the definition.
 
-- id: semi-strongly_connected_consequence
-  assumptions:
-    - semi-strongly connected
-  conclusions:
-    - connected
-  proof: This is immediate from the definition.
-
 - id: thin_not_strongly_connected
   assumptions:
     - strongly connected

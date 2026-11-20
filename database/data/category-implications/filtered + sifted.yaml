@@ -7,21 +7,26 @@
     - sifted
   proof: 'Every filtered category $\C$ is inhabited and has final diagonal functors $\Delta : \C \to \C^J$ for all finite index categories $J$; in particular, it is inhabited and its diagonal $\Delta: \C \to \C \times \C$ is final.'
 
-# TODO: with appropriate additional category properties, the hypothesis that the category is sifted could be weakened to a hypothesis that the category is inhabited and has cospans of all pairs, or equivalently that all finite sets of objects have a cospan, cf. #321
-- id: thin_sifted_is_filtered
+- id: sifted_is_discretely_filtered
   assumptions:
-    - thin
     - sifted
   conclusions:
-    - filtered
-  proof: The assumption that the category is sifted implies that any finite set of objects (including an empty set) has a cospan. In order to conclude the category is filtered, the only thing left to show is that any parallel pair is coequalized by some morphism; but this is trivial in a thin category.
+    - discretely filtered
+  proof: Sifted categories are inhabited, and any two objects in a sifted category are joined by a cospan, since the category of cospans between them is connected and hence inhabited.
 
-- id: sifted_is_connected
+- id: discretely_filtered_is_connected
   assumptions:
-    - sifted
+    - discretely filtered
   conclusions:
     - connected
-  proof: Sifted categories are inhabited, and any two objects in a sifted category are joined by a cospan.
+  proof: Discretely filtered categories are inhabited, and any two objects in a discretely filtered category are joined by a cospan.
+
+- id: semi-strongly_connected_is_discretely_filtered
+  assumptions:
+    - semi-strongly connected
+  conclusions:
+    - discretely filtered
+  proof: 'The category is inhabited by assumption. Let $X,Y$ be two objects. A morphism $f : X \to Y$ yields the cospan $X \xrightarrow{f} Y \xleftarrow{\id} Y$, and a morphism $g : Y \to X$ yields the cospan $X \xrightarrow{\id} X \xleftarrow{g} Y$.'
 
 - id: coproducts_implies_sifted
   assumptions:
@@ -50,14 +55,15 @@
   conclusions:
     - filtered
   proof: Every finite diagram even admits a <i>universal</i> cocone.
+  check_redundancy: false
 
 - id: filtered_via_coequalizers
   assumptions:
     - coequalizers
-    - semi-strongly connected
+    - discretely filtered
   conclusions:
     - filtered
-  proof: This is obvious.
+  proof: Every finite set of objects admits a cocone, and every parallel pair is coequalized by its coequalizer.
 
 - id: aleph1-filtered-consequence
   assumptions:

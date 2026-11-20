@@ -6,6 +6,7 @@ dual: filtered
 invariant_under_equivalences: true
 
 related:
+  - discretely cofiltered
   - ℵ₁-cofiltered
   - cofiltered limits
   - complete

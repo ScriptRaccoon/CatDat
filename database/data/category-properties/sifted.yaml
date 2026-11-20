@@ -9,6 +9,7 @@ dual: cosifted
 invariant_under_equivalences: true
 
 related:
+  - discretely filtered
   - connected
   - filtered
   - sifted colimits

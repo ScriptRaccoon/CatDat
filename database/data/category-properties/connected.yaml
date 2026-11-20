@@ -10,6 +10,8 @@ related:
   - semi-strongly connected
   - strongly connected
   - core-connected
+  - discretely cofiltered
+  - discretely filtered
 
 tags:
   - morphism behavior

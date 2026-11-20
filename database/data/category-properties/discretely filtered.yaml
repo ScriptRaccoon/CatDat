@@ -1,0 +1,19 @@
+id: discretely filtered
+relation: is
+description: A category is <i>discretely filtered</i> if every finite discrete diagram admits a cocone, i.e. for all finitely many objects $X_1,\dotsc,X_n$ there is an object $S$ with morphisms $X_i \to S$. Equivalently, it is inhabited and for every two objects $X,Y$ there is a cospan $X \rightarrow S \leftarrow Y$. A thin category is discretely filtered if and only if it is a directed preorder. In <a href="https://arxiv.org/abs/1606.06777">Chen</a>, this property is called the <i>joint embedding property</i>.
+nlab_link: null
+dual: discretely cofiltered
+invariant_under_equivalences: true
+
+keywords:
+  - joint embedding property
+  - JEP
+
+related:
+  - filtered
+  - sifted
+  - connected
+  - inhabited
+
+tags:
+  - morphism behavior
