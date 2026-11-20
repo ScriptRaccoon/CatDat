@@ -94,10 +94,15 @@ for (const via of ['back button', 'browser']) {
 		const scroll_top = await popup.evaluate((el) => el.scrollTop)
 		expect(scroll_top).toBeGreaterThan(0)
 
+		const page_scroll_y = await page.evaluate(() => window.scrollY)
+
 		await link.click()
 
 		await expect(page).toHaveURL('/category/GrpAct?proof=mono-regular')
 		await expect(back_button).toBeVisible()
+		await expect
+			.poll(() => page.evaluate(() => window.scrollY))
+			.not.toBe(page_scroll_y)
 
 		if (via === 'browser') {
 			await page.goBack()
@@ -109,6 +114,7 @@ for (const via of ['back button', 'browser']) {
 		await expect(back_button).toHaveCount(0)
 		await expect(popup).toContainText('good pushouts of monomorphisms')
 		await expect.poll(() => popup.evaluate((el) => el.scrollTop)).toBe(scroll_top)
+		await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(page_scroll_y)
 	})
 }
 

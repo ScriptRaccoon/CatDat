@@ -34,9 +34,17 @@
 
 	/**
 	 * Proofs that were left by clicking a link to another proof, with the
-	 * scroll position of the popup, so that the user can go back to them.
+	 * scroll positions of the popup and the page, so that the user can go
+	 * back to them. Proof links do not reset the page, so SvelteKit does not
+	 * restore the scroll position of the page when going back.
 	 */
-	const back_stack = $state<{ href: string; scroll_top: number }[]>([])
+	type BackStackEntry = {
+		href: string
+		popup_scroll_top: number
+		page_scroll_top: number
+	}
+
+	const back_stack = $state<BackStackEntry[]>([])
 
 	/**
 	 * Proofs on structure pages are reflected in the URL by the query
@@ -105,7 +113,11 @@
 			to.url.searchParams.has('proof')
 
 		if (between_proofs) {
-			back_stack.push({ href: from.url.href, scroll_top: popup.scrollTop })
+			back_stack.push({
+				href: from.url.href,
+				popup_scroll_top: popup.scrollTop,
+				page_scroll_top: window.scrollY
+			})
 		}
 	})
 
@@ -122,11 +134,15 @@
 		const already_open = popup_state.open && popup_state.id === registered_proof.id
 		if (type === 'goto' && already_open) return
 
-		let scroll_top = 0
+		let popup_scroll_top = 0
+		let page_scroll_top: number | null = null
 
 		if (type === 'popstate') {
 			const index = back_stack.findLastIndex((entry) => entry.href === to.url.href)
-			if (index >= 0) scroll_top = back_stack[index].scroll_top
+			if (index >= 0) {
+				popup_scroll_top = back_stack[index].popup_scroll_top
+				page_scroll_top = back_stack[index].page_scroll_top
+			}
 			back_stack.length = Math.max(index, 0)
 		} else if (type !== 'link') {
 			back_stack.length = 0
@@ -140,9 +156,15 @@
 			expanded: popup_state.open && popup_state.expanded
 		})
 
-		// on popstate, SvelteKit restores the scroll position of the page
-		if (type !== 'popstate') {
-			const same_page = from?.url.pathname === to.url.pathname
+		const same_page = from?.url.pathname === to.url.pathname
+
+		if (page_scroll_top !== null) {
+			window.scrollTo({
+				top: page_scroll_top,
+				behavior: same_page ? 'smooth' : 'instant'
+			})
+		} else if (type !== 'popstate') {
+			// on other popstate navigations, SvelteKit restores the scroll position
 			registered_proof.element.scrollIntoView({
 				block: 'start',
 				behavior: same_page ? 'smooth' : 'instant'
@@ -151,7 +173,7 @@
 
 		await tick()
 
-		if (popup) popup.scrollTop = scroll_top
+		if (popup) popup.scrollTop = popup_scroll_top
 	})
 
 	function go_back() {
