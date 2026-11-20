@@ -88,10 +88,7 @@
 		/>
 
 		{#if parent_id}
-			<p class="hint">
-				Properties from <a href="/{type}/{parent_id}">parent</a>
-				({satisfied_inherited.length})
-			</p>
+			<p class="hint">Properties from parent ({satisfied_inherited.length})</p>
 			<PropertyListWithProofs
 				properties={satisfied_inherited}
 				{type}
@@ -118,10 +115,7 @@
 		/>
 
 		{#if parent_id}
-			<p class="hint">
-				Properties from <a href="/{type}/{parent_id}">parent</a>
-				({unsatisfied_inherited.length})
-			</p>
+			<p class="hint">Properties from parent ({unsatisfied_inherited.length})</p>
 			<PropertyListWithProofs
 				properties={unsatisfied_inherited}
 				{type}
