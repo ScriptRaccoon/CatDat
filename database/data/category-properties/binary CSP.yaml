@@ -1,0 +1,28 @@
+id: binary CSP
+relation: satisfies
+description: >-
+  A category satisfies <i>binary CSP</i> ("binary coproducts surject onto products") if it has zero morphisms, binary products, binary coproducts, and for all objects $X,Y$ the canonical morphism
+  $$\alpha : X \sqcup Y \to X \times Y$$
+  defined by $\alpha \circ \iota_X = (\id_X,0)$ and $\alpha \circ \iota_Y = (0,\id_Y)$ is an epimorphism.
+  This is not standard terminology. This property has been added to clarify relationships between other properties, in particular those concerning the commutation between limits and colimits.
+
+  If the category also has a zero object, then for every finite family of objects $X_1,\dotsc,X_n$ the canonical morphism $\mu_n : X_1 \sqcup \cdots \sqcup X_n \to X_1 \times \cdots \times X_n$ is an epimorphism. For $n \leq 1$ it is an identity, and for $n \geq 2$ this follows by induction, since
+  $$\mu_n = \alpha \circ (\mu_{n-1} \sqcup \id_{X_n})$$
+  with $\alpha : (X_1 \times \cdots \times X_{n-1}) \sqcup X_n \to (X_1 \times \cdots \times X_{n-1}) \times X_n$, and coproducts of epimorphisms are epimorphisms.
+nlab_link: null
+dual: binary CIP
+invariant_under_equivalences: true
+
+keywords:
+  - binary coproducts surject onto products
+
+related:
+  - CSP
+  - binary coproducts
+  - binary products
+  - zero morphisms
+  - unital
+  - biproducts
+
+tags:
+  - limit–colimit interaction

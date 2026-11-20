@@ -39,6 +39,14 @@
     - unital
   proof: For all objects $X,Y$ the canonical morphism $X \sqcup Y \to X \times Y$ is an isomorphism, hence a strong epimorphism.
 
+- id: unital_binary_CSP
+  assumptions:
+    - unital
+    - binary coproducts
+  conclusions:
+    - binary CSP
+  proof: For all objects $X,Y$ the canonical morphism $X \sqcup Y \to X \times Y$ is a strong epimorphism (see the description of <a href="/category-property/unital">unital categories</a>), hence an epimorphism.
+
 - id: unital_finite-product-stable_epis
   assumptions:
     - unital

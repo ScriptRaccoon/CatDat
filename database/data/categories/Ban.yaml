@@ -26,6 +26,9 @@ satisfied_properties:
   - property: CIP
     proof: This is immediate from the concrete description of coproducts and products.
 
+  - property: binary CSP
+    proof: By the construction of coproducts and products, the canonical morphism $X \sqcup Y \to X \times Y$ is surjective (in fact, bijective), hence an epimorphism.
+
   - property: locally ℵ₁-presentable
     proof: See <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adámek–Rosický</a>, Example 1.48.
 
@@ -52,9 +55,6 @@ satisfied_properties:
       So let $f : X \to Y$ be a regular epimorphism and let $g : T \to Y$ be any morphism. We need to show that the projection $X \times_Y T \to T$ is a regular epimorphism.
       Let $t \in T$ be an element of norm $<1$. Since $g$ is a linear contraction, $g(t)$ has norm $<1$. Since $f$ is a regular epimorphism, there is some $x \in X$ with norm $<1$ and $f(x) = g(t)$.
       Then $(x,t) \in X \times_Y T$ is a preimage of $t$ with norm $\max(|x|,|t|) < 1$.
-
-  - property: finite-product-stable epimorphisms
-    proof: Since finite products are direct products with the $\sup$-norm and epimorphisms are the linear contractions with dense image (<a href="/category/Ban?proof=epimorphism">proof</a>), the <a href="/category/Met?proof=finite-product-stable_epimorphisms">proof</a> for $\Met$ works verbatim. Here, it is important that every finite family of vectors is bounded.
 
   - property: pushout-stable regular monomorphisms
     proof: >-
@@ -156,9 +156,6 @@ satisfied_properties:
 unsatisfied_properties:
   - property: skeletal
     proof: The zero Banach spaces with underlying sets $\{0\}$ and $\{1\}$ are zero objects, hence isomorphic, but not equal.
-
-  - property: balanced
-    proof: The linear map $\IC \to \IC$, $x \mapsto x/2$ with the usual norm on $\IC$ is a counterexample. It is bijective, hence a mono- and epimorphism, but not isometric and therefore no isomorphism.
 
   - property: regular subobject classifier
     proof: If $\Omega$ is a regular subobject classifier, then, since the regular monomorphisms are, up to isomorphism, the inclusions of closed subspaces (<a href="/category/Ban?proof=regular_monomorphism">proof</a>), $\Hom(X,\Omega)$ is isomorphic to the set of closed subspaces of $X$ for any Banach space $X$. For $X = \IC$ this implies that there are exactly two vectors in $\Omega$ with norm $\leq 1$, which is absurd. (For $\Omega = 0$ there is just one, and for $\Omega \neq 0$ there are infinitely many.)

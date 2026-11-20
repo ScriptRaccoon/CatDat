@@ -58,12 +58,8 @@ unsatisfied_properties:
   - property: skeletal
     proof: The pointed sets $(\{0\},0)$ and $(\{1\},1)$ are zero objects, hence isomorphic, but not equal.
 
-  - property: unital
-    proof: 'The joint image of $X \to X \times Y \leftarrow Y$ is just $\{(x,0) : x \in X\} \cup \{(0,y) : y \in Y\}$ (where $0$ denotes the base point), which is clearly a proper subset of $X \times Y$ when both $X,Y$ are non-trivial.'
-
-  - property: CSP
-    # TODO: remove duplication with unital proof, cf. #382
-    proof: 'The image of $X \vee Y$ in $X \times Y$ is just $\{(x,0) : x \in X\} \cup \{(0,y) : y \in Y\}$ (where $0$ denotes the base point), which is clearly a proper subset when both $X,Y$ are non-trivial.'
+  - property: binary CSP
+    proof: 'Let $X,Y$ be non-trivial pointed sets with base points denoted by $0$. The image of the canonical map $X \vee Y \to X \times Y$ is $\{(x,0) : x \in X\} \cup \{(0,y) : y \in Y\}$, which does not contain $(x,y)$ for $x \neq 0$ and $y \neq 0$. Hence, the map is not surjective, and therefore not an epimorphism (<a href="/category/Set_*?proof=epimorphism">proof</a>).'
 
   - property: conormal
     proof: 'Every cokernel is "injective away from the base point". Formally, if $p : A \to B$ is a cokernel in $\Set_*$, it has the property that $p(x)=p(y) \neq 0$ implies $x=y$ (where $0$ denotes the base point). Clearly this is not satisfied for every surjective pointed map; consider $(\IN,0) \to (\{0,1\},0)$ defined by $0 \mapsto 0$ and $x \mapsto 1$ for $x > 0$.'

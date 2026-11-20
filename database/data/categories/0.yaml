@@ -18,9 +18,6 @@ satisfied_properties:
   - property: discrete
     proof: There are no morphisms.
 
-  - property: binary products
-    proof: This is vacuously true.
-
   - property: finite
     proof: There are no objects and no morphisms.
 
@@ -28,6 +25,9 @@ satisfied_properties:
     proof: The objects and morphisms both form the empty set.
 
   - property: preadditive
+    proof: This is vacuously true.
+
+  - property: binary CIP
     proof: This is vacuously true.
 
 unsatisfied_properties:

@@ -112,9 +112,20 @@
   proof: This holds by definition of biproducts.
   check_redundancy: false
 
-- id: biproducts_mono_stability
+- id: biproducts_binary_CIP
   assumptions:
     - biproducts
   conclusions:
-    - finite-coproduct-stable monomorphisms
-  proof: This is because monomorphisms are always stable under products, and finite coproducts coincide with finite products here.
+    - binary CIP
+  proof: For all objects $X,Y$ the canonical morphism $X \sqcup Y \to X \times Y$ is an isomorphism, in particular a monomorphism.
+
+- id: binary_CIP_CSP_biproducts
+  assumptions:
+    - balanced
+    - pointed
+    - binary CIP
+    - binary CSP
+  conclusions:
+    - biproducts
+  proof: >-
+    The zero object is an empty product and an empty coproduct. Together with binary products and binary coproducts, this gives finite products and finite coproducts. By the remarks in the descriptions of <a href="/category-property/binary_CIP">binary CIP</a> and <a href="/category-property/binary_CSP">binary CSP</a>, for every finite family of objects $A_1,\dotsc,A_n$ the canonical morphism $A_1 \sqcup \cdots \sqcup A_n \to A_1 \times \cdots \times A_n$ is a monomorphism and an epimorphism, hence an isomorphism since the category is balanced.
