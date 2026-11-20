@@ -6,8 +6,9 @@ dual: sifted colimits
 invariant_under_equivalences: true
 
 related:
-  - cofiltered limits
   - complete
+  - cofiltered limits
+  - discretely cofiltered limits
   - coreflexive equalizers
   - cosifted
 

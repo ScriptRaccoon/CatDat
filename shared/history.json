@@ -2141,6 +2141,14 @@
 		{
 			"type": "category",
 			"id": "weakly terminal object"
+		},
+		{
+			"type": "category",
+			"id": "discretely cofiltered limits"
+		},
+		{
+			"type": "category",
+			"id": "discretely filtered colimits"
 		}
 	]
 }

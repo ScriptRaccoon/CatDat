@@ -64,6 +64,12 @@ satisfied_properties:
       Taking the infimum over all chains gives $d_Z(\overline{h}([y]),\overline{h}([y'])) \leq d_Q([y],[y'])$.
 
       This construction is also described in <a href="https://mathoverflow.net/questions/123739">MO/123739</a>.
+    check_redundancy: false
+
+  - property: discretely filtered colimits
+    proof: >-
+      Let $D : \I \to \PMet$, $i \mapsto (X_i,d_i)$ be a diagram, where $\I$ is a small discretely filtered category, and let $(u_i : X_i \to C)_{i \in \I}$ be the colimit of the underlying sets. The <a href="/category/Met_oo?proof=cocomplete">proof</a> for $\Met_\infty$ shows that the colimit of $D$ in the category of extended pseudo-metric spaces is $(C,\rho)$, where $\rho$ is the largest extended pseudo-metric on $C$ such that $\rho(u_i(x),u_i(y)) \leq d_i(x,y)$ for all $i \in \I$ and $x,y \in X_i$. Since $\PMet$ is a full subcategory of this category, it suffices to show that $\rho$ takes finite values. Let $c,c' \in C$, say $c = u_i(x)$ and $c' = u_j(y)$. Since $\I$ is discretely filtered, there are morphisms $a : i \to k$ and $b : j \to k$. Then $c = u_k(D(a)(x))$ and $c' = u_k(D(b)(y))$, so that
+      $$\rho(c,c') \leq d_k(D(a)(x),D(b)(y)) < \infty.$$
 
   - property: filtered colimits
     proof: 'Given a filtered diagram of pseudo-metric spaces $(X_i,d_i)$, take the filtered colimit $X$ of the sets $X_i$, with maps $u_i : X_i \to X$, and equip it with the following pseudo-metric $d$: If $x,y \in X$, let $d(x,y)$ be the infimum of all $d_i(x_i,y_i)$, where $x_i,y_i \in X_i$ are some preimages of $x,y$ under some $u_i$. The definition ensures that each $u_i : (X_i,d_i) \to (X,d)$ is non-expansive, and the universal property is easy to check.'
