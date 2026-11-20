@@ -63,6 +63,9 @@ unsatisfied_properties:
   - property: semi-strongly connected
     proof: This is because <a href="/category/SetxSet">$\Set \times \Set$</a> can be embedded into $\Set^{(I)}_1$ by extending each pair of sets with singletons, and we know that $\Set \times \Set$ is not semi-strongly connected (<a href="/category/SetxSet?proof=semi-strongly_connected" data-allow-deduced>proof</a>).
 
+  - property: weakly initial object
+    proof: Assume that a weakly initial object $W$ exists. For $i \in I$, define the family $X$ by $X_i = \varnothing$ and $X_j = \{\ast\}$ for $j \neq i$. Then $S(X) = \{i\}$, so $X$ belongs to $\Set^{(I)}_1$. By assumption, there is a morphism $W \to X$. In particular, we see that each $W_i$ is empty. But then $S(W) = I$, which is not essentially small.
+
   - property: locally small
     proof: The proof is identical to the <a href="/category/Vect_family_mostly_0?proof=locally_small">proof</a> for $\Vect^{(I)}$. However, this result is not relevant for category theory; only the fact that the category is locally essentially small matters.
 

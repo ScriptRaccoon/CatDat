@@ -78,8 +78,8 @@ unsatisfied_properties:
   - property: locally small
     proof: The proof is identical to the <a href="/category/Vect_family_mostly_0?proof=locally_small">proof</a> for $\Vect^{(I)}$. However, this result is not relevant for category theory; only the fact that the category is locally essentially small matters.
 
-  - property: terminal object
-    proof: Assume that a terminal object $X$ exists. For $i \in I$, define the family $Y$ by $Y_i = \{\ast\}$ and $Y_j = \varnothing$ for $j \neq i$. Then $\supp(Y) = \{i\}$, so $Y$ belongs to $\Set^{(I)}_0$. By assumption, there is a morphism $Y \to X$. In particular, we see that $X_i$ is non-empty. But then $\supp(X) = I$, which is not essentially small.
+  - property: weakly terminal object
+    proof: Assume that a weakly terminal object $X$ exists. For $i \in I$, define the family $Y$ by $Y_i = \{\ast\}$ and $Y_j = \varnothing$ for $j \neq i$. Then $\supp(Y) = \{i\}$, so $Y$ belongs to $\Set^{(I)}_0$. By assumption, there is a morphism $Y \to X$. In particular, we see that $X_i$ is non-empty. But then $\supp(X) = I$, which is not essentially small.
 
   - property: cogenerating collection
     proof: Assume that $S$ is a cogenerating collection. In particular, $S$ is essentially small (by definition). Since $\bigcup_{Q \in S} \supp(Q)$ is essentially small, but $I$ is not essentially small, there is some index $i \in I$ with $Q_i = \varnothing$ for all $Q \in S$. Consider the family $X \in \Set^{(I)}_0$ defined by $X_i = \{1,2\}$ and $X_j = \varnothing$ for all $j \neq i$. There are (at least) two morphisms $X \rightrightarrows X$. Thus, there is some $Q \in S$ and some morphism $X \to Q$ that distinguishes them. The component at $i$ is a map $X_i \to Q_i$, which cannot exist since $X_i$ is non-empty and $Q_i$ is empty.

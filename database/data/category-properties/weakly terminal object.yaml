@@ -1,0 +1,17 @@
+id: weakly terminal object
+relation: has a
+description: A <i>weakly terminal object</i> is an object $T$ such that every object admits a morphism to $T$. In contrast to a terminal object, this morphism does not need to be unique. This property refers to the existence of a weakly terminal object.
+nlab_link: https://ncatlab.org/nlab/show/weak+limit
+dual: weakly initial object
+invariant_under_equivalences: true
+
+keywords:
+  - weak terminal object
+
+related:
+  - discretely filtered
+  - terminal object
+
+tags:
+  - limits
+  - object behavior

@@ -83,6 +83,9 @@ unsatisfied_properties:
   - property: semi-strongly connected
     proof: We use the graph-theoretic interpretation. Let $G$ be the <a href="https://en.wikipedia.org/wiki/Gr%C3%B6tzsch_graph">Grötzsch graph</a> and $K_3$ be the <a href="https://en.wikipedia.org/wiki/Complete_graph">complete undirected graph</a> on three vertices. There is no morphism $G \to K_3$ since $G$ has chromatic number $4$. There is no morphism $K_3 \to G$ since $G$ is triangle-free.
 
+  - property: weakly terminal object
+    proof: We can reuse the <a href="/category/Bin_irr?proof=weakly_terminal_object">proof</a> from $\Bin_{\irr}$, since the relation constructed there is symmetric.
+
   - property: filtered
     proof: >-
       The two morphisms

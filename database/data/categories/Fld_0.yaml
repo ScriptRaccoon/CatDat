@@ -52,6 +52,9 @@ unsatisfied_properties:
   - property: semi-strongly connected
     proof: There is no homomorphism from $\IQ(\sqrt{2})$ to $\IQ(\sqrt{3})$, since a direct calculation shows that $\IQ(\sqrt{3})$ has no element $a$ with $a^2=2$. Similarly, there is no homomorphism from $\IQ(\sqrt{3})$ to $\IQ(\sqrt{2})$. See also <a href="https://math.stackexchange.com/questions/1069387">MSE/1069387</a>.
 
+  - property: weakly terminal object
+    proof: Every field homomorphism is injective. For every field $K$ of characteristic $0$ there is a field $L$ of characteristic $0$ with $\card(L) > \card(K)$, for example the field of rational functions over $\IQ$ with variables indexed by the power set of the underlying set of $K$. Hence, there is no field homomorphism $L \to K$, and $K$ is not a weakly terminal object.
+
   - property: cogenerating collection
     proof: We can copy the <a href="/category/Fld?proof=cogenerating_collection">proof</a> from $\Fld$.
 

@@ -7,6 +7,7 @@ invariant_under_equivalences: true
 
 related:
   - finite coproducts
+  - weakly initial object
   - multi-initial object
   - strict initial object
   - pointed

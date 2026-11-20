@@ -80,6 +80,8 @@
 		"strict initial object",
 		"subobject classifier",
 		"terminal object",
+		"weakly initial object",
+		"weakly terminal object",
 		"well-copowered",
 		"well-powered",
 		"ℵ₁-accessible",

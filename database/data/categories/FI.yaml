@@ -62,8 +62,8 @@ unsatisfied_properties:
   - property: core-thin
     proof: Its core is $\IB$, which is not thin (<a href="/category/B?proof=thin" data-allow-deduced>proof</a>).
 
-  - property: strongly connected
-    proof: There is no map from a non-empty set to the empty set.
+  - property: weakly terminal object
+    proof: Let $T$ be a finite set with $n$ elements. There is no injection from a set with $n+1$ elements to $T$. Thus, $T$ is not a weakly terminal object.
 
   - property: cogenerator
     proof: Let $Q$ be a finite set. When $Q$ is empty, it is clearly no cogenerator. Otherwise, $Q \sqcup \{\ast\}$ has at least two elements, so that there are two different morphisms $\{\ast\} \rightrightarrows Q \sqcup \{\ast\}$. But there is no morphism $Q \sqcup \{\ast\} \to Q$ at all. Hence, $Q$ is no cogenerator.
