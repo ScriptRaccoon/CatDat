@@ -8,6 +8,7 @@ export type PropertyMeta = {
 	id: string
 	dual: string | null
 	relation: string // e.g. "is"
+	negation: string // e.g. "is not"
 	conditional_relation: string // e.g. "would be"
 }
 
@@ -21,6 +22,7 @@ export function get_properties_dict(db: Database, type: StructureType) {
 				p.id,
 				p.dual_property_id AS dual,
 				p.relation,
+				r.negation,
 				r.conditional AS conditional_relation
 			FROM properties p
 			INNER JOIN relations r ON r.relation = p.relation

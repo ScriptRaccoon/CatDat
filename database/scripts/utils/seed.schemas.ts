@@ -44,7 +44,7 @@ export const special_morphism_rule_yaml_schema = v.array(
 		property: v.string(),
 		kind: v.string(),
 		description: v.string(),
-		proof: v.string()
+		proof: v.optional(v.string())
 	})
 )
 

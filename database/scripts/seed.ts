@@ -578,7 +578,7 @@ function seed_special_morphism_rules() {
 		rules: v.InferOutput<typeof special_morphism_rule_yaml_schema>
 	) {
 		for (const { property, kind, description, proof } of rules) {
-			rule_insert.run(property, kind, description, proof)
+			rule_insert.run(property, kind, description, proof ?? null)
 		}
 	}
 

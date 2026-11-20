@@ -37,7 +37,7 @@ test('user can open and close a proof for a property of a functor', async ({ pag
 	).not.toBeVisible()
 })
 
-test('user can open a proof for a deduced satisfied property of functor', async ({
+test('user can open a proof for a deduced satisfied property of a functor and follow the link to the proof of an assumption', async ({
 	page
 }) => {
 	await page.goto('/functor/free_group', { waitUntil: 'networkidle' })
@@ -52,7 +52,17 @@ test('user can open a proof for a deduced satisfied property of functor', async 
 
 	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
 
-	await expect(popup).toContainText('Since it is a left adjoint, it is cocontinuous')
+	await expect(popup).toContainText(
+		'Since it is a left adjoint (proof), it is cocontinuous'
+	)
+
+	await popup.getByRole('link', { name: 'proof', exact: true }).click()
+
+	await expect(page).toHaveURL('/functor/free_group?proof=left_adjoint')
+
+	await expect(popup).toContainText(
+		'By definition, this functor is left adjoint to the forgetful functor'
+	)
 })
 
 test('user can open a proof for a deduced unsatisfied property of a functor', async ({

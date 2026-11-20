@@ -37,7 +37,7 @@ test('user can open and close a proof for a property of a category', async ({ pa
 	).not.toBeVisible()
 })
 
-test('user can open a proof for a deduced satisfied property of category', async ({
+test('user can open a proof for a deduced satisfied property of a category and follow the link to the proof of an assumption', async ({
 	page
 }) => {
 	await page.goto('/category/Ring', { waitUntil: 'networkidle' })
@@ -53,7 +53,15 @@ test('user can open a proof for a deduced satisfied property of category', async
 	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
 
 	await expect(popup).toContainText(
-		'Since it is one-sorted finitary algebraic, it has an extremal generator'
+		'Since it is one-sorted finitary algebraic (proof), it has an extremal generator'
+	)
+
+	await popup.getByRole('link', { name: 'proof', exact: true }).click()
+
+	await expect(page).toHaveURL('/category/Ring?proof=one-sorted_finitary_algebraic')
+
+	await expect(popup).toContainText(
+		'Its parent category satisfies this property (proof).'
 	)
 })
 
@@ -96,7 +104,9 @@ test('user can open a proof for an inherited satisfied property of a category', 
 
 	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
 
-	await expect(popup).toContainText('This is inherited from the parent category.')
+	await expect(popup).toContainText(
+		'Its parent category satisfies this property (proof).'
+	)
 })
 
 test('user can open a proof for an inherited unsatisfied property of a category', async ({
@@ -118,5 +128,7 @@ test('user can open a proof for an inherited unsatisfied property of a category'
 
 	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
 
-	await expect(popup).toContainText('This is inherited from the parent category.')
+	await expect(popup).toContainText(
+		'Its parent category does not satisfy this property (proof).'
+	)
 })
