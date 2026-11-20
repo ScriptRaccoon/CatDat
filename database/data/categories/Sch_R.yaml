@@ -115,6 +115,8 @@ unsatisfied_properties:
 
       Since $\varphi$ factors through the open immersion $j : U \to Y$, also $j$ is an epimorphism. But $j$ is also a regular monomorphism: let $Y \sqcup_U Y$ be the scheme obtained by gluing two copies of $Y$ along $U$, and let $u_1,u_2 : Y \rightrightarrows Y \sqcup_U Y$ be the two inclusions. We claim that $j$ is the equalizer of $u_1,u_2$. By construction of the gluing, $u_1 \circ j = u_2 \circ j$. If $\psi : V \to Y$ is a morphism with $u_1 \circ \psi = u_2 \circ \psi$, then the image of $|\psi|$ is contained in $|U|$, since $u_1$ and $u_2$ map every point of $|Y| \setminus |U|$ to different points. Hence, $\psi$ factors uniquely through $j$. Being an epimorphism and a regular monomorphism, $j$ is an isomorphism, i.e. $U = Y$.
 
+      <strong>Remark.</strong> For $R = \IZ$, Proposition 1 <a href="/content/LRS-product-stable-epis">here</a> gives a simpler counterexample. The epimorphism $f : \Spec(\IQ) \sqcup \Spec(\IF_2) \to \Spec(\IZ_{(2)})$ of $\LRS$ used there is a morphism of schemes, hence an epimorphism of the full subcategory $\Sch$. Since the inclusion $\Sch \to \LRS$ preserves products, the product of $f$ with $\Spec(\IZ/4)$ in $\Sch$ is the morphism $\Spec(\IF_2) \to \Spec(\IZ/4)$ computed there. It is no epimorphism of $\Sch$, since its map on global sections $\IZ/4 \to \IF_2$ is not injective, whereas the global sections functor $\Sch \to \CRing^\op$ preserves epimorphisms, being left adjoint to $\Spec$.
+
   - property: regular subobject classifier
     proof: The <a href="/category/LRS_R?proof=regular_subobject_classifier">proof</a> for $\LRS_R$ translates verbatim to $\Sch_R$.
 
