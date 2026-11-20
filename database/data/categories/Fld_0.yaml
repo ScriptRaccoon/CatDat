@@ -24,6 +24,10 @@ satisfied_properties:
 
   - property: initial object
     proof: The field $\IQ$ is an initial object; see for example <a href="https://proofwiki.org/wiki/Field_of_Characteristic_Zero_has_Unique_Prime_Subfield">here</a>.
+    check_redundancy: false
+
+  - property: discretely filtered
+    proof: 'The category is inhabited by $\IQ$. Let $K,L$ be two fields of characteristic $0$. Since $K$ and $L$ are non-zero vector spaces over $\IQ$, the tensor product $K \otimes_{\IQ} L$ is a non-zero commutative ring. Choose a maximal ideal $\m$ of $K \otimes_{\IQ} L$. Then $M \coloneqq (K \otimes_{\IQ} L)/\m$ is a field of characteristic $0$, and the canonical homomorphisms form a cospan $K \rightarrow M \leftarrow L$.'
 
   - property: left cancellative
     proof: This property is inherited from $\Fld$, which is left cancellative (<a href="/category/Fld?proof=left_cancellative" data-allow-deduced>proof</a>).

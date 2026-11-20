@@ -2125,6 +2125,14 @@
 		{
 			"type": "category",
 			"id": "binary CSP"
+		},
+		{
+			"type": "category",
+			"id": "discretely cofiltered"
+		},
+		{
+			"type": "category",
+			"id": "discretely filtered"
 		}
 	]
 }

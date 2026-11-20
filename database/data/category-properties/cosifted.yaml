@@ -6,6 +6,7 @@ dual: sifted
 invariant_under_equivalences: true
 
 related:
+  - discretely cofiltered
   - cofiltered
   - connected
   - cosifted limits

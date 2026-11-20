@@ -39,6 +39,9 @@ satisfied_properties:
   - property: strict initial object
     proof: Clearly, $A$ is an initial object. Since $\id_A$ is the only morphism with codomain $A$, it is strict.
 
+  - property: discretely filtered
+    proof: Every object admits a morphism to $E$. Hence, every finite family of objects admits a cocone with tip $E$.
+
   - property: generator
     proof: 'The only parallel pair of distinct morphisms is $u,v : D \rightrightarrows E$. It follows that $D$ is a generator.'
 
