@@ -103,6 +103,34 @@
   proof: This is true by definition.
   check_redundancy: false
 
+- id: CIP_binary_CIP
+  assumptions:
+    - CIP
+  conclusions:
+    - binary CIP
+  proof: For all objects $X,Y$ the canonical morphism $X \sqcup Y \to X \times Y$ is the canonical morphism from the definition of CIP for the family $(X,Y)$, hence a monomorphism.
+
+- id: binary_CIP_assumption
+  assumptions:
+    - binary CIP
+  conclusions:
+    - binary coproducts
+    - binary products
+    - zero morphisms
+  proof: This is true by definition.
+  check_redundancy: false
+
+- id: binary_CIP_finite-coproduct-stable_monos
+  assumptions:
+    - binary CIP
+    - initial object
+  conclusions:
+    - finite-coproduct-stable monomorphisms
+  proof: >-
+    This is a special case of the proof of <a href="/category-implication/CIP_coproduct-stable_monos">this result</a>. Binary coproducts and an initial object give finite coproducts. Let $f_1 : X_1 \to Y_1$ and $f_2 : X_2 \to Y_2$ be monomorphisms. Consider the commutative diagram
+    $$\begin{CD} X_1 \sqcup X_2 @>{\alpha_X}>> X_1 \times X_2 \\ @V{f_1 \sqcup f_2}VV @VV{f_1 \times f_2}V \\ Y_1 \sqcup Y_2 @>>{\alpha_Y}> Y_1 \times Y_2, \end{CD}$$
+    where $\alpha_X$ and $\alpha_Y$ are the canonical morphisms. The composite along the top and right is a monomorphism, since $\alpha_X$ is a monomorphism by assumption and products of monomorphisms are monomorphisms. Hence, $f_1 \sqcup f_2$ is a monomorphism.
+
 - id: CIP_criterion
   assumptions:
     - biproducts

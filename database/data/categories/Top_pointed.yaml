@@ -85,12 +85,8 @@ unsatisfied_properties:
   - property: co-Malcev
     proof: 'We can adjust the <a href="/category/Top?proof=co-Malcev">proof</a> for $\Top$ as follows: Consider the forgetful functor $U : \Top_* \to \Set$ and the relation $R \subseteq U^2$ defined by $R(X) \coloneqq \{(x,y) \in U(X)^2 : x \in \overline{\{y\}} \}$. Both are representable: $U$ by the discrete space $\{0,1\}$ with base point $0$ and $R$ by the Sierpiński space with an isolated base point added. It is clear that $R$ is reflexive, but not symmetric.'
 
-  - property: unital
-    proof: 'The joint image of $X \to X \times Y \leftarrow Y$ is just $\{(x,0) : x \in X\} \cup \{(0,y) : y \in Y\}$ (where $0$ denotes the base point), which is clearly a proper subset of $X \times Y$ when both $X,Y$ are non-trivial.'
-
-  - property: CSP
-    # TODO: remove duplication with unital proof, cf. #382
-    proof: 'The image of $X \vee Y$ in $X \times Y$ is just $\{(x,0) : x \in X\} \cup \{(0,y) : y \in Y\}$ (where $0$ denotes the base point), which is clearly a proper subset when both $X,Y$ are non-trivial.'
+  - property: binary CSP
+    proof: Let $X,Y$ be non-trivial pointed spaces. Since the forgetful functor $\Top_* \to \Set_*$ preserves products and coproducts, the underlying map of the canonical morphism $X \vee Y \to X \times Y$ is the canonical map of pointed sets, which is not surjective (<a href="/category/Set_*?proof=binary_CSP">proof</a>). Since epimorphisms in $\Top_*$ are surjective (<a href="/category/Top_*?proof=epimorphism">proof</a>), it is not an epimorphism.
 
   - property: regular quotient object classifier
     proof: 'If there were a regular quotient object classifier, every regular epimorphism would be a cokernel. By considering discrete spaces, it would follow that every surjective pointed map between pointed sets is a cokernel, i.e. that $\Set_*$ is conormal (<a href="/category/Set_*?proof=conormal">proof</a>). But we already know that this is not the case, since cokernels are "injective away from the base point".'

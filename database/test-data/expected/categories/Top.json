@@ -111,6 +111,8 @@
 		"balanced",
 		"Barr-coexact",
 		"Barr-exact",
+		"binary CIP",
+		"binary CSP",
 		"biproducts",
 		"cartesian closed",
 		"cartesian filtered colimits",

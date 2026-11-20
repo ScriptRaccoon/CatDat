@@ -91,6 +91,8 @@
 		"abelian",
 		"additive",
 		"all monomorphisms split",
+		"binary CIP",
+		"binary CSP",
 		"biproducts",
 		"cartesian filtered colimits",
 		"CIP",

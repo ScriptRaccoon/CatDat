@@ -95,6 +95,8 @@ test('user sees properties matching by keyword after the other properties in the
 		'has ℵ₂-small coproducts',
 		'does not satisfy CIP',
 		'does not satisfy CSP',
+		'does not satisfy binary CIP',
+		'does not satisfy binary CSP',
 		'has pushouts'
 	])
 })

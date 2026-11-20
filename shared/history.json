@@ -2117,6 +2117,14 @@
 		{
 			"type": "category",
 			"id": "product-stable epimorphisms"
+		},
+		{
+			"type": "category",
+			"id": "binary CIP"
+		},
+		{
+			"type": "category",
+			"id": "binary CSP"
 		}
 	]
 }

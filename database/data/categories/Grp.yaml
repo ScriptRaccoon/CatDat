@@ -71,13 +71,6 @@ unsatisfied_properties:
   - property: pushout-stable regular monomorphisms
     proof: The regular monomorphisms are precisely the injective homomorphisms. Pushouts of injective homomorphisms do not need to be injective, see <a href="https://math.stackexchange.com/questions/601463/">MSE/601463</a> or <a href="https://math.stackexchange.com/questions/5088032">MSE/5088032</a>.
 
-  - property: counital
-    proof: The canonical morphism $F_2 = \IZ \sqcup \IZ \to \IZ \times \IZ$ is not a monomorphism since $F_2$ is not abelian.
-
-  - property: CIP
-    # TODO: remove duplication with "counital" proof, cf. #382
-    proof: The canonical morphism $F_2 = \IZ \sqcup \IZ \to \IZ \times \IZ$ is not a monomorphism since $F_2$ is not abelian.
-
   - property: CSP
     proof: The canonical homomorphism $\coprod_{n \geq 0} \IZ \to \prod_{n \geq 0} \IZ$ is not surjective because its domain is countable and its codomain is uncountable. Hence it is no epimorphism.
 

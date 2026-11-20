@@ -179,6 +179,8 @@
 		"all epimorphisms split",
 		"all monomorphisms split",
 		"balanced",
+		"binary CIP",
+		"binary CSP",
 		"biproducts",
 		"CIP",
 		"co-Grothendieck abelian",
