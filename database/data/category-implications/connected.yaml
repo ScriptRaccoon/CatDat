@@ -14,6 +14,13 @@
     - semi-strongly connected
   proof: This is immediate from the definition.
 
+- id: strongly_connected_weakly_terminal_object
+  assumptions:
+    - strongly connected
+  conclusions:
+    - weakly terminal object
+  proof: Every object is a weakly terminal object.
+
 - id: thin_not_strongly_connected
   assumptions:
     - strongly connected
@@ -21,6 +28,7 @@
   conclusions:
     - trivial
   proof: This is obvious.
+  check_redundancy: false
 
 - id: zero_morphisms_mean_strongly_connected
   assumptions:

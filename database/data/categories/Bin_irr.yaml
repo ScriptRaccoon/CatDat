@@ -83,6 +83,10 @@ unsatisfied_properties:
       C_3 & = \bigl(\{0,1,2\}, \{(0,1),(1,2),(2,0)\}\bigr)
       \end{align*}$$
 
+  - property: weakly terminal object
+    proof: >-
+      Let $(X,R)$ be an object of $\Bin_{\irr}$. Choose a set $Y$ with $\card(Y) > \card(X)$, for example the power set of $X$, and consider the relation $S \coloneqq \{(y,y') \in Y \times Y : y \neq y'\}$. If $f : (Y,S) \to (X,R)$ is a morphism and $y,y' \in Y$ are distinct, then $(f(y),f(y')) \in R$, so that $f(y) \neq f(y')$ since $R$ is irreflexive. Thus, $f$ is injective, which contradicts $\card(Y) > \card(X)$. Hence, $(X,R)$ is not a weakly terminal object.
+
   - property: filtered
     proof: >-
       The two morphisms

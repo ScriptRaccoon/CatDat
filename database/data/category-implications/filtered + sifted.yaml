@@ -87,20 +87,40 @@
     - ℵ₁-filtered
   proof: This is obvious.
 
-- id: filtered-finite-thin
+- id: terminal_object_is_weakly_terminal_object
+  assumptions:
+    - terminal object
+  conclusions:
+    - weakly terminal object
+  proof: This is trivial.
+
+- id: weakly_terminal_object_yields_discretely_filtered
+  assumptions:
+    - weakly terminal object
+  conclusions:
+    - discretely filtered
+  proof: If $T$ is a weakly terminal object, then every family of objects admits a cocone with tip $T$.
+
+- id: thin_weakly_terminal_object
   assumptions:
     - thin
-    - filtered
-    - essentially finite
+    - weakly terminal object
   conclusions:
     - terminal object
-  proof: Let $\C$ be a thin, filtered, and w.l.o.g. finite category. The identity diagram $\C \to \C$ admits a cocone. That is, there is an object $T$ with a morphism $A \to T$ for all $A \in \C$. Then $T$ is terminal.
+  proof: In a thin category, a morphism to a weakly terminal object must be unique.
 
-- id: aleph1-filtered-countable-thin
+- id: discretely_filtered_finite_weakly_terminal_object
   assumptions:
-    - thin
+    - discretely filtered
+    - essentially finite
+  conclusions:
+    - weakly terminal object
+  proof: Choose finitely many objects $A_1,\dotsc,A_n$ such that every object is isomorphic to some $A_i$. By assumption, there is an object $T$ with morphisms $A_i \to T$ for all $i$. Then $T$ is a weakly terminal object, since every object $A$ admits a morphism $A \xrightarrow{\cong} A_i \to T$ for some $i$.
+
+- id: aleph1-filtered_countable_weakly_terminal_object
+  assumptions:
     - ℵ₁-filtered
     - essentially countable
   conclusions:
-    - terminal object
-  proof: Let $\C$ be a thin, $\aleph_1$-filtered, and w.l.o.g. countable category. The identity diagram $\C \to \C$ admits a cocone. That is, there is an object $T$ with a morphism $A \to T$ for all $A \in \C$. Then $T$ is terminal.
+    - weakly terminal object
+  proof: Choose a countable family of objects $(A_i)_{i \in I}$ such that every object is isomorphic to some $A_i$. By assumption, the discrete diagram $(A_i)_{i \in I}$ admits a cocone, i.e. there is an object $T$ with morphisms $A_i \to T$ for all $i \in I$. Then $T$ is a weakly terminal object, since every object $A$ admits a morphism $A \xrightarrow{\cong} A_i \to T$ for some $i$.

@@ -91,6 +91,8 @@
 		"strict initial object",
 		"terminal object",
 		"total",
+		"weakly initial object",
+		"weakly terminal object",
 		"well-copowered",
 		"well-powered",
 		"wide pullbacks",

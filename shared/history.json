@@ -2133,6 +2133,14 @@
 		{
 			"type": "category",
 			"id": "discretely filtered"
+		},
+		{
+			"type": "category",
+			"id": "weakly initial object"
+		},
+		{
+			"type": "category",
+			"id": "weakly terminal object"
 		}
 	]
 }

@@ -1,0 +1,17 @@
+id: weakly initial object
+relation: has a
+description: A <i>weakly initial object</i> is an object $I$ such that every object admits a morphism from $I$. In contrast to an initial object, this morphism does not need to be unique. This property refers to the existence of a weakly initial object.
+nlab_link: https://ncatlab.org/nlab/show/weak+limit
+dual: weakly terminal object
+invariant_under_equivalences: true
+
+keywords:
+  - weak initial object
+
+related:
+  - discretely cofiltered
+  - initial object
+
+tags:
+  - colimits
+  - object behavior

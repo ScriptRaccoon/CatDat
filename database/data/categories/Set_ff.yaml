@@ -70,8 +70,8 @@ unsatisfied_properties:
   - property: skeletal
     proof: The category contains $\IB$ as a subcategory, which is not skeletal (<a href="/category/B?proof=skeletal" data-allow-deduced>proof</a>).
 
-  - property: strongly connected
-    proof: Already $\Set$ is not strongly connected (<a href="/category/Set?proof=strongly_connected" data-allow-deduced>proof</a>).
+  - property: weakly terminal object
+    proof: 'Let $T$ be a set. If $f : X \to T$ is a finite-to-one map, then $X$ is the union of the finite fibers $f^*(\{t\})$ for $t \in T$, so that $\card(X) \leq \card(T \times \IN)$. Since the power set $P(T \times \IN)$ has a larger cardinality, there is no finite-to-one map $P(T \times \IN) \to T$. Thus, $T$ is not a weakly terminal object.'
 
   - property: binary powers
     proof: 'More generally, if $X,Y$ are two non-empty sets such that $X \times Y$ exists in $\Set_\ff$, then both $X$ and $Y$ must be finite. In fact, the forgetful functor to $\Set$ is representable, so it must preserve products. This means we can assume $X \times Y$ is the usual cartesian product with the usual projections. Since $p_1 : X \times Y \to X$ is finite-to-one and $X$ is non-empty, $Y$ is finite. By symmetry, also $X$ is finite. (Conversely, if $X$ and $Y$ are finite, or one of them is empty, then indeed $X \times Y$ exists.)'

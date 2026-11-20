@@ -163,6 +163,9 @@ unsatisfied_properties:
       $$\varnothing \to \cdots \to \varnothing \to \{\ast\} \to \{\ast\} \to \cdots,$$
       where the empty sets occupy the indices $0,1,\dotsc,n$. Clearly, $X^n$ is connected. If there were a connected sequence $Y$ admitting morphisms $Y \to X^n$ for every $n \geq 0$, then $Y_0=\cdots=Y_n=\varnothing$ for every $n \geq 0$. Thus, $Y$ would be the empty sequence, which is not connected. Therefore, the countable family $(X^n)_{n \geq 0}$ has no cone.
 
+  - property: weakly initial object
+    proof: We already know that the countable family of connected sequences $(X^n)_{n \geq 0}$ with $X^n_0 = \cdots = X^n_n = \varnothing$ and $X^n_m = \{\ast\}$ for $m > n$ has no cone (<a href="/category/SeqSet_conn?proof=aleph1-cofiltered">proof</a>). In particular, there is no weakly initial object.
+
   - property: binary copowers
     proof: >-
       We show that the coproduct $T+T$ does not exist in $[(\IN,\leq),\Set]_{\conn}$, where $T$ denotes the terminal object, the constant sequence with value $\{\ast\}$. Since a morphism $T \to X$ corresponds to an element of $X_0$, this would amount to a universal connected sequence of sets $X$ equipped with two elements $x,x' \in X_0$. Choose $k \geq 0$ such that their images in $X_k$ coincide. Then, by the universal property, for every connected sequence $Y$ and every pair of elements $y,y' \in Y_0$, their images in $Y_k$ must coincide. A counterexample is the sequence $Y$ defined by
