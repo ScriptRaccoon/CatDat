@@ -68,7 +68,7 @@ unsatisfied_properties:
     proof: 'Since both $m$ and $g$ equalize $u,v$, it is easy to see that $D$ is the only generator. But it is not extremal since $e$ induces a bijection $e_* : \Hom(D,A) \to \Hom(D,B)$ (both sets are empty), without $e$ being an isomorphism.'
 
   - property: extremal cogenerator
-    proof: 'We already saw that $E$ is a cogenerator, and it is also the only one because any cogenerator must admit a morphism from $E$ to be able to distinguish $u,v$. But $E$ is not extremal since $f$ induces a bijection $f^* : \Hom(C,E) \to \Hom(A,E)$ (both sets are singletons), without $f$ being an isomorphism.'
+    proof: 'We already know that $E$ is a cogenerator (<a href="/category/forked_commutative_square?proof=cogenerator">proof</a>), and it is also the only one because any cogenerator must admit a morphism from $E$ to be able to distinguish $u,v$. But $E$ is not extremal since $f$ induces a bijection $f^* : \Hom(C,E) \to \Hom(A,E)$ (both sets are singletons), without $f$ being an isomorphism.'
 
 special_objects:
   initial object:
