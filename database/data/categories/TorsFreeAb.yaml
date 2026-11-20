@@ -27,7 +27,7 @@ satisfied_properties:
     check_redundancy: false
 
   - property: finitely accessible
-    proof: We already saw that filtered colimits exist and are preserved by the forgetful functor to $\Ab$. Every torsion-free abelian group is the filtered colimit of its finitely generated subgroups, which are in fact free. Finitely generated free abelian groups are finitely presentable in $\Ab$ and therefore also in $\TorsFreeAb$.
+    proof: We already know that filtered colimits exist and are preserved by the forgetful functor to $\Ab$ (<a href="/category/TorsFreeAb?proof=cocomplete">proof</a>). Every torsion-free abelian group is the filtered colimit of its finitely generated subgroups, which are in fact free. Finitely generated free abelian groups are finitely presentable in $\Ab$ and therefore also in $\TorsFreeAb$.
 
   - property: preadditive
     proof: It is a full subcategory of the preadditive category $\Ab$.

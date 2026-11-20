@@ -53,7 +53,7 @@ satisfied_properties:
 
   - property: cartesian filtered colimits
     proof: >-
-      We already saw that filtered colimits and finite products exist. The canonical map $\colim_i (M \times N_i) \to M \times \colim_i N_i$ is an isomorphism for filtered diagrams $(N_i)$: It is surjective by the concrete description of filtered colimits. It is isometric because of the elementary observation $\inf_i \max(r, s_i) = \max(r, \inf_i s_i)$ for $r, s_i \in \IR$, where $i \leq j \implies s_i \geq s_j$.
+      We already know that $\Met$ has filtered colimits (<a href="/category/Met?proof=filtered_colimits" data-allow-deduced>proof</a>) and finite products (<a href="/category/Met?proof=finite_products" data-allow-deduced>proof</a>). The canonical map $\colim_i (M \times N_i) \to M \times \colim_i N_i$ is an isomorphism for filtered diagrams $(N_i)$: It is surjective by the concrete <a href="/category/PMet?proof=filtered_colimits">description</a> of filtered colimits in $\PMet$, since the reflection $L : \PMet \to \Met$ is surjective on underlying sets. It is isometric because of the elementary observation $\inf_i \max(r, s_i) = \max(r, \inf_i s_i)$ for $r, s_i \in \IR$, where $i \leq j \implies s_i \geq s_j$.
 
   - property: ℵ₁-cofiltered limits
     proof: >-
