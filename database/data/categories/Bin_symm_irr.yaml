@@ -86,7 +86,7 @@ unsatisfied_properties:
   - property: weakly terminal object
     proof: We can reuse the <a href="/category/Bin_irr?proof=weakly_terminal_object">proof</a> from $\Bin_{\irr}$, since the relation constructed there is symmetric.
 
-  - property: filtered
+  - property: left collapsible
     proof: >-
       The two morphisms
       $$(\{a\},\varnothing) \rightrightarrows \bigl(\{a,a'\},\{(a,a'),(a',a)\}\bigr)$$

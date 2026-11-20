@@ -79,7 +79,7 @@ unsatisfied_properties:
   - property: countable copowers
     proof: 'Assume that the copower $X \coloneqq \IN \otimes \{\ast\}$ exists. This is a set with a map $i : \IN \to X$ (not necessarily finite-to-one) such that for every other such map $j : \IN \to Y$ there is a unique finite-to-one map $f : X \to Y$ with $f \circ i = j$. Applying this to $j : \IN \to \{\ast\}$, we see that $X$ is finite. Applying the universal property to maps $j : \IN \to \{0,1\}$, we see that for every subset $E \subseteq \IN$ there is a unique finite subset $F \subseteq X$ with $i^*(F) = E$. But finiteness of $F$ is automatic, so $i^* : P(X) \to P(\IN)$ is bijective. But then $P(\IN)$ is finite, which is absurd.'
 
-  - property: filtered
+  - property: left collapsible
     proof: 'Consider the maps $f,g : \IN \rightrightarrows \IN$ defined by $f(x)=x$ and $g(x)=2x$. They are injective, hence finite-to-one. If a map $h : \IN \to X$ coequalizes them, we have $h(x)=h(2x)$, in particular $h(1)=h(2^n)$ for all $n \in \IN$. Thus, $h$ is not finite-to-one.'
 
   - property: sequential limits

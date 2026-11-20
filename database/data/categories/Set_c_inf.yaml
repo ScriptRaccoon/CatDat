@@ -63,7 +63,7 @@ unsatisfied_properties:
   - property: zero morphisms
     proof: 'Assume that there is a zero morphism $0 : \IN \to \IN$. For $n \in \IN$, let $c_n : \IN \to \IN$ be the constant map with value $n$. Then $c_0 = c_0 \circ 0 = 0 = c_1 \circ 0 = c_1$, a contradiction.'
 
-  - property: cofiltered
+  - property: right collapsible
     proof: 'The constant maps $\IN \rightrightarrows \IN$ with values $0$ and $1$ are equalized by no map $X \to \IN$ in this category.'
 
   - property: effective cocongruences
