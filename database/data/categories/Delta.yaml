@@ -69,7 +69,7 @@ satisfied_properties:
       This shows that the choice of $x \in X$ does not matter, and for $y \in Y$ the proof is the same.
 
 unsatisfied_properties:
-  - property: cofiltered
+  - property: right collapsible
     proof: 'The two maps $d^0,d^1 : [0] \rightrightarrows [1]$ are not equalized by any morphism.'
 
   - property: coreflexive equalizers

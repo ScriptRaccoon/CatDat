@@ -57,13 +57,30 @@
   proof: Every finite diagram even admits a <i>universal</i> cocone.
   check_redundancy: false
 
-- id: filtered_via_coequalizers
+- id: filtered_characterization
+  assumptions:
+    - filtered
+  conclusions:
+    - discretely filtered
+    - left collapsible
+  proof: 'This is the case $\kappa = \aleph_0$ of Theorem 2.2 at the <a href="https://ncatlab.org/nlab/show/filtered+category">nLab</a>. Here, we use that in a <a href="/category-property/left collapsible">left collapsible</a> category every finite family of parallel morphisms is coequalized by some morphism.'
+  is_equivalence: true
+  check_redundancy: false
+
+- id: coequalizers_implies_left_collapsible
   assumptions:
     - coequalizers
-    - discretely filtered
   conclusions:
-    - filtered
-  proof: Every finite set of objects admits a cocone, and every parallel pair is coequalized by its coequalizer.
+    - left collapsible
+  proof: Every parallel pair is coequalized by its coequalizer.
+
+- id: left_collapsible_left_cancellative_implies_thin
+  assumptions:
+    - left cancellative
+    - left collapsible
+  conclusions:
+    - thin
+  proof: 'Let $f,g : X \rightrightarrows Y$ be a parallel pair. There is a morphism $h : Y \to Z$ with $h \circ f = h \circ g$. Since $h$ is a monomorphism, we get $f = g$.'
 
 - id: aleph1-filtered-consequence
   assumptions:

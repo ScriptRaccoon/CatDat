@@ -55,7 +55,7 @@ satisfied_properties:
     proof: This actually holds for every truncated simplex category $\Delta^{\leq n}$. It has sifted colimits, since it even has discretely filtered colimits (<a href="/category/walking_coreflexive_pair?proof=discretely_filtered_colimits" data-allow-deduced>proof</a>). See <a href="https://mathoverflow.net/questions/510827">MO/510827</a> for a proof that every object is strongly finitely presentable.
 
 unsatisfied_properties:
-  - property: cofiltered
+  - property: right collapsible
     proof: 'The morphisms $i,j : [0] \rightrightarrows [1]$ are not equalized by any morphism.'
 
   - property: coreflexive equalizers

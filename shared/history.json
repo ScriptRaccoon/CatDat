@@ -2149,6 +2149,14 @@
 		{
 			"type": "category",
 			"id": "discretely filtered colimits"
+		},
+		{
+			"type": "category",
+			"id": "left collapsible"
+		},
+		{
+			"type": "category",
+			"id": "right collapsible"
 		}
 	]
 }
