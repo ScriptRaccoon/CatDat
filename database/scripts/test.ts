@@ -40,8 +40,6 @@ type TestConfig = {
 
 const TEST_CONFIG: Record<StructureType, TestConfig> = test_config
 
-execute_tests()
-
 /**
  * The main test function verifying that the data behaves as expected.
  */
@@ -364,6 +362,19 @@ function test_properties_of_selected_structures(type: StructureType) {
 	}
 }
 
+const get_assignment_status = db.prepare<
+	[string, string, StructureType],
+	{ is_deduced: number }
+>(
+	`SELECT is_deduced FROM property_assignments
+	WHERE structure_id = ? AND property_id = ? AND type = ?`
+)
+
+const get_special_morphism_status = db.prepare<[string, string], { is_deduced: number }>(
+	`SELECT is_deduced FROM special_morphism_assignments
+	WHERE category_id = ? AND kind = ?`
+)
+
 /**
  * Checks the query of a link to a proof on a structure page. A link with
  * "?proof=<key>" cites the argument of a proof, so the proof must be
@@ -388,21 +399,11 @@ function check_proof_link_target(
 
 	const proof_key = decode_property_ID(params.get('proof')!)
 
-	const assignment = db
-		.prepare<[string, string, StructureType], { is_deduced: number }>(
-			`SELECT is_deduced FROM property_assignments
-			WHERE structure_id = ? AND property_id = ? AND type = ?`
-		)
-		.get(structure_id, proof_key, type)
+	const assignment = get_assignment_status.get(structure_id, proof_key, type)
 
 	const special_morphism =
 		type === 'category'
-			? db
-					.prepare<[string, string], { is_deduced: number }>(
-						`SELECT is_deduced FROM special_morphism_assignments
-						WHERE category_id = ? AND kind = ?`
-					)
-					.get(structure_id, proof_key)
+			? get_special_morphism_status.get(structure_id, proof_key)
 			: undefined
 
 	const target = assignment ?? special_morphism
@@ -440,6 +441,18 @@ function check_proof_keys_distinct() {
 			`❌ Category properties and special morphisms share the IDs: ${collisions.join(', ')}`
 		)
 	}
+}
+
+const get_entry = {
+	structures: db.prepare<[string, string], string>(
+		`SELECT id FROM structures WHERE id = ? AND type = ?`
+	),
+	properties: db.prepare<[string, string], string>(
+		`SELECT id FROM properties WHERE id = ? AND type = ?`
+	),
+	implications: db.prepare<[string, string], string>(
+		`SELECT id FROM implications WHERE id = ? AND type = ?`
+	)
 }
 
 /**
@@ -522,11 +535,7 @@ function check_link_targets_exist() {
 
 			const decoded_id = sort === 'properties' ? decode_property_ID(id) : id
 
-			const exists = db
-				.prepare<[string, string], string>(
-					`SELECT id FROM ${sort} WHERE id = ? AND type = ?`
-				)
-				.get(decoded_id, type)
+			const exists = get_entry[sort].get(decoded_id, type)
 
 			if (!exists) {
 				throw new Error(
@@ -714,3 +723,5 @@ function test_adjoint_functor_relationships() {
 
 	devlog('✅ Adjoint functor relationships are valid')
 }
+
+execute_tests()
