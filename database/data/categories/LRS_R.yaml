@@ -3,7 +3,7 @@ name: category of locally ringed spaces
 notation: $\LRS_R$
 objects: locally ringed spaces $X$ over $R \neq 0$, each consisting of a topological space $|X|$ and a sheaf $\O_X$ of commutative $R$-algebras on $|X|$ whose stalks are local rings
 morphisms: 'A morphism $f : X \to Y$ consists of a continuous map $|f| : |X| \to |Y|$ and a homomorphism $f^\sharp : \O_Y \to |f|_* \O_X$ of sheaves of $R$-algebras such that for every $x \in |X|$ the induced map on stalks $f^\sharp_x : \O_{Y,|f|(x)} \to \O_{X,x}$ is local.'
-description: Here, $R$ is a fixed non-trivial commutative ring. The general properties of this category will not depend on the choice of $R$. For $R = \IZ$ we obtain the category $\LRS$ of locally ringed spaces. We exclude $R=0$ because this yields the trivial category.
+description: Here, $R$ is a fixed non-trivial commutative ring. Most properties of this category do not depend on the choice of $R$. For $R = \IZ$ we obtain the category $\LRS$ of locally ringed spaces. We exclude $R=0$ because this yields the trivial category.
 nlab_link: https://ncatlab.org/nlab/show/locally+ringed+topological+space
 
 tags:
@@ -13,10 +13,6 @@ related:
   - Sch_R
   - Top
   - CAlg(R)
-
-comments:
-  - >-
-    For $R = \IZ$, this category does not have <a href="/category-property/finite-product-stable_epimorphisms">finite-product-stable epimorphisms</a>: The canonical morphism $f : \Spec(\IQ) \sqcup \Spec(\IF_2) \to \Spec(\IZ_{(2)})$ is an epimorphism by their classification, since it is surjective and the maps $\IZ_{(2)} \to \IQ \times \IF_2$ and $\IQ \to \IQ$ are injective. Since products distribute over coproducts (by infinitary extensivity) and $\Spec$ preserves limits, the product of $f$ with $\Spec(\IZ/4)$ is the morphism $\Spec(\IF_2) \to \Spec(\IZ/4)$, using $\IQ \otimes \IZ/4 = 0$. It is no epimorphism since $\IZ/4 \to \IF_2$ is not injective. It is not known to us if this works for every $R$, for example a field.
 
 satisfied_properties:
   - property: locally small
@@ -102,7 +98,7 @@ unsatisfied_properties:
 
   - property: cartesian filtered colimits
     proof: >-
-      We embed <a href="/category/Top">$\Top$</a> into $\LRS_R$ and use that $\Top$ does not have cartesian filtered colimits (<a href="/category/Top?proof=cartesian_filtered_colimits" data-allow-deduced>proof</a>). Choose a maximal ideal $\m$ of $R$ and let $K \coloneqq R/\m$. For a topological space $T$, let $\underline{K}_T$ be the constant sheaf with value $K$ on $T$, whose sections over an open subset $V \subseteq T$ are the locally constant functions $V \to K$, i.e. the continuous maps $V \to K$ for the discrete topology on $K$. Its stalks are isomorphic to $K$, so we obtain a locally ringed space $\Delta(T)$ with $|\Delta(T)| \coloneqq T$ and $\O_{\Delta(T)} \coloneqq \underline{K}_T$. A continuous map $u : T \to T'$ induces a morphism $\Delta(u) : \Delta(T) \to \Delta(T')$ with $|\Delta(u)| \coloneqq u$ whose sheaf map is given by $s \mapsto s \circ u$. This defines a functor
+      We embed $\Top$ into $\LRS_R$ and transfer the failure of this property from $\Top$. Choose a maximal ideal $\m$ of $R$ and let $K \coloneqq R/\m$. For a topological space $T$, let $\underline{K}_T$ be the constant sheaf with value $K$ on $T$, whose sections over an open subset $V \subseteq T$ are the locally constant functions $V \to K$, i.e. the continuous maps $V \to K$ for the discrete topology on $K$. Its stalks are isomorphic to $K$, so we obtain a locally ringed space $\Delta(T)$ with $|\Delta(T)| \coloneqq T$ and $\O_{\Delta(T)} \coloneqq \underline{K}_T$. A continuous map $u : T \to T'$ induces a morphism $\Delta(u) : \Delta(T) \to \Delta(T')$ with $|\Delta(u)| \coloneqq u$ whose sheaf map is given by $s \mapsto s \circ u$. This defines a functor
       $$\Delta : \Top \to \LRS_R.$$
       We say that a locally ringed space $X$ is defined over $K$ if the unique morphism $X \to \Spec(R)$ factors through $\Spec(K)$, i.e. if $\m \, \O_X = 0$. For example, $\Delta(T)$ is defined over $K$ since $\m$ annihilates $\underline{K}_T$.
 
@@ -193,6 +189,13 @@ unsatisfied_properties:
       Now let $u : A \to A/\langle X+Y \rangle$ be the quotient map, and let $v : A \to A/\langle X+Y \rangle$ map $a + bX + cY$ to the class of $a$, so that $v$ factors through $\pi$. Both $u$ and $v$ map $a + b(X+Y)$ to the class of $a$, so they agree on $A^\sigma$. Since $\Spec(A/\langle X+Y \rangle)$ has a single point, a morphism from it to $\Omega$ is the same as a point of $|\Omega|$ together with a local homomorphism from its stalk to $A/\langle X+Y \rangle$. For $\chi \circ \Spec(u)$ and $\chi \circ \Spec(v)$, these are $p$ together with $u \circ \varphi$ and $v \circ \varphi$, which coincide since $\varphi$ takes values in $A^\sigma$. Since $\Spec(v)$ factors through $\Spec(\pi)$, it follows that
       $$\chi \circ \Spec(u) = \chi \circ \Spec(v) = \top \circ {!}.$$
       Since the first square is a pullback, $\Spec(u)$ factors through $\Spec(\pi)$. Since $\Spec$ is fully faithful, $u$ factors through $\pi$. But then $X \in \ker(\pi) \subseteq \ker(u) = \langle X+Y \rangle$, which is a contradiction.
+
+undecidable_properties:
+  - property: finite-product-stable epimorphisms
+    proof: This depends on $R$. It fails for $R = \IZ$, and for a field $R$ it holds if and only if $R$ is separably closed. The proofs can be found <a href="/content/LRS-product-stable-epis">here</a>.
+
+  - property: product-stable epimorphisms
+    proof: This depends on $R$. It fails for $R = \IZ$, and for a field $R$ it holds if and only if $R$ is separably closed. The proofs can be found <a href="/content/LRS-product-stable-epis">here</a>.
 
 special_objects:
   initial object:
