@@ -1,84 +1,72 @@
 - property: groupoid
   kind: isomorphism
   description: every morphism
-  proof: The category is a groupoid.
 
 - property: gaunt
   kind: isomorphism
   description: only the identities
-  proof: The category is gaunt.
 
 - property: thin
   kind: monomorphism
   description: every morphism
-  proof: It is a thin category.
 
 - property: thin
   kind: epimorphism
   description: every morphism
-  proof: It is a thin category.
 
 - property: left cancellative
   kind: monomorphism
   description: every morphism
-  proof: The category is left cancellative.
 
 - property: right cancellative
   kind: epimorphism
   description: every morphism
-  proof: The category is right cancellative.
 
 - property: left cancellative
   kind: regular epimorphism
   description: same as isomorphisms
-  proof: The category is left cancellative, and a regular epimorphism which is a monomorphism must be an isomorphism.
+  proof: A regular epimorphism which is a monomorphism must be an isomorphism.
 
 - property: right cancellative
   kind: regular monomorphism
   description: same as isomorphisms
-  proof: The category is right cancellative, and a regular monomorphism which is an epimorphism must be an isomorphism.
+  proof: A regular monomorphism which is an epimorphism must be an isomorphism.
 
 - property: one-sorted finitary algebraic
   kind: isomorphism
   description: bijective morphisms
-  proof: 'This holds in every one-sorted finitary algebraic category: the inverse of a bijective morphism is again a morphism.'
+  proof: The inverse of a bijective morphism is again a morphism.
 
 - property: one-sorted finitary algebraic
   kind: monomorphism
   description: injective morphisms
-  proof: 'This holds in every one-sorted finitary algebraic category: the forgetful functor to sets is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.'
+  proof: The forgetful functor to sets is faithful, hence reflects monomorphisms, and it is continuous (even representable), hence preserves monomorphisms.
 
 - property: one-sorted finitary algebraic
   kind: regular epimorphism
   description: surjective morphisms
-  proof: 'This holds in every one-sorted finitary algebraic category: the construction of coequalizers shows that every regular epimorphism is surjective. Conversely, the fundamental theorem on homomorphisms states that every surjective homomorphism $A \to B$ is the coequalizer of the two projections $A \times_B A \rightrightarrows A$.'
+  proof: The construction of coequalizers shows that every regular epimorphism is surjective. Conversely, the fundamental theorem on homomorphisms states that every surjective homomorphism $A \to B$ is the coequalizer of the two projections $A \times_B A \rightrightarrows A$.
 
 - property: mono-regular
   kind: regular monomorphism
   description: same as monomorphisms
-  proof: The category is mono-regular.
 
 - property: epi-regular
   kind: regular epimorphism
   description: same as epimorphisms
-  proof: The category is epi-regular.
 
 - property: subobject-trivial
   kind: monomorphism
   description: same as isomorphisms
-  proof: The category is subobject-trivial.
 
 - property: quotient-trivial
   kind: epimorphism
   description: same as isomorphisms
-  proof: The category is quotient-trivial.
 
 - property: regular-subobject-trivial
   kind: regular monomorphism
   description: same as isomorphisms
-  proof: The category is regular-subobject-trivial.
 
 - property: regular-quotient-trivial
   kind: regular epimorphism
   description: same as isomorphisms
-  proof: The category is regular-quotient-trivial.

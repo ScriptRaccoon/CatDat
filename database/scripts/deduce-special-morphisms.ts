@@ -1,16 +1,21 @@
 import { get_client } from '#shared/db.ts'
 import { devlog } from '#shared/utils.ts'
-import { get_special_morphism_plural } from '#shared/property.utils.ts'
+import { get_proof_link, get_special_morphism_plural } from '#shared/property.utils.ts'
 import { get_structure_parent_map } from './utils/structures'
 
 const db = get_client({ readonly: false })
 
 export function deduce_special_morphisms() {
 	console.info('\n--- Deduce special morphisms ---')
-	clear_deduced_special_morphisms()
-	inherit_special_morphisms_from_parents()
-	deduce_special_morphisms_by_rules()
-	deduce_special_morphisms_of_dual_categories()
+
+	const deduction = db.transaction(() => {
+		clear_deduced_special_morphisms()
+		inherit_special_morphisms_from_parents()
+		deduce_special_morphisms_by_rules()
+		deduce_special_morphisms_of_dual_categories()
+	})
+
+	deduction()
 }
 
 /**
@@ -47,8 +52,10 @@ function inherit_special_morphisms_from_parents() {
 	let inherited_count = 0
 
 	for (const [category_id, parent_id] of parent_map) {
+		if (!parent_id) continue
+
 		const inherited_morphisms = new Map<string, SpecialMorphism>()
-		let current_id = parent_id
+		let current_id: string | null = parent_id
 
 		while (current_id) {
 			const parent_entries = get_parent_special_morphisms.all(current_id)
@@ -63,7 +70,9 @@ function inherit_special_morphisms_from_parents() {
 		}
 
 		for (const [kind, entry] of inherited_morphisms) {
-			const proof = `This follows from the <a href="/category/${parent_id}">parent category</a>.`
+			const parent_link = `<a href="/category/${parent_id}">parent category</a>`
+			const proof_link = get_proof_link('category', parent_id, kind)
+			const proof = `This follows from the ${parent_link} (${proof_link}).`
 			const res = insert_special_morphism.run(
 				category_id,
 				kind,
@@ -79,51 +88,54 @@ function inherit_special_morphisms_from_parents() {
 
 /**
  * Deduces special morphisms from the rules from the special_morphism_rules
- * table. We ignore duplicate assignments here because of overlaps
- * with previous deductions.
+ * table. The proof states the property with a link to its proof,
+ * followed by the argument of the rule, if any. We ignore duplicate
+ * assignments here because of overlaps with previous deductions.
  */
 function deduce_special_morphisms_by_rules() {
 	type Rule = {
 		property_id: string
+		relation: string
 		kind: string
 		description: string
-		proof: string
+		proof: string | null
 	}
 
 	const rules = db
 		.prepare<[], Rule>(
-			`SELECT property_id, kind, description, proof
-			FROM special_morphism_rules
-			ORDER BY id`
+			`SELECT r.property_id, p.relation, r.kind, r.description, r.proof
+			FROM special_morphism_rules r
+			INNER JOIN properties p ON p.id = r.property_id AND p.type = r.property_type
+			ORDER BY r.id`
 		)
 		.all()
 
-	for (const { property_id, kind, description, proof } of rules) {
-		const res = db
-			.prepare(
-				`INSERT INTO special_morphism_assignments (
-                    category_id,
-                    kind,
-                    description,
-                    proof,
-                    is_deduced
-                )
-                SELECT
-                    pa.structure_id,
-                    ?,
-                    ?,
-                    ?,
-                    TRUE
-                FROM property_assignments pa
-                WHERE pa.type = 'category'
-                    AND pa.property_id = ?
-                    AND pa.is_satisfied = TRUE
-                ON CONFLICT (category_id, kind) DO NOTHING`
-			)
-			.run(kind, description, proof, property_id)
+	const get_categories = db.prepare<[string], { id: string }>(
+		`SELECT structure_id AS id
+		FROM property_assignments
+		WHERE type = 'category' AND property_id = ? AND is_satisfied = TRUE`
+	)
+
+	const insert_special_morphism = db.prepare(
+		`INSERT INTO special_morphism_assignments (
+			category_id, kind, description, proof, is_deduced
+		) VALUES (?, ?, ?, ?, TRUE)
+		ON CONFLICT (category_id, kind) DO NOTHING`
+	)
+
+	for (const { property_id, relation, kind, description, proof } of rules) {
+		let count = 0
+
+		for (const { id } of get_categories.all(property_id)) {
+			const proof_link = get_proof_link('category', id, property_id)
+			const statement = `The category ${relation} ${property_id} (${proof_link}).`
+			const full_proof = proof ? `${statement} ${proof}` : statement
+			const res = insert_special_morphism.run(id, kind, description, full_proof)
+			count += res.changes
+		}
 
 		devlog(
-			`Deduced ${res.changes} descriptions of ${get_special_morphism_plural(kind)} in ${property_id} categories`
+			`Deduced ${count} descriptions of ${get_special_morphism_plural(kind)} in ${property_id} categories`
 		)
 	}
 }
@@ -135,28 +147,52 @@ function deduce_special_morphisms_by_rules() {
  * with previous deductions.
  */
 function deduce_special_morphisms_of_dual_categories() {
-	const res = db
-		.prepare(
-			`INSERT INTO special_morphism_assignments (
-                category_id,
-                kind,
-                description,
-                proof,
-                is_deduced
-            )
-            SELECT
-                s.dual_structure_id,
-                p.dual_property_id,
-                sma.description,
-                'This follows from the <a href="/category/' || s.id || '">dual category</a>.',
-                TRUE
-            FROM structures s
-            INNER JOIN special_morphism_assignments sma ON sma.category_id = s.id
-            INNER JOIN properties p ON p.id = sma.kind AND p.type = 'morphism'
-            WHERE s.type = 'category' AND s.dual_structure_id IS NOT NULL
-            ON CONFLICT (category_id, kind) DO NOTHING`
-		)
-		.run()
+	type DualSpecialMorphism = {
+		category_id: string
+		dual_category_id: string
+		kind: string
+		dual_kind: string
+		description: string
+	}
 
-	devlog(`Deduced ${res.changes} special morphisms by duality`)
+	const dual_special_morphisms = db
+		.prepare<[], DualSpecialMorphism>(
+			`SELECT
+				s.id AS category_id,
+				s.dual_structure_id AS dual_category_id,
+				sma.kind,
+				p.dual_property_id AS dual_kind,
+				sma.description
+			FROM structures s
+			INNER JOIN special_morphism_assignments sma ON sma.category_id = s.id
+			INNER JOIN properties p ON p.id = sma.kind AND p.type = 'morphism'
+			WHERE s.type = 'category'
+				AND s.dual_structure_id IS NOT NULL
+				AND p.dual_property_id IS NOT NULL`
+		)
+		.all()
+
+	const insert_special_morphism = db.prepare(
+		`INSERT INTO special_morphism_assignments (
+			category_id, kind, description, proof, is_deduced
+		) VALUES (?, ?, ?, ?, TRUE)
+		ON CONFLICT (category_id, kind) DO NOTHING`
+	)
+
+	let count = 0
+
+	for (const entry of dual_special_morphisms) {
+		const dual_link = `<a href="/category/${entry.category_id}">dual category</a>`
+		const proof_link = get_proof_link('category', entry.category_id, entry.kind)
+		const proof = `This follows from the ${dual_link} (${proof_link}).`
+		const res = insert_special_morphism.run(
+			entry.dual_category_id,
+			entry.dual_kind,
+			entry.description,
+			proof
+		)
+		count += res.changes
+	}
+
+	devlog(`Deduced ${count} special morphisms by duality`)
 }

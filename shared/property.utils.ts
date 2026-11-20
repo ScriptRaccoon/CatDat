@@ -34,6 +34,15 @@ export function get_property_url(id: string, type: StructureType) {
 	return `/${type}-property/${encode_property_ID(id)}`
 }
 
+/**
+ * Returns a link to the proof of a property, or of a special morphism
+ * classification, on a structure page. The link cites only the statement,
+ * so the proof may be deduced.
+ */
+export function get_proof_link(type: StructureType, structure_id: string, key: string) {
+	return `<a href="/${type}/${structure_id}?proof=${encode_property_ID(key)}" data-allow-deduced>proof</a>`
+}
+
 export function get_property_label(id: string) {
 	return id.replace(/^preserves\s/, '')
 }

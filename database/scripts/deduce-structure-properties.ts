@@ -25,6 +25,7 @@ import {
 	type NormalizedImplication
 } from '#shared/implications.ts'
 import { devlog, remove_underscores } from '#shared/utils.ts'
+import { get_proof_link } from '#shared/property.utils.ts'
 
 /**
  * Deduce satisfied properties for a given structure from given ones
@@ -46,7 +47,13 @@ function deduce_satisfied_properties(
 		satisfied_properties,
 		implications,
 		(implication) => ({
-			proof: get_proof_string(implication, properties_dict, associated_dicts, type),
+			proof: get_proof_string(
+				implication,
+				structure,
+				properties_dict,
+				associated_dicts,
+				type
+			),
 			stop: unsatisfied_properties.has(implication.conclusion)
 		}),
 		structure.associated_satisfied_properties
@@ -90,6 +97,7 @@ function deduce_unsatisfied_properties(
 			return {
 				proof: get_contradiction_string(
 					implication,
+					structure,
 					properties_dict,
 					associated_dicts,
 					property,
@@ -205,12 +213,16 @@ function deduce_dual_properties(
 	`)
 
 	const dual_link = `<a href="/${type}/${structure.dual}">dual ${remove_underscores(type)}</a>`
-	const proof_satisfied = `Its ${dual_link} satisfies the dual property.`
-	const proof_unsatisfied = `Its ${dual_link} does not satisfy the dual property.`
-	const proof_undecidable = `The dual property is undecidable for its ${dual_link}.`
+
+	const get_proof = (template: string, p: string) => {
+		const p_dual = properties_dict[p].dual!
+		const proof_link = get_proof_link(type, structure.dual, p_dual)
+		return `${template} (${proof_link}).`
+	}
 
 	for (const p of new_satisfied) {
-		property_insert.run(structure.id, p, type, 1, proof_satisfied)
+		const proof = get_proof(`Its ${dual_link} satisfies the dual property`, p)
+		property_insert.run(structure.id, p, type, 1, proof)
 	}
 
 	devlog(
@@ -218,7 +230,8 @@ function deduce_dual_properties(
 	)
 
 	for (const q of new_unsatisfied) {
-		property_insert.run(structure.id, q, type, 0, proof_unsatisfied)
+		const proof = get_proof(`Its ${dual_link} does not satisfy the dual property`, q)
+		property_insert.run(structure.id, q, type, 0, proof)
 	}
 
 	devlog(
@@ -226,7 +239,11 @@ function deduce_dual_properties(
 	)
 
 	for (const q of new_undecidable) {
-		property_insert.run(structure.id, q, type, null, proof_undecidable)
+		const proof = get_proof(
+			`The dual property is undecidable for its ${dual_link}`,
+			q
+		)
+		property_insert.run(structure.id, q, type, null, proof)
 	}
 
 	devlog(
@@ -269,8 +286,10 @@ function inherit_properties_from_parents(db: Database, type: StructureType) {
 	let inherited_count = 0
 
 	for (const [structure_id, parent_id] of parent_map) {
+		if (!parent_id) continue
+
 		const inherited_properties = new Map<string, PropertyAssignment>()
-		let current_id = parent_id
+		let current_id: string | null = parent_id
 
 		while (current_id) {
 			const parent_assignments = get_assignments.all(current_id)
@@ -285,7 +304,10 @@ function inherit_properties_from_parents(db: Database, type: StructureType) {
 		}
 
 		for (const [property_id, assignment] of inherited_properties) {
-			const proof = `This is inherited from the <a href="/${type}/${parent_id}">parent ${remove_underscores(type)}</a>.`
+			const parent_link = `<a href="/${type}/${parent_id}">parent ${remove_underscores(type)}</a>`
+			const proof_link = get_proof_link(type, parent_id, property_id)
+			const verb = assignment.is_satisfied ? 'satisfies' : 'does not satisfy'
+			const proof = `Its ${parent_link} ${verb} this property (${proof_link}).`
 			const res = property_insert.run(
 				structure_id,
 				property_id,

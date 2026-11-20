@@ -27,7 +27,7 @@ CREATE TABLE special_morphism_rules (
     property_type TEXT NOT NULL DEFAULT 'category',
     kind TEXT NOT NULL,
     description TEXT NOT NULL,
-    proof TEXT NOT NULL,
+    proof TEXT,
     FOREIGN KEY (property_id, property_type)
         REFERENCES properties (id, type) ON DELETE CASCADE,
     FOREIGN KEY (kind) REFERENCES special_morphisms (kind) ON DELETE RESTRICT
