@@ -1,0 +1,15 @@
+id: discretely filtered colimits
+relation: has
+description: A category has <i>discretely filtered colimits</i> if it has colimits of diagrams indexed by small <a href="/category-property/discretely filtered">discretely filtered</a> categories. This is not standard terminology.
+nlab_link: null
+dual: discretely cofiltered limits
+invariant_under_equivalences: true
+
+related:
+  - coequalizers
+  - connected colimits
+  - discretely filtered
+  - sifted colimits
+
+tags:
+  - colimits

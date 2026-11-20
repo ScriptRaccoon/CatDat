@@ -1,0 +1,15 @@
+id: discretely cofiltered limits
+relation: has
+description: A category has <i>discretely cofiltered limits</i> if it has limits of diagrams indexed by small <a href="/category-property/discretely cofiltered">discretely cofiltered</a> categories. This is not standard terminology.
+nlab_link: null
+dual: discretely filtered colimits
+invariant_under_equivalences: true
+
+related:
+  - connected limits
+  - cosifted limits
+  - discretely cofiltered
+  - equalizers
+
+tags:
+  - limits

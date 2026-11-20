@@ -59,12 +59,20 @@
     - Cauchy complete
   proof: More generally, if $\kappa$ is any infinite regular cardinal, a category with $\kappa$-filtered colimits must be Cauchy cocomplete. This is because the <a href="/category/walking_idempotent">walking idempotent</a> is $\kappa$-filtered. See also <a href="https://bookstore.ams.org/conm-104">Makkai–Paré</a>, Prop. 2.2.1.
 
-- id: sifted_categories_are_connected
+- id: connected_colimits_include_discretely_filtered_colimits
   assumptions:
     - connected colimits
   conclusions:
+    - discretely filtered colimits
+  proof: This is because every <a href="/category-implication/discretely_filtered_is_connected">discretely filtered category is connected</a>.
+
+- id: discretely_filtered_colimits_special_cases
+  assumptions:
+    - discretely filtered colimits
+  conclusions:
     - sifted colimits
-  proof: This is because every sifted category is connected.
+    - coequalizers
+  proof: Every <a href="/category-implication/sifted_is_discretely_filtered">sifted category is discretely filtered</a>. The index category $\bullet \rightrightarrows \bullet$ for a coequalizer is discretely filtered, since its codomain object is weakly terminal and <a href="/category-implication/weakly_terminal_object_yields_discretely_filtered">every category with a weakly terminal object is discretely filtered</a>.
 
 - id: sifted_colimits_consequence
   assumptions:
