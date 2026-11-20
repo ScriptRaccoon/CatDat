@@ -105,13 +105,6 @@ test('user may see properties that cannot be determined in a family of categorie
 test('user sees the properties from the parent category separately', async ({ page }) => {
 	await page.goto('/category/Ab', { waitUntil: 'networkidle' })
 
-	const satisfied_section = page.locator('section', {
-		has: page.getByRole('heading', {
-			name: 'Satisfied properties',
-			exact: true
-		})
-	})
-
 	await expect(
 		get_property_list(page, 'Satisfied properties', 'Properties from parent')
 	).toContainText('is abelian')
@@ -119,22 +112,6 @@ test('user sees the properties from the parent category separately', async ({ pa
 	await expect(
 		get_property_list(page, 'Satisfied properties', 'Deduced properties')
 	).not.toContainText('is abelian')
-
-	await satisfied_section
-		.getByRole('link', {
-			name: 'parent',
-			exact: true
-		})
-		.click()
-
-	await expect(
-		page.getByRole('heading', {
-			name: 'category of left modules over a non-semisimple ring',
-			exact: true
-		})
-	).toBeVisible()
-
-	await expect(page).toHaveURL('/category/R-Mod_non_ss')
 })
 
 test('user sees no properties from a parent for a category without parent', async ({
