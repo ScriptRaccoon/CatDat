@@ -570,13 +570,22 @@ function check_link_targets_exist() {
 		// The only proofs on the implications list page are those of the undecidable
 		// implications (shown in popups), so "?proof=" on this page targets one of them.
 		const undecidable_link_regex = new RegExp(
-			`<a\\s+href="\\/(${STRUCTURE_TYPES.join('|')})-implications\\?proof=([^"]+)"`,
+			`<a\\s+href="\\/(${STRUCTURE_TYPES.join('|')})-implications\\?([^"]*)"`,
 			'g'
 		)
 
 		for (const match of proof.matchAll(undecidable_link_regex)) {
 			const type = match[1] as StructureType
-			const id = match[2]
+			const params = new URLSearchParams(match[2])
+			const keys = [...params.keys()]
+
+			if (keys.length !== 1 || keys[0] !== 'proof') {
+				throw new Error(
+					`${error_prefix} has a link to the undecidable implications with an invalid query "${params}":\n"${proof}"`
+				)
+			}
+
+			const id = params.get('proof')!
 
 			const exists = db
 				.prepare<[string, string], string>(

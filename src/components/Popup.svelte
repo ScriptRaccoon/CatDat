@@ -29,7 +29,7 @@
 		popup_state.open = false
 		popup_state.id = ''
 		back_stack.length = 0
-		set_proof_param(null)
+		set_url_params({ key: null, expanded: false })
 	}
 
 	/**
@@ -48,8 +48,9 @@
 
 	/**
 	 * Proofs on structure pages are reflected in the URL by the query
-	 * parameter "proof". The pages are prerendered, so the parameter is
-	 * read and written only on the client.
+	 * parameter "proof", and an expanded popup by "expanded=true". The
+	 * pages are prerendered, so the parameters are read and written only
+	 * on the client.
 	 */
 	type RegisteredProof = {
 		id: string
@@ -84,14 +85,25 @@
 			text: registered_proof.proof,
 			expanded: false
 		})
-		set_proof_param(key)
+		set_url_params({ key, expanded: false })
 	}
 
-	function set_proof_param(key: string | null) {
+	function set_url_params({
+		key,
+		expanded
+	}: {
+		key: string | null
+		expanded: boolean
+	}) {
 		const url = new URL(location.href)
-		if (!key && !url.searchParams.has('proof')) return
+
 		if (key) url.searchParams.set('proof', key)
 		else url.searchParams.delete('proof')
+
+		if (key && expanded) url.searchParams.set('expanded', 'true')
+		else url.searchParams.delete('expanded')
+
+		if (url.href === location.href) return
 		goto(url, { replace: true, reset: false })
 	}
 </script>
@@ -125,7 +137,7 @@
 		const key = to?.url.searchParams.get('proof')
 		const registered_proof = key ? registered_proofs.get(key) : undefined
 
-		if (!to || !registered_proof) {
+		if (!to || !key || !registered_proof) {
 			close_popup()
 			return
 		}
@@ -149,12 +161,18 @@
 		}
 
 		// following a link from an expanded proof keeps the popup expanded
+		const expanded =
+			to.url.searchParams.get('expanded') === 'true' ||
+			(type === 'link' && popup_state.open && popup_state.expanded)
+
 		show_popup({
 			id: registered_proof.id,
 			heading: 'Proof',
 			text: registered_proof.proof,
-			expanded: popup_state.open && popup_state.expanded
+			expanded
 		})
+
+		set_url_params({ key, expanded })
 
 		const same_page = from?.url.pathname === to.url.pathname
 
@@ -195,6 +213,8 @@
 
 	function toggle_expanded() {
 		popup_state.expanded = !popup_state.expanded
+		const key = new URL(location.href).searchParams.get('proof')
+		set_url_params({ key, expanded: popup_state.expanded })
 	}
 </script>
 
