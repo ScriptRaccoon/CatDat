@@ -1,5 +1,9 @@
-import { test, expect } from '@playwright/test'
+import { test, expect, type Locator } from '@playwright/test'
 import { get_property_list } from '../utils'
+
+function is_full_height(popup: Locator) {
+	return popup.evaluate((el) => el.getBoundingClientRect().height >= window.innerHeight)
+}
 
 test('opening and closing a proof updates the URL', async ({ page }) => {
 	await page.goto('/category/Grp', { waitUntil: 'networkidle' })
@@ -164,4 +168,63 @@ test('following a link to a nearby proof does not scroll to the top', async ({
 		() => (window as unknown as { scroll_samples: number[] }).scroll_samples
 	)
 	expect(Math.min(...samples)).toBeGreaterThan(scroll_y / 2)
+})
+
+test('expanding and collapsing a proof updates the URL', async ({ page }) => {
+	await page.goto('/category/Grp?proof=mono-regular', { waitUntil: 'networkidle' })
+
+	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
+
+	await popup.getByRole('button', { name: 'expand' }).click()
+
+	await expect(page).toHaveURL('/category/Grp?proof=mono-regular&expanded=true')
+	await expect.poll(() => is_full_height(popup)).toBe(true)
+
+	await popup.getByRole('button', { name: 'collapse' }).click()
+
+	await expect(page).toHaveURL('/category/Grp?proof=mono-regular')
+	await expect.poll(() => is_full_height(popup)).toBe(false)
+})
+
+test('user can open an expanded proof via the URL', async ({ page }) => {
+	await page.goto('/category/Grp?proof=mono-regular&expanded=true', {
+		waitUntil: 'networkidle'
+	})
+
+	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
+
+	await expect(popup).toBeVisible()
+	await expect.poll(() => is_full_height(popup)).toBe(true)
+})
+
+test('closing an expanded proof removes it from the URL', async ({ page }) => {
+	await page.goto('/category/Grp?proof=mono-regular&expanded=true', {
+		waitUntil: 'networkidle'
+	})
+
+	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
+
+	await popup.getByRole('button', { name: 'close' }).click()
+
+	await expect(page).toHaveURL('/category/Grp')
+})
+
+test('following a link from an expanded proof keeps it expanded', async ({ page }) => {
+	await page.goto('/category/Grp_fg?proof=aleph1-cofiltered_limits&expanded=true', {
+		waitUntil: 'networkidle'
+	})
+
+	const popup = page.locator('.popup').filter({ hasText: 'Proof' })
+
+	await popup.locator('a[href="/category/Grp_fg?proof=kernels"]').click()
+
+	await expect(page).toHaveURL('/category/Grp_fg?proof=kernels&expanded=true')
+	await expect.poll(() => is_full_height(popup)).toBe(true)
+
+	await page.goBack()
+
+	await expect(page).toHaveURL(
+		'/category/Grp_fg?proof=aleph1-cofiltered_limits&expanded=true'
+	)
+	await expect.poll(() => is_full_height(popup)).toBe(true)
 })
