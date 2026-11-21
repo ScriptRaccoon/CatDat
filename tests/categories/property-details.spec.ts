@@ -70,7 +70,7 @@ test('user can view category property details', async ({ page }) => {
 			name: 'Undecidable implications',
 			exact: true
 		})
-	).toHaveCount(0)
+	).toBeVisible()
 })
 
 test('user can navigate to the dual property', async ({ page }) => {

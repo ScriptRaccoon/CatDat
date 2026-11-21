@@ -111,11 +111,15 @@ test('user can open the list of deduced implications', async ({ page }) => {
 test('user can see undecidable category implications', async ({ page }) => {
 	await page.goto('/category-implications')
 
-	const implications = page.getByRole('list', { name: 'Undecidable implications' })
+	const items = page
+		.getByRole('list', { name: 'Undecidable implications' })
+		.getByRole('listitem')
 
 	await expect(
-		implications
-			.getByRole('listitem')
-			.filter({ hasText: /accessible.+well-copowered/ })
+		items.filter({ hasText: /^\s*accessible\s+implies\s+well-copowered\s*$/ })
+	).toBeVisible()
+
+	await expect(
+		items.filter({ hasText: /^\s*coaccessible\s+implies\s+well-powered\s*$/ })
 	).toBeVisible()
 })
