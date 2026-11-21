@@ -2157,6 +2157,14 @@
 		{
 			"type": "category",
 			"id": "right collapsible"
+		},
+		{
+			"type": "category",
+			"id": "Grothendieck quasicotopos"
+		},
+		{
+			"type": "category",
+			"id": "Grothendieck quasitopos"
 		}
 	]
 }

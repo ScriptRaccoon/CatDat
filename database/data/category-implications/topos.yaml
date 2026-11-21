@@ -200,3 +200,29 @@
   proof: This is true by definition.
   is_equivalence: true
   check_redundancy: false
+
+- id: grothendieck_quasitopos_criterion
+  assumptions:
+    - Grothendieck quasitopos
+  conclusions:
+    - coproducts
+    - quasitopos
+    - extremal generating collection
+    - locally essentially small
+  is_equivalence: true
+  proof: See <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant">Johnstone</a>, Part C, Theorem 2.2.13, $(ii)\iff(iii)$. Note that Johnstone uses the term "small generating set" in the statement, but that his definition of generating sets matches the definition of extremal generating collections here and on the nlab.
+  check_redundancy: false
+
+- id: grothendieck_quasitopos_consequence
+  assumptions:
+    - Grothendieck quasitopos
+  conclusions:
+    - locally presentable
+    - filtered-colimit-stable monomorphisms
+    - cogenerator
+  proof: >-
+    Local presentability is part of <a href="https://ncatlab.org/nlab/show/Sketches+of+an+Elephant">Johnstone</a>, Part C, Theorem 2.2.13, $(ii)\iff(iv)$.
+
+    To show that a Grothendieck quasitopos has filtered-colimit-stable monomorphisms, suppose $(f_i : \F_i \to \G_i)_{i\in \I}$ is a filtered diagram of monomorphisms in $\BiSep(\C, J, K)$. In order to form the filtered colimit in $\BiSep(\C, J, K)$, we can take the filtered colimit in $\Sh(\C, J)$, and then apply the reflector to $\BiSep(\C, J, K)$. Since $\Sh(\C, J)$ has exact filtered colimits, the first step results in a monomorphism, and since the reflector preserves monomorphisms by Lemma 1 <a href="/content/separated_objects_quasitopos">here</a>, the filtered colimit in $\BiSep(\C, J, K)$ is also a monomorphism.
+
+    As for having a cogenerator: we have that $\Sh(\C, K)$ is a reflective subcategory of $\BiSep(\C, J, K)$, with the reflector being the restriction of the $K$-sheafification functor to the subcategory $\BiSep(\C, J, K)$. This reflector is faithful, because for every $K$-separated presheaf $\F$ the morphism $\eta_\F : \F \to \F^+_K$ is a monomorphism and so for $f,g:\G \to \F$ satisfying $f^+_K = g^+_K$ it follows from $\eta_\F\circ f = f^+_K\circ\eta_\G = g^+_K\circ\eta_\G = \eta_\F\circ g$ that $f = g$. By the dual of Lemma 9 <a href="/content/subcategories">here</a>, this implies that the cogenerators of $\Sh(\C, K)$ are also cogenerator in $\BiSep(\C, J, K)$.
