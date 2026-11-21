@@ -14,6 +14,7 @@ tags:
 related:
   - Met
   - Vect
+  - SemiNormVect
 
 satisfied_properties:
   - property: locally small
