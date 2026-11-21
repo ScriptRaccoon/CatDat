@@ -24,7 +24,7 @@ test('user can navigate to compare page', async ({ page }) => {
 })
 
 test('user can select categories for comparison', async ({ page }) => {
-	await page.goto('/category-comparison')
+	await page.goto('/category-comparison', { waitUntil: 'networkidle' })
 
 	await expect(
 		page.getByRole('heading', {
