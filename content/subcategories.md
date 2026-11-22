@@ -182,3 +182,18 @@ Let $U : \C \to \D$ be a fully faithful functor that preserves epimorphisms. If 
 ::: Proof
 If $p$ is an epimorphism in $\C$, then $U(p)$ is an epimorphism in $\D$ and therefore has a section. Since $U$ is fully faithful, this section is the image of a section of $p$.
 :::
+
+::: Lemma 16
+Let $U : \C \to \D$ be a fully faithful functor with a left adjoint $L : \D \to \C$ (i.e. $\C$ is equivalent to a reflective subcategory of $\D$). Assume that $\C$ has finite products and filtered colimits, and that $L$ preserves binary products. If $\D$ has cartesian filtered colimits, then so does $\C$.
+:::
+
+::: Proof
+Let $X$ be an object of $\C$ and $Y : \I \to \C$ a filtered diagram. Since $U$ is fully faithful, the counit $L \circ U \to \id_\C$ is an isomorphism. Since $L$ preserves colimits and $U$ preserves binary products, we get isomorphisms
+
+$$ \begin{align*}
+\textstyle \colim_{i \in \I} (X \times Y_i) & \cong \textstyle L\bigl(\colim_{i \in \I} (U(X) \times U(Y_i))\bigr), \\
+\textstyle X \times \colim_{i \in \I} Y_i & \cong \textstyle L\bigl(U(X) \times \colim_{i \in \I} U(Y_i)\bigr),
+\end{align*}$$
+using in the second line that $L$ preserves binary products. Under these isomorphisms, the canonical comparison map $\colim_{i \in \I} (X \times Y_i) \to X \times \colim_{i \in \I} Y_i$ corresponds to $L$ applied to the canonical comparison map $\colim_{i \in \I} (U(X) \times U(Y_i)) \to U(X) \times \colim_{i \in \I} U(Y_i)$, which is an isomorphism since $\D$ has cartesian filtered colimits. Hence, the comparison map in $\C$ is an isomorphism.
+:::
+$$
