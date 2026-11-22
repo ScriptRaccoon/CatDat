@@ -138,6 +138,7 @@
 \Cat: \mathbf{Cat}
 \Ban: \mathbf{Ban}
 \SemiNormVect: \mathbf{SemiNormVect}
+\NormVect: \mathbf{NormVect}
 \Meas: \mathbf{Meas}
 \Met: \mathbf{Met}
 \PMet: \mathbf{PMet}
