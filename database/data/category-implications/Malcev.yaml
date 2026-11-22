@@ -47,6 +47,15 @@
     - binary CSP
   proof: For all objects $X,Y$ the canonical morphism $X \sqcup Y \to X \times Y$ is a strong epimorphism (see the description of <a href="/category-property/unital">unital categories</a>), hence an epimorphism.
 
+- id: unital_binary_CIP_biproducts
+  assumptions:
+    - unital
+    - binary CIP
+  conclusions:
+    - biproducts
+  proof: >-
+    A unital category has a zero object and binary products, and binary CIP gives binary coproducts. By the remark in the description of <a href="/category-property/biproducts">biproducts</a>, it suffices that for all objects $X,Y$ the canonical morphism $X \sqcup Y \to X \times Y$ is an isomorphism. It is a strong epimorphism (see the description of <a href="/category-property/unital">unital categories</a>) and a monomorphism, hence an isomorphism.
+
 - id: unital_finite-product-stable_epis
   assumptions:
     - unital

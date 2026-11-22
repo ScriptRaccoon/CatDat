@@ -165,9 +165,6 @@ unsatisfied_properties:
     proof: >-
       $\IC$ has exactly two regular quotients, $\{0\}$ and $\IC$, since a regular epimorphism carries the quotient norm (<a href="/category/Ban?proof=regular_epimorphism">proof</a>). If an object $\Psi$ classified regular quotients, then $\Hom(\Psi, \IC)$ would have cardinality $2$. But this is impossible: if it contains $f \neq 0$, then it contains the distinct elements $0,f/2,f$.
 
-  - property: unital
-    proof: The canonical morphism $X \sqcup Y \to X \times Y$ is injective, and therefore a monomorphism. Hence, if it were also a strong epimorphism, it would be an isomorphism. However, for example, when $X = Y = \IC$, the norms do not agree.
-
   - property: counital
     proof: The canonical morphism $X \sqcup Y \to X \times Y$ is surjective, and therefore an epimorphism. Hence, if it were also a strong monomorphism, it would be an isomorphism. However, for example, when $X = Y = \IC$, the norms do not agree.
 
