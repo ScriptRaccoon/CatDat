@@ -185,9 +185,6 @@ unsatisfied_properties:
   - property: skeletal
     proof: The trivial semi-normed vector spaces with underlying sets $\{0\}$ and $\{1\}$ are zero objects, hence isomorphic, but not equal.
 
-  - property: unital
-    proof: The <a href="/category/Ban?proof=unital">proof</a> for $\Ban$ works verbatim.
-
   - property: counital
     proof: The <a href="/category/Ban?proof=counital">proof</a> for $\Ban$ works verbatim.
 

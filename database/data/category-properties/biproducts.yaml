@@ -5,6 +5,10 @@ description: >-
   $$\mu : A_1 \sqcup \cdots \sqcup A_n \to A_1 \times \cdots \times A_n$$
   is an isomorphism. This object is then called the <i>biproduct</i> or <i>direct sum</i> of $A_1,\dotsc,A_n$. Such a category is also called <i>semi-additive</i>, and it is automatically enriched over commutative monoids: the sum of $f,g : A \rightrightarrows B$ is defined as:
   $$A \xrightarrow{(f,g)} B \times B \xrightarrow{\mu^{-1}} B \sqcup B \xrightarrow{\nabla} B$$
+
+  Equivalently, the category has a zero object, binary products, and binary coproducts, and for all objects $A,B$ the canonical morphism $\alpha : A \sqcup B \to A \times B$ is an isomorphism. Indeed, the empty biproduct is a zero object. Conversely, the zero object is an empty product and an empty coproduct, so the category has finite products and finite coproducts. For a finite family of objects $A_1,\dotsc,A_n$, the canonical morphism $\mu_n : A_1 \sqcup \cdots \sqcup A_n \to A_1 \times \cdots \times A_n$ is an identity for $n \leq 1$, and for $n \geq 2$ it is an isomorphism by induction, since
+  $$\mu_n = (\mu_{n-1} \times \id_{A_n}) \circ \alpha$$
+  with $\alpha : (A_1 \sqcup \cdots \sqcup A_{n-1}) \sqcup A_n \to (A_1 \sqcup \cdots \sqcup A_{n-1}) \times A_n$.
 nlab_link: https://ncatlab.org/nlab/show/biproduct
 dual: biproducts
 invariant_under_equivalences: true

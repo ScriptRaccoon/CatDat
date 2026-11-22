@@ -128,4 +128,4 @@
   conclusions:
     - biproducts
   proof: >-
-    The zero object is an empty product and an empty coproduct. Together with binary products and binary coproducts, this gives finite products and finite coproducts. By the remarks in the descriptions of <a href="/category-property/binary_CIP">binary CIP</a> and <a href="/category-property/binary_CSP">binary CSP</a>, for every finite family of objects $A_1,\dotsc,A_n$ the canonical morphism $A_1 \sqcup \cdots \sqcup A_n \to A_1 \times \cdots \times A_n$ is a monomorphism and an epimorphism, hence an isomorphism since the category is balanced.
+    By the remark in the description of <a href="/category-property/biproducts">biproducts</a>, it suffices that for all objects $X,Y$ the canonical morphism $X \sqcup Y \to X \times Y$ is an isomorphism. It is a monomorphism and an epimorphism, hence an isomorphism since the category is balanced.
