@@ -911,6 +911,10 @@
 		{
 			"type": "category",
 			"id": "SemiNormVect"
+		},
+		{
+			"type": "category",
+			"id": "NormVect"
 		}
 	],
 	"properties": [

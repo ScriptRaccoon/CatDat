@@ -18,10 +18,11 @@ tags:
   - analysis
 
 related:
-  - Ban
-  - Met_c
-  - Met_oo
   - PMet
+  - Met_oo
+  - Met_c
+  - NormVect
+  - Ban
 
 satisfied_properties:
   - property: locally small

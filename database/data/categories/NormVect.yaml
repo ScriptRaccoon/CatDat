@@ -1,0 +1,24 @@
+id: NormVect
+name: category of normed vector spaces with linear contractions
+notation: $\NormVect$
+objects: normed vector spaces over $\IC$
+morphisms: linear contractions, i.e. linear maps satisfying $|f(x)| \leq |x|$ for every $x$
+description: The choice of morphisms is similar to that of $\Met$.
+nlab_link: null
+
+tags:
+  - analysis
+
+related:
+  - SemiNormVect
+  - Ban
+  - Vect
+  - Met
+
+satisfied_properties: []
+
+unsatisfied_properties: []
+
+special_objects: {}
+
+special_morphisms: {}
