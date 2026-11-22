@@ -50,7 +50,8 @@ satisfied_properties:
       Hence, for a family $(V_i)_{i \in I}$ the canonical morphism from the coproduct to the product is the inclusion of $\bigoplus_{i \in I} V_i$ into $\bigl\{v \in \prod_{i \in I} V_i : \sup_{i \in I} |v_i| < \infty\bigr\}$. It is injective, hence a monomorphism.
 
   - property: binary CSP
-    proof: The <a href="/category/Ban?proof=binary_CSP">proof</a> for $\Ban$ works verbatim.
+    proof: >-
+      By the <a href="/category/SemiNormVect?proof=coproducts">construction</a> of coproducts and the <a href="/category/SemiNormVect?proof=products">construction</a> of products, the canonical morphism $X \sqcup Y \to X \times Y$ is the identity map of the underlying vector space $X \oplus Y$. Hence, it is surjective and therefore an epimorphism.
 
   - property: filtered colimits
     proof: >-
@@ -78,18 +79,33 @@ satisfied_properties:
 
   - property: cocartesian cofiltered limits
     proof: >-
-      Limits are constructed as in $\Ban$ by the descriptions of products (<a href="/category/SemiNormVect?proof=products">proof</a>) and equalizers (<a href="/category/SemiNormVect?proof=equalizers">proof</a>), and so are binary coproducts (<a href="/category/SemiNormVect?proof=coproducts">proof</a>). Hence, the <a href="/category/Ban?proof=cocartesian_cofiltered_limits">proof</a> for $\Ban$ works verbatim.
+      By the <a href="/category/SemiNormVect?proof=products">construction</a> of products and the <a href="/category/SemiNormVect?proof=equalizers">construction</a> of equalizers, the limit of a small diagram $(Y_i)$ is the space of compatible families $(y_i) \in \prod_i Y_i$ with $\sup_i |y_i| < \infty$, endowed with the semi-norm $|(y_i)| \coloneqq \sup_i |y_i|$. By the <a href="/category/SemiNormVect?proof=coproducts">construction</a> of coproducts, the coproduct $X \oplus Y$ of two semi-normed vector spaces is their direct sum with the semi-norm $|(x,y)| \coloneqq |x| + |y|$.
+
+      Now let $X$ be a semi-normed vector space and $(Y_i)$ be a cofiltered diagram of semi-normed vector spaces. We claim that the canonical map
+      $$\textstyle X \oplus \lim_i Y_i \to \lim_i (X \oplus Y_i), \quad (x,(y_i)) \mapsto ((x,y_i))_i,$$
+      is a bijective linear isometry, hence an isomorphism (<a href="/category/SemiNormVect?proof=isomorphism">proof</a>). An element of the codomain is a compatible family $((x_i,y_i))_i$ with bounded semi-norms. Since the transition maps are of the form $\id_X \oplus f$, we have $x_i = x_j$ whenever there is a morphism $i \to j$ in the index category. Since the index category is connected, there is some $x \in X$ with $x_i = x$ for all $i$. Moreover, $(y_i)$ is a compatible family, and $\sup_i (|x| + |y_i|) < \infty$ holds if and only if $\sup_i |y_i| < \infty$. This shows that the canonical map is bijective. It is isometric since
+      $$\textstyle \sup_i (|x| + |y_i|) = |x| + \sup_i |y_i|.$$
+      Notice that this argument only uses that the index category is connected. Hence, $X \oplus -$ even preserves all connected limits.
 
   - property: pullback-stable regular epimorphisms
     proof: >-
-      We already know that $\SemiNormVect$ has pullbacks since it is complete (<a href="/category/SemiNormVect?proof=complete" data-allow-deduced>proof</a>). Now the <a href="/category/Ban?proof=pullback-stable_regular_epimorphisms">proof</a> is the same as for $\Ban$, using the classification of regular epimorphisms (<a href="/category/SemiNormVect?proof=regular_epimorphism">proof</a>).
+      We already know that $\SemiNormVect$ has pullbacks since it is complete (<a href="/category/SemiNormVect?proof=complete" data-allow-deduced>proof</a>). We will use that a linear contraction is a regular epimorphism if and only if it maps the open unit ball onto the open unit ball (<a href="/category/SemiNormVect?proof=regular_epimorphism">proof</a>).
+      So let $f : X \to Y$ be a regular epimorphism and let $g : T \to Y$ be any morphism. By the <a href="/category/SemiNormVect?proof=products">construction</a> of products and the <a href="/category/SemiNormVect?proof=equalizers">construction</a> of equalizers, the pullback $X \times_Y T$ is the subspace of all $(x,t) \in X \oplus T$ with $f(x) = g(t)$, endowed with the semi-norm $|(x,t)| \coloneqq \max(|x|,|t|)$. We need to show that the projection $X \times_Y T \to T$ is a regular epimorphism.
+      Let $t \in T$ be an element with $|t| < 1$. Since $g$ is a linear contraction, we have $|g(t)| < 1$. Since $f$ is a regular epimorphism, there is some $x \in X$ with $|x| < 1$ and $f(x) = g(t)$.
+      Then $(x,t) \in X \times_Y T$ is a preimage of $t$ with $\max(|x|,|t|) < 1$.
 
   - property: pushout-stable regular monomorphisms
     proof: >-
       We already know that $\SemiNormVect$ has pushouts since it is cocomplete (<a href="/category/SemiNormVect?proof=cocomplete" data-allow-deduced>proof</a>). We will use that the regular monomorphisms are the isometric injective linear maps (<a href="/category/SemiNormVect?proof=regular_monomorphism">proof</a>).
-      So let $i : X \to Y$ be an isometric injective linear map and let $f : X \to T$ be any morphism. The pushout $T \sqcup_X Y$ is the quotient of the direct sum $T \oplus Y$ modulo the subspace containing all $(-f(x),i(x))$ for $x \in X$, equipped with the quotient semi-norm.
-      Hence, the <a href="/category/Ban?proof=pushout-stable_regular_monomorphisms">proof</a> for $\Ban$ shows that $\iota : T \to T \sqcup_X Y$ is isometric. It remains to show that $\iota$ is injective.
-      If $\iota(t) = 0$, then $(t,0) = (-f(x),i(x))$ for some $x \in X$. Since $i$ is injective, $i(x) = 0$ implies $x = 0$, and hence $t = -f(x) = 0$. So $\iota$ is injective. Alternatively, since the forgetful functor to $\Vect_{\IC}$ preserves pushouts by this construction, this follows from the fact that the regular monomorphisms in $\Vect_{\IC}$ are the injective linear maps, which are stable under pushouts since $\Vect_{\IC}$ is abelian (<a href="/category-implication/dual_abelian_implies_regular">proof</a>).
+      So let $i : X \to Y$ be an isometric injective linear map and let $f : X \to T$ be any morphism. By the <a href="/category/SemiNormVect?proof=coproducts">construction</a> of coproducts and the <a href="/category/SemiNormVect?proof=coequalizers">construction</a> of coequalizers, the pushout $T \sqcup_X Y$ is the quotient of the direct sum $T \oplus Y$, equipped with the semi-norm $|(t,y)| \coloneqq |t| + |y|$, modulo the subspace $S \coloneqq \{(-f(x),i(x)) : x \in X\}$, equipped with the quotient semi-norm. We need to show that the linear contraction $\iota : T \to T \sqcup_X Y$, $t \mapsto [(t,0)]$ is isometric and injective.
+
+      For $t \in T$ the semi-norm of $\iota(t)$ is the infimum of the semi-norms of $(t,0) + (-f(x),i(x)) = (t - f(x), i(x))$ for $x \in X$.
+      By taking $x=0$ we see that the infimum is $\leq |t|$.
+      On the other hand, for any $x \in X$ we compute
+      $$\begin{align*} |(t - f(x), i(x))| & = |t - f(x)| + |i(x)| \\ & = |t - f(x)| + |x| \\ & \geq |t - f(x)| + |f(x)| \\ & \geq |t|. \end{align*}$$
+      This shows that the infimum is precisely $|t|$, so $\iota$ is isometric.
+
+      If $\iota(t) = 0$, then $(t,0) \in S$, i.e. $(t,0) = (-f(x),i(x))$ for some $x \in X$. Since $i$ is injective, $i(x) = 0$ implies $x = 0$, and hence $t = -f(x) = 0$. So $\iota$ is injective. Alternatively, since the forgetful functor to $\Vect_{\IC}$ preserves pushouts by this construction, this follows from the fact that the regular monomorphisms in $\Vect_{\IC}$ are the injective linear maps, which are stable under pushouts since $\Vect_{\IC}$ is abelian (<a href="/category-implication/dual_abelian_implies_regular">proof</a>).
 
   - property: extremal generator
     proof: >-
@@ -121,7 +137,33 @@ satisfied_properties:
       <strong>Remark.</strong> It then follows from the proof of <a href="/category-implication/dual_extremal_generator_via_coproduct">this result</a> that $\IC_1 \times \IC_0$ is an extremal cogenerator.
 
   - property: effective congruences
-    proof: The <a href="/category/Ban?proof=effective_congruences">proof</a> for $\Ban$ works here, except that we skip the step of showing that $R$ is closed.
+    proof: >-
+      Let $q_1,q_2 : R \rightrightarrows X$ be a congruence in $\SemiNormVect$. We may assume that the induced map $R \hookrightarrow X \times X$ is an inclusion of vector spaces. Since the forgetful functor $\SemiNormVect \to \Vect_{\IC}$ preserves finite limits by the <a href="/category/SemiNormVect?proof=products">construction</a> of products and the <a href="/category/SemiNormVect?proof=equalizers">construction</a> of equalizers, the congruence yields a congruence in $\Vect_{\IC}$, which we understand well:
+      It is fully classified by the subspace $U \coloneqq \{x \in X : (x,0) \in R\}$ via $R = \{(x,y) \in X \times X : x-y \in U\}$.
+
+      Since $R \hookrightarrow X \times X$ is a linear contraction and $X \times X$ carries the $\max$-semi-norm, the semi-norm $|{-}|_R$ on $R$ satisfies
+      $$\max(|x|,|y|) \leq |(x,y)|_R.$$
+      We claim that this is an equality, i.e. that $R \hookrightarrow X \times X$ is isometric.
+
+      Since the reflexivity morphism $X \to R$, $x \mapsto (x,x)$ is a split monomorphism, it is isometric, i.e.
+      $$|(x,x)|_R = |x|.$$
+      Since the transitivity morphism $R \times_X R \to R$ is a linear contraction and the fiber product carries the $\max$-semi-norm, we have
+      $$|(x,z)|_R \leq \max(|(x,y)|_R, |(y,z)|_R)$$
+      whenever $(x,y) \in R$ and $(y,z) \in R$.
+
+      Now let $(x,z) \in R$ and define $y \coloneqq \frac{1}{2} (x + z)$. Then
+      $$(x,y) = \tfrac{1}{2} (x,x) + \tfrac{1}{2} (x,z)$$
+      and likewise
+      $$(y,z) = \tfrac{1}{2} (z,z) + \tfrac{1}{2} (x,z)$$
+      are contained in $R$. We have
+      $$|(x,y)|_R \leq \tfrac{1}{2} |x| + \tfrac{1}{2} |(x,z)|_R$$
+      and likewise
+      $$|(y,z)|_R \leq \tfrac{1}{2} |z| + \tfrac{1}{2} |(x,z)|_R.$$
+      Together with the transitivity bound we obtain
+      $$\begin{align*} |(x,z)|_R & \leq \max(|(x,y)|_R, |(y,z)|_R) \\ & \leq \tfrac{1}{2} \max(|x|,|z|) + \tfrac{1}{2} |(x,z)|_R, \end{align*}$$
+      which proves the claim $|(x,z)|_R \leq \max(|x|,|z|)$.
+
+      Finally, $R$ is the kernel pair of the projection $X \to X/U$, where $X/U$ carries the quotient semi-norm: this is true by construction on the level of vector spaces, and the kernel pair carries the $\max$-semi-norm, just like $R$.
 
   - property: ℵ₁-accessible
     proof: >-
@@ -185,20 +227,23 @@ unsatisfied_properties:
   - property: skeletal
     proof: The trivial semi-normed vector spaces with underlying sets $\{0\}$ and $\{1\}$ are zero objects, hence isomorphic, but not equal.
 
-  - property: counital
-    proof: The <a href="/category/Ban?proof=counital">proof</a> for $\Ban$ works verbatim.
+  - property: biproducts
+    proof: >-
+      By the <a href="/category/SemiNormVect?proof=coproducts">construction</a> of coproducts and the <a href="/category/SemiNormVect?proof=products">construction</a> of products, for $X = Y = \IC$ with the usual norm the canonical morphism $X \sqcup Y \to X \times Y$ is the identity map of $\IC^2$, where the element $(1,1)$ has semi-norm $2$ in $X \sqcup Y$, but semi-norm $1$ in $X \times Y$. So the canonical morphism is not isometric, hence not an isomorphism (<a href="/category/SemiNormVect?proof=isomorphism">proof</a>).
 
   - property: product-stable epimorphisms
     proof: >-
-      The <a href="/category/Ban?proof=product-stable_epimorphisms">counterexample</a> for $\Ban$ works here as well: the product of the epimorphisms $f_n : \IC \to \IC$, $z \mapsto z/n$, for $n \geq 1$, is the map $f : \ell^\infty \to \ell^\infty$, $x \mapsto (x_n/n)_{n \geq 1}$, whose image does not contain $(1,1,\dotsc)$.
-      Hence, $f$ is not surjective and therefore not an epimorphism (<a href="/category/SemiNormVect?proof=epimorphism">proof</a>).
+      For $n \geq 1$ the linear contraction $f_n : \IC \to \IC$, $z \mapsto z/n$ is surjective, hence an epimorphism. By the <a href="/category/SemiNormVect?proof=products">construction</a> of products, their product is the map
+      $$\textstyle f : \ell^\infty \to \ell^\infty, \quad x \mapsto (x_n/n)_{n \geq 1},$$
+      where $\ell^\infty$ is the space of bounded sequences $(x_n)_{n \geq 1}$ in $\IC$ with the norm $|x|_\infty = \sup_{n \geq 1} |x_n|$. Every element $y = f(x)$ of the image satisfies $|y_n| \leq |x|_\infty/n$, hence $\lim_{n \to \infty} y_n = 0$. In particular, $(1,1,\dotsc)$ is not contained in the image. Hence, $f$ is not surjective and therefore not an epimorphism (<a href="/category/SemiNormVect?proof=epimorphism">proof</a>).
 
   - property: regular subobject classifier
-    proof: The <a href="/category/Ban?proof=regular_subobject_classifier">proof</a> for $\Ban$ works verbatim, using that the regular monomorphisms are, up to isomorphism, the inclusions of subspaces (<a href="/category/SemiNormVect?proof=regular_monomorphism">proof</a>).
+    proof: >-
+      If $\Omega$ is a regular subobject classifier, then, since the regular monomorphisms are, up to isomorphism, the inclusions of subspaces (<a href="/category/SemiNormVect?proof=regular_monomorphism">proof</a>), $\Hom(X,\Omega)$ is isomorphic to the set of subspaces of $X$ for any semi-normed vector space $X$. For $X = \IC$ with the usual norm, there are exactly two subspaces, $\{0\}$ and $\IC$. Since $\Hom(\IC,\Omega)$ corresponds to the closed unit ball of $\Omega$ via $\varphi \mapsto \varphi(1)$, we conclude that there are exactly two vectors in $\Omega$ with semi-norm $\leq 1$, which is absurd. (For $\Omega = 0$ there is just one, and for $\Omega \neq 0$ there are infinitely many.)
 
   - property: regular quotient object classifier
     proof: >-
-      The <a href="/category/Ban?proof=regular_quotient_object_classifier">proof</a> for $\Ban$ works verbatim, using that a regular epimorphism carries the quotient semi-norm (<a href="/category/SemiNormVect?proof=regular_epimorphism">proof</a>).
+      Let $\IC$ carry the usual norm. Since a regular epimorphism carries the quotient semi-norm (<a href="/category/SemiNormVect?proof=regular_epimorphism">proof</a>), every regular quotient of $\IC$ is isomorphic to $\IC/U$ with the quotient semi-norm for a subspace $U \subseteq \IC$. Hence, $\IC$ has exactly two regular quotients, $\{0\}$ and $\IC$. If an object $\Psi$ classified regular quotients, then $\Hom(\Psi, \IC)$ would have cardinality $2$. But this is impossible: it contains $0$, and if it contains some $f \neq 0$, then it contains the infinitely many distinct elements $\lambda f$ for $\lambda \in [0,1]$.
 
   - property: finitely accessible
     proof: >-
@@ -241,7 +286,8 @@ special_morphisms:
       If $f : V \to W$ is an isomorphism with inverse $g : W \to V$, then $f$ is a bijective linear map, and for $v \in V$ we have $|v| = |g(f(v))| \leq |f(v)| \leq |v|$, hence $|f(v)| = |v|$. Conversely, if $f$ is a bijective linear isometry, its inverse map $g$ is linear, and for $w \in W$ we have $|g(w)| = |f(g(w))| = |w|$. So $g$ is a linear contraction, and it is inverse to $f$.
   monomorphism:
     description: injective linear contractions
-    proof: The <a href="/category/Ban?proof=monomorphism">proof</a> for $\Ban$ works verbatim.
+    proof: >-
+      For the non-trivial direction, let $f : X \to Y$ be a monomorphism. The functor $\Hom(\IC,-) : \SemiNormVect \to \Set$, where $\IC$ carries the usual norm, maps $X$ to the closed unit ball $B_X \coloneqq \{x \in X : |x| \leq 1\}$ via $\varphi \mapsto \varphi(1)$. Since it is representable, it preserves monomorphisms, so $f$ is injective on $B_X$. Now let $x \in X$ with $f(x) = 0$, and choose $\lambda > |x|$. Then $x/\lambda \in B_X$ and $f(x/\lambda) = 0 = f(0)$, hence $x/\lambda = 0$ and $x = 0$. So $f$ is injective.
   epimorphism:
     description: surjective linear contractions
     proof: >-
@@ -250,9 +296,19 @@ special_morphisms:
     description: >-
       For a linear contraction $f : X \to Y$ the following are equivalent: (1) $f$ is a regular monomorphism. (2) $f$ is isometric and injective. (3) $f$ is isomorphic to the inclusion of a subspace of $Y$.
     proof: >-
-      The <a href="/category/Ban?proof=regular_monomorphism">proof</a> is the same as for $\Ban$, replacing "isometric" by "isometric and injective", and removing any conditions that spaces be closed or complete.
+      (1) implies (2): By the <a href="/category/SemiNormVect?proof=equalizers">construction</a> of equalizers, every regular monomorphism is isomorphic to the inclusion of a subspace with the restricted semi-norm, which is isometric and injective. Since isomorphisms are bijective linear isometries (<a href="/category/SemiNormVect?proof=isomorphism">proof</a>), $f$ is isometric and injective.
+
+      (2) implies (3): The subspace $f(X) \subseteq Y$ carries the restricted semi-norm, and $f$ induces a bijective linear isometry $X \to f(X)$, which is an isomorphism.
+
+      (3) implies (1): Let $U \subseteq Y$ be a subspace, equipped with the restricted semi-norm, and let $p : Y \to Y/U$ be the projection, where $Y/U$ carries the quotient semi-norm as in the <a href="/category/SemiNormVect?proof=coequalizers">construction</a> of coequalizers. By the construction of equalizers, the inclusion $U \hookrightarrow Y$ is the equalizer of $p$ and the zero map $Y \to Y/U$.
   regular epimorphism:
     description: >-
-      For a linear contraction $f : X \to Y$ the following are equivalent: (1) $f$ is a regular epimorphism. (2) The semi-norm on $Y$ is given by $|y| = \inf \{|x| : f(x) = y\}$. (3) $f$ maps the open unit ball of $X$ onto the open unit ball of $Y$.
+      For a linear contraction $f : X \to Y$ the following are equivalent: (1) $f$ is a regular epimorphism. (2) $f$ is surjective, and the semi-norm on $Y$ is given by $|y| = \inf \{|x| : f(x) = y\}$. (3) $f$ maps the open unit ball of $X$ onto the open unit ball of $Y$.
     proof: >-
-      The <a href="/category/Ban?proof=regular_epimorphism">proof</a> is the same as for $\Ban$, removing any conditions that spaces be closed or complete.
+      (1) implies (2): By the <a href="/category/SemiNormVect?proof=coequalizers">construction</a> of coequalizers, every regular epimorphism is isomorphic to a projection $\pi : W \to W/U$ for a subspace $U \subseteq W$, with the quotient semi-norm $|\pi(w)| = \inf_{u \in U} |w + u|$, which is the infimum of all $|w'|$ with $\pi(w') = \pi(w)$. Since isomorphisms are bijective linear isometries (<a href="/category/SemiNormVect?proof=isomorphism">proof</a>), $f$ satisfies (2).
+
+      (2) implies (1): Let $U \coloneqq \ker(f)$, and let $X/U$ carry the quotient semi-norm. By the <a href="/category/SemiNormVect?proof=coequalizers">construction</a> of coequalizers, the projection $X \to X/U$ is the coequalizer of the inclusion $U \hookrightarrow X$ and the zero map $U \to X$. Since $f$ vanishes on $U$, its universal property yields a linear contraction $\tilde{f} : X/U \to Y$ induced by $f$, which is bijective since $U = \ker(f)$ and $f$ is surjective. It is isometric by (2) and the definition of the quotient semi-norm. Thus, $\tilde{f}$ is an isomorphism. Since $f$ is the composite of the projection with $\tilde{f}$, it follows that $f$ is a regular epimorphism.
+
+      (2) implies (3): Let $y \in Y$ be an element with $|y| < 1$. Since $|y|$ is the infimum of all $|x|$ with $f(x)=y$, there is some $x$ with $f(x)=y$ and $|x| < 1$.
+
+      (3) implies (2): Let $y \in Y$ and $\varepsilon > 0$. Consider $y' \coloneqq y / (|y| + \varepsilon)$. Then $|y'| < 1$. Thus, by assumption, there is some $x' \in X$ with $|x'| < 1$ and $f(x') =y'$. Let $x \coloneqq (|y| + \varepsilon) x'$. Then $f(x) = y$ and $|x| < |y| + \varepsilon$. In particular, $f$ is surjective. Moreover, the infimum $\inf \{|x| : f(x) = y\}$ is $\leq |y| + \varepsilon$, for every $\varepsilon > 0$, and hence $\leq |y|$. The reverse inequality holds since $f$ is a linear contraction.
