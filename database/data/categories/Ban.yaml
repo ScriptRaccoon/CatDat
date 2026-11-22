@@ -163,10 +163,7 @@ unsatisfied_properties:
 
   - property: regular quotient object classifier
     proof: >-
-      Assume that $\Psi$ is a regular quotient object classifier in $\Ban$. For a Banach space $X$ let $S(X)$ be the set of closed subspaces of $X$. Then for any Banach space $X$ the map
-      $$\Hom(\Psi,X) \to S(X), \quad f \mapsto \overline{\im(f)}$$
-      is bijective. In particular, there is a morphism $f : \Psi \to X$ with dense image, i.e. an epimorphism. But this contradicts the fact that $\Ban$ is well-copowered, which holds since it is locally presentable (<a href="/category/Ban?proof=locally_presentable" data-allow-deduced>proof</a>).
-      Alternatively, we may use that for every cardinal $\kappa$ the Banach space $\ell^2(\kappa^+)$ has no dense subset of size $\kappa$.
+      $\IC$ has exactly two regular quotients, $\{0\}$ and $\IC$, since a regular epimorphism carries the quotient norm (<a href="/category/Ban?proof=regular_epimorphism">proof</a>). If an object $\Psi$ classified regular quotients, then $\Hom(\Psi, \IC)$ would have cardinality $2$. But this is impossible: if it contains $f \neq 0$, then it contains the distinct elements $0,f/2,f$.
 
   - property: unital
     proof: The canonical morphism $X \sqcup Y \to X \times Y$ is injective, and therefore a monomorphism. Hence, if it were also a strong epimorphism, it would be an isomorphism. However, for example, when $X = Y = \IC$, the norms do not agree.
