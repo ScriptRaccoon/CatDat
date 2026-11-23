@@ -23,17 +23,11 @@ satisfied_properties:
     proof: See <a href="https://mathoverflow.net/questions/386144">MO/386144</a>.
 
 unsatisfied_properties:
-  - property: essentially injective
-    proof: The abelianizations of $S_3$ and $C_2$ are both isomorphic to $C_2$.
-
-  - property: faithful
-    proof: Both the inclusion $A_3 \hookrightarrow S_3$ and the trivial homomorphism $A_3 \to S_3$ are mapped to the trivial homomorphism $A_3 \to C_2$.
+  - property: preserves monomorphisms
+    proof: The monomorphism $A_3 \hookrightarrow S_3$ is mapped to the trivial homomorphism $A_3 \to C_2$.
 
   - property: full
     proof: See <a href="https://math.stackexchange.com/questions/716686">MSE/716686</a>.
-
-  - property: preserves monomorphisms
-    proof: The monomorphism $A_3 \hookrightarrow S_3$ is mapped to the trivial homomorphism $A_3 \to C_2$.
 
   - property: preserves products
     proof: 'If $G$ is a group, the canonical homomorphism $(G^{\IN})^{\ab} \to (G^{\ab})^{\IN}$ is surjective, but does not need to be an isomorphism: otherwise, the inclusion $[G^{\IN}, G^{\IN}] \subseteq [G,G]^{\IN}$ would be an equality. But this requires the commutator width of $G$ to be finite, which fails for $G = F_2$ for instance. See also <a href="https://arxiv.org/abs/1608.02220">Barnea–Shelah</a>, Remark 0.0.7.'

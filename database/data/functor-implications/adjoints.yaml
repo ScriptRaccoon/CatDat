@@ -28,6 +28,22 @@
     - right-invertible
   proof: 'If $F : \C \to \D$ is a reflector, it is left adjoint to a fully faithful functor $G : \D \to \C$. Thus, the counit $\varepsilon : F \circ G \to \id_{\D}$ is an isomorphism (Prop. 3.4 at the <a href="https://ncatlab.org/nlab/show/adjoint+functor#FullyFaithfulAndInvertibleAdjoints">nLab</a>). This shows that $G$ is a right inverse of $F$.'
 
+- id: reflector_essentially_injective
+  assumptions:
+    - reflector
+    - essentially injective
+  conclusions:
+    - equivalence
+  proof: 'Let $F : \C \to \D$ be left adjoint to a fully faithful functor $G : \D \to \C$. Then the counit $\varepsilon : F \circ G \to \id_{\D}$ is an isomorphism (Prop. 3.4 at the <a href="https://ncatlab.org/nlab/show/adjoint+functor#FullyFaithfulAndInvertibleAdjoints">nLab</a>). For every $X \in \C$, the isomorphism $\varepsilon_{F(X)} : F(G(F(X))) \to F(X)$ shows $G(F(X)) \cong X$, since $F$ is essentially injective. Hence, $G$ is essentially surjective and therefore an equivalence by <a href="/functor-implication/equivalence_criterion">this implication</a>, and so is its left adjoint $F$.'
+
+- id: reflector_conservative
+  assumptions:
+    - reflector
+    - conservative
+  conclusions:
+    - equivalence
+  proof: 'Let $F : \C \to \D$ be left adjoint to a fully faithful functor $G : \D \to \C$, with unit $\eta : \id_{\C} \to G \circ F$ and counit $\varepsilon : F \circ G \to \id_{\D}$. Then $\varepsilon$ is an isomorphism (Prop. 3.4 at the <a href="https://ncatlab.org/nlab/show/adjoint+functor#FullyFaithfulAndInvertibleAdjoints">nLab</a>). For every $X \in \C$, the triangle identity $\varepsilon_{F(X)} \circ F(\eta_X) = \id_{F(X)}$ shows that $F(\eta_X)$ is an isomorphism. Since $F$ is conservative, $\eta_X : X \to G(F(X))$ is an isomorphism. Hence, $G$ is essentially surjective and therefore an equivalence by <a href="/functor-implication/equivalence_criterion">this implication</a>, and so is its left adjoint $F$.'
+
 - id: representable_right_adjoint
   assumptions:
     - representable

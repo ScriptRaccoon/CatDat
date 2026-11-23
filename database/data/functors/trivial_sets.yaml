@@ -20,11 +20,5 @@ related:
 satisfied_properties: []
 
 unsatisfied_properties:
-  - property: faithful
-    proof: 'Take any pair of distinct maps of sets $f,g : X \rightrightarrows Y$. They have the same image under the functor.'
-
   - property: full
     proof: If $X$ is a non-empty set, there is a (unique) morphism ${!}(X) \to {!}(\varnothing)$, but no morphism $X \to \varnothing$.
-
-  - property: essentially injective
-    proof: This is trivial.
