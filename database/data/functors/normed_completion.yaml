@@ -1,0 +1,46 @@
+id: normed_completion
+name: completion functor for normed vector spaces
+notation: $\widehat{(-)}$
+associated:
+  domain: NormVect
+  codomain: Ban
+  left_adjoint: null
+  right_adjoint: forget_complete
+description: 'This functor maps a normed vector space $V$ to its completion $\widehat{V}$, which is a Banach space containing $V$ as a dense subspace, and a linear contraction $f : V \to W$ to its unique extension $\hat{f} : \widehat{V} \to \widehat{W}$.'
+nlab_link: https://ncatlab.org/nlab/show/completion
+
+tags:
+  - analysis
+  - free
+
+related:
+  - normed_quotient
+  - stone-cech-compactification
+
+satisfied_properties:
+  - property: reflector
+    proof: 'This functor is left adjoint to the inclusion $J : \Ban \hookrightarrow \NormVect$ (<a href="/functor/forget_complete?proof=right_adjoint">proof</a>), which is fully faithful.'
+
+  - property: faithful
+    proof: The unit of the adjunction is the inclusion $V \hookrightarrow \widehat{V}$, which is injective, hence a monomorphism. Since all components of the unit are monomorphisms, the left adjoint is faithful (Prop. 3.4 at the <a href="https://ncatlab.org/nlab/show/adjoint+functor#FullyFaithfulAndInvertibleAdjoints">nLab</a>).
+
+  - property: preserves regular monomorphisms
+    proof: The regular monomorphisms in $\NormVect$ are isometric (<a href="/category/NormVect?proof=regular_monomorphism" data-allow-deduced>proof</a>). By continuity, the extension of an isometric linear map to the completions is isometric, and the isometric linear maps are the regular monomorphisms in $\Ban$ (<a href="/category/Ban?proof=regular_monomorphism" data-allow-deduced>proof</a>).
+
+  - property: preserves products
+    proof: >-
+      Let $(V_i)_{i \in I}$ be a family of normed vector spaces. By the <a href="/category/NormVect?proof=complete">construction</a> of products in $\NormVect$, their product is the subspace $P \subseteq \prod_i V_i$ of families $v$ with $\sup_i |v_i| < \infty$, with the norm $|v| \coloneqq \sup_i |v_i|$, and by the <a href="/category/Ban?proof=complete">construction</a> of products in $\Ban$, the product of $(\widehat{V_i})$ in $\Ban$ is the analogous subspace $Q \subseteq \prod_i \widehat{V_i}$. The comparison map $\widehat{P} \to Q$ is the extension of the inclusion $P \hookrightarrow Q$. Since the inclusion is isometric, so is its extension, by continuity. Hence, the image of the comparison map is complete, hence closed, and it contains $P$. It remains to show that $P$ is dense in $Q$, since then the comparison map is a bijective linear isometry, hence an isomorphism (<a href="/category/Ban?proof=isomorphism" data-allow-deduced>proof</a>). Let $y \in Q$ and $\varepsilon > 0$. For every $i \in I$ choose $v_i \in V_i$ with $|y_i - v_i| < \varepsilon$. Then $|v_i| \leq |y_i| + \varepsilon$, so $v \coloneqq (v_i)_i$ lies in $P$, and $|y - v| = \sup_i |y_i - v_i| \leq \varepsilon$.
+
+unsatisfied_properties:
+  - property: preserves monomorphisms
+    proof: >-
+      Let $V$ be a normed vector space that is not complete, and choose $x \in \widehat{V} \setminus V$. Let $p : \widehat{V} \to \widehat{V}/\langle x \rangle$ be the projection onto the quotient by the closed subspace $\langle x \rangle$, equipped with the quotient norm. Its restriction $p|_V : V \to \widehat{V}/\langle x \rangle$ is injective, since $V \cap \langle x \rangle = 0$, hence a monomorphism in $\NormVect$. Since $\widehat{V}/\langle x \rangle$ is a Banach space, the completion of $p|_V$ is $p$, which is not injective, hence not a monomorphism in $\Ban$ (<a href="/category/Ban?proof=monomorphism" data-allow-deduced>proof</a>).
+
+  - property: cofinitary
+    proof: >-
+      We construct a decreasing sequence $V_1 \supseteq V_2 \supseteq \cdots$ of dense subspaces of the Banach space $\ell^1$ of absolutely summable sequences in $\IC$ with $\bigcap_n V_n = 0$. Let $e_N \in \ell^1$ denote the unit vectors, and let $(q_k)_{k \geq 1}$ be a sequence in which every finite linear combination of unit vectors with coefficients in $\IQ(i)$ occurs infinitely often. These combinations form a dense subset of $\ell^1$. Choose indices $N_1 < N_2 < \cdots$ such that $N_k$ is larger than every index in the supports of $q_k$ and of $d_1,\dotsc,d_{k-1}$, where
+      $$d_k \coloneqq q_k + \tfrac{1}{k} e_{N_k}.$$
+      In a linear combination of the $d_k$ with non-zero coefficients, the largest $k$ that occurs is the only one with a non-zero $N_k$-th coordinate. Hence, the $d_k$ are linearly independent. Let $V_n$ be the span of $\{d_k : k \geq n\}$ with the norm of $\ell^1$. By linear independence, $\bigcap_n V_n = 0$. Each $V_n$ is dense: let $x \in \ell^1$ and $\varepsilon > 0$. Some element $q$ of the dense subset satisfies $|q - x| < \varepsilon/2$, and since $q$ occurs infinitely often in the sequence, there is some $k \geq n$ with $1/k < \varepsilon/2$ and $q_k = q$. Then
+      $$|d_k - x| \leq |q_k - x| + \tfrac{1}{k} |e_{N_k}| < \tfrac{\varepsilon}{2} + \tfrac{\varepsilon}{2} = \varepsilon.$$
+
+      By the <a href="/category/NormVect?proof=complete">construction</a> of limits in $\NormVect$, the limit of the inclusions $V_{n+1} \hookrightarrow V_n$ is $\bigcap_n V_n = 0$, whose completion is $0$. On the other hand, since $V_n$ is dense in $\ell^1$, the completions of these inclusions are the identity maps of $\ell^1$, whose limit in $\Ban$ is $\ell^1 \neq 0$.

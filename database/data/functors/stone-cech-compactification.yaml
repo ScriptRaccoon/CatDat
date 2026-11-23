@@ -15,7 +15,8 @@ nlab_link: https://ncatlab.org/nlab/show/Stone-%C4%8Cech+compactification
 tags:
   - topology
 
-related: []
+related:
+  - normed_completion
 
 satisfied_properties:
   - property: reflector

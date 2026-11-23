@@ -16,6 +16,7 @@ tags:
   - forgetful
 
 related:
+  - forget_complete
   - forget_hausdorff
 
 satisfied_properties:
