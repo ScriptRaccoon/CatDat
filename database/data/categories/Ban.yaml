@@ -3,7 +3,7 @@ name: category of Banach spaces with linear contractions
 notation: $\Ban$
 objects: Banach spaces over $\IC$
 morphisms: linear contractions, i.e. linear maps of norm $\leq 1$
-description: The choice of morphisms is similar to that of $\Met$, which yields better categorical properties.
+description: 'The choice of morphisms is similar to that of $\Met$, which yields better categorical properties. In the proofs of properties, we use that the inclusion $J : \Ban \hookrightarrow \NormVect$ has a left adjoint, the completion.'
 nlab_link: https://ncatlab.org/nlab/show/Banach+space
 keywords:
   - complete normed spaces
@@ -21,49 +21,80 @@ satisfied_properties:
   - property: locally small
     proof: There is a forgetful functor $\Ban \to \Set$, and $\Set$ is locally small (<a href="/category/Set?proof=locally_small" data-allow-deduced>proof</a>).
 
-  - property: pointed
-    proof: The trivial Banach space $\{0\}$ is a zero object.
+  - property: complete
+    proof: >-
+      We already know that $\NormVect$ is complete (<a href="/category/NormVect?proof=complete" data-allow-deduced>proof</a>). Since the inclusion $J : \Ban \hookrightarrow \NormVect$ is fully faithful and has a left adjoint, $\Ban$ is closed under limits in $\NormVect$. Hence, $\Ban$ is complete, and by the <a href="/category/NormVect?proof=complete">construction</a> of limits in $\NormVect$, the limit of a diagram of Banach spaces $(X_i)$ is a subspace of $\prod_i X_i$ with the norm $|x| \coloneqq \sup_i |x_i|$. In particular, the product of $(X_i)$ is the subspace $\bigl\{x \in \prod_i X_i : \sup_i |x_i| < \infty\bigr\}$.
+    check_redundancy: false
+
+  - property: coproducts
+    proof: >-
+      Let $(X_i)_{i \in I}$ be a family of Banach spaces. Since the completion functor $\NormVect \to \Ban$ is a left adjoint, it preserves coproducts, so the coproduct of $(X_i)$ in $\Ban$ is the completion of their coproduct in $\NormVect$, which is the direct sum $\bigoplus_i X_i$ with the norm $|x| \coloneqq \sum_i |x_i|$ (<a href="/category/NormVect?proof=coproducts">proof</a>). We claim that this completion is the subspace
+      $$\textstyle X \coloneqq \bigl\{x \in \prod_{i \in I} X_i : \sum_{i \in I} |x_i| < \infty\bigr\}$$
+      with the norm $|x| \coloneqq \sum_i |x_i|$. For this, it suffices to show that $\bigoplus_i X_i$ is dense in $X$ and that $X$ is complete. This is well-known, but we repeat the proof for convenience.
+
+      Let $x \in X$ and $\varepsilon > 0$. Choose a finite subset $F \subseteq I$ with $\sum_{i \in I \setminus F} |x_i| < \varepsilon$, and let $x' \in \bigoplus_i X_i$ be defined by $x'_i \coloneqq x_i$ for $i \in F$ and $x'_i \coloneqq 0$ otherwise. Then $|x - x'| = \sum_{i \in I \setminus F} |x_i| < \varepsilon$. So $\bigoplus_i X_i$ is dense in $X$.
+
+      Let $(x^{(n)})_{n \geq 1}$ be a Cauchy sequence in $X$. Since $|x_i| \leq |x|$ for all $x \in X$, the sequence $(x^{(n)}_i)_{n \geq 1}$ is a Cauchy sequence in $X_i$ for every $i \in I$, hence converges to some $x_i \in X_i$. Let $\varepsilon > 0$, and choose $N \geq 1$ with $|x^{(n)} - x^{(m)}| \leq \varepsilon$ for all $n,m \geq N$. For every finite subset $F \subseteq I$ and all $n,m \geq N$ we get $\sum_{i \in F} |x^{(n)}_i - x^{(m)}_i| \leq \varepsilon$, and letting $m \to \infty$ gives $\sum_{i \in F} |x^{(n)}_i - x_i| \leq \varepsilon$. Taking the supremum over all finite subsets $F$, we get $\sum_{i \in I} |x^{(n)}_i - x_i| \leq \varepsilon$ for all $n \geq N$. Hence, $x \coloneqq (x_i)_{i \in I}$ satisfies $x^{(N)} - x \in X$, so that $x = x^{(N)} - (x^{(N)} - x) \in X$, and $|x^{(n)} - x| \leq \varepsilon$ for all $n \geq N$. So $(x^{(n)})$ converges to $x$.
+
+      In particular, for a finite family $(X_i)$, the coproduct is the direct sum $\bigoplus_i X_i$ with the norm $|x| \coloneqq \sum_i |x_i|$, as in $\NormVect$.
+    check_redundancy: false
+
+  - property: coequalizers
+    proof: >-
+      Let $f,g : W \rightrightarrows X$ be linear contractions between Banach spaces. By the <a href="/category/NormVect?proof=coequalizers">construction</a> of coequalizers in $\NormVect$, their coequalizer there is the projection $q : X \to X/\overline{U}$ with $U \coloneqq \im(f - g)$ and the quotient norm $|q(x)| = \inf_{u \in \overline{U}} |x + u|$. As the quotient of a Banach space by a closed subspace, $X/\overline{U}$ is a Banach space (see <a href="https://arxiv.org/abs/2112.11166v8">van Neerven</a>, Section 1.1.b). Since the inclusion $J : \Ban \hookrightarrow \NormVect$ is fully faithful, it reflects colimits, so $q$ is also the coequalizer in $\Ban$.
     check_redundancy: false
 
   - property: CIP
-    proof: This is immediate from the concrete description of coproducts and products.
+    proof: >-
+      Zero morphisms are given by the zero maps. By the <a href="/category/Ban?proof=coproducts">construction</a> of coproducts and the <a href="/category/Ban?proof=complete">construction</a> of products, for a family $(X_i)_{i \in I}$ of Banach spaces the canonical morphism from the coproduct to the product is the inclusion of $\bigl\{x \in \prod_{i \in I} X_i : \sum_{i \in I} |x_i| < \infty\bigr\}$ into $\bigl\{x \in \prod_{i \in I} X_i : \sup_{i \in I} |x_i| < \infty\bigr\}$. It is injective, hence a monomorphism.
 
   - property: binary CSP
     proof: >-
-      By the constructions of coproducts and products, the canonical morphism $X \sqcup Y \to X \times Y$ is the identity map of the underlying vector space $X \oplus Y$. Hence, it is surjective and therefore an epimorphism. This is the same argument as for $\SemiNormVect$ (<a href="/category/SemiNormVect?proof=binary_CSP">proof</a>).
-
-  - property: locally ℵ₁-presentable
-    proof: See <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adámek–Rosický</a>, Example 1.48.
+      By the <a href="/category/Ban?proof=coproducts">construction</a> of coproducts and the <a href="/category/Ban?proof=complete">construction</a> of products, the canonical morphism $X \sqcup Y \to X \times Y$ is the identity map of the underlying vector space $X \oplus Y$. Hence, it is surjective and therefore an epimorphism. This is the same <a href="/category/SemiNormVect?proof=binary_CSP">argument</a> as for $\SemiNormVect$.
 
   - property: cartesian filtered colimits
-    proof: If $X$ is a Banach space and $(Y_i)$ is a filtered diagram of Banach spaces, the canonical map $\colim_i (X \times Y_i) \to X \times \colim_i Y_i$ is the completion of the canonical map in the category of normed vector spaces with non-expansive linear maps. Now the claim follows directly from the fact that $\Met$ has cartesian filtered colimits (<a href="/category/Met?proof=cartesian_filtered_colimits" data-allow-deduced>proof</a>).
+    proof: >-
+      Filtered colimits exist in $\Ban$, since it has coproducts (<a href="/category/Ban?proof=coproducts" data-allow-deduced>proof</a>) and coequalizers (<a href="/category/Ban?proof=coequalizers" data-allow-deduced>proof</a>), and it has finite products since it is complete (<a href="/category/Ban?proof=complete" data-allow-deduced>proof</a>). We already know that $\NormVect$ has cartesian filtered colimits (<a href="/category/NormVect?proof=cartesian_filtered_colimits" data-allow-deduced>proof</a>). We apply Lemma 16 <a href="/content/subcategories">here</a> to the inclusion $J : \Ban \hookrightarrow \NormVect$ and its left adjoint, the completion functor $\NormVect \to \Ban$. It preserves binary products: for normed vector spaces $X,Y$, the product $X \times Y$ with the $\max$-norm is a dense subspace of the Banach space $\widehat{X} \times \widehat{Y}$, which is therefore its completion.
 
   - property: cocartesian cofiltered limits
     proof: >-
-      Limits and binary coproducts of Banach spaces are constructed as in $\SemiNormVect$: the limit of a small diagram $(Y_i)$ is the space of compatible families $(y_i) \in \prod_i Y_i$ with $\sup_i |y_i| < \infty$, endowed with the norm $|(y_i)| \coloneqq \sup_i |y_i|$, which is complete, and the coproduct $X \oplus Y$ of two Banach spaces is their direct sum with the norm $|(x,y)| \coloneqq |x| + |y|$, which is complete as well. Hence, the <a href="/category/SemiNormVect?proof=cocartesian_cofiltered_limits">proof</a> for $\SemiNormVect$ works verbatim. In particular, $X \oplus -$ even preserves all connected limits.
+      Limits (<a href="/category/Ban?proof=complete">proof</a>) and finite coproducts (<a href="/category/Ban?proof=coproducts">proof</a>) exist in $\Ban$ and are constructed as in $\NormVect$. We already know that $\NormVect$ has cocartesian cofiltered limits (<a href="/category/NormVect?proof=cocartesian_cofiltered_limits" data-allow-deduced>proof</a>). We apply the dual of Lemma 4 <a href="/content/subcategories">here</a> to the inclusion $J : \Ban \hookrightarrow \NormVect$, which preserves limits and finite coproducts.
 
   - property: extremal cogenerator
     proof: >-
-      The Hahn-Banach theorem implies that $\IC$ is a cogenerator. We claim that it is in fact an extremal cogenerator. Thus, suppose $f : X \to Y$ is a morphism such that ${-} \circ f : \Hom(Y, \IC) \to \Hom(X, \IC)$ is bijective on the underlying sets. Then for any non-zero $x \in X$, by the Hahn-Banach theorem, there exists $\varphi \in X^*$ such that $|\varphi| = 1$ and $\varphi(x) = |x|$. Since $|\varphi| = 1$, we see that $\varphi$ is a morphism $X \to \IC$ in $\Ban$; so by the assumption, there exists a morphism $\psi : Y \to \IC$ such that $\varphi = \psi \circ f$. Therefore, $|x| = |\psi(f(x))| \le |f(x)|$; and conversely, since $f$ is a morphism, $|f(x)| \le |x|$. On the other hand, if $x = 0$, then certainly $|f(x)| = |x| = 0$. This shows that $f$ is isometric and therefore a regular monomorphism (<a href="/category/Ban?proof=regular_monomorphism">proof</a>). On the other hand, since $\IC$ is a cogenerator and ${-} \circ f$ is injective, we see that $f$ is also an epimorphism. Hence, $f$ is an isomorphism.
+      Since $\IC$ is a cogenerator of $\NormVect$ (<a href="/category/NormVect?proof=cogenerator">proof</a>) and a Banach space, and $\Ban$ is a full subcategory of $\NormVect$, it is also a cogenerator of $\Ban$. We claim that it is in fact an extremal cogenerator. Let $f : X \to Y$ be a linear contraction such that ${-} \circ f : \Hom(Y,\IC) \to \Hom(X,\IC)$ is bijective. Since $\IC$ is a cogenerator and ${-} \circ f$ is injective, $f$ is an epimorphism, i.e. it has dense image (<a href="/category/Ban?proof=epimorphism" data-allow-deduced>proof</a>).
+
+      Next, we show that $f$ is isometric. Let $x \in X$. By the Hahn-Banach theorem, there is a linear functional $\varphi : X \to \IC$ with $\varphi(x) = |x|$ and $|\varphi(z)| \leq |z|$ for all $z \in X$. Then $\varphi$ is a morphism in $\Ban$, so by the surjectivity of ${-} \circ f$ there is a morphism $\psi : Y \to \IC$ with $\varphi = \psi \circ f$. Hence, $|x| = |\psi(f(x))| \leq |f(x)| \leq |x|$.
+
+      Since $X$ is complete and $f$ is isometric, $f(X)$ is complete, hence closed in $Y$. Since $f(X)$ is also dense, we get $f(X) = Y$. So $f$ is a bijective linear isometry, hence an isomorphism (<a href="/category/Ban?proof=isomorphism" data-allow-deduced>proof</a>).
+
+      <strong>Remark.</strong> The argument fails in $\NormVect$: it still shows that $f$ is isometric and an epimorphism, i.e. has dense image (<a href="/category/NormVect?proof=epimorphism" data-allow-deduced>proof</a>), but if $X$ is not complete, the image of $f$ need not be closed. In fact, $\NormVect$ has no extremal cogenerator (<a href="/category/NormVect?proof=extremal_cogenerator" data-allow-deduced>proof</a>).
 
   - property: pullback-stable regular epimorphisms
     proof: >-
-      Pullbacks of Banach spaces are constructed as in $\SemiNormVect$, namely as closed subspaces of the direct sum with the $\max$-norm. A linear contraction is a regular epimorphism if and only if it maps the open unit ball onto the open unit ball, both in $\Ban$ (<a href="/category/Ban?proof=regular_epimorphism">proof</a>) and in $\SemiNormVect$ (<a href="/category/SemiNormVect?proof=regular_epimorphism">proof</a>). Hence, the <a href="/category/SemiNormVect?proof=pullback-stable_regular_epimorphisms">proof</a> for $\SemiNormVect$ works verbatim.
+      Apply the dual of Lemma 14 <a href="/content/subcategories">here</a> to the fully faithful inclusion $J : \Ban \hookrightarrow \NormVect$. As a right adjoint, it preserves pullbacks. It preserves regular epimorphisms, since coequalizers in $\Ban$ are constructed as in $\NormVect$ (<a href="/category/Ban?proof=coequalizers">proof</a>). Finally, $\NormVect$ has pullback-stable regular epimorphisms (<a href="/category/NormVect?proof=pullback-stable_regular_epimorphisms" data-allow-deduced>proof</a>).
 
   - property: pushout-stable regular monomorphisms
     proof: >-
-      We will use that the regular monomorphisms are the isometric linear maps (<a href="/category/Ban?proof=regular_monomorphism">proof</a>).
-      So let $i : X \to Y$ be an isometric linear map and let $f : X \to T$ be any morphism. The pushout $T \sqcup_X Y$ can be constructed as the quotient of the direct sum $T \oplus Y$, equipped with the $1$-norm, modulo the closure of the subspace $S \coloneqq \{(-f(x),i(x)) : x \in X\}$.
+      We already know that $\NormVect$ has pushout-stable regular monomorphisms (<a href="/category/NormVect?proof=pushout-stable_regular_monomorphisms" data-allow-deduced>proof</a>). We apply Lemma 14 <a href="/content/subcategories">here</a> to the inclusion $J : \Ban \hookrightarrow \NormVect$. As a right adjoint, it preserves regular monomorphisms. It preserves pushouts, since binary coproducts (<a href="/category/Ban?proof=coproducts">proof</a>) and coequalizers (<a href="/category/Ban?proof=coequalizers">proof</a>) in $\Ban$ are constructed as in $\NormVect$.
 
-      We claim that $S$ is already closed. Let $(x_n)$ be a sequence in $X$ such that $(-f(x_n),i(x_n))$ converges to some $(t,y) \in T \oplus Y$. Since $i$ is isometric, we have $|x_n - x_m| = |i(x_n) - i(x_m)|$, so $(x_n)$ is a Cauchy sequence. Since $X$ is complete, it converges to some $x \in X$. Since $f$ and $i$ are continuous, we get $(t,y) = (-f(x),i(x)) \in S$.
+  - property: ℵ₁-accessible
+    proof: >-
+      We adapt the <a href="/category/NormVect?proof=aleph1-accessible">proof</a> for $\NormVect$.
 
-      Hence, the pushout in $\Ban$ is constructed as in $\SemiNormVect$, and the <a href="/category/SemiNormVect?proof=pushout-stable_regular_monomorphisms">proof</a> for $\SemiNormVect$ shows that $\iota : T \to T \sqcup_X Y$ is isometric.
+      First, the inclusion $J : \Ban \hookrightarrow \NormVect$ preserves $\aleph_1$-filtered colimits. To see this, let $(V_i)_{i \in \I}$ be an $\aleph_1$-filtered diagram of Banach spaces with colimit $(u_i : V_i \to V)$ in $\NormVect$, which is also its colimit in $\SemiNormVect$ by the proof for $\NormVect$. We show that $V$ is complete. Recall that a normed vector space is complete if and only if every absolutely convergent series in it converges (see <a href="https://arxiv.org/abs/2112.11166v8">van Neerven</a>, Prop. 1.3). So let $(v_m)_{m \geq 1}$ be a sequence in $V$ with $\sum_{m \geq 1} |v_m| < \infty$. By Claim 1 in the <a href="/category/SemiNormVect?proof=aleph1-accessible">proof</a> for $\SemiNormVect$ and by using that $\I$ is $\aleph_1$-filtered, there are an index $k$ and elements $w_m \in V_k$ with $u_k(w_m) = v_m$ and $|w_m| \leq |v_m|$ for all $m \geq 1$. So the series $\sum_{m \geq 1} w_m$ converges absolutely. Since $V_k$ is complete, it converges to some $s \in V_k$. Since $u_k$ is a linear contraction, hence continuous, the series $\sum_{m \geq 1} v_m = \sum_{m \geq 1} u_k(w_m)$ converges to $u_k(s)$. Since $J$ is fully faithful, it reflects colimits, so $V$ is also the colimit in $\Ban$.
+
+      Now let $K$ be a separable Banach space, i.e. a Banach space with a countable dense subset. The linear span of a countable dense subset is a dense subspace $K_0 \subseteq K$ of countable algebraic dimension, and $K$ is the completion of $K_0$. Hence, we have $\Hom(K,-) \cong \Hom(K_0,J(-))$, which preserves $\aleph_1$-filtered colimits, since $J$ does and $K_0$ is $\aleph_1$-presentable in $\NormVect$ by the proof for $\NormVect$. So $K$ is $\aleph_1$-presentable. Every Banach space $X$ is the colimit in $\SemiNormVect$ of its closed separable subspaces, ordered by inclusion: the colimit of the underlying vector spaces is their union, which is $X$, since every $x \in X$ lies in the closed subspace $\IC x$, which is separable with the countable dense subset $\IQ(i) x$, and the semi-norm of the colimit is the norm of $X$, since all inclusions are isometric. This diagram is $\aleph_1$-filtered, since the closed linear span of countably many separable subspaces is separable, and it consists of Banach spaces, so $X$ is also its colimit in $\Ban$. Finally, up to isomorphism the separable Banach spaces constitute a set, since each of them is the completion of a normed vector space of countable algebraic dimension, and these constitute a set up to isomorphism by the proof for $\NormVect$.
+
+      <strong>Remark.</strong> Together with cocompleteness, it follows that $\Ban$ is locally $\aleph_1$-presentable. See <a href="https://ncatlab.org/nlab/show/Locally+Presentable+and+Accessible+Categories">Adámek–Rosický</a>, Example 1.48 for an alternative proof using totally convex spaces.
 
   - property: effective congruences
     proof: >-
-      Let $q_1,q_2 : R \rightrightarrows X$ be a congruence in $\Ban$. We may assume that the induced map $R \hookrightarrow X \times X$ is an inclusion of vector spaces. Since finite limits of Banach spaces are constructed as in $\SemiNormVect$ and the inclusion $\Ban \hookrightarrow \SemiNormVect$ is fully faithful, $q_1,q_2$ is also a congruence in $\SemiNormVect$. Let $U \coloneqq \{x \in X : (x,0) \in R\}$. The <a href="/category/SemiNormVect?proof=effective_congruences">proof</a> for $\SemiNormVect$ shows that $R \hookrightarrow X \times X$ is isometric and that $R$ is the kernel pair of the projection $X \to X/U$ in $\SemiNormVect$.
+      Let $q_1,q_2 : R \rightrightarrows X$ be a congruence in $\Ban$. We may assume that the induced map $R \hookrightarrow X \times X$ is an inclusion of vector spaces. Since limits in $\Ban$ are constructed as in $\NormVect$ (<a href="/category/Ban?proof=complete">proof</a>), hence as in $\SemiNormVect$ (<a href="/category/NormVect?proof=complete">proof</a>), and the inclusion $\Ban \hookrightarrow \SemiNormVect$ is fully faithful, $q_1,q_2$ is also a congruence in $\SemiNormVect$. Let $U \coloneqq \{x \in X : (x,0) \in R\}$. The <a href="/category/SemiNormVect?proof=effective_congruences">proof</a> for $\SemiNormVect$ shows that $R \hookrightarrow X \times X$ is isometric and that $R$ is the kernel pair of the projection $X \to X/U$ in $\SemiNormVect$.
 
       Since $R$ is complete and $R \hookrightarrow X \times X$ is isometric, $R$ is a closed subspace of $X \times X$. It follows that $U$, the preimage of $R$ under $X \to X \times X$, $x \mapsto (x,0)$, is a closed subspace of $X$, so that $X/U$ is a Banach space. Since the inclusion $\Ban \hookrightarrow \SemiNormVect$ is fully faithful, it reflects limits, so $R$ is the kernel pair of $X \to X/U$ in $\Ban$ as well.
+
+      <strong>Remark.</strong> The argument fails in $\NormVect$, since the subspace $U$ need not be closed there, whereas the kernel of a linear contraction is closed. In fact, $\NormVect$ does not have effective congruences (<a href="/category/NormVect?proof=effective_congruences" data-allow-deduced>proof</a>).
 
   - property: effective cocongruences
     proof: >-
@@ -71,7 +102,7 @@ satisfied_properties:
 
       Let $j_1,j_2 : X \rightrightarrows C$ be a cocongruence in $\Ban$. Let $U \coloneqq \{x \in X : j_1(x) = j_2(x)\}$ be their equalizer, and let $\iota_1,\iota_2 : X \rightrightarrows Z$ be the cokernel pair of the inclusion $U \hookrightarrow X$. Since $j_1,j_2$ agree on $U$, there is a unique morphism $h : Z \to C$ with $h \circ \iota_1 = j_1$ and $h \circ \iota_2 = j_2$. We show that $h$ is an isomorphism, which proves that $j_1,j_2$ is effective.
 
-      Since $j_1,j_2$ are jointly epimorphic and factor through $h$, the morphism $h$ is an epimorphism, i.e. it has dense image (<a href="/category/Ban?proof=epimorphism">proof</a>). Since an isometric linear map between Banach spaces has closed image, it suffices to prove that $h$ is isometric. For this, it suffices to show that every morphism $\psi : Z \to \IC$ factors as $\psi = \varphi \circ h$ for some morphism $\varphi : C \to \IC$. Indeed, then $|\psi(z)| = |\varphi(h(z))| \leq |h(z)|$ for all $z \in Z$, and since by the Hahn-Banach theorem $|z|$ is the supremum of all $|\psi(z)|$, we get $|z| \leq |h(z)|$. The reverse inequality holds since $h$ is a contraction.
+      Since $j_1,j_2$ are jointly epimorphic and factor through $h$, the morphism $h$ is an epimorphism, i.e. it has dense image (<a href="/category/Ban?proof=epimorphism" data-allow-deduced>proof</a>). Since an isometric linear map between Banach spaces has closed image, it suffices to prove that $h$ is isometric. For this, it suffices to show that every morphism $\psi : Z \to \IC$ factors as $\psi = \varphi \circ h$ for some morphism $\varphi : C \to \IC$. Indeed, then $|\psi(z)| = |\varphi(h(z))| \leq |h(z)|$ for all $z \in Z$, and since by the Hahn-Banach theorem $|z|$ is the supremum of all $|\psi(z)|$, we get $|z| \leq |h(z)|$. The reverse inequality holds since $h$ is a contraction.
 
       By the universal property of $Z$, morphisms $Z \to \IC$ correspond to pairs of morphisms $a,b : X \rightrightarrows \IC$ with $a|_U = b|_U$, and $\varphi \circ h$ corresponds to the pair $(\varphi \circ j_1, \varphi \circ j_2)$. Let $B \coloneqq \Hom(X,\IC)$, which is the closed unit ball of the dual space $X^*$, and let
       $$E \coloneqq \{(\varphi \circ j_1, \varphi \circ j_2) : \varphi \in \Hom(C,\IC)\} \subseteq B \times B.$$
@@ -122,22 +153,23 @@ unsatisfied_properties:
 
   - property: biproducts
     proof: >-
-      By the constructions of coproducts and products, for $X = Y = \IC$ the canonical morphism $X \sqcup Y \to X \times Y$ is the identity map of $\IC^2$, where the element $(1,1)$ has norm $2$ in $X \sqcup Y$, but norm $1$ in $X \times Y$. So the canonical morphism is not isometric, hence not an isomorphism (<a href="/category/Ban?proof=isomorphism">proof</a>). This is the same argument as for $\SemiNormVect$ (<a href="/category/SemiNormVect?proof=biproducts">proof</a>).
-
-  - property: product-stable epimorphisms
-    proof: >-
-      We adapt the <a href="/category/SemiNormVect?proof=product-stable_epimorphisms">counterexample</a> for $\SemiNormVect$. By the description of products, the product of the epimorphisms $f_n : \IC \to \IC$, $z \mapsto z/n$, for $n \geq 1$, is the map $f : \ell^\infty \to \ell^\infty$, $x \mapsto (x_n/n)_{n \geq 1}$, where $\ell^\infty$ is the space of bounded sequences $(x_n)_{n \geq 1}$ in $\IC$ with the norm $|x|_\infty = \sup_{n \geq 1} |x_n|$, and every element $y$ of its image satisfies $\lim_{n \to \infty} y_n = 0$. Let $e \coloneqq (1,1,\dotsc)$. For every $n \geq 1$ we have $|y - e|_\infty \geq |y_n - 1| \geq 1 - |y_n|$, and the right-hand side tends to $1$ for $n \to \infty$. Hence, $|y - e|_\infty \geq 1$. Hence, $f$ does not have dense image and is not an epimorphism (<a href="/category/Ban?proof=epimorphism">proof</a>).
+      By the <a href="/category/Ban?proof=coproducts">construction</a> of coproducts and the <a href="/category/Ban?proof=complete">construction</a> of products, for $X = Y = \IC$ the canonical morphism $X \sqcup Y \to X \times Y$ is the identity map of $\IC^2$, where the element $(1,1)$ has norm $2$ in $X \sqcup Y$, but norm $1$ in $X \times Y$. So the canonical morphism is not isometric, hence not an isomorphism (<a href="/category/Ban?proof=isomorphism" data-allow-deduced>proof</a>). This is the same <a href="/category/SemiNormVect?proof=biproducts">argument</a> as for $\SemiNormVect$.
 
   - property: regular subobject classifier
     proof: >-
-      The <a href="/category/SemiNormVect?proof=regular_subobject_classifier">proof</a> for $\SemiNormVect$ works verbatim, using that the regular monomorphisms are, up to isomorphism, the inclusions of closed subspaces (<a href="/category/Ban?proof=regular_monomorphism">proof</a>), and that $\{0\}$ and $\IC$ are the only closed subspaces of $\IC$.
+      The <a href="/category/SemiNormVect?proof=regular_subobject_classifier">proof</a> for $\SemiNormVect$ works verbatim, using that the regular monomorphisms are, up to isomorphism, the inclusions of closed subspaces (<a href="/category/Ban?proof=regular_monomorphism" data-allow-deduced>proof</a>), and that $\{0\}$ and $\IC$ are the only closed subspaces of $\IC$.
 
   - property: regular quotient object classifier
     proof: >-
-      The <a href="/category/SemiNormVect?proof=regular_quotient_object_classifier">proof</a> for $\SemiNormVect$ works verbatim, using that a regular epimorphism carries the quotient norm (<a href="/category/Ban?proof=regular_epimorphism">proof</a>).
+      The <a href="/category/SemiNormVect?proof=regular_quotient_object_classifier">proof</a> for $\SemiNormVect$ works verbatim, using that a regular epimorphism carries the quotient norm (<a href="/category/Ban?proof=regular_epimorphism" data-allow-deduced>proof</a>).
+
+  - property: product-stable epimorphisms
+    proof: >-
+      Products in $\Ban$ are constructed as in $\NormVect$ (<a href="/category/Ban?proof=complete">proof</a>), and the epimorphisms are the linear contractions with dense image, both in $\Ban$ (<a href="/category/Ban?proof=epimorphism" data-allow-deduced>proof</a>) and in $\NormVect$ (<a href="/category/NormVect?proof=epimorphism" data-allow-deduced>proof</a>). Since the <a href="/category/NormVect?proof=product-stable_epimorphisms">counterexample</a> for $\NormVect$ is a product of epimorphisms $\IC \to \IC$, and $\IC$ is a Banach space, it works verbatim in $\Ban$.
 
   - property: filtered-colimit-stable monomorphisms
-    proof: 'The argument is similar to the <a href="/category/Met?proof=filtered-colimit-stable_monomorphisms">proof</a> for $\Met$. For $n \geq 1$ let $X_n$ be the Banach space with underlying vector space $\IC$ and the norm $|x|_n \coloneqq \frac{1}{n} |x|$. For $n \leq m$ the identity map provides a morphism $X_n \to X_m$, which is clearly a monomorphism (also an epimorphism by the way, but an isomorphism iff $n=m$). Let $X$ be the colimit of all $X_n$ in the category of semi-normed vector spaces. It is constructed as the colimit in the category of vector spaces with the semi-norm $|x| \coloneqq \inf \{|x|_m : n \leq m \}$ for $x \in X_n$. So clearly, the semi-norm is zero. Hence, the colimit in the category of normed vector spaces is $0$. The colimit in the category of Banach spaces is its completion, which is also $0$. Thus, the monomorphisms $X_1 \hookrightarrow X_n$ become the zero map $X_1 \to 0$ in the colimit, which is not a monomorphism.'
+    proof: >-
+      The <a href="/category/NormVect?proof=filtered-colimit-stable_monomorphisms">counterexample</a> for $\NormVect$ works here as well: the spaces $X_n$ there are Banach spaces, and since the completion functor $\NormVect \to \Ban$ is a left adjoint, the colimit in $\Ban$ is the completion of the colimit $0$ in $\NormVect$, which is $0$.
 
 special_objects:
   initial object:
@@ -158,27 +190,19 @@ special_morphisms:
     description: injective linear contractions
     proof: >-
       The <a href="/category/SemiNormVect?proof=monomorphism">proof</a> for $\SemiNormVect$ works verbatim, since it only uses the representable functor $\Hom(\IC,-)$, and $\IC$ is a Banach space.
+
+      Alternatively, for the non-trivial direction, the inclusion $J : \Ban \hookrightarrow \NormVect$ is a right adjoint, hence preserves monomorphisms, and the monomorphisms in $\NormVect$ are injective (<a href="/category/NormVect?proof=monomorphism" data-allow-deduced>proof</a>).
   epimorphism:
     description: linear contractions with dense image
     proof: >-
-      If $f : X \to Y$ has dense image, then it is an epimorphism, since two continuous maps $Y \to T$ that agree on a dense subset are equal.
-
-      Conversely, let $f : X \to Y$ be an epimorphism. The subspace $U \coloneqq \overline{f(X)} \subseteq Y$ is closed. It is well-known that the quotient $Y/U$ is also a Banach space with a projection $p : Y \to Y/U$. Since $p \circ f = 0 = 0 \circ f$, we infer $p = 0$, so that $U = Y$.
+      The inclusion $J : \Ban \hookrightarrow \NormVect$ preserves finite colimits, since finite coproducts (<a href="/category/Ban?proof=coproducts">proof</a>) and coequalizers (<a href="/category/Ban?proof=coequalizers">proof</a>) in $\Ban$ are constructed as in $\NormVect$. In particular, $J$ preserves pushouts and therefore epimorphisms. Since $J$ is faithful, it also reflects epimorphisms. Hence, the epimorphisms in $\Ban$ are the epimorphisms in $\NormVect$ between Banach spaces, which are the linear contractions with dense image (<a href="/category/NormVect?proof=epimorphism" data-allow-deduced>proof</a>).
   regular monomorphism:
     description: >-
       For a linear contraction $f : X \to Y$ the following are equivalent: (1) $f$ is a regular monomorphism. (2) $f$ is isometric. (3) $f$ is isomorphic to the inclusion of a closed subspace of $Y$.
     proof: >-
-      (1) implies (2): This follows immediately from the concrete construction of equalizers.
-
-      (2) implies (3): The image of $f$ is complete, hence closed. The rest is clear.
-
-      (3) implies (1): If $U \subseteq Y$ is a closed subspace, then the inclusion is the kernel of the projection $Y \to Y/U$, where $Y/U$ is the well-known quotient Banach space.
+      The <a href="/category/NormVect?proof=regular_monomorphism">proof</a> for $\NormVect$ works verbatim, since limits in $\Ban$ are constructed as in $\NormVect$ (<a href="/category/Ban?proof=complete">proof</a>), and the quotient of a Banach space by a closed subspace is a Banach space. Moreover, the image of an isometric linear map from a Banach space is complete, hence closed, so that (2) is equivalent to being isometric with closed image.
   regular epimorphism:
     description: >-
       For a linear contraction $f : X \to Y$ the following are equivalent: (1) $f$ is a regular epimorphism. (2) $f$ is surjective, and the norm on $Y$ is given by $|y| = \inf \{|x| : f(x) = y\}$. (3) $f$ maps the open unit ball of $X$ onto the open unit ball of $Y$.
     proof: >-
-      (1) implies (2): This follows immediately from the concrete construction of coequalizers, and the quotient Banach space in particular.
-
-      (2) implies (1): Let $U \coloneqq \ker(f)$. Then $U$ is a closed subspace of $X$, and $f$ induces a bijective linear contraction $\tilde{f} : X/U \to Y$. It is isometric by assumption on $f$ and the definition of the norm on $X/U$. Thus, $\tilde{f}$ is an isomorphism. Since $X/U$ is the cokernel of $U \hookrightarrow X$, it follows that $f$ is a regular epimorphism.
-
-      (2) is equivalent to (3): This only concerns the norms, so the <a href="/category/SemiNormVect?proof=regular_epimorphism">proof</a> for $\SemiNormVect$ works verbatim.
+      The <a href="/category/NormVect?proof=regular_epimorphism">proof</a> for $\NormVect$ works verbatim, since coequalizers in $\Ban$ are constructed as in $\NormVect$ (<a href="/category/Ban?proof=coequalizers">proof</a>).
