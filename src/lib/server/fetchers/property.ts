@@ -34,9 +34,9 @@ export function fetch_property(type: StructureType, id: string) {
 	const related_properties = db
 		.prepare<[string, StructureType], string>(
 			`SELECT related_property_id AS id
-            FROM related_properties
-            WHERE property_id = ? AND type = ?
-            ORDER BY lower(id)`
+            FROM related_properties r
+            WHERE r.property_id = ? AND r.type = ?
+            ORDER BY r.id`
 		)
 		.pluck()
 		.all(id, type)
