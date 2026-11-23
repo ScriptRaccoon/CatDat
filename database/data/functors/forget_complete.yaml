@@ -1,0 +1,45 @@
+id: forget_complete
+name: forgetful functor from Banach spaces to normed vector spaces
+notation: $J$
+associated:
+  domain: Ban
+  codomain: NormVect
+  left_adjoint: normed_completion
+  right_adjoint: null
+description: 'This is the inclusion functor $\Ban \hookrightarrow \NormVect$ that maps a Banach space to itself, considered merely as a normed vector space.'
+nlab_link: https://ncatlab.org/nlab/show/forgetful+functor
+keywords:
+  - inclusion functor
+
+tags:
+  - analysis
+  - forgetful
+
+related:
+  - forget_normed
+  - forget_hausdorff
+
+satisfied_properties:
+  - property: fully faithful
+    proof: This is trivial.
+
+  - property: right adjoint
+    proof: >-
+      The completion $\NormVect \to \Ban$, $V \mapsto \widehat{V}$ (see <a href="https://arxiv.org/abs/2112.11166v8">van Neerven</a>, Theorem 1.5) provides a left adjoint, since every linear contraction $V \to X$ into a Banach space $X$ extends uniquely to a linear contraction $\widehat{V} \to X$ (see loc. cit., Prop. 1.18).
+
+  - property: preserves finite coproducts
+    proof: The <a href="/category/Ban?proof=coproducts">proof</a> that $\Ban$ has coproducts shows that finite coproducts are constructed as in $\NormVect$.
+
+  - property: preserves coequalizers
+    proof: The <a href="/category/Ban?proof=coequalizers">proof</a> that $\Ban$ has coequalizers shows that they are constructed as in $\NormVect$.
+
+unsatisfied_properties:
+  - property: preserves coproducts
+    proof: >-
+      Let $(X_n)_{n \geq 1}$ be a sequence of non-zero Banach spaces, e.g. $X_n = \IC$. By the <a href="/category/NormVect?proof=coproducts">construction</a> of coproducts in $\NormVect$ and the <a href="/category/Ban?proof=coproducts">construction</a> of coproducts in $\Ban$, the comparison map is the inclusion
+      $$\textstyle \bigoplus_{n \geq 1} X_n \hookrightarrow \bigl\{x \in \prod_{n \geq 1} X_n : \sum_{n \geq 1} |x_n| < \infty\bigr\}.$$
+      It is not surjective, hence not an isomorphism: every $x$ with $|x_n| = 2^{-n}$ for all $n$ lies in the codomain, but not in the domain.
+
+  - property: dominant
+    proof: >-
+      A retract $V$ of a Banach space $X$ is a Banach space: let $s : V \to X$ and $r : X \to V$ be linear contractions with $r \circ s = \id_V$. Then $|v| = |r(s(v))| \leq |s(v)| \leq |v|$ for all $v \in V$, so $s$ is isometric. Its image is the closed subspace $\{x \in X : s(r(x)) = x\}$, hence complete, and therefore $V$ is complete. So every normed vector space that is not complete is not a retract of a Banach space, e.g. the space of finitely supported sequences in $\IC$ with the norm $|x| \coloneqq \sum_{n \geq 1} |x_n|$, whose completion is $\ell^1$.

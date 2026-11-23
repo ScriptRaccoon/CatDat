@@ -923,6 +923,14 @@
 		{
 			"type": "functor",
 			"id": "normed_quotient"
+		},
+		{
+			"type": "functor",
+			"id": "forget_complete"
+		},
+		{
+			"type": "functor",
+			"id": "normed_completion"
 		}
 	],
 	"properties": [

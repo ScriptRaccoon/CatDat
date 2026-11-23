@@ -13,7 +13,8 @@ tags:
   - analysis
   - free
 
-related: []
+related:
+  - normed_completion
 
 satisfied_properties:
   - property: reflector
