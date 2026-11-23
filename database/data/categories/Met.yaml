@@ -171,7 +171,10 @@ special_morphisms:
     proof: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
   epimorphism:
     description: non-expansive maps with dense image
-    proof: See <a href="https://math.stackexchange.com/questions/937387">MSE/937387</a>.
+    proof: >-
+      If $f : (X,d_X) \to (Y,d_Y)$ has dense image, then it is an epimorphism: let $g,h : (Y,d_Y) \rightrightarrows (T,d_T)$ be non-expansive maps with $g \circ f = h \circ f$. Since $g$ and $h$ are continuous and the topological space associated to $(T,d_T)$ is Hausdorff, the set $\{y \in Y : g(y) = h(y)\}$ is closed. It contains the dense subset $f(X)$, hence it is equal to $Y$.
+
+      Conversely, let $f : (X,d_X) \to (Y,d_Y)$ be an epimorphism. If $X = \varnothing$, then $Y = \varnothing$, since otherwise the two constant maps $(Y,d_Y) \rightrightarrows (\{0,1\},d)$ with $d(0,1) \coloneqq 1$ would be distinct non-expansive maps that agree on $f(X) = \varnothing$. So assume $X \neq \varnothing$, and let $d$ be the Euclidean metric on $\IR$. The map $\delta : (Y,d_Y) \to (\IR,d)$, $y \mapsto \inf_{x \in X} d_Y(y,f(x))$ is non-expansive by the triangle inequality, and so is the constant map $0 : (Y,d_Y) \to (\IR,d)$. Since $\delta \circ f = 0 = 0 \circ f$ and $f$ is an epimorphism, we get $\delta = 0$, i.e. $f(X)$ is dense in $Y$.
   regular monomorphism:
     description: isometric embeddings with closed image
     proof: 'The same <a href="/category/Met_c?proof=regular_monomorphism">proof</a> as for $\Met_\c$ works. The only difference is that the equalizer of two morphisms $(X,d_X) \rightrightarrows (Y,d_Y)$ in $\Met$ is $(E,d_E)$, where $E \subseteq X$ is the equalizer of the underlying maps and $d_E$ is the restriction of $d_X$, so equalizers are isometric embeddings. For the converse, note that the maps used there, the constant maps $X \to \IR$ and $d_X(A,-) : X \to \IR$ are non-expansive with respect to the usual metric on $\IR$.'
