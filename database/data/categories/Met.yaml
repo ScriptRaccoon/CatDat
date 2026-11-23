@@ -148,7 +148,7 @@ unsatisfied_properties:
     proof: We can take the same <a href="/category/PMet?proof=pullback-stable_regular_epimorphisms">counterexample</a> as for $\PMet$.
 
   - property: regular subobject classifier
-    proof: The same <a href="/category/Met_c?proof=regular_subobject_classifier">proof</a> as for $\Met_\c$ works, since non-expansive maps are continuous and, since the regular monomorphisms are the isometric embeddings with closed image (<a href="/category/Met?proof=regular_monomorphism">proof</a>), the regular subobjects of a metric space $(X,d_X)$ correspond to the closed subsets of $X$.
+    proof: The same <a href="/category/Met_c?proof=regular_subobject_classifier">proof</a> as for $\Met_\c$ works, since non-expansive maps are continuous and, since the regular monomorphisms are the isometric embeddings with closed image (<a href="/category/Met?proof=regular_monomorphism" data-allow-deduced>proof</a>), the regular subobjects of a metric space $(X,d_X)$ correspond to the closed subsets of $X$.
 
   - property: coaccessible
     proof: >-
