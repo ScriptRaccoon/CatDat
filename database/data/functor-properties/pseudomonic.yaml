@@ -5,9 +5,9 @@ nlab_link: https://ncatlab.org/nlab/show/pseudomonic+functor
 invariant_under_equivalences: true
 dual: pseudomonic
 related:
-  - essentially injective
-  - full on isomorphisms
   - faithful
+  - full on isomorphisms
+  - essentially injective
 
 tags:
   - morphism behavior

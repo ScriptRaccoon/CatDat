@@ -6,11 +6,11 @@ dual: one-way
 invariant_under_equivalences: true
 
 related:
-  - core-thin
-  - direct
   - EI-category
-  - inverse
+  - core-thin
   - retract-trivial
+  - direct
+  - inverse
 
 tags:
   - morphism behavior

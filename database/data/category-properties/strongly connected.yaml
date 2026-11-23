@@ -6,9 +6,9 @@ dual: strongly connected
 invariant_under_equivalences: true
 
 related:
+  - semi-strongly connected
   - connected
   - inhabited
-  - semi-strongly connected
 
 tags:
   - morphism behavior

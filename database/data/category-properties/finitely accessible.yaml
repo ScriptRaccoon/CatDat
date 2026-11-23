@@ -7,10 +7,10 @@ invariant_under_equivalences: true
 
 related:
   - accessible
-  - filtered colimits
-  - locally finitely multi-presentable
-  - locally finitely presentable
   - ℵ₁-accessible
+  - filtered colimits
+  - locally finitely presentable
+  - locally finitely multi-presentable
 
 tags:
   - accessibility

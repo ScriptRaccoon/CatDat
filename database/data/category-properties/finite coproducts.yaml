@@ -6,10 +6,10 @@ dual: finite products
 invariant_under_equivalences: true
 
 related:
+  - initial object
   - binary coproducts
   - coproducts
   - finite copowers
-  - initial object
 
 tags:
   - colimits

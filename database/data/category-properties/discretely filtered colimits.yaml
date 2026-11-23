@@ -6,10 +6,10 @@ dual: discretely cofiltered limits
 invariant_under_equivalences: true
 
 related:
-  - coequalizers
-  - connected colimits
   - discretely filtered
+  - connected colimits
   - sifted colimits
+  - coequalizers
 
 tags:
   - colimits

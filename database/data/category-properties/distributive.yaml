@@ -7,9 +7,9 @@ invariant_under_equivalences: true
 
 related:
   - countably distributive
-  - finite coproducts
-  - finite products
   - infinitary distributive
+  - finite products
+  - finite coproducts
 
 tags:
   - limit–colimit interaction

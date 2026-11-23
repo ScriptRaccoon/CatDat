@@ -6,10 +6,10 @@ dual: additive
 invariant_under_equivalences: true
 
 related:
-  - biproducts
-  - finite coproducts
-  - finite products
   - preadditive
+  - finite products
+  - finite coproducts
+  - biproducts
   - zero morphisms
   - abelian
 

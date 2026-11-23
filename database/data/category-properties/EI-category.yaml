@@ -9,11 +9,11 @@ keywords:
   - endomorphisms are isomorphisms
 
 related:
-  - generalized direct
-  - generalized inverse
   - groupoid
   - one-way
   - retract-trivial
+  - generalized direct
+  - generalized inverse
 
 tags:
   - morphism behavior

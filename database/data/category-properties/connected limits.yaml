@@ -6,9 +6,9 @@ dual: connected colimits
 invariant_under_equivalences: true
 
 related:
-  - cofiltered limits
   - complete
   - connected
+  - cofiltered limits
   - discretely cofiltered limits
 
 tags:

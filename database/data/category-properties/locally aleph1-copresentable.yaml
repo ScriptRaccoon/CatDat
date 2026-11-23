@@ -9,10 +9,10 @@ keywords:
   - locally aleph1-copresentable
 
 related:
-  - complete
-  - locally finitely copresentable
-  - locally copresentable
   - ℵ₁-coaccessible
+  - complete
+  - locally copresentable
+  - locally finitely copresentable
 
 tags:
   - accessibility

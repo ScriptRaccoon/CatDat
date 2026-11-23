@@ -10,8 +10,8 @@ keywords:
   - inductive limits
 
 related:
-  - cocomplete
   - filtered colimits
+  - cocomplete
 
 tags:
   - colimits

@@ -6,10 +6,10 @@ dual: essentially finite
 invariant_under_equivalences: true
 
 related:
-  - essentially countable
-  - essentially small
   - finite
+  - essentially countable
   - locally finite
+  - essentially small
 
 tags:
   - size

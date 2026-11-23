@@ -6,10 +6,10 @@ dual: multi-algebraic
 invariant_under_equivalences: true
 
 related:
-  - dually finitary algebraic
   - dual generalized variety
-  - locally finitely multi-copresentable
   - multi-complete
+  - dually finitary algebraic
+  - locally finitely multi-copresentable
   - cosifted limits
 
 tags:

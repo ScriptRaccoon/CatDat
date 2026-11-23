@@ -9,10 +9,10 @@ keywords:
   - limit-preserving
 
 related:
-  - preserves products
   - left exact
-  - right adjoint
+  - preserves products
   - preserves equalizers
+  - right adjoint
   - cofinitary
 
 tags:

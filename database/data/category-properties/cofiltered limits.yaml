@@ -7,10 +7,10 @@ invariant_under_equivalences: true
 
 related:
   - cofiltered
-  - complete
-  - cosifted limits
   - directed limits
+  - cosifted limits
   - ℵ₁-cofiltered limits
+  - complete
 
 tags:
   - limits

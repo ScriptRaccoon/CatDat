@@ -10,9 +10,9 @@ dual: subobject classifier
 invariant_under_equivalences: true
 
 related:
-  - finitely cocomplete
   - regular quotient object classifier
   - elementary cotopos
+  - finitely cocomplete
 
 tags:
   - topos theory

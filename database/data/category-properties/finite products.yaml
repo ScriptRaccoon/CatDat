@@ -6,10 +6,10 @@ dual: finite coproducts
 invariant_under_equivalences: true
 
 related:
-  - binary products
-  - finite powers
-  - products
   - terminal object
+  - binary products
+  - products
+  - finite powers
 
 tags:
   - limits

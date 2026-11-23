@@ -6,8 +6,8 @@ dual: complete
 invariant_under_equivalences: true
 
 related:
-  - coequalizers
   - coproducts
+  - coequalizers
   - multi-cocomplete
 
 tags:

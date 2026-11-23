@@ -6,9 +6,9 @@ dual: subobject-trivial
 invariant_under_equivalences: true
 
 related:
-  - epi-regular
-  - groupoid
   - regular-quotient-trivial
+  - groupoid
+  - epi-regular
 
 tags:
   - morphism behavior

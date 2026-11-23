@@ -7,13 +7,13 @@ invariant_under_equivalences: true
 
 related:
   - additive
-  - cokernels
-  - conormal
   - kernels
+  - cokernels
   - normal
+  - conormal
+  - split abelian
   - Grothendieck abelian
   - co-Grothendieck abelian
-  - split abelian
 
 tags:
   - abelian

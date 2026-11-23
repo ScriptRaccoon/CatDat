@@ -6,10 +6,10 @@ dual: mono-regular
 invariant_under_equivalences: true
 
 related:
-  - all epimorphisms split
   - conormal
-  - effective cocongruences
+  - all epimorphisms split
   - quotient-trivial
+  - effective cocongruences
 
 tags:
   - morphism behavior

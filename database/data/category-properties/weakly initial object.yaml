@@ -9,8 +9,8 @@ keywords:
   - weak initial object
 
 related:
-  - discretely cofiltered
   - initial object
+  - discretely cofiltered
 
 tags:
   - colimits

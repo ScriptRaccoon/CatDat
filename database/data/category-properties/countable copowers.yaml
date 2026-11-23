@@ -7,9 +7,9 @@ invariant_under_equivalences: true
 
 related:
   - copowers
-  - countable coproducts
   - finite copowers
   - ℵ₂-small copowers
+  - countable coproducts
 
 tags:
   - colimits

@@ -9,8 +9,8 @@ dual: cartesian filtered colimits
 invariant_under_equivalences: true
 
 related:
-  - cofiltered limits
   - exact cofiltered limits
+  - cofiltered limits
   - finite coproducts
 
 tags:

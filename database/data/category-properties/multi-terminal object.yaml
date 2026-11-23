@@ -6,8 +6,8 @@ dual: multi-initial object
 invariant_under_equivalences: true
 
 related:
-  - multi-complete
   - terminal object
+  - multi-complete
 
 tags:
   - limits

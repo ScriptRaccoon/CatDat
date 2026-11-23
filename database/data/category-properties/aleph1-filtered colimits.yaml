@@ -9,10 +9,10 @@ keywords:
   - aleph1-filtered colimits
 
 related:
-  - cocomplete
   - filtered colimits
-  - ℵ₁-accessible
+  - cocomplete
   - ℵ₁-filtered
+  - ℵ₁-accessible
 
 tags:
   - colimits

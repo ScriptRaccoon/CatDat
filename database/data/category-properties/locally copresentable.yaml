@@ -8,11 +8,11 @@ invariant_under_equivalences: true
 related:
   - coaccessible
   - complete
-  - cototal
   - locally finitely copresentable
-  - locally multi-copresentable
-  - locally poly-copresentable
   - locally ℵ₁-copresentable
+  - locally poly-copresentable
+  - locally multi-copresentable
+  - cototal
 
 tags:
   - accessibility

@@ -9,8 +9,8 @@ dual: disjoint finite coproducts
 invariant_under_equivalences: true
 
 related:
-  - coextensive
   - disjoint products
+  - coextensive
   - finite products
 
 tags:

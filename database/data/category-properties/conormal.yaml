@@ -6,10 +6,10 @@ dual: normal
 invariant_under_equivalences: true
 
 related:
-  - cokernels
-  - effective cocongruences
   - epi-regular
   - zero morphisms
+  - cokernels
+  - effective cocongruences
 
 tags:
   - morphism behavior

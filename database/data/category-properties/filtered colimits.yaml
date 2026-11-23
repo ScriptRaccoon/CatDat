@@ -6,11 +6,11 @@ dual: cofiltered limits
 invariant_under_equivalences: true
 
 related:
-  - cocomplete
-  - directed colimits
   - filtered
+  - directed colimits
   - sifted colimits
   - ℵ₁-filtered colimits
+  - cocomplete
 
 tags:
   - colimits

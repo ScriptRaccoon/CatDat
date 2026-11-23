@@ -8,8 +8,8 @@ invariant_under_equivalences: true
 related:
   - binary powers
   - countable powers
-  - finite products
   - powers
+  - finite products
 
 tags:
   - limits

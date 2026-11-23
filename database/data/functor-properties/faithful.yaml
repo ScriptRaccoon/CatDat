@@ -5,11 +5,11 @@ nlab_link: https://ncatlab.org/nlab/show/faithful+functor
 invariant_under_equivalences: true
 dual: faithful
 related:
-  - full
   - fully faithful
+  - full
+  - pseudomonic
   - essentially injective
   - left-invertible
-  - pseudomonic
 
 tags:
   - morphism behavior

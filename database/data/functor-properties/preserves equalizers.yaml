@@ -5,9 +5,9 @@ nlab_link: https://ncatlab.org/nlab/show/preserved+limit
 invariant_under_equivalences: true
 dual: preserves coequalizers
 related:
-  - continuous
-  - left exact
   - preserves coreflexive equalizers
+  - left exact
+  - continuous
 
 tags:
   - limit preservation
