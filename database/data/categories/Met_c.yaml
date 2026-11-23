@@ -144,7 +144,7 @@ special_morphisms:
     proof: For the non-trivial direction, the forgetful functor to $\Set$ is representable (by the terminal object), hence preserves monomorphisms.
   epimorphism:
     description: continuous maps with dense image
-    proof: See <a href="https://math.stackexchange.com/questions/937387">MSE/937387</a>.
+    proof: 'The <a href="/category/Met?proof=epimorphism">proof</a> for $\Met$ works verbatim: the first part only uses that morphisms are continuous, and the maps constructed in the second part are non-expansive, hence continuous.'
   regular monomorphism:
     description: closed embeddings
     proof: 'Regular monomorphisms are closed embeddings by the concrete construction of equalizers and the fact that metrizable spaces are Hausdorff. Conversely, let $A$ be a closed subset of a metric space $(X,d_X)$. If $A$ is empty, then it is the equalizer of the two constant maps $0,1 : X \rightrightarrows \IR$. If $A$ is non-empty, then it is the equalizer of the function $d_X(A,-) : X \to \IR$, $x \mapsto \inf_{a \in A} d_X(a,x)$, and the zero function $0 : X \to \IR$. The function $d_X(A,-)$ is non-expansive and hence continuous.'
