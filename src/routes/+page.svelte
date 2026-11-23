@@ -168,6 +168,11 @@
 			</a>
 		</li>
 		<li>
+			<a href="/category-comparison/NormVect/Ban">
+				normed vector spaces with Banach spaces
+			</a>
+		</li>
+		<li>
 			<a href="/category-comparison/grAb/Ch(Ab)">
 				graded abelian groups with cochain complexes
 			</a>
