@@ -22,9 +22,6 @@ satisfied_properties:
     proof: See for example Theorem 5.2 at the <a href="https://ncatlab.org/nlab/show/compact+Hausdorff+space">nLab</a>.
 
 unsatisfied_properties:
-  - property: essentially injective
-    proof: If $X$ is a non-empty indiscrete space, then $\beta(X)$ has only one point.
-
   - property: faithful
     proof: If $X$ is an indiscrete space with $n \geq 2$ points, then $\Hom(X,X)$ has $n^n$ elements, but $\Hom(\beta(X),\beta(X))$ has exactly one element, and $n^n > 1$.
 
