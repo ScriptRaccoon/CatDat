@@ -22,11 +22,12 @@ CREATE TABLE properties (
 CREATE UNIQUE INDEX properties_lower_id_unique ON properties (lower(id), type);
 
 CREATE TABLE related_properties (
+    id INTEGER PRIMARY KEY,
     property_id TEXT NOT NULL,
     related_property_id TEXT NOT NULL,
     type TEXT NOT NULL,
     CHECK (property_id != related_property_id),
-    PRIMARY KEY (property_id, related_property_id, type),
+    UNIQUE (property_id, related_property_id, type),
     FOREIGN KEY (property_id, type)
         REFERENCES properties (id, type) ON DELETE CASCADE,
     FOREIGN KEY (related_property_id, type)
