@@ -17,6 +17,7 @@ tags:
 
 related:
   - forget_topology
+  - forget_normed
 
 satisfied_properties:
   - property: fully faithful

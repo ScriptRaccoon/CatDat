@@ -1,0 +1,42 @@
+id: normed_quotient
+name: quotient functor from semi-normed vector spaces to normed vector spaces
+notation: $R$
+associated:
+  domain: SemiNormVect
+  codomain: NormVect
+  left_adjoint: null
+  right_adjoint: forget_normed
+description: 'This functor maps a semi-normed vector space $V$ to the quotient $V/N$ by the subspace $N \coloneqq \{v \in V : |v| = 0\}$ of null vectors, equipped with the norm $|[v]| \coloneqq |v|$.'
+nlab_link: null
+
+tags:
+  - analysis
+  - free
+
+related: []
+
+satisfied_properties:
+  - property: reflector
+    proof: 'This functor is left adjoint to the inclusion $I : \NormVect \hookrightarrow \SemiNormVect$ (<a href="/functor/forget_normed?proof=right_adjoint">proof</a>), which is fully faithful.'
+
+  - property: full
+    proof: >-
+      Let $V,W$ be semi-normed vector spaces with projections $p_V : V \to R(V)$ and $p_W : W \to R(W)$, and let $f : R(V) \to R(W)$ be a linear contraction. Since $p_W$ is surjective and all epimorphisms split in $\Vect_{\IC}$ (<a href="/category/Vect?proof=all_epimorphisms_split" data-allow-deduced>proof</a>), there is a linear map $s : R(W) \to W$ with $p_W \circ s = \id_{R(W)}$. It is isometric, since $|s(y)| = |p_W(s(y))| = |y|$ for all $y \in R(W)$. Hence, $g \coloneqq s \circ f \circ p_V : V \to W$ is a linear contraction with $p_W \circ g = f \circ p_V$, i.e. $R(g) = f$.
+
+  - property: preserves products
+    proof: >-
+      Let $(V_i)_{i \in I}$ be a family of semi-normed vector spaces. By the <a href="/category/SemiNormVect?proof=products">construction</a> of products in $\SemiNormVect$, their product is the subspace $P \subseteq \prod_i V_i$ of families $v$ with $\sup_i |v_i| < \infty$, with the semi-norm $|v| \coloneqq \sup_i |v_i|$, and by the <a href="/category/NormVect?proof=complete">construction</a> of products in $\NormVect$, the product of $(R(V_i))$ in $\NormVect$ is the analogous subspace $Q \subseteq \prod_i R(V_i)$ with the norm $|y| \coloneqq \sup_i |y_i|$. The canonical morphism $R(P) \to Q$ maps $[v]$ to $([v_i])_i$. It is isometric, since
+      $$\textstyle |([v_i])_i| = \sup_i |[v_i]| = \sup_i |v_i| = |v| = |[v]|.$$
+      It is surjective: for $y \in Q$ choose $v_i \in V_i$ with $[v_i] = y_i$. Then $|v_i| = |y_i|$, so $v \coloneqq (v_i)_i$ lies in $P$ and is mapped to $y$. Hence, the canonical morphism is a bijective linear isometry, hence an isomorphism (<a href="/category/NormVect?proof=isomorphism" data-allow-deduced>proof</a>).
+
+unsatisfied_properties:
+  - property: preserves monomorphisms
+    proof: Let $V$ be any non-zero normed vector space, and let $W$ be the same vector space with the zero semi-norm. The identity map $V \to W$ is an injective linear contraction, hence a monomorphism, but $R$ maps it to $V \to 0$, which is not a monomorphism since $V \neq 0$.
+
+  - property: cofinitary
+    proof: >-
+      Let $C \coloneqq \bigoplus_{k \geq 1} \IC$ be the vector space of sequences $x = (x_k)_{k \geq 1}$ in $\IC$ with only finitely many non-zero terms. For $n \geq 1$ let $V_n$ be $C$ with the semi-norm $|x|_n \coloneqq \sum_{k \leq n} |x_k|$. For $n \leq m$ we have $|x|_n \leq |x|_m$, so the identity maps $V_m \to V_n$ are linear contractions. By the <a href="/category/SemiNormVect?proof=products">construction</a> of products and the <a href="/category/SemiNormVect?proof=equalizers">construction</a> of equalizers in $\SemiNormVect$, the limit of this diagram in $\SemiNormVect$ consists of the constant families, i.e. it is $C$ with the semi-norm $\sup_n |x|_n = \sum_{k \geq 1} |x_k|$. This is a norm, so $R$ maps the limit to itself. On the other hand, $R(V_n)$ is $\IC^n$ with the norm $\sum_{k \leq n} |x_k|$, and the transition maps $R(V_m) \to R(V_n)$ are the projections. By the <a href="/category/NormVect?proof=complete">construction</a> of limits in $\NormVect$, their limit is the space $\ell^1$ of absolutely summable sequences with the norm $\sum_{k \geq 1} |x_k|$. The canonical morphism from $R$ of the limit to the limit of $R(V_n)$ is the inclusion $C \hookrightarrow \ell^1$, which is not surjective, hence not an isomorphism.
+
+  - property: preserves regular monomorphisms
+    proof: >-
+      Let $X$ be a normed vector space with a subspace $U \subseteq X$ that is not closed. For example, in the Banach space $\ell^1$ of absolutely summable sequences in $\IC$, the subspace of sequences with only finitely many non-zero terms is dense and not closed. The inclusion $i : U \hookrightarrow X$ is isometric and injective, hence a regular monomorphism in $\SemiNormVect$ (<a href="/category/SemiNormVect?proof=regular_monomorphism" data-allow-deduced>proof</a>). Since $U$ and $X$ are normed vector spaces, $R(i)$ is again the inclusion $U \hookrightarrow X$. Its image is not closed, so it is not a regular monomorphism in $\NormVect$ (<a href="/category/NormVect?proof=regular_monomorphism" data-allow-deduced>proof</a>).
