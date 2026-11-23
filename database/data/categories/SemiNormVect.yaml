@@ -204,7 +204,7 @@ satisfied_properties:
       $$\begin{align*} |\bar{f}(x)| & \leq |\bar{f}(x_m)| + |\bar{f}(x) - \bar{f}(x_m)| \\ & \leq |x_m| + |\bar{f}(x) - \bar{f}(x_m)| \\ & \leq |x| + |x - x_m| + |\bar{f}(x) - \bar{f}(x_m)|. \end{align*}$$
       For $m \to \infty$, this gives $|\bar{f}(x)| \leq |x|$. Hence $\bar{f}$ is a linear contraction. This proves Claim 3.
 
-      <strong>Claim 4.</strong> Every semi-normed vector space $K$ of at most countable algebraic dimension is $\aleph_1$-presentable.
+      <strong>Claim 4.</strong> Every semi-normed vector space $K$ of countable algebraic dimension is $\aleph_1$-presentable.
 
       Choose a basis $B$ of $K$. Since $B$ and $\IQ(i)$ are countable, the following set is countable (this is why Claim 3 uses coefficients in $\IQ(i)$ instead of $\IC$):
       $$T \coloneqq \left\{(n,c,b) : n \geq 1,\ c \in \IQ(i)^n,\ b \in D_c(K) \cap B^n\right\}.$$
@@ -220,7 +220,7 @@ satisfied_properties:
 
       <strong>Claim 5.</strong> The category $\SemiNormVect$ is $\aleph_1$-accessible.
 
-      Every semi-normed vector space is the colimit of its subspaces of at most countable algebraic dimension, ordered by inclusion, and this diagram is $\aleph_1$-filtered. These subspaces are $\aleph_1$-presentable by Claim 4. Up to isomorphism, the semi-normed vector spaces of at most countable algebraic dimension constitute a set: such a space $K$ has a linear isomorphism $\varphi : \IC^{\oplus \kappa} \to K$ for some cardinal $\kappa \leq \aleph_0$, and $\varphi$ is an isomorphism of semi-normed vector spaces when we equip $\IC^{\oplus \kappa}$ with the semi-norm $x \mapsto |\varphi(x)|$. So every such space is isomorphic to one of the spaces $(\IC^{\oplus \kappa},p)$ with $\kappa \leq \aleph_0$ and $p : \IC^{\oplus \kappa} \to \IR$ a semi-norm, and these form a set.
+      Every semi-normed vector space is the colimit of its subspaces of countable algebraic dimension, ordered by inclusion, and this diagram is $\aleph_1$-filtered. These subspaces are $\aleph_1$-presentable by Claim 4. Up to isomorphism, the semi-normed vector spaces of countable algebraic dimension constitute a set: such a space $K$ has a linear isomorphism $\varphi : \IC^{\oplus \kappa} \to K$ for some cardinal $\kappa \leq \aleph_0$, and $\varphi$ is an isomorphism of semi-normed vector spaces when we equip $\IC^{\oplus \kappa}$ with the semi-norm $x \mapsto |\varphi(x)|$. So every such space is isomorphic to one of the spaces $(\IC^{\oplus \kappa},p)$ with $\kappa \leq \aleph_0$ and $p : \IC^{\oplus \kappa} \to \IR$ a semi-norm, and these form a set.
 
       <strong>Remark.</strong> The same proof works for semi-normed vector spaces over $\IR$, using $\IQ$ instead of $\IQ(i)$. The thread <a href="https://mathoverflow.net/questions/511025">MO/511025</a> also has other viewpoints.
 
