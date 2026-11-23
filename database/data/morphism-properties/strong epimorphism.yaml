@@ -14,8 +14,8 @@ nlab_link: https://ncatlab.org/nlab/show/strong+epimorphism
 invariant_under_equivalences: true
 dual: strong monomorphism
 related:
-  - strict epimorphism
   - extremal epimorphism
+  - strict epimorphism
   - epimorphism
 
 tags:

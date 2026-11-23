@@ -6,9 +6,9 @@ dual: coproducts
 invariant_under_equivalences: true
 
 related:
-  - complete
   - finite products
   - powers
+  - complete
 
 tags:
   - limits

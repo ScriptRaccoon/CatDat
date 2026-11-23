@@ -5,11 +5,11 @@ nlab_link: https://ncatlab.org/nlab/show/full+functor
 invariant_under_equivalences: true
 dual: full
 related:
-  - equivalence
-  - faithful
   - fully faithful
-  - essentially injective
+  - faithful
   - full on isomorphisms
+  - essentially injective
+  - equivalence
 
 tags:
   - morphism behavior

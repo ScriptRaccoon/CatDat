@@ -8,8 +8,8 @@ invariant_under_equivalences: true
 related:
   - coproducts
   - finite coproducts
-  - countable copowers
   - ℵ₂-small coproducts
+  - countable copowers
 
 tags:
   - colimits

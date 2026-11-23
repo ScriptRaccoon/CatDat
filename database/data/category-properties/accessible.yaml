@@ -7,10 +7,10 @@ invariant_under_equivalences: true
 
 related:
   - finitely accessible
-  - locally multi-presentable
-  - locally poly-presentable
-  - locally presentable
   - ℵ₁-accessible
+  - locally presentable
+  - locally poly-presentable
+  - locally multi-presentable
 
 tags:
   - accessibility

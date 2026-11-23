@@ -6,8 +6,8 @@ dual: binary products
 invariant_under_equivalences: true
 
 related:
-  - binary copowers
   - finite coproducts
+  - binary copowers
 
 tags:
   - colimits

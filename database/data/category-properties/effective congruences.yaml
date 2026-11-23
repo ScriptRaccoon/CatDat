@@ -12,11 +12,11 @@ keywords:
   - effective equivalence relations
 
 related:
+  - Barr-exact
+  - quotients of congruences
+  - kernel pairs
   - mono-regular
   - normal
-  - quotients of congruences
-  - Barr-exact
-  - kernel pairs
 
 tags:
   - congruences

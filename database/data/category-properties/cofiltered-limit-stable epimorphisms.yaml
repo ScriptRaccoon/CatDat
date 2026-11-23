@@ -6,8 +6,8 @@ dual: filtered-colimit-stable monomorphisms
 invariant_under_equivalences: true
 
 related:
-  - cofiltered limits
   - exact cofiltered limits
+  - cofiltered limits
   - product-stable epimorphisms
 
 tags:

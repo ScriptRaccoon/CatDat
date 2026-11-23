@@ -10,8 +10,8 @@ keywords:
 
 related:
   - cocomplete
-  - coequalizers
   - finite coproducts
+  - coequalizers
 
 tags:
   - colimits

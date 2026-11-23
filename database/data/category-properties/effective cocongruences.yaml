@@ -9,11 +9,11 @@ dual: effective congruences
 invariant_under_equivalences: true
 
 related:
-  - conormal
-  - coquotients of cocongruences
-  - epi-regular
   - Barr-coexact
+  - coquotients of cocongruences
   - cokernel pairs
+  - epi-regular
+  - conormal
 
 tags:
   - congruences

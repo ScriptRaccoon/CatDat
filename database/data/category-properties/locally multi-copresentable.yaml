@@ -7,11 +7,11 @@ invariant_under_equivalences: true
 
 related:
   - coaccessible
+  - multi-complete
   - connected colimits
-  - locally copresentable
   - locally finitely multi-copresentable
   - locally poly-copresentable
-  - multi-complete
+  - locally copresentable
 
 tags:
   - accessibility

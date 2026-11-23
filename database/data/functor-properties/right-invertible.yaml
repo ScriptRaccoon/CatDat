@@ -5,9 +5,9 @@ nlab_link: https://ncatlab.org/nlab/show/inverse+functor
 invariant_under_equivalences: true
 dual: right-invertible
 related:
+  - left-invertible
   - equivalence
   - essentially surjective
-  - left-invertible
   - reflector
 
 tags:

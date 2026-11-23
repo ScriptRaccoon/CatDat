@@ -13,8 +13,8 @@ dual: finite-coproduct-stable monomorphisms
 invariant_under_equivalences: true
 
 related:
-  - finite products
   - product-stable epimorphisms
+  - finite products
   - pullback-stable regular epimorphisms
 
 tags:

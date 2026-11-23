@@ -6,9 +6,9 @@ dual: cocomplete
 invariant_under_equivalences: true
 
 related:
+  - products
   - equalizers
   - multi-complete
-  - products
 
 tags:
   - limits

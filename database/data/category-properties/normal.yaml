@@ -6,10 +6,10 @@ dual: conormal
 invariant_under_equivalences: true
 
 related:
-  - effective congruences
-  - kernels
   - mono-regular
   - zero morphisms
+  - kernels
+  - effective congruences
 
 tags:
   - morphism behavior

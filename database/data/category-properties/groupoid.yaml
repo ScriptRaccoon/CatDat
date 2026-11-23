@@ -6,11 +6,11 @@ dual: groupoid
 invariant_under_equivalences: true
 
 related:
-  - left cancellative
-  - quotient-trivial
-  - right cancellative
   - subobject-trivial
+  - quotient-trivial
   - EI-category
+  - left cancellative
+  - right cancellative
 
 tags:
   - morphism behavior

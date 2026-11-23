@@ -5,10 +5,10 @@ nlab_link: https://ncatlab.org/nlab/show/inverse+functor
 invariant_under_equivalences: true
 dual: left-invertible
 related:
+  - right-invertible
   - equivalence
   - faithful
   - essentially injective
-  - right-invertible
 
 tags:
   - invertibility

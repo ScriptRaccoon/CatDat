@@ -6,9 +6,9 @@ dual: discretely filtered colimits
 invariant_under_equivalences: true
 
 related:
+  - discretely cofiltered
   - connected limits
   - cosifted limits
-  - discretely cofiltered
   - equalizers
 
 tags:

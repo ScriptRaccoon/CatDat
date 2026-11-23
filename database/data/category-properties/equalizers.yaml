@@ -6,12 +6,12 @@ dual: coequalizers
 invariant_under_equivalences: true
 
 related:
-  - coquotients of cocongruences
   - coreflexive equalizers
-  - discretely cofiltered limits
-  - finitely complete
-  - kernels
   - equalizers of cokernel pairs
+  - coquotients of cocongruences
+  - kernels
+  - finitely complete
+  - discretely cofiltered limits
 
 tags:
   - limits

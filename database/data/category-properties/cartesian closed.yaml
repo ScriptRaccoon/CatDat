@@ -6,8 +6,8 @@ dual: cocartesian coclosed
 invariant_under_equivalences: true
 
 related:
-  - finite products
   - locally cartesian closed
+  - finite products
 
 tags:
   - topos theory

@@ -6,9 +6,9 @@ dual: products
 invariant_under_equivalences: true
 
 related:
-  - cocomplete
-  - copowers
   - finite coproducts
+  - copowers
+  - cocomplete
 
 tags:
   - colimits

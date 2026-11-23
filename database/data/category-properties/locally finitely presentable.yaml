@@ -15,12 +15,12 @@ dual: locally finitely copresentable
 invariant_under_equivalences: true
 
 related:
-  - locally presentable
-  - cocomplete
   - finitely accessible
+  - cocomplete
+  - locally presentable
+  - locally ℵ₁-presentable
   - locally finitely multi-presentable
   - finitary algebraic
-  - locally ℵ₁-presentable
 
 tags:
   - accessibility

@@ -9,10 +9,10 @@ keywords:
   - colimit-preserving
 
 related:
-  - preserves coproducts
   - right exact
-  - left adjoint
+  - preserves coproducts
   - preserves coequalizers
+  - left adjoint
   - finitary
 
 tags:

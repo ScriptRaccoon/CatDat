@@ -14,10 +14,10 @@ dual: dually multi-algebraic
 invariant_under_equivalences: true
 
 related:
-  - finitary algebraic
   - generalized variety
-  - locally finitely multi-presentable
   - multi-cocomplete
+  - finitary algebraic
+  - locally finitely multi-presentable
   - sifted colimits
 
 tags:

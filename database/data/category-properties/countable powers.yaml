@@ -6,10 +6,10 @@ dual: countable copowers
 invariant_under_equivalences: true
 
 related:
-  - countable products
-  - finite powers
   - powers
+  - finite powers
   - ℵ₂-small powers
+  - countable products
 
 tags:
   - limits

@@ -7,10 +7,10 @@ invariant_under_equivalences: true
 
 related:
   - coaccessible
+  - ℵ₁-coaccessible
   - cofiltered limits
   - locally finitely copresentable
   - locally finitely multi-copresentable
-  - ℵ₁-coaccessible
 
 tags:
   - accessibility

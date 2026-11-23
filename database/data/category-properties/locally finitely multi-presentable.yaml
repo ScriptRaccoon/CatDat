@@ -14,13 +14,13 @@ dual: locally finitely multi-copresentable
 invariant_under_equivalences: true
 
 related:
-  - connected limits
-  - filtered colimits
   - finitely accessible
-  - locally finitely presentable
-  - locally multi-presentable
-  - multi-algebraic
   - multi-cocomplete
+  - connected limits
+  - locally multi-presentable
+  - locally finitely presentable
+  - multi-algebraic
+  - filtered colimits
 
 tags:
   - accessibility

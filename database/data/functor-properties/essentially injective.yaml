@@ -8,11 +8,11 @@ nlab_link: https://ncatlab.org/nlab/show/essentially+injective+functor
 invariant_under_equivalences: true
 dual: essentially injective
 related:
-  - conservative
-  - fully faithful
   - full on isomorphisms
-  - essentially surjective
+  - conservative
   - pseudomonic
+  - fully faithful
+  - essentially surjective
 
 tags:
   - object behavior

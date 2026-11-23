@@ -6,9 +6,9 @@ dual: quotient-trivial
 invariant_under_equivalences: true
 
 related:
+  - regular-subobject-trivial
   - groupoid
   - mono-regular
-  - regular-subobject-trivial
 
 tags:
   - morphism behavior

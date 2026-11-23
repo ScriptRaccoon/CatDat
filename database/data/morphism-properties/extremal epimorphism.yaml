@@ -8,9 +8,9 @@ nlab_link: https://ncatlab.org/nlab/show/extremal+epimorphism
 invariant_under_equivalences: true
 dual: extremal monomorphism
 related:
-  - epimorphism
   - strong epimorphism
   - regular epimorphism
+  - epimorphism
 
 tags:
   - types of epimorphisms

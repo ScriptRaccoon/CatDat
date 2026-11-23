@@ -7,9 +7,9 @@ invariant_under_equivalences: true
 
 related:
   - coaccessible
-  - locally multi-copresentable
-  - locally copresentable
   - wide pushouts
+  - locally copresentable
+  - locally multi-copresentable
 
 tags:
   - accessibility

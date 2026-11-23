@@ -14,11 +14,11 @@ invariant_under_equivalences: true
 
 related:
   - accessible
+  - multi-cocomplete
   - connected limits
   - locally finitely multi-presentable
   - locally poly-presentable
   - locally presentable
-  - multi-cocomplete
 
 tags:
   - accessibility

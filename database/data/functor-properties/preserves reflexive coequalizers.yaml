@@ -5,8 +5,8 @@ nlab_link: https://ncatlab.org/nlab/show/reflexive+coequalizer
 invariant_under_equivalences: true
 dual: preserves coreflexive equalizers
 related:
-  - cocontinuous
   - preserves coequalizers
+  - cocontinuous
 
 tags:
   - colimit preservation

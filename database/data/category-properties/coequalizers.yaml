@@ -6,12 +6,12 @@ dual: equalizers
 invariant_under_equivalences: true
 
 related:
+  - reflexive coequalizers
+  - coequalizers of kernel pairs
+  - quotients of congruences
   - cokernels
   - finitely cocomplete
-  - quotients of congruences
-  - reflexive coequalizers
   - discretely filtered colimits
-  - coequalizers of kernel pairs
 
 tags:
   - colimits

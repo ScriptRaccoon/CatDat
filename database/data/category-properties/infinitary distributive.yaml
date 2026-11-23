@@ -6,10 +6,10 @@ dual: infinitary codistributive
 invariant_under_equivalences: true
 
 related:
-  - coproducts
-  - countably distributive
   - distributive
+  - countably distributive
   - finite products
+  - coproducts
 
 tags:
   - limit–colimit interaction
