@@ -915,6 +915,14 @@
 		{
 			"type": "category",
 			"id": "NormVect"
+		},
+		{
+			"type": "functor",
+			"id": "forget_normed"
+		},
+		{
+			"type": "functor",
+			"id": "normed_quotient"
 		}
 	],
 	"properties": [

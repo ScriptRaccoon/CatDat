@@ -1,0 +1,46 @@
+id: forget_normed
+name: forgetful functor from normed vector spaces to semi-normed vector spaces
+notation: $I$
+associated:
+  domain: NormVect
+  codomain: SemiNormVect
+  left_adjoint: normed_quotient
+  right_adjoint: null
+description: This is the inclusion functor $\NormVect \hookrightarrow \SemiNormVect$ that maps a normed vector space to itself, considered merely as a semi-normed vector space.
+nlab_link: https://ncatlab.org/nlab/show/forgetful+functor
+keywords:
+  - inclusion functor
+
+tags:
+  - analysis
+  - forgetful
+
+related:
+  - forget_hausdorff
+
+satisfied_properties:
+  - property: fully faithful
+    proof: This is trivial.
+
+  - property: right adjoint
+    proof: >-
+      A left adjoint $R : \SemiNormVect \to \NormVect$ maps $V$ to the quotient $V/N$ by the subspace $N \coloneqq \{v \in V : |v| = 0\}$ of null vectors, equipped with the norm $|[v]| \coloneqq |v|$. Indeed, every linear contraction $f : V \to W$ into a normed vector space $W$ vanishes on $N$, since $|f(v)| \leq |v| = 0$ for $v \in N$. Hence, $f$ factors uniquely as $f = \bar{f} \circ p$ through the projection $p : V \to V/N$, and $\bar{f}$ is a linear contraction, since $|\bar{f}([v])| = |f(v)| \leq |v| = |[v]|$.
+
+  - property: preserves coproducts
+    proof: The <a href="/category/NormVect?proof=coproducts">proof</a> that $\NormVect$ has coproducts shows that they are constructed as in $\SemiNormVect$.
+
+  - property: preserves regular epimorphisms
+    proof: A linear contraction is a regular epimorphism if and only if it is surjective and the codomain carries the quotient (semi-)norm, both in $\NormVect$ (<a href="/category/NormVect?proof=regular_epimorphism" data-allow-deduced>proof</a>) and in $\SemiNormVect$ (<a href="/category/SemiNormVect?proof=regular_epimorphism" data-allow-deduced>proof</a>).
+
+unsatisfied_properties:
+  - property: preserves epimorphisms
+    proof: >-
+      Let $X$ be a normed vector space with a dense subspace $U \subsetneq X$. For example, in the Banach space $\ell^1$ of absolutely summable sequences in $\IC$, the subspace of sequences with only finitely many non-zero terms is dense. The inclusion $U \hookrightarrow X$ has dense image, hence is an epimorphism in $\NormVect$ (<a href="/category/NormVect?proof=epimorphism" data-allow-deduced>proof</a>). But it is not surjective, hence not an epimorphism in $\SemiNormVect$ (<a href="/category/SemiNormVect?proof=epimorphism" data-allow-deduced>proof</a>).
+
+  - property: finitary
+    proof: >-
+      The <a href="/category/NormVect?proof=filtered-colimit-stable_monomorphisms">counterexample</a> for filtered-colimit-stable monomorphisms in $\NormVect$ is a sequential diagram of normed vector spaces whose colimit in $\SemiNormVect$ is $\IC$ with the zero semi-norm, whereas its colimit in $\NormVect$ is $0$.
+
+  - property: dominant
+    proof: >-
+      A retract $V$ of a normed vector space $W$ is a normed vector space: if $s : V \to W$ is a split monomorphism and $v \in V$ satisfies $|v| = 0$, then $|s(v)| \leq |v| = 0$, hence $s(v) = 0$, and $v = 0$ since $s$ is injective. So every semi-normed vector space with a non-zero null vector, such as $\IC$ with the zero semi-norm, is not a retract of a normed vector space.

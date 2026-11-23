@@ -3,7 +3,7 @@ name: category of normed vector spaces with linear contractions
 notation: $\NormVect$
 objects: normed vector spaces over $\IC$
 morphisms: linear contractions, i.e. linear maps satisfying $|f(x)| \leq |x|$ for every $x$
-description: 'The choice of morphisms is similar to that of $\Met$. In the proofs of properties, we use that the inclusion $I : \NormVect \hookrightarrow \SemiNormVect$ has a left adjoint $R : \SemiNormVect \to \NormVect$, which maps $V$ to the quotient $V/N$ by the subspace $N \coloneqq \{v \in V : |v| = 0\}$ of <i>null vectors</i>, equipped with the norm $|[v]| \coloneqq |v|$.'
+description: 'The choice of morphisms is similar to that of $\Met$. In the proofs of properties, we use that the inclusion $I : \NormVect \hookrightarrow \SemiNormVect$ has a left adjoint $R : \SemiNormVect \to \NormVect$, which maps $V$ to the quotient $V/N$ by the subspace $N \coloneqq \{v \in V : |v| = 0\}$ of <i>null vectors</i>, equipped with the norm $|[v]| \coloneqq |v|$ (<a href="/functor/forget_normed?proof=right_adjoint">proof</a>).'
 nlab_link: https://ncatlab.org/nlab/show/norm
 
 tags:
