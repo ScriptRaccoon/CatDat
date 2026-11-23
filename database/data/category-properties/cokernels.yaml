@@ -8,7 +8,6 @@ invariant_under_equivalences: true
 related:
   - coequalizers
   - conormal
-  - quotients of congruences
   - zero morphisms
   - cokernel pairs
 

@@ -19,7 +19,6 @@ invariant_under_equivalences: true
 related:
   - cocomplete
   - complete
-  - locally copresentable
 
 tags:
   - limits

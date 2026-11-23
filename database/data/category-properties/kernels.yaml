@@ -6,7 +6,6 @@ dual: cokernels
 invariant_under_equivalences: true
 
 related:
-  - coquotients of cocongruences
   - equalizers
   - normal
   - zero morphisms
