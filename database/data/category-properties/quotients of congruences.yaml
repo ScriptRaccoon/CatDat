@@ -20,6 +20,7 @@ invariant_under_equivalences: true
 
 related:
   - coequalizers
+  - reflexive coequalizers
   - coequalizers of kernel pairs
   - effective congruences
   - Barr-exact

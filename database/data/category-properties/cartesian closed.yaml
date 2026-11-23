@@ -8,6 +8,7 @@ invariant_under_equivalences: true
 related:
   - locally cartesian closed
   - finite products
+  - elementary topos
 
 tags:
   - topos theory

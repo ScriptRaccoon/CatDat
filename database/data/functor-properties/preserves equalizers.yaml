@@ -6,6 +6,7 @@ invariant_under_equivalences: true
 dual: preserves coequalizers
 related:
   - preserves coreflexive equalizers
+  - preserves regular monomorphisms
   - left exact
   - continuous
 

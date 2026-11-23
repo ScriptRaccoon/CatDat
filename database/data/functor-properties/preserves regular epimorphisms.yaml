@@ -8,6 +8,7 @@ related:
   - preserves epimorphisms
   - right exact
   - preserves coequalizers
+  - regular
 
 tags:
   - morphism behavior

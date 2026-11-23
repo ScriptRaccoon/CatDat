@@ -6,8 +6,9 @@ dual: powers
 invariant_under_equivalences: true
 
 related:
-  - countable copowers
   - finite copowers
+  - countable copowers
+  - ℵ₂-small copowers
   - coproducts
 
 tags:

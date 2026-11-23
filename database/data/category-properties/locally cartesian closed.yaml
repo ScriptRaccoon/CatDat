@@ -7,6 +7,9 @@ invariant_under_equivalences: true
 
 related:
   - cartesian closed
+  - pullbacks
+  - quasitopos
+  - elementary topos
 
 tags:
   - topos theory

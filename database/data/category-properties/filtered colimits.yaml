@@ -8,6 +8,7 @@ invariant_under_equivalences: true
 related:
   - filtered
   - directed colimits
+  - sequential colimits
   - sifted colimits
   - ℵ₁-filtered colimits
   - cocomplete

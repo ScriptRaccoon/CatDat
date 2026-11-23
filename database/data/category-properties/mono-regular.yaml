@@ -9,6 +9,7 @@ related:
   - normal
   - all monomorphisms split
   - subobject-trivial
+  - balanced
 
 tags:
   - morphism behavior

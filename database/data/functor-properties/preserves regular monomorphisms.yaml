@@ -8,6 +8,7 @@ related:
   - preserves monomorphisms
   - left exact
   - preserves equalizers
+  - coregular
 
 tags:
   - morphism behavior

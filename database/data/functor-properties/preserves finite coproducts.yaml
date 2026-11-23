@@ -8,6 +8,7 @@ related:
   - preserves coproducts
   - preserves binary coproducts
   - preserves initial objects
+  - right exact
   - cocontinuous
 
 tags:

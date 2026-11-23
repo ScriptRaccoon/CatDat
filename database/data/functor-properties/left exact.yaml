@@ -9,7 +9,10 @@ keywords:
   - lex
 
 related:
+  - preserves finite products
+  - preserves equalizers
   - exact
+  - regular
   - continuous
 
 tags:

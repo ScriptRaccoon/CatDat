@@ -4,7 +4,8 @@ description: 'A symmetric monoidal category is called <i>cartesian</i> when its 
 nlab_link: https://ncatlab.org/nlab/show/cartesian+monoidal+category
 invariant_under_equivalences: true
 dual: cocartesian
-related: []
+related:
+  - closed
 
 tags:
   - misc
