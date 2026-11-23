@@ -21,7 +21,6 @@ invariant_under_equivalences: true
 related:
   - equalizers
   - equalizers of cokernel pairs
-  - kernels
   - effective cocongruences
   - Barr-coexact
 
