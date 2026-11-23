@@ -8,6 +8,7 @@ invariant_under_equivalences: true
 related:
   - finite coproducts
   - binary copowers
+  - pushouts
 
 tags:
   - colimits

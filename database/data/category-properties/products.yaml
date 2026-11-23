@@ -7,6 +7,8 @@ invariant_under_equivalences: true
 
 related:
   - finite products
+  - countable products
+  - ℵ₂-small products
   - powers
   - complete
 

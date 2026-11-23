@@ -6,6 +6,8 @@ dual: balanced
 invariant_under_equivalences: true
 
 related:
+  - mono-regular
+  - epi-regular
   - groupoid
 
 tags:

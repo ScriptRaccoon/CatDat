@@ -6,6 +6,7 @@ invariant_under_equivalences: true
 dual: finitely cocomplete
 related:
   - complete
+  - codistributive
 
 tags:
   - tensor–limit interaction

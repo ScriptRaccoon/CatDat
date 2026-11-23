@@ -8,6 +8,8 @@ invariant_under_equivalences: true
 related:
   - terminal object
   - binary products
+  - countable products
+  - ℵ₂-small products
   - products
   - finite powers
 

@@ -4,7 +4,9 @@ description: 'A symmetric monoidal category is called <i>closed</i> when, for ev
 nlab_link: https://ncatlab.org/nlab/show/closed+monoidal+category
 invariant_under_equivalences: true
 dual: coclosed
-related: []
+related:
+  - cocomplete
+  - cartesian
 
 tags:
   - misc

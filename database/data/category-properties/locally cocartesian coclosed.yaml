@@ -7,6 +7,9 @@ invariant_under_equivalences: true
 
 related:
   - cocartesian coclosed
+  - pushouts
+  - quasicotopos
+  - elementary cotopos
 
 tags:
   - topos theory

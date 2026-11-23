@@ -6,6 +6,7 @@ invariant_under_equivalences: true
 dual: finitely complete
 related:
   - cocomplete
+  - distributive
 
 tags:
   - tensor–colimit interaction

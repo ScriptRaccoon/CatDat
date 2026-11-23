@@ -8,6 +8,7 @@ invariant_under_equivalences: true
 related:
   - binary copowers
   - countable copowers
+  - ℵ₂-small copowers
   - copowers
   - finite coproducts
 

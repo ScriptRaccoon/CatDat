@@ -8,6 +8,7 @@ related:
   - preserves products
   - preserves binary products
   - preserves terminal objects
+  - left exact
   - continuous
 
 tags:

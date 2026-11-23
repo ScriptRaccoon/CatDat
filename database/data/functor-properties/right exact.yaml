@@ -9,7 +9,10 @@ keywords:
   - rex
 
 related:
+  - preserves finite coproducts
+  - preserves coequalizers
   - exact
+  - coregular
   - cocontinuous
 
 tags:

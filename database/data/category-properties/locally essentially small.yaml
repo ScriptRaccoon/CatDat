@@ -9,6 +9,7 @@ invariant_under_equivalences: true
 
 related:
   - locally small
+  - essentially small
 
 tags:
   - size

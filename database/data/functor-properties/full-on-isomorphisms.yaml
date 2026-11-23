@@ -8,6 +8,7 @@ related:
   - full
   - conservative
   - essentially injective
+  - pseudomonic
 
 tags:
   - morphism behavior

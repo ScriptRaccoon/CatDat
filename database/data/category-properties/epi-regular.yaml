@@ -9,6 +9,7 @@ related:
   - conormal
   - all epimorphisms split
   - quotient-trivial
+  - balanced
 
 tags:
   - morphism behavior
