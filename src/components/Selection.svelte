@@ -178,7 +178,7 @@
 			width: 100%;
 		}
 
-		@media (min-width: 600px) {
+		@media (width > 600px) {
 			max-width: 28rem;
 		}
 	}

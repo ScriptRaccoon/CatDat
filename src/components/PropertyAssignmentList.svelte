@@ -182,7 +182,7 @@
 {/if}
 
 <style>
-	@media (min-width: 720px) {
+	@media (width >= 720px) {
 		.two-columns {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
