@@ -8,6 +8,8 @@ description: >-
   <li>For every monomorphism $f : X \to Y$ and every object $T$, the morphism $\id_T \sqcup f : T \sqcup X \to T \sqcup Y$ is a monomorphism.</li>
   </ol>
   Condition (1) implies (2) as a special case, and (2) implies (3) since $\id_T$ is a monomorphism. Conversely, (3) implies (2) since $f_1 \sqcup f_2 = (\id_{Y_1} \sqcup f_2) \circ (f_1 \sqcup \id_{X_2})$ is a composite of two monomorphisms, and (2) implies (1) by induction on the size of the family (the empty coproduct morphism is the identity of the initial object).
+
+  Remark: If $\D$ has this property, $\C$ has finite coproducts, and $U : \C \to \D$ is a faithful functor that preserves monomorphisms and finite coproducts, then $\C$ has this property as well.
 nlab_link: null
 dual: finite-product-stable epimorphisms
 invariant_under_equivalences: true

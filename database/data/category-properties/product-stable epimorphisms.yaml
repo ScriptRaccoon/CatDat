@@ -1,6 +1,9 @@
 id: product-stable epimorphisms
 relation: has
-description: A category has <i>product-stable epimorphisms</i> if it has products and for every family of epimorphisms $(X_i \to Y_i)$ also their product morphism $\prod_i X_i \to \prod_i Y_i$ is an epimorphism. In the context of <a href="/category-property/abelian">abelian</a> categories, this property is also known as AB4<sup>*</sup>.
+description: >-
+  A category has <i>product-stable epimorphisms</i> if it has products and for every family of epimorphisms $(X_i \to Y_i)$ also their product morphism $\prod_i X_i \to \prod_i Y_i$ is an epimorphism. In the context of <a href="/category-property/abelian">abelian</a> categories, this property is also known as AB4<sup>*</sup>.
+
+  Remark: If $\D$ has this property, $\C$ has products, and $U : \C \to \D$ is a faithful functor that preserves epimorphisms and products, then $\C$ has this property as well.
 nlab_link: null
 dual: coproduct-stable monomorphisms
 invariant_under_equivalences: true

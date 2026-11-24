@@ -11,6 +11,7 @@ description: >-
   </ol>
   For a proof of this equivalent characterization, see <a href="https://doi.org/10.1016/0022-4049(93)90035-R">Carboni–Lack–Walters</a>, Section 2.
 
+  Remark: If $\D$ has this property, $\C$ has finite coproducts and pullbacks along coproduct inclusions, and $U : \C \to \D$ is a conservative (e.g. fully faithful) functor that preserves both, then $\C$ has this property as well.
 nlab_link: https://ncatlab.org/nlab/show/extensive+category
 dual: coextensive
 invariant_under_equivalences: true

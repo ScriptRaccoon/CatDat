@@ -7,7 +7,7 @@ description: >-
   $$\textstyle A \to \prod_{f\in\Hom(A,Q)} Q$$
   is an extremal monomorphism for every object $A$, explaining the terminology (see Prop. 5.3 at the <a href="https://ncatlab.org/nlab/show/separator">nLab</a>).
 
-  By definition, $Q$ is an extremal cogenerator if and only if $\{Q\}$ is an <a href="/category-property/extremal_cogenerating_collection">extremal cogenerating collection</a>.
+  By definition, $Q$ is an extremal cogenerator if and only if $\{Q\}$ is an <a href="/category-property/extremal_cogenerating_collection">extremal cogenerating collection</a>. If $U : \C \to \D$ is a fully faithful functor and $U(Q)$ is an extremal cogenerator of $\D$, then $Q$ is an extremal cogenerator of $\C$.
 nlab_link: https://ncatlab.org/nlab/show/separator
 dual: extremal generator
 invariant_under_equivalences: true

@@ -2,6 +2,8 @@ id: all monomorphisms split
 relation: has
 description: >-
   A category <i>has all monomorphisms split</i> if every monomorphism $i : X \to Y$ is split, i.e. there is a morphism $r : Y \to X$ with $r \circ i = \id_X$.
+
+  Remark: If $\D$ has this property and $U : \C \to \D$ is a fully faithful functor that preserves monomorphisms, then $\C$ has this property as well.
 nlab_link: https://ncatlab.org/nlab/show/split+monomorphism
 dual: all epimorphisms split
 invariant_under_equivalences: true

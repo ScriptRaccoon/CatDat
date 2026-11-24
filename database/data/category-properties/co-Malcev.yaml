@@ -5,7 +5,7 @@ description: >-
 
   This terminology is not standard, but we have added it to properly formulate the interesting theorem that the dual of an elementary topos is Malcev, i.e., that every elementary topos is co-Malcev.
 
-  To settle this property, we often use that $\C$ is co-Malcev if and only if the category of representable functors $\C \to \Set^+$ is Malcev.
+  Remark: If $\D$ has this property, $\C$ has finite colimits, and $U : \C \to \D$ is a fully faithful functor that preserves finite colimits, then $\C$ has this property as well. To settle this property, we often use that $\C$ is co-Malcev if and only if the category of representable functors $\C \to \Set^+$ is Malcev.
 nlab_link: null
 dual: Malcev
 invariant_under_equivalences: true

@@ -1,6 +1,9 @@
 id: cofiltered-limit-stable epimorphisms
 relation: has
-description: A category has <i>cofiltered-limit-stable epimorphisms</i> if it has cofiltered limits and for every cofiltered diagram of epimorphisms $(X_i \to Y_i)$ also their limit $\lim_i X_i \to \lim_i Y_i$ is an epimorphism.
+description: >-
+  A category has <i>cofiltered-limit-stable epimorphisms</i> if it has cofiltered limits and for every cofiltered diagram of epimorphisms $(X_i \to Y_i)$ also their limit $\lim_i X_i \to \lim_i Y_i$ is an epimorphism.
+
+  Remark: If $\D$ has this property, $\C$ has cofiltered limits, and $U : \C \to \D$ is a faithful functor that preserves epimorphisms and cofiltered limits, then $\C$ has this property as well.
 nlab_link: null
 dual: filtered-colimit-stable monomorphisms
 invariant_under_equivalences: true
