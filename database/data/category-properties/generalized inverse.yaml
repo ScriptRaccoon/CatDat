@@ -3,6 +3,7 @@ relation: is
 description: >-
   A category is <i>generalized inverse</i> if its dual is generalized direct, i.e., if it contains no infinite sequence of non-isomorphisms of the form
   $$A_0 \to A_1 \to A_2 \to \cdots.$$
+  Equivalently, every sifted diagram is eventually constant, see <a href="/content/eventually-constant-diagrams#lemma_2">Lemma 2 on eventually constant diagrams</a>.
 nlab_link: https://ncatlab.org/nlab/show/direct+category#allowing_automorphisms
 dual: generalized direct
 invariant_under_equivalences: true
