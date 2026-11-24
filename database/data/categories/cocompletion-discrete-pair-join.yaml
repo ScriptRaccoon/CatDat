@@ -20,7 +20,7 @@ description: >-
   \;\; B
   \end{array}$$
   In other words, $\C$ is the <a href="https://ncatlab.org/nlab/show/join+of+categories">join</a> of a large discrete category and the <a href="/category/walking_pair">walking parallel pair</a>.
-  The category in this entry is the free cocompletion $\widehat{\C}$ consisting of <a href="https://ncatlab.org/nlab/show/small+presheaf">small presheaves</a> $\C^{\op} \to \Set$, i.e. those presheaves that can be written as a small colimit of representable functors. See <a href="/content/free-cocompletion">here</a> for a couple of equivalent characterizations that hold for general $\C$, as well as general results on free cocompletions, and see <a href="/content/nice-and-small-presheaves#lemma_1">Lemma 1 on small presheaves</a> for a concrete description of small presheaves in this specific setting.
+  The category in this entry is the free cocompletion $\widehat{\C}$ consisting of <a href="https://ncatlab.org/nlab/show/small+presheaf">small presheaves</a> $\C^{\op} \to \Set$, i.e. those presheaves that can be written as a small colimit of representable functors. See <a href="/content/free-cocompletion#lemma_0">Lemma 0 on the free cocompletion</a> for equivalent characterizations of small presheaves for general $\C$, and <a href="/content/nice-and-small-presheaves#lemma_1">Lemma 1 on small presheaves</a> for a concrete description of small presheaves in this specific setting.
 nlab_link: null
 tags:
   - category theory
