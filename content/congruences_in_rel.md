@@ -7,6 +7,17 @@ description: The classification will prove in particular that the category of se
 
 We will give a classification of congruences in $\Rel$, the [category of sets and relations](/category/Rel). This classification will prove in particular that $\Rel$ has quotients of congruences and that congruences are effective.
 
+::: Proposition 1
+Let $q_1, q_2 : E \rightrightarrows X$ be a congruence in $\Rel$. Then there is a subset $A \subseteq X$ with the following properties:
+
+1. Let $E' \coloneqq X +_A X$ be the pushout in $\Set$ with inclusion maps $i_1, i_2 : X \rightrightarrows E'$. Then the congruence is equivalent to the congruence $E' \rightrightarrows X$ given by the inverse relations of the graphs of $i_1$ and $i_2$.
+2. The congruence has a quotient $X \to A$, given by the relation $\{(a,a) : a \in A\} \subseteq X \times A$.
+3. The congruence is the kernel pair of this quotient.
+
+In particular, $\Rel$ has quotients of congruences, and congruences in $\Rel$ are effective.
+:::
+
+::: Proof
 Let $q_1, q_2 : E \rightrightarrows X$ be a congruence in $\Rel$, and let $i \coloneqq (q_1,q_2) : E \hookrightarrow X \times X$ be the induced monomorphism. Recall that products in $\Rel$ are actually given by disjoint unions at the level of underlying sets. Also, recall that a morphism $R : X \to Y$ in $\Rel$ is a monomorphism if and only if
 $$R_* : P(X) \to P(Y),\, S \mapsto \bigl\{ y\in Y \mid \exists x\in S, (x, y) \in R \bigr\}$$
 is injective, and it is an isomorphism if and only if $R$ is the graph of a bijection $X \to Y$ in $\Set$.
@@ -16,19 +27,15 @@ which must be injective. It must also preserve arbitrary unions and in particula
 
 Since the symmetry morphism $s : E \to E$ satisfies $s^2 = \id$, it must be the graph of an involution $s_0$ on $E$, where $s_0$ is a morphism in $\Set$.
 
-::: Claim 1
-Consider the reflexivity morphism $r : X \to E$. For each $x \in X$, $r_*(\{ x \})$ must be either a singleton or a pair.
-:::
+**Claim 1.** Consider the reflexivity morphism $r : X \to E$. For each $x \in X$, $r_*(\{ x \})$ must be either a singleton or a pair.
 
 To see this, $r_*(\{ x \})$ certainly cannot be empty, or we would have
 $$i_*(r_*(\{ x \})) = (\varnothing, \varnothing) \ne (\{ x \}, \{ x \}).$$
 On the other hand, if we had at least three distinct elements $a,b,c \in r_*(\{ x \})$, then
 $$i_*(\varnothing), i_*(\{ a \}), i_*(\{ a, b \}), i_*(\{ a, b, c \})$$
-would have to be a chain of four distinct subsets of $i_*(r_*(\{ x \})) = (\{ x \}, \{ x \})$, which is impossible.
+would have to be a chain of four distinct subsets of $i_*(r_*(\{ x \})) = (\{ x \}, \{ x \})$, which is impossible. This proves Claim 1.
 
-::: Claim 2
-For each $x \in X$, if $r_*(\{ x \}) = \{ e, f \}$ with $e \ne f$, then $s_0(e) = f$ and $s_0(f) = e$; and we have either that $i_*(\{e\}) = (\varnothing, \{ x \})$ and $i_*(\{f\}) = (\{ x \}, \varnothing)$, or vice versa. Otherwise, if $r_*(\{ x \}) = \{ e \}$, then $s_0(e) = e$; and $i_*(\{ e \}) = (\{ x \}, \{ x \})$.
-:::
+**Claim 2.** For each $x \in X$, if $r_*(\{ x \}) = \{ e, f \}$ with $e \ne f$, then $s_0(e) = f$ and $s_0(f) = e$; and we have either that $i_*(\{e\}) = (\varnothing, \{ x \})$ and $i_*(\{f\}) = (\{ x \}, \varnothing)$, or vice versa. Otherwise, if $r_*(\{ x \}) = \{ e \}$, then $s_0(e) = e$; and $i_*(\{ e \}) = (\{ x \}, \{ x \})$.
 
 To see this, if $r_*(\{ x \}) = \{ e, f \}$ with $e\ne f$, then we must have
 $$\varnothing = i_*(\varnothing) \subsetneqq i_*(\{ e \}) \subsetneqq i_*(\{ e, f \}) = (\{ x \}, \{ x \}),$$
@@ -36,51 +43,44 @@ which means that $i_*(\{ e \})$ is equal to either $(\{ x \}, \varnothing)$ or $
 $$i_*(\{ s_0(e) \}) = i_*(s_*(\{ e \})) = i_*(\{ f \})$$
 in either choice of order, by injectivity of $i_*$ we must have that $s_0(e) = f$. Similarly, $s_0(f) = e$. Otherwise, if $r_*(\{ x \}) = \{ e \}$ is a singleton,
 $$i_*(\{ s_0(e) \}) = i_*(s_*(\{ e \})) = i_*(\{ e \}),$$
-so injectivity of $i_*$ gives $s_0(e) = e$.
+so injectivity of $i_*$ gives $s_0(e) = e$. This proves Claim 2.
 
-::: Claim 3
-For $x\in X$, suppose that $r_*(\{ x \}) = \{ e \}$. Then $\{ x \} \not\sim \varnothing$.
-:::
+**Claim 3.** For $x\in X$, suppose that $r_*(\{ x \}) = \{ e \}$. Then $\{ x \} \not\sim \varnothing$.
 
 If we did have $\{ x \} \sim \varnothing$, then there would have to be some subset of $E$ which maps to $(\varnothing, \{ x \})$. Similarly to previous steps, injectivity of $i_*$ implies the subset is non-empty, and if the subset had two distinct elements $a,b$, then we would have
 $$i_*(\varnothing) \subsetneqq i_*(\{a\}) \subsetneqq i_*(\{a,b\}) \subseteq (\varnothing, \{ x \}),$$
-giving a contradiction. Therefore, this subset of $E$ would have to be a singleton $\{ f_1 \}$. Similarly, $(\{ x \}, \varnothing)$ would have to be the image of a singleton $\{ f_2 \}$ with $f_1 \ne f_2$. But then $i_*(\{ f_1, f_2 \}) = (\{ x \}, \{ x \}) = i_*(\{ e \})$, contradicting the injectivity of $i_*$.
+giving a contradiction. Therefore, this subset of $E$ would have to be a singleton $\{ f_1 \}$. Similarly, $(\{ x \}, \varnothing)$ would have to be the image of a singleton $\{ f_2 \}$ with $f_1 \ne f_2$. But then $i_*(\{ f_1, f_2 \}) = (\{ x \}, \{ x \}) = i_*(\{ e \})$, contradicting the injectivity of $i_*$. This proves Claim 3.
 
-::: Claim 4
-For any $e \in E$, $i_*(\{ e \})$ is of one of the forms $(\{ x \}, \varnothing)$, $(\varnothing, \{ x \})$, or $(\{ x \}, \{ x \})$. In the first two cases, $s_0(e) \ne e$ and $\{ x \} \sim \varnothing$; and in the third case, $s_0(e) = e$ and $\{ x \} \not\sim \varnothing$.
-:::
+**Claim 4.** For any $e \in E$, $i_*(\{ e \})$ is of one of the forms $(\{ x \}, \varnothing)$, $(\varnothing, \{ x \})$, or $(\{ x \}, \{ x \})$. In the first two cases, $s_0(e) \ne e$ and $\{ x \} \sim \varnothing$; and in the third case, $s_0(e) = e$ and $\{ x \} \not\sim \varnothing$.
 
 To show this, let $e\in E$, and suppose that $i_*(\{ e \}) = (S, T)$. Then $i_*(\{ s_0(e) \}) = (T, S)$, so
 $$\textstyle i_*(\{ e, s_0(e) \}) = (S \cup T, S\cup T) = i_*\bigl(\bigcup_{x\in S\cup T} r_*(\{ x \})\bigr).$$
 It follows that
 $$\textstyle\bigcup_{x\in S\cup T} r_*(\{ x \}) = \{ e, s_0(e) \}.$$
-Therefore, $e \in r_*(\{ x \})$ for some $x \in X$, and by Claims 2 and 3, we get the desired conclusion.
+Therefore, $e \in r_*(\{ x \})$ for some $x \in X$, and by Claims 2 and 3, we get the desired conclusion. This proves Claim 4.
 
-::: Claim 5
-For any $S, T \in P(X)$, $S \sim T$ if and only if $S\cap A = T\cap A$, where $A$ is the set of $x\in X$ such that $\{ x \} \not\sim \varnothing$.
-:::
+**Claim 5.** For any $S, T \in P(X)$, $S \sim T$ if and only if $S\cap A = T\cap A$, where $A$ is the set of $x\in X$ such that $\{ x \} \not\sim \varnothing$.
 
 For the forward direction, suppose $(S, T) = i_*(U)$ for $U \subseteq E$. Then
 $$\textstyle (S, T) = \bigcup_{e\in U} i_*(\{ e \}).$$
-The set $i_*(\{ e \})$ satisfies the relation of having equal intersections with $A$ for each $e\in E$ in any case from [Claim 4](#claim_4); and this relation respects unions. For the reverse implication, whenever $x\notin A$, we have $\{ x \} \sim \varnothing$. Therefore, since
+The set $i_*(\{ e \})$ satisfies the relation of having equal intersections with $A$ for each $e\in E$ in any case from Claim 4; and this relation respects unions. For the reverse implication, whenever $x\notin A$, we have $\{ x \} \sim \varnothing$. Therefore, since
 $$\textstyle S = (S \cap A) \cup \bigcup_{x\in S \setminus A} \{ x \},$$
 we must have
 $$\textstyle S \sim (S \cap A) \cup \bigcup_{x\in S \setminus A} \varnothing = S \cap A.$$
-Similarly, $T \sim T \cap A$, so if $S\cap A = T\cap A$, then $S \sim T$.
+Similarly, $T \sim T \cap A$, so if $S\cap A = T\cap A$, then $S \sim T$. This proves Claim 5.
 
-::: Claim 6
-Let $E'$ be the set pushout $X +_A X$ with inclusion maps $i_1, i_2 : X \rightrightarrows E'$. Define a morphism $E' \to X \times X$ in $\Rel$ given by the inverse relation of the graph $i_1 + i_2 : X + X \to E'$. Then the congruences $E$ and $E'$ are equivalent.
-:::
+**Claim 6.** Let $E'$ be the set pushout $X +_A X$ with inclusion maps $i_1, i_2 : X \rightrightarrows E'$. Define a morphism $E' \to X \times X$ in $\Rel$ given by the inverse relation of the graph $i_1 + i_2 : X + X \to E'$. Then the congruences $E$ and $E'$ are equivalent.
 
-We can define a bijection $E \to E'$ as follows: let $e \in E$. If $i_*(\{ e \}) = (\{ x \}, \varnothing)$ with $x\notin A$, then send $e \mapsto i_1(x)$; if $i_*(\{ e \}) = (\varnothing, \{ x \})$ with $x\notin A$, then send $e \mapsto i_2(x)$; and if $i_*(\{ e \}) = (\{ x \}, \{ x \})$ with $x \in A$, then send $e \mapsto i_1(x) = i_2(x)$. Transferring the congruence to $E'$, we see that it is exactly of the given form.
+We can define a bijection $E \to E'$ as follows: let $e \in E$. If $i_*(\{ e \}) = (\{ x \}, \varnothing)$ with $x\notin A$, then send $e \mapsto i_1(x)$; if $i_*(\{ e \}) = (\varnothing, \{ x \})$ with $x\notin A$, then send $e \mapsto i_2(x)$; and if $i_*(\{ e \}) = (\{ x \}, \{ x \})$ with $x \in A$, then send $e \mapsto i_1(x) = i_2(x)$. Transferring the congruence to $E'$, we see that it is exactly of the given form. This proves Claim 6.
 
 Now, without loss of generality we will assume from now on that the congruence is of exactly this form.
 
 With this classification, we can show that $A$ is a quotient for the congruence, with quotient morphism $\Delta_A \subseteq A \times A \subseteq X \times A$. In fact, we can define a morphism $\Delta_A^\circ : A \to X$ as the inverse relation to $\Delta_A$, and a morphism $X \to E$ as the graph of $i_1$. It is then straightforward to verify that these maps together make $A$ a split coequalizer of $q_1$ and $q_2$.
 
-We can also conclude that $E$ is the kernel pair of this quotient, by the general result below.
+We can also conclude that $E$ is the kernel pair of this quotient by [Lemma 2](#lemma_2) below.
+:::
 
-::: Lemma
+::: Lemma 2
 Suppose we have a congruence $q_1, q_2 : E \rightrightarrows X$ with a contractible coequalizer
 $$ E \, \overset{q_1}{\underset{q_2}{\rightrightarrows}} \, X \overset{e}{\rightarrow} Q $$
 with maps in the reverse direction $s : Q \to X$ and $t : X \to E$. Then $E$ is the kernel pair of this quotient, i.e. we have a pullback square
@@ -88,7 +88,7 @@ with maps in the reverse direction $s : Q \to X$ and $t : X \to E$. Then $E$ is 
 $$
 \begin{CD}
 E @> q_1 >> X \\
-@V q_2 VV @V e VV \\
+@V q_2 VV @VV e V \\
 X @> e >> Q.
 \end{CD}
 $$
