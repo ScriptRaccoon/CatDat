@@ -39,7 +39,8 @@
   conclusions:
     - generalized variety
     - finitely accessible
-  proof: This follows from <a href="/content/sifted-colimits-in-groupoids#lemma_5">Lemma 5</a>, <a href="/content/sifted-colimits-in-groupoids#corollary_3">Corollary 3</a>, and <a href="/content/sifted-colimits-in-groupoids#corollary_4">Corollary 4</a> on sifted colimits in groupoids.
+  proof: >-
+    Let $\C$ be an essentially small generalized inverse category. Since all properties involved are invariant under equivalences, we may assume that $\C$ is small. By <a href="/content/eventually-constant-diagrams#lemma_1">Lemma 1</a> and <a href="/content/eventually-constant-diagrams#lemma_2">Lemma 2</a> on eventually constant diagrams, $\C$ has sifted colimits, and every functor on $\C$ preserves them. In particular, for every object $X \in \C$, the functor $\Hom(X,-) : \C \to \Set$ preserves sifted colimits, i.e. $X$ is strongly finitely presentable. Since filtered categories are sifted, $\C$ has filtered colimits, and every object is finitely presentable. Thus, for both claims, we may choose the set of all objects of $\C$ as the required collection: every object $X \in \C$ is the colimit of the diagram $\1 \to \C$ with value $X$, and the trivial category $\1$ is filtered and hence sifted.
 
 - id: generalized_variety_left_cancellative
   assumptions:
