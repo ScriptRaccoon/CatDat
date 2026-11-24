@@ -14,7 +14,7 @@ const PROOF_LINK_REGEX = /<a\s+href="(\/[^"]*\?proof=[^"]*)"/g
  * its property, so the scroll reset by SvelteKit is turned off.
  * Otherwise, the page jumps to the top before scrolling to the property.
  */
-function keep_scroll_on_proof_links(txt: string): string {
+export function keep_scroll_on_proof_links(txt: string): string {
 	return txt.replace(PROOF_LINK_REGEX, '<a href="$1" data-sveltekit-reset="false"')
 }
 

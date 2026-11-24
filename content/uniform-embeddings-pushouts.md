@@ -5,7 +5,7 @@ description: In the category of uniform spaces, uniform embeddings are stable un
 
 # Pushouts of uniform embeddings
 
-In this page, we prove that in the [category of uniform spaces](/category/Unif), regular monomorphisms are stable under pushouts. Recall that the regular monomorphisms in $\Unif$ are precisely the _uniform embeddings_, i.e. the injective uniform maps $i : A \hookrightarrow X$ such that every entourage of $A$ is the preimage of an entourage of $X$.
+In this page, we prove that in the [category of uniform spaces](/category/Unif), regular monomorphisms are stable under pushouts. Recall that the regular monomorphisms in $\Unif$ are precisely the _uniform embeddings_, i.e. the injective uniform maps $i : A \hookrightarrow X$ such that every entourage of $A$ is the preimage of an entourage of $X$ (<a href="/category/Unif?proof=regular_monomorphism" data-allow-deduced>proof</a>).
 
 For topological spaces, the analogous result is rather easy, since the topology of a pushout is described directly by the preimages of open sets. For uniform spaces, the uniform structure of a pushout is more complicated, since the composition axiom of a uniform structure forces us to consider chains of entourages. The following lemma allows us to control such chains.
 
@@ -41,7 +41,7 @@ It follows that $(s_0,s_k) \in V_{N+1} \circ V_{N+1} \circ V_{N+1} \subseteq V_N
 
 For the rest of this page, we fix a uniform embedding $i : A \hookrightarrow X$ and a uniform map $f : A \to Y$. Let $P \coloneqq Y \sqcup_A X$ be their pushout in $\Unif$, with canonical maps $j : Y \to P$ and $u : X \to P$, so that $u \circ i = j \circ f$. Our goal is to show that $j$ is a uniform embedding.
 
-As explained in the proof of cocompleteness on the page of [$\Unif$](/category/Unif), the underlying set of $P$ is the pushout of the underlying sets, and $P$ carries the finest uniform structure that makes $j$ and $u$ uniform. Since $i$ is injective, we may identify the underlying set of $P$ with $Y \sqcup (X \setminus i(A))$, where $j$ is the inclusion of $Y$, $u(x) = x$ for $x \in X \setminus i(A)$, and $u(i(a)) = f(a)$ for $a \in A$. From this description, we read off the following facts, which we will use below:
+By the <a href="/category/Unif?proof=cocomplete">construction</a> of colimits in $\Unif$, the underlying set of $P$ is the pushout of the underlying sets, and $P$ carries the finest uniform structure that makes $j$ and $u$ uniform. Since $i$ is injective, we may identify the underlying set of $P$ with $Y \sqcup (X \setminus i(A))$, where $j$ is the inclusion of $Y$, $u(x) = x$ for $x \in X \setminus i(A)$, and $u(i(a)) = f(a)$ for $a \in A$. From this description, we read off the following facts, which we will use below:
 
 1. The map $j$ is injective.
 2. For $x \in X$, we have $u(x) \in j(Y)$ if and only if $x \in i(A)$.

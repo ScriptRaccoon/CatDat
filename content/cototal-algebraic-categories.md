@@ -72,7 +72,7 @@ The union of a chain of congruences on $A$ is again a congruence since all opera
 
 ## Actions of large groups
 
-The implication (1) $\implies$ (4) of [Proposition 1](#proposition_1) does not extend to algebraic theories with a large collection of operations. For example, let $I$ be a collection that is not essentially small and $F(I)$ the free group on $I$, constructed in the universe of collections. The category $F(I){-}\Set$ is algebraic with a large collection of unary operations, namely the elements of $I$ and their inverses. It has no cogenerating collection, as shown on its [detail page](</category/F(I)-Set>), but it is cototal by the following result.
+The implication (1) $\implies$ (4) of [Proposition 1](#proposition_1) does not extend to algebraic theories with a large collection of operations. For example, let $I$ be a collection that is not essentially small and $F(I)$ the free group on $I$, constructed in the universe of collections. The category $F(I){-}\Set$ is algebraic with a large collection of unary operations, namely the elements of $I$ and their inverses. It has no cogenerating collection (<a href="/category/F(I)-Set?proof=cogenerating_collection" data-allow-deduced>proof</a>), but it is cototal by the following result.
 
 ::: Proposition 3
 Let $G$ be a possibly large group, i.e., a group whose underlying collection is not necessarily essentially small. Then the category $G{-}\Set$ of sets with an action of $G$ is [cototal](/category-property/cototal).
