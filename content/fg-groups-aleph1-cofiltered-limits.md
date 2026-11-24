@@ -73,11 +73,11 @@ We construct $\Delta_\beta$ and the homomorphisms $\pi_{\alpha\beta},\iota_{\alp
 
 We start with $\Delta_0 \coloneqq G$ and $\pi_{00} \coloneqq \iota_{00} \coloneqq \id_G$.
 
-For the successor step, let $\Delta_{\beta+1} \coloneqq \Delta_\beta \times G$, and let $(\pi_{\beta,\beta+1},\iota_{\beta,\beta+1})$ be the good pair from Lemma 1. For $\alpha < \beta$ we define
+For the successor step, let $\Delta_{\beta+1} \coloneqq \Delta_\beta \times G$, and let $(\pi_{\beta,\beta+1},\iota_{\beta,\beta+1})$ be the good pair from [Lemma 1](#lemma_1). For $\alpha < \beta$ we define
 $$\pi_{\alpha,\beta+1} \coloneqq \pi_{\alpha\beta} \circ \pi_{\beta,\beta+1}, \qquad \iota_{\alpha,\beta+1} \coloneqq \iota_{\beta,\beta+1} \circ \iota_{\alpha\beta}.$$
-Then (1) clearly holds, and (2) follows from Lemma 2.
+Then (1) clearly holds, and (2) follows from [Lemma 2](#lemma_2).
 
-For the limit step, let $\lambda < \omega_1$ be a limit ordinal. Since $\lambda$ is countable, we may choose a cofinal sequence $\alpha_0 < \alpha_1 < \cdots$ in $\lambda$. First, we define good pairs $(\pi_{\alpha_n\lambda},\iota_{\alpha_n\lambda}) : \Delta_\lambda \rightleftarrows \Delta_{\alpha_n}$ by recursion on $n$. Let $\Delta_\lambda \coloneqq \Delta_{\alpha_0} \times G$, and let $(\pi_{\alpha_0\lambda},\iota_{\alpha_0\lambda})$ be the good pair from Lemma 1. If $(\pi_{\alpha_n\lambda},\iota_{\alpha_n\lambda})$ has been defined, we apply Lemma 3 to this good pair and to the good pair $(\pi_{\alpha_n\alpha_{n+1}},\iota_{\alpha_n\alpha_{n+1}}) : \Delta_{\alpha_{n+1}} \rightleftarrows \Delta_{\alpha_n}$. This gives a good pair $(\pi_{\alpha_{n+1}\lambda},\iota_{\alpha_{n+1}\lambda}) : \Delta_\lambda \rightleftarrows \Delta_{\alpha_{n+1}}$ with
+For the limit step, let $\lambda < \omega_1$ be a limit ordinal. Since $\lambda$ is countable, we may choose a cofinal sequence $\alpha_0 < \alpha_1 < \cdots$ in $\lambda$. First, we define good pairs $(\pi_{\alpha_n\lambda},\iota_{\alpha_n\lambda}) : \Delta_\lambda \rightleftarrows \Delta_{\alpha_n}$ by recursion on $n$. Let $\Delta_\lambda \coloneqq \Delta_{\alpha_0} \times G$, and let $(\pi_{\alpha_0\lambda},\iota_{\alpha_0\lambda})$ be the good pair from [Lemma 1](#lemma_1). If $(\pi_{\alpha_n\lambda},\iota_{\alpha_n\lambda})$ has been defined, we apply [Lemma 3](#lemma_3) to this good pair and to the good pair $(\pi_{\alpha_n\alpha_{n+1}},\iota_{\alpha_n\alpha_{n+1}}) : \Delta_{\alpha_{n+1}} \rightleftarrows \Delta_{\alpha_n}$. This gives a good pair $(\pi_{\alpha_{n+1}\lambda},\iota_{\alpha_{n+1}\lambda}) : \Delta_\lambda \rightleftarrows \Delta_{\alpha_{n+1}}$ with
 $$\pi_{\alpha_n\alpha_{n+1}} \circ \pi_{\alpha_{n+1}\lambda} = \pi_{\alpha_n\lambda}, \qquad \iota_{\alpha_{n+1}\lambda} \circ \iota_{\alpha_n\alpha_{n+1}} = \iota_{\alpha_n\lambda}.$$
 By induction, using (1) below $\lambda$, we get
 $$\pi_{\alpha_n\alpha_m} \circ \pi_{\alpha_m\lambda} = \pi_{\alpha_n\lambda}, \qquad \iota_{\alpha_m\lambda} \circ \iota_{\alpha_n\alpha_m} = \iota_{\alpha_n\lambda}$$
@@ -87,7 +87,7 @@ Now, for an arbitrary $\alpha < \lambda$, choose some $n$ with $\alpha < \alpha_
 $$\pi_{\alpha\lambda} \coloneqq \pi_{\alpha\alpha_n} \circ \pi_{\alpha_n\lambda}, \qquad \iota_{\alpha\lambda} \coloneqq \iota_{\alpha_n\lambda} \circ \iota_{\alpha\alpha_n}.$$
 Also, let $\pi_{\lambda\lambda} \coloneqq \iota_{\lambda\lambda} \coloneqq \id$. By the previous equations and (1) below $\lambda$, this definition does not depend on the choice of $n$, and it agrees with the previous definition when $\alpha = \alpha_m$. For (1), let $\alpha \leq \beta < \lambda$ and choose $n$ with $\beta < \alpha_n$. Then
 $$\pi_{\alpha\beta} \circ \pi_{\beta\lambda} = \pi_{\alpha\beta} \circ \pi_{\beta\alpha_n} \circ \pi_{\alpha_n\lambda} = \pi_{\alpha\alpha_n} \circ \pi_{\alpha_n\lambda} = \pi_{\alpha\lambda},$$
-and similarly $\iota_{\beta\lambda} \circ \iota_{\alpha\beta} = \iota_{\alpha\lambda}$. For (2), the pair $(\pi_{\alpha\lambda},\iota_{\alpha\lambda})$ is the composite of the good pairs $(\pi_{\alpha_n\lambda},\iota_{\alpha_n\lambda})$ and $(\pi_{\alpha\alpha_n},\iota_{\alpha\alpha_n})$ in the sense of Lemma 2, hence it is good.
+and similarly $\iota_{\beta\lambda} \circ \iota_{\alpha\beta} = \iota_{\alpha\lambda}$. For (2), the pair $(\pi_{\alpha\lambda},\iota_{\alpha\lambda})$ is the composite of the good pairs $(\pi_{\alpha_n\lambda},\iota_{\alpha_n\lambda})$ and $(\pi_{\alpha\alpha_n},\iota_{\alpha\alpha_n})$ in the sense of [Lemma 2](#lemma_2), hence it is good.
 :::
 
 By (1), we obtain a diagram $\Delta : \omega_1^{\op} \to \Grp$ with $\alpha \mapsto \Delta_\alpha$ and $(\alpha \leq \beta) \mapsto \pi_{\alpha\beta}$. The homomorphisms $\iota_{\alpha\beta}$ are not part of the diagram; they are only used to produce elements of its limit.
@@ -125,5 +125,5 @@ The full subcategory of finitely generated groups $\Grp_\fg \subseteq \Grp$ is n
 :::
 
 ::: Proof
-The diagram $\Delta : \omega_1^{\op} \to \Grp$ is $\aleph_1$-cofiltered, and each $\Delta_\alpha \cong G$ is finitely generated. But its limit is uncountable by Proposition 5, whereas every finitely generated group is countable.
+The diagram $\Delta : \omega_1^{\op} \to \Grp$ is $\aleph_1$-cofiltered, and each $\Delta_\alpha \cong G$ is finitely generated. But its limit is uncountable by [Proposition 5](#proposition_5), whereas every finitely generated group is countable.
 :::

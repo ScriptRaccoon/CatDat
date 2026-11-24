@@ -51,7 +51,7 @@ Let $\S_s$ be the collection of subdirectly irreducible $\T$-algebras $A$ such t
 $$\alpha^A_A(A,a,b) = a \neq b = \alpha^B_A(A,a,b).$$
 Thus, $A \mapsto \alpha^A$ induces an injective map from the collection of isomorphism classes in $\S_s$ to $\Hom(F,U_s)$, which is essentially small by assumption. Hence, the isomorphism classes in $\S_s$ form an essentially small collection. Since every subdirectly irreducible $\T$-algebra $A$ lies in some $\S_s$ (because $\mu_A$ is non-identity) and $S$ is a set, $\Alg(\T)$ is residually small.
 
-(3) $\implies$ (4): By Proposition 2 below, representatives of the isomorphism classes of subdirectly irreducible $\T$-algebras form a cogenerating collection.
+(3) $\implies$ (4): By [Proposition 2](#proposition_2) below, representatives of the isomorphism classes of subdirectly irreducible $\T$-algebras form a cogenerating collection.
 
 (4) $\implies$ (1): The category $\Alg(\T)$ is complete, locally small, and well-powered (since monomorphisms are injective, subobjects correspond to subalgebras). Therefore, the claim follows from the dual of [this result](/category-implication/cocomplete_well-copowered_generator_implies_total).
 :::
@@ -72,7 +72,7 @@ The union of a chain of congruences on $A$ is again a congruence since all opera
 
 ## Actions of large groups
 
-The implication (1) $\implies$ (4) of Proposition 1 does not extend to algebraic theories with a large collection of operations. For example, let $I$ be a collection that is not essentially small and $F(I)$ the free group on $I$, constructed in the universe of collections. The category $F(I){-}\Set$ is algebraic with a large collection of unary operations, namely the elements of $I$ and their inverses. It has no cogenerating collection, as shown on its [detail page](</category/F(I)-Set>), but it is cototal by the following result.
+The implication (1) $\implies$ (4) of [Proposition 1](#proposition_1) does not extend to algebraic theories with a large collection of operations. For example, let $I$ be a collection that is not essentially small and $F(I)$ the free group on $I$, constructed in the universe of collections. The category $F(I){-}\Set$ is algebraic with a large collection of unary operations, namely the elements of $I$ and their inverses. It has no cogenerating collection, as shown on its [detail page](</category/F(I)-Set>), but it is cototal by the following result.
 
 ::: Proposition 3
 Let $G$ be a possibly large group, i.e., a group whose underlying collection is not necessarily essentially small. Then the category $G{-}\Set$ of sets with an action of $G$ is [cototal](/category-property/cototal).

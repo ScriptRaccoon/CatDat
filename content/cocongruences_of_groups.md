@@ -107,7 +107,7 @@ Every cocongruence in the category $\Grp$ is effective.
 :::
 
 ::: Proof
-We know that $\Grp$ is balanced (since it is mono-regular, see [here](/category/Grp) for the proofs) and has equalizers. Moreover, it has good pushouts of monomorphisms by Proposition 1. Thus, the claim follows from Proposition 2.
+We know that $\Grp$ is balanced (since it is mono-regular, see [here](/category/Grp) for the proofs) and has equalizers. Moreover, it has good pushouts of monomorphisms by [Proposition 1](#proposition_1). Thus, the claim follows from [Proposition 2](#proposition_2).
 :::
 
 ::: Lemma 4
@@ -122,4 +122,4 @@ $$S(B) \sqcup_{S(A)} S(C) \to S(B') \sqcup_{S(A')} S(C')$$
 is a monomorphism. Since $S$ preserves pushouts of pairs of monomorphisms, it is the image under $S$ of the induced morphism $B \sqcup_A C \to B' \sqcup_{A'} C'$. Since $S$ is faithful, it reflects monomorphisms. Hence, $B \sqcup_A C \to B' \sqcup_{A'} C'$ is a monomorphism.
 :::
 
-For example, Lemma 4 is used [here](/category/GrpAct) to show that the category $\GrpAct$ of group actions has good pushouts of monomorphisms, and hence effective cocongruences.
+For example, [Lemma 4](#lemma_4) is used to show that the [category of group actions](/category/GrpAct) has good pushouts of monomorphisms, and hence effective cocongruences.

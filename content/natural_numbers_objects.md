@@ -37,7 +37,7 @@ Write $\Psi(n) = (\Psi_0(n),\Psi_1(n))$, where $\Psi_0 : N \to N$ and $\Psi_1 : 
 The uniqueness in the universal property of $(N,z,s)$ implies $\Psi_0 = \id_N$. Therefore, $\Phi \coloneqq \Psi_1$ is the unique morphism $\Phi : N \to X$ satisfying $\Phi(z)=a$ and $\Phi(s(n)) = g(n,\Phi(n))$.
 :::
 
-The next result appears in [Johnstone](https://ncatlab.org/nlab/show/Sketches+of+an+Elephant), Part A, Lemma 2.5.5. Our proof is slightly more concise because we have extracted Lemma 1.
+The next result appears in [Johnstone](https://ncatlab.org/nlab/show/Sketches+of+an+Elephant), Part A, Lemma 2.5.5. Our proof is slightly more concise because we have extracted [Lemma 1](#lemma_1).
 
 ::: Lemma 2
 Let $(N,z,s)$ be a natural numbers object in a category with finite products. Then
@@ -46,7 +46,7 @@ is a coproduct cocone. Thus, $N \cong 1 \sqcup N$.
 :::
 
 ::: Proof
-Let $a : 1 \to X$ and $b : N \to X$ be morphisms. We need to show that there is a unique morphism $c : N \to X$ satisfying $c(z) = a$ and $c(s(n)) = b(n)$. This follows by applying Lemma 1 to the morphism $g : N \times X \to X$ defined by $g(n,x) \coloneqq b(n)$.
+Let $a : 1 \to X$ and $b : N \to X$ be morphisms. We need to show that there is a unique morphism $c : N \to X$ satisfying $c(z) = a$ and $c(s(n)) = b(n)$. This follows by applying [Lemma 1](#lemma_1) to the morphism $g : N \times X \to X$ defined by $g(n,x) \coloneqq b(n)$.
 :::
 
 Next, we will check when the terminal object $1$ itself is a natural numbers object. In that case, $z : 1 \to 1$ and $s : 1 \to 1$ are necessarily equal to $\id_1$.
@@ -106,7 +106,7 @@ $$\alpha \circ \Phi \circ (\id_A \times s) = \alpha \circ g \circ \Phi = (\id_A 
 This finishes the proof.
 :::
 
-_Remark._ Actually, the mentioned [result](/category-implication/parametrized_nno_criterion) and Lemma 4 can be combined into an equivalent characterization as follows: In a category with finite products and countable copowers, the NNO (which exists, see [here](/category-implication/nno_criterion)) is a parametrized NNO if and only if for all objects $A$ the canonical morphism
+_Remark._ Actually, the mentioned [result](/category-implication/parametrized_nno_criterion) and [Lemma 4](#lemma_4) can be combined into an equivalent characterization as follows: In a category with finite products and countable copowers, the NNO (which exists, see [here](/category-implication/nno_criterion)) is a parametrized NNO if and only if for all objects $A$ the canonical morphism
 $$\textstyle \coprod_{n \in \IN} A = \coprod_{n \in \IN} (A \times 1) \to A \times \coprod_{n \in \IN} 1$$
 is an isomorphism. This is the precise connection to countable distributivity.
 

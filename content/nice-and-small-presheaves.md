@@ -69,7 +69,7 @@ $$f : (A,a_i) \to (B,b_i), \quad g : (A,a_{i+1}) \to (B,b_i),$$
 respectively.
 :::
 
-We can also characterize the presheaves $G$ that are quotients of small presheaves (called _petty presheaves_ in the literature). By Lemma 1, a necessary condition is that $u_X^* : G(A) \to G(X)$ is surjective for "almost all" sets $X$. It turns out that this condition is sufficient as well.
+We can also characterize the presheaves $G$ that are quotients of small presheaves (called _petty presheaves_ in the literature). By [Lemma 1](#lemma_1), a necessary condition is that $u_X^* : G(A) \to G(X)$ is surjective for "almost all" sets $X$. It turns out that this condition is sufficient as well.
 
 ::: Lemma 2
 Let $G$ be a presheaf on $\C$ such that there is a set of sets $S$ with the property that $u_X^* : G(A) \to G(X)$ is surjective for all sets $X \notin S$. Then there is a small presheaf $F$ with an epimorphism of presheaves $F \to G$.

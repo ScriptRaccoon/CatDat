@@ -17,7 +17,7 @@ We identify presheaves on $BM$ with right $M$-sets, i.e. sets $X$ with a map $X 
 
 Let $D : \I \to BM$ be a diagram indexed by a small $\aleph_1$-filtered category $\I$. Its colimit $W$ in the category of right $M$-sets is the union of the cyclic sub-$M$-sets $e_i M$, where $e_i \in W$ is the image of $1 \in M$ under the colimit map at $i \in \I$. The diagram $D$ has a colimit in $BM$ which is preserved by $\Hom(*,-)$ if and only if $W$ is isomorphic to $M$.
 
-Each $e_i M$ is a quotient of $M$. Along the diagram, more and more elements of $e_i M$ get identified, and the sub-$M$-sets $e_i M$ grow. We show that both processes stop at some stage. Since $\I$ is $\aleph_1$-filtered, any countably many stages are dominated by a single one, and this is where the hypotheses come in. When $M$ is left cancellative, no identifications are made at all. When $M$ is countable, only countably many identifications have to be made in $e_i M$, so they are all made at a single stage. In both cases, $e_i M$ is isomorphic to a principal right ideal of $M$ (Lemma 1). Then the ascending chain condition implies that the sub-$M$-sets $e_i M$ stop growing, i.e. that $W = e_k M$ for some $k \in \I$ (Lemma 2). Once both processes have stopped, the next stage provides a section of the projection $M \to W$, $a \mapsto e_k a$, so that $W$ is a retract of $M$ (Proposition 3). Finally, since $BM$ is Cauchy complete, $W$ is isomorphic to $M$ (Theorem 4).
+Each $e_i M$ is a quotient of $M$. Along the diagram, more and more elements of $e_i M$ get identified, and the sub-$M$-sets $e_i M$ grow. We show that both processes stop at some stage. Since $\I$ is $\aleph_1$-filtered, any countably many stages are dominated by a single one, and this is where the hypotheses come in. When $M$ is left cancellative, no identifications are made at all. When $M$ is countable, only countably many identifications have to be made in $e_i M$, so they are all made at a single stage. In both cases, $e_i M$ is isomorphic to a principal right ideal of $M$ ([Lemma 1](#lemma_1)). Then the ascending chain condition implies that the sub-$M$-sets $e_i M$ stop growing, i.e. that $W = e_k M$ for some $k \in \I$ ([Lemma 2](#lemma_2)). Once both processes have stopped, the next stage provides a section of the projection $M \to W$, $a \mapsto e_k a$, so that $W$ is a retract of $M$ ([Proposition 3](#proposition_3)). Finally, since $BM$ is Cauchy complete, $W$ is isomorphic to $M$ ([Theorem 4](#theorem_4)).
 
 ## Proofs
 
@@ -48,7 +48,7 @@ Assume that $M$ is left cancellative or countable, and that $M$ satisfies the as
 ::: Proof
 Let $P$ be the set of all sub-$M$-sets $e_i M$ of $W$ with $i \in \I$, partially ordered by inclusion. First, we show that every ascending chain
 $$e_{i_0} M \subseteq e_{i_1} M \subseteq e_{i_2} M \subseteq \cdots$$
-in $P$ becomes stationary. Since $\I$ is $\aleph_1$-filtered, there are an object $j$ and morphisms $i_n \to j$ for all $n \in \IN$. Then $e_{i_n} \in e_j M$, so that $e_{i_n} = e_j a_n$ for some $a_n \in M$. Choose a morphism $u : j \to j'$ as in Lemma 1, and let $\varphi : e_j M \to D(u) M$ be the isomorphism $e_j a \mapsto D(u) a$. Then
+in $P$ becomes stationary. Since $\I$ is $\aleph_1$-filtered, there are an object $j$ and morphisms $i_n \to j$ for all $n \in \IN$. Then $e_{i_n} \in e_j M$, so that $e_{i_n} = e_j a_n$ for some $a_n \in M$. Choose a morphism $u : j \to j'$ as in [Lemma 1](#lemma_1), and let $\varphi : e_j M \to D(u) M$ be the isomorphism $e_j a \mapsto D(u) a$. Then
 $$\varphi(e_{i_n} M) = \varphi(e_j a_n M) = D(u) a_n M.$$
 These sets form an ascending chain of principal right ideals of $M$, which becomes stationary by assumption. Since $\varphi$ is injective, the chain $(e_{i_n} M)_{n \in \IN}$ becomes stationary as well.
 
@@ -60,7 +60,7 @@ Assume that $M$ is left cancellative or countable, and that $M$ satisfies the as
 :::
 
 ::: Proof
-Choose $k \in \I$ with $W = e_k M$ as in Lemma 2, and then a morphism $u : k \to l$ as in Lemma 1. Since $e_l \in W = e_k M$, there is some $x \in M$ with $e_l = e_k x$. Let $e \coloneqq x D(u)$. We define $\pi : M \to W$ by $\pi(a) \coloneqq e_k a$ and $\iota : W \to M$ by
+Choose $k \in \I$ with $W = e_k M$ as in [Lemma 2](#lemma_2), and then a morphism $u : k \to l$ as in [Lemma 1](#lemma_1). Since $e_l \in W = e_k M$, there is some $x \in M$ with $e_l = e_k x$. Let $e \coloneqq x D(u)$. We define $\pi : M \to W$ by $\pi(a) \coloneqq e_k a$ and $\iota : W \to M$ by
 $$\iota(e_k a) \coloneqq e a = x D(u) a.$$
 This is well-defined: if $e_k a = e_k b$, then $D(u) a = D(u) b$ by the choice of $u$, and hence $x D(u) a = x D(u) b$. Both maps are $M$-equivariant, and $\iota(\pi(a)) = ea$ holds by definition. We compute
 $$\pi(\iota(e_k a)) = e_k x D(u) a = e_l D(u) a = e_k a.$$
@@ -74,7 +74,7 @@ Let $M$ be a monoid such that $M$ is left cancellative or countable, $M$ satisfi
 :::
 
 ::: Proof
-Let $D : \I \to BM$ and $W$ be as above. Choose $e$, $\pi$, $\iota$ as in Proposition 3. Since $BM$ is Cauchy complete, there are $s,r \in M$ with $e = sr$ and $rs = 1$. We claim that the $M$-equivariant maps
+Let $D : \I \to BM$ and $W$ be as above. Choose $e$, $\pi$, $\iota$ as in [Proposition 3](#proposition_3). Since $BM$ is Cauchy complete, there are $s,r \in M$ with $e = sr$ and $rs = 1$. We claim that the $M$-equivariant maps
 
 $$
 \begin{align*}
@@ -87,7 +87,7 @@ are inverse to each other. For $a \in M$ we have
 $$\theta(\theta'(a)) = r \iota(\pi(sa)) = r e s a = (rs)(rs) a = a.$$
 For $w \in W$ we have $e \iota(w) = \iota(\pi(\iota(w))) = \iota(w)$, and hence
 $$\theta'(\theta(w)) = \pi(s r \iota(w)) = \pi(e \iota(w)) = \pi(\iota(w)) = w.$$
-Thus, $W$ is representable. By Lemma 5 below, $BM$ is $\aleph_1$-accessible.
+Thus, $W$ is representable. By [Lemma 5](#lemma_5) below, $BM$ is $\aleph_1$-accessible.
 :::
 
 ::: Lemma 5
@@ -100,12 +100,12 @@ $$\textstyle \colim_{i \in \I} \Hom(-,D(i)) \to \Hom(-,\colim_{i \in \I} D(i))$$
 is an isomorphism. Evaluating it at an object $A \in \C$ shows that $\Hom(A,-)$ preserves the colimit of $D$. Hence, $\C$ has $\kappa$-filtered colimits, and every object of $\C$ is $\kappa$-presentable. Since $\C$ is essentially small, it follows that $\C$ is $\kappa$-accessible.
 :::
 
-When $M$ is left cancellative, the assumption in Theorem 4 that $BM$ is Cauchy complete is automatic by [this result](/category-implication/cauchy_complete_criterion). In this case, the results above extend to large monoids.
+When $M$ is left cancellative, the assumption in [Theorem 4](#theorem_4) that $BM$ is Cauchy complete is automatic by [this result](/category-implication/cauchy_complete_criterion). In this case, the results above extend to large monoids.
 
 ::: Proposition 6
 Let $M$ be a large monoid, i.e. a monoid whose underlying collection is not necessarily a set (see [here](/content/foundations)). Assume that $M$ is left cancellative and satisfies the ascending chain condition on principal right ideals. Then $BM$ has $\aleph_1$-filtered colimits.
 :::
 
 ::: Proof
-In general, $BM$ is not locally small. However, the proofs of Lemma 1 (in the left cancellative case), Lemma 2, Proposition 3 and Theorem 4 work verbatim when we replace sets by collections, i.e. right $M$-sets by right $M$-collections. They show that every $\aleph_1$-filtered colimit of representable presheaves with values in collections is representable, and hence, as in the proof of Lemma 5, that $BM$ has $\aleph_1$-filtered colimits. Here, $BM$ is Cauchy complete by [this result](/category-implication/cauchy_complete_criterion).
+In general, $BM$ is not locally small. However, the proofs of [Lemma 1](#lemma_1) (in the left cancellative case), [Lemma 2](#lemma_2), [Proposition 3](#proposition_3) and [Theorem 4](#theorem_4) work verbatim when we replace sets by collections, i.e. right $M$-sets by right $M$-collections. They show that every $\aleph_1$-filtered colimit of representable presheaves with values in collections is representable, and hence, as in the proof of [Lemma 5](#lemma_5), that $BM$ has $\aleph_1$-filtered colimits. Here, $BM$ is Cauchy complete by [this result](/category-implication/cauchy_complete_criterion).
 :::

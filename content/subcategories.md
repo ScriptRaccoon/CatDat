@@ -83,7 +83,7 @@ $$[X, Y]_{\C / P} \cong [X, Y]_{\C} \times P.$$
 :::
 
 ::: Proof
-The forgetful functor $\C / P \to \C$ is fully faithful; it has right adjoint ${-} \times P$; and it preserves binary products (in fact all inhabited limits). Hence, Lemma 5 applies.
+The forgetful functor $\C / P \to \C$ is fully faithful; it has right adjoint ${-} \times P$; and it preserves binary products (in fact all inhabited limits). Hence, [Lemma 5](#lemma_5) applies.
 :::
 
 ::: Lemma 7
@@ -172,7 +172,7 @@ Let $U : \C \to \D$ be a fully faithful functor between categories with pushouts
 :::
 
 ::: Proof
-Let $m : X \to Y$ be a regular monomorphism and $X \to Z$ a morphism in $\C$, and let $m' : Z \to Z \sqcup_X Y$ be the induced morphism. Since $U$ preserves pushouts, $U(m')$ is the pushout of the regular monomorphism $U(m)$ along $U(X) \to U(Z)$, hence a regular monomorphism. Since $U$ preserves pushouts, it preserves cokernel pairs. By the dual of Lemma 12, $m'$ is a regular monomorphism.
+Let $m : X \to Y$ be a regular monomorphism and $X \to Z$ a morphism in $\C$, and let $m' : Z \to Z \sqcup_X Y$ be the induced morphism. Since $U$ preserves pushouts, $U(m')$ is the pushout of the regular monomorphism $U(m)$ along $U(X) \to U(Z)$, hence a regular monomorphism. Since $U$ preserves pushouts, it preserves cokernel pairs. By the dual of [Lemma 12](#lemma_12), $m'$ is a regular monomorphism.
 :::
 
 ::: Lemma 15

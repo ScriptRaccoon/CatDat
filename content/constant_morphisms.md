@@ -47,4 +47,4 @@ If $f : X \to Y$ is a monomorphism that is constant, then $X$ is subterminal.
 If $x_1,x_2 : T \rightrightarrows X$ are morphisms, then $f \circ x_1 = f \circ x_2$ since $f$ is constant. Since $f$ is also a monomorphism, we infer that $x_1 = x_2$.
 :::
 
-Of course, all results on constant morphisms dualize to results on coconstant morphisms (except for Lemma 2). For example, Lemma 5 implies that if an epimorphism $f : X \to Y$ is coconstant, then $Y$ is "co-subterminal", i.e. every two morphisms $Y \rightrightarrows T$ are equal.
+Of course, all results on constant morphisms dualize to results on coconstant morphisms (except for [Lemma 2](#lemma_2)). For example, [Lemma 5](#lemma_5) implies that if an epimorphism $f : X \to Y$ is coconstant, then $Y$ is "co-subterminal", i.e. every two morphisms $Y \rightrightarrows T$ are equal.
