@@ -140,7 +140,7 @@ To see this, suppose we have two generalized elements $x_1, x_2 \in X(T)$ such t
 $$x_1 = r(j_1(x_1)) = r(j_2(x_2)) = x_2$$
 and
 $$j_1(x_1) = j_2(x_2) = j_2(x_1),$$
-so $x_1 = x_2$ factors uniquely through $e$. (See also [here](/category-implication/pullbacks_imply_coreflexive_equalizers); in particular, that result, along with the uniqueness of equalizers and pullbacks, would give an alternate proof with an additional hypothesis that the pullback exists.)
+so $x_1 = x_2$ factors uniquely through $e$. (See also [this result](/category-implication/pullbacks_imply_coreflexive_equalizers), which, along with the uniqueness of equalizers and pullbacks, would give an alternate proof with an additional hypothesis that the pullback exists.)
 
 Combining these using [Lemma 2](#lemma_2), we get a pullback diagram
 
@@ -178,7 +178,7 @@ whereas $(\id+e; e+\id)$ corresponds to
 $$(i_1; i_2\circ e; i_1\circ e; i_2) : X+Y+Y+X \to X+X.$$
 This completes the proof that these two morphisms form a kernel pair of $(j_1; j_2) : X + X \to C$.
 
-Therefore, since $(j_1; j_2) : X + X \to C$ is a regular epimorphism, by [this result](/content/regular-epis-kernel-pairs), it is a coequalizer of this kernel pair. However, this coequalizer is exactly the congruence quotient in the construction of $X +_Y X$ [here](/content/pushouts-of-monos-via-congruence-quotients). Thus, we see that the original corelation is equivalent to the cokernel pair of $e$.
+Therefore, since $(j_1; j_2) : X + X \to C$ is a regular epimorphism, by [this result](/content/regular-epis-kernel-pairs), it is a coequalizer of this kernel pair. However, this coequalizer is exactly the congruence quotient in the [construction](/content/pushouts-of-monos-via-congruence-quotients) of $X +_Y X$. Thus, we see that the original corelation is equivalent to the cokernel pair of $e$.
 :::
 
 ::: Corollary 5

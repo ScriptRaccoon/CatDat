@@ -178,7 +178,7 @@ Let $\C$ be a locally small category. Then $\widehat{\C}$ has effective cocongru
 :::
 
 ::: Proof
-Let $F \rightrightarrows G$ be a cocongruence in $\widehat{\C}$. Since the inclusion functor $\widehat{\C} \hookrightarrow [\C^{\op},\Set]$ preserves finite colimits by [Lemma 3](#lemma_3), this is the same as a cocongruence of presheaves where $F,G$ happen to be small. Since cocongruences in $\Set$ are effective (<a href="/category/Set?proof=effective_cocongruences" data-allow-deduced>proof</a>), and in fact cokernel pairs of their equalizer (see [here](/content/effective-congruence-quotients)), the cocongruence is isomorphic to
+Let $F \rightrightarrows G$ be a cocongruence in $\widehat{\C}$. Since the inclusion functor $\widehat{\C} \hookrightarrow [\C^{\op},\Set]$ preserves finite colimits by [Lemma 3](#lemma_3), this is the same as a cocongruence of presheaves where $F,G$ happen to be small. Since cocongruences in $\Set$ are effective (<a href="/category/Set?proof=effective_cocongruences" data-allow-deduced>proof</a>), and in fact cokernel pairs of their equalizer (by the dual of [this lemma](/content/effective-congruence-quotients)), the cocongruence is isomorphic to
 $$F \rightrightarrows F \sqcup_E F,$$
 where $E \coloneqq \eq(F \rightrightarrows G)$ is the objectwise defined equalizer in $[\C^{\op},\Set]$. We would be done if $E$ were small, which however is not the case in general. But we can prove that $E$ is a quotient of a small presheaf, or equivalently, a quotient of a coproduct of representable presheaves, which is sufficient, since any epimorphism $E' \to E$ satisfies $F \sqcup_E F = F \sqcup_{E'} F$. (Such presheaves are also called _petty_ in the literature.)
 

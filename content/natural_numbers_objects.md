@@ -73,7 +73,7 @@ $$\alpha(n \otimes a) = (a,n \otimes 1).$$
 
 In any category with a terminal object and countable copowers, we can construct the non-parametrized NNO $\IN \otimes 1$ with the element $0 \otimes 1 \in \IN \otimes 1$ and the map
 $$s : \IN \otimes 1 \to \IN \otimes 1, \quad s(n \otimes 1) \coloneqq (n+1) \otimes 1.$$
-See [here](/category-implication/nno_criterion) for a detailed proof. Since, by assumption, $1 \xrightarrow{z} N \xrightarrow{s} N$ is a parametrized NNO, it is also a non-parametrized NNO and is therefore isomorphic to the one just constructed. We may assume without loss of generality that they are equal and hence work with $N = \IN \otimes 1$.
+See [this result](/category-implication/nno_criterion) for a detailed proof. Since, by assumption, $1 \xrightarrow{z} N \xrightarrow{s} N$ is a parametrized NNO, it is also a non-parametrized NNO and is therefore isomorphic to the one just constructed. We may assume without loss of generality that they are equal and hence work with $N = \IN \otimes 1$.
 
 Next, apply the parametrized universal property of the NNO to the diagram
 $$A \xrightarrow{f} \IN \otimes A \xrightarrow{g} \IN \otimes A$$
@@ -106,7 +106,7 @@ $$\alpha \circ \Phi \circ (\id_A \times s) = \alpha \circ g \circ \Phi = (\id_A 
 This finishes the proof.
 :::
 
-_Remark._ Actually, the mentioned [result](/category-implication/parametrized_nno_criterion) and [Lemma 4](#lemma_4) can be combined into an equivalent characterization as follows: In a category with finite products and countable copowers, the NNO (which exists, see [here](/category-implication/nno_criterion)) is a parametrized NNO if and only if for all objects $A$ the canonical morphism
+_Remark._ Actually, the mentioned [result](/category-implication/parametrized_nno_criterion) and [Lemma 4](#lemma_4) can be combined into an equivalent characterization as follows: In a category with finite products and countable copowers, the NNO (which exists by [this result](/category-implication/nno_criterion)) is a parametrized NNO if and only if for all objects $A$ the canonical morphism
 $$\textstyle \coprod_{n \in \IN} A = \coprod_{n \in \IN} (A \times 1) \to A \times \coprod_{n \in \IN} 1$$
 is an isomorphism. This is the precise connection to countable distributivity.
 

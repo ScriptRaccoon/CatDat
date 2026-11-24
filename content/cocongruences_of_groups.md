@@ -5,7 +5,7 @@ description: This result will be proved more generally for categories in which p
 
 # Cocongruences of groups are effective
 
-Our goal is to prove that every cocongruence (see definition [here](/category-property/coquotients_of_cocongruences)) in $\Grp$ is effective. We will establish a more general result for categories in which pushouts and monomorphisms interact in a suitable way.
+Our goal is to prove that every [cocongruence](/category-property/coquotients_of_cocongruences) in $\Grp$ is effective. We will establish a more general result for categories in which pushouts and monomorphisms interact in a suitable way.
 
 We shall say that a category $\C$ has _good pushouts of monomorphisms_ if it has pushouts of monomorphisms and if, for every diagram of monomorphisms
 

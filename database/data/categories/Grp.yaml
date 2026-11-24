@@ -48,7 +48,7 @@ satisfied_properties:
     proof: This is <a href="/content/cocongruences_of_groups#corollary_3">Corollary 3 on cocongruences of groups</a>.
 
   - property: total
-    proof: This follows formally from the fact that $\Grp$ is finitary algebraic (<a href="/category/Grp?proof=finitary_algebraic" data-allow-deduced>proof</a>) and therefore locally presentable. For a more explicit proof, see <a href="/content/Grp_total_explicit_proof">here</a>.
+    proof: This follows formally from the fact that $\Grp$ is finitary algebraic (<a href="/category/Grp?proof=finitary_algebraic" data-allow-deduced>proof</a>) and therefore locally presentable. We also give a more <a href="/content/Grp_total_explicit_proof">explicit proof</a>.
     check_redundancy: false
 
   - property: extremal generator

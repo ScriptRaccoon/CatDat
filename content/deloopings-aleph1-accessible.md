@@ -103,7 +103,7 @@ is an isomorphism. Evaluating it at an object $A \in \C$ shows that $\Hom(A,-)$ 
 When $M$ is left cancellative, the assumption in [Theorem 4](#theorem_4) that $BM$ is Cauchy complete is automatic by [this result](/category-implication/cauchy_complete_criterion). In this case, the results above extend to large monoids.
 
 ::: Proposition 6
-Let $M$ be a large monoid, i.e. a monoid whose underlying collection is not necessarily a set (see [here](/content/foundations)). Assume that $M$ is left cancellative and satisfies the ascending chain condition on principal right ideals. Then $BM$ has $\aleph_1$-filtered colimits.
+Let $M$ be a large monoid, i.e. a monoid whose underlying collection is not necessarily a set (see [Foundations](/content/foundations)). Assume that $M$ is left cancellative and satisfies the ascending chain condition on principal right ideals. Then $BM$ has $\aleph_1$-filtered colimits.
 :::
 
 ::: Proof

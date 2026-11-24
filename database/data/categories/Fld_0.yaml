@@ -23,7 +23,7 @@ satisfied_properties:
     proof: It is a full subcategory of $\CRing$, which is locally small (<a href="/category/CRing?proof=locally_small" data-allow-deduced>proof</a>).
 
   - property: initial object
-    proof: The field $\IQ$ is an initial object; see for example <a href="https://proofwiki.org/wiki/Field_of_Characteristic_Zero_has_Unique_Prime_Subfield">here</a>.
+    proof: The field $\IQ$ is an initial object; see for example <a href="https://proofwiki.org/wiki/Field_of_Characteristic_Zero_has_Unique_Prime_Subfield">ProofWiki</a>.
     check_redundancy: false
 
   - property: discretely filtered
