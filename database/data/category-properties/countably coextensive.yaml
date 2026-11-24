@@ -7,6 +7,7 @@ description: >-
 
   The only difference between this property and the property of being <a href="/category-property/infinitary_coextensive">infinitary coextensive</a> is that we restrict ourselves to countable families.
 
+  Remark: If $\D$ has this property, $\C$ has countable products and pushouts along product projections, and $U : \C \to \D$ is a conservative (e.g. fully faithful) functor that preserves both, then $\C$ has this property as well.
 nlab_link: null
 dual: countably extensive
 invariant_under_equivalences: true

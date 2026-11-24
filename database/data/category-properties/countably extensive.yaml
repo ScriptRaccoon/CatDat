@@ -7,6 +7,7 @@ description: >-
 
   The only difference between this property and the property of being <a href="/category-property/infinitary_extensive">infinitary extensive</a> is that we restrict ourselves to countable families. A typical example of a countably extensive category which is not infinitary extensive is the <a href="/category/Meas">category of measurable spaces</a>.
 
+  Remark: If $\D$ has this property, $\C$ has countable coproducts and pullbacks along coproduct inclusions, and $U : \C \to \D$ is a conservative (e.g. fully faithful) functor that preserves both, then $\C$ has this property as well.
 nlab_link: null
 dual: countably coextensive
 invariant_under_equivalences: true

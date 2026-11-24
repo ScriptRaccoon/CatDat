@@ -2,6 +2,8 @@ id: Malcev
 relation: is
 description: >-
   A category is <i>Malcev</i> (also spelled <i>Mal'cev</i> or <i>Maltsev</i>) when it has finite limits and every internal reflexive relation is an internal equivalence relation. That is, if $q_1, q_2 : R \rightrightarrows X$ is a jointly monomorphic pair with a common section $X \to R$, then $q_1, q_2$ is also symmetric and transitive, i.e. a congruence (see the definition <a href="/category-property/quotients_of_congruences">here</a>).
+
+  Remark: If $\D$ has this property, $\C$ has finite limits, and $U : \C \to \D$ is a fully faithful functor that preserves finite limits, then $\C$ has this property as well.
 nlab_link: https://ncatlab.org/nlab/show/Malcev+category
 dual: co-Malcev
 invariant_under_equivalences: true

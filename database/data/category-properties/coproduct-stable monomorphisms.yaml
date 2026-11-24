@@ -1,6 +1,9 @@
 id: coproduct-stable monomorphisms
 relation: has
-description: A category has <i>coproduct-stable monomorphisms</i> if it has coproducts and for every family of monomorphisms $(X_i \to Y_i)$ also their coproduct morphism $\coprod_i X_i \to \coprod_i Y_i$ is a monomorphism. In the context of <a href="/category-property/abelian">abelian</a> categories, this property is also known as AB4.
+description: >-
+  A category has <i>coproduct-stable monomorphisms</i> if it has coproducts and for every family of monomorphisms $(X_i \to Y_i)$ also their coproduct morphism $\coprod_i X_i \to \coprod_i Y_i$ is a monomorphism. In the context of <a href="/category-property/abelian">abelian</a> categories, this property is also known as AB4.
+
+  Remark: If $\D$ has this property, $\C$ has coproducts, and $U : \C \to \D$ is a faithful functor that preserves monomorphisms and coproducts, then $\C$ has this property as well.
 nlab_link: null
 dual: product-stable epimorphisms
 invariant_under_equivalences: true

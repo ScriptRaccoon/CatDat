@@ -8,6 +8,8 @@ description: >-
   <li>For every epimorphism $f : X \to Y$ and every object $T$, the morphism $\id_T \times f : T \times X \to T \times Y$ is an epimorphism.</li>
   </ol>
   Condition (1) implies (2) as a special case, and (2) implies (3) since $\id_T$ is an epimorphism. Conversely, (3) implies (2) since $f_1 \times f_2 = (f_1 \times \id_{Y_2}) \circ (\id_{X_1} \times f_2)$ is a composite of two epimorphisms, and (2) implies (1) by induction on the size of the family (the empty product morphism is the identity of the terminal object).
+
+  Remark: If $\D$ has this property, $\C$ has finite products, and $U : \C \to \D$ is a faithful functor that preserves epimorphisms and finite products, then $\C$ has this property as well.
 nlab_link: null
 dual: finite-coproduct-stable monomorphisms
 invariant_under_equivalences: true
