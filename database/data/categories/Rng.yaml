@@ -53,7 +53,7 @@ unsatisfied_properties:
       Because of $w_n \equiv w_{n-1} \bmod Y^n$, these form an element $w \in \lim_n (A \sqcup B_n)$. Expanding $w_n$, the longest term is $XY XY^2 \cdots X Y^n$ of "free product" length $2n$, which is unbounded.
 
   - property: product-stable epimorphisms
-    proof: 'We know that $\Ring$ does not have this property (<a href="/category/Ring?proof=product-stable_epimorphisms" data-allow-deduced>proof</a>). Now use the contrapositive of the dual of <a href="/content/subcategories#lemma_2">Lemma 2 on subcategories</a> applied to the forgetful functor $\Ring \to \Rng$. It preserves products. It remains to verify that it preserves epimorphisms: Let $f : R \to S$ be an epimorphism in $\Ring$ and let $g,h : S \rightrightarrows T$ be two homomorphisms of rngs with $gf = hf$. The element $e = g(1) = h(1) \in T$ is idempotent, and $g,h$ become homomorphisms of rings $S \rightrightarrows eTe$. Hence, $g=h$.'
+    proof: 'We know that $\Ring$ does not have this property (<a href="/category/Ring?proof=product-stable_epimorphisms" data-allow-deduced>proof</a>). Hence, it suffices to show that the forgetful functor $\Ring \to \Rng$, which is faithful and preserves products, also preserves epimorphisms: Let $f : R \to S$ be an epimorphism in $\Ring$ and let $g,h : S \rightrightarrows T$ be two homomorphisms of rngs with $gf = hf$. The element $e = g(1) = h(1) \in T$ is idempotent, and $g,h$ become homomorphisms of rings $S \rightrightarrows eTe$. Hence, $g=h$.'
 
   - property: finite-coproduct-stable monomorphisms
     proof: >-

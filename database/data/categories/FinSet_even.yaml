@@ -31,7 +31,7 @@ satisfied_properties:
     proof: A finite disjoint union of finite sets of even cardinality is again finite and has even cardinality, since a finite sum of even natural numbers is even. Moreover, coproducts are disjoint just as in $\FinSet$ (<a href="/category/FinSet?proof=disjoint_finite_coproducts" data-allow-deduced>proof</a>).
 
   - property: finite-coproduct-stable monomorphisms
-    proof: Apply <a href="/content/subcategories#lemma_2">Lemma 2 on subcategories</a> to the inclusion functor $\FinSet_{\even} \to \Set$, which preserves finite coproducts (<a href="/category/FinSet_even?proof=disjoint_finite_coproducts">proof</a>) and monomorphisms (<a href="/category/FinSet_even?proof=monomorphism">proof</a>), since $\Set$ has coproduct-stable monomorphisms (<a href="/category/Set?proof=coproduct-stable_monomorphisms" data-allow-deduced>proof</a>).
+    proof: The inclusion functor $\FinSet_{\even} \to \Set$ is faithful and preserves finite coproducts (<a href="/category/FinSet_even?proof=disjoint_finite_coproducts">proof</a>) and monomorphisms (<a href="/category/FinSet_even?proof=monomorphism">proof</a>). Since $\Set$ has coproduct-stable monomorphisms (<a href="/category/Set?proof=coproduct-stable_monomorphisms" data-allow-deduced>proof</a>), it follows that $\FinSet_{\even}$ has finite-coproduct-stable monomorphisms.
 
   - property: binary products
     proof: This follows from the fact that the product of two even natural numbers is again even.
@@ -47,13 +47,13 @@ satisfied_properties:
     proof: 'If $f : X \to Y$ is a monomorphism, i.e. an injective map (<a href="/category/FinSet_even?proof=monomorphism">proof</a>), then $f$ is the equalizer of two maps $Y \rightrightarrows \{0,1\}$ in $\Set$, and therefore also in $\FinSet_{\even}$.'
 
   - property: all epimorphisms split
-    proof: Apply <a href="/content/subcategories#lemma_15">Lemma 15 on subcategories</a> to the inclusion $\FinSet_{\even} \hookrightarrow \Set$, which preserves epimorphisms since these are surjective in $\FinSet_{\even}$ (<a href="/category/FinSet_even?proof=epimorphism">proof</a>) and in $\Set$ (<a href="/category/Set?proof=epimorphism">proof</a>), and use that $\Set$ has all epimorphisms split (<a href="/category/Set?proof=all_epimorphisms_split" data-allow-deduced>proof</a>).
+    proof: The inclusion $\FinSet_{\even} \hookrightarrow \Set$ is fully faithful and preserves epimorphisms, since these are surjective in $\FinSet_{\even}$ (<a href="/category/FinSet_even?proof=epimorphism">proof</a>) and in $\Set$ (<a href="/category/Set?proof=epimorphism">proof</a>). Since $\Set$ has all epimorphisms split (<a href="/category/Set?proof=all_epimorphisms_split" data-allow-deduced>proof</a>), so does $\FinSet_{\even}$.
 
   - property: extremal generator
-    proof: The two-element set is an extremal generator even in <a href="/category/Set">$\Set$</a> because the <a href="/functor/squaring_sets">squaring functor</a> $X \mapsto X^2$ is faithful and conservative. Now apply <a href="/content/subcategories#lemma_10">Lemma 10 on subcategories</a>.
+    proof: The two-element set is an extremal generator even in <a href="/category/Set">$\Set$</a> because the <a href="/functor/squaring_sets">squaring functor</a> $X \mapsto X^2$ is faithful and conservative, hence also in the full subcategory $\FinSet_{\even}$.
 
   - property: extremal cogenerator
-    proof: The two-element set is an extremal cogenerator even in $\Set$ (<a href="/category/Set?proof=extremal_cogenerator">proof</a>). Now apply <a href="/content/subcategories#lemma_10">Lemma 10 on subcategories</a>.
+    proof: The two-element set is an extremal cogenerator even in $\Set$ (<a href="/category/Set?proof=extremal_cogenerator">proof</a>), hence also in the full subcategory $\FinSet_{\even}$.
 
   - property: ℵ₁-filtered
     proof: In fact, every small diagram has a cocone in $\FinSet_{\even}$. We take the colimit in $\Set$ and then map it to $\{0,1\}$ via a constant map.

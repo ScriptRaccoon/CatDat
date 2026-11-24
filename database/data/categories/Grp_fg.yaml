@@ -37,10 +37,10 @@ satisfied_properties:
     proof: The category $\Grp$ has zero morphisms (<a href="/category/Grp?proof=zero_morphisms" data-allow-deduced>proof</a>), which is inherited by $\Grp_\fg$. Moreover, by the construction of coproducts and products, the canonical homomorphism $G \sqcup H \to G \times H$ is surjective, hence an epimorphism.
 
   - property: finite-coproduct-stable monomorphisms
-    proof: Apply <a href="/content/subcategories#lemma_2">Lemma 2 on subcategories</a> to the inclusion functor $\Grp_\fg \to \Grp$, which preserves finite coproducts (<a href="/category/Grp_fg?proof=finite_coproducts">proof</a>) and monomorphisms (<a href="/category/Grp_fg?proof=monomorphism">proof</a>), since $\Grp$ has coproduct-stable monomorphisms (<a href="/category/Grp?proof=coproduct-stable_monomorphisms" data-allow-deduced>proof</a>).
+    proof: The inclusion functor $\Grp_\fg \to \Grp$ is faithful and preserves finite coproducts (<a href="/category/Grp_fg?proof=finite_coproducts">proof</a>) and monomorphisms (<a href="/category/Grp_fg?proof=monomorphism">proof</a>). Since $\Grp$ has coproduct-stable monomorphisms (<a href="/category/Grp?proof=coproduct-stable_monomorphisms" data-allow-deduced>proof</a>), it follows that $\Grp_\fg$ has finite-coproduct-stable monomorphisms.
 
   - property: extremal generator
-    proof: The finitely generated group $\IZ$ is an extremal generator even in $\Grp$ (<a href="/category/Grp?proof=extremal_generator">proof</a>). Now use <a href="/content/subcategories#lemma_10">Lemma 10 on subcategories</a>.
+    proof: The finitely generated group $\IZ$ is an extremal generator even in $\Grp$ (<a href="/category/Grp?proof=extremal_generator">proof</a>), hence also in the full subcategory $\Grp_\fg$.
 
   - property: mono-regular
     proof: >-

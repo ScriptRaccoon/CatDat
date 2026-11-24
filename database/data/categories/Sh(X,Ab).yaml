@@ -33,7 +33,7 @@ unsatisfied_properties:
     proof: Consider constant sheaves for isomorphic but non-equal abelian groups.
 
   - property: all epimorphisms split
-    proof: 'Choose a point $x \in X$. The skyscraper sheaf functor $x_* : \Ab \to \Sh(X,\Ab)$ is exact. It is right adjoint to the stalk functor $x^* : \Sh(X,\Ab) \to \Ab$, and the counit $x^* x_* \to \id_{\Ab}$ is an isomorphism, so $x_*$ is fully faithful. Hence, the claim follows from the contrapositive of <a href="/content/subcategories#lemma_15">Lemma 15 on subcategories</a>, since $\Ab$ does not have all epimorphisms split (<a href="/category/Ab?proof=all_epimorphisms_split" data-allow-deduced>proof</a>).'
+    proof: 'Choose a point $x \in X$. The skyscraper sheaf functor $x_* : \Ab \to \Sh(X,\Ab)$ is exact. It is right adjoint to the stalk functor $x^* : \Sh(X,\Ab) \to \Ab$, and the counit $x^* x_* \to \id_{\Ab}$ is an isomorphism, so $x_*$ is fully faithful. Since $\Ab$ does not have all epimorphisms split (<a href="/category/Ab?proof=all_epimorphisms_split" data-allow-deduced>proof</a>), neither does $\Sh(X,\Ab)$.'
 
 special_objects:
   initial object:

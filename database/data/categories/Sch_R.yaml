@@ -36,7 +36,7 @@ satisfied_properties:
     proof: See <a href="https://mathoverflow.net/questions/160681">MO/160681</a>.
 
   - property: infinitary extensive
-    proof: This follows from <a href="/content/subcategories#lemma_11">Lemma 11 on subcategories</a> since $\LRS_R$ is infinitary extensive (<a href="/category/LRS_R?proof=infinitary_extensive" data-allow-deduced>proof</a>) and its full subcategory $\Sch_R$ is closed under pullbacks and coproducts in $\LRS_R$.
+    proof: $\LRS_R$ is infinitary extensive (<a href="/category/LRS_R?proof=infinitary_extensive" data-allow-deduced>proof</a>), and this property is inherited by its full subcategory $\Sch_R$, since it is closed under pullbacks and coproducts in $\LRS_R$.
 
 unsatisfied_properties:
   - property: skeletal

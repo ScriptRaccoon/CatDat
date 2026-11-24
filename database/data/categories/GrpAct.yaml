@@ -86,7 +86,7 @@ unsatisfied_properties:
     proof: 'The objects $(\IZ,\varnothing)$ and $(2\IZ,\varnothing)$ are distinct but isomorphic.'
 
   - property: all epimorphisms split
-    proof: 'Apply the contrapositive of <a href="/content/subcategories#lemma_15">Lemma 15 on subcategories</a> to the fully faithful functor $L : \Grp \to \GrpAct$, $G \mapsto (G,\varnothing)$, which preserves epimorphisms since it is a left adjoint, and use that $\Grp$ does not have all epimorphisms split (<a href="/category/Grp?proof=all_epimorphisms_split" data-allow-deduced>proof</a>).'
+    proof: 'The functor $L : \Grp \to \GrpAct$, $G \mapsto (G,\varnothing)$ is fully faithful and preserves epimorphisms, being a left adjoint. Since $\Grp$ does not have all epimorphisms split (<a href="/category/Grp?proof=all_epimorphisms_split" data-allow-deduced>proof</a>), neither does $\GrpAct$.'
 
   - property: strict initial object
     proof: 'The initial object is $(1,\varnothing)$, the empty set with the action of the trivial group. For every non-trivial group $G$, the unique morphism $(G,\varnothing) \to (1,\varnothing)$ is not an isomorphism.'
@@ -100,10 +100,10 @@ unsatisfied_properties:
       By the dual of <a href="/content/subcategories#lemma_9">Lemma 9 on subcategories</a>, applied to the fully faithful left adjoint $L : \Grp \to \GrpAct$, $G \mapsto (G,\varnothing)$ of the forgetful functor $U : \GrpAct \to \Grp$, the functor $U$ maps a cogenerating collection of $\GrpAct$ to a cogenerating collection of $\Grp$. But $\Grp$ has no cogenerating collection (<a href="/category/Grp?proof=cogenerating_collection" data-allow-deduced>proof</a>).
 
   - property: Malcev
-    proof: 'Apply the contrapositive of <a href="/content/subcategories#lemma_13">Lemma 13 on subcategories</a> to the fully faithful functor $I : \Set \to \GrpAct$, $Y \mapsto (1,Y)$, which preserves finite limits as a right adjoint. Here, we use that $\Set$ is not Malcev (<a href="/category/Set?proof=Malcev" data-allow-deduced>proof</a>).'
+    proof: 'The functor $I : \Set \to \GrpAct$, $Y \mapsto (1,Y)$ is fully faithful and preserves finite limits as a right adjoint. Since $\Set$ is not Malcev (<a href="/category/Set?proof=Malcev" data-allow-deduced>proof</a>), neither is $\GrpAct$.'
 
   - property: co-Malcev
-    proof: 'Apply the contrapositive of the dual of <a href="/content/subcategories#lemma_13">Lemma 13 on subcategories</a> to the fully faithful functor $L : \Grp \to \GrpAct$, $G \mapsto (G,\varnothing)$, which preserves finite colimits as a left adjoint. Here, we use that $\Grp$ is not co-Malcev (<a href="/category/Grp?proof=co-Malcev" data-allow-deduced>proof</a>).'
+    proof: 'The functor $L : \Grp \to \GrpAct$, $G \mapsto (G,\varnothing)$ is fully faithful and preserves finite colimits as a left adjoint. Since $\Grp$ is not co-Malcev (<a href="/category/Grp?proof=co-Malcev" data-allow-deduced>proof</a>), neither is $\GrpAct$.'
 
   - property: regular subobject classifier
     proof: >-
@@ -115,11 +115,11 @@ unsatisfied_properties:
 
   - property: cofiltered-limit-stable epimorphisms
     proof: >-
-      Apply the contrapositive of the dual of <a href="/content/subcategories#lemma_2">Lemma 2 on subcategories</a> to the faithful functor $L : \Grp \to \GrpAct$, $G \mapsto (G,\varnothing)$. As a left adjoint, it preserves epimorphisms, and it preserves connected limits, in particular cofiltered limits. Here, we use that $\Grp$ does not have cofiltered-limit-stable epimorphisms (<a href="/category/Grp?proof=cofiltered-limit-stable_epimorphisms" data-allow-deduced>proof</a>).
+      The functor $L : \Grp \to \GrpAct$, $G \mapsto (G,\varnothing)$ is faithful. As a left adjoint, it preserves epimorphisms, and it preserves connected limits, in particular cofiltered limits. Since $\Grp$ does not have cofiltered-limit-stable epimorphisms (<a href="/category/Grp?proof=cofiltered-limit-stable_epimorphisms" data-allow-deduced>proof</a>), neither does $\GrpAct$.
 
   - property: cocartesian cofiltered limits
     proof: >-
-      Apply the contrapositive of the dual of <a href="/content/subcategories#lemma_4">Lemma 4 on subcategories</a> to the fully faithful functor $L : \Grp \to \GrpAct$, $G \mapsto (G,\varnothing)$. As a left adjoint, it preserves binary coproducts, and it preserves connected limits, in particular cofiltered limits. Here, we use that $\Grp$ does not have cocartesian cofiltered limits (<a href="/category/Grp?proof=cocartesian_cofiltered_limits" data-allow-deduced>proof</a>).
+      The functor $L : \Grp \to \GrpAct$, $G \mapsto (G,\varnothing)$ is fully faithful. As a left adjoint, it preserves binary coproducts, and it preserves connected limits, in particular cofiltered limits. Since $\Grp$ does not have cocartesian cofiltered limits (<a href="/category/Grp?proof=cocartesian_cofiltered_limits" data-allow-deduced>proof</a>), neither does $\GrpAct$.
 
   - property: pushout-stable regular monomorphisms
     proof: >-

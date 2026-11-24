@@ -38,16 +38,16 @@ satisfied_properties:
     proof: For all $n,m$ there are morphisms $[n] \to [0] \to [m]$.
 
   - property: extremal generator
-    proof: The ordered set $[1] = \{0 < 1\}$ is an extremal generator, even for $\PreOrd$ (<a href="/category/PreOrd?proof=extremal_generator">proof</a>). Now apply <a href="/content/subcategories#lemma_10">Lemma 10 on subcategories</a>.
+    proof: The ordered set $[1] = \{0 < 1\}$ is an extremal generator even in $\PreOrd$ (<a href="/category/PreOrd?proof=extremal_generator">proof</a>), hence also in the full subcategory $\Delta$.
 
   - property: extremal cogenerator
-    proof: The ordered set $[1] = \{0 < 1\}$ is an extremal cogenerator, even for $\Pos$ (<a href="/category/Pos?proof=extremal_cogenerator">proof</a>). Now apply <a href="/content/subcategories#lemma_10">Lemma 10 on subcategories</a>.
+    proof: The ordered set $[1] = \{0 < 1\}$ is an extremal cogenerator even in $\Pos$ (<a href="/category/Pos?proof=extremal_cogenerator">proof</a>), hence also in the full subcategory $\Delta$.
 
   - property: skeletal
     proof: 'If $f : [n] \to [m]$ is an isomorphism, then $n + 1 = m + 1$ by comparing the cardinalities, hence $n = m$.'
 
   - property: all epimorphisms split
-    proof: Apply <a href="/content/subcategories#lemma_15">Lemma 15 on subcategories</a> to the inclusion $\Delta \hookrightarrow \FinOrd$, which preserves epimorphisms since these are surjective order-preserving maps in $\Delta$ (<a href="/category/Delta?proof=epimorphism">proof</a>) and in $\FinOrd$ (<a href="/category/FinOrd?proof=epimorphism">proof</a>), and use that $\FinOrd$ has all epimorphisms split (<a href="/category/FinOrd?proof=all_epimorphisms_split" data-allow-deduced>proof</a>).
+    proof: The inclusion $\Delta \hookrightarrow \FinOrd$ is fully faithful and preserves epimorphisms, since these are surjective order-preserving maps in $\Delta$ (<a href="/category/Delta?proof=epimorphism">proof</a>) and in $\FinOrd$ (<a href="/category/FinOrd?proof=epimorphism">proof</a>). Since $\FinOrd$ has all epimorphisms split (<a href="/category/FinOrd?proof=all_epimorphisms_split" data-allow-deduced>proof</a>), so does $\Delta$.
 
   - property: all monomorphisms split
     proof: The <a href="/category/FinOrd?proof=mono-regular">proof</a> for $\FinOrd$ shows that every monomorphism with non-empty domain splits.

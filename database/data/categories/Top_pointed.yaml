@@ -58,10 +58,10 @@ satisfied_properties:
       is open. It suffices to consider open sets of two types: (1) If $U \subseteq X$ is open, the $\alpha$-image of $U \vee \lim_i Y_i$ is $p_{i_0}^*(U \vee Y_{i_0})$ for any chosen index $i_0$, hence open. (2) If $i$ is an index and $V_i \subseteq Y_i$ is open, then the $\alpha$-image of $X \vee (p_i^*(V_i) \cap \lim_i Y_i)$ is $p_i^*(X \vee V_i)$, hence open.
 
   - property: filtered-colimit-stable monomorphisms
-    proof: This follows from <a href="/content/subcategories#lemma_2">Lemma 2 on subcategories</a> applied to the forgetful functor to $\Set$.
+    proof: $\Top$ has filtered-colimit-stable monomorphisms (<a href="/category/Top?proof=filtered-colimit-stable_monomorphisms" data-allow-deduced>proof</a>), and this property is inherited by $\Top_*$, since the forgetful functor $\Top_* \to \Top$ is faithful and preserves monomorphisms and connected colimits, in particular filtered colimits.
 
   - property: product-stable epimorphisms
-    proof: Apply the dual of <a href="/content/subcategories#lemma_2">Lemma 2 on subcategories</a> to the forgetful functor $\Top_* \to \Set$, which preserves products (<a href="/category/Top_*?proof=complete">proof</a>) and epimorphisms (<a href="/category/Top_*?proof=epimorphism">proof</a>).
+    proof: The forgetful functor $\Top_* \to \Set$ is faithful and preserves products (<a href="/category/Top_*?proof=complete">proof</a>) and epimorphisms (<a href="/category/Top_*?proof=epimorphism">proof</a>). Since $\Set$ has product-stable epimorphisms (<a href="/category/Set?proof=product-stable_epimorphisms" data-allow-deduced>proof</a>), so does $\Top_*$.
 
   - property: coregular
     proof: This follows from the dual of <a href="/content/subcategories#lemma_7">Lemma 7 on subcategories</a> applied to the forgetful functor $\Top_* \to \Top$, using that $\Top$ is coregular (<a href="/category/Top?proof=coregular" data-allow-deduced>proof</a>) and that the regular monomorphisms in $\Top_*$ are the embeddings (<a href="/category/Top_*?proof=regular_monomorphism">proof</a>).
@@ -93,7 +93,7 @@ unsatisfied_properties:
       Apply <a href="/content/decreasing-chains-coaccessible#corollary">this corollary</a> to the functor $F : \Set \to \Top_*$ that maps a set $X$ to the discrete space $X_+ \coloneqq \{\ast\} \sqcup X$ with base point $\ast$. Here, $F(\{\ast\})$ is not initial. Let $\kappa$ be a regular cardinal. Since $\Top_*$ is complete (<a href="/category/Top_*?proof=complete" data-allow-deduced>proof</a>) and the forgetful functor $\Top_* \to \Set$ preserves limits, the limit of the pointed spaces $F(\kappa_{\geq \alpha})$ has the underlying set $\{\ast\} \sqcup \bigcap_{\alpha < \kappa} \kappa_{\geq \alpha} = \{\ast\}$. Hence, it is the zero object.
 
   - property: cofiltered-limit-stable epimorphisms
-    proof: We already know that $\Set_*$ does not have this property (<a href="/category/Set_*?proof=cofiltered-limit-stable_epimorphisms" data-allow-deduced>proof</a>). Now apply the contrapositive of the dual of <a href="/content/subcategories#lemma_2">Lemma 2 on subcategories</a> to the functor $\Set_* \to \Top_*$ that equips a pointed set with the indiscrete topology.
+    proof: We already know that $\Set_*$ does not have this property (<a href="/category/Set_*?proof=cofiltered-limit-stable_epimorphisms" data-allow-deduced>proof</a>). The functor $\Set_* \to \Top_*$ that equips a pointed set with the indiscrete topology is faithful, preserves limits, being a right adjoint, and preserves epimorphisms, since these are surjective in $\Set_*$ (<a href="/category/Set_*?proof=epimorphism" data-allow-deduced>proof</a>). Hence, $\Top_*$ does not have the property either.
 
   - property: effective congruences
     proof: Suppose that $\Top_*$ had effective congruences. Then by <a href="/content/coslice-effective-congruences">this result</a>, $\Top$ would also have effective congruences, which is not the case (<a href="/category/Top?proof=effective_congruences" data-allow-deduced>proof</a>).

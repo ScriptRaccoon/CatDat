@@ -57,10 +57,10 @@ satisfied_properties:
       A measurable subset of $\coprod_{i \in I} T_i$ has the form $A = \coprod_{i \in I} (B_i \cap T_i)$, where each $B_i$ is a measurable subset of $T$. The image of $A$ in $T$ is $\bigcup_{i \in I} (B_i \cap T_i)$. Since this is a countable union, it suffices to show that each $B_i \cap T_i$ is measurable in $T$. This holds because $T_i$ is measurable in $T$ (since $X_i$ is measurable in the coproduct and $f$ is measurable) and $B_i$ is measurable in $T$ by assumption.
 
   - property: filtered-colimit-stable monomorphisms
-    proof: This follows from <a href="/content/subcategories#lemma_2">Lemma 2 on subcategories</a> applied to the forgetful functor to $\Set$.
+    proof: The forgetful functor $\Meas \to \Set$ is faithful, and it preserves monomorphisms and filtered colimits since it has a left and a right adjoint, which equip a set with the discrete and the indiscrete $\sigma$-algebra, respectively. Since $\Set$ has filtered-colimit-stable monomorphisms (<a href="/category/Set?proof=filtered-colimit-stable_monomorphisms" data-allow-deduced>proof</a>), so does $\Meas$.
 
   - property: product-stable epimorphisms
-    proof: Apply the dual of <a href="/content/subcategories#lemma_2">Lemma 2 on subcategories</a> to the forgetful functor $\Meas \to \Set$, which preserves products (<a href="/category/Meas?proof=complete">proof</a>) and epimorphisms (<a href="/category/Meas?proof=epimorphism">proof</a>).
+    proof: The forgetful functor $\Meas \to \Set$ is faithful and preserves products (<a href="/category/Meas?proof=complete">proof</a>) and epimorphisms (<a href="/category/Meas?proof=epimorphism">proof</a>). Since $\Set$ has product-stable epimorphisms (<a href="/category/Set?proof=product-stable_epimorphisms" data-allow-deduced>proof</a>), so does $\Meas$.
 
   - property: regular subobject classifier
     proof: The set $\{0,1\}$ with the trivial $\sigma$-algebra is a regular subobject classifier since measurable maps $X \to \{0,1\}$ correspond to subsets of $X$.

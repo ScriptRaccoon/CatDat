@@ -22,7 +22,7 @@ satisfied_properties: []
 
 unsatisfied_properties:
   - property: all epimorphisms split
-    proof: The functor $\Ab \to [(\IN,\leq),\Ab]$ that maps an abelian group to the sequence concentrated in degree $0$ is fully faithful and exact. Hence, the claim follows from the contrapositive of <a href="/content/subcategories#lemma_15">Lemma 15 on subcategories</a>, since $\Ab$ does not have all epimorphisms split (<a href="/category/Ab?proof=all_epimorphisms_split" data-allow-deduced>proof</a>).
+    proof: The functor $\Ab \to [(\IN,\leq),\Ab]$ that maps an abelian group to the sequence concentrated in degree $0$ is fully faithful and exact. Since $\Ab$ does not have all epimorphisms split (<a href="/category/Ab?proof=all_epimorphisms_split" data-allow-deduced>proof</a>), neither does $[(\IN,\leq),\Ab]$.
 
   - property: one-sorted finitary algebraic
     proof: >-

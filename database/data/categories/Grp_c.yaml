@@ -28,7 +28,7 @@ satisfied_properties:
     check_redundancy: false
 
   - property: extremal generator
-    proof: The countable group $\IZ$ is an extremal generator even in $\Grp$ (<a href="/category/Grp?proof=extremal_generator">proof</a>). Now use <a href="/content/subcategories#lemma_10">Lemma 10 on subcategories</a>.
+    proof: The countable group $\IZ$ is an extremal generator even in $\Grp$ (<a href="/category/Grp?proof=extremal_generator">proof</a>), hence also in the full subcategory $\Grp_\c$.
 
   - property: finite products
     proof: This is because $\Grp$ has finite (in fact, all) products (<a href="/category/Grp?proof=products" data-allow-deduced>proof</a>), and $\Grp_\c \hookrightarrow \Grp$ is closed under finite products. This is because a finite product of countable sets is again countable.
@@ -45,7 +45,7 @@ satisfied_properties:
     proof: This is because $\Grp$ has countable (in fact, all) coproducts (<a href="/category/Grp?proof=coproducts" data-allow-deduced>proof</a>), and $\Grp_\c \hookrightarrow \Grp$ is closed under countable coproducts. This is because a countable union of countable sets is again countable.
 
   - property: finite-coproduct-stable monomorphisms
-    proof: Apply <a href="/content/subcategories#lemma_2">Lemma 2 on subcategories</a> to the inclusion functor $\Grp_\c \to \Grp$, which preserves finite coproducts (<a href="/category/Grp_c?proof=countable_coproducts">proof</a>) and monomorphisms (<a href="/category/Grp_c?proof=monomorphism">proof</a>), since $\Grp$ has coproduct-stable monomorphisms (<a href="/category/Grp?proof=coproduct-stable_monomorphisms" data-allow-deduced>proof</a>).
+    proof: The inclusion functor $\Grp_\c \to \Grp$ is faithful and preserves finite coproducts (<a href="/category/Grp_c?proof=countable_coproducts">proof</a>) and monomorphisms (<a href="/category/Grp_c?proof=monomorphism">proof</a>). Since $\Grp$ has coproduct-stable monomorphisms (<a href="/category/Grp?proof=coproduct-stable_monomorphisms" data-allow-deduced>proof</a>), it follows that $\Grp_\c$ has finite-coproduct-stable monomorphisms.
 
   - property: mono-regular
     proof: >-
@@ -75,7 +75,7 @@ unsatisfied_properties:
     proof: Even the collection of all trivial groups is not a set, since every set $X$ yields a trivial group with underlying set $\{X\}$.
 
   - property: all epimorphisms split
-    proof: Apply the contrapositive of <a href="/content/subcategories#lemma_15">Lemma 15 on subcategories</a> to the inclusion $\Ab_\fg \hookrightarrow \Grp_\c$, which preserves epimorphisms since these are surjective in $\Ab_{\fg}$ (<a href="/category/Ab_fg?proof=epimorphism">proof</a>) and in $\Grp_\c$ (<a href="/category/Grp_c?proof=epimorphism">proof</a>), and use that $\Ab_\fg$ does not have all epimorphisms split (<a href="/category/Ab_fg?proof=all_epimorphisms_split" data-allow-deduced>proof</a>).
+    proof: The inclusion $\Ab_\fg \hookrightarrow \Grp_\c$ is fully faithful and preserves epimorphisms, since these are surjective in $\Ab_{\fg}$ (<a href="/category/Ab_fg?proof=epimorphism">proof</a>) and in $\Grp_\c$ (<a href="/category/Grp_c?proof=epimorphism">proof</a>). Since $\Ab_\fg$ does not have all epimorphisms split (<a href="/category/Ab_fg?proof=all_epimorphisms_split" data-allow-deduced>proof</a>), neither does $\Grp_\c$.
 
   - property: normal
     proof: Every non-normal subgroup of a countable group (such as $C_2 \hookrightarrow S_3$) provides a counterexample.

@@ -33,10 +33,10 @@ satisfied_properties:
     proof: Every finite set is isomorphic to $\{1,\dotsc,n\}$ for some $n \in \IN$.
 
   - property: all epimorphisms split
-    proof: Apply <a href="/content/subcategories#lemma_15">Lemma 15 on subcategories</a> to the inclusion $\FinSet \hookrightarrow \Set$, which preserves epimorphisms since these are surjective in $\FinSet$ (<a href="/category/FinSet?proof=epimorphism">proof</a>) and in $\Set$ (<a href="/category/Set?proof=epimorphism">proof</a>), and use that $\Set$ has all epimorphisms split (<a href="/category/Set?proof=all_epimorphisms_split" data-allow-deduced>proof</a>).
+    proof: The inclusion $\FinSet \hookrightarrow \Set$ is fully faithful and preserves epimorphisms, since these are surjective in $\FinSet$ (<a href="/category/FinSet?proof=epimorphism">proof</a>) and in $\Set$ (<a href="/category/Set?proof=epimorphism">proof</a>). Since $\Set$ has all epimorphisms split (<a href="/category/Set?proof=all_epimorphisms_split" data-allow-deduced>proof</a>), so does $\FinSet$.
 
   - property: extremal generator
-    proof: The one-point set is an extremal generator even in $\Set$ (<a href="/category/Set?proof=extremal_generator">proof</a>). Now apply <a href="/content/subcategories#lemma_10">Lemma 10 on subcategories</a>.
+    proof: The one-point set is an extremal generator even in $\Set$ (<a href="/category/Set?proof=extremal_generator">proof</a>), hence also in the full subcategory $\FinSet$.
 
   - property: semi-strongly connected
     proof: Every non-empty finite set is weakly terminal (by using constant maps).

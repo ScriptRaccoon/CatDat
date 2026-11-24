@@ -28,19 +28,19 @@ satisfied_properties:
     proof: Use constant maps.
 
   - property: all epimorphisms split
-    proof: Apply <a href="/content/subcategories#lemma_15">Lemma 15 on subcategories</a> to the inclusion $\FinSet_{3^\bullet} \hookrightarrow \Set$, which preserves epimorphisms since these are surjective in $\FinSet_{3^\bullet}$ (<a href="/category/FinSet_power_3?proof=epimorphism">proof</a>) and in $\Set$ (<a href="/category/Set?proof=epimorphism">proof</a>), and use that $\Set$ has all epimorphisms split (<a href="/category/Set?proof=all_epimorphisms_split" data-allow-deduced>proof</a>).
+    proof: The inclusion $\FinSet_{3^\bullet} \hookrightarrow \Set$ is fully faithful and preserves epimorphisms, since these are surjective in $\FinSet_{3^\bullet}$ (<a href="/category/FinSet_power_3?proof=epimorphism">proof</a>) and in $\Set$ (<a href="/category/Set?proof=epimorphism">proof</a>). Since $\Set$ has all epimorphisms split (<a href="/category/Set?proof=all_epimorphisms_split" data-allow-deduced>proof</a>), so does $\FinSet_{3^\bullet}$.
 
   - property: all monomorphisms split
-    proof: Apply the dual of <a href="/content/subcategories#lemma_15">Lemma 15 on subcategories</a> to the inclusion $\FinSet_{3^\bullet} \hookrightarrow \Setne$, which preserves monomorphisms since these are injective in $\FinSet_{3^\bullet}$ (<a href="/category/FinSet_power_3?proof=monomorphism">proof</a>) and in $\Setne$ (<a href="/category/Setne?proof=monomorphism">proof</a>), and use that $\Setne$ has all monomorphisms split (<a href="/category/Setne?proof=all_monomorphisms_split" data-allow-deduced>proof</a>).
+    proof: The inclusion $\FinSet_{3^\bullet} \hookrightarrow \Setne$ is fully faithful and preserves monomorphisms, since these are injective in $\FinSet_{3^\bullet}$ (<a href="/category/FinSet_power_3?proof=monomorphism">proof</a>) and in $\Setne$ (<a href="/category/Setne?proof=monomorphism">proof</a>). Since $\Setne$ has all monomorphisms split (<a href="/category/Setne?proof=all_monomorphisms_split" data-allow-deduced>proof</a>), so does $\FinSet_{3^\bullet}$.
 
   - property: cartesian closed
     proof: 'We use that $\FinSet$ is cartesian closed (<a href="/category/FinSet?proof=cartesian_closed" data-allow-deduced>proof</a>). Since $\{3^n : n \geq 0\}$ is closed under finite products (we have $3^0=1$ and $3^n 3^m = 3^{n+m}$) and thus under exponentiation, it follows that $\FinSet_{3^\bullet}$ is closed under finite cartesian products and exponential objects in $\FinSet$.'
 
   - property: extremal generator
-    proof: The set $\{0,1,2\}$ is an extremal generator even in <a href="/category/Set">$\Set$</a>. Now apply <a href="/content/subcategories#lemma_10">Lemma 10 on subcategories</a>.
+    proof: The set $\{0,1,2\}$ is an extremal generator even in <a href="/category/Set">$\Set$</a>, as is every non-empty set, hence also in the full subcategory $\FinSet_{3^\bullet}$.
 
   - property: extremal cogenerator
-    proof: The set $\{0,1,2\}$ is an extremal cogenerator even in <a href="/category/Set">$\Set$</a>. Now apply <a href="/content/subcategories#lemma_10">Lemma 10 on subcategories</a>.
+    proof: The set $\{0,1,2\}$ is an extremal cogenerator even in <a href="/category/Set">$\Set$</a>, as is every set with at least two elements, hence also in the full subcategory $\FinSet_{3^\bullet}$.
 
   - property: effective congruences
     proof: Let $R \rightrightarrows X$ be a congruence in $\FinSet_{3^\bullet}$. By applying the (functorial) definition to the test object $T = \{\ast\}$, we see that it is a congruence in $\Set$, i.e. an equivalence relation, such that $R$ and $X$ are finite sets of cardinality a power of $3$. Since for every $n \in \IN$ we have $n \leq 3^n$, the finite set $X/R$ embeds into a finite set $Q$ of cardinality a power of $3$. Then $R \rightrightarrows X$ is the kernel pair of $X \twoheadrightarrow X/R \hookrightarrow Q$ in $\FinSet_{3^\bullet}$.

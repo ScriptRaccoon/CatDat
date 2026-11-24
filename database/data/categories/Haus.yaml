@@ -44,7 +44,7 @@ satisfied_properties:
     check_redundancy: false
 
   - property: infinitary extensive
-    proof: This follows from <a href="/content/subcategories#lemma_11">Lemma 11 on subcategories</a> since $\Top$ is infinitary extensive (<a href="/category/Top?proof=infinitary_extensive" data-allow-deduced>proof</a>) and its full subcategory $\Haus$ is closed under pullbacks and coproducts in $\Top$.
+    proof: $\Top$ is infinitary extensive (<a href="/category/Top?proof=infinitary_extensive" data-allow-deduced>proof</a>), and this property is inherited by its full subcategory $\Haus$, since it is closed under pullbacks and coproducts in $\Top$.
 
   - property: well-powered
     proof: This is clear since the monomorphisms are the injective continuous maps (<a href="/category/Haus?proof=monomorphism">proof</a>).
@@ -63,7 +63,7 @@ unsatisfied_properties:
     proof: The spaces with underlying sets $\{0\}$ and $\{1\}$ are terminal objects, hence isomorphic, but not equal.
 
   - property: Malcev
-    proof: 'Apply the contrapositive of <a href="/content/subcategories#lemma_13">Lemma 13 on subcategories</a> to the inclusion of discrete spaces $\Set \to \Haus$, which is fully faithful and preserves finite limits. Here, we use that $\Set$ is not Malcev (<a href="/category/Set?proof=Malcev" data-allow-deduced>proof</a>).'
+    proof: 'The inclusion of discrete spaces $\Set \to \Haus$ is fully faithful and preserves finite limits. Since $\Set$ is not Malcev (<a href="/category/Set?proof=Malcev" data-allow-deduced>proof</a>), neither is $\Haus$.'
 
   - property: regular subobject classifier
     proof: Assume that there is a regular subobject classifier $\Omega$. Since the regular monomorphisms are the embeddings with closed image (<a href="/category/Haus?proof=regular_monomorphism">proof</a>), we would have an isomorphism between $\Hom(X,\Omega)$ and the set of closed subsets of $X$ for any Hausdorff space $X$. If we take $X = \{\ast\}$, we see that $\Omega$ has two points. Since $\Omega$ is Hausdorff, it must be discrete. But then $\Hom(X,\Omega)$ is isomorphic to the set of all clopen subsets of $X$, of which there are usually far fewer than closed subsets (consider $X = [0,1]$).

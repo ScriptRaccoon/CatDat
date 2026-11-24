@@ -67,7 +67,7 @@ unsatisfied_properties:
       and similarly for $g$. They agree on $\IN_{>0} \times \IN$, but $g(c) = c \neq c' = h(c)$.
 
   - property: cofiltered-limit-stable epimorphisms
-    proof: We already know that $\Set$ does not have this property (<a href="/category/Set?proof=cofiltered-limit-stable_epimorphisms" data-allow-deduced>proof</a>). Now apply the contrapositive of the dual of <a href="/content/subcategories#lemma_2">Lemma 2 on subcategories</a> to the functor $\Set \to \SemiGrp$ that equips a set with the multiplication $a \cdot b \coloneqq a$.
+    proof: We already know that $\Set$ does not have this property (<a href="/category/Set?proof=cofiltered-limit-stable_epimorphisms" data-allow-deduced>proof</a>). The functor $\Set \to \SemiGrp$ that equips a set with the multiplication $a \cdot b \coloneqq a$ is faithful. It preserves limits and epimorphisms, since its composition with the forgetful functor $\SemiGrp \to \Set$ is the identity, and the forgetful functor reflects limits and epimorphisms. Hence, $\SemiGrp$ does not have the property either.
 
   - property: pushout-stable regular monomorphisms
     # TODO: fill in the details why \iota is the equalizer.

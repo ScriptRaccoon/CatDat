@@ -140,7 +140,7 @@ unsatisfied_properties:
     proof: >-
       The morphism $(\varnothing \to \{\ast\} \to \{\ast\} \to \cdots) \to (\{\ast\} \to \{\ast\} \to \{\ast\} \to \cdots)$ between connected sequences is a monomorphism, since every component is injective. It has no retraction, since there is no map $\{\ast\} \to \varnothing$.
 
-      Alternatively, the functor $\Set \to [(\IN,\leq),\Set]_{\conn}$, $X \mapsto (X \to \{\ast\} \to \{\ast\} \to \cdots)$ is fully faithful and preserves monomorphisms, which are the morphisms that are injective in every degree (<a href="/category/SeqSet_conn?proof=monomorphism">proof</a>). Hence, the claim follows from the contrapositive of the dual of <a href="/content/subcategories#lemma_15">Lemma 15 on subcategories</a>, since $\Set$ does not have all monomorphisms split (<a href="/category/Set?proof=all_monomorphisms_split" data-allow-deduced>proof</a>).
+      Alternatively, the functor $\Set \to [(\IN,\leq),\Set]_{\conn}$, $X \mapsto (X \to \{\ast\} \to \{\ast\} \to \cdots)$ is fully faithful and preserves monomorphisms, which are the morphisms that are injective in every degree (<a href="/category/SeqSet_conn?proof=monomorphism">proof</a>). Since $\Set$ does not have all monomorphisms split (<a href="/category/Set?proof=all_monomorphisms_split" data-allow-deduced>proof</a>), neither does $[(\IN,\leq),\Set]_{\conn}$.
 
   - property: disjoint finite products
     proof: >-

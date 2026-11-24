@@ -35,7 +35,7 @@ satisfied_properties:
       is a pullback square in $\Quiv$, i.e. a pullback square in $\Quiv_{\fc}$.
 
   - property: infinitary extensive
-    proof: Since $\Quiv$ is infinitary extensive (<a href="/category/Quiv?proof=infinitary_extensive" data-allow-deduced>proof</a>) and $\Quiv_{\fc} \subseteq \Quiv$ is closed under coproducts and pullbacks, this follows from <a href="/content/subcategories#lemma_11">Lemma 11 on subcategories</a>.
+    proof: $\Quiv$ is infinitary extensive (<a href="/category/Quiv?proof=infinitary_extensive" data-allow-deduced>proof</a>), and this property is inherited by its full subcategory $\Quiv_{\fc}$, since it is closed under coproducts and pullbacks.
 
   - property: cokernel pairs
     proof: 'We will show that $\Quiv_{\fc} \subseteq \Quiv$ is closed under cokernel pairs. More generally, let $f : G \to H$ be a morphism of quivers with $H \in \Quiv_{\fc}$. Write $H = \coprod_i H_i$ as a coproduct of finite quivers. Since $\Quiv$ is infinitary extensive (<a href="/category/Quiv?proof=infinitary_extensive" data-allow-deduced>proof</a>), we have $G = \coprod_i f^*(H_i)$, and $f$ decomposes as a coproduct of morphisms $f_i : f^*(H_i) \to H_i$. Then $H \sqcup_G H = \coprod_i (H_i \sqcup_{f^*(H_i)} H_i)$. Each quiver $H_i \sqcup_{f^*(H_i)} H_i$ is finite because it is a quotient of the finite quiver $H_i \sqcup H_i$. Thus, $H \sqcup_G H$ belongs to $\Quiv_{\fc}$.'

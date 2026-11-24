@@ -24,7 +24,7 @@ satisfied_properties:
     proof: Every countable set is isomorphic to a subset of $\IN$.
 
   - property: all epimorphisms split
-    proof: Apply <a href="/content/subcategories#lemma_15">Lemma 15 on subcategories</a> to the inclusion $\Set_\c \hookrightarrow \Set$, which preserves epimorphisms since these are surjective in $\Set_\c$ (<a href="/category/Set_c?proof=epimorphism">proof</a>) and in $\Set$ (<a href="/category/Set?proof=epimorphism">proof</a>), and use that $\Set$ has all epimorphisms split (<a href="/category/Set?proof=all_epimorphisms_split" data-allow-deduced>proof</a>).
+    proof: The inclusion $\Set_\c \hookrightarrow \Set$ is fully faithful and preserves epimorphisms, since these are surjective in $\Set_\c$ (<a href="/category/Set_c?proof=epimorphism">proof</a>) and in $\Set$ (<a href="/category/Set?proof=epimorphism">proof</a>). Since $\Set$ has all epimorphisms split (<a href="/category/Set?proof=all_epimorphisms_split" data-allow-deduced>proof</a>), so does $\Set_\c$.
 
   - property: finitely complete
     proof: The embedding $\Set_\c \hookrightarrow \Set$ is closed under finite products and equalizers, hence under finite limits.
@@ -38,16 +38,16 @@ satisfied_properties:
     proof: This is because $\{0,1\}$ is a subobject classifier in <a href="/category/Set">$\Set$</a>, which is countable, and the monomorphisms coincide.
 
   - property: extremal generator
-    proof: The one-point set is an extremal generator even in $\Set$ (<a href="/category/Set?proof=extremal_generator">proof</a>). Now apply <a href="/content/subcategories#lemma_10">Lemma 10 on subcategories</a>.
+    proof: The one-point set is an extremal generator even in $\Set$ (<a href="/category/Set?proof=extremal_generator">proof</a>), hence also in the full subcategory $\Set_\c$.
 
   - property: extremal cogenerator
-    proof: The two-point set is an extremal cogenerator even in $\Set$ (<a href="/category/Set?proof=extremal_cogenerator">proof</a>). Now apply <a href="/content/subcategories#lemma_10">Lemma 10 on subcategories</a>.
+    proof: The two-point set is an extremal cogenerator even in $\Set$ (<a href="/category/Set?proof=extremal_cogenerator">proof</a>), hence also in the full subcategory $\Set_\c$.
 
   - property: semi-strongly connected
     proof: This is because the larger category $\Set$ has this property (<a href="/category/Set?proof=semi-strongly_connected" data-allow-deduced>proof</a>).
 
   - property: countably extensive
-    proof: This follows from <a href="/content/subcategories#lemma_11">Lemma 11 on subcategories</a> since $\Set$ is countably extensive, even infinitary extensive (<a href="/category/Set?proof=infinitary_extensive" data-allow-deduced>proof</a>), and its full subcategory $\Set_\c$ is closed under pullbacks and countable coproducts in $\Set$.
+    proof: $\Set$ is countably extensive, even infinitary extensive (<a href="/category/Set?proof=infinitary_extensive" data-allow-deduced>proof</a>), and this property is inherited by its full subcategory $\Set_\c$, since it is closed under pullbacks and countable coproducts in $\Set$.
 
   - property: effective congruences
     proof: 'Let $R \rightrightarrows X$ be a congruence in $\Set_\c$. Then using $\{\ast\}$ as a test object, we see that this induces an equivalence relation on $X$. We already know that $\Set$ has effective congruences, as does every topos (<a href="/category/Set?proof=effective_congruences" data-allow-deduced>proof</a>). Using <a href="/content/effective-congruence-quotients">this result</a>, we see that $R$ is the kernel pair of $X \to (X/R)_{\Set}$ in $\Set$. Also, the quotient $(X/R)_{\Set}$ is countable; and the forgetful functor $\Set_\c \to \Set$ is fully faithful <a href="https://ncatlab.org/nlab/show/reflected+limit#FullSubcategoryInclusionReflectCoLimits">and therefore reflects limits</a>. Thus, we conclude that $R$ is the kernel pair of $X \to (X/R)_{\Set}$ in $\Set_\c$ as well.'

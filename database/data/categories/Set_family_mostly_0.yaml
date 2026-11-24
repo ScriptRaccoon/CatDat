@@ -40,7 +40,7 @@ satisfied_properties:
     proof: We have just proved that non-empty limits exist (<a href="/category/Set_family_mostly_0?proof=connected_limits">proof</a>). Concretely, we have $(X \times Y)_i = X_i \times Y_i$ with $\supp(X \times Y) = \supp(X) \cap \supp(Y)$.
 
   - property: infinitary extensive
-    proof: Since $\Set$ is infinitary extensive (<a href="/category/Set?proof=infinitary_extensive" data-allow-deduced>proof</a>), $\Set^I$ is also infinitary extensive. We can now apply <a href="/content/subcategories#lemma_11">Lemma 11 on subcategories</a> to the inclusion functor $\Set^{(I)}_0 \hookrightarrow \Set^I$.
+    proof: Since $\Set$ is infinitary extensive (<a href="/category/Set?proof=infinitary_extensive" data-allow-deduced>proof</a>), $\Set^I$ is also infinitary extensive. This property is inherited by the full subcategory $\Set^{(I)}_0$, since it is closed under coproducts (<a href="/category/Set_family_mostly_0?proof=cocomplete">proof</a>) and pullbacks (<a href="/category/Set_family_mostly_0?proof=connected_limits">proof</a>).
 
   - property: locally cartesian closed
     proof: >-

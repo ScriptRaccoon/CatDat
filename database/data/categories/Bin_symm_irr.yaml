@@ -45,7 +45,7 @@ satisfied_properties:
     proof: We have just seen that all non-empty limits exist (<a href="/category/Bin_symm_irr?proof=connected_limits">proof</a>).
 
   - property: infinitary extensive
-    proof: It is easy to check that $\Bin_{\symm,\irr} \subseteq \Bin$ is closed under coproducts (see below for their concrete description), and we already know that it is also closed under pullbacks (<a href="/category/Bin_symm_irr?proof=connected_limits">proof</a>). Since $\Bin$ is infinitary extensive (<a href="/category/Bin?proof=infinitary_extensive" data-allow-deduced>proof</a>), the claim therefore follows from <a href="/content/subcategories#lemma_11">Lemma 11 on subcategories</a>.
+    proof: It is easy to check that $\Bin_{\symm,\irr} \subseteq \Bin$ is closed under coproducts (see below for their concrete description), and we already know that it is also closed under pullbacks (<a href="/category/Bin_symm_irr?proof=connected_limits">proof</a>). Since $\Bin$ is infinitary extensive (<a href="/category/Bin?proof=infinitary_extensive" data-allow-deduced>proof</a>), so is its full subcategory $\Bin_{\symm,\irr}$.
 
   - property: finitely accessible
     proof: >-
