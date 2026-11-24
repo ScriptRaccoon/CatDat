@@ -55,7 +55,7 @@ satisfied_properties:
     proof: 'If $f : G \to H$ is an epimorphism in $\Grp_\c$, i.e. a surjective homomorphism of countable groups, then $f$ is the cokernel of $K \hookrightarrow G$ in $\Grp$, where $K$ is the kernel of $f$. Since $K$ is countable, it is also the cokernel in $\Grp_\c$.'
 
   - property: Malcev
-    proof: We can use the same <a href="/category/Grp?proof=Malcev">proof</a> as for $\Grp$.
+    proof: $\Grp$ is Malcev (<a href="/category/Grp?proof=Malcev" data-allow-deduced>proof</a>), and this property is inherited by its full subcategory $\Grp_\c$, since it is closed under finite products (<a href="/category/Grp_c?proof=finite_products">proof</a>) and equalizers (<a href="/category/Grp_c?proof=equalizers">proof</a>).
 
   - property: regular
     proof: This follows from <a href="/content/subcategories#lemma_5">Lemma 5 on subcategories</a> applied to the inclusion functor $\Grp_\c \hookrightarrow \Grp$ into the regular category $\Grp$ and the fact that the regular epimorphisms in $\Grp_\c$ are the epimorphisms (<a href="/category/Grp_c?proof=regular_epimorphism" data-allow-deduced>proof</a>), i.e. the surjective homomorphisms (<a href="/category/Grp_c?proof=epimorphism">proof</a>).
