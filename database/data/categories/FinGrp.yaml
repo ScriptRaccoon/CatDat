@@ -39,7 +39,7 @@ satisfied_properties:
     proof: Since epimorphisms are surjective (<a href="/category/FinGrp?proof=epimorphism">proof</a>), this is the first isomorphism theorem for finite groups.
 
   - property: Malcev
-    proof: A direct argument is possible, but this can also be derived from the observation that $\FinGrp$ is the category of group objects in $(\FinSet,\times)$ and <a href="https://ncatlab.org/nlab/show/Malcev,+protomodular,+homological+and+semi-abelian+categories">Borceux–Bourn</a>, Example 2.2.16.
+    proof: $\Grp$ is Malcev (<a href="/category/Grp?proof=Malcev" data-allow-deduced>proof</a>), and this property is inherited by its full subcategory $\FinGrp$, since it is closed under finite limits.
 
   - property: effective congruences
     proof: 'Suppose we have a congruence $R \rightrightarrows X$ in $\FinGrp$. Since the embedding $\FinGrp \hookrightarrow \Grp$ preserves finite limits, it is also a congruence in $\Grp$. We already know that $\Grp$ has effective congruences (<a href="/category/Grp?proof=effective_congruences" data-allow-deduced>proof</a>). Using <a href="/content/effective-congruence-quotients">this result</a>, we see that $R$ is the kernel pair of $X \to (X/R)_{\Grp}$ in $\Grp$. Also, the quotient $(X/R)_{\Grp}$ is finite; and the forgetful functor $\FinGrp \to \Grp$ is fully faithful <a href="https://ncatlab.org/nlab/show/reflected+limit#FullSubcategoryInclusionReflectCoLimits">and therefore reflects limits</a>. Thus, we conclude that $R$ is the kernel pair of $X \to (X/R)_{\Grp}$ in $\FinGrp$ as well.'
