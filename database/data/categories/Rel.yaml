@@ -50,10 +50,10 @@ satisfied_properties:
     proof: The canonical morphism from the coproduct to the product is the identity.
 
   - property: quotients of congruences
-    proof: A proof can be found <a href="/content/congruences_in_rel">here</a>.
+    proof: This follows from <a href="/content/congruences_in_rel#proposition_1">Proposition 1 on congruences in $\Rel$</a>.
 
   - property: effective congruences
-    proof: A proof can be found <a href="/content/congruences_in_rel">here</a>.
+    proof: This follows from <a href="/content/congruences_in_rel#proposition_1">Proposition 1 on congruences in $\Rel$</a>.
 
 unsatisfied_properties:
   - property: skeletal
