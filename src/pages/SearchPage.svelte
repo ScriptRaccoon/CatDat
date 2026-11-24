@@ -92,6 +92,7 @@
 	allowed_items={all_properties}
 	section_label="Satisfied properties"
 	item_label="Satisfied property"
+	has_shortcut={true}
 >
 	<p>Looking for {PLURALS[type]} with these properties:</p>
 </Selection>

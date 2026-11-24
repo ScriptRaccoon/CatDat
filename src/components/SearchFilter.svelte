@@ -1,6 +1,9 @@
 <script lang="ts">
 	import { faSearch, faXmark } from '@fortawesome/free-solid-svg-icons'
 	import Fa from 'svelte-fa'
+	import { focus_on_shortcut } from '#lib/client/shortcut.ts'
+	import { close_popup } from './Popup.svelte'
+	import ShortcutHint from './ShortcutHint.svelte'
 
 	type Props = {
 		search: string
@@ -31,6 +34,7 @@
 			aria-label={label}
 			bind:value={search_actual}
 			{placeholder}
+			{@attach focus_on_shortcut(close_popup)}
 		/>
 
 		{#if search}
@@ -41,6 +45,8 @@
 			>
 				<Fa icon={faXmark} color="var(--secondary-text-color)" scale={0.875} />
 			</button>
+		{:else}
+			<ShortcutHint />
 		{/if}
 	</div>
 
