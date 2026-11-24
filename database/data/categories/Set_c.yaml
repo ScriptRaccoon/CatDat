@@ -53,7 +53,7 @@ satisfied_properties:
     proof: 'Let $R \rightrightarrows X$ be a congruence in $\Set_\c$. Then using $\{\ast\}$ as a test object, we see that this induces an equivalence relation on $X$. We already know that $\Set$ has effective congruences, as does every topos (<a href="/category/Set?proof=effective_congruences" data-allow-deduced>proof</a>). Using <a href="/content/effective-congruence-quotients">this result</a>, we see that $R$ is the kernel pair of $X \to (X/R)_{\Set}$ in $\Set$. Also, the quotient $(X/R)_{\Set}$ is countable; and the forgetful functor $\Set_\c \to \Set$ is fully faithful <a href="https://ncatlab.org/nlab/show/reflected+limit#FullSubcategoryInclusionReflectCoLimits">and therefore reflects limits</a>. Thus, we conclude that $R$ is the kernel pair of $X \to (X/R)_{\Set}$ in $\Set_\c$ as well.'
 
   - property: coregular
-    proof: This follows from the dual of <a href="/content/subcategories#lemma_7">Lemma 7 on subcategories</a> applied to the inclusion functor $\Set_\c \hookrightarrow \Set$ into the coregular category $\Set$ and the fact that the regular monomorphisms in $\Set_\c$ are the monomorphisms (<a href="/category/Set_c?proof=regular_monomorphism" data-allow-deduced>proof</a>).
+    proof: This follows from the dual of <a href="/content/subcategories#lemma_5">Lemma 5 on subcategories</a> applied to the inclusion functor $\Set_\c \hookrightarrow \Set$ into the coregular category $\Set$ and the fact that the regular monomorphisms in $\Set_\c$ are the monomorphisms (<a href="/category/Set_c?proof=regular_monomorphism" data-allow-deduced>proof</a>).
 
 unsatisfied_properties:
   - property: small

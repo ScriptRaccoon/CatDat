@@ -54,7 +54,7 @@ satisfied_properties:
     check_redundancy: false
 
   - property: pullback-stable regular epimorphisms
-    proof: 'Apply the dual of <a href="/content/subcategories#lemma_14">Lemma 14 on subcategories</a> to the inclusion $\Quiv_{\fc} \to \Quiv$. It preserves pullbacks (see the proofs for <a href="/category/Quiv_fc?proof=finite_products">finite products</a> and <a href="/category/Quiv_fc?proof=equalizers">equalizers</a>), and it preserves regular epimorphisms since these are the morphisms with surjective components in $\Quiv_{\fc}$ (<a href="/category/Quiv_fc?proof=regular_epimorphism" data-allow-deduced>proof</a>) and in $\Quiv$ (<a href="/category/Quiv?proof=regular_epimorphism" data-allow-deduced>proof</a>). Here, we use that $\Quiv$ has pullback-stable regular epimorphisms (<a href="/category/Quiv?proof=pullback-stable_regular_epimorphisms" data-allow-deduced>proof</a>).'
+    proof: 'Apply the dual of <a href="/content/subcategories#lemma_9">Lemma 9 on subcategories</a> to the inclusion $\Quiv_{\fc} \to \Quiv$. It preserves pullbacks (see the proofs for <a href="/category/Quiv_fc?proof=finite_products">finite products</a> and <a href="/category/Quiv_fc?proof=equalizers">equalizers</a>), and it preserves regular epimorphisms since these are the morphisms with surjective components in $\Quiv_{\fc}$ (<a href="/category/Quiv_fc?proof=regular_epimorphism" data-allow-deduced>proof</a>) and in $\Quiv$ (<a href="/category/Quiv?proof=regular_epimorphism" data-allow-deduced>proof</a>). Here, we use that $\Quiv$ has pullback-stable regular epimorphisms (<a href="/category/Quiv?proof=pullback-stable_regular_epimorphisms" data-allow-deduced>proof</a>).'
 
   - property: ℵ₁-accessible
     proof: >-

@@ -17,7 +17,7 @@ $$\Hom(X,R(\Omega)) \cong \Hom(U(X),\Omega) \cong \Sub(U(X)) \cong \Sub(X).$$
 The same proof works for regular subobjects.
 :::
 
-::: Lemma 3
+::: Lemma 2
 Let $U : \C \to \D$ be a fully faithful functor with a left adjoint $L : \D \to \C$ (i.e. $\C$ is equivalent to a reflective subcategory of $\D$). Assume that $\D$ has exact filtered colimits, that $\C$ has finite limits, and that $L$ preserves finite limits. Then $\C$ also has exact filtered colimits.
 :::
 
@@ -37,7 +37,7 @@ $$
 It is routine to check that the composite is the natural morphism.
 :::
 
-::: Lemma 5
+::: Lemma 3
 Let $U : \C \to \D$ be a fully faithful functor with a right adjoint $R : \D \to \C$ (i.e. $\C$ is equivalent to a coreflective subcategory of $\D$). Assume that $\C$ has binary products, and that $U$ preserves these binary products. If $\D$ is cartesian closed, then so is $\C$, with exponentials in $\C$ given by
 $$[X, Y]_{\C} \cong R([UX, UY]_{\D}).$$
 :::
@@ -55,16 +55,16 @@ $$
 
 :::
 
-::: Corollary 6
+::: Corollary 4
 If $\C$ is a cartesian closed category and $P$ is a [subterminal object](https://ncatlab.org/nlab/show/subterminal+object) of $\C$, then the slice category $\C / P$ is also cartesian closed, with exponentials in $\C / P$ given by
 $$[X, Y]_{\C / P} \cong [X, Y]_{\C} \times P.$$
 :::
 
 ::: Proof
-The forgetful functor $\C / P \to \C$ is fully faithful; it has right adjoint ${-} \times P$; and it preserves binary products (in fact all inhabited limits). Hence, [Lemma 5](#lemma_5) applies.
+The forgetful functor $\C / P \to \C$ is fully faithful; it has right adjoint ${-} \times P$; and it preserves binary products (in fact all inhabited limits). Hence, [Lemma 3](#lemma_3) applies.
 :::
 
-::: Lemma 7
+::: Lemma 5
 Let $U : \C \to \D$ be a functor preserving pullbacks. Assume that $\D$ is regular and that $\C$ has finite limits and coequalizers of kernel pairs. If $U$ preserves and reflects regular epimorphisms, then $\C$ is regular. Moreover, this condition is satisfied when $U$ is conservative and preserves coequalizers.
 :::
 
@@ -78,7 +78,7 @@ $$U(X) \times_{U(Y)} U(X) \rightrightarrows U(X) \xrightarrow{U(p)} U(\im(f)) \x
 where $U(X) \times_{U(Y)} U(X)$ is the kernel pair of $U(f)$, and $U(\im(f))$ is the coequalizer. Since $U(f)$ is a regular epimorphism and $\D$ is regular, we must have that $U(i)$ is an isomorphism. Since $U$ is conservative, $i$ is an isomorphism as well, so $f$ is a regular epimorphism.
 :::
 
-::: Lemma 8
+::: Lemma 6
 Let $U : \C \to \D$ be a fully faithful functor. Assume that $\C$ has pullbacks and coequalizers, that $U$ preserves pullbacks and coequalizers, and that $U$ preserves jointly monomorphic parallel pairs (which holds, for example, if $\C$ has binary products and $U$ preserves them). If $\D$ has effective congruences, then so does $\C$.
 :::
 
@@ -94,7 +94,7 @@ is an isomorphism, where $U(X/E)$ is the coequalizer of $U(E) \rightrightarrows 
 Finally, to prove the parenthetical remark, assume that $\C$ has binary products and that $U$ preserves them. Then $U$ preserves jointly monomorphic parallel pairs, because it preserves monomorphisms (as it preserves pullbacks), and a pair $A \rightrightarrows B$ is jointly monomorphic if and only if the induced morphism $A \to B \times B$ is a monomorphism.
 :::
 
-::: Lemma 9
+::: Lemma 7
 Let $U : \C \to \D$ be a faithful functor with a left adjoint $L : \D \to \C$. Then $L$ preserves generating collections. If $U$ is also conservative, then $L$ preserves extremal generating collections. (Thus in particular, any reflective subcategory of a category with a generating collection also has a generating collection; and similarly for a single generator.)
 :::
 
@@ -107,7 +107,7 @@ $$(\Hom(G,-))_{G \in S} : \D \to (\Set^+)^S.$$
 If $S$ is a generating collection, this is a composition of faithful functors, hence faithful. If $S$ is an extremal generating collection and $U$ is conservative, this is a composition of faithful conservative functors, hence faithful and conservative.
 :::
 
-::: Lemma 12
+::: Lemma 8
 Let $U : \C \to \D$ be a fully faithful functor that preserves kernel pairs. Let $f : X \to Y$ be a morphism in $\C$ that has a kernel pair in $\C$. If $U(f)$ is a regular epimorphism in $\D$, then $f$ is a regular epimorphism in $\C$. In particular, if $U$ maps epimorphisms to regular epimorphisms and $\C$ is not epi-regular, then $\C$ does not have kernel pairs.
 :::
 
@@ -117,25 +117,27 @@ Let $p_1,p_2 : E \rightrightarrows X$ be the kernel pair of $f$ in $\C$. Then $U
 For the second statement, assume that $\C$ has kernel pairs and that $U$ maps epimorphisms to regular epimorphisms. By the first statement, every epimorphism of $\C$ is regular, i.e. $\C$ is epi-regular.
 :::
 
-::: Lemma 14
+::: Lemma 9
 Let $U : \C \to \D$ be a fully faithful functor between categories with pushouts. Assume that $U$ preserves pushouts and regular monomorphisms. If $\D$ has pushout-stable regular monomorphisms, then so does $\C$.
 :::
 
 ::: Proof
-Let $m : X \to Y$ be a regular monomorphism and $X \to Z$ a morphism in $\C$, and let $m' : Z \to Z \sqcup_X Y$ be the induced morphism. Since $U$ preserves pushouts, $U(m')$ is the pushout of the regular monomorphism $U(m)$ along $U(X) \to U(Z)$, hence a regular monomorphism. Since $U$ preserves pushouts, it preserves cokernel pairs. By the dual of [Lemma 12](#lemma_12), $m'$ is a regular monomorphism.
+Let $m : X \to Y$ be a regular monomorphism and $X \to Z$ a morphism in $\C$, and let $m' : Z \to Z \sqcup_X Y$ be the induced morphism. Since $U$ preserves pushouts, $U(m')$ is the pushout of the regular monomorphism $U(m)$ along $U(X) \to U(Z)$, hence a regular monomorphism. Since $U$ preserves pushouts, it preserves cokernel pairs. By the dual of [Lemma 8](#lemma_8), $m'$ is a regular monomorphism.
 :::
 
-::: Lemma 16
+::: Lemma 10
 Let $U : \C \to \D$ be a fully faithful functor with a left adjoint $L : \D \to \C$ (i.e. $\C$ is equivalent to a reflective subcategory of $\D$). Assume that $\C$ has finite products and filtered colimits, and that $L$ preserves binary products. If $\D$ has cartesian filtered colimits, then so does $\C$.
 :::
 
 ::: Proof
 Let $X$ be an object of $\C$ and $Y : \I \to \C$ a filtered diagram. Since $U$ is fully faithful, the counit $L \circ U \to \id_\C$ is an isomorphism. Since $L$ preserves colimits and $U$ preserves binary products, we get isomorphisms
 
-$$ \begin{align*}
+$$
+\begin{align*}
 \textstyle \colim_{i \in \I} (X \times Y_i) & \cong \textstyle L\bigl(\colim_{i \in \I} (U(X) \times U(Y_i))\bigr), \\
 \textstyle X \times \colim_{i \in \I} Y_i & \cong \textstyle L\bigl(U(X) \times \colim_{i \in \I} U(Y_i)\bigr),
-\end{align*}$$
+\end{align*}
+$$
+
 using in the second line that $L$ preserves binary products. Under these isomorphisms, the canonical comparison map $\colim_{i \in \I} (X \times Y_i) \to X \times \colim_{i \in \I} Y_i$ corresponds to $L$ applied to the canonical comparison map $\colim_{i \in \I} (U(X) \times U(Y_i)) \to U(X) \times \colim_{i \in \I} U(Y_i)$, which is an isomorphism since $\D$ has cartesian filtered colimits. Hence, the comparison map in $\C$ is an isomorphism.
 :::
-$$

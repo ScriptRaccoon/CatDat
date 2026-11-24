@@ -46,7 +46,7 @@ unsatisfied_properties:
     proof: Since we know that $\Mon$ is not balanced (<a href="/category/Mon?proof=balanced" data-allow-deduced>proof</a>), there is a monoid map $M \to N$ which is a monomorphism and an epimorphism, but not an isomorphism. Then $B(M) \to B(N)$ has the corresponding properties.
 
   - property: pushout-stable regular monomorphisms
-    proof: 'Apply the contrapositive of <a href="/content/subcategories#lemma_14">Lemma 14 on subcategories</a> to the delooping functor $B : \Mon \to \Cat$. It is fully faithful, it preserves regular monomorphisms since it has a left adjoint (<a href="https://math.stackexchange.com/questions/574745">MSE/574745</a>), and it preserves pushouts (<a href="https://math.stackexchange.com/questions/5130854">MSE/5130854</a>). Here, we use that $\Mon$ does not have pushout-stable regular monomorphisms (<a href="/category/Mon?proof=pushout-stable_regular_monomorphisms" data-allow-deduced>proof</a>).'
+    proof: 'Apply the contrapositive of <a href="/content/subcategories#lemma_9">Lemma 9 on subcategories</a> to the delooping functor $B : \Mon \to \Cat$. It is fully faithful, it preserves regular monomorphisms since it has a left adjoint (<a href="https://math.stackexchange.com/questions/574745">MSE/574745</a>), and it preserves pushouts (<a href="https://math.stackexchange.com/questions/5130854">MSE/5130854</a>). Here, we use that $\Mon$ does not have pushout-stable regular monomorphisms (<a href="/category/Mon?proof=pushout-stable_regular_monomorphisms" data-allow-deduced>proof</a>).'
 
   - property: product-stable epimorphisms
     proof: >-

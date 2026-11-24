@@ -64,7 +64,7 @@ satisfied_properties:
     proof: The forgetful functor $\Top_* \to \Set$ is faithful and preserves products (<a href="/category/Top_*?proof=complete">proof</a>) and epimorphisms (<a href="/category/Top_*?proof=epimorphism">proof</a>). Since $\Set$ has product-stable epimorphisms (<a href="/category/Set?proof=product-stable_epimorphisms" data-allow-deduced>proof</a>), so does $\Top_*$.
 
   - property: coregular
-    proof: This follows from the dual of <a href="/content/subcategories#lemma_7">Lemma 7 on subcategories</a> applied to the forgetful functor $\Top_* \to \Top$, using that $\Top$ is coregular (<a href="/category/Top?proof=coregular" data-allow-deduced>proof</a>) and that the regular monomorphisms in $\Top_*$ are the embeddings (<a href="/category/Top_*?proof=regular_monomorphism">proof</a>).
+    proof: This follows from the dual of <a href="/content/subcategories#lemma_5">Lemma 5 on subcategories</a> applied to the forgetful functor $\Top_* \to \Top$, using that $\Top$ is coregular (<a href="/category/Top?proof=coregular" data-allow-deduced>proof</a>) and that the regular monomorphisms in $\Top_*$ are the embeddings (<a href="/category/Top_*?proof=regular_monomorphism">proof</a>).
 
   - property: extremal cogenerator
     proof: >-

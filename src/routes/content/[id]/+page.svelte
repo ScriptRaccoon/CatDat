@@ -16,14 +16,14 @@
 			Object.keys(data.implications_by_type).length
 	)
 
-	// A link such as /content/subcategories#lemma_16 outlines Lemma 16.
+	// A link such as /content/subcategories#lemma_10 outlines Lemma 10.
 	// The CSS selector :target cannot be used for this, since the browser does
 	// not update it when SvelteKit navigates without reloading the page.
 	$effect(() => {
 		// data.html is read so that this reruns on navigation to another content page
 		if (!data.html) return
 
-		const target_id = page.url.hash.slice(1) // e.g. "lemma_16"
+		const target_id = page.url.hash.slice(1) // e.g. "lemma_10"
 
 		for (const theorem of document.querySelectorAll('.theorem')) {
 			theorem.classList.toggle('targeted', theorem.id === target_id)

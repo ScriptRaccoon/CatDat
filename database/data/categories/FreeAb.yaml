@@ -48,7 +48,7 @@ satisfied_properties:
     proof: 'Let $f : A \to B$ be a homomorphism of free abelian groups. The coequalizer of its kernel pair $A \times_B A \rightrightarrows A$ in $\Ab$ is the image $\im(f)$. As a subgroup of $B$, it is also free abelian. Then it is also the coequalizer of the kernel pair in $\FreeAb$.'
 
   - property: pullback-stable regular epimorphisms
-    proof: 'Apply the dual of <a href="/content/subcategories#lemma_14">Lemma 14 on subcategories</a> to the inclusion $\FreeAb \to \Ab$. It preserves pullbacks since subgroups of free abelian groups are free, and it preserves regular epimorphisms since these are the surjective homomorphisms in $\FreeAb$ (<a href="/category/FreeAb?proof=regular_epimorphism">proof</a>) and in $\Ab$ (<a href="/category/Ab?proof=regular_epimorphism" data-allow-deduced>proof</a>). Here, we use that $\Ab$ has pullback-stable regular epimorphisms (<a href="/category/Ab?proof=pullback-stable_regular_epimorphisms" data-allow-deduced>proof</a>).'
+    proof: 'Apply the dual of <a href="/content/subcategories#lemma_9">Lemma 9 on subcategories</a> to the inclusion $\FreeAb \to \Ab$. It preserves pullbacks since subgroups of free abelian groups are free, and it preserves regular epimorphisms since these are the surjective homomorphisms in $\FreeAb$ (<a href="/category/FreeAb?proof=regular_epimorphism">proof</a>) and in $\Ab$ (<a href="/category/Ab?proof=regular_epimorphism" data-allow-deduced>proof</a>). Here, we use that $\Ab$ has pullback-stable regular epimorphisms (<a href="/category/Ab?proof=pullback-stable_regular_epimorphisms" data-allow-deduced>proof</a>).'
 
   - property: extremal cogenerator
     proof: >-

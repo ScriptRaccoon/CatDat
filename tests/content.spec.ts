@@ -103,20 +103,20 @@ test('user can follow a link to a result on a content page', async ({ page }) =>
 
 	await page
 		.getByRole('link', {
-			name: 'Lemma 16 on subcategories',
+			name: 'Lemma 10 on subcategories',
 			exact: true
 		})
 		.click()
 
-	await expect(page).toHaveURL('/content/subcategories#lemma_16')
+	await expect(page).toHaveURL('/content/subcategories#lemma_10')
 
-	await expect(page.locator('#lemma_16')).toBeInViewport()
-	await expect(page.locator('#lemma_16')).toContainText('Lemma 16.')
+	await expect(page.locator('#lemma_10')).toBeInViewport()
+	await expect(page.locator('#lemma_10')).toContainText('Lemma 10.')
 
 	const get_border_color = (id: string) =>
 		page.locator(id).evaluate((element) => getComputedStyle(element).borderColor)
 
 	await expect
-		.poll(async () => await get_border_color('#lemma_16'))
-		.not.toBe(await get_border_color('#lemma_14'))
+		.poll(async () => await get_border_color('#lemma_10'))
+		.not.toBe(await get_border_color('#lemma_9'))
 })

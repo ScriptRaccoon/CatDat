@@ -48,7 +48,7 @@ satisfied_properties:
     proof: 'A proof can be found in <a href="https://mathoverflow.net/questions/511516">MO/511516</a>. It even shows that every cocongruence in $\FinGrp$ is trivial. In short, the proof goes like this: We know that $\Grp$ has effective cocongruences (<a href="/category/Grp?proof=effective_cocongruences" data-allow-deduced>proof</a>). Using the fact that amalgamated sums of finite groups are residually finite, one can show that every cocongruence in $\FinGrp$ is also a cocongruence in $\Grp$.'
 
   - property: regular
-    proof: This follows from <a href="/content/subcategories#lemma_7">Lemma 7 on subcategories</a> applied to the inclusion functor $\FinGrp \hookrightarrow \Grp$ into the regular category $\Grp$ and the fact that the regular epimorphisms in $\FinGrp$ are the epimorphisms (<a href="/category/FinGrp?proof=regular_epimorphism" data-allow-deduced>proof</a>), i.e. the surjective homomorphisms (<a href="/category/FinGrp?proof=epimorphism">proof</a>).
+    proof: This follows from <a href="/content/subcategories#lemma_5">Lemma 5 on subcategories</a> applied to the inclusion functor $\FinGrp \hookrightarrow \Grp$ into the regular category $\Grp$ and the fact that the regular epimorphisms in $\FinGrp$ are the epimorphisms (<a href="/category/FinGrp?proof=regular_epimorphism" data-allow-deduced>proof</a>), i.e. the surjective homomorphisms (<a href="/category/FinGrp?proof=epimorphism">proof</a>).
 
 unsatisfied_properties:
   - property: small
