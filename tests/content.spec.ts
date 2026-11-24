@@ -97,3 +97,26 @@ test('user can view referencing categories on a content page', async ({ page }) 
 		})
 	).toBeVisible()
 })
+
+test('user can follow a link to a result on a content page', async ({ page }) => {
+	await page.goto('/category/Ban?proof=cartesian_filtered_colimits')
+
+	await page
+		.getByRole('link', {
+			name: 'Lemma 16 on subcategories',
+			exact: true
+		})
+		.click()
+
+	await expect(page).toHaveURL('/content/subcategories#lemma_16')
+
+	await expect(page.locator('#lemma_16')).toBeInViewport()
+	await expect(page.locator('#lemma_16')).toContainText('Lemma 16.')
+
+	const get_border_color = (id: string) =>
+		page.locator(id).evaluate((element) => getComputedStyle(element).borderColor)
+
+	await expect
+		.poll(async () => await get_border_color('#lemma_16'))
+		.not.toBe(await get_border_color('#lemma_15'))
+})
