@@ -27,7 +27,7 @@ Assume first that $F$ is continuous. An object $X$ is subterminal if and only if
 Conversely, assume that each $F(s) \in \C$ is subterminal. To show that $F$ is continuous, let $D : \I \to \S$ be a diagram admitting a universal cone $(s \to D(i))_{i \in \I}$. Then $D(i) = s$ for all $i \in \I$, and each morphism $s \to D(i)$ is the identity. Since $\S$ has no terminal object (otherwise, $\S$ would be trivial), $\I$ is inhabited. We need to show that $(\id_{F(s)} : F(s) \to F(s))_{i \in \I}$ is a universal cone in $\C$. This follows immediately from $F(s)$ being subterminal: for a family of morphisms $X \to F(s)$ indexed by $\I$, all morphisms must be equal, and there is one such morphism since $\I$ is inhabited.
 :::
 
-Remark that in a thin category, every object is subterminal. Of course, Lemma 2 can also be dualized: A functor on a non-trivial inhabited discrete category is cocontinuous if and only if each object in its image is "co-subterminal". Here, an object $X$ is co-subterminal if any two morphisms with domain $X$ are equal (see [MSE/1092122](https://math.stackexchange.com/questions/1092122) for a discussion of the terminology).
+Remark that in a thin category, every object is subterminal. Of course, [Lemma 2](#lemma_2) can also be dualized: A functor on a non-trivial inhabited discrete category is cocontinuous if and only if each object in its image is "co-subterminal". Here, an object $X$ is co-subterminal if any two morphisms with domain $X$ are equal (see [MSE/1092122](https://math.stackexchange.com/questions/1092122) for a discussion of the terminology).
 
 Next, let us determine which of the continuous functors are right adjoints.
 
@@ -48,5 +48,5 @@ Let $\S$ be a discrete category, and let $\C$ be a connected category. If there 
 :::
 
 ::: Proof
-By Lemma 3, such a right adjoint yields a decomposition $\C = \coprod_{s \in \S} \C_s$ into full subcategories, each having a terminal object. In particular, each $\C_s$ is inhabited. Since $\C$ is connected, it follows that $\S$ has exactly one object.
+By [Lemma 3](#lemma_3), such a right adjoint yields a decomposition $\C = \coprod_{s \in \S} \C_s$ into full subcategories, each having a terminal object. In particular, each $\C_s$ is inhabited. Since $\C$ is connected, it follows that $\S$ has exactly one object.
 :::

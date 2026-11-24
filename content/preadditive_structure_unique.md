@@ -26,7 +26,7 @@ and similarly $h \circ i_2 = g$.
 :::
 
 ::: Lemma 2
-Let $\C$ be a preadditive category (or more generally, a category enriched in commutative monoids) with finite products, hence with finite coproducts by Lemma 1. Then for all objects $X,Y$ the canonical morphism $\alpha : X \oplus Y \to X \times Y$ is an isomorphism. Moreover, the preadditive structure is <i>unique</i>: If $f,g : A \rightrightarrows B$ are morphisms, their sum
+Let $\C$ be a preadditive category (or more generally, a category enriched in commutative monoids) with finite products, hence with finite coproducts by [Lemma 1](#lemma_1). Then for all objects $X,Y$ the canonical morphism $\alpha : X \oplus Y \to X \times Y$ is an isomorphism. Moreover, the preadditive structure is <i>unique</i>: If $f,g : A \rightrightarrows B$ are morphisms, their sum
 $$f+g : A \to B$$
 is the composite of $(f,g) : A \to B \times B$, the inverse $\alpha^{-1} : B \times B \to B \oplus B$, and the codiagonal $\nabla : B \oplus B \to B$.
 :::
@@ -35,7 +35,7 @@ is the composite of $(f,g) : A \to B \times B$, the inverse $\alpha^{-1} : B \ti
 In any category with zero morphisms, the morphism $\alpha : X \oplus Y \to X \times Y$ is defined by the equations
 $$p_1 \circ \alpha \circ i_1 = \id_X, \quad p_2 \circ \alpha \circ i_2 = \id_Y,$$
 $$p_2 \circ \alpha \circ i_1 = 0_{X,Y}, \quad p_1 \circ \alpha \circ i_2 = 0_{Y,X}.$$
-It does not depend on the choice of preadditive structure since zero morphisms are unique. We now check that it is an isomorphism. (This is already contained in the proof of Lemma 1, since there we have constructed binary coproducts in such a way that $\alpha$ is even the identity, but we repeat the proof here, since we need the inverse morphism anyway.) Define
+It does not depend on the choice of preadditive structure since zero morphisms are unique. We now check that it is an isomorphism. (This is already contained in the proof of [Lemma 1](#lemma_1), since there we have constructed binary coproducts in such a way that $\alpha$ is even the identity, but we repeat the proof here, since we need the inverse morphism anyway.) Define
 $$\beta \coloneqq i_1 \circ p_1 + i_2 \circ p_2 : X \times Y \to X \oplus Y.$$
 Then $\alpha \circ \beta = \id_{X \times Y}$ because
 $$p_1 \circ \alpha \circ \beta = p_1 \circ \alpha \circ i_1 \circ p_1 + p_1 \circ \alpha \circ i_2 \circ p_2 = \id_X \circ p_1 + 0_{Y,X} \circ p_2 = p_1$$

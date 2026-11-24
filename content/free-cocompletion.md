@@ -74,7 +74,7 @@ A morphism $\alpha : F \to G$ in $\widehat{\C}$ is a monomorphism (resp. epimorp
 :::
 
 ::: Proof
-The direction $\impliedby$ is trivial in each case. For the direction $\implies$, the evaluation functor $\ev_X : \widehat{\C} \to \Set$ is continuous by Lemma 4 and therefore preserves monomorphisms. Furthermore, it is also cocontinuous by Lemma 3 and therefore preserves epimorphisms.
+The direction $\impliedby$ is trivial in each case. For the direction $\implies$, the evaluation functor $\ev_X : \widehat{\C} \to \Set$ is continuous by [Lemma 4](#lemma_4) and therefore preserves monomorphisms. Furthermore, it is also cocontinuous by [Lemma 3](#lemma_3) and therefore preserves epimorphisms.
 :::
 
 **Remark.** By [this lemma](/content/split-epis-functor-categories), every epimorphism in $\widehat{\C}$ is split only if $\C$ is essentially discrete.
@@ -122,7 +122,7 @@ Let $\C$ be a locally small category. Then $\widehat{\C}$ is epi-regular.
 Notice that this would be easy if $\widehat{\C}$ had pullbacks. In that case, every epimorphism would even be effective since this is the case for $\Set$. But in general, $\widehat{\C}$ may fail to have pullbacks. This is why the proof is more complicated.
 
 ::: Proof
-First, notice that the Yoneda Lemma and the description of epimorphisms (see Lemma 5) imply that representable functors are [projective objects](https://ncatlab.org/nlab/show/projective+object). Therefore, also coproducts of representable functors are projective.
+First, notice that the Yoneda Lemma and the description of epimorphisms (see [Lemma 5](#lemma_5)) imply that representable functors are [projective objects](https://ncatlab.org/nlab/show/projective+object). Therefore, also coproducts of representable functors are projective.
 
 Now let $\eta : F \to G$ be an epimorphism of small presheaves. Since $F$ is small, there is an epimorphism
 $$F_0 \xrightarrow{~ \pi ~} F,$$
@@ -171,7 +171,7 @@ Let $\C$ be a locally small category. Then $\widehat{\C}$ has effective cocongru
 :::
 
 ::: Proof
-Let $F \rightrightarrows G$ be a cocongruence in $\widehat{\C}$. Since the inclusion functor $\widehat{\C} \hookrightarrow [\C^{\op},\Set]$ preserves finite colimits by Lemma 3, this is the same as a cocongruence of presheaves where $F,G$ happen to be small. Since cocongruences in $\Set$ are effective (by [this result](/category-implication/regular_epi-regular_extensive_consequences)), and in fact cokernel pairs of their equalizer (see [here](/content/effective-congruence-quotients)), the cocongruence is isomorphic to
+Let $F \rightrightarrows G$ be a cocongruence in $\widehat{\C}$. Since the inclusion functor $\widehat{\C} \hookrightarrow [\C^{\op},\Set]$ preserves finite colimits by [Lemma 3](#lemma_3), this is the same as a cocongruence of presheaves where $F,G$ happen to be small. Since cocongruences in $\Set$ are effective (by [this result](/category-implication/regular_epi-regular_extensive_consequences)), and in fact cokernel pairs of their equalizer (see [here](/content/effective-congruence-quotients)), the cocongruence is isomorphic to
 $$F \rightrightarrows F \sqcup_E F,$$
 where $E \coloneqq \eq(F \rightrightarrows G)$ is the objectwise defined equalizer in $[\C^{\op},\Set]$. We would be done if $E$ were small, which however is not the case in general. But we can prove that $E$ is a quotient of a small presheaf, or equivalently, a quotient of a coproduct of representable presheaves, which is sufficient, since any epimorphism $E' \to E$ satisfies $F \sqcup_E F = F \sqcup_{E'} F$. (Such presheaves are also called _petty_ in the literature.)
 

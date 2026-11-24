@@ -70,7 +70,7 @@ $$
 \end{CD}
 $$
 
-The top horizontal map is the identity. By Lemma 1 applied to $D$, the right vertical map is an isomorphism. By Lemma 1 applied to the diagram $\Hom(X,D(-))$ in $\Set^+$, the left vertical map is an isomorphism. Hence the bottom horizontal map is an isomorphism.
+The top horizontal map is the identity. By [Lemma 1](#lemma_1) applied to $D$, the right vertical map is an isomorphism. By [Lemma 1](#lemma_1) applied to the diagram $\Hom(X,D(-))$ in $\Set^+$, the left vertical map is an isomorphism. Hence the bottom horizontal map is an isomorphism.
 :::
 
 ::: Corollary 3
@@ -78,7 +78,7 @@ Let $\C$ be an essentially small category in which every sifted diagram is event
 :::
 
 ::: Proof
-This follows directly from Lemma 1 and Corollary 2.
+This follows directly from [Lemma 1](#lemma_1) and [Corollary 2](#corollary_2).
 :::
 
 ::: Corollary 4
@@ -90,7 +90,7 @@ Then $\C$ is [finitely accessible](/category-property/finitely_accessible).
 Since sifted colimits exist, filtered colimits also exist. Moreover, every object is strongly finitely presentable and therefore also finitely presentable.
 :::
 
-Besides groupoids, the following categories satisfy the assumption of Lemma 1 for every sifted diagram.
+Besides groupoids, the following categories satisfy the assumption of [Lemma 1](#lemma_1) for every sifted diagram.
 
 ::: Lemma 5
 Let $\C$ be a [generalized inverse](/category-property/generalized_inverse) category. Then every sifted diagram $D : \I \to \C$ is eventually constant.

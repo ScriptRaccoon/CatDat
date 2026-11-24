@@ -94,7 +94,7 @@ In particular, if the category also has pullback-stable regular epimorphisms, th
 :::
 
 ::: Proof
-The pullback diagram comes from using Lemma 2 on the two pullback diagrams from the dual of Lemma 1. For the other conclusion, all we need to establish is that $C + C \to C +_X C$ is a regular epimorphism. However, this is immediate from the fact that the pushout $C +_X C$ is also a coequalizer of $i_1 \circ j_2, i_2 \circ j_1 : X \rightrightarrows C + C$ (cf. [this implication](/category-implication/dual_pullbacks_criterion)).
+The pullback diagram comes from using [Lemma 2](#lemma_2) on the two pullback diagrams from the dual of [Lemma 1](#lemma_1). For the other conclusion, all we need to establish is that $C + C \to C +_X C$ is a regular epimorphism. However, this is immediate from the fact that the pushout $C +_X C$ is also a coequalizer of $i_1 \circ j_2, i_2 \circ j_1 : X \rightrightarrows C + C$ (cf. [this implication](/category-implication/dual_pullbacks_criterion)).
 :::
 
 In the following results, define a <i>regular corelation</i> to be a corelation $j_1, j_2 : X \rightrightarrows C$ such that the binary copower of $X$ exists, and $(j_1; j_2) : X + X \to C$ is a regular epimorphism.
@@ -142,7 +142,7 @@ and
 $$j_1(x_1) = j_2(x_2) = j_2(x_1),$$
 so $x_1 = x_2$ factors uniquely through $e$. (See also [here](/category-implication/pullbacks_imply_coreflexive_equalizers); in particular, that result, along with the uniqueness of equalizers and pullbacks, would give an alternate proof with an additional hypothesis that the pullback exists.)
 
-Combining these using Lemma 2, we get a pullback diagram
+Combining these using [Lemma 2](#lemma_2), we get a pullback diagram
 
 $$
 \begin{CD}
@@ -162,7 +162,7 @@ X+X @>> (j_1; j_2) > C.
 \end{CD}
 $$
 
-Now, combining those two using Lemma 2 (transposed), we get a pullback diagram
+Now, combining those two using [Lemma 2](#lemma_2) (transposed), we get a pullback diagram
 
 $$
 \begin{CD}
@@ -186,5 +186,5 @@ In an extensive and regular category with quotients of congruences, every cocong
 :::
 
 ::: Proof
-This follows by combining Corollary 3 and Lemma 4, using the existence of quotients of congruences so that $C +_X C$ always exists by [this result](/content/pushouts-of-monos-via-congruence-quotients).
+This follows by combining [Corollary 3](#corollary_3) and [Lemma 4](#lemma_4), using the existence of quotients of congruences so that $C +_X C$ always exists by [this result](/content/pushouts-of-monos-via-congruence-quotients).
 :::

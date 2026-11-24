@@ -71,16 +71,16 @@ Recall that every entourage of a uniform space contains a symmetric entourage $E
 Since $f$ is uniform, $(f \times f)^*(U_n)$ is an entourage of $A$. Since $i$ is a uniform embedding, there is an entourage $V'_n$ of $X$ with $(i \times i)^*(V'_n) = (f \times f)^*(U_n)$. We now choose symmetric entourages $V_n$ of $X$ recursively: let $V_0$ be a symmetric entourage contained in $V'_0$, and let $V_{n+1}$ be a symmetric entourage with $V_{n+1} \circ V_{n+1} \circ V_{n+1} \subseteq V_n \cap V'_{n+1}$. Since $V_{n+1}$ contains the diagonal, we have $V_{n+1} \subseteq V'_{n+1}$. Thus, for all $n \geq 0$, we have $V_{n+1} \circ V_{n+1} \circ V_{n+1} \subseteq V_n$ and $V_n \subseteq V'_n$. The latter implies $(i \times i)^*(V_n) \subseteq (i \times i)^*(V'_n) = (f \times f)^*(U_n)$, which is precisely the last statement of the claim.
 :::
 
-In what follows, we fix an entourage $U$ of $Y$ and sequences $(U_n)$ and $(V_n)$ as in Claim 2. Both sequences are decreasing, since for example $U_{n+1} \subseteq U_{n+1} \circ U_{n+1} \circ U_{n+1} \subseteq U_n$. For $n \geq 0$, consider the relation
+In what follows, we fix an entourage $U$ of $Y$ and sequences $(U_n)$ and $(V_n)$ as in [Claim 2](#claim_2). Both sequences are decreasing, since for example $U_{n+1} \subseteq U_{n+1} \circ U_{n+1} \circ U_{n+1} \subseteq U_n$. For $n \geq 0$, consider the relation
 $$Q_n \coloneqq (j \times j)_*(U_n) \cup (u \times u)_*(V_n)$$
-on $P$. It is symmetric, and it contains $\Delta_P$, since $U_n$ and $V_n$ contain the diagonals and $j,u$ are jointly surjective. As in Lemma 1, we consider chains: a _chain_ from $z \in P$ to $z' \in P$ consists of points $z = z_0,z_1,\dotsc,z_k = z'$ of $P$ and integers $m_1,\dotsc,m_k \geq 0$ with $(z_{l-1},z_l) \in Q_{m_l}$ for all $1 \leq l \leq k$. Its _length_ is $\sum_{l=1}^{k} 2^{-m_l}$. Let $W_n$ be the set of all pairs $(z,z') \in P \times P$ such that there is a chain from $z$ to $z'$ of length at most $2^{-n}$.
+on $P$. It is symmetric, and it contains $\Delta_P$, since $U_n$ and $V_n$ contain the diagonals and $j,u$ are jointly surjective. As in [Lemma 1](#lemma_1), we consider chains: a _chain_ from $z \in P$ to $z' \in P$ consists of points $z = z_0,z_1,\dotsc,z_k = z'$ of $P$ and integers $m_1,\dotsc,m_k \geq 0$ with $(z_{l-1},z_l) \in Q_{m_l}$ for all $1 \leq l \leq k$. Its _length_ is $\sum_{l=1}^{k} 2^{-m_l}$. Let $W_n$ be the set of all pairs $(z,z') \in P \times P$ such that there is a chain from $z$ to $z'$ of length at most $2^{-n}$.
 
 ::: Claim 3
 Every $W_n$ is an entourage of $P$.
 :::
 
 ::: Proof
-We verify the assumptions of Claim 1:
+We verify the assumptions of [Claim 1](#claim_1):
 
 - $W_n$ contains $\Delta_P$, using chains with $k = 0$.
 - $W_n$ is symmetric, since each $Q_m$ is symmetric, so that we can reverse chains.
@@ -88,7 +88,7 @@ We verify the assumptions of Claim 1:
 - $W_{n+1} \circ W_{n+1} \subseteq W_n$, since the concatenation of two chains of length at most $2^{-(n+1)}$ is a chain of length at most $2^{-n}$.
 - We have $Q_n \subseteq W_n$, using chains with $k = 1$ and $m_1 = n$. Therefore, $(j \times j)^*(W_n)$ contains $U_n$ and is an entourage of $Y$. Likewise, $(u \times u)^*(W_n)$ contains $V_n$ and is an entourage of $X$.
 
-Hence, Claim 1 shows that every $W_n$ is an entourage of $P$.
+Hence, [Claim 1](#claim_1) shows that every $W_n$ is an entourage of $P$.
 :::
 
 A chain in $P$ between two points of $j(Y)$ may leave $j(Y)$ in between. The next claim shows that such an excursion can be replaced by a single step in $Y$.
@@ -104,7 +104,7 @@ Each step $(z_{l-1},z_l)$ of the chain lies in $Q_{m_l} = (j \times j)_*(U_{m_l}
 
 _Case 1:_ Every step comes from a pair in $V_{m_l}$, i.e. $(z_{l-1},z_l) \in (u \times u)_*(V_{m_l})$ for all $1 \leq l \leq k$. Then for each $1 \leq l \leq k$, we can choose $(x'_l,x''_l) \in V_{m_l}$ with $u(x'_l) = z_{l-1}$ and $u(x''_l) = z_l$. For $0 < l < k$, the point $z_l \notin j(Y)$ has exactly one preimage $x_l$ under $u$ by fact 3, so that $x''_l = x_l = x'_{l+1}$. Let $x_0 \coloneqq x'_1$ and $x_k \coloneqq x''_k$. Then $x_0,\dotsc,x_k$ are points of $X$ with
 $$(x_{l-1},x_l) \in V_{m_l} \quad \text{for } 1 \leq l \leq k.$$
-By Lemma 1 applied to the sequence $(V_n)$, we get $(x_0,x_k) \in V_M$. Since $u(x_0) = z_0 = j(y) \in j(Y)$, we have $x_0 = i(a)$ for some $a \in A$ by fact 2. Then $j(f(a)) = u(i(a)) = z_0 = j(y)$, so $f(a) = y$ by fact 1. Likewise, $x_k = i(a')$ for some $a' \in A$ with $f(a') = y'$. Since $(i(a),i(a')) \in V_M$, Claim 2 shows that
+By [Lemma 1](#lemma_1) applied to the sequence $(V_n)$, we get $(x_0,x_k) \in V_M$. Since $u(x_0) = z_0 = j(y) \in j(Y)$, we have $x_0 = i(a)$ for some $a \in A$ by fact 2. Then $j(f(a)) = u(i(a)) = z_0 = j(y)$, so $f(a) = y$ by fact 1. Likewise, $x_k = i(a')$ for some $a' \in A$ with $f(a') = y'$. Since $(i(a),i(a')) \in V_M$, [Claim 2](#claim_2) shows that
 $$(y,y') = (f(a),f(a')) \in U_M.$$
 
 _Case 2:_ Some step comes from a pair in $U_{m_l}$, i.e. $(z_{l-1},z_l) \in (j \times j)_*(U_{m_l})$ for some $1 \leq l \leq k$. Then both $z_{l-1}$ and $z_l$ lie in $j(Y)$. Since $z_0$ and $z_k$ are the only points of the chain in $j(Y)$, this means $l = 1$ and $k = 1$. So the chain consists of the single step $(z_0,z_1) \in (j \times j)_*(U_{m_1})$. Since $z_0 = j(y)$, $z_1 = j(y')$, and $j$ is injective (fact 1), this means $(y,y') \in U_{m_1}$. Since $2^{-m_1} \leq 2^{-M}$, we have $m_1 \geq M$, and hence $(y,y') \in U_{m_1} \subseteq U_M$.
@@ -119,7 +119,7 @@ Let $i : A \hookrightarrow X$ be a uniform embedding and $f : A \to Y$ be a unif
 ::: Proof
 We use the notation from the previous section. Let $U$ be an entourage of $Y$, and let $U_n$, $V_n$, $W_n$ be as above. We need to show that $U = (j \times j)^*(W')$ for some entourage $W'$ of $P$. It suffices to show that
 $$(j \times j)^*(W_1) \subseteq U,$$
-since $W_1$ is an entourage of $P$ by Claim 3. Indeed, then $W' \coloneqq W_1 \cup (j \times j)_*(U)$ is an entourage of $P$, and since $j$ is injective, we have $(j \times j)^*((j \times j)_*(U)) = U$ and therefore $(j \times j)^*(W') = (j \times j)^*(W_1) \cup U = U$.
+since $W_1$ is an entourage of $P$ by [Claim 3](#claim_3). Indeed, then $W' \coloneqq W_1 \cup (j \times j)_*(U)$ is an entourage of $P$, and since $j$ is injective, we have $(j \times j)^*((j \times j)_*(U)) = U$ and therefore $(j \times j)^*(W') = (j \times j)^*(W_1) \cup U = U$.
 
 So let $y,y' \in Y$ with $(j(y),j(y')) \in W_1$, and choose a chain from $j(y)$ to $j(y')$ of length at most $1/2$. That is, we choose points $z_0,\dotsc,z_k \in P$ with $z_0 = j(y)$ and $z_k = j(y')$, and integers $m_1,\dotsc,m_k \geq 0$, such that
 $$(z_{l-1},z_l) \in Q_{m_l} \quad \text{for all } 1 \leq l \leq k, \qquad \sum_{l=1}^{k} 2^{-m_l} \leq \frac{1}{2}.$$
@@ -127,11 +127,11 @@ Let $0 = l_0 < l_1 < \dotsc < l_r = k$ be the indices $l$ with $z_l \in j(Y)$. B
 
 For $0 \leq s < r$, the points $z_{l_s},\dotsc,z_{l_{s+1}}$ with the integers $m_{l_s+1},\dotsc,m_{l_{s+1}}$ form a chain from $j(y_s)$ to $j(y_{s+1})$ whose intermediate points do not lie in $j(Y)$. Let
 $$\sigma_s \coloneqq \sum_{l=l_s+1}^{l_{s+1}} 2^{-m_l}$$
-be its length. Since $0 < \sigma_s \leq 1/2$, there is a largest integer $M_s$ with $\sigma_s \leq 2^{-M_s}$, and we have $M_s \geq 1$. By Claim 4, we have $(y_s,y_{s+1}) \in U_{M_s}$. By the maximality of $M_s$, we have $2^{-(M_s+1)} < \sigma_s$, i.e. $2^{-M_s} < 2\sigma_s$.
+be its length. Since $0 < \sigma_s \leq 1/2$, there is a largest integer $M_s$ with $\sigma_s \leq 2^{-M_s}$, and we have $M_s \geq 1$. By [Claim 4](#claim_4), we have $(y_s,y_{s+1}) \in U_{M_s}$. By the maximality of $M_s$, we have $2^{-(M_s+1)} < \sigma_s$, i.e. $2^{-M_s} < 2\sigma_s$.
 
 Thus, $y_0,\dotsc,y_r$ are points of $Y$ with $(y_s,y_{s+1}) \in U_{M_s}$ for $0 \leq s < r$. Since the parts of the chain do not overlap, we have
 $$\sum_{s=0}^{r-1} 2^{-M_s} \leq 2 \sum_{s=0}^{r-1} \sigma_s = 2 \sum_{l=1}^{k} 2^{-m_l} \leq 2 \cdot \frac{1}{2} = 1 = 2^{0}.$$
-By Lemma 1 applied to the sequence $(U_n)$, we conclude that $(y,y') = (y_0,y_r) \in U_0 \subseteq U$.
+By [Lemma 1](#lemma_1) applied to the sequence $(U_n)$, we conclude that $(y,y') = (y_0,y_r) \in U_0 \subseteq U$.
 :::
 
 ## Relation to the literature
