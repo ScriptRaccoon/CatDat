@@ -58,7 +58,7 @@ satisfied_properties:
     proof: We can use the same <a href="/category/Grp?proof=Malcev">proof</a> as for $\Grp$.
 
   - property: regular
-    proof: This follows from <a href="/content/subcategories#lemma_7">Lemma 7 on subcategories</a> applied to the inclusion functor $\Grp_\c \hookrightarrow \Grp$ into the regular category $\Grp$ and the fact that the regular epimorphisms in $\Grp_\c$ are the epimorphisms (<a href="/category/Grp_c?proof=regular_epimorphism" data-allow-deduced>proof</a>), i.e. the surjective homomorphisms (<a href="/category/Grp_c?proof=epimorphism">proof</a>).
+    proof: This follows from <a href="/content/subcategories#lemma_5">Lemma 5 on subcategories</a> applied to the inclusion functor $\Grp_\c \hookrightarrow \Grp$ into the regular category $\Grp$ and the fact that the regular epimorphisms in $\Grp_\c$ are the epimorphisms (<a href="/category/Grp_c?proof=regular_epimorphism" data-allow-deduced>proof</a>), i.e. the surjective homomorphisms (<a href="/category/Grp_c?proof=epimorphism">proof</a>).
 
   - property: effective congruences
     proof: 'Let $q_1,q_2 : R \rightrightarrows G$ be a congruence in $\Grp_\c$. Since the induced homomorphism $(q_1,q_2) : R \to G \times G$ is a monomorphism, hence injective (<a href="/category/Grp_c?proof=monomorphism">proof</a>). Thus, we may assume that $R \subseteq G \times G$ is a subgroup and that $q_1,q_2$ are the two projections. By reflexivity, $R$ contains the diagonal of $G$. We know from the <a href="/category/Grp?proof=Malcev">proof</a> that $\Grp$ is Malcev that $R = \{(g,h) \in G^2 : g^{-1} h \in N \}$ for some normal subgroup $N \subseteq G$. It is the kernel pair of the projection $p : G \twoheadrightarrow G/N$ in $\Grp$, but also in $\Grp_\c$ since $G/N$ is countable.'

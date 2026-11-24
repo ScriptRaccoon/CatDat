@@ -71,7 +71,7 @@ satisfied_properties:
 
   - property: extremal generator
     proof: >-
-      The extremal generator of $\PMet$ is $\IR_{\geq 0} \sqcup \{0'\}$ (<a href="/category/PMet?proof=extremal_generator">proof</a>), where distinct $x,y \in \IR_{\geq 0}$ have distance $x+y$ and $x$ has distance $x$ to $0'$. The inclusion $\Met \hookrightarrow \PMet$ is fully faithful and has the left adjoint $L$ that identifies points with zero distance. By <a href="/content/subcategories#lemma_9">Lemma 9 on subcategories</a>, $L$ maps the extremal generator of $\PMet$ to an extremal generator of $\Met$. It identifies $0$ and $0'$, which yields $\IR_{\geq 0}$, where distinct $x,y$ have distance $x+y$.
+      The extremal generator of $\PMet$ is $\IR_{\geq 0} \sqcup \{0'\}$ (<a href="/category/PMet?proof=extremal_generator">proof</a>), where distinct $x,y \in \IR_{\geq 0}$ have distance $x+y$ and $x$ has distance $x$ to $0'$. The inclusion $\Met \hookrightarrow \PMet$ is fully faithful and has the left adjoint $L$ that identifies points with zero distance. By <a href="/content/subcategories#lemma_7">Lemma 7 on subcategories</a>, $L$ maps the extremal generator of $\PMet$ to an extremal generator of $\Met$. It identifies $0$ and $0'$, which yields $\IR_{\geq 0}$, where distinct $x,y$ have distance $x+y$.
 
   - property: extremal cogenerator
     proof: >-

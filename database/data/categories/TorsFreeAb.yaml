@@ -33,7 +33,7 @@ satisfied_properties:
     proof: It is a full subcategory of the preadditive category $\Ab$.
 
   - property: regular
-    proof: This follows from <a href="/content/subcategories#lemma_7">Lemma 7 on subcategories</a> applied to the inclusion functor $\TorsFreeAb \hookrightarrow \Ab$ into the regular category $\Ab$ and the fact that the regular epimorphisms are the surjective homomorphisms (<a href="/category/TorsFreeAb?proof=regular_epimorphism">proof</a>).
+    proof: This follows from <a href="/content/subcategories#lemma_5">Lemma 5 on subcategories</a> applied to the inclusion functor $\TorsFreeAb \hookrightarrow \Ab$ into the regular category $\Ab$ and the fact that the regular epimorphisms are the surjective homomorphisms (<a href="/category/TorsFreeAb?proof=regular_epimorphism">proof</a>).
 
   - property: pushout-stable regular monomorphisms
     proof: >-

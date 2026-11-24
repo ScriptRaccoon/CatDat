@@ -93,11 +93,11 @@ unsatisfied_properties:
 
   - property: generator
     proof: >-
-      Assume that $(G,X)$ is a generator. By <a href="/content/subcategories#lemma_9">Lemma 9 on subcategories</a>, applied to the fully faithful right adjoint $I : \Set \to \GrpAct$, $Y \mapsto (1,Y)$ of the orbit functor $(G,X) \mapsto G \backslash X$, $G \backslash X$ is a generator of <a href="/category/Set">$\Set$</a>, so that $X \neq \varnothing$. But then there is no morphism $(G,X) \to (\IZ,\varnothing)$. Therefore, $(G,X)$ does not distinguish the two distinct morphisms $(\id_\IZ,\id_\varnothing), (0,\id_\varnothing) : (\IZ,\varnothing) \rightrightarrows (\IZ,\varnothing)$, where $0 : \IZ \to \IZ$ is the trivial homomorphism.
+      Assume that $(G,X)$ is a generator. By <a href="/content/subcategories#lemma_7">Lemma 7 on subcategories</a>, applied to the fully faithful right adjoint $I : \Set \to \GrpAct$, $Y \mapsto (1,Y)$ of the orbit functor $(G,X) \mapsto G \backslash X$, $G \backslash X$ is a generator of <a href="/category/Set">$\Set$</a>, so that $X \neq \varnothing$. But then there is no morphism $(G,X) \to (\IZ,\varnothing)$. Therefore, $(G,X)$ does not distinguish the two distinct morphisms $(\id_\IZ,\id_\varnothing), (0,\id_\varnothing) : (\IZ,\varnothing) \rightrightarrows (\IZ,\varnothing)$, where $0 : \IZ \to \IZ$ is the trivial homomorphism.
 
   - property: cogenerating collection
     proof: >-
-      By the dual of <a href="/content/subcategories#lemma_9">Lemma 9 on subcategories</a>, applied to the fully faithful left adjoint $L : \Grp \to \GrpAct$, $G \mapsto (G,\varnothing)$ of the forgetful functor $U : \GrpAct \to \Grp$, the functor $U$ maps a cogenerating collection of $\GrpAct$ to a cogenerating collection of $\Grp$. But $\Grp$ has no cogenerating collection (<a href="/category/Grp?proof=cogenerating_collection" data-allow-deduced>proof</a>).
+      By the dual of <a href="/content/subcategories#lemma_7">Lemma 7 on subcategories</a>, applied to the fully faithful left adjoint $L : \Grp \to \GrpAct$, $G \mapsto (G,\varnothing)$ of the forgetful functor $U : \GrpAct \to \Grp$, the functor $U$ maps a cogenerating collection of $\GrpAct$ to a cogenerating collection of $\Grp$. But $\Grp$ has no cogenerating collection (<a href="/category/Grp?proof=cogenerating_collection" data-allow-deduced>proof</a>).
 
   - property: Malcev
     proof: 'The functor $I : \Set \to \GrpAct$, $Y \mapsto (1,Y)$ is fully faithful and preserves finite limits as a right adjoint. Since $\Set$ is not Malcev (<a href="/category/Set?proof=Malcev" data-allow-deduced>proof</a>), neither is $\GrpAct$.'
@@ -123,7 +123,7 @@ unsatisfied_properties:
 
   - property: pushout-stable regular monomorphisms
     proof: >-
-      Apply the contrapositive of <a href="/content/subcategories#lemma_14">Lemma 14 on subcategories</a> to the fully faithful functor $L : \Grp \to \GrpAct$, $G \mapsto (G,\varnothing)$. As a left adjoint, it preserves pushouts, and it preserves connected limits, in particular equalizers. Hence, it preserves regular monomorphisms. Here, we use that $\Grp$ does not have pushout-stable regular monomorphisms (<a href="/category/Grp?proof=pushout-stable_regular_monomorphisms" data-allow-deduced>proof</a>).
+      Apply the contrapositive of <a href="/content/subcategories#lemma_9">Lemma 9 on subcategories</a> to the fully faithful functor $L : \Grp \to \GrpAct$, $G \mapsto (G,\varnothing)$. As a left adjoint, it preserves pushouts, and it preserves connected limits, in particular equalizers. Hence, it preserves regular monomorphisms. Here, we use that $\Grp$ does not have pushout-stable regular monomorphisms (<a href="/category/Grp?proof=pushout-stable_regular_monomorphisms" data-allow-deduced>proof</a>).
 
   - property: parametrized natural numbers object
     proof: >-

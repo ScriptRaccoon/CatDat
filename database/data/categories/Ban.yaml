@@ -54,7 +54,7 @@ satisfied_properties:
 
   - property: cartesian filtered colimits
     proof: >-
-      Filtered colimits exist in $\Ban$, since it has coproducts (<a href="/category/Ban?proof=coproducts" data-allow-deduced>proof</a>) and coequalizers (<a href="/category/Ban?proof=coequalizers" data-allow-deduced>proof</a>), and it has finite products since it is complete (<a href="/category/Ban?proof=complete" data-allow-deduced>proof</a>). We already know that $\NormVect$ has cartesian filtered colimits (<a href="/category/NormVect?proof=cartesian_filtered_colimits" data-allow-deduced>proof</a>). We apply <a href="/content/subcategories#lemma_16">Lemma 16 on subcategories</a> to the inclusion $J : \Ban \hookrightarrow \NormVect$ and its left adjoint, the completion functor $\NormVect \to \Ban$. It preserves binary products, even all products (<a href="/functor/normed_completion?proof=preserves_products" data-allow-deduced>proof</a>).
+      Filtered colimits exist in $\Ban$, since it has coproducts (<a href="/category/Ban?proof=coproducts" data-allow-deduced>proof</a>) and coequalizers (<a href="/category/Ban?proof=coequalizers" data-allow-deduced>proof</a>), and it has finite products since it is complete (<a href="/category/Ban?proof=complete" data-allow-deduced>proof</a>). We already know that $\NormVect$ has cartesian filtered colimits (<a href="/category/NormVect?proof=cartesian_filtered_colimits" data-allow-deduced>proof</a>). We apply <a href="/content/subcategories#lemma_10">Lemma 10 on subcategories</a> to the inclusion $J : \Ban \hookrightarrow \NormVect$ and its left adjoint, the completion functor $\NormVect \to \Ban$. It preserves binary products, even all products (<a href="/functor/normed_completion?proof=preserves_products" data-allow-deduced>proof</a>).
 
   - property: cocartesian cofiltered limits
     proof: >-
@@ -72,11 +72,11 @@ satisfied_properties:
 
   - property: pullback-stable regular epimorphisms
     proof: >-
-      Apply the dual of <a href="/content/subcategories#lemma_14">Lemma 14 on subcategories</a> to the fully faithful inclusion $J : \Ban \hookrightarrow \NormVect$. As a right adjoint, it preserves pullbacks. It preserves regular epimorphisms, since coequalizers in $\Ban$ are constructed as in $\NormVect$ (<a href="/category/Ban?proof=coequalizers">proof</a>). Finally, $\NormVect$ has pullback-stable regular epimorphisms (<a href="/category/NormVect?proof=pullback-stable_regular_epimorphisms" data-allow-deduced>proof</a>).
+      Apply the dual of <a href="/content/subcategories#lemma_9">Lemma 9 on subcategories</a> to the fully faithful inclusion $J : \Ban \hookrightarrow \NormVect$. As a right adjoint, it preserves pullbacks. It preserves regular epimorphisms, since coequalizers in $\Ban$ are constructed as in $\NormVect$ (<a href="/category/Ban?proof=coequalizers">proof</a>). Finally, $\NormVect$ has pullback-stable regular epimorphisms (<a href="/category/NormVect?proof=pullback-stable_regular_epimorphisms" data-allow-deduced>proof</a>).
 
   - property: pushout-stable regular monomorphisms
     proof: >-
-      We already know that $\NormVect$ has pushout-stable regular monomorphisms (<a href="/category/NormVect?proof=pushout-stable_regular_monomorphisms" data-allow-deduced>proof</a>). We apply <a href="/content/subcategories#lemma_14">Lemma 14 on subcategories</a> to the inclusion $J : \Ban \hookrightarrow \NormVect$. As a right adjoint, it preserves regular monomorphisms. It preserves pushouts, since binary coproducts (<a href="/category/Ban?proof=coproducts">proof</a>) and coequalizers (<a href="/category/Ban?proof=coequalizers">proof</a>) in $\Ban$ are constructed as in $\NormVect$.
+      We already know that $\NormVect$ has pushout-stable regular monomorphisms (<a href="/category/NormVect?proof=pushout-stable_regular_monomorphisms" data-allow-deduced>proof</a>). We apply <a href="/content/subcategories#lemma_9">Lemma 9 on subcategories</a> to the inclusion $J : \Ban \hookrightarrow \NormVect$. As a right adjoint, it preserves regular monomorphisms. It preserves pushouts, since binary coproducts (<a href="/category/Ban?proof=coproducts">proof</a>) and coequalizers (<a href="/category/Ban?proof=coequalizers">proof</a>) in $\Ban$ are constructed as in $\NormVect$.
 
   - property: ℵ₁-accessible
     proof: >-
