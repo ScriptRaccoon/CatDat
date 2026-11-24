@@ -4,6 +4,8 @@
 	import { get_comparison_score, rank_by_score } from '#lib/client/utils.ts'
 	import type { Snippet } from 'svelte'
 	import { remove_underscores } from '#shared/utils.ts'
+	import { focus_on_shortcut } from '#lib/client/shortcut.ts'
+	import ShortcutHint from './ShortcutHint.svelte'
 	import Listbox, { get_option_id } from './Listbox.svelte'
 
 	type Props = {
@@ -12,6 +14,7 @@
 		section_label: string
 		item_label: string
 		max?: number
+		has_shortcut?: boolean
 		children?: Snippet
 	}
 
@@ -21,6 +24,7 @@
 		section_label,
 		item_label,
 		max = Infinity,
+		has_shortcut = false,
 		children
 	}: Props = $props()
 
@@ -134,7 +138,12 @@
 			onblur={() => (show_suggestions = false)}
 			oninput={handle_input}
 			onkeydown={handle_keydown}
+			{@attach has_shortcut && focus_on_shortcut()}
 		/>
+
+		{#if has_shortcut && !item}
+			<ShortcutHint />
+		{/if}
 
 		<Listbox
 			id={listbox_id}

@@ -67,6 +67,7 @@
 	item_label={type}
 	bind:selected_items={compared_structures}
 	max={MAX_STRUCTURES_COMPARE}
+	has_shortcut={true}
 />
 
 <p>
