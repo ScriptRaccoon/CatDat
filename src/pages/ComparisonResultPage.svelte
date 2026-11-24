@@ -204,7 +204,7 @@
 		margin-right: 0.25rem;
 	}
 
-	@media (max-width: 600px) {
+	@media (width <= 600px) {
 		table {
 			font-size: 0.875rem;
 		}
