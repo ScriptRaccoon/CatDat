@@ -6,6 +6,7 @@
 	import StructureList from '#components/StructureList.svelte'
 	import PropertyList from '#components/PropertyList.svelte'
 	import ImplicationList from '#components/ImplicationList.svelte'
+	import { page } from '$app/state'
 
 	let { data } = $props()
 
@@ -14,6 +15,20 @@
 			Object.keys(data.properties_by_type).length ||
 			Object.keys(data.implications_by_type).length
 	)
+
+	// A link such as /content/subcategories#lemma_16 outlines Lemma 16.
+	// The CSS selector :target cannot be used for this, since the browser does
+	// not update it when SvelteKit navigates without reloading the page.
+	$effect(() => {
+		// data.html is read so that this reruns on navigation to another content page
+		if (!data.html) return
+
+		const target_id = page.url.hash.slice(1) // e.g. "lemma_16"
+
+		for (const theorem of document.querySelectorAll('.theorem')) {
+			theorem.classList.toggle('targeted', theorem.id === target_id)
+		}
+	})
 </script>
 
 <MetaData title={data.meta_data.title} description={data.meta_data.description} />
@@ -88,6 +103,11 @@
 			border: 1px solid var(--secondary-outline-color);
 			background-color: var(--theorem-bg-color);
 			margin-block: 1.5rem;
+			scroll-margin-top: 1rem;
+
+			&:global(.targeted) {
+				border-color: var(--accent-color);
+			}
 
 			:global(.theorem-title) {
 				font-weight: 600;

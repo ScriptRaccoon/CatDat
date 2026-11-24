@@ -3,6 +3,7 @@ import matter from 'gray-matter'
 import { MATH_REGEX, render_formula } from './formulas'
 import path from 'node:path'
 import fs from 'node:fs'
+import { THEOREM_ENVIRONMENT_REGEX, to_anchor_id } from '#shared/content.ts'
 
 const md = new MarkdownIt({ html: true })
 
@@ -14,8 +15,7 @@ md.renderer.rules.heading_open = (tokens, idx, options, _, self) => {
 			?.filter((t) => t.type === 'text')
 			.map((t) => t.content)
 			.join('') ?? ''
-	const id = text.trim().replace(/\s+/g, '_').toLowerCase()
-	tokens[idx].attrSet('id', id)
+	tokens[idx].attrSet('id', to_anchor_id(text))
 	return self.renderToken(tokens, idx, options)
 }
 
@@ -35,7 +35,7 @@ md.renderer.rules.link_open = (tokens, idx, options, _, self) => {
 	return self.renderToken(tokens, idx, options)
 }
 
-// add structure and classes to theorem environments
+// add structure, classes, and an anchor ID to theorem environments
 md.block.ruler.before(
 	'fence',
 	'theorem_environment',
@@ -44,10 +44,8 @@ md.block.ruler.before(
 		const max = state.eMarks[start_line]
 		const line = state.src.slice(start, max).trim()
 
-		const match = line.match(/^:::\s*(lemma|theorem|proposition|corollary|claim)/i)
-		if (!match) return false
-
-		const title = line.slice(3).trim()
+		const title = line.match(THEOREM_ENVIRONMENT_REGEX)?.[1]
+		if (!title) return false
 
 		let next_line = start_line + 1
 
@@ -63,7 +61,7 @@ md.block.ruler.before(
 		if (silent) return true
 
 		const open = state.push('html_block', '', 0)
-		open.content = `<div class="theorem"><span class="theorem-title">${title}.</span> `
+		open.content = `<div class="theorem" id="${to_anchor_id(title)}"><span class="theorem-title">${title}.</span> `
 
 		state.md.block.tokenize(state, start_line + 1, next_line)
 

@@ -6,6 +6,7 @@
 
 import { history } from '#shared/history.ts'
 import { capitalize, devlog, remove_underscores } from '#shared/utils.ts'
+import { get_anchor_ids } from '#shared/content.ts'
 import { get_client } from '#shared/db.ts'
 import { STRUCTURE_TYPES, type StructureType, PLURALS } from '#shared/config.ts'
 import fs from 'node:fs'
@@ -455,16 +456,63 @@ const get_entry = {
 	)
 }
 
+type ContentPage = { markdown: string; anchors: Set<string> }
+
 /**
- * Checks if all links in proofs refer to existing entries.
+ * Returns the markdown and the anchor IDs of the headings and theorem environments
+ * of each content page, and checks that no anchor ID occurs twice on a page.
+ */
+function get_content_pages() {
+	const content_pages = new Map<string, ContentPage>()
+
+	for (const file of fs.readdirSync(path.resolve('content'))) {
+		if (!file.endsWith('.md')) continue
+		const content_id = path.basename(file, '.md')
+		const markdown = fs.readFileSync(path.resolve('content', file), 'utf8')
+		const ids = get_anchor_ids(markdown)
+		const anchors = new Set(ids)
+
+		if (anchors.size !== ids.length) {
+			const duplicate = ids.find((id, i) => ids.indexOf(id) !== i)
+			throw new Error(
+				`Content page ${content_id} has two headings or theorem environments with the anchor "${duplicate}"`
+			)
+		}
+
+		content_pages.set(content_id, { markdown, anchors })
+	}
+
+	return content_pages
+}
+
+/**
+ * Checks if a link to a content page, optionally with an anchor, has a target.
+ * The page is undefined if the linked content page does not exist.
+ */
+function check_content_link(
+	page: ContentPage | undefined,
+	content_id: string,
+	anchor: string | undefined,
+	error_prefix: string
+) {
+	if (!page) {
+		throw new Error(
+			`${error_prefix} has a link to "${content_id}" which does not exist`
+		)
+	}
+
+	if (anchor !== undefined && !page.anchors.has(anchor)) {
+		throw new Error(
+			`${error_prefix} has a link to "${content_id}#${anchor}" which does not exist`
+		)
+	}
+}
+
+/**
+ * Checks if all links in proofs and content pages refer to existing entries.
  */
 function check_link_targets_exist() {
-	const content_ids = new Set(
-		fs
-			.readdirSync(path.resolve('content'))
-			.filter((file) => file.endsWith('.md'))
-			.map((file) => path.basename(file, '.md'))
-	)
+	const content_pages = get_content_pages()
 
 	const proofs: { proof: string; error_prefix: string }[] = [
 		...db
@@ -600,16 +648,30 @@ function check_link_targets_exist() {
 			}
 		}
 
-		const content_link_regex = /<a\s+href="\/content\/([^"]+)"/g
+		const content_link_regex = /<a\s+href="\/content\/([^"#]+)(?:#([^"]+))?"/g
 
 		for (const match of proof.matchAll(content_link_regex)) {
-			const id = match[1]
+			const [, content_id, anchor] = match
+			check_content_link(
+				content_pages.get(content_id),
+				content_id,
+				anchor,
+				error_prefix
+			)
+		}
+	}
 
-			if (!content_ids.has(id)) {
-				throw new Error(
-					`${error_prefix} has a link to "${id}" which does not exist:\n"${proof}"`
-				)
-			}
+	const markdown_link_regex = /\]\((?:\/content\/([^)#]+))?(?:#([^)]+))?\)/g
+
+	for (const [content_id, { markdown }] of content_pages) {
+		for (const match of markdown.matchAll(markdown_link_regex)) {
+			const linked_id = match[1] ?? content_id
+			check_content_link(
+				content_pages.get(linked_id),
+				linked_id,
+				match[2],
+				`Content page ${content_id}`
+			)
 		}
 	}
 
