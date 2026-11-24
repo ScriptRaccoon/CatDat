@@ -195,6 +195,15 @@
     \end{align*}$$
     Therefore, $u_{j'}$ is a split epimorphism in $\widehat{\C}$. Since $\C$ is Cauchy complete, it follows that $D_\infty$ is representable, represented by a retract of $D(j')$. Since $Y$ is fully faithful, this object is a colimit of $D$.
 
+- id: accessible_generalized_inverse
+  assumptions:
+    - accessible
+    - generalized inverse
+  conclusions:
+    - essentially small
+  proof: >-
+    Let $\C$ be a generalized inverse category which is $\kappa$-accessible for some regular cardinal $\kappa$. Let $G$ be an essentially small collection of objects such that every object $X \in \C$ is the colimit of a $\kappa$-filtered diagram $D : \I \to \C$ with $D(i) \in G$ for all $i \in \I$. Since $\kappa$-filtered categories are filtered and hence sifted, $D$ is constant after some $i_0 \in \I$ by <a href="/content/eventually-constant-diagrams#lemma_2">Lemma 2 on eventually constant diagrams</a>. By <a href="/content/eventually-constant-diagrams#lemma_1">Lemma 1</a> on the same page, $X$ is isomorphic to $D(i_0) \in G$. Hence, every object of $\C$ is isomorphic to an object in $G$, so that the collection of isomorphism classes of objects is essentially small. Since $\C$ is also locally essentially small by <a href="/category-implication/accessible_locally_small">this result</a>, it is essentially small.
+
 - id: locally_presentable_another_definition
   assumptions:
     - accessible
